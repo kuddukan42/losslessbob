@@ -1,0 +1,9 @@
+8b0451cc1bbca20076885b8121dfe171 *91-06-07_Bologna_cd2_Track01.shn
+be6fa161b1bdf1aef82d0d663451834b *91-06-07_Bologna_cd2_Track02.shn
+deddd7af4346e2fb1e4c05c164260018 *91-06-07_Bologna_cd2_Track03.shn
+5e38a1c866267a20eea0cbac22753b2f *91-06-07_Bologna_cd2_Track04.shn
+2c3c7015a24afe63a0d85922bbbd9490 *91-06-07_Bologna_cd2_Track05.shn
+c30e7bf5073cab616b599bec7fde37da *91-06-07_Bologna_cd2_Track06.shn
+03f362b43283d7ff8dbcc7d32d05c0f8 *91-06-07_Bologna_cd2_Track07.shn
+5145a578f4df1a8ffa5672b64a37aebd *91-06-07_Bologna_cd2_Track08.shn
+d8f431f0e76e0fe571c1575e1265c5e6 *91-06-07_Bologna_cd2_Track09.shn

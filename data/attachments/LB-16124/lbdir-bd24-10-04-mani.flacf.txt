@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd24-10-04-mani.flacf
+===================
+===================
+===================
+306daab4499e9d4e5df083a94c26713c *2024-10-04 Praha.ffp
+3784149b00450d853daf7e2770285c58 *2024-10-04 Praha.md5
+4a2189c53ed4efdaf0e5cda37d36fa1e *20241004 Praha Info.txt
+549bffa8dcd00c8d52987fc2e2212ef7 *20241004PrahaMisprint2025.jpg
+838d4a3c689eac30e30abb09d51d0f20 *20241004tr01.flac
+24a4165509f07a3413d2fbae1abf250b *20241004tr02.flac
+10104ab2153f03ca4a3babd3d68dca10 *20241004tr03.flac
+59f28396a3e0f0e188b79c979cdd3031 *20241004tr04.flac
+a042423ddcf88f15306405614fb71ca7 *20241004tr05.flac
+780f1ce4c257fd8b6d039f01565cbc01 *20241004tr06.flac
+63dbd76617ae719702880c1a3b9ad205 *20241004tr07.flac
+7b0a7198f66d1a9d31508fa35d1d5c4a *20241004tr08.flac
+df5b0d05118d560a9776fc3bda3cb2bc *20241004tr09.flac
+03ff131790d25bdc57836cf798fbdcbb *20241004tr10.flac
+faf1dd7301ca9d63d7d63fb89c61d802 *20241004tr11.flac
+6fc1e5e82633edab1df46f402e20c44e *20241004tr12.flac
+514bdfa98f90a4ea78235e69302b6fe0 *20241004tr13.flac
+9f3ab636072d1a7856d3cb48874e72ad *20241004tr14.flac
+75955a9d1646221b60fc25e054d77f9d *20241004tr15.flac
+67e88d4c68a4f8d481178b525d296521 *20241004tr16.flac
+257c4564a9914aa3528621d54a9d9ee6 *20241004tr17.flac
+8d63c977fa09fd1e33687bbd2b612f74 *DigiFlawFinder-bd24-10-04-mani.flacf.wavf.html
+66a6a7bc99e3b89a9e761cb86eadf88e *IMG_202410_2.jpg
+===================
+===================
+===================
+=== ffp for: bd24-10-04-mani.flacf
+===================
+===================
+===================
+20241004tr01.flac:96ee0314fad16b3b619a6f74ad10c7e5
+20241004tr02.flac:1541c854cab27aa2899ba94afc63b88d
+20241004tr03.flac:7c9b5b3be02b0eb96f8ad757c879f371
+20241004tr04.flac:d9f3b577d815c9bd6b898b3a2442dc8c
+20241004tr05.flac:527b2f661eb8c4208711b3a2a45bec32
+20241004tr06.flac:119135cccf1d45c683444a4e57ce640e
+20241004tr07.flac:58f9aeba65a63ba1efce2def9b580b9a
+20241004tr08.flac:3bb1c39753c2a39d7e29929e1a26d080
+20241004tr09.flac:7a9fc33897e26d7fb01e8def7cf205a8
+20241004tr10.flac:ee1d094418e006d71a910d28550f3d7d
+20241004tr11.flac:3ca034206c667a8b05c92b8d18f1db82
+20241004tr12.flac:99f00df1b2b268caa1639209f268364b
+20241004tr13.flac:273e6cae4bd99113a00c0de9ee8dd18a
+20241004tr14.flac:aee2f66427140873509bbf00b6d2ef74
+20241004tr15.flac:85ea6a92bf42f09b1e4153d986ca4c43
+20241004tr16.flac:f03f6a940ae0056c10986970db68a60a
+20241004tr17.flac:2c6174df57ce72cc9b961ae79df5d8e2
+===================
+===================
+===================
+=== shntool len for: bd24-10-04-mani.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.18       44318764 B   -b-   --   ---xx   flac  0.5845  20241004tr01.flac
+     4:02.73       42860588 B   -b-   --   ---xx   flac  0.5755  20241004tr02.flac
+     5:45.18       60899372 B   -b-   --   ---xx   flac  0.5001  20241004tr03.flac
+     7:27.37       78938156 B   -b-   --   ---xx   flac  0.5416  20241004tr04.flac
+     4:26.28       46989356 B   -b-   --   ---xx   flac  0.5320  20241004tr05.flac
+     5:14.09       55410732 B   -b-   --   ---xx   flac  0.4772  20241004tr06.flac
+     4:14.30       44875820 B   -b-   --   ---xx   flac  0.5818  20241004tr07.flac
+     7:13.14       76415020 B   -b-   --   ---xx   flac  0.4885  20241004tr08.flac
+     8:26.49       89374764 B   -b-   --   ---xx   flac  0.4921  20241004tr09.flac
+     7:19.24       77496364 B   -b-   --   ---xx   flac  0.5114  20241004tr10.flac
+    10:32.24      111542316 B   -b-   --   ---xx   flac  0.4624  20241004tr11.flac
+     5:15.59       55705644 B   -b-   --   ---xx   flac  0.5663  20241004tr12.flac
+     6:14.51       66093100 B   -b-   --   ---xx   flac  0.4653  20241004tr13.flac
+     5:28.67       58015788 B   -b-   --   ---xx   flac  0.4288  20241004tr14.flac
+     5:19.17       56311852 B   -b-   --   ---xx   flac  0.5186  20241004tr15.flac
+     6:56.15       73416748 B   -b-   --   ---xx   flac  0.5375  20241004tr16.flac
+     6:40.37       70647852 B   -b-   --   ---xx   flac  0.4470  20241004tr17.flac
+   104:48.46     1109312236 B                            0.5059  (17 files)
+===================
+===================
+===================

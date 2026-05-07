@@ -1,0 +1,64 @@
+===================
+===================
+===================
+=== set list.txt
+===================
+===================
+===================
+Bob DylanVerdun AuditoriumMontreal, QuebecApril 26, 1996
+
+Excellent sound qualityDisk 101 Drifter's Escape02 If You See Her Say Hello03 All Along The Watchtower04 Just Like Tom Thumb's Blues05 Most Likely You Go Your Way (And I'll Go Mine)06 Silvio07 Tangled Up In Blue (Acoustic W Band)08 Masters Of War (Acoustic W Band)Disk 201 Don't Think Twice, It's All Right (Acoustic W Band)02 Maggie's Farm03 I'll Remember You04 Obviously Five Believers05 Alabama Getaway06 Girl From The North Country (Acoustic W Band)07 Rainy Day Women # 12 & 35
+
+
+d249761d30934bb9ae1c55b337026d71 *01 Drifter's Escape.flac
+e8f4441b9d82c199cb1cfb5637ad6531 *02 If You See Her Say Hello.flac
+f03e25ea1a36b7d86eafc5090a3421d2 *03 All Along The Watchtower.flac
+6cdc6ad0e55c59af40d03ea47c3ab77b *04 Just Like Tom Thumb's Blues.flac
+078cdf5e9046877507b105b4d1fb3a97 *05 Most Likely You Go Your Way (And I'll Go Mine).flac
+1d4c975f4c9dfc5b0d8bd25a35298537 *06 Silvio.flac
+8f5056494904f4bca4746ef5088f435a *07 Tangled Up In Blue (Acoustic W Band).flac
+25a6c3334a023c59e7d1883ce93d8a21 *08 Masters Of War (Acoustic W Band).flac
+
+51ed08ae4207eb4259661f419a7cdc2b *01 Don't Think Twice, It's All Right (Acoustic W Band).flac
+37ef50eccab99061412856258fe190d6 *02 Maggie's Farm.flac
+8fb403b82d24db23a42dd8b1ad1924c1 *03 I'll Remember You.flac
+63b07e5252d028acd3f5351114672d1f *04 Obviously Five Believers.flac
+5678ff37177c5f5d513794d774a8414f *05 Alabama Getaway.flac
+e6e664740481fc005748e566616a6c41 *06 Girl From The North Country (Acoustic W Band).flac
+bf2d9e463ce502b57197ac65d37c459e *07 Rainy Day Women # 12 & 35.flac
+
+
+===================
+===================
+===================
+=== 01 Drifter's Escape.md5
+===================
+===================
+===================
+d249761d30934bb9ae1c55b337026d71 *01 Drifter's Escape.flac
+e8f4441b9d82c199cb1cfb5637ad6531 *02 If You See Her Say Hello.flac
+f03e25ea1a36b7d86eafc5090a3421d2 *03 All Along The Watchtower.flac
+6cdc6ad0e55c59af40d03ea47c3ab77b *04 Just Like Tom Thumb's Blues.flac
+078cdf5e9046877507b105b4d1fb3a97 *05 Most Likely You Go Your Way (And I'll Go Mine).flac
+1d4c975f4c9dfc5b0d8bd25a35298537 *06 Silvio.flac
+8f5056494904f4bca4746ef5088f435a *07 Tangled Up In Blue (Acoustic W Band).flac
+25a6c3334a023c59e7d1883ce93d8a21 *08 Masters Of War (Acoustic W Band).flac
+
+===================
+===================
+===================
+=== 01 Don't Think Twice, It's All Right (Acoustic W Band).md5
+===================
+===================
+===================
+51ed08ae4207eb4259661f419a7cdc2b *01 Don't Think Twice, It's All Right (Acoustic W Band).flac
+37ef50eccab99061412856258fe190d6 *02 Maggie's Farm.flac
+8fb403b82d24db23a42dd8b1ad1924c1 *03 I'll Remember You.flac
+63b07e5252d028acd3f5351114672d1f *04 Obviously Five Believers.flac
+5678ff37177c5f5d513794d774a8414f *05 Alabama Getaway.flac
+e6e664740481fc005748e566616a6c41 *06 Girl From The North Country (Acoustic W Band).flac
+bf2d9e463ce502b57197ac65d37c459e *07 Rainy Day Women # 12 & 35.flac
+
+===================
+===================
+===================

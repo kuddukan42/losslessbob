@@ -1,0 +1,10 @@
+Bob Dylan, 7/4/99, Milwaukee, Wisconsin, 2CDR
+
+LB-7682, (65min+33min), version "b"; * This recording is the same as LB-5206; with a different MD5 checksum! *, Taper: unidentified, Lineage: received in a trade as FLACs, Rating: B+; bittorrent download 06/09; same recording as LB-5206 based on same clapping wavs at end of d1t1 with same wav and spectral view except levels are raised on this on a track by track basis to make up for that ones uneven levels; this has less digital flaws; (did not listen to all of this)
+
+drop/cut between cdrs; static noise d1t4 1:36; drop d1t4 1:14, 1:19
+
+00 intro 01. Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson) [00:35], 02. My Back Pages [05:14], 03. Boots Of Spanish Leather [06:53], 04. Don't Think Twice, It's All Right [06:26], 05. Tangled Up In Blue [06:19], 06. All Along The Watchtower [05:15], 07. Tryin' To Get To Heaven [05:21], 08. Stuck Inside Of Mobile With The Memphis Blues Again [07:21], 09. Make You Feel My Love [04:22], 10. Highway 61 Revisited [08:36], Total time [64:26], 11. Like A Rolling Stone [07:45], 12. Blowin' In The Wind [06:23], 13. The Sound Of Silence (Paul Simon) [07:18], 14. That'll Be The Day (Jerry Allison, Buddy Holly & Norman Petty) [02:32], 15. The Wanderer (E. Maresca) [02:30], 16. Knockin' On Heaven's Door [05:50], Total time [32:19]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

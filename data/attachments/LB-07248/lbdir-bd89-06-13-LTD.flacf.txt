@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-13-LTD.flacf 
+=================== 
+=================== 
+=================== 
+2820097544e930de13c2e33f52caa075  1989-06-13 Frejus.md5
+755808fa7dacd179a490a8dff039c997  Frejus 1989-01.flac
+26bcfb393a4c65266288e21746ee4eca  Frejus 1989-02.flac
+07693c56ac140d3d309f599e39be47e5  Frejus 1989-03.flac
+1e1ebad729f92734535977c865a37189  Frejus 1989-04.flac
+cd5dea9ce5d77b86957674f04a3c93b1  Frejus 1989-05.flac
+79459a61705bdb3dee1288a2639ed9f5  Frejus 1989-06.flac
+60cba964dfdacfcff7c2b43e861ef494  Frejus 1989-07.flac
+b686f8c933ba6962eed158da8523eb53  Frejus 1989-08.flac
+cc89971740193d9fe3157a234d3e1a2d  Frejus 1989-09.flac
+632b8968e660260fd5946ccdd66ff799  Frejus 1989-10.flac
+523522c8e0cc60cde624bcc51e634a09  Frejus 1989-11.flac
+7d110c14836115708c0e170765b2b2b1  Frejus 1989-12.flac
+9fc290bf69ada35eb4d1bfacea9a4436  Frejus 1989-13.flac
+06af00ce0897165fb0f439892327614e  Frejus 1989-14.flac
+ab0859b60549f4ecf01a42d4d6dea15e  Frejus 1989-15.flac
+fee13b0e4b34a673f5e5e5f6eee94697  Frejus 1989-16.flac
+1bfcc88ca5ef49bb3b0699982c110b8d  Frejus-1989-06-13.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-13-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Frejus 1989-01.flac:f72e3327cdf077b4214a8049046d8e09
+Frejus 1989-02.flac:1d9f7c442b2fef4d529395e6cd650f88
+Frejus 1989-03.flac:d493885d34a86bc0306f9db08d926fde
+Frejus 1989-04.flac:25fe8c817150b1eebf69c6caa6bb2331
+Frejus 1989-05.flac:fb86a87d3c3c992e3c7aa084b051093b
+Frejus 1989-06.flac:fc4e59d7e8b9985c8fa9a71dff45d7e9
+Frejus 1989-07.flac:e3ddb8ca389b1efaaaf134ede6132da0
+Frejus 1989-08.flac:1acc56a7869d4ae2a81bb3f02a20d230
+Frejus 1989-09.flac:35e86fdaee7905720bb3b6fde8a3c30e
+Frejus 1989-10.flac:b452493abdf3950cbd4745910857b9c7
+Frejus 1989-11.flac:01139d7136ab004e8e29044669de712c
+Frejus 1989-12.flac:8f4a979763dab8062faeebf8a885d29c
+Frejus 1989-13.flac:3fa2774e907d1050e4eebb6db342f5cf
+Frejus 1989-14.flac:d7d5e6ea95be4ddb62b8848303266f24
+Frejus 1989-15.flac:2e0f4e8ec28c90e2b8e7832540c7dbe9
+Frejus 1989-16.flac:1963a3b99054cb6cab16309c894ecfed
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-13-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.74       56623148 B   -b-   --   ---xx   flac  0.5614  Frejus 1989-01.flac
+     5:09.64       54657068 B   -b-   --   ---xx   flac  0.5874  Frejus 1989-02.flac
+     5:06.66       54132780 B   -b-   --   ---xx   flac  0.5826  Frejus 1989-03.flac
+     3:43.49       39452716 B   -b-   --   ---xx   flac  0.6099  Frejus 1989-04.flac
+     6:57.44       73662508 B   -b-   --   ---xx   flac  0.5706  Frejus 1989-05.flac
+     5:19.10       56295468 B   -b-   --   ---xx   flac  0.5705  Frejus 1989-06.flac
+     6:08.13       64946220 B   -b-   --   ---xx   flac  0.5460  Frejus 1989-07.flac
+     5:44.62       60826668 B   -b-   --   ---xx   flac  0.5201  Frejus 1989-08.flac
+     5:29.64       58186796 B   -b-   --   ---xx   flac  0.5652  Frejus 1989-09.flac
+     5:53.51       62390316 B   -b-   --   ---xx   flac  0.5473  Frejus 1989-10.flac
+     4:03.68       43024428 B   -b-   --   ---xx   flac  0.6037  Frejus 1989-11.flac
+     7:12.61       76349484 B   -b-   --   ---xx   flac  0.5577  Frejus 1989-12.flac
+     5:43.35       60588076 B   -b-   --   ---xx   flac  0.5025  Frejus 1989-13.flac
+     5:19.66       56426540 B   -b-   --   ---xx   flac  0.5138  Frejus 1989-14.flac
+     3:54.32       41353260 B   -b-   --   ---xx   flac  0.5153  Frejus 1989-15.flac
+     5:36.73       59441196 B   -b-   --   ---xx   flac  0.5830  Frejus 1989-16.flac
+    86:46.07      918356672 B                            0.5572  (16 files)
+=================== 
+=================== 
+=================== 

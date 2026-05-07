@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-hard-times-in-nyc.flacf 
+=================== 
+=================== 
+=================== 
+1cce6b101591434b7e84809f90898967  bd-hard-times-in-nyc-LB-3016.txt
+47c8f49d75b2540b9981e4141fcc6a2f  bd-htinyc-t01.flac
+bc14ec1e9359e902058fec4f843ebab6  bd-htinyc-t02.flac
+d160bb4fb5a88a63e9193f71c7237650  bd-htinyc-t03.flac
+e16f536935a71377179cd257d3036f9e  bd-htinyc-t04.flac
+ce03d6e0e32bc671d77813a06da6ee7c  bd-htinyc-t05.flac
+55ac0fd089458675b958ee21088d3ccd  bd-htinyc-t06.flac
+109a19a4fe7f1fbaedb263ad8a55ef8f  bd-htinyc-t07.flac
+b9a5980e0d5c3088bd02b65cd1a61b7d  bd-htinyc-t08.flac
+9bbb9065512dc505129bd540e085160a  bd-htinyc-t09.flac
+6aadb6a3625fa7864ad846415efa2ca4  bd-htinyc-t10.flac
+9e778b0fdcffc8dd958ce411f379045c  bd-htinyc-t11.flac
+521fd27efd0cdb7ec16e28bc20fe3021  bd-htinyc-t12.flac
+37ba5e9d0bca8a0d09f6486dccd747af  bd-htinyc-t13.flac
+20d6847f199638979a7581beea6ed21b  bd-htinyc-t14.flac
+c65c6d7be3d3e15daeb4ca4636843b79  bd-htinyc-t15.flac
+0542aab840e24f4781328368177e915a  bd-htinyc-t16.flac
+6d684a619bc4dc6c1182547f8e350c41  bd-htinyc-t17.flac
+6dbec0108d7027566845aaaef0dcfb94  bd-htinyc-t18.flac
+381090d5fd5bca269ed79079d2f48fb7  hard times in nyc.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-hard-times-in-nyc.flacf 
+=================== 
+=================== 
+=================== 
+bd-htinyc-t01.flac:21ad3c06bfbbd7bd09c122d6fce1a995
+bd-htinyc-t02.flac:15d00cd9b2e2f3b7dedf48bdb1eba649
+bd-htinyc-t03.flac:62e013ee91efd1e9aba79ae3c84b42a2
+bd-htinyc-t04.flac:650345748aa7beee1f2b557f3742c3ad
+bd-htinyc-t05.flac:cb02088ea18721832c537d3054586ddc
+bd-htinyc-t06.flac:a20c01e090709e527f8d2bf447b2d7dd
+bd-htinyc-t07.flac:246ec9eafa4abbb5eb7c754ecadcfb38
+bd-htinyc-t08.flac:a008d18fb46d5b9240a75d1ea6763056
+bd-htinyc-t09.flac:9a989b69ceae756e08bfe353313833c0
+bd-htinyc-t10.flac:24c6670ed0b860cb5309786520966ec5
+bd-htinyc-t11.flac:58cdcf1f31a12c9f855719db5d24763a
+bd-htinyc-t12.flac:2964aaa0d84123cec892c442b05e591e
+bd-htinyc-t13.flac:ebb94b888541bbdf1df8d05f416cf014
+bd-htinyc-t14.flac:109e15adbae54488924a478662d7a5c5
+bd-htinyc-t15.flac:5a68575e11e9b5bcb55a37a982ca0659
+bd-htinyc-t16.flac:91285f058089ab7122e96edfccd50f46
+bd-htinyc-t17.flac:c9e90b05e159d60e83b5abbbd8fe5c43
+bd-htinyc-t18.flac:2400a0e834bd7c3fa2d07535640368fe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-hard-times-in-nyc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:26.05       36350204 B   ---   --   ---xx   flac  0.3878  bd-htinyc-t01.flac
+     3:26.47       36448988 B   ---   --   ---xx   flac  0.3980  bd-htinyc-t02.flac
+     3:53.43       41202380 B   ---   --   ---xx   flac  0.3839  bd-htinyc-t03.flac
+     3:34.27       37813148 B   ---   --   ---xx   flac  0.6275  bd-htinyc-t04.flac
+     5:45.38       60947420 B   ---   --   ---xx   flac  0.5942  bd-htinyc-t05.flac
+     3:31.32       37295708 B   ---   --   ---xx   flac  0.6000  bd-htinyc-t06.flac
+     5:39.15       59834924 B   ---   --   ---xx   flac  0.5594  bd-htinyc-t07.flac
+     5:01.45       53202284 B   ---   --   ---xx   flac  0.6065  bd-htinyc-t08.flac
+     5:34.25       58976444 B   ---   --   ---xx   flac  0.5576  bd-htinyc-t09.flac
+     3:33.18       37615580 B   ---   --   ---xx   flac  0.6070  bd-htinyc-t10.flac
+     3:19.55       35233004 B   ---   --   ---xx   flac  0.4027  bd-htinyc-t11.flac
+     3:43.62       39483068 B   ---   --   ---xx   flac  0.4202  bd-htinyc-t12.flac
+     4:52.65       51661724 B   ---   --   ---xx   flac  0.4008  bd-htinyc-t13.flac
+     4:01.20       42559484 B   ---   --   ---xx   flac  0.4472  bd-htinyc-t14.flac
+     2:54.25       30752444 B   ---   --   ---xx   flac  0.4216  bd-htinyc-t15.flac
+     3:41.60       39125564 B   ---   --   ---xx   flac  0.3803  bd-htinyc-t16.flac
+     3:56.40       41724524 B   ---   --   ---xx   flac  0.3823  bd-htinyc-t17.flac
+     3:07.18       33029180 B   ---   --   ---xx   flac  0.4784  bd-htinyc-t18.flac
+    73:03.40      773256072 B                            0.4893  (18 files)
+=================== 
+=================== 
+=================== 

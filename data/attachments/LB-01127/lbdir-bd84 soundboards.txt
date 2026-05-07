@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84 soundboards 
+=================== 
+=================== 
+=================== 
+826f88a3aa37357cadd12307076ea507  84 sbds d1 t01.shn
+6b95b395b41a2443b6bdfc3719d35b51  84 sbds d1 t02.shn
+3f8a1cd4768b1e0078cfd88586877826  84 sbds d1 t03.shn
+b43b6c8bcbdf88a60acc961762701211  84 sbds d1 t04.shn
+f03dffd92441c9931cbf6fcec80d5dca  84 sbds d1 t05.shn
+3a7869e1b47d71794b241937ac5a0dcf  84 sbds d1 t06.shn
+89ad7c8d103a6804d40cd9e115a70331  84 sbds d1 t07.shn
+298d89db4e9f9823d61666f6849a71ea  84 sbds d1 t08.shn
+4c2624b92b2d1d043731225299023a0e  84 sbds d1 t09.shn
+87d6c1d6eb8ae10a4c4001d260f13566  84 sbds d1 t10.shn
+53e618f10f5bc405903a82840b7f5a34  84 sbds d1 t11.shn
+2f344af8277ebb07239e5633fc0e4ff9  84 sbds d1 t12.shn
+db749084ef4d728687d7c68a44f51ad9  84 sbds d2 t01.shn
+ee35e5f59b97f9f0fce85b7f224850b9  84 sbds d2 t02.shn
+61f61a7a2bf8a015bfafba7d98ab3483  84 sbds d2 t03.shn
+76e3f2a0a4ec5875bae848d5241f4be7  84 sbds d2 t04.shn
+ad60497f0d22f802aa44b7de47791f7a  84 sbds d2 t05.shn
+3c608ec11abcf0022fd41efa81c61fd9  84 sbds d2 t06.shn
+7026808d2223dcca30e2287d5d3946e1  84 sbds d2 t07.shn
+fe9fd6835aacc19896a2819d7e3e34f3  84 sbds d2 t08.shn
+1847ead113599054b36bf72904125f3e  84 sbds d2 t09.shn
+42a181f50c164dc2b66f298ea0c46c31  84 sbds d2 t10.shn
+aedbc6e3a50867ec4c64a2da775f7b50  84 sbds d2 t11.shn
+4f41df5fc2db55e6037132e70a5efa17  84 sbds d2 t12.shn
+dd6871d4cc4037715da6359eb3bfc663  84 soundboards.md5
+06f77ec696dbb17d1b4186393473a8c3  84 soundboards.txt
+555613583bedfe02798d30c2ca3c69e8  bd84-soundboards.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd84 soundboards 
+=================== 
+=================== 
+=================== 
+e16a97b7645e54ef89b1afa98b49a76e  [shntool]  84_sbds_d1_t01.wav
+a303f54ab1159728f1c2d60e64c2fc84  [shntool]  84_sbds_d1_t02.wav
+e224725a0f21e6f0ab357fccac6cf4ae  [shntool]  84_sbds_d1_t03.wav
+97de5b65cc3308b39ae4a8369f8b776e  [shntool]  84_sbds_d1_t04.wav
+4e28f403f50c283afd6e0155f0c1c2ee  [shntool]  84_sbds_d1_t05.wav
+e1ad8fe3fa519375019261bf8aebd8f6  [shntool]  84_sbds_d1_t06.wav
+9fb96f80c4529804a9a1c66fee2bbff0  [shntool]  84_sbds_d1_t07.wav
+82842a39c93fdaa9158f0a3cd55ceb7d  [shntool]  84_sbds_d1_t08.wav
+47eeaaefb73df425759e52f3841b5ef5  [shntool]  84_sbds_d1_t09.wav
+225d02baa36aa9caae3797c9c9e24949  [shntool]  84_sbds_d1_t10.wav
+6cb6841dd5bed709e7775c1a9a7a4b30  [shntool]  84_sbds_d1_t11.wav
+b7dd4e1f5e1c20ec069cf66fc5c2605a  [shntool]  84_sbds_d1_t12.wav
+b373e38b4630729adc210ec2082e5e12  [shntool]  84_sbds_d2_t01.wav
+0c1a035098fbc308f0208522aaf653cd  [shntool]  84_sbds_d2_t02.wav
+a8ef36fdfa8bf4b85e07b59e7eeb6ffb  [shntool]  84_sbds_d2_t03.wav
+70d6b5406ffa132382ba000f7a6847ef  [shntool]  84_sbds_d2_t04.wav
+1e552e5e3c3cbfccc77649fb71171a80  [shntool]  84_sbds_d2_t05.wav
+a4a2bc68d13dfdacddc743756a52c405  [shntool]  84_sbds_d2_t06.wav
+06bf9d37b9545f4cd999791bb569b820  [shntool]  84_sbds_d2_t07.wav
+0b461d4ec407974bdc760edc6f620d67  [shntool]  84_sbds_d2_t08.wav
+746d411ef5d45ad38067c159666c7b1a  [shntool]  84_sbds_d2_t09.wav
+f22745fad9ec67a3b879f1e566accb53  [shntool]  84_sbds_d2_t10.wav
+39e2dfb614ddb79953b79a9b9a8d31c9  [shntool]  84_sbds_d2_t11.wav
+f23b1e441e2e345e6bbfe62ddbef3a26  [shntool]  84_sbds_d2_t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84 soundboards 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.65       54131324 B   ---   --   ---xx    shn  0.6409  84 sbds d1 t01.shn
+     5:19.29       56339852 B   ---   --   ---xx    shn  0.7643  84 sbds d1 t02.shn
+     3:14.60       34362764 B   ---   --   ---xx    shn  0.6479  84 sbds d1 t03.shn
+     3:57.35       41889164 B   ---   --   ---xx    shn  0.7024  84 sbds d1 t04.shn
+     4:42.19       49789532 B   ---   --   ---xx    shn  0.7495  84 sbds d1 t05.shn
+     3:20.31       35352956 B   ---   --   ---xx    shn  0.7624  84 sbds d1 t06.shn
+     6:16.60       66467564 B   ---   --   ---xx    shn  0.7964  84 sbds d1 t07.shn
+     6:08.53       65039900 B   ---   --   ---xx    shn  0.7451  84 sbds d1 t08.shn
+     6:07.60       64879964 B   ---   --   ---xx    shn  0.7362  84 sbds d1 t09.shn
+     6:35.02       69682748 B   ---   --   ---xx    shn  0.7887  84 sbds d1 t10.shn
+     3:50.53       40696700 B   ---   --   ---xx    shn  0.7782  84 sbds d1 t11.shn
+     4:14.37       44892668 B   ---   --   ---xx    shn  0.7975  84 sbds d1 t12.shn
+     5:43.22       60556988 B   ---   --   ---xx    shn  0.7746  84 sbds d2 t01.shn
+     5:01.74       53270492 B   ---   --   ---xx    shn  0.7885  84 sbds d2 t02.shn
+     3:24.10       36009164 B   ---   --   ---xx    shn  0.8154  84 sbds d2 t03.shn
+     3:59.51       42279596 B   ---   --   ---xx    shn  0.8225  84 sbds d2 t04.shn
+     5:06.50       54096044 B   ---   --   ---xx    shn  0.7475  84 sbds d2 t05.shn
+     4:29.42       47550428 B   ---   --   ---xx    shn  0.7034  84 sbds d2 t06.shn
+     5:32.60       58705964 B   ---   --   ---xx    shn  0.6973  84 sbds d2 t07.shn
+     4:06.58       43530860 B   ---   --   ---xx    shn  0.6893  84 sbds d2 t08.shn
+     5:28.70       58023884 B   ---   --   ---xx    shn  0.6826  84 sbds d2 t09.shn
+     4:59.30       52814204 B   ---   --   ---xx    shn  0.7759  84 sbds d2 t10.shn
+     4:58.65       52720124 B   ---   --   ---xx    shn  0.4963  84 sbds d2 t11.shn
+     5:49.61       61707116 B   ---   --   ---xx    shn  0.4826  84 sbds d2 t12.shn
+   117:36.47     1244790000 B                            0.7228  (24 files)
+=================== 
+=================== 
+=================== 

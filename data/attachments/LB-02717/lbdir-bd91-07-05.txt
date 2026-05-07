@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-07-05 
+=================== 
+=================== 
+=================== 
+fefb28c06e86c1834f06ed8ef4c34cf5  bd91-07-05-LB-2717.txt
+6e4b63e898a74968514330a50755a159  bd91-07-05_Mansfield.md5
+9edf1fc57f67d7b044d737fa941a9000  bd91-07-05_Mansfield.txt
+ae90a24c1ce517b8fb787925da0e0c00  bd91-07-05d1t01.shn
+2c35dba26e76cf7e76a0856718316eaf  bd91-07-05d1t02.shn
+76e2fb80d4a86ad74252e45d2dd4e9ea  bd91-07-05d1t03.shn
+3d1d8f3da9be1500528d71506499e0d8  bd91-07-05d1t04.shn
+80293dd81cb75b422aac69c725313fa5  bd91-07-05d1t05.shn
+4e6bab509c01e38f41830d6d493f5d41  bd91-07-05d1t06.shn
+4c581a3e6ed3a419ac1ea2385eaa5526  bd91-07-05d1t07.shn
+c01137b2f8a0fd55a0e8b793d81e5183  bd91-07-05d1t08.shn
+ec6cea7b757fa6de981cc9648d4f7818  bd91-07-05d1t09.shn
+33a2702141a8c822b3d9ee3eadf2684c  bd91-07-05d1t10.shn
+48a4206c02f015d297e99d1c2609dca1  bd91-07-05d2t01.shn
+22498ffd4708e15ac7a4840f50b9bdf0  bd91-07-05d2t02.shn
+63a2078775cf8b5b996c8458b8dfd138  bd91-07-05d2t03.shn
+f4bfed0846756010611ead416b5d51e4  bd91-07-05d2t04.shn
+db1cf11ceeaaa86a4f991b9b493c4e27  bd91-07-05d2t05.shn
+1ebda2e579904ac6c3e301f1d6a93aea  bd91-07-05d2t06.shn
+a5297d9458714f2c9ee69e38a8e72085  bd91-07-05d2t07.shn
+5ac478c6b3b69e0109664987bfb26748  bd91-07-05d2t08.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-07-05 
+=================== 
+=================== 
+=================== 
+2a034e8358a94de94242d97472bbf5e4  [shntool]  bd91-07-05d1t01.wav
+9811ecd8b95075bd9197c6ab98bacb4c  [shntool]  bd91-07-05d1t02.wav
+229254416c71160c8036c73488f1c5ea  [shntool]  bd91-07-05d1t03.wav
+c0eb7f77901476e2d25e8a5592909902  [shntool]  bd91-07-05d1t04.wav
+0bdc9de4a4d832d26f0a14a992f16a3a  [shntool]  bd91-07-05d1t05.wav
+19acf12f72c2a6ea19e32088f7aec540  [shntool]  bd91-07-05d1t06.wav
+1b04003265ec89516138ab62f4df978d  [shntool]  bd91-07-05d1t07.wav
+721b9cb7c7f85720abfcd8544d0600ec  [shntool]  bd91-07-05d1t08.wav
+306c480f1959ddde1091b863bff70dca  [shntool]  bd91-07-05d1t09.wav
+e2664a1b50304c766fe3ac82dd929fe5  [shntool]  bd91-07-05d1t10.wav
+5382e16f37943d53945d89f538061625  [shntool]  bd91-07-05d2t01.wav
+6a1a25b686e94847ef04af56bad38778  [shntool]  bd91-07-05d2t02.wav
+606dc85b7330802293a4198394cf160a  [shntool]  bd91-07-05d2t03.wav
+11adaa85f819f179ec87bd83891c4836  [shntool]  bd91-07-05d2t04.wav
+569b47bef1e8dfb35c557746c1a47fc1  [shntool]  bd91-07-05d2t05.wav
+3853ecccdffeebc7cb3620117826a705  [shntool]  bd91-07-05d2t06.wav
+a597507906a5c630bc11b0da01086ba0  [shntool]  bd91-07-05d2t07.wav
+da763436a9bb694f6f6083096efed81d  [shntool]  bd91-07-05d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-07-05 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.37       73822268 B   ---   --   -----    wav  1.0000  bd91-07-05d1t01.wav
+     5:04.38       53715020 B   ---   --   -----    wav  1.0000  bd91-07-05d1t02.wav
+     4:52.00       51508844 B   ---   --   -----    wav  1.0000  bd91-07-05d1t03.wav
+     4:53.08       51704060 B   ---   --   -----    wav  1.0000  bd91-07-05d1t04.wav
+     6:06.20       64609484 B   ---   --   -----    wav  1.0000  bd91-07-05d1t05.wav
+     3:20.00       35280044 B   ---   --   -----    wav  1.0000  bd91-07-05d1t06.wav
+     5:07.52       54277148 B   ---   --   -----    wav  1.0000  bd91-07-05d1t07.wav
+     4:13.42       44728028 B   ---   --   -----    wav  1.0000  bd91-07-05d1t08.wav
+     4:57.61       52534316 B   ---   --   -----    wav  1.0000  bd91-07-05d1t09.wav
+     5:36.58       59406860 B   ---   --   -----    wav  1.0000  bd91-07-05d1t10.wav
+     6:37.00       70030844 B   ---   --   -----    wav  1.0000  bd91-07-05d2t01.wav
+     4:16.12       45186668 B   ---   --   -----    wav  1.0000  bd91-07-05d2t02.wav
+     5:38.04       59632652 B   ---   --   -----    wav  1.0000  bd91-07-05d2t03.wav
+     3:43.70       39501884 B   ---   --   -----    wav  1.0000  bd91-07-05d2t04.wav
+     5:28.15       57894524 B   ---   --   -----    wav  1.0000  bd91-07-05d2t05.wav
+     4:37.11       48888716 B   ---   --   -----    wav  1.0000  bd91-07-05d2t06.wav
+     6:50.62       72469868 B   ---   --   -----    wav  1.0000  bd91-07-05d2t07.wav
+     7:10.15       75887324 B   ---   --   -----    wav  1.0000  bd91-07-05d2t08.wav
+    95:31.55     1011078552 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

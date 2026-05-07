@@ -1,0 +1,15 @@
+17bf521d1a2a13801c7ceb3978c5f9ea *bd04-08-31-taper-f-d2t03.shn
+a2c0045f9094ea4a2f54ba4a6728b571 *bd04-08-31-taper-f-d2t04.shn
+978f2c17f7c549429174b9c6cab1a75d *bd04-08-31-taper-f-d2t05.shn
+5b55c12be73cb72d2a2b56949eebe741 *bd04-08-31-taper-f-d2t06.shn
+07c36348c2403596502f03f51a3d5f59 *bd04-08-31-taper-f-d1t01.shn
+f46e9a1ed8de0c76a8cdb202015dde29 *bd04-08-31-taper-f-d1t02.shn
+c3dea2c255c3ecaccb09b6682aa8f2aa *bd04-08-31-taper-f-d1t03.shn
+b21a51b193c5167ff4d3dfab8376a5cd *bd04-08-31-taper-f-d1t04.shn
+6e77da17f6018f4fbca45d4ecd061dca *bd04-08-31-taper-f-d1t05.shn
+e9d95cc37e662607c0f34fe208407a6f *bd04-08-31-taper-f-d1t06.shn
+634d226f35fee799f2a4a498c0da8c71 *bd04-08-31-taper-f-d1t07.shn
+2267530baae0d58030bc133efeeb48d7 *bd04-08-31-taper-f-d1t08.shn
+8596354d854ed048b00331ddbf18ad87 *bd04-08-31-taper-f-d1t09.shn
+961dce0762b98e30d36bac2ccc03164f *bd04-08-31-taper-f-d2t01.shn
+6029499ffee506554f22251653cfe957 *bd04-08-31-taper-f-d2t02.shn

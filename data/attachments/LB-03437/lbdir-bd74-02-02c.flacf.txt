@@ -1,0 +1,137 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-02-02c.flacf 
+=================== 
+=================== 
+=================== 
+a3a1750fa9a4a3ae3b31e17c764c6c5d  Ann02-02-74(SA)-B.jpg
+745a08790d3b9c3d90b9e0e53c55b819  Ann02-02-74(SA)-F.jpg
+18518e92d93adc88834d8c5fbb854a8b  bd74-02-02c-LB-3437.txt
+51585e4a9dffcb2c6780be507a27fb5f  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T01.flac
+2cd52bf90f8e15d83e1514dff9e7ab0b  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T02.flac
+259384b1701b7f2e6db972badcb4e998  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T03.flac
+3c0f4e31815f79b21e54e4ba80f66bf6  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T04.flac
+72118e85cab80546e5a324c92039d7df  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T05.flac
+3cfff713cbee0d233dd8dc8cdfa64e6e  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T06.flac
+63af9e6c08fd71d5ac127d43031a4788  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T07.flac
+67781da34668fca17a5d1665f88afd0e  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T08.flac
+664189ee03ff2eb1cbd8b90347eb76f2  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T09.flac
+bc2f7d89a1bb5f6d92b65ea5c447bc51  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T10.flac
+222dc70fa7cc4d8acfe978647dc24569  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T11.flac
+bf91287f2da25686e65fd45fb817474f  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T12.flac
+a23fb35a1c751893435422fead161ff8  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T13.flac
+6e160471b4864c0c594414bcecbc8fce  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T14.flac
+4319e5c7311429aef1c4717f9a7e9a14  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T15.flac
+fa3c768b95358f54053097c46ffeeaf8  Disk 1\Dylan and The Band Ann Arbor 1974-02-02 D1 T16.flac
+85a4caa742df05793d029d948bb54ac3  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T01.flac
+68fa10321c6d5575a5d335f7309a4fe7  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T02.flac
+1afc69faed96c922f83e9e72c2343893  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T03.flac
+fc92c4840bb2ac2ca6cb02bbb213ffc1  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T04.flac
+9d7439a5587238da5927cddf76d89347  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T05.flac
+064fa7bd86bdfe062fb4b6cddef79d74  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T06.flac
+bcd37d44db61cb41b680f6501caf90a8  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T07.flac
+8dcd91b705d9ddee349bd86b2270f180  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T08.flac
+37e95d5ae6029a25a53b57aadb4d7477  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T09.flac
+311a414ec30d78b02c1a44469959980b  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T10.flac
+603ad8837813e4cc40dfa27f0d0add70  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T11.flac
+1214b19c733a6d8066e232c872cc89c6  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T12.flac
+6de0cc0cf2befaad356a25de996b8b7b  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T13.flac
+735dfaa8ed45cabfc7ecf892783ef11f  Disk 2\Dylan and The Band Ann Arbor 1974-02-02 D2 T14.flac
+05565e9f8ad714a7a9629af51411db49  Dylan Band Ann Arbor 1974-02-02.md5
+ede54ec4f59a6383f843f67f74eff592  Dylan The Band Ann Arbor 1974-02-02.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-02-02c.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+Dylan and The Band Ann Arbor 1974-02-02 D1 T01.flac:0515543cf27f41064ff340bbcc5cc32b
+Dylan and The Band Ann Arbor 1974-02-02 D1 T02.flac:409d86a43f91a386d32573ad5984d39a
+Dylan and The Band Ann Arbor 1974-02-02 D1 T03.flac:99a8530c6334f7ac6d51fd0fb8ea20e1
+Dylan and The Band Ann Arbor 1974-02-02 D1 T04.flac:5b12b88a00dc07b247061c341cf6af15
+Dylan and The Band Ann Arbor 1974-02-02 D1 T05.flac:ec176e3b9018e1f2731b3258252ac4a2
+Dylan and The Band Ann Arbor 1974-02-02 D1 T06.flac:c1543de1ae67245bb49eb144250eda13
+Dylan and The Band Ann Arbor 1974-02-02 D1 T07.flac:d72222d69f4600ff0a154971e38afb80
+Dylan and The Band Ann Arbor 1974-02-02 D1 T08.flac:314ae7171c4e981ac7da4556aa7330dd
+Dylan and The Band Ann Arbor 1974-02-02 D1 T09.flac:10aaa430ce819d24b13dde8b097c861a
+Dylan and The Band Ann Arbor 1974-02-02 D1 T10.flac:3808a074dec71599b6269f2a16622c29
+Dylan and The Band Ann Arbor 1974-02-02 D1 T11.flac:d8d257db887d5e9955301579fbee80c8
+Dylan and The Band Ann Arbor 1974-02-02 D1 T12.flac:beeef7f9ec428a137d5b98863090a1ef
+Dylan and The Band Ann Arbor 1974-02-02 D1 T13.flac:e727d0d53687a870fd0a28d269b5f651
+Dylan and The Band Ann Arbor 1974-02-02 D1 T14.flac:7046b59f80e2c06591abaaf3dfb953d9
+Dylan and The Band Ann Arbor 1974-02-02 D1 T15.flac:072ea4935e09a603e1e617f44228f685
+Dylan and The Band Ann Arbor 1974-02-02 D1 T16.flac:e9792a8c6bd95e0056c0e689752c06c1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-02-02c.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+Dylan and The Band Ann Arbor 1974-02-02 D2 T01.flac:b91325832cf2cdcbbc1e6484ae28975b
+Dylan and The Band Ann Arbor 1974-02-02 D2 T02.flac:e60cac9a2e85a684aa7f5e913a58c4b9
+Dylan and The Band Ann Arbor 1974-02-02 D2 T03.flac:e7690dea2d8e4d185c5dc07233d5732a
+Dylan and The Band Ann Arbor 1974-02-02 D2 T04.flac:dc176efee28e172347c146d24622541e
+Dylan and The Band Ann Arbor 1974-02-02 D2 T05.flac:d925bc70618e53ee00a8b7fba9369743
+Dylan and The Band Ann Arbor 1974-02-02 D2 T06.flac:031bac6c67f3e9eb55db709c11b8e436
+Dylan and The Band Ann Arbor 1974-02-02 D2 T07.flac:831483243391bdf9f605cf383654ac90
+Dylan and The Band Ann Arbor 1974-02-02 D2 T08.flac:4bcf26ef7eabcdfd9b2d0dc63cfdf4a5
+Dylan and The Band Ann Arbor 1974-02-02 D2 T09.flac:2fb3193bb4747e1647b22ef1f3d5edf3
+Dylan and The Band Ann Arbor 1974-02-02 D2 T10.flac:62a3c96d0a8b9f2ac2a060283559102b
+Dylan and The Band Ann Arbor 1974-02-02 D2 T11.flac:58104fc10f6485db77e6200aaae5b10d
+Dylan and The Band Ann Arbor 1974-02-02 D2 T12.flac:462cc8deb20fa3ba356891d85cbf0046
+Dylan and The Band Ann Arbor 1974-02-02 D2 T13.flac:a25865a5c4106fa5bf2e33dc5c6a7394
+Dylan and The Band Ann Arbor 1974-02-02 D2 T14.flac:77a41ecab64091f97b215ab8d05447ce
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-02c.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:02.00       10936844 B   ---   --   ---xx   flac  0.5366  Dylan and The Band Ann Arbor 1974-02-02 D1 T01.flac
+     4:14.08       44824460 B   ---   --   ---xx   flac  0.5738  Dylan and The Band Ann Arbor 1974-02-02 D1 T02.flac
+     3:05.49       32749292 B   ---   --   ---xx   flac  0.5699  Dylan and The Band Ann Arbor 1974-02-02 D1 T03.flac
+     5:34.00       58917644 B   ---   --   ---xx   flac  0.5731  Dylan and The Band Ann Arbor 1974-02-02 D1 T04.flac
+     3:30.67       37201628 B   ---   --   ---xx   flac  0.5743  Dylan and The Band Ann Arbor 1974-02-02 D1 T05.flac
+     3:39.03       38638700 B   ---   --   ---xx   flac  0.5775  Dylan and The Band Ann Arbor 1974-02-02 D1 T06.flac
+     3:32.48       37509740 B   ---   --   ---xx   flac  0.5698  Dylan and The Band Ann Arbor 1974-02-02 D1 T07.flac
+     4:52.54       51635852 B   ---   --   ---xx   flac  0.5784  Dylan and The Band Ann Arbor 1974-02-02 D1 T08.flac
+     4:28.08       47294060 B   ---   --   ---xx   flac  0.5732  Dylan and The Band Ann Arbor 1974-02-02 D1 T09.flac
+     3:46.07       39882908 B   ---   --   ---xx   flac  0.5807  Dylan and The Band Ann Arbor 1974-02-02 D1 T10.flac
+     3:12.47       33979388 B   ---   --   ---xx   flac  0.5775  Dylan and The Band Ann Arbor 1974-02-02 D1 T11.flac
+     3:56.36       41715116 B   ---   --   ---xx   flac  0.5728  Dylan and The Band Ann Arbor 1974-02-02 D1 T12.flac
+     4:53.66       51840476 B   ---   --   ---xx   flac  0.5916  Dylan and The Band Ann Arbor 1974-02-02 D1 T13.flac
+     3:14.41       34318076 B   ---   --   ---xx   flac  0.5968  Dylan and The Band Ann Arbor 1974-02-02 D1 T14.flac
+     3:48.05       40231004 B   ---   --   ---xx   flac  0.5961  Dylan and The Band Ann Arbor 1974-02-02 D1 T15.flac
+     4:24.50       46687244 B   ---   --   ---xx   flac  0.5939  Dylan and The Band Ann Arbor 1974-02-02 D1 T16.flac
+    61:15.39      648362432 B                            0.5793  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-02c.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:16.25       13465244 B   ---   --   ---xx   flac  0.4991  Dylan and The Band Ann Arbor 1974-02-02 D2 T01.flac
+     3:04.33       32535260 B   ---   --   ---xx   flac  0.5329  Dylan and The Band Ann Arbor 1974-02-02 D2 T02.flac
+     3:57.69       41969132 B   ---   --   ---xx   flac  0.5338  Dylan and The Band Ann Arbor 1974-02-02 D2 T03.flac
+     4:18.67       45668828 B   ---   --   ---xx   flac  0.4938  Dylan and The Band Ann Arbor 1974-02-02 D2 T04.flac
+     4:44.11       50123516 B   ---   --   ---xx   flac  0.5090  Dylan and The Band Ann Arbor 1974-02-02 D2 T05.flac
+     6:14.22       66025388 B   ---   --   ---xx   flac  0.5209  Dylan and The Band Ann Arbor 1974-02-02 D2 T06.flac
+     4:19.25       45746444 B   ---   --   ---xx   flac  0.4940  Dylan and The Band Ann Arbor 1974-02-02 D2 T07.flac
+     3:35.64       38076572 B   ---   --   ---xx   flac  0.5257  Dylan and The Band Ann Arbor 1974-02-02 D2 T08.flac
+     4:03.68       43025180 B   ---   --   ---xx   flac  0.5263  Dylan and The Band Ann Arbor 1974-02-02 D2 T09.flac
+     4:25.11       46771916 B   ---   --   ---xx   flac  0.5191  Dylan and The Band Ann Arbor 1974-02-02 D2 T10.flac
+     5:39.47       59910188 B   ---   --   ---xx   flac  0.5314  Dylan and The Band Ann Arbor 1974-02-02 D2 T11.flac
+     4:02.20       42735884 B   ---   --   ---xx   flac  0.5343  Dylan and The Band Ann Arbor 1974-02-02 D2 T12.flac
+     7:23.17       78185228 B   ---   --   ---xx   flac  0.5472  Dylan and The Band Ann Arbor 1974-02-02 D2 T13.flac
+     4:55.38       52127420 B   ---   --   ---xx   flac  0.5347  Dylan and The Band Ann Arbor 1974-02-02 D2 T14.flac
+    62:00.67      656366200 B                            0.5238  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,8 @@
+Bob Dylan, 7/27/95, Montpellier, France, Espace Grammont, 1CDR
+
+LB-2725, (72min), version "a"; Source : Sony D7, micros Sennheiser. Master Dat --->CDR--->EAC(secure mode) --->Flacfrontend (level8); bittorrent download 05/05; very close match in eac to previous version except for offset (did not listen to all of this one)
+
+1 - Drifter's Escape, 2 - It's Take A Lot To Laugh, It Take A Lot To Cry, 3 - All Along The Watchtower, 4 - I Shall Be Released, 5 - Silvio ( Dylan & Hunter ), 6 - Tangled Up In Blue, 7 - It's All Over Now, Baby Blue, 8 - Seing The Real You At Last, 9 - Rainy Day Women #12&35, Bob Dylan band:, Bucky Baxter Steel Guitar, J J Jackson Guitars, Tony Garnier Bass, Winston Watson Drums, ROLLING STONES SET GUEST SPOT, 10 - Let It Bleed, 11 - Angie, 12 - Like A Rolling Stone (*), (*) Bob Dylan Guitar/Harmonica
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

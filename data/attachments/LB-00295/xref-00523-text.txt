@@ -1,0 +1,72 @@
+===================
+===================
+===================
+=== bd1991-08-19 Belo Horizonte.ffp
+===================
+===================
+===================
+bd91-08-19d1t01.flac:f3d0b6231b4acc21e392849ee8323287
+bd91-08-19d1t02.flac:14f840280a7066ac41cbc01a5a7075eb
+bd91-08-19d1t03.flac:110ccfb284407eaa2c623b69747fe02e
+bd91-08-19d1t04.flac:ad12afc35d27c8890940ae9921f7f9aa
+bd91-08-19d1t05.flac:7e05c3f966118dbd40c50d0dd9b05925
+bd91-08-19d1t06.flac:31e4115fce85adcf57ac730172c90a26
+bd91-08-19d1t07.flac:d4778f29e36c296b0307f09c8fa43796
+bd91-08-19d1t08.flac:7904dd8c594ed048be36660d7504736f
+bd91-08-19d1t09.flac:1e0a5335851a335509650fe1dd63841c
+bd91-08-19d1t10.flac:15b2bc7ffa6689a28964e0f906abd33d
+bd91-08-19d2t01.flac:d5b1ed5d40264fff7bd600e72b8d686f
+bd91-08-19d2t02.flac:c706cceca649ccd23675da09ecbbb7cb
+bd91-08-19d2t03.flac:89f131a753217dd1746bf8b3ce773d31
+bd91-08-19d2t04.flac:f287caa5dceb84bc08f7992211af8520
+bd91-08-19d2t05.flac:9e97cc73b11026396cd1e86bd5779539
+bd91-08-19d2t06.flac:6e2face6716bf4a32b6847ed6704bff4
+bd91-08-19d2t07.flac:f0c9e2284f3fdd0dcd2a7bc2a9fe1e86
+bd91-08-19d2t08.flac:d0d5f72afa2866052504b0167fc2ee21
+===================
+===================
+===================
+=== bd1991-08-19 Belo Horizonte_WAV.md5
+===================
+===================
+===================
+79a463b87e8eff9829d9aab5edb8cf6e *bd91-08-19d1t01.wav
+c4610587f8e51edd6f9697873dc047a7 *bd91-08-19d1t02.wav
+dc511a79f5195b33c0e67633c80b6ae9 *bd91-08-19d1t03.wav
+986b2a0e057b4570069a23ccfdc17996 *bd91-08-19d1t04.wav
+0e61d3ddadb6deab7bd95a57513ecfc7 *bd91-08-19d1t05.wav
+343c18c190f40fc4b65ce64afd0a7eaf *bd91-08-19d1t06.wav
+e77f5e1e3bca63288e7892b6faa74978 *bd91-08-19d1t07.wav
+81c0af7c6d8e9a8cfa4a5b1fddc42739 *bd91-08-19d1t08.wav
+17230c5e00af0689cf17f62e70ff4d9d *bd91-08-19d1t09.wav
+9790f79c469ac68c83aa8642af028bdd *bd91-08-19d1t10.wav
+1115b61f1daca6e4860fa394e764df07 *bd91-08-19d2t01.wav
+bdfcfeb25237acbdc4d57b48bc55dfe2 *bd91-08-19d2t02.wav
+083686f34f0fd3672e8ca433ddd61ce1 *bd91-08-19d2t03.wav
+0c67db3158ba3f91f146200658caf70b *bd91-08-19d2t04.wav
+4be1e13344d92179fad4391a26c946b8 *bd91-08-19d2t05.wav
+9e12b73eeb715c015290f48564080415 *bd91-08-19d2t06.wav
+22c4d89951b4c108ce8cfbc5fe9eda9b *bd91-08-19d2t07.wav
+3896bb13f916aceaf8cafc4527dab69c *bd91-08-19d2t08.wav
+===================
+===================
+===================
+=== bd91-08-19.txt
+===================
+===================
+===================
+Bob Dylan, 8/19/91, Belo Horizonte, 2CDR
+
+(45min+42min), very good sound, noise d1t1 0:50; loud noises d1t3 0:5x to 1:0x, 1:29, 1;44, 3:37,  d1t4 0:51, plus more ongoing occasional noises for rest of show; like a bad cable connection introducing loud static which may be bad for speakers if played too loud
+
+CD1
+1 New Morning 2 Lay Lady Lay 3 All Along The Watchtower 4 I'll Remember You 5 Gotta Serve Somebody 6 Wiggle Wiggle 7 I'll Be Your Baby Tonight 8 Rainy Day Women # 12 & 35 9 It Ain't Me, Babe (acoustic w band) 10 Ring Them Bells (acoustic w band) 
+
+
+CD2 1 Mr. Tambourine Man (acoustic w band) 2 Gates Of Eden (acoustic w band) 3 Man In The Long Black Coat 4 Everything Is Broken 5 I Believe In You 6 Highway 61 Revisited 7 What Good Am I? 8 Ballad Of A Thin Man
+
+lineage : cdr trade>eac>wav>tlh>flac6
+source : same recording as LB-295 with different disc-split.
+===================
+===================
+===================

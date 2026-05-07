@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-22-b.flacf 
+=================== 
+=================== 
+=================== 
+06f0c394456adfb677778db9d1b564e9  CD1\01 Crash on the Levee (down in the flood).flac
+aa2abce84dffc455f7a8018b93453363  CD1\02 Man in the long black coat.flac
+445364edd67111b7bdd164a71b1a678d  CD1\03 All along the watchtower.flac
+81b7d448e530a1959df8f7c0ebe9a50b  CD1\04 Most likely you go your way (and I'll go mine).flac
+265d1d0e3ad7e665b12cae4da4ecf4f8  CD1\05 Tears of rage.flac
+95ca168d7d9640e04f6b48b0cd4978f0  CD1\06 Tombstone blues.flac
+8cc0e6bfa1eaf9b2fe9871b037d9d5aa  CD1\07 Mr. Tambourine man.flac
+9d47ee5f04ac198e367cd50e00f44af8  CD1\FLAC CD1.md5
+95461a9c27b2fbe30ce26508e41320c6  CD2\08 Desolation Row.flac
+7a7c024e164401f245bfefebef6019b9  CD2\09 It's all over now, baby blue.flac
+d2afd579fee66ea0bef39158dbbfbe98  CD2\10 Seeing the real you at last.flac
+b0fd5635f1d0080ee73dec3e9ef8b353  CD2\11 She belongs to me.flac
+57797ac61f767ba94920815eba68a409  CD2\12 Obviously five believers.flac
+a422141ea53508719cb183b1792904d8  CD2\13 Lenny Bruce.flac
+607c5f64b416a4fb0cde25af2d39286b  CD2\14 My back pages.flac
+908f3cc6ec19ade62236ddf200f7bae4  CD2\FLAC CD2.md5
+1925cf377a21b613e7f47d620219d737  Info\1995-05-22 The Warfield Theater, San Francisco, California, USA [uT].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-22-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the Levee (down in the flood).flac:e01aea302a59e402c6d698b41bd2ba03
+02 Man in the long black coat.flac:b507f3bdfcbea0f97b047361305962e6
+03 All along the watchtower.flac:3a8e800132c5775b53e69de117ba22a4
+04 Most likely you go your way (and I'll go mine).flac:8a32a7b1cc2158957f6e61baf0ee6fb8
+05 Tears of rage.flac:d88cb95bdaaabe121ff807e72a9b8ad9
+06 Tombstone blues.flac:799d6780c7a078b7aa27bcbeac3c0b50
+07 Mr. Tambourine man.flac:cd68eacbd7dd5e07f4a55855112d31e4
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-22-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+08 Desolation Row.flac:2ab90acd33aefbd30986d1737961b050
+09 It's all over now, baby blue.flac:af74a9ccbbde65cecda2c1dcd27bf539
+10 Seeing the real you at last.flac:0e485cae39213cdc8518e303095b9bf2
+11 She belongs to me.flac:929917d7dd4c1f6ff110ec18f2e965f5
+12 Obviously five believers.flac:4428ed993dc5faa9a879317e66275e8c
+13 Lenny Bruce.flac:490d8c087c69033a73cf7a0ea4e2e828
+14 My back pages.flac:94bbb8dedd99a886c86601b92f4f3407
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-22-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.00       50979644 B   ---   --   ---xx   flac  0.5761  01 Crash on the Levee (down in the flood).flac
+     6:47.66       71950076 B   ---   --   ---xx   flac  0.5492  02 Man in the long black coat.flac
+     5:43.11       60531116 B   ---   --   ---xx   flac  0.6094  03 All along the watchtower.flac
+     8:51.64       93818972 B   ---   --   ---xx   flac  0.5905  04 Most likely you go your way (and I'll go mine).flac
+     8:10.27       86499548 B   ---   --   ---xx   flac  0.5703  05 Tears of rage.flac
+     7:57.32       84218108 B   ---   --   ---xx   flac  0.5933  06 Tombstone blues.flac
+     6:51.10       72523964 B   ---   --   ---xx   flac  0.5100  07 Mr. Tambourine man.flac
+    49:10.60      520521428 B                            0.5715  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-22-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:06.39       96406172 B   ---   --   ---xx   flac  0.5007  08 Desolation Row.flac
+     8:23.43       88830380 B   ---   --   ---xx   flac  0.4948  09 It's all over now, baby blue.flac
+     6:44.15       71300924 B   ---   --   ---xx   flac  0.5437  10 Seeing the real you at last.flac
+     7:23.25       78204044 B   ---   --   ---xx   flac  0.5129  11 She belongs to me.flac
+     6:37.22       70082588 B   ---   --   ---xx   flac  0.5438  12 Obviously five believers.flac
+     8:57.51       94846796 B   ---   --   ---xx   flac  0.5196  13 Lenny Bruce.flac
+     8:35.08       90864860 B   ---   --   ---xx   flac  0.6043  14 My back pages.flac
+    55:47.53      590535764 B                            0.5307  (7 files)
+=================== 
+=================== 
+=================== 

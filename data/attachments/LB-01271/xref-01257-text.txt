@@ -1,0 +1,806 @@
+===================
+===================
+===================
+=== bd1990-02-08-hg.info.lbp51.txt
+===================
+===================
+===================
+Bob Dylan
+Hammersmith Odeon
+London, UK
+February 8, 1990
+
+OVER YOUR SENSES YOU HAVE NO CONTROL
+
+Holy Grail Version
+
+By kind request of "mi buen amigo" Blindwilly.
+
+As I tried to explain on a comment I posted on the first torrent I made of this same filset in 2007-12-13, this is coming from a Charlespoet torrent from 2005-10-29, a pack of Holy Grail versions from 1990 titled "Complete_Paris_90_London_2_7_8_90_Holy_Grails". Charlespoet extraction of low gen disks he received from Kisseber had the same flaws that were reported to be repaired on LB-1271, so they might have preceeded LB-1271 version (as the actual LB review said it was already fixed: "small digi pops d2t14 1:49, 2:52, 2:54 were all repaired in cooledit"). I downloaded Charles torrent and worked on it to fix a few of the most relevant problems I found on that copy. This is the fixed copy I produced myself.
+
+So the actual lineage should be:
+
+Kisseber low gen Audio Disks (Holy Grail) > wav (Charlespoet CDDA extraction with flaws described as repaired on LB-1271 review) > flac (flac 1.1.1) > wav (flac 1.1.3) > wav (Adobe Audition 1.0) > flac (Flac 1.1.3 - align on SB - level 8 - verify on)
+
+Enjoy!
+
+Luisbp51 (Hungercity September 12, 2013)
+
+==================
+ORIGINAL INFO FILE
+==================
+
+Bob Dylan
+Hammersmith Odeon
+London, UK
+February 8, 1990
+
+Holy Grail Version
+
+Got this one at Dime as part of a big pack of five shows from 1990. Was described as LB-1271 but md5 checksums I obtained from my downloaded fileset didn't really match those of the LB archive. In fact those are shnf while these were flac. There was a semi-gap on left channel d1t02 @ 4:11 which is not reported to be at LB-1271. So I decided not to care about identity of the fileset (flac fingerprints) and managed to repair the gap I found. I respected the flacs for disc 2 except for track 14 where I heard clicks clearly visible at the spectral view in its waveform that were easy to clean. Disc 1 had only the mentioned flaw, but once I had to modify a few samples from d1t2 had to align on sector boundaries all the rest, as well, so I guessed d1 flacs would change since then. Fortunately, as I carefully patched a small number of samples from one channel to another without editing anything at all, the resulted wav file had no sector boundaries error origined. Consequently there are only 3 flac files different now from my original download in this set, d1t02, because of the gap elimination, and last two tracks on d2 after editing the clicks on d2t14 and align on sector boundaries. Did also rename them all from Track  1 to Track  9, giving the following names instead: Track 01 to Track 09, on both discs. Thanks to Charlespoet, the original seeder whom I did grab it from, and kisseber who was actually supplier of the audio disks where this set comes from (as Charles did state).
+
+Small semi-gap on left channel d1t02 @ 4:11.999 repaired by patching 13 samples from the opposite channel.
+Clicks d2t14 @ 1:49.415, 2:52.043 & 2.54.909 were easily micro-patched, but just a fragment of a single sample in each one had to be eliminated to make it as smooth as it gets.
+Light diginoise on d2t06 @ 0:42.250 & 0:47.730 will have to remain as it was, as I couldn't find a way to solve the problem without damaging the sound in the recording.
+
+Lineage: Kisseber's low gen audio disks > Charlespoet > wav (Unknown extraction) > wav (cooledit: digipops repair) > Flac (unknown software)
+         flacs on d1 > wav (Flac Frontend 1.1.3) > d1t02.wav (Adobe Audition 1.0 - gap removed) > flac (Flac Frontend 1.1.3 - align on SB / just d1 - level 8 - verify on) 
+
+Filling first of my good buddy Valentin requests.
+
+Luisbp51 seed at HC. December 2007
+
+Enjoy!
+
+
+ORIGINAL TEXT FILE (set_info.txt) AND BOTH ORIGINAL FFP's (flac.txt) ARE ALSO INCLUDED. 
+________________________________________________________________________________________________________________________
+
+THESE ARE FRAGMENTS OF THE ORIGINAL INFO FILE THAT COULD STILL BE OF ANY INTEREST FOR SOMEBODY, CONCERNING THIS TORRENT:
+
+
+This evening I found the last two shows from the '90 Hammersmith Residency (no worries I will
+be getting the rest of them and in the meantime perhaps some other beatific soul could post
+the first four Hammersmith's) plus the complete '90 Paris Residency -- all of them Holy Grails!
+I very much want to thank Chuck for sending me these explosive shows in the first place. 
+His generosity, as so many of us already know, is truly inspiring (like Bob's music!!!). 
+Anyone out there with a copy of the Bauldie article about these shows please email me a copy - 
+THANK YOU!!!!!!!  charlespoet@adelphia.net
+
+DESCRIPTION OF EACH SHOW UPLOADED BY CHARLES ON THE WHOLE PACK WAS PROVIDED HERE. I JUST LEFT THE RELATED INFO: 
+
+
+Bob Dylan, 2/8/90, London, 2CDR 
+LB-1271, (39min+69min), from Holy Grail series; excellent sound; this is upgrade over 
+Doberman bootleg which is hissy in comparisom and is a different recording
+
+small digi pops d2t14 1:49, 2:52, 2:54 were all repaired in cooledit
+
+CD1
+
+01 intro
+02 Absolutely Sweet Marie
+03 Man In The Long Black Coat
+04 Positively 4th Street 
+05 Ballad Of A Thin Man
+06 Pledging My Time
+07 I Want You
+08 Political World 
+09 You Angel You
+10 All Along The Watchtower 
+
+CD2
+
+01 Boots Of Spanish Leather (acoustic)
+02 To Ramona (acoustic)
+03 She Belongs To Me (acoustic) 
+04 Mr. Tambourine Man (acoustic)
+05 Disease Of Conceit
+06 You're A Big Girl Now 
+07 I'll Remember You
+08 Where Teardrops Fall
+09 Seeing The Real You At Last 
+10 Every Grain Of Sand
+11 Rainy Day Women # 12 & 35
+12 Like A Rolling Stone 
+13 It Ain't Me, Babe (acoustic)
+14 I've Been All Around This World
+15 Highway 61 Revisited 
+
+The band for these incendiary shows:
+
+Bob Dylan (vocal, guitar, harmonica)
+G.E. Smith (guitar, backup vocal)
+Tony Garnier (bass)
+Christopher Parker (drums)
+
+ 
+Thanks to Olof, Lossless Bob and Chuck!!!
+Enjoy!
+Charlespoet
+
+
+NOTE: As I told before Charlespoet fileset wasn't really LB-1271, but just a different set of files (of course from the same source, as can be easily deduced).
+===================
+===================
+===================
+=== bd1990-02-08-hg.md5
+===================
+===================
+===================
+cf327875a955a1612f90ca57aa02ce2b *1\d1.ffp
+0857cc87d4ee2eb589915c2b1eb6eaa5 *1\d1.flac-reconversion.log.txt
+e39c62aff19411677d8b192a70d05a57 *1\d1.flac.md5
+454d8d6fba4133dfdb4908fe69901494 *1\d1.wav.md5
+808677f2a1efa386bcb1a8991bfe6036 *1\flac.txt
+bd014c558fe632471301d473da3e6360 *1\Track 01.flac
+ab0adecd50ad038c2e984f9bee80432e *1\Track 02.flac
+1c49886fe46bd0696825e97f0ec03609 *1\Track 03.flac
+2ce12eba42b31035a2f24acb78a7a5f6 *1\Track 04.flac
+e591d4a9c88998e94a6a5ac8f675134d *1\Track 05.flac
+fcfe4dfa84ee053f814275527bdb46c1 *1\Track 06.flac
+561c884989d7a0cffc9b5e689ccd5dc6 *1\Track 07.flac
+0e124676e3ea88ec28289d1823b39b52 *1\Track 08.flac
+087be1244d02ea10e98a7b80335265c1 *1\Track 09.flac
+a03d917be6c0ae889c3e76fd3640c5e7 *1\Track 10.flac
+70c3aa39c90763bf473e87c3605653e7 *2\d2.ffp
+81943f67dfb98fcc57e533c38afe3c53 *2\d2.flac-reconversion.log.txt
+a871a8d84be18e74aa36132751f7184b *2\d2.flac.md5
+729e54245b78b54eb22ccf22107fde35 *2\d2.wav.md5
+888a50f4f3d5dbcceac19fc27a12ef19 *2\flac.txt
+57c2afbe75db747665dc4bf2a2f82a43 *2\Track 01.flac
+2ee7d944217a9d81eed8986abad05482 *2\Track 02.flac
+e9aff996111eafdb27b16431fcfc7065 *2\Track 03.flac
+c401996cca3f926d88a756dea0bb9a37 *2\Track 04.flac
+76966815f6c180cce96507dc780ad07f *2\Track 05.flac
+f3720e0283237f5db3d349fac43e1701 *2\Track 06.flac
+e0a59ece6e213666a44b7c25d48ffc40 *2\Track 07.flac
+e5862f6dc7470bad3e08e6884bf895a4 *2\Track 08.flac
+c7e09ae9270032b43991dad02bad43b7 *2\Track 09.flac
+f663b3af0e1b5e3f11c4c4dfbc5671bc *2\Track 10.flac
+32484d524efbe96ae487d91921653f5b *2\Track 11.flac
+b14579fc59437e461b2b94d3618a7d87 *2\Track 12.flac
+ec39ac17b25f811a9f95a04da2c43fa7 *2\Track 13.flac
+a5ff99cb776a16a59c82a67bd9961a04 *2\Track 14.flac
+166e6a64f186262704da268cb3c890c8 *2\Track 15.flac
+e3ba820ecaf8db11570a8364719f31be *artwork & info\bd1990-02-08-HolyGrail.d1t02.sa_fa.JPG
+0ba0ae284abfd753c4efc4f65368f8f2 *artwork & info\bd1990-02-08-HolyGrail.txt
+7fb1fd3ff6024421f255b969d150c150 *artwork & info\Lon02-08-90(HG)-B.jpg
+7ba90d0adbc485ba6c12a31c27f8993c *artwork & info\Lon02-08-90(HG)-F.jpg
+ecd2077a4c2c7c029a4d1d6f4b64c64c *artwork & info\Lon02-08-90HG(SA)-B.jpg
+49f25cd6c5cbd6873d16626bc07c2764 *artwork & info\Lon02-08-90HG(SA)-F.jpg
+ff74ad997588c9ed811e27974f4adb21 *artwork & info\original set_info.rectified.txt
+30357d31d49c8e9e10001650a276d2da *artwork & info\set_info.txt
+a7dc3f9d13512b86d34066f64202606d *bd1990-02-08-hg.info.lbp51.txt
+===================
+===================
+===================
+=== d1.ffp
+===================
+===================
+===================
+Track 01.flac:c59587d0a3ef88603e530a18a3c37359
+Track 02.flac:9c531ed099dce0529b598b069740f2ff
+Track 03.flac:2e5b7377daa6b4eeaa3e8ae3d7fde0cb
+Track 04.flac:ca46361a9288be1a940095bfec3ab3f5
+Track 05.flac:b6cf9b1ef83b59034287bae08c1ebc24
+Track 06.flac:097bbee98829e6fa3d8182a466953bb4
+Track 07.flac:5ced2b8b8602aa12cdbd88a02ed60480
+Track 08.flac:21cbeea827faf2b8471983154c13b21a
+Track 09.flac:15d064e2c519517fd0ef0a5468ae3667
+Track 10.flac:9c9a5f1d565ad078133a3f831e42b841
+===================
+===================
+===================
+=== d1.flac-reconversion.log.txt
+===================
+===================
+===================
+
+flac 1.1.3, Copyright (C) 2000,2001,2002,2003,2004,2005,2006  Josh Coalson
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+Track 01.wav: Verify OK, wrote 2420535 bytes, ratio=0,623
+Track 02.wav: Verify OK, wrote 29367927 bytes, ratio=0,645
+Track 03.wav: Verify OK, wrote 26351292 bytes, ratio=0,591
+Track 04.wav: Verify OK, wrote 31932197 bytes, ratio=0,609
+Track 05.wav: Verify OK, wrote 39478955 bytes, ratio=0,614
+Track 06.wav: Verify OK, wrote 24236810 bytes, ratio=0,613
+Track 07.wav: Verify OK, wrote 36777882 bytes, ratio=0,631
+Track 08.wav: Verify OK, wrote 20699919 bytes, ratio=0,638
+Track 09.wav: Verify OK, wrote 20349635 bytes, ratio=0,607
+Track 10.wav: 100% complete, ratio=0,616
+
+Presione una tecla para continuar . . .
+===================
+===================
+===================
+=== d1.flac.md5
+===================
+===================
+===================
+# MD5 checksums generated by MD5summer (http://www.md5summer.org)
+# Generated 13/12/2007 2:03:36
+
+bd014c558fe632471301d473da3e6360 *Track 01.flac
+ab0adecd50ad038c2e984f9bee80432e *Track 02.flac
+1c49886fe46bd0696825e97f0ec03609 *Track 03.flac
+2ce12eba42b31035a2f24acb78a7a5f6 *Track 04.flac
+e591d4a9c88998e94a6a5ac8f675134d *Track 05.flac
+fcfe4dfa84ee053f814275527bdb46c1 *Track 06.flac
+561c884989d7a0cffc9b5e689ccd5dc6 *Track 07.flac
+0e124676e3ea88ec28289d1823b39b52 *Track 08.flac
+087be1244d02ea10e98a7b80335265c1 *Track 09.flac
+a03d917be6c0ae889c3e76fd3640c5e7 *Track 10.flac
+===================
+===================
+===================
+=== d1.wav.md5
+===================
+===================
+===================
+# MD5 checksums generated by MD5summer (http://www.md5summer.org)
+# Generated 13/12/2007 1:58:41
+
+aa786af62d4815aaef605b5d6e9dfdd1 *Track 01.wav
+aea905766cab6fce2063bbd6bf3b5833 *Track 02.wav
+a8225ef1c5c878ecce367fc50085b95f *Track 03.wav
+fa361083ac7f100deee82777abbe1e81 *Track 04.wav
+a5232eb8cf980a8981a919429ce76d17 *Track 05.wav
+bd9fcd2f906d38234add24cbf0755285 *Track 06.wav
+ea25d732377ab7960a46bf329e7e55a9 *Track 07.wav
+278944424e1089489ff615c8a1170574 *Track 08.wav
+90dca36a0b448f582346b031951ea472 *Track 09.wav
+29e77f95559214ab21daa032f63ebf62 *Track 10.wav
+===================
+===================
+===================
+=== flac.txt
+===================
+===================
+===================
+Track 01.flac:c59587d0a3ef88603e530a18a3c37359
+Track 02.flac:387e8f7178ab8b04c4e02f7da2b1a322
+Track 03.flac:2e5b7377daa6b4eeaa3e8ae3d7fde0cb
+Track 04.flac:ca46361a9288be1a940095bfec3ab3f5
+Track 05.flac:b6cf9b1ef83b59034287bae08c1ebc24
+Track 06.flac:097bbee98829e6fa3d8182a466953bb4
+Track 07.flac:5ced2b8b8602aa12cdbd88a02ed60480
+Track 08.flac:21cbeea827faf2b8471983154c13b21a
+Track 09.flac:15d064e2c519517fd0ef0a5468ae3667
+Track 10.flac:9c9a5f1d565ad078133a3f831e42b841
+===================
+===================
+===================
+=== d2.ffp
+===================
+===================
+===================
+Track 01.flac:85d2efb9f1a22546bcec3932caa6123f
+Track 02.flac:e060edbb86f82d4193f8706ebe3ef1e5
+Track 03.flac:fb54c7ce9799c4697af3a694acbfa502
+Track 04.flac:81e07dc580cf82ed76a034a3e346cc1f
+Track 05.flac:c4f396f745296fe89d4ca6de6638b925
+Track 06.flac:e835176bfd9f306574277f407b863d27
+Track 07.flac:f42a0c6273f9b2ec735d265d971f6c4b
+Track 08.flac:34c669001c457b7045143f4275288b36
+Track 09.flac:836d5ad1b9acbc0ce67b6ddb586140c9
+Track 10.flac:5b2b7b35a2c190f027450ad2c01c8311
+Track 11.flac:120f94e960c344cf301f7272178010e4
+Track 12.flac:880aebb04dc0b7547aaebe21e2a67cea
+Track 13.flac:ac69e4208a04d014608d2156f1bfda70
+Track 14.flac:0d0cd5df33141ac84e7355b5bfdcf806
+Track 15.flac:74bb4e06ec78277f7d16ee1218813691
+===================
+===================
+===================
+=== d2.flac-reconversion.log.txt
+===================
+===================
+===================
+
+flac 1.1.3, Copyright (C) 2000,2001,2002,2003,2004,2005,2006  Josh Coalson
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+Track 01.wav: Verify OK, wrote 27992180 bytes, ratio=0,548
+Track 02.wav: Verify OK, wrote 28312733 bytes, ratio=0,551
+Track 03.wav: Verify OK, wrote 22826416 bytes, ratio=0,576
+Track 04.wav: Verify OK, wrote 41538042 bytes, ratio=0,549
+Track 05.wav: Verify OK, wrote 23390450 bytes, ratio=0,559
+Track 06.wav: Verify OK, wrote 5922576 bytes, ratio=0,575
+Track 07.wav: Verify OK, wrote 25655052 bytes, ratio=0,616
+Track 08.wav: Verify OK, wrote 20354000 bytes, ratio=0,593
+Track 09.wav: Verify OK, wrote 26513302 bytes, ratio=0,624
+Track 10.wav: Verify OK, wrote 40839890 bytes, ratio=0,596
+Track 11.wav: Verify OK, wrote 21723932 bytes, ratio=0,665
+Track 12.wav: Verify OK, wrote 47295169 bytes, ratio=0,678
+Track 13.wav: Verify OK, wrote 38042896 bytes, ratio=0,554
+Track 14.wav: Verify OK, wrote 26906667 bytes, ratio=0,587
+Track 14.wav: INFO: sector alignment causing 584 samples to be carried over
+Track 15.wav: Verify OK, wrote 32221098 bytes, ratio=0,650
+Track 15.wav: INFO: sector alignment causing 4 zero samples to be appended
+
+Presione una tecla para continuar . . .
+===================
+===================
+===================
+=== d2.flac.md5
+===================
+===================
+===================
+# MD5 checksums generated by MD5summer (http://www.md5summer.org)
+# Generated 13/12/2007 2:04:45
+
+57c2afbe75db747665dc4bf2a2f82a43 *Track 01.flac
+2ee7d944217a9d81eed8986abad05482 *Track 02.flac
+e9aff996111eafdb27b16431fcfc7065 *Track 03.flac
+c401996cca3f926d88a756dea0bb9a37 *Track 04.flac
+76966815f6c180cce96507dc780ad07f *Track 05.flac
+f3720e0283237f5db3d349fac43e1701 *Track 06.flac
+e0a59ece6e213666a44b7c25d48ffc40 *Track 07.flac
+e5862f6dc7470bad3e08e6884bf895a4 *Track 08.flac
+c7e09ae9270032b43991dad02bad43b7 *Track 09.flac
+f663b3af0e1b5e3f11c4c4dfbc5671bc *Track 10.flac
+32484d524efbe96ae487d91921653f5b *Track 11.flac
+b14579fc59437e461b2b94d3618a7d87 *Track 12.flac
+ec39ac17b25f811a9f95a04da2c43fa7 *Track 13.flac
+a5ff99cb776a16a59c82a67bd9961a04 *Track 14.flac
+166e6a64f186262704da268cb3c890c8 *Track 15.flac
+===================
+===================
+===================
+=== d2.wav.md5
+===================
+===================
+===================
+# MD5 checksums generated by MD5summer (http://www.md5summer.org)
+# Generated 13/12/2007 2:00:03
+
+8087474d81aad8ca366a6c7999d9c540 *Track 01.wav
+00ea63ad764b563e29baa0873f7ade40 *Track 02.wav
+8a7cd896a56238bf901e3246444defe2 *Track 03.wav
+2f2654a1c3d49e754dc81ab58975ad3f *Track 04.wav
+999bc0784b5602a35771f01b6b224a20 *Track 05.wav
+3a3e3da85ba5ec0fb005b9b92abad228 *Track 06.wav
+bb88adcb7707e862b51719cbd78e5840 *Track 07.wav
+e5a96ca629de1cc344fe6c3e7aa50047 *Track 08.wav
+47ac273394b2d40d7238b56355df36d4 *Track 09.wav
+b1dd8fea41f64e35fd3b7a6130ff4b64 *Track 10.wav
+1725e1ce6dffa2cb199afc75ef453686 *Track 11.wav
+0e90e8ae0b5a1bd25d1e2abae3c2c7bd *Track 12.wav
+2b4668486f003fdc260ddafce837a31c *Track 13.wav
+ed7346385bff7b9055e88b444fd6750f *Track 14.wav
+ae5d38b6dda75ca0b60f3cd225689eb8 *Track 15.wav
+===================
+===================
+===================
+=== flac.txt
+===================
+===================
+===================
+Track 01.flac:85d2efb9f1a22546bcec3932caa6123f
+Track 02.flac:e060edbb86f82d4193f8706ebe3ef1e5
+Track 03.flac:fb54c7ce9799c4697af3a694acbfa502
+Track 04.flac:81e07dc580cf82ed76a034a3e346cc1f
+Track 05.flac:c4f396f745296fe89d4ca6de6638b925
+Track 06.flac:e835176bfd9f306574277f407b863d27
+Track 07.flac:f42a0c6273f9b2ec735d265d971f6c4b
+Track 08.flac:34c669001c457b7045143f4275288b36
+Track 09.flac:836d5ad1b9acbc0ce67b6ddb586140c9
+Track 10.flac:5b2b7b35a2c190f027450ad2c01c8311
+Track 11.flac:120f94e960c344cf301f7272178010e4
+Track 12.flac:880aebb04dc0b7547aaebe21e2a67cea
+Track 13.flac:ac69e4208a04d014608d2156f1bfda70
+Track 14.flac:68d0ff0bdddcccbad344b8a8be35cbed
+Track 15.flac:6e28ab9e43309019382a539376923d85
+===================
+===================
+===================
+=== bd1990-02-08-HolyGrail.txt
+===================
+===================
+===================
+Bob Dylan
+Hammersmith Odeon
+London, UK
+February 8, 1990
+
+Holy Grail Version
+
+Got this one at Dime as part of a big pack of five shows from 1990. Was described as LB-1271 but md5 checksums I obtained from my downloaded fileset didn't really match those of the LB archive. In fact those are shnf while these were flac. There was a semi-gap on left channel d1t02 @ 4:11 which is not reported to be at LB-1271. So I decided not to care about identity of the fileset (flac fingerprints) and managed to repair the gap I found. I respected the flacs for disc 2 except for track 14 where I heard clicks clearly visible at the spectral view in its waveform that were easy to clean. Disc 1 had only the mentioned flaw, but once I had to modify a few samples from d1t2 had to align on sector boundaries all the rest, as well, so I guessed d1 flacs would change since then. Fortunately, as I carefully patched a small number of samples from one channel to another without editing anything at all, the resulted wav file had no sector boundaries error origined. Consequently there are only 3 flac files different now from my original download in this set, d1t02, because of the gap elimination, and last two tracks on d2 after editing the clicks on d2t14 and align on sector boundaries. Did also rename them all from Track  1 to Track  9, giving the following names instead: Track 01 to Track 09, on both discs. Thanks to Charlespoet, the original seeder whom I did grab it from, and kisseber who was actually supplier of the audio disks where this set comes from (as Charles did state).
+
+Small semi-gap on left channel d1t02 @ 4:11.999 repaired by patching 13 samples from the opposite channel.
+Clicks d2t14 @ 1:49.415, 2:52.043 & 2.54.909 were easily micro-patched, but just a fragment of a single sample in each one had to be eliminated to make it as smooth as it gets.
+Light diginoise on d2t06 @ 0:42.250 & 0:47.730 will have to remain as it was, as I couldn't find a way to solve the problem without damaging the sound in the recording.
+
+Lineage: Kisseber's low gen audio disks > Charlespoet > wav (Unknown extraction) > wav (cooledit: digipops repair) > Flac (unknown software)
+         flacs on d1 > wav (Flac Frontend 1.1.3) > d1t02.wav (Adobe Audition 1.0 - gap removed) > flac (Flac Frontend 1.1.3 - align on SB / just d1 - level 8 - verify on) 
+
+Filling first of my good buddy Valentin requests.
+
+Luisbp51 seed at HC. December 2007
+
+Enjoy!
+
+
+ORIGINAL TEXT FILE (set_info.txt) AND BOTH ORIGINAL FFP's (flac.txt) ARE ALSO INCLUDED. 
+________________________________________________________________________________________________________________________
+
+THESE ARE FRAGMENTS OF THE ORIGINAL INFO FILE THAT COULD STILL BE OF ANY INTEREST FOR SOMEBODY, CONCERNING THIS TORRENT:
+
+
+This evening I found the last two shows from the '90 Hammersmith Residency (no worries I will
+be getting the rest of them and in the meantime perhaps some other beatific soul could post
+the first four Hammersmith's) plus the complete '90 Paris Residency -- all of them Holy Grails!
+I very much want to thank Chuck for sending me these explosive shows in the first place. 
+His generosity, as so many of us already know, is truly inspiring (like Bob's music!!!). 
+Anyone out there with a copy of the Bauldie article about these shows please email me a copy - 
+THANK YOU!!!!!!!  charlespoet@adelphia.net
+
+DESCRIPTION OF EACH SHOW UPLOADED BY CHARLES ON THE WHOLE PACK WAS PROVIDED HERE. I JUST LEFT THE RELATED INFO: 
+
+
+Bob Dylan, 2/8/90, London, 2CDR 
+LB-1271, (39min+69min), from Holy Grail series; excellent sound; this is upgrade over 
+Doberman bootleg which is hissy in comparisom and is a different recording
+
+small digi pops d2t14 1:49, 2:52, 2:54 were all repaired in cooledit
+
+CD1
+
+01 intro
+02 Absolutely Sweet Marie
+03 Man In The Long Black Coat
+04 Positively 4th Street 
+05 Ballad Of A Thin Man
+06 Pledging My Time
+07 I Want You
+08 Political World 
+09 You Angel You
+10 All Along The Watchtower 
+
+CD2
+
+01 Boots Of Spanish Leather (acoustic)
+02 To Ramona (acoustic)
+03 She Belongs To Me (acoustic) 
+04 Mr. Tambourine Man (acoustic)
+05 Disease Of Conceit
+06 You're A Big Girl Now 
+07 I'll Remember You
+08 Where Teardrops Fall
+09 Seeing The Real You At Last 
+10 Every Grain Of Sand
+11 Rainy Day Women # 12 & 35
+12 Like A Rolling Stone 
+13 It Ain't Me, Babe (acoustic)
+14 I've Been All Around This World
+15 Highway 61 Revisited 
+
+The band for these incendiary shows:
+
+Bob Dylan (vocal, guitar, harmonica)
+G.E. Smith (guitar, backup vocal)
+Tony Garnier (bass)
+Christopher Parker (drums)
+
+ 
+Thanks to Olof, Lossless Bob and Chuck!!!
+Enjoy!
+Charlespoet
+
+
+NOTE: As I told before Charlespoet fileset wasn't really LB-1271, but just a different set of files (of course from the same source, as can be easily deduced).
+===================
+===================
+===================
+=== original set_info.rectified.txt
+===================
+===================
+===================
+This evening I found the last two shows from the '90 Hammersmith Residency (no worries I will
+be getting the rest of them and in the meantime perhaps some other beatific soul could post
+the first four Hammersmith's) plus the complete '90 Paris Residency -- all of them Holy Grails!
+I very much want to thank Chuck for sending me these explosive shows in the first place. 
+His generosity, as so many of us already know, is truly inspiring (like Bob's music!!!). 
+Anyone out there with a copy of the Bauldie article about these shows please email me a copy - 
+THANK YOU!!!!!!!  charlespoet@adelphia.net
+
+Source: All shows from the Holy Grail series.
+LINEAGE: CD-R(Audio Catalyst)wav>(flacfrontend)flac8
+
+_____________________________________________________________________________________________
+
+
+		Bob Dylan, 1/29/90, Paris, 2CDR 
+		LB-1267, (62min+42min), from Holy Grail series; excellent sound
+	
+		has occasional very light background static like d1t3 1:37, d1t14 2:14 which may be caused by 
+		discontinuities
+
+		CD1
+
+		1 intro 2 Subterranean Homesick Blues 3 Lay Lady Lay 4 All Along The Watchtower 
+		5 Stuck Inside Of Mobile With The Memphis Blues Again 6 Highway 61 Revisited 
+		7 You're A Big Girl Now 8 Seeing The Real You At Last 9 Gates Of Eden (acoustic) 
+		10 Love Minus Zero - No Limit (acoustic) 11 Mr. Tambourine Man (acoustic) 
+		12 One Too Many Mornings (acoustic) 13 Don't Think Twice, It's All Right (acoustic) 
+
+		CD2
+
+		1 Just Like A Woman 2 Political World 3 What Good Am I? 4 Man Gave Names To All The Animals 
+		5 Everything Is Broken 6 I Shall Be Released 7 Like A Rolling Stone 
+		8 Forever Young (acoustic->electric) 9 Rainy Day Women # 12 & 35 
+
+
+		Bob Dylan, 1/30/90, Paris, 2CDR 
+		LB-1304, (55min+48min), Holy Grail; excellent sound
+
+		5 second buzz d1t9 0:5x, light static d2t9 5:55
+
+		CD1
+
+		1 intro 2 Subterranean Homesick Blues 3 I Want You 4 Maggie's Farm 
+		5 All Along The Watchtower 6 I Believe In You 7 Where Teardrops Fall 
+		8 What Was It You Wanted 9 Leopard-Skin Pill-Box Hat 
+		10 The Times They Are A-Changin' (acoustic) 11 It's Alright, Ma (I'm Only Bleeding) (acoustic) 
+		12 The Lonesome Death Of Hattie Carroll (acoustic) 13 Boots Of Spanish Leather (acoustic) 
+
+		CD2
+
+		1 Seeing The Real You At Last 2 Political World 3 Man In The Long Black Coat 
+		4 Tight Connection To My Heart (Has Anybody Seen My Love) 5 Simple Twist Of Fate 
+		6 Masters Of War 7 I Shall Be Released 8 Like A Rolling Stone 
+		9 Forever Young (acoustic->electric) 10 Rainy Day Women # 12 & 35
+
+
+		Bob Dylan, 1/31/90, Paris, 2CDR 
+		LB-1305, (), Holy Grail; excellent sound
+
+		small pop d1t6 2:41 corrected using cooledit2000; big digistatic plus drops d2t3 0:29; 
+		small pop d2t7 5:39
+
+		CD1
+
+		1 intro 2 To Be Alone With You 3 Ballad Of A Thin Man 
+		4 Stuck Inside Of Mobile With The Memphis Blues Again 5 John Brown 6 Political World 
+		7 Shelter From The Storm 8 Highway 61 Revisited 9 It's All Over Now, Baby Blue (acoustic) 
+		10 A Hard Rain's A-Gonna Fall (acoustic) 11 Girl From The North Country (acoustic) 
+
+		CD2
+
+		1 All Along The Watchtower 2 Lay Lady Lay 3 Everything Is Broken 4 I'll Remember You 
+		5 In The Garden 6 Like A Rolling Stone 7 Mr. Tambourine Man (acoustic) 8 Maggie's Farm 
+
+
+		Bob Dylan, 2/1/90, Paris, 2CDR 
+		LB-1335, (56min+44min), Holy Grail; excellent sound; this has a warmer less harsh sound 
+		than LB-1061
+
+		small analog pop d1t5 2:31
+
+		CD1
+
+		1 intro 2 Most Likely You Go Your Way (And I'll Go Mine) 3 Ballad Of Hollis Brown 
+		4 Political World 5 What Was It You Wanted 6 Tears Of Rage 
+		7 Stuck Inside Of Mobile With The Memphis Blues Again 8 All Along The Watchtower 
+		9 Visions Of Johanna (acoustic) 10 Mama, You Been On My Mind (acoustic) 
+		11 Gates Of Eden (acoustic) 12 It Ain't Me, Babe (acoustic) 
+
+		CD2
+
+		1 It Takes A Lot To Laugh, It Takes A Train To Cry 2 Everything Is Broken 3 Lenny Bruce 
+		4 Man Of Peace 5 You're A Big Girl Now 6 Like A Rolling Stone 7 Barbara Allen (acoustic) 
+		8 Forever Young (acoustic->electric) 9 Maggie's Farm 
+
+
+		Bob Dylan, 2/7/90, London, 2CDR 
+		LB-1272, (58min+40min), from Holy Grail series; excellent sound
+
+		d1t9 0:57 has light analog static; d1t9 1:57 has analog like cut
+
+		CD1
+
+		1 intro 2 To Be Alone With You 3 Most Of The Time 4 All Along The Watchtower 
+		5 I'll Be Your Baby Tonight 6 John Brown 7 Political World 
+		8 Stuck Inside Of Mobile With The Memphis Blues Again 
+		9 The Times They Are A-Changin' (acoustic) 10 Mama, You Been On My Mind (acoustic) 
+		11 It's Alright, Ma (I'm Only Bleeding) (acoustic) 12 Girl From The North Country (acoustic) 13 Forever Young (acoustic->electric) 
+
+		CD2
+
+		1 Tonight I'll Be Staying Here With You 2 Everything Is Broken 3 Just Like A Woman 
+		4 It Takes A Lot To Laugh, It Takes A Train To Cry 5 Man In The Long Black Coat 
+		6 Like A Rolling Stone 7 It Ain't Me, Babe (acoustic) 8 Highway 61 Revisited 
+
+_______________________________________________________________________________________________________
+
+Bob Dylan, 2/8/90, London, 2CDR 
+LB-1271, (39min+69min), from Holy Grail series; excellent sound; this is upgrade over 
+Doberman bootleg which is hissy in comparisom and is a different recording
+
+small digi pops d2t14 1:49, 2:52, 2:54 were all repaired in cooledit
+
+CD1
+
+intro 2 Absolutely Sweet Marie 3 Man In The Long Black Coat 4 Positively 4th Street 
+5 Ballad Of A Thin Man 6 Pledging My Time 7 I Want You 8 Political World 
+9 You Angel You 10 All Along The Watchtower 
+
+CD2
+
+1 Boots Of Spanish Leather (acoustic) 2 To Ramona (acoustic) 3 She Belongs To Me (acoustic) 
+4 Mr. Tambourine Man (acoustic) 5 Disease Of Conceit 6 You're A Big Girl Now 
+7 I'll Remember You 8 Where Teardrops Fall 9 Seeing The Real You At Last 
+10 Every Grain Of Sand 11 Rainy Day Women # 12 & 35 12 Like A Rolling Stone 
+13 It Ain't Me, Babe (acoustic) 14 I've Been All Around This World 15 Highway 61 Revisited 
+
+The band for these incendiary shows:
+
+Bob Dylan (vocal, guitar, harmonica)
+G.E. Smith (guitar, backup vocal)
+Tony Garnier (bass)
+Christopher Parker (drums)
+
+ 
+Thanks to Olof, Lossless Bob and Chuck!!!
+Enjoy!
+Charlespoet
+
+===================
+===================
+===================
+=== set_info.txt
+===================
+===================
+===================
+This evening I found the last two shows from the '90 Hammersmith Residency (no worries I will
+be getting the rest of them and in the meantime perhaps some other beatific soul could post
+the first four Hammersmith's) plus the complete '90 Paris Residency -- all of them Holy Grails!
+I very much want to thank Chuck for sending me these explosive shows in the first place. 
+His generosity, as so many of us already know, is truly inspiring (like Bob's music!!!). 
+Anyone out there with a copy of the Bauldie article about these shows please email me a copy - 
+THANK YOU!!!!!!!  charlespoet@adelphia.net
+
+Source: All shows from the Holy Grail series.
+LINEAGE: CD-R(Audio Catalyst)wav>(flacfrontend)flac8. 
+
+Bob Dylan, 1/29/90, Paris, 2CDR 
+LB-1267, (62min+42min), from Holy Grail series; excellent sound
+
+has occasional very light background static like d1t3 1:37, d1t14 2:14 which may be caused by 
+discontinuities
+
+CD1
+
+1 intro 2 Subterranean Homesick Blues 3 Lay Lady Lay 4 All Along The Watchtower 
+5 Stuck Inside Of Mobile With The Memphis Blues Again 6 Highway 61 Revisited 
+7 You're A Big Girl Now 8 Seeing The Real You At Last 9 Gates Of Eden (acoustic) 
+10 Love Minus Zero - No Limit (acoustic) 11 Mr. Tambourine Man (acoustic) 
+12 One Too Many Mornings (acoustic) 13 Don't Think Twice, It's All Right (acoustic) 
+
+CD2
+
+1 Just Like A Woman 2 Political World 3 What Good Am I? 4 Man Gave Names To All The Animals 
+5 Everything Is Broken 6 I Shall Be Released 7 Like A Rolling Stone 
+8 Forever Young (acoustic->electric) 9 Rainy Day Women # 12 & 35 
+
+
+Bob Dylan, 1/30/90, Paris, 2CDR 
+LB-1304, (55min+48min), Holy Grail; excellent sound
+
+5 second buzz d1t9 0:5x, light static d2t9 5:55
+
+CD1
+
+1 intro 2 Subterranean Homesick Blues 3 I Want You 4 Maggie's Farm 
+5 All Along The Watchtower 6 I Believe In You 7 Where Teardrops Fall 
+8 What Was It You Wanted 9 Leopard-Skin Pill-Box Hat 
+10 The Times They Are A-Changin' (acoustic) 11 It's Alright, Ma (I'm Only Bleeding) (acoustic) 
+12 The Lonesome Death Of Hattie Carroll (acoustic) 13 Boots Of Spanish Leather (acoustic) 
+
+CD2
+
+1 Seeing The Real You At Last 2 Political World 3 Man In The Long Black Coat 
+4 Tight Connection To My Heart (Has Anybody Seen My Love) 5 Simple Twist Of Fate 
+6 Masters Of War 7 I Shall Be Released 8 Like A Rolling Stone 
+9 Forever Young (acoustic->electric) 10 Rainy Day Women # 12 & 35
+
+
+Bob Dylan, 1/31/90, Paris, 2CDR 
+LB-1305, (), Holy Grail; excellent sound
+
+small pop d1t6 2:41 corrected using cooledit2000; big digistatic plus drops d2t3 0:29; 
+small pop d2t7 5:39
+
+CD1
+
+1 intro 2 To Be Alone With You 3 Ballad Of A Thin Man 
+4 Stuck Inside Of Mobile With The Memphis Blues Again 5 John Brown 6 Political World 
+7 Shelter From The Storm 8 Highway 61 Revisited 9 It's All Over Now, Baby Blue (acoustic) 
+10 A Hard Rain's A-Gonna Fall (acoustic) 11 Girl From The North Country (acoustic) 
+
+CD2
+
+1 All Along The Watchtower 2 Lay Lady Lay 3 Everything Is Broken 4 I'll Remember You 
+5 In The Garden 6 Like A Rolling Stone 7 Mr. Tambourine Man (acoustic) 8 Maggie's Farm 
+
+
+Bob Dylan, 2/1/90, Paris, 2CDR 
+LB-1335, (56min+44min), Holy Grail; excellent sound; this has a warmer less harsh sound 
+than LB-1061
+
+small analog pop d1t5 2:31
+
+CD1
+
+1 intro 2 Most Likely You Go Your Way (And I'll Go Mine) 3 Ballad Of Hollis Brown 
+4 Political World 5 What Was It You Wanted 6 Tears Of Rage 
+7 Stuck Inside Of Mobile With The Memphis Blues Again 8 All Along The Watchtower 
+9 Visions Of Johanna (acoustic) 10 Mama, You Been On My Mind (acoustic) 
+11 Gates Of Eden (acoustic) 12 It Ain't Me, Babe (acoustic) 
+
+CD2
+
+1 It Takes A Lot To Laugh, It Takes A Train To Cry 2 Everything Is Broken 3 Lenny Bruce 
+4 Man Of Peace 5 You're A Big Girl Now 6 Like A Rolling Stone 7 Barbara Allen (acoustic) 
+8 Forever Young (acoustic->electric) 9 Maggie's Farm 
+
+
+Bob Dylan, 2/7/90, London, 2CDR 
+LB-1272, (58min+40min), from Holy Grail series; excellent sound
+
+d1t9 0:57 has light analog static; d1t9 1:57 has analog like cut
+
+CD1
+
+1 intro 2 To Be Alone With You 3 Most Of The Time 4 All Along The Watchtower 
+5 I'll Be Your Baby Tonight 6 John Brown 7 Political World 
+8 Stuck Inside Of Mobile With The Memphis Blues Again 
+9 The Times They Are A-Changin' (acoustic) 10 Mama, You Been On My Mind (acoustic) 
+11 It's Alright, Ma (I'm Only Bleeding) (acoustic) 12 Girl From The North Country (acoustic) 13 Forever Young (acoustic->electric) 
+
+CD2
+
+1 Tonight I'll Be Staying Here With You 2 Everything Is Broken 3 Just Like A Woman 
+4 It Takes A Lot To Laugh, It Takes A Train To Cry 5 Man In The Long Black Coat 
+6 Like A Rolling Stone 7 It Ain't Me, Babe (acoustic) 8 Highway 61 Revisited 
+
+
+Bob Dylan, 2/8/90, London, 2CDR 
+LB-1271, (39min+69min), from Holy Grail series; excellent sound; this is upgrade over 
+Doberman bootleg which is hissy in comparisom and is a different recording
+
+small digi pops d2t14 1:49, 2:52, 2:54 were all repaired in cooledit
+
+CD1
+
+intro 2 Absolutely Sweet Marie 3 Man In The Long Black Coat 4 Positively 4th Street 
+5 Ballad Of A Thin Man 6 Pledging My Time 7 I Want You 8 Political World 
+9 You Angel You 10 All Along The Watchtower 
+
+CD2
+
+1 Boots Of Spanish Leather (acoustic) 2 To Ramona (acoustic) 3 She Belongs To Me (acoustic) 
+4 Mr. Tambourine Man (acoustic) 5 Disease Of Conceit 6 You're A Big Girl Now 
+7 I'll Remember You 8 Where Teardrops Fall 9 Seeing The Real You At Last 
+10 Every Grain Of Sand 11 Rainy Day Women # 12 & 35 12 Like A Rolling Stone 
+13 It Ain't Me, Babe (acoustic) 14 I've Been All Around This World 15 Highway 61 Revisited 
+
+The band for these incendiary shows:
+
+Bob Dylan (vocal, guitar, harmonica)
+G.E. Smith (guitar, backup vocal)
+Tony Garnier (bass)
+Christopher Parker (drums)
+
+ 
+Thanks to Olof, Lossless Bob and Chuck!!!
+Enjoy!
+Charlespoet
+
+===================
+===================
+===================

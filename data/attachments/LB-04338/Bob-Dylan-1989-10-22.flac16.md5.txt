@@ -1,0 +1,15 @@
+3d4f28457bb28862961412df8f176d47 *Bob Dylan 1989-10-22d1t01 Trouble.flac
+967d6df604e6c57d7e6955cf00dd1dc3 *Bob Dylan 1989-10-22d1t02 Man In The Long Black Coat.flac
+6ba66a0ae178c1c12817fde2d9113c6f *Bob Dylan 1989-10-22d1t03 John Brown.flac
+d3338cb567ef2b38f0b5d2e71c65773c *Bob Dylan 1989-10-22d1t04 You're A Big Girl Now.flac
+b085cf61371fb5cb4ea9c8dc4be146bb *Bob Dylan 1989-10-22d1t05 Just Like A Woman.flac
+933d714ed662d8e6fdb5e1dcbc969bcf *Bob Dylan 1989-10-22d1t06 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+cd63a31ac15f1dc18403075e7d11d5f9 *Bob Dylan 1989-10-22d1t07 A Hard Rain's A-Gonna Fall.flac
+3837f381c5e76c6742ac58b561c9312b *Bob Dylan 1989-10-22d1t08 The Lonesome Death Of Hattie Carroll.flac
+0ac25ab6090420898a89450a0c12557f *Bob Dylan 1989-10-22d1t09 It Ain't Me Babe.flac
+10f454fba62972765e6c1064b61d88bf *Bob Dylan 1989-10-22d2t01 Shelter From The Storm.flac
+7610afc345cebcda6d988037260a94e9 *Bob Dylan 1989-10-22d2t02 Everything Is Broken.flac
+6f56d94dd65fb075b632c3e6e5c73d51 *Bob Dylan 1989-10-22d2t03 I Shall Be Released.flac
+35cf5bf8b8a7a2e8af4d843ead1e90c9 *Bob Dylan 1989-10-22d2t04 Like A Rolling Stone.flac
+33f5cad8eee5022b3d6be3db43c3b47d *Bob Dylan 1989-10-22d2t05 Most Of The Time.flac
+a2f7d122e4276945e79688a32810e3cb *Bob Dylan 1989-10-22d2t06 Maggie's Farm.flac

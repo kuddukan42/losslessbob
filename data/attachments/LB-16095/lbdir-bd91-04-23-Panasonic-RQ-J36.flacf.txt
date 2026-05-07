@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd91-04-23-Panasonic-RQ-J36.flacf
+===================
+===================
+===================
+d3dbf922e7d5e185302033c4eca39a1b *01-NewMorning.flac
+a7a45f8d6267fcc6573930e4362be2d8 *02-LayLadyLay.flac
+2ecdc3e351073623956bb2ddd010f81a *03-AllAlongTheWatchtower.flac
+19bcbd6a5ec544311f873f8ed98302d9 *04-TheManInMe.flac
+43b9a9c98428f8c378f62f705488cec9 *05-GottaServeSomebody.flac
+84647f299d0bb9cb202797ae916df589 *06-WiggleWiggle.flac
+d508a49d2c1cd3856acaa94ad1ea5275 *07-MrTambourineMan.flac
+9cb03e862b497248ebdb9f8386f4d854 *08-OneTooManyMornings.flac
+c26ca261ad941f8807e1390dbfc59ef8 *09-Don'tThinkTwiceItsAlright.flac
+fa095d2be10285b8d4af5640f476285c *10-BobDylan'sDream.flac
+146f4630a6084599fc6c200d6fbb6adc *11-EverythingIsBroken.flac
+f8b78cb7a6ae189ade6dc3dcd1d4c278 *12-ManInTheLongBlackCoat.flac
+4fc0e584a96148364d88d6912ab53877 *13-Highway61Revisited.flac
+f101ecd177e11ca4b75f664cafacf141 *14-UnderTheRedSky.flac
+c72cc647af1c3b21b3788eb420c6310e *15-IShallBeReleased.flac
+a3423e90bcb8f316dbb6fe6da6b9e266 *16-LikeARollingStone.flac
+15986a1f37e73c9565a49c46e16f1a05 *17-Blowin'inTheWind.flac
+df3a37e2ec2bbdb76c50d1fcd11f24f7 *18-RainyDayWomen12&35.flac
+33f9fe84c9420c52d57c2efeb015941d *AlbumArtSmall.jpg
+dc5d9b49decc3b40c16973e30098f5a4 *BobDylan19910423.txt
+f0c1f331fb8ed0d9f535164614c36202 *BobDylan_19910423_FoxTheatre_Atlanta.md5
+===================
+===================
+===================
+=== ffp for: bd91-04-23-Panasonic-RQ-J36.flacf
+===================
+===================
+===================
+01-NewMorning.flac:b7dc01b17502b96f4392e0bc3fb96e3f
+02-LayLadyLay.flac:d59ea86e86706e03df41fc3fede451a9
+03-AllAlongTheWatchtower.flac:9f2655239b3a30188118d0d6dbf68055
+04-TheManInMe.flac:efad3911f864f2d0ce96c365a0cef200
+05-GottaServeSomebody.flac:44fc6c139e175750cf2024a09c8974d2
+06-WiggleWiggle.flac:8e17bd6ec7dbe215158ed4116e6a36c2
+07-MrTambourineMan.flac:d0cda379467b5f7fb20f0717a8ba13e9
+08-OneTooManyMornings.flac:08a822e7b962c361c4fbc530c3192f7d
+09-Don'tThinkTwiceItsAlright.flac:afb3fc7737ee4cc1cf266ca86ed51226
+10-BobDylan'sDream.flac:8ed18c216f6541c494734b8a6d0c1118
+11-EverythingIsBroken.flac:8744e9f23521fbae8721a6a1afc5291a
+12-ManInTheLongBlackCoat.flac:9e70e0cfe7faa99e4c952a31992a7b22
+13-Highway61Revisited.flac:d9e3519f0c596d903527b75c1bfb5444
+14-UnderTheRedSky.flac:43497b9ae567815b1d0f2911ec11f7be
+15-IShallBeReleased.flac:e536d54d1b82dd5e2282c236e578c1b0
+16-LikeARollingStone.flac:f57f9fff70feaced3aeb504068d803e0
+17-Blowin'inTheWind.flac:e7f911f33a3878e329ee654c20feb811
+18-RainyDayWomen12&35.flac:393836bb5420d55f6e3a42174665b15c
+===================
+===================
+===================
+=== shntool len for: bd91-04-23-Panasonic-RQ-J36.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.45       39444108 B   -b-   --   ---xx   flac  0.6005  01-NewMorning.flac
+     5:04.26       53686024 B   -b-   --   ---xx   flac  0.5951  02-LayLadyLay.flac
+     3:48.01       40221740 B   -b-   --   ---xx   flac  0.5773  03-AllAlongTheWatchtower.flac
+     5:52.16       62129728 B   -b-   --   ---xx   flac  0.5722  04-TheManInMe.flac
+     5:29.67       58193136 B   -b-   --   ---xx   flac  0.5767  05-GottaServeSomebody.flac
+     3:26.50       36456304 B   -b-   --   ---xx   flac  0.5984  06-WiggleWiggle.flac
+     6:22.70       67549672 B   -b-   --   ---xx   flac  0.5773  07-MrTambourineMan.flac
+     4:00.71       42503820 B   -b-   --   ---xx   flac  0.5665  08-OneTooManyMornings.flac
+     5:27.23       57736720 B   -b-   --   ---xx   flac  0.6024  09-Don'tThinkTwiceItsAlright.flac
+     3:55.65       41607212 B   -b-   --   ---xx   flac  0.5871  10-BobDylan'sDream.flac
+     4:11.21       44326968 B   -b-   --   ---xx   flac  0.6049  11-EverythingIsBroken.flac
+     5:46.70       61198576 B   -b-   --   ---xx   flac  0.6002  12-ManInTheLongBlackCoat.flac
+     4:20.36       45948136 B   -b-   --   ---xx   flac  0.6130  13-Highway61Revisited.flac
+     5:12.68       55196788 B   -b-   --   ---xx   flac  0.5842  14-UnderTheRedSky.flac
+     3:44.58       39651184 B   -b-   --   ---xx   flac  0.6001  15-IShallBeReleased.flac
+     7:34.43       80187828 B   -b-   --   ---xx   flac  0.6170  16-LikeARollingStone.flac
+     4:38.24       49096616 B   -b-   --   ---xx   flac  0.6132  17-Blowin'inTheWind.flac
+     5:42.34       60407852 B   -b-   --   ---xx   flac  0.6106  18-RainyDayWomen12&35.flac
+    88:23.39      935542412 B                            0.5946  (18 files)
+===================
+===================
+===================

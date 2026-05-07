@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-RC-stereo-dylanparts-b.flacf 
+=================== 
+=================== 
+=================== 
+6a855cc2edf521ec2968e41b6544d86e  R&C_Dylan parts.txt
+40290358fbadcb1fe4861f069d1bd7cd  Track01.flac
+a7621443429a7842af7cae4544728f60  Track02.flac
+5a47eb9fff109adf224770898df228bf  Track03.flac
+5bc53ad17b08d84db04adb45aafb571e  Track04.flac
+afa736859da8f027a68df2d6b02b3a76  Track05.flac
+1725d203ba0de92a30b91ae19f864825  Track06.flac
+e4c69f8a4e1781f7fcd1a3d4c8ecd9ed  Track07.flac
+8496a496882b33b9e9a9f6edff49f669  Track08.flac
+7ca904bdacd9ac091da19b1bbc872b89  Track09.flac
+7080b587f533e371c52bae8b613b4d5b  Track10.flac
+ee7e713b0161d9e78ad53ed05a228192  Track11.flac
+3980943d35bf5f4db1432c91dbcf9945  Track12.flac
+28d098dfcef5e4c25f6036c66f4f9805  Track13.flac
+f349478f5801986d0873d0f0adadc5d3  Track14.flac
+3ef95d20f190bc430c69bccb6b3edb76  Track15.flac
+fcd33ccc32ffadd59e26e7467f7afe00  Track16.flac
+e63ce1a0524f1f269546db882dc22943  Track17.flac
+29148b85501a864c7b801383bb6f0107  Track18.flac
+700b90822c1e333ad8363a54213415bb  Track19.flac
+0e12fbb22f5473f6572b87d5f6557e8a  Track20.flac
+e5ae2a5804c5dfbd92a78f03b9167757  Track21.flac
+a218decc0de481be21f204fc27436cf0  Track22.flac
+fc3aa9d79e542e9dbaa4b6fddb43c22b  Track23.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-RC-stereo-dylanparts-b.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:5dcd90ed7a16e256f82b4a3e9f3c6b36
+Track02.flac:29c2ce9099df6eba9700022b42ed1b37
+Track03.flac:fa0937e1163bd86ac778e621bfbaebb9
+Track04.flac:1ef88bc4d006fb092f4bbd313abee1da
+Track05.flac:92769b5ebd9900768f5a73e8018e9328
+Track06.flac:b458d676da91cc3ade9457edba4fa520
+Track07.flac:7bcdc462b1376fcaa4ffa98febe49713
+Track08.flac:5256bc7234c5b9e1a06a1c4e734b15ea
+Track09.flac:c42e468545e3de3f2b502b9629e97707
+Track10.flac:b38f004551a2dd3357054753776f7d70
+Track11.flac:baf48b426dbc23c292a83581767c2717
+Track12.flac:be5dc32a8c8e5ad91cfffadaa615c555
+Track13.flac:52da1ce9539ac1923f5e3a8342fc136e
+Track14.flac:dd539ca8c3e1febc9c74ce4fa4bee7ee
+Track15.flac:07d5888918535eecd72318482c333654
+Track16.flac:47d75898acb3ee4c1e1e7720010b1a96
+Track17.flac:cdabfb2df838827b278da1ba9cfec208
+Track18.flac:cf8e1469d90870e3b5b39eb84334550c
+Track19.flac:4cd71d4d55a9f6032b19bc563c9f0b4d
+Track20.flac:457adcf4d0ea6b9f1b4669d05bb4b803
+Track21.flac:bdedf93d7086aec9403728e790958b9d
+Track22.flac:a8c85e57165ade5a3caf9921c39cb914
+Track23.flac:cee7a5f2a13959b350253cb8cea31b0f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-RC-stereo-dylanparts-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.00       47451644 B   ---   --   ---xx   flac  0.5206  Track01.flac
+     3:43.05       39349004 B   ---   --   ---xx   flac  0.4841  Track02.flac
+     4:50.11       51181916 B   ---   --   ---xx   flac  0.5533  Track03.flac
+     1:54.66       20264876 B   ---   --   ---xx   flac  0.5059  Track04.flac
+     2:15.22       23865788 B   ---   --   ---xx   flac  0.4639  Track05.flac
+     2:42.61       28720316 B   ---   --   ---xx   flac  0.5473  Track06.flac
+     6:26.18       68132780 B   ---   --   ---xx   flac  0.5396  Track07.flac
+     3:24.22       36037388 B   ---   --   ---xx   flac  0.4921  Track08.flac
+     2:55.61       31013516 B   ---   --   ---xx   flac  0.5253  Track09.flac
+     2:39.67       28205228 B   ---   --   ---xx   flac  0.4828  Track10.flac
+     5:19.62       56417468 B   ---   --   ---xx   flac  0.4990  Track11.flac
+     0:46.24        8170892 B   ---   --   ---xx   flac  0.5374  Track12.flac
+     3:48.56       40350956 B   ---   --   ---xx   flac  0.5370  Track13.flac
+     1:08.69       12157532 B   ---   --   ---xx   flac  0.3964  Track14.flac
+     3:27.53       36639500 B   ---   --   ---xx   flac  0.5153  Track15.flac
+     4:16.31       45231356 B   ---   --   ---xx   flac  0.4973  Track16.flac
+     3:33.68       37733180 B   ---   --   ---xx   flac  0.4514  Track17.flac
+     0:06.02        1063148 B   ---   --   ---xx   flac  0.0048  Track18.flac
+     2:41.47       28510988 B   ---   --   ---xx   flac  0.5618  Track19.flac
+     2:22.03       25055900 B   ---   --   ---xx   flac  0.4936  Track20.flac
+     4:11.11       44302316 B   ---   --   ---xx   flac  0.5123  Track21.flac
+     2:44.06       28943756 B   ---   --   ---xx   flac  0.5478  Track22.flac
+     3:47.31       40115756 B   ---   --   ---xx   flac  0.5451  Track23.flac
+    73:35.46      778915204 B                            0.5132  (23 files)
+=================== 
+=================== 
+=================== 

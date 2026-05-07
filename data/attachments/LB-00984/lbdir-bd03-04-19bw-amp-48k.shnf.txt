@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-19bw-amp-48k.shnf 
+=================== 
+=================== 
+=================== 
+864e2b15983aacb75fd233eb22cecfc5  030419-Austin 1 - coming soon !.txt
+ac963995acaf877fc1cd162850cba4a9  030419-Austin 1 - DONE!.txt
+2d1df8fc27d5e8f2d5d81afe90023acb  bd03-04-19bw-48k.txt
+7ed3376d227976cc1a7b0e77d86cdfe5  disc1\Track 01.shn
+18719e97be18ff6175f31df93a2fe24b  disc1\Track 02.shn
+cbd824218fe64d15dca7cb01bf437853  disc1\Track 03.shn
+ca82fda61f8cdf0196a99cfebb7f9329  disc1\Track 04.shn
+c5d01da05fd1bc2ca5f5bfc63d5eb570  disc1\Track 05.shn
+0b599713bab5edb5f94e032df1a97588  disc1\Track 06.shn
+e91fea2c133a6d926c602f2a112ee5a3  disc1\Track 07.shn
+cd1d52abb4104bb69756e3cc1f19ed02  disc1\Track 08.shn
+d5e00349c250bd06d0273d3d7c7fa90f  disc1\Track 09.shn
+366d79bc2fb1bb06cde2a5a8949cd7e5  disc1\noname.md5
+16a24d4eb467a5a1e246118bbc948304  disc2\Track 01.shn
+1d0d2b6f3cec090f0b11652a948c72ed  disc2\Track 02.shn
+84a3aafd1d2b15e8f1979bd479971c11  disc2\Track 03.shn
+9dd9420eaca9917a1a62c05f50f88f13  disc2\Track 04.shn
+864ff22b4f83b2f879329c614e7e3088  disc2\Track 05.shn
+7f8f9d0909157937464b22f9b4e9c0f8  disc2\Track 06.shn
+77b875516a203cd6c7df6ec73182e071  disc2\Track 07.shn
+978a1bffa7570985967c18e2f92043c7  disc2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-19bw-amp-48k.shnf\disc1 
+=================== 
+=================== 
+=================== 
+9de17d743ddd20eeeb2afcd7c27ade89  [shntool]  Track_01.wav
+31f92f600bb3c7b7e86c62de28ce9735  [shntool]  Track_02.wav
+afe61a486590858e770dffb19a2e9cb5  [shntool]  Track_03.wav
+15aaba22efeb9fc28e97f533b55f959b  [shntool]  Track_04.wav
+f754e76721127617c88cd40c5c16fbd4  [shntool]  Track_05.wav
+233589798f904fc2510c8bde2ac42c1d  [shntool]  Track_06.wav
+93ab7f4c77e03af5bb94e7b4ed883fc1  [shntool]  Track_07.wav
+a7a4b504df497346e0b7d96413a85bbb  [shntool]  Track_08.wav
+20991d500e204ba13440901ea52b78a8  [shntool]  Track_09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-19bw-amp-48k.shnf\disc2 
+=================== 
+=================== 
+=================== 
+143fc67a50b37eada8c91b872ae3dc06  [shntool]  Track_01.wav
+2a0c1547d9a758fa480016bd76c66be9  [shntool]  Track_02.wav
+40b059e84baf46bdb1dde7b8866cd184  [shntool]  Track_03.wav
+ce21bb918e1123b07697a264d4c53f1d  [shntool]  Track_04.wav
+0a066a5bfea22b70bc90a9b97a72f76d  [shntool]  Track_05.wav
+f8ccda1df06ac12c079413616f0f8745  [shntool]  Track_06.wav
+76c6dcd1817f11aea3d9fd30f351e20c  [shntool]  Track_07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-19bw-amp-48k.shnf\disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.428      73234644 B   cxx   h-   ---xx    shn  0.4762  Track 01.shn
+     3:35.747      41423892 B   cxx   h-   ---xx    shn  0.4700  Track 02.shn
+     4:56.522      56932668 B   cxx   h-   ---xx    shn  0.5187  Track 03.shn
+     4:01.067      46285324 B   cxx   h-   ---xx    shn  0.4529  Track 04.shn
+     6:33.131      75481612 B   cxx   h-   ---xx    shn  0.4917  Track 05.shn
+     6:25.963      74105356 B   cxx   h-   ---xx    shn  0.4774  Track 06.shn
+     5:05.408      58638860 B   cxx   h-   ---xx    shn  0.5215  Track 07.shn
+     6:53.440      79381004 B   cxx   h-   ---xx    shn  0.4235  Track 08.shn
+     7:28.924      86193948 B   cxx   h-   ---xx    shn  0.4896  Track 09.shn
+    51:21.628     591677308 B                            0.4795  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-19bw-amp-48k.shnf\disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.584      58288716 B   cxx   h-   ---xx    shn  0.4513  Track 01.shn
+     5:23.405      62094372 B   cxx   h-   ---xx    shn  0.4195  Track 02.shn
+     6:38.394      76492180 B   cxx   h-   ---xx    shn  0.5124  Track 03.shn
+     6:11.412      71311580 B   cxx   h-   ---xx    shn  0.4478  Track 04.shn
+     6:30.526      74981452 B   cxx   h-   ---xx    shn  0.4980  Track 05.shn
+     7:46.091      89489932 B   cxx   h-   ---xx    shn  0.4932  Track 06.shn
+     6:20.160      72991240 B   cxx   h-   ---xx    shn  0.5114  Track 07.shn
+    43:53.572     505649472 B                            0.4791  (7 files)
+=================== 
+=================== 
+=================== 

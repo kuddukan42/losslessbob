@@ -1,0 +1,124 @@
+===================
+===================
+===================
+=== md5 for: bd80-11-22-h.flacf
+===================
+===================
+===================
+8fcea8260358b9354a516f4a4bee1bf3 *CD1\01 Gotta serve somebody.flac
+c781473e44456b86e75e91ec8b8b14dc *CD1\02 I believe in you.flac
+05a9102b7118709eefced09f71f9a8b6 *CD1\03 Like a rolling stone.flac
+dd8cd08c06c1ba596dc2448451400b04 *CD1\04 You are so beautiful (to me) [CLydie King].flac
+e845a9fd632632a6f4810facef9d73b8 *CD1\05 Man gave names to all the animals.flac
+acb2e6a20f0c16747032f8ee29b15f99 *CD1\06 Simple twist of fate.flac
+7253a570289f6e7c6b0624068055a712 *CD1\07 (Dylan raps).flac
+7db82f1bb4e7694cab70b485e993dc57 *CD1\07 Fever.flac
+2c623d134baca8186322b37ebf8e04c1 *CD1\08 Girl from the North Country.flac
+cfa862683f3432a96a98db0967b8ff93 *CD1\09 We just disagree.flac
+e0244ae4b6a8faf3a920c9173219cab6 *CD1\10 Ain't gonna go to hell for anybody.flac
+e5a327646f4f255f6f46f63318667c13 *CD1\11 Slow train.flac
+ccff0c6c7d48ee3d5622600a5fe5ac05 *CD1\12 Walk around heaven all day [Carolyn Dennis].flac
+25c456858a06fae5564a07c1721be957 *CD1\CD1.ffp
+25c456858a06fae5564a07c1721be957 *CD1\CD1.txt
+3a6b3349bce2282f67549bad01cf232f *CD1\Saved by the grace of the Lord [bonus].flac
+54b690675fcfe71a98804b5c07564bd3 *CD2\13 Abraham, Martin and John.flac
+e96b5105440e4fec486d828dcc9d0615 *CD2\14 Rise again.flac
+2c35a19f509762e251801fd981ebcc97 *CD2\15 Let's keep it between us.flac
+24fcd3401be0c616bed77f8ba465760b *CD2\16 Mary from the wild moor.flac
+b54c8fe31c500e576a406456810a0a4a *CD2\17 Solid rock.flac
+1a2d43e24d2fc703f53295cabc98026a *CD2\18 Just like a woman.flac
+b1929bfb5399b8158a5c6b82ce1c03f8 *CD2\19 Señor (Tales of Yankee Power).flac
+03c505f163d76535f471bf1c4162d566 *CD2\20 Mr. Tambourine man (w Roger McGuinn).flac
+eec3d79510827c6d29109d8caad1f6ea *CD2\21 Knockin' on heaven's door (w Roger McGuinn).flac
+cba6f65cee411fa352ff89b28e476757 *CD2\22 In the garden.flac
+3fbcf0c08e249ef697c5bc58970f268d *CD2\23 Blowin' in the wind.flac
+65e2691de3003742c301d4216ea4f117 *CD2\24 City of gold.flac
+8f47628bf7bf7c1961feea272cbd23a6 *CD2\25 It ain't me, babe.flac
+e80287e9318eb14bf12a6f92fb5dad4f *CD2\26 A hard rain's a-gonna fall.flac
+ecd7c78f39d43ffc6d67c4a828c0dc5c *CD2\CD2.ffp
+ecd7c78f39d43ffc6d67c4a828c0dc5c *CD2\CD2.txt
+b598bcdd86d63879c8006c98fba819e0 *Info\Bob Dylan 1980-11-22 Fox Warfield Theatre, San Francisco, California, USA.txt
+===================
+===================
+===================
+=== ffp for: bd80-11-22-h.flacf
+===================
+===================
+===================
+CD1\01 Gotta serve somebody.flac:48ef8a9713cae4773962d590c0c80b9c
+CD1\02 I believe in you.flac:b7636396124ce1945145d2ccece8e26e
+CD1\03 Like a rolling stone.flac:0417326df538be717452a7296f6493ae
+CD1\04 You are so beautiful (to me) [CLydie King].flac:62e5720a871592500413f467b34a9bec
+CD1\05 Man gave names to all the animals.flac:5a63e0b9e694f1f98d408b426f75908d
+CD1\06 Simple twist of fate.flac:6d5e0f155ea29f547206ee21d5d846ac
+CD1\07 (Dylan raps).flac:33272fa073754c8e9c50828df9547a95
+CD1\07 Fever.flac:080549922881e3290b7404d20a5eff30
+CD1\08 Girl from the North Country.flac:3dd58cc2c5a3308921c5ec05715b05db
+CD1\09 We just disagree.flac:83d9fdcbab752c9b17fea67a7dba61c2
+CD1\10 Ain't gonna go to hell for anybody.flac:1836243597b3b61b2a9b27acdc23683c
+CD1\11 Slow train.flac:b74fef9c2bc37b6eae702281bdde7f92
+CD1\12 Walk around heaven all day [Carolyn Dennis].flac:0f4172407b9ecfb6732a0f0adc918b6f
+CD1\Saved by the grace of the Lord [bonus].flac:290d719fd9d00e9a5ecfc4ce07e11d67
+CD2\13 Abraham, Martin and John.flac:c676c45e6982b63c9a2f4ae09cc1c4d0
+CD2\14 Rise again.flac:40742834a21b05fd4e140bdaf44c1158
+CD2\15 Let's keep it between us.flac:5b6e652fa32d8d3ec55748d70ab519be
+CD2\16 Mary from the wild moor.flac:6912d9690f0eda158b2c276ad0dee175
+CD2\17 Solid rock.flac:0812db31d5a36861b3ea471a388dd9e6
+CD2\18 Just like a woman.flac:5cc7b5b36e647f07c14fb41edf40689c
+CD2\19 Señor (Tales of Yankee Power).flac:f18f2b2d4fb14e3d470cab7423d3eff3
+CD2\20 Mr. Tambourine man (w Roger McGuinn).flac:ac09cdda547393b8a30f4071191d25f9
+CD2\21 Knockin' on heaven's door (w Roger McGuinn).flac:8379f507490b1fb0cf97472e314bd49c
+CD2\22 In the garden.flac:d6f970d436b3a5775824c29a7fa20841
+CD2\23 Blowin' in the wind.flac:2c02b6388f979ed5d9e698afe5e5ab25
+CD2\24 City of gold.flac:445b1b9d133eb083abc08b5685434cfc
+CD2\25 It ain't me, babe.flac:4b356a8d20e2b520932545f71620cff8
+CD2\26 A hard rain's a-gonna fall.flac:0b3546f3cb22b1fcc0990b11385c0cc2
+===================
+===================
+===================
+=== shntool len for: bd80-11-22-h.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.16       54192476 B   ---   --   ---xx   flac  0.6057  01 Gotta serve somebody.flac
+     4:12.64       44603372 B   ---   --   ---xx   flac  0.5917  02 I believe in you.flac
+     4:55.53       52162700 B   ---   --   ---xx   flac  0.6189  03 Like a rolling stone.flac
+     3:13.02       34049948 B   ---   --   ---xx   flac  0.5715  04 You are so beautiful (to me) [CLydie King].flac
+     5:14.69       55551932 B   ---   --   ---xx   flac  0.5986  05 Man gave names to all the animals.flac
+     4:37.31       48935756 B   ---   --   ---xx   flac  0.6107  06 Simple twist of fate.flac
+     2:34.15       27200924 B   ---   --   ---xx   flac  0.5881  07 (Dylan raps).flac
+     3:42.26       39221996 B   ---   --   ---xx   flac  0.6250  07 Fever.flac
+     4:06.11       43420316 B   ---   --   ---xx   flac  0.5783  08 Girl from the North Country.flac
+     2:36.02       27523148 B   ---   --   ---xx   flac  0.5895  09 We just disagree.flac
+     4:03.38       42954620 B   ---   --   ---xx   flac  0.6153  10 Ain't gonna go to hell for anybody.flac
+     5:21.18       56666780 B   ---   --   ---xx   flac  0.6096  11 Slow train.flac
+     4:10.63       44248220 B   ---   --   ---xx   flac  0.5612  12 Walk around heaven all day [Carolyn Dennis].flac
+     2:34.29       27233852 B   ---   --   ---xx   flac  0.6132  Saved by the grace of the Lord [bonus].flac
+    56:29.62      597966040 B                            0.5995  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd80-11-22-h.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.31       35529356 B   ---   --   ---xx   flac  0.5218  13 Abraham, Martin and John.flac
+     3:32.40       37490924 B   ---   --   ---xx   flac  0.5611  14 Rise again.flac
+     4:13.73       44800940 B   ---   --   ---xx   flac  0.5646  15 Let's keep it between us.flac
+     4:17.62       45480668 B   ---   --   ---xx   flac  0.5455  16 Mary from the wild moor.flac
+     4:36.59       48825212 B   ---   --   ---xx   flac  0.5988  17 Solid rock.flac
+     4:07.34       43650812 B   ---   --   ---xx   flac  0.5800  18 Just like a woman.flac
+     4:10.23       44154140 B   ---   --   ---xx   flac  0.5732  19 Señor (Tales of Yankee Power).flac
+     5:07.61       54298316 B   ---   --   ---xx   flac  0.5907  20 Mr. Tambourine man (w Roger McGuinn).flac
+     3:54.70       41442284 B   ---   --   ---xx   flac  0.5877  21 Knockin' on heaven's door (w Roger McGuinn).flac
+     6:53.23       72907340 B   ---   --   ---xx   flac  0.5958  22 In the garden.flac
+     5:00.35       53002364 B   ---   --   ---xx   flac  0.6055  23 Blowin' in the wind.flac
+     3:03.10       32304764 B   ---   --   ---xx   flac  0.5735  24 City of gold.flac
+     6:18.23       66733340 B   ---   --   ---xx   flac  0.5579  25 It ain't me, babe.flac
+     6:46.31       71691356 B   ---   --   ---xx   flac  0.6055  26 A hard rain's a-gonna fall.flac
+    65:24.50      692311816 B                            0.5787  (14 files)
+===================
+===================
+===================

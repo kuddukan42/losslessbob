@@ -1,0 +1,122 @@
+===================
+===================
+===================
+=== md5 for: bd78-07-11-d.flacf
+===================
+===================
+===================
+e7f4db42a2338379b75009e0c9a8d1a5 *01.flac
+b4e97990fe1115e4651551fc1bd4d8d3 *02.flac
+50f04c1102a0d615465ffa83ea4dffb9 *03.flac
+6255e1c9d0db1236d6994fdd19fc6e78 *04.flac
+1bee88ab2f0e20847d9cd998ab7fc3c4 *05.flac
+260e695c8f49ea9822b4dcd4afc5846c *06.flac
+544bddfcce76cecb05be5049c800a941 *07.flac
+8872f4e9d06082bf7c58f5d239a1fd57 *08.flac
+10a932cd1ffd0effb7b8277c00e15377 *09.flac
+de5ec059c441585dbb71c29134f97f9b *10.flac
+b5b4b9ab4f430e5b963954d57a56cb2a *11.flac
+af899bc43360036508a241c91c822045 *12.flac
+9ebfed1d42e8be54e41b2357e36dcfeb *13.flac
+c3450884794976cc9c1d25ea64e8153d *14.flac
+e95b5990aa2a9857a323e8639ba2d66f *15.flac
+df3b1b56c6cbdad8a7c5dba188bccb5a *16.flac
+c3da83abcb620a2d139b018d5cb0f12f *17.flac
+a61ea0325e6ec291754576bbe9796ae6 *18.flac
+0dffb89fac6862195c25533ea9304f74 *19.flac
+ee9beedb3fb3c394399224dc4b431240 *20.flac
+d186388bf31dc6af0a43148973da00c1 *21.flac
+fd1d29986318187c3baec8ef9ef3d33a *22.flac
+50cf9123ce0e915d932088f4d4dbc122 *23.flac
+338ae457f3b7e0a3e4e19918f8a8a1aa *24.flac
+252e354f59e35470a1224fb06f02fb80 *25.flac
+8f26ef85d5f92f1e4705083bce9087fa *26.flac
+03845d37b8ea8b1b662f8fae9adddcc4 *27.flac
+1e8bb4c0a2fd7f57870adda32fe8ee7a *28.flac
+b3cbc5fb61cbd0e6f38bf194b97599b9 *29.flac
+46c662ed4f166df8be6e3f4f0ca9855a *30.flac
+a422674c5e572b89db82d6d050391503 *31.flac
+d022991167126b39b910a56ac139ef64 *780711_Gothenburg.txt
+9a5ff212b1e96d4fea571fe5c701c83d *Goteborg 78 back.jpg
+4e728e9d1bccfe0c4fb3fad40ef6deef *Goteborg 78 front.jpg
+===================
+===================
+===================
+=== ffp for: bd78-07-11-d.flacf
+===================
+===================
+===================
+01.flac:969248c7334b12c0f008d3f2eddea1cd
+02.flac:eea4a5cc4cf4bb589958c1f055fa92cf
+03.flac:e4410cdbbb3782706daf8a5549abe750
+04.flac:c5ed76b79ca1ddc223cc8ee2619783d4
+05.flac:ac12398a58b888905d3a6e8a42f44673
+06.flac:b4354d3ff34eee979a116ee9cf753a5a
+07.flac:93021edb0793d9bf47c522ae4b3b270f
+08.flac:cdb11c93ea3a2264b303ced16dc2f9aa
+09.flac:beaf9088bf07eb5f4c5a056cda3bf06f
+10.flac:a3e0889d15b8c4b680a5312395c1ef4e
+11.flac:06517a00c2dc79f1e89c13d1bdeaf961
+12.flac:487d206a932f5af82ee56eb5b709ed0a
+13.flac:e6efd7748fc609cccc13b09c3ac5311a
+14.flac:c365b7811c66ca93b2af86b33c4edae6
+15.flac:5cc4765d3dfb33a0a79c4b84f4183e9a
+16.flac:637b2a630fc357cae839bf444490afa2
+17.flac:c52d5733235680902ed6f15082ed25b9
+18.flac:519087261ac2b275bc1051e277eff86d
+19.flac:d298dc8337c2211f5e6909fa361136ea
+20.flac:cb34e26327683f08f4d0c25104da83b4
+21.flac:e3f9e540afef9da47f7956463cbd02a0
+22.flac:43a4593f7a525082c7e5095357c76f25
+23.flac:54ea11b14b345d21e5a17d3cab8ef98c
+24.flac:247d39320287c7d6a49c5a15a603df2c
+25.flac:7518f5690db537c13fc15510a5ee1de1
+26.flac:12b1f194cf954c8ae6baec604b1d59b7
+27.flac:27ad40511185731fab56b48722203c5d
+28.flac:d5086dad4603a027a9c40e7dfa5e9c80
+29.flac:26ce6e6d07978553081b66496b0cc625
+30.flac:bafe6967da0643c198d855fe85b0a3f9
+31.flac:f150fa91e160bd6bc78f532a0a1776af
+===================
+===================
+===================
+=== shntool len for: bd78-07-11-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:11.71       33859436 B   ---   --   ---xx   flac  0.6518  01.flac
+     2:09.64       22906172 B   ---   --   ---xx   flac  0.6780  02.flac
+     5:37.72       59616188 B   ---   --   ---xx   flac  0.6811  03.flac
+     5:27.50       57800444 B   ---   --   ---xx   flac  0.6926  04.flac
+     5:04.71       53792636 B   ---   --   ---xx   flac  0.6988  05.flac
+     4:54.28       51927500 B   ---   --   ---xx   flac  0.7036  06.flac
+     5:46.43       61135580 B   ---   --   ---xx   flac  0.5892  07.flac
+     4:50.33       51233660 B   ---   --   ---xx   flac  0.6898  08.flac
+     4:56.11       52240316 B   ---   --   ---xx   flac  0.7195  09.flac
+     4:11.01       44278796 B   ---   --   ---xx   flac  0.6332  10.flac
+     7:40.32       81219308 B   ---   --   ---xx   flac  0.6925  11.flac
+     4:29.06       47465756 B   ---   --   ---xx   flac  0.6219  12.flac
+     4:27.54       47225852 B   ---   --   ---xx   flac  0.6601  13.flac
+     4:33.52       48279548 B   ---   --   ---xx   flac  0.6590  14.flac
+     1:04.33       11367260 B   ---   --   ---xx   flac  0.6654  15.flac
+     4:05.35       43300364 B   ---   --   ---xx   flac  0.6977  16.flac
+     7:02.30       74511404 B   ---   --   ---xx   flac  0.6162  17.flac
+     3:39.58       38768060 B   ---   --   ---xx   flac  0.6731  18.flac
+     3:29.00       36867644 B   ---   --   ---xx   flac  0.6899  19.flac
+     5:00.46       53028236 B   ---   --   ---xx   flac  0.6862  20.flac
+     3:29.16       36905276 B   ---   --   ---xx   flac  0.6639  21.flac
+     5:25.04       57339452 B   ---   --   ---xx   flac  0.7032  22.flac
+     4:46.43       50551580 B   ---   --   ---xx   flac  0.7288  23.flac
+     5:55.44       62725532 B   ---   --   ---xx   flac  0.7071  24.flac
+     5:39.21       59849036 B   ---   --   ---xx   flac  0.7160  25.flac
+     3:51.48       40861340 B   ---   --   ---xx   flac  0.7429  26.flac
+     6:05.67       64543628 B   ---   --   ---xx   flac  0.7072  27.flac
+     6:36.65       70007324 B   ---   --   ---xx   flac  0.7326  28.flac
+     6:01.59       63819212 B   ---   --   ---xx   flac  0.7131  29.flac
+     6:42.04       70922252 B   ---   --   ---xx   flac  0.7417  30.flac
+     5:22.21       56850236 B   ---   --   ---xx   flac  0.7041  31.flac
+   151:39.57     1605199028 B                            0.6878  (31 files)
+===================
+===================
+===================

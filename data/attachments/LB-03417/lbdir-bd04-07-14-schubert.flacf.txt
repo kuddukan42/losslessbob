@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-07-14-schubert.flacf 
+=================== 
+=================== 
+=================== 
+8a52c032bf62632cc33c06cfe7350ab8  bd04-07-14-schubert-LB-3417.txt
+18f5f59198be7acd82fc6fb79f6bc3e5  bd2004-07-14d1t01 Introduction.flac
+59512ea4efd51701cb76da29da8aab28  bd2004-07-14d1t02 The Wicked Messenger.flac
+103912112eff219852e71f36dd968326  bd2004-07-14d1t03 She Belongs To Me.flac
+b7e132102b5350657332d206a54444a0  bd2004-07-14d1t04 Cry A While.flac
+fbd869944759e22c9cd43e323d4a6c7e  bd2004-07-14d1t05 Desolation Row.flac
+38ff09b44e6a737533906cd69959f977  bd2004-07-14d1t06 Tweedle Dee & Tweedle Dum.flac
+636279f2a71cb5a5a2571116a0f475d1  bd2004-07-14d1t07 Boots Of Spanish Leather.flac
+16a2b06638264d48c64b164b18962fa7  bd2004-07-14d1t08 Highway 61 Revisited.flac
+b308d14f131fd8f454173b91be6b0835  bd2004-07-14d1t09 This Wheel's On Fire.flac
+a80365c41be36e3264e486dab06443a6  bd2004-07-14d1t10 Watching The River Flow.flac
+16a102210edc3e9976a8c9c4a0b8f66b  bd2004-07-14d2t01 Ballad Of A Thin Man.flac
+038076329ca92a3d764ade66604d359c  bd2004-07-14d2t02 Floater (Too Much To Ask).flac
+64bd0f0e16e125692989b688aa2f0354  bd2004-07-14d2t03 Honest With Me.flac
+adf78a7f39dae063fd389e588cc7eb1e  bd2004-07-14d2t04 Ballad Of Hollis Brown.flac
+47f75617f492dbfe89b8f4738b6c441a  bd2004-07-14d2t05 Summer Days.flac
+b8785f7d71acc146dda84ead385ed571  bd2004-07-14d2t06 audience.flac
+b2e1aad2da7f592c85b351174546bdd4  bd2004-07-14d2t07 Don't Think Twice, It's All Right.flac
+ec54dcda75dadc201106ac9850d578ce  bd2004-07-14d2t08 Like A Rolling Stone.flac
+34c7ca29660dd7f825a0d8031db6e4a4  bd2004-07-14d2t09 All Along The Watchtower.flac
+14896039bbf27c56adf98183be40afde  Bob Dylan 2004-07-14 Alcala de Henares (schubert).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-14-schubert.flacf 
+=================== 
+=================== 
+=================== 
+bd2004-07-14d1t01 Introduction.flac:3e4ec1cd43aab531aed1c9cbe661869d
+bd2004-07-14d1t02 The Wicked Messenger.flac:fa8c1567cfe4d31f2cfbd7bce5f939ad
+bd2004-07-14d1t03 She Belongs To Me.flac:5f2dd2033eae487a293bf41362d74468
+bd2004-07-14d1t04 Cry A While.flac:6aff86bf4253b6527115cb904f658561
+bd2004-07-14d1t05 Desolation Row.flac:e15547eb41191c0b8ebe5fb1a4bfbbc5
+bd2004-07-14d1t06 Tweedle Dee & Tweedle Dum.flac:e6d92275bc032bf709607ed825093928
+bd2004-07-14d1t07 Boots Of Spanish Leather.flac:692a689d63127d2252e5e4b8e6f5374c
+bd2004-07-14d1t08 Highway 61 Revisited.flac:3861614cf0fde70dc44cf3b404fae7e3
+bd2004-07-14d1t09 This Wheel's On Fire.flac:b74732802432b405e37ad82d69778533
+bd2004-07-14d1t10 Watching The River Flow.flac:bebd3d8b99cec181b56741cecc803536
+bd2004-07-14d2t01 Ballad Of A Thin Man.flac:8a29d6b6f2b27ead5c566c9e9185489f
+bd2004-07-14d2t02 Floater (Too Much To Ask).flac:053778a40c18e6ec6a37cc316761ef6f
+bd2004-07-14d2t03 Honest With Me.flac:507fe66acf5fb6bd8eb7a0c43119f4cf
+bd2004-07-14d2t04 Ballad Of Hollis Brown.flac:f7a30713905a02e94b3b233a91089c52
+bd2004-07-14d2t05 Summer Days.flac:afcdb756670fe1fd3c7be3137b4297d5
+bd2004-07-14d2t06 audience.flac:7ca366feeeecd5fa49935cce1b992733
+bd2004-07-14d2t07 Don't Think Twice, It's All Right.flac:914df0f836fd4c63f19c531517a6923a
+bd2004-07-14d2t08 Like A Rolling Stone.flac:689a920c80e941468f8f2d05216824e5
+bd2004-07-14d2t09 All Along The Watchtower.flac:c00420a14a246640ea6fe13d2480670e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-14-schubert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:09.01       12173996 B   ---   --   ---xx   flac  0.5637  bd2004-07-14d1t01 Introduction.flac
+     4:19.20       45734684 B   ---   --   ---xx   flac  0.6808  bd2004-07-14d1t02 The Wicked Messenger.flac
+     6:17.21       66552236 B   ---   --   ---xx   flac  0.6139  bd2004-07-14d1t03 She Belongs To Me.flac
+     5:43.67       60662828 B   ---   --   ---xx   flac  0.6586  bd2004-07-14d1t04 Cry A While.flac
+     9:08.44       96770732 B   ---   --   ---xx   flac  0.6523  bd2004-07-14d1t05 Desolation Row.flac
+     5:27.03       57689900 B   ---   --   ---xx   flac  0.6229  bd2004-07-14d1t06 Tweedle Dee & Tweedle Dum.flac
+     7:20.62       77761868 B   ---   --   ---xx   flac  0.5904  bd2004-07-14d1t07 Boots Of Spanish Leather.flac
+     7:21.06       77806556 B   ---   --   ---xx   flac  0.6790  bd2004-07-14d1t08 Highway 61 Revisited.flac
+     6:32.58       69285260 B   ---   --   ---xx   flac  0.6413  bd2004-07-14d1t09 This Wheel's On Fire.flac
+     7:25.58       78634460 B   ---   --   ---xx   flac  0.6510  bd2004-07-14d1t10 Watching The River Flow.flac
+     7:24.74       78495692 B   ---   --   ---xx   flac  0.6253  bd2004-07-14d2t01 Ballad Of A Thin Man.flac
+     6:18.29       66747452 B   ---   --   ---xx   flac  0.5937  bd2004-07-14d2t02 Floater (Too Much To Ask).flac
+     7:20.05       77627804 B   ---   --   ---xx   flac  0.6685  bd2004-07-14d2t03 Honest With Me.flac
+     5:41.29       60220652 B   ---   --   ---xx   flac  0.5861  bd2004-07-14d2t04 Ballad Of Hollis Brown.flac
+     7:48.19       82599932 B   ---   --   ---xx   flac  0.6648  bd2004-07-14d2t05 Summer Days.flac
+     3:23.34       35889212 B   ---   --   ---xx   flac  0.5374  bd2004-07-14d2t06 audience.flac
+     7:24.39       78413372 B   ---   --   ---xx   flac  0.6059  bd2004-07-14d2t07 Don't Think Twice, It's All Right.flac
+     8:13.39       87056972 B   ---   --   ---xx   flac  0.6694  bd2004-07-14d2t08 Like A Rolling Stone.flac
+    10:18.39      109106972 B   ---   --   ---xx   flac  0.5990  bd2004-07-14d2t09 All Along The Watchtower.flac
+   124:38.47     1319230580 B                            0.6318  (19 files)
+=================== 
+=================== 
+=================== 

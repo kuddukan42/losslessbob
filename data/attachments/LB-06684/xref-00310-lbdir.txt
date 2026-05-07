@@ -1,0 +1,41 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-05-05-acoustic-vinyl.flacf 
+=================== 
+=================== 
+=================== 
+42ab509550598d9e73f5da468c583567  01 1966_Dublin_ Visions of Johanna.flac
+d9ce3492ea321d89c5a9a64fc8bf8d61  02 1966_Dublin_Fourth Time Around.flac
+f86870e365e830cdf93d8ca1fd42d130  03 1966_Dublin_Just Like A Woman.flac
+0b56b863fa743d47fe5912d45b620bea  04 1966_Dublin_Desolation Row.flac
+42cbef70fb3a30aaf2a90dca5e7b382d  dublin 1966 acoustic.md5
+f4272ff3902735a2dbd7dd8e5431081d  dublin 66 demos.txt
+faea1e1bcb17efcd781211c787f56fc1  ffp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-05-05-acoustic-vinyl.flacf 
+=================== 
+=================== 
+=================== 
+01 1966_dublin_ visions of johanna.flac:b3a48de5769d99509177b8c18def860b
+02 1966_dublin_fourth time around.flac:fdba43b6211f4f2454884eb3a8fa4f77
+03 1966_dublin_just like a woman.flac:b3c2c4364994c94761823f573bdbacf7
+04 1966_dublin_desolation row.flac:8830021a4c6a6af6b6bf5883831cbefe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-05-05-acoustic-vinyl.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:25.03       78505100 B   ---   --   ---xx   flac  0.4067  01 1966_Dublin_ Visions of Johanna.flac
+     4:34.53       48458300 B   ---   --   ---xx   flac  0.4086  02 1966_Dublin_Fourth Time Around.flac
+     5:33.16       58778876 B   ---   --   ---xx   flac  0.3851  03 1966_Dublin_Just Like A Woman.flac
+    10:18.11      109041116 B   ---   --   ---xx   flac  0.3698  04 1966_Dublin_Desolation Row.flac
+    27:51.08      294783392 B                            0.3891  (4 files)
+=================== 
+=================== 
+=================== 

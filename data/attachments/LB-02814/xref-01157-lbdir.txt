@@ -1,0 +1,430 @@
+===================
+===================
+===================
+=== md5 for: bd67-tree-with-roots-Vagabound-Wilbury.flacf
+===================
+===================
+===================
+3ece06dd6ff173098ed924f171194795 *artwork\back.JPG
+8c79d8a384e1a1e9a4c62110f4f9ab10 *artwork\book\page-1.JPG
+95c3502d0c81ae7fd4c3f7908973fdac *artwork\book\page-10.JPG
+473c2a4121d6c02fb29e0dc3f3ed090f *artwork\book\page-11.JPG
+13356131a22b157d344b5fd9c062d124 *artwork\book\page-12.JPG
+cb4f6768cf15e2024a4b4387d0890572 *artwork\book\page-13.JPG
+228812c45eb30dd9f6660886eff609ec *artwork\book\page-14.JPG
+bfbeb31cb7cdcac19de0dec62bdcf7d2 *artwork\book\page-15.JPG
+bbd41db88f4805453144e10883e40cd6 *artwork\book\page-16.JPG
+5ac1bcd684627689c17734fe62aae96f *artwork\book\page-17.JPG
+24af8a43cba90ef2616c2b683f0936e6 *artwork\book\page-18.JPG
+9a98e83472f02d2e8b3a1da999985702 *artwork\book\page-19.JPG
+2beb29fccb1f1798e44abb2e8e668087 *artwork\book\page-2.JPG
+3b97f8f91fa1a8fb4239b152482e5aee *artwork\book\page-20.JPG
+ef6dd2474406b56bd6d75bd15c5da32f *artwork\book\page-21.JPG
+7ac6aef12e6abf2e704fdebb5fae967d *artwork\book\page-22.JPG
+04797896f973f9a332118c48a242ff65 *artwork\book\page-23.JPG
+08f350e5723ece12f14f47c401f8301d *artwork\book\page-24.JPG
+4935a835f6429cdea7844653883b3c8a *artwork\book\page-25.JPG
+24567a606dcec8d38c3a1ae442346839 *artwork\book\page-26.JPG
+dc66b1e601a7f044f381044e82bf15cb *artwork\book\page-27.JPG
+a72169fd4f1541dbcc272b4cbfd23afc *artwork\book\page-28.JPG
+5517a08079655ed7a1a0813c03c89153 *artwork\book\page-29.JPG
+ff562ef9361d195cb86d094c34e8aa0b *artwork\book\page-3.JPG
+0c8bd630e10d3f6a54f0c7ac9e197c88 *artwork\book\page-30.JPG
+101cadcc4830a64e1f32c080be81daa8 *artwork\book\page-31.JPG
+5e3a13fe3acafe9adec9995d59d8700a *artwork\book\page-32.JPG
+9035956860d8d412e4afcff4783bb97f *artwork\book\page-4.JPG
+d5edbe8cda2a7b685c6f7964f7327841 *artwork\book\page-5.JPG
+81c50bc36f4516eceb2311a5bb212d24 *artwork\book\page-6.JPG
+8d1ec83e809dccfc617beb7fab6865e2 *artwork\book\page-7.JPG
+e781a7a40dc1e759e89f36e64530efd1 *artwork\book\page-8.JPG
+80fb4a3f4767e28d8bf6e979c2aa3a1a *artwork\book\page-9.JPG
+4567745c6f77955c1cadf1d2aa766de3 *artwork\cd-1.JPG
+becfe6fd9d5f76de7ec41d0255e495b0 *artwork\cd-2.JPG
+56cf9456d2d21c553817dbc630dd3ec6 *artwork\cd-3.JPG
+9f1198388a27a3feaa6f878bf9c4e980 *artwork\cd-4.JPG
+116882bf4c13810ee38de7114f32b0cd *artwork\front.jpg
+83082c3d021828acf07fa8f6b5267ae2 *BD A Tree With Roots -The original basement tapes.md5
+a31365435431aeb749ef2e4e0daae203 *BD A Tree With Roots -The original basement tapes.txt
+ed113567cac1de4f114c9db5dfa1ddcc *cd-1\01.flac
+780b080fa14b9c866f661a42a4a94432 *cd-1\02.flac
+66f49dcf374d4dbac0888d77e0be4c04 *cd-1\03.flac
+733f680429e4457e6a616a47a8730b6a *cd-1\04.flac
+d5243065de0c40eca7e4922ba85e7f5d *cd-1\05.flac
+54ecd7c41ca25104b58343e603412e9a *cd-1\06.flac
+e2bf817e42dcd02659d4bb255580a4fd *cd-1\07.flac
+7394c3a8c3f9a2c3852f44ddb125bf40 *cd-1\08.flac
+b783f1599a5e705499cbeff46eded318 *cd-1\09.flac
+18429dd307aa6ecb388580418be76a69 *cd-1\10.flac
+ab3870b5fcdc8d16e58b0ed87a494686 *cd-1\11.flac
+8912b478d8537eb9dd1f55f0c299e8dd *cd-1\12.flac
+ecad8feabeee46ab1b5d8756a13aaa1f *cd-1\13.flac
+9e13fd2b2b78df21988f8217d191d0c5 *cd-1\14.flac
+7942ef8bcae7be233d59807661541897 *cd-1\15.flac
+feacd844eb079133b43cef6b730a706b *cd-1\16.flac
+f91405b012412caa3b297f224d76be1f *cd-1\17.flac
+476a10b5b7e60e4e161b591c56918446 *cd-1\18.flac
+1b967d9ef0b8f81c2057bc6b28d029c3 *cd-1\19.flac
+2564eb89fbce0480508bec1af1d3c3a4 *cd-1\20.flac
+97c25069e1b20e02b2c6f74de7b92dba *cd-1\21.flac
+1b9c85d5137dc0b3912305a3ae5c9ffe *cd-1\22.flac
+975ddfc02cf816e0d003c4c421409e3f *cd-1\23.flac
+ea8395fd72accee497820132e275edee *cd-1\24.flac
+1ffd34713f85d6d6fb324e65351eea34 *cd-1\25.flac
+e22851fe1f894551aad2e13a13e8de31 *cd-1\26.flac
+b10eb524720c8362d0ec694f5f1dcb6f *cd-1\27.flac
+6b7b14a4a5f6c533745f13f9b7764d4a *cd-1\28.flac
+07b45c6ff7ed1d6a5eaa89f1ae7a52ab *cd-1\cd-1.ffp
+07b45c6ff7ed1d6a5eaa89f1ae7a52ab *cd-1\cd-1.txt
+a569ad81ac9c1c8408069334ae68e8ed *cd-1\Unknown Title.log
+396449871c531fe88288c6df1a678021 *cd-2\01.flac
+8664e77ffab7c6b85d2f2ff0f61f3585 *cd-2\02.flac
+a41bd285286a658001b0e8b4dc114d20 *cd-2\03.flac
+e197583483367046d6eb8571732ad9a7 *cd-2\04.flac
+4ff693cf24d1c431749d3e62e9089a99 *cd-2\05.flac
+3217a3a88d5db3749ef11f848668713f *cd-2\06.flac
+4edeb35c692f2b39d74c81a4340f16d3 *cd-2\07.flac
+d9f472dbd6344cd4cb1df774350fc55a *cd-2\08.flac
+baced9ba8763c6d97e011e0b6a9a9ba5 *cd-2\09.flac
+b470f2932b19d520153acada0ae3ce14 *cd-2\10.flac
+8eeafcfb86a3a93b07c2278ffd5f2a6a *cd-2\11.flac
+a2666485d793019b6ddd73ce11800d20 *cd-2\12.flac
+034b5af860d55b5b6fe38a4444ee8099 *cd-2\13.flac
+0a12e65e69669bb2ac2fc5e3cb0e86ec *cd-2\14.flac
+fbc3daa5a435aeadd43915feb841a174 *cd-2\15.flac
+d0377bc43e0a1ecbc5f27147486576ff *cd-2\16.flac
+1337aef1a84223f647b38ca5fd4cebc1 *cd-2\17.flac
+82645aa27bb58e63c3cabc602d8959cc *cd-2\18.flac
+33b4eb43ea34a709b35092eafe277def *cd-2\19.flac
+8c3cb5449f7d6def8f76702a2aee3fc0 *cd-2\20.flac
+b56d1ca109f800223cf592e5d5e95dde *cd-2\21.flac
+f85d9c1f1bc95a50ee8324b730e61e0c *cd-2\22.flac
+f29ddb87bf65f4bd99dec79eeab252e9 *cd-2\23.flac
+4b6e7a5e7feeb61fad80f776fd10d9c4 *cd-2\24.flac
+a97bcc71b6753246e40fad7af62224cc *cd-2\25.flac
+279e57175225ccf2c60157a120daa35f *cd-2\26.flac
+ce478ca0f9c5ae4248a31274ee9a6773 *cd-2\27.flac
+5eb545a3056bac284cd0f4959bc7f031 *cd-2\28.flac
+6af112146db4e733c74ec9eca4a4dc0d *cd-2\cd-2.ffp
+6af112146db4e733c74ec9eca4a4dc0d *cd-2\cd-2.txt
+6936f2763598dc76bab28b4c00c7634d *cd-2\Unknown Title.log
+64940349689cde8de26e7ec8578c54fd *cd-3\01.flac
+6ba4048582d6212d62b60bacb2cd7b3b *cd-3\02.flac
+9a06cece9c364fb6f949d9cc1d145a50 *cd-3\03.flac
+437a13ca088f70435a9587492f45be2a *cd-3\04.flac
+480d3c238ae2e518d2c91d7d6f0972a7 *cd-3\05.flac
+951831be34de609642a90d37ea9f8679 *cd-3\06.flac
+429711161911a9bcebe8de22988e6846 *cd-3\07.flac
+f7893009802cd47f244f9d0ab4600544 *cd-3\08.flac
+8c9ef57d63dfaafe1ac5f1baff5f6200 *cd-3\09.flac
+771d4eeb4119e87768e421e8606b6350 *cd-3\10.flac
+06135636a4bd6ab98589fd8747ce5155 *cd-3\11.flac
+a04179c3ad6692b4f9fe092fc0db26cf *cd-3\12.flac
+f44b1ecf4321f6edfece65805fb5800b *cd-3\13.flac
+4d70344de4e9de89e550b67efdb41f4a *cd-3\14.flac
+f79456ef3f152e1d8da7130e5a0dcff9 *cd-3\15.flac
+90a372b5ffc7358f64de539233a67e14 *cd-3\16.flac
+87783e44166b2c0a00b9c761f819eec3 *cd-3\17.flac
+ba3419672723c9531c48bba3145af3d0 *cd-3\18.flac
+f3016c0337a29de806b64120a84aa75b *cd-3\19.flac
+1d4be532f217020502711a8df373fe08 *cd-3\20.flac
+1c9099197ba0c9427b986562aec2df2a *cd-3\21.flac
+c909ec11b56515d7d530128068a343a9 *cd-3\22.flac
+242b723e5bccb2e1be54e67fe75d300b *cd-3\23.flac
+e37b896a751b191e8a56732e1f2758ef *cd-3\24.flac
+5b878d735ceaa9948022545ccc28c0c2 *cd-3\25.flac
+08db69ddea0af431dfc37a6a29a19606 *cd-3\cd-3.ffp
+08db69ddea0af431dfc37a6a29a19606 *cd-3\cd-3.txt
+3ba74d35b0b9c54bcd71f0d17dfb3134 *cd-3\Unknown Title.log
+871d17bc735faaa15416e26bcce6ba99 *cd-4\01.flac
+c43f95909161655963819209400e6b23 *cd-4\02.flac
+5d0e39d828b7249a99f4693cc3d95015 *cd-4\03.flac
+17bfd66790912225164c9f6abf308f71 *cd-4\04.flac
+b17678d213d9302ba26fbeb35fc3820f *cd-4\05.flac
+1c2967120f703b9d0028f06a12a049eb *cd-4\06.flac
+c00a6076f275f7168a438d74b369e8fa *cd-4\07.flac
+2ed1bb4923d4b0a1f150e468538a9e5e *cd-4\08.flac
+607664ece07ae004b14a7386b8b17349 *cd-4\09.flac
+b2985baaf83b49e40aeb5d69c6ba4356 *cd-4\10.flac
+56737cee348e10ddb961aefb44b9a0dd *cd-4\11.flac
+47df9482df6016f1c64195f86adebbad *cd-4\12.flac
+96b380921b09264b41073ea2471616a1 *cd-4\13.flac
+f9e6c7d04ed6de9f339de950e688eee2 *cd-4\14.flac
+448af08aefe5f651667165529ae3bf33 *cd-4\15.flac
+495476401966804a2eee774cb18ca1f9 *cd-4\16.flac
+0f179eb82a95d740033ca556ae5d4361 *cd-4\17.flac
+365e3a2d3732020dc900c7acfae7c89c *cd-4\18.flac
+e2faf410b9fad375a29f5fb8be371329 *cd-4\19.flac
+e3d42ca3d4960e023d9ca62d5daef06b *cd-4\20.flac
+9e1d766fa533d7f831debe2331ddc62b *cd-4\21.flac
+e6058eb2dfcde924c9cbbe9bf35547c5 *cd-4\22.flac
+7928b7ad33d3c7218520b894617a888d *cd-4\23.flac
+bf111097532551d28ac27021f1157fb1 *cd-4\24.flac
+0dde86b26113eb297e2a3c594d1d71d9 *cd-4\25.flac
+ab92f83ba7a2afe5aa1ebfa72c447f42 *cd-4\26.flac
+ed55d690d1ab915e30f5603361d51b6f *cd-4\27.flac
+db89c8defbd8d6081aa4a7353d0d72f7 *cd-4\cd-4.ffp
+db89c8defbd8d6081aa4a7353d0d72f7 *cd-4\cd-4.txt
+b9840dce32a7841e157e7c1004df2942 *cd-4\Unknown Title.log
+c0930a978dabd947e7c32e1b8b1ac2ec *info.txt
+===================
+===================
+===================
+=== ffp for: bd67-tree-with-roots-Vagabound-Wilbury.flacf
+===================
+===================
+===================
+cd-1\01.flac:6f38632441002527f2d16ba6d51dc2c0
+cd-1\02.flac:12246a2877d021d013f0be75692bbeb4
+cd-1\03.flac:1b767ba88aac0d96cf2ab6c5494c46ab
+cd-1\04.flac:92a1744c1faeefc98882271c6543ab60
+cd-1\05.flac:de6336b7ce73698cce9b32fb70bb9ee5
+cd-1\06.flac:19aaa71f16511fcedaedf7e414b62464
+cd-1\07.flac:4e9cf77a3b78f3fdb5a1b0efa4af22c6
+cd-1\08.flac:cf61a9583c70d00bb99da0c16de67586
+cd-1\09.flac:022900ea1605080207e434a4ffdef85d
+cd-1\10.flac:ceb1aa5a74998d4dc4b862d70e2854e7
+cd-1\11.flac:975383802242c0781f644a74c5043036
+cd-1\12.flac:1fb2e4539ad6d94dd11310477b37adfe
+cd-1\13.flac:4ad47b715c8a9eac5eb5e1e548c02478
+cd-1\14.flac:9b266d6b9a01022651f4b16b42197b27
+cd-1\15.flac:c854d1f8b376d5f5f55a8b31b020e21a
+cd-1\16.flac:6b9dfae7dcf1fdab1d5e2ddb7a29a8b8
+cd-1\17.flac:17110af67b967efb376e70cb354a1ea0
+cd-1\18.flac:cce7c6bb57313221e55d0ff76c374b1e
+cd-1\19.flac:187c09be55d3859585686cf2705a758a
+cd-1\20.flac:300957570f3d7c34feeab97fbf8a59ee
+cd-1\21.flac:5db317d1119d0ce31b947c62ac99c9b3
+cd-1\22.flac:6dd830dcf738a57ea4e70a296e17083d
+cd-1\23.flac:c73fe67feb57faaeb23b4cf27de490c6
+cd-1\24.flac:036e216ef7050bac455c2ef6bb871f29
+cd-1\25.flac:202db6351ef024757763c2e4f66bb9b9
+cd-1\26.flac:785c2a4d5875d54e31f69631e83d9c2b
+cd-1\27.flac:936e799c5d8141b4f81ddadfd1022e86
+cd-1\28.flac:905d41198cf15cc82bd7161788e0ba4f
+cd-2\01.flac:02b72d09c2f09a28ab96ed5aca3b64a5
+cd-2\02.flac:f6384bdbee48edd85aa181c079a9a205
+cd-2\03.flac:8617322956c3542b51ea5b44aa87a0f3
+cd-2\04.flac:1b908521c496c42010b12313a253ae95
+cd-2\05.flac:b29c3717947f8e2af678a8b3b17f6c95
+cd-2\06.flac:fb90a76f46a57d56cecf19a4cc2c8c1f
+cd-2\07.flac:dbd874f4b886bdd87b87d79bb1d97d0d
+cd-2\08.flac:8882331cd9c069278801c59ba92d24eb
+cd-2\09.flac:7baabd39461e903de63efda502179248
+cd-2\10.flac:d982005b25baaac2ca2ba5f28c25bcb6
+cd-2\11.flac:4ee524abc6960c6a5ebb598a2963947e
+cd-2\12.flac:f0b53069cff6816572a856d7c19832ce
+cd-2\13.flac:e3ab415aa34ee3cae1ea6f76445a2692
+cd-2\14.flac:798e6dd50e9a8e8ba4ffba7731e489d0
+cd-2\15.flac:7b0ec2833545f041d64444780c73e8eb
+cd-2\16.flac:b9fb248471a2ecc7a33c0942dc516a7c
+cd-2\17.flac:b8c8b593da076e0439bcff12548973a2
+cd-2\18.flac:ac2c8706f83d8a56675b77058543f3fd
+cd-2\19.flac:10d576e73ad35b16d61f2d0f9ec4c0a0
+cd-2\20.flac:66e2341f11e5939e54b99e12120a45f4
+cd-2\21.flac:00bb01842fe8a76ac9f352eb56c1438e
+cd-2\22.flac:342f55c607d302c0fae5a11b2ff142a5
+cd-2\23.flac:c39a4b90dd16a78de946de28ac1d445a
+cd-2\24.flac:aeb89ca63104b50b6717a5a2ecd1ed6d
+cd-2\25.flac:e72126cadf399393cd6679184851d5f0
+cd-2\26.flac:b8b97d985476584c703f6440b721e6c3
+cd-2\27.flac:4dce2e77cc3acaf0d83cdeebed35a1e1
+cd-2\28.flac:f4aee1c4bf46fe159d8dc7dcd93b8492
+cd-3\01.flac:34e3a4d5d967c17a722fee21f105175a
+cd-3\02.flac:56ccf3bb86c2b70babfc0ff8d1c962dd
+cd-3\03.flac:d70a9711d84841beb8fa5842a7409753
+cd-3\04.flac:8ae6ca58a36c47bfb368c3d17af17704
+cd-3\05.flac:6f147edc454bc883feaaec9961b74366
+cd-3\06.flac:4337a7fc600d071e49580d418cade773
+cd-3\07.flac:88e711c1a3331ad1308a0e2b039e4a80
+cd-3\08.flac:384e7a6bd019fa3d74c0953400eb3d52
+cd-3\09.flac:ef1a72a321d3272b9c51d103097922f6
+cd-3\10.flac:8e9b719746d2fa8204631e03efc7ba0b
+cd-3\11.flac:5d28f9e886321f4a6f18d1f76df1a545
+cd-3\12.flac:3f2b540c3288c9fed3fcc3fc87f14151
+cd-3\13.flac:bd18758d121b90e272b709e753d257d7
+cd-3\14.flac:3392fac8d05d73fbc0072f05328f0913
+cd-3\15.flac:98f081a5ce50c068fa8b4a5f10a156f4
+cd-3\16.flac:2e25bff846febaa19dff0d4f16de2b68
+cd-3\17.flac:e3080f496a73203588af15d03f02480c
+cd-3\18.flac:771d9a86ce2568b46931cb2db8fdd1e8
+cd-3\19.flac:3985906e88fcf251389b6ccfa702f144
+cd-3\20.flac:c044faa6cf6def2933547e5e81d936f4
+cd-3\21.flac:f632e3e7c0d91b5cf34d16409132c863
+cd-3\22.flac:bf5275554ea8f514ff4b0dc367598c77
+cd-3\23.flac:4131a652af084fa24d9d73ea915f0ea0
+cd-3\24.flac:9a6f8f7e9df707efac9d568def94d6ab
+cd-3\25.flac:c1f3e368d3c93d67673f1fcca6e4f113
+cd-4\01.flac:2a2a97354f3facaa7a76080eadc69ea6
+cd-4\02.flac:2cc01fdec7474e7a822a360dc7e6751d
+cd-4\03.flac:024c9e78e70c13c348cdd3b49d0a082d
+cd-4\04.flac:35bf44757468c70f6bca1d1ceffdffe8
+cd-4\05.flac:b9605bb84e6824d067427cd283f19aa5
+cd-4\06.flac:6b4bb37c11a9d707f10779c4e4ac88b5
+cd-4\07.flac:22193155c90d334d98dd825e8bced76c
+cd-4\08.flac:27275d9794fac5a23940168d1acc68a7
+cd-4\09.flac:e623aeb53b60ff62a4f154f0f241a7d0
+cd-4\10.flac:2acb125177db3e4a1d5cf1810e53abb6
+cd-4\11.flac:9f9984d7251bcf15fee64ecaca3c4828
+cd-4\12.flac:fa5e522d4de2bb0a6baf892e5adf49c8
+cd-4\13.flac:2616d7a16b29e43a407d5b0f6bb1c5e8
+cd-4\14.flac:1c33c6350f24c1377d74c9fba76a27b2
+cd-4\15.flac:f154929b9b38e766dbd89b0ed379667e
+cd-4\16.flac:1c4c273ada18c90db9d0489a94042b8d
+cd-4\17.flac:d564a993b4673d4045dc9817c8b2c9b8
+cd-4\18.flac:06b87f29f8bdf704ee9b37c90c5a1d6b
+cd-4\19.flac:31bafa0472160e101713d851d7401220
+cd-4\20.flac:e6bb611db10b7bac964fde4b35b3d661
+cd-4\21.flac:0ebc9c64280aeba983ae3ff39e511108
+cd-4\22.flac:687f4388050f8229e1a9f64bd8b6e444
+cd-4\23.flac:4ac80a5338794aab0732be48c20daaa8
+cd-4\24.flac:99960b1f12ac0de1f6b06d58c587bd11
+cd-4\25.flac:b0af6a66c8327452685470564d92107e
+cd-4\26.flac:5fe7ad10b09014a8dee8172ee4c2b4fb
+cd-4\27.flac:9397b50ab7f35ffd615f0691186dba4e
+===================
+===================
+===================
+=== shntool len for: bd67-tree-with-roots-Vagabound-Wilbury.flacf\cd-1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:20.41        3624476 B   ---   --   ---xx   flac  0.4487  01.flac
+     2:49.36       29896316 B   ---   --   ---xx   flac  0.4554  02.flac
+     1:38.66       17442476 B   ---   --   ---xx   flac  0.4923  03.flac
+     5:38.54       59750252 B   ---   --   ---xx   flac  0.5037  04.flac
+     3:25.11       36187916 B   ---   --   ---xx   flac  0.5058  05.flac
+     3:01.38       32017820 B   ---   --   ---xx   flac  0.5011  06.flac
+     0:40.49        7171292 B   ---   --   ---xx   flac  0.4681  07.flac
+     3:31.05       37232204 B   ---   --   ---xx   flac  0.5002  08.flac
+     3:11.14       33725372 B   ---   --   ---xx   flac  0.4932  09.flac
+     4:47.52       50749148 B   ---   --   ---xx   flac  0.4794  10.flac
+     1:07.42       11917628 B   ---   --   ---xx   flac  0.4783  11.flac
+     4:22.15       46252124 B   ---   --   ---xx   flac  0.4691  12.flac
+     3:31.26       37281596 B   ---   --   ---xx   flac  0.4598  13.flac
+     2:25.03       25585100 B   ---   --   ---xx   flac  0.5126  14.flac
+     3:34.54       37876652 B   ---   --   ---xx   flac  0.4758  15.flac
+     3:52.23       40978940 B   ---   --   ---xx   flac  0.5009  16.flac
+     2:08.17       22619228 B   ---   --   ---xx   flac  0.5374  17.flac
+     4:35.42       48608828 B   ---   --   ---xx   flac  0.4390  18.flac
+     2:56.62       31192268 B   ---   --   ---xx   flac  0.4661  19.flac
+     0:21.31        3777356 B   ---   --   ---xx   flac  0.4465  20.flac
+     3:02.27       32168348 B   ---   --   ---xx   flac  0.4485  21.flac
+     3:26.29       36406652 B   ---   --   ---xx   flac  0.4893  22.flac
+     0:46.23        8168540 B   ---   --   ---xx   flac  0.5950  23.flac
+     3:18.10       34950764 B   ---   --   ---xx   flac  0.5485  24.flac
+     3:57.47       41917388 B   ---   --   ---xx   flac  0.5647  25.flac
+     1:01.25       10819244 B   ---   --   ---xx   flac  0.5572  26.flac
+     2:10.21       22981436 B   ---   --   ---xx   flac  0.4885  27.flac
+     2:04.53       21998300 B   ---   --   ---xx   flac  0.5289  28.flac
+    77:47.16      823297664 B                            0.4931  (28 files)
+===================
+===================
+===================
+=== shntool len for: bd67-tree-with-roots-Vagabound-Wilbury.flacf\cd-2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:48.12       29663468 B   ---   --   ---xx   flac  0.5748  01.flac
+     2:06.19       22271132 B   ---   --   ---xx   flac  0.6095  02.flac
+     3:24.51       36105596 B   ---   --   ---xx   flac  0.6097  03.flac
+     4:48.50       50920844 B   ---   --   ---xx   flac  0.5795  04.flac
+     1:05.55       11595404 B   ---   --   ---xx   flac  0.5465  05.flac
+     2:01.40       21438524 B   ---   --   ---xx   flac  0.6024  06.flac
+     2:59.53       31700300 B   ---   --   ---xx   flac  0.5530  07.flac
+     5:43.59       60644012 B   ---   --   ---xx   flac  0.5354  08.flac
+     0:17.45        3104684 B   ---   --   ---xx   flac  0.5015  09.flac
+     3:07.42       33085628 B   ---   --   ---xx   flac  0.5574  10.flac
+     3:16.38       34663820 B   ---   --   ---xx   flac  0.5247  11.flac
+     2:41.47       28510988 B   ---   --   ---xx   flac  0.5225  12.flac
+     3:05.28       32699900 B   ---   --   ---xx   flac  0.5039  13.flac
+     3:21.47       35566988 B   ---   --   ---xx   flac  0.5130  14.flac
+     0:50.00        8820044 B   ---   --   ---xx   flac  0.5183  15.flac
+     2:30.13       26490620 B   ---   --   ---xx   flac  0.5584  16.flac
+     2:42.40       28670924 B   ---   --   ---xx   flac  0.5606  17.flac
+     3:12.50       33986444 B   ---   --   ---xx   flac  0.5391  18.flac
+     2:44.69       29091932 B   ---   --   ---xx   flac  0.4473  19.flac
+     3:57.25       41865644 B   ---   --   ---xx   flac  0.5764  20.flac
+     2:17.23       24220940 B   ---   --   ---xx   flac  0.6065  21.flac
+     2:22.13       25079420 B   ---   --   ---xx   flac  0.5718  22.flac
+     2:42.20       28623884 B   ---   --   ---xx   flac  0.5644  23.flac
+     1:48.23       19105340 B   ---   --   ---xx   flac  0.5733  24.flac
+     2:54.67       30851228 B   ---   --   ---xx   flac  0.5868  25.flac
+     3:05.16       32671676 B   ---   --   ---xx   flac  0.6247  26.flac
+     2:10.64       23082572 B   ---   --   ---xx   flac  0.6262  27.flac
+     3:52.10       40948364 B   ---   --   ---xx   flac  0.6120  28.flac
+    77:59.44      825480320 B                            0.5624  (28 files)
+===================
+===================
+===================
+=== shntool len for: bd67-tree-with-roots-Vagabound-Wilbury.flacf\cd-3
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:39.31       38704556 B   ---   --   ---xx   flac  0.5511  01.flac
+     2:34.15       27200924 B   ---   --   ---xx   flac  0.5462  02.flac
+     2:58.22       31450988 B   ---   --   ---xx   flac  0.5611  03.flac
+     2:43.03       28760300 B   ---   --   ---xx   flac  0.5753  04.flac
+     1:57.10       20662364 B   ---   --   ---xx   flac  0.5541  05.flac
+     3:57.31       41879756 B   ---   --   ---xx   flac  0.5809  06.flac
+     7:21.50       77910044 B   ---   --   ---xx   flac  0.5040  07.flac
+     3:03.06       32295356 B   ---   --   ---xx   flac  0.5071  08.flac
+     2:28.47       26217788 B   ---   --   ---xx   flac  0.5487  09.flac
+     2:26.45       25860284 B   ---   --   ---xx   flac  0.5308  10.flac
+     3:01.33       32006060 B   ---   --   ---xx   flac  0.5941  11.flac
+     1:51.23       19634540 B   ---   --   ---xx   flac  0.5950  12.flac
+     2:34.13       27196220 B   ---   --   ---xx   flac  0.5583  13.flac
+     2:13.46       23569436 B   ---   --   ---xx   flac  0.5685  14.flac
+     5:12.43       55137980 B   ---   --   ---xx   flac  0.5109  15.flac
+     2:34.63       27313820 B   ---   --   ---xx   flac  0.5327  16.flac
+     2:10.65       23084924 B   ---   --   ---xx   flac  0.5112  17.flac
+     2:06.22       22278188 B   ---   --   ---xx   flac  0.5112  18.flac
+     2:53.10       30540764 B   ---   --   ---xx   flac  0.5036  19.flac
+     2:48.02       29639948 B   ---   --   ---xx   flac  0.5112  20.flac
+     2:49.02       29816348 B   ---   --   ---xx   flac  0.5224  21.flac
+     3:00.72       31921388 B   ---   --   ---xx   flac  0.5085  22.flac
+     3:56.45       41736284 B   ---   --   ---xx   flac  0.5769  23.flac
+     2:46.07       29298908 B   ---   --   ---xx   flac  0.5556  24.flac
+     3:55.70       41618684 B   ---   --   ---xx   flac  0.5267  25.flac
+    77:04.26      815735852 B                            0.5391  (25 files)
+===================
+===================
+===================
+=== shntool len for: bd67-tree-with-roots-Vagabound-Wilbury.flacf\cd-4
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:54.19       30738332 B   ---   --   ---xx   flac  0.5137  01.flac
+     3:56.30       41701004 B   ---   --   ---xx   flac  0.5522  02.flac
+     2:27.05       25942604 B   ---   --   ---xx   flac  0.5485  03.flac
+     4:28.46       47383436 B   ---   --   ---xx   flac  0.5542  04.flac
+     2:04.35       21955964 B   ---   --   ---xx   flac  0.5389  05.flac
+     2:20.52       24818348 B   ---   --   ---xx   flac  0.5550  06.flac
+     2:47.49       29574092 B   ---   --   ---xx   flac  0.5464  07.flac
+     0:57.13       10085420 B   ---   --   ---xx   flac  0.5257  08.flac
+     3:18.14       34960172 B   ---   --   ---xx   flac  0.5492  09.flac
+     4:22.31       46289756 B   ---   --   ---xx   flac  0.5634  10.flac
+     3:35.58       38062460 B   ---   --   ---xx   flac  0.6025  11.flac
+     5:34.07       58934108 B   ---   --   ---xx   flac  0.6103  12.flac
+     1:45.12       18550268 B   ---   --   ---xx   flac  0.5788  13.flac
+     2:20.38       24785420 B   ---   --   ---xx   flac  0.5826  14.flac
+     3:36.74       38276492 B   ---   --   ---xx   flac  0.5933  15.flac
+     1:37.44       17214332 B   ---   --   ---xx   flac  0.5676  16.flac
+     2:15.08       23832860 B   ---   --   ---xx   flac  0.5289  17.flac
+     1:36.49       17049692 B   ---   --   ---xx   flac  0.5668  18.flac
+     1:52.60       19897964 B   ---   --   ---xx   flac  0.6088  19.flac
+     0:43.40        7679324 B   ---   --   ---xx   flac  0.5508  20.flac
+     1:49.06       19241756 B   ---   --   ---xx   flac  0.6081  21.flac
+     4:01.04       42521852 B   ---   --   ---xx   flac  0.5209  22.flac
+     3:22.30       35703404 B   ---   --   ---xx   flac  0.5276  23.flac
+     2:43.11       28779116 B   ---   --   ---xx   flac  0.5884  24.flac
+     2:51.30       30235004 B   ---   --   ---xx   flac  0.6099  25.flac
+     4:08.31       43820156 B   ---   --   ---xx   flac  0.4565  26.flac
+     3:36.64       38252972 B   ---   --   ---xx   flac  0.4712  27.flac
+    77:07.35      816286308 B                            0.5548  (27 files)
+===================
+===================
+===================

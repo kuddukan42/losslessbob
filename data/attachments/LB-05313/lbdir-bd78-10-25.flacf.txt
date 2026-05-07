@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-25.flacf 
+=================== 
+=================== 
+=================== 
+8c72eeb4bad005544d63f7cb0df61c01  bd78-10-25-Indianapolis.ffp
+52be2a58aa7068ba59384bae80bf8feb  bd78-10-25d1tr01.flac
+1d156e12aaf36fbf989019bf2320f97a  bd78-10-25d1tr02.flac
+e11ac48b52e86c4acf7d36073e4c481a  bd78-10-25d1tr03.flac
+aed9436a62b215bd1e6b0b21bf5777a4  bd78-10-25d1tr04.flac
+878a52a7ba30aaa843f90c256bc41a35  bd78-10-25d1tr05.flac
+4d04e375b55caa11aee93176968bbc46  bd78-10-25d1tr06.flac
+392865b38ca2f7cfbc9b8e35858cd502  bd78-10-25d1tr07.flac
+9bb90413d8854c6baff7b175b5b0e52a  bd78-10-25d1tr08.flac
+eebe9d44d3869accac1db688c5087871  bd78-10-25d1tr09.flac
+a60ec0b226d42eb3d4d3752a1de1d441  bd78-10-25d1tr10.flac
+a167780693555623e805521d86a5a313  bd78-10-25d1tr11.flac
+5b79ba0c4f78dc73af0d61b8800a6074  bd78-10-25d1tr12.flac
+c4a94ac5858476266a4f6d2f51a8be53  bd78-10-25d1tr13.flac
+38ba48c0d4404be49af7695fdb56fce2  bd78-10-25d1tr14.flac
+f5784046a4ce0fa40ac9055dd652f0c1  bd78-10-25d2tr01.flac
+f21fe6204bf7eaf0edb08031ff50b004  bd78-10-25d2tr02.flac
+cefba504cfc3c93dc7f1f631ca3504dc  bd78-10-25d2tr03.flac
+c86eea2e6eff0a65182e68bd1d4fb125  bd78-10-25d2tr04.flac
+1d5d1a13bf596a0d94dfe1e32f01746f  bd78-10-25d2tr05.flac
+5ff1c87fc7807ea7de74856777763c8a  bd78-10-25d2tr06.flac
+4a6b95ee28304c535e7917de0dd455be  bd78-10-25d2tr07.flac
+5686c1d1f4537ffff8264164be768dd7  bd78-10-25d2tr08.flac
+de812722dcd8b0bd87f8284adbb05939  bd78-10-25d2tr09.flac
+8680ec980f4a4e6abf1e6bffa77df1ef  bd78-10-25d2tr10.flac
+fb1af1e927ecb28d612fc3c8c05f3605  bd78-10-25d2tr11.flac
+dcb6b3676ab7ec80c95b86540def1314  bd78-10-25d2tr12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-25.flacf 
+=================== 
+=================== 
+=================== 
+bd78-10-25d1tr01.flac:fed9bf6acfad227bb3d6183f4f544904
+bd78-10-25d1tr02.flac:2f4c77a6d1b9aed8d853534864f7bfea
+bd78-10-25d1tr03.flac:e63c8cc3ce4d05df4c965e583bcdb242
+bd78-10-25d1tr04.flac:7ce31aa01eb077d3affd97cae2be5c63
+bd78-10-25d1tr05.flac:cf886a93513bfa963f0e042e12f47e55
+bd78-10-25d1tr06.flac:4fda7261353cfde4c39709ea73033aff
+bd78-10-25d1tr07.flac:cb4076616286d1a836e24491e740f803
+bd78-10-25d1tr08.flac:a584631145ff07889ba91575895f36e7
+bd78-10-25d1tr09.flac:9abdcf1ab01bab7a133cb3bc3b746870
+bd78-10-25d1tr10.flac:3248c9ead40344965622c7247fc979b5
+bd78-10-25d1tr11.flac:ecf2481d790a36c4574db4cddf3e583c
+bd78-10-25d1tr12.flac:55a03438f48b940e3fb31d2bc4b2bacb
+bd78-10-25d1tr13.flac:3380edce66dc89ce7086ac42ff60b5eb
+bd78-10-25d1tr14.flac:9273a8e3c4a177363a511d27ef0376e5
+bd78-10-25d2tr01.flac:24bc72a9c494ba525fa9cb93293b3940
+bd78-10-25d2tr02.flac:6e84d0b2d4d841e9e12f95b6d7dc660b
+bd78-10-25d2tr03.flac:458f96a3e5c040e4dd2beaf75c2258ee
+bd78-10-25d2tr04.flac:00091cdeaf43caad0cbadbbf989d244c
+bd78-10-25d2tr05.flac:f2e18c13b7546904d68341a14eda2cb7
+bd78-10-25d2tr06.flac:001b951e5d6c0d4af284f165e3091dd7
+bd78-10-25d2tr07.flac:19e58f7c577602643d2b7f6a66fee311
+bd78-10-25d2tr08.flac:cb7e64363d27a4d615529ae3708744fb
+bd78-10-25d2tr09.flac:58e4a5d7c9eaa7c93153496382bd3910
+bd78-10-25d2tr10.flac:b55c0bedcd1663f862fdf4004f9e0b3d
+bd78-10-25d2tr11.flac:e97cdef874f2446093a4ff18ec1d9416
+bd78-10-25d2tr12.flac:7bdaef31572a126b8fc80a5b63ac6a74
+=================== 
+=================== 
+=================== 
+=== shntool for: bd78-10-25.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:48.49       29750492 B   ---   --   ---xx   flac  0.6042  bd78-10-25d1tr01.flac
+     2:01.08       21363260 B   ---   --   ---xx   flac  0.6123  bd78-10-25d1tr02.flac
+     5:06.46       54086636 B   ---   --   ---xx   flac  0.6085  bd78-10-25d1tr03.flac
+     4:18.03       45518300 B   ---   --   ---xx   flac  0.6083  bd78-10-25d1tr04.flac
+     4:47.59       50765612 B   ---   --   ---xx   flac  0.6058  bd78-10-25d1tr05.flac
+     7:52.11       83286716 B   ---   --   ---xx   flac  0.5789  bd78-10-25d1tr06.flac
+     4:44.73       50269340 B   ---   --   ---xx   flac  0.5970  bd78-10-25d1tr07.flac
+     5:17.46       56027036 B   ---   --   ---xx   flac  0.5788  bd78-10-25d1tr08.flac
+     3:58.66       42138476 B   ---   --   ---xx   flac  0.5563  bd78-10-25d1tr09.flac
+     7:17.71       77253836 B   ---   --   ---xx   flac  0.5586  bd78-10-25d1tr10.flac
+     5:01.38       53185820 B   ---   --   ---xx   flac  0.5345  bd78-10-25d1tr11.flac
+     5:37.39       59538572 B   ---   --   ---xx   flac  0.5339  bd78-10-25d1tr12.flac
+     5:11.58       54996860 B   ---   --   ---xx   flac  0.5426  bd78-10-25d1tr13.flac
+     6:35.59       69816812 B   ---   --   ---xx   flac  0.5560  bd78-10-25d1tr14.flac
+     5:09.25       54566444 B   ---   --   ---xx   flac  0.5623  bd78-10-25d2tr01.flac
+     4:39.43       49316780 B   ---   --   ---xx   flac  0.5624  bd78-10-25d2tr02.flac
+     6:05.08       64404860 B   ---   --   ---xx   flac  0.5648  bd78-10-25d2tr03.flac
+     6:35.42       69776828 B   ---   --   ---xx   flac  0.5899  bd78-10-25d2tr04.flac
+     4:32.16       48018476 B   ---   --   ---xx   flac  0.5969  bd78-10-25d2tr05.flac
+     5:36.48       59383340 B   ---   --   ---xx   flac  0.5876  bd78-10-25d2tr06.flac
+     4:45.08       50292860 B   ---   --   ---xx   flac  0.5886  bd78-10-25d2tr07.flac
+     3:51.17       40788428 B   ---   --   ---xx   flac  0.5954  bd78-10-25d2tr08.flac
+     2:47.68       29618780 B   ---   --   ---xx   flac  0.5943  bd78-10-25d2tr09.flac
+    10:28.21      110828636 B   ---   --   ---xx   flac  0.5954  bd78-10-25d2tr10.flac
+     7:32.04       79742252 B   ---   --   ---xx   flac  0.5982  bd78-10-25d2tr11.flac
+     8:05.41       85650476 B   ---   --   ---xx   flac  0.5806  bd78-10-25d2tr12.flac
+   140:48.67     1490385928 B                            0.5790  (26 files)
+=================== 
+=================== 
+=================== 

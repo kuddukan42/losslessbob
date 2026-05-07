@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd25-03-28-DK-WI.flacf
+===================
+===================
+===================
+ed8eaf2c1be7d477b7183b95bb2e618c *bobdylan2025-03-28-16bit-t01.flac
+25db1565e71c3e5f51914a57bc11d115 *bobdylan2025-03-28-16bit-t02.flac
+5586ded1d2bee117ed4ec046a1630fd6 *bobdylan2025-03-28-16bit-t03.flac
+f7f3691ae59c47306404f74fbd36eac3 *bobdylan2025-03-28-16bit-t04.flac
+2c75a8cb67fb73ca42f3432f38d96788 *bobdylan2025-03-28-16bit-t05.flac
+ca901a8c614fef61106dea6b1bac6a19 *bobdylan2025-03-28-16bit-t06.flac
+67df1aec86f1269460ba5f8e1a2b200e *bobdylan2025-03-28-16bit-t07.flac
+5f506afd9bfc3bfeaae592c8c4fc2b1b *bobdylan2025-03-28-16bit-t08.flac
+d19d066cb6c3807b73a461b2e78226ec *bobdylan2025-03-28-16bit-t09.flac
+2b56df67c44525c9e7f48ea6a71d7a0d *bobdylan2025-03-28-16bit-t10.flac
+69f048d639d5e52fd9f90c97b64ac26b *bobdylan2025-03-28-16bit-t11.flac
+6ef54de2ef98b776462ee5c44e69ddae *bobdylan2025-03-28-16bit-t12.flac
+9fabbacac18577a3fc0a58099b3cfd6d *bobdylan2025-03-28-16bit-t13.flac
+f8d026b5e6c52b9fccd1651e733da1b9 *bobdylan2025-03-28-16bit-t14.flac
+08bca6da273804cdf454906b5726f303 *bobdylan2025-03-28-16bit-t15.flac
+9f463c33ceb5f4e7b0fe0d721477bac0 *bobdylan2025-03-28-16bit-t16.flac
+16efbce84a7525ca916760bfee892b5f *bobdylan2025-03-28-16bit-t17.flac
+6d6ebf2aa46cac752b34805ff47dc3d0 *bobdylan2025-03-28-16bit.ffp
+bfcd2f79d1e69996e70d422f807e7b8e *bobdylan2025-03-28-16bit.txt
+===================
+===================
+===================
+=== ffp for: bd25-03-28-DK-WI.flacf
+===================
+===================
+===================
+bobdylan2025-03-28-16bit-t01.flac:dde15bf3dcb6e304f8b5e6844ba647c4
+bobdylan2025-03-28-16bit-t02.flac:4553326087a1b70a827fa4a222ffd26e
+bobdylan2025-03-28-16bit-t03.flac:c84bf764d5d72f6f704052992bfb1885
+bobdylan2025-03-28-16bit-t04.flac:865f37586f277eb33ef652aab0b12146
+bobdylan2025-03-28-16bit-t05.flac:5eb46c0fe79856a655ca06a69c6115e1
+bobdylan2025-03-28-16bit-t06.flac:1b15384488eaaf06b1b9a0838fa30a42
+bobdylan2025-03-28-16bit-t07.flac:35c4dca02d865fd1a4d7a6734a429c7a
+bobdylan2025-03-28-16bit-t08.flac:2ed1ab317968b1f7d54c154fed8f91a2
+bobdylan2025-03-28-16bit-t09.flac:f89480971bffd891c032640f9d7c627e
+bobdylan2025-03-28-16bit-t10.flac:00e85ef893b9da4557e37f9dab5d5db1
+bobdylan2025-03-28-16bit-t11.flac:230c2fafcb1668c348949455fa98be53
+bobdylan2025-03-28-16bit-t12.flac:d977e43f1aa2c3adbf5b4e76da39fd71
+bobdylan2025-03-28-16bit-t13.flac:386a210e36c7ae05b89b600d10705098
+bobdylan2025-03-28-16bit-t14.flac:2bdb8663370df3ac745416030ca71590
+bobdylan2025-03-28-16bit-t15.flac:2a25824dba51f89086ece0ce83c75ffc
+bobdylan2025-03-28-16bit-t16.flac:c07eb5d01089b141e0d6fbc7955c0363
+bobdylan2025-03-28-16bit-t17.flac:d5632b00238c550452cbdc2bee5eabdf
+===================
+===================
+===================
+=== shntool len for: bd25-03-28-DK-WI.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.12       66883868 B   ---   --   ---xx   flac  0.3783  bobdylan2025-03-28-16bit-t01.flac
+     7:16.44       77013932 B   ---   --   ---xx   flac  0.3909  bobdylan2025-03-28-16bit-t02.flac
+     5:24.12       57181868 B   ---   --   ---xx   flac  0.3824  bobdylan2025-03-28-16bit-t03.flac
+     6:51.06       72514556 B   ---   --   ---xx   flac  0.3877  bobdylan2025-03-28-16bit-t04.flac
+     5:52.46       62201036 B   ---   --   ---xx   flac  0.3429  bobdylan2025-03-28-16bit-t05.flac
+     5:25.22       57381788 B   ---   --   ---xx   flac  0.3039  bobdylan2025-03-28-16bit-t06.flac
+     6:21.19       67253132 B   ---   --   ---xx   flac  0.3040  bobdylan2025-03-28-16bit-t07.flac
+     4:29.51       47571596 B   ---   --   ---xx   flac  0.3884  bobdylan2025-03-28-16bit-t08.flac
+     7:41.65       81473324 B   ---   --   ---xx   flac  0.3518  bobdylan2025-03-28-16bit-t09.flac
+     6:27.27       68330348 B   ---   --   ---xx   flac  0.3727  bobdylan2025-03-28-16bit-t10.flac
+     8:06.29       85798652 B   ---   --   ---xx   flac  0.2909  bobdylan2025-03-28-16bit-t11.flac
+     5:03.12       53477468 B   ---   --   ---xx   flac  0.3810  bobdylan2025-03-28-16bit-t12.flac
+     4:54.65       52014524 B   ---   --   ---xx   flac  0.3056  bobdylan2025-03-28-16bit-t13.flac
+     6:55.13       73236620 B   ---   --   ---xx   flac  0.3121  bobdylan2025-03-28-16bit-t14.flac
+     5:36.44       59373932 B   ---   --   ---xx   flac  0.3120  bobdylan2025-03-28-16bit-t15.flac
+     7:24.48       78434540 B   ---   --   ---xx   flac  0.3669  bobdylan2025-03-28-16bit-t16.flac
+     6:40.08       70578860 B   ---   --   ---xx   flac  0.3447  bobdylan2025-03-28-16bit-t17.flac
+   106:49.73     1130720044 B                            0.3475  (17 files)
+===================
+===================
+===================

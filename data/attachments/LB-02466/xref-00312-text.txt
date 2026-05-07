@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Bob Dylan	
+
+Sunrise Musical Theater
+Miami, Florida
+12 November 1989
+ 
+ 
+                         1.  I Want You
+                         2.  My Back Pages
+                         3.  Positively 4th Street
+                         4.  Man Of Peace
+                         5.  You're A Big Girl Now
+                         6.  Masters Of War
+ 
+                         7.  It's All Over Now, Baby Blue
+                         8.  A Hard Rain's A-Gonna Fall
+                         9.  Boots Of Spanish Leather
+                       10.  Don't Think Twice, It's All Right
+ 
+                       11.  Everything Is Broken
+                       12.  Tears Of Rage (Bob Dylan & Richard Manuel)
+                       13.  Man In The Long Black Coat
+                       14.  I Shall Be Released
+                       15.  Like A Rolling Stone
+                                                
+
+ 
+                       16.  Mr. Tambourine Man
+                       17.  All Along The Watchtower
+ 
+ 
+Concert # 167 of The Never-Ending Tour.  Concert # 24 of the 1989 USA Fall Tour.
+ 
+Concert # 89 with the second Never-Ending Tour Band: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Tony Garnier (bass), Christopher Parker (drums).
+ 
+7-10 and 16 Bob Dylan (vocal & guitar), G.E. Smith (guitar).
+ 
+1, 5, 7, 9, 10, 13, 16  Bob Dylan harmonica.
+ 
+11 new songs (64%) compared to previous concert. No new songs for this tour.
+ 
+Stereo audience recording, 100 minutes.
+ 
+Session info updated 5 February 2001.
+
+ww.bjoner.com
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+8271b2c11051ba47db9ac58d241db6bf  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t01.flac
+d6d0a0bb89376d90367a067571628dd3  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t02.flac
+c6da093967d64999575e8c724d75e714  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t03.flac
+a1a121dde281f4734cc80b2b89ceb90a  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t04.flac
+d0f1933adcef549bb5424448951bf7e0  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t05.flac
+04b6fa4dd695883411607808a36060f5  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t06.flac
+5d21522385bf268d908bd9e76d67a885  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t07.flac
+f644df594bb6a700b6a4fdaeb71ec1a6  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t08.flac
+77487623759e6b999f9287ba9d9f086c  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t09.flac
+436c4527ca75b4a45db509ab926a7f3a  [shntool]  BoB Dylan- 12.11.89 Miami-d1-t10.flac
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+8d0e0ca14664285a899785619b330b7c  [shntool]  Bob Dylan- 12.11.89 Miami-d2-t01.flac
+d69d57c8236773948c69c338e098ce2b  [shntool]  Bob Dylan- 12.11.89 Miami-d2-t02.flac
+8842d1f6b4d488c60b719af8c1d9ca3b  [shntool]  Bob Dylan- 12.11.89 Miami-d2-t03.flac
+79b47217900f79683bee56d405fe6bba  [shntool]  Bob Dylan- 12.11.89 Miami-d2-t04.flac
+09a887809640dcb9a54c00f86792c81c  [shntool]  Bob Dylan- 12.11.89 Miami-d2-t05.flac
+6b09f16434fcea2f250614bfec45ef3a  [shntool]  Bob Dylan- 12.11.89 Miami-d2-t06.flac
+f0077866040858e70ba865d922a80a97  [shntool]  Bob Dylan- 12.11.89 Miami-d2-t07.flac
+
+===================
+===================
+===================

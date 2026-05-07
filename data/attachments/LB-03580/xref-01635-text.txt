@@ -1,0 +1,215 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+Olympiahalle  Munich, West Germany
+19-Jul-81
+received in a trade
+
+CD-1
+1.Saved
+2.I Believe In You
+3.Like A Rolling Stone
+4.Till I Get It Right
+5.Man Gave Names to All the Animals
+6.Maggie's Farm
+7.Girl From The North Country
+8.Ballad Of A Thin Man
+9.In the Summertime
+10.Dead Man, Dead Man
+11.Forever Young
+12 Carolyn Dennis: Walk Around Heaven All Day
+13.The Times They Are A-Changin'
+14.Let's Begin
+15.Lenny Bruce
+
+
+CD-2
+1.Slow Train
+2.Mr. Tambourine Man
+3.Solid Rock
+4.Just Like A Woman
+5.Masters of War
+6.Saved
+7.Watered-Down Love
+8.When You Gonna Wake Up?
+9.Heart of Mine
+10.In the Garden
+11.Blowin' in the Wind
+12.It Ain't Me, Babe
+13.Knockin' On Heaven's Door
+===================
+===================
+===================
+=== July 19 1981 Olympiahalle  Munich, West Germany.md5
+===================
+===================
+===================
+f9bf06ced92b2aff82b87ad876017b07 *info.txt
+2409fb684d934ae459db05dc61c60711 *cd-1\01. bd-1981-07-19d01t01.flac
+aabf6826ddfc891213240214c5a268c7 *cd-1\02. bd-1981-07-19d01t02.flac
+1501135e54883a3069f03822892b8190 *cd-1\03. bd-1981-07-19d01t03.flac
+5a53305aefe0b5b6d5a73221bf34a730 *cd-1\04. bd-1981-07-19d01t04.flac
+336b9da5d4d527fe98b71e98cde0f78e *cd-1\05. bd-1981-07-19d01t05.flac
+87998bc1cb85075b1eb3d8028f117a10 *cd-1\06. bd-1981-07-19d01t06.flac
+d019e3e8d72d0785b1f8a10f67353797 *cd-1\07. bd-1981-07-19d01t07.flac
+224a96775eb1bd7dd48a373fdd87c868 *cd-1\08. bd-1981-07-19d01t08.flac
+78641288b32acb510d4f57090823fd47 *cd-1\09. bd-1981-07-19d01t09.flac
+477c5fd5968a281031777ccaa1f69d19 *cd-1\10. bd-1981-07-19d01t10.flac
+0967401a37be8824e2331b80147856f6 *cd-1\11. bd-1981-07-19d01t11.flac
+36e740f7557f7994d630e2f5bcf6a0cd *cd-1\12. bd-1981-07-19d01t12.flac
+c197268ef54dd45e1f01552fae4d526e *cd-1\13. bd-1981-07-19d01t13.flac
+7cc30da34692f5e56f2568771a1db73a *cd-1\14. bd-1981-07-19d01t14.flac
+3bd377b90713c036b450e3682c31bd76 *cd-1\15. bd-1981-07-19d01t15.flac
+c764bab188e3fed4557410e551e39f59 *cd-1\cd-1.ffp
+c764bab188e3fed4557410e551e39f59 *cd-1\cd-1.txt
+159f166faeffb2c257807dd698c0c2e6 *cd-2\01. bd-1981-07-19d02t01.flac
+7a27a4c83ea36b8a4bca73d77e6d19c7 *cd-2\02. bd-1981-07-19d02t02.flac
+4bba229967b4b4d9b25e551849b03813 *cd-2\03. bd-1981-07-19d02t03.flac
+f2b8686db8b64b333fdd56e9100aabf6 *cd-2\04. bd-1981-07-19d02t04.flac
+e4707931174b0b24fe5177633cc75cdc *cd-2\05. bd-1981-07-19d02t05.flac
+40a5f9fb1c5022842c74c0017102a0fb *cd-2\06. bd-1981-07-19d02t06.flac
+eb3a2bb197ef9c45fb3ccd59ec33d51a *cd-2\07. bd-1981-07-19d02t07.flac
+527b58420677103bad26e8f3dc94a3b2 *cd-2\08. bd-1981-07-19d02t08.flac
+273beadb1a9ac33db0e32cab437043b8 *cd-2\09. bd-1981-07-19d02t09.flac
+12a04cb96e7b55639f88cd03a1e5e229 *cd-2\10. bd-1981-07-19d02t10.flac
+1e082818462fd26f9aa8eb0b8396779e *cd-2\11. bd-1981-07-19d02t11.flac
+014a44727bb5945b45d5f178ec2fad9c *cd-2\12. bd-1981-07-19d02t12.flac
+c02e31c6895f0156a0ca0d0ebd7336a2 *cd-2\13. bd-1981-07-19d02t13.flac
+1956bf7c5335af6a93d3b1943b98b1b8 *cd-2\14. bd-1981-07-19d02t14.flac
+a90ee2477de66c903d19eda15d214bed *cd-2\cd-2.ffp
+a90ee2477de66c903d19eda15d214bed *cd-2\cd-2.txt
+===================
+===================
+===================
+=== July 19 1981 Olympiahalle  Munich, West Germany.txt
+===================
+===================
+===================
+f9bf06ced92b2aff82b87ad876017b07 *info.txt
+2409fb684d934ae459db05dc61c60711 *cd-1\01. bd-1981-07-19d01t01.flac
+aabf6826ddfc891213240214c5a268c7 *cd-1\02. bd-1981-07-19d01t02.flac
+1501135e54883a3069f03822892b8190 *cd-1\03. bd-1981-07-19d01t03.flac
+5a53305aefe0b5b6d5a73221bf34a730 *cd-1\04. bd-1981-07-19d01t04.flac
+336b9da5d4d527fe98b71e98cde0f78e *cd-1\05. bd-1981-07-19d01t05.flac
+87998bc1cb85075b1eb3d8028f117a10 *cd-1\06. bd-1981-07-19d01t06.flac
+d019e3e8d72d0785b1f8a10f67353797 *cd-1\07. bd-1981-07-19d01t07.flac
+224a96775eb1bd7dd48a373fdd87c868 *cd-1\08. bd-1981-07-19d01t08.flac
+78641288b32acb510d4f57090823fd47 *cd-1\09. bd-1981-07-19d01t09.flac
+477c5fd5968a281031777ccaa1f69d19 *cd-1\10. bd-1981-07-19d01t10.flac
+0967401a37be8824e2331b80147856f6 *cd-1\11. bd-1981-07-19d01t11.flac
+36e740f7557f7994d630e2f5bcf6a0cd *cd-1\12. bd-1981-07-19d01t12.flac
+c197268ef54dd45e1f01552fae4d526e *cd-1\13. bd-1981-07-19d01t13.flac
+7cc30da34692f5e56f2568771a1db73a *cd-1\14. bd-1981-07-19d01t14.flac
+3bd377b90713c036b450e3682c31bd76 *cd-1\15. bd-1981-07-19d01t15.flac
+c764bab188e3fed4557410e551e39f59 *cd-1\cd-1.ffp
+c764bab188e3fed4557410e551e39f59 *cd-1\cd-1.txt
+159f166faeffb2c257807dd698c0c2e6 *cd-2\01. bd-1981-07-19d02t01.flac
+7a27a4c83ea36b8a4bca73d77e6d19c7 *cd-2\02. bd-1981-07-19d02t02.flac
+4bba229967b4b4d9b25e551849b03813 *cd-2\03. bd-1981-07-19d02t03.flac
+f2b8686db8b64b333fdd56e9100aabf6 *cd-2\04. bd-1981-07-19d02t04.flac
+e4707931174b0b24fe5177633cc75cdc *cd-2\05. bd-1981-07-19d02t05.flac
+40a5f9fb1c5022842c74c0017102a0fb *cd-2\06. bd-1981-07-19d02t06.flac
+eb3a2bb197ef9c45fb3ccd59ec33d51a *cd-2\07. bd-1981-07-19d02t07.flac
+527b58420677103bad26e8f3dc94a3b2 *cd-2\08. bd-1981-07-19d02t08.flac
+273beadb1a9ac33db0e32cab437043b8 *cd-2\09. bd-1981-07-19d02t09.flac
+12a04cb96e7b55639f88cd03a1e5e229 *cd-2\10. bd-1981-07-19d02t10.flac
+1e082818462fd26f9aa8eb0b8396779e *cd-2\11. bd-1981-07-19d02t11.flac
+014a44727bb5945b45d5f178ec2fad9c *cd-2\12. bd-1981-07-19d02t12.flac
+c02e31c6895f0156a0ca0d0ebd7336a2 *cd-2\13. bd-1981-07-19d02t13.flac
+1956bf7c5335af6a93d3b1943b98b1b8 *cd-2\14. bd-1981-07-19d02t14.flac
+a90ee2477de66c903d19eda15d214bed *cd-2\cd-2.ffp
+a90ee2477de66c903d19eda15d214bed *cd-2\cd-2.txt
+===================
+===================
+===================
+=== cd-1.ffp
+===================
+===================
+===================
+01. bd-1981-07-19d01t01.flac:23fb1ef686c6058231567b16c9ee0c79
+02. bd-1981-07-19d01t02.flac:a1fcac1acacc38a30b1dad140a890712
+03. bd-1981-07-19d01t03.flac:d10836803a987bd321e7caee97c3fdc0
+04. bd-1981-07-19d01t04.flac:b33041bb99d8d0c616dbfaf99ca713ec
+05. bd-1981-07-19d01t05.flac:5be4f59e202717d108ba75664b284ae6
+06. bd-1981-07-19d01t06.flac:34b496b072f6d628307d77a4e310c78e
+07. bd-1981-07-19d01t07.flac:86619d11e6d098fdaad5b1c9158589ee
+08. bd-1981-07-19d01t08.flac:2608b0e00b940e62b352141691e8679e
+09. bd-1981-07-19d01t09.flac:0ce8b046a028c16fb96e75ed6bb38a53
+10. bd-1981-07-19d01t10.flac:a8c23be3a2071a3d9fe8b3048d5045f7
+11. bd-1981-07-19d01t11.flac:fb175bb238cca2b441fcd2ced9a3f9c3
+12. bd-1981-07-19d01t12.flac:2a58c1a197b0eb4ae3e0f5618fb790f7
+13. bd-1981-07-19d01t13.flac:26f9e0e76a02b1cb88dd0beed4df2c8d
+14. bd-1981-07-19d01t14.flac:00680d181edf050999c52ae90396ae78
+15. bd-1981-07-19d01t15.flac:b9c4c2f5400a842691d0898f42d55f89
+===================
+===================
+===================
+=== cd-1.txt
+===================
+===================
+===================
+01. bd-1981-07-19d01t01.flac:23fb1ef686c6058231567b16c9ee0c79
+02. bd-1981-07-19d01t02.flac:a1fcac1acacc38a30b1dad140a890712
+03. bd-1981-07-19d01t03.flac:d10836803a987bd321e7caee97c3fdc0
+04. bd-1981-07-19d01t04.flac:b33041bb99d8d0c616dbfaf99ca713ec
+05. bd-1981-07-19d01t05.flac:5be4f59e202717d108ba75664b284ae6
+06. bd-1981-07-19d01t06.flac:34b496b072f6d628307d77a4e310c78e
+07. bd-1981-07-19d01t07.flac:86619d11e6d098fdaad5b1c9158589ee
+08. bd-1981-07-19d01t08.flac:2608b0e00b940e62b352141691e8679e
+09. bd-1981-07-19d01t09.flac:0ce8b046a028c16fb96e75ed6bb38a53
+10. bd-1981-07-19d01t10.flac:a8c23be3a2071a3d9fe8b3048d5045f7
+11. bd-1981-07-19d01t11.flac:fb175bb238cca2b441fcd2ced9a3f9c3
+12. bd-1981-07-19d01t12.flac:2a58c1a197b0eb4ae3e0f5618fb790f7
+13. bd-1981-07-19d01t13.flac:26f9e0e76a02b1cb88dd0beed4df2c8d
+14. bd-1981-07-19d01t14.flac:00680d181edf050999c52ae90396ae78
+15. bd-1981-07-19d01t15.flac:b9c4c2f5400a842691d0898f42d55f89
+===================
+===================
+===================
+=== cd-2.ffp
+===================
+===================
+===================
+01. bd-1981-07-19d02t01.flac:ee9fcc9e3b215d6629a5f84582a96da1
+02. bd-1981-07-19d02t02.flac:3d8cfa7641ba7ecf41737cc28ca512b4
+03. bd-1981-07-19d02t03.flac:126ed50c14f154757dbdf997165c7a31
+04. bd-1981-07-19d02t04.flac:ed20d24c902bc701c6dd74c1ed0f45bb
+05. bd-1981-07-19d02t05.flac:b421311eafb8758b4e8ee042868502fb
+06. bd-1981-07-19d02t06.flac:4bc09541a6d022b8afc6853fda8c917d
+07. bd-1981-07-19d02t07.flac:e4b6d560707d2e4e42205c47150ac803
+08. bd-1981-07-19d02t08.flac:c23b3451f79e5d4c21a4738f4d98ae54
+09. bd-1981-07-19d02t09.flac:23b8aaeea3b5c689d76cd03f7ebd00d6
+10. bd-1981-07-19d02t10.flac:aa598163f490a2b61a0398d005078dd6
+11. bd-1981-07-19d02t11.flac:ae0347d4ffbd85132b594d969a4f7a99
+12. bd-1981-07-19d02t12.flac:95788d385cafe68450661e8753bf33a9
+13. bd-1981-07-19d02t13.flac:1392f52283d1b55009ffb549849d0f8d
+14. bd-1981-07-19d02t14.flac:a11ec391ecebf92dc5ded5ef7ddbe11a
+===================
+===================
+===================
+=== cd-2.txt
+===================
+===================
+===================
+01. bd-1981-07-19d02t01.flac:ee9fcc9e3b215d6629a5f84582a96da1
+02. bd-1981-07-19d02t02.flac:3d8cfa7641ba7ecf41737cc28ca512b4
+03. bd-1981-07-19d02t03.flac:126ed50c14f154757dbdf997165c7a31
+04. bd-1981-07-19d02t04.flac:ed20d24c902bc701c6dd74c1ed0f45bb
+05. bd-1981-07-19d02t05.flac:b421311eafb8758b4e8ee042868502fb
+06. bd-1981-07-19d02t06.flac:4bc09541a6d022b8afc6853fda8c917d
+07. bd-1981-07-19d02t07.flac:e4b6d560707d2e4e42205c47150ac803
+08. bd-1981-07-19d02t08.flac:c23b3451f79e5d4c21a4738f4d98ae54
+09. bd-1981-07-19d02t09.flac:23b8aaeea3b5c689d76cd03f7ebd00d6
+10. bd-1981-07-19d02t10.flac:aa598163f490a2b61a0398d005078dd6
+11. bd-1981-07-19d02t11.flac:ae0347d4ffbd85132b594d969a4f7a99
+12. bd-1981-07-19d02t12.flac:95788d385cafe68450661e8753bf33a9
+13. bd-1981-07-19d02t13.flac:1392f52283d1b55009ffb549849d0f8d
+14. bd-1981-07-19d02t14.flac:a11ec391ecebf92dc5ded5ef7ddbe11a
+===================
+===================
+===================

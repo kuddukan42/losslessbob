@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-25 Brixton.shnf 
+=================== 
+=================== 
+=================== 
+6d430022dc88ecc0472c79e06c6d3e56  bd03-11-25.txt
+820c1453b3c2df01dfc4ae93662f0dfb  d1\01.shn
+4c5af3c0bf917608948e9e8a9853d212  d1\02.shn
+405180c797b337a3ae9378862634586a  d1\03.shn
+74a52a8392d411bc31731cc6c4c9f566  d1\04.shn
+4da6d4e57951aacfed11b9fe6a7089a0  d1\05.shn
+a40621b328a4568d682975cd888b224e  d1\06.shn
+a5d36cc2df99c935e25dae213cc4160a  d1\07.shn
+360b8a8ed63b1255a197037cdb1fb6cd  d1\08.shn
+360feff49684aacd00105f2551aac7e3  d1\09.shn
+1615a202987366aaa85e3a9b17e1f68b  d1\10.shn
+8e0f8a3239428e684fd529ddbac73bb1  d1\11.shn
+77d28189f8d9f29cf7e1ca62fa082522  d1\noname.md5
+e2fe60e75f80a0b9c2f062ef69b0211f  d2\01.shn
+1c3728d8a41a03b29efc30f43c3c2c5c  d2\02.shn
+eeb48c373d5fca645865e423ca42b2ff  d2\03.shn
+82eca942c00cb7007e4044a32454481b  d2\04.shn
+0506bd490c12745e0dcdc1cb30e060b8  d2\05.shn
+da9b0d3311c877f587d0ed50f3f65527  d2\06.shn
+39f750eb527c3d35e28b720ae5b51605  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-25 Brixton.shnf\d1 
+=================== 
+=================== 
+=================== 
+1bfb41675b7068b90597764df2857f22  [shntool]  01.wav
+cd64a168990a09bcb500732988c66026  [shntool]  02.wav
+cbce618e5fd5a4f21a8e2a197cf39764  [shntool]  03.wav
+74c56063a1a8eaba0baa95f5816eee01  [shntool]  04.wav
+363d99d26966e0ddebcc68033d1f69fb  [shntool]  05.wav
+502b7466228b31906773d60244b0f817  [shntool]  06.wav
+038cec2f7d39a7c8b74395f25171c39e  [shntool]  07.wav
+c5e199f7063e8a1721be9df9d03ff3b8  [shntool]  08.wav
+11d3dd66ad994f646f2ebc42f02eda63  [shntool]  09.wav
+8d2dfe9daa410056ff703b7999b5c8c9  [shntool]  10.wav
+246fa4eda9497225f4f81d2bd360542d  [shntool]  11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-25 Brixton.shnf\d2 
+=================== 
+=================== 
+=================== 
+92027b9c4aaf95366cb2f3e8dbfe5e24  [shntool]  01.wav
+2ae4e82e36aec53abb8d4a54a97bb9fa  [shntool]  02.wav
+aed3b3e9d3832f08bdd1a37ac6beca73  [shntool]  03.wav
+4582a18e787ce93171a76562a4d75c40  [shntool]  04.wav
+5664f41009a47bcec1f45cd1255c86f4  [shntool]  05.wav
+ee970d9b66f50bcbe94cbad2259448a5  [shntool]  06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-25 Brixton.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.36       58296716 B   ---   --   -----    wav  1.0000  01.wav
+     4:59.38       52833020 B   ---   --   -----    wav  1.0000  02.wav
+     5:35.27       59157548 B   ---   --   -----    wav  1.0000  03.wav
+     6:23.51       67681196 B   ---   --   -----    wav  1.0000  04.wav
+     8:13.01       86967596 B   ---   --   -----    wav  1.0000  05.wav
+     6:27.58       68403260 B   ---   --   -----    wav  1.0000  06.wav
+     6:17.04       66512252 B   ---   --   -----    wav  1.0000  07.wav
+     7:00.74       74262092 B   ---   --   -----    wav  1.0000  08.wav
+     6:09.30       65162204 B   ---   --   -----    wav  1.0000  09.wav
+     7:06.73       75318140 B   ---   --   -----    wav  1.0000  10.wav
+     6:19.44       66959132 B   ---   --   -----    wav  1.0000  11.wav
+    70:03.61      741553156 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-25 Brixton.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:06.04       75155852 B   ---   --   -----    wav  1.0000  01.wav
+     6:41.07       70752908 B   ---   --   -----    wav  1.0000  02.wav
+     7:28.13       79057820 B   ---   --   -----    wav  1.0000  03.wav
+     5:00.23       52974140 B   ---   --   -----    wav  1.0000  04.wav
+     6:40.26       70621196 B   ---   --   -----    wav  1.0000  05.wav
+     7:21.31       77865356 B   ---   --   -----    wav  1.0000  06.wav
+    40:17.29      426427272 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

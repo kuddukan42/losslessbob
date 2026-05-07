@@ -1,0 +1,116 @@
+===================
+===================
+===================
+=== md5 for: bd63-10-26-HH.flacf
+===================
+===================
+===================
+95c9d93371f88fb55c63c6253559aaf4 *artwork\cover back.jpg
+b0b6e880114f0721f0139333fe4d8516 *artwork\cover front.jpg
+f99dd5e219620c27229758dbb36a48e6 *artwork\cover inside.jpg
+71517aad1dded8ed3fcf9f3175e8abda *artwork\disc 1 cover.jpg
+c59791cd76308de7e0666a7edb88bc5a *artwork\disc 2.jpg
+8af8682bdc67dabf390e9b90fd3463a0 *Carnegie Hall content.docx
+b83225eb912eb11cf478f5e0483a5b80 *Carnegie Hall content.txt
+88c7f50a9af8621259d8d38c6d9c4851 *Disc 1\01 audience.flac
+4c9c0f0803dca0aec09ee5473046a226 *Disc 1\02 the times they are a-changin'.flac
+d9bb9a77c6628c961e135f0656126a2c *Disc 1\03 ballad of hollis brown.flac
+2a80a73ece4b4e17955e8caad4ef3976 *Disc 1\04 who killed davey moore.flac
+0334566473903e13d983a9047f3a00f9 *Disc 1\05 boots of spanish leather.flac
+db8b272d403b3b174c5eefeff6605097 *Disc 1\06 talking john birch paranoid blues.flac
+06d2839b4d982d828751d1a3ef58e165 *Disc 1\07 lay down your weary tune.flac
+7ed8e596ed623f20c9ae48ea1677a229 *Disc 1\08 intro blowin.flac
+4b9caf864cb0363451441ffaec05c313 *Disc 1\09 blowin in the wind.flac
+d86c899213665f1417175e45cc583dde *Disc 1\10 percy's song final.flac
+76935020acfd297db8800304b554fa0d *Disc 1\11 seven curses.flac
+b96decd57a7e52ae115d3745bae387a8 *Disc 1\12 walls of  red wing.flac
+d2512eeceb3066e8ead011838de796ba *Disc 1\13 north country.flac
+b5e658eb2f1bc325373794fd6d0d2a83 *Disc 1\14 hard rain.flac
+fabc1e915bcd295dfa5581324a46f5a1 *Disc 1\Disc 1.ffp
+8af18260afb3fe9fb99d39f2bbf215be *Disc 1\Disc 1.md5
+1c9d12bcd2fde92a8d51f7e8c173efc4 *Disc 2\01 talking world war III blues.flac
+e022ff516d0972fedf24f1063ccf757e *Disc 2\02 don't think twice, it's all right.flac
+a859ce87bce4b4c2c602e6cec8439d3b *Disc 2\03 hootenanny.flac
+ba3803effbe1410e83f3c87d13222a9d *Disc 2\04 With God On Our Side.flac
+f8767bb3e9d7cd15597749fc3fea01a9 *Disc 2\05 only a pawn in their game.flac
+6eecf82a6bdb3554cc915e686ff523c2 *Disc 2\06 masters of war.flac
+4d0c730c9e28432c4c68a8f9e4fc83f7 *Disc 2\07 the lonesome death of hattie carroll.flac
+bb306c7d0d983d0d40fa9033064f7416 *Disc 2\08 when the ship comes in.flac
+f92dfc64a18a1ae4d6e96c5f6e93e3ac *Disc 2\Disc 2.ffp
+27332a4d56e2533bba0249a5fd7b2095 *Disc 2\Disc 2.md5
+a0108a392c28111b93202d9f986524b7 *fotos\01.jpg
+8edf90078a5bdcb3a1311bdcb7724f3f *fotos\02.jpg
+b7faa92af0fe14ce1e7e27fd8dc6f733 *fotos\03.jpg
+fafb7720589309c6b45af76331b5b02a *fotos\04.jpg
+===================
+===================
+===================
+=== ffp for: bd63-10-26-HH.flacf
+===================
+===================
+===================
+Disc 1\01 audience.flac:40d564ca18db1bd0adde7d29057702d9
+Disc 1\02 the times they are a-changin'.flac:018739ab07e58f5f95c60a2202ce941b
+Disc 1\03 ballad of hollis brown.flac:cfa767e620b21630f2075ac46adf43ef
+Disc 1\04 who killed davey moore.flac:16ed1624f3a6410c8f960c6bf58b9be0
+Disc 1\05 boots of spanish leather.flac:cdd58bdf6038934b35aab80c79254e3f
+Disc 1\06 talking john birch paranoid blues.flac:744750208432102ab13161b3d327cb6d
+Disc 1\07 lay down your weary tune.flac:f69ad8c728d01407799d28ee866564b6
+Disc 1\08 intro blowin.flac:88d5637d75bc77019c642e41235456d9
+Disc 1\09 blowin in the wind.flac:64b053a86218204d5a0aab0f6bcf2fdc
+Disc 1\10 percy's song final.flac:a367d2a1b0825d22a5d71abbb445b37b
+Disc 1\11 seven curses.flac:1bcdfd675fdfbc4798081d400772d8f8
+Disc 1\12 walls of  red wing.flac:371539735b9250002f952a70131b7ef8
+Disc 1\13 north country.flac:2adea84e3325f2c5004aa6f562b671dc
+Disc 1\14 hard rain.flac:2375307d4d371b7604cdee2639a51437
+Disc 2\01 talking world war III blues.flac:730551142ab150816b7cfb475be7a873
+Disc 2\02 don't think twice, it's all right.flac:d3e2c960c749e160ee981bdb259d477a
+Disc 2\03 hootenanny.flac:6397b9542ea39ee8e85f46233b5b6505
+Disc 2\04 With God On Our Side.flac:9f5d7cb696fa6a25476d2eccbde50bb7
+Disc 2\05 only a pawn in their game.flac:c158dde9e679e78f27e69fc90248f3f0
+Disc 2\06 masters of war.flac:f307ebc537f132723cf60168ca6b0609
+Disc 2\07 the lonesome death of hattie carroll.flac:07baeab274774cc5d94904672a80880f
+Disc 2\08 when the ship comes in.flac:0a928d53ac78c07bd8d0e35ab5674154
+===================
+===================
+===================
+=== shntool len for: bd63-10-26-HH.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:10.73       12519740 B   ---   --   ---xx   flac  0.4714  01 audience.flac
+     3:57.26       41867996 B   ---   --   ---xx   flac  0.5538  02 the times they are a-changin'.flac
+     7:42.68       81656780 B   ---   --   ---xx   flac  0.4803  03 ballad of hollis brown.flac
+     3:39.19       38676332 B   ---   --   ---xx   flac  0.4904  04 who killed davey moore.flac
+     5:40.65       60128924 B   ---   --   ---xx   flac  0.4526  05 boots of spanish leather.flac
+     4:40.23       49446140 B   ---   --   ---xx   flac  0.5475  06 talking john birch paranoid blues.flac
+     5:14.66       55544876 B   ---   --   ---xx   flac  0.4859  07 lay down your weary tune.flac
+     2:12.67       23442428 B   ---   --   ---xx   flac  0.4447  08 intro blowin.flac
+     3:39.57       38766060 B   -b-   --   ---xx   flac  0.5478  09 blowin in the wind.flac
+     9:12.14       97405680 B   -b-   --   ---xx   flac  0.5493  10 percy's song final.flac
+     4:25.08       46763804 B   -b-   --   ---xx   flac  0.4033  11 seven curses.flac
+     5:16.14       55775372 B   ---   --   ---xx   flac  0.5083  12 walls of  red wing.flac
+     4:48.37       50890268 B   ---   --   ---xx   flac  0.4572  13 north country.flac
+     9:37.37      101869868 B   ---   --   ---xx   flac  0.4775  14 hard rain.flac
+    71:18.49      754754268 B                            0.4940  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd63-10-26-HH.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.46       57085808 B   -b-   --   ---xx   flac  0.5298  01 talking world war III blues.flac
+     4:34.67       48491228 B   ---   --   ---xx   flac  0.4968  02 don't think twice, it's all right.flac
+     6:08.71       65082236 B   ---   --   ---xx   flac  0.4798  03 hootenanny.flac
+     7:35.45       80367196 B   -b-   --   ---xx   flac  0.5327  04 With God On Our Side.flac
+     3:59.10       42183164 B   ---   --   ---xx   flac  0.5213  05 only a pawn in their game.flac
+     3:56.67       41788028 B   ---   --   ---xx   flac  0.5209  06 masters of war.flac
+     6:45.56       71573756 B   ---   --   ---xx   flac  0.5105  07 the lonesome death of hattie carroll.flac
+     4:06.10       43417964 B   ---   --   ---xx   flac  0.5708  08 when the ship comes in.flac
+    42:30.72      449989380 B                            0.5188  (8 files)
+===================
+===================
+===================

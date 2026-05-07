@@ -1,0 +1,209 @@
+===================
+===================
+===================
+=== 1986-06-20 - Houston, Texas (LB-04138 [almost], flac).md5
+===================
+===================
+===================
+; Using hkSFV on 01.03.2008 at 18:07:35
+; http://www.big-o-software.com
+;
+;/----
+;     1986-06-20 - Houston, Texas (LB-04138, flac)
+;\----
+;
+d9a0cbe98aed3f11011ecc8cf35c788f *disc 1\1 - Track01.flac
+0b0785baee46019d6856f553e68041b8 *disc 1\1 - Track02.flac
+6adf8376058df164137680ab75c76409 *disc 1\1 - Track03.flac
+7a48639fc22439411164b170b09da741 *disc 1\1 - Track04.flac
+7851685d5c6533485b9815dadaf43d95 *disc 1\1 - Track05.flac
+9216ffd9772096768d81632df0df7f0b *disc 1\1 - Track06.flac
+56fd9aad3c7a329f02976664ab0d649a *disc 1\1 - Track07.flac
+360b6baab026ed97a39de56e6a1c204b *disc 1\1 - Track08.flac
+148628ad6e3ce8208b6717f6f95504aa *disc 1\1 - Track09.flac
+e42e750e92c4bbc3ca948472a5711628 *disc 1\1 - Track10.flac
+50d7379a58caee2de77aed868bf031ff *disc 2\2 - Track11.flac
+89ec7c2933bc2bfe6b14ebc8249765af *disc 2\2 - Track12.flac
+4cec1670c8eebf523569c0ccc4eddfec *disc 2\2 - Track13.flac
+; 2d4ef1c41b05dba92db4e17f2fe9b08e *disc 2\2 - Track14.flac
+; MD5 checksum doesn't match, but the fingerprint does
+2814a3241eb9cc9c9e270ad0e82e49c4 *disc 2\2 - Track14.flac
+8f9e68d78cd7497dd2072c53c9c1ae0c *disc 2\2 - Track15.flac
+6ba07c0b4caefa5a4c2b3032304b0667 *disc 2\2 - Track16.flac
+8cdb054bbc84ae65abd823b8f46ef6a5 *disc 2\2 - Track17.flac
+37d2366ce2abf574835828b4b5e7cc50 *disc 2\2 - Track18.flac
+4bf8cc821a301b2146913fa5524f8c21 *disc 3\3 - Track19.flac
+8c9b8e2084b0690a41d5bb898d59bfd8 *disc 3\3 - Track20.flac
+a1607ffa4394829a16514dcddf3a6800 *disc 3\3 - Track21.flac
+266c965c2f1e763c68490a5c9f081856 *disc 3\3 - Track22.flac
+518beeca84ee70eab8a29dc1cd11e0b6 *disc 3\3 - Track23.flac
+d23474cf9b637150a1e330ea8442517d *disc 3\3 - Track24.flac
+d0ac34f8b0b66cebdda26c82c59b7cbc *disc 3\3 - Track25.flac
+7312d5e1ecd0bde1496ee6d7c43ccb2d *disc 3\3 - Track26.flac
+821326e77c84024068402d1dba088de3 *disc 3\3 - Track27.flac
+651ae1d634aed4300fa059c6bb167d9a *disc 3\3 - Track28.flac
+f44806a7b61ce89b0c0f88e5fdd52f9d *disc 3\3 - Track29.flac
+f5ec9984977039c77ac82cfa5f0a7eea *disc 3\3 - Track30.flac
+31c35a974557d5a9bdb34cc7cef7dccc *disc 3\3 - Track31.flac
+32d108627bfd2efa84bf51ecc090568a *disc 3\3 - Track32.flac
+ddb1f3167109d0cf945565623faaf37b *1986-06-20 - Houston, Texas.txt
+===================
+===================
+===================
+=== 1986-06-20 - Houston, Texas.txt
+===================
+===================
+===================
+Houston, Texas
+Southern Star Amphitheater
+ 
+20 June 1986
+ 
+
+ 
+
+01 - Shake A Hand (Joe Morris)
+02 - Positively 4th Street
+03 - Clean Cut Kid
+04 - I'll Remember You
+05 - Shot Of Love
+06 - We Had It All (Donny Fritts-Troy Seals)
+07 - Union Sundown
+ 
+ 
+  Tom Petty & The Heartbreakers:
+08 - Straight Into Darkness (Tom Petty)
+09 - Fooled Again (I Don't Like It) (Tom Petty)
+10, The Waiting (Tom Petty)
+11 - Breakdown (Tom Petty)
+ 
+
+12 - To Ramona
+13 - A Hard Rain's A-Gonna Fall
+14 - It Ain't Me, Babe
+ 
+15 - I Forgot More Than You'll Ever Know (Cecil A. Null)
+16 - Band Of The Hand
+17 - When The Night Comes Falling From The Sky
+18 - Lonesome Town (Baker Knight)
+19 - Ballad Of A Thin Man
+  
+ 
+  Tom Petty & The Heartbreakers:
+20 - So You Want To Be A Rock & Roll Star (R. McGuinn/C. Hillman)
+21 - Spike (Tom Petty)
+22 - Bye Bye Johnny (Chuck Berry)
+23 - Refugee (Tom Petty & Mike Campbell)
+
+ 
+24 - Rainy Day Women # 12 & 35
+25 - Seeing The Real You At Last
+26 - Across The Borderline (Ry Cooder/John Hiatt/Jim Dickinson)
+27 - I And I
+28 - Like A Rolling Stone
+29 - In The Garden
+ 
+        (encore)
+ 
+30 - Blowin' In The Wind
+31 - So Long, Good Luck And Goodbye (Weldon Rogers)
+32 - Knockin' On Heaven's Door
+ 
+
+Concert #9 of the 1986 True Confessions US Tour. 
+Concert #28 with Tom Petty & The Heartbreakers. 1986 concert #28.
+Bob Dylan (vocal & guitar)
+Tom Petty (guitar), 
+Mike Campbell (guitar), 
+Benmont Tench (keyboards), 
+Howie Epstein (bass), 
+Stan Lynch (drums)
+The Queens Of Rhythm (backing vocals): 
+   Carolyn Dennis, 
+   Queen Esther Marrow, 
+   Madelyn Quebec, 
+   Louise Bethune.
+
+12-14 Bob Dylan solo (vocal & guitar).
+
+12, 14, 32 Bob Dylan (harmonica).
+
+15, 30, 32 Bob Dylan and Tom Petty (shared vocals).
+
+24 Howie Epstein (slide guitar), Tom Petty (bass).
+
+
+
+ 
+
+Note. Live debut of Union Sundown.
+
+BobTalk
+- Thank you, all right now, give a warm hand for a band that needs no 
+  introduction. I'm gonna introduce them anyway. Tom Petty and the Heartbreakers. 
+  (after Masters Of War)
+- I forgot more thank you'll ever know about it. That's what people think of me, 
+  it is. Houston, Houston tonight, also tomorrow. Tell you what, is there still 
+  a hotel called the Texas State Hotel? On <inaudible> Street. 
+  Anybody stay there? I stay there too. (before Band Of The Hand)
+- Thank you. Ricky Nelson did lots of my songs. 
+  I wanna do one of his. Lonesome Town.
+- Thank you. Everybody must get stoned. That can be taken a couple of ways. 
+  Here's a song I wrote can be taken but one way. 
+  (before Seeing The Real You At Last)
+- All right, thank you. You doing all right? Let's have a hand for the sound 
+  man over there. All right. Here's a song I wrote a while back, if I can 
+  remember it. It's about, for all you people out there who still have hope 
+  for the future. (before In The Garden)
+- All right, thank you for coming tonight. I wanna say it's a great privilege 
+  playing with this band. Tom Petty and the Heartbreakers. On the keyboards, 
+  give him a big hand, Benmont Tench. On the lead guitar, Michael Campbell. 
+  On the drums, Stan Lynch. On the bass guitar tonight, Howie Epstein. 
+  I especially want to thank Mr. Tom Petty himself. Tom Petty, he'll be around 
+  a long time. Of course I got my own Heartbreakers. Can't leave them out. 
+  They been with me I think off and on since maybe '78. Queen Esther Marrow, 
+  Louise Bethune, Madelyn Quebec and last but not least a girl that needs no 
+  introduction, Carolyn Dennis. (after In The Garden)
+
+Bootleg:
+- Take A Train. Archive Series LP.
+
+3 new songs (12%) compared to previous concert. 1 new song for this tour.
+
+Stereo audience recording, 110 minutes.
+
+
+LB-04138 ; 43min+42min+72min ; 3CDR ; Rating: B-
+ 
+6/20/86 Houston, Texas, Southern Star Amphitheater
+
+Audience cassette master > Cassette > Cassette > Cassette > CDR > dBpowerAMP > WAV > FLAC Frontend > Flac files
+I received this fairly low generation show in a tape trade about 20 years ago. 
+I have not seen it posted here yet, so I recently converted my tape. 
+This is a great recording, with all of the instruments and vocals very clear in the mix. 
+It has a crisp and full sound with no audience interference, so I would give it at least an A-. 
+Listen to the sample., The show is similar to the other '86 shows, although I am assuming that 
+they play more extended jams than usual, because I could not fit this on two CDs, and most of 
+the other shows I have seen from this tour do fit on two.
+--------------------------------------------------------------------------------
+good to very good sound [B-]; very harsh as all frequencies are given almost equal power; 
+this can be made better with eq to B; abrupt start on d1t1
+--------------------------------------------------------------------------------
+drop/cut between cdrs; has digi-pops starting t285:30 occasionally for rest of show
+--------------------------------------------------------------------------------
+Disc 1, 
+1 Shake A Hand, 2 Positively 4th Street, 3 Clean Cut Kid, 4 I'll Remember You, 5 Shot Of Love, 6 We Had It All, 7 Union Sundown, 8 Straight Into Darkness, 9 Fooled Again (I Don't Like It), 10 The Waiting, 
+
+Disc 2, 
+1 Breakdown, 2 To Ramona, 3 A Hard Rain's A-Gonna Fall, 4 It Ain't Me, Babe, 5 I Forgot More Than You'll Ever Know, 6 Band Of The Hand, 7 When The Night Comes Falling From The Sky, 8 Lonesome Town, 
+
+Disc 3, 
+1 Ballad Of A Thin Man, 2 So You Want To Be A Rock & Roll Star, 3 Spike, 4 Bye Bye Johnny, 5 Refugee, 6 Rainy Day Women # 12 & 35, 7 Seeing The Real You At Last, 8 Across The Borderline, 9 I And I, 10 Like A Rolling Stone, 11 In The Garden, 12 Blowin' In The Wind, 13 So Long, Good Luck And Goodbye, 14 Knockin' On Heaven's Door 
+--------------------------------------------------------------------------------
+Note:
+md5 checksum of track 4-disc2, "It Ain't Me, Babe" doesn't match with the one given in LB-04138,
+but the fingerprint does.
+
+===================
+===================
+===================

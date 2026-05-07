@@ -1,0 +1,28 @@
+; Using hkSFV on 01.23.2004 at 17:32:45
+; http://www.big-o-software.com
+;
+;/----
+;     32262039 16:57.16 2004-01-23 1-01-I Can't Be Satisfied.flac
+;     30178971 16:58.18 2004-01-23 1-02-I've Been All Around This World.flac
+;     39666420 16:59.22 2004-01-23 1-03-All Along The Watchtower.flac
+;     46922167 17:00.32 2004-01-23 1-04-Positively 4th Street.flac
+;     50627195 17:01.42 2004-01-23 1-05-Shelter From The Storm.flac
+;     49714081 17:02.50 2004-01-23 1-06-It Takes A Lot To Laugh.flac
+;     39060696 17:03.40 2004-01-23 1-07-Silvio.flac
+;     16461239 17:04.08 2004-01-23 1-08-Mama, You Been On My Mind.flac
+;     20889066 17:04.44 2004-01-23 1-09-Boots Of Spanish Leather.flac
+;     35233952 17:05.36 2004-01-23 1-10-Mr. Tambourine Man.flac
+;     34584951 17:08.00 2004-01-23 1-11-Don't Think Twice, It's All Right.flac
+;\----
+;
+7d539547747dd40542cc73bd5ea0f94b *1-01-I Can't Be Satisfied.flac
+b0b0809dd7e93807529e9dcb52a7155f *1-02-I've Been All Around This World.flac
+e73bf47316790065a7618ff63567979a *1-03-All Along The Watchtower.flac
+2137d27b5cd0f6cc20187de71e9d8cf3 *1-04-Positively 4th Street.flac
+32851344841e83c8f18046746e1082d8 *1-05-Shelter From The Storm.flac
+79ab210cfdf4c19ece1b50ee5f9b5f9b *1-06-It Takes A Lot To Laugh.flac
+8b6b7ecefc7f63844f238adc5380764b *1-07-Silvio.flac
+4be6dec32dab5e6ea2c258eafcbc473f *1-08-Mama, You Been On My Mind.flac
+b054016491ce97815a7a00d1f4374832 *1-09-Boots Of Spanish Leather.flac
+2da1ccc6c6a890c95989b3c87f7379b8 *1-10-Mr. Tambourine Man.flac
+4a374f3f3a4de9a8f6a268d49c76761a *1-11-Don't Think Twice, It's All Right.flac

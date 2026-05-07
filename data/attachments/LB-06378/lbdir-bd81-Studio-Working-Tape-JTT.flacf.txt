@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-Studio-Working-Tape-JTT.flacf 
+=================== 
+=================== 
+=================== 
+85c46bc0d9cfa7f7a3e22399fbe20347  Disc One\Disc01Track01_80's Working Tape.flac
+cf5298fb89ffdf059b5f7f8776f631c2  Disc One\Disc01Track02_80's Working Tape.flac
+76853e2472bd55b41f66e64e13ca8033  Disc One\Disc01Track03_80's Working Tape.flac
+b1cf49ebcd7dfb9a3ac87e6e9a21b9d7  Disc One\Disc01Track04_80's Working Tape.flac
+3df097726e8aeb1b68fb53d047a05a0f  Disc One\Disc01Track05_80's Working Tape.flac
+0c3e42f417e9ba81ad0eaf248476963b  Disc One\Disc01Track06_80's Working Tape.flac
+2b565c3682cea0e8685438e25bf0fdd2  Disc One\Disc01Track07_80's Working Tape.flac
+5470821cdb68c3ba9a47a5fb13e11b37  Disc One\Disc01Track08_80's Working Tape.flac
+a8bccf618512844ff4e2f3c7c4f63160  Disc One\Disc01Track09_80's Working Tape.flac
+b42c21485c014b94d400128ade995ecc  Disc One\Disc01Track10_80's Working Tape.flac
+4e0fe6c744817af391e7d28219bb8720  Disc One\Disc01Track11_80's Working Tape.flac
+7ab98fe5a2bb0918ee4be4aa5dab6ae2  Disc Two\Disc02Track01_80's Working Tape.flac
+4946d3670b0dafefe095f6a85ad62eb0  Disc Two\Disc02Track02_80's Working Tape.flac
+5d562e6fd27cc681ac008ab3874a4c86  Disc Two\Disc02Track03_80's Working Tape.flac
+39ba1996cd4de9ff3ec88d4c32f2b84e  Disc Two\Disc02Track04_80's Working Tape.flac
+fb6fb65b8847532cf99cac98d79ad25f  Disc Two\Disc02Track05_80's Working Tape.flac
+bee7383c00c8f3908213f65751438246  Disc Two\Disc02Track06_80's Working Tape.flac
+7683c613bf36b0d3de7700c8a2b0c90f  Disc Two\Disc02Track07_80's Working Tape.flac
+4e4c18dbf4e12306de8f2f3158d5614a  Disc Two\Disc02Track08_80's Working Tape.flac
+9b5550bc58c434302be9bc951539062b  Disc Two\Disc02Track09_80's Working Tape.flac
+370686d591c10ca4b9fb43b47f443ddf  Disc Two\Disc02Track10_80's Working Tape.flac
+1f48b0b5506ee14e01b39cc3bacada5c  Disc Two\Disc02Track11_80's Working Tape.flac
+988c3612a1392ef2250e53cc04f7386e  Dylan - 80's Working Tape (JTT).md5
+e74147e39be478445e82701400ba4238  Dylan - 80's Working Tape (JTT).txt
+1ec1e9e6f3eedd9ce824f2e48157e23e  Dylan - 80's Working Tape_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-Studio-Working-Tape-JTT.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01_80's Working Tape.flac:4577b5249082d5d205c5b00c04d864e1
+Disc01Track02_80's Working Tape.flac:f10da200c6f4a519cfb4d560e6440b0a
+Disc01Track03_80's Working Tape.flac:4ba764da8037d68c43a37744d7b33cd5
+Disc01Track04_80's Working Tape.flac:3622cf74096969c234a6c27c3f56184e
+Disc01Track05_80's Working Tape.flac:694c138ca9603f2628df97d904f51ab2
+Disc01Track06_80's Working Tape.flac:273d3293e523bb85ecd96aa33871495b
+Disc01Track07_80's Working Tape.flac:86faf1d5b7fefc6c37aa9d1fc497cafd
+Disc01Track08_80's Working Tape.flac:5a9ca9f2308bbc970800e352254a3262
+Disc01Track09_80's Working Tape.flac:c94f000de837f6dedafd1520b51b42d1
+Disc01Track10_80's Working Tape.flac:3028e1ddec13b80d84695993a4878dcd
+Disc01Track11_80's Working Tape.flac:8f06660ef2868a163d9e846a59ab4637
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-Studio-Working-Tape-JTT.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01_80's Working Tape.flac:39edf50ddfde8197bdb16e4621c94bf5
+Disc02Track02_80's Working Tape.flac:5e968c4af8d415824214015edba97470
+Disc02Track03_80's Working Tape.flac:333057d96d6e6986905bb8a6c086eaf1
+Disc02Track04_80's Working Tape.flac:a87099bf11310318437abf5f645bc070
+Disc02Track05_80's Working Tape.flac:8d861a0bb8138347677806d9b7a98033
+Disc02Track06_80's Working Tape.flac:d7e4786ee9bf4eae86878ba2bd1f9792
+Disc02Track07_80's Working Tape.flac:293f5187e566d810e4f49c75124fcb0b
+Disc02Track08_80's Working Tape.flac:eea8015da3ccddc3003a9087ea795447
+Disc02Track09_80's Working Tape.flac:31dbdaa629d43c237a0589a2a00e64a9
+Disc02Track10_80's Working Tape.flac:035a17da9b0a411f3cb157ebd0a359fd
+Disc02Track11_80's Working Tape.flac:55fed6bc4ced5dd94d460943ac120cb8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-Studio-Working-Tape-JTT.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:38.27       49102748 B   ---   --   ---xx   flac  0.5550  Disc01Track01_80's Working Tape.flac
+     8:55.40       94468124 B   ---   --   ---xx   flac  0.5593  Disc01Track02_80's Working Tape.flac
+     2:23.24       25281692 B   ---   --   ---xx   flac  0.5467  Disc01Track03_80's Working Tape.flac
+     2:56.42       31145228 B   ---   --   ---xx   flac  0.5557  Disc01Track04_80's Working Tape.flac
+     4:55.55       52167404 B   ---   --   ---xx   flac  0.5743  Disc01Track05_80's Working Tape.flac
+     2:16.40       24084524 B   ---   --   ---xx   flac  0.5482  Disc01Track06_80's Working Tape.flac
+     3:11.39       33784172 B   ---   --   ---xx   flac  0.5474  Disc01Track07_80's Working Tape.flac
+     4:07.67       43728428 B   ---   --   ---xx   flac  0.5400  Disc01Track08_80's Working Tape.flac
+     3:16.12       34602668 B   ---   --   ---xx   flac  0.5327  Disc01Track09_80's Working Tape.flac
+     8:12.62       86934668 B   ---   --   ---xx   flac  0.5549  Disc01Track10_80's Working Tape.flac
+     3:21.56       35588156 B   ---   --   ---xx   flac  0.5438  Disc01Track11_80's Working Tape.flac
+    48:16.14      510887812 B                            0.5530  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-Studio-Working-Tape-JTT.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:50.39       51247772 B   ---   --   ---xx   flac  0.5471  Disc02Track01_80's Working Tape.flac
+     5:31.09       58409612 B   ---   --   ---xx   flac  0.5207  Disc02Track02_80's Working Tape.flac
+     3:58.18       42025580 B   ---   --   ---xx   flac  0.5094  Disc02Track03_80's Working Tape.flac
+     2:57.71       31389836 B   ---   --   ---xx   flac  0.5054  Disc02Track04_80's Working Tape.flac
+     6:34.42       69600428 B   ---   --   ---xx   flac  0.5043  Disc02Track05_80's Working Tape.flac
+     4:42.47       49855388 B   ---   --   ---xx   flac  0.5158  Disc02Track06_80's Working Tape.flac
+     2:17.63       24315020 B   ---   --   ---xx   flac  0.5497  Disc02Track07_80's Working Tape.flac
+     2:34.00       27165644 B   ---   --   ---xx   flac  0.5396  Disc02Track08_80's Working Tape.flac
+     2:27.09       25952012 B   ---   --   ---xx   flac  0.5353  Disc02Track09_80's Working Tape.flac
+     3:15.66       34553276 B   ---   --   ---xx   flac  0.5287  Disc02Track10_80's Working Tape.flac
+     1:08.35       12077564 B   ---   --   ---xx   flac  0.5180  Disc02Track11_80's Working Tape.flac
+    40:18.24      426592132 B                            0.5227  (11 files)
+=================== 
+=================== 
+=================== 

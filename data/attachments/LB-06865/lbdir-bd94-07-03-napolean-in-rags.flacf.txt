@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-03-napolean-in-rags.flacf 
+=================== 
+=================== 
+=================== 
+6b0d34b86da0edc3912e76d697e8f928  bd94-07-03-napolean-in-rags-d1t01.flac
+278421ef6f11edb18006a1a5673aa18a  bd94-07-03-napolean-in-rags-d1t02.flac
+fe19ebd40680e78fcd804e5cdbade89f  bd94-07-03-napolean-in-rags-d1t03.flac
+747266fd13040e7766c8f6d3cf3dc12d  bd94-07-03-napolean-in-rags-d1t04.flac
+4f21f8cf86c0c140e2436394823db6f3  bd94-07-03-napolean-in-rags-d1t05.flac
+4918993eae4bd3933ffea2bcc37cc8a2  bd94-07-03-napolean-in-rags-d1t06.flac
+b4156db69a646dbd11c74618291d888a  bd94-07-03-napolean-in-rags-d1t07.flac
+2133f11872fd1ebfdc77345eb3a1671e  bd94-07-03-napolean-in-rags-d1t08.flac
+7a6c0e4ec7d418da1c435c7f304ae175  bd94-07-03-napolean-in-rags-d1t09.flac
+f8b9f28fd0b98afc885535f52b668d99  bd94-07-03-napolean-in-rags-d1t10.flac
+4b0033d0b7108fe15faa7d165bd4e876  bd94-07-03-napolean-in-rags-d1t11.flac
+2ce19587fd6a8c3e914ee2d8f6f44657  bd94-07-03-napolean-in-rags-d1t12.flac
+6b02ec8eb320bd6e31a82f7171c9b629  bd94-07-03-napolean-in-rags-d2t01.flac
+e126bed22698d8337d4d148f8f54b189  bd94-07-03-napolean-in-rags-d2t02.flac
+8871add2700f521a459a71c65e20cdd1  bd94-07-03-napolean-in-rags-d2t03.flac
+009ed274a5d8fd3438043506b3d649ed  bd94-07-03-napolean-in-rags-d2t04.flac
+7c03bc9ceb009140c39a5a41eb88d6a5  bd94-07-03-napolean-in-rags-d2t05.flac
+52f9aa87e15c2c3d7a63d6578545bedd  bd94-07-03-napolean-in-rags-d2t06.flac
+1bb265ef879d0a9aebdcc38828ee85a9  bd94-07-03-napolean-in-rags-d2t07.flac
+fdc31255d8e2c1b5d23313d8fcd46840  bd94-07-03-napolean-in-rags-d2t08.flac
+8d56c5a91e101398e81045f8065f4886  bd94-07-03-napolean-in-rags-d2t09.flac
+e13d9f8937d8237d2a355f09e86ce7e2  bd94-07-03-napolean-in-rags-d2t10.flac
+32ecd9566638238c091c51d565666c09  bd94-07-03-napolean-in-rags-d2t11.flac
+8e858a1ce51405574a0780eb57a04430  bd94-07-03-napolean-in-rags.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-03-napolean-in-rags.flacf 
+=================== 
+=================== 
+=================== 
+bd94-07-03-napolean-in-rags-d1t01.flac:b2a8d05e567794e1cfbf97a5cf705f46
+bd94-07-03-napolean-in-rags-d1t02.flac:8883372f58dfed45d1d6e03fba0636ca
+bd94-07-03-napolean-in-rags-d1t03.flac:42a36233d168104853e6b6c6f399a62a
+bd94-07-03-napolean-in-rags-d1t04.flac:643279181afefeea46a7e0974a258080
+bd94-07-03-napolean-in-rags-d1t05.flac:fda2d73ee5e33c72750ade4458176705
+bd94-07-03-napolean-in-rags-d1t06.flac:768fdc2bd53bf6e65556efc3e3915ad0
+bd94-07-03-napolean-in-rags-d1t07.flac:8639a58565d653cc6f6817a18f77ccb3
+bd94-07-03-napolean-in-rags-d1t08.flac:6d411ea800dc41cd9e93f5453c402f14
+bd94-07-03-napolean-in-rags-d1t09.flac:31ceb38ce1142693b485aaf4070d838d
+bd94-07-03-napolean-in-rags-d1t10.flac:4f60611ed7c199e02a35fe668d7b1a39
+bd94-07-03-napolean-in-rags-d1t11.flac:212174f27435419e70d76620ca0c2384
+bd94-07-03-napolean-in-rags-d1t12.flac:22d0902b3a4d20ca6717bfe4925c73bf
+bd94-07-03-napolean-in-rags-d2t01.flac:6a987701394038da87be244f4cb17839
+bd94-07-03-napolean-in-rags-d2t02.flac:de665236505210aa20eb9ec7b5548fa2
+bd94-07-03-napolean-in-rags-d2t03.flac:5554361a82c4f6143eadf02b54a8b3e1
+bd94-07-03-napolean-in-rags-d2t04.flac:1195b0639d6449039d7e97374ec5f0ad
+bd94-07-03-napolean-in-rags-d2t05.flac:aeaa7f07e16f40b336f0c0651b6cdd7d
+bd94-07-03-napolean-in-rags-d2t06.flac:3801f7c6146c20ca73e5f957b8f26a21
+bd94-07-03-napolean-in-rags-d2t07.flac:94b512122c9d2b9597b40398e56628a6
+bd94-07-03-napolean-in-rags-d2t08.flac:f07bc36f8b93d4dd4d09a7d192b72d1f
+bd94-07-03-napolean-in-rags-d2t09.flac:faac513ade3b5446c321c672fda0d370
+bd94-07-03-napolean-in-rags-d2t10.flac:16286f652c91e2725691925a96d7c3c2
+bd94-07-03-napolean-in-rags-d2t11.flac:798210e0f29756814b6bb0756b8bf4fc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-03-napolean-in-rags.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.18       55784780 B   ---   --   ---xx   flac  0.6848  bd94-07-03-napolean-in-rags-d1t01.flac
+     5:55.07       62638508 B   ---   --   ---xx   flac  0.6936  bd94-07-03-napolean-in-rags-d1t02.flac
+     5:41.23       60206540 B   ---   --   ---xx   flac  0.7039  bd94-07-03-napolean-in-rags-d1t03.flac
+     7:15.70       76898684 B   ---   --   ---xx   flac  0.6889  bd94-07-03-napolean-in-rags-d1t04.flac
+     9:18.30       98501804 B   ---   --   ---xx   flac  0.6943  bd94-07-03-napolean-in-rags-d1t05.flac
+     5:39.45       59905484 B   ---   --   ---xx   flac  0.6867  bd94-07-03-napolean-in-rags-d1t06.flac
+     5:51.35       61998764 B   ---   --   ---xx   flac  0.6767  bd94-07-03-napolean-in-rags-d1t07.flac
+     4:35.42       48608828 B   ---   --   ---xx   flac  0.6931  bd94-07-03-napolean-in-rags-d1t08.flac
+     6:24.73       67909340 B   ---   --   ---xx   flac  0.7214  bd94-07-03-napolean-in-rags-d1t09.flac
+     7:02.70       74605484 B   ---   --   ---xx   flac  0.6851  bd94-07-03-napolean-in-rags-d1t10.flac
+     5:59.57       63461708 B   ---   --   ---xx   flac  0.6903  bd94-07-03-napolean-in-rags-d1t11.flac
+     5:47.50       61328444 B   ---   --   ---xx   flac  0.6484  bd94-07-03-napolean-in-rags-d1t12.flac
+     8:11.45       86718284 B   ---   --   ---xx   flac  0.6561  bd94-07-03-napolean-in-rags-d2t01.flac
+     3:20.50       35397644 B   ---   --   ---xx   flac  0.4869  bd94-07-03-napolean-in-rags-d2t02.flac
+     5:36.73       59442140 B   ---   --   ---xx   flac  0.4826  bd94-07-03-napolean-in-rags-d2t03.flac
+     6:23.45       67667084 B   ---   --   ---xx   flac  0.5223  bd94-07-03-napolean-in-rags-d2t04.flac
+     8:55.07       94390508 B   ---   --   ---xx   flac  0.4944  bd94-07-03-napolean-in-rags-d2t05.flac
+     6:26.45       68196284 B   ---   --   ---xx   flac  0.5016  bd94-07-03-napolean-in-rags-d2t06.flac
+     7:45.58       82162460 B   ---   --   ---xx   flac  0.5658  bd94-07-03-napolean-in-rags-d2t07.flac
+     6:30.15       68831324 B   ---   --   ---xx   flac  0.5755  bd94-07-03-napolean-in-rags-d2t08.flac
+     6:28.52       68565548 B   ---   --   ---xx   flac  0.6026  bd94-07-03-napolean-in-rags-d2t09.flac
+     5:54.33       62523260 B   ---   --   ---xx   flac  0.5355  bd94-07-03-napolean-in-rags-d2t10.flac
+     8:15.30       87388604 B   ---   --   ---xx   flac  0.6589  bd94-07-03-napolean-in-rags-d2t11.flac
+   148:37.73     1573131508 B                            0.6251  (23 files)
+=================== 
+=================== 
+=================== 

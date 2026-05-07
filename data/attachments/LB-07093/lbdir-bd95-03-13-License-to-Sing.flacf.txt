@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-13-License-to-Sing.flacf 
+=================== 
+=================== 
+=================== 
+2ac3d537a1be8814d0bbe24fd5c24e43  Artwork\l-85b.jpg
+cce7900a15f7e29b5312d94aeddc2df6  Artwork\l-85cd.jpg
+617fe4eaee0e7ad287a4e048849047f4  Artwork\l-85cd2.jpg
+b01d444944b395583bf1152ee043e534  Artwork\l-85f.jpg
+6a9715f36472aedfe9523d4b63314807  Artwork\l-85ib.jpg
+09788f9f872d38a1deab0db067d996c5  Artwork\l-85l.jpg
+e57aa2c2bb4ef9cc8d381a669853bbb7  bd-License to Sing-d1\bd-License to Sing-d1.md5
+fdf16b245c08116b9b1efb3e78659208  bd-License to Sing-d1\Track01.flac
+fc4c772061a1fbed7f40d7e1a15c152a  bd-License to Sing-d1\Track02.flac
+69dbf85d8c6e5ea8211dc5356de516fd  bd-License to Sing-d1\Track03.flac
+f394817545d9381f61da0d9e15a619f0  bd-License to Sing-d1\Track04.flac
+75fb473cc1cd177684ae82498b7f6fc6  bd-License to Sing-d1\Track05.flac
+e9c9e00937cac0735a56e54207d0328a  bd-License to Sing-d1\Track06.flac
+6046276340603d2a947c86b04cea9822  bd-License to Sing-d1\Track07.flac
+d841749b74b599d35366e24cfed199df  bd-License to Sing-d2\bd-License to Sing-d2.md5
+69ffcb40d5b8e972db23a948fcae1176  bd-License to Sing-d2\Track01.flac
+b2dc90e9328c378089cd73379d7f48ce  bd-License to Sing-d2\Track02.flac
+8d6199b07ca44be651820de61075aeec  bd-License to Sing-d2\Track03.flac
+4aadfc5ed157b2ba793bc154b93be58d  bd-License to Sing-d2\Track04.flac
+41509d9feabbfc3ae35ce13bbfe13e82  bd-License to Sing-d2\Track05.flac
+3c18b63a5a8408413410678cbebdef88  bd-License to Sing-d2\Track06.flac
+a164d46ad110f08ecc7aeb5084dc21c7  bd-License to Sing.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-13-License-to-Sing.flacf\bd-License to Sing-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:c1fe930688dbed8ecd61398ccd376fa9
+Track02.flac:d703a758a347f15833a3a76ead5d4079
+Track03.flac:70f7072736417329968a1cdad8db4793
+Track04.flac:296f3f6779c27c2a37609db801adeae5
+Track05.flac:cc9db9c743a6641b8548893fe82789e3
+Track06.flac:c4a25cd5a51e0e2b8b63db5999b4bcc1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-13-License-to-Sing.flacf\bd-License to Sing-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:fec6065cbd9fe155781d8d867294317f
+Track02.flac:018c169c1d486a73996dfb414bac0aa3
+Track03.flac:77690f4ce0837a2a30ccadb92d077ee5
+Track04.flac:8a9528b299f52049726f94815577558f
+Track05.flac:7a29c68a8b0407dc69c6c3dac837604e
+Track06.flac:fc83b7524fa7a8e84163cdc953e268a1
+Track07.flac:94aa26ddf9632cbe42cb8247786ad50e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-13-License-to-Sing.flacf\bd-License to Sing-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:14.73       87313340 B   ---   --   ---xx   flac  0.4967  Track01.flac
+     7:04.61       74937116 B   ---   --   ---xx   flac  0.3975  Track02.flac
+     6:06.40       64656524 B   ---   --   ---xx   flac  0.5572  Track03.flac
+     7:34.06       80099756 B   ---   --   ---xx   flac  0.4750  Track04.flac
+     7:27.67       79008428 B   ---   --   ---xx   flac  0.6252  Track05.flac
+    10:30.36      111216716 B   ---   --   ---xx   flac  0.5494  Track06.flac
+    46:58.58      497231880 B                            0.5183  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-13-License-to-Sing.flacf\bd-License to Sing-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.17       54194828 B   ---   --   ---xx   flac  0.5853  Track01.flac
+     5:33.59       58880012 B   ---   --   ---xx   flac  0.5156  Track02.flac
+     5:46.54       61161452 B   ---   --   ---xx   flac  0.5802  Track03.flac
+     6:59.30       73982204 B   ---   --   ---xx   flac  0.5101  Track04.flac
+    10:36.56      112322156 B   ---   --   ---xx   flac  0.5326  Track05.flac
+     5:38.00       59623244 B   ---   --   ---xx   flac  0.4658  Track06.flac
+     7:10.29       75920252 B   ---   --   ---xx   flac  0.4136  Track07.flac
+    46:52.20      496084148 B                            0.5126  (7 files)
+=================== 
+=================== 
+=================== 

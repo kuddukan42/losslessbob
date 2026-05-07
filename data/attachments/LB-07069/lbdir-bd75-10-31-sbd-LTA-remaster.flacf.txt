@@ -1,0 +1,155 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-10-31-sbd-LTA-remaster.flacf 
+=================== 
+=================== 
+=================== 
+cb3d4d16519dd6992a0889fd178a6be9  1975-10-31-BobTalk.rtf
+c522e8747a86b13e6c94b618730bb418  1975-10-31-Plymouth-sbd.nfo
+da7987cee0e1f96723b1d267dd819537  1975-10-31-Plymouth-sbd.txt
+3432eaea91d373722de141c145918641  1975-10-31-poster.jpg
+58fdc416a8da357eae621e4f412bec31  1975-10-31-ticket.jpg
+ad60f10f776788de0809968487050638  Artwork (LTA)\Plymouth-31_B.jpg
+8119199636ae288b078dad8b08e045b2  Artwork (LTA)\Plymouth-31_B_layers.jpg
+9a8e56606da700432e3f044da94d2db6  Artwork (LTA)\Plymouth-31_F.jpg
+1cc254a82370fdc17d84b1da88f986ca  bd1975-10-31-sbd-d1t01.flac
+2350093f67007747e81f2e5842245756  bd1975-10-31-sbd-d1t02.flac
+7646d6df43570132119bf8413060acf4  bd1975-10-31-sbd-d1t03.flac
+5a616f083462efcf9853bc85216c8ab5  bd1975-10-31-sbd-d1t04.flac
+1be0ac6d47cec38d863f09fcc80ff791  bd1975-10-31-sbd-d1t05.flac
+6bb803fda8dec4ed51c1eb572e40fd6f  bd1975-10-31-sbd-d1t06.flac
+73e8dc11b8140ddb27205a20d39c28c2  bd1975-10-31-sbd-d1t07.flac
+62cc9e243b071480c8b9abb23f7aad75  bd1975-10-31-sbd-d1t08.flac
+25bf233efb82c9eca89fef947a2bff79  bd1975-10-31-sbd-d1t09.flac
+ff4a5495679ccd0f2472d72536223043  bd1975-10-31-sbd-d1t10.flac
+25885b432cbc0f2109d5acd7da9ad3f9  bd1975-10-31-sbd-d1t11.flac
+2df4b55f8b58000759498a88d4ecee85  bd1975-10-31-sbd-d1t12.flac
+bda9f7857e9a8b8341635b59261c58b1  bd1975-10-31-sbd-d1t13.flac
+c68defe79d29268b90e0df693b7a38df  bd1975-10-31-sbd-d1t14.flac
+e73317aaf87dcc334bd7318fc2e745df  bd1975-10-31-sbd-d1t15.flac
+ace18be6e654c8e100d74191049885e0  bd1975-10-31-sbd-d2t01.flac
+c39874e67c8e365aa63f6cadc5f4c114  bd1975-10-31-sbd-d2t02.flac
+ed6559d869fd7c8fa03e27a7801ac4e8  bd1975-10-31-sbd-d2t03.flac
+a569a3234a72327c52731ce443510430  bd1975-10-31-sbd-d2t04.flac
+9baadc7cd8e92ac31d6f3a09fc912e59  bd1975-10-31-sbd-d2t05.flac
+f81e7fb2b80d7673aa36dfc392af3694  bd1975-10-31-sbd-d2t06.flac
+b0499da1e4048237fcfeeb99bdb84092  bd1975-10-31-sbd-d2t07.flac
+fe8911b835c052bd9fcf1a022274dba3  bd1975-10-31-sbd-d2t08.flac
+c728cfe334c6b246f4ab4244c0dbce0c  bd1975-10-31-sbd-d2t09.flac
+5ec10478a53a2f39bdc2f0862dd58599  bd1975-10-31-sbd-d2t10.flac
+6238e6fab88cc1620bd46e83c864222d  bd1975-10-31-sbd-d2t11.flac
+4aaf67c9a4bbc1134addf6b3b781080b  bd1975-10-31-sbd-d2t12.flac
+7b8f961f8be9e65a967a4c385e4bd1e4  bd1975-10-31-sbd-d2t13.flac
+405bf9fb0ffe5a376234628fa84634af  bd1975-10-31-sbd-d2t14.flac
+d957734279abc6680c37d3653a61d66d  bd1975-10-31-sbd-d2t15.flac
+395eb985b0ea26cd76a0708b1b37708f  bd1975-10-31-sbd-d2t16.flac
+317d40ed201d8580e281fa7b9699320f  bd1975-10-31-sbd-d2t17.flac
+88556660a862c37608d5ca0f105257d5  bd1975-10-31-sbd-d2t18.flac
+c63ef3ad5372ad05c8f25dfbbd3c9324  bd1975-10-31-sbd-d2t19.flac
+356944a51d171523c7ac60bd18a7ad20  bd1975-10-31-sbd-d2t20.flac
+8b07192c7b2b631bf15813280a8ab3c0  fingerprint.ffp
+09d56e4a53a20dd79bd65ee597075ec4  LB-4509-rejected.zip
+aeb45a5c1bdb952741161c81baeb6da9  Lyrics\Bob-Barnes-2.jpg
+0ff261274d29cffeb597ea2980cba5d6  Lyrics\Chestnut_Mare.txt
+1191125dcc357c6e439865c7fe3b33cc  Lyrics\Diamonds and Rust.txt
+6e2beddc6c5dc52cfb1b3d689c17ed06  Lyrics\Life_on_Mars.txt
+fd12fe53d338849d566637f6247c02c6  Lyrics\Love Song to a Stranger.txt
+f6d491d51b612ecb124d33ccce4dafdf  Lyrics\Never Let Me Go.txt
+a64a20e4229602239bab68ade67b1074  Lyrics\Please Come to Boston.txt
+3f05cd841824d94bdcb8c936ca50410f  Lyrics\Silver Dagger.txt
+82f5552f296ad421c443012b66f1d22b  md5sum.md5
+a0a72e09474151326d6b636916c6565d  Photos\1975-10-31-Plymouth+Baez.jpg
+d4845ace56af4c783a4a7993e9c2e92f  Photos\1975-10-31-Plymouth-New_England_Map.jpg
+d274720b2d5b4579cded80df37c104b0  Photos\1975-10-31-Plymouth_mayflower.jpg
+bb9355cb379c78292b507a90243beaf9  Photos\1975-10-31-Plymouth_newsletter.jpg
+c0add34dce0d1af4f632958b911cce65  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-10-31-sbd-LTA-remaster.flacf 
+=================== 
+=================== 
+=================== 
+bd1975-10-31-sbd-d1t01.flac:67287da77e0c5b59b794a8cbf2895cbb
+bd1975-10-31-sbd-d1t02.flac:c800a1b2d63bf698b781c5e1313ef940
+bd1975-10-31-sbd-d1t03.flac:1334dff24efa0f9d4b63a1c6093d2b99
+bd1975-10-31-sbd-d1t04.flac:7714a555ca3525325f8754627ee8c8f5
+bd1975-10-31-sbd-d1t05.flac:d0b3584ef73ab56fc9a79d868db8b947
+bd1975-10-31-sbd-d1t06.flac:5b4f936137672dcc3680e14cc92ba895
+bd1975-10-31-sbd-d1t07.flac:8d2096dda0c0a49ec4edf2f56b5ccc9d
+bd1975-10-31-sbd-d1t08.flac:9e66315b0f773b32f629ec94e9678a07
+bd1975-10-31-sbd-d1t09.flac:61b7854b56302fdd93eac5cb652aeb02
+bd1975-10-31-sbd-d1t10.flac:693517757330d6c34b03a5bb2f5c3b2d
+bd1975-10-31-sbd-d1t11.flac:7feefb708290aaa3d51d8b3c62e02403
+bd1975-10-31-sbd-d1t12.flac:5e244048516d6762e8d243863b3efb21
+bd1975-10-31-sbd-d1t13.flac:63e730568c6932719031da3d10b2d9f6
+bd1975-10-31-sbd-d1t14.flac:29873105e6cff3cce98bbbde09af8d53
+bd1975-10-31-sbd-d1t15.flac:4c0a78c15fd9d4de2308a46c10e4e6ea
+bd1975-10-31-sbd-d2t01.flac:bcaa3bc7500eff8647295b7da273af04
+bd1975-10-31-sbd-d2t02.flac:9763c62486d25319ed9dc1fb6dc9fb67
+bd1975-10-31-sbd-d2t03.flac:ae8456b1dc7bff5746fe73fdc474d060
+bd1975-10-31-sbd-d2t04.flac:272207b2c844568ac381d2b7fa740af9
+bd1975-10-31-sbd-d2t05.flac:486588f7b2fb8c533a565e1060082a2e
+bd1975-10-31-sbd-d2t06.flac:edc67f10be6c20339a4a54fa687879ad
+bd1975-10-31-sbd-d2t07.flac:6f696d79665eeaf9a6b7a84416ea7792
+bd1975-10-31-sbd-d2t08.flac:27e5e73c097f7aa6c9f2d56fb1dc7a89
+bd1975-10-31-sbd-d2t09.flac:5dce61bcdd94e3f28085f20c54f1b772
+bd1975-10-31-sbd-d2t10.flac:9795c1f3a2e3c5fea0aa243cbc3521d1
+bd1975-10-31-sbd-d2t11.flac:63975078fbbc71ff8f5bafbe727ca49b
+bd1975-10-31-sbd-d2t12.flac:ea2537fd024bae5d34497b88c5b8468a
+bd1975-10-31-sbd-d2t13.flac:f6c4422e335858c10772b701ae821cbb
+bd1975-10-31-sbd-d2t14.flac:2655baff400ebf71a395a49730e949c6
+bd1975-10-31-sbd-d2t15.flac:a76ca0f2d32d377c269f967a5fc1ef10
+bd1975-10-31-sbd-d2t16.flac:8040b711e42c1f861381a35e75277723
+bd1975-10-31-sbd-d2t17.flac:c9d4b0f68052bf7c75777a04731c20d5
+bd1975-10-31-sbd-d2t18.flac:e746fb13599a7a083f53f6402b8d454c
+bd1975-10-31-sbd-d2t19.flac:b10f3fded7b20c96d674d07f7d782b36
+bd1975-10-31-sbd-d2t20.flac:68962e8bfa81cd6fb16100fb39457a65
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-10-31-sbd-LTA-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:24.44        4337132 B   ---   --   ---xx   flac  0.4876  bd1975-10-31-sbd-d1t01.flac
+     4:13.62       44775068 B   ---   --   ---xx   flac  0.6150  bd1975-10-31-sbd-d1t02.flac
+     1:31.48       16165340 B   ---   --   ---xx   flac  0.5525  bd1975-10-31-sbd-d1t03.flac
+     3:53.59       41240012 B   ---   --   ---xx   flac  0.6413  bd1975-10-31-sbd-d1t04.flac
+     3:03.15       32316524 B   ---   --   ---xx   flac  0.6368  bd1975-10-31-sbd-d1t05.flac
+     4:24.09       46590812 B   ---   --   ---xx   flac  0.6272  bd1975-10-31-sbd-d1t06.flac
+     1:41.39       17908172 B   ---   --   ---xx   flac  0.5947  bd1975-10-31-sbd-d1t07.flac
+     0:17.04        3008252 B   ---   --   ---xx   flac  0.5818  bd1975-10-31-sbd-d1t08.flac
+     3:56.63       41778620 B   ---   --   ---xx   flac  0.5948  bd1975-10-31-sbd-d1t09.flac
+     2:56.40       31140524 B   ---   --   ---xx   flac  0.6595  bd1975-10-31-sbd-d1t10.flac
+     6:35.40       69772124 B   ---   --   ---xx   flac  0.5922  bd1975-10-31-sbd-d1t11.flac
+     4:08.20       43794284 B   ---   --   ---xx   flac  0.6460  bd1975-10-31-sbd-d1t12.flac
+     4:54.40       51955724 B   ---   --   ---xx   flac  0.5910  bd1975-10-31-sbd-d1t13.flac
+     5:44.49       60796892 B   ---   --   ---xx   flac  0.5762  bd1975-10-31-sbd-d1t14.flac
+     6:26.46       68198636 B   ---   --   ---xx   flac  0.5972  bd1975-10-31-sbd-d1t15.flac
+     4:13.44       44732732 B   ---   --   ---xx   flac  0.5845  bd1975-10-31-sbd-d2t01.flac
+     2:57.47       31333388 B   ---   --   ---xx   flac  0.5898  bd1975-10-31-sbd-d2t02.flac
+     4:11.46       44384636 B   ---   --   ---xx   flac  0.6074  bd1975-10-31-sbd-d2t03.flac
+     4:27.16       47136476 B   ---   --   ---xx   flac  0.6112  bd1975-10-31-sbd-d2t04.flac
+     3:35.32       38001308 B   ---   --   ---xx   flac  0.6000  bd1975-10-31-sbd-d2t05.flac
+     1:24.70       14982284 B   ---   --   ---xx   flac  0.4866  bd1975-10-31-sbd-d2t06.flac
+     2:41.58       28536860 B   ---   --   ---xx   flac  0.5503  bd1975-10-31-sbd-d2t07.flac
+     4:05.13       43248620 B   ---   --   ---xx   flac  0.5402  bd1975-10-31-sbd-d2t08.flac
+     3:19.56       35235356 B   ---   --   ---xx   flac  0.6337  bd1975-10-31-sbd-d2t09.flac
+     0:55.67        9859628 B   ---   --   ---xx   flac  0.5449  bd1975-10-31-sbd-d2t10.flac
+     0:17.69        3161132 B   ---   --   ---xx   flac  0.5859  bd1975-10-31-sbd-d2t11.flac
+     5:21.41       56720876 B   ---   --   ---xx   flac  0.6344  bd1975-10-31-sbd-d2t12.flac
+     4:01.45       42618284 B   ---   --   ---xx   flac  0.6395  bd1975-10-31-sbd-d2t13.flac
+     4:24.24       46626092 B   ---   --   ---xx   flac  0.6390  bd1975-10-31-sbd-d2t14.flac
+     8:25.45       89187884 B   ---   --   ---xx   flac  0.6531  bd1975-10-31-sbd-d2t15.flac
+     4:48.17       50843228 B   ---   --   ---xx   flac  0.6491  bd1975-10-31-sbd-d2t16.flac
+     4:17.68       45494780 B   ---   --   ---xx   flac  0.6449  bd1975-10-31-sbd-d2t17.flac
+     5:39.63       59947820 B   ---   --   ---xx   flac  0.6504  bd1975-10-31-sbd-d2t18.flac
+     4:42.44       49848332 B   ---   --   ---xx   flac  0.6544  bd1975-10-31-sbd-d2t19.flac
+     4:17.27       45398348 B   ---   --   ---xx   flac  0.6721  bd1975-10-31-sbd-d2t20.flac
+   132:22.45     1401076180 B                            0.6163  (35 files)
+=================== 
+=================== 
+=================== 

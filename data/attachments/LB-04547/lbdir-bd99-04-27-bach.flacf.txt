@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-27-bach.flacf 
+=================== 
+=================== 
+=================== 
+b5436d59aa8cc75e2060f713ed04b2c1  1999-04-27-Linz.md5
+9e77e18209a022a41aff452572682e7a  1999-04-27-Linz.txt
+51ab996396158b6285ad56c5887922ff  bd99-04-27-bach-LB-4547.txt
+f3c43e1bb349cbee02378070918fdc64  Track101Announcement.flac
+aa7cb10b2c33dc17c97a193605bce016  Track102Friend Of The Devil.flac
+4815061a43be1a2cee9fcd71d13ece12  Track103My Back Pages.flac
+6e1f1bd1d45f243f2ce51db4e07dc117  Track104Masters Of War.flac
+5bf6e4779b16888f9a058c743a6e10de  Track105It's All Over Now, Baby Blue.flac
+4e8d87fdcf92a2698854e96e666b2439  Track106Tangled Up In Blue.flac
+0a5b475626ca708275a51b38135182a6  Track107It Ain't Me, Babe.flac
+3bc0f02c96f52b641c8ecfb0b671cc7d  Track108Desolation Row.flac
+3138d7c5a8b332eed1f713dc06b979a4  Track109Cain't Wait.flac
+06966b6be68ef6406c35569ce0eea7e0  Track110Not Dark Yet.flac
+4498fffed01baa73c413e959a421ee68  Track111Stuck Inside Of Mobile.flac
+3e310b895116892dcba6c175a7728fac  Track201She Belongs To Me.flac
+e79144457cd34c688198d37f810509f1  Track202Highway 61 Revisited.flac
+37b6b08ff663c34903a7b88742a1dcad  Track203Love Sick.flac
+fa5290143dece6ccb7ffa1ba5b11fd6c  Track204Leopard-Skin Pill-Box Hat.flac
+9d077385c05fbca322b94754b2abfd72  Track205Blowin' In The Wind.flac
+85b6f808efedb38696c669281fa7e96f  Track206Not Fade Away.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-27-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101Announcement.flac:67cfd1e0b4f32ed7ef8a16676bf3e8f1
+Track102Friend Of The Devil.flac:58f424a06ad67867be2335d9bcefa383
+Track103My Back Pages.flac:255e2ea060dce06537feaff63ae3c993
+Track104Masters Of War.flac:ec112a5e20de61712e09a6b36da2bf32
+Track105It's All Over Now, Baby Blue.flac:dd04c7fe003eae1ce4d665dd6025321f
+Track106Tangled Up In Blue.flac:5c0433df880bb113b308453834fc2265
+Track107It Ain't Me, Babe.flac:e993c6e5b9d0d07fb9ecfe5fbcc04f93
+Track108Desolation Row.flac:17d61f958891019d10b667b4b300596c
+Track109Cain't Wait.flac:91e6566e3795170350473bd8f3eafc6b
+Track110Not Dark Yet.flac:0ff1227b84b733ba964fdcb73b2f53bd
+Track111Stuck Inside Of Mobile.flac:eb34c986faa1df2f8ac2231fd996056f
+Track201She Belongs To Me.flac:fce6c35196c3ca89e5f0d2a75b3e6bf7
+Track202Highway 61 Revisited.flac:cbcb2c5a6680f39b74d3be4786cb75a3
+Track203Love Sick.flac:04f264371c0210174b8f273cbb30fd2c
+Track204Leopard-Skin Pill-Box Hat.flac:7630535ac4f1a689b599bf9de1d19dff
+Track205Blowin' In The Wind.flac:bb7642410dbe4b2e883dd1957ebb2548
+Track206Not Fade Away.flac:193bf5c580b9010eb87ecfd961e2226e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-27-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:19.12        3379868 B   ---   --   ---xx   flac  0.4116  Track101Announcement.flac
+     5:36.64       59420972 B   ---   --   ---xx   flac  0.5595  Track102Friend Of The Devil.flac
+     6:42.22       70964588 B   ---   --   ---xx   flac  0.5334  Track103My Back Pages.flac
+     5:49.02       61568348 B   ---   --   ---xx   flac  0.5226  Track104Masters Of War.flac
+     6:47.40       71888924 B   ---   --   ---xx   flac  0.5443  Track105It's All Over Now, Baby Blue.flac
+     8:12.69       86951132 B   ---   --   ---xx   flac  0.5888  Track106Tangled Up In Blue.flac
+     8:47.54       93089852 B   ---   --   ---xx   flac  0.4675  Track107It Ain't Me, Babe.flac
+     9:00.07       95272508 B   ---   --   ---xx   flac  0.5356  Track108Desolation Row.flac
+     7:05.55       75099404 B   ---   --   ---xx   flac  0.5575  Track109Cain't Wait.flac
+     6:15.45       66255884 B   ---   --   ---xx   flac  0.4877  Track110Not Dark Yet.flac
+     7:47.52       82501148 B   ---   --   ---xx   flac  0.6218  Track111Stuck Inside Of Mobile.flac
+     6:28.02       68447948 B   ---   --   ---xx   flac  0.5787  Track201She Belongs To Me.flac
+     8:51.67       93826028 B   ---   --   ---xx   flac  0.5993  Track202Highway 61 Revisited.flac
+     6:05.07       64402508 B   ---   --   ---xx   flac  0.5454  Track203Love Sick.flac
+     7:05.11       74995916 B   ---   --   ---xx   flac  0.6299  Track204Leopard-Skin Pill-Box Hat.flac
+     5:57.16       63012476 B   ---   --   ---xx   flac  0.4936  Track205Blowin' In The Wind.flac
+     4:05.32       43293308 B   ---   --   ---xx   flac  0.6362  Track206Not Fade Away.flac
+   110:57.32     1174370812 B                            0.5551  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-16-contract-with-the-lord.flacf 
+=================== 
+=================== 
+=================== 
+f936b5cd38e8a798e9e17bfd64bfb8b4  bd79-11-16-contract-with-the-lord-d1t01.flac
+aa8b72626159e4a6e67c29e13f5b6091  bd79-11-16-contract-with-the-lord-d1t02.flac
+2e4cda66f9c9b4867dfba6e8a7e8d282  bd79-11-16-contract-with-the-lord-d1t03.flac
+a9a5c9d73fa76bbdb97e87c616bdb88f  bd79-11-16-contract-with-the-lord-d1t04.flac
+bf9fdf150b0c7856ab2435f720e74e99  bd79-11-16-contract-with-the-lord-d1t05.flac
+dfa31259c8dfca3e6f498550c4b9eeaa  bd79-11-16-contract-with-the-lord-d1t06.flac
+a63882f6f89dbedcb2b478a9e76dbb2e  bd79-11-16-contract-with-the-lord-d1t07.flac
+2473532881f297b606c8a534ea7e3f03  bd79-11-16-contract-with-the-lord-d1t08.flac
+07b0093a34fede7855f69f9cf6c3c829  bd79-11-16-contract-with-the-lord-d1t09.flac
+e84499d10916422c70fdd7b32dd4195f  bd79-11-16-contract-with-the-lord-d1t10.flac
+4918a1e980f4bd7bfdf6da92593c228b  bd79-11-16-contract-with-the-lord-d1t11.flac
+383c1c1d634761f9851a2aae515a894c  bd79-11-16-contract-with-the-lord-d1t12.flac
+5d12e512888eb1b8629a777a6d9ad9ac  bd79-11-16-contract-with-the-lord-d2t01.flac
+487f9ee738c2a3ba557bb33c13295cac  bd79-11-16-contract-with-the-lord-d2t02.flac
+58d53d2e235eb416dc533ce342c43e2e  bd79-11-16-contract-with-the-lord-d2t03.flac
+0d6738ec393105e219a2c10ebc3e7a67  bd79-11-16-contract-with-the-lord-d2t04.flac
+a2aba0fbe88fe92873d36103ada1e718  bd79-11-16-contract-with-the-lord-d2t05.flac
+c29d2194fe57f31782cd6d5e55a70a72  bd79-11-16-contract-with-the-lord-d2t06.flac
+18b576302716528e84cf6782e227b139  bd79-11-16-contract-with-the-lord-d2t07.flac
+1a3c0a0ae581463947337d82f0224180  bd79-11-16-contract-with-the-lord-d2t08.flac
+8fea9daebc9c28f44eda3b3972c9ee98  bd79-11-16-contract-with-the-lord-d2t09.flac
+793d972e15f8559ea4e6c583f50ed058  bd79-11-16-contract-with-the-lord.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-16-contract-with-the-lord.flacf 
+=================== 
+=================== 
+=================== 
+bd79-11-16-contract-with-the-lord-d1t01.flac:17abe349b2aff2a5a557be84a428043c
+bd79-11-16-contract-with-the-lord-d1t02.flac:7310da47df289da1d049cea2a16ca718
+bd79-11-16-contract-with-the-lord-d1t03.flac:a874148675b6b3f5a5eae403b4edeb62
+bd79-11-16-contract-with-the-lord-d1t04.flac:a4b59944a6bfedad785d16759d05f3c6
+bd79-11-16-contract-with-the-lord-d1t05.flac:70b74fe72cc39a2d409fb9d8ea2821e7
+bd79-11-16-contract-with-the-lord-d1t06.flac:25f968554bc783ab325bace481e478a5
+bd79-11-16-contract-with-the-lord-d1t07.flac:e4928fc09b10d3b5e0ac17c46d4000db
+bd79-11-16-contract-with-the-lord-d1t08.flac:caf3d9d1fbf39fba343985e1eab588ab
+bd79-11-16-contract-with-the-lord-d1t09.flac:1bc1d9c0d6fa608b191a8d05a77cdfc1
+bd79-11-16-contract-with-the-lord-d1t10.flac:b9890571fcd31667e083b3a5300f1526
+bd79-11-16-contract-with-the-lord-d1t11.flac:158188e6acdf03611e88453f622a7f3c
+bd79-11-16-contract-with-the-lord-d1t12.flac:53c7e659df5a2fe98091e8c9ab1faff0
+bd79-11-16-contract-with-the-lord-d2t01.flac:fe5bed1fc1fcbedb5f3d0e9766598c28
+bd79-11-16-contract-with-the-lord-d2t02.flac:5906ad29bbedcb9f42b8ae42ddc183cb
+bd79-11-16-contract-with-the-lord-d2t03.flac:a28b74f77be7e9fac5c8cd2f81db964f
+bd79-11-16-contract-with-the-lord-d2t04.flac:bc2e52a9dbb4bcd2430c1eef76a862c9
+bd79-11-16-contract-with-the-lord-d2t05.flac:b02ecb2ee6e3b456670cffef04aa9921
+bd79-11-16-contract-with-the-lord-d2t06.flac:fa91b88ae645a6fa52c8c21b30e6652d
+bd79-11-16-contract-with-the-lord-d2t07.flac:4d8205e5db649295359b926aee1d6734
+bd79-11-16-contract-with-the-lord-d2t08.flac:68ed6e5b69c5e6b2fc0c04e678334464
+bd79-11-16-contract-with-the-lord-d2t09.flac:a4674f24190899674454b611b866ed01
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-16-contract-with-the-lord.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:07.15       75358124 B   ---   --   ---xx   flac  0.6226  bd79-11-16-contract-with-the-lord-d1t01.flac
+     5:15.40       55660124 B   ---   --   ---xx   flac  0.5726  bd79-11-16-contract-with-the-lord-d1t02.flac
+     5:51.22       61968188 B   ---   --   ---xx   flac  0.6322  bd79-11-16-contract-with-the-lord-d1t03.flac
+     5:19.18       56313980 B   ---   --   ---xx   flac  0.5594  bd79-11-16-contract-with-the-lord-d1t04.flac
+     5:40.47       60086588 B   ---   --   ---xx   flac  0.6006  bd79-11-16-contract-with-the-lord-d1t05.flac
+     6:42.15       70948124 B   ---   --   ---xx   flac  0.6231  bd79-11-16-contract-with-the-lord-d1t06.flac
+     6:15.73       66321740 B   ---   --   ---xx   flac  0.5825  bd79-11-16-contract-with-the-lord-d1t07.flac
+     6:46.52       71740748 B   ---   --   ---xx   flac  0.5503  bd79-11-16-contract-with-the-lord-d1t08.flac
+     5:15.33       55643660 B   ---   --   ---xx   flac  0.6174  bd79-11-16-contract-with-the-lord-d1t09.flac
+     5:14.55       55519004 B   ---   --   ---xx   flac  0.5615  bd79-11-16-contract-with-the-lord-d1t10.flac
+     5:34.65       59070524 B   ---   --   ---xx   flac  0.6202  bd79-11-16-contract-with-the-lord-d1t11.flac
+     4:52.60       51649964 B   ---   --   ---xx   flac  0.5888  bd79-11-16-contract-with-the-lord-d1t12.flac
+     6:28.45       68549084 B   ---   --   ---xx   flac  0.6079  bd79-11-16-contract-with-the-lord-d2t01.flac
+     5:10.52       54806348 B   ---   --   ---xx   flac  0.5538  bd79-11-16-contract-with-the-lord-d2t02.flac
+     4:52.38       51598220 B   ---   --   ---xx   flac  0.6216  bd79-11-16-contract-with-the-lord-d2t03.flac
+     6:07.50       64856444 B   ---   --   ---xx   flac  0.5922  bd79-11-16-contract-with-the-lord-d2t04.flac
+     8:35.25       90904844 B   ---   --   ---xx   flac  0.5831  bd79-11-16-contract-with-the-lord-d2t05.flac
+     5:13.52       55335548 B   ---   --   ---xx   flac  0.6219  bd79-11-16-contract-with-the-lord-d2t06.flac
+     9:34.03      101260700 B   ---   --   ---xx   flac  0.5921  bd79-11-16-contract-with-the-lord-d2t07.flac
+     6:42.25       70971644 B   ---   --   ---xx   flac  0.6482  bd79-11-16-contract-with-the-lord-d2t08.flac
+     5:01.35       53178764 B   ---   --   ---xx   flac  0.5122  bd79-11-16-contract-with-the-lord-d2t09.flac
+   127:42.70     1351742364 B                            0.5945  (21 files)
+=================== 
+=================== 
+=================== 

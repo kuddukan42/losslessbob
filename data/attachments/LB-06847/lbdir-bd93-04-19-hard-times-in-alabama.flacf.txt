@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-04-19-hard-times-in-alabama.flacf 
+=================== 
+=================== 
+=================== 
+7317057c56020ccbe53929014d157b9a  bd93-04-19-hard-times-in-alabama-d1t01.flac
+1fe421a5c664450d5b0f71c0c02b37f1  bd93-04-19-hard-times-in-alabama-d1t02.flac
+f9c470d534406f35b0513ca6d5bffe59  bd93-04-19-hard-times-in-alabama-d1t03.flac
+c41d3cd660261b6d9523ba72aeec7aa0  bd93-04-19-hard-times-in-alabama-d1t04.flac
+c5d343c70ce7ca95473cde8a9f744fa3  bd93-04-19-hard-times-in-alabama-d1t05.flac
+4589aff755a33dc03143b42558cdb509  bd93-04-19-hard-times-in-alabama-d1t06.flac
+aa643a85321e3da5b597f4eb72406bae  bd93-04-19-hard-times-in-alabama-d1t07.flac
+8da17bc33678187dcab63bb59aebd970  bd93-04-19-hard-times-in-alabama-d1t08.flac
+1d388d305d1d7a003ba54ea6e44108b4  bd93-04-19-hard-times-in-alabama-d1t09.flac
+fcd77f209c5610fc527989acedf66fc9  bd93-04-19-hard-times-in-alabama-d1t10.flac
+2818c7858cbdec4e27057fa7d91d0049  bd93-04-19-hard-times-in-alabama-d1t11.flac
+44118cb479a6fb91a7a30eaa49d33aa5  bd93-04-19-hard-times-in-alabama-d2t01.flac
+10008c46220011c7a0a195b36da13f83  bd93-04-19-hard-times-in-alabama-d2t02.flac
+6b09c3fe85e4574fd83fd180845f101f  bd93-04-19-hard-times-in-alabama-d2t03.flac
+41763b851ac61a93ad38df3684a98266  bd93-04-19-hard-times-in-alabama-d2t04.flac
+9daff906e6e0c5ffbd5794d73ce4f45f  bd93-04-19-hard-times-in-alabama-d2t05.flac
+5c1a1a2be14bf359542528cff342a3a2  bd93-04-19-hard-times-in-alabama-d2t06.flac
+fb8303f9377ecaee8b6fb1ebaec6ebbd  bd93-04-19-hard-times-in-alabama-d2t07.flac
+d859060f6cea5ba28ac85ffe5a95511c  bd93-04-19-hard-times-in-alabama-d2t08.flac
+c83346c7ab054a03b6bf78a1b0c9ceea  bd93-04-19-hard-times-in-alabama-d2t09.flac
+24e3fbafe3a14a48edbd89afe1262a87  bd93-04-19-hard-times-in-alabama-d2t10.flac
+89e224e419a3115658474544711734e6  bd93-04-19-hard-times-in-alabama-d2t11.flac
+d56a832bbf9bc0e077a962ffac35f602  bd93-04-19-hard-times-in-alabama-d2t12.flac
+82e02c05d77e7c998a896dcc00ad43e4  bd93-04-19-hard-times-in-alabama.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-04-19-hard-times-in-alabama.flacf 
+=================== 
+=================== 
+=================== 
+bd93-04-19-hard-times-in-alabama-d1t01.flac:0bdf005a104f9c179c6a7d6d50f4bb73
+bd93-04-19-hard-times-in-alabama-d1t02.flac:07bc1a328a9f785b9b62ab95ae2b0677
+bd93-04-19-hard-times-in-alabama-d1t03.flac:5ee98e725146d8915da761ae8b134a77
+bd93-04-19-hard-times-in-alabama-d1t04.flac:25228e1ce9420a3e12dc7b8b3dcab653
+bd93-04-19-hard-times-in-alabama-d1t05.flac:acc778b8dc6e9b2427cb620b4686596e
+bd93-04-19-hard-times-in-alabama-d1t06.flac:97a01f0a2904945451d01e790151eba5
+bd93-04-19-hard-times-in-alabama-d1t07.flac:ed24d7ec3597c4451b0191ca06558aac
+bd93-04-19-hard-times-in-alabama-d1t08.flac:fa52e7776b02f1c0130d31f99f657f8c
+bd93-04-19-hard-times-in-alabama-d1t09.flac:88facc5d49f8628bfbc5c8a86919fbfd
+bd93-04-19-hard-times-in-alabama-d1t10.flac:24abf122fcf06006584b85b3aea61a5a
+bd93-04-19-hard-times-in-alabama-d1t11.flac:e80912393542e373db5aa81088bbea62
+bd93-04-19-hard-times-in-alabama-d2t01.flac:1c5c16c2d706a90f0e613d16627766be
+bd93-04-19-hard-times-in-alabama-d2t02.flac:8450291fbf1d85ec41ddb2484eea2cf9
+bd93-04-19-hard-times-in-alabama-d2t03.flac:0e5007220828ee1ee11aa59468a98b1f
+bd93-04-19-hard-times-in-alabama-d2t04.flac:4fe6e1083bb178339393a47f6fa6d2d4
+bd93-04-19-hard-times-in-alabama-d2t05.flac:2f0fab9b01324669cacf924fc6fb267f
+bd93-04-19-hard-times-in-alabama-d2t06.flac:e62e8818ea3b2a8b4b5f649014f1cc5d
+bd93-04-19-hard-times-in-alabama-d2t07.flac:937eeaa6d1f73e589451c2de1cddcef2
+bd93-04-19-hard-times-in-alabama-d2t08.flac:78d007d800b11a2610c608cd299dd0cb
+bd93-04-19-hard-times-in-alabama-d2t09.flac:17d0a9e35c85625ef0173b99a8411bbc
+bd93-04-19-hard-times-in-alabama-d2t10.flac:2ce648324004074d1938dbd56611a212
+bd93-04-19-hard-times-in-alabama-d2t11.flac:b0d90149ea62d45e148056e889842a80
+bd93-04-19-hard-times-in-alabama-d2t12.flac:8878306ac443581141bb47698ac4c30a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-04-19-hard-times-in-alabama.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.72       57499388 B   ---   --   ---xx   flac  0.4996  bd93-04-19-hard-times-in-alabama-d1t01.flac
+     8:33.28       90559100 B   ---   --   ---xx   flac  0.5928  bd93-04-19-hard-times-in-alabama-d1t02.flac
+     5:23.02       56981948 B   ---   --   ---xx   flac  0.6185  bd93-04-19-hard-times-in-alabama-d1t03.flac
+     6:01.35       63762764 B   ---   --   ---xx   flac  0.5127  bd93-04-19-hard-times-in-alabama-d1t04.flac
+    10:34.40      111931724 B   ---   --   ---xx   flac  0.5944  bd93-04-19-hard-times-in-alabama-d1t05.flac
+     6:15.70       66314684 B   ---   --   ---xx   flac  0.4774  bd93-04-19-hard-times-in-alabama-d1t06.flac
+     5:48.00       61387244 B   ---   --   ---xx   flac  0.5342  bd93-04-19-hard-times-in-alabama-d1t07.flac
+     6:04.38       64299020 B   ---   --   ---xx   flac  0.4760  bd93-04-19-hard-times-in-alabama-d1t08.flac
+     5:39.00       59799644 B   ---   --   ---xx   flac  0.4935  bd93-04-19-hard-times-in-alabama-d1t09.flac
+     6:49.10       72171164 B   ---   --   ---xx   flac  0.4979  bd93-04-19-hard-times-in-alabama-d1t10.flac
+     8:14.45       87247484 B   ---   --   ---xx   flac  0.5238  bd93-04-19-hard-times-in-alabama-d1t11.flac
+     5:07.27       54218348 B   ---   --   ---xx   flac  0.6213  bd93-04-19-hard-times-in-alabama-d2t01.flac
+     7:42.45       81602684 B   ---   --   ---xx   flac  0.6232  bd93-04-19-hard-times-in-alabama-d2t02.flac
+     7:37.58       80751260 B   ---   --   ---xx   flac  0.5781  bd93-04-19-hard-times-in-alabama-d2t03.flac
+     5:20.17       56488028 B   ---   --   ---xx   flac  0.6267  bd93-04-19-hard-times-in-alabama-d2t04.flac
+     6:49.13       72178220 B   ---   --   ---xx   flac  0.5330  bd93-04-19-hard-times-in-alabama-d2t05.flac
+     6:14.52       66095948 B   ---   --   ---xx   flac  0.6213  bd93-04-19-hard-times-in-alabama-d2t06.flac
+     9:01.50       95550044 B   ---   --   ---xx   flac  0.5032  bd93-04-19-hard-times-in-alabama-d2t07.flac
+     6:06.70       64727084 B   ---   --   ---xx   flac  0.6156  bd93-04-19-hard-times-in-alabama-d2t08.flac
+     5:37.43       59547980 B   ---   --   ---xx   flac  0.6651  bd93-04-19-hard-times-in-alabama-d2t09.flac
+     5:51.45       62022284 B   ---   --   ---xx   flac  0.6179  bd93-04-19-hard-times-in-alabama-d2t10.flac
+     4:32.12       48009068 B   ---   --   ---xx   flac  0.5734  bd93-04-19-hard-times-in-alabama-d2t11.flac
+     4:15.58       45118460 B   ---   --   ---xx   flac  0.5694  bd93-04-19-hard-times-in-alabama-d2t12.flac
+   149:07.05     1578263572 B                            0.5628  (23 files)
+=================== 
+=================== 
+=================== 

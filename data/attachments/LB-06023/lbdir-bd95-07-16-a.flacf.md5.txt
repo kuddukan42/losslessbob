@@ -1,0 +1,17 @@
+57c347a8a2d37648b28af3f4442064d7  1995-07-16 Bilbao off master d1\01 Track01.flac
+230edab154656b7feba9e93e8f1b2706  1995-07-16 Bilbao off master d1\02 Track02.flac
+ff41759fdc4da443b3b7151740b79736  1995-07-16 Bilbao off master d1\03 Track03.flac
+cffe587d81830797c8d6ebd30c3ce79f  1995-07-16 Bilbao off master d1\04 Track04.flac
+fee2e7b48d86f536bdd9bbb72e8e7059  1995-07-16 Bilbao off master d1\05 Track05.flac
+f7983218546b1c562ba0c0756e614b8d  1995-07-16 Bilbao off master d1\06 Track06.flac
+92c0313dbfb6392764b4b7f3d48f4d6c  1995-07-16 Bilbao off master d1\07 Track07.flac
+302b8bad33f24bb3af3c8e3237a98929  1995-07-16 Bilbao off master d1\08 Track08.flac
+34fbdf2d62b878ca7b36d3a011f3f6b0  1995-07-16 Bilbao off master d2\01 Track01.flac
+aef782283d3e8d65158f78a1a100957f  1995-07-16 Bilbao off master d2\02 Track02.flac
+d7fb235b6bc922bd559b717bac7e8191  1995-07-16 Bilbao off master d2\03 Track03.flac
+feec763ee9399b3713b8a3e046669347  1995-07-16 Bilbao off master d2\04 Track04.flac
+a7d207d605e912c66478011c6f94008a  1995-07-16 Bilbao off master d2\05 Track05.flac
+7cd4d8b07337565c3cb4d9b1a6ac090f  1995-07-16 Bilbao off master d2\06 Track06.flac
+2e92b68201ac79c021f4ed7d765fd9cf  1995-07-16 Bilbao off master d2\07 Track07.flac
+2a07be2d4fd3fd6e2b3a28c2513dc67a  Bob Dylan 1995-07-16 Bilbao.txt
+136ded9f1d2c2bc55e8a1decf182651e  fingerprintD1.ffp

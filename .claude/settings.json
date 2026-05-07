@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(/home/tjenkins/.ssh/**)",
+      "Read(/home/tjenkins/.gnupg/**)",
+      "Read(/home/tjenkins/.aws/**)",
+      "Read(/home/tjenkins/.kube/**)",
+      "Read(/home/tjenkins/.netrc)",
+      "Write(/home/tjenkins/.ssh/**)",
+      "Write(/home/tjenkins/.gnupg/**)",
+      "Write(/home/tjenkins/.aws/**)",
+      "Write(/home/tjenkins/.kube/**)",
+      "Edit(/home/tjenkins/.ssh/**)",
+      "Edit(/home/tjenkins/.gnupg/**)",
+      "Edit(/home/tjenkins/.aws/**)",
+      "Edit(/home/tjenkins/.kube/**)",
+      "Read(/etc/shadow)",
+      "Read(/etc/sudoers)",
+      "Read(/root/**)",
+      "Write(/etc/**)",
+      "Write(/root/**)",
+      "Write(/usr/**)",
+      "Write(/var/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import sys,json,os; d=json.load(sys.stdin); fp=d.get('tool_input',{}).get('file_path',''); proj=os.path.realpath('/home/tjenkins/Documents/losslessbob'); mem=os.path.realpath(os.path.expanduser('~/.claude')); block=bool(fp) and not os.path.realpath(fp).startswith(proj+os.sep) and not os.path.realpath(fp).startswith(mem+os.sep) and os.path.realpath(fp)!=proj; print(json.dumps({'continue':False,'stopReason':'Access denied: outside project directory'}) if block else '{}')\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}

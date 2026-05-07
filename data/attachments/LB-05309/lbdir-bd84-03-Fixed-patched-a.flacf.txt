@@ -1,0 +1,170 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-03-Fixed-patched-a.flacf 
+=================== 
+=================== 
+=================== 
+57ab8ea6ef198298ef0332d06f4419fa  BD - The Plugz Rehearsals 1984 (Fixed LB-5309 + Alternate copy).txt
+ae48559a41a1ff5f0245128f442b96b2  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\fp fixed lb5309 1.txt
+80ebc6a2b04ed08e12cc4177c4f3e2f9  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 01.flac
+288ec31bbea768068f299209332e1629  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 02.flac
+2c2421cd21825d7c949568a1eee86810  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 03.flac
+090e0b000cac89e78eb111b2e18e2830  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 04.flac
+158272855b24557c6a979c7d3ee33358  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 05.flac
+32d9ebd4e9275306290dc3bb714bde89  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 06.flac
+c6b48077f120aa4d46bc70eb651ae6bb  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 07.flac
+2675b8e9ddcbc06c431da7615482d5f8  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 08.flac
+697982bc289895ea4ad0dce7fe07a257  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 09.flac
+215fe074dc7f7472aa65409922dca01b  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 10.flac
+8a13a62cdb124b71635413a225a7d849  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 11.flac
+897162115ee646c3ad29865768055d0c  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 12.flac
+9a18f11d595b88e3dea13c1561789929  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 13.flac
+481564ad4625ddb279c154b590004077  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 14.flac
+860edef91584a006e6d56624bb745df2  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 15.flac
+2431eb8760d85fc76df6ab9f7d87e28f  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 16.flac
+89b9c2eb823b4b544e8f65c21fadcfad  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 17.flac
+80b0a804d5efb18d5832c39652424b71  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 18.flac
+06d3c9b4194dba689bfaffd4dc1dbda1  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\fp fixed lb5309 2.txt
+a541d5ee7411bcc81c3d1afeff31f7f2  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 01.flac
+1f9b4a1e521f8e49cb7d72c13bb7a692  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 02.flac
+94722a2c22ee6d559bd341ef3c101556  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 03.flac
+afe8ccfed6b2dda00cc13499e2da38e7  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 04.flac
+f08be9b209846e073b259d1d3cacfec6  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 05.flac
+e9cf93574fe402a1ee2d7889f3c83003  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 06.flac
+8692e435c471139106a770a1d87785ba  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 07.flac
+bc7888350ddc3fc217df7537f758467b  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 08.flac
+362e6c605d7a9b67d07548e05bbf5bba  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 09.flac
+4575ceccd692c1168735efc28ecb8421  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 10.flac
+bae49686839dd3aee63001877746a41e  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 11.flac
+adb3b498a2b8152aeed7108aa7c29863  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 12.flac
+7800673bf96bdd11bf26b73e8e5e43a8  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 13.flac
+6b65ffe85c295717a80ef8f9ac3674f7  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 14.flac
+c681253b757e361ed56a94b1e790a7bc  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 15.flac
+11a2fb88f571b2f8fa05c7c25bcd9154  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 16.flac
+30bf80487f7035313e1a8d39794e756d  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track.md5
+c1a856a74f586c337dceae0c84a48043  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track.txt
+fd457485a0a84ed1ccb5c15a050561a2  Disc 2 Track 7 patched alt copy\fp fixed lb5309 patched trk.txt
+8444983c79df76248e400fcf852ffa39  Disc 2 Track 7 patched alt copy\Patched D2T7.txt
+08852ad335a1a0845ff2a86020f83f4f  Disc 2 Track 7 patched alt copy\Track 7.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-03-Fixed-patched-a.flacf\BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:c5de2412b98cd40f3ad4da4ee3fac875
+Track 02.flac:4d98cabc91b08cfaf9599c8ff422756a
+Track 03.flac:39b6353d38b99ef401920f85a57f8770
+Track 04.flac:1b583d04eb40d025e23ad63aa0887d27
+Track 05.flac:f006a1348f65d95a38dd0d7afc4caf8c
+Track 06.flac:5321b92a45ea0365f1781e48870d40a6
+Track 07.flac:9b94949aab09db53e883b19d8ffe1c0a
+Track 08.flac:42b3d8d10a0da79eaa17967e995ac0c8
+Track 09.flac:b163cf1a5f885688e3ed7a58fe8de957
+Track 10.flac:058e036341f8fe5355213fc1cc89b33d
+Track 11.flac:9c993c790af8555ba7f3fa79510f0855
+Track 12.flac:136a0083bd286e3f62e0ae0e96e12cd9
+Track 13.flac:1c1e332160b4b01cdbd09f33aeffffb0
+Track 14.flac:f255ae13578ea5712da3d1b6c9d5d3eb
+Track 15.flac:4997d0c86d8e6641abf263bee777f4b8
+Track 16.flac:636e9a0a78aac7b4605fc5497efc09e7
+Track 17.flac:61b793218a249fad59e56c2f8e88f28d
+Track 18.flac:61ff15dc14031f659c0d7f577e445b4d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-03-Fixed-patched-a.flacf\BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:c2bbc4ff35944b55910c7e03067333c6
+Track 02.flac:8500881956c1d5fee2cf295a446c5a92
+Track 03.flac:fd72a5bd98f7d032103cc7a9c3fcc4db
+Track 04.flac:dd49081ec52445658feba414d2fe0be2
+Track 05.flac:ba731510422e4e0d3df6e769d8feafa4
+Track 06.flac:9bdd0741c5dca155d13f5b22dd66ac07
+Track 07.flac:7bf9e2fa1975b171411d6c918e1d6d8c
+Track 08.flac:723f21f205acdf316761709220901b43
+Track 09.flac:0e0b6d99cd2435a0bff34f91056be825
+Track 10.flac:d6d2fd05a42bd708c0ee0401c5bf6dfc
+Track 11.flac:a186dd520b6a63a0783d2e9418de5347
+Track 12.flac:692835ecc1aa01866bb2f448fd6a2544
+Track 13.flac:fcc1d6ef9f9121ab7a5f13a074fc18ed
+Track 14.flac:26e66220336f640c0773a4856b029d06
+Track 15.flac:0f0edc60a5cf99faabe87666e340f679
+Track 16.flac:e2d5156573295227aeb2f4e25d332610
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-03-Fixed-patched-a.flacf\Disc 2 Track 7 patched alt copy 
+=================== 
+=================== 
+=================== 
+Track 7.flac:55e61b57f8de1286b3d9a4b455c04f02
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-03-Fixed-patched-a.flacf\BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.35       56883164 B   ---   --   ---xx   flac  0.3932  Track 01.flac
+     5:23.48       57090140 B   ---   --   ---xx   flac  0.3583  Track 02.flac
+     2:34.50       27283244 B   ---   --   ---xx   flac  0.3914  Track 03.flac
+     2:38.64       28021772 B   ---   --   ---xx   flac  0.3077  Track 04.flac
+     1:39.59       17602412 B   ---   --   ---xx   flac  0.3092  Track 05.flac
+     1:08.60       12136364 B   ---   --   ---xx   flac  0.3036  Track 06.flac
+     2:08.27       22642748 B   ---   --   ---xx   flac  0.3023  Track 07.flac
+     3:05.57       32768108 B   ---   --   ---xx   flac  0.2957  Track 08.flac
+     3:36.49       38217692 B   ---   --   ---xx   flac  0.3085  Track 09.flac
+     4:01.60       42653564 B   ---   --   ---xx   flac  0.3130  Track 10.flac
+     3:55.70       41618684 B   ---   --   ---xx   flac  0.3219  Track 11.flac
+     3:32.63       37545020 B   ---   --   ---xx   flac  0.3131  Track 12.flac
+     6:41.73       70908140 B   ---   --   ---xx   flac  0.3282  Track 13.flac
+     5:39.30       59870204 B   ---   --   ---xx   flac  0.4428  Track 14.flac
+     6:59.18       73953980 B   ---   --   ---xx   flac  0.4143  Track 15.flac
+     3:48.59       40358012 B   ---   --   ---xx   flac  0.4332  Track 16.flac
+     4:36.03       48693500 B   ---   --   ---xx   flac  0.4574  Track 17.flac
+     3:12.34       33948812 B   ---   --   ---xx   flac  0.4545  Track 18.flac
+    70:07.34      742195560 B                            0.3688  (18 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-03-Fixed-patched-a.flacf\BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.00       48862844 B   ---   --   ---xx   flac  0.4689  Track 01.flac
+     7:03.50       74734844 B   ---   --   ---xx   flac  0.3652  Track 02.flac
+     1:06.32       11717708 B   ---   --   ---xx   flac  0.3457  Track 03.flac
+     0:50.11        8845916 B   ---   --   ---xx   flac  0.3481  Track 04.flac
+     4:02.66       42844076 B   ---   --   ---xx   flac  0.3477  Track 05.flac
+     3:22.59       35771612 B   ---   --   ---xx   flac  0.3359  Track 06.flac
+     3:27.18       36557180 B   ---   --   ---xx   flac  0.3147  Track 07.flac
+     5:40.31       60048956 B   ---   --   ---xx   flac  0.3367  Track 08.flac
+     2:30.59       26598812 B   ---   --   ---xx   flac  0.3385  Track 09.flac
+     1:22.43       14565980 B   ---   --   ---xx   flac  0.3655  Track 10.flac
+     4:21.08       46059260 B   ---   --   ---xx   flac  0.3717  Track 11.flac
+    10:37.07      112383308 B   ---   --   ---xx   flac  0.3316  Track 12.flac
+     9:54.09      104802812 B   ---   --   ---xx   flac  0.3062  Track 13.flac
+     2:16.01       23992796 B   ---   --   ---xx   flac  0.3467  Track 14.flac
+     2:04.69       22035932 B   ---   --   ---xx   flac  0.3345  Track 15.flac
+     3:55.09       41475212 B   ---   --   ---xx   flac  0.3544  Track 16.flac
+    67:12.22      711297248 B                            0.3475  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-03-Fixed-patched-a.flacf\Disc 2 Track 7 patched alt copy 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.52       58334348 B   ---   --   ---xx   flac  0.4628  Track 7.flac
+     5:30.52       58334348 B                            0.4628  (1 file)
+=================== 
+=================== 
+=================== 

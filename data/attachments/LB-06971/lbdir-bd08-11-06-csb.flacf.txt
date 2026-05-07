@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-11-06-csb.flacf 
+=================== 
+=================== 
+=================== 
+f55f8bdbaa6df11b224b5a277bd2dfc9  Bob Dylan - 2008-11-06 01 Thunder On The Mountain.flac
+ab2fa23f7fa1722e775a0dddd18f5671  Bob Dylan - 2008-11-06 02 Love Minus Zero - No Limit.flac
+74c5510b2acad6482a1ada9766d8382b  Bob Dylan - 2008-11-06 03 Lonesome Day Blues.flac
+a6d2d2a81c65b325e60dd9a006dcd18c  Bob Dylan - 2008-11-06 04 A Hard Rain's A-Gonna Fall.flac
+4262c3f46e77c0fc78c8e4e3592dbf1c  Bob Dylan - 2008-11-06 05 Tweedle Dee & Tweedle Dum.flac
+3aca69a90bfdaf2bb7921b9bb28d2be3  Bob Dylan - 2008-11-06 06 Girl From The North Country.flac
+4011eb62f29aaa2b7cc75ef4377fb427  Bob Dylan - 2008-11-06 07 High Water (For Charley Patton).flac
+190bce15151895ac1866c82111f5fcb4  Bob Dylan - 2008-11-06 08 Workingman's Blues #2.flac
+b0a8dc64c81bf779b3b54566bb3baa8e  Bob Dylan - 2008-11-06 09 Just Like A Woman.flac
+2e5fed1f4f29f512d51efd479a6baa73  Bob Dylan - 2008-11-06 10 Tangled Up In Blue.flac
+57614fb1c36fcef509fb5e7500c1ce88  Bob Dylan - 2008-11-06 11 Love Sick.flac
+35969a5f55c370cdbc365ff4601fbf89  Bob Dylan - 2008-11-06 12 Highway 61 Revisited.flac
+e2358cf6dbc1adddd9eadb76a1049c83  Bob Dylan - 2008-11-06 13 Ain't Talkin'.flac
+e2f0cc7b443bce842ae9690f1cfc0881  Bob Dylan - 2008-11-06 14 Summer Days.flac
+ba3cc505e2ddddd70b0a882e165e20fd  Bob Dylan - 2008-11-06 15 Like A Rolling Stone.flac
+edb615115ac31fff057a65229a225be0  Bob Dylan - 2008-11-06 16 All Along The Watchtower.flac
+cc4470e04b881d3b26da168b3278d3db  Bob Dylan - 2008-11-06 17 Blowin' In The Wind.flac
+2550613e78b11061d2d6be850d20e7b4  Bob Dylan - 2008-11-06 ffp.txt
+ae199d44b4612bd539a39c7c4b9a8cb7  Bob Dylan - 2008-11-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-11-06-csb.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan - 2008-11-06 01 Thunder On The Mountain.flac:a55dc30bab70a73bbf3642618094c168
+Bob Dylan - 2008-11-06 02 Love Minus Zero - No Limit.flac:c866a5365bfab26da670458b38cd2294
+Bob Dylan - 2008-11-06 03 Lonesome Day Blues.flac:21d45d148e49b5d9880a7c840d8384a7
+Bob Dylan - 2008-11-06 04 A Hard Rain's A-Gonna Fall.flac:97d3dbde2518e80808318daf18e1308c
+Bob Dylan - 2008-11-06 05 Tweedle Dee & Tweedle Dum.flac:2a5673202dd737ac24243e877763204e
+Bob Dylan - 2008-11-06 06 Girl From The North Country.flac:d90874d41f9bacdc3630048db970fb00
+Bob Dylan - 2008-11-06 07 High Water (For Charley Patton).flac:606f1f081fb3b3a45035c2c3db47f1e0
+Bob Dylan - 2008-11-06 08 Workingman's Blues #2.flac:dc89c49b41ed1d4e23dde90ae90f3489
+Bob Dylan - 2008-11-06 09 Just Like A Woman.flac:5d2448f5f6f406337a3f8ad70c99df6f
+Bob Dylan - 2008-11-06 10 Tangled Up In Blue.flac:43dd374ffbd3ecdec01ddb8cb163b473
+Bob Dylan - 2008-11-06 11 Love Sick.flac:028186e4c6d26224a4b358c7f5139cb0
+Bob Dylan - 2008-11-06 12 Highway 61 Revisited.flac:b03efd69911b268e26b2cf77148fee1d
+Bob Dylan - 2008-11-06 13 Ain't Talkin'.flac:0f17b24f26f2785e7e9e4806a517c8c2
+Bob Dylan - 2008-11-06 14 Summer Days.flac:8e3646bbba1d2b862a25a0f90ac5f17e
+Bob Dylan - 2008-11-06 15 Like A Rolling Stone.flac:2018235929f6b36365109ab3a4ea4037
+Bob Dylan - 2008-11-06 16 All Along The Watchtower.flac:e9827b98bb0fa712ba72b0de908cbc8b
+Bob Dylan - 2008-11-06 17 Blowin' In The Wind.flac:4687f2622e66de0f5167246ff32247ad
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-11-06-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:39.56       70515356 B   ---   --   ---xx   flac  0.5101  Bob Dylan - 2008-11-06 01 Thunder On The Mountain.flac
+     4:43.43       50022380 B   ---   --   ---xx   flac  0.5071  Bob Dylan - 2008-11-06 02 Love Minus Zero - No Limit.flac
+     7:57.25       84201644 B   ---   --   ---xx   flac  0.5261  Bob Dylan - 2008-11-06 03 Lonesome Day Blues.flac
+     7:01.06       74278556 B   ---   --   ---xx   flac  0.5099  Bob Dylan - 2008-11-06 04 A Hard Rain's A-Gonna Fall.flac
+     5:05.43       53903180 B   ---   --   ---xx   flac  0.4895  Bob Dylan - 2008-11-06 05 Tweedle Dee & Tweedle Dum.flac
+     5:58.56       63282956 B   ---   --   ---xx   flac  0.4618  Bob Dylan - 2008-11-06 06 Girl From The North Country.flac
+     5:37.26       59507996 B   ---   --   ---xx   flac  0.5055  Bob Dylan - 2008-11-06 07 High Water (For Charley Patton).flac
+     7:08.58       75635660 B   ---   --   ---xx   flac  0.5049  Bob Dylan - 2008-11-06 08 Workingman's Blues #2.flac
+     6:41.11       70762316 B   ---   --   ---xx   flac  0.5061  Bob Dylan - 2008-11-06 09 Just Like A Woman.flac
+     8:00.08       84690860 B   ---   --   ---xx   flac  0.4975  Bob Dylan - 2008-11-06 10 Tangled Up In Blue.flac
+     5:54.31       62518556 B   ---   --   ---xx   flac  0.4888  Bob Dylan - 2008-11-06 11 Love Sick.flac
+     6:05.63       64534220 B   ---   --   ---xx   flac  0.5613  Bob Dylan - 2008-11-06 12 Highway 61 Revisited.flac
+     8:44.44       92537132 B   ---   --   ---xx   flac  0.4759  Bob Dylan - 2008-11-06 13 Ain't Talkin'.flac
+     6:20.60       67173164 B   ---   --   ---xx   flac  0.5512  Bob Dylan - 2008-11-06 14 Summer Days.flac
+     9:49.63      104047820 B   ---   --   ---xx   flac  0.5104  Bob Dylan - 2008-11-06 15 Like A Rolling Stone.flac
+     5:44.37       60768668 B   ---   --   ---xx   flac  0.5500  Bob Dylan - 2008-11-06 16 All Along The Watchtower.flac
+     7:51.21       83133836 B   ---   --   ---xx   flac  0.4924  Bob Dylan - 2008-11-06 17 Blowin' In The Wind.flac
+   115:24.51     1221514300 B                            0.5081  (17 files)
+=================== 
+=================== 
+=================== 

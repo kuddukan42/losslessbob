@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd85-The-Naked-Empire.flacf 
+=================== 
+=================== 
+=================== 
+88d6e8c802467ff6c4e0c1eb60c0967a  01. New Danville Girl.flac
+f4bd4381e09b343dd37f9f29fc5ffa8c  02. Tight Connection To My Heart.flac
+315cff51d05bb30397f1814ac86206ac  03. Clean Cut Kid.flac
+86e930df861106316fb55f7da5619972  04. I'll Remember You.flac
+d36e0d1fc0dc6864e6f6753fb468c78c  05. Seeing The Real You At Last.flac
+1bf1b821a20bc4ec8c6267df9ff12601  06. Something's Burning Baby.flac
+1a9010586fb790e10ba1311561d1b43e  07. Trust Yourself.flac
+7c5b6b848fcc0b96f069515e73331706  08. Emotionally Yours.flac
+3b3a0d5d22c2ebb6bfc485e6d9bc1129  09. When The Night Comes Falling From The Sky.flac
+36e3e452f433ac5493b8805b821a97e4  10. Never Gonna Be The Same Again.flac
+8c61d0ca1242b2e8bc23b1e4d78b059a  11. Waiting To Get Beat.flac
+33cc14e8611b8b4dd25e626bfc3f755e  12. Straight A's In Love.flac
+609378d3810ccf202b4c48b7155593a6  13. The Very Thought Of You.flac
+74329310f5ec5beea65ecaf97ca4c193  14. Driftin' Too Far From The Shore.flac
+70d5c472ee81da5fc30224e952283f7f  15. Who Loves You More.flac
+319f69afd6bf84e767249ee1d39cb120  16. Go 'Way Little Boy.flac
+3eddd4c3973e1af82df5cbca8c2abc06  FCMD5-sums.MD5
+0789a6bf5003bdc4a7d7984c2e533fb8  Fingerprints.txt
+f42be3e17ff64ce4f06fe3422dda1f7f  Log.LOG
+0f0f95a7d21d8a2068a94f843eeedc1c  The Naked Empire - back.jpg
+c1850ee92bb0e1d13c0553f85e7e3011  The Naked Empire - front.jpg
+47ba79d0ff19a5709b490b53a3d1b5e0  The Naked Empire.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd85-The-Naked-Empire.flacf 
+=================== 
+=================== 
+=================== 
+01. New Danville Girl.flac:b7721bc58d1397ddf31d1ddfe90de053
+02. Tight Connection To My Heart.flac:d9274c1f397fda61507497feb874ce4b
+03. Clean Cut Kid.flac:c22285b68f1235bffdaf09427bb5451b
+04. I'll Remember You.flac:c2f76841dedd5e25772a362355ce1d59
+05. Seeing The Real You At Last.flac:c113947372aac3399e2e5a59cdf29a48
+06. Something's Burning Baby.flac:2a7be1210302960aad4013b97d77558f
+07. Trust Yourself.flac:c977e441c5954e349aa54cdce5d990b0
+08. Emotionally Yours.flac:395f7c8555a900fc296ca74be885fdd3
+09. When The Night Comes Falling From The Sky.flac:f6c6e06e2c1e0b4509fb65f50d9b0137
+10. Never Gonna Be The Same Again.flac:4875a6ef5769d7a9ed2a5afd28421da7
+11. Waiting To Get Beat.flac:a815aef3a7ff5179f3e1edc8d0486cf8
+12. Straight A's In Love.flac:a61fd72413ae30f664f655bebb0c6d46
+13. The Very Thought Of You.flac:42ae9b4cdb20eb0137c42e81551bea91
+14. Driftin' Too Far From The Shore.flac:c5d26fe6c696fb07d63c2c94e514a08f
+15. Who Loves You More.flac:6eb076527c90ccf8ac98947b184d1978
+16. Go 'Way Little Boy.flac:f574e524caa05032afc8a2655cbe8429
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd85-The-Naked-Empire.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    12:08.23      128473340 B   ---   --   ---xx   flac  0.5974  01. New Danville Girl.flac
+     5:25.36       57414716 B   ---   --   ---xx   flac  0.6359  02. Tight Connection To My Heart.flac
+     5:12.25       55095644 B   ---   --   ---xx   flac  0.6396  03. Clean Cut Kid.flac
+     3:59.06       42173756 B   ---   --   ---xx   flac  0.5350  04. I'll Remember You.flac
+     4:52.10       51532364 B   ---   --   ---xx   flac  0.6214  05. Seeing The Real You At Last.flac
+     4:51.09       51353612 B   ---   --   ---xx   flac  0.6046  06. Something's Burning Baby.flac
+     2:58.74       31573292 B   ---   --   ---xx   flac  0.6053  07. Trust Yourself.flac
+     4:23.31       46466156 B   ---   --   ---xx   flac  0.5686  08. Emotionally Yours.flac
+     6:56.68       73542380 B   ---   --   ---xx   flac  0.6546  09. When The Night Comes Falling From The Sky.flac
+     3:02.54       32231852 B   ---   --   ---xx   flac  0.6251  10. Never Gonna Be The Same Again.flac
+     2:12.71       23451836 B   ---   --   ---xx   flac  0.6415  11. Waiting To Get Beat.flac
+     3:30.58       37180460 B   ---   --   ---xx   flac  0.6097  12. Straight A's In Love.flac
+     2:14.51       23757596 B   ---   --   ---xx   flac  0.6179  13. The Very Thought Of You.flac
+     3:50.69       40734332 B   ---   --   ---xx   flac  0.6296  14. Driftin' Too Far From The Shore.flac
+     5:56.52       62920748 B   ---   --   ---xx   flac  0.6200  15. Who Loves You More.flac
+     3:02.12       32133068 B   ---   --   ---xx   flac  0.6630  16. Go 'Way Little Boy.flac
+    74:38.49      790035152 B                            0.6155  (16 files)
+=================== 
+=================== 
+=================== 

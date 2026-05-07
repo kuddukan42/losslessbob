@@ -1,0 +1,242 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-outtakes.flacf 
+=================== 
+=================== 
+=================== 
+50f45f83368e3e09ecd37ff56f9a799a  bd65-biabh-otst01.flac
+38dd170c9cbee74a93bd820676df3684  bd65-biabh-otst02.flac
+64e46350507782d9c152b63a8fae9904  bd65-biabh-otst03.flac
+b3570527398156738afe5d95b4d490a9  bd65-biabh-otst04.flac
+0d125ca47893292b61322d677bd27849  bd65-biabh-otst05.flac
+9eefba1bfa56e1296de8314dd1c3f88d  bd65-biabh-otst06.flac
+4b64560c2060c94dff2b42fe0e74e2cd  bd65-biabh-otst07.flac
+e6a3756f3e268f07be8e01092ae71e7e  bd65-biabh-otst08.flac
+cf08261f5f4abef471c407b3b255864a  bd65-biabh-otst09.flac
+325286107208ffb90916bccbf3f58e5d  bd65-biabh-otst10.flac
+3bbc3c8de0cf1742f18b8ba053802b98  bd65-biabh-otst11.flac
+e47349a4af6de6a1edc19cc9f659ac49  bd65-biabh-otst12.flac
+081c4193ea5478266deac24269211fd5  bd65-biabh-otst13.flac
+46e294a3ab49a075e8e201d4e34b2e77  bd65-biabh-otst14.flac
+4fe41dce12ccf131dbb60eef77e85f50  bd65-biabh-otst15.flac
+0372dff2c94b54b062d3edbdcf6532e6  bd65-bob-otst01.flac
+af6a1dfd03d5fc1528b24afa2f10c22f  bd65-bob-otst02.flac
+30dd5ae837af4461501bf205a426bd1e  bd65-bob-otst03.flac
+3a6c26b0f82807da76f65a63471c86f8  bd65-bob-otst04.flac
+1b7dc488531ba0a8122908dba348b5f7  bd65-bob-otst05.flac
+6f078605a5150c0a58fc1155d212e694  bd65-bob-otst06.flac
+b7a126129353bb800d4d1b7c854b5f37  bd65-bob-otst07.flac
+d508e3e543ce3cff432be2510389c961  bd65-bob-otst08.flac
+5816022b1ff1410f79202c220f847b5d  bd65-bob-otst09.flac
+b29784951b4b2fa747bb14a3c5c0e62c  bd65-bob-otst10.flac
+535b5383ae855ccbbecca0d8ff634243  bd65-bob-otst11.flac
+0eec6b18120227624e5555c882f978e5  bd65-bob-otst12.flac
+e675a50a2f65acb23779715fb750f978  bd65-bob-otst13.flac
+fd719355f977e88a24d4778dc8a12a7c  bd65-bob-otst14.flac
+efc6655ddc59d5b92c13b0220922f3ab  bd65-bob-otst15.flac
+52f8ba1a816e35a10529d3b02d5d82bb  bd65-bob-otst16.flac
+0f093637772afa9af4a8dc18f7879ed8  bd65-h61-otsd1t01.flac
+7701fca8bd0a7ca9445caf40b3d25cc3  bd65-h61-otsd1t02.flac
+31ee7d1f494c505f284d6e0558b8a3ff  bd65-h61-otsd1t03.flac
+dbb3bf6289380d60ef7e7b1374cdd769  bd65-h61-otsd1t04.flac
+ff908c520573b023cf3b831091642bf5  bd65-h61-otsd1t05.flac
+eac8a335bdaa3913565d65136f7688ef  bd65-h61-otsd1t06.flac
+9353afc2c12c553498b4234c4dd64e8b  bd65-h61-otsd1t07.flac
+7e8bf6993d789fe4184e8e8f1b2aedf0  bd65-h61-otsd1t08.flac
+697f541bbd412873c71a7fe7bc48e969  bd65-h61-otsd1t09.flac
+24c28979d5c751675473b0420496b661  bd65-h61-otsd1t10.flac
+8aaae0a0abae4c6b59814240bb3fa239  bd65-h61-otsd1t11.flac
+8e11a8e6bbcd35bfc9c47063264c06cb  bd65-h61-otsd1t12.flac
+4abdd62acb190bffc35a0b3ca263f8ad  bd65-h61-otsd1t13.flac
+67a579063b8c1db33a6ad34879334f14  bd65-h61-otsd1t14.flac
+c226868d88bb673508ab8a3edb855b52  bd65-h61-otsd1t15.flac
+3cf707226b04bdb9bccecda459834775  bd65-h61-otsd1t16.flac
+d4521aa9fba57b7ee22f1ca7ce8a920b  bd65-h61-otsd1t17.flac
+89737e48423088993ba8a87b7e830e7d  bd65-h61-otsd1t18.flac
+3479936f4f0b10e26ffaff9498181e05  bd65-h61-otsd1t19.flac
+f4d437828ffa994fa8f7b2bc2ea8c7ac  bd65-h61-otsd1t20.flac
+d2e46be7c99ca85c32099fcc19af68e6  bd65-h61-otsd1t21.flac
+e2fa7894e96a2f4b8712b34d44e71c50  bd65-h61-otsd1t22.flac
+9e1e8d4f2a32dc3f67eebca224692351  bd65-h61-otsd1t23.flac
+4d132ad90f7fab8db64199f21e6cc3bd  bd65-h61-otsd1t24.flac
+686ddd0afcfd82fcc459594ed335b3de  bd65-h61-otsd2t01.flac
+82f22533a6a7491be111ec665bb48fe1  bd65-h61-otsd2t02.flac
+e88c865e668b7838278dedf1fd6c6873  bd65-h61-otsd2t03.flac
+a1a9ff10975e5a71ee449f76a394fafa  bd65-h61-otsd2t04.flac
+9108e52f45595b12689fa9767a5002a1  bd65-h61-otsd2t05.flac
+b5e6a2329c0b863146716ac130e48ef9  bd65-h61-otsd2t06.flac
+04eb21cabd7da0aca4f80d35a026d8a1  bd65-h61-otsd2t07.flac
+7e5bf1bd47b7f41447fc14c3c151cebf  bd65-h61-otsd2t08.flac
+7f821fb623f1e47a08f0579ac8ccf015  bd65-h61-otsd2t09.flac
+246994bc69f824e711694168e105e241  bd65-h61-otsd2t10.flac
+7109e0241c4cedae1e13abc07795eff1  bd65-h61-otsd2t11.flac
+3c0c62c04b4b29bb7767313a17084fa8  bd65-h61-otsd2t12.flac
+ff5d9496c4e7d4359c38b6111e24ea69  bd65-h61-otsd2t13.flac
+e0cda2f7f4bd929ee734aa389c87bfb6  bd65-h61-otsd2t14.flac
+cad6d6b3cec178c86810c208db262d0e  bd65-h61-otsd2t15.flac
+76df1f8799265b99e0aba1421db1b082  bd65-h61-otsd2t16.flac
+22404bc24da22ce51ee285704a8df1fc  bd65-outtakes-LB-3590.txt
+204692dbc047f6af9b70d9eba707344d  bd65-outtakes.flacf.md5
+92c20963d93b6536809b0935b7e4e133  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-outtakes.flacf 
+=================== 
+=================== 
+=================== 
+bd65-biabh-otst01.flac:ebe06d848ef22b6573583c4db7b426e8
+bd65-biabh-otst02.flac:aa8ea84388fc0dd96a46df1d392dac0a
+bd65-biabh-otst03.flac:47ba857b48cd9375a63881cb125c7684
+bd65-biabh-otst04.flac:a7e3f72a76987affd99e81c5ce1ebf1f
+bd65-biabh-otst05.flac:71212590613122a281d6f853772c97fa
+bd65-biabh-otst06.flac:2dd56bc298512352981c20a67ea9c3c2
+bd65-biabh-otst07.flac:336b738492dbf871734a12e4b28c2334
+bd65-biabh-otst08.flac:bd7b9bb4a131f3a464e1ce2bacf057f7
+bd65-biabh-otst09.flac:68a540716857087f8ba305dc59799db6
+bd65-biabh-otst10.flac:062172ceef3bb0aaaeb9dbf753de2de5
+bd65-biabh-otst11.flac:11a3206940b40bd427ab5d6cd6de2b16
+bd65-biabh-otst12.flac:badf162b793f1d8e32150e7c1b17f6ee
+bd65-biabh-otst13.flac:8309401e5c5e52c4c7e5ccf0e8ee8423
+bd65-biabh-otst14.flac:edbd154f97714288730b6de7cb146716
+bd65-biabh-otst15.flac:5e212951ef1ebce73f49d4c82a890835
+bd65-bob-otst01.flac:980660f87acdf2b96b91120960b828e5
+bd65-bob-otst02.flac:10b41a0195c468d1a3f5765d261f769a
+bd65-bob-otst03.flac:7eafce6c1c7db634be1d39016d033525
+bd65-bob-otst04.flac:3d6a2dc64d3dd1792cc3e89c9b6606ad
+bd65-bob-otst05.flac:2859a16b2d222b06b4395ac7e80f93a2
+bd65-bob-otst06.flac:b186adb400b22ab2b583d66d776047a2
+bd65-bob-otst07.flac:a299e51afbacc7e39bd81fe505a95fbc
+bd65-bob-otst08.flac:921d1232e526614562bc2532e3694058
+bd65-bob-otst09.flac:7d232d99c95740de57050f3b371d14ac
+bd65-bob-otst10.flac:fc0d5844c5f72cd0b9d290fe302010c9
+bd65-bob-otst11.flac:ae245388792164dc7f8778b30b3e3d03
+bd65-bob-otst12.flac:c623bcaec71e593d8e5945d751dae2bb
+bd65-bob-otst13.flac:883b2275652f5134ad8c2bd115d68f10
+bd65-bob-otst14.flac:2a4ef4dffed09633b132c91254dbb92c
+bd65-bob-otst15.flac:86cb3e471bb68faf7ec19e3bcf8bb254
+bd65-bob-otst16.flac:2207bcb529b40a87849b1fe6df32b5d0
+bd65-h61-otsd1t01.flac:30284e0d76b93b1300e9ed71be98fab8
+bd65-h61-otsd1t02.flac:f4d074db7d8b86f66fa77e6f489d50a6
+bd65-h61-otsd1t03.flac:c1135ec342b08268e240dd79693398c0
+bd65-h61-otsd1t04.flac:d364fec99cf96d93c2d0773240a1b384
+bd65-h61-otsd1t05.flac:bc4a0c3189c8a519bd865e0d6bc38df5
+bd65-h61-otsd1t06.flac:2d269058191b0f4ea2b4ae474bb27494
+bd65-h61-otsd1t07.flac:c34162d176e45f678bdc114b88c44f15
+bd65-h61-otsd1t08.flac:90298b586b11dd14737f3693f9b3be40
+bd65-h61-otsd1t09.flac:95800d2426effa58fdf51183c3b8ab03
+bd65-h61-otsd1t10.flac:05b80ea99ddf4ba1ce8b94f4918b2eb7
+bd65-h61-otsd1t11.flac:57ee809be31d4b341c4646c23a5c3722
+bd65-h61-otsd1t12.flac:2ca46ef4a2c61c9d09f026d8776d6806
+bd65-h61-otsd1t13.flac:799104b7d363fa142933885982c3b727
+bd65-h61-otsd1t14.flac:44861d822375354eb7b92b80ca60c747
+bd65-h61-otsd1t15.flac:5b505bb071d696c70fc05088d914755d
+bd65-h61-otsd1t16.flac:ab5237d89d7ee265957d9e908bf17c74
+bd65-h61-otsd1t17.flac:3000cb4e949ee56159559e214111e25e
+bd65-h61-otsd1t18.flac:c88c01a090e82fb1673f2a11a240553e
+bd65-h61-otsd1t19.flac:467aae4cc0806d9b3acbfb953c41bc97
+bd65-h61-otsd1t20.flac:cc77e514dd42ca5d499578d1318629d5
+bd65-h61-otsd1t21.flac:320ff90e31189bba50e50fb19305a429
+bd65-h61-otsd1t22.flac:d0ff87e28bc32f7c4d1f9c63310791e1
+bd65-h61-otsd1t23.flac:e4b914541ff0c120476ba319f4d0595c
+bd65-h61-otsd1t24.flac:bd4002567574791bb4f1acef304b4fa1
+bd65-h61-otsd2t01.flac:ce54dff7ac7dd8c0ed47b80c19249c27
+bd65-h61-otsd2t02.flac:fd5d91977b12c8d26353fb6e176d14fb
+bd65-h61-otsd2t03.flac:20332ef3327a57c0e139522dabea9ee2
+bd65-h61-otsd2t04.flac:327ed546abf27f0aa818467791059f79
+bd65-h61-otsd2t05.flac:c43d14ef804f1762463485997ceda2d2
+bd65-h61-otsd2t06.flac:2605049e060380f6e4b21e50d07b0458
+bd65-h61-otsd2t07.flac:89db9a18aa4630c85a2cda27445ef779
+bd65-h61-otsd2t08.flac:2785d81829244b7e307d53d97ceaf8a7
+bd65-h61-otsd2t09.flac:46b610852d3666c4cde0c3c4ae7d4b65
+bd65-h61-otsd2t10.flac:4b2e9d47aa5c1aa1826a32032ed19f94
+bd65-h61-otsd2t11.flac:3d097360c029c8a335d5f22e0f8628a3
+bd65-h61-otsd2t12.flac:981b58f26f4895ce542bf25f3201879e
+bd65-h61-otsd2t13.flac:57c7697468464e21ba25669278cddf37
+bd65-h61-otsd2t14.flac:c2a140dab3be22fe7a3453512f9e5072
+bd65-h61-otsd2t15.flac:5d651a0462ccc12478c2d39822449603
+bd65-h61-otsd2t16.flac:931421db5158eabc93e231c083e10e54
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-outtakes.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.12       40071068 B   ---   --   ---xx   flac  0.5830  bd65-biabh-otst01.flac
+     4:23.42       46492028 B   ---   --   ---xx   flac  0.6587  bd65-biabh-otst02.flac
+     2:56.54       31173452 B   ---   --   ---xx   flac  0.6321  bd65-biabh-otst03.flac
+     5:28.50       57976844 B   ---   --   ---xx   flac  0.5847  bd65-biabh-otst04.flac
+     0:56.06        9892556 B   ---   --   ---xx   flac  0.5926  bd65-biabh-otst05.flac
+     3:02.60       32245964 B   ---   --   ---xx   flac  0.5705  bd65-biabh-otst06.flac
+     3:52.48       41037740 B   ---   --   ---xx   flac  0.6166  bd65-biabh-otst07.flac
+     3:21.15       35491724 B   ---   --   ---xx   flac  0.5190  bd65-biabh-otst08.flac
+     3:34.38       37839020 B   ---   --   ---xx   flac  0.5232  bd65-biabh-otst09.flac
+     3:35.61       38069516 B   ---   --   ---xx   flac  0.6310  bd65-biabh-otst10.flac
+     2:17.37       24253868 B   ---   --   ---xx   flac  0.5549  bd65-biabh-otst11.flac
+     2:35.63       27490220 B   ---   --   ---xx   flac  0.6277  bd65-biabh-otst12.flac
+     2:35.50       27459644 B   ---   --   ---xx   flac  0.6838  bd65-biabh-otst13.flac
+     3:04.47       32568188 B   ---   --   ---xx   flac  0.7108  bd65-biabh-otst14.flac
+     2:55.44       30973532 B   ---   --   ---xx   flac  0.7203  bd65-biabh-otst15.flac
+     1:03.46       11221436 B   ---   --   ---xx   flac  0.4174  bd65-bob-otst01.flac
+     1:33.54       16532252 B   ---   --   ---xx   flac  0.5694  bd65-bob-otst02.flac
+     1:34.49       16696892 B   ---   --   ---xx   flac  0.6568  bd65-bob-otst03.flac
+     3:28.52       36813548 B   ---   --   ---xx   flac  0.7266  bd65-bob-otst04.flac
+     1:06.72       11811788 B   ---   --   ---xx   flac  0.5938  bd65-bob-otst05.flac
+     4:07.31       43643756 B   ---   --   ---xx   flac  0.4375  bd65-bob-otst06.flac
+     3:32.67       37554428 B   ---   --   ---xx   flac  0.6989  bd65-bob-otst07.flac
+     3:38.74       38629292 B   ---   --   ---xx   flac  0.7340  bd65-bob-otst08.flac
+     8:31.48       90253340 B   ---   --   ---xx   flac  0.7047  bd65-bob-otst09.flac
+     6:40.17       70600028 B   ---   --   ---xx   flac  0.6296  bd65-bob-otst10.flac
+     8:21.18       88418780 B   ---   --   ---xx   flac  0.5935  bd65-bob-otst11.flac
+     6:40.02       70564748 B   ---   --   ---xx   flac  0.6395  bd65-bob-otst12.flac
+     6:27.64       68417372 B   ---   --   ---xx   flac  0.6664  bd65-bob-otst13.flac
+     3:39.35       38713964 B   ---   --   ---xx   flac  0.5456  bd65-bob-otst14.flac
+     3:15.70       34562684 B   ---   --   ---xx   flac  0.7271  bd65-bob-otst15.flac
+     5:44.64       60832172 B   ---   --   ---xx   flac  0.6244  bd65-bob-otst16.flac
+     3:35.29       37994252 B   ---   --   ---xx   flac  0.6878  bd65-h61-otsd1t01.flac
+     3:32.03       37403900 B   ---   --   ---xx   flac  0.6721  bd65-h61-otsd1t02.flac
+     3:23.36       35893916 B   ---   --   ---xx   flac  0.7170  bd65-h61-otsd1t03.flac
+     3:36.64       38252972 B   ---   --   ---xx   flac  0.6397  bd65-h61-otsd1t04.flac
+     4:16.34       45238412 B   ---   --   ---xx   flac  0.7345  bd65-h61-otsd1t05.flac
+     4:10.15       44135324 B   ---   --   ---xx   flac  0.5504  bd65-h61-otsd1t06.flac
+     3:54.01       41279996 B   ---   --   ---xx   flac  0.6032  bd65-h61-otsd1t07.flac
+     4:52.48       51621740 B   ---   --   ---xx   flac  0.6989  bd65-h61-otsd1t08.flac
+     1:08.26       12056396 B   ---   --   ---xx   flac  0.5914  bd65-h61-otsd1t09.flac
+     2:01.18       21386780 B   ---   --   ---xx   flac  0.5768  bd65-h61-otsd1t10.flac
+     1:36.06       16948556 B   ---   --   ---xx   flac  0.6665  bd65-h61-otsd1t11.flac
+     2:25.56       25709756 B   ---   --   ---xx   flac  0.5788  bd65-h61-otsd1t12.flac
+     0:33.59        5960012 B   ---   --   ---xx   flac  0.5086  bd65-h61-otsd1t13.flac
+     1:24.27       14881148 B   ---   --   ---xx   flac  0.5831  bd65-h61-otsd1t14.flac
+     0:31.44        5571932 B   ---   --   ---xx   flac  0.5070  bd65-h61-otsd1t15.flac
+     1:45.09       18543212 B   ---   --   ---xx   flac  0.4949  bd65-h61-otsd1t16.flac
+     0:25.50        4527644 B   ---   --   ---xx   flac  0.4834  bd65-h61-otsd1t17.flac
+     1:45.54       18649052 B   ---   --   ---xx   flac  0.5104  bd65-h61-otsd1t18.flac
+     6:33.01       69327596 B   ---   --   ---xx   flac  0.6744  bd65-h61-otsd1t19.flac
+     3:38.60       38596364 B   ---   --   ---xx   flac  0.7209  bd65-h61-otsd1t20.flac
+     6:18.71       66846236 B   ---   --   ---xx   flac  0.5814  bd65-h61-otsd1t21.flac
+     6:16.31       66399356 B   ---   --   ---xx   flac  0.7615  bd65-h61-otsd1t22.flac
+     4:22.73       46388540 B   ---   --   ---xx   flac  0.6113  bd65-h61-otsd1t23.flac
+     4:17.39       45426572 B   ---   --   ---xx   flac  0.7219  bd65-h61-otsd1t24.flac
+     1:14.11       13079516 B   ---   --   ---xx   flac  0.6454  bd65-h61-otsd2t01.flac
+     3:09.14       33372572 B   ---   --   ---xx   flac  0.7098  bd65-h61-otsd2t02.flac
+     3:12.55       33998204 B   ---   --   ---xx   flac  0.6560  bd65-h61-otsd2t03.flac
+     0:58.14       10264172 B   ---   --   ---xx   flac  0.6396  bd65-h61-otsd2t04.flac
+     3:44.02       39518348 B   ---   --   ---xx   flac  0.7397  bd65-h61-otsd2t05.flac
+     3:51.35       40830764 B   ---   --   ---xx   flac  0.6383  bd65-h61-otsd2t06.flac
+     4:06.71       43561436 B   ---   --   ---xx   flac  0.7405  bd65-h61-otsd2t07.flac
+    11:46.61      124681916 B   ---   --   ---xx   flac  0.6103  bd65-h61-otsd2t08.flac
+     0:52.32        9248108 B   ---   --   ---xx   flac  0.5368  bd65-h61-otsd2t09.flac
+     0:47.70        8455484 B   ---   --   ---xx   flac  0.5273  bd65-h61-otsd2t10.flac
+     3:40.10       38831564 B   ---   --   ---xx   flac  0.7157  bd65-h61-otsd2t11.flac
+     3:41.61       39127916 B   ---   --   ---xx   flac  0.6865  bd65-h61-otsd2t12.flac
+     5:46.23       61088540 B   ---   --   ---xx   flac  0.6599  bd65-h61-otsd2t13.flac
+     5:38.72       59792588 B   ---   --   ---xx   flac  0.7194  bd65-h61-otsd2t14.flac
+     5:32.17       58604828 B   ---   --   ---xx   flac  0.7366  bd65-h61-otsd2t15.flac
+     6:05.58       64522460 B   ---   --   ---xx   flac  0.6972  bd65-h61-otsd2t16.flac
+   258:32.00     2736319924 B                            0.6464  (71 files)
+=================== 
+=================== 
+=================== 

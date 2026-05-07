@@ -1,0 +1,138 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-26 NewOrleans 
+=================== 
+=================== 
+=================== 
+f41c022062c9a96fba77461de7b0f2e3  bd03-04-26.txt
+c5c201043071a2cf7e306f0fffc8fbc8  d1\Track01.shn
+f2e54ca0d72233817cca9e28230362b2  d1\Track02.shn
+17d6b65d912267b0ba4e5505f2b91948  d1\Track03.shn
+e91a3bd998ad499bc55be2543d12259d  d1\Track04.shn
+870383f20512e6fa3f9df9f48b107123  d1\Track05.shn
+443affe3ab12334eadb37fd29f17a566  d1\Track06.shn
+9929afa002be77bc8403b79104fc4e37  d1\Track07.shn
+a703a23e579f7d4f5c352a6e5282f294  d1\Track08.shn
+a2e07a02a9caf473b253c965093de52b  d1\Track09.shn
+de88c3c9c2d0ed09e8fb2dd28853745d  d1\noname.md5
+e79ce3d32933fb57efb612cbed0e2422  d2\Track01.shn
+04ce0c55499c02eef8816671d8455f22  d2\Track02.shn
+87f594ad2c25c248a643d2910248b05a  d2\Track03.shn
+dbbe53a9272cbc7c8766732fcb1f413c  d2\Track04.shn
+667981d2d89f4652ecdca39cd1ecfa50  d2\Track05.shn
+121362d704263371979628f748fed753  d2\Track06.shn
+ef06e311c443244a9508b1d3234cdb1e  d2\Track07.shn
+4f99e85cc36d88eb9bac1f18ab39f008  d2\Track08.shn
+0b4c17cdad95f40e1124a73c01f44e54  d2\Track09.shn
+84bf31bb743e831299b48d897c2adb4b  d2\Track10.shn
+94ee010d9abde08d63eabc85a92eed6a  d2\noname.md5
+5e9a7417f9653267f81619e206d3ee85  d3\Track01.shn
+5ebe2d5ed84e55f4f891a8e353e8b61e  d3\Track02.shn
+6f4d527628d6a0db265540f9fac26b21  d3\Track03.shn
+3a9d893d8374dec18af295d4b8785f67  d3\Track04.shn
+0530a6af18666c9e91c6e0816b7fa18a  d3\Track05.shn
+e418eb6325497d3cb9b86801b0b04f6a  d3\Track06.shn
+b8f359ca59a4ed1e7adda1a0a51cd925  d3\noname.md5
+47cbdcae5f8e35b170edbc0c164e7d79  lw03-04-26.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-26 NewOrleans\d3 
+=================== 
+=================== 
+=================== 
+de0a61e2bc05bcde55f6c51bcca5d3af  [shntool]  Track01.wav
+f3c3192fd396ebf014b36f52e6a3c772  [shntool]  Track02.wav
+9e13a470c2e384f7352d13366b0249c2  [shntool]  Track03.wav
+8cd9f39a103572978b8550154c77132f  [shntool]  Track04.wav
+5716660026fcba44d43311dbfd554a54  [shntool]  Track05.wav
+4820c35183d663d839a8d122bfb392d2  [shntool]  Track06.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-26 NewOrleans\d2 
+=================== 
+=================== 
+=================== 
+6d4602698034e588d9458f656fffbb34  [shntool]  Track01.wav
+cd66afa03a192d5422daae6deb5ed5bb  [shntool]  Track02.wav
+a2e916bf212c225b85426c27c520f7f6  [shntool]  Track03.wav
+dbd4930e11181bbcc668e8009acff3fb  [shntool]  Track04.wav
+8520a29b7a3dd0ff6e913e25d0e20d27  [shntool]  Track05.wav
+99c40d2fc1b1653f84194461e222b3df  [shntool]  Track06.wav
+413be3b7f592486a3f0872570d5b48f8  [shntool]  Track07.wav
+6f15d1098ad79808189e91a4c00df53f  [shntool]  Track08.wav
+cd1f835250f02992e0995c7eb1311fe4  [shntool]  Track09.wav
+67f703cc96c36c9528792fa331edee29  [shntool]  Track10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-26 NewOrleans\d1 
+=================== 
+=================== 
+=================== 
+8db65c0876b4e8dd0bf515fff577add8  [shntool]  Track01.wav
+05c95b9cd30a7144abcb3180bc94efe4  [shntool]  Track02.wav
+4339e06e826517d01b799e6b862a0555  [shntool]  Track03.wav
+6d4ce618536b7cb7022b57919e3373d2  [shntool]  Track04.wav
+569d2baad70be3dd2507d139fd96fc90  [shntool]  Track05.wav
+2b116fadc64d3973b4c228149721ffdd  [shntool]  Track06.wav
+7c109b94278f51d1f100e275d9d315ab  [shntool]  Track07.wav
+0a2d3b8753fc75dc9522a0c2bd0b5637  [shntool]  Track08.wav
+9736099c060b7463a66e06520d0f0008  [shntool]  Track09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-26 NewOrleans\d3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:05.04       74979452 B   ---   --   ---xx    shn  0.6768  Track01.shn
+     7:18.20       77310284 B   ---   --   ---xx    shn  0.5722  Track02.shn
+     6:17.27       66566348 B   ---   --   ---xx    shn  0.6345  Track03.shn
+     6:33.43       69426380 B   ---   --   ---xx    shn  0.6662  Track04.shn
+     7:28.46       79135436 B   ---   --   ---xx    shn  0.6481  Track05.shn
+     6:07.02       64743548 B   ---   --   ---xx    shn  0.6716  Track06.shn
+    40:49.67      432161448 B                            0.6438  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-26 NewOrleans\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:59.26       63388796 B   ---   --   ---xx    shn  0.6305  Track01.shn
+     3:42.71       39327836 B   ---   --   ---xx    shn  0.6300  Track02.shn
+     6:17.56       66634556 B   ---   --   ---xx    shn  0.6615  Track03.shn
+     4:42.54       49871852 B   ---   --   ---xx    shn  0.6429  Track04.shn
+     7:04.18       74835980 B   ---   --   ---xx    shn  0.6508  Track05.shn
+     6:49.68       72307580 B   ---   --   ---xx    shn  0.6464  Track06.shn
+     6:07.21       64788236 B   ---   --   ---xx    shn  0.6482  Track07.shn
+     6:22.05       67396604 B   ---   --   ---xx    shn  0.6036  Track08.shn
+     7:07.60       75463964 B   ---   --   ---xx    shn  0.6478  Track09.shn
+     6:02.42       63955628 B   ---   --   ---xx    shn  0.6301  Track10.shn
+    60:16.46      637971032 B                            0.6398  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-26 NewOrleans\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.08       54350060 B   ---   --   ---xx    shn  0.6281  Track01.shn
+     5:28.53       57983900 B   ---   --   ---xx    shn  0.5827  Track02.shn
+     4:29.42       47550428 B   ---   --   ---xx    shn  0.6436  Track03.shn
+     5:04.52       53747948 B   ---   --   ---xx    shn  0.6280  Track04.shn
+     4:36.55       48815804 B   ---   --   ---xx    shn  0.5810  Track05.shn
+     6:00.08       63522860 B   ---   --   ---xx    shn  0.6712  Track06.shn
+     0:46.05        8126204 B   ---   --   ---xx    shn  0.5287  Track07.shn
+     6:33.62       69471068 B   ---   --   ---xx    shn  0.6513  Track08.shn
+     5:10.28       54749900 B   ---   --   ---xx    shn  0.6606  Track09.shn
+    43:18.13      458318172 B                            0.6305  (9 files)
+=================== 
+=================== 
+=================== 

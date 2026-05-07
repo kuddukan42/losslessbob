@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-09a 
+=================== 
+=================== 
+=================== 
+ccb3ba594f7b39f98c3a040971b9cc41  bd88-07-09a-LB-3188.txt
+cf3a4f4b7651428a6b9f22ef27716e78  bd_ottawa090788.txt
+a524742105154a96ef315be10b4eac18  noname.md5
+b7562656dc20ee64c40ef2d982ac812c  Track No01.shn
+562bdd31c0b2b23bd26dfcc1e30a1462  Track No02.shn
+17a56319d618d0e91940fa207cd7d557  Track No03.shn
+891ecc8c8e729967acd3d43495b6737c  Track No04.shn
+54feab3d59210c7291800b1498c12942  Track No05.shn
+ff4351f11520e15d1878bf87d533dfd8  Track No06.shn
+fdb7d96dba09caad20ce444d590fc060  Track No07.shn
+b9442022014b768cdce3fb9b22b51940  Track No08.shn
+17a393d4bf823a7b8d8bca75af558c63  Track No09.shn
+2e9f00872525af79d115d67e50fd3ba1  Track No10.shn
+6405662a42f872a390b9cf64a0d6081e  Track No11.shn
+fad2c9100345451efd04e4cf91ee8dfa  Track No12.shn
+d7236bbdbc5d131582171edda4e58437  Track No13.shn
+ea081951330d3ebadfeff2e151faf71e  Track No14.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-07-09a 
+=================== 
+=================== 
+=================== 
+c1d78ddf0cd3ea76f12b5c1d6ea733ac  [shntool]  Track_No01.wav
+173498fa1c6d84abab368f5d173b4c74  [shntool]  Track_No02.wav
+ecc2ca3c36755a32333d9263a55b355e  [shntool]  Track_No03.wav
+d2687302389adaa9c181ac09c12169d5  [shntool]  Track_No04.wav
+fe66642dc4498f4270cf2758cd406b06  [shntool]  Track_No05.wav
+a9d47e87d8d0fac8d3a1fbb8e2b8ceb1  [shntool]  Track_No06.wav
+92dc64edec78e513161cbc41cea56a97  [shntool]  Track_No07.wav
+2d26944905483dda7ff250311d30cc77  [shntool]  Track_No08.wav
+ca9585e6d32011e26c9c677e35b8ecda  [shntool]  Track_No09.wav
+c3633aadb82299d611819ebdeb578bf6  [shntool]  Track_No10.wav
+19954010ed86c00fa4c636b7a6490b82  [shntool]  Track_No11.wav
+787f6ef7ba1273c53c1b3f95a032e5b8  [shntool]  Track_No12.wav
+4615cfb3c9f42baf99d2fb1a0c86a770  [shntool]  Track_No13.wav
+2a18cfd17929721e7a23951be84416a1  [shntool]  Track_No14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-09a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:45.58       39826460 B   ---   --   -----    wav  1.0000  Track_No01.wav
+     5:57.55       63104204 B   ---   --   -----    wav  1.0000  Track_No02.wav
+     4:14.39       44897372 B   ---   --   -----    wav  1.0000  Track_No03.wav
+     5:18.50       56212844 B   ---   --   -----    wav  1.0000  Track_No04.wav
+     4:15.44       45085532 B   ---   --   -----    wav  1.0000  Track_No05.wav
+     6:44.69       71427932 B   ---   --   -----    wav  1.0000  Track_No06.wav
+     8:42.59       92219612 B   ---   --   -----    wav  1.0000  Track_No07.wav
+     2:35.20       27389084 B   ---   --   -----    wav  1.0000  Track_No08.wav
+     6:30.56       68927756 B   ---   --   -----    wav  1.0000  Track_No09.wav
+     4:09.70       44088284 B   ---   --   -----    wav  1.0000  Track_No10.wav
+     8:44.06       92447756 B   ---   --   -----    wav  1.0000  Track_No11.wav
+     5:48.56       61518956 B   ---   --   -----    wav  1.0000  Track_No12.wav
+     4:36.34       48766412 B   ---   --   -----    wav  1.0000  Track_No13.wav
+     5:04.38       53715020 B   ---   --   -----    wav  1.0000  Track_No14.wav
+    76:29.54      809627224 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

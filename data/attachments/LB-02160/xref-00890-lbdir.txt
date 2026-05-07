@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-18-mad-dog.flacf 
+=================== 
+=================== 
+=================== 
+bbb260c915abf279678f77d0770305ae  1\flac.txt
+6b018a66ba857b331c62c25af03ced4c  1\Track  1.flac
+a5da05f339a7bc67e5b3b3fbb844ca68  1\Track  2.flac
+928ed171477c1fd4c5ef0b6b934d98c0  1\Track  3.flac
+c271fcb4c41f95182bcdd6291b536be2  1\Track  4.flac
+2c07bebff3e02cf5a71166bbe69957f4  1\Track  5.flac
+e0653ecd760ec56f369270310a8f1e57  1\Track  6.flac
+89ac490a44ef7a12d85b75f4a0f7a3c8  1\Track  7.flac
+c2a92f98c57628dcfaefc55900de6178  1\Track  8.flac
+a1a365599be0c887e47adcce2e18bc62  1\Track  9.flac
+a6b3f0513e28f3022c4eeabcf67d5d74  1\Track 10.flac
+5092d0eb94f6c7665aa22b57e0f8ebc7  2\flac.txt
+5f6c06012775d94ccf59687b84a8dcea  2\Track  1.flac
+9fbd8d09ee99a00f047e260fd06e3d38  2\Track  2.flac
+fac90f7093d7dda2c0a2cdffbdd23741  2\Track  3.flac
+c82e98fdebc8fe25a37a670ec6320d96  2\Track  4.flac
+fa7efbf1d4b51acc2a8f2fe25169a86e  2\Track  5.flac
+7e2c8b5410e879a96381e5a66baf2358  2\Track  6.flac
+cc9765b40cd7e2447d373b1ee5885c06  DAVIS_COVER_FINAL_CD_1.jpg
+78ac9aecd0893d85b6c98736e0587f38  DAVIS_COVER_FINAL_CD_1_Inside.jpg
+49b4ce76c552679a35858dea64c71f16  DAVIS_COVER_FINAL_CD_2.jpg
+b3fbd8411d3cb3a07d299fbf62b83ff1  DAVIS_COVER_FINAL_CD_2_Inside.jpg
+849f32a05e48548752b0d168395e5320  set_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-18-mad-dog.flacf\1 
+=================== 
+=================== 
+=================== 
+Track  1.flac:2ef55893ea3f5cf477228f06b0d687a3
+Track  2.flac:734bd4e2f7fc1ba3e2d2193ecd1e59df
+Track  3.flac:c9812fede813561cef905524b61537b6
+Track  4.flac:b7a02a83e9929ecff3a9bb567e83b070
+Track  5.flac:bec39ffc5f2ad6c32f10ba29941ea57e
+Track  6.flac:a2e6827f2ef5a2611c0a71611ff01bec
+Track  7.flac:4979dea55b5cc5658e7d1a3bd4be0296
+Track  8.flac:746a1acf834d9fa5c874f9aae9ecede7
+Track  9.flac:cc1e8fe1ef5cb33f108b40ef472d19dd
+Track 10.flac:e90c4883740ad3a71850726556758aa6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-18-mad-dog.flacf\2 
+=================== 
+=================== 
+=================== 
+Track  1.flac:d7e4af8f5c432c1067313c467a1edadc
+Track  2.flac:f7f8a90a0ed9ae990d56d28308988f34
+Track  3.flac:593b7d3085f8e10e3cea4ea1fd135d4c
+Track  4.flac:c51c1b7ae80388d7ecc500117677d536
+Track  5.flac:765bfa86beb36bec3f313fb9df1db018
+Track  6.flac:68dd042177e3a633d46f73ff33e60c41
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-18-mad-dog.flacf\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.61       51828716 B   ---   --   ---xx   flac  0.5760  Track  1.flac
+     5:29.21       58085036 B   ---   --   ---xx   flac  0.5863  Track  2.flac
+     5:27.19       57727532 B   ---   --   ---xx   flac  0.5947  Track  3.flac
+     4:41.37       49655468 B   ---   --   ---xx   flac  0.5928  Track  4.flac
+     7:05.41       75066476 B   ---   --   ---xx   flac  0.6155  Track  5.flac
+     4:41.65       49721324 B   ---   --   ---xx   flac  0.5196  Track  6.flac
+     5:34.08       58936460 B   ---   --   ---xx   flac  0.6149  Track  7.flac
+     7:02.74       74614892 B   ---   --   ---xx   flac  0.5962  Track  8.flac
+     5:35.35       59176364 B   ---   --   ---xx   flac  0.5979  Track  9.flac
+     6:40.68       70719980 B   ---   --   ---xx   flac  0.6242  Track 10.flac
+    57:12.54      605532248 B                            0.5945  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-18-mad-dog.flacf\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.02       55217948 B   ---   --   ---xx   flac  0.5563  Track  1.flac
+     6:46.16       71656076 B   ---   --   ---xx   flac  0.6268  Track  2.flac
+     6:49.05       72159404 B   ---   --   ---xx   flac  0.5701  Track  3.flac
+    10:44.72      113770988 B   ---   --   ---xx   flac  0.6052  Track  4.flac
+     7:06.34       75226412 B   ---   --   ---xx   flac  0.6148  Track  5.flac
+     6:21.07       67224908 B   ---   --   ---xx   flac  0.6304  Track  6.flac
+    43:00.61      455255736 B                            0.6024  (6 files)
+=================== 
+=================== 
+=================== 

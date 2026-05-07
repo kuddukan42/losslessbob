@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-10-18-acm660.flacf 
+=================== 
+=================== 
+=================== 
+1b61882539dcaa69929439dcca1ccb0d  dylan2006-10-18.acm660.ffp.txt
+a5ee562416c6ff33c5b6c1cd489cc8f4  dylan2006-10-18.acm660.txt
+56f9c81eae2b5778a64a256c87642f7b  dylan2006-10-18d1t01.flac
+59042eb702440ddacf2bd873f12975ee  dylan2006-10-18d1t02.flac
+625994843bcdfd2f239112dac9ef5fd1  dylan2006-10-18d1t03.flac
+9228c3308021edb08ea50295de48f2d4  dylan2006-10-18d1t04.flac
+fd5429c4e0c35d34ac66aee3e9a472b9  dylan2006-10-18d1t05.flac
+dac97553145989f5f02afc20d53ccead  dylan2006-10-18d1t06.flac
+fc420a1ed61b8fae829865a867d962b9  dylan2006-10-18d1t07.flac
+42cded371e13a5c82e898c9c0274d1cf  dylan2006-10-18d1t08.flac
+33d7c87b2bc45d31a22bf7eb4a6e5534  dylan2006-10-18d1t09.flac
+d59a181df736c718223b01dc7c9c34bf  dylan2006-10-18d2t01.flac
+5550d77a457882e6d74b174595d80d5d  dylan2006-10-18d2t02.flac
+749307c2b8244a5679c9113eec0b6706  dylan2006-10-18d2t03.flac
+49879a08e13e53661273546807022b3b  dylan2006-10-18d2t04.flac
+312fc4554df4aee08b96e0ae46a309d4  dylan2006-10-18d2t05.flac
+e6da252ca8bb0d30fa03c0179a4d8d90  dylan2006-10-18d2t06.flac
+d3059a1bd8170691fb8e44b00d261132  dylan2006-10-18d2t07.flac
+6c95961d3ba57fffc253949b0c34fe6b  dylan2006-10-18d2t08.flac
+ad9cd5fc4240ef37102039ab0cad5fa2  dylan2006-10-18d2t09.flac
+374db2e11181094c2acba0c8b4b12ecc  taper-comment.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-18-acm660.flacf 
+=================== 
+=================== 
+=================== 
+dylan2006-10-18d1t01.flac:d2f6efaa4e83a37b7fb430ed976d07a2
+dylan2006-10-18d1t02.flac:b84efa9df0d81b85c464639939871c96
+dylan2006-10-18d1t03.flac:483e1312c0b0b9894d852eed05b39d89
+dylan2006-10-18d1t04.flac:6e72b1e46c60aa61e31e3e53e202676b
+dylan2006-10-18d1t05.flac:1230107fd1900b3d5fc7dcbd5ae2a6cf
+dylan2006-10-18d1t06.flac:f19bc06aa5484e3e02ffb255087a3287
+dylan2006-10-18d1t07.flac:49956113e9f3e5dc511a0ab6679935be
+dylan2006-10-18d1t08.flac:f5ea6e0dd26f2d8b49f9f601d2e6d703
+dylan2006-10-18d1t09.flac:d3deae2c110d25b58ec7ed1ce808371f
+dylan2006-10-18d2t01.flac:931358a683f5c73ab6f76f0f1d923190
+dylan2006-10-18d2t02.flac:fd565e15a6e270f2c33b9c75a53d6afb
+dylan2006-10-18d2t03.flac:64648ca22d556eb960ef11eb0a75e4df
+dylan2006-10-18d2t04.flac:0c621798bc363de9e3354d06a808f2f0
+dylan2006-10-18d2t05.flac:d963766b34f6bd7a11003ea1230037c3
+dylan2006-10-18d2t06.flac:d8662238ba0973384b9ed782b8eae44f
+dylan2006-10-18d2t07.flac:c9558b50d7171e06c69cd5947c6e90cc
+dylan2006-10-18d2t08.flac:8e6a331c29e0427bf86e713235ad1de3
+dylan2006-10-18d2t09.flac:4daaab6381bcaab2459d890598ac2230
+=================== 
+=================== 
+=================== 
+=== shntool for: bd06-10-18-acm660.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:44.10       18369164 B   ---   --   ---xx   flac  0.4496  dylan2006-10-18d1t01.flac
+     5:03.40       53543324 B   ---   --   ---xx   flac  0.6234  dylan2006-10-18d1t02.flac
+     6:30.47       68906588 B   ---   --   ---xx   flac  0.5846  dylan2006-10-18d1t03.flac
+     6:50.03       72331100 B   ---   --   ---xx   flac  0.5870  dylan2006-10-18d1t04.flac
+     5:28.44       57962732 B   ---   --   ---xx   flac  0.4769  dylan2006-10-18d1t05.flac
+     5:30.69       58374332 B   ---   --   ---xx   flac  0.5598  dylan2006-10-18d1t06.flac
+     7:56.74       84140492 B   ---   --   ---xx   flac  0.5855  dylan2006-10-18d1t07.flac
+     5:45.45       60963884 B   ---   --   ---xx   flac  0.5275  dylan2006-10-18d1t08.flac
+     7:49.04       82741052 B   ---   --   ---xx   flac  0.5805  dylan2006-10-18d1t09.flac
+     6:39.32       70458908 B   ---   --   ---xx   flac  0.5830  dylan2006-10-18d2t01.flac
+     6:11.48       65557340 B   ---   --   ---xx   flac  0.4955  dylan2006-10-18d2t02.flac
+     6:06.50       64680044 B   ---   --   ---xx   flac  0.6356  dylan2006-10-18d2t03.flac
+     7:25.63       78646220 B   ---   --   ---xx   flac  0.4801  dylan2006-10-18d2t04.flac
+     7:34.53       80210300 B   ---   --   ---xx   flac  0.5908  dylan2006-10-18d2t05.flac
+     6:49.31       72220556 B   ---   --   ---xx   flac  0.5858  dylan2006-10-18d2t06.flac
+     6:28.31       68516156 B   ---   --   ---xx   flac  0.5820  dylan2006-10-18d2t07.flac
+     0:37.17        6566828 B   ---   --   ---xx   flac  0.5194  dylan2006-10-18d2t08.flac
+     5:43.15       60540604 B   -b-   --   ---xx   flac  0.5688  dylan2006-10-18d2t09.flac
+   106:16.01     1124729624 B                            0.5637  (18 files)
+=================== 
+=================== 
+=================== 

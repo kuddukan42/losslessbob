@@ -1,0 +1,507 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-1965-revisted.flacf 
+=================== 
+=================== 
+=================== 
+8dec9c9c7ea92c2cce3f7b267c76e104  bd65-1965-revisted-d10t01.flac
+ca76c67bcce4c8aa406fbe2323497614  bd65-1965-revisted-d10t02.flac
+39ec5852468c9ed647cca6c02fd28a0a  bd65-1965-revisted-d10t03.flac
+110ee3e7c4c2bdfd977969a0b62535f0  bd65-1965-revisted-d10t04.flac
+46664d3b8a27f78eb0278bb6d1eea51c  bd65-1965-revisted-d10t05.flac
+92881b7d47ada60e21abc45f2f365a3d  bd65-1965-revisted-d10t06.flac
+fc825892a076b8a1e78ac83ff1d364f9  bd65-1965-revisted-d10t07.flac
+42a5d77d235fef5475187bc4a5617c37  bd65-1965-revisted-d10t08.flac
+f01ee318fdf5f8b4a352cca174f40b9c  bd65-1965-revisted-d10t09.flac
+b2bc91997448dfddf58f229b73db305d  bd65-1965-revisted-d10t10.flac
+07d767295973e4761c569d628889e981  bd65-1965-revisted-d10t11.flac
+183bd3e5360d36014dfe205b580d245b  bd65-1965-revisted-d10t12.flac
+a272a5f2d6038b1775a74047d3abc37e  bd65-1965-revisted-d10t13.flac
+d0950bd4de0446a39ed278f5e87da363  bd65-1965-revisted-d11t01.flac
+d1200e50d33f0f3425bb942dfb7fcd36  bd65-1965-revisted-d11t02.flac
+f9ae50b58afdb2e6cca9bd90652e26f5  bd65-1965-revisted-d12t01.flac
+dd39cabeee9928d57f83564c55250f5c  bd65-1965-revisted-d13t01.flac
+337ae12c3eb9ad0afa878895f6abf092  bd65-1965-revisted-d13t02.flac
+64d7726b31bc9a699d2b48583b2da77d  bd65-1965-revisted-d13t03.flac
+2c6c417ecfef94f74da22b6e67faa31f  bd65-1965-revisted-d13t04.flac
+9e1a212058138dbfc7ff6d5ab8415ed6  bd65-1965-revisted-d14t01.flac
+26a3549232fb4e6a7c61a04e6f31cd2e  bd65-1965-revisted-d14t02.flac
+3f989fe89bdcf26db2cb94f5420507f2  bd65-1965-revisted-d14t03.flac
+a5bdaf0088d3c581f08c4a442313f23a  bd65-1965-revisted-d14t04.flac
+9cda51e36e28d41cb07ba98ca1e7cb36  bd65-1965-revisted-d14t05.flac
+3d814a951b1b26f2c21b73f88d177ee2  bd65-1965-revisted-d14t06.flac
+34bf2dad803999c55c895cc321595538  bd65-1965-revisted-d14t07.flac
+8725f68ecbc76e4b5a6629e9c3a2f492  bd65-1965-revisted-d1t01.flac
+d60486596de654685fae0ddaa6325e25  bd65-1965-revisted-d1t02.flac
+8070e3cc424485ac30514af781f4e9b0  bd65-1965-revisted-d1t03.flac
+a45242d58d8da8e242f27f6cbf2163ab  bd65-1965-revisted-d1t04.flac
+921a0918f40cc1e20d41a11d61c9145b  bd65-1965-revisted-d1t05.flac
+07a464a457af7ce8ef3cf8d0380fbe3a  bd65-1965-revisted-d1t06.flac
+57747d4e46659e13dd473ed6af822353  bd65-1965-revisted-d1t07.flac
+091bccf48cbdc20893c17d3dc37c8107  bd65-1965-revisted-d1t08.flac
+6b8bab1ceb6d0680ccfd32fc9a8a655e  bd65-1965-revisted-d1t09.flac
+2169822649cee87dad69c43cb1f2604f  bd65-1965-revisted-d1t10.flac
+44f3c22c88e1973b92e4838adfc5eb0a  bd65-1965-revisted-d1t11.flac
+d8cc9830ce8b82344448c70e7cc578c3  bd65-1965-revisted-d1t12.flac
+485a56ea57247fd842d11a763b27e9ea  bd65-1965-revisted-d1t13.flac
+728a5a82d1599f3a7823955a0d67a54e  bd65-1965-revisted-d1t14.flac
+133dc6797c6486bcae8a7ba5e29f1eaa  bd65-1965-revisted-d1t15.flac
+68d27bf1c120e044998aa8baa826af49  bd65-1965-revisted-d2t01.flac
+b1b5dd5d13339235b9e4c04f959a0190  bd65-1965-revisted-d2t02.flac
+b3eac92ebada1a5f8b1c92fb31cfa4ee  bd65-1965-revisted-d2t03.flac
+38e1ea352ccfa94f33e59301046f825c  bd65-1965-revisted-d2t04.flac
+d1ca6b60fb16266a893266fd2e1edec0  bd65-1965-revisted-d2t05.flac
+dbb3f706f8f8c1730458086e0b6b6cb9  bd65-1965-revisted-d2t06.flac
+641c5660be7a270fb7c39d926a0b60de  bd65-1965-revisted-d2t07.flac
+76ad429bfe4a1bec416068236d2f61af  bd65-1965-revisted-d2t08.flac
+447f959ce73f7eecd7b004b55dcc9144  bd65-1965-revisted-d2t09.flac
+1653fafd7cecf5b8b9d68e8b92741120  bd65-1965-revisted-d2t10.flac
+07dc59f3679748596094e961ae167f53  bd65-1965-revisted-d2t11.flac
+4be260da18c91645610679413d683810  bd65-1965-revisted-d2t12.flac
+023b1c6acfd4a0ef947b06695bb57cf5  bd65-1965-revisted-d2t13.flac
+37821f7b7482c4345706f5e374d95de7  bd65-1965-revisted-d3t01.flac
+ecfa545f34337891b87efc6b07749d8f  bd65-1965-revisted-d3t02.flac
+9ace0cb3a568ac78ce9432ea1a5968dc  bd65-1965-revisted-d3t03.flac
+2ecbec8365d70fb5dba18ac08b52c60b  bd65-1965-revisted-d3t04.flac
+04c5131cb2b38dfbbf6714a057a273a2  bd65-1965-revisted-d3t05.flac
+f26fcbea808222960ba9b5ccc07f641d  bd65-1965-revisted-d3t06.flac
+3d18d1a337f13ecab5d1945a486178f3  bd65-1965-revisted-d3t07.flac
+e94cb88ae3f73c91d5202649738eb40e  bd65-1965-revisted-d3t08.flac
+8573f34fc576d59485d5f59ad88aa259  bd65-1965-revisted-d3t09.flac
+10de4b321c8dfe74f06cc8afbba36e36  bd65-1965-revisted-d3t10.flac
+eb9367672bc3216e75778445da6a860f  bd65-1965-revisted-d3t11.flac
+861553ba8d26b836dfe672da0bf8e378  bd65-1965-revisted-d3t12.flac
+c24e237f3670416a4e9eae971145195c  bd65-1965-revisted-d3t13.flac
+ca8854e3418a45ca4d9cec6febb26fb1  bd65-1965-revisted-d3t14.flac
+07664ad74b4a72166ba202ba9def6b5d  bd65-1965-revisted-d3t15.flac
+9242b4b59a2bd66eb1f90904f2f32fff  bd65-1965-revisted-d3t16.flac
+d2e754364ed6660bbaa596c35d00f349  bd65-1965-revisted-d3t17.flac
+62279b0d88e1319c99ad4eb4fbcb75e8  bd65-1965-revisted-d3t18.flac
+8c12f6f0dca4c2fa2d9eb24fa2d57c4d  bd65-1965-revisted-d3t19.flac
+09da6a51b7d5624899e52e0595805453  bd65-1965-revisted-d3t20.flac
+e35f40e757782e068c7b484430b943b9  bd65-1965-revisted-d3t21.flac
+003644eb06c1a26601d1c63946b6b258  bd65-1965-revisted-d3t22.flac
+37b1216a7dc73d040b2790db96b4fc0d  bd65-1965-revisted-d3t23.flac
+4bccbc5fd8796e0a9b1af107a3c5ce4b  bd65-1965-revisted-d4t01.flac
+104e89286239df39f35ede1ed7667857  bd65-1965-revisted-d4t02.flac
+35e5fceba0ac9312867075133492c0b4  bd65-1965-revisted-d4t03.flac
+3757fdce5662f35dc2b147b64d1846e8  bd65-1965-revisted-d4t04.flac
+7e7968c64734b23732b524d84135f595  bd65-1965-revisted-d4t05.flac
+0de9c00f17be1b583890653c2fe76c2c  bd65-1965-revisted-d4t06.flac
+4572d4c107e4ac1efbf25e7a2cf1efd9  bd65-1965-revisted-d4t07.flac
+30bd83ed62363e06e9c1bcc1e4984b8d  bd65-1965-revisted-d4t08.flac
+62e861c44f0de3231976ce72c785627c  bd65-1965-revisted-d4t09.flac
+3893d946db2f3a2d06ebe2547dc204f0  bd65-1965-revisted-d4t10.flac
+c4162b12265e7ceebff39df0cae998b4  bd65-1965-revisted-d4t11.flac
+ca791817420bb38a1d2d57117b405991  bd65-1965-revisted-d4t12.flac
+28bd6cc4bd329398466965214f14fafe  bd65-1965-revisted-d4t13.flac
+72dceba570db3dfb38cf823c1342744f  bd65-1965-revisted-d4t14.flac
+3a46547374d0cc7c81284ed8ea0afe01  bd65-1965-revisted-d4t15.flac
+c9aadbc9025d99c96fe7e44d466c2bf7  bd65-1965-revisted-d5t01.flac
+3421398f61dbe46c47e36074bfad04f7  bd65-1965-revisted-d5t02.flac
+6d9171b93d795794e8ff0d141d0a0556  bd65-1965-revisted-d5t03.flac
+d35fac9886292cfa65f0c7b34a0b1055  bd65-1965-revisted-d5t04.flac
+feb47d879fb20edf9b8a4e513411adbe  bd65-1965-revisted-d5t05.flac
+a753ce00ec8fa03d443fbe084cf39380  bd65-1965-revisted-d5t06.flac
+b0ae70bb3550d3cac04c3ebd25f5d99f  bd65-1965-revisted-d5t07.flac
+15ac38c947ef60dae1f5519c6143ac01  bd65-1965-revisted-d5t08.flac
+66487bb36f68e89623cea990561e1ef2  bd65-1965-revisted-d5t09.flac
+08c63d0412523c00109c96c3155b6174  bd65-1965-revisted-d5t10.flac
+15df532775097ff4b5bd9d9f27d99c9a  bd65-1965-revisted-d5t11.flac
+aef7c0106625218ba532f61a9c5b2213  bd65-1965-revisted-d5t12.flac
+28ef24970623b035eebcad2179eb0e8f  bd65-1965-revisted-d5t13.flac
+4f1558b43f02fd015921399e85121524  bd65-1965-revisted-d5t14.flac
+2e8185fb4af677bfa78cf0a837717658  bd65-1965-revisted-d5t15.flac
+126d40979b38e99bb3649f93d5f3d4eb  bd65-1965-revisted-d6t01.flac
+b35e2be8dca43f93c40a77440605d251  bd65-1965-revisted-d6t02.flac
+1af22d6c00a1b113a7b3e9f157949755  bd65-1965-revisted-d6t03.flac
+87556e528d2313a81414d523e53c124f  bd65-1965-revisted-d6t04.flac
+6a142ced0f852c5a4286c79d8e89adf8  bd65-1965-revisted-d6t05.flac
+a2fdbece86cf51721cefc97e3e56ed6d  bd65-1965-revisted-d6t06.flac
+3ebfa2ba0458f700de21d15833e58d4f  bd65-1965-revisted-d6t07.flac
+d7659d5189a0740882876d8166b23c37  bd65-1965-revisted-d6t08.flac
+336a3325559ef2335f9268fb3c0f46a3  bd65-1965-revisted-d6t09.flac
+9a338ee3930266b954580ed2c63de891  bd65-1965-revisted-d6t10.flac
+e8b072ddca1b1ae4da7003f03695c35e  bd65-1965-revisted-d6t11.flac
+9cad15f946896efd29e8d317399460ec  bd65-1965-revisted-d6t12.flac
+5886955c69218cbb08a5f4e26f69d914  bd65-1965-revisted-d7t01.flac
+c70f16702343c3f2f90b7d48793f1c36  bd65-1965-revisted-d7t02.flac
+54dfbf83743b4aefec57658a0654ebc8  bd65-1965-revisted-d7t03.flac
+cc2fc529a27bd6d166d6a6913ae12c5c  bd65-1965-revisted-d7t04.flac
+1d1e3a4cac00d411eb765f09a2f96a18  bd65-1965-revisted-d7t05.flac
+8bbd8b209e588b7fa3b6998a6e006809  bd65-1965-revisted-d7t06.flac
+fbb16f195985eaa3e9397eb03867dfd5  bd65-1965-revisted-d7t07.flac
+d993a3101fc13b1ca8efb8112526915f  bd65-1965-revisted-d7t08.flac
+ee6652e44eb4f45b8def79d13d4dd519  bd65-1965-revisted-d7t09.flac
+165292639c5739c11ad6a5d4fcab3733  bd65-1965-revisted-d7t10.flac
+8f8f1b90e38533500c1a12d501267161  bd65-1965-revisted-d7t11.flac
+38759bc9e9b1805665a24e1cb75a8753  bd65-1965-revisted-d7t12.flac
+20931d572d09ead6a78c73e0e23075c0  bd65-1965-revisted-d7t13.flac
+a973c0dc4303265f7cad5033f2fa8cbc  bd65-1965-revisted-d7t14.flac
+4e8303ce2f058dc188ad377e2b8adddb  bd65-1965-revisted-d7t15.flac
+98e70a89c8c0b002ab86a09c3403841f  bd65-1965-revisted-d7t16.flac
+69ec402d61cf24d67e5329d908bc7286  bd65-1965-revisted-d8t01.flac
+c182929850b56d069b0affab0fea1ae1  bd65-1965-revisted-d8t02.flac
+bf4c719a93b7e972419ca12f49b75fbf  bd65-1965-revisted-d8t03.flac
+4c8f353f70ba2410b0baa6e93f9d10c9  bd65-1965-revisted-d8t04.flac
+8560f43b8fb68dfde7d64059ad08aab9  bd65-1965-revisted-d8t05.flac
+287ecf2f4f2a4b2dd16ac8037ce9c450  bd65-1965-revisted-d8t06.flac
+e8ff5da7450bb6b9809e8322aac8c5e1  bd65-1965-revisted-d8t07.flac
+aa23e3aa9608686717e19c689a397f51  bd65-1965-revisted-d8t08.flac
+db2d60ed32343f4ac282f052890807e1  bd65-1965-revisted-d8t09.flac
+8b4f703feedd4dfb39294320f344df3a  bd65-1965-revisted-d8t10.flac
+7f05242b882c8a1a1cb2ae72349a1977  bd65-1965-revisted-d8t11.flac
+475f1a1b1f72d807a1cf88e5bd9b7768  bd65-1965-revisted-d9t01.flac
+6ea715689ee64cd7c1173ef883159bbb  bd65-1965-revisted-d9t02.flac
+0374d469a1ab26d2d85f5bb1f5e58e61  bd65-1965-revisted-d9t03.flac
+c7f37d10e2c3480376e6142d6076a76e  bd65-1965-revisted-d9t04.flac
+80be48b9a06caf51a55d25096ab22bf5  bd65-1965-revisted-d9t05.flac
+9d589f88e70883420ab42cc0725a8fa8  bd65-1965-revisted-d9t06.flac
+e56b3d3c4fc8cf188a848e83792e43f3  bd65-1965-revisted-d9t07.flac
+9feb3d66daff67ada3478f9ac8569008  bd65-1965-revisted-d9t08.flac
+880fe290d883ff6e6e8c0abaa96aee86  bd65-1965-revisted-d9t09.flac
+0f013dfa2dda0cea405d024ecc1647e0  bd65-1965-revisted-d9t10.flac
+52076344754f9942b5c2d59cf4a39e81  bd65-1965-revisted-d9t11.flac
+64393ab4e75900ef620580e823afd3c7  bd65-1965-revisted-d9t12.flac
+be387936d199b1c965878fb31d641b6c  bd65-1965-revisted-d9t13.flac
+f876baf651a64634fcced296c9eebb47  bd65-1965-revisted.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-1965-revisted.flacf 
+=================== 
+=================== 
+=================== 
+bd65-1965-revisted-d10t01.flac:d9ea4e22baeaf9d5d23ac6cd4966382e
+bd65-1965-revisted-d10t02.flac:0e9a98b256f3de87ed523eb3b5f9b5db
+bd65-1965-revisted-d10t03.flac:803e25d95d4e64bd8b3d1eaa5974fb42
+bd65-1965-revisted-d10t04.flac:36a7ae0fd283090f0a5ca3d9e9a29a0c
+bd65-1965-revisted-d10t05.flac:404897ca7d7479fc3c582aa44e5fd5c7
+bd65-1965-revisted-d10t06.flac:622887a6989aaaac666f0a159e2cd2e2
+bd65-1965-revisted-d10t07.flac:6734be477b095bd801337948fe5e2cea
+bd65-1965-revisted-d10t08.flac:d1afbe297c26dc2c493e4eaaf806536e
+bd65-1965-revisted-d10t09.flac:83e944a231b577dd7db5126b81732abf
+bd65-1965-revisted-d10t10.flac:be3a53c23962281ae12e8e96d8559f8d
+bd65-1965-revisted-d10t11.flac:76af16a3b3a39682ac76063ac9367eec
+bd65-1965-revisted-d10t12.flac:b150a29e2e4b463edc70b44c91bd8621
+bd65-1965-revisted-d10t13.flac:e6eb8fccf6be40631e3d6ca79b303a72
+bd65-1965-revisted-d11t01.flac:e945f3ac366c5ad5531b29af4e7866df
+bd65-1965-revisted-d11t02.flac:e8905a155e58b93325ddad17dd916c20
+bd65-1965-revisted-d12t01.flac:439a62a6bf2123d5a5b159e27396c080
+bd65-1965-revisted-d13t01.flac:16327f892c3956009e278ef8a23d35e2
+bd65-1965-revisted-d13t02.flac:be6dc3bd254619c0f18b0d536979b0cb
+bd65-1965-revisted-d13t03.flac:2e92c2f952072abab2ae0a6722c2abf8
+bd65-1965-revisted-d13t04.flac:53fd9d9960d5372c8bef68d22e8c35dd
+bd65-1965-revisted-d14t01.flac:1c5e00f0377187b58cc004ae66ab0b3c
+bd65-1965-revisted-d14t02.flac:0597e0371a74c43f6cd905d096b7504c
+bd65-1965-revisted-d14t03.flac:ca524d5712351051e3fce74474c7cad7
+bd65-1965-revisted-d14t04.flac:f49ab807976b620eeec6a43c13e52e87
+bd65-1965-revisted-d14t05.flac:e5c836c087c0488cc83d7abfafc73612
+bd65-1965-revisted-d14t06.flac:96a9db6e6ad5b1ce4299fdb4de5c24cf
+bd65-1965-revisted-d14t07.flac:7466b91b8c066708f321ea547e3bc606
+bd65-1965-revisted-d1t01.flac:922100a414076a16c8bf6250660484d3
+bd65-1965-revisted-d1t02.flac:90fac5c19b714294108401e84ce92acc
+bd65-1965-revisted-d1t03.flac:d545826d446941069449429d22d0e277
+bd65-1965-revisted-d1t04.flac:8c10cae8328ebdf7902d3549f126ce32
+bd65-1965-revisted-d1t05.flac:e2fd6e9516029e9647fc82b9d80a73cd
+bd65-1965-revisted-d1t06.flac:ae8ee1c3633786e7bd01572de9f9e56f
+bd65-1965-revisted-d1t07.flac:a29f04c59794352b0706ab43e92f9c2c
+bd65-1965-revisted-d1t08.flac:6a0ee4898c150715172eb9c92362b34a
+bd65-1965-revisted-d1t09.flac:79255fcfa3a5e90a1c5e8354b0af2f01
+bd65-1965-revisted-d1t10.flac:5683979e45bc44ffeef85274cff02022
+bd65-1965-revisted-d1t11.flac:c17f1bf3afc0c9db40fac20b5e56c0ae
+bd65-1965-revisted-d1t12.flac:03dcb669dd1b2bf0b605148762f8a7e7
+bd65-1965-revisted-d1t13.flac:a52d72fac62ccc1eb37f40afc79a1dbf
+bd65-1965-revisted-d1t14.flac:f55dfec8d22bec905f3c717a150e1bf2
+bd65-1965-revisted-d1t15.flac:9666ff1ec19bb6dde57ca3a08d51cf72
+bd65-1965-revisted-d2t01.flac:dd010a4d4f810b6a2ff1d231b2970949
+bd65-1965-revisted-d2t02.flac:8313f388165a2962622d0e38b502f59a
+bd65-1965-revisted-d2t03.flac:2d59a8e53a732505edf1eee081510f35
+bd65-1965-revisted-d2t04.flac:cb24b730ea22f86da28d26ef405277b9
+bd65-1965-revisted-d2t05.flac:ab6bb7a6dd6a11dbe1942c865606d12b
+bd65-1965-revisted-d2t06.flac:fb42c07121f6159f7dc2cb8f41c9299f
+bd65-1965-revisted-d2t07.flac:4ed8f040c36d03172041e891febd59a3
+bd65-1965-revisted-d2t08.flac:fd4d49ce16f38067b5f7da85fd897d88
+bd65-1965-revisted-d2t09.flac:9c0ba9d52b72c1c215618605ea07f018
+bd65-1965-revisted-d2t10.flac:fa9fa1cf060c3e2ef0e3ec7125fc3699
+bd65-1965-revisted-d2t11.flac:362d863e6d73aca46834e28b2445ef1e
+bd65-1965-revisted-d2t12.flac:4831624930e73495f5e8523a61c792fe
+bd65-1965-revisted-d2t13.flac:b7b70f31a0505d286ed859b711c56940
+bd65-1965-revisted-d3t01.flac:7b56d47ef39ff5bb0c7b41f28771c8ff
+bd65-1965-revisted-d3t02.flac:0a45bc09e915d0f8107e45cf83eb3312
+bd65-1965-revisted-d3t03.flac:874def5ca1196e0a83866dcf3f3bcf00
+bd65-1965-revisted-d3t04.flac:8cc23ac28bb4948ca19bc965bd0e2b85
+bd65-1965-revisted-d3t05.flac:9b72e029e72a2944f91042e8a6359a58
+bd65-1965-revisted-d3t06.flac:c319b02072e843143414930b10f0eec0
+bd65-1965-revisted-d3t07.flac:c5824bd261abc358682a7f0facea95b9
+bd65-1965-revisted-d3t08.flac:1bcae5edbf564a44663ad104e39c88ce
+bd65-1965-revisted-d3t09.flac:50d22270c5758522bad3f68765a13c8a
+bd65-1965-revisted-d3t10.flac:555c4b6260256a2d8d1154ffe2755e87
+bd65-1965-revisted-d3t11.flac:885dc69ddc25d5e3464ed543b7986e17
+bd65-1965-revisted-d3t12.flac:59ca131eb40b2a370b586876a062df9b
+bd65-1965-revisted-d3t13.flac:ffc50bcf96e660870781cbe21860f600
+bd65-1965-revisted-d3t14.flac:0a242fd0fb0918706c4bb21153bba484
+bd65-1965-revisted-d3t15.flac:a768bdec5cb244dca06978e03fbcdacc
+bd65-1965-revisted-d3t16.flac:87157c8f20a34430bed7cd48203e415d
+bd65-1965-revisted-d3t17.flac:3a1d350efbc3776e349dff56df28f843
+bd65-1965-revisted-d3t18.flac:015a068854490aa9455f9061f98d81e0
+bd65-1965-revisted-d3t19.flac:3ca800640ceb79e6d56a2a8d678e9edd
+bd65-1965-revisted-d3t20.flac:ecf10b1c1f1b651126b5a012632f27f3
+bd65-1965-revisted-d3t21.flac:d68374d793baaf1a4145bfd0362d8c90
+bd65-1965-revisted-d3t22.flac:7ae934cd7336b73cf4507eb89b11f087
+bd65-1965-revisted-d3t23.flac:a8f166f150204633d56395c3f48116bc
+bd65-1965-revisted-d4t01.flac:b0eb711fd734b6cad3f08bbf00ccd925
+bd65-1965-revisted-d4t02.flac:eced653bddb150c025b217b4a37882ad
+bd65-1965-revisted-d4t03.flac:16277e722fd511a88aafe8b40f5b9aaf
+bd65-1965-revisted-d4t04.flac:cfefb993d76875b3b79eb5f35152b94a
+bd65-1965-revisted-d4t05.flac:bbc09b9b19f8e7d00dfdd0e270643522
+bd65-1965-revisted-d4t06.flac:8f250dc01d8a41e745397ef757fb0d90
+bd65-1965-revisted-d4t07.flac:62ff11d2d79ec1560c16c57458b24689
+bd65-1965-revisted-d4t08.flac:173d1c76d86ae06a8504a2923a84e510
+bd65-1965-revisted-d4t09.flac:594a182a2accc05ab533577c2a84dec6
+bd65-1965-revisted-d4t10.flac:90400adb6bc879dd46f0929b1f9fb3b1
+bd65-1965-revisted-d4t11.flac:eef2ab34cabf87a817f013944d8c4b0f
+bd65-1965-revisted-d4t12.flac:039e353096c97762993154dbfc4af0ce
+bd65-1965-revisted-d4t13.flac:f673bd908859fcb3f1f5afdea52e07e5
+bd65-1965-revisted-d4t14.flac:433f28b0b05e27cdcfb6f596384b5860
+bd65-1965-revisted-d4t15.flac:554558fb7d96bef004c6a6a8687a8860
+bd65-1965-revisted-d5t01.flac:0d0903007c16de309884160656334cd0
+bd65-1965-revisted-d5t02.flac:76228349f97df4a8ce6ed031a282076b
+bd65-1965-revisted-d5t03.flac:96389fb447d004876e0ce50979af4259
+bd65-1965-revisted-d5t04.flac:72534233705d08309436cbda54ea20fe
+bd65-1965-revisted-d5t05.flac:364371f426b014f7aad1c6df9e45b55b
+bd65-1965-revisted-d5t06.flac:ea63bbcf3b6a15b93f820e668266b3a9
+bd65-1965-revisted-d5t07.flac:140ea6627100c10ce463a5681d56426b
+bd65-1965-revisted-d5t08.flac:c50a45c5ae9167b2f400e2a2fe523d5e
+bd65-1965-revisted-d5t09.flac:e30edb49f9cf1dea99f14a96622c2029
+bd65-1965-revisted-d5t10.flac:3682e41094385dd2d1e8636220b12e14
+bd65-1965-revisted-d5t11.flac:5533b23329c8af459c2b6563a52dadfe
+bd65-1965-revisted-d5t12.flac:07c0dc7558991ce835304d662dbb084a
+bd65-1965-revisted-d5t13.flac:d850b95df8c2aeb3909c58bb8b13fff5
+bd65-1965-revisted-d5t14.flac:bb810fd010240596581641e6a7d03d09
+bd65-1965-revisted-d5t15.flac:0e713251a97d089039e10e84535ce7eb
+bd65-1965-revisted-d6t01.flac:890969060957fe543a99eafb11d6c34f
+bd65-1965-revisted-d6t02.flac:0afbcaeb183955ab0e6b25d39f861f66
+bd65-1965-revisted-d6t03.flac:ac7268c672a648f19fa5109f9cf75fa6
+bd65-1965-revisted-d6t04.flac:5a3b6b279b1ba09d15bf5f77d2983771
+bd65-1965-revisted-d6t05.flac:cf6ccf464f37df08962076f2ad5f7987
+bd65-1965-revisted-d6t06.flac:bc55d796a1571148333fe5e696065812
+bd65-1965-revisted-d6t07.flac:ace7b83f44c7056d718a85d348500463
+bd65-1965-revisted-d6t08.flac:52a55d444195c2b4179021f5e129fc88
+bd65-1965-revisted-d6t09.flac:1be341b1d4f3397be08cca43c010e8ec
+bd65-1965-revisted-d6t10.flac:0ebebd13af875c11269cca201cdb30a4
+bd65-1965-revisted-d6t11.flac:de22ab71f5420f3e8ddcb35a76abd37c
+bd65-1965-revisted-d6t12.flac:7eca067fdd5a14b97535b8f04939b6df
+bd65-1965-revisted-d7t01.flac:5eed4dc788e82cf37badca38bb5fac70
+bd65-1965-revisted-d7t02.flac:0ec0ceb8fbb3fce11fdcfe229f6c3546
+bd65-1965-revisted-d7t03.flac:5710823458b33d80ef4d2a1ff7066367
+bd65-1965-revisted-d7t04.flac:2c9336104e6879fc8733acc9e8f9c55c
+bd65-1965-revisted-d7t05.flac:2ee6678174b14aa848d7062e8a16db4f
+bd65-1965-revisted-d7t06.flac:f593f841541591512a3600723163376f
+bd65-1965-revisted-d7t07.flac:2efc4764ab7e8fd1b2a37a7668f3c098
+bd65-1965-revisted-d7t08.flac:8b9502e43276d5d1d115a6e324a43677
+bd65-1965-revisted-d7t09.flac:69919f0a0e3bbdc0f6550bd5d9e66b5e
+bd65-1965-revisted-d7t10.flac:6c7c9fd66fca2aebf8e52ad1d8f6f04f
+bd65-1965-revisted-d7t11.flac:7c14c0f655963676cd9d4721294739f8
+bd65-1965-revisted-d7t12.flac:7068570962eb61cafb03f9131cd67e17
+bd65-1965-revisted-d7t13.flac:b45956da4c1eb0217b74d4d8eb31d7d0
+bd65-1965-revisted-d7t14.flac:d0f3853ff2a4c3b11207286eccd0c380
+bd65-1965-revisted-d7t15.flac:472d862904cff73160e29f3c0a27aa6e
+bd65-1965-revisted-d7t16.flac:576f69baec7a9df867f70e8ad2b2a090
+bd65-1965-revisted-d8t01.flac:89c626da56e7eb03e601645540d35d9f
+bd65-1965-revisted-d8t02.flac:f106d2167cbc75637622584d918f8458
+bd65-1965-revisted-d8t03.flac:2e6a4d0fa18430c92f07895a8ff3cdf5
+bd65-1965-revisted-d8t04.flac:913a5f76a2e420cb96000fe5b7ea156a
+bd65-1965-revisted-d8t05.flac:61b14f38d06a602d509e5f6cb896cdb0
+bd65-1965-revisted-d8t06.flac:81e80d287a543570c0e9d1e72eedd59e
+bd65-1965-revisted-d8t07.flac:367d37afa34b389eb5995e55f3b88c18
+bd65-1965-revisted-d8t08.flac:78f375ba92c5594c1bf662716b9abdac
+bd65-1965-revisted-d8t09.flac:39d971d9a6094478c32dc4ad4c9d7aa2
+bd65-1965-revisted-d8t10.flac:4c6deb5c16962e2c5002338349e477a3
+bd65-1965-revisted-d8t11.flac:034ef7a7a7c347181d618095f059c068
+bd65-1965-revisted-d9t01.flac:e23a116bfa6cf1ccc5fdd09ae312333c
+bd65-1965-revisted-d9t02.flac:6c47976b8e931bab40911575e9ecf91d
+bd65-1965-revisted-d9t03.flac:2ba1feb97e89938966431b9579015ba4
+bd65-1965-revisted-d9t04.flac:487915a5d5c20bc6e9815d493c272242
+bd65-1965-revisted-d9t05.flac:0450c938dd865782139c48ead446be0f
+bd65-1965-revisted-d9t06.flac:9c1b0340e59c012824f11aa9fe7fedc7
+bd65-1965-revisted-d9t07.flac:500aa0ba2640aae4d44e05affb73edc9
+bd65-1965-revisted-d9t08.flac:2bf83830d5b7829791b4921a353138fa
+bd65-1965-revisted-d9t09.flac:ba00d6fdb870fd103e4c97cfbb0fa942
+bd65-1965-revisted-d9t10.flac:228cc8ccbe9471036b2ccf9ea1beb02f
+bd65-1965-revisted-d9t11.flac:82a20dcd218ffad7c40d1bd6bc652c9d
+bd65-1965-revisted-d9t12.flac:0c1512f6d90b7bb866912f9ab0dfd07c
+bd65-1965-revisted-d9t13.flac:bca22207d5854ba88d6af74e7503bdc5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-1965-revisted.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.30       72923804 B   ---   --   ---xx   flac  0.4363  bd65-1965-revisted-d10t01.flac
+     5:57.30       63045404 B   ---   --   ---xx   flac  0.4410  bd65-1965-revisted-d10t02.flac
+     6:56.20       73429484 B   ---   --   ---xx   flac  0.4438  bd65-1965-revisted-d10t03.flac
+     6:34.65       69654524 B   ---   --   ---xx   flac  0.4335  bd65-1965-revisted-d10t04.flac
+     0:59.07       10424108 B   ---   --   ---xx   flac  0.5862  bd65-1965-revisted-d10t05.flac
+     3:33.30       37643804 B   ---   --   ---xx   flac  0.6711  bd65-1965-revisted-d10t06.flac
+     3:39.40       38725724 B   ---   --   ---xx   flac  0.6944  bd65-1965-revisted-d10t07.flac
+     3:33.73       37744940 B   ---   --   ---xx   flac  0.7102  bd65-1965-revisted-d10t08.flac
+     3:29.60       37008764 B   ---   --   ---xx   flac  0.6789  bd65-1965-revisted-d10t09.flac
+     1:35.27       16821548 B   ---   --   ---xx   flac  0.6176  bd65-1965-revisted-d10t10.flac
+     1:04.18       11331980 B   ---   --   ---xx   flac  0.3732  bd65-1965-revisted-d10t11.flac
+     4:08.30       43817804 B   ---   --   ---xx   flac  0.3908  bd65-1965-revisted-d10t12.flac
+     8:29.55       89917004 B   ---   --   ---xx   flac  0.6744  bd65-1965-revisted-d10t13.flac
+    19:13.07      203405708 B   ---   --   ---xx   flac  0.2265  bd65-1965-revisted-d11t01.flac
+    46:33.43      492786380 B   ---   --   ---xx   flac  0.2432  bd65-1965-revisted-d11t02.flac
+    75:22.27      797744348 B   ---   --   ---xx   flac  0.2544  bd65-1965-revisted-d12t01.flac
+    51:57.12      549867068 B   ---   --   ---xx   flac  0.3145  bd65-1965-revisted-d13t01.flac
+     4:56.70       52379084 B   ---   --   ---xx   flac  0.5624  bd65-1965-revisted-d13t02.flac
+     5:15.08       55584860 B   ---   --   ---xx   flac  0.5444  bd65-1965-revisted-d13t03.flac
+     4:04.20       43088684 B   ---   --   ---xx   flac  0.5502  bd65-1965-revisted-d13t04.flac
+     5:41.10       60175964 B   ---   --   ---xx   flac  0.5513  bd65-1965-revisted-d14t01.flac
+     4:04.20       43088684 B   ---   --   ---xx   flac  0.5513  bd65-1965-revisted-d14t02.flac
+     5:47.60       61351964 B   ---   --   ---xx   flac  0.5594  bd65-1965-revisted-d14t03.flac
+     6:09.57       65225708 B   ---   --   ---xx   flac  0.5630  bd65-1965-revisted-d14t04.flac
+     4:46.68       50610380 B   ---   --   ---xx   flac  0.5577  bd65-1965-revisted-d14t05.flac
+     6:08.17       64955228 B   ---   --   ---xx   flac  0.5394  bd65-1965-revisted-d14t06.flac
+    33:42.10      356704364 B   ---   --   ---xx   flac  0.5968  bd65-1965-revisted-d14t07.flac
+     4:23.22       46444988 B   ---   --   ---xx   flac  0.6320  bd65-1965-revisted-d1t01.flac
+     3:39.73       38803340 B   ---   --   ---xx   flac  0.6276  bd65-1965-revisted-d1t02.flac
+     2:57.07       31239308 B   ---   --   ---xx   flac  0.6726  bd65-1965-revisted-d1t03.flac
+     5:28.13       57889820 B   ---   --   ---xx   flac  0.5778  bd65-1965-revisted-d1t04.flac
+     0:57.02       10059548 B   ---   --   ---xx   flac  0.5738  bd65-1965-revisted-d1t05.flac
+     3:11.15       33727724 B   ---   --   ---xx   flac  0.5467  bd65-1965-revisted-d1t06.flac
+     3:51.58       40884860 B   ---   --   ---xx   flac  0.5705  bd65-1965-revisted-d1t07.flac
+     2:35.27       27405548 B   ---   --   ---xx   flac  0.5995  bd65-1965-revisted-d1t08.flac
+     2:34.48       27278540 B   ---   --   ---xx   flac  0.6759  bd65-1965-revisted-d1t09.flac
+     3:05.00       32634044 B   ---   --   ---xx   flac  0.7051  bd65-1965-revisted-d1t10.flac
+     2:56.30       31117004 B   ---   --   ---xx   flac  0.6857  bd65-1965-revisted-d1t11.flac
+     3:15.45       34503884 B   ---   --   ---xx   flac  0.6922  bd65-1965-revisted-d1t12.flac
+     5:21.25       56683244 B   ---   --   ---xx   flac  0.5512  bd65-1965-revisted-d1t13.flac
+    18:35.02      196690748 B   ---   --   ---xx   flac  0.5210  bd65-1965-revisted-d1t14.flac
+     7:41.00       81320444 B   ---   --   ---xx   flac  0.5474  bd65-1965-revisted-d1t15.flac
+     4:45.32       50349308 B   ---   --   ---xx   flac  0.5133  bd65-1965-revisted-d2t01.flac
+     7:45.63       82174220 B   ---   --   ---xx   flac  0.5296  bd65-1965-revisted-d2t02.flac
+     2:42.70       28741484 B   ---   --   ---xx   flac  0.5485  bd65-1965-revisted-d2t03.flac
+     8:19.20       88070684 B   ---   --   ---xx   flac  0.5281  bd65-1965-revisted-d2t04.flac
+     4:36.40       48780524 B   ---   --   ---xx   flac  0.5291  bd65-1965-revisted-d2t05.flac
+     5:30.42       58310828 B   ---   --   ---xx   flac  0.5208  bd65-1965-revisted-d2t06.flac
+     3:41.63       39132620 B   ---   --   ---xx   flac  0.5027  bd65-1965-revisted-d2t07.flac
+     1:26.60       15311564 B   ---   --   ---xx   flac  0.4946  bd65-1965-revisted-d2t08.flac
+     3:48.47       40329788 B   ---   --   ---xx   flac  0.4974  bd65-1965-revisted-d2t09.flac
+     1:26.45       15276284 B   ---   --   ---xx   flac  0.4997  bd65-1965-revisted-d2t10.flac
+     0:37.15        6562124 B   ---   --   ---xx   flac  0.4719  bd65-1965-revisted-d2t11.flac
+     2:45.23       29160140 B   ---   --   ---xx   flac  0.5128  bd65-1965-revisted-d2t12.flac
+     5:34.25       58976444 B   ---   --   ---xx   flac  0.5082  bd65-1965-revisted-d2t13.flac
+     3:06.12       32838668 B   ---   --   ---xx   flac  0.5556  bd65-1965-revisted-d3t01.flac
+     4:30.33       47705660 B   ---   --   ---xx   flac  0.5217  bd65-1965-revisted-d3t02.flac
+     7:46.65       82355324 B   ---   --   ---xx   flac  0.5704  bd65-1965-revisted-d3t03.flac
+     2:17.65       24319724 B   ---   --   ---xx   flac  0.5428  bd65-1965-revisted-d3t04.flac
+     8:39.15       91586924 B   ---   --   ---xx   flac  0.5103  bd65-1965-revisted-d3t05.flac
+     2:54.42       30792428 B   ---   --   ---xx   flac  0.5173  bd65-1965-revisted-d3t06.flac
+     0:17.35        3081164 B   ---   --   ---xx   flac  0.3056  bd65-1965-revisted-d3t07.flac
+     2:46.35       29364764 B   ---   --   ---xx   flac  0.3322  bd65-1965-revisted-d3t08.flac
+     0:49.38        8733020 B   ---   --   ---xx   flac  0.3290  bd65-1965-revisted-d3t09.flac
+     6:25.42       68012828 B   ---   --   ---xx   flac  0.3390  bd65-1965-revisted-d3t10.flac
+     1:12.15       12736124 B   ---   --   ---xx   flac  0.5877  bd65-1965-revisted-d3t11.flac
+     1:18.03       13766300 B   ---   --   ---xx   flac  0.4386  bd65-1965-revisted-d3t12.flac
+     3:13.42       34144028 B   ---   --   ---xx   flac  0.5604  bd65-1965-revisted-d3t13.flac
+     1:38.00       17287244 B   ---   --   ---xx   flac  0.5982  bd65-1965-revisted-d3t14.flac
+     0:26.55        4715804 B   ---   --   ---xx   flac  0.5245  bd65-1965-revisted-d3t15.flac
+     1:40.73       17811740 B   ---   --   ---xx   flac  0.5550  bd65-1965-revisted-d3t16.flac
+     1:10.30       12418604 B   ---   --   ---xx   flac  0.5662  bd65-1965-revisted-d3t17.flac
+     3:34.40       37843724 B   ---   --   ---xx   flac  0.3351  bd65-1965-revisted-d3t18.flac
+     2:03.72       21866588 B   ---   --   ---xx   flac  0.5622  bd65-1965-revisted-d3t19.flac
+     0:53.08        9368060 B   ---   --   ---xx   flac  0.5391  bd65-1965-revisted-d3t20.flac
+     7:38.35       80873564 B   ---   --   ---xx   flac  0.5565  bd65-1965-revisted-d3t21.flac
+     0:56.32        9953708 B   ---   --   ---xx   flac  0.2570  bd65-1965-revisted-d3t22.flac
+     1:40.15       17675324 B   ---   --   ---xx   flac  0.4372  bd65-1965-revisted-d3t23.flac
+     3:32.25       37455644 B   ---   --   ---xx   flac  0.5445  bd65-1965-revisted-d4t01.flac
+     4:58.20       52614284 B   ---   --   ---xx   flac  0.5244  bd65-1965-revisted-d4t02.flac
+     7:06.50       75264044 B   ---   --   ---xx   flac  0.5243  bd65-1965-revisted-d4t03.flac
+     2:54.27       30757148 B   ---   --   ---xx   flac  0.5517  bd65-1965-revisted-d4t04.flac
+     8:06.13       85761020 B   ---   --   ---xx   flac  0.5154  bd65-1965-revisted-d4t05.flac
+     4:59.20       52790684 B   ---   --   ---xx   flac  0.5266  bd65-1965-revisted-d4t06.flac
+     6:26.57       68224508 B   ---   --   ---xx   flac  0.5480  bd65-1965-revisted-d4t07.flac
+     4:16.70       45323084 B   ---   --   ---xx   flac  0.5397  bd65-1965-revisted-d4t08.flac
+     3:51.08       40767260 B   ---   --   ---xx   flac  0.5199  bd65-1965-revisted-d4t09.flac
+     5:14.55       55519004 B   ---   --   ---xx   flac  0.5390  bd65-1965-revisted-d4t10.flac
+     4:09.72       44092988 B   ---   --   ---xx   flac  0.5242  bd65-1965-revisted-d4t11.flac
+     4:19.15       45722924 B   ---   --   ---xx   flac  0.5277  bd65-1965-revisted-d4t12.flac
+     6:41.20       70783484 B   ---   --   ---xx   flac  0.5167  bd65-1965-revisted-d4t13.flac
+     3:24.03       35992700 B   ---   --   ---xx   flac  0.5381  bd65-1965-revisted-d4t14.flac
+     5:54.65       62598524 B   ---   --   ---xx   flac  0.5257  bd65-1965-revisted-d4t15.flac
+     3:05.32       32709308 B   ---   --   ---xx   flac  0.5468  bd65-1965-revisted-d5t01.flac
+     4:31.60       47945564 B   ---   --   ---xx   flac  0.5270  bd65-1965-revisted-d5t02.flac
+     7:16.10       76933964 B   ---   --   ---xx   flac  0.5234  bd65-1965-revisted-d5t03.flac
+     2:15.30       23884604 B   ---   --   ---xx   flac  0.5304  bd65-1965-revisted-d5t04.flac
+     3:09.50       33457244 B   ---   --   ---xx   flac  0.5387  bd65-1965-revisted-d5t05.flac
+     4:08.03       43754300 B   ---   --   ---xx   flac  0.5308  bd65-1965-revisted-d5t06.flac
+     6:28.45       68549084 B   ---   --   ---xx   flac  0.5323  bd65-1965-revisted-d5t07.flac
+     4:35.47       48620588 B   ---   --   ---xx   flac  0.5274  bd65-1965-revisted-d5t08.flac
+     3:47.48       40155740 B   ---   --   ---xx   flac  0.5161  bd65-1965-revisted-d5t09.flac
+     5:25.10       57353564 B   ---   --   ---xx   flac  0.5359  bd65-1965-revisted-d5t10.flac
+     4:38.15       49074524 B   ---   --   ---xx   flac  0.5263  bd65-1965-revisted-d5t11.flac
+     4:12.65       44605724 B   ---   --   ---xx   flac  0.5323  bd65-1965-revisted-d5t12.flac
+     6:01.10       63703964 B   ---   --   ---xx   flac  0.5379  bd65-1965-revisted-d5t13.flac
+     2:44.47       29040188 B   ---   --   ---xx   flac  0.5235  bd65-1965-revisted-d5t14.flac
+     5:30.55       58341404 B   ---   --   ---xx   flac  0.5374  bd65-1965-revisted-d5t15.flac
+     5:09.10       54531164 B   ---   --   ---xx   flac  0.5105  bd65-1965-revisted-d6t01.flac
+     6:27.27       68330348 B   ---   --   ---xx   flac  0.5310  bd65-1965-revisted-d6t02.flac
+     7:16.38       76999820 B   ---   --   ---xx   flac  0.5112  bd65-1965-revisted-d6t03.flac
+     2:45.62       29251868 B   ---   --   ---xx   flac  0.5240  bd65-1965-revisted-d6t04.flac
+     6:19.70       67020284 B   ---   --   ---xx   flac  0.5140  bd65-1965-revisted-d6t05.flac
+     4:10.00       44100044 B   ---   --   ---xx   flac  0.5188  bd65-1965-revisted-d6t06.flac
+     3:47.63       40191020 B   ---   --   ---xx   flac  0.5161  bd65-1965-revisted-d6t07.flac
+     4:19.45       45793484 B   ---   --   ---xx   flac  0.5034  bd65-1965-revisted-d6t08.flac
+     6:44.22       71317388 B   ---   --   ---xx   flac  0.5026  bd65-1965-revisted-d6t09.flac
+     9:10.45       97125884 B   ---   --   ---xx   flac  0.4956  bd65-1965-revisted-d6t10.flac
+     4:46.53       50575100 B   ---   --   ---xx   flac  0.4964  bd65-1965-revisted-d6t11.flac
+     5:09.20       54554684 B   ---   --   ---xx   flac  0.4874  bd65-1965-revisted-d6t12.flac
+     4:10.42       44198828 B   ---   --   ---xx   flac  0.4955  bd65-1965-revisted-d7t01.flac
+     3:55.55       41583404 B   ---   --   ---xx   flac  0.6452  bd65-1965-revisted-d7t02.flac
+     4:55.15       52073324 B   ---   --   ---xx   flac  0.6523  bd65-1965-revisted-d7t03.flac
+     3:36.00       38102444 B   ---   --   ---xx   flac  0.6578  bd65-1965-revisted-d7t04.flac
+     3:32.55       37526204 B   ---   --   ---xx   flac  0.6421  bd65-1965-revisted-d7t05.flac
+     3:24.03       35992700 B   ---   --   ---xx   flac  0.6828  bd65-1965-revisted-d7t06.flac
+     1:38.35       17369564 B   ---   --   ---xx   flac  0.5944  bd65-1965-revisted-d7t07.flac
+     6:33.60       69466364 B   ---   --   ---xx   flac  0.6982  bd65-1965-revisted-d7t08.flac
+     3:44.55       39643004 B   ---   --   ---xx   flac  0.7227  bd65-1965-revisted-d7t09.flac
+     4:07.20       43617884 B   ---   --   ---xx   flac  0.7012  bd65-1965-revisted-d7t10.flac
+     4:20.35       45946364 B   ---   --   ---xx   flac  0.6881  bd65-1965-revisted-d7t11.flac
+     4:16.72       45327788 B   ---   --   ---xx   flac  0.7103  bd65-1965-revisted-d7t12.flac
+     6:17.00       66502844 B   ---   --   ---xx   flac  0.7354  bd65-1965-revisted-d7t13.flac
+     3:09.48       33452540 B   ---   --   ---xx   flac  0.6934  bd65-1965-revisted-d7t14.flac
+     3:06.55       32939804 B   ---   --   ---xx   flac  0.6345  bd65-1965-revisted-d7t15.flac
+     3:13.02       34049948 B   ---   --   ---xx   flac  0.6510  bd65-1965-revisted-d7t16.flac
+    12:00.12      127036268 B   ---   --   ---xx   flac  0.6372  bd65-1965-revisted-d8t01.flac
+     5:32.73       58736540 B   ---   --   ---xx   flac  0.6842  bd65-1965-revisted-d8t02.flac
+     3:40.72       38977388 B   ---   --   ---xx   flac  0.6814  bd65-1965-revisted-d8t03.flac
+     6:10.65       65420924 B   ---   --   ---xx   flac  0.6392  bd65-1965-revisted-d8t04.flac
+     5:39.70       59964284 B   ---   --   ---xx   flac  0.6814  bd65-1965-revisted-d8t05.flac
+     2:25.05       25589804 B   ---   --   ---xx   flac  0.5761  bd65-1965-revisted-d8t06.flac
+     6:47.13       71825420 B   ---   --   ---xx   flac  0.5880  bd65-1965-revisted-d8t07.flac
+     7:05.40       75064124 B   ---   --   ---xx   flac  0.5890  bd65-1965-revisted-d8t08.flac
+     6:53.50       72970844 B   ---   --   ---xx   flac  0.5755  bd65-1965-revisted-d8t09.flac
+     8:47.62       93108668 B   ---   --   ---xx   flac  0.5553  bd65-1965-revisted-d8t10.flac
+     6:58.18       73777580 B   ---   --   ---xx   flac  0.5632  bd65-1965-revisted-d8t11.flac
+     3:59.65       42312524 B   ---   --   ---xx   flac  0.4303  bd65-1965-revisted-d9t01.flac
+     4:21.40       46134524 B   ---   --   ---xx   flac  0.4495  bd65-1965-revisted-d9t02.flac
+     4:50.50       51273644 B   ---   --   ---xx   flac  0.4475  bd65-1965-revisted-d9t03.flac
+     6:48.05       71983004 B   ---   --   ---xx   flac  0.4535  bd65-1965-revisted-d9t04.flac
+     4:47.45       50732684 B   ---   --   ---xx   flac  0.4567  bd65-1965-revisted-d9t05.flac
+    10:22.55      109850204 B   ---   --   ---xx   flac  0.4591  bd65-1965-revisted-d9t06.flac
+     5:36.47       59380988 B   ---   --   ---xx   flac  0.4774  bd65-1965-revisted-d9t07.flac
+     5:57.40       63068924 B   ---   --   ---xx   flac  0.4707  bd65-1965-revisted-d9t08.flac
+     1:18.65       13912124 B   ---   --   ---xx   flac  0.4521  bd65-1965-revisted-d9t09.flac
+     6:06.65       64715324 B   ---   --   ---xx   flac  0.4615  bd65-1965-revisted-d9t10.flac
+     5:23.35       57059564 B   ---   --   ---xx   flac  0.4597  bd65-1965-revisted-d9t11.flac
+     3:43.28       39403100 B   ---   --   ---xx   flac  0.4661  bd65-1965-revisted-d9t12.flac
+     5:33.27       58804748 B   ---   --   ---xx   flac  0.4555  bd65-1965-revisted-d9t13.flac
+   936:02.29     9907052048 B                            0.4894  (160 files)
+=================== 
+=================== 
+=================== 

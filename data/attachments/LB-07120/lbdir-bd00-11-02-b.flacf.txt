@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-02-b.flacf 
+=================== 
+=================== 
+=================== 
+6c539f2a4e155e069aaf601a79f5c186  dylan2000-11-02-info.txt
+1ab301d9d39d0205f4bda9d0dc6441c4  dylan2000-11-02-posterA.jpg
+688dd705070133d2d0d105e76040a8d5  dylan2000-11-02-posterB.jpg
+566854768ed23ec7c2b73125b465c031  dylan2000-11-02.ffp
+106c079f8d6119ee31b1d3f0b98582ba  dylan2000-11-02.md5
+51432d9c7e0b31c4f923403a6ce15ada  dylan2000-11-02d1t01.flac
+40c52ed18763796eef6ac586b7e44d7a  dylan2000-11-02d1t02.flac
+5ba6940ea5ae6b08ac35868531523e41  dylan2000-11-02d1t03.flac
+ccfcdd20bb204cbe536ecfaa35aae1f9  dylan2000-11-02d1t04.flac
+80ec05830287ae7fd6816bfd2bfa1b7f  dylan2000-11-02d1t05.flac
+9e55baae875ef7e142ddff3f7a8613e6  dylan2000-11-02d1t06.flac
+14ba3b1294736326136270d537957e7f  dylan2000-11-02d1t07.flac
+e852ecf389bdfa0f2db0ff856b7df033  dylan2000-11-02d1t08.flac
+9d351b0d94bedbe0cdbcde71b83a5680  dylan2000-11-02d1t09.flac
+94cf21e46deb0f16b194964236eedbfa  dylan2000-11-02d1t10.flac
+52a30100d31f466969bc4865b4ed792d  dylan2000-11-02d1t11.flac
+a9e220fe0a3c84302a56e025532a42dd  dylan2000-11-02d1t12.flac
+5f0fa164b68564ce56858140ca9b715f  dylan2000-11-02d2t01.flac
+27f7deebfb95275396d96ed015801580  dylan2000-11-02d2t02.flac
+33783703a149929badd7d57ee5776cfd  dylan2000-11-02d2t03.flac
+423bff2ca98266711556a2f513b7d4a2  dylan2000-11-02d2t04.flac
+88cef9b6f5e575e5fc4d916bb158b118  dylan2000-11-02d2t05.flac
+2183be5e09bcab006cb5fb0a88017d0a  dylan2000-11-02d2t06.flac
+c2d8ecdd7b8722fc9c1f8df02216cf40  dylan2000-11-02d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-02-b.flacf 
+=================== 
+=================== 
+=================== 
+dylan2000-11-02d1t01.flac:dccb7ee81217af1a6f77a362df4946f2
+dylan2000-11-02d1t02.flac:82ee913407edaaaa22b8186b5544317f
+dylan2000-11-02d1t03.flac:99ffba43bfedfd869cae817aa3e4caa5
+dylan2000-11-02d1t04.flac:49f56af754233eec42c578d922309b34
+dylan2000-11-02d1t05.flac:fc03470a3c82cc67c5ac9bc645e5b835
+dylan2000-11-02d1t06.flac:83bf5722f81ea974c55c6f125c85e38a
+dylan2000-11-02d1t07.flac:0f72b8af620e80f33c1a1bdb315bfd33
+dylan2000-11-02d1t08.flac:7562017b64ceadc82dcc412b5f7cba11
+dylan2000-11-02d1t09.flac:9cebf2a837a6a9611811614ca6879f94
+dylan2000-11-02d1t10.flac:ce0351a9866b727e00563ed3b7971521
+dylan2000-11-02d1t11.flac:2f0570ffd06c9b6389c2a848dbc4c149
+dylan2000-11-02d1t12.flac:dc441aed8973d3b85f8d5e667968e24c
+dylan2000-11-02d2t01.flac:7ff46a56800e42511cfa9760ec3b9ca3
+dylan2000-11-02d2t02.flac:d79bf803e573b8020833c22b703ff400
+dylan2000-11-02d2t03.flac:066a7630add1e53c688702c591d0e3ee
+dylan2000-11-02d2t04.flac:8d0af11232c030dae4fec767c97846ce
+dylan2000-11-02d2t05.flac:87883f57cbb05b64a734a9f13e3fc2a7
+dylan2000-11-02d2t06.flac:add1236230d09ade4e830fb308b86c4f
+dylan2000-11-02d2t07.flac:98e382ec5612fc0a4209b76801c6a52b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-02-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:09.23       33393740 B   ---   --   ---xx   flac  0.5555  dylan2000-11-02d1t01.flac
+     4:50.68       51315980 B   ---   --   ---xx   flac  0.5820  dylan2000-11-02d1t02.flac
+     7:53.51       83557196 B   ---   --   ---xx   flac  0.5892  dylan2000-11-02d1t03.flac
+     6:23.16       67598876 B   ---   --   ---xx   flac  0.6197  dylan2000-11-02d1t04.flac
+     7:41.52       81442748 B   ---   --   ---xx   flac  0.6631  dylan2000-11-02d1t05.flac
+     3:08.15       33198524 B   ---   --   ---xx   flac  0.5526  dylan2000-11-02d1t06.flac
+     2:51.25       30223244 B   ---   --   ---xx   flac  0.6269  dylan2000-11-02d1t07.flac
+     5:37.45       59552684 B   ---   --   ---xx   flac  0.5004  dylan2000-11-02d1t08.flac
+     5:03.10       53472764 B   ---   --   ---xx   flac  0.6193  dylan2000-11-02d1t09.flac
+     5:32.15       58600124 B   ---   --   ---xx   flac  0.5773  dylan2000-11-02d1t10.flac
+     4:37.57       48996908 B   ---   --   ---xx   flac  0.6373  dylan2000-11-02d1t11.flac
+     9:03.05       95797004 B   ---   --   ---xx   flac  0.5729  dylan2000-11-02d1t12.flac
+     5:45.64       61008572 B   ---   --   ---xx   flac  0.6229  dylan2000-11-02d2t01.flac
+     7:13.58       76517660 B   ---   --   ---xx   flac  0.6303  dylan2000-11-02d2t02.flac
+     4:01.29       42580652 B   ---   --   ---xx   flac  0.4806  dylan2000-11-02d2t03.flac
+     4:33.48       48270140 B   ---   --   ---xx   flac  0.6313  dylan2000-11-02d2t04.flac
+     5:10.12       54712268 B   ---   --   ---xx   flac  0.6128  dylan2000-11-02d2t05.flac
+     5:40.20       60023084 B   ---   --   ---xx   flac  0.6580  dylan2000-11-02d2t06.flac
+     7:57.55       84272204 B   ---   --   ---xx   flac  0.5609  dylan2000-11-02d2t07.flac
+   106:14.68     1124534372 B                            0.5968  (19 files)
+=================== 
+=================== 
+=================== 

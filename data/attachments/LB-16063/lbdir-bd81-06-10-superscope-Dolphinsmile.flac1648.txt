@@ -1,0 +1,96 @@
+===================
+===================
+===================
+=== md5 for: bd81-06-10-superscope-Dolphinsmile.flac1648
+===================
+===================
+===================
+29a4b54df1274df20d92c96bb76d0c19 *01 Gotta Serve Somebody.flac
+e546499a9b5f36553230244dc470d0d8 *02 I Believe In You.flac
+ce3da275a8947c636e48d0c0fdc3967a *03 Like A Rolling Stone.flac
+d3d24b25425ebcc1ef3771151cf0f863 *04 Falling In Love.flac
+f3080181034ff5f82a26bd75473a4ca0 *05 Man Gave Names.flac
+352a9edaeae43dc8cbc0625d8596217f *06 Maggies Farm.flac
+abed5e46e8e5b888a4ca72405cd71d35 *07 Simple Twist Of Fate.flac
+ecc18a22f3b74d7c6eb0e932ed4d771c *08 Ballad Of A Thin Man.flac
+12215a65f7bfc3f3b191a9f3fd3451cf *09 Girl From The North Country.flac
+ba6324a9488f8699e0deeac15520f05b *10 Dead Man Dead Man.flac
+b36e7f97c7b1aa74e9b87680f5aa33f4 *11 Abraham Martin John.flac
+a565ffbc95cd09783743a51bbedc5bae *12 Lenny Bruce.flac
+49747024c8c3ec465c1b4df7fa2d6a9c *13 Covenant Woman.flac
+02506d7b78a44b5ce5f2dd63f06cdee1 *14 Solid Rock.flac
+822f6321dcd1de439cc81c03f2d9b0e4 *15 Just Like A Woman.flac
+8af53e77a2ed9fc9a4b4d7949cf783f0 *16 Watered Down Love.flac
+d2c0600957d7f6194ca9dc93911d0c02 *17 What Can I Do For You.flac
+9dc020dcdead3f514980ac65049f859a *18 When You Gonna Wake Up.flac
+dadefd7271dba80570c9f3f9fa9e7a62 *19 Forever Young.flac
+96aa664856eb93b24a14ffcac30188ef *20 In The Garden.flac
+6715dd17082b5d26452d7e65562eadc0 *21 Blowin In the Wind.flac
+44b745d174ce5108e6d96e91142a24c0 *22 Its All Over Now Baby Blue.flac
+206b72f70d947be928a7341e73ee6fc1 *Bob Dylan Poplar Creek Music Theater Hoffman Estates IL 1981-06-10 DS Archive.ffp
+df86c6ae8b4aa7b91f509f727a411859 *Bob Dylan Poplar Creek Music Theater Hoffman Estates IL 1981-06-10 DS Archive.md5
+206b72f70d947be928a7341e73ee6fc1 *Bob Dylan Poplar Creek Music Theater Hoffman Estates IL 1981-06-10 DS Archive.txt
+509d4e1efd51e3b69665f2e0e8cf5261 *info.txt
+===================
+===================
+===================
+=== ffp for: bd81-06-10-superscope-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Gotta Serve Somebody.flac:fcf5beb0da3f3e1e3b0a1a21233315dc
+02 I Believe In You.flac:b4d6b9f84a9796120fbe07cdb95c3f4e
+03 Like A Rolling Stone.flac:3fb05c9e30961390992d6f628efa8498
+04 Falling In Love.flac:f4edafda750f8ca5e9f7794f420a5893
+05 Man Gave Names.flac:811a3de11e1ce6c24bb2fd033074325b
+06 Maggies Farm.flac:513822cd62edbd45adbfb3bcc6869de7
+07 Simple Twist Of Fate.flac:26bae271436a230dcb467e07cddbdc1a
+08 Ballad Of A Thin Man.flac:3a120cf015f4a6873d906e0c1429f5c2
+09 Girl From The North Country.flac:9d9f7eb7ecea1063a92e6ad0f0fbc898
+10 Dead Man Dead Man.flac:f9a14e06e7dc066268a674919191dcb6
+11 Abraham Martin John.flac:ce2cd924c45c9275fc33b58cd03a1e8b
+12 Lenny Bruce.flac:107a5144a2c5ae5dc7867630f6d343e5
+13 Covenant Woman.flac:d7ea1c9add837b4f5b7e644f347f8f28
+14 Solid Rock.flac:746657fa9b8adb62b68dd00d46dfcfcc
+15 Just Like A Woman.flac:39d297a18eff81fed83fc25314646dd2
+16 Watered Down Love.flac:d63a151b7fb1d77f2298a53dca769dfa
+17 What Can I Do For You.flac:c05f6d199dd85dcf4866df31ed0f2c39
+18 When You Gonna Wake Up.flac:b9f6726962bd7017920af202ae008b9a
+19 Forever Young.flac:415d3bb04dcb75989ed06e346750a766
+20 In The Garden.flac:fbc6248bafef3bdf5d521b41a5fab936
+21 Blowin In the Wind.flac:e4866993d0dcd87072a5f9658deaf414
+22 Its All Over Now Baby Blue.flac:7df7dc91f11e432105e53bb57b16defc
+===================
+===================
+===================
+=== shntool len for: bd81-06-10-superscope-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.635      51769964 B   cxx   --   ---xx   flac  0.6153  01 Gotta Serve Somebody.flac
+     5:06.656      58877936 B   cxx   --   ---xx   flac  0.5520  02 I Believe In You.flac
+     6:14.683      71939096 B   cxx   --   ---xx   flac  0.5835  03 Like A Rolling Stone.flac
+     3:31.470      40602308 B   cxx   --   ---xx   flac  0.5063  04 Falling In Love.flac
+     4:43.671      54464832 B   cxx   --   ---xx   flac  0.5329  05 Man Gave Names.flac
+     3:45.965      43385404 B   cxx   --   ---xx   flac  0.5821  06 Maggies Farm.flac
+     4:12.471      48474464 B   cxx   --   ---xx   flac  0.5371  07 Simple Twist Of Fate.flac
+     3:20.467      38489680 B   cxx   --   ---xx   flac  0.5544  08 Ballad Of A Thin Man.flac
+     4:11.740      48334176 B   cxx   --   ---xx   flac  0.4921  09 Girl From The North Country.flac
+     4:46.020      54915944 B   cxx   --   ---xx   flac  0.5939  10 Dead Man Dead Man.flac
+     3:34.738      41229652 B   cxx   --   ---xx   flac  0.5032  11 Abraham Martin John.flac
+     4:37.605      53300180 B   cxx   --   ---xx   flac  0.5264  12 Lenny Bruce.flac
+     5:33.113      63957732 B   cxx   --   ---xx   flac  0.5833  13 Covenant Woman.flac
+     4:13.217      48617756 B   cxx   --   ---xx   flac  0.6374  14 Solid Rock.flac
+     4:01.251      46320180 B   cxx   --   ---xx   flac  0.5889  15 Just Like A Woman.flac
+     4:35.987      52989624 B   cxx   --   ---xx   flac  0.6011  16 Watered Down Love.flac
+     4:47.580      55215492 B   cxx   --   ---xx   flac  0.5582  17 What Can I Do For You.flac
+     4:13.334      48640140 B   cxx   --   ---xx   flac  0.5718  18 When You Gonna Wake Up.flac
+     4:47.121      55127252 B   cxx   --   ---xx   flac  0.5447  19 Forever Young.flac
+     6:30.446      74965708 B   cxx   --   ---xx   flac  0.5512  20 In The Garden.flac
+     4:54.836      56608596 B   cxx   --   ---xx   flac  0.5685  21 Blowin In the Wind.flac
+     5:18.992      61246572 B   cxx   --   ---xx   flac  0.5458  22 Its All Over Now Baby Blue.flac
+   101:30.999    1169472688 B                            0.5616  (22 files)
+===================
+===================
+===================

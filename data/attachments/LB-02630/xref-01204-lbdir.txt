@@ -1,0 +1,72 @@
+===================
+===================
+===================
+=== md5 for: bd05-04-13-b.flacf
+===================
+===================
+===================
+43206d94790fc6a65ff932c2f351c43f *01 The Wicked Messenger.flac
+d532b26355b3a9c134490a60ace07e15 *02 She Belongs To Me.flac
+623475218b1a7d53a1d3ec6e2548f9df *03 It's Alright, Ma (I'm Only Bleeding).flac
+69ea7ded8d8a3ae3c07d9f1833a309e4 *04 Queen Jane Approximately.flac
+2fe4998687e72b7ff2e2ad936af44185 *05 Cold Irons Bound.flac
+f35e8ceaa5351b34f1de698ecf974a9e *06 Desolation Row.flac
+aac7eea26746b1fb3e8c7ad919c7dbbf *07 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+d9716fed7a9edd64dbd68ca4cae525e1 *08 Man In The Long Black Coat.flac
+dd8c179967f6dab1a66777915aa07ee9 *09 Cat's In The Well.flac
+56bd9ab5aa4356384bf5f74380140936 *10 Ballad Of Hollis Brown (acoustic).flac
+ca8463c9b13a0f2e2a1f292eedb0d1f0 *11 You Ain't Goin' Nowhere.flac
+ed67cafd89550790561459dc2cad0b1d *12 Like A Rolling Stone.flac
+479f1542962f12f3f054785814056260 *13 Just Like Tom Thumb's Blues.flac
+1a3a1cf11442edc9286a4c6bdbe81615 *14 All Along The Watchtower.flac
+151dfbe6ab02c6a60c626029967ec58c *20050413.txt
+7049e94014d91186e0f552bf987ebea6 *Bob Dylan - 2005-04-13 - Buffalo, New York.md5
+52b655e77b617631eca6fb807f19f213 *Buffalo2005back[1].jpg
+10d8d88c81cd4aa3f3028fe4ad8a3e51 *Buffalo2005front[1].jpg
+===================
+===================
+===================
+=== ffp for: bd05-04-13-b.flacf
+===================
+===================
+===================
+01 The Wicked Messenger.flac:9b6dc8a60c9cdc3d7152587bbd050128
+02 She Belongs To Me.flac:2195e72ff30348581bef3b9db07f2f7c
+03 It's Alright, Ma (I'm Only Bleeding).flac:095a06e567737c23176a20cde96be48e
+04 Queen Jane Approximately.flac:75c84e5e11b187908a1b7f4506a0810a
+05 Cold Irons Bound.flac:cfb828824b4b0c1575a9669167b4dc31
+06 Desolation Row.flac:83491bb64f97d08ce4a8a3f054a87a4a
+07 Stuck Inside Of Mobile With The Memphis Blues Again.flac:2ddac7e89ccc3d0eea527765df6f4597
+08 Man In The Long Black Coat.flac:e708cb732e6759c682b7e3dab10add85
+09 Cat's In The Well.flac:0dd54e68ef5721a11047462a13ac6048
+10 Ballad Of Hollis Brown (acoustic).flac:f0be7ba25f9938c9809c021325381bd6
+11 You Ain't Goin' Nowhere.flac:5d4679b36ef4f1aec6b516576ea6171e
+12 Like A Rolling Stone.flac:8730d338d3e506498a597c1a9997b03d
+13 Just Like Tom Thumb's Blues.flac:4f3b100e6a697fb450ce3e6c8a858515
+14 All Along The Watchtower.flac:f82d85d1ac56456313eede984fec4003
+===================
+===================
+===================
+=== shntool len for: bd05-04-13-b.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:30.11       37069916 B   ---   --   ---xx   flac  0.6019  01 The Wicked Messenger.flac
+     6:07.22       64790588 B   ---   --   ---xx   flac  0.5480  02 She Belongs To Me.flac
+     8:21.05       88388204 B   ---   --   ---xx   flac  0.5800  03 It's Alright, Ma (I'm Only Bleeding).flac
+     6:49.48       72260540 B   ---   --   ---xx   flac  0.5180  04 Queen Jane Approximately.flac
+     5:58.17       63191228 B   ---   --   ---xx   flac  0.5759  05 Cold Irons Bound.flac
+    11:13.19      118761932 B   ---   --   ---xx   flac  0.5685  06 Desolation Row.flac
+     8:43.33       92334860 B   ---   --   ---xx   flac  0.6171  07 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     4:31.30       47875004 B   ---   --   ---xx   flac  0.5689  08 Man In The Long Black Coat.flac
+     5:13.45       55319084 B   ---   --   ---xx   flac  0.6000  09 Cat's In The Well.flac
+     5:35.32       59169308 B   ---   --   ---xx   flac  0.4672  10 Ballad Of Hollis Brown (acoustic).flac
+     5:47.20       61257884 B   ---   --   ---xx   flac  0.5385  11 You Ain't Goin' Nowhere.flac
+     7:37.57       80748908 B   ---   --   ---xx   flac  0.5968  12 Like A Rolling Stone.flac
+     7:17.28       77152700 B   ---   --   ---xx   flac  0.5747  13 Just Like Tom Thumb's Blues.flac
+     6:15.14       66182972 B   ---   --   ---xx   flac  0.5827  14 All Along The Watchtower.flac
+    93:01.06      984503128 B                            0.5684  (14 files)
+===================
+===================
+===================

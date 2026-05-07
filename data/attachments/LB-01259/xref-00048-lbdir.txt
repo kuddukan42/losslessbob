@@ -1,0 +1,118 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-01-16-Seeking-Salvation-lk.flacf 
+=================== 
+=================== 
+=================== 
+c1319c66dd0a4360a29374b9fbb45155  1980 Leg 1 DVD 4.md5
+74c02a30bcfa08bd65b1221ffe32a5ff  D1\D1.md5
+d49756e79af741a696b31fd95bd61dd3  D1\Track01.flac
+8c874424bf12920d289024efcb23b440  D1\Track02.flac
+5ebf1adaac44b63133df419a84780db5  D1\Track03.flac
+53acc3ba0a85f03882984f56e0bb10da  D1\Track04.flac
+41ca3c8c8c87a8b4a19e83f7c571960c  D1\Track05.flac
+784ab7eade1d761e47453c08be351d06  D1\Track06.flac
+56f8768abefd7f0174128c34089ebb3a  D1\Track07.flac
+7c7780363e89350e41260634ee11978c  D1\Track08.flac
+8806adea93dc8ec9f4416581a32c8669  D1\Track09.flac
+f88c4307a8f7413ee660f553b122489e  D1\Track10.flac
+0c11bcbfe9c8d8f0594ad23e234058f3  D1\Track11.flac
+39a0971e992078026616d0d9c59a2e04  D1\Track12.flac
+28a4cebe7317883bf0c32e66bb0a6394  D1\Track13.flac
+523d0ce952802588620c08c065daaaf3  D2\D2.md5
+d9461662e8962ca77df804fcc955115c  D2\Track01.flac
+8ce72bb3e28ddfd5a4140b90b6a3a139  D2\Track02.flac
+106175aef47399ae64d40c3da0ca8d26  D2\Track03.flac
+d44de0717e0d9ad488b52bb82457d686  D2\Track04.flac
+1f4a88628558746995d167087efb2003  D2\Track05.flac
+1045e1fbad446619898b51f1071be704  D2\Track06.flac
+6fb6ff383f1be1eedf26de321b563cac  D2\Track07.flac
+f6d1908843a6d945a09c7d9a7de00483  D2\Track08.flac
+a9dcd6d3239908f62d9f80358ee3e3df  D2\Track09.flac
+522d5be2b577c3b044b88b6fb517722b  D2\Track10.flac
+942096c89e8f8fea1c04c9cad0f906a5  D2\Track11.flac
+2a3088b81ba640c9d5cb65a4f1c0fc0e  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-01-16-Seeking-Salvation-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:39a9ff48b7247384bd91cca74db6a2b0
+Track02.flac:e04d9e4d8d0413a16d815c4607501b54
+Track03.flac:5896dbff1afe6ef3e7a52c5ede91a98b
+Track04.flac:d7e56a778dbd8c31366c435180894880
+Track05.flac:6cb3fbd268bf40cea66185149b23a6b5
+Track06.flac:8c5428b9fb6007e2f0e642072181f1fa
+Track07.flac:c494fd48e76da679063768e4af05e8d7
+Track08.flac:a6f62da37492396b5e63f739619e549a
+Track09.flac:890c975f50ad400e36cb5883f9cbdc02
+Track10.flac:a45587aafa1ad2fb26df774a1d12051f
+Track11.flac:0f7ab71a884708949ef8a0cedcd943f4
+Track12.flac:fe1041870c5b8df13fbd35874f0deeed
+Track13.flac:3777e858492e7f553ae6c3b419132e58
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-01-16-Seeking-Salvation-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:a3812430e11d499830a3cb233d90c1b4
+Track02.flac:040a9a2fbec1c8115929a4c15ecf01fc
+Track03.flac:8b05b715149efcbe8ccb4bf63a03e935
+Track04.flac:9371ebcde198cd1acd929e0a37fc60c3
+Track05.flac:d03272f7def1d452387f221b7fc62411
+Track06.flac:bc32d6c26ef3c39b6916d9faf617374d
+Track07.flac:d2b93228701ba2a3cc9d61b43c61298e
+Track08.flac:f2cdd2952db157c0fc01dad33e9e4565
+Track09.flac:8dab118af0365c5cd2734482b749cf63
+Track10.flac:179f0fdb754fd1256e7d94ca5d976291
+Track11.flac:101db5d5c7d3f0b5580418deda7013f7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-01-16-Seeking-Salvation-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.67       76362428 B   ---   --   ---xx   flac  0.6686  Track01.flac
+     5:16.66       55897676 B   ---   --   ---xx   flac  0.5337  Track02.flac
+     5:48.44       61490732 B   ---   --   ---xx   flac  0.6780  Track03.flac
+     4:34.10       48357164 B   ---   --   ---xx   flac  0.4586  Track04.flac
+     5:52.67       62250428 B   ---   --   ---xx   flac  0.5382  Track05.flac
+     6:02.37       63943868 B   ---   --   ---xx   flac  0.6329  Track06.flac
+     6:49.68       72307580 B   ---   --   ---xx   flac  0.6687  Track07.flac
+     6:20.06       67046156 B   ---   --   ---xx   flac  0.5187  Track08.flac
+     4:49.15       51014924 B   ---   --   ---xx   flac  0.6567  Track09.flac
+     5:22.69       56963132 B   ---   --   ---xx   flac  0.5674  Track10.flac
+     5:22.00       56800844 B   ---   --   ---xx   flac  0.6812  Track11.flac
+     4:32.04       47990252 B   ---   --   ---xx   flac  0.5129  Track12.flac
+     4:46.15       50485724 B   ---   --   ---xx   flac  0.6594  Track13.flac
+    72:50.18      770910908 B                            0.6022  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-01-16-Seeking-Salvation-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.26       65858396 B   ---   --   ---xx   flac  0.5641  Track01.flac
+     6:38.11       70233116 B   ---   --   ---xx   flac  0.5630  Track02.flac
+     1:59.30       21062204 B   ---   --   ---xx   flac  0.5854  Track03.flac
+     4:58.54       52694252 B   ---   --   ---xx   flac  0.6459  Track04.flac
+     6:39.47       70494188 B   ---   --   ---xx   flac  0.5965  Track05.flac
+     4:54.23       51915740 B   ---   --   ---xx   flac  0.6182  Track06.flac
+     5:51.33       61994060 B   ---   --   ---xx   flac  0.6213  Track07.flac
+     6:12.20       65667884 B   ---   --   ---xx   flac  0.6557  Track08.flac
+     4:48.59       50942012 B   ---   --   ---xx   flac  0.6424  Track09.flac
+     5:09.03       54514700 B   ---   --   ---xx   flac  0.6027  Track10.flac
+     4:50.36       51240716 B   ---   --   ---xx   flac  0.6011  Track11.flac
+    58:15.42      616617268 B                            0.6084  (11 files)
+=================== 
+=================== 
+=================== 

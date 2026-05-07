@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-02-09-al-ages-catch-dylan-d.flacf 
+=================== 
+=================== 
+=================== 
+bba35199d711e49edf7159ff608ff60a  2002-02-09 LB Comment.txt
+c3b0b88d7e5e08c04d4bc64719cce02f  Bob Dylan - 2002-02-09 - Atlanta.md5
+367ff4078e6397e76061d93b13990b8d  disc one\disc one.ffp
+9b065b17aad21190189693d77b48c77e  disc one\Track01.flac
+c583c0198e9a963be85f52e1368f1890  disc one\Track02.flac
+cddc521b724d3fb1136d7d7481eaa2b0  disc one\Track03.flac
+64dbbcdf7636785768012a54aacdf7bc  disc one\Track04.flac
+b90943c8175392789dc60e897f724bdd  disc one\Track05.flac
+648b7ad76fdb1ee9fa9fdb8e37c651f6  disc one\Track06.flac
+359012cde2b1894e72c68e0bab538c49  disc one\Track07.flac
+ac75e5c9b7f58d337da13a5040bf69c2  disc one\Track08.flac
+995d5d51038f78f51c1101b60b041f62  disc one\Track09.flac
+83e331869bbca22243e9081704d01c1e  disc one\Track10.flac
+3e6873c43a1110bcb306ec79110d9f18  disc one\Track11.flac
+baa23e2118cb1e0bb708280eb7af70b3  disc two\disc two.ffp
+1a5c86744d4bf879c5b5add46a1b2e67  disc two\Track01.flac
+8cf0a299a546c35688c8636194056000  disc two\Track02.flac
+1e32c85bfeb679fa53965ee3abbc3b95  disc two\Track03.flac
+24fd1847a16020ee7dbc1653d6cfa460  disc two\Track04.flac
+07d276a8097adc0f0208a151c81dc854  disc two\Track05.flac
+ae127e9c413ef2e423d93fd981f5839d  disc two\Track06.flac
+165bbcef22bcf4c1bf2ceebeb8566ae1  disc two\Track07.flac
+d073e1b4bf7a2cef274e21641b37a944  disc two\Track08.flac
+b2c25579665c8ea99d6177bd623c95dc  disc two\Track09.flac
+067a6e649f4b5063ded48c0b60e4ce19  disc two\Track10.flac
+6cc391c92150fc154c37ccef9ac2bd98  text\atlanta text.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-02-09-al-ages-catch-dylan-d.flacf\disc one 
+=================== 
+=================== 
+=================== 
+track01.flac:aa3a3c5767ecc4ed2ee6574b99d24073
+track02.flac:3873c0a09d0ca0ec7a8c6f4d274f827d
+track03.flac:0abb219a81a5d7c53e4c00c69e156654
+track04.flac:49c6ca7ad333c46e3a78e76b477eed72
+track05.flac:b168362f4d29a44dac03b9cd72663fdb
+track06.flac:70e6dea2703673ccd8ba9f8cc89d79d0
+track07.flac:ada5d07cd0d880417896ecca42c5ce76
+track08.flac:a9c84cf7b6d0f6822c8f5a2aeb1c4f82
+track09.flac:9d78d4e2dd2ddd304730b9d39d5bc50b
+track10.flac:7d261f31aaf81d9753d1162df44c6b25
+track11.flac:613ef0184b746efd1bf1ee8370e239d5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-02-09-al-ages-catch-dylan-d.flacf\disc two 
+=================== 
+=================== 
+=================== 
+track01.flac:75b4269fca67404d4f42b819094eb9c9
+track02.flac:f5a0928ed9cc74bdd9b65f484584d064
+track03.flac:70b905f3691f28bf9093811213a23fbc
+track04.flac:30ba9398c00487d1c094860e998625b1
+track05.flac:457096b1841a8d1bc5e2900cd2f1d64b
+track06.flac:e473258cf871c2f81bf880b76b94bc61
+track07.flac:af234cc97cc0c755f2b5f13fe3149b9b
+track08.flac:88af1655470df57c71a3a6c9eb779f21
+track09.flac:612aaa340041fee969a1cb41537515b7
+track10.flac:627141dc116ee6158c29fe8459f6b13d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-02-09-al-ages-catch-dylan-d.flacf\disc one 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:00.70       31916684 B   ---   --   ---xx   flac  0.6523  Track01.flac
+     6:21.64       67358972 B   ---   --   ---xx   flac  0.6222  Track02.flac
+     7:46.68       82362380 B   ---   --   ---xx   flac  0.6242  Track03.flac
+     4:05.64       43368572 B   ---   --   ---xx   flac  0.6033  Track04.flac
+     7:20.01       77618396 B   ---   --   ---xx   flac  0.6510  Track05.flac
+     6:19.05       66867404 B   ---   --   ---xx   flac  0.5579  Track06.flac
+     6:44.66       71420876 B   ---   --   ---xx   flac  0.5372  Track07.flac
+     6:22.58       67521260 B   ---   --   ---xx   flac  0.6212  Track08.flac
+     9:17.59       98393612 B   ---   --   ---xx   flac  0.4956  Track09.flac
+     5:19.39       56363372 B   ---   --   ---xx   flac  0.6181  Track10.flac
+     8:48.10       93162764 B   ---   --   ---xx   flac  0.6813  Track11.flac
+    71:27.54      756354292 B                            0.6023  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-02-09-al-ages-catch-dylan-d.flacf\disc two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:38.09       70228412 B   ---   --   ---xx   flac  0.5896  Track01.flac
+     8:02.62       85170668 B   ---   --   ---xx   flac  0.3950  Track02.flac
+     5:47.40       61304924 B   ---   --   ---xx   flac  0.6776  Track03.flac
+     8:56.14       94583372 B   ---   --   ---xx   flac  0.6350  Track04.flac
+     6:06.51       64682396 B   ---   --   ---xx   flac  0.6085  Track05.flac
+     7:46.34       82282412 B   ---   --   ---xx   flac  0.6234  Track06.flac
+     7:26.33       78752060 B   ---   --   ---xx   flac  0.5382  Track07.flac
+     7:01.66       74419676 B   ---   --   ---xx   flac  0.6282  Track08.flac
+     7:09.65       75828524 B   ---   --   ---xx   flac  0.5372  Track09.flac
+     5:52.37       62179868 B   ---   --   ---xx   flac  0.6182  Track10.flac
+    70:48.36      749432312 B                            0.5813  (10 files)
+=================== 
+=================== 
+=================== 

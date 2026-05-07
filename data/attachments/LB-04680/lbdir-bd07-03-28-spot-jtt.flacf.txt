@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-03-28-spot-jtt.flacf 
+=================== 
+=================== 
+=================== 
+37f7dd304543c553be12e2932184c7f6  bd07-03-28-spot-jtt-LB-4680.txt
+f7dd6097e3b5089c61d1de921ef66da3  Disc One\Disc01T01.flac
+aa79e29e23472cc2a1b5595bc9e0059e  Disc One\Disc01T02.flac
+a11630d08d8db744cc0eccbc36f4189d  Disc One\Disc01T03.flac
+9b9a2287b8307092594841ed5616f6ed  Disc One\Disc01T04.flac
+68fcbc9de5b9fada2e66abb32ec82d35  Disc One\Disc01T05.flac
+e7a16cc17f5da55c986faa5b3235489e  Disc One\Disc01T06.flac
+be2909a499005458424b03b4ae43bfbf  Disc One\Disc01T07.flac
+5a112acbbd4cbd86595eab48e335cba5  Disc One\Disc01T08.flac
+4a36f78d181868de31dd101a7def90ed  Disc One\Disc01T09.flac
+0de39a2cf274a85bb4457c946754d007  Disc Two\Disc02T01.flac
+e3c6458166132e07a01a0bdff7648b7d  Disc Two\Disc02T02.flac
+b204f47c0223eee17ae2595b6fb06a0b  Disc Two\Disc02T03.flac
+fd5539d2eb6b47a6f34d636019b6627f  Disc Two\Disc02T04.flac
+ec96d2fdeb875954a9c07744b8ca128a  Disc Two\Disc02T05.flac
+07038efe188217dd7c34e308e8bed931  Disc Two\Disc02T06.flac
+56af70148be263180cdf7044be9b4440  Disc Two\Disc02T07.flac
+9af7377d36b8a001d4e7e01b5a5734a9  Disc Two\Disc02T08.flac
+6754a0d909516189a239a12d385f8a58  Info - Stockholm 28th, Spot (Fixed).txt
+dec606bf677243c9e5510993139d73e3  Stockholm, Sweden 28.03.2007 Spot - F.jpg
+dd7aac3360e736b93970ea812ba1a2b7  Stockholm, Sweden 28.03.2007 Spot - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-03-28-spot-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01T01.flac:b0a0f3df2713b53ba9f0c116aabff3a6
+Disc01T02.flac:a83569dc5a540121969e9d18ebf32b35
+Disc01T03.flac:5700035e34f33c68c7f76f2b3bb160ab
+Disc01T04.flac:0a27b1220c41a6d71e1a37f834fdd943
+Disc01T05.flac:dc3b786aa307f0cf01b6f9b6aeb30c6d
+Disc01T06.flac:c5bb8bf9f4895b8add6737877c526a23
+Disc01T07.flac:32340f9a2edf7c07dce9b6021ff047dd
+Disc01T08.flac:6321422cb73333a2df4f9eec62b276bb
+Disc01T09.flac:9868b42f1c01e1accbb48eb2d2a0d91d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-03-28-spot-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02T01.flac:9762416953b2bd2c3d0f59f7b6ce4b42
+Disc02T02.flac:a1a609a446370142d3ad7157f65a4f45
+Disc02T03.flac:d1be2cf88b4d00f94a47b85f2fe1ebf0
+Disc02T04.flac:37728f40a7542984514134d4d43c03e5
+Disc02T05.flac:972ebe36b66ee9912ecb302f99a6a65a
+Disc02T06.flac:714170efbadae6451591737e47ef2310
+Disc02T07.flac:baf2de1a7d2c8ef4002949005804fb78
+Disc02T08.flac:14597c0a2df62eb96a592ce762c662c9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-03-28-spot-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:16.09       13427612 B   ---   --   ---xx   flac  0.4455  Disc01T01.flac
+     4:16.40       45252524 B   ---   --   ---xx   flac  0.5804  Disc01T02.flac
+     6:40.40       70654124 B   ---   --   ---xx   flac  0.4900  Disc01T03.flac
+     6:14.69       66135932 B   ---   --   ---xx   flac  0.5640  Disc01T04.flac
+     6:56.37       73469468 B   ---   --   ---xx   flac  0.5517  Disc01T05.flac
+     6:24.43       67838780 B   ---   --   ---xx   flac  0.4367  Disc01T06.flac
+     6:43.01       71091596 B   ---   --   ---xx   flac  0.5715  Disc01T07.flac
+     5:40.20       60023084 B   ---   --   ---xx   flac  0.4497  Disc01T08.flac
+     8:03.46       85309436 B   ---   --   ---xx   flac  0.5238  Disc01T09.flac
+    52:16.05      553202556 B                            0.5181  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-03-28-spot-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:16.33       34652060 B   ---   --   ---xx   flac  0.5298  Disc02T01.flac
+     7:52.32       83336108 B   ---   --   ---xx   flac  0.4388  Disc02T02.flac
+     6:24.04       67747052 B   ---   --   ---xx   flac  0.5506  Disc02T03.flac
+     6:50.68       72483980 B   ---   --   ---xx   flac  0.5139  Disc02T04.flac
+     6:06.29       64630652 B   ---   --   ---xx   flac  0.5601  Disc02T05.flac
+     6:55.41       73302476 B   ---   --   ---xx   flac  0.5770  Disc02T06.flac
+     6:17.36       66587516 B   ---   --   ---xx   flac  0.5989  Disc02T07.flac
+     5:58.26       63212396 B   ---   --   ---xx   flac  0.5591  Disc02T08.flac
+    49:41.44      525952240 B                            0.5384  (8 files)
+=================== 
+=================== 
+=================== 

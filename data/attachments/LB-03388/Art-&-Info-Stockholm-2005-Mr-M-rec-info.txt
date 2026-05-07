@@ -1,0 +1,66 @@
+Bob Dylan And His Band At Globe Arena, Stockholm, Sweden
+Oct 17, 2005
+
+Taper: "Mr M" Lineage: DPA 4061-BM mics > Sony M1 DAT.
+Location: Row 4, dead center.
+Received as CD-R aud "Off-Master" from taper. EAC > FLAC frontend >flacf>you
+No additional soundmastering or change of tracking done.
+
+Disc 1 (61:42) tracking:
+
+01 intro - To Be Alone With You
+02 If You See Her, Say Hello
+03 Tweedle Dee & Tweedle Dum
+04 Under The Red Sky
+05 It's Alright,Ma(I'm Only Bleeding)
+06 To Ramona
+07 Cat's In The Well
+08 The Man In Me
+09 Stuck Inside Of Mobile With The Memphis Blues Again
+10 Highway 61 Revisited
+
+
+Disc 2 (46:09) tracking:
+
+01 Bye And Bye
+02 Honest With Me
+03 Every Grain Of Sand
+04 Summer Days
+
+encore
+
+05 applause before encore
+06 Like A Rolling Stone
+07 band intro
+08 All Along The Watchtower
+
+
+bd05-10-17 d1t10.flac:7aca7f98573d80871558343c66e6b45e
+bd05-10-17 d1t01.flac:26b7dc2b3711de5fbc4e271a575e1aa3
+bd05-10-17 d1t02.flac:9a465f1549fa7e355dd51f88bd52336b
+bd05-10-17 d1t03.flac:e586c882dbbce65de3330674cbf234dc
+bd05-10-17 d1t04.flac:13e161d2e121b9f4a1d3cf44792194a6
+bd05-10-17 d1t05.flac:94e5561880799d9e772f778910be6099
+bd05-10-17 d1t06.flac:66ea76dea47e00a09670f4be5f362835
+bd05-10-17 d1t07.flac:ad0dd73188e67cc031e80a6fafef870d
+bd05-10-17 d1t08.flac:b696462a16cafabbb2c6a282d95f040d
+bd05-10-17 d1t09.flac:94b0140c2fdff66a840c8ac1877308b8
+
+bd05-10-17 d2t08.flac:8dd06569b633641b57c7628957170b97
+bd05-10-17 d2t01.flac:ca24d6c661f81d32453e759bfdb8b6a8
+bd05-10-17 d2t02.flac:c20b606e37cd393bc76bd81b07aa9c27
+bd05-10-17 d2t03.flac:641ce63bf4aeb12bc457c09c97e2fb70
+bd05-10-17 d2t04.flac:520f76f812b802f48039e0577ac34095
+bd05-10-17 d2t05.flac:ec20d02e616613a33dcf0db4f2f78de7
+bd05-10-17 d2t06.flac:7de7af966efc450b25f6d330e9b72020
+bd05-10-17 d2t07.flac:55ff92e74e6bcdb2da42f60106cd9319
+
+
+A significant upgrade compared with LB-3345
+
+
+Enjoy the music!
+
+Dec 2005
+
+-ts-

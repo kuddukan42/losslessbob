@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-01-30-d.flacf 
+=================== 
+=================== 
+=================== 
+a90223772ea7771121cebb8c54306824  bd-1990--01-30-LTS.txt
+2dc20042afb83129b61b2664b0bc98a7  bd-1990-01-30-Paris-LTB-d1 (Track 01)-fixed.flac
+ab75183a4add511b43283063799f1fef  bd-1990-01-30-Paris-LTB-d1 (Track 02)-fixed.flac
+5c2f00523a6830b92fb990614c5f63ce  bd-1990-01-30-Paris-LTB-d1 (Track 03)-fixed.flac
+b8d171243640e886c654426b6e9abdaa  bd-1990-01-30-Paris-LTB-d1 (Track 04)-fixed.flac
+d17d9507938c6e15256643bb4bb0111e  bd-1990-01-30-Paris-LTB-d1 (Track 05)-fixed.flac
+50b37f33a2d69e7ec5cdca41a524752f  bd-1990-01-30-Paris-LTB-d1 (Track 06)-fixed.flac
+b75a764de89195f8bd7165ddcacbba71  bd-1990-01-30-Paris-LTB-d1 (Track 07)-fixed.flac
+83a10be74006f934ee877d35fa664df9  bd-1990-01-30-Paris-LTB-d1 (Track 08)-fixed.flac
+f150ce5158f45abd99a8325c9537f6f0  bd-1990-01-30-Paris-LTB-d1 (Track 09)-fixed.flac
+e2e1fe357540d8cc82dd9c73b45549d1  bd-1990-01-30-Paris-LTB-d1 (Track 10)-fixed.flac
+7bb82ada6a460620bbaa41d6a4c97e2a  bd-1990-01-30-Paris-LTB-d1 (Track 11)-fixed.flac
+a51b83d4fa1e9cadb8aca0f02677c25c  bd-1990-01-30-Paris-LTB-d2 (Track 01)-fixed.flac
+d9e0e790c7f2193fd692b47714db36c5  bd-1990-01-30-Paris-LTB-d2 (Track 02)-fixed.flac
+76307400a02f37b256112d85ba79c406  bd-1990-01-30-Paris-LTB-d2 (Track 03)-fixed.flac
+c5329f8fdcfa81d563ea29917678e051  bd-1990-01-30-Paris-LTB-d2 (Track 04)-fixed.flac
+44836eeb84123cebeb34bba85c16be7a  bd-1990-01-30-Paris-LTB-d2 (Track 05)-fixed.flac
+7ca8806b9f948dc751091d1066bf274d  bd-1990-01-30-Paris-LTB-d2 (Track 06)-fixed.flac
+0b2ab317f2e1a8b1095cdabf0ce5eaa3  bd-1990-01-30-Paris-LTB-d2 (Track 07)-fixed.flac
+1953f652b8e6ed34dfce6cc5e81067ef  bd-1990-01-30-Paris-LTB-d2 (Track 08)-fixed.flac
+cd7febcc355b773ea19533e5ef37e607  bd-1990-01-30-Paris-LTB-d2 (Track 09)-fixed.flac
+a6401bd4c8724d122ff605853f669287  bd-1990-01-30-Paris-LTB-d2 (Track 10)-fixed.flac
+f6d804e84216e3260e980370a589be4b  bd-1990-01-30-Paris-LTB-d2 (Track 11)-fixed.flac
+21f9b9a2f3bbdd4ceb5b9e9e59cec8e7  bd-1990-01-30-Paris-LTS.md5
+585d0ada87cd152c92c2cd71d5b4ed0b  bd1990-01-30_paris_back.jpg
+8936a41a02d8b1f6ab9be2ea5c44876c  bd1990-01-30_paris_front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-30-d.flacf 
+=================== 
+=================== 
+=================== 
+bd-1990-01-30-paris-ltb-d1 (track 01)-fixed.flac:f47202bb63c6d3d73a847980242382d6
+bd-1990-01-30-paris-ltb-d1 (track 02)-fixed.flac:57e77b60b3276f97930df6b7bf12782f
+bd-1990-01-30-paris-ltb-d1 (track 03)-fixed.flac:582d594c2f9ae1cbabfdbd4320141d50
+bd-1990-01-30-paris-ltb-d1 (track 04)-fixed.flac:5370c8cdc0b25826156fc1698647e387
+bd-1990-01-30-paris-ltb-d1 (track 05)-fixed.flac:85ebc6c1ff0b40a200c7d198129c3181
+bd-1990-01-30-paris-ltb-d1 (track 06)-fixed.flac:1fd5cd05e52a0ba8cc097cd3aef40279
+bd-1990-01-30-paris-ltb-d1 (track 07)-fixed.flac:88c377d997642c14a44f906c049cbe04
+bd-1990-01-30-paris-ltb-d1 (track 08)-fixed.flac:2d664ddbda88ea792117005c8e6b8aa8
+bd-1990-01-30-paris-ltb-d1 (track 09)-fixed.flac:016b0e4e9c8e214f58dc0663260683da
+bd-1990-01-30-paris-ltb-d1 (track 10)-fixed.flac:4684c8b606def8df8070b0f3bca9fb09
+bd-1990-01-30-paris-ltb-d1 (track 11)-fixed.flac:abdb2410b8fbff45d43c4f5bed240eeb
+bd-1990-01-30-paris-ltb-d2 (track 01)-fixed.flac:544ef73c22d38e2874c352ea739b75de
+bd-1990-01-30-paris-ltb-d2 (track 02)-fixed.flac:ae93b4e1c79a45089e18a39dba82d7d4
+bd-1990-01-30-paris-ltb-d2 (track 03)-fixed.flac:0da9a62295c5b191ffe57f19d813dc25
+bd-1990-01-30-paris-ltb-d2 (track 04)-fixed.flac:ef025d4f056a3a9422d80f09816d5931
+bd-1990-01-30-paris-ltb-d2 (track 05)-fixed.flac:a123418c6187cca595f6762c3e2fe276
+bd-1990-01-30-paris-ltb-d2 (track 06)-fixed.flac:8432ff130ac2404bcd5caa325f63523e
+bd-1990-01-30-paris-ltb-d2 (track 07)-fixed.flac:0ce914772720a7c29caa376e55a19a44
+bd-1990-01-30-paris-ltb-d2 (track 08)-fixed.flac:3de56d0ce437c702ee53b7f9baf6999c
+bd-1990-01-30-paris-ltb-d2 (track 09)-fixed.flac:fd18a0899b1bbbe1c2e8cec5c09b988d
+bd-1990-01-30-paris-ltb-d2 (track 10)-fixed.flac:149da114fb3617ad7cfc344070699e9c
+bd-1990-01-30-paris-ltb-d2 (track 11)-fixed.flac:9a0fbe8239b43267b4c2de03b124987c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-30-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:16.06       34588556 B   ---   --   ---xx   flac  0.6091  bd-1990-01-30-Paris-LTB-d1 (Track 01)-fixed.flac
+     4:50.13       51186620 B   ---   --   ---xx   flac  0.5908  bd-1990-01-30-Paris-LTB-d1 (Track 02)-fixed.flac
+     4:18.73       45682940 B   ---   --   ---xx   flac  0.6157  bd-1990-01-30-Paris-LTB-d1 (Track 03)-fixed.flac
+     3:21.12       35484668 B   ---   --   ---xx   flac  0.6174  bd-1990-01-30-Paris-LTB-d1 (Track 04)-fixed.flac
+     5:11.30       54931004 B   ---   --   ---xx   flac  0.5527  bd-1990-01-30-Paris-LTB-d1 (Track 05)-fixed.flac
+     2:51.09       30185612 B   ---   --   ---xx   flac  0.5488  bd-1990-01-30-Paris-LTB-d1 (Track 06)-fixed.flac
+     4:16.55       45287804 B   ---   --   ---xx   flac  0.5655  bd-1990-01-30-Paris-LTB-d1 (Track 07)-fixed.flac
+     3:45.37       39777068 B   ---   --   ---xx   flac  0.6096  bd-1990-01-30-Paris-LTB-d1 (Track 08)-fixed.flac
+     5:15.05       55577804 B   ---   --   ---xx   flac  0.4877  bd-1990-01-30-Paris-LTB-d1 (Track 09)-fixed.flac
+     5:15.53       55690700 B   ---   --   ---xx   flac  0.5080  bd-1990-01-30-Paris-LTB-d1 (Track 10)-fixed.flac
+     6:48.29       72039452 B   ---   --   ---xx   flac  0.4939  bd-1990-01-30-Paris-LTB-d1 (Track 11)-fixed.flac
+     5:14.24       55446092 B   ---   --   ---xx   flac  0.5036  bd-1990-01-30-Paris-LTB-d2 (Track 01)-fixed.flac
+     4:03.64       43015772 B   ---   --   ---xx   flac  0.5720  bd-1990-01-30-Paris-LTB-d2 (Track 02)-fixed.flac
+     3:04.55       32587004 B   ---   --   ---xx   flac  0.5797  bd-1990-01-30-Paris-LTB-d2 (Track 03)-fixed.flac
+     4:36.20       48733484 B   ---   --   ---xx   flac  0.5234  bd-1990-01-30-Paris-LTB-d2 (Track 04)-fixed.flac
+     4:54.39       51953372 B   ---   --   ---xx   flac  0.5456  bd-1990-01-30-Paris-LTB-d2 (Track 05)-fixed.flac
+     5:54.22       62497388 B   ---   --   ---xx   flac  0.5401  bd-1990-01-30-Paris-LTB-d2 (Track 06)-fixed.flac
+     4:07.30       43641404 B   ---   --   ---xx   flac  0.5989  bd-1990-01-30-Paris-LTB-d2 (Track 07)-fixed.flac
+     4:20.70       46028684 B   ---   --   ---xx   flac  0.5580  bd-1990-01-30-Paris-LTB-d2 (Track 08)-fixed.flac
+     6:13.74       65971292 B   ---   --   ---xx   flac  0.6015  bd-1990-01-30-Paris-LTB-d2 (Track 09)-fixed.flac
+     7:20.52       77738348 B   ---   --   ---xx   flac  0.5321  bd-1990-01-30-Paris-LTB-d2 (Track 10)-fixed.flac
+     4:05.65       43370924 B   ---   --   ---xx   flac  0.6129  bd-1990-01-30-Paris-LTB-d2 (Track 11)-fixed.flac
+   103:07.12     1091415992 B                            0.5567  (22 files)
+=================== 
+=================== 
+=================== 

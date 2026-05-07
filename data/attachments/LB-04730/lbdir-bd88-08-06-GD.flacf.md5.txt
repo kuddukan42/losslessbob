@@ -1,0 +1,17 @@
+0ebf2a09ec20316e50436fcfed2f85e6  bd1988-08-06-Carlsbad-GD.txt
+f8853498973bb7e9926ac703b4191254  Titel 01.flac
+bfb29e42561cb68214ffa4fc869f836f  Titel 02.flac
+67bb18f687391fe4f23c14525b8637e8  Titel 03.flac
+7439259639880e89e83276f900ea74bd  Titel 04.flac
+a648417e811d88c204e5e3463def520d  Titel 05.flac
+c1f647a618137a5313050895adc23793  Titel 06.flac
+833796dd7bab75d3a61704861bfd068f  Titel 07.flac
+30940c890757bb9aa1a6fa4f4edcabc7  Titel 08.flac
+7d4e034eafcc6d7a8d0374aaeaef1c23  Titel 09.flac
+8afa0e2cb412b072adf1eddb773aa4cd  Titel 10.flac
+95b3838e26e59343d228eb70a5e1e411  Titel 11.flac
+2aed09c5fbb776ec437ad8419e82f10b  Titel 12.flac
+1409a1ac841e62adec67176ae0696d16  Titel 13.flac
+e557b88300aad42abd2449f6325dda9c  Titel 14.flac
+8c41de54fde4732615b004bd40958ded  Titel 15.flac
+98ef63d6fcfa96550495e0cf188da07e  Titel 16.flac

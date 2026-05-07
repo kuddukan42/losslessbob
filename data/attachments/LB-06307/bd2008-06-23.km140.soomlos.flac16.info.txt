@@ -1,0 +1,60 @@
+Bob Dylan
+Feria de Muestras
+Zaragoza, Spain
+June 23, 2008
+
+Disc 1:
+01. introduction
+02. I'll Be Your Baby Tonight
+03. Don't Think Twice, It's All Right
+04. Just Like Tom Thumb's Blues
+05. The Levee's Gonna Break
+06. Shelter From The Storm
+07. Cry A While
+08. Just Like A Woman
+09. Things Have Changed
+10. Beyond The Horizon
+11. Honest With Me
+12. When The Deal Goes Down
+
+Disc 2:
+01. Highway 61 Revisited
+02. A Hard Rain's A-Gonna Fall
+03. Summer Days
+04. All Along The Watchtower
+(encore)
+05. Thunder On The Mountain
+06. band introduction
+07. Like A Rolling Stone
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - lead guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - rhythm guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann km140's > lunatec v3 > m-audio mt1 (24/48)
+
+ffp
+bd2008-06-23d1t01.flac:42f3458409211bfc75a56ecb26bd05a9
+bd2008-06-23d1t02.flac:a93513eb38fb9d390e83e11180bc2c20
+bd2008-06-23d1t03.flac:f56bfa66a0790b7b0763164d4dd645c7
+bd2008-06-23d1t04.flac:48ae43b936758109ffd7ce374849b56a
+bd2008-06-23d1t05.flac:fb5ed4fe5c2d6e403b76ce51b31ed659
+bd2008-06-23d1t06.flac:95c06052cdc6e33f492e1512698bf26c
+bd2008-06-23d1t07.flac:319d6d3a54399ccebf790871f56614d5
+bd2008-06-23d1t08.flac:3203b94a7e7f39c66fb29a293ab63982
+bd2008-06-23d1t09.flac:7201170ad4588c79c128c46d8b0d6665
+bd2008-06-23d1t10.flac:7792505a51d474e846800a621e9491ca
+bd2008-06-23d1t11.flac:f935436d3cd92ed1d0a30c1dbd9698eb
+bd2008-06-23d1t12.flac:567be261a5644f1dca0ad76db5aaa6f7
+bd2008-06-23d2t01.flac:49c1b65959058293ae08e66124d3fb76
+bd2008-06-23d2t02.flac:2820bf4c667beb38dd93c1ff35e415dc
+bd2008-06-23d2t03.flac:269e4dd8439d8e3b516c598981711e4e
+bd2008-06-23d2t04.flac:9dd66adc494ad01b82c03cafd6722d39
+bd2008-06-23d2t05.flac:57197229d720cf7451b25041cdfc9f60
+bd2008-06-23d2t06.flac:c3621cd09c9e8b0e1466c8f3c24677d3
+bd2008-06-23d2t07.flac:31f282254acfb74ad56e704fe48c07be

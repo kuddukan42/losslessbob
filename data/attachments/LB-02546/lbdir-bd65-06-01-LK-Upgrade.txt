@@ -1,0 +1,66 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-06-01-LK-Upgrade 
+=================== 
+=================== 
+=================== 
+368428136bbd9fd19655a116f9f1a0c5  bd1965-06-01 bbc_LK upgrade.txt
+2d6950b680d0df54adcf157d6dd9b7e7  bd1965-06-01 bbc_t01.shn
+ae121a2089fa7968c78111050571dfa5  bd1965-06-01 bbc_t02.shn
+4a8a2e50176a8e76f56888da4ca9bef5  bd1965-06-01 bbc_t03.shn
+cca7846707f41e0deb86ac5eb972fabd  bd1965-06-01 bbc_t04.shn
+5e571663a2b4f0d26a50945f9a6c19e8  bd1965-06-01 bbc_t05.shn
+da948ffd2b6cfe5128b8cfe17811c64a  bd1965-06-01 bbc_t06.shn
+1ab160e28cd4b290af0807aa13d60d5f  bd1965-06-01 bbc_t07.shn
+c5dbc153c6254fea92e294dacd5c69b8  bd1965-06-01 bbc_t08.shn
+db9ccc9f55da16ce5d6ee0c31f8430a4  bd1965-06-01 bbc_t09.shn
+ea2b6a7f7ca1793e863f2d2b16e4fe36  bd1965-06-01 bbc_t10.shn
+90bbbbf81963a9eb281d590937cd114f  bd1965-06-01 bbc_t11.shn
+05ea1d574dcb79a36e4f0c2d931e4d55  bd1965-06-01 bbc_t12.shn
+333be609784df0fe80f740789dbef5d1  bd65-06-01-LK-Upgrade.txt
+0f6c9d6755abdbf4de72aa1ceed5f2b7  shn md5 no seek tables.md5
+93de14bcecef89a87336a6e7e17a5986  STG - Bob Dylan - 6-1-65 BBC (LK Upgrade).rtf
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd65-06-01-LK-Upgrade 
+=================== 
+=================== 
+=================== 
+0c8e4eaab1c9798cf88677bfef3a7a79  [shntool]  bd1965-06-01_bbc_t01.wav
+cc222d087ec14eeb5abecc26a13a303a  [shntool]  bd1965-06-01_bbc_t02.wav
+c4a6434925467529c40a5202d588b605  [shntool]  bd1965-06-01_bbc_t03.wav
+75e6e34d6fc195c132b3176eb10764da  [shntool]  bd1965-06-01_bbc_t04.wav
+cfaf992a0388a33560e436780082a232  [shntool]  bd1965-06-01_bbc_t05.wav
+1887218980b6fca678d86e459ea58002  [shntool]  bd1965-06-01_bbc_t06.wav
+702eaff84cfe126b801457a876a894d9  [shntool]  bd1965-06-01_bbc_t07.wav
+3dd6a5d41bc1da4d6b7f77045ff1b3b7  [shntool]  bd1965-06-01_bbc_t08.wav
+e2ef117d30d4060ce49dde17a3f895b8  [shntool]  bd1965-06-01_bbc_t09.wav
+ddaa83a5ff79b4a50ebdcfe3cbdac3e1  [shntool]  bd1965-06-01_bbc_t10.wav
+1d2ca74e00093d798782418bb746d497  [shntool]  bd1965-06-01_bbc_t11.wav
+1a6a85c4d4c4c4690037a9e83e4bb85e  [shntool]  bd1965-06-01_bbc_t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-06-01-LK-Upgrade 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.47       56205788 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t01.wav
+     6:27.12       68295068 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t02.wav
+     7:16.03       76917500 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t03.wav
+     2:47.09       29480012 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t04.wav
+     6:22.42       67483628 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t05.wav
+     4:12.31       44525756 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t06.wav
+     3:51.08       40767260 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t07.wav
+     4:22.26       46277996 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t08.wav
+     6:44.54       71392652 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t09.wav
+     9:08.64       96817772 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t10.wav
+     4:47.33       50704460 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t11.wav
+     5:07.62       54300668 B   ---   --   -----    wav  1.0000  bd1965-06-01_bbc_t12.wav
+    66:26.16      703168560 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

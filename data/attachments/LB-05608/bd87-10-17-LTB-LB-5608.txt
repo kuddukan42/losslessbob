@@ -1,0 +1,8 @@
+Bob Dylan, 10/17/87, London, England, Wembley Arena, 2CDR
+
+LB-5608, (76min+21min), Taper: LTB, Lineage: Analogue Master > DAT > CD-R > Flac, Fixes:, d1t16 tiny drop (less than 1/4 of a second) patched from another version of this same recording., I fixed a really bad pop at the tape flip between d1t08/09 and in d2t01 during the encore pause., Apart from that I did not harm the sound of the recording in any way.; bittorrent download 12/07; same recording as LB-2305 with similar wav and spectral view except this has a little lower levels as that seems raised to the maximum; this has more crowd and tuning at the beginning of d1t1 and more crowd at the end of d2t4; (did not listen to all of this)
+
+DISC ONE --- 75:22.20, 01. [05:47.38] The Times They Are A-Changin', 02. [05:05.19] Like A Rolling Stone, 03. [04:12.35] Maggie's Farm, 04. [06:45.29] Forever Young, 05. [04:35.02] Dead Man, Dead Man, 06. [05:19.20] I Dreamed I Saw St. Augustine, 07. [05:33.71] Simple Twist Of Fate, 08. [04:50.22] I'll Be Your Baby Tonight, - tape flip -, 09. [03:13.44] Watching The River Flow, 10. [03:42.32] Gotta Serve Somebody, 11. [04:48.64] Man Of Peace, 12. [04:36.56] I And I, 13. [03:19.25] Don't Think Twice, It's All Right, 14. [03:56.65] Tomorrow Is A Long Time, 15. [04:05.28] Heart Of Mine, 16. [05:29.70] In The Garden, DISC TWO --- 21:00.32, 01. [08:15.02] Knockin' On Heaven's Door, - encore / tape flip -, 02. [04:06.12] Chimes Of Freedom, 03. [03:47.34] Rainy Day Women # 12 & 35, 04. [04:51.59] Go Down, Moses (trad.)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

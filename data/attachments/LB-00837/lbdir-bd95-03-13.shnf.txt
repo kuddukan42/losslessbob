@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-13.shnf 
+=================== 
+=================== 
+=================== 
+0cf6388be0f624a009a54ac8bf2343f9  1-01 - Crash On The Levee (95-03-13 Prague, Czech Republic).shn
+a292d068d1e7dc867b9c71e3cb713efa  1-02 - Lay Lady Lay (95-03-13 Prague, Czech Republic).shn
+b7b8c15b5f37440c2671a3f7f804db01  1-03 - All Along The Watchtower (95-03-13 Prague, Czech Repu.shn
+0d924a28371ecf60fd07ebbea0d0f9d4  1-04 - Just Like A Woman (95-03-13 Prague, Czech Republic).shn
+1613edbf8ba039d4068d790a8e804dda  1-05 - Tangled Up In Blue (95-03-13 Prague, Czech Republic).shn
+c28a0301cb29864331892c3eaab962d8  1-06 - License To Kill (95-03-13 Prague, Czech Republic).shn
+b80f1816c864396909c7465abb1f0cef  1-07 - Mr. Tambourine Man (95-03-13 Prague, Czech Republic).shn
+2639d4db93dd560e5a887435cc4240ca  1-08 - Times They Are A-Changin' (95-03-13 Prague, Czech Rep.shn
+ad72ad806caf8db90b0de5fb1863f1e3  1-09 - Boots Of Spanish Leather (95-03-13 Prague, Czech Repu.shn
+a3ed9223c19d19d6b8f6c72ca8261d8c  1-10 - God Knows (95-03-13 Prague, Czech Republic).shn
+53a1b6af1ed8338d445903ef74092f4d  2-01 - Man In The Long Black Coat (95-03-13 Prague, Czech Re.shn
+0348d98ef3790a55bfdd74660086c3cb  2-02 - Maggie's Farm (95-03-13 Prague, Czech Republic).shn
+f486e7624b59e5451e05b4741804d5fa  2-03 - Like A Rolling Stone (95-03-13 Prague, Czech Republic.shn
+aa5d15e5225b941412a470b645cb5113  95-03-13_Prague, Czech Republic-D1.md5
+d23828a07e8c39ae94d8b13235991628  95-03-13_Prague, Czech Republic-D2.md5
+b70e41cbff6fd3a00d9c2af146569697  95-03-13_Prague, Czech Republic.rtf
+afdee39c0adab35181a9df62102d8a0a  bd95-03-13.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-03-13.shnf 
+=================== 
+=================== 
+=================== 
+6c3c6080293ff43faddf8ab978966ffe  [shntool]  1-01_-_Crash_On_The_Levee_(95-03-13_Prague,_Czech_Republic).wav
+be371506fd7134ad7a63fee8cd70912f  [shntool]  1-02_-_Lay_Lady_Lay_(95-03-13_Prague,_Czech_Republic).wav
+7bfdbb9beedfac29bfbb0df7626a4e27  [shntool]  1-03_-_All_Along_The_Watchtower_(95-03-13_Prague,_Czech_Repu.wav
+0f1ee032f1b2e9f956e72313cbb02d67  [shntool]  1-04_-_Just_Like_A_Woman_(95-03-13_Prague,_Czech_Republic).wav
+c75dee20f1839b0d48df3b4bf4e669c8  [shntool]  1-05_-_Tangled_Up_In_Blue_(95-03-13_Prague,_Czech_Republic).wav
+c34d38977a3b14f081591944df069637  [shntool]  1-06_-_License_To_Kill_(95-03-13_Prague,_Czech_Republic).wav
+1895aa6933ce8d8a505f35ed9cf21c8d  [shntool]  1-07_-_Mr._Tambourine_Man_(95-03-13_Prague,_Czech_Republic).wav
+870fd4c4b3f1dda23ac861449c337715  [shntool]  1-08_-_Times_They_Are_A-Changin'_(95-03-13_Prague,_Czech_Rep.wav
+c49b167a6375e0fb98ea60ff598d053a  [shntool]  1-09_-_Boots_Of_Spanish_Leather_(95-03-13_Prague,_Czech_Repu.wav
+5a511c0ed33ac8e5d20e4e36366f74d4  [shntool]  1-10_-_God_Knows_(95-03-13_Prague,_Czech_Republic).wav
+b3aa9ffc3dd2cbb1884525a1e1d905da  [shntool]  2-01_-_Man_In_The_Long_Black_Coat_(95-03-13_Prague,_Czech_Re.wav
+6be12fd4cf6195f236cc2e7d4f14d737  [shntool]  2-02_-_Maggie's_Farm_(95-03-13_Prague,_Czech_Republic).wav
+3e19f21a791d76d9b9c2b207ccad9e23  [shntool]  2-03_-_Like_A_Rolling_Stone_(95-03-13_Prague,_Czech_Republic.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-13.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.64       53599772 B   ---   --   ---xx    shn  0.6666  1-01 - Crash On The Levee (95-03-13 Prague, Czech Republic).shn
+     5:33.47       58851788 B   ---   --   ---xx    shn  0.5974  1-02 - Lay Lady Lay (95-03-13 Prague, Czech Republic).shn
+     6:07.04       64748252 B   ---   --   ---xx    shn  0.6490  1-03 - All Along The Watchtower (95-03-13 Prague, Czech Repu.shn
+     7:03.40       74711324 B   ---   --   ---xx    shn  0.5875  1-04 - Just Like A Woman (95-03-13 Prague, Czech Republic).shn
+    10:50.68      114819980 B   ---   --   ---xx    shn  0.6105  1-05 - Tangled Up In Blue (95-03-13 Prague, Czech Republic).shn
+     5:15.03       55573100 B   ---   --   ---xx    shn  0.5447  1-06 - License To Kill (95-03-13 Prague, Czech Republic).shn
+     7:16.68       77070380 B   ---   --   ---xx    shn  0.4860  1-07 - Mr. Tambourine Man (95-03-13 Prague, Czech Republic).shn
+     8:05.16       85591676 B   ---   --   ---xx    shn  0.5733  1-08 - Times They Are A-Changin' (95-03-13 Prague, Czech Rep.shn
+     7:13.14       76414172 B   ---   --   ---xx    shn  0.4685  1-09 - Boots Of Spanish Leather (95-03-13 Prague, Czech Repu.shn
+     5:45.57       60992108 B   ---   --   ---xx    shn  0.6510  1-10 - God Knows (95-03-13 Prague, Czech Republic).shn
+     7:34.65       80238524 B   ---   --   ---xx    shn  0.5533  2-01 - Man In The Long Black Coat (95-03-13 Prague, Czech Re.shn
+    10:23.02      109901948 B   ---   --   ---xx    shn  0.6445  2-02 - Maggie's Farm (95-03-13 Prague, Czech Republic).shn
+     7:09.41       75772076 B   ---   --   ---xx    shn  0.6703  2-03 - Like A Rolling Stone (95-03-13 Prague, Czech Republic.shn
+    93:22.39      988285100 B                            0.5921  (13 files)
+=================== 
+=================== 
+=================== 

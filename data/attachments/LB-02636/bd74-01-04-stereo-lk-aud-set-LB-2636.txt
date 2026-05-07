@@ -1,0 +1,12 @@
+Bob Dylan, 1/4/74, Chicago Stadium, Chicago, Illinois, 2CDR
+
+LB-2636, (56min+60min), from lk aud set; The stereo master contained many, many RH channel 'drop outs'., These have been repaired by using the LH channel and adding some 'ambiance' -, so the mono snippit is less abrupt., CD > EAC > CoolEdit 2000 > channel repairs > Flac.; abrupt start on d1t1, background talking d2t2, d2t3, d2t5;  hiss band at 16k; very good to excellent sound [B+]
+
+has a few spots of background scratchiness static like on d2t3 or d2t5 2:16, d2t11 1:3x, 2:0x
+
+1. Hero Blues, 2. Lay Lady Lay, 3. Just Like Tom Thumb's Blues, 4. It Ain't Me Babe, 5. Tough Mama, 6. Ballad Of A Thin Man, 7. Stage Fright (the Band), 8. The Night they Drove Old Dixie Down (the Band), 9. King Harvest (has surely come)(the Band), 10. Long Black Veil (the Band), 11. I shall be released (the Band), 12. Up on Cripple Creek (the Band), 13. All Along The Watchtower, 14. Leopard-Skin Pill-Box Hat, 15. Knockin' On Heaven's Door, 
+
+<Disk 2>, 16. The Times They Are A-Changin', (solo), 17. Love Minus Zero/No Limit, (solo), 18. The Lonesome Death of Hattie Carroll - (solo), 19. Nobody 'Cept You, (solo), 20. It's Alright Ma (I'm Only Bleeding), (solo), 21. Rag Mama Rag (the Band), 22. When you Awake (the Band), 23. The Shape I'm in (the Band), 24. The Weight (the Band), 25. Forever Young, 26. Something There Is About You, 27. Like A Rolling Stone, 28. Maggie's Farm
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd24-09-08-MK21-BabyNBox-A10.flac24
+===================
+===================
+===================
+159a6425346ae360bb1844a00b2eb598 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24.ffp
+f977d39b6626cade81a4548e8bb7dc42 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_01.flac
+e211207bac39bd26958cd4333fdbe103 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_02.flac
+5bd27836b583737203dd909e54f44397 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_03.flac
+7b99f963b5ab8ee4a40a7c065ccf7602 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_04.flac
+4b56c6491c9bb72bb278ba38ee555713 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_05.flac
+81d10cad12f48af2da36412bab8ecf70 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_06.flac
+efdab3f9bb42c64de5227291893cf116 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_07.flac
+5f63a60b1c7df5c9e0dbaf166f3e1ddc *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_08.flac
+bd98642af0957a6cc626a6ea5ac5be24 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_09.flac
+71e7156b61125c41f00b1dc14584755d *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_10.flac
+989d7bf757ff4664db151d3a234b9f8b *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_11.flac
+ea3fb49ccbfde7b42884abf03ceca3ea *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_12.flac
+d827919f6696117eef61707a59e40412 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_13.flac
+402787281ee6f1733e4609c7bf104ee3 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_14.flac
+9d71b9f79f98e9c409c87748d1f84a18 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_15.flac
+90630d2d0ac6f24d99c093755859655e *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_16.flac
+63468d27f7bf2eab99d9ddb1c97a80f8 *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_17.flac
+a4d052d5498bfbc62fba8919758384ad *BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_text.txt
+===================
+===================
+===================
+=== ffp for: bd24-09-08-MK21-BabyNBox-A10.flac24
+===================
+===================
+===================
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_01.flac:46cb7fddca6fb2beff8bb58d818dfb74
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_02.flac:20292301cb547a265bd4fbfc7f0a82a0
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_03.flac:6c0de05faf17335b94ad2514dc3a09ec
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_04.flac:8cbadaa13a3f444b45e8e23b64a18353
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_05.flac:09a939bccf22c83c62a34c5c20aa2cec
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_06.flac:e8f3993d43aed784ffb93b7ad6898bc4
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_07.flac:e5105fe5185d697d3ef0a06f3ef287de
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_08.flac:3230ac00c6d6dadfd4da26f4c30a493b
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_09.flac:107bc4bb4f847aa7b58fa29f8f435842
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_10.flac:659e5156b4d7db2e37abeb41019b3fbd
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_11.flac:2ee66600c062fe4f557ab079ab9f5efa
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_12.flac:1ed87746cbb5a21bfebe7e6ec47a576c
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_13.flac:7e0ca67666d7f956cfae829abeee96c2
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_14.flac:bd97879ee23b2d0f71f87788e6e5279c
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_15.flac:2c8e981cfea1170b2e27870612469b7f
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_16.flac:3e4f168a5a01a1097409446289c82c7b
+BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_17.flac:1779eaf6c39c09b88d4f3c2fbd8d099d
+===================
+===================
+===================
+=== shntool len for: bd24-09-08-MK21-BabyNBox-A10.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:15.531      43505690 B   cxx   --   ---xx   flac  0.5768  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_01.flac
+     4:28.348     154568732 B   cxx   --   ---xx   flac  0.6036  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_02.flac
+     4:25.726     153058436 B   cxx   --   ---xx   flac  0.5865  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_03.flac
+     4:17.941     148573982 B   cxx   --   ---xx   flac  0.5902  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_04.flac
+     2:28.087      85297982 B   cxx   --   ---xx   flac  0.6059  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_05.flac
+     2:49.277      97503596 B   cxx   --   ---xx   flac  0.5750  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_06.flac
+     7:27.077     257516198 B   cxx   --   ---xx   flac  0.5955  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_07.flac
+     5:27.921     188882726 B   cxx   --   ---xx   flac  0.5794  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_08.flac
+     4:47.491     165594914 B   cxx   --   ---xx   flac  0.5988  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_09.flac
+     5:34.211     192505352 B   cxx   --   ---xx   flac  0.5960  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_10.flac
+     5:27.557     188672786 B   cxx   --   ---xx   flac  0.5878  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_11.flac
+     5:05.384     175901138 B   cxx   --   ---xx   flac  0.5990  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_12.flac
+     3:58.409     137323784 B   cxx   --   ---xx   flac  0.5747  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_13.flac
+     4:03.947     140513348 B   cxx   --   ---xx   flac  0.5976  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_14.flac
+     4:19.755     149619086 B   cxx   --   ---xx   flac  0.5894  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_15.flac
+     4:46.649     165109592 B   cxx   --   ---xx   flac  0.5833  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_16.flac
+     6:17.563     217476086 B   cxx   --   ---xx   flac  0.6055  BobDylan2024-09-08_MK21-BabyNBox-A10_Flac24_17.flac
+    77:00.873    2661623428 B                            0.5920  (17 files)
+===================
+===================
+===================

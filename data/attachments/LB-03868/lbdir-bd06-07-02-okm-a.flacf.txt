@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-02-okm-a.flacf 
+=================== 
+=================== 
+=================== 
+0de7d78c29bff8f0a2b9d83e5020e4c4  bd06-07-02-okm-a-LB-3868.txt
+ec9fb6baebe1a84ae870e01eb32f75d6  bd2006-07-02_AC_d1t01.flac
+132a63df10440b6938dabe61a24a801d  bd2006-07-02_AC_d1t02.flac
+201a106db4f6896926a930b2d3ce09ad  bd2006-07-02_AC_d1t03.flac
+b089ac154a852ea08c1d4900bb2f1bbd  bd2006-07-02_AC_d1t04.flac
+d1dfd627b38131f8df5632468d1584c5  bd2006-07-02_AC_d1t05.flac
+fd82bb6f93b4433c56033cc42fbeeede  bd2006-07-02_AC_d1t06.flac
+f1a743126ecb8b1749da6717c26fed09  bd2006-07-02_AC_d1t07.flac
+b29f4a5bfefcbd57068c589d490b07c7  bd2006-07-02_AC_d1t08.flac
+5a85fc5eeeffa579df1d1695ef6f1cde  bd2006-07-02_AC_d2t01.flac
+da19f7e556b01077125bbc048ec7a86c  bd2006-07-02_AC_d2t02.flac
+3ca6d5062831f7891267cb58fa81d732  bd2006-07-02_AC_d2t03.flac
+f4e6fa16f58a11cb93815cb1cc1d07d0  bd2006-07-02_AC_d2t04.flac
+14317366081a645c26f7f11e8aa1e7c7  bd2006-07-02_AC_d2t05.flac
+0a917dfbad2afcad185351931e311691  bd2006-07-02_AC_d2t06.flac
+925e88746aa363c640860957f883045f  bd2006-07-02_AC_d2t07.flac
+b60a150b74a196d9ebe3792a53a580cf  bd2006-07-02_AC_md5.md5
+3482d3063fbb5ecb0c059dd79c25a6c4  bd2006-07-02_ffp.txt
+a652a2b6eb4fb68f29d83a8e44b0de7e  bd2006-07-02_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-02-okm-a.flacf 
+=================== 
+=================== 
+=================== 
+bd2006-07-02_AC_d1t01.flac:c4175eaec49b99d33779078e13f80421
+bd2006-07-02_AC_d1t02.flac:ce56e7dba2630a5268096e758050f6b1
+bd2006-07-02_AC_d1t03.flac:98f26e3ecb02ddf8c6a5cfecc4b921af
+bd2006-07-02_AC_d1t04.flac:85ef6babf7e871632be275049660f471
+bd2006-07-02_AC_d1t05.flac:8eb0ce175755e295cf64520b8dc9ba44
+bd2006-07-02_AC_d1t06.flac:1922b7b1cac3ea5d8370aa434cabd98c
+bd2006-07-02_AC_d1t07.flac:aa3b206cd097f46fe2855fd69a8029ec
+bd2006-07-02_AC_d1t08.flac:861826e65784e0a9fb3ccf17b89cefef
+bd2006-07-02_AC_d2t01.flac:2407c0e2e1285d9535639a65c584f623
+bd2006-07-02_AC_d2t02.flac:f48b9fd68617908c691f37ad48ea11fa
+bd2006-07-02_AC_d2t03.flac:38004ae5ce9bd9586d8072e0998b71fa
+bd2006-07-02_AC_d2t04.flac:fdb464e3ab03d3412b20978072d66f61
+bd2006-07-02_AC_d2t05.flac:5b266aaa6bf5880ff261af7a876d32ef
+bd2006-07-02_AC_d2t06.flac:5f79f8a86ff358cd49afa5df90d89bae
+bd2006-07-02_AC_d2t07.flac:3278251df5b332568e3e7e014ddb1ed6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-02-okm-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:50.35       72406364 B   ---   --   ---xx   flac  0.6940  bd2006-07-02_AC_d1t01.flac
+     7:14.05       76569404 B   ---   --   ---xx   flac  0.6580  bd2006-07-02_AC_d1t02.flac
+     6:29.72       68788988 B   ---   --   ---xx   flac  0.6881  bd2006-07-02_AC_d1t03.flac
+     5:49.69       61725932 B   ---   --   ---xx   flac  0.6530  bd2006-07-02_AC_d1t04.flac
+     8:45.04       92619452 B   ---   --   ---xx   flac  0.6592  bd2006-07-02_AC_d1t05.flac
+     8:50.53       93616700 B   ---   --   ---xx   flac  0.6144  bd2006-07-02_AC_d1t06.flac
+     5:59.24       63384092 B   ---   --   ---xx   flac  0.6620  bd2006-07-02_AC_d1t07.flac
+     6:27.68       68426780 B   ---   --   ---xx   flac  0.7150  bd2006-07-02_AC_d1t08.flac
+     8:33.31       90566156 B   ---   --   ---xx   flac  0.6287  bd2006-07-02_AC_d2t01.flac
+     7:27.28       78916700 B   ---   --   ---xx   flac  0.6822  bd2006-07-02_AC_d2t02.flac
+     5:39.36       59884316 B   ---   --   ---xx   flac  0.6708  bd2006-07-02_AC_d2t03.flac
+     6:27.17       68306828 B   ---   --   ---xx   flac  0.6293  bd2006-07-02_AC_d2t04.flac
+     7:20.14       77648972 B   ---   --   ---xx   flac  0.6820  bd2006-07-02_AC_d2t05.flac
+     7:00.01       74090396 B   ---   --   ---xx   flac  0.6931  bd2006-07-02_AC_d2t06.flac
+     6:58.65       73888124 B   ---   --   ---xx   flac  0.6926  bd2006-07-02_AC_d2t07.flac
+   105:53.72     1120839204 B                            0.6666  (15 files)
+=================== 
+=================== 
+=================== 

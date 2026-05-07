@@ -1,0 +1,96 @@
+The Bob Dylan Show
+Beacon Theatre
+New York, New York
+April 26, 2005
+
+**Recording Info**
+15th row - right center
+AKG Blue Lines (ck91>mk90/3+h98>se300b) > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > Cool Edit 96 > CD Wave > FLAC frontend
+Recorded and compiled by:
+soomlos
+
+Disc 1:
+01. Introduction [00:31]
+02. Tombstone Blues [06:21]
+03. Love Minus Zero/No Limit [06:13]
+04. Lonesome Day Blues [07:18]
+05. This Wheel's On Fire [06:35]
+06. Tweedle Dee & Tweedle Dum [05:39]
+07. John Brown [05:59]
+08. Under The Red Sky [06:28]
+09. Highway 61 Revisited [06:51]
+10. Bye And Bye [06:07]
+Total time: [58:01]
+
+Disc 2:
+01. Shooting Star [06:40]
+02. Honest With Me [06:43]
+03. Masters Of War [08:28]
+     (encore)
+04. Don't Think Twice, It's All Right [07:21]
+05. Band Introductions [00:25]
+06. All Along The Watchtower [05:14]
+Total time: [34:51]
+
+Band Members:
+Bob Dylan - keyboard, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - violin, banjo, pedal steel
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-04-26d1t01.flac:8dae4de283dc169273631baaf04cd6e0
+bd2005-04-26d1t02.flac:eaec41012e4983bd88fe631efda3e439
+bd2005-04-26d1t03.flac:28a9d57a962b6517de82ff5664f57916
+bd2005-04-26d1t04.flac:1f38e22467204bcd6b8d4f4f8e48b900
+bd2005-04-26d1t05.flac:30345e20bc7ad92ce581a828a6667f0c
+bd2005-04-26d1t06.flac:1c199bb2354217329ba24e9abaa633c7
+bd2005-04-26d1t07.flac:a1ae81ed47d3f82d9a08ef487300f5b8
+bd2005-04-26d1t08.flac:710bf102edaf9577895b145ecc65347a
+bd2005-04-26d1t09.flac:466c1c1cbea60fb280a9995193437a54
+bd2005-04-26d1t10.flac:68dc2d5d181a92841c63dccba847d19c
+bd2005-04-26d2t01.flac:486217641935171ff5cb0ab265e77867
+bd2005-04-26d2t02.flac:de8c0999e57de75e034765e4f2ab08dc
+bd2005-04-26d2t03.flac:eb23fdc9e3f11ba3e204823a4a73968d
+bd2005-04-26d2t04.flac:ed88ed7482d5524c7efc6d45ef9b949d
+bd2005-04-26d2t05.flac:dfe37d63b257f9ff0634f9ad5f3e954f
+bd2005-04-26d2t06.flac:360b1a04acfb3e8cb01cced43ba09e4f
+
+flac md5
+46ea24bfe7d90e82928a159c5cc1a173 *bd2005-04-26d1t01.flac
+ea5ab62bfd543ee5cddd3caef60893bd *bd2005-04-26d1t02.flac
+124afa0f7c7fc5222305ff55037ec05c *bd2005-04-26d1t03.flac
+0c0679cda585d082083c378859deb8de *bd2005-04-26d1t04.flac
+7492fb8e41f5d4f62462733ca6793516 *bd2005-04-26d1t05.flac
+39e7a165fb9d6da1c121225f2a46c247 *bd2005-04-26d1t06.flac
+75d664e8007de9cd938ba509c57c699d *bd2005-04-26d1t07.flac
+d17129a40f8923daed69d381fc1e581d *bd2005-04-26d1t08.flac
+fc192c219033c941f4458bac7c3c96c4 *bd2005-04-26d1t09.flac
+c250856256133f2fff00aa3e51c09e12 *bd2005-04-26d1t10.flac
+9b5cac86ca71d740e69a2f04c10dba62 *bd2005-04-26d2t01.flac
+06b67b7887bf4ac70ad64b8e80d2e328 *bd2005-04-26d2t02.flac
+17b8824eabbecf4779b129c8b5396b2c *bd2005-04-26d2t03.flac
+06e6f46aa0cbb6565d5ddadd4c1362c6 *bd2005-04-26d2t04.flac
+366109cc06364e01663bfb22c1525cdc *bd2005-04-26d2t05.flac
+25d15e6940989af897aef61895e530bd *bd2005-04-26d2t06.flac
+
+wav md5
+fbb14d9f12cf1d5d60ee836d2aa21b79 *bd2005-04-26d1t01.wav
+8632c3813c2016d4e5c6acaec38a2607 *bd2005-04-26d1t02.wav
+7238d8048fe7534d3a414559cb3f679f *bd2005-04-26d1t03.wav
+5d0bb6837274d874b710567375a390bd *bd2005-04-26d1t04.wav
+d700980c6fc66240602a506f60984332 *bd2005-04-26d1t05.wav
+90be4630a9949aaf6803ca07ea63247c *bd2005-04-26d1t06.wav
+54be79da18c15117ae66b4c2a6930a58 *bd2005-04-26d1t07.wav
+ad520927459aa854a983cd76fb1ca939 *bd2005-04-26d1t08.wav
+7a670f7c9149e51c99c32d816c8fc733 *bd2005-04-26d1t09.wav
+d2e76353c4914f720b48df6e0dbe056f *bd2005-04-26d1t10.wav
+64158a5ee805691e568f2ffe6d65330e *bd2005-04-26d2t01.wav
+621d4a4bb1da5bbd84cb352fd2c10142 *bd2005-04-26d2t02.wav
+9a9d1374b295435c00e65af684aa4409 *bd2005-04-26d2t03.wav
+50511a71fd01f8e624bb36d519d19794 *bd2005-04-26d2t04.wav
+9a5c9bb112a9408550420766cca38a42 *bd2005-04-26d2t05.wav
+4d024a36e4f37f277cfc05042cf90b28 *bd2005-04-26d2t06.wav

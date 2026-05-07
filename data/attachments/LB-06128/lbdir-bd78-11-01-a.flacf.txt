@@ -1,0 +1,125 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-11-01-a.flacf 
+=================== 
+=================== 
+=================== 
+8fb7fd44d3db1be07b36c39c0fea0fda  Bob Dylan. November 1, 1978. Madison.md5
+e22a3cd39c4183526180005758a5ce15  Dylan. Madison 1\01. Track 1.flac
+4067829111da99caadd03d7e3425b8c1  Dylan. Madison 1\02. Track 2.flac
+5fce3743be71597896f5251f30f22d91  Dylan. Madison 1\03. Track 3.flac
+a186894c9cc5d1316e1edf233029346e  Dylan. Madison 1\04. Track 4.flac
+b996c012410a5006a61414b3fe6b2ae5  Dylan. Madison 1\05. Track 5.flac
+15338ea96f20499f61e5972b3d3e070c  Dylan. Madison 1\06. Track 6.flac
+f8838a65cf935c37e9077dd5f3724cd0  Dylan. Madison 1\07. Track 7.flac
+aae2f47f7dff523f9f1a22cabaa17f65  Dylan. Madison 1\08. Track 8.flac
+d3b4979eeed3d53c7193263d12ad4b3d  Dylan. Madison 1\09. Track 9.flac
+1bced3668aa712c6081d9913ad3f9ff1  Dylan. Madison 1\10. Track 10.flac
+7693423d6b66e88851ca1f1027bf9f8c  Dylan. Madison 1\11. Track 11.flac
+a836683a4f1e1aec350fb49504960ad6  Dylan. Madison 1\12. Track 12.flac
+9d8696c2189beba8d20fa26d2204ca0f  Dylan. Madison 1\13. Track 13.flac
+9caaaec039becf496e2f1ec41d3d12c4  Dylan. Madison 1\14. Track 14.flac
+a2467a894b595593f6f8f9c2bb1e93f9  Dylan. Madison 1\Album-Interpret - Album.m3u
+a47fa041a3487ef5c1098ac0ce6d5297  Dylan. Madison 2\01. Track 1.flac
+246edeb6215a4fb35d6a06f60d9ac160  Dylan. Madison 2\02. Track 2.flac
+6ea6ec3d85fb3432a629edc5930d33ed  Dylan. Madison 2\03. Track 3.flac
+e3925884e1ce4bad0da59de33281888d  Dylan. Madison 2\04. Track 4.flac
+c9da27fce38abf77da4ed8fc53e89e10  Dylan. Madison 2\05. Track 5.flac
+becc8123f5c166eee89bcb1f10070e8f  Dylan. Madison 2\06. Track 6.flac
+1a77c1b985c7bd8c590a0ca9737f590f  Dylan. Madison 2\07. Track 7.flac
+2a9bdbdb12e99fdbe2a8e37cc565d9c6  Dylan. Madison 2\08. Track 8.flac
+889d9ed47337ae3d235dff8647cdac6a  Dylan. Madison 2\09. Track 9.flac
+27e427162daa567660832325892da1aa  Dylan. Madison 2\10. Track 10.flac
+fc505d6121c7871fe10ec29a6515da43  Dylan. Madison 2\11. Track 11.flac
+a0dcee5f1f339dacef64dfb6dd95a3c5  Dylan. Madison 2\12. Track 12.flac
+7dad9220b448b959efb9fc50a169eaff  Dylan. Madison 2\Album-Interpret - Album.m3u
+ed8602832f914aa8b04103dbde6955b4  madison 1978.txt
+ed8602832f914aa8b04103dbde6955b4  Madison.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-01-a.flacf\Dylan. Madison 2 
+=================== 
+=================== 
+=================== 
+01. Track 1.flac:c2c8375182d009f75072bebf36c04461
+02. Track 2.flac:2b2b31d955a2133754a105d4fb5e86ff
+03. Track 3.flac:8a8c01d503422a369e6d558987dd6b80
+04. Track 4.flac:874b8e415fed3113ddc7b851309e33ad
+05. Track 5.flac:799a05ac257498b961ab246005d843c4
+06. Track 6.flac:fa3b0f43fee1bce5ac08837b97f78910
+07. Track 7.flac:a00819c42419ad85c5e060e97b15cfba
+08. Track 8.flac:47aa5967d0bf03ebc8fb678d22b7883e
+09. Track 9.flac:05620d8f35ae446ab75ec3449b1e5b76
+10. Track 10.flac:01713ef95a20aebec0e9ccfe256e8c5b
+11. Track 11.flac:6c8c8a556ee9a8d72be860ed49fb81df
+12. Track 12.flac:39e828a0e3e7b54f5e0921da4b02ef50
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-01-a.flacf\Dylan. Madison 1 
+=================== 
+=================== 
+=================== 
+01. Track 1.flac:f439c9549f96163d18b4191b7b09f0fb
+02. Track 2.flac:8513abaaac8b659442476e6691e5898c
+03. Track 3.flac:a6813a1a3b3b8b1c97bbacd5c2db8504
+04. Track 4.flac:0bc8495f0e723686886261abe0c86e54
+05. Track 5.flac:1095ab1270a6bb5999e1a3fca42575eb
+06. Track 6.flac:3e6d0471f6776bc5db1672f7068006fd
+07. Track 7.flac:16a2d9c1db48e5d97bee11a8c93052d9
+08. Track 8.flac:00821b0f9cb3914373889820239ac177
+09. Track 9.flac:84bf76c899a15583fb0cfdb71eb25993
+10. Track 10.flac:8379eed945f06ffa93ab0b38160a1715
+11. Track 11.flac:02c067f47c7c6d09031c0bd2cdf21d03
+12. Track 12.flac:8f496833235c081057612642f05f141a
+13. Track 13.flac:c11893b2f4e5f1800c404c73935ca4a0
+14. Track 14.flac:148c27787d775ca129c443ba97a13cfe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-01-a.flacf\Dylan. Madison 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:59.06       63341756 B   ---   --   ---xx   flac  0.5300  01. Track 1.flac
+     4:52.71       51675836 B   ---   --   ---xx   flac  0.5069  02. Track 2.flac
+     6:12.57       65754908 B   ---   --   ---xx   flac  0.4738  03. Track 3.flac
+     6:02.29       63925052 B   ---   --   ---xx   flac  0.5344  04. Track 4.flac
+     4:23.68       46553180 B   ---   --   ---xx   flac  0.5348  05. Track 5.flac
+     5:27.62       57828668 B   ---   --   ---xx   flac  0.5161  06. Track 6.flac
+     4:38.00       49039244 B   ---   --   ---xx   flac  0.5160  07. Track 7.flac
+     3:50.72       40741388 B   ---   --   ---xx   flac  0.5288  08. Track 8.flac
+     3:29.30       36938204 B   ---   --   ---xx   flac  0.5135  09. Track 9.flac
+     9:32.19      100945532 B   ---   --   ---xx   flac  0.5202  10. Track 10.flac
+     6:48.32       72046508 B   ---   --   ---xx   flac  0.5093  11. Track 11.flac
+     8:03.22       85252988 B   ---   --   ---xx   flac  0.5104  12. Track 12.flac
+    69:21.18      734043264 B                            0.5154  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-01-a.flacf\Dylan. Madison 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.61       55356716 B   ---   --   ---xx   flac  0.5348  01. Track 1.flac
+     5:13.62       55359068 B   ---   --   ---xx   flac  0.5381  02. Track 2.flac
+     4:25.11       46771916 B   ---   --   ---xx   flac  0.5384  03. Track 3.flac
+     4:48.62       50949068 B   ---   --   ---xx   flac  0.5320  04. Track 4.flac
+     7:18.51       77383196 B   ---   --   ---xx   flac  0.5193  05. Track 5.flac
+     4:40.37       49479068 B   ---   --   ---xx   flac  0.5355  06. Track 6.flac
+     4:00.49       42451292 B   ---   --   ---xx   flac  0.5307  07. Track 7.flac
+     3:43.20       39384284 B   ---   --   ---xx   flac  0.5175  08. Track 8.flac
+     6:50.41       72420476 B   ---   --   ---xx   flac  0.5445  09. Track 9.flac
+     5:00.52       53042348 B   ---   --   ---xx   flac  0.5160  10. Track 10.flac
+     5:42.45       60434684 B   ---   --   ---xx   flac  0.5243  11. Track 11.flac
+     4:51.40       51426524 B   ---   --   ---xx   flac  0.5188  12. Track 12.flac
+     6:04.74       64383692 B   ---   --   ---xx   flac  0.4852  13. Track 13.flac
+     3:20.22       35331788 B   ---   --   ---xx   flac  0.5443  14. Track 14.flac
+    71:15.27      754174120 B                            0.5263  (14 files)
+=================== 
+=================== 
+=================== 

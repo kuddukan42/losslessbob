@@ -1,0 +1,10 @@
+Bob Dylan, 10/21/01, Denver, Colorado, 2CDR
+
+LB-7587, (63min+58min), version "b"; *** This is the same recording as LB-1079 ***, NOTES: The "big digi pop at end of d1t11, pop/drop at d2t2 06:57" are now cautiously removed. 4 seconds (silence) trimmed off d1t11 (at end)., Frequency analysis: not much above 16kHz, except lego parapets, Taper: unidentified, Lineage: no info; bittorrent download 05/09; this is a close eac match on d1t2 to LB-1079 with noted changes made; (did not listen to all of this)
+
+drop/cut between cdrs, d2t1 2:25,d2t9 1:00
+
+01. Wait For The Light To Shine (Fred Rose) [02:55], 02. Don't Think Twice, It's All Right [06:36], 03. Visions Of Johanna [09:06], 04. Searching For A Soldier's Grave (Johnnie Wright, Jim Anglin, Jack Anglin) [03:16], 05. Tweedle Dee & Tweedle Dum [04:55], 06. If Not For You [04:51], 07. Tonight I'll Be Staying Here With You [05:36], 08. High Water (for Charley Patton) [05:46], 09. Mama, You Been On My Mind [06:06], 10. Tangled Up In Blue [08:01], 11. Masters Of War [05:05], Total time [62:17], 12. Summer Days [05:51], 13. Sugar Baby [07:46], 14. The Wicked Messenger [05:51], 15. Everything Is Broken [09:31], 16. Country Pie [03:16], 17. Like A Rolling Stone [07:31], 18. I Shall Be Released [05:01], 19. Honest With Me [07:06], 20. Blowin' In The Wind [05:48], Total time [57:44]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

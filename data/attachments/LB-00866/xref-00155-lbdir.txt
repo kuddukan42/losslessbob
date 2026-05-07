@@ -1,0 +1,64 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-04-17-soundcheck-lk.flacf 
+=================== 
+=================== 
+=================== 
+9cad0a7bd4252ac97bd7c89a2b029f6f  04-17-80 Snck -  1.flac
+e4046e7e003c6829c9514a43b59840fb  04-17-80 Snck -  10.flac
+137b56944e19e0fb76b504a645dfc2a9  04-17-80 Snck -  11.flac
+889c3bcb4422d538928542a99c312bb6  04-17-80 Snck -  12.flac
+7251d5a76dd39da02b9ab286f6deb453  04-17-80 Snck -  2.flac
+4ce91b267096c0b4c8ae40ce56f80074  04-17-80 Snck -  3.flac
+0d90dbe55755e6e3ca096a0c74bf8ece  04-17-80 Snck -  4.flac
+b6fe1210483347287dc36747882ea96b  04-17-80 Snck -  5.flac
+98a9a4f1169c84430a601e873061f411  04-17-80 Snck -  6.flac
+48d342c6591164a57710942486b60566  04-17-80 Snck -  7.flac
+885feedca355afd629b7485e86c11645  04-17-80 Snck -  8.flac
+243b6cedb2255dd6fbe6a24644bc48c5  04-17-80 Snck -  9.flac
+7356c2887d18e6b91b11e5d1580f74ec  bd80-04-17.txt
+56b4014872d6963434e6cad54b44fdcd  Toronto 17April80 Soundcheck.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-04-17-soundcheck-lk.flacf 
+=================== 
+=================== 
+=================== 
+04-17-80 snck -  1.flac:b1afc3d53fca7243093dd80979eb41f8
+04-17-80 snck -  10.flac:e1c307c4ea9d0c71e9145c505403274f
+04-17-80 snck -  11.flac:8d1be4a1fa399a574c58627a8355af45
+04-17-80 snck -  12.flac:567808f136935f1c5e2ec705baec2a91
+04-17-80 snck -  2.flac:5d1f2c4ef2db9cef6520b40e38287bdf
+04-17-80 snck -  3.flac:d6f2fe2b83b52781c07f384139ba4c31
+04-17-80 snck -  4.flac:3c216e95c515bdc0225288daa6c79555
+04-17-80 snck -  5.flac:2fdce169bf0bc08e8f623e19b6b5ad07
+04-17-80 snck -  6.flac:9c4c9ef57497940e5a3a147bfb846c78
+04-17-80 snck -  7.flac:3fefdce8e8c20db08a68c195dc703f95
+04-17-80 snck -  8.flac:6d669d2ac7d69cdde70f664d7e3e724c
+04-17-80 snck -  9.flac:d83dde12b8be3ce8df54e1cbab503fcf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-04-17-soundcheck-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.28       57043100 B   ---   --   ---xx   flac  0.5916  04-17-80 Snck -  1.flac
+     2:12.60       23425964 B   ---   --   ---xx   flac  0.6102  04-17-80 Snck -  10.flac
+     0:45.37        8025068 B   ---   --   ---xx   flac  0.6108  04-17-80 Snck -  11.flac
+     3:17.45       34856684 B   ---   --   ---xx   flac  0.6253  04-17-80 Snck -  12.flac
+     5:10.42       54782828 B   ---   --   ---xx   flac  0.6024  04-17-80 Snck -  2.flac
+     1:07.10       11842364 B   ---   --   ---xx   flac  0.6089  04-17-80 Snck -  3.flac
+     4:31.35       47886764 B   ---   --   ---xx   flac  0.6083  04-17-80 Snck -  4.flac
+     0:32.13        5675420 B   ---   --   ---xx   flac  0.6055  04-17-80 Snck -  5.flac
+     1:14.53       13178300 B   ---   --   ---xx   flac  0.5958  04-17-80 Snck -  6.flac
+     4:05.35       43300364 B   ---   --   ---xx   flac  0.6424  04-17-80 Snck -  7.flac
+     2:17.43       24267980 B   ---   --   ---xx   flac  0.6093  04-17-80 Snck -  8.flac
+     1:46.65       18851324 B   ---   --   ---xx   flac  0.6096  04-17-80 Snck -  9.flac
+    32:25.16      343136160 B                            0.6104  (12 files)
+=================== 
+=================== 
+=================== 

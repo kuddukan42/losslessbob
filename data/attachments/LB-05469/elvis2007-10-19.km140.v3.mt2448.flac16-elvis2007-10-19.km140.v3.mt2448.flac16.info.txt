@@ -1,0 +1,42 @@
+Elvis Costello
+Indiana University
+Assembly Hall
+Bloomington, Indiana, USA
+October 19, 2007
+
+xx. (Angles Wanna Wear My) Red Shoes * 
+01. Either Side Of The Same Town [03:50]
+02. Veronica [03:17]
+03. The River In Reverse [06:01]
+04. Down Among The Wines And Spirits [03:56]
+05. Pardon Me Madam (My Name Is Eve) [04:20]
+06. Sulphur To Sugar Cane [05:33]
+07. Alison [02:51]
+08. Radio Sweetheart > Jackie Wilson Said [04:56]
+09. Radio Radio [02:45]
+10. (What's so Funny 'Bout) Peace, Love And Understanding [04:04]
+11. Scarlet Tide [04:59]
+Total time: [46:38]
+
+* incomplete (missing 1st song)
+
+Elvis Costello - solo acoustic
+opened for Bob Dylan
+
+source: soomlos
+10th row front left floor
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+Flac Fingerprint
+elvis2007-10-19t01.flac:8aae631426667876e8db56d997588fb6
+elvis2007-10-19t02.flac:73f7b6c9e482899b63437b1bca18643a
+elvis2007-10-19t03.flac:168d02d22b7c33ea301aa5b88cc73f5a
+elvis2007-10-19t04.flac:efcd96047e22fa37318e5fcf92fac677
+elvis2007-10-19t05.flac:967b2ee96ebfda763a089d97d0ab31ee
+elvis2007-10-19t06.flac:905b31cdd165ba9d5c3e017d14b06692
+elvis2007-10-19t07.flac:59cec517e548d71818de9783e34d8a1d
+elvis2007-10-19t08.flac:402080a3b261a1a47fd0730c376cf269
+elvis2007-10-19t09.flac:01d657bce7a6f03ac7f1e22f9966b956
+elvis2007-10-19t10.flac:33dad4a2461f02e4dcb8d6dfc81a0bbb
+elvis2007-10-19t11.flac:38743ec3e49f9f114a585fc031568f3c

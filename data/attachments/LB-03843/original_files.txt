@@ -1,0 +1,30 @@
+Filename<tab>Filesize<tab>md5
+Top Folder is  Cary2003
+
+FOLDER  Cary2003
+cary front.jpg	305407	8ab8909c6a3591abd5d782891ef9bac7
+cary rear.jpg	514818	3fa9821f43ec3cb0e04e9abea60bc345
+
+FOLDER  Cary2003\disk01
+Bob Dylan - Track 01.flac	46442110	968b64783b16d370bc1b8849f9f3054a
+Bob Dylan - Track 02.flac	32924313	6af46f20665b74a75b04ba6c341539dc
+Bob Dylan - Track 03.flac	36677708	84655c3c539399449227787d9e73bd6e
+Bob Dylan - Track 04.flac	51964824	538e9a721a233037fd1d62bfe0829d1a
+Bob Dylan - Track 05.flac	47775162	62aa1b4409c99db4e8a060710a589bf5
+Bob Dylan - Track 06.flac	47281961	f1eb5bb891c000a5736f829a0e68b061
+Bob Dylan - Track 07.flac	41174134	8253955576a6d85fd82fb702eae26a77
+Bob Dylan - Track 08.flac	39934387	ccd16496a4a1f4375ef5103e495d60be
+Bob Dylan - Track 09.flac	41118642	23398a8caf87a231e5fee62f79ed8e9f
+Bob Dylan - Track 10.flac	45498017	ac2a864dd144cce6c93200be0cdf3b68
+cary2003D1fingerprint.txt	600	2e7230fcbb694017de3aef084377a320
+
+FOLDER  Cary2003\disk02
+Bob Dylans - Track 01.flac	41356372	a991186c9b69f0fad26ba1959795f7db
+Bob Dylans - Track 02.flac	48360616	fb73a06ca24d2f9c0de4d7636d42c115
+Bob Dylans - Track 03.flac	40239619	73c36a273d27794bd97a4649ff758107
+Bob Dylans - Track 04.flac	72833403	dd2218a2d1d3149dae4389e12cda8326
+Bob Dylans - Track 05.flac	46849802	13d1753c27c6760a1ae9792061290760
+Bob Dylans - Track 06.flac	54106870	fd35ea4f7755630994ce18f4d377c611
+cary2003D2fingerprint.txt	366	1682361755df1732d447670297ab54ae
+
+Total number of files is 20 and total size is 735359131 bytes

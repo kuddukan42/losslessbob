@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-15-Worth-Your-Money.flacf 
+=================== 
+=================== 
+=================== 
+e7e140450ff7c730cc1d555a8e680640  bd1988-09-15d1t01.flac
+1a914c0d141d5b8b5fc6d28cb85efa70  bd1988-09-15d1t02.flac
+1b9afded5606f87e6d54c8abcd0324c6  bd1988-09-15d1t03.flac
+6bf7927d7b887d58604e60bcda0cfb29  bd1988-09-15d1t03.PNG
+98a0d6e671450a2f2e8b4f8d51bfe752  bd1988-09-15d1t04.flac
+fa2a76674fb9c2b3c5d451eb61c5f5f1  bd1988-09-15d1t05.flac
+7636d8d2ae85bd9153b1ce76e8830388  bd1988-09-15d1t06.flac
+a3785fd8e1d4808ee1e054ad67fd4a42  bd1988-09-15d1t07.flac
+b04fbdec55454b875e585fcc1bb7e1bd  bd1988-09-15d1t08.flac
+f83504129c79e30924c3be490eecf462  bd1988-09-15d1t09.flac
+7c709e9e58307c96d4c44c34adfabfe6  bd1988-09-15d1t10.flac
+c0d19a66d909d70724dd48e135762d41  bd1988-09-15d1t11.flac
+0d2152746f39b2879ded87f7a3641c11  bd1988-09-15d1t12.flac
+f42f4f254645abbb0997b5f70c46e342  bd1988-09-15d1t13.flac
+6b80b80e0c83509a04ba0ebea871aa54  bd1988-09-15d1t14.flac
+599a171d78c88879a1e4816e3cedf276  bd1988-09-15d1t15.flac
+d18082059e9bcb4bd1174a10091c3654  bd1988-09-15d1t16.flac
+61e5423e39090b0e71b95fc2356cb2f3  bd88-09-15 Worth Your Money.txt
+df5ecda2e6dbcb2322edc3ebc7c55e8c  bd88-09-15-Worth-Your-Money-LB-4755.txt
+4a640e049fac02c9c763fd7e0db86dea  bd88-09-15.aud.sbeok.flac16 Worth Your Money.ffp
+06266ab7d6ac1773760ee744205494a8  bd88-09-15.aud.sbeok.flac16 Worth Your Money.md5
+01ea501b931947b6e8abbe5dd3e2faaf  bd88-09-15.aud.sbeok.flac16 Worth Your Money.shntool.txt
+d0ae421b7c0bcd31b76da19892617564  bd88-09-15.aud.sbeok.flac16 Worth Your Money.st5
+c7cbb622d161ced4084e32c71ab3ae20  Chapel Hill Worth Your Money.LOG
+f61942d6a351ee8d7f5b2aa44318ab61  lbdir-bd88-09-15-Worth-Your-Money.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-15-Worth-Your-Money.flacf 
+=================== 
+=================== 
+=================== 
+bd1988-09-15d1t01.flac:0226054f264ad70ea1a685431e152f8c
+bd1988-09-15d1t02.flac:54f90c00cb4e34237a960de1d34fb086
+bd1988-09-15d1t03.flac:e69ea7c0f78a1970d9e0bfc785e81b02
+bd1988-09-15d1t04.flac:587b1a451c557942f23e0b5d81f6418d
+bd1988-09-15d1t05.flac:98ca12fe9e27c3c8f9ae7e3ebaa9ce8a
+bd1988-09-15d1t06.flac:ddba7aa63d0ce0243fd5cbff56cebdea
+bd1988-09-15d1t07.flac:386ab676945ec2aa0663305628cc8a6a
+bd1988-09-15d1t08.flac:eccfe8bc7123130a6e4444b81dbbab22
+bd1988-09-15d1t09.flac:e02230d4f4553abb50f9db78d5beedc0
+bd1988-09-15d1t10.flac:0e663da607aea3204fc1f4d7e1187bd0
+bd1988-09-15d1t11.flac:a95f7789bd1b331d9dc1a26d174a5f0c
+bd1988-09-15d1t12.flac:f39c6749fdb0356e95bc8b03368d5011
+bd1988-09-15d1t13.flac:1e9656dfc028ecf181f60e5a77a5cb11
+bd1988-09-15d1t14.flac:341719911f672977bc1a8f8678d586c6
+bd1988-09-15d1t15.flac:ba509272da7244898c684381984eae15
+bd1988-09-15d1t16.flac:4e50944ecfca7e599f7506f0616641f0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-15-Worth-Your-Money.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.27       37460348 B   ---   --   ---xx   flac  0.6564  bd1988-09-15d1t01.flac
+     4:28.59       47414012 B   ---   --   ---xx   flac  0.6566  bd1988-09-15d1t02.flac
+     5:28.71       58026236 B   ---   --   ---xx   flac  0.6571  bd1988-09-15d1t03.flac
+     4:58.41       52663676 B   ---   --   ---xx   flac  0.6554  bd1988-09-15d1t04.flac
+     4:47.72       50796188 B   ---   --   ---xx   flac  0.6625  bd1988-09-15d1t05.flac
+     4:09.27       43987148 B   ---   --   ---xx   flac  0.6616  bd1988-09-15d1t06.flac
+     5:40.06       59990156 B   ---   --   ---xx   flac  0.6549  bd1988-09-15d1t07.flac
+     5:40.72       60145388 B   ---   --   ---xx   flac  0.6514  bd1988-09-15d1t08.flac
+     4:50.41       51252476 B   ---   --   ---xx   flac  0.6537  bd1988-09-15d1t09.flac
+     3:09.16       33377276 B   ---   --   ---xx   flac  0.6519  bd1988-09-15d1t10.flac
+     5:36.66       59425676 B   ---   --   ---xx   flac  0.6541  bd1988-09-15d1t11.flac
+     6:13.24       65853692 B   ---   --   ---xx   flac  0.6590  bd1988-09-15d1t12.flac
+     5:04.58       53762060 B   ---   --   ---xx   flac  0.6530  bd1988-09-15d1t13.flac
+     4:31.62       47950268 B   ---   --   ---xx   flac  0.6500  bd1988-09-15d1t14.flac
+     4:44.40       50191724 B   ---   --   ---xx   flac  0.6593  bd1988-09-15d1t15.flac
+     5:19.01       56273996 B   ---   --   ---xx   flac  0.6680  bd1988-09-15d1t16.flac
+    78:17.08      828570320 B                            0.6566  (16 files)
+=================== 
+=================== 
+=================== 

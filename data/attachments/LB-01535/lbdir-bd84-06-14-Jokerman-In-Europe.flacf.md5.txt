@@ -1,0 +1,26 @@
+9cffdb2c2ee66530abc849e83eaa8d57  1\Track01.flac
+03c41eff9665d0cf61fc1578541352e7  1\Track02.flac
+70e0bddd67b8e72a4543fbd61dfe2ce6  1\Track03.flac
+15ef8a0652811eecd865e40270b51faf  1\Track04.flac
+5c78576fce68e2b8eabe4c39005fdef9  1\Track05.flac
+108a813845fe6018e6469d2aba253084  1\Track06.flac
+6d491dfff0cb1b1eea1c337f026c50c7  1\Track07.flac
+3d2dbb1320edaa50a3592f5ab341465b  1\Track08.flac
+3f3fab3f51698bc72c671fd729688440  1\Track09.flac
+ba23d79b80794251d99483caf46dddec  1\Track10.flac
+e828cbc1de4c8024c9063880a1dd7e3e  1\Track11.flac
+ba97a0d0a494eba8693df2100307742b  1984 06-14 BD Jokerman In Europe backs.jpg
+aee4dcc4c290b6796912eef786ddb989  1984 06-14 BD Jokerman In Europe front.jpg
+9e860ceea6d36f39393d589ff1f694e4  2\Track01.flac
+b33e8dbc9f1fef32d4c525c828320af0  2\Track02.flac
+8e41e872a98ce7572d3bd707922bbfef  2\Track03.flac
+39e5583d926b15348f4f7629055783ea  2\Track04.flac
+81ee89698f9a91c19e5399e5c8fb551c  2\Track05.flac
+df0eeff1120177d6e88427f0937a63c9  2\Track06.flac
+72c490644cd9da206f3bbb53fcd6ce1b  2\Track07.flac
+8542a3d2d3f20346aa59dbccd0c4e42c  2\Track08.flac
+2cd86b850d13441d866a02468575a58e  2\Track09.flac
+ae247f8439e61415c25db858f3282cdc  2\Track10.flac
+9db6ac3a9865bf3fea8cb7d6cf1e0b49  2\Track11.flac
+bc397aad9b534012b65a2d00c0ba1dc0  bd84-06-14-Jokerman In Europe.txt
+e7a607ed9dbf58c951a2a85f8ca0d40f  Bob Dylan - Jokerman In Europe - 14JUN84.txt

@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-10-21.flacf 
+=================== 
+=================== 
+=================== 
+853a87e30fa201764bac219b08e96cb1  101 - Dixie.flac
+864c05ad079a051f57e1224bf08ac6dc  102 - Subterranean Homesick Blues.flac
+cdd2b6bd4cab703dc7bd9292dee76a36  103 - I'll Remember You.flac
+2ba02e64714a4b6578da323f34facb22  104 - Ballad of a Thin Man.flac
+6d7a83086c110da18111cd070e99c597  105 - Gotta Serve Seomebody.flac
+2e693cac11f1783155ec31081ed30228  106 - Masters of War.flac
+80ec18770ed98c8d0b4a2066b7d2936f  107 - Joey.flac
+7b7482e60a0cab0e51ccb7394cbf1276  108 - Don't Think Twice.flac
+ab6ec187b95f8e6d807123178102c4b7  109 - Gates of Eden.flac
+74cb557018a1e6d7d4a9fd100e965841  110 - Desolation Row.flac
+d9b54e2e932d62576526ead7c5be94d7  201 - I t Ain't Me Babe.flac
+1b1229683c9da0080be9f4786a4bf20e  202 - Wiggle Wiggle.flac
+e97ddaface5f4feb8cca75d2e01dd1d9  203 - Shooting Star.flac
+c8de9c77fd6819572df51b6faa15adb3  204 - All Along the Watchtower.flac
+ed9756c03ec933d9c2b4b9a5655f0d80  205 - I Believe in You.flac
+2187f512c80083015ef697d5a5ef54c1  206 - Like A Rolling Stone.flac
+510e9e4e43bd8beef88692b5aab61b92  207 - TTTAAC.flac
+37b55425786c6dc2ddba04e0591156f0  208 - Highway 61.flac
+6f0296e5ebdc649b8943a4fbaffcf861  bd-1990-10-21 Richmond Mosque, Richmond, VA.txt
+fa5de7d07f3cbb8f0442c7312525b1d2  bd90-10-21-LB-3968.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-10-21.flacf 
+=================== 
+=================== 
+=================== 
+101 - Dixie.flac:c5fd9b73c45a11ef9537b0378bc2cca9
+102 - Subterranean Homesick Blues.flac:928aa8105378bc0cd27cafe7211e59ff
+103 - I'll Remember You.flac:8e584eafe958441d070ddaa9f718c4b0
+104 - Ballad of a Thin Man.flac:87688b5365de0a16f6e12357632c84db
+105 - Gotta Serve Seomebody.flac:f178df97823cdc1f9caa570221045b35
+106 - Masters of War.flac:477ccc3d95b1c3bc703b10b8524a0811
+107 - Joey.flac:dc2e8b1b208a0fc4d408e7f0d658ef55
+108 - Don't Think Twice.flac:608da0116e8f7686e86e8a58bd805b63
+109 - Gates of Eden.flac:ca97d82222c22c5e99aeae883d0a169a
+110 - Desolation Row.flac:71242f4d7a2bc9512e60411b231d4595
+201 - I t Ain't Me Babe.flac:5401c3ec823bf46bd624b63f4654eb73
+202 - Wiggle Wiggle.flac:358cdc84bd0a00fcf3c90e0e7d6dd381
+203 - Shooting Star.flac:30ed144f013f657520e8e8c562a7171a
+204 - All Along the Watchtower.flac:c8ac5d29adbc8cd901c1110f7b63afd4
+205 - I Believe in You.flac:5c9fa925edc47c4957570141acab9a65
+206 - Like A Rolling Stone.flac:fe506e846f6cdb0542c7fa6ed503bd66
+207 - TTTAAC.flac:0843f89494dfbdb03627e9be5d6a64f0
+208 - Highway 61.flac:908075c46ba6cdc415ebd04a0ab6c2c5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-10-21.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:51.42        9095228 B   ---   --   ---xx   flac  0.5572  101 - Dixie.flac
+     3:08.25       33222044 B   ---   --   ---xx   flac  0.6150  102 - Subterranean Homesick Blues.flac
+     3:53.54       41228252 B   ---   --   ---xx   flac  0.5921  103 - I'll Remember You.flac
+     4:10.22       44151788 B   ---   --   ---xx   flac  0.6060  104 - Ballad of a Thin Man.flac
+     4:56.71       52381436 B   ---   --   ---xx   flac  0.6162  105 - Gotta Serve Seomebody.flac
+     4:03.58       43001660 B   ---   --   ---xx   flac  0.6266  106 - Masters of War.flac
+     6:50.14       72356972 B   ---   --   ---xx   flac  0.6165  107 - Joey.flac
+     5:45.10       60881564 B   ---   --   ---xx   flac  0.5891  108 - Don't Think Twice.flac
+     4:49.63       51127820 B   ---   --   ---xx   flac  0.5830  109 - Gates of Eden.flac
+     6:15.34       66230012 B   ---   --   ---xx   flac  0.5798  110 - Desolation Row.flac
+     5:22.59       56939612 B   ---   --   ---xx   flac  0.5683  201 - I t Ain't Me Babe.flac
+     2:57.35       31305164 B   ---   --   ---xx   flac  0.6269  202 - Wiggle Wiggle.flac
+     3:53.02       41105948 B   ---   --   ---xx   flac  0.6003  203 - Shooting Star.flac
+     3:46.25       39925244 B   ---   --   ---xx   flac  0.6338  204 - All Along the Watchtower.flac
+     4:24.54       46696652 B   ---   --   ---xx   flac  0.5900  205 - I Believe in You.flac
+     7:12.05       76216604 B   ---   --   ---xx   flac  0.6305  206 - Like A Rolling Stone.flac
+     4:44.28       50163500 B   ---   --   ---xx   flac  0.5962  207 - TTTAAC.flac
+     4:44.33       50175260 B   ---   --   ---xx   flac  0.6259  208 - Highway 61.flac
+    81:50.34      866204760 B                            0.6043  (18 files)
+=================== 
+=================== 
+=================== 

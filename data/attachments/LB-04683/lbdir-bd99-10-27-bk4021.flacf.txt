@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-10-27-bk4021.flacf 
+=================== 
+=================== 
+=================== 
+2cbd4af31afcdabfdf3c3b0d836a2a32  bd99-10-27-bk4021-d1t01.flac
+3f8b8e5482f924fc1529c46332f4ac19  bd99-10-27-bk4021-d1t02.flac
+7dccf98937bbb155e79c6adefc2c0acb  bd99-10-27-bk4021-d1t03.flac
+7a372ad86862748d5332be4a0eedb2ca  bd99-10-27-bk4021-d1t04.flac
+c642a359fce49c810f39ef39b1dfc857  bd99-10-27-bk4021-d1t05.flac
+ffc108a4d9a900244c98eae5cc818f69  bd99-10-27-bk4021-d1t06.flac
+55a32d41610674e393e8ee58563ec3b7  bd99-10-27-bk4021-d1t07.flac
+be36e6ce9b5ad08986c4d0956434162f  bd99-10-27-bk4021-d1t08.flac
+d07787b206f79e1ed03e247901d39da1  bd99-10-27-bk4021-d1t09.flac
+d8d28e1fc91351f704cb32aee4dbc5a8  bd99-10-27-bk4021-d1t10.flac
+0a86ff2c61fca987e42e9de7f01709ca  bd99-10-27-bk4021-d1t11.flac
+1339fcae108f95bcf0f39e3da5255c68  bd99-10-27-bk4021-d1t12.flac
+c03e9f7a9829c1a0297045d2a84795cd  bd99-10-27-bk4021-d2t01.flac
+e4c0ef65d9562245a69a7836490b9a73  bd99-10-27-bk4021-d2t02.flac
+da471e2961eecb6e046ead8dc8e2ca7f  bd99-10-27-bk4021-d2t03.flac
+4e9991778f9f5964da6ddd8200e5015d  bd99-10-27-bk4021-d2t04.flac
+843b565c5b24a8ccc438673e15f2554d  bd99-10-27-bk4021-LB-4683.txt
+4e40cd6231f3c307663d3f1982e542ed  bd99-10-27-bk4021.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-10-27-bk4021.flacf 
+=================== 
+=================== 
+=================== 
+bd99-10-27-bk4021-d1t01.flac:4c93e37a7da4867bf761cf4175e15492
+bd99-10-27-bk4021-d1t02.flac:54a6b4efc91b579162c38329fb161fba
+bd99-10-27-bk4021-d1t03.flac:77bd15daf14a275b16a9cd41bcbce7d6
+bd99-10-27-bk4021-d1t04.flac:701010f150ca3fbffb1e83f3eda5f18c
+bd99-10-27-bk4021-d1t05.flac:fd3afe8ad2fde4568e96b59eb0b759bf
+bd99-10-27-bk4021-d1t06.flac:1e9b759e17bb1869ec2a9c6a9018be89
+bd99-10-27-bk4021-d1t07.flac:dc25ef004688bc41cbdbcb2d1053f3cd
+bd99-10-27-bk4021-d1t08.flac:391695c519f48daee0c21757f11e1739
+bd99-10-27-bk4021-d1t09.flac:fbc2185c7515b7083dc4d770f01d01ce
+bd99-10-27-bk4021-d1t10.flac:e20d7a9614ef464ad6b7690cadba58d4
+bd99-10-27-bk4021-d1t11.flac:c315d59ae7117224f31b91049cda0790
+bd99-10-27-bk4021-d1t12.flac:4ceabaeb95205fc61755533e00c615d8
+bd99-10-27-bk4021-d2t01.flac:217e19922e3ef330927bef5ce36b796a
+bd99-10-27-bk4021-d2t02.flac:1f0f1c44b66f63344a138a5ed043659f
+bd99-10-27-bk4021-d2t03.flac:abb8f79fe9addb9cc5d13e7a40d7ba6d
+bd99-10-27-bk4021-d2t04.flac:e85de01634f088310e1ebd83ff47a74b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-10-27-bk4021.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.00        9525644 B   ---   --   ---xx   flac  0.4327  bd99-10-27-bk4021-d1t01.flac
+     2:32.00       26812844 B   ---   --   ---xx   flac  0.5198  bd99-10-27-bk4021-d1t02.flac
+     5:43.00       60505244 B   ---   --   ---xx   flac  0.4468  bd99-10-27-bk4021-d1t03.flac
+     7:39.00       80967644 B   ---   --   ---xx   flac  0.5007  bd99-10-27-bk4021-d1t04.flac
+     6:32.00       69148844 B   ---   --   ---xx   flac  0.4555  bd99-10-27-bk4021-d1t05.flac
+     8:04.00       85377644 B   ---   --   ---xx   flac  0.6130  bd99-10-27-bk4021-d1t06.flac
+     4:14.00       44805644 B   ---   --   ---xx   flac  0.5775  bd99-10-27-bk4021-d1t07.flac
+     6:05.00       64386044 B   ---   --   ---xx   flac  0.5225  bd99-10-27-bk4021-d1t08.flac
+     8:23.00       88729244 B   ---   --   ---xx   flac  0.5819  bd99-10-27-bk4021-d1t09.flac
+     6:09.00       65091644 B   ---   --   ---xx   flac  0.4390  bd99-10-27-bk4021-d1t10.flac
+     0:49.50        8761244 B   ---   --   ---xx   flac  0.4114  bd99-10-27-bk4021-d1t11.flac
+     8:01.25       84907244 B   ---   --   ---xx   flac  0.5630  bd99-10-27-bk4021-d1t12.flac
+     5:55.00       62622044 B   ---   --   ---xx   flac  0.5157  bd99-10-27-bk4021-d2t01.flac
+     8:10.00       86436044 B   ---   --   ---xx   flac  0.5844  bd99-10-27-bk4021-d2t02.flac
+     9:38.00      101959244 B   ---   --   ---xx   flac  0.4486  bd99-10-27-bk4021-d2t03.flac
+     4:06.01       43396180 B   -b-   --   ---xx   flac  0.5771  bd99-10-27-bk4021-d2t04.flac
+    92:55.01      983432440 B                            0.5229  (16 files)
+=================== 
+=================== 
+=================== 

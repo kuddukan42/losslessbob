@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-15-c.flacf 
+=================== 
+=================== 
+=================== 
+f9cb3cda94bca4489b29dfcfac8fee73  1989-06-15-Madrid-LTD-sbes-fixed-info.txt
+4ab76282329efdc0f99dbe8ddc5276ab  1989-06-15-Madrid-LTD-sbes-fixed.txt
+f57a01d0165b25979624854305f46d48  1989-06-15-Madrid-ticket.jpg
+978d83bca1075ddf97f6da40d9ad1368  bd1989-06-15d1t01.flac
+4ebe8c585331e583e3c83b11fa26fc8e  bd1989-06-15d1t02.flac
+19012504121e940760ce26268ce2e99c  bd1989-06-15d1t03.flac
+8b588383c2eb9eb674cdbe3a86534fd5  bd1989-06-15d1t04.flac
+93ab08889c3c251c2e68a969362d79e4  bd1989-06-15d1t05.flac
+e6133cc9b1128bb8feb39527b29a71f6  bd1989-06-15d1t06.flac
+7a90661f1d49a2d1e3cd2c7843f91061  bd1989-06-15d1t07.flac
+537baf473da220787aac3875f127f2ba  bd1989-06-15d1t08.flac
+1f7fcb13bd7fab37485c576d0a3ddb10  bd1989-06-15d1t09.flac
+fdebb6c315b84520e09c98a1c72fe76f  bd1989-06-15d1t10.flac
+34865064d7514cf0f5d043e111d57063  bd1989-06-15d1t11.flac
+8e03eb81731b002fe6cf9a909cb93a67  bd1989-06-15d1t12.flac
+9b673c1bb9c021ac59c8304d143499c2  bd1989-06-15d1t13.flac
+8d46adc7b63999582c91769a905ae487  bd1989-06-15d1t14.flac
+6ad6734d73fa5c0562a9266e42383316  bd1989-06-15d1t15.flac
+3e411457e6170be349613504778db037  DigiFlawFinder-bd89-06-15-c.flacf.wavf.html
+6c269b5d72fbc50c2f15ce2b2dc47dbb  fingerprint.ffp
+0d6ce117278a1280cc656d7a3c7a8585  Lyrics\A House of Gold.txt
+ed0859be3214fc858a9eeca374c784d3  Lyrics\The Lakes of Pontchartrain.txt
+cf0ba23dfdf3f2f2c2f78e209a24cb6d  md5sum.md5
+5f81dad644c2112d7a03ee59251c4c86  Original\1989-06-15 Madrid.md5
+90e9ef09e75e58ace7c4009ab6e72eb2  Original\1989-06-15 Madrid.torrent
+f406a06121717011308f60904ef90705  Original\Madrid-1989-06-15.txt
+605b56cbcc4e0c8c05cfca872a60a82d  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-15-c.flacf 
+=================== 
+=================== 
+=================== 
+bd1989-06-15d1t01.flac:4195cf92151e036b28594d4297bdb0ac
+bd1989-06-15d1t02.flac:c7e7a615149ffa0e1da4b3e1b3111aaa
+bd1989-06-15d1t03.flac:076a5962bbf87b61ecbbf1f74b7dfa9d
+bd1989-06-15d1t04.flac:deb99500cd284e8318989df155d177cb
+bd1989-06-15d1t05.flac:67444d8a64cf4b87ddaddff182e0450a
+bd1989-06-15d1t06.flac:817b87608b4beb9894d92763a4358fd2
+bd1989-06-15d1t07.flac:84b7608d72bef3cd8017729fc3229674
+bd1989-06-15d1t08.flac:596d78da3d681f09adc1ec02b65a68f6
+bd1989-06-15d1t09.flac:9666aaa4241498a55c029e47f8f18f01
+bd1989-06-15d1t10.flac:bf58207372f8376572d38380111c7981
+bd1989-06-15d1t11.flac:b386a9fb945c5f56df6c74c13b568f62
+bd1989-06-15d1t12.flac:3c8b27921c6cf0e03cf13fb2f0f2d975
+bd1989-06-15d1t13.flac:fe10882e2768c7c94c27c7e4564fb6bb
+bd1989-06-15d1t14.flac:5611f9e8636a3da9e9c4e69aeba236c5
+bd1989-06-15d1t15.flac:bffdbb236f080a53a32cd11b3b79baed
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-15-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.43       62193980 B   ---   --   ---xx   flac  0.5541  bd1989-06-15d1t01.flac
+     4:49.69       51141932 B   ---   --   ---xx   flac  0.5741  bd1989-06-15d1t02.flac
+     3:51.67       40906028 B   ---   --   ---xx   flac  0.5624  bd1989-06-15d1t03.flac
+     6:12.10       65644364 B   ---   --   ---xx   flac  0.5791  bd1989-06-15d1t04.flac
+     6:47.59       71933612 B   ---   --   ---xx   flac  0.6068  bd1989-06-15d1t05.flac
+     4:21.23       46094540 B   ---   --   ---xx   flac  0.5813  bd1989-06-15d1t06.flac
+     5:02.61       53416316 B   ---   --   ---xx   flac  0.5327  bd1989-06-15d1t07.flac
+     5:27.08       57701660 B   ---   --   ---xx   flac  0.5327  bd1989-06-15d1t08.flac
+     6:48.66       72126476 B   ---   --   ---xx   flac  0.5342  bd1989-06-15d1t09.flac
+     5:47.41       61307276 B   ---   --   ---xx   flac  0.5948  bd1989-06-15d1t10.flac
+     2:49.71       29978636 B   ---   --   ---xx   flac  0.6234  bd1989-06-15d1t11.flac
+     4:34.32       48408908 B   ---   --   ---xx   flac  0.5995  bd1989-06-15d1t12.flac
+     6:45.18       71484380 B   ---   --   ---xx   flac  0.6201  bd1989-06-15d1t13.flac
+     6:00.18       63546380 B   ---   --   ---xx   flac  0.5259  bd1989-06-15d1t14.flac
+     5:30.47       58322588 B   ---   --   ---xx   flac  0.5516  bd1989-06-15d1t15.flac
+    80:42.33      854207076 B                            0.5702  (15 files)
+=================== 
+=================== 
+=================== 

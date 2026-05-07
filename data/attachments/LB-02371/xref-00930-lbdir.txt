@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-05-schubert-rem-e.flacf 
+=================== 
+=================== 
+=================== 
+e420f914390a75b9fc28d47496f437ce  Bob Dylan - Locarno October 5th 1987 SRM.md5
+e420f914390a75b9fc28d47496f437ce  Bob Dylan - Locarno October 5th 1987 SRM.txt
+af5c0eb15899420914b38bc86726c91f  Bob Dylan - Locarno October 5th 1987 SRM_Info.txt
+3ad2aabc5c0e20fcfd46d991b4832516  Bob Dylan - Locarno October 5th 1987.ffp
+8e14a5fc1811f3bff718a0aa00d38069  Dylan - Locarno Octtober 5th 1987 SRM_Track01.flac
+fba565f1dc76955ad0d4a56e82650121  Dylan - Locarno Octtober 5th 1987 SRM_Track02.flac
+e469bc97ebbc949fc4db35ef9060d327  Dylan - Locarno Octtober 5th 1987 SRM_Track03.flac
+a05901fd9bb8d7daf876d369fbb325e1  Dylan - Locarno Octtober 5th 1987 SRM_Track04.flac
+8c4718c58bbb267ca42da90a0267c38f  Dylan - Locarno Octtober 5th 1987 SRM_Track05.flac
+789a493411f0ed6606c5aaa411a0d465  Dylan - Locarno Octtober 5th 1987 SRM_Track06.flac
+2e4d77aa3ca69a48e6c7e72b644ee4e9  Dylan - Locarno Octtober 5th 1987 SRM_Track07.flac
+0f5499e7d53879ddb2e54cb16801d7b8  Dylan - Locarno Octtober 5th 1987 SRM_Track08.flac
+b449a185048f6d8503ba61c56c0e76e4  Dylan - Locarno Octtober 5th 1987 SRM_Track09.flac
+2f07c658d551768ebb9ce0f0575fd58f  Dylan - Locarno Octtober 5th 1987 SRM_Track10.flac
+c9afb93e82fa97408b7a571ca131df00  Dylan - Locarno Octtober 5th 1987 SRM_Track11.flac
+37a8e9b704f4de0e1ed1087a92fffbae  Dylan - Locarno Octtober 5th 1987 SRM_Track12.flac
+9a51970a108fac061a3a31df4f31f27f  Dylan - Locarno Octtober 5th 1987 SRM_Track13.flac
+155bda9699e361af32868b1ab18479ac  Dylan - Locarno Octtober 5th 1987 SRM_Track14.flac
+03812dcd1739814f8263aa4059aaeac2  Locarno, Switzerland 05.10.1987 Schubert RM - F.jpg
+dcad172cecc45a16bfe1acaf269d3b01  Locarno, Switzerland 05.10.1987 Schubert RM - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-05-schubert-rem-e.flacf 
+=================== 
+=================== 
+=================== 
+Dylan - Locarno Octtober 5th 1987 SRM_Track01.flac:0dc531724c8b40b4d7bab25e70575c9d
+Dylan - Locarno Octtober 5th 1987 SRM_Track02.flac:f7868d52711242eec2e329ff1159a23e
+Dylan - Locarno Octtober 5th 1987 SRM_Track03.flac:ed7c41b0c5a50d673ab74976dce74c06
+Dylan - Locarno Octtober 5th 1987 SRM_Track04.flac:79038bbae1ef8dd7b3cca2bd85d4219b
+Dylan - Locarno Octtober 5th 1987 SRM_Track05.flac:86551c02083cc30ae0a2a7cd976a48ba
+Dylan - Locarno Octtober 5th 1987 SRM_Track06.flac:ada92614570ddccf87eaf067d34ad62e
+Dylan - Locarno Octtober 5th 1987 SRM_Track07.flac:29989050b6676092c4a439ecfcb434d0
+Dylan - Locarno Octtober 5th 1987 SRM_Track08.flac:47fed6f871647a40a20462280c5711bb
+Dylan - Locarno Octtober 5th 1987 SRM_Track09.flac:911a168aeadb50b7ba06bf6380a4c5a7
+Dylan - Locarno Octtober 5th 1987 SRM_Track10.flac:3be94b16348e97e68492c9b2e207f58e
+Dylan - Locarno Octtober 5th 1987 SRM_Track11.flac:79a3738bbcedfa81195adf14b5698729
+Dylan - Locarno Octtober 5th 1987 SRM_Track12.flac:f1e8014b76ffaf3920b6226e80d0fc17
+Dylan - Locarno Octtober 5th 1987 SRM_Track13.flac:53f3fc77a29e2f1a1e1b16d506a54d77
+Dylan - Locarno Octtober 5th 1987 SRM_Track14.flac:febd0c67c101c84c3ded4308b1b4e43d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-05-schubert-rem-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:33.71       37740236 B   ---   --   ---xx   flac  0.6737  Dylan - Locarno Octtober 5th 1987 SRM_Track01.flac
+     6:00.21       63553436 B   ---   --   ---xx   flac  0.6720  Dylan - Locarno Octtober 5th 1987 SRM_Track02.flac
+     4:22.74       46390892 B   ---   --   ---xx   flac  0.6723  Dylan - Locarno Octtober 5th 1987 SRM_Track03.flac
+     5:19.63       56419820 B   ---   --   ---xx   flac  0.6788  Dylan - Locarno Octtober 5th 1987 SRM_Track04.flac
+     4:26.18       46964780 B   ---   --   ---xx   flac  0.6906  Dylan - Locarno Octtober 5th 1987 SRM_Track05.flac
+     5:43.56       60636956 B   ---   --   ---xx   flac  0.6394  Dylan - Locarno Octtober 5th 1987 SRM_Track06.flac
+     4:38.06       49053356 B   ---   --   ---xx   flac  0.7007  Dylan - Locarno Octtober 5th 1987 SRM_Track07.flac
+     3:58.42       42082028 B   ---   --   ---xx   flac  0.6905  Dylan - Locarno Octtober 5th 1987 SRM_Track08.flac
+     5:34.70       59082284 B   ---   --   ---xx   flac  0.6049  Dylan - Locarno Octtober 5th 1987 SRM_Track09.flac
+     4:13.10       44652764 B   ---   --   ---xx   flac  0.6004  Dylan - Locarno Octtober 5th 1987 SRM_Track10.flac
+     5:53.39       62360972 B   ---   --   ---xx   flac  0.7002  Dylan - Locarno Octtober 5th 1987 SRM_Track11.flac
+     7:11.61       76171916 B   ---   --   ---xx   flac  0.6951  Dylan - Locarno Octtober 5th 1987 SRM_Track12.flac
+     3:20.74       35454092 B   ---   --   ---xx   flac  0.6908  Dylan - Locarno Octtober 5th 1987 SRM_Track13.flac
+     5:31.73       58560140 B   ---   --   ---xx   flac  0.6717  Dylan - Locarno Octtober 5th 1987 SRM_Track14.flac
+    69:50.03      739123672 B                            0.6700  (14 files)
+=================== 
+=================== 
+=================== 

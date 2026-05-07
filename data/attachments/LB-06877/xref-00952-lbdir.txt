@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-11-twelve-a-Pound-jtt.flacf 
+=================== 
+=================== 
+=================== 
+fff115492b83b00f46cea44fc369e918  12 Shillings A POUND - Disc 01.jpeg
+ad807b7fb3b2262337f334fff5246d85  12 Shillings A POUND - Disc 02.jpeg
+745186aca323b2ae29c78267c2d9d104  12 Shillings A POUND - Front.jpeg
+b02e8dfb6380184b8325e69b42089d9b  12 Shillings A POUND - Rear.jpeg
+05f2bfe737026929b5e8ae5a7e3cacea  BOB DYLAN - 12 Shilligs a Pound_Info.txt
+1b8ca2a68accbe29d3ebe718b6eddaf4  BOB DYLAN - 12 Shillings a Pound.md5
+1b8ca2a68accbe29d3ebe718b6eddaf4  BOB DYLAN - 12 Shillings a Pound.txt
+54b53ee01eda01b48bad0e6cd46ed2c4  Disc One\Disc One.ffp
+ffcd4da32de284f2f93d3950d0d1adbd  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 01.flac
+eab1492fa33d6f66700a599e3e500909  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 02.flac
+5c02dce7a22ffc33e13324e85fce975b  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 03.flac
+2a9adb748f5e3b056f3d97bf70a7144f  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 04.flac
+712893c9d029be2e432ea6a0e23198b0  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 05.flac
+794e0c05e9257ae482dcb8b2c812cee9  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 06.flac
+f8dedda76a13bd5568b7b8eec2196eee  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 07.flac
+2454e01098f37ff4c520d3cfeb52a541  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 08.flac
+ea9cfee7bd2bc7a4e5d87fa83b16e207  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 09.flac
+b19bda8b03a74c50e6319b98aa8e31ac  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 10.flac
+cb3773a016630b86d966c4834267df01  Disc One\Dylan - 12 Shillings ... _Disc 01 Track 11.flac
+73ce3b2df4339634277c3e5928dcabf8  Disc Two\Disc Two.ffp
+70c04a73cbd25a7d124b88c8455e7cc3  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 01.flac
+437c49460cbe9cacfe4e8185f0de8fe7  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 02.flac
+ad5f27dc079af78b2bab0d175c6a8c04  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 03.flac
+2c511a8e4fc343389ffbff1f518d7ecc  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 04.flac
+b025a7dd4c64fedee00bdefee07916e6  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 05.flac
+ce836b7fea65e43f08bb14e5e5d4c49a  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 06.flac
+204de8ea0131324719f1150be3e333d3  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 07.flac
+0107c8109ac0fbb919066c3f39cbc4e0  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 08.flac
+c2dba81a90b397490a69ce90436f6d77  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 09.flac
+191b7653dd8ea0f3f43e7c02cf89cce5  Disc Two\Dylan - 12 Shillings ... _Disc 02 Track 10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-11-twelve-a-Pound-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - 12 Shillings ... _Disc 01 Track 01.flac:3579a9d1b7ed69ed448757a5013eeab8
+Dylan - 12 Shillings ... _Disc 01 Track 02.flac:e980ce12d6dace9e981e7c9cdde1df9b
+Dylan - 12 Shillings ... _Disc 01 Track 03.flac:b508c76e114be0bdc9be9cca07689f15
+Dylan - 12 Shillings ... _Disc 01 Track 04.flac:c310716c6a9c06832bcf2312a0dcc584
+Dylan - 12 Shillings ... _Disc 01 Track 05.flac:7376a5fa99f930e715c2f15747c3b412
+Dylan - 12 Shillings ... _Disc 01 Track 06.flac:266f5842d6cb10d326727ee37a5db46b
+Dylan - 12 Shillings ... _Disc 01 Track 07.flac:ac0704599f689b7dfbdbbdf6fbda14a8
+Dylan - 12 Shillings ... _Disc 01 Track 08.flac:1feadafe51129f22e882ca3b55686ee5
+Dylan - 12 Shillings ... _Disc 01 Track 09.flac:291606f8db7e903ea4119026224b9ceb
+Dylan - 12 Shillings ... _Disc 01 Track 10.flac:42e255ff620eae2c6c8fc7067423129a
+Dylan - 12 Shillings ... _Disc 01 Track 11.flac:7a38309ce63ee3aff2c3b4adfcb0be31
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-11-twelve-a-Pound-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - 12 Shillings ... _Disc 02 Track 01.flac:ac56e176d0b0fb7d422e06a509326f5a
+Dylan - 12 Shillings ... _Disc 02 Track 02.flac:4568b5f43d27223478dfe8bf232d2d0b
+Dylan - 12 Shillings ... _Disc 02 Track 03.flac:11cdce15e05fd0cf1286ee9f378f55eb
+Dylan - 12 Shillings ... _Disc 02 Track 04.flac:28931513cc6ced31168fbab23052cd98
+Dylan - 12 Shillings ... _Disc 02 Track 05.flac:f4fb2fa56af9d45d2583a54516c28fbd
+Dylan - 12 Shillings ... _Disc 02 Track 06.flac:5ef440ce3ccf5471b8044bde602015cc
+Dylan - 12 Shillings ... _Disc 02 Track 07.flac:cdefc567166df50c6eeee5796813e3d2
+Dylan - 12 Shillings ... _Disc 02 Track 08.flac:8b33445c83c005e7d46f9f8ee3b2118c
+Dylan - 12 Shillings ... _Disc 02 Track 09.flac:bca986367fec0709c20c9c0a369e3f10
+Dylan - 12 Shillings ... _Disc 02 Track 10.flac:2aec139a2c222d9bfb5910f3d7b69e13
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-11-twelve-a-Pound-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.40       51073724 B   ---   --   ---xx   flac  0.7086  Dylan - 12 Shillings ... _Disc 01 Track 01.flac
+     4:11.45       44382284 B   ---   --   ---xx   flac  0.6663  Dylan - 12 Shillings ... _Disc 01 Track 02.flac
+     5:02.70       53437484 B   ---   --   ---xx   flac  0.7026  Dylan - 12 Shillings ... _Disc 01 Track 03.flac
+     7:36.58       80574860 B   ---   --   ---xx   flac  0.6615  Dylan - 12 Shillings ... _Disc 01 Track 04.flac
+     7:45.15       82061324 B   ---   --   ---xx   flac  0.6618  Dylan - 12 Shillings ... _Disc 01 Track 05.flac
+     7:05.67       75127628 B   ---   --   ---xx   flac  0.6780  Dylan - 12 Shillings ... _Disc 01 Track 06.flac
+     6:39.45       70489484 B   ---   --   ---xx   flac  0.5851  Dylan - 12 Shillings ... _Disc 01 Track 07.flac
+     6:45.73       71613740 B   ---   --   ---xx   flac  0.5685  Dylan - 12 Shillings ... _Disc 01 Track 08.flac
+     8:23.35       88811564 B   ---   --   ---xx   flac  0.5923  Dylan - 12 Shillings ... _Disc 01 Track 09.flac
+     7:40.47       81254588 B   ---   --   ---xx   flac  0.6318  Dylan - 12 Shillings ... _Disc 01 Track 10.flac
+     6:05.68       64545980 B   ---   --   ---xx   flac  0.6828  Dylan - 12 Shillings ... _Disc 01 Track 11.flac
+    72:07.38      763372660 B                            0.6443  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-11-twelve-a-Pound-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.08       65816060 B   ---   --   ---xx   flac  0.6927  Dylan - 12 Shillings ... _Disc 02 Track 01.flac
+     5:08.74       54505292 B   ---   --   ---xx   flac  0.6297  Dylan - 12 Shillings ... _Disc 02 Track 02.flac
+     5:54.43       62546780 B   ---   --   ---xx   flac  0.6200  Dylan - 12 Shillings ... _Disc 02 Track 03.flac
+     4:58.22       52618988 B   ---   --   ---xx   flac  0.7156  Dylan - 12 Shillings ... _Disc 02 Track 04.flac
+     7:47.63       82527020 B   ---   --   ---xx   flac  0.6577  Dylan - 12 Shillings ... _Disc 02 Track 05.flac
+     7:50.54       83035052 B   ---   --   ---xx   flac  0.6469  Dylan - 12 Shillings ... _Disc 02 Track 06.flac
+     8:30.14       89996972 B   ---   --   ---xx   flac  0.6372  Dylan - 12 Shillings ... _Disc 02 Track 07.flac
+     6:03.37       64120268 B   ---   --   ---xx   flac  0.6621  Dylan - 12 Shillings ... _Disc 02 Track 08.flac
+     9:08.23       96721340 B   ---   --   ---xx   flac  0.5830  Dylan - 12 Shillings ... _Disc 02 Track 09.flac
+     7:54.69       83775932 B   ---   --   ---xx   flac  0.6900  Dylan - 12 Shillings ... _Disc 02 Track 10.flac
+    69:30.32      735663704 B                            0.6502  (10 files)
+=================== 
+=================== 
+=================== 

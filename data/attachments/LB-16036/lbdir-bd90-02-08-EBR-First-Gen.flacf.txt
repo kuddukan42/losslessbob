@@ -1,0 +1,101 @@
+===================
+===================
+===================
+=== md5 for: bd90-02-08-EBR-First-Gen.flacf
+===================
+===================
+===================
+340e353f3b6cb7eb67ef48829f3bf6ef *Bob Dylan Hammersmith Odeon England Feb 8 1990 AUD.ffp
+41142c0e1f400fdf967f267479914f11 *Bob Dylan Hammersmith Odeon England Feb 8 1990 AUD.md5
+7c051c36830f33d46fa8fef3dc25f962 *Bob Dylan Hammersmith Odeon Feb 8 1990.txt
+b3f9c0212ff54d8c461f97170e7af9db *Bob Dylan Hammersmith Odeon London England February 8 199001.flac
+e74eaaa4c5b3470ca9f8b4308241bbcc *Bob Dylan Hammersmith Odeon London England February 8 199002.flac
+26fd318c8f02cea29f51318827eeb048 *Bob Dylan Hammersmith Odeon London England February 8 199003.flac
+785f5031c7fd9defc7f554ddd0c52acb *Bob Dylan Hammersmith Odeon London England February 8 199004.flac
+578f77bb3dcf74024267442eddda9893 *Bob Dylan Hammersmith Odeon London England February 8 199005.flac
+9e1fc8ff32cdd7b19b063559f3a0bc1d *Bob Dylan Hammersmith Odeon London England February 8 199006.flac
+ad4cfd0f806318301617be546622aeec *Bob Dylan Hammersmith Odeon London England February 8 199007.flac
+63e6e983fd0211e4efa5730c4c696115 *Bob Dylan Hammersmith Odeon London England February 8 199008.flac
+d12027d8d2f8a5402dfb41465211ffec *Bob Dylan Hammersmith Odeon London England February 8 199009.flac
+504516f96f40536832afb12e8d46a402 *Bob Dylan Hammersmith Odeon London England February 8 199010.flac
+f66e78ab62ce6a5ef117539a330adb7a *Bob Dylan Hammersmith Odeon London England February 8 199011.flac
+036956b3eed6efbef9bed431b9befa07 *Bob Dylan Hammersmith Odeon London England February 8 199012.flac
+cee99a48e77ac212b6c3c418e369a4df *Bob Dylan Hammersmith Odeon London England February 8 199013.flac
+eab4c2874fa9655f75e90da0b6a93eb5 *Bob Dylan Hammersmith Odeon London England February 8 199014.flac
+f1aa5f6c94de5575d99bf85ce6667ec7 *Bob Dylan Hammersmith Odeon London England February 8 199015.flac
+ff3cb33d512d2b6253382b6af1af44d9 *Bob Dylan Hammersmith Odeon London England February 8 199016.flac
+e7866e6e34c22761ee3402e40a5daf5b *Bob Dylan Hammersmith Odeon London England February 8 199017.flac
+3559f987a0be9d342024b75fae5e88e9 *Bob Dylan Hammersmith Odeon London England February 8 199018.flac
+82362d22323016da8063eca1cdf2917b *Bob Dylan Hammersmith Odeon London England February 8 199019.flac
+fa3802e367f0d64f1c6cce9a239657a7 *Bob Dylan Hammersmith Odeon London England February 8 199020.flac
+5369b282a2fe8770913c3bfa7696cb3a *Bob Dylan Hammersmith Odeon London England February 8 199021.flac
+2269b72704f07d926cf47f069fd26a8b *Bob Dylan Hammersmith Odeon London England February 8 199022.flac
+a1323ddbcb7c360dd635fd461c0e8d0f *Bob Dylan Hammersmith Odeon London England February 8 199023.flac
+83e336a64ae5764508a3cbdedae607f2 *Bob Dylan Hammersmith Odeon London England February 8 199024.flac
+===================
+===================
+===================
+=== ffp for: bd90-02-08-EBR-First-Gen.flacf
+===================
+===================
+===================
+Bob Dylan Hammersmith Odeon London England February 8 199001.flac:c7982defddcd4da11b6e59ed1b168db6
+Bob Dylan Hammersmith Odeon London England February 8 199002.flac:f5f69f3b7de11d43ce2c7aafb75d9572
+Bob Dylan Hammersmith Odeon London England February 8 199003.flac:1eb5d85739b5bf417a84652e793927a4
+Bob Dylan Hammersmith Odeon London England February 8 199004.flac:0a491ad5194c28da13d8de02058230be
+Bob Dylan Hammersmith Odeon London England February 8 199005.flac:2cdcc0f9e85573928022ffc2cafd4f2a
+Bob Dylan Hammersmith Odeon London England February 8 199006.flac:865e68d3c9625a1d7bcebe8db9c02a94
+Bob Dylan Hammersmith Odeon London England February 8 199007.flac:c9dad773a669a99c35aec331f9bc29e7
+Bob Dylan Hammersmith Odeon London England February 8 199008.flac:954e4db272aa1de1e8f16842417b6903
+Bob Dylan Hammersmith Odeon London England February 8 199009.flac:7c4aec69f8e47a26c8fbd219a6d8020b
+Bob Dylan Hammersmith Odeon London England February 8 199010.flac:946e09d7ab1b6fb3f3237231cba2b91a
+Bob Dylan Hammersmith Odeon London England February 8 199011.flac:16605e883a42ba2328594cd0c849df2e
+Bob Dylan Hammersmith Odeon London England February 8 199012.flac:5245f1d820ae20d6b662deeb62824916
+Bob Dylan Hammersmith Odeon London England February 8 199013.flac:6cb2bd1dd133822a9d28d3dcde0e37e0
+Bob Dylan Hammersmith Odeon London England February 8 199014.flac:dddbb90e83df60edf5a19b5cd0eba0e2
+Bob Dylan Hammersmith Odeon London England February 8 199015.flac:1a7de4282ff8fc9297edb2ba17d61ec7
+Bob Dylan Hammersmith Odeon London England February 8 199016.flac:764a29e7487658bda7d965bf2f162b6d
+Bob Dylan Hammersmith Odeon London England February 8 199017.flac:27cb706ed7ab69d4999d82cf71523155
+Bob Dylan Hammersmith Odeon London England February 8 199018.flac:55524475f21eeefc8fdc726049fa402b
+Bob Dylan Hammersmith Odeon London England February 8 199019.flac:ebdcd19fb8ca6d5ebd006d18a0984b83
+Bob Dylan Hammersmith Odeon London England February 8 199020.flac:1c70bfccd4086c2acfb97e7231b9909f
+Bob Dylan Hammersmith Odeon London England February 8 199021.flac:2bd6ca90bb02640b20a9300de8dfdcf7
+Bob Dylan Hammersmith Odeon London England February 8 199022.flac:b06386d1e76418ea275a2d98b957fad4
+Bob Dylan Hammersmith Odeon London England February 8 199023.flac:ac3d06a9228da4549fd95a594ba229d2
+Bob Dylan Hammersmith Odeon London England February 8 199024.flac:51b14036e5fe26d401b705385a9a6efc
+===================
+===================
+===================
+=== shntool len for: bd90-02-08-EBR-First-Gen.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.827       7438124 B   cxx   --   ---xx   flac  0.7221  Bob Dylan Hammersmith Odeon London England February 8 199001.flac
+     4:07.827      71374124 B   cxx   --   ---xx   flac  0.7357  Bob Dylan Hammersmith Odeon London England February 8 199002.flac
+     4:02.253      69769004 B   cxx   --   ---xx   flac  0.7215  Bob Dylan Hammersmith Odeon London England February 8 199003.flac
+     4:44.307      81880364 B   cxx   --   ---xx   flac  0.7275  Bob Dylan Hammersmith Odeon London England February 8 199004.flac
+     5:44.933      99340844 B   cxx   --   ---xx   flac  0.7302  Bob Dylan Hammersmith Odeon London England February 8 199005.flac
+     3:36.813      62442284 B   cxx   --   ---xx   flac  0.7310  Bob Dylan Hammersmith Odeon London England February 8 199006.flac
+     5:17.067      91315244 B   cxx   --   ---xx   flac  0.7341  Bob Dylan Hammersmith Odeon London England February 8 199007.flac
+     2:53.560      49985324 B   cxx   --   ---xx   flac  0.7366  Bob Dylan Hammersmith Odeon London England February 8 199008.flac
+     3:03.747      52919084 B   cxx   --   ---xx   flac  0.7232  Bob Dylan Hammersmith Odeon London England February 8 199009.flac
+     2:40.733      46291244 B   cxx   --   ---xx   flac  0.7345  Bob Dylan Hammersmith Odeon London England February 8 199010.flac
+     4:36.053      79503404 B   cxx   --   ---xx   flac  0.7111  Bob Dylan Hammersmith Odeon London England February 8 199011.flac
+     4:38.853      80309804 B   cxx   --   ---xx   flac  0.7126  Bob Dylan Hammersmith Odeon London England February 8 199012.flac
+     3:34.947      61904684 B   cxx   --   ---xx   flac  0.7233  Bob Dylan Hammersmith Odeon London England February 8 199013.flac
+     6:45.187     116693804 B   cxx   --   ---xx   flac  0.7089  Bob Dylan Hammersmith Odeon London England February 8 199014.flac
+     3:52.427      66938924 B   cxx   --   ---xx   flac  0.7131  Bob Dylan Hammersmith Odeon London England February 8 199015.flac
+     4:42.560      81377324 B   cxx   --   ---xx   flac  0.7399  Bob Dylan Hammersmith Odeon London England February 8 199016.flac
+     3:03.720      52911404 B   cxx   --   ---xx   flac  0.7336  Bob Dylan Hammersmith Odeon London England February 8 199017.flac
+     4:05.453      70690604 B   cxx   --   ---xx   flac  0.7448  Bob Dylan Hammersmith Odeon London England February 8 199018.flac
+     5:54.960     102228524 B   cxx   --   ---xx   flac  0.7359  Bob Dylan Hammersmith Odeon London England February 8 199019.flac
+     2:57.747      51191084 B   cxx   --   ---xx   flac  0.7643  Bob Dylan Hammersmith Odeon London England February 8 199020.flac
+     6:54.600     119404844 B   cxx   --   ---xx   flac  0.7545  Bob Dylan Hammersmith Odeon London England February 8 199021.flac
+     6:04.107     104862764 B   cxx   --   ---xx   flac  0.7021  Bob Dylan Hammersmith Odeon London England February 8 199022.flac
+     4:12.400      72691244 B   cxx   --   ---xx   flac  0.7202  Bob Dylan Hammersmith Odeon London England February 8 199023.flac
+     4:40.867      80889644 B   cxx   --   ---xx   flac  0.7514  Bob Dylan Hammersmith Odeon London England February 8 199024.flac
+   102:40.947    1774353696 B                            0.7293  (24 files)
+===================
+===================
+===================

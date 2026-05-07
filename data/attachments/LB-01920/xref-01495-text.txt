@@ -1,0 +1,40 @@
+===================
+===================
+===================
+=== bd-95-03-13-offmaster.txt
+===================
+===================
+===================
+Bob Dylan
+95-03-13
+Palac kultury, Congress Hall  Prague, Czech Republic
+
+
+Disk One
+Crash On The Levee (Down In The Flood) / Lay Lady Lay / All Along The Watchtower / 
+Just Like A Woman / Tangled Up In Blue / License To Kill / Mr. Tambourine Man 
+(acoustic w band) / 
+
+Disk Two
+The Times They Are A-Changin' (acoustic w band) / Boots Of Spanish Leather (acoustic 
+w band) / God Knows / Man In The Long Black Coat / Maggie's Farm / Like A Rolling Stone
+
+disk one
+Track 01.flac:cbc30912f94db78ffbedb0216a0e1f58
+Track 02.flac:45db975535db9ca54c813d827a944d50
+Track 03.flac:bbcb77582a53c7552222148934b1ac0a
+Track 04.flac:515cd6dcaddc4d3c23670af8d63d2c86
+Track 05.flac:26fc97c799c5df6eecd1580511dbbc7d
+Track 06.flac:eee495e0d8ca67ec6c5ce75cebafcb0c
+Track 07.flac:d060e4b8a3e67df8bafb4950fe727c20
+
+disk two
+Track 01.flac:5a60c1960ef6ec94a99960399fecf0ee
+Track 02.flac:9bf15527bb90caa763cbe3cd349ba146
+Track 03.flac:b09d23b81a20a5cbbe653f1d618fce5f
+Track 04.flac:d3648e970892713ce2ec241354de16c4
+Track 05.flac:d921e8c521562409461ef9bc95f37308
+Track 06.flac:50a4e7b47d4170ce43b835b63af09df2
+===================
+===================
+===================

@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-19-Where-The-Corn-Grows-Tall-lk.flacf 
+=================== 
+=================== 
+=================== 
+a3890c44565d3b1eccbeb73c5bd6b056  01 Gotta serve somebody.flac
+1e7eb880909cb897c7b6aaaa6e97747e  02 I believe in you.flac
+d41d8cd98f00b204e9800998ecf8427e  03 Like a rolling stone.flac
+aa4b9f36bb79a2a28dc00fe1b95e704a  04 I want you.flac
+ce50c7316cd7bac34ee4f2df6c9c8191  05 Man gave names to all the animals.flac
+668dfbf530851a876769a7d1308bb190  06 Maggie's farm.flac
+de5cb7b47ba04349e6a8dc931f426cf0  07 Girl of the North Country.flac
+716c76bb34b6d661dd8e77ec621fdc9f  08 Ballad of a thin man.flac
+04bb23ace5edee2225cf4128a7381389  09 We just disagree.flac
+14bdc3aa90aeeadf91c15fbd9a67980d  10 All along the watchtower.flac
+83d6e87b4fafa6aedc388b86ae0ff54d  11 Forever young.flac
+c64131bca3504e7b0cbbd5feda926573  12 Gamblin' man.flac
+b1addd1e5a85bfd6b380ffaa29e04536  13 The times they are a-changin'.flac
+45aeeb66604e821efef40c8a7f8368b2  14 A hard rain's a-gonna fall.flac
+753653d4e0842301a5f0b1b5e8686081  15 It's all in the game.flac
+05c4cbad23d7ad4865b584b7cbb8679d  16 Slow train.flac
+c29e4e4760934aed7be8ef085284c398  17 Mr. Tambourine man.flac
+9bc7a8351dd5bfbfc8488669b8ca3aeb  18 (Instrumental).flac
+3cae2e933e98f15174f345b027626b4c  19 Solid rock_Masters of war.flac
+b813e7a7763cdb7e520c4dbd4354db9d  20 Heart of mine.flac
+0f4532988419f31749dd82d18e8ecb10  21 Senor (Tales of Yankee Power) [cut-in].flac
+5fd0c69fc36c4f4a5be003c1151140e3  22 When you gonna wake up.flac
+9af3169024eb38a848edb3820f8fd51c  23 In the garden.flac
+8e228cb7ea7fe91c5ae1aa4e9307b8bd  24 Blowin' in the wind.flac
+665ec944ae038ad1691918823425fed2  25 It ain't me, babe.flac
+c065702c35155e15f188a123ea021690  26 No money down.flac
+b76667277040e57f164803745274ba86  bd81-10-19-where-the-corn-grows-tall-LB-3029.txt
+02a7ef92451b85c9cb3098f3285ba4f1  Disc_1_Front_Cover_alt.jpg
+bf9867e0cbeb157bb466553d84dcdfc4  Disc_2_Front_Cover_alt.jpg
+d984b0225fc7ae61163f21d3ddbc4ae1  Inside_Disc_one_alt.jpg
+69ddb816d89315459b19a0d2f054bc18  Inside_Disc_two_alt.jpg
+9b8daea33a287043488dce4ff2c2f2e9  wherethecorngrowstall_ba.jpg
+6a4e84b502376bc48aa03b8fd2fd9858  wherethecorngrowstall_fr.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-19-Where-The-Corn-Grows-Tall-lk.flacf 
+=================== 
+=================== 
+=================== 
+01 gotta serve somebody.flac:e57d98784614d32345543526df2c36b1
+02 i believe in you.flac:f03f303af018358d845bea5863013986
+04 i want you.flac:c92cd97d077133e9a3300ef35589b039
+05 man gave names to all the animals.flac:b93467874f25d5d0122c397009c7635d
+06 maggie's farm.flac:7b408670c7d6aa039b1b93c519826507
+07 girl of the north country.flac:834aa8550c24e6de630eb5e8ad2eaf08
+08 ballad of a thin man.flac:378390e670c7280c98805beb74e82c1f
+09 we just disagree.flac:e791cf677377e4ba793cdb0daeae869b
+10 all along the watchtower.flac:1ddc83f5b11784f1a583d912fc5eaf72
+11 forever young.flac:b01bb56689c46c032b13b3035bc30738
+12 gamblin' man.flac:a13c46ae1cbcdea5b4fe2eae66f494e7
+13 the times they are a-changin'.flac:97163b77847a36845f467051572aef30
+14 a hard rain's a-gonna fall.flac:321e7a0995b0716d48483389e0a05a38
+15 it's all in the game.flac:ededa9aa24e22b91c65f75a196c93599
+16 slow train.flac:a770eddb9592a3c41530381d8396f753
+17 mr. tambourine man.flac:e2aa2168b2413e9d38b1a55d39172570
+18 (instrumental).flac:6827e8fec673a677f8f5dac811d61a4e
+19 solid rock_masters of war.flac:2715d634b03c67f7ba8c01d8ffb5d026
+20 heart of mine.flac:0acfe1e82de397a19747ef59381d450b
+21 senor (tales of yankee power) [cut-in].flac:345039595a7f989a6e8d533840e39a09
+22 when you gonna wake up.flac:cd1d1c789163ae8d1e6d0103ab4272c2
+23 in the garden.flac:97674b9a08dfb86b5e6343b7ed4383db
+24 blowin' in the wind.flac:d974baddae91c6532a028f575282cb89
+25 it ain't me, babe.flac:0674ae5018f52c1dc7a3879535ceeb37
+26 no money down.flac:389fb76390adb05892f4183689e9dbbe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-19-Where-The-Corn-Grows-Tall-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:03.43       32382380 B   ---   --   ---xx   flac  0.7047  01 Gotta serve somebody.flac
+     4:26.25       46981244 B   ---   --   ---xx   flac  0.6737  02 I believe in you.flac
+     3:51.52       40870748 B   ---   --   ---xx   flac  0.6761  04 I want you.flac
+     5:40.19       60020732 B   ---   --   ---xx   flac  0.6470  05 Man gave names to all the animals.flac
+     4:04.13       43072220 B   ---   --   ---xx   flac  0.6923  06 Maggie's farm.flac
+     4:16.50       45276044 B   ---   --   ---xx   flac  0.6385  07 Girl of the North Country.flac
+     3:58.03       41990300 B   ---   --   ---xx   flac  0.6632  08 Ballad of a thin man.flac
+     3:18.30       34997804 B   ---   --   ---xx   flac  0.6428  09 We just disagree.flac
+     3:11.26       33753596 B   ---   --   ---xx   flac  0.6987  10 All along the watchtower.flac
+     4:01.09       42533612 B   ---   --   ---xx   flac  0.6660  11 Forever young.flac
+     3:02.23       32158940 B   ---   --   ---xx   flac  0.6668  12 Gamblin' man.flac
+     6:24.39       67829372 B   ---   --   ---xx   flac  0.6881  13 The times they are a-changin'.flac
+     7:41.06       81334556 B   ---   --   ---xx   flac  0.7019  14 A hard rain's a-gonna fall.flac
+     4:27.43       47199980 B   ---   --   ---xx   flac  0.6689  15 It's all in the game.flac
+     5:14.67       55547228 B   ---   --   ---xx   flac  0.6925  16 Slow train.flac
+     6:14.45       66079484 B   ---   --   ---xx   flac  0.6685  17 Mr. Tambourine man.flac
+     0:43.68        7745180 B   ---   --   ---xx   flac  0.6962  18 (Instrumental).flac
+     8:38.30       91445804 B   ---   --   ---xx   flac  0.6804  19 Solid rock_Masters of war.flac
+     4:23.66       46548476 B   ---   --   ---xx   flac  0.6648  20 Heart of mine.flac
+     4:26.07       46938908 B   ---   --   ---xx   flac  0.6612  21 Senor (Tales of Yankee Power) [cut-in].flac
+     3:28.43       36792380 B   ---   --   ---xx   flac  0.7032  22 When you gonna wake up.flac
+     7:01.37       74351468 B   ---   --   ---xx   flac  0.6690  23 In the garden.flac
+     4:54.54       51988652 B   ---   --   ---xx   flac  0.6553  24 Blowin' in the wind.flac
+     5:45.33       60935660 B   ---   --   ---xx   flac  0.6349  25 It ain't me, babe.flac
+     6:14.74       66147692 B   ---   --   ---xx   flac  0.6531  26 No money down.flac
+   118:34.05     1254922460 B                            0.6714  (25 files)
+=================== 
+=================== 
+=================== 

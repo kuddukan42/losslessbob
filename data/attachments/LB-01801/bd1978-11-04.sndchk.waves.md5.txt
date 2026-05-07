@@ -1,0 +1,5 @@
+e2bf08cfaef2d1acb45bd310edb4a4ff *bd1978-11-04t01.sndchk.wav
+6c95ffef80bedd16de0916896d515b7f *bd1978-11-04t02.sndchk.wav
+81f89cd49a21fbaaa97086dfa5505a51 *bd1978-11-04t03.sndchk.wav
+9533963f7ce54ee254c24951fd9b4ba2 *bd1978-11-04t04.sndchk.wav
+83d81c0546274aa9b966f33af024b515 *bd1978-11-04t05.sndchk.wav

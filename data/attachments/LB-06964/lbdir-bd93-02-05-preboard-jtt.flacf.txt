@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-05-preboard-jtt.flacf 
+=================== 
+=================== 
+=================== 
+78abb5e665d664b2158863d8d6bdd195  Disc One\Disc One.ffp
+2237948b017d936cc32be7f64c5e4b0d  Disc One\Dylan_05.02.93_Disc01Track01.flac
+9b4edc87023375fe159cb89d913255c4  Disc One\Dylan_05.02.93_Disc01Track02.flac
+7b9e41e86a05e238350427696e9c4103  Disc One\Dylan_05.02.93_Disc01Track03.flac
+004d6d66e7525fba90e3f78f41129bb5  Disc One\Dylan_05.02.93_Disc01Track04.flac
+a66fd7184c4c5477ec4649533b12d97e  Disc One\Dylan_05.02.93_Disc01Track05.flac
+f936c28bc0a6c83219a5ff7788371196  Disc One\Dylan_05.02.93_Disc01Track06.flac
+fb3bd6ed2211e9819ea51ed54065e23f  Disc One\Dylan_05.02.93_Disc01Track07.flac
+cd55adb7543aa7c7c16e6ffa45f54f25  Disc One\Dylan_05.02.93_Disc01Track08.flac
+09baae9e9a0206604d349d2d70d172db  Disc One\Dylan_05.02.93_Disc01Track09.flac
+78e7972b270af12ea7c6f522a2549eef  Disc One\Dylan_05.02.93_Disc01Track10.flac
+f91571e46277f25a30d4013fad52b7b3  Disc One\Dylan_05.02.93_Disc01Track11.flac
+71fd5638af23890167d28e99752d7df4  Disc Two\Disc Two.ffp
+605d0e53617ef5dc8c76e0758677a408  Disc Two\Dylan_05.02.93_Disc02Track01.flac
+474b3fca5991c380683ebd1e21e1e39b  Disc Two\Dylan_05.02.93_Disc02Track02.flac
+1a33121fdebf4f9c0c20f32a179dcc2f  Disc Two\Dylan_05.02.93_Disc02Track03.flac
+4dc3a747c663b7507d15d84739ffc315  Disc Two\Dylan_05.02.93_Disc02Track04.flac
+c9eff21866c87d3f46da5e41927fc7e4  Disc Two\Dylan_05.02.93_Disc02Track05.flac
+c2728c4ba4e5d65d08fd722b7a88280e  Disc Two\Dylan_05.02.93_Disc02Track06.flac
+e3b4b4a5b0c5e646a307d0cc38a207a3  Disc Two\Dylan_05.02.93_Disc02Track07.flac
+8b9f23d54f3741792a83664d1404b752  Dublin - 05.02.1993 - F.jpg
+e2d2604249ad09ca643e9ec3a7904dc2  Dublin - 05.02.1993 - R.jpg
+27cc1ba3b0f473d63046eb4f7190dd87  Dylan - Dublin February 5th 1993 Pre Board.md5
+0842bc09b8a0aec8fc384a2baf3a9ba7  Dylan - Dublin February 5th 1993 Pre Board.txt
+898a274bd42f0ab608d3fc8ccba1dd52  Dylan - Dublin February 5th 1993 Pre Board_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-05-preboard-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan_05.02.93_Disc01Track01.flac:ddc703af6085ceffb01f276814a872b8
+Dylan_05.02.93_Disc01Track02.flac:288af04d25f1f93c3ed1d69e7ad62fc8
+Dylan_05.02.93_Disc01Track03.flac:d34eb54a74c2479856376ad5fb9f9cc6
+Dylan_05.02.93_Disc01Track04.flac:2dc5c096aee8897da88f6df81143cb9f
+Dylan_05.02.93_Disc01Track05.flac:ae95b022f5b4b72b9cca139b4e9ddbda
+Dylan_05.02.93_Disc01Track06.flac:41351f534c9877296247894cde95c4cc
+Dylan_05.02.93_Disc01Track07.flac:a02e6666eb4d22148d5417f19653fa3f
+Dylan_05.02.93_Disc01Track08.flac:099b8a6f3ebadb44135b58ae22722f80
+Dylan_05.02.93_Disc01Track09.flac:24895fcd50d618fc2b3edee13acae05f
+Dylan_05.02.93_Disc01Track10.flac:aff4c0e526ef4a57cba8f43f0bd30855
+Dylan_05.02.93_Disc01Track11.flac:b02a9623d6cb2bf00cf746545a7606cf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-05-preboard-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan_05.02.93_Disc02Track01.flac:6d2f70bcae8c80aec16eb742257688e1
+Dylan_05.02.93_Disc02Track02.flac:4d11ecec34f2aa2ef01a23caca3859e6
+Dylan_05.02.93_Disc02Track03.flac:94b5af07ba253ddce5f4e36ae9e1d336
+Dylan_05.02.93_Disc02Track04.flac:9e4c381f19a641e27e474fd1973c1101
+Dylan_05.02.93_Disc02Track05.flac:33557dd9738f88fc6a2d4490483742ea
+Dylan_05.02.93_Disc02Track06.flac:3ddc4faf125604c75ac82bf35b6558d1
+Dylan_05.02.93_Disc02Track07.flac:878415ca2f2f0139f742a88a0bf07040
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-05-preboard-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:53.65       62422124 B   ---   --   ---xx   flac  0.5365  Dylan_05.02.93_Disc01Track01.flac
+     4:22.43       46317980 B   ---   --   ---xx   flac  0.5563  Dylan_05.02.93_Disc01Track02.flac
+     5:37.31       59519756 B   ---   --   ---xx   flac  0.4846  Dylan_05.02.93_Disc01Track03.flac
+     7:33.45       80015084 B   ---   --   ---xx   flac  0.5089  Dylan_05.02.93_Disc01Track04.flac
+     6:58.68       73895180 B   ---   --   ---xx   flac  0.4929  Dylan_05.02.93_Disc01Track05.flac
+     8:15.08       87336860 B   ---   --   ---xx   flac  0.5014  Dylan_05.02.93_Disc01Track06.flac
+     8:56.22       94602188 B   ---   --   ---xx   flac  0.4480  Dylan_05.02.93_Disc01Track07.flac
+     5:03.33       53526860 B   ---   --   ---xx   flac  0.4709  Dylan_05.02.93_Disc01Track08.flac
+     6:50.04       72333452 B   ---   --   ---xx   flac  0.4221  Dylan_05.02.93_Disc01Track09.flac
+     4:29.08       47470460 B   ---   --   ---xx   flac  0.4521  Dylan_05.02.93_Disc01Track10.flac
+     5:21.27       56687948 B   ---   --   ---xx   flac  0.4281  Dylan_05.02.93_Disc01Track11.flac
+    69:21.54      734127892 B                            0.4807  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-05-preboard-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.38       49481420 B   ---   --   ---xx   flac  0.5073  Dylan_05.02.93_Disc02Track01.flac
+     7:57.25       84201644 B   ---   --   ---xx   flac  0.5080  Dylan_05.02.93_Disc02Track02.flac
+     7:49.41       82828076 B   ---   --   ---xx   flac  0.4563  Dylan_05.02.93_Disc02Track03.flac
+     8:19.16       88061276 B   ---   --   ---xx   flac  0.4746  Dylan_05.02.93_Disc02Track04.flac
+     9:22.08       99155660 B   ---   --   ---xx   flac  0.4598  Dylan_05.02.93_Disc02Track05.flac
+     8:05.10       85577564 B   ---   --   ---xx   flac  0.4509  Dylan_05.02.93_Disc02Track06.flac
+     5:35.16       59131676 B   ---   --   ---xx   flac  0.3945  Dylan_05.02.93_Disc02Track07.flac
+    51:49.04      548437316 B                            0.4649  (7 files)
+=================== 
+=================== 
+=================== 

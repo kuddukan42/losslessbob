@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-02-17-dylan-cash-sessions.flacf 
+=================== 
+=================== 
+=================== 
+faa9779fc8fa10914805d4f9ee98a78f  bd69-02-17-dylan-cash-sessions-t01.flac
+838e82174eefa7424eec3b5fbda3cc3d  bd69-02-17-dylan-cash-sessions-t02.flac
+3e8df90cb5ccf305c134e6645f8d26ac  bd69-02-17-dylan-cash-sessions-t03.flac
+80c218bed95c11b3bb69fe308184d508  bd69-02-17-dylan-cash-sessions-t04.flac
+009a5f9d80b1b04145957c3de114aa9b  bd69-02-17-dylan-cash-sessions-t05.flac
+b2f6004462ac7d4dbd3a47bcc2ab5a01  bd69-02-17-dylan-cash-sessions-t06.flac
+1e15b92736ce79da34951d9defb44a17  bd69-02-17-dylan-cash-sessions-t07.flac
+c6816ab357686e1297ce4e0eb142868e  bd69-02-17-dylan-cash-sessions-t08.flac
+0babb060f25bdbe5a1d1b7f5712810e7  bd69-02-17-dylan-cash-sessions-t09.flac
+e12f47458c288a6e39b3f5df1c4ac01c  bd69-02-17-dylan-cash-sessions-t10.flac
+6d39595ab5f8a77ac7c2c77cdb76d5a8  bd69-02-17-dylan-cash-sessions-t11.flac
+eeaed598d4b29eb68d47f6f045274bb7  bd69-02-17-dylan-cash-sessions-t12.flac
+d24226f287efe828f4873b2f78748fd9  bd69-02-17-dylan-cash-sessions-t13.flac
+94c814533fede2900083a2d122ab2fbf  bd69-02-17-dylan-cash-sessions-t14.flac
+6127c9b62c79e9d7bf37cdc5fc58d250  bd69-02-17-dylan-cash-sessions-t15.flac
+567db7fbaa8fef756043dffbdfbbad58  bd69-02-17-dylan-cash-sessions-t16.flac
+8596e597b3e03282d13820dba5006bf3  bd69-02-17-dylan-cash-sessions-t17.flac
+69b987a350c89305c5f83c2b1ebb9bdd  bd69-02-17-dylan-cash-sessions-t18.flac
+e49f1fe36e033587eb4e1a4f7b31f917  bd69-02-17-dylan-cash-sessions-t19.flac
+2ff7dee2163bd844c3bdc077bfa2c2a1  bd69-02-17-dylan-cash-sessions-t20.flac
+7c9232aecab9eb220b0030c3978df605  bd69-02-17-dylan-cash-sessions-t21.flac
+0f2932082364486508ed31954e2d4f67  bd69-02-17-dylan-cash-sessions-t22.flac
+0a8b5dda1fde5e9900a8f2413f4d2c16  bd69-02-17-dylan-cash-sessions-t23.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-02-17-dylan-cash-sessions.flacf 
+=================== 
+=================== 
+=================== 
+bd69-02-17-dylan-cash-sessions-t01.flac:357f0f98ffebe04949e4f33630044b33
+bd69-02-17-dylan-cash-sessions-t02.flac:44411b57531e96087cb92ea9fdc5b626
+bd69-02-17-dylan-cash-sessions-t03.flac:1f8aee6bb291ca31a98f0f316a74b7e8
+bd69-02-17-dylan-cash-sessions-t04.flac:e13d261d4aef0320a214707d6354c73d
+bd69-02-17-dylan-cash-sessions-t05.flac:175b27acd996d45790b6daa7695354f9
+bd69-02-17-dylan-cash-sessions-t06.flac:6cf9a53ad48ec483a4098a0de04058ab
+bd69-02-17-dylan-cash-sessions-t07.flac:1f3d1d3370e2b60067b4bc1749e2c7b1
+bd69-02-17-dylan-cash-sessions-t08.flac:9cbd042b96632daadf8d15595edb93bd
+bd69-02-17-dylan-cash-sessions-t09.flac:555883bcab39b94c9afcf621a0029a0e
+bd69-02-17-dylan-cash-sessions-t10.flac:35a7d8fc4cdead0053d0346ec6b99621
+bd69-02-17-dylan-cash-sessions-t11.flac:06424d01e716905c8b40568ac8c112d2
+bd69-02-17-dylan-cash-sessions-t12.flac:d79dd05675d21de96df335f5c7137c86
+bd69-02-17-dylan-cash-sessions-t13.flac:c89917244f4ace64275afbdc260a4447
+bd69-02-17-dylan-cash-sessions-t14.flac:13ce0edf89c75beb168f127bbb602b82
+bd69-02-17-dylan-cash-sessions-t15.flac:06879498f59a74eace1915dc71b4fd99
+bd69-02-17-dylan-cash-sessions-t16.flac:e89ef1118fb8f020e4f1b8ac717b1ea7
+bd69-02-17-dylan-cash-sessions-t17.flac:c932ee8bb35dbc88fbfc590af00ce209
+bd69-02-17-dylan-cash-sessions-t18.flac:4d7d72f0ad7d7c09a1f27d88e6095fc4
+bd69-02-17-dylan-cash-sessions-t19.flac:d2b3e5c81ca979574a0a5045a2566924
+bd69-02-17-dylan-cash-sessions-t20.flac:b9b56720c708832252f7171e0c989741
+bd69-02-17-dylan-cash-sessions-t21.flac:ce2cd8225eec658042d7b0a6a92a04f3
+bd69-02-17-dylan-cash-sessions-t22.flac:99bca83a6897ea518ad8537f158cfdf0
+bd69-02-17-dylan-cash-sessions-t23.flac:f889cf3833cb01ca27de44206923ff95
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-02-17-dylan-cash-sessions.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.46       43326236 B   ---   --   ---xx   flac  0.4810  bd69-02-17-dylan-cash-sessions-t01.flac
+     1:49.51       19347596 B   ---   --   ---xx   flac  0.4949  bd69-02-17-dylan-cash-sessions-t02.flac
+     2:31.07       26652908 B   ---   --   ---xx   flac  0.4982  bd69-02-17-dylan-cash-sessions-t03.flac
+     7:05.35       75052364 B   ---   --   ---xx   flac  0.5073  bd69-02-17-dylan-cash-sessions-t04.flac
+     3:09.30       33410204 B   ---   --   ---xx   flac  0.5092  bd69-02-17-dylan-cash-sessions-t05.flac
+     2:46.17       29322428 B   ---   --   ---xx   flac  0.5234  bd69-02-17-dylan-cash-sessions-t06.flac
+     2:01.21       21393836 B   ---   --   ---xx   flac  0.5189  bd69-02-17-dylan-cash-sessions-t07.flac
+     3:46.42       39965228 B   ---   --   ---xx   flac  0.4809  bd69-02-17-dylan-cash-sessions-t08.flac
+     2:44.66       29084876 B   ---   --   ---xx   flac  0.5112  bd69-02-17-dylan-cash-sessions-t09.flac
+     3:23.56       35940956 B   ---   --   ---xx   flac  0.5121  bd69-02-17-dylan-cash-sessions-t10.flac
+     2:29.41       26380076 B   ---   --   ---xx   flac  0.5242  bd69-02-17-dylan-cash-sessions-t11.flac
+     1:49.06       19241756 B   ---   --   ---xx   flac  0.5230  bd69-02-17-dylan-cash-sessions-t12.flac
+     2:52.16       30378476 B   ---   --   ---xx   flac  0.4852  bd69-02-17-dylan-cash-sessions-t13.flac
+     3:07.11       33012716 B   ---   --   ---xx   flac  0.5037  bd69-02-17-dylan-cash-sessions-t14.flac
+     2:41.42       28499228 B   ---   --   ---xx   flac  0.4760  bd69-02-17-dylan-cash-sessions-t15.flac
+     2:17.44       24270332 B   ---   --   ---xx   flac  0.4929  bd69-02-17-dylan-cash-sessions-t16.flac
+     2:36.73       27690140 B   ---   --   ---xx   flac  0.4994  bd69-02-17-dylan-cash-sessions-t17.flac
+     3:23.27       35872748 B   ---   --   ---xx   flac  0.4560  bd69-02-17-dylan-cash-sessions-t18.flac
+     3:13.26       34106396 B   ---   --   ---xx   flac  0.5128  bd69-02-17-dylan-cash-sessions-t19.flac
+     2:23.29       25293452 B   ---   --   ---xx   flac  0.4662  bd69-02-17-dylan-cash-sessions-t20.flac
+     2:02.74       21694892 B   ---   --   ---xx   flac  0.4913  bd69-02-17-dylan-cash-sessions-t21.flac
+     1:53.73       20104940 B   ---   --   ---xx   flac  0.5422  bd69-02-17-dylan-cash-sessions-t22.flac
+     3:30.08       37062860 B   ---   --   ---xx   flac  0.4885  bd69-02-17-dylan-cash-sessions-t23.flac
+    67:45.16      717104644 B                            0.4987  (23 files)
+=================== 
+=================== 
+=================== 

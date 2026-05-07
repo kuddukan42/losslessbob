@@ -1,0 +1,10 @@
+Bob Dylan, 10/27/17, Chicago, Illinois, 
+
+LB-16102, iphone m4a mono inc, aper: Early Roman-King, Source: iPhone m4a mono recording (lossy) -> wav file, separated into individual tracks -> compressed to FLAC
+---------------------------------------------------
+bittorrent download 09/24; did not review this
+---------------------------------------------------
+[Tracks not captured], 1. Things Have Changed, 2. It Ain't Me, Babe, 3. Highway 61 Revisited, 4. Why Try To Change Me Now? (Cy Coleman, Joe McCarthy), [Recording begins by cutting into Summer Days], 5. Summer Days, 6. Melancholy Mood (Walter Schumann, Vick R. Knight Sr.), 7. Honest With Me, 8. Tryin' To Get To Heaven, 9. Once Upon A Time (Charles Strouse, Lee Adams), 10. Pay In Blood, 11. Tangled Up In Blue, 12. The September Of My Years (Jimmy van Heusen, Sammy Cahn), 13. Early Roman Kings, 14. Soon After Midnight, 15. Desolation Row, 16. Thunder On The Mountain, 17. Autumn Leaves (Joseph Kosma, Johnny Mercer, Jacques Prevert), 18. Long And Wasted Years, 19. Blowin' In The Wind, 20. Audience, 21. Ballad Of A Thin Man
+---------------------------------------------------
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

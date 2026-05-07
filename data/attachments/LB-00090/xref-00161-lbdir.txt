@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-06-23-full-lk.flacf 
+=================== 
+=================== 
+=================== 
+ba9553e727948a7a77f15802b6490190  01 Come on in this house.flac
+f9358899ed4737ba920fdd446acfac33  02 It's gonna rain.flac
+c38daae8f74764c8cfcb672df9ad1feb  03 Show me the way, Lord.flac
+100ab756ef8df84f3b76da886d54d57f  04 Saved by the grace of your love.flac
+2538bfc0c52855465aea71d5dc196ed0  05 (Announcement).flac
+93b12e1d13aded03f030a32170365960  06 Gotta serve somebody.flac
+35466e3f78711e1e8ef198d88da69dba  07 I believe in you.flac
+282afa85a058e3e66c8bd95c410d6430  08 Like a rolling stone.flac
+f9f46e508f3d7205038523598f33e98f  09 'Till I get it right.flac
+0315572c526b90a1c53155596c853bd1  10 Man gave names to all the animals.flac
+409dd3acf2cbd2cd06b25b67804576f1  11 Maggie's farm.flac
+ad2ba5538390807f591d279244a96186  12 Simple twist of fate.flac
+1218f7b50bb1b92d8842ca10b91fd1e0  13 Ballad of a thin man.flac
+8f6e4d7fcc35383d6f16fba1a50a6ca4  14 Girl of the North Country.flac
+63f2306bb3f26dc403c1ea0cb7e92ea0  15 Dead man, dead man.flac
+e40137e1667cbaedea68dbf0ec7c91db  16 Mr. Tambourine man.flac
+b4561d8cf86b488449f0866ef7e8bbe3  17 Slow train.flac
+b8cd8b72257bd276c74422efa7444497  18 Walk around heaven all day.flac
+de1427bb0b36a6ed40d0699629cd6409  19 Let it be me.flac
+241dd5a769d6c80bc75ae567fff58a31  20 Lenny Bruce.flac
+b9647559fe7f12788bacc316afca230d  21 Solid rock.flac
+e754f0c47a7a329cb5eca60e7d14e275  22 Just like a woman.flac
+d13788245323348d643049bba45ef95d  23 Masters of war.flac
+7035f50f58e99723e5eb207bec392869  24 Watered-down love.flac
+5fafacfb86000e6d7d7663c1bcc753aa  25 What can I do for you.flac
+77b35071934fd1ace6393c75b49a62fd  26 When you gonna wake up.flac
+af66dee8f6450672ce29228bbad03ac9  27 In the garden.flac
+673541e23051051f59f91850ec178e02  28 Blowin' in the wind.flac
+7755cf8c30444f26d99e7078b6af9a8d  29 It's all over now, baby blue.flac
+5d72c81b930c5a98e53dc1a5be8827e6  Stade de Colombes - Colombes, France.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-06-23-full-lk.flacf 
+=================== 
+=================== 
+=================== 
+01 come on in this house.flac:649593985e72d3c0fbb663d4cfa956ee
+02 it's gonna rain.flac:49e6f92a3849027f152f5ca9ff9501f2
+03 show me the way, lord.flac:45ca8532b9e21eb04b60f3fd59ded4cc
+04 saved by the grace of your love.flac:22d55eac22563a1bfb29320b4ac45845
+05 (announcement).flac:371f53d1e5bbd304bfb3c05ec73698d2
+06 gotta serve somebody.flac:ba5e367073696bcaa9a26bc5e2adf084
+07 i believe in you.flac:5663ca851b68795b746fe4b10935aaff
+08 like a rolling stone.flac:5e4d4649a76707145172fd79ff56efc4
+09 'till i get it right.flac:f2086b23d2e3fb88bf5df4e2b2404a75
+10 man gave names to all the animals.flac:84b29458ff484572a8cb1cb6c11e7e04
+11 maggie's farm.flac:467287d861f4e71fc0360f039232d51f
+12 simple twist of fate.flac:d4126c41cbf2cfbd0fb47d0945f03d41
+13 ballad of a thin man.flac:e7da9b200b6f3a427e6e66d38a933464
+14 girl of the north country.flac:fbbe090659e45aad0429b79367702f09
+15 dead man, dead man.flac:cd3aeb464db5dee7cdec3f471e8b5e71
+16 mr. tambourine man.flac:9f540fea24f9203a52a13bc31bb6fefc
+17 slow train.flac:4ca697a2c8f51154c6054f5cf46db067
+18 walk around heaven all day.flac:477867d72b0bd592232ee80af921502a
+19 let it be me.flac:55c68e1908a7fbe63972c56d13665ec7
+20 lenny bruce.flac:44a4c07d4f91afb98c55d78e196e1adc
+21 solid rock.flac:97218ed5095f0c000ee0c21aaad5602b
+22 just like a woman.flac:75176ee0b9e0d84d011c87e9d4736aea
+23 masters of war.flac:d58e901609658f58541f0e6a66ba6daa
+24 watered-down love.flac:64a9cf6f1c52bb8d3535d53f6bb631bb
+25 what can i do for you.flac:e8552fd9944a8390988b04f23e6cca45
+26 when you gonna wake up.flac:dfd2e84e0807a88a6b97734e9f6bb6a7
+27 in the garden.flac:8c0953aaa33622fe324e679296c0b7b5
+28 blowin' in the wind.flac:e4c84a531f6f63a042ae50ba9c631828
+29 it's all over now, baby blue.flac:945bb5b60e85c6e8360fc7e751345dd0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-06-23-full-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:19.31       45760556 B   ---   --   ---xx   flac  0.5273  01 Come on in this house.flac
+     4:30.30       47698604 B   ---   --   ---xx   flac  0.4584  02 It's gonna rain.flac
+     2:41.72       28569788 B   ---   --   ---xx   flac  0.4891  03 Show me the way, Lord.flac
+     2:33.52       27111548 B   ---   --   ---xx   flac  0.4674  04 Saved by the grace of your love.flac
+     0:31.36        5553116 B   ---   --   ---xx   flac  0.4807  05 (Announcement).flac
+     4:18.47       45621788 B   ---   --   ---xx   flac  0.5220  06 Gotta serve somebody.flac
+     4:58.02       52571948 B   ---   --   ---xx   flac  0.5041  07 I believe in you.flac
+     6:28.58       68579660 B   ---   --   ---xx   flac  0.5254  08 Like a rolling stone.flac
+     3:44.18       39555980 B   ---   --   ---xx   flac  0.4485  09 'Till I get it right.flac
+     6:25.37       68001068 B   ---   --   ---xx   flac  0.4839  10 Man gave names to all the animals.flac
+     2:38.06       27885356 B   ---   --   ---xx   flac  0.5214  11 Maggie's farm.flac
+     4:13.72       44798588 B   ---   --   ---xx   flac  0.4850  12 Simple twist of fate.flac
+     3:29.21       36917036 B   ---   --   ---xx   flac  0.4965  13 Ballad of a thin man.flac
+     4:13.67       44786828 B   ---   --   ---xx   flac  0.4482  14 Girl of the North Country.flac
+     5:04.10       53649164 B   ---   --   ---xx   flac  0.5028  15 Dead man, dead man.flac
+     6:03.10       64056764 B   ---   --   ---xx   flac  0.4979  16 Mr. Tambourine man.flac
+     4:58.06       52581356 B   ---   --   ---xx   flac  0.5174  17 Slow train.flac
+     4:28.40       47369324 B   ---   --   ---xx   flac  0.4431  18 Walk around heaven all day.flac
+     3:48.26       40280396 B   ---   --   ---xx   flac  0.4980  19 Let it be me.flac
+     5:17.52       56041148 B   ---   --   ---xx   flac  0.5296  20 Lenny Bruce.flac
+     4:28.08       47294060 B   ---   --   ---xx   flac  0.5923  21 Solid rock.flac
+     3:57.17       41846828 B   ---   --   ---xx   flac  0.5538  22 Just like a woman.flac
+     3:46.37       39953468 B   ---   --   ---xx   flac  0.5874  23 Masters of war.flac
+     4:53.35       51767564 B   ---   --   ---xx   flac  0.5660  24 Watered-down love.flac
+     5:29.60       58176764 B   ---   --   ---xx   flac  0.5523  25 What can I do for you.flac
+     5:13.16       55250876 B   ---   --   ---xx   flac  0.5782  26 When you gonna wake up.flac
+     9:23.25       99372044 B   ---   --   ---xx   flac  0.5619  27 In the garden.flac
+     7:55.60       83931164 B   ---   --   ---xx   flac  0.5787  28 Blowin' in the wind.flac
+     6:05.53       64510700 B   ---   --   ---xx   flac  0.5726  29 It's all over now, baby blue.flac
+   136:00.29     1439493484 B                            0.5232  (29 files)
+=================== 
+=================== 
+=================== 

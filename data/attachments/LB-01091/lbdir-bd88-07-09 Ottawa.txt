@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-09 Ottawa 
+=================== 
+=================== 
+=================== 
+d943388363470b9866c2a9260cdac391  88-07-09_cd1_shn.md5
+39b44e50e7595cd38b47138852950f34  88-07-09_cd1_Track01.shn
+06ce4f42825d1016e2f6840d953ffdff  88-07-09_cd1_Track02.shn
+5c484c9d1a154b854a1474ca18b1a8ea  88-07-09_cd1_Track03.shn
+e23ea108db5d27a8e97445c0604e7907  88-07-09_cd1_Track04.shn
+b76acfd222fa8008b027cef8b6c210c1  88-07-09_cd1_Track05.shn
+f4d9d1f3c0aa4a728989d7cbf27f5952  88-07-09_cd1_Track06.shn
+e88dae8e902848238b593f955765e908  88-07-09_cd1_Track07.shn
+fbd4035fcce28849f75367a5f383d427  88-07-09_cd1_Track08.shn
+7494790722eb9c1748043f4c44c38672  88-07-09_cd1_Track09.shn
+3a9a6b67a1f36dd8d86b8c77e49a0d65  88-07-09_cd1_Track10.shn
+9ee1737423c7f1ca3cb87489be46264f  88-07-09_cd1_Track11.shn
+18f4ea83670ab32d69c5f29a30867247  88-07-09_cd1_Track12.shn
+092ee7ffc19b520025437ac43a8827a3  88-07-09_cd1_Track13.shn
+8c36aa37f043ce31012ac6d3f348d33a  88-07-09_cd1_Track14.shn
+6696574a86db9b4a209401d28b8d6540  bd88-07-09.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-07-09 Ottawa 
+=================== 
+=================== 
+=================== 
+cde234ec8bfcc60bf9302c76c8ba2c53  [shntool]  88-07-09_cd1_Track01.wav
+150a7304b6066fe998b4de959eafba07  [shntool]  88-07-09_cd1_Track02.wav
+9f3ec3c861e986fa9ac56326fa4d12ca  [shntool]  88-07-09_cd1_Track03.wav
+18c954030cd5f93eb12d49cfee44ba06  [shntool]  88-07-09_cd1_Track04.wav
+008e36d0c5559f34e82c546e0fd98027  [shntool]  88-07-09_cd1_Track05.wav
+1315035db0523e1bb3517f9d411df017  [shntool]  88-07-09_cd1_Track06.wav
+2cf9add19654d25edec47d1bc87fa9c0  [shntool]  88-07-09_cd1_Track07.wav
+078ad883f5a109686dc2925393931705  [shntool]  88-07-09_cd1_Track08.wav
+29c3c0ee6315b0dbc5d54c80970a4ffb  [shntool]  88-07-09_cd1_Track09.wav
+f682ab655e6995ca2889b877121a81e0  [shntool]  88-07-09_cd1_Track10.wav
+8f7f2944d23b59a1e1880fe121369f68  [shntool]  88-07-09_cd1_Track11.wav
+5cea99cd457e0a517bb54662e615a605  [shntool]  88-07-09_cd1_Track12.wav
+de17c03b7d13ba8458ba554bddbdda65  [shntool]  88-07-09_cd1_Track13.wav
+b819bda2eb64e1045507522deb8b7470  [shntool]  88-07-09_cd1_Track14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-09 Ottawa 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.69       39499546 B   ---   h-   ---xx    shn  0.7302  88-07-09_cd1_Track01.shn
+     5:57.63       63123034 B   ---   h-   ---xx    shn  0.7048  88-07-09_cd1_Track02.shn
+     4:14.66       44960890 B   ---   h-   ---xx    shn  0.7121  88-07-09_cd1_Track03.shn
+     5:18.72       56264602 B   ---   h-   ---xx    shn  0.6918  88-07-09_cd1_Track04.shn
+     4:15.45       45087898 B   ---   h-   ---xx    shn  0.7079  88-07-09_cd1_Track05.shn
+     6:45.00       71442058 B   ---   h-   ---xx    shn  0.7042  88-07-09_cd1_Track06.shn
+     8:43.06       92271370 B   ---   h-   ---xx    shn  0.6893  88-07-09_cd1_Track07.shn
+     2:35.39       27433786 B   ---   h-   ---xx    shn  0.6828  88-07-09_cd1_Track08.shn
+     6:30.72       68965402 B   ---   h-   ---xx    shn  0.6783  88-07-09_cd1_Track09.shn
+     4:10.15       44135338 B   ---   h-   ---xx    shn  0.6914  88-07-09_cd1_Track10.shn
+     8:44.12       92461882 B   ---   h-   ---xx    shn  0.7083  88-07-09_cd1_Track11.shn
+     5:48.63       61535434 B   ---   h-   ---xx    shn  0.7032  88-07-09_cd1_Track12.shn
+     4:36.36       48771130 B   ---   h-   ---xx    shn  0.6805  88-07-09_cd1_Track13.shn
+     5:04.42       53724442 B   ---   h-   ---xx    shn  0.7296  88-07-09_cd1_Track14.shn
+    76:30.00      809676812 B                            0.7006  (14 files)
+=================== 
+=================== 
+=================== 

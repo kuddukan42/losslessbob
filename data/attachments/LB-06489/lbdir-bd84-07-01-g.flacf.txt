@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-07-01-g.flacf 
+=================== 
+=================== 
+=================== 
+669014697b58c6e11cd48c020b07c61f  bd84-07-01-Paris-d01t01.flac
+8ce09f2e5ecc03755abf896df73849fe  bd84-07-01-Paris-d01t02.flac
+ee1e106afcc0695abff8c9aa754d48d2  bd84-07-01-Paris-d01t03.flac
+abf9295c8307f8a9e9b5556f699409e4  bd84-07-01-Paris-d01t04.flac
+554ea4e04651141be54eef77e4ef9ea6  bd84-07-01-Paris-d01t05.flac
+9ea5a2f023aa7d2798a1e4318dc83e96  bd84-07-01-Paris-d01t06.flac
+7c695ab144247719a01f25125a9b12ee  bd84-07-01-Paris-d01t07.flac
+33eb7148e719eacab314425ef2913162  bd84-07-01-Paris-d01t08.flac
+83b1a4b32876bd0c2d54cb815a960bbf  bd84-07-01-Paris-d01t09.flac
+78fa1dcd948bfbc19a0ed768a7765cbe  bd84-07-01-Paris-d01t10.flac
+e1b5c1490c78cc6a1cb9585ce71aa049  bd84-07-01-Paris-d01t11.flac
+12c43ee8135b661cfabe7fe2bfdad251  bd84-07-01-Paris-d01t12.flac
+a960b34d18e978cda9fd300c9f3f532b  bd84-07-01-Paris-d01t13.flac
+acb0befaa95571e95e029d968e523148  bd84-07-01-Paris-d02t01.flac
+78e98d77e6bc6c46fae6bf47ebb44eac  bd84-07-01-Paris-d02t02.flac
+a86a0f5680b2a45043eb910b653520b7  bd84-07-01-Paris-d02t03.flac
+a6c417e05c0e6149d504a67027dd8a95  bd84-07-01-Paris-d02t04.flac
+6ba6fe4a958b21425685c84e7ff4ccfa  bd84-07-01-Paris-d02t05.flac
+69a152204a5f11edb495af19ea800448  bd84-07-01-Paris-d02t06.flac
+8ebc0daa47d2e5aa6faaec3cbfcc9bc0  bd84-07-01-Paris-d02t07.flac
+ccfc52aa93e69e355ae37e09bd1811a6  bd84-07-01-Paris-d02t08.flac
+6e91205f96fd152a5f1bc59cf7111c16  bd84-07-01-Paris-d02t09.flac
+c045b1713ba60f458e7e5f9c23f7fa40  bd84-07-01-Paris-d02t10.flac
+32ff9eb4684b864212f3f90a2433484f  bd84-07-01-Paris-d02t11.flac
+d7b07fb89591f625d3d0e8589f9bd2cc  bd84-07-01-Paris.md5
+4dce91b0e05a95a8bc4780fc2408a817  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-07-01-g.flacf 
+=================== 
+=================== 
+=================== 
+bd84-07-01-Paris-d01t01.flac:1badae29dcb1f51f6f08e6ef63a0fb0d
+bd84-07-01-Paris-d01t02.flac:f638a359d79ad8dd57d8554d0ecc7b00
+bd84-07-01-Paris-d01t03.flac:76f8cc36054738f29a74d4fcae0fcb67
+bd84-07-01-Paris-d01t04.flac:184103ba13df390e3b127e79bf02bf6f
+bd84-07-01-Paris-d01t05.flac:543ea02a6178703040332e18f87b921a
+bd84-07-01-Paris-d01t06.flac:f402aab4569d021f75bfec24a6b571ed
+bd84-07-01-Paris-d01t07.flac:4165e145581f3979c58fe5e9cdb503af
+bd84-07-01-Paris-d01t08.flac:675d733df333def4c9624f80043c552e
+bd84-07-01-Paris-d01t09.flac:b7b4b57548c8f743622a4de300c471e8
+bd84-07-01-Paris-d01t10.flac:8d41453b296ce8acba178229598f9962
+bd84-07-01-Paris-d01t11.flac:f1de4d55caf6432f69814bdfbc1fe462
+bd84-07-01-Paris-d01t12.flac:7399d667d52cea5d6b07446b6adffddf
+bd84-07-01-Paris-d01t13.flac:eb1fd700aab70e23ebf52d5bf84a6a9d
+bd84-07-01-Paris-d02t01.flac:eae42ee20e76d9298fa2d7e38c321471
+bd84-07-01-Paris-d02t02.flac:58feda54ad03314cfc38b77dff0d4ff3
+bd84-07-01-Paris-d02t03.flac:87cb05dcc61534e01e1aab4ba5ba47ee
+bd84-07-01-Paris-d02t04.flac:1409f8d5d6061da6c5f4676509de91a7
+bd84-07-01-Paris-d02t05.flac:d0cbc65ae59cfe28dfe6cd88959ff02b
+bd84-07-01-Paris-d02t06.flac:b5c0d427ba024144cf2b0e12d1a38430
+bd84-07-01-Paris-d02t07.flac:dbb5782fcb06478fe70c13b951aa5f5d
+bd84-07-01-Paris-d02t08.flac:375aac23ebe9e2f968f97fb3fbeea12b
+bd84-07-01-Paris-d02t09.flac:79e9f5aeb34050c45957d0e2c38cbbfd
+bd84-07-01-Paris-d02t10.flac:c3eee519922f30be1ceb516f7e9eb782
+bd84-07-01-Paris-d02t11.flac:3396f38ef78cc04787b4463862dfc824
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-07-01-g.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:42.61       49888316 B   ---   --   ---xx   flac  0.6918  bd84-07-01-Paris-d01t01.flac
+     6:47.37       71881868 B   ---   --   ---xx   flac  0.6573  bd84-07-01-Paris-d01t02.flac
+     3:57.74       41980892 B   ---   --   ---xx   flac  0.6741  bd84-07-01-Paris-d01t03.flac
+     5:32.58       58701260 B   ---   --   ---xx   flac  0.6641  bd84-07-01-Paris-d01t04.flac
+     5:03.58       53585660 B   ---   --   ---xx   flac  0.6629  bd84-07-01-Paris-d01t05.flac
+     5:56.17       62838428 B   ---   --   ---xx   flac  0.6474  bd84-07-01-Paris-d01t06.flac
+     3:55.23       41508140 B   ---   --   ---xx   flac  0.6443  bd84-07-01-Paris-d01t07.flac
+     5:42.19       60373532 B   ---   --   ---xx   flac  0.6338  bd84-07-01-Paris-d01t08.flac
+     7:56.01       83968796 B   ---   --   ---xx   flac  0.6219  bd84-07-01-Paris-d01t09.flac
+     6:17.59       66641612 B   ---   --   ---xx   flac  0.6340  bd84-07-01-Paris-d01t10.flac
+     5:23.68       57137180 B   ---   --   ---xx   flac  0.6631  bd84-07-01-Paris-d01t11.flac
+     6:43.38       71178620 B   ---   --   ---xx   flac  0.6676  bd84-07-01-Paris-d01t12.flac
+     4:22.43       46317980 B   ---   --   ---xx   flac  0.6655  bd84-07-01-Paris-d01t13.flac
+     3:52.23       40978940 B   ---   --   ---xx   flac  0.6607  bd84-07-01-Paris-d02t01.flac
+     5:27.06       57696956 B   ---   --   ---xx   flac  0.6434  bd84-07-01-Paris-d02t02.flac
+    10:19.18      109233980 B   ---   --   ---xx   flac  0.6304  bd84-07-01-Paris-d02t03.flac
+     5:20.56       56579756 B   ---   --   ---xx   flac  0.6002  bd84-07-01-Paris-d02t04.flac
+     6:10.33       65345660 B   ---   --   ---xx   flac  0.6034  bd84-07-01-Paris-d02t05.flac
+     5:49.59       61702412 B   ---   --   ---xx   flac  0.6271  bd84-07-01-Paris-d02t06.flac
+     5:33.10       58764764 B   ---   --   ---xx   flac  0.6534  bd84-07-01-Paris-d02t07.flac
+     3:47.04       40052252 B   ---   --   ---xx   flac  0.6649  bd84-07-01-Paris-d02t08.flac
+     4:47.70       50791484 B   ---   --   ---xx   flac  0.6804  bd84-07-01-Paris-d02t09.flac
+     4:57.69       52553132 B   ---   --   ---xx   flac  0.6463  bd84-07-01-Paris-d02t10.flac
+     7:00.11       74113916 B   ---   --   ---xx   flac  0.6292  bd84-07-01-Paris-d02t11.flac
+   135:28.15     1433815536 B                            0.6460  (24 files)
+=================== 
+=================== 
+=================== 

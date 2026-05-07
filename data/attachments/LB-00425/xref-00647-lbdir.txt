@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-19-IAR003.flacf 
+=================== 
+=================== 
+=================== 
+15ec25259279b88a455ec3a4c4cf69d9  Disc 1\01 Highway 61 Revisited - Bob Dylan.flac
+60bfe0c2571cd2e98151c07e03bc0596  Disc 1\02 Jokerman - Bob Dylan.flac
+dccfce10867b3ee9e0bf50194588034e  Disc 1\03 All Along The Watchtower - Bob Dylan.flac
+a8a8a587b76ada63969db715c676c05c  Disc 1\04 Just Like A Woman - Bob Dylan.flac
+d5f2a536c8343ff86ca4243bee308a1e  Disc 1\05 Maggie's Farm - Bob Dylan.flac
+f3e9899f9ae29f3109793f6ed7ff7959  Disc 1\06 I And I - Bob Dylan.flac
+5f1022c39a66b3dba84e4dcf733d2232  Disc 1\07 License To Kill - Bob Dylan.flac
+1df843e18bd15ac4bf5d44da7a23ebf8  Disc 1\08 Hard Rain's A-Gonna Fall - Bob Dylan.flac
+9e8e37af323a0cb57887dc1240a465d7  Disc 1\09 Tangled Up In Blue - Bob Dylan.flac
+168fea3f96c99d015b146e48da6c7620  Disc 1\10 It's Alright Ma (I'm Only Bleeding) - Bob Dylan.flac
+440c632bdf5233f1e22d88724eb49ba9  Disc 1\11 Simple Twist Of Fate - Bob Dylan.flac
+0242db4bbf0bd569ab232a257f4cb379  Disc 1\12 Masters Of War - Bob Dylan.flac
+28be5419996c50001679a6d50b6884c6  Disc 1\13 Ballad Of A Thin Man - Bob Dylan.flac
+3897b134793e5407fd43118a3f4346c8  Disc 2\01 When You Gonna Wake Up - Bob Dylan.flac
+05f5e47024c8489731bb8136ba054d78  Disc 2\02 Every Grain Of Sand - Bob Dylan.flac
+0b3cb5937120d5c6aed2763d5aa60562  Disc 2\03 Like A Rolling Stone - Bob Dylan.flac
+7ae27005fdedb2d936f232c01ae972f9  Disc 2\04 Mr Tambourine Man - Bob Dylan.flac
+35f6eb51f1707e0e24bc23bdbc191333  Disc 2\05 It Ain't Me Babe - Bob Dylan.flac
+b9c685e9c0dad0b2fd10bcb8dbc56240  Disc 2\06 The Times They Are A-Changin' - Bob Dylan.flac
+512bcabaec58ee651574e159a11bd095  Disc 2\07 I Shall Be Released - Bob Dylan.flac
+7b025fb2996df46fdc03d6fd8ac9c77d  Disc 2\08 Tombstone Blues - Bob Dylan.flac
+402de0b0196f286c53096815bcb2c581  Disc 2\09 Blowin' In The Wind - Bob Dylan.flac
+ff2ffd724b5538109f7ce679eeffe21c  Disc 2\IAR 003 disc 2.log
+1fdf5a51ff253dbede527d562f819231  IAR 003 - Rome, 1984-06-19.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-19-IAR003.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+01 Highway 61 Revisited - Bob Dylan.flac:e7fee4e4734b8e30d5bcb1dce9f9c6e8
+02 Jokerman - Bob Dylan.flac:635ec98d81a97977e0bf55c67fe232c5
+03 All Along The Watchtower - Bob Dylan.flac:00251a598f6f0294b62678bc4830597e
+04 Just Like A Woman - Bob Dylan.flac:844fccbeb1d5680d4c3ab74788a08b72
+05 Maggie's Farm - Bob Dylan.flac:0af687fe9cf74a635b3c1899b9b0b2b3
+06 I And I - Bob Dylan.flac:2825a5bbeb0d64eb4ca8469a38ce6bdd
+07 License To Kill - Bob Dylan.flac:1eff08b78ab112f5d3b00176f03a0675
+08 Hard Rain's A-Gonna Fall - Bob Dylan.flac:278eab53e64b39373997b247a7700624
+09 Tangled Up In Blue - Bob Dylan.flac:9fa9753f437953f44d2621a2c186e4dd
+10 It's Alright Ma (I'm Only Bleeding) - Bob Dylan.flac:b1ea2b6f4138102593402dc05cb86c96
+11 Simple Twist Of Fate - Bob Dylan.flac:1a25375f3622d08b393b283b6f31ba26
+12 Masters Of War - Bob Dylan.flac:bd6bef547599cac4355f56a8dc4d4c18
+13 Ballad Of A Thin Man - Bob Dylan.flac:136e5db10cbe37ef733aeacf4e032b76
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-19-IAR003.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+01 When You Gonna Wake Up - Bob Dylan.flac:11191381dc7fae663eb93f2fd2d43183
+02 Every Grain Of Sand - Bob Dylan.flac:3881d8635da60a1ae3b9d6709971bff3
+03 Like A Rolling Stone - Bob Dylan.flac:be699dfc5855cb996be7993395c155b7
+04 Mr Tambourine Man - Bob Dylan.flac:e5fefe0fb24496b29fde500eccb96dbd
+05 It Ain't Me Babe - Bob Dylan.flac:33c5d300520f7da29c45e2b7735ee9ec
+06 The Times They Are A-Changin' - Bob Dylan.flac:e552d00ec2f5a954abed8f0efd58c381
+07 I Shall Be Released - Bob Dylan.flac:d77da3aa3e2034c6148dc4e92bf99a6b
+08 Tombstone Blues - Bob Dylan.flac:918eec57fefb288d08d56054d95b7280
+09 Blowin' In The Wind - Bob Dylan.flac:45619c5fafc633ef9cbe245a21498cd2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-19-IAR003.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.53       48987500 B   ---   --   ---xx   flac  0.6832  01 Highway 61 Revisited - Bob Dylan.flac
+     6:38.74       70381292 B   ---   --   ---xx   flac  0.6616  02 Jokerman - Bob Dylan.flac
+     3:53.27       41164748 B   ---   --   ---xx   flac  0.6747  03 All Along The Watchtower - Bob Dylan.flac
+     6:13.40       65891324 B   ---   --   ---xx   flac  0.6828  04 Just Like A Woman - Bob Dylan.flac
+     3:59.66       42314876 B   ---   --   ---xx   flac  0.7055  05 Maggie's Farm - Bob Dylan.flac
+     5:35.58       59230460 B   ---   --   ---xx   flac  0.6642  06 I And I - Bob Dylan.flac
+     3:27.68       36674780 B   ---   --   ---xx   flac  0.6725  07 License To Kill - Bob Dylan.flac
+     5:16.50       55860044 B   ---   --   ---xx   flac  0.6541  08 Hard Rain's A-Gonna Fall - Bob Dylan.flac
+     6:48.13       72001820 B   ---   --   ---xx   flac  0.6549  09 Tangled Up In Blue - Bob Dylan.flac
+     5:58.56       63282956 B   ---   --   ---xx   flac  0.6849  10 It's Alright Ma (I'm Only Bleeding) - Bob Dylan.flac
+     5:33.31       58814156 B   ---   --   ---xx   flac  0.6839  11 Simple Twist Of Fate - Bob Dylan.flac
+     5:11.63       55008620 B   ---   --   ---xx   flac  0.7003  12 Masters Of War - Bob Dylan.flac
+     4:01.58       42648860 B   ---   --   ---xx   flac  0.6906  13 Ballad Of A Thin Man - Bob Dylan.flac
+    67:17.57      712261436 B                            0.6766  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-19-IAR003.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:57.56       31354556 B   ---   --   ---xx   flac  0.6938  01 When You Gonna Wake Up - Bob Dylan.flac
+     5:41.15       60187724 B   ---   --   ---xx   flac  0.6490  02 Every Grain Of Sand - Bob Dylan.flac
+     7:29.61       79347116 B   ---   --   ---xx   flac  0.6671  03 Like A Rolling Stone - Bob Dylan.flac
+     6:15.70       66314684 B   ---   --   ---xx   flac  0.6354  04 Mr Tambourine Man - Bob Dylan.flac
+     6:48.23       72025340 B   ---   --   ---xx   flac  0.6393  05 It Ain't Me Babe - Bob Dylan.flac
+     5:37.32       59522108 B   ---   --   ---xx   flac  0.6423  06 The Times They Are A-Changin' - Bob Dylan.flac
+     4:11.37       44363468 B   ---   --   ---xx   flac  0.6625  07 I Shall Be Released - Bob Dylan.flac
+     4:32.17       48020828 B   ---   --   ---xx   flac  0.7190  08 Tombstone Blues - Bob Dylan.flac
+     4:15.01       44984396 B   ---   --   ---xx   flac  0.6399  09 Blowin' In The Wind - Bob Dylan.flac
+    47:49.12      506120220 B                            0.6577  (9 files)
+=================== 
+=================== 
+=================== 

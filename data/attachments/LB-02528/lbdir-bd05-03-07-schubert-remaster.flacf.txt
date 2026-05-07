@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-07-schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+7ae85aca08a7085e48e72f2d1ea1e4fa  bd-05-03-07-schubert remaster.txt
+73925dbd249b56eb22adce6f61898f32  bd-05-03-07-schubertrem-d1\Track 01.flac
+cfa3f50644264aef3d96f8d2affee486  bd-05-03-07-schubertrem-d1\Track 02.flac
+cca47420b6539e80704e7009387a637e  bd-05-03-07-schubertrem-d1\Track 03.flac
+27c91285577514051d01594b94e1b43e  bd-05-03-07-schubertrem-d1\Track 04.flac
+797be5996b62ca1c094f8f98bbe1745c  bd-05-03-07-schubertrem-d1\Track 05.flac
+2bceda6607c439a181846df0dfbc6078  bd-05-03-07-schubertrem-d1\Track 06.flac
+145061fb87c3d41bcb12480ceddb2c6a  bd-05-03-07-schubertrem-d1\Track 07.flac
+bcf2ca9a16a0d4da4e5e17641b41d1ab  bd-05-03-07-schubertrem-d1\Track 08.flac
+0d2f219426591345e06a46eee9bb897c  bd-05-03-07-schubertrem-d1\Track 09.flac
+3629befc9be096150c204b954dce5ae4  bd-05-03-07-schubertrem-d1\bd-05-03-07-schubertrem-d1-fingerprints.txt
+d5455077d7ebbab94219822962f99c80  bd-05-03-07-schubertrem-d2\Track 01.flac
+e8f0e4c5468a6123827a7cabad262043  bd-05-03-07-schubertrem-d2\Track 02.flac
+b0f44d785cbd5c7e16f49bd5bc3407ec  bd-05-03-07-schubertrem-d2\Track 03.flac
+c60c8281f8e048bf2ea1ea52b8a1f92d  bd-05-03-07-schubertrem-d2\Track 04.flac
+01eec84b5eab6865bce7a2e64144960a  bd-05-03-07-schubertrem-d2\Track 05.flac
+5bf90d46b9beba3661f6a08a64e76366  bd-05-03-07-schubertrem-d2\Track 06.flac
+fe3a13cd48da2f52929ab352378c2470  bd-05-03-07-schubertrem-d2\Track 07.flac
+390344a8c440feef15506d4166069ddb  bd-05-03-07-schubertrem-d2\bd-05-03-07-schubertrem-d2-fingerprints.txt
+c0c64aaf523ae9db12327312c3335a70  bd05-03-07-schubert-remaster.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-03-07-schubert-remaster.flacf\bd-05-03-07-schubertrem-d2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:f7c7332644a603ed50ea8f8963977d8f
+Track 02.flac:3c9d07666f8f852a5c0ceb8c1729ca0c
+Track 03.flac:c01bc540808e31305c470fc09b33ca9a
+Track 04.flac:23aee68214e619b2e1d9549c3641aaf9
+Track 05.flac:9a4fc6b282274ca7c9ac0323913b0028
+Track 06.flac:e5f284534c90cabd5c466d6bf9e63b86
+Track 07.flac:e2e477286ab5e68f517876fec89b46c8
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-03-07-schubert-remaster.flacf\bd-05-03-07-schubertrem-d1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:7adaf294930588a412528bb51aa8dc7c
+Track 02.flac:164a9e51c715a64da7a0eb36dd07ac30
+Track 03.flac:20bf5e8c990f01deee7484c632be3ca5
+Track 04.flac:0d96d890a0220216cfa541e8db57a5d6
+Track 05.flac:2615a09c2966cad2a9a72f8c18f215a1
+Track 06.flac:4d9c401304b7b60ef3fbca3e868aa317
+Track 07.flac:973c2756a6d0e7b3e80ed9e1bd16e4bd
+Track 08.flac:2d8b4d54b330dde0baf2fa9bc34beaa4
+Track 09.flac:258d1be1995d6813b362cf17b0271a50
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-07-schubert-remaster.flacf\bd-05-03-07-schubertrem-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:03.61       85344716 B   ---   --   ---xx   flac  0.5005  Track 01.flac
+     6:00.58       63640460 B   ---   --   ---xx   flac  0.6303  Track 02.flac
+     6:48.59       72110012 B   ---   --   ---xx   flac  0.4851  Track 03.flac
+    10:51.00      114836444 B   ---   --   ---xx   flac  0.6421  Track 04.flac
+     6:45.41       71538476 B   ---   --   ---xx   flac  0.6394  Track 05.flac
+     6:25.16       67951676 B   ---   --   ---xx   flac  0.6257  Track 06.flac
+     5:01.44       53199932 B   ---   --   ---xx   flac  0.6415  Track 07.flac
+    49:56.54      528621716 B                            0.5939  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-07-schubert-remaster.flacf\bd-05-03-07-schubertrem-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:12.35        2199164 B   ---   --   ---xx   flac  0.6288  Track 01.flac
+     4:41.11       49594316 B   ---   --   ---xx   flac  0.6993  Track 02.flac
+     4:22.29       46285052 B   ---   --   ---xx   flac  0.6336  Track 03.flac
+     7:09.67       75833228 B   ---   --   ---xx   flac  0.6350  Track 04.flac
+     7:11.60       76169564 B   ---   --   ---xx   flac  0.5554  Track 05.flac
+     7:18.54       77390252 B   ---   --   ---xx   flac  0.6341  Track 06.flac
+     6:13.73       65968940 B   ---   --   ---xx   flac  0.6086  Track 07.flac
+     6:08.55       65044604 B   ---   --   ---xx   flac  0.5914  Track 08.flac
+     4:32.19       48025532 B   ---   --   ---xx   flac  0.6481  Track 09.flac
+    47:51.28      506510652 B                            0.6212  (9 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-13-i.flacf
+===================
+===================
+===================
+03487c8c7511bfe77c99c527ba0a485f *bd-95-03-13-offmaster.txt
+ce210e6e7498696f17432fbe13c3bb46 *Bob Dylan - bd-95-03-13-d1\Track 01.flac
+2068c2f1dc782d0da6fdd90a8ea8d1ad *Bob Dylan - bd-95-03-13-d1\Track 02.flac
+e197c3f7f52c033d20adf32b136a8f23 *Bob Dylan - bd-95-03-13-d1\Track 03.flac
+e5b50a076f927edc6f25133109601098 *Bob Dylan - bd-95-03-13-d1\Track 04.flac
+2f231feee4e78863974500cdddbe26d5 *Bob Dylan - bd-95-03-13-d1\Track 05.flac
+032de327f3f6b9a13206ecf042ca25e3 *Bob Dylan - bd-95-03-13-d1\Track 06.flac
+627151f87bbc484d5275e2573a04821f *Bob Dylan - bd-95-03-13-d1\Track 07.flac
+68e5ddea6f77830dbc0c7a20633166a7 *Bob Dylan - bd-95-03-13-d2\Track 01.flac
+4a69997a5256ba494607f03ab1cf4a2f *Bob Dylan - bd-95-03-13-d2\Track 02.flac
+48943869430f61d86ce4f56f70d1a844 *Bob Dylan - bd-95-03-13-d2\Track 03.flac
+60874752b3a21ceeefe030c1de14fdb0 *Bob Dylan - bd-95-03-13-d2\Track 04.flac
+ef4ad18a198e7f9aa30fd40320a1128c *Bob Dylan - bd-95-03-13-d2\Track 05.flac
+9c4a1d6114e37b22c2e883b2d0521e8b *Bob Dylan - bd-95-03-13-d2\Track 06.flac
+===================
+===================
+===================
+=== ffp for: bd95-03-13-i.flacf
+===================
+===================
+===================
+Bob Dylan - bd-95-03-13-d1\Track 01.flac:cbc30912f94db78ffbedb0216a0e1f58
+Bob Dylan - bd-95-03-13-d1\Track 02.flac:45db975535db9ca54c813d827a944d50
+Bob Dylan - bd-95-03-13-d1\Track 03.flac:bbcb77582a53c7552222148934b1ac0a
+Bob Dylan - bd-95-03-13-d1\Track 04.flac:515cd6dcaddc4d3c23670af8d63d2c86
+Bob Dylan - bd-95-03-13-d1\Track 05.flac:26fc97c799c5df6eecd1580511dbbc7d
+Bob Dylan - bd-95-03-13-d1\Track 06.flac:eee495e0d8ca67ec6c5ce75cebafcb0c
+Bob Dylan - bd-95-03-13-d1\Track 07.flac:d060e4b8a3e67df8bafb4950fe727c20
+Bob Dylan - bd-95-03-13-d2\Track 01.flac:5a60c1960ef6ec94a99960399fecf0ee
+Bob Dylan - bd-95-03-13-d2\Track 02.flac:9bf15527bb90caa763cbe3cd349ba146
+Bob Dylan - bd-95-03-13-d2\Track 03.flac:b09d23b81a20a5cbbe653f1d618fce5f
+Bob Dylan - bd-95-03-13-d2\Track 04.flac:d3648e970892713ce2ec241354de16c4
+Bob Dylan - bd-95-03-13-d2\Track 05.flac:d921e8c521562409461ef9bc95f37308
+Bob Dylan - bd-95-03-13-d2\Track 06.flac:50a4e7b47d4170ce43b835b63af09df2
+===================
+===================
+===================
+=== shntool len for: bd95-03-13-i.flacf\Bob Dylan - bd-95-03-13-d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.15       54190124 B   ---   --   ---xx   flac  0.5849  Track 01.flac
+     5:33.59       58880012 B   ---   --   ---xx   flac  0.5158  Track 02.flac
+     5:46.54       61161452 B   ---   --   ---xx   flac  0.5803  Track 03.flac
+     6:59.30       73982204 B   ---   --   ---xx   flac  0.5103  Track 04.flac
+    10:36.56      112322156 B   ---   --   ---xx   flac  0.5327  Track 05.flac
+     5:38.00       59623244 B   ---   --   ---xx   flac  0.4658  Track 06.flac
+     7:10.28       75917900 B   ---   --   ---xx   flac  0.4136  Track 07.flac
+    46:52.17      496077092 B                            0.5126  (7 files)
+===================
+===================
+===================
+=== shntool len for: bd95-03-13-i.flacf\Bob Dylan - bd-95-03-13-d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:14.71       87308636 B   ---   --   ---xx   flac  0.4966  Track 01.flac
+     7:04.61       74937116 B   ---   --   ---xx   flac  0.3971  Track 02.flac
+     6:06.40       64656524 B   ---   --   ---xx   flac  0.5571  Track 03.flac
+     7:34.06       80099756 B   ---   --   ---xx   flac  0.4739  Track 04.flac
+     7:27.67       79008428 B   ---   --   ---xx   flac  0.6251  Track 05.flac
+    10:30.35      111214364 B   ---   --   ---xx   flac  0.5495  Track 06.flac
+    46:58.55      497224824 B                            0.5181  (6 files)
+===================
+===================
+===================

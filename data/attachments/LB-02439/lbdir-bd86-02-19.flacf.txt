@@ -1,0 +1,40 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-02-19.flacf 
+=================== 
+=================== 
+=================== 
+386a91cb783d3045a2fb4f5c656f4aea  bd86-02-19.txt
+d8dcb8185f6c0a90ee0bba40141959b4  D2Track05.flac
+b40923f21782aa176fc81c5e67b0fefb  D2Track06.flac
+e83166e6889d100bc032040677b05e8c  D2Track07.flac
+0d4f409d7d24ccc47fbfa40c473c77bd  D2Track08.flac
+e4903a2b01fec4cb22cb636812f9ca96  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-19.flacf 
+=================== 
+=================== 
+=================== 
+D2Track05.flac:d19d6f277abf058fb96f30a2ee711009
+D2Track06.flac:abf2a671ef9a232970bba80f23c188a3
+D2Track07.flac:afbc5822cc8b72111b729467ebfb87f1
+D2Track08.flac:30e9bbc53fd9546e571c5dfa892e8f29
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-19.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.59       49530812 B   ---   --   ---xx   flac  0.6532  D2Track05.flac
+     4:30.49       47743292 B   ---   --   ---xx   flac  0.6694  D2Track06.flac
+     4:52.50       51626444 B   ---   --   ---xx   flac  0.6683  D2Track07.flac
+     5:37.33       59524460 B   ---   --   ---xx   flac  0.6663  D2Track08.flac
+    19:41.41      208425008 B                            0.6644  (4 files)
+=================== 
+=================== 
+=================== 

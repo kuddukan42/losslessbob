@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+2/21/03	Auckland, New Zealand, North Shore Events Centre
+
+Lineage and taper: no info
+Received in trade long time ago'. The folder was renamed as coming from minidisc rec.
+very good sound
+
+
+CD1
+
+1 Tweedle Dee & Tweedle Dum (Bob on piano), 2 I'll Be Your Baby Tonight (Bob on piano, Larry on pedal steel), 3 Highway 61 Revisited (Bob on piano), 4 Just Like A Woman (Bob on pino & harp, Larry on pedal steel), 5 Things Have Changed (Bob on piano), 6 Drifter's Escape, 7 It's All Over Now, Baby Blue (acoustic) (Larry on pedal steel),8 Don't Think Twice, It's All Right (acoustic), 9 Masters Of War (acoustic), 10 Watching The River Flow (Bob on piano and harp)
+
+CD2
+11 Simple Twist Of Fate (Larry on pedal steel),12 Honest With Me (Bob on piano, Larry on slide guitar), 13 Bye And Bye (Bob on piano), 14 Happy Birthday (for Larry Campbell), 15 Summer Days (Bob on piano), 16 crowd, 17 Blowin' In The Wind 
+
+
+
+Concert # 1498 of The Never-Ending Tour. Concert # 8 of the 2003 Tour Down Under. 2003 concert # 8.
+Concert # 8 with the 15th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bill Burnette (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+
+7-9, 16 acoustic with the band.
+1-5, 10, 12, 13, 15 Bob Dylan (piano).
+4, 10  Bob Dylan (harmonica).
+2, 4, 7 Larry Campbell (pedal steel guitar).
+8 Larry Campbell (cittern).
+10, 12 Larry Campbell (slide guitar).
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+2633e1fc819af8c1c0c4e0fac128e52b *10 Watching The River Flow.shn
+b1aa74f67709b65069f57ac94c43507f *01 Tweedle Dee & Tweedle Dum.shn
+b55f18fb31c30613b68128692e0419ac *02 I'll Be Your Baby Tonight.shn
+a32e383376a9df15c8a1219dcf186d0e *03 Highway 61 Revisited.shn
+682b342cc13a55e7970b7f80b7b83eb5 *04 Just Like A Woman.shn
+97ac4471e67de0c92d0b22850bd956e9 *05 Things have Changed.shn
+303865fa340f9b8713c92bc6db7e6191 *06 Drifter's Escape.shn
+1bfc520c7de731c8473e6478e165acb2 *07 It's All Over Now, Baby Blue.shn
+8968549f7cca0bd02f775f8d4a28a830 *08 Don't Think Twice, It's Alright.shn
+7d89559013af8e789a762e28eaf0bd36 *09 Masters Of War.shn
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+ffad36f03505f86303e3996f1b03e003 *8 All Along The Watchtower.shn
+dc4385acbdfc657f39232bd43066c76c *1 Simple Twist Of Fate.shn
+ded8d418a78c7145d3cd7979b94e20c6 *2 Honest With Me.shn
+4bcfc8866722aa0b5a93c9ac08aeacec *3 Bye & Bye.shn
+c2394eb04d133deaae48a4452ece8e8d *4 Happy Birthday (to Larry).shn
+154471ada2d845e9c2719a385b91c4a5 *5 Summer Days.shn
+f331d32133c7ab2a75a25bf34094d680 *6 Encore applause.shn
+1609c669bbf7fcca5a61ad6ef0eb1dde *7 Blowin' In The Wind.shn
+===================
+===================
+===================

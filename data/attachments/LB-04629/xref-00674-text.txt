@@ -1,0 +1,156 @@
+===================
+===================
+===================
+=== d1 flac ffp.ffp
+===================
+===================
+===================
+01 - My Back Pages (instrumental).flac:89134247ae0a85228580105cf9e118ab
+02 - She's Love Crazy.flac:d4697725640f573c157b471e19d2075b
+03 - Mr. Tambourine Man.flac:adddfb0bfcd83b30271398626b8e7ade
+04 - Shelter From The Storm.flac:e8d431856bdfcdaf7904cb3e8235ffc3
+05 - Love Minus Zero - No Limit.flac:1fedfeb38115b10c874bdf7981ace380
+06 - Tangled Up In Blue.flac:6dd242525ee2e6513e34ad98f625c69d
+07 - Ballad Of A Thin Man.flac:7884a2ace38f766499150c13d6ff68db
+08 - Maggie's Farm.flac:697123902c2d415351a3dc6f06cedcc9
+09 - I Don't Believe You.flac:bd0951734b4699ffc487ee0f00b29ae2
+10 - Like A Rolling Stone.flac:47ddeb05f2d2c05c39d5b5b67954ad06
+11 - I Shall Be Released.flac:fce8ec9874a020224a9810633db14313
+12 - Seor (Tales Of Yankee Power).flac:497b49887c5f05292d9012125631363c
+13 - The Times They Are A-Changin'.flac:755c24711a8b3a02c58bc36943090ded
+14 - Rainy Day Women # 12 & 35.flac:43b5bedde8b530988d21f2a79f0b48d2
+15 - It Ain't Me, Babe (acoustic).flac:0738ef0e0c91dd6c59dad0543a15f635
+===================
+===================
+===================
+=== d1 flac md5.md5
+===================
+===================
+===================
+440c11de83eddf1945a1d036e0a5a3d5 *01 - My Back Pages (instrumental).flac
+ea9e28b5c3abaed3ae2f9a88412c794f *02 - She's Love Crazy.flac
+c5b5d4ee412ffcf7bfe342fe2c4120e2 *03 - Mr. Tambourine Man.flac
+abfdbf01e6842e9f81a10d14ba7616a8 *04 - Shelter From The Storm.flac
+67744562d529960497f9801c92465938 *05 - Love Minus Zero - No Limit.flac
+0d714b485376cb2f6969a65a0401c3cb *06 - Tangled Up In Blue.flac
+429ec067fb1bd0b8c18ff6a5104b8570 *07 - Ballad Of A Thin Man.flac
+3992af10141f19c1edf1b7da10158978 *08 - Maggie's Farm.flac
+2371045200c6d6e4553b5cec6914a356 *09 - I Don't Believe You.flac
+74f4af366457f6fe7c6f6506f4229322 *10 - Like A Rolling Stone.flac
+57aa819d58d34dffdddc990a0774a9b7 *11 - I Shall Be Released.flac
+4fdd393dce0c3cc1653380d8a8e9b6ce *12 - Seor (Tales Of Yankee Power).flac
+2ba30bf93e84433c4f48948147154823 *13 - The Times They Are A-Changin'.flac
+4e214ef7ccc465484b534dad1116296a *14 - Rainy Day Women # 12 & 35.flac
+62f3bdeed8a5a1d442f0d1e9228c7ffd *15 - It Ain't Me, Babe (acoustic).flac
+===================
+===================
+===================
+=== d2 flac ffp.ffp
+===================
+===================
+===================
+01 - Am I Your Stepchild.flac:0f4dcd4022a173a29d41353a480bf840
+02 - One More Cup Of Coffee (Valley Below).flac:099cc93586083581b0b6f00ffec10452
+03 - Blowin' In The Wind.flac:36eff7b46571ad90bc253c67abbb027d
+04 - Girl From The North Country.flac:5db70eaac4626b86b76af498180d9483
+05 - Where Are You Tonight (Journey Through Dark Heat).flac:b039e37fbae294d319ed6df0b5ec4c1e
+06 - Masters Of War.flac:1bf297691ff81a418e2f93a2b53230bf
+07 - Just Like A Woman.flac:1df2139249d0fdd5380fd5a22a9e90ef
+08 - All Along The Watchtower.flac:aa8efabd9b1d178b1a20dfa55d288212
+09 - To Ramona.flac:71bf1a507abb9181fe19112489c48b1d
+10 - It's Alright, Ma (I'm Only Bleeding).flac:92b10ea6d3780cf53bc7bd4c8f56bdf2
+11 - Forever Young.flac:e4f850e617d8c6ccccf19e7de2bfdeae
+12 - Changing Of The Guards.flac:bec48ec1644adb6f9b9e065229218178
+===================
+===================
+===================
+=== d2 flac md5.md5
+===================
+===================
+===================
+b64501c8ec4aec2725024022517d4215 *01 - Am I Your Stepchild.flac
+14e424c1d8135b3c4d3958e6b72ac0b1 *02 - One More Cup Of Coffee (Valley Below).flac
+b20310e89b1c7fadfee8b5b99f241586 *03 - Blowin' In The Wind.flac
+01bf39b407cb7168c15dac392f2dfd9c *04 - Girl From The North Country.flac
+9931da589feea2753f6dc6f59cbbe3e9 *05 - Where Are You Tonight (Journey Through Dark Heat).flac
+4eb26eaf35db78e8aee7ed072229cfe9 *06 - Masters Of War.flac
+ce43d9d17b9b5f07b1dd6863f1dab48c *07 - Just Like A Woman.flac
+e8770b5475fe0c83fc6a5e084356ba2b *08 - All Along The Watchtower.flac
+db0e0f300082e2a82bdb852d7cee9cd5 *09 - To Ramona.flac
+5958b289e99fe9c8e8804521fa0263c3 *10 - It's Alright, Ma (I'm Only Bleeding).flac
+a40176b7f9d08297cb7f4cb62a35f754 *11 - Forever Young.flac
+bf5e46c0917e3143a1732a6609086ea8 *12 - Changing Of The Guards.flac
+===================
+===================
+===================
+=== New info-file Dec 31, 2010.txt
+===================
+===================
+===================
+Bob Dylan - Columbia Dec. 9, 1978 (LB-4629)
+
+by EasyMusic Dec. 31, 2010.
+
+There are 3 LB-versions of this: 
+LB-247, LB-7769 and this one: LB-4629.
+The first two are the same (sic!) and very similar to LB-4629 
+("Close EAC match") but LB-4629 is slightly better: 
+d1 does not have error at 3min20s and no long silence at end.
+d2 does not have "click" at start tr 1.
+
+
+Contrast Clause:
+this is different from id=338070 
+(that is LB-247, this is LB-4629 with differences as described above)
+
+
+Bob Dylan - Carolina Coliseum, Columbia, South Carolina - December 9 1978
+
+as upped by kisseber to HungerCity March 2007 (with added file-titles)
+- he wrote:
+
+"Taper: BS 
+Source: Flac files from taper
+
+Equipment: "Taped using a 3-head portable cassette recorder and electret condenser mic which 
+was possibly above-average equipment for the typical audience stealth taper in those days."
+*Stereo master cassettes* (source for filler tracks on CD: Hush Hush Sweet Charlotte). 
+Remastered to DAT."
+
+
+Disk One:
+
+01 - My Back Pages (instrumental)
+02 - She's Love Crazy
+03 - Mr. Tambourine Man
+04 - Shelter From The Storm
+05 - Love Minus Zero - No Limit
+06 - Tangled Up In Blue
+07 - Ballad Of A Thin Man
+08 - Maggie's Farm
+09 - I Don't Believe You
+10 - Like A Rolling Stone
+11 - I Shall Be Released
+12 - Seor (Tales Of Yankee Power)
+13 - The Times They Are A-Changin' 
+14 - Rainy Day Women # 12 & 35
+15 - It Ain't Me, Babe (acoustic)
+
+
+Disk Two
+
+01 - Am I Your Stepchild
+02 - One More Cup Of Coffee (Valley Below)
+03 - Blowin' In The Wind
+04 - Girl From The North Country
+05 - Where Are You Tonight (Journey Through Dark Heat)
+06 - Masters Of War
+07 - Just Like A Woman
+08 - All Along The Watchtower
+09 - To Ramona
+10 - It's Alright, Ma (I'm Only Bleeding)
+11 - Forever Young
+12 - Changing Of The Guards
+===================
+===================
+===================

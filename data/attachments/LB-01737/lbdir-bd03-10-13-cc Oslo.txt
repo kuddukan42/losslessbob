@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-10-13-cc Oslo 
+=================== 
+=================== 
+=================== 
+70e2dbfbdbf94d4a74a007245340ad7f  bd03-10-13-cc.txt
+d0a6d8c0824839ce5c6514382ac5e39e  cd 1\Track 01.shn
+9d61883c7edd1d54c9f15464dc8f3fd2  cd 1\Track 02.shn
+d210432144871e37b8353effc69c26ca  cd 1\Track 03.shn
+043bac74d1f0576a7ed59aed99e44318  cd 1\Track 04.shn
+e7abb1aaaf31515f3a0ad08c23c5322d  cd 1\Track 05.shn
+673329cb68a4ba09aa643d859b0b4f71  cd 1\Track 06.shn
+6ce4f31cb884457c3767c44bf5d1b46c  cd 1\Track 07.shn
+47d5fdfc9ea113fbb0b67d2b1d61550e  cd 1\Track 08.shn
+7c9c4025dd57cc26df04b174b4bcb744  cd 1\Track 09.shn
+939aa810f2ebc140192efa15d8785caa  cd 1\Track 10.shn
+3ef978ebf9331a7b09564ef9f49969c0  cd 1\Track 11.shn
+a45fc0a6e61292c25b5491f7d05c24e3  cd 1\Track 12.shn
+c76d232d35405dd5b8445d9ae872c571  cd 1\noname.md5
+8bc9e679573299ea4b9783b78f15baa7  cd 2\Track 01.shn
+8c1b6e96f5d5881699e83b4b9fa98370  cd 2\Track 02.shn
+5549ecdb0910ea4191045ad496bd272c  cd 2\Track 03.shn
+d4e2753e4a6e11716ee91983ba5f9ef8  cd 2\Track 04.shn
+26be8c85cfd171f4cbcf908cd0f10692  cd 2\Track 05.shn
+4302b9e2d502dab1157d237ec499a267  cd 2\Track 06.shn
+b4abc40474109208880b5b14a7770630  cd 2\Track 07.shn
+75a3776f2dc9685eedb1e93d9301ad0f  cd 2\Track 08.shn
+07c97c55f635fb2d6d47006a6a8011ba  cd 2\Track 09.shn
+a1b6340def449232db253ed4bdf96aa6  cd 2\Track 10.shn
+e3b23df90cec4948db6fa34541e2edec  cd 2\noname.md5
+2f9a970612f538042ebcc4b4f948367a  info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-10-13-cc Oslo\cd 2 
+=================== 
+=================== 
+=================== 
+fbc1f7abb67dc66d96d6c2a24c0e24c4  [shntool]  Track_01.wav
+0315783053a7f1678e41b3027a7b9a19  [shntool]  Track_02.wav
+51e1aeac1eac51bada34d38b4ce23746  [shntool]  Track_03.wav
+bcb01f8d5c19f5e0797931351bbc5257  [shntool]  Track_04.wav
+f47a8b06229e210df7ecefc81a4134aa  [shntool]  Track_05.wav
+017063a3db6183bb6511893f62a7c645  [shntool]  Track_06.wav
+feebf1b57befdd0b9fa4234ea62700af  [shntool]  Track_07.wav
+6392b389c2510d51fe8172259c6b81de  [shntool]  Track_08.wav
+41ea7237ccecb8657dc0321fe06b48b5  [shntool]  Track_09.wav
+98f764c5637b4dc63c4985f5ce25458b  [shntool]  Track_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-10-13-cc Oslo\cd 1 
+=================== 
+=================== 
+=================== 
+c9667f532ff8b6023b861651abfd21f0  [shntool]  Track_01.wav
+f474c4bfe40ee098c141ec3e01c0f55d  [shntool]  Track_02.wav
+a8e1f130a04273215bdb8fdf6e25b624  [shntool]  Track_03.wav
+c67fdcff03b0ebb46d4355ff3cc52f1e  [shntool]  Track_04.wav
+af8d41fcb1413260cb275dfa8d4e8348  [shntool]  Track_05.wav
+885fa5e44bbe34ca213bacbd6e60a1b0  [shntool]  Track_06.wav
+06abb0e6efd0a48ab99fa99a6dfd7b38  [shntool]  Track_07.wav
+15fbb19c57fa3a5eb64affafd853a7f6  [shntool]  Track_08.wav
+591fecb2d93500476b168293b109a1ed  [shntool]  Track_09.wav
+40ff3a52cf95f5dfc8331824656be91f  [shntool]  Track_10.wav
+5a771379b60eb824cbf3a58f7863c0b4  [shntool]  Track_11.wav
+d0d0ab143e2a4ed55c5450ce8259c854  [shntool]  Track_12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-13-cc Oslo\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:04.19       74839360 B   -b-   --   -----    wav  1.0000  Track_01.wav
+     7:50.39       82999772 B   ---   --   -----    wav  1.0000  Track_02.wav
+     9:17.00       98254844 B   ---   --   -----    wav  1.0000  Track_03.wav
+     4:39.65       49368524 B   ---   --   -----    wav  1.0000  Track_04.wav
+     8:00.10       84695564 B   ---   --   -----    wav  1.0000  Track_05.wav
+     7:12.43       76305980 B   ---   --   -----    wav  1.0000  Track_06.wav
+     9:01.32       95507708 B   ---   --   -----    wav  1.0000  Track_07.wav
+     5:48.68       61547180 B   ---   --   -----    wav  1.0000  Track_08.wav
+    10:42.06      113262956 B   ---   --   -----    wav  1.0000  Track_09.wav
+     8:09.72       86429056 B   -b-   --   -----    wav  1.0000  Track_10.wav
+    77:46.54      823210944 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-13-cc Oslo\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.13        9203224 B   -b-   --   -----    wav  1.0000  Track_01.wav
+     4:27.15       47134124 B   ---   --   -----    wav  1.0000  Track_02.wav
+     7:12.73       76376540 B   ---   --   -----    wav  1.0000  Track_03.wav
+     5:49.73       61735340 B   ---   --   -----    wav  1.0000  Track_04.wav
+     7:24.00       78321644 B   ---   --   -----    wav  1.0000  Track_05.wav
+     8:04.00       85377644 B   ---   --   -----    wav  1.0000  Track_06.wav
+     5:55.55       62751404 B   ---   --   -----    wav  1.0000  Track_07.wav
+     7:39.20       81014684 B   ---   --   -----    wav  1.0000  Track_08.wav
+     7:24.00       78321644 B   ---   --   -----    wav  1.0000  Track_09.wav
+     6:03.00       64033244 B   ---   --   -----    wav  1.0000  Track_10.wav
+     5:42.00       60328844 B   ---   --   -----    wav  1.0000  Track_11.wav
+     8:13.53       87088932 B   -b-   --   -----    wav  1.0000  Track_12.wav
+    74:48.02      791687268 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

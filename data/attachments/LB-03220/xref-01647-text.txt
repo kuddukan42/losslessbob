@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== bd1987-10-10_Birmingham_UK.md5
+===================
+===================
+===================
+1ab8b447fe44ac5ca9cfa3eb7cf88577 *01 The Times.flac
+eec14e9b0546d144dab84232efdbe762 *02 LARS.flac
+5414884d109aaa784f0c775e0bf669f2 *03 Maggies Farm.flac
+6f3ad1c43e2239b23d4bf3de849145bc *04 Senor.flac
+21c9a815d001f6e56411765d10dbc1da *05 I Want You.flac
+be3f3352f1c157695cc7292d5325defb *06 Pledging My Time.flac
+b4303d99ae3dcc5e93e8e694d07f1a8c *07 Simple Twist.flac
+d25204626cf8b2a593c740dbc1f7aa84 *08 Seeing The Real You.flac
+1235b1d885166b15ec5ae18521f58718 *09 I Shall Be Released.flac
+87dc3d2bd7113616e97e2809fdea329f *10 Tomorrow Is A Long Time.flac
+8736655262dff02c33821436db667091 *11 Dead Man Dead man.flac
+582a25c37cc1181d13962460227d08a0 *12 In The Garden.flac
+402e23dc55ffc149524574ba9d6e75b0 *13 Chimes of Freedom.flac
+034fa7baeddac937643973ebe4d127f0 *14 Knockin'.flac
+5e12f9a2948d8e7a363f19bac07067dc *bd87-10-10-gs-1gen-info.txt
+9714a91ce359f03ca3b0a3ef99071286 *Birmingham, England-10-10-87-WAV.ffp
+===================
+===================
+===================
+=== bd87-10-10-gs-1gen-info.txt
+===================
+===================
+===================
+Bob Dylan, 10/10/87, Birmingham, England, 1CDR
+
+LB-3220, (69min), gs 1st gen from master; different recording than cb master based on crowd at beginning of t1 with a little better sound quality; this one is fuller and warmer and less harsh; excellent sound [A]
+
+1 The Times They Are A-Changin' 2 Like A Rolling Stone 3 Maggie's Farm 4 Senor (Tales Of Yankee Power) 5 I Want You 6 Pledging My Time 7 Simple Twist Of Fate 8 Seeing The Real You At Last 9 I Shall Be Released 10 Tomorrow Is A Long Time 11 Dead Man, Dead Man 12 In The Garden 13 Chimes Of Freedom 14 Knockin' On Heaven's Door
+
+
+Concert #24 of 1987 Temples In Flames Tour. Concert #84 with Tom Petty & The Heartbreakers. 1987 concert #30.
+
+1-9, 11-14 Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers.
+
+Tom Petty (guitar), Mike Campbell (guitar), Benmont Tench (keyboards), Howie Epstein (bass), Stan Lynch (drums)
+
+and with The Queens Of Rhythm: Carolyn Dennis, Queen Esther Marrow, Madelyn Quebec (backing vocals).
+
+10 Bob Dylan Bob Dylan (vocal & guitar), Mike Campbell (guitar), Benmont Tench (piano).
+
+5, 14 Bob Dylan (harmonica).
+
+13 Roger McGuinn (guitar & shared vocal).
+
+14 Roger McGuinn (guitar & backup vocal).
+
+http://www.bjorner.com/DSN08690%20-%201987%20Temples%20In%20Flames%20Tour.htm#DSN08930
+
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates
+===================
+===================
+===================
+=== Birmingham, England-10-10-87-WAV.ffp
+===================
+===================
+===================
+01 The Times.flac:cab6f25c6282850e27bb3df2206b770d
+02 LARS.flac:9a337cb2f513f38b75f9f80151e0882b
+03 Maggies Farm.flac:42d313f3b9d446f5451b19a758668ac8
+04 Senor.flac:d97bd4ec8b45ccb40c95e36feed34481
+05 I Want You.flac:9c28937307462959c2287b31adfe6bdf
+06 Pledging My Time.flac:1374c67fc6fdf98b17ed4f22a5cce71c
+07 Simple Twist.flac:dd229398cd68236e35367b166e729d58
+08 Seeing The Real You.flac:23b5b5204264f497ebdcddb3dac9da50
+09 I Shall Be Released.flac:3b6a4d347555593fa5d4ca7265d5d96f
+10 Tomorrow Is A Long Time.flac:24e447b4043d71894370cf549195e5ba
+11 Dead Man Dead man.flac:afc97c790956ad83d0689efe83f07e8f
+12 In The Garden.flac:5a85affc8830a9024cf4f0e18174e780
+13 Chimes of Freedom.flac:7208a689e8ebade31ea261da09e5b75c
+14 Knockin'.flac:837d7bfb16e90b0004a1d230845ff8a5
+===================
+===================
+===================

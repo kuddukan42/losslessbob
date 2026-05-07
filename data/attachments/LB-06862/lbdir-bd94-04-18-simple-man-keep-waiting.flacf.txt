@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-04-18-simple-man-keep-waiting.flacf 
+=================== 
+=================== 
+=================== 
+d4d146b152edd59e24cfeaa6fce86be8  bd94-04-18-simple-man-keep-waiting-d1t01.flac
+3b341fa7efe333e83c6fb2b351297990  bd94-04-18-simple-man-keep-waiting-d1t02.flac
+c244baad4fc34404831c86c63a2e316b  bd94-04-18-simple-man-keep-waiting-d1t03.flac
+aaf2dfbad182da64902beeb40ec7ee6a  bd94-04-18-simple-man-keep-waiting-d1t04.flac
+f81d5cfd2d0df2eb0cab6956d78490c8  bd94-04-18-simple-man-keep-waiting-d1t05.flac
+fe7817e88c9973b498b1f59a4f67980a  bd94-04-18-simple-man-keep-waiting-d1t06.flac
+da3dcde91e15f144c1655b16ad705ba8  bd94-04-18-simple-man-keep-waiting-d1t07.flac
+514cab5a5359dd607d9b5ef3d37ebd22  bd94-04-18-simple-man-keep-waiting-d1t08.flac
+c016dc5116b240c93ea151eeaf962d9b  bd94-04-18-simple-man-keep-waiting-d1t09.flac
+a685670ff9bbd511f3736ffb4e03874b  bd94-04-18-simple-man-keep-waiting-d1t10.flac
+4673fc76cf3548e16596c6a672c6f1b2  bd94-04-18-simple-man-keep-waiting-d1t11.flac
+1baffbdf6ba7d66fbbf97f68d0edbb47  bd94-04-18-simple-man-keep-waiting-d2t01.flac
+076ce0672da21a3c0c645650af8ae869  bd94-04-18-simple-man-keep-waiting-d2t02.flac
+5edc08287767bf161681300958626427  bd94-04-18-simple-man-keep-waiting-d2t03.flac
+af0a0b4a300aec69131d9357be155596  bd94-04-18-simple-man-keep-waiting-d2t04.flac
+868695e2683dc9b890d06e845dd26d99  bd94-04-18-simple-man-keep-waiting-d2t05.flac
+8b083776bd6045f5d6235038ad0b607b  bd94-04-18-simple-man-keep-waiting-d2t06.flac
+ce66768cd68678e58d53d85448a0121d  bd94-04-18-simple-man-keep-waiting-d2t07.flac
+ba7ec94253abc8347534a7af2f8c332c  bd94-04-18-simple-man-keep-waiting-d2t08.flac
+d49eb4d75dd5193f1dc20163c3045a73  bd94-04-18-simple-man-keep-waiting-d2t09.flac
+d5a2e027016018b0d80c687ffa505383  bd94-04-18-simple-man-keep-waiting-d2t10.flac
+0a2a721f884351e607c7d3657bdbb602  bd94-04-18-simple-man-keep-waiting.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-04-18-simple-man-keep-waiting.flacf 
+=================== 
+=================== 
+=================== 
+bd94-04-18-simple-man-keep-waiting-d1t01.flac:bc46dcddd945c76296cf15a250e19c43
+bd94-04-18-simple-man-keep-waiting-d1t02.flac:5192cb78b5687b6749d04b796a1f6d7b
+bd94-04-18-simple-man-keep-waiting-d1t03.flac:73821c921b9f49f980394da272d97110
+bd94-04-18-simple-man-keep-waiting-d1t04.flac:1e3af49f03846a77f2727df0f3294619
+bd94-04-18-simple-man-keep-waiting-d1t05.flac:22d3eac176c4b71e64cc7865635fbc00
+bd94-04-18-simple-man-keep-waiting-d1t06.flac:5b92df6fea5f6d0a81d2d3c67fc5412c
+bd94-04-18-simple-man-keep-waiting-d1t07.flac:73c807d5e56438ca449c1b2420836c22
+bd94-04-18-simple-man-keep-waiting-d1t08.flac:7b97d961ed719a052c13857fc19ee9b7
+bd94-04-18-simple-man-keep-waiting-d1t09.flac:6bc70a7ef2e7f20d5e8c07ff321b3b0d
+bd94-04-18-simple-man-keep-waiting-d1t10.flac:8fe764de0722c86b4bb7494b0ff4966e
+bd94-04-18-simple-man-keep-waiting-d1t11.flac:daeb29379b758dec03a21513bd118d20
+bd94-04-18-simple-man-keep-waiting-d2t01.flac:d60c0e0813e6faacc9a2ff481fc8b376
+bd94-04-18-simple-man-keep-waiting-d2t02.flac:f61b596bf393b1f18a4802cd998d8a71
+bd94-04-18-simple-man-keep-waiting-d2t03.flac:1100c86307788185d1dfd5a37a34c505
+bd94-04-18-simple-man-keep-waiting-d2t04.flac:09f94a2e0fdf2604b2bfd71b6648fffa
+bd94-04-18-simple-man-keep-waiting-d2t05.flac:b0437e363cf2034988b62ae3ca59d7b7
+bd94-04-18-simple-man-keep-waiting-d2t06.flac:0c08ed8ffea6ae364bd2fe6e421f15a5
+bd94-04-18-simple-man-keep-waiting-d2t07.flac:2f49e3d45a1773d88a9d0cdc8cd7615f
+bd94-04-18-simple-man-keep-waiting-d2t08.flac:aa8fd5261c0f610f6ed581ef1877ffd9
+bd94-04-18-simple-man-keep-waiting-d2t09.flac:56056f0f5dc850ecddabd7d5dbc4128f
+bd94-04-18-simple-man-keep-waiting-d2t10.flac:2faebe74080d3869cf71b3f9b09bc6f0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-04-18-simple-man-keep-waiting.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:02.00       85024844 B   ---   --   ---xx   flac  0.4317  bd94-04-18-simple-man-keep-waiting-d1t01.flac
+     7:13.50       76498844 B   ---   --   ---xx   flac  0.4147  bd94-04-18-simple-man-keep-waiting-d1t02.flac
+     6:13.62       65943068 B   ---   --   ---xx   flac  0.4731  bd94-04-18-simple-man-keep-waiting-d1t03.flac
+     8:56.00       94550444 B   ---   --   ---xx   flac  0.4043  bd94-04-18-simple-man-keep-waiting-d1t04.flac
+     8:49.50       93433244 B   ---   --   ---xx   flac  0.4366  bd94-04-18-simple-man-keep-waiting-d1t05.flac
+     9:00.63       95404220 B   ---   --   ---xx   flac  0.4044  bd94-04-18-simple-man-keep-waiting-d1t06.flac
+     4:45.62       50419868 B   ---   --   ---xx   flac  0.3478  bd94-04-18-simple-man-keep-waiting-d1t07.flac
+     5:11.25       54919244 B   ---   --   ---xx   flac  0.4660  bd94-04-18-simple-man-keep-waiting-d1t08.flac
+     4:20.38       45953420 B   ---   --   ---xx   flac  0.4873  bd94-04-18-simple-man-keep-waiting-d1t09.flac
+     7:24.00       78321644 B   ---   --   ---xx   flac  0.4589  bd94-04-18-simple-man-keep-waiting-d1t10.flac
+     4:34.00       48333644 B   ---   --   ---xx   flac  0.3985  bd94-04-18-simple-man-keep-waiting-d1t11.flac
+     6:37.27       70094348 B   ---   --   ---xx   flac  0.3679  bd94-04-18-simple-man-keep-waiting-d2t01.flac
+     9:07.63       96639020 B   ---   --   ---xx   flac  0.3893  bd94-04-18-simple-man-keep-waiting-d2t02.flac
+     5:59.65       63480524 B   ---   --   ---xx   flac  0.4771  bd94-04-18-simple-man-keep-waiting-d2t03.flac
+     7:39.65       81120524 B   ---   --   ---xx   flac  0.4392  bd94-04-18-simple-man-keep-waiting-d2t04.flac
+     5:28.62       58005068 B   ---   --   ---xx   flac  0.4625  bd94-04-18-simple-man-keep-waiting-d2t05.flac
+     9:08.50       96784844 B   ---   --   ---xx   flac  0.4863  bd94-04-18-simple-man-keep-waiting-d2t06.flac
+     7:21.38       77881820 B   ---   --   ---xx   flac  0.3755  bd94-04-18-simple-man-keep-waiting-d2t07.flac
+     9:23.60       99454364 B   ---   --   ---xx   flac  0.3922  bd94-04-18-simple-man-keep-waiting-d2t08.flac
+     6:21.37       67295468 B   ---   --   ---xx   flac  0.3950  bd94-04-18-simple-man-keep-waiting-d2t09.flac
+     4:34.38       48423020 B   ---   --   ---xx   flac  0.4436  bd94-04-18-simple-man-keep-waiting-d2t10.flac
+   146:15.30     1547981484 B                            0.4247  (21 files)
+=================== 
+=================== 
+=================== 

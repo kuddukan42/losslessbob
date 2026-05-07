@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-30-never-ending-tour-98-vol1.flacf 
+=================== 
+=================== 
+=================== 
+4f6f93b298fb163504308492ce90782d  bd98-06-30-never-ending-tour--98-vol1-d1t01.flac
+817139566d2f8ef8a9709aa877e134f8  bd98-06-30-never-ending-tour--98-vol1-d1t02.flac
+dd6b9ba4b9960cc1353bf930582dc7ad  bd98-06-30-never-ending-tour--98-vol1-d1t03.flac
+ba5b174f666157b20d52b4e9f40197a5  bd98-06-30-never-ending-tour--98-vol1-d1t04.flac
+e1acc36c2eabb281ec9a1135948c5954  bd98-06-30-never-ending-tour--98-vol1-d1t05.flac
+aae78e6edcc5bae2c885caa4c6b2053c  bd98-06-30-never-ending-tour--98-vol1-d1t06.flac
+585906488727d3213ff989bb1ef3eebd  bd98-06-30-never-ending-tour--98-vol1-d1t07.flac
+15868870b15650999360088307ae3ef4  bd98-06-30-never-ending-tour--98-vol1-d1t08.flac
+9c11c04467b6b581a0c2dcc2fb8e8600  bd98-06-30-never-ending-tour--98-vol1-d1t09.flac
+dd9fdbb62c1ef44a72c781b1a0de67ec  bd98-06-30-never-ending-tour--98-vol1-d1t10.flac
+a4883ac15542f31f808e48f0321426e4  bd98-06-30-never-ending-tour--98-vol1-d2t01.flac
+88b0585c158ed64722463a80d81f3f8e  bd98-06-30-never-ending-tour--98-vol1-d2t02.flac
+78555ff3d039aee5f4515f7629df5771  bd98-06-30-never-ending-tour--98-vol1-d2t03.flac
+ecfbaac0ef8e7cacacef2af1f7bbde9b  bd98-06-30-never-ending-tour--98-vol1-d2t04.flac
+ef3f96baceda90a9e71b67df4c670b95  bd98-06-30-never-ending-tour--98-vol1-d2t05.flac
+0c8aaadb4654422f7ba148b3ff8b7d03  bd98-06-30-never-ending-tour--98-vol1-d2t06.flac
+1071e714ead53ff5d16b40a6bb9759d5  bd98-06-30-never-ending-tour--98-vol1-d2t07.flac
+ab5487363a3fbbf7a6d0ee3721238e15  bd98-06-30-never-ending-tour--98-vol1-d2t08.flac
+6396e5e9d766b018b02e18839d9d11ce  bd98-06-30-never-ending-tour--98-vol1-d2t09.flac
+71d3237bbcb39382000b7c33bf05b223  bd98-06-30-never-ending-tour-98-vol1.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-30-never-ending-tour-98-vol1.flacf 
+=================== 
+=================== 
+=================== 
+bd98-06-30-never-ending-tour--98-vol1-d1t01.flac:26b86b4bf25a4e803348611a4f55a689
+bd98-06-30-never-ending-tour--98-vol1-d1t02.flac:7d86e3a8c91d66750d5d991afe1a6ba5
+bd98-06-30-never-ending-tour--98-vol1-d1t03.flac:7f3f7f33599f6ee05ee4e49f691e9c8a
+bd98-06-30-never-ending-tour--98-vol1-d1t04.flac:2824906a071e6490ed20796f68e7e6f5
+bd98-06-30-never-ending-tour--98-vol1-d1t05.flac:8ab702e3bf9632b10f08456ea511f0b0
+bd98-06-30-never-ending-tour--98-vol1-d1t06.flac:645d7cfa82c402d38f551a1b0034c65e
+bd98-06-30-never-ending-tour--98-vol1-d1t07.flac:bc939d529b7350c5ab19326e04f4466e
+bd98-06-30-never-ending-tour--98-vol1-d1t08.flac:cdd60397ecd69972a96205b3c7ddf5d2
+bd98-06-30-never-ending-tour--98-vol1-d1t09.flac:63f7abd548a2e32e35fbc0eddafb54e2
+bd98-06-30-never-ending-tour--98-vol1-d1t10.flac:2fe6d118715530c4b73314107757616d
+bd98-06-30-never-ending-tour--98-vol1-d2t01.flac:2fd345f116409824b5b0cc54d0adb6b5
+bd98-06-30-never-ending-tour--98-vol1-d2t02.flac:c36cbc37753ddeb9021d9e0df8a08566
+bd98-06-30-never-ending-tour--98-vol1-d2t03.flac:41e5b70307b2f4df6022c797560a14da
+bd98-06-30-never-ending-tour--98-vol1-d2t04.flac:a4c5cefdf4c1c2d5ce9d752bc84becb1
+bd98-06-30-never-ending-tour--98-vol1-d2t05.flac:aebb191d8fa4fa6913c20dc6ba2ba0d3
+bd98-06-30-never-ending-tour--98-vol1-d2t06.flac:b1a8fc45a2a10d0aa9fdd843a6964063
+bd98-06-30-never-ending-tour--98-vol1-d2t07.flac:30b31ec16e44bb29e890d6dc36f2d768
+bd98-06-30-never-ending-tour--98-vol1-d2t08.flac:b20749be71760d43640a1fc7e117895c
+bd98-06-30-never-ending-tour--98-vol1-d2t09.flac:54cdb38fe85f2727592ae30e06427ec9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-30-never-ending-tour-98-vol1.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.63       47599820 B   ---   --   ---xx   flac  0.6862  bd98-06-30-never-ending-tour--98-vol1-d1t01.flac
+     4:14.72       44974988 B   ---   --   ---xx   flac  0.6340  bd98-06-30-never-ending-tour--98-vol1-d1t02.flac
+     6:42.18       70955180 B   ---   --   ---xx   flac  0.6981  bd98-06-30-never-ending-tour--98-vol1-d1t03.flac
+     4:17.69       45497132 B   ---   --   ---xx   flac  0.5831  bd98-06-30-never-ending-tour--98-vol1-d1t04.flac
+     7:12.15       76240124 B   ---   --   ---xx   flac  0.7352  bd98-06-30-never-ending-tour--98-vol1-d1t05.flac
+     7:05.03       74977100 B   ---   --   ---xx   flac  0.6495  bd98-06-30-never-ending-tour--98-vol1-d1t06.flac
+     6:22.49       67500092 B   ---   --   ---xx   flac  0.6347  bd98-06-30-never-ending-tour--98-vol1-d1t07.flac
+     8:51.57       93802508 B   ---   --   ---xx   flac  0.6610  bd98-06-30-never-ending-tour--98-vol1-d1t08.flac
+     5:45.62       61003868 B   ---   --   ---xx   flac  0.6005  bd98-06-30-never-ending-tour--98-vol1-d1t09.flac
+     7:53.20       83484284 B   ---   --   ---xx   flac  0.7260  bd98-06-30-never-ending-tour--98-vol1-d1t10.flac
+     7:06.12       75174668 B   ---   --   ---xx   flac  0.6211  bd98-06-30-never-ending-tour--98-vol1-d2t01.flac
+     7:09.22       75727388 B   ---   --   ---xx   flac  0.6744  bd98-06-30-never-ending-tour--98-vol1-d2t02.flac
+     5:22.70       56965484 B   ---   --   ---xx   flac  0.6638  bd98-06-30-never-ending-tour--98-vol1-d2t03.flac
+     4:55.19       52082732 B   ---   --   ---xx   flac  0.7117  bd98-06-30-never-ending-tour--98-vol1-d2t04.flac
+     6:09.34       65171612 B   ---   --   ---xx   flac  0.6165  bd98-06-30-never-ending-tour--98-vol1-d2t05.flac
+     5:04.12       53653868 B   ---   --   ---xx   flac  0.6173  bd98-06-30-never-ending-tour--98-vol1-d2t06.flac
+     6:32.54       69275852 B   ---   --   ---xx   flac  0.6255  bd98-06-30-never-ending-tour--98-vol1-d2t07.flac
+     9:10.60       97161164 B   ---   --   ---xx   flac  0.6357  bd98-06-30-never-ending-tour--98-vol1-d2t08.flac
+     8:47.20       93009884 B   ---   --   ---xx   flac  0.6406  bd98-06-30-never-ending-tour--98-vol1-d2t09.flac
+   123:13.56     1304257748 B                            0.6553  (19 files)
+=================== 
+=================== 
+=================== 

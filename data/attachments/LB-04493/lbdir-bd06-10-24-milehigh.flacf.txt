@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-10-24-milehigh.flacf 
+=================== 
+=================== 
+=================== 
+f48db07ec5add716ca9e279ba0fde38f  2006-10-24milehigh.txt
+4509ba34ac6137410f0a9508967587b6  bd06-10-24-milehigh-LB-4493.txt
+7c9f4768da1c931d4ef6e739552dfc37  bd2006-10-24d1t01.flac
+7fbe785fe6e9dec6d546e4a39ebbf756  bd2006-10-24d1t02.flac
+16120efa3e46f09b105f6c950c12cf44  bd2006-10-24d1t03.flac
+0db27c92259ef4e4a6c7beb5fd2b68bb  bd2006-10-24d1t04.flac
+776ff72b0ae026eed3bb16c4f202258c  bd2006-10-24d1t05.flac
+a8e6e6e8821e363ea0d080f15b46582f  bd2006-10-24d1t06.flac
+e0d9f7f730a7bbb077a34d4d8f6d86ae  bd2006-10-24d1t07.flac
+c93870fb9c91af436f1a3ee7f4d98714  bd2006-10-24d1t08.flac
+e2dbb2f2577eff5b754ad859e51cba3e  bd2006-10-24d1t09.flac
+e88b83bd7f9fb2681eb5c8ab8c86200d  bd2006-10-24d1t10.flac
+ab37448c61968059c6dd5d0962f2bb63  bd2006-10-24d1t11.flac
+1fa838360282eb160bf1fb4303c76400  bd2006-10-24d2t01.flac
+f18c15b43d6c0eb59d06d0e1e9da65a6  bd2006-10-24d2t02.flac
+057cb13e6235739e524c4795629ae694  bd2006-10-24d2t03.flac
+edf0924a0b3a1d95666a76d71d3c3485  bd2006-10-24d2t04.flac
+c89e4d8dbe748e611fea101e3d63dcba  bd2006-10-24d2t05.flac
+8cc7832594b503366906de0dd331c06d  bd2006-10-24d2t06.flac
+53e6b47f72683a7049a4f184b5dc7bcf  bd2006-10-24d2t07.flac
+642d5e87301de6edd8318652dfb7886f  bd2006-10-24d2t08.flac
+d56df52da3e42535f1e94c4442a9270a  bd2006-10-24flac.md5
+bfb690259d6f1cdcbc162e6903801bb2  bd2006-10-24milehigh.ffp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-24-milehigh.flacf 
+=================== 
+=================== 
+=================== 
+bd2006-10-24d1t01.flac:62a80b24640ba3e46f58706e7025cb74
+bd2006-10-24d1t02.flac:fc09c579564330651f28879a3c582ecf
+bd2006-10-24d1t03.flac:f51804a91f0f97b1bf249b8b400e50b4
+bd2006-10-24d1t04.flac:4370eb917a010c13f43f911c12ff0d25
+bd2006-10-24d1t05.flac:90b585c0dd9dc14b3e4e8fb516c43071
+bd2006-10-24d1t06.flac:511594019c14a9e4663893ee0765e140
+bd2006-10-24d1t07.flac:433038cb9dc5fa1553d395442b69a031
+bd2006-10-24d1t08.flac:f6a991db2983320c0034b61697215a1d
+bd2006-10-24d1t09.flac:07c279826e0cd564f241ce7de7021dc8
+bd2006-10-24d1t10.flac:9a80a116dc14169a3ce8f5c73d9dd3a1
+bd2006-10-24d1t11.flac:22545b13205253d50dc457f18c18a67b
+bd2006-10-24d2t01.flac:165686f8146036fe4677ffa80691f307
+bd2006-10-24d2t02.flac:aa7d9f2bc972dfc35178e1f900813c23
+bd2006-10-24d2t03.flac:2b749d150f9f5644a3fa1cafaadfef2c
+bd2006-10-24d2t04.flac:f69c0ef17a5acfb07de7d188e9927b59
+bd2006-10-24d2t05.flac:e059cf08210c70e5104dab22efbea36f
+bd2006-10-24d2t06.flac:087447040503c9721c77e6827f635c40
+bd2006-10-24d2t07.flac:aa02029062d99e83288f157e3a9c218e
+bd2006-10-24d2t08.flac:0147bd2a9ba5a132d1f203d96fef3ddb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-10-24-milehigh.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:48.49        8582492 B   ---   --   ---xx   flac  0.4434  bd2006-10-24d1t01.flac
+     5:15.36       55650716 B   ---   --   ---xx   flac  0.5699  bd2006-10-24d1t02.flac
+     5:42.27       60392348 B   ---   --   ---xx   flac  0.5328  bd2006-10-24d1t03.flac
+     7:34.11       80111516 B   ---   --   ---xx   flac  0.5783  bd2006-10-24d1t04.flac
+     5:54.39       62537372 B   ---   --   ---xx   flac  0.5453  bd2006-10-24d1t05.flac
+     6:26.73       68262140 B   ---   --   ---xx   flac  0.5954  bd2006-10-24d1t06.flac
+     7:35.45       80367884 B   ---   --   ---xx   flac  0.5717  bd2006-10-24d1t07.flac
+     6:06.48       64675340 B   ---   --   ---xx   flac  0.5228  bd2006-10-24d1t08.flac
+     5:57.59       63113612 B   ---   --   ---xx   flac  0.5660  bd2006-10-24d1t09.flac
+     6:24.04       67747052 B   ---   --   ---xx   flac  0.5596  bd2006-10-24d1t10.flac
+     5:34.36       59002316 B   ---   --   ---xx   flac  0.4882  bd2006-10-24d1t11.flac
+     6:21.32       67283708 B   ---   --   ---xx   flac  0.5396  bd2006-10-24d2t01.flac
+     5:14.23       55443740 B   ---   --   ---xx   flac  0.5174  bd2006-10-24d2t02.flac
+     6:52.13       72707420 B   ---   --   ---xx   flac  0.5655  bd2006-10-24d2t03.flac
+     2:57.14       31255772 B   ---   --   ---xx   flac  0.4332  bd2006-10-24d2t04.flac
+     6:08.27       64978748 B   ---   --   ---xx   flac  0.5944  bd2006-10-24d2t05.flac
+     6:13.28       65863100 B   ---   --   ---xx   flac  0.5826  bd2006-10-24d2t06.flac
+     1:17.17       13622828 B   ---   --   ---xx   flac  0.4678  bd2006-10-24d2t07.flac
+     5:05.15       53837324 B   ---   --   ---xx   flac  0.5664  bd2006-10-24d2t08.flac
+   103:29.71     1095435428 B                            0.5518  (19 files)
+=================== 
+=================== 
+=================== 

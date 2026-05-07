@@ -1,0 +1,135 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Mid-State Fairground
+Paso Robles, California
+26 July 2003
+
+1.Tombstone Blues
+2.I Don't Believe You (She Acts Like We Never Have Met)
+3.Tweedle Dee & Tweedle Dum
+4.Under The Red Sky
+5.Things Have Changed
+6.Highway 61 Revisited
+7.Positively 4th Street
+8.Drifter's Escape
+9.Watching The River Flow
+10.High Water (For Charley Patton)
+11.Just Like A Woman
+12.Honest With Me
+13.Bye And Bye
+14.Summer Days
+
+15.Like A Rolling Stone
+16.All Along The Watchtower
+
+Concert # 1535 of The Never-Ending Tour. Concert # 11 of the 2003 US Summer Tour. 2003 concert # 45.
+Concert # 34 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+
+2, 4, 7, 8, 9, 11 Bob Dylan (harmonica).
+9, 12 Larry Campbell (slide guitar).
+
+www.bjoner.com 
+
+CDr < XLD < flac < Dime 
+apa05 
+
+===================
+===================
+===================
+=== notes.txt
+===================
+===================
+===================
+CEDAR Notes:
+
+CEDAR #1
+
+FINGERPRINT
+After "Positively 4th Street" ends, the taper asks one of his neighbours not to do something "in the middle of the song," and then tells him three times that the last song was called "Positively 4th Street." 
+
+COMMENTS:
+Sounds like a standard-good minidisc recording, with Bob's voice clear and upfront. Some distortion on the loud numbers. Significant volume adjustment during "Tombstone Blues" and a mic bump at d2 t4 9:19 (during crowd noise).
+===================
+===================
+===================
+=== shntool.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:25.68       68073980 B   ---   --   ---xx  01 Bob Dylan - 101-Tombstone Blues.flac
+     5:40.07       59992508 B   ---   --   ---xx  02 Bob Dylan - 102-I Don't Believe You.flac
+     5:23.49       57092492 B   ---   --   ---xx  03 Bob Dylan - 103-Tweedle Dee & Tweedle Dum.flac
+     5:34.58       59054060 B   ---   --   ---xx  04 Bob Dylan - 104-Under The Red Sky.flac
+     7:07.13       75353420 B   ---   --   ---xx  05 Bob Dylan - 105-Things Have Changed.flac
+     6:40.02       70564748 B   ---   --   ---xx  06 Bob Dylan - 106-Highway 61 Revisited.flac
+     6:57.50       73676444 B   ---   --   ---xx  07 Bob Dylan - 107-Positively 4th Street.flac
+     4:52.21       51558236 B   ---   --   ---xx  08 Bob Dylan - 108-Drifter's Escape.flac
+     6:27.33       68344460 B   ---   --   ---xx  09 Bob Dylan - 109-Watching The River Flow.flac
+     7:06.45       75252284 B   ---   --   ---xx  10 Bob Dylan - 110-High Water (for Charley Patton).flac
+     7:35.58       80398460 B   ---   --   ---xx  11 Bob Dylan - 111-Just Like A Woman.flac
+     6:58.14       73768172 B   ---   --   ---xx  01 Bob Dylan - 1 Honest With Me.flac
+     6:46.20       71665484 B   ---   --   ---xx  02 Bob Dylan - 2 Bye And Bye.flac
+     9:40.54      102439052 B   ---   --   ---xx  03 Bob Dylan - 3 Summer Days.flac
+     0:42.22        7460588 B   ---   --   ---xx  04 Bob Dylan - 4 crowd.flac
+     6:45.38       71531420 B   ---   --   ---xx  05 Bob Dylan - 5 Like A Rolling Stone.flac
+     6:57.42       73657628 B   ---   --   ---xx  06 Bob Dylan - 6 All Along The Watchtower.flac
+   107:41.69     1139883436 B                            0.5515  (17 files)
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - 101-Tombstone Blues.flac:c00e9689f146cc5609339f8c1656442402 Bob Dylan - 102-I Don't Believe You.flac:33ba41ff46b7d0578e7212af6e26d5b703 Bob Dylan - 103-Tweedle Dee & Tweedle Dum.flac:57a7e733cd7ae63225630c2735ef593804 Bob Dylan - 104-Under The Red Sky.flac:ed67d6e5ef120ef8fb98de33948f8bf905 Bob Dylan - 105-Things Have Changed.flac:b9150b02bdadff5e28b87cf5e7d3838906 Bob Dylan - 106-Highway 61 Revisited.flac:692d91f529e97f4a99cf170581792e4e07 Bob Dylan - 107-Positively 4th Street.flac:f02213f15c2c2b6d1d633c4fd5accdf608 Bob Dylan - 108-Drifter's Escape.flac:a93d784a82200ed03853d7b96e20b12109 Bob Dylan - 109-Watching The River Flow.flac:6cf822bdc5a2f16917efa039cb45d9ee10 Bob Dylan - 110-High Water (for Charley Patton).flac:b144b31eb4377fee8e2c965ba139fda311 Bob Dylan - 111-Just Like A Woman.flac:7ba512faba5529f0219e5b69d161036e
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+41a39c0580e07bb79b218304d12594d6 *01 Bob Dylan - 101-Tombstone Blues.flac
+2e262f130eebb31c2777a268d557b240 *02 Bob Dylan - 102-I Don't Believe You.flac
+adcc7edbc44b4e4d486f0d36f013d1ab *03 Bob Dylan - 103-Tweedle Dee & Tweedle Dum.flac
+fb2da8bc0598877df3ccbcf2c2352c64 *04 Bob Dylan - 104-Under The Red Sky.flac
+0f06a7760dcb910979e3822a56c8d806 *05 Bob Dylan - 105-Things Have Changed.flac
+e873a36912fbfb7dfba25b8493c1d316 *06 Bob Dylan - 106-Highway 61 Revisited.flac
+3fd0c496bd583e101b1d0f0aa98141f1 *07 Bob Dylan - 107-Positively 4th Street.flac
+99919a9464d14d0d9f4e3ebf9dc442c2 *08 Bob Dylan - 108-Drifter's Escape.flac
+5784d4299f203461c77f4d49a61a043f *09 Bob Dylan - 109-Watching The River Flow.flac
+3df229abc195162e4442887c4bdf2729 *10 Bob Dylan - 110-High Water (for Charley Patton).flac
+6082d87fa8cb78fbe281d2adeb48a2b1 *11 Bob Dylan - 111-Just Like A Woman.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - 1 Honest With Me.flac:3c757c211a27780226944772fbe0917e02 Bob Dylan - 2 Bye And Bye.flac:1bef245ce57da78361e0adf9ab8fa4a503 Bob Dylan - 3 Summer Days.flac:4f20361fe0006bed10c001ab7122631604 Bob Dylan - 4 crowd.flac:0b7af0e9acaa6d7c5eb42cfbc70f76b105 Bob Dylan - 5 Like A Rolling Stone.flac:b2f971856bdca55545f4abe6e459d01b06 Bob Dylan - 6 All Along The Watchtower.flac:202f68057b869053f8a929cccbfbfe04
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+e8720abb560841cf812f237579363455 *01 Bob Dylan - 1 Honest With Me.flac
+3e31879bc821e01bae78089269ffc511 *02 Bob Dylan - 2 Bye And Bye.flac
+ffa70eb1e2b851546f22e81c677c805e *03 Bob Dylan - 3 Summer Days.flac
+485a1b84d6a28126d46d2f98bf6c3054 *04 Bob Dylan - 4 crowd.flac
+731561f44ef74b34bab64f4658b1387f *05 Bob Dylan - 5 Like A Rolling Stone.flac
+d064a261440498b3f92d00c50782a727 *06 Bob Dylan - 6 All Along The Watchtower.flac
+
+===================
+===================
+===================

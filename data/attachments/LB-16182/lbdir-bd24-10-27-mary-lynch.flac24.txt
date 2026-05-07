@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd24-10-27-mary-lynch.flac24
+===================
+===================
+===================
+6871cb760374aaa5802dcab38571f712 *bd 2024-10-27 Dusseldorf, Germany.txt
+fbbd1da607f1b09ce7357c90ab2aa121 *bd2024-10-17_Dusseldorf_Ger_mary_lynch FLAC 24 BIT.md5
+791b51848721915d07d085f0bb64acd9 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht01.flac
+5437f53f70505e68fe118c3faca309a8 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht02.flac
+03e95ca60958fa9b156fe5d69357a82e *bd2024-10-27_Dusseldorf_Ger_mary_lyncht03.flac
+850f2aac759248ec6dcf8c3b63151f3f *bd2024-10-27_Dusseldorf_Ger_mary_lyncht04.flac
+708b013fbcf7b38416a7cb0bacf898b6 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht05.flac
+2444512cc6bb4679b8800f208043575f *bd2024-10-27_Dusseldorf_Ger_mary_lyncht06.flac
+523b5da84eac7b6cb64aaa5015ff2799 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht07.flac
+69d3e8b1db933b235eb9180a2a40791c *bd2024-10-27_Dusseldorf_Ger_mary_lyncht08.flac
+da754ae40f412e7860b2d94d7fcce120 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht09.flac
+4d7719b66bd695b1654ab9c4267f9b02 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht10.flac
+e1ef5ac4827c808ac42a377246ae9756 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht11.flac
+16cef1a864c9514e04ce3ab41d7c5853 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht12.flac
+c3ec256a89c023040cbe1efdce1eadc4 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht13.flac
+84e036e044b9e65fb899fbd935457d58 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht14.flac
+cf6573d74ce2d249458e13ce6747adbb *bd2024-10-27_Dusseldorf_Ger_mary_lyncht15.flac
+ecaae277d3a4a2f5447707fc49376b32 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht16.flac
+a6a4e32d00d126fa270cd37b8eacd9cc *bd2024-10-27_Dusseldorf_Ger_mary_lyncht17.flac
+===================
+===================
+===================
+=== ffp for: bd24-10-27-mary-lynch.flac24
+===================
+===================
+===================
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht01.flac:07d5971aa1852f675e1138ed4b8596eb
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht02.flac:8a30fe6a9322311496b862b7d545250d
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht03.flac:92ceb828da58294859f1332481e8f624
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht04.flac:03e8420b663fa41c7fcdacab9b6b090a
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht05.flac:6028ffb9234e51073ae1a42fde12dddb
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht06.flac:a3e8d586bf44b54d97acd564c312dce8
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht07.flac:c06d235b103c1dcdf3a1f25f5e1462c9
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht08.flac:bfbb961435c2b9ef50e1be20adae36e3
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht09.flac:01787721cd76f073721671fb3c639f60
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht10.flac:cf767451e34606c642a948b66cf24f9a
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht11.flac:799e9cca97642e77fe6e192ea6fd593f
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht12.flac:9f9bb7957b524e2760a468cfe7874a2c
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht13.flac:ca25d49ca28ae91af9ac9a74b0b54422
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht14.flac:719151c7b90d55d419cf567331bb7f3d
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht15.flac:f668676e3e7b3e59fe96f24bf0193097
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht16.flac:bbc1506e98b9cbc821b432d1274b66fc
+bd2024-10-27_Dusseldorf_Ger_mary_lyncht17.flac:a7186ff92893c79dc9a84991013a15d8
+===================
+===================
+===================
+=== shntool len for: bd24-10-27-mary-lynch.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.093      88442924 B   cxx   --   ---xx   flac  0.6986  bd2024-10-27_Dusseldorf_Ger_mary_lyncht01.flac
+     7:41.173     132817964 B   cxx   --   ---xx   flac  0.7125  bd2024-10-27_Dusseldorf_Ger_mary_lyncht02.flac
+     5:42.600      98668844 B   cxx   --   ---xx   flac  0.6713  bd2024-10-27_Dusseldorf_Ger_mary_lyncht03.flac
+     7:15.227     125345324 B   cxx   --   ---xx   flac  0.6933  bd2024-10-27_Dusseldorf_Ger_mary_lyncht04.flac
+     5:11.173      89617964 B   cxx   --   ---xx   flac  0.6644  bd2024-10-27_Dusseldorf_Ger_mary_lyncht05.flac
+     5:11.480      89706284 B   cxx   --   ---xx   flac  0.6457  bd2024-10-27_Dusseldorf_Ger_mary_lyncht06.flac
+     7:16.427     125690924 B   cxx   --   ---xx   flac  0.6549  bd2024-10-27_Dusseldorf_Ger_mary_lyncht07.flac
+     4:02.000      69696044 B   cxx   --   ---xx   flac  0.7039  bd2024-10-27_Dusseldorf_Ger_mary_lyncht08.flac
+     8:06.547     140125484 B   cxx   --   ---xx   flac  0.6751  bd2024-10-27_Dusseldorf_Ger_mary_lyncht09.flac
+     7:33.360     130567724 B   cxx   --   ---xx   flac  0.6813  bd2024-10-27_Dusseldorf_Ger_mary_lyncht10.flac
+    11:43.573     202629164 B   cxx   --   ---xx   flac  0.6561  bd2024-10-27_Dusseldorf_Ger_mary_lyncht11.flac
+     7:13.187     124757804 B   cxx   --   ---xx   flac  0.7248  bd2024-10-27_Dusseldorf_Ger_mary_lyncht12.flac
+     6:37.493     114478124 B   cxx   --   ---xx   flac  0.6287  bd2024-10-27_Dusseldorf_Ger_mary_lyncht13.flac
+     4:33.267      78700844 B   cxx   --   ---xx   flac  0.7270  bd2024-10-27_Dusseldorf_Ger_mary_lyncht14.flac
+     5:38.627      97524524 B   cxx   --   ---xx   flac  0.6162  bd2024-10-27_Dusseldorf_Ger_mary_lyncht15.flac
+     7:26.680     128643884 B   cxx   --   ---xx   flac  0.7054  bd2024-10-27_Dusseldorf_Ger_mary_lyncht16.flac
+     8:14.645     142457810 B   cxx   --   ---xx   flac  0.6428  bd2024-10-27_Dusseldorf_Ger_mary_lyncht17.flac
+   114:34.552    1979871634 B                            0.6752  (17 files)
+===================
+===================
+===================

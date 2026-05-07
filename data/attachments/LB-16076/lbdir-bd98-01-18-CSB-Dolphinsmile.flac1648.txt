@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd98-01-18-CSB-Dolphinsmile.flac1648
+===================
+===================
+===================
+efaa251fb1399340248f361dc12e1a69 *01 Absolutley Sweet Marie.flac
+0742ba7801eab0b69e2193510554e1dd *02 I Want You.flac
+668f45c1f586e2dcbbbbfb0327faf620 *03 Cold Irons Bound.flac
+f0d2e54a7a8a48ff3de8726a50be6095 *04 Youre A Big Girl Now.flac
+1eede377c3857e0a01916accc745b13f *05 Silvio.flac
+d52ae52a4666e68b990ea0c0b3ae10a0 *06 Desolation Row.flac
+52c6f188fd0dea06164ece8a8a2fd56b *07 Its All Over Now Baby Blue.flac
+ea627626c93e14439d8907330efc0424 *08 Tangled Up In Blue.flac
+cee7b24cda35be8d16ee0d7410284222 *09 Millon Miles.flac
+f448df0962f7ba89ad634a9766e13735 *10 Stuck Inside of Mobile.flac
+a8b6a435f6589b991dd4cc2882e91948 *11 Till I Fell In Love With You.flac
+5fa1b4dce2cb23ee34666e35646e0c84 *12 Highway 61.flac
+ebeaa7c62220244d41827d0c9e28097b *13 Knockin On Heavens Door.flac
+fd11c376296e4ff31aa852a3c01de72c *14 Love Sick.flac
+eea7ddca4910c059d033bb489170175b *15 Rainy Day Women.flac
+439fd6884fba3ad540a6e7344a0b6cb4 *Bob Dylan  The Theater at MSG NYC 1998-01-18 Dolphinsmile Archive.ffp
+e366d1c19ef2e29a1a2d0a7f7bbab35d *Bob Dylan  The Theater at MSG NYC 1998-01-18 Dolphinsmile Archive.md5
+439fd6884fba3ad540a6e7344a0b6cb4 *Bob Dylan  The Theater at MSG NYC 1998-01-18 Dolphinsmile Archive.txt
+f8d8797a27af0d5d5cd968247d737319 *info.txt
+===================
+===================
+===================
+=== ffp for: bd98-01-18-CSB-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Absolutley Sweet Marie.flac:f97ef1a9b9e15a73e55bd8b42d30a8fb
+02 I Want You.flac:7c225d59eaf88c4299921f4f76650fd5
+03 Cold Irons Bound.flac:89fc821d8f91c8eb535461cd2b58e557
+04 Youre A Big Girl Now.flac:ea04024978aeceb616309f5fee927a84
+05 Silvio.flac:19b55a1d1609e9690aea70e5e365741d
+06 Desolation Row.flac:3732075d2483eced4cc0a1393289aa0f
+07 Its All Over Now Baby Blue.flac:59c49bcd5b3bf6f39c8a142c60cb3506
+08 Tangled Up In Blue.flac:b5ecc22af3284dde40e8406a404c2bd9
+09 Millon Miles.flac:127520e99bbae3383ce995262c337baf
+10 Stuck Inside of Mobile.flac:42f6f8fe28900e5826e27bf8a6562264
+11 Till I Fell In Love With You.flac:804eb8546a4a4d62b637ab7dfb447791
+12 Highway 61.flac:d0eb03af614dbec4895f49dc9fe50c3f
+13 Knockin On Heavens Door.flac:de126d32a8ba8a85b10e18fcdc743a9c
+14 Love Sick.flac:a8d3eeb9c6664a2729e70f46a39cce0f
+15 Rainy Day Women.flac:981c8806ec0bdcc6787670284d8559ab
+===================
+===================
+===================
+=== shntool len for: bd98-01-18-CSB-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.786      46999012 B   cxx   --   ---xx   flac  0.5566  01 Absolutley Sweet Marie.flac
+     4:56.130      56856936 B   cxx   --   ---xx   flac  0.5281  02 I Want You.flac
+     6:11.176      71265844 B   cxx   --   ---xx   flac  0.5657  03 Cold Irons Bound.flac
+     5:17.629      60984792 B   cxx   --   ---xx   flac  0.5130  04 Youre A Big Girl Now.flac
+     6:15.057      72010988 B   cxx   --   ---xx   flac  0.5886  05 Silvio.flac
+     9:42.388     111818444 B   cxx   --   ---xx   flac  0.4863  06 Desolation Row.flac
+     7:37.513      87842536 B   cxx   --   ---xx   flac  0.4683  07 Its All Over Now Baby Blue.flac
+     7:16.771      83860036 B   cxx   --   ---xx   flac  0.5642  08 Tangled Up In Blue.flac
+     6:08.142      70683348 B   cxx   --   ---xx   flac  0.5533  09 Millon Miles.flac
+     5:59.437      69011872 B   cxx   --   ---xx   flac  0.6111  10 Stuck Inside of Mobile.flac
+     6:30.566      74988712 B   cxx   --   ---xx   flac  0.5797  11 Till I Fell In Love With You.flac
+     6:44.574      77678284 B   cxx   --   ---xx   flac  0.5841  12 Highway 61.flac
+     6:21.101      73171520 B   cxx   --   ---xx   flac  0.5155  13 Knockin On Heavens Door.flac
+     5:51.302      67450084 B   cxx   --   ---xx   flac  0.5344  14 Love Sick.flac
+     4:47.579      55215224 B   cxx   --   ---xx   flac  0.5762  15 Rainy Day Women.flac
+    93:44.151    1079837632 B                            0.5452  (15 files)
+===================
+===================
+===================

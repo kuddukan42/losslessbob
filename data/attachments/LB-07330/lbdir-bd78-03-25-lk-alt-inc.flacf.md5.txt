@@ -1,0 +1,19 @@
+349498b865f3ccea9bf97634cc2c068c  1978 Leg 1 Disc 4.md5
+22bd9b459b23746448ef65373581f6c6  alt inc\alt inc.md5
+5695d6fcbee0fd50e2fd1cb9e44609bf  alt inc\Track01.flac
+b52939747bdc75a9adbefcacec7bfcf4  alt inc\Track02.flac
+ac51abbbd228404b679c646f230ca308  alt inc\Track03.flac
+33e12f194a04d46de2078cec6e4bc3f8  alt inc\Track04.flac
+f520ea8365d2f3d51b83cb3478cdb9f4  alt inc\Track05.flac
+faa8b60210cce6b52215bd6a185a1d6a  alt inc\Track06.flac
+85f5d480726a38b79e028902f3e02d1a  alt inc\Track07.flac
+3649a52f987b66cb32b87b561b07f9f9  alt inc\Track08.flac
+c6b8369a02706cb41cad0a452934b2ac  alt inc\Track09.flac
+7f6b8c9258bf990fcbdaa318f1e6e7c7  alt inc\Track10.flac
+b486d30fc7825a63fb78bd03c138efb7  alt inc\Track11.flac
+2dda8e65f82a77780bc88fc9ee14cb20  alt inc\Track12.flac
+0d54e17f373d3d65cb264715cc491b5c  alt inc\Track13.flac
+c81fc5645239cc277c851093df82c62f  alt inc\Track14.flac
+d6e8e54ae1fe4caefa022654979e9f56  alt inc\Track15.flac
+9af539c6839ad05be797ae32e3fd4208  alt inc\Track16.flac
+467e680f7fc0c7136f9c4f1cdbd65eaf  bd1978-03-25 alt inc.txt

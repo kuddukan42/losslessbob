@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-21-preaching-to-the-Converted.flacf 
+=================== 
+=================== 
+=================== 
+7e7551dc2bb871f318227719ff6153a6  bd79-11-21-preaching-to-the-Converted-LB-3849.txt
+3946e5b00fe383bcf5d539f4c1bcc40e  disc 1\Track 01.flac
+9eb733d938617c97bd9c7bf83c38b383  disc 1\Track 02.flac
+1d7270765763f5b39f3bb84952d884e6  disc 1\Track 03.flac
+f9253be8e79762b86b00babf644c2674  disc 1\Track 04.flac
+74c74c319511dea93e031878b5f268db  disc 1\Track 05.flac
+bdfcf356cbdaee0d4130958115186fb3  disc 1\Track 06.flac
+16bd2db0a2e33e4fb48c6f64f53a8655  disc 1\Track 07.flac
+c9b8dd63e755d2a1718c485215c2fe46  disc 1\Track 08.flac
+e5f9c3b3f06e71b4119a6a39fe10a80a  disc 2\Track 01.flac
+8e457d908b5a30a4aa67ab3db610ba7d  disc 2\Track 02.flac
+0c9f355a104fe673ace0c00a8c8119d6  disc 2\Track 03.flac
+940decf41fa5ff53fceee438a62dfd20  disc 2\Track 04.flac
+27f421859cfe56dbc0703c9e21c8769e  disc 2\Track 05.flac
+1a4a68a3f2ce2ab3721544a4b302fcef  disc 2\Track 06.flac
+9512fd811231dac29e94be513095bc79  disc 2\Track 07.flac
+3c4309dd6fae02f7a5f9be7f2e920690  disc 2\Track 08.flac
+ffdff288c140d90ab43d44b64a6a10bc  disc 2\Track 09.flac
+b9a06a60f714b69e3c5c8d7ae14f75c4  disc 2\Track 10.flac
+8df9a68b49a32a0f088711dd5dab117b  DylanPreachingBack.jpg
+3db300c1b727a66e6407c3d742d2514d  DylanPreachingFront.jpg
+afc7eec803a5f3bfb345f0fb0392f433  preaching.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-21-preaching-to-the-Converted.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:54512c33da9933345d3ca95d2d257014
+Track 02.flac:239d105e1d7ea70e132d47354667e2a0
+Track 03.flac:9a5b68c924df939b20f7515849600068
+Track 04.flac:bc4109fd0adaa80abec4a0c7332c281b
+Track 05.flac:519bb42383819a6b59320e6b6f881c58
+Track 06.flac:7aae14f9618b560245eb4e7139d4069a
+Track 07.flac:12bef0c7278e8a41ce18bbe164adef6e
+Track 08.flac:8683e73f253434f552d96805eaa0a4fc
+Track 09.flac:1b02d17d164a8c449b65e3006c00b84b
+Track 10.flac:ee2645a6c108a7b5292130f2684a4637
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-21-preaching-to-the-Converted.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:0122134e5603dd599efddb6fd3bd6987
+Track 02.flac:11dd5fd6761a90bb5342a409c569bda3
+Track 03.flac:1012175a435ab289bebe1b63cbb63d42
+Track 04.flac:89760fea20965fc4369c5cb00ff89ff8
+Track 05.flac:3427a18f4e47f26c2665d3718dc18e52
+Track 06.flac:042c7fd44a7bd46eab8c26b4768ec20b
+Track 07.flac:f8894374d68daca3aee4963aa3583206
+Track 08.flac:9b79210d4821e77f02b389344a045ba9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-21-preaching-to-the-Converted.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.50       30282044 B   ---   --   ---xx   flac  0.5011  Track 01.flac
+     5:07.05       54166604 B   ---   --   ---xx   flac  0.6301  Track 02.flac
+     4:43.66       50076476 B   ---   --   ---xx   flac  0.5733  Track 03.flac
+     4:40.41       49488476 B   ---   --   ---xx   flac  0.6506  Track 04.flac
+     4:59.21       52793036 B   ---   --   ---xx   flac  0.5327  Track 05.flac
+     4:23.25       46452044 B   ---   --   ---xx   flac  0.6252  Track 06.flac
+     6:08.46       65023436 B   ---   --   ---xx   flac  0.5509  Track 07.flac
+     8:21.67       88534028 B   ---   --   ---xx   flac  0.5648  Track 08.flac
+     4:49.15       51014924 B   ---   --   ---xx   flac  0.6259  Track 09.flac
+     7:30.42       79478828 B   ---   --   ---xx   flac  0.5324  Track 10.flac
+    53:36.03      567309896 B                            0.5772  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-21-preaching-to-the-Converted.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:49.11       72173516 B   ---   --   ---xx   flac  0.6195  Track 01.flac
+     5:26.05       57518204 B   ---   --   ---xx   flac  0.5510  Track 02.flac
+     6:10.21       65317436 B   ---   --   ---xx   flac  0.6264  Track 03.flac
+     4:50.20       51203084 B   ---   --   ---xx   flac  0.5308  Track 04.flac
+     5:25.36       57414716 B   ---   --   ---xx   flac  0.5684  Track 05.flac
+     6:44.62       71411468 B   ---   --   ---xx   flac  0.5973  Track 06.flac
+     6:11.54       65571452 B   ---   --   ---xx   flac  0.6433  Track 07.flac
+     5:44.28       60747500 B   ---   --   ---xx   flac  0.5662  Track 08.flac
+    47:22.12      501357376 B                            0.5911  (8 files)
+=================== 
+=================== 
+=================== 

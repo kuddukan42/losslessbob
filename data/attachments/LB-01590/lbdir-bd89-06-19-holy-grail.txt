@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-19-holy-grail 
+=================== 
+=================== 
+=================== 
+3ec8395b6107053eac0400c5259ac576  89-06-19_cd1.shnf\89-06-19_cd1_Track01.shn
+2199b79a65dc5f72c5cfa34c9652dca6  89-06-19_cd1.shnf\89-06-19_cd1_Track02.shn
+901154f489ea32ea01a93aeeb991aa53  89-06-19_cd1.shnf\89-06-19_cd1_Track03.shn
+cd0e27b14f8fd4f3b3853b011a91409b  89-06-19_cd1.shnf\89-06-19_cd1_Track04.shn
+d316ee2686a370435048e9f1eb678abc  89-06-19_cd1.shnf\89-06-19_cd1_Track05.shn
+00ecc950f20481e0f279093f59c87d39  89-06-19_cd1.shnf\89-06-19_cd1_Track06.shn
+aeb4920fccf4ab408c489d8a14f9c10c  89-06-19_cd1.shnf\89-06-19_cd1_Track07.shn
+308964e597ada293a840509e14489924  89-06-19_cd1.shnf\89-06-19_cd1_Track08.shn
+cdcda0b6ea7806d3116a4d074d5a3716  89-06-19_cd1.shnf\89-06-19_cd1_Track09.shn
+afcdef0aa2bf33cf201ddef93eb24fc3  89-06-19_cd1.shnf\89-06-19_cd1_Track10.shn
+afde5a0b4a030c14eea08dd550947168  89-06-19_cd1.shnf\89-06-19_cd1_Track11.shn
+3033ff664529a092ecd8711d589e729b  89-06-19_cd1.shnf\89-06-19_cd1_shn.md5
+7abccba80370c7470886b3ee873f2775  89-06-19_cd2.shnf\89-06-19_cd2_Track01.shn
+82ece5e3346de2d328f06cf861f5507a  89-06-19_cd2.shnf\89-06-19_cd2_Track02.shn
+eba54283078f48d2830754758908638e  89-06-19_cd2.shnf\89-06-19_cd2_Track03.shn
+c259f4c0b85665860b62a787fb432195  89-06-19_cd2.shnf\89-06-19_cd2_Track04.shn
+ca29dd8a4a9168b5aaf44c5cb3faf8f7  89-06-19_cd2.shnf\89-06-19_cd2_Track05.shn
+9f0cda88a96e5100035861cfcd8ef2b5  89-06-19_cd2.shnf\89-06-19_cd2_Track06.shn
+0aacadec456154a884fd973330d8d159  89-06-19_cd2.shnf\89-06-19_cd2_shn.md5
+293b30df276151f58b504a042e9a74ea  bd89-06-19-holy-grail.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-06-19-holy-grail\89-06-19_cd1.shnf 
+=================== 
+=================== 
+=================== 
+797b952a4dcb66baf59a0211e4cf3d50  [shntool]  89-06-19_cd1_Track01.wav
+ceb9432f99500fcb051e28d43477de2b  [shntool]  89-06-19_cd1_Track02.wav
+0dbf57293185395de9692149f8d4998e  [shntool]  89-06-19_cd1_Track03.wav
+74e24e2d628a2fbbc682e242d96a6a5a  [shntool]  89-06-19_cd1_Track04.wav
+5575396950898114c494ed69348d3b1d  [shntool]  89-06-19_cd1_Track05.wav
+0bc4ea15fc646945fcf962124c7a2672  [shntool]  89-06-19_cd1_Track06.wav
+d438931d7b2f517a339f8d341eb6ebe8  [shntool]  89-06-19_cd1_Track07.wav
+12bef422bcc41ae8220bfe649cd60a30  [shntool]  89-06-19_cd1_Track08.wav
+8683a6c994d38e2e4fc80eeeb838db52  [shntool]  89-06-19_cd1_Track09.wav
+a2d7055523df46ef97e28b35edc994a8  [shntool]  89-06-19_cd1_Track10.wav
+33ab0db4a802177eb760743507d7e733  [shntool]  89-06-19_cd1_Track11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-06-19-holy-grail\89-06-19_cd2.shnf 
+=================== 
+=================== 
+=================== 
+591a2d9f8d8770dd4bce4387a67b415a  [shntool]  89-06-19_cd2_Track01.wav
+54b6ffc5b7932f7b830a575920021267  [shntool]  89-06-19_cd2_Track02.wav
+38294800061812bd635d37e6c3971e32  [shntool]  89-06-19_cd2_Track03.wav
+ad850557bbabb779d5d0cd76c6c0749e  [shntool]  89-06-19_cd2_Track04.wav
+19ad2d95d02c061fecbf0ba2eb378157  [shntool]  89-06-19_cd2_Track05.wav
+13ae01ed11813d67b83b0f30a846faf7  [shntool]  89-06-19_cd2_Track06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-19-holy-grail\89-06-19_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:16.42        2921242 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track01.wav
+     7:06.72       75315802 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track02.wav
+     5:15.27       55629562 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track03.wav
+     4:41.66       49723690 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track04.wav
+     4:47.48       50739754 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track05.wav
+     5:15.27       55629562 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track06.wav
+     4:26.30       46993018 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track07.wav
+     6:52.42       72775642 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track08.wav
+     4:36.09       48707626 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track09.wav
+     5:39.09       59820826 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track10.wav
+     4:44.30       50168218 B   ---   h-   -----    wav  1.0000  89-06-19_cd1_Track11.wav
+    53:42.27      568424942 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-19-holy-grail\89-06-19_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.12       48009082 B   ---   h-   -----    wav  1.0000  89-06-19_cd2_Track01.wav
+     5:34.60       59058778 B   ---   h-   -----    wav  1.0000  89-06-19_cd2_Track02.wav
+     6:40.51       70680010 B   ---   h-   -----    wav  1.0000  89-06-19_cd2_Track03.wav
+     4:34.24       48390106 B   ---   h-   -----    wav  1.0000  89-06-19_cd2_Track04.wav
+     5:00.72       53089402 B   ---   h-   -----    wav  1.0000  89-06-19_cd2_Track05.wav
+     4:13.06       44643370 B   ---   h-   -----    wav  1.0000  89-06-19_cd2_Track06.wav
+    30:36.00      323870748 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

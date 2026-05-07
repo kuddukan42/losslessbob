@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: BD 01sep98 Brisbane 
+=================== 
+=================== 
+=================== 
+d49144caef4c059f389ca8ba22a79d57  D1\D1.md5
+8b95e7d2de83fb60f2bc5411fc73ba0f  D1\Track01.flac
+04800c931cf2f0f313ba070b90a5ff32  D1\Track02.flac
+8204e13810fd7e9abe5db4db8ef84fed  D1\Track03.flac
+a016086721e2b14551864c9e0c4737ee  D1\Track04.flac
+c7d0573573327cd244fa410814ffd177  D1\Track05.flac
+24c28b9172790f671d87e2d52a2622da  D1\Track06.flac
+45366f93b7a521f74663da6f23c1a0eb  D1\Track07.flac
+26c49edbf4fd7f7833e21232cd4d1a73  D1\Track08.flac
+839b55b304761e9dd795436f3fa8c890  D1\Track09.flac
+0d4b92a7bf1ab4d290456e28206789f7  D1\Track10.flac
+f46e801d10999f9f178cc4ef7e78c840  D1\Track11.flac
+7ad1e40c6a27566a3bf4442ce28865ef  D2\D2.md5
+9c0353ed9abc8ab0d3b274e7a79baeb7  D2\Track01.flac
+3fc81fefbfc98eae6360785d5044cb1e  D2\Track02.flac
+0e326b4e7bc97705c5cc72bd5d35d53c  D2\Track03.flac
+df56c62be1e8eb207856a3be9d1a9402  D2\Track04.flac
+50ebd64002073787dcd71fdf3378bded  D2\Track05.flac
+66d5f16730f70215e0ae73485ae78a2e  D2\Track06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: BD 01sep98 Brisbane\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:66913f298bb9065696b0bce030afe837
+Track02.flac:17aaa363b527253e8a55f671eedfff50
+Track03.flac:7470603a8712b2ceedbb41c6e9a4c08f
+Track04.flac:91ff7827a0dd6bab434b4a1cb97595ba
+Track05.flac:491e1b3f3f626936783c9148b3c04666
+Track06.flac:d549164d7039efdac7cb050aff5f1d35
+Track07.flac:9d8da6be752783b3b0cd9a725ce6c11a
+Track08.flac:944e5253cfdb958782b10c1081431df2
+Track09.flac:5fd2b0a09b7914ae4095fbeb1d0e1a71
+Track10.flac:1dd1685a24656e3528846028dcda5e69
+Track11.flac:75e473e55a4efea797422de16321fa27
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: BD 01sep98 Brisbane\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:643c053ce5f1f6a6c43cc0bf259c1fec
+Track02.flac:9c50931a596ff80786d8fc8ad5982776
+Track03.flac:c412ee1cfa4f1874cf154fad817a7b37
+Track04.flac:92b68847485795fb7e7d323fc1309ceb
+Track05.flac:e94059684925c0debbaa2e2a62941a87
+Track06.flac:0f03d0a7ac87e932936d943f8dc87f2f
+=================== 
+=================== 
+=================== 
+=== shntool len for: BD 01sep98 Brisbane\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:32.56       69280556 B   ---   --   ---xx   flac  0.6311  Track01.flac
+     4:53.72       51854588 B   ---   --   ---xx   flac  0.6284  Track02.flac
+     6:33.10       69348764 B   ---   --   ---xx   flac  0.6453  Track03.flac
+     5:59.71       63494636 B   ---   --   ---xx   flac  0.6094  Track04.flac
+     5:35.65       59246924 B   ---   --   ---xx   flac  0.6227  Track05.flac
+     6:15.02       66154748 B   ---   --   ---xx   flac  0.6418  Track06.flac
+     3:20.72       35449388 B   ---   --   ---xx   flac  0.5562  Track07.flac
+     7:49.05       82743404 B   ---   --   ---xx   flac  0.5369  Track08.flac
+    10:34.58      111974060 B   ---   --   ---xx   flac  0.6187  Track09.flac
+     6:45.51       71561996 B   ---   --   ---xx   flac  0.5952  Track10.flac
+     6:10.53       65392700 B   ---   --   ---xx   flac  0.6003  Track11.flac
+    70:31.65      746501764 B                            0.6087  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: BD 01sep98 Brisbane\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.15       61422524 B   ---   --   ---xx   flac  0.6415  Track01.flac
+     7:12.01       76207196 B   ---   --   ---xx   flac  0.5952  Track02.flac
+     4:15.10       45005564 B   ---   --   ---xx   flac  0.6678  Track03.flac
+     5:59.71       63494636 B   ---   --   ---xx   flac  0.5876  Track04.flac
+     5:46.49       61149692 B   ---   --   ---xx   flac  0.6503  Track05.flac
+     7:25.18       78540380 B   ---   --   ---xx   flac  0.5751  Track06.flac
+    36:27.14      385819992 B                            0.6144  (6 files)
+=================== 
+=================== 
+=================== 

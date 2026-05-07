@@ -1,0 +1,160 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-hollow-horn-Vol-7-A-Man-With-No-Alibi.flacf 
+=================== 
+=================== 
+=================== 
+0dc6817d3237966d5b8378c567e3e015  bd-hollow-horn-Vol-7-A-Man-With-No-Alibi-LB-3312.txt
+67172b0b89cd047266b3b9a6239eda58  vol 7 - A Man With No Alibi.jpg
+4bf86abba4b981bd053a9d57bee76ca9  vol 7-1\hollow horn 7-1 - tr 01.flac
+c6b3dc9c4ce8de605de2df1b10420dc3  vol 7-1\hollow horn 7-1 - tr 02.flac
+fa0c2ca9fe1389e9e94296dd4941591f  vol 7-1\hollow horn 7-1 - tr 03.flac
+2fe6171c37b982688a2dd863e9ab5649  vol 7-1\hollow horn 7-1 - tr 04.flac
+fed8c214086665106ee04b5df60335fb  vol 7-1\hollow horn 7-1 - tr 05.flac
+33f035845e75e4c2eedbbdc46ad3bd30  vol 7-1\hollow horn 7-1 - tr 06.flac
+03246208909edda182c55ca76b3e2660  vol 7-1\hollow horn 7-1 - tr 07.flac
+7570750a1c2eb1141be2d2804e7e157e  vol 7-1\hollow horn 7-1 - tr 08.flac
+2b57f9a43e299ba1b5b7f29b183e5a71  vol 7-1\hollow horn 7-1 - tr 09.flac
+305205ed33c6eb1f8658894d72cc2c83  vol 7-1\hollow horn 7-1 - tr 10.flac
+8dc15e7c97a542d2a55bacefe6a39252  vol 7-1\hollow horn 7-1 - tr 11.flac
+81417d045103b9240ccb7c52f9422b0c  vol 7-1\hollow horn 7-1 - tr 12.flac
+8229e06192b456e35079cd452fdd01c4  vol 7-1\hollow horn 7-1 - tr 13.flac
+c11a4af8ed27515f33891074721e4c57  vol 7-1\hollow horn 7-1 - tr 14.flac
+8125cadc368d992bb01d85352a280062  vol 7-1\hollow horn 7-1 - tr 15.flac
+32367e7bcb90d1172cf599eaffceecec  vol 7-1\hollow horn 7-1 - tr 16.flac
+20d3f8b86c63a7c1450612632abfeafe  vol 7-1\hollow horn 7-1 - tr 17.flac
+93e08efabdded992ec237d417040c4f4  vol 7-1\hollow horn 7-1 - tr 18.flac
+89ead426bb116b75b939cc6a16f80e3a  vol 7-1\hollow horn 7-1 - tr 19.flac
+8a5a4b02de150eebb4738a0cb4f6dd3d  vol 7-1\hollow horn 7-1 - tr 20.flac
+20d514d5add79836272f1bf36f4c8033  vol 7-1\vol 7-1.md5
+41a1c6731b1658a46062522ccdfacfac  vol 7-2\hollow horn 7-2 - tr 01.flac
+553ab69de9bee507d883eea458108577  vol 7-2\hollow horn 7-2 - tr 02.flac
+c3f1cbd5a78566b7ce2b14ad66fdb8d2  vol 7-2\hollow horn 7-2 - tr 03.flac
+4d9beb7e4c87f97c0ef11e86f3486698  vol 7-2\hollow horn 7-2 - tr 04.flac
+06dcd490376f90bb0d8cc552f27a1ecb  vol 7-2\hollow horn 7-2 - tr 05.flac
+03c69463796ef3012b97c187b07e438c  vol 7-2\hollow horn 7-2 - tr 06.flac
+795368d6154cbde3e552accfb28eb272  vol 7-2\hollow horn 7-2 - tr 07.flac
+5b4810d2707d4a689d276f3dc0203ee8  vol 7-2\hollow horn 7-2 - tr 08.flac
+6bd613c07e80cf65b60746e8f6d2324f  vol 7-2\hollow horn 7-2 - tr 09.flac
+0e9f5534e6b13c7e4aba10a2171656de  vol 7-2\hollow horn 7-2 - tr 10.flac
+cee5a918690c263570a1fa1c6e4571fa  vol 7-2\hollow horn 7-2 - tr 11.flac
+7a0a5647230bb910dcb0c0f25bd0e919  vol 7-2\hollow horn 7-2 - tr 12.flac
+6011dec3a201cedb1acf66b4f375fdfc  vol 7-2\hollow horn 7-2 - tr 13.flac
+54f9bddaa162f54f4ef32f1bf78ed872  vol 7-2\hollow horn 7-2 - tr 14.flac
+1aab93dd6d93dcefadfdf212736ca9d8  vol 7-2\hollow horn 7-2 - tr 15.flac
+d141169f76a7401a3e60a7ca0ffaf534  vol 7-2\hollow horn 7-2 - tr 16.flac
+a1caeaf2b086cf5621d07b764743cd5a  vol 7-2\hollow horn 7-2 - tr 17.flac
+fdee0638d39fbc2d30fdd0a37c5cb644  vol 7-2\hollow horn 7-2 - tr 18.flac
+2c423632ac28373c2920b5fc0e8aa249  vol 7-2\vol 7-2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-hollow-horn-Vol-7-A-Man-With-No-Alibi.flacf\vol 7-1 
+=================== 
+=================== 
+=================== 
+hollow horn 7-1 - tr 01.flac:8196ffa0bae3f5586983762954f555a3
+hollow horn 7-1 - tr 02.flac:df6dfa8d8c4020e72dd77eef9e9a2cf0
+hollow horn 7-1 - tr 03.flac:7ff32d975feb81adf04c9581165cbbfd
+hollow horn 7-1 - tr 04.flac:75b644e943a9073728fa125fa73758d5
+hollow horn 7-1 - tr 05.flac:91c2bb33d26b93b70a078e63f491a3fb
+hollow horn 7-1 - tr 06.flac:d87dd3c3991a1e864a79411e67e779d4
+hollow horn 7-1 - tr 07.flac:c0ca4fd53a43feee312c85ebdd4979a8
+hollow horn 7-1 - tr 08.flac:9e8d6e6d1a5b93d4ddac7de96b001938
+hollow horn 7-1 - tr 09.flac:2638c17198b3962d39d02ba89fc5b94e
+hollow horn 7-1 - tr 10.flac:fa7aac3760725800d2b7b5bfc1082c47
+hollow horn 7-1 - tr 11.flac:707529bfc785e7fb1bb7d1185b5b63ea
+hollow horn 7-1 - tr 12.flac:4642ddc107183e7fad4f050676916a7b
+hollow horn 7-1 - tr 13.flac:31dbd64353831fb754d81fc1e00d9a52
+hollow horn 7-1 - tr 14.flac:e163f2595e7671752962332473111521
+hollow horn 7-1 - tr 15.flac:13aa3bbd2952217243af2b844510f88e
+hollow horn 7-1 - tr 16.flac:eaaeaefbbbf1a7b0178b7ca70833ea38
+hollow horn 7-1 - tr 17.flac:ea0495200a5bff725672531fe2a756c4
+hollow horn 7-1 - tr 18.flac:965ad4fa2400019407a83d65c432b317
+hollow horn 7-1 - tr 19.flac:fa4a4ada892f3b0331b8cfbab00bb573
+hollow horn 7-1 - tr 20.flac:d3b65173745900e3522197e76f6a8358
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-hollow-horn-Vol-7-A-Man-With-No-Alibi.flacf\vol 7-2 
+=================== 
+=================== 
+=================== 
+hollow horn 7-2 - tr 01.flac:5b356e8da9a788529c699d616bbae86e
+hollow horn 7-2 - tr 02.flac:d2ad41e599f740a7edb2dd462f7a6b49
+hollow horn 7-2 - tr 03.flac:2954328213ab090e71a043d024002c57
+hollow horn 7-2 - tr 04.flac:7253f6a9081d83a56d6f1216694e7d05
+hollow horn 7-2 - tr 05.flac:2c02f3a9424bd655e1238ac77fac446e
+hollow horn 7-2 - tr 06.flac:7bb279df9ec3c39f6158e2682d20ea9d
+hollow horn 7-2 - tr 07.flac:e7d9201f5d15b36929f6a59a9c40d57b
+hollow horn 7-2 - tr 08.flac:b503aab5559c0a4c1ddaa746f075eaa9
+hollow horn 7-2 - tr 09.flac:d34bde44f78f0da239a52feee44aa094
+hollow horn 7-2 - tr 10.flac:e403993b94927e0610cbe12f1f78f565
+hollow horn 7-2 - tr 11.flac:f1980490f235ff49d8026f2af54e5e6a
+hollow horn 7-2 - tr 12.flac:30bd6036cd5c96034860a8bdcc59b04d
+hollow horn 7-2 - tr 13.flac:c982784b4accb46fa64591982a29f3f1
+hollow horn 7-2 - tr 14.flac:877fcbb8ef6f4cf33e52c2600d63b3d4
+hollow horn 7-2 - tr 15.flac:6e730e37a21bd2cf7c23488675463066
+hollow horn 7-2 - tr 16.flac:59a3b6fea6a40fc0ef7b17ee519a7410
+hollow horn 7-2 - tr 17.flac:aba6af3566d25f4498b725cd694b2d1c
+hollow horn 7-2 - tr 18.flac:795f0f1088e9092572722997db62519b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-hollow-horn-Vol-7-A-Man-With-No-Alibi.flacf\vol 7-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:54.59       30832412 B   ---   --   ---xx   flac  0.6816  hollow horn 7-1 - tr 01.flac
+     4:26.35       47004764 B   ---   --   ---xx   flac  0.5719  hollow horn 7-1 - tr 02.flac
+     5:46.48       61147340 B   ---   --   ---xx   flac  0.6549  hollow horn 7-1 - tr 03.flac
+     4:36.13       48717020 B   ---   --   ---xx   flac  0.6749  hollow horn 7-1 - tr 04.flac
+     3:33.40       37667324 B   ---   --   ---xx   flac  0.6505  hollow horn 7-1 - tr 05.flac
+    11:33.74      122419292 B   ---   --   ---xx   flac  0.5992  hollow horn 7-1 - tr 06.flac
+     3:18.33       35004860 B   ---   --   ---xx   flac  0.6360  hollow horn 7-1 - tr 07.flac
+     4:41.63       49716620 B   ---   --   ---xx   flac  0.5929  hollow horn 7-1 - tr 08.flac
+     2:14.61       23781116 B   ---   --   ---xx   flac  0.6837  hollow horn 7-1 - tr 09.flac
+     2:06.18       22268780 B   ---   --   ---xx   flac  0.6191  hollow horn 7-1 - tr 10.flac
+     5:36.41       59366876 B   ---   --   ---xx   flac  0.6762  hollow horn 7-1 - tr 11.flac
+     4:33.11       48183116 B   ---   --   ---xx   flac  0.6139  hollow horn 7-1 - tr 12.flac
+     4:11.18       44318780 B   ---   --   ---xx   flac  0.5534  hollow horn 7-1 - tr 13.flac
+     1:53.63       20081420 B   ---   --   ---xx   flac  0.5510  hollow horn 7-1 - tr 14.flac
+     2:36.55       27647804 B   ---   --   ---xx   flac  0.6006  hollow horn 7-1 - tr 15.flac
+     3:20.52       35402348 B   ---   --   ---xx   flac  0.5343  hollow horn 7-1 - tr 16.flac
+     2:53.03       30524300 B   ---   --   ---xx   flac  0.5138  hollow horn 7-1 - tr 17.flac
+     3:45.69       39852332 B   ---   --   ---xx   flac  0.6517  hollow horn 7-1 - tr 18.flac
+     1:26.53       15295100 B   ---   --   ---xx   flac  0.5398  hollow horn 7-1 - tr 19.flac
+     3:44.52       39635948 B   ---   --   ---xx   flac  0.5284  hollow horn 7-1 - tr 20.flac
+    79:15.36      838867552 B                            0.6105  (20 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-hollow-horn-Vol-7-A-Man-With-No-Alibi.flacf\vol 7-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.26       45395996 B   ---   --   ---xx   flac  0.6143  hollow horn 7-2 - tr 01.flac
+     3:20.45       35385884 B   ---   --   ---xx   flac  0.6114  hollow horn 7-2 - tr 02.flac
+     4:53.53       51809900 B   ---   --   ---xx   flac  0.5769  hollow horn 7-2 - tr 03.flac
+     4:50.64       51306572 B   ---   --   ---xx   flac  0.6518  hollow horn 7-2 - tr 04.flac
+     3:52.06       40938956 B   ---   --   ---xx   flac  0.5893  hollow horn 7-2 - tr 05.flac
+     3:12.33       33946460 B   ---   --   ---xx   flac  0.6333  hollow horn 7-2 - tr 06.flac
+     6:10.67       65425628 B   ---   --   ---xx   flac  0.6097  hollow horn 7-2 - tr 07.flac
+     2:58.17       31439228 B   ---   --   ---xx   flac  0.6201  hollow horn 7-2 - tr 08.flac
+     3:09.51       33459596 B   ---   --   ---xx   flac  0.6277  hollow horn 7-2 - tr 09.flac
+     5:20.29       56516252 B   ---   --   ---xx   flac  0.5900  hollow horn 7-2 - tr 10.flac
+     5:00.44       53023532 B   ---   --   ---xx   flac  0.6209  hollow horn 7-2 - tr 11.flac
+     3:08.43       33264380 B   ---   --   ---xx   flac  0.6444  hollow horn 7-2 - tr 12.flac
+     4:46.57       50584508 B   ---   --   ---xx   flac  0.5933  hollow horn 7-2 - tr 13.flac
+     5:09.07       54524108 B   ---   --   ---xx   flac  0.6147  hollow horn 7-2 - tr 14.flac
+     3:17.21       34800236 B   ---   --   ---xx   flac  0.6485  hollow horn 7-2 - tr 15.flac
+     5:21.59       56763212 B   ---   --   ---xx   flac  0.6047  hollow horn 7-2 - tr 16.flac
+     4:46.47       50560988 B   ---   --   ---xx   flac  0.6313  hollow horn 7-2 - tr 17.flac
+     3:40.21       38857436 B   ---   --   ---xx   flac  0.6009  hollow horn 7-2 - tr 18.flac
+    77:17.15      818002872 B                            0.6140  (18 files)
+=================== 
+=================== 
+=================== 

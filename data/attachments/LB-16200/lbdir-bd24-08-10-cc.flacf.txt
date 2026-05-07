@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== md5 for: bd24-08-10-cc.flacf
+===================
+===================
+===================
+b90436f1d573062b2723ad96f096a10d *2024-08-10 George (Crystal Cat).md5
+366f12bd1182a061a334d934a4a9de35 *2024-08-10 George.txt
+ca7a559b5c67bcc2356ddcf2b4b16014 *Sleeves\back.jpg
+7cc662f1f79c93a0fa9354fc636ee91f *Sleeves\front.jpg
+beb98bf74bb69fce77dea9f9893b582e *Sleeves\inner.jpg
+616b042d676765e78ad3400ccd9ffc56 *Sleeves\outer.jpg
+a54399350510f032967d12b778e95bd0 *Track No01.flac
+0949ed35c14d8ceb0a4a2fcce49553f2 *Track No02.flac
+eebe5e9627236d2f407d0f4123b1dfa5 *Track No03.flac
+dcc5501cdb2192fc052f8c88a17ac073 *Track No04.flac
+7c69967fb9c6edd424cd79e3d505a216 *Track No05.flac
+826a76dcdddbebd28879c6c120c4ef84 *Track No06.flac
+bced0d9cb9f736d293286ac6246c430b *Track No07.flac
+e3299db614a1988138c3b9ac8a684a34 *Track No08.flac
+593a83745b17865d92318480e42e7930 *Track No09.flac
+2bc4c5747fcac4b953a8f3e5ab038a65 *Track No10.flac
+2b0e538642c17b0d3d6d6a838eade423 *Track No11.flac
+c2e3d1db522d296ea4309f2a43a15bc8 *Track No12.flac
+729d4afb2a15607ce7cba27f71a3ac8e *Track No13.flac
+4501a55b50f66112d87c7a58ea7c1599 *Track No14.flac
+ff63730f0d7de988cb0d8b85f3adfa00 *Track No15.flac
+e55c96ec8da45cf4ef1a4bd8f6483b4c *Track No16.flac
+780db5be0b427f47350fef92ce92e082 *Track No17.flac
+47d96a8f4ddd016e0ae0784619638433 *Track No18.flac
+fdbb5dc228c4536f68e04f01bbc39752 *Track No19.flac
+===================
+===================
+===================
+=== ffp for: bd24-08-10-cc.flacf
+===================
+===================
+===================
+Track No01.flac:00a7d2026c4dd127d5dac17104cdca86
+Track No02.flac:8dc68454cef194a6d291e539bc97dd68
+Track No03.flac:d1eb5f9a960ddb079f0cb429d3ccc740
+Track No04.flac:d47313509984bbe123fc13e62e117b0f
+Track No05.flac:76866f179b73d0fd8b22f76d65e5b6c1
+Track No06.flac:353f56fc3c35a22f1bf8ea66cc7f5a42
+Track No07.flac:ef8ffba7c39c4245852782c77b472443
+Track No08.flac:bea304e7ea2dcea00bb0a938eb8f8f31
+Track No09.flac:9db4871dc2ea7811dd657fdf5af5fe93
+Track No10.flac:0eab4f0f50c91b7529fa85e43e8c2f41
+Track No11.flac:1ab765028ac7c7bb6fca5a0b1333928c
+Track No12.flac:2260e8d3fb43f25cc3b6d18c4261afcb
+Track No13.flac:ec4dacd24d6016e55dcbb7b52c5ac4ec
+Track No14.flac:5696f2f769e1b20c7e7674d34a816d76
+Track No15.flac:3aafc4c27499c9e2bdbc7d849241e1d8
+Track No16.flac:59eb1e39a3a62459d9a2d005f72b712f
+Track No17.flac:8b9422f89e16028b0357a1d931933ca3
+Track No18.flac:ef7915b72b45baddf927c866c1499469
+Track No19.flac:d86ecd57eac7a286447bfd708cb30c96
+===================
+===================
+===================
+=== shntool len for: bd24-08-10-cc.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:46.60        8255564 B   ---   --   ---xx   flac  0.4718  Track No01.flac
+     3:32.67       37554428 B   ---   --   ---xx   flac  0.5622  Track No02.flac
+     4:19.58       45824060 B   ---   --   ---xx   flac  0.5576  Track No03.flac
+     4:59.49       52858892 B   ---   --   ---xx   flac  0.5402  Track No04.flac
+     1:58.47       20925788 B   ---   --   ---xx   flac  0.5695  Track No05.flac
+     2:53.26       30578396 B   ---   --   ---xx   flac  0.5024  Track No06.flac
+     0:31.41        5564876 B   ---   --   ---xx   flac  0.5169  Track No07.flac
+     7:48.56       82686956 B   ---   --   ---xx   flac  0.5425  Track No08.flac
+     6:00.52       63626348 B   ---   --   ---xx   flac  0.5437  Track No09.flac
+     5:19.68       56431580 B   ---   --   ---xx   flac  0.5406  Track No10.flac
+     5:56.21       62847836 B   ---   --   ---xx   flac  0.5090  Track No11.flac
+     4:43.10       49944764 B   ---   --   ---xx   flac  0.5211  Track No12.flac
+     4:11.27       44339948 B   ---   --   ---xx   flac  0.5717  Track No13.flac
+     3:49.36       40480316 B   ---   --   ---xx   flac  0.5104  Track No14.flac
+     0:38.58        6839660 B   ---   --   ---xx   flac  0.5038  Track No15.flac
+     4:07.73       43742540 B   ---   --   ---xx   flac  0.5430  Track No16.flac
+     4:53.67       51842828 B   ---   --   ---xx   flac  0.4999  Track No17.flac
+     4:12.19       44497532 B   ---   --   ---xx   flac  0.5309  Track No18.flac
+     6:16.18       66368780 B   ---   --   ---xx   flac  0.5461  Track No19.flac
+    77:01.28      815211092 B                            0.5351  (19 files)
+===================
+===================
+===================

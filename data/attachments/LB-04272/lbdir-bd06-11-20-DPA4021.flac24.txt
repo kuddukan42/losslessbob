@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-11-20-DPA4021.flac24 
+=================== 
+=================== 
+=================== 
+f1cf29561686679b5f044895371fe4e9  bd06-11-20 (24-bit).txt
+d96af019417516dc98306599cafb3f84  bd06-11-20-DPA4021-LB-4272.txt
+66c8c2c6b8f10cb285911df96fc17120  bd06-11-20t01.flac
+19f82aa738c7589cb69b9a294607c67d  bd06-11-20t02.flac
+7ed7f20afa0e5499d6050b025194ae4e  bd06-11-20t03.flac
+7ef5e6d3abdd39eef39df9d32a6af700  bd06-11-20t04.flac
+4cd9e8e4aee2984e602735c8ad493bd4  bd06-11-20t05.flac
+1f59299691a5ad7418d38248c2ed33d7  bd06-11-20t06.flac
+278d4e2285ae9e299cb6d16a232a038e  bd06-11-20t07.flac
+98409b17604756487ea82f66a6526c97  bd06-11-20t08.flac
+f9536e69bf560a9d6901e30057f104e8  bd06-11-20t09.flac
+31d4ec6840aa17a65f1a95b89e72e55f  bd06-11-20t10.flac
+9a4dd2f4e17ecfb8b79b9180beb8dea3  bd06-11-20t11.flac
+d56929263d4eacf8800859a555b84c29  bd06-11-20t12.flac
+2d2ee34107fa813e57347e87acdc29fa  bd06-11-20t13.flac
+f92b21e984731a30b48ecd5e91102d8d  bd06-11-20t14.flac
+9d8e6c8017543c90ca93abaa4031cc18  bd06-11-20t15.flac
+c4ecd242ea7e4bec92d6c5ed87209b62  bd06-11-20t16.flac
+0f91c9cf41250c56b929062fe0a618b5  bd06-11-20t17.flac
+be00a5015c6c6ee5f350bf244f216418  bd06-11-20t18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-11-20-DPA4021.flac24 
+=================== 
+=================== 
+=================== 
+bd06-11-20t01.flac:aaaa863c652a2da6a72881da2e2713d1
+bd06-11-20t02.flac:52e82d14806fd04276dc404f27c71f4e
+bd06-11-20t03.flac:03469e73c8dcf47255605411dd32b581
+bd06-11-20t04.flac:5a9b075dd73975d9269e7e4f04906286
+bd06-11-20t05.flac:04bd0037cc3070d28eb11303f0279e5a
+bd06-11-20t06.flac:0bc62c9c4d4e95786e1865fca42f2af4
+bd06-11-20t07.flac:939af262702f1fbfb72f9669a3927ae2
+bd06-11-20t08.flac:3e70e356e3cb5fa449b1e3099ae37255
+bd06-11-20t09.flac:a8924b911a4a68c83bed59147eda0f4e
+bd06-11-20t10.flac:49f9e53ca06890597a523c2974c05d5b
+bd06-11-20t11.flac:2ce22335c1fa63ad1d8b864e4e4c00b9
+bd06-11-20t12.flac:26f958be375fa61164e19576e717ba12
+bd06-11-20t13.flac:831273f8af73843be21b04f3a5ce3f64
+bd06-11-20t14.flac:03a531ddb1514a9dd5fb0f88c1e5db2b
+bd06-11-20t15.flac:c74a754e08f5c025996790a0cd24341a
+bd06-11-20t16.flac:27f79123f23a9c6b50abd09b1ba9545f
+bd06-11-20t17.flac:2db96da1689ebff5d1ae6237940b0364
+bd06-11-20t18.flac:207f4009a39fc9e9fe8cfeb84794c622
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-11-20-DPA4021.flac24 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:48.355      27852614 B   cxx   --   ---xx   flac  0.4970  bd06-11-20t01.flac
+     5:23.197     186161510 B   cxx   --   ---xx   flac  0.5440  bd06-11-20t02.flac
+     5:00.896     173316086 B   cxx   --   ---xx   flac  0.5480  bd06-11-20t03.flac
+     6:13.826     215323616 B   cxx   --   ---xx   flac  0.5614  bd06-11-20t04.flac
+     5:48.111     200512238 B   cxx   --   ---xx   flac  0.5100  bd06-11-20t05.flac
+     6:48.546     235322798 B   cxx   --   ---xx   flac  0.5721  bd06-11-20t06.flac
+     6:49.127     235657010 B   cxx   --   ---xx   flac  0.4892  bd06-11-20t07.flac
+     8:02.273     277789178 B   cxx   --   ---xx   flac  0.5704  bd06-11-20t08.flac
+     6:57.083     240240020 B   cxx   --   ---xx   flac  0.5318  bd06-11-20t09.flac
+     7:07.102     246011036 B   cxx   --   ---xx   flac  0.5729  bd06-11-20t10.flac
+     7:27.972     258032078 B   cxx   --   ---xx   flac  0.4998  bd06-11-20t11.flac
+     5:21.648     185269526 B   cxx   --   ---xx   flac  0.5980  bd06-11-20t12.flac
+     7:35.293     262249016 B   cxx   --   ---xx   flac  0.4951  bd06-11-20t13.flac
+     5:54.223     204032366 B   cxx   --   ---xx   flac  0.6013  bd06-11-20t14.flac
+     3:09.792     109320188 B   cxx   --   ---xx   flac  0.4791  bd06-11-20t15.flac
+     9:26.870     326517128 B   cxx   --   ---xx   flac  0.5454  bd06-11-20t16.flac
+     5:33.140     191888846 B   cxx   --   ---xx   flac  0.6021  bd06-11-20t17.flac
+     6:29.517     224362070 B   cxx   --   ---xx   flac  0.5864  bd06-11-20t18.flac
+   109:56.973    3799857324 B                            0.5474  (18 files)
+=================== 
+=================== 
+=================== 

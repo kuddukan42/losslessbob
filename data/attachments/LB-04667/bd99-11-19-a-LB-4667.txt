@@ -1,0 +1,12 @@
+Bob Dylan, 11/19/99, Atlantic City, New Jersey; Sands Casino, Copa Room, 2CDR
+
+LB-4667, (75min+77min), version "a"; cdr trade > eac > wav > cooledit > wav > flac; because d2t13 was originally on a separate cdr, 9 seconds of silence was removed in cooledit between d2t12 and d2t13 and the track boundary reset to avoid an sbe; some occasional talking & clappers; different recording than LB-4158 based on different crowd at end of d1t2; in comparison this is slightly warmer and more natural sound on both shows; same recording as bootleg LB-3192 based on same clapping on d1t1; in comparison the bootleg has levels raised with compression and sound processing to make it much harsher; excellent sound [A]
+
+CD1
+1 Early Show:  Roving Gambler (acoustic) 2 Mr. Tambourine Man (acoustic) 3 Stone Walls And Steel Bars (acoustic) 4 Desolation Row (acoustic) 5 Mama, You Been On My Mind (acoustic) ( with harp) 6 It's Alright, Ma (I'm Only Bleeding) (acoustic) 7 Tomorrow Is A Long Time (acoustic) 8 Master Of War (acoustic) 9 One Too Many Mornings (acoustic) 10 Don't Think Twice, It's All Right (acoustic) 11 Tangled Up In Blue (acoustic) 12 (encore) Blowin' In The Wind (acoustic) 13 Not Fade Away;, 
+
+CD2
+1 Late Show: Oh Babe, It Ain't No Lie (acoustic) 2 Girl From The North Country (acoustic) 3 Visions Of Johanna (acoustic) 4 Rock Of Ages (acoustic) 5 A Hard Rain's A-Gonna Fall (acoustic) 6 Maggie's Farm 7 The Man In Me (Larry on pedal steel) 8 Tombstone Blues 9 Make You Feel My Love 10 Leopard-Skin Pill-Box Hat 11 (encore) Love Sick 12 Like A Rolling Stone 13 Not Fade Away (with harp)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

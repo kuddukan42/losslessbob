@@ -1,0 +1,21 @@
+cc2a1920d1c0bd56ecf94e18b1d02533  Bob Dylan 2009-04-17 Roma flac.md5
+98c2da65922adf59d11eb9c2a7608970  Bob Dylan 2009-04-17 Roma flac.txt
+ee8440ac3d0c1b781b65e836f41af425  Disc1_Track01.flac
+82cb78dc98c7c803515b52747fea3a53  Disc1_Track02.flac
+2f4f378f463f2d5aacc82bfa84e0afdc  Disc1_Track03.flac
+af47f750d3d27d6aa4ef96ed5c5e27f2  Disc1_Track04.flac
+70e974e1cf59456ac5670ed033420656  Disc1_Track05.flac
+7cf8f66277278aba0124f734c0b4f4a0  Disc1_Track06.flac
+abf01038788f3c98d807048b1e9dba0e  Disc1_Track07.flac
+f3ed69b7ab43fbcfb7e26d9dbc4829a0  Disc1_Track08.flac
+034788776d26953f32ff5257e358eea1  Disc1_Track09.flac
+f15e16f9a9d4851bc10b2acaa3a52590  Disc1_Track10.flac
+c5a624290b1b684c035a9e440d094537  Disc1_Track11.flac
+bb9e59dab810d4f0d9ef90c702f497f7  Disc2_Track01.flac
+4364d0ecf6eb8c70561fd60430e8fb94  Disc2_Track02.flac
+29511016e2c22082e24137d6cac59683  Disc2_Track03.flac
+ccfc299a6eb878274e40cb5ad9eef3eb  Disc2_Track04.flac
+e4a83bd62b9e94c381901d321c091c73  Disc2_Track05.flac
+4bcce0a76d4c392927c3271c122fa8dd  Disc2_Track06.flac
+d1c62b862b3456cc509ba99db07637a1  Disc2_Track07.flac
+efc154076beb2a51857920e9f6e9fb00  Disc2_Track08.flac

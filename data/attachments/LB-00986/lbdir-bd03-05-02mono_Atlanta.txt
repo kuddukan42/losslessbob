@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-02mono_Atlanta 
+=================== 
+=================== 
+=================== 
+26752f106c8cfe5abf61d161982248db  030502_00a_FM.shn
+a7680869f6292849bb2f2c7b853e64e6  030502_00b_COCO.shn
+5fda0fc6f042a7a9cf3fa163228bf56f  030502_00c_POST-STORM.shn
+2c0a1271d617f7fa040fe89b4f289f93  030502_00d_IIMYH1.shn
+cc7b8d6109291dd1a122497962d00bdd  030502_01_INTRO.shn
+71a405c87bbaa7af893189c1cca649d0  030502_02_TBAWY.shn
+314c17748488553fec882e55d23a2627  030502_03_IBYBT.shn
+1584b5ac2f2f1661d69cfe66b5f18094  030502_04_HW61.shn
+4714db7fc63226c0ce8a2bf92c871f50  030502_05_JLTTB.shn
+e226473e83c2c10dfcb34a9fe15fbb52  030502_06_DE.shn
+fea252ef23b69d6fa90cc47b73317aaa  030502_07_SBTM.shn
+d038492b0640925e2dc8f24ca742cf0a  030502_08_HWM.shn
+9acbfbb5c7558736547dff59dd95367a  030502_09_SD.shn
+8c29e1836df703e3da3a7e19654a8c69  030502_10_LARS.shn
+635daf687c4048760f3064b92bfe73b7  030502_11_AATW.shn
+4938c3a1e1bec7396eded677a3ed902a  bd03-05-02 Atlanta.txt
+0f7dd842b6b3f3bc847b41b28dd7ee74  noname.md5
+9c02b4f7e801ac12018f7afa2d346e71  readme.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-05-02mono_Atlanta 
+=================== 
+=================== 
+=================== 
+8e9455bab47ac9f398c335ffb996b2ff  [shntool]  030502_00a_FM.wav
+fa23c5094811f34948b057c9b485b49e  [shntool]  030502_00b_COCO.wav
+70f0af301a18b00f23f9e28bb5d438a9  [shntool]  030502_00c_POST-STORM.wav
+63f76f2dbbbc2114ce625c593953bd95  [shntool]  030502_00d_IIMYH1.wav
+12b7cbec14bc0f448a97d590fe9eb0c0  [shntool]  030502_01_INTRO.wav
+e69d702516fc988ae4357ca15e5e84ce  [shntool]  030502_02_TBAWY.wav
+b9973f309de33999458831a3dfbb64cb  [shntool]  030502_03_IBYBT.wav
+fda1653028deca5078c4aae8dd7ebc38  [shntool]  030502_04_HW61.wav
+31645c8648c0ed2771d1c3fd0091fb42  [shntool]  030502_05_JLTTB.wav
+4b012714cb04a65f1d1d1b1d6edfc0d6  [shntool]  030502_06_DE.wav
+6ea59dd9ebd071fa4329e54920580c94  [shntool]  030502_07_SBTM.wav
+b8517346ae596d7f4d88d1841abf5d72  [shntool]  030502_08_HWM.wav
+24a33b08fa937e145ed7280765cbbcd3  [shntool]  030502_09_SD.wav
+072f4d547f823290c439ad744c871eb8  [shntool]  030502_10_LARS.wav
+4e88dde4d929129ff60e88e0d362653c  [shntool]  030502_11_AATW.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-02mono_Atlanta 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.19       42027746 B   -b-   -e   ---xx    shn  0.5901  030502_00a_FM.shn
+     6:50.24       72381066 B   -b-   -e   ---xx    shn  0.5070  030502_00b_COCO.shn
+     2:33.10       27013798 B   -b-   -e   ---xx    shn  0.4848  030502_00c_POST-STORM.shn
+     5:57.60       63116770 B   -b-   -e   ---xx    shn  0.5900  030502_00d_IIMYH1.shn
+     0:49.27        8707292 B   -b-   he   ---xx    shn  0.5131  030502_01_INTRO.shn
+     3:28.33       36768834 B   -b-   -e   ---xx    shn  0.5554  030502_02_TBAWY.shn
+     5:34.64       59068778 B   -b-   -e   ---xx    shn  0.5135  030502_03_IBYBT.shn
+     4:55.07       52055766 B   -b-   -e   ---xx    shn  0.5944  030502_04_HW61.shn
+     6:18.18       66722850 B   -b-   -e   ---xx    shn  0.5154  030502_05_JLTTB.shn
+     5:30.28       58278926 B   -b-   -e   ---xx    shn  0.5855  030502_06_DE.shn
+     6:19.14       66887534 B   -b-   -e   ---xx    shn  0.4946  030502_07_SBTM.shn
+     6:54.17       73069906 B   -b-   -e   ---xx    shn  0.5913  030502_08_HWM.shn
+     7:42.36       81581990 B   -b-   -e   ---xx    shn  0.5526  030502_09_SD.shn
+     6:54.36       73113794 B   -b-   -e   ---xx    shn  0.5672  030502_10_LARS.shn
+     5:30.14       58245714 B   -b-   -e   ---xx    shn  0.5888  030502_11_AATW.shn
+    79:16.34      839040764 B                            0.5526  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,10 @@
+Bob Dylan, 7/10/95, Stuttgart, Germany, Beethovensaal Liederhalle, Kultur und Congresszentrum, 2CDR
+
+LB-4788, Unknown Audience>CDR>EAC>FLAC LEVEL 5; bittorrent download 05/07; has lots of whine; most of d1t1 is limited to -9db on the top and -7db on the bottom with d1t6 -8db to -4db;; good to very good sound [B-] and can be made better with eq
+
+digipop d1t1 5:19, d1t2 0:32, d1t3 4:47, d1t4 1:02, d1t6 2:51 d1t7 2:45, 3:10, d1t1 0:34, 3:33, 5:35, 6:39, 7:26, d2t2 2:40, 4:40, 4:48, 8:16, 8:40, d2t3 11:30, d2t4 2:39, 8:02, d2t5 0:53, 2:25, 10:46, d2t6 3:08; plus probably more; static d1t8 0:1x to 0:2x
+
+CD 1 63:36, 1 Drifter's Escape, 2 The Man In Me, 3 All Along The Watchtower, 4 Born In Time, 5 Shelter From The Storm, 6 Silvio (Bob Dylan & Robert Hunter), 7 Mama, You Been On My Mind, 8 Masters Of War, 9 One Too Many Mornings, CD 2 58:09, 1 God Knows, 2 What Good Am I?, 3 Leopard-Skin Pill-Box Hat, 4 Ballad Of A Thin Man, 5 The Times They Are A-Changin', 6 Rainy Day Women # 12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

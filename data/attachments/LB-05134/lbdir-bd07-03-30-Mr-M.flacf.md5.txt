@@ -1,0 +1,23 @@
+dfcd7f149cfc8a3540ed6ef4bcded5c1  bd2007-03-30-Oslo-Mr.M.txt
+99081606b5260d63f7402af614fbc07e  Cd1\Cd1.md5
+c9c8242ad13b5c565112f4e1a1f227a9  Cd1\Track No01.flac
+05ddeba8d51d2ca060bc0f6f517c8dae  Cd1\Track No02.flac
+507bf8494d2cb3aef8ff1947e8b7ff52  Cd1\Track No03.flac
+1f95d2428262ec990f2692932398a37d  Cd1\Track No04.flac
+d2d975f02b725dd93f85cb8efbcd4d8a  Cd1\Track No05.flac
+84a2b21539930eb91feb05a3400d7557  Cd1\Track No06.flac
+cf3c3a489b4e9be22c96833413beab33  Cd1\Track No07.flac
+c074a8c9fa140f0f3cf30ecd2bb39d96  Cd1\Track No08.flac
+36c4e75a4d21d909de9edebd57c25e92  Cd1\Track No09.flac
+acf2646cbe28e37e5f983afc7381ed25  Cd1\Track No10.flac
+b45c4b66fbe29b0777a4575cb5e69636  Cd1\Track No11.flac
+e2f0fab5c283daae304c44664bfb3989  Cd1\Track No12.flac
+660a2067fe559c6241dad505abc3de09  Cd1\Track No13.flac
+3e41d75bb33e2ac187f6f1c5e11363da  Cd1\Track No14.flac
+38128acd6b079361948b64b20d6ad7cf  CD2\CD2.md5
+4f4a3c80d08bb6dc8aded26299aacbf6  CD2\Track No01.flac
+e3c1d287faf5fa9274544441f653e332  CD2\Track No02.flac
+6b6ba7060e85695048f5f65b0d2e0891  CD2\Track No03.flac
+6254dca3100802cd861f171a6953b87f  CD2\Track No04.flac
+f1fb35948895c060cc99b9dcc5046610  CD2\Track No05.flac
+ef4411ebd1d3176ab10e7669b16365de  CD2\Track No06.flac

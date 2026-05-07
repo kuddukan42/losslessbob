@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-13-JD-b.shnf 
+=================== 
+=================== 
+=================== 
+95162a6fa2a4083dbc1e29e5406010be  bd04-03-13 milwaukee.md5
+3b584142b6487b6f75515bf19caf4ecc  bd04-03-13 milwaukee.txt
+ea9ba4e124165c458b420242cb0520dc  d1t01.shn
+735c48fbfc39bfd4aa1a7ac9663f91f1  d1t02.shn
+d07a3892dc4804867b47db1294aec539  d1t03.shn
+d4da1bc032fe84247a7920db911e70d3  d1t04.shn
+8d0e99f735d578353d7041ec7ae384f0  d1t05.shn
+b01b4731d81f32ffa671ba81e64f3b73  d1t06.shn
+39093d864f7bb2fe2c4e0653fd494bac  d1t07.shn
+878596f31bdfc0bc7540093d0c2b7a02  d1t08.shn
+118c3a54bf5da1d7fa96d8b20f65838e  d1t09.shn
+cdfbdf9faae43032a8a4756eb2ab99c3  d1t10.shn
+6ec3a597a0f93cfdbb88ec97c5ffbadf  d1t11.shn
+f91e4dcb8063113a30d0aabddfbba3df  d2t01.shn
+8c27ee6fbb9991d26808057665f23192  d2t02.shn
+b7b126cecac2e6a2337cae8ec3538dba  d2t03.shn
+b9fbbfd88704c377d8854c693c5f4105  d2t04.shn
+75b3e4e40cae681b622ed4f96cf3a707  d2t05.shn
+10e13817207773c5134585f0c6ca5801  d2t06.shn
+611c791b2380f4d7e46e78e183bbcb2d  d2t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-13-JD-b.shnf 
+=================== 
+=================== 
+=================== 
+50172cbdbee1689e00839fae81f1c962  [shntool]  d1t01.wav
+9721213992ba10ceefac769425f9a407  [shntool]  d1t02.wav
+37ae99e832defee5de0b7491e8138ab4  [shntool]  d1t03.wav
+ed8635d024d56e10c49bac75c72acbb6  [shntool]  d1t04.wav
+6ee98049e17ce0bf81fb5ece43c3ff0b  [shntool]  d1t05.wav
+e208a3cb58bb8ff64d760202e69a50f6  [shntool]  d1t06.wav
+4dd5488871edfea72589f8037c7a8a2a  [shntool]  d1t07.wav
+34ed1feaf1d30ec4a7d68482e8567b11  [shntool]  d1t08.wav
+952faa2c1212ab99432d50c179651b7f  [shntool]  d1t09.wav
+19ea0bea20bf57ad7b68e60851f55300  [shntool]  d1t10.wav
+1e1b66a17c6fa24fb9dc5a036259cd86  [shntool]  d1t11.wav
+1177504c6e8b0e86587632f2b672c584  [shntool]  d2t01.wav
+7769c06bb157a4a5efb527d44f888de6  [shntool]  d2t02.wav
+bbf5f6c31c306b9f049d4dab92d21ea3  [shntool]  d2t03.wav
+9b4097c754aa75ee2776809afc1caa8b  [shntool]  d2t04.wav
+bf942e7e682c75447df30e266b1e0c62  [shntool]  d2t05.wav
+633d7fd9ca9698c7a616324d0a06fb52  [shntool]  d2t06.wav
+f54648a082521dffabd3e91aa667d4ad  [shntool]  d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-13-JD-b.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:06.07       11658908 B   ---   --   ---xx    shn  0.6298  d1t01.shn
+     4:20.13       45894620 B   ---   --   ---xx    shn  0.7342  d1t02.shn
+     4:08.71       43914236 B   ---   --   ---xx    shn  0.7112  d1t03.shn
+     5:18.58       56231660 B   ---   --   ---xx    shn  0.6798  d1t04.shn
+     7:25.00       78498044 B   ---   --   ---xx    shn  0.6700  d1t05.shn
+     5:58.21       63200636 B   ---   --   ---xx    shn  0.7388  d1t06.shn
+     5:34.58       59054060 B   ---   --   ---xx    shn  0.6986  d1t07.shn
+     7:03.47       74727788 B   ---   --   ---xx    shn  0.7464  d1t08.shn
+     5:56.45       62904284 B   ---   --   ---xx    shn  0.7098  d1t09.shn
+     7:04.09       74814812 B   ---   --   ---xx    shn  0.7467  d1t10.shn
+     5:45.55       60987404 B   ---   --   ---xx    shn  0.6991  d1t11.shn
+     6:02.15       63892124 B   ---   --   ---xx    shn  0.6788  d2t01.shn
+     7:12.17       76244828 B   ---   --   ---xx    shn  0.7246  d2t02.shn
+     8:07.13       85937420 B   ---   --   ---xx    shn  0.6839  d2t03.shn
+    10:22.64      109871372 B   ---   --   ---xx    shn  0.7115  d2t04.shn
+     4:37.00       48862844 B   ---   --   ---xx    shn  0.7431  d2t05.shn
+     7:42.50       81614444 B   ---   --   ---xx    shn  0.7357  d2t06.shn
+     7:44.11       81875516 B   ---   --   ---xx    shn  0.7009  d2t07.shn
+   111:30.29     1180185000 B                            0.7111  (18 files)
+=================== 
+=================== 
+=================== 

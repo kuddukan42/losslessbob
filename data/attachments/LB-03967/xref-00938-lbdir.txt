@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-10-26-c.flacf 
+=================== 
+=================== 
+=================== 
+cd0c4377fe6d9c7b6b4f4adc8a1a10fb  bd 19961026 Austin.txt
+2dd78106090b9b60ebfafb9346a24a47  Bob Dylan Austin 1996 10 1996.md5
+65c2903c4cd2d0a059707c64a779690c  CD1\01 Crash On The Levee Down In The Flood.flac
+8da162acde08cd49f164e66beeea310f  CD1\02 If Not For You.flac
+73c43bd82c2ff8bc94857b5f9990a51f  CD1\03 All Along The Watchtower.flac
+53c8b7aab11bf797315dc1a5950d302e  CD1\04 Jokerman.flac
+6dc7d68b92c746734d424a0c80c1916c  CD1\05 I'll Be Your Baby Tonight.flac
+82c7b6178e3af0fc2509860d2304c774  CD1\06 Silvio.flac
+ea9ab18b7a802fde2384b95b96828725  CD1\07 Mr Tambourine Man.flac
+38859c145458238f2aa3ff45186e80bf  CD1\08 Masters Of War.flac
+c52f7afa5917f4e90f601aec6e98ba2e  CD1\09 It's All Over Now Baby Blue.flac
+a53fc6ef26762b2fe6ae91ae2b7a3aea  CD2\01 Man Of Peace.flac
+41b59951c9b8bee266096133997c7b6e  CD2\02 Where Teardrops Fall.flac
+4421f9c038e916316b748d76679d27d4  CD2\03 Maggie's Farm.flac
+3645c4bff66b2c52e7fd0e3d7a9a32ba  CD2\04 Like A Rolling Stone.flac
+c37ff51651f894ed9f1ff1e1ed29424c  CD2\05 It Ain't Me Babe.flac
+516f99d13fb1063f7422a8ac44cd42b6  CD2\06 Rainy Day Women 12 35.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-26-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash On The Levee Down In The Flood.flac:1f51ba81a2acb0ed98edeab6fd6f6b1e
+02 If Not For You.flac:114be996342ee40cf3f9ec82916d5ce8
+03 All Along The Watchtower.flac:be3d7a38480fe841a441859800b99b73
+04 Jokerman.flac:61976a879ea6c903430ef07795fa9029
+05 I'll Be Your Baby Tonight.flac:345fc5f6a314ed76c2d576f8d790d3f3
+06 Silvio.flac:d3c38b3fe358ceff7455c32dad2d821e
+07 Mr Tambourine Man.flac:eaaaa00e602931acdce30a1a0594eec6
+08 Masters Of War.flac:ef40a1e680321a2a480de6967481255b
+09 It's All Over Now Baby Blue.flac:0bcfaa6b032c145ca1c0653299555b6e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-26-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+01 Man Of Peace.flac:773ec7e076658c36671f4b084971c7fc
+02 Where Teardrops Fall.flac:a1a1b3ef8fa95ec17463353a896ff41e
+03 Maggie's Farm.flac:bf679f229384dc656a285a5d07f0ff59
+04 Like A Rolling Stone.flac:f2ee136bc4c9ab81500a41c3fb2f2fa6
+05 It Ain't Me Babe.flac:3a8cbbf233fb97dd40f7d420a4e93c88
+06 Rainy Day Women 12 35.flac:496e08d018fe5ce3486564537770862c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-26-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:38.13       49069820 B   ---   --   ---xx   flac  0.5802  01 Crash On The Levee Down In The Flood.flac
+     6:07.34       64818812 B   ---   --   ---xx   flac  0.5641  02 If Not For You.flac
+     7:02.67       74598428 B   ---   --   ---xx   flac  0.5745  03 All Along The Watchtower.flac
+     9:31.35      100806764 B   ---   --   ---xx   flac  0.5633  04 Jokerman.flac
+     9:25.17       99706028 B   ---   --   ---xx   flac  0.5700  05 I'll Be Your Baby Tonight.flac
+     8:56.41       94646876 B   ---   --   ---xx   flac  0.5929  06 Silvio.flac
+     7:10.50       75969644 B   ---   --   ---xx   flac  0.5912  07 Mr Tambourine Man.flac
+     6:47.70       71959484 B   ---   --   ---xx   flac  0.5685  08 Masters Of War.flac
+     8:59.57       95213708 B   ---   --   ---xx   flac  0.5853  09 It's All Over Now Baby Blue.flac
+    68:40.09      726789564 B                            0.5767  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-26-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:11.66       97351676 B   ---   --   ---xx   flac  0.5698  01 Man Of Peace.flac
+     6:17.53       66627500 B   ---   --   ---xx   flac  0.5473  02 Where Teardrops Fall.flac
+     8:27.35       89517164 B   ---   --   ---xx   flac  0.5903  03 Maggie's Farm.flac
+    11:09.40      118105724 B   ---   --   ---xx   flac  0.5494  04 Like A Rolling Stone.flac
+    11:25.12      120862268 B   ---   --   ---xx   flac  0.5301  05 It Ain't Me Babe.flac
+     7:43.07       81689708 B   ---   --   ---xx   flac  0.5699  06 Rainy Day Women 12 35.flac
+    54:14.63      574154040 B                            0.5579  (6 files)
+=================== 
+=================== 
+=================== 

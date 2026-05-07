@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-07.shnf 
+=================== 
+=================== 
+=================== 
+501eeaec0ab3d47a0a99552d8a70c45e  01 - Intro (88-09-07 Essex Junction, VT).shn
+27a125fc09f0a961c1b334137d3b0a8f  02 - Subterranean Homesick Blues (88-09-07 Essex Junction, V.shn
+1795ab215bf4214357701c021ed81a27  03 - Ballad Of A Thin Man (88-09-07 Essex Junction, VT).shn
+82afd239f65c70de34f4246a87b769d9  04 - I Don't Believe You (88-09-07 Essex Junction, VT).shn
+fa95768b4bb758b92f72fe52a3586e5d  05 - Shelter From The Storm (88-09-07 Essex Junction, VT).shn
+1b3ccb68c77413160b298d477a11986a  06 - You're A Big Girl Now (88-09-07 Essex Junction, VT).shn
+a40f0577413b25d424baa882c81491c3  07 - Highway 61 Revisited (88-09-07 Essex Junction, VT).shn
+c87b5d674b367797d03f77bc3878eb2e  08 - To Ramona (88-09-07 Essex Junction, VT).shn
+86fadfc0cd1b1d0e7c651c4906366d4a  09 - One Too Many Mornings (88-09-07 Essex Junction, VT).shn
+b002f60dad4165001c8fd8410d28ff7c  10 - Don't Think Twice (88-09-07 Essex Junction, VT).shn
+06c894e68fc7c85c7e8309c4a52b8645  11 - Knockin' On Heaven's Door (88-09-07 Essex Junction, VT).shn
+456e3d9fec40747d30db0214934de445  12 - Silvio (88-09-07 Essex Junction, VT).shn
+b502a65ee2aac043a161282f66f0e663  13 - I Shall Be Released (88-09-07 Essex Junction, VT).shn
+8cccf0416bcf5fed7f1940c7961e41b4  14 - Like A Rolling Stone (88-09-07 Essex Junction, VT).shn
+20f2b1367a34449ee7dbabc2b09e3678  15 - It Ain't Me, Babe (88-09-07 Essex Junction, VT).shn
+8d54274084fb1a7952fa8364877a2179  16 - All Along The Watchtower (88-09-07 Essex Junction, VT).shn
+d00cbde5b7e454bd8080ff7a11c10773  88-09-07_Essex Junction, VT.md5
+13ebeef9e5485439c52e0ccf550ff393  88-09-07_Essex Junction, VT.rtf
+dfc8ef5abdfe4537bf21b632dd7bf7aa  bd88-09-07.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-09-07.shnf 
+=================== 
+=================== 
+=================== 
+3a839fc2f5ce210a7cfb7911d372cd62  [shntool]  01_-_Intro_(88-09-07_Essex_Junction,_VT).wav
+d0888ac4c94f02dc04169ae633acf535  [shntool]  02_-_Subterranean_Homesick_Blues_(88-09-07_Essex_Junction,_V.wav
+3b731c9a102b1183940831b74023bdf5  [shntool]  03_-_Ballad_Of_A_Thin_Man_(88-09-07_Essex_Junction,_VT).wav
+2bd6073374b044b1101eb10b305888a3  [shntool]  04_-_I_Don't_Believe_You_(88-09-07_Essex_Junction,_VT).wav
+c55f89dbf6fa5c14ea58c8bbea33340d  [shntool]  05_-_Shelter_From_The_Storm_(88-09-07_Essex_Junction,_VT).wav
+947d150bdeaea1c86af95483f9ebd392  [shntool]  06_-_You're_A_Big_Girl_Now_(88-09-07_Essex_Junction,_VT).wav
+a3feb789887171d34d71b712333c34f3  [shntool]  07_-_Highway_61_Revisited_(88-09-07_Essex_Junction,_VT).wav
+f98180029438399aec2cc11829e3f3f9  [shntool]  08_-_To_Ramona_(88-09-07_Essex_Junction,_VT).wav
+eab52c644f388fb8d4f9fc2fab0af1a6  [shntool]  09_-_One_Too_Many_Mornings_(88-09-07_Essex_Junction,_VT).wav
+cc3f9b2f3c1e6ceb3dbe03a443683e2c  [shntool]  10_-_Don't_Think_Twice_(88-09-07_Essex_Junction,_VT).wav
+b9297f52f2d2ccf6bcf6186cd908f7f0  [shntool]  11_-_Knockin'_On_Heaven's_Door_(88-09-07_Essex_Junction,_VT).wav
+631b902b9ecfd87b41276d30f7760a68  [shntool]  12_-_Silvio_(88-09-07_Essex_Junction,_VT).wav
+6bfdfae913dcb9ca2cee350080bdf23f  [shntool]  13_-_I_Shall_Be_Released_(88-09-07_Essex_Junction,_VT).wav
+c71b934291e209f48abc083acbc06dbb  [shntool]  14_-_Like_A_Rolling_Stone_(88-09-07_Essex_Junction,_VT).wav
+347a455db034e9005752452268a51d97  [shntool]  15_-_It_Ain't_Me,_Babe_(88-09-07_Essex_Junction,_VT).wav
+9a9149840617871767c13bb0f31f2bac  [shntool]  16_-_All_Along_The_Watchtower_(88-09-07_Essex_Junction,_VT).wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-07.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.25        4468844 B   ---   --   ---xx    shn  0.6032  01 - Intro (88-09-07 Essex Junction, VT).shn
+     3:34.15       37784924 B   ---   --   ---xx    shn  0.7126  02 - Subterranean Homesick Blues (88-09-07 Essex Junction, V.shn
+     4:46.00       50450444 B   ---   --   ---xx    shn  0.7102  03 - Ballad Of A Thin Man (88-09-07 Essex Junction, VT).shn
+     4:36.29       48754652 B   ---   --   ---xx    shn  0.7015  04 - I Don't Believe You (88-09-07 Essex Junction, VT).shn
+     5:19.65       56424524 B   ---   --   ---xx    shn  0.7010  05 - Shelter From The Storm (88-09-07 Essex Junction, VT).shn
+     5:29.08       58054460 B   ---   --   ---xx    shn  0.6810  06 - You're A Big Girl Now (88-09-07 Essex Junction, VT).shn
+     4:17.56       45466556 B   ---   --   ---xx    shn  0.6910  07 - Highway 61 Revisited (88-09-07 Essex Junction, VT).shn
+     4:07.39       43662572 B   ---   --   ---xx    shn  0.6654  08 - To Ramona (88-09-07 Essex Junction, VT).shn
+     4:20.14       45896100 B   -b-   --   ---xx    shn  0.6490  09 - One Too Many Mornings (88-09-07 Essex Junction, VT).shn
+     4:14.34       44885612 B   ---   --   ---xx    shn  0.6992  10 - Don't Think Twice (88-09-07 Essex Junction, VT).shn
+     5:24.28       57219500 B   ---   --   ---xx    shn  0.6736  11 - Knockin' On Heaven's Door (88-09-07 Essex Junction, VT).shn
+     3:54.62       41423468 B   ---   --   ---xx    shn  0.7210  12 - Silvio (88-09-07 Essex Junction, VT).shn
+     4:13.16       44666876 B   ---   --   ---xx    shn  0.6981  13 - I Shall Be Released (88-09-07 Essex Junction, VT).shn
+     6:48.00       71971244 B   ---   --   ---xx    shn  0.7231  14 - Like A Rolling Stone (88-09-07 Essex Junction, VT).shn
+     5:30.60       58353164 B   ---   --   ---xx    shn  0.6650  15 - It Ain't Me, Babe (88-09-07 Essex Junction, VT).shn
+     4:31.44       47907932 B   ---   --   ---xx    shn  0.7199  16 - All Along The Watchtower (88-09-07 Essex Junction, VT).shn
+    71:33.45      757390872 B                            0.6936  (16 files)
+=================== 
+=================== 
+=================== 

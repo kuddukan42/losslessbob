@@ -1,0 +1,14 @@
+19d13589d46d960706c210eed65a1629  [shntool]  01 Death D-M D1t8.shn
+7bac430336f9cf1ccb177e4359794668  [shntool]  02 Death D-M D2t13.shn
+9b484b3eccda5525706b180075a81f16  [shntool]  03 Death O.shn
+c0e60e31b746ccf0a7fd3673acc5127f  [shntool]  04 FallApart (maybe) RW D1t1.shn
+dbb416a95c57e0c53612cc9f158f3df6  [shntool]  05 FallApart (maybe) RC D1t13.shn
+aa7c5c7b3dc95828d9cf6b10a40bf22f  [shntool]  06 FallApart (maybe) I1.shn
+e79ad2254210229fa4c78f286a256b4e  [shntool]  07 FallApart (maybe) D-M D2t8.shn
+e481c3cc31934cb8123753e1c5eb4beb  [shntool]  08 FallApart (do you) O t8.shn
+61370ab3650a5bb2acf39f452c005bf5  [shntool]  09 FallApart (do you) W t15.shn
+7d5b49ca8a4b15045507bf273d4a2492  [shntool]  10 FallApart (do you) RW (mono) D4t12.shn
+dfcebdd39bac70aa40ca9a889ccb8a25  [shntool]  11 Foot D-M D2t9.shn
+a4af8c735f4f0714b9da3e68f5c1c2f1  [shntool]  12 Foot O.shn
+31cfa5100d8d03d5b51b7bf31bd6cbe2  [shntool]  13 Julius D-M D1t9.shn
+f3811e3fbc4f66d387b3f340f3de36d4  [shntool]  14 Julius D-M D2t16.shn

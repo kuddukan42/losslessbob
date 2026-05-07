@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-19-Vito.flacf 
+=================== 
+=================== 
+=================== 
+0ac81cde4d73edfe78de24719f63c60f  bd1989-06-19 info.txt
+feb19d252dfb461be015ebd92201f2ae  bd1989-06-19.md5
+d6cf6f0820e082996dda76f83e61c9b2  bd1989-06-19d1t01.flac
+236457c9dc66e62dce2b85d242046969  bd1989-06-19d1t02.flac
+51e305a8fdc0ba1002f3c6ed641ca163  bd1989-06-19d1t03.flac
+44adb542c86fc85a719516c324419e1f  bd1989-06-19d1t04.flac
+e6ba435e914c62cc70ab492de6a526d8  bd1989-06-19d1t05.flac
+5539e0d326df529bbd6b34aa905bf49b  bd1989-06-19d1t06.flac
+fe8dd2e42083957aca38a228bedd9fb2  bd1989-06-19d1t07.flac
+75b9df8ec703fa37629812eaa3211a53  bd1989-06-19d1t08.flac
+d629719a39c6ff070d735d1afef89899  bd1989-06-19d2t01.flac
+504cf8839edfed45590e6d7aec0dad74  bd1989-06-19d2t02.flac
+470e0f397aa920717d36dd0b731331c9  bd1989-06-19d2t03.flac
+8751828a3297b6059c4b1e759811c0af  bd1989-06-19d2t04.flac
+9f923192484e3b7f4d96356f04c97b9a  bd1989-06-19d2t05.flac
+60af60c224e2ada11389491b95058e80  bd1989-06-19d2t06.flac
+c65a5abf284175e3ea134af810c9b5c8  bd1989-06-19d2t07.flac
+d9d5114f2f4474452502d8b72b4adc0d  bd1989-06-19d2t08.flac
+5b8ed274a547a299edbe1c48699a16dd  bd89-06-19-Vito-LB-5670.txt
+f0e59e79fc76116ec8b1f979bed304c8  lbdir-bd89-06-19-Vito.flacf.md5
+5f9b3b712d00d5062842267eaef2bc8c  lbdir-bd89-06-19-Vito.flacf.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-19-Vito.flacf 
+=================== 
+=================== 
+=================== 
+bd1989-06-19d1t01.flac:71f7e47e01962f3dcad5274f9fa1c330
+bd1989-06-19d1t02.flac:ebf6d93f2714a1418a247d42109f1664
+bd1989-06-19d1t03.flac:2686358a1271d73cf4cc3bfdf422144b
+bd1989-06-19d1t04.flac:1bd51b20b0644748b398cde5e739c2bc
+bd1989-06-19d1t05.flac:20ded3eb33de4de313d5aacc7f58dcdb
+bd1989-06-19d1t06.flac:0fde8e712ae472eb971d969f96f551a5
+bd1989-06-19d1t07.flac:830e691f20a37010adc35f4589f1644e
+bd1989-06-19d1t08.flac:015e5d1f9136962ccdb07b7e1fe04294
+bd1989-06-19d2t01.flac:c775a4736c06424cf37d840aea109666
+bd1989-06-19d2t02.flac:841ebabb28093f911fa4619ed04b75d4
+bd1989-06-19d2t03.flac:b3dd0ea9e900a37f22f227442c73c7ce
+bd1989-06-19d2t04.flac:e52d7d1d6cfe26f42907d217c81fd709
+bd1989-06-19d2t05.flac:8cf7dd5d3493996013d068af4ec6f7ad
+bd1989-06-19d2t06.flac:99bd519a1fe3d8356bc7dc84c1be0388
+bd1989-06-19d2t07.flac:35484bccc8754acb217f49ea8a27a616
+bd1989-06-19d2t08.flac:6fb500686ce1bfba7cf53e6e732f9054
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-19-Vito.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:46.19       71663132 B   ---   --   ---xx   flac  0.6942  bd1989-06-19d1t01.flac
+     5:18.06       56109356 B   ---   --   ---xx   flac  0.6922  bd1989-06-19d1t02.flac
+     4:43.61       50064716 B   ---   --   ---xx   flac  0.7126  bd1989-06-19d1t03.flac
+     4:43.45       50027084 B   ---   --   ---xx   flac  0.7029  bd1989-06-19d1t04.flac
+     5:21.51       56744396 B   ---   --   ---xx   flac  0.6952  bd1989-06-19d1t05.flac
+     4:17.24       45391292 B   ---   --   ---xx   flac  0.7304  bd1989-06-19d1t06.flac
+     7:03.40       74711324 B   ---   --   ---xx   flac  0.6667  bd1989-06-19d1t07.flac
+     4:38.22       49090988 B   ---   --   ---xx   flac  0.6634  bd1989-06-19d1t08.flac
+     5:43.54       60632252 B   ---   --   ---xx   flac  0.6855  bd1989-06-19d2t01.flac
+     4:46.02       50455148 B   ---   --   ---xx   flac  0.7161  bd1989-06-19d2t02.flac
+     4:29.74       47625692 B   ---   --   ---xx   flac  0.7260  bd1989-06-19d2t03.flac
+     4:46.54       50577452 B   ---   --   ---xx   flac  0.7123  bd1989-06-19d2t04.flac
+     6:11.69       65606732 B   ---   --   ---xx   flac  0.7177  bd1989-06-19d2t05.flac
+     5:53.25       62328044 B   ---   --   ---xx   flac  0.6741  bd1989-06-19d2t06.flac
+     5:00.59       53058812 B   ---   --   ---xx   flac  0.6752  bd1989-06-19d2t07.flac
+     4:01.11       42538316 B   ---   --   ---xx   flac  0.6988  bd1989-06-19d2t08.flac
+    83:46.16      886624736 B                            0.6963  (16 files)
+=================== 
+=================== 
+=================== 

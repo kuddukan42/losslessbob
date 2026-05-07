@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-19-where-the-corn-grows-tall.flacf 
+=================== 
+=================== 
+=================== 
+7f23b18f0d8adf0a9287d8934f907545  bd81-10-19-where-the-corn-grows-tall-LB-3029.txt
+55b90b87f9ee75966166a4f88e5bb92a  bd81-10-19.flacf.md5
+fe62ae71007f334f55ca29d3c70122f8  bd81-10-19d1t01.flac
+2139ec5b34cceecf64f2d2732ca58efb  bd81-10-19d1t02.flac
+a3256adb146478c7fde8ba35bc1e6450  bd81-10-19d1t03.flac
+839eee603b35728270c98e40ca1c61b3  bd81-10-19d1t04.flac
+3215abed4bc5d9e5c4f1cd44281e45c3  bd81-10-19d1t05.flac
+a9302bb207d105356757b58d215eb5cf  bd81-10-19d1t06.flac
+4f5b49d88491e6f211e27c821c87cd42  bd81-10-19d1t07.flac
+86f50c6da9ccac560568745da5754297  bd81-10-19d1t08.flac
+961e9bf449d38f51a06e5d4e2372e730  bd81-10-19d1t09.flac
+ed01e0fd81bc2f146a2d2aa5b031d49b  bd81-10-19d1t10.flac
+dba4d8478dc3b2b5db5e77b7bb795d4f  bd81-10-19d1t11.flac
+9652991ddd84de65a7900332258a0f64  bd81-10-19d1t12.flac
+11bb0bf59165d6d358a888a053c31649  bd81-10-19d1t13.flac
+efa2d79b2459c2fa2e01b039d8fd9f93  bd81-10-19d1t14.flac
+93d4135c377bc4aa9a7817f1f9b15d43  bd81-10-19d1t15.flac
+caff514af91820a65fa76a64e7401b2a  bd81-10-19d1t16.flac
+4b55ab44e4fc34817c32ac0aa8d9e31f  bd81-10-19d2t01.flac
+cf2547918231d367783510690f56f847  bd81-10-19d2t02.flac
+295dc79c44822069ae7c801364e39437  bd81-10-19d2t03.flac
+229a3d36945f9c79d12cefd4fa55586a  bd81-10-19d2t04.flac
+cd59db464af53f7a5abff72b16782eb5  bd81-10-19d2t05.flac
+3cc1a5d954d886632571ff25b7b38150  bd81-10-19d2t06.flac
+19064a668dc5e7ff06b6c0c8264c4746  bd81-10-19d2t07.flac
+8e062a6a5b7aba02f146e84033fdfc9e  bd81-10-19d2t08.flac
+c7cff96bc4200dae57122219750635e8  bd81-10-19d2t09.flac
+044286383722e365335c73954f280d1a  bd81-10-19d2t10.flac
+9b8daea33a287043488dce4ff2c2f2e9  wherethecorngrowstall_ba.jpg
+6a4e84b502376bc48aa03b8fd2fd9858  wherethecorngrowstall_fr.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-19-where-the-corn-grows-tall.flacf 
+=================== 
+=================== 
+=================== 
+bd81-10-19d1t01.flac:e57d98784614d32345543526df2c36b1
+bd81-10-19d1t02.flac:f03f303af018358d845bea5863013986
+bd81-10-19d1t03.flac:04a5a32cfff3c5e79b9cbf67b13dd335
+bd81-10-19d1t04.flac:c92cd97d077133e9a3300ef35589b039
+bd81-10-19d1t05.flac:b93467874f25d5d0122c397009c7635d
+bd81-10-19d1t06.flac:7b408670c7d6aa039b1b93c519826507
+bd81-10-19d1t07.flac:834aa8550c24e6de630eb5e8ad2eaf08
+bd81-10-19d1t08.flac:378390e670c7280c98805beb74e82c1f
+bd81-10-19d1t09.flac:e791cf677377e4ba793cdb0daeae869b
+bd81-10-19d1t10.flac:1ddc83f5b11784f1a583d912fc5eaf72
+bd81-10-19d1t11.flac:b01bb56689c46c032b13b3035bc30738
+bd81-10-19d1t12.flac:a13c46ae1cbcdea5b4fe2eae66f494e7
+bd81-10-19d1t13.flac:97163b77847a36845f467051572aef30
+bd81-10-19d1t14.flac:321e7a0995b0716d48483389e0a05a38
+bd81-10-19d1t15.flac:ededa9aa24e22b91c65f75a196c93599
+bd81-10-19d1t16.flac:a770eddb9592a3c41530381d8396f753
+bd81-10-19d2t01.flac:e2aa2168b2413e9d38b1a55d39172570
+bd81-10-19d2t02.flac:6827e8fec673a677f8f5dac811d61a4e
+bd81-10-19d2t03.flac:2715d634b03c67f7ba8c01d8ffb5d026
+bd81-10-19d2t04.flac:0acfe1e82de397a19747ef59381d450b
+bd81-10-19d2t05.flac:345039595a7f989a6e8d533840e39a09
+bd81-10-19d2t06.flac:cd1d1c789163ae8d1e6d0103ab4272c2
+bd81-10-19d2t07.flac:97674b9a08dfb86b5e6343b7ed4383db
+bd81-10-19d2t08.flac:d974baddae91c6532a028f575282cb89
+bd81-10-19d2t09.flac:0674ae5018f52c1dc7a3879535ceeb37
+bd81-10-19d2t10.flac:389fb76390adb05892f4183689e9dbbe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-19-where-the-corn-grows-tall.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:03.43       32382380 B   ---   --   ---xx   flac  0.7046  bd81-10-19d1t01.flac
+     4:26.25       46981244 B   ---   --   ---xx   flac  0.6737  bd81-10-19d1t02.flac
+     6:16.27       66389948 B   ---   --   ---xx   flac  0.6988  bd81-10-19d1t03.flac
+     3:51.52       40870748 B   ---   --   ---xx   flac  0.6761  bd81-10-19d1t04.flac
+     5:40.19       60020732 B   ---   --   ---xx   flac  0.6469  bd81-10-19d1t05.flac
+     4:04.13       43072220 B   ---   --   ---xx   flac  0.6922  bd81-10-19d1t06.flac
+     4:16.50       45276044 B   ---   --   ---xx   flac  0.6384  bd81-10-19d1t07.flac
+     3:58.03       41990300 B   ---   --   ---xx   flac  0.6632  bd81-10-19d1t08.flac
+     3:18.30       34997804 B   ---   --   ---xx   flac  0.6427  bd81-10-19d1t09.flac
+     3:11.26       33753596 B   ---   --   ---xx   flac  0.6987  bd81-10-19d1t10.flac
+     4:01.09       42533612 B   ---   --   ---xx   flac  0.6660  bd81-10-19d1t11.flac
+     3:02.23       32158940 B   ---   --   ---xx   flac  0.6667  bd81-10-19d1t12.flac
+     6:24.39       67829372 B   ---   --   ---xx   flac  0.6880  bd81-10-19d1t13.flac
+     7:41.06       81334556 B   ---   --   ---xx   flac  0.7018  bd81-10-19d1t14.flac
+     4:27.43       47199980 B   ---   --   ---xx   flac  0.6689  bd81-10-19d1t15.flac
+     5:14.67       55547228 B   ---   --   ---xx   flac  0.6924  bd81-10-19d1t16.flac
+     6:14.45       66079484 B   ---   --   ---xx   flac  0.6685  bd81-10-19d2t01.flac
+     0:43.68        7745180 B   ---   --   ---xx   flac  0.6959  bd81-10-19d2t02.flac
+     8:38.30       91445804 B   ---   --   ---xx   flac  0.6804  bd81-10-19d2t03.flac
+     4:23.66       46548476 B   ---   --   ---xx   flac  0.6648  bd81-10-19d2t04.flac
+     4:26.07       46938908 B   ---   --   ---xx   flac  0.6611  bd81-10-19d2t05.flac
+     3:28.43       36792380 B   ---   --   ---xx   flac  0.7032  bd81-10-19d2t06.flac
+     7:01.37       74351468 B   ---   --   ---xx   flac  0.6690  bd81-10-19d2t07.flac
+     4:54.54       51988652 B   ---   --   ---xx   flac  0.6553  bd81-10-19d2t08.flac
+     5:45.33       60935660 B   ---   --   ---xx   flac  0.6349  bd81-10-19d2t09.flac
+     6:14.74       66147692 B   ---   --   ---xx   flac  0.6530  bd81-10-19d2t10.flac
+   124:50.32     1321312408 B                            0.6727  (26 files)
+=================== 
+=================== 
+=================== 

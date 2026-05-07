@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-10-12-unk-gen 
+=================== 
+=================== 
+=================== 
+c3e2ae33656d9fb00804457441b347e4  bd90-10-12.txt
+521bc8e8e361e66602485e40bdcc4c9f  noname.md5
+557f01c8e9703aeafb45a175eedf9211  Track01.shn
+73747ae1faf7905978ca97ff5c9690ae  Track02.shn
+6b9c7080aeeb9f58fa8964bb3be4f8d6  Track03.shn
+1efd6d187c567906f3d67a38d97445bb  Track04.shn
+59a7f06abd60c809f0d8f8848bc68ebb  Track05.shn
+5ecabe05728cc430388c2d9dfe57bc31  Track06.shn
+9b6c57700e257a31c98ab82e3239acc0  Track07.shn
+ac91a01f52f01ab70ccf7bd5e5762df7  Track08.shn
+b83031a4271331510d05815990d0c862  Track09.shn
+efd908bb15a47f285ea24c313842fd4f  Track10.shn
+ad02b2ec4545e349916293081b452d3c  Track11.shn
+d43ba2d07bee9aaf8f65775fd473f2ec  Track12.shn
+739b89abc9fb7c38d4daefb97dc1fbb5  Track13.shn
+ee36ce9655358e66df9638b220c25e65  Track14.shn
+102c1d7784c5e4eff12e4cf30ceae077  Track15.shn
+254848a26142a60948c4615043a4ceb6  Track16.shn
+f21b958192cbe5a2c00059c17d4f7338  Track17.shn
+03d010ec1f91f31c1580039d2fbd54b0  Track18.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-10-12-unk-gen 
+=================== 
+=================== 
+=================== 
+74cc3dc8d569705f15843074f8fcc96c  [shntool]  Track01.wav
+d828df90d705cd625adb95143bca6577  [shntool]  Track02.wav
+97c3e49f32de341777f02a64f42ba00a  [shntool]  Track03.wav
+0d477c028d93653a7fa5bcfa872a0287  [shntool]  Track04.wav
+2dd65a830c8f6b9a893b2913c8e40549  [shntool]  Track05.wav
+39da0cb0b5030727890d28d3a36b64f2  [shntool]  Track06.wav
+d61f57b019fcbd59385aad3c44ee6a80  [shntool]  Track07.wav
+32d9a8b5d66d69de33d41bd41a45f43c  [shntool]  Track08.wav
+708e44fac420a1331e00215704488d49  [shntool]  Track09.wav
+8c4aa59a562429592875735f4537d262  [shntool]  Track10.wav
+602a83f6388ff8ce12b0126a72ab5f3b  [shntool]  Track11.wav
+093a6d034c0647bbcf043c14692b66e0  [shntool]  Track12.wav
+98f4a11d8c232c9736e8d0764a16d82d  [shntool]  Track13.wav
+f0be463de97685cc2362a587eb4cac73  [shntool]  Track14.wav
+0d86ea3d29edc0cace082e43a76c511c  [shntool]  Track15.wav
+acc9f8eaad344f496ab8bfa9f86e0984  [shntool]  Track16.wav
+81ecbef16dca016546f9c41a5591a29c  [shntool]  Track17.wav
+24ac56e1e4d51bd432dba9c60f4dccae  [shntool]  Track18.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-10-12-unk-gen 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:45.60        8079164 B   ---   --   ---xx    shn  0.5859  Track01.shn
+     3:28.39       36782972 B   ---   --   ---xx    shn  0.6118  Track02.shn
+     4:42.14       49777772 B   ---   --   ---xx    shn  0.6087  Track03.shn
+     3:15.04       34407452 B   ---   --   ---xx    shn  0.6569  Track04.shn
+     4:31.32       47879708 B   ---   --   ---xx    shn  0.6631  Track05.shn
+     4:01.55       42641804 B   ---   --   ---xx    shn  0.6611  Track06.shn
+     5:54.32       62520908 B   ---   --   ---xx    shn  0.6109  Track07.shn
+     3:59.51       42279596 B   ---   --   ---xx    shn  0.5994  Track08.shn
+     6:02.74       64030892 B   ---   --   ---xx    shn  0.5987  Track09.shn
+     5:15.49       55681292 B   ---   --   ---xx    shn  0.5817  Track10.shn
+     3:41.28       39050300 B   ---   --   ---xx    shn  0.6324  Track11.shn
+     2:24.63       25549820 B   ---   --   ---xx    shn  0.6402  Track12.shn
+     3:09.61       33483116 B   ---   --   ---xx    shn  0.6113  Track13.shn
+     3:05.47       32744588 B   ---   --   ---xx    shn  0.5896  Track14.shn
+     4:41.34       49648412 B   ---   --   ---xx    shn  0.6178  Track15.shn
+     6:05.61       64529516 B   ---   --   ---xx    shn  0.6299  Track16.shn
+     5:15.16       55603676 B   ---   --   ---xx    shn  0.5882  Track17.shn
+     5:10.08       54702860 B   ---   --   ---xx    shn  0.6316  Track18.shn
+    75:31.53      799393848 B                            0.6176  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,60 @@
+Bob Dylan
+Estadio La Fuensanta
+Cuenca, Spain
+July 1, 2008
+
+Disc 1:
+01. introduction
+02. Maggie's Farm
+03. If You See Her, Say Hello
+04. Rollin' And Tumblin'
+05. Tangled Up In Blue
+06. The Levee's Gonna Break
+07. Just Like A Woman
+08. John Brown
+09. Honest With Me
+10. When The Deal Goes Down
+11. It's Alright, Ma (I'm Only Bleeding)
+12. Beyond The Horizon
+
+Disc 2:
+01. Highway 61 Revisited
+02. Nettie Moore
+03. Summer Days
+04. Masters Of War
+(encore)
+05. Thunder On The Mountain
+06. band introduction
+07. Blowin' In The Wind
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - lead guitar
+Donnie Herron - violin, viola, banjo, mandolin, steel guitar
+Stu Kimball - rhythm guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann km140's > lunatec v3 > m-audio mt1 (24/48)
+
+ffp
+bd2008-07-01d1t01.flac:b56ff33e46c3f7ef7aa1cc19fb0be933
+bd2008-07-01d1t02.flac:11078ef32f9bcb27c3ec8a08b5e4f5a1
+bd2008-07-01d1t03.flac:ae0eabeea4663c39ad6431b87f3f6695
+bd2008-07-01d1t04.flac:3ed85e50461f231a486efe415587d3de
+bd2008-07-01d1t05.flac:ac1882d9492a0ef01fb758f8060fdfac
+bd2008-07-01d1t06.flac:1cc1e9b6d54913c2512d7ba242796bdd
+bd2008-07-01d1t07.flac:829785795ebc67081d125bca8d5d25bd
+bd2008-07-01d1t08.flac:d326bf3638816cb14d1402b3d49a7147
+bd2008-07-01d1t09.flac:72d7a4df37da0bbaf0e475ad6621e753
+bd2008-07-01d1t10.flac:ee296758ebbf1763e39a69025695c584
+bd2008-07-01d1t11.flac:c81ae00b38d5dc4a717da821edba3692
+bd2008-07-01d1t12.flac:f12d5207cb0ab805c8d0f1768b637608
+bd2008-07-01d2t01.flac:b9c6115bd9737c639a7001764fb491be
+bd2008-07-01d2t02.flac:fdfb4ab3aff8b844ed37604d2d32c31a
+bd2008-07-01d2t03.flac:c627b21fbe129ceea91aac8035b0f7e3
+bd2008-07-01d2t04.flac:5d76e24262767cde4adb281b020d81db
+bd2008-07-01d2t05.flac:eb29187a816c4f2beac6986d005cc926
+bd2008-07-01d2t06.flac:d6ffabda88b64dee7c37886bb9ae71ab
+bd2008-07-01d2t07.flac:b589fbeb27e400e0abd2b0e06b6a6dab

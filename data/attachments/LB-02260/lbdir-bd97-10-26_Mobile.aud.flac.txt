@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-10-26_Mobile.aud.flac 
+=================== 
+=================== 
+=================== 
+378f16c4acd9079465a1e912ed1c4faf  bd1997-10-26_d1t01.flac
+ec7e3e1358926f4c1084e3727d91ca57  bd1997-10-26_d1t02.flac
+e28d02d50399254733965979f03c488c  bd1997-10-26_d1t03.flac
+87e908afc9d357cb078afc38f6306a27  bd1997-10-26_d1t04.flac
+26ba698056e4583bace48d136d504fb2  bd1997-10-26_d1t05.flac
+7e5bcf790ad6045af30491cf1d58ba71  bd1997-10-26_d1t06.flac
+ac4c747772c0d8eb8b99a538100cfc54  bd1997-10-26_d1t07.flac
+8055946f5acb9ff456ab17264e8878cf  bd1997-10-26_d1t08.flac
+b0d71693701496f3941c1046483bdd20  bd1997-10-26_d1t09.flac
+6b2b762466dbc6169d592942eb525ea5  bd1997-10-26_d1t10.flac
+f79af535e5f360d8986f62a5d6fcd5c2  bd1997-10-26_d1t11.flac
+14b72bc6073cbb6e5563cb491e4078bf  bd1997-10-26_d2t01.flac
+eef20ca8c066250337c6c2dd4bd225ba  bd1997-10-26_d2t02.flac
+b43eb6ac5271ead36e241b43f3f94388  bd1997-10-26_d2t03.flac
+d4617bb2bc616120ef7a3bc20cf10194  bd1997-10-26_d2t04.flac
+6e3e7f977a242852b3deb009fa99867e  bd1997-10-26_d2t05.flac
+77a76c33e24c7953913811f246ba010c  bd1997-10-26_flacfingerprint.txt
+2c0e749cfda44c3205929487e73d9b8c  bd1997-10-26_Mobile, AL.txt
+4ce9238f8cb346599f76314dbb78b745  bd1997-10-26_Mobile.aud.flac.md5
+f373bba9134244ace9c3168e32d17adc  bd97-10-26.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-26_Mobile.aud.flac 
+=================== 
+=================== 
+=================== 
+bd1997-10-26_d1t01.flac:9d5cb42df3fe7542fe0d75ddf032cd34
+bd1997-10-26_d1t02.flac:d45e640537eb5f89f98fb94037451610
+bd1997-10-26_d1t03.flac:2f93dbbb20c10c9f748e2afc15f6f41f
+bd1997-10-26_d1t04.flac:28c1be3be7c72044f522cb99f0d94b86
+bd1997-10-26_d1t05.flac:efb9019f955e0967d07eec98927546ad
+bd1997-10-26_d1t06.flac:9d426bca98515b80de833fa0285cfb10
+bd1997-10-26_d1t07.flac:41dc77b69d2a94376bc1535738333910
+bd1997-10-26_d1t08.flac:fceb7de0ade2c11014a09990a7fdac2d
+bd1997-10-26_d1t09.flac:f891c0efad0394c1ff5622cafe335166
+bd1997-10-26_d1t10.flac:6245e4d44f6ed2bace2a10db8c7486a9
+bd1997-10-26_d1t11.flac:1c97ec9279d3f8c5b944294e19eb9e36
+bd1997-10-26_d2t01.flac:158a8e726362ebdfa9d9aa162ddd769f
+bd1997-10-26_d2t02.flac:1a0151498a645308b902edfb39ce0d4c
+bd1997-10-26_d2t03.flac:7f5f9b0f31287f8b877d471f593c981d
+bd1997-10-26_d2t04.flac:efaced4b21d513221d017f13aa5a642f
+bd1997-10-26_d2t05.flac:7483d5947eda28fac438097ffccb0771
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-10-26_Mobile.aud.flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.08       54350060 B   ---   --   ---xx   flac  0.6149  bd1997-10-26_d1t01.flac
+     5:34.53       59042300 B   ---   --   ---xx   flac  0.5870  bd1997-10-26_d1t02.flac
+     6:38.19       70251932 B   ---   --   ---xx   flac  0.6140  bd1997-10-26_d1t03.flac
+     5:32.38       58654220 B   ---   --   ---xx   flac  0.6015  bd1997-10-26_d1t04.flac
+     6:29.05       68631404 B   ---   --   ---xx   flac  0.5967  bd1997-10-26_d1t05.flac
+     7:39.03       80974700 B   ---   --   ---xx   flac  0.6415  bd1997-10-26_d1t06.flac
+     3:54.68       41437580 B   ---   --   ---xx   flac  0.5472  bd1997-10-26_d1t07.flac
+     7:39.15       81002924 B   ---   --   ---xx   flac  0.6168  bd1997-10-26_d1t08.flac
+     6:42.43       71013980 B   ---   --   ---xx   flac  0.5758  bd1997-10-26_d1t09.flac
+     5:59.43       63428780 B   ---   --   ---xx   flac  0.6174  bd1997-10-26_d1t10.flac
+     6:21.59       67347212 B   ---   --   ---xx   flac  0.6181  bd1997-10-26_d1t11.flac
+     9:53.67      104762828 B   ---   --   ---xx   flac  0.6113  bd1997-10-26_d2t01.flac
+    10:00.01      105842396 B   ---   --   ---xx   flac  0.6017  bd1997-10-26_d2t02.flac
+     5:13.34       55293212 B   ---   --   ---xx   flac  0.5514  bd1997-10-26_d2t03.flac
+     5:27.50       57800444 B   ---   --   ---xx   flac  0.5610  bd1997-10-26_d2t04.flac
+     5:55.20       62669084 B   ---   --   ---xx   flac  0.6474  bd1997-10-26_d2t05.flac
+   104:10.01     1102503056 B                            0.6031  (16 files)
+=================== 
+=================== 
+=================== 

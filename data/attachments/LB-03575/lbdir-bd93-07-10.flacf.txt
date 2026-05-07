@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-10.flacf 
+=================== 
+=================== 
+=================== 
+f96112b7fa0e7ad2006623bc4866b370  bd93-07-10-LB-3575.txt
+72f5d43c5bcf4f42dcde0f77706907cd  Bob Dylan Oporto 10 july 1993.txt
+f7cbd3e84b20e8eb5df409ac41661529  fingerprint.ffp.txt
+104e15cbdf0226aafb3e03b88a631dee  Oporto 10 july 1993\D1T01.flac
+9450762fad68a71cef246a64f696ef24  Oporto 10 july 1993\D1T02.flac
+7ff628e9377a93ac258b91c07190e2de  Oporto 10 july 1993\D1T03.flac
+e5b873bad14023a7b82da0f53f1bc676  Oporto 10 july 1993\D1T04.flac
+bd68813aa4aafb2d0dd079d1c69888f8  Oporto 10 july 1993\D1T05.flac
+f6064f44e83c9e4574f64b4c97616b48  Oporto 10 july 1993\D1T06.flac
+730f1f0cbf5578330c820490cf878d1e  Oporto 10 july 1993\D1T07.flac
+3737543f2b12cba4a22f071f87a02197  Oporto 10 july 1993\D1T08.flac
+3620da86da45688d8aa6890548cc86b9  Oporto 10 july 1993\D1T09.flac
+f28d71fce47df6e3f5fbc57689415588  Oporto 10 july 1993\D2T01.flac
+ebb363d24f386943412e40fb1168a287  Oporto 10 july 1993\D2T02.flac
+cab5776b7ca34a514192e7e47a5c13d9  Oporto 10 july 1993\D2T03.flac
+f33f2e9ddc3b8352d2051a5d16b2456e  Oporto 10 july 1993\D2T04.flac
+11e4dc9c9f13c473ecee05e90f9948da  Oporto 10 july 1993\D2T05.flac
+dd97b05e465788137bcfec01101ac3fb  Oporto 10 july 1993\D2T06.flac
+a88f243e9d828ec5fb0011a3c3339279  Oporto 10 july 1993\D2T07.flac
+3182b0ddec45a5d71a7e7e0874d401df  Oporto_100793.Jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-10.flacf\Oporto 10 july 1993 
+=================== 
+=================== 
+=================== 
+D1T01.flac:c71e6981349d35372e450a2617090639
+D1T02.flac:d834a0b65e86957038a4f11cccda1cea
+D1T03.flac:59dd0685b5b30393edc61ada5cd48b47
+D1T04.flac:61e7bcf8260c52b7b845e867b4026d71
+D1T05.flac:d96bc7540349c28dde7f81f8767704c7
+D1T06.flac:6a08f2f86a1da88fa607c31652d30a6a
+D1T07.flac:6ce2d14085c16cacd5bcfd193d285578
+D1T08.flac:dfee0f0e5ac4f253732d143050a1d288
+D1T09.flac:c632934f56eb771fa892b7c3191e81dc
+D2T01.flac:7f9ef2a03109274d14ac9b3588a7e4a6
+D2T02.flac:08ea089f2922b6cb3f788ef44a73e5f0
+D2T03.flac:7098b409df0739170d66f767a0b29df5
+D2T04.flac:fc79317d897c0b6229ab14364e2f151e
+D2T05.flac:069afa1dd367aa0dee559cdadc9a6b8c
+D2T06.flac:c0eb0a2ec262d65cba79e62f45b565b8
+D2T07.flac:32d9b0cdc399121efae8551fb7bedb72
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-10.flacf\Oporto 10 july 1993 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:21.33       56702060 B   ---   --   ---xx   flac  0.4880  D1T01.flac
+     9:22.14       99169772 B   ---   --   ---xx   flac  0.6297  D1T02.flac
+     7:04.36       74878316 B   ---   --   ---xx   flac  0.6442  D1T03.flac
+     8:53.56       94152956 B   ---   --   ---xx   flac  0.6218  D1T04.flac
+    11:52.33      125674460 B   ---   --   ---xx   flac  0.6353  D1T05.flac
+     8:23.31       88802156 B   ---   --   ---xx   flac  0.5964  D1T06.flac
+     6:01.14       63713372 B   ---   --   ---xx   flac  0.5770  D1T07.flac
+     6:30.02       68800748 B   ---   --   ---xx   flac  0.5091  D1T08.flac
+     7:15.46       76842236 B   ---   --   ---xx   flac  0.5224  D1T09.flac
+    11:25.35      120916364 B   ---   --   ---xx   flac  0.5241  D2T01.flac
+    12:56.63      137034620 B   ---   --   ---xx   flac  0.5116  D2T02.flac
+     8:12.33       86866460 B   ---   --   ---xx   flac  0.6622  D2T03.flac
+     9:24.65       99642524 B   ---   --   ---xx   flac  0.6556  D2T04.flac
+     6:49.62       72293468 B   ---   --   ---xx   flac  0.6736  D2T05.flac
+     8:40.52       91850348 B   ---   --   ---xx   flac  0.5748  D2T06.flac
+    11:23.72      120650588 B   ---   --   ---xx   flac  0.5238  D2T07.flac
+   139:38.47     1477990448 B                            0.5837  (16 files)
+=================== 
+=================== 
+=================== 

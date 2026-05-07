@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-08-LTB.flacf 
+=================== 
+=================== 
+=================== 
+a4bd6a2b0646dd043e4365ed1d186440  bd-1993-02-08-hammersmith-LTB-d1 (Track 01).flac
+e7d78bab922d414c6ab3a2681331d2b1  bd-1993-02-08-hammersmith-LTB-d1 (Track 02).flac
+6ac75fccfa914d36fcb104a5ab7f2c18  bd-1993-02-08-hammersmith-LTB-d1 (Track 03).flac
+b014b078c04d5b59fef26e1545973b8f  bd-1993-02-08-hammersmith-LTB-d1 (Track 04).flac
+01cfe46bc15c23e495648ad9a6b07969  bd-1993-02-08-hammersmith-LTB-d1 (Track 05).flac
+311ddeb346004ec6ce838ab9192a81f2  bd-1993-02-08-hammersmith-LTB-d1 (Track 06).flac
+e7c20c4dce3d5df411be8ce15f023353  bd-1993-02-08-hammersmith-LTB-d1 (Track 07).flac
+36ef62b3f046d8023da7085480078c67  bd-1993-02-08-hammersmith-LTB-d1 (Track 08).flac
+6e5a9e0ffd55ee2fed0362a90acd624c  bd-1993-02-08-hammersmith-LTB-d1 (Track 09).flac
+dc6ed1d7f1f3ad0f7fa8cfdfbf4f95d5  bd-1993-02-08-hammersmith-LTB-d1 (Track 10).flac
+2bfb946dc09145a2c5d81dcebb1a46c3  bd-1993-02-08-hammersmith-LTB-d2 (Track 01).flac
+8453eb1d6a9638db62f8af45e8fa896c  bd-1993-02-08-hammersmith-LTB-d2 (Track 02).flac
+9cf25b71b7d44b74dba1292e67c42039  bd-1993-02-08-hammersmith-LTB-d2 (Track 03).flac
+b8a1be5259b41b7b064d4dda3c1c3d6c  bd-1993-02-08-hammersmith-LTB-d2 (Track 04).flac
+1bd328b4d9b3a4842cad0b9229f88373  bd-1993-02-08-hammersmith-LTB-d2 (Track 05).flac
+aa9c293c5867725f0255b5ae048d1dad  bd-1993-02-08-hammersmith-LTB-d2 (Track 06).flac
+5c0069c0ec8ba39a4e61cc86e5c27cd6  bd-1993-02-08-hammersmith-LTB-d2 (Track 07).flac
+323c022346643f01c691f4eeeb370a5f  bd-1993-02-08-hammersmith-LTB-d2 (Track 08).flac
+ceedb93c4f86b2a771752e2f5bd3351a  bd-1993-02-08-hammersmith-LTB-d2 (Track 09).flac
+e5ae81d2924cbbd3cfd4f68bc833f378  bd-1993-02-08-LTB.txt
+1b0c5f4f93d6b395034ce492993929ad  bd93-02-08-LTB.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-08-LTB.flacf 
+=================== 
+=================== 
+=================== 
+bd-1993-02-08-hammersmith-LTB-d1 (Track 01).flac:c2f76984c927a68d8dab1c98ed7bb881
+bd-1993-02-08-hammersmith-LTB-d1 (Track 02).flac:4ab238333a45e8c6e28c84eef7251e48
+bd-1993-02-08-hammersmith-LTB-d1 (Track 03).flac:7a86081ea9aa3834f7b319d46b1f8810
+bd-1993-02-08-hammersmith-LTB-d1 (Track 04).flac:bc05e32183c7c413690d5b95a0247bb1
+bd-1993-02-08-hammersmith-LTB-d1 (Track 05).flac:52cc7c3719e52428223c2e124ba2c401
+bd-1993-02-08-hammersmith-LTB-d1 (Track 06).flac:661447f56eb6b1f79242f273a957e3b2
+bd-1993-02-08-hammersmith-LTB-d1 (Track 07).flac:5bf38b8dd3bd344cc2ddf840fb50a1e3
+bd-1993-02-08-hammersmith-LTB-d1 (Track 08).flac:7863dad5e63384c4543af7bd11b76e70
+bd-1993-02-08-hammersmith-LTB-d1 (Track 09).flac:b66336272db2fbc0fc9ff19fb5ac22fd
+bd-1993-02-08-hammersmith-LTB-d1 (Track 10).flac:fdc7d8e943b21cfc3c238e81baa0556b
+bd-1993-02-08-hammersmith-LTB-d2 (Track 01).flac:47832a4d1b962a42d31067a6a1921012
+bd-1993-02-08-hammersmith-LTB-d2 (Track 02).flac:442ea61d2b3216415bd54eb01f2e2af4
+bd-1993-02-08-hammersmith-LTB-d2 (Track 03).flac:88f56ebd744ed7b340d1aa4aac321fe1
+bd-1993-02-08-hammersmith-LTB-d2 (Track 04).flac:f90807e6c4cc24c666af244a2f8a3cb3
+bd-1993-02-08-hammersmith-LTB-d2 (Track 05).flac:8e6c8972c04b2dc9ca25cf11d1084e42
+bd-1993-02-08-hammersmith-LTB-d2 (Track 06).flac:258a9a29dae62eef4ff61e1d7d1fa3da
+bd-1993-02-08-hammersmith-LTB-d2 (Track 07).flac:ff10c8c89cd5d2117118bee9792a9ed8
+bd-1993-02-08-hammersmith-LTB-d2 (Track 08).flac:cee53df82d4f140960edb468e6ce3032
+bd-1993-02-08-hammersmith-LTB-d2 (Track 09).flac:6f6f9188b80f114956fb505a2173ea71
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-08-LTB.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:07.25       64798628 B   -b-   --   ---xx   flac  0.7180  bd-1993-02-08-hammersmith-LTB-d1 (Track 01).flac
+     7:26.00       78674444 B   ---   --   ---xx   flac  0.6771  bd-1993-02-08-hammersmith-LTB-d1 (Track 02).flac
+     5:57.19       63019532 B   ---   --   ---xx   flac  0.6472  bd-1993-02-08-hammersmith-LTB-d1 (Track 03).flac
+    11:56.51      126422396 B   ---   --   ---xx   flac  0.6671  bd-1993-02-08-hammersmith-LTB-d1 (Track 04).flac
+     5:50.28       61805900 B   ---   --   ---xx   flac  0.6404  bd-1993-02-08-hammersmith-LTB-d1 (Track 05).flac
+     7:21.70       77957084 B   ---   --   ---xx   flac  0.6967  bd-1993-02-08-hammersmith-LTB-d1 (Track 06).flac
+     5:28.65       58012124 B   ---   --   ---xx   flac  0.6289  bd-1993-02-08-hammersmith-LTB-d1 (Track 07).flac
+     4:47.23       50680940 B   ---   --   ---xx   flac  0.5609  bd-1993-02-08-hammersmith-LTB-d1 (Track 08).flac
+     6:05.71       64553036 B   ---   --   ---xx   flac  0.5437  bd-1993-02-08-hammersmith-LTB-d1 (Track 09).flac
+     8:24.36       88990920 B   -b-   --   ---xx   flac  0.5881  bd-1993-02-08-hammersmith-LTB-d1 (Track 10).flac
+     6:52.46       72785668 B   -b-   --   ---xx   flac  0.6352  bd-1993-02-08-hammersmith-LTB-d2 (Track 01).flac
+     5:38.12       59650468 B   -b-   --   ---xx   flac  0.7356  bd-1993-02-08-hammersmith-LTB-d2 (Track 02).flac
+     9:00.40       95350124 B   ---   --   ---xx   flac  0.7044  bd-1993-02-08-hammersmith-LTB-d2 (Track 03).flac
+     8:44.57       92567708 B   ---   --   ---xx   flac  0.6329  bd-1993-02-08-hammersmith-LTB-d2 (Track 04).flac
+     9:18.01       98433596 B   ---   --   ---xx   flac  0.7452  bd-1993-02-08-hammersmith-LTB-d2 (Track 05).flac
+     8:16.03       87501500 B   ---   --   ---xx   flac  0.6877  bd-1993-02-08-hammersmith-LTB-d2 (Track 06).flac
+     6:46.16       71656076 B   ---   --   ---xx   flac  0.7048  bd-1993-02-08-hammersmith-LTB-d2 (Track 07).flac
+     7:41.27       81382956 B   -b-   --   ---xx   flac  0.5957  bd-1993-02-08-hammersmith-LTB-d2 (Track 08).flac
+     6:40.38       70648540 B   -b-   --   ---xx   flac  0.5400  bd-1993-02-08-hammersmith-LTB-d2 (Track 09).flac
+   138:24.28     1464891640 B                            0.6537  (19 files)
+=================== 
+=================== 
+=================== 

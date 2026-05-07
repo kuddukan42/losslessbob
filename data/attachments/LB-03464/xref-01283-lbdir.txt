@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd97-08-18-CaptainAcidRemaster-d.flacf
+===================
+===================
+===================
+3f6b920c1f166962424ce1474ec31992 *Bob Dylan - Wallingford 18-8-97 Back.jpg
+25d18cc59500548212f1d6c8edc71da4 *Bob Dylan - Wallingford 18-8-97 Front.jpg
+677efd910a172f61eeea3fca56a3c7f2 *Bob Dylan 1997.08.18 Wallingford [dat master](Different Source)_CaptainAcidRemaster.ffp
+3f83f149299ef8fdb861077682fe737d *Bob Dylan 1997.08.18 Wallingford [dat master](Different Source)_CaptainAcidRemaster.md5
+bcbae7db1d0dc301a24681059e621cd7 *Bob Dylan 1997.08.18 Wallingford [dat master](Different Source)_CaptainAcidRemaster.shntool_fix.txt
+677efd910a172f61eeea3fca56a3c7f2 *checksum.txt
+baec7c533a3c6c0f51857a60578c8535 *d1Track01-fixed.flac
+6f4b69b3bf54fe2b778ed164067932c1 *d1Track02-fixed.flac
+bc8e9735ea0886d6ac6abf54ad707c3e *d1Track03-fixed.flac
+122ee871254b7cbb69b532abb578932f *d1Track04-fixed.flac
+1de75b939c5fd500a385c48aa9148ecc *d1Track05-fixed.flac
+d140251e73b00b8ba1a849e7dedf3774 *d1Track06-fixed.flac
+135820f1469d9dfb5da314c9764ed8ba *d1Track07-fixed.flac
+db73d449cbb86f46cfb264634f37b1be *d1Track08-fixed.flac
+052b5bba5ab515e386ac9062b925a130 *d2Track01-fixed.flac
+860c09ae35e532a43ec529e0f7b80f03 *d2Track02-fixed.flac
+f139235d6ca21a723bb827df190bf60f *d2Track03-fixed.flac
+473942604112e83d831d80b0eaa52d4b *d2Track04-fixed.flac
+28f3d2e4921518a89b0902ca00601ca0 *d2Track05-fixed.flac
+a1f0fc009247446749782029c04d246f *d2Track06-fixed.flac
+5b9513e059cd6ab46f941898b455e9ea *folder.jpg
+9d8ce87f5b91a96a93185c8fcdb1754b *original info\bd97-08-18-datmaster.txt
+e148bc61962c30ca30e56161b03371f4 *original info\wave files.md5
+095fa0988f4418cb38aae7f2d3b46d39 *Wallingford remaster_different source.txt
+===================
+===================
+===================
+=== ffp for: bd97-08-18-CaptainAcidRemaster-d.flacf
+===================
+===================
+===================
+d1Track01-fixed.flac:0d2382219a9a57c5a29cacfd0a3b5add
+d1Track02-fixed.flac:ce4be83ed203edc1c442c165fe7245d6
+d1Track03-fixed.flac:37231be6526add90e156a8927172b75d
+d1Track04-fixed.flac:c5abb96a50a4b0d7f6a731a68fda5428
+d1Track05-fixed.flac:d4a04c90c25022e6dcd552d681c4788f
+d1Track06-fixed.flac:ef159eb651217e1cdd8179022025ce6e
+d1Track07-fixed.flac:47a9efc06b91b47fcee59cdcfa79a874
+d1Track08-fixed.flac:7ea55facc01ffc0f6b92f5e3b20898c5
+d2Track01-fixed.flac:5aced764c7570661fa485da7c924a323
+d2Track02-fixed.flac:9838e4465670266e6f8a87fce3473638
+d2Track03-fixed.flac:a194eff276909f7ccb30782af516ece5
+d2Track04-fixed.flac:4a69f2473832c45fe241ccfeab0edba3
+d2Track05-fixed.flac:35e5baf5dc4c82169110a0cd861569a4
+d2Track06-fixed.flac:1d8f6e3099deb10b5b7668edd4155db4
+===================
+===================
+===================
+=== shntool len for: bd97-08-18-CaptainAcidRemaster-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.69       51847532 B   ---   --   ---xx   flac  0.6137  d1Track01-fixed.flac
+     5:03.71       53616236 B   ---   --   ---xx   flac  0.5729  d1Track02-fixed.flac
+     5:48.27       61450748 B   ---   --   ---xx   flac  0.5771  d1Track03-fixed.flac
+     4:52.50       51626444 B   ---   --   ---xx   flac  0.5960  d1Track04-fixed.flac
+     6:29.67       68777228 B   ---   --   ---xx   flac  0.6062  d1Track05-fixed.flac
+     8:08.50       86200844 B   ---   --   ---xx   flac  0.5083  d1Track06-fixed.flac
+     9:05.20       96185084 B   ---   --   ---xx   flac  0.6124  d1Track07-fixed.flac
+     5:39.51       59919596 B   ---   --   ---xx   flac  0.4851  d1Track08-fixed.flac
+     5:34.40       59011724 B   ---   --   ---xx   flac  0.5380  d2Track01-fixed.flac
+     7:44.48       81962540 B   ---   --   ---xx   flac  0.5657  d2Track02-fixed.flac
+     8:40.36       91812716 B   ---   --   ---xx   flac  0.6009  d2Track03-fixed.flac
+     8:56.71       94717436 B   ---   --   ---xx   flac  0.5785  d2Track04-fixed.flac
+     5:35.69       59256332 B   ---   --   ---xx   flac  0.5327  d2Track05-fixed.flac
+     7:46.02       82207148 B   ---   --   ---xx   flac  0.5947  d2Track06-fixed.flac
+    94:20.71      998591608 B                            0.5716  (14 files)
+===================
+===================
+===================

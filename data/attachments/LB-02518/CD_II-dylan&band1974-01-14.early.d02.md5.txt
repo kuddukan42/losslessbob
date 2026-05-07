@@ -1,0 +1,13 @@
+05ec2e878c98c81c9f20a4a9c86da282 *dylan&band1974-01-14.early.d02t01.shn
+1a8c00ac5294a041aa4ce2755f1554fd *dylan&band1974-01-14.early.d02t02.shn
+f2e93919a9439cb995ba0f92ccfc2a94 *dylan&band1974-01-14.early.d02t03.shn
+251c9bf9f6836d525bf930aa899814aa *dylan&band1974-01-14.early.d02t04.shn
+a63dc36d4f0775a0a14fbf3e38e078e5 *dylan&band1974-01-14.early.d02t05.shn
+87e24dca998b01c9b43fdabffd255a5d *dylan&band1974-01-14.early.d02t06.shn
+1f788e3c7106b1a451e04c2862933b03 *dylan&band1974-01-14.early.d02t07.shn
+aecf8ad94a696d08d7f19f80cb461b9f *dylan&band1974-01-14.early.d02t08.shn
+fa31117a85e7ae78c72e85d0a7fd0ad0 *dylan&band1974-01-14.early.d02t09.shn
+256981443e285fd0d0ab1916922c3da8 *dylan&band1974-01-14.early.d02t10.shn
+3044d28fe7f8f06b802050acc8059236 *dylan&band1974-01-14.early.d02t11.shn
+e82623630a1bd35bc41edc9edd7ed468 *dylan&band1974-01-14.early.d02t12.shn
+83c56f0c7ee5681e41058b48fe3fa9ae *dylan&band1974-01-14.early.d02t13.shn

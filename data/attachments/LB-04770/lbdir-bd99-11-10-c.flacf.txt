@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-10-c.flacf 
+=================== 
+=================== 
+=================== 
+051c5c75ef2fd6719647ee278bd1f7f4  bd1999-11-10.md5
+eb1b841e50d98521493710b6b856258c  bd1999-11-10_d1t01.flac
+eba3250f6181ee85ef35b32b809018bc  bd1999-11-10_d1t02.flac
+9bee6aaa3ba198fe926b47821daa2165  bd1999-11-10_d1t03.flac
+c664e1c44d5c7e01e81c1cf4c27dd7fb  bd1999-11-10_d1t04.flac
+75a83eb6b17dcb94dded86378d315a47  bd1999-11-10_d1t05.flac
+eede89be8ba4181ce6c2fa17978cc685  bd1999-11-10_d1t06.flac
+a3eb1163bcc3b8cbc00eb04cf7411bdd  bd1999-11-10_d1t07.flac
+ab8011bc21e0116ae5181dbaabab718b  bd1999-11-10_d1t08.flac
+bdbd9050be1975461f535e59fe86a70a  bd1999-11-10_d1t09.flac
+f863ffff55c512ee813a83b305bb8cf1  bd1999-11-10_d1t10.flac
+4c68c57c606f8d3a2a8f93318b204aa2  bd1999-11-10_d1t11.flac
+93f030430f818ca42dbfc63970615219  bd1999-11-10_d2t01.flac
+331d98ea198bec2765b91444152f77d4  bd1999-11-10_d2t02.flac
+13ce827c244fdbdfb534edaeb1674a51  bd1999-11-10_d2t03.flac
+f8f0bc2ae18eb7840a445bc2a7bc4f63  bd1999-11-10_d2t04.flac
+37418b8bed0e48810d7203a5ff1e4b84  bd1999-11-10_ffp.txt
+7539e99d96dc51e3766de7bb2c94a254  bd1999-11-10_info.txt
+138b15cc24a6c4ed320bafc5cdad0603  bd99-11-10-c-LB-4770.txt
+466b239eca3b1585bb2d847eaedf59d5  lbdir-bd99-11-10-c.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-10-c.flacf 
+=================== 
+=================== 
+=================== 
+bd1999-11-10_d1t01.flac:c58ef1af59aaf81a9348f7f0bd857ce3
+bd1999-11-10_d1t02.flac:b117d34c8d0cd2949ec19d840e36126d
+bd1999-11-10_d1t03.flac:86d12bc2b5da8fbe7a6a52b71a8a3087
+bd1999-11-10_d1t04.flac:7932b2a19155598555157037cb295b1d
+bd1999-11-10_d1t05.flac:f3c2951d87b7cd61949f21f9b6986132
+bd1999-11-10_d1t06.flac:a273f9dad857c56df65496e094dc30b7
+bd1999-11-10_d1t07.flac:fd48c12935d578b69f2865936949db9f
+bd1999-11-10_d1t08.flac:95421567c45fb6e53937f1a6568dd2f4
+bd1999-11-10_d1t09.flac:4077f6fb03d97871e3a78171109d0011
+bd1999-11-10_d1t10.flac:7e1843fcace97108cbc7a018e3fb0b21
+bd1999-11-10_d1t11.flac:b4151cdbca06a8e618caed6eff8f9b10
+bd1999-11-10_d2t01.flac:29b668f23543a4126eb4ce0d2df57fab
+bd1999-11-10_d2t02.flac:0bb3d4d4cb08a4b79f7d9f57c5c4d3aa
+bd1999-11-10_d2t03.flac:23ad0afe9c31a7902c272339360af195
+bd1999-11-10_d2t04.flac:24e917a46838db73354d45516f31e07e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-10-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.49       30279692 B   ---   --   ---xx   flac  0.6402  bd1999-11-10_d1t01.flac
+     7:07.54       75449852 B   ---   --   ---xx   flac  0.5785  bd1999-11-10_d1t02.flac
+     6:36.25       69913244 B   ---   --   ---xx   flac  0.5557  bd1999-11-10_d1t03.flac
+     9:47.68      103706780 B   ---   --   ---xx   flac  0.5920  bd1999-11-10_d1t04.flac
+     5:58.37       63238268 B   ---   --   ---xx   flac  0.4120  bd1999-11-10_d1t05.flac
+     4:23.70       46557884 B   ---   --   ---xx   flac  0.5512  bd1999-11-10_d1t06.flac
+     6:18.50       66796844 B   ---   --   ---xx   flac  0.5594  bd1999-11-10_d1t07.flac
+     7:31.31       79629356 B   ---   --   ---xx   flac  0.5052  bd1999-11-10_d1t08.flac
+     6:56.09       73403612 B   ---   --   ---xx   flac  0.5869  bd1999-11-10_d1t09.flac
+     5:04.33       53703260 B   ---   --   ---xx   flac  0.4904  bd1999-11-10_d1t10.flac
+     6:23.47       67671788 B   ---   --   ---xx   flac  0.6002  bd1999-11-10_d1t11.flac
+     6:10.23       65322140 B   ---   --   ---xx   flac  0.4931  bd1999-11-10_d2t01.flac
+    10:15.54      108613052 B   ---   --   ---xx   flac  0.4850  bd1999-11-10_d2t02.flac
+     6:29.00       68619644 B   ---   --   ---xx   flac  0.5772  bd1999-11-10_d2t03.flac
+     4:21.62       46186268 B   ---   --   ---xx   flac  0.5645  bd1999-11-10_d2t04.flac
+    96:17.12     1019091684 B                            0.5428  (15 files)
+=================== 
+=================== 
+=================== 

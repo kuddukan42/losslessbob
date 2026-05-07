@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd90-01-31-Dolphinsmile.flac1648
+===================
+===================
+===================
+13bc57cd22494f5a92183aad2899c26a *01 To Be Alone With You.flac
+d47ec71c64717274083c868a07bb0081 *02 Ballad Of A Thin Man.flac
+b148c3a741a223c182fedbaa971a7e0b *03 Stuck Inside Of Mobile.flac
+01f5162db2e2ba15ba2d8cf21fc138cb *04 John Brown.flac
+c04e20e701d79bfd15ac5d5bba143434 *05 Political World.flac
+78be395cc56a9f24ad893f342193cbd7 *06 Shelter From The Storm.flac
+b3f4b410f52ec839ee5b44b3bb555fa5 *07 Highway 61.flac
+211230b4cd0c1cebdd994c3816e6f985 *08 Its All Over Now Baby Blue.flac
+3f5a2760ecaa2b68ebac0c009dec5d59 *09 Hard Rain.flac
+a9a47e489de5d9c960836bbad07448a8 *10 Girl From The North Country.flac
+57ea26349023aac4605b21e4d08987a7 *11 All Along The Watchtoer.flac
+2483553eabc3eeb6f4560f94615e5eb3 *12 Lay Lady Lay.flac
+d27da84e1e8de621491bf9930bd319d6 *13 Everything Is Broken.flac
+ec7ed6379b0058fe9d20a6e391a85955 *14 I ll Remember Ypu.flac
+bbf00a38968b4e5b1a2bda2249cb1f2a *15 In The Garden.flac
+7e330972666074b54976449bade22b0d *16 Like A Rolling Stone.flac
+b75ef50e130bd1e1375490fce4ade0a2 *17 Tamborine Man.flac
+1e5e855e81d614a59e6769de313bf3c5 *18 Maggies Farm.flac
+d7025031635cdd0360cb3c16e2d99432 *Bob Dylan Theater Grand Rex Paris 1990-01-31 Dolphinsmile Archive.ffp
+a28a310aa1daeb5e830b6ae7207fa490 *Bob Dylan Theater Grand Rex Paris 1990-01-31 Dolphinsmile Archive.md5
+d7025031635cdd0360cb3c16e2d99432 *Bob Dylan Theater Grand Rex Paris 1990-01-31 Dolphinsmile Archive.txt
+45bbe13baeec0b0f0e18fb6500d640cb *info.txt
+===================
+===================
+===================
+=== ffp for: bd90-01-31-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 To Be Alone With You.flac:6b161ea835ff9b4729450bc6b0865f01
+02 Ballad Of A Thin Man.flac:fb519d5ca6ed4a7a497da0e5a111a42e
+03 Stuck Inside Of Mobile.flac:e869ff3a7d947deef5829a05d05cfb53
+04 John Brown.flac:0bb5c50ee32956241f0eb0a79e65814a
+05 Political World.flac:349fd0864f6f072b79901999c5d65686
+06 Shelter From The Storm.flac:382b1f7dc2f6569ce38296d3c80e13f2
+07 Highway 61.flac:1813f0bc48bacd573b5510c0a2eb5dd9
+08 Its All Over Now Baby Blue.flac:e0f4e53dd2f6291430faf551c223d4f9
+09 Hard Rain.flac:bbd434f8a1572aec4a7b177c01eb6448
+10 Girl From The North Country.flac:de07428383542e043107f5a4c5218d38
+11 All Along The Watchtoer.flac:303d0ee33a163e43158da8c54a415870
+12 Lay Lady Lay.flac:edbfda1e62e03709ef3822138c18ba75
+13 Everything Is Broken.flac:1a7cb17b82055f9b47dfe21436eed09e
+14 I ll Remember Ypu.flac:3f400dbf6e33cb7e6537d98f620cb7c7
+15 In The Garden.flac:1ecc965badee63724cdfbeec1649c965
+16 Like A Rolling Stone.flac:90e26f6d845765450725b0acbaf17083
+17 Tamborine Man.flac:821e3385dbc70749a15d5b2d4bf1ddfd
+18 Maggies Farm.flac:2cac4752bf130b32a33d4a54dbf3f3c4
+===================
+===================
+===================
+=== shntool len for: bd90-01-31-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.398      61324372 B   cxx   --   ---xx   flac  0.5825  01 To Be Alone With You.flac
+     5:49.741      67150232 B   cxx   --   ---xx   flac  0.5959  02 Ballad Of A Thin Man.flac
+     6:40.726      76939460 B   cxx   --   ---xx   flac  0.6014  03 Stuck Inside Of Mobile.flac
+     5:22.028      61829456 B   cxx   --   ---xx   flac  0.5836  04 John Brown.flac
+     3:13.802      37210072 B   cxx   --   ---xx   flac  0.5938  05 Political World.flac
+     5:30.808      63515164 B   cxx   --   ---xx   flac  0.5787  06 Shelter From The Storm.flac
+     4:40.474      53851140 B   cxx   --   ---xx   flac  0.5959  07 Highway 61.flac
+     6:07.937      70643868 B   cxx   --   ---xx   flac  0.5497  08 Its All Over Now Baby Blue.flac
+     8:36.689      99204320 B   cxx   --   ---xx   flac  0.5391  09 Hard Rain.flac
+     6:18.955      72759316 B   cxx   --   ---xx   flac  0.5547  10 Girl From The North Country.flac
+     3:28.756      40081136 B   cxx   --   ---xx   flac  0.5972  11 All Along The Watchtoer.flac
+     5:28.192      63012820 B   cxx   --   ---xx   flac  0.5773  12 Lay Lady Lay.flac
+     3:53.309      44795424 B   cxx   --   ---xx   flac  0.5898  13 Everything Is Broken.flac
+     4:01.100      46291268 B   cxx   --   ---xx   flac  0.5767  14 I ll Remember Ypu.flac
+     5:33.055      63946580 B   cxx   --   ---xx   flac  0.5796  15 In The Garden.flac
+     6:15.910      72174748 B   cxx   --   ---xx   flac  0.5892  16 Like A Rolling Stone.flac
+     8:03.012      92738376 B   cxx   --   ---xx   flac  0.5681  17 Tamborine Man.flac
+     6:10.589      71153160 B   cxx   --   ---xx   flac  0.6202  18 Maggies Farm.flac
+   100:34.480    1158620912 B                            0.5796  (18 files)
+===================
+===================
+===================

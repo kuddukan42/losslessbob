@@ -1,0 +1,34 @@
+355419e14e4c90ca86d584a0637373b9  Bob Dylan  October-6-2000 Wembley Arena (Crystal Cat).md5
+e78a5fb7c8e68dd3b676c7ef6b431b7f  Bob Dylan  October-6-2000 Wembley Arena (Crystal Cat).txt
+f1d4d46902b7272934e2a18c844161dc  cd-1\fingerprint-1.txt
+bd34c6e62990fbc4d30639bd6c300f02  cd-1\Track01.flac
+abe6b0503afdf9a0dcfa2e8c8bab57af  cd-1\Track02.flac
+c91155cba14308638da13dffe19a68d4  cd-1\Track03.flac
+e93f552581e40b6f56e5fc3948e9da9b  cd-1\Track04.flac
+9e47c4194ab76bb393265351d00e9799  cd-1\Track05.flac
+cff964ad4901498861e824408b429d28  cd-1\Track06.flac
+67b726640dd7e42a04826db8d2de723c  cd-1\Track07.flac
+45a5e7a30c68f3346cc5896c217a88bd  cd-1\Track08.flac
+65b788ac90ba687cfbdba4e8dfab352f  cd-1\Track09.flac
+28f1542cb20aa530ca49d9e99b962ad0  cd-1\Track10.flac
+7983c99bc5352cbf251e3876c24d2a18  cd-1\Track11.flac
+f5120bbb3c2e6f03f0038a47574ce885  cd-1\Track12.flac
+2b641ee1d7e3d541e3f453434784b687  cd-1\Track13.flac
+b8eae6c0333352b0bd251d35b4c7a5bf  cd-1\Unknown Title.log
+468ca6b844fed718256374c7a3d982bb  cd-2\fingerprint-2.txt
+52a881d32da378b174cf1584dca57d34  cd-2\Track01.flac
+43f607c1468af8d45dec8c497079da11  cd-2\Track02.flac
+184406ad2eea1b7e39446ad68904181e  cd-2\Track03.flac
+bc83e34a8e5f35b8587095ffcc7e91d4  cd-2\Track04.flac
+f8f36d7b95e6d283a624013880649ea4  cd-2\Track05.flac
+b762f8d009fc1936e61239aa1afc9e1b  cd-2\Track06.flac
+76eb497d63af40af30eef0944a05510f  cd-2\Track07.flac
+f74441f86ce792f985d86585dd759c37  cd-2\Track08.flac
+95dc253a630b65e80ec75734d30e85e5  cd-2\Track09.flac
+5a5040de4238f8895ad157df8c09881b  cd-2\Track10.flac
+03115918870ca217caaaf3a59034966c  cd-2\Track11.flac
+710def029bf281bfc57321ea0c24f103  cd-2\Track12.flac
+b3f398b271bae8539e31a7b9b9974821  cd-2\Track13.flac
+6b001cd0625b2275f95a3bcb5f274916  cd-2\Track14.flac
+d49dba96a168086ec99b0f91d0871a2d  cd-2\Unknown Title.log
+87e8b8d24b8645ad860be18d9b165c3a  info.txt

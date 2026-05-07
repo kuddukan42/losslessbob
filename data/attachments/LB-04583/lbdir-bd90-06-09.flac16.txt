@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-06-09.flac16 
+=================== 
+=================== 
+=================== 
+17f37155144ccebbadb11af1546b7273  bd1990-06-09.aud.sbeok.flac16 East Troy, WI.ffp
+14f6919819a319edc349f7ed66874924  bd1990-06-09.aud.sbeok.flac16 East Troy, WI.md5
+b9dc6341d422bef31dd4cdcedd516432  bd1990-06-09.aud.sbeok.flac16 East Troy, WI.st5
+c0bd5dd5d082da32075764e4e6a27ce4  bd1990-06-09.info.txt
+dc3243dd6f5a2c3e04b3394dce3ac3b4  bd90-06-09-LB-4583.txt
+445720ed7389a32aa0e5051d712b3756  CD1\CD1.shntool.txt
+fdf53c97571d923c25462477288144b0  CD1\bd1990-06-09d1.LOG
+edc5abf5784abbcd803b4c628a14b9a6  CD1\bd1990-06-09d1t01.flac
+d784cc84a8a6c8c79c0e368972ab006a  CD1\bd1990-06-09d1t02.flac
+ecf9df9957b1abda67c643e098fa23dd  CD1\bd1990-06-09d1t03.flac
+6237eba5951414c9022a457a3969a52f  CD1\bd1990-06-09d1t04.flac
+34a3b4ec3c15f7ec51d54a9d0cb6fc90  CD1\bd1990-06-09d1t05.flac
+004e9b03d41960268fb0bc63ef40f45d  CD1\bd1990-06-09d1t06.flac
+d98ec8c257fd51377df709d11423a6fa  CD1\bd1990-06-09d1t07.flac
+23156d4b07ca5663883b2672efdd51b2  CD1\bd1990-06-09d1t08.flac
+0b42f196cdbbb10ff517ae8b2a0e62eb  CD1\bd1990-06-09d1t09.flac
+227399b4d065e8d41cc196ea1f8c5be1  CD1\bd1990-06-09d1t10.flac
+aaad523fb3b50ce3710f1bc1690364e1  CD2\CD2.shntool.txt
+bdf4eb8fae6faba6154615ddcd6cdce6  CD2\bd1990-06-09d2.LOG
+43f82557999d99accab29202df4d9919  CD2\bd1990-06-09d2t01.flac
+ae394b2059d1d8697aa65988f863f6a7  CD2\bd1990-06-09d2t02.flac
+6968d1ef8c8e68e7b1a0e34f0bceb6fc  CD2\bd1990-06-09d2t03.flac
+2186916dac97c0c8edd2e8ac40f387e4  CD2\bd1990-06-09d2t04.flac
+c285408c41a555d1c6d2664a8c12f889  CD2\bd1990-06-09d2t05.flac
+002fa8da1dabf148f4d77e42855e163c  CD2\bd1990-06-09d2t06.flac
+f763c16d2d40073f6c05bf3fa56a1ef0  CD2\bd1990-06-09d2t07.flac
+d83f8c1d2e5a211dba201daf35f02c62  CD2\bd1990-06-09d2t08.flac
+64f8ee981783d0c4d596e321b7452b6f  CD2\bd1990-06-09d2t09.flac
+4a588cd327346db7c623a4cd917e2d35  CD2\bd1990-06-09d2t10.flac
+baf7d4656f8ff3e34e5fd49f83b70554  d1t03.PNG
+b026350f35fc57f9c26059fe5ed3adda  d2t08.PNG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-09.flac16\CD1 
+=================== 
+=================== 
+=================== 
+bd1990-06-09d1t01.flac:3bb05a89d291d191bc131ec50effd71b
+bd1990-06-09d1t02.flac:94cbc7e25933ca35a4fe63dc3554c8f1
+bd1990-06-09d1t03.flac:4dfece5bc084db2610e16de2dc21fc2b
+bd1990-06-09d1t04.flac:5e688b4ec5553975b7c80abaff6e8e43
+bd1990-06-09d1t05.flac:883e655865ada3e5fabb17446057ebb4
+bd1990-06-09d1t06.flac:b21b3a20101ed4eedb986498b6d34484
+bd1990-06-09d1t07.flac:d4888d8e2f9749c448827765957433e9
+bd1990-06-09d1t08.flac:4df226f01a0f6ab83c7257e5e71be41f
+bd1990-06-09d1t09.flac:40183011a856690a5b15ec5e2d661233
+bd1990-06-09d1t10.flac:c6dae2804661c010465d41637d70c74e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-09.flac16\CD2 
+=================== 
+=================== 
+=================== 
+bd1990-06-09d2t01.flac:b78fbc675cbe8af8e26031743b607c70
+bd1990-06-09d2t02.flac:7949618a88d07e4c92217ee539d2f4d1
+bd1990-06-09d2t03.flac:dc4521c27113fc6cbee5846836fae98f
+bd1990-06-09d2t04.flac:f120430040c1bdf4cca8161d95dcf475
+bd1990-06-09d2t05.flac:44302e19333b00f249477b0890da55f9
+bd1990-06-09d2t06.flac:436cd71df9d5a028d2e7ade9c0b9c6c4
+bd1990-06-09d2t07.flac:ef0dd2d526bf29c0fb0adfc017493f0b
+bd1990-06-09d2t08.flac:3fa8035e4b4d8f7fb91403d73d7b0745
+bd1990-06-09d2t09.flac:9ce7da12420f5719a26d17fbbf8ab83f
+bd1990-06-09d2t10.flac:2d3a06d961367a2eab64787dd1ce1855
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-09.flac16\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:14.29       44873852 B   ---   --   ---xx   flac  0.4034  bd1990-06-09d1t01.flac
+     3:56.09       41651612 B   ---   --   ---xx   flac  0.4361  bd1990-06-09d1t02.flac
+     6:25.47       68024588 B   ---   --   ---xx   flac  0.4586  bd1990-06-09d1t03.flac
+     8:11.23       86666540 B   ---   --   ---xx   flac  0.4347  bd1990-06-09d1t04.flac
+     4:11.69       44438732 B   ---   --   ---xx   flac  0.4660  bd1990-06-09d1t05.flac
+     5:10.74       54858092 B   ---   --   ---xx   flac  0.4485  bd1990-06-09d1t06.flac
+     6:01.55       63809804 B   ---   --   ---xx   flac  0.4133  bd1990-06-09d1t07.flac
+     4:17.66       45490076 B   ---   --   ---xx   flac  0.4239  bd1990-06-09d1t08.flac
+     5:17.51       56038796 B   ---   --   ---xx   flac  0.4088  bd1990-06-09d1t09.flac
+     5:07.06       54168956 B   ---   --   ---xx   flac  0.4084  bd1990-06-09d1t10.flac
+    52:54.54      560021048 B                            0.4306  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-09.flac16\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.68       67368380 B   ---   --   ---xx   flac  0.4127  bd1990-06-09d2t01.flac
+     6:28.21       68492636 B   ---   --   ---xx   flac  0.4204  bd1990-06-09d2t02.flac
+     3:59.13       42190220 B   ---   --   ---xx   flac  0.4345  bd1990-06-09d2t03.flac
+     4:55.61       52181516 B   ---   --   ---xx   flac  0.4293  bd1990-06-09d2t04.flac
+     4:18.19       45555932 B   ---   --   ---xx   flac  0.4045  bd1990-06-09d2t05.flac
+     3:36.51       38222396 B   ---   --   ---xx   flac  0.4528  bd1990-06-09d2t06.flac
+     4:41.03       49575500 B   ---   --   ---xx   flac  0.4240  bd1990-06-09d2t07.flac
+     6:13.31       65870156 B   ---   --   ---xx   flac  0.4494  bd1990-06-09d2t08.flac
+     6:02.46       63965036 B   ---   --   ---xx   flac  0.3435  bd1990-06-09d2t09.flac
+     5:01.53       53221100 B   ---   --   ---xx   flac  0.4130  bd1990-06-09d2t10.flac
+    51:38.66      546642872 B                            0.4164  (10 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-07-taper-f 
+=================== 
+=================== 
+=================== 
+c2cdd226e3917f8544a723256e5d1569  bd04-08-07-taper-f-d1t01.shn
+969a7de561f4ea22d8aa6cecae333a0f  bd04-08-07-taper-f-d1t02.shn
+4f33b3e9a97b78e36ca67156fdb71f8a  bd04-08-07-taper-f-d1t03.shn
+e2ebc05d7eeb3b3ff2f05dc9e2b581e1  bd04-08-07-taper-f-d1t04.shn
+c290a638ef9bd23092f1c7082e07f715  bd04-08-07-taper-f-d1t05.shn
+60ab8e99a89b3dcac5bb8a5a9af1f8fa  bd04-08-07-taper-f-d1t06.shn
+c3adb118194be344f1dd5a98ee2d086f  bd04-08-07-taper-f-d1t07.shn
+6e42e27da442c863b96e5da051dd0bea  bd04-08-07-taper-f-d1t08.shn
+d79221a295be796b811c30c3cd919044  bd04-08-07-taper-f-d2t01.shn
+6c10e3ab6d8a07a3f66c4b6ba9b17ae7  bd04-08-07-taper-f-d2t02.shn
+1d17326516b44641b6b6b97454398eb1  bd04-08-07-taper-f-d2t03.shn
+ca4145c889d0a35808aca7922bd8faba  bd04-08-07-taper-f-d2t04.shn
+09482ee426ea42bf05f934b3d6dc4b66  bd04-08-07-taper-f-d2t05.shn
+909956ddbb02492548aaa2dd3a0a97cf  bd04-08-07-taper-f-d2t06.shn
+a66ceb1b4a0e093d86e959c12a943076  bd04-08-07-taper-f-d2t07.shn
+f17bcf22dc903a90d782b0263a840c36  bd04-08-07-taper-f-d2t08.shn
+adea0dffe98b9182de008a94bf1c2444  bd04-08-07-taper-f.txt
+de394415eaf1327fce84d70a2e27e850  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-07-taper-f 
+=================== 
+=================== 
+=================== 
+80f9d47285cab6ca48ae918eb86ffd6d  [shntool]  bd04-08-07-taper-f-d1t01.wav
+04404a9b72b270ccedc064ecd4d9c3b7  [shntool]  bd04-08-07-taper-f-d1t02.wav
+bef6a057c267783139f1ec60700af26b  [shntool]  bd04-08-07-taper-f-d1t03.wav
+421f3d304480563e25f17a339a6c86ce  [shntool]  bd04-08-07-taper-f-d1t04.wav
+c23d7b721e662f703613fb0153245579  [shntool]  bd04-08-07-taper-f-d1t05.wav
+82e36031a39c316c46da0b45ea4e243d  [shntool]  bd04-08-07-taper-f-d1t06.wav
+bbd48d646241da0ebb91971b2e1e0ccf  [shntool]  bd04-08-07-taper-f-d1t07.wav
+bc8e618d3d4759df034512953f31d61b  [shntool]  bd04-08-07-taper-f-d1t08.wav
+583248f94b4c9816ec06a759cba88ce4  [shntool]  bd04-08-07-taper-f-d2t01.wav
+4c2db2d5f0f957ac54e32430875a3730  [shntool]  bd04-08-07-taper-f-d2t02.wav
+8a3c17d79b665b3aa7185d17d920f4fa  [shntool]  bd04-08-07-taper-f-d2t03.wav
+1cd985d92e88f602564c57ec4b1f74e4  [shntool]  bd04-08-07-taper-f-d2t04.wav
+75e59363927a0f89572ded0c67fbd705  [shntool]  bd04-08-07-taper-f-d2t05.wav
+953ae00b8ad28bae951fa24dc91e4a67  [shntool]  bd04-08-07-taper-f-d2t06.wav
+f3aa919949c118d047b1205b350987dc  [shntool]  bd04-08-07-taper-f-d2t07.wav
+b4d7ef7bfe7592f4363756cf2f7b1772  [shntool]  bd04-08-07-taper-f-d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-07-taper-f 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:55.00       73206044 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d1t01.wav
+     5:10.00       54684044 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d1t02.wav
+     4:48.00       50803244 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d1t03.wav
+     6:40.00       70560044 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d1t04.wav
+     7:12.00       76204844 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d1t05.wav
+     5:51.00       61916444 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d1t06.wav
+     6:18.00       66679244 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d1t07.wav
+     6:34.61       69645116 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d1t08.wav
+     6:10.00       65268044 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d2t01.wav
+     7:02.00       74440844 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d2t02.wav
+     6:21.00       67208444 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d2t03.wav
+    10:17.00      108838844 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d2t04.wav
+     6:58.00       73735244 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d2t05.wav
+     6:40.00       70560044 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d2t06.wav
+     0:54.00        9525644 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d2t07.wav
+     8:34.37       90756668 B   ---   --   -----    wav  1.0000  bd04-08-07-taper-f-d2t08.wav
+   102:25.23     1084032800 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-04-30.flac16 
+=================== 
+=================== 
+=================== 
+60ed078029670ae720dba3758061f6b4  1\1.shntool.txt
+2411f6e52e65935211cd62cef400248e  1\bd1994-04-30d1t01.flac
+db95f40c7616abd602690e3c8c943f9d  1\bd1994-04-30d1t02.flac
+5bb7035ca73020c4cfc8d799144f93e4  1\bd1994-04-30d1t03.flac
+7ddfa0aa3f39467bcb20b3236b55fbd7  1\bd1994-04-30d1t04.flac
+1bac750584180b3a6bdc93c83eab462a  1\bd1994-04-30d1t05.flac
+7aaddf7ecfc64077b644a42bbffa2a7a  1\bd1994-04-30d1t06.flac
+f28755508ed599f35957dbf26b29b9a5  1\bd1994-04-30d1t07.flac
+1856b2931cc4b82b362b542f05f6914f  1\bd1994-04-30d1t08.flac
+9b303dbe40a8aef8f69ee455e72cc415  1\bd1994-04-30d1t09.flac
+923e3d1def4803b093f932d92cbafddf  2\2.shntool.txt
+03f32415e0e1c41eb95ce4982424c846  2\bd1994-04-30d2t01.flac
+61ee1020a38b8f3b5a8edc6fa3cbed18  2\bd1994-04-30d2t02.flac
+69ac500b4886095f111633abbe08a7ac  2\bd1994-04-30d2t03.flac
+a43dbdcf3c81db3253f59ce900c2ded5  2\bd1994-04-30d2t04.flac
+f7fc910de75f87faadd95999b7e9d225  2\bd1994-04-30d2t05.flac
+bd785250fff019a4288c229f159bf361  2\bd1994-04-30d2t06.flac
+9ac7ee6d21b11eb86cf976e07c02b937  bd1994-04-30.sbeok.flac16 Springfield.ffp
+ccb5898f9d928d6290a13e2683313898  bd1994-04-30.sbeok.flac16 Springfield.st5
+ce4223c59b2ca42517d8e22d291aa5ea  bd94-04-30-LB-4475.txt
+976d80989957ffd626ec449fd81f5156  d1t03.PNG
+7ba41f4d255933f2eb12e9fba28d3ec0  d2t04.PNG
+49bc85ebe475d2c31dd8ba89e8c5303b  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-04-30.flac16\1 
+=================== 
+=================== 
+=================== 
+bd1994-04-30d1t01.flac:fcc85a541e51e7964004a51d083aa4c2
+bd1994-04-30d1t02.flac:dd0a8e8effa75a4b2a5f2ba164f46942
+bd1994-04-30d1t03.flac:93b7d07706ce6f063c78d1033b98418f
+bd1994-04-30d1t04.flac:3309821aa89467f94c86f37756160194
+bd1994-04-30d1t05.flac:9fb6e24950d53cea5fe8a62cbfaf86f5
+bd1994-04-30d1t06.flac:14c518a689051ba2e8e186649328c1ef
+bd1994-04-30d1t07.flac:ccc7f6a66f850fdbc142efbb9f61300e
+bd1994-04-30d1t08.flac:d23802fc9af2c1358afdad843662a7cc
+bd1994-04-30d1t09.flac:46d437552db6be3cd344e70d728bc21c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-04-30.flac16\2 
+=================== 
+=================== 
+=================== 
+bd1994-04-30d2t01.flac:37e1c2f6b9fe232b91e8b93196e87726
+bd1994-04-30d2t02.flac:c837936faa35cfea3ba3457f7d976218
+bd1994-04-30d2t03.flac:ed853c8f93502e11ad0f5346fc9a5176
+bd1994-04-30d2t04.flac:d4bd66a8fb028741b75ae7f131a41e0f
+bd1994-04-30d2t05.flac:cdec5dbab854845624cdd01a91c11876
+bd1994-04-30d2t06.flac:acedec412c55a3c35b784e09dca1a992
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-04-30.flac16\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:42.27       81560348 B   ---   --   ---xx   flac  0.5961  bd1994-04-30d1t01.flac
+     6:00.69       63666332 B   ---   --   ---xx   flac  0.5769  bd1994-04-30d1t02.flac
+     5:12.61       55180316 B   ---   --   ---xx   flac  0.6235  bd1994-04-30d1t03.flac
+    10:01.35      106098764 B   ---   --   ---xx   flac  0.5672  bd1994-04-30d1t04.flac
+     9:06.50       96432044 B   ---   --   ---xx   flac  0.5690  bd1994-04-30d1t05.flac
+     5:43.70       60669884 B   ---   --   ---xx   flac  0.5433  bd1994-04-30d1t06.flac
+     5:43.18       60547580 B   ---   --   ---xx   flac  0.4569  bd1994-04-30d1t07.flac
+     5:07.68       54314780 B   ---   --   ---xx   flac  0.5121  bd1994-04-30d1t08.flac
+     6:40.66       70715276 B   ---   --   ---xx   flac  0.4610  bd1994-04-30d1t09.flac
+    61:20.14      649185324 B                            0.5481  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-04-30.flac16\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.03       72860300 B   ---   --   ---xx   flac  0.6080  bd1994-04-30d2t01.flac
+     7:31.71       79723436 B   ---   --   ---xx   flac  0.5913  bd1994-04-30d2t02.flac
+     6:39.62       70529468 B   ---   --   ---xx   flac  0.5765  bd1994-04-30d2t03.flac
+     7:46.00       82202444 B   ---   --   ---xx   flac  0.5943  bd1994-04-30d2t04.flac
+     7:10.34       75932012 B   ---   --   ---xx   flac  0.5413  bd1994-04-30d2t05.flac
+    10:14.38      108399020 B   ---   --   ---xx   flac  0.5127  bd1994-04-30d2t06.flac
+    46:15.58      489646680 B                            0.5670  (6 files)
+=================== 
+=================== 
+=================== 

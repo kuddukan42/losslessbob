@@ -1,0 +1,8 @@
+Bob Dylan, 8/3/96, Atlanta, Georgia, House Of Blues, 2CDR
+
+LB-6109, (64min+50min), SBD > Video > ? > DAT > Soundforge 6.0 > CD Wave > FLAC, there are both a mono video and a stereo soundboard recording. The DAT is originally received was clearly a mono, recording with a worse sounding lower volume left channel. I thus doubled the right channel for better listening.; bittorrent download 05/08; both channels match; excellent sound [A-]
+
+CD 1 [63:07.21], 01 To Be Alone With You [04:29.32], 02 Shake Sugaree [05:37.33], 03 All Along The Watchtower [06:37.11], 04 You're A Big Girl Now [06:30.24], 05 It Takes A Lot To Laugh, It Takes A Train To Cry [08:59.11], 06 Silvio [07:43.63], 07 Boots Of Spanish Leather [07:59.12], 08 Ballad Of Hollis Brown [06:15.69], 09 Don't Think Twice, It's All Right [08:54.66], CD 2 [49:32.37], 01 Maggie's Farm [08:10.23], 02 She Belongs To Me [06:36.66], 03 Highway 61 Revisited [09:47.61], 04 Alabama Getaway [08:20.59], 05 My Back Pages [10:12.12], 06 Rainy Day Women # 12 & 35 [06:24.41]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

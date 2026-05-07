@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-06-02-2ndgen-jtt.flacf 
+=================== 
+=================== 
+=================== 
+894a70dd8b62513d3c1d2d0b026e4cf7  bd90-06-02-2ndgen-jtt-LB-4201.txt
+7abafc606f13e33e1d3ef8f0b3266b4a  Disc One\BD_Ottawa_020690_Disc01Track01.flac
+276f63a9fa21309328da8e0467f59ff8  Disc One\BD_Ottawa_020690_Disc01Track02.flac
+e2243aed157f0f715769a44e5dbefeb0  Disc One\BD_Ottawa_020690_Disc01Track03.flac
+90f9b85194a1ee2f00ffbeadfc631ee8  Disc One\BD_Ottawa_020690_Disc01Track04.flac
+91785931603c2e9b6dc79b86227a7b4f  Disc One\BD_Ottawa_020690_Disc01Track05.flac
+464b2d8107a47118f418037ec8d7f2f8  Disc One\BD_Ottawa_020690_Disc01Track06.flac
+f6a4b80eed6a7bb810e6d6044c73a725  Disc One\BD_Ottawa_020690_Disc01Track07.flac
+0c5d35416dd5628fffb88a83e1bbf2dc  Disc One\BD_Ottawa_020690_Disc01Track08.flac
+9d300cf9a76425ee3c37a11ff719ad42  Disc One\BD_Ottawa_020690_Disc01Track09.flac
+847449f08bdd9cc49111e9d3270e4f48  Disc Two\BD_Ottawa_020690_Disc02Track01.flac
+2923fced1af7c65451e4579ca34bb207  Disc Two\BD_Ottawa_020690_Disc02Track02.flac
+5dc48a1549fd3067884378065b924d81  Disc Two\BD_Ottawa_020690_Disc02Track03.flac
+adbd0acdcbbaeb36f4e5858b5ebc3643  Disc Two\BD_Ottawa_020690_Disc02Track04.flac
+631fc3aed8056434dd270a51f6182a33  Disc Two\BD_Ottawa_020690_Disc02Track05.flac
+63a286075dc20b3821eb8703e7dfbb27  Disc Two\BD_Ottawa_020690_Disc02Track06.flac
+68f0f51ee9c4bcc484888e224be248b1  Disc Two\BD_Ottawa_020690_Disc02Track07.flac
+1fc2b1c6eb0c698987aba89b71dbef43  Disc Two\BD_Ottawa_020690_Disc02Track08.flac
+70994824cd5030a08ea361c9182fa611  Disc Two\BD_Ottawa_020690_Disc02Track09.flac
+9725d6596b1e8027b4a2133971eb342c  Info.txt
+7510050032395203bd99a3efabefa47a  Ottawa 01.06.1990 - F.jpg
+de5e573d347a6c0cd3db79f78028753d  Ottawa 01.06.1990 - R.jpg
+69d027bcfb71c381b3913ebd17017abe  Ottawa 02.06.1990 - F.jpg
+ecb12d0a40df683b3ab6881f1744b71f  Ottawa 02.06.1990 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-02-2ndgen-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+BD_Ottawa_020690_Disc01Track01.flac:eb6d8275baad77070ee48ddc70ac41bd
+BD_Ottawa_020690_Disc01Track02.flac:8174db356d2cf3784781d3ce7deb2a4b
+BD_Ottawa_020690_Disc01Track03.flac:5eb8fd227bd8130dcf4915e8d701b858
+BD_Ottawa_020690_Disc01Track04.flac:56ac4949392d2afde8f633431d5c6bca
+BD_Ottawa_020690_Disc01Track05.flac:220fb2f02f71a26e41bde3d5ebc28668
+BD_Ottawa_020690_Disc01Track06.flac:ff065c2d427e7f1fe37b696460107208
+BD_Ottawa_020690_Disc01Track07.flac:3c23f508ec9fa5ee3c50eaf079049476
+BD_Ottawa_020690_Disc01Track08.flac:1ec7126c0ca00dd3f00e8a5cc3085ab2
+BD_Ottawa_020690_Disc01Track09.flac:e1bc2995ade3b1efbcfe422e44c84938
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-02-2ndgen-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+BD_Ottawa_020690_Disc02Track01.flac:e6c78ed90397e7d3aa5ab73415f12f6b
+BD_Ottawa_020690_Disc02Track02.flac:9b352a0914518184cae50fa005cc12d0
+BD_Ottawa_020690_Disc02Track03.flac:6aeaa994f6e9e5f59bd9b84b51c38037
+BD_Ottawa_020690_Disc02Track04.flac:7b8b1df8ddd34484a7f7d31380c5a51b
+BD_Ottawa_020690_Disc02Track05.flac:2026be1a0cd34c558f9a08e6a0d92173
+BD_Ottawa_020690_Disc02Track06.flac:915af283fd319fb2443fe44458e018fb
+BD_Ottawa_020690_Disc02Track07.flac:1b7f308d7581ccab3181f77950a687b3
+BD_Ottawa_020690_Disc02Track08.flac:273d1e53d3d270dc1bdf3f7145aec342
+BD_Ottawa_020690_Disc02Track09.flac:0af89029f882f8715ab60643dec94e65
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-02-2ndgen-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:16.20       34621484 B   ---   --   ---xx   flac  0.6469  BD_Ottawa_020690_Disc01Track01.flac
+     4:54.53       51986300 B   ---   --   ---xx   flac  0.6549  BD_Ottawa_020690_Disc01Track02.flac
+     6:05.29       64454252 B   ---   --   ---xx   flac  0.6664  BD_Ottawa_020690_Disc01Track03.flac
+     6:28.46       68551436 B   ---   --   ---xx   flac  0.6423  BD_Ottawa_020690_Disc01Track04.flac
+     4:24.39       46661372 B   ---   --   ---xx   flac  0.6660  BD_Ottawa_020690_Disc01Track05.flac
+     5:50.74       61914092 B   ---   --   ---xx   flac  0.6561  BD_Ottawa_020690_Disc01Track06.flac
+     6:10.72       65437388 B   ---   --   ---xx   flac  0.6025  BD_Ottawa_020690_Disc01Track07.flac
+     6:14.03       65980700 B   ---   --   ---xx   flac  0.5893  BD_Ottawa_020690_Disc01Track08.flac
+     5:57.57       63108908 B   ---   --   ---xx   flac  0.5531  BD_Ottawa_020690_Disc01Track09.flac
+    49:23.18      522715932 B                            0.6281  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-02-2ndgen-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:04.14       74826572 B   ---   --   ---xx   flac  0.5951  BD_Ottawa_020690_Disc02Track01.flac
+     3:39.28       38697500 B   ---   --   ---xx   flac  0.6562  BD_Ottawa_020690_Disc02Track02.flac
+     4:19.24       45744092 B   ---   --   ---xx   flac  0.6615  BD_Ottawa_020690_Disc02Track03.flac
+     5:01.09       53117612 B   ---   --   ---xx   flac  0.6235  BD_Ottawa_020690_Disc02Track04.flac
+     3:46.47       39976988 B   ---   --   ---xx   flac  0.6726  BD_Ottawa_020690_Disc02Track05.flac
+     5:14.30       55460204 B   ---   --   ---xx   flac  0.6320  BD_Ottawa_020690_Disc02Track06.flac
+     7:16.54       77037452 B   ---   --   ---xx   flac  0.6672  BD_Ottawa_020690_Disc02Track07.flac
+     5:35.44       59197532 B   ---   --   ---xx   flac  0.6214  BD_Ottawa_020690_Disc02Track08.flac
+     4:34.55       48463004 B   ---   --   ---xx   flac  0.6899  BD_Ottawa_020690_Disc02Track09.flac
+    46:32.05      492520956 B                            0.6433  (9 files)
+=================== 
+=================== 
+=================== 

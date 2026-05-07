@@ -1,0 +1,22 @@
+d8edb42857108a59d07673632fda5a0f  bd07-10-13-SP-CMC-4U-LB-5440.txt
+61aa4f314cf881dab8f864fc67a97c40  bd2007-10-13 Columbus, OH (SP-CMC-4U).ffp
+c6565567dcad880eca542f35129b3898  bd2007-10-13 Columbus, OH (SP-CMC-4U).md5
+fe1cf7dcdf0771a44359bba705d0fa5d  Disc One\bd2007-10-13d1t01_.flac
+17d823a7d5251810e27ebe616b5ed9b8  Disc One\bd2007-10-13d1t02.flac
+8b51c701bbdbe2ba1809628ef7b783ff  Disc One\bd2007-10-13d1t03.flac
+9c64e90435216eecf79f0b36e2b873e4  Disc One\bd2007-10-13d1t04.flac
+2b778ee7267413b95f151c0788880222  Disc One\bd2007-10-13d1t05.flac
+c0d183f5d977c5a2204208df66e86446  Disc One\bd2007-10-13d1t06.flac
+30a397ca48fea6095e3f5c46dff96c84  Disc One\bd2007-10-13d1t07.flac
+a2bcde825a8df82a2971d344a69d68d1  Disc One\bd2007-10-13d1t08.flac
+ce97f26129fea6a34e71b65dd943a625  Disc One\bd2007-10-13d1t09.flac
+4fde3f9e4a60131e3075323b675cbb7a  Disc One\bd2007-10-13d1t10.flac
+17e9ef9b535db1fa3d7fd9130e6c2be4  Disc One\bd2007-10-13d1t11.flac
+8c8665fcd4344a00e3d7814a60f76600  Disc One\bd2007-10-13d1t12.flac
+fc8d44303ed399f437412b5c969fc0fb  Disc Two\bd2007-10-13d2t01.flac
+990a6d57a9b5ad34afdc45b7a1912af8  Disc Two\bd2007-10-13d2t02.flac
+8bcfb30f276efc6d6b41d664c48cb0b3  Disc Two\bd2007-10-13d2t03.flac
+77d77f0cdaad3a673dfc85da5aef3e55  Disc Two\bd2007-10-13d2t04.flac
+ebf688803a29d02ea9834319efab9adf  Disc Two\bd2007-10-13d2t05.flac
+5766be586ba7f2c331f9d5a45a85c48b  Disc Two\bd2007-10-13d2t06.flac
+ce687487e8653e4c64356ac8d4ae2394  INFO.txt

@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-26-Schoeps.flacf 
+=================== 
+=================== 
+=================== 
+a6eed67c31f0027ccb3483a63a7c354f  bd1999-07-26-Schoeps I01.flac
+cd15fa4e21f9c6f50707aa4b94708890  bd1999-07-26-Schoeps I02.flac
+d3d709f50a63fe26a23e954701bba284  bd1999-07-26-Schoeps I03.flac
+14e22c9f687ca3fa7368f06ddc3b1202  bd1999-07-26-Schoeps I04.flac
+2fd133cd8ca1b9cacb309d7fcb0c8389  bd1999-07-26-Schoeps I05.flac
+aa74ca88b479342e8b6530a40803c150  bd1999-07-26-Schoeps I06.flac
+d1bcd9236c83e8612fcc08be73b47c22  bd1999-07-26-Schoeps I07.flac
+fa29f739c459575ae8028fc1f3a58b5a  bd1999-07-26-Schoeps I08.flac
+1e93356c1970e07d8d136bcf45f26a31  bd1999-07-26-Schoeps I09.flac
+57f4b3e42b58b5f99d0083a93bccb277  bd1999-07-26-Schoeps I10.flac
+e37d49eee0194243280c340b1afaa18c  bd1999-07-26-Schoeps II01.flac
+6c6e83ab8f4650885db28913105d0c4b  bd1999-07-26-Schoeps II02.flac
+39471565ee5ccc2f222e1ba208cfa658  bd1999-07-26-Schoeps II03.flac
+335d8a00d550109d811d3336902bebbb  bd1999-07-26-Schoeps II04.flac
+d03dfa260dbb64933299d2594b3d2086  bd1999-07-26-Schoeps II05.flac
+0eaa25abcfc2f68e5777cb69fc60e344  bd1999-07-26-Schoeps II06.flac
+b165fe1ccb654d4d51fe38e63cebf7a2  bd1999-07-26-Schoeps II07.flac
+91030d56d096179c380b6b629a2090b5  bd1999-07-26-Schoeps II08.flac
+20707888e6314c231f7eaf7a4c89c366  bd1999-07-26-Schoeps II09.flac
+0e4e31a073af4b5e2b3b5398ebc62bef  bd1999-07-26.txt
+e00460d349d5f9cdfa4775d717c64e2b  bd99-07-26-Schoeps-LB-4136.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-26-Schoeps.flacf 
+=================== 
+=================== 
+=================== 
+bd1999-07-26-Schoeps I01.flac:b837a7d5bdfb1c065222e9e17e95140d
+bd1999-07-26-Schoeps I02.flac:14d5a37b88b2d5b288bbfbe1261bf155
+bd1999-07-26-Schoeps I03.flac:ff4fa49188c536ab329aa1c3aa52339d
+bd1999-07-26-Schoeps I04.flac:b5d0d5e130ecc3133362cfe94d95cbb7
+bd1999-07-26-Schoeps I05.flac:2a00ac3e5465c0c213b00d973ddababe
+bd1999-07-26-Schoeps I06.flac:277144a8408aff8b1ff5541fe5bc9cd4
+bd1999-07-26-Schoeps I07.flac:e6aba310d177a429eaa295478b37ca6a
+bd1999-07-26-Schoeps I08.flac:84d0b4aeb85b735474de052a8e268f9b
+bd1999-07-26-Schoeps I09.flac:92f8af09a5c33e20228eb9afed175b18
+bd1999-07-26-Schoeps I10.flac:5b4e835f04aea65fe5054bfb4ec5e8a4
+bd1999-07-26-Schoeps II01.flac:97cdad228ab32c7ec77db1eda37e0417
+bd1999-07-26-Schoeps II02.flac:9954c7771dd7fab5fb27b4d6e965de36
+bd1999-07-26-Schoeps II03.flac:42cb534f5ef47dac3313b2106835e4dd
+bd1999-07-26-Schoeps II04.flac:c7e98bf1b4618e1a46577475606563cd
+bd1999-07-26-Schoeps II05.flac:0f3aa7e2a881e9567e9d882879d31011
+bd1999-07-26-Schoeps II06.flac:399191263f7e20929ec1ce6d9294ca9c
+bd1999-07-26-Schoeps II07.flac:df14b44c74feef15367d03293e0195bd
+bd1999-07-26-Schoeps II08.flac:bb7317b07feebf5cfee62e20a097875c
+bd1999-07-26-Schoeps II09.flac:beb3b8d4b938c77b893039253602a61f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-26-Schoeps.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.32       41705708 B   ---   --   ---xx   flac  0.6937  bd1999-07-26-Schoeps I01.flac
+     6:21.01       67210796 B   ---   --   ---xx   flac  0.6567  bd1999-07-26-Schoeps I02.flac
+     6:22.01       67387196 B   ---   --   ---xx   flac  0.5880  bd1999-07-26-Schoeps I03.flac
+     8:01.19       84893132 B   ---   --   ---xx   flac  0.6008  bd1999-07-26-Schoeps I04.flac
+     9:05.65       96290924 B   ---   --   ---xx   flac  0.6466  bd1999-07-26-Schoeps I05.flac
+     5:48.05       61399004 B   ---   --   ---xx   flac  0.6909  bd1999-07-26-Schoeps I06.flac
+     6:24.18       67779980 B   ---   --   ---xx   flac  0.6882  bd1999-07-26-Schoeps I07.flac
+     6:28.47       68553788 B   ---   --   ---xx   flac  0.6789  bd1999-07-26-Schoeps I08.flac
+     7:43.57       81807308 B   ---   --   ---xx   flac  0.5923  bd1999-07-26-Schoeps I09.flac
+     6:01.10       63703964 B   ---   --   ---xx   flac  0.6810  bd1999-07-26-Schoeps I10.flac
+     6:38.00       70207244 B   ---   --   ---xx   flac  0.5301  bd1999-07-26-Schoeps II01.flac
+     5:32.03       58571900 B   ---   --   ---xx   flac  0.6564  bd1999-07-26-Schoeps II02.flac
+     5:39.27       59863148 B   ---   --   ---xx   flac  0.5809  bd1999-07-26-Schoeps II03.flac
+     7:47.71       82545836 B   ---   --   ---xx   flac  0.6765  bd1999-07-26-Schoeps II04.flac
+     9:31.43      100825580 B   ---   --   ---xx   flac  0.5718  bd1999-07-26-Schoeps II05.flac
+     4:10.54       44227052 B   ---   --   ---xx   flac  0.6772  bd1999-07-26-Schoeps II06.flac
+     8:10.55       86565404 B   ---   --   ---xx   flac  0.5814  bd1999-07-26-Schoeps II07.flac
+     5:38.14       59656172 B   ---   --   ---xx   flac  0.6682  bd1999-07-26-Schoeps II08.flac
+     5:36.11       59296316 B   ---   --   ---xx   flac  0.6233  bd1999-07-26-Schoeps II09.flac
+   124:57.08     1322490452 B                            0.6310  (19 files)
+=================== 
+=================== 
+=================== 

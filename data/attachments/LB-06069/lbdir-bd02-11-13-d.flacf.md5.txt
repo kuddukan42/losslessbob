@@ -1,0 +1,27 @@
+041d02ae9bbcea3246af12ae28c7f1b4  Bob Dylan 2002-11-13 New York City.txt
+8cdf3cc9716ea9da2feeb7374ea07454  D1\01 Intro.flac
+1690e938e84449d53a4585e1894351d6  D1\02 Seeing The Real You At Last.flac
+bbc74840fccd092e3610c01dbc70ff4d  D1\03 Carrying A Torch.flac
+cd13e4abd0d8f30582738bc9f220af36  D1\04 Tombstone Blues.flac
+c5e3784e165192d93c1cbc4fa2386c7e  D1\05 You Ain't Goin' Nowhere.flac
+668086819fd88e630fd878d2dbeac51f  D1\06 Things Have Changed.flac
+274f029c8afd45f552a7ad8fe9c032d6  D1\07 Brown Sugar.flac
+c8f01ad771fb4b25521256c4b927f827  D1\08 Forever Young.flac
+a7d9536b956e3b8c8499e32e1855b2c4  D1\09 It's Alright Ma (I'm Only Bleeding).flac
+0347aecb4440cdd1b600ea0af0e2b33b  D1\10 One Too Many Mornings.flac
+c7c4e3cef63c1771ce7a2b4e88c0b1c3  D1\11 Cold Irons Bound.flac
+bea7bc57a33db8766be923f217ca88d5  D1\12 Shelter From The Storm.flac
+6f09f16b5aee0e02f15aae98d65e5908  D2\01 Bob Talks.flac
+530bf4b9313b4bf9edb0efca816b8d57  D2\02 Old Man.flac
+d8c4636bcd73c3ef52b28cb04b1a2ae0  D2\03 Honest With Me.flac
+6aa5dc06331c3d20c7cf194967db47d0  D2\04 The Times They Are A-Changin.flac
+f15316eb6158486c2f264495800f8046  D2\05 High Water.flac
+30c3c03c2cd992a42c3b720daff45c9c  D2\06 Mutineer.flac
+c3cfd21238c8d14f0c0540306c0b96d4  D2\07 Floater.flac
+6015d80bf8a53d863251cb83a899fac4  D2\08 Summer Days.flac
+78cc91b44a2b277141ca9a8d63935230  D2\09 Encore Clapping.flac
+565006470b462bd2b4ca725771febcae  D2\10 Blowin' In The Wind.flac
+d0196063d53697bd58f8926bfa089959  D2\11 All Along The Watchtower.flac
+b2caa100f4c8faafb80de0ca25910885  D2\12 Band Intro.flac
+13c25adf7a828aaf576382a40fb22f6d  D2\13 Something.flac
+3fe65f29f7cc36fc7cbf71c58af64ce6  fingerprint.ffp

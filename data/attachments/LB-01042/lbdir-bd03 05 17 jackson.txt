@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03 05 17 jackson 
+=================== 
+=================== 
+=================== 
+2b25794aaf24ca0461fb74b9b481b96f  bd03 05 17 t01.shn
+44d00640d91992ddb3deea473d1efc8a  bd03 05 17 t02.shn
+a5e53a4a118d1dbb1f03f4176ce60e67  bd03 05 17 t03.shn
+454ec6dda18f6dfa9a9133d01a4890da  bd03 05 17 t04.shn
+6f3b2f6a4e05ce3c370846623b08eda8  bd03 05 17 t05.shn
+c914a49821625eb979178b9d79902573  bd03 05 17 t06.shn
+de84dc2d622eefafba1f9058dcab96b2  bd03 05 17 t07.shn
+cc4397919e52597d2c2d67da0b94c1da  bd03 05 17 t08.shn
+750371c54b0f63dfeebcbf26cf13e973  bd03 05 17 t09.shn
+29779f7b7fb1b98ebd20adc4b75c1e88  bd03 05 17 t10.shn
+658b84ab9278c64a971bf9bb1e3a4845  bd03 05 17 t11.shn
+88792454cf58e2995c408b19a272f4fe  bd03 05 17 t12.shn
+85387d0b189beddaf75718a628451759  bd03 05 17 t13.shn
+842bd64611af53e6cfeb7c1d345dd1ad  bd03 05 17.md5
+7160d3d816be1739017bddd86863e792  bd03-05-17.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03 05 17 jackson 
+=================== 
+=================== 
+=================== 
+734d7a15487b6ae5cb850b22934f2fbd  [shntool]  bd03_05_17_t01.wav
+7ab4a6ef98901a5158e804450197f06f  [shntool]  bd03_05_17_t02.wav
+28edcad24d358a1387ed7d9a06c5cb83  [shntool]  bd03_05_17_t03.wav
+80f73217b7a14264b8f16fb4acefbbe8  [shntool]  bd03_05_17_t04.wav
+953c4ce4024d59a23bfeda79d29282f7  [shntool]  bd03_05_17_t05.wav
+e65f13e2c35a2254f9813ebc6ba363b1  [shntool]  bd03_05_17_t06.wav
+9b5faad2578dd475dc88f179ce90fc14  [shntool]  bd03_05_17_t07.wav
+129d20ca833fbf4ffd55769d57b5247e  [shntool]  bd03_05_17_t08.wav
+1be67cb8d6d211f66f5a179829a4bbd0  [shntool]  bd03_05_17_t09.wav
+1f892e926da0308f855d2e6a9f3a34d2  [shntool]  bd03_05_17_t10.wav
+ad2a708374e74c42f068383c138093d2  [shntool]  bd03_05_17_t11.wav
+2cf15e414515f703b0094f87448bd243  [shntool]  bd03_05_17_t12.wav
+e07d3a67f3cf677a4d1fd6b00090659b  [shntool]  bd03_05_17_t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03 05 17 jackson 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:58.39       10322972 B   ---   --   ---xx    shn  0.3438  bd03 05 17 t01.shn
+     4:42.70       49909484 B   ---   --   ---xx    shn  0.5881  bd03 05 17 t02.shn
+     5:21.50       56742044 B   ---   --   ---xx    shn  0.5469  bd03 05 17 t03.shn
+     5:19.21       56321036 B   ---   --   ---xx    shn  0.5520  bd03 05 17 t04.shn
+     6:15.27       66213548 B   ---   --   ---xx    shn  0.5415  bd03 05 17 t05.shn
+     6:23.36       67645916 B   ---   --   ---xx    shn  0.6321  bd03 05 17 t06.shn
+     6:46.62       71764268 B   ---   --   ---xx    shn  0.4730  bd03 05 17 t07.shn
+     6:39.56       70515356 B   ---   --   ---xx    shn  0.5869  bd03 05 17 t08.shn
+     5:29.70       58200284 B   ---   --   ---xx    shn  0.5014  bd03 05 17 t09.shn
+     6:36.66       70009676 B   ---   --   ---xx    shn  0.6149  bd03 05 17 t10.shn
+     8:10.07       86452508 B   ---   --   ---xx    shn  0.5569  bd03 05 17 t11.shn
+     7:17.07       77103308 B   ---   --   ---xx    shn  0.5856  bd03 05 17 t12.shn
+     4:50.07       51172508 B   ---   --   ---xx    shn  0.5727  bd03 05 17 t13.shn
+    74:51.68      792372908 B                            0.5601  (13 files)
+=================== 
+=================== 
+=================== 

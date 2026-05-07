@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-10-jtt.flacf 
+=================== 
+=================== 
+=================== 
+8e69834295e2df4a94e891a69437d169  Disc One\BD_Nov. 10th 1981_Disc01Track01.flac
+c8844d4a931f43a7176b484a9d6e5ca1  Disc One\BD_Nov. 10th 1981_Disc01Track02.flac
+03692868fc10013aa132fabe44ad58ae  Disc One\BD_Nov. 10th 1981_Disc01Track03.flac
+8426603f6915de083436414bd3e56f11  Disc One\BD_Nov. 10th 1981_Disc01Track04.flac
+674a9e94d510c78f94a731646872f9d9  Disc One\BD_Nov. 10th 1981_Disc01Track05.flac
+5a0aa4895137fc048c7baf7265315b55  Disc One\BD_Nov. 10th 1981_Disc01Track06.flac
+1510445ed94e6ec078f6b65a05e7df8f  Disc One\BD_Nov. 10th 1981_Disc01Track07.flac
+764f0f5c02b9e3ea52efb1d75a7e1917  Disc One\BD_Nov. 10th 1981_Disc01Track08.flac
+7243fc95414358f696b7e64968a5ecf7  Disc One\BD_Nov. 10th 1981_Disc01Track09.flac
+06b890185ca53a87a17e863335ec8759  Disc One\BD_Nov. 10th 1981_Disc01Track10.flac
+e97ce031ea521e8c145dbf44190d0f0b  Disc One\BD_Nov. 10th 1981_Disc01Track11.flac
+c5c6f43e7539bfe34bfbb99690941cfc  Disc One\BD_Nov. 10th 1981_Disc01Track12.flac
+9d51d47436e536112823f7a902d39557  Disc One\BD_Nov. 10th 1981_Disc01Track13.flac
+d69112b5c2a57704f7654b89cd34200e  Disc One\BD_Nov. 10th 1981_Disc01Track14.flac
+c974d7743cae629cc6baab22fcec7183  Disc Two\BD_Nov. 10th 1981_Disc02Track01.flac
+408c752d9ac129dd2a75bfccc1f6a799  Disc Two\BD_Nov. 10th 1981_Disc02Track02.flac
+f30f27118ea0d7b4841a196d70f38135  Disc Two\BD_Nov. 10th 1981_Disc02Track03.flac
+6641d5c007b4828fbde79b04fd6741bf  Disc Two\BD_Nov. 10th 1981_Disc02Track04.flac
+28ef184aadc2e49de8afc77be5a838b7  Disc Two\BD_Nov. 10th 1981_Disc02Track05.flac
+963a0f5e8c4057b465466a0c2df0e465  Disc Two\BD_Nov. 10th 1981_Disc02Track06.flac
+02c1e78f294b8dc76806474cebf46d50  Disc Two\BD_Nov. 10th 1981_Disc02Track07.flac
+59c6f09753f4adb1911f203864c2d2d5  Disc Two\BD_Nov. 10th 1981_Disc02Track08.flac
+935280a6a23a3e074d2329bcc38772b9  Disc Two\BD_Nov. 10th 1981_Disc02Track09.flac
+c97072ca39db47a3671dc459f796928f  Disc Two\BD_Nov. 10th 1981_Disc02Track10.flac
+12a75936c951f8a447e9db72a4c71d2f  Disc Two\BD_Nov. 10th 1981_Disc02Track11.flac
+df3b0012d8700de23b475522086a421f  Disc Two\BD_Nov. 10th 1981_Disc02Track12.flac
+f3250b53797651ee5670955821376fb3  Disc Two\BD_Nov. 10th 1981_Disc02Track13.flac
+4a4eddee8612ae4208bd8d3d0a1be717  Disc Two\BD_Nov. 10th 1981_Disc02Track14.flac
+67acfbf8a0eaadd7c9ef799b7567c53a  Dylan - New Orleans November 10th 1981.md5
+72dfb99c8d036f54c6ed60bd27faf444  Dylan - Nov. 10th 1981_Info.txt
+cc7e05ed22d293a1434e3b69904d2c9a  New Orleans 10.11.1981 - F.jpg
+3607f7e07a1288635a09d35f7ac9917f  New Orleans 10.11.1981 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-10-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+BD_Nov. 10th 1981_Disc01Track01.flac:3f4b376b779bbb0eed1e63d27c7c2b08
+BD_Nov. 10th 1981_Disc01Track02.flac:60078029b9d6b1cebcda45b7152c5a5a
+BD_Nov. 10th 1981_Disc01Track03.flac:88c06813f2a0fb8653d783a343fd039b
+BD_Nov. 10th 1981_Disc01Track04.flac:f9738f1d9017cf760f2fa8d0c1bbbb9d
+BD_Nov. 10th 1981_Disc01Track05.flac:a597ecdd8cd1063cfe3deaaf98066187
+BD_Nov. 10th 1981_Disc01Track06.flac:865b3a9601c3ccd391b03eafa00e52a5
+BD_Nov. 10th 1981_Disc01Track07.flac:d9cc36ea3a25795702cf44ee9be5df1c
+BD_Nov. 10th 1981_Disc01Track08.flac:9e86b77d0b0188e30f84e01bd3d07847
+BD_Nov. 10th 1981_Disc01Track09.flac:d6a565287ba0cb9b3f71f6e7be48edc2
+BD_Nov. 10th 1981_Disc01Track10.flac:c44ad7e867e7b63ac0d4f31796088a9a
+BD_Nov. 10th 1981_Disc01Track11.flac:5e832ec357f451a77b7b01d2efb7edcb
+BD_Nov. 10th 1981_Disc01Track12.flac:50968acb3564fc2fabbb119665118b2f
+BD_Nov. 10th 1981_Disc01Track13.flac:ea3bcdb9b1f3fa3f8befde2603d6132f
+BD_Nov. 10th 1981_Disc01Track14.flac:f7332e7dd879e14b0e418776123e8b94
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-10-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+BD_Nov. 10th 1981_Disc02Track01.flac:77f3a371510f8d9034130572ed57da0a
+BD_Nov. 10th 1981_Disc02Track02.flac:a10308ef7f1a6f26372cc950edb6169a
+BD_Nov. 10th 1981_Disc02Track03.flac:46bca5d15a2b86461894fb71e9dce9cc
+BD_Nov. 10th 1981_Disc02Track04.flac:98626123ab12d2534c272836d2c74cde
+BD_Nov. 10th 1981_Disc02Track05.flac:f1f0c60b10cced988106bdeb6e38411e
+BD_Nov. 10th 1981_Disc02Track06.flac:70d495e384a741aa0146340db44b3777
+BD_Nov. 10th 1981_Disc02Track07.flac:6d54105db512c580ec111bd8fe4bc0ae
+BD_Nov. 10th 1981_Disc02Track08.flac:92ae1ae40cb531c5c8bf13b6018401ae
+BD_Nov. 10th 1981_Disc02Track09.flac:0d0347408593d33545a24b944b748884
+BD_Nov. 10th 1981_Disc02Track10.flac:8acade4224438279371a008312af9ec1
+BD_Nov. 10th 1981_Disc02Track11.flac:2d72bfecf1d855bd1eff28bfd1f90123
+BD_Nov. 10th 1981_Disc02Track12.flac:dd1021554b4006766f49f22939f1f7ff
+BD_Nov. 10th 1981_Disc02Track13.flac:8e8f8da2556c3778b8874f85a2fe7dc5
+BD_Nov. 10th 1981_Disc02Track14.flac:75cb9d68ef8954e47e840c8316fd5f08
+=================== 
+=================== 
+=================== 
+=== shntool for: bd81-11-10-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.02       36519548 B   ---   --   ---xx   flac  0.6202  BD_Nov. 10th 1981_Disc01Track01.flac
+     4:20.11       45889916 B   ---   --   ---xx   flac  0.6176  BD_Nov. 10th 1981_Disc01Track02.flac
+     5:50.40       61834124 B   ---   --   ---xx   flac  0.6288  BD_Nov. 10th 1981_Disc01Track03.flac
+     3:34.28       37815500 B   ---   --   ---xx   flac  0.6240  BD_Nov. 10th 1981_Disc01Track04.flac
+     4:29.05       47463404 B   ---   --   ---xx   flac  0.6151  BD_Nov. 10th 1981_Disc01Track05.flac
+     3:26.56       36470156 B   ---   --   ---xx   flac  0.6241  BD_Nov. 10th 1981_Disc01Track06.flac
+     4:06.31       43467356 B   ---   --   ---xx   flac  0.5995  BD_Nov. 10th 1981_Disc01Track07.flac
+     3:33.33       37650860 B   ---   --   ---xx   flac  0.6148  BD_Nov. 10th 1981_Disc01Track08.flac
+     3:34.48       37862540 B   ---   --   ---xx   flac  0.6280  BD_Nov. 10th 1981_Disc01Track09.flac
+     4:23.03       46400300 B   ---   --   ---xx   flac  0.6243  BD_Nov. 10th 1981_Disc01Track10.flac
+     3:16.12       34602668 B   ---   --   ---xx   flac  0.6250  BD_Nov. 10th 1981_Disc01Track11.flac
+     2:33.47       27099788 B   ---   --   ---xx   flac  0.6176  BD_Nov. 10th 1981_Disc01Track12.flac
+     4:34.69       48495932 B   ---   --   ---xx   flac  0.6218  BD_Nov. 10th 1981_Disc01Track13.flac
+     3:34.50       37867244 B   ---   --   ---xx   flac  0.6133  BD_Nov. 10th 1981_Disc01Track14.flac
+    54:44.60      579439336 B                            0.6198  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd81-11-10-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.72       61732988 B   ---   --   ---xx   flac  0.6085  BD_Nov. 10th 1981_Disc02Track01.flac
+     6:18.09       66700412 B   ---   --   ---xx   flac  0.6123  BD_Nov. 10th 1981_Disc02Track02.flac
+     4:32.52       48103148 B   ---   --   ---xx   flac  0.6177  BD_Nov. 10th 1981_Disc02Track03.flac
+     4:31.64       47954972 B   ---   --   ---xx   flac  0.6240  BD_Nov. 10th 1981_Disc02Track04.flac
+     3:08.27       33226748 B   ---   --   ---xx   flac  0.6218  BD_Nov. 10th 1981_Disc02Track05.flac
+     3:46.47       39976988 B   ---   --   ---xx   flac  0.6131  BD_Nov. 10th 1981_Disc02Track06.flac
+     4:16.54       45285452 B   ---   --   ---xx   flac  0.6257  BD_Nov. 10th 1981_Disc02Track07.flac
+     4:39.50       49333244 B   ---   --   ---xx   flac  0.6291  BD_Nov. 10th 1981_Disc02Track08.flac
+     4:45.32       50349308 B   ---   --   ---xx   flac  0.6309  BD_Nov. 10th 1981_Disc02Track09.flac
+     6:34.62       69647468 B   ---   --   ---xx   flac  0.6248  BD_Nov. 10th 1981_Disc02Track10.flac
+     4:57.09       52412012 B   ---   --   ---xx   flac  0.6301  BD_Nov. 10th 1981_Disc02Track11.flac
+     6:14.09       65994812 B   ---   --   ---xx   flac  0.6325  BD_Nov. 10th 1981_Disc02Track12.flac
+     5:00.70       53084684 B   ---   --   ---xx   flac  0.6342  BD_Nov. 10th 1981_Disc02Track13.flac
+     4:34.56       48465356 B   ---   --   ---xx   flac  0.6363  BD_Nov. 10th 1981_Disc02Track14.flac
+    69:11.13      732267592 B                            0.6243  (14 files)
+=================== 
+=================== 
+=================== 

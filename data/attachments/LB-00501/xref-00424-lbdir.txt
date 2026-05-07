@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-04-17-c.flacf 
+=================== 
+=================== 
+=================== 
+28d435d5e204354ae1761ad196b4668c  bd-1996-04-17 Burlington, VT.md5
+200f8bea06130cbcfe0dcc56c0383ccd  bd-1996-04-17 Burlington, VT.txt
+35d16a3cc68836640a32b44a99a18ce7  bd-1996-04-17d1t01.flac
+27f6edb0b5cd13f6a118831b17eef7cc  bd-1996-04-17d1t02.flac
+5b6209c6555f6de0a7461b7149193ed3  bd-1996-04-17d1t03.flac
+73c27c02f79195e87a469b34bbeb2eec  bd-1996-04-17d1t04.flac
+345c80ac0533363f90f8a59bf1fb4bf0  bd-1996-04-17d1t05.flac
+0da4a9b21eae127ce7d709751ffc15e4  bd-1996-04-17d1t06.flac
+6f76c09f07fb146499b45fc3e0923d39  bd-1996-04-17d1t07.flac
+7190f7e89d8570354b066e62b5fb8741  bd-1996-04-17d2t01.flac
+a1463ce4caa25d86cdf4f50a4e484ef2  bd-1996-04-17d2t02.flac
+f2dd49e0763295f60f051a94fa662ee1  bd-1996-04-17d2t03.flac
+63946e48d847eb04c7cc0f7c46d5440b  bd-1996-04-17d2t04.flac
+1780f9872feaeb4b7ae70405bcd7161c  bd-1996-04-17d2t05.flac
+bdc37b63f2c2e743865ce0a1c72b3d97  bd-1996-04-17d2t06.flac
+75874022624905e03ce772317c38f12a  bd-1996-04-17d2t07.flac
+c5d97461e4ab902a27e1f543d574831d  bd-1996-04-17d2t08.flac
+969f13f5971e2065a1eb0602b4eb9b05  Burlington 1996-04-17-D1.log
+60b6e45936df1f5c2bfa264708583449  Burlington 1996-04-17-D2.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-04-17-c.flacf 
+=================== 
+=================== 
+=================== 
+bd-1996-04-17d1t01.flac:f9a7fbc7f4770d1f44169b61f8786db0
+bd-1996-04-17d1t02.flac:55f3339ae1ef736de6e9cecc60bb33d2
+bd-1996-04-17d1t03.flac:8594bc6649d45bd3ad33f28c4c9752d6
+bd-1996-04-17d1t04.flac:eaef8eb2cffe1181885612f31068d28f
+bd-1996-04-17d1t05.flac:14c7a9b837cb0efc5df3a3b286d99696
+bd-1996-04-17d1t06.flac:ed51144eb9d7caf3f7f368dd0e9b3c0e
+bd-1996-04-17d1t07.flac:2486ec6bb515523e3158f47fa6cc90fb
+bd-1996-04-17d2t01.flac:659833e19c15bbb82b16fbc4d7e8cc75
+bd-1996-04-17d2t02.flac:1728fd3a9ea13c3c704607c9529b1e1e
+bd-1996-04-17d2t03.flac:e5aa46702435f3405ab91d913c43ba2e
+bd-1996-04-17d2t04.flac:1fe0fb2c28e954f2c8c97f56cb3efaaf
+bd-1996-04-17d2t05.flac:57e4d99dad75393aa8c1082ff2d400d1
+bd-1996-04-17d2t06.flac:2e6491238a12257a514448c6c966589b
+bd-1996-04-17d2t07.flac:59db28e1845d9f43d2c9f62dabb8af8d
+bd-1996-04-17d2t08.flac:040d3eac6ec9d8f962e67855fc9b633b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-17-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:45.16       50311676 B   ---   --   ---xx   flac  0.5807  bd-1996-04-17d1t01.flac
+     7:20.62       77761868 B   ---   --   ---xx   flac  0.5456  bd-1996-04-17d1t02.flac
+     8:39.08       91570460 B   ---   --   ---xx   flac  0.5814  bd-1996-04-17d1t03.flac
+     9:05.02       96142748 B   ---   --   ---xx   flac  0.5443  bd-1996-04-17d1t04.flac
+     6:52.71       72843836 B   ---   --   ---xx   flac  0.5740  bd-1996-04-17d1t05.flac
+     8:01.58       84984860 B   ---   --   ---xx   flac  0.5813  bd-1996-04-17d1t06.flac
+     8:24.55       89035004 B   ---   --   ---xx   flac  0.5138  bd-1996-04-17d1t07.flac
+     8:19.12       88051868 B   ---   --   ---xx   flac  0.4970  bd-1996-04-17d2t01.flac
+     8:32.04       90326252 B   ---   --   ---xx   flac  0.5459  bd-1996-04-17d2t02.flac
+     8:42.19       92125532 B   ---   --   ---xx   flac  0.5694  bd-1996-04-17d2t03.flac
+     7:17.41       77183276 B   ---   --   ---xx   flac  0.5355  bd-1996-04-17d2t04.flac
+     7:46.69       82364732 B   ---   --   ---xx   flac  0.5697  bd-1996-04-17d2t05.flac
+     9:00.57       95390108 B   ---   --   ---xx   flac  0.5799  bd-1996-04-17d2t06.flac
+     5:12.11       55062716 B   ---   --   ---xx   flac  0.5642  bd-1996-04-17d2t07.flac
+     7:35.72       80431388 B   ---   --   ---xx   flac  0.5865  bd-1996-04-17d2t08.flac
+   115:36.32     1223586324 B                            0.5570  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,121 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-21-unwanted-man.flacf 
+=================== 
+=================== 
+=================== 
+11435a5656368ab5a92f49b654152dfa  bd-I Didn't Expect Such a Good Crowd (Really!)-UMM.txt
+0f8e9c73e074d7ae1b69c959a52f9573  bd03-08-21-unwanted-man-LB-3178.txt
+cf2703079d267cf59f91b97edde7303d  I Didn't Expect d2\Bob Dylan - Track 01.flac
+111a59a83e63e448733736e2f656af5a  I Didn't Expect d2\Bob Dylan - Track 02.flac
+06fcaea92d11485fe86ddf1f448c1a22  I Didn't Expect d2\Bob Dylan - Track 03.flac
+3cb727abd1f30869e0d8098bbf01aef7  I Didn't Expect d2\Bob Dylan - Track 04.flac
+329fe90b03ec16a50f4d1489c2e8c08f  I Didn't Expect d2\Bob Dylan - Track 05.flac
+ed1c0aaa922a19d0db16203e6d0b66c1  I Didn't Expect d2\Bob Dylan - Track 06.flac
+db2f4dfa8891d93124f801058848ba97  I Didn't Expect d2\Bob Dylan - Track 07.flac
+0f186ad4efc114a6bd13c67d75e490b4  I Didn't Expect d2\Bob Dylan - Track 08.flac
+9ac36efa33584f97e624e0019b31d1ac  I Didn't Expect d2\Bob Dylan - Track 09.flac
+bf7523689d97fedd7ad639f801e23bf9  I Didn't Expect d2\Bob Dylan - Track 10.flac
+2633db7b0b3391589f82a246323bfe1f  I Didn't Expect d2\Bob Dylan - Track 11.flac
+ce690503a71e19ae003b75a563325993  I Didn't Expect d2\Bob Dylan - Track 12.flac
+ada524fdd2fc29c6dcbdaf1d3ad9eec2  I Didn't Expect d2\Bob Dylan - Track 13.flac
+c9b9254795b583a99f99f958d2f9053a  I Didn't Expect d2\I Didn't Expect d2 fingerprints.txt
+d6584529b40348f34e27d5d9b44cea4b  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 01.flac
+5369bd046abe1362796a890b7a4f35d4  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 02.flac
+65715a1c033fec93166284fe401e0128  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 03.flac
+93a2bd6cb7e3535aa39b96416fa6b31e  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 04.flac
+6fa1470e073c29d4b0827efd066b70c4  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 05.flac
+a339eac01f90c7e0b318d45baaed160c  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 06.flac
+ef2a0755ccec1008d0627d8aaef9dc9a  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 07.flac
+c43a58d8e5452dd77e12ca1abd70779f  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 08.flac
+d171ec6768b73265780b2480c5703b16  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 09.flac
+2c4556218633544562d16fe040466695  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 10.flac
+9bb42dca5979f92e9c9c8950ded40fcd  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 11.flac
+060be46eb500262f51af7d6b171bc1c1  I Didn't Expect Such a Good Crowd (Really) d1\Bob Dylan - Track 12.flac
+ca8341e0598b0d14b407c2d53925d819  I Didn't Expect Such a Good Crowd (Really) d1\I Didn't Expect d1 fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-08-21-unwanted-man.flacf\I Didn't Expect Such a Good Crowd (Really) d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:d614f539741c75b306da31ed88bf5d95
+Bob Dylan - Track 02.flac:c0a1034207bc2e829cf529b3bbe3372d
+Bob Dylan - Track 03.flac:d4e6b26be3e3a6bc495b41f181155ba5
+Bob Dylan - Track 04.flac:b5341135e5a1dcf4976ff8fee97c0970
+Bob Dylan - Track 05.flac:c1a595324a56d91a9f1291f741c92259
+Bob Dylan - Track 06.flac:4bf61651f67756b5a0acbf45035e7d10
+Bob Dylan - Track 07.flac:dac7314849e54fb9b2fbb2e591e8401a
+Bob Dylan - Track 08.flac:a99109257cb873b12877139557a18eae
+Bob Dylan - Track 09.flac:d8469464c1bc4fc72147db05e355b1c6
+Bob Dylan - Track 10.flac:10d8974ae6f2fccd12fbc9310dcc1f1a
+Bob Dylan - Track 11.flac:63415728bae4f34ddd9effd78ed6fe2d
+Bob Dylan - Track 12.flac:78d480f451aa77847dad184173c99e9a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-08-21-unwanted-man.flacf\I Didn't Expect d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:f89333ace5d3193fbb7233892eee5950
+Bob Dylan - Track 02.flac:31ef676a3cfdf19d2311573d3dfe4624
+Bob Dylan - Track 03.flac:b989a769e897c6f9a667adaea20aeb2e
+Bob Dylan - Track 04.flac:17ae6c24543c8586aae5b561a2832285
+Bob Dylan - Track 05.flac:de3c6ddf8e432622fbf654c3470c9536
+Bob Dylan - Track 06.flac:f1c34828d62ee32a4984e77a9f19abf3
+Bob Dylan - Track 07.flac:45e7827b610aad01bf55982d51fb8a38
+Bob Dylan - Track 08.flac:57affc394ee0a60e29f3de01c556c3dd
+Bob Dylan - Track 09.flac:2e35a9499481313c2db06957dea37512
+Bob Dylan - Track 10.flac:4493ed0e969fcdc9cec514cbbe0fadc1
+Bob Dylan - Track 11.flac:c396776f6c539df6216dd53948c1c9a2
+Bob Dylan - Track 12.flac:36fb87879df7e9ae5629e7b43ed2d2cd
+Bob Dylan - Track 13.flac:8008af7f8c97a6de4d69983958e01df6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-21-unwanted-man.flacf\I Didn't Expect Such a Good Crowd (Really) d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:57.42       63073628 B   ---   --   ---xx   flac  0.6140  Bob Dylan - Track 01.flac
+     5:31.20       58435484 B   ---   --   ---xx   flac  0.5889  Bob Dylan - Track 02.flac
+     5:13.62       55359068 B   ---   --   ---xx   flac  0.5650  Bob Dylan - Track 03.flac
+     7:12.52       76327148 B   ---   --   ---xx   flac  0.5899  Bob Dylan - Track 04.flac
+     5:27.06       57696956 B   ---   --   ---xx   flac  0.6028  Bob Dylan - Track 05.flac
+     5:59.18       63369980 B   ---   --   ---xx   flac  0.6108  Bob Dylan - Track 06.flac
+     7:38.66       80946476 B   ---   --   ---xx   flac  0.5835  Bob Dylan - Track 07.flac
+     8:16.22       87546188 B   ---   --   ---xx   flac  0.6166  Bob Dylan - Track 08.flac
+     5:58.35       63233564 B   ---   --   ---xx   flac  0.5722  Bob Dylan - Track 09.flac
+     7:10.21       75901436 B   ---   --   ---xx   flac  0.6048  Bob Dylan - Track 10.flac
+     7:58.68       84479180 B   ---   --   ---xx   flac  0.6140  Bob Dylan - Track 11.flac
+     6:42.73       71084540 B   ---   --   ---xx   flac  0.6284  Bob Dylan - Track 12.flac
+    79:07.35      837453648 B                            0.6003  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-21-unwanted-man.flacf\I Didn't Expect d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.71       71432636 B   ---   --   ---xx   flac  0.6151  Bob Dylan - Track 01.flac
+     7:10.33       75929660 B   ---   --   ---xx   flac  0.6431  Bob Dylan - Track 02.flac
+     2:59.19       31620332 B   ---   --   ---xx   flac  0.4321  Bob Dylan - Track 03.flac
+     6:39.43       70484780 B   ---   --   ---xx   flac  0.6164  Bob Dylan - Track 04.flac
+     6:53.67       73010828 B   ---   --   ---xx   flac  0.5942  Bob Dylan - Track 05.flac
+    10:04.14      106578572 B   ---   --   ---xx   flac  0.6310  Bob Dylan - Track 06.flac
+     4:46.57       50584508 B   ---   --   ---xx   flac  0.6067  Bob Dylan - Track 07.flac
+     5:18.32       56170508 B   ---   --   ---xx   flac  0.6028  Bob Dylan - Track 08.flac
+     7:09.41       75772076 B   ---   --   ---xx   flac  0.6033  Bob Dylan - Track 09.flac
+     6:37.28       70096700 B   ---   --   ---xx   flac  0.5853  Bob Dylan - Track 10.flac
+     6:45.01       71444396 B   ---   --   ---xx   flac  0.5908  Bob Dylan - Track 11.flac
+     5:59.31       63400556 B   ---   --   ---xx   flac  0.5484  Bob Dylan - Track 12.flac
+     2:34.72       27334988 B   ---   --   ---xx   flac  0.4524  Bob Dylan - Track 13.flac
+    79:43.59      843860540 B                            0.5939  (13 files)
+=================== 
+=================== 
+=================== 

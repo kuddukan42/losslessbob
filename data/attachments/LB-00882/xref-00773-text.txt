@@ -1,0 +1,178 @@
+===================
+===================
+===================
+=== BOB DYLAN - 1984-06-24 MADRID, SPAIN (AUD Xfer from cassette).ffp
+===================
+===================
+===================
+01 Highway 61 Revisited (Fault 0325 to 0348).flac:20bac58616d8a3aa554c8656518c6471
+02 Jokerman.flac:082c67742344dbff677ebc6b0ce46a71
+03 All Along the Watchtower.flac:771f5442d1581452b1494b2382df309f
+04 Just Like a Woman.flac:f533d7cdb3259fdc834f5ccf84f5faec
+05 Maggie's Farm.flac:f0f7a8f921673e71bfd99594a52d9417
+06 I and I.flac:1b8f860345f033ccc387b4fddd2154ba
+07 License to Kill.flac:dc5d6b5918b317fa417e6cb1f7037168
+08 Greg Sutton - Just My Imagination.flac:906ccc5d9a96c74a8eb2ecd75dc37492
+09 A Hard Rain's A-Gonna Fall.flac:e65b961ff7b6e994ce1dd043509f8e97
+10 Girl From the North Country.flac:c5f5b336ce49494c03c3f1c1aec16168
+11 It's Alright Ma (I'm Only Bleedin').flac:ea26b23762d7d78cab60adaa5b24fd3e
+12 Simple Twist of Fate _.flac:cd8df2dd241e97ccd070c4c65e238427
+13 Masters of War.flac:b98ce989dee606f23227c66d3710dad1
+14 Ballad of a Thin Man.flac:bb0f755c744e372b32c82ba26dd5d9e4
+15 Enough is Enough.flac:cee7519e614861aff8df18af9a0a7fbb
+16 Every Grain of Sand.flac:557bd495aa7e7302d37886ee8348451d
+17 Like a Rolling tone.flac:d19e31b9a3503cfb5437be0ead1d1fdf
+18 Mr Tambourine Man.flac:3a684cc7098ad2aac6132019e302e52d
+19 It ain't Me , Babe.flac:f736a3b047fb91a5f6525681e60c255d
+20 Knockin' on Heaven's Door.flac:b19a062dad30acbf79bfa5057f2ba933
+21 Leopard-Skin Pill-Box Hat.flac:93bcd530994494a8c4ef3a1b1f4bd843
+22 Tombstone Blues.flac:c9038691e85bf49fd7c4a1660306d786
+23 Blowin' in the Wind.flac:87686d48aba30c1012c8c81a778ead83
+===================
+===================
+===================
+=== BOB DYLAN - 1984-06-24 MADRID, SPAIN (AUD Xfer from cassette).md5
+===================
+===================
+===================
+fab9cd7cfbd6559ffea27f1a7b294ecc *01 Highway 61 Revisited (Fault 0325 to 0348).flac
+2b41e5f4346e5f9449d5804b8ad91368 *02 Jokerman.flac
+93f26b25db2d36875c69b7faf0bc2a5e *03 All Along the Watchtower.flac
+3e4cf56961205b2a855e9a27a7d3cb41 *04 Just Like a Woman.flac
+d248a18558c22803538600943d969c4c *05 Maggie's Farm.flac
+4daba1c79e827a678cc9be73024acd11 *06 I and I.flac
+f6732939ef0ce83ca68a37d268bd9627 *07 License to Kill.flac
+f2cf274bf4215aedb53ae4c047694157 *08 Greg Sutton - Just My Imagination.flac
+0f5227c150246c70696cfc897ba03afc *09 A Hard Rain's A-Gonna Fall.flac
+2105c94edd8442efd510f46e40383f6f *10 Girl From the North Country.flac
+8964f97f58fa8c317762881d43c1bc78 *11 It's Alright Ma (I'm Only Bleedin').flac
+4b662f6c21e6fc02fceaaf68624d1e4d *12 Simple Twist of Fate _.flac
+cc1a5c99971878d6cd1984f650c52527 *13 Masters of War.flac
+ad35fb7aff9154a7bf7356ae8848247b *14 Ballad of a Thin Man.flac
+259fec4e06f135599673f66108a6946d *15 Enough is Enough.flac
+35b780a3ddcc034917e16de1a0385b18 *16 Every Grain of Sand.flac
+ee8ef19d6a69da9911d4c4f87c2fb98f *17 Like a Rolling tone.flac
+a49976d547634ae9c5e3dda0023af58c *18 Mr Tambourine Man.flac
+256d56cee3557597f84152deefb88f3d *19 It ain't Me , Babe.flac
+b7f734dd949d39862f87fae4500eff40 *20 Knockin' on Heaven's Door.flac
+fcb3f8ff9881fb45004ab20aa946893e *21 Leopard-Skin Pill-Box Hat.flac
+ec1e0217b1a5f3849d30d39fa3fc126d *22 Tombstone Blues.flac
+f4380f3ffa7694524c73f642af921312 *23 Blowin' in the Wind.flac
+6e50cceb245a4ecee6daeb3dfc9e7efb *BOB DYLAN - 1984-06-24 MADRID, SPAIN (AUD Xfer from cassette).ffp
+===================
+===================
+===================
+=== BOB DYLAN - 1984-06-24 MADRID, SPAIN (AUD Xfer from cassette).txt
+===================
+===================
+===================
+BOB DYLAN
+Estadio del Rayo Vallecano
+Madrid, Spain
+26 June 1984
+  
+
+Fair quality, problem with over-recorded buzzing left channel part of Highway 61 Revisited (03.25 to 03.48), 
+and some slight buzzing at quieter moments during the first 45 minutes. But overall, a pretty decent recording.
+G Sutton track included. 
+
+Xfered from cassette > DR07 > WAV > audio cleaning lab, track marks, volume > TLH > flac 8.
+ 
+
+ 
+CD1
+1.  Highway 61 Revisited
+2.  Jokerman
+3.  All Along The Watchtower
+4.  Just Like A Woman
+5.  Maggie's Farm
+6.  I And I
+7.  License To Kill
+8.  Greg Sutton: I've Got To Use My Imagination (Gerry Goffin & Barry Goldberg)
+9.  A Hard Rain's A-Gonna Fall
+10. Girl From The North Country
+11. It's Alright, Ma (I'm Only Bleeding)
+
+CD2
+12. Simple Twist Of Fate
+13. Masters Of War
+14. Ballad Of A Thin Man
+15. Enough Is Enough
+16. Every Grain Of Sand
+17. Like A Rolling Stone
+  
+18. Mr. Tambourine Man
+19. It Ain't Me, Babe
+20. Knockin' On Heaven's Door
+21. Leopard-Skin Pill-Box Hat
+22. Tombstone Blues
+23. Blowin' In The Wind
+  
+
+Concert #20 of the 1984 Europe Tour.
+
+Bob Dylan (vocal & guitar), 
+Mick Taylor (guitar), 
+Ian MacLagan (keyboards), 
+Greg Sutton (bass), 
+Colin Allen (drums).
+
+ 
+8-10, 17, 18 Bob Dylan solo (vocal & guitar).              
+4, 17, 18 Bob Dylan harmonica.                
+19-22 Carlos Santana (guitar).
+
+ 
+
+BobTalk
+
+Thank you! Buenos noches! I wanna introduce Greg Sutton to you now. He's gonna sing a song for you now called ...., 
+what are you gonna sing tonight Greg? Dust Off My Imagination.
+
+Thank you very much. You've been a wonderful crowd. I wanna introduce the guys in the band to you. 
+On the keyboards... beginning with the keyboards, Ian MacLagan. 
+On the bass guitar, Greg Sutton. On the drums, Colin Allen. On the guitar, Mick Taylor. (at the end of Like A Rolling Stone)
+
+ 
+
+Bootleg
+
+Madrid '84. CD
+
+ 
+
+Stereo audience recording, 125 minutes.
+
+
+MD5
+fab9cd7cfbd6559ffea27f1a7b294ecc *01 Highway 61 Revisited (Fault 0325 to 0348).flac
+2b41e5f4346e5f9449d5804b8ad91368 *02 Jokerman.flac
+93f26b25db2d36875c69b7faf0bc2a5e *03 All Along the Watchtower.flac
+3e4cf56961205b2a855e9a27a7d3cb41 *04 Just Like a Woman.flac
+d248a18558c22803538600943d969c4c *05 Maggie's Farm.flac
+4daba1c79e827a678cc9be73024acd11 *06 I and I.flac
+f6732939ef0ce83ca68a37d268bd9627 *07 License to Kill.flac
+f2cf274bf4215aedb53ae4c047694157 *08 Greg Sutton - Just My Imagination.flac
+0f5227c150246c70696cfc897ba03afc *09 A Hard Rain's A-Gonna Fall.flac
+2105c94edd8442efd510f46e40383f6f *10 Girl From the North Country.flac
+8964f97f58fa8c317762881d43c1bc78 *11 It's Alright Ma (I'm Only Bleedin').flac
+4b662f6c21e6fc02fceaaf68624d1e4d *12 Simple Twist of Fate _.flac
+cc1a5c99971878d6cd1984f650c52527 *13 Masters of War.flac
+ad35fb7aff9154a7bf7356ae8848247b *14 Ballad of a Thin Man.flac
+259fec4e06f135599673f66108a6946d *15 Enough is Enough.flac
+35b780a3ddcc034917e16de1a0385b18 *16 Every Grain of Sand.flac
+ee8ef19d6a69da9911d4c4f87c2fb98f *17 Like a Rolling tone.flac
+a49976d547634ae9c5e3dda0023af58c *18 Mr Tambourine Man.flac
+256d56cee3557597f84152deefb88f3d *19 It ain't Me , Babe.flac
+b7f734dd949d39862f87fae4500eff40 *20 Knockin' on Heaven's Door.flac
+fcb3f8ff9881fb45004ab20aa946893e *21 Leopard-Skin Pill-Box Hat.flac
+ec1e0217b1a5f3849d30d39fa3fc126d *22 Tombstone Blues.flac
+f4380f3ffa7694524c73f642af921312 *23 Blowin' in the Wind.flac
+6e50cceb245a4ecee6daeb3dfc9e7efb *BOB DYLAN - 1984-06-24 MADRID, SPAIN (AUD Xfer from cassette).ffp
+
+No errors occured.
+
+Create checksum file log saved to file.
+===================
+===================
+===================

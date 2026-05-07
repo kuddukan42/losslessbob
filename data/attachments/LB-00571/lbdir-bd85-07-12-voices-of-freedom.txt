@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd85-07-12-voices-of-freedom 
+=================== 
+=================== 
+=================== 
+ca6333f4991c4c9ecbde2329e76b03b1  bd-VoicesOfFreedom-back.jpg
+199937303b2fd41e0a66e6ab8c6cae09  bd-VoicesOfFreedom-front.jpg
+09f642dab50e0277b4791d0d2520675c  Track01.shn
+39f80b819083694c8ed96f6a72f87462  Track02.shn
+858500bde36463a8bead9f89133cfa0f  Track03.shn
+3044dac2c6814cdef244975a1b0be99b  Track04.shn
+adf21eecb21c258d6821e0b863f268ca  Track05.shn
+1dc5ef0958b394b9edf2d66de6b9b7af  Track06.shn
+5d11c04687b20b7130bdca8ce97978c6  Track07.shn
+f83c5e5696da7e97975286fca9962031  Track08.shn
+726ef1d6c2c4fbcfd9b424874b8791d1  Track09.shn
+ed61912daff977ef8b61a9bc021bdfc8  Track10.shn
+9cf472a4432b55fdaaeefb66f2106556  Track11.shn
+cd2e18954e4743e48db359208498156b  Track12.shn
+63daba19a76e5343417992a078807892  Track13.shn
+54a892ed21b305aaa72971dd72cf55cb  Track14.shn
+1df5a5b0a218b89a5c350f4f40e6796f  Track15.shn
+e79b6f250b813989efeac85e3ca4f967  Track16.shn
+d9be37f42941aecc3df7d4bfa15abac3  Track17.shn
+fb6cf6764f44b75a8eafcd14979ee88b  Track18.shn
+14e6785de099a19fccbd160de7f99bb7  Track19.shn
+8fbe8a56d66db4320f28a2f7bca59302  Track20.shn
+ea0ec65e28200f9502e9806193de0c3d  Voices Of Freedom.md5
+a631d96442ed1fe3b63b0a793e9f0b48  Voices Of Freedom.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd85-07-12-voices-of-freedom 
+=================== 
+=================== 
+=================== 
+10363da3e8d117c6e7b8810e723856e0  [shntool]  Track01.wav
+5d613f34bd10f0a6505e839647d0c319  [shntool]  Track02.wav
+98e1e4984bcb8f44104eab29ea21b752  [shntool]  Track03.wav
+379b0edff26aa28751152dfa08bc4ec6  [shntool]  Track04.wav
+a912f1cf143cb9cb58ea8ac788e60b0d  [shntool]  Track05.wav
+acd0cfa0c48f8bbe81d83c6ded1d032e  [shntool]  Track06.wav
+dd70f737cdfd4c104778b768e335848f  [shntool]  Track07.wav
+bf40b1fe0ef6c4e4f8a5a0c2a48f2c7c  [shntool]  Track08.wav
+2be7b3f906466ecfab05df3a3a6d0499  [shntool]  Track09.wav
+b88d25c9c989ebb9355a36289a5734fb  [shntool]  Track10.wav
+6552b038c0eb4d8c9d0ba149bc664e3e  [shntool]  Track11.wav
+d5fca98bd52e06950be8e1239e8bd5b9  [shntool]  Track12.wav
+5783b1af4a4c070aedd265404b67bd15  [shntool]  Track13.wav
+123b37729afb42841909992c45aa34ff  [shntool]  Track14.wav
+07127105d04cb71b5c89609b15659fd0  [shntool]  Track15.wav
+82b3f13f2213a1099314b182ebcb36ec  [shntool]  Track16.wav
+19bd7c4af71e3d184c645b529a9ec20e  [shntool]  Track17.wav
+b127f4efcd0b684e89d99a6e65f9cd36  [shntool]  Track18.wav
+5bf3c4e778dadaea6a525a639b406c13  [shntool]  Track19.wav
+9acbdd371fc4ff72921b3c4fa19cd4b5  [shntool]  Track20.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd85-07-12-voices-of-freedom 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:49.17       93355628 B   ---   --   ---xx    shn  0.5874  Track01.shn
+     3:56.30       41701004 B   ---   --   ---xx    shn  0.5457  Track02.shn
+     6:02.35       63939164 B   ---   --   ---xx    shn  0.5765  Track03.shn
+     3:49.40       40489724 B   ---   --   ---xx    shn  0.5769  Track04.shn
+     4:12.20       44499884 B   ---   --   ---xx    shn  0.5701  Track05.shn
+     3:00.45       31857884 B   ---   --   ---xx    shn  0.6137  Track06.shn
+     1:42.10       18016364 B   ---   --   ---xx    shn  0.5614  Track07.shn
+     4:03.10       42888764 B   ---   --   ---xx    shn  0.5902  Track08.shn
+     6:43.13       71119820 B   ---   --   ---xx    shn  0.5953  Track09.shn
+     2:26.02       25759148 B   ---   --   ---xx    shn  0.5867  Track10.shn
+     1:45.18       18564380 B   ---   --   ---xx    shn  0.6142  Track11.shn
+     2:33.07       27005708 B   ---   --   ---xx    shn  0.6773  Track12.shn
+     1:42.63       18141020 B   ---   --   ---xx    shn  0.6467  Track13.shn
+     4:59.40       52837724 B   ---   --   ---xx    shn  0.6246  Track14.shn
+     1:19.17       13975628 B   ---   --   ---xx    shn  0.6075  Track15.shn
+     3:49.03       40402700 B   ---   --   ---xx    shn  0.6031  Track16.shn
+     0:29.00        5115644 B   ---   --   ---xx    shn  0.6189  Track17.shn
+     4:36.20       48733484 B   ---   --   ---xx    shn  0.7212  Track18.shn
+     3:50.72       40741388 B   ---   --   ---xx    shn  0.7078  Track19.shn
+     5:33.57       58875308 B   ---   --   ---xx    shn  0.6906  Track20.shn
+    75:23.69      798020368 B                            0.6149  (20 files)
+=================== 
+=================== 
+=================== 

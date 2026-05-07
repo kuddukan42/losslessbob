@@ -1,0 +1,10 @@
+c9b996e5761665ecbd2ac72ce169365c *austin_03-04-19_cd1_Track 01.shn
+311e7451020486dfe4b4c352f4512fd9 *austin_03-04-19_cd1_Track 02.shn
+573e62f8f3f24482b923afa243a6d67f *austin_03-04-19_cd1_Track 03.shn
+1d6af1e210a7b8adbac8513d879e20b6 *austin_03-04-19_cd1_Track 04.shn
+ac58efd8a6eb1305a90f6d79574987dd *austin_03-04-19_cd1_Track 05.shn
+ffa64b6dee9ad9fa6ad937a6fbd6a9ee *austin_03-04-19_cd1_Track 06.shn
+519143b13b3d613e706a335d4272869a *austin_03-04-19_cd1_Track 07.shn
+45fe045c2c4afb0603ef81daad91d6ad *austin_03-04-19_cd1_Track 08.shn
+98c179785203b209dcc4dd9a2ddf1f46 *austin_03-04-19_cd1_Track 09.shn
+b7116b60dc933396d97aa265972526b8 *austin_03-04-19_cd1_Track 10.shn

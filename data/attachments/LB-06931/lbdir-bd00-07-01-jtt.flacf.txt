@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-01-jtt.flacf 
+=================== 
+=================== 
+=================== 
+7291a28a52e83186cff8919251b698b7  Disc One\Dylan - 01.07.00_Disc01Track01.flac
+c29a728e07877dc8260308f56e4ebee7  Disc One\Dylan - 01.07.00_Disc01Track02.flac
+e1165991acdada08ee68f8d4a46ba447  Disc One\Dylan - 01.07.00_Disc01Track03.flac
+68d4474ad431567f6e31a26c3747ea78  Disc One\Dylan - 01.07.00_Disc01Track04.flac
+742044abe61f37ef4af121be2686704b  Disc One\Dylan - 01.07.00_Disc01Track05.flac
+42e3a1b462641676a2791d8bf1b8d303  Disc One\Dylan - 01.07.00_Disc01Track06.flac
+46545bc808eccb29c1b4f08278d69c99  Disc One\Dylan - 01.07.00_Disc01Track07.flac
+43e8093ea87b71411ab13107df0d1c8c  Disc One\Dylan - 01.07.00_Disc01Track08.flac
+97ab1c3db8b9ad4112b2f9fefa786278  Disc One\Dylan - 01.07.00_Disc01Track09.flac
+c31d2f47eb33c374f46e23e581d8b493  Disc One\Dylan - 01.07.00_Disc01Track10.flac
+b39444739c9a700b13185902e41e27fe  Disc Two\Dylan - 01.07.00_Disc02Track01.flac
+a6e5ff3e669bd972358baa5d48bcf46a  Disc Two\Dylan - 01.07.00_Disc02Track02.flac
+34886045587479c1c35c60f40ce8f507  Disc Two\Dylan - 01.07.00_Disc02Track03.flac
+d6d89515b291068a21bc03f98dfc1c22  Disc Two\Dylan - 01.07.00_Disc02Track04.flac
+5040d25a870cc40e9f0f90983b36157a  Disc Two\Dylan - 01.07.00_Disc02Track05.flac
+b504f91a9d13a45b602b4bf194302d9f  Disc Two\Dylan - 01.07.00_Disc02Track06.flac
+37a03c68bfe4882af1e71c300acb35cf  Dylan - Del Mar July 1st 2000.md5
+bc7027477e26bee8af4d42caff0f2682  Dylan - Del Mar July 1st 2000.txt
+d53b9d690ec5426316b2cd959fb415a6  Dylan - Del Mar July 1st 2000_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-01-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - 01.07.00_Disc01Track01.flac:f7b50470ba5bc0097c79d388e1f93465
+Dylan - 01.07.00_Disc01Track02.flac:edba348ab7025f1eae842f099fe449bb
+Dylan - 01.07.00_Disc01Track03.flac:8fa5af7130f53dc871db9095ef29e562
+Dylan - 01.07.00_Disc01Track04.flac:b2596419e75b1730476158e58b318e6c
+Dylan - 01.07.00_Disc01Track05.flac:7fd3cd6d547c5c63aa0d305061a7b95a
+Dylan - 01.07.00_Disc01Track06.flac:e2746d379e549cafd24c92d735e1b8c5
+Dylan - 01.07.00_Disc01Track07.flac:f62c55f73705f50e95b1a035a801261b
+Dylan - 01.07.00_Disc01Track08.flac:3302dab27573a417c1732ecd2729a35c
+Dylan - 01.07.00_Disc01Track09.flac:a2a07f99f467a8a649d0828b2255dedc
+Dylan - 01.07.00_Disc01Track10.flac:4bc9feb00faa3d8eac7ded80b3f28c57
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-01-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - 01.07.00_Disc02Track01.flac:20578fc40e486d95ac8c87c003ec4977
+Dylan - 01.07.00_Disc02Track02.flac:8cb56ad80a3eb4bc9f1676641d534047
+Dylan - 01.07.00_Disc02Track03.flac:cb3bfdeb9df4972a36eae3f83ac61cfa
+Dylan - 01.07.00_Disc02Track04.flac:6f46033c802f32c0bb7c3bc5dc7cbc1e
+Dylan - 01.07.00_Disc02Track05.flac:476b616d806b43ce9a42e82eca91c0fe
+Dylan - 01.07.00_Disc02Track06.flac:fcad17470f3379bd5148b6a70bd5149a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-01-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:34.69       27327932 B   ---   --   ---xx   flac  0.4719  Dylan - 01.07.00_Disc01Track01.flac
+     3:28.38       36780620 B   ---   --   ---xx   flac  0.4468  Dylan - 01.07.00_Disc01Track02.flac
+    10:03.40      106463324 B   ---   --   ---xx   flac  0.4417  Dylan - 01.07.00_Disc01Track03.flac
+     6:38.62       70353068 B   ---   --   ---xx   flac  0.4355  Dylan - 01.07.00_Disc01Track04.flac
+     8:22.29       88621052 B   ---   --   ---xx   flac  0.4813  Dylan - 01.07.00_Disc01Track05.flac
+     7:49.52       82853948 B   ---   --   ---xx   flac  0.4559  Dylan - 01.07.00_Disc01Track06.flac
+     2:40.24       28280492 B   ---   --   ---xx   flac  0.4742  Dylan - 01.07.00_Disc01Track07.flac
+     6:58.38       73824620 B   ---   --   ---xx   flac  0.4780  Dylan - 01.07.00_Disc01Track08.flac
+     5:37.47       59557388 B   ---   --   ---xx   flac  0.4728  Dylan - 01.07.00_Disc01Track09.flac
+     8:21.70       88541084 B   ---   --   ---xx   flac  0.4669  Dylan - 01.07.00_Disc01Track10.flac
+    62:36.19      662603528 B                            0.4612  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-01-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.44       52494332 B   ---   --   ---xx   flac  0.5013  Dylan - 01.07.00_Disc02Track01.flac
+     7:37.32       80690108 B   ---   --   ---xx   flac  0.5091  Dylan - 01.07.00_Disc02Track02.flac
+     5:40.02       59980748 B   ---   --   ---xx   flac  0.4773  Dylan - 01.07.00_Disc02Track03.flac
+     6:56.57       73516508 B   ---   --   ---xx   flac  0.4662  Dylan - 01.07.00_Disc02Track04.flac
+     6:24.04       67747052 B   ---   --   ---xx   flac  0.4772  Dylan - 01.07.00_Disc02Track05.flac
+     5:21.15       56659724 B   ---   --   ---xx   flac  0.4745  Dylan - 01.07.00_Disc02Track06.flac
+    36:57.04      391088472 B                            0.4846  (6 files)
+=================== 
+=================== 
+=================== 

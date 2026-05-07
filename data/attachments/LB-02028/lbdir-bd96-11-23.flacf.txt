@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-23.flacf 
+=================== 
+=================== 
+=================== 
+78b172a90b1912f409545e3343765269  bd1996-11-23_Akron, OH.md5
+54c4325b31897ec0cef7ea09e074cc93  bd1996-11-23_Akron, OH.txt
+02429efe164b683f5800ed424f866373  bd1996-11-23d1t01.flac
+cc408aa89b2870c90334c2335ffdc9b4  bd1996-11-23d1t02.flac
+64e8162d167ddea8da730eb82108edd4  bd1996-11-23d1t03.flac
+30e813197d2b51ce6d72a5446d28b03e  bd1996-11-23d1t04.flac
+bf6432029ce5faea7a852bc2e4e706be  bd1996-11-23d1t05.flac
+479c1665a3c27a29b5faaaa60d1b5eb6  bd1996-11-23d1t06.flac
+e2481026019274c18f0fd8a91bf7f2af  bd1996-11-23d1t07.flac
+08a73a9cb5fd2f12f9182a8af97ffb05  bd1996-11-23d1t08.flac
+3ed5ca97aa6c48307846292fc95d2024  bd1996-11-23d1t09.flac
+5b10d5c50455d887dde7e9a329ceb72f  bd1996-11-23d1t10.flac
+72fe60556dcfafc91c31a13acabc9bac  bd1996-11-23d1t11.flac
+21dec1939219c7d5cab51cba20b71442  bd1996-11-23d2t01.flac
+ce5f620932162637b90d69d14424c41e  bd1996-11-23d2t02.flac
+3a1dcd7e1b92001cb40be1eb5a994a7b  bd1996-11-23d2t03.flac
+bd43121205d01f69bbdf7481c0a3e91a  bd1996-11-23d2t04.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-23.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-11-23d1t01.flac:0f3cf4e8f3cd2771c198ac28393c975c
+bd1996-11-23d1t02.flac:25e2800d3fbc3f3711383aad2b819009
+bd1996-11-23d1t03.flac:df39d16c1754fc870cad7f097bda1679
+bd1996-11-23d1t04.flac:6e5878a749e54b5ef525c3ac3a2724f1
+bd1996-11-23d1t05.flac:9e6625cb7f1e4a2c48e1bcd4cf4bede7
+bd1996-11-23d1t06.flac:2a3f9acfda75e77c1fa2f64c258f5cbd
+bd1996-11-23d1t07.flac:fad49c5d690f1ef5eab730bcd3786d4e
+bd1996-11-23d1t08.flac:ec80087c5cc8c40eed96a9d0a93f69c6
+bd1996-11-23d1t09.flac:3ad7fbb5677601e79bce5ab6bdbcf296
+bd1996-11-23d1t10.flac:47d96e771c1147906813098c818dfea7
+bd1996-11-23d1t11.flac:5db99c5c442d17fd9600df4d7e9096e1
+bd1996-11-23d2t01.flac:b404082e39cbf21df5d7ca87a78443dd
+bd1996-11-23d2t02.flac:d1ed656d473775bbca21efa31c3b9917
+bd1996-11-23d2t03.flac:e561b90d7eb8bb3703dca248fc50f6c9
+bd1996-11-23d2t04.flac:54be81cf9fa0a141b11222fd83966b63
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-23.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:25.67       46903628 B   ---   --   ---xx   flac  0.6295  bd1996-11-23d1t01.flac
+     5:51.29       61984652 B   ---   --   ---xx   flac  0.5882  bd1996-11-23d1t02.flac
+     6:13.08       65816060 B   ---   --   ---xx   flac  0.6063  bd1996-11-23d1t03.flac
+     7:18.37       77350268 B   ---   --   ---xx   flac  0.5289  bd1996-11-23d1t04.flac
+     6:34.19       69546332 B   ---   --   ---xx   flac  0.5667  bd1996-11-23d1t05.flac
+     7:13.66       76536476 B   ---   --   ---xx   flac  0.6242  bd1996-11-23d1t06.flac
+     7:28.10       79050764 B   ---   --   ---xx   flac  0.5664  bd1996-11-23d1t07.flac
+     5:11.06       54874556 B   ---   --   ---xx   flac  0.5387  bd1996-11-23d1t08.flac
+     6:10.30       65338604 B   ---   --   ---xx   flac  0.5287  bd1996-11-23d1t09.flac
+     5:32.67       58722428 B   ---   --   ---xx   flac  0.5640  bd1996-11-23d1t10.flac
+     6:45.03       71449100 B   ---   --   ---xx   flac  0.5491  bd1996-11-23d1t11.flac
+     8:19.54       88150652 B   ---   --   ---xx   flac  0.5716  bd1996-11-23d2t01.flac
+     9:36.38      101695820 B   ---   --   ---xx   flac  0.5404  bd1996-11-23d2t02.flac
+     8:17.49       87786092 B   ---   --   ---xx   flac  0.5666  bd1996-11-23d2t03.flac
+     9:16.28       98144300 B   ---   --   ---xx   flac  0.5651  bd1996-11-23d2t04.flac
+   104:14.61     1103349732 B                            0.5671  (15 files)
+=================== 
+=================== 
+=================== 

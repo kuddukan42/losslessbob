@@ -1,0 +1,129 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-03-lk.flacf 
+=================== 
+=================== 
+=================== 
+68cae9c9ea36a012903da7c253948b3c  D1\bd3Oct78 - 101.flac
+19167ff9f92daa0af2e21adc509edd77  D1\bd3Oct78 - 102.flac
+7d9ec069c1912c465722ceeca9f0f132  D1\bd3Oct78 - 103.flac
+5dcee3ee8cf704b08d8898be89c6eda5  D1\bd3Oct78 - 104.flac
+7cf799fd18c68bfd1a6812616a834269  D1\bd3Oct78 - 105.flac
+3b323deacbde7cd83bb5a9748f4af621  D1\bd3Oct78 - 106.flac
+124abde32c67964411df7766769cb9eb  D1\bd3Oct78 - 107.flac
+ac59c1600ad0fd33a8f92cd5ed28ad7a  D1\bd3Oct78 - 108.flac
+a1a98bc5a9a40344a6d45f1d87e407fb  D1\bd3Oct78 - 109.flac
+ab8e3f57a374e98a9e2eb5d43fd6516d  D1\bd3Oct78 - 110.flac
+c904cc516f391a78c5d7a34efb40c9d0  D1\bd3Oct78 - 111.flac
+d87e0a5f63f4b23a45f7c371dc500cb8  D1\bd3Oct78 - 112.flac
+5b46d16ae80ac18fda8a1c22d2b61e75  D1\bd3Oct78 - 113.flac
+7a29dbe8324e64646dcb85d4753d29d9  D1\D1.md5
+722297ae8f488a364e343df03cbd6da0  D2\bd3Oct78 - 201.flac
+42ba734ac83f4c0ea9eeb185a0fe0ab3  D2\bd3Oct78 - 202.flac
+8841cc1ee12b1bd49d2327fda4304d0d  D2\bd3Oct78 - 203.flac
+111e3f516cee58485b69321f52a311df  D2\bd3Oct78 - 204.flac
+2fc3f12c39fee524cc695a436e76d5f1  D2\bd3Oct78 - 205.flac
+6b51473d3b205f8fd8b7eb0c9d0cd464  D2\bd3Oct78 - 206.flac
+1277cc1365458a2adc735e69d92059f8  D2\bd3Oct78 - 207.flac
+d1e50d937cd399563dab09b044a23a59  D2\bd3Oct78 - 208.flac
+7d378cf29acfea2bde8c657ff5c5f384  D2\bd3Oct78 - 209.flac
+ab9e8af785799908eef691882079c070  D2\bd3Oct78 - 210.flac
+01e9a946ff812889f1a66d1d767cb00c  D2\bd3Oct78 - 211.flac
+3e41d1eb7d6d19cbef65e43425bef0d7  D2\bd3Oct78 - 212.flac
+e36be9a68a1405de5b172328e3049d85  D2\bd3Oct78 - 213.flac
+d74fb5dcc2c60d5f6a743a6c053bf951  D2\bd3Oct78 - 214.flac
+520ba349c800aad4736746df9b2509cf  D2\bd3Oct78 - 215.flac
+52622ea328bd2e36bc20113f78a448a6  D2\D2.md5
+e51fb6961d40da02358d3bbe2d88a7f0  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-03-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+bd3Oct78 - 101.flac:f0058956b8afa261cc5786fd4f824c21
+bd3Oct78 - 102.flac:c21e3f3aa514976fbd69e3a136c528da
+bd3Oct78 - 103.flac:d6a9e287f9af309229c0492472a8125a
+bd3Oct78 - 104.flac:ee2b9898b5a5cc3e40fa8dc29d8b4a6d
+bd3Oct78 - 105.flac:99f062111b88be1205483e77e3d3bc72
+bd3Oct78 - 106.flac:f9827e9ba8436261b07a2749a917aaa1
+bd3Oct78 - 107.flac:e06ef210290efe9ba0cdbec0f17215b3
+bd3Oct78 - 108.flac:2a4df72413279462b77c9a9c23bd6aeb
+bd3Oct78 - 109.flac:5c4046b668e4e59989647570c637ef1c
+bd3Oct78 - 110.flac:de4bd858484e84121c44b8a2cf64f3d5
+bd3Oct78 - 111.flac:7daceb99c1eaf3afbab2ccad3356cb42
+bd3Oct78 - 112.flac:996c7b60a2b1ed7f858de2fd2940aa0a
+bd3Oct78 - 113.flac:6d09c3bb626211dafde7a4a3d07870f1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-03-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+bd3Oct78 - 201.flac:55ad6d9017628e76fc682de1e29813b1
+bd3Oct78 - 202.flac:877b39ac4c8adedd776f5e37ec2dc646
+bd3Oct78 - 203.flac:6d3c3ca9f09a22e8fd0a96cd84f9583b
+bd3Oct78 - 204.flac:1ce6b5c8da08a34bb0bcd7c2e59b767b
+bd3Oct78 - 205.flac:555e624dc3106cadbbf66492beda59f8
+bd3Oct78 - 206.flac:68932f5b6c7b5b42e47ecdca4dc16ef9
+bd3Oct78 - 207.flac:187c63c49f4897b547ed74d31a8851a1
+bd3Oct78 - 208.flac:ae8d6a7d39f04d50113f7ceea6a3715c
+bd3Oct78 - 209.flac:e9727beabc904255d2e69ed140de074a
+bd3Oct78 - 210.flac:9b8db1a1e39284cecb50aff1ab7b2e72
+bd3Oct78 - 211.flac:65cb2575b438bcc20449aee870cd2647
+bd3Oct78 - 212.flac:8049cd5aad141f620710454248a073c0
+bd3Oct78 - 213.flac:b60e471e7a990c2c61f9be186fdfc067
+bd3Oct78 - 214.flac:e319175ee1027114cf9b0963f022b1a2
+bd3Oct78 - 215.flac:716b6c515e2e6197af1c4f322115ea0c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-03-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:41.16       28438076 B   ---   --   ---xx   flac  0.4483  bd3Oct78 - 101.flac
+     3:15.18       34440380 B   ---   --   ---xx   flac  0.4431  bd3Oct78 - 102.flac
+     4:34.42       48432428 B   ---   --   ---xx   flac  0.4592  bd3Oct78 - 103.flac
+     4:34.36       48418316 B   ---   --   ---xx   flac  0.4954  bd3Oct78 - 104.flac
+     3:47.25       40101644 B   ---   --   ---xx   flac  0.5420  bd3Oct78 - 105.flac
+     8:01.31       84921356 B   ---   --   ---xx   flac  0.5039  bd3Oct78 - 106.flac
+     4:36.42       48785228 B   ---   --   ---xx   flac  0.5139  bd3Oct78 - 107.flac
+     5:00.60       53061164 B   ---   --   ---xx   flac  0.5051  bd3Oct78 - 108.flac
+     4:30.46       47736236 B   ---   --   ---xx   flac  0.5084  bd3Oct78 - 109.flac
+     7:15.63       76882220 B   ---   --   ---xx   flac  0.5849  bd3Oct78 - 110.flac
+     4:22.26       46277996 B   ---   --   ---xx   flac  0.5417  bd3Oct78 - 111.flac
+     4:57.62       52536668 B   ---   --   ---xx   flac  0.5490  bd3Oct78 - 112.flac
+     4:04.00       43041644 B   ---   --   ---xx   flac  0.5753  bd3Oct78 - 113.flac
+    61:42.17      653073356 B                            0.5184  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-03-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.06       64929356 B   ---   --   ---xx   flac  0.4940  bd3Oct78 - 201.flac
+     3:11.19       33737132 B   ---   --   ---xx   flac  0.5378  bd3Oct78 - 202.flac
+     4:44.71       50264636 B   ---   --   ---xx   flac  0.5609  bd3Oct78 - 203.flac
+     4:38.68       49199180 B   ---   --   ---xx   flac  0.5230  bd3Oct78 - 204.flac
+     3:18.71       35094236 B   ---   --   ---xx   flac  0.5014  bd3Oct78 - 205.flac
+     5:09.47       54618188 B   ---   --   ---xx   flac  0.5488  bd3Oct78 - 206.flac
+     4:33.71       48324236 B   ---   --   ---xx   flac  0.5770  bd3Oct78 - 207.flac
+     5:59.05       63339404 B   ---   --   ---xx   flac  0.5418  bd3Oct78 - 208.flac
+     3:25.65       36314924 B   ---   --   ---xx   flac  0.5305  bd3Oct78 - 209.flac
+     3:32.48       37509740 B   ---   --   ---xx   flac  0.5734  bd3Oct78 - 210.flac
+     3:05.70       32798684 B   ---   --   ---xx   flac  0.5715  bd3Oct78 - 211.flac
+     2:07.70       22567484 B   ---   --   ---xx   flac  0.5245  bd3Oct78 - 212.flac
+     6:44.57       71399708 B   ---   --   ---xx   flac  0.5888  bd3Oct78 - 213.flac
+     6:04.39       64301372 B   ---   --   ---xx   flac  0.5632  bd3Oct78 - 214.flac
+     6:51.50       72618044 B   ---   --   ---xx   flac  0.5457  bd3Oct78 - 215.flac
+    69:38.07      737016324 B                            0.5470  (15 files)
+=================== 
+=================== 
+=================== 

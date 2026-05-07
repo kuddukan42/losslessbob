@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-01-14-a.shnf 
+=================== 
+=================== 
+=================== 
+949e209298f161f19ae06423e2c2d587  CD1\01 Gotta serve somebody.shn
+c15b45bee634a2cee95f574c7cd29ef6  CD1\02 I believe in you.shn
+846d1d050a341c6d106d1ed92b0ec9dc  CD1\03 When you gonna wake up.shn
+65fa00f707783a40154fbb6552c3581a  CD1\04 When he returns.shn
+7ec439f8aaf5aa15a77031d6ca624945  CD1\05 Man gave names to all the animals.shn
+6807e0db5f498fb89e704d8cb3c05f8d  CD1\06 Precious angel.shn
+37e337771df15fdb19bd7a6146ce5425  CD1\07 Slow train.shn
+d80987d20d1efb1b7d3158022e6ed409  CD1\1980-01-14 Seattle, Washington d1.md5
+1056b37425de97fb2e83e4e574376e0e  CD2\01 Covenant woman.shn
+12f707af0cfcfcae801ca2cfbc01f871  CD2\02 Walk around heaven all day  [Carolyn Dennis].shn
+184f682414c16db227268bde5b90c81b  CD2\03 Gonna change my way of thinking.shn
+e169eb8ae51bc3a1c672492541afb2ce  CD2\04 Do right to me baby (do unto others).shn
+86457a77834828896bf6d3fc654300a1  CD2\05 Solid rock.shn
+1dbc9f52b5b04ebbc22ee74f588c9b4d  CD2\06 Saving grace.shn
+c5138bfc758a306ac89133aedf82f457  CD2\07 What can I do for you.shn
+e7d68ca0adcfa200e22f5c1faa815bd6  CD2\08 Saved.shn
+0ddb49c0bc4a9f0dfbd8a89acff9dbc8  CD2\09 In the garden.shn
+07d53d47dcf0308fd5161d22386e7e0b  CD2\10 Blessed be the name.shn
+4d686cb5d62f82e28f88caad6662f7cd  CD2\11 Pressing on.shn
+9b50e953581ee0ce16166b255dd23e66  CD2\1980-01-14 Seattle, Washington d2.md5
+081b8fbf6ad78cbf32033ddbc8d71576  infos.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-01-14-a.shnf\cd1 
+=================== 
+=================== 
+=================== 
+85dce81ee7b3cb2e8d6a8e6b7c040596  [shntool]  01_gotta_serve_somebody.wav
+97ed3d2c7e20d8e0011b0ec8f8d79841  [shntool]  02_i_believe_in_you.wav
+d98bc591245faaf1233bbd4a7ce3ab10  [shntool]  03_when_you_gonna_wake_up.wav
+f1f5fce930c613e1ef3852151d3d2b84  [shntool]  04_when_he_returns.wav
+b0003b24710d2feae8106820399e96a5  [shntool]  05_man_gave_names_to_all_the_animals.wav
+2d914428673c09c0fe8e36a1d31b45de  [shntool]  06_precious_angel.wav
+9839afe3d5886a7aad402d93d5380940  [shntool]  07_slow_train.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-01-14-a.shnf\cd2 
+=================== 
+=================== 
+=================== 
+4458501e27ca5317e984bef8fb5db233  [shntool]  01_covenant_woman.wav
+ebb692a168bc95325e4ba4cd4ccc451f  [shntool]  02_walk_around_heaven_all_day__[carolyn_dennis].wav
+2cdfcf1dc5e9d70b1edda512a13a6f5f  [shntool]  03_gonna_change_my_way_of_thinking.wav
+e371e962bb9cb0c79f73759d26c23b6b  [shntool]  04_do_right_to_me_baby_(do_unto_others).wav
+4d89c819147cd7973f8ba97062978c1c  [shntool]  05_solid_rock.wav
+4497ff1daad897b03fe78649923386b0  [shntool]  06_saving_grace.wav
+316eff853b0a00676d4554a348a56fbb  [shntool]  07_what_can_i_do_for_you.wav
+91b842c86d9d532bfccdcc33ede7a2f1  [shntool]  08_saved.wav
+a14000d498b6a95d27c1358982a60ab5  [shntool]  09_in_the_garden.wav
+5e0460cbc045e9939ee6223990b93268  [shntool]  10_blessed_be_the_name.wav
+e2cca5aaa24e27282f11a544baacd824  [shntool]  11_pressing_on.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-01-14-a.shnf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:09.72       75844988 B   ---   --   ---xx    shn  0.7745  01 Gotta serve somebody.shn
+     5:01.20       53143484 B   ---   --   ---xx    shn  0.6813  02 I believe in you.shn
+     5:51.02       61921148 B   ---   --   ---xx    shn  0.7773  03 When you gonna wake up.shn
+     4:52.53       51633500 B   ---   --   ---xx    shn  0.6519  04 When he returns.shn
+     5:49.47       61674188 B   ---   --   ---xx    shn  0.7022  05 Man gave names to all the animals.shn
+     6:49.20       72194684 B   ---   --   ---xx    shn  0.7323  06 Precious angel.shn
+     6:20.04       67041452 B   ---   --   ---xx    shn  0.7834  07 Slow train.shn
+    41:53.68      443453444 B                            0.7339  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-01-14-a.shnf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:10.26       65329196 B   ---   --   ---xx    shn  0.6772  01 Covenant woman.shn
+     4:46.04       50459852 B   ---   --   ---xx    shn  0.6712  02 Walk around heaven all day  [Carolyn Dennis].shn
+     4:55.56       52169756 B   ---   --   ---xx    shn  0.7671  03 Gonna change my way of thinking.shn
+     4:42.32       49820108 B   ---   --   ---xx    shn  0.7168  04 Do right to me baby (do unto others).shn
+     4:43.25       49980044 B   ---   --   ---xx    shn  0.8021  05 Solid rock.shn
+     4:28.13       47305820 B   ---   --   ---xx    shn  0.6790  06 Saving grace.shn
+     6:01.02       63685148 B   ---   --   ---xx    shn  0.7089  07 What can I do for you.shn
+     4:41.67       49726028 B   ---   --   ---xx    shn  0.7955  08 Saved.shn
+     6:32.64       69299372 B   ---   --   ---xx    shn  0.6848  09 In the garden.shn
+     6:48.23       72025340 B   ---   --   ---xx    shn  0.7159  10 Blessed be the name.shn
+     6:24.01       67739996 B   ---   --   ---xx    shn  0.6425  11 Pressing on.shn
+    60:14.13      637540660 B                            0.7110  (11 files)
+=================== 
+=================== 
+=================== 

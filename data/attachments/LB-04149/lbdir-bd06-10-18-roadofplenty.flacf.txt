@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-10-18-roadofplenty.flacf 
+=================== 
+=================== 
+=================== 
+af95ce1033a81e093700f00b033db7cd  bd06-10-18-roadofplenty-LB-4149.txt
+15678ee9031a63fe6eddb6d9f039683f  DISC ONE DYLAN 10-18-06 Track01.flac
+763e7aed0ce3554f7301d199b699c409  DISC ONE DYLAN 10-18-06 Track02.flac
+7abe3395536a4b81cab1bd28338aaa77  DISC ONE DYLAN 10-18-06 Track03.flac
+cdaaac9cfef95a6af05127861f7924dd  DISC ONE DYLAN 10-18-06 Track04.flac
+899acf0dd745082e66145f8f10ec0d13  DISC ONE DYLAN 10-18-06 Track05.flac
+1fce3efed159a704adb1609b7d568bf5  DISC ONE DYLAN 10-18-06 Track06.flac
+d504651f750f3e1a9376e8f58ccbabfc  DISC ONE DYLAN 10-18-06 Track07.flac
+b80d912a5e29b274e8c7fd6a3ff753bf  DISC ONE DYLAN 10-18-06 Track08.flac
+05a599751e0d05b978eaeae4f4904473  DISC ONE DYLAN 10-18-06 Track09.flac
+9ea6ef6d13da1c1c692fc966c4caba07  DISC ONE DYLAN 10-18-06 Track10.flac
+ce364c1c51d132bde961519232c2c06e  DISC ONE DYLAN 10-18-06 Track11.flac
+6ac45a9f36ac9767198f82ad3a22f3cf  DISC ONE DYLAN 10-18-06 Track12.flac
+4fb249bb21fc38356ceb72081b97f463  DISC TWO  DYLAN 10-18-06 Track01.flac
+355b8dc2975b7a19fe8396cbdd9cf52f  DISC TWO DYLAN 10-18-06 Track02.flac
+e66a812296133e4a726d60a750858ed0  DISC TWO DYLAN 10-18-06 Track03.flac
+ce166ddef1deaa482a8baf7964bb5910  DISC TWO DYLAN 10-18-06 Track04.flac
+3261917e601a74eb250a754f6090e54f  DISC TWO DYLAN 10-18-06 Track05.flac
+1646721a2c8a8d2915de79423ebaa862  DISC TWO DYLAN 10-18-06 Track06.flac
+a46f4ce9bcc6582c2918a7427341fdb0  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-18-roadofplenty.flacf 
+=================== 
+=================== 
+=================== 
+DISC ONE DYLAN 10-18-06 Track01.flac:32a2e8cffdafa78ab24bf11e6e6198d6
+DISC ONE DYLAN 10-18-06 Track02.flac:d97d0f271814bab9e60776df645986eb
+DISC ONE DYLAN 10-18-06 Track03.flac:16fbc4b2c30f5be31ee5bf314d1aca5b
+DISC ONE DYLAN 10-18-06 Track04.flac:5083d23c5c06779f124927434a666466
+DISC ONE DYLAN 10-18-06 Track05.flac:0ad6f12ca471c4c9210e7f605cd69694
+DISC ONE DYLAN 10-18-06 Track06.flac:5457b719f72ba1a165fc54d4ad9d06d8
+DISC ONE DYLAN 10-18-06 Track07.flac:8c34aa7c429dd79bedceb449f3d5ab7c
+DISC ONE DYLAN 10-18-06 Track08.flac:21e2297cdf19326015a39a8341c7626e
+DISC ONE DYLAN 10-18-06 Track09.flac:640969228682751ae51e8eeacbe25651
+DISC ONE DYLAN 10-18-06 Track10.flac:a1f233b6f28a459ecd788f7f79387830
+DISC ONE DYLAN 10-18-06 Track11.flac:3ff6322612375ac6343a6b32f285a1e8
+DISC ONE DYLAN 10-18-06 Track12.flac:fdfed463b1aca0330d83f743625cf6df
+DISC TWO  DYLAN 10-18-06 Track01.flac:16b1c9e483f0fa91c6ee12c1a42a8c69
+DISC TWO DYLAN 10-18-06 Track02.flac:e86d64ae17c5af3d9ea9493fc09b9de4
+DISC TWO DYLAN 10-18-06 Track03.flac:db832531a6ee57331b2c338647ebb008
+DISC TWO DYLAN 10-18-06 Track04.flac:83ab90db1102dfae3c8dc88692d2a7ac
+DISC TWO DYLAN 10-18-06 Track05.flac:6ebe0b1e4147c94107a37eb78fbbfe9b
+DISC TWO DYLAN 10-18-06 Track06.flac:d97bbad5ddb792e5084776ebbbdf3d7a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-10-18-roadofplenty.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:38.09       70228412 B   ---   --   ---xx   flac  0.5589  DISC ONE DYLAN 10-18-06 Track01.flac
+     6:32.52       69271148 B   ---   --   ---xx   flac  0.5646  DISC ONE DYLAN 10-18-06 Track02.flac
+     6:42.08       70931660 B   ---   --   ---xx   flac  0.5757  DISC ONE DYLAN 10-18-06 Track03.flac
+     5:34.61       59061116 B   ---   --   ---xx   flac  0.4666  DISC ONE DYLAN 10-18-06 Track04.flac
+     5:27.04       57692252 B   ---   --   ---xx   flac  0.5570  DISC ONE DYLAN 10-18-06 Track05.flac
+     8:00.24       84728492 B   ---   --   ---xx   flac  0.5797  DISC ONE DYLAN 10-18-06 Track06.flac
+     5:46.30       61105004 B   ---   --   ---xx   flac  0.5203  DISC ONE DYLAN 10-18-06 Track07.flac
+     7:51.18       83126780 B   ---   --   ---xx   flac  0.5732  DISC ONE DYLAN 10-18-06 Track08.flac
+     6:40.36       70644716 B   ---   --   ---xx   flac  0.5796  DISC ONE DYLAN 10-18-06 Track09.flac
+     6:09.40       65185724 B   ---   --   ---xx   flac  0.4932  DISC ONE DYLAN 10-18-06 Track10.flac
+     6:20.23       67086140 B   ---   --   ---xx   flac  0.6067  DISC ONE DYLAN 10-18-06 Track11.flac
+     7:18.38       77352620 B   ---   --   ---xx   flac  0.4693  DISC ONE DYLAN 10-18-06 Track12.flac
+     6:24.67       67895228 B   ---   --   ---xx   flac  0.6038  DISC TWO  DYLAN 10-18-06 Track01.flac
+     3:57.12       41835068 B   ---   --   ---xx   flac  0.4696  DISC TWO DYLAN 10-18-06 Track02.flac
+     5:57.08       62993660 B   ---   --   ---xx   flac  0.6014  DISC TWO DYLAN 10-18-06 Track03.flac
+     6:30.08       68814860 B   ---   --   ---xx   flac  0.5976  DISC TWO DYLAN 10-18-06 Track04.flac
+     0:39.50        6997244 B   ---   --   ---xx   flac  0.5188  DISC TWO DYLAN 10-18-06 Track05.flac
+     5:42.57       60462908 B   ---   --   ---xx   flac  0.5842  DISC TWO DYLAN 10-18-06 Track06.flac
+   108:13.20     1145413032 B                            0.5554  (18 files)
+=================== 
+=================== 
+=================== 

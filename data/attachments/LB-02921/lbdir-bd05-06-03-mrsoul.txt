@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-06-03-mrsoul 
+=================== 
+=================== 
+=================== 
+9577067acc8fed86259b98f99e1bf6fe  bd05-06-03-mrsoul-LB-2921.txt
+b6648796b7279e5ecbcee71b4019b9eb  bd2005-06-03.mrsoul.info.txt
+1330ba27e987a02f1464aecb1e9d37e0  bd2005-06-03.shns.md5
+c7b73dda139f7d3de661b0e9a4e41bc0  bd2005-06-03.shntool_disklength.txt
+f2003a48220731d4dcce2d9b3a4b669a  bd2005-06-03.shntool_fp.txt
+9c4a5c6fef399011722d9a1136236f35  bd2005-06-03.waves.md5
+935dc24f9c17222ba356229f945e442f  bd2005-06-03d1t01.shn
+20421c6609b5b07106435f31feb643c0  bd2005-06-03d1t02.shn
+0ec4bd65e678eee527084931a1b910c4  bd2005-06-03d1t03.shn
+a83a521178b25ad3d4d9e0e00c8da8ed  bd2005-06-03d1t04.shn
+3d4a9cab396ecfc0e9d6992539568f61  bd2005-06-03d1t05.shn
+bdbb80a01fec04785def2d2a8afcbd42  bd2005-06-03d1t06.shn
+7c3479830abb59d813fdb7949a0e22f0  bd2005-06-03d1t07.shn
+2371524f46f00a7c42721031826e8e23  bd2005-06-03d1t08.shn
+4c5ddc6d523cad9f851f98f2b77625e2  bd2005-06-03d1t09.shn
+04ac426fb3ca8c73c40f30b1a5e15e83  bd2005-06-03d2t01.shn
+0051602b5c2f556ce83720b1f5641e73  bd2005-06-03d2t02.shn
+0d22593305ba1f3477b22672782dabfc  bd2005-06-03d2t03.shn
+34a113db4e157383d48ae1f681960be4  bd2005-06-03d2t04.shn
+791f20672ff5688559c5bbce6f245032  bd2005-06-03d2t05.shn
+65d721751e9923862124a17ff0509a8e  bd2005-06-03d2t06.shn
+5d9b8c2be119c20a210904571937342a  bd2005-06-03d2t07.shn
+9d4c0d1dad398f5c4c8de046fa8f30b8  d1.LOG
+0e5f6ab719724ff1ce35b17b9cb7fe7a  d2.LOG
+0cd0244448e1d602d3b5787adb7f8e2d  myrtlebeach_june3_05_mrsoul.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-06-03-mrsoul 
+=================== 
+=================== 
+=================== 
+3dae3e1339c2bed42211423995deae25  [shntool]  bd2005-06-03d1t01.wav
+12d7b1843adbd0a1fa2d55747eff1b40  [shntool]  bd2005-06-03d1t02.wav
+f909641397165abd66592e42b08ee6d5  [shntool]  bd2005-06-03d1t03.wav
+08b3a17d4a3345296aaf81097a67f246  [shntool]  bd2005-06-03d1t04.wav
+854518d7ac4e5fddd5a47949f5a8473a  [shntool]  bd2005-06-03d1t05.wav
+1ec2dca361d1b0756d484901d1881e05  [shntool]  bd2005-06-03d1t06.wav
+f222e835ca3315b9a54857abefabc71d  [shntool]  bd2005-06-03d1t07.wav
+0e39bd86752ec8a8f3226e9ec8a27eab  [shntool]  bd2005-06-03d1t08.wav
+324e43112acce4a99b422401d7ce6db3  [shntool]  bd2005-06-03d1t09.wav
+2321aaa30e411ada5ac14955649a8b16  [shntool]  bd2005-06-03d2t01.wav
+53fa88b8343f95d08d4678d791417113  [shntool]  bd2005-06-03d2t02.wav
+1eec274dcc53388302c4f711fa930b87  [shntool]  bd2005-06-03d2t03.wav
+6f9fbc21109b07bafecd9421ffbee66d  [shntool]  bd2005-06-03d2t04.wav
+15a5030428ebd39782a8ac05fb853da7  [shntool]  bd2005-06-03d2t05.wav
+0cd48adf120e344b58cd395381a81d32  [shntool]  bd2005-06-03d2t06.wav
+6a8b232cd93ba20a349821e26cc3e9a4  [shntool]  bd2005-06-03d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-06-03-mrsoul 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:10.15       65303324 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t01.wav
+     6:15.44       66253532 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t02.wav
+     6:23.36       67645916 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t03.wav
+     7:44.16       81887276 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t04.wav
+     5:38.72       59792588 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t05.wav
+     7:06.74       75320492 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t06.wav
+     5:40.29       60044252 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t07.wav
+     6:46.22       71670188 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t08.wav
+     5:21.72       56793788 B   ---   --   -----    wav  1.0000  bd2005-06-03d1t09.wav
+     6:37.09       70052012 B   ---   --   -----    wav  1.0000  bd2005-06-03d2t01.wav
+     8:23.52       88851548 B   ---   --   -----    wav  1.0000  bd2005-06-03d2t02.wav
+     9:04.17       96001628 B   ---   --   -----    wav  1.0000  bd2005-06-03d2t03.wav
+     1:43.15       18204524 B   ---   --   -----    wav  1.0000  bd2005-06-03d2t04.wav
+     6:38.63       70355420 B   ---   --   -----    wav  1.0000  bd2005-06-03d2t05.wav
+     0:34.15        6032924 B   ---   --   -----    wav  1.0000  bd2005-06-03d2t06.wav
+     5:57.45       63080684 B   ---   --   -----    wav  1.0000  bd2005-06-03d2t07.wav
+    96:06.71     1017290096 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

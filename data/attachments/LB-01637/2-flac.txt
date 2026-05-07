@@ -1,0 +1,18 @@
+
+flac 1.1.0, Copyright (C) 2000,2001,2002,2003 Josh Coalson
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+options: --sector-align -P 4096 -b 4608 -m -l 8 -q 0 -r 3,3 -V
+Track01.wav: Verify OK, wrote 65250595 bytes, ratio=0.701
+Track01.wav: INFO: sector alignment causing 459 samples to be carried over
+Track02.wav: Verify OK, wrote 47496272 bytes, ratio=0.590
+Track02.wav: INFO: sector alignment causing 459 samples to be carried over
+Track03.wav: Verify OK, wrote 80219648 bytes, ratio=0.680
+Track03.wav: INFO: sector alignment causing 459 samples to be carried over
+Track04.wav: Verify OK, wrote 61725693 bytes, ratio=0.707
+Track04.wav: INFO: sector alignment causing 459 samples to be carried over
+Track05.wav: Verify OK, wrote 36326406 bytes, ratio=0.658
+Track05.wav: INFO: sector alignment causing 129 zero samples to be appended
+
+Press any key to continue . . .

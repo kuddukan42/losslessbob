@@ -1,0 +1,123 @@
+===================
+===================
+===================
+=== md5 for: bd78-10-29-jtt.flacf
+===================
+===================
+===================
+619150383fd0647a558fe604ec7a4ad3 *BOB DYLAN - St. Louis, Missouri October 29th 1978.md5
+619150383fd0647a558fe604ec7a4ad3 *BOB DYLAN - St. Louis, Missouri October 29th 1978.txt
+7841a2bbabad8a2ff722d004c3482b5d *BOB DYLAN - St. Louis, Missouri October 29th 1978_info.txt
+f6d0b1898dfeaf85408080e7aa9ed23e *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 01.flac
+ea9389cf987fb5c2c3b889885c6a7eab *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 02.flac
+9a271f4f688fd400622f7487e46446ee *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 03.flac
+00014b199d519a78ed8607bfae11e704 *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 04.flac
+fa2cd73c70b83f75e062b5f7a21f14a4 *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 05.flac
+fce0009344a74eb8c4204f3e22c73e84 *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 06.flac
+ba03d1570f80f444d4b4e20a0b4b799c *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 07.flac
+a4efd35fd87be5e0955da697d1e7a3f9 *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 08.flac
+ad61d7791d15cffd06594798f9e265ab *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 09.flac
+968cae718c705934f722f0ccd7910b60 *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 10.flac
+80fa49ad9d6507583550da8e5dd38eb3 *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 11.flac
+be0865bb6d52f51e03e9ade4748b2f4b *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 12.flac
+7c64893812d4604b302ef082b18d7687 *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 13.flac
+d4c78f5804b3c8d0da5ad31d69a7b7a6 *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 14.flac
+dace01cb84b86690befedca347ce168c *Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 15.flac
+3697e1bd8cf00601d0d4803a6c69faef *Disc One\Disc One.ffp
+69e933ed8a79245f744d59ed08af330a *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 01.flac
+caa596649aac335de06aeaed53524890 *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 02.flac
+d94e2e532c3e5db21fc35547f052a3a1 *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 03.flac
+a5956e879bb7d1ffcc6d2578d593e43d *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 04.flac
+67129e364567400025fa23c65f80444e *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 05.flac
+4b8d59c3b271c60293bc918dd56ee344 *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 06.flac
+7bd1a0285a9489c2b5267f56779e78a1 *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 07.flac
+58161f7bca6920ee204e17bb1bd08524 *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 08.flac
+553672f31c1747038a4921579dcec138 *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 09.flac
+e2f2e5374ae7924b3fe4295babd2b922 *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 10.flac
+5761bd957c465291853c7d0306cc9455 *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 11.flac
+07756dc9369b2437965519f4f476a44f *Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 12.flac
+b427c7763719fb3be25c3088916b1b5c *Disc Two\Disc Two.ffp
+56ca075c3b3564c4948358f68675cbac *St. Louis, Missouri 29.10.1978 - F.jpeg
+46f8d4b5d04aeaf08c372e9522b92a90 *St. Louis, Missouri 29.10.1978 - R.jpeg
+===================
+===================
+===================
+=== ffp for: bd78-10-29-jtt.flacf
+===================
+===================
+===================
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 01.flac:fb29f30a48e09de63938862b19921132
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 02.flac:899d83355c60f3763685285c8474ee32
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 03.flac:280cfa027688e365e83a2aecddf96da3
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 04.flac:7a1330f48fda7e3efda232d217b74a78
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 05.flac:84a2cf954e7af668ea6f214f607e2680
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 06.flac:fbafd200b7ccceb27ef7a532a190c0ff
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 07.flac:452a02d857380528930b9bacfa2ea1a0
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 08.flac:33bb51b3cc8d15f6be795d56115512cb
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 09.flac:378926b3457fe42325886f89486393db
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 10.flac:823187af6a7cc0862c04e6ff133312e2
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 11.flac:a7a7ea02827a66ce51a0e67b8ebb7dbd
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 12.flac:213049d72a66c9a2900fa6d12e61d5c6
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 13.flac:a4ea6fc6031679fd818a9d419b50e119
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 14.flac:d195f2a8133793513a8ddc527faf1d88
+Disc One\Bob Dylan - St Louis 29.10.1978_Disc 01 Track 15.flac:520fc76059d76d978150181c55733814
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 01.flac:13af7d1a52cf9cb9bbd02442c4e17254
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 02.flac:c887303868e849cce957db3d3735d1e9
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 03.flac:41e140c5a90498b3c2524e78d96d864c
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 04.flac:71edcb6ae58b26063f69f69ff95cb2aa
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 05.flac:2db09fe3e5a9a4a255efde7780219815
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 06.flac:3d3d747e8382c57385b552f26e78ee75
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 07.flac:d58bd7ba3654fed9e84ad38ab0beafde
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 08.flac:71c8d817c86fab097480b3064a2c8a12
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 09.flac:149abb7f6d2c9bca046338190bd390ab
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 10.flac:82b773f216793e75ea7733e7c8a6ab0d
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 11.flac:b050dfb34bcbf00171ef08a194542983
+Disc Two\Bob Dylan - St Louis 29.10.1978_Disc 02 Track 12.flac:ef66f398009cb669d7572ef1675d1f49
+===================
+===================
+===================
+=== shntool len for: bd78-10-29-jtt.flacf\Disc One
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:37.39       27786572 B   ---   --   ---xx   flac  0.4394  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 01.flac
+     1:34.48       16694540 B   ---   --   ---xx   flac  0.4370  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 02.flac
+     5:33.61       58884716 B   ---   --   ---xx   flac  0.4257  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 03.flac
+     4:45.17       50314028 B   ---   --   ---xx   flac  0.4316  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 04.flac
+     3:48.09       40240412 B   ---   --   ---xx   flac  0.4328  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 05.flac
+     7:46.26       82263596 B   ---   --   ---xx   flac  0.4290  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 06.flac
+     4:44.16       50135276 B   ---   --   ---xx   flac  0.4348  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 07.flac
+     5:23.52       57099548 B   ---   --   ---xx   flac  0.4334  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 08.flac
+     4:28.73       47446940 B   ---   --   ---xx   flac  0.4300  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 09.flac
+     6:36.45       69960284 B   ---   --   ---xx   flac  0.4465  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 10.flac
+     4:45.24       50330492 B   ---   --   ---xx   flac  0.4368  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 11.flac
+     5:23.03       56984300 B   ---   --   ---xx   flac  0.4384  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 12.flac
+     5:37.53       59571500 B   ---   --   ---xx   flac  0.4372  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 13.flac
+     7:04.28       74859500 B   ---   --   ---xx   flac  0.4301  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 14.flac
+     3:24.40       36079724 B   ---   --   ---xx   flac  0.4369  Bob Dylan - St Louis 29.10.1978_Disc 01 Track 15.flac
+    73:34.09      778651428 B                            0.4343  (15 files)
+===================
+===================
+===================
+=== shntool len for: bd78-10-29-jtt.flacf\Disc Two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.35       50003564 B   ---   --   ---xx   flac  0.4368  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 01.flac
+     4:44.16       50135276 B   ---   --   ---xx   flac  0.4340  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 02.flac
+     5:16.12       55770668 B   ---   --   ---xx   flac  0.4230  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 03.flac
+     6:08.06       64929356 B   ---   --   ---xx   flac  0.4382  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 04.flac
+     4:22.08       46235660 B   ---   --   ---xx   flac  0.4366  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 05.flac
+     5:55.41       62718476 B   ---   --   ---xx   flac  0.4295  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 06.flac
+     5:15.38       55655420 B   ---   --   ---xx   flac  0.4304  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 07.flac
+     4:37.26       48923996 B   ---   --   ---xx   flac  0.4318  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 08.flac
+     6:32.52       69271148 B   ---   --   ---xx   flac  0.4240  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 09.flac
+     7:36.38       80527820 B   ---   --   ---xx   flac  0.4358  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 10.flac
+     5:51.41       62012876 B   ---   --   ---xx   flac  0.4416  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 11.flac
+     7:48.17       82595228 B   ---   --   ---xx   flac  0.4445  Bob Dylan - St Louis 29.10.1978_Disc 02 Track 12.flac
+    68:51.30      728779488 B                            0.4342  (12 files)
+===================
+===================
+===================

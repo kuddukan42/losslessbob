@@ -1,0 +1,97 @@
+===================
+===================
+===================
+=== Bob Dylan Chastain Park Amphitheater Atlanta 05-05-2006.ffp
+===================
+===================
+===================
+01 Intro.flac:b174efa6834eafe208e727faf90a82ea
+02 Most Likely You'll Go.flac:d4dc9bb698cd2370b6693697c6d46688
+03 Tamborine Man.flac:d4b47a6b0e85968f72186ed403dbd496
+04 Lonesome Day Blues.flac:562401f67290b98c59f3ace38697834c
+05 Posvitevly Fourth Street.flac:4aee0653bf906a61e9380f16c31353c6
+06 Its Alright Ma.flac:3123dacda72fedf64ed5a63ae557e09f
+07 Make You  Feel My Love.flac:6cc0c1bfbd5496c98d6fd1b1c039485b
+08 I'll Be Your Baby Tonight.flac:758f42cbe62be8537811bb6ae3c135e3
+09 Cold Irons Bound.flac:7613c23dd5d78d82181a3387edc76e60
+10 Don't Think Twice.flac:554b85fc2c0e3153b78484b2616d646c
+11 Highway 61.flac:3d590aeb2e1f96cb8aefffe9b171df64
+12 Girl Of The North Country.flac:988d47e1ecb152086795a7b14b3c5b95
+13 Summer Days.flac:7623ee6e28fdf97eee33c20035fb9549
+14 Like A Rolling Stones.flac:ef125ec855d17f458bfa5414653ad8bb
+15 Band Intros.flac:a38255c1d4160245c3d3a5277f156ae8
+16 All Along The Watchtower.flac:c6929832dbf67fa330cd82f2fa94b0fb
+17 Outro.flac:7e950567145e39f0a2139b42a269fa84
+===================
+===================
+===================
+=== Bob Dylan Chastain Park Amphitheater Atlanta 05-05-2006.md5
+===================
+===================
+===================
+0c9b349d428f38b9e1735edd9e4b32d2 *01 Intro.flac
+5ecf8dd0930f132d390977803afff531 *02 Most Likely You'll Go.flac
+a6e91ec0c5ec8ab74512db891888238a *03 Tamborine Man.flac
+6088ad95204112e12d7d76628c4e2831 *04 Lonesome Day Blues.flac
+9b625f6073b103aad5e915c4db53e08c *05 Posvitevly Fourth Street.flac
+2b7f497b4dadf2ff2dcdb076fa718f25 *06 Its Alright Ma.flac
+23dbc6a3a0b0da2589645db2367d9a8d *07 Make You  Feel My Love.flac
+5bd961a7e8cf65def5965c80a3d86fba *08 I'll Be Your Baby Tonight.flac
+92fe0e88f1d96669e3c6ce918490b76d *09 Cold Irons Bound.flac
+3f6ccab0485133539fb559c4c6e52a50 *10 Don't Think Twice.flac
+2d0e8a3cfc021bf498c6a784ffcd8b4c *11 Highway 61.flac
+b4fb34df73fa4f0840bed023b5c32bcb *12 Girl Of The North Country.flac
+9b09209d73e5ce3de2101de7f0f47a0b *13 Summer Days.flac
+9c97115d95a3970002b0a5a0a79427f7 *14 Like A Rolling Stones.flac
+6a588f6d07318855fe9ca4bec2a3656a *15 Band Intros.flac
+c067a328b878f61288f274c2a3cf2c79 *16 All Along The Watchtower.flac
+c0241bbfadc72dc57552c7a971e4ee70 *17 Outro.flac
+52a63a8d5c2900e643939d76e4404d1e *info.txt
+===================
+===================
+===================
+=== Bob Dylan Chastain Park Amphitheater Atlanta 05-05-2006.txt
+===================
+===================
+===================
+01 Intro.flac:b174efa6834eafe208e727faf90a82ea
+02 Most Likely You'll Go.flac:d4dc9bb698cd2370b6693697c6d46688
+03 Tamborine Man.flac:d4b47a6b0e85968f72186ed403dbd496
+04 Lonesome Day Blues.flac:562401f67290b98c59f3ace38697834c
+05 Posvitevly Fourth Street.flac:4aee0653bf906a61e9380f16c31353c6
+06 Its Alright Ma.flac:3123dacda72fedf64ed5a63ae557e09f
+07 Make You  Feel My Love.flac:6cc0c1bfbd5496c98d6fd1b1c039485b
+08 I'll Be Your Baby Tonight.flac:758f42cbe62be8537811bb6ae3c135e3
+09 Cold Irons Bound.flac:7613c23dd5d78d82181a3387edc76e60
+10 Don't Think Twice.flac:554b85fc2c0e3153b78484b2616d646c
+11 Highway 61.flac:3d590aeb2e1f96cb8aefffe9b171df64
+12 Girl Of The North Country.flac:988d47e1ecb152086795a7b14b3c5b95
+13 Summer Days.flac:7623ee6e28fdf97eee33c20035fb9549
+14 Like A Rolling Stones.flac:ef125ec855d17f458bfa5414653ad8bb
+15 Band Intros.flac:a38255c1d4160245c3d3a5277f156ae8
+16 All Along The Watchtower.flac:c6929832dbf67fa330cd82f2fa94b0fb
+17 Outro.flac:7e950567145e39f0a2139b42a269fa84
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan, 5/5/06, Atlanta, GA, Chastain Park Amphitheatre
+
+Taper: Z-Man, Source: Schoeps mk4 -> kc5 -> cmc6 -> Sound Devices 722@24/96, Location: FOB DRFC KFC ZFC 28' FROM STAGE!,
+ Conversion: SD722 -> Wav File -> Mailed To Me, dBpowerAMP Music Converter (24/96 -> 16/44.1) -> SoundForge 7.0 (+2dB), 
+-> CD Wave Editor (cut tracks) -> FLAC
+
+
+Dolphinsmile Archive
+
+
+01) Intro, 02) Most Likely You Go Your Way (And I'll Go Mine), 03) Mr. Tambourine Man, 04) Lonesome Day Blues, 05) Positively 4th Street, 
+06) It's Alright, Ma (I'm Only Bleeding), 07) Make You Feel My Love, 08) I'll Be Your Baby Tonight, 
+09) Cold Irons Bound, 10) Don't Think Twice, It's All Right, 11) Highway 61 Revisited, 12) Girl Of The North Country,
+13) Summer Days, (encore), 14) Like A Rolling Stone, 15) Band Intro, 16) All Along The Watchtower, 17) Outro From Z-Man
+===================
+===================
+===================

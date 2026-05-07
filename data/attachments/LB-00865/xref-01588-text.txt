@@ -1,0 +1,152 @@
+===================
+===================
+===================
+=== bd92-04-10 - Launceston - MK.md5
+===================
+===================
+===================
+165e84e9b21df167da836e11d39eb162 *bd92-04-10 - Launceston - MK.st5
+033c62e842cc62530b3952386727e585 *bd92-04-10 - Launceston - MK.txt
+904e5a20cc0d1d327c260c050c149469 *bd92-04-10d1t01.shn
+6008a68ada8b12cb085bf5e1058439ea *bd92-04-10d1t02.shn
+7f7587e26d14625ae81b98c1a6234701 *bd92-04-10d1t03.shn
+70b793317ce31291fa16ac9ec25d3e99 *bd92-04-10d1t04.shn
+ea6a81f4fcc7e5ccfb0975c067e7fd42 *bd92-04-10d1t05.shn
+77c4e27b0c59f7f19c064960b7072773 *bd92-04-10d1t06.shn
+664f3b866b75e9cc50a21a6a82031be9 *bd92-04-10d1t07.shn
+21a047ac0bd9e8e790a2fd97297a9baa *bd92-04-10d1t08.shn
+88c3d621a6174a0d010bc4336c1d975f *bd92-04-10d1t09.shn
+621c2a29c03aa65b25fca27ad4880f83 *bd92-04-10d2t01.shn
+4f6271ce9e3fcaf42c80ac5a74f7df27 *bd92-04-10d2t02.shn
+5e78f297743eac53e0e3cfa824923860 *bd92-04-10d2t03.shn
+135a857ab52bd4f533032459292c0463 *bd92-04-10d2t04.shn
+501f3a6118d123bab5d3ecaba7028ee7 *bd92-04-10d2t05.shn
+e34e1c93866f7ddd49509442654fe018 *bd92-04-10d2t06.shn
+f6c1eb9ea7cc44ef6ad60ecc14c16c5d *bd92-04-10d2t07.shn
+cb3222dc4e4ebf22637fde979f29d844 *bd92-04-10d2t08.shn
+0948c1d24cdb170f4b0819b661fc81ac *bd92-04-10d2t09.shn
+8552035df595672baa1a93a04493290b *noname.md5
+===================
+===================
+===================
+=== bd92-04-10 - Launceston - MK.st5
+===================
+===================
+===================
+a6d9d26afda17592b9a3f540fb24369b  [shntool]  bd92-04-10d1t01.shn
+f7b78fa42cf9a4f700fe917a0ba9ae5b  [shntool]  bd92-04-10d1t02.shn
+5ede1a6cfe03cc17a8ff59d26ab6cc0a  [shntool]  bd92-04-10d1t03.shn
+eb1156d68b7e47ab18692f68a533abd9  [shntool]  bd92-04-10d1t04.shn
+a1a6e4012b03a93963929ff4a30a7723  [shntool]  bd92-04-10d1t05.shn
+9c670e60a40c4e1ba8d84ad9687b1511  [shntool]  bd92-04-10d1t06.shn
+71f45c74318d5308a95a6a9eb04ebdf4  [shntool]  bd92-04-10d1t07.shn
+5a99df32f5fbcc219f84e399c8306bb8  [shntool]  bd92-04-10d1t08.shn
+d7ca6feca92d502ca6e1dd9e58f716a4  [shntool]  bd92-04-10d1t09.shn
+632a54e628e743ae5e363616b8881b2e  [shntool]  bd92-04-10d2t01.shn
+09b7d05bccafe9acd3cae94195f5ca0c  [shntool]  bd92-04-10d2t02.shn
+5247fe42addcd29125cff5f3c5bdbfaa  [shntool]  bd92-04-10d2t03.shn
+eadb0d5e7ca0ab8292ec14ab46316acf  [shntool]  bd92-04-10d2t04.shn
+6cf4a228e183364518e067df364f2918  [shntool]  bd92-04-10d2t05.shn
+fb8819f6a69bc6d17c0a736766e3cbee  [shntool]  bd92-04-10d2t06.shn
+e3e3f27544b519bb5ab4c174e385d074  [shntool]  bd92-04-10d2t07.shn
+35ef9c9f2022f73f06435c2de8c64a5d  [shntool]  bd92-04-10d2t08.shn
+26d79e610a11ce2c2bc68800369763fc  [shntool]  bd92-04-10d2t09.shn
+===================
+===================
+===================
+=== bd92-04-10 - Launceston - MK.txt
+===================
+===================
+===================
+#14 - 1992 Australian Tour - MK/LK Series - May 2015
+
+xxxxx
+
+Silver Dome
+Launceston, Tasmania, Australia
+10 April 1992
+
+1.  All Along The Watchtower
+2.  Most Of The Time
+3.  Everything Is Broken
+4.  Just Like A Woman
+5.  Tangled Up In Blue
+6.  She Belongs To Me
+7.  Maggie's Farm
+8.  Love Minus Zero/No Limit
+9.  Little Moses (Bert A. Williams/Earle C. Jones)
+10.  Golden Vanity (trad.)
+11.  Mr. Tambourine Man
+12.  Cat's In The Well
+13.  I'll Remember You
+14.  Visions Of Johanna
+15.  Highway 61 Revisited
+
+16.  Absolutely Sweet Marie
+17.  Ballad Of A Thin Man
+18.  Blowin' In The Wind
+
+Concert # 378 of The Never-Ending Tour.  Concert # 14 of the 1992 Tour Of Australia. 1992 concert # 14.
+Concert # 14 with the 6th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+
+8, 9, 18  Bob Dylan (acoustic guitar & vocal).
+4, 5, 7, 8, 11, 15, 16, 18  Bob Dylan harmonica.
+10  acoustic with the band except drums.
+11, 14  acoustic with the band.
+5, 10, 11, 14  Bucky Baxter (mandolin).
+15  Bucky Baxter (electric slide guitar).
+
+BobTalk:
+
+It's the comedy part of the show right here! ???? Anybody here ???? this guitar? (after interrupting Love Minus Zero).
+This is off my new record. It's called Cat's In The Well.
+4 new songs (22%) compared to previous concert. 1 new song for this tour.
+
+xxxxx
+
+a6d9d26afda17592b9a3f540fb24369b  [shntool]  bd92-04-10d1t01.shn
+f7b78fa42cf9a4f700fe917a0ba9ae5b  [shntool]  bd92-04-10d1t02.shn
+5ede1a6cfe03cc17a8ff59d26ab6cc0a  [shntool]  bd92-04-10d1t03.shn
+eb1156d68b7e47ab18692f68a533abd9  [shntool]  bd92-04-10d1t04.shn
+a1a6e4012b03a93963929ff4a30a7723  [shntool]  bd92-04-10d1t05.shn
+9c670e60a40c4e1ba8d84ad9687b1511  [shntool]  bd92-04-10d1t06.shn
+71f45c74318d5308a95a6a9eb04ebdf4  [shntool]  bd92-04-10d1t07.shn
+5a99df32f5fbcc219f84e399c8306bb8  [shntool]  bd92-04-10d1t08.shn
+d7ca6feca92d502ca6e1dd9e58f716a4  [shntool]  bd92-04-10d1t09.shn
+632a54e628e743ae5e363616b8881b2e  [shntool]  bd92-04-10d2t01.shn
+09b7d05bccafe9acd3cae94195f5ca0c  [shntool]  bd92-04-10d2t02.shn
+5247fe42addcd29125cff5f3c5bdbfaa  [shntool]  bd92-04-10d2t03.shn
+eadb0d5e7ca0ab8292ec14ab46316acf  [shntool]  bd92-04-10d2t04.shn
+6cf4a228e183364518e067df364f2918  [shntool]  bd92-04-10d2t05.shn
+fb8819f6a69bc6d17c0a736766e3cbee  [shntool]  bd92-04-10d2t06.shn
+e3e3f27544b519bb5ab4c174e385d074  [shntool]  bd92-04-10d2t07.shn
+35ef9c9f2022f73f06435c2de8c64a5d  [shntool]  bd92-04-10d2t08.shn
+26d79e610a11ce2c2bc68800369763fc  [shntool]  bd92-04-10d2t09.shn
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+ea6a81f4fcc7e5ccfb0975c067e7fd42 *d1t05.shn
+6008a68ada8b12cb085bf5e1058439ea *d1t02.shn
+7f7587e26d14625ae81b98c1a6234701 *d1t03.shn
+70b793317ce31291fa16ac9ec25d3e99 *d1t04.shn
+904e5a20cc0d1d327c260c050c149469 *d1t01.shn
+77c4e27b0c59f7f19c064960b7072773 *d1t06.shn
+664f3b866b75e9cc50a21a6a82031be9 *d1t07.shn
+21a047ac0bd9e8e790a2fd97297a9baa *d1t08.shn
+88c3d621a6174a0d010bc4336c1d975f *d1t09.shn
+621c2a29c03aa65b25fca27ad4880f83 *d2t01.shn
+4f6271ce9e3fcaf42c80ac5a74f7df27 *d2t02.shn
+5e78f297743eac53e0e3cfa824923860 *d2t03.shn
+135a857ab52bd4f533032459292c0463 *d2t04.shn
+501f3a6118d123bab5d3ecaba7028ee7 *d2t05.shn
+e34e1c93866f7ddd49509442654fe018 *d2t06.shn
+f6c1eb9ea7cc44ef6ad60ecc14c16c5d *d2t07.shn
+cb3222dc4e4ebf22637fde979f29d844 *d2t08.shn
+0948c1d24cdb170f4b0819b661fc81ac *d2t09.shn
+===================
+===================
+===================

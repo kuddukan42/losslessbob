@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-04-22-sndchck 
+=================== 
+=================== 
+=================== 
+73842c603a7f7cb49d895050be71cd3a  bd1980-04-22.sndchck.info.txt
+9ec3f6d8156bef338322786303ae8954  bd1980-04-22.sndchck.shns.md5
+a983a0b6c458b2b536b8011cb2213d55  bd1980-04-22.sndchck.shntool_disklength.txt
+b608b081e28d5a21e85c7905c2749108  bd1980-04-22.sndchck.shntool_fp.txt
+985c68d5e7b4b95b9841dbb1e64f6e02  bd1980-04-22.sndchck.t01.shn
+06aaef1a7f2cc69d416d3aa411e478b0  bd1980-04-22.sndchck.t02.shn
+60c6460ee498ce859065116338b1daf6  bd1980-04-22.sndchck.t03.shn
+99e4ee5fbdecc44046377595574edf10  bd1980-04-22.sndchck.t04.shn
+3bb27e379ab760257d9046c95be8c8d9  bd1980-04-22.sndchck.t05.shn
+2c8b58fc05c88ceeb20efb4d00b7dd35  bd1980-04-22.sndchck.t06.shn
+2d4f0320ef0d147eaef4c9186c31a64d  bd1980-04-22.sndchck.t07.shn
+48607d40b530202e7cd1dd7f4bbe8d75  bd1980-04-22.sndchck.t08.shn
+ed51ab819fe4ab9d55b709e6b30c6a49  bd1980-04-22.sndchck.t09.shn
+d40a82294be2f2b533f2a7440849187c  bd1980-04-22.sndchck.t10.shn
+2dd6518ca09f927795166322e43a8226  bd1980-04-22.sndchck.t11.shn
+b3338d8cc19f65d2dd6ad09d0e0270e3  bd1980-04-22.sndchck.t12.shn
+2527785cca87ac8636bf1e0e4ff089e5  bd1980-04-22.sndchck.t13.shn
+ba4c4a0c7cf60f229df66aa338bd192a  bd80-04-22-sndchck-LB-3030.txt
+7fba97302c9c1347efc3e984ca3ab088  dod-torrent-notes.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-04-22-sndchck 
+=================== 
+=================== 
+=================== 
+4bdc2ab7b34fdbf0cf44ac7e176162c6  [shntool]  bd1980-04-22.sndchck.t01.wav
+c2d03439d2d49c613521387d23949beb  [shntool]  bd1980-04-22.sndchck.t02.wav
+8157b579e93c9f32f1fd04c743979932  [shntool]  bd1980-04-22.sndchck.t03.wav
+95178b4bac7cc8d0ac7274c11b64dcc9  [shntool]  bd1980-04-22.sndchck.t04.wav
+f30905b5b58390b421df5e84dfaadf58  [shntool]  bd1980-04-22.sndchck.t05.wav
+af49ad899dd42ab780fb7294d3cae153  [shntool]  bd1980-04-22.sndchck.t06.wav
+cf129e9723e4301a25b893b98c6f7025  [shntool]  bd1980-04-22.sndchck.t07.wav
+9874cb385bab36948400a4a525d95612  [shntool]  bd1980-04-22.sndchck.t08.wav
+8e7601889e7a2cd63e0e75f0128c9e25  [shntool]  bd1980-04-22.sndchck.t09.wav
+51f0e32b9bcccb8a0949c6aa174c08e9  [shntool]  bd1980-04-22.sndchck.t10.wav
+d46fd4746650f2292bd498c5926bd2c9  [shntool]  bd1980-04-22.sndchck.t11.wav
+843c377c7c63dc4545feca97e25a5153  [shntool]  bd1980-04-22.sndchck.t12.wav
+aad1bbb265b80a75b3cc003c63d7e7b3  [shntool]  bd1980-04-22.sndchck.t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-04-22-sndchck 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:56.47       20572988 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t01.wav
+     4:46.49       50565692 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t02.wav
+     2:19.24       24576092 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t03.wav
+     3:24.00       35985644 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t04.wav
+    12:34.39      133097372 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t05.wav
+     3:02.27       32168348 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t06.wav
+     2:03.04       21706652 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t07.wav
+     6:11.06       65458556 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t08.wav
+     4:46.12       50478668 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t09.wav
+     3:38.24       38511692 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t10.wav
+     3:00.01       31754396 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t11.wav
+     5:11.33       54938060 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t12.wav
+    14:38.15      154914524 B   ---   --   -----    wav  1.0000  bd1980-04-22.sndchck.t13.wav
+    67:31.56      714728684 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,14 @@
+Bob Dylan, 4/7/95, Edinburgh Playhouse, Edinburgh, Scotland, 2CDR
+
+LB-1609, (68min+42min), version "a"; same recording as previous with lower levels and without flaw on other (small pop d1t7 5:20 caused by discontinuity) but this had its own flaws so did not listen past flaw on d1t4; so this may be useful as a patch source; excellent sound; downloaded from a.b.m.s.d. 02/04
+
+drop d1t4 0:23; drop/cut between cdrs
+
+CD1
+1 Crash On The Levee (Down In The Flood) 2 Just Like Tom Thumb's Blues 3 All Along The Watchtower 4 Just Like A Woman 5 Highway 61 Revisited 6 I Don't Believe You 7 Mr. Tambourine Man (acoustic w band) 8 A Hard Rain's A-Gonna Fall (acoustic w band), 9 Love Minus Zero/No Limit (acoustic w band) 
+
+CD2
+1 Leopard-Skin Pill-Box Hat 2 Lenny Bruce 3 Most Likely You Go Your Way (And I'll Go Mine) 4 Ballad Of A Thin Man 5 The Times They Are A-Changin' (acoustic w band)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

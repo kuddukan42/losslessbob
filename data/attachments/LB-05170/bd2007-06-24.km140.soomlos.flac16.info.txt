@@ -1,0 +1,61 @@
+Bob Dylan
+The Star Pavilion
+Hersheypark
+Hershey, Pennsylvania
+June 24, 2007
+ 
+Disc 1:
+01. introduction [00:51]
+02. Cat's In The Well [04:08]  
+03. It Ain't Me, Babe [05:14]  
+04. Watching The River Flow [05:25]  
+05. It's Alright, Ma (I'm Only Bleeding) [07:05]  
+06. Lay, Lady, Lay [05:43]  
+07. Rollin' And Tumblin' [06:55]  
+08. My Back Pages [07:35]  
+09. Honest With Me [06:35]  
+10. Spirit On The Water [06:54]  
+11. Highway 61 Revisited [05:00]  
+12. Most Likely You Go Your Way (And I'll Go Mine) [06:55]  
+Total time: [68:28]
+
+Disc 2:
+01. Nettie Moore [07:53]  
+02. Summer Days [06:28]  
+03. Like A Rolling Stone [09:36]    
+    (encore) 
+04. Thunder On The Mountain [05:41]  
+05. All Along The Watchtower [05:46] 
+Total time: [35:28]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, steel guitar 
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+12th row in front of stage right pa
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+Flac Fingerprint
+bd2007-06-24d1t01.flac:61cd215e14dc746748ed66036ce21f37
+bd2007-06-24d1t02.flac:014cda104ff0eec2085e8a8c183e3134
+bd2007-06-24d1t03.flac:0e5c63b5b2f37c68a0d7b6c6e7b135d5
+bd2007-06-24d1t04.flac:fe9f28282ba15fc190626dc36d050b54
+bd2007-06-24d1t05.flac:5c12a6731deb006cc9d553bbc48b76b7
+bd2007-06-24d1t06.flac:78b23d08e7d3e7b4bac73ec0aed87a65
+bd2007-06-24d1t07.flac:569f3b6de7e8af323f9131efc99fb4f6
+bd2007-06-24d1t08.flac:ad653bca0db36b19a9a8118416f90bed
+bd2007-06-24d1t09.flac:48fa85d0dc8c8ac14b490e9be110c0c4
+bd2007-06-24d1t10.flac:3cab495fee1f3b588f7c4098bc949749
+bd2007-06-24d1t11.flac:6ae984102eb9af6e5f5fa9a9f5ceae55
+bd2007-06-24d1t12.flac:242dad60f9a2844735d3306ae70132fc
+bd2007-06-24d2t01.flac:ebf61c843c0a60c92de1023da939dcb0
+bd2007-06-24d2t02.flac:01d0a8e31b5dffee881939a85c859816
+bd2007-06-24d2t03.flac:18c61bf495d43d4155f656af39e0e144
+bd2007-06-24d2t04.flac:87b1befe456b0e451ee66c7c984bbfe9
+bd2007-06-24d2t05.flac:9d2eba00df86b19a8c6e9d19644591f2

@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-04-Streetcar-Visions.shnf 
+=================== 
+=================== 
+=================== 
+009ec99bb010e70673a114959b264257  bd04-08-04-Streetcar-Visions.txt
+209e92d5a5f611afd38be172c4d5233c  bd040804.md5
+e1c32695bc35411371889faa2db9d446  bd040804.txt
+867fe88cb7c3e4967af93d555439a46b  bd040804d1t01.shn
+de9a775bfc1f8a9cf3b2ad84acdde101  bd040804d1t02.shn
+eff3eecafc81874855db31f9c6e143f7  bd040804d1t03.shn
+3b6cb3ef1e98b25dc39af79662f71632  bd040804d1t04.shn
+5f5dc751b520fca0eb803d71f2eb6848  bd040804d1t05.shn
+0c3200ed918a9f875764f8aea5018cb7  bd040804d1t06.shn
+57985b3ac9f0b4bdbb336a00dc09f6d0  bd040804d1t07.shn
+4fe391fe5b6a070442002bc63af452a8  bd040804d1t08.shn
+87c39fe850b0b29dded858166b21a392  bd040804d1t09.shn
+ff4428b96684e46a9539d1ec613bb8e5  bd040804d1t10.shn
+fe0b9802d472d70fe989aa1143d488ba  bd040804d1t11.shn
+e1b4d4fc4827e8d88537969ea2e48baa  bd040804d1t12.shn
+3937a65838d855aaf8b90388d8d8e8d4  bd040804d2t01.shn
+07ecbc1e3ef0cf0d62cac4b808b8c608  bd040804d2t02.shn
+24d16413de123f761e4959ebc5f81b66  bd040804d2t03.shn
+47dc3ac83c15af9ea5657b4236c603bc  bd040804d2t04.shn
+86b062c5f5dd5db8daebee7874368a77  bd040804d2t05.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-04-Streetcar-Visions.shnf 
+=================== 
+=================== 
+=================== 
+621f8bd7dbcbb2e6c68a4124a6c04821  [shntool]  bd040804d1t01.wav
+94fa3e4b678e15707423a2387962965b  [shntool]  bd040804d1t02.wav
+16f4dd17fc5a12b8cca0a63ca09aa2f8  [shntool]  bd040804d1t03.wav
+e74ff92e759caa35e01d27621e77ae29  [shntool]  bd040804d1t04.wav
+37e9b8297c301797b8007f4aeebdfb64  [shntool]  bd040804d1t05.wav
+f7a6899de2ed865c00191bb22af8d726  [shntool]  bd040804d1t06.wav
+d5f3c4916fc0cc4e20d78c51b5de28d7  [shntool]  bd040804d1t07.wav
+6b6105fb0042f65cafcd776fdb453174  [shntool]  bd040804d1t08.wav
+559a70b9e4112a6da1de6452a6d061ac  [shntool]  bd040804d1t09.wav
+eef6ec39c2f167f6a2bf181b4919bced  [shntool]  bd040804d1t10.wav
+47033de9b0b413c11397b8df57f5c984  [shntool]  bd040804d1t11.wav
+858c8250460b77a787f89c7e91ceb3ca  [shntool]  bd040804d1t12.wav
+33ecbe1fd3c300d249acd4736c1a4314  [shntool]  bd040804d2t01.wav
+0e751c9961873692dfc8d11b18e00e3f  [shntool]  bd040804d2t02.wav
+ea2b0827b20f412b3dd168c246864ca6  [shntool]  bd040804d2t03.wav
+4bde7ef31346b2abb6927676dab14f1c  [shntool]  bd040804d2t04.wav
+e706d363c401590e92331822a61c52af  [shntool]  bd040804d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-04-Streetcar-Visions.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.68       10214780 B   ---   --   -----    wav  1.0000  bd040804d1t01.wav
+     4:11.32       44351708 B   ---   --   -----    wav  1.0000  bd040804d1t02.wav
+     5:40.33       60053660 B   ---   --   -----    wav  1.0000  bd040804d1t03.wav
+     5:42.32       60404108 B   ---   --   -----    wav  1.0000  bd040804d1t04.wav
+     4:31.65       47957324 B   ---   --   -----    wav  1.0000  bd040804d1t05.wav
+     7:48.68       82715180 B   ---   --   -----    wav  1.0000  bd040804d1t06.wav
+     7:32.03       79739900 B   ---   --   -----    wav  1.0000  bd040804d1t07.wav
+     7:43.23       81727340 B   ---   --   -----    wav  1.0000  bd040804d1t08.wav
+     6:49.71       72314636 B   ---   --   -----    wav  1.0000  bd040804d1t09.wav
+     7:26.02       78679148 B   ---   --   -----    wav  1.0000  bd040804d1t10.wav
+     6:52.41       72773276 B   ---   --   -----    wav  1.0000  bd040804d1t11.wav
+     6:34.60       69642764 B   ---   --   -----    wav  1.0000  bd040804d1t12.wav
+     7:16.74       77084492 B   ---   --   -----    wav  1.0000  bd040804d2t01.wav
+     5:45.41       60954476 B   ---   --   -----    wav  1.0000  bd040804d2t02.wav
+     7:25.50       78615644 B   ---   --   -----    wav  1.0000  bd040804d2t03.wav
+     7:02.64       74591372 B   ---   --   -----    wav  1.0000  bd040804d2t04.wav
+     5:16.60       55883564 B   ---   --   -----    wav  1.0000  bd040804d2t05.wav
+   104:39.37     1107703372 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,46 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-13sc.shnf 
+=================== 
+=================== 
+=================== 
+bb6a4300c8ea8ce8b10d30e17865a92b  bd88-10-13sc.md5
+bae8b1c1a373ff7b20691d83b1190ebf  bd88-10-13sc.txt
+e8ee2151d649dc5ddd5f0f4843fc7c4c  bd88-10-13sct01.shn
+066b9e90bfb609633fe040b21db48290  bd88-10-13sct02.shn
+a1e4ecbf47eec52f6eb58410325b1e5c  bd88-10-13sct03.shn
+75ea8fcf5431709c08afcf04f4f9d2d7  bd88-10-13sct04.shn
+c2096c0c9a7254e873f719a799798468  bd88-10-13sct05.shn
+4f583be9fe6acc5573121a5930014bbd  bd88-10-13sct06.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-10-13sc.shnf 
+=================== 
+=================== 
+=================== 
+1a098c6bfa122e8fb753ac944f3db0e1  [shntool]  bd88-10-13sct01.wav
+ce09aba998f5cbbb0d0a463774f3b28f  [shntool]  bd88-10-13sct02.wav
+d94b7c51ec51e5bd6632cbf950ec2ce6  [shntool]  bd88-10-13sct03.wav
+1db6c80f91e76d97d14110325c50a7f1  [shntool]  bd88-10-13sct04.wav
+9f5108ae4a3e7a6f5e63a190adb95c15  [shntool]  bd88-10-13sct05.wav
+49b9c64cb3d5556c4d9c408769d9da22  [shntool]  bd88-10-13sct06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-13sc.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.28       55455500 B   ---   --   ---xx    shn  0.5070  bd88-10-13sct01.shn
+     5:10.41       54780476 B   ---   --   ---xx    shn  0.5120  bd88-10-13sct02.shn
+     6:36.45       69960284 B   ---   --   ---xx    shn  0.4883  bd88-10-13sct03.shn
+     4:16.03       45165500 B   ---   --   ---xx    shn  0.4663  bd88-10-13sct04.shn
+     3:47.07       40059308 B   ---   --   ---xx    shn  0.4465  bd88-10-13sct05.shn
+     3:56.30       41701004 B   ---   --   ---xx    shn  0.4454  bd88-10-13sct06.shn
+    29:01.04      307122072 B                            0.4814  (6 files)
+=================== 
+=================== 
+=================== 

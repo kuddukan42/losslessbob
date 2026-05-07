@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-18-teac-me80s-master.flacf 
+=================== 
+=================== 
+=================== 
+ea1fdc35e697d797eff0b6dc785b4fe6  bd78-10-18-teac-me80s-master-LB-4097.txt
+53a72482dc13c4269ff2d122cf208e3b  BobDylan1978cd1t01.flac
+4f025122941f25ad198c2777da58b226  BobDylan1978cd1t02.flac
+18e049a0d58f8d8c8c1bc35a0e5cf38a  BobDylan1978cd1t03.flac
+03157d3de1cbdc6c4683854f6a7cc021  BobDylan1978cd1t04.flac
+57f095652d672329f8bf91c83f6c5362  BobDylan1978cd1t05.flac
+ce20e1b4e35ba19efd4d1caab57a311f  BobDylan1978cd1t06.flac
+de9dd95183554e3d1353faeca49906ab  BobDylan1978cd1t07.flac
+e2d9d1dda73cd74933461779d2363592  BobDylan1978cd1t08.flac
+80d5bfcbcb98a1aa125bd75147c54d69  BobDylan1978cd1t09.flac
+83839ac953a1cd162655cab435549c23  BobDylan1978cd1t10.flac
+41c765ebf40b40799024b67f2f219896  BobDylan1978cd1t11.flac
+c44b7c1da572d2358a02643aed89eb86  BobDylan1978cd1t12.flac
+369ae41f9746c5b82a457122f75df1b4  BobDylan1978cd1t13.flac
+82b7b38010fc3937cf730433c9d50fcf  BobDylan1978cd2t01.flac
+989962aa7d65aa37cb1934d36755c92b  BobDylan1978cd2t02.flac
+36aedae61cb150b21f34c11448ea5b38  BobDylan1978cd2t03.flac
+139baa2b50d8df57bdb67bc9d266c1a0  BobDylan1978cd2t04.flac
+0507f67d68ae066622887f7a97a09254  BobDylan1978cd2t05.flac
+57d5a1fa692ce6281df6dde59d10f101  BobDylan1978cd2t06.flac
+7941c3553dca4a79a138c946dedfc2af  BobDylan1978cd2t07.flac
+371a6cc9bdc644cbc7a6055fb64c7b9b  BobDylan1978cd2t08.flac
+8a401f7353c06bd9a82cf2e10db2d811  BobDylan1978cd2t09.flac
+016c3310eec4ca2191811e9b39475c13  BobDylan1978cd2t10.flac
+461155d288944ae2d2cd83e5161d6b8e  BobDylan1978cd2t11.flac
+55e134303b1d379112a1b784c7934219  BobDylan1978cd2t12.flac
+8089bcc47ad77e8d1e8c9e7a302fd2e5  BobDylan1978cd2t13.flac
+f87648880f2416aed31a621edfda2909  BobDylan1978cd2t14.flac
+0e27f0b7aa97923e01a42dfecf10674b  BobDylan1978cd2t15.flac
+5ce73486bfa608b3d6ed209a6f689100  BobDylan1978cd2t16.flac
+ec4d315e82377836beb827dd2bcfa14e  BobDylan1978TextInfo.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-18-teac-me80s-master.flacf 
+=================== 
+=================== 
+=================== 
+BobDylan1978cd1t01.flac:d68097e5d284213d08557f3926207b09
+BobDylan1978cd1t02.flac:0aaf961d0d996ed2285a2b44c4b7fa63
+BobDylan1978cd1t03.flac:20dd71ceb55586ebf65c65af73bc5683
+BobDylan1978cd1t04.flac:09585b51ef4fa2afb40f6754c584f627
+BobDylan1978cd1t05.flac:ba7299ea22810e6815e8d3c24443ff8e
+BobDylan1978cd1t06.flac:2a724ecf69c776dd28c55010fae184fa
+BobDylan1978cd1t07.flac:cfd3f2444aa90df5f4407edc414810b9
+BobDylan1978cd1t08.flac:9703b21e057776656e04b0fac51f92ca
+BobDylan1978cd1t09.flac:48bb7135a2461e0d50e4ce23ac1c7dcc
+BobDylan1978cd1t10.flac:8246b2cee3cdb8c7ae1a74b28fd8f579
+BobDylan1978cd1t11.flac:aa6503f13fafae47f2f05e90cc048796
+BobDylan1978cd1t12.flac:5da8c0accd3d6cf4d7317cbf4aebccf4
+BobDylan1978cd1t13.flac:c367d97bbdab6ca08fa36af66629593a
+BobDylan1978cd2t01.flac:731648f720ecd02e301a71183d86fb1e
+BobDylan1978cd2t02.flac:71510a35b99b3b4e54a24c6b6e26903a
+BobDylan1978cd2t03.flac:ce51ba5143e887370c33efe3f7bfa66e
+BobDylan1978cd2t04.flac:fa023e043995b06a6481bfbe594fe4a7
+BobDylan1978cd2t05.flac:9bccf1b31a13abcfe45085c7efd403d6
+BobDylan1978cd2t06.flac:1cf2fc08821ec6d38b1522faec73819a
+BobDylan1978cd2t07.flac:3282a78d366d3ee496b3d1b3bcf64548
+BobDylan1978cd2t08.flac:e4419b86897d3a3c29a3f3e8e171972d
+BobDylan1978cd2t09.flac:26c3674c2d065dd862ea4bc4c6f8ce85
+BobDylan1978cd2t10.flac:f3e9cadf8faff3b1c26b709d7694d7a4
+BobDylan1978cd2t11.flac:e6ab11efc73ee6d407c5327ef72a6617
+BobDylan1978cd2t12.flac:28fcc478ee4eb8e11f037ae732e389c4
+BobDylan1978cd2t13.flac:93a3b6f285698b4032a78097fa5e07c9
+BobDylan1978cd2t14.flac:5708f98f116933f73a63cf2f589b57d2
+BobDylan1978cd2t15.flac:5ae9eaee3b86fb47d5f7d58d8e7fb046
+BobDylan1978cd2t16.flac:2b89dc352319296795274020b773ed08
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-18-teac-me80s-master.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:54.12       30721868 B   ---   --   ---xx   flac  0.5769  BobDylan1978cd1t01.flac
+     8:24.01       88907996 B   ---   --   ---xx   flac  0.5871  BobDylan1978cd1t02.flac
+     4:50.70       51320684 B   ---   --   ---xx   flac  0.5980  BobDylan1978cd1t03.flac
+     4:36.09       48707612 B   ---   --   ---xx   flac  0.6038  BobDylan1978cd1t04.flac
+     8:21.39       88468172 B   ---   --   ---xx   flac  0.5627  BobDylan1978cd1t05.flac
+     4:44.27       50161148 B   ---   --   ---xx   flac  0.5892  BobDylan1978cd1t06.flac
+     4:51.67       51490028 B   ---   --   ---xx   flac  0.5814  BobDylan1978cd1t07.flac
+     4:32.72       48150188 B   ---   --   ---xx   flac  0.5679  BobDylan1978cd1t08.flac
+     2:41.33       28478060 B   ---   --   ---xx   flac  0.5919  BobDylan1978cd1t09.flac
+     4:03.49       42980492 B   ---   --   ---xx   flac  0.6023  BobDylan1978cd1t10.flac
+     4:32.07       47997308 B   ---   --   ---xx   flac  0.5684  BobDylan1978cd1t11.flac
+     5:05.01       53804396 B   ---   --   ---xx   flac  0.5756  BobDylan1978cd1t12.flac
+     0:30.57        5426108 B   ---   --   ---xx   flac  0.1024  BobDylan1978cd1t13.flac
+     4:33.17       48197228 B   ---   --   ---xx   flac  0.5887  BobDylan1978cd2t01.flac
+     6:21.14       67241372 B   ---   --   ---xx   flac  0.5634  BobDylan1978cd2t02.flac
+     4:35.59       48648812 B   ---   --   ---xx   flac  0.5886  BobDylan1978cd2t03.flac
+     4:59.52       52865948 B   ---   --   ---xx   flac  0.5723  BobDylan1978cd2t04.flac
+     5:46.38       61123820 B   ---   --   ---xx   flac  0.5277  BobDylan1978cd2t05.flac
+     0:09.07        1604108 B   ---   --   ---xx   flac  0.5002  BobDylan1978cd2t06.flac
+     6:10.43       65369180 B   ---   --   ---xx   flac  0.5621  BobDylan1978cd2t07.flac
+     4:28.15       47310524 B   ---   --   ---xx   flac  0.5735  BobDylan1978cd2t08.flac
+     6:14.54       66100652 B   ---   --   ---xx   flac  0.5496  BobDylan1978cd2t09.flac
+     3:59.35       42241964 B   ---   --   ---xx   flac  0.5641  BobDylan1978cd2t10.flac
+     3:53.26       41162396 B   ---   --   ---xx   flac  0.5820  BobDylan1978cd2t11.flac
+     3:15.16       34435676 B   ---   --   ---xx   flac  0.5784  BobDylan1978cd2t12.flac
+     2:17.48       24279740 B   ---   --   ---xx   flac  0.5461  BobDylan1978cd2t13.flac
+     6:15.11       66175916 B   ---   --   ---xx   flac  0.5828  BobDylan1978cd2t14.flac
+     6:09.70       65256284 B   ---   --   ---xx   flac  0.5637  BobDylan1978cd2t15.flac
+     7:23.42       78244028 B   ---   --   ---xx   flac  0.5819  BobDylan1978cd2t16.flac
+   136:42.16     1446871708 B                            0.5726  (29 files)
+=================== 
+=================== 
+=================== 

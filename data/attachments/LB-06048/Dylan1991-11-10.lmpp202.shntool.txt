@@ -1,0 +1,20 @@
+    length     expanded size   cdr  WAVE problems filename
+     5:35.08       59112860    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t01.flac
+     5:04.71       53792636    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t02.flac
+     4:22.54       46343852    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t03.flac
+     3:43.71       39504236    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t04.flac
+     5:43.53       60629900    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t05.flac
+     5:06.08       53997260    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t06.flac
+     5:17.65       56071724    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t07.flac
+     4:22.54       46343852    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t08.flac
+     8:55.40       94468124    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t09.flac
+     5:59.40       63421724    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t01.flac
+     5:19.22       56323388    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t02.flac
+     6:27.34       68346812    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t03.flac
+     5:16.03       55749500    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t04.flac
+     3:10.08       33534860    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t05.flac
+     4:38.64       49189772    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t06.flac
+     5:23.56       57108956    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t07.flac
+     7:28.60       79168364    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t08.flac
+     8:25.66       89237276    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t09.flac
+   100:22.27     1062345096 B                     (totals for 18 files, 0.7033 overall compression ratio)

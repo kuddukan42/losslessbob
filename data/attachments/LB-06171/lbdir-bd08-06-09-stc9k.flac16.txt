@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-06-09-stc9k.flac16 
+=================== 
+=================== 
+=================== 
+9f5ddb4644ec586eb309fcf9d4a4c218  bd2008-06-09.md5
+54528ca7f796a3fb8482691088ee58d6  bd2008-06-09info.txt
+db1acf5187c948ac28f105e964b91470  bd2008-06-09t01 (intro).flac
+cd61fb7b9ea0a1e2a3bd19ddbfa073db  bd2008-06-09t02 Stuck Inside of Mobile with the Memphis Blues Again.flac
+8ce1bcac4f3ef302709959f825554b28  bd2008-06-09t03 If You See Her, Say Hello.flac
+f0de0a7d679bc5a48995d8ffacfa24bb  bd2008-06-09t04 Just Like Tom Thumb's Blues.flac
+8459060bf66c12c6cc7bee8d2820fc1e  bd2008-06-09t05 Rollin' And Tumblin'.flac
+8a1978d74d3731e2685b9c310d89110c  bd2008-06-09t06 Moonlight.flac
+843dabac9d6e3e595585641f85751bf9  bd2008-06-09t07 Watching the River Flow.flac
+561bafc36d3c4363710339e439593ac0  bd2008-06-09t08 Desolation Row.flac
+813a37c742c785af7c82f3a333c75734  bd2008-06-09t09 Things Have Changed.flac
+b9b9f60ce36cdda5c88bbabf8018fcdb  bd2008-06-09t10 High Water (For Charlie Patton) - Recile's false start.flac
+30527b9907b080ff3906cf97e94f090c  bd2008-06-09t11 Tryin' to Get to Heaven.flac
+9e63b14350e426049ae9bc10c0c40afb  bd2008-06-09t12 High Water (For Charlie Patton).flac
+fcd831eabfc8c0b743c7ff875c590dfc  bd2008-06-09t13 Beyond the Horizon.flac
+641c05bebbf2565f77f58bc0ddc0f988  bd2008-06-09t14 It's Alright, Ma (I'm Only Bleding).flac
+2ed6ac07b88504dceddd7b6a85a6d572  bd2008-06-09t15 When the Deal Goes down.flac
+8ae3db0bd4e2842e56b8d94607ee6904  bd2008-06-09t16 Highway 61 Revisited.flac
+eee121588f47f27afc3f723d988412ea  bd2008-06-09t17 Ballad of a Thin Man.flac
+4e310344b6058ec241104730ffb4977a  bd2008-06-09t18 Thunder on the Mountain.flac
+c034ce4f4853fc517b5302e747fcb1cb  bd2008-06-09t19 All Along the Watchtower.flac
+7c3c62e9247f870cf24839aaebd87b68  pictures\bd2008-06-09_1.jpg
+e55893fe377d4a6711a8463bd6c9deb6  pictures\bd2008-06-09_2.jpg
+df7512b373ab8d9ec81bbfd9cafccf8b  pictures\bd2008-06-09_3.jpg
+a94e6416acc2130df9719ef980117571  pictures\bd2008-06-09_4.jpg
+cbf81fc899a09a6dc32ec747c84b8363  pictures\bd2008-06-09_5.jpg
+2ddb65bc06b0f3aace0a86621c7c5482  pictures\bd2008-06-09_6.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-09-stc9k.flac16 
+=================== 
+=================== 
+=================== 
+bd2008-06-09t01 (intro).flac:02ef9c627da9910e44edbb158b7f3714
+bd2008-06-09t02 Stuck Inside of Mobile with the Memphis Blues Again.flac:6ad8c8807898641c90d451efc4ecff79
+bd2008-06-09t03 If You See Her, Say Hello.flac:e731801e7a8fa9ac8ff0c7f2eb194908
+bd2008-06-09t04 Just Like Tom Thumb's Blues.flac:571127e9a0355db3814e2ace32ac0215
+bd2008-06-09t05 Rollin' And Tumblin'.flac:bbb0464a193bbfd47b917164be21e6be
+bd2008-06-09t06 Moonlight.flac:1e761babb29f76da1d9585facd5161b4
+bd2008-06-09t07 Watching the River Flow.flac:91f4437287d4b418287cd3f6d38528d6
+bd2008-06-09t08 Desolation Row.flac:f92a0f6ae475f332196eb9a1c362e47e
+bd2008-06-09t09 Things Have Changed.flac:984a78e36d8520582de5dc7c5f64cfdb
+bd2008-06-09t10 High Water (For Charlie Patton) - Recile's false start.flac:d480e6e6601d5eb7a58a7df2da281050
+bd2008-06-09t11 Tryin' to Get to Heaven.flac:7385a5c63ae7c563cc2eb905cf9fe87e
+bd2008-06-09t12 High Water (For Charlie Patton).flac:92f8d065d61f9e8c4af7e9b220ba9d68
+bd2008-06-09t13 Beyond the Horizon.flac:8cd605cd2a4596f4f73d84bbd71f4961
+bd2008-06-09t14 It's Alright, Ma (I'm Only Bleding).flac:d53eb58409801a20fd69025d1e95e23f
+bd2008-06-09t15 When the Deal Goes down.flac:fd9aaccefadc5801b9347c48fe5eb6f8
+bd2008-06-09t16 Highway 61 Revisited.flac:9468b93f2b07638130fa3ccac52cc878
+bd2008-06-09t17 Ballad of a Thin Man.flac:3c49a668b2a638e9993e1ae3509bb5f5
+bd2008-06-09t18 Thunder on the Mountain.flac:b1f17a04f4b73d8536161255d4d90fda
+bd2008-06-09t19 All Along the Watchtower.flac:88e60d3e162af5cf14c5cf9a9a5f4e97
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-09-stc9k.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.44        9629132 B   ---   --   ---xx   flac  0.4693  bd2008-06-09t01 (intro).flac
+     7:11.71       76195436 B   ---   --   ---xx   flac  0.5249  bd2008-06-09t02 Stuck Inside of Mobile with the Memphis Blues Again.flac
+     5:43.12       60533468 B   ---   --   ---xx   flac  0.5125  bd2008-06-09t03 If You See Her, Say Hello.flac
+     5:52.56       62224556 B   ---   --   ---xx   flac  0.5164  bd2008-06-09t04 Just Like Tom Thumb's Blues.flac
+     6:58.55       73864604 B   ---   --   ---xx   flac  0.5231  bd2008-06-09t05 Rollin' And Tumblin'.flac
+     5:58.21       63200636 B   ---   --   ---xx   flac  0.4137  bd2008-06-09t06 Moonlight.flac
+     5:35.13       59124620 B   ---   --   ---xx   flac  0.5212  bd2008-06-09t07 Watching the River Flow.flac
+    10:02.61      106336316 B   ---   --   ---xx   flac  0.4933  bd2008-06-09t08 Desolation Row.flac
+     6:35.62       69823868 B   ---   --   ---xx   flac  0.5246  bd2008-06-09t09 Things Have Changed.flac
+     0:17.62        3144668 B   ---   --   ---xx   flac  0.4620  bd2008-06-09t10 High Water (For Charlie Patton) - Recile's false start.flac
+     4:29.12       47479868 B   ---   --   ---xx   flac  0.4853  bd2008-06-09t11 Tryin' to Get to Heaven.flac
+     5:37.71       59613836 B   ---   --   ---xx   flac  0.5449  bd2008-06-09t12 High Water (For Charlie Patton).flac
+     5:50.12       61768268 B   ---   --   ---xx   flac  0.4500  bd2008-06-09t13 Beyond the Horizon.flac
+     7:20.36       77700716 B   ---   --   ---xx   flac  0.5495  bd2008-06-09t14 It's Alright, Ma (I'm Only Bleding).flac
+     6:15.29       66218252 B   ---   --   ---xx   flac  0.4148  bd2008-06-09t15 When the Deal Goes down.flac
+     6:08.59       65054012 B   ---   --   ---xx   flac  0.5702  bd2008-06-09t16 Highway 61 Revisited.flac
+    10:51.64      114986972 B   ---   --   ---xx   flac  0.5020  bd2008-06-09t17 Ballad of a Thin Man.flac
+     7:15.45       76839884 B   ---   --   ---xx   flac  0.5445  bd2008-06-09t18 Thunder on the Mountain.flac
+     5:59.40       63421724 B   ---   --   ---xx   flac  0.5476  bd2008-06-09t19 All Along the Watchtower.flac
+   115:00.00     1217160836 B                            0.5083  (19 files)
+=================== 
+=================== 
+=================== 

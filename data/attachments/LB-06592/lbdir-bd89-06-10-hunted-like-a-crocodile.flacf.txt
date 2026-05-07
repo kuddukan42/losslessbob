@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-10-hunted-like-a-crocodile.flacf 
+=================== 
+=================== 
+=================== 
+06ad83a5a2461870767893655c67bff2  bd89-06-10-hunted-like-a-crocodile-t01.flac
+e7c8ad17ec2b77ed90df472730852a10  bd89-06-10-hunted-like-a-crocodile-t02.flac
+bc9b94892d7cc31b39f4a1caada53756  bd89-06-10-hunted-like-a-crocodile-t03.flac
+5a56038350d159addfbc5219f685940d  bd89-06-10-hunted-like-a-crocodile-t04.flac
+026bc68363465827aa5f1e7c7cc7e609  bd89-06-10-hunted-like-a-crocodile-t05.flac
+d8b8eba90b79655bc3fed30419bb0195  bd89-06-10-hunted-like-a-crocodile-t06.flac
+8c4daa378e0387902d432bacb8c66bcb  bd89-06-10-hunted-like-a-crocodile-t07.flac
+6293d9eb6b8dabc5b7b142fbe5b9b847  bd89-06-10-hunted-like-a-crocodile-t08.flac
+883e5eb2f42ded936df3e199d7e25a32  bd89-06-10-hunted-like-a-crocodile-t09.flac
+ddc1b7dc0364ab33d52eb49bac4201f0  bd89-06-10-hunted-like-a-crocodile-t10.flac
+ea543d1a5666844c1c58b3f8ed411cac  bd89-06-10-hunted-like-a-crocodile-t11.flac
+b641cfe8172198795c088cb6bf6d5921  bd89-06-10-hunted-like-a-crocodile-t12.flac
+91f5599a1bdab828adca6cc6f89f3ca3  bd89-06-10-hunted-like-a-crocodile-t13.flac
+b714bea0424e49fb2a467d070d0ab6d4  bd89-06-10-hunted-like-a-crocodile-t14.flac
+b8ed7c1600770272df7d88f220077e2d  bd89-06-10-hunted-like-a-crocodile-t15.flac
+c55277b24ca5602448581836f14dee9f  bd89-06-10-hunted-like-a-crocodile.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-10-hunted-like-a-crocodile.flacf 
+=================== 
+=================== 
+=================== 
+bd89-06-10-hunted-like-a-crocodile-t01.flac:41b107430983fb5a03688dc99fd99d22
+bd89-06-10-hunted-like-a-crocodile-t02.flac:9028e648a73c6f1bd6424258176dcbbe
+bd89-06-10-hunted-like-a-crocodile-t03.flac:c1d536b1cd2283470b65a65214abe1d3
+bd89-06-10-hunted-like-a-crocodile-t04.flac:6a6f1c096b63bea2d0b9771c1e027616
+bd89-06-10-hunted-like-a-crocodile-t05.flac:d625d2daa941f3451aa85234a827fff2
+bd89-06-10-hunted-like-a-crocodile-t06.flac:53ae954530545005448b33d0b2a1d658
+bd89-06-10-hunted-like-a-crocodile-t07.flac:94363cc727263508976ced1ab4613531
+bd89-06-10-hunted-like-a-crocodile-t08.flac:19b8fa65fde680407de617ef89e1a200
+bd89-06-10-hunted-like-a-crocodile-t09.flac:84c37f6c6cbe3ba658b3609a46f78f97
+bd89-06-10-hunted-like-a-crocodile-t10.flac:01a29d6fb588c7f45ff9db1023653b34
+bd89-06-10-hunted-like-a-crocodile-t11.flac:a89b16b9794785ecaa6a05f05a58706b
+bd89-06-10-hunted-like-a-crocodile-t12.flac:5e228b17ae8a2b83b40cda427ba257ff
+bd89-06-10-hunted-like-a-crocodile-t13.flac:e450dd9394b44573c5f297c165c345ca
+bd89-06-10-hunted-like-a-crocodile-t14.flac:06baa1ade7c639cd17e0e5c36b62eb0a
+bd89-06-10-hunted-like-a-crocodile-t15.flac:7ce8dcdb0bdf96fcff35b64c40a8fcae
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-10-hunted-like-a-crocodile.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.35       51943964 B   ---   --   ---xx   flac  0.6142  bd89-06-10-hunted-like-a-crocodile-t01.flac
+     5:20.52       56570348 B   ---   --   ---xx   flac  0.5995  bd89-06-10-hunted-like-a-crocodile-t02.flac
+     5:02.28       53338700 B   ---   --   ---xx   flac  0.6201  bd89-06-10-hunted-like-a-crocodile-t03.flac
+     5:35.25       59152844 B   ---   --   ---xx   flac  0.5934  bd89-06-10-hunted-like-a-crocodile-t04.flac
+     3:56.10       41653964 B   ---   --   ---xx   flac  0.5932  bd89-06-10-hunted-like-a-crocodile-t05.flac
+     4:11.22       44328188 B   ---   --   ---xx   flac  0.6148  bd89-06-10-hunted-like-a-crocodile-t06.flac
+     6:50.45       72429884 B   ---   --   ---xx   flac  0.5427  bd89-06-10-hunted-like-a-crocodile-t07.flac
+     4:17.43       45435980 B   ---   --   ---xx   flac  0.5806  bd89-06-10-hunted-like-a-crocodile-t08.flac
+     4:04.12       43069868 B   ---   --   ---xx   flac  0.5968  bd89-06-10-hunted-like-a-crocodile-t09.flac
+     6:16.10       66349964 B   ---   --   ---xx   flac  0.6012  bd89-06-10-hunted-like-a-crocodile-t10.flac
+     6:37.00       70030844 B   ---   --   ---xx   flac  0.5748  bd89-06-10-hunted-like-a-crocodile-t11.flac
+     4:13.35       44711564 B   ---   --   ---xx   flac  0.6052  bd89-06-10-hunted-like-a-crocodile-t12.flac
+     6:10.28       65333900 B   ---   --   ---xx   flac  0.6324  bd89-06-10-hunted-like-a-crocodile-t13.flac
+     4:40.42       49490828 B   ---   --   ---xx   flac  0.5582  bd89-06-10-hunted-like-a-crocodile-t14.flac
+     4:01.55       42641804 B   ---   --   ---xx   flac  0.6039  bd89-06-10-hunted-like-a-crocodile-t15.flac
+    76:11.67      806482644 B                            0.5942  (15 files)
+=================== 
+=================== 
+=================== 

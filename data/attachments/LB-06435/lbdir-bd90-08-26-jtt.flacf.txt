@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-08-26-jtt.flacf 
+=================== 
+=================== 
+=================== 
+f65d6e90b6b802d2385665df6fa0dad3  Disc One\Disc01Track01 BD - August 26th 1990.flac
+853f9ecf210af45b053d61f353c3f342  Disc One\Disc01Track02 BD - August 26th 1990.flac
+887665b2062782e4d044b15c954770e6  Disc One\Disc01Track03 BD - August 26th 1990.flac
+8939d542e347c39c4e7d5c6ca9c1e2f6  Disc One\Disc01Track04 BD - August 26th 1990.flac
+153c757d2573841d510be1bd4dcc5d8d  Disc One\Disc01Track05 BD - August 26th 1990.flac
+f0cde7759acd3b668fc75a23fbcd8cff  Disc One\Disc01Track06 BD - August 26th 1990.flac
+d5f0c53a2d9452bc58085247ae7ea5bc  Disc One\Disc01Track07 BD - August 26th 1990.flac
+b4a283a7e27c2ce5a527cfaf15b8a228  Disc One\Disc01Track08 BD - August 26th 1990.flac
+5fd5504912a444a38864a9f3ac3176f3  Disc One\Disc01Track09 BD - August 26th 1990.flac
+2d57aa9e12ec3f1f9cbb947661cda861  Disc One\Disc01Track10 BD - August 26th 1990.flac
+188eee906fa06869a638c122fbd41df2  Disc Two\Disc02Track01 BD - August 26th 1990.flac
+49d576f0edb0e1b06707bd51f2113a75  Disc Two\Disc02Track02 BD - August 26th 1990.flac
+210015e22aba270099e2f4a7d50d3405  Disc Two\Disc02Track03 BD - August 26th 1990.flac
+a573ec09bafc49ffd5e54dd002401968  Disc Two\Disc02Track04 BD - August 26th 1990.flac
+f801a94d1d3d7f133e6ed015a1277a87  Disc Two\Disc02Track05 BD - August 26th 1990.flac
+df8fc19ee1dd9fb982e3fd03a078f16b  Disc Two\Disc02Track06 BD - August 26th 1990.flac
+fe33f78aeb79b11858370c8841c9b542  Disc Two\Disc02Track07 BD - August 26th 1990.flac
+b44831653d4117b4cf48a020ae8fe561  Disc Two\Disc02Track08 BD - August 26th 1990.flac
+dfd251363f51c3077bc3624e41823e8e  Disc Two\Disc02Track09 BD - August 26th 1990.flac
+fb7f369ec9772858ec1bc5ecb4acf81a  Dylan - Des Moines August 26th 1990 (JTT).md5
+46757c0fb26d7e0c09d52f85479448f5  Dylan - Des Moines August 26th 1990 (JTT).txt
+9e1aafa74e5d95324c374d1391959883  Dylan - Des Moines August 26th 1990_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-08-26-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 BD - August 26th 1990.flac:bb2a91258f9a7d2a3dc64c2323e19eb5
+Disc01Track02 BD - August 26th 1990.flac:5e436ad1fb909103ec2332b3352d997e
+Disc01Track03 BD - August 26th 1990.flac:c7cc2cfc55e5470a1ad534d4342ef12f
+Disc01Track04 BD - August 26th 1990.flac:e1eea2ec5d03dfcd4d4c87d0a8b5c8c2
+Disc01Track05 BD - August 26th 1990.flac:8e0837c99b4bab37911636a226565967
+Disc01Track06 BD - August 26th 1990.flac:ea689c9deb0fd2e6dd722eaf932fe755
+Disc01Track07 BD - August 26th 1990.flac:afd5722f70970e8e8a753f93dd888f83
+Disc01Track08 BD - August 26th 1990.flac:183b11cd45e61f628bc85b160834f8fa
+Disc01Track09 BD - August 26th 1990.flac:93081b0d5a68eaaffa4b710396f286f2
+Disc01Track10 BD - August 26th 1990.flac:e0b01fe5181b679397eb342e13d2ec7f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-08-26-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 BD - August 26th 1990.flac:275345a9b1163fd3c7ad1b9b60ed1347
+Disc02Track02 BD - August 26th 1990.flac:7d0800031f9d0d455ad9e5456cb40f63
+Disc02Track03 BD - August 26th 1990.flac:161a31f900e1142149c18e72070ac1ac
+Disc02Track04 BD - August 26th 1990.flac:ce900e23c698d5e17c93398bcaca6e6c
+Disc02Track05 BD - August 26th 1990.flac:cc969f384806d9908db4f9545958ce42
+Disc02Track06 BD - August 26th 1990.flac:b793357f888bf4cdaa593bfe50f2798e
+Disc02Track07 BD - August 26th 1990.flac:11d04fe49f04b345c9e1bdcd35355f51
+Disc02Track08 BD - August 26th 1990.flac:2ea9de9cd3609e899db5ecdbc3b46d93
+Disc02Track09 BD - August 26th 1990.flac:ceb2dc0d58aa3f9c3b636cb180c7e4bf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-08-26-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:19.65       45840524 B   ---   --   ---xx   flac  0.6560  Disc01Track01 BD - August 26th 1990.flac
+     4:34.07       48350108 B   ---   --   ---xx   flac  0.6542  Disc01Track02 BD - August 26th 1990.flac
+     4:20.60       46005164 B   ---   --   ---xx   flac  0.6692  Disc01Track03 BD - August 26th 1990.flac
+     4:16.34       45238412 B   ---   --   ---xx   flac  0.6868  Disc01Track04 BD - August 26th 1990.flac
+     4:39.21       49265036 B   ---   --   ---xx   flac  0.6734  Disc01Track05 BD - August 26th 1990.flac
+     4:20.47       45974588 B   ---   --   ---xx   flac  0.6788  Disc01Track06 BD - August 26th 1990.flac
+     5:58.25       63210044 B   ---   --   ---xx   flac  0.6356  Disc01Track07 BD - August 26th 1990.flac
+     4:11.32       44351708 B   ---   --   ---xx   flac  0.6295  Disc01Track08 BD - August 26th 1990.flac
+     4:36.30       48757004 B   ---   --   ---xx   flac  0.6675  Disc01Track09 BD - August 26th 1990.flac
+     5:17.50       56036444 B   ---   --   ---xx   flac  0.6840  Disc01Track10 BD - August 26th 1990.flac
+    46:34.71      493029032 B                            0.6631  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-08-26-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.20       34797884 B   ---   --   ---xx   flac  0.6178  Disc02Track01 BD - August 26th 1990.flac
+     3:25.62       36307868 B   ---   --   ---xx   flac  0.6206  Disc02Track02 BD - August 26th 1990.flac
+     3:36.72       38271788 B   ---   --   ---xx   flac  0.6088  Disc02Track03 BD - August 26th 1990.flac
+     3:37.12       38307068 B   ---   --   ---xx   flac  0.5972  Disc02Track04 BD - August 26th 1990.flac
+     4:25.34       46826012 B   ---   --   ---xx   flac  0.5817  Disc02Track05 BD - August 26th 1990.flac
+     4:14.09       44826812 B   ---   --   ---xx   flac  0.6119  Disc02Track06 BD - August 26th 1990.flac
+     7:17.34       77166812 B   ---   --   ---xx   flac  0.6130  Disc02Track07 BD - August 26th 1990.flac
+     4:30.56       47759756 B   ---   --   ---xx   flac  0.5932  Disc02Track08 BD - August 26th 1990.flac
+     4:12.07       44469308 B   ---   --   ---xx   flac  0.6238  Disc02Track09 BD - August 26th 1990.flac
+    38:37.06      408733308 B                            0.6074  (9 files)
+=================== 
+=================== 
+=================== 

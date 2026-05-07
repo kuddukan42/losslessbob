@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== md5 for: bd03-11-15-cc-g.flacf
+===================
+===================
+===================
+0580a3b3f727adc2bf97d7eaaf182dd9 *101 Intro.flac
+f08c2b65d6e6f7b2b3fb9563f6e7b9f9 *102 Maggie's Farm.flac
+e9c852a81cf42b5a7cf1b9da1a5b563c *103 It's All Over Now, Baby Blue.flac
+6c6691f102fc261e9b98a305c51a0d44 *104 Cry A While.flac
+cca0ad81da3c5735c357c6f6753e8333 *105 Desolation Row.flac
+a4c4c7851e987142bde3ca446731a40e *106 It's Alright, Ma (I'm Only Bleeding).flac
+46a2516ae5cc90be2e83bf6dbbd0b3eb *107 Boots Of Spanish Leather.flac
+4dfd300906470fc9e5209b1a6448d476 *108 Tweedle Dee and Tweedle Dum.flac
+1d8d48500b5a8c5813dbdfaab2587a2a *109 Mr Tambourine Man.flac
+c4e89efaff31586b017e62837db8dfc7 *110 Things Have Changed.flac
+dc002b6d2855256f77486359a5a48f92 *111 Highway 61 Revisited.flac
+783893225cdaeea0d7e70a8a75b83c6d *201 Every Grain Of Sand.flac
+e4974219677bb83e6de659d7e5fcae7f *202 Honest With Me.flac
+28ac04a8d4311ce0f6718269e72a51ab *203 The Lonesome Death Of Hattie Carroll.flac
+6c71fa8522b31fd2eab0070f458f72e6 *204 Summer Days.flac
+812bdc0873b2a8bf889134c84570650c *205 Cat's In The Well.flac
+e9f9976e3db22dbbc494f9e612874b4f *206 Like A Rolling Stone.flac
+f3122fc21758185ff6a4877a62c8449f *207 All Along The Watchtower.flac
+712bba342de259b2a9c7e22e51970f0a *208 Man In The Long Black Coat.flac
+88087528d56ea883f4450819c5e262f2 *209 Love Minus Zero - No Limit.flac
+3f5ac1b0ba789108c9b26ae002d36b68 *210 Bye And Bye.flac
+c5e8b20575a4ba77c59317cd9cb8be7b *211 Can't Wait.flac
+1df4e82f05c22165fde8e4565cb10968 *212 Easy Lovin'.flac
+d21668c35d309205932504def6140569 *Bob Dylan - 2003-11-15 Wembley Arena [Crystal Cat CC 721-722].txt
+e20d760d2086766bf8d56c6ae918079e *cover.jpg
+0ba9b8b077f34d011dbe5bf4892a3cfe *Torrent downloaded from Demonoid.me.txt
+c47324b2cbae755fc83282da0f71b4fb *Wembley 2003 Crystal Cat Back.jpg
+327f952af1e83c20414bd0bd39663ead *Wembley 2003 Crystal Cat booklet 2.jpg
+67d44483bbc8f5466d73468864a6dfbb *Wembley 2003 Crystal Cat Front.jpg
+9a9cc3de6d6bd768d2c1f13ad907787e *Wembley 2003 Crystal Cat tray.jpg
+===================
+===================
+===================
+=== ffp for: bd03-11-15-cc-g.flacf
+===================
+===================
+===================
+101 Intro.flac:9514399dadd4374d4afdce0407714351
+102 Maggie's Farm.flac:a25bd95ffc19dfdeae79e0a5dcdb8e28
+103 It's All Over Now, Baby Blue.flac:0724ea86e2bd8f994247291c574818bf
+104 Cry A While.flac:55e2f5c08fa2a29778538d531eb986bc
+105 Desolation Row.flac:4963349d89c891e3bf6947d0f39deb8b
+106 It's Alright, Ma (I'm Only Bleeding).flac:6f4673319561fc766bdc9a416c52d036
+107 Boots Of Spanish Leather.flac:b47c34f1f02a80323e1e8195bcf6d6bd
+108 Tweedle Dee and Tweedle Dum.flac:b5a71fe195938d052c7c3d7fd6798034
+109 Mr Tambourine Man.flac:08655607edb7c1be7aed10fe94248b97
+110 Things Have Changed.flac:57600a8f9e59154e6906ba055e2e999a
+111 Highway 61 Revisited.flac:251c3106193742a10a8c26794be3f075
+201 Every Grain Of Sand.flac:5b51a9fc79451fe6674a6e1ee4ac9169
+202 Honest With Me.flac:d3fa01349479e449748bc42819dbccab
+203 The Lonesome Death Of Hattie Carroll.flac:39fa8850cffad033dea94faf030064b9
+204 Summer Days.flac:4dfa13293922374d093e9f9907d3a57f
+205 Cat's In The Well.flac:5fc4d15120318d7800029c3b14c22286
+206 Like A Rolling Stone.flac:ebeceb3321b4ec8b891645cd349fb0a5
+207 All Along The Watchtower.flac:d1250723f3f6ccd036e44d81a4788d92
+208 Man In The Long Black Coat.flac:ad5ceea221f8f7685128f6285f9835f2
+209 Love Minus Zero - No Limit.flac:cf9085836093d25ede77a884d2fe8bb8
+210 Bye And Bye.flac:d00e9e86b1956e46b10c12c48ad0c9ba
+211 Can't Wait.flac:63bd77f40a98e03baa548dc1c1c88471
+212 Easy Lovin'.flac:94003daf54704645440520bea743875b
+===================
+===================
+===================
+=== shntool len for: bd03-11-15-cc-g.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:56.40       20557356 B   -b-   --   ---xx   flac  0.5870  101 Intro.flac
+     5:26.35       57589804 B   -b-   --   ---xx   flac  0.6864  102 Maggie's Farm.flac
+     7:11.01       76029996 B   -b-   --   ---xx   flac  0.6540  103 It's All Over Now, Baby Blue.flac
+     5:42.02       60334124 B   -b-   --   ---xx   flac  0.6820  104 Cry A While.flac
+     8:32.00       90316844 B   ---   --   ---xx   flac  0.6679  105 Desolation Row.flac
+     8:03.02       85205036 B   -b-   --   ---xx   flac  0.6753  106 It's Alright, Ma (I'm Only Bleeding).flac
+     5:58.01       63154220 B   -b-   --   ---xx   flac  0.6294  107 Boots Of Spanish Leather.flac
+     5:46.02       61038636 B   -b-   --   ---xx   flac  0.6541  108 Tweedle Dee and Tweedle Dum.flac
+     8:18.57       87982124 B   -b-   --   ---xx   flac  0.6532  109 Mr Tambourine Man.flac
+     7:04.03       74801196 B   -b-   --   ---xx   flac  0.6865  110 Things Have Changed.flac
+     7:05.61       75112492 B   -b-   --   ---xx   flac  0.6974  111 Highway 61 Revisited.flac
+     7:08.03       75505708 B   -b-   --   ---xx   flac  0.6163  201 Every Grain Of Sand.flac
+     7:15.01       76736556 B   -b-   --   ---xx   flac  0.6956  202 Honest With Me.flac
+     6:14.02       65978412 B   -b-   --   ---xx   flac  0.6038  203 The Lonesome Death Of Hattie Carroll.flac
+     9:11.46       97304620 B   -b-   --   ---xx   flac  0.6721  204 Summer Days.flac
+     4:32.56       48111660 B   -b-   --   ---xx   flac  0.7073  205 Cat's In The Well.flac
+     7:19.52       77561900 B   -b-   --   ---xx   flac  0.6805  206 Like A Rolling Stone.flac
+     8:07.01       85909548 B   -b-   --   ---xx   flac  0.6526  207 All Along The Watchtower.flac
+     5:29.02       58040364 B   -b-   --   ---xx   flac  0.6966  208 Man In The Long Black Coat.flac
+     6:20.01       67035180 B   -b-   --   ---xx   flac  0.6861  209 Love Minus Zero - No Limit.flac
+     6:28.01       68446252 B   -b-   --   ---xx   flac  0.6396  210 Bye And Bye.flac
+     5:36.03       59277356 B   -b-   --   ---xx   flac  0.6676  211 Can't Wait.flac
+     4:14.05       44818476 B   -b-   --   ---xx   flac  0.6982  212 Easy Lovin'.flac
+   148:59.03     1576847860 B                            0.6661  (23 files)
+===================
+===================
+===================

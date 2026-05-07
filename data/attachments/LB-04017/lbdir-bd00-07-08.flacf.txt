@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-08.flacf 
+=================== 
+=================== 
+=================== 
+30052ef6e32487af83a2a90bfe04457c  bd00-07-08-LB-4017.txt
+6ae9db054a1679680f42e9b6ebbab1e4  iinfo.txt
+4b02dbdcee9381d1d8b4b7d3d981fd83  Maryland Heights 8-july-2000 cd1\1 Traccia 01.flac
+31374ce52c95bab16fc3d27e9de40b15  Maryland Heights 8-july-2000 cd1\10 Traccia 10.flac
+61db6f11706a0a0094fe5a6d517a5b35  Maryland Heights 8-july-2000 cd1\11 Traccia 11.flac
+907d5ec4c3df88e4b53e4d43e75585d6  Maryland Heights 8-july-2000 cd1\12 Traccia 12.flac
+4ca963ded06319752c21d2de3aaa2e67  Maryland Heights 8-july-2000 cd1\2 Traccia 02.flac
+2da1d7a576ee7da215e101b1afc8cd6c  Maryland Heights 8-july-2000 cd1\3 Traccia 03.flac
+0a7e8e0ed3a3a5ded2d96c1a15a0d85f  Maryland Heights 8-july-2000 cd1\4 Traccia 04.flac
+53085bf0494ae51a6df5e9058b177dbc  Maryland Heights 8-july-2000 cd1\5 Traccia 05.flac
+d04195a07319a80c8d3e10250f03ea5b  Maryland Heights 8-july-2000 cd1\6 Traccia 06.flac
+e053621a2486872eab2759f8f4883601  Maryland Heights 8-july-2000 cd1\7 Traccia 07.flac
+cae3fd6416179ce3af6fc8537bc1bcbf  Maryland Heights 8-july-2000 cd1\8 Traccia 08.flac
+6271b821bcf18f64cb4f05902c178b4b  Maryland Heights 8-july-2000 cd1\9 Traccia 09.flac
+0727756b38a4938870eb21e883e337b3  Maryland Heights 8-july-2000 cd1\Info.txt
+c224a4e387c7843b26d62270f6c0b641  Maryland Heights 8-july-2000 cd1\fingerprint.ffp.txt
+49843fddff213c7a8c6a6064f4882eca  Maryland Heights 8-july-2000 cd2\1 Traccia Audio.flac
+894f15358be6d60f387a8da89099c867  Maryland Heights 8-july-2000 cd2\2 Traccia Audio.flac
+a6100b81aaed38abd5e4e3ccdb9c320a  Maryland Heights 8-july-2000 cd2\3 Traccia Audio.flac
+ad91a562dd7e5c6afbfad0eeb1056cef  Maryland Heights 8-july-2000 cd2\4 Traccia Audio.flac
+c1309976ac0335979b430d034192f4eb  Maryland Heights 8-july-2000 cd2\Info.txt
+41f78f1e4bbdb7f32edcd98cfff1539b  Maryland Heights 8-july-2000 cd2\fingerprint.ffp.txt
+e4862e28e7a19aef0dc9ebb2400facf0  Riverport Amphitheatre Maryland Heights, Missouri 8 July 2000.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-08.flacf\Maryland Heights 8-july-2000 cd1 
+=================== 
+=================== 
+=================== 
+1 Traccia 01.flac:b259fded677e152440d4485fe34509d3
+10 Traccia 10.flac:91f623c1d207b13c3e5c189eb3e00eb1
+11 Traccia 11.flac:f218d8c2f5d1f99230594d8a6f77e43d
+12 Traccia 12.flac:abbe3ea5906dc5a95af42b238d0c2020
+2 Traccia 02.flac:bb6e73c575ec9a7f0670df3b5a5e0ba6
+3 Traccia 03.flac:bcad53716363afdcec0c357eed08d125
+4 Traccia 04.flac:9f8c66a0d4c743ecf5d0b5a1f1bf17b2
+5 Traccia 05.flac:d8f477453e10afaf5ea5028083df2a1f
+6 Traccia 06.flac:d971e91118b66faf589a0da8eea24360
+7 Traccia 07.flac:97fabb4b8b71eb9a2916d17d081c4ba6
+8 Traccia 08.flac:31f4b8b5bb794e8e75729c85ec4a78f4
+9 Traccia 09.flac:a58863bc650c39dc4993301db9e9af96
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-08.flacf\Maryland Heights 8-july-2000 cd2 
+=================== 
+=================== 
+=================== 
+1 Traccia Audio.flac:b893323f0063f5ba54f4040280bc5ed6
+2 Traccia Audio.flac:fe657c321fba7e00d4daca47b12e3495
+3 Traccia Audio.flac:d12d608cc98920fd00ab04971e7e0655
+4 Traccia Audio.flac:7e43ba63661216b79de481a17e68af6e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-08.flacf\Maryland Heights 8-july-2000 cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.65       37020524 B   ---   --   ---xx   flac  0.5758  1 Traccia 01.flac
+     7:28.04       79036652 B   ---   --   ---xx   flac  0.5697  10 Traccia 10.flac
+     4:12.51       44572796 B   ---   --   ---xx   flac  0.6186  11 Traccia 11.flac
+     5:52.58       62229260 B   ---   --   ---xx   flac  0.5995  12 Traccia 12.flac
+     5:29.67       58193228 B   ---   --   ---xx   flac  0.5637  2 Traccia 02.flac
+     8:26.46       89366636 B   ---   --   ---xx   flac  0.5860  3 Traccia 03.flac
+     5:53.04       62278652 B   ---   --   ---xx   flac  0.5597  4 Traccia 04.flac
+     8:32.39       90408572 B   ---   --   ---xx   flac  0.6028  5 Traccia 05.flac
+     2:42.06       28590956 B   ---   --   ---xx   flac  0.5475  6 Traccia 06.flac
+     2:37.08       27713660 B   ---   --   ---xx   flac  0.5805  7 Traccia 07.flac
+     4:31.04       47813852 B   ---   --   ---xx   flac  0.5824  8 Traccia 08.flac
+     7:50.49       83023292 B   ---   --   ---xx   flac  0.6049  9 Traccia 09.flac
+    67:06.26      710248080 B                            0.5851  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-08.flacf\Maryland Heights 8-july-2000 cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.22       60909788 B   ---   --   ---xx   flac  0.5971  1 Traccia Audio.flac
+     7:20.48       77728940 B   ---   --   ---xx   flac  0.6066  2 Traccia Audio.flac
+     6:18.68       66839180 B   ---   --   ---xx   flac  0.5931  3 Traccia Audio.flac
+     4:44.62       50243468 B   ---   --   ---xx   flac  0.6142  4 Traccia Audio.flac
+    24:09.50      255721376 B                            0.6023  (4 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,10 @@
+Bob Dylan, 10/29/07, Chicago, Illinois, The Chicago Theatre, 2CDR
+
+LB-5489, (68min+42min), Audience recording, SP-CMC-4U > SP-SPSB-8 (bass roll-off @ 95 Hz) > M-Audio MicroTrack 24/96 (44100 16bit) > Cool Edit > CD Wave, taper: romeo, Section: MNFL3L (mainfloor at the left), Row: BB (2nd row after the orchestra pit); bittorrent download 11/07; asymetric wavs on right channel d2t5 biased towards the bottom; excellent sound [A]; in comparison to darktrain LB-5480 this is warmer sound and less echoey
+
+brief clipping harshness at d2t5 3:10 and a few spots afterward
+
+Disc One [67:20], 1. Intro, 2. Cat's In The Well, 3. Lay, Lady, Lay, 4. I'll Be Your Baby Tonight, 5. You're A Big Girl Now, 6. Rollin' And Tumblin', 7. Spirit On The Water, 8. Cry A While, 9. Workingman's Blues #2, 10. Things Have Changed, 11. Under The Red Sky, 12. Highway 61 Revisited, Disc Two [41:21], 1. Ain't Talkin', 2. Summer Days, 3. Like A Rolling Stone, 4. (encore break), 5. I Shall Be Released (Elvis Costello and Amos Lee on acoustic guitar and vocals), 6. Thunder On The Mountain, 7. Band intros, 8. All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

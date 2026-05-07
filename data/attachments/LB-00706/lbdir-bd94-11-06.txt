@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-11-06 
+=================== 
+=================== 
+=================== 
+65619cf74a7a2f1f728dee21ffada85f  11-06-94 Disc 1- 1.shn
+589b51e8c781a63840496fde9aedf424  11-06-94 Disc 1- 2.shn
+7608f80e554e74ba0aaecc385a859126  11-06-94 Disc 1- 3.shn
+bb1dec472f1d83a625620f8d12f5a770  11-06-94 Disc 1- 4.shn
+09e524d132c4e581c248afb157c354b9  11-06-94 Disc 1- 5.shn
+8592e37b0910c98f93fe82f180235515  11-06-94 Disc 1- 6.shn
+d8a937bb9685e83b85cad6688bb47357  11-06-94 Disc 1- 7.shn
+e345e1031f893408cbc4963ee434215c  11-06-94 Disc 1- 8.shn
+e54a25ee9f41ec70d6bc316228f3176b  11-06-94 Disc 1- 9.shn
+5c818b261fc4b4dee2179c9bdd775554  11-06-94 Disc 1.md5
+f8b11846ab1eb787782fdf7ad64633b8  11-06-94 Disc 2- 1.shn
+84cad7623701510a2b3eda67d2db1987  11-06-94 Disc 2- 2.shn
+a1b9cdf203f6a47f6fc246d806a48c94  11-06-94 Disc 2- 3.shn
+6194e1ac9a916e8eccd0f6f3e8ba4768  11-06-94 Disc 2- 4.shn
+ca72a35829774118438b741052f9933b  11-06-94 Disc 2- 5.shn
+52cdf485b8efb1ebe630493f5cbe1a2c  11-06-94 Disc 2.md5
+c39cf2556c25828f10d08b4dbdd50d85  11-06-94.nfo
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-11-06 
+=================== 
+=================== 
+=================== 
+f503c325a290b53883a5a905d9198b47  [shntool]  11-06-94_Disc_1-_1.wav
+9ea1a3ede6c5069615297ae1330ff4b2  [shntool]  11-06-94_Disc_1-_2.wav
+bfa1117365a072174cb78ce21a53d4e5  [shntool]  11-06-94_Disc_1-_3.wav
+fcf248b1d4ae448bab9d2cd445add54d  [shntool]  11-06-94_Disc_1-_4.wav
+7c4a7a4512b41e604c9d17e6850015a0  [shntool]  11-06-94_Disc_1-_5.wav
+56001177b6ecc03bd020bfc7e277cf4d  [shntool]  11-06-94_Disc_1-_6.wav
+8cc3dd12128e8d4381967f0eff57297e  [shntool]  11-06-94_Disc_1-_7.wav
+87a69b58f687904e5c8348bb14c416ff  [shntool]  11-06-94_Disc_1-_8.wav
+ce292ea8e11a48b7d96bb8c669a5301d  [shntool]  11-06-94_Disc_1-_9.wav
+ff164a1bf134988da893cc9549bd1e9c  [shntool]  11-06-94_Disc_2-_1.wav
+582a82d5c7689f5c0faf760c29c3684c  [shntool]  11-06-94_Disc_2-_2.wav
+c60941480c77c511ac28498752f41b75  [shntool]  11-06-94_Disc_2-_3.wav
+abc8797bf3bdc04174a20458ec01bf95  [shntool]  11-06-94_Disc_2-_4.wav
+b10c67baeda73bfe5ddb6d1d5542b4f1  [shntool]  11-06-94_Disc_2-_5.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-11-06 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:10.23       86490140 B   ---   --   ---xx    shn  0.6116  11-06-94 Disc 1- 1.shn
+     6:12.55       65750204 B   ---   --   ---xx    shn  0.6234  11-06-94 Disc 1- 2.shn
+     6:05.09       64407212 B   ---   --   ---xx    shn  0.6498  11-06-94 Disc 1- 3.shn
+     6:49.11       72173516 B   ---   --   ---xx    shn  0.5704  11-06-94 Disc 1- 4.shn
+     9:16.13       98109020 B   ---   --   ---xx    shn  0.6141  11-06-94 Disc 1- 5.shn
+     7:22.50       78086444 B   ---   --   ---xx    shn  0.6241  11-06-94 Disc 1- 6.shn
+     5:57.45       63080684 B   ---   --   ---xx    shn  0.4813  11-06-94 Disc 1- 7.shn
+     5:56.64       62948972 B   ---   --   ---xx    shn  0.4826  11-06-94 Disc 1- 8.shn
+     7:30.12       79408268 B   ---   --   ---xx    shn  0.5568  11-06-94 Disc 1- 9.shn
+     9:00.20       95303084 B   ---   --   ---xx    shn  0.6219  11-06-94 Disc 2- 1.shn
+     8:17.28       87736700 B   ---   --   ---xx    shn  0.6118  11-06-94 Disc 2- 2.shn
+    10:03.02      106373948 B   ---   --   ---xx    shn  0.6423  11-06-94 Disc 2- 3.shn
+     8:11.64       86762972 B   ---   --   ---xx    shn  0.6014  11-06-94 Disc 2- 4.shn
+     8:55.31       94446956 B   ---   --   ---xx    shn  0.5476  11-06-94 Disc 2- 5.shn
+   107:48.52     1141078120 B                            0.5924  (14 files)
+=================== 
+=================== 
+=================== 

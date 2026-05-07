@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-08a.flacf 
+=================== 
+=================== 
+=================== 
+1bf27b95206d334243eb0a8d878c8f1b  19880708_Montreal.md5
+01bcc504d8d6a1a6cd3a0154c36cd4be  bd19880708_Track01.flac
+c7ddb8b68c64c64be1f9a4ac7795771e  bd19880708_Track02.flac
+c2aaabe480af3e02f260b3942280d0b3  bd19880708_Track03.flac
+a99b3bffb12a9b5e6497ede9bbc39be5  bd19880708_Track04.flac
+bbd0bca30e523ea4e76fb347a0747dd8  bd19880708_Track05.flac
+f3f235a804784ec59db563964de1bf53  bd19880708_Track06.flac
+522174966defd1a9d34f0d1dfc3aef4e  bd19880708_Track07.flac
+9dca064b820ffb83318640af3e61f47b  bd19880708_Track08.flac
+5ccebec5f03eb900e9c625325e75c018  bd19880708_Track09.flac
+cc62134facbcdecdfdfdff036077ca54  bd19880708_Track10.flac
+f1614a9332ebe2ad24f56d4a44d9de35  bd19880708_Track11.flac
+c9e772f1ac9e71f87207213cf04467ab  bd19880708_Track12.flac
+d2e28f4ae10cb29b06037a71854b2828  bd19880708_Track13.flac
+046660e6349f95ea8143baafd474c4c7  bd19880708_Track14.flac
+43d2bfdff173ef44fbe84735de985269  bd88-07-08a-LB-2767.txt
+cdb7c91399528d9c11d8fdcca17b9902  bob_does_hallelujah.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-08a.flacf 
+=================== 
+=================== 
+=================== 
+bd19880708_Track01.flac:12f8cc1ee5aa319d1e481b16e9899a49
+bd19880708_Track02.flac:8451b6d5a591492b609f4b18b900e610
+bd19880708_Track03.flac:d324b36708f7f83a33bad2db0bb45e77
+bd19880708_Track04.flac:5980f46d86d32cd1b3c508c05bf40ac5
+bd19880708_Track05.flac:3c11700300892a163af82892fd94ad6f
+bd19880708_Track06.flac:080929de2c21a1070da9dc71f3f421ef
+bd19880708_Track07.flac:4a3e1fe85d01dba42dfbc41ad4e50cd4
+bd19880708_Track08.flac:bd318936af2b49cd2d92663307184bc4
+bd19880708_Track09.flac:5001ef44a89e4d6bb453c8d4cac8fb01
+bd19880708_Track10.flac:4e747421000364c5155113ee1357b74a
+bd19880708_Track11.flac:f5a8203a63650383f40fa930acf68136
+bd19880708_Track12.flac:4a5368509f16a805b747eb96666b3f08
+bd19880708_Track13.flac:72c66cc678c470d4cf9e43022197a367
+bd19880708_Track14.flac:6f759f47a36df6555aa1ca1f827e8d2f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-08a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:30.15       37079324 B   ---   --   ---xx   flac  0.6249  bd19880708_Track01.flac
+     4:32.25       48039644 B   ---   --   ---xx   flac  0.6247  bd19880708_Track02.flac
+     6:21.10       67231964 B   ---   --   ---xx   flac  0.6404  bd19880708_Track03.flac
+     5:49.37       61650668 B   ---   --   ---xx   flac  0.6258  bd19880708_Track04.flac
+     5:11.02       54865148 B   ---   --   ---xx   flac  0.6401  bd19880708_Track05.flac
+     5:14.68       55549580 B   ---   --   ---xx   flac  0.6525  bd19880708_Track06.flac
+     5:25.14       57362972 B   ---   --   ---xx   flac  0.5988  bd19880708_Track07.flac
+     8:58.58       95039660 B   ---   --   ---xx   flac  0.6124  bd19880708_Track08.flac
+     5:04.09       53646812 B   ---   --   ---xx   flac  0.6176  bd19880708_Track09.flac
+     6:52.24       72733292 B   ---   --   ---xx   flac  0.6491  bd19880708_Track10.flac
+     5:52.63       62241020 B   ---   --   ---xx   flac  0.6265  bd19880708_Track11.flac
+     6:45.43       71543180 B   ---   --   ---xx   flac  0.6182  bd19880708_Track12.flac
+     5:18.14       56128172 B   ---   --   ---xx   flac  0.5782  bd19880708_Track13.flac
+     4:48.43       50904380 B   ---   --   ---xx   flac  0.6094  bd19880708_Track14.flac
+    79:44.50      844015816 B                            0.6229  (14 files)
+=================== 
+=================== 
+=================== 

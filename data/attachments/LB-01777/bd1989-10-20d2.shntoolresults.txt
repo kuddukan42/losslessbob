@@ -1,0 +1,7 @@
+    length     expanded size   cdr  WAVE problems filename
+     5:46.15       61069724    ---   --   ---xx   bd1989-10-20d2t01.shn
+     5:28.50       57976844    ---   --   ---xx   bd1989-10-20d2t02.shn
+     7:52.15       83296124    ---   --   ---xx   bd1989-10-20d2t03.shn
+     4:48.35       50885564    ---   --   ---xx   bd1989-10-20d2t04.shn
+     6:39.47       70494188    ---   --   ---xx   bd1989-10-20d2t05.shn
+    30:35.12         308.73 MB                    (totals for 5 files, 0.6815 overall compression ratio)

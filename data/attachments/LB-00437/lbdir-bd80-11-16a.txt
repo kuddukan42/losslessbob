@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-16a 
+=================== 
+=================== 
+=================== 
+4c45c420f30eb8f038da88c1d13d3a19  bd80-11-16.txt
+5b6582ca38e993688f1ed73cb5e6a63e  bd80-11-16d1\Track01.shn
+9f6051539dd5888b0cadfa9574d9a5fd  bd80-11-16d1\Track02.shn
+04a0c89ba0fc572b932518dd2d33295a  bd80-11-16d1\Track03.shn
+56699ed433856f0dccfa563101354587  bd80-11-16d1\Track04.shn
+2a0002a21f5a2ed84bade9344728b407  bd80-11-16d1\Track05.shn
+0ac9bbd2ed086513fbec801e691ed878  bd80-11-16d1\Track06.shn
+1f1e25d2b5797679a85a459780bbb657  bd80-11-16d1\Track07.shn
+c93caed55a2a0038f9b2f792e5ae582c  bd80-11-16d1\Track08.shn
+11f044e9bbbedf880f94ecd7a7abdfa4  bd80-11-16d1\Track09.shn
+318d3e5f1a3bfb46f2418cf32d519f0f  bd80-11-16d1\Track10.shn
+0dfd4c57c3b89362585b8882f4cd14d0  bd80-11-16d1\Track11.shn
+0a9f37886221a60434d4bf1ab397d20f  bd80-11-16d1\Track12.shn
+62b4a6171616740a1e7d7ac9ff03bb26  bd80-11-16d1\Track13.shn
+15e52ddc06e223810826bed90be7e0c2  bd80-11-16d1\Track14.shn
+0e2b49d5832848a96edb871be7aaf68d  bd80-11-16d1\Track15.shn
+a0328bfbec94561b7dc3b3395a5d411c  bd80-11-16d1\Track16.shn
+9d3993f115195e7e33fbeab2a77932f6  bd80-11-16d1\Track17.shn
+1496dc3cda8bb948a94c3348a8ee3086  bd80-11-16d1\noname.md5
+07581ed4a236121301860ee4c85d5f9a  bd80-11-16d2\Track01.shn
+89c6a2db15a7e054b4611712cd1199dd  bd80-11-16d2\Track02.shn
+40b0083ed8eddbc9f84084b1f1eb2409  bd80-11-16d2\Track03.shn
+f65f92ad4ba7596815c9fd1c9d33a568  bd80-11-16d2\Track04.shn
+9244391ad4c08de868350699f22a475d  bd80-11-16d2\Track05.shn
+8215e73d9f7d1c7b8de03402f0a60e2a  bd80-11-16d2\Track06.shn
+038086e8653293326c45673335eced78  bd80-11-16d2\Track07.shn
+145d88095cfa1b8633b77e7a6c9642df  bd80-11-16d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-11-16a\bd80-11-16d2 
+=================== 
+=================== 
+=================== 
+cc50a06d74bfa1b0cf6a14bb395af2ea  [shntool]  Track01.wav
+396c0bc5f7df53747d3d9140a9344010  [shntool]  Track02.wav
+e5f1a5bd015cefe478c22b0bf7f311ff  [shntool]  Track03.wav
+79322866fec0dbe0b5d4655e3a8a1e0c  [shntool]  Track04.wav
+f1c47ce5d5384c1e07d5552d69add572  [shntool]  Track05.wav
+d69e60d0533fadd6f259cec4ab97d436  [shntool]  Track06.wav
+828a3d852654ebf13839c5810a924b2e  [shntool]  Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-11-16a\bd80-11-16d1 
+=================== 
+=================== 
+=================== 
+be48b775eaf235e79126dab4a4cc6110  [shntool]  Track01.wav
+f209720bc7a5e0a6ebf83b4c95f93fff  [shntool]  Track02.wav
+a52c6ae8d74b6760335a1bc56be888c6  [shntool]  Track03.wav
+ec44d4267478f9e293ed447b712fe9ff  [shntool]  Track04.wav
+6538f33798703f8d736a7d7ceaa3a209  [shntool]  Track05.wav
+577a5c2a2a1c8d5ab582c0ed5b4b4542  [shntool]  Track06.wav
+7d457dceb5d0cae3778e6e71e5c4154a  [shntool]  Track07.wav
+f840d254eecec75cc1fd957793f9b81e  [shntool]  Track08.wav
+bdcab72c7762b92ede6de82bb81c303f  [shntool]  Track09.wav
+db1f7a1d09a1abd869a670d2a4914f0d  [shntool]  Track10.wav
+98993803092938fd914cc85c9ea21e23  [shntool]  Track11.wav
+54fc5578ce3ffbd820b1dc12eb40e5e3  [shntool]  Track12.wav
+0574c1ba2d3d4160b358bd69624bd22c  [shntool]  Track13.wav
+f71a6b3fda7e92147e2ecc61725192b8  [shntool]  Track14.wav
+64da18dc2c884421281cb65661d81347  [shntool]  Track15.wav
+a78d573c4daeb3f66269c1e77727cf76  [shntool]  Track16.wav
+f65d18b62736a98e4e13bf7c7179db1e  [shntool]  Track17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-16a\bd80-11-16d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:30.37       47715068 B   ---   --   ---xx    shn  0.6497  Track01.shn
+     5:19.73       56443340 B   ---   --   ---xx    shn  0.6918  Track02.shn
+     4:22.21       46266236 B   ---   --   ---xx    shn  0.6916  Track03.shn
+     5:42.23       60382940 B   ---   --   ---xx    shn  0.6541  Track04.shn
+     4:14.40       44899724 B   ---   --   ---xx    shn  0.7025  Track05.shn
+     3:02.15       32140124 B   ---   --   ---xx    shn  0.6353  Track06.shn
+     4:42.50       49862444 B   ---   --   ---xx    shn  0.6940  Track07.shn
+    31:54.34      337709876 B                            0.6755  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-16a\bd80-11-16d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:07.39       33078572 B   ---   --   ---xx    shn  0.5261  Track01.shn
+     4:05.66       43373276 B   ---   --   ---xx    shn  0.5220  Track02.shn
+     4:12.67       44610428 B   ---   --   ---xx    shn  0.5778  Track03.shn
+     3:12.10       33892364 B   ---   --   ---xx    shn  0.5403  Track04.shn
+     4:35.28       48575900 B   ---   --   ---xx    shn  0.5635  Track05.shn
+     2:08.44       22682732 B   ---   --   ---xx    shn  0.5468  Track06.shn
+     5:05.62       53947868 B   ---   --   ---xx    shn  0.6517  Track07.shn
+     4:21.54       46167452 B   ---   --   ---xx    shn  0.6845  Track08.shn
+     4:49.52       51101948 B   ---   --   ---xx    shn  0.6362  Track09.shn
+     5:28.65       58012124 B   ---   --   ---xx    shn  0.6856  Track10.shn
+     3:08.31       33236156 B   ---   --   ---xx    shn  0.6074  Track11.shn
+     4:05.05       43229804 B   ---   --   ---xx    shn  0.6537  Track12.shn
+     3:45.54       39817052 B   ---   --   ---xx    shn  0.6453  Track13.shn
+     6:05.55       64515404 B   ---   --   ---xx    shn  0.6479  Track14.shn
+     4:00.42       42434828 B   ---   --   ---xx    shn  0.7206  Track15.shn
+     4:10.04       44109452 B   ---   --   ---xx    shn  0.6513  Track16.shn
+     4:06.17       43434428 B   ---   --   ---xx    shn  0.6458  Track17.shn
+    70:30.20      746219788 B                            0.6248  (17 files)
+=================== 
+=================== 
+=================== 

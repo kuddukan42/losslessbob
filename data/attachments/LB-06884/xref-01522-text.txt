@@ -1,0 +1,51 @@
+===================
+===================
+===================
+=== bd1995-06-25 Washington 'PA' Matrix.md5
+===================
+===================
+===================
+0f454aca28b62a1d6675ec8390d3d101 *bd1995-06-25 Washington01.flac
+e552f8a85af130d87a479009bfd742bc *bd1995-06-25 Washington02.flac
+c7090b644160ff36deb567b39eed70ff *bd1995-06-25 Washington03.flac
+3144362d5c72e824d8d18a3242f25aee *bd1995-06-25 Washington04.flac
+9abf915bdf67170e944f21c7badbf85d *bd1995-06-25 Washington05.flac
+cbd1ee1824a697bc2d6b58c76f6ccb99 *bd1995-06-25 Washington06.flac
+662a0c14f6cdc64be59ddcdb3fd1adbe *bd1995-06-25 Washington07.flac
+758f9cbd321b7c182adc3c49215be579 *bd1995-06-25 Washington08.flac
+80247998da4fdf8b885a6b1f6a959f5d *bd1995-06-25 Washington09.flac
+823f6a9016374adb642e48e5b949eb2b *bd1995-06-25 Washington10.flac
+a3a73733f92ea4a9f7f35ed4bf240f8c *bd1995-06-25 Washington11.flac
+c591acbe2b86df5cd9dc82ad00264050 *bd1995-06-25 Washington12.flac
+e7cb12250e31b90632a0781973628d7d *bd1995-06-25 Washington13.flac
+===================
+===================
+===================
+=== note.txt
+===================
+===================
+===================
+RFK Stadium 
+Washington, DC
+June 25,1995
+
+My low gen tape > Tascam 102 > Cool Edit Pro > CD Wave Editor > TLH
+This tape was initially thought to be PA, but later the taper revealed that he had combined two recordings.
+* New to circulation *
+
+01 Drifter's Escape
+02 Watching The River Flow
+03 All Along The Watchtower
+04 Simple Twist Of Fate
+05 Silvio
+06 Mama You Been On My Mind
+07 Desolation Row
+08 One Too Many Mornings
+09 Maggie's Farm
+10 What Good Am I?
+11 Like A Rolling Stone
+12 It Takes A Lot To Laugh It Takes A Train To Cry*
+13 Rainy Day Women # 12 & 35*
+===================
+===================
+===================

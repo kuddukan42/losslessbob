@@ -1,0 +1,148 @@
+===================
+===================
+===================
+=== 1995-07-14 - Stratford-upon-Avon, England (Phoenix, flac).ffp
+===================
+===================
+===================
+01 - Drifter's Escape.flac:18e849bdc76a0c9148ccd76c39388c89
+02 - I Want You.flac:9d715d99587113f63058a63c8bfa5055
+03 - All Along The Watchtower.flac:54a5699b0f396234769b563f24afcd0c
+04 - Tears Of Rage.flac:900c6ccd53b9b7bb1eed2bcc97c09389
+05 - Silvio.flac:c9888d84a2ebf8ddb0a5cc70b0bda0b8
+06 - Tangled Up In Blue.flac:fb8e23d6eb82af75612a5579464798f7
+07 - Mama, You Been On My Mind.flac:e3f13c0063edf5733a2abe64a2b91b41
+08 - One Too Many Mornings.flac:8502ebe45fb25d8899710de3ab7217c1
+09 - band introduction.flac:403af46cafd140898ff7f749c103a8c7
+10 - Seeing The Real You At Last.flac:e63d61cb398289f1849357f434552938
+11 - Rainy Day Women #12 & 35.flac:e4517b882752bc31c4477a8e48cd7723
+===================
+===================
+===================
+=== 1995-07-14 - Stratford-upon-Avon, England (Phoenix, flac).md5
+===================
+===================
+===================
+; Using hkSFV (http://www.big-o-software.com)
+;
+;/----
+;     1995-07-14 - Stratford-upon-Avon, England (Phoenix, flac)
+;\----
+;
+d76fa484ba14e0e1b5f7e476928d8caa *01 - Drifter's Escape.flac
+6c628bb2a81cc951262d70e5981bc062 *02 - I Want You.flac
+0498770f0d29749c10921ea7e5524146 *03 - All Along The Watchtower.flac
+277991d7ea78c4b60d494590aa2f3c8a *04 - Tears Of Rage.flac
+5002858643b01b35c63f053262be1263 *05 - Silvio.flac
+2e2154a2cbba4056dab2324653ce32f5 *06 - Tangled Up In Blue.flac
+3b28967d39b37339fc5bf0d0377f5a3d *07 - Mama, You Been On My Mind.flac
+e128be793ed6f0d8a55d7ea371210a78 *08 - One Too Many Mornings.flac
+45a4bad9cb41bfeabe796b013da85f94 *09 - band introduction.flac
+23e723840e3061fe574de9902691a40c *10 - Seeing The Real You At Last.flac
+e537a5ae287359a7d0aadfd129269362 *11 - Rainy Day Women #12 & 35.flac
+5bc2c9530a6a88dff9f4b7398b52aeb4 *shntool_len.txt
+72669a563459dbdaf98b76503239d4d6 *1995-07-14 - Stratford-upon-Avon, England (Phoenix, flac).ffp
+9ea0b7b6aeaf3c11ab2778bfce598d77 *1995-07-14 - Stratford-upon-Avon, England.txt
+===================
+===================
+===================
+=== 1995-07-14 - Stratford-upon-Avon, England.txt
+===================
+===================
+===================
+Stratford-upon-Avon, England
+Long Marston Airfield
+
+14 July 1995
+
+  Phoenix Festival
+
+
+01 - Drifter's Escape
+02 - I Want You
+03 - All Along The Watchtower
+04 - Tears Of Rage (Bob Dylan & Richard Manuel)
+05 - Silvio (Bob Dylan & Robert Hunter)
+06 - Tangled Up In Blue
+07 - Mama, You Been On My Mind
+08 - One Too Many Mornings
+09 - Seeing The Real You At Last
+10 - Rainy Day Women #12 & 35
+
+
+Concert # 705 of The Never-Ending Tour. 
+Concert # 10 of the 1995 European Summer Tour. Concert # 65 in 1995.
+Concert # 249 with the 9th Never-Ending Tour Band: 
+        Bob Dylan (vocal & guitar), 
+        Bucky Baxter (pedal steel guitar & electric slide guitar), 
+        John Jackson (guitar), Tony Garnier (bass), 
+        Winston Watson (drums & percussion).
+
+6-8  acoustic with the band.
+7-9  Bob Dylan harmonica.
+
+5 new songs (50%) compared to previous concert. No new songs for this tour.
+
+Bootleg:
+- Sounds Inside My Mind ; Razor's Edge 018
+
+Stereo audience recording, 75 minutes. 
+
+===============================================================================
+
+Taper: unidentified
+Source/Lineage: no info
+Derived from LB-6243
+Complete!
+Rating: B
+
+Uploader's note:
+This date has 3 LB#'s: 6241/2/3
+but this is NOT the requested *Sounds Inside* set,
+which has a very different tracking (77:48 minutes).
+However, all 3 LB-mentioned copies are rated B
+
+THIS SET: Listened to all of this...
+The accompanying info file mirrors an exact match (67:52 minutes) to the *Phoenix* bootleg (Typhoon TYN 007); 
+definitely, this is LB-6243
+http://jokerman.org.uk/lb/detail/LB-06243.html
+
+Only alterations: scratches at the beginning of Rainy Day... removed with caution,
+however, a few audible remain.
+No other, 'cept for giving all songs their respective titles...
+
+01. Drifter's Escape [05:59]
+02. I Want You [06:14]
+03. All Along The Watchtower [06:24]
+04. Tears Of Rage (Bob Dylan & Richard Manuel) [07:31]
+05. Silvio (Bob Dylan & Robert Hunter) [06:56]
+06. Tangled Up In Blue [08:59]
+07. Mama, You Been On My Mind [06:07]
+08. One Too Many Mornings [07:22]
+09. (band intro) [00:24]
+10. Seeing The Real You At Last [07:03]
+11. Rainy Day Women # 12 & 35 [04:50]
+Total time [67:52]
+===================
+===================
+===================
+=== shntool_len.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     5:59.20       63374684    ---   --   ---xx   01 - Drifter's Escape.flac
+     6:14.13       66004220    ---   --   ---xx   02 - I Want You.flac
+     6:24.30       67808204    ---   --   ---xx   03 - All Along The Watchtower.flac
+     7:31.36       79641116    ---   --   ---xx   04 - Tears Of Rage.flac
+     6:56.59       73521212    ---   --   ---xx   05 - Silvio.flac
+     8:59.07       95096108    ---   --   ---xx   06 - Tangled Up In Blue.flac
+     6:07.29       64807052    ---   --   ---xx   07 - Mama, You Been On My Mind.flac
+     7:22.14       78001772    ---   --   ---xx   08 - One Too Many Mornings.flac
+     0:24.11        4259516    ---   --   ---xx   09 - band introduction.flac
+     7:03.12       74645468    ---   --   ---xx   10 - Seeing The Real You At Last.flac
+     4:49.71       51146636    ---   --   ---xx   11 - Rainy Day Women #12 & 35.flac
+    67:52.02      718305988 B                     (totals for 11 files, 0.5852 overall compression ratio)
+===================
+===================
+===================

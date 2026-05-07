@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== md5 for: bd96-07-07-schoepsinthehat.flacf
+===================
+===================
+===================
+e4636928ab5d1013df00d821ef88485b *01 Track01.flac
+b66bb6e9eb7ef5948e75275ef6238916 *02 Track02.flac
+73e7d97a8ee7ba868cbc2ccb44cc0606 *03 Track03.flac
+0a71e14399e2cfee69ef8df81cce20a5 *04 Track04.flac
+11aeb90fd77a0fa7846d0479da346fdf *05 Track05.flac
+e2dc68ff1a6da2f4c532cc9b75273009 *06 Track06.flac
+01c5f1a4c27fdf0d174ae434ab889c4e *07 Track07.flac
+e68cc9b5fafdf79f53ab21d7ee49511a *08 Track08.flac
+f7b784b17231453bd62d2d1fbea5a4a5 *09 Track09.flac
+12606575e8a2bff3ba03503f6db4fcfe *10 Track10.flac
+88e7d53671a3c2e47fc0068261a9b8ef *11 Track11.flac
+3a0ff74513a904c89008364b15088c7b *12 Track12.flac
+fdc24d917c7905e869ed4a866d7f2057 *13 Track13.flac
+c7eb1d576b484138c667e65ac8b76cff *14 Track14.flac
+e2d7c39ef78be949c70a2a937d9afe1d *Bob Dylan Pistoia 7-7-1996 SchoepsInTheHat.md5
+b070ff9638d246fa10ca9270747c1040 *Info.txt
+===================
+===================
+===================
+=== ffp for: bd96-07-07-schoepsinthehat.flacf
+===================
+===================
+===================
+01 Track01.flac:5d3bd67cebcebf16ee16837e8a56e87b
+02 Track02.flac:7ccd6a0dfdfae18301cbb81a2e9899bc
+03 Track03.flac:dbbcc711812b0e61c313d3e75a83d9d3
+04 Track04.flac:6e196c3045286dc761fc98c4565c0080
+05 Track05.flac:51852c2598a5cf9facef6df41af3316d
+06 Track06.flac:f8f316c6d2458f76b3b3666929aebaaa
+07 Track07.flac:857cf5a42b3893f0df4ba7612471db1a
+08 Track08.flac:05103537f5c70350ef1240275ea27d6c
+09 Track09.flac:0999875f36a4b34de100f4138291806c
+10 Track10.flac:1db0259bca4bac9c16498d5eab8bf026
+11 Track11.flac:32992124eea8a356229c0b08db53df0b
+12 Track12.flac:eea4029a596aaf81f4306d45c6354800
+13 Track13.flac:40727ec25e74fc4b391979c97f462398
+14 Track14.flac:fb2408c52a9f5e93bc99e6332d41a864
+===================
+===================
+===================
+=== shntool len for: bd96-07-07-schoepsinthehat.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.23       58266140 B   ---   --   ---xx   flac  0.6255  01 Track01.flac
+     6:34.03       69508700 B   ---   --   ---xx   flac  0.5533  02 Track02.flac
+     6:26.15       68125724 B   ---   --   ---xx   flac  0.6354  03 Track03.flac
+     8:29.46       89895836 B   ---   --   ---xx   flac  0.5763  04 Track04.flac
+     6:32.74       69322892 B   ---   --   ---xx   flac  0.5698  05 Track05.flac
+     7:43.00       81673244 B   ---   --   ---xx   flac  0.6365  06 Track06.flac
+    10:31.41      111404876 B   ---   --   ---xx   flac  0.6292  07 Track07.flac
+     9:57.59      105449612 B   ---   --   ---xx   flac  0.5775  08 Track08.flac
+     7:28.35       79109564 B   ---   --   ---xx   flac  0.5826  09 Track09.flac
+     8:44.69       92595932 B   ---   --   ---xx   flac  0.6655  10 Track10.flac
+     8:15.55       87447404 B   ---   --   ---xx   flac  0.5797  11 Track11.flac
+     9:57.10      105334364 B   ---   --   ---xx   flac  0.5699  12 Track12.flac
+    13:23.68      141809180 B   ---   --   ---xx   flac  0.5832  13 Track13.flac
+     5:47.66       61366076 B   ---   --   ---xx   flac  0.6456  14 Track14.flac
+   115:23.39     1221309544 B                            0.6004  (14 files)
+===================
+===================
+===================

@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-11-12-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+23bd0a0409e6f2a8b939bf11abf304a1  89 11 12 d1 t01.flac
+28f5e4a43f4c6728dbb5c79193265466  89 11 12 d1 t02.flac
+9499f30d25d75031e0aaf6305afec2ad  89 11 12 d1 t03.flac
+6bc0cb906cd08f50852b39cfe1966d75  89 11 12 d1 t04.flac
+d1666a7518d2bf63aadca658233799f0  89 11 12 d1 t05.flac
+11ed1873735f3bed908e0228bc64be5c  89 11 12 d1 t06.flac
+75554cba07d33e5438a93e366769479b  89 11 12 d1 t07.flac
+c6f7329ead29e14f1cfe34640804a1e1  89 11 12 d1 t08.flac
+61411e8c668d70c78e6c79c83ea3c8cc  89 11 12 d2 t01.flac
+1a3f4e186e8f2d42641c38f177eb79db  89 11 12 d2 t02.flac
+6080c1251eef6847cfa4a374a3ce36fc  89 11 12 d2 t03.flac
+447df7bf090d24a4ac1e96d77056a1ce  89 11 12 d2 t04.flac
+a7b5c00678e7c35d59ca4b061aa3a556  89 11 12 d2 t05.flac
+f22e1d155fc2014a27c8b0e8ea0d28fe  89 11 12 d2 t06.flac
+c0d940790a9ea81a925de7ee24a44f38  89 11 12 d2 t07.flac
+554eae3d9f69ee3fd90c1b51c2501052  89 11 12 d2 t08.flac
+2f8251e4afd44be519354593418649f0  89 11 12 d2 t09.flac
+0e390d6ec90b22d0a263517737694a77  bd89 11 12 speed corrected.md5
+a00804173ee6ab7993dbaab58701d457  bd89-11-12-speed-corrected-LB-3951.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-11-12-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+89 11 12 d1 t01.flac:d2498349d71f3b48cb2e699a349fafdc
+89 11 12 d1 t02.flac:23d0b3d9032569d83b9a4e6c32bed687
+89 11 12 d1 t03.flac:e1f8fa0bc87fd911c5cb3052cdc41ed3
+89 11 12 d1 t04.flac:6babe40cbf7707ca09f729174f8a7a37
+89 11 12 d1 t05.flac:32b52034271e8333ab0fd446dbe781a6
+89 11 12 d1 t06.flac:1766ed0df0218db36fb9b23f615b7e28
+89 11 12 d1 t07.flac:f250c1d8ba735f7314ff3d8b2841dd0c
+89 11 12 d1 t08.flac:c0b6484a3641592fdf72f28b913c060d
+89 11 12 d2 t01.flac:b2dea82fa6e160bf938cef66a5d5c968
+89 11 12 d2 t02.flac:86e0a9a11f5b91feb8add38017273c1d
+89 11 12 d2 t03.flac:f06c83b592e51964a73c03b29f631cc7
+89 11 12 d2 t04.flac:5ca59057a60214d1f4a6b7642f070f8b
+89 11 12 d2 t05.flac:ce21ff552763eb2f764f7bfbdb2d9637
+89 11 12 d2 t06.flac:ad60e8f1832939056a4a522f4a4bd680
+89 11 12 d2 t07.flac:7b0867ce724efd0248b3f032babe90ef
+89 11 12 d2 t08.flac:19257993b7db1c6e28fcf60083d28ddb
+89 11 12 d2 t09.flac:bb64be8782f9c86992ca61bb5c797f55
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-11-12-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.36       55827116 B   ---   --   ---xx   flac  0.6610  89 11 12 d1 t01.flac
+     5:25.32       57405308 B   ---   --   ---xx   flac  0.6684  89 11 12 d1 t02.flac
+     6:37.52       70153148 B   ---   --   ---xx   flac  0.6492  89 11 12 d1 t03.flac
+     5:24.58       57290060 B   ---   --   ---xx   flac  0.6512  89 11 12 d1 t04.flac
+     5:23.11       57003116 B   ---   --   ---xx   flac  0.6054  89 11 12 d1 t05.flac
+     4:36.62       48832268 B   ---   --   ---xx   flac  0.6645  89 11 12 d1 t06.flac
+     6:38.25       70266044 B   ---   --   ---xx   flac  0.6020  89 11 12 d1 t07.flac
+     8:35.65       90998924 B   ---   --   ---xx   flac  0.5978  89 11 12 d1 t08.flac
+     5:40.19       60020732 B   ---   --   ---xx   flac  0.6766  89 11 12 d2 t01.flac
+     6:45.17       71482028 B   ---   --   ---xx   flac  0.6674  89 11 12 d2 t02.flac
+     4:01.03       42519500 B   ---   --   ---xx   flac  0.6547  89 11 12 d2 t03.flac
+     5:27.64       57833372 B   ---   --   ---xx   flac  0.6321  89 11 12 d2 t04.flac
+     5:07.73       54326540 B   ---   --   ---xx   flac  0.6021  89 11 12 d2 t05.flac
+     4:09.52       44045948 B   ---   --   ---xx   flac  0.6330  89 11 12 d2 t06.flac
+     7:56.52       84088748 B   ---   --   ---xx   flac  0.6889  89 11 12 d2 t07.flac
+     6:55.74       73380092 B   ---   --   ---xx   flac  0.6024  89 11 12 d2 t08.flac
+     4:27.28       47164700 B   ---   --   ---xx   flac  0.6599  89 11 12 d2 t09.flac
+    98:30.48     1042637644 B                            0.6410  (17 files)
+=================== 
+=================== 
+=================== 

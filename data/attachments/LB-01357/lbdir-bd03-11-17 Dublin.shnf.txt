@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-17 Dublin.shnf 
+=================== 
+=================== 
+=================== 
+91899f9b45b3f7e8f2e89957cfcdc287  bd03-11-17.txt
+5e18ef56eff3bf64d82b616b6c89ad89  d1\01.shn
+792659f3b6e140816cf2dc6514210e39  d1\02.shn
+22b7371a74b91bc3ad7b31d5d3ed3e04  d1\03.shn
+3df006f739f5327baaa4f44aff0f460e  d1\04.shn
+bdd4d56dd9b24975546c31be041de3fb  d1\05.shn
+fc3452fe0da3d4dfbea348f82882b32d  d1\06.shn
+0bf96a9db443dba378563eab01429ab5  d1\07.shn
+43e2806427f1db99f4816fbf3e6208e0  d1\08.shn
+f7fdc51fb827b2d7c224a79641893680  d1\09.shn
+1e5cb0ac117442d2a503b134a2efa6c6  d1\10.shn
+538bd705441732f019fe19eb0df08e6c  d1\11.shn
+87966c22f1ffeedc07f56435733c1862  d1\noname.md5
+1422837a33f17b204d901380cda3618c  d2\01.shn
+8f6185bc8815eadf048da2bb239553c0  d2\02.shn
+e2d06a938b1ee610c1f17252c6e5353a  d2\03.shn
+b456d318e65750412ad83287137bf831  d2\04.shn
+51a60fae70ae55fdb1106ff97787a621  d2\05.shn
+1c6bdf4e0321a0460db1565770ef7462  d2\06.shn
+42a6abecf5852ac7b7373361b0f71773  d2\07.shn
+79f58e658d68ed4bd33c043ddbf840f0  d2\08.shn
+5825dcc69869e1cb182ee7719fff9223  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-17 Dublin.shnf\d1 
+=================== 
+=================== 
+=================== 
+df4e2139eacde07437a3924ba8fb42c6  [shntool]  01.wav
+fa59d2158a925b423329c667a0b114bb  [shntool]  02.wav
+a9090713ea453a682f28a527fbb6f2f0  [shntool]  03.wav
+49511d629a3e4c1ca8609feb9a2338f1  [shntool]  04.wav
+af2fb04a56195bb55956500d72359c1e  [shntool]  05.wav
+836d10fcd0b8c76a1ce9edefb9143b77  [shntool]  06.wav
+4d07ad7cad7bb7b4fa6b45cfd58cef55  [shntool]  07.wav
+8709bd7667998be8d89e5a5e6035df47  [shntool]  08.wav
+c0285d36cd2e0dc72132aa56f9b56965  [shntool]  09.wav
+7e98a240f9bc0966a04122169924be1c  [shntool]  10.wav
+1bb8d47a4bd5a1dd1938885e0d2d38e7  [shntool]  11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-17 Dublin.shnf\d2 
+=================== 
+=================== 
+=================== 
+f6fc86b7be7a0716244ad7eb2791dc32  [shntool]  01.wav
+ae161b3217410b59cab8a0baa5198454  [shntool]  02.wav
+7bb56d4b47d43121d4a961c97c1cf01a  [shntool]  03.wav
+cc3b3eaf629f4b53ac00491eb8ede255  [shntool]  04.wav
+278cf0aba399d6b4b0d6451c3267e138  [shntool]  05.wav
+47c2bbc69850bd98758693ec59940e25  [shntool]  06.wav
+52dd80bfa46eb058373d6c91c6162f6a  [shntool]  07.wav
+711a65f72fdc9cc4e4789f71c857d900  [shntool]  08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-17 Dublin.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.64        9676172 B   ---   --   -----    wav  1.0000  01.wav
+     5:30.24       58268492 B   ---   --   -----    wav  1.0000  02.wav
+     6:50.15       72359324 B   ---   --   -----    wav  1.0000  03.wav
+     5:40.12       60004268 B   ---   --   -----    wav  1.0000  04.wav
+     9:07.04       96500252 B   ---   --   -----    wav  1.0000  05.wav
+     8:09.33       86337260 B   ---   --   -----    wav  1.0000  06.wav
+     6:03.48       64146140 B   ---   --   -----    wav  1.0000  07.wav
+     5:49.66       61718876 B   ---   --   -----    wav  1.0000  08.wav
+     5:25.30       57400604 B   ---   --   -----    wav  1.0000  09.wav
+     6:08.28       64981100 B   ---   --   -----    wav  1.0000  10.wav
+     5:55.09       62643212 B   ---   --   -----    wav  1.0000  11.wav
+    65:34.33      694035700 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-17 Dublin.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:08.57       86217308 B   ---   --   -----    wav  1.0000  01.wav
+     6:51.60       72641564 B   ---   --   -----    wav  1.0000  02.wav
+     6:29.24       68676092 B   ---   --   -----    wav  1.0000  03.wav
+    11:48.25      124950044 B   ---   --   -----    wav  1.0000  04.wav
+     4:16.62       45304268 B   ---   --   -----    wav  1.0000  05.wav
+     6:39.17       70423628 B   ---   --   -----    wav  1.0000  06.wav
+     0:30.01        5294396 B   ---   --   -----    wav  1.0000  07.wav
+     5:50.28       61805900 B   ---   --   -----    wav  1.0000  08.wav
+    50:34.49      535313200 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

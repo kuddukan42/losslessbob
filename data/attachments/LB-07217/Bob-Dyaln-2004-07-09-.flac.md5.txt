@@ -1,0 +1,21 @@
+b1be1894d05efe7fbccc7b0779368336 *bd20040709 ffp.txt
+88792eeaa47948e17b20f4585c95e053 *Bob Dylan 2004-07-09 Benidorm, Spain info.txt
+b6dd5282a92a0256c63c65e36ca857b0 *flac.md5
+c199abbe8f81db2e885439c996a271e0 *Track No01.flac
+6987dac9605947ef89b30894464fb1b3 *Track No02.flac
+cadcaf3e07ee274ff8bbfa2968a8568e *Track No03.flac
+aaee2bdd54c7409f1b1b4c3a340b817c *Track No04.flac
+8f7da1adf03c673d67d8b6561f0f0db3 *Track No05.flac
+452163d1aa25e7b927a271f280640a1c *Track No06.flac
+4c90a9f8564d78f32a263649f1fc6e36 *Track No07.flac
+b82d8b8ce473b84b66956876334443dd *Track No08.flac
+efac713c1e9221dbdbed0bb1279a321e *Track No09.flac
+820aabb9ad53de27987250904601cdce *Track No10.flac
+0584f67155d660a2feb6af0cdfa8bed0 *Track No11.flac
+69b29c89e3da40c3999c94b526594e62 *Track No12.flac
+e02f854b0de5910e6a0e02a1fde655d3 *Track No13.flac
+c79c15e71daeeb8dd0d3e52349ab387e *Track No14.flac
+3a61f7404642fa962386c22e8483cbfb *Track No15.flac
+60fdaa4c854a1ec570302416a474be61 *Track No16.flac
+6b4f10e9e1f0a99a51e4e8c160d9848c *Track No17.flac
+246f6463e4b1971f2abae282c7d4cb36 *Track No18.flac

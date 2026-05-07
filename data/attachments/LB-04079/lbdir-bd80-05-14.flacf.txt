@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-05-14.flacf 
+=================== 
+=================== 
+=================== 
+c3dda6acf91499e9da83ec3993634ef4  bd80-05-14-LB-4079.txt
+5f564407784ba76a900b903b1e6b6c10  bd80-05-14.flacf.md5
+6b461c984fcb7ecb9e4085c883d485f6  bd80-05-14d1t01.flac
+49927e8be9fe9dc699ebe8b7ae4c21e1  bd80-05-14d1t02.flac
+c4ee64dfd57629c4df8f6798a412702b  bd80-05-14d1t03.flac
+7e3ccbd02688f9ab77d3f10b3730d51e  bd80-05-14d1t04.flac
+b93e88b75631c6befde0766735051eff  bd80-05-14d1t05.flac
+b404649ed6d187d6f9d3dcc7028cd755  bd80-05-14d1t06.flac
+4b723166b99b9ebdb324a0da362dd9b0  bd80-05-14d1t07.flac
+673c41831e0beebbf6dfefdbc32b4dae  bd80-05-14d1t08.flac
+b3867f8df264c8b32e1debff48464fe8  bd80-05-14d1t09.flac
+d0297d2dbb87f401704ce2989d370485  bd80-05-14d2t01.flac
+ac27ebd8064989d73e079bb175192ddd  bd80-05-14d2t02.flac
+2cfb3723676dd7adad2a6ea642f39493  bd80-05-14d2t03.flac
+49be9375613e07de7e7c8915d5d5d5db  bd80-05-14d2t04.flac
+ac1032d1a354cc8af6ff1068f7fff8fb  bd80-05-14d2t05.flac
+03a059348fa893f946306536fa4f7d8e  bd80-05-14d2t06.flac
+95be88e2829792a9253142c05868b848  bd80-05-14d2t07.flac
+c57d6940cb770529d213b9eeaf7a5121  bd80-05-14d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-05-14.flacf 
+=================== 
+=================== 
+=================== 
+bd80-05-14d1t01.flac:10b9736a3257530f736858fd121b9549
+bd80-05-14d1t02.flac:0f2faa49123e54ac72e819fb6908c76e
+bd80-05-14d1t03.flac:f7051b80dce23d93420fe73b59afff9b
+bd80-05-14d1t04.flac:6bc338e68996ba5fe25d2ff2d7943237
+bd80-05-14d1t05.flac:4230fe183e0d041fb0be950ceb72148d
+bd80-05-14d1t06.flac:8ce283fbc4021cad387861c32db5b9a7
+bd80-05-14d1t07.flac:edd026daa8205edc95e67a0a5f065890
+bd80-05-14d1t08.flac:3113aab0e9749cd54c1cb34d810dd9ef
+bd80-05-14d1t09.flac:5d3b2a1dfe5c0e9011b0d643cd676e2e
+bd80-05-14d2t01.flac:eda80bc4351454338e131588f221e784
+bd80-05-14d2t02.flac:a2cbcb25ccc7ae78c02c9ebe8c8ed7a3
+bd80-05-14d2t03.flac:c9f0109c008b59007bf7e84ac4a9c150
+bd80-05-14d2t04.flac:1d0094275e2e8b339e0b04710320ae0a
+bd80-05-14d2t05.flac:8670e5da12363e4ae312b01f89b303a9
+bd80-05-14d2t06.flac:f4964b217312183050e14d32fd4db9ef
+bd80-05-14d2t07.flac:d0c3476d8ae60914ab1f3e4029843d76
+bd80-05-14d2t08.flac:c4f326b3fd58fa65ea6bb2d323d128bf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-05-14.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:09.30       12242204 B   ---   --   ---xx   flac  0.6293  bd80-05-14d1t01.flac
+     4:39.21       49265036 B   ---   --   ---xx   flac  0.6373  bd80-05-14d1t02.flac
+     6:17.44       66606332 B   ---   --   ---xx   flac  0.6537  bd80-05-14d1t03.flac
+     5:12.15       55072124 B   ---   --   ---xx   flac  0.6361  bd80-05-14d1t04.flac
+     4:52.73       51680540 B   ---   --   ---xx   flac  0.6521  bd80-05-14d1t05.flac
+     6:24.02       67742348 B   ---   --   ---xx   flac  0.6470  bd80-05-14d1t06.flac
+     6:59.00       73911644 B   ---   --   ---xx   flac  0.6459  bd80-05-14d1t07.flac
+     7:10.38       75941420 B   ---   --   ---xx   flac  0.6489  bd80-05-14d1t08.flac
+     2:51.09       30185612 B   ---   --   ---xx   flac  0.6372  bd80-05-14d1t09.flac
+     6:36.28       69920300 B   ---   --   ---xx   flac  0.6344  bd80-05-14d2t01.flac
+     4:42.66       49900076 B   ---   --   ---xx   flac  0.6244  bd80-05-14d2t02.flac
+     5:50.64       61890572 B   ---   --   ---xx   flac  0.6355  bd80-05-14d2t03.flac
+     4:57.69       52553132 B   ---   --   ---xx   flac  0.6361  bd80-05-14d2t04.flac
+     4:40.24       49448492 B   ---   --   ---xx   flac  0.6317  bd80-05-14d2t05.flac
+     5:47.06       61224956 B   ---   --   ---xx   flac  0.6360  bd80-05-14d2t06.flac
+     5:47.21       61260236 B   ---   --   ---xx   flac  0.6302  bd80-05-14d2t07.flac
+     7:42.61       81640316 B   ---   --   ---xx   flac  0.6406  bd80-05-14d2t08.flac
+    91:41.46      970485340 B                            0.6397  (17 files)
+=================== 
+=================== 
+=================== 

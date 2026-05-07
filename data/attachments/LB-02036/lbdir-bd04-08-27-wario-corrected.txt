@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-27-wario-corrected 
+=================== 
+=================== 
+=================== 
+9b6a6db4bb7a2a95b0ddb8df9df6be00  bd04-08-27-wario-corrected.txt
+f4d15159a465d62e9cbcbab3afb6598f  bd040827.md5
+7ff42d2d9a9395af7738c3e005cec037  bd040827.txt
+48d9f9ad0a78a116f0124a5561d23b31  bd040827d1t01.shn
+c1b74df70d98a310157b6e80d7ec3284  bd040827d1t02.shn
+4e3118a10a431fcc5cb95a5a62851b2a  bd040827d1t03.shn
+108da5602210daf0da730d3e421245d9  bd040827d1t04.shn
+125536e20c7af23267398c3cc3d34e60  bd040827d1t05.shn
+6317e4024babea10d0f478b83d19de80  bd040827d1t06.shn
+2a08bf7382be179fa8d712430ca78052  bd040827d1t07.shn
+02dba21bd36ddfb5e1a9f779ae3dc1c9  bd040827d1t08.shn
+710868b4dd3b4d734a2313dc64bfc1e5  bd040827d1t09.shn
+44c847f8c0d68959d0c70e6f8f52442e  bd040827d1t10.shn
+0ca2f5043f09a0e9fe9641326f54bbe6  bd040827d1t11.shn
+a49af7c6d31a3582f9f5fa549227ace0  bd040827d1t12.shn
+bdabd7d748783c573b6f1ad12b1d705b  bd040827d2t01.shn
+184e74000c62e929becc8784230ecddb  bd040827d2t02.shn
+9c801c43634ca84c40ca7eb6d0c4fabd  bd040827d2t03.shn
+50e6441c669435f4a86bcd19119b0565  bd040827d2t04.shn
+0d2cb5bfe5fe965387ad11dbacd77f38  Bob Dylan 8-27-04 Back.jpg
+804f3177d7284968fa11a20370308d41  Bob Dylan 8-27-04 CD1.jpg
+d96b8449a222ec0a73e64953cf2490d3  Bob Dylan 8-27-04 CD2.jpg
+d4f49f83ded9e3c3299ad8f5c5c4ead0  Bob Dylan 8-27-04 Front.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-27-wario-corrected 
+=================== 
+=================== 
+=================== 
+f32d2d13530b8390b08d56c76c359377  [shntool]  bd040827d1t01.wav
+a97c6c49434815686843d2174ed9ef2d  [shntool]  bd040827d1t02.wav
+1c10fe9a3465d429918d609a7eff9b69  [shntool]  bd040827d1t03.wav
+5ad35e7766f5c8bbaf0839b7cd1d558f  [shntool]  bd040827d1t04.wav
+d79976a32e027f4ff23b472be14a85d8  [shntool]  bd040827d1t05.wav
+df5c2735d3afe477e9e61a3bac039510  [shntool]  bd040827d1t06.wav
+5bfc21589bc8d7be05f9735710c28b9d  [shntool]  bd040827d1t07.wav
+0bb4fb6f1854342743fbb4b8032f8daf  [shntool]  bd040827d1t08.wav
+2fbfe503fb6ab9c814c16f6e5b1559a8  [shntool]  bd040827d1t09.wav
+6b51dedc2a6044e6318ccc4b94ac2d83  [shntool]  bd040827d1t10.wav
+ca5f3b95a26f786e82dbbf61c6f3d585  [shntool]  bd040827d1t11.wav
+65adb33ff3f8001ba3a67f4dd17f21fe  [shntool]  bd040827d1t12.wav
+0c32b05bf51e5414ca68468f79e93a83  [shntool]  bd040827d2t01.wav
+e7e32a761cda7c856ed14d6aa85cf52f  [shntool]  bd040827d2t02.wav
+f5812816a1b361a63dcc132dbf7576e3  [shntool]  bd040827d2t03.wav
+b16f13ac168da15cf1bdabc62f0b7fb5  [shntool]  bd040827d2t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-27-wario-corrected 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:33.02       16409948 B   ---   --   -----    wav  1.0000  bd040827d1t01.wav
+     4:35.15       48545324 B   ---   --   -----    wav  1.0000  bd040827d1t02.wav
+     6:35.36       69762716 B   ---   --   -----    wav  1.0000  bd040827d1t03.wav
+     6:10.41       65364476 B   ---   --   -----    wav  1.0000  bd040827d1t04.wav
+     3:55.36       41538716 B   ---   --   -----    wav  1.0000  bd040827d1t05.wav
+     7:10.08       75870860 B   ---   --   -----    wav  1.0000  bd040827d1t06.wav
+     5:15.45       55671884 B   ---   --   -----    wav  1.0000  bd040827d1t07.wav
+     6:13.06       65811356 B   ---   --   -----    wav  1.0000  bd040827d1t08.wav
+     6:11.53       65569100 B   ---   --   -----    wav  1.0000  bd040827d1t09.wav
+     5:27.28       57748700 B   ---   --   -----    wav  1.0000  bd040827d1t10.wav
+     7:00.13       74118620 B   ---   --   -----    wav  1.0000  bd040827d1t11.wav
+     7:30.49       79495292 B   ---   --   -----    wav  1.0000  bd040827d1t12.wav
+    10:21.72      109713788 B   ---   --   -----    wav  1.0000  bd040827d2t01.wav
+     6:11.70       65609084 B   ---   --   -----    wav  1.0000  bd040827d2t02.wav
+     0:47.59        8429612 B   ---   --   -----    wav  1.0000  bd040827d2t03.wav
+     6:04.70       64374284 B   ---   --   -----    wav  1.0000  bd040827d2t04.wav
+    91:05.03      964033760 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

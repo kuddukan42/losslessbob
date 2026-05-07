@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-11-24-Thanksgiving-With-The-Fleet.flacf 
+=================== 
+=================== 
+=================== 
+26fb147e62441048668e638de43e558f  101 Wait For The Light To Shine.flac
+b1c6d7211d2f45204fc2ca00dde131a4  102 It Ain't Me Babe.flac
+0868a005273b1eef79a2e68a6ead3b64  103 Hard Rain.flac
+4ef8e69ce499710d00bd829f1f09e85e  104 Searching For A Soldier's Grave.flac
+41288d3ec0779426a6384740d7d28f8a  105 Tweedle Dum And Tweedle Dee.flac
+567c53774d579476f347cdde89c4e19e  106 Just Like A Woman.flac
+1a98fde2079e351f4f76616fb489cb5c  107 Lonesome Day Blues.flac
+8bff4065b381b295d8b21a491c30486d  108 High Water.flac
+f437e6edcb5bbeb58e6b30c051f13324  109 Don't Think Twice.flac
+5e36b1329c7a5e592c5e9bdc7b4332c8  110 John Brown.flac
+9728a28178206733fe6cf00707dc2875  111 Tangled Up In Blue.flac
+229b53cc4ff651e233c6f7092cc7fec5  201 Summer Days.flac
+930b544a43a7afec2b5f753bc9f2e31b  202 Sugar Baby.flac
+db064d342b28cf06c257f7aec3782821  203 The Wicked Messenger.flac
+7344cd4323baf2b3fbc87d18ba9d17c0  204 Rainy Day Women.flac
+363ba5f90c5a9abc6b67c18afb85340a  205 Things Have Changed.flac
+8a105cc4fd36c66bb05ca3bc54688bf4  206 Like A Rolling Stone.flac
+6bdb8d8eed5fafe0e03d3f053290edb4  207 Forever Young.flac
+7540768a1ff11ea5514074d28d5442b7  208 Honest With Me.flac
+ae91afd9cc51926554aab5954c2ac3a9  209 Blowin' In The Wind.flac
+1e8bca79f79b1952d955c3a3f803bab7  210 All Along The Watchtower.flac
+e4ca23852ede1abb044671e20481f0ec  211 Knockin' On Heaven's Door.flac
+c66e168c33d933056dd7bc629672a7ee  Bob Dylan-2001.11.24 Boston, Ma-Thanksgiving With The Fleet.md5
+c25877d26c17410412e802d483ee5aae  Dylan Fleet.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-11-24-Thanksgiving-With-The-Fleet.flacf 
+=================== 
+=================== 
+=================== 
+101 Wait For The Light To Shine.flac:0c9c3595fe3b319b7d5a48f2d11f1e26
+102 It Ain't Me Babe.flac:becb0638dfeddc73e77435e0313e1988
+103 Hard Rain.flac:bb51683e2b39c1a1afc66fb19cd1644d
+104 Searching For A Soldier's Grave.flac:f997275ccd84447ec497015dcb010ddd
+105 Tweedle Dum And Tweedle Dee.flac:6bfcf25085dad77f58af212d4fcd8358
+106 Just Like A Woman.flac:d4e376c76d6b163943108a484333ea34
+107 Lonesome Day Blues.flac:acca651fbcfb32810b6a06df2d5fc9a3
+108 High Water.flac:62dc72b5aa41edf5b18ebf82d752dde9
+109 Don't Think Twice.flac:5b34b1c3c5d3d2e7a614c5ffb6e35d46
+110 John Brown.flac:828e8807e3cc6d1a7941ab1f4bae581a
+111 Tangled Up In Blue.flac:ca284dc51ef97f9b8e3221d04068a89a
+201 Summer Days.flac:ea27f80f894a6b419bf9f29b49bbbe39
+202 Sugar Baby.flac:b48b75ff160763fb161492292ddd0078
+203 The Wicked Messenger.flac:0ced771183c9fd18ecccd1d32f45a180
+204 Rainy Day Women.flac:3cd67380c1e17270987245a58b4202ec
+205 Things Have Changed.flac:5fc75bac2633d82ea03f08aa589c1c1b
+206 Like A Rolling Stone.flac:6f9415fd6595974f864e34cb6a231aea
+207 Forever Young.flac:c42a06fc505aa9323b1335eaaeee5e92
+208 Honest With Me.flac:1d49dec3a9000badf9f72d7af29c43cd
+209 Blowin' In The Wind.flac:d3219d311e8b770936bd340cd9f423c3
+210 All Along The Watchtower.flac:d32406181166a1b359edc53458635b47
+211 Knockin' On Heaven's Door.flac:2634b7411e758d0242addcbaf8cea239
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-24-Thanksgiving-With-The-Fleet.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:26.73       36510140 B   ---   --   ---xx   flac  0.5906  101 Wait For The Light To Shine.flac
+     9:01.38       95521820 B   ---   --   ---xx   flac  0.4628  102 It Ain't Me Babe.flac
+     8:43.04       92266652 B   ---   --   ---xx   flac  0.5284  103 Hard Rain.flac
+     3:07.65       33139724 B   ---   --   ---xx   flac  0.5030  104 Searching For A Soldier's Grave.flac
+     4:50.27       51219548 B   ---   --   ---xx   flac  0.5461  105 Tweedle Dum And Tweedle Dee.flac
+     7:25.26       78559196 B   ---   --   ---xx   flac  0.5522  106 Just Like A Woman.flac
+     7:15.30       76804604 B   ---   --   ---xx   flac  0.5928  107 Lonesome Day Blues.flac
+     6:25.35       67996364 B   ---   --   ---xx   flac  0.5690  108 High Water.flac
+     6:57.17       73598828 B   ---   --   ---xx   flac  0.4831  109 Don't Think Twice.flac
+     5:41.19       60197132 B   ---   --   ---xx   flac  0.4593  110 John Brown.flac
+     9:14.41       97822076 B   ---   --   ---xx   flac  0.5998  111 Tangled Up In Blue.flac
+     6:10.37       65355068 B   ---   --   ---xx   flac  0.5994  201 Summer Days.flac
+     7:40.34       81224012 B   ---   --   ---xx   flac  0.4149  202 Sugar Baby.flac
+     5:23.35       57059564 B   ---   --   ---xx   flac  0.6116  203 The Wicked Messenger.flac
+     9:29.22      100423388 B   ---   --   ---xx   flac  0.6014  204 Rainy Day Women.flac
+     6:51.36       72585116 B   ---   --   ---xx   flac  0.5674  205 Things Have Changed.flac
+     6:50.24       72380492 B   ---   --   ---xx   flac  0.6024  206 Like A Rolling Stone.flac
+     6:50.28       72389900 B   ---   --   ---xx   flac  0.5239  207 Forever Young.flac
+     7:00.29       74156252 B   ---   --   ---xx   flac  0.6145  208 Honest With Me.flac
+     6:54.35       73111964 B   ---   --   ---xx   flac  0.5123  209 Blowin' In The Wind.flac
+     6:47.32       71870108 B   ---   --   ---xx   flac  0.5877  210 All Along The Watchtower.flac
+     5:47.08       61229660 B   ---   --   ---xx   flac  0.5551  211 Knockin' On Heaven's Door.flac
+   147:54.20     1565421608 B                            0.5486  (22 files)
+=================== 
+=================== 
+=================== 

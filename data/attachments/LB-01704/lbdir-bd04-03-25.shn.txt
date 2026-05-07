@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-25.shn 
+=================== 
+=================== 
+=================== 
+ab27eafc289f141ff9c48d8c6d73eaf0   - d1Track01.shn
+7ed822a56cfcca6818fce75ba3a97ba5   - d1Track02.shn
+877e70de25c6e1ce3b85b29e9e00c813   - d1Track03.shn
+b14097428de777faa34259d84f83bddd   - d1Track04.shn
+df635cc8d95cee9df8948fd0fd8b2396   - d1Track05.shn
+7351e9b81cebe6fb4c1965efd2598299   - d1Track06.shn
+f9bbbd5a311144f2fb3f66c0a377c8e9   - d1Track07.shn
+06820848253d37fa85f414fd62e2b11e   - d1Track08.shn
+1b007d7bab79ae6a248ee49878ec9acb   - d1Track09.shn
+711f930abbd0e9b92d24d1d64e507dcd   - d1Track10.shn
+b5e111fa47b9a2a7117358ddbff3a92d   - d2Track01.shn
+13902541e9b97e5fdbbb6c1e824f63f8   - d2Track02.shn
+ebd1088010763b5ef72540342285ec78   - d2Track03.shn
+b06afc7d975178309b59690f6917d6c8   - d2Track04.shn
+8b5d2592875a4f8a4b103c975b9e5ec4   - d2Track05.shn
+1565e5b284003888ab4b2c972552d87e   - d2Track06.shn
+6f6672a91f5813fb855f0c2efdcc196b   - d2Track07.shn
+580a20f70dfdeea6079ecb83c938fd95  bd04-03-25.txt
+a433e768994b55a7d1a70365d95e656b  Dylan2004-03-25.md5
+f9adcb3b027ccd180567eecbd526b458  Dylan2004-03-25.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-25.shn 
+=================== 
+=================== 
+=================== 
+2af457ea35931c7062a64e58dc5d6f1b  [shntool]  _-_d1Track01.wav
+d7130d437de5f0319c97a5dd3adbb2bd  [shntool]  _-_d1Track02.wav
+7858147e8eecbbdf3fbb554959197331  [shntool]  _-_d1Track03.wav
+3c031285f390fc56f33320b939166f10  [shntool]  _-_d1Track04.wav
+a911fe76f6a09116c5e625bd98c6e303  [shntool]  _-_d1Track05.wav
+cdac4d4dd80afd83bc34cf2926901bb5  [shntool]  _-_d1Track06.wav
+e3efa55344f1ced0fe5bdba8746c8c43  [shntool]  _-_d1Track07.wav
+1f496e3917026115df0e3946b37b22a2  [shntool]  _-_d1Track08.wav
+b19aa9f6013a8224c60bc754bf103ff0  [shntool]  _-_d1Track09.wav
+a3e4ac995a4488bbb9f1f2536ab769da  [shntool]  _-_d1Track10.wav
+a6dff20888945de12c4f43f093feaed0  [shntool]  _-_d2Track01.wav
+be19db325af20b350643a563abe50230  [shntool]  _-_d2Track02.wav
+023894808158afc8d13af603bba81760  [shntool]  _-_d2Track03.wav
+e0be638dfaadcf2388973c0921739489  [shntool]  _-_d2Track04.wav
+0577bbb7baaedb4bab40e12ce9af0f27  [shntool]  _-_d2Track05.wav
+3491eef05a5dcfa296a6e12e68552d66  [shntool]  _-_d2Track06.wav
+8f4f5ee63c6a543cfaa47ba9d0927f8e  [shntool]  _-_d2Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-25.shn 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.72       55559018 B   ---   -e   -----    wav  1.0000  _-_d1Track01.wav
+     5:58.30       63221834 B   ---   -e   -----    wav  1.0000  _-_d1Track02.wav
+     5:20.28       56513930 B   ---   -e   -----    wav  1.0000  _-_d1Track03.wav
+     5:42.33       60406490 B   ---   -e   -----    wav  1.0000  _-_d1Track04.wav
+     7:52.44       83364362 B   ---   -e   -----    wav  1.0000  _-_d1Track05.wav
+     7:39.67       81125258 B   ---   -e   -----    wav  1.0000  _-_d1Track06.wav
+     6:55.00       73206074 B   ---   -e   -----    wav  1.0000  _-_d1Track07.wav
+     6:21.10       67231994 B   ---   -e   -----    wav  1.0000  _-_d1Track08.wav
+     6:37.21       70080266 B   ---   -e   -----    wav  1.0000  _-_d1Track09.wav
+     6:45.21       71491466 B   ---   -e   -----    wav  1.0000  _-_d1Track10.wav
+     5:01.33       53174090 B   ---   -e   -----    wav  1.0000  _-_d2Track01.wav
+     7:17.40       77180954 B   ---   -e   -----    wav  1.0000  _-_d2Track02.wav
+     5:47.14       61243802 B   ---   -e   -----    wav  1.0000  _-_d2Track03.wav
+     7:39.32       81042938 B   ---   -e   -----    wav  1.0000  _-_d2Track04.wav
+    11:47.02      124719578 B   ---   -e   -----    wav  1.0000  _-_d2Track05.wav
+     0:19.66        3506906 B   ---   -e   -----    wav  1.0000  _-_d2Track06.wav
+     5:56.22       62850218 B   ---   -e   -----    wav  1.0000  _-_d2Track07.wav
+   108:16.10     1145919178 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

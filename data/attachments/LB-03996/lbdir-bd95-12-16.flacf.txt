@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-16.flacf 
+=================== 
+=================== 
+=================== 
+678f174704a6ac0c434ecbf969f112be  bd-1995-12-16 d1t01 Crash on the Levee.flac
+4401fbda10fd2752e639d04ef181a846  bd-1995-12-16 d1t02 I Want You.flac
+a693bf8a9b469b0736c5714584559e0a  bd-1995-12-16 d1t03 All Along the Watchtower.flac
+46df1d21482fd20a054ff93b26ab799c  bd-1995-12-16 d1t04 Shelter From the Storm.flac
+b3e3b5b38ca9d6c7b681f86c69a11d6e  bd-1995-12-16 d1t05 Just Like Tom Thumb's Blues.flac
+04b651d08bb362faf081c531aa7f9106  bd-1995-12-16 d1t06 Silvio.flac
+4e82c79de13fb94de4f1cb51922fd5bb  bd-1995-12-16 d1t07 Mr Tambourine Man.flac
+cfd8ee94d801dfcb1fadaa39e9a358fd  bd-1995-12-16 d1t08 Masters of War.flac
+96b6e67b32f4d5f13a82d2af75fdb1cf  bd-1995-12-16 d1t09 Love Minus Zero - No Limit.flac
+744d009ef8d56f4f3a548990acec8b60  bd-1995-12-16 d1t10 Dark Eyes.flac
+bd72f7e24b30ad3fc4914ef97918d4a7  bd-1995-12-16 d2t01 Maggie's Farm.flac
+9d06072de6a5bc5bf08e4f07d8295158  bd-1995-12-16 d2t02 Forever Young.flac
+760bdabe00de279a3d61abaf2746225d  bd-1995-12-16 d2t03 crowd noise.flac
+8688179b9e16b86c35888add331f12f4  bd-1995-12-16 d2t04 Alabama Getaway.flac
+19a14db8e7dc7f72136e88ef9352387e  bd-1995-12-16 d2t05 A Hard Rain's A-Gonna' Fall.flac
+e63707e5bd051fa019afc918a1a5cd8e  bd-1995-12-16 d2t06 Rainy Day Women.flac
+9f618bec86f4d1affdf3bb6775dcfec9  bd-1995-12-16 Philadelphia, PA info.txt
+90dcfd844c16dba5c170b1a8653f0fa9  bd95-12-16-LB-3996.txt
+0195f26c3243e8f7731683c104b4b403  Philadelphia 12-16-95 PTynstra artwork.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-16.flacf 
+=================== 
+=================== 
+=================== 
+bd-1995-12-16 d1t01 Crash on the Levee.flac:b2cb0ee5a9e20722512a61d35111cb71
+bd-1995-12-16 d1t02 I Want You.flac:48442a6795ea998fe8909c4d67b0a90d
+bd-1995-12-16 d1t03 All Along the Watchtower.flac:14fce9562ab8e36af425a7b847d55c44
+bd-1995-12-16 d1t04 Shelter From the Storm.flac:97bda88e319a5a956ce7a3320ac66df5
+bd-1995-12-16 d1t05 Just Like Tom Thumb's Blues.flac:e8f65f69d7be444b6dd9d7e446204d4a
+bd-1995-12-16 d1t06 Silvio.flac:61cf35c4ffe000248b6582663116b2ac
+bd-1995-12-16 d1t07 Mr Tambourine Man.flac:bdcdd6b1ff68fdb96b29f949fed0d20d
+bd-1995-12-16 d1t08 Masters of War.flac:6b3e9d0f6c70d11995949f6efdd4415c
+bd-1995-12-16 d1t09 Love Minus Zero - No Limit.flac:500a2da585391c89c211ba561e037f98
+bd-1995-12-16 d1t10 Dark Eyes.flac:a90dc265b2b67f29967982737021cdc5
+bd-1995-12-16 d2t01 Maggie's Farm.flac:dd3ddccdbb98d8a49c4b383c4acfeca5
+bd-1995-12-16 d2t02 Forever Young.flac:7814facb8d89f684821050848dabc5a7
+bd-1995-12-16 d2t03 crowd noise.flac:c1f61a0b87ac0ea7fb07d96f4ec93d5e
+bd-1995-12-16 d2t04 Alabama Getaway.flac:721512e59a249496897e392c91d6e011
+bd-1995-12-16 d2t05 A Hard Rain's A-Gonna' Fall.flac:2a274de6cdfa786773ac0a1265b62642
+bd-1995-12-16 d2t06 Rainy Day Women.flac:1938ffad17cfe6404619807572eacd97
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-16.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.22       55264988 B   ---   --   ---xx   flac  0.6489  bd-1995-12-16 d1t01 Crash on the Levee.flac
+     6:13.06       65811356 B   ---   --   ---xx   flac  0.5615  bd-1995-12-16 d1t02 I Want You.flac
+     7:36.45       80544284 B   ---   --   ---xx   flac  0.6419  bd-1995-12-16 d1t03 All Along the Watchtower.flac
+     8:33.38       90582620 B   ---   --   ---xx   flac  0.5763  bd-1995-12-16 d1t04 Shelter From the Storm.flac
+     7:48.49       82670492 B   ---   --   ---xx   flac  0.6079  bd-1995-12-16 d1t05 Just Like Tom Thumb's Blues.flac
+     7:53.69       83599532 B   ---   --   ---xx   flac  0.6343  bd-1995-12-16 d1t06 Silvio.flac
+     9:39.58      102272060 B   ---   --   ---xx   flac  0.5182  bd-1995-12-16 d1t07 Mr Tambourine Man.flac
+     6:01.40       63774524 B   ---   --   ---xx   flac  0.4831  bd-1995-12-16 d1t08 Masters of War.flac
+     5:25.01       57332396 B   ---   --   ---xx   flac  0.4885  bd-1995-12-16 d1t09 Love Minus Zero - No Limit.flac
+     5:52.64       62243372 B   ---   --   ---xx   flac  0.4550  bd-1995-12-16 d1t10 Dark Eyes.flac
+     7:36.02       80443148 B   ---   --   ---xx   flac  0.6578  bd-1995-12-16 d2t01 Maggie's Farm.flac
+     8:14.38       87231020 B   ---   --   ---xx   flac  0.5563  bd-1995-12-16 d2t02 Forever Young.flac
+     1:56.17       20502428 B   ---   --   ---xx   flac  0.5178  bd-1995-12-16 d2t03 crowd noise.flac
+     8:22.15       88588124 B   ---   --   ---xx   flac  0.6073  bd-1995-12-16 d2t04 Alabama Getaway.flac
+     9:55.71      105125036 B   ---   --   ---xx   flac  0.4741  bd-1995-12-16 d2t05 A Hard Rain's A-Gonna' Fall.flac
+     8:37.67       91356428 B   ---   --   ---xx   flac  0.5664  bd-1995-12-16 d2t06 Rainy Day Women.flac
+   115:01.02     1217341808 B                            0.5648  (16 files)
+=================== 
+=================== 
+=================== 

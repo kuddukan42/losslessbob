@@ -1,0 +1,10 @@
+3142bb7decd3e41cb8e36330daa3e3f2 *bd_99-04-07_Lisbon_cd1_Track 01.shn
+9bda30665d2b2d3ad2a3dbadbf8c6ec4 *bd_99-04-07_Lisbon_cd1_Track 02.shn
+a816248603e352d10a68eff31e9e3a74 *bd_99-04-07_Lisbon_cd1_Track 03.shn
+213795612518ad1f4633e16cf8d286e6 *bd_99-04-07_Lisbon_cd1_Track 04.shn
+2d128be8f903f82f94b26c53f667236b *bd_99-04-07_Lisbon_cd1_Track 05.shn
+4411705a83e2002ce0eb8381de4319fe *bd_99-04-07_Lisbon_cd1_Track 06.shn
+7fa5279a61997031ddbcf34a147aa24a *bd_99-04-07_Lisbon_cd1_Track 07.shn
+9903135c1884028fe9b7a46cce2343a5 *bd_99-04-07_Lisbon_cd1_Track 08.shn
+e9be9f0b6efc3459277d92b675517841 *bd_99-04-07_Lisbon_cd1_Track 09.shn
+f08de1bfe42587a2a6501e245f9c2a29 *bd_99-04-07_Lisbon_cd1_Track 10.shn

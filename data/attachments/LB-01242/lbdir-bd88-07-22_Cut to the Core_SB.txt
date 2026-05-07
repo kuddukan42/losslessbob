@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-22_Cut to the Core_SB 
+=================== 
+=================== 
+=================== 
+112084e29b83c0dde136859198078070  23_88.07.22 Cut to the core.rtf
+ec54341bf5edd21163c7610e0d1ca183  bd88-07-22sb.txt
+b9505870d53110b54a6486f2e01a958d  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_Track 1.shn
+de49c83f66728876416c8a4f6d025e41  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_Track 2.shn
+35073baa534474813344b14b5218ad24  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_Track 3.shn
+13946b40e7ffd2457b3ea1986710f92b  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_Track 4.shn
+01bdd09120a27364d1f3745aa82d0384  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_Track 5.shn
+1c7bcd1fb897073375333ab1ae2e0cc8  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_Track 6.shn
+ba05950e91d27b2ba3676834cbeebd96  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_Track 7.shn
+d6ec7db7b1e0d9b23e2d6daaa504ae35  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_Track 8.shn
+dd88f4fc3c6e2be90fc511b9e35d6467  bd_88-07-22_cd1.shnf\bd_88-07-22_cd1_shn.md5
+3772b527484e4d31c3d2c33b441ce49a  bd_88-07-22_cd2.shnf\bd_88-07-22_cd2_Track 1.shn
+5d81629cac8ed82cf224c15f4b0edac3  bd_88-07-22_cd2.shnf\bd_88-07-22_cd2_Track 2.shn
+55f25781788124e304b50995fe35bdc3  bd_88-07-22_cd2.shnf\bd_88-07-22_cd2_Track 3.shn
+da9465973e29527457295b149628cab2  bd_88-07-22_cd2.shnf\bd_88-07-22_cd2_Track 4.shn
+062b4b66cf17743254380c356c13c807  bd_88-07-22_cd2.shnf\bd_88-07-22_cd2_Track 5.shn
+a25d911f92e98f04fc4a9518eaf6b932  bd_88-07-22_cd2.shnf\bd_88-07-22_cd2_Track 6.shn
+3933de743c988b3906bf11cd0d845f8b  bd_88-07-22_cd2.shnf\bd_88-07-22_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-07-22_Cut to the Core_SB\bd_88-07-22_cd1.shnf 
+=================== 
+=================== 
+=================== 
+ff154dd3fbb63c92bb980c4d1a90c996  [shntool]  bd_88-07-22_cd1_Track_1.wav
+9ef2432ec510efc5d8e5f3863a464bba  [shntool]  bd_88-07-22_cd1_Track_2.wav
+f4a5eda668cbb299aeb4fe71b36c7913  [shntool]  bd_88-07-22_cd1_Track_3.wav
+52ad3056fe901718d43edbe6a50f14bb  [shntool]  bd_88-07-22_cd1_Track_4.wav
+2a49606933dce49b8bc0814475c6d7ba  [shntool]  bd_88-07-22_cd1_Track_5.wav
+3773f5a74a366544770892643bd8a97a  [shntool]  bd_88-07-22_cd1_Track_6.wav
+92dd3456f2a6fd7c4d8c3b1819c07bbd  [shntool]  bd_88-07-22_cd1_Track_7.wav
+f428fd993c0eb489d5c5876e3a804cd8  [shntool]  bd_88-07-22_cd1_Track_8.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-07-22_Cut to the Core_SB\bd_88-07-22_cd2.shnf 
+=================== 
+=================== 
+=================== 
+3207f34d419bbc6b560770412f50ffa3  [shntool]  bd_88-07-22_cd2_Track_1.wav
+2cc80e1f87a8ec7d5dc4858d8b0b50f7  [shntool]  bd_88-07-22_cd2_Track_2.wav
+d2063328b9473585748af130413d3d7d  [shntool]  bd_88-07-22_cd2_Track_3.wav
+7f680513b921943079993e026590b358  [shntool]  bd_88-07-22_cd2_Track_4.wav
+2ebdbdee52f9f1928aff1a52793f0926  [shntool]  bd_88-07-22_cd2_Track_5.wav
+7c635c596b9dc1244b0a1a5b3b53cf57  [shntool]  bd_88-07-22_cd2_Track_6.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-22_Cut to the Core_SB\bd_88-07-22_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:51.02       40753230 B   ---   -e   ---xx    shn  0.6296  bd_88-07-22_cd1_Track 1.shn
+     4:02.57       42822990 B   ---   -e   ---xx    shn  0.6184  bd_88-07-22_cd1_Track 2.shn
+     4:57.18       52433262 B   ---   -e   ---xx    shn  0.6641  bd_88-07-22_cd1_Track 3.shn
+     4:55.29       52106334 B   ---   -e   ---xx    shn  0.6410  bd_88-07-22_cd1_Track 4.shn
+     3:58.13       42013902 B   ---   -e   ---xx    shn  0.6693  bd_88-07-22_cd1_Track 5.shn
+     6:20.66       67187358 B   ---   -e   ---xx    shn  0.6280  bd_88-07-22_cd1_Track 6.shn
+     5:23.12       57005550 B   ---   -e   ---xx    shn  0.6070  bd_88-07-22_cd1_Track 7.shn
+     9:12.21       97422318 B   ---   -e   ---xx    shn  0.6253  bd_88-07-22_cd1_Track 8.shn
+    42:40.68      451744944 B                            0.6335  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-22_Cut to the Core_SB\bd_88-07-22_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.64       54481854 B   ---   -e   ---xx    shn  0.6181  bd_88-07-22_cd2_Track 1.shn
+     4:43.72       50090670 B   ---   -e   ---xx    shn  0.6581  bd_88-07-22_cd2_Track 2.shn
+     5:52.05       62104686 B   ---   -e   ---xx    shn  0.6498  bd_88-07-22_cd2_Track 3.shn
+     6:11.70       65609166 B   ---   -e   ---xx    shn  0.6727  bd_88-07-22_cd2_Track 4.shn
+     4:30.54       47755134 B   ---   -e   ---xx    shn  0.6036  bd_88-07-22_cd2_Track 5.shn
+     4:41.46       49676718 B   ---   -e   ---xx    shn  0.6419  bd_88-07-22_cd2_Track 6.shn
+    31:09.11      329718228 B                            0.6425  (6 files)
+=================== 
+=================== 
+=================== 

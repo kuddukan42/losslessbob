@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-24-d.shnf 
+=================== 
+=================== 
+=================== 
+f3d5b85504fb189a3e8861466475ee06  bd2004-10-24.info.txt
+6d15532156033b7043c811ecac1684b3  bd2004-10-24d1.shns.md5
+b4818cf309fc72c1a4b7bef87c25e9c7  bd2004-10-24d1.shntoolfp.txt
+dfe9d1d13e2cc7aae46919d486b21fa0  bd2004-10-24d1.shntoolresults.txt
+99c6cd6820d1d311dbe8ac62778f99b1  bd2004-10-24d1.waves.md5
+52c6e8afc2210d33bea9e239dec87626  bd2004-10-24d1t01.shn
+ed5dec4a965f3efbd6292483d9c09fd0  bd2004-10-24d1t02.shn
+68b963663dbf91c5c4a15983d40ab9dd  bd2004-10-24d1t03.shn
+d612cf554361ae4751b55c28333598e6  bd2004-10-24d1t04.shn
+de8006ccef864d053deaa9985ff60220  bd2004-10-24d1t05.shn
+9a1c83e022d7dbe320d68302e2bb6f82  bd2004-10-24d1t06.shn
+21b7cc214877df202b7d83e2f5cb1853  bd2004-10-24d1t07.shn
+4f9d32741e29ada14db4e79984b7a23a  bd2004-10-24d1t08.shn
+02a87f918fc809552ea5c2c8b440f1ea  bd2004-10-24d1t09.shn
+731ea67f04df7aa7189038e830c5cadf  bd2004-10-24d2.shns.md5
+006bb434e46291d4d91a8ec423971821  bd2004-10-24d2.shntoolfp.txt
+1e0cffaadb499c7069fcf15933dad2c6  bd2004-10-24d2.shntoolresults.txt
+570a5ce2a9b75cbc59fce43d7f183ac1  bd2004-10-24d2.waves.md5
+557f6b27264cc409896c8a4f020519bb  bd2004-10-24d2t01.shn
+97780441128b907c18bce19ffe0019c1  bd2004-10-24d2t02.shn
+4c56bde72d5b289d8518f35cba1f254a  bd2004-10-24d2t03.shn
+71c253ab4bd4ad021c16f7a2a3db7eea  bd2004-10-24d2t04.shn
+250986b0f0c66931fbfff1c109ba3d34  bd2004-10-24d2t05.shn
+3bae930d569afc74bbdd99dd1b56e289  bd2004-10-24d2t06.shn
+89957f83ea135da1ddc1605c22a2f5eb  bd2004-10-24d2t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-10-24-d.shnf 
+=================== 
+=================== 
+=================== 
+17ebec93d87b1e01978cd07da3091aa3  [shntool]  bd2004-10-24d1t01.wav
+2ad362e5deb6ab9eee8f4e59a5c14a8d  [shntool]  bd2004-10-24d1t02.wav
+d130c08850db2264bbc9f1d15733c1d5  [shntool]  bd2004-10-24d1t03.wav
+3f1827c80e3a28a08980e4fc3a3c3bcc  [shntool]  bd2004-10-24d1t04.wav
+a1c96f142ff58cb78f09286c8c34b697  [shntool]  bd2004-10-24d1t05.wav
+873dce1cf285b18d1ba47802fe7bdee8  [shntool]  bd2004-10-24d1t06.wav
+63cff14e2f115739ca6ec17b30c963cb  [shntool]  bd2004-10-24d1t07.wav
+d6527daf5dae86bc98550e83ae386ac1  [shntool]  bd2004-10-24d1t08.wav
+e758cc99f99e3ff07dc09f0c05899b1b  [shntool]  bd2004-10-24d1t09.wav
+37f3ab94846727612c4a7b561fabf9f4  [shntool]  bd2004-10-24d2t01.wav
+0315cb9de105c33eb92cdd6608f1b92c  [shntool]  bd2004-10-24d2t02.wav
+1a1130216cda018b57bfcffa3810bfd1  [shntool]  bd2004-10-24d2t03.wav
+ef6abe134c8e9be554d62d84d5a9e571  [shntool]  bd2004-10-24d2t04.wav
+25db0425a945b5385ad1fcdf115d7ef1  [shntool]  bd2004-10-24d2t05.wav
+7c7a97d69eaba52c11c41ec5b53fbeb0  [shntool]  bd2004-10-24d2t06.wav
+bef66f7a03f66e53777494ae00d38ae1  [shntool]  bd2004-10-24d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-24-d.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:07.70       75487484 B   ---   --   ---xx    shn  0.5519  bd2004-10-24d1t01.shn
+     4:19.66       45842876 B   ---   --   ---xx    shn  0.5755  bd2004-10-24d1t02.shn
+     5:26.23       57560540 B   ---   --   ---xx    shn  0.5031  bd2004-10-24d1t03.shn
+     5:25.32       57405308 B   ---   --   ---xx    shn  0.4886  bd2004-10-24d1t04.shn
+     6:05.50       64503644 B   ---   --   ---xx    shn  0.5736  bd2004-10-24d1t05.shn
+     5:21.56       56756156 B   ---   --   ---xx    shn  0.4809  bd2004-10-24d1t06.shn
+     8:03.19       85245932 B   ---   --   ---xx    shn  0.5489  bd2004-10-24d1t07.shn
+     6:47.69       71957132 B   ---   --   ---xx    shn  0.5618  bd2004-10-24d1t08.shn
+     6:10.24       65324492 B   ---   --   ---xx    shn  0.5055  bd2004-10-24d1t09.shn
+     5:13.17       55253228 B   ---   --   ---xx    shn  0.4293  bd2004-10-24d2t01.shn
+     6:50.57       72458108 B   ---   --   ---xx    shn  0.4760  bd2004-10-24d2t02.shn
+     6:52.72       72846188 B   ---   --   ---xx    shn  0.5657  bd2004-10-24d2t03.shn
+     6:09.42       65190428 B   ---   --   ---xx    shn  0.4873  bd2004-10-24d2t04.shn
+    10:54.32      115440908 B   ---   --   ---xx    shn  0.5423  bd2004-10-24d2t05.shn
+     7:19.17       77479628 B   ---   --   ---xx    shn  0.5625  bd2004-10-24d2t06.shn
+     6:12.73       65792540 B   ---   --   ---xx    shn  0.5587  bd2004-10-24d2t07.shn
+   104:21.44     1104544592 B                            0.5285  (16 files)
+=================== 
+=================== 
+=================== 

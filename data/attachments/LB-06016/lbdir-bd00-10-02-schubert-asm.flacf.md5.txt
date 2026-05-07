@@ -1,0 +1,24 @@
+925b1257b4f621c5a045f4f1fc1b16db  101 Announcement.flac
+3a0990d02280a409659d7d0452363609  102 Duncan And Brady.flac
+f3d1ae9595d027e3b0d55ffaddafded0  103 To Ramona.flac
+408d0e8021843537eb76e52d718c49bd  104 It's Alright, Ma (I'm Only Bleeding).flac
+a329fc3bfe28598b3fbf9eba1d5935f4  105 Don't Think Twice, It's All Right.flac
+81067f5d1160e53d2a837cba2b5856cd  106 Tangled Up In Blue.flac
+727293977210803f82cd856f3d3af00b  107 Searching For A Soldier's Grave.flac
+bbbc672ac7163e03bc56032c4b128d27  108 Country Pie.flac
+8c6230b053abf4d0d195043035b08ce9  109 Standing In The Doorway.flac
+56f7abe7f9655ccbc531d977007c838b  110 Tombstone Blues.flac
+cb82d0a8b89cdf381a41184f8a0e45e3  111 Tell Me That It Isn't True.flac
+c4658defa2e784dd0778797bad77749c  2000-10-02 Bruessels.txt
+d839d8a053d4f1f408ae74595b38bfbe  201 Cold Irons Bound.flac
+12672aa89fe7af8e71f74f65d782d1f9  202 Leopard-Skin Pill-Box Hat.flac
+e9a963a470db29ebdd040f523d2cdc7b  203 Things Have Changed.flac
+ea17c9c8ae859d57a377c1ee4b8c3cad  204 Like A Rolling Stone.flac
+257e7d7da3e739056c40f116a6bd4904  205 If Dogs Run Free.flac
+8c75481840a309537299826c015afafc  206 Seeing The Real You At Last.flac
+4b85af6911f82b86c0cb6857758ce5ca  207 I Shall Be Released.flac
+d263c7be0a5aecabfabcbc905224899e  208 Highway 61 Revisited.flac
+f80a811ce3e2bb9c5ac7811611218853  209 Blowin' In The Wind.flac
+5234c5ab0dc1de2615c5ad07f41d532f  BD 2000-10-02 Bruessels.md5
+f84ac6233f1c7f492167ee49c59eb590  bruxelles2000_1.jpg
+cc29319fb42927d8abad20f8d2fa5f86  bruxelles2000_3.jpg

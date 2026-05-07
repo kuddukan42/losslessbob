@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-22j.shnf 
+=================== 
+=================== 
+=================== 
+350b16f94b63dc62499bcfcf1adfebee  bd03-04-22j.txt
+63882413decd2d039b9745d7ddcd724a  houston_03-04-22_cd1_J_shn.md5
+2f7af2cbd6bb85759fce91014599b6c6  houston_03-04-22_cd1_J_Track 01.shn
+3ae963139408e654a486c5cf0039bcff  houston_03-04-22_cd1_J_Track 02.shn
+12d7962219bff17c1d22f0d3c6c1a146  houston_03-04-22_cd1_J_Track 03.shn
+0d104b0a3c1cc9bff8d979460dd2b1e6  houston_03-04-22_cd1_J_Track 04.shn
+d9ce198842c981d82ead5c4ee1937e75  houston_03-04-22_cd1_J_Track 05.shn
+c52b10a611f9cba39741d7ff49e4c256  houston_03-04-22_cd1_J_Track 06.shn
+87e86ae037f9b3839a7ac892956980b9  houston_03-04-22_cd1_J_Track 07.shn
+daf54e6f0529fdc53a4c048dfba5767d  houston_03-04-22_cd1_J_Track 08.shn
+64cfb514b9c2bdabe38281e21daf53a0  houston_03-04-22_cd1_J_Track 09.shn
+b5e63d29c0d1010bdbfac05148f38549  houston_03-04-22_cd1_J_Track 10.shn
+920bb768db52442be71b455d564290cc  houston_03-04-22_cd2_J_shn.md5
+3d25f6415048ff9639c770d42a60021b  houston_03-04-22_cd2_J_Track 01.shn
+86ffeba8b0bfd518abf629e08cbe29b8  houston_03-04-22_cd2_J_Track 02.shn
+df977a561d7316880b147332182a5480  houston_03-04-22_cd2_J_Track 03.shn
+91d883565adf68d10c0b030cd052e862  houston_03-04-22_cd2_J_Track 04.shn
+1febade44edda32ca699c80e089a5ed7  houston_03-04-22_cd2_J_Track 05.shn
+35c14a41f651a277e25a828e6d05136f  houston_03-04-22_cd2_J_Track 06.shn
+9cb33ad9a719f034a28109d920ca2974  houston_03-04-22_cd2_J_Track 07.shn
+cd1bac689455f3285c765fed8d7be605  houston_03-04-22_cd2_J_Track 08.shn
+69b7b0ff17cf858ca8eb926ee1de9862  houston_03-04-22_cd2_J_Track 09.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-22j.shnf 
+=================== 
+=================== 
+=================== 
+54df032ff9a5df7f92b0d0ff5f5f4cb6  [shntool]  houston_03-04-22_cd1_J_Track_01.wav
+a13d76f2166c33eec336f47ab26b676b  [shntool]  houston_03-04-22_cd1_J_Track_02.wav
+c0d207ad80725339f0f7af0c699a475f  [shntool]  houston_03-04-22_cd1_J_Track_03.wav
+d97e4d7e1780ffdf32a9e77a951483a2  [shntool]  houston_03-04-22_cd1_J_Track_04.wav
+1c9d9abcb152242ff402d082072b6c72  [shntool]  houston_03-04-22_cd1_J_Track_05.wav
+99155ef82b4e873b7564f71d3ea965da  [shntool]  houston_03-04-22_cd1_J_Track_06.wav
+9a5cc5ffc36991421c75f97de97c7a51  [shntool]  houston_03-04-22_cd1_J_Track_07.wav
+adee85fe9ec912ae56805033e8b3f8de  [shntool]  houston_03-04-22_cd1_J_Track_08.wav
+d1f3b550e4ecd86b36a2554f0a2d6766  [shntool]  houston_03-04-22_cd1_J_Track_09.wav
+f96995d5ac1394fed7f4e0bc859fd92c  [shntool]  houston_03-04-22_cd1_J_Track_10.wav
+fcb01b48664a75b40930bba0c1624362  [shntool]  houston_03-04-22_cd2_J_Track_01.wav
+84c9404a67efece9791af015ecd03d6a  [shntool]  houston_03-04-22_cd2_J_Track_02.wav
+e17813b268bdc18b1ab622ccfafa6162  [shntool]  houston_03-04-22_cd2_J_Track_03.wav
+f3787402753e653933956fa480bb9dbf  [shntool]  houston_03-04-22_cd2_J_Track_04.wav
+54911a193b1b3bcd8f421e5abe656ad8  [shntool]  houston_03-04-22_cd2_J_Track_05.wav
+9e0c8fadb06da7fd150f1eb62503faed  [shntool]  houston_03-04-22_cd2_J_Track_06.wav
+bf7b7c3b1c5f25f2bb1ef8e91fcf9b2d  [shntool]  houston_03-04-22_cd2_J_Track_07.wav
+79a9e609d6c040293c7c2be94a3eab49  [shntool]  houston_03-04-22_cd2_J_Track_08.wav
+79a240883dd590f827803311eeada7cf  [shntool]  houston_03-04-22_cd2_J_Track_09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-22j.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:28.29        5007534 B   ---   -e   ---xx    shn  0.4805  houston_03-04-22_cd1_J_Track 01.shn
+     5:19.55       56401086 B   ---   -e   ---xx    shn  0.5796  houston_03-04-22_cd1_J_Track 02.shn
+     3:29.48       36980622 B   ---   -e   ---xx    shn  0.5706  houston_03-04-22_cd1_J_Track 03.shn
+     6:21.36       67293198 B   ---   -e   ---xx    shn  0.6278  houston_03-04-22_cd1_J_Track 04.shn
+     7:25.61       78641598 B   ---   -e   ---xx    shn  0.5764  houston_03-04-22_cd1_J_Track 05.shn
+     6:42.04       70922334 B   ---   -e   ---xx    shn  0.6093  houston_03-04-22_cd1_J_Track 06.shn
+     6:52.31       72749838 B   ---   -e   ---xx    shn  0.5969  houston_03-04-22_cd1_J_Track 07.shn
+     6:11.73       65616222 B   ---   -e   ---xx    shn  0.6648  houston_03-04-22_cd1_J_Track 08.shn
+     6:40.67       70717710 B   ---   -e   ---xx    shn  0.5203  houston_03-04-22_cd1_J_Track 09.shn
+     5:50.19       61784814 B   ---   -e   ---xx    shn  0.5612  houston_03-04-22_cd1_J_Track 10.shn
+     5:44.14       60714654 B   ---   -e   ---xx    shn  0.6178  houston_03-04-22_cd2_J_Track 01.shn
+     4:29.25       47510526 B   ---   -e   ---xx    shn  0.4779  houston_03-04-22_cd2_J_Track 02.shn
+     7:11.07       76044990 B   ---   -e   ---xx    shn  0.6403  houston_03-04-22_cd2_J_Track 03.shn
+     6:01.73       63852222 B   ---   -e   ---xx    shn  0.5211  houston_03-04-22_cd2_J_Track 04.shn
+     0:24.60        4374846 B   ---   -e   ---xx    shn  0.4914  houston_03-04-22_cd2_J_Track 05.shn
+     6:30.51       68916078 B   ---   -e   ---xx    shn  0.6346  houston_03-04-22_cd2_J_Track 06.shn
+     3:35.37       38013150 B   ---   -e   ---xx    shn  0.5172  houston_03-04-22_cd2_J_Track 07.shn
+     7:00.25       74146926 B   ---   -e   ---xx    shn  0.6418  houston_03-04-22_cd2_J_Track 08.shn
+     6:02.25       63915726 B   ---   -e   ---xx    shn  0.6721  houston_03-04-22_cd2_J_Track 09.shn
+   102:22.65     1083604074 B                            0.5941  (19 files)
+=================== 
+=================== 
+=================== 

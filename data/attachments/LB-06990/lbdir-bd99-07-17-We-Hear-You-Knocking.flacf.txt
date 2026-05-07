@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-17-We-Hear-You-Knocking.flacf 
+=================== 
+=================== 
+=================== 
+38e285e8c87b69bc7301f834620fd096  A review.txt
+ac736f7c140911e7998593547609b89b  artwork\w-48b.jpg
+5417ef4d2b84909b41b3f9a355f9c22c  artwork\w-48cd.jpg
+d13cc4983e0e84eeb6592781506396e4  artwork\w-48cd2.jpg
+4f3228058b303c0141e182f0cdcc1f43  artwork\w-48f.jpg
+2529c9764771923461576063882fbb63  artwork\w-48ib.jpg
+121d6a349f191b7456d0df483123e2fa  artwork\w-48J.jpg
+06dd213a0c0b6c5792330fcea5034cfb  artwork\w-48l.jpg
+eaac37544f5c713f3bf6c9817da070e1  bd-We Hear You Knocking-d1\bd-We Hear You Knocking-d1.md5
+b61f2e5156d174ee42a89b752c52c6c8  bd-We Hear You Knocking-d1\Track01.flac
+21ce608d92f14039e7aeefc26179bfa1  bd-We Hear You Knocking-d1\Track02.flac
+1a6a4a39fa00a1ccc72959edc45745b8  bd-We Hear You Knocking-d1\Track03.flac
+94f10f62f1d87240381119bd139ebf37  bd-We Hear You Knocking-d1\Track04.flac
+19d6bcf808ed84b3473d7b32ccda4cfc  bd-We Hear You Knocking-d1\Track05.flac
+e14cd12f27b63b74e425a1c40f099262  bd-We Hear You Knocking-d1\Track06.flac
+2e07586d352512b2d0bca6a5ae9c9221  bd-We Hear You Knocking-d1\Track07.flac
+a9754b5f0fabd3c74751a66c0781f32a  bd-We Hear You Knocking-d1\Track08.flac
+f1a2eea064dcae8bd2ccc6cb0b6369fd  bd-We Hear You Knocking-d1\Track09.flac
+8fdbc549248a28b34793f3271d79efad  bd-We Hear You Knocking-d2\bd-We Hear You Knocking-d2.md5
+bb4cc625e56534f8eb38705a607be0f1  bd-We Hear You Knocking-d2\Track01.flac
+14a0e0c3cd75271196cc88b0962f527e  bd-We Hear You Knocking-d2\Track02.flac
+95600396db49b1790813d0e81a6803d2  bd-We Hear You Knocking-d2\Track03.flac
+0dbc8bbd015cc9f67eda5b8ff15385c8  bd-We Hear You Knocking-d2\Track04.flac
+34ec0cb46240c57083a539e816592efb  bd-We Hear You Knocking-d2\Track05.flac
+88878c61e56560300e9f8c8063a1b227  bd-We Hear You Knocking-d2\Track06.flac
+a5df9adece889bf3dba61d5bebf43cfb  bd-We Hear You Knocking-d2\Track07.flac
+7dcb7f24fa6f46d0a9572b88aac4fdc4  bd-We Hear You Knocking.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-17-We-Hear-You-Knocking.flacf\bd-We Hear You Knocking-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:5b644918e915ae076d8b4e27fa19e752
+Track02.flac:fa3b1db077aae60a098e7290a20d3d51
+Track03.flac:263b522c9a2558b1da2e8853fac9268a
+Track04.flac:94f1cccb416f1d1ce0f86249d543fa38
+Track05.flac:0f9fc11e554910907091900f0faeb13a
+Track06.flac:677e7c461594d631cab5a2e0e7a14a4e
+Track07.flac:6f10efce8eaae26df816fe4e33ba7836
+Track08.flac:5f79964d109c0ec0159704de28f77f82
+Track09.flac:b3ff5adfe14cfa0cdfc25067a6fb2614
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-17-We-Hear-You-Knocking.flacf\bd-We Hear You Knocking-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:6773119a5138f96b176426a8764959a2
+Track02.flac:a65922eabc6387ee8539f66ca8ac31c8
+Track03.flac:36af574c620a4cc1ade1ea00806a569b
+Track04.flac:245da3aea4d6fb3b5ba3f1cbe8019600
+Track05.flac:22e0b432d06489d95c922952f209f8e5
+Track06.flac:7740f64a80d5db97bf950a926577d4cb
+Track07.flac:2a7dfc5b055cc94ceea60b3bcfac8f0e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-17-We-Hear-You-Knocking.flacf\bd-We Hear You Knocking-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.43       33969980 B   ---   --   ---xx   flac  0.6108  Track01.flac
+     7:29.72       79372988 B   ---   --   ---xx   flac  0.6179  Track02.flac
+     5:24.31       57226556 B   ---   --   ---xx   flac  0.5983  Track03.flac
+     4:59.15       52778924 B   ---   --   ---xx   flac  0.6039  Track04.flac
+     9:06.02       96319148 B   ---   --   ---xx   flac  0.6431  Track05.flac
+     3:31.36       37305116 B   ---   --   ---xx   flac  0.6507  Track06.flac
+     4:26.64       47072972 B   ---   --   ---xx   flac  0.5588  Track07.flac
+     7:35.69       80424332 B   ---   --   ---xx   flac  0.6539  Track08.flac
+     6:41.48       70849340 B   ---   --   ---xx   flac  0.5112  Track09.flac
+    52:28.05      555319356 B                            0.6073  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-17-We-Hear-You-Knocking.flacf\bd-We Hear You Knocking-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:27.48       89547740 B   ---   --   ---xx   flac  0.6232  Track01.flac
+     7:36.48       80551340 B   ---   --   ---xx   flac  0.6351  Track02.flac
+    12:11.48      129061340 B   ---   --   ---xx   flac  0.5515  Track03.flac
+     3:57.48       41919740 B   ---   --   ---xx   flac  0.6769  Track04.flac
+     7:42.51       81616796 B   ---   --   ---xx   flac  0.6465  Track05.flac
+     4:25.15       46781324 B   ---   --   ---xx   flac  0.7367  Track06.flac
+     5:36.18       59312780 B   ---   --   ---xx   flac  0.7047  Track07.flac
+    49:57.51      528791060 B                            0.6346  (7 files)
+=================== 
+=================== 
+=================== 

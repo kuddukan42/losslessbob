@@ -1,0 +1,53 @@
+Bob Dylan
+Times Union Center
+Albany NY
+2007-10-06
+
+taped by Krewe Chief on
+Church Audio Cardiods>CA STC-9000 Pre-Amp >Edirol R-09 at 24/48 >USB >Sonic Foundry 16bit wave> FlacFrontend
+Sect, 106 Row F Seat 14
+
+Intro
+Leopard-Skin Pillbox Hat
+Don't Think Twice, It's Alright
+Watchin' The River Flow
+Simple Twist of Fate
+Rollin' and Tumblin'
+When The Deal Goes Down
+'Till I Fell In Love With You
+Workingman's Blues
+Things Have Changed
+The Lonesome Death of Hattie Carroll
+Highway 61 Revisited
+
+
+Ain't Talkin'
+Summer Days
+Masters of War
+
+
+(Encore)
+Thunder On The Mountain
+All Along the Watchtower
+
+
+
+d2_t06-fixed.flac:ab071c46bd3988ad9352092a239dc4ae
+d1_t01-fixed.flac:86d2f0f36165dec88a5ba5cc300a0e2b
+d1_t02-fixed.flac:70420ca98f0c5ef39833290ca7a87f94
+d1_t03-fixed.flac:2c88cbdf80824deb34e577039fea6ff2
+d1_t04-fixed.flac:0afd3f5c4fef3c83241826b7ac0a0104
+d1_t05-fixed.flac:01e134afe5d27344bb4782ee0f50683c
+d1_t06-fixed.flac:6abae3310b218d9b4c84f5cda23eb746
+d1_t07-fixed.flac:98618c0d49d4b6e55b330a6297af6a27
+d1_t08-fixed.flac:1e1cc1298eb411f37f6f61a3ba81fa4f
+d1_t09-fixed.flac:c82803bdb9c673eb613e0f8ecefc7249
+d1_t10-fixed.flac:6d39ad304ba453cea4dd0c9aa037ba57
+d1_t11-fixed.flac:ff76fd1aaea8ee913b37f6a70d847747
+d1_t12-fixed.flac:3de44f0cb3d32e630e5d7883d39d4228
+d2_t01-fixed.flac:f4a6954e17c65a10674f8a8e40a463f0
+d2_t02-fixed.flac:688a609c54560bc3c26302011802614e
+d2_t03-fixed.flac:42a828a0cc42720b0fcdf5280a9083d3
+d2_t04-fixed.flac:649ed844798a9bb539b4565ca320b575
+d2_t05-fixed.flac:177a1ad53534173067fb9a436daba116
+

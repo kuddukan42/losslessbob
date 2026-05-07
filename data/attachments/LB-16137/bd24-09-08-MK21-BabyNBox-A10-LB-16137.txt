@@ -1,0 +1,10 @@
+Bob Dylan, 9/8/24, Maryland Heights, MO, 
+
+LB-16137, mk21 babynbox a10 24, ---24/96 version---, SOURCE: Schoeps MK21 subcard caps (DINa hat) > NBob active cables > BabyNBox > A10 - front row of the reserved lawn, first seat to the left of the center aisle., LINEAGE: Sony A10 > Computer harddrive > iZotope RX7 (De-click to remove some of the louder claps) > Samplitude 11 (slight EQ with EQ116 plugin, soft limit with sMax11 plugin, fades, track) > Foobar2000 (tagging)., RECORDED BY: FOBSTL, TRANSFERRED BY: FOBSTL
+---------------------------------------------------
+bittorrent download 10/24; did not review this
+---------------------------------------------------
+SETLIST:, 01: intro, 02: Rainy Day Women #12 & 35, 03: It Ain't Me, Babe, 04: Love Sick, 05: Little Queenie (Chuck Berry cover), 06: Mr. Blue(The Fleetwoods cover), 07: Early Roman Kings, 08: A Hard Rain's A-Gonna Fall, 09: Under the Red Sky, 10: Things Have Changed, 11: Stella Blue (Grateful Dead cover), 12: Six Days on the Road (Paul Davis cover), 13: Can't Wait, 14: I'll Be Your Baby Tonight, 15: Soon After Midnight, 16: Simple Twist of Fate (with Mickey Raphael on harmonica), 17: Ballad of a Thin Man (with Mickey Raphael on harmonica)
+---------------------------------------------------
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

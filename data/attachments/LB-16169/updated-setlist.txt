@@ -1,0 +1,54 @@
+Bob Dylan
+O2 universum
+Prague, The Czech Republic
+October 5, 2024
+
+Source: Audience recording > Tascam DR-07X (internal mics)(16/44) > usb > WAV > Soundforge (unknown version)(track balancing, declipping) > CD Wave (tracking) > TLH (format conversions & checksums) > FLAC. No compression, EQ, or filters have been used on this recording (Finbar, 2024-10-14). A "Nightly Moth" recording.
+
+CD 1:
+01. All Along the Watchtower
+02. It Ain't Me, Babe
+03. I Contain Multitudes
+04. False Prophet
+05. When I Paint My Masterpiece
+06. Black Rider
+07. Watching the River Flow
+08. My Own Version of You
+
+CD 2:
+09. Desolation Row
+10. Crossing The Rubicon
+11. Key West (Philosopher Pirate)
+12. It's All Over Now, Baby Blue
+13. I've Made Up My Mind To Give Myself To You
+14. Dignity
+15. Mother of Muses
+16. Goodbye Jimmy Reed
+17. Every Grain of Sand
+
+Total time = 107:34
+
+Personnel:
+Bob Dylan - vocals, piano, & harmonica
+Tony Garnier - electric & acoustic bass
+Jim Keltner - drums
+Bob Britt - acoustic & electric guitars
+Doug Lancio - acoustic & electric guitars 
+
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t01.flac:201b34b2155ae76c7817e68e5fb71251
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t02.flac:b37fe2eac5de6bdfc647da809e58e96e
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t03.flac:57952e097bdbd23c24dbc80733891e81
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t04.flac:f8c22d05d4adccb19ac7c4b03e10a647
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t05.flac:3c075d097737e32111e2ca0d03c10a60
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t06.flac:696e9266f7cd18be8169302282619bf9
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t07.flac:eab8159ff2112d207e34436a8f900239
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t08.flac:f82aab7b32bef112e7af63f848aac964
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t09.flac:8bfa68efac7a4ac9ab24748306925a87
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t10.flac:870c4684b267caf5e42f05c018c992e7
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t11.flac:37832313ef5120327d62755739e47a8f
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t12.flac:60536428b9413f03707bbd9260ae21e4
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t13.flac:25333bb80cd70af7c06e532320db4b03
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t14.flac:948fa5ed2ff87a2019638cde54d37a4b
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t15.flac:da171b822e67dd36bc1d7822ee4a4aa2
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t16.flac:7b1de48fc32560ed9889a558b159f970
+Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t17.flac:40f48cf6ee81c1505ea5cd3dc760131e

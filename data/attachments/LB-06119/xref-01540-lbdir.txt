@@ -1,0 +1,76 @@
+===================
+===================
+===================
+=== md5 for: bd95-12-08-b.flacf
+===================
+===================
+===================
+a5dccbdc378fc899a341f71e3472a71f *bd1995-12-08 Worchester.md5
+d40d1cd3bbee74f46976e7d361163f0f *bd1995-12-08 Worchester01.flac
+14598396b5dd6586902695eb53f0cbbe *bd1995-12-08 Worchester02.flac
+ed53c4d54719067819ff0b77b9d2f0f9 *bd1995-12-08 Worchester03.flac
+e6093003a5ee5b79ab2637d713ae796e *bd1995-12-08 Worchester04.flac
+8bece4db104b4179f58757f402614281 *bd1995-12-08 Worchester05.flac
+304bbfe1b2732d65f030ffa0bb04198f *bd1995-12-08 Worchester06.flac
+5355f81f501f580680fb52f477737580 *bd1995-12-08 Worchester07.flac
+e290b009c34bab38f5dad7f5fe0107fd *bd1995-12-08 Worchester08.flac
+610d721100fd70cc37a05743f2bf630c *bd1995-12-08 Worchester09.flac
+bf7d17675a886fa5d80d31a3b4a4e74e *bd1995-12-08 Worchester10.flac
+84ab27394d4c8ed6fa6ffd935ebdaad8 *bd1995-12-08 Worchester11.flac
+4c701b9b0a11954ce8eb074427f22d36 *bd1995-12-08 Worchester12.flac
+f2a2acad835473e074fa95b4b916416b *bd1995-12-08 Worchester13.flac
+419563d838f95cbdd3cb22c0b20d646a *bd1995-12-08 Worchester14.flac
+3fc1a41dc0d8c7d13ef8d2def4e5fff9 *bd1995-12-08 Worchester15.flac
+3e5641713f7a474c0fe7567f6eaa9028 *bd1995-12-08 Worchester16.flac
+1e1000d3aca20e870bb28fbaf4fce8b6 *Note.txt
+===================
+===================
+===================
+=== ffp for: bd95-12-08-b.flacf
+===================
+===================
+===================
+bd1995-12-08 Worchester01.flac:a5ae8f1e0db742147ba701c59a081ce9
+bd1995-12-08 Worchester02.flac:56027c571a17296d3c6063488d9718a5
+bd1995-12-08 Worchester03.flac:62643f6de8c6052cb2655ae2d976e307
+bd1995-12-08 Worchester04.flac:0b320c3e1e69311b9c80f3d88e07aab6
+bd1995-12-08 Worchester05.flac:c46171e0435a8670536bdda719d3dae7
+bd1995-12-08 Worchester06.flac:7b05eafa5b2ffc865efc46fea528fa37
+bd1995-12-08 Worchester07.flac:e6cb23a2f327d27e5cca9e09a56bdce2
+bd1995-12-08 Worchester08.flac:2eb68cdce7ad54e3e1b14c5c22f991bd
+bd1995-12-08 Worchester09.flac:ad664319fdcecc3f690d4767415c0aa7
+bd1995-12-08 Worchester10.flac:7c4c643603e06d82268080e1f05aaab6
+bd1995-12-08 Worchester11.flac:14dc209039f152e0e6bbae9262f32e7c
+bd1995-12-08 Worchester12.flac:81fec01df7df5deb6c8fc19c886f63a0
+bd1995-12-08 Worchester13.flac:5c803c6712a110e2bf1c74ddc6984dc1
+bd1995-12-08 Worchester14.flac:a5e39780323afd3093ba91f8cc34d2ac
+bd1995-12-08 Worchester15.flac:e933803d058e80b61d2489448003d486
+bd1995-12-08 Worchester16.flac:2a65775b89ae5d21dd88ca392062a4ad
+===================
+===================
+===================
+=== shntool len for: bd95-12-08-b.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.54       56927852 B   ---   --   ---xx   flac  0.5470  bd1995-12-08 Worchester01.flac
+     5:55.38       62711420 B   ---   --   ---xx   flac  0.4959  bd1995-12-08 Worchester02.flac
+     6:39.66       70538876 B   ---   --   ---xx   flac  0.5353  bd1995-12-08 Worchester03.flac
+     7:29.58       79340060 B   ---   --   ---xx   flac  0.4797  bd1995-12-08 Worchester04.flac
+     7:47.55       82508204 B   ---   --   ---xx   flac  0.5094  bd1995-12-08 Worchester05.flac
+     7:11.01       76030796 B   ---   --   ---xx   flac  0.5149  bd1995-12-08 Worchester06.flac
+     8:49.12       93343868 B   ---   --   ---xx   flac  0.4518  bd1995-12-08 Worchester07.flac
+     5:51.18       61958780 B   ---   --   ---xx   flac  0.4296  bd1995-12-08 Worchester08.flac
+     6:05.27       64449548 B   ---   --   ---xx   flac  0.4257  bd1995-12-08 Worchester09.flac
+     6:33.09       69346412 B   ---   --   ---xx   flac  0.5066  bd1995-12-08 Worchester10.flac
+     7:26.09       78695612 B   ---   --   ---xx   flac  0.5070  bd1995-12-08 Worchester11.flac
+     1:07.03       11825900 B   ---   --   ---xx   flac  0.4509  bd1995-12-08 Worchester12.flac
+     7:20.61       77759516 B   ---   --   ---xx   flac  0.5163  bd1995-12-08 Worchester13.flac
+     6:34.00       69501644 B   ---   --   ---xx   flac  0.5184  bd1995-12-08 Worchester14.flac
+    10:31.15      111343724 B   ---   --   ---xx   flac  0.4588  bd1995-12-08 Worchester15.flac
+     6:52.35       72758752 B   -b-   --   ---xx   flac  0.5171  bd1995-12-08 Worchester16.flac
+   107:37.11     1139040964 B                            0.4923  (16 files)
+===================
+===================
+===================

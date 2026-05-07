@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-03-30-asm-schubert.flacf 
+=================== 
+=================== 
+=================== 
+314133fe6184b395b406ee75b6b1178c  bd98-03-30-asm-schubert-LB-3486.txt
+f0002535b05739659cf1a603b560378a  disc1\Fingerprint.txt
+605513ed7ae3adf0648e334c7ac252f9  disc1\Track01.flac
+4f1652f5360e786a1c2867026b3d2295  disc1\Track02.flac
+3b67c531f73567f3096dc3e41ed76098  disc1\Track03.flac
+8421a63e9207f5f4b0a7aef45263913b  disc1\Track04.flac
+8aa6eac70ef2d4523071b6f909a4d48c  disc1\Track05.flac
+57c5df798024940f25dc2e56165c47ea  disc1\Track06.flac
+2e83be3cc63db7659cc7e1486aff40bf  disc1\Track07.flac
+aab8516c66faaf3747e25b52c9fc06fc  disc1\Track08.flac
+96e3549cd34d2244bfb66afe639965d2  disc1\Track09.flac
+2cb06a1dac44b15a12017309bc93fe75  disc1\Track10.flac
+bb764f03f87fe6b679cfad5b9c110627  disc1\Track11.flac
+067a708f57ea629891a48fd0f215f0ca  disc2\Fingerprint.txt
+c8ba8e8537e5ee94f8d9194c79479af3  disc2\Track01.flac
+4625972c8b771c7145149ea4dcd150c3  disc2\Track02.flac
+5a4edb1e2d86f811e13aee98e8277cd2  disc2\Track03.flac
+cf147c4736c0c4fc49c1240197f0620b  disc2\Track04.flac
+06dc35510864afa2b5cd46d6f3db8fc8  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-03-30-asm-schubert.flacf\disc2 
+=================== 
+=================== 
+=================== 
+Track01.flac:9d8fb01c0f33ee53328301de414e7f75
+Track02.flac:838897b0d3500ae739b34fc8cadcfd8a
+Track03.flac:c965afc585a49d87b6f6da0a231bb70e
+Track04.flac:62de63edbab6d5320ffc2776af9f1fcc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-03-30-asm-schubert.flacf\disc1 
+=================== 
+=================== 
+=================== 
+Track01.flac:f8a9a3a4c2d012a44ec61e43024d5baa
+Track02.flac:40d708e6a09d5f0fbb9e215cf1ca128d
+Track03.flac:4cc44036500db8854ba2d8fec20129db
+Track04.flac:382c80b374441f0de4e1ec95f6a3810e
+Track05.flac:ca156666be2ac5d35e22ea5c25054d9b
+Track06.flac:ee0133133539c510b8c39861843a3a86
+Track07.flac:2c2ec2c5abd969e387decb29e3ce6fad
+Track08.flac:0474a3ae53f34cb7d9a2888d84bbf861
+Track09.flac:f12ef48ffb21b4a64c832d2bc84cefa8
+Track10.flac:79a6ed9febfc03033d4e0297a229be1c
+Track11.flac:efa46e4c27c5408d311279f372a62872
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-03-30-asm-schubert.flacf\disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:12.66       65776076 B   ---   --   ---xx   flac  0.5846  Track01.flac
+     6:59.43       74012780 B   ---   --   ---xx   flac  0.5635  Track02.flac
+     5:59.68       63487580 B   ---   --   ---xx   flac  0.5396  Track03.flac
+     4:54.31       51934556 B   ---   --   ---xx   flac  0.5808  Track04.flac
+    24:06.58      255210992 B                            0.5665  (4 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-03-30-asm-schubert.flacf\disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.21       40092236 B   ---   --   ---xx   flac  0.5485  Track01.flac
+     4:52.54       51635852 B   ---   --   ---xx   flac  0.5453  Track02.flac
+     6:22.74       67558892 B   ---   --   ---xx   flac  0.5554  Track03.flac
+     5:16.70       55907084 B   ---   --   ---xx   flac  0.5431  Track04.flac
+     6:29.03       68626700 B   ---   --   ---xx   flac  0.5789  Track05.flac
+     3:34.13       37780220 B   ---   --   ---xx   flac  0.5510  Track06.flac
+     6:38.48       70320140 B   ---   --   ---xx   flac  0.5375  Track07.flac
+     7:23.27       78208748 B   ---   --   ---xx   flac  0.5803  Track08.flac
+     4:59.65       52896524 B   ---   --   ---xx   flac  0.5250  Track09.flac
+     7:14.58       76694060 B   ---   --   ---xx   flac  0.5390  Track10.flac
+     6:09.23       65145740 B   ---   --   ---xx   flac  0.5788  Track11.flac
+    62:49.06      664866196 B                            0.5544  (11 files)
+=================== 
+=================== 
+=================== 

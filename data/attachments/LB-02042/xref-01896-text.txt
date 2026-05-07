@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== Bob Dylan 1999-02-15 Van Andel Arena, Grand Rapids, Michigan, USA [f. LB-2042].md5
+===================
+===================
+===================
+306f8366786275d62e7427dca30da34c *01 Gotta Serve Somebody.flac
+082d628fc5244c142205bc89f79bb17a *02 Million Miles.flac
+9ad0a03ad3cf45904acf27a91f431823 *03 Maggie's Farm.flac
+ccc0f6d344d6ceaf34edb6141e7e655d *04 Just Like A Woman.flac
+b04685a75b284390e77483bfdd1295ad *05 Silvio.flac
+f9c6ffa249c1745e1bb06b4010f48a24 *06 Stone Walls And Steel Bars.flac
+b360b4d8084b0af08193355e1af2a9c7 *07 Masters Of War.flac
+05cb46fb9c7ea4a0abf22ca720ec2d29 *08 It's All Over Now, Baby Blue.flac
+7cb4b9eb6f5232c8beb804ac7748de35 *09 Tangled Up In Blue.flac
+b4c502dd816605732fc03f9d0f76d745 *10 Honky Tonk Blues.flac
+809878917ae1fc1a57f0c0ad5ac46971 *11 Ballad Of A Thin Man.flac
+7818a0958337e25cf0b295e0a58ae05f *12 Highway 61 Revisited.flac
+32b58a9163f73fb654fd3127d492d6a4 *13 Love Sick.flac
+0a7324e4c4fbacfd3996533640d50186 *14 Rainy Day Women #12 & 35.flac
+03c5decec6d51350dd7cfae698947df8 *15 Don't Think Twice, It's All Right.flac
+91377929e4448565fca5b09ce91acb5b *16 Not Fade Away.flac
+8e9166f24fb880c7462dd752dfbba77b *Bob Dylan 1999-02-15 Van Andel Arena, Grand Rapids, Michigan, USA [f. LB-2042].txt
+74947655b8a2415aea0c35c11b541668 *DylanHonkyTonkBack.jpg
+8b742581c6bc39fe8fa1cd038c80df83 *DylanHonkyTonkFront.jpg
+===================
+===================
+===================
+=== Bob Dylan 1999-02-15 Van Andel Arena, Grand Rapids, Michigan, USA [f. LB-2042].txt
+===================
+===================
+===================
+Van Andel Arena
+Grand Rapids
+Michigan, USA
+Feb 15, 1999
+
+http://jokerman.org.uk/lb/detail/LB-02042.html
+Rating: A-
+
+Got this as a good friend (-ts-), copy of the boot "Honky Tonk Blues" (Artwork included) 
+Extracted with EAC, removed a few glitches and a disturbing burst of static at start of disc 1 - then converted to .SHNs > finally converted to .FLACs
+Very good sounding Aud recording.
+
+01 Gotta Serve Somebody
+02 Million Miles
+03 Maggie's Farm
+04 Just Like A Woman
+05 Silvio
+06 Stone Walls And Steel Bars
+07 Masters Of War
+08 It's All Over Now, Baby Blue
+
+09 Tangled Up In Blue
+10 Honky Tonk Blues (Brian Setzer on guitar)
+11 Ballad Of A Thin Man (with 5 piece horn section and Brian Setzer on guitar)
+12 Highway 61 Revisited (Brian Setzer on guitar)
+13 Love Sick
+14 Rainy Day Women #12 & 35 (with 5 piece horn section and Brian Setzer on guitar)
+15 Don't Think Twice, It's All Right
+16 Not Fade Away (Brian Setzer on guitar)
+
+306f8366786275d62e7427dca30da34c *01 Gotta Serve Somebody.flac
+082d628fc5244c142205bc89f79bb17a *02 Million Miles.flac
+9ad0a03ad3cf45904acf27a91f431823 *03 Maggie's Farm.flac
+ccc0f6d344d6ceaf34edb6141e7e655d *04 Just Like A Woman.flac
+b04685a75b284390e77483bfdd1295ad *05 Silvio.flac
+f9c6ffa249c1745e1bb06b4010f48a24 *06 Stone Walls And Steel Bars.flac
+b360b4d8084b0af08193355e1af2a9c7 *07 Masters Of War.flac
+05cb46fb9c7ea4a0abf22ca720ec2d29 *08 It's All Over Now, Baby Blue.flac
+7cb4b9eb6f5232c8beb804ac7748de35 *09 Tangled Up In Blue.flac
+b4c502dd816605732fc03f9d0f76d745 *10 Honky Tonk Blues.flac
+809878917ae1fc1a57f0c0ad5ac46971 *11 Ballad Of A Thin Man.flac
+7818a0958337e25cf0b295e0a58ae05f *12 Highway 61 Revisited.flac
+32b58a9163f73fb654fd3127d492d6a4 *13 Love Sick.flac
+0a7324e4c4fbacfd3996533640d50186 *14 Rainy Day Women #12 & 35.flac
+03c5decec6d51350dd7cfae698947df8 *15 Don't Think Twice, It's All Right.flac
+91377929e4448565fca5b09ce91acb5b *16 Not Fade Away.flac
+b2a92e43541bca553ecb6f0c97868dd5 *Bob Dylan 1999-02-15 Van Andel Arena, Grand Rapids, Michigan, USA [f. LB-2042].txt
+74947655b8a2415aea0c35c11b541668 *DylanHonkyTonkBack.jpg
+8b742581c6bc39fe8fa1cd038c80df83 *DylanHonkyTonkFront.jpg
+===================
+===================
+===================

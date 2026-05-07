@@ -1,0 +1,64 @@
+Bob Dylan
+06/21/1995
+Theatre of Living Arts
+Philadelphia, PA
+
+Source: Schoeps mk4v> VMS 5U> SBM-1> Sony D100 pro> HP standalone burner
+
+Taper:
+Jeff Travitz
+
+Encoding: EAC(secure)> WaveLab 5.0 (fades/edits)> CD WAV v 1.93.3> FLAC 
+by Brian DeLong - 01/06/2008
+
+
+Disc 1:
+
+------------------------------
+01. Intro
+02. Down in the Flood
+03. If NOt for You
+04. All Along the Watchtower
+05. License to Kill
+06. Most Likely You Go Your Way and I Go Mine
+07. Silvio
+08. Mr. Tambourine Man
+
+
+Disc 2:
+
+------------------------------
+01. Visions of Johanna
+02. Girl from the North Country
+03. God Knows
+04. Never Gonna Be The Same
+05. Unbelievable
+06. (encore break)
+
+Encore:
+07. Knockin on Heaven's Door
+08. Tangled Up in Blue
+09. Rainy Day Women #12 & 35
+
+
+
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:27.70        4931536 B   ---   --   -----    wav  1.0000  bd95-06-21d1t01.wav
+     4:57.37       52477868 B   ---   --   -----    wav  1.0000  bd95-06-21d1t02.wav
+     4:29.02       47456348 B   ---   --   -----    wav  1.0000  bd95-06-21d1t03.wav
+     6:28.09       68464412 B   ---   --   -----    wav  1.0000  bd95-06-21d1t04.wav
+     8:24.42       89004428 B   ---   --   -----    wav  1.0000  bd95-06-21d1t05.wav
+     7:52.73       83432540 B   ---   --   -----    wav  1.0000  bd95-06-21d1t06.wav
+     7:04.32       74868908 B   ---   --   -----    wav  1.0000  bd95-06-21d1t07.wav
+     8:01.61       84991916 B   ---   --   -----    wav  1.0000  bd95-06-21d1t08.wav
+     7:24.72       78490988 B   ---   --   -----    wav  1.0000  bd95-06-21d2t01.wav
+     5:52.45       62198684 B   ---   --   -----    wav  1.0000  bd95-06-21d2t02.wav
+     6:56.06       73396556 B   ---   --   -----    wav  1.0000  bd95-06-21d2t03.wav
+     6:28.58       68579660 B   ---   --   -----    wav  1.0000  bd95-06-21d2t04.wav
+     5:45.45       60963884 B   ---   --   -----    wav  1.0000  bd95-06-21d2t05.wav
+     2:03.47       21807788 B   ---   --   -----    wav  1.0000  bd95-06-21d2t06.wav
+     8:43.47       92367788 B   ---   --   -----    wav  1.0000  bd95-06-21d2t07.wav
+     9:14.27       97789148 B   ---   --   -----    wav  1.0000  bd95-06-21d2t08.wav
+     5:09.24       54568144 B   ---   --   -----    wav  1.0000  bd95-06-21d2t09.wav
+   105:25.22     1115790596 B                            1.0000  (17 files)

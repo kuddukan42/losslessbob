@@ -1,0 +1,66 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-xx-Detroit-Comp-d2 
+=================== 
+=================== 
+=================== 
+f62978db6e41723e9ea2906b547ce1d3  bd04-03-xx-Detroit-Comp-d2.txt
+c98009fa438da541d02ac90ae35fcb0c  d2t01-fixed.shn
+9a497e0cb01d9f368b6b51e64f747dc4  d2t02-fixed.shn
+9de76cfa54a4ab25d8c666858b6db3e1  d2t03-fixed.shn
+99f92280fa102c2bcb483e9369c6647b  d2t04-fixed.shn
+4b26716625a9a8602149c0e9693b49cf  d2t05-fixed.shn
+f8c4a475130b78f68c3895ac1e1726d2  d2t06-fixed.shn
+940da2d65bdfc7584df7b7c5f2362ff3  d2t07-fixed.shn
+e74d3785aac141589fa084555663f349  d2t08-fixed.shn
+769d331727b10ac8835e8cfe9a3ac0a5  d2t09-fixed.shn
+cb0539b3cc81792be84375aa4a3a81a8  d2t10-fixed.shn
+05a21e16502e78e09db5c52c641a07d2  d2t11-fixed.shn
+e44f62d7cc946f6e886dff7c8cea9906  d2t12-fixed.shn
+5f9b5b41aad013556dc49f8fd927b1bf  det2.jpg
+ae40c2ec66dc1e71b9fd834900589736  det2.md5
+c147515866913f7def09d488fcaa5e6d  det2.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-xx-Detroit-Comp-d2 
+=================== 
+=================== 
+=================== 
+3acf74877904d83087ea8c3f1ba8c221  [shntool]  d2t01-fixed.wav
+b49e48d1837aa48a13d7d817a550a8c3  [shntool]  d2t02-fixed.wav
+9e10da1e5519cde96298c2cad95beb89  [shntool]  d2t03-fixed.wav
+31f747ab3589eda2e94954c1cae27baf  [shntool]  d2t04-fixed.wav
+ded2cbb5aac83a6245ee1402f1cac166  [shntool]  d2t05-fixed.wav
+aad2c5ae20b968f44155ecd86121ff2a  [shntool]  d2t06-fixed.wav
+0475134d89420c89656eb7155679adb4  [shntool]  d2t07-fixed.wav
+9852a5e29a5b5852aece9b57a877f0be  [shntool]  d2t08-fixed.wav
+9662bf4b6ac198a33a79c6935428f287  [shntool]  d2t09-fixed.wav
+f908aec680208f1da47cc65f71258147  [shntool]  d2t10-fixed.wav
+fb2625d62bb385da8b916416a2ab8dc0  [shntool]  d2t11-fixed.wav
+9b43e0c52c6fd8a7a838283ed75a0af0  [shntool]  d2t12-fixed.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-xx-Detroit-Comp-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.36       43302716 B   ---   --   -----    wav  1.0000  d2t01-fixed.wav
+     5:38.06       59637356 B   ---   --   -----    wav  1.0000  d2t02-fixed.wav
+     5:35.57       59228108 B   ---   --   -----    wav  1.0000  d2t03-fixed.wav
+     5:55.26       62683196 B   ---   --   -----    wav  1.0000  d2t04-fixed.wav
+     7:20.32       77691308 B   ---   --   -----    wav  1.0000  d2t05-fixed.wav
+     6:26.49       68205692 B   ---   --   -----    wav  1.0000  d2t06-fixed.wav
+     5:28.74       58033292 B   ---   --   -----    wav  1.0000  d2t07-fixed.wav
+     6:35.15       69713324 B   ---   --   -----    wav  1.0000  d2t08-fixed.wav
+     6:18.43       66780380 B   ---   --   -----    wav  1.0000  d2t09-fixed.wav
+     5:58.03       63158300 B   ---   --   -----    wav  1.0000  d2t10-fixed.wav
+     5:47.49       61326092 B   ---   --   -----    wav  1.0000  d2t11-fixed.wav
+     7:27.45       78956684 B   ---   --   -----    wav  1.0000  d2t12-fixed.wav
+    72:37.60      768716448 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

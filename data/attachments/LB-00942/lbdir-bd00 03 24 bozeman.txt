@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00 03 24 bozeman 
+=================== 
+=================== 
+=================== 
+cc2296815f42a3b945a001d9b3c5847f  00 03 24 d1 t01.shn
+a1416647fe2754d1c2f1a18fa180818c  00 03 24 d1 t02.shn
+aedb006df7242eea0904131ca1b2cdd4  00 03 24 d1 t03.shn
+933e6d0d308c42ca0cb7771bfb25fe16  00 03 24 d1 t04.shn
+05871986f0a162002b7c3a6ff029b743  00 03 24 d1 t05.shn
+6774bba17c9b1e5d35daa1aa92c9d4e3  00 03 24 d1 t06.shn
+f465e662c776cfb4d8e7bd2979f8b9a7  00 03 24 d1 t07.shn
+8b977a663fec62699c2c14ba9d8621f2  00 03 24 d1 t08.shn
+17c56ccf5bedaee31d08730088e78ea2  00 03 24 d1 t09.shn
+94f5c2d8ff4bd648917a1268f89e38fd  00 03 24 d1 t10.shn
+e476f7af1db963bab2d6a599708bb52b  00 03 24 d1 t11.shn
+0a369de16bb4be98c0f822b17fb91308  00 03 24 d1 t12.shn
+18b5ce389a9b5b391dec999c5dbff984  00 03 24 d2 t01.shn
+beff871e61fbdc20e56d35465b99ded7  00 03 24 d2 t02.shn
+32be3e44aa822fa6ae531c3511f8390f  00 03 24 d2 t03.shn
+c7715da8619defce8a5b214bf9690789  00 03 24 d2 t04.shn
+ebfb3f6dba4248ee4b2054f7c26ac448  00 03 24 d2 t05.shn
+23e8f0668e7d8d0bc40e93e44338f298  00 03 24 d2 t06.shn
+476cf8d4f18be3b1aa5e684639a511b0  bd00-03-24.txt
+e9772fd49d400cdb4b6b3ae883d74152  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00 03 24 bozeman 
+=================== 
+=================== 
+=================== 
+bfede9a0c3d36a1ada473cad34aaccb9  [shntool]  00_03_24_d1_t01.wav
+1bf26fe1aaf23edc8c9cfc3d2b0cee46  [shntool]  00_03_24_d1_t02.wav
+d07503d7f3d8cc7f17ccc27599768fe8  [shntool]  00_03_24_d1_t03.wav
+e2f7c98fad20d4a83a7698df8a7d7e76  [shntool]  00_03_24_d1_t04.wav
+9ba8b9cd96a1f01dbf9efb3af712e79a  [shntool]  00_03_24_d1_t05.wav
+4faba770de8071ad8bb3f333a33ed820  [shntool]  00_03_24_d1_t06.wav
+1deffc15eaffdf5b4b17bf923ca8438c  [shntool]  00_03_24_d1_t07.wav
+5c1e2c27792b9585ff462e5ac9afb600  [shntool]  00_03_24_d1_t08.wav
+6e1e98acbcdd692e16cc3dcee6396529  [shntool]  00_03_24_d1_t09.wav
+c70b9bfbeb67505d943761c1fd405aa1  [shntool]  00_03_24_d1_t10.wav
+7834d3cece408d4dbc4b2db9d3130e85  [shntool]  00_03_24_d1_t11.wav
+894efd1f558772941f52956224a138c0  [shntool]  00_03_24_d1_t12.wav
+4257f7fc04069250e3d83079b530d56f  [shntool]  00_03_24_d2_t01.wav
+7ed012d56f6c31942efa22dc226eb291  [shntool]  00_03_24_d2_t02.wav
+c0694b9e170a909c615bbc6144f553ea  [shntool]  00_03_24_d2_t03.wav
+835d5097ab3bd16da0806ed2c55e741b  [shntool]  00_03_24_d2_t04.wav
+3c590e63b4db21356c6896cd3ea73eb7  [shntool]  00_03_24_d2_t05.wav
+65149c47f1c0ee42609914fd9c341034  [shntool]  00_03_24_d2_t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00 03 24 bozeman 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:34.19       27210332 B   ---   --   ---xx    shn  0.6676  00 03 24 d1 t01.shn
+     6:16.27       66389948 B   ---   --   ---xx    shn  0.6423  00 03 24 d1 t02.shn
+     7:38.07       80807708 B   ---   --   ---xx    shn  0.6383  00 03 24 d1 t03.shn
+     6:53.66       73008476 B   ---   --   ---xx    shn  0.5634  00 03 24 d1 t04.shn
+     8:05.18       85596380 B   ---   --   ---xx    shn  0.6647  00 03 24 d1 t05.shn
+     4:07.42       43669628 B   ---   --   ---xx    shn  0.6131  00 03 24 d1 t06.shn
+     2:51.62       30310268 B   ---   --   ---xx    shn  0.6326  00 03 24 d1 t07.shn
+     4:22.30       46287404 B   ---   --   ---xx    shn  0.6244  00 03 24 d1 t08.shn
+     6:32.18       69191180 B   ---   --   ---xx    shn  0.5878  00 03 24 d1 t09.shn
+     7:48.59       82694012 B   ---   --   ---xx    shn  0.6513  00 03 24 d1 t10.shn
+     7:08.39       75590972 B   ---   --   ---xx    shn  0.5655  00 03 24 d1 t11.shn
+     6:40.50       70677644 B   ---   --   ---xx    shn  0.6449  00 03 24 d1 t12.shn
+     6:27.58       68403260 B   ---   --   ---xx    shn  0.6022  00 03 24 d2 t01.shn
+     7:00.15       74123324 B   ---   --   ---xx    shn  0.6332  00 03 24 d2 t02.shn
+     8:43.71       92424236 B   ---   --   ---xx    shn  0.6308  00 03 24 d2 t03.shn
+     4:46.63       50598620 B   ---   --   ---xx    shn  0.6318  00 03 24 d2 t04.shn
+     7:06.45       75252284 B   ---   --   ---xx    shn  0.5893  00 03 24 d2 t05.shn
+     5:57.43       63075980 B   ---   --   ---xx    shn  0.6226  00 03 24 d2 t06.shn
+   111:02.57     1175311656 B                            0.6212  (18 files)
+=================== 
+=================== 
+=================== 

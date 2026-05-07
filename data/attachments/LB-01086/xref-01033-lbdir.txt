@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd03-07-12-c.flacf
+===================
+===================
+===================
+5d0d1e3623d7292824bb39d225ad8015 *(Bob Dylan) 2003-07-12_101.flac
+e2341a8bf349dea374edc57cd6bccb89 *(Bob Dylan) 2003-07-12_102.flac
+8c1d9eeafd1eec40b15fd491518ce8bd *(Bob Dylan) 2003-07-12_103.flac
+8a8546ae267acdbd2f9b5b98e03e7290 *(Bob Dylan) 2003-07-12_104.flac
+5c653370106cd0e8d82fa7e719edd57c *(Bob Dylan) 2003-07-12_105.flac
+2df26d9e9c0fb4ef1613d3dbd89c6826 *(Bob Dylan) 2003-07-12_106.flac
+cec04448eaf810fa967eaeb141463ddf *(Bob Dylan) 2003-07-12_107.flac
+9e5b1c95c2c02c811f710848f770094c *(Bob Dylan) 2003-07-12_108.flac
+c91fdd8081c187fdcc6d1669a4fc9aee *(Bob Dylan) 2003-07-12_109.flac
+8b81fc29c096eae50e6fa1a796eac222 *(Bob Dylan) 2003-07-12_201.flac
+1ec76711d25159c0763766d08958676b *(Bob Dylan) 2003-07-12_202.flac
+2992ad603c4b2ab94e7787d355833e6f *(Bob Dylan) 2003-07-12_203.flac
+84e478af2e2c40450270fe62f921a334 *(Bob Dylan) 2003-07-12_204.flac
+c39476428a7adbe5265fd25d0a9b5a3e *(Bob Dylan) 2003-07-12_205.flac
+3c21dd063825997af64d69fe21ff6b58 *(Bob Dylan) 2003-07-12_206.flac
+efe3b7e4e1060deaf26164348de25dd5 *2003-07-12 Winter Park, Col..log
+7f636af8ee566baba1445312770c8933 *BD 2003-07-12 Winter Park, Col.ffp
+a62f95ca6928c3030de7977a6b4c16f3 *BD 2003-07-12 Winter Park, Col.md5
+fa5c76740c3e956cfa224cd25e0e8553 *BD 2003-07-12 Winter Park, Col.txt
+===================
+===================
+===================
+=== ffp for: bd03-07-12-c.flacf
+===================
+===================
+===================
+(Bob Dylan) 2003-07-12_101.flac:7f8b7b7f76bcb466259148caa881ae25
+(Bob Dylan) 2003-07-12_102.flac:3ad8d64b4f7f52997a99f59c7dd47089
+(Bob Dylan) 2003-07-12_103.flac:06beb501ab2d48e1e6f652e844db30e0
+(Bob Dylan) 2003-07-12_104.flac:05a14fe3c8afa202fcb3b44516474a42
+(Bob Dylan) 2003-07-12_105.flac:4b9b4e2133af614a44cd00d9fe839ce2
+(Bob Dylan) 2003-07-12_106.flac:8eae0cf67c2e431d57a8c12789875e89
+(Bob Dylan) 2003-07-12_107.flac:a5e85fda519b03bb45f54b75f285f355
+(Bob Dylan) 2003-07-12_108.flac:d49ed98aeac0ec49c8024b475a836598
+(Bob Dylan) 2003-07-12_109.flac:8ee5a0fe3135808a16ef618088fb08fc
+(Bob Dylan) 2003-07-12_201.flac:64cee6165d5cb8f312d969e844676d24
+(Bob Dylan) 2003-07-12_202.flac:28dbee574322641adae4f2d966bd0465
+(Bob Dylan) 2003-07-12_203.flac:17794b03effca51ffa76d5539d444e75
+(Bob Dylan) 2003-07-12_204.flac:40f830a8eadf51617294c3a7aa3b2ce0
+(Bob Dylan) 2003-07-12_205.flac:5cd09221965221489193dc201088cf8c
+(Bob Dylan) 2003-07-12_206.flac:1c6075fc4426ae6021e308f439d08882
+===================
+===================
+===================
+=== shntool len for: bd03-07-12-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:01.07       74280908 B   ---   --   ---xx   flac  0.4947  (Bob Dylan) 2003-07-12_101.flac
+     5:11.02       54865148 B   ---   --   ---xx   flac  0.5703  (Bob Dylan) 2003-07-12_102.flac
+     5:14.63       55537820 B   ---   --   ---xx   flac  0.5767  (Bob Dylan) 2003-07-12_103.flac
+     6:00.46       63612236 B   ---   --   ---xx   flac  0.6058  (Bob Dylan) 2003-07-12_104.flac
+     5:46.11       61060316 B   ---   --   ---xx   flac  0.6147  (Bob Dylan) 2003-07-12_105.flac
+     7:35.48       80374940 B   ---   --   ---xx   flac  0.5380  (Bob Dylan) 2003-07-12_106.flac
+     6:31.69       69134732 B   ---   --   ---xx   flac  0.6164  (Bob Dylan) 2003-07-12_107.flac
+     6:36.50       69972044 B   ---   --   ---xx   flac  0.5841  (Bob Dylan) 2003-07-12_108.flac
+     6:49.49       72262892 B   ---   --   ---xx   flac  0.5760  (Bob Dylan) 2003-07-12_109.flac
+     5:02.64       53423372 B   ---   --   ---xx   flac  0.4460  (Bob Dylan) 2003-07-12_201.flac
+     4:01.03       42519500 B   ---   --   ---xx   flac  0.5737  (Bob Dylan) 2003-07-12_202.flac
+     0:37.34        6606812 B   ---   --   ---xx   flac  0.5173  (Bob Dylan) 2003-07-12_203.flac
+     6:32.43       69249980 B   ---   --   ---xx   flac  0.5962  (Bob Dylan) 2003-07-12_204.flac
+     7:10.01       75854396 B   ---   --   ---xx   flac  0.5984  (Bob Dylan) 2003-07-12_205.flac
+     5:19.72       56440988 B   ---   --   ---xx   flac  0.6171  (Bob Dylan) 2003-07-12_206.flac
+    85:31.37      905196084 B                            0.5718  (15 files)
+===================
+===================
+===================

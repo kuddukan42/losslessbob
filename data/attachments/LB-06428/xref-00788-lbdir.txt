@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-23-h.flacf 
+=================== 
+=================== 
+=================== 
+4d2dff59e5bb70efa0ffd3a187fe9f7f  Bob Dylan 1997.08.23 Vienna,Virginia,The Wolftrap.ffp
+2dd2fdc3ecae3e785ac336713ea5d6fb  CD1\TRACK01.flac
+5d4deea3aec05772e9e4bc27d3487ab6  CD1\TRACK02.flac
+055cbe815405d74c7aa94c696e99c8af  CD1\TRACK03.flac
+90bbe51aae3f6ff8cbe05ec868035347  CD1\TRACK04.flac
+73c584af533b315472c22645205780b2  CD1\TRACK05.flac
+0f3d2f181cddbdd7be999516e9452cd8  CD1\TRACK06.flac
+3e91675f14a87c238b30d257f1a96542  CD1\TRACK07.flac
+04a447dad12c8908cbf842985f72a81a  CD1\TRACK08.flac
+2a93a8dc0d2a7d57776197d98533515d  CD2\TRACK01.flac
+7a9eff2c3973b13773094df8ae517362  CD2\TRACK02.flac
+36b079d8df0da76c7d79933205725ce9  CD2\TRACK03.flac
+6518871f9ab1d667587d62dcc30a36d2  CD2\TRACK04.flac
+cb1c891202029a1f766b574a24230e95  CD2\TRACK05.flac
+79f02b740dc04ccb473b38a5881a4dc1  CD2\TRACK06.flac
+e1afae18ed73392ba1f9897fb9a483d7  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-23-h.flacf\CD1 
+=================== 
+=================== 
+=================== 
+TRACK01.flac:51410715c8b3c84eaf9bb0179d757c46
+TRACK02.flac:586a50c50809eb4132369a64ea4bf933
+TRACK03.flac:5867f9c32acd525d78f0c940844ee963
+TRACK04.flac:5d5e7e74fa9a01d41bf2c16a9424d014
+TRACK05.flac:37bbffb28d7678705b8e9e992ed3501f
+TRACK06.flac:b01c7c307ce6b441d6023dc714c486e4
+TRACK07.flac:7ba3e155de424467a9dadcce04ef0e35
+TRACK08.flac:345b79667dae9209b9d994c2a5862be0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-23-h.flacf\CD2 
+=================== 
+=================== 
+=================== 
+TRACK01.flac:bf75553037b82c911571ba925727b3bb
+TRACK02.flac:6f34d4b37977ab24bf43aeb43bab856c
+TRACK03.flac:b874a30ff30bf546c3cc3c467c0da042
+TRACK04.flac:9950c30ce5319afb52fcaf401ae544f4
+TRACK05.flac:604f359ed42a7f5bb434a7bdb3e4dab7
+TRACK06.flac:8e77fefc2fe81c2997c91fb6e347f8d9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-23-h.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.62       47950268 B   ---   --   ---xx   flac  0.5364  TRACK01.flac
+     6:07.15       64774124 B   ---   --   ---xx   flac  0.5193  TRACK02.flac
+     5:06.02       53983148 B   ---   --   ---xx   flac  0.5505  TRACK03.flac
+     5:25.10       57353564 B   ---   --   ---xx   flac  0.4791  TRACK04.flac
+     7:19.09       77460812 B   ---   --   ---xx   flac  0.5471  TRACK05.flac
+     3:35.72       38095388 B   ---   --   ---xx   flac  0.4411  TRACK06.flac
+     7:10.57       75986108 B   ---   --   ---xx   flac  0.4645  TRACK07.flac
+     8:25.65       89234924 B   ---   --   ---xx   flac  0.5234  TRACK08.flac
+    47:41.67      504838336 B                            0.5105  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-23-h.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:27.45       89540684 B   ---   --   ---xx   flac  0.5552  TRACK01.flac
+     6:48.18       72013580 B   ---   --   ---xx   flac  0.5151  TRACK02.flac
+     6:28.34       68523212 B   ---   --   ---xx   flac  0.5528  TRACK03.flac
+    10:39.46      112827836 B   ---   --   ---xx   flac  0.5303  TRACK04.flac
+     6:44.15       71300924 B   ---   --   ---xx   flac  0.5365  TRACK05.flac
+     6:07.49       64854092 B   ---   --   ---xx   flac  0.5451  TRACK06.flac
+    45:15.57      479060328 B                            0.5388  (6 files)
+=================== 
+=================== 
+=================== 

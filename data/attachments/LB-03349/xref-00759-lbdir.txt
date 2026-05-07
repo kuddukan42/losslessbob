@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-18-d.flacf 
+=================== 
+=================== 
+=================== 
+fc090547856502f8d680500c40ce0cae  CD1\01 Crash on the levee (down in the flood).flac
+9cf9d46ad9edcc335b3772e93a107115  CD1\02 Pretty Peggy-O.flac
+21e43d33ddcc4f642abc7a8631a3e2af  CD1\03 All along the watchtower.flac
+9bfbfc9a73a01ed8f84ba4d62a156d70  CD1\04 You ain't goin' nowhere.flac
+ee3985b6115e630c966396617d802553  CD1\05 Most likely you go your way (and I'll go mine).flac
+5c1fabc901e9af4bfac35c1afe9a36e0  CD1\06 Silvio.flac
+6d1784d32d4993fc3f1624ae8ee197e8  CD1\07 Friend of the Devil.flac
+7601e2d1d492d33020f605d7039b7393  CD1\08 Mr. Tambourine Man.flac
+79b5457fe684de2d0297d9a29a18d15e  CD1\09 The lonesome death of Hattie Carroll.flac
+7cc630b9bd6e4e6c62061647cb71825b  CD1\10 Tombstone blues.flac
+24ea3970485d0c42bc89c7c2e67a8663  CD1\11 (band intro).flac
+0ae1f6f069a3c2ec1c1de96e46b82726  CD1\FLAC CD1.md5
+8058c0f77c599269ec4bcebeb5b9079f  CD2\11 Shooting star.flac
+6e6671ac26719e9982fba73b0f9cba36  CD2\12 Ballad of a thin man.flac
+2bdb5dc2b358cfae8516ba300efdb6a2  CD2\13 Highway 61 revisited.flac
+034ce011029d659743c36af8f1456615  CD2\14 Forever young.flac
+43a3e219a41309ae590c3cd399f5863e  CD2\15 Rainy day women # 12 & 35.flac
+e68e1b0057e0d8ad0f259633c176cc2f  CD2\FLAC CD2.md5
+ea0d066d39de921628f36ea176c503a0  text.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-18-d.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the levee (down in the flood).flac:cafd69a105659dd67ce537d44385bd27
+02 Pretty Peggy-O.flac:4346af8a574c2ec6783e70fde4d7aa5a
+03 All along the watchtower.flac:1fa0215816fb00cc33d1ab66cea822b7
+04 You ain't goin' nowhere.flac:291285f78c77f715a72c544fe03ea913
+05 Most likely you go your way (and I'll go mine).flac:97cff75293e241a9a389bef4c86339b7
+06 Silvio.flac:8e0fe47f2305c1f2a2be23e36867d185
+07 Friend of the Devil.flac:1f1b2d8aa465b0d5c220b8787d808efa
+08 Mr. Tambourine Man.flac:f7c5d1ebecba768436cac3e9545dc666
+09 The lonesome death of Hattie Carroll.flac:58b23bc8b430b6bc63a9cab31630aa3b
+10 Tombstone blues.flac:6f7fef9db8f183de3d81a0f0a9a0e3f1
+11 (band intro).flac:90fa5be9aebbdcbdf431bccf2f5d1c99
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-18-d.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11 Shooting star.flac:ac2ef4b37e93d8bdfa3c5bc4ab151a33
+12 Ballad of a thin man.flac:d8d8db2dac8f843e3b6ba093b74068bc
+13 Highway 61 revisited.flac:55cf0734da605bd38b37b6bf895f5a73
+14 Forever young.flac:85c29f74294e09799528a362bb761f3e
+15 Rainy day women # 12 & 35.flac:d05c0f4e99b55c5d2ab177838dee5f1a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-18-d.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.50       49509644 B   ---   --   ---xx   flac  0.5972  01 Crash on the levee (down in the flood).flac
+     6:36.43       69955580 B   ---   --   ---xx   flac  0.5733  02 Pretty Peggy-O.flac
+     7:36.41       80534876 B   ---   --   ---xx   flac  0.6240  03 All along the watchtower.flac
+     5:13.48       55326140 B   ---   --   ---xx   flac  0.5661  04 You ain't goin' nowhere.flac
+     7:09.57       75809708 B   ---   --   ---xx   flac  0.5916  05 Most likely you go your way (and I'll go mine).flac
+     8:31.73       90312140 B   ---   --   ---xx   flac  0.6181  06 Silvio.flac
+     7:58.67       84476828 B   ---   --   ---xx   flac  0.5643  07 Friend of the Devil.flac
+     7:20.12       77644268 B   ---   --   ---xx   flac  0.4862  08 Mr. Tambourine Man.flac
+     7:16.08       76929260 B   ---   --   ---xx   flac  0.5127  09 The lonesome death of Hattie Carroll.flac
+     8:19.63       88171820 B   ---   --   ---xx   flac  0.5702  10 Tombstone blues.flac
+     0:46.71        8281436 B   ---   --   ---xx   flac  0.4820  11 (band intro).flac
+    71:31.08      756951700 B                            0.5695  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-18-d.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:31.09       90161612 B   ---   --   ---xx   flac  0.5032  11 Shooting star.flac
+    10:11.64      107930972 B   ---   --   ---xx   flac  0.5593  12 Ballad of a thin man.flac
+    10:05.52      106844348 B   ---   --   ---xx   flac  0.5945  13 Highway 61 revisited.flac
+     9:58.69      105649532 B   ---   --   ---xx   flac  0.5409  14 Forever young.flac
+     6:16.11       66352316 B   ---   --   ---xx   flac  0.5849  15 Rainy day women # 12 & 35.flac
+    45:03.55      476938780 B                            0.5561  (5 files)
+=================== 
+=================== 
+=================== 

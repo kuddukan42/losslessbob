@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-12-bach.flacf 
+=================== 
+=================== 
+=================== 
+47ca2bba0604b4e227569ad2bfbdb2df  2006-07-12-Perpignant-flac.md5
+194b12215dc8f13ebbeb04e23baa676f  bd06-07-12-bach-LB-3887.txt
+cd21dd01b04d0e90c8f34494370a71d7  info.txt
+83124573cd2351c13e8321e237c9bbd0  Perpignant-06-pt.1(1).flac
+18f53cf7c5cff5ec91f0a21ada71fc98  Perpignant-06-pt.1(2).flac
+22ff35883e5d739561e2cede1498c5d8  Perpignant-06-pt.1(3).flac
+1a8ba0908ea75c22a0fe06aa50fdc23c  Perpignant-06-pt.1(4).flac
+82f1f6de7ec3928b862308cc670359d9  Perpignant-06-pt.1(5).flac
+b8e4739f3a26973d1ae8410b7dd565c7  Perpignant-06-pt.1(6).flac
+c6464bea74c5171771701028bc41d5d2  Perpignant-06-pt.1(7).flac
+20700ed231ed54ee6097560e23c1265f  Perpignant-06-pt.1(8).flac
+831718aacfcefaac4642b037e3abb085  Perpignant-06-pt.2(1).flac
+5a3d2d1aef6f91da221ffda83c493a86  Perpignant-06-pt.2(2).flac
+7b88d877f170bc283ebe6d0e2a6b0da0  Perpignant-06-pt.2(3).flac
+ded7a8a6149333a5c08c6e5eb0398b94  Perpignant-06-pt.2(4).flac
+f93d8391db3c245068ddeccc186ca2c8  Perpignant-06-pt.2(5).flac
+3c310ede2d440a778d1de417db1f0e45  Perpignant-06-pt.2(6).flac
+2980e35062dee529c9076f88d0bd404d  Perpignant-06-pt.2(7).flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-12-bach.flacf 
+=================== 
+=================== 
+=================== 
+Perpignant-06-pt.1(1).flac:7e1738370f91e0e27d7f3b001fa150a4
+Perpignant-06-pt.1(2).flac:03703024474d95abfcbd40c0d3fe88d4
+Perpignant-06-pt.1(3).flac:6de4ed9a513ec15556f06b7cbfb3f2fc
+Perpignant-06-pt.1(4).flac:6411ed4ac63d172ca0c3ed4898c117e9
+Perpignant-06-pt.1(5).flac:bfe5ce83913b7f1a2d26cad96bf6eb45
+Perpignant-06-pt.1(6).flac:bad2889336c39f8eab4b5bb32bcb2712
+Perpignant-06-pt.1(7).flac:bc89537af70ce75425b5cb097aa07f70
+Perpignant-06-pt.1(8).flac:21b66e4e31d8db8b5f12fbe57411b7c5
+Perpignant-06-pt.2(1).flac:ee41ede118489d3bda56e7c128770774
+Perpignant-06-pt.2(2).flac:c69cf3e840905666fc57eabedab37e7a
+Perpignant-06-pt.2(3).flac:b1a4ffcba22c3d457900e90504a65d98
+Perpignant-06-pt.2(4).flac:fa7d6bcb0e67696089261ff3d0810aae
+Perpignant-06-pt.2(5).flac:6ad3d15be06e840914489c9d8d0fe27f
+Perpignant-06-pt.2(6).flac:10a928cf1d62976f10c0008e4309ec7d
+Perpignant-06-pt.2(7).flac:ca8b84e0262deb5fd9648a1a2a924920
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-12-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:19.38       77529020 B   ---   --   ---xx   flac  0.4505  Perpignant-06-pt.1(1).flac
+     7:10.17       75892028 B   ---   --   ---xx   flac  0.4521  Perpignant-06-pt.1(2).flac
+     7:03.53       74741900 B   ---   --   ---xx   flac  0.4973  Perpignant-06-pt.1(3).flac
+     6:34.02       69506348 B   ---   --   ---xx   flac  0.4458  Perpignant-06-pt.1(4).flac
+     8:44.45       92539484 B   ---   --   ---xx   flac  0.4778  Perpignant-06-pt.1(5).flac
+     5:44.51       60801596 B   ---   --   ---xx   flac  0.4377  Perpignant-06-pt.1(6).flac
+     5:58.28       63217100 B   ---   --   ---xx   flac  0.4920  Perpignant-06-pt.1(7).flac
+    10:02.65      106345724 B   ---   --   ---xx   flac  0.4188  Perpignant-06-pt.1(8).flac
+     6:35.10       69701564 B   ---   --   ---xx   flac  0.5030  Perpignant-06-pt.2(1).flac
+     6:34.00       69501644 B   ---   --   ---xx   flac  0.4312  Perpignant-06-pt.2(2).flac
+     6:40.74       70734092 B   ---   --   ---xx   flac  0.5096  Perpignant-06-pt.2(3).flac
+     6:33.35       69407564 B   ---   --   ---xx   flac  0.4278  Perpignant-06-pt.2(4).flac
+     9:40.18      102354380 B   ---   --   ---xx   flac  0.4561  Perpignant-06-pt.2(5).flac
+     7:21.08       77811260 B   ---   --   ---xx   flac  0.5138  Perpignant-06-pt.2(6).flac
+     5:23.65       57130124 B   ---   --   ---xx   flac  0.5161  Perpignant-06-pt.2(7).flac
+   107:26.59     1137213828 B                            0.4667  (15 files)
+=================== 
+=================== 
+=================== 

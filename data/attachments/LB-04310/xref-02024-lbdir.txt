@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd76-04-20-audiowhore-repair.flacf
+===================
+===================
+===================
+cf14e6a2e2f2160592ec4d854e2f30e8 *01 1976-04-20 St Petersburg.flac
+0d6c966727f993440b663adc74e5432e *02 1976-04-20 St Petersburg.flac
+238bcdc70e2f7beaed366754573eb523 *03 1976-04-20 St Petersburg.flac
+f2c5836ee591171bec3fb75acb8f935a *04 1976-04-20 St Petersburg.flac
+f9f324da0e4940e987d2733ff82c3b8e *05 1976-04-20 St Petersburg.flac
+71775e70f98bccd5c7213e033caf316c *06 1976-04-20 St Petersburg.flac
+16f5d9629576b5c76f3938fe78464fa0 *07 1976-04-20 St Petersburg.flac
+7d50befd55438f99a058de9afcb29c9f *08 1976-04-20 St Petersburg.flac
+a0efe3cf6b1c5c18b791b52de81d8cd4 *09 1976-04-20 St Petersburg.flac
+1020831d14e086e6e84b60b273fc48e4 *10 1976-04-20 St Petersburg.flac
+bcbbe6c3c02922e538666f6bbf9f3c06 *11 1976-04-20 St Petersburg.flac
+3dd4efc2f6266504a6d2a823632aa4cb *12 1976-04-20 St Petersburg.flac
+569147506941414dfc53a23ba24536a1 *13 1976-04-20 St Petersburg.flac
+cc135f8e99a53d78bb5b2f52c214b4f3 *14 1976-04-20 St Petersburg.flac
+838761c0d0248f2988558739a231cca4 *15 1976-04-20 St Petersburg.flac
+e462ed56058e88d27ab9440a67d64cf8 *16 1976-04-20 St Petersburg.flac
+6b31bf6499cb3b4c920f55f0af060ee5 *17 1976-04-20 St Petersburg.flac
+876fea01030f6dfcd39448e442104faf *18 1976-04-20 St Petersburg.flac
+f6c6e096ee7205ca08a795327ff11a41 *19 1976-04-20 St Petersburg.flac
+5c24a307227f25ee389c1420b3d09389 *20 1976-04-20 St Petersburg.flac
+6a3760292e76971da3d7b86d4f3c4901 *21 1976-04-20 St Petersburg.flac
+4237e986b097fdb404d526c20fbd6c2b *BOB DYLAN 1976-04-20 St Petersburg (audiowhored).txt
+a953246727b2be774598b3fb468b715d *BOB DYLAN 1976-04-20 St Petersburg, Florida (audiowhore repair).ffp
+c0e5a9fab497a44d8af37d8d295cf3e9 *BOB DYLAN 1976-04-20 St Petersburg, Florida (audiowhore repair).md5
+d493fac71e7af75fd8fceffbe52cd938 *ORIGINAL Notes.txt
+===================
+===================
+===================
+=== ffp for: bd76-04-20-audiowhore-repair.flacf
+===================
+===================
+===================
+01 1976-04-20 St Petersburg.flac:bec9a048a27ba4a0a68c0c9133ff6b87
+02 1976-04-20 St Petersburg.flac:d352eb200d7ceaffe0bd5d3fd2ee5244
+03 1976-04-20 St Petersburg.flac:a8c4466b298950b34710900b6cba3540
+04 1976-04-20 St Petersburg.flac:6787ededf60a36da66a80f489141a574
+05 1976-04-20 St Petersburg.flac:71c759a8b5440c42805ad3527e32037e
+06 1976-04-20 St Petersburg.flac:484efae3678a7f38ef05802bc515d38d
+07 1976-04-20 St Petersburg.flac:d6195087581c594e3b0fb3dea8cdb184
+08 1976-04-20 St Petersburg.flac:01e6a3e0fccb178e8965768d8f8df997
+09 1976-04-20 St Petersburg.flac:c657e1bbb04dbecba28cccf7bfe9fac5
+10 1976-04-20 St Petersburg.flac:a19f49a5f208def0fb2c58d1a9057a5d
+11 1976-04-20 St Petersburg.flac:397530c0824a954520a4261025118960
+12 1976-04-20 St Petersburg.flac:7e4a2fdfcb8a8068d77bef76c4c19799
+13 1976-04-20 St Petersburg.flac:4a8c1fee98e7d931e7582b8980f7ff41
+14 1976-04-20 St Petersburg.flac:3f59a3f47d9e10136b808e9a23643e16
+15 1976-04-20 St Petersburg.flac:b8e0679bf254d72d1ca31a17dbc7ad85
+16 1976-04-20 St Petersburg.flac:8114840be3f014f9daa8eb9fe69c8922
+17 1976-04-20 St Petersburg.flac:fc8498e76e88599f1b1c31f83986cc2d
+18 1976-04-20 St Petersburg.flac:5aff1898c5954ec3ae20ec8f0e8e1ada
+19 1976-04-20 St Petersburg.flac:f676b5a5d877cb64e05e005b0a6714ed
+20 1976-04-20 St Petersburg.flac:3e917b87777eafa1baac4b4022767c5b
+21 1976-04-20 St Petersburg.flac:18255ac88c8fadae92b9ea854da94b9a
+===================
+===================
+===================
+=== shntool len for: bd76-04-20-audiowhore-repair.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.32       66225916 B   -b-   --   ---xx   flac  0.3282  01 1976-04-20 St Petersburg.flac
+     6:26.14       68124132 B   -b-   --   ---xx   flac  0.3059  02 1976-04-20 St Petersburg.flac
+     3:33.11       37598964 B   -b-   --   ---xx   flac  0.3212  03 1976-04-20 St Petersburg.flac
+     4:02.17       42729964 B   -b-   --   ---xx   flac  0.3362  04 1976-04-20 St Petersburg.flac
+     4:50.40       51250924 B   -b-   --   ---xx   flac  0.3352  05 1976-04-20 St Petersburg.flac
+     3:49.23       40449564 B   -b-   --   ---xx   flac  0.3302  06 1976-04-20 St Petersburg.flac
+     3:36.12       38129724 B   -b-   --   ---xx   flac  0.3460  07 1976-04-20 St Petersburg.flac
+     2:42.00       28577256 B   -b-   --   ---xx   flac  0.3424  08 1976-04-20 St Petersburg.flac
+     3:39.00       38631552 B   -b-   --   ---xx   flac  0.3301  09 1976-04-20 St Petersburg.flac
+     3:34.17       37789884 B   -b-   --   ---xx   flac  0.3403  10 1976-04-20 St Petersburg.flac
+     7:26.43       78776480 B   -b-   --   ---xx   flac  0.3560  11 1976-04-20 St Petersburg.flac
+     4:52.61       51651184 B   -b-   --   ---xx   flac  0.3328  12 1976-04-20 St Petersburg.flac
+     4:33.44       48260208 B   -b-   --   ---xx   flac  0.3587  13 1976-04-20 St Petersburg.flac
+     5:04.34       53706784 B   -b-   --   ---xx   flac  0.3428  14 1976-04-20 St Petersburg.flac
+     3:36.03       38109900 B   -b-   --   ---xx   flac  0.3439  15 1976-04-20 St Petersburg.flac
+     3:06.09       32831480 B   -b-   --   ---xx   flac  0.3559  16 1976-04-20 St Petersburg.flac
+     4:50.58       51293324 B   -b-   --   ---xx   flac  0.3626  17 1976-04-20 St Petersburg.flac
+     6:33.33       69403968 B   -b-   --   ---xx   flac  0.3043  18 1976-04-20 St Petersburg.flac
+    11:20.38      120041704 B   -b-   --   ---xx   flac  0.3265  19 1976-04-20 St Petersburg.flac
+     4:41.29       49637024 B   -b-   --   ---xx   flac  0.3356  20 1976-04-20 St Petersburg.flac
+     5:36.60       59411460 B   -b-   --   ---xx   flac  0.3141  21 1976-04-20 St Petersburg.flac
+   104:10.55     1102631396 B                            0.3339  (21 files)
+===================
+===================
+===================

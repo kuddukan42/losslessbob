@@ -1,0 +1,137 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-02-24-True-Confessions-for-Carol.flacf 
+=================== 
+=================== 
+=================== 
+66cd0e4745050c398226e1128432a651  bd86-02-24-True-Confessions-for-Carol-LB-4419.txt
+a503c7343ce6a5ddd0ef82c14c4802c5  disc 1\Track01.flac
+87af7848d500dbd3004ec4b145233cf2  disc 1\Track02.flac
+5413f3722107d12121a9bc0d40915e9a  disc 1\Track03.flac
+bf4a0ca32167e3b74713023b1663871f  disc 1\Track04.flac
+9c26144f261dccd252a9bf88c180d972  disc 1\Track05.flac
+9655af967ea34388bda3ad5a712f13f8  disc 1\Track06.flac
+cc8e1e7730821b0200dd6c2766bc72c0  disc 1\Track07.flac
+86c65bd539aa73b40895c5f544bf917e  disc 1\Track08.flac
+4b8050fbfa4a537fe69f362889150169  disc 1\Track09.flac
+60db8e592773e1640481669237870e4d  disc 1\Track10.flac
+1f55a1224f610379b851a7d1c03d0628  disc 1\Track11.flac
+d3c2a17523f014606fae2577da177ccc  disc 1\Track12.flac
+99de5db46b912158178613e48297ef2c  disc 1\Track13.flac
+a5ce430015bd6e674c79816453ebdac2  disc 1\Track14.flac
+0f604ee816f50f66b10d97cc227b6f46  disc 1\Track15.flac
+77e0668b765591a7d5224e3c469d2b61  disc 1\Track16.flac
+b2473738a2039b93bf9ae31c763c5766  disc 1 eac.LOG
+d2285f98bc5658fc0776a9207feeb941  disc 2\Track01.flac
+af2327673a829fe915ce2f38c420bfa5  disc 2\Track02.flac
+0023340636a4f63dd077830681464a5a  disc 2\Track03.flac
+5d95e0ff56d309af90ce1c9191befa6a  disc 2\Track04.flac
+0fe085835462c2678717cd60ab69b9b6  disc 2\Track05.flac
+1bb3e2fca3e1529e05c160cc0c26322c  disc 2\Track06.flac
+ae282661c36d6278c5bea576dca7637f  disc 2\Track07.flac
+1356e3cf0df34f15598112692a6277d8  disc 2\Track08.flac
+6cca27a76c445335388975e3a117a413  disc 2\Track09.flac
+4960da54e315e999d88016d94a49d866  disc 2\Track10.flac
+ea4c4f16fd2890046c4dfc1b42762f76  disc 2\Track11.flac
+6458c4050c76e3f3640ee35c69840a30  disc 2\Track12.flac
+a5fd6fed2455080e4bf92f89d86ff841  disc 2\Track13.flac
+99e9e96a68e85599f182788dadea79f4  disc 2\Track14.flac
+89d311b5ba2cd4c24d3a6ece8fd5e2ba  disc 2 eac.LOG
+e76abcd5a3d6dcd9430895457dc3a233  True Confessions for Carol.md5
+b9b15da49859f951e5c16a4586143e7a  True Confessions For Carol.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-24-True-Confessions-for-Carol.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:08aa04241c6bab635225d6e74b5dd46b
+Track02.flac:5a581516354a28bae36fc7de0fcbb477
+Track03.flac:ca6a13b8109c6d64a304859d044203a5
+Track04.flac:eba839d6d862d303d0695290d1f4f854
+Track05.flac:70f708aa519d292328750ebd35d595a6
+Track06.flac:62774540669c8f740fee661ea8956d7a
+Track07.flac:8fcfb3c6f5652d73bc29d5d6e794ba03
+Track08.flac:54e255a5a1ec74f4c76637e2c191213c
+Track09.flac:ac495403a163fe4a35edac683c16040e
+Track10.flac:1335903944fade3807fd12bf1d397778
+Track11.flac:3b3f8135a842ab80610ece8af35813b4
+Track12.flac:c31d44a5ed6f2f30b06822a5348b6260
+Track13.flac:8d229466b3750a091248b5b6dace5ab2
+Track14.flac:86b6f5a18c0ebe7e7dca09be17394626
+Track15.flac:72834966e932bc72d4b6e1eba8388a04
+Track16.flac:91968430c3fbe9de93e8fa841ee0ee71
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-24-True-Confessions-for-Carol.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:f58a30f8d03fb73c58f9d91ebbce4a07
+Track02.flac:15766e8461084fd1895499aac6c6b7e4
+Track03.flac:3bd159112c7e96996e1f2f231dee9e04
+Track04.flac:197e52326ea6fa028cb0e05c3186163c
+Track05.flac:a4993dda446aa2a49b2bc15f0353e1e5
+Track06.flac:2942b8a9fbd4ed440045999568a059b9
+Track07.flac:e66238c0e1d6c78d841f9ebcbfce083e
+Track08.flac:e3e78b5b63406487b364c01890365923
+Track09.flac:9750fdf258afdc1eef55a125c807a924
+Track10.flac:18a71a90ce5f4fa7c068b5c765727655
+Track11.flac:932d3e2748ed500a316e0655fef7b87f
+Track12.flac:25a3214152c532229361f067828fe391
+Track13.flac:5486e4a9dd6ea0b8aa307d211f669392
+Track14.flac:530bf29d04a25b8769a7ab91e565e676
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-24-True-Confessions-for-Carol.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.27       52983548 B   ---   --   ---xx   flac  0.6558  Track01.flac
+     4:54.56       51993356 B   ---   --   ---xx   flac  0.6648  Track02.flac
+     3:19.48       35216540 B   ---   --   ---xx   flac  0.6721  Track03.flac
+     4:25.30       46816604 B   ---   --   ---xx   flac  0.6467  Track04.flac
+     3:10.62       33661868 B   ---   --   ---xx   flac  0.6602  Track05.flac
+     3:14.21       34271036 B   ---   --   ---xx   flac  0.6320  Track06.flac
+     4:58.32       52642508 B   ---   --   ---xx   flac  0.6561  Track07.flac
+     3:33.56       37704956 B   ---   --   ---xx   flac  0.6645  Track08.flac
+     5:10.67       54841628 B   ---   --   ---xx   flac  0.6625  Track09.flac
+     8:21.08       88395260 B   ---   --   ---xx   flac  0.6253  Track10.flac
+     4:54.53       51986300 B   ---   --   ---xx   flac  0.6034  Track11.flac
+     6:53.13       72883820 B   ---   --   ---xx   flac  0.6347  Track12.flac
+     3:36.66       38257676 B   ---   --   ---xx   flac  0.6486  Track13.flac
+     4:52.17       51548828 B   ---   --   ---xx   flac  0.6850  Track14.flac
+     3:06.25       32869244 B   ---   --   ---xx   flac  0.6776  Track15.flac
+     5:35.50       59211644 B   ---   --   ---xx   flac  0.6861  Track16.flac
+    75:08.31      795284816 B                            0.6526  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-24-True-Confessions-for-Carol.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:53.28       62335100 B   ---   --   ---xx   flac  0.7057  Track01.flac
+     5:29.54       58162652 B   ---   --   ---xx   flac  0.6598  Track02.flac
+     4:22.50       46334444 B   ---   --   ---xx   flac  0.7055  Track03.flac
+     3:39.49       38746892 B   ---   --   ---xx   flac  0.6729  Track04.flac
+     5:37.34       59526812 B   ---   --   ---xx   flac  0.6609  Track05.flac
+     3:12.48       33981740 B   ---   --   ---xx   flac  0.6726  Track06.flac
+     4:35.63       48658220 B   ---   --   ---xx   flac  0.6804  Track07.flac
+     4:45.17       50314028 B   ---   --   ---xx   flac  0.6555  Track08.flac
+     5:49.63       61711820 B   ---   --   ---xx   flac  0.6587  Track09.flac
+     6:39.67       70541228 B   ---   --   ---xx   flac  0.6390  Track10.flac
+     6:11.06       65458556 B   ---   --   ---xx   flac  0.6629  Track11.flac
+     3:42.21       39210236 B   ---   --   ---xx   flac  0.6896  Track12.flac
+     3:08.18       33205580 B   ---   --   ---xx   flac  0.7133  Track13.flac
+     8:57.71       94893836 B   ---   --   ---xx   flac  0.6807  Track14.flac
+    72:05.64      763081144 B                            0.6734  (14 files)
+=================== 
+=================== 
+=================== 

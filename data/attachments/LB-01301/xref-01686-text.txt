@@ -1,0 +1,105 @@
+===================
+===================
+===================
+=== bd-1989-06-07-Birmingham-HG.md5
+===================
+===================
+===================
+c874cab6f20c60fd202a520ef57d2171 *bd-1989-06-07-HG-d1t01.flac
+61b84ef3d238e9217bfd4d44f96f9bb5 *bd-1989-06-07-HG-d1t02.flac
+b7ff21fe8f33f800ec8a7ab3f67d299b *bd-1989-06-07-HG-d1t03.flac
+29512ab7d73bbd0eb74331c3abfa0cad *bd-1989-06-07-HG-d1t04.flac
+e495ed7a48da429f3ffbf44e0d5c724d *bd-1989-06-07-HG-d1t05.flac
+fce59d1bcc279f483fcd069bfe40add8 *bd-1989-06-07-HG-d1t06.flac
+daf7e3147ce8f6ff369850cbb16655bf *bd-1989-06-07-HG-d1t07.flac
+0d2716e678543e0a02ff272c6eb0a4eb *bd-1989-06-07-HG-d1t08.flac
+f539061354b601d4a7ca3c15e42c796c *bd-1989-06-07-HG-d1t09.flac
+81e3a2bdefa8b320a3c232b8ce309b53 *bd-1989-06-07-HG-d1t10.flac
+e7d6f2a6b958c95a9109d29429224371 *bd-1989-06-07-HG-d1t11.flac
+eaa8954d38b228cf9516a2a60a808e65 *bd-1989-06-07-HG-d1t12.flac
+eab778f3475fe2e977a670150702dbb7 *bd-1989-06-07-HG-d1t13.flac
+88d5720f9250bc2ef3a4355bceb05ecd *bd-1989-06-07-HG-d1t14.flac
+dbd7938ffbc9203ff4fd3f6067c8c7d6 *bd-1989-06-07-HG-d1t15.flac
+bb29c6040d423e5ffe7d2672b3f147c4 *bd-1989-06-07-HG-d1t16.flac
+4ee806366cd61bbb4e9f235f51222612 *bd-1989-06-07-HG-d1t17.flac
+43f1b9d050d1cd5ea5b869d560e0ab3e *bd-1989-06-07-HG-d1t18.flac
+6b6c46be135313b45b34a8417b6e097f *Birm06-07-89(HG)-B.jpg
+67520c48e97534b953383fbec1bbce79 *Birm06-07-89(HG)-F.jpg
+===================
+===================
+===================
+=== bd-1989-06-07-Birmingham-HG.txt
+===================
+===================
+===================
+Bob Dylan
+International Arena, National Exhibition Center
+Birmingham, England
+June 7, 1989
+
+Holy Grail Series: Congratulations!
+
+Sound Quality: Very Good to Excellent
+
+
+This set is based on the same recording as LB-1301 but is in flac format as opposed to the shn version.
+
+
+
+01 intro
+02 Subterranean Homesick Blues
+03 Lonesome Town (Baker Knight)
+04 Highway 61 Revisited
+05 You're A Big Girl Now
+06 John Brown
+07 All Along The Watchtower
+08 Barbara Allen (Acoustic)
+09 Girl From The North Country (Acoustic)
+10 Mr. Tambourine Man (Acoustic)
+11 Silvio
+12 I Shall Be Released
+13 Like A Rolling Stone
+14 Blowin' In The Wind (Acoustic)
+15 One Too Many Mornings (Acoustic)
+16 Knockin' On Heaven's Door (Acoustic -> Electric)
+17 Congratulations
+18 Maggie's Farm
+
+
+============================
+============================
+============================
+=== md5 for bd-1989-06-07-Birmingham-HG
+============================
+============================
+============================
+
+
+c874cab6f20c60fd202a520ef57d2171 *bd-1989-06-07-HG-d1t01.flac
+61b84ef3d238e9217bfd4d44f96f9bb5 *bd-1989-06-07-HG-d1t02.flac
+b7ff21fe8f33f800ec8a7ab3f67d299b *bd-1989-06-07-HG-d1t03.flac
+29512ab7d73bbd0eb74331c3abfa0cad *bd-1989-06-07-HG-d1t04.flac
+e495ed7a48da429f3ffbf44e0d5c724d *bd-1989-06-07-HG-d1t05.flac
+fce59d1bcc279f483fcd069bfe40add8 *bd-1989-06-07-HG-d1t06.flac
+daf7e3147ce8f6ff369850cbb16655bf *bd-1989-06-07-HG-d1t07.flac
+0d2716e678543e0a02ff272c6eb0a4eb *bd-1989-06-07-HG-d1t08.flac
+f539061354b601d4a7ca3c15e42c796c *bd-1989-06-07-HG-d1t09.flac
+81e3a2bdefa8b320a3c232b8ce309b53 *bd-1989-06-07-HG-d1t10.flac
+e7d6f2a6b958c95a9109d29429224371 *bd-1989-06-07-HG-d1t11.flac
+eaa8954d38b228cf9516a2a60a808e65 *bd-1989-06-07-HG-d1t12.flac
+eab778f3475fe2e977a670150702dbb7 *bd-1989-06-07-HG-d1t13.flac
+88d5720f9250bc2ef3a4355bceb05ecd *bd-1989-06-07-HG-d1t14.flac
+dbd7938ffbc9203ff4fd3f6067c8c7d6 *bd-1989-06-07-HG-d1t15.flac
+bb29c6040d423e5ffe7d2672b3f147c4 *bd-1989-06-07-HG-d1t16.flac
+4ee806366cd61bbb4e9f235f51222612 *bd-1989-06-07-HG-d1t17.flac
+43f1b9d050d1cd5ea5b869d560e0ab3e *bd-1989-06-07-HG-d1t18.flac
+6b6c46be135313b45b34a8417b6e097f *Birm06-07-89(HG)-B.jpg
+67520c48e97534b953383fbec1bbce79 *Birm06-07-89(HG)-F.jpg
+
+
+
+
+
+===================
+===================
+===================

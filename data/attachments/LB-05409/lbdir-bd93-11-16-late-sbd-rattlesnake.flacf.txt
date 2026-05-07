@@ -1,0 +1,57 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-11-16-late-sbd-rattlesnake.flacf 
+=================== 
+=================== 
+=================== 
+3fd0c4e062499e6c6700e8155c380ef6  Disc 1\01 Audio Track.flac
+4aac88cacca9887f7c2fe38e0071cfb8  Disc 1\02 Audio Track.flac
+c29c9ce07e0d35c5ac92927ced05e975  Disc 1\03 Audio Track.flac
+d4c6d36b74989a1d24355bc7087a7ef5  Disc 1\04 Audio Track.flac
+75ef663639962e7e7d262f3368639672  Disc 1\05 Audio Track.flac
+d7394296b026a2bd7986a99a621a2856  Disc 1\06 Audio Track.flac
+3976374082d372dd0eff8138737243b3  Disc 1\07 Audio Track.flac
+4b6145fe91fe508ec5e0c27cc4c119c5  Disc 1\08 Audio Track.flac
+17124eee99e3f215b1a066432b4f02f1  Disc 1\09 Audio Track.flac
+7b7303c3e17833262be87dee7284ec69  Disc 1\10 Audio Track.flac
+7812035bbbe3c62a93c2392144e9b5f2  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-11-16-late-sbd-rattlesnake.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+01 Audio Track.flac:5aaa58a49fafc7622e6b2aa807fa5f4d
+02 Audio Track.flac:a1cdd6bf7dda488c2530277ab937480b
+03 Audio Track.flac:7f2559f98648235be4c0991830129902
+04 Audio Track.flac:3c7264a6727241defeb78d589d901bca
+05 Audio Track.flac:ae9bfdb8877b1c8752c69b5c26db2619
+06 Audio Track.flac:a031c7ae98811e55bbbb886babf69217
+07 Audio Track.flac:856fdae1d0f6c9f324d284dc8977e93a
+08 Audio Track.flac:31a8a827e47add14c89937bd5852f4c5
+09 Audio Track.flac:fe47881c14abb0a303a42b1a2dbdbc08
+10 Audio Track.flac:8e76aa724ee2b92569132ab149c03348
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-11-16-late-sbd-rattlesnake.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:52.31       51581756 B   ---   --   ---xx   flac  0.6884  01 Audio Track.flac
+     4:44.39       50189372 B   ---   --   ---xx   flac  0.6817  02 Audio Track.flac
+     4:59.74       52917692 B   ---   --   ---xx   flac  0.6633  03 Audio Track.flac
+     8:20.60       88341164 B   ---   --   ---xx   flac  0.6688  04 Audio Track.flac
+     6:21.68       67368380 B   ---   --   ---xx   flac  0.6723  05 Audio Track.flac
+     5:33.58       58877660 B   ---   --   ---xx   flac  0.6052  06 Audio Track.flac
+     6:19.51       66975596 B   ---   --   ---xx   flac  0.6483  07 Audio Track.flac
+     5:31.26       58449596 B   ---   --   ---xx   flac  0.5880  08 Audio Track.flac
+     6:16.71       66493436 B   ---   --   ---xx   flac  0.6430  09 Audio Track.flac
+     6:27.50       68384444 B   ---   --   ---xx   flac  0.6012  10 Audio Track.flac
+    59:29.03      629579096 B                            0.6456  (10 files)
+=================== 
+=================== 
+=================== 

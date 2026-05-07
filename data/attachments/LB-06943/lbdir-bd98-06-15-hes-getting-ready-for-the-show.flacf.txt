@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-15-hes-getting-ready-for-the-show.flacf 
+=================== 
+=================== 
+=================== 
+ece1f5564e4bdc3ccacb0702da19fab9  bd98-06-15-hes-getting-ready-for-the-show-d1t01.flac
+281b6711914619419db5d3912baae7f5  bd98-06-15-hes-getting-ready-for-the-show-d1t02.flac
+7e1be1070ce421cae6226eef9d41a088  bd98-06-15-hes-getting-ready-for-the-show-d1t03.flac
+fb0c3eb9fdfe7d6e6feeef1cce91e6dc  bd98-06-15-hes-getting-ready-for-the-show-d1t04.flac
+5bfe5f8294f93d441876420ab4fc6886  bd98-06-15-hes-getting-ready-for-the-show-d1t05.flac
+6684eef45b884b8ca0d98b6e3923f3ff  bd98-06-15-hes-getting-ready-for-the-show-d1t06.flac
+eec98c8ada01d03af55057d6eb4e64b1  bd98-06-15-hes-getting-ready-for-the-show-d1t07.flac
+bf4ac94d1a55a59cae340c9294199df2  bd98-06-15-hes-getting-ready-for-the-show-d1t08.flac
+deff4206725d43aaf925349dba809795  bd98-06-15-hes-getting-ready-for-the-show-d1t09.flac
+2aaa8d07108aead06a435bafa5a9e939  bd98-06-15-hes-getting-ready-for-the-show-d1t10.flac
+8b281efe13b5a3f5c7f43f63dc9f2589  bd98-06-15-hes-getting-ready-for-the-show-d1t11.flac
+7fdb95460f2e085befa510fd31f48968  bd98-06-15-hes-getting-ready-for-the-show-d1t12.flac
+8f3fc217a356434b3f38a2b4b9ba4b6a  bd98-06-15-hes-getting-ready-for-the-show-d1t13.flac
+c1826ae2df4e4016a10401efc9a38bda  bd98-06-15-hes-getting-ready-for-the-show-d1t14.flac
+457bec6ea8682fa9cd807c530cdb142a  bd98-06-15-hes-getting-ready-for-the-show.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-15-hes-getting-ready-for-the-show.flacf 
+=================== 
+=================== 
+=================== 
+bd98-06-15-hes-getting-ready-for-the-show-d1t01.flac:c768002a6f54e09040bd490ace20282f
+bd98-06-15-hes-getting-ready-for-the-show-d1t02.flac:6e1eed843b5684548321f575e1b4abef
+bd98-06-15-hes-getting-ready-for-the-show-d1t03.flac:79485211f18b7eaceb3a4533ee95500f
+bd98-06-15-hes-getting-ready-for-the-show-d1t04.flac:32ce13a71262ff236e5105e10ce6e128
+bd98-06-15-hes-getting-ready-for-the-show-d1t05.flac:de45a6195bd16fc622fc91ec09945032
+bd98-06-15-hes-getting-ready-for-the-show-d1t06.flac:2900b63c6bb23d53070fe7c49c5fb06b
+bd98-06-15-hes-getting-ready-for-the-show-d1t07.flac:ae0018c9df0fbf141179e0e23021e942
+bd98-06-15-hes-getting-ready-for-the-show-d1t08.flac:3af2c20aff64adfd7d3484c6e416a76f
+bd98-06-15-hes-getting-ready-for-the-show-d1t09.flac:5ccb6eb5906931075a1632db5fd53a79
+bd98-06-15-hes-getting-ready-for-the-show-d1t10.flac:30ed5e1ec69cdea182b25aec8c419ed0
+bd98-06-15-hes-getting-ready-for-the-show-d1t11.flac:340d427e3f8950ff405e0ca1e03e421b
+bd98-06-15-hes-getting-ready-for-the-show-d1t12.flac:18c2d483c4644284c1ac090e6773758a
+bd98-06-15-hes-getting-ready-for-the-show-d1t13.flac:8733a8fa778eb96999e2ffb6b8147286
+bd98-06-15-hes-getting-ready-for-the-show-d1t14.flac:685fd376e0ec2219c6561ca5faff7e88
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-15-hes-getting-ready-for-the-show.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.35       50179964 B   ---   --   ---xx   flac  0.6509  bd98-06-15-hes-getting-ready-for-the-show-d1t01.flac
+     4:33.67       48314828 B   ---   --   ---xx   flac  0.6414  bd98-06-15-hes-getting-ready-for-the-show-d1t02.flac
+     6:53.43       72954380 B   ---   --   ---xx   flac  0.6390  bd98-06-15-hes-getting-ready-for-the-show-d1t03.flac
+     5:40.22       60027788 B   ---   --   ---xx   flac  0.6257  bd98-06-15-hes-getting-ready-for-the-show-d1t04.flac
+     6:44.35       71347964 B   ---   --   ---xx   flac  0.6784  bd98-06-15-hes-getting-ready-for-the-show-d1t05.flac
+     9:25.08       99684860 B   ---   --   ---xx   flac  0.6218  bd98-06-15-hes-getting-ready-for-the-show-d1t06.flac
+     5:35.22       59145788 B   ---   --   ---xx   flac  0.6267  bd98-06-15-hes-getting-ready-for-the-show-d1t07.flac
+     6:36.70       70019084 B   ---   --   ---xx   flac  0.6689  bd98-06-15-hes-getting-ready-for-the-show-d1t08.flac
+     5:44.03       60688700 B   ---   --   ---xx   flac  0.6575  bd98-06-15-hes-getting-ready-for-the-show-d1t09.flac
+     4:06.45       43500284 B   ---   --   ---xx   flac  0.5802  bd98-06-15-hes-getting-ready-for-the-show-d1t10.flac
+     4:43.37       50008268 B   ---   --   ---xx   flac  0.6879  bd98-06-15-hes-getting-ready-for-the-show-d1t11.flac
+     6:02.63       64005020 B   ---   --   ---xx   flac  0.5830  bd98-06-15-hes-getting-ready-for-the-show-d1t12.flac
+     5:12.22       55088588 B   ---   --   ---xx   flac  0.5937  bd98-06-15-hes-getting-ready-for-the-show-d1t13.flac
+     2:59.55       31705004 B   ---   --   ---xx   flac  0.6296  bd98-06-15-hes-getting-ready-for-the-show-d1t14.flac
+    79:03.02      836670520 B                            0.6354  (14 files)
+=================== 
+=================== 
+=================== 

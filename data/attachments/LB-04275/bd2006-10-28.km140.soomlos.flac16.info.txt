@@ -1,0 +1,61 @@
+Bob Dylan
+Sears Centre
+Hoffman Estates, Illinois
+October 28, 2006
+ 
+source: soomlos
+13th row left floor
+neumann km140's > lunatec v3 > microtrack 24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+Disc 1:
+01. introduction [00:36] 
+02. Maggie's Farm [04:59]
+03. She Belongs To Me [06:09]
+04. Lonesome Day Blues [07:31]
+05. Positively 4th Street [06:43]
+06. It's Alright, Ma (I'm Only Bleeding) [07:26]
+07. The Lonesome Death Of Hattie Carroll [06:33] 
+08. Rollin' And Tumblin' [07:00]
+09. Ballad Of Hollis Brown [05:37]
+10. Most Likely You Go Your Way (And I'll Go Mine) [06:49] 
+11. Joey [08:22] 
+Total time: [67:54]
+
+Disc 2:
+01. Highway 61 Revisited [05:51]
+02. Workingman's Blues #2 [06:18]
+03. Summer Days [10:38]
+04. Thunder On The Mountain [05:52]
+05. Like A Rolling Stone [06:23]
+06. band introduction [00:39] 
+07. All Along The Watchtower [05:56]
+Total time: [41:43]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums 
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2006-10-28d1t01.flac:fb5b5ce4ed95eb825df521d96262d379
+bd2006-10-28d1t02.flac:840155a466f1314bed4237875b8f7dfa
+bd2006-10-28d1t03.flac:631a014d76ab18e4fb96c885d8be188c
+bd2006-10-28d1t04.flac:32e2faf14778428a30969e32d696f282
+bd2006-10-28d1t05.flac:f7b331806f64650d99328d1dee9b8b82
+bd2006-10-28d1t06.flac:337907f60f4244fd0a72ad9959fff874
+bd2006-10-28d1t07.flac:2d8d88ad7e031e981bf854d3ae961abd
+bd2006-10-28d1t08.flac:a5a7695f5f5492db50610e8cf74f1558
+bd2006-10-28d1t09.flac:9fb735aa02713d6f5c5a7997012d4679
+bd2006-10-28d1t10.flac:d089f9be2427783d35ef79b45343ba7b
+bd2006-10-28d1t11.flac:3b86560d88c517c51a66a729ca2ae4b9
+bd2006-10-28d2t01.flac:bb4b48c0cff3f993f1ae6542959e886e
+bd2006-10-28d2t02.flac:e1eb0c084eb2524b50ca4afbc3edf6e1
+bd2006-10-28d2t03.flac:63cdf9d214358499d188f72448953271
+bd2006-10-28d2t04.flac:13bd860eacfbb96a0c0be3b5f454ffc1
+bd2006-10-28d2t05.flac:dc3c5fab3ce17850f0006516c552da05
+bd2006-10-28d2t06.flac:cbdbba07305ab03b3b2343e4068516d3
+bd2006-10-28d2t07.flac:a68abdf9c9e3e7309f4137d1a095217e

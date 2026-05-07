@@ -1,0 +1,62 @@
+Bob Dylan
+Merriweather Post Pavilion
+Columbia, Maryland, USA
+September 28, 2007
+
+Disc 1: 
+01. introduction [00:51]
+02. Rainy Day Women #12 & 35 [05:10]  
+03. Señor (Tales Of Yankee Power) [05:32]  
+04. Just Like Tom Thumb's Blues [06:44]  
+05. Simple Twist Of Fate [07:16]  
+06. Rollin' And Tumblin' [06:03]  
+07. Workingman's Blues #2 [07:06]  
+08. Desolation Row [10:59]  
+09. Beyond The Horizon [07:23]  
+10. Honest With Me [06:58]  
+11. When The Deal Goes Down [06:09]  
+Total time: [70:18]
+
+Disc 2:
+01. Highway 61 Revisited [06:49]  
+02. Ain't Talkin' [08:12]  
+03. Summer Days [06:12]  
+04. Masters Of War [09:19]  
+    (encore)
+05. Thunder On The Mountain [05:59]  
+06. band introduction [00:45]
+07. Blowin' In The Wind [06:51]  
+Total time : [44:12]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, viola, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+12th row center
+neumann km140's > m-audio mt24/96 (line-in 24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-09-28d1t01.flac:3abbec2fc63057ef2fac1f73b55c6464
+bd2007-09-28d1t02.flac:1636220af1771f046abf29cc182cb107
+bd2007-09-28d1t03.flac:540d41b23a362fdb2d44817bb7f0b6e9
+bd2007-09-28d1t04.flac:690e8d811140e7a7bf107bdcd8788276
+bd2007-09-28d1t05.flac:4051da427f48ddf3087b8b764f718c71
+bd2007-09-28d1t06.flac:f64d444ad9ae3343aaca0056b197a7ab
+bd2007-09-28d1t07.flac:cef48492e6cb4657ed3cf4c91266a6e9
+bd2007-09-28d1t08.flac:db09973856dafb5811582d9f340b7200
+bd2007-09-28d1t09.flac:e615261f64ed9bb2674efc2f9785688a
+bd2007-09-28d1t10.flac:fb53e32441f350538f5642fdbbf88f94
+bd2007-09-28d1t11.flac:b9b3a96a3d69a6a7e00f7b46e220e496
+bd2007-09-28d2t01.flac:062d429a216a728d384b73b77bf21e19
+bd2007-09-28d2t02.flac:5e03ec1c1711fc8e813e603d29c904bd
+bd2007-09-28d2t03.flac:a6a20581ddfe1df26e2f4d743275ac6f
+bd2007-09-28d2t04.flac:bdbb8cb772ad0b3787e5cbc143bfe480
+bd2007-09-28d2t05.flac:fa5703f98ff02025695e1a6b9564c8ec
+bd2007-09-28d2t06.flac:852ffa7bbca70ee970f234312a24aa59
+bd2007-09-28d2t07.flac:5c876c0028eb0d2ad2b6ac39c13e774d

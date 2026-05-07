@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-16-schoeps-mk5 
+=================== 
+=================== 
+=================== 
+3175de4121061795f5f293350bded79b  bd00-03-16-schoeps-mk5-d1t01.shn
+b3697345b112f52aa50ce6c4366bb4ec  bd00-03-16-schoeps-mk5-d1t02.shn
+50732ade158e989c2d8e0712e7a08fa9  bd00-03-16-schoeps-mk5-d1t03.shn
+c70386f288b1538793ada6a3f3a5b733  bd00-03-16-schoeps-mk5-d1t04.shn
+c1ee51408664e04f728e870bfc5e2506  bd00-03-16-schoeps-mk5-d1t05.shn
+7b01e42643c019252825ed9104ae3119  bd00-03-16-schoeps-mk5-d1t06.shn
+1b35c9ad676e4fc28bcc18d5599da748  bd00-03-16-schoeps-mk5-d1t07.shn
+2a1fc00f2babb8e8a724b75e8bebd2c4  bd00-03-16-schoeps-mk5-d1t08.shn
+9a83bcae240576d3d1008ede10faef4a  bd00-03-16-schoeps-mk5-d1t09.shn
+e07cffa806307d0b5062f8b587f89de4  bd00-03-16-schoeps-mk5-d1t10.shn
+6ea4bd3250f80e720d86cf3a7b17d802  bd00-03-16-schoeps-mk5-d1t11.shn
+80560269a42a1b5e5ffbb7359054eb5e  bd00-03-16-schoeps-mk5-d2t01.shn
+263d7b6c4e91c0b2484b35a2ffbd4a99  bd00-03-16-schoeps-mk5-d2t02.shn
+1941a4a8368b4612ac4f58f3994507c3  bd00-03-16-schoeps-mk5-d2t03.shn
+1a3f739caaea79248c00b179dd53e2b7  bd00-03-16-schoeps-mk5-d2t04.shn
+4b01b5fe3dc47a4ffd719a1d7de9ad85  bd00-03-16-schoeps-mk5-d2t05.shn
+da5f4ea1a8e4ff67b86af36a982fda96  bd00-03-16-schoeps-mk5-d2t06.shn
+932ca270906729589200a07f55767c4a  bd00-03-16-schoeps-mk5-d2t07.shn
+132d34e3cd32805ed5cbc9c91cc43cd7  bd00-03-16-schoeps-mk5-d2t08.shn
+ccc60e5408f5f1323f33b8deb64c4f0f  bd00-03-16-schoeps-mk5-d2t09.shn
+c7ce6f5f5511f5287d8e987ee64bd34c  bd00-03-16-schoeps-mk5-d2t10.shn
+ae2b00903c56e13adf9c950c3f000ddc  bd00-03-16-schoeps-mk5-d2t11.shn
+75d0f74472e33ddcbc3669db19635c8f  bd00-03-16-schoeps-mk5-LB-2778.txt
+a7955e9b23aa4167bb776c945684f47f  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-03-16-schoeps-mk5 
+=================== 
+=================== 
+=================== 
+5635726bcda716c02c034a0dfa23ac9d  [shntool]  bd00-03-16-schoeps-mk5-d1t01.wav
+043c25c18617f715d6e6ee0b95cbefdf  [shntool]  bd00-03-16-schoeps-mk5-d1t02.wav
+e853d6ea06f9a5e7f62638ca0e96a515  [shntool]  bd00-03-16-schoeps-mk5-d1t03.wav
+bb272e44d1369fad160c8a9ea9ed5ada  [shntool]  bd00-03-16-schoeps-mk5-d1t04.wav
+347172cab04276d35463584f9fe87f4e  [shntool]  bd00-03-16-schoeps-mk5-d1t05.wav
+53958840fa36236d9cd5cbd82e5d8d86  [shntool]  bd00-03-16-schoeps-mk5-d1t06.wav
+3d066309c22ca700e8a6cea9f7e9c56c  [shntool]  bd00-03-16-schoeps-mk5-d1t07.wav
+756c22a393e966178823aa92e9b0731a  [shntool]  bd00-03-16-schoeps-mk5-d1t08.wav
+ebc65b98d5f6d831b87ee09cfee40c6e  [shntool]  bd00-03-16-schoeps-mk5-d1t09.wav
+97cb72006f43e4d778c302dedae0e779  [shntool]  bd00-03-16-schoeps-mk5-d1t10.wav
+927a0cfa4d65a605018683899d6a6e91  [shntool]  bd00-03-16-schoeps-mk5-d1t11.wav
+cd2fbb6c1cacf9b5448ab25dfc29593b  [shntool]  bd00-03-16-schoeps-mk5-d2t01.wav
+221ea281e30eee8e4d4966b8082d1a0b  [shntool]  bd00-03-16-schoeps-mk5-d2t02.wav
+8297ae911f14c034d103bb89d1f35226  [shntool]  bd00-03-16-schoeps-mk5-d2t03.wav
+ed22d614a2dc06e0184d8c6debee25a3  [shntool]  bd00-03-16-schoeps-mk5-d2t04.wav
+a67ee164e5405f41e6b30f9dfd69ea5d  [shntool]  bd00-03-16-schoeps-mk5-d2t05.wav
+efdaed4b9637d75c66fb408449a96426  [shntool]  bd00-03-16-schoeps-mk5-d2t06.wav
+f6b7c9d2959c8615c55cf3f7d0076eea  [shntool]  bd00-03-16-schoeps-mk5-d2t07.wav
+5265055fba39dd455fb0cc54a81da7b3  [shntool]  bd00-03-16-schoeps-mk5-d2t08.wav
+9dab2e5fca6aee88e229948b4ce0c4dd  [shntool]  bd00-03-16-schoeps-mk5-d2t09.wav
+7f776f64750731b0625fcf58597f51f3  [shntool]  bd00-03-16-schoeps-mk5-d2t10.wav
+a41e0dc85893e4412d88009337f5035f  [shntool]  bd00-03-16-schoeps-mk5-d2t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-16-schoeps-mk5 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:35.07       27358508 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t01.wav
+     4:22.18       46259180 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t02.wav
+     7:34.41       80182076 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t03.wav
+     5:08.45       54437084 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t04.wav
+     7:15.16       76771676 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t05.wav
+     3:48.17       40259228 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t06.wav
+     3:33.13       37603820 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t07.wav
+    11:37.16      122988476 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t08.wav
+     7:17.43       77187980 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t09.wav
+     5:51.72       62085788 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t10.wav
+     4:56.11       52240316 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d1t11.wav
+     6:17.54       66629852 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t01.wav
+     6:11.66       65599676 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t02.wav
+     6:57.36       73643516 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t03.wav
+     4:00.53       42460700 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t04.wav
+     4:24.26       46630796 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t05.wav
+     5:52.47       62203388 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t06.wav
+     4:35.26       48571196 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t07.wav
+     5:54.00       62445644 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t08.wav
+     3:46.69       40028732 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t09.wav
+     4:34.28       48399500 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t10.wav
+     6:43.68       71249180 B   ---   --   -----    wav  1.0000  bd00-03-16-schoeps-mk5-d2t11.wav
+   123:19.22     1305236312 B                            1.0000  (22 files)
+=================== 
+=================== 
+=================== 

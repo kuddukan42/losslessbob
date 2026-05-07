@@ -1,0 +1,116 @@
+===================
+===================
+===================
+=== Bob Dylan  Kohl Center Madison WI 10-31-2001.ffp
+===================
+===================
+===================
+track01.flac:1302c42849a3890fda9973fb7b158ee2
+track02.flac:67f50a35a2c563b903da184419d05c45
+track03.flac:230c47bb62d82201b5d4181eb79f5685
+track04.flac:a365cb7a267c7d24d2306c1631c5b718
+track05.flac:490b263b45bd6cf0ee763e159d6ed300
+track06.flac:e8eda5b369bb02073b215a1c66eb7d5d
+track07.flac:511fa7a22598856138d30a3c3f9e4c49
+track08.flac:c340cf7bdf2cf2d21120e6a51144ed69
+track09.flac:8b6879916327e0502f2a6c608c001487
+track10.flac:efd2eeb4ad0b6e0f3c60077aa9fcad6a
+track11.flac:d0e11fdcc028be9edb678f4cb0599f26
+track12.flac:e3cd5800be5d3daeac9b4a8760b1ed98
+track13.flac:256c2174aa06fe8e00b999354fc61bfd
+track14.flac:8992bc526c1052e89c506433eedca70d
+track15.flac:ac43c56f44cb0e1faa1668399a9b8f25
+track16.flac:472ed4c9f2a137eb26db26c239cc99c1
+track17.flac:50cf377a2e09ae9297e28430a7599eee
+track18.flac:8f2f658db4da48858522ed14ebba65c0
+track19.flac:2559fd9886e12c315d06d2a1beebe368
+track20.flac:1887f44698133878e4445d72b3c798e1
+track21.flac:a57ee5d7aea49deeba02192d9e52dc46
+track22.flac:24d302c48a675b1a3f421bf0ed2af431
+===================
+===================
+===================
+=== Bob Dylan  Kohl Center Madison WI 10-31-2001.md5
+===================
+===================
+===================
+b5d101d16e1949e68b4fe9973b2f3004 *track01.flac
+192c06a284812dff34e025b36b1d57ed *track02.flac
+2aca8b7c85faab9814e9b26d86b153cd *track03.flac
+35f06720c08812b694167a3b7649e57a *track04.flac
+a805d284fe2ec271f8118996930b2e0b *track05.flac
+53a1af985ee0dc5076f64e33616a4e4b *track06.flac
+abf5ebd6558dd014962ef44820d6d911 *track07.flac
+5255c06f1396f00320f00d39156029b6 *track08.flac
+d513a7e81e151547cb55ae85acd45bfc *track09.flac
+79a1ec4db76563c9625449d3c204fed3 *track10.flac
+19060b19f94d1e3a67c32085fa471258 *track11.flac
+fc5230c24ca68833f5ad1c78133acf78 *track12.flac
+af2628ce5bb67e7c63a880c12be0a35e *track13.flac
+55beeda98e3a17e7d526139d742ec38b *track14.flac
+e55ee8780fb3d1f608ac1020f990d0fc *track15.flac
+774882099049ef22fc1219c446fe51cb *track16.flac
+349f6e9b02979b1ce4fe2760d4cedd8b *track17.flac
+570e4f9469e2be08b409d691ab8e28ab *track18.flac
+85e565075e51769f253912737778f2e7 *track19.flac
+5f6b7f6fb1d82dd2ee61c1efaf8948a1 *track20.flac
+35b87c37751b0a03b01daeb875726402 *track21.flac
+0b2871785cfdb41749452118bf73fc9a *track22.flac
+===================
+===================
+===================
+=== ffp.txt
+===================
+===================
+===================
+track01.flac:1302c42849a3890fda9973fb7b158ee2
+track02.flac:67f50a35a2c563b903da184419d05c45
+track03.flac:230c47bb62d82201b5d4181eb79f5685
+track04.flac:a365cb7a267c7d24d2306c1631c5b718
+track05.flac:490b263b45bd6cf0ee763e159d6ed300
+track06.flac:e8eda5b369bb02073b215a1c66eb7d5d
+track07.flac:511fa7a22598856138d30a3c3f9e4c49
+track08.flac:c340cf7bdf2cf2d21120e6a51144ed69
+track09.flac:8b6879916327e0502f2a6c608c001487
+track10.flac:efd2eeb4ad0b6e0f3c60077aa9fcad6a
+track11.flac:d0e11fdcc028be9edb678f4cb0599f26
+track12.flac:e3cd5800be5d3daeac9b4a8760b1ed98
+track13.flac:256c2174aa06fe8e00b999354fc61bfd
+track14.flac:8992bc526c1052e89c506433eedca70d
+track15.flac:ac43c56f44cb0e1faa1668399a9b8f25
+track16.flac:472ed4c9f2a137eb26db26c239cc99c1
+track17.flac:50cf377a2e09ae9297e28430a7599eee
+track18.flac:8f2f658db4da48858522ed14ebba65c0
+track19.flac:2559fd9886e12c315d06d2a1beebe368
+track20.flac:1887f44698133878e4445d72b3c798e1
+track21.flac:a57ee5d7aea49deeba02192d9e52dc46
+track22.flac:24d302c48a675b1a3f421bf0ed2af431
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 10/31/01
+Kohl Center, Madison, WI
+
+Schoeps ccm4's > Aerco MP-2 > Sony TCD-D100 Transfer: DAT-M > Audiomedia III Digital Input > ProTools > 
+Adaptec Jam CDR-M > EAC >TLH8
+
+A Dolphinsmile Production
+Dolphinsmile Archive
+
+
+
+Humming Bird, It Ain't Me Babe, A Hard Rain's A Gonna Fall, 
+This World Can't Stand Long, Stuck Inside Of Mobile With The Memphis Blues Again, 
+Just Like A Woman, Lonesome Day Blues, Monnlight, Ballad Of Hollis Brown, 
+One Too Many Mornings, Visions Of Johanna, Summer Days, 
+Mississippi, Cold Irons Bound, Rainy Day Woman #12 & 35
+Love Sick, Like A Rolling Stone, If Dogs Run Free, 
+Honest With Me, Blowin' In The Wind, 
+All Along The Watchtower, Knockin' On Heaven's Door
+===================
+===================
+===================

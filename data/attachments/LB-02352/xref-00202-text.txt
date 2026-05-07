@@ -1,0 +1,141 @@
+===================
+===================
+===================
+=== (RTM28ATHENS)bd_93-06-23_athens.md5
+===================
+===================
+===================
+d7ed056ec3a3f0c3cc35a8723f7b445e *bd1993-06-23RTMd1t01.flac
+4d009abf59d97cd3177a569b52302eb0 *bd1993-06-23RTMd1t02.flac
+335cc3d2dcbb3ab9ce2b61deb78152e6 *bd1993-06-23RTMd1t03.flac
+51de22b1030e8ca21a8f8c501b75e798 *bd1993-06-23RTMd1t04.flac
+7f42dbbceedd5f7e1fdb6f7657522bfc *bd1993-06-23RTMd1t05.flac
+3b08aaec3507f6a72e30babd15ef8f11 *bd1993-06-23RTMd1t06.flac
+9d7c2a582bc9d883154ba32d0a2e3dc8 *bd1993-06-23RTMd1t07.flac
+01a1f926f0076d0428bd59b8f8b75129 *bd1993-06-23RTMd1t08.flac
+d444165743cd32a9996693347106401a *bd1993-06-23RTMd1t09.flac
+bd7918b1684cc54b7a081dda2642514c *bd1993-06-23RTMd1t10.flac
+ce8d1fe5c457c4050fcf854925f5c49e *bd1993-06-23RTMd2t01.flac
+ac2b1e9c542f770caa462832b40af239 *bd1993-06-23RTMd2t02.flac
+a68943280c027ad80c6be7e48e348d4a *bd1993-06-23RTMd2t03.flac
+6fe8a632b2c4bd2658299d736b6c4590 *bd1993-06-23RTMd2t04.flac
+ca6dbd74a611d15336fdac3c1777b6ab *bd1993-06-23RTMd2t05.flac
+6b6b3fde2685872892faf60d0f37b01d *bd1993-06-23RTMd2t06.flac
+72dbc17d818806e1e74b9bc3c5bf29e6 *bd1993-06-23RTMd2t07.flac
+1019736ef60b8cbd9907c93bdc73e19c *bd1993-06-23RTMd2t08.flac
+89f1fb457efa2f514ef4fef0cf81e0c8 *Fingerprints.txt
+dc071f587b3c936cd6256256bfc8863b *Info.txt
+4f481023bc62b34bd5967a2dc932a8f0 *Shntool.txt
+===================
+===================
+===================
+=== Fingerprints.txt
+===================
+===================
+===================
+bd1993-06-23RTMd1t01.flac:2d985d7642bd7ce0886f433f5edff3ab
+bd1993-06-23RTMd1t02.flac:f684a951bcdc554f3c5d89fb5543d470
+bd1993-06-23RTMd1t03.flac:fab13f65695ab2936c2a6b15cee3e348
+bd1993-06-23RTMd1t04.flac:da3beef5255c9496d4b530cda0997af1
+bd1993-06-23RTMd1t05.flac:f1241d6a9f3b72d31e920eb253c93671
+bd1993-06-23RTMd1t06.flac:5a8c311249f227d2f7c21d297669f756
+bd1993-06-23RTMd1t07.flac:f2864112c95ebbb7e5e56075af25335c
+bd1993-06-23RTMd1t08.flac:c3b588f12d8a874658c21e05e0ca1b78
+bd1993-06-23RTMd1t09.flac:90db9858c8eb3363e695c11a4420bf13
+bd1993-06-23RTMd1t10.flac:bc8d018b2ae688d82c2ce93f9e5eaccb
+bd1993-06-23RTMd2t01.flac:e9f813075f409264350beefc0b5bf1c2
+bd1993-06-23RTMd2t02.flac:4f15a52da797360ea39f234649ff4f35
+bd1993-06-23RTMd2t03.flac:068eeeae8dc21863219438bf89319686
+bd1993-06-23RTMd2t04.flac:ad451e563b89f8c6ac9e0ae4cde56fdd
+bd1993-06-23RTMd2t05.flac:2b65f7ee64b56c89660ecf56dd2c8cd3
+bd1993-06-23RTMd2t06.flac:907e0bb7a433e7925e3150214fdc35d8
+bd1993-06-23RTMd2t07.flac:b05eb096f7d4b56b9473f4a2acd0a8ea
+bd1993-06-23RTMd2t08.flac:a7742af481f16c45a2015a4c96caeee0
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+BOB DYLAN
+Lycabettus Theatre
+Athens, Greece
+23 June 1993 
+
+RTM28 from The Box Set: Righteous To Me: 1993 Preboards
+
+Many thanks to Hanspeter!
+
+Disc 1    [75:03]
+1. The Times They Are A-Changin' [7:18]
+2. Stuck Inside Of Mobile With The Memphis Blues Again [9:17]
+3. All Along The Watchtower [6:01] 
+4. Just Like A Woman [7:44] 
+5. Tangled Up In Blue [12:04] 
+6. Positively 4th Street [7:54] 
+7. Watching The River Flow [5:28]
+8. Jim Jones [6:25]
+9. Tomorrow Night [5:12]
+10. Gates Of Eden [7:38]
+
+Disc 2    [59:18]
+1. Don't Think Twice, It's All Right [7:33]
+2. Cat's In The Well [6:35] 
+3. I And I [7:28] 
+4. Shooting Star [8:12]
+5. Maggie's Farm [6:57]
+6. What Good Am I? [6:01]
+7. Highway 61 Revisited [7:14]  
+8. Girl From The North Country [9:17]  
+
+Concert # 486 of The Never-Ending Tour.  
+Concert # 6 of the 1993 Europe Summer Tour. 
+1993 concert # 30.
+
+Bob Dylan, vocal & guitar
+Bucky Baxter, pedal steel guitar & electric slide guitar
+John Jackson, guitar
+Tony Garnier, bass
+Winston Watson, drums & percussion
+
+NOTES:
+The recording start very loud at very beginning of d1t1, but corrects at 0:33. Another volume correction at 3.15.  
+Very high recording levels cause some distortion in the first half of the show.
+There are volume corrections in d1t6 at around 2:21/5:38 that eliminate most of the distortions.
+There's a cut between d2t5/d2t6 (between the main set and encores).
+Occasional static.
+
+For further information on this and other recordings from this set check:  
+http://www.gopherstick.com/Righteous To Me.htm
+===================
+===================
+===================
+=== Shntool.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     7:18.67       77420828    ---   --   ---xx   bd1993-06-23RTMd1t01.flac
+     9:16.54       98205452    ---   --   ---xx   bd1993-06-23RTMd1t02.flac
+     6:01.38       63769820    ---   --   ---xx   bd1993-06-23RTMd1t03.flac
+     7:43.63       81821420    ---   --   ---xx   bd1993-06-23RTMd1t04.flac
+    12:03.54      127664252    ---   --   ---xx   bd1993-06-23RTMd1t05.flac
+     7:54.39       83705372    ---   --   ---xx   bd1993-06-23RTMd1t06.flac
+     5:28.10       57882764    ---   --   ---xx   bd1993-06-23RTMd1t07.flac
+     6:25.17       67954028    ---   --   ---xx   bd1993-06-23RTMd1t08.flac
+     5:12.39       55128572    ---   --   ---xx   bd1993-06-23RTMd1t09.flac
+     7:38.13       80821820    ---   --   ---xx   bd1993-06-23RTMd1t10.flac
+     7:33.45       80015084    ---   --   ---xx   bd1993-06-23RTMd2t01.flac
+     6:35.35       69760364    ---   --   ---xx   bd1993-06-23RTMd2t02.flac
+     7:28.01       79029596    ---   --   ---xx   bd1993-06-23RTMd2t03.flac
+     8:12.13       86819420    ---   --   ---xx   bd1993-06-23RTMd2t04.flac
+     6:56.66       73537676    ---   --   ---xx   bd1993-06-23RTMd2t05.flac
+     6:01.03       63687500    ---   --   ---xx   bd1993-06-23RTMd2t06.flac
+     7:14.13       76588220    ---   --   ---xx   bd1993-06-23RTMd2t07.flac
+     9:16.66       98233676    ---   --   ---xx   bd1993-06-23RTMd2t08.flac
+   134:21.36     1422045864 B                     (totals for 18 files, 0.4705 o
+verall compression ratio)
+===================
+===================
+===================

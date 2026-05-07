@@ -1,0 +1,173 @@
+===================
+===================
+===================
+=== 1999-02-14 Joyce Center, Notre Dame University, South Bend, Indiana.txt
+===================
+===================
+===================
+Bob Dylan
+Joyce Center
+Notre Dame University
+South Bend, Indiana
+14 February 1999
+
+uploader's notes: 
+*** This recording does not yet have an LB-number *** Nice full warm DAT recording. Fingerprint d2t16 01:00: male voice shouts "Happy Valentine!" No chatterboxes throughout, however, lasting FemClap during d2t5 Listened to all tracks... Very good to excellent quality recording. Vocals beautifully up-front; well-balanced... Tempted to raise volume levels, did not; untampered! Forced sector boundaries alignment Frequency Analysis: way above 20kHz
+Uploader's note: Close to flawless, with some few exceptions:
+d1t3 02:44 > end: well-disciplined taper audibly tadly raises recording volume level...
+d2t1 03:21 sudden audible volume level drop in RIGHT channel fixed!
+Few digi-pops fixed, no limiting, no compression, no discontinuity pops, one R channel digital drop; fixed (see above), no distortion, and no between track gaps!
+With its subtle bass drive this recording's soundscape resembleS the atmospheric gloom of the 1831 Victor Hugo novel - The Hunchback of Notre Dame... Taper: unidentified; wouldn't ye like to know... Source/Lineage: no info
+
+Losslessbob entry: LB-7529. bittorrent download 05/09; excellent sound [A] drops between tracks, d1t7 4:35 (a bittorrent from 03/11 is a close eac match on d1t1 with same digital flaws plus more like lots of small drops on d1t11; described with a generic info file with filenames like "Disc 1\Bob Dylan- 14.2.99 South Bend-d1-t01.flac"; xref-00756)
+
+Fix of LB-7529: Wave Repair 4.9.3 to fix index gaps/clicks and occaional clicks. Remaining clicks on DFF are stary claps or background noises. Cleaned pops on "Can't Wait" has a destructive edit at 0:05 (cleaned pops around the edit) > FLAC
+
+01. Gotta Serve Somebody 
+02. Million Miles 
+03. Stuck Inside Of Mobile With The Memphis Blues Again
+04. You're A Big Girl Now 
+05. Silvio (Bob Dylan & Robert Hunter) 
+06. Mr. Tambourine Man 
+07. Desolation Row 
+08. Tangled Up In Blue 
+09. The Times They Are A-Changin' 
+10. Make You Feel My Love 
+11. Can't Wait > band intro 
+12. Highway 61 Revisited 
+13  encore cheer
+14. Love Sick 
+15. Leopard-Skin Pill-Box Hat 
+16. Don't Think Twice, It's All Right 
+17. Not Fade Away (Norman Petty/Charles Hardin) 
+
+
+original md5
+e536bb97f53138410cbe3a071565983b *01 Gotta serve somebody.flac
+bbba17902d7f489b52195efef590c1d3 *02 Million miles.flac
+e5a43697c10e414c15247c547a75ee5b *03 Stuck inside of Mobile with the Memphis blues again.flac
+944333fff0b51ad08ca7a7460decc283 *04 You're a big girl now.flac
+7394478888cf89a521fe8c273b10db6a *05 Silvio.flac
+6107ef1b366fd2ae53c33559736c8d8f *06 Mr. Tambourine Man.flac
+d0815904ce4e4a30e375c107dfad430b *07 Desolation Row.flac
+94c0acaa99b52a67ca74d29ce99dd915 *08 Tangled up in blue.flac
+e408627d99ec1af806f1e3a707c119f9 *09 The times they are a-changin'.flac
+fb90ff2c554c1a3b6b94acda323700b4 *10 Make you feel my love.flac
+06321cd5ec7d13f1c6feef5143b1396e *11 Can't wait.flac
+99673c51d57b9c19b4beb1db236d7c5a *12 (band intro).flac
+265388ff8f0bfed5622a08df7919fbe5 *12 Highway 61 revisited.flac
+53775ab32fe4a7ca6120b3092df07c34 *13 (audience ballistic).flac
+4919a4045da33b4dff10f7de4d08feb3 *13 Love sick.flac
+3bf487904d87b32ee2ab3d28ee1c843b *14 Leopard-skin pill-box hat.flac
+6591024e86efac373b66856377498c44 *15 Don't think twice, it's all right.flac
+74fc77a549825ffebf9721af1f15a70e *16 Not fade away.flac
+
+original ffp
+01 Gotta serve somebody.flac:628ecece3db123a4afa2bb3451e5423b
+02 Million miles.flac:458d26e7ecc064dfab7d02569597da68
+03 Stuck inside of Mobile with the Memphis blues again.flac:e63631eba017507f22044878b56629fb
+04 You're a big girl now.flac:48680754ea4fc984b501d8e6ffcc1962
+05 Silvio.flac:8faebc50284570681ef8e5823ab2d561
+06 Mr. Tambourine Man.flac:c0b39e11cbe4d554bdc0bec636f15fe5
+07 Desolation Row.flac:6718f86b68f05120f93deb0badd07450
+08 Tangled up in blue.flac:131d50ca96ef363d7ce05561647a1940
+09 The times they are a-changin'.flac:346e397ed0c1ba08a49625ddb2e5d641
+10 Make you feel my love.flac:d597d3c72dd3f46b0a783cdf5d159a41
+11 Can't wait.flac:fc09cc8302eb63187a747cd71e0c2e30
+12 (band intro).flac:6f862c5de8fe774508a082d24e36b62c
+12 Highway 61 revisited.flac:f9df3be546f399995db7dcaad210e0e8
+13 (audience ballistic).flac:89a813d79d12fe4c90da4bd74d030655
+13 Love sick.flac:a8bcaa93c07b951ffa5282ed190a9e82
+14 Leopard-skin pill-box hat.flac:45b0b23c9218ebb1e6b312c479c0fc34
+15 Don't think twice, it's all right.flac:d1bec6379e6e86b154e097425b8cbdd2
+16 Not fade away.flac:4a677a87b58f61434614379d3486efa5
+
+new md5
+b14f26432264823eed3154231d5927c8 *Track 01.flac
+450ce296a36d4d235f8cb8fbbcd7feaf *Track 02.flac
+73099f63df73c29bf3151d8cb8283885 *Track 03.flac
+3b382dcbcd1e8bd84d058c6cfd5e7d82 *Track 04.flac
+81098e557f68d63ca1bd688f9f19e8f2 *Track 05.flac
+b1ec02026b7233e5c8b47ca55e3b630c *Track 06.flac
+de3d4a94db95bd99c2fe10fabea42e74 *Track 07.flac
+7196cf6979f98aa700926fdba6c28f15 *Track 08.flac
+82c21dfcf61bdae09645613ad5ee7c88 *Track 09.flac
+5e67c8ff7820f9ec4a93312209e597ec *Track 10.flac
+542f957ced48bd3029d508c7bcb8a6cc *Track 11.flac
+355c243f4b4882b011be219a243eb77e *Track 12.flac
+c14af5ab15d748982e493da0a55fa3f0 *Track 13.flac
+3bcad62b8e89b13d4004264d2f080dee *Track 14.flac
+622fd98fa34477f26e7522157b6dcfaa *Track 15.flac
+54473d5e34e4c62ff76c850ffe0d4bee *Track 16.flac
+0f8826c3a1b78a285e836ee08bac5036 *Track 17.flac
+
+new ffp
+Track 01.flac:12b18ab6e0773ba41c018a8c61177275
+Track 02.flac:42f2680a91bfe3ec644ce2b6c40a4a9c
+Track 03.flac:269aeeb2556ac2801649faf1a18f78f6
+Track 04.flac:25569452719b72a5a74118394230d692
+Track 05.flac:9e1a02a993575fb4cefb131f9799ecc8
+Track 06.flac:739e07c1da88e403d4ca71116bb1453a
+Track 07.flac:0fee450103ba84d064c9b13252fc0c0c
+Track 08.flac:cd59dc81efb3edd10de9c324f4ecfe8c
+Track 09.flac:6869818933b7ee5a2bba4bec17bf2c33
+Track 10.flac:a3331cae14245076251205cc9ca459a8
+Track 11.flac:0301ea260cb1590706b189065006cbda
+Track 12.flac:31fca65646425bedcac3dbe4a7777470
+Track 13.flac:1361f3b0d9cdbc83db441453484e16cd
+Track 14.flac:671396349e6f5ab3b94117d38fef467b
+Track 15.flac:3ccdd6a1525f06a8bc492a75ce279891
+Track 16.flac:ab6d4be0427f9521987098b9d094610f
+Track 17.flac:c8ef67feba37bd4948785acb0a79914c
+
+===================
+===================
+===================
+=== bd 1999-02-14 South Bend.ffp
+===================
+===================
+===================
+Track 01.flac:12b18ab6e0773ba41c018a8c61177275
+Track 02.flac:42f2680a91bfe3ec644ce2b6c40a4a9c
+Track 03.flac:269aeeb2556ac2801649faf1a18f78f6
+Track 04.flac:25569452719b72a5a74118394230d692
+Track 05.flac:9e1a02a993575fb4cefb131f9799ecc8
+Track 06.flac:739e07c1da88e403d4ca71116bb1453a
+Track 07.flac:0fee450103ba84d064c9b13252fc0c0c
+Track 08.flac:cd59dc81efb3edd10de9c324f4ecfe8c
+Track 09.flac:6869818933b7ee5a2bba4bec17bf2c33
+Track 10.flac:a3331cae14245076251205cc9ca459a8
+Track 11.flac:0301ea260cb1590706b189065006cbda
+Track 12.flac:31fca65646425bedcac3dbe4a7777470
+Track 13.flac:1361f3b0d9cdbc83db441453484e16cd
+Track 14.flac:671396349e6f5ab3b94117d38fef467b
+Track 15.flac:3ccdd6a1525f06a8bc492a75ce279891
+Track 16.flac:ab6d4be0427f9521987098b9d094610f
+Track 17.flac:c8ef67feba37bd4948785acb0a79914c
+===================
+===================
+===================
+=== bd 1999-02-14 South Bend.md5
+===================
+===================
+===================
+b14f26432264823eed3154231d5927c8 *Track 01.flac
+450ce296a36d4d235f8cb8fbbcd7feaf *Track 02.flac
+73099f63df73c29bf3151d8cb8283885 *Track 03.flac
+3b382dcbcd1e8bd84d058c6cfd5e7d82 *Track 04.flac
+81098e557f68d63ca1bd688f9f19e8f2 *Track 05.flac
+b1ec02026b7233e5c8b47ca55e3b630c *Track 06.flac
+de3d4a94db95bd99c2fe10fabea42e74 *Track 07.flac
+7196cf6979f98aa700926fdba6c28f15 *Track 08.flac
+82c21dfcf61bdae09645613ad5ee7c88 *Track 09.flac
+5e67c8ff7820f9ec4a93312209e597ec *Track 10.flac
+542f957ced48bd3029d508c7bcb8a6cc *Track 11.flac
+355c243f4b4882b011be219a243eb77e *Track 12.flac
+c14af5ab15d748982e493da0a55fa3f0 *Track 13.flac
+3bcad62b8e89b13d4004264d2f080dee *Track 14.flac
+622fd98fa34477f26e7522157b6dcfaa *Track 15.flac
+54473d5e34e4c62ff76c850ffe0d4bee *Track 16.flac
+0f8826c3a1b78a285e836ee08bac5036 *Track 17.flac
+===================
+===================
+===================

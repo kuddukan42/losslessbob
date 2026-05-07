@@ -1,0 +1,101 @@
+===================
+===================
+===================
+=== md5 for: bd04-03-26-d.flacf
+===================
+===================
+===================
+c4fbd551a4566b4e4858b7d85d7fe813 *CD1\01 The wicked messenger.flac
+f5bd7a558c388628af187d3354dd66ea *CD1\02 You ain't goin' nowhere.flac
+4dba2fa7996fd33db1e4ea8a0c124987 *CD1\03 Cry a while.flac
+4a41b9ec1a03047f972406b5fdd46a9e *CD1\04 The lonesome death of Hattie Carroll.flac
+0dd6f72311dc12dbd5abc5a6bdca9e0c *CD1\05 Highway 61 revisited.flac
+288e173ac16560be948c655274c68930 *CD1\06 Make you feel my love.flac
+249ccdadaac85e54eac50dd39a0f4d09 *CD1\07 Cold irons bound.flac
+a89d16c070d18602073a94d688b5476b *CD1\08 I don't believe you (she acts like we never have met).flac
+c6547ea76e1606b72afb374e52c5815d *CD1\09 Man in the long black coat.flac
+b1091543aff62fc5b8a9985cdda74285 *CD1\10 Rainy day women #12 & 35.flac
+1beedee3d4d1789f6a93fdda912fda90 *CD1\11 I believe in you.flac
+2292e0a5b0b336aa34810472e5e3cb6a *CD1\CD1.ffp
+2292e0a5b0b336aa34810472e5e3cb6a *CD1\CD1.txt
+b9a2d6ba581cc5c4f965167a74aac0bc *CD2\12 Honest with me.flac
+e6f5e39da1b4941da1cf04463fe26564 *CD2\13 Tell me that it isn't true.flac
+ae9450115b8082c9afecb65fc9c631e6 *CD2\14 Summer days.flac
+0b532dd37eb5957c3da486c38fec1604 *CD2\15 (audience pleasure).flac
+0db3a264d080760acd5a8d0880b393af *CD2\15 Down along the cove.flac
+01e2af58ad08097da84332291fbb3fe1 *CD2\16 Like a rolling stone.flac
+c9f925362f47dea333b141e2fbd28bf9 *CD2\17 (band intro).flac
+320779f44d447ef9c71b376986b4202d *CD2\17 All along the watchtower.flac
+517b8760043c6df1ed39b9ecdfa8144f *CD2\18 (audience talk).flac
+c3a76e1c8342556c4e88899d9f336ba0 *CD2\CD2.ffp
+c3a76e1c8342556c4e88899d9f336ba0 *CD2\CD2.txt
+730a38e63b253e54dc3631be42a74401 *Info\Bob Dylan 2004-03-26 Avalon, Boston, Massachusetts, USA [LB-1679 'Unwanted Man'].txt
+b1c5964135d1db14e313361e735cab08 *Info\ORIGINAL 2004.03.26 Unwanted Man Info.txt
+===================
+===================
+===================
+=== ffp for: bd04-03-26-d.flacf
+===================
+===================
+===================
+CD1\01 The wicked messenger.flac:25902afc9b3041edbd68ce23a6ea7bf4
+CD1\02 You ain't goin' nowhere.flac:30f317796d6efd0f31fdbd73d9ee9126
+CD1\03 Cry a while.flac:be76e2a8e1b9542cfec1fea035d144fb
+CD1\04 The lonesome death of Hattie Carroll.flac:463103f7fbe5c552abbab162460f257a
+CD1\05 Highway 61 revisited.flac:d73f6fb63fff42e064e586e0a01dea9c
+CD1\06 Make you feel my love.flac:8d5b285cd1ab196c3b8f7ec9eef0cb5c
+CD1\07 Cold irons bound.flac:ec54a7a7e7e76bf761ea33a56977bf12
+CD1\08 I don't believe you (she acts like we never have met).flac:44c9a21e302c42aa221654993848609d
+CD1\09 Man in the long black coat.flac:957e9be8b10b324b0f27a02c7e0831a5
+CD1\10 Rainy day women #12 & 35.flac:f9be2a40fdd649da6ae8859f9b699f67
+CD1\11 I believe in you.flac:627a7b71b0923a8025461c6905832f38
+CD2\12 Honest with me.flac:e9ba8b17257ce8fdffc475b50b51eeeb
+CD2\13 Tell me that it isn't true.flac:8f5b486f1b6af516deab52312eb883eb
+CD2\14 Summer days.flac:17de0b5194b01718ef9612be8a78cd7b
+CD2\15 (audience pleasure).flac:b62f0b78f26418b87d45e3b6a5fa772b
+CD2\15 Down along the cove.flac:399527dc116e7dcda05656ede6ff14ca
+CD2\16 Like a rolling stone.flac:9dbe2bb1729042f42126a1d0b08ae67b
+CD2\17 (band intro).flac:d1d0d69014e1eb4f6a9700ff8090db70
+CD2\17 All along the watchtower.flac:5ad2e6607a9bfb1e98fddfc0060327ce
+CD2\18 (audience talk).flac:69b110a9fa6486972385050b5403f4ec
+===================
+===================
+===================
+=== shntool len for: bd04-03-26-d.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:33.54       48284252 B   ---   --   ---xx   flac  0.6358  01 The wicked messenger.flac
+     5:17.07       55935308 B   ---   --   ---xx   flac  0.6073  02 You ain't goin' nowhere.flac
+     6:00.13       63534620 B   ---   --   ---xx   flac  0.6219  03 Cry a while.flac
+     6:28.16       68480876 B   ---   --   ---xx   flac  0.5524  04 The lonesome death of Hattie Carroll.flac
+     7:34.57       80219708 B   ---   --   ---xx   flac  0.6292  05 Highway 61 revisited.flac
+     5:15.15       55601324 B   ---   --   ---xx   flac  0.5938  06 Make you feel my love.flac
+     6:02.18       63899180 B   ---   --   ---xx   flac  0.6054  07 Cold irons bound.flac
+     6:52.54       72803852 B   ---   --   ---xx   flac  0.6115  08 I don't believe you (she acts like we never have met).flac
+     5:50.66       61895276 B   ---   --   ---xx   flac  0.6040  09 Man in the long black coat.flac
+     5:55.02       62626748 B   ---   --   ---xx   flac  0.5951  10 Rainy day women #12 & 35.flac
+     6:25.55       68043404 B   ---   --   ---xx   flac  0.5772  11 I believe in you.flac
+    66:15.57      701324548 B                            0.6026  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd04-03-26-d.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:05.60       75111164 B   ---   --   ---xx   flac  0.6125  12 Honest with me.flac
+     4:56.09       52235612 B   ---   --   ---xx   flac  0.5962  13 Tell me that it isn't true.flac
+     7:21.67       77950028 B   ---   --   ---xx   flac  0.6230  14 Summer days.flac
+     4:47.52       50749148 B   ---   --   ---xx   flac  0.4408  15 (audience pleasure).flac
+     6:39.03       70390700 B   ---   --   ---xx   flac  0.6323  15 Down along the cove.flac
+     6:58.27       73798748 B   ---   --   ---xx   flac  0.6149  16 Like a rolling stone.flac
+     1:14.22       13105388 B   ---   --   ---xx   flac  0.5543  17 (band intro).flac
+     7:50.06       82922156 B   ---   --   ---xx   flac  0.5732  17 All along the watchtower.flac
+     2:49.02       29816348 B   ---   --   ---xx   flac  0.4737  18 (audience talk).flac
+    49:42.23      526079292 B                            0.5834  (9 files)
+===================
+===================
+===================

@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-14-a.flacf 
+=================== 
+=================== 
+=================== 
+ca0ca97586a255875fa88e692ab108f3  bd87-10-14-a-LB-4217.txt
+0cab33148a0cd95d08e160249d5a3476  Bob Dylan Oct 14, 1987 - London, England.txt
+2321916c44bb89f6518a6aeca4b13f68  Track01.flac
+10fa6a745c4822abd3407c5a26b6f1dc  Track02.flac
+4b4747fd8aa20254622900011acfc750  Track03.flac
+32547c2727f7cfcf8afa8aab03716ccf  Track04.flac
+0206c29ef3b08e74d03b0d192ab22dcd  Track05.flac
+74d28b44fe4e5dacc80946a4a1d3fc03  Track06.flac
+7f7acc230eda585eba28655f1fc5eb80  Track07.flac
+4065c41f76a7a099478ca7be7869c821  Track08.flac
+b78debbc08a58216d70557413e7e03d6  Track09.flac
+c8c08af6b0cbbfa2bf5019b6dea8a716  Track10.flac
+31b6de8c7668fa6162f2520620f00fcb  Track11.flac
+c6e48787f8b51b42076f6e7fe1732926  Track12.flac
+e1917c61f43678518f049837348b5a64  Track13.flac
+f8cd2d01210808c86a7225033a7aa123  Track14.flac
+12c404ba8ac759beaab5fb7b4c8a700c  Track15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-14-a.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:636a44a83349d97b86c91ea0ac692ee8
+Track02.flac:f0120a0c9f954091b0ec7df6ee8abde6
+Track03.flac:413a605f7f7a5868d0b8bc0b3897a410
+Track04.flac:210eb2c0e9d87db687c24d04fd2556bf
+Track05.flac:f4ae7263172bc206e6b894bc83a340a6
+Track06.flac:b7d395d3335dc96dc8a4c44bcba094f4
+Track07.flac:082dfc6ea01547f8074c878b7a1e5a90
+Track08.flac:453657c8fa1feeffc7469d4c46661c33
+Track09.flac:c8af19c5632933f8b92ab6481ffa7a19
+Track10.flac:91b499193bfff7bdda1b5ee99d7bfc80
+Track11.flac:2c6c9165e4efd3c5ba9969f089eb91d2
+Track12.flac:3b51636b2626cddc434e5f895f738f77
+Track13.flac:d0a0d795b20a0c213c9f5c1a807d6b4a
+Track14.flac:7c90bc19cc0eb5caafac1e0c0e801630
+Track15.flac:9b5c7957d612b96f905e16fb40c9f5cd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-14-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.38       57419420 B   ---   --   ---xx   flac  0.6400  Track01.flac
+     3:49.33       40473260 B   ---   --   ---xx   flac  0.6332  Track02.flac
+     5:22.38       56890220 B   ---   --   ---xx   flac  0.5972  Track03.flac
+     4:58.41       52663676 B   ---   --   ---xx   flac  0.6303  Track04.flac
+     5:57.29       63043052 B   ---   --   ---xx   flac  0.6468  Track05.flac
+     4:36.05       48698204 B   ---   --   ---xx   flac  0.6157  Track06.flac
+     5:36.13       59301020 B   ---   --   ---xx   flac  0.6677  Track07.flac
+     5:31.52       58510748 B   ---   --   ---xx   flac  0.6205  Track08.flac
+     5:10.42       54782828 B   ---   --   ---xx   flac  0.5762  Track09.flac
+     4:18.70       45675884 B   ---   --   ---xx   flac  0.6506  Track10.flac
+     3:50.26       40633196 B   ---   --   ---xx   flac  0.5551  Track11.flac
+     4:18.36       45595916 B   ---   --   ---xx   flac  0.5338  Track12.flac
+     4:57.37       52477868 B   ---   --   ---xx   flac  0.6876  Track13.flac
+     5:31.48       58501340 B   ---   --   ---xx   flac  0.6372  Track14.flac
+     6:26.35       68172764 B   ---   --   ---xx   flac  0.7806  Track15.flac
+    75:51.18      802839396 B                            0.6364  (15 files)
+=================== 
+=================== 
+=================== 

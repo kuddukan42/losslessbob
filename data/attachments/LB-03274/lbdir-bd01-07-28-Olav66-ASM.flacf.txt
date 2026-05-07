@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-07-28-Olav66-ASM.flacf 
+=================== 
+=================== 
+=================== 
+a8278f614529452ac2f03f628aec9f2d  bd01-07-28-Olav66-ASM-LB-3274.txt
+e3415f7b56e2194f0ff815fbd131fd6e  CD1\00 Announcement.flac
+ff7661f53debcbd8afde4c7534aca216  CD1\01 Somebody touched me.flac
+a08034bdd67ee638cf39c8c68b0f7fbd  CD1\02 The times they are a-changin'.flac
+92530b3ba65a66a6324e6875862cfe1d  CD1\03 Desolation Row.flac
+1654256115ad8392872b2cc7251df442  CD1\04 Absolutely sweet Marie.flac
+cb9c27fecdec68201ed9ee44809328ba  CD1\05 Simple twist of fate.flac
+bc82eb26029f691ac5030ebe868d5f1b  CD1\06 I'll be your baby tonight.flac
+dc7640e63ffda4181344db5dd2c1b6b8  CD1\07 The lonesome death of Hattie Carroll.flac
+a88f969f02c33afa4430cd4802f7a87a  CD1\08 Boots of Spanish leather.flac
+17ab74c0c378c266ef6b5840d38a4a33  CD1\09 Don't think twice, it's all right.flac
+b4ca16880647c4c2c72750eb17aa33b9  CD1\10 Everything is broken.flac
+c9426195905010298d1ec7f3d6263c36  CD1\11 Just like a woman.flac
+026d4b22d200fcaf4b131020128ebebf  CD2\12 Drifter's escape.flac
+90912f469e1b30145736453f5be6e592  CD2\13 Rainy day women # 12 & 35.flac
+c9dcbfc78b48cc8dd1c0f6ecf8c24521  CD2\14 Love sick.flac
+648e07afcaa51d825246bae8c28870c9  CD2\15 (encore).flac
+720e774de1872845b58e4dba231e5737  CD2\15 Like a rolling stone.flac
+a77c2ea3e465e0cdcaaee56b9a38c845  CD2\16 One too many mornings.flac
+60eca789853e1a7f70fe301ceef7f16e  CD2\17 All along the watchtower.flac
+b7a74ceba6fc4713b654ae42734e77d9  CD2\18 Knockin' on heaven's door.flac
+c48f429eeaad77f3aefe564597d040a6  CD2\19 Highway 61 revisited.flac
+85cb5c2cc0e29b34f628cde422970880  CD2\20 Blowin' in the wind.flac
+7c751ba2e3e84684c6acc051c4fd4fe7  Info\2001-07-28 Teatro Greco, Taormina, Italy.txt
+1d6798e99470d1d89deee8911e275df1  Info\ffp d1.txt
+75f589ba3f23fa3de531513c749977ca  Info\ffp d2.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-28-Olav66-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:65d14a19b1e1bec3855c2650ff188083
+01 Somebody touched me.flac:d90e20913ac15cdbd01ed3fd71317d9b
+02 The times they are a-changin'.flac:ccdf23e3f47ded12d52312490936ed43
+03 Desolation Row.flac:2906cbe7753eb7f9d5bab794aa85159c
+04 Absolutely sweet Marie.flac:0b5a91e3bbd9144032c974e76cb2def5
+05 Simple twist of fate.flac:cce119d3c446560a3e53e0d9644ec7b2
+06 I'll be your baby tonight.flac:e33de61e57bef360849760c50b692637
+07 The lonesome death of Hattie Carroll.flac:bfc3fc5faad65b42604a65e525711bc0
+08 Boots of Spanish leather.flac:06b16526df49b721966818ea888bad4b
+09 Don't think twice, it's all right.flac:7e78aa42c8f1a089b88b611efb2acdd2
+10 Everything is broken.flac:23c7293a04e1603f616716e835f6c98e
+11 Just like a woman.flac:c46f690d2cac14039f9118df994f9481
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-28-Olav66-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+12 Drifter's escape.flac:db6555e03094ba829e9c15d7d7e22079
+13 Rainy day women # 12 & 35.flac:af4e13e1c81c275f691cd183e69a55d8
+14 Love sick.flac:30cc54c22c66e69d581620f484665d8d
+15 (encore).flac:f4d0217687f5ca55a7843db7ab524b9d
+15 Like a rolling stone.flac:848c377ec994fd1a18a2c37baa9e8461
+16 One too many mornings.flac:0aa37f979510cb9932f954332b7fa099
+17 All along the watchtower.flac:ef36e791a5907a6260511ffcd8775eef
+18 Knockin' on heaven's door.flac:265f706388ea7294f1b0b72daf31f139
+19 Highway 61 revisited.flac:4489c38aa29b9b9c8e9675d0ea20d604
+20 Blowin' in the wind.flac:f74908714fd0ee67991c9c6ed730df74
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-28-Olav66-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:22.74       14638892 B   ---   --   ---xx   flac  0.6081  00 Announcement.flac
+     2:56.16       31084076 B   ---   --   ---xx   flac  0.7092  01 Somebody touched me.flac
+     7:11.26       76089596 B   ---   --   ---xx   flac  0.6913  02 The times they are a-changin'.flac
+     8:29.11       89813516 B   ---   --   ---xx   flac  0.6704  03 Desolation Row.flac
+     7:02.46       74549036 B   ---   --   ---xx   flac  0.6742  04 Absolutely sweet Marie.flac
+     8:10.35       86518364 B   ---   --   ---xx   flac  0.6322  05 Simple twist of fate.flac
+     5:41.01       60154796 B   ---   --   ---xx   flac  0.6582  06 I'll be your baby tonight.flac
+     6:34.23       69555740 B   ---   --   ---xx   flac  0.6277  07 The lonesome death of Hattie Carroll.flac
+     6:06.11       64588316 B   ---   --   ---xx   flac  0.5596  08 Boots of Spanish leather.flac
+     6:28.44       68546732 B   ---   --   ---xx   flac  0.6212  09 Don't think twice, it's all right.flac
+     4:58.10       52590764 B   ---   --   ---xx   flac  0.6945  10 Everything is broken.flac
+     6:06.52       64684748 B   ---   --   ---xx   flac  0.6648  11 Just like a woman.flac
+    71:07.49      752814576 B                            0.6512  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-28-Olav66-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:33.21       58790636 B   ---   --   ---xx   flac  0.7119  12 Drifter's escape.flac
+     7:39.65       81120524 B   ---   --   ---xx   flac  0.7006  13 Rainy day women # 12 & 35.flac
+     5:47.38       61300220 B   ---   --   ---xx   flac  0.6462  14 Love sick.flac
+     2:56.66       31201676 B   ---   --   ---xx   flac  0.6001  15 (encore).flac
+     7:33.27       79972748 B   ---   --   ---xx   flac  0.6938  15 Like a rolling stone.flac
+     7:47.40       82472924 B   ---   --   ---xx   flac  0.6031  16 One too many mornings.flac
+     4:41.01       49570796 B   ---   --   ---xx   flac  0.7029  17 All along the watchtower.flac
+     6:01.23       63734540 B   ---   --   ---xx   flac  0.6650  18 Knockin' on heaven's door.flac
+     6:29.26       68680796 B   ---   --   ---xx   flac  0.6967  19 Highway 61 revisited.flac
+     7:04.38       74883020 B   ---   --   ---xx   flac  0.6409  20 Blowin' in the wind.flac
+    61:34.45      651727880 B                            0.6679  (10 files)
+=================== 
+=================== 
+=================== 

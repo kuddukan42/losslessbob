@@ -1,0 +1,17 @@
+43a40c3bbf3e94b0c1911e7dd553928d  1995-10-12 - Dothan.md5
+add6143644ecd371199592fe6ee757e8  CD1\Track01.flac
+100910b0077efbf8ebd78e1a1c35f369  CD1\Track02.flac
+6d3569dd34f3b425aed8c622fb22b18a  CD1\Track03.flac
+be17e0836cd106031cad6e2cb180ff79  CD1\Track04.flac
+aa99960d80cc03c51ba7ea2c9b688090  CD1\Track05.flac
+2db53cc8b7fa48d4a865176c0267e3cb  CD1\Track06.flac
+51a6654edc310600a5d6ea0de9d5bac7  CD1\Track07.flac
+7ebd8b3f1106cba01e833e26823a4479  CD1\Track08.flac
+45f78c6b011c90aa19caee66bf755734  CD1\Track09.flac
+cf8d9d09eee7decac2678767c2da44bd  CD2\Track01.flac
+9d864bffd0b2534a630b98fbcc2b4b4b  CD2\Track02.flac
+c0d2a80c63c7e80dc730abd1562a3480  CD2\Track03.flac
+08aaed6aabb2304b6ccba95667f75b4d  CD2\Track04.flac
+29489fe92ccf5cabecca1df2a2d2ff47  CD2\Track05.flac
+b1bbdc4f70f7d1d3fc5fb30903f5b275  CD2\Track06.flac
+43d8e98615ed5ccd60b8a11dff88d45f  info.txt

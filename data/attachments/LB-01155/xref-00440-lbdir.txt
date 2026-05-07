@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-12-SCHUBERT-REC-ASM-d.flacf 
+=================== 
+=================== 
+=================== 
+e5dc2fedbdaddbf161988b9ae0ca8d74  101 Announcement.flac
+38408f49e83f7128a80e702ae81e5a17  102 Roving Gambler .flac
+53c012e71b0cb361f9e4527869fdb961  103 The Times They Are A-Changin'.flac
+e07c358081c1a3a355b976f8b8754e2a  104 Desolation Row.flac
+105c8b8a9a297eabf4af303c4f1ef615  105 Tomorrow Is A Long Time.flac
+8667cb0d54244c979141f762a538013b  106 Tangled Up In Blue.flac
+1bc266859d0755a64340e3179c970ddb  107 Ring Them Bells.flac
+972b6afe6595a3c5a8b670f1c8f58324  108 Country Pie .flac
+8d3310d8c03aabc2f5bcf98f71769825  109 Things Have Changed .flac
+50a7772cd559444f6acb727e16fad24b  110 I'll Be Your Baby Tonight .flac
+5596a4736a4cec7e856795d22fdf2037  111 Tombstone Blues .flac
+8e47b8125da3aa631f2c363322208de8  2000-05-12 Hannover.md5
+fad096be8f84d27920b2686d921087de  2000-05-12 Hannover.rtf
+87a87e66aee3e232e5b864051c101cf7  201 Can't Wait .flac
+2a938ee92fd29eb9f48cda6819446302  202 Leopard-Skin Pill-Box Hat.flac
+fa9785f75e422fbb1fdc9898797052d1  203 Love Sick.flac
+0ef77d385c6311c451851375ccbf6f58  204 Like A Rolling Stone.flac
+8ee13b78d7033b28a7f119dc3f318f16  205 It Ain't Me, Babe.flac
+55b6325f313718fea1dd5c261227295e  206 Not Fade Away .flac
+70fe4ea88c64410253662759f64db714  207 Blowin' In The Wind.flac
+7ff9ae71159ef6b725bbf5bdefdf439f  208 Rainy Day Women #12 & #35 .flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-12-SCHUBERT-REC-ASM-d.flacf 
+=================== 
+=================== 
+=================== 
+101 announcement.flac:e5378d8cb4e24ebbc4b0e5f4cf7252f3
+102 roving gambler .flac:adab2858a66ec9b7d2c24d4374716e75
+103 the times they are a-changin'.flac:a175249d95089e5dc1ea708508a2dd45
+104 desolation row.flac:fcf0e3e7e24e6610d6ebc2cfb4959bde
+105 tomorrow is a long time.flac:dbb54f7399bf928cb20357b86e40fa2a
+106 tangled up in blue.flac:351cb23831843428a8ea16a23484a8f0
+107 ring them bells.flac:6958113795977f12264570a01d5d24c3
+108 country pie .flac:2ee39bf14b2c413415849f8a23d2b0ee
+109 things have changed .flac:2d83a7420771e964692fac23bb95f4e5
+110 i'll be your baby tonight .flac:b50a693a28df4a9f861c04e9428e57f6
+111 tombstone blues .flac:49b26394061110917b6779f000f880c0
+201 can't wait .flac:91eeffdcf3dbaacf2934b96b6099fcc5
+202 leopard-skin pill-box hat.flac:6ba992e8c19b48d122dd430864dfb46e
+203 love sick.flac:943458ea99503f6a5e020e11e2192911
+204 like a rolling stone.flac:b34287a40587706c97c22b53d785336f
+205 it ain't me, babe.flac:15736305ac72f3f0ebdbb5c20aa1395c
+206 not fade away .flac:e27d4d0a46cf252dcfff29e0c2a5633f
+207 blowin' in the wind.flac:beb486f975e7e61a2979f597f924e172
+208 rainy day women #12 & #35 .flac:94090d8594924c3842b867c173caebea
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-12-SCHUBERT-REC-ASM-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:23.43        4158380 B   ---   --   ---xx   flac  0.5183  101 Announcement.flac
+     3:55.32       41529308 B   ---   --   ---xx   flac  0.5625  102 Roving Gambler .flac
+     6:53.53       72977900 B   ---   --   ---xx   flac  0.5142  103 The Times They Are A-Changin'.flac
+     9:23.34       99393212 B   ---   --   ---xx   flac  0.5192  104 Desolation Row.flac
+     5:06.09       53999612 B   ---   --   ---xx   flac  0.4186  105 Tomorrow Is A Long Time.flac
+     7:40.69       81306332 B   ---   --   ---xx   flac  0.5923  106 Tangled Up In Blue.flac
+     5:30.42       58310828 B   ---   --   ---xx   flac  0.5025  107 Ring Them Bells.flac
+     2:40.23       28278140 B   ---   --   ---xx   flac  0.5918  108 Country Pie .flac
+     5:47.30       61281404 B   ---   --   ---xx   flac  0.5562  109 Things Have Changed .flac
+     6:16.28       66392300 B   ---   --   ---xx   flac  0.5320  110 I'll Be Your Baby Tonight .flac
+     6:04.11       64235516 B   ---   --   ---xx   flac  0.5820  111 Tombstone Blues .flac
+     5:37.56       59578556 B   ---   --   ---xx   flac  0.4876  201 Can't Wait .flac
+     8:35.40       90940124 B   ---   --   ---xx   flac  0.5983  202 Leopard-Skin Pill-Box Hat.flac
+     5:56.31       62871356 B   ---   --   ---xx   flac  0.5102  203 Love Sick.flac
+     7:51.22       83136188 B   ---   --   ---xx   flac  0.6042  204 Like A Rolling Stone.flac
+     8:12.47       86899388 B   ---   --   ---xx   flac  0.4709  205 It Ain't Me, Babe.flac
+     4:29.20       47498684 B   ---   --   ---xx   flac  0.6079  206 Not Fade Away .flac
+     5:30.50       58329644 B   ---   --   ---xx   flac  0.5065  207 Blowin' In The Wind.flac
+     6:34.73       69673340 B   ---   --   ---xx   flac  0.6090  208 Rainy Day Women #12 & #35 .flac
+   112:30.38     1190790212 B                            0.5423  (19 files)
+=================== 
+=================== 
+=================== 

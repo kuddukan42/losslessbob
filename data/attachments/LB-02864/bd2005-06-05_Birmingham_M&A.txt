@@ -1,0 +1,58 @@
+Birmingham, Alabama
+Hoover Metropolitan Stadium
+Sunday _ June 05, 2005
+
+A recording by M&A
+
+MBHO 603a > Lunatech V-3 > Sony-D100 >
+Audio CDs from M&A > me > you
+(SHNs created with xACT 1.4b24)
+
+
+Disc 1  47:50
+1.      Intro  0:34
+2.	Drifter's Escape 4:41
+3.	Love Minus Zero/No Limit  5:54
+4.	God Knows  5:04
+5.	Tweedle Dee & Tweedle Dum  5:33
+6.	Shooting Star  5:40
+7.	Highway 61 Revisited  7:31
+8.	Tryin' To Get To Heaven  5:40
+9.	High Water (For Charley Patton)  7:11
+
+Disc 2  42:50
+9.	Boots Of Spanish Leather  6:33
+10.	Honest With Me  6:33
+11.	I Dreamed I Saw St. Augustine  6:32
+12.	Summer Days  8:27
+Pause (one second) at edit	
+(encore)
+13.	Don't Think Twice, It's All Right  8:14
+14.	Like A Rolling Stone  6:30
+ 	 
+Band Members
+Bob Dylan - keyboard, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - electric mandolin, violin, banjo, pedal steel
+Tony Garnier - bass
+George Recile - drums
+
+Disc 1 SHN md5
+b0a807d1bc9a5aa399815076675c38bf *bd2005-06-05d1t01.shn
+f3a20f80f406f3aa169285b136b3be1e *bd2005-06-05d1t02.shn
+c01d931f763e90911222172cba80069b *bd2005-06-05d1t03.shn
+a528609546145189715526dae7585c52 *bd2005-06-05d1t04.shn
+f6723be703438348a993d934dcfc56a7 *bd2005-06-05d1t05.shn
+a0c538c6b8aec599ced8d2a0fe7e031c *bd2005-06-05d1t06.shn
+079d70c98df5aa0d7db272e159c23be5 *bd2005-06-05d1t07.shn
+1d10ef155ff50113bfbe25aba0c10d9b *bd2005-06-05d1t08.shn
+efd372fe1c1d689fa89fd0131aa60861 *bd2005-06-05d1t09.shn
+
+Disc 2 SHN md5
+8d109443077d6bd072169ecfe3508151 *bd2005-06-05d2t01.shn
+4f500f9e8ef48811eaf1625f77ef76f9 *bd2005-06-05d2t02.shn
+7d3e495212188cd29eab61808bb1e61c *bd2005-06-05d2t03.shn
+0db827bc88cb81028dd4534e975457c3 *bd2005-06-05d2t04.shn
+fbcf0f6d43f16a3482437c0490eed068 *bd2005-06-05d2t05.shn
+e8833b5b8c4bcd4b9cba44574ccba98a *bd2005-06-05d2t06.shn

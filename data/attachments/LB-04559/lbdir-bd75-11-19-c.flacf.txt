@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-19-c.flacf 
+=================== 
+=================== 
+=================== 
+41bc01eb3da22ee8937f9771afbd9bee  bd1975-11-19.info.txt
+7e36af70eb8c52ee4eec581a97c7b6d8  bd1975-11-19.t01.flac
+eff56ba8f85b5b2b8fec136d57d9d61c  bd1975-11-19.t02.flac
+31b9176eef3382949be26e35a4dabc55  bd1975-11-19.t03.flac
+e31eda93c8fd3ce698fce0e234c8cd23  bd1975-11-19.t04.flac
+bdd39d94c3cca22e17b6d47195062d7a  bd1975-11-19.t05.flac
+9011c02b0f453d47190efed26a9b0659  bd1975-11-19.t06.flac
+532a4bb61017e9301bcd4df0aa5edcab  bd1975-11-19.t07.flac
+71a20cce41a8d1a83856a58b0b4bc7fa  bd1975-11-19.t08.flac
+a6dd7a91e29e583cf70242751f451150  bd1975-11-19.t09.flac
+329e71193a9d4b7d53c702b54c5b59dc  bd1975-11-19.t10.flac
+9d061ff608f596a3faa211767775ed47  bd1975-11-19.t11.flac
+52d61b8338c9cdc0e1909772998bdf39  bd1975-11-19.t12.flac
+2686b33bb0c773de8ac2e894ae31ac5e  bd1975-11-19.t13.flac
+4f7343a9fc2d133271b096252aff4058  bd1975-11-19.t14.flac
+151c4d24b749ea1866114a02abdd3fcd  bd1975-11-19.t15.flac
+207174d36c3238802f11449307de2fba  bd1975-11-19.t16.flac
+95f2312d56e99fa272183ca0f893b9f1  bd1975-11-19.t17.flac
+f988f22552e5bbf2b6780aa7cd01d32f  bd1975-11-19.t18.flac
+438dc75328937f6b077d30f3645feb92  bd1975-11-19.t19.flac
+702c9d918b175b576bbfff557dcc27af  bd75-11-19-c-LB-4559.txt
+662191bab280a3fb9ab9cc7dd807e641  flac.ffp
+8c2e8a7776b9f131a1fcba47ddbcc717  foobar2000_wav2flac_bitcompare.txt
+c889442708ec3c2679ebff99a91f24f4  wav.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-19-c.flacf 
+=================== 
+=================== 
+=================== 
+bd1975-11-19.t01.flac:3af4b968550847a5d095639b51fbe151
+bd1975-11-19.t02.flac:d81a92b6e8480a4dcb0e5adc4f04febf
+bd1975-11-19.t03.flac:fc764655ab301fb12102690dfff1c0dc
+bd1975-11-19.t04.flac:32b4816d7c79143812e2ea59a6ff0c9f
+bd1975-11-19.t05.flac:ebf274e8098567fce1e01f5699e00bc0
+bd1975-11-19.t06.flac:7bb6c1aa38a5ea8a8f70418125aa2d1d
+bd1975-11-19.t07.flac:69c44467482fcbda1ed2a8e0099521eb
+bd1975-11-19.t08.flac:6b6bcf72860d09abe72b8c349f237f93
+bd1975-11-19.t09.flac:4a9bf4b3a5fb6af1dad64121c06c2f29
+bd1975-11-19.t10.flac:f80cdee79386d1ef7d8d7b57a7e16dd8
+bd1975-11-19.t11.flac:96ab731f4767823d50b254bb63e525d2
+bd1975-11-19.t12.flac:3b72cabbbb50e261a7eb340576e07fdf
+bd1975-11-19.t13.flac:9257958b9fe279bad483aba9bf7ca838
+bd1975-11-19.t14.flac:3562edbde4a943eda742c4a718de5ccc
+bd1975-11-19.t15.flac:1f18bcff31e1dcb7e7aece099daf1807
+bd1975-11-19.t16.flac:6e4cbc2c98511a674962628924c1fa11
+bd1975-11-19.t17.flac:49168c9645ee9df9153ddfba660d127f
+bd1975-11-19.t18.flac:b1d9907169fe47649032131e96b35eab
+bd1975-11-19.t19.flac:f2faac88f906fabf32388e25a257b6bd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-19-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.59       47590412 B   ---   --   ---xx   flac  0.5757  bd1975-11-19.t01.flac
+     5:43.52       60627548 B   ---   --   ---xx   flac  0.5694  bd1975-11-19.t02.flac
+     5:21.15       56659724 B   ---   --   ---xx   flac  0.5551  bd1975-11-19.t03.flac
+     3:19.22       35155388 B   ---   --   ---xx   flac  0.5905  bd1975-11-19.t04.flac
+     5:39.40       59893724 B   ---   --   ---xx   flac  0.5666  bd1975-11-19.t05.flac
+     5:24.18       57195980 B   ---   --   ---xx   flac  0.5711  bd1975-11-19.t06.flac
+     2:43.12       28781468 B   ---   --   ---xx   flac  0.5802  bd1975-11-19.t07.flac
+     4:20.43       45965180 B   ---   --   ---xx   flac  0.5228  bd1975-11-19.t08.flac
+     2:57.65       31375724 B   ---   --   ---xx   flac  0.5391  bd1975-11-19.t09.flac
+     3:33.24       37629692 B   ---   --   ---xx   flac  0.5321  bd1975-11-19.t10.flac
+     4:30.47       47738588 B   ---   --   ---xx   flac  0.5257  bd1975-11-19.t11.flac
+     5:09.22       54559388 B   ---   --   ---xx   flac  0.5315  bd1975-11-19.t12.flac
+     4:06.06       43408556 B   ---   --   ---xx   flac  0.5487  bd1975-11-19.t13.flac
+     9:01.05       95444204 B   ---   --   ---xx   flac  0.5683  bd1975-11-19.t14.flac
+     4:28.61       47418716 B   ---   --   ---xx   flac  0.5634  bd1975-11-19.t15.flac
+     5:28.05       57871004 B   ---   --   ---xx   flac  0.5319  bd1975-11-19.t16.flac
+     4:22.72       46386188 B   ---   --   ---xx   flac  0.5595  bd1975-11-19.t17.flac
+     4:53.61       51828716 B   ---   --   ---xx   flac  0.5589  bd1975-11-19.t18.flac
+     3:32.25       37455644 B   ---   --   ---xx   flac  0.6069  bd1975-11-19.t19.flac
+    89:05.54      942985844 B                            0.5575  (19 files)
+=================== 
+=================== 
+=================== 

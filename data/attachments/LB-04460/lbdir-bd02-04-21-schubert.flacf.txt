@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-04-21-schubert.flacf 
+=================== 
+=================== 
+=================== 
+0b150f7d1d399f78e3369ddf7475f0f4  bd02-04-21-schubert-LB-4460.txt
+6754570982e4b99cec37ef94038955ad  BD_04212002_D1\BD_04212002_D1.md5
+0b85798209cfdb2431b6d85318e810e4  BD_04212002_D1\BD_04212002_D1T01.shn
+728983152cb924aefc2964f3ee43ad19  BD_04212002_D1\BD_04212002_D1T02.shn
+9e58bf827746c5d93590603501d82f82  BD_04212002_D1\BD_04212002_D1T03.shn
+f24d6cd98a30e2988886c850fe9cc320  BD_04212002_D1\BD_04212002_D1T04.shn
+0f9f9bf522e58bb6a096e14133291bab  BD_04212002_D1\BD_04212002_D1T05.shn
+2388ac62e58d5bfd5b4b311aac5742cd  BD_04212002_D1\BD_04212002_D1T06.shn
+4bbddc61bc29c918b5721db2193d67a2  BD_04212002_D1\BD_04212002_D1T07.shn
+7bae4513124337b0bf084da516b8e537  BD_04212002_D1\BD_04212002_D1T08.shn
+2601cddd1d942bd15e5e572233273e35  BD_04212002_D1\BD_04212002_D1T09.shn
+28957f6fa4f0515b5cc9440f002f3560  BD_04212002_D1\BD_04212002_D1T10.shn
+bbb3946685e88348a747bb76fb0db6ab  BD_04212002_D1\BD_04212002_D1T11.shn
+717c2537959bee9ca252718d3d35c812  BD_04212002_D1\BD_04212002_D1T12.shn
+fc8210829d2ad82cedf299515f4787af  BD_04212002_D1\BD_04212002_wav.md5
+3c5defaaea927fa597d5a2c1d90628da  BD_04212002_D2\BD_04212002_D2.md5
+006e2ca321947112cbf229db852e052b  BD_04212002_D2\BD_04212002_D2T01.shn
+c764a56b6dd129a8c8a5adf2d53cd3eb  BD_04212002_D2\BD_04212002_D2T02.shn
+85d8715e601d2c19acb3dfef4dc67870  BD_04212002_D2\BD_04212002_D2T03.shn
+6a48e5771d5d774d53661bbe39ac574f  BD_04212002_D2\BD_04212002_D2T04.shn
+07a5c9c09c85e2afffc69dd2f32ea888  BD_04212002_D2\BD_04212002_D2T05.shn
+9afd5ea51f83bd8a97006f2cb5fadfeb  BD_04212002_D2\BD_04212002_D2T06.shn
+a36b938dbad512761cc6e2497f1826a4  BD_04212002_D2\BD_04212002_D2T07.shn
+f75fb6b44a6261603c133cd74bdbf040  BD_04212002_D2\BD_04212002_D2T08.shn
+5e8d5d7d0b8686d0dde6e4b65f2091b2  BD_04212002_D2\BD_04212002_D2T09.shn
+ddafd31e415bfded2238586b53477dc3  Bob Dylan 21 april 2002 Zurich.txt
+c3c40c71f6b1ecfc4018cbb64ec302a2  zurichback.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-04-21-schubert.flacf\BD_04212002_D1 
+=================== 
+=================== 
+=================== 
+f9eba1a04e4c5495c1f3d77b2e2dfda6  [shntool]  BD_04212002_D1T01.wav
+9fcc6613bfe141d808d622f230426677  [shntool]  BD_04212002_D1T02.wav
+730d840c4d011a8f20344a428367e005  [shntool]  BD_04212002_D1T03.wav
+c272e6e8bcdf16ac93df5da7544c1cbe  [shntool]  BD_04212002_D1T04.wav
+d55a9a7882d999c9d2bbecbf9e7ee44d  [shntool]  BD_04212002_D1T05.wav
+4cd3566b130d405c369f0eecf2683595  [shntool]  BD_04212002_D1T06.wav
+2c53c49c93c5107732333088b77bca3c  [shntool]  BD_04212002_D1T07.wav
+342174e347edcc0e113c3c3986285c21  [shntool]  BD_04212002_D1T08.wav
+675c6436599d05486bf7bbcbc4869c59  [shntool]  BD_04212002_D1T09.wav
+6197dcdd8b067894329aebb43bf46597  [shntool]  BD_04212002_D1T10.wav
+fbfa1591eaf80adc15a46f5184ce5a26  [shntool]  BD_04212002_D1T11.wav
+55d3d82bec62391e050db3aafcc817cb  [shntool]  BD_04212002_D1T12.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-04-21-schubert.flacf\BD_04212002_D2 
+=================== 
+=================== 
+=================== 
+a60da00abd5059472a624115a3e39039  [shntool]  BD_04212002_D2T01.wav
+03d970bf741f6cdaa7a60c3c33e2ad08  [shntool]  BD_04212002_D2T02.wav
+922e25a21ffd77bf6df1189a6cfec5ce  [shntool]  BD_04212002_D2T03.wav
+2b50328bd1b6344eba5ab792f866fbcc  [shntool]  BD_04212002_D2T04.wav
+7f3e35fbbe218a4d5a3e9998c165ffc6  [shntool]  BD_04212002_D2T05.wav
+392901d6243457df0fd2d484b32f421c  [shntool]  BD_04212002_D2T06.wav
+d20c996c7c900d70ac319bad608332d4  [shntool]  BD_04212002_D2T07.wav
+dade139aa9f04ad578233d9e45e72166  [shntool]  BD_04212002_D2T08.wav
+5342decd8a6bd2837b1b2a5ae4e619e1  [shntool]  BD_04212002_D2T09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-21-schubert.flacf\BD_04212002_D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:38.68        6863180 B   ---   --   -----    wav  1.0000  BD_04212002_D1T01.wav
+     3:30.36       37128716 B   ---   --   -----    wav  1.0000  BD_04212002_D1T02.wav
+     6:03.58       64169660 B   ---   --   -----    wav  1.0000  BD_04212002_D1T03.wav
+     6:37.62       70176668 B   ---   --   -----    wav  1.0000  BD_04212002_D1T04.wav
+     6:38.35       70289564 B   ---   --   -----    wav  1.0000  BD_04212002_D1T05.wav
+     4:55.68       52197980 B   ---   --   -----    wav  1.0000  BD_04212002_D1T06.wav
+     6:36.27       69917948 B   ---   --   -----    wav  1.0000  BD_04212002_D1T07.wav
+     6:49.16       72185276 B   ---   --   -----    wav  1.0000  BD_04212002_D1T08.wav
+     4:57.50       52508444 B   ---   --   -----    wav  1.0000  BD_04212002_D1T09.wav
+     5:50.51       61859996 B   ---   --   -----    wav  1.0000  BD_04212002_D1T10.wav
+     8:50.09       93513212 B   ---   --   -----    wav  1.0000  BD_04212002_D1T11.wav
+     9:53.27      104668748 B   ---   --   -----    wav  1.0000  BD_04212002_D1T12.wav
+    71:22.57      755479392 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-21-schubert.flacf\BD_04212002_D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:05.35       96220364 B   ---   --   -----    wav  1.0000  BD_04212002_D2T01.wav
+     6:16.72       66495788 B   ---   --   -----    wav  1.0000  BD_04212002_D2T02.wav
+     6:20.46       67140236 B   ---   --   -----    wav  1.0000  BD_04212002_D2T03.wav
+    12:54.29      136601852 B   ---   --   -----    wav  1.0000  BD_04212002_D2T04.wav
+     5:29.73       58207340 B   ---   --   -----    wav  1.0000  BD_04212002_D2T05.wav
+     8:00.04       84681452 B   ---   --   -----    wav  1.0000  BD_04212002_D2T06.wav
+     7:20.19       77660732 B   ---   --   -----    wav  1.0000  BD_04212002_D2T07.wav
+     6:42.74       71086892 B   ---   --   -----    wav  1.0000  BD_04212002_D2T08.wav
+     7:36.30       80509004 B   ---   --   -----    wav  1.0000  BD_04212002_D2T09.wav
+    69:47.07      738603660 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

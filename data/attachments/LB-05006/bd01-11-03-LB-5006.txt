@@ -1,0 +1,14 @@
+Bob Dylan, 11/3/01, Nashville, Tennessee, Municipal Auditorium, 2CDR
+
+LB-5006, (73min+67min), Audience recording > Unknown transfer > CDR (x) > EAC (Secure/Offset) > FLAC (Level 8) > CEP > HungerCity, I have 2 recordings of this show, one is labelled Dylan Vine DV 862/863 but this one is probably the best. CEDAR-type f/p d1t03@8:50 "are you doing OK?" (male). Background talk and the occassional cough can be heard throughout. This is not a full spectrum recording; disc 1 appears to have little spectral density above 16kHz but disc 2, while not perfect, is much better. Disc 1 had micro-gaps each side of the track break which I removed, disc 2 had only one such problem (d2t01-t02). Excellent sound, [A-].; bittorrent download 06/07;; has loud bass; excellent sound [A-]; background talking on d1t8, d2t3; sounds like a little brickwalling distortion on d2t10; not much above 18k; has small lego parapets
+
+missing Knockin' On Heaven's Door
+
+CD1
+72:36, 0. intro, 1. Humming Bird, 2. It Ain't Me, Babe, 3. Desolation Row, 4. This World Can't Stand Long, 5. Lonesome Day Blues, 6. I Threw It All Away, 7. High Water (for Charlie Patton), 8. Floater (Too Much To Ask), 9. One Too Many Mornings, 10. John Brown, 11. Visions Of Johanna, 
+
+CD2
+66:24, 12. Summer Days, 13. Mississippi, 14. The Wicked Messenger, 15. Leopard-Skin Pill-Box Hat, 16. Things Have Changed, 17. Like A Rolling Stone, 18. I Shall Be Released, 19. Honest With Me, 20. Blowin' In The Wind, 21. All Along The Watchtower, (Missing 22. Knockin' On Heaven's Door)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

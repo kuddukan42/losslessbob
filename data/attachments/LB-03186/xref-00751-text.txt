@@ -1,0 +1,239 @@
+===================
+===================
+===================
+=== bd 1978-02-25 Osaka.ffp
+===================
+===================
+===================
+disc1\Track 01.flac:30bdd02eea9b5c587ceb24499673704b
+disc1\Track 02.flac:ce7ef7dde6793685c43fb47da3669539
+disc1\Track 03.flac:89235848308673cff9962d1b9ab12644
+disc1\Track 04.flac:9f9e6d85018e594d5e207524b08d7931
+disc1\Track 05.flac:feb1602e54643f9e455c11529df46737
+disc1\Track 06.flac:22302aff8d1df75063ce3de170e2701c
+disc1\Track 07.flac:8557973f67b364f45db5eab0846e96a2
+disc1\Track 08.flac:60614f14c6946f2362345d609c0d5364
+disc1\Track 09.flac:6635042b81c8f88068529750b3dfe01f
+disc1\Track 10.flac:ba568ad8d6910b1242670a207889324a
+disc1\Track 11.flac:f6875a9289d06694898fb6056d231d74
+disc1\Track 12.flac:089cb8f4bca553acba422b83dc041357
+disc1\Track 13.flac:cf1c55840dafe8d249aeece9606bbbbf
+disc1\Track 14.flac:7228b4e097d1807ca8b92b2e8d88de60
+disc1\Track 15.flac:430336f820e73d76e9c928b08507f0a9
+disc2\Track 01.flac:ed5bbd828c245c22e9309a7a34e69c16
+disc2\Track 02.flac:b7c63f3e5ad81f87127fb08276d2a881
+disc2\Track 03.flac:ef170dce4fc7206cca749d99f0848e2d
+disc2\Track 04.flac:7106e64dfd3fbe43a317d732afa6944d
+disc2\Track 05.flac:9e2ed4a0fa72355ca92c8c45adfff187
+disc2\Track 06.flac:dad9f2f5158b5073d30dc97726473c27
+disc2\Track 07.flac:2c8e81ec83ef5d517a4a1e3f904f5ab3
+disc2\Track 08.flac:025a43491b823fc1e1eb074e07b7d0e3
+disc2\Track 09.flac:e51fba65ac10cc479850f32051db90cb
+disc2\Track 10.flac:f336e753039c6fa200cc85b3056ce3fe
+disc2\Track 11.flac:b8821f72a33b7811db2eceaa94c74537
+disc2\Track 12.flac:7b8fa41f39e600287d77937d9ecffc34
+disc2\Track 13.flac:965b6a6ef30f93dd12ed659722d79021
+===================
+===================
+===================
+=== bd 1978-02-25 Osaka.md5
+===================
+===================
+===================
+f955ac59d316c5b09107a0f4eaa1bb22 *disc1\Track 01.flac
+2bad7a26c85d328e0aa3ba20da676600 *disc1\Track 02.flac
+f2856e786ad0f851579180b9da9e1f71 *disc1\Track 03.flac
+2caae7909468c16e5e140422cc3997e7 *disc1\Track 04.flac
+879434485af01e7437e29c83365d348a *disc1\Track 05.flac
+2dca7f9412c38b657f431fe7583a6cc1 *disc1\Track 06.flac
+80d63cf787cca431cc967ca0c80947cd *disc1\Track 07.flac
+a62f956005bd216ecefaa9a083611f53 *disc1\Track 08.flac
+2809ce151f2be0958d385cc687fb2cb8 *disc1\Track 09.flac
+3f2c263d9a575a2cf1b4ac817ac89243 *disc1\Track 10.flac
+70d068da47325d635fc0fdf8fb621a0d *disc1\Track 11.flac
+9d5835d0a7a9e3a5b4917feed89e61b0 *disc1\Track 12.flac
+40adef3fbf400215416274787d1763d0 *disc1\Track 13.flac
+f63ac91a3f9266251d367def4ed4dace *disc1\Track 14.flac
+cf024fedbffd0cb52406720530d0abc8 *disc1\Track 15.flac
+993c0f8eb6158cc6347dc87443e06944 *disc2\Track 01.flac
+1063032e3a0f35d2f4a970f85f9f2a2a *disc2\Track 02.flac
+a2d819969c8a234868505a998dd35d57 *disc2\Track 03.flac
+51eadbaddf7f21f3fa874ae5dd44cc87 *disc2\Track 04.flac
+c3d06f6f66f7e5e923afeabf32ef7f3d *disc2\Track 05.flac
+54bd4f92ac45965dfdd84ccba2b4280b *disc2\Track 06.flac
+1526077b1f4d9a1985360c421ff9a4d4 *disc2\Track 07.flac
+f251d4f88ba3e75377bdbd3384246fbc *disc2\Track 08.flac
+dce7f322025e924397bfedaed67b3a3d *disc2\Track 09.flac
+af28e850495613f01911a91bd69ba713 *disc2\Track 10.flac
+2b33c5ef0116ad2698ebbfb18c64cadc *disc2\Track 11.flac
+56a421e60348a126917668d2cc574f85 *disc2\Track 12.flac
+4d26757a7a96c17b5b2c4a6792ad5e62 *disc2\Track 13.flac
+===================
+===================
+===================
+=== bd 1978-02-25 Osaka.sfv
+===================
+===================
+===================
+;
+;     25009164  20:19:01 2011-03-18 disc1\Track 01.flac
+;     15789728  20:19:03 2011-03-18 disc1\Track 02.flac
+;     31685412  20:19:06 2011-03-18 disc1\Track 03.flac
+;     27171818  20:19:09 2011-03-18 disc1\Track 04.flac
+;     20640900  20:19:10 2011-03-18 disc1\Track 05.flac
+;     31240799  20:19:12 2011-03-18 disc1\Track 06.flac
+;     30974924  20:19:15 2011-03-18 disc1\Track 07.flac
+;     31476711  21:34:39 2011-03-18 disc1\Track 08.flac
+;     33578383  20:19:20 2011-03-18 disc1\Track 09.flac
+;     32922363  20:19:23 2011-03-18 disc1\Track 10.flac
+;     27579335  20:19:25 2011-03-18 disc1\Track 11.flac
+;     42793307  20:19:29 2011-03-18 disc1\Track 12.flac
+;     27381456  20:19:32 2011-03-18 disc1\Track 13.flac
+;     25185430  20:19:34 2011-03-18 disc1\Track 14.flac
+;     30004185  20:19:38 2011-03-18 disc1\Track 15.flac
+;     29313838  20:31:28 2011-03-18 disc2\Track 01.flac
+;     27204052  20:31:29 2011-03-18 disc2\Track 02.flac
+;     26132953  20:31:31 2011-03-18 disc2\Track 03.flac
+;     30309460  20:31:32 2011-03-18 disc2\Track 04.flac
+;     22211246  20:31:33 2011-03-18 disc2\Track 05.flac
+;     16736595  20:31:35 2011-03-18 disc2\Track 06.flac
+;     22524009  08:10:41 2011-03-19 disc2\Track 07.flac
+;     27066326  20:31:38 2011-03-18 disc2\Track 08.flac
+;     21728171  20:31:40 2011-03-18 disc2\Track 09.flac
+;     33384968  20:31:42 2011-03-18 disc2\Track 10.flac
+;     38187743  20:31:46 2011-03-18 disc2\Track 11.flac
+;     30171779  07:10:08 2011-03-19 disc2\Track 12.flac
+;     28234290  07:10:10 2011-03-19 disc2\Track 13.flac
+;
+disc1\Track 01.flac 4EE39E99
+disc1\Track 02.flac 14D32D6E
+disc1\Track 03.flac CEF5051D
+disc1\Track 04.flac 01A5F696
+disc1\Track 05.flac 963578D2
+disc1\Track 06.flac 03FF6871
+disc1\Track 07.flac CA68B287
+disc1\Track 08.flac F0FD70D5
+disc1\Track 09.flac 082C0330
+disc1\Track 10.flac 48E9FEB3
+disc1\Track 11.flac A9FE98C5
+disc1\Track 12.flac 053CC759
+disc1\Track 13.flac 6538A984
+disc1\Track 14.flac A161F25E
+disc1\Track 15.flac 19049C8F
+disc2\Track 01.flac 9CFD5673
+disc2\Track 02.flac 11FFC91A
+disc2\Track 03.flac 9DBCFA5C
+disc2\Track 04.flac E62C1D37
+disc2\Track 05.flac 5379C113
+disc2\Track 06.flac FA3C324D
+disc2\Track 07.flac E7FF4501
+disc2\Track 08.flac 818D38CD
+disc2\Track 09.flac 5501E9B9
+disc2\Track 10.flac E067473F
+disc2\Track 11.flac 4C7C382E
+disc2\Track 12.flac 106C2B85
+disc2\Track 13.flac 5A52DB31
+===================
+===================
+===================
+=== bd 1978-02-25 Osaka.st5
+===================
+===================
+===================
+30bdd02eea9b5c587ceb24499673704b  [shntool]  disc1\Track 01.flac
+ce7ef7dde6793685c43fb47da3669539  [shntool]  disc1\Track 02.flac
+89235848308673cff9962d1b9ab12644  [shntool]  disc1\Track 03.flac
+9f9e6d85018e594d5e207524b08d7931  [shntool]  disc1\Track 04.flac
+feb1602e54643f9e455c11529df46737  [shntool]  disc1\Track 05.flac
+22302aff8d1df75063ce3de170e2701c  [shntool]  disc1\Track 06.flac
+8557973f67b364f45db5eab0846e96a2  [shntool]  disc1\Track 07.flac
+60614f14c6946f2362345d609c0d5364  [shntool]  disc1\Track 08.flac
+6635042b81c8f88068529750b3dfe01f  [shntool]  disc1\Track 09.flac
+ba568ad8d6910b1242670a207889324a  [shntool]  disc1\Track 10.flac
+f6875a9289d06694898fb6056d231d74  [shntool]  disc1\Track 11.flac
+089cb8f4bca553acba422b83dc041357  [shntool]  disc1\Track 12.flac
+cf1c55840dafe8d249aeece9606bbbbf  [shntool]  disc1\Track 13.flac
+7228b4e097d1807ca8b92b2e8d88de60  [shntool]  disc1\Track 14.flac
+430336f820e73d76e9c928b08507f0a9  [shntool]  disc1\Track 15.flac
+ed5bbd828c245c22e9309a7a34e69c16  [shntool]  disc2\Track 01.flac
+b7c63f3e5ad81f87127fb08276d2a881  [shntool]  disc2\Track 02.flac
+ef170dce4fc7206cca749d99f0848e2d  [shntool]  disc2\Track 03.flac
+7106e64dfd3fbe43a317d732afa6944d  [shntool]  disc2\Track 04.flac
+9e2ed4a0fa72355ca92c8c45adfff187  [shntool]  disc2\Track 05.flac
+dad9f2f5158b5073d30dc97726473c27  [shntool]  disc2\Track 06.flac
+2c8e81ec83ef5d517a4a1e3f904f5ab3  [shntool]  disc2\Track 07.flac
+025a43491b823fc1e1eb074e07b7d0e3  [shntool]  disc2\Track 08.flac
+e51fba65ac10cc479850f32051db90cb  [shntool]  disc2\Track 09.flac
+f336e753039c6fa200cc85b3056ce3fe  [shntool]  disc2\Track 10.flac
+b8821f72a33b7811db2eceaa94c74537  [shntool]  disc2\Track 11.flac
+7b8fa41f39e600287d77937d9ecffc34  [shntool]  disc2\Track 12.flac
+965b6a6ef30f93dd12ed659722d79021  [shntool]  disc2\Track 13.flac
+===================
+===================
+===================
+=== bd 1978-02-25 Osaka.txt
+===================
+===================
+===================
+Bob Dylan
+Matsushita Denki Taiikukan 
+Hirakata City
+Osaka Fu, Japan
+25 February 1978
+
+Lineage: Audience recording > unknown tranfers > trade FLAC + cue sheet > Cool Edit Pro 2.1, normalized [to -3db] portion from from Ballad of a Thin Man up to I Shall Be released [alternate source?]. Normalised tracks are audibly seemless with the rest of the recording in terms of volume, hiss comparison or quality. Applied "Click/pop eliminator Preset: Hiss + lots of clicks" to eliminate 547 clicks/pops found across (see [1]DFF.pdf). The process did not produced any artifact noise after pop elimination nor apply any sound mastering. The option also cleaned index clicks present on the FLACs (see [2]DFF.pdf). Wave Repair 4.9.3 to manually removed a small gap on audience cheer on disc 1 at 21:07 and empty 8 second track previously as disc 2 track 1, indexing > FLAC lvl 8, verify
+
+
+Dedicated to the people and trader friends in Japan who were recently struck by terrible natural calamities. May your lives return to normality and able to enjoy once more the music we share.
+
+Note. Only performance of One Too Many Mornings during the 1978 World Tour following a request from an audience member!
+
+
+Disc 1
+
+01. A Hard Rain's A-Gonna Fall [instrumental witout Bob Dylan]
+02. Lonesome Bedroom (Ernest "Buddy" Wilson)
+03. Mr. Tambourine Man
+04. I Threw It All Away
+05. Love Minus Zero/No Limit
+06. Ballad Of A Thin Man
+07. Shelter From The Storm
+08. Girl From The North Country
+09. Maggie's Farm
+10. Don't Think Twice, It's All Right
+11. To Ramona
+12. Like A Rolling Stone
+13. I Shall Be Released
+14. Going, Going, Gone
+15. One Of Us Must Know (Sooner Or Later)
+
+Disc 2
+
+01. Blowin' In The Wind
+02. Just Like A Woman
+03. Oh, Sister (Bob Dylan, Jacques Levy/Bob Dylan)
+04. You're A Big Girl Now
+05. All Along The Watchtower
+06. I Want You
+07. One Too Many Mornings
+08. All I Really Want To Do 
+09. Tomorrow Is A Long Time
+10. Knockin' On Heaven's Door > band introductions
+11. It's Alright, Ma (I'm Only Bleeding)
+12. Forever Young
+13. The Times They Are A-Changin'
+
+
+BobTalk:
+
+Thank you. That's a song I wrote for a friend of mine. This is another one that I wrote for another friend. (before Blowin' In The Wind).
+
+Thank you. I wanna introduce one of our favorite singers. She's here tonight. Oh, Odetta ! Odetta she's out there somewhere. I used to listen to her when I was growing up. Oh, some of you know? This is one that she used to sing. (sings Tomorrow Is A Long Time) Thank you. That's the way she used to do it back then.
+
+Concert # 5 of the 1978 Far East Tour. 1978 concert # 5.
+
+Concert # 5 with the Far East Band 1978: Bob Dylan (vocal & guitar), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Rob Stoner (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Debbie Dye (background vocals). Bob Dylan harmonica on Love Minus Zero/No Limit and Just Like A Woman.
+
+===================
+===================
+===================

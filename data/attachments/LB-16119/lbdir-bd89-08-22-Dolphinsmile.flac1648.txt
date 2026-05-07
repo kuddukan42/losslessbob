@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd89-08-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+847b7501b8024a35153eb8849bbaf8ac *01 Most Likely You ll Go.flac
+1e4d147d1738ad07b547ff16bfae0015 *02 The Harder They Come.flac
+a36eaa1a9c65083b4614d10e862d4765 *03 Ballad Of Hollis Brown.flac
+911fdba54d00a9b456debfb0fa40f61c *04 Just Like A Woman.flac
+fa377befac53a71e2916e3c68f554cb0 *05 Ballad Of A Thin Man.flac
+8a2efe930142f00911a44b1a217356d2 *06 Highway 61.flac
+4f1fff467f76256aee0d3e4f85ad4900 *07 Trail Of The Buffalo.flac
+f5c2acb0f58c8d353f17d44febf4b3cc *08 Dont Think Twice.flac
+d2e873fbf3e825d1c495866a57ca52bd *09 Girl From The North Country.flac
+cb0890a52dc240ae44f6576804faa928 *10 Tamborine Man.flac
+356a31bdd8e23c2bdd59155193159d81 *11 Rank Strangers To Me.flac
+42f92faf656a0df1726cbaececb3ba1d *12 Silvio.flac
+7d7207365399ebbdaab6adb9043f76c5 *13 It Takes A Lot To Laugh.flac
+a7ca14070cd7ec17749051f7f2c56306 *14 Masters Of War.flac
+4e722396351930ebed781166e2eafac7 *15 Like A Rolling Stone.flac
+5edcf8c77e68352d95501623ec8e72fd *16 Blowin In The Wind.flac
+ab1a01ae3186c10691ab05816e79d5b0 *17 All Along The Watchtower.flac
+8a63816656861a41957b1deb9bb75280 *Bob Dylan Bonner Sandstone Amphitheater Springs 1989-08-22 Dolphinsmile Archive.ffp
+9000ce9c1a680cf866c984e96bb7f427 *Bob Dylan Bonner Sandstone Amphitheater Springs 1989-08-22 Dolphinsmile Archive.md5
+8a63816656861a41957b1deb9bb75280 *Bob Dylan Bonner Sandstone Amphitheater Springs 1989-08-22 Dolphinsmile Archive.txt
+a0b136debf486195469d2e013f34ec55 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-08-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Most Likely You ll Go.flac:267884965b258d9b352a399a0e7b3d57
+02 The Harder They Come.flac:5f6ae18e1b8cc0fa434a3ad754d59635
+03 Ballad Of Hollis Brown.flac:875aad54cbda48cbab234d03834e2559
+04 Just Like A Woman.flac:b59c28061b3ce365ddbd1aebada96194
+05 Ballad Of A Thin Man.flac:7f2245e3b391d8028f31561387955cb7
+06 Highway 61.flac:7fa7e2408e43285ff30b6d0f1174834d
+07 Trail Of The Buffalo.flac:f9c714cca81e4e2b950528999bb5361c
+08 Dont Think Twice.flac:5722cb22c88be3c1c61c803673cf2507
+09 Girl From The North Country.flac:1ea13e8d83909cfbbfc0a674c909fc33
+10 Tamborine Man.flac:a5f7cc67db5c6ab4360d86dc86c94db3
+11 Rank Strangers To Me.flac:13ccdca518e76527542e6aa84bb0f7f5
+12 Silvio.flac:76c9931e6453a70cb2dd06ed46f30a53
+13 It Takes A Lot To Laugh.flac:4dcd128d3ed404d98772205a4fb5b84b
+14 Masters Of War.flac:8d5e7fb195736701160e578a9fa97cea
+15 Like A Rolling Stone.flac:fddf24e1aea351862d486d1f01bcecfe
+16 Blowin In The Wind.flac:1dbcc9d029f302af8ce3c1ae8786e081
+17 All Along The Watchtower.flac:5771a732860f1962fd7ea5903f0d0482
+===================
+===================
+===================
+=== shntool len for: bd89-08-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.532      73254236 B   cxx   --   ---xx   flac  0.6368  01 Most Likely You ll Go.flac
+     4:47.457      55191736 B   cxx   --   ---xx   flac  0.6505  02 The Harder They Come.flac
+     5:58.322      68797796 B   cxx   --   ---xx   flac  0.6375  03 Ballad Of Hollis Brown.flac
+     6:32.124      75287924 B   cxx   --   ---xx   flac  0.6514  04 Just Like A Woman.flac
+     6:41.007      76993464 B   cxx   --   ---xx   flac  0.6562  05 Ballad Of A Thin Man.flac
+     4:28.914      51631592 B   cxx   --   ---xx   flac  0.6615  06 Highway 61.flac
+     7:20.389      84554680 B   cxx   --   ---xx   flac  0.5933  07 Trail Of The Buffalo.flac
+     7:05.958      81783988 B   cxx   --   ---xx   flac  0.6346  08 Dont Think Twice.flac
+     7:25.620      85559048 B   cxx   --   ---xx   flac  0.5908  09 Girl From The North Country.flac
+     6:44.735      77709128 B   cxx   --   ---xx   flac  0.6054  10 Tamborine Man.flac
+     4:50.432      55762992 B   cxx   --   ---xx   flac  0.6180  11 Rank Strangers To Me.flac
+     5:22.915      61999796 B   cxx   --   ---xx   flac  0.6488  12 Silvio.flac
+     5:38.839      65057136 B   cxx   --   ---xx   flac  0.6173  13 It Takes A Lot To Laugh.flac
+     5:14.943      60469196 B   cxx   --   ---xx   flac  0.6514  14 Masters Of War.flac
+     7:11.700      82886364 B   cxx   --   ---xx   flac  0.6569  15 Like A Rolling Stone.flac
+     4:21.312      50171912 B   cxx   --   ---xx   flac  0.6069  16 Blowin In The Wind.flac
+     4:29.063      51660232 B   cxx   --   ---xx   flac  0.6402  17 All Along The Watchtower.flac
+   100:35.263    1158771220 B                            0.6317  (17 files)
+===================
+===================
+===================

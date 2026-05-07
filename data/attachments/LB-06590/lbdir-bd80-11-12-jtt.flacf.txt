@@ -1,0 +1,125 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-12-jtt.flacf 
+=================== 
+=================== 
+=================== 
+445f002266ebf2177f766132258e4fa8  Disc One\Disc01Track01 Warfield 12.11.80 JTT.flac
+afccaa92e1562c7e44f2928ccb2f75a4  Disc One\Disc01Track02 Warfield 12.11.80 JTT.flac
+3feed6834516da46c3dad873e9b974ca  Disc One\Disc01Track03 Warfield 12.11.80 JTT.flac
+10a88909b68127cd03d673e23f2c4c02  Disc One\Disc01Track04 Warfield 12.11.80 JTT.flac
+26b932a6c1860b8a18fbc7ff8f611a0a  Disc One\Disc01Track05 Warfield 12.11.80 JTT.flac
+da90d7196546ec574e9ba536977e45f5  Disc One\Disc01Track06 Warfield 12.11.80 JTT.flac
+9ff4ba2b744ae95feaba9708f98f7a10  Disc One\Disc01Track07 Warfield 12.11.80 JTT.flac
+d7bf2364ee83671796234f44388d2084  Disc One\Disc01Track08 Warfield 12.11.80 JTT.flac
+59e638e0aec9759261c90448574591f3  Disc One\Disc01Track09 Warfield 12.11.80 JTT.flac
+ce72590d85d8098040e3236c4e0c1876  Disc One\Disc01Track10 Warfield 12.11.80 JTT.flac
+721e8e33e083e64fcb9d1af19fd157ea  Disc One\Disc01Track11 Warfield 12.11.80 JTT.flac
+fb039dc968d01591068345353d81149e  Disc One\Disc01Track12 Warfield 12.11.80 JTT.flac
+5f48a6471c10d7d7ec790613c8f40a05  Disc One\Disc01Track13 Warfield 12.11.80 JTT.flac
+710a6163ee018bc8fa2d7d477e17c84d  Disc One\Disc01Track14 Warfield 12.11.80 JTT.flac
+7d79f62b9c8271a81a3b97781669fc6f  Disc Two\Disc02Track01 Warfield 12.11.80 JTT.flac
+c6834cf79ac0699dbc6ab4feb49aece3  Disc Two\Disc02Track02 Warfield 12.11.80 JTT.flac
+b5690e739644dc27acf1ca9e05016bf3  Disc Two\Disc02Track03 Warfield 12.11.80 JTT.flac
+5b4308094b330cee2ac0cfeba7c10673  Disc Two\Disc02Track04 Warfield 12.11.80 JTT.flac
+0c79e66f9733cbddee85287f0a1f7dd5  Disc Two\Disc02Track05 Warfield 12.11.80 JTT.flac
+a0b9552692068e47bd4477c93a3bc3ca  Disc Two\Disc02Track06 Warfield 12.11.80 JTT.flac
+3ce081b75d5a67169a3df9164c71c39c  Disc Two\Disc02Track07 Warfield 12.11.80 JTT.flac
+f693aea2009f8b75690685215aa792ed  Disc Two\Disc02Track08 Warfield 12.11.80 JTT.flac
+08791591c6ea6307d4fa4d3806b96122  Disc Two\Disc02Track09 Warfield 12.11.80 JTT.flac
+3e7d58c697e287eafe2d77ddc577d173  Disc Two\Disc02Track10 Warfield 12.11.80 JTT.flac
+a89ea2b063ffa8fc0139e677b9ab02d0  Disc Two\Disc02Track11 Warfield 12.11.80 JTT.flac
+9be6de7ffa8ae2119785810a43c38c77  Disc Two\Disc02Track12 Warfield 12.11.80 JTT.flac
+c8d5247a4185d052d8a8c0be664d9c02  Dylan - Warfield 12.11.80 JTT_Info.txt
+758b4684865b97d3450d9487147ef6ef  Dylan - Warfield November 12th 1980 JTT.md5
+87dbabcd699a13921c47e21912fcfdc8  Dylan - Warfield November 12th 1980 JTT.txt
+bede898a50ce41ec79aca7a5d9b60651  Fox Warfield - 12.11.1980 JTT - F.jpg
+170c86ab31b1eb49b44dcb4f8dc194f9  Fox Warfield - 12.11.1980 JTT - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-12-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Warfield 12.11.80 JTT.flac:99feea0e37bd9914872bc301bc8bf6b8
+Disc01Track02 Warfield 12.11.80 JTT.flac:4893a997882319370b7f26cb4849163d
+Disc01Track03 Warfield 12.11.80 JTT.flac:9e9617758854e4b1a86d769a9c496442
+Disc01Track04 Warfield 12.11.80 JTT.flac:846264403e59d925edb18bf20b99e34b
+Disc01Track05 Warfield 12.11.80 JTT.flac:94443267deb6d356448a808d1717defb
+Disc01Track06 Warfield 12.11.80 JTT.flac:65027d494d95433958d1c58972190047
+Disc01Track07 Warfield 12.11.80 JTT.flac:6a1e284deb9824bf4d7e8571265dcb8c
+Disc01Track08 Warfield 12.11.80 JTT.flac:d224bad576a9799435288a3a89a0e18a
+Disc01Track09 Warfield 12.11.80 JTT.flac:4e9a518d54578b9880b722c14861324f
+Disc01Track10 Warfield 12.11.80 JTT.flac:263af4bfd3680b12f37d4003eecdd06a
+Disc01Track11 Warfield 12.11.80 JTT.flac:8c423a025e77a63fa1d06a84cd174d4c
+Disc01Track12 Warfield 12.11.80 JTT.flac:e9d22428a81f9aca44cdcacac92c330d
+Disc01Track13 Warfield 12.11.80 JTT.flac:bf0b3ae8e6c11a943f5ff8fbf15992c8
+Disc01Track14 Warfield 12.11.80 JTT.flac:1e80e7698696d5c43b99aa2e0ed31cb2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-12-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Warfield 12.11.80 JTT.flac:4a5e97efd8af3f49ce64d4619e5a6c7c
+Disc02Track02 Warfield 12.11.80 JTT.flac:a43347efbaa1cf3dbab0f50bc10669bf
+Disc02Track03 Warfield 12.11.80 JTT.flac:78ca39d179ffe5a3b93452b3227ec170
+Disc02Track04 Warfield 12.11.80 JTT.flac:ed2eedbff9f0ec30fe90816f71cb419a
+Disc02Track05 Warfield 12.11.80 JTT.flac:1053c10f90f134493086e9ebf76a2502
+Disc02Track06 Warfield 12.11.80 JTT.flac:7a4bbd101007a080c664fca64db6093a
+Disc02Track07 Warfield 12.11.80 JTT.flac:8953c9e5bbdb60a110c4912738b68c01
+Disc02Track08 Warfield 12.11.80 JTT.flac:a236beed0c26cab89a88935b4bf3a4cb
+Disc02Track09 Warfield 12.11.80 JTT.flac:0c8f40b58d7cf7aa6d6ef0ffcdcf99d7
+Disc02Track10 Warfield 12.11.80 JTT.flac:4250119e0587fbb7b0168b25bfd77294
+Disc02Track11 Warfield 12.11.80 JTT.flac:cc2d9fa4d5f5915ba4e9021f51731d7c
+Disc02Track12 Warfield 12.11.80 JTT.flac:91fa992b377554327d0c524fdc426e63
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-12-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:04.34       32537612 B   ---   --   ---xx   flac  0.5323  Disc01Track01 Warfield 12.11.80 JTT.flac
+     2:58.37       31486268 B   ---   --   ---xx   flac  0.5783  Disc01Track02 Warfield 12.11.80 JTT.flac
+     6:00.62       63649868 B   ---   --   ---xx   flac  0.5247  Disc01Track03 Warfield 12.11.80 JTT.flac
+     3:31.25       37279244 B   ---   --   ---xx   flac  0.5598  Disc01Track04 Warfield 12.11.80 JTT.flac
+     5:09.49       54622892 B   ---   --   ---xx   flac  0.5644  Disc01Track05 Warfield 12.11.80 JTT.flac
+     4:27.61       47242316 B   ---   --   ---xx   flac  0.5297  Disc01Track06 Warfield 12.11.80 JTT.flac
+     6:07.71       64905836 B   ---   --   ---xx   flac  0.6145  Disc01Track07 Warfield 12.11.80 JTT.flac
+     3:29.33       36945260 B   ---   --   ---xx   flac  0.5717  Disc01Track08 Warfield 12.11.80 JTT.flac
+     5:44.51       60801596 B   ---   --   ---xx   flac  0.5894  Disc01Track09 Warfield 12.11.80 JTT.flac
+     6:55.53       73330700 B   ---   --   ---xx   flac  0.5987  Disc01Track10 Warfield 12.11.80 JTT.flac
+     5:10.67       54841628 B   ---   --   ---xx   flac  0.6077  Disc01Track11 Warfield 12.11.80 JTT.flac
+     3:40.51       38927996 B   ---   --   ---xx   flac  0.6234  Disc01Track12 Warfield 12.11.80 JTT.flac
+     5:25.41       57426476 B   ---   --   ---xx   flac  0.6197  Disc01Track13 Warfield 12.11.80 JTT.flac
+     5:38.46       59731436 B   ---   --   ---xx   flac  0.6197  Disc01Track14 Warfield 12.11.80 JTT.flac
+    67:26.06      713729128 B                            0.5837  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-12-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.60       55883564 B   ---   --   ---xx   flac  0.5999  Disc02Track01 Warfield 12.11.80 JTT.flac
+     3:06.38       32899820 B   ---   --   ---xx   flac  0.5995  Disc02Track02 Warfield 12.11.80 JTT.flac
+     4:24.60       46710764 B   ---   --   ---xx   flac  0.5937  Disc02Track03 Warfield 12.11.80 JTT.flac
+     5:57.65       63127724 B   ---   --   ---xx   flac  0.5896  Disc02Track04 Warfield 12.11.80 JTT.flac
+     4:28.46       47383436 B   ---   --   ---xx   flac  0.6296  Disc02Track05 Warfield 12.11.80 JTT.flac
+     4:15.03       44989100 B   ---   --   ---xx   flac  0.6124  Disc02Track06 Warfield 12.11.80 JTT.flac
+     6:03.67       64190828 B   ---   --   ---xx   flac  0.6148  Disc02Track07 Warfield 12.11.80 JTT.flac
+     5:48.37       61474268 B   ---   --   ---xx   flac  0.6276  Disc02Track08 Warfield 12.11.80 JTT.flac
+     6:40.02       70564748 B   ---   --   ---xx   flac  0.6269  Disc02Track09 Warfield 12.11.80 JTT.flac
+     4:35.64       48660572 B   ---   --   ---xx   flac  0.6436  Disc02Track10 Warfield 12.11.80 JTT.flac
+     2:41.46       28508636 B   ---   --   ---xx   flac  0.6258  Disc02Track11 Warfield 12.11.80 JTT.flac
+     4:11.26       44337596 B   ---   --   ---xx   flac  0.6266  Disc02Track12 Warfield 12.11.80 JTT.flac
+    57:30.64      608731056 B                            0.6157  (12 files)
+=================== 
+=================== 
+=================== 

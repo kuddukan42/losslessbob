@@ -1,0 +1,8 @@
+5b1faef6957052d08d7939653c9c3c9e  bd01-04-20-csc-eac-d2t01.flac
+7d07f3d85c9115a3f64cf83756a48498  bd01-04-20-csc-eac-d2t02.flac
+27b646f9f8d6a7b26f3aacac64982fac  bd01-04-20-csc-eac-d2t03.flac
+ba9fbb3ebafd1db179b827e1eeb7ccf1  bd01-04-20-csc-eac-d2t04.flac
+e14598cf69c5c9acb2d1df612adeffaf  bd01-04-20-csc-eac-d2t05.flac
+b872e802f1d57b6024c7451cb32ff451  bd01-04-20-csc-eac-d2t06.flac
+d78fee92e48127ddf1cd9057d4b842c2  bd01-04-20-csc-eac-d2t07.flac
+ee5077b8c696017a9551bfae51251f8e  bd01-04-20-csc-eac-d2t08.flac

@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-05-05-cc.flacf 
+=================== 
+=================== 
+=================== 
+f1222238c1cdacf35f8bf169bd8eba85  101-Intro.flac
+70a455ad24db78568ca330667114ba5b  102-Cat's In The Well.flac
+438d02e07c6356e5ad3e3548a0d157b9  103-It Ain't Me, Babe.flac
+7f33cfebe42b4503259383ed223b49e4  104-Watching The River Flow.flac
+1adb382ef1c32bdbf0f0b407ab94dcd5  105-It's Alright, Ma (I'm Only Bleeding).flac
+3305ee2915b8c8c0b357dd14baedc5ce  106-To Ramona.flac
+005fe01ba4c2ecba3f730016d5ddfc23  107-Rollin' And Tumblin'.flac
+a4838426bf126dd8619cc692a691781d  108-Just Like A Woman.flac
+6189cb77889de28dd4525bf9afbf5495  109-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+2cc0b924ef46b58ff9d5dcc05a11dca0  110-When The Deal Goes Down.flac
+164b2348270ecb1620f14802abf6914e  111-Tangled Up In Blue.flac
+c4070dad7a607007ff01a9b839020cbb  112-Spirit On The Water.flac
+9d079c1e8efd61ce144e77e16e06543e  201-Highway 61 Revisited.flac
+fbd8a07c2fd92dcedd4670cc59ba21ac  202-Ain't Talkin'.flac
+9066447568fbaa21498d54e3525a0535  203-Summer Days.flac
+6b3f308529e50afad3a2b829b85868f8  204-Blowin' In The Wind.flac
+eb6ca1f571d65359fd30f9f8f60a9a1d  205-Thunder On The Mountain.flac
+9fa927a1bdd97c4a1ace72793f3868b9  206-All Along The Watchtower.flac
+3c75b0c18e6d6bfafbb5988c9f954640  207-Make You Feel My Love.flac
+9db6ae91e47e5f55d39ebb74c5c3dabe  208-Ballad Of A Thin Man.flac
+f01c9ad2e02985951a9314053d45c6b7  209-Positively 4th Street.flac
+f0dcc747e6c089a4476ccf70865e69b2  210-Every Grain Of Sand.flac
+13496e648b1526b30b94d8c262110334  211-Lenny Bruce.flac
+78436da6c1e6bc160399782ff746524a  Herning 2007 Disc 01.log
+86605d81467216c5da1aa5072b771e36  Herning 2007 Disc 02.log
+af2b204f149fe725074132f02612619e  Herning 2007.md5
+4f167bd604dc4f187c8595b1fd3ab44a  Herning 2007.par2
+76b1e3eab8164b1aaa928bcadc6aaf28  Herning 2007.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-05-05-cc.flacf 
+=================== 
+=================== 
+=================== 
+101-Intro.flac:47ec006e3d27c68431165a40c42942fe
+102-Cat's In The Well.flac:68ed8f70d404bab441df715606297525
+103-It Ain't Me, Babe.flac:cde2c412507963cbc69104c1b420d966
+104-Watching The River Flow.flac:10aa7760e33220d376697e254b1f2a22
+105-It's Alright, Ma (I'm Only Bleeding).flac:de059bdcae5b9f9fc9bca24ca1fb5d3b
+106-To Ramona.flac:fd59e5e0de76bb9317cb620f4576e878
+107-Rollin' And Tumblin'.flac:fb27b421354c91cfb60273e5c2d7410a
+108-Just Like A Woman.flac:821907c2adbf7d007f6397031a3137de
+109-Stuck Inside Of Mobile With The Memphis Blues Again.flac:14bed16ba8697f3d717436a95a1369eb
+110-When The Deal Goes Down.flac:8c87299c6e149a00cbb484df49363553
+111-Tangled Up In Blue.flac:35df067bffeb72f9a5dae484c85eb2df
+112-Spirit On The Water.flac:2aaa3d65b9add1d1f95341781b7284f5
+201-Highway 61 Revisited.flac:3e368c641b19988de0c3d12ee8cfc5fb
+202-Ain't Talkin'.flac:f7db00a95ce3ed55751b7dca388aaad1
+203-Summer Days.flac:b9dc4e65dc07823b23d8b1a47263e31a
+204-Blowin' In The Wind.flac:d4be2eba99ddcaff81129ff8434c8ffb
+205-Thunder On The Mountain.flac:bd6c4f09644a1d82b36c02d3c858f3be
+206-All Along The Watchtower.flac:d3d77b8018d1c1dd6df6291a1aaf171e
+207-Make You Feel My Love.flac:4bb4f2c1eaa1def0c266b059841713d9
+208-Ballad Of A Thin Man.flac:31aa970a2b1afd8fc91b989aa67331a8
+209-Positively 4th Street.flac:e4d187b04e92aba1928b1dd7f67b00c6
+210-Every Grain Of Sand.flac:37761c08e0c6a61dd4a8229c749686ee
+211-Lenny Bruce.flac:504805a48b55645f1191907903423d4d
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-05-05-cc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.74       51153692 B   ---   --   ---xx   flac  0.5246  101-Intro.flac
+     4:18.00       45511244 B   ---   --   ---xx   flac  0.6733  102-Cat's In The Well.flac
+     6:17.24       66559292 B   ---   --   ---xx   flac  0.6305  103-It Ain't Me, Babe.flac
+     6:04.51       64329596 B   ---   --   ---xx   flac  0.6437  104-Watching The River Flow.flac
+     7:16.00       76910444 B   ---   --   ---xx   flac  0.6552  105-It's Alright, Ma (I'm Only Bleeding).flac
+     5:49.00       61563644 B   ---   --   ---xx   flac  0.6127  106-To Ramona.flac
+     6:12.02       65625548 B   ---   --   ---xx   flac  0.6675  107-Rollin' And Tumblin'.flac
+     6:52.74       72850892 B   ---   --   ---xx   flac  0.6328  108-Just Like A Woman.flac
+     8:57.00       94726844 B   ---   --   ---xx   flac  0.6391  109-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:23.73       67732940 B   ---   --   ---xx   flac  0.5717  110-When The Deal Goes Down.flac
+     8:37.01       91201196 B   ---   --   ---xx   flac  0.6315  111-Tangled Up In Blue.flac
+     7:04.34       74873612 B   ---   --   ---xx   flac  0.5932  112-Spirit On The Water.flac
+     6:03.00       64033244 B   ---   --   ---xx   flac  0.6479  201-Highway 61 Revisited.flac
+     8:49.23       93369740 B   ---   --   ---xx   flac  0.6015  202-Ain't Talkin'.flac
+     6:38.53       70331900 B   ---   --   ---xx   flac  0.6676  203-Summer Days.flac
+     8:20.01       88202396 B   ---   --   ---xx   flac  0.6114  204-Blowin' In The Wind.flac
+     6:45.70       71606684 B   ---   --   ---xx   flac  0.6676  205-Thunder On The Mountain.flac
+     6:39.02       70388348 B   ---   --   ---xx   flac  0.6279  206-All Along The Watchtower.flac
+     5:15.24       55622492 B   ---   --   ---xx   flac  0.6249  207-Make You Feel My Love.flac
+     7:48.57       82689308 B   ---   --   ---xx   flac  0.6403  208-Ballad Of A Thin Man.flac
+     6:29.03       68626700 B   ---   --   ---xx   flac  0.6596  209-Positively 4th Street.flac
+     6:46.70       71783084 B   ---   --   ---xx   flac  0.6397  210-Every Grain Of Sand.flac
+     6:58.04       73744652 B   ---   --   ---xx   flac  0.6885  211-Lenny Bruce.flac
+   155:16.40     1643437492 B                            0.6330  (23 files)
+=================== 
+=================== 
+=================== 

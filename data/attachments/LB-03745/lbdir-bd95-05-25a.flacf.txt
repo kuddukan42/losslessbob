@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-25a.flacf 
+=================== 
+=================== 
+=================== 
+ff2dc56e9edb8dc24827eb7f10101de6  bd95-05-25a-LB-3745.txt
+ffa2012c902e1520397985d62f728881  berkeley250595.jpg
+f477387d820f05dc80317c7ef814e39d  Bob Dylan 25 may 1995 Berkeley.txt
+927719dd24a1b47974f05cfc888f6ac5  fingerprint.ffp.txt
+9e9bd1f7045fa6b3cbb9ebc7b827fa24  FLACS\bd-1995-05-25d01t01.flac
+22cc83b47b6370f886f6fd4cc3bb5c1d  FLACS\bd-1995-05-25d01t02.flac
+0f20fcae9297f6c0423d58279977b7b9  FLACS\bd-1995-05-25d01t03.flac
+5f1c6cfc621c458b2a28f95470132ada  FLACS\bd-1995-05-25d01t04.flac
+0c0bb30e3ded4dce707aa70b91085707  FLACS\bd-1995-05-25d01t05.flac
+314a46c5a98d1ed238813868fbf54115  FLACS\bd-1995-05-25d01t06.flac
+4d25beaf6f47c5bb7b12603f3b50bf89  FLACS\bd-1995-05-25d01t07.flac
+184ef4592c97b192ebe14bb4ae776ce2  FLACS\bd-1995-05-25d01t08.flac
+06fe2926e2c9a95d83ced2bc373f27f4  FLACS\bd-1995-05-25d01t09.flac
+8793ad1d3dcdc83d90d09a88125b5124  FLACS\bd-1995-05-25d02t01.flac
+f54dbeb165f17e0bd1b945fe8573ccd0  FLACS\bd-1995-05-25d02t02.flac
+129893b086bce44603bbac5e59236afb  FLACS\bd-1995-05-25d02t03.flac
+89e5e4c211b619a2af1782daed1a2e3b  FLACS\bd-1995-05-25d02t04.flac
+efb87802454f49b13069242377b027a3  FLACS\bd-1995-05-25d02t05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-25a.flacf\FLACS 
+=================== 
+=================== 
+=================== 
+bd-1995-05-25d01t01.flac:cdcdcd8cdf6fc41ee05c1840de843ed1
+bd-1995-05-25d01t02.flac:7057709d835a6eb886d4293e1c8064f3
+bd-1995-05-25d01t03.flac:2b9984c3909852921ebe9fc9f688c802
+bd-1995-05-25d01t04.flac:0368c2bbfdc7330c511a3f7390978f2f
+bd-1995-05-25d01t05.flac:325a007ca6145998df4e3b8ea46d7d77
+bd-1995-05-25d01t06.flac:b5641cc88dc382c585c963150e337ad0
+bd-1995-05-25d01t07.flac:fdeed14a9d34c25d0c625ba12c0d52b7
+bd-1995-05-25d01t08.flac:7f349fd4491c178698c9fb274868721a
+bd-1995-05-25d01t09.flac:cc85c901363742a2342dd3f2f9e10c33
+bd-1995-05-25d02t01.flac:003fb301b7ac5dbab5fd8ae3df374afa
+bd-1995-05-25d02t02.flac:35fe069d3afd5a36ed035f9d64af3599
+bd-1995-05-25d02t03.flac:83957197e3460b5b18b7679fe842a4ee
+bd-1995-05-25d02t04.flac:2877174100a954db0b61ce684f84f667
+bd-1995-05-25d02t05.flac:023ee3df107276504e57f04aa2e00aa2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-25a.flacf\FLACS 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.59       54822812 B   ---   --   ---xx   flac  0.6369  bd-1995-05-25d01t01.flac
+     6:15.54       66277052 B   ---   --   ---xx   flac  0.5682  bd-1995-05-25d01t02.flac
+     6:55.74       73380092 B   ---   --   ---xx   flac  0.6374  bd-1995-05-25d01t03.flac
+     5:30.19       58256732 B   ---   --   ---xx   flac  0.5865  bd-1995-05-25d01t04.flac
+     5:20.49       56563292 B   ---   --   ---xx   flac  0.6033  bd-1995-05-25d01t05.flac
+     6:00.29       63572252 B   ---   --   ---xx   flac  0.6212  bd-1995-05-25d01t06.flac
+     7:20.34       77696012 B   ---   --   ---xx   flac  0.4288  bd-1995-05-25d01t07.flac
+     6:10.19       65312732 B   ---   --   ---xx   flac  0.4943  bd-1995-05-25d01t08.flac
+     7:20.61       77759516 B   ---   --   ---xx   flac  0.4967  bd-1995-05-25d01t09.flac
+     9:33.11      101103116 B   ---   --   ---xx   flac  0.6195  bd-1995-05-25d02t01.flac
+     9:00.44       95359532 B   ---   --   ---xx   flac  0.6257  bd-1995-05-25d02t02.flac
+     8:52.64       93995372 B   ---   --   ---xx   flac  0.5977  bd-1995-05-25d02t03.flac
+     9:17.24       98311292 B   ---   --   ---xx   flac  0.6422  bd-1995-05-25d02t04.flac
+    10:23.64      110047772 B   ---   --   ---xx   flac  0.5629  bd-1995-05-25d02t05.flac
+   103:13.05     1092457576 B                            0.5812  (14 files)
+=================== 
+=================== 
+=================== 

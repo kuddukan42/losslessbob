@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-04-38f-a.flacf 
+=================== 
+=================== 
+=================== 
+c9bfdaf5cfd868f1daa40da0b5bb8a80  01.flac
+86e47a953ebc81cce99bc3d74254cf31  02.flac
+72617d56b854148ae0109d8aed338caf  03.flac
+29ebd4d2d659ddd4fb984256df735f72  04.flac
+af8e885bb09a596487f2899a0dc2525e  05.flac
+f943e7e070b9625f0c59caead34d423e  06.flac
+45e21280bf0207d9aa4f21c37b0f31d3  07.flac
+c948e3f4bb906f5cf03d8b192a5a1a36  08.flac
+d92e151b5aba2a592af8aba1ee28de2e  09.flac
+dd2542219a97366be67e77b07c6be9f5  10.flac
+a6d17ea732d63ad98aec9c12380ced35  11.flac
+de5e7c8533b12de901c35c5a412b4d48  12.flac
+bfda835f066473af0d5d33ab3bab191d  13.flac
+16b97281a0cda668bb0e4c6d705532d4  14.flac
+4500673205eabb0a3848a1fc961feb8c  Bob Dylan 10.4.87.txt
+ce8f59e0bbba3361c59ae7b7bb6e7fbf  fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-04-38f-a.flacf 
+=================== 
+=================== 
+=================== 
+01.flac:d116af82bc302189491d16bcc0ee29bb
+02.flac:e7e07192b5b348a80d9832b91d31a754
+03.flac:704f32d7cbc654b2c7c92d60153c86f4
+04.flac:a9d77a50e4e88b5ca2365dcdb747aa70
+05.flac:9b6e53d401a90ea35b2a960c0a5d0944
+06.flac:f1bdc07ed158494b5d08bf1acfe1c120
+07.flac:02b24de70849e197cafb7fcda06ecac2
+08.flac:7b51c15cf8d2c82bab7c6f451f7ad07f
+09.flac:edaacd1f8c4577e5fd7eaa3f4515c347
+10.flac:a732c507738cc46dfa1fbb5d75d04984
+11.flac:b410debe06a6535018d4bf4209c5d07f
+12.flac:a441d7d031413b315615f8bf535ef748
+13.flac:75e877c1b916d9dedca0245c625fd63c
+14.flac:d303d3f6a24fa8f3ced677926e01fd5f
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-10-04-38f-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.20       46969484 B   ---   --   ---xx   flac  0.6350  01.flac
+     5:32.38       58654220 B   ---   --   ---xx   flac  0.6552  02.flac
+     4:00.05       42347804 B   ---   --   ---xx   flac  0.6599  03.flac
+     6:41.35       70818764 B   ---   --   ---xx   flac  0.6265  04.flac
+     4:48.74       50977292 B   ---   --   ---xx   flac  0.6678  05.flac
+     3:54.28       41343500 B   ---   --   ---xx   flac  0.6531  06.flac
+     5:16.43       55843580 B   ---   --   ---xx   flac  0.6557  07.flac
+     3:27.68       36674780 B   ---   --   ---xx   flac  0.6057  08.flac
+     5:17.38       56008220 B   ---   --   ---xx   flac  0.6302  09.flac
+     4:56.07       52230908 B   ---   --   ---xx   flac  0.6576  10.flac
+     3:23.25       35868044 B   ---   --   ---xx   flac  0.6642  11.flac
+     5:34.13       58948220 B   ---   --   ---xx   flac  0.6487  12.flac
+     5:03.46       53557436 B   ---   --   ---xx   flac  0.6254  13.flac
+     4:33.55       48286604 B   ---   --   ---xx   flac  0.6469  14.flac
+    66:56.45      708528856 B                            0.6448  (14 files)
+=================== 
+=================== 
+=================== 

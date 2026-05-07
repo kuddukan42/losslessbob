@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-26-ver2.flacf 
+=================== 
+=================== 
+=================== 
+61652abca9bb07f53a8889489677c6b1  bd04-10-26-ver2.txt
+57614e5b0f67442f60a3e5ff770a3988  bd2004-10-26_Manhattan, KS_ver.2.txt
+bad02b60aacce8ce5c832a49a230702e  bd2004-10-26d1t01.flac
+3137d2d67f069a08172041c2a18b010c  bd2004-10-26d1t02.flac
+0ffc867437ea243b2e1eb6df58d61ece  bd2004-10-26d1t03.flac
+2b8f2e3ff0675a19ac646221f0b3f2a1  bd2004-10-26d1t04.flac
+4d2923ca06c18961679f491886a98933  bd2004-10-26d1t05.flac
+f0e1b7f630731f84537abce3148a6bd8  bd2004-10-26d1t06.flac
+f9ea6a4c8b6b84a39ed1ecc4278103ac  bd2004-10-26d1t07.flac
+b04f98c1cd51cfb68d69617d01650a64  bd2004-10-26d1t08.flac
+ec9ae0bfb5b4e84ac0ffcc5a2010e581  bd2004-10-26d1t09.flac
+e49bd9024a0cbcbd318f6838d25d2e54  bd2004-10-26d1t10.flac
+f218af7d07a6203361b6faf598c1183c  bd2004-10-26d1t11.flac
+d2fcb3a7fa296ab531facbf2fa923ea2  bd2004-10-26d1t12.flac
+7076513821f3392de84795c754460a00  bd2004-10-26d2t01.flac
+e7ed46b9f94a7f6450ed548480c7c21e  bd2004-10-26d2t02.flac
+0c58ddf558ceb283fa29b7e6ac2a9b9e  bd2004-10-26d2t03.flac
+e381a5491d6fca73228dcd5854329881  bd2004-10-26d2t04.flac
+8ba922c61c03c1f49cc602bc6fae80ba  bd2004-10-26d2t05.flac
+87ddaf2c2aa8d73ef9a51a49b8d01cf9  bd2004-10-26d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-26-ver2.flacf 
+=================== 
+=================== 
+=================== 
+bd2004-10-26d1t01.flac:a8ab129b3652f8776baea5c3ad46e56b
+bd2004-10-26d1t02.flac:19fd70fea25a1e61480bcbc9df2a7cd2
+bd2004-10-26d1t03.flac:05107564baaae6264a63a954c12c7bd5
+bd2004-10-26d1t04.flac:30ec174aad6efd7b34f3ebf0a66d3b1c
+bd2004-10-26d1t05.flac:26d1cba60616c7baa9947df2d94ef306
+bd2004-10-26d1t06.flac:7dfd44227b47f976679cde7abf8191bd
+bd2004-10-26d1t07.flac:327eed90eeaf999691952aed2e65b292
+bd2004-10-26d1t08.flac:ec1c1c30311e44d5dd8b53c95a423b29
+bd2004-10-26d1t09.flac:4f0576fa6390ded499a7724050d6812d
+bd2004-10-26d1t10.flac:900046c2851caa48bf453999ab65340e
+bd2004-10-26d1t11.flac:e07ce954d1215a109edcf1d44e041649
+bd2004-10-26d1t12.flac:ba652fdb6690ca32e5f32f2fbc8e55f5
+bd2004-10-26d2t01.flac:dace5a6dba55ad6090627edcd855fb22
+bd2004-10-26d2t02.flac:770a2eca0f66e9b099ec8e5f9eacc1b0
+bd2004-10-26d2t03.flac:73a3f3f9601cac4fca899a50c1d27033
+bd2004-10-26d2t04.flac:6a714dfd4f10e150a9ad438c3591445d
+bd2004-10-26d2t05.flac:794be66b22471dc0a80bba30d8646e86
+bd2004-10-26d2t06.flac:514576379dde9585284883ed7531f5f6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-26-ver2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.39       10675772 B   ---   --   ---xx   flac  0.4885  bd2004-10-26d1t01.flac
+     4:28.74       47449292 B   ---   --   ---xx   flac  0.5889  bd2004-10-26d1t02.flac
+     6:21.29       67276652 B   ---   --   ---xx   flac  0.5340  bd2004-10-26d1t03.flac
+     6:01.30       63751004 B   ---   --   ---xx   flac  0.5720  bd2004-10-26d1t04.flac
+     4:54.47       51972188 B   ---   --   ---xx   flac  0.5223  bd2004-10-26d1t05.flac
+     5:29.35       58117964 B   ---   --   ---xx   flac  0.5264  bd2004-10-26d1t06.flac
+     6:34.51       69621596 B   ---   --   ---xx   flac  0.5358  bd2004-10-26d1t07.flac
+     7:32.23       79786940 B   ---   --   ---xx   flac  0.5596  bd2004-10-26d1t08.flac
+     5:29.33       58113260 B   ---   --   ---xx   flac  0.4334  bd2004-10-26d1t09.flac
+     6:58.41       73831676 B   ---   --   ---xx   flac  0.5794  bd2004-10-26d1t10.flac
+     7:28.11       79053116 B   ---   --   ---xx   flac  0.4620  bd2004-10-26d1t11.flac
+     6:25.38       68003420 B   ---   --   ---xx   flac  0.5470  bd2004-10-26d1t12.flac
+     6:31.32       69047708 B   ---   --   ---xx   flac  0.5209  bd2004-10-26d2t01.flac
+     4:51.15       51367724 B   ---   --   ---xx   flac  0.4710  bd2004-10-26d2t02.flac
+    10:49.72      114652988 B   ---   --   ---xx   flac  0.5125  bd2004-10-26d2t03.flac
+     6:32.19       69193532 B   ---   --   ---xx   flac  0.5423  bd2004-10-26d2t04.flac
+     1:01.33       10838060 B   ---   --   ---xx   flac  0.4567  bd2004-10-26d2t05.flac
+     6:06.38       64651820 B   ---   --   ---xx   flac  0.5372  bd2004-10-26d2t06.flac
+   104:37.60     1107404712 B                            0.5265  (18 files)
+=================== 
+=================== 
+=================== 

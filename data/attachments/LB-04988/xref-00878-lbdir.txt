@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-09-29-b.flacf 
+=================== 
+=================== 
+=================== 
+06b9acfe293af2fe81be266d561baf4b  1 dff.pdf
+513c53fbef87c39e7007dddfbaefdff8  2 dff.pdf
+7cf84b75328820a1a704b8cc28ab2486  Bob Dylan 1995-09-29 Sunrise.ffp
+d5ed234807b745964253910668525b5f  Bob Dylan 1995-09-29 Sunrise.md5
+b8941f300f4dfe080a47fa49412fac23  Bob Dylan 1995-09-29 Sunrise.txt
+a461cc22184c94d0923f19c10522ca1f  disc1\01. bd-1995-09-29d1t01.flac
+dd94204c15d0b4cbde9d6e4b862c7ec5  disc1\02. bd-1995-09-29d1t02.flac
+4050f6878a8927d4a5bdefc44520345e  disc1\03. bd-1995-09-29d1t03.flac
+3395839524b399ea3a7032a65ae4d639  disc1\04. bd-1995-09-29d1t04.flac
+b3fadb707e6190960b2adccd5dc49848  disc1\05. bd-1995-09-29d1t05.flac
+7a1e0a01213cb8d857b08beedd21a1de  disc1\06. bd-1995-09-29d1t06.flac
+89ffea63aa3f83193b51d1153c8da09e  disc1\07. bd-1995-09-29d1t07.flac
+c7a613d59b2da279724c490d7f7ae06e  disc1\08. bd-1995-09-29d1t08.flac
+7c4048b5d0e1d98b0872831e495cc725  disc1\09. bd-1995-09-29d1t09.flac
+ab1f51f712a2709e75755f70fdc51c10  disc1\10. bd-1995-09-29d1t10.flac
+6cd295804df4722e41e0203c6176e3c1  disc2\01. bd-1995-09-29d2t01.flac
+2a09b18f66abd57265c038b97a23cb9f  disc2\02. bd-1995-09-29d2t02.flac
+8e3b193bc62f73b074b666d79e7432bb  disc2\03. bd-1995-09-29d2t03.flac
+c433a6f0de5037f9af8eca4b60cc4152  disc2\04. bd-1995-09-29d2t04.flac
+572f5aeefbb2a2f5136ea300f16e04af  disc2\05. bd-1995-09-29d2t05.flac
+027890dc2b5500deef45af619ec31e3c  disc2\06. bd-1995-09-29d2t06.flac
+fe2320435d0f30ee0a989c4dbab36793  original freq analysis bd1995-09-29-sunrise.d1t10.sa_fa.JPG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-09-29-b.flacf\disc1 
+=================== 
+=================== 
+=================== 
+01. bd-1995-09-29d1t01.flac:a73e3be3fd640372863e21bb1ff3fb56
+02. bd-1995-09-29d1t02.flac:7c3a2d719e1b05a82c43811b6dae913c
+03. bd-1995-09-29d1t03.flac:62db45ba115df58f02f81d73362c870b
+04. bd-1995-09-29d1t04.flac:07cc8df3f2d457589d1b5a009e433398
+05. bd-1995-09-29d1t05.flac:8495b6daf2310912bdf8a86db13932fe
+06. bd-1995-09-29d1t06.flac:99dae5c5b6d45259ebb78cea8114cc8a
+07. bd-1995-09-29d1t07.flac:41c4127c24cb6c2509ad7a892c5be042
+08. bd-1995-09-29d1t08.flac:8f8ff87dd0eb6c50eb7220bc5dca4bca
+09. bd-1995-09-29d1t09.flac:3c4ecda4e52a292a5f0eeba31dd3f181
+10. bd-1995-09-29d1t10.flac:4906e2dbecb27e63b4388c96d3c1539f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-09-29-b.flacf\disc2 
+=================== 
+=================== 
+=================== 
+01. bd-1995-09-29d2t01.flac:0c5175bb46536b29745de1a06aa85dce
+02. bd-1995-09-29d2t02.flac:9f1d5a98ab1480dd4c7d5530e94a9256
+03. bd-1995-09-29d2t03.flac:8dfdd69fe7cff7d54453d14a2eaa68ec
+04. bd-1995-09-29d2t04.flac:94b62ff961c19b6734114ff435caa171
+05. bd-1995-09-29d2t05.flac:c5b105bad0a717e159374aa9947c9ad7
+06. bd-1995-09-29d2t06.flac:be36f930e14ad7e22300c8f85d24ae91
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-09-29-b.flacf\disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.05       53637404 B   ---   --   ---xx   flac  0.6228  01. bd-1995-09-29d1t01.flac
+     5:54.71       62612636 B   ---   --   ---xx   flac  0.5672  02. bd-1995-09-29d1t02.flac
+     5:32.14       58597772 B   ---   --   ---xx   flac  0.6000  03. bd-1995-09-29d1t03.flac
+     5:15.44       55669532 B   ---   --   ---xx   flac  0.5468  04. bd-1995-09-29d1t04.flac
+     7:59.51       84615596 B   ---   --   ---xx   flac  0.5772  05. bd-1995-09-29d1t05.flac
+     6:29.48       68732540 B   ---   --   ---xx   flac  0.5932  06. bd-1995-09-29d1t06.flac
+     9:09.28       96909500 B   ---   --   ---xx   flac  0.5102  07. bd-1995-09-29d1t07.flac
+     5:47.45       61316684 B   ---   --   ---xx   flac  0.4646  08. bd-1995-09-29d1t08.flac
+     8:37.29       91267052 B   ---   --   ---xx   flac  0.4514  09. bd-1995-09-29d1t09.flac
+     5:05.65       53954924 B   ---   --   ---xx   flac  0.4763  10. bd-1995-09-29d1t10.flac
+    64:56.25      687313640 B                            0.5368  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-09-29-b.flacf\disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:03.01       95787596 B   ---   --   ---xx   flac  0.5604  01. bd-1995-09-29d2t01.flac
+     5:49.52       61685948 B   ---   --   ---xx   flac  0.5475  02. bd-1995-09-29d2t02.flac
+     6:45.35       71524364 B   ---   --   ---xx   flac  0.5812  03. bd-1995-09-29d2t03.flac
+    10:46.45      114060284 B   ---   --   ---xx   flac  0.5602  04. bd-1995-09-29d2t04.flac
+    13:13.57      140019308 B   ---   --   ---xx   flac  0.5016  05. bd-1995-09-29d2t05.flac
+     6:10.08       65286860 B   ---   --   ---xx   flac  0.5928  06. bd-1995-09-29d2t06.flac
+    51:48.48      548364360 B                            0.5504  (6 files)
+=================== 
+=================== 
+=================== 

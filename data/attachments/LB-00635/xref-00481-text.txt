@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== bd91-10-27 Lubbock.ffp
+===================
+===================
+===================
+bd91-10-27d1t01.flac:f5d5cf7542c0895d72f87296bf52672c
+bd91-10-27d1t02.flac:5a3fd33853a23c049420dd5e269b2d58
+bd91-10-27d1t03.flac:672b907b70a5113972c403265cdf940b
+bd91-10-27d1t04.flac:ce4ce0774a0366ae3aff619880ff493e
+bd91-10-27d1t05.flac:ee63974096438f967b445c4cb82e6847
+bd91-10-27d1t06.flac:839a12fb37b642426b3642d1f1a2ff4a
+bd91-10-27d1t07.flac:145e5b60939144f2fb35741fcd156574
+bd91-10-27d1t08.flac:2c30043f74c1e2e21272178419416f9a
+bd91-10-27d1t09.flac:e15e14b25e65869cbb47ee48fd6a264a
+bd91-10-27d2t01.flac:ed42d64d33176433dc02d3dd01d9a59b
+bd91-10-27d2t02.flac:e6c2022dec8fb3dee9cdb22f86be4aa0
+bd91-10-27d2t03.flac:d94f7e6b9093a446f2d8aa263d8b1842
+bd91-10-27d2t04.flac:a19080aeca0cb349e394d33f5ec62ea0
+bd91-10-27d2t05.flac:43d321c87746ba7ba3ab0a0b0f9726e7
+bd91-10-27d2t06.flac:59b15d5fb8fa364955162a83ac378629
+===================
+===================
+===================
+=== bd91-10-27 Lubbock_WAV.md5
+===================
+===================
+===================
+736fa3a46d07d52f90027e9b54274423 *bd91-10-27d1t01.wav
+71a8e8db905a65ddce1404076134643a *bd91-10-27d1t02.wav
+c0af3aebb489b06ca83cfb8cf051d1e7 *bd91-10-27d1t03.wav
+053c03d6670302c8c5d0f3b2fdd36ae6 *bd91-10-27d1t04.wav
+3d0cca2d9eb84567ff22950a03b77920 *bd91-10-27d1t05.wav
+0665756eb4c0ee6a9e912bbfcae66073 *bd91-10-27d1t06.wav
+bc27cb985cd4231651346e2c6b062211 *bd91-10-27d1t07.wav
+11a1854a90288c1a32b9778fb7f85f23 *bd91-10-27d1t08.wav
+dbc889bd101d51e95d3cfb050830225d *bd91-10-27d1t09.wav
+e636cde944aa49dcf78fbc2b43c13ac2 *bd91-10-27d2t01.wav
+07286d5cd3da869c4b2470e3bb38e026 *bd91-10-27d2t02.wav
+d3f74f2259b25e07d0b06e67e0656428 *bd91-10-27d2t03.wav
+2be4eb2fd942eaf6ec8e2b4ee4620172 *bd91-10-27d2t04.wav
+d55b148cafd9d7ba6d5cb0d8beb72a4a *bd91-10-27d2t05.wav
+5d5777e63db59ac7e26d8d28f4a11ce1 *bd91-10-27d2t06.wav
+===================
+===================
+===================
+=== bd91-10-27.txt
+===================
+===================
+===================
+Bob Dylan, 10/27/91, Lubbock, 2CDR
+
+(58min+35min), missing 1st 2 and last 2 songs, begin of d1t1 missing, good to very good sound, background talking on d1t5 and some more, d1t9 cut and song repeats in full on d2t1 
+
+CD1 
+1 All Along The Watchtower 2 Lenny Bruce 3 Wiggle Wiggle 4 Gotta Serve Somebody 5 Simple Twist Of Fate 6 I'll Be Your Baby Tonight 7 Trail Of The Buffalo (acoustic) 8 The Lonesome Death Of Hattie Carroll (acoustic w band) 9 Answer Me (cuts) 
+
+CD2 
+1 Answer Me (acoustic w band) 2 It Ain't Me, Babe (acoustic w band) 3 Every Grain Of Sand 4 Everything Is Broken 5 Friend Of The Devil 6 Highway 61 Revisited
+
+
+lineage : CDR trade>eac>TLH>FLAC6
+source : Incomplete stereo recording off audience video, might be same as LB-635 missing first 2 and last 2
+===================
+===================
+===================

@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-23-lk.flacf 
+=================== 
+=================== 
+=================== 
+b7021061a228d99b4f015b0130f3682b  01 Gotta serve somebody.flac
+5f9be6f83f29192f1eaa7bd43db5d043  02 I believe in you.flac
+97162a915bc5f4a8dd9154421c2e4369  03 Like a rolling stone.flac
+2808f33a5b581b76bb28cef96fe65632  04 I want you.flac
+f7716670d1c77492d97380d3285ea1d1  05 Man gave names to all the animals.flac
+96c678ab017f98d1dca2a9cb216c6ec6  06 Maggie's farm.flac
+b24ce466f1d0ceaae10e944d5d16d151  07 Girl of the North Country.flac
+b39f7135188af3d6fb2989afe9931f5e  08 Ballad of a thin man.flac
+22f6e9411708aafa2c4c8c5d5f961675  09 In the summertime.flac
+d77dbde26bd3c4c70a0e1affda029cfd  10 All along the watchtower.flac
+b471917d4a19c4d3900783a73996c8a3  11 Forever young.flac
+c0904ddee63a8c0b4c2b4169bc6d1885  12 Gamblin' man.flac
+557661f1485f6d982085915c4af6f436  13 The times they are a-changin'.flac
+c7d768d3f19c37cb42e36a461015775a  14 It's all in the game.flac
+c28e62d3e759f54b95ada4c5244bc6e5  15 Slow train.flac
+94bd9a3947da576cad5c2c08160f827a  16 Mr. Tambourine man.flac
+91df8c303daaab35421e145e1c656230  17 Solid rock.flac
+e40f119651c5f0cd7ca55f1b2737e237  18 Heart of mine.flac
+5ddd8e650d308a83dbfaf9486f7017b6  19 Masters of war.flac
+ecf0c31053db90501728208f6ec471ee  20 Just like a woman.flac
+2d1b4847d66a0c9af8e06d46e22567d2  21 Senor (Tales of Yankee Power).flac
+27d5cc70061bf51db9b11f31ad444628  22 When you gonna wake up.flac
+1d4159c9210010f6816fe83636f0f871  23 In the garden.flac
+bc1100296e7474fb892bb208a3b97793  24 Blowin' in the wind.flac
+add3d90c2a8bf0a62044f553be9e23f9  25 It ain't me, babe.flac
+e99b34c0873b366bd5ceb867568316c1  26 Knockin' on heaven's door.flac
+65504b02f7d4e3c3c8a2d8a4052bd51a  bd81-10-23-Philadelphia.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-23-lk.flacf 
+=================== 
+=================== 
+=================== 
+01 gotta serve somebody.flac:59d3640ae055aaf418367c8b8ea6da62
+02 i believe in you.flac:4f4b0445f2288b034d0935f3e25adf66
+03 like a rolling stone.flac:77d7966d49ccc2f37ba32d5234427655
+04 i want you.flac:3bbbdf5754ad37785a3de92dc6241c43
+05 man gave names to all the animals.flac:8510ead117d32048c42596378b83626f
+06 maggie's farm.flac:a0fbb2cc23f591a766dfaec64bc0c687
+07 girl of the north country.flac:081f7ef3004bf09fa54bb31a1e8af742
+08 ballad of a thin man.flac:cbfb4d12c1b9a2ae96f0e43dfc8a307d
+09 in the summertime.flac:e5100b4699b8d8702b39ef888bc8546a
+10 all along the watchtower.flac:6d71bc603562a781bca6354c829cca85
+11 forever young.flac:28b967d855f966023536241caf450cea
+12 gamblin' man.flac:c0944af6a050972ef70b9480e1a3d4fe
+13 the times they are a-changin'.flac:f3ca6967f66273951d406b007135860b
+14 it's all in the game.flac:80e871935c2819be824fd0116ef67a25
+15 slow train.flac:443e935e06d3e86592866d440b90a109
+16 mr. tambourine man.flac:1e2ae1f67b5e0bf2155719fb8ee72dbe
+17 solid rock.flac:2131bf717d91091f65c37e661dc37d69
+18 heart of mine.flac:7a42d4fb6311542d9b93ddc93a477d53
+19 masters of war.flac:dc448cd78e8fb617be2c2692abd0eed2
+20 just like a woman.flac:8b9bb02f28b0c4982304ceaf40e6c169
+21 senor (tales of yankee power).flac:0079b496867633f11ef319974fe08ef8
+22 when you gonna wake up.flac:f0804082740b70098f850ed910af54b6
+23 in the garden.flac:43175ac01808e9194fee3c2c4bf11d86
+24 blowin' in the wind.flac:b44689ccd60a8a2c339d68e87021ab63
+25 it ain't me, babe.flac:64e32b68fa9f632602fb6a05c3509e9b
+26 knockin' on heaven's door.flac:a036e1a091b34ff7e50913706e027338
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-23-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.74       41275292 B   ---   --   ---xx   flac  0.5657  01 Gotta serve somebody.flac
+     4:59.25       52802444 B   ---   --   ---xx   flac  0.5476  02 I believe in you.flac
+     6:31.24       69028892 B   ---   --   ---xx   flac  0.5743  03 Like a rolling stone.flac
+     4:16.15       45193724 B   ---   --   ---xx   flac  0.5742  04 I want you.flac
+     4:49.12       51007868 B   ---   --   ---xx   flac  0.5433  05 Man gave names to all the animals.flac
+     3:55.53       41578700 B   ---   --   ---xx   flac  0.5557  06 Maggie's farm.flac
+     4:35.38       48599420 B   ---   --   ---xx   flac  0.5544  07 Girl of the North Country.flac
+     3:33.28       37639100 B   ---   --   ---xx   flac  0.5533  08 Ballad of a thin man.flac
+     3:39.47       38742188 B   ---   --   ---xx   flac  0.5359  09 In the summertime.flac
+     2:54.63       30841820 B   ---   --   ---xx   flac  0.5340  10 All along the watchtower.flac
+     4:41.35       49650764 B   ---   --   ---xx   flac  0.5104  11 Forever young.flac
+     3:25.61       36305516 B   ---   --   ---xx   flac  0.5453  12 Gamblin' man.flac
+     6:07.58       64875260 B   ---   --   ---xx   flac  0.5508  13 The times they are a-changin'.flac
+     4:24.72       46738988 B   ---   --   ---xx   flac  0.5435  14 It's all in the game.flac
+     4:41.51       49688396 B   ---   --   ---xx   flac  0.5680  15 Slow train.flac
+     5:33.38       58830620 B   ---   --   ---xx   flac  0.5630  16 Mr. Tambourine man.flac
+     4:53.01       51687596 B   ---   --   ---xx   flac  0.5467  17 Solid rock.flac
+     5:09.15       54542924 B   ---   --   ---xx   flac  0.5441  18 Heart of mine.flac
+     3:31.27       37283948 B   ---   --   ---xx   flac  0.5632  19 Masters of war.flac
+     3:35.37       38013068 B   ---   --   ---xx   flac  0.5493  20 Just like a woman.flac
+     4:34.21       48383036 B   ---   --   ---xx   flac  0.5225  21 Senor (Tales of Yankee Power).flac
+     4:09.46       44031836 B   ---   --   ---xx   flac  0.5590  22 When you gonna wake up.flac
+     6:32.34       69228812 B   ---   --   ---xx   flac  0.5417  23 In the garden.flac
+     5:19.70       56436284 B   ---   --   ---xx   flac  0.5643  24 Blowin' in the wind.flac
+     4:54.39       51953372 B   ---   --   ---xx   flac  0.5585  25 It ain't me, babe.flac
+     5:05.34       53882012 B   ---   --   ---xx   flac  0.5535  26 Knockin' on heaven's door.flac
+   119:49.43     1268241880 B                            0.5513  (26 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,226 @@
+===================
+===================
+===================
+=== Bob Dylan - Atlanta, Georgia - October 11, 1995 (fixed LB-0769).ffp
+===================
+===================
+===================
+01 - Drifter's Escape.flac:1ed3b22446d5acf45f10f7f29c3226ec
+02 - Tonight I'll Be Staying Here With You.flac:cef02ff7b2df3991b9cf152f93c4d18f
+03 - All Along The Watchtower.flac:b0424ea4fa573314c44224800617e9cc
+04 - Under The Red Sky.flac:a1c114bb1ed5a1ff8ebd86da54b54ef0
+05 - It Takes A Lot To Laugh, It Takes A Train To Cry.flac:fc0ced38704f4951418e1bca7dee4ffd
+06 - Silvio.flac:6ebae243ce90905d156d6a7d779875c1
+07 - Mr Tambourine Man.flac:bcc9a7db820e79f5c14fbf3c4bba5015
+08 - Masters Of War.flac:f8abfbe0b98c7cfc72b82e25bfdb5d68
+09 - Love Minus Zero - No Limit.flac:3ead9cfe247549281bfb2bdc22256518
+10 - God Knows.flac:795151de7b40aaaff95f58eff2e9d4b9
+11 - She Belongs To Me.flac:805fc301d6aeb0fe0251b356f0c4579d
+12 - Seeing The Real You At Last [mono].flac:683e7bc54550e4ed429fbf36e4f05dc0
+13 - Alabama Getaway [mono].flac:da506741e28e219e0dcb02031b0229e8
+14 - It Ain't Me Babe [mono].flac:722c624f11c356527e0316575e2fdd86
+15 - Rainy Day Women 12 & 35 [mono].flac:b083607c3c18fa185f2fd2b00d8ecc62
+===================
+===================
+===================
+=== Bob Dylan - Atlanta, Georgia - October 11, 1995 (fixed LB-0769).md5
+===================
+===================
+===================
+65a29e165267d1010f3e34858063570a *01 - Drifter's Escape.flac
+5107de9b48bf621cf91bb4a1affefb5a *02 - Tonight I'll Be Staying Here With You.flac
+f2fd16ace91da1337094673d83542ca9 *03 - All Along The Watchtower.flac
+f4e944b8d61f364ae51ed82867ac90f2 *04 - Under The Red Sky.flac
+a5c63774985f7301a7b2ce66760e9767 *05 - It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+f7e4229c22c37a9e3ce36025d69ce9cc *06 - Silvio.flac
+0ae7a1b7d7fa10370c1c1675f740640c *07 - Mr Tambourine Man.flac
+d9a6e0d7207df69b88190087f3830793 *08 - Masters Of War.flac
+6ca02a6a42102aeff49f8e6060dd77ce *09 - Love Minus Zero - No Limit.flac
+0b9b63d75f70272dba05a728ea308111 *10 - God Knows.flac
+1238b977a36885a39f9d28cdb7a7f887 *11 - She Belongs To Me.flac
+7fd652fd58e15c9c9d47ed129807d898 *12 - Seeing The Real You At Last [mono].flac
+df351f0e1a48eb9a65c270bc03102599 *13 - Alabama Getaway [mono].flac
+305f15c3fadf6a80f67118cf05383605 *14 - It Ain't Me Babe [mono].flac
+65f8f9a2629e4b097242e6b0be460b2e *15 - Rainy Day Women 12 & 35 [mono].flac
+===================
+===================
+===================
+=== Bob Dylan - Atlanta, Georgia - October 11, 1995 (fixed LB-0769).txt
+===================
+===================
+===================
+Contrast Clause:
+This is a altered version of the following torrent: http://www.dimeadozen.org/torrents-details.php?id=499913
+
+Bob Dylan
+The Fox Theater
+Atlanta, Georgia
+October 11, 1995
+
+Taper, Equipment & Location: unknown
+
+Sound Quality: Let the samples be your guide.
+
+I made the following adjustments using Audacity 2.0.3:
+   (1) re-combined all tracks into one wav file
+   (2) boosted overall volume 4.7 dB
+   (3) re-tracked recording placing indexes at the beginnings of songs
+   (4) boosted right channel an additional 1-2 dB as necessary to match left
+   (5) removed mini-gaps between tracks 06 & 07 and tracks 07 & 08
+   (6) removed minigap from track 05 @ 4:33
+   (7) deleted defective left channel on tracks 12-15 and copied over right channel
+   (8) added fade-up to track 01 and fade-down to track 15
+
+01. Drifter's Escape
+02. Tonight I'll Be Staying Here With You
+03. All Along The Watchtower
+04. Under The Red Sky
+05. It Takes A Lot To Laugh, It Takes A Train To Cry
+06. Silvio
+07. Mr. Tambourine Man
+08. Masters Of War
+09. Love Minus Zero/No Limit
+10. God Knows
+11. She Belongs To Me
+12. Seeing The Real You At Last [mono]
+13. Alabama Getaway [mono]
+14. It Ain't Me, Babe [mono]
+15. Rainy Day Women #12 & 35 [mono]
+
+Total Time (114:01)
+
+Personnel:
+Bob Dylan - vocals, electric guitar, acoustic guitar, harmonica
+Bucky Baxter - pedal steel guitar, electric slide guitar
+John Jackson - electric guitar, acoustic guitar
+Tony Garnier - bass
+Winston Watson - drums, percussion
+
+Visit:
+www.bobdylan.com
+===================
+===================
+===================
+=== text file from original download.txt
+===================
+===================
+===================
+Bob Dylan
+The Fox Theater
+Atlanta, Georgia
+October 11, 1995
+
+Audience recording.
+
+By kind request of Projectx. This one was seeded before on dime by Olav66 in 2007. Thank you once again, Olav, you've always been a wonderful help filling up our Dylan vaults, as you used to say :-). So many thanks to the taper itself.
+
+Described like that on losslessbob site @ LB-0769 entry: A bittorrent from 5/07 is same recording with same clapping and crowd on d1t9 but has a lot more hiss and not as good of sound and last 4 tracks have a left channel with no music just hiss; described as "No LB-0000 number ...NOTE: from Seeing The Real You At Last it seems the taper have shifted position/most likely hidden the mics a little too well. From here on in the last four tracks suffer. All previous tracks are very good/excellent; through and through tape hissy though"; tracked 7/8 Total time: [51:43], [63:02])
+
+I just added ffp's and additional info file for this particular reseed.
+
+Hope you may enjoy it in spite of the sound issues!
+
+Luisbp51 (Tangled Up In Torrents May 7, 2011)
+
+__________________
+
+ORIGINAL INFO FILE
+__________________
+
+
+The Fox Theater
+Atlanta, Georgia
+October 11, 1995
+
+No LB-number;
+although theres one at http://jokerman.org.uk/lb/detail/LB-00769.html
+The little background talking is there <sigh> and truly gets to the foreground on d1t7, d1t9, d2ts, d2t4, but after being encoded to SHNs and compared against LB-0769 fingerprints, to the best of my ability I couldnt find that the tracks matched its wantonly list.
+
+NOTE: from Seeing The Real You At Last it seems the taper have shifted position/most likely hidden the mics a little too well. From here on in the last four tracks suffer. All previous tracks are very good/excellent; through and through tape hissy though.
+
+01. Drifter's Escape [06:15]
+02. Tonight I'll Be Staying Here With You [06:09]
+03. All Along The Watchtower [06:50]
+04. Under The Red Sky [06:36]
+05. It Takes A Lot To Laugh, It Takes A Train To Cry [08:38]
+06. Silvio (Bob Dylan & Robert Hunter) [07:01]
+07. Mr. Tambourine Man [10:09]
+Total time: [51:43]
+
+08. Masters Of War [06:43]
+09. Love Minus Zero/No Limit [07:11]
+10. God Knows [07:19]
+11. She Belongs To Me [08:08]
+12. Seeing The Real You At Last [07:55]
+13. Alabama Getaway (Robert Hunter/Jerry Garcia) [07:45]
+14. It Ain't Me, Babe [12:27]
+15. Rainy Day Women # 12 & 35 [05:31]
+Total time: [63:02]
+
+Concert # 726 of The Never-Ending Tour
+Concert # 12 of the 1995 Fall Classics Tour
+Concert # 86 in 1995
+
+Concert # 270 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+79, 14 acoustic with the band
+7, 14 Bob Dylan harmonica
+13 John Jackson backup vocal
+
+5 new songs (33%) compared to previous concert
+No new songs for this tour
+
+Stereo audience recording, 115 minutes
+
+FLAC fingerprints
+Disc #1:
+909aa303eca8299c7ca5860a7f08046b *01 Drifter's escape.flac
+5e8651149bf0614dc49aca67ef553c46 *02 Tonight I'll be staying here with you.flac
+18545ea8c348ec21b9a0b2fd1ac6e274 *03 All along the watchtower.flac
+5e938578a99ae22dfaa579932b6725e7 *04 Under the red sky.flac
+3849527bcb8f8394e74975d4c2a5a6cd *05 It takes a lot to laugh, it takes a train to cry.flac
+48d09f7a3cf4b15d75e13b2c20466c24 *06 Silvio.flac
+14e8d673843d880f4e846858c544780c *07 Mr. Tambourine Man.flac
+
+Disc #2:
+786f0814786ab567b3aeb418275daa0d *08 Masters of war.flac
+1f4c4a8f1ba7f2b975480025bd0d5488 *09 Love minus zero - no limit.flac
+6d6edc6a5c1dbe3d29d16e06107c7098 *10 God knows.flac
+f1c30998a21c31f6a315008e9130e80b *11 She belongs to me.flac
+285d2139d1ac15b47bac47fc7f89f6b2 *12 Seeing the real you at last.flac
+3a4e0bf60820d6d6a0f47ccf009005c8 *13 Alabama getaway.flac
+3ad94adae600b6cc6b8d351bc31dd440 *14 It ain't me, babe.flac
+4559d4306f1e809b093de75020fea5cf *15 Rainy day women # 12 & 35.flac
+
+--------------------------------------------------------------------
+
+flac fingerprints (note that the above fingerprints quoted on the original info file were actually md5 signatures):
+
+;CD1
+
+01 Drifter's escape.flac:ddbcd22890f1ed3182addf026b06b794
+02 Tonight I'll be staying here with you.flac:7c0bc993e5cc5b2d469b6f5bcb1081b2
+03 All along the watchtower.flac:b0bac2eb516cf82376d272ec9c6cb6fb
+04 Under the red sky.flac:1f7043ae869c59a533502a3476cf4587
+05 It takes a lot to laugh, it takes a train to cry.flac:48a74d8bf32fd065a497e05d26caa3ba
+06 Silvio.flac:a0b9c7649b36aaaaa719507b4addcae5
+07 Mr. Tambourine Man.flac:f07937cdac30770c7285f2ee1ba74bf2
+
+;CD2
+
+08 Masters of war.flac:6811409f91de29cdcfe66a7ea25c3a26
+09 Love minus zero - no limit.flac:651c299543c7303bfa094b5e12cbc798
+10 God knows.flac:5bd1c7e2cd7c05b03a3634ebe2b603da
+11 She belongs to me.flac:e2723f970d5d1f3d8aa554d68a96dbaf
+12 Seeing the real you at last.flac:f5fb158450e21395fecc7a7699cd6f3c
+13 Alabama getaway.flac:6617241d03ee07df2fff845e0ce439df
+14 It ain't me, babe.flac:ac94a633776bf611ac3ae9fb3aa6e751
+15 Rainy day women # 12 & 35.flac:7f7c85501f9db1580ff7865d9780046c
+===================
+===================
+===================

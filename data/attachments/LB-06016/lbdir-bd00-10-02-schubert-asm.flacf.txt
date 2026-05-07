@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-10-02-schubert-asm.flacf 
+=================== 
+=================== 
+=================== 
+925b1257b4f621c5a045f4f1fc1b16db  101 Announcement.flac
+3a0990d02280a409659d7d0452363609  102 Duncan And Brady.flac
+f3d1ae9595d027e3b0d55ffaddafded0  103 To Ramona.flac
+408d0e8021843537eb76e52d718c49bd  104 It's Alright, Ma (I'm Only Bleeding).flac
+a329fc3bfe28598b3fbf9eba1d5935f4  105 Don't Think Twice, It's All Right.flac
+81067f5d1160e53d2a837cba2b5856cd  106 Tangled Up In Blue.flac
+727293977210803f82cd856f3d3af00b  107 Searching For A Soldier's Grave.flac
+bbbc672ac7163e03bc56032c4b128d27  108 Country Pie.flac
+8c6230b053abf4d0d195043035b08ce9  109 Standing In The Doorway.flac
+56f7abe7f9655ccbc531d977007c838b  110 Tombstone Blues.flac
+cb82d0a8b89cdf381a41184f8a0e45e3  111 Tell Me That It Isn't True.flac
+c4658defa2e784dd0778797bad77749c  2000-10-02 Bruessels.txt
+d839d8a053d4f1f408ae74595b38bfbe  201 Cold Irons Bound.flac
+12672aa89fe7af8e71f74f65d782d1f9  202 Leopard-Skin Pill-Box Hat.flac
+e9a963a470db29ebdd040f523d2cdc7b  203 Things Have Changed.flac
+ea17c9c8ae859d57a377c1ee4b8c3cad  204 Like A Rolling Stone.flac
+257e7d7da3e739056c40f116a6bd4904  205 If Dogs Run Free.flac
+8c75481840a309537299826c015afafc  206 Seeing The Real You At Last.flac
+4b85af6911f82b86c0cb6857758ce5ca  207 I Shall Be Released.flac
+d263c7be0a5aecabfabcbc905224899e  208 Highway 61 Revisited.flac
+f80a811ce3e2bb9c5ac7811611218853  209 Blowin' In The Wind.flac
+5234c5ab0dc1de2615c5ad07f41d532f  BD 2000-10-02 Bruessels.md5
+f84ac6233f1c7f492167ee49c59eb590  bruxelles2000_1.jpg
+cc29319fb42927d8abad20f8d2fa5f86  bruxelles2000_3.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-10-02-schubert-asm.flacf 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:6d133e9f258553603d3ac7eaec482ff6
+102 Duncan And Brady.flac:a1c83e4946850c87c23536d44b595ccf
+103 To Ramona.flac:12d203ba6d9c3ca4fea12cdcf7385447
+104 It's Alright, Ma (I'm Only Bleeding).flac:646b9b2f60b3460d11262a4613e63614
+105 Don't Think Twice, It's All Right.flac:15123f2c4b7264466a88a8c4cf24380a
+106 Tangled Up In Blue.flac:60379caf5f3165b0756c9820f19995b5
+107 Searching For A Soldier's Grave.flac:a3e18de24385fc5c5b44e69617a2e6cc
+108 Country Pie.flac:e3c0e728efa072d6b3d3f69976926d5d
+109 Standing In The Doorway.flac:8f38d28b2671a1231054f340e12bc402
+110 Tombstone Blues.flac:e07d66461d7d6e397aed60da7a481420
+111 Tell Me That It Isn't True.flac:0ca76a1bd3f9af1a320560405b86ef01
+201 Cold Irons Bound.flac:62b84318114bdf3e0d4374f260287aad
+202 Leopard-Skin Pill-Box Hat.flac:00d2e3778ebf22a0e83cc663c965e45c
+203 Things Have Changed.flac:e7850e7864d68f712f596dfd9fddad21
+204 Like A Rolling Stone.flac:b9c012009367325c7e6be7224f45014b
+205 If Dogs Run Free.flac:b3e54cf151040166bbeb00814a9e6c18
+206 Seeing The Real You At Last.flac:f2eda794fd17d193e0a0d4f2ed52029d
+207 I Shall Be Released.flac:194706bb96b22257739e3d78ae7ab566
+208 Highway 61 Revisited.flac:68e4a2f8c8cc668671996864ab0302ca
+209 Blowin' In The Wind.flac:8505d3e8e6a6738e233f7e4ba991e242
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-10-02-schubert-asm.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:12.14        2149772 B   ---   --   ---xx   flac  0.5458  101 Announcement.flac
+     3:22.31       35705756 B   ---   --   ---xx   flac  0.6250  102 Duncan And Brady.flac
+     5:19.49       56386892 B   ---   --   ---xx   flac  0.5320  103 To Ramona.flac
+     7:43.54       81800252 B   ---   --   ---xx   flac  0.5542  104 It's Alright, Ma (I'm Only Bleeding).flac
+     6:06.32       64637708 B   ---   --   ---xx   flac  0.5279  105 Don't Think Twice, It's All Right.flac
+     7:50.68       83067980 B   ---   --   ---xx   flac  0.6075  106 Tangled Up In Blue.flac
+     3:36.02       38107148 B   ---   --   ---xx   flac  0.5104  107 Searching For A Soldier's Grave.flac
+     3:12.11       33894716 B   ---   --   ---xx   flac  0.6018  108 Country Pie.flac
+     8:25.38       89171420 B   ---   --   ---xx   flac  0.5438  109 Standing In The Doorway.flac
+     7:16.34       76990412 B   ---   --   ---xx   flac  0.6512  110 Tombstone Blues.flac
+     3:52.39       41016572 B   ---   --   ---xx   flac  0.5770  111 Tell Me That It Isn't True.flac
+     6:41.32       70811708 B   ---   --   ---xx   flac  0.6149  201 Cold Irons Bound.flac
+     9:35.27      101493548 B   ---   --   ---xx   flac  0.6161  202 Leopard-Skin Pill-Box Hat.flac
+     5:50.53       61864700 B   ---   --   ---xx   flac  0.6441  203 Things Have Changed.flac
+     7:01.08       74283260 B   ---   --   ---xx   flac  0.6333  204 Like A Rolling Stone.flac
+     4:17.25       45393644 B   ---   --   ---xx   flac  0.5056  205 If Dogs Run Free.flac
+     6:00.17       63544028 B   ---   --   ---xx   flac  0.6451  206 Seeing The Real You At Last.flac
+     5:03.25       53508044 B   ---   --   ---xx   flac  0.5879  207 I Shall Be Released.flac
+     5:36.52       59392748 B   ---   --   ---xx   flac  0.6603  208 Highway 61 Revisited.flac
+     6:14.13       66004220 B   ---   --   ---xx   flac  0.5817  209 Blowin' In The Wind.flac
+   113:18.24     1199224528 B                            0.5933  (20 files)
+=================== 
+=================== 
+=================== 

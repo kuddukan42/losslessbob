@@ -1,0 +1,20 @@
+ab7f2b19406a9147986824c60ca44075 *01 All Along the Watchtower.flac
+67e45a12314f1cee7324a5589d1f376a *02 It Ain't Me, Babe.flac
+72fa0449945526d172cc94cb5e3ec65e *03 I Contain Multitudes.flac
+0ea4d6d1864e999b1383a7789cb967a0 *04 False Prophet.flac
+484c7d8d9dda8b8483586f1b967b5dbf *05 When I Paint My Masterpiece.flac
+07f922e7e81878799a06a038aa08b5b7 *06 Black Rider.flac
+e3ef12d9ba57979d590ae80e6123cff7 *07 My Own Version Of You.flac
+e37e734931012063fd76d9c90edf7b32 *08 To Be Alone With You.flac
+ac59bea20a3cfa3e8d760ec3bf367c4c *09 Crossing the Rubicon.flac
+e3d4e3ebe53a342222328beab72a2de3 *10 Desolation Row.flac
+e396e53a8af5cf7b662c4523d6e46cdc *11 Key West (Philosopher Pirate).flac
+583fadefadcd5bf9c70ac21d742a1f34 *12 It's All Over Now, Baby Blue.flac
+3287ce801d7f1ebb9426a5ede91f5cc3 *13 I've Made Up My Mind To Give Myself To You.flac
+807b4ab770c0d2297c7bb5e07cb7d8a9 *14 Watching the River Flow.flac
+607edcd2dfc8daf93e10bc0074c86ca0 *15 Mother of Muses.flac
+93965d2abad601125e618a82c5100e3a *16 Goodbye Jimmy Reed.flac
+1c22f64e1916cf01a5b0fbd516c61481 *17 Every Grain of Sand.flac
+6819ccfb489566bfc114f88fc8668d88 *bd 2024-10-18 Frankfurt (elsbels).ffp
+6819ccfb489566bfc114f88fc8668d88 *bd 2024-10-18 Frankfurt (elsbels).txt
+ed136b28a53330ef802c8e0fc2890990 *BD_2024_Oct18_Frankfurt JTT Level Fix_Info.txt

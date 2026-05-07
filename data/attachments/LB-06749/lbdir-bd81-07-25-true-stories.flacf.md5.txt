@@ -1,0 +1,15 @@
+b4262b06c4ee65fd3ebdc61b47cb04d3  bd81-07-25-true-stories-d1t01.flac
+473b02fd56ff471401d948f7c97ca0a7  bd81-07-25-true-stories-d1t02.flac
+abc013c2d67dd583f92475b06174de8b  bd81-07-25-true-stories-d1t03.flac
+d2a3011bfd486b9d5892c7c9ebaac33b  bd81-07-25-true-stories-d1t04.flac
+829febc72d9f62f12ac4d5498bf068a9  bd81-07-25-true-stories-d1t05.flac
+394801d1995ea2ad7085b5fe179d0bd7  bd81-07-25-true-stories-d1t06.flac
+2ff83c2f9394e9abade5d7500fb17f7a  bd81-07-25-true-stories-d1t07.flac
+677cdae0823a240e86c0500388349638  bd81-07-25-true-stories-d1t08.flac
+ec23ebec6ab3d04e8880d3dbfbe025e9  bd81-07-25-true-stories-d1t09.flac
+87de65f8e2996c26836f5f1ec49c19ae  bd81-07-25-true-stories-d1t10.flac
+396ed4be62f56ec67a41a5a3c91532c6  bd81-07-25-true-stories-d1t11.flac
+977b7dbfe13f4adff638dc99310d202a  bd81-07-25-true-stories-d1t12.flac
+d7bd9cbb3a2690b41df0f82a9da4376a  bd81-07-25-true-stories-d1t13.flac
+f2dc41d77186e14455330eaa77c789aa  bd81-07-25-true-stories-d1t14.flac
+b224f8cebc527afc3dd2fa453f2ce189  bd81-07-25-true-stories.flacf.md5

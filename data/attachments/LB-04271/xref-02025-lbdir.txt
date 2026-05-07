@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd76-04-21-audiowhore-repair.flacf
+===================
+===================
+===================
+e54853d4c500c4e36ed7970d17f9c946 *01 1976-04-21 Tampa (source 1 repaired).flac
+4aa361351adb62f1b940dbb287cd6482 *02 1976-04-21 Tampa (source 1 repaired).flac
+e718ac3d87a1282c19c0af9b7f4adee6 *03 1976-04-21 Tampa (source 1 repaired).flac
+74aa6b2c4df59da461fcf89e98a7d065 *04 1976-04-21 Tampa (source 1 repaired).flac
+e5eaf39083aa0cfb898d2e75889b2f30 *05 1976-04-21 Tampa (source 1 repaired).flac
+b85acbb38dcd0082aa05d4125de0306b *06 1976-04-21 Tampa (source 1 repaired).flac
+b6b4634c889d30cee3e7dd8ea13897fc *07 1976-04-21 Tampa (source 1 repaired).flac
+8aa44b47af845974c5c3f59fb670d3ed *08 1976-04-21 Tampa (source 1 repaired).flac
+309a36e207b319ecc4a25a593b17ef11 *09 1976-04-21 Tampa (source 1 repaired).flac
+652022c7e615b7bb379f849085bf108d *10 1976-04-21 Tampa (source 1 repaired).flac
+d6d4eba9471e867ea5ff2d68a8f11221 *11 1976-04-21 Tampa (source 1 repaired).flac
+814f05a3f5f75327e88e82b16465f008 *12 1976-04-21 Tampa (source 1 repaired).flac
+0f93d5e6602325686bdb163cd4d45e76 *13 1976-04-21 Tampa (source 1 repaired).flac
+3daff76302f3925f65f0045740630e94 *14 1976-04-21 Tampa (source 1 repaired).flac
+718cf25206b7d30e2b1686f9f3393192 *15 1976-04-21 Tampa (source 1 repaired).flac
+5825d60d963f52cd0bb8961927e85a10 *16 1976-04-21 Tampa (source 1 repaired).flac
+baedc67ce6cc0b645f2dd144988c19c7 *17 1976-04-21 Tampa (source 1 repaired).flac
+9cfe122b12a7493a4b2d418c0a810c3f *BOB DYLAN 1976-04-21 Tampa (LB-4271 repaired).ffp
+79eba04850f58ced8180de44c7ee70ba *BOB DYLAN 1976-04-21 Tampa (source 1 audiowhore repair).txt
+58b73132b7ff0d54dad75af49384b9b3 *BOB DYLAN 1976-04-21 Tampa, Florida (LB-4271 repaired).md5
+bc269936138c445c6c6d309eff639227 *ORIGINAL Notes.txt.txt
+===================
+===================
+===================
+=== ffp for: bd76-04-21-audiowhore-repair.flacf
+===================
+===================
+===================
+01 1976-04-21 Tampa (source 1 repaired).flac:4d113b085c27587654d3d8b7e4388666
+02 1976-04-21 Tampa (source 1 repaired).flac:5a1aa1b70191cc6a9de1fb95c308337e
+03 1976-04-21 Tampa (source 1 repaired).flac:5e2186abd742dd35e1a4ac2b01ba1254
+04 1976-04-21 Tampa (source 1 repaired).flac:bb0987aa45d533804a0b0ed616720b9e
+05 1976-04-21 Tampa (source 1 repaired).flac:f459075749917d404adf8f442874ba71
+06 1976-04-21 Tampa (source 1 repaired).flac:a250be852e5da1453f5cc46cd47fd850
+07 1976-04-21 Tampa (source 1 repaired).flac:165eda80e9d72224c27d1cb4399fc6fb
+08 1976-04-21 Tampa (source 1 repaired).flac:fad601acda706dec922a96b05ee8a9f6
+09 1976-04-21 Tampa (source 1 repaired).flac:4fb36336179416b0dae4e91babc0fac9
+10 1976-04-21 Tampa (source 1 repaired).flac:a8fd9cceb8ffefb26dd2608beccda6ac
+11 1976-04-21 Tampa (source 1 repaired).flac:dd8bb096c94ea0f878374e59c0c8b471
+12 1976-04-21 Tampa (source 1 repaired).flac:afec006b75e06bbe84ccd447604f2139
+13 1976-04-21 Tampa (source 1 repaired).flac:34ecf954f5bb2bbb8d68d1799b9de450
+14 1976-04-21 Tampa (source 1 repaired).flac:c3b350d4b3b7f471c860ca27577bbfd5
+15 1976-04-21 Tampa (source 1 repaired).flac:5aa10a5279b9c60857e5166b29c8dde1
+16 1976-04-21 Tampa (source 1 repaired).flac:02a63994c5ee373c31fea4930e8d3ace
+17 1976-04-21 Tampa (source 1 repaired).flac:ac0ba03fc8a418d70152e9162a5aecf0
+===================
+===================
+===================
+=== shntool len for: bd76-04-21-audiowhore-repair.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:24.64       67887584 B   -b-   --   ---xx   flac  0.3396  01 1976-04-21 Tampa (source 1 repaired).flac
+     5:45.53       60981556 B   -b-   --   ---xx   flac  0.3425  02 1976-04-21 Tampa (source 1 repaired).flac
+     3:37.47       38389200 B   -b-   --   ---xx   flac  0.3513  03 1976-04-21 Tampa (source 1 repaired).flac
+     4:17.62       45480236 B   -b-   --   ---xx   flac  0.3468  04 1976-04-21 Tampa (source 1 repaired).flac
+     4:40.66       49548280 B   -b-   --   ---xx   flac  0.3512  05 1976-04-21 Tampa (source 1 repaired).flac
+     4:04.42       43140360 B   -b-   --   ---xx   flac  0.3463  06 1976-04-21 Tampa (source 1 repaired).flac
+     2:58.49       31514092 B   -b-   --   ---xx   flac  0.3371  07 1976-04-21 Tampa (source 1 repaired).flac
+     3:24.54       36112884 B   -b-   --   ---xx   flac  0.3361  08 1976-04-21 Tampa (source 1 repaired).flac
+     4:26.33       46999208 B   -b-   --   ---xx   flac  0.3384  09 1976-04-21 Tampa (source 1 repaired).flac
+     5:07.06       54168060 B   -b-   --   ---xx   flac  0.3586  10 1976-04-21 Tampa (source 1 repaired).flac
+     4:09.08       43942288 B   -b-   --   ---xx   flac  0.3461  11 1976-04-21 Tampa (source 1 repaired).flac
+     6:36.32       69930492 B   -b-   --   ---xx   flac  0.3605  12 1976-04-21 Tampa (source 1 repaired).flac
+     5:25.29       57397428 B   -b-   --   ---xx   flac  0.3575  13 1976-04-21 Tampa (source 1 repaired).flac
+     5:22.57       56934648 B   -b-   --   ---xx   flac  0.3235  14 1976-04-21 Tampa (source 1 repaired).flac
+     4:47.41       50723372 B   -b-   --   ---xx   flac  0.3537  15 1976-04-21 Tampa (source 1 repaired).flac
+     9:54.44      104884032 B   -b-   --   ---xx   flac  0.3554  16 1976-04-21 Tampa (source 1 repaired).flac
+     4:48.30       50872804 B   -b-   --   ---xx   flac  0.3607  17 1976-04-21 Tampa (source 1 repaired).flac
+    85:52.40      908906524 B                            0.3483  (17 files)
+===================
+===================
+===================

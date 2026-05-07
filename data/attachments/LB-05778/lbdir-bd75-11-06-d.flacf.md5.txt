@@ -1,0 +1,31 @@
+840c80b688fce2c899d43b38228b937b  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.flac.ffp
+01a461d6392a235cc9a7934d8c46bfcf  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.t01.flac
+444547e793bc1797241635c1d514acc2  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.t02.flac
+a3289b9ffd9230197ca4ed6ea156f5d6  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.t03.flac
+4a14eaff12d2041b37dc5583507576c1  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.t04.flac
+a2da760669a19fae3583cf9e522135d8  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.t05.flac
+6585faa4b462e18db981792a1726d877  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.t06.flac
+bae2ab71b50ff4853cafea6a719ee0cb  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.t07.flac
+5fa75bbc327fdc1aeeefb35c18cee070  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.t08.flac
+2ff53b8f6a4bb8dbc977db1cea027263  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.alt.speed.cor.wav.md5
+493581e1c90d357c7dced65f0e5b5813  1975-11-06 Springfield, early (alt incl)\bd1975-11-06.early.info.txt
+493581e1c90d357c7dced65f0e5b5813  bd1975-11-06.early.info.txt
+2e9a497372b8ffe64438e1c24b4a0ada  bd1975-11-06.early.speed.cor.flac.ffp
+03299a13d33ce91a7642a430e534f1fa  bd1975-11-06.early.speed.cor.t01.flac
+0a04ef02651b912d007108f2a60827df  bd1975-11-06.early.speed.cor.t02.flac
+80c82f074d759da623ba96f9b8c80c4c  bd1975-11-06.early.speed.cor.t03.flac
+1b916e6320bea264c46f8a40d1a88b40  bd1975-11-06.early.speed.cor.t04.flac
+cff33b6ce9ee67e5d0d1ed246acfc74b  bd1975-11-06.early.speed.cor.t05.flac
+f29b7e68849d6758f11506a6887a0e23  bd1975-11-06.early.speed.cor.t06.flac
+06dd7bae6fdf83dea4987481ecff0f96  bd1975-11-06.early.speed.cor.t07.flac
+ece9d1a87cd5cda166089d91988da2e2  bd1975-11-06.early.speed.cor.t08.flac
+348ca88d9a7793b054320bfe84725883  bd1975-11-06.early.speed.cor.t09.flac
+0fefabf60ad5db8f06f8f0552c2a6bd7  bd1975-11-06.early.speed.cor.t10.flac
+e0884ccbf8d255777f62bd1ede8991c8  bd1975-11-06.early.speed.cor.t11.flac
+25ee59cc861685857231dbea3b9a96e6  bd1975-11-06.early.speed.cor.t12.flac
+b1e67db8216b1aa0f6a9cd1003609feb  bd1975-11-06.early.speed.cor.t13.flac
+3c0b01883bf74bc6ab033c9dbbf3c338  bd1975-11-06.early.speed.cor.t14.flac
+6b763edf141c505af3ec6b9eb0b8802b  bd1975-11-06.early.speed.cor.t15.flac
+19f23700d865dc50a37dad293f940c54  bd1975-11-06.early.speed.cor.t16.flac
+6f466ae039ec3656f7a8fe3fd546feaa  bd1975-11-06.early.speed.cor.t17.flac
+fd4ebb64449f4df17d0d16b7792d2385  bd1975-11-06.early.speed.cor.wav.md5

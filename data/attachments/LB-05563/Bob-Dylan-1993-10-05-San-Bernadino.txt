@@ -1,0 +1,30 @@
+Bob Dylan 1993-10-05 San Bernadino
+for the new global moderator DON LUIS
+
+data dvd trade > just two flac folders
+NO INFO ;-(
+
+incl
+- this info file
+- fingerprints
+
+++++++copy/past++++++++add times and disc split++++
+San Bernardino, CA, USA
+Blockbuster Pavilion
+05-Oct-93
+Never-Ending Tour Concert #529
+1.	You're Gonna Quit Me		[3.53]
+2.	Stuck Inside of Mobile With the Memphis Blues Again [9.26]
+3.	All Along the Watchtower	[6.13]
+4.	I'll Remember You		[7.20]
+5.	Watching The River Flow		[5.18]
+6.	I Shall Be Released		[6.55]
+7.	Blackjack Davey			[6.41]
+8.	Desolation Row			[11.34]
+9.	Boots of Spanish Leather	[9.39]
+
+
+10.	I and I				[8.31]
+11.	Maggie's Farm			[9.43]
+12.	What Good Am I?			[8.41]
+13.	It Ain't Me, Babe		[10.30]

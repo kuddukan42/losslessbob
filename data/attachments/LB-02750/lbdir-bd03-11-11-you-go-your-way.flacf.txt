@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-11-you-go-your-way.flacf 
+=================== 
+=================== 
+=================== 
+4d561eb51e7e0496d51ff5a741fb7b56  bd03-11-11-you-go-your-way-LB-2750.txt
+4bb12bd13dbb2944730d38a4db7c2474  Bob Dylan-Amsterdam 2003.doc
+910a2198f3b92617d8300164f72856e3  caratulas\1.jpg
+efddfacc66b74e0f5dbffb3cc546731e  caratulas\2.jpg
+ba3fd618c3eb76ab55c23e79318cf6e9  caratulas\3.jpg
+2ac788eba001c41745f4599db725e248  caratulas\4.jpg
+ffd1ac8ac9a8ee35b560fdb28e893020  caratulas\back.jpg
+377cead2a23e802663daa1931d41ed53  caratulas\back2.jpg
+0455e0f8232f5db2f45eed99814d8bce  disco 1\Track01.flac
+0679835ca960cd399d1da6d724262df3  disco 1\Track02.flac
+0a93b9484e4228ec267fc96b25a28377  disco 1\Track03.flac
+8c997c0203adfc597cabcf2603022f94  disco 1\Track04.flac
+53aaeeac978c0985a992240bf24a40c6  disco 1\Track05.flac
+6c331ad45262487f749a9cb1dee53402  disco 1\Track06.flac
+f4902ac9f8a63fffa8dead91643d7004  disco 1\Track07.flac
+f46462d52cebc78319daf3e3463e630a  disco 1\Track08.flac
+9b08ec76e663dd5dec5a5b27e9a5f65a  disco 1\Track09.flac
+39158523b46b6bafb8265ad3c35b3a7b  disco 1\Track10.flac
+3e7ca521e4e3f88b7a5b2a4f9648ab89  disco 1\Track11.flac
+69659d975c0fc749588931e07b38b8c6  disco 1\Track12.flac
+b78396fca94fa3622fa0caa20f067b15  disco 1\Track13.flac
+cafbf8fc7d8c2361fd56f6c8cbcb648f  disco 1\Unknown Title.log
+0b2a6fa18243f98ea91ea954c72c5511  disco 2\Track01.flac
+1aa8bf2681e154d53f46206a6ba433b4  disco 2\Track02.flac
+cb8ff9265038fe0d3864af41e93e42f1  disco 2\Track03.flac
+c58cba670d7a47a09ec86900e51139d6  disco 2\Track04.flac
+51240a908f4bb1ba1e611ffaac5ae02a  disco 2\Track05.flac
+1e8336831feaa6d193b30dc6980f8b74  disco 2\Track06.flac
+9ae0f8ee267a1e21d754dffdfc6ba5f6  disco 2\Track07.flac
+7ae5ae334eea5fdd31dbec409d363c37  disco 2\Track08.flac
+23e18e29e4ec0d8a816cecfc74c4dec4  disco 2\Track09.flac
+34cf5054a6dc4c9cdcd5451a079c4fdb  disco 2\Track10.flac
+eedffe4ba0c53ac2b622190d7b1cb14f  disco 2\Track11.flac
+1f7c0feb32fa4ef5174951ece56a0620  disco 2\Track12.flac
+84e2b048ffd4364caaae0bbe91056b4e  disco 2\Unknown Title.log
+83790ed6e0a0983a48ae689f59f4d5b7  ffp.disc1.txt
+c871f1e861969e0d5adb1470cee5f4b2  ffp.disc2.txt
+b87075a211f6fdf1309afb03899afbb1  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-11-you-go-your-way.flacf\disco 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:29915a69af89d36c874384f0da0f959d
+Track02.flac:db1b41ac68d1c39d0696ca4e87d5f5d7
+Track03.flac:47a28b24373e9855a1a9093a10092309
+Track04.flac:4f3cf6be535ca2fd5e76bdbd5636b9bf
+Track05.flac:496509c2660ac01c74f9553577453bd7
+Track06.flac:6550146bc938b93be06cf9003a370d1c
+Track07.flac:e0dd82eafdce9d3566c9edf73e264941
+Track08.flac:5ba33254c1ff24acda9ac75ed83cc77f
+Track09.flac:c98312c9f5899d3d85e65fe5231d94c6
+Track10.flac:b9ebcf1dbf7fc1282f4c00c4348836cd
+Track11.flac:95cb29dcc434415280f0aea8104a9268
+Track12.flac:4c97e74a7c4f80c4bb69c29d910cd21a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-11-you-go-your-way.flacf\disco 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:6d62956f951355d753b9e7c2e39cfcc8
+Track02.flac:a4cfea414fa08362ea8212d7902060a8
+Track03.flac:6ed693102e350b6999a22541a09cb899
+Track04.flac:c148d90f8906464202869cc0194ecef6
+Track05.flac:749f3f5de4daa91eb61b709d32199bc9
+Track06.flac:0402d20d4f0c278737cde0f6bd161942
+Track07.flac:8aa81e55abf2c13ca96be14b6917acee
+Track08.flac:b76a0aea630e859d38d614053be0818f
+Track09.flac:9f2e0d1675022be534cc0eadfe6d9027
+Track10.flac:0010954e1f1728f567fc80655abdfefd
+Track11.flac:2ffeb92c7af2fbb0c7400211f5dd5f26
+Track12.flac:0d355d144dd760a26524b208816d5f16
+Track13.flac:72632760c9ce8e691c1acd38cfe9fe46
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-11-you-go-your-way.flacf\disco 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:35.59       69816812 B   ---   --   ---xx   flac  0.5295  Track01.flac
+     9:13.16       97586876 B   ---   --   ---xx   flac  0.6191  Track02.flac
+     5:04.18       53667980 B   ---   --   ---xx   flac  0.6642  Track03.flac
+     7:25.25       78556844 B   ---   --   ---xx   flac  0.6615  Track04.flac
+     6:50.11       72349916 B   ---   --   ---xx   flac  0.6574  Track05.flac
+     6:32.35       69231164 B   ---   --   ---xx   flac  0.5747  Track06.flac
+     5:51.02       61921148 B   ---   --   ---xx   flac  0.6379  Track07.flac
+     8:36.03       91029500 B   ---   --   ---xx   flac  0.6126  Track08.flac
+     5:12.16       55074476 B   ---   --   ---xx   flac  0.5037  Track09.flac
+     6:25.03       67921100 B   ---   --   ---xx   flac  0.6224  Track10.flac
+     6:13.13       65827820 B   ---   --   ---xx   flac  0.5340  Track11.flac
+     4:52.74       51682892 B   ---   --   ---xx   flac  0.6077  Track12.flac
+    78:51.50      834666528 B                            0.6040  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-11-you-go-your-way.flacf\disco 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.64        7206572 B   ---   --   ---xx   flac  0.2693  Track01.flac
+     5:22.57       56934908 B   ---   --   ---xx   flac  0.3026  Track02.flac
+     5:12.28       55102700 B   ---   --   ---xx   flac  0.3037  Track03.flac
+     5:46.50       61152044 B   ---   --   ---xx   flac  0.6278  Track04.flac
+     6:35.52       69800348 B   ---   --   ---xx   flac  0.5869  Track05.flac
+     7:57.55       84272204 B   ---   --   ---xx   flac  0.6519  Track06.flac
+     6:39.00       70383644 B   ---   --   ---xx   flac  0.5968  Track07.flac
+     5:54.53       62570300 B   ---   --   ---xx   flac  0.6292  Track08.flac
+     7:36.70       80603084 B   ---   --   ---xx   flac  0.6480  Track09.flac
+     6:19.60       66996764 B   ---   --   ---xx   flac  0.5797  Track10.flac
+     7:14.67       76715228 B   ---   --   ---xx   flac  0.6690  Track11.flac
+     7:37.50       80732444 B   ---   --   ---xx   flac  0.5525  Track12.flac
+     6:49.70       72312284 B   ---   --   ---xx   flac  0.6365  Track13.flac
+    79:49.01      844782524 B                            0.5736  (13 files)
+=================== 
+=================== 
+=================== 

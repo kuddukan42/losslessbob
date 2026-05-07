@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-15 shnf 
+=================== 
+=================== 
+=================== 
+500da50d1ac4e612309cc5a204eead69  bd02-10-15.txt
+064cb172146f00de62419acb3e7a2d8a  d1\01.shn
+fc92c2f7cc0f8901604176a6c554b205  d1\02.shn
+11e09a4278f2ccc6f3406ea5af997557  d1\03.shn
+7af32efb4ea2c9144022056aae3fa526  d1\04.shn
+b6a2f75b01f610e3ca51b242002801a7  d1\05.shn
+c5bf3126e20a4db0fd8e888a2f650b86  d1\06.shn
+5a02fc0ba797e6a29a69d5476a94d21d  d1\07.shn
+3777b16cadf6fbf02f554278b6691b32  d1\08.shn
+2d1714d5d3e827ed94fc84347552f6c5  d1\09.shn
+cd709fb253f1b1ac90d9dacad94996b4  d1\10.shn
+3c43fcebd319a087bb0d73b6c60d514f  d1\11.shn
+aa56db515e690ea523138cd296cca3fa  d1\12.shn
+e3a47dccf9cec3f9fdd6fe9bb59c918c  d1\13.shn
+b4fd96fdbd03056e5106eb456f17a651  d1\noname.md5
+15baac8818c2f4591a0d272724d0bb91  d2\01.shn
+3d7060560d08833ea94152a38ad15646  d2\02.shn
+d995bc69d3283be99c0b1a51b2a99f78  d2\03.shn
+374173cc36a8baeeae5d196b7e5d0f04  d2\04.shn
+82242550e61c179c8b1d6499581958a5  d2\05.shn
+4662a6d69a59c283c827604d3c2c8369  d2\06.shn
+c7f0a997b0530a19e268c73931712113  d2\07.shn
+989866638bf095a4c84baa1de862cb1e  d2\08.shn
+dbe7b5b80bf4507d223e8d8c1b52de2a  d2\09.shn
+a7bcf1758b788f848f17b6cc56fcf7f3  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-15 shnf\d1 
+=================== 
+=================== 
+=================== 
+a5431c02e16897636ccec9a1639bdf0c  [shntool]  01.wav
+77547f483f272236613d07b6254cee4a  [shntool]  02.wav
+3b3babc36b1efaf1323650ba24528ca3  [shntool]  03.wav
+a0d32e1553edcca1c1aee29a6c20640b  [shntool]  04.wav
+966ea8d054f13463e5510eebd4c68ec3  [shntool]  05.wav
+770a9522ca7c2595be64a1efaac9bd8b  [shntool]  06.wav
+0a614e6b71c7f7d788223e02af62919f  [shntool]  07.wav
+27441d2d8ddb8c6b5b49de7521f1752e  [shntool]  08.wav
+0a9423715c8c56c4c17d5d8683d167c4  [shntool]  09.wav
+14d4ff9fe9f67297c4dbd6481b33505b  [shntool]  10.wav
+74240da2afcf3ff56d4466d6b651127c  [shntool]  11.wav
+68f53d35956ea94f3292dae9ac013322  [shntool]  12.wav
+25b63e49aaad83c0657cd742efb61088  [shntool]  13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-15 shnf\d2 
+=================== 
+=================== 
+=================== 
+d068a444330512c87af056b68a44cfec  [shntool]  01.wav
+716df477dc7a7d13d9127fb800b9a9c1  [shntool]  02.wav
+37a1f553b292a237ecf32dc2f62a7418  [shntool]  03.wav
+4399e38fddd8c15da2b7a6ba833eff1c  [shntool]  04.wav
+a2b0d809d0772625ea6c408ba092864c  [shntool]  05.wav
+83db38d3ff0290a0bb9735ddbc98e0e9  [shntool]  06.wav
+93222bac4a2e77f5f5094b58be7feaa5  [shntool]  07.wav
+ad0f8a4e9ca257f202ad83d21901b6c3  [shntool]  08.wav
+bcf81a93377664abd0486aa2fdd7e954  [shntool]  09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-15 shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.03        9179900 B   ---   --   ---xx    shn  0.5526  01.shn
+   171:15.38       57412364 B   -b-   --   --ixx    shn  0.5937  02.shn
+     4:18.71       45678236 B   ---   --   ---xx    shn  0.5468  03.shn
+     6:11.07       65460908 B   ---   --   ---xx    shn  0.5659  04.shn
+     5:00.69       53082332 B   ---   --   ---xx    shn  0.5354  05.shn
+     6:11.47       65554988 B   ---   --   ---xx    shn  0.5658  06.shn
+     4:06.29       43462652 B   ---   --   ---xx    shn  0.6019  07.shn
+     6:02.41       63953276 B   ---   --   ---xx    shn  0.5161  08.shn
+     7:18.08       77282060 B   ---   --   ---xx    shn  0.5881  09.shn
+     5:58.14       63184172 B   ---   --   ---xx    shn  0.5386  10.shn
+     5:22.21       56850236 B   ---   --   ---xx    shn  0.6193  11.shn
+     7:34.29       80153852 B   ---   --   ---xx    shn  0.5418  12.shn
+     3:50.44       40675532 B   ---   --   ---xx    shn  0.5547  13.shn
+   234:02.46      721930508 B                            0.5631  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-15 shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:00.02       74092748 B   ---   --   ---xx    shn  0.5746  01.shn
+     8:02.48       85137740 B   ---   --   ---xx    shn  0.5588  02.shn
+     7:12.63       76353020 B   ---   --   ---xx    shn  0.5574  03.shn
+     3:29.43       36968780 B   ---   --   ---xx    shn  0.4408  04.shn
+     6:54.41       73126076 B   ---   --   ---xx    shn  0.5068  05.shn
+    11:44.60      124326764 B   ---   --   ---xx    shn  0.5707  06.shn
+     0:57.59       10193612 B   ---   --   ---xx    shn  0.4921  07.shn
+     6:27.19       68311532 B   ---   --   ---xx    shn  0.5356  08.shn
+     6:34.02       69506348 B   ---   --   ---xx    shn  0.6074  09.shn
+    58:23.37      618016620 B                            0.5515  (9 files)
+=================== 
+=================== 
+=================== 

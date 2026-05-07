@@ -1,0 +1,14 @@
+Bob Dylan, 4/30/80, Buffalo, New York, 2CDR
+
+LB-7176, (77min+22min), version "b"; This one has been requested by Mixedup at the forum. Obviously derived from the same master as LB-2182, but tracked 13/3 so discs split is certainly different as encore's crowd, band intros and speech make no separate tracks themselves. I couldn't tell this has not been remastered but to my ears sound quality and tone looks very similar to LB-7052. It was seeded by Lowgen4 at dime on October 2005 with the below description (original info file is included in this torrent). I didn't change a single byte to the original set, but adding md5's and ffp as simple verification tools. Thanks again to the taper and to Lowgen and the original seeder at ABMSD., Enjoy!, Luisbp51 (Hungercity January 2009), ___________________, ORIGINAL INFO FILE, ___________________, Buffalo NY 30April 1980, This was recently posted on the ABMSD newsgroup. It's a good show. The recording is average but clean. Lineage unknown.; bittorrent download 01/09; in 3-way comparison these are same recording based on same clapping wavs at end of d1t1; this has same wav and spectral view and levels on d1t7 as LB-2182 with tracks cut differently; LB-7052 has lower levels and more hiss; (did not listen to all of this)
+
+drop/cut d1t8 7:35, end of d1t13,
+
+CD1
+1. Gotta Serve Somebody, 2. I Believe In You, 3. When You Gonna Wake Up, 4. Ain't Gonna Go To Hell For Anybody, 5. Cover Down, Break Through, 6. Precious Angel, 7. Man Gave Names To All The Animals, 8. Slow Train, 9. Do Right To Me Baby (Do Unto Others), 10. Solid Rock, 11. Saving Grace, 12. Saved (Bob Dylan/Tim Drummond), 13. What Can I Do For You?, 
+
+CD2
+14. In The Garden, 15. Are You Ready?, 16. Pressing On
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

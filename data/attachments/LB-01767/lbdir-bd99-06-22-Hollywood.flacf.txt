@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-22-Hollywood.flacf 
+=================== 
+=================== 
+=================== 
+302e511b5f756b0a062a71a3a0f2285f  bd99-06-22.txt
+28865dc15b649ad6331bbaf0f317d045  d1Track01.flac
+87ca2ad813f9d87461a1017526010bc1  d1Track02.flac
+76b8c7dfe01d0f8abc718b203c38ce28  d1Track03.flac
+46c969bf912d3a0f1216ecdcb82e9c9c  d1Track04.flac
+3f7bbc2b0545109bc344b29921f36501  d1Track05.flac
+2b47572c63f1712222769e9e64da4dfe  d1Track06.flac
+cefe209c370b8d9b47ba56995b0d6317  d1Track07.flac
+00b1477cdf3dff1a86855630bd54be2a  d1Track08.flac
+5eb02da21d1b12675e95e0b39cdeff17  d1Track09.flac
+a0283ed8f95f2a952ef8a4bc41044935  d1Track10.flac
+30f4fb3b3696334d0641d79375a2276f  d2Track01.flac
+d10830424fb3237805ec4374e7792871  d2Track02.flac
+66944c54bac235633b9a872501e6a2f4  d2Track03.flac
+1cadb3df70985466b96f0f85491cb339  d2Track04.flac
+c4c82fbc81254cab7d5dc72ad07b1c69  d2Track05.flac
+e33207b6100f283f7abc80df4654ae0f  d2Track06.flac
+d41d8cd98f00b204e9800998ecf8427e  md5 file created by aaadbell.txt
+3fda7cb92ef90edfa8b3b73c2cbd7719  noname.md5
+a43bdb4286afe188b0c94d1d9f59d924  README.txt
+cf24e57bb93b1ab6fa08e3a4bccdfdb2  shntool-info-OK.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-22-Hollywood.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:583bf8052b06f49a400c5b241fe78daa
+d1Track02.flac:834fdf41e19b426b69a6251b9eec5747
+d1Track03.flac:41b8c9e0866074e74608bf9b27b66d2f
+d1Track04.flac:d4ed2944d9ff6f816193f87d58ecd9d1
+d1Track05.flac:0594118ccff290c5b294eefd9835ca1a
+d1Track06.flac:171d3938d7066321beedc2de73ad4f0c
+d1Track07.flac:d04d2970697ae4a9c2d24f2e540de290
+d1Track08.flac:960261f546daeff375272b09e3ff18fd
+d1Track09.flac:0b929990065a3b1b4dfba3e5f6f9380f
+d1Track10.flac:02d6825db7744344b5ed9140fe4c6aa3
+d2Track01.flac:1b66bd2d93aa9e4b17edba7e0c9b0052
+d2Track02.flac:6d85b87b444347bf9d154e974d10cc59
+d2Track03.flac:c5440fd1bd7c1ed0f139bf90611b68bf
+d2Track04.flac:1702fd699bbfeeaa33cdc2e7fb9eb58c
+d2Track05.flac:81741082ef63ad14ca585a0694665287
+d2Track06.flac:71c927e7078894f8e10495c52fca7041
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-22-Hollywood.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:02.70       32269484 B   ---   --   ---xx   flac  0.5986  d1Track01.flac
+     6:57.74       73732892 B   ---   --   ---xx   flac  0.5772  d1Track02.flac
+     5:36.60       59411564 B   ---   --   ---xx   flac  0.5542  d1Track03.flac
+     7:29.04       79213052 B   ---   --   ---xx   flac  0.5511  d1Track04.flac
+     9:45.28      103259900 B   ---   --   ---xx   flac  0.5904  d1Track05.flac
+     5:30.53       58336700 B   ---   --   ---xx   flac  0.5332  d1Track06.flac
+     6:21.44       67311932 B   ---   --   ---xx   flac  0.4505  d1Track07.flac
+     8:03.01       85203596 B   ---   --   ---xx   flac  0.5418  d1Track08.flac
+     7:02.50       74558444 B   ---   --   ---xx   flac  0.4179  d1Track09.flac
+     7:27.01       78853196 B   ---   --   ---xx   flac  0.5404  d1Track10.flac
+     6:09.68       65251580 B   ---   --   ---xx   flac  0.4576  d2Track01.flac
+     8:18.46       87955436 B   ---   --   ---xx   flac  0.5352  d2Track02.flac
+     4:09.62       44069468 B   ---   --   ---xx   flac  0.5578  d2Track03.flac
+     7:48.20       82602284 B   ---   --   ---xx   flac  0.5527  d2Track04.flac
+     3:37.22       38330588 B   ---   --   ---xx   flac  0.5919  d2Track05.flac
+     5:43.27       60568748 B   ---   --   ---xx   flac  0.5932  d2Track06.flac
+   103:04.30     1090928864 B                            0.5377  (16 files)
+=================== 
+=================== 
+=================== 

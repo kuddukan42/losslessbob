@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-04-04-b.flacf 
+=================== 
+=================== 
+=================== 
+4f236bdfe9c9981497f81c088c3aa4a9  2000-04-04 Omaha Civic Arena, Omaha, Nebraska, USA.md5
+8d38fae9d4af3d317c193c886e85ccfd  CD1\01 Roving gambler.flac
+99418e40a0a842886b070947dea38c58  CD1\02 The times they are a-changin'.flac
+17a63b5f292ac46a3b28efdf604ab379  CD1\03 Desolation Row.flac
+e8088564c6037baefdd2c9cd3ab2605c  CD1\04 The lonesome death of Hattie Carroll.flac
+e17f94fe4bc64d4d00cfa764d565373a  CD1\05 Tangled up in blue.flac
+44827b409f7c54bbdf88bc225cc6c3a2  CD1\06 Rock of ages.flac
+4dfeefee0d1ecc73b93fe22842ee4ba6  CD1\07 Country Pie.flac
+0c93bb279cf0fee957e3f6f6842e0bf8  CD1\08 This wheel's on fire.flac
+07f1e2dfa589689f8e7af1576e527f38  CD1\09 Watching the river flow.flac
+dde358f7e29a950bc67d42a4dbf1662b  CD1\10 Stuck inside of Mobile with the Memphis blues again.flac
+be6d76ac314fd22faf0d05cc6279ac2f  CD1\11 Not dark yet.flac
+49ab47e0f146db7a8d27e0bbf0edc8d8  CD2\12 Leopard-skin pill-box hat.flac
+e26b992344a28464e9a56ede88f00f84  CD2\13 Love sick.flac
+928f26c64211c0c1a982163bab17a62c  CD2\14 Like a rolling stone.flac
+cf789b214513b7ab0e4ffd9be999d193  CD2\15 Don't think twice, it's all right.flac
+5d7ea7a4835938ead3038157bdca2687  CD2\16 Not fade away.flac
+9b06a4cad998c7f0ecd7cd73da587d96  CD2\17 Blowin' in the wind.flac
+e6c3bedddd8ffeaf473dea6980425d84  CD2\18 Rainy day women # 12 & 35.flac
+e41e189df615edd34f07a996e64db864  Info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-04-04-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Roving gambler.flac:4a8e14c14925578271b3389804b2b4ab
+02 The times they are a-changin'.flac:b579b43b845abe0053d93180a847a526
+03 Desolation Row.flac:2591093efc356e43f6cd6430d79d1844
+04 The lonesome death of Hattie Carroll.flac:5842909588014afe97ce51813ba4c6ab
+05 Tangled up in blue.flac:fd0b868e495623749bc1f2c5e7e6254c
+06 Rock of ages.flac:98c013388a8735f70c190d081d6e7c4b
+07 Country Pie.flac:09c5f7d721d5364e564a622a7a970117
+08 This wheel's on fire.flac:06157f82702e3ae63ffc0ca691c810c1
+09 Watching the river flow.flac:c168b5f50760fff600c72825f80326f8
+10 Stuck inside of Mobile with the Memphis blues again.flac:65ea2a005c7fd6c1c08fb2b5e17a916a
+11 Not dark yet.flac:dcfcdac2924821fc30e33efd98a60444
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-04-04-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+12 Leopard-skin pill-box hat.flac:eaa51bcd1d424bd5db8f4e3553a088db
+13 Love sick.flac:f71e5f43b661ccb89080e0ad122c761c
+14 Like a rolling stone.flac:d2a4b6d1f7b6508f14807dac3683c5f1
+15 Don't think twice, it's all right.flac:d69d6925983bb224d698445813dc5d83
+16 Not fade away.flac:d01c138b2b3efaed8fed7dd9742c7af7
+17 Blowin' in the wind.flac:53c4f5179cf4a88d63978f8cab51934e
+18 Rainy day women # 12 & 35.flac:a02ac6390bb4187343fae75115b4c8f7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-04-04-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:13.34       44709212 B   ---   --   ---xx   flac  0.5292  01 Roving gambler.flac
+     6:26.09       68111612 B   ---   --   ---xx   flac  0.5007  02 The times they are a-changin'.flac
+     8:47.73       93134540 B   ---   --   ---xx   flac  0.5038  03 Desolation Row.flac
+     6:42.66       71068076 B   ---   --   ---xx   flac  0.4116  04 The lonesome death of Hattie Carroll.flac
+     8:14.42       87240428 B   ---   --   ---xx   flac  0.5431  05 Tangled up in blue.flac
+     4:04.12       43069868 B   ---   --   ---xx   flac  0.4021  06 Rock of ages.flac
+     3:18.61       35070716 B   ---   --   ---xx   flac  0.5036  07 Country Pie.flac
+     6:19.32       66930908 B   ---   --   ---xx   flac  0.4710  08 This wheel's on fire.flac
+     5:08.25       54390044 B   ---   --   ---xx   flac  0.5263  09 Watching the river flow.flac
+     7:42.73       81668540 B   ---   --   ---xx   flac  0.5047  10 Stuck inside of Mobile with the Memphis blues again.flac
+     6:17.64       66653372 B   ---   --   ---xx   flac  0.3414  11 Not dark yet.flac
+    67:16.41      712047316 B                            0.4781  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-04-04-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:57.50       94844444 B   ---   --   ---xx   flac  0.4862  12 Leopard-skin pill-box hat.flac
+     5:55.00       62622044 B   ---   --   ---xx   flac  0.4369  13 Love sick.flac
+     7:21.24       77848892 B   ---   --   ---xx   flac  0.4975  14 Like a rolling stone.flac
+     6:35.47       69788588 B   ---   --   ---xx   flac  0.5168  15 Don't think twice, it's all right.flac
+     4:32.37       48067868 B   ---   --   ---xx   flac  0.5560  16 Not fade away.flac
+     6:16.19       66371132 B   ---   --   ---xx   flac  0.4767  17 Blowin' in the wind.flac
+     6:24.25       67796444 B   ---   --   ---xx   flac  0.5074  18 Rainy day women # 12 & 35.flac
+    46:02.52      487339412 B                            0.4946  (7 files)
+=================== 
+=================== 
+=================== 

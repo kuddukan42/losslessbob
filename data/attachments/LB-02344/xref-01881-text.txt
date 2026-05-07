@@ -1,0 +1,169 @@
+===================
+===================
+===================
+=== Bridge School Benefit 1988.ffp
+===================
+===================
+===================
+Disc 1\01 Track01.flac:ee519e340899bf8578cebe59c5f570ec
+Disc 1\02 Track02.flac:4e65b5430e14552c244c289741a0f4dd
+Disc 1\03 Track03.flac:932704db45da0fdbb1d6a0843f6d3b02
+Disc 1\04 Track04.flac:d4205c0262c32403732eaf73e8bcc567
+Disc 1\05 Track05.flac:f89b2913734e7d1c367da43e2d0bd340
+Disc 1\06 Track06.flac:daa01462d60dde024b22fe61fe6c627a
+Disc 1\07 Track07.flac:234ecdef77aff4fa21178c5ad769c081
+Disc 1\08 Track08.flac:5f7f6d9ec1164b2195aacf3892e6cb33
+Disc 1\09 Track09.flac:1fa9068117be7d97061d994bdce7222f
+Disc 1\10 Track10.flac:26388f4d164895b3eb3f47c1ee849348
+Disc 1\11 Track11.flac:c686e57d0173051ebeb056d8a5071d37
+Disc 1\12 Track12.flac:a2179b37bc7c20ad154930ade3dd3dee
+Disc 1\13 Track13.flac:69e9deedd655e5b8316d8f9051101442
+Disc 1\14 Track14.flac:935c164eb5003be74ba82066f051e561
+Disc 1\15 Track15.flac:3a49b42ffe01a4f0b5a7fd9f656ff07b
+Disc 1\16 Track16.flac:f777b577e53765c30c9bf482e324eafd
+Disc 1\17 Track17.flac:f39d76170f4913e214ae4de6349c884e
+Disc 2\01 Track01.flac:e409312b449be93c8ba5e941cbb4dd79
+Disc 2\02 Track02.flac:e35483b56ccc7f4d38393ab321197b85
+Disc 2\03 Track03.flac:87cbdd2073dcf51f0e02ec62199d5204
+Disc 2\04 Track04.flac:f715769e40198f37f04b59fb1161c242
+Disc 2\05 Track05.flac:a0e5838007c28143e0c19456c20c489f
+Disc 2\06 Track06.flac:eafd02cf61438f9171abc7ba8a1129b8
+Disc 2\07 Track07.flac:fe5fc003276856e5f4cd51f8ea6cc7f8
+Disc 2\08 Track08.flac:9ab772cca8b32576c052ac77270ba032
+Disc 2\09 Track09.flac:7cc33410be8efec40347307808b50402
+Disc 2\10 Track10.flac:3aaf23d9c45f1e9045ce4b53f756d98e
+Disc 2\11 Track11.flac:10a0e77aac483394e22a517192c9cb32
+Disc 2\12 Track12.flac:fc62cffa16f751597c295faa3069a405
+Disc 3\01 Track01.flac:081739598c92d08ee2465202e83c96a1
+Disc 3\02 Track02.flac:b03fe0e4a75830f1ac889543048892a6
+Disc 3\03 Track03.flac:86a6ff20593321e1e6efa160cff37317
+Disc 3\04 Track04.flac:318d86879de15caff3fec7c01d047155
+Disc 3\05 Track05.flac:eda5fcf55bba8cc8da035dcc2c073ab3
+Disc 3\06 Track06.flac:98ddf88057ce314d44e7876a33576d95
+Disc 3\07 Track07.flac:b339c9f8f733d3d75657c1b7d2f5c3fd
+Disc 3\08 Track08.flac:d66b44db0c58cc4ca871ea329a8dbc2c
+Disc 3\09 Track09.flac:6634fdcf02af2267414bba26aa24a856
+===================
+===================
+===================
+=== Bridge School Benefit 1988.md5
+===================
+===================
+===================
+a350ba8e8f6a63d580c0f19f88b44192 *Disc 1\01 Track01.flac
+f0676f3cf0c1947b31d865c885fe9979 *Disc 1\02 Track02.flac
+1e5867579d0477abc423190b005d5639 *Disc 1\03 Track03.flac
+36e3f4cb8f3e309a5e7b1ac4b403b895 *Disc 1\04 Track04.flac
+e499f119bf70748f87751a90fbfefa34 *Disc 1\05 Track05.flac
+c3f2f870fa17d80589763b6d2cebb51b *Disc 1\06 Track06.flac
+adccf2fdc4e01045050c18978432d3e3 *Disc 1\07 Track07.flac
+6463e0ee6397ac0cc73c694a77de2d53 *Disc 1\08 Track08.flac
+a0e62ad3323815d9083f266c7ea038e8 *Disc 1\09 Track09.flac
+b10a7c6bb060dba4559fff900ec3d782 *Disc 1\10 Track10.flac
+8fcab0535b556b97abf184178bd9d169 *Disc 1\11 Track11.flac
+a486e370711a8babb0595098b4371045 *Disc 1\12 Track12.flac
+ef65331541a3e878d0007d45011eccca *Disc 1\13 Track13.flac
+77933438dba647d23c6c98718af76173 *Disc 1\14 Track14.flac
+d2032fdbf9f687167462e5e5cdf46f93 *Disc 1\15 Track15.flac
+e4266565cf814d6ef934ff8ac2abfa99 *Disc 1\16 Track16.flac
+447c53df2810d0b2b83ff47aa8768207 *Disc 1\17 Track17.flac
+64e1087c7e7baf472149f42b59089d22 *Disc 2\01 Track01.flac
+7c375020c115c935f6fb2e3ee5291ccc *Disc 2\02 Track02.flac
+22a5477d492ab33c148cc1e7aab373b5 *Disc 2\03 Track03.flac
+f5fa38c9c04bd125f3adbe1dac74854a *Disc 2\04 Track04.flac
+08978dff42431e5e271a53ab82d57f8e *Disc 2\05 Track05.flac
+52936f5e8edabeb4f58dd313af55b146 *Disc 2\06 Track06.flac
+868e8c9de1fe5d7449a57a9fb7d2d1d8 *Disc 2\07 Track07.flac
+c797afd071732ab3a080b3580a6d6d09 *Disc 2\08 Track08.flac
+f12f59b3d65943814a327231867f3283 *Disc 2\09 Track09.flac
+2bb71e8c2eb4474f399be68b996a5943 *Disc 2\10 Track10.flac
+e73a7962b7e821e2349e8bbb5a053ad8 *Disc 2\11 Track11.flac
+ab84c2c472a631960be616f248dfcc15 *Disc 2\12 Track12.flac
+d1cb08d18b254b8a2165c6b8722ae9fd *Disc 3\01 Track01.flac
+30eaa36b463879f252a33323323e84bd *Disc 3\02 Track02.flac
+882538da1921b83d723f91d2b8256b53 *Disc 3\03 Track03.flac
+09650b2217f6ca6c207d460294285b9b *Disc 3\04 Track04.flac
+3e725627cd9acd022d6e0d04e9215dd7 *Disc 3\05 Track05.flac
+af66e8fb92d378c69b1a00c8a436783d *Disc 3\06 Track06.flac
+20a3eaca192f23184022c6bac52061e8 *Disc 3\07 Track07.flac
+5a7af18b41d39f9fb53f727d95a7c027 *Disc 3\08 Track08.flac
+874c81c221ededcdcb0cd447d695bcb2 *Disc 3\09 Track09.flac
+===================
+===================
+===================
+=== Bridge School Benefit II 1988 info.txt
+===================
+===================
+===================
+Bridge School Benefit II
+Oakland Colliseum
+Oakland, CA
+December 4th, 1988
+
+[Disc I:]
+Neil Young
+01 Comes A Time
+02 Sugar Mountain
+03 This Note's For You
+04 American Dream*
+
+Nils Lofgren
+05 Intro
+06 Dreams Die Hard
+07 Live Each Day
+08 Believe A Little Bit In Yourself**
+09 Keith Don't Go
+10 No Mercy
+
+Bob Dylan with G.E. Smith
+11 San Francisco Bay Blues
+12 Pretty Boy Floyd
+13 With God On Our Side
+14 Girl From The North Country
+15 Gates of Eden
+16 Forever Young
+
+Pegi Young
+17 Thank You
+
+[Disc II:]
+Jerry Garcia, Bob Weir & Rob Wasserman
+01 Intro
+02 Wang Dang Doodle***
+03 Friend of the Devil
+04 Throwing Stones
+05 Ripple
+
+Tom Petty 
+06 Intro
+07 Even The Losers
+08 Blue Moon of Kentucky
+09 The Wild One, Forever
+10 Refugee
+11 Don't Come Around Here No More
+12 The Waiting
+
+[Disc III:]
+Crosby, Stills, Nash & Young
+01 Helplessly Hoping
+02 Love The One You're With
+03 This Old House
+04 Southern Man
+05 Don't Say Goodbye
+06 Compass
+07 Long Time Gone
+08 Southern Cross
+(Encore)
+09 Teach Your Children
+
+* with Crosby, Stills & Nash
+** with Neil Young on background vocals and harmonica
+*** with Neil Young on harmonica
+
+Source: 
+SBD > DAT > CD > EAC > mkw > SHN
+CDRs > EAC V1.2 > TLH
+log files included
+===================
+===================
+===================

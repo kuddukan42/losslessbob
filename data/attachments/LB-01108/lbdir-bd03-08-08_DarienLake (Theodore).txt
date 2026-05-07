@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-08_DarienLake (Theodore) 
+=================== 
+=================== 
+=================== 
+f4f8f92f251abeb4ebe75dfb703c991b  bd-03-08-08_d1t01.shn
+029fe881c75c551682749b05afbc5d73  bd-03-08-08_d1t02.shn
+8597e6f438cac5dc4ee67c045b5ed7e5  bd-03-08-08_d1t03.shn
+72a9b578f9636e4de40f056634f940e3  bd-03-08-08_d1t04.shn
+2993377bf3335425af32512b847ecad8  bd-03-08-08_d1t05.shn
+7341d8dd3eac5a7c720cb8945b64f6af  bd-03-08-08_d1t06.shn
+cc976685801b3699bfbd2e0e07752f90  bd-03-08-08_d1t07.shn
+9cae7b56a433c770af3d57f344f828b4  bd-03-08-08_d1t08.shn
+99979f87312d43cfd7db8ac8c0d08aac  bd-03-08-08_d1t09.shn
+9bc8834e872b4c117545d24f94fd337a  bd-03-08-08_d1t10.shn
+c767a2fa4c7ed0cf67ad8c22a7b9c906  bd-03-08-08_d1t11.shn
+9f93ce60e181e88a4839630f58ebe8fe  bd-03-08-08_d1t12.shn
+1325ef1d10a7ff9e3e2d466c0c399431  bd-03-08-08_d2t01.shn
+9e9b8954661de21f4921989f429d1c1c  bd-03-08-08_d2t02.shn
+700c6f1362c0e7de3ddea378b097a42a  bd-03-08-08_d2t03.shn
+f775a6a764286645d04a3b16f4ee06a8  bd-03-08-08_d2t04.shn
+faf54973faed50cb2a3283fcd6cde29d  bd-03-08-08_d2t05.shn
+d74172fd004546ba330db763c3c9c1c9  bd-03-08-08_d2t06.shn
+3de693b70d1b4d9e25ef4e0a90f7e033  bd-03-08-08_d2t07.shn
+7b68723e126b079e8ab233e523a7ba27  bd-03-08-08_d2t08.shn
+d79ce04b929d34ecac6c8d8578edc3e5  bd-03-08-08_Darien_Lake---all.md5
+4073d8b6cbd66daf86cee31cbf53ed2e  bd-03-08-08_Darien_Lake---d1.md5
+f926aaf9467be64afc3ff922ee82b364  bd-03-08-08_Darien_Lake---d2.md5
+d79ce04b929d34ecac6c8d8578edc3e5  bd-03-08-08_Darien_Lake--all.md5
+1a33cbbd41624b8b8e9e4d323986ffb5  bd-03-08-08_Darien_Lake.txt
+3930ff36d716d7aeaf52e72c3115e3c9  bd03-08-08.txt
+37c0b86fa88f9373e7b0dadf3a3e8100  darien upload complete - delete this file.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-08_DarienLake (Theodore) 
+=================== 
+=================== 
+=================== 
+5eb1dda89b17d47f3557d90d1f804bfc  [shntool]  bd-03-08-08_d1t01.wav
+a07e9cbf88de13f0f33712bf7f3ad45e  [shntool]  bd-03-08-08_d1t02.wav
+4b9815f898b019e102f8cd46d57ead00  [shntool]  bd-03-08-08_d1t03.wav
+30f2151b91958b63d25771adf6eb7219  [shntool]  bd-03-08-08_d1t04.wav
+b07dd1b2d23ead0a14be6f21e176dba4  [shntool]  bd-03-08-08_d1t05.wav
+f0e35db01feaa042267c0e693adf9ba9  [shntool]  bd-03-08-08_d1t06.wav
+e9f76c6047542cf3647d8fb87378d0ba  [shntool]  bd-03-08-08_d1t07.wav
+cd7a26b38d5f70b506d36f40b129dfe3  [shntool]  bd-03-08-08_d1t08.wav
+1aa3aa7ca61fb10a65dc7a10d26b128d  [shntool]  bd-03-08-08_d1t09.wav
+4dd012f90cd7264288ff59f91a08c48c  [shntool]  bd-03-08-08_d1t10.wav
+68600912cd70e35314e8c3630c67920a  [shntool]  bd-03-08-08_d1t11.wav
+238d267d555f1af1edfa2338ca8f516a  [shntool]  bd-03-08-08_d1t12.wav
+f36fb10c15563b97a788c05c27102505  [shntool]  bd-03-08-08_d2t01.wav
+4a015bb351e5c5d53537d934b0d06c45  [shntool]  bd-03-08-08_d2t02.wav
+35e3eabbce9210fdfc30050c5a5237a0  [shntool]  bd-03-08-08_d2t03.wav
+f9dde4cd11270af6a1198f80ec0ecf1e  [shntool]  bd-03-08-08_d2t04.wav
+03fdaa1d9bd5b65e866b1c8ca4e919d2  [shntool]  bd-03-08-08_d2t05.wav
+629d95d48ab639daf568519f9a630279  [shntool]  bd-03-08-08_d2t06.wav
+ef81183a4ce435dc802eb0c4822d6e8b  [shntool]  bd-03-08-08_d2t07.wav
+68f7a7054d0a9a61eebddef62d237e02  [shntool]  bd-03-08-08_d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-08_DarienLake (Theodore) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:02.60       11077964 B   ---   --   ---xx    shn  0.5019  bd-03-08-08_d1t01.shn
+     6:27.01       68269196 B   ---   --   ---xx    shn  0.6067  bd-03-08-08_d1t02.shn
+     6:06.15       64597724 B   ---   --   ---xx    shn  0.5705  bd-03-08-08_d1t03.shn
+     5:59.61       63471116 B   ---   --   ---xx    shn  0.5399  bd-03-08-08_d1t04.shn
+     7:29.30       79274204 B   ---   --   ---xx    shn  0.5551  bd-03-08-08_d1t05.shn
+     7:08.22       75550988 B   ---   --   ---xx    shn  0.6169  bd-03-08-08_d1t06.shn
+     8:02.35       85107164 B   ---   --   ---xx    shn  0.5785  bd-03-08-08_d1t07.shn
+     6:23.69       67723532 B   ---   --   ---xx    shn  0.5800  bd-03-08-08_d1t08.shn
+     8:17.15       87706124 B   ---   --   ---xx    shn  0.5666  bd-03-08-08_d1t09.shn
+     6:25.08       67932860 B   ---   --   ---xx    shn  0.6099  bd-03-08-08_d1t10.shn
+     0:47.32        8366108 B   ---   --   ---xx    shn  0.5328  bd-03-08-08_d1t11.shn
+     9:06.14       96347372 B   ---   --   ---xx    shn  0.5786  bd-03-08-08_d1t12.shn
+     6:50.67       72481628 B   ---   --   ---xx    shn  0.5859  bd-03-08-08_d2t01.shn
+     3:28.07       36707708 B   ---   --   ---xx    shn  0.5868  bd-03-08-08_d2t02.shn
+    11:03.10      116976764 B   ---   --   ---xx    shn  0.6242  bd-03-08-08_d2t03.shn
+     7:10.53       75976700 B   ---   --   ---xx    shn  0.6301  bd-03-08-08_d2t04.shn
+     8:37.19       91243532 B   ---   --   ---xx    shn  0.6192  bd-03-08-08_d2t05.shn
+     6:57.58       73695260 B   ---   --   ---xx    shn  0.5800  bd-03-08-08_d2t06.shn
+     9:41.39      102580172 B   ---   --   ---xx    shn  0.5975  bd-03-08-08_d2t07.shn
+     6:50.19       72368732 B   ---   --   ---xx    shn  0.6214  bd-03-08-08_d2t08.shn
+   133:55.34     1417454848 B                            0.5919  (20 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,59 @@
+Bob Dylan
+Pantages Theatre
+Los Angeles, California
+March 22, 2005
+
+Source: 
+12th row center
+AT853's > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > CD Wave > Flac
+
+Disc 1:
+01. Introduction [00:13]
+02. Drifter's Escape [04:42]
+03. You Ain't Goin' Nowhere [04:35]
+04. Tweedle Dee & Tweedle Dum [05:36]
+05. Under The Red Sky [05:18]
+06. It's Alright, Ma (I'm Only Bleeding) [07:41]
+07. Down Along The Cove [06:42]
+08. Floater (Too Much To Ask) [07:31]
+09. Highway 61 Revisted [06:33]
+10. This Wheel's On Fire [06:34]
+Total time: [55:25]
+
+Disc 2:
+01. Honest With Me [07:00]
+02. Masters Of War [05:22]
+03. Summer Days [11:37]
+     (encore)
+04. Rainy Day Women #12 & 35 [05:50]
+05. Band Introduction [0:24]
+06. All Along The Watchtower [05:41]
+Total time: [35:54]
+
+Band Members:
+Bob Dylan - vocals, piano, harp
+Donnie Herron - violin, guitar, pedal steel
+Denny Freeman - guitar
+Elana Fremerman - violin
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2005-03-22d1t01.flac:1613d92f9d0619ebeb4a0c33ef668f4d
+bd2005-03-22d1t02.flac:1839192ade37daba3b1c0a3d1a142500
+bd2005-03-22d1t03.flac:7dc273d5dd37d1a33d7c07005489bb4b
+bd2005-03-22d1t04.flac:e627e5fbe55596c93d9a72263790fc79
+bd2005-03-22d1t05.flac:b500f91647624b8d037dc6bc60a4c5d3
+bd2005-03-22d1t06.flac:b2a829e098f90b7a0a4954c812ac2f8b
+bd2005-03-22d1t07.flac:eb78e4eba3672838461b8c9b43f0b677
+bd2005-03-22d1t08.flac:d54e976f0854f2984e73afb4a1c16cce
+bd2005-03-22d1t09.flac:6ea4c3b7a7a2f8c95c90b126df59a101
+bd2005-03-22d1t10.flac:fafe07549a8c5a9f6028992e2f465025
+bd2005-03-22d2t01.flac:8011f51d14cbde5c5c011dc3fad6c460
+bd2005-03-22d2t02.flac:b2ee6d4ea95915b4e2a22424e87d145c
+bd2005-03-22d2t03.flac:14a82999bdce5edc9a60304140d1bf8c
+bd2005-03-22d2t04.flac:08e05bc41ceb36b16a5b9eaa2d8ca04c
+bd2005-03-22d2t05.flac:fb853466041ffba9e3f720a9b9375b65
+bd2005-03-22d2t06.flac:25a7e14c5424596c544c0dc21317ecd8

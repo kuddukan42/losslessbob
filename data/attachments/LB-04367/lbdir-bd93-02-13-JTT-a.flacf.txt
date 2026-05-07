@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-13-JTT-a.flacf 
+=================== 
+=================== 
+=================== 
+40a0eb3d9da7fafc83437d18c18bac81  bd93-02-13-JTT-a-LB-4367.txt
+cd61dfa85db3bebe5de1165fb4fae523  Disc One\BD_13.02.93 JTT_Disc01Track01.flac
+2d21eadbae3303161fc1b7b5cdf19304  Disc One\BD_13.02.93 JTT_Disc01Track02.flac
+53b269a02aec869abef51b1aade3b0bf  Disc One\BD_13.02.93 JTT_Disc01Track03.flac
+3ae4219a7d983681039b1cbed61226f2  Disc One\BD_13.02.93 JTT_Disc01Track04.flac
+953c69f985ec20a543afdb247946885e  Disc One\BD_13.02.93 JTT_Disc01Track05.flac
+c771c478f3ce0ad849fb3c03c99969e7  Disc One\BD_13.02.93 JTT_Disc01Track06.flac
+3f4e4ac3ec28c8da8d73411fce94129c  Disc One\BD_13.02.93 JTT_Disc01Track07.flac
+9062d7dde0ac5cc656d4b6e31e705132  Disc One\BD_13.02.93 JTT_Disc01Track08.flac
+8d712968738ade2d79c479dd5c32529f  Disc One\BD_13.02.93 JTT_Disc01Track09.flac
+e7323a0a5760578c891890ced1f832fa  Disc One\BD_13.02.93 JTT_Disc01Track10.flac
+0b8ce931915ede6dab75352c59d4f459  Disc One\BD_13.02.93 JTT_Disc01Track11.flac
+1087751a448253c3d4ce799a8122978d  Disc Two\BD_13.02.93 JTT_Disc02Track01.flac
+1392daa9749f88043577f8acb31728cd  Disc Two\BD_13.02.93 JTT_Disc02Track02.flac
+9732e7afa4f0de7b0fd5a7a4f39820d3  Disc Two\BD_13.02.93 JTT_Disc02Track03.flac
+4e92453f2588b8b6726a8159eb2d0d35  Disc Two\BD_13.02.93 JTT_Disc02Track04.flac
+aabe64cb874ab835653ecf63d46ff5f1  Disc Two\BD_13.02.93 JTT_Disc02Track05.flac
+a998dbac061ec667156afd590fae8088  Disc Two\BD_13.02.93 JTT_Disc02Track06.flac
+da413d5cdadb028ff6a38dcf4ead4f84  Disc Two\BD_13.02.93 JTT_Disc02Track07.flac
+b0af9c5b41f5db88c916564bf6124d62  HAMMERSMITH FEB.13TH. 1993 - F.jpg
+7267fc8e0b956b1399370fd16571d7f6  HAMMERSMITH FEB.13TH. 1993 - R.jpg
+87f0116fef51f2a8ff1825f340c554fd  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-13-JTT-a.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+BD_13.02.93 JTT_Disc01Track01.flac:be72a2e6384234cab1be9f504da1fc59
+BD_13.02.93 JTT_Disc01Track02.flac:6a18b1b7fa026d032fb7bbd31bf5c0ae
+BD_13.02.93 JTT_Disc01Track03.flac:1d90d90f5b63d8b000eabd843e11810a
+BD_13.02.93 JTT_Disc01Track04.flac:7ae3fdfd2e7175a389fef21889614e08
+BD_13.02.93 JTT_Disc01Track05.flac:a0a511e45179fd22a12dc35660773506
+BD_13.02.93 JTT_Disc01Track06.flac:f1353e40bb2762b83647d1238efd9fff
+BD_13.02.93 JTT_Disc01Track07.flac:921a1532a5769af6241290c3a2da3c76
+BD_13.02.93 JTT_Disc01Track08.flac:5fab4f421ac5c1dcfd375a93793d5aec
+BD_13.02.93 JTT_Disc01Track09.flac:c97089e3ba1835c333f9b1124bca51d3
+BD_13.02.93 JTT_Disc01Track10.flac:2ceebc2b565d084c14c7911553da4e00
+BD_13.02.93 JTT_Disc01Track11.flac:e68c5c146c527a98e1991287a729652e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-13-JTT-a.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+BD_13.02.93 JTT_Disc02Track01.flac:8d116b55797cf934504dd2a1b38a9704
+BD_13.02.93 JTT_Disc02Track02.flac:b1cd4114ff2bb34306adccbe503babde
+BD_13.02.93 JTT_Disc02Track03.flac:bc83c92971044f2faae42b438df11e6a
+BD_13.02.93 JTT_Disc02Track04.flac:a68f7492407fbe349df019b2716cc8e3
+BD_13.02.93 JTT_Disc02Track05.flac:1c761af97b66f63e2aad0196fcdc8ac5
+BD_13.02.93 JTT_Disc02Track06.flac:e5db622b88aaf67c69f395c4b261b372
+BD_13.02.93 JTT_Disc02Track07.flac:d0733dbbd86dd8ebe8a16e2d01585309
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-13-JTT-a.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:57.30       41877404 B   ---   --   ---xx   flac  0.6131  BD_13.02.93 JTT_Disc01Track01.flac
+     5:42.61       60472316 B   ---   --   ---xx   flac  0.5747  BD_13.02.93 JTT_Disc01Track02.flac
+     5:35.36       59178716 B   ---   --   ---xx   flac  0.5829  BD_13.02.93 JTT_Disc01Track03.flac
+    11:31.23      121946540 B   ---   --   ---xx   flac  0.5887  BD_13.02.93 JTT_Disc01Track04.flac
+     6:35.71       69845036 B   ---   --   ---xx   flac  0.5592  BD_13.02.93 JTT_Disc01Track05.flac
+     8:30.00       89964044 B   ---   --   ---xx   flac  0.5914  BD_13.02.93 JTT_Disc01Track06.flac
+     7:36.73       80610140 B   ---   --   ---xx   flac  0.5874  BD_13.02.93 JTT_Disc01Track07.flac
+     5:47.07       61227308 B   ---   --   ---xx   flac  0.4907  BD_13.02.93 JTT_Disc01Track08.flac
+     6:22.15       67420124 B   ---   --   ---xx   flac  0.4979  BD_13.02.93 JTT_Disc01Track09.flac
+     7:25.70       78662684 B   ---   --   ---xx   flac  0.5021  BD_13.02.93 JTT_Disc01Track10.flac
+     8:49.10       93339164 B   ---   --   ---xx   flac  0.5230  BD_13.02.93 JTT_Disc01Track11.flac
+    77:54.21      824543476 B                            0.5557  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-13-JTT-a.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.08       54526460 B   ---   --   ---xx   flac  0.6056  BD_13.02.93 JTT_Disc02Track01.flac
+     9:01.15       95467724 B   ---   --   ---xx   flac  0.6181  BD_13.02.93 JTT_Disc02Track02.flac
+     9:00.22       95307788 B   ---   --   ---xx   flac  0.5462  BD_13.02.93 JTT_Disc02Track03.flac
+     7:22.36       78053516 B   ---   --   ---xx   flac  0.6153  BD_13.02.93 JTT_Disc02Track04.flac
+     5:47.13       61241420 B   ---   --   ---xx   flac  0.5266  BD_13.02.93 JTT_Disc02Track05.flac
+     7:18.52       77385548 B   ---   --   ---xx   flac  0.5932  BD_13.02.93 JTT_Disc02Track06.flac
+    10:21.48      109657340 B   ---   --   ---xx   flac  0.5097  BD_13.02.93 JTT_Disc02Track07.flac
+    54:00.44      571639796 B                            0.5706  (7 files)
+=================== 
+=================== 
+=================== 

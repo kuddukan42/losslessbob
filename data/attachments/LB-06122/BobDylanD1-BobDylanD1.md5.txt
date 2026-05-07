@@ -1,0 +1,11 @@
+d789383cb6e8e6384ab0de55e788d753 *d1-1.theboxer.flac
+205d89cd6e74e9bc29a16dac10a96f9f *d1-9.tangledupinblue.flac
+9c2bf9fc69e2dc0054ea43acd142a4b9 *d1-8.it'sallovernow,babyblue.flac
+04fdcfd7f77755fc70fb4b4be212a88d *d1-4.knockin'onheaven'sdoor.flac
+a8f4ad5ed9968ae13b154f27affe19de *d1-6.mr.tamborineman.flac
+afd95c5c3c30d9c8e01a1211b0bfe32a *d1-7.it'salright,ma(i'monlybleeding).flac
+2206ec54d7121f19cbadb753528f12bb *d1-10.allalongthewatchtower.flac
+c100e311014764ad9d1a27ec2462ef21 *d1-5.iamtheman,thomas.flac
+5d2e90b6917328d75aec3de537e92fc8 *d1-2.iwalktheline.flac
+19e249a9a8e166440a354b2a7b2171b3 *d1-3.thewanderer.flac
+

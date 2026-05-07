@@ -1,0 +1,63 @@
+===================
+===================
+===================
+=== text.txt
+===================
+===================
+===================
+Apr. 19 - Narciso Yepes Hall, Auditorio y Centro de Congreso de Murcia, Murcia, Spain
+
+Friend Of The Devil - Mr. Tambourine Man - Masters Of War - Tomorrow Is A Long Time - The Times They Are A-Changin' - Tangled Up In Blue - My Back Pages - Mama, You Been On My Mind - Tombstone Blues - You're A Big Girl Now - Highway 61 Revisited - Love Sick - Everything Is Broken - Don't Think Twice, It's All Right - Maggie's Farm
+
+taper: unknow
+lineage: trade > temptxACTConvert.wav level 8 > flac
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+Piste  1.flac:71fe6cddb0ae5f7e9d5fa2d904a03aa1Piste  2.flac:396c498c0de1b27b8252452f792c3726Piste  3.flac:1f6033252030a29eb4ff4fc2d882ad17Piste  4.flac:ca6762d5334914ab36dd712ba5c10711Piste  5.flac:32a14516d829cca67209b59b5bedb720Piste  6.flac:e7ae92b546f1384759154b02997ff81aPiste  7.flac:5520f6e970e35a22239f793c16aa9d0bPiste  8.flac:bd3a0f412da6a27ce490b4f0d8711a22
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+469c5616cd417f0ec2d125417087944c *Piste  1.flac
+6fc3d516939b854582d7cd2db6d92e79 *Piste  2.flac
+17d8c362c3a1f5b110826e9af50eab5c *Piste  3.flac
+49c9a1d21f24e8318848f24e974933b9 *Piste  4.flac
+6c479c2d22fe0b030b5fa2cf265dcb11 *Piste  5.flac
+e38751174d077d05517d0a6b15c1e4d3 *Piste  6.flac
+f1305b5dea0720c07353adfe55f877c8 *Piste  7.flac
+72e36f0433c85fa7636855e106d909c0 *Piste  8.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+Piste  1.flac:7bdbb993862298b43dbd22f341457ed5Piste  2.flac:e80ae150857fda39c2a3a84af153be1bPiste  3.flac:eb251e63a16654cb30789d7fad4df6d8Piste  4.flac:99736ef9590fa1c0cbb0d30d9d973e88Piste  5.flac:e9f1367324bb4c69068d089ad0b1eff5Piste  6.flac:cf5147c37ef4d4c4d6145515d3987c97Piste  7.flac:496267ad61fbe869bd47d44dd00b3a16
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+a89e917cc70e872ddeb1f09147a27048 *Piste  1.flac
+370607ee3c1d198b4741346ea76884b6 *Piste  2.flac
+619d14a3344ddeeee6b1746d91e543a3 *Piste  3.flac
+d4a4d65368e6aab3f002831dadedb919 *Piste  4.flac
+3e50a819461272ddb6c742ccf228edfd *Piste  5.flac
+b351b73ba65fcc7fff27c7920896b71c *Piste  6.flac
+aaff3f2481ec4b5b0af8929613bbf8ca *Piste  7.flac
+
+===================
+===================
+===================

@@ -1,0 +1,18 @@
+01 2x2.flac:4954382beae8948b5b060ae0b22e42a4
+02 Peggy O.flac:3331c0fb0ae745c20613e5e8ead957ea
+03 Maggies Farm.flac:ade7467a131556316bf6cd437ee758c1
+04 Senor.flac:0d583d6e49d9d2561b8a787be7e1ed04
+05 Stuck Inside Of Mobile.flac:b7e7581d8670178eb7eedb60a2713f3f
+06 I Dont Believe You.flac:dd8a2bf5dc8a3cd48efe0d49b5f0a16e
+07 Silvio.flac:f82b956e40774a51778ba094e368df55
+08 It Aint Me Babe.flac:950891daf06dc5a82c9502ef95c97951
+09 Love Minus Zero.flac:461e3b3fe9e44895507a698bdb04f34e
+10 Hattie Carroll.flac:a79c7733ac9b731365b21a3dac54b23a
+11 Desolation Row.flac:7b379b210d9005c9f8ab78c607bdf52e
+12 Everything Is Broken.flac:c9096eb1731cc984c1246e7a290ac45f
+13 Shelter From The Storm.flac:7e42100c1416b9677d0b603ae6010d91
+14 Times Are A Changin.flac:12006538b1d9e475f560b50435714a84
+15 Highway 61.flac:c59829899059f9558a86a3f6d8756f5c
+16 Man In Long Black Coat.flac:104d072291d031165f6616bab49c8067
+17 All Along The Watchtower.flac:8315f7cdfcbc24e027b3aaaa871849af
+18 Blowin In The Wind.flac:27e918bfbf26669c204976bb5b1c7c8a

@@ -1,0 +1,68 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-08-20-local-tape-NW-A.flacf 
+=================== 
+=================== 
+=================== 
+ca25dc2e2e7e37bb2ce9aa8df5ba738d  bd-19930820-Portland.ffp
+b368135f44c7bd5a8d92a4d5d427753f  bd-19930820-Portland.md5
+3b12c15fee4644a101e7a3dd4a933639  bd1993-08-20-d1t01.flac
+75f00dd158fef52768faf12470404d58  bd1993-08-20-d1t02.flac
+8e69a9e1090a179cb0c714ab14edeb88  bd1993-08-20-d1t03.flac
+77c3cd7dbbb838ced3618cc2428eee6c  bd1993-08-20-d1t04.flac
+2aec5a37811cda1c937be66b74514d67  bd1993-08-20-d1t05.flac
+54a6fbabb4f984a0203b4d2c1c9d5e03  bd1993-08-20-d1t06.flac
+cc3f5cd3b4dc4e8ff6ba9d5f629e682c  bd1993-08-20-d1t07.flac
+cfddf64817214e2a2431a1a59389ab2f  bd1993-08-20-d1t08.flac
+426d21b2a999216f09189f2124a6f81a  bd1993-08-20-d1t09.flac
+b2ce9d566d0b8c84a57210c0e7669450  bd1993-08-20-d1t10.flac
+27ada75705d946c6a5b605df775cc120  bd1993-08-20-d2t01.flac
+b3401b0307a07af983f6fdb7792563bf  bd1993-08-20-d2t02.flac
+510f73028983143ae81aea6a92707740  bd1993-08-20-d2t03.flac
+4bd0256c795213fce2516f3fbda77ece  bd1993-08-20-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-08-20-local-tape-NW-A.flacf 
+=================== 
+=================== 
+=================== 
+bd1993-08-20-d1t01.flac:1d187bac9cc5c3ce71fa8c1ba6b4cb8c
+bd1993-08-20-d1t02.flac:0a512cd0c57a76919a058dd0a3cbc832
+bd1993-08-20-d1t03.flac:76d1e491495df2d1ab2da24004b37e0c
+bd1993-08-20-d1t04.flac:1af281e7f52d906aad65a2e6ff034481
+bd1993-08-20-d1t05.flac:835e2306ab8de38d671681379635d11b
+bd1993-08-20-d1t06.flac:6af259e455e9386257442698329dbdf0
+bd1993-08-20-d1t07.flac:8948dfb6416b35d7425a07355f6e551e
+bd1993-08-20-d1t08.flac:f059f0cd262fcb8d4db07459c64669d5
+bd1993-08-20-d1t09.flac:1387d8966bb1908bd1ae5bf0b86ff119
+bd1993-08-20-d1t10.flac:b9d7976fcab000dd2bd55c656f838871
+bd1993-08-20-d2t01.flac:5a93822d72c5ccca013a534cb799fee7
+bd1993-08-20-d2t02.flac:68b29094fb32b6524b17f3ab98863a99
+bd1993-08-20-d2t03.flac:12fd9c1f25af64857c349b36ebbff5d0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-08-20-local-tape-NW-A.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.25       52449644 B   ---   --   ---xx   flac  0.4899  bd1993-08-20-d1t01.flac
+     8:34.55       90799004 B   ---   --   ---xx   flac  0.5794  bd1993-08-20-d1t02.flac
+     6:31.71       69139436 B   ---   --   ---xx   flac  0.5982  bd1993-08-20-d1t03.flac
+     8:33.21       90542636 B   ---   --   ---xx   flac  0.5641  bd1993-08-20-d1t04.flac
+    13:35.72      143935388 B   ---   --   ---xx   flac  0.5859  bd1993-08-20-d1t05.flac
+     9:35.22      101481788 B   ---   --   ---xx   flac  0.5385  bd1993-08-20-d1t06.flac
+     6:30.36       68880716 B   ---   --   ---xx   flac  0.5807  bd1993-08-20-d1t07.flac
+     5:42.70       60493484 B   ---   --   ---xx   flac  0.4099  bd1993-08-20-d1t08.flac
+     7:22.15       78004124 B   ---   --   ---xx   flac  0.4735  bd1993-08-20-d1t09.flac
+     7:02.23       74494940 B   ---   --   ---xx   flac  0.5159  bd1993-08-20-d1t10.flac
+     5:57.60       63115964 B   ---   --   ---xx   flac  0.5474  bd1993-08-20-d2t01.flac
+     9:44.74      103191692 B   ---   --   ---xx   flac  0.5831  bd1993-08-20-d2t02.flac
+     7:25.74       78672092 B   ---   --   ---xx   flac  0.6054  bd1993-08-20-d2t03.flac
+   101:35.18     1075200908 B                            0.5508  (13 files)
+=================== 
+=================== 
+=================== 

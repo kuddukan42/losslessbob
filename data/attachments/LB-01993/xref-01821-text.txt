@@ -1,0 +1,149 @@
+===================
+===================
+===================
+=== 2004-08-07 Yale Field, West Haven, Connecticut, USA [derived f. LB-1993 'Streecar Visions'].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Yale Field
+West Haven, Connecticut
+August 7, 2004
+
+Derived from LB-1993 (A); 'Streetcar Visions'
+Source: DPA 4021 > Lunatec V3 > Sony D8
+Transfer: Sony D8 > Emagic 6/2 > Spark/Peak (G5) > xACT
+LosslessBobNotes: multiple drops d1t2 2:39 to 3:12; Have a fix for d1t2 which does not have the drops but does have a cut at the begin of the track although I could not hear it and also causes sector boundary errors
+
+NB! The sound mix at the show was excessively bass heavy.  The bass on the recording was reduced using BIAS Freq4
+
+00 (announcement)
+01 Maggie's Farm
+02 Watching The River Flow
+03 Tell Me That It Isn't True
+04 Lonesome Day Blues
+05 Just Like A Woman
+06 Tweedle Dee & Tweedle Dum
+07 Love Sick
+08 Highway 61 Revisited
+09 Ballad Of Hollis Brown
+10 Honest With Me
+11 It Ain't Me, Babe
+12 Summer Days
+13 Mr. Tambourine Man
+14 Like A Rolling Stone
+15 All Along The Watchtower
+
+Concert # 1651 of The Never-Ending Tour
+Third concert of the 2004 US Summer Tour with Willie Nelson
+2004 concert # 63
+
+Concert # 30 with the 18th Never-Ending Tour Band:
+Bob Dylan (vocal & piano)
+Stu Kimball (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+George Recile (drums & percussion)
+
+9, 11, 13 acoustic with the band
+2, 3, 5, 11, 13 Bob Dylan (harmonica)
+2, 10 Larry Campbell (slide guitar)
+3, 5 Larry Campbell (pedal steel guitar)
+9, 11 Larry Campbell (cittern)
+
+BobTalk:
+Thank you! Thank you friends, I'll introduce this young man playing on the steel guitar  Larry Campbell! Stu Kimball's on the guitar, feelin' right down. George Recile's on the drums. George went down the store and got a baseball bat for his wife today. It was the worst trade that he ever made, He's feelin' sorry about it. On the bass guitar, we have Tony Garnier. You did feel bad about that one, don't you, didn't you feel bad about that? (after "Like a Rolling Stone")
+
+NOTES:
+LB-numbers for this concert: LB-1993, LB-2106, LB-2425
+First Bob Dylan concert in West Haven, Connecticut
+
+10 new songs (66%) compared to previous concert
+8 new songs for this tour
+
+Stereo audience recording, 100 minutes
+
+.ffp:
+00 (announcement).flac:095a143e7b25a4847bd64001ab7df6e0
+01 Maggie's farm.flac:10320f77f74c509bd0317902222bb7b3
+02 Watching the river flow.flac:d2dafd6dde55dd150cf2f3da7320aa7e
+03 Tell me that it isn't true.flac:60bea9ea68d55b910fc1070db99f81e6
+04 Lonesome day blues.flac:93c386ea9ba79ea1800f3eabaf492dec
+05 Just like a woman.flac:0215e836b010ee2c001c8e5f49b873b4
+06 Tweedle Dee and Tweedle Dum.flac:6f6c2f86e18e96c13d4d822f74affd6b
+07 Love sick.flac:ea06b26f234a49a1d86a59eeb5e89a66
+08 Highway 61 revisited.flac:0871b60f975c6d5c222cbb1378442c82
+09 Ballad of Hollis Brown.flac:07982c5483e474c91f99a5950ff45b0f
+10 Honest with me.flac:b81ba753cd5dd9a2391e04006e656b63
+11 It ain't me, babe.flac:0db0d3748c6851857c6e1cafaee0ce8f
+12 Summer days.flac:9bd5478e8d3f4d1c1815209bbf6b93ec
+13 Mr. Tambourine Man.flac:f85bab639c6e57eaee50870135daf9cb
+14 Like a rolling stone.flac:6ac966094ed77c4ed41daa65a6df23a5
+15 All along the watchtower.flac:b7526ba57343f095305cdb91456e37f5
+===================
+===================
+===================
+=== Bob Dylan 2004-08-07 Yale Field, Westhaven, Connecticut, USA [derived f. LB-1934 'Streetcar Visions'].ffp
+===================
+===================
+===================
+00 (announcement).flac:095a143e7b25a4847bd64001ab7df6e0
+01 Maggie's farm.flac:10320f77f74c509bd0317902222bb7b3
+02 Watching the river flow.flac:d2dafd6dde55dd150cf2f3da7320aa7e
+03 Tell me that it isn't true.flac:60bea9ea68d55b910fc1070db99f81e6
+04 Lonesome day blues.flac:93c386ea9ba79ea1800f3eabaf492dec
+05 Just like a woman.flac:0215e836b010ee2c001c8e5f49b873b4
+06 Tweedle Dee and Tweedle Dum.flac:6f6c2f86e18e96c13d4d822f74affd6b
+07 Love sick.flac:ea06b26f234a49a1d86a59eeb5e89a66
+08 Highway 61 revisited.flac:0871b60f975c6d5c222cbb1378442c82
+09 Ballad of Hollis Brown.flac:07982c5483e474c91f99a5950ff45b0f
+10 Honest with me.flac:b81ba753cd5dd9a2391e04006e656b63
+11 It ain't me, babe.flac:0db0d3748c6851857c6e1cafaee0ce8f
+12 Summer days.flac:9bd5478e8d3f4d1c1815209bbf6b93ec
+13 Mr. Tambourine Man.flac:f85bab639c6e57eaee50870135daf9cb
+14 Like a rolling stone.flac:6ac966094ed77c4ed41daa65a6df23a5
+15 All along the watchtower.flac:b7526ba57343f095305cdb91456e37f5
+===================
+===================
+===================
+=== ORIGINAL bd040807.txt
+===================
+===================
+===================
+BOB DYLAN
+Yale Field
+West Haven, Connecticut
+August 7, 2004
+
+Taper:  Streetcar Visions
+
+Source: DPA 4021 > Lunatec V3 > Sony D8
+Transfer: Sony D8 > Emagic 6/2 > Spark/Peak (G5) > xACT
+
+Disc 1:
+ 1. Intro
+ 2. Maggie's Farm
+ 3. Watching The River Flow
+ 4. Tell Me That It Isn't True
+ 5. Lonesome Day Blues
+ 6. Just Like A Woman
+ 7. Tweedle Dee & Tweedle Dum
+ 8. Love Sick
+ 9. Highway 61 Revisited
+10. Ballad Of Hollis Brown
+11. Honest With Me
+12. It Ain't Me, Babe
+13. Summer Days 
+
+Disc 2:
+ 1. Mr. Tambourine Man
+ 2. Like A Rolling Stone
+ 3. All Along the Watchtower
+
+N.B.
+
+The sound mix at the show was excessively bass heavy.  The bass on the recording was reduced using BIAS Freq4.  
+===================
+===================
+===================

@@ -1,0 +1,71 @@
+===================
+===================
+===================
+=== bd02-08-28a.txt
+===================
+===================
+===================
+Bob Dylan, 8/28/02, Calgary, Alberta, Canada, Pengrowth Saddledome, 2CDR
+
+(66min+62min), alternate version which is complete, very good to excellent sound, not as good as the DPA 4061 incomplete version; small pops d1t5 3:38-40, 3:37-40,  3:50-31, 7:05, 8:19, some occasional slight harshness when it gets loud on d1t7, unexpectely gets some hiss starting at d2t2;
+
+CD1
+Acoustic: Somebody Touched Me, 02 I Want You (Larry Campbell on pedal steel), 03 It's Alright, Ma (I'm Only Bleeding) (Charlie Sexton on dobro and Larry Campbell on cittern), 04 This World Can't Stand Long (Larry Campbell on mandolin), Electric:, 05 Stuck Inside Of Mobile With The Memphis Blues Again (Larry Campbell on acoustic guitar), 06 Ballad Of A Thin Man (Larry Campbell on pedal steel), 07 Honest With Me (Larry Campbell on slide guitar), 08 Lay, Lady, Lay (Larry Campbell on pedal steel), Acoustic:, 09 Visions Of Johanna, 10 Things Have Changed, 
+
+CD2
+01 Tangled Up In Blue, Electric:, 02 Summer Days (Tony Garnier on standup bass), 03 Standing In The Doorway, 04 Cold Irons Bound, 05 Rainy Day Women #12 & 35 (Larry Campbell on steel guitar), Encore:, 06 Like A Rolling Stone, 07 Knockin' On Heaven's Door (acoustic - Charlie Sexton on electric guitar), 08 All Along The Watchtower
+===================
+===================
+===================
+=== bd2002-08-28_Calgary_ALB_CAN-complete.ffp
+===================
+===================
+===================
+01 Somebody Touched Me.flac:d264fbe177093875ccdb6c1fc0a3694b
+02 I Want You.flac:50bfa62eff41ead0c6971610cb910e66
+03 It's Alright Ma.flac:3353cfadf1b691c0dbc229b4c7a3d368
+04 This World Can't Stand Long.flac:5f8a54fad28440b39285948f65641560
+05 Stuck Inside of Mobile.flac:62eca3ebad77bb73df3552b996b2b07a
+06 Thin Man.flac:c9a75446bc1b73e2adf819129be09d54
+07 Honest With me.flac:8baee1dc6eb9718202c9109044986a30
+08 Lay Lady Lay.flac:c272f9998e7b57e23a4cbac7111125c2
+09 Johanna.flac:105bde968c267a6e05b8b0b40ac37dce
+10 Things Have Changed.flac:ab167e2309d394648c8d8e5e8e8d7655
+11 Tangled Up.flac:4d63adf67dfc1d600458097ee5053975
+12 Summer Days.flac:b5e414197fdca603658fd51208989969
+13 Standing in the Doorway.flac:4abd4830ed7619b7df0447b30494fb89
+14 Cold irons Bound.flac:00b7d93210e082027c56c32ef28bfec3
+15 Rainy Day Women.flac:401c254bbaf7985368cb68f3d1a3b52c
+16 LARS.flac:ce53f8d8ca65f214dbb17aea31454279
+17 Knockin'.flac:38b945fed09ca21a3d0c3cb4461ea93c
+18 Watchtower.flac:3a829868152303ced2b33aae74754aa7
+===================
+===================
+===================
+=== bd2002-08-28_Calgary_ALB_CAN-complete.md5
+===================
+===================
+===================
+cfdf08daf14317484f9c60d4cfc522bb *01 Somebody Touched Me.flac
+b7772369113bf815c5fa3eca711fe9be *02 I Want You.flac
+468cd1d9df78836d8760134f2b4fb85b *03 It's Alright Ma.flac
+d9620363c8f0d0dbee5d375e57bddea5 *04 This World Can't Stand Long.flac
+d5628e70d9e4121a5cd0a6f32c98f33d *05 Stuck Inside of Mobile.flac
+258693b65fade9ae3c9f81788717ad8a *06 Thin Man.flac
+191aeb4c1628719375b7a524187c6fa2 *07 Honest With me.flac
+db9dd777a497d7c9ca5fbfb923046c7e *08 Lay Lady Lay.flac
+b8f2e922458b0d371974d9b66beac46c *09 Johanna.flac
+60ff083873a509ed52c49c65805d1324 *10 Things Have Changed.flac
+2fd8ea603ba3acc4dec5f9a24b82c8ae *11 Tangled Up.flac
+358aa7fcf8d6e8ee4cef58274f3d367b *12 Summer Days.flac
+653472e6d831ecd9b9016408e8377f0e *13 Standing in the Doorway.flac
+960deeafcc9aad907a84282835b4d00f *14 Cold irons Bound.flac
+2740dfa284f93e3a266866dfbdef1e17 *15 Rainy Day Women.flac
+c82d887c924986560e4e2b16d1df957a *16 LARS.flac
+81120eed2f77cb07f6e54dfcf2fe560f *17 Knockin'.flac
+4fef4c958b33dd1a43d6993d25a529cf *18 Watchtower.flac
+945683d8ffa832e1715e64124c84a87b *bd02-08-28a.txt
+c845d7e2d1f9a193258d9d057503632d *bd2002-08-28_Calgary_ALB_CAN-complete.ffp
+===================
+===================
+===================

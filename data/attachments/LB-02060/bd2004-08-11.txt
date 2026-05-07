@@ -1,0 +1,76 @@
+Bob Dylan
+Blair County Ballpark
+Altoona, Pennsylvania
+August 11, 2004
+-----------------------------------------------------------------------------------------------------------
+Source:
+Soomlos Dat Master
+
+Transfer:
+Sony D8 > Tascam CD-RW 700 > EAC > Cool Edit 96 > CD Wave > mkwACT > SHN
+------------------------------------------------------------------------------------------------------------
+Disc 1:
+01. Intro                           		[00:59]
+02. Leopard-Skin Pill-Box Hat		[04:46]
+03. The Times They Are A-Changin'		[05:43]
+04. Tweedle Dee & Tweedle Dum		[05:31]
+05. Boots Of Spanish Leather		[05:50]
+06. It's Alright, Ma (I'm Only Bleeding)		[07:42]
+07. Watching The River Flow 		[05:15]
+08. Man In The Long Black Coat		[05:07]
+09. Highway 61 Revisited        		[06:46]
+10. High Water (For Charley Patton)		[07:28]
+Total time: [55:06]
+
+Disc 2:
+01. Honest With Me               		[06:48]
+02. I Believe In You               		[06:21]
+03. Summer Days                  		[09:37]
+04. Don't Think Twice, It's All Right		[06:46]
+05. Like A Rolling Stone          		[06:23]
+06. Band Intros                    		[00:37]
+07. All Along The Watchtower		[06:40]
+Total time: [43:12]
+------------------------------------------------------------------------------------------------------------
+bd2004-08-11d1.md5
+3dcd529fe655fa33c61414b74ba9f035 *bd2004-08-11d1t01.shn
+df13cf693163389aed9094f28d97644b *bd2004-08-11d1t02.shn
+7aae8ebebce2ba4109a02b0a583a1e3d *bd2004-08-11d1t03.shn
+6ce902212c6c76c42eb48826df479c5b *bd2004-08-11d1t04.shn
+80b517a4b360073baa897437f43ad8af *bd2004-08-11d1t05.shn
+76f02aa0515697325e9b36b3b13be807 *bd2004-08-11d1t06.shn
+bfd221283123dd86007fe92f87bb68be *bd2004-08-11d1t07.shn
+d03104a88e73d5d39eb863287b845e79 *bd2004-08-11d1t08.shn
+f01bd8125ed5de616467a62d2a08d038 *bd2004-08-11d1t09.shn
+d140d3ad2e793c205af35b0b225a9d27 *bd2004-08-11d1t10.shn
+
+bd2004-08-11d2.md5
+9583b1b974cb130db10adceae2618dba *bd2004-08-11d2t01.shn
+f58cb5d3e4b6c45930d850c2ec8e8c4d *bd2004-08-11d2t02.shn
+b94d8311ec8ba85c5a976fafc8a389b6 *bd2004-08-11d2t03.shn
+0306e307acf29d2803f34b368e58d19d *bd2004-08-11d2t04.shn
+0c36735e76c37ca4e07772f0928b600e *bd2004-08-11d2t05.shn
+54c76160ec6a8479ea50c861454dae8c *bd2004-08-11d2t06.shn
+6ab251bca6de6daa7b99530d1d901fea *bd2004-08-11d2t07.shn
+
+bd2004-08-11d1wav.md5
+9fd902dad93000d58b970a2af30a6e3a *bd2004-08-11d1t01.wav
+df9d563bcc064e56375c1ce9cf52d9c6 *bd2004-08-11d1t02.wav
+ef3583ee8f34300e1d393099a90374c9 *bd2004-08-11d1t03.wav
+e1724f703d5431c66f90827f0ca601ee *bd2004-08-11d1t04.wav
+ee60a29234cc996dae1e54cb80a62cce *bd2004-08-11d1t05.wav
+40b3888104a40925301774b95373c8a9 *bd2004-08-11d1t06.wav
+6ee470589123c41b1f03956d365cdbb7 *bd2004-08-11d1t07.wav
+55d86d7a62e940eb51d3213d1d261f8a *bd2004-08-11d1t08.wav
+aabbc5ac1de0bd6e30667bf4d062ae9a *bd2004-08-11d1t09.wav
+afe905b550eb3b103b41403a7baafb01 *bd2004-08-11d1t10.wav
+
+bd2004-08-11d2wav.md5
+deedff03bda8bad425a8a6b4a4f67d6f *bd2004-08-11d2t01.wav
+258ddfc56011b2e7c2f1fe7437fd72e0 *bd2004-08-11d2t02.wav
+2724b8e1fde79c38dc0ccbab0cc891b7 *bd2004-08-11d2t03.wav
+5ca1dacb091cac0dceafe83a9dda2909 *bd2004-08-11d2t04.wav
+4128d3c2b740c7cee322bf145982a2f5 *bd2004-08-11d2t05.wav
+dad84b591f91bed3e390ab4602548958 *bd2004-08-11d2t06.wav
+0bea1d893654654d4cab956424858e8a *bd2004-08-11d2t07.wav
+

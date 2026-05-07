@@ -1,0 +1,15 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.74       10758924 B   -b-   --   ---xx   flac  0.6090  Dylan_2009_04_01_Berlin_TM_D1_01.flac
+     3:18.25       34987084 B   -b-   --   ---xx   flac  0.6075  Dylan_2009_04_01_Berlin_TM_D1_02.flac
+     6:25.04       67923724 B   -b-   --   ---xx   flac  0.6163  Dylan_2009_04_01_Berlin_TM_D1_03.flac
+     4:03.01       42866604 B   -b-   --   ---xx   flac  0.6109  Dylan_2009_04_01_Berlin_TM_D1_04.flac
+     7:36.20       80484844 B   -b-   --   ---xx   flac  0.6286  Dylan_2009_04_01_Berlin_TM_D1_05.flac
+     6:14.62       66119724 B   -b-   --   ---xx   flac  0.5957  Dylan_2009_04_01_Berlin_TM_D1_06.flac
+     6:38.03       70215244 B   -b-   --   ---xx   flac  0.6230  Dylan_2009_04_01_Berlin_TM_D1_07.flac
+     4:57.19       52435724 B   -b-   --   ---xx   flac  0.6134  Dylan_2009_04_01_Berlin_TM_D1_08.flac
+     5:58.17       63191084 B   -b-   --   ---xx   flac  0.5279  Dylan_2009_04_01_Berlin_TM_D1_09.flac
+     6:40.13       70590124 B   -b-   --   ---xx   flac  0.6333  Dylan_2009_04_01_Berlin_TM_D1_10.flac
+     5:51.62       62061164 B   -b-   --   ---xx   flac  0.6076  Dylan_2009_04_01_Berlin_TM_D1_11.flac
+     6:42.74       71087948 B   -b-   --   ---xx   flac  0.6475  Dylan_2009_04_01_Berlin_TM_D1_12.flac
+     7:03.00       74616876 B   -b-   --   ---xx   flac  0.5837  Dylan_2009_04_01_Berlin_TM_D1_13.flac
+    72:29.74      767339068 B                            0.6087  (13 files)

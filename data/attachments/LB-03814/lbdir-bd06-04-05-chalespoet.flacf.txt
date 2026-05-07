@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-05-chalespoet.flacf 
+=================== 
+=================== 
+=================== 
+de955dd3e6b1cd9a97ceeeb5ae93a65d  101_Maggies_Farm.flac
+bb05c980c7c805351be6b9c6294dd67d  102_She_Belongs_To_Me.flac
+1964a94fad3ea7bfc6edad7bf1211813  103_Lonesome_Day_Blues.flac
+dc53a58171cc57ee3e8fb3b0571750b6  104_Queen_Jane.flac
+8afa39641015d0246569b7acf65c65e6  105_Til_I_Fell.flac
+63598cbb756af2639d879cedaf1b733a  106_Its_Alright_Ma.flac
+948373110408c46d4adac194d4805fdf  107_Shooting_Star.flac
+b2f5e9a2b0d7f1083a5d33ae6990dc2b  108_Highway_Sixty_One.flac
+78a41a27e34caceaa9680f94c5ada3b4  109_Tears_Of_Rage.flac
+694cc98895fd678f4004f944fe640250  110_Honest_With_Me.flac
+f6d4e92653d2f0dfe24c14310aed7af2  111_Girl_From_North_Country.flac
+a20fb83741104d7f3b2af1c1d481d4d3  201_High_Water.flac
+da0f6aa9baf96d92e518568a91720b68  202_Just_Like_A_Woman.flac
+ce404790606a04cdbf85d17c242b3126  203_Audience.flac
+0e55c982036b52f0bae477b5f3c99356  204_Summer_Days.flac
+01451e2e38deafe9ed428a069b1ea637  205_Rolling_Stone.flac
+4d468a62fb9ac7fe102034af82b56305  206_Band_Intros.flac
+270074116e0616c2fe9b52244b5446fb  207_Watchtower.flac
+2bd457fd1061db85a642d97061307dd0  bd06-04-05-chalespoet-LB-3814.txt
+e49af67794bd5d1d3e9beaf0511a626f  CD_1_Cover.jpg
+ca570beb603ad0f5a7e8dab467b5e022  CD_1_Cover_Inside.jpg
+2bcc8ab5e4d2c16d8f0c79522780dd6c  CD_2_Cover.jpg
+7751fb2d9831a560a72dfbb04856dfaa  CD_2_Cover_Inside.jpg
+84726def16b974fbb870224123f8e944  Track_Listing_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-05-chalespoet.flacf 
+=================== 
+=================== 
+=================== 
+101_Maggies_Farm.flac:ae73b27341960e5979f192d1f7cadf25
+102_She_Belongs_To_Me.flac:ffcf441bd6ab7a7376d418fb228f8142
+103_Lonesome_Day_Blues.flac:663cbec976e5f5f46a04629bb266b455
+104_Queen_Jane.flac:538ee4f030470b29487d418515aaabf4
+105_Til_I_Fell.flac:b2c1640f1dc82a855cee4919c9a5db27
+106_Its_Alright_Ma.flac:ed04fe283e44eb6ae8b11e6bde01f03a
+107_Shooting_Star.flac:075c194f2e807688d7000ec97fc727ef
+108_Highway_Sixty_One.flac:122fea92f411c32a440553edb3494dfa
+109_Tears_Of_Rage.flac:6a6f9b712a64a9bb227439a205286a11
+110_Honest_With_Me.flac:162f7b9f3db2edc923ebb1556f2efc83
+111_Girl_From_North_Country.flac:1fa3560052110757037a4897875d2050
+201_High_Water.flac:3d97d5c3ec45bcf1f04606bccf6a49ff
+202_Just_Like_A_Woman.flac:b53d54a6fe09e8c57bba354db899be37
+203_Audience.flac:258789bdacaf0bf457d32aa8f7c52b0b
+204_Summer_Days.flac:06335fe4f65f9c2bc3eb40b280143b35
+205_Rolling_Stone.flac:9f9f159eea6f6ce781c297205f98e379
+206_Band_Intros.flac:b72cb921e801afeb93427fae7cb97f2d
+207_Watchtower.flac:358b9998eccd0615661e73ec2bee8a5f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-05-chalespoet.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:40.30       70630604 B   ---   --   ---xx   flac  0.6692  101_Maggies_Farm.flac
+     6:01.57       63814508 B   ---   --   ---xx   flac  0.6765  102_She_Belongs_To_Me.flac
+     7:46.41       82298876 B   ---   --   ---xx   flac  0.6784  103_Lonesome_Day_Blues.flac
+     8:10.72       86605388 B   ---   --   ---xx   flac  0.6625  104_Queen_Jane.flac
+     5:58.25       63210044 B   ---   --   ---xx   flac  0.6697  105_Til_I_Fell.flac
+     7:30.35       79462364 B   ---   --   ---xx   flac  0.6724  106_Its_Alright_Ma.flac
+     6:30.07       68812508 B   ---   --   ---xx   flac  0.6729  107_Shooting_Star.flac
+     6:25.06       67928156 B   ---   --   ---xx   flac  0.6897  108_Highway_Sixty_One.flac
+     7:23.51       78265196 B   ---   --   ---xx   flac  0.6748  109_Tears_Of_Rage.flac
+     7:02.38       74530220 B   ---   --   ---xx   flac  0.6780  110_Honest_With_Me.flac
+     6:16.06       66340556 B   ---   --   ---xx   flac  0.6548  111_Girl_From_North_Country.flac
+     6:51.41       72596876 B   ---   --   ---xx   flac  0.6748  201_High_Water.flac
+     7:44.43       81950780 B   ---   --   ---xx   flac  0.6638  202_Just_Like_A_Woman.flac
+     0:11.02        1945148 B   ---   --   ---xx   flac  0.6531  203_Audience.flac
+     7:49.64       82882172 B   ---   --   ---xx   flac  0.6672  204_Summer_Days.flac
+     6:36.03       69861500 B   ---   --   ---xx   flac  0.6771  205_Rolling_Stone.flac
+     0:33.49        5936492 B   ---   --   ---xx   flac  0.6740  206_Band_Intros.flac
+     6:59.18       73953980 B   ---   --   ---xx   flac  0.6813  207_Watchtower.flac
+   112:31.63     1191025368 B                            0.6725  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-11-travelin-man-b.flacf 
+=================== 
+=================== 
+=================== 
+4c7fad14b4cfd9609a5edee25d3f9941  bd2004-08-11d1t01.flac
+f3d28decec8557566d21360c6e2f90ad  bd2004-08-11d1t02.flac
+74369b9531fb3477d21283f3d27be31e  bd2004-08-11d1t03.flac
+8e8966396ed8cc83c7b94eec50b79283  bd2004-08-11d1t04.flac
+d26ae24eaaaee1470323b22a81578d4e  bd2004-08-11d1t05.flac
+712c7ebcad2558bf6ea89f653b8575f6  bd2004-08-11d1t06.flac
+420596f61ba7faf5212b060c20c25ce6  bd2004-08-11d1t07.flac
+3c062ae30d47278bbe9ce8f755ed1865  bd2004-08-11d1t08.flac
+839d47b9cdb3613ff9c60a06636c4266  bd2004-08-11d2t01.flac
+fee1f895e5f5c005d15d2d8c13651ad3  bd2004-08-11d2t02.flac
+1d1601a06fbe47fa26247f82e162e458  bd2004-08-11d2t03.flac
+51ce83525c554ecbc316d18936138ef6  bd2004-08-11d2t04.flac
+f6fcff5a21729af0d05b99521051694c  bd2004-08-11d2t05.flac
+0a3b2fe2459616de6f242d2cd3c39763  bd2004-08-11d2t06.flac
+0bae39332790f176dfcd9dc8278da671  bd2004-08-11d2t07.flac
+f563cd9505f1e8f4d55194867890a194  bd2004-08-11d2t08.flac
+b69a135bc94e123ea30de0f644e9e5be  Bob Dylan 08-11-2004.ffp
+6f8d5d3e267e2028177eec66a509153e  Bob Dylan 08-11-2004.md5
+aebadc088b4319baeac1f9e2bac5a6e0  Bob Dylan 8-11-2004.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-08-11-travelin-man-b.flacf 
+=================== 
+=================== 
+=================== 
+bd2004-08-11d1t01.flac:6ef2929263f9d97305b534faf6072e91
+bd2004-08-11d1t02.flac:e2db5dd2b537813dc9f5342cbd14d8fc
+bd2004-08-11d1t03.flac:71b4ea4fa7f00da354fe723e2b7356d9
+bd2004-08-11d1t04.flac:87a05c43842a004a85fa0e03248721b8
+bd2004-08-11d1t05.flac:044f0696bd634befab933875f05caece
+bd2004-08-11d1t06.flac:370872f0827cc9e87774849c84fb8b7e
+bd2004-08-11d1t07.flac:121763308dc19e5edea4e255272dc614
+bd2004-08-11d1t08.flac:cadbf922b15e54cb64ddbb403574ffe7
+bd2004-08-11d2t01.flac:1005f4834c5fc0409a33fb1b49f1fce4
+bd2004-08-11d2t02.flac:453aed0dc39614739cfe841ba21de623
+bd2004-08-11d2t03.flac:06847f6418c99a13dd33869fd6398099
+bd2004-08-11d2t04.flac:6bd6e223e3fa434d056ce37f300b85f7
+bd2004-08-11d2t05.flac:daa980554af4e5f7201640cfe5e8d4e4
+bd2004-08-11d2t06.flac:f8156141de3c64103c89f5b3bcd79154
+bd2004-08-11d2t07.flac:39f8f7fe2b4d8ea7a0ca5733d4e327e2
+bd2004-08-11d2t08.flac:8627cfff4431a3c7016fb8f73b970fce
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-11-travelin-man-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:20.00       67032044 B   ---   --   ---xx   flac  0.5465  bd2004-08-11d1t01.flac
+     5:48.00       61387244 B   ---   --   ---xx   flac  0.5163  bd2004-08-11d1t02.flac
+     5:21.00       56624444 B   ---   --   ---xx   flac  0.5096  bd2004-08-11d1t03.flac
+     6:03.00       64033244 B   ---   --   ---xx   flac  0.4533  bd2004-08-11d1t04.flac
+     7:35.00       80262044 B   ---   --   ---xx   flac  0.5542  bd2004-08-11d1t05.flac
+     5:04.00       53625644 B   ---   --   ---xx   flac  0.5526  bd2004-08-11d1t06.flac
+     5:21.00       56624444 B   ---   --   ---xx   flac  0.5173  bd2004-08-11d1t07.flac
+     6:42.38       71002220 B   ---   --   ---xx   flac  0.5876  bd2004-08-11d1t08.flac
+     7:35.00       80262044 B   ---   --   ---xx   flac  0.5657  bd2004-08-11d2t01.flac
+     6:33.00       69325244 B   ---   --   ---xx   flac  0.5421  bd2004-08-11d2t02.flac
+     6:09.00       65091644 B   ---   --   ---xx   flac  0.4372  bd2004-08-11d2t03.flac
+     9:43.00      102841244 B   ---   --   ---xx   flac  0.4803  bd2004-08-11d2t04.flac
+     7:03.00       74617244 B   ---   --   ---xx   flac  0.4454  bd2004-08-11d2t05.flac
+     6:23.00       67561244 B   ---   --   ---xx   flac  0.5371  bd2004-08-11d2t06.flac
+     0:37.00        6526844 B   ---   --   ---xx   flac  0.4426  bd2004-08-11d2t07.flac
+     8:55.19       94418732 B   ---   --   ---xx   flac  0.4878  bd2004-08-11d2t08.flac
+   101:12.57     1071235568 B                            0.5140  (16 files)
+=================== 
+=================== 
+=================== 

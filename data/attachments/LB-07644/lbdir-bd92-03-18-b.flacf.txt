@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-03-18-b.flacf 
+=================== 
+=================== 
+=================== 
+b04c2a4997e7525c4ebea16608a24f5d  1992-03-18 Perth, West Australia, Australia d1\01 Track01.flac
+a34c2eed8045473d2be4f42cd2971b94  1992-03-18 Perth, West Australia, Australia d1\02 Track02.flac
+701aefef15bf17380b0ef9f3ee682019  1992-03-18 Perth, West Australia, Australia d1\03 Track03.flac
+606ddb747320118561c5b545e6488d3d  1992-03-18 Perth, West Australia, Australia d1\04 Track04.flac
+762ad80909539a819145b7f4befb2347  1992-03-18 Perth, West Australia, Australia d1\05 Track05.flac
+ad928021dd31515e8eb0461d9e226a76  1992-03-18 Perth, West Australia, Australia d1\06 Track06.flac
+7155fe3d48e4cd89f283764e7636d6a1  1992-03-18 Perth, West Australia, Australia d1\07 Track07.flac
+bef2caadcab0ecce77a6b62a28e07184  1992-03-18 Perth, West Australia, Australia d1\08 Track08.flac
+df459ab1002a740acac4128af3a92a13  1992-03-18 Perth, West Australia, Australia d1\09 Track09.flac
+006f1c63bb6aa052e7895504ab5f0ede  1992-03-18 Perth, West Australia, Australia d1\10 Track10.flac
+ab7839d153aef320b9eabdf04191d54f  1992-03-18 Perth, West Australia, Australia d1\d1.md5
+dbd4e0492a1c352fafa768e74ac98505  1992-03-18 Perth, West Australia, Australia d2\01 Track01.flac
+89d7d6a0371fb15b9f6fc110b3c4fa78  1992-03-18 Perth, West Australia, Australia d2\02 Track02.flac
+83a8b30c97f5fe2b8d6ab44ba4ea2005  1992-03-18 Perth, West Australia, Australia d2\03 Track03.flac
+6a9eed469c91b4b246cb62e01fb7400f  1992-03-18 Perth, West Australia, Australia d2\04 Track04.flac
+2ed55ef4b9a030c4d5ac0ffa1a83acdd  1992-03-18 Perth, West Australia, Australia d2\05 Track05.flac
+66dac76c9f651a16d26fe42a8989cd69  1992-03-18 Perth, West Australia, Australia d2\06 Track06.flac
+7475c47425df41d05cc3ad02985d4609  1992-03-18 Perth, West Australia, Australia d2\07 Track07.flac
+ba295422c5e656480f0ee431e9d5775d  1992-03-18 Perth, West Australia, Australia d2\08 Track08.flac
+772751b73decbcebc100d09199ceb12b  1992-03-18 Perth, West Australia, Australia d2\d2.md5
+b5cc8600358baa70a0cf14ea90a6dc32  1992-03-18.rtf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-03-18-b.flacf\1992-03-18 Perth, West Australia, Australia d1 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:328c1d216ffa421302580d1eefc69758
+02 Track02.flac:10da66c3ceedc29d5a6805ff9987f4ce
+03 Track03.flac:eff7d6e516f768afea0dab32c43d2073
+04 Track04.flac:7638f8b4e486d4eac743a28b46d10efd
+05 Track05.flac:bff92188c6df46575c0e17f8ed957e3a
+06 Track06.flac:1ac0be1281e7ba3f69c22872cb1a1ff5
+07 Track07.flac:9a6193f980ba5b364a5788ff89cd58af
+08 Track08.flac:2db75fe37fa406386f785cb6c8a669a5
+09 Track09.flac:52ea7074ec21b481f45738f1d09ef784
+10 Track10.flac:61707974372813b248e58f6402cfefcf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-03-18-b.flacf\1992-03-18 Perth, West Australia, Australia d2 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:1299fd9e79f9f2a7c22696e03400af81
+02 Track02.flac:e6701c3e506fb7e19b386a280ef1e2a5
+03 Track03.flac:7914e65f6bc712f33c7b6dc7b1f1ee35
+04 Track04.flac:040ef62a57259961043a6f04ddf8b8e9
+05 Track05.flac:899b1d7f1b2644be5f1fa06adf531d34
+06 Track06.flac:3dc04e4e89bec9e83108f0fc8e03fcd3
+07 Track07.flac:0e29ff9e3df81fc44484445d1fa92ee7
+08 Track08.flac:7fc9d690c659f8627adac383cbc7cbb7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-03-18-b.flacf\1992-03-18 Perth, West Australia, Australia d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.67       61015628 B   ---   --   ---xx   flac  0.6469  01 Track01.flac
+     4:10.33       44177660 B   ---   --   ---xx   flac  0.6771  02 Track02.flac
+     4:11.50       44394044 B   ---   --   ---xx   flac  0.6839  03 Track03.flac
+     5:24.62       57299468 B   ---   --   ---xx   flac  0.7043  04 Track04.flac
+     5:33.07       58757708 B   ---   --   ---xx   flac  0.7012  05 Track05.flac
+     3:16.53       34699100 B   ---   --   ---xx   flac  0.6996  06 Track06.flac
+     8:01.04       84857852 B   ---   --   ---xx   flac  0.6916  07 Track07.flac
+     5:05.61       53945516 B   ---   --   ---xx   flac  0.6881  08 Track08.flac
+     4:41.01       49570796 B   ---   --   ---xx   flac  0.6931  09 Track09.flac
+     4:29.07       47468108 B   ---   --   ---xx   flac  0.6942  10 Track10.flac
+    50:39.45      536185880 B                            0.6876  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-03-18-b.flacf\1992-03-18 Perth, West Australia, Australia d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.49       69969692 B   ---   --   ---xx   flac  0.7015  01 Track01.flac
+     6:56.23       73436540 B   ---   --   ---xx   flac  0.7161  02 Track02.flac
+     5:16.67       55900028 B   ---   --   ---xx   flac  0.6983  03 Track03.flac
+     6:04.08       64228460 B   ---   --   ---xx   flac  0.6973  04 Track04.flac
+     6:14.37       66060668 B   ---   --   ---xx   flac  0.6824  05 Track05.flac
+     5:48.14       61420172 B   ---   --   ---xx   flac  0.6957  06 Track06.flac
+     9:17.09       98276012 B   ---   --   ---xx   flac  0.6903  07 Track07.flac
+     5:22.29       56869052 B   ---   --   ---xx   flac  0.6972  08 Track08.flac
+    51:36.11      546160624 B                            0.6972  (8 files)
+=================== 
+=================== 
+=================== 

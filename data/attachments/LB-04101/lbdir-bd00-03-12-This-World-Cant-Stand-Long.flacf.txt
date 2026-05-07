@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-12-This-World-Cant-Stand-Long.flacf 
+=================== 
+=================== 
+=================== 
+d9bdd0648b651a877a67bfac8af1cd6d  back.jpg
+5d14f1c9960714243a257091c21be3a5  bd00-03-12-This-World-Cant-Stand-Long-LB-4101.txt
+5405c9c72c144d23bfee132a8f6099f2  d1\Track01.flac
+6804ee5f6031c6fec2495d3e7ec03232  d1\Track02.flac
+b55454eadf655ebfda29d023951dca76  d1\Track03.flac
+f8bedafc4d2fa0987e2f01c278499f34  d1\Track04.flac
+ea8c19e1a61907e52fcb359ad4c8ef20  d1\Track05.flac
+c794d5e6513f7f85654e46e22b0132fb  d1\Track06.flac
+5e6e19ae7f6cb329d9b7b696dad4a1eb  d1\Track07.flac
+e6681d8c39642497ffb1984a12168972  d1\Track08.flac
+5f8c9f7b02ef403745e29f0de06dffef  d1\Track09.flac
+77005ed5007b8f26ffe86096d20eca89  d1\bakersfiled d1.LOG
+e1737062b1932ff620759a586b86f7fb  d2\Track01.flac
+de52ecd4699a8cca5f2c739b4fb45327  d2\Track02.flac
+db1e555285cf548a7f9a939556896ce2  d2\Track03.flac
+058e4526d18f2e02f340c70639834a98  d2\Track04.flac
+1770151b5608280fd2089705b6376643  d2\Track05.flac
+33599ad83a3fe7e3d919fd9fff5c7f53  d2\Track06.flac
+2856b2b156a5ca4d209d41db1b769455  d2\Track07.flac
+420eec0d4c6205e8f03d8e3db96958a7  d2\Unknown Title.LOG
+3eaccec2fa9001bdaaa7a8f625b8e39c  front.jpg
+df75eb7bfee783ee90f22419971e52cf  This World Can't Stand Long.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-12-This-World-Cant-Stand-Long.flacf\d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:8424d9fa962fa104fbee45c018ecd8d8
+Track02.flac:819a36cd707ee80657f74102d4e65e87
+Track03.flac:fa2b087bb7798e5ec1d91b1714d7458b
+Track04.flac:d66a3186a2664787b7b95d196ee7559c
+Track05.flac:98874f1be1efa4064cf9581bd09b95ed
+Track06.flac:a6c9049a8efd0e5da4f94f42fa9b036d
+Track07.flac:87503aefb7dc8b413c061c68b9210296
+Track08.flac:deee8bdb179a84b21ba8f8e7b0239c9e
+Track09.flac:4b15087d9139864249c4e445441cdd14
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-12-This-World-Cant-Stand-Long.flacf\d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:a59c93eb8f6d8f78c0d4a4a9f3c1849d
+Track02.flac:583369dda31ae2c83ccd0331a4c0cbbf
+Track03.flac:db6c28e10c789f6ca392d34bc7c602c1
+Track04.flac:53bb7d8e5e6fc939189f299fa09bca3a
+Track05.flac:82f846153ac471b594f5a6e0901d9045
+Track06.flac:bff4c1ee9813f7e3c9103c210659b502
+Track07.flac:f0effc930ecbbe42e4e8bfade9f85849
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-12-This-World-Cant-Stand-Long.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:37.71       27861836 B   ---   --   ---xx   flac  0.5745  Track01.flac
+     7:05.43       75071180 B   ---   --   ---xx   flac  0.5410  Track02.flac
+     7:36.57       80572508 B   ---   --   ---xx   flac  0.5600  Track03.flac
+     6:01.29       63748652 B   ---   --   ---xx   flac  0.5616  Track04.flac
+     6:33.48       69438140 B   ---   --   ---xx   flac  0.6064  Track05.flac
+     4:15.03       44989100 B   ---   --   ---xx   flac  0.5552  Track06.flac
+     5:24.21       57203036 B   ---   --   ---xx   flac  0.5986  Track07.flac
+     2:45.41       29202476 B   ---   --   ---xx   flac  0.5882  Track08.flac
+     7:00.61       74231516 B   ---   --   ---xx   flac  0.5963  Track09.flac
+    49:20.74      522318444 B                            0.5750  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-12-This-World-Cant-Stand-Long.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.13       67239020 B   ---   --   ---xx   flac  0.5268  Track01.flac
+     5:32.39       58656572 B   ---   --   ---xx   flac  0.5633  Track02.flac
+    12:26.61      131737916 B   ---   --   ---xx   flac  0.5261  Track03.flac
+     5:58.03       63158300 B   ---   --   ---xx   flac  0.5381  Track04.flac
+     5:21.38       56713820 B   ---   --   ---xx   flac  0.5858  Track05.flac
+     6:32.31       69221756 B   ---   --   ---xx   flac  0.5235  Track06.flac
+     3:47.69       40205132 B   ---   --   ---xx   flac  0.5913  Track07.flac
+    46:00.29      486932516 B                            0.5442  (7 files)
+=================== 
+=================== 
+=================== 

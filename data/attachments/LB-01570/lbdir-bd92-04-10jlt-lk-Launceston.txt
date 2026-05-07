@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-10jlt-lk-Launceston 
+=================== 
+=================== 
+=================== 
+71c1dc87e2daeabf47aca53aec72ebcf  bd92-04-10jlt-lk.txt
+448878379980d04bf918257016851754  d1t01.shn
+bbd03943f86eb0bc8132a4c798cf0795  d1t02.shn
+fb94d92a5357b68a3aefbc58bc496a58  d1t03.shn
+b68fe8c207e393175179e3b2dc42a079  d1t04.shn
+8acbc1f8b83c8633c5edad467ebbaad9  d1t05.shn
+9e480225815a397bbf646926e807fc05  d1t06.shn
+2d98316f301f44f70352625d9e24eb70  d1t07.shn
+94cd307ea127d0f9870b8d857e319baf  d1t08.shn
+7728add846bcb85a001f3329d8e08e30  d1t09.shn
+4af4c89a14ee27711c2c11ed810a56c2  d1t10.shn
+914b5a8e53a1587f72ed135325ad7c39  d2t01.shn
+88d3e8c0881ee585dcf0415c3c8d9659  d2t02.shn
+df20b1dbe8313c876e4890e310bb92de  d2t03.shn
+a6dd7dc8a41c1f7ffcae76cfc872b086  d2t04.shn
+5030bfa4ed1ad7e157cacbadce056e75  d2t05.shn
+7e717e94d5213ab35dc7b83f352afdb5  d2t06.shn
+5443d788fa0e699ff66be8b76acc916f  d2t07.shn
+563c73d682df840c0e4f14998abf045c  d2t08.shn
+4a2d192a2dc1c32beb1705e54beb1820  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-04-10jlt-lk-Launceston 
+=================== 
+=================== 
+=================== 
+d9c47da206630710393956448c515819  [shntool]  d1t01.wav
+1075a3f4418f84aac7e35ab06d757d71  [shntool]  d1t02.wav
+8d28c8a9124bdd33c81ac6774a6114e3  [shntool]  d1t03.wav
+ae100e5f34f199eec7188fa53d8594a7  [shntool]  d1t04.wav
+421ca22c5ba6cf2428a80525a013dadd  [shntool]  d1t05.wav
+b2f65650f8691f3fde5a933a5dc67358  [shntool]  d1t06.wav
+0fe1475edde4b25547233ff7241e3472  [shntool]  d1t07.wav
+4405da11477c5dc0b2bb1a8a73560c66  [shntool]  d1t08.wav
+c0c068dd7964f9f3cdb133471c2e6484  [shntool]  d1t09.wav
+601b0d3510248ba02ece1dc9ebeab817  [shntool]  d1t10.wav
+1012734d17a364a79e95be8390c97150  [shntool]  d2t01.wav
+e2da0f2b875140afa09f4b7c94f1b23c  [shntool]  d2t02.wav
+febd48704f67b8548341725e7a9d96cd  [shntool]  d2t03.wav
+abc5576d81bdb1088bf3c57eeaddbbe1  [shntool]  d2t04.wav
+9783379647148a78922685ec7e02ead0  [shntool]  d2t05.wav
+9aa7cef47c71bf7f438f227ff401b3d1  [shntool]  d2t06.wav
+440d729dbc3c45de936144b90b025a23  [shntool]  d2t07.wav
+e33dbbe3d87998dc1a946a5b91d2697e  [shntool]  d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-10jlt-lk-Launceston 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.09       56117188 B   -b-   --   -----    wav  1.0000  d1t01.wav
+     4:04.19       43085808 B   -b-   --   -----    wav  1.0000  d1t02.wav
+     3:44.21       39563932 B   -b-   --   -----    wav  1.0000  d1t03.wav
+     5:37.32       59522972 B   -b-   --   -----    wav  1.0000  d1t04.wav
+     7:47.15       82414848 B   -b-   --   -----    wav  1.0000  d1t05.wav
+     4:22.16       46255640 B   -b-   --   -----    wav  1.0000  d1t06.wav
+     5:52.55       62222020 B   -b-   --   -----    wav  1.0000  d1t07.wav
+     4:41.39       49660212 B   -b-   --   -----    wav  1.0000  d1t08.wav
+     4:16.67       45317028 B   -b-   --   -----    wav  1.0000  d1t09.wav
+     6:42.61       71055548 B   -b-   --   -----    wav  1.0000  d1t10.wav
+     7:11.18       76071080 B   -b-   --   -----    wav  1.0000  d2t01.wav
+     4:24.15       46604984 B   -b-   --   -----    wav  1.0000  d2t02.wav
+     4:52.44       51612212 B   -b-   --   -----    wav  1.0000  d2t03.wav
+     6:03.69       64194504 B   -b-   --   -----    wav  1.0000  d2t04.wav
+     5:27.51       57803888 B   -b-   --   -----    wav  1.0000  d2t05.wav
+     5:17.43       56020140 B   -b-   --   -----    wav  1.0000  d2t06.wav
+     6:38.09       70228396 B   -b-   --   -----    wav  1.0000  d2t07.wav
+     4:17.40       45429636 B   -b-   --   -----    wav  1.0000  d2t08.wav
+    96:40.25     1023180036 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

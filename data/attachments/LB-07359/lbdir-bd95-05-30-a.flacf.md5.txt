@@ -1,0 +1,17 @@
+3da44bbf505344f6150869df3c6b72b1  CD1\01 Crash on the Levee (Down in the flood).flac
+a082d80e7b29d4664afdce62035dba50  CD1\02 I'll be your baby tonight.flac
+85a11670ed2710d52d154688c008a726  CD1\03 All along the watchtower.flac
+12e338f6cfb4c0b5a6b438ccef3ad5a2  CD1\04 You're a big girl now.flac
+595e11940e295a866d0dc4607bfef9e4  CD1\05 Just like Tom Thumb's blues.flac
+76808120cc21e0aa5a13adff294092bc  CD1\06 Silvio.flac
+0652c65bcce22ce5792eb152ba415a74  CD1\07 Mr. Tambourine Man.flac
+7ffa3c8fd9e8c19af2290cbf30cda677  CD1\08 Masters of war.flac
+b8a8cf80d8a7c5c46251e1c9efbc9d6f  CD1\09 To Ramona.flac
+18ec5184e6a96b7e02475d81956abca7  CD1\FLAC CD1.md5
+e4ea7e9ca06c7a444691a9efa533f3ec  CD2\10 Seeing the real you at last.flac
+9e586939c875c75d1ebf534c03156d24  CD2\11 In the garden.flac
+64313806e6d116139d2ed0b9cd599e90  CD2\12 Highway 61 revisited.flac
+c6916876e6d498811370867840b406a2  CD2\13 Ballad of a thin man.flac
+5012875bac75688fc3a87e0c47c1d385  CD2\14 The times they are a-changin'.flac
+e16fb79dd9d7cf27709daa250931e368  CD2\FLAC CD2.md5
+d0cbc3c388d41f8e5ee57ae06eeab184  Info\1995-05-30 Hult Center, Eugene, Oregon, USA.txt

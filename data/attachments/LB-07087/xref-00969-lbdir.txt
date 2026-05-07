@@ -1,0 +1,112 @@
+===================
+===================
+===================
+=== md5 for: bd92-05-04-d.flacf
+===================
+===================
+===================
+e8f856c3726669bad15c4054f15acca2 *Artwork\Warfield back.jpg
+4c79ec52f3b308d855de9776e278b052 *Artwork\Warfield front.jpg
+4a605ba60fa8ecba5fb9d2cd6612edf2 *cd1\01 - Bob Dylan - Rainy Day Women.flac
+efa1d77861fbaef61841c29a6781ea83 *cd1\02 - Bob Dylan - Every Grain Of Sand.flac
+64de2a4b34b7aaa41af36c15a6fe54f0 *cd1\03 - Bob Dylan - Union Sun Down.flac
+1b91b3bde3b693ea966064859a5b6c69 *cd1\04 - Bob Dylan - Just Like A Woman.flac
+3ab251d0586f57e0d797cc740e9ac117 *cd1\05 - Bob Dylan - Tangled Up In Blue.flac
+fe22d5365554293c2ebf41c42b4c32bd *cd1\06 - Bob Dylan - I`ll Be Your Baby Tonight.flac
+5ded4be670e296f42e021eb1f0c7d2d8 *cd1\07 - Bob Dylan - She Belongs To Me.flac
+242cdf0acafb686092f88a93e98a58af *cd1\08 - Bob Dylan - Love Minus Zero.flac
+fe4e05cadfe3ca3b7da4b5ded3b7564c *cd1\09 - Bob Dylan - Little Moses.flac
+6ff8396e0cc3a82237d819c9b430de75 *cd1\10 - Bob Dylan - The Lonesome Death Of Battle Carrol.flac
+030fe9b7b6e6c3ce94319dd73ce1c6e0 *cd1\11 - Bob Dylan - Desolation Row.flac
+e8eec52d59aa599611394ba56d2da81e *cd1\12 - Bob Dylan - Cats In The Well.flac
+cc72325304ffb57483fb55734d404c54 *cd1\Bob Dylan-The Warfield CD1.ffp
+d029e5b0320d74b3115240f4247272df *cd2\01 - Bob Dylan - Idiot Wind.flac
+fddf6d4ffb93f356cfcc428fd49dea2e *cd2\02 - Bob Dylan - The Times Are Changing.flac
+2ea454389b20f2146d1dc10a24ac7b96 *cd2\03 - Bob Dylan - Highway Of Revisited.flac
+caec5b7a7c493110eeb62b94135fec73 *cd2\04 - Bob Dylan - Absolutly Sweet Marie.flac
+49934f9489315b9e15b0dec25cbcf01c *cd2\05 - Bob Dylan - Ballad Of A Thin Main.flac
+125ac7d18b0fc75789a971d712dae45d *cd2\06 - Bob Dylan - Blowing In The Wind.flac
+3c2a082ed54174b4bd2e683f966aebde *cd2\07 - Bob Dylan - Rainy Day Women.flac
+c41664acd59f6ce22c137cf0457f2856 *cd2\08 - Bob Dylan - Lenny Bruce.flac
+67d0cbb6da455b43f178b3d371f8be89 *cd2\09 - Bob Dylan - Stock Inside Of Mobile With The Memphis Blues Again.flac
+bd4efe71405b2ddecaceee99ad6e840a *cd2\10 - Bob Dylan - I Don`t Belive In You.flac
+73b638577aa965cd37bfd4c08fc63efe *cd2\11 - Bob Dylan - Shelter From The Storm.flac
+c8ecb7a8a809235898ff258274bb547c *cd2\12 - Bob Dylan - Gates Of Eden.flac
+bb96afedb1828d5f23b70a53e6847c80 *cd2\Bob Dylan-1992 The Warfield CD2.ffp
+21be8e402950c0352deac74e466c538d *Dylan-Warfield info.txt
+===================
+===================
+===================
+=== ffp for: bd92-05-04-d.flacf
+===================
+===================
+===================
+cd1\01 - Bob Dylan - Rainy Day Women.flac:ebd3c96abb1df681242e18dba5bc5e80
+cd1\02 - Bob Dylan - Every Grain Of Sand.flac:01af49b55b0a98ebd9d8982bbcc3ae7a
+cd1\03 - Bob Dylan - Union Sun Down.flac:89c1d9b5b32722831023476100c10f2c
+cd1\04 - Bob Dylan - Just Like A Woman.flac:e1b2b80fd147f86a295681feee0227e5
+cd1\05 - Bob Dylan - Tangled Up In Blue.flac:78825a86bcce60e69ff86b91c7b5ac70
+cd1\06 - Bob Dylan - I`ll Be Your Baby Tonight.flac:38e4c674e16582cde5bc38d7bb83f6ce
+cd1\07 - Bob Dylan - She Belongs To Me.flac:64285240f8e691e0c63a1a9f62d3ebba
+cd1\08 - Bob Dylan - Love Minus Zero.flac:88094d66e4a4ec6fcce2e8fa159e447a
+cd1\09 - Bob Dylan - Little Moses.flac:dec61e34768c39943a63b50712a67537
+cd1\10 - Bob Dylan - The Lonesome Death Of Battle Carrol.flac:b88b9ad71937033a125d75ac938972f9
+cd1\11 - Bob Dylan - Desolation Row.flac:55d08939bcb76f6ce5ae7f1234d5416a
+cd1\12 - Bob Dylan - Cats In The Well.flac:ff270384fd0c37a33f698dbdebb36c39
+cd2\01 - Bob Dylan - Idiot Wind.flac:bfd67a84ba8c8c80792c71d6d7fec25b
+cd2\02 - Bob Dylan - The Times Are Changing.flac:ba8351656b072d102cce4d39baba0684
+cd2\03 - Bob Dylan - Highway Of Revisited.flac:959eb4ecc3a9d0f6dc610bf53bd8fd39
+cd2\04 - Bob Dylan - Absolutly Sweet Marie.flac:df6720590a81fa3850816dde0bd25edc
+cd2\05 - Bob Dylan - Ballad Of A Thin Main.flac:875793c630db13cd026491c183f8a520
+cd2\06 - Bob Dylan - Blowing In The Wind.flac:b618190d60f7fafd7d36ebed9eea6718
+cd2\07 - Bob Dylan - Rainy Day Women.flac:7cbaa60d77d48567b7752559a7fa723e
+cd2\08 - Bob Dylan - Lenny Bruce.flac:5171c15b227ce8d1d50f6bb0129fbd16
+cd2\09 - Bob Dylan - Stock Inside Of Mobile With The Memphis Blues Again.flac:b628bfb4b585593d882889147a02d022
+cd2\10 - Bob Dylan - I Don`t Belive In You.flac:66d94ac1362f188dd7c6f0fa704fe8b5
+cd2\11 - Bob Dylan - Shelter From The Storm.flac:4dc4a90b08846c4132b56d775f7cccb2
+cd2\12 - Bob Dylan - Gates Of Eden.flac:8513b1c1b5f1e280d7f0dd0658962250
+===================
+===================
+===================
+=== shntool len for: bd92-05-04-d.flacf\cd1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:39.27       28111148 B   ---   --   ---xx   flac  0.7354  01 - Bob Dylan - Rainy Day Women.flac
+     6:44.15       71300924 B   ---   --   ---xx   flac  0.6707  02 - Bob Dylan - Every Grain Of Sand.flac
+     4:51.68       51492380 B   ---   --   ---xx   flac  0.7409  03 - Bob Dylan - Union Sun Down.flac
+     6:43.05       71101004 B   ---   --   ---xx   flac  0.7104  04 - Bob Dylan - Just Like A Woman.flac
+     8:47.07       92979308 B   ---   --   ---xx   flac  0.7250  05 - Bob Dylan - Tangled Up In Blue.flac
+     6:16.35       66408764 B   ---   --   ---xx   flac  0.7108  06 - Bob Dylan - I`ll Be Your Baby Tonight.flac
+     5:00.05       52931804 B   ---   --   ---xx   flac  0.6283  07 - Bob Dylan - She Belongs To Me.flac
+     3:11.18       33734780 B   ---   --   ---xx   flac  0.5600  08 - Bob Dylan - Love Minus Zero.flac
+     3:40.15       38843324 B   ---   --   ---xx   flac  0.5418  09 - Bob Dylan - Little Moses.flac
+     5:58.50       63268844 B   ---   --   ---xx   flac  0.6251  10 - Bob Dylan - The Lonesome Death Of Battle Carrol.flac
+     8:41.22       91956188 B   ---   --   ---xx   flac  0.6224  11 - Bob Dylan - Desolation Row.flac
+     4:02.25       42747644 B   ---   --   ---xx   flac  0.7044  12 - Bob Dylan - Cats In The Well.flac
+    66:35.67      704876112 B                            0.6694  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd92-05-04-d.flacf\cd2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:39.30      102206204 B   ---   --   ---xx   flac  0.6731  01 - Bob Dylan - Idiot Wind.flac
+     5:50.37       61827068 B   ---   --   ---xx   flac  0.6306  02 - Bob Dylan - The Times Are Changing.flac
+     6:44.28       71331500 B   ---   --   ---xx   flac  0.7249  03 - Bob Dylan - Highway Of Revisited.flac
+     5:24.07       57170108 B   ---   --   ---xx   flac  0.7319  04 - Bob Dylan - Absolutly Sweet Marie.flac
+     6:04.38       64299020 B   ---   --   ---xx   flac  0.7022  05 - Bob Dylan - Ballad Of A Thin Main.flac
+     4:06.47       43504988 B   ---   --   ---xx   flac  0.5788  06 - Bob Dylan - Blowing In The Wind.flac
+     4:11.23       44330540 B   ---   --   ---xx   flac  0.7028  07 - Bob Dylan - Rainy Day Women.flac
+     5:22.15       56836124 B   ---   --   ---xx   flac  0.6726  08 - Bob Dylan - Lenny Bruce.flac
+     8:20.22       88251788 B   ---   --   ---xx   flac  0.7051  09 - Bob Dylan - Stock Inside Of Mobile With The Memphis Blues Again.flac
+     5:20.05       56459804 B   ---   --   ---xx   flac  0.6786  10 - Bob Dylan - I Don`t Belive In You.flac
+     5:46.55       61163804 B   ---   --   ---xx   flac  0.7050  11 - Bob Dylan - Shelter From The Storm.flac
+     7:10.03       75859100 B   ---   --   ---xx   flac  0.6236  12 - Bob Dylan - Gates Of Eden.flac
+    74:00.10      783240048 B                            0.6792  (12 files)
+===================
+===================
+===================

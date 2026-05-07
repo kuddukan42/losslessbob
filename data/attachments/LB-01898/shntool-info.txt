@@ -1,0 +1,600 @@
+Below is information from shntool on the FLAC files in this directory.
+
+First is the output of  shntool len  in column form.
+In the table, a - means OK; an x means not applicable or not determined. 
+Other letters indicate potential problems.
+
+A b in the CDR column indicates an SBE (sector boundary error)
+An h in the WAVE column indicates a non-canonical header
+An e in the WAVE column indicates extra RIFF chunks
+A c in the CDR column indicates audio is not CD quality
+
+An s in the CDR column indicates audio is too short to burn
+A 3 in the problems column indicates the file contains an ID3v2 tag
+An a in the problems column indicates the audio data is not block-aligned
+An i in the problems column indicates an inconsistent header
+
+    length     expanded size   cdr  WAVE problems filename
+     4:21.15       46075724    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 01)-fixed.flac
+     5:19.74       56445692    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 02).flac
+     4:47.67       50784428    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 03).flac
+     6:21.45       67314284    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 04).flac
+     6:41.15       70771724    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 05).flac
+     5:04.50       53743244    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 06).flac
+     6:18.02       66683948    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 07).flac
+     5:08.65       54484124    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 08).flac
+     7:00.68       74247980    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d1 (Track 09).flac
+     6:42.66       71068076    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d2 (Track 01)-fixed.flac
+     5:13.52       55335548    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d2 (Track 02).flac
+     4:23.65       46546124    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d2 (Track 03).flac
+     5:21.16       56662076    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d2 (Track 04).flac
+     4:10.41       44196476    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d2 (Track 05).flac
+     7:06.20       75193484    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d2 (Track 06).flac
+     5:12.12       55065068    ---   --   ---xx   bd-91-06-14-Innsbruck-HG-d2 (Track 07).flac
+     5:42.19       60373496    -b-   --   ---xx   bd-91-06-14-Innsbruck-HG-d2 (Track 08).flac
+    94:57.17     1004991496 B                     (totals for 17 files, 0.6096 overall compression ratio)
+
+*******************************************************************************
+*******************************************************************************
+Next is the output of  shntool info  (long form), one file at a time.
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 01)-fixed.flac
+handled by:                   flac format module
+length:                       4:21.15
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    46075680 bytes
+chunk size:                   46075716 bytes
+total size (chunk size + 8):  46075724 bytes
+actual file size:             27373278
+file is compressed:           yes
+compression ratio:            0.5941
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 02).flac
+handled by:                   flac format module
+length:                       5:19.74
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    56445648 bytes
+chunk size:                   56445684 bytes
+total size (chunk size + 8):  56445692 bytes
+actual file size:             35187978
+file is compressed:           yes
+compression ratio:            0.6234
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 03).flac
+handled by:                   flac format module
+length:                       4:47.67
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    50784384 bytes
+chunk size:                   50784420 bytes
+total size (chunk size + 8):  50784428 bytes
+actual file size:             32193203
+file is compressed:           yes
+compression ratio:            0.6339
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 04).flac
+handled by:                   flac format module
+length:                       6:21.45
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    67314240 bytes
+chunk size:                   67314276 bytes
+total size (chunk size + 8):  67314284 bytes
+actual file size:             40187279
+file is compressed:           yes
+compression ratio:            0.5970
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 05).flac
+handled by:                   flac format module
+length:                       6:41.15
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    70771680 bytes
+chunk size:                   70771716 bytes
+total size (chunk size + 8):  70771724 bytes
+actual file size:             43576958
+file is compressed:           yes
+compression ratio:            0.6157
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 06).flac
+handled by:                   flac format module
+length:                       5:04.50
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    53743200 bytes
+chunk size:                   53743236 bytes
+total size (chunk size + 8):  53743244 bytes
+actual file size:             32009557
+file is compressed:           yes
+compression ratio:            0.5956
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 07).flac
+handled by:                   flac format module
+length:                       6:18.02
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    66683904 bytes
+chunk size:                   66683940 bytes
+total size (chunk size + 8):  66683948 bytes
+actual file size:             40479476
+file is compressed:           yes
+compression ratio:            0.6070
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 08).flac
+handled by:                   flac format module
+length:                       5:08.65
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    54484080 bytes
+chunk size:                   54484116 bytes
+total size (chunk size + 8):  54484124 bytes
+actual file size:             32289601
+file is compressed:           yes
+compression ratio:            0.5926
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d1 (Track 09).flac
+handled by:                   flac format module
+length:                       7:00.68
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    74247936 bytes
+chunk size:                   74247972 bytes
+total size (chunk size + 8):  74247980 bytes
+actual file size:             44249743
+file is compressed:           yes
+compression ratio:            0.5960
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d2 (Track 01)-fixed.flac
+handled by:                   flac format module
+length:                       6:42.66
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    71068032 bytes
+chunk size:                   71068068 bytes
+total size (chunk size + 8):  71068076 bytes
+actual file size:             40817926
+file is compressed:           yes
+compression ratio:            0.5743
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d2 (Track 02).flac
+handled by:                   flac format module
+length:                       5:13.52
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    55335504 bytes
+chunk size:                   55335540 bytes
+total size (chunk size + 8):  55335548 bytes
+actual file size:             33246791
+file is compressed:           yes
+compression ratio:            0.6008
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d2 (Track 03).flac
+handled by:                   flac format module
+length:                       4:23.65
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    46546080 bytes
+chunk size:                   46546116 bytes
+total size (chunk size + 8):  46546124 bytes
+actual file size:             27202809
+file is compressed:           yes
+compression ratio:            0.5844
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d2 (Track 04).flac
+handled by:                   flac format module
+length:                       5:21.16
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    56662032 bytes
+chunk size:                   56662068 bytes
+total size (chunk size + 8):  56662076 bytes
+actual file size:             35902169
+file is compressed:           yes
+compression ratio:            0.6336
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d2 (Track 05).flac
+handled by:                   flac format module
+length:                       4:10.41
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    44196432 bytes
+chunk size:                   44196468 bytes
+total size (chunk size + 8):  44196476 bytes
+actual file size:             27070096
+file is compressed:           yes
+compression ratio:            0.6125
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d2 (Track 06).flac
+handled by:                   flac format module
+length:                       7:06.20
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    75193440 bytes
+chunk size:                   75193476 bytes
+total size (chunk size + 8):  75193484 bytes
+actual file size:             47977763
+file is compressed:           yes
+compression ratio:            0.6381
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d2 (Track 07).flac
+handled by:                   flac format module
+length:                       5:12.12
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    55065024 bytes
+chunk size:                   55065060 bytes
+total size (chunk size + 8):  55065068 bytes
+actual file size:             33066200
+file is compressed:           yes
+compression ratio:            0.6005
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-91-06-14-Innsbruck-HG-d2 (Track 08).flac
+handled by:                   flac format module
+length:                       5:42.19
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    60373452 bytes
+chunk size:                   60373488 bytes
+total size (chunk size + 8):  60373496 bytes
+actual file size:             39856629
+file is compressed:           yes
+compression ratio:            0.6602
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     no
+  sector misalignment:        2316 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a

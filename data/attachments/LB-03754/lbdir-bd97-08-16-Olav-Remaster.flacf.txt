@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-16-Olav-Remaster.flacf 
+=================== 
+=================== 
+=================== 
+e20d55840e1d7d488425741217ebcf9d  bd97-08-16-Olav-Remaster-LB-3754.txt
+2105895c500f5a67cb0fddbc0482de5c  CD1\00 Announcement.flac
+539a4c8303845b99d554824c304bebab  CD1\01 Absolutely sweet Marie.flac
+a175d75f5b598d99234589841fd22b7b  CD1\02 If not for you.flac
+b981cb205f315a2b1d8ef2d3400f062b  CD1\03 Tough mama.flac
+47090a7ae83e4c74b237788c04a8f0d2  CD1\04 Just like a woman.flac
+254169e38b78be0f455cbcf4eaf92248  CD1\05 Silvio.flac
+77fd6896484e9eb287f91b93bf496f90  CD1\06 Mr. Tambourine Man.flac
+2e7274e7de0b2b3305d80d9a0fe8a92c  CD1\07 Tangled up in blue.flac
+07c2a8e8b0a4ea603c45b2bc9c505106  CD1\08 Cocaine blues.flac
+c5a8b4b091c74cccc0e512269caa05f7  CD1\09 I don't believe you (she acts like we never have met).flac
+b06187d966a877b1651ef59f087db31a  CD1\10 Blind Willie McTell.flac
+e4f33bbec813b3f5292ce2d445558ddc  CD1\11 (band intro).flac
+c0aaa9d0ac47ef0d9aa52b0de9c1525a  CD2\11 Leopard-skin pill-box hat.flac
+bc1fd866215158f4670cfe65f6fb7db6  CD2\12 Like a rolling stone.flac
+00be78fc7f4b7930f903a15ef512b8aa  CD2\13 (audience wait).flac
+ac2ac86cb8895ec31a543f3b05694471  CD2\13 Forever young.flac
+e3167c544663c0a1fba0056284c6a01b  CD2\14 Rainy day women # 12 & 35.flac
+36855030f7072e14bf119a99c7d50563  Info\1997-08-16 Great Woods Performing Arts Center, Mansfield, Massachusetts, USA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-16-Olav-Remaster.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:6c4c5e14677174d2740c7fcc10930a2f
+01 Absolutely sweet Marie.flac:0a64de3bbf7f90ca4920e5e9c74996fe
+02 If not for you.flac:cccff19f73f882b8568568f22fafdf6e
+03 Tough mama.flac:a033765498420e6588c893594a6b83ae
+04 Just like a woman.flac:2cbb2cbde2a9693be354e2bcc4b37cb2
+05 Silvio.flac:e8fe0a6388ac1e5133dcd4ebb2801674
+06 Mr. Tambourine Man.flac:a89b40182abd4bfbf8fd08d33072caa4
+07 Tangled up in blue.flac:f4d2c298d711acf2ac8e70d57df05657
+08 Cocaine blues.flac:119855440e49a1fc8ac683c65f2db646
+09 I don't believe you (she acts like we never have met).flac:5f68c17e69428e580eecef7b493a07bd
+10 Blind Willie McTell.flac:7a9c35205bc69e1227e85d9a3f2cfd70
+11 (band intro).flac:34716e4eaf9542609b842ee0483dd7cd
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-16-Olav-Remaster.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11 Leopard-skin pill-box hat.flac:eb79515f6c1880d03890cff4aa9951cf
+12 Like a rolling stone.flac:bf6b909bdb05ce296c6203595cdb1a2c
+13 (audience wait).flac:6a427e7b7e6f61e15175ee57f53dd6f1
+13 Forever young.flac:bf0ff6a8f8eb5061d7a02da5c49bfe44
+14 Rainy day women # 12 & 35.flac:6f31a9846cecc256c38fedcc10ebef04
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-16-Olav-Remaster.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:14.21        2519036 B   ---   --   ---xx   flac  0.5873  00 Announcement.flac
+     4:48.13       50833820 B   ---   --   ---xx   flac  0.6758  01 Absolutely sweet Marie.flac
+     4:47.70       50791484 B   ---   --   ---xx   flac  0.6516  02 If not for you.flac
+     5:02.55       53402204 B   ---   --   ---xx   flac  0.6640  03 Tough mama.flac
+     6:09.68       65251580 B   ---   --   ---xx   flac  0.6383  04 Just like a woman.flac
+     7:43.18       81715580 B   ---   --   ---xx   flac  0.6562  05 Silvio.flac
+     7:20.63       77764220 B   ---   --   ---xx   flac  0.6136  06 Mr. Tambourine Man.flac
+     9:26.60       99983564 B   ---   --   ---xx   flac  0.6633  07 Tangled up in blue.flac
+     5:31.53       58513100 B   ---   --   ---xx   flac  0.5399  08 Cocaine blues.flac
+     6:46.27       71681948 B   ---   --   ---xx   flac  0.6112  09 I don't believe you (she acts like we never have met).flac
+     6:34.58       69638060 B   ---   --   ---xx   flac  0.6049  10 Blind Willie McTell.flac
+     0:34.07        6014108 B   ---   --   ---xx   flac  0.5626  11 (band intro).flac
+    65:00.63      688108704 B                            0.6316  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-16-Olav-Remaster.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.64       77942972 B   ---   --   ---xx   flac  0.6567  11 Leopard-skin pill-box hat.flac
+     8:32.42       90415628 B   ---   --   ---xx   flac  0.6489  12 Like a rolling stone.flac
+     1:57.14       20671772 B   ---   --   ---xx   flac  0.5759  13 (audience wait).flac
+     8:52.25       93903644 B   ---   --   ---xx   flac  0.5969  13 Forever young.flac
+     5:54.14       62478572 B   ---   --   ---xx   flac  0.6538  14 Rainy day women # 12 & 35.flac
+    32:38.09      345412588 B                            0.6331  (5 files)
+=================== 
+=================== 
+=================== 

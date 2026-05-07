@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-23-b.flacf 
+=================== 
+=================== 
+=================== 
+068ea16d4d5a9b5327f4fe3325a8da66  Art\scan0001.jpg
+1b2cf26f37942398c027dba658fa64fa  Art\scan0002.jpg
+b017eeec22695f57cd30e172cc5fb466  Flac1\1 Wicked MessengerTimes.flac
+59fb0bdc45a116114cea7744c2a4f52e  Flac1\10Forever young.flac
+f5beb72cfb488e0b821438a6ab9f6411  Flac1\2Cry .flac
+2353a4abdcec26250e6bac584b292951  Flac1\3 Trying to get to Heaven.flac
+3cfbb3827b63777100a1a0c069789f79  Flac1\4 Alright Ma.flac
+4e7f5815979a78de47e5662fb7041314  Flac1\5 Mobile.flac
+1f7f40b0d3351abd9741258966236840  Flac1\6Long Black Coat.flac
+41c7198c31ef2eb85809cdb3908263a9  Flac1\7Tweedle.flac
+b764fa93a141c9bc6d673e59ea8669ed  Flac1\8 Boots.flac
+a5296c61cdbf05939a0d9685bb90b81f  Flac1\9Believe.flac
+485c72e3411b2068dccd67a2a1efd421  Flac2\1 Honest.flac
+63df2b4a9901895aa77cf34a4f434e0e  Flac2\2 Grain of Sand.flac
+4687ad213dd24ad5a70be99b58f4933b  Flac2\3Summer days.flac
+8bc84e7c883d04ad8c0ef30431881699  Flac2\4Think Twice.flac
+6a04a67b04fa02fe89222e1800a0a19f  Flac2\5 LARS.flac
+70bf37583f8f653b42119a6936ec0c24  Flac2\6 Watchtower.flac
+87679f99930856d845bb29e41e846c0b  SECC 23 june 04.md5
+78763d5c619d643484639ef875d045ee  Text Document.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-23-b.flacf\Flac2 
+=================== 
+=================== 
+=================== 
+1 Honest.flac:5beb7a7953631f09baff11a859d006bc
+2 Grain of Sand.flac:2dc2d4050371ff99bb8fde95ae0d96a3
+3Summer days.flac:bd2d1d7fa16ae399f57a55e61ac2f6f1
+4Think Twice.flac:98fc886b5099c91a3667c6abafdb7002
+5 LARS.flac:b0cae161d7258d75d6b01eb3257f42d1
+6 Watchtower.flac:c11c3bf542a240fd03d611a5238602f6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-23-b.flacf\Flac1 
+=================== 
+=================== 
+=================== 
+1 Wicked MessengerTimes.flac:c0f3eae6d9d11a21aa015b17103a15b5
+10Forever young.flac:eb565f0e611d56e0b9a605a39dc84c77
+2Cry .flac:a925e23eb765d37a0d8021b9e6217061
+3 Trying to get to Heaven.flac:4434b0f7bfa5ef12f11af91ce0a9616a
+4 Alright Ma.flac:00f44589aa706793494312556458ddee
+5 Mobile.flac:bbe2369602a2b70d01d84e54bba64b69
+6Long Black Coat.flac:a88c1d8de2b7cd551d7e8d7d7fa7391d
+7Tweedle.flac:1d4fc17c1e8f380f591d7e7233b169c7
+8 Boots.flac:4c686e6d098258046c6811a7157f882a
+9Believe.flac:1b50239a10c14b7918fc136f161b0372
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-23-b.flacf\Flac2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:48.54       72098252 B   ---   --   ---xx   flac  0.5975  1 Honest.flac
+     7:11.50       76146044 B   ---   --   ---xx   flac  0.5504  2 Grain of Sand.flac
+     7:55.40       83884124 B   ---   --   ---xx   flac  0.5829  3Summer days.flac
+     6:42.39       71004572 B   ---   --   ---xx   flac  0.5554  4Think Twice.flac
+     7:10.68       76011980 B   ---   --   ---xx   flac  0.5752  5 LARS.flac
+     6:50.26       72385196 B   ---   --   ---xx   flac  0.5667  6 Watchtower.flac
+    42:39.52      451530168 B                            0.5715  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-23-b.flacf\Flac1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:32.13      111515420 B   ---   --   ---xx   flac  0.6219  1 Wicked MessengerTimes.flac
+     6:31.19       69017132 B   ---   --   ---xx   flac  0.5876  10Forever young.flac
+     6:00.06       63518156 B   ---   --   ---xx   flac  0.6407  2Cry .flac
+     5:11.33       54938060 B   ---   --   ---xx   flac  0.5941  3 Trying to get to Heaven.flac
+     7:39.51       81087596 B   ---   --   ---xx   flac  0.6491  4 Alright Ma.flac
+     6:55.74       73380092 B   ---   --   ---xx   flac  0.6379  5 Mobile.flac
+     5:44.40       60775724 B   ---   --   ---xx   flac  0.6069  6Long Black Coat.flac
+     5:39.01       59801996 B   ---   --   ---xx   flac  0.6084  7Tweedle.flac
+     6:52.13       72707420 B   ---   --   ---xx   flac  0.5941  8 Boots.flac
+     7:20.39       77707772 B   ---   --   ---xx   flac  0.6082  9Believe.flac
+    68:26.64      724449368 B                            0.6162  (10 files)
+=================== 
+=================== 
+=================== 

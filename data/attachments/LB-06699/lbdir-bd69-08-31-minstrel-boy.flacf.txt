@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-08-31-minstrel-boy.flacf 
+=================== 
+=================== 
+=================== 
+c524be381269f8870a34efa519d814f4  bd69-08-31-minstrel-boy-t01.flac
+dd0160f1b86d03589cd4c96947dfc4fe  bd69-08-31-minstrel-boy-t02.flac
+9454e07d062035f47c490fb09a640657  bd69-08-31-minstrel-boy-t03.flac
+8d84a5f1c424790ba0fcef9f6dcf6924  bd69-08-31-minstrel-boy-t04.flac
+f813276676bcacbac522ad5991b71b8d  bd69-08-31-minstrel-boy-t05.flac
+3204cdf3b6b1e1876b890d81b5eb682a  bd69-08-31-minstrel-boy-t06.flac
+46fe695696e8a73ae5606486c75c2874  bd69-08-31-minstrel-boy-t07.flac
+f910e01d60b846ec3b7ea8ead6989a66  bd69-08-31-minstrel-boy-t08.flac
+8251fb2cce9bd4037964ad8119bc283b  bd69-08-31-minstrel-boy-t09.flac
+83ba441fc19c9554dae7bfaf330ff869  bd69-08-31-minstrel-boy-t10.flac
+b52f4bf4e50f2347c5ee87ec13520a9f  bd69-08-31-minstrel-boy-t11.flac
+aaff0468b044ed37b46b9d3347f51b91  bd69-08-31-minstrel-boy-t12.flac
+c9a7a36f0f2d9a62a223ae9938c98494  bd69-08-31-minstrel-boy-t13.flac
+a664e461912976aaa6888f709d1f0fc7  bd69-08-31-minstrel-boy-t14.flac
+2979207dcc52dd3b808c83cf937e7c6f  bd69-08-31-minstrel-boy-t15.flac
+427048d0f035aa00b8037d364b3246cb  bd69-08-31-minstrel-boy-t16.flac
+ecbb489f985eef1e4890bfbacd95d8f4  bd69-08-31-minstrel-boy-t17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-08-31-minstrel-boy.flacf 
+=================== 
+=================== 
+=================== 
+bd69-08-31-minstrel-boy-t01.flac:c0b19bb3355f5b287f6bdc409b809de3
+bd69-08-31-minstrel-boy-t02.flac:d94c673cf9551322a4a551eb81f750b2
+bd69-08-31-minstrel-boy-t03.flac:85af16133045dc35a6facac6c4cae167
+bd69-08-31-minstrel-boy-t04.flac:f25c8f2e406dd11830e5607e41a681ee
+bd69-08-31-minstrel-boy-t05.flac:fe7dd0cdec3f042f4058bb3553197894
+bd69-08-31-minstrel-boy-t06.flac:86b96b2ef4b5b93a514dc1f88149f043
+bd69-08-31-minstrel-boy-t07.flac:dd8ba95a5918043f1ee485cd109b0524
+bd69-08-31-minstrel-boy-t08.flac:147d9bb6e2d0bc7bf5b5122862e67570
+bd69-08-31-minstrel-boy-t09.flac:bb12a7caa85707306c5f728df6e0f833
+bd69-08-31-minstrel-boy-t10.flac:306fa2412edd038ae93a27089de1bf26
+bd69-08-31-minstrel-boy-t11.flac:28446535961b4653dff0d8ade43e0b09
+bd69-08-31-minstrel-boy-t12.flac:23bc4a8fe2e5c627b36979298c49858c
+bd69-08-31-minstrel-boy-t13.flac:ef80f158d662aa2fb21499ac35a40bcf
+bd69-08-31-minstrel-boy-t14.flac:f9ba51ade032d6f1d43010adebb92d3d
+bd69-08-31-minstrel-boy-t15.flac:23a87411c20fdf3e43dd7eeecec61b2c
+bd69-08-31-minstrel-boy-t16.flac:b4ea6b341fb61a42085d289354cdbab0
+bd69-08-31-minstrel-boy-t17.flac:9f2c69709a7f7c6b6f61dc16444c004f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-08-31-minstrel-boy.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:38.10       27894764 B   ---   --   ---xx   flac  0.5289  bd69-08-31-minstrel-boy-t01.flac
+     3:07.32       33062108 B   ---   --   ---xx   flac  0.4789  bd69-08-31-minstrel-boy-t02.flac
+     3:35.73       38097740 B   ---   --   ---xx   flac  0.5388  bd69-08-31-minstrel-boy-t03.flac
+     2:35.27       27405548 B   ---   --   ---xx   flac  0.4558  bd69-08-31-minstrel-boy-t04.flac
+     3:01.45       32034284 B   ---   --   ---xx   flac  0.3957  bd69-08-31-minstrel-boy-t05.flac
+     2:05.33       22127660 B   ---   --   ---xx   flac  0.3006  bd69-08-31-minstrel-boy-t06.flac
+     3:36.60       38243564 B   ---   --   ---xx   flac  0.4138  bd69-08-31-minstrel-boy-t07.flac
+     3:23.30       35879804 B   ---   --   ---xx   flac  0.5624  bd69-08-31-minstrel-boy-t08.flac
+     1:56.25       20521244 B   ---   --   ---xx   flac  0.4321  bd69-08-31-minstrel-boy-t09.flac
+     3:43.52       39459548 B   ---   --   ---xx   flac  0.4664  bd69-08-31-minstrel-boy-t10.flac
+     5:02.35       53355164 B   ---   --   ---xx   flac  0.5583  bd69-08-31-minstrel-boy-t11.flac
+     3:20.58       35416460 B   ---   --   ---xx   flac  0.5222  bd69-08-31-minstrel-boy-t12.flac
+     2:39.37       28134668 B   ---   --   ---xx   flac  0.4808  bd69-08-31-minstrel-boy-t13.flac
+     3:25.15       36197324 B   ---   --   ---xx   flac  0.4888  bd69-08-31-minstrel-boy-t14.flac
+     2:48.30       29705804 B   ---   --   ---xx   flac  0.5545  bd69-08-31-minstrel-boy-t15.flac
+     2:47.03       29465900 B   ---   --   ---xx   flac  0.4318  bd69-08-31-minstrel-boy-t16.flac
+     3:14.22       34273388 B   ---   --   ---xx   flac  0.3789  bd69-08-31-minstrel-boy-t17.flac
+    53:01.62      561274972 B                            0.4773  (17 files)
+=================== 
+=================== 
+=================== 

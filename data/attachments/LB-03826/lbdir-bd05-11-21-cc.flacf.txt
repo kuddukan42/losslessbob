@@ -1,0 +1,128 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-21-cc.flacf 
+=================== 
+=================== 
+=================== 
+547ab33805ac4ae1f825e1518161906c  bd05-11-21-cc-LB-3826.txt
+915f83a6fadc22bcd5a10420d40a8d79  bd05-11-21-cc.doc
+b4fe4f8a7eb054db524d8b2e49e91a46  bd05-11-21-cc.txt
+55224775f30802352888dcf467d80f0c  cd 1\01 Bob Dylan - Intro.flac
+fe8f4d4da0f79370718179a1c6b378bf  cd 1\02 Bob Dylan - Rumble.flac
+46c0f2bdc8e820b70211de80f0521e51  cd 1\03 Bob Dylan - Maggie_s Farm.flac
+d8bde15fd549986790eb2cbb3b244b26  cd 1\04 Bob Dylan - The Time They Are A-Changing.flac
+8dee5839b563f3e41d8b6e71297e18c4  cd 1\05 Bob Dylan - Million Dollar Bash.flac
+6add5d3e133922530dd67cac0890f3db  cd 1\06 Bob Dylan - It_s Alright Ma (I_m Only Blee.flac
+4b6e95e3d93c929ab6b0fc637ad06876  cd 1\07 Bob Dylan - Moonlight.flac
+87d741b6ac4e6958185604d36cf8d302  cd 1\08 Bob Dylan - Down Along the Cove.flac
+f6e26a44887b7f90ba36d1493fd16675  cd 1\09 Bob Dylan - Boots of Spanish Leather.flac
+442ed3fb5aaca23caf965104b1dd12a0  cd 1\10 Bob Dylan - Cold Irons Bound.flac
+22fdb5fcf57529331b542ce846efee03  cd 1\11 Bob Dylan - Mr Tambourine Man.flac
+dcbc334319ccfe8556883d6b93b1cd41  cd 1\12 Bob Dylan - Tweedle Dee _ Tweedle Dum.flac
+a6831bba8913043c3df6fb93a77d58e8  cd 1\13 Bob Dylan - Visions of Johanna.flac
+aa27e53c39682a4d6d74f965cd128ee7  cd 1\14 Bob Dylan - Honest With Me.flac
+dc28a3d2d40ee6a3c7b1f69b8c945a4a  cd 1\cd 1.md5
+2bd68e62633a6aadf434a58a3622eb19  cd 2\01 Bob Dylan - Waiting For You.flac
+1116d78229a1fca7d300f7a8014728c3  cd 2\02 Bob Dylan - Highway 61 Revisted.flac
+a4a16149561592eadef20f876ed6f41d  cd 2\03 Bob Dylan - London Calling.flac
+a1bcb949271c5167b4c77f13d3ce8b61  cd 2\04 Bob Dylan - Like a Rolling Stone.flac
+6fcd0840911afe286affdb68d2fad37b  cd 2\05 Bob Dylan - All Along the Watchtower.flac
+0310677bbb8ba6c3ac7140918bbfb930  cd 2\06 Bob Dylan - Lenny Bruce.flac
+72b5d235d01bbb6ac6396f03f8aa0542  cd 2\07 Bob Dylan - Leopard-Skin Pill-Box Hatt.flac
+a841bc5f88f8e14bef162f9a42679cb8  cd 2\08 Bob Dylan - I Believe In You.flac
+6962590b25bb69498a062916755c7239  cd 2\09 Bob Dylan - It Takes a Lot to laugh_ It Ta.flac
+c87641f2730b5d0b316cea895bc1308a  cd 2\10 Bob Dylan - The Wicked Messenger.flac
+cc59aa627d8f2773dadeac785dff0b31  cd 2\11 Bob Dylan - To be Alone With You.flac
+dbf75a33ddb559e8a4bb7153a4a9e18e  cd 2\12 Bob Dylan - Hazel.flac
+f8a550dc81ae4e7077bf45d3756817b9  cd 2\13 Bob Dylan - Not Dark Yet.flac
+e8d615415b221f80f54b62f34f8fcf0c  cd 2\cd 2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-21-cc.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+01 Bob Dylan - Intro.flac:953cd7dc22c1f45a0ffae26c5f53ba89
+02 Bob Dylan - Rumble.flac:35f09247d80e18d59cb843120aa1fabf
+03 Bob Dylan - Maggie_s Farm.flac:49d1e933816ba720349096c05ea55cee
+04 Bob Dylan - The Time They Are A-Changing.flac:21b564c2a8d6d7b65da9babcb548e227
+05 Bob Dylan - Million Dollar Bash.flac:dcf5783aefee3c72a33c25e5705e952f
+06 Bob Dylan - It_s Alright Ma (I_m Only Blee.flac:ed97da55caef6f67f5b9723d47909105
+07 Bob Dylan - Moonlight.flac:6214695a614af61ca74c3c1daffc6ea6
+08 Bob Dylan - Down Along the Cove.flac:97e5911e71a47c9716e0945c0d771736
+09 Bob Dylan - Boots of Spanish Leather.flac:442e63f07d3f22267abc59c85fe2affe
+10 Bob Dylan - Cold Irons Bound.flac:7870ffd325df382b1e1d7dbe918ef459
+11 Bob Dylan - Mr Tambourine Man.flac:aac9ec0cb8d1e65356c04b7efd375c29
+12 Bob Dylan - Tweedle Dee _ Tweedle Dum.flac:9dc9a33006a2b4b53c61bb2f225f8d65
+13 Bob Dylan - Visions of Johanna.flac:b75009adf7fb8e77ae00455a33c078b2
+14 Bob Dylan - Honest With Me.flac:37819b105aae6b08cb3d9ce11bec3047
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-21-cc.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+01 Bob Dylan - Waiting For You.flac:ccb3601f541af53762b52580082b933d
+02 Bob Dylan - Highway 61 Revisted.flac:8dba3d401f23d2a57d571a49a937320b
+03 Bob Dylan - London Calling.flac:f63a547fe14f1221219a9077c74a8e06
+04 Bob Dylan - Like a Rolling Stone.flac:f80459f768a9a35afe0e1dc31a9cfe53
+05 Bob Dylan - All Along the Watchtower.flac:a830caa3cc7ef6769bf3d305cf979e4e
+06 Bob Dylan - Lenny Bruce.flac:6975517b923a902c044b8bd187450c56
+07 Bob Dylan - Leopard-Skin Pill-Box Hatt.flac:5636055c3669c8c759bfa8f3949a2f9a
+08 Bob Dylan - I Believe In You.flac:2b6944c86e3559a1f8f0f173c2791501
+09 Bob Dylan - It Takes a Lot to laugh_ It Ta.flac:2d433885bc656ca2c71bb504a49b02b4
+10 Bob Dylan - The Wicked Messenger.flac:50b18f376a540a6ae466c9a2276a3d15
+11 Bob Dylan - To be Alone With You.flac:8a0d48a4ece5e50ecfd844eabceb8955
+12 Bob Dylan - Hazel.flac:011cf8b27f5b89aaabd320a447667602
+13 Bob Dylan - Not Dark Yet.flac:45e9ab8f6781682ca3391c55d42c313a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-21-cc.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.72        7225388 B   ---   --   ---xx   flac  0.6138  01 Bob Dylan - Intro.flac
+     0:38.29        6771452 B   ---   --   ---xx   flac  0.7301  02 Bob Dylan - Rumble.flac
+     5:19.05       56283404 B   ---   --   ---xx   flac  0.7395  03 Bob Dylan - Maggie_s Farm.flac
+     7:32.46       79841036 B   ---   --   ---xx   flac  0.7050  04 Bob Dylan - The Time They Are A-Changing.flac
+     3:39.12       38659868 B   ---   --   ---xx   flac  0.7065  05 Bob Dylan - Million Dollar Bash.flac
+     7:13.69       76543532 B   ---   --   ---xx   flac  0.7247  06 Bob Dylan - It_s Alright Ma (I_m Only Blee.flac
+     4:30.25       47686844 B   ---   --   ---xx   flac  0.6429  07 Bob Dylan - Moonlight.flac
+     7:14.08       76576460 B   ---   --   ---xx   flac  0.7197  08 Bob Dylan - Down Along the Cove.flac
+     6:16.16       66364076 B   ---   --   ---xx   flac  0.6527  09 Bob Dylan - Boots of Spanish Leather.flac
+     5:45.32       60933308 B   ---   --   ---xx   flac  0.7133  10 Bob Dylan - Cold Irons Bound.flac
+     5:53.42       62368028 B   ---   --   ---xx   flac  0.6746  11 Bob Dylan - Mr Tambourine Man.flac
+     5:45.73       61029740 B   ---   --   ---xx   flac  0.6673  12 Bob Dylan - Tweedle Dee _ Tweedle Dum.flac
+     9:10.07       97036508 B   ---   --   ---xx   flac  0.6739  13 Bob Dylan - Visions of Johanna.flac
+     6:53.13       72883820 B   ---   --   ---xx   flac  0.7206  14 Bob Dylan - Honest With Me.flac
+    76:32.74      810203464 B                            0.6953  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-21-cc.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.44       53552732 B   ---   --   ---xx   flac  0.6741  01 Bob Dylan - Waiting For You.flac
+     9:08.12       96695468 B   ---   --   ---xx   flac  0.7048  02 Bob Dylan - Highway 61 Revisted.flac
+     1:19.61       14079116 B   ---   --   ---xx   flac  0.7539  03 Bob Dylan - London Calling.flac
+     7:11.74       76202492 B   ---   --   ---xx   flac  0.7250  04 Bob Dylan - Like a Rolling Stone.flac
+     6:44.01       71267996 B   ---   --   ---xx   flac  0.6973  05 Bob Dylan - All Along the Watchtower.flac
+     5:58.00       63151244 B   ---   --   ---xx   flac  0.6560  06 Bob Dylan - Lenny Bruce.flac
+     8:11.00       86612444 B   ---   --   ---xx   flac  0.6944  07 Bob Dylan - Leopard-Skin Pill-Box Hatt.flac
+     5:39.01       59801996 B   ---   --   ---xx   flac  0.6620  08 Bob Dylan - I Believe In You.flac
+     6:37.74       70204892 B   ---   --   ---xx   flac  0.6746  09 Bob Dylan - It Takes a Lot to laugh_ It Ta.flac
+     3:45.00       39690044 B   ---   --   ---xx   flac  0.7007  10 Bob Dylan - The Wicked Messenger.flac
+     4:56.01       52216796 B   ---   --   ---xx   flac  0.7352  11 Bob Dylan - To be Alone With You.flac
+     5:28.00       57859244 B   ---   --   ---xx   flac  0.6954  12 Bob Dylan - Hazel.flac
+     6:19.07       66872108 B   ---   --   ---xx   flac  0.6689  13 Bob Dylan - Not Dark Yet.flac
+    76:21.50      808206572 B                            0.6923  (13 files)
+=================== 
+=================== 
+=================== 

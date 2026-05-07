@@ -1,0 +1,122 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-07-21.flac6 
+=================== 
+=================== 
+=================== 
+19020e0669a30ebaa530f2c82a71894f  bd1991-07-21.doswell.txt
+8535beaa0a2ead4f864bc29e07def357  bd1991-07-21d1.waves.md5
+82ed81de9d4c57740ec6782afc234e72  bd1991-07-21d1ffp.txt
+9fd463d59e870d22c4b84992dbbcd13b  bd1991-07-21d1t01.flac
+43bc4c84bf8eaa394a35e665745cae11  bd1991-07-21d1t02.flac
+3728d6ded20d9f39f0b7ae3d9f065bcc  bd1991-07-21d1t03.flac
+5aafaf0d425dc40e13552be7440b9b62  bd1991-07-21d1t04.flac
+75aea05d730e431aa9d681147ae42bf9  bd1991-07-21d1t05.flac
+7ff6c831f357a3448a87d37dd383e7ba  bd1991-07-21d1t06.flac
+cd0f6c1025965f46c9dedf3fc14445ea  bd1991-07-21d1t07.flac
+4e0721cfdf1ef56f26236b840534a9d3  bd1991-07-21d1t08.flac
+1d7a5e31f7090cb6f044a27cd6ce3575  bd1991-07-21d1t09.flac
+9fde660869bd4d303ef5dd629bc07825  bd1991-07-21d1t10.flac
+51ab7edc1c255c8c8ed49b0faeeb316b  bd1991-07-21d1t11.flac
+615668911e07d4df3d7422eec0e4852a  bd1991-07-21d1t12.flac
+2d689c669cf254623d39d4253f5d5b53  bd1991-07-21d1t13.flac
+cb58e84b8d06b97168eac1f85d99b267  bd1991-07-21d1t14.flac
+2a426e9c5ce1a828e77f635d07ecac36  bd1991-07-21d1t15.flac
+d20e7500dfd21f69a5265799736b2a4a  bd1991-07-21d2.waves.md5
+8306a8a5ecb5ac094448a92ea0ff3988  bd1991-07-21d2ffp.txt
+7290bb3d429e41568902d96ca7857cbf  bd1991-07-21d2t01.flac
+80e8e5b25ba19c29dbe5eb99af9634ef  bd1991-07-21d2t02.flac
+7d573e57b04c961ecc510f2fba1d165d  bd1991-07-21d2t03.flac
+66973998fb971eb2b37f08f0c011da4d  bd91-07-21.txt
+c8293d8bea56854fb1cb914f64ec4324  d2t04-filler-bd1991-07-27.flac
+809bde262e7f57c5703e5e67a1f81fca  d2t05-filler-bd1991-07-06.flac
+677ea93324e8e0eeb83d04e844c207b4  d2t06-filler-bd1991-07-10.flac
+edbdc898cbf9ef1e33e09d2ab112040a  d2t07-filler-bd1991-07-10.flac
+3b82cb2e8dc2a926e269ad4bbcdef38d  d2t08-filler-bd1991-07-19.flac
+5f75c399b8f103c3955f2ebb5ce8f613  d2t09-filler-bd1991-07-17.flac
+4ea0e1d814db3b2047030f560c7a6706  d2t10-filler-bd1991-07-10.flac
+877367f5d54879630ddd5b61484db9c6  d2t11-filler-bd1991-07-10.flac
+34818119bdd5e2889d20b742023b2346  d2t12-filler-bd1991-07-19.flac
+e7597464de05804626b36a5e9c731f31  d2t13-filler-bd1991-07-11.flac
+231f751c117d03f7c6a10d41927bb1bc  d2t14-filler-bd1991-07-26.flac
+42201e4f731046027771e9104d537ddd  d2t15-filler-bd1991-07-06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-07-21.flac6 
+=================== 
+=================== 
+=================== 
+bd1991-07-21d1t01.flac:ede134654d8d1762c9be4284209cd595
+bd1991-07-21d1t02.flac:58aae6c710f70813c7dd5288d1c1964f
+bd1991-07-21d1t03.flac:b9a5fd92d0e6c0ff5d378d96cf18483b
+bd1991-07-21d1t04.flac:c88baca5585f96016d5a438bf49b9bf1
+bd1991-07-21d1t05.flac:bf8bb192d4119392a318628e28797c9f
+bd1991-07-21d1t06.flac:023e81a36c502b709610526b4d1d3f25
+bd1991-07-21d1t07.flac:70aca4730c0ec185930f1eabbb000398
+bd1991-07-21d1t08.flac:c41862c7728e2cb4b5707968374bfedd
+bd1991-07-21d1t09.flac:16f178690b893586fa9202516501580b
+bd1991-07-21d1t10.flac:f8e0982e86a2b6b8da1a3de7146a5736
+bd1991-07-21d1t11.flac:1ff7cf602148e353c7b0dfeb568e88b7
+bd1991-07-21d1t12.flac:3774e12f72abab74ee455bafcff70089
+bd1991-07-21d1t13.flac:c2792d574f7fe0ab006bcb6e41f4845a
+bd1991-07-21d1t14.flac:b1f34dbde849448476b27e9eb0a47643
+bd1991-07-21d1t15.flac:aaf61d78f5f2ff3b7a1ba34a9fdb2230
+bd1991-07-21d2t01.flac:bf0ef1b2b436e06aeefa4f55206b1d80
+bd1991-07-21d2t02.flac:4844f2e3b9f2b3124e48e893855d0ded
+bd1991-07-21d2t03.flac:f8e71872be841c4d4f442bdd884b8a0d
+d2t04-filler-bd1991-07-27.flac:02aee1f7a7b85a67daed8b1b3feca135
+d2t05-filler-bd1991-07-06.flac:3adf8dd64aecbe6f6f002c6822c345a1
+d2t06-filler-bd1991-07-10.flac:880c6af22f0f57e8535a04e87ae47a16
+d2t07-filler-bd1991-07-10.flac:756452473a0b86db9f5704b589834462
+d2t08-filler-bd1991-07-19.flac:0c02b5fa6718de73e6717fd73554d33f
+d2t09-filler-bd1991-07-17.flac:9aaab67294aef52b817d55deba029ae1
+d2t10-filler-bd1991-07-10.flac:24d97d106f867f51f39a2ee1e267f0b9
+d2t11-filler-bd1991-07-10.flac:57fce013e8a7a9518da75e3daca57ea6
+d2t12-filler-bd1991-07-19.flac:af3761c50b46e10be073a690016ecca5
+d2t13-filler-bd1991-07-11.flac:44f9054fbe8e29a3e517da9651afd342
+d2t14-filler-bd1991-07-26.flac:7135c825862b8254358a90c0b385c8fb
+d2t15-filler-bd1991-07-06.flac:a2aba8d4ea96a8f2c5a0744718e53724
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-07-21.flac6 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.10       61057964 B   ---   --   ---xx   flac  0.6445  bd1991-07-21d1t01.flac
+     4:58.29       52635452 B   ---   --   ---xx   flac  0.6680  bd1991-07-21d1t02.flac
+     4:07.43       43671980 B   ---   --   ---xx   flac  0.6679  bd1991-07-21d1t03.flac
+     4:39.58       49352060 B   ---   --   ---xx   flac  0.6788  bd1991-07-21d1t04.flac
+     4:42.65       49897724 B   ---   --   ---xx   flac  0.6737  bd1991-07-21d1t05.flac
+     3:30.50       37161644 B   ---   --   ---xx   flac  0.6873  bd1991-07-21d1t06.flac
+     6:37.35       70113164 B   ---   --   ---xx   flac  0.6436  bd1991-07-21d1t07.flac
+     4:42.63       49893020 B   ---   --   ---xx   flac  0.6655  bd1991-07-21d1t08.flac
+     5:07.08       54173660 B   ---   --   ---xx   flac  0.6207  bd1991-07-21d1t09.flac
+     5:22.40       56894924 B   ---   --   ---xx   flac  0.6396  bd1991-07-21d1t10.flac
+     6:23.59       67700012 B   ---   --   ---xx   flac  0.6301  bd1991-07-21d1t11.flac
+     4:42.38       49834220 B   ---   --   ---xx   flac  0.6113  bd1991-07-21d1t12.flac
+     3:48.53       40343900 B   ---   --   ---xx   flac  0.6173  bd1991-07-21d1t13.flac
+     3:44.50       39631244 B   ---   --   ---xx   flac  0.6492  bd1991-07-21d1t14.flac
+     4:16.24       45213968 B   -b-   --   ---xx   flac  0.6386  bd1991-07-21d1t15.flac
+     7:33.50       80026844 B   ---   --   ---xx   flac  0.6348  bd1991-07-21d2t01.flac
+     4:06.04       43403852 B   ---   --   ---xx   flac  0.6032  bd1991-07-21d2t02.flac
+     6:48.61       72114716 B   ---   --   ---xx   flac  0.6411  bd1991-07-21d2t03.flac
+     2:27.33       26008460 B   ---   --   ---xx   flac  0.4375  d2t04-filler-bd1991-07-27.flac
+     4:22.09       46238012 B   ---   --   ---xx   flac  0.6334  d2t05-filler-bd1991-07-06.flac
+     4:30.67       47785628 B   ---   --   ---xx   flac  0.6526  d2t06-filler-bd1991-07-10.flac
+     5:00.07       52936508 B   ---   --   ---xx   flac  0.7010  d2t07-filler-bd1991-07-10.flac
+     4:35.68       48669980 B   ---   --   ---xx   flac  0.6440  d2t08-filler-bd1991-07-19.flac
+     5:05.56       53933756 B   ---   --   ---xx   flac  0.7089  d2t09-filler-bd1991-07-17.flac
+     5:46.17       61074428 B   ---   --   ---xx   flac  0.6556  d2t10-filler-bd1991-07-10.flac
+     4:13.56       44760956 B   ---   --   ---xx   flac  0.6911  d2t11-filler-bd1991-07-10.flac
+     5:38.73       59794940 B   ---   --   ---xx   flac  0.6166  d2t12-filler-bd1991-07-19.flac
+     5:08.57       54465308 B   ---   --   ---xx   flac  0.6492  d2t13-filler-bd1991-07-11.flac
+     7:07.46       75431036 B   ---   --   ---xx   flac  0.4797  d2t14-filler-bd1991-07-26.flac
+     5:38.17       59662264 B   -b-   --   ---xx   flac  0.6760  d2t15-filler-bd1991-07-06.flac
+   150:35.45     1593881624 B                            0.6392  (30 files)
+=================== 
+=================== 
+=================== 

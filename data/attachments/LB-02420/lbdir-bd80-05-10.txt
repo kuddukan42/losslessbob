@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-05-10 
+=================== 
+=================== 
+=================== 
+7ce78f5a0da5deb4ecb979dae3c006f0  bd1980-05-10.info.txt
+a0fb163a32c3c0dfd642d4f996894cf4  bd1980-05-10.shns.md5
+a2f881a81a8e6f280fb1fd37016045b0  bd1980-05-10.shntoolfp.txt
+77e4d0fca8db4acfc790f912867c1ff6  bd1980-05-10.shntoolresults.txt
+0b7aae5c3e2d9ef6a3fcf24fa4d97764  bd1980-05-10.waves.md5
+8261b65ccdee13d0f3ee22f5f27dab08  bd1980-05-10d1t01.shn
+46fef0319962182ecd0eb6d1cb715e07  bd1980-05-10d1t02.shn
+197225a9ebaa08089ccd0fbcaabbfa4d  bd1980-05-10d1t03.shn
+ec02ecec035ffcf23c80ef916250bb49  bd1980-05-10d1t04.shn
+353a60e326ab88fe73f777e6682f82f5  bd1980-05-10d1t05.shn
+3b8c50030005ca295144d0f9bd97318e  bd1980-05-10d1t06.shn
+5377ed9ecb2cf5c9352961d8d0caee6f  bd1980-05-10d1t07.shn
+b17c7b471e5ed8f39d3f7b19d1d346ba  bd1980-05-10d1t08.shn
+a671e9c717b536b2f954d29c3c29d0c0  bd1980-05-10d1t09.shn
+c218321d6043febf7355134f3b2cd0ea  bd1980-05-10d1t10.shn
+fc845f3c787c8c17e8af49a03c7b2364  bd1980-05-10d1t11.shn
+5ac9fe141b2053a80b5954c7a68beeb3  bd1980-05-10d1t12.shn
+a359350b2cf568d52eca2b777efa1170  bd1980-05-10d1t13.shn
+b93c01fc2d36641c4c0d6c5af93fb18b  bd1980-05-10d1t14.shn
+c08bea82c79928c036214cfee47bbc84  bd1980-05-10d1t15.shn
+ea87952a74a83f1b438ce262a1e93df1  bd1980-05-10d2t01.shn
+9267c7907e921e5b463e791314154a67  bd1980-05-10d2t02.shn
+c25dda3bd699e75991ab223afd05323b  bd1980-05-10d2t03.shn
+5d8a32c3acf5b49f5f784e7698553c36  bd1980-05-10d2t04.shn
+8bbac2d51940cdcadc5beee4ab655f97  bd1980-05-10d2t05.shn
+775b29e57de621b9e533bda370187d5b  bd1980-05-10d2t06.shn
+9587afea72012115144c40c96f2c94ef  bd1980-05-10d2t07.shn
+11e3e7b139f1e7cccdaa4985110dedaf  bd1980-05-10d2t08.shn
+5e4ef72d56d6a392424ff6daea86b568  bd1980-05-10d2t09.shn
+0f15fa171be0d48b9126b51151bfdafd  bd1980-05-10d2t10.shn
+04f3778a568388dfe18081c7eccde1a5  bd1980-05-10d2t11.shn
+e1753e671e033d2a74fcf4ea6a46ccf0  bd1980-05-10d2t12.shn
+1c960be8aac6b4188702d3e927fe8cbd  bd80-05-10.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-05-10 
+=================== 
+=================== 
+=================== 
+1fec0ff6b6778712be8957882932ed1c  [shntool]  bd1980-05-10d1t01.wav
+6c7788998b44ce3180ab1cc09da3fbca  [shntool]  bd1980-05-10d1t02.wav
+20ca5e57152838c2cecc950125b03752  [shntool]  bd1980-05-10d1t03.wav
+520b53472ce7fea6383c5945aac61744  [shntool]  bd1980-05-10d1t04.wav
+11a3568313c115411a0ec418941b82e8  [shntool]  bd1980-05-10d1t05.wav
+7475c4ba3c08d6dafadc1348cf9c4c33  [shntool]  bd1980-05-10d1t06.wav
+abeb9589e4ab0d85765c68a793528232  [shntool]  bd1980-05-10d1t07.wav
+d134d805d5f78da834db59703dc7475b  [shntool]  bd1980-05-10d1t08.wav
+4deb96e0c0eb08d87677151bb6287128  [shntool]  bd1980-05-10d1t09.wav
+ee1f699cb4d3f3e86a55ae8ef9122e88  [shntool]  bd1980-05-10d1t10.wav
+949005d30fd6e07dd4377c53b5297947  [shntool]  bd1980-05-10d1t11.wav
+9687325eb0d924e55a6c25c9167a6f6d  [shntool]  bd1980-05-10d1t12.wav
+e6e0ac323708e942d502709e82d60e02  [shntool]  bd1980-05-10d1t13.wav
+82f93812b9358eb70bef55871f773ed3  [shntool]  bd1980-05-10d1t14.wav
+6a511e7b01cea339923fe53f37ca3412  [shntool]  bd1980-05-10d1t15.wav
+94d0d8b62d493645fc6b7df4335bbc77  [shntool]  bd1980-05-10d2t01.wav
+dda0639dfb30bab6349e2f56c13de8d9  [shntool]  bd1980-05-10d2t02.wav
+44de41989ba86c2cb1835a5b4e38c449  [shntool]  bd1980-05-10d2t03.wav
+9e18bf303aebea464923d69973d0a8f6  [shntool]  bd1980-05-10d2t04.wav
+c7d0cfb5895701cca1c38476126983be  [shntool]  bd1980-05-10d2t05.wav
+86d33d5c403baa174d309efe9f298f85  [shntool]  bd1980-05-10d2t06.wav
+59a4e335be4e1de5ba89b67805e06299  [shntool]  bd1980-05-10d2t07.wav
+02dadc68f8e8a2f4bfd47d0a9b621381  [shntool]  bd1980-05-10d2t08.wav
+1f557447d7f6b525a39b6d09960ebc1d  [shntool]  bd1980-05-10d2t09.wav
+f46b1834eb03bddbe19b2f2aec6dd739  [shntool]  bd1980-05-10d2t10.wav
+59a435259051d56f3201d508af9f2c89  [shntool]  bd1980-05-10d2t11.wav
+8300215485212b2a913e6a60045f67b3  [shntool]  bd1980-05-10d2t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-05-10 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:09.23       86313740 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t01.wav
+     2:17.39       24258572 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t02.wav
+     3:56.32       41705708 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t03.wav
+     4:23.36       46477916 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t04.wav
+     4:51.00       51332444 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t05.wav
+     3:42.23       39214940 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t06.wav
+     7:39.13       80998220 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t07.wav
+     5:05.27       53865548 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t08.wav
+     5:38.37       59710268 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t09.wav
+     1:55.51       20405996 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t10.wav
+     4:06.36       43479116 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t11.wav
+     4:41.59       49707212 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t12.wav
+     5:56.46       62906636 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t13.wav
+     5:48.69       61549532 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t14.wav
+     1:38.29       17355452 B   ---   --   -----    wav  1.0000  bd1980-05-10d1t15.wav
+     5:26.19       57551132 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t01.wav
+     4:13.68       44789180 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t02.wav
+     4:45.58       50410460 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t03.wav
+     4:38.07       49055708 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t04.wav
+     5:01.06       53110556 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t05.wav
+     5:24.25       57212444 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t06.wav
+     6:34.24       69558092 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t07.wav
+     2:31.03       26643500 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t08.wav
+     5:47.70       61375484 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t09.wav
+     3:17.09       34772012 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t10.wav
+     4:45.35       50356364 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t11.wav
+     4:38.10       49062764 B   ---   --   -----    wav  1.0000  bd1980-05-10d2t12.wav
+   126:54.29     1343178996 B                            1.0000  (27 files)
+=================== 
+=================== 
+=================== 

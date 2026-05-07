@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-03-by-the-waterfront-remaster.flacf 
+=================== 
+=================== 
+=================== 
+9dae31cd9e113468cf43addfdfcdfe3d  b-94b.jpg
+ab59114384a07426693bc98b8c6ac370  b-94f.jpg
+8292760ac164e753d27c4e06cadb907f  bd98jul03.md5
+f254e4c2af14a579bf000954ca16cc42  fp.txt
+a99e068ae02df56c8674e5debb0eb12a  info.txt
+a8e594c60cdaf485456d296d92e4952c  Track01.flac
+157bf0f310cdb937b449804854b4ac37  Track02.flac
+d45826e561c8d4cc55f88460f3056ad0  Track03.flac
+6f6cb54a4529e98b77867abf7380bd66  Track04.flac
+c68bbf84235057210a9bf9389d3e4b82  Track05.flac
+1b9f91d2be7d258d7e2cff3791622937  Track06.flac
+32ab3bb978982e600630a1aa42fb5144  Track07.flac
+7ffaafaed6208d7cf258a599b44098bd  Track08.flac
+3d6fcf6e8e5dd511471720bf535c19f2  Track09.flac
+c81b59b1963deee91c833748a4c0e6ae  Track10.flac
+d1ebf28095d8b0f39772a6074327aad9  Track11.flac
+4f9010a215b603d6d20506dc4d39981f  Track12.flac
+60956bdbc2aafca6946ddceefcfd3109  Track13.flac
+2ea1e20bea2a2948b6c861680c947e75  Track14.flac
+15a766866ac215d6f4942d6ab6792bd5  Track15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-03-by-the-waterfront-remaster.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:2957c35d73b4c6f2edf47148ca487c7e
+Track02.flac:94796bcce26ee551d02dc13bed6ae852
+Track03.flac:1d86caa47dd4fe29e39d55f0c12413a3
+Track04.flac:069a2d5edab1e9df139dc015f9c9e226
+Track05.flac:d1d35428b4303cc0cfd81f262b0bacf5
+Track06.flac:b07c52918aef4fb51f8ffab4b6cac721
+Track07.flac:8be1fec56582888b0902765446f86a2f
+Track08.flac:2483dcd84c175e3254f634432bb6086e
+Track09.flac:0cbfad7333ee14fa82b64107b1827c84
+Track10.flac:a569517b94882d62f962e654be81ade3
+Track11.flac:4b39f6748e5eb7d7d7adc5a4c63fc307
+Track12.flac:488d92276cc8b6f8daf4bb84e9c2a39a
+Track13.flac:2570f0f590e251ded61c3602349dcba4
+Track14.flac:73394d64231e43b105f688b18410a9c3
+Track15.flac:9a4edff84859ab80d61727a25f81f691
+=================== 
+=================== 
+=================== 
+=== shntool for: bd88-07-03-by-the-waterfront-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.61       36129116 B   ---   --   ---xx   flac  0.6254  Track01.flac
+     6:44.69       71427932 B   ---   --   ---xx   flac  0.6299  Track02.flac
+     4:23.18       46435580 B   ---   --   ---xx   flac  0.6304  Track03.flac
+     6:40.46       70668236 B   ---   --   ---xx   flac  0.6050  Track04.flac
+     5:05.74       53976092 B   ---   --   ---xx   flac  0.6150  Track05.flac
+     4:13.53       44753900 B   ---   --   ---xx   flac  0.6297  Track06.flac
+     4:26.41       47018876 B   ---   --   ---xx   flac  0.5809  Track07.flac
+     3:54.57       41411708 B   ---   --   ---xx   flac  0.5747  Track08.flac
+     6:27.30       68337404 B   ---   --   ---xx   flac  0.5784  Track09.flac
+     4:16.62       45304268 B   ---   --   ---xx   flac  0.6077  Track10.flac
+     5:07.68       54314780 B   ---   --   ---xx   flac  0.5816  Track11.flac
+     7:33.51       80029196 B   ---   --   ---xx   flac  0.5979  Track12.flac
+     8:27.02       89439548 B   ---   --   ---xx   flac  0.5734  Track13.flac
+     3:41.52       39106748 B   ---   --   ---xx   flac  0.6163  Track14.flac
+     3:59.64       42310172 B   ---   --   ---xx   flac  0.6161  Track15.flac
+    78:28.73      830663556 B                            0.6020  (15 files)
+=================== 
+=================== 
+=================== 

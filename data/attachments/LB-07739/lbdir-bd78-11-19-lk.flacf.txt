@@ -1,0 +1,133 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-11-19-lk.flacf 
+=================== 
+=================== 
+=================== 
+e9ab446b019c8b24b71ae02e1d2f9318  bd1978-11-19.txt
+9702fff80d8cac8faf9a88271a4ff8a9  D1\D1.md5
+078c6def6651c3da4e1f4dc2cfb4ced0  D1\Tuscon 19nov78 101.flac
+027de513914c5cd917a64afb061f11e5  D1\Tuscon 19nov78 102.flac
+a43602cf724d7093eb3f6927e926560a  D1\Tuscon 19nov78 103.flac
+e2392985241c486d731b059f38bcfc14  D1\Tuscon 19nov78 104.flac
+5e04e69257849fd3eeb81cbc2267f5fc  D1\Tuscon 19nov78 105.flac
+0d453f59a86c2493d9486c0fa682388c  D1\Tuscon 19nov78 106.flac
+53dbcd34bd6a619587fd895210b5f41a  D1\Tuscon 19nov78 107.flac
+6a3e484df9ded41e3fe6e0112760fbfb  D1\Tuscon 19nov78 108.flac
+c4e379a9d2b1d678a16f855bf0c355d9  D1\Tuscon 19nov78 109.flac
+af3b644cec80a515650f0b81ec50a05d  D1\Tuscon 19nov78 110.flac
+925db02f6ae20717773c3bee371efff3  D1\Tuscon 19nov78 111.flac
+e420cd75599edba2bfc3ca36a5244301  D1\Tuscon 19nov78 112.flac
+4572008a51c8b9a83d3e4aeac46afe45  D1\Tuscon 19nov78 113.flac
+b12dabe2d660e4815210d877b2045d49  D1\Tuscon 19nov78 114.flac
+6083f097dad56e3c74d0485366b94c46  D2\D2.md5
+32078d027ebad0fc33f740a455c7274b  D2\Tuscon 19nov78 201.flac
+0aee36be4be754dddf3a92c11f9ffcb3  D2\Tuscon 19nov78 202.flac
+7e924e26c98aab7a4676b758b45320e9  D2\Tuscon 19nov78 203.flac
+d453af3bf93d2b88378be071c10b2cce  D2\Tuscon 19nov78 204.flac
+875fd6f3c30a93d9be59dc1aab8bbc1e  D2\Tuscon 19nov78 205.flac
+db712ba0825e549aa78ed9e7cacbbc50  D2\Tuscon 19nov78 206.flac
+bc861600c455c26c6340b278dee4c76f  D2\Tuscon 19nov78 207.flac
+34816290bb208f78203df9837730cf14  D2\Tuscon 19nov78 208.flac
+58dc97cdb04d395c0e053adacb2b5d26  D2\Tuscon 19nov78 209.flac
+cb4c6115f0d3ca6c02482652cafb82f4  D2\Tuscon 19nov78 210.flac
+d666ee762a89bbc7fa4b1693f736f8f3  D2\Tuscon 19nov78 211.flac
+02679daa84a4046ac940be606babe2cd  D2\Tuscon 19nov78 212.flac
+42d1f516413ede0a1fcf4b2693e33a7b  D2\Tuscon 19nov78 213.flac
+b998067fa489f53d1556337f7212d580  D2\Tuscon 19nov78 214.flac
+e70e769619e6ab36f559e9a2881b868f  D2\Tuscon 19nov78 215.flac
+9f17f2c565ea1af56f78d8ff262a1840  LK 1978 Leg 3 DVD 9.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-19-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+Tuscon 19nov78 101.flac:018a1ca9bcc9c22ecdafb75c4f483358
+Tuscon 19nov78 102.flac:9ff70afc4ad2e528fcf81e263bfc3344
+Tuscon 19nov78 103.flac:830f7eb76063d5e610d3a1b1c107a981
+Tuscon 19nov78 104.flac:59b62c5bbccdc71e4120a865c39b0649
+Tuscon 19nov78 105.flac:0bad38f2df37892204401822cc4df4ab
+Tuscon 19nov78 106.flac:760e86b0ae8f36583e278e49c58d2660
+Tuscon 19nov78 107.flac:0cbcb26bb1658fb52e5149311b092eba
+Tuscon 19nov78 108.flac:da107c87f4bb9c3f59d5593761365ca2
+Tuscon 19nov78 109.flac:1c7cbdb65f5737ee41b18084228d9bad
+Tuscon 19nov78 110.flac:c23f2440550709a866018d2753f0ae81
+Tuscon 19nov78 111.flac:ed3a3fe650ba4dcb3c8fe0026e2fb926
+Tuscon 19nov78 112.flac:345477f03f45fc63c5a37ac53508b545
+Tuscon 19nov78 113.flac:f9d843a8b4f01bea47913bf7ed847816
+Tuscon 19nov78 114.flac:99cdb86321f103060b790110266ea00a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-19-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+Tuscon 19nov78 201.flac:d51cd8aa20f2a614b6adf5bcaad9acd5
+Tuscon 19nov78 202.flac:fa42e5f512b1cb6e49f0d53dad1dba0a
+Tuscon 19nov78 203.flac:f25a8f7ee60bd533d06b73d5a4e84f7c
+Tuscon 19nov78 204.flac:7e925ddeade170ef8f9e6af888771870
+Tuscon 19nov78 205.flac:4138cfaf0b128f873b5dfb87f36e3436
+Tuscon 19nov78 206.flac:618ab6ed74e2e62aedc8bb3c00f532c6
+Tuscon 19nov78 207.flac:e8f622f65f5f79fe455f0c7db5bca5aa
+Tuscon 19nov78 208.flac:4597c06093aa3e648c4a699396c1936a
+Tuscon 19nov78 209.flac:45944b16f91248fb127a871a1cd1abb5
+Tuscon 19nov78 210.flac:b01f51e2fb32ca887bc0472cdf687af6
+Tuscon 19nov78 211.flac:803d5f412e5e4191818e49661fa4146e
+Tuscon 19nov78 212.flac:493aaceda9e668d6e50dee14084be66a
+Tuscon 19nov78 213.flac:ba6e5a82c191d6996a1508ea019e250f
+Tuscon 19nov78 214.flac:ebc2a682768fd3516c8cf841383f38a8
+Tuscon 19nov78 215.flac:1e22928689bd8872d7b2fc1eb14bbc30
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-19-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:04.36       32542316 B   ---   --   ---xx   flac  0.5828  Tuscon 19nov78 101.flac
+     2:39.47       28158188 B   ---   --   ---xx   flac  0.5786  Tuscon 19nov78 102.flac
+     4:53.12       51713468 B   ---   --   ---xx   flac  0.5654  Tuscon 19nov78 103.flac
+     4:02.58       42825260 B   ---   --   ---xx   flac  0.5749  Tuscon 19nov78 104.flac
+     4:53.41       51781676 B   ---   --   ---xx   flac  0.5872  Tuscon 19nov78 105.flac
+     8:16.46       87602636 B   ---   --   ---xx   flac  0.5649  Tuscon 19nov78 106.flac
+     5:16.48       55855340 B   ---   --   ---xx   flac  0.5777  Tuscon 19nov78 107.flac
+     5:35.35       59176364 B   ---   --   ---xx   flac  0.5864  Tuscon 19nov78 108.flac
+     4:19.36       45772316 B   ---   --   ---xx   flac  0.5848  Tuscon 19nov78 109.flac
+     6:59.23       73965740 B   ---   --   ---xx   flac  0.5877  Tuscon 19nov78 110.flac
+     4:43.12       49949468 B   ---   --   ---xx   flac  0.5808  Tuscon 19nov78 111.flac
+     6:34.45       69607484 B   ---   --   ---xx   flac  0.5814  Tuscon 19nov78 112.flac
+     4:26.50       47040044 B   ---   --   ---xx   flac  0.5773  Tuscon 19nov78 113.flac
+     3:10.63       33664220 B   ---   --   ---xx   flac  0.5749  Tuscon 19nov78 114.flac
+    68:56.27      729654520 B                            0.5786  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-19-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:06.30       64633004 B   ---   --   ---xx   flac  0.5744  Tuscon 19nov78 201.flac
+     3:13.50       34162844 B   ---   --   ---xx   flac  0.5729  Tuscon 19nov78 202.flac
+     5:38.25       59682044 B   ---   --   ---xx   flac  0.5672  Tuscon 19nov78 203.flac
+     4:38.50       49156844 B   ---   --   ---xx   flac  0.5624  Tuscon 19nov78 204.flac
+     6:21.21       67257836 B   ---   --   ---xx   flac  0.5728  Tuscon 19nov78 205.flac
+     3:57.30       41877404 B   ---   --   ---xx   flac  0.5936  Tuscon 19nov78 206.flac
+     4:54.61       52005116 B   ---   --   ---xx   flac  0.6002  Tuscon 19nov78 207.flac
+     5:58.45       63257084 B   ---   --   ---xx   flac  0.5955  Tuscon 19nov78 208.flac
+     4:12.46       44561036 B   ---   --   ---xx   flac  0.5971  Tuscon 19nov78 209.flac
+     4:09.48       44036540 B   ---   --   ---xx   flac  0.6014  Tuscon 19nov78 210.flac
+     3:17.60       34891964 B   ---   --   ---xx   flac  0.5935  Tuscon 19nov78 211.flac
+     2:56.26       31107596 B   ---   --   ---xx   flac  0.5808  Tuscon 19nov78 212.flac
+     7:30.28       79445900 B   ---   --   ---xx   flac  0.5955  Tuscon 19nov78 213.flac
+     7:31.53       79681100 B   ---   --   ---xx   flac  0.5913  Tuscon 19nov78 214.flac
+     7:30.73       79551740 B   ---   --   ---xx   flac  0.5968  Tuscon 19nov78 215.flac
+    77:58.46      825308052 B                            0.5867  (15 files)
+=================== 
+=================== 
+=================== 

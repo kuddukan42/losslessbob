@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-09-22-e.flacf 
+=================== 
+=================== 
+=================== 
+3abf1da83e7ac107555b75ba6b8ad469  2 EAC Audio Extraction.ffp
+85ca8deb1ebe7f05d83591cd39654f1c  bd1998-09-22_Puyallup,_Washington_CD1T01.flac
+c9f959261365e1c40f464e53ddb7f41d  bd1998-09-22_Puyallup,_Washington_CD1T02.flac
+682b989cce88a4ce8f19809ae5b86fa0  bd1998-09-22_Puyallup,_Washington_CD1T03.flac
+a1fdd57ade1fe5c5c3abc295ea229d6a  bd1998-09-22_Puyallup,_Washington_CD1T04.flac
+7386f382f5edbf7767b364dbfd9ca4d6  bd1998-09-22_Puyallup,_Washington_CD1T05.flac
+f6a8f9e277189de64b8ff9e1606475e9  bd1998-09-22_Puyallup,_Washington_CD1T06.flac
+25e4340fadd8b817c1845e380966a709  bd1998-09-22_Puyallup,_Washington_CD1T07.flac
+479a8c3e120b0041f4a0dd309889c01b  bd1998-09-22_Puyallup,_Washington_CD1T08.flac
+5e31570ef614f0f943b25fa1104e2231  bd1998-09-22_Puyallup,_Washington_CD1T09.flac
+4ebfcd05dac2685bc250509171db53d0  bd1998-09-22_Puyallup,_Washington_CD2T01.flac
+d2ea373f5cbc8507cf577db029605f54  bd1998-09-22_Puyallup,_Washington_CD2T02.flac
+8cb788569ea0d0c65be8223bdfba658e  bd1998-09-22_Puyallup,_Washington_CD2T03.flac
+bc6ca395f700f1fa766d03d045e5b2a7  bd1998-09-22_Puyallup,_Washington_CD2T04.flac
+d951cc5da7834c9802970f26b0e09ca0  bd1998-09-22_Puyallup,_Washington_CD2T05.flac
+9ac497d11bf175efe01d667f8fa07be1  bd1998-09-22_Puyallup,_Washington_CD2T06.flac
+ad0599ab0cfa314fb2c23cbf3902551f  bd1998-09-22_Puyallup,_Washington_CD2T07.flac
+d13c0fb18b7512193d1cf9268bcc42ff  bd1998-09-22_Puyallup,_Washington_CD2T08.flac
+ff458280daeadb1b3bf57362517ef785  info.txt
+9842c3d639815d50e53c743b511b8227  Unknown Artist - Unknown Title.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-09-22-e.flacf 
+=================== 
+=================== 
+=================== 
+bd1998-09-22_puyallup,_washington_cd1t01.flac:4880df7db8e15bbde2516e1d9879c83e
+bd1998-09-22_puyallup,_washington_cd1t02.flac:aebff147a971daab1e6773fd5024a4bb
+bd1998-09-22_puyallup,_washington_cd1t03.flac:89164013142fa2bbc758f1ce9e408d8e
+bd1998-09-22_puyallup,_washington_cd1t04.flac:e12704b5411352488f7ab021b45d1a9d
+bd1998-09-22_puyallup,_washington_cd1t05.flac:a9f84825061dcb0ed871a6fc0b1696b3
+bd1998-09-22_puyallup,_washington_cd1t06.flac:67d46afbadfa07b61c25487ef4b19271
+bd1998-09-22_puyallup,_washington_cd1t07.flac:05e924870cafff37554c5c0a2b18b99b
+bd1998-09-22_puyallup,_washington_cd1t08.flac:db7bb678c07e8e7f08df331fb15847f8
+bd1998-09-22_puyallup,_washington_cd1t09.flac:d73bdbf05a7e93ac2422831bba17bffe
+bd1998-09-22_puyallup,_washington_cd2t01.flac:fa117c35b5dd6de2846a185ac5f1fa4f
+bd1998-09-22_puyallup,_washington_cd2t02.flac:fe0c53249d67fb8fbcf48e11a1b25e60
+bd1998-09-22_puyallup,_washington_cd2t03.flac:da2349f59231441fd5e51bbcebd75f1f
+bd1998-09-22_puyallup,_washington_cd2t04.flac:74fe014f0c35aa579b6f44d47f7c81c3
+bd1998-09-22_puyallup,_washington_cd2t05.flac:ebb58eea5d7bba5c584d58fb7c58c1c4
+bd1998-09-22_puyallup,_washington_cd2t06.flac:916f0acf28f3ce6eefb678e8cd1f143d
+bd1998-09-22_puyallup,_washington_cd2t07.flac:259dcf0a5f2e30c9ab00d7c76bad4aae
+bd1998-09-22_puyallup,_washington_cd2t08.flac:42e885011259e14426531cfa7472fdb0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-09-22-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:45.42       50372828 B   ---   --   ---xx   flac  0.5931  bd1998-09-22_Puyallup,_Washington_CD1T01.flac
+     5:48.52       61509548 B   ---   --   ---xx   flac  0.5675  bd1998-09-22_Puyallup,_Washington_CD1T02.flac
+     6:28.11       68469116 B   ---   --   ---xx   flac  0.5274  bd1998-09-22_Puyallup,_Washington_CD1T03.flac
+     4:52.54       51635852 B   ---   --   ---xx   flac  0.5046  bd1998-09-22_Puyallup,_Washington_CD1T04.flac
+     5:47.49       61326092 B   ---   --   ---xx   flac  0.5508  bd1998-09-22_Puyallup,_Washington_CD1T05.flac
+     6:51.61       72643916 B   ---   --   ---xx   flac  0.5676  bd1998-09-22_Puyallup,_Washington_CD1T06.flac
+     5:57.27       63038348 B   ---   --   ---xx   flac  0.5224  bd1998-09-22_Puyallup,_Washington_CD1T07.flac
+     5:13.40       55307324 B   ---   --   ---xx   flac  0.5019  bd1998-09-22_Puyallup,_Washington_CD1T08.flac
+     5:08.20       54378284 B   ---   --   ---xx   flac  0.4880  bd1998-09-22_Puyallup,_Washington_CD1T09.flac
+     8:18.58       87983660 B   ---   --   ---xx   flac  0.5880  bd1998-09-22_Puyallup,_Washington_CD2T01.flac
+     4:28.04       47284652 B   ---   --   ---xx   flac  0.4491  bd1998-09-22_Puyallup,_Washington_CD2T02.flac
+     7:29.23       79257740 B   ---   --   ---xx   flac  0.5513  bd1998-09-22_Puyallup,_Washington_CD2T03.flac
+     5:16.52       55864748 B   ---   --   ---xx   flac  0.5125  bd1998-09-22_Puyallup,_Washington_CD2T04.flac
+     4:42.09       49766012 B   ---   --   ---xx   flac  0.5787  bd1998-09-22_Puyallup,_Washington_CD2T05.flac
+     5:48.08       61406060 B   ---   --   ---xx   flac  0.5019  bd1998-09-22_Puyallup,_Washington_CD2T06.flac
+     5:27.33       57760460 B   ---   --   ---xx   flac  0.5832  bd1998-09-22_Puyallup,_Washington_CD2T07.flac
+     5:53.09       62290412 B   ---   --   ---xx   flac  0.5555  bd1998-09-22_Puyallup,_Washington_CD2T08.flac
+    98:17.27     1040295052 B                            0.5406  (17 files)
+=================== 
+=================== 
+=================== 

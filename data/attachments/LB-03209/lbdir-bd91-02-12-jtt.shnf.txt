@@ -1,0 +1,194 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-02-12-jtt.shnf 
+=================== 
+=================== 
+=================== 
+546b715696a3284c7455c7678ff93c1b  bd1991-02-12 plus hammersmith 1991 compilation.jtt.txt
+2338e02156bab640e107702aecfd2f7a  bd91-02-12-jtt-LB-3209.txt
+76006e8ffcbb5d291e67d1e914bf58df  Disc 1\Track01.shn
+17290831c8e0fc1a91c4b621f9147162  Disc 1\Track02.shn
+7507647639d5e944ffa697214662bdde  Disc 1\Track03.shn
+e015897915e630bf5b742561243b1305  Disc 1\Track04.shn
+8edaa2075d8733188fbd55fa2fd603c1  Disc 1\Track05.shn
+dfcec8c5634e173576420e1dcd8d8dbc  Disc 1\Track06.shn
+2da7866511962a2d7535a3228b5e0930  Disc 1\Track07.shn
+83136aba6415a00066bca6b7acc44cce  Disc 1\Track08.shn
+617daab1d1e57b157b87752721c9fabd  Disc 1\Track09.shn
+b461b5141171212ddbcf86e88e6236d4  Disc 1\Track10.shn
+b0cf685298fcba17b066cdadd7ccc14e  Disc 1\Track11.shn
+e98e050423b69a85c904b48648ebbb90  Disc 1\Track12.shn
+18f9546fce7183007f7de71d9875a9e7  Disc 1\Track13.shn
+7b07978002663bf1fddfea963a93c286  Disc 1\Track14.shn
+28642cd7f082aedc08409f76de62f372  Disc 1\Track15.shn
+77badddca51351b6f4f9343aaf829b0f  Disc 1\noname.md5
+77badddca51351b6f4f9343aaf829b0f  DISC 1_FINGERPRINTS.txt
+c10e22c663b668c4201e7d0f1e30ef1d  Disc 2\Track01.shn
+272efc2ee5f0d49b27ec37849f9586b2  Disc 2\Track02.shn
+ce9abfd8b3045fd12d9e5a1af08b8f31  Disc 2\Track03.shn
+5ecb447b471220df5cf4223c5fae720a  Disc 2\Track04.shn
+77d47f5dfa7e2ffa7cbcbcb17bdb26f3  Disc 2\Track05.shn
+0c8dbadd3561377afff4caf7e7e15de8  Disc 2\Track06.shn
+8c340447ca85711b89bcbe37676a3d4c  Disc 2\Track07.shn
+f1e27abfcbb6dddb5a5accea8a7f0c7c  Disc 2\Track08.shn
+c15b8a77a91ff09bded0ebe43e7e2e36  Disc 2\Track09.shn
+2fa875c4512b9eef091236ea9e236a82  Disc 2\Track10.shn
+eda405eca62b218df8abd83221949504  Disc 2\Track11.shn
+6c526ed1c60a930e2f46ac4d602c770f  Disc 2\Track12.shn
+e8001d0317c2fd5c57b53b65af6fdf35  Disc 2\Track13.shn
+4999a57098c1f7de12cfb4f3b59bd31c  Disc 2\noname.md5
+4999a57098c1f7de12cfb4f3b59bd31c  DISC 2_FINGERPRINTS.txt
+76ec880687b758a8a19968c2e448dca3  Disc 3\Track01.shn
+584737c3036a19e03031319631e42a35  Disc 3\Track02.shn
+480fbea65c456b132de6238177821772  Disc 3\Track03.shn
+8ad808d4c242e439060433ea987519aa  Disc 3\Track04.shn
+f203e7ef76f734f979ceb95d18d1dd2c  Disc 3\Track05.shn
+8b77894a6e03ead3782210088088c3d0  Disc 3\Track06.shn
+d38b3e5a72c627b82ae20781c5684f80  Disc 3\Track07.shn
+0266aa962629d38fe91325144fa9d20f  Disc 3\Track08.shn
+7087f5a0390801512006acfd318a4215  Disc 3\Track09.shn
+ab5a14eb5670a25ef017060c9fc18c42  Disc 3\Track10.shn
+ffe90fb7ff2894f2781a7cedd79cb0b8  Disc 3\Track11.shn
+66801e00f14a467b1def9b4ed4c624c1  Disc 3\Track12.shn
+d5f7b48a68d581c3fd7c627f13095b70  Disc 3\Track13.shn
+2087d351e66538172e3504eccf2b3ca9  Disc 3\Track14.shn
+eca0c44781a45b287eeedce58594c2a8  Disc 3\noname.md5
+eca0c44781a45b287eeedce58594c2a8  DISC 3_FINGERPRINTS.txt
+3e6c065903b00380ccc112df07207b5f  HAMMERSMITH 1991 -  R.jpg
+f9a851f68891ee2bec51c9d21945aff6  HAMMERSMITH 1991 - F.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-02-12-jtt.shnf\Disc 3 
+=================== 
+=================== 
+=================== 
+632ac924cfae381da4cb776737fd1599  [shntool]  Track01.wav
+7a4bb5b76d51a4653ee4d747e43c5b66  [shntool]  Track02.wav
+1886c892cfa1e513941b6b2bef58ece3  [shntool]  Track03.wav
+d043f5bd62a2e8e22d32ad170722def1  [shntool]  Track04.wav
+46112896743233875bfc0a7576348fe7  [shntool]  Track05.wav
+cc0c644563c181b13ed855c14aac85c8  [shntool]  Track06.wav
+31503fffd5b2f4ca49f09f51bb5d4e57  [shntool]  Track07.wav
+d9dc14396160c0d218427d03601b63b6  [shntool]  Track08.wav
+173d21fe7e94ecf21e164c20aabdc349  [shntool]  Track09.wav
+6ffebe070a6bb88e351b2868401746f2  [shntool]  Track10.wav
+e95c109294d6e903d09282772fb4a8d9  [shntool]  Track11.wav
+12fc09411423d9765286d220b9a51c3a  [shntool]  Track12.wav
+2e967e95d7705bf7fd55dfefa501bcc3  [shntool]  Track13.wav
+daec957695ce470a505a00e8787e4d41  [shntool]  Track14.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-02-12-jtt.shnf\Disc 1 
+=================== 
+=================== 
+=================== 
+75fb8c08a9ef6287ae08212eb136ae56  [shntool]  Track01.wav
+ddbeefa54619e25d7d67d411f91928ef  [shntool]  Track02.wav
+ed487d6fdb6e133140aac8284044e9a0  [shntool]  Track03.wav
+1f4b4a52c8faf881d0b68c19c3a3c8f9  [shntool]  Track04.wav
+8d0a4f7ae52ac6ec896a53dfff1981ef  [shntool]  Track05.wav
+cbab17feaa551db406c8b2249da2c996  [shntool]  Track06.wav
+5969416ecaffe44eda9a746a1560ed0b  [shntool]  Track07.wav
+628dd52d7927fc363948ba49719666b6  [shntool]  Track08.wav
+4d351018de382958968c07283de58407  [shntool]  Track09.wav
+c76cf906444397436a360c9f8f8a9754  [shntool]  Track10.wav
+0f0026f6ed4d68a68bacf90c289e3e26  [shntool]  Track11.wav
+546ea44191e63a49949d4837576fde1a  [shntool]  Track12.wav
+ac51fcf7678ab3cf4dba4ef367a06fb1  [shntool]  Track13.wav
+de7a3015f4c5ffe3c0a09cdd0f760077  [shntool]  Track14.wav
+e2feccf0ac3ea6ebc26886c76cbbdaaf  [shntool]  Track15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-02-12-jtt.shnf\Disc 2 
+=================== 
+=================== 
+=================== 
+dff26b873eac0a33b38bb18ba9f6763f  [shntool]  Track01.wav
+bc8a4d49c4763756148a7bbb355f1899  [shntool]  Track02.wav
+e04856c0297404e8f915551305921c8d  [shntool]  Track03.wav
+1ec7d13c8adae0bce2e2800a6f876ab4  [shntool]  Track04.wav
+5b5302970afc75a529b41d8df45e7d70  [shntool]  Track05.wav
+a1995e906959fed80b13b67d2ce7fff0  [shntool]  Track06.wav
+6a83866ffac4d671f523fd78478fbce7  [shntool]  Track07.wav
+73a819b074d53a5ff16ecf5e566512c9  [shntool]  Track08.wav
+d9d309c0de2abcb6261edbea3ebe4886  [shntool]  Track09.wav
+88d9803aaa8828abb92de0f24d1e5770  [shntool]  Track10.wav
+81410b20c7243a37441d4732059990b6  [shntool]  Track11.wav
+58d8ab0b57356acb80bda4b7ede50a2d  [shntool]  Track12.wav
+c84096828aa45865c142c03af3e80f16  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-12-jtt.shnf\Disc 3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.16       61072076 B   ---   --   -----    wav  1.0000  Track01.wav
+     3:35.25       37984844 B   ---   --   -----    wav  1.0000  Track02.wav
+     4:58.72       52736588 B   ---   --   -----    wav  1.0000  Track03.wav
+     3:56.62       41776268 B   ---   --   -----    wav  1.0000  Track04.wav
+     3:54.02       41282348 B   ---   --   -----    wav  1.0000  Track05.wav
+     4:39.21       49265036 B   ---   --   -----    wav  1.0000  Track06.wav
+     3:21.30       35527004 B   ---   --   -----    wav  1.0000  Track07.wav
+     3:31.10       37243964 B   ---   --   -----    wav  1.0000  Track08.wav
+     4:15.66       45137276 B   ---   --   -----    wav  1.0000  Track09.wav
+     5:11.15       54895724 B   ---   --   -----    wav  1.0000  Track10.wav
+     4:29.55       47581004 B   ---   --   -----    wav  1.0000  Track11.wav
+     4:47.64       50777372 B   ---   --   -----    wav  1.0000  Track12.wav
+     4:01.43       42613580 B   ---   --   -----    wav  1.0000  Track13.wav
+     6:12.44       65725124 B   -b-   -e   -----    wav  1.0000  Track14.wav
+    62:42.00      663618208 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-12-jtt.shnf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.45       57788684 B   ---   --   -----    wav  1.0000  Track01.wav
+     3:58.74       42157292 B   ---   --   -----    wav  1.0000  Track02.wav
+     4:01.08       42531260 B   ---   --   -----    wav  1.0000  Track03.wav
+     6:19.08       66874460 B   ---   --   -----    wav  1.0000  Track04.wav
+     6:35.33       69755660 B   ---   --   -----    wav  1.0000  Track05.wav
+     3:15.26       34459196 B   ---   --   -----    wav  1.0000  Track06.wav
+     4:23.18       46435580 B   ---   --   -----    wav  1.0000  Track07.wav
+     5:54.38       62535020 B   ---   --   -----    wav  1.0000  Track08.wav
+     4:45.30       50344604 B   ---   --   -----    wav  1.0000  Track09.wav
+     5:21.20       56671484 B   ---   --   -----    wav  1.0000  Track10.wav
+     3:37.29       38347052 B   ---   --   -----    wav  1.0000  Track11.wav
+     4:50.16       51193676 B   ---   --   -----    wav  1.0000  Track12.wav
+     4:24.26       46630796 B   ---   --   -----    wav  1.0000  Track13.wav
+     4:43.55       50050604 B   ---   --   -----    wav  1.0000  Track14.wav
+     3:46.33       39944068 B   -b-   -e   -----    wav  1.0000  Track15.wav
+    71:24.09      755719436 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-12-jtt.shnf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:56.40       73476524 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:08.63       54479420 B   ---   --   -----    wav  1.0000  Track02.wav
+     4:47.40       50720924 B   ---   --   -----    wav  1.0000  Track03.wav
+     4:28.70       47439884 B   ---   --   -----    wav  1.0000  Track04.wav
+     5:32.04       58574252 B   ---   --   -----    wav  1.0000  Track05.wav
+     6:21.09       67229612 B   ---   --   -----    wav  1.0000  Track06.wav
+     6:17.01       66505196 B   ---   --   -----    wav  1.0000  Track07.wav
+     4:21.74       46214492 B   ---   --   -----    wav  1.0000  Track08.wav
+     5:56.38       62887820 B   ---   --   -----    wav  1.0000  Track09.wav
+     4:35.37       48597068 B   ---   --   -----    wav  1.0000  Track10.wav
+     4:59.72       52912988 B   ---   --   -----    wav  1.0000  Track11.wav
+     5:35.53       59218700 B   ---   --   -----    wav  1.0000  Track12.wav
+     3:29.63       37015624 B   -b-   -e   -----    wav  1.0000  Track13.wav
+    68:31.39      725272504 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

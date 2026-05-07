@@ -1,0 +1,73 @@
+===================
+===================
+===================
+=== md5 for: bd95-05-22-e.flacf
+===================
+===================
+===================
+5b10f66db3b38622665c37c15d28d9c1 *bd1995-05-22 San Francisco.md5
+7797ab3ec367437739bad2463befe41f *bd1995-05-22 San Francisco01.flac
+4b98c7bb5d7ca6e417b195da096dd3fc *bd1995-05-22 San Francisco02.flac
+11487b251811f5765515f66692058f32 *bd1995-05-22 San Francisco03.flac
+9ccd605f3f977dbde5f3ce6cdeeab44b *bd1995-05-22 San Francisco04.flac
+687d09553114265acf80d396b659fc66 *bd1995-05-22 San Francisco05.flac
+63f5260cdd769cda09b90118e08dd782 *bd1995-05-22 San Francisco06.flac
+e2d9e9036ad47181f4ffaa3b5ac83abb *bd1995-05-22 San Francisco07.flac
+e85420731b304dee0d4e42571e31ee04 *bd1995-05-22 San Francisco08.flac
+0566495298c781b83b6920590ab3ea52 *bd1995-05-22 San Francisco09.flac
+7b9d0fa71bcda954129038308232dcb7 *bd1995-05-22 San Francisco10.flac
+85aa6a7c20ee1e5f86636702c7a160e5 *bd1995-05-22 San Francisco11.flac
+7e1ee5bf184176fa9aeddd8789463b40 *bd1995-05-22 San Francisco12.flac
+955189a7fc41bc4eabb05d261a322d21 *bd1995-05-22 San Francisco13.flac
+178cedcbad9d802ddb249a7951a3c02d *bd1995-05-22 San Francisco14.flac
+a8511fde0c1a5dbf6645e9e482d54f9a *bd1995-05-22 San Francisco15.flac
+8cccbbdffddf31e2b0cb1f7e012f12b6 *Note.txt
+===================
+===================
+===================
+=== ffp for: bd95-05-22-e.flacf
+===================
+===================
+===================
+bd1995-05-22 San Francisco01.flac:37eb3248e0ad29df2feaa3ce3e0944b0
+bd1995-05-22 San Francisco02.flac:496664eb259c2184aeb47eb58211d221
+bd1995-05-22 San Francisco03.flac:fc6ac8733a5bfb627a4874ef501d2320
+bd1995-05-22 San Francisco04.flac:026e7cda5a178d29b6289cf833a387d7
+bd1995-05-22 San Francisco05.flac:e9eeb10dc9ddede5b7824554acd7c1b7
+bd1995-05-22 San Francisco06.flac:f47c55f2480be0d4ce607b33d87dc491
+bd1995-05-22 San Francisco07.flac:7c9c69be96d706f07106bfa2e5364d89
+bd1995-05-22 San Francisco08.flac:1fd95940c2a1806aa3025ae2b60a0d41
+bd1995-05-22 San Francisco09.flac:b042522bbaefa5e5146446fe06c1abb0
+bd1995-05-22 San Francisco10.flac:1fa5f32016f1fe6e2fd8b5ddc21cb300
+bd1995-05-22 San Francisco11.flac:be002b25dceb1e35c248711cc9dbd7a4
+bd1995-05-22 San Francisco12.flac:0ed8add79278df51335fc90ebc51cf48
+bd1995-05-22 San Francisco13.flac:b898c464ed636d470902f81a959d4f4a
+bd1995-05-22 San Francisco14.flac:338db17f27c7f6e8889471bc1f4d5be2
+bd1995-05-22 San Francisco15.flac:87b381a6cfdbf9b7673e3aa437f4e85f
+===================
+===================
+===================
+=== shntool len for: bd95-05-22-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.72       54147788 B   ---   --   ---xx   flac  0.5073  bd1995-05-22 San Francisco01.flac
+     6:48.73       72142940 B   ---   --   ---xx   flac  0.4761  bd1995-05-22 San Francisco02.flac
+     6:05.22       64437788 B   ---   --   ---xx   flac  0.5176  bd1995-05-22 San Francisco03.flac
+     9:05.03       96145100 B   ---   --   ---xx   flac  0.5184  bd1995-05-22 San Francisco04.flac
+     8:25.34       89162012 B   ---   --   ---xx   flac  0.5062  bd1995-05-22 San Francisco05.flac
+     8:20.55       88329404 B   ---   --   ---xx   flac  0.5284  bd1995-05-22 San Francisco06.flac
+     7:00.53       74212700 B   ---   --   ---xx   flac  0.4597  bd1995-05-22 San Francisco07.flac
+     9:21.24       99016892 B   ---   --   ---xx   flac  0.4819  bd1995-05-22 San Francisco08.flac
+     8:50.67       93649628 B   ---   --   ---xx   flac  0.4788  bd1995-05-22 San Francisco09.flac
+     6:58.24       73791692 B   ---   --   ---xx   flac  0.5825  bd1995-05-22 San Francisco10.flac
+     7:22.18       78011180 B   ---   --   ---xx   flac  0.5220  bd1995-05-22 San Francisco11.flac
+     0:42.60        7549964 B   ---   --   ---xx   flac  0.4962  bd1995-05-22 San Francisco12.flac
+     6:19.30       66926204 B   ---   --   ---xx   flac  0.5763  bd1995-05-22 San Francisco13.flac
+     9:24.08       99508460 B   ---   --   ---xx   flac  0.4906  bd1995-05-22 San Francisco14.flac
+     8:54.32       94273820 B   -b-   --   ---xx   flac  0.5128  bd1995-05-22 San Francisco15.flac
+   108:46.50     1151305572 B                            0.5096  (15 files)
+===================
+===================
+===================

@@ -1,0 +1,61 @@
+Bob Dylan
+Borgata Hotel Casino and Spa
+Event Center
+Atlantic City, New Jersey
+June 23, 2007
+ 
+Disc 1:
+01. introduction [00:35]
+02. Cat's In The Well [03:56]  
+03. It Ain't Me, Babe [05:09]  
+04. Just Like Tom Thumb's Blues [05:27]  
+05. It's Alright, Ma (I'm Only Bleeding) [06:58]  
+06. Lay, Lady, Lay [05:36]  
+07. Rollin' And Tumblin' [06:07]  
+08. Girl Of The North Country [06:13]  
+09. High Water (For Charlie Patton) [05:48]  
+10. Simple Twist Of Fate [07:12]  
+11. Highway 61 Revisited [04:59]  
+12. Tangled Up In Blue [07:28]  
+Total time: [65:34]
+
+Disc 2:
+01. Nettie Moore [08:07]  
+02. Summer Days [06:36]  
+03. Blowin' In The Wind [07:35]
+    (encore) 
+04. Thunder On The Mountain [05:30]  
+05. All Along The Watchtower [06:30] 
+Total time: [34:21]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass 
+
+source: soomlos
+15th row center
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+Flac Fingerprint
+bd2007-06-23d1t01.flac:cce0d25005127e8fb2c8f48fe2bfd127
+bd2007-06-23d1t02.flac:5c9301b2bfd2864c9b8e5a80eb37d169
+bd2007-06-23d1t03.flac:0aedd3090d9247fe4dd7c66ad1840de5
+bd2007-06-23d1t04.flac:bf99766bf317d697cec3ee48c74febf7
+bd2007-06-23d1t05.flac:22bc1bc0d77ccf879ed12eadcc435d66
+bd2007-06-23d1t06.flac:1921519e7b05394ebb6fb88a38f74ecb
+bd2007-06-23d1t07.flac:930385347aac8bd2b902891261af325d
+bd2007-06-23d1t08.flac:70b6dac5513516ac7b2bce6a5dffdd3c
+bd2007-06-23d1t09.flac:ba15ca39e569de4eaf548bc219bf1802
+bd2007-06-23d1t10.flac:e8c75e7282197027e02d793c72779446
+bd2007-06-23d1t11.flac:ef587f73ad589222788c3a1cbfd2bf3d
+bd2007-06-23d1t12.flac:24e37abce241de87978f58239f7658a7
+bd2007-06-23d2t01.flac:392b28d8dabb533679e57f2c8264f384
+bd2007-06-23d2t02.flac:dd1059267b437c6214cff6bfd2feea53
+bd2007-06-23d2t03.flac:0e8ae22c3074ef65e4235a3ebc829874
+bd2007-06-23d2t04.flac:4ccc02528b17c508aab292b8cd023fc4
+bd2007-06-23d2t05.flac:fcd69d18d7c8aa3955c1384b7aefbbcb

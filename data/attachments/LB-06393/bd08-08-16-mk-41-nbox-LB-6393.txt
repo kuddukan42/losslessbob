@@ -1,0 +1,12 @@
+Bob Dylan, 8/16/08, Atlantic City NJ, 2CDR
+
+LB-6393, (76min+38min), source : schoeps mk-41 > actives > nbox+ >, edirol r-09 > 24/44.1 wav >, dsp-quattro x (volume,tracking, & fades) >, MBIT+ dither > 16/44.1 wav > xACT 1.62 > flac; bittorrent download 08/08; cdr split not specified; in spectral view has a fuzz band above 18k; in comparison to jonathan LB-6392 this is harsher with less full sound and slight background hiss; (did not listen to all of this)
+
+CD1
+Intro, Watching The River Flow, Mr Tamborine Man, Things Have Changed, Mississippi, You Go Your Way (And I'll Go Mine), Hollis Brown, Make You Feel My Love, Tweedle Dee & Tweedle Dum, Visions of Johanna, Honest With Me, Lenny Bruce, I Don't Believe You, 
+
+CD2
+Highway 61 Revisited, Ain't Talkin', Thunder On The Mountain, Like A Rolling Stone, All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

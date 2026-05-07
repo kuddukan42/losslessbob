@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-31-eve-pa-c.flacf 
+=================== 
+=================== 
+=================== 
+de8225291d29d6875635311caf1ae67f  bd74-01-31-eve-pa-c-LB-4451.txt
+fc90195d704b87bfaacda793f0ad71ab  Dylan_MSG_1_30_1974_Track01.flac
+f23a65f3e37e5ad3b18d149b1ce50c5b  Dylan_MSG_1_30_1974_Track02.flac
+d00a8c5097760fcaeb7ad8df65676437  Dylan_MSG_1_30_1974_Track03.flac
+a9ff5270f3f529ebaaecf06b130501de  Dylan_MSG_1_30_1974_Track04.flac
+94b8d6ed0a0379fc6130663bff3ccb74  Dylan_MSG_1_30_1974_Track05.flac
+44c4494bfe842ad8db9285a18dbfa436  Dylan_MSG_1_30_1974_Track06.flac
+1aabb76d4e5aca88df5b8e0fb9d540f7  Dylan_MSG_1_30_1974_Track07.flac
+b8df4db00ae6dba52fb27689fdf4d7de  Dylan_MSG_1_30_1974_Track08.flac
+9ca8eb9dc46a4cde06a2c9078fa92853  Dylan_MSG_1_30_1974_Track09.flac
+efdb4ec4409353473cbd7555b2bc9cc2  Dylan_MSG_1_30_1974_Track10.flac
+371a9655da8c32629941de97693f50ea  Dylan_MSG_1_30_1974_Track11.flac
+39fd148bb86b453d12a1d295150507f1  Dylan_MSG_1_30_1974_Track12.flac
+93f64a0e885ea3693cae7bb824074941  Dylan_MSG_1_30_1974_Track13.flac
+21b948ecf3ebb8a7568efde6b2ea6b88  Dylan_MSG_1_30_1974_Track14.flac
+d12f454aae23ea2e2a5e6fc5ac15d622  Dylan_MSG_1_30_1974_Track15.flac
+9d0c692197d8b4cbcaefda3f4ca11b62  Dylan_MSG_1_30_1974_Track16.flac
+60378754b68ac923f0cbf576b4d615b4  Dylan_MSG_1_30_1974_Track17.flac
+bb77626e08abebf201cf538a0572ee1c  Dylan_MSG_1_30_1974_Track18.flac
+de8fbb55c1a13902bdc3a5e7f05ab5aa  Dylan_MSG_1_30_1974_Track19.flac
+426edd1cb0c462551945a546d8123f7a  Dylan_MSG_1_30_1974_Track20.flac
+a3adc537c23b4af51d02401d6147bfe1  Dylan_MSG_1_30_1974_Track21.flac
+a9084bcb1ff852b798d8a1f6f4e3f782  dylanfingerprint.txt
+849bdc023ede7d5619c7cb4c1735a317  DylanMSG.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-31-eve-pa-c.flacf 
+=================== 
+=================== 
+=================== 
+Dylan_MSG_1_30_1974_Track01.flac:72d93f594dead849535847b92627a718
+Dylan_MSG_1_30_1974_Track02.flac:122c2e31628398a205bb4aed5f48c0a6
+Dylan_MSG_1_30_1974_Track03.flac:691887b20397ba1bbf2a417d15d2dbad
+Dylan_MSG_1_30_1974_Track04.flac:cb3ab3a4a64e7b7ba0622c99982c8529
+Dylan_MSG_1_30_1974_Track05.flac:eaaff6b10c23ae8876fc078c6de358b4
+Dylan_MSG_1_30_1974_Track06.flac:0fb08d71409213e38b51188b1b18ea5c
+Dylan_MSG_1_30_1974_Track07.flac:531e5ed0d360f5e94af0c2d65d439504
+Dylan_MSG_1_30_1974_Track08.flac:b71140190ff97132bc0c4d219afa0d39
+Dylan_MSG_1_30_1974_Track09.flac:b90138032f602ce381df95c6a437c6a9
+Dylan_MSG_1_30_1974_Track10.flac:708ab3c7e9a72afa43207de771153877
+Dylan_MSG_1_30_1974_Track11.flac:846c1f5319d85b5acae7193b1b10f51e
+Dylan_MSG_1_30_1974_Track12.flac:98368782ad6fbc2d273b2269b011e3ec
+Dylan_MSG_1_30_1974_Track13.flac:b43697404d141983c38588037f576e81
+Dylan_MSG_1_30_1974_Track14.flac:9b7bdd30c6834c1e6cb3c8afd8fe78da
+Dylan_MSG_1_30_1974_Track15.flac:da2f16cee8d6bf96249052adc9a62fd4
+Dylan_MSG_1_30_1974_Track16.flac:b5d0a8254f85c91289f4c0a1a18a8fac
+Dylan_MSG_1_30_1974_Track17.flac:34963af5170fc54fd8948ef86e9888d4
+Dylan_MSG_1_30_1974_Track18.flac:8343f6e9510e6f309f37146c5f98f9ac
+Dylan_MSG_1_30_1974_Track19.flac:cd592b0ab687b63a30064814e4294d4f
+Dylan_MSG_1_30_1974_Track20.flac:5b8408cd3586bac1e0143a67faccb01e
+Dylan_MSG_1_30_1974_Track21.flac:3d26c0bdbe986794fea7484850e0d74b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-31-eve-pa-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.52       42458348 B   ---   --   ---xx   flac  0.5761  Dylan_MSG_1_30_1974_Track01.flac
+     3:16.41       34670876 B   ---   --   ---xx   flac  0.6119  Dylan_MSG_1_30_1974_Track02.flac
+     6:22.27       67448348 B   ---   --   ---xx   flac  0.6126  Dylan_MSG_1_30_1974_Track03.flac
+     3:46.24       39922892 B   ---   --   ---xx   flac  0.6174  Dylan_MSG_1_30_1974_Track04.flac
+     3:53.41       41197676 B   ---   --   ---xx   flac  0.6007  Dylan_MSG_1_30_1974_Track05.flac
+     4:23.58       46529660 B   ---   --   ---xx   flac  0.5921  Dylan_MSG_1_30_1974_Track06.flac
+     5:10.61       54827516 B   ---   --   ---xx   flac  0.5987  Dylan_MSG_1_30_1974_Track07.flac
+     4:54.69       52023932 B   ---   --   ---xx   flac  0.5879  Dylan_MSG_1_30_1974_Track08.flac
+     3:52.41       41021276 B   ---   --   ---xx   flac  0.5925  Dylan_MSG_1_30_1974_Track09.flac
+     3:43.13       39367820 B   ---   --   ---xx   flac  0.5920  Dylan_MSG_1_30_1974_Track10.flac
+     7:39.12       80995868 B   ---   --   ---xx   flac  0.6206  Dylan_MSG_1_30_1974_Track11.flac
+     4:19.73       45859340 B   ---   --   ---xx   flac  0.6254  Dylan_MSG_1_30_1974_Track12.flac
+     4:16.09       45179612 B   ---   --   ---xx   flac  0.6055  Dylan_MSG_1_30_1974_Track13.flac
+     3:38.58       38591660 B   ---   --   ---xx   flac  0.5576  Dylan_MSG_1_30_1974_Track14.flac
+     4:03.64       43015772 B   ---   --   ---xx   flac  0.5563  Dylan_MSG_1_30_1974_Track15.flac
+     5:43.09       60526412 B   ---   --   ---xx   flac  0.5572  Dylan_MSG_1_30_1974_Track16.flac
+     5:34.62       59063468 B   ---   --   ---xx   flac  0.5553  Dylan_MSG_1_30_1974_Track17.flac
+     6:49.02       72152348 B   ---   --   ---xx   flac  0.5564  Dylan_MSG_1_30_1974_Track18.flac
+     4:28.23       47329340 B   ---   --   ---xx   flac  0.5463  Dylan_MSG_1_30_1974_Track19.flac
+     4:03.43       42966380 B   ---   --   ---xx   flac  0.6185  Dylan_MSG_1_30_1974_Track20.flac
+     3:36.25       38161244 B   ---   --   ---xx   flac  0.6280  Dylan_MSG_1_30_1974_Track21.flac
+    97:37.57     1033309788 B                            0.5901  (21 files)
+=================== 
+=================== 
+=================== 

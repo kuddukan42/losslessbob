@@ -1,0 +1,6 @@
+329ff49b8037364b10bf923473bfbfd0 *bd_00-10-02_cd1_Track 1.shn
+fedde1400697df1033d54baf14b0ec62 *bd_00-10-02_cd1_Track 2.shn
+4b8f6eea4d545ee8a804094ace60ecbe *bd_00-10-02_cd1_Track 3.shn
+a5df3fa7cb8c0a348ca078989e6c4deb *bd_00-10-02_cd1_Track 4.shn
+d7f44ce3a58fdc72d3c1438cebebef23 *bd_00-10-02_cd1_Track 5.shn
+26c74bf7b12edcec54b80e2f5a1eb035 *bd_00-10-02_cd1_Track 6.shn

@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-02-17a.flacf 
+=================== 
+=================== 
+=================== 
+a001da179697497ade0d66fb390eb893  001_Announcement.flac
+7679cd5692f1148234eaf9e80d2b45fa  002-Tweedle Dee and Tweedle Dum.flac
+073ccb08d01e0dc3823e284dbf2c4e98  003-I'll Be Your Lover Tonight.flac
+887d6e988d8bdd3115e99f5a59b1a22a  004-Highway 61 Revisited.flac
+d27e736a5fc79e073571a6b724201b1d  005-Just Like A Woman.flac
+e6bd10db235733ae619cb7b96c21410e  006-Things Have Changed.flac
+90cc6c740eec089bed786ecca8508551  007-Cold Irons Bound.flac
+7ebcacf718590da4b6d984d973fa0672  008-Don't Think Twice,  It's All right.flac
+4d2a37c2238859d3c6fe3df05cc40772  009-Masters Of War.flac
+1a59423e82dd5eba199a3a963400717e  010-One Too Many Mornings.flac
+a17bfe153f141303b51f126580dcdd66  011-Lonesome Day Blues.flac
+2a7a82df731bee7b06ff9883ddc9dafb  012-Make You Feel My Love.flac
+108cadeff0e4fa803e6c13d71ed2eb9d  013-Honest With Me.flac
+b2e4246c260b36e9ed8f15e67765d683  014-Bye and Bye.flac
+be2c0fc1501b0198cfe7c49f5891e8bf  015-Summer Days.flac
+81b509b4c47b39ae7639f5ffdf861087  016-Blowin' In The Wind (encore).flac
+b8d5ce55958dcbaf8bd2b2d4da95a97d  017-All Along The Watchtower  (encore)-after-saving-in-cooledit.flac
+1661a87fd75920ca94221f592c792047  017-All Along The Watchtower  (encore)-original-with-error.flac
+655802a47a2ad41e3025fa093d6bd0c7  bd03-02-17a-LB-3675.txt
+b9cd64ed62d34975fb8e83cc680b686e  titles.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-02-17a.flacf 
+=================== 
+=================== 
+=================== 
+001_Announcement.flac:704393524a4430c18f47ea26fad2fc4b
+002-Tweedle Dee and Tweedle Dum.flac:278c4ebce00b4ffe7ad2837a9fc6713c
+003-I'll Be Your Lover Tonight.flac:702179953db3835c24921d433aec0fdb
+004-Highway 61 Revisited.flac:1f2952e14a8b69cefe7b5d5242ab7d0a
+005-Just Like A Woman.flac:c29de3ec4ebe975a5fd5b862ef25b03d
+006-Things Have Changed.flac:0d9293712d4361ba45638383e93eca97
+007-Cold Irons Bound.flac:cce2eb0886d4d6fe2f9bcb9d85d84d17
+008-Don't Think Twice,  It's All right.flac:1053193cabe32547ebd478f3df683adc
+009-Masters Of War.flac:8d32df5d255e71da00ffddc1bcc22560
+010-One Too Many Mornings.flac:160e56259e1170d88c8c71e2d9af4312
+011-Lonesome Day Blues.flac:9e50d83aad4c2d2131ee72dc359b11ba
+012-Make You Feel My Love.flac:d122dde387a9911b626a0d5674095b8c
+013-Honest With Me.flac:fc7c9b498a71c086720232817eeb342c
+014-Bye and Bye.flac:f3cf7cecb4d3e0699a20d54028cd460c
+015-Summer Days.flac:9d1621a0b35bcb79a8cddc7d09414dd6
+016-Blowin' In The Wind (encore).flac:41c50061cc851107d5a2a31b9558b7f4
+017-All Along The Watchtower  (encore)-after-saving-in-cooledit.flac:643dbc28e40dbcb3399bde1e0bfe71c7
+017-All Along The Watchtower  (encore)-original-with-error.flac:897ca852fe91050fb04dd5341d7e0046
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-02-17a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.27        9589148 B   ---   --   ---xx   flac  0.4814  001_Announcement.flac
+     5:28.27       57922748 B   ---   --   ---xx   flac  0.5545  002-Tweedle Dee and Tweedle Dum.flac
+     6:01.64       63830972 B   ---   --   ---xx   flac  0.5646  003-I'll Be Your Lover Tonight.flac
+     5:46.09       61055612 B   ---   --   ---xx   flac  0.6112  004-Highway 61 Revisited.flac
+     7:35.67       80419628 B   ---   --   ---xx   flac  0.5409  005-Just Like A Woman.flac
+     6:51.28       72566300 B   ---   --   ---xx   flac  0.5910  006-Things Have Changed.flac
+     6:01.35       63762764 B   ---   --   ---xx   flac  0.5961  007-Cold Irons Bound.flac
+     6:28.64       68593772 B   ---   --   ---xx   flac  0.5422  008-Don't Think Twice,  It's All right.flac
+     4:57.55       52520204 B   ---   --   ---xx   flac  0.5817  009-Masters Of War.flac
+     6:28.54       68570252 B   ---   --   ---xx   flac  0.5368  010-One Too Many Mornings.flac
+     7:42.58       81633260 B   ---   --   ---xx   flac  0.5948  011-Lonesome Day Blues.flac
+     5:08.30       54401804 B   ---   --   ---xx   flac  0.4686  012-Make You Feel My Love.flac
+     7:19.14       77472572 B   ---   --   ---xx   flac  0.5886  013-Honest With Me.flac
+     5:51.10       61939964 B   ---   --   ---xx   flac  0.4152  014-Bye and Bye.flac
+    12:29.67      132281228 B   ---   --   ---xx   flac  0.5526  015-Summer Days.flac
+     5:16.04       55751852 B   ---   --   ---xx   flac  0.5183  016-Blowin' In The Wind (encore).flac
+     7:28.63       79175420 B   ---   --   ---xx   flac  0.6125  017-All Along The Watchtower  (encore)-after-saving-in-cooledit.flac
+     7:28.63       79175420 B   ---   --   ---xx   flac  0.6103  017-All Along The Watchtower  (encore)-original-with-error.flac
+   115:19.64     1220662920 B                            0.5597  (18 files)
+=================== 
+=================== 
+=================== 

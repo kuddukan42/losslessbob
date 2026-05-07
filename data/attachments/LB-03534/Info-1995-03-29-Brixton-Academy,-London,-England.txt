@@ -1,0 +1,63 @@
+Brixton Academy
+London, England
+March 29, 1995
+
+Off master
+Taper: no info
+
+IMHO, the original set was a lousy mix and left channel volume consistently too low... At least that issue needed some attention!
+
+Olav ASM (additional sound mastering):
+First step: Lineage pre-work: FLAC DVD-R > WAV > CoolEdit (checking all files: finding that all tracks, except LARS, the last track, were significantly lower in the left channel as opposed to the right channel) > T-RackS v2.0 (fixed by boosting the left channel 3.1dB > But before LARS, the taper must have twisted his knobs the wrong way; it was too low in the opposite channel and needed a separate fix; LARS is now smoothly integrated into the previous track so what the listener hears is a slight drop in the applause part at the end of the previous track; LARS itself is not affected)
+
+Second step: originally, overall volume level on all tracks was too low; a much needed boost of an incredible 9.0dB, was implemented. Overall output level is also boosted with 1.8dB.
+
+Third step and back to CoolEdit: Originally, all tracks were chopped up in the wrong places, resulting in long applause parts at the start of most of the songs; So I took the liberty of taking all the now T-Racks mastered tracks from both CDs and loaded these into CoolEdit, each CD as ONE long track and chopped them into, i.m.o., more correctly so that the songs starts with, ahm, the beginning); further, a small drop-out at the start of LARS is also fixed (removed) and the transition is smoothly integrated with no audible result > FLAC frontend (sector alignment) > FLACs > DIME
+
+
+01. Crash On The Levee (Down In The Flood)
+02. I Want You
+03. All Along The Watchtower
+04. Just Like A Woman
+05. Tangled Up In Blue
+06. It Takes A Lot To Laugh, It Takes A Train To Cry
+07. Mr. Tambourine Man
+08. Boots Of Spanish Leather
+
+09. Don't Think Twice, It’s All Right
+10. Dignity 
+11. She Belongs To Me
+12. (band intro)
+13. Maggie's Farm
+14. (encore)
+15. Ballad Of A Thin Man
+16. It Ain't Me, Babe
+17. Like A Rolling Stone
+
+
+Concert # 655 of The Never-Ending Tour
+Concert # 15 of the 1995 European Spring Tour
+Concert # 15 in 1995
+
+Concert # 199 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+7–9, 14 acoustic with the band
+1, 2, 7, 8, 14 Bob Dylan harmonica
+
+BobTalk:
+We’ll play a new song, that’s pretty new; it’s only 10 years old (before Dignity).
+That’s a new song, here’s an old one! (after Dignity)
+
+I want to introduce the guy playing the guitar now, J. J. Jackson, born in the U.S.A.! (start of band credits) ... Too bad Britain didn’t win any more academy awards the other night. Really is too bad. If it was up to me, you could have them all! ... We’re getting out of here right now. We got things to do, places to be! (end of band credits after Maggie’s Farm)
+
+4 new songs (26%) compared to previous concert
+No new songs for this tour
+
+Stereo audience recording, 105 minutes
+
+* * * Enjoy your Bobby Hobby * * *

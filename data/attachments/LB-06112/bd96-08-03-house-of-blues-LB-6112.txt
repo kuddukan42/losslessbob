@@ -1,0 +1,6 @@
+Bob Dylan, 8/3/96, Atlanta, Georgia, House Of Blues, 2CDR
+
+LB-6112, (72min+57min), BOOTLEG: House of Blues; cd > ultraplex > eac > wav > flac; left chanel has asymetric wav with top limited to -7db and bottom ranges to -4db on d2t5
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

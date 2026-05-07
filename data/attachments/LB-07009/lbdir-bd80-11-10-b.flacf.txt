@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-10-b.flacf 
+=================== 
+=================== 
+=================== 
+7c137bd4eebda8e7c23fc1e83167b34f  01 G Ride.flac
+5d5bd0f905aa2f15e0e4e853a1a64fd0  02 G Look.flac
+98340e6ec22dc274a9dc382b60707413  03 G House.flac
+1fb95a20b38efa8967d279a6aa8899e6  04 G Grace.flac
+96083639a57d3df843fd33be7b84550c  05 Gotta Serve.flac
+7e6bc7da3e51495bf024b7ea32cdd70e  06 Believe.flac
+f31e3a91d6f2c3c1094af420c24919b7  07 LRS.flac
+af010b76f6e3a29d1d74a03a4bd8866b  08 G Right.flac
+433d95311359fc4f3d5d689b1c4471d8  09 Animals.flac
+fbdfc4516dde1201ca2a5501ba11bc74  10 Ramona.flac
+d9652e89df6479f66d729e8ab9e59cac  11 Hell.flac
+b98ff4e353d51ac869955b844aa76be2  12 GirlNC.flac
+fa2d65235e78bfb691db5c0073900813  13 SlowTrain.flac
+f6fef7668ca92ab95caa6e9222034db3  14 G Heaven.flac
+0c21f31aa2a12a61813bdcddfdff2138  15 AM&J.flac
+edcbb164887b4a33bbc476e6011af565  16 Between Us.flac
+b9bdf426917f182da2185f9957f15693  17 Covenant.flac
+af27a0c045d650c11a44bde1ae367c4d  18 Solid Rock.flac
+b49fac1c79080dcd340215630f98b240  19 JLAW.flac
+027c9b87f1c0e40607305c5ab9f551ad  20 Doforyou.flac
+600acf920af111cc501b50b662256ba8  21 Wakeup.flac
+743cbf992e4598b4aa6a8363cf18afe8  22 Senor.flac
+81172e0983af3c7d2c38b3272e083f79  23 Garden.flac
+578abadeba05bf8b613205866b690f75  24 Blowin.flac
+cf24c23d146322e88cd578c24fa01ef5  25 CityofGold.flac
+2a6f8b278c7cc21676ecf65efa1901a0  26 Love-zero.flac
+553fd774aae17d1db1e5d88443d39623  D1.md5
+49eb425737d26743fa82ff5b8c064f88  D2.md5
+71a2e9535b74075faff0e086a61fe51d  FCMD5-sums.MD5
+4c796d9b6039237b946bc9976a9e4882  FOX WARFIELD 1980 INFO - OCT 2008.txt
+1bb2eaff9e0c270bc4edf3e5eb41153f  Fox Warfield Theatre Nov10, 1980.txt
+f406f7a2787f972d4e12cec60d5fae6d  FoxWarfield-nov10-1980-back.JPG
+79b7a63ba68d0350b36d2aeb39b8c3fd  FoxWarfield-nov10-1980-front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-10-b.flacf 
+=================== 
+=================== 
+=================== 
+01 G Ride.flac:a47abbd5785078b7ce5086a0dceb3ddb
+02 G Look.flac:678535a7c016b3c424b7864894bdc26d
+03 G House.flac:843507f15e7d3a3f5e62d7c4c73206e0
+04 G Grace.flac:98f1fe3aa721d015ef88884b487745b1
+05 Gotta Serve.flac:e2776b673da1d2ba2105bbedca3d2df6
+06 Believe.flac:b59bf19478179ce4541ec3903e3d86d1
+07 LRS.flac:dac881267ff1cad011f0b165562d1a2b
+08 G Right.flac:87ffa0698b13653686e08bbf3c12fa1c
+09 Animals.flac:768a95ed24d4de7ef0b25d247bc5a157
+10 Ramona.flac:e6bd2bb2a23b3443564ed87b5a61c0fc
+11 Hell.flac:a11eda42d73591177162243df83b83a3
+12 GirlNC.flac:b10a79a358612265f8052adcc4bbbae5
+13 SlowTrain.flac:ca6e7323703e22cf40644812ad7410b2
+14 G Heaven.flac:a450a397c4ebcf53ce7a07e17e7227a8
+15 AM&J.flac:5623e39cc1ac560493f31e024d0c11e8
+16 Between Us.flac:02fa16bc4f50579cdfe6e09d2cce98ae
+17 Covenant.flac:fb735edc8d9e936ccc204b28180192b1
+18 Solid Rock.flac:92ca133c6a2fbd07c38e66e98ca894b1
+19 JLAW.flac:c3e1ec2b05111197724093a14b9ce404
+20 Doforyou.flac:7ab6d7d33a89d101dd89194cce256290
+21 Wakeup.flac:bd60605ee901449d5fbb4949d240202c
+22 Senor.flac:4c3ef9d9f03ca390aaf6003810b5d129
+23 Garden.flac:9ec3f5216cec21e99575dfac95a66f75
+24 Blowin.flac:31a7c93db14b8a46715f5fbf4b742fcc
+25 CityofGold.flac:c8121c92cc9efb4712067b8b36e92b71
+26 Love-zero.flac:726de3821880367107ab472cc92887da
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-10-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:08.71       33330236 B   ---   --   ---xx   flac  0.5698  01 G Ride.flac
+     5:37.51       59566796 B   ---   --   ---xx   flac  0.5556  02 G Look.flac
+     4:21.14       46073372 B   ---   --   ---xx   flac  0.6214  03 G House.flac
+     3:20.70       35444684 B   ---   --   ---xx   flac  0.5916  04 G Grace.flac
+     5:41.53       60277100 B   ---   --   ---xx   flac  0.6234  05 Gotta Serve.flac
+     4:50.74       51330092 B   ---   --   ---xx   flac  0.5913  06 Believe.flac
+     5:36.26       59331596 B   ---   --   ---xx   flac  0.6335  07 LRS.flac
+     3:25.58       36298460 B   ---   --   ---xx   flac  0.5712  08 G Right.flac
+     5:01.61       53239916 B   ---   --   ---xx   flac  0.6095  09 Animals.flac
+     4:23.61       46536716 B   ---   --   ---xx   flac  0.7184  10 Ramona.flac
+     5:06.37       54065468 B   ---   --   ---xx   flac  0.7050  11 Hell.flac
+     5:10.60       54825164 B   ---   --   ---xx   flac  0.6947  12 GirlNC.flac
+     5:20.57       56582108 B   ---   --   ---xx   flac  0.7139  13 SlowTrain.flac
+     6:45.64       71592572 B   ---   --   ---xx   flac  0.5437  14 G Heaven.flac
+     3:21.64       35606972 B   ---   --   ---xx   flac  0.5287  15 AM&J.flac
+     3:41.07       39000908 B   ---   --   ---xx   flac  0.5604  16 Between Us.flac
+     6:05.61       64529516 B   ---   --   ---xx   flac  0.5670  17 Covenant.flac
+     4:32.59       48119612 B   ---   --   ---xx   flac  0.6315  18 Solid Rock.flac
+     3:31.43       37321580 B   ---   --   ---xx   flac  0.5843  19 JLAW.flac
+     4:39.44       49319132 B   ---   --   ---xx   flac  0.5575  20 Doforyou.flac
+     4:44.60       50238764 B   ---   --   ---xx   flac  0.6159  21 Wakeup.flac
+     4:19.01       45689996 B   ---   --   ---xx   flac  0.5533  22 Senor.flac
+     5:47.09       61232012 B   ---   --   ---xx   flac  0.5886  23 Garden.flac
+     4:53.21       51734636 B   ---   --   ---xx   flac  0.6271  24 Blowin.flac
+     3:28.46       36799436 B   ---   --   ---xx   flac  0.6017  25 CityofGold.flac
+     3:52.25       40983644 B   ---   --   ---xx   flac  0.6163  26 Love-zero.flac
+   120:50.72     1279070488 B                            0.6086  (26 files)
+=================== 
+=================== 
+=================== 

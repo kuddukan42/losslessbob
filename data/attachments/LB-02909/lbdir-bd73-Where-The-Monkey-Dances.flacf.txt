@@ -1,0 +1,162 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd73-Where-The-Monkey-Dances.flacf 
+=================== 
+=================== 
+=================== 
+80b9aba94e737a3b48e6699ace5232e1  .DS_Store
+a0ba08eaad80d94cea251bf8bce4b699  bd73-Where-The-Monkey-Dances-LB-2909.txt
+194577a7e20bdcc7afbb718f502c134c  Disc 1\.DS_Store
+da1371cbab942016ac73a732916303b7  Disc 1\WTMD_D1.fpp
+b5640cea069f5744c241711d1272d05f  Disc 1\WTMD_D1.md5
+2423ab821cddf33c40d1ea852b013a5d  Disc 1\WTMD_D1_T01.flac
+ee3147aa970591bd016fcaaddd72d7d4  Disc 1\WTMD_D1_T02.flac
+e2fdb961d16d3ecb4498b1ef02637032  Disc 1\WTMD_D1_T03.flac
+15b56d567bb85bb7b4411ca25156b2bd  Disc 1\WTMD_D1_T04.flac
+59c4a7ead400c77810d2b4094649d95e  Disc 1\WTMD_D1_T05.flac
+53c25665bf7a55acec6e1bfba3f89603  Disc 1\WTMD_D1_T06.flac
+be4b27d25908c8ef9e3e766f240069e2  Disc 1\WTMD_D1_T07.flac
+01d707a50df12ab303930269e7f43f0a  Disc 1\WTMD_D1_T08.flac
+a8e2279c95d1b94a118c33e5244946d1  Disc 1\WTMD_D1_T09.flac
+dd88c84d301137755bb3a860efdcab88  Disc 1\WTMD_D1_T10.flac
+4f045b587c784c2aca1774c8ac30cb60  Disc 1\WTMD_D1_T11.flac
+6f07d3f5a787b9195f583530b97a8b28  Disc 1\WTMD_D1_T12.flac
+c3d906d3e0ccf2676d239d7c1f709179  Disc 1\WTMD_D1_T13.flac
+45f47cdb438e9a777fb002af96f5c966  Disc 1\WTMD_D1_T14.flac
+fffa025ac7dbcd8b92bdceaa3db14b64  Disc 1\WTMD_D1_T15.flac
+a2ab4b5fe2a2ab5ffe1c3364bd62ccb4  Disc 1\WTMD_D1_T16.flac
+37c1143b987ac4601068365c795877f7  Disc 1\WTMD_D1_T17.flac
+921c0db2f19b27320b8f65ba22c5b047  Disc 1\WTMD_D1_T18.flac
+2e696453d99ed8db17361c9dc2d5f539  Disc 1\WTMD_D1_T19.flac
+194577a7e20bdcc7afbb718f502c134c  Disc 2\.DS_Store
+b7b759b06e0f34625ec334fa2b98f8d3  Disc 2\WTMD_D2.ffp
+ef70f6624488bdd02b11663a93a81ad9  Disc 2\WTMD_D2.md5
+945438e97d76b80a913ba715e1bbb4a8  Disc 2\WTMD_D2_T01.flac
+b82af8e6e83f6f71d7de3ecc76c15be5  Disc 2\WTMD_D2_T02.flac
+7d7fa929d76015cf34147faa08ec946b  Disc 2\WTMD_D2_T03.flac
+2b6da2a9c39d3c5a148a25d0e70201ff  Disc 2\WTMD_D2_T04.flac
+9315a054a3e45bf27828226819e39792  Disc 2\WTMD_D2_T05.flac
+486a827386f84800cbb663a3da4e8082  Disc 2\WTMD_D2_T06.flac
+b439778a350840bc5c35cc7b2e5c1ed8  Disc 2\WTMD_D2_T07.flac
+43c06f3c71bfa6b898db9b2b57868c0c  Disc 2\WTMD_D2_T08.flac
+e15c40fb69cc91fbd5529778b744810a  Disc 2\WTMD_D2_T09.flac
+bac4151913da4f152f649fb2700d017e  Disc 2\WTMD_D2_T10.flac
+1210ef2024b13363376b9ab032a4a2ca  Disc 2\WTMD_D2_T11.flac
+194c51ddb1fdaf1b66791cdcffe49057  Disc 2\WTMD_D2_T12.flac
+76afed8a5e0a2df5dc9bb72792d7fa12  Disc 2\WTMD_D2_T13.flac
+94d107d4b86bb0fa80ab758dfdf9860a  Disc 2\WTMD_D2_T14.flac
+542ebc8359e8258e575c4860c1a57270  Disc 2\WTMD_D2_T15.flac
+ae932f5fb786f912695ddc3031e44a16  Disc 2\WTMD_D2_T16.flac
+42eaf6c00e1bdd3dd338e8b27a3eb081  Disc 2\WTMD_D2_T17.flac
+651149eccafb987cb02f6ca4b1356351  info.txt
+f2a446124b0b47225af304db57d9f28e  Where The Monkey Dances.doc
+cf5963726ec70e93aa76ecbf00f4177c  WTMD_InsideCover.jpg
+460230fed21ea4b8ab138b8ea8a74660  WTMD_OutsideCover.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd73-Where-The-Monkey-Dances.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+WTMD_D1_T01.flac:687927ee4ee019e96d28b7f3c62eff6d
+WTMD_D1_T02.flac:5ea05a58d7f042b5f9eddecf3584cadb
+WTMD_D1_T03.flac:fb896754a163e443c0474aded808c38d
+WTMD_D1_T04.flac:0bad1bef02c5bf28c81d9c7b876780e8
+WTMD_D1_T05.flac:63e711536b2b265ddae99bc700440763
+WTMD_D1_T06.flac:af61311bf9103088ad9b586294fa84ea
+WTMD_D1_T07.flac:890e7a51518c6e606d80a02918e6cb5f
+WTMD_D1_T08.flac:dbfa47289f1375f86d5130ada03b1fbf
+WTMD_D1_T09.flac:e4483999fdf55c130348263b2ec48ac8
+WTMD_D1_T10.flac:be21a6b736e304fbd3bb787d32ce31be
+WTMD_D1_T11.flac:d51229ac9f61498a5cfc36a836d9567d
+WTMD_D1_T12.flac:67de4022c2a812d7032d82c54e853800
+WTMD_D1_T13.flac:cf76f488ba58ffb8e15ed84ee3b8c84f
+WTMD_D1_T14.flac:83c4c0bc85103a3a835e641abf050f30
+WTMD_D1_T15.flac:d2e1a3bf73321e0bc5fccfb4a6a95213
+WTMD_D1_T16.flac:bd940fcf15a0d6f3b692f51a62827221
+WTMD_D1_T17.flac:4237cb00d060156d55a956d017a476f8
+WTMD_D1_T18.flac:134f5760b3ad2b7e0b52bdbf2302faed
+WTMD_D1_T19.flac:b169b6f34bbf1976555b0769c5b10d95
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd73-Where-The-Monkey-Dances.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+WTMD_D2_T01.flac:84264738237a1e80125e6610923d8886
+WTMD_D2_T02.flac:6d5f7a577bcd9545bef8d4fe11d37a83
+WTMD_D2_T03.flac:aed549a5a661eecc66cee9f89017c142
+WTMD_D2_T04.flac:80b78ea9cbc97e99ad5e3ac35a138d42
+WTMD_D2_T05.flac:ee51785e122e45ce09bf04d277080070
+WTMD_D2_T06.flac:2c1c85902b6a1c584b71f1925ee8dd60
+WTMD_D2_T07.flac:32ad9f2b8033e90b0bf6470a898a4d95
+WTMD_D2_T08.flac:779a99ea84e8eaffa8bb3595cbf5b15b
+WTMD_D2_T09.flac:b35e7f1781a40e0f54aae8bde5ba49c5
+WTMD_D2_T10.flac:4d9eef90a17c5c025eaacea047da1d2e
+WTMD_D2_T11.flac:8df839889b678475e979cabe1d3f0e61
+WTMD_D2_T12.flac:7d7cc231915161bede8ce3d209bb36cb
+WTMD_D2_T13.flac:6ed9a9c58b81921bd8fe69e4677fca2e
+WTMD_D2_T14.flac:defb653310f2d1f460eb1eeb73725caa
+WTMD_D2_T15.flac:930ab36f686e166f442de3a8f62fc670
+WTMD_D2_T16.flac:048c5b4bfba973d7b2b319c19a4c0efe
+WTMD_D2_T17.flac:8183481f3c57917f096db5b4e6c68a9e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd73-Where-The-Monkey-Dances.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:27.16       15384476 B   ---   --   ---xx   flac  0.6559  WTMD_D1_T01.flac
+     2:30.70       26624684 B   ---   --   ---xx   flac  0.5502  WTMD_D1_T02.flac
+     2:45.27       29169548 B   ---   --   ---xx   flac  0.5752  WTMD_D1_T03.flac
+     2:01.45       21450284 B   ---   --   ---xx   flac  0.4899  WTMD_D1_T04.flac
+    10:29.16      110993276 B   ---   --   ---xx   flac  0.6431  WTMD_D1_T05.flac
+     3:11.08       33711260 B   ---   --   ---xx   flac  0.6262  WTMD_D1_T06.flac
+     2:47.16       29496476 B   ---   --   ---xx   flac  0.5973  WTMD_D1_T07.flac
+     4:26.72       47091788 B   ---   --   ---xx   flac  0.5689  WTMD_D1_T08.flac
+     4:26.06       46936556 B   ---   --   ---xx   flac  0.5874  WTMD_D1_T09.flac
+     3:09.68       33499580 B   ---   --   ---xx   flac  0.6524  WTMD_D1_T10.flac
+     3:49.68       40555580 B   ---   --   ---xx   flac  0.4474  WTMD_D1_T11.flac
+     3:32.68       37556780 B   ---   --   ---xx   flac  0.6618  WTMD_D1_T12.flac
+     4:51.40       51426524 B   ---   --   ---xx   flac  0.6500  WTMD_D1_T13.flac
+     4:46.68       50610380 B   ---   --   ---xx   flac  0.5478  WTMD_D1_T14.flac
+     3:59.15       42194924 B   ---   --   ---xx   flac  0.6200  WTMD_D1_T15.flac
+     7:56.43       84067580 B   ---   --   ---xx   flac  0.5677  WTMD_D1_T16.flac
+     4:12.26       44513996 B   ---   --   ---xx   flac  0.5521  WTMD_D1_T17.flac
+     4:31.22       47856188 B   ---   --   ---xx   flac  0.6255  WTMD_D1_T18.flac
+     4:33.01       48159596 B   ---   --   ---xx   flac  0.5767  WTMD_D1_T19.flac
+    79:29.20      841299476 B                            0.5927  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd73-Where-The-Monkey-Dances.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.59        6489212 B   ---   --   ---xx   flac  0.6194  WTMD_D2_T01.flac
+     2:15.43       23915180 B   ---   --   ---xx   flac  0.5492  WTMD_D2_T02.flac
+     3:56.34       41710412 B   ---   --   ---xx   flac  0.5307  WTMD_D2_T03.flac
+     7:51.57       83218508 B   ---   --   ---xx   flac  0.5692  WTMD_D2_T04.flac
+     4:10.13       44130620 B   ---   --   ---xx   flac  0.6566  WTMD_D2_T05.flac
+     6:22.71       67551836 B   ---   --   ---xx   flac  0.6233  WTMD_D2_T06.flac
+     3:36.31       38175356 B   ---   --   ---xx   flac  0.5854  WTMD_D2_T07.flac
+     3:40.20       38855084 B   ---   --   ---xx   flac  0.6234  WTMD_D2_T08.flac
+     3:51.59       40887212 B   ---   --   ---xx   flac  0.5525  WTMD_D2_T09.flac
+     5:12.07       55053308 B   ---   --   ---xx   flac  0.6199  WTMD_D2_T10.flac
+     5:40.57       60110108 B   ---   --   ---xx   flac  0.6207  WTMD_D2_T11.flac
+     6:56.54       73509452 B   ---   --   ---xx   flac  0.5616  WTMD_D2_T12.flac
+     5:51.70       62081084 B   ---   --   ---xx   flac  0.6472  WTMD_D2_T13.flac
+     4:44.12       50125868 B   ---   --   ---xx   flac  0.6144  WTMD_D2_T14.flac
+     4:45.67       50431628 B   ---   --   ---xx   flac  0.6232  WTMD_D2_T15.flac
+     4:24.61       46713116 B   ---   --   ---xx   flac  0.4943  WTMD_D2_T16.flac
+     3:52.10       40948364 B   ---   --   ---xx   flac  0.6402  WTMD_D2_T17.flac
+    77:50.50      823906348 B                            0.5963  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-12-Neumann-AK40-KM100.flacf 
+=================== 
+=================== 
+=================== 
+2f062906ef3e2d8c28487c9dd2f7a2d4  bd05-11-12-Neumann-AK40-KM100-LB-3364.txt
+691e5cff5cb5ba53c823939c4e974b50  bd051112_d1t01.flac
+ec4253609a1761b575bc7838674adf56  bd051112_d1t02.flac
+b78a1547029012b5d47c2bd4d7a475ac  bd051112_d1t03.flac
+4eb7b6994579100caa7b936581d2d025  bd051112_d1t04.flac
+29aeb0df3f0e76e47a66d247f2dc8620  bd051112_d1t05.flac
+a3cc75c8522c29437979c8d75a4b5787  bd051112_d1t06.flac
+7c742f1d9dc20aa0f1f4802856cc0ec3  bd051112_d1t07.flac
+78ed9e1443fcbf90b2e13a7a4c3e7a04  bd051112_d1t08.flac
+b6b2fddfa1040a4e42e4dc326895d982  bd051112_d1t09.flac
+1f0a12e3abe4a6b720ca68b4cea8205d  bd051112_d1t10.flac
+50315eb1937d44101cfbdf0fa9bf7be6  bd051112_d1t11.flac
+137ae85ef60fcd301acc3c50ff09cdd9  bd051112_d1t12.flac
+1d360d2c632f118f03861a777f639176  bd051112_d2t01.flac
+3b6dd8d5169ee4323668320eabbe2c20  bd051112_d2t02.flac
+b9db309be5fbf3502ef1a94faf1a8d04  bd051112_d2t03.flac
+31d893ceb3ca809d7fce9e1f46733adb  bd051112_d2t04.flac
+66077ec1bd92ca70b0e861d655613f52  bd051112_ffp.txt
+93b7fed0c7e880c673e22072ec184295  bd051112_info.txt
+67ded779fcc6f91bdb04413e0054822b  Dylan 051112.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-12-Neumann-AK40-KM100.flacf 
+=================== 
+=================== 
+=================== 
+bd051112_d1t01.flac:b2549508a969d5a22d387bf43955fe8a
+bd051112_d1t02.flac:8b88d0fd030d8e951352751bdce6092a
+bd051112_d1t03.flac:a80eae1b1ac1e6b17e89c740f0cf86ba
+bd051112_d1t04.flac:052a697c340a8b57d55609a0c6976ba8
+bd051112_d1t05.flac:c4b14dbfca892fd7651a3ba2e3b3cc42
+bd051112_d1t06.flac:c5401e0b10214b4f170c5121154055ed
+bd051112_d1t07.flac:85a62cb2e791cdbd36f81e0da6d6e47f
+bd051112_d1t08.flac:8575687fcf7258549db5b42efacb9f14
+bd051112_d1t09.flac:1a40b159db202b14077d244d491daa52
+bd051112_d1t10.flac:a67b447b5305b8fb0d55481534312e52
+bd051112_d1t11.flac:e871d6740457c252963bd0f649882411
+bd051112_d1t12.flac:c64a0fea338155e963845db90e94174d
+bd051112_d2t01.flac:697e624941527ed040c50dfbe31573b2
+bd051112_d2t02.flac:53f94365dcc75b4983f5455bd4b94e0b
+bd051112_d2t03.flac:6a9669666ac56a877038fa53da612df2
+bd051112_d2t04.flac:2d0dbf87ed55a70849136266ac029b05
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-12-Neumann-AK40-KM100.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:14.13       66004220 B   ---   --   ---xx   flac  0.5428  bd051112_d1t01.flac
+     5:36.16       59308076 B   ---   --   ---xx   flac  0.4717  bd051112_d1t02.flac
+     5:26.61       57649916 B   ---   --   ---xx   flac  0.5297  bd051112_d1t03.flac
+     5:38.58       59759660 B   ---   --   ---xx   flac  0.5565  bd051112_d1t04.flac
+     7:10.42       75950828 B   ---   --   ---xx   flac  0.4090  bd051112_d1t05.flac
+     7:58.29       84387452 B   ---   --   ---xx   flac  0.5486  bd051112_d1t06.flac
+     6:45.61       71585516 B   ---   --   ---xx   flac  0.3904  bd051112_d1t07.flac
+     8:42.72       92250188 B   ---   --   ---xx   flac  0.5431  bd051112_d1t08.flac
+     5:48.06       61401356 B   ---   --   ---xx   flac  0.4455  bd051112_d1t09.flac
+     6:34.16       69539276 B   ---   --   ---xx   flac  0.5425  bd051112_d1t10.flac
+     7:41.56       81452156 B   ---   --   ---xx   flac  0.5157  bd051112_d1t11.flac
+     5:31.40       58482524 B   ---   --   ---xx   flac  0.4817  bd051112_d1t12.flac
+     6:29.22       68671388 B   ---   --   ---xx   flac  0.4782  bd051112_d2t01.flac
+    10:53.13      115219820 B   ---   --   ---xx   flac  0.4998  bd051112_d2t02.flac
+     6:49.00       72147644 B   ---   --   ---xx   flac  0.4823  bd051112_d2t03.flac
+     5:16.51       55862396 B   ---   --   ---xx   flac  0.5633  bd051112_d2t04.flac
+   108:37.31     1149672416 B                            0.5001  (16 files)
+=================== 
+=================== 
+=================== 

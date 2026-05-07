@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-07-MM.flacf 
+=================== 
+=================== 
+=================== 
+0b5b4d0c56d61690155fceb1f1119d5b  bd98-06-07-MM-LB-4373.txt
+8faa446fd208c9b9ce14460e96fb3f56  Oslo-1998-06-07.md5
+366ea8dabd649a5df3b6140941eccc9d  Oslo.txt
+518fd0e697b761d8df074f74a8744eeb  Track101.flac
+7aeecc8bd9adc21382706a88bdab766e  Track102.flac
+f78a1359cd10991d9a20714c2ee55d1b  Track103.flac
+7a52efeb73033937033a633b2acb23fe  Track104.flac
+1054c7173715cf51e7d7075f71dbb9d7  Track105.flac
+37185e41cc47d6cd44bc448708bb8b47  Track106.flac
+e8cf2d7f317877a41a5c46a4507e2396  Track107.flac
+280b84bcf5e2c52f711b54277bd7191f  Track108.flac
+c09ca13daaaabb4102dd9aa83ffd45eb  Track109.flac
+cabb22105e81c82c170a828cc1ed1ced  Track110.flac
+72ec4fc23ae568aadd9c0ed9d0322869  Track111.flac
+0cd36273d9b4b3b3f188f2d786480adb  Track112.flac
+09402b9a1beee15e576f52b11e79b245  Track201.flac
+0f78b48be928ad7dbd4491b111eee1f1  Track202.flac
+b45e4d77fb7bea6e3b1825fb65850382  Track203.flac
+c0fe33ce731252d91dafef75f9a033bd  Track204.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-07-MM.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:2977be186aa5f146838855e1bf9ba971
+Track102.flac:c236f40dfe0123748be8f46e0722b29c
+Track103.flac:c2f74933501a2f1ff9048b424cc58999
+Track104.flac:aff6c1d3ce47c2b39ccb8af29d4bdb3f
+Track105.flac:b92e8ae4566642423c66e7c15dd2d2e9
+Track106.flac:a6cc7a85fd12a25de589f907aa519181
+Track107.flac:a93bc51a853b10e48d6ca3dcbd0bf263
+Track108.flac:b6ed7af5079d8ad2dce68fdced423b8d
+Track109.flac:6ad1bb0dd8abb95b31083438b1542932
+Track110.flac:98fd34463700a766a91610ef0b09863f
+Track111.flac:7441283657b46d4161005e0749f10425
+Track112.flac:08ae90a06f49ac7d809c7457ff523511
+Track201.flac:f08c0c97663bbe9c36e60a79b9cc98f8
+Track202.flac:6cc8d459f99c9e178cb4cfee1d40d7bc
+Track203.flac:443c9e7ed122eff1cdcdd8317d48b824
+Track204.flac:c8f95c45385601fbc1a73e426d7e100e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-07-MM.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:45.17        7978028 B   ---   --   ---xx   flac  0.4646  Track101.flac
+     5:58.34       63231212 B   ---   --   ---xx   flac  0.5613  Track102.flac
+     5:34.35       58999964 B   ---   --   ---xx   flac  0.5974  Track103.flac
+     7:06.22       75198188 B   ---   --   ---xx   flac  0.5885  Track104.flac
+     8:18.22       87898988 B   ---   --   ---xx   flac  0.5798  Track105.flac
+     6:46.01       71620796 B   ---   --   ---xx   flac  0.6284  Track106.flac
+     3:38.13       38485820 B   ---   --   ---xx   flac  0.5404  Track107.flac
+     7:07.18       75365180 B   ---   --   ---xx   flac  0.5671  Track108.flac
+     5:55.02       62626748 B   ---   --   ---xx   flac  0.5446  Track109.flac
+     8:19.27       88087148 B   ---   --   ---xx   flac  0.6448  Track110.flac
+     4:28.23       47329340 B   ---   --   ---xx   flac  0.5085  Track111.flac
+     7:12.57       76338908 B   ---   --   ---xx   flac  0.5989  Track112.flac
+     6:52.60       72817964 B   ---   --   ---xx   flac  0.6069  Track201.flac
+     5:17.54       56045852 B   ---   --   ---xx   flac  0.5828  Track202.flac
+     5:55.25       62680844 B   ---   --   ---xx   flac  0.6170  Track203.flac
+     4:55.63       52186220 B   ---   --   ---xx   flac  0.5540  Track204.flac
+    94:11.23      996891200 B                            0.5852  (16 files)
+=================== 
+=================== 
+=================== 

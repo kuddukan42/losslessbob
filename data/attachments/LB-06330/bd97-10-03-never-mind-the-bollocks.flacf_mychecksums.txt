@@ -1,0 +1,53 @@
+970de78575e72913eaeccc29b94927bf  bd97-10-03-never-mind-the-bollocks-LB-6330.txt
+338a54c1f7136c2aa4a0296c20da81e9  bd97-10-03-never-mind-the-bollocks.flacf.md5
+766d3b572b155f6960b442618809efe8  bd97-10-03-nevermindboll-d1t01.flac
+915dfaa1b201f06ac53edfe78c00d249  bd97-10-03-nevermindboll-d1t02.flac
+6f02d1fb9fa4029056552fb3fea5e76a  bd97-10-03-nevermindboll-d1t03.flac
+0f0a085fe930c0e576df776b2cf0d739  bd97-10-03-nevermindboll-d1t04.flac
+f406bbeb7124fb9b793b2a1ddac9d460  bd97-10-03-nevermindboll-d1t05.flac
+1a1f4965f306e7f9f6f87d42e145de1f  bd97-10-03-nevermindboll-d1t06.flac
+092fbd5e0377509de5e46785cd10f924  bd97-10-03-nevermindboll-d1t07.flac
+112319c6d3d47e8df8fff535859298fb  bd97-10-03-nevermindboll-d1t08.flac
+d9cc1264d69f2f469dc51ee34654dc08  bd97-10-03-nevermindboll-d1t09.flac
+4779f81b769ad38c2a99cf6e4bee5a6f  bd97-10-03-nevermindboll-d1t10.flac
+91ce9953660f7141b28a442424934f7c  bd97-10-03-nevermindboll-d1t11.flac
+89a60bbd774f682f46fcd4e626bfb91d  bd97-10-03-nevermindboll-d1t12.flac
+31f5c80a1ae86b66bd693943bc6a6fde  bd97-10-03-nevermindboll-d2t01.flac
+042ef1c9340a0f33399e41aadd83d3c2  bd97-10-03-nevermindboll-d2t02.flac
+f1a8ab5d26398f29989b2d5bd8791597  bd97-10-03-nevermindboll-d2t03.flac
+dcde0ab862bfe7c6e49b06b107fae497  bd97-10-03-nevermindboll-d2t04.flac
+22117f9aca8b42d8899bd281f0138a50  bd97-10-03-nevermindboll-d2t05.flac
+966fd48fd4513125397c6227a09b563f  bd97-10-03-nevermindboll-d2t06.flac
+49c266749c52093d3f0fa64816e014d2  bd97-10-03-nevermindboll-d2t07.flac
+8041a2be2a04878edf1deb9084dbd463  bd97-10-03-nevermindboll-d2t08.flac
+92f933ae640999fb1b8281f6bf376a2f  bd97-10-03-nevermindboll-d2t09.flac
+6e8851aad75357df78f0824a61dd9eea  bd97-10-03-nevermindboll-d2t10.flac
+80fd61ba826c63727ead5319e89b857f  bd97-10-03-nevermindboll-d2t11.flac
+99b7885bde5a57f1a32044b92463038d  bd97-10-03-nevermindboll-d2t12.flac
+446720a42983c026643f70f1dd272674  bd97-10-03-nevermindboll-d2t13.flac
+
+bd97-10-03-nevermindboll-d1t01.flac:d672c5fddb2688f3760819772dbfc26f
+bd97-10-03-nevermindboll-d1t02.flac:0696cd4422a7e906f97d52449d554392
+bd97-10-03-nevermindboll-d1t03.flac:9c8d986cd76d5233896ca160bbfc253a
+bd97-10-03-nevermindboll-d1t04.flac:5c23e828c5995ee092d4ca25cf31e9a6
+bd97-10-03-nevermindboll-d1t05.flac:b9810806aef483be6bbf5ca64be24476
+bd97-10-03-nevermindboll-d1t06.flac:35fcb5e7eaba0f94898457387c2ef2c5
+bd97-10-03-nevermindboll-d1t07.flac:f72d626433eccfd08f3494db94880fd3
+bd97-10-03-nevermindboll-d1t08.flac:0f2a79f5f5e2b80de2a8a6d310393199
+bd97-10-03-nevermindboll-d1t09.flac:1f564d1aeb6721ebd95396e1d5f57572
+bd97-10-03-nevermindboll-d1t10.flac:0935cfb396238a92e88e3b213f13a9c4
+bd97-10-03-nevermindboll-d1t11.flac:dd4ed9d0abff73c09cad97416913ff02
+bd97-10-03-nevermindboll-d1t12.flac:cfd714a4126a8b77510f0edc2f05e2db
+bd97-10-03-nevermindboll-d2t01.flac:4ac2798cd7c98d196fbe32a17f4d0ba5
+bd97-10-03-nevermindboll-d2t02.flac:2bc9ce3a17a272c1887b45a1003ac955
+bd97-10-03-nevermindboll-d2t03.flac:62ba79340f0741a5ed37bacca1b1734e
+bd97-10-03-nevermindboll-d2t04.flac:5875498622f8761810b7478e1fdac0a4
+bd97-10-03-nevermindboll-d2t05.flac:6f5a81bf93fc72c117e6ce115b2f143e
+bd97-10-03-nevermindboll-d2t06.flac:3cb9c9073c25a369d89ce07c1635262a
+bd97-10-03-nevermindboll-d2t07.flac:95357de8ef53236f9cd19d6edc17cbde
+bd97-10-03-nevermindboll-d2t08.flac:fbd0e5ca2d829bb647dc874127259545
+bd97-10-03-nevermindboll-d2t09.flac:a5a6969371b7ba17a617f794f9e7d487
+bd97-10-03-nevermindboll-d2t10.flac:a92f56e084903d0dd079d6ee6bbdc754
+bd97-10-03-nevermindboll-d2t11.flac:8985b030cfe2ec2d94c46a0bbf76a7d2
+bd97-10-03-nevermindboll-d2t12.flac:1f9ef58947417e7ee6b8a9784da712fd
+bd97-10-03-nevermindboll-d2t13.flac:aa6d753a2d132d121d9ac59232de096e

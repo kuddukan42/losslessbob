@@ -1,0 +1,118 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-02-19-afternoon-aud-master.flacf 
+=================== 
+=================== 
+=================== 
+23691986f1ce0a33de2c2699356b8f3a  01 Bill Graham intro.flac
+9917ebffce9883e54a6a9251f8aed1dd  02 Most Likely You Go Your Way (And I'll Go Mine).flac
+d86931b3d966d98f28e786ebff863b3c  03 Lay Lady Lay.flac
+6101371e6551ff60cf5ac7517261b9fb  04 Just Like Tom Thumb's Blues.flac
+cf5034898235d68972a6e8a54af220b2  05 Leopard Skin Pill Box Hat.flac
+4c0dc2df7ec7fe43b5f731ff35bfae3f  06 It Ain't Me Babe.flac
+c645b820c728c5c50cbf902f2efa9a42  07 Ballad of a Thin Man.flac
+af5225b76ba2dfeba21ea1ac63023db7  08 Stage Fright.flac
+6de37b512d5492bf2d52dc4b09c84362  09 The Night They Drove Old Dixie Down.flac
+24f9dc0bbabbdd404c10897d111ed14a  10 King Harvest.flac
+4128624b5fcb0caae949a6ef25a3e305  11 This Wheel's on Fire.flac
+60a8f83b8885c54e739c9106b36746e9  12 I Shall be Released.flac
+639c1b79ca6ad9b0c47674b0b78eb559  13 Up on Cripple Creek.flac
+fe20066aab8b705e6d7b8b3558a484a2  14 All Along the Watchtower.flac
+97c4f3c8e0a6ce9c4155c9198a6378fa  15 Ballad of Hollis Brown.flac
+11a5f13d770d8e4f734ad5a3d02c32fd  16 Knockin' on Heaven's Door.flac
+49461524c071731ce2bdb00a6db18d12  17 The Times They Are a Changing.flac
+0259881d152141569101368fcfb66de3  18 Don't Think Twice, It's All Right.flac
+439c93224c8582b26aab668cb6188bec  19 Gates of Eden.flac
+f9dac451f7e773421d81a7ca5a9520de  20 Just Like a Woman.flac
+98da306935dcea26595c4693e6a56dec  21 It's All Right Ma.flac
+450297a6ece50b3472f92beea8795b14  22 Rag Mama Rag.flac
+ce06640fc469171e5c28b9f264ef18c6  23 Loving You is Sweeter than Ever.flac
+cb46337796528f6324bf178125347e84  24 The Shape I'm In.flac
+b7a53cf3603f70f832107a4984a10912  25 The Weight.flac
+2ee7903cd143c191670725f955d05249  26 Forever Young.flac
+0840dcceabfae90c9aee18c6411b448a  27 Something There is About You.flac
+a2d76454d51c019387cf0055ada93c3d  28 Like a Rolling Stone.flac
+f8828d62d63fdb2b1c2a0d5789045e7d  29 Most Likely You Go Your Way (And I'll Go Mine).flac
+c7a5ce181d3f959957662d832750f10d  bd74-02-19-afternoon-aud-master-LB-3727.txt
+3378e55031cf8d1679fa5fce6bc0579a  Bob Dylan and The Band Hollywood Sportatorium, Hollywood, Florida, 19 January 1974 - Afternoon.md5
+acde20d9b3b97926b347e92ad2500c6e  Bob Dylan and The Band Hollywood Sportatorium, Hollywood, Florida, 19 January 1974 - Afternoon.txt
+b37dbe83adcbc98447bd99d726c128c2  Dylan - The Band Miami 1-19-74a reel box.jpg
+6be11c4603efb2ef4f42a30617ff831f  Dylan - The Band Miami 1-19-74a reel.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-02-19-afternoon-aud-master.flacf 
+=================== 
+=================== 
+=================== 
+01 Bill Graham intro.flac:fd7cf7ad919191c0ef4f4cd4328c5795
+02 Most Likely You Go Your Way (And I'll Go Mine).flac:4f02e023af525d7ab2099a6beac542c0
+03 Lay Lady Lay.flac:45fded2a7162074b489992090c47a123
+04 Just Like Tom Thumb's Blues.flac:38d83fbb91f748bbd3cc3bec6190c595
+05 Leopard Skin Pill Box Hat.flac:986b220d6a1eaff7b7cf0b022050c58e
+06 It Ain't Me Babe.flac:c9883a52abe9a6960e4fceb5ab07c49d
+07 Ballad of a Thin Man.flac:f370d5e59434dd991ad417ac29964376
+08 Stage Fright.flac:9731eb2ebac7faf4e92dea0e986c8701
+09 The Night They Drove Old Dixie Down.flac:697abeae54250f7f8408a1ba951e178b
+10 King Harvest.flac:edc158de761f63c965240e380aa4f749
+11 This Wheel's on Fire.flac:6aead5b44ab8e2bb68f35c2a8f442b86
+12 I Shall be Released.flac:8eb68f41f32a9bf85a52a3ee5c8fb73b
+13 Up on Cripple Creek.flac:e288d6aa5a35d363015abd689aabc1f3
+14 All Along the Watchtower.flac:62a24e5098ffbbb249dfa067a5496d2e
+15 Ballad of Hollis Brown.flac:fd44f524a0ac1ebf63b880a3d2be9d1b
+16 Knockin' on Heaven's Door.flac:214402fee3d0a56c1b2dfa4bdfc33d05
+17 The Times They Are a Changing.flac:76356d847f71d77a8bcd419c009f8100
+18 Don't Think Twice, It's All Right.flac:8f273621af135d9f52ff606f85ed9a84
+19 Gates of Eden.flac:4b86bbdee8b2cab1ef3d153b3f040d2a
+20 Just Like a Woman.flac:5a7fd1e2cd73b656ea049a59b92713b3
+21 It's All Right Ma.flac:d06612e72fbf2eb911deb3eeb0f02da9
+22 Rag Mama Rag.flac:ac3522149a8b50776c353f6e706a04d9
+23 Loving You is Sweeter than Ever.flac:bf1c0faf9ea7f4f5423d98d4d813cac6
+24 The Shape I'm In.flac:b2bd445a8c262755e2d762e9a2210e6a
+25 The Weight.flac:69c8d8a618e622c1d74a13c9c996f935
+26 Forever Young.flac:0dd9527d1fc0bf9e6e7c20bd53cd87c0
+27 Something There is About You.flac:aeeae1dae4151cdb76db66f8b6fd3a56
+28 Like a Rolling Stone.flac:7e44360e5f055634569e444ca1837e40
+29 Most Likely You Go Your Way (And I'll Go Mine).flac:05fb502195de83c5173c8ef7ffb1eaad
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-19-afternoon-aud-master.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:17.42       13681628 B   ---   --   ---xx   flac  0.5336  01 Bill Graham intro.flac
+     3:45.31       39762956 B   ---   --   ---xx   flac  0.6030  02 Most Likely You Go Your Way (And I'll Go Mine).flac
+     3:15.19       34442732 B   ---   --   ---xx   flac  0.6081  03 Lay Lady Lay.flac
+     6:26.03       68097500 B   ---   --   ---xx   flac  0.6033  04 Just Like Tom Thumb's Blues.flac
+     3:28.01       36693596 B   ---   --   ---xx   flac  0.6140  05 Leopard Skin Pill Box Hat.flac
+     3:58.20       42030284 B   ---   --   ---xx   flac  0.6071  06 It Ain't Me Babe.flac
+     4:07.10       43594364 B   ---   --   ---xx   flac  0.6007  07 Ballad of a Thin Man.flac
+     4:53.54       51812252 B   ---   --   ---xx   flac  0.6219  08 Stage Fright.flac
+     4:54.41       51958076 B   ---   --   ---xx   flac  0.5979  09 The Night They Drove Old Dixie Down.flac
+     3:43.33       39414860 B   ---   --   ---xx   flac  0.5886  10 King Harvest.flac
+     3:55.51       41573996 B   ---   --   ---xx   flac  0.5979  11 This Wheel's on Fire.flac
+     3:53.25       41160044 B   ---   --   ---xx   flac  0.5625  12 I Shall be Released.flac
+     4:59.15       52778924 B   ---   --   ---xx   flac  0.5973  13 Up on Cripple Creek.flac
+     3:14.62       34367468 B   ---   --   ---xx   flac  0.6061  14 All Along the Watchtower.flac
+     3:54.51       41397596 B   ---   --   ---xx   flac  0.6201  15 Ballad of Hollis Brown.flac
+     3:53.41       41197676 B   ---   --   ---xx   flac  0.5952  16 Knockin' on Heaven's Door.flac
+     3:50.34       40652012 B   ---   --   ---xx   flac  0.5307  17 The Times They Are a Changing.flac
+     3:51.32       40823708 B   ---   --   ---xx   flac  0.5383  18 Don't Think Twice, It's All Right.flac
+     4:21.11       46066316 B   ---   --   ---xx   flac  0.5178  19 Gates of Eden.flac
+     4:34.60       48474764 B   ---   --   ---xx   flac  0.5207  20 Just Like a Woman.flac
+     5:53.23       62323340 B   ---   --   ---xx   flac  0.5354  21 It's All Right Ma.flac
+     4:50.13       51186620 B   ---   --   ---xx   flac  0.5270  22 Rag Mama Rag.flac
+     3:37.74       38452892 B   ---   --   ---xx   flac  0.5526  23 Loving You is Sweeter than Ever.flac
+     4:09.19       43968332 B   ---   --   ---xx   flac  0.5500  24 The Shape I'm In.flac
+     5:31.13       58419020 B   ---   --   ---xx   flac  0.5463  25 The Weight.flac
+     5:18.60       56236364 B   ---   --   ---xx   flac  0.5551  26 Forever Young.flac
+     4:54.38       51951020 B   ---   --   ---xx   flac  0.5765  27 Something There is About You.flac
+     7:34.15       80120924 B   ---   --   ---xx   flac  0.5908  28 Like a Rolling Stone.flac
+     3:39.04       38641052 B   ---   --   ---xx   flac  0.5845  29 Most Likely You Go Your Way (And I'll Go Mine).flac
+   125:46.70     1331280316 B                            0.5754  (29 files)
+=================== 
+=================== 
+=================== 

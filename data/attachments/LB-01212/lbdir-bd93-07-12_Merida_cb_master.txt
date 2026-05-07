@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-12_Merida_cb_master 
+=================== 
+=================== 
+=================== 
+c58e0e39d73fac7792d2724139c5f0cd  bd93-07-12.txt
+f6552e4689367d5aa8da68a1f7b0b1c3  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 1.shn
+e96dbc206bec5796f97362286419652d  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 2.shn
+f48eed3481a01ea69805d6fa34033208  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 3.shn
+8847b8c52e784543f7018717c93259f8  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 4.shn
+442352a0e4fcfda387de7aa7a3713ba8  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 5.shn
+5fce1e33f2046dd15dcaf6bf3b1214ff  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 6.shn
+017a7ae150250158237c73f144b51ab4  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 7.shn
+2e679dea97875b5ff1fcc879da8c3014  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 8.shn
+7e18d0f9b49a319a66423b874fef9fea  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_Track 9.shn
+000c68e112ab97b7c9a5b60235e55e94  bd_93-07-12_cd1.shnf\bd_93-07-12_cd1_shn.md5
+5742bbd2291b4dd1eeb4e2ceb67b695e  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_Track 1.shn
+26b06f226f43c35113eb76b7d5965ca1  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_Track 2.shn
+4313f054d7b309c98ec43aa3f67ac122  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_Track 3.shn
+b1b4d4b2af1e3e841c555de3d29287a5  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_Track 4.shn
+ff332f3ebc21de53c5b696ba6b210033  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_Track 5.shn
+55fc2f6d3755e070e727ed8835e550ba  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_Track 6.shn
+b1cb3b77003bafa5667a4e8dac5a7ad0  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_Track 7.shn
+5465adcb0a388b12c3fcc31a800beac0  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_Track 8.shn
+d044bf1af57b5f8448be6dd064852d4d  bd_93-07-12_cd2.shnf\bd_93-07-12_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-07-12_Merida_cb_master\bd_93-07-12_cd1.shnf 
+=================== 
+=================== 
+=================== 
+51a2b7a52bae0abe2bb740b9db240834  [shntool]  bd_93-07-12_cd1_Track_1.wav
+feda46816592f0aeb477d00df8563ffc  [shntool]  bd_93-07-12_cd1_Track_2.wav
+b6610d536998fff0110d821eaaf5fb57  [shntool]  bd_93-07-12_cd1_Track_3.wav
+43445681cb9703624fc8c850041a7bed  [shntool]  bd_93-07-12_cd1_Track_4.wav
+d3a122eabc08cf497885563f0601b508  [shntool]  bd_93-07-12_cd1_Track_5.wav
+20eef58ea28d5d8a08f6c347a105d380  [shntool]  bd_93-07-12_cd1_Track_6.wav
+1ee03446e8191cdb2560aefc67dd3cf4  [shntool]  bd_93-07-12_cd1_Track_7.wav
+c3e5a88331e7dbc7e099a56570d28be7  [shntool]  bd_93-07-12_cd1_Track_8.wav
+94843989ee019a52d9b19876e56b69a9  [shntool]  bd_93-07-12_cd1_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-07-12_Merida_cb_master\bd_93-07-12_cd2.shnf 
+=================== 
+=================== 
+=================== 
+b2557e34845be508384db61a0947b1f2  [shntool]  bd_93-07-12_cd2_Track_1.wav
+4dd4346e09aabe95258767282df67774  [shntool]  bd_93-07-12_cd2_Track_2.wav
+6cf300db356707875678702ee497c03c  [shntool]  bd_93-07-12_cd2_Track_3.wav
+b66ebddbf6c8ba30267c6ac5caaf1a6b  [shntool]  bd_93-07-12_cd2_Track_4.wav
+abbd35327c140435309ebf4c922cdbfa  [shntool]  bd_93-07-12_cd2_Track_5.wav
+78d97e8df84347d145062a68002fc803  [shntool]  bd_93-07-12_cd2_Track_6.wav
+9982b5bdf6acd8d35010a0fff1633643  [shntool]  bd_93-07-12_cd2_Track_7.wav
+d8f743c825e830c928beb50adedfda29  [shntool]  bd_93-07-12_cd2_Track_8.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-12_Merida_cb_master\bd_93-07-12_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.52       55512030 B   ---   -e   ---xx    shn  0.5298  bd_93-07-12_cd1_Track 1.shn
+     9:13.07       97565790 B   ---   -e   ---xx    shn  0.6273  bd_93-07-12_cd1_Track 2.shn
+     7:23.38       78234702 B   ---   -e   ---xx    shn  0.6529  bd_93-07-12_cd1_Track 3.shn
+     7:39.03       80974782 B   ---   -e   ---xx    shn  0.6468  bd_93-07-12_cd1_Track 4.shn
+    13:34.24      143646174 B   ---   -e   ---xx    shn  0.6519  bd_93-07-12_cd1_Track 5.shn
+     9:19.10       98631246 B   ---   -e   ---xx    shn  0.5938  bd_93-07-12_cd1_Track 6.shn
+     6:43.67       71246910 B   ---   -e   ---xx    shn  0.5708  bd_93-07-12_cd1_Track 7.shn
+     6:31.45       69078366 B   ---   -e   ---xx    shn  0.4680  bd_93-07-12_cd1_Track 8.shn
+     5:24.68       57313662 B   ---   -e   ---xx    shn  0.4812  bd_93-07-12_cd1_Track 9.shn
+    71:04.14      752203662 B                            0.5941  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-12_Merida_cb_master\bd_93-07-12_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:14.22       97777470 B   ---   -e   ---xx    shn  0.5191  bd_93-07-12_cd2_Track 1.shn
+     9:01.27       95496030 B   ---   -e   ---xx    shn  0.5454  bd_93-07-12_cd2_Track 2.shn
+     7:48.31       82628238 B   ---   -e   ---xx    shn  0.6195  bd_93-07-12_cd2_Track 3.shn
+     9:31.60      100865646 B   ---   -e   ---xx    shn  0.6468  bd_93-07-12_cd2_Track 4.shn
+     7:36.57       80572590 B   ---   -e   ---xx    shn  0.5870  bd_93-07-12_cd2_Track 5.shn
+     7:02.10       74464446 B   ---   -e   ---xx    shn  0.6392  bd_93-07-12_cd2_Track 6.shn
+     7:37.08       80633742 B   ---   -e   ---xx    shn  0.6027  bd_93-07-12_cd2_Track 7.shn
+    11:00.01      116426478 B   ---   -e   ---xx    shn  0.4960  bd_93-07-12_cd2_Track 8.shn
+    68:51.66      728864640 B                            0.5769  (8 files)
+=================== 
+=================== 
+=================== 

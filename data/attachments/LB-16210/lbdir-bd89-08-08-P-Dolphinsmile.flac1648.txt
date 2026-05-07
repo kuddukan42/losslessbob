@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd89-08-08-P-Dolphinsmile.flac1648
+===================
+===================
+===================
+3751cdedbcbf48f0fc4e44f5ea2a6eff *01 Most Likely You ll Go.flac
+0a822a06afe90b4924a4e8232a265686 *02 Tears Of Rage.flac
+520973866fce72069171f71a98a61101 *03 Gotta Serve Somebody.flac
+38cf107a128be8c4787b2cd2d9536950 *04 Youre A Big Girl Now.flac
+78ab2cd9775e90c6cd31681e1415deba *05 Just Like A Woman.flac
+1a4841257a80f98ee0b44983dc3ac7ad *06 All Along The Watchtower.flac
+5c1010b9e156e9641581aad48fc423ba *07 Gates Of Eden.flac
+11f2aff51b20c4ac277f7aac5563b476 *08 Mama You Been On My Mind.flac
+d1831ac603f145b7c7d343a4e747bc8e *09 One Too Many Mornings.flac
+8a79ed478c92c5584b324d13f397fb17 *10 Im In The Mood For Love.flac
+5264840175e1aef01f9a86b712554b52 *11 Tamborine Man.flac
+b4944f146d5158cd6862accc4ffca065 *12 Leopard Skin Pillbox Hat.flac
+fb31f0550502282cd4dacb8bf92d0c9a *13 I Shall Be Released.flac
+5f84c886552d38dbd41e1b625b3d55ab *14 Silvio.flac
+03ccdf6d0d92d4afaedd1e76ddf1e1cf *15 Like A Rolling Stone.flac
+e52ed2755c00474266701c87163aed7f *16 Barbara Allen.flac
+5d3bc999a1818c04d75a51754aa0af96 *17 Maggies Farm.flac
+62ac2c5d52b060b13a27de2dd457d3ee *Bob Dylan John Savage Hall Toledo OH 1989-08-08 Dolphinsmile Archive.ffp
+8befd5f9720291216ac98c1f40647e3c *Bob Dylan John Savage Hall Toledo OH 1989-08-08 Dolphinsmile Archive.md5
+62ac2c5d52b060b13a27de2dd457d3ee *Bob Dylan John Savage Hall Toledo OH 1989-08-08 Dolphinsmile Archive.txt
+c9a2b1417916212a229987c6c724d743 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-08-08-P-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Most Likely You ll Go.flac:7de4c83f861bbc81a8b85067aa1fa923
+02 Tears Of Rage.flac:90158ce674f3209ff0523754606bd16a
+03 Gotta Serve Somebody.flac:c13d3a65f6d37556d9c406995e672f18
+04 Youre A Big Girl Now.flac:c133c1ff542c8b912befb060290fba05
+05 Just Like A Woman.flac:59e43193e26728f9ef7c4e3fc8c80ae7
+06 All Along The Watchtower.flac:2a136d4f3781f557144d9f0ec1da8c03
+07 Gates Of Eden.flac:beef4b0561b3e5c2ada898907a8e96cd
+08 Mama You Been On My Mind.flac:476c407ffb26f01f03099b4803baa06e
+09 One Too Many Mornings.flac:ed57355dd3281029594569c56f80d8a5
+10 Im In The Mood For Love.flac:77d91940ae6b5121fe6e7db454ed62d9
+11 Tamborine Man.flac:be69f6ff4d4d8c016a622879f627fdef
+12 Leopard Skin Pillbox Hat.flac:c7094eb6a0b542ae1a4ca7482782b70b
+13 I Shall Be Released.flac:3fc86bed45a20db3406520835a388973
+14 Silvio.flac:456dabd769889449721a2c3e4242fd0f
+15 Like A Rolling Stone.flac:228ddc1e606ec55e4c0f70bd7069c44f
+16 Barbara Allen.flac:4a6ffc24937971f6185c57ab7136d7cf
+17 Maggies Farm.flac:b3fec7d3dd72182d1294e6695712f627
+===================
+===================
+===================
+=== shntool len for: bd89-08-08-P-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.364      76101964 B   cxx   --   ---xx   flac  0.6299  01 Most Likely You ll Go.flac
+     6:15.110      72021168 B   cxx   --   ---xx   flac  0.6199  02 Tears Of Rage.flac
+     7:18.247      84143524 B   cxx   --   ---xx   flac  0.6378  03 Gotta Serve Somebody.flac
+     5:14.647      60412260 B   cxx   --   ---xx   flac  0.6148  04 Youre A Big Girl Now.flac
+     6:37.558      76331252 B   cxx   --   ---xx   flac  0.6463  05 Just Like A Woman.flac
+     4:11.682      48322900 B   cxx   --   ---xx   flac  0.6683  06 All Along The Watchtower.flac
+     6:45.843      77921952 B   cxx   --   ---xx   flac  0.5871  07 Gates Of Eden.flac
+     5:53.491      67870372 B   cxx   --   ---xx   flac  0.6017  08 Mama You Been On My Mind.flac
+     7:00.937      80819960 B   cxx   --   ---xx   flac  0.5781  09 One Too Many Mornings.flac
+     5:02.010      57985932 B   cxx   --   ---xx   flac  0.5885  10 Im In The Mood For Love.flac
+     7:42.287      88759108 B   cxx   --   ---xx   flac  0.5919  11 Tamborine Man.flac
+     4:13.572      48685844 B   cxx   --   ---xx   flac  0.6561  12 Leopard Skin Pillbox Hat.flac
+     4:48.083      55311900 B   cxx   --   ---xx   flac  0.6486  13 I Shall Be Released.flac
+     4:42.820      54301420 B   cxx   --   ---xx   flac  0.6629  14 Silvio.flac
+     7:29.131      86233168 B   cxx   --   ---xx   flac  0.6651  15 Like A Rolling Stone.flac
+     6:15.076      72014604 B   cxx   --   ---xx   flac  0.5765  16 Barbara Allen.flac
+     8:01.437      92435936 B   cxx   --   ---xx   flac  0.6283  17 Maggies Farm.flac
+   104:08.294    1199673264 B                            0.6216  (17 files)
+===================
+===================
+===================

@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd99-07-22-c.flacf
+===================
+===================
+===================
+1db3022eca6b48c429648d794cf37d3f *CD1\01 Oh baby it ain't no lie.flac
+22e0ca2b91ebaffaab37dc16b7380e07 *CD1\02 My back pages.flac
+0c4d5e9eebae1858bffcef06d650a66e *CD1\03 Masters of war.flac
+1727f998e9714b662d88058d58d51748 *CD1\04 Tangled up in blue.flac
+2160301f742a59ebc140910328e2ddb2 *CD1\05 Girl from the North Country.flac
+2b54a50467835a7fdd1b2a1b86c67ac7 *CD1\06 All along the watchtower.flac
+30a263387948a2946ba9d45c85a38a83 *CD1\07 Positively 4th Street.flac
+302a93dbd6a39dcaa1627614336d086d *CD1\08 Maggie's farm.flac
+29cc12af3a13b27af7208159edce24d3 *CD1\09 Not dark yet.flac
+69aa112efe0a69b8b72c904f0d4f1379 *CD1\10 Silvio.flac
+0ae8af3dd16aaaa11bead0b432e73f54 *CD1\11 Like a rolling stone.flac
+ffd466e1f126dc38a97e5dff8f41e301 *CD1\CD1.md5
+202b2a1c156420ccd0a91bd8533427ce *CD2\01 It ain't me, babe.flac
+32ccba0d3699cb4d8ab26a674c147072 *CD2\02 The sound of silence [Dylan & Simon].flac
+190f9c3ca229a4c32b9d1fb44b36eb06 *CD2\03 That'll be the day [Dylan & Simon].flac
+be7cd4c421925b1b7c0093badc99947c *CD2\04 The wanderer [Dylan & Simon].flac
+99e826b0043cfa36d721d36aa0778056 *CD2\05 Knockin' on heaven's door [Dylan & Simon].flac
+a83af55655bc0e37a2735f088818749a *Info\info.txt
+===================
+===================
+===================
+=== ffp for: bd99-07-22-c.flacf
+===================
+===================
+===================
+CD1\01 Oh baby it ain't no lie.flac:6e5fa9b8f268828541153aa19d8121f9
+CD1\02 My back pages.flac:f111dcf7f09f0f7501548807ced8276f
+CD1\03 Masters of war.flac:7b8220fe03081695770d950c5af43c08
+CD1\04 Tangled up in blue.flac:d3429afc58d53af7af570225ccf47ec0
+CD1\05 Girl from the North Country.flac:6942410b893ab3f47384b4dbd30f53a2
+CD1\06 All along the watchtower.flac:7a3d7db482ad08942705ab8049580aa0
+CD1\07 Positively 4th Street.flac:7f1a87c7fa32162865f01af04a96b226
+CD1\08 Maggie's farm.flac:7a215d9be2b9e5c82f175731b01c9fd0
+CD1\09 Not dark yet.flac:0afd656598c162622c4572acd9a8c4f8
+CD1\10 Silvio.flac:6f7dae9b8db0a8d92266248023ce6acf
+CD1\11 Like a rolling stone.flac:94718a99e70c87e13254d4c012bd58c6
+CD2\01 It ain't me, babe.flac:763c0ed741d2f65737c86344876e7812
+CD2\02 The sound of silence [Dylan & Simon].flac:4a35b7ce87c992a5d6cae7e5343c5c55
+CD2\03 That'll be the day [Dylan & Simon].flac:289ef7093a66c2eb460158695abb29b1
+CD2\04 The wanderer [Dylan & Simon].flac:842d23d2896227fe83441a51553e1ebd
+CD2\05 Knockin' on heaven's door [Dylan & Simon].flac:c636253affd8cd23cb9bd7e9cc50a823
+===================
+===================
+===================
+=== shntool len for: bd99-07-22-c.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:48.68       40379180 B   ---   --   ---xx   flac  0.5906  01 Oh baby it ain't no lie.flac
+     6:45.37       71529068 B   ---   --   ---xx   flac  0.5832  02 My back pages.flac
+     5:39.71       59966636 B   ---   --   ---xx   flac  0.5543  03 Masters of war.flac
+     7:52.63       83409020 B   ---   --   ---xx   flac  0.5866  04 Tangled up in blue.flac
+     5:58.23       63205340 B   ---   --   ---xx   flac  0.4743  05 Girl from the North Country.flac
+     3:58.60       42124364 B   ---   --   ---xx   flac  0.5625  06 All along the watchtower.flac
+     7:33.48       80022140 B   ---   --   ---xx   flac  0.5238  07 Positively 4th Street.flac
+     6:16.37       66413468 B   ---   --   ---xx   flac  0.5662  08 Maggie's farm.flac
+     6:45.36       71526716 B   ---   --   ---xx   flac  0.4873  09 Not dark yet.flac
+     8:01.62       84994268 B   ---   --   ---xx   flac  0.5153  10 Silvio.flac
+     7:33.49       80024492 B   ---   --   ---xx   flac  0.5763  11 Like a rolling stone.flac
+    70:15.29      743594692 B                            0.5456  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd99-07-22-c.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:31.59      100863212 B   ---   --   ---xx   flac  0.4965  01 It ain't me, babe.flac
+     7:53.23       83491340 B   ---   --   ---xx   flac  0.4892  02 The sound of silence [Dylan & Simon].flac
+     2:29.39       26375372 B   ---   --   ---xx   flac  0.6076  03 That'll be the day [Dylan & Simon].flac
+     2:03.01       21699596 B   ---   --   ---xx   flac  0.6047  04 The wanderer [Dylan & Simon].flac
+     5:26.20       57553484 B   ---   --   ---xx   flac  0.5396  05 Knockin' on heaven's door [Dylan & Simon].flac
+    27:23.67      289983004 B                            0.5212  (5 files)
+===================
+===================
+===================

@@ -1,0 +1,95 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Track01.flac:905afd10a6ee8f81972ae9ad5eef120402 Track02.flac:52d0f9bea1f75a9f3e7b1a699390540a03 Track03.flac:a811fc51722ef4206b0cafe9d0221d3f04 Track04.flac:24c83188071d5403a637d9cf4732601905 Track05.flac:e76dd9f3bb20292c2e1b0d0bb8f3fe3506 Track06.flac:b88e56d9ff71a3d85975c5e7d709bfe707 Track07.flac:19926e6228949cb1ab8f245a67ab094808 Track08.flac:8c7a08956a7b8c465275bd89c639042909 Track09.flac:7e88b71425ea213748fe6388e406b50810 Track10.flac:defec16273cfa496a54552b02976593511 Track11.flac:e6b300329ebb887fdbaf2439d0b5b4c201 Track01.flac:0a03fb543ffa75d8d8d3c1defd99be5202 Track02.flac:7dca74558c712c2d123b428414ff194e03 Track03.flac:e6b17eff08d1e7c9add41023a836006004 Track04.flac:b9bcdf54a8626a945c376d9b5786b0a505 Track05.flac:c5289884a9389e0bd123a4faac2aa3bd06 Track06.flac:b613a2e2efedbdcddf237c675aed20fb07 Track07.flac:b16d81115a7283377b239eb94b4473f0
+===================
+===================
+===================
+=== setlist.txt
+===================
+===================
+===================
+Bob Dylan
+
+Troy G. Chastain Memorial Park Amphitheatre
+Atlanta, Georgia
+15 August 1989
+ 
+ 
+              1.  Most Likely You Go Your Way (And I'll Go Mine)
+              2.  Pretty Peggy-O (trad. arr. Bob Dylan)
+              3.  Masters Of War
+              4.  Shelter From The Storm
+              5.  Ballad Of A Thin Man
+              6.  Stuck Inside Of Mobile With The Memphis Blues Again
+ 
+              7.  It's All Over Now, Baby Blue
+              8.  Man Of Constant Sorrow (trad. arr. Bob Dylan)
+              9.  It's Alright, Ma (I'm Only Bleeding)
+              10.  One Too Many Mornings
+ 
+              11.  All Along The Watchtower
+              12.  I'll Remember You
+              13.  I Shall Be Release
+              14.  Like A Rolling Stone
+            
+              15.  Barbara Allen (trad.)
+              16.  Mr. Tambourine Man
+              17.  Maggie's Farm
+ 
+Concert # 125 of The Never-Ending Tour.  Concert # 33 of the 1989 USA Summer Tour.
+ 
+Concert # 47 with the second Never-Ending Tour Band: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Tony Garnier (bass), Christopher Parker (drums).
+ 
+7-10 and 15-16 Bob Dylan (vocal & guitar), G.E. Smith (guitar).
+ 
+4, 7, 8, 10, 15, 16  Bob Dylan harmonica.
+ 
+Only 2 new (additional) songs (11%) compared to previous concert! No new songs for this tour.
+ 
+Stereo audience recording, 95 minutes.
+ 
+Session info updated 5 February 2001.
+
+www.bjorner.com
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+905afd10a6ee8f81972ae9ad5eef1204  [shntool]  01 Track01.flac
+52d0f9bea1f75a9f3e7b1a699390540a  [shntool]  02 Track02.flac
+a811fc51722ef4206b0cafe9d0221d3f  [shntool]  03 Track03.flac
+24c83188071d5403a637d9cf47326019  [shntool]  04 Track04.flac
+e76dd9f3bb20292c2e1b0d0bb8f3fe35  [shntool]  05 Track05.flac
+b88e56d9ff71a3d85975c5e7d709bfe7  [shntool]  06 Track06.flac
+19926e6228949cb1ab8f245a67ab0948  [shntool]  07 Track07.flac
+8c7a08956a7b8c465275bd89c6390429  [shntool]  08 Track08.flac
+7e88b71425ea213748fe6388e406b508  [shntool]  09 Track09.flac
+defec16273cfa496a54552b029765935  [shntool]  10 Track10.flac
+e6b300329ebb887fdbaf2439d0b5b4c2  [shntool]  11 Track11.flac
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+0a03fb543ffa75d8d8d3c1defd99be52  [shntool]  01 Track01.flac
+7dca74558c712c2d123b428414ff194e  [shntool]  02 Track02.flac
+e6b17eff08d1e7c9add41023a8360060  [shntool]  03 Track03.flac
+b9bcdf54a8626a945c376d9b5786b0a5  [shntool]  04 Track04.flac
+c5289884a9389e0bd123a4faac2aa3bd  [shntool]  05 Track05.flac
+b613a2e2efedbdcddf237c675aed20fb  [shntool]  06 Track06.flac
+b16d81115a7283377b239eb94b4473f0  [shntool]  07 Track07.flac
+
+===================
+===================
+===================

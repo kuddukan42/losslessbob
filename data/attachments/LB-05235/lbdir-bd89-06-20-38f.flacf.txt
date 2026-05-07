@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-20-38f.flacf 
+=================== 
+=================== 
+=================== 
+5e9167a56aebc9ff353fde21043297a3  Bob Dylan 6.20.89.md5
+1e29351689ae6fac463f6768e7ab144d  Bob Dylan 6.20.89.txt
+135509bb971e6902f1e71f48af79ee7c  cd1\01.flac
+0cb086dfb5487b211282008e1087f51a  cd1\02.flac
+af0d12a41f8405c50129533741ea2c26  cd1\03.flac
+df51004f44a0d746756a2641e53b70c0  cd1\04.flac
+3260c0d8e1321670f81b858cf527bc11  cd1\05.flac
+e421b10b2419e43aef1145da43dcd2df  cd1\06.flac
+9dd0f6b366f6e41fbcec4e72738d95ae  cd1\07.flac
+74a2cd1dc7a069ad62d9cde7155e25af  cd1\08.flac
+23b37786b1e6b7654a118fcdb75a1cd0  cd1\fingerprints.txt
+c4737bfed9360c4e4daa2fc1370a4599  cd2\01.flac
+d98afc87b78f2611aa4920e2fcd16d4b  cd2\02.flac
+e7dab9a83bf716a5b093c74ef0c20de8  cd2\03.flac
+43eefea2b2b48267f6966a3dc154a147  cd2\04.flac
+17d2b27cd44f91622e0dcb870b7017f1  cd2\05.flac
+5bb785e65bbefe1323316d6d8d5bf4e1  cd2\06.flac
+a30f0a791fe92a1cb34f967facd1ca0b  cd2\07.flac
+12dfceb0acd2821c09705c75c607cede  cd2\08.flac
+e20d7c2e3e64a90f11c66492ba597716  cd2\fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-20-38f.flacf\cd2 
+=================== 
+=================== 
+=================== 
+01.flac:793de8d5f0d65af7b3df501f7e7d3370
+02.flac:2422cdf7e89144a1690d0259ea230c2b
+03.flac:a97cd6cd47b24b0e7efa265c08fc1926
+04.flac:d372afb6e2755916c665b98a252b54e8
+05.flac:4d74e566461ef9ff132b779c2a9b37cf
+06.flac:1774987440ae6a6518456d487e22b5b4
+07.flac:3549bb9096b970df798f7291733ade2a
+08.flac:7ea2a9322ebb5e4cd910552ba52e9763
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-20-38f.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01.flac:fde4c6c0bc764e979d31b9f3d488ee4b
+02.flac:82e4a23ff10f37be2bb18061645a5c6c
+03.flac:7babc91ff884f6cbcf38d72ee702a729
+04.flac:e43f7c76c6bfde8c8055807619556306
+05.flac:6ec4be0ab112367dbfd06345ca7d3e9e
+06.flac:2bf28a38542de76b3d4274d8c6491a4c
+07.flac:1c0ba79d7bc5c9ae8d42cbb4936f1e14
+08.flac:13f19537ddc4263efb550e25bfb10900
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-06-20-38f.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.64       65065772 B   ---   --   ---xx   flac  0.6352  01.flac
+     5:28.01       57861596 B   ---   --   ---xx   flac  0.6664  02.flac
+     4:55.64       52188572 B   ---   --   ---xx   flac  0.6810  03.flac
+     2:28.55       26236604 B   ---   --   ---xx   flac  0.6876  04.flac
+     6:26.18       68132780 B   ---   --   ---xx   flac  0.6850  05.flac
+     6:52.29       72745052 B   ---   --   ---xx   flac  0.6794  06.flac
+     5:54.20       62492684 B   ---   --   ---xx   flac  0.6891  07.flac
+     3:07.68       33146780 B   ---   --   ---xx   flac  0.6916  08.flac
+    41:22.19      437869840 B                            0.6750  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-06-20-38f.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:53.26       62330396 B   ---   --   ---xx   flac  0.6351  01.flac
+     3:43.53       39461900 B   ---   --   ---xx   flac  0.6441  02.flac
+     5:53.28       62335100 B   ---   --   ---xx   flac  0.6617  03.flac
+     6:57.27       73622348 B   ---   --   ---xx   flac  0.6836  04.flac
+     4:47.29       50695052 B   ---   --   ---xx   flac  0.6884  05.flac
+     3:23.13       35839820 B   ---   --   ---xx   flac  0.6920  06.flac
+     4:44.73       50269340 B   ---   --   ---xx   flac  0.6815  07.flac
+     5:15.46       55674236 B   ---   --   ---xx   flac  0.6802  08.flac
+    40:38.70      430228192 B                            0.6704  (8 files)
+=================== 
+=================== 
+=================== 

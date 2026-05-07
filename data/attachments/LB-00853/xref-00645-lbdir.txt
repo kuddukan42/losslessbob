@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-06-01-IAR057.flacf 
+=================== 
+=================== 
+=================== 
+5fc0491676c5755631f492e389b0533b  01 Ballad Of Hollis Brown.flac
+b13ef61d6ef648279bf19da834652e58  02 Mr. Tambourine Man.flac
+f259c694888d7a6c74c0898a0b429ca9  03 Gates Of Eden.flac
+fc8cd98916523781b772c4bff1a76c53  04 If You Gotta Go, Go Now.flac
+a91d0bd240fae46509904dba807a424f  05 Lonesome Death Of Hattie Carroll.flac
+64c301ec4e4bb02ebac374348d64d720  06 It Ain't Me Babe.flac
+f2d8571ec8163a43024f44bedfdce61c  07 Annoucement & Love Minus Zero-No Limit.flac
+cb433087fc4676c96a5ad5f0481674a8  08 One Too Many Mornings.flac
+fee713dff9b64ff857bf401b26a0f5ce  09 Boots Of Spanish Leather.flac
+465d87d6daf6b543cf170baba5858742  10 It's Alright Ma (I'm Only Bleeding).flac
+ce3597b2dfc8111dd4b1bb966a754d89  11 She Belongs To Me.flac
+d28ed0b19eee2844fbed33cbea24f0b2  12 It's All Over Now Baby Blue.flac
+afbb5f7de3c8b4da2a467682b1429e2f  Artwork and notes\2651_Beeb_back.jpg
+2c8717a76f6b51fa71d030e4be9b18f5  Artwork and notes\2651_Beeb_front.jpg
+5b467db385c3709caa32b661f7fea52f  Artwork and notes\2652_Beeb_back.jpg
+bb6ad39a56ecd15e0bd61bf0fc7af643  Artwork and notes\Beeb_back.bmp
+eef38b4d7bb00a1524d3a45ab6e0ae1f  Artwork and notes\Beeb_front.bmp
+a0bb4e02a5692bc33bf959c406435e3d  At The Beeb.log
+013c51858fc157181c69edec61d1ddec  Bob Dylan At the Beeb.txt
+1fc0c61500240ead510c3dfedee26a85  IAR 057 - Bob Dylan At The Beeb.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-06-01-IAR057.flacf 
+=================== 
+=================== 
+=================== 
+01 Ballad Of Hollis Brown.flac:12ec75d67d853af90bfce98c20979ec9
+02 Mr. Tambourine Man.flac:6dac9fce6e928b35dc4cbb57f431ec8a
+03 Gates Of Eden.flac:49fd050741c713a8b870deae085f0036
+04 If You Gotta Go, Go Now.flac:43dafac88b639916b93dcc19a10c69d1
+05 Lonesome Death Of Hattie Carroll.flac:c293284303f8814fb99b7e30929cc7cb
+06 It Ain't Me Babe.flac:5338d8fba2162f7472324b4ce9b859e8
+07 Annoucement & Love Minus Zero-No Limit.flac:8e6662eb8c2135973ed89034f427bf29
+08 One Too Many Mornings.flac:f96400c26a6e00660c92a7e9d7814ac2
+09 Boots Of Spanish Leather.flac:b012463ed6a1e4533a25bef52f26af7d
+10 It's Alright Ma (I'm Only Bleeding).flac:c2910aa89c456b2474be8f6dbd9af49c
+11 She Belongs To Me.flac:7eb9bc429abcc9051cc99c77d4c534aa
+12 It's All Over Now Baby Blue.flac:56b1697eef907bbd3b61d7201820898b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-06-01-IAR057.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.70       54672284 B   ---   --   ---xx   flac  0.3485  01 Ballad Of Hollis Brown.flac
+     6:26.69       68252732 B   ---   --   ---xx   flac  0.3509  02 Mr. Tambourine Man.flac
+     7:06.66       75301676 B   ---   --   ---xx   flac  0.3193  03 Gates Of Eden.flac
+     2:54.20       30740684 B   ---   --   ---xx   flac  0.3452  04 If You Gotta Go, Go Now.flac
+     6:29.13       68650220 B   ---   --   ---xx   flac  0.3328  05 Lonesome Death Of Hattie Carroll.flac
+     4:03.01       42867596 B   ---   --   ---xx   flac  0.3373  06 It Ain't Me Babe.flac
+     3:53.21       41150636 B   ---   --   ---xx   flac  0.3685  07 Annoucement & Love Minus Zero-No Limit.flac
+     4:20.25       45922844 B   ---   --   ---xx   flac  0.3481  08 One Too Many Mornings.flac
+     6:49.13       72178220 B   ---   --   ---xx   flac  0.3381  09 Boots Of Spanish Leather.flac
+     9:07.13       96521420 B   ---   --   ---xx   flac  0.3355  10 It's Alright Ma (I'm Only Bleeding).flac
+     4:45.03       50281100 B   ---   --   ---xx   flac  0.3397  11 She Belongs To Me.flac
+     5:09.09       54528812 B   ---   --   ---xx   flac  0.3338  12 It's All Over Now Baby Blue.flac
+    66:14.23      701068224 B                            0.3397  (12 files)
+=================== 
+=================== 
+=================== 

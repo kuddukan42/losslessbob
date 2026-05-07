@@ -1,0 +1,562 @@
+===================
+===================
+===================
+=== md5 for: bd76-Complete-Guam-Rehearsals.flacf
+===================
+===================
+===================
+4bf949fd11d411132d0b8eea367b375f *bd complete guam rehearsals.txt
+634c7811803d10a30aed7df8ef7d35a4 *Bob Dylan Complete Guam Rehearsals 1976.md5
+92cbe784bd1729c91014255467003500 *guam1\01 Track01.flac
+cf1f09d4e8b48c4cc349f6b9516c1789 *guam1\02 Track02.flac
+9c13b7fa53730ea6b19ad7d42313dc6e *guam1\03 Track03.flac
+5181d3f24b8a0ec0da85fc467fb3e9c4 *guam1\04 Track04.flac
+f988fe1cb4cd310c624972943c33bc07 *guam1\05 Track05.flac
+2519bd8f9489ac23c4a80f57e116b81b *guam1\06 Track06.flac
+7748476e1df19eb5f43e90a95f60a9eb *guam1\07 Track07.flac
+0dcd7e15b57f2721dc423def586272e0 *guam1\08 Track08.flac
+90fe6d50a72d631cf5aa128ad6e2b8a6 *guam1\09 Track09.flac
+018afa04edd9cfa96e2519d4e44e59f9 *guam1\10 Track10.flac
+901521ee6eb9fd7c4552c95af7ad3086 *guam1\11 Track11.flac
+1658a4efaf88f4ff03d0971b3139bfee *guam1\12 Track12.flac
+6065cc2a94fb617ab692570efd416792 *guam1\13 Track13.flac
+e25c35526c6b5369e53ad87190a7a10b *guam1\14 Track14.flac
+cecbdac09628f0e64be46a4ab6989df3 *guam1\15 Track15.flac
+be6956c00e0d61ad4aa960924ae15e30 *guam1\16 Track16.flac
+b5d793226e55ab767765439dd4dbcc67 *guam1\17 Track17.flac
+f877bd3900860d56e1864e78560822aa *guam1\18 Track18.flac
+30ef789414893661bb361a137226a22e *guam1\19 Track19.flac
+9df7942a596d6063237234b75a87cb4d *guam1\20 Track20.flac
+06f2d363e5d63f62c3c35e3efb2b9070 *guam1\21 Track21.flac
+a2201c40fe7f17b92ce7a0e1634f3a2d *guam1\22 Track22.flac
+72917f2aafcaa9fb79b0f23be3b906f0 *guam1\23 Track23.flac
+e1413ea2d93e705bf78ce9c1b839ba07 *guam1\24 Track24.flac
+1591093811da9099d3d84c6ea7c7cd03 *guam2\01 Track01.flac
+09a1ac83b9e40cf6bc493340154f99dc *guam2\02 Track02.flac
+b3c87bfec0638d51ea2a8449e84c9ba4 *guam2\03 Track03.flac
+ac4601b412f18a902c5b428e6df4c38f *guam2\04 Track04.flac
+eac7c4b63de4d0e8667f9be58efda9c8 *guam2\05 Track05.flac
+371becaf2df9e0ab29a4ea6a278e0a94 *guam2\06 Track06.flac
+dfff467e307780863f5ff4cf2873c8b8 *guam2\07 Track07.flac
+509b4c95ccb00a62b3aa3de663fb8b51 *guam2\08 Track08.flac
+7213df40429b5e1d1e82a0d5cb8e6fb6 *guam2\09 Track09.flac
+0d5a5fcefc9c1d8e1a558b88be1f17ad *guam2\10 Track10.flac
+4a018ba4212aa71816944e80aa56de30 *guam2\11 Track11.flac
+bea5db1a8ca5cc9ec179aa92140f2dd4 *guam2\12 Track12.flac
+d96f20532ab790bd788667d6370b5f45 *guam2\13 Track13.flac
+93f9724217704e62f22dd0c77b1a3491 *guam3\01 Track01.flac
+8fa382d26ede47338c173330a99322fe *guam3\02 Track02.flac
+bce09b3ef6bb65f72bcf03760c4db6b4 *guam3\03 Track03.flac
+3118a062a5dfdf35d46e6268cdbd826c *guam3\04 Track04.flac
+38d433eee1452498f8940d1a1a4d97f2 *guam3\05 Track05.flac
+8d021f8986dd310484634a15e347e2f2 *guam3\06 Track06.flac
+9b00105d18dacbe6df52e2e8ef2bf5ca *guam3\07 Track07.flac
+69fc131cc71ff4097e546964005e1484 *guam3\08 Track08.flac
+7dcdf918525a859dc2911c88e71019d8 *guam3\09 Track09.flac
+ca6a480c9c263c7180189fe05dc7d095 *guam3\10 Track10.flac
+d5202504584659fb0cfdbbdf5672590c *guam3\11 Track11.flac
+111ef5a78737fd217e364bcf02d52141 *guam3\12 Track12.flac
+adc15449bba8a2a4d9245e161a9c247e *guam3\13 Track13.flac
+4a012b86fc1a8659d53a1f4e0fef33cb *guam4\01 Track01.flac
+e95b0fa69d97ce247cf6f2d945c9e9ec *guam4\02 Track02.flac
+79ec62a6288ee391ed77ae2191543d7b *guam4\03 Track03.flac
+9178ef43269a3edc1fccfcb7571243a6 *guam4\04 Track04.flac
+19c4796a0915ed59f773c6c8c87bafa4 *guam4\05 Track05.flac
+22adc820c8c93ace091963b89e94de82 *guam4\06 Track06.flac
+e442cec13269064d4d55fbe03ab100c2 *guam4\07 Track07.flac
+8a8acc47e35ee852ec469a16873a4345 *guam4\08 Track08.flac
+c26e51d1da50b0601896559dd2c25dda *guam4\09 Track09.flac
+97d703077319c09265a8a05079d78cf4 *guam4\10 Track10.flac
+a716a118eaa3288e72f03732a5964c94 *guam4\11 Track11.flac
+243b05e78adbbbcaa014cd9083f2d7c9 *guam5\01 Track01.flac
+2396a7362c306a6bd047e7925e3ea5e4 *guam5\02 Track02.flac
+e428efabafad602894ed98d29e4c50ae *guam5\03 Track03.flac
+b56dc4be8b2da58d42e450c6c1b72188 *guam5\04 Track04.flac
+d789b0bce23cb6b9c3066c67ede2e03a *guam5\05 Track05.flac
+f76d3290d4c475a70d058e101b8fee0f *guam5\06 Track06.flac
+214c80fe5dee47f4881a333cde52b626 *guam5\07 Track07.flac
+04247841c3b802eae5df690ff314c3fa *guam5\08 Track08.flac
+676aa0acbfbe78f4d46d922fc7603225 *guam5\09 Track09.flac
+21375ade991b952ca222c300957714fc *guam6\01 Track01.flac
+5534e58ce0861dbbf3ced9c47aa51546 *guam6\02 Track02.flac
+790f2f5883e46ed1a5d7db050f898ade *guam6\03 Track03.flac
+503b9d6b65984409b64f772dbd4fa4a4 *guam6\04 Track04.flac
+d516f053ab01b838f58cd4f734bc6ea1 *guam6\05 Track05.flac
+144616ef2e7980899af0afd28e5b975a *guam6\06 Track06.flac
+a383be409ec52b8435a59d1ade338629 *guam6\07 Track07.flac
+d4a3b3281092f80c07fb4b23e5dbc7f3 *guam6\08 Track08.flac
+e250571d510854a062118c262258f64b *guam6\09 Track09.flac
+b64f6a666e341c566eada8fafc9fc22d *guam6\10 Track10.flac
+a7924a7e17c621185ed8bf2c1131d8a4 *guam6\11 Track11.flac
+eb1f9839770bd15b309f0afc5f44d54d *guam6\12 Track12.flac
+c30f99117fbce81c08289825c982c332 *guam6\13 Track13.flac
+02bd7c131dfecc9c12e2f6403adc0c27 *guam6\14 Track14.flac
+61ad80d1a07ec85b5963f5fd492609d3 *guam6\15 Track15.flac
+2efb62b554cafa6f9ddf60d84f7e2007 *guam6\16 Track16.flac
+de479c83060a2d37bc6631178f1ae0c5 *guam6\17 Track17.flac
+0d0bec3a009c95949eb9bdd0acaad7e8 *guam6\18 Track18.flac
+6603196d7fdf1c90f57509b181db1462 *guam6\19 Track19.flac
+30919ddb8e98be44efa2be7572266046 *guam6\20 Track20.flac
+d4758be0b27c4d8557b9e1a6a085e7e3 *guam6\21 Track21.flac
+5935e4d5ec4b13981efcd5da517b83a3 *guam6\22 Track22.flac
+8b0c1645ae84a11f7e95b43b21d8611a *guam6\23 Track23.flac
+33870f593df3eef7e630716364d322dc *guam6\24 Track24.flac
+6e7cfe2e66abf8be5f04276e2a94de3f *guam6\25 Track25.flac
+e037c4281d88adb83796fcd8fdf052d2 *guam7\01 Track01.flac
+e452a216e18abb2ed4a16fbb409aefca *guam7\02 Track02.flac
+6d6e484713a642f8af2770706d452946 *guam7\03 Track03.flac
+130713b84056ff2cf1a509594999561e *guam7\04 Track04.flac
+4fbe238a9232c8d20b4beb7929deae7f *guam7\05 Track05.flac
+68c53ee6c42c97982c478080852a296c *guam7\06 Track06.flac
+d53ba97269c14c929ee41d1d942cf2f0 *guam7\07 Track07.flac
+f82e02e6b91c944b5c4ad9afd29ffbc6 *guam7\08 Track08.flac
+6c6ad42e811d1f2ae4be064c08f9991b *guam7\09 Track09.flac
+29810ef8022579dc498d18a627d8bab7 *guam7\10 Track10.flac
+d61d7b48c1b43a41ea53ceabeb6d1c64 *guam8\01 Track01.flac
+cd8c4d42441c987af3b8925f1b79bf8b *guam8\02 Track02.flac
+e5a51200f7a0225d74a6fb424d944591 *guam8\03 Track03.flac
+b85289908252cee284b0aee088017512 *guam8\04 Track04.flac
+9db72c9e7dacdc233654aa2f5833af42 *guam8\05 Track05.flac
+7816d977c9279454101dd94bf989c592 *guam8\06 Track06.flac
+977b4fc09083fe8419bc9b6489a839a5 *guam8\07 Track07.flac
+ae8c36f9916e395eb07c8c21d5b2b015 *guam8\08 Track08.flac
+7fefb26fa37410bc42892d40db9c2ba5 *guam8\09 Track09.flac
+56cd8b771f8011350627da997a979438 *guam8\10 Track10.flac
+a09d909194c2802a25988b59b0f00aa5 *guam8\11 Track11.flac
+c511c293a8111a2458b81d68d3fc5dd5 *guam8\12 Track12.flac
+d361d87ccd5fbdffa56707b761414880 *guam8\13 Track13.flac
+f4bf3367cdf79d43360fd803c05ab250 *guam8\14 Track14.flac
+7783537bf7006690f7b66043a7343a5e *guam8\15 Track15.flac
+b3ee6ad82b54eb18b12badeb6d83d534 *guam8\16 Track16.flac
+c9a5e1627e0c3cd6831b291359b42b8f *guam8\17 Track17.flac
+68896034eb5b19607871b181cf7a3f85 *guam8\18 Track18.flac
+055abbf23af959b2ab6aceaf8196c42d *guam8\19 Track19.flac
+3b058498a9ebeb51acaa1c5c622f85e5 *guam8\20 Track20.flac
+e315c466c136d54d8c84805f14682995 *guam8\21 Track21.flac
+51376bc6d3642fd830ecd49ef83ccbd7 *guam9\01 Track01.flac
+a368ffd725a1f7feaaa1d57f4e6f41a9 *guam9\02 Track02.flac
+ec67c776c8eb209478fdabaf8e678f4d *guam9\03 Track03.flac
+0f1539e20faf56d98c3a2ce57aa8affd *guam9\04 Track04.flac
+60bf01520e155ff4edcb756837665f49 *guam9\05 Track05.flac
+dfa05d270396dd06ab3c5ad3a2d04326 *guam9\06 Track06.flac
+f4d9c55aa2238f41ea3d5ede54ef1ffd *guam9\07 Track07.flac
+e98481431de133f22285b6740966fc6c *guam9\08 Track08.flac
+b4ec5015bdf10df46c66525332e0bcaf *guam9\09 Track09.flac
+b02046d93e5c01db9b6805a20e63f96c *guam9\10 Track10.flac
+a9727b12b122b6168fc52bca526e1c3e *guam9\11 Track11.flac
+c281c9f687f25ca7097bbb6a404e1ef2 *guam9\12 Track12.flac
+5b1e705f3ae459810dc6c16a6ea26a99 *guam9\13 Track13.flac
+3b2a66a29110c2529f4df3a11438de99 *guam9\14 Track14.flac
+21063eaf306e980589a0c2b0ce6519a2 *guam9\15 Track15.flac
+70222fb968ba52535b3ee3ae30632a36 *guam9\16 Track16.flac
+03b7540ea3154446e76a04107216ef43 *guam9\17 Track17.flac
+c413170d808403f158fea5825c36dd17 *guam9\18 Track18.flac
+543e17a406ada71393b19e078b7ae36d *guam9\19 Track19.flac
+479502004dcf72c6dfd96ea05a8f5c25 *guam9\20 Track20.flac
+d5a02d6bd1700c416a080f38f586c017 *guam9\21 Track21.flac
+f11e11b4a36de15b82036fac1c662721 *guam9\22 Track22.flac
+9307f167c3e7a1318c1b94b31bf02ed0 *guam9\23 Track23.flac
+43992ce12076a05c9fcc988589a56bb3 *guam9\24 Track24.flac
+e9fb0b8c39d5824ead1279c02e55bf32 *guam9\25 Track25.flac
+ef972c7329a68dbd85c4f1a8bdeb8906 *guam9\26 Track26.flac
+98f42a488dc9e39de08fd99708466b37 *guam9\27 Track27.flac
+6aa5161cef8551e8e6fdcd9ea4282278 *guam9\28 Track28.flac
+===================
+===================
+===================
+=== ffp for: bd76-Complete-Guam-Rehearsals.flacf
+===================
+===================
+===================
+guam1\01 Track01.flac:7ffebbe0598ce4df77d71b5ff29014ff
+guam1\02 Track02.flac:1dee92ce8a253f147ee2c5225e3e4fd8
+guam1\03 Track03.flac:2e60defe6cd6147edcd98a8c581f41d9
+guam1\04 Track04.flac:875086c835a96497033d2903b5c189a4
+guam1\05 Track05.flac:e9e4ed78f14cabf4ff9bfc8e9646e3a9
+guam1\06 Track06.flac:19d2d358bdd6d63543916713ff8876b6
+guam1\07 Track07.flac:4f6bfbc2883dee85f72b9bb6cfa5929e
+guam1\08 Track08.flac:dd5c1b2414bcc468a570a62a03dbaf5a
+guam1\09 Track09.flac:a1f5481dbedb0ee31828e26af9acbfe8
+guam1\10 Track10.flac:d14235eabff41cb6e4b0c1b716524edb
+guam1\11 Track11.flac:f26c3c5c5ebb323c9996bbfbbb367911
+guam1\12 Track12.flac:74bd3e4185ec0f9cce9299a4b76ead22
+guam1\13 Track13.flac:ebf4fe3e183da8e99e4a7259418ecf99
+guam1\14 Track14.flac:e1a86473d45ca4d9b5d44e7c540544e2
+guam1\15 Track15.flac:10bffc2d8d1bb3b27042b7183b2eb312
+guam1\16 Track16.flac:707dd9540074f641ae22695e42c149d1
+guam1\17 Track17.flac:495b2da7e5b6a2b7d45063665c8173f5
+guam1\18 Track18.flac:93a8545b1e403f7614c81d3d204a2d7f
+guam1\19 Track19.flac:cb6e30952efcfa62ebadb5e981ed0fea
+guam1\20 Track20.flac:0c836e1f9f56da79986c79a73337dab7
+guam1\21 Track21.flac:b091e5152bc0f926ea3936eb565c4e10
+guam1\22 Track22.flac:8c79936f318de0fe6f70b101744ed0f0
+guam1\23 Track23.flac:e3f850d6baa10fb7e53970d8ee79e654
+guam1\24 Track24.flac:ca6968a9c8fcde833f0e65d350aaf7fc
+guam2\01 Track01.flac:73c420cfcd03962b6fceb3254b423bbe
+guam2\02 Track02.flac:ab7667a318fa0644e823cdcc21c412f8
+guam2\03 Track03.flac:e643e64e696d5941bc76518286262a2f
+guam2\04 Track04.flac:b9af180572d585b8cf813b3ee5026c8b
+guam2\05 Track05.flac:b27a3b8f34302bad23375fa2cc628494
+guam2\06 Track06.flac:0b6c0179335cc50370571c15209a76a0
+guam2\07 Track07.flac:03d2294e06625b16ec7a75bc411604fe
+guam2\08 Track08.flac:d72b93f1e852d095dfdf98853246e595
+guam2\09 Track09.flac:9a1b93664e09de8ab980383dca17b98b
+guam2\10 Track10.flac:8e65c035ea082a111f02dee674e5a62d
+guam2\11 Track11.flac:ca5fc34718b55a67e9a1f2428eceab7a
+guam2\12 Track12.flac:b57dc0e2350131aca69d57aceaa950f4
+guam2\13 Track13.flac:bc570d39b24c476fb6ecec1ca1e028d3
+guam3\01 Track01.flac:fc517538047ad44c155e59b0700e247f
+guam3\02 Track02.flac:e4157a7433e40e24c63a4d58aa66eb9d
+guam3\03 Track03.flac:f6aee7406c007910def3faad68c824a7
+guam3\04 Track04.flac:fdb300c5e47c08b187ebd9294a3400cd
+guam3\05 Track05.flac:3cb0d0601dc229222436dc3daacf75d7
+guam3\06 Track06.flac:c7a484f1cac5f961f430408390ce1982
+guam3\07 Track07.flac:9ca5e3563fcbb5fa46b79a7cefb96f3a
+guam3\08 Track08.flac:740ec96fd0662ec0759f02dc9fcf8ac6
+guam3\09 Track09.flac:c9fe260ae0745f4ea97411b178128c22
+guam3\10 Track10.flac:952c0f467668b036711c121396806245
+guam3\11 Track11.flac:6031e3c6a71996e095531dbee5840641
+guam3\12 Track12.flac:566463855b6c37bd133d72cd75356e55
+guam3\13 Track13.flac:27586fe1be63e1f8977342a6144e981c
+guam4\01 Track01.flac:5041659db6a25371d95a85e0f44ee7f3
+guam4\02 Track02.flac:785ee9d40ecf29be266ceb815defdca7
+guam4\03 Track03.flac:632cafb2cb1e62791278af44160f748a
+guam4\04 Track04.flac:f32dfd4320d0b20c2ce0b7848f09232e
+guam4\05 Track05.flac:ced3a53d519211c1a9e088f2d556e9f1
+guam4\06 Track06.flac:992e908d2255315f260fb410ec7f22c9
+guam4\07 Track07.flac:a5461ded9a9cef257b6f1002dbb125c8
+guam4\08 Track08.flac:cce858db2d06b31b2b2945756479cae8
+guam4\09 Track09.flac:b66f99089438b02040a6cd7636b03ea2
+guam4\10 Track10.flac:af3f2830e9e6347d69c29c61fe76dbb4
+guam4\11 Track11.flac:840b023ce9634d4817ab18f57c8843aa
+guam5\01 Track01.flac:105eb0164d9926eab1d22a5bc794c379
+guam5\02 Track02.flac:c2dff345a0b58d788e80340286659ed0
+guam5\03 Track03.flac:166c276267a64daa43e81077ffcc0460
+guam5\04 Track04.flac:c19cb1fdb35a1a57d19010313b6d4e9a
+guam5\05 Track05.flac:76527502b76e83589d15a79db4b448ca
+guam5\06 Track06.flac:82bab39ba948a2d1d0a004a9022f9725
+guam5\07 Track07.flac:d2e6fafd983ac54e0c54d7d487de7171
+guam5\08 Track08.flac:e9135b0492d4df63b5b9686429059f15
+guam5\09 Track09.flac:84947ed2fdaee49d5f9aa5584bd50d15
+guam6\01 Track01.flac:900fb3c0a3dfc9bf44ef18c8bae616f7
+guam6\02 Track02.flac:ed34621cd2211cd76520aefde613b4a2
+guam6\03 Track03.flac:a49cafb6187a46703c276096669a0214
+guam6\04 Track04.flac:ccbf6a3f06ce54759de88d587e1ced62
+guam6\05 Track05.flac:3d5f62ef35feb1f17984d1d424456307
+guam6\06 Track06.flac:dd988bddfec541151ea867823d2ee1e3
+guam6\07 Track07.flac:7363836758bd56368405c18cc36e58de
+guam6\08 Track08.flac:aa7a4fb62801b44adf232e9adcc09da1
+guam6\09 Track09.flac:c6997d4bca80899862fe4db9018d8db3
+guam6\10 Track10.flac:58bf80085400252468cc3da239fe7645
+guam6\11 Track11.flac:dd757664dfc1d9959528ba76e493353a
+guam6\12 Track12.flac:a543118ae081a609bbddd9c58ed38529
+guam6\13 Track13.flac:4327747135b6af867e9be5da7405d3e8
+guam6\14 Track14.flac:44280d2a40d32145184f61bb76f77542
+guam6\15 Track15.flac:913eb7b5b4b5542a50997403f4449141
+guam6\16 Track16.flac:375e138c6c5caa49db8f226edd68690d
+guam6\17 Track17.flac:6714a06ae998f7e7ae5886fbaa44a04c
+guam6\18 Track18.flac:ab42652dcb236d1ea464b185094d9b03
+guam6\19 Track19.flac:d9c4f61a0d56c5663c1857754cdb70a7
+guam6\20 Track20.flac:d307e95844507211e03f097b50effcf8
+guam6\21 Track21.flac:6ebfac92af68e40df90653e8a0398f83
+guam6\22 Track22.flac:2dcf1cb1fe4a35f6bf4bfc8e84b518e8
+guam6\23 Track23.flac:1f34747c29118511f19db14d377e95ae
+guam6\24 Track24.flac:30acc306b373c7f2be9d92a6322d922d
+guam6\25 Track25.flac:e49fb507021f5ec2a94d5832e944d737
+guam7\01 Track01.flac:b8f2d3fdead2c910d786d8839178510c
+guam7\02 Track02.flac:5acf1ed289085f3980151a5999606571
+guam7\03 Track03.flac:0f8b0f03f482a8eb2707474ceedaf006
+guam7\04 Track04.flac:6cb9b0f9b41cfacc1c61ec30713c5e7c
+guam7\05 Track05.flac:a6ce2eead4d337ab499d69cc4789428c
+guam7\06 Track06.flac:6b52d234f716003f64439ac5bd196a31
+guam7\07 Track07.flac:e52925db34d9af1a426f466464cb0a0f
+guam7\08 Track08.flac:edf8d7d8ee84f50bfa76475f0fdffa18
+guam7\09 Track09.flac:913f8c61e5feaa17314ade6c0cc7f4dc
+guam7\10 Track10.flac:3b2c09df995341be3b45e4bed176be92
+guam8\01 Track01.flac:0f8e3a6678e0ba8d819cae417df51ba5
+guam8\02 Track02.flac:dd5591c660c3851d173a044f506a3a18
+guam8\03 Track03.flac:4fe64e3657ef5c82dacfc7c55f6388b7
+guam8\04 Track04.flac:bfb498c42ca1b79ba32d1e1ff00d71d6
+guam8\05 Track05.flac:d4396a4afc5712dcf162dee319a8be9b
+guam8\06 Track06.flac:5b71523b217c26d49d8147dc9aa28801
+guam8\07 Track07.flac:2aa82843d1a01a8daed29c87cf85e42b
+guam8\08 Track08.flac:100b5846f7a3a6000989b6881751a9d0
+guam8\09 Track09.flac:a0bb440a94fbf2b4ad2f62165fbd5516
+guam8\10 Track10.flac:130303ae6e7d3b0c9d31cbea7d7954ba
+guam8\11 Track11.flac:54b1392d719fc2b2cb6e9357591ae8e2
+guam8\12 Track12.flac:b4f2fae7bc7e3d60953106e5d76ceee1
+guam8\13 Track13.flac:46220c0a27cebb2b5ef13ccd94f4920b
+guam8\14 Track14.flac:85450d488cc48c2b4c822082a78c1419
+guam8\15 Track15.flac:a3db36929b0880d14d6c941e3bf95dba
+guam8\16 Track16.flac:c8148ab6f40ea64bf5a00440fed55c32
+guam8\17 Track17.flac:2c2163a4166413862c61de3e00a90ef5
+guam8\18 Track18.flac:46de17e4e0184901d3ef23b91afae416
+guam8\19 Track19.flac:8846edddaa840b60be6080fbbd4c2481
+guam8\20 Track20.flac:ac12a78d0434081e62731e6f53a99803
+guam8\21 Track21.flac:08179b581d2284208dd24c370f2f0457
+guam9\01 Track01.flac:eb2e5702bd881064423585c11006aab6
+guam9\02 Track02.flac:2508a3ffb08424b2aa88b8b823e2dc22
+guam9\03 Track03.flac:f050c06e81ef4e2d1d93da67a69ce9ac
+guam9\04 Track04.flac:ae895f0c9aa16e8e5fedb355b0e7056c
+guam9\05 Track05.flac:b967d794984a740c4f4d982883a2d173
+guam9\06 Track06.flac:b974236b1a9a990a239ec49a012a9060
+guam9\07 Track07.flac:743c013ef1c7c31c305e0e35de3e3840
+guam9\08 Track08.flac:9209234aa2b13417d416ac89a4e1dca8
+guam9\09 Track09.flac:e6cec0c28c47ea661bc12b7d6cebdc16
+guam9\10 Track10.flac:c0dd442864f16ebe009c7dd2457756d8
+guam9\11 Track11.flac:5967bc3f511881c2459af270c8d9b00c
+guam9\12 Track12.flac:2eacd7be1407e625ea85b28686c45b0f
+guam9\13 Track13.flac:c240fe64ceed052ec1904c64dc85bebe
+guam9\14 Track14.flac:c9310d999a9ed37684394b40c2ee2910
+guam9\15 Track15.flac:5e65b3871825809c28bfe47422bff0ae
+guam9\16 Track16.flac:a171c1172712968a3443c54c77fdbfd3
+guam9\17 Track17.flac:7c641e064b457df6704d54102ba74902
+guam9\18 Track18.flac:969906bc77268ac731e39b37e60a74cf
+guam9\19 Track19.flac:7223d6c69113bf4b210b618eb526bc2d
+guam9\20 Track20.flac:9d367da9dac15855fe1f3d7cfe9c4f06
+guam9\21 Track21.flac:438e47e97a88ae326830f93f9b72c765
+guam9\22 Track22.flac:8d3080bb1e578d6fd21e3b984cc0c28d
+guam9\23 Track23.flac:12bd7f59c61dc45be3ff7fb44705c263
+guam9\24 Track24.flac:3c1fa182dcaceeb5a8892e30eccddeb1
+guam9\25 Track25.flac:bcffa3096f1a9701cf6c2165c5c4c4dd
+guam9\26 Track26.flac:640d27869c46255b3f7a80d47508012e
+guam9\27 Track27.flac:fab5cd1c0d564dcb8a560527882a0afd
+guam9\28 Track28.flac:b7a919bc539ff39f62ba79133b31d58a
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.08        7074860 B   ---   --   ---xx   flac  0.4997  01 Track01.flac
+     3:35.61       38069516 B   ---   --   ---xx   flac  0.4941  02 Track02.flac
+     3:00.58       31888460 B   ---   --   ---xx   flac  0.4971  03 Track03.flac
+     3:59.03       42166700 B   ---   --   ---xx   flac  0.4825  04 Track04.flac
+     2:30.50       26577644 B   ---   --   ---xx   flac  0.5064  05 Track05.flac
+     4:24.48       46682540 B   ---   --   ---xx   flac  0.5327  06 Track06.flac
+     0:46.13        8145020 B   ---   --   ---xx   flac  0.4985  07 Track07.flac
+     0:50.38        8909420 B   ---   --   ---xx   flac  0.5146  08 Track08.flac
+     0:37.44        6630332 B   ---   --   ---xx   flac  0.4843  09 Track09.flac
+     0:23.35        4139564 B   ---   --   ---xx   flac  0.5071  10 Track10.flac
+     0:49.60        8784764 B   ---   --   ---xx   flac  0.5120  11 Track11.flac
+     3:49.08       40414460 B   ---   --   ---xx   flac  0.5559  12 Track12.flac
+     3:54.48       41390540 B   ---   --   ---xx   flac  0.5267  13 Track13.flac
+     4:51.70       51497084 B   ---   --   ---xx   flac  0.5378  14 Track14.flac
+     1:12.70       12865484 B   ---   --   ---xx   flac  0.5341  15 Track15.flac
+     0:39.72        7048988 B   ---   --   ---xx   flac  0.4887  16 Track16.flac
+     3:16.65       34727324 B   ---   --   ---xx   flac  0.5331  17 Track17.flac
+     1:42.35       18075164 B   ---   --   ---xx   flac  0.5161  18 Track18.flac
+     4:02.47       42799388 B   ---   --   ---xx   flac  0.5160  19 Track19.flac
+     3:24.16       36023276 B   ---   --   ---xx   flac  0.5172  20 Track20.flac
+     1:13.02       12881948 B   ---   --   ---xx   flac  0.4693  21 Track21.flac
+     4:47.46       50735036 B   ---   --   ---xx   flac  0.5434  22 Track22.flac
+     5:32.26       58625996 B   ---   --   ---xx   flac  0.4989  23 Track23.flac
+     5:29.02       58040348 B   ---   --   ---xx   flac  0.5235  24 Track24.flac
+    65:35.25      694193856 B                            0.5177  (24 files)
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:22.36       14549516 B   ---   --   ---xx   flac  0.4781  01 Track01.flac
+     1:09.70       12336284 B   ---   --   ---xx   flac  0.4682  02 Track02.flac
+     0:40.55        7185404 B   ---   --   ---xx   flac  0.5137  03 Track03.flac
+     5:24.70       57318284 B   ---   --   ---xx   flac  0.5435  04 Track04.flac
+     4:02.38       42778220 B   ---   --   ---xx   flac  0.6250  05 Track05.flac
+     3:00.70       31916684 B   ---   --   ---xx   flac  0.5686  06 Track06.flac
+     4:03.15       42900524 B   ---   --   ---xx   flac  0.5906  07 Track07.flac
+     4:32.59       48119612 B   ---   --   ---xx   flac  0.5769  08 Track08.flac
+     5:34.05       58929404 B   ---   --   ---xx   flac  0.6284  09 Track09.flac
+     7:25.20       78545084 B   ---   --   ---xx   flac  0.6454  10 Track10.flac
+     1:08.34       12075212 B   ---   --   ---xx   flac  0.5728  11 Track11.flac
+     5:23.70       57141884 B   ---   --   ---xx   flac  0.5707  12 Track12.flac
+     3:28.15       36726524 B   ---   --   ---xx   flac  0.4585  13 Track13.flac
+    47:17.32      500522636 B                            0.5787  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam3
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:13.68       44789180 B   ---   --   ---xx   flac  0.4566  01 Track01.flac
+     4:15.09       45003212 B   ---   --   ---xx   flac  0.4951  02 Track02.flac
+     2:28.41       26203676 B   ---   --   ---xx   flac  0.4659  03 Track03.flac
+     5:29.32       58110908 B   ---   --   ---xx   flac  0.4746  04 Track04.flac
+     0:18.51        3295196 B   ---   --   ---xx   flac  0.4466  05 Track05.flac
+     0:54.57        9659708 B   ---   --   ---xx   flac  0.4740  06 Track06.flac
+     0:44.48        7874540 B   ---   --   ---xx   flac  0.5153  07 Track07.flac
+     0:51.54        9123452 B   ---   --   ---xx   flac  0.4716  08 Track08.flac
+     2:01.29       21412652 B   ---   --   ---xx   flac  0.4840  09 Track09.flac
+     2:30.74       26634092 B   ---   --   ---xx   flac  0.4844  10 Track10.flac
+     1:47.09       18896012 B   ---   --   ---xx   flac  0.4729  11 Track11.flac
+     2:47.74       29632892 B   ---   --   ---xx   flac  0.5047  12 Track12.flac
+     9:51.24      104308892 B   ---   --   ---xx   flac  0.4935  13 Track13.flac
+    38:15.45      404944412 B                            0.4830  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam4
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:14.63        2617820 B   ---   --   ---xx   flac  0.4875  01 Track01.flac
+     2:15.12       23842268 B   ---   --   ---xx   flac  0.5011  02 Track02.flac
+     5:33.58       58877660 B   ---   --   ---xx   flac  0.5138  03 Track03.flac
+     4:27.63       47247020 B   ---   --   ---xx   flac  0.5091  04 Track04.flac
+     5:16.35       55824764 B   ---   --   ---xx   flac  0.5204  05 Track05.flac
+     3:03.59       32420012 B   ---   --   ---xx   flac  0.4816  06 Track06.flac
+     3:02.72       32274188 B   ---   --   ---xx   flac  0.5214  07 Track07.flac
+     4:01.35       42594764 B   ---   --   ---xx   flac  0.5241  08 Track08.flac
+     9:25.25       99724844 B   ---   --   ---xx   flac  0.5183  09 Track09.flac
+     5:26.73       57678140 B   ---   --   ---xx   flac  0.5255  10 Track10.flac
+     2:07.38       22492220 B   ---   --   ---xx   flac  0.5286  11 Track11.flac
+    44:56.08      475593700 B                            0.5156  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam5
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.29       56516252 B   ---   --   ---xx   flac  0.5137  01 Track01.flac
+     5:52.50       62210444 B   ---   --   ---xx   flac  0.4701  02 Track02.flac
+     4:41.50       49686044 B   ---   --   ---xx   flac  0.4567  03 Track03.flac
+     6:08.35       64997564 B   ---   --   ---xx   flac  0.4912  04 Track04.flac
+     4:23.21       46442636 B   ---   --   ---xx   flac  0.4760  05 Track05.flac
+     8:18.33       87924860 B   ---   --   ---xx   flac  0.4872  06 Track06.flac
+     3:11.42       33791228 B   ---   --   ---xx   flac  0.4634  07 Track07.flac
+     5:59.19       63372332 B   ---   --   ---xx   flac  0.4674  08 Track08.flac
+     4:09.38       44013020 B   ---   --   ---xx   flac  0.4406  09 Track09.flac
+    48:05.17      508954380 B                            0.4765  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam6
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:49.72       29980988 B   ---   --   ---xx   flac  0.4775  01 Track01.flac
+     5:52.50       62210444 B   ---   --   ---xx   flac  0.4701  02 Track02.flac
+     1:17.64       13733372 B   ---   --   ---xx   flac  0.5047  03 Track03.flac
+     2:16.21       24039836 B   ---   --   ---xx   flac  0.4973  04 Track04.flac
+     5:10.01       54686396 B   ---   --   ---xx   flac  0.4581  05 Track05.flac
+     4:40.19       49436732 B   ---   --   ---xx   flac  0.4600  06 Track06.flac
+     2:12.37       23371868 B   ---   --   ---xx   flac  0.4823  07 Track07.flac
+     2:20.32       24771308 B   ---   --   ---xx   flac  0.4677  08 Track08.flac
+     5:31.41       58484876 B   ---   --   ---xx   flac  0.4762  09 Track09.flac
+     0:23.14        4090172 B   ---   --   ---xx   flac  0.3960  10 Track10.flac
+     3:05.00       32634044 B   ---   --   ---xx   flac  0.4400  11 Track11.flac
+     1:32.60       16369964 B   ---   --   ---xx   flac  0.4515  12 Track12.flac
+     4:09.55       44053004 B   ---   --   ---xx   flac  0.4614  13 Track13.flac
+     2:11.66       23263676 B   ---   --   ---xx   flac  0.4761  14 Track14.flac
+     1:04.07       11306108 B   ---   --   ---xx   flac  0.4539  15 Track15.flac
+     1:08.74       12169292 B   ---   --   ---xx   flac  0.4723  16 Track16.flac
+     1:05.70       11630684 B   ---   --   ---xx   flac  0.4493  17 Track17.flac
+     1:43.59       18308012 B   ---   --   ---xx   flac  0.3972  18 Track18.flac
+     4:45.11       50299916 B   ---   --   ---xx   flac  0.4799  19 Track19.flac
+     1:31.63       16200620 B   ---   --   ---xx   flac  0.4262  20 Track20.flac
+     2:41.06       28414556 B   ---   --   ---xx   flac  0.4835  21 Track21.flac
+     1:04.58       11426060 B   ---   --   ---xx   flac  0.4321  22 Track22.flac
+     3:20.07       35296508 B   ---   --   ---xx   flac  0.4526  23 Track23.flac
+     4:23.12       46421468 B   ---   --   ---xx   flac  0.4766  24 Track24.flac
+     0:29.57        5249708 B   ---   --   ---xx   flac  0.4796  25 Track25.flac
+    66:52.56      707849612 B                            0.4654  (25 files)
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam7
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.24       54916892 B   ---   --   ---xx   flac  0.4917  01 Track01.flac
+     6:05.59       64524812 B   ---   --   ---xx   flac  0.4633  02 Track02.flac
+     5:35.30       59164604 B   ---   --   ---xx   flac  0.4907  03 Track03.flac
+     6:33.13       69355820 B   ---   --   ---xx   flac  0.4752  04 Track04.flac
+     0:30.27        5355548 B   ---   --   ---xx   flac  0.4226  05 Track05.flac
+     2:02.73       21692540 B   ---   --   ---xx   flac  0.4104  06 Track06.flac
+     4:52.65       51661724 B   ---   --   ---xx   flac  0.4309  07 Track07.flac
+     3:28.19       36735932 B   ---   --   ---xx   flac  0.4695  08 Track08.flac
+     3:24.48       36098540 B   ---   --   ---xx   flac  0.4913  09 Track09.flac
+     1:20.72       14281388 B   ---   --   ---xx   flac  0.4279  10 Track10.flac
+    39:05.55      413787800 B                            0.4674  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam8
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:27.66        4918076 B   ---   --   ---xx   flac  0.4309  01 Track01.flac
+     1:26.57       15304508 B   ---   --   ---xx   flac  0.4606  02 Track02.flac
+     1:45.54       18649052 B   ---   --   ---xx   flac  0.4765  03 Track03.flac
+     2:09.25       22814444 B   ---   --   ---xx   flac  0.4636  04 Track04.flac
+     1:47.12       18903068 B   ---   --   ---xx   flac  0.4776  05 Track05.flac
+     1:57.69       20801132 B   ---   --   ---xx   flac  0.4619  06 Track06.flac
+     2:28.25       26166044 B   ---   --   ---xx   flac  0.4669  07 Track07.flac
+     2:14.18       23679980 B   ---   --   ---xx   flac  0.4636  08 Track08.flac
+     0:54.10        9549164 B   ---   --   ---xx   flac  0.4097  09 Track09.flac
+     3:16.51       34694396 B   ---   --   ---xx   flac  0.4570  10 Track10.flac
+     2:15.70       23978684 B   ---   --   ---xx   flac  0.4649  11 Track11.flac
+     1:29.49       15814892 B   ---   --   ---xx   flac  0.4326  12 Track12.flac
+     1:33.13       16435820 B   ---   --   ---xx   flac  0.4426  13 Track13.flac
+     1:28.13       15553820 B   ---   --   ---xx   flac  0.4408  14 Track14.flac
+     1:28.63       15671420 B   ---   --   ---xx   flac  0.4530  15 Track15.flac
+     2:09.35       22837964 B   ---   --   ---xx   flac  0.4514  16 Track16.flac
+     4:31.05       47816204 B   ---   --   ---xx   flac  0.4503  17 Track17.flac
+     2:55.58       31006460 B   ---   --   ---xx   flac  0.4685  18 Track18.flac
+     6:03.33       64110860 B   ---   --   ---xx   flac  0.4562  19 Track19.flac
+     1:34.14       16614572 B   ---   --   ---xx   flac  0.3981  20 Track20.flac
+     3:04.29       32525852 B   ---   --   ---xx   flac  0.4207  21 Track21.flac
+    47:02.19      497846412 B                            0.4527  (21 files)
+===================
+===================
+===================
+=== shntool len for: bd76-Complete-Guam-Rehearsals.flacf\guam9
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.71        7928636 B   ---   --   ---xx   flac  0.4511  01 Track01.flac
+     0:46.22        8166188 B   ---   --   ---xx   flac  0.4546  02 Track02.flac
+     0:38.51        6823196 B   ---   --   ---xx   flac  0.4701  03 Track03.flac
+     0:43.29        7653452 B   ---   --   ---xx   flac  0.4570  04 Track04.flac
+     1:06.49       11757692 B   ---   --   ---xx   flac  0.4618  05 Track05.flac
+     0:13.47        2403788 B   ---   --   ---xx   flac  0.4638  06 Track06.flac
+     0:14.22        2521388 B   ---   --   ---xx   flac  0.4384  07 Track07.flac
+     0:32.15        5680124 B   ---   --   ---xx   flac  0.4484  08 Track08.flac
+     1:15.62       13375868 B   ---   --   ---xx   flac  0.4444  09 Track09.flac
+     2:03.69       21859532 B   ---   --   ---xx   flac  0.4547  10 Track10.flac
+     0:45.30        8008604 B   ---   --   ---xx   flac  0.4627  11 Track11.flac
+     1:11.26       12585596 B   ---   --   ---xx   flac  0.4523  12 Track12.flac
+     2:18.01       24345596 B   ---   --   ---xx   flac  0.4586  13 Track13.flac
+     0:41.44        7335932 B   ---   --   ---xx   flac  0.4471  14 Track14.flac
+     4:47.18       50669180 B   ---   --   ---xx   flac  0.4454  15 Track15.flac
+     3:58.68       42143180 B   ---   --   ---xx   flac  0.4354  16 Track16.flac
+     3:53.41       41197676 B   ---   --   ---xx   flac  0.4447  17 Track17.flac
+     1:15.11       13255916 B   ---   --   ---xx   flac  0.4394  18 Track18.flac
+     4:16.61       45301916 B   ---   --   ---xx   flac  0.4621  19 Track19.flac
+     1:30.05       15887804 B   ---   --   ---xx   flac  0.4625  20 Track20.flac
+     4:20.52       45986348 B   ---   --   ---xx   flac  0.4484  21 Track21.flac
+     0:58.65       10384124 B   ---   --   ---xx   flac  0.4378  22 Track22.flac
+     2:47.44       29562332 B   ---   --   ---xx   flac  0.4574  23 Track23.flac
+     2:06.34       22306412 B   ---   --   ---xx   flac  0.4257  24 Track24.flac
+     1:15.11       13255916 B   ---   --   ---xx   flac  0.4587  25 Track25.flac
+     1:42.54       18119852 B   ---   --   ---xx   flac  0.5534  26 Track26.flac
+     2:18.32       24418508 B   ---   --   ---xx   flac  0.5497  27 Track27.flac
+     2:35.69       27504332 B   ---   --   ---xx   flac  0.5332  28 Track28.flac
+    51:03.53      540439088 B                            0.4619  (28 files)
+===================
+===================
+===================

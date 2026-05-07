@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd03-05-10-schubert-asm.flacf
+===================
+===================
+===================
+48a9daa9e4d0d649a0c36cf123206f78 *Bob Dylan 2003-05-10 Atlantic City (schubert asm).ffp
+3d0f5d37e423eea1d943700a2cb4dd52 *Bob Dylan 2003-05-10 Atlantic City (schubert asm).md5
+9adccec96f3f9ca6d77e5e0308a04b17 *Bob Dylan 2003-05-10 Atlantic City (schubert asm).txt
+043fa8825b9d7e699f22ff20a22fbabd *D1\01 Announcement.flac
+761698003787d1776bb591c084c813bb *D1\02 Maggie's Farm.flac
+491b0b3a54e350016ab723db2177f6d9 *D1\03 I Don`t Believe You.flac
+80ec314f90f657405244dad821c4d63c *D1\04 Tweedle Dee And Tweedle Dum.flac
+315035f98b1877b4793a539b0914fd16 *D1\05 Tonight I`ll Be Staying Here With You.flac
+ef1bb667a66e5acb2bab40481163ea5f *D1\06 Things Have Changed.flac
+802be99481a012701d82a4e42d52abbc *D1\07 Drifter's Escape.flac
+af9f627c2d978a7be82c5f551a155801 *D1\08 Don`t Think Twice It`s All Right.flac
+d3457cfcac0ab24bd23116414dd290d4 *D1\09 Highway 61 Revisited.flac
+87f173a31ab9277ac4ef48fc6734ce8e *D1\10 Highwater.flac
+ed81d899b825bc8fa641aa87ce6184b6 *D1\Bob Dylan - Dylan - Live, 2003 Atlantic City, May 10 - Disc 1.log
+df90f5ebba6559b6ae3fc5d3e80b6ea2 *D1\Bob Dylan - Dylan - Live, 2003 Atlantic City, May 10 - Disc 1.m3u8
+5bccd8ff10735da26d5761d10b294a6a *D1\D1.md5
+86874419994d33bb84e6e2553b4c38a2 *D1\Dylan - Live, 2003 Atlantic City, May 10 - Disc 1 (Noncompliant).cue
+5a1d46f5eccbd92fa424eb5b36f11310 *D1\Dylan - Live, 2003 Atlantic City, May 10 - Disc 1 (Single Wav).cue
+095b5d1f618766c0d32f45c0f37631b0 *D2\01 Honest With Me.flac
+10fbd1025a35f66b85e4ea14d4a49ade *D2\02 Bye And Bye.flac
+32358d54be98d6d30bf1c4cc893eebcc *D2\03 Summer Days.flac
+9a1086feb7784c195e0153fe753b96d9 *D2\04 Like A Rolling Stone.flac
+d7d415b6bf35c04517b03a7a9a25fbdb *D2\05 All Along The Watchtower.flac
+caad794f0de459050db371793b82043d *D2\Bob Dylan - Dylan - Live, 2003 Atlantic City, May 10 - Disc 2.log
+c1eb90438323ae0a11bfc963d464fede *D2\Bob Dylan - Dylan - Live, 2003 Atlantic City, May 10 - Disc 2.m3u8
+4aa09c46db228e7f610ad440cd89c103 *D2\D2.md5
+7b0ab811d0fc208e7e30329e3c080886 *D2\Dylan - Live, 2003 Atlantic City, May 10 - Disc 2 (Noncompliant).cue
+d24c7e0183e2ea64b892097190e09f9c *D2\Dylan - Live, 2003 Atlantic City, May 10 - Disc 2 (Single Wav).cue
+===================
+===================
+===================
+=== ffp for: bd03-05-10-schubert-asm.flacf
+===================
+===================
+===================
+D1\01 Announcement.flac:a397def5890072694dc987f9c767ddfd
+D1\02 Maggie's Farm.flac:ecc10bdb38208e8d53f5c2e6500d7b5f
+D1\03 I Don`t Believe You.flac:70c96c1d571ca817d43968144a7fbdea
+D1\04 Tweedle Dee And Tweedle Dum.flac:7c944d1924fab266e388e97aca6243ed
+D1\05 Tonight I`ll Be Staying Here With You.flac:a902c4812bb980cf026ada05430666b9
+D1\06 Things Have Changed.flac:4de0faee9deddeb3ff4fcec4220bfd49
+D1\07 Drifter's Escape.flac:e3c5da0263e21cf02e40c66e779142a7
+D1\08 Don`t Think Twice It`s All Right.flac:30bc3d55213b335328d9d39666e47193
+D1\09 Highway 61 Revisited.flac:d9949e6f0ef05c5a889514e18fbb846e
+D1\10 Highwater.flac:79a2538025969b5e3248c2ba37bd8f7b
+D2\01 Honest With Me.flac:474dfaed53e8c10527176ce4f811cd2b
+D2\02 Bye And Bye.flac:6257d01b5e1cf76e52fd85bafcc5dc93
+D2\03 Summer Days.flac:df41c947e1aed6c4b158354a40dffa8a
+D2\04 Like A Rolling Stone.flac:f67b8a8ecfe056cfd11ab1321b1ad075
+D2\05 All Along The Watchtower.flac:b2624a717f24c5d6ddbc4464b40aab4a
+===================
+===================
+===================
+=== shntool len for: bd03-05-10-schubert-asm.flacf\D1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:17.37       13669868 B   ---   --   ---xx   flac  0.4793  01 Announcement.flac
+     5:21.48       56737340 B   ---   --   ---xx   flac  0.6050  02 Maggie's Farm.flac
+     6:23.15       67596524 B   ---   --   ---xx   flac  0.5970  03 I Don`t Believe You.flac
+     5:29.33       58113260 B   ---   --   ---xx   flac  0.5536  04 Tweedle Dee And Tweedle Dum.flac
+     4:55.70       52202684 B   ---   --   ---xx   flac  0.5505  05 Tonight I`ll Be Staying Here With You.flac
+     6:52.21       72726236 B   ---   --   ---xx   flac  0.5993  06 Things Have Changed.flac
+     6:17.67       66660428 B   ---   --   ---xx   flac  0.6532  07 Drifter's Escape.flac
+    10:41.24      113128892 B   ---   --   ---xx   flac  0.4766  08 Don`t Think Twice It`s All Right.flac
+     5:39.42       59898428 B   ---   --   ---xx   flac  0.6369  09 Highway 61 Revisited.flac
+     6:31.51       69092396 B   ---   --   ---xx   flac  0.6269  10 Highwater.flac
+    59:30.33      629826056 B                            0.5790  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd03-05-10-schubert-asm.flacf\D2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:11.32       76103708 B   ---   --   ---xx   flac  0.6313  01 Honest With Me.flac
+     6:10.51       65387996 B   ---   --   ---xx   flac  0.4700  02 Bye And Bye.flac
+    10:41.53      113197100 B   ---   --   ---xx   flac  0.5705  03 Summer Days.flac
+     6:35.57       69812108 B   ---   --   ---xx   flac  0.6348  04 Like A Rolling Stone.flac
+     5:40.31       60048956 B   ---   --   ---xx   flac  0.6153  05 All Along The Watchtower.flac
+    36:19.74      384549868 B                            0.5841  (5 files)
+===================
+===================
+===================

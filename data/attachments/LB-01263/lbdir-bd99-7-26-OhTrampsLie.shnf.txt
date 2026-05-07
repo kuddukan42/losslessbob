@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-7-26-OhTrampsLie.shnf 
+=================== 
+=================== 
+=================== 
+5984d47b4add2467573a407cbfebacba  bd-OhTrampsLie.txt
+da8a4131d59aa1034162e62cded0dcf2  bd99-7-26-OhTrampsLie.txt
+4f65703a705b67b16a71edd37c58f844  OhTrampsLieD01.md5
+584a56b98a4dee4ecaeb471e35150539  OhTrampsLieD01T1.shn
+987fdb03a0ba432f9a2265929084abb8  OhTrampsLieD01T10.shn
+4196828aa1585444b6d5ac18334c20f2  OhTrampsLieD01T11.shn
+735b684890d04873e407adf490d42e3e  OhTrampsLieD01T2.shn
+9d62151f656ef7bd2202a7824f8a03b0  OhTrampsLieD01T3.shn
+49f0255221cc998b73beec942df5e2d5  OhTrampsLieD01T4.shn
+fd49cd1b76c1ad0173dfef44ed9b87b1  OhTrampsLieD01T5.shn
+1a9d8f34c93345a0a8e2852654b03701  OhTrampsLieD01T6.shn
+89996de79191f841df73569546d28ce0  OhTrampsLieD01T7.shn
+fcc4fa1cbcacb7fe10737461ca4aa32a  OhTrampsLieD01T8.shn
+5337bd056b0b859db2754ae492454547  OhTrampsLieD01T9.shn
+17f8f8aa401d725b0693bfaac8a70dd6  OhTrampsLieD02.md5
+893945e7df4f4463072ff555ef01007f  OhTrampsLieD02T1.shn
+4427db5ca23c6f9106673b8bef5b9f36  OhTrampsLieD02T10.shn
+fbb5913bc8524a94d67d21534f96215c  OhTrampsLieD02T11.shn
+db525450cf4b8663ed2c8ec7b80241a9  OhTrampsLieD02T12.shn
+34ffa70b16eb2d623b724a298a00c82f  OhTrampsLieD02T2.shn
+be01a33f7c30acbf7f3d05e1b63da57a  OhTrampsLieD02T3.shn
+5e5f9783a96933da296f15163d01386f  OhTrampsLieD02T4.shn
+95275f6cb7b0bf8770125e3c9f3cc234  OhTrampsLieD02T5.shn
+36f775083bea2e8d97fba00a94259ae6  OhTrampsLieD02T6.shn
+49aec6837467ff64263613c5c91ad11d  OhTrampsLieD02T7.shn
+cd52771c241abc5c2cd79845f3e3bff8  OhTrampsLieD02T8.shn
+4062e72d1279abc383676375666e56e6  OhTrampsLieD02T9.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-7-26-OhTrampsLie.shnf 
+=================== 
+=================== 
+=================== 
+4efcfc0e650b2d0f92ea5fe68dffc136  [shntool]  OhTrampsLieD01T1.wav
+afd2d5fdeaa6d4e6dd87701d515f5a4d  [shntool]  OhTrampsLieD01T2.wav
+6ee3a19eeb1af013c65792e4de1a1148  [shntool]  OhTrampsLieD01T3.wav
+9426584b79b3b2d6e6e5d3479ff1f518  [shntool]  OhTrampsLieD01T4.wav
+54ff50a065e3a031f52c13810162dc41  [shntool]  OhTrampsLieD01T5.wav
+8950a9ba28c21cf6c5909bc6f936d4ad  [shntool]  OhTrampsLieD01T6.wav
+b1026c1a58a634508888a109cf98fdc8  [shntool]  OhTrampsLieD01T7.wav
+981a8ee32f746911460e1c6354426abe  [shntool]  OhTrampsLieD01T8.wav
+df6ef4350549303ef6f1a51923e81982  [shntool]  OhTrampsLieD01T9.wav
+f290fec01a29354ce9791134197932d5  [shntool]  OhTrampsLieD01T10.wav
+3fc4274d4b1d5df31d5ec0da4b795277  [shntool]  OhTrampsLieD01T11.wav
+c335f917fc633e5ad5e1b02f85c71dd4  [shntool]  OhTrampsLieD02T1.wav
+adad02f15646a3acc53747ed410c4527  [shntool]  OhTrampsLieD02T2.wav
+79230841b0cea9760ce1bf457c802497  [shntool]  OhTrampsLieD02T3.wav
+c7b035a9351655a1e9b9e7c8cb9c0ce9  [shntool]  OhTrampsLieD02T4.wav
+8cfe71eb2a2228c5ff57efd98a1bd060  [shntool]  OhTrampsLieD02T5.wav
+1db185d0764120f0490ebc1c538af8b9  [shntool]  OhTrampsLieD02T6.wav
+71658c211b2fd4af0f3aef756036fcd3  [shntool]  OhTrampsLieD02T7.wav
+99a53c446ca12e255bc1324d265c7cdf  [shntool]  OhTrampsLieD02T8.wav
+295fe25a4625f1435f497fd9a2909bd5  [shntool]  OhTrampsLieD02T9.wav
+8d06607be028c7dcec5539896546fe65  [shntool]  OhTrampsLieD02T10.wav
+758c72e1c79fa0d8b3a83a5d78875547  [shntool]  OhTrampsLieD02T11.wav
+2dbf9dfe6d4c5394d9d87cabe3287fae  [shntool]  OhTrampsLieD02T12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-7-26-OhTrampsLie.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:42.46       39269036 B   ---   --   ---xx    shn  0.6365  OhTrampsLieD01T1.shn
+     5:48.65       61540124 B   ---   --   ---xx    shn  0.6550  OhTrampsLieD01T10.shn
+     5:58.66       63306476 B   ---   --   ---xx    shn  0.4927  OhTrampsLieD01T11.shn
+     6:31.53       69097100 B   ---   --   ---xx    shn  0.5869  OhTrampsLieD01T2.shn
+     6:23.49       67676492 B   ---   --   ---xx    shn  0.5035  OhTrampsLieD01T3.shn
+     8:02.59       85163612 B   ---   --   ---xx    shn  0.5211  OhTrampsLieD01T4.shn
+     8:30.58       90100460 B   ---   --   ---xx    shn  0.5993  OhTrampsLieD01T5.shn
+     5:30.28       58277900 B   ---   --   ---xx    shn  0.6761  OhTrampsLieD01T6.shn
+     6:26.03       68097500 B   ---   --   ---xx    shn  0.6419  OhTrampsLieD01T7.shn
+     6:26.58       68226860 B   ---   --   ---xx    shn  0.6494  OhTrampsLieD01T8.shn
+     7:42.15       81532124 B   ---   --   ---xx    shn  0.5558  OhTrampsLieD01T9.shn
+     6:04.18       64251980 B   ---   --   ---xx    shn  0.6250  OhTrampsLieD02T1.shn
+     4:46.11       50476316 B   ---   --   ---xx    shn  0.6127  OhTrampsLieD02T10.shn
+     6:20.34       67112012 B   ---   --   ---xx    shn  0.6181  OhTrampsLieD02T11.shn
+     7:24.61       78465116 B   ---   --   ---xx    shn  0.7510  OhTrampsLieD02T12.shn
+     5:42.52       60451148 B   ---   --   ---xx    shn  0.5368  OhTrampsLieD02T2.shn
+     7:42.23       81550940 B   ---   --   ---xx    shn  0.6337  OhTrampsLieD02T3.shn
+     9:26.11       99868316 B   ---   --   ---xx    shn  0.5144  OhTrampsLieD02T4.shn
+     4:08.56       43878956 B   ---   --   ---xx    shn  0.6283  OhTrampsLieD02T5.shn
+     5:45.15       60893324 B   ---   --   ---xx    shn  0.5334  OhTrampsLieD02T6.shn
+     4:44.22       50149388 B   ---   --   ---xx    shn  0.6545  OhTrampsLieD02T7.shn
+     5:50.53       61864700 B   ---   --   ---xx    shn  0.5914  OhTrampsLieD02T8.shn
+     5:04.50       53743244 B   ---   --   ---xx    shn  0.7069  OhTrampsLieD02T9.shn
+   144:05.06     1524993124 B                            0.6011  (23 files)
+=================== 
+=================== 
+=================== 

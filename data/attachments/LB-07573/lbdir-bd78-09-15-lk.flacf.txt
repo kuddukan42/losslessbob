@@ -1,0 +1,133 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-09-15-lk.flacf 
+=================== 
+=================== 
+=================== 
+f1b129c12f4162af2eab342cd7dfb9bf  D1\bd15sep78 - 101.flac
+c89d7e4843993fed6eba46cd92864097  D1\bd15sep78 - 102.flac
+f712af8191d0a9fadb4713d7871e43ed  D1\bd15sep78 - 103.flac
+f36146298d0d83c1ef0262bfbd74068c  D1\bd15sep78 - 104.flac
+e1c3de6705c7c293e7d8661fb5cd1d49  D1\bd15sep78 - 105.flac
+7b25175830121d16b9551793f5932ecb  D1\bd15sep78 - 106.flac
+b699ec115af0f7cb3ffadd24c8a7cabb  D1\bd15sep78 - 107.flac
+cd70f365299463eb89c76cabd2a2b2b9  D1\bd15sep78 - 108.flac
+25fd65bc346963fed49bdb046ba5544d  D1\bd15sep78 - 109.flac
+9ea32ceae1f49917348ceda0944b3fbe  D1\bd15sep78 - 110.flac
+9e6d8d7c0fc379a86cff1df879f95d56  D1\bd15sep78 - 111.flac
+ee427a452cf5b8239be444eb843f41d3  D1\bd15sep78 - 112.flac
+bcc4841401e3bc87a9e52e6980b52282  D1\bd15sep78 - 113.flac
+5ccb64383bb9a4d0422042a7225bb874  D1\bd15sep78 - 114.flac
+efe75ac44db021762c641c7f75149613  D1\D1.md5
+8af8db35a08c7e132bc8aab7269e9b0e  D2\bd15sep78 - 201.flac
+25252c3a130675ff905b1eb947a9aef6  D2\bd15sep78 - 202.flac
+96290d22d16d49dfabc8ed52d0ecb080  D2\bd15sep78 - 203.flac
+5f8356ee0dfa34668eda52f467cceebc  D2\bd15sep78 - 204.flac
+9faa180f55ad20d325809d340746f93e  D2\bd15sep78 - 205.flac
+a387de6007b061c01add4ebf3dc2c7fb  D2\bd15sep78 - 206.flac
+9a9e407e49333609b6465c564409e2d0  D2\bd15sep78 - 207.flac
+0ae5f41ba8710443a0136a18b2ecab99  D2\bd15sep78 - 208.flac
+3d9094bfb97daf0129e6ef3601c32c8f  D2\bd15sep78 - 209.flac
+6d324462e6aac0773f8c1c26913704aa  D2\bd15sep78 - 210.flac
+5e98c5966d65874d7b6a9bb8e44d9009  D2\bd15sep78 - 211.flac
+496de8917550112e113114e7c7ff2731  D2\bd15sep78 - 212.flac
+ddadf776faa167f2026eb0384f3c47e1  D2\bd15sep78 - 213.flac
+e92e328af346a5f90910995da1f0bb35  D2\bd15sep78 - 214.flac
+a22c642f87b8a07b3c3e88bb3483634f  D2\bd15sep78 - 215.flac
+e352fc47291020dad75d9f0a806ed55c  D2\D2.md5
+62e49db988007a440f657333a8002f3b  info.txt
+0fcaa54eae94d95683e6577d6a76d275  LK 1978 Leg 3 DVD 1.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-09-15-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+bd15sep78 - 101.flac:fb4c1f95d73d3aebf651d9d1a9fc6c74
+bd15sep78 - 102.flac:05ce6cb29dd0dbd56e0d9249581fa032
+bd15sep78 - 103.flac:175a8ad1c4b8cc48d16959ae4a2317e3
+bd15sep78 - 104.flac:5487d8d2068f8da6233e2af33a462726
+bd15sep78 - 105.flac:5e068ce2714c7c730de414d0eb512551
+bd15sep78 - 106.flac:2e015cb6e1c36cc37428eae21bd98ac5
+bd15sep78 - 107.flac:5a220bab8bae5c49ab80bdfe6e33e10b
+bd15sep78 - 108.flac:5358a963df209c7d6f50866913513a05
+bd15sep78 - 109.flac:4b3cc566756cb1ac9dc961881283b4e0
+bd15sep78 - 110.flac:fead3709b79869a0c5a43ce96fe2b518
+bd15sep78 - 111.flac:2804a6c0b41e78b199992955a8ef0cf5
+bd15sep78 - 112.flac:43bcde15937b382619e667bced3a2422
+bd15sep78 - 113.flac:82c129d5d6d91eb98ff38fb062da84e0
+bd15sep78 - 114.flac:ae9796d0201d38629c7efa8e115ee628
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-09-15-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+bd15sep78 - 201.flac:177aaf158c70e18d44ba647c89e5c4dd
+bd15sep78 - 202.flac:938a4ebec6b28beb7b406f23487c5402
+bd15sep78 - 203.flac:5bd8776361ea48be46365b7239dd8aea
+bd15sep78 - 204.flac:96137600efab4627671aa453568363fd
+bd15sep78 - 205.flac:0c1d5f2aeb0a2e57fa9f169c93c65f82
+bd15sep78 - 206.flac:0c2168663ed0d68d45187fd3a1e8aace
+bd15sep78 - 207.flac:5d681ef937446c9929b100cd30bca313
+bd15sep78 - 208.flac:b7fe8c71e29ccaa391740f851d4d239c
+bd15sep78 - 209.flac:5117baa7c053c5492ade6b132fd817fa
+bd15sep78 - 210.flac:d972fb1212125d69d1ed77d8ed8ccfb6
+bd15sep78 - 211.flac:4636d461fa3ad1805cb6cced12f12da9
+bd15sep78 - 212.flac:c14ab2ec4aefe8f29bf9aaa59230b7eb
+bd15sep78 - 213.flac:34b567899c14fe671b2aeaa13067ccba
+bd15sep78 - 214.flac:60e184d29ad33c6efa63a0477216278c
+bd15sep78 - 215.flac:a397353b80f3a963e3f47f3225887638
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-09-15-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:33.11       16431116 B   ---   --   ---xx   flac  0.5452  bd15sep78 - 101.flac
+     3:04.33       32535260 B   ---   --   ---xx   flac  0.5312  bd15sep78 - 102.flac
+     4:19.15       45722924 B   ---   --   ---xx   flac  0.5595  bd15sep78 - 103.flac
+     4:33.50       48274844 B   ---   --   ---xx   flac  0.5656  bd15sep78 - 104.flac
+     3:59.34       42239612 B   ---   --   ---xx   flac  0.5549  bd15sep78 - 105.flac
+     7:21.13       77823020 B   ---   --   ---xx   flac  0.5317  bd15sep78 - 106.flac
+     4:37.72       49032188 B   ---   --   ---xx   flac  0.5611  bd15sep78 - 107.flac
+     5:13.28       55279100 B   ---   --   ---xx   flac  0.5804  bd15sep78 - 108.flac
+     5:11.10       54883964 B   ---   --   ---xx   flac  0.5519  bd15sep78 - 109.flac
+     7:02.53       74565500 B   ---   --   ---xx   flac  0.5811  bd15sep78 - 110.flac
+     4:18.60       45652364 B   ---   --   ---xx   flac  0.5375  bd15sep78 - 111.flac
+     5:28.11       57885116 B   ---   --   ---xx   flac  0.5252  bd15sep78 - 112.flac
+     1:08.56       12126956 B   ---   --   ---xx   flac  0.5593  bd15sep78 - 113.flac
+     4:27.70       47263484 B   ---   --   ---xx   flac  0.5477  bd15sep78 - 114.flac
+    62:19.66      659715448 B                            0.5529  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-09-15-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.31       63224156 B   ---   --   ---xx   flac  0.4996  bd15sep78 - 201.flac
+     3:15.69       34560332 B   ---   --   ---xx   flac  0.5427  bd15sep78 - 202.flac
+     4:29.14       47484572 B   ---   --   ---xx   flac  0.5652  bd15sep78 - 203.flac
+     4:52.67       51666428 B   ---   --   ---xx   flac  0.5272  bd15sep78 - 204.flac
+     2:59.21       31625036 B   ---   --   ---xx   flac  0.4907  bd15sep78 - 205.flac
+     5:02.11       53298716 B   ---   --   ---xx   flac  0.5495  bd15sep78 - 206.flac
+     4:20.43       45965180 B   ---   --   ---xx   flac  0.5906  bd15sep78 - 207.flac
+     5:52.56       62224556 B   ---   --   ---xx   flac  0.5538  bd15sep78 - 208.flac
+     5:15.74       55740092 B   ---   --   ---xx   flac  0.5420  bd15sep78 - 209.flac
+     4:40.10       49415564 B   ---   --   ---xx   flac  0.5434  bd15sep78 - 210.flac
+     3:14.53       34346300 B   ---   --   ---xx   flac  0.5001  bd15sep78 - 211.flac
+     2:11.39       23200172 B   ---   --   ---xx   flac  0.4679  bd15sep78 - 212.flac
+     6:41.71       70903436 B   ---   --   ---xx   flac  0.5045  bd15sep78 - 213.flac
+     5:59.25       63386444 B   ---   --   ---xx   flac  0.4775  bd15sep78 - 214.flac
+     6:31.41       69068876 B   ---   --   ---xx   flac  0.4645  bd15sep78 - 215.flac
+    71:26.25      756109860 B                            0.5211  (15 files)
+=================== 
+=================== 
+=================== 

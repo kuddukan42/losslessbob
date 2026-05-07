@@ -1,0 +1,61 @@
+Bob Dylan
+Fresno State University
+Save Mart Center
+Fresno, California
+October 16, 2004
+  	
+Disc 1:
+01. introduction
+02. Maggie's Farm
+03. The Times They Are A-Changin'
+04. Tweedle Dee & Tweedle Dum
+05. Mr. Tambourine Man
+06. High Water (For Charley Patton)
+07. I Don't Believe You (She Acts Like We Never Have Met)
+08. Ballad Of Hollis Brown
+09. Highway 61 Revisited
+10. Floater (Too Much To Ask)
+11. Stuck Inside Of Mobile With The Memphis Blues Again
+12. Forever Young
+
+Disc 2:
+01. Honest With Me
+02. Positively 4th Street
+03. Summer Days
+(encore)
+04. Like A Rolling Stone
+05. band introduction
+06. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+center floor
+at853's > sp-spsb-1 > denecke ad-20 > sony tcd-d8 (16bit/44.1kHz)
+sony tcd-d8 > m-audio mt1 > usb > hdd
+sony sound forge 9.0 > cd wave > flac
+
+ffp
+bd2004-10-16d1t01.flac:f4ad74270c2838eb4781e92c91bc73ed
+bd2004-10-16d1t02.flac:e0f91f6a14ecc720b7c59bbb533cad79
+bd2004-10-16d1t03.flac:836557aca95457681ab4ee087852a8c3
+bd2004-10-16d1t04.flac:85791b906bcef95b70f553385693f6f3
+bd2004-10-16d1t05.flac:e29a187ed8bbfeb92f1fba1947528ab5
+bd2004-10-16d1t06.flac:b11618e1f3dd2a1d652507a1754e3d71
+bd2004-10-16d1t07.flac:624c889088d79e7da4369978c2c802e3
+bd2004-10-16d1t08.flac:ccf6d998f2ca3bd2baf95f12cdba7c96
+bd2004-10-16d1t09.flac:dc372833e999ad26ebb593cd81026c93
+bd2004-10-16d1t10.flac:816a99a1fee17507c3ea3c099ba62aa5
+bd2004-10-16d1t11.flac:8f301cfe10b0e1debffcf10f5df94c9b
+bd2004-10-16d1t12.flac:f8829e8a6e04f8fa3dee8c62e6bfefaf
+bd2004-10-16d2t01.flac:9d3277474587c152139e9900ea43644e
+bd2004-10-16d2t02.flac:385895d13d6dc840fe2131f07585ae86
+bd2004-10-16d2t03.flac:ff4c56d22b23eb3642d231b68e7ec528
+bd2004-10-16d2t04.flac:e35701092dd5fe8d6677c44b561db965
+bd2004-10-16d2t05.flac:27da7e0376053f9fe37ffb7f32e7ff3f
+bd2004-10-16d2t06.flac:8384e75f99a7b4c36b7e1121775afe8d

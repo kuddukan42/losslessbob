@@ -1,0 +1,125 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Nitelife Rocks
+Little Rock, Arkansas
+18 May 2003
+ 
+1.Maggie's Farm
+2.Tell Me That It Isn't True
+3.Tweedle Dee & Tweedle Dum
+4.Mr. Tambourine Man
+5.Things Have Changed
+6.Drifter's Escape
+7.High Water (For Charley Patton)
+8.Standing In The Doorway
+9.Highway 61 Revisited
+10.Love Sick
+11.Watching The River Flow
+12.Bye And Bye
+13.Honest With Me
+14.Summer Days
+
+15.Like A Rolling Stone
+16.All Along The Watchtower
+ 
+ 
+Concert # 1524 of The Never-Ending Tour. Concert # 23 of the 2003 US Spring Tour. 2003 concert # 34.
+ 
+Concert # 23 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+ 
+2 Larry Campbell (pedal steel guitar).
+2, 6 Bob Dylan (harmonica).
+4 acoustic with band.
+11, 13 Larry Campbell (slide guitar).
+ 
+www.bjoner.com
+
+CDr < XLD < flac < Dime
+apa05
+===================
+===================
+===================
+=== notes.txt
+===================
+===================
+===================
+CEDAR notes:
+
+CEDAR 1a
+	
+fingerprint
+
+As "Mr. Tambourine Man" starts, an enthusiastic woman, centre/left but somewhat distant, shouts for "Every Grain of Sand." She tries again before "Things Have Changed." 	Very nice, even excellent, recording, with particularly crisp and upfront vocals. Good balance and separation. Crowd present but not obtrusive. The FW recording.	
+
+Comments
+Very nice, even excellent, recording, with particularly crisp and upfront vocals. Good balance and separation. Crowd present but not obtrusive. The FW recording.
+CEDAR 1a Recut. Includes 4 tracks from the Waifs' opening set.
+===================
+===================
+===================
+=== shntool.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     5:22.38       56890220 B   ---   --   ---xx  01 Bob Dylan - Maggie's Farm.flac     3:52.35       41007164 B   ---   --   ---xx  02 Bob Dylan - Tell Me That It Isn't True.flac     5:30.72       58381388 B   ---   --   ---xx  03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac     6:22.59       67523612 B   ---   --   ---xx  04 Bob Dylan - Mr.Tambourine Man.flac     7:00.23       74142140 B   ---   --   ---xx  05 Bob Dylan - Things Have Changed.flac     4:40.08       49410860 B   ---   --   ---xx  06 Bob Dylan - Drifter's Escape.flac     7:08.27       75562748 B   ---   --   ---xx  07 Bob Dylan - High Water.flac     6:32.46       69257036 B   ---   --   ---xx  08 Bob Dylan - Standing In The Doorway.flac     5:54.70       62610284 B   ---   --   ---xx  09 Bob Dylan - Highway 61 Revisited.flac     6:05.27       64449548 B   ---   --   ---xx  10 Bob Dylan - Love Sick.flac     5:45.39       60949772 B   ---   --   ---xx  11 Bob Dylan - Watching The River Flow.flac     5:58.08       63170060 B   ---   --   ---xx  12 Bob Dylan - Bye And Bye.flac     7:01.49       74379692 B   ---   --   ---xx  13 Bob Dylan - Honest With Me.flac     6:39.04       70393052 B   ---   --   ---xx  01 01 Summer Days.flac     3:34.35       37831964 B   ---   --   ---xx  02 02 2 (encore).flac     6:38.13       70237820 B   ---   --   ---xx  03 03 Like A Rolling Stone.flac     6:05.34       64466012 B   ---   --   ---xx  04 04 4 All Along The Watchtower.flac     6:17.52       66625148 B   ---   --   ---xx  05 05 The Waifs.flac     4:36.45       48792284 B   ---   --   ---xx  06 06 The Waifs.flac     6:07.26       64799996 B   ---   --   ---xx  07 07 The Waifs.flac     4:16.35       45240764 B   ---   --   ---xx  08 08 The Waifs.flac   121:30.70     1286121564 B                            0.5766  (21 files)
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - Maggie's Farm.flac:d467ae58d31aa97846a287ae9edf38f902 Bob Dylan - Tell Me That It Isn't True.flac:1b09c999ad7710c10826b9a37fea0ff403 Bob Dylan - Tweedle Dee & Tweedle Dum.flac:3c1d0c832ed517947ef39fdb09fc626204 Bob Dylan - Mr.Tambourine Man.flac:7590cea0b229022465e9f4d6b8d8c4c805 Bob Dylan - Things Have Changed.flac:2062898e45432776f369a980eb0d41fc06 Bob Dylan - Drifter's Escape.flac:069b7b4f589d0b6295e95536b744d66007 Bob Dylan - High Water.flac:8c73bee6c188fa640456435feb64896108 Bob Dylan - Standing In The Doorway.flac:643d00d4bf837db39225f19ab1ed23ef09 Bob Dylan - Highway 61 Revisited.flac:f16679780d596bdc6b9b8c8a73aae72310 Bob Dylan - Love Sick.flac:b9cfadac8466bf19b1cbe9f32e1356af11 Bob Dylan - Watching The River Flow.flac:1b7f9d86ef72f6c283fdb7d94e65a18912 Bob Dylan - Bye And Bye.flac:00fdc115925f671cb86727551166767513 Bob Dylan - Honest With Me.flac:98f00fcdfb7d39d4b020d1c700f40abf
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+ca027f8e6cb29409d21ada3011a84315 *01 Bob Dylan - Maggie's Farm.flac
+8fa12145de06a0d5abfeecc870cf540e *02 Bob Dylan - Tell Me That It Isn't True.flac
+ad03427560baa17031718557e46d2342 *03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
+4fcdbf6b25bb0bf1c91f057dd00f2f15 *04 Bob Dylan - Mr.Tambourine Man.flac
+8acc387c99b7abfefc4a08d9ecb56174 *05 Bob Dylan - Things Have Changed.flac
+d7b2103ed449b079b916a11459c005de *06 Bob Dylan - Drifter's Escape.flac
+20175594b691384787b726193e8f7f06 *07 Bob Dylan - High Water.flac
+62c012cb617ec295e4ad1438fa96b0b5 *08 Bob Dylan - Standing In The Doorway.flac
+367f0d764160ea30e25c26c2d533910b *09 Bob Dylan - Highway 61 Revisited.flac
+a6b4061a7238fd520fdc8986008fcbf0 *10 Bob Dylan - Love Sick.flac
+2bbcca5f7449ff30b96084238a580ba6 *11 Bob Dylan - Watching The River Flow.flac
+bea9ab89bf379257fb9ef32f3ed5b870 *12 Bob Dylan - Bye And Bye.flac
+7c18754446a126064ae00adc7d722aa0 *13 Bob Dylan - Honest With Me.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 01 Summer Days.flac:77e4c7247ffff61108e0b83fc06d5e0602 02 2 (encore).flac:303f8d166cba99cf46ec057e02423fd303 03 Like A Rolling Stone.flac:b3d3f30cd248b792650f3bc52820a7ce04 04 4 All Along The Watchtower.flac:b3bc7e0a069ff3481956ce628255d4e805 05 The Waifs.flac:09b2dd19de54ce305a3aac7d126276a206 06 The Waifs.flac:f83dc6baab282562b3a175db0112e5af07 07 The Waifs.flac:3b1da6e6f851436d33db2dd887240d9c08 08 The Waifs.flac:d700030c11aaf75ae4bc85e636cb5f2b
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+c0cfeb45ca1002e22c8c25fffabb1970 *01 01 Summer Days.flac
+ee2ce40c50721b5da290ce78d2f96bc6 *02 02 2 (encore).flac
+052c2cc675cd03f764af27294c130b64 *03 03 Like A Rolling Stone.flac
+01e16ade573325d71dbcf3291d74fd2d *04 04 4 All Along The Watchtower.flac
+62c01fbfae127eaac9b120fc2e8db933 *05 05 The Waifs.flac
+e252fcb4bee5842c20f86fa013da2eae *06 06 The Waifs.flac
+6f43fff65159a1f5ed3a74692e8daa66 *07 07 The Waifs.flac
+4efbf80228590e2d200fc2787034f587 *08 08 The Waifs.flac
+
+===================
+===================
+===================

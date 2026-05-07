@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-10-ljubana-91.flacf 
+=================== 
+=================== 
+=================== 
+0eeeba67bd4e183012b6a81e4a479164  bd91-06-10-ljubana-91-d1t01.flac
+5cfeb92c116e3104c446809c6b0c7edd  bd91-06-10-ljubana-91-d1t02.flac
+7f7fde37604e8b3bcbf6bdd57ccf6456  bd91-06-10-ljubana-91-d1t03.flac
+e6a8eaafc705f03d5c7ee2823583fcac  bd91-06-10-ljubana-91-d1t04.flac
+2c88acfc1eed9b5eff7216425f05f04f  bd91-06-10-ljubana-91-d1t05.flac
+989a91f4ddee7ae6d618d33fb340f09f  bd91-06-10-ljubana-91-d1t06.flac
+a6dbd1c2351bb046c25caabbb95795ca  bd91-06-10-ljubana-91-d1t07.flac
+2859a8d680a00cd1a9c9a8df3409a99a  bd91-06-10-ljubana-91-d1t08.flac
+137fada730cfb4f730a5cd78295528aa  bd91-06-10-ljubana-91-d1t09.flac
+d3e073d3f19db600618c55701eb29298  bd91-06-10-ljubana-91-d1t10.flac
+83eb2481f941891c41e54614f7ec0345  bd91-06-10-ljubana-91-d1t11.flac
+e8f040e4823230b8cd8300adad9346b9  bd91-06-10-ljubana-91-d1t12.flac
+644907e32423b9a42c934a2c1c541a22  bd91-06-10-ljubana-91-d1t13.flac
+8668442770f1c9d82e34fe16bd9cb570  bd91-06-10-ljubana-91-d1t14.flac
+6372f19c5a13d255dc32ffaea14cc410  bd91-06-10-ljubana-91.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-10-ljubana-91.flacf 
+=================== 
+=================== 
+=================== 
+bd91-06-10-ljubana-91-d1t01.flac:86e92fb8ed93f9a0d92d2f621f2828a1
+bd91-06-10-ljubana-91-d1t02.flac:0e60d5326aa05210b7732373b3f95878
+bd91-06-10-ljubana-91-d1t03.flac:12ea7fab5f5d68d7ca0e62fe083e84e2
+bd91-06-10-ljubana-91-d1t04.flac:103d2f678d50458de691349f45c8b4e3
+bd91-06-10-ljubana-91-d1t05.flac:eb221f7382b0552d5f39c8bc44dec18a
+bd91-06-10-ljubana-91-d1t06.flac:38a09b756cfc4e47d894ed1c089e7584
+bd91-06-10-ljubana-91-d1t07.flac:edafb97d86c5dbf589709bd3d4147dd9
+bd91-06-10-ljubana-91-d1t08.flac:92e67c695b116a134f4d2faa9a541ef2
+bd91-06-10-ljubana-91-d1t09.flac:9dd247043f3cfe335c31ac7aa0ae139d
+bd91-06-10-ljubana-91-d1t10.flac:4a7c97782238ca4fffbc3ef78fc140f1
+bd91-06-10-ljubana-91-d1t11.flac:59fb95ed6de6fe71d7261b8fbc5402a0
+bd91-06-10-ljubana-91-d1t12.flac:77ef35713622c28086ea85f8de12b883
+bd91-06-10-ljubana-91-d1t13.flac:4c2dedf5de4ed7ec884a3c969b82b526
+bd91-06-10-ljubana-91-d1t14.flac:4560a21cb5395c5c18e891ed0f6b5b60
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-10-ljubana-91.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.57       30298508 B   ---   --   ---xx   flac  0.6275  bd91-06-10-ljubana-91-d1t01.flac
+     5:27.10       57706364 B   ---   --   ---xx   flac  0.6552  bd91-06-10-ljubana-91-d1t02.flac
+     3:58.58       42119660 B   ---   --   ---xx   flac  0.6736  bd91-06-10-ljubana-91-d1t03.flac
+     4:18.52       45633548 B   ---   --   ---xx   flac  0.6678  bd91-06-10-ljubana-91-d1t04.flac
+     8:14.13       87172220 B   ---   --   ---xx   flac  0.6752  bd91-06-10-ljubana-91-d1t05.flac
+     4:41.67       49726028 B   ---   --   ---xx   flac  0.5997  bd91-06-10-ljubana-91-d1t06.flac
+     5:09.70       54672284 B   ---   --   ---xx   flac  0.6700  bd91-06-10-ljubana-91-d1t07.flac
+     6:21.15       67243724 B   ---   --   ---xx   flac  0.6805  bd91-06-10-ljubana-91-d1t08.flac
+     3:44.68       39673580 B   ---   --   ---xx   flac  0.7094  bd91-06-10-ljubana-91-d1t09.flac
+     5:42.27       60392348 B   ---   --   ---xx   flac  0.6420  bd91-06-10-ljubana-91-d1t10.flac
+     6:38.00       70207244 B   ---   --   ---xx   flac  0.6361  bd91-06-10-ljubana-91-d1t11.flac
+     4:33.40       48251324 B   ---   --   ---xx   flac  0.6481  bd91-06-10-ljubana-91-d1t12.flac
+     6:10.15       65303324 B   ---   --   ---xx   flac  0.6978  bd91-06-10-ljubana-91-d1t13.flac
+     6:03.45       64139084 B   ---   --   ---xx   flac  0.6551  bd91-06-10-ljubana-91-d1t14.flac
+    73:56.12      782539240 B                            0.6609  (14 files)
+=================== 
+=================== 
+=================== 

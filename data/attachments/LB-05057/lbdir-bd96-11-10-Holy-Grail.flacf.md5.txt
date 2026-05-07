@@ -1,0 +1,20 @@
+060c12e6520a5fc74bd6f97908f08e92  bd1996-11-10.flac Mankato Holy Grail.ffp
+d79c93292ba8976f9976d6810bb4afdd  bd1996-11-10.flac Mankato Holy Grail.md5
+dd93e931b8fd65039e69b0edcd0a1c63  bd1996-11-10.info.r9453.txt
+89cd92e49f98349dc35a7716ba40e76c  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 01).flac
+5aabc9f3fb8042e7f840305be6983384  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 02).flac
+6d882d3209e2c0e6d83166e6dd3eff74  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 03).flac
+38ef896354c0aec1499051752efd13cc  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 04).flac
+09ce5a5fda44d6eb914f6a0165c1b30f  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 05).flac
+d5e90e3a395178f4814ba3fe5405dbce  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 06).flac
+e078ce1adcebb3949c166cc4455adad6  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 07).flac
+d7c92cdddcd7c36e14c80f2dcac67fbf  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 08).flac
+c4e98eb1803ba034d2c5485e02de382c  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 09).flac
+2b3b36d97eebf48ddc2687b61e376bcc  d1\d1.shntool.txt
+719bbd0b410445c20d6e4a726a66914d  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 01).flac
+d40616ba98fb1fc22fcdc132d9029617  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 02).flac
+0b432c6e69f87244150146cd40f09b0d  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 03).flac
+c668a64420c8f2205257d2d2bc73d028  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 04).flac
+9b533882b4526cf763f2668af1e58909  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 05).flac
+516d8630374bda89c5cb00be3152d6dc  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 06).flac
+8e2dc507328ca2c32575dc3c38bfbe1f  d2\d2.shntool.txt

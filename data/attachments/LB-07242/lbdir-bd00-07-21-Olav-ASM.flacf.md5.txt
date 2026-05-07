@@ -1,0 +1,21 @@
+f14671a1d53cbf05922cc5400d851d58  2000-07-21 Meadows Music Theatre, Hartford, Connecticut, USA [uT Olav ASM].md5
+090d3f2285646344052fe4ab0d285ad5  CD1\01 Duncan and Brady.flac
+8dd583cc20b96ea584464fc2d4dadb4b  CD1\02 To Ramona.flac
+85b176072bcd052c0b0be7fe351c9e42  CD1\03 Desolation Row.flac
+edf08573442a2e9d481da239feabce16  CD1\04 Tomorrow is a long time.flac
+1a07fe310943c665758d5568f44a0567  CD1\05 Tangled up in blue.flac
+7b80d848f129a1f9e00a47fe4586e3ef  CD1\06 Searching for a soldier's grave.flac
+948bdde431783629ae266925b1a2fa03  CD1\07 Country Pie.flac
+bd96edbf60c21070bf6ce5c0934d35c2  CD1\08 If not for you.flac
+31079dc6b97a860ee693549b381e23d2  CD1\09 Tombstone blues.flac
+d545b2bf70181d7088a8f0c908edb2cd  CD1\10 Tears of rage.flac
+c0e0dcdd70e4a8981e6a16b333dfd4c1  CD1\11 Cold irons bound.flac
+9b4bb9b75194cf52162a66aa4a6e8982  CD1\12 Leopard-skin pill-box hat.flac
+956c0285da22518b6f105448aa345871  CD2\13 Things have changed.flac
+2690199926ec0a644413b2732ded408f  CD2\14 Like a rolling stone.flac
+a119366671f12d57b6832543ca44af7a  CD2\15 Mr. Tambourine Man.flac
+f231310464f5842795890df15cc0bd2a  CD2\16 Highway 61 revisited.flac
+7330091fb6d1504d82134030a4c5048d  CD2\17 Blowin' in the wind.flac
+bc6f91b6894b22525d64c8aa997e6bd3  Info\EAC log d1.LOG
+0de641e3ebf18f85a3de129b0910e2ae  Info\EAC log d2.LOG
+56e103226a5a67e7b327df56ccd874b6  Info\info.txt

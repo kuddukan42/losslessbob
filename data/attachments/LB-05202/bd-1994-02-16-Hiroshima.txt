@@ -1,0 +1,44 @@
+Bob Dylan - 1994-02-16 Hiroshima, Japan [flac](2CD)
+new transfer from DAT master
+
+Venue: Hiroshima Koseinenkin Kaikan
+City : Hiroshima, Japan
+
+Equipment & Lineage:
+COS-11PT > handmade power supply > D3 > DAT master > DA-20 (playback) > UA-30 > PC > Soundforge 7.0 > wav > Trader's Little Helper > flac (level 8)
+
+a01 Jokerman
+a02 Shelter From The Storm
+a03 All Along The Watchtower
+a04 She Belongs To Me
+a05 Tangled Up In Blue
+a06 Watching The River Flow
+a07 Tomorrow Night @
+a08 Masters Of War @ *
+a09 Don't Think Twice, It's Alright @
+b01 Series Of Dreams
+b02 I And I
+b03 Maggie's Farm
+ - E N C O R E -
+b04 Man In The Long Black Coat
+b05 It Ain't Me, Babe @
+
+* likely to be the first ACOUSTIC Masters of War in 30 years.
+
+a09 to b01 seamless
+
+FFP Fingerprints:
+a01.flac:f96c09cfb707c5bbf016303445adc922
+a02.flac:779c6ddae310988fe06379860d8985de
+a03.flac:3b1ff5194966e596c83fcef9e1d0dd7f
+a04.flac:d312f1884dc572d8fd61d33d859b99d7
+a05.flac:d7b032f3378810fd05b2b32cb61327e2
+a06.flac:092991022ad19fd81bdf178cf662f2e5
+a07.flac:99c58317eb2a000c4e4311461b4c2969
+a08.flac:660e24fe08bdc9ed8070ad2078f0211e
+a09.flac:1107376428bd1953571d1b859f2808a2
+b01.flac:3bf8ad8b889a8759d8185caa0e9431a8
+b02.flac:aa57b4a7b4d8a65ea5b75112cccc090a
+b03.flac:1e4ec772103000cacd73145c3738a07c
+b04.flac:f329998352e8691531c0ad395efdeb12
+b05.flac:6b90c3a9b3a85ce3c0c9ae983cf8a44e

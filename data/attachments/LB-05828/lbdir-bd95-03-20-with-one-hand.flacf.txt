@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-20-with-one-hand.flacf 
+=================== 
+=================== 
+=================== 
+a848c6a3e66dd06f401077453467fa03  bd95-03-20-with-one-hand-d1t01.flac
+0775b762edcbd19523855e452b3bf27f  bd95-03-20-with-one-hand-d1t02.flac
+1d7c84cc66b9d1424697ab1eb4f176bd  bd95-03-20-with-one-hand-d1t03.flac
+f811d59ebb3750062a975b2b88e88828  bd95-03-20-with-one-hand-d1t04.flac
+297d48816c47bcf8bbd45e2eaef97144  bd95-03-20-with-one-hand-d1t05.flac
+fb9d3940115653851106a95e122bd95a  bd95-03-20-with-one-hand-d1t06.flac
+619169599acb7198567fa2b2b3baa07b  bd95-03-20-with-one-hand-d1t07.flac
+b3e8bc108ca4d09c041c0b60322267f5  bd95-03-20-with-one-hand-d1t08.flac
+151f894b643265f207d0e757d2c48843  bd95-03-20-with-one-hand-d1t09.flac
+ceb388e9d14e301d664f102eb0ba1720  bd95-03-20-with-one-hand-d1t10.flac
+aa7cb3c399fc3b71d81552accf6b4e66  bd95-03-20-with-one-hand-d1t11.flac
+7f48d6bcd9820041861878ca5db0c33a  bd95-03-20-with-one-hand-d1t12.flac
+5c5c5c89d7735d2f3b551fe7b6fbd3ac  bd95-03-20-with-one-hand-d2t01.flac
+e070859d497337478b7301e1c18e2ee7  bd95-03-20-with-one-hand-d2t02.flac
+aa3aa3998b75c71d6dd7250c2c693989  bd95-03-20-with-one-hand-d2t03.flac
+952af236f07b6e331ca3263f8cc3de52  bd95-03-20-with-one-hand-d2t04.flac
+9d76901ef03a4cee853bd81e5dc1cfe7  bd95-03-20-with-one-hand-d2t05.flac
+790453120fbde60478ce79cd9c58af79  bd95-03-20-with-one-hand-d2t06.flac
+01732931a29f30ac71bedf3fb0c28872  bd95-03-20-with-one-hand-d2t07.flac
+9e9de39ee4e08d716dc21a9dedcd0be1  bd95-03-20-with-one-hand-d2t08.flac
+ea4ccf12f668eca8b3300ee8dab855ac  bd95-03-20-with-one-hand-d2t09.flac
+e1d6fb883cbb5ec99ab140e2a4e764c9  bd95-03-20-with-one-hand-d2t10.flac
+7323b636add62a796caf3159f22b4eb1  bd95-03-20-with-one-hand-d2t11.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-20-with-one-hand.flacf 
+=================== 
+=================== 
+=================== 
+bd95-03-20-with-one-hand-d1t01.flac:bee62e31a136186eb0d29eadab2aeb46
+bd95-03-20-with-one-hand-d1t02.flac:a2e2ab9ecc072079897d9fb522e521be
+bd95-03-20-with-one-hand-d1t03.flac:43ea67f8da40bab8ca9e0f50e5f0481d
+bd95-03-20-with-one-hand-d1t04.flac:89257076eca4d575ef59efed0352d234
+bd95-03-20-with-one-hand-d1t05.flac:c2a7860cba7a9ed19056208f5dc98a64
+bd95-03-20-with-one-hand-d1t06.flac:0f043564bdbcd5970feb1357e2e2a132
+bd95-03-20-with-one-hand-d1t07.flac:62ca03037ed659e7a850cbb1c2f0c61f
+bd95-03-20-with-one-hand-d1t08.flac:33548f1178db490688c309cc9205b6a1
+bd95-03-20-with-one-hand-d1t09.flac:21b38d874dfdeba57e3a6d4fbd0b1a5c
+bd95-03-20-with-one-hand-d1t10.flac:5713ac5bf60a4a68d23c267834d66eec
+bd95-03-20-with-one-hand-d1t11.flac:025c5172643691e8da57b689794b3805
+bd95-03-20-with-one-hand-d1t12.flac:39f9681ee27755e6129a17c0df88a529
+bd95-03-20-with-one-hand-d2t01.flac:aac063b7980b3a6442930105fca13ec8
+bd95-03-20-with-one-hand-d2t02.flac:385af2d37097755516c0548a1df2026f
+bd95-03-20-with-one-hand-d2t03.flac:6b2f6fcef56da59a6cdf6c5c38605282
+bd95-03-20-with-one-hand-d2t04.flac:9d302d89ecfa55be2b6f306a35bd04ec
+bd95-03-20-with-one-hand-d2t05.flac:c932329329a1501bf838edc00a02bc14
+bd95-03-20-with-one-hand-d2t06.flac:0987ee40386e9b62a8c6cb58195c51c7
+bd95-03-20-with-one-hand-d2t07.flac:bc91d69df0a0c5a8804d53e7ab667ce5
+bd95-03-20-with-one-hand-d2t08.flac:f511cb96c4f4340c7ca6bdea48903524
+bd95-03-20-with-one-hand-d2t09.flac:94fdffe61bdd819b1ab469a4331daeb7
+bd95-03-20-with-one-hand-d2t10.flac:d32ee330c1547f6209e35ec35fa0d97f
+bd95-03-20-with-one-hand-d2t11.flac:ce68489631e7004994b326bcf8666dd7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-20-with-one-hand.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.65       56424524 B   ---   --   ---xx   flac  0.6301  bd95-03-20-with-one-hand-d1t01.flac
+     4:18.60       45652364 B   ---   --   ---xx   flac  0.5734  bd95-03-20-with-one-hand-d1t02.flac
+     5:18.00       56095244 B   ---   --   ---xx   flac  0.6363  bd95-03-20-with-one-hand-d1t03.flac
+     5:29.30       58106204 B   ---   --   ---xx   flac  0.5623  bd95-03-20-with-one-hand-d1t04.flac
+     7:45.25       82084844 B   ---   --   ---xx   flac  0.5764  bd95-03-20-with-one-hand-d1t05.flac
+     5:48.47       61497788 B   ---   --   ---xx   flac  0.5541  bd95-03-20-with-one-hand-d1t06.flac
+     6:38.20       70254284 B   ---   --   ---xx   flac  0.4362  bd95-03-20-with-one-hand-d1t07.flac
+     6:47.50       71912444 B   ---   --   ---xx   flac  0.4055  bd95-03-20-with-one-hand-d1t08.flac
+     6:10.33       65345660 B   ---   --   ---xx   flac  0.5215  bd95-03-20-with-one-hand-d1t09.flac
+     6:22.00       67384844 B   ---   --   ---xx   flac  0.6049  bd95-03-20-with-one-hand-d1t10.flac
+     7:41.50       81438044 B   ---   --   ---xx   flac  0.5723  bd95-03-20-with-one-hand-d1t11.flac
+     7:30.30       79450604 B   ---   --   ---xx   flac  0.6140  bd95-03-20-with-one-hand-d1t12.flac
+     7:19.72       77608988 B   ---   --   ---xx   flac  0.5844  bd95-03-20-with-one-hand-d2t01.flac
+     7:04.13       74824220 B   ---   --   ---xx   flac  0.4965  bd95-03-20-with-one-hand-d2t02.flac
+     4:39.27       49279148 B   ---   --   ---xx   flac  0.5055  bd95-03-20-with-one-hand-d2t03.flac
+     7:22.05       77980604 B   ---   --   ---xx   flac  0.5235  bd95-03-20-with-one-hand-d2t04.flac
+     5:36.65       59423324 B   ---   --   ---xx   flac  0.4378  bd95-03-20-with-one-hand-d2t05.flac
+     7:46.70       82367084 B   ---   --   ---xx   flac  0.4808  bd95-03-20-with-one-hand-d2t06.flac
+     6:00.45       63609884 B   ---   --   ---xx   flac  0.5659  bd95-03-20-with-one-hand-d2t07.flac
+     5:52.25       62151644 B   ---   --   ---xx   flac  0.5505  bd95-03-20-with-one-hand-d2t08.flac
+     6:23.03       67568300 B   ---   --   ---xx   flac  0.4422  bd95-03-20-with-one-hand-d2t09.flac
+     8:07.05       85918604 B   ---   --   ---xx   flac  0.4826  bd95-03-20-with-one-hand-d2t10.flac
+     6:27.32       68342108 B   ---   --   ---xx   flac  0.5620  bd95-03-20-with-one-hand-d2t11.flac
+   147:50.22     1564720756 B                            0.5339  (23 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,8 @@
+    length     expanded size   cdr  WAVE problems filename
+     5:58.74       63325292    ---   --   ---xx   Bob Dylans - Track 01.flac
+     6:49.73       72319340    ---   --   ---xx   Bob Dylans - Track 02.flac
+     6:23.50       67678844    ---   --   ---xx   Bob Dylans - Track 03.flac
+    10:52.25      115071644    ---   --   ---xx   Bob Dylans - Track 04.flac
+     6:39.12       70411868    ---   --   ---xx   Bob Dylans - Track 05.flac
+     7:45.34       82106012    ---   --   ---xx   Bob Dylans - Track 06.flac
+    44:29.43      470913000 B                     (totals for 6 files, 0.6450 overall compression ratio)

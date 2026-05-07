@@ -1,0 +1,8 @@
+Bob Dylan, 1/23/74, Memphis, TN, Mid-South Coliseum, 1CDR
+
+LB-3981, (72min), Aud Reel; Stereo audience recording > ? > Memorex 7-1/2 ips reel > 24/96 wav > SoundForge (DC offset correct, normalize) > 16.44.1 wav > SBE correction > FLAC Level 8; in comparison to LB-3650 on Hollis Brown this one had a lot more hiss that seemed to scrape in and out and was not as warm; (did not listen to all of this)
+
+1. Most Likely You Go Your Way (And I'll Go Mine), 2. Lay Lady Lay, 3. Just Like Tom Thumb's Blues, 4. Rainy Day Women # 12 & 35, 5. It Ain't Me, Babe, 6. Ballad Of A Thin Man, 7. All Along The Watchtower, 8. Ballad Of Hollis Brown, 9. Knockin' On Heaven's Door, 10. The Times They Are A-Changin', 11. Don't Think Twice, It's All Right, 12. Fourth Time Around, 13. Gates Of Eden, 14. Just Like A Woman, 15. It's Alright, Ma (I'm Only Bleeding), 16. Forever Young, 17. Something There Is About You, 18. Like A Rolling Stone, 19. Most Likely You Go Your Way (And I'll Go Mine)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

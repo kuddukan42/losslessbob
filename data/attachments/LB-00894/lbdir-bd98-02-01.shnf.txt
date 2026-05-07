@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-02-01.shnf 
+=================== 
+=================== 
+=================== 
+80a1f8800b0ffbcc38e039fca1948753  101 Absolutely Sweet Marie.shn
+2d6e15f2c8361d8beac7ea1d02e037cd  102 Tonight I'll Be Staying Here With You.shn
+0a35f8ae036f36f00a5c62aca50cf4bb  103 Can't Wait.shn
+590b4d294a145a24b725e3f733897cd3  104 Born In Time.shn
+aa0e1cbbd0fc375067f7f9567e35ce8b  105 Silvio.shn
+ed7aa2d6ebfaa889df5c2ac989e3468a  106 Cocaine Blues.shn
+b162853907a634d886541218c188194f  107 Masters Of War.shn
+d5e057c6ae7e645a989844a1bde12967  108 Tangled Up In Blues.shn
+57cfba5c99d6de5e7204b3b73ff7d4a7  201 Million Miles.shn
+aecde818891c55a33e40a79b7893d2f0  202 Just Like Tom THumb's Blues.shn
+ab6f58ff07753f15f27919535feb83b4  203 Highway 61 Revisited.shn
+10d3736cb8e07db26cfa71569f3dec89  204 Till I Fell In Love With You.shn
+e93220c486c02621c82865942267ca47  205 It Ain't Me, Babe.shn
+857c167a213ef0c6011a637c1fdb3635  206 Love Sick.shn
+18921e1ee1c2d5bc4df1d219e450a382  207 Rainy Day Women.shn
+dd4dc5c7b8f044c5a41ebc145717a710  bd98-02-01.shnf.txt
+63826e2121d75bfe06813da1277ddaf5  Copy(1) of Dylan Newark NJ 98.txt
+fa3dae34e5d04ebb811412e10e321cb1  D1 Newark.md5
+03ec9894668873bc8c5b4b80b595c5c5  D2 Newark.md5
+63826e2121d75bfe06813da1277ddaf5  Dylan Newark NJ 98.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-02-01.shnf 
+=================== 
+=================== 
+=================== 
+fa465d419f62ebf467ab95c7ac4d3f1f  [shntool]  101_Absolutely_Sweet_Marie.wav
+9a4e19431971e8830637d2b00aa18898  [shntool]  102_Tonight_I'll_Be_Staying_Here_With_You.wav
+7607cdd064e0598dcf80ddf52b5b0d3f  [shntool]  103_Can't_Wait.wav
+b1b2dddc30cbbccfac1e453c620aa12e  [shntool]  104_Born_In_Time.wav
+1aa852db91b4f0c659d9e92682e26dea  [shntool]  105_Silvio.wav
+4d94016de4a6ce5dacd73e72aa858518  [shntool]  106_Cocaine_Blues.wav
+5e6ac054b1a106553cb34f22c3801f16  [shntool]  107_Masters_Of_War.wav
+2b28d6040adb6c944fb95ba6a05c0e40  [shntool]  108_Tangled_Up_In_Blues.wav
+2b921b3d07a35c8a71f57d030063d9f1  [shntool]  201_Million_Miles.wav
+bda9a6cc6c5160c5238f284afcc01af9  [shntool]  202_Just_Like_Tom_THumb's_Blues.wav
+6bc90119a18778a6208ea70c3971827d  [shntool]  203_Highway_61_Revisited.wav
+b6c98f0df71edd9f71fe06bfdc26bdae  [shntool]  204_Till_I_Fell_In_Love_With_You.wav
+b67b4feff8767fa0f98d4ec363de65fa  [shntool]  205_It_Ain't_Me,_Babe.wav
+d81dec6eaed4acbb7598b2533e90a40c  [shntool]  206_Love_Sick.wav
+d468c797a9c94204c20e08cc6c08f6de  [shntool]  207_Rainy_Day_Women.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-01.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.38       48070220 B   ---   --   ---xx    shn  0.7258  101 Absolutely Sweet Marie.shn
+     5:45.54       60985052 B   ---   --   ---xx    shn  0.7307  102 Tonight I'll Be Staying Here With You.shn
+     5:58.55       63280604 B   ---   --   ---xx    shn  0.7422  103 Can't Wait.shn
+     5:25.49       57445292 B   ---   --   ---xx    shn  0.7027  104 Born In Time.shn
+     7:07.05       75334604 B   ---   --   ---xx    shn  0.7494  105 Silvio.shn
+     4:32.45       48086684 B   ---   --   ---xx    shn  0.6435  106 Cocaine Blues.shn
+     4:50.05       51167804 B   ---   --   ---xx    shn  0.6518  107 Masters Of War.shn
+     7:40.26       81205196 B   ---   --   ---xx    shn  0.7698  108 Tangled Up In Blues.shn
+     6:30.09       68817212 B   ---   --   ---xx    shn  0.7048  201 Million Miles.shn
+     7:06.68       75306380 B   ---   --   ---xx    shn  0.7080  202 Just Like Tom THumb's Blues.shn
+     7:30.09       79401212 B   ---   --   ---xx    shn  0.7472  203 Highway 61 Revisited.shn
+     8:03.11       85227116 B   ---   --   ---xx    shn  0.7016  204 Till I Fell In Love With You.shn
+     8:59.16       95117276 B   ---   --   ---xx    shn  0.6570  205 It Ain't Me, Babe.shn
+     5:46.07       61050908 B   ---   --   ---xx    shn  0.6858  206 Love Sick.shn
+     5:32.38       58654220 B   ---   --   ---xx    shn  0.7476  207 Rainy Day Women.shn
+    95:20.60     1009149780 B                            0.7127  (15 files)
+=================== 
+=================== 
+=================== 

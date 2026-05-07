@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-16-senn-me80.flacf 
+=================== 
+=================== 
+=================== 
+b43b3484f1c1e841e60976faf748d803  dylan1988-09-16 columbia.txt
+5d8dc9d24bcb1a872372c2bf58e2fca0  dylan1988-09-1601.shn
+2287be1c29be358aaa013e2761122db3  dylan1988-09-1602.shn
+a78b0fbde32b43635f4a290b4e17274b  dylan1988-09-1603.shn
+b60c77ec9adac033ef887500287b1c10  dylan1988-09-1604.shn
+9b2273e8e390a0cc03365e97e8af6ede  dylan1988-09-1605.shn
+f5f608f4536f9b2c170751b4d1154367  dylan1988-09-1606.shn
+caa79a2090e9abd0ef03deee2fc71e7a  dylan1988-09-1607.shn
+73505938bdd9ea548c32706978cdbd07  dylan1988-09-1608.shn
+ff8dc1fb323174516cd7faede29a4e40  dylan1988-09-1609.shn
+94a673010a850918f2946c64e600f291  dylan1988-09-1610.shn
+2425fd4f88e0a86b11f6b868284f223d  dylan1988-09-1611.shn
+5d9dc78fe7a51107aa0dc5df865a9e12  dylan1988-09-1612.shn
+24c92b6b3826d3a5dbbe80afd843286b  dylan1988-09-1613.shn
+4cd5e94ca24b2d58782e62b0996db9e3  dylan1988-09-1614.shn
+06cfe654c6f931785b40c8a9bebdf2b3  dylan1988-09-1615.shn
+d3173851d7fae401acf7bd76f568142d  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-09-16-senn-me80.flacf 
+=================== 
+=================== 
+=================== 
+d883d20eea56dc3368db996af86b3b4b  [shntool]  dylan1988-09-1601.wav
+419394dd090d965d199c01527803f857  [shntool]  dylan1988-09-1602.wav
+f1654ac5d1c841188dab244f17ffd116  [shntool]  dylan1988-09-1603.wav
+8e653f926977464d95894bbe7c6060b4  [shntool]  dylan1988-09-1604.wav
+194caf4ed926ed0ddb0a7cb4e4e71680  [shntool]  dylan1988-09-1605.wav
+3f0eb298a7e3e0daab3faa01f353d9ec  [shntool]  dylan1988-09-1606.wav
+9ab2e476f8c81c8db2af8a4f9ca8de1d  [shntool]  dylan1988-09-1607.wav
+f16ed431cf51ca74c1a6c055be02a539  [shntool]  dylan1988-09-1608.wav
+f0c4266cb03272d5111fd5c3c2f886ff  [shntool]  dylan1988-09-1609.wav
+dd8a24c06ee2d4b4f90acf60b8e8fa68  [shntool]  dylan1988-09-1610.wav
+065085eef8317c99a4e2b7f7b8aa0cbb  [shntool]  dylan1988-09-1611.wav
+564d7860c8ece3170cd02bc0f4a57222  [shntool]  dylan1988-09-1612.wav
+abb4c4693a07c917d1af8c370acc6422  [shntool]  dylan1988-09-1613.wav
+aeb466c046f5eca5905f0a0a6eb6aab5  [shntool]  dylan1988-09-1614.wav
+3004d13aa7d8bde5b65c45f8d1e988a1  [shntool]  dylan1988-09-1615.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-16-senn-me80.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:10.48       33628940 B   ---   --   ---xx    shn  0.7514  dylan1988-09-1601.shn
+     4:14.51       44925596 B   ---   --   ---xx    shn  0.7236  dylan1988-09-1602.shn
+     6:26.18       68132780 B   ---   --   ---xx    shn  0.7335  dylan1988-09-1603.shn
+     4:37.15       48898124 B   ---   --   ---xx    shn  0.7256  dylan1988-09-1604.shn
+     4:57.25       52449644 B   ---   --   ---xx    shn  0.7144  dylan1988-09-1605.shn
+     4:19.05       45699404 B   ---   --   ---xx    shn  0.7325  dylan1988-09-1606.shn
+     3:53.22       41152988 B   ---   --   ---xx    shn  0.6914  dylan1988-09-1607.shn
+     5:47.74       61384892 B   ---   --   ---xx    shn  0.6821  dylan1988-09-1608.shn
+     3:53.74       41275292 B   ---   --   ---xx    shn  0.6955  dylan1988-09-1609.shn
+     4:21.66       46195676 B   ---   --   ---xx    shn  0.7108  dylan1988-09-1610.shn
+     3:45.62       39835868 B   ---   --   ---xx    shn  0.7460  dylan1988-09-1611.shn
+     6:46.28       71684300 B   ---   --   ---xx    shn  0.7397  dylan1988-09-1612.shn
+     5:32.36       58649516 B   ---   --   ---xx    shn  0.6813  dylan1988-09-1613.shn
+     5:02.54       53399852 B   ---   --   ---xx    shn  0.6932  dylan1988-09-1614.shn
+     5:28.49       57973316 B   -b-   --   ---xx    shn  0.7432  dylan1988-09-1615.shn
+    72:18.27      765286188 B                            0.7172  (15 files)
+=================== 
+=================== 
+=================== 

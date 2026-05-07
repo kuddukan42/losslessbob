@@ -1,0 +1,12 @@
+Bob Dylan, 7/9/91, Syracuse, 2CDR
+
+LB-4776, (48min+49min), Taper: Glen Dundas, Source: Low-gen audio disks > (dBpowerAMP set to compression level 6), flac., Note: I am not sure whether this derives from the same master as does, LB-4053 (I did not have an opportunity to compare), but the notes to, LB-4053 indicate that d2t1 on that one is only 52 seconds in length, missing the end portion of "Girl from the North Country"; the present, recording has a complete track for this song.; bittorrent download 04/07; has tv band; same recording as LB-4053 based on same clapping at begin of d1t9 with this one having warmer fuller but more muffled sound; lots of background chatter
+
+CD1
+1 Tangled Up In Blue, 2 Lay Lady Lay, 3 All Along The Watchtower, 4 Shelter From The Storm, 5 Gotta Serve Somebody, 6 Wiggle Wiggle, 7 When I Paint My Masterpiece, 8 Positively 4th Street, 9 Barbara Allen (acoustic), 
+
+CD2
+1 Girl From The North Country (acoustic w band), 2 Love Minus Zero/No Limit (acoustic w band), 3 She Belongs To Me (acoustic w band), 4 Knockin' On Heaven's Door, 5 Everything Is Broken, 6 I Believe In You, 7 Maggie's Farm, 8 Man In The Long Black Coat, 9 Ballad Of A Thin Man
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

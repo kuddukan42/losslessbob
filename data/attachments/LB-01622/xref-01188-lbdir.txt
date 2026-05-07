@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-23-g.shnf
+===================
+===================
+===================
+04c78426766036c9b1bf14ae611c4443 *bd1995-03-23 brussels.txt
+c4ca68d4508d60fb788ac49c8bef601c *bd1995-03-23 d1t1.shn
+cba64fcbd61873de4cf6bbfa86a74c7f *bd1995-03-23 d1t2.shn
+c2bc08628bf35329a4ab86b56578e9db *bd1995-03-23 d1t3.shn
+1d05c0c0c454491f51c075e591f689d8 *bd1995-03-23 d1t4.shn
+585be18ba5c8c5a8173b72c4cc1298dc *bd1995-03-23 d1t5.shn
+5df5dc552f0bb383a520da559c9e0aa6 *bd1995-03-23 d1t6.shn
+61f705e6e66aa7c3fefddea2bc282113 *bd1995-03-23 d1t7.shn
+a044b8eebdae9e758c78a97125d772d8 *bd1995-03-23 d2t1.shn
+5aa591ff87edd5e3843a1233a3fc88c1 *bd1995-03-23 d2t2.shn
+342500a6c86ac674a1424ec4b8224c30 *bd1995-03-23 d2t3.shn
+f2e3f2a4180f3c2425a1b9c758ff7999 *bd1995-03-23 d2t4.shn
+8c05c7fbdf822863e327e55bd60fb447 *bd1995-03-23 d2t5.shn
+8c88b95d24d9517d26572fa601b8962d *bd1995-03-23 d2t6.shn
+27e9054e12099fd74c6d73f0911170f3 *bd1995-03-23 d2t7.shn
+9416d769c0a1b0a11fe4887e0e5c775c *md5sum.md5
+===================
+===================
+===================
+=== shntool md5/hash for: bd95-03-23-g.shnf
+===================
+===================
+===================
+3aa18ba93e2abcc32ca2ff50c1442b1b  [shntool]  bd1995-03-23 d1t1.shn
+35d2ed0d488cc0348fbe990aafcb15bc  [shntool]  bd1995-03-23 d1t2.shn
+0cc79a3f2c99a0aa03bdd1f336ef9e95  [shntool]  bd1995-03-23 d1t3.shn
+6364b8c2daadf6a93a2227c2a6bb1b01  [shntool]  bd1995-03-23 d1t4.shn
+02aed3062894566e825650d0b8d1a7cd  [shntool]  bd1995-03-23 d1t5.shn
+2a6b0219b8e3b12ad12e021c3ccd8e44  [shntool]  bd1995-03-23 d1t6.shn
+2b262c939cdcae0dd2e9a3229b700957  [shntool]  bd1995-03-23 d1t7.shn
+f1df31def0720f62f8c85fd74bcbb879  [shntool]  bd1995-03-23 d2t1.shn
+77f62ed58a305524094bb37070124989  [shntool]  bd1995-03-23 d2t2.shn
+bac5d39dc7484eeb419310bf193d3707  [shntool]  bd1995-03-23 d2t3.shn
+fe89c198623d6424f62e8851fe35b68c  [shntool]  bd1995-03-23 d2t4.shn
+8be96b8aa97538e4d8da5a2c03fcafb5  [shntool]  bd1995-03-23 d2t5.shn
+e3f3f779fef6bcb65d74a086c7a45c33  [shntool]  bd1995-03-23 d2t6.shn
+5bc630be592cf3e7be33f5e51d24a222  [shntool]  bd1995-03-23 d2t7.shn
+===================
+===================
+===================
+=== shntool len for: bd95-03-23-g.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.57       55170908 B   ---   --   ---xx    shn  0.7673  bd1995-03-23 d1t1.shn
+     4:06.34       43474412 B   ---   --   ---xx    shn  0.7557  bd1995-03-23 d1t2.shn
+     5:05.26       53863196 B   ---   --   ---xx    shn  0.7695  bd1995-03-23 d1t3.shn
+     6:40.16       70597676 B   ---   --   ---xx    shn  0.6876  bd1995-03-23 d1t4.shn
+     7:53.52       83559548 B   ---   --   ---xx    shn  0.7124  bd1995-03-23 d1t5.shn
+     8:10.06       86450156 B   ---   --   ---xx    shn  0.6740  bd1995-03-23 d1t6.shn
+     6:25.22       67965788 B   ---   --   ---xx    shn  0.5625  bd1995-03-23 d1t7.shn
+     6:53.17       72893228 B   ---   --   ---xx    shn  0.5412  bd1995-03-23 d2t1.shn
+     6:49.50       72265244 B   ---   --   ---xx    shn  0.6973  bd1995-03-23 d2t2.shn
+     7:06.60       75287564 B   ---   --   ---xx    shn  0.7488  bd1995-03-23 d2t3.shn
+     6:08.03       64922300 B   ---   --   ---xx    shn  0.7690  bd1995-03-23 d2t4.shn
+     6:25.70       68078684 B   ---   --   ---xx    shn  0.7703  bd1995-03-23 d2t5.shn
+     9:49.19      103944332 B   ---   --   ---xx    shn  0.6767  bd1995-03-23 d2t6.shn
+     8:55.41       94470476 B   ---   --   ---xx    shn  0.6506  bd1995-03-23 d2t7.shn
+    95:42.23     1012943512 B                            0.6926  (14 files)
+===================
+===================
+===================

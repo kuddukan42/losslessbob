@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-01-31-a.flacf 
+=================== 
+=================== 
+=================== 
+0b1cc82eae02192b9dc1b907e9939e3f  2002-01-31_Orlando.txt
+4b5c16450984919e02e83600840696b7  d1\01-Intro.flac
+8ba1b278ad33d24983206ed95423bd05  d1\02-Wait For The Light To Shine.flac
+bd158c07343be10d77081add15008764  d1\03-Girl Of The North Country.flac
+1fb70ea3467f5bdace7a72fd993b4bd2  d1\04-It's Alright, Ma (I'm Only Bleeding).flac
+c9500c398ba3a8e91fa4423817fcea74  d1\05-Searching For A Soldier's Grave.flac
+38b52bf9d1711e3ab08257542e1d1aec  d1\06-Tweedle Dee & Tweedle Dum.flac
+f1af7d49046e7d3ba6481cfe42f47b7c  d1\07-Just Like A Woman.flac
+a0b95ea8fe3ad3d646bdfd33bc5c3120  d1\08-Lonesome Day Blues.flac
+0d24397a2c18b982d3dc2227b7e170c0  d1\09-High Water (For Charley Patton).flac
+a943461d36af5f31085df3970466b8ce  d1\10-Don't Think Twice, It's All Right.flac
+e2d507b9a591d650ad41498f0b952b69  d1\11-John Brown.flac
+43683acd3e776e7df46c771de3dee24c  d1\12-Tangled Up In Blue.flac
+659b85adccc3e56713c00a8d1c387387  d2\01-Summer Days.flac
+703a0e1acbad4b72f7277061bffd2406  d2\02-Sugar Baby.flac
+41d079984053a38ff67933e940ab3919  d2\03-Drifter's Escape.flac
+9f4f9deb8834b67efe8354ba2204b1ea  d2\04-Rainy Day Women #12 & 35.flac
+86f9b65f62e6f9cbf00081e1b32bf9f4  d2\05-Love Sick.flac
+c4bd48a28a0221b03cdb935d2327ecb5  d2\06-Like A Rolling Stone.flac
+b3bd9886d13211f802fae98a726bbed1  d2\07-Forever Young.flac
+08ccff50ac6c70780dedf185e8bee651  d2\08-Honest With Me.flac
+5f35f146163adbac43d58bafe1b67dd6  d2\09-Blowin' In The Wind.flac
+1c681792761e5e070e629fa9d3cbd1e2  eacd1.log
+722fd4d2da08dd88434f66b772070e41  eacd2.log
+fc6e54a7fd141265ab9d8e3a7061a075  fingerprint,wav.txt
+5c6ec2357e98c2115393c89a392ba548  Orlando Jan 31 2002.ffp
+a4528c827a77a629d92e5da9eea3e336  wav.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-01-31-a.flacf\d1 
+=================== 
+=================== 
+=================== 
+01-intro.flac:90553a40119d16c9111b4b74b778cf6c
+02-wait for the light to shine.flac:5d1629ffca37162ca7fa411a9fe1a707
+03-girl of the north country.flac:59c0fb1f21d70f612c1681c47da2eff9
+04-it's alright, ma (i'm only bleeding).flac:741ea48175a18159ca05bb3e837c890e
+05-searching for a soldier's grave.flac:85288fd39e3b8eb37495af8593d5b576
+06-tweedle dee & tweedle dum.flac:1fffa20a16e0eb02c45ca02e8b1391ce
+07-just like a woman.flac:debe55ab5cdfe9ab520d617a5bfffb41
+08-lonesome day blues.flac:a2257f7f1ef363aac77e632a8d4bc166
+09-high water (for charley patton).flac:a987cae04bc248944ac64d2e21b3971f
+10-don't think twice, it's all right.flac:0e89bb1540849d510c95b995e0ee60c3
+11-john brown.flac:8d8f0e47d091a93a0cb8ef1999b8f940
+12-tangled up in blue.flac:2e522e83b6fde11fc098db44408b4090
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-01-31-a.flacf\d2 
+=================== 
+=================== 
+=================== 
+01-summer days.flac:0af229b39a1d9e42e2d41b9fbc71bd14
+02-sugar baby.flac:29c9a3b41378529c1b861c7c0ad52e8b
+03-drifter's escape.flac:01e784032ed4dd51ee24497aa14bf3e8
+04-rainy day women #12 & 35.flac:d23b2373076970c7c582b3fc88cfe495
+05-love sick.flac:ff4878adb572bf232c257fd8f3e4e01f
+06-like a rolling stone.flac:0a0af8aa797ceb84826689ca0bfde42b
+07-forever young.flac:12021b4a5881932a61fb522e54480437
+08-honest with me.flac:370f5096168d6e8a3f3d5d1d4b55f63f
+09-blowin' in the wind.flac:4ed4f2e2614c52f47c8e77655671c817
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-01-31-a.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.43        7862780 B   ---   --   ---xx   flac  0.4710  01-Intro.flac
+     2:56.65       31199324 B   ---   --   ---xx   flac  0.5487  02-Wait For The Light To Shine.flac
+     6:09.61       65235116 B   ---   --   ---xx   flac  0.4238  03-Girl Of The North Country.flac
+     7:33.23       79963340 B   ---   --   ---xx   flac  0.4937  04-It's Alright, Ma (I'm Only Bleeding).flac
+     3:47.58       40179260 B   ---   --   ---xx   flac  0.4926  05-Searching For A Soldier's Grave.flac
+     5:01.18       53138780 B   ---   --   ---xx   flac  0.5081  06-Tweedle Dee & Tweedle Dum.flac
+     7:34.37       80172668 B   ---   --   ---xx   flac  0.5228  07-Just Like A Woman.flac
+     6:39.74       70557692 B   ---   --   ---xx   flac  0.5788  08-Lonesome Day Blues.flac
+     6:40.72       70729388 B   ---   --   ---xx   flac  0.5322  09-High Water (For Charley Patton).flac
+     6:14.63       66121820 B   ---   --   ---xx   flac  0.4619  10-Don't Think Twice, It's All Right.flac
+     5:07.44       54258332 B   ---   --   ---xx   flac  0.4668  11-John Brown.flac
+     7:48.13       82585820 B   ---   --   ---xx   flac  0.5559  12-Tangled Up In Blue.flac
+    66:19.46      702004320 B                            0.5084  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-01-31-a.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.33       61112060 B   ---   --   ---xx   flac  0.5692  01-Summer Days.flac
+     7:23.60       78286364 B   ---   --   ---xx   flac  0.4438  02-Sugar Baby.flac
+     4:17.65       45487724 B   ---   --   ---xx   flac  0.6012  03-Drifter's Escape.flac
+     7:37.20       80661884 B   ---   --   ---xx   flac  0.5863  04-Rainy Day Women #12 & 35.flac
+     5:58.34       63231212 B   ---   --   ---xx   flac  0.5051  05-Love Sick.flac
+     7:47.38       82468220 B   ---   --   ---xx   flac  0.5864  06-Like A Rolling Stone.flac
+     6:03.24       64089692 B   ---   --   ---xx   flac  0.4978  07-Forever Young.flac
+     6:54.40       73123724 B   ---   --   ---xx   flac  0.5846  08-Honest With Me.flac
+     5:52.33       62170460 B   ---   --   ---xx   flac  0.5311  09-Blowin' In The Wind.flac
+    57:41.47      610631340 B                            0.5439  (9 files)
+=================== 
+=================== 
+=================== 

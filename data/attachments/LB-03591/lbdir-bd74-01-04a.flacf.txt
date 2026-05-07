@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-04a.flacf 
+=================== 
+=================== 
+=================== 
+530b63dd15ec1f01641c0b3bb53f63fc  1474.txt
+258c7a0389ec06dc6cad05192459b99a  bd74-01-04a-LB-3591.txt
+781f847e5bcd57ad4f73b1fa0e7d123f  Track 01.flac
+1957679f4cfae6e552cf3963064397fb  Track 02.flac
+2a8826e2061f04437e7c6e3eb9e3f80b  Track 03.flac
+ce3417aa0ae5a2f1f52d186ee263f076  Track 04.flac
+5cea70c4e62f3015456a2ce486cb8f8b  Track 05.flac
+9526d9f0573e7a085b98e8e9de843386  Track 06.flac
+654100a7446f054dff3f1e736f09f58d  Track 07.flac
+9cb8a9d71b3ffc78a0a50d025a04ff02  Track 08.flac
+b46672793826603ff4727c1676ee49c9  Track 09.flac
+1bff4948f72d7378e8ab892b3dbfa672  Track 10.flac
+d7ec0710c3f4cb29d57441d62a0c945f  Track 11.flac
+da20d2435767b083a065ed3ff3101412  Track 12.flac
+1f8fd062123aff231860a1def97a7907  Track 13.flac
+bcefec2572cd0a20cc9d7333911ed4d0  Track 14.flac
+edad30dddb8e5200f618d99a890a85c6  Track 15.flac
+1f55a6b28e1b96b5e7a0eb77af6dbc69  Track 16.flac
+48f886430bfadb9778370c2e563e4e22  Track 17.flac
+009fbc925424108ca1b28bed4da2d392  Track 18.flac
+0e5fb0b5c52972090d25aa5bbf71eace  Track 19.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-04a.flacf 
+=================== 
+=================== 
+=================== 
+Track 01.flac:c8ed2d626d4ef2d962139afc82ad975b
+Track 02.flac:dfa1861b8f45e9ece29d56c3eaead4bc
+Track 03.flac:8ba87663ffb6d07bb3844c5e25ec7d45
+Track 04.flac:24832cc07c9bf3a1a9ee9b32afa7230b
+Track 05.flac:e463017e5762fc69825deb3dbcd8eafc
+Track 06.flac:4ef79709ed57cdb319dca7875d44174f
+Track 07.flac:35176391c751eb6aa1fba08d1aef6383
+Track 08.flac:8e9490ee6c14d3a28df2af383552733d
+Track 09.flac:63887b24a6985e13e47e465dd9e73321
+Track 10.flac:f7b903fc5bde437c3409ff228df9a70f
+Track 11.flac:7bffad5353ad3b2b010c1dd5da5986c2
+Track 12.flac:34edd7681d9f8eb42ca34bbd1dd35e93
+Track 13.flac:be1ebc4bc6665b17097664a87b89acc2
+Track 14.flac:e249ce3b8db58b0d79eafe288bc99557
+Track 15.flac:ee0cc63097a430fe362c39482d52b9ce
+Track 16.flac:65c7429fd3836422bdd2e7019ad032d9
+Track 17.flac:f3a47f19e78d36103041062400a2d1f3
+Track 18.flac:d4a5f60d082d41e5e5fed958478df819
+Track 19.flac:af4bd4e30cc6c8ad6d3f4f2e6a2d7302
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-04a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:28.07       26123708 B   ---   --   ---xx   flac  0.3123  Track 01.flac
+     3:26.27       36401948 B   ---   --   ---xx   flac  0.2972  Track 02.flac
+     4:23.30       46463804 B   ---   --   ---xx   flac  0.3048  Track 03.flac
+     3:56.14       41663372 B   ---   --   ---xx   flac  0.3080  Track 04.flac
+     4:01.22       42564188 B   ---   --   ---xx   flac  0.3135  Track 05.flac
+     5:53.57       62403308 B   ---   --   ---xx   flac  0.3042  Track 06.flac
+     4:35.07       48526508 B   ---   --   ---xx   flac  0.3152  Track 07.flac
+     4:07.73       43742540 B   ---   --   ---xx   flac  0.3082  Track 08.flac
+     3:32.51       37516796 B   ---   --   ---xx   flac  0.3152  Track 09.flac
+     2:39.35       28129964 B   ---   --   ---xx   flac  0.3150  Track 10.flac
+     3:08.26       33224396 B   ---   --   ---xx   flac  0.3077  Track 11.flac
+     4:05.56       43349756 B   ---   --   ---xx   flac  0.3220  Track 12.flac
+     2:29.67       26441228 B   ---   --   ---xx   flac  0.3170  Track 13.flac
+     3:18.49       35042492 B   ---   --   ---xx   flac  0.3133  Track 14.flac
+     3:09.49       33454892 B   ---   --   ---xx   flac  0.3036  Track 15.flac
+     3:34.33       37827260 B   ---   --   ---xx   flac  0.3106  Track 16.flac
+     3:44.57       39647708 B   ---   --   ---xx   flac  0.3197  Track 17.flac
+     5:07.59       54293612 B   ---   --   ---xx   flac  0.3206  Track 18.flac
+     3:22.61       35776316 B   ---   --   ---xx   flac  0.3164  Track 19.flac
+    71:06.30      752593796 B                            0.3117  (19 files)
+=================== 
+=================== 
+=================== 

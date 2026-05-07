@@ -1,0 +1,942 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd67-Basement-Reels-d.flacf 
+=================== 
+=================== 
+=================== 
+965720d7bba3590dee6a5c95111c8f40  bd67-Basement-Reels-d-LB-6391.txt
+48b283f8695bbebbe83ed968449b2ca9  Bob Dylan & The Band - The Basement Reels.md5
+a3805f0c08caf0766492bc7a0589d0b1  Bob Dylan & The Band - The Basement Reels.txt
+92be45940cd7e3f474a58fc8caa20645  The Basement Reels Artwork by JTT\Basement Reels - Box_Base.jpg
+330c71ebe5de05afaad0b055a53e991a  The Basement Reels Artwork by JTT\Basement Reels - Box_Top.jpg
+56f1ee50e736bc5b1e8ded7e7b8fe750  The Basement Reels Artwork by JTT\Basement Reels - Disc_01.jpg
+a0d057c3b32c434c4f81319559d35177  The Basement Reels Artwork by JTT\Basement Reels - Disc_02.jpg
+b6e0d5597fae091e2f1f7d13d41a848b  The Basement Reels Artwork by JTT\Basement Reels - Disc_03.jpg
+f1f539469ec30b7be392acbe2732315d  The Basement Reels Artwork by JTT\Basement Reels - Disc_04.jpg
+0f978ed96721268a7cb124e3929aba6d  The Basement Reels Artwork by JTT\Basement Reels - Disc_05.jpg
+33f23d6f8e03b8852184ed412abba769  The Basement Reels Artwork by JTT\Basement Reels - Disc_06.jpg
+538628ca2717da1804946cdf4ab8b37f  The Basement Reels Artwork by JTT\Basement Reels - Disc_07.jpg
+0296e8a9ce133e4eb2a0dcc6962016f8  The Basement Reels Artwork by JTT\Basement Reels - Disc_08.jpg
+b08fc126916486c0ff894412fef416d4  The Basement Reels Artwork by JTT\Basement Reels - Disc_09.jpg
+c50c3d73298d97a07dc44284f2efd501  The Basement Reels Artwork by JTT\Basement Reels - Disc_10.jpg
+765ad38a5a14eda21cf99dc7ab54b47f  The Basement Reels Artwork by JTT\Basement Reels - Disc_11.jpg
+8bd79ff1c45a24477d0d932cc3452fce  The Basement Reels Artwork by JTT\Basement Reels - Front_ Master.jpg
+d0d1ac2cd89e8abd688e605eac5f2789  The Basement Reels Disc 01\Track01.flac
+f4367163d90edf52614bc201b0ca5438  The Basement Reels Disc 01\Track02.flac
+cb34188a3d2a4e07db69cc47b5b77f0d  The Basement Reels Disc 01\Track03.flac
+8ae9a115a13f8f6e26567d45de8d3960  The Basement Reels Disc 01\Track04.flac
+91084092a3b410041d797f0fc5856bcc  The Basement Reels Disc 01\Track05.flac
+affd40b630218e4f802f54021dfc76f2  The Basement Reels Disc 01\Track06.flac
+8550b1a48c395eae2a211617b2f5949b  The Basement Reels Disc 01\Track07.flac
+b68a0afdbb8c9affef809d6130900800  The Basement Reels Disc 01\Track08.flac
+2740d8cdc640a224a45abbc25a659ae9  The Basement Reels Disc 01\Track09.flac
+2ffc5d004ac090e989c98229ec088548  The Basement Reels Disc 01\Track10.flac
+91db36b0155a64ebf55c8a1aa72c624a  The Basement Reels Disc 01\Track11.flac
+e25359d25a6266cd74ac5313e50eb888  The Basement Reels Disc 01\Track12.flac
+5695d289d63b4c7f891108524d8ee854  The Basement Reels Disc 01\Track13.flac
+e383ab3d523d9a7c6278531d7bdf2b13  The Basement Reels Disc 01\Track14.flac
+04cb0a3057ddc990c2d72321d9167aaa  The Basement Reels Disc 01\Track15.flac
+38100c578855fcb12d856b9fd38ee308  The Basement Reels Disc 01\Track16.flac
+914f2e544363d88d13a4167534df304e  The Basement Reels Disc 01\Track17.flac
+b0a0605cfce5f1af4c5210132370fc00  The Basement Reels Disc 01\Track18.flac
+3158c895cacc187b7cb78700277f80de  The Basement Reels Disc 01\Track19.flac
+2d5f63a73a6dde19b57ac01218f671c3  The Basement Reels Disc 01\Track20.flac
+e185e431ed4ad548b71a7bfc5a1a2094  The Basement Reels Disc 01\Track21.flac
+87d6200c52335fcaf9a1170d946dbbdc  The Basement Reels Disc 01\Track22.flac
+77371163d71c67b30c12cecb03d21e96  The Basement Reels Disc 01\Track23.flac
+a767b20d13eed40aa42624589f27fea2  The Basement Reels Disc 01\Track24.flac
+a003bb50d5943170fd21b815b49be67e  The Basement Reels Disc 01\Track25.flac
+aeda33708b4767067aee17505815c120  The Basement Reels Disc 01\Track26.flac
+0fdeb6c7962145bb72f3bd0dbe8551bd  The Basement Reels Disc 02\Track01.flac
+0084ae75bbafb4849d71119ce27e9e44  The Basement Reels Disc 02\Track02.flac
+e6acdc1a7523fab236346aa1184dcb99  The Basement Reels Disc 02\Track03.flac
+2d91dc813a66130f37372fb2d856cfcf  The Basement Reels Disc 02\Track04.flac
+0e322abf1785b7be7a39e6373bffe112  The Basement Reels Disc 02\Track05.flac
+f5c696e14c791df2269876164fc713b3  The Basement Reels Disc 02\Track06.flac
+fdd3a8abb7bfede60ee74db0519bf694  The Basement Reels Disc 02\Track07.flac
+b9a5940c6884ea4697fa217fa96e0d34  The Basement Reels Disc 02\Track08.flac
+44aa764df2d60731c2ee6c96d38fa848  The Basement Reels Disc 02\Track09.flac
+fe4fe2320a9be7786db5e32316835272  The Basement Reels Disc 02\Track10.flac
+ba5380dd69b221a0ebd49a543d52ae53  The Basement Reels Disc 02\Track11.flac
+6e61261a8770c9f7fc8b1a4dcf8d9039  The Basement Reels Disc 02\Track12.flac
+07b38f72ba67b1ca1f42e6add0cb36d9  The Basement Reels Disc 02\Track13.flac
+0677b43a9e22c6c9026791c5c1437632  The Basement Reels Disc 02\Track14.flac
+1c4f43af3186d333fa86fe00c0312572  The Basement Reels Disc 02\Track15.flac
+8d021eec82488f5398222c8dfe6146b1  The Basement Reels Disc 02\Track16.flac
+23f02251a94188c89ad7a11d30d195a1  The Basement Reels Disc 02\Track17.flac
+12ea2413653b20d080528d6e1fd752ef  The Basement Reels Disc 02\Track18.flac
+804b090855f55a62fd534d12eb81d2d6  The Basement Reels Disc 02\Track19.flac
+5826f43cd2db6615d08c5bc6b68663fd  The Basement Reels Disc 02\Track20.flac
+399599eececde198d27e6e296e253162  The Basement Reels Disc 02\Track21.flac
+7482e396ddfd15e513c8eed00cd8e3e1  The Basement Reels Disc 02\Track22.flac
+934a8fb214f15a4035611203bf00f152  The Basement Reels Disc 02\Track23.flac
+82cb835a1d5eb9ec7b3e360ee58f10c8  The Basement Reels Disc 02\Track24.flac
+a7fd6737c65bdf46b2d2f9bf3ab6cf2b  The Basement Reels Disc 03\Track01.flac
+85b3735111dc27c0f7aefd6957c2efd7  The Basement Reels Disc 03\Track02.flac
+d286832467a3654f6fb8035a44a9c479  The Basement Reels Disc 03\Track03.flac
+908484bce2e9933eb87fd97a8d5acdac  The Basement Reels Disc 03\Track04.flac
+f54c04fb452022612538028d0ee3cfe1  The Basement Reels Disc 03\Track05.flac
+bb3ee5f43191a35300c3e0ea862e1caa  The Basement Reels Disc 03\Track06.flac
+8c7491e37a6cde427b4fe3431a2f5ea1  The Basement Reels Disc 03\Track07.flac
+5f4b6d6117bae7a0608e50818ab6b686  The Basement Reels Disc 03\Track08.flac
+f848b76cbb420463131a154ffff053f6  The Basement Reels Disc 03\Track09.flac
+ac81d615060f61d934077b288ee1e27c  The Basement Reels Disc 03\Track10.flac
+37f55cd1fef6316637a287182917392c  The Basement Reels Disc 03\Track11.flac
+0c92f6d0d767ae64174fac0afef87b49  The Basement Reels Disc 03\Track12.flac
+2e8dcc1b5ca432fa54c3d9f0ae7d58d7  The Basement Reels Disc 03\Track13.flac
+c3bbd04ca56c65f93b2dc17f9a7f572e  The Basement Reels Disc 03\Track14.flac
+90e37e054ed9b79b44c33e208a90a796  The Basement Reels Disc 03\Track15.flac
+8e634e9fdf2972f6d41b3948d7732ee8  The Basement Reels Disc 03\Track16.flac
+d3d49c4d9859c38df66a41679fe27526  The Basement Reels Disc 03\Track17.flac
+117f5ffb791974942405dfd4d8104cb3  The Basement Reels Disc 03\Track18.flac
+7ebac4678cd7daed0dcbf588f000e4bc  The Basement Reels Disc 03\Track19.flac
+6493ccd82ef6b75375e84375baebfc16  The Basement Reels Disc 03\Track20.flac
+fc6f3c36c43bf1890a7d9cd182be2a4c  The Basement Reels Disc 03\Track21.flac
+acf982cfff9ffc6228f3ad78221a8b45  The Basement Reels Disc 03\Track22.flac
+89e36bb15c80143b2208dabda804ef6b  The Basement Reels Disc 03\Track23.flac
+c0f73901d3d964afea905faef5fb94d9  The Basement Reels Disc 03\Track24.flac
+72b9784a9cdeac72ac4e53d80bab19b3  The Basement Reels Disc 03\Track25.flac
+64629db8b98f5f402f4448a5778e1cc7  The Basement Reels Disc 03\Track26.flac
+f8253dea71f4e8ba857c56e1d8dcf3b8  The Basement Reels Disc 03\Track27.flac
+b2086632a2f6d76b0bf178fe7ffcfb04  The Basement Reels Disc 04\Track01.flac
+2ce5aacc604809f808b3685889b6c6c3  The Basement Reels Disc 04\Track02.flac
+b7acd81e0b5333244b7b31a313452687  The Basement Reels Disc 04\Track03.flac
+3c6fed62788aa811388eaea3903aeac6  The Basement Reels Disc 04\Track04.flac
+f41712228da709b22683f1c500768136  The Basement Reels Disc 04\Track05.flac
+0f199c7bda1af31bd3fc31359f0a6304  The Basement Reels Disc 04\Track06.flac
+2cd5d6925543b5b06c36448cb43f0302  The Basement Reels Disc 04\Track07.flac
+f4727608d8d28984f07b99290567e13e  The Basement Reels Disc 04\Track08.flac
+fdf4d027fb5dcda894761945fe77bacf  The Basement Reels Disc 04\Track09.flac
+a6424bed2916a583b02b11b8507f5d0b  The Basement Reels Disc 04\Track10.flac
+f41c8fc41fc2b1c2f51ce025bf095ef6  The Basement Reels Disc 04\Track11.flac
+09097f5f3dfa5f6aa8b2e35690e208e1  The Basement Reels Disc 04\Track12.flac
+05eda2dfcef8f1fb20164d77d4d1f259  The Basement Reels Disc 04\Track13.flac
+b14ce86cf7cc2e0ccb8e1af6624252bd  The Basement Reels Disc 04\Track14.flac
+bf908b396fc0510020a6ff3c2bbfd0f8  The Basement Reels Disc 04\Track15.flac
+ec136c1a7d378116764d2eae2ad5a0c6  The Basement Reels Disc 04\Track16.flac
+54f41f974b3ce698a8318d70bf7c7278  The Basement Reels Disc 04\Track17.flac
+2adfc59d4f3d673327aa096c81e8efbf  The Basement Reels Disc 04\Track18.flac
+94bd862b4fefb01ba82d5bd278b514b4  The Basement Reels Disc 04\Track19.flac
+4f279fbc4b75c3c2f041c7ad05cdf342  The Basement Reels Disc 04\Track20.flac
+946a6ed4894f453db1c6cfb18a9940f5  The Basement Reels Disc 04\Track21.flac
+fbf788f537de58957ef3e8a0b65a8e44  The Basement Reels Disc 04\Track22.flac
+28702887f442c8f3d0dd1c1ab4c34f45  The Basement Reels Disc 04\Track23.flac
+5da6c97664bddff657133cb00f2e96b7  The Basement Reels Disc 04\Track24.flac
+e6bea05a79ca540664fe4c82859f5c2b  The Basement Reels Disc 05\Track01.flac
+cc852087370a04549de7d5d82f674a59  The Basement Reels Disc 05\Track02.flac
+a3453846b33f9f75da831e48b56ed131  The Basement Reels Disc 05\Track03.flac
+625307dd8e727c4cdaa93de1efcc7722  The Basement Reels Disc 05\Track04.flac
+ae6a42b9a8d0a33bf6714b3e28e7643d  The Basement Reels Disc 05\Track05.flac
+42c591f309c7725607edce010d7d7444  The Basement Reels Disc 05\Track06.flac
+9f9e62feaed06d55b01e6eefc0956a1e  The Basement Reels Disc 05\Track07.flac
+2a76c0a4702ef5b0993b43f0194f05c8  The Basement Reels Disc 05\Track08.flac
+ae45e0daa5eed30936199a3eac4ede56  The Basement Reels Disc 05\Track09.flac
+64ab2b41e47b266347ac97af69743e3a  The Basement Reels Disc 05\Track10.flac
+7b85b84241a678e1ff452d763780c8c0  The Basement Reels Disc 05\Track11.flac
+d68616a189884e7eca1b1751760d7059  The Basement Reels Disc 05\Track12.flac
+b8267a0fe54cdba001497587b21b9693  The Basement Reels Disc 05\Track13.flac
+aa399caa3a8a8d88e43ca77ff0421aa4  The Basement Reels Disc 05\Track14.flac
+b6bb5c298be4f79819abca5fa74b6db2  The Basement Reels Disc 05\Track15.flac
+3c32750d70c69f7fd35bb6f39063cbcd  The Basement Reels Disc 05\Track16.flac
+f5d27f27656dcdcfeed8253355dce5ce  The Basement Reels Disc 05\Track17.flac
+b3e2a5365922d8375f8089b7fbbbd751  The Basement Reels Disc 05\Track18.flac
+bac339569531ffeb330e42559811abbc  The Basement Reels Disc 05\Track19.flac
+e0156ade788dac109b9cfede6a474df9  The Basement Reels Disc 05\Track20.flac
+f8aeb2811e23407fdc7e450375ac4614  The Basement Reels Disc 05\Track21.flac
+46db295d62cbdab82fb9b541e9223f06  The Basement Reels Disc 05\Track22.flac
+3df65145da71a9a0f3395e5d163bfba4  The Basement Reels Disc 05\Track23.flac
+81a35f6a4701db38e561b0b99874acad  The Basement Reels Disc 05\Track24.flac
+caff876f8b0ba5f088c6ab0b95bb900b  The Basement Reels Disc 05\Track25.flac
+7d15c23dfe5d81805c174f4ef2f14f42  The Basement Reels Disc 05\Track26.flac
+0796bb25ee0b77a466b277bfb8e0fef0  The Basement Reels Disc 05\Track27.flac
+d61837f4db8c086a1ddc732d89fbd489  The Basement Reels Disc 05\Track28.flac
+0905e7316c9e3b2585e48b7cd5a31044  The Basement Reels Disc 06\Track01.flac
+8a9b3d9aff517aca6d0e364823593547  The Basement Reels Disc 06\Track02.flac
+1bfdc103bbd96aed07728412d98d9846  The Basement Reels Disc 06\Track03.flac
+cb13a1423387eb5356ea659df047b2d9  The Basement Reels Disc 06\Track04.flac
+b478f8f39b9a107c162127de01dff29a  The Basement Reels Disc 06\Track05.flac
+fffcb42a616e9fc2c8d9d274a5130338  The Basement Reels Disc 06\Track06.flac
+99619bbd9ea286287700c9ea4fe8142c  The Basement Reels Disc 06\Track07.flac
+698629826922a8b333be903adf8e4672  The Basement Reels Disc 06\Track08.flac
+70c0ab92b015e29beed649059736559e  The Basement Reels Disc 06\Track09.flac
+c1fadc23d3feca779e3b700fbf75c4b1  The Basement Reels Disc 06\Track10.flac
+1abfa1b7ee83addb3372eb5738fc80ef  The Basement Reels Disc 06\Track11.flac
+29671a2653e008bce3363471195a048a  The Basement Reels Disc 06\Track12.flac
+18ec70f5ea53181b08af634117d4273e  The Basement Reels Disc 06\Track13.flac
+a50b096f9568a664b8ba3e60ed18daea  The Basement Reels Disc 06\Track14.flac
+93f8a921e21bdf47d0238d5a139d2310  The Basement Reels Disc 06\Track15.flac
+ad62b5fdd8ce693d73446352242e416a  The Basement Reels Disc 06\Track16.flac
+d7850fd94940e50258800689274ba6ce  The Basement Reels Disc 06\Track17.flac
+ff1e34b6fa708fd29964a633601cb0f9  The Basement Reels Disc 06\Track18.flac
+9c6c18934f7e903f441aa6c97f3ef6b0  The Basement Reels Disc 06\Track19.flac
+38c58ff4db2fedfe9d021b44624843db  The Basement Reels Disc 06\Track20.flac
+74f3f04b3116b2e4a1089fc0f5fa3cf7  The Basement Reels Disc 06\Track21.flac
+963f3e136f25936953d9b1701324819c  The Basement Reels Disc 06\Track22.flac
+5f1f8ab7850efc55937dff8a7f48ba81  The Basement Reels Disc 06\Track23.flac
+d2160dfc4a9e17a2a2c6e70b24849648  The Basement Reels Disc 06\Track24.flac
+f626e64d51ea2c4b5a425fcfb1b9bdb3  The Basement Reels Disc 06\Track25.flac
+c300cff1aa16db21dfc1ca15963a4bc6  The Basement Reels Disc 07\Track01.flac
+b186f2b5f102466f135fa8e01fd8be4b  The Basement Reels Disc 07\Track02.flac
+e49341ce2d3b57a444c5878409311bdc  The Basement Reels Disc 07\Track03.flac
+a394adebb1fd1ef0be72e8fc3e526371  The Basement Reels Disc 07\Track04.flac
+3cf48b09180435a829f0dae9a8862ab6  The Basement Reels Disc 07\Track05.flac
+9cbc82c96b90fcafde47c75bb4ede3be  The Basement Reels Disc 07\Track06.flac
+dc701dcef02ca5a9d56bd000355b698d  The Basement Reels Disc 07\Track07.flac
+02a06039918ae44e90ead259c0ebc494  The Basement Reels Disc 07\Track08.flac
+92a287c31c4f988f17cc5da60e6f9c8f  The Basement Reels Disc 07\Track09.flac
+3f9295a160e887897614e1d6b4da6fc8  The Basement Reels Disc 07\Track10.flac
+99899cd5475578b24a2fa5a72751b52e  The Basement Reels Disc 07\Track11.flac
+2319b08348b51b45a603e7a381433414  The Basement Reels Disc 07\Track12.flac
+b1d3fe8b8fb2fbe134835e19968c1fb4  The Basement Reels Disc 07\Track13.flac
+1d939f13ecdafae3d2f7487387901f8d  The Basement Reels Disc 07\Track14.flac
+1377a0b489b002ce5c8aee497522aad3  The Basement Reels Disc 08\Track01.flac
+7f1badb0713969463fac8d98591ca250  The Basement Reels Disc 08\Track02.flac
+5abfd8c0e5d807fb16860a82320b856f  The Basement Reels Disc 08\Track03.flac
+07dc5c8b94a75facd632f97b1e80781e  The Basement Reels Disc 08\Track04.flac
+e7a6584a80d692373614a1ed3032f3e6  The Basement Reels Disc 08\Track05.flac
+bb2136631dda18a4bff7b514410f2648  The Basement Reels Disc 08\Track06.flac
+048fedd044ae103b4da43a1942467507  The Basement Reels Disc 08\Track07.flac
+a20657d50dc2646df53ca47be37f74f3  The Basement Reels Disc 08\Track08.flac
+0896e87b3b2ae2497d34f09cff951726  The Basement Reels Disc 08\Track09.flac
+ae83d1b87d78fe871e747db5212fd18b  The Basement Reels Disc 08\Track10.flac
+61ea26008111ee8769fd50fbc301265b  The Basement Reels Disc 08\Track11.flac
+e7a655a47e94c2c24c8d3f1f550938e8  The Basement Reels Disc 08\Track12.flac
+b183819add11a61f0053b1af0611f6e8  The Basement Reels Disc 08\Track13.flac
+a4541c82072837629409d0f0ea11f198  The Basement Reels Disc 08\Track14.flac
+12048f07bb00e98336325378df99a979  The Basement Reels Disc 08\Track15.flac
+9b25e10f7d2783ca8316331d12bdce73  The Basement Reels Disc 08\Track16.flac
+aaf2ed62e3b021e491f12dcacd527713  The Basement Reels Disc 08\Track17.flac
+d18af0ec326bf2792323664fc0182198  The Basement Reels Disc 08\Track18.flac
+add18bd15310c631cb11b6300c5c67c9  The Basement Reels Disc 08\Track19.flac
+a4d235cafe36ed7724dd0e97897bb214  The Basement Reels Disc 08\Track20.flac
+b3222a1b34008bdf3821339662828c02  The Basement Reels Disc 09\Track01.flac
+cf6e5b20c7f7115bbd483cbdd660afeb  The Basement Reels Disc 09\Track02.flac
+822732155228f6dddfe5ae801ff21bcb  The Basement Reels Disc 09\Track03.flac
+b300de88de32e890f163509b0c3ce4fd  The Basement Reels Disc 09\Track04.flac
+2ca08e293864c3005162bfc689faee9b  The Basement Reels Disc 09\Track05.flac
+1a223127f9a94ef6e3479571eb6e3c47  The Basement Reels Disc 09\Track06.flac
+3c5574bfda166f674e28076110926b25  The Basement Reels Disc 09\Track07.flac
+44df6e9c29623aed25bf82868544cfce  The Basement Reels Disc 09\Track08.flac
+811c8b74853808eda098a0d858c6d633  The Basement Reels Disc 09\Track09.flac
+efc872129d030621259f3652ed3849bd  The Basement Reels Disc 09\Track10.flac
+06d572d96128228fcc19ed23713b8d43  The Basement Reels Disc 09\Track11.flac
+2a19d8b8768f79cb3327376c6be2391c  The Basement Reels Disc 09\Track12.flac
+13816718e297511aa1cca1a032026597  The Basement Reels Disc 09\Track13.flac
+d1b26f40c753187d0d8a8d60497cdac7  The Basement Reels Disc 09\Track14.flac
+6ccf9737a75d8fa1092c46ced72770a9  The Basement Reels Disc 09\Track15.flac
+c981f0c183efc095ea5105b3561c4c4d  The Basement Reels Disc 09\Track16.flac
+40ae71ffd3c5a088783d0ca11423776e  The Basement Reels Disc 09\Track17.flac
+3f8b5d536cd4ffea57864750605560f6  The Basement Reels Disc 09\Track18.flac
+aaa61fe0f71597c9a794b6c834205ca4  The Basement Reels Disc 09\Track19.flac
+169a5b146b48bec748d9051ff5574329  The Basement Reels Disc 10\Track01.flac
+12007a8bd85ce4663080720383a19846  The Basement Reels Disc 10\Track02.flac
+4c170f221fb2b0cea6ab40e4d2021eb7  The Basement Reels Disc 10\Track03.flac
+7a1450e72af273493d9996e21fdd1d33  The Basement Reels Disc 10\Track04.flac
+1da09900b0b8b788b557a41b4223a456  The Basement Reels Disc 10\Track05.flac
+77cf01f34548f66f16b1d60633f7312f  The Basement Reels Disc 10\Track06.flac
+261ca0b9d6e43dae38c3108e05b39cd8  The Basement Reels Disc 10\Track07.flac
+ee29fb756a924cda76bb6d5feba7e9a2  The Basement Reels Disc 10\Track08.flac
+ab75a872406696f1b8202428626bf28e  The Basement Reels Disc 10\Track09.flac
+15843137640fc9126ff86840c14783f5  The Basement Reels Disc 10\Track10.flac
+a0c99ac424ea4f786ba3b781714b6db3  The Basement Reels Disc 10\Track11.flac
+2f9ba077fd4089a06ca79ed666d38663  The Basement Reels Disc 10\Track12.flac
+f8cde23cfc627e6161925f0b66e3e59b  The Basement Reels Disc 10\Track13.flac
+1258816ea2b1f9adf6bfa8ee4075284a  The Basement Reels Disc 10\Track14.flac
+e753b4c171a20247df2fa9ba59e50d87  The Basement Reels Disc 10\Track15.flac
+f5dd6b1f636ef02539928ac711b7e371  The Basement Reels Disc 10\Track16.flac
+1dde07d017ee3af79f6f52d58ab783a7  The Basement Reels Disc 10\Track17.flac
+5b7d8d93868bbb64ad04c52e1313676a  The Basement Reels Disc 10\Track18.flac
+5f9724444497923802e75c168c02d6d4  The Basement Reels Disc 10\Track19.flac
+cf8bbd6012251b10768345ce5d8be91d  The Basement Reels Disc 10\Track20.flac
+7f23c444355c8afeb98369731e456b9b  The Basement Reels Disc 10\Track21.flac
+d6afc964b10644a0aa6fea41c783d6db  The Basement Reels Disc 10\Track22.flac
+a5cda54516d8692700cb2308bac76fc9  The Basement Reels Disc 10\Track23.flac
+bd2ed2eb70edb9cdd7feb99891690151  The Basement Reels Disc 10\Track24.flac
+0740f9a1c014be6cba08d5be0f757e70  The Basement Reels Disc 10\Track25.flac
+5d5b7ac396639990aca705a6f7c426b9  The Basement Reels Disc 10\Track26.flac
+f15514392191e5782f488772f7f5e006  The Basement Reels Disc 10\Track27.flac
+f1d7c733c436bb4c20c9db4dce531cf2  The Basement Reels Disc 10\Track28.flac
+52b649e5b587a334f97d73871317bf87  The Basement Reels Disc 10\Track29.flac
+25f8f70d79620b55ca4758d67c140d12  The Basement Reels Disc 10\Track30.flac
+a6a92abe54d8def031b628d2ff8919d1  The Basement Reels Disc 10\Track31.flac
+3000abdd3e65abb65dad85f8596bee7b  The Basement Reels Disc 11\Track01.flac
+e1a860d8f5b6dee0370387012f10e250  The Basement Reels Disc 11\Track02.flac
+2061d069b45c09eed62cf676160a7dab  The Basement Reels Disc 11\Track03.flac
+c1f874cde6c57fa06ec5a105676e2d51  The Basement Reels Disc 11\Track04.flac
+63567aefac3e6829e67279fab2b27fe8  The Basement Reels Disc 11\Track05.flac
+40a44cf1657320bf1c2be1700796bc6c  The Basement Reels Disc 11\Track06.flac
+11d7c38b932d0f82362faf09b3d4ba8f  The Basement Reels Disc 11\Track07.flac
+4d77ef066fb643111112b09948209d43  The Basement Reels Disc 11\Track08.flac
+7d4031d810d597f86f94dcdf8bc00458  The Basement Reels_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 11 
+=================== 
+=================== 
+=================== 
+Track01.flac:e96017d29bd0fb1f84565d6630478123
+Track02.flac:55bf2fed9c1ec344bd8cc6b118311015
+Track03.flac:6a728d1119c708b3465694744d2fd0b8
+Track04.flac:29a2c559416de182489e9b39327dac0e
+Track05.flac:ce4e44f6d6fda275ac1e0f1b930ee1f6
+Track06.flac:e267e609ffc86d481135db866a00a912
+Track07.flac:11822a72b06d45ca269cbfee91aea354
+Track08.flac:287cf5c84257dc88f40d490ccc19d9a6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 04 
+=================== 
+=================== 
+=================== 
+Track01.flac:f74d60f483c6d892a406955593252ebb
+Track02.flac:6bfaa0ff0b59befc31287e3b16c3ebd7
+Track03.flac:e87acd3b0becc05555328d5079062ec6
+Track04.flac:91061d709f7c7e4d2a0d5f444c57734d
+Track05.flac:4a70f396dc408590b037327a7425debb
+Track06.flac:ac0f82f462540c29745b027f7a665387
+Track07.flac:5f1c89bbd10dd4857d0318513e1469b5
+Track08.flac:a71adb0e64a6af8e47c503acdc693a59
+Track09.flac:be7c7e29ab13b8f5b37968a987dcdb2e
+Track10.flac:4e0552eade9b571214ad3d1e9c903c6e
+Track11.flac:282246375ca5734e93b7245713a62776
+Track12.flac:5d08844109d30ef80d56859eb35c4325
+Track13.flac:9edaa2e3ff0b992cbea4e8b539cbd11a
+Track14.flac:856952993c396b99d728fe02d1423ca9
+Track15.flac:b175bc36057e61c4e59b5bf6ddc2e9b9
+Track16.flac:85e652952d25614354dced56d1edf245
+Track17.flac:166047d56eb95857e86accfbc6239b57
+Track18.flac:db428c35825369d803b0de5909a45d6d
+Track19.flac:8e3d5af1d9f013f4cea04d46c286b5e3
+Track20.flac:9a99862833fbd6a7a74fe00c10e1894d
+Track21.flac:d56d1eda32d591e73a2f52b8316bd8f4
+Track22.flac:179321214d032a2406fe330d89a674d6
+Track23.flac:4058398f3c999efca18cbe298af4c45a
+Track24.flac:9a1b9f34fbb9658cedd784b432c0add1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 05 
+=================== 
+=================== 
+=================== 
+Track01.flac:93a2d74428b921280ce9f45dc7db577c
+Track02.flac:f5846923cd06d93ea126567fe723129f
+Track03.flac:e3c2da7e4c994118bbc8853245662d4f
+Track04.flac:caf5b5ba118705758e0b59c2ed5d0edc
+Track05.flac:66e7925cc5ad2095aaaac7fe6ba853e8
+Track06.flac:88296a0ed8123ed08674c1ec1aa5d089
+Track07.flac:c8090fb727ff987ef513824650964914
+Track08.flac:02a888513905ab969a4e0c3fd9adbfef
+Track09.flac:a7ec0b06aa6f3f9846362d23f12d08aa
+Track10.flac:b80cb55eaaa0cfe3fb0419cacb785bd1
+Track11.flac:57b2972a373f6eba3cd5179308dd12b0
+Track12.flac:50050f57ad48ea972ab2c78466b09010
+Track13.flac:8332d7c63838f25a0a433c5fd12d18bb
+Track14.flac:cf698c2194ee2ca125aa882fa9d48ac8
+Track15.flac:70b4f33a65e42564c9a5a24c6ea2555f
+Track16.flac:369139a5fa6b907bf47e4852eb04817d
+Track17.flac:07792c34fdca3150fd401a4d51751f13
+Track18.flac:aeadb5aa218ac2e9e3a2d836b7c4d270
+Track19.flac:8d56e2bb67be09fe3bc489275f43c568
+Track20.flac:17e9a0d774b93fa6e80efd5262024005
+Track21.flac:c039576880d792420058e854ea9e6600
+Track22.flac:51f2e1304bb0e44d50878220b6b16b27
+Track23.flac:9375fd1ac3e797717c1f0b24c7d5bb14
+Track24.flac:f593c597e8cd171f97ab86488b62435c
+Track25.flac:c9b57387ff9edbc3d5a861e3b638ba02
+Track26.flac:39dfffceb03badb37547dc5cb2776c92
+Track27.flac:f3a678ae00658d1143674c90dbc789bb
+Track28.flac:43a4da7a6ad6f794b0b64f594ccd0932
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 10 
+=================== 
+=================== 
+=================== 
+Track01.flac:9d90f51ffa213f640f80bfa9cdd25575
+Track02.flac:1b4de9c7947de36631d3ee03a162bdc7
+Track03.flac:1b76219ca4106bef9db23b4fc7a18253
+Track04.flac:8f47a7ea79659f3845276459992f67eb
+Track05.flac:6890151f5d4bb4fb9780d4a4e8c8d346
+Track06.flac:9ff7b73d3b7bcda9291368837a91196d
+Track07.flac:256a84e66cd2fa1ef70617acb132b446
+Track08.flac:f51b99e33cb39012ab54939b2185afc4
+Track09.flac:72c934561ef6b98a87373240b654b1a6
+Track10.flac:dada6ba681cca4bd503592de6045f690
+Track11.flac:d9108cec7f55ea82269fafef7ed5af30
+Track12.flac:49e503ef1e60b8403c2719e7264d5e2c
+Track13.flac:ec2a794c71596cb105e8008b73c4d43d
+Track14.flac:fc4c827c96d4d250bbd5263215038dce
+Track15.flac:60856a76e190e5dabb2ff3698e45feb7
+Track16.flac:82c6684f6b93103801b1920bed1251ed
+Track17.flac:09ccee95ad4598a37d720568f5a72c44
+Track18.flac:050b25807a19c9a197e476cbbaa6dfaf
+Track19.flac:728a56a6ad4a52c899e0bed31a35fb81
+Track20.flac:c109cc7ac07f2290424788672eb8f6ab
+Track21.flac:2c7434aee25ab12297239c7ccdc5711e
+Track22.flac:bf960925d3e61f8ef6512dfa68891502
+Track23.flac:67661ecb66ca96f464fbfb0370be0b79
+Track24.flac:dcaad6845d780a2009bdea7ecf5d2c6b
+Track25.flac:6a72fcad454b10a4a93fc58ed7150d5c
+Track26.flac:615520a41ed14246405851e384d2beba
+Track27.flac:b4432fc69a87900d571a3dd08ef13ec4
+Track28.flac:dca2999d3d7ca81d427f3f4fa59e33cc
+Track29.flac:019f3c96af3651f57389d51c979c1d2a
+Track30.flac:6952021e1a1c26cf3cce4a2310c165b0
+Track31.flac:b8f73eae1e48b7b9fdf5d985eaaf66d1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 09 
+=================== 
+=================== 
+=================== 
+Track01.flac:3c07dc086d3c5c61eaf65d929e017f38
+Track02.flac:a53fb443625f69f85cd3cf838b3c8d1c
+Track03.flac:2dd85d500c5972eed16d2192a3bb2cde
+Track04.flac:b863754012058a6ec37cf678edbd6100
+Track05.flac:28b0090e2bdbbd89212d00db98f2e9ce
+Track06.flac:59bd7374f0c83921350e0c6ba2986d23
+Track07.flac:a84d71ca9d8c15759e0c28eed4ec9f62
+Track08.flac:3cd02ad15a9de81cd13a7eef042c0143
+Track09.flac:70fae074183e91ae34de5b27f23354c1
+Track10.flac:4498fa1d8fcf6b99bb9178445dceef9d
+Track11.flac:494799837d2013fcf2aa8365eed1d928
+Track12.flac:3ab56f06d775dacf6a967256a59bd5ca
+Track13.flac:62223906949efdf98a9072c960feeda0
+Track14.flac:92f3550a133612d22e61b3a350314ce3
+Track15.flac:7d14cbefd2973b328cc345cc1baf46af
+Track16.flac:a44c237d9ca1666dd080afd18c712fba
+Track17.flac:8597c268c47913ca2baa4595ed30e9e3
+Track18.flac:32f6d43f23479646b338b2b0e38f41d3
+Track19.flac:07f6b552cafb34ea8b52c1f9cd91d997
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 08 
+=================== 
+=================== 
+=================== 
+Track01.flac:d4969dd69695efd2166501aa2cbffaa8
+Track02.flac:6d80480fd7bb08cd911d778a46e5166b
+Track03.flac:e23af9a45bff8d01586e7a96dbd13e4b
+Track04.flac:21ec29564657f7a31b8a52f9fc389560
+Track05.flac:e1d5ea59adb00a6dbcc9845c55916520
+Track06.flac:de8abbc8de8ac702996c9f192ee62f70
+Track07.flac:a7f42a26252e7e062b588f3512b7ecf7
+Track08.flac:879e28bc5b799bca31060c616e0b9d34
+Track09.flac:f158d33e13bbf76c01babdb1519bf536
+Track10.flac:f34404cb505849cef44cddab4227014b
+Track11.flac:733d7f492a40f781d64e9a29d22b6490
+Track12.flac:b84fd011e51920274e5df6bf3aa3f8e5
+Track13.flac:1a0de44e2a972277a694a53c8fed86e2
+Track14.flac:97c20e3397a0bd79eae3681b1c52fd7f
+Track15.flac:af9a128a02a754c8554d5c3e9d67a98c
+Track16.flac:037af8c98b84d2c8702a61c04a7a55e3
+Track17.flac:6539200af4c81cbf075b2a3b7c358cad
+Track18.flac:15b05586d5b286ba4212926b2bc852f8
+Track19.flac:a76cf4e19b7ea986d1fa3f36dd456579
+Track20.flac:4ae5ae9527bb45727a5d776a532d537c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 06 
+=================== 
+=================== 
+=================== 
+Track01.flac:662995b6c436017e969c56bdc8a1d505
+Track02.flac:058abe0acbb0d0a8b20c8522fdedf0dc
+Track03.flac:205b34ff629fca71dfda92c96d127b2f
+Track04.flac:faebb423d1f37231751d0e60bb48987a
+Track05.flac:2029124249984cd315cf864b412d3c15
+Track06.flac:f8a809b3b9b7e27be333dcb6b36dc74b
+Track07.flac:48bfb5024c026c2b3d1c6f2ce20a9f3a
+Track08.flac:252710cd924b5c25568b6017ad5450f4
+Track09.flac:df6d8405a4b70ebb057fa18e4864f7ce
+Track10.flac:092051c08732750c7224cbd8cdd12c1f
+Track11.flac:06425c89f2ff76419063966c577effa6
+Track12.flac:cb8e7c9b2c0d0d9b34d81a469369a628
+Track13.flac:711048842da694fb92b2630a1a174df1
+Track14.flac:533150e29fd60546872b31bd3e8b7586
+Track15.flac:0f7e98f9ded69023e1d7656819f9048e
+Track16.flac:9048534492c62273342b2001959cfbec
+Track17.flac:7738c9f839656b01a4befe9f2a852212
+Track18.flac:9e15d885c28d1d95b864c2902c008bf7
+Track19.flac:94e0b323e3f405fa67cae92e7c95efad
+Track20.flac:4ad7610e914534001e3608ef1b0e3379
+Track21.flac:0d6358ae3f135b6cce7216b3aac4bbb9
+Track22.flac:ed70196c9c0594a59076627bfd1d0183
+Track23.flac:70ec78ba8012bdc015342904aa15f3b7
+Track24.flac:28dab0a94ef1afa9a7453f019942d54c
+Track25.flac:32c95648ab52133023dbcf94607c7f8e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 07 
+=================== 
+=================== 
+=================== 
+Track01.flac:64badf17e79a7f5dfae23330521d61c7
+Track02.flac:d329d6fecdeda1ccd979025c38ed2405
+Track03.flac:d2e48df9fdc5f23a33ce137b84b63a00
+Track04.flac:6a95213e18c840ffb499cb4c91882386
+Track05.flac:48b4635e0e1600863053940b39f08500
+Track06.flac:eee130574fcde2d060f824da1b715e6d
+Track07.flac:4c8decba1ddc45b92a0670287ad1f8eb
+Track08.flac:c269058e67072f6fff3b623681522ced
+Track09.flac:3fbfcab6466c42613cdbf4bd4e46ffad
+Track10.flac:c37aeeb0b234428f1479e541356df5b9
+Track11.flac:95e7016fbeaae8baec8abd83614edc28
+Track12.flac:6a57d03364f8d63e7076e06beff65fd7
+Track13.flac:cdbef7aea68bd9b58a0bf8db23c5f1f5
+Track14.flac:459f28a62a2a2e2bc6b56652c102f0e3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 03 
+=================== 
+=================== 
+=================== 
+Track01.flac:c8ab15c8a317c1febdff07b79bc895a4
+Track02.flac:49de81a0995ab13d5162c2e992f6b816
+Track03.flac:320a3f46e0b42b5ec46308e3dd78e9d5
+Track04.flac:47711644fdc534b1cc4a9964f9df253a
+Track05.flac:1b6efa27c70102dab8b92339b68041d2
+Track06.flac:97c3126431d68645701615a1cd8899de
+Track07.flac:a2db7c6bb46eab6ee370b7edbe373e59
+Track08.flac:4417c4051be8eeb7580237935ab7a6ab
+Track09.flac:de157165956cab5c755888f711c269ec
+Track10.flac:368af2c108d1656d2f1395e7ec10257e
+Track11.flac:58404c9cb45c40c0c92e26512c7cb806
+Track12.flac:0f3a15e3a7d70f339417ec20c2b6fe7c
+Track13.flac:5c782dbf38139ed42e502f67188b4b10
+Track14.flac:d43df0d44df3ae96ed011c0c13dacefb
+Track15.flac:6924a027f0374b26c17fa01197f9dd6b
+Track16.flac:7932f5d4cd87e0964ab8c98b3625cf97
+Track17.flac:fd7c38e354f93660f09eede88fbb53bf
+Track18.flac:3a600b57e0083a15bdda4fe5d4b1002b
+Track19.flac:3672d2de1293f85bc895e2ec50fa90e0
+Track20.flac:fbcef4373943a62c3f676ff7c22b3026
+Track21.flac:bad403bce82c24f9aa8da4d9b973e52d
+Track22.flac:ce3120db45497ff9924cf5e0bd3c3576
+Track23.flac:373dc94d68092d2accf460b4712ee85c
+Track24.flac:ee52bf9c50080d0dcca3a87fd9c80587
+Track25.flac:729e231fe7d5df3b0aed472099ff9b78
+Track26.flac:a91a9bb92699778c2ad498bfeb00a619
+Track27.flac:74539fa4e889f1162c4efdfefb07cf66
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 01 
+=================== 
+=================== 
+=================== 
+Track01.flac:37d0f9757327da722f44d4b21db7b558
+Track02.flac:c9ff4d28f8583f7ab64bd5e5908fd403
+Track03.flac:532253038c4a0a34dc5e74ea0c6b404f
+Track04.flac:fb2c97fef01bfdd9fd191f9437e63c5c
+Track05.flac:f0f361048ad72fdc15287d6885c407ef
+Track06.flac:ba935cb5172a3cc719ae5dd4de8998ca
+Track07.flac:491bbc0e0fbf0b26a06a47fb51effc0d
+Track08.flac:6707e96678910b3e9845c3ebe5ebe3b1
+Track09.flac:e236f1e5e51c8974a172401588f99126
+Track10.flac:8e11fcfc99d16be7c186c90e29f5651d
+Track11.flac:1933053cffcaa183173d3f798ad02728
+Track12.flac:ea137ada8563509a0e7e1e6caa7f97de
+Track13.flac:2f047401a064800a19713517ba2340cf
+Track14.flac:cbac664036c6d6527159d1a1cdcc0486
+Track15.flac:0c9ef513b2c2e0ba10a55f6e7c14b426
+Track16.flac:9904a55e51d747b38525b88661cb2564
+Track17.flac:391d759baea8bb57a9fc94ec7921e207
+Track18.flac:e1d1b472411db1ff4143229e8e413b6f
+Track19.flac:f6c94f6ef13b1c6241006f1c564832ef
+Track20.flac:5424d84ba87976e591a069ffe488ce4d
+Track21.flac:46fa7809a3bebf00709d5dd9a674484d
+Track22.flac:1cc1984dd4f903697611e819ae07df97
+Track23.flac:8bbf85a5bad9490ee6de5a63e88653c2
+Track24.flac:a7569056d5bb41a5f21536b09b16a551
+Track25.flac:19e9349e481a67ab667717c255aa6096
+Track26.flac:e2ce0733e678f96fd397ec015db91d24
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 02 
+=================== 
+=================== 
+=================== 
+Track01.flac:1d43ed614d480e77a9fbb261476f1d45
+Track02.flac:5ebe3b22d2ba32c48c45454cf51ce6bc
+Track03.flac:cb1497e6908383e9cf397f658baee243
+Track04.flac:7c993a910907985638375cdf59bcc3d6
+Track05.flac:7a77b083c35f72dd0e0ca81b57d58aee
+Track06.flac:1072d3aaf6694336903863dbf872367d
+Track07.flac:74625fd9e50c7e5e7794631f5bd2d2fe
+Track08.flac:aa34458aedc36f2dfc2fa27b059a2657
+Track09.flac:4ec221d21952d539b93736f9a0e151f9
+Track10.flac:4df63bf77c6a144da124cb10bf263552
+Track11.flac:1aac9033b53b500b08291fd548e6138e
+Track12.flac:c0587640df8a907d36895900542bff36
+Track13.flac:478f8086ccf280514844affca16d930e
+Track14.flac:942eaa12e24728c427e4fc74e8f2987d
+Track15.flac:80b6946b16d5f0c75de9b0e6755ea9d7
+Track16.flac:84c6ced48b270905d95cb5ce21a0ac39
+Track17.flac:5824edf2d862d55a63696a12fbdac637
+Track18.flac:d1147bb40a60f1f9d926cfba5cf840bc
+Track19.flac:ad567f2c9e027e028e9508b71cd621e7
+Track20.flac:0989d90c79656885089c1bad29da74c2
+Track21.flac:1e008cc6fb7423ccce2fcc05b45d8cca
+Track22.flac:1254d788f1cee9ec2921a2b0473418b8
+Track23.flac:dd406ee4e1dd7b647b900c069572a6b6
+Track24.flac:fce6fc980c5553ae07f6328596c914f6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 11 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.47        4520588 B   ---   --   ---xx   flac  0.4730  Track01.flac
+     0:24.26        4294796 B   ---   --   ---xx   flac  0.4426  Track02.flac
+     2:53.54       30644252 B   ---   --   ---xx   flac  0.4992  Track03.flac
+     2:08.18       22621580 B   ---   --   ---xx   flac  0.5488  Track04.flac
+     1:51.18       19622780 B   ---   --   ---xx   flac  0.4547  Track05.flac
+     3:01.23       31982540 B   ---   --   ---xx   flac  0.5278  Track06.flac
+     4:16.26       45219596 B   ---   --   ---xx   flac  0.5629  Track07.flac
+     3:58.59       42122012 B   ---   --   ---xx   flac  0.5453  Track08.flac
+    18:59.46      201028144 B                            0.5272  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 04 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.29       40111052 B   ---   --   ---xx   flac  0.4324  Track01.flac
+     2:09.71       22922636 B   ---   --   ---xx   flac  0.4631  Track02.flac
+     2:26.44       25857932 B   ---   --   ---xx   flac  0.3861  Track03.flac
+     2:28.20       26154284 B   ---   --   ---xx   flac  0.4299  Track04.flac
+     1:35.37       16845068 B   ---   --   ---xx   flac  0.4922  Track05.flac
+     0:22.46        3989036 B   ---   --   ---xx   flac  0.4392  Track06.flac
+     2:32.38       26902220 B   ---   --   ---xx   flac  0.5722  Track07.flac
+     2:06.20       22273484 B   ---   --   ---xx   flac  0.5608  Track08.flac
+     3:41.08       39003260 B   ---   --   ---xx   flac  0.5625  Track09.flac
+     3:29.46       36975836 B   ---   --   ---xx   flac  0.5093  Track10.flac
+     2:27.48       26043740 B   ---   --   ---xx   flac  0.4781  Track11.flac
+     2:48.07       29651708 B   ---   --   ---xx   flac  0.4871  Track12.flac
+     2:34.19       27210332 B   ---   --   ---xx   flac  0.5186  Track13.flac
+     1:51.69       19742732 B   ---   --   ---xx   flac  0.4790  Track14.flac
+     3:51.14       40781372 B   ---   --   ---xx   flac  0.4846  Track15.flac
+     2:24.28       25467500 B   ---   --   ---xx   flac  0.4005  Track16.flac
+     2:54.72       30862988 B   ---   --   ---xx   flac  0.4106  Track17.flac
+     7:21.45       77898284 B   ---   --   ---xx   flac  0.3784  Track18.flac
+     3:57.52       41929148 B   ---   --   ---xx   flac  0.3900  Track19.flac
+     2:50.64       30138572 B   ---   --   ---xx   flac  0.3790  Track20.flac
+     2:41.67       28558028 B   ---   --   ---xx   flac  0.5203  Track21.flac
+     3:16.60       34715564 B   ---   --   ---xx   flac  0.5226  Track22.flac
+     3:23.64       35959772 B   ---   --   ---xx   flac  0.5774  Track23.flac
+     3:56.21       41679836 B   ---   --   ---xx   flac  0.5516  Track24.flac
+    71:01.14      751674384 B                            0.4723  (24 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 05 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:45.34       18602012 B   ---   --   ---xx   flac  0.4871  Track01.flac
+     0:29.50        5233244 B   ---   --   ---xx   flac  0.4478  Track02.flac
+     2:28.06       26121356 B   ---   --   ---xx   flac  0.4467  Track03.flac
+     2:03.44       21800732 B   ---   --   ---xx   flac  0.3881  Track04.flac
+     2:02.02       21525548 B   ---   --   ---xx   flac  0.4600  Track05.flac
+     2:40.65       28376924 B   ---   --   ---xx   flac  0.4479  Track06.flac
+     0:19.31        3424556 B   ---   --   ---xx   flac  0.2094  Track07.flac
+     2:36.66       27673676 B   ---   --   ---xx   flac  0.4427  Track08.flac
+     2:06.42       22325228 B   ---   --   ---xx   flac  0.4145  Track09.flac
+     4:08.26       43808396 B   ---   --   ---xx   flac  0.4134  Track10.flac
+     2:17.07       24183308 B   ---   --   ---xx   flac  0.3379  Track11.flac
+     2:24.05       25413404 B   ---   --   ---xx   flac  0.2957  Track12.flac
+     2:12.35       23367164 B   ---   --   ---xx   flac  0.3194  Track13.flac
+     2:42.34       28656812 B   ---   --   ---xx   flac  0.3412  Track14.flac
+     2:42.12       28605068 B   ---   --   ---xx   flac  0.3827  Track15.flac
+     4:58.74       52741292 B   ---   --   ---xx   flac  0.3621  Track16.flac
+     2:33.37       27076268 B   ---   --   ---xx   flac  0.3332  Track17.flac
+     2:00.47       21278588 B   ---   --   ---xx   flac  0.3711  Track18.flac
+     2:42.52       28699148 B   ---   --   ---xx   flac  0.3998  Track19.flac
+     1:44.24       18402092 B   ---   --   ---xx   flac  0.4611  Track20.flac
+     3:44.26       39574796 B   ---   --   ---xx   flac  0.3635  Track21.flac
+     3:20.41       35376476 B   ---   --   ---xx   flac  0.3991  Track22.flac
+     2:37.18       27737180 B   ---   --   ---xx   flac  0.4618  Track23.flac
+     5:24.35       57235964 B   ---   --   ---xx   flac  0.3488  Track24.flac
+     1:29.26       15760796 B   ---   --   ---xx   flac  0.3394  Track25.flac
+     3:28.58       36827660 B   ---   --   ---xx   flac  0.3625  Track26.flac
+     2:52.04       30350252 B   ---   --   ---xx   flac  0.4521  Track27.flac
+     1:26.14       15203372 B   ---   --   ---xx   flac  0.3769  Track28.flac
+    71:22.15      755381312 B                            0.3889  (28 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 10 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:33.14       16438172 B   ---   --   ---xx   flac  0.4907  Track01.flac
+     1:23.60       14782364 B   ---   --   ---xx   flac  0.4498  Track02.flac
+     0:25.38        4499420 B   ---   --   ---xx   flac  0.4977  Track03.flac
+     2:57.53       31347500 B   ---   --   ---xx   flac  0.4631  Track04.flac
+     1:38.28       17353100 B   ---   --   ---xx   flac  0.4890  Track05.flac
+     1:38.52       17409548 B   ---   --   ---xx   flac  0.4942  Track06.flac
+     3:32.51       37516796 B   ---   --   ---xx   flac  0.5187  Track07.flac
+     2:42.36       28661516 B   ---   --   ---xx   flac  0.5141  Track08.flac
+     3:15.39       34489772 B   ---   --   ---xx   flac  0.5190  Track09.flac
+     3:05.12       32662268 B   ---   --   ---xx   flac  0.5696  Track10.flac
+     3:23.70       35973884 B   ---   --   ---xx   flac  0.5555  Track11.flac
+     1:33.14       16438172 B   ---   --   ---xx   flac  0.4980  Track12.flac
+     3:34.22       37801388 B   ---   --   ---xx   flac  0.5191  Track13.flac
+     4:00.15       42371324 B   ---   --   ---xx   flac  0.5236  Track14.flac
+     2:31.36       26721116 B   ---   --   ---xx   flac  0.5218  Track15.flac
+     0:56.35        9960764 B   ---   --   ---xx   flac  0.5180  Track16.flac
+     4:11.12       44304668 B   ---   --   ---xx   flac  0.5457  Track17.flac
+     1:20.65       14264924 B   ---   --   ---xx   flac  0.4597  Track18.flac
+     2:01.28       21410300 B   ---   --   ---xx   flac  0.4887  Track19.flac
+     3:55.02       41458748 B   ---   --   ---xx   flac  0.4594  Track20.flac
+     2:06.67       22384028 B   ---   --   ---xx   flac  0.4481  Track21.flac
+     0:56.37        9965468 B   ---   --   ---xx   flac  0.4185  Track22.flac
+     0:43.16        7622876 B   ---   --   ---xx   flac  0.4703  Track23.flac
+     2:29.56       26415356 B   ---   --   ---xx   flac  0.4876  Track24.flac
+     2:46.00       29282444 B   ---   --   ---xx   flac  0.4903  Track25.flac
+     2:38.46       27979436 B   ---   --   ---xx   flac  0.4594  Track26.flac
+     2:10.58       23068460 B   ---   --   ---xx   flac  0.4575  Track27.flac
+     3:40.67       38965628 B   ---   --   ---xx   flac  0.4696  Track28.flac
+     2:32.67       26970428 B   ---   --   ---xx   flac  0.5014  Track29.flac
+     3:55.57       41588108 B   ---   --   ---xx   flac  0.4853  Track30.flac
+     0:59.51       10527596 B   ---   --   ---xx   flac  0.5155  Track31.flac
+    74:42.04      790635572 B                            0.4989  (31 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 09 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:49.37       40482668 B   ---   --   ---xx   flac  0.4502  Track01.flac
+     3:35.51       38045996 B   ---   --   ---xx   flac  0.4311  Track02.flac
+     3:12.12       33897068 B   ---   --   ---xx   flac  0.3936  Track03.flac
+     2:13.68       23621180 B   ---   --   ---xx   flac  0.4425  Track04.flac
+     2:40.31       28296956 B   ---   --   ---xx   flac  0.4620  Track05.flac
+     2:45.20       29153084 B   ---   --   ---xx   flac  0.4218  Track06.flac
+     4:08.68       43907180 B   ---   --   ---xx   flac  0.3861  Track07.flac
+     2:28.35       26189564 B   ---   --   ---xx   flac  0.4020  Track08.flac
+     3:50.36       40656716 B   ---   --   ---xx   flac  0.3813  Track09.flac
+     2:29.05       26295404 B   ---   --   ---xx   flac  0.3962  Track10.flac
+     2:30.07       26476508 B   ---   --   ---xx   flac  0.4392  Track11.flac
+     3:12.51       33988796 B   ---   --   ---xx   flac  0.4149  Track12.flac
+     2:10.15       22967324 B   ---   --   ---xx   flac  0.4075  Track13.flac
+     4:59.72       52912988 B   ---   --   ---xx   flac  0.3844  Track14.flac
+     1:44.23       18399740 B   ---   --   ---xx   flac  0.4805  Track15.flac
+     3:39.58       38768060 B   ---   --   ---xx   flac  0.4281  Track16.flac
+     2:01.61       21487916 B   ---   --   ---xx   flac  0.4142  Track17.flac
+     2:44.20       28976684 B   ---   --   ---xx   flac  0.4037  Track18.flac
+     2:49.62       29957468 B   ---   --   ---xx   flac  0.3796  Track19.flac
+    57:06.57      604481300 B                            0.4136  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 08 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:39.28       38697500 B   ---   --   ---xx   flac  0.4127  Track01.flac
+     2:28.31       26180156 B   ---   --   ---xx   flac  0.4346  Track02.flac
+     3:42.36       39245516 B   ---   --   ---xx   flac  0.3601  Track03.flac
+     2:38.67       28028828 B   ---   --   ---xx   flac  0.3687  Track04.flac
+     2:44.53       29054300 B   ---   --   ---xx   flac  0.3594  Track05.flac
+     0:55.08        9720860 B   ---   --   ---xx   flac  0.3642  Track06.flac
+     3:15.74       34572092 B   ---   --   ---xx   flac  0.3825  Track07.flac
+     4:22.50       46334444 B   ---   --   ---xx   flac  0.3750  Track08.flac
+     3:40.21       38857436 B   ---   --   ---xx   flac  0.4511  Track09.flac
+     4:02.38       42778220 B   ---   --   ---xx   flac  0.3704  Track10.flac
+     2:23.70       25389884 B   ---   --   ---xx   flac  0.3388  Track11.flac
+     4:10.71       44267036 B   ---   --   ---xx   flac  0.3512  Track12.flac
+     2:05.38       22139420 B   ---   --   ---xx   flac  0.3697  Track13.flac
+     2:15.46       23922236 B   ---   --   ---xx   flac  0.3722  Track14.flac
+     2:21.31       24945356 B   ---   --   ---xx   flac  0.3740  Track15.flac
+     2:04.41       21970076 B   ---   --   ---xx   flac  0.3777  Track16.flac
+     2:23.31       25298156 B   ---   --   ---xx   flac  0.3393  Track17.flac
+     1:57.40       20732924 B   ---   --   ---xx   flac  0.3563  Track18.flac
+     2:38.15       27906524 B   ---   --   ---xx   flac  0.3373  Track19.flac
+     2:36.23       27572540 B   ---   --   ---xx   flac  0.3403  Track20.flac
+    56:27.62      597613504 B                            0.3738  (20 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 06 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:05.47       22160588 B   ---   --   ---xx   flac  0.3736  Track01.flac
+     3:27.66       36670076 B   ---   --   ---xx   flac  0.3680  Track02.flac
+     1:35.49       16873292 B   ---   --   ---xx   flac  0.3398  Track03.flac
+     1:57.72       20808188 B   ---   --   ---xx   flac  0.3244  Track04.flac
+     2:04.36       21958316 B   ---   --   ---xx   flac  0.2711  Track05.flac
+     1:36.04       16943852 B   ---   --   ---xx   flac  0.3740  Track06.flac
+     4:01.19       42557132 B   ---   --   ---xx   flac  0.3968  Track07.flac
+     2:39.09       28068812 B   ---   --   ---xx   flac  0.3332  Track08.flac
+     2:07.22       22454588 B   ---   --   ---xx   flac  0.3543  Track09.flac
+     0:46.38        8203820 B   ---   --   ---xx   flac  0.3474  Track10.flac
+     0:40.52        7178348 B   ---   --   ---xx   flac  0.3008  Track11.flac
+     3:35.64       38076572 B   ---   --   ---xx   flac  0.4456  Track12.flac
+     4:00.24       42392492 B   ---   --   ---xx   flac  0.4143  Track13.flac
+     0:19.39        3443372 B   ---   --   ---xx   flac  0.3384  Track14.flac
+     2:09.36       22840316 B   ---   --   ---xx   flac  0.2970  Track15.flac
+     3:12.56       34000556 B   ---   --   ---xx   flac  0.5293  Track16.flac
+     1:58.66       20970476 B   ---   --   ---xx   flac  0.3412  Track17.flac
+     5:31.54       58515452 B   ---   --   ---xx   flac  0.4841  Track18.flac
+     6:09.30       65162204 B   ---   --   ---xx   flac  0.5390  Track19.flac
+     2:51.37       30251468 B   ---   --   ---xx   flac  0.4892  Track20.flac
+     1:57.34       20718812 B   ---   --   ---xx   flac  0.5389  Track21.flac
+     3:59.60       42300764 B   ---   --   ---xx   flac  0.4530  Track22.flac
+     2:23.44       25328732 B   ---   --   ---xx   flac  0.5113  Track23.flac
+     3:14.09       34242812 B   ---   --   ---xx   flac  0.4446  Track24.flac
+     3:35.08       37944860 B   ---   --   ---xx   flac  0.4557  Track25.flac
+    68:02.00      720065900 B                            0.4269  (25 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 07 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:24.12       25429868 B   ---   --   ---xx   flac  0.4443  Track01.flac
+     2:11.56       23240156 B   ---   --   ---xx   flac  0.4704  Track02.flac
+     2:37.68       27854780 B   ---   --   ---xx   flac  0.4431  Track03.flac
+     2:05.69       22212332 B   ---   --   ---xx   flac  0.4184  Track04.flac
+     2:56.61       31189916 B   ---   --   ---xx   flac  0.3906  Track05.flac
+     2:51.36       30249116 B   ---   --   ---xx   flac  0.3734  Track06.flac
+     3:41.66       39139676 B   ---   --   ---xx   flac  0.4612  Track07.flac
+     2:43.55       28882604 B   ---   --   ---xx   flac  0.4793  Track08.flac
+     3:51.43       40849580 B   ---   --   ---xx   flac  0.4546  Track09.flac
+     2:48.07       29651708 B   ---   --   ---xx   flac  0.4572  Track10.flac
+     4:09.38       44013020 B   ---   --   ---xx   flac  0.4094  Track11.flac
+     2:07.65       22555724 B   ---   --   ---xx   flac  0.3887  Track12.flac
+     2:57.22       31274588 B   ---   --   ---xx   flac  0.3689  Track13.flac
+     4:04.68       43201580 B   ---   --   ---xx   flac  0.3645  Track14.flac
+    41:32.66      439744648 B                            0.4217  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 03 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:16.71       34741436 B   ---   --   ---xx   flac  0.4893  Track01.flac
+     3:07.00       32986844 B   ---   --   ---xx   flac  0.3625  Track02.flac
+     2:34.15       27200924 B   ---   --   ---xx   flac  0.3220  Track03.flac
+     2:56.46       31154636 B   ---   --   ---xx   flac  0.2684  Track04.flac
+     0:31.50        5586044 B   ---   --   ---xx   flac  0.2427  Track05.flac
+     2:40.23       28278140 B   ---   --   ---xx   flac  0.3197  Track06.flac
+     0:49.14        8676572 B   ---   --   ---xx   flac  0.3142  Track07.flac
+     2:31.44       26739932 B   ---   --   ---xx   flac  0.4387  Track08.flac
+     3:06.16       32848076 B   ---   --   ---xx   flac  0.4509  Track09.flac
+     2:38.21       27920636 B   ---   --   ---xx   flac  0.5155  Track10.flac
+     2:52.43       30441980 B   ---   --   ---xx   flac  0.4721  Track11.flac
+     4:06.47       43504988 B   ---   --   ---xx   flac  0.4716  Track12.flac
+     2:41.23       28454540 B   ---   --   ---xx   flac  0.4237  Track13.flac
+     2:01.51       21464396 B   ---   --   ---xx   flac  0.4275  Track14.flac
+     5:26.21       57555836 B   ---   --   ---xx   flac  0.4214  Track15.flac
+     1:38.29       17355452 B   ---   --   ---xx   flac  0.4129  Track16.flac
+     1:38.31       17360156 B   ---   --   ---xx   flac  0.4180  Track17.flac
+     1:27.31       15419756 B   ---   --   ---xx   flac  0.4469  Track18.flac
+     0:56.46        9986636 B   ---   --   ---xx   flac  0.4713  Track19.flac
+     3:20.29       35348252 B   ---   --   ---xx   flac  0.4458  Track20.flac
+     3:14.02       34226348 B   ---   --   ---xx   flac  0.4918  Track21.flac
+     2:42.25       28635644 B   ---   --   ---xx   flac  0.5285  Track22.flac
+     3:02.16       32142476 B   ---   --   ---xx   flac  0.5090  Track23.flac
+     3:18.08       34946060 B   ---   --   ---xx   flac  0.5192  Track24.flac
+     3:20.10       35303564 B   ---   --   ---xx   flac  0.5571  Track25.flac
+     2:41.28       28466300 B   ---   --   ---xx   flac  0.5514  Track26.flac
+     3:10.10       33539564 B   ---   --   ---xx   flac  0.5499  Track27.flac
+    71:50.00      760285188 B                            0.4506  (27 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:18.53        3299900 B   ---   --   ---xx   flac  0.3577  Track01.flac
+     3:32.28       37462700 B   ---   --   ---xx   flac  0.3317  Track02.flac
+     1:34.70       16746284 B   ---   --   ---xx   flac  0.2946  Track03.flac
+     3:25.64       36312572 B   ---   --   ---xx   flac  0.3354  Track04.flac
+     3:44.15       39548924 B   ---   --   ---xx   flac  0.3397  Track05.flac
+     4:51.66       51487676 B   ---   --   ---xx   flac  0.3655  Track06.flac
+     3:33.12       37601468 B   ---   --   ---xx   flac  0.4371  Track07.flac
+     2:56.06       31060556 B   ---   --   ---xx   flac  0.3774  Track08.flac
+     0:41.39        7324172 B   ---   --   ---xx   flac  0.3359  Track09.flac
+     4:44.70       50262284 B   ---   --   ---xx   flac  0.3733  Track10.flac
+     1:01.69       10922732 B   ---   --   ---xx   flac  0.4318  Track11.flac
+     4:20.67       46021628 B   ---   --   ---xx   flac  0.4459  Track12.flac
+     3:16.66       34729676 B   ---   --   ---xx   flac  0.3321  Track13.flac
+     2:25.69       25740332 B   ---   --   ---xx   flac  0.4415  Track14.flac
+     3:26.54       36465452 B   ---   --   ---xx   flac  0.3619  Track15.flac
+     3:09.52       33461948 B   ---   --   ---xx   flac  0.3710  Track16.flac
+     1:30.40       15970124 B   ---   --   ---xx   flac  0.4513  Track17.flac
+     2:04.58       22010060 B   ---   --   ---xx   flac  0.4586  Track18.flac
+     4:31.52       47926748 B   ---   --   ---xx   flac  0.3930  Track19.flac
+     2:48.70       29799884 B   ---   --   ---xx   flac  0.4491  Track20.flac
+     0:17.68        3158780 B   ---   --   ---xx   flac  0.4111  Track21.flac
+     2:54.62       30839468 B   ---   --   ---xx   flac  0.4005  Track22.flac
+     3:18.66       35082476 B   ---   --   ---xx   flac  0.4489  Track23.flac
+     2:03.21       21746636 B   ---   --   ---xx   flac  0.4962  Track24.flac
+     4:19.61       45831116 B   ---   --   ---xx   flac  0.4770  Track25.flac
+     2:25.71       25745036 B   ---   --   ---xx   flac  0.5010  Track26.flac
+    73:22.19      776558632 B                            0.3999  (26 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-Basement-Reels-d.flacf\The Basement Reels Disc 02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:41.44        7335932 B   ---   --   ---xx   flac  0.5989  Track01.flac
+     3:16.49       34689692 B   ---   --   ---xx   flac  0.4825  Track02.flac
+     3:49.67       40553228 B   ---   --   ---xx   flac  0.5217  Track03.flac
+     5:26.07       57522908 B   ---   --   ---xx   flac  0.5113  Track04.flac
+     0:50.25        8878844 B   ---   --   ---xx   flac  0.4040  Track05.flac
+     2:45.25       29164844 B   ---   --   ---xx   flac  0.5971  Track06.flac
+     0:42.19        7453532 B   ---   --   ---xx   flac  0.4713  Track07.flac
+     2:48.24       29691692 B   ---   --   ---xx   flac  0.5358  Track08.flac
+     2:33.63       27137420 B   ---   --   ---xx   flac  0.5247  Track09.flac
+     2:45.38       29195420 B   ---   --   ---xx   flac  0.5371  Track10.flac
+     4:39.08       49234460 B   ---   --   ---xx   flac  0.5366  Track11.flac
+     1:05.15       11501324 B   ---   --   ---xx   flac  0.4317  Track12.flac
+     1:55.02       20290748 B   ---   --   ---xx   flac  0.5903  Track13.flac
+     2:53.68       30677180 B   ---   --   ---xx   flac  0.4391  Track14.flac
+     5:26.39       57598172 B   ---   --   ---xx   flac  0.4690  Track15.flac
+     0:55.17        9742028 B   ---   --   ---xx   flac  0.4536  Track16.flac
+     3:54.59       41416412 B   ---   --   ---xx   flac  0.5927  Track17.flac
+     2:46.71       29449436 B   ---   --   ---xx   flac  0.5733  Track18.flac
+     4:46.71       50617436 B   ---   --   ---xx   flac  0.5711  Track19.flac
+     1:03.63       11261420 B   ---   --   ---xx   flac  0.5225  Track20.flac
+     1:59.36       21076316 B   ---   --   ---xx   flac  0.6041  Track21.flac
+     2:56.64       31196972 B   ---   --   ---xx   flac  0.5296  Track22.flac
+     5:42.23       60382940 B   ---   --   ---xx   flac  0.5502  Track23.flac
+     0:58.73       10402940 B   ---   --   ---xx   flac  0.5414  Track24.flac
+    66:44.70      706471296 B                            0.5303  (24 files)
+=================== 
+=================== 
+=================== 

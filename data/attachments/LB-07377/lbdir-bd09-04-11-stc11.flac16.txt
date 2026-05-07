@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-11-stc11.flac16 
+=================== 
+=================== 
+=================== 
+c7e8e7baff4e48c9722a3039e42fc668  bd2009-04-11.stc11.sbeok.flac16.md5
+f562e2707f63322442b812fa60047561  bd2009-04-11info.txt
+701078aa6e54a887e286fdaf9272af79  bd2009-04-11t01 (introduction).flac
+ac152cf20ed118a7e26cd8286b73b3a9  bd2009-04-11t02 Maggie's Farm.flac
+1ff8b116e683b9720cb76269262a6259  bd2009-04-11t03 Mr Tambourine Man.flac
+2702ab0bb8a8d04d51bebdee63bc7988  bd2009-04-11t04 Man in the Long Black Coat.flac
+8d6919ab5c99beb6b32c1c5e35b60f93  bd2009-04-11t05 The Levee's Gonna Break.flac
+da7268ecaf26a06be91cc86a4016c484  bd2009-04-11t06 When the Deal Goes down.flac
+bcd92b24f6d59b77645f4c30a24efab5  bd2009-04-11t07 Things Have Changed.flac
+7a0f01a1d0589b7afd2a2987d87f6933  bd2009-04-11t08 The Lonesome Death of Hattie Carroll.flac
+de3f55722448241a5c21601aad198496  bd2009-04-11t09 Tough Mama.flac
+fb4964dd32b8f13001f27db9b598180a  bd2009-04-11t10 Workingman's Blues #2.flac
+30f667576a7953ccefe3cfd4eb421b81  bd2009-04-11t11 It's Alright, Ma (I'm Only Bleeding).flac
+e6cb943e4a25ad7656c4ed4726187b96  bd2009-04-11t12 Just Like a Woman.flac
+50d93d18320ea4c927ab5277a449772d  bd2009-04-11t13 Highway 61 Revisited.flac
+6ac401dc4f3b4287b34daa7f4fe6dfd0  bd2009-04-11t14 Nettie Moore.flac
+188ffa59242c8d8a3bc696de3f49f805  bd2009-04-11t15 Thunder on the Mountain.flac
+6a4cbf0ab5f04ba84222e42feeb44ab0  bd2009-04-11t16 Like A Rolling Stone.flac
+22b3b19129a6eb2a739cd11e3a5fceb3  bd2009-04-11t17 All Along the Watchtower.flac
+382b1a01b809c311f9f0d1b06ca7dbae  bd2009-04-11t18 Spirit on the Water.flac
+a22a19b1fd6d31aed177bb71d0ecbdb1  bd2009-04-11t19 Blowin' in the Wind.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-11-stc11.flac16 
+=================== 
+=================== 
+=================== 
+bd2009-04-11t01 (introduction).flac:611bd1c6e6e457555df21adc145541ad
+bd2009-04-11t02 Maggie's Farm.flac:87c219dafd1474569dabe6a649e73e5e
+bd2009-04-11t03 Mr Tambourine Man.flac:7914bfdcab99462d21a749383542e18e
+bd2009-04-11t04 Man in the Long Black Coat.flac:27b107659a23c500e5ec83a0217dbd5b
+bd2009-04-11t05 The Levee's Gonna Break.flac:0f411ca82ec2a7f9c2c3d105d788bf38
+bd2009-04-11t06 When the Deal Goes down.flac:8ff26e47462f3b3afce659b008d0589f
+bd2009-04-11t07 Things Have Changed.flac:85f84e5e5b650cae34afd03988a1d951
+bd2009-04-11t08 The Lonesome Death of Hattie Carroll.flac:fc53ba11f492f3780ffb92fe9eee61eb
+bd2009-04-11t09 Tough Mama.flac:13685a17c615f9c375564eba3d8c212b
+bd2009-04-11t10 Workingman's Blues #2.flac:ad671493cf5f7b882f19c65611ef6d57
+bd2009-04-11t11 It's Alright, Ma (I'm Only Bleeding).flac:47a54a46b68fdc7fea867d6fa97a5cb1
+bd2009-04-11t12 Just Like a Woman.flac:a37ceb845059672cfb88636c90e715e8
+bd2009-04-11t13 Highway 61 Revisited.flac:b138689abcf8300aea1c9909f3b1e035
+bd2009-04-11t14 Nettie Moore.flac:6db1fa0ea06eb54f74a8861a317eec25
+bd2009-04-11t15 Thunder on the Mountain.flac:248486d825ed3a6955d609a10e73963a
+bd2009-04-11t16 Like A Rolling Stone.flac:4f0743fc031d1258fde840d69ba949d5
+bd2009-04-11t17 All Along the Watchtower.flac:f6e0aef3fb2af498ce2621224c18f428
+bd2009-04-11t18 Spirit on the Water.flac:d568ef452006bd0df40ca4eaf1e165b0
+bd2009-04-11t19 Blowin' in the Wind.flac:7df4334ec07a08ed32554ca4738ce356
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-11-stc11.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:43.19        7629932 B   ---   --   ---xx   flac  0.4004  bd2009-04-11t01 (introduction).flac
+     4:16.27       45221948 B   ---   --   ---xx   flac  0.4473  bd2009-04-11t02 Maggie's Farm.flac
+     5:44.09       60702812 B   ---   --   ---xx   flac  0.4181  bd2009-04-11t03 Mr Tambourine Man.flac
+     4:49.24       51036092 B   ---   --   ---xx   flac  0.4084  bd2009-04-11t04 Man in the Long Black Coat.flac
+     7:15.58       76870460 B   ---   --   ---xx   flac  0.4506  bd2009-04-11t05 The Levee's Gonna Break.flac
+     5:51.17       61956428 B   ---   --   ---xx   flac  0.3734  bd2009-04-11t06 When the Deal Goes down.flac
+     6:36.72       70023788 B   ---   --   ---xx   flac  0.4364  bd2009-04-11t07 Things Have Changed.flac
+     6:03.45       64139084 B   ---   --   ---xx   flac  0.3808  bd2009-04-11t08 The Lonesome Death of Hattie Carroll.flac
+     5:09.70       54672284 B   ---   --   ---xx   flac  0.4503  bd2009-04-11t09 Tough Mama.flac
+     7:03.65       74770124 B   ---   --   ---xx   flac  0.4050  bd2009-04-11t10 Workingman's Blues #2.flac
+     7:55.56       83921756 B   ---   --   ---xx   flac  0.4418  bd2009-04-11t11 It's Alright, Ma (I'm Only Bleeding).flac
+     6:03.54       64160252 B   ---   --   ---xx   flac  0.4031  bd2009-04-11t12 Just Like a Woman.flac
+     6:53.52       72975548 B   ---   --   ---xx   flac  0.4578  bd2009-04-11t13 Highway 61 Revisited.flac
+     8:37.62       91344668 B   ---   --   ---xx   flac  0.3834  bd2009-04-11t14 Nettie Moore.flac
+     6:29.00       68619644 B   ---   --   ---xx   flac  0.4562  bd2009-04-11t15 Thunder on the Mountain.flac
+    10:12.64      108107372 B   ---   --   ---xx   flac  0.4259  bd2009-04-11t16 Like A Rolling Stone.flac
+     4:41.46       49676636 B   ---   --   ---xx   flac  0.4549  bd2009-04-11t17 All Along the Watchtower.flac
+     7:47.69       82541132 B   ---   --   ---xx   flac  0.3988  bd2009-04-11t18 Spirit on the Water.flac
+     6:43.16       71126876 B   ---   --   ---xx   flac  0.4094  bd2009-04-11t19 Blowin' in the Wind.flac
+   119:00.00     1259496836 B                            0.4212  (19 files)
+=================== 
+=================== 
+=================== 

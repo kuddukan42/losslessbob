@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd95-10-07-Dolphinsmile.flac1648
+===================
+===================
+===================
+9163271d70d2852fa5547dc4b84e73c1 *01 Drifters Escape.flac
+7a313d625252885cefb56d2e4b5bc58b *02 Tonight Ill Be Staying Here.flac
+de52ec79718e532a45b07294154b2da3 *03 All Along The Watchtower.flac
+f4dca3331591563182a613e2a6a6325f *04 Tears Of Rage.flac
+34f1a42f454e95ebebb7fca1c74cbbcb *05 Pledging My Time.flac
+f88ba6aa8bed279dd1b5993aaae344b7 *06 Silvio.flac
+2efc7bd18a5891eae10d10437d2cf66f *07 Tamborine Man.flac
+09c0e1182ed09751dc6b728233e3558e *08 Masters Of War.flac
+3d1378778bb93421c03a85601524a020 *09 Love Minus Zero.flac
+01b91f910d9dd6ed96e0f314c709d5e8 *10 Stuck Inside Of Mobile.flac
+c2d7d84017f78f7aa381eafc24a836af *11 I and I.flac
+eecf72047e67c6f9a35cb50f9d1eac8c *12 The Real You At Last.flac
+4c6a7d36d0a064a203d9e04cb543ea59 *13 Alabama Getaway.flac
+3804682a34d35f147c1d9114a3e1d6f3 *14 One Too Many Mornings.flac
+26ee78296685e1924271cc0ef6e77ade *15 Rainy Day Women.flac
+badb283d19b990d9f1be8c9bc1345c36 *Bob Dylan King Steet Palace Charleston SC  1995-10-7 Dolphinsmile Archive.ffp
+29ea475be39f37d60c9e6f5e5d733466 *Bob Dylan King Steet Palace Charleston SC  1995-10-7 Dolphinsmile Archive.md5
+badb283d19b990d9f1be8c9bc1345c36 *Bob Dylan King Steet Palace Charleston SC  1995-10-7 Dolphinsmile Archive.txt
+1c17cecfd29b2774b5df8f3fc16b5b9a *info.txt
+===================
+===================
+===================
+=== ffp for: bd95-10-07-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Drifters Escape.flac:74d6c911fa9f429156126cf0b69702a5
+02 Tonight Ill Be Staying Here.flac:eb135e00e8123b0665d5829dc75f3461
+03 All Along The Watchtower.flac:ad4ca9e96356001f667d33f8228baf93
+04 Tears Of Rage.flac:751dd6753ab81c7d8560997b2985dd22
+05 Pledging My Time.flac:9c1021af0f553ce2f993cc07a51facc9
+06 Silvio.flac:e44c6455246401db3de55ee33bb771ea
+07 Tamborine Man.flac:b55f2aa3b7388d16c4e14db8b9525d5e
+08 Masters Of War.flac:f78cb68cae9ee77c2b07bcee62701df1
+09 Love Minus Zero.flac:5371b108f9cfdc699c658d8bed84e0e0
+10 Stuck Inside Of Mobile.flac:c8c4752da1577f245d36b433a84db4a2
+11 I and I.flac:ba786059ab68b1b8af113b5884b5827c
+12 The Real You At Last.flac:28c48492bc9c53a442000e97b59039d1
+13 Alabama Getaway.flac:a3d2902a64a9ba7838f125ca0537e0b8
+14 One Too Many Mornings.flac:78bdd8b5dfe9ebadddaa433313991e9f
+15 Rainy Day Women.flac:5da8860bb3a270cb58ccd52776453c12
+===================
+===================
+===================
+=== shntool len for: bd95-10-07-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.026      70853044 B   cxx   --   ---xx   flac  0.6471  01 Drifters Escape.flac
+     7:33.265      87026876 B   cxx   --   ---xx   flac  0.6472  02 Tonight Ill Be Staying Here.flac
+     6:20.938      73140156 B   cxx   --   ---xx   flac  0.6632  03 All Along The Watchtower.flac
+     7:36.221      87594404 B   cxx   --   ---xx   flac  0.6046  04 Tears Of Rage.flac
+     5:59.320      68989536 B   cxx   --   ---xx   flac  0.6123  05 Pledging My Time.flac
+     7:12.215      82985232 B   cxx   --   ---xx   flac  0.6405  06 Silvio.flac
+    10:12.765     117650908 B   cxx   --   ---xx   flac  0.5277  07 Tamborine Man.flac
+     6:06.040      70279700 B   cxx   --   ---xx   flac  0.5195  08 Masters Of War.flac
+     6:40.801      76953876 B   cxx   --   ---xx   flac  0.4723  09 Love Minus Zero.flac
+    10:27.186     120419836 B   cxx   --   ---xx   flac  0.6291  10 Stuck Inside Of Mobile.flac
+     8:13.413      94735300 B   cxx   --   ---xx   flac  0.6155  11 I and I.flac
+     8:13.293      94712376 B   cxx   --   ---xx   flac  0.6067  12 The Real You At Last.flac
+     5:10.493      59614632 B   cxx   --   ---xx   flac  0.6513  13 Alabama Getaway.flac
+     8:26.453      97239100 B   cxx   --   ---xx   flac  0.4508  14 One Too Many Mornings.flac
+     7:42.237      88749456 B   cxx   --   ---xx   flac  0.6463  15 Rainy Day Women.flac
+   112:03.665    1290944432 B                            0.5930  (15 files)
+===================
+===================
+===================

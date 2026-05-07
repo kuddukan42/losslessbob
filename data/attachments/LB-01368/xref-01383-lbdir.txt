@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd03-10-23-d.flacf
+===================
+===================
+===================
+320119f73c3552c01831edc5fbb90bf1 *2003-10-23 T. Mobile Arena, Prague, Czech Republic.txt
+43f52a3342b4c888a129905543c19d5f *Bob Dylan 2003-10-23 Prague.md5
+3362007c0e68d34cbacc353117e591ca *CD1\Track00.flac
+3cfbcbd6097dd289573418d765a42594 *CD1\Track01.flac
+6e8e54842f52e98c5c8b307cbcc952e5 *CD1\Track02.flac
+4f5fd98896ac2c14a585354272454863 *CD1\Track03.flac
+d0935789f713c629af62d6216df27956 *CD1\Track04.flac
+b3192a352ba9fc8fb7f49ad8bfcc2ba9 *CD1\Track05.flac
+d0ac956ae220818bf1b5cb6b451c1932 *CD1\Track06.flac
+0300ff97a929ee4d466129ed7dfa2fb7 *CD1\Track07.flac
+82426235cf9bea6f2110e24b7d65ca76 *CD1\Track08.flac
+4a1c823bac4fd87da1f0046db4529812 *CD1\Track09.flac
+b8d23d472bdba1731acf5e52d0940734 *CD2\Track10.flac
+578446d4db1de851dc69a22a140e2ddf *CD2\Track11.flac
+aff655bb04b1ff851e3acb3e90ec622a *CD2\Track12.flac
+e4a491b9ba183bdf907f382e2e41a04e *CD2\Track13.flac
+4b2f6cd0feeccbff83871074388c90c5 *CD2\Track14.flac
+abe1d022e0f0fd1455453d0f988f63b0 *CD2\Track15.flac
+===================
+===================
+===================
+=== ffp for: bd03-10-23-d.flacf
+===================
+===================
+===================
+CD1\Track00.flac:c524d31ff83b007de52d2b073ef895e2
+CD1\Track01.flac:864eed93aef98bac7f7aa6795594acf8
+CD1\Track02.flac:6b7d982ceb2fa7009a64f14f7609f6b8
+CD1\Track03.flac:d4823bb2b089bf551a3a2248f6f6a339
+CD1\Track04.flac:43c83df1affb137563ebee885d7a191b
+CD1\Track05.flac:73a40779d312cdab5b9ff641e15d083e
+CD1\Track06.flac:a2a1657058ba32bcdd4f867a8ab57594
+CD1\Track07.flac:b8481eb7cea8ff888c0263bf5d624997
+CD1\Track08.flac:ee419f7c9d7f5c7537222be44e637ab9
+CD1\Track09.flac:c9fab231bcb693b538c024e583548ce1
+CD2\Track10.flac:dce30e2d81e25fe42ceff0e32b24d858
+CD2\Track11.flac:9d45d9f972222978a72b6139089fd79b
+CD2\Track12.flac:2501786dfb9f2c8b59a548e7cdfbf116
+CD2\Track13.flac:47ebe2cb137dd09f856ce268c16d1b2f
+CD2\Track14.flac:e4503b8d7c89693f443aa2c1011fdf68
+CD2\Track15.flac:7c325c37a034878b921962de165d2ba5
+===================
+===================
+===================
+=== shntool len for: bd03-10-23-d.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:12.64       12851372 B   ---   --   ---xx   flac  0.4956  Track00.flac
+     5:57.06       62988956 B   ---   --   ---xx   flac  0.6444  Track01.flac
+     6:37.25       70089644 B   ---   --   ---xx   flac  0.6037  Track02.flac
+     5:56.74       62972492 B   ---   --   ---xx   flac  0.6437  Track03.flac
+     7:00.10       74111564 B   ---   --   ---xx   flac  0.5804  Track04.flac
+     7:22.71       78135836 B   ---   --   ---xx   flac  0.6477  Track05.flac
+     6:36.48       69967340 B   ---   --   ---xx   flac  0.5980  Track06.flac
+     7:11.65       76181324 B   ---   --   ---xx   flac  0.6316  Track07.flac
+     6:30.45       68901884 B   ---   --   ---xx   flac  0.6494  Track08.flac
+     5:28.29       57927452 B   ---   --   ---xx   flac  0.5074  Track09.flac
+    59:54.62      634127864 B                            0.6111  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd03-10-23-d.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.05       62633804 B   ---   --   ---xx   flac  0.6129  Track10.flac
+     7:48.54       82682252 B   ---   --   ---xx   flac  0.5807  Track11.flac
+     7:11.18       76070780 B   ---   --   ---xx   flac  0.6735  Track12.flac
+     7:15.14       76766972 B   ---   --   ---xx   flac  0.6153  Track13.flac
+    10:17.38      108928220 B   ---   --   ---xx   flac  0.6265  Track14.flac
+     4:21.00       46040444 B   ---   --   ---xx   flac  0.6694  Track15.flac
+    42:48.54      453122472 B                            0.6266  (6 files)
+===================
+===================
+===================

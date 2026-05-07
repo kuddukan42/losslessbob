@@ -1,0 +1,54 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+dat clone from master
+uploaded by dolphinsmile
+
+
+
+Bob Dylan
+Pittsburgh, Pennsylvania
+
+November 5, 1999
+
+Civic Arena
+
+Roving Gambler (acoustic)
+Love Minus Zero/No Limit (acoustic)
+Desolation Row (acoustic)
+Cocaine Blues (acoustic)
+Tangled Up In Blue (acoustic) (with harp)
+Just Like Tom Thumb's Blues (Larry on pedal steel)
+Shelter From The Storm (with harp)
+Tombstone Blues
+Blind Willie McTell (Larry on dobro)
+You Ain't Goin' Nowhere (Larry on pedal steel and Bob on harp)
+Highway 61 Revisited (Larry on pedal steel)
+(encore)
+
+Love Sick
+Cat's In The Well
+Don't Think Twice, It's All Right (acoustic) (Bob on harp)
+Not Fade Away
+
+===================
+===================
+===================
+=== disc 1.ffp
+===================
+===================
+===================
+01 Track01.flac:3f848e44b090b02d5740506b95397add
+02 Track02.flac:3f8944414b6b26fe04c85934df6fd4f2
+03 Track03.flac:77f9cfe217a11f866158d6f63c521bf5
+04 Track04.flac:801887a7aff58ffc5737affe8b8a7fa6
+05 Track05.flac:fde569b872624c33a6338cb93e5b6a5d
+06 Track06.flac:9a73e827658ade56cebd8bb214a5471f
+07 Track07.flac:8e25481a9d43809225a3f7da204d3058
+===================
+===================
+===================

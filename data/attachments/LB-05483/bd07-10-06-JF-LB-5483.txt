@@ -1,0 +1,10 @@
+Bob Dylan, 10/6/07, Albany, New York, Times Union Center, 2CDR
+
+LB-5483, (66min+49min), Taper: JF, Equipment: Seinheisser MKE-2002 Binaural mics>JB3>Cool Edit Pro, Source: Audio disks from the taper > (dBpowerAMP set to compression, level 6) flac., Note: Taper observes there are some problems, edits during 'Simple, Twist' and 'Things Have Changed'; bittorrent download 11/07; has occasional light band at 17k; excellent sound [A-]
+
+cuts/glitch d1t4 0:47, 6:35, d1t6 0:49, 3:05, d1t7  0:30, d1t9 1:44, 1:47
+
+Disk One, 1. Leopard-Skin Pill-Box Hat, 2. Don't Think Twice, It's All Right, 3. Watching The River Flow, 4. Simple Twist Of Fate, 5. Rollin' And Tumblin', 6. When The Deal Goes Down, 7. 'Til I Fell In Love With You, 8. Workingman's Blues #2, 9. Things Have Changed, Disk Two, 10. The Lonesome Death Of Hattie Carroll, 11. Highway 61 Revisited, 12. Ain't Talkin', 13. Summer Days, 14. Masters Of War, (encore), 15. Thunder On The Mountain, 16. All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

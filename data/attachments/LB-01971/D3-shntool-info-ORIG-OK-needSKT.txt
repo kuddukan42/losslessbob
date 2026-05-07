@@ -1,0 +1,564 @@
+Below is information from shntool on the SHN files in this directory.
+
+First is the output of  shntool len  in column form.
+In the table, a - means OK; an x means not applicable or not determined.
+Other letters indicate potential problems.
+
+    length     expanded size   cdr  WAVE problems filename
+     4:30.43       47729180    ---   --   ---xx   01 I&I D-M D2t7.shn
+     4:59.22       52795388    ---   --   ---xx   02 I&I e I1.shn
+     5:12.58       55173260    ---   --   ---xx   03 I&I O t7.shn
+     5:08.65       54484124    ---   --   ---xx   04 I&I RW (mono) D3t11.shn
+     5:04.11       53651516    ---   --   ---xx   05 I&I W t14.shn
+     6:22.33       67462460    ---   --   ---xx   06 Jokerman D-M D2t1.shn
+     6:32.33       69226460    ---   --   ---xx   07 Jokerman I1.shn
+     6:19.02       66860348    ---   --   ---xx   08 Jokerman O t1.shn
+     6:15.34       66230012    ---   --   ---xx   09 Jokerman RW (mono) D4t10.shn
+     6:06.73       64734140    ---   --   ---xx   10 Jokerman W t8.shn
+     3:31.38       37309820    ---   --   ---xx   11 License D-M D2t4.shn
+     3:50.03       40579100    ---   --   ---xx   12 License I1.shn
+     3:34.48       37862540    ---   --   ---xx   13 License O t4.shn
+     3:31.08       37239260    ---   --   ---xx   14 License RW (mono) D1t3.shn
+     3:26.49       36453692    ---   --   ---xx   15 License W t11.shn
+    74:25.70      787791300 B                     (totals for 15 files, 0.6625 overall compression ratio)
+
+A b in the CDR column indicates an SBE (sector boundary error)
+An h in the WAVE column indicates a non-canonical header
+An e in the WAVE column indicates extra RIFF chunks
+A c in the CDR column indicates audio is not CD quality
+
+An s in the CDR column indicates audio is too short to burn
+A 3 in the problems column indicates the file contains an ID3v2 tag
+An a in the problems column indicates the audio data is not block-aligned
+An i in the problems column indicates an inconsistent header
+A t in the problems column indicates possible truncation
+A j in the problems column indicates junk may be appended to file
+
+*******************************************************************************
+*******************************************************************************
+Next is the output of  shntool info  (long form), one file at a time.
+-------------------------------------------------------------------------------
+file name:                    01 I&I D-M D2t7.shn
+handled by:                   shn format module
+length:                       4:30.43
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    47729136 bytes
+chunk size:                   47729172 bytes
+total size (chunk size + 8):  47729180 bytes
+actual file size:             28928497
+file is compressed:           yes
+compression ratio:            0.6061
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    02 I&I e I1.shn
+handled by:                   shn format module
+length:                       4:59.22
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    52795344 bytes
+chunk size:                   52795380 bytes
+total size (chunk size + 8):  52795388 bytes
+actual file size:             23933185
+file is compressed:           yes
+compression ratio:            0.4533
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    03 I&I O t7.shn
+handled by:                   shn format module
+length:                       5:12.58
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    55173216 bytes
+chunk size:                   55173252 bytes
+total size (chunk size + 8):  55173260 bytes
+actual file size:             31576489
+file is compressed:           yes
+compression ratio:            0.5723
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    04 I&I RW (mono) D3t11.shn
+handled by:                   shn format module
+length:                       5:08.65
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    54484080 bytes
+chunk size:                   54484116 bytes
+total size (chunk size + 8):  54484124 bytes
+actual file size:             41892137
+file is compressed:           yes
+compression ratio:            0.7689
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    05 I&I W t14.shn
+handled by:                   shn format module
+length:                       5:04.11
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    53651472 bytes
+chunk size:                   53651508 bytes
+total size (chunk size + 8):  53651516 bytes
+actual file size:             41030785
+file is compressed:           yes
+compression ratio:            0.7648
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    06 Jokerman D-M D2t1.shn
+handled by:                   shn format module
+length:                       6:22.33
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    67462416 bytes
+chunk size:                   67462452 bytes
+total size (chunk size + 8):  67462460 bytes
+actual file size:             41323525
+file is compressed:           yes
+compression ratio:            0.6125
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    07 Jokerman I1.shn
+handled by:                   shn format module
+length:                       6:32.33
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    69226416 bytes
+chunk size:                   69226452 bytes
+total size (chunk size + 8):  69226460 bytes
+actual file size:             43736989
+file is compressed:           yes
+compression ratio:            0.6318
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    08 Jokerman O t1.shn
+handled by:                   shn format module
+length:                       6:19.02
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    66860304 bytes
+chunk size:                   66860340 bytes
+total size (chunk size + 8):  66860348 bytes
+actual file size:             39157129
+file is compressed:           yes
+compression ratio:            0.5857
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    09 Jokerman RW (mono) D4t10.shn
+handled by:                   shn format module
+length:                       6:15.34
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    66229968 bytes
+chunk size:                   66230004 bytes
+total size (chunk size + 8):  66230012 bytes
+actual file size:             50957505
+file is compressed:           yes
+compression ratio:            0.7694
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    10 Jokerman W t8.shn
+handled by:                   shn format module
+length:                       6:06.73
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    64734096 bytes
+chunk size:                   64734132 bytes
+total size (chunk size + 8):  64734140 bytes
+actual file size:             50127029
+file is compressed:           yes
+compression ratio:            0.7744
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    11 License D-M D2t4.shn
+handled by:                   shn format module
+length:                       3:31.38
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    37309776 bytes
+chunk size:                   37309812 bytes
+total size (chunk size + 8):  37309820 bytes
+actual file size:             23283441
+file is compressed:           yes
+compression ratio:            0.6241
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    12 License I1.shn
+handled by:                   shn format module
+length:                       3:50.03
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    40579056 bytes
+chunk size:                   40579092 bytes
+total size (chunk size + 8):  40579100 bytes
+actual file size:             24985665
+file is compressed:           yes
+compression ratio:            0.6157
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    13 License O t4.shn
+handled by:                   shn format module
+length:                       3:34.48
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    37862496 bytes
+chunk size:                   37862532 bytes
+total size (chunk size + 8):  37862540 bytes
+actual file size:             22056021
+file is compressed:           yes
+compression ratio:            0.5825
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    14 License RW (mono) D1t3.shn
+handled by:                   shn format module
+length:                       3:31.08
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    37239216 bytes
+chunk size:                   37239252 bytes
+total size (chunk size + 8):  37239260 bytes
+actual file size:             29947533
+file is compressed:           yes
+compression ratio:            0.8042
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    15 License W t11.shn
+handled by:                   shn format module
+length:                       3:26.49
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    36453648 bytes
+chunk size:                   36453684 bytes
+total size (chunk size + 8):  36453692 bytes
+actual file size:             29006761
+file is compressed:           yes
+compression ratio:            0.7957
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no

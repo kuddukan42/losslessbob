@@ -1,0 +1,112 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+1 Piste audio.flac:5e3e502fba64114cd25edd01a2d7c08c10 Piste audio.flac:1e223db139ace977571904080328dd5f2 Piste audio.flac:d12b4e8c8908acada38fb59db4fdf83e3 Piste audio.flac:e9a907e598daeb54ce0efb6fa0b7c5cd4 Piste audio.flac:88b77ad0374e81c5ba048fcfafe2dc825 Piste audio.flac:315357e9ba55ce623acba9ce3e1b07686 Piste audio.flac:84f7f3a0018ecf1e7118480c992bb6f47 Piste audio.flac:4cf2c9946e4e217cc5faf41de53deb3f8 Piste audio.flac:484eee2619310bda1d4ec733368b1ab49 Piste audio.flac:05e59c15293abde1a5fe83f34835ad961 Piste audio.flac:975face8c8bc74504e2328acbacd51fc2 Piste audio.flac:1de1772f85663159c707dca5386766153 Piste audio.flac:9ec97cfd376cb136ebac9ac3a512e9ac4 Piste audio.flac:e9be4a74ba98a9ff30e5be75d4df14a25 Piste audio.flac:c3f12a71578ab447d442623e31a225ca6 Piste audio.flac:3bac2095072d43faed3ecdd94cdbc4847 Piste audio.flac:bb31f07255d8be3d41077d6abaf3ebc08 Piste audio.flac:525119255ad9efb70c4d77b3d00d36fc
+===================
+===================
+===================
+=== text.txt
+===================
+===================
+===================
+Hall 3
+Scottish Exhibition And Conference Center 
+Glasgow, Scotland
+2 February 1991
+ 
+1.    Most Likely You Go Your Way (And I'll Go Mine)
+2.    Lay Lady Lay
+3.    All Along The Watchtower
+4.    Stuck Inside Of Mobile With The Memphis Blues Again
+5.    The Man In Me
+6.    Wiggle Wiggle
+ 
+7.    Bob Dylan's Dream
+8.    Mr. Tambourine Man
+9.    It Ain't Me, Babe
+10.    Don't Think Twice, It's All Right
+ 
+11.    Everything Is Broken
+12.    Gotta Serve Somebody
+13.    Seeing The Real You At Last
+14.    God Knows
+15.    In The Garden
+16.    Like A Rolling Stone
+ 
+
+ 
+17.    The Times They Are A-Changin'
+18.    Masters Of War
+ 
+ 
+Concert # 267 of The Never-Ending Tour.  Concert # 4 of the 1991 Second Fastbreak Tour. 1991 concert # 4.
+ 
+Concert # 4 with the 4th Never-Ending Tour band: Bob Dylan (vocal & guitar), John Jackson (guitar), Cesar Diaz (guitar), Tony Garnier (bass), Ian Wallace (drums).
+ 
+5, 7-10, 17, 18  Bob Dylan harmonica.
+ 
+7, 8  acoustic with Bob Dylan (guitar & vocal), Cesar Diaz (guitar).
+ 
+9  acoustic with Bob Dylan (guitar & vocal), Cesar Diaz (guitar), Tony Garnier (bass guitar).
+ 
+10, 17  acoustic with Bob Dylan (guitar & vocal), Cesar Diaz (guitar), Tony Garnier (bass guitar), Ian Wallace (drums).
+ 
+5 new songs (27%) compared to previous concert. 4 new songs for this tour.
+ 
+BobTalk:
+ 
+That's off an old album of mine called Blonde On Blonde. Blonde On Blonde! This is from my recent album called ... something or other... (after The Man In Me (!))
+ 
+All right, this one of my lesser known songs, but it's still one of my favorites so ... (before In The Garden).
+ 
+Thank You Everybody!! That's a long song with an awfully long ending ... But it's over NOW!! (starts Like A Rolling Stone).
+ 
+Thank you! On behalf of me and my band, thank you for coming out! (after Like A Rolling Stone).
+ 
+Stereo audience recording, 85 minutes.
+ 
+Session info updated 15 December 1992.
+
+www.bjorner.com
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+da249045bd5a71b4c280089c27b7795e *1 Piste audio.flac
+42add4c5fc527b9da3bd40060ea89bb1 *10 Piste audio.flac
+b9392d3efc2f14ea750ca96ea1a3743f *2 Piste audio.flac
+fc23b601009835424aafd8ee929d3443 *3 Piste audio.flac
+784b86a68cc2bdc283254bd52f7e2cd0 *4 Piste audio.flac
+364cf659484bd9a969e722c22e858680 *5 Piste audio.flac
+83fd2d466890defd24086505ae0e059d *6 Piste audio.flac
+50d01c5d1c8922693b42be184e3e66dc *7 Piste audio.flac
+1e917e6654893d3e50feb72a256a177b *8 Piste audio.flac
+2aa121589a4604a752dad36c96fa0cd3 *9 Piste audio.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+951447ac495e3d6e660cef7ac368a625 *1 Piste audio.flac
+65a7383d9bdce9dd46bdfad9149b0bcf *2 Piste audio.flac
+2fd1e7bebef4b5c928179346c18fca17 *3 Piste audio.flac
+7ea9ffd35d353e859340c7ea1bece2cf *4 Piste audio.flac
+c0348ba10a3f8a84449731735015f531 *5 Piste audio.flac
+2c29d0b557136b43b68076ed7c2c7789 *6 Piste audio.flac
+fce594a2f7ac4e143b43d0abe2e45d14 *7 Piste audio.flac
+7f3e13281ae617e33dfa0ebe3d92a128 *8 Piste audio.flac
+
+===================
+===================
+===================

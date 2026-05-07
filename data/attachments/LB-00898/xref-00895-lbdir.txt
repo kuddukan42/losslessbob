@@ -1,0 +1,132 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-23-Charlespoet.flacf 
+=================== 
+=================== 
+=================== 
+8a92b2dd88d549b559f6a1b9bbff3aef  bd1981-07-23.ffp
+6169017db15fbc6411f3b5f4ad6ffa49  CD 1\flac.txt
+2f61bb90a3357683ee20d67b39e87a98  CD 1\shntool_len.txt
+f8cb206623e2e938ad16ea36061b38c0  CD 1\Track 01.flac
+fd272477078e72814b9329acf5ab456d  CD 1\Track 02.flac
+1602b9cd5c0419c87e4278968ada6f00  CD 1\Track 03.flac
+58c6419eb0e8403efe29270afd4ad022  CD 1\Track 04.flac
+d84a249e6255eb57194637c687220fde  CD 1\Track 05.flac
+a0d90551234e0c1e78bd9cc4ce42bc7d  CD 1\Track 06.flac
+c7bd94eb83ebfeb7f3cc987f52423bc1  CD 1\Track 07.flac
+db718d34fc9adba44def09c94bf24ed7  CD 1\Track 08.flac
+e206c09334aa68e2c171506a33a2002f  CD 1\Track 09.flac
+c19427c9613e584995e53a2652f22fe1  CD 1\Track 10.flac
+9c2d9d7f829f0feb0b9b0305445fb462  CD 1\Track 11.flac
+cc540123909ab43b4615aa99f6eaf8cc  CD 1\Track 12.flac
+df798cad9b783045aaeec2740aed0ab5  CD 1\Track 13.flac
+bedb76f7b354ff09f4dabbe62805f27d  CD 1\Track 14.flac
+a380615923cf4788a26d159fcd0dd17e  CD 1\Track 15.flac
+acd4702cbe51794ef9c23f614536e509  CD 2\flac.txt
+c5437a8ee8d6ca52b816ccb9d558c149  CD 2\shntool_len.txt
+0eee182259c353fb8b529543d54ee7af  CD 2\Track 01.flac
+dc1d617cdbd4ce5f610a05b38ef3b26b  CD 2\Track 02.flac
+c2515830ecef5ddad00982b6aaf2d331  CD 2\Track 03.flac
+a3e1c7d1179af74dc6554b200043c4d0  CD 2\Track 04.flac
+fb337ddf27551c8292b43fa40b1fdb3e  CD 2\Track 05.flac
+19befe4597d2fb158c4a5b5618ef0450  CD 2\Track 06.flac
+0e80887d4c12cea52a7f8a1a1520c83f  CD 2\Track 07.flac
+2e80847cfc5aa5cc61f8b8de56bd92ee  CD 2\Track 08.flac
+738eb58a6d564cb2fa9dc64391eff3bf  CD 2\Track 09.flac
+94c0723bf0c759e08c441497d822b8ff  CD 2\Track 10.flac
+e77238285c45b6e86b56903f03a694b9  CD 2\Track 11.flac
+7b95d816216d1bbe42e9f4b24c4db988  CD 2\Track 12.flac
+fb799af34242506e06d7e6ce9ee2b7de  CD 2\Track 13.flac
+10633cab9584f80800462ed56e26763f  set_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-23-Charlespoet.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:51bb7ae4c49be4177fad4d364f3f5d24
+Track 02.flac:f52c0de6c758bd1ebbaf793ed7741606
+Track 03.flac:09c0269f2230b81d6cdd2e19f3f3f0c5
+Track 04.flac:b77ec908c76313437cab8d1bb264d02c
+Track 05.flac:6bf690bdaa71f089adf07b3dab7f31d5
+Track 06.flac:a1442f4e1292c9e5544c589128304644
+Track 07.flac:26114871d9f2ae562018897aed2b1c64
+Track 08.flac:bbeafbe00f23d9092d415e32c2b586ce
+Track 09.flac:7f14e195b5f8c8df79cef0784d518094
+Track 10.flac:839432fb4dfb5f116b23456c47007bc6
+Track 11.flac:d5108d79740eef722d123bec902ca126
+Track 12.flac:acdac5b2eb5b51852c5c73b7c67d1bb5
+Track 13.flac:35fd686aa87309f5759a450f0c5d40ee
+Track 14.flac:ff32f6abb072296b0007f09a9595b65e
+Track 15.flac:ac634cf72fbf9e6f259310ecb422775a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-23-Charlespoet.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:e11c4a3269ae491596d93e62c554f1d7
+Track 02.flac:58ca04402db8088494a3e645bac974d7
+Track 03.flac:581071b7d8abf3670626e2c295d4b767
+Track 04.flac:72984af8d4bd4f38a60c341323cdef08
+Track 05.flac:f992f3b9b2aee1b7407b9f264dfa2167
+Track 06.flac:dc02e843585825c307a53ae4d6e82bf0
+Track 07.flac:1bfcaae322f97008af314b6828c5af28
+Track 08.flac:7a05aac6937eb3dcd82497ac4d01f889
+Track 09.flac:6d97ada05d98088153f614e8f42c6b3a
+Track 10.flac:c2eefbdd03feed0704a644dd35d82033
+Track 11.flac:9cf6009ddac73b2bfffff8c5aa876e6c
+Track 12.flac:788f8b70af9bb6fd029124c4ccc42cd4
+Track 13.flac:60ce87547302ec8fcadbc5568d4a0f05
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-23-Charlespoet.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:19.59       45826412 B   ---   --   ---xx   flac  0.6545  Track 01.flac
+     4:32.60       48121964 B   ---   --   ---xx   flac  0.6052  Track 02.flac
+     5:38.68       59783180 B   ---   --   ---xx   flac  0.6586  Track 03.flac
+     3:18.44       35030732 B   ---   --   ---xx   flac  0.5702  Track 04.flac
+     4:42.34       49824812 B   ---   --   ---xx   flac  0.6203  Track 05.flac
+     3:56.64       41780972 B   ---   --   ---xx   flac  0.6290  Track 06.flac
+     4:50.22       51207788 B   ---   --   ---xx   flac  0.6095  Track 07.flac
+     3:35.03       37933100 B   ---   --   ---xx   flac  0.6318  Track 08.flac
+     3:16.09       34595612 B   ---   --   ---xx   flac  0.6107  Track 09.flac
+     4:39.07       49232108 B   ---   --   ---xx   flac  0.6297  Track 10.flac
+     4:38.74       49213292 B   ---   --   ---xx   flac  0.6083  Track 11.flac
+     4:21.05       46052204 B   ---   --   ---xx   flac  0.5239  Track 12.flac
+     5:21.06       56638556 B   ---   --   ---xx   flac  0.5635  Track 13.flac
+     3:15.59       34536812 B   ---   --   ---xx   flac  0.5693  Track 14.flac
+     4:50.68       51315980 B   ---   --   ---xx   flac  0.5720  Track 15.flac
+    65:17.57      691093524 B                            0.6048  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-23-Charlespoet.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.33       53526860 B   ---   --   ---xx   flac  0.6578  Track 01.flac
+     5:15.32       55641308 B   ---   --   ---xx   flac  0.6617  Track 02.flac
+     2:50.16       30025676 B   ---   --   ---xx   flac  0.5826  Track 03.flac
+     3:52.61       41068316 B   ---   --   ---xx   flac  0.6818  Track 04.flac
+     4:17.17       45374828 B   ---   --   ---xx   flac  0.6189  Track 05.flac
+     2:46.66       29437676 B   ---   --   ---xx   flac  0.6372  Track 06.flac
+     4:40.12       49420268 B   ---   --   ---xx   flac  0.6388  Track 07.flac
+     5:01.59       53235212 B   ---   --   ---xx   flac  0.6098  Track 08.flac
+     5:01.70       53261084 B   ---   --   ---xx   flac  0.6356  Track 09.flac
+    11:08.72      118004588 B   ---   --   ---xx   flac  0.6121  Track 10.flac
+     5:08.69       54493532 B   ---   --   ---xx   flac  0.6558  Track 11.flac
+     5:07.41       54251276 B   ---   --   ---xx   flac  0.6027  Track 12.flac
+     7:21.73       77964140 B   ---   --   ---xx   flac  0.6408  Track 13.flac
+    67:37.21      715704764 B                            0.6328  (13 files)
+=================== 
+=================== 
+=================== 

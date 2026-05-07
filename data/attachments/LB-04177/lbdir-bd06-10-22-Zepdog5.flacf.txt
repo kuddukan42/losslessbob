@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-10-22-Zepdog5.flacf 
+=================== 
+=================== 
+=================== 
+73e37c8970a55aac300ee297b418a605  01. Introduction.flac
+a442ffd910892f5bc7aa47893d4070b4  02. Maggie's Farm.flac
+2bb08b06cbaa48ab73722959658733c2  03. Just Like Tom Thumb's Blues.flac
+0f08046b7d871ed3204105c8d8dcd0d5  04. High Water (For Charley Patton).flac
+fea588727c76be86b59275f7ff317c04  05. Tweedle Dee & Tweedle Dum.flac
+7af2d4b3f989ba5be99978a9980ae09d  06. Spirit On The Water.flac
+dc21ec9f25d97e64b131776ac901c33d  07. Highway 61 Revisited.flac
+1647410dbc50e5daea609c3ba2e078da  08. Sugar Baby.flac
+0a23608701e20fb0e7a4de2e70bbccfe  09. Cold Irons Bound.flac
+3388069480fd677abb1141cbc31d9ce2  10. Every Grain Of Sand.flac
+99afdef0e2483ef0840d369560385d1b  11. Desolation Row.flac
+7935fdb4102e74cfabecbe58e936b754  12. Rollin' And Tumblin'.flac
+fff66ad269a81b5f055cdf7817306229  13. Workingman's Blues #2.flac
+c26382db94cfae2dfa934d38ad74391a  14. Summer Days.flac
+06bd59f1618490399cd06f45e15d47dc  15. Encore.flac
+e837da83be809664bf5f598105e5c1e9  16. Thunder On The Mountain.flac
+2f6ae46cb98868d49d626d26e7f23617  17. Like A Rolling Stone.flac
+961845c56a863be9e508ada6e3627b63  18. Band Introductions.flac
+96f15dd5be41076c25b5ed4010c7229c  19. All Along The Watchtower.flac
+f84c5122b781bf0cd9c5acac9cf422b7  bd06-10-22-Zepdog5-LB-4177.txt
+3263e97844b5cf427739bf14b6780899  dylanfingerprint.txt
+15f84e6b671bf22ef940d7fde1cb2193  dylaninfofile.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-22-Zepdog5.flacf 
+=================== 
+=================== 
+=================== 
+01. Introduction.flac:e0e19960d75aa72560ff62710b73c807
+02. Maggie's Farm.flac:062e3dee282bb4fafef04502aec40937
+03. Just Like Tom Thumb's Blues.flac:9af6dec0e28fc22bb87a43f25e4d5063
+04. High Water (For Charley Patton).flac:174094c88d2e4010ac43c5fe036a6c53
+05. Tweedle Dee & Tweedle Dum.flac:d54f8d406905cb7686572e1fb7d152a5
+06. Spirit On The Water.flac:705dc69a52a130bb7245d4170b983fc5
+07. Highway 61 Revisited.flac:ae708dc17345495f35e313ebb55b93e6
+08. Sugar Baby.flac:15e4ea99893e2435579d0c0af9858863
+09. Cold Irons Bound.flac:f62af9c8b3274b20f7a63547172d2a37
+10. Every Grain Of Sand.flac:472a2ba2a3b8a259045d9e06637be771
+11. Desolation Row.flac:354272596b21f0b91bbd40efbc7eaf43
+12. Rollin' And Tumblin'.flac:48581b23ef1ad5d04788d3af70e6d1cb
+13. Workingman's Blues #2.flac:f9e8e4181b21fdba14312f7ec00cac7e
+14. Summer Days.flac:1f4ea97f87f1c0d2d60d0a96a2a6ee93
+15. Encore.flac:5d9a7b4680f8ff893ccbcb99d3c0eb43
+16. Thunder On The Mountain.flac:55cdc59dde5d0b410412811eab9cb813
+17. Like A Rolling Stone.flac:1c34a849d3e14a6a7a08febefa61eab4
+18. Band Introductions.flac:a96167899db514c3d49223a6c44db3e8
+19. All Along The Watchtower.flac:fb9a7232533bc48e7317c67b76e90b15
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-10-22-Zepdog5.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.48        5404940 B   ---   --   ---xx   flac  0.5287  01. Introduction.flac
+     5:03.73       53620940 B   ---   --   ---xx   flac  0.6062  02. Maggie's Farm.flac
+     6:06.41       64658876 B   ---   --   ---xx   flac  0.5594  03. Just Like Tom Thumb's Blues.flac
+     6:25.46       68022236 B   ---   --   ---xx   flac  0.5720  04. High Water (For Charley Patton).flac
+     5:45.67       61015628 B   ---   --   ---xx   flac  0.5411  05. Tweedle Dee & Tweedle Dum.flac
+     6:16.65       66479324 B   ---   --   ---xx   flac  0.4887  06. Spirit On The Water.flac
+     5:01.72       53265788 B   ---   --   ---xx   flac  0.6094  07. Highway 61 Revisited.flac
+     7:08.39       75590972 B   ---   --   ---xx   flac  0.4808  08. Sugar Baby.flac
+     5:53.52       62391548 B   ---   --   ---xx   flac  0.5640  09. Cold Irons Bound.flac
+     7:40.31       81216956 B   ---   --   ---xx   flac  0.5047  10. Every Grain Of Sand.flac
+    10:13.00      108133244 B   ---   --   ---xx   flac  0.5395  11. Desolation Row.flac
+     6:51.25       72559244 B   ---   --   ---xx   flac  0.5755  12. Rollin' And Tumblin'.flac
+     6:22.64       67535372 B   ---   --   ---xx   flac  0.5197  13. Workingman's Blues #2.flac
+     6:46.22       71670188 B   ---   --   ---xx   flac  0.6038  14. Summer Days.flac
+     0:47.74        8464892 B   ---   --   ---xx   flac  0.5201  15. Encore.flac
+     5:57.65       63127724 B   ---   --   ---xx   flac  0.6119  16. Thunder On The Mountain.flac
+     6:15.69       66312332 B   ---   --   ---xx   flac  0.5976  17. Like A Rolling Stone.flac
+     0:39.24        6936092 B   ---   --   ---xx   flac  0.5560  18. Band Introductions.flac
+     5:13.63       55361420 B   ---   --   ---xx   flac  0.5886  19. All Along The Watchtower.flac
+   105:02.40     1111767716 B                            0.5563  (19 files)
+=================== 
+=================== 
+=================== 

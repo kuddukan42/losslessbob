@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-10-21-off-DAT-master.flacf 
+=================== 
+=================== 
+=================== 
+2e59f28ac401d522ccf0a3fc0de5fbc5  bd1996-10-21 Tucson info.txt
+e01c9f440b7071ba68b37846a76b729c  bd1996-10-21.md5
+5f5132215fa9322bff5e3aa868ae4f74  bd1996-10-21d1t01.flac
+024c0a70a5e1a66ba0f6c8ec34509730  bd1996-10-21d1t02.flac
+94a12343360de9e217059c4ff27151db  bd1996-10-21d1t03.flac
+7ada2f969168516ff9c738b6047a1d4a  bd1996-10-21d1t04.flac
+8659318adcb02ba12359945dec3feaa1  bd1996-10-21d1t05.flac
+ea3002b148407cf7d9fdb7f7a32fffe7  bd1996-10-21d1t06.flac
+f77ece9fe3ec667ab663d1ac3b4764cb  bd1996-10-21d1t07.flac
+4243b318580d74a4df5bca6040c217f9  bd1996-10-21d1t08.flac
+676e49fce9dd9edfa5782f34abb34049  bd1996-10-21d1t09.flac
+c39da9ad927add9063ca65f4677229fd  bd1996-10-21d2t01.flac
+b96ba214e92c3479688cfa10325610a6  bd1996-10-21d2t02.flac
+5cdfa28a76b704e7e341b75a76650f19  bd1996-10-21d2t03.flac
+4560348d6b7110b36a100926ce884ac1  bd1996-10-21d2t04.flac
+84b9a569aafaaa46d910e58a9c222147  bd1996-10-21d2t05.flac
+ebecc53e70309270607bb783e8cbd41a  bd1996-10-21d2t06.flac
+3b9e2c4c7f7d434a11ee0772575b0651  bd96-10-21-off-DAT-master-LB-3517.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-21-off-DAT-master.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-10-21d1t01.flac:9221935d3f3a77043e6915925c8ebe77
+bd1996-10-21d1t02.flac:0205af345f7c4595a19e2bcc27ed2e2a
+bd1996-10-21d1t03.flac:aa68f9c72289ab973397d2b5bc6a1167
+bd1996-10-21d1t04.flac:c0c5a19f05affb3e46b42796c2cf4195
+bd1996-10-21d1t05.flac:1ff87da3289bfec2e16d9da0318b4150
+bd1996-10-21d1t06.flac:8ae664809a546f95521378b1ee203246
+bd1996-10-21d1t07.flac:208452c447cea18d08cbf3adc7f4f691
+bd1996-10-21d1t08.flac:f566560ebfbe75a91de2cb32bcef4360
+bd1996-10-21d1t09.flac:3d172bfdc5a611fb811284d71e928e98
+bd1996-10-21d2t01.flac:1ff7c151bc4e724f5e842db19ae9bb0d
+bd1996-10-21d2t02.flac:08065fa62074c80e659a120a5ea9a570
+bd1996-10-21d2t03.flac:37cfeaf3362b0e1c90392092e4a09261
+bd1996-10-21d2t04.flac:3e2bbe7887f78fb05ccec2b545212774
+bd1996-10-21d2t05.flac:4641aff526102a8082259dacefe6a239
+bd1996-10-21d2t06.flac:7b39944e95b28832fc6e501d46c918d9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-21-off-DAT-master.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.56       51111356 B   ---   --   ---xx   flac  0.6457  bd1996-10-21d1t01.flac
+     5:32.32       58640108 B   ---   --   ---xx   flac  0.5665  bd1996-10-21d1t02.flac
+     7:13.12       76409468 B   ---   --   ---xx   flac  0.6144  bd1996-10-21d1t03.flac
+     8:19.38       88113020 B   ---   --   ---xx   flac  0.5688  bd1996-10-21d1t04.flac
+     6:33.38       69414620 B   ---   --   ---xx   flac  0.5765  bd1996-10-21d1t05.flac
+     9:03.48       95898140 B   ---   --   ---xx   flac  0.6062  bd1996-10-21d1t06.flac
+     7:34.63       80233820 B   ---   --   ---xx   flac  0.5768  bd1996-10-21d1t07.flac
+     6:39.41       70480076 B   ---   --   ---xx   flac  0.5104  bd1996-10-21d1t08.flac
+     7:58.08       84338060 B   ---   --   ---xx   flac  0.5833  bd1996-10-21d1t09.flac
+     7:54.55       83743004 B   ---   --   ---xx   flac  0.6463  bd1996-10-21d2t01.flac
+     7:59.15       84530924 B   ---   --   ---xx   flac  0.5657  bd1996-10-21d2t02.flac
+     9:50.71      104243036 B   ---   --   ---xx   flac  0.6035  bd1996-10-21d2t03.flac
+     9:31.27      100787948 B   ---   --   ---xx   flac  0.5430  bd1996-10-21d2t04.flac
+     8:37.67       91356428 B   ---   --   ---xx   flac  0.5355  bd1996-10-21d2t05.flac
+     9:03.41       95881676 B   ---   --   ---xx   flac  0.6130  bd1996-10-21d2t06.flac
+   116:42.12     1235181684 B                            0.5830  (15 files)
+=================== 
+=================== 
+=================== 

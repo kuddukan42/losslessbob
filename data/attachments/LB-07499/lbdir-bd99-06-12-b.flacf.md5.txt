@@ -1,0 +1,25 @@
+7e186e20ec8586684d84f8d2bb69fb73  Artwork and info\1999-06-12 Rose Garden Arena, Portland, Oregon.txt
+e92ca8a043307b717be305bdf1b18295  Artwork and info\DylanTheSoundOfBack.jpg
+67823adb483d553ae44ab2fc31ca6620  Artwork and info\DylanTheSoundOfFront.jpg
+0d0a3d8a5670910c759a5aead06e522c  CD1\01 Hallelujah, I'm ready to go.flac
+4fe34127c4e46b8b0e607c70d3053121  CD1\02 Mr. Tambourine Man.flac
+aaf5ea6be79b8e30834f0a56c10843bb  CD1\03 Masters of war.flac
+13b290cfb67157ad11e337c116c1b082  CD1\04 Girl from the North Country.flac
+2826fddb4ba675ab11dc7313e9688e1e  CD1\05 Tangled up in blue.flac
+8d998fe209e79809acd2ae99b05e93f6  CD1\06 All along the watchtower.flac
+47fbb72420a1e87e96032cb53162514f  CD1\07 Not dark yet.flac
+d5c08897c6b561dc11723ba0979a7a7e  CD1\08 Stuck inside of Mobile with the Memphis blues again.flac
+782c125a6254734f79b3ba761a482100  CD1\09 Just like a woman.flac
+19224b2c30d313ef14667a70fdd37d76  CD1\10 Highway 61 revisited.flac
+7da8699bf4d432ecae1ef7c28807dd85  CD1\CD1.md5
+80b8b6d91646d8ded2d61d82cf2aeff7  CD2\11 Love sick.flac
+8af3579ede6c2ff16929d9f7f4f14e08  CD2\12 Like a rolling stone.flac
+cb2db6d933ebdef8487097538e7afc57  CD2\13 Don't think twice, it's all right.flac
+1799ab7d9f5bf1a52b4589b8ea47a319  CD2\14 The sound of silence [with Paul Simon].flac
+ef5d91605dde843439f866fb52c72484  CD2\15 I walk the line [with Paul Simon].flac
+d4a0a0cc538e06dab57f4291c958434b  CD2\16 Knockin' on heaven's door [with Paul Simon].flac
+8ca3276734c9b83fcba1c002e571d959  CD2\17 My back pages [filler].flac
+5a15e977bd73f7cec4877c40d7488e44  CD2\18 'Til I fell in love with you [filler].flac
+d2e1271892a02d7dd07c064587d5fff8  CD2\19 Positively 4th Street [filler].flac
+ebfa68bee97950e3b57a0c930076eca0  CD2\20 Highway 61 revisited [filler].flac
+c0c6f32bd27b6f19f5fbafd8074be422  CD2\CD2.md5

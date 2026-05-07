@@ -1,0 +1,12 @@
+Bob Dylan, xx/xx/81, Studios Rehearsals, 2CDR
+
+LB-6398, (80min+6min), version "b";sbd, 60m 48k trade dat > midiman delta dio 2496 > cooledit > wav > flac,, cooledit used for wav capture, 48k to 44k conversion at highest quality setting, and 2x amplification; dat listed as "9/81 United Western" and date and part of setlist matches that in dundas 1994 book but not his later book; setlist is from dat info; has a little hiss; in comparison to LB-3231 on d1t1 that is a little harsher with a little more hiss; in comparison to jtt LB-6378 on d1t1 and d1t13 this has a little more hiss and that is harsher and runs 4% to 5% slower on d1t1; very good to excellent sound [B+]
+
+CD1
+1 Is it Worth it? 2 Ah Ah Ah 3 Ah Ah Ah 4 Ah Ah Ah 5 Yes Sir, No Sir (Hallelujah) 6 Magic 7 You're Still a Child to Me 8 Wind Blowin' on the Water 9 All the Way Down 10 instrumental 11 Borrowed Time 12 You Cannot Make it On your Own 13 Rockin' Boat 14-18  instrumental (x5) 19 Movin' (on the water) 20-21 instrumental (x2) 
+
+CD2
+1 instrumental 2 Almost (dat also listed at end that it had : instrumental (x2) + Let Me See but it did not)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

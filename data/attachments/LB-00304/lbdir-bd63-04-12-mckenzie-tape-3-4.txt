@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-04-12-mckenzie-tape-3-4 
+=================== 
+=================== 
+=================== 
+f353bcd9454d5d59f8f6ab46414e3cdf  3rd McKenzie Tape\bd63-04-12m.txt
+d5bb498e35cdcc6635bc3e168fdc645d  3rd McKenzie Tape\mckenzie 3 01.shn
+992817d6c26f03fb9bdbd2dcf8c4b214  3rd McKenzie Tape\mckenzie 3 02.shn
+1f3151f766c707a5e06bc4c4f4e9e0d3  3rd McKenzie Tape\mckenzie 3 03.shn
+a8649f059dfe76481f07898f07287cdf  3rd McKenzie Tape\mckenzie 3 04.shn
+12b012bbf7308a0c7fa1025e9deb16a2  3rd McKenzie Tape\mckenzie 3 05.shn
+67ff708cd9109870a7bc445a74d1286c  3rd McKenzie Tape\mckenzie 3 06.shn
+476bd2adb36a0f97cd060cc808dfd2b7  3rd McKenzie Tape\mckenzie 3 07.shn
+99389bcad6cf391cbb71e89beb576326  3rd McKenzie Tape\mckenzie 3.md5
+b12faa9ca8c0c33418e75f0377346a32  4th McKenzie Tape\mckenzie 4 01.shn
+ea922c42d0e7a92369800d6da5d33a87  4th McKenzie Tape\mckenzie 4 02.shn
+b107644c5f0d1d21cfb08dd245f78c4b  4th McKenzie Tape\mckenzie 4 03.shn
+8464ea6f5a9f04090d8475d325457e4e  4th McKenzie Tape\mckenzie 4 04.shn
+765c5d8848bf50b04428232c71e24eba  4th McKenzie Tape\mckenzie 4 05.shn
+3a98ee900c1020247323603d0cae8758  4th McKenzie Tape\mckenzie 4 06.shn
+babb516577208e75fa4790f774b6e363  4th McKenzie Tape\mckenzie 4 07.shn
+9b901a3abb43710274e4440307087052  4th McKenzie Tape\mckenzie 4 08.shn
+3b09d3a96dcad678a6b636610027b909  4th McKenzie Tape\mckenzie 4 09.shn
+b35ff9b8317662510dd52a3dcabac09a  4th McKenzie Tape\mckenzie 4.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd63-04-12-mckenzie-tape-3-4\3rd McKenzie Tape 
+=================== 
+=================== 
+=================== 
+18a19bf482132268f97ced599d0740fb  [shntool]  mckenzie_3_01.wav
+e9deb05e547262a362fc040da70d7b6a  [shntool]  mckenzie_3_02.wav
+e5bcbf463d9c4430e2b581a2cd82ba87  [shntool]  mckenzie_3_03.wav
+8bceea88f8b5dd16920ab58ebc8e0589  [shntool]  mckenzie_3_04.wav
+ad18e84cc64a118e69943a957a122f74  [shntool]  mckenzie_3_05.wav
+e060226f21660173876fde54ca5aabcd  [shntool]  mckenzie_3_06.wav
+cf1af5b46332ac61ae23b1a460cdc938  [shntool]  mckenzie_3_07.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd63-04-12-mckenzie-tape-3-4\4th McKenzie Tape 
+=================== 
+=================== 
+=================== 
+61378afedd67f945f63c74e03eb91b6e  [shntool]  mckenzie_4_01.wav
+569d9caefd5c0c6aa0eae147de3c4dce  [shntool]  mckenzie_4_02.wav
+9282f81d9969242c19aeb4846f9eda9f  [shntool]  mckenzie_4_03.wav
+3e47e10043d0ac5755ee0e862fa536e0  [shntool]  mckenzie_4_04.wav
+20f1d123d74417645f552eda91d0cbc8  [shntool]  mckenzie_4_05.wav
+c60d10c50e0a6bf265b5a6feee11bbba  [shntool]  mckenzie_4_06.wav
+f41ab3b009d13bc2ac661b17cdb16b28  [shntool]  mckenzie_4_07.wav
+36aa91b0a6a85bc6d17ee2617a39605e  [shntool]  mckenzie_4_08.wav
+99dd469cf5e0a3d98d971da917fe1ad5  [shntool]  mckenzie_4_09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-04-12-mckenzie-tape-3-4\3rd McKenzie Tape 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.34       13839212 B   ---   --   ---xx    shn  0.6107  mckenzie 3 01.shn
+     0:52.36        9257516 B   ---   --   ---xx    shn  0.6074  mckenzie 3 02.shn
+     1:01.43       10861580 B   ---   --   ---xx    shn  0.5694  mckenzie 3 03.shn
+     5:05.71       53969036 B   ---   --   ---xx    shn  0.5890  mckenzie 3 04.shn
+     6:22.47       67495388 B   ---   --   ---xx    shn  0.5992  mckenzie 3 05.shn
+     1:33.50       16522844 B   ---   --   ---xx    shn  0.5794  mckenzie 3 06.shn
+     2:36.44       27621932 B   ---   --   ---xx    shn  0.5906  mckenzie 3 07.shn
+    18:51.25      199567508 B                            0.5932  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-04-12-mckenzie-tape-3-4\4th McKenzie Tape 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:26.51       25874396 B   ---   --   ---xx    shn  0.5855  mckenzie 4 01.shn
+     1:59.03       20998700 B   ---   --   ---xx    shn  0.5925  mckenzie 4 02.shn
+     0:51.37        9083468 B   ---   --   ---xx    shn  0.5859  mckenzie 4 03.shn
+     4:12.42       44551628 B   ---   --   ---xx    shn  0.5910  mckenzie 4 04.shn
+     5:28.40       57953324 B   ---   --   ---xx    shn  0.6062  mckenzie 4 05.shn
+     2:26.64       25904972 B   ---   --   ---xx    shn  0.5628  mckenzie 4 06.shn
+     3:27.43       36615980 B   ---   --   ---xx    shn  0.5626  mckenzie 4 07.shn
+     1:41.64       17966972 B   ---   --   ---xx    shn  0.5480  mckenzie 4 08.shn
+     0:49.12        8671868 B   ---   --   ---xx    shn  0.5448  mckenzie 4 09.shn
+    23:23.56      247621308 B                            0.5820  (9 files)
+=================== 
+=================== 
+=================== 

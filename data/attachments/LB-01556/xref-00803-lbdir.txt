@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-07-05-b.flacf 
+=================== 
+=================== 
+=================== 
+919754d985c01b8643a624c972cb47b0  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\101 Announcement.flac
+7a931a175a224088d93f24a3886df878  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\102 Roving Gambler .flac
+d407533aaa92c536d24efadad3856bd5  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\103 Mama, You Been On My Mind.flac
+b7cbd38c0bc07573b54a1fe1e5ac2329  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\104 Ballad Of Hollis Brown .flac
+2153815918527275f48a5a5edee702e9  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\105 Tombstone Blues.flac
+833889dbdd456b25670874543469f0f2  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\106 Simple Twist Of Fate.flac
+1f050546315fd11bdfaf2bcd3a33928b  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\107 I'll Be Your Baby Tonight.flac
+9637ca470e01de017156156218626c89  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\108 Masters Of War.flac
+4bce4aa85eb45d44103f08502855dcb1  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\109 Boots Of Spanish Leather.flac
+111d0b54bf268a691afa6ea8a04da1aa  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\110 A Hard Rain's A-Gonna Fall.flac
+66f79b431738e684fa803a5e6379bd35  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\111 To Be Alone With You.flac
+dc79a729ae3011331bdea836695fbcc0  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\112 Where Teardrops Fall .flac
+c63561e8f052a524957fa04fc47ca8ec  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\201 The Wicked Messenger.flac
+bbd60a4a335ab58a8c672b6389becb21  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\202 Leopard-Skin Pill-Box Hat .flac
+d1e0958078bc09e0ee87709371d7c705  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\203 Love Sick .flac
+baaa6275aa06746aa488ea1c01f0a6a8  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\204 Like A Rolling Stone.flac
+b0fb23ff81c5d8e79ff2ddc4066f1af0  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\205 If Dogs Run Free .flac
+8dc5d16d82bd3220d99192ba40460927  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\206 All Along The Watchtower .flac
+de201535a23c766d527fb71405b24676  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\207 Knockin' On Heaven's Door.flac
+897f15248b2b368420cf75bcef30e846  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\208 Highway 61 Revisited .flac
+ead55e1f91158d7687b5419ff4cefcfb  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\209 Blowin' In The Wind.flac
+d2641a747d2dfcba6fe01c2a4bce5156  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\210 Rainy Day Women #12 & 35.flac
+0aade671d834185973b38a6a3e15d03f  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\bd20010705.txt
+077d2525e952aa8e753ff61b877a89b8  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM).ffp
+3f3f31bf087c77d8714ba5423a9e132a  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM).md5
+45abe1b5082f6dad07b79482bf6bc1b0  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\braunschw_back.jpg
+88919a913a339c7c6018a98c629d337f  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\braunschw_front.jpg
+34cb7bacc666f172ed75bd393a3d41e6  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\brunsback.jpg
+b90054b6cd400cb977af5d3172729a8a  Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM)\brunsfront.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-05-b.flacf\Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM) 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:ac31e88142642c3eedbb83356436a60a
+102 Roving Gambler .flac:968f3dd90f1d8647819c4553748e6d09
+103 Mama, You Been On My Mind.flac:f5a212a584ad4128dfeab78fe14c8e89
+104 Ballad Of Hollis Brown .flac:313db0b46cb2688f2617212eed6e4bac
+105 Tombstone Blues.flac:27df6ceea2632e44b41b2aca9fc635c5
+106 Simple Twist Of Fate.flac:5da987cc4c7ecdaba0652129e13d9c20
+107 I'll Be Your Baby Tonight.flac:3b6b3ed658bd8271916cac5afd40f1b5
+108 Masters Of War.flac:dd284de0ec21132d5d94259f1c28ba6e
+109 Boots Of Spanish Leather.flac:4882164e9889fa5205a2eb9d7b840acb
+110 A Hard Rain's A-Gonna Fall.flac:18b8f5b7d27be00f67a99e2bbcef10e1
+111 To Be Alone With You.flac:96a91db014615971c041189cde4e2af8
+112 Where Teardrops Fall .flac:25d1acab131030c1b8e13432d89ad7bd
+201 The Wicked Messenger.flac:dcd05cac640fb94973fa9e17b44d79ba
+202 Leopard-Skin Pill-Box Hat .flac:f51166ea8a5658c3fb7375180624009e
+203 Love Sick .flac:fb24cc210536cb7836afa991789ba484
+204 Like A Rolling Stone.flac:bdba653babc96d86242350084dfc75f8
+205 If Dogs Run Free .flac:fa6268815faab5ec0807cf25ff98ef5c
+206 All Along The Watchtower .flac:dde583e2461302ea7264dd0b1f4c4d0d
+207 Knockin' On Heaven's Door.flac:2f87d9d1624effaacb45778c194ca3c6
+208 Highway 61 Revisited .flac:f5ecab882542f606d59184f342a98365
+209 Blowin' In The Wind.flac:fda3db302f4e285236d0113bd0afed75
+210 Rainy Day Women #12 & 35.flac:77db84efd5baeaee557706cfc7598580
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-05-b.flacf\Bob Dylan -2001.07.05  Braunschweig, Germany  (Schubert+ASM) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.43        9273980 B   ---   --   ---xx   flac  0.5856  101 Announcement.flac
+     3:42.33       39238460 B   ---   --   ---xx   flac  0.6195  102 Roving Gambler .flac
+     4:52.66       51664076 B   ---   --   ---xx   flac  0.5767  103 Mama, You Been On My Mind.flac
+     5:32.09       58586012 B   ---   --   ---xx   flac  0.4915  104 Ballad Of Hollis Brown .flac
+     6:52.31       72749756 B   ---   --   ---xx   flac  0.6034  105 Tombstone Blues.flac
+     8:54.71       94364636 B   ---   --   ---xx   flac  0.5665  106 Simple Twist Of Fate.flac
+     6:05.29       64454252 B   ---   --   ---xx   flac  0.6020  107 I'll Be Your Baby Tonight.flac
+     5:08.29       54399452 B   ---   --   ---xx   flac  0.5622  108 Masters Of War.flac
+     6:47.62       71940668 B   ---   --   ---xx   flac  0.4863  109 Boots Of Spanish Leather.flac
+    10:02.74      106366892 B   ---   --   ---xx   flac  0.5723  110 A Hard Rain's A-Gonna Fall.flac
+     5:35.25       59152844 B   ---   --   ---xx   flac  0.6369  111 To Be Alone With You.flac
+     4:51.42       51431228 B   ---   --   ---xx   flac  0.5761  112 Where Teardrops Fall .flac
+     6:01.59       63819212 B   ---   --   ---xx   flac  0.6695  201 The Wicked Messenger.flac
+    10:09.18      107469980 B   ---   --   ---xx   flac  0.6334  202 Leopard-Skin Pill-Box Hat .flac
+     5:33.67       58898828 B   ---   --   ---xx   flac  0.5823  203 Love Sick .flac
+     8:12.00       86788844 B   ---   --   ---xx   flac  0.6297  204 Like A Rolling Stone.flac
+     4:25.00       46746044 B   ---   --   ---xx   flac  0.5005  205 If Dogs Run Free .flac
+     4:41.13       49599020 B   ---   --   ---xx   flac  0.6583  206 All Along The Watchtower .flac
+     5:34.18       58959980 B   ---   --   ---xx   flac  0.5989  207 Knockin' On Heaven's Door.flac
+     7:26.31       78747356 B   ---   --   ---xx   flac  0.6585  208 Highway 61 Revisited .flac
+     6:08.11       64941116 B   ---   --   ---xx   flac  0.6129  209 Blowin' In The Wind.flac
+     6:43.02       71093948 B   ---   --   ---xx   flac  0.6350  210 Rainy Day Women #12 & 35.flac
+   134:13.58     1420686584 B                            0.5956  (22 files)
+=================== 
+=================== 
+=================== 

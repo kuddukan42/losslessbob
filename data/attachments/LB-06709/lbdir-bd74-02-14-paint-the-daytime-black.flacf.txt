@@ -1,0 +1,121 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-02-14-paint-the-daytime-black.flacf 
+=================== 
+=================== 
+=================== 
+c8512917c0e167871fe03b1b27feea56  bd74-02-14-paint-the-daytime-black-d1t01.flac
+3c71edc3c0b7637820bb4df661735bbd  bd74-02-14-paint-the-daytime-black-d1t02.flac
+67d93faf1d59663dabb0a182cde9cf9a  bd74-02-14-paint-the-daytime-black-d1t03.flac
+0c6955fe6cf917157f92eecf62cc5543  bd74-02-14-paint-the-daytime-black-d1t04.flac
+d7f0aff2c335888dce81508fa078421a  bd74-02-14-paint-the-daytime-black-d1t05.flac
+783269688ea5a4d91f05e0b1b75ad4ec  bd74-02-14-paint-the-daytime-black-d1t06.flac
+728b94b6f38f8bc2c4c697e3e2cb5639  bd74-02-14-paint-the-daytime-black-d1t07.flac
+e7acbb89797ac6896a907544bacae8d2  bd74-02-14-paint-the-daytime-black-d1t08.flac
+6d42ca90987601c5e11d28a1ade4c04a  bd74-02-14-paint-the-daytime-black-d1t09.flac
+0f69f58e978cfb1f7bba85ab0969b5f0  bd74-02-14-paint-the-daytime-black-d1t10.flac
+9140dbda59e1b76f08fd954539b61066  bd74-02-14-paint-the-daytime-black-d1t11.flac
+339e77e1268137fcd3b8f44190bc0f2a  bd74-02-14-paint-the-daytime-black-d1t12.flac
+034269ddbf731c12aa8367a5504623f1  bd74-02-14-paint-the-daytime-black-d1t13.flac
+31a3ea9ef2e551d0e6dd4ddb412fb27c  bd74-02-14-paint-the-daytime-black-d1t14.flac
+bd5e02cea0671026457bb095f4c77c82  bd74-02-14-paint-the-daytime-black-d1t15.flac
+977c7ac8a1122cf7b44ff5f2bb384546  bd74-02-14-paint-the-daytime-black-d1t16.flac
+6bcbedbf5e974f7a24279b43fe1c7de9  bd74-02-14-paint-the-daytime-black-d1t17.flac
+8627a458850a4c289f8fcb99d7ca36ea  bd74-02-14-paint-the-daytime-black-d2t01.flac
+0f16477ca01ac06739d73dc488cbf2ed  bd74-02-14-paint-the-daytime-black-d2t02.flac
+7bb9c766437559d5406d7612f413cbff  bd74-02-14-paint-the-daytime-black-d2t03.flac
+976890b4a8db78742db117f9e2d39c67  bd74-02-14-paint-the-daytime-black-d2t04.flac
+6335192dabe70481f25f72ef9566b5e6  bd74-02-14-paint-the-daytime-black-d2t05.flac
+d9fea6950dd15d6d8860db5a70798d52  bd74-02-14-paint-the-daytime-black-d2t06.flac
+040d80e8f7fdf095bb1f14731961ff60  bd74-02-14-paint-the-daytime-black-d2t07.flac
+73387ad7716ca8323596547c55c582e8  bd74-02-14-paint-the-daytime-black-d2t08.flac
+0c34b38a022c136fdc4e4d16de82cdba  bd74-02-14-paint-the-daytime-black-d2t09.flac
+42ba37c589275129a377b615e459a306  bd74-02-14-paint-the-daytime-black-d2t10.flac
+3c9df4272538e7e00f06da8bbc44ca1c  bd74-02-14-paint-the-daytime-black-d2t11.flac
+b0c3b37bbce82cb754d0b91613da70e5  bd74-02-14-paint-the-daytime-black-d2t12.flac
+ab07baf69fa84d80e86a4365166d1687  bd74-02-14-paint-the-daytime-black-d2t13.flac
+10725e82d77cd561f3d18a582369be10  bd74-02-14-paint-the-daytime-black-d2t14.flac
+0fb28a506fa10200388ae394c44e22ae  bd74-02-14-paint-the-daytime-black-LB-6709.txt
+bad4abc9fe7f031fa1ef244bf960382f  bd74-02-14-paint-the-daytime-black.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-02-14-paint-the-daytime-black.flacf 
+=================== 
+=================== 
+=================== 
+bd74-02-14-paint-the-daytime-black-d1t01.flac:a860aed3534b0e8be3fef48e3f4d14ea
+bd74-02-14-paint-the-daytime-black-d1t02.flac:3f825f2e414e44347e7dbd220827961e
+bd74-02-14-paint-the-daytime-black-d1t03.flac:cd9461f9cfb11263035715d1e97e592f
+bd74-02-14-paint-the-daytime-black-d1t04.flac:33459bf586beb0f2a8cc91506b6edd3b
+bd74-02-14-paint-the-daytime-black-d1t05.flac:33c2f8eb04991a9fd493634d371d1090
+bd74-02-14-paint-the-daytime-black-d1t06.flac:9c3cfd6a3e06515320849671de9d43f2
+bd74-02-14-paint-the-daytime-black-d1t07.flac:51d95d676b33bb71c821d77bd031b964
+bd74-02-14-paint-the-daytime-black-d1t08.flac:d9da40ba04252662ed48ffd85ae621ab
+bd74-02-14-paint-the-daytime-black-d1t09.flac:06f796c16e595f457920080202c8ed46
+bd74-02-14-paint-the-daytime-black-d1t10.flac:cf6d87fe865d29cd08bb873634bc2cb8
+bd74-02-14-paint-the-daytime-black-d1t11.flac:8c036a47a9c63c59e0c8908f77298d56
+bd74-02-14-paint-the-daytime-black-d1t12.flac:813343c14dc30a86358f755a86063e63
+bd74-02-14-paint-the-daytime-black-d1t13.flac:7338d0a56f02bdcb2e47ba99c0e610cd
+bd74-02-14-paint-the-daytime-black-d1t14.flac:5f95c47626acbc09ede48d690a17e308
+bd74-02-14-paint-the-daytime-black-d1t15.flac:2db3debfea691213fcd540c27eb4f2ce
+bd74-02-14-paint-the-daytime-black-d1t16.flac:0dc6fe56ee380840b6f0bf5f6f326aee
+bd74-02-14-paint-the-daytime-black-d1t17.flac:4c864b06cb392135a7a2988463b9e245
+bd74-02-14-paint-the-daytime-black-d2t01.flac:c976a90194f770b7f0dc85ca3d854b41
+bd74-02-14-paint-the-daytime-black-d2t02.flac:6f4a15ba06ffa01fcd3b4773c1de0394
+bd74-02-14-paint-the-daytime-black-d2t03.flac:6a99446a122ca5227a425292b158cab6
+bd74-02-14-paint-the-daytime-black-d2t04.flac:a5a31813baff1aa196bbe62d3f5d24f3
+bd74-02-14-paint-the-daytime-black-d2t05.flac:f6a3f6285bf2b142eb40f9d9c0550782
+bd74-02-14-paint-the-daytime-black-d2t06.flac:33e87a2f5efa7e079c701ca10b4eb02e
+bd74-02-14-paint-the-daytime-black-d2t07.flac:0498495dc5b4377619828b2d3d391eff
+bd74-02-14-paint-the-daytime-black-d2t08.flac:31d6bf52d4cd8801d2686e19e2e7ece1
+bd74-02-14-paint-the-daytime-black-d2t09.flac:efb0e62b474ec3902fe1882e67903be4
+bd74-02-14-paint-the-daytime-black-d2t10.flac:9215782c1c828a11ae1e904f26ed98f6
+bd74-02-14-paint-the-daytime-black-d2t11.flac:94c0502ccb80f01c89e5a8e0c159fbdf
+bd74-02-14-paint-the-daytime-black-d2t12.flac:eeff89fe7eb533e742cce0f775b4526c
+bd74-02-14-paint-the-daytime-black-d2t13.flac:6a167e896d7122b3331ad6b389a2cb3d
+bd74-02-14-paint-the-daytime-black-d2t14.flac:c73f0c217aea8e8b65b4d189a47a1392
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-14-paint-the-daytime-black.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.69       52200332 B   ---   --   ---xx   flac  0.6116  bd74-02-14-paint-the-daytime-black-d1t01.flac
+     5:19.13       56302220 B   ---   --   ---xx   flac  0.6779  bd74-02-14-paint-the-daytime-black-d1t02.flac
+     3:34.72       37918988 B   ---   --   ---xx   flac  0.6722  bd74-02-14-paint-the-daytime-black-d1t03.flac
+     3:37.02       38283548 B   ---   --   ---xx   flac  0.6663  bd74-02-14-paint-the-daytime-black-d1t04.flac
+     4:05.18       43260380 B   ---   --   ---xx   flac  0.6544  bd74-02-14-paint-the-daytime-black-d1t05.flac
+     4:53.72       51854588 B   ---   --   ---xx   flac  0.6597  bd74-02-14-paint-the-daytime-black-d1t06.flac
+     4:47.14       50659772 B   ---   --   ---xx   flac  0.6523  bd74-02-14-paint-the-daytime-black-d1t07.flac
+     3:37.70       38443484 B   ---   --   ---xx   flac  0.6506  bd74-02-14-paint-the-daytime-black-d1t08.flac
+     3:32.10       37420364 B   ---   --   ---xx   flac  0.6399  bd74-02-14-paint-the-daytime-black-d1t09.flac
+     3:37.19       38323532 B   ---   --   ---xx   flac  0.6307  bd74-02-14-paint-the-daytime-black-d1t10.flac
+     5:20.29       56516252 B   ---   --   ---xx   flac  0.6651  bd74-02-14-paint-the-daytime-black-d1t11.flac
+     3:57.02       41811548 B   ---   --   ---xx   flac  0.6448  bd74-02-14-paint-the-daytime-black-d1t12.flac
+     4:44.65       50250524 B   ---   --   ---xx   flac  0.6779  bd74-02-14-paint-the-daytime-black-d1t13.flac
+     4:05.13       43248620 B   ---   --   ---xx   flac  0.6739  bd74-02-14-paint-the-daytime-black-d1t14.flac
+     3:05.71       32801036 B   ---   --   ---xx   flac  0.6376  bd74-02-14-paint-the-daytime-black-d1t15.flac
+     5:04.25       53684444 B   ---   --   ---xx   flac  0.6441  bd74-02-14-paint-the-daytime-black-d1t16.flac
+     3:52.31       40997756 B   ---   --   ---xx   flac  0.6251  bd74-02-14-paint-the-daytime-black-d1t17.flac
+     5:52.10       62116364 B   ---   --   ---xx   flac  0.5935  bd74-02-14-paint-the-daytime-black-d2t01.flac
+     6:46.62       71764268 B   ---   --   ---xx   flac  0.6173  bd74-02-14-paint-the-daytime-black-d2t02.flac
+     4:19.48       45800540 B   ---   --   ---xx   flac  0.6505  bd74-02-14-paint-the-daytime-black-d2t03.flac
+     3:20.74       35454092 B   ---   --   ---xx   flac  0.6854  bd74-02-14-paint-the-daytime-black-d2t04.flac
+     5:30.30       58282604 B   ---   --   ---xx   flac  0.6410  bd74-02-14-paint-the-daytime-black-d2t05.flac
+     5:30.25       58270844 B   ---   --   ---xx   flac  0.6788  bd74-02-14-paint-the-daytime-black-d2t06.flac
+     4:12.20       44499884 B   ---   --   ---xx   flac  0.6862  bd74-02-14-paint-the-daytime-black-d2t07.flac
+     8:00.35       84754364 B   ---   --   ---xx   flac  0.6779  bd74-02-14-paint-the-daytime-black-d2t08.flac
+     4:03.24       42921692 B   ---   --   ---xx   flac  0.6932  bd74-02-14-paint-the-daytime-black-d2t09.flac
+     4:53.47       51795788 B   ---   --   ---xx   flac  0.6781  bd74-02-14-paint-the-daytime-black-d2t10.flac
+     3:49.46       40503836 B   ---   --   ---xx   flac  0.6595  bd74-02-14-paint-the-daytime-black-d2t11.flac
+     4:41.52       49690748 B   ---   --   ---xx   flac  0.7063  bd74-02-14-paint-the-daytime-black-d2t12.flac
+     6:49.05       72159404 B   ---   --   ---xx   flac  0.7037  bd74-02-14-paint-the-daytime-black-d2t13.flac
+     3:56.68       41790380 B   ---   --   ---xx   flac  0.6780  bd74-02-14-paint-the-daytime-black-d2t14.flac
+   143:58.16     1523782196 B                            0.6593  (31 files)
+=================== 
+=================== 
+=================== 

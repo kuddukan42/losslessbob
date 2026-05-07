@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-11-23-unwanted-man.flacf 
+=================== 
+=================== 
+=================== 
+96c4c6d841ee152691844aafc735bb19  bd01-11-23-d1\Bob Dylan - Track 01.flac
+6f90b961eb75b4daa6c2f5d29f45916f  bd01-11-23-d1\Bob Dylan - Track 02.flac
+7a0eae9f5453df9dea9ed864fdf1f04e  bd01-11-23-d1\Bob Dylan - Track 03.flac
+7bc44940e793a1650b330ad9736b7f23  bd01-11-23-d1\Bob Dylan - Track 04.flac
+24d7526491c8dd8197a40ae05cf6cb79  bd01-11-23-d1\Bob Dylan - Track 05.flac
+210f24b66c54dcb0d5d024f6350bc819  bd01-11-23-d1\Bob Dylan - Track 06.flac
+ab5b5319cbbd9f7c054f66d114c2467f  bd01-11-23-d1\Bob Dylan - Track 07.flac
+7458a9af13991800948437476f317c5d  bd01-11-23-d1\Bob Dylan - Track 08.flac
+7a9f7038b92b9f2e9c3d77cf36a9d478  bd01-11-23-d1\Bob Dylan - Track 09.flac
+f981ea0fa1d75364dd6ae705003aea8b  bd01-11-23-d1\Bob Dylan - Track 10.flac
+a59e7bd5dd23852b95660c4bf737035a  bd01-11-23-d1\Bob Dylan - Track 11.flac
+55a14235169e07b4c323d4e8edc1367a  bd01-11-23-d1\Bob Dylan - Track 12.flac
+364ac55ef417fdb3c86247acf8a0c7ae  bd01-11-23-d1\bd01-11-23-d1-fingerprints.txt
+7a379fe8a77fc788801fd39ece6830d6  bd01-11-23-d2\Bob Dylan - Track 01.flac
+291dfa2b3faf36d7f79fc7f289ab68a2  bd01-11-23-d2\Bob Dylan - Track 02.flac
+ff894649275cf7ef9109912faeaf2da1  bd01-11-23-d2\Bob Dylan - Track 03.flac
+7a711f33d3f299e4280af293b5e49877  bd01-11-23-d2\Bob Dylan - Track 04.flac
+cfb44ca69cc9f78f5c121345f56bd2c6  bd01-11-23-d2\Bob Dylan - Track 05.flac
+5a88b4541489b3ae2a15e9eed874decd  bd01-11-23-d2\Bob Dylan - Track 06.flac
+91d9a8caba474bbdd0ce47bbfd87a346  bd01-11-23-d2\Bob Dylan - Track 07.flac
+a95d8c4aef573bc28549a7b909653374  bd01-11-23-d2\Bob Dylan - Track 08.flac
+99fb36a382e7c9532e88ab3c8c9309a8  bd01-11-23-d2\Bob Dylan - Track 09.flac
+a0d99d426f5392868cc85cb2786fff66  bd01-11-23-d2\Bob Dylan - Track 10.flac
+7769389b1196c70ca752fc40934df5af  bd01-11-23-d2\bd01-11-23-d2-fingerprints.txt
+8e6c8fbbec35bf2d43d0abee671880cd  bd01-11-23-unwanted man recording.txt
+471782b4985bc62c583793db1688118c  bd01-11-23-unwanted-man-LB-2930.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-11-23-unwanted-man.flacf\bd01-11-23-d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:fc094a4095899c2b5e098c4f27bd7391
+Bob Dylan - Track 02.flac:9d670fba7a9a0a42957d46155434edc3
+Bob Dylan - Track 03.flac:812ae776f04def38e91b5521bd1a22d9
+Bob Dylan - Track 04.flac:77e9f9783e5ff623125ac7d279d49e4f
+Bob Dylan - Track 05.flac:5ce10445f4fac08367d1d861206bcd5e
+Bob Dylan - Track 06.flac:ab32db72f38181e4181dfe01496bde97
+Bob Dylan - Track 07.flac:69b207c53515b08a12225de1c71fad1c
+Bob Dylan - Track 08.flac:7e955978dbe57d95eb23920b22977302
+Bob Dylan - Track 09.flac:c84e4740ab04514c36df251eefb4b8db
+Bob Dylan - Track 10.flac:448446a0444c533cd5d978f8955782d2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-11-23-unwanted-man.flacf\bd01-11-23-d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:496f1612c0ae4234828aff5f3a8ef016
+Bob Dylan - Track 02.flac:6510b76f088ff34fc89507dfa7477f03
+Bob Dylan - Track 03.flac:b01529bf055340b537e728f54278817b
+Bob Dylan - Track 04.flac:58f05b169a8c410369f23405807171a3
+Bob Dylan - Track 05.flac:99f27dd0919799e449f7cd26aae26bc7
+Bob Dylan - Track 06.flac:f2c75dc9a44aa42d0a6dcbb8659621f3
+Bob Dylan - Track 07.flac:3de87f951e16258d4a8664cb99780c92
+Bob Dylan - Track 08.flac:3c6b253e3f0bf30ffc1866100d05d2e3
+Bob Dylan - Track 09.flac:229da8d954645df3ef365a0b1d9415e6
+Bob Dylan - Track 10.flac:5f0b7d92eaa55b4fe450c295d62398ec
+Bob Dylan - Track 11.flac:1e9de968e7cb8cb5632537c3f2e33737
+Bob Dylan - Track 12.flac:3a46353b92e3b5459012ffdfec4902d8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-23-unwanted-man.flacf\bd01-11-23-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:06.52       64684748 B   ---   --   ---xx   flac  0.5882  Bob Dylan - Track 01.flac
+     5:39.45       59905484 B   ---   --   ---xx   flac  0.6108  Bob Dylan - Track 02.flac
+     9:26.69      100004732 B   ---   --   ---xx   flac  0.5829  Bob Dylan - Track 03.flac
+     6:24.24       67794092 B   ---   --   ---xx   flac  0.5916  Bob Dylan - Track 04.flac
+     7:38.27       80854748 B   ---   --   ---xx   flac  0.5902  Bob Dylan - Track 05.flac
+     4:10.30       44170604 B   ---   --   ---xx   flac  0.5131  Bob Dylan - Track 06.flac
+     7:05.49       75085292 B   ---   --   ---xx   flac  0.6069  Bob Dylan - Track 07.flac
+     6:19.74       67029692 B   ---   --   ---xx   flac  0.5506  Bob Dylan - Track 08.flac
+     5:53.59       62408012 B   ---   --   ---xx   flac  0.5906  Bob Dylan - Track 09.flac
+     5:37.28       59512700 B   ---   --   ---xx   flac  0.5698  Bob Dylan - Track 10.flac
+    64:23.07      681450104 B                            0.5821  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-23-unwanted-man.flacf\bd01-11-23-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:47.20       29505884 B   ---   --   ---xx   flac  0.6209  Bob Dylan - Track 01.flac
+     6:37.73       70202540 B   ---   --   ---xx   flac  0.5575  Bob Dylan - Track 02.flac
+     8:48.57       93273308 B   ---   --   ---xx   flac  0.5916  Bob Dylan - Track 03.flac
+     4:16.32       45233708 B   ---   --   ---xx   flac  0.5626  Bob Dylan - Track 04.flac
+     5:06.58       54114860 B   ---   --   ---xx   flac  0.5516  Bob Dylan - Track 05.flac
+     5:36.65       59423324 B   ---   --   ---xx   flac  0.5181  Bob Dylan - Track 06.flac
+     8:51.19       93713132 B   ---   --   ---xx   flac  0.5994  Bob Dylan - Track 07.flac
+     7:25.10       78521564 B   ---   --   ---xx   flac  0.5990  Bob Dylan - Track 08.flac
+     6:19.56       66987356 B   ---   --   ---xx   flac  0.5739  Bob Dylan - Track 09.flac
+     6:39.70       70548284 B   ---   --   ---xx   flac  0.5473  Bob Dylan - Track 10.flac
+    10:00.07      105856508 B   ---   --   ---xx   flac  0.6045  Bob Dylan - Track 11.flac
+     6:05.57       64520108 B   ---   --   ---xx   flac  0.5834  Bob Dylan - Track 12.flac
+    78:35.74      831900576 B                            0.5777  (12 files)
+=================== 
+=================== 
+=================== 

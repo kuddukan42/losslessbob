@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92 03 21 adelaide jl 
+=================== 
+=================== 
+=================== 
+c0dec0fa6e191625da889b89c90b9a46  bd92-03-21jl.txt
+01fe1d48c76ce75768f5c2204c012f85  d1t01.shn
+da21f2a4ee184dc200ce92ba315544d8  d1t02.shn
+9b82f52208cd54d0168d8def7f39ab05  d1t03.shn
+0c5f3341048387e8e704d1f8e3ca6c77  d1t04.shn
+6e834adb8941d231cef6cde6268d3d72  d1t05.shn
+7f159c82ed63184f496c2b05121be356  d1t06.shn
+37fddb0b3bfe6fd6f84b96ce287cf7c1  d1t07.shn
+4a73595924aa4fe057b7e23a4f9b6264  d1t08.shn
+60a120c92a3a43951e5268b1e6e78088  d1t09.shn
+b7e99ce177f244937a73f6edc7434f89  d1t10.shn
+6d59b570272639ea88677c87ca6310ba  d2t01.shn
+80a531348d80b6a8a74ebac9d400f8c1  d2t02.shn
+ddd8d6ba51ae107e57650e056e8c7685  d2t03.shn
+c903d4780075c0632afa6ec4b2c9854b  d2t04.shn
+a2c8ea990332acd2d7cbb9d0d5f3ab84  d2t05.shn
+fbbb1fa675e9fabd853ba31806434324  d2t06.shn
+f70f6a632bbe84dd46635204491b7ab5  d2t07.shn
+597024bb73f81b897af4800637c179e5  d2t08.shn
+1824a1bb9c1523fcec64ac5351baac3f  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92 03 21 adelaide jl 
+=================== 
+=================== 
+=================== 
+25ad4824c98f076adc292c465258cf86  [shntool]  d1t01.wav
+00d24fd70b6a7fa80c5366af27318567  [shntool]  d1t02.wav
+69b44e1684e1bc7f4d53855f8ae019ef  [shntool]  d1t03.wav
+51ff4156900c0ea8defdd70ce9a73be4  [shntool]  d1t04.wav
+b491ba9d29c4475674e477bff2bc01a4  [shntool]  d1t05.wav
+9347c3d3a74fbdfece010b1292b88666  [shntool]  d1t06.wav
+db4636b62f4b79cb9a72b9b00ffb2fc4  [shntool]  d1t07.wav
+8d6e3e4c5e0c5371f170959e6f101f31  [shntool]  d1t08.wav
+2108152ac61a7460873452bb5d34d869  [shntool]  d1t09.wav
+54f70d34ec0c60894cf90e6bd43bbfd8  [shntool]  d1t10.wav
+11d5a8604cba58332306c873c9067c0a  [shntool]  d2t01.wav
+9ae2e04accc9f271c7c39c02d291caf0  [shntool]  d2t02.wav
+04619a1de640e01009857289e8f1d268  [shntool]  d2t03.wav
+700cd250db45112d3c0f5fe155259acf  [shntool]  d2t04.wav
+b69a8d233735dffb648fe49164f46552  [shntool]  d2t05.wav
+9941a51d2b95d9136f22185a96a32501  [shntool]  d2t06.wav
+241fa0fa329f35c8079034ef3909316e  [shntool]  d2t07.wav
+8b5e642758a9344b02111fd37546087f  [shntool]  d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92 03 21 adelaide jl 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.60       55178584 B   -b-   --   ---xx    shn  0.6662  d1t01.shn
+     4:24.62       46716564 B   -b-   --   ---xx    shn  0.6568  d1t02.shn
+     4:04.32       43116792 B   -b-   --   ---xx    shn  0.6873  d1t03.shn
+     5:20.73       56618920 B   -b-   --   ---xx    shn  0.6825  d1t04.shn
+     6:45.13       71472880 B   -b-   --   ---xx    shn  0.6936  d1t05.shn
+     3:30.18       37085304 B   -b-   --   ---xx    shn  0.6899  d1t06.shn
+     5:34.04       58928080 B   -b-   --   ---xx    shn  0.6890  d1t07.shn
+     3:15.71       34564796 B   -b-   --   ---xx    shn  0.5875  d1t08.shn
+     4:56.48       52327664 B   -b-   --   ---xx    shn  0.5680  d1t09.shn
+     3:50.29       40640864 B   -b-   --   ---xx    shn  0.5670  d1t10.shn
+     4:50.65       51309424 B   -b-   --   ---xx    shn  0.6304  d2t01.shn
+     5:16.28       55807812 B   -b-   --   ---xx    shn  0.6542  d2t02.shn
+     4:55.10       52060524 B   -b-   --   ---xx    shn  0.6318  d2t03.shn
+     7:31.31       79629432 B   -b-   --   ---xx    shn  0.6117  d2t04.shn
+     6:30.02       68801164 B   -b-   --   ---xx    shn  0.6568  d2t05.shn
+     5:20.58       56584048 B   -b-   --   ---xx    shn  0.6574  d2t06.shn
+     4:58.19       52612948 B   -b-   --   ---xx    shn  0.6664  d2t07.shn
+     3:13.56       34177484 B   -b-   --   ---xx    shn  0.5783  d2t08.shn
+    89:32.05      947633284 B                            0.6461  (18 files)
+=================== 
+=================== 
+=================== 

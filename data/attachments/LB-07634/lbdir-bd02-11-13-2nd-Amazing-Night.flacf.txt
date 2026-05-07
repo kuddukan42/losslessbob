@@ -1,0 +1,124 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-13-2nd-Amazing-Night.flacf 
+=================== 
+=================== 
+=================== 
+72e008cd590700846df16acf6024a65b  Artwork & Info\2002-11-13 Madison Square Garden front 800.jpg
+c19197648bef02ceb195f1445bbadab1  Artwork & Info\2002-11-13 Madison Square Garden front inside.jpg
+2ac62262e64a2ad598e650855af4de83  Artwork & Info\2002-11-13 Madison Square Garden front.jpg
+c98aa11bcce5adc945e0b2c63dd20d34  Artwork & Info\2002-11-13 Madison Square Garden rear inside.jpg
+f08f9a7f505e7219c1fdcc75d9c8a2a6  Artwork & Info\2002-11-13 Madison Square Garden rear.jpg
+b32271df19f560a4cd8f5b915ebdfa93  Artwork & Info\2002-11-13 Madison Square Garden, New York City, New York.txt
+ee24aed1753b8f40bfd7505faa9f3006  Artwork & Info\EAC log disc 1.LOG
+f77d56867a91d677b58d485c03bf25a3  Artwork & Info\EAC log disc 2.LOG
+e843718fe40bdc6238df9fb5378b90a2  CD1\00 Announcement.flac
+be1e5c8e810f6ac823b1fd432c119bb2  CD1\01 Seeing the real you at last.flac
+b4ffa8d442df2bd4fa11d94359266fed  CD1\02 Carrying a torch.flac
+238193bc1400d00cc13662753f82fc9e  CD1\03 Tombstone blues.flac
+07579ebf64e90757f44ab86fe3c9f4e9  CD1\04 You ain't goin' nowhere.flac
+4d0e0f75ddc68143c2d4127492c09db0  CD1\05 Things have changed.flac
+aaa2aac2a6a1e97870d336405aa7a7c5  CD1\06 Brown sugar.flac
+b396cbfa1288bb3da4bb64a5769ff98a  CD1\07 Forever young.flac
+918303dae3f3102f886558ae099a57d5  CD1\08 It's alright, ma (I'm only bleeding).flac
+4c6950c87a4a2d5dabe32e20c1ff40eb  CD1\09 One too many mornings.flac
+ee4dc2067bc688714c4c595d0d92f060  CD1\10 Cold irons bound.flac
+8fab15f81a858dee32ac745583860304  CD1\11 Shelter from the storm.flac
+b41bed918f4e1d5bc73fbe2cec19c049  CD1\12 Old man.flac
+62abf3240adfc41593d713762775bd0c  CD1\FLAC CD1.md5
+9468e77aef6fa16e552a91cce79f4848  CD2\13 Honest with me.flac
+a6103134fef8025f89d72aa0f8e5c884  CD2\14 The times they are a-changin'.flac
+cac26d20c5dd9ae78f14fa385725c4a3  CD2\15 High water (for Charley Patton).flac
+7ae2b53653a0229087534ff0bc6e402c  CD2\16 Mutineer.flac
+231b5241ce185603d4d40225265944e6  CD2\17 Floater (too much to ask).flac
+d172d549fd63ca71969c8a9850348bde  CD2\18 Summer days.flac
+64cbacbaf59626509ee1947b4db7deb3  CD2\19 Blowin' in the wind.flac
+56fc18fe260965179be7cd506b7bc0c5  CD2\20 All along the watchtower.flac
+b79a723c2e6c83237449a610d59116b4  CD2\21 Something.flac
+8c2cb58ad6596112e7596295f4ce4644  CD2\22 Positively 4th Street [bonus track].flac
+9cef69fe597367b699e074902ef5f292  CD2\23 Po' Boy [bonus track].flac
+a18e425377dc9a1ecf527110dade6031  CD2\FLAC CD2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-13-2nd-Amazing-Night.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:b8a3c1f1d90a30fd1d03610101ebebba
+01 Seeing the real you at last.flac:060d082b9aaa5aacf44300c99ca0e0ba
+02 Carrying a torch.flac:6e0fcde9fafd1ca69c6204f09142f7f5
+03 Tombstone blues.flac:a19d3978385c61385f760ac294c6befe
+04 You ain't goin' nowhere.flac:f7081ab76e139e6cc1b552ee3f261809
+05 Things have changed.flac:e8b43925af19465ccd8881b21f90ed4a
+06 Brown sugar.flac:b2f71d0dcb4c2c6ab824141d8fc36adf
+07 Forever young.flac:21dc8da0c3e7750604d138409d5ac4ed
+08 It's alright, ma (I'm only bleeding).flac:666486c5487b200aeb39fbb95c6c4113
+09 One too many mornings.flac:4ad2f91dc40059406358cda9b03df44e
+10 Cold irons bound.flac:94693d2a1d69248a90fdfa1c2b37bff9
+11 Shelter from the storm.flac:98c2bfbb15cfd81a4703e48d8d937caf
+12 Old man.flac:e5dc2625b6b917b4af93b7d41f38be69
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-13-2nd-Amazing-Night.flacf\CD2 
+=================== 
+=================== 
+=================== 
+13 Honest with me.flac:791dc0901b16d8acd1f61e3ea46d7ffa
+14 The times they are a-changin'.flac:eda232b23acbf24cf7728aac2d687d38
+15 High water (for Charley Patton).flac:041ba334120aafe18349b687652e6bb0
+16 Mutineer.flac:068a35bef0b87017160b9f6f55981593
+17 Floater (too much to ask).flac:4217b3ebea41219980f9c52c94e62e24
+18 Summer days.flac:7f22a4e42957bf78c97e5649fabd7b9c
+19 Blowin' in the wind.flac:dea3cf41dd49f5b0dae7d627c4c97e82
+20 All along the watchtower.flac:dc53cd158be77349ec087bc177e33dd8
+21 Something.flac:9978cdd7e705ecefe37d9d118df240b5
+22 Positively 4th Street [bonus track].flac:5871747bd7695d8e170ff107022157b2
+23 Po' Boy [bonus track].flac:66cdf3a755203e610939b8740e8fab13
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-13-2nd-Amazing-Night.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.73        6345740 B   ---   --   ---xx   flac  0.4249  00 Announcement.flac
+     5:33.72       58910588 B   ---   --   ---xx   flac  0.5426  01 Seeing the real you at last.flac
+     5:03.39       53540972 B   ---   --   ---xx   flac  0.4558  02 Carrying a torch.flac
+     6:10.26       65329196 B   ---   --   ---xx   flac  0.5209  03 Tombstone blues.flac
+     5:20.31       56520956 B   ---   --   ---xx   flac  0.5143  04 You ain't goin' nowhere.flac
+     6:23.48       67674140 B   ---   --   ---xx   flac  0.5138  05 Things have changed.flac
+     4:14.13       44836220 B   ---   --   ---xx   flac  0.5774  06 Brown sugar.flac
+     6:33.14       69358172 B   ---   --   ---xx   flac  0.5124  07 Forever young.flac
+     7:59.51       84615596 B   ---   --   ---xx   flac  0.5212  08 It's alright, ma (I'm only bleeding).flac
+     6:08.50       65032844 B   ---   --   ---xx   flac  0.4397  09 One too many mornings.flac
+     6:08.62       65061068 B   ---   --   ---xx   flac  0.5560  10 Cold irons bound.flac
+     6:24.46       67845836 B   ---   --   ---xx   flac  0.5192  11 Shelter from the storm.flac
+     3:44.54       39640652 B   ---   --   ---xx   flac  0.5607  12 Old man.flac
+    70:21.54      744711980 B                            0.5166  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-13-2nd-Amazing-Night.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:03.28       74683100 B   ---   --   ---xx   flac  0.5522  13 Honest with me.flac
+     6:02.13       63887420 B   ---   --   ---xx   flac  0.5082  14 The times they are a-changin'.flac
+     7:15.14       76766972 B   ---   --   ---xx   flac  0.5449  15 High water (for Charley Patton).flac
+     3:10.58       33652460 B   ---   --   ---xx   flac  0.4180  16 Mutineer.flac
+     7:13.25       76440044 B   ---   --   ---xx   flac  0.4194  17 Floater (too much to ask).flac
+     8:09.02       86264348 B   ---   --   ---xx   flac  0.5795  18 Summer days.flac
+     5:01.49       53211692 B   ---   --   ---xx   flac  0.5162  19 Blowin' in the wind.flac
+     6:19.34       66935612 B   ---   --   ---xx   flac  0.5864  20 All along the watchtower.flac
+     3:55.64       41604572 B   ---   --   ---xx   flac  0.4932  21 Something.flac
+     8:38.11       91401116 B   ---   --   ---xx   flac  0.4058  22 Positively 4th Street [bonus track].flac
+     5:18.41       56191676 B   ---   --   ---xx   flac  0.3457  23 Po' Boy [bonus track].flac
+    68:07.39      721039012 B                            0.4929  (11 files)
+=================== 
+=================== 
+=================== 

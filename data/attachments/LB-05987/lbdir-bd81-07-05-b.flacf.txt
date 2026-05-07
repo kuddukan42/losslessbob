@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-05-b.flacf 
+=================== 
+=================== 
+=================== 
+cb731734b96d561c86e930e6af8dde20  Birmingam 1981.txt
+a59f32bb898bb74f3cdcb07f64231564  Birmingham Gospel 1\01. Track01.flac
+351c1959ead45e9ce34a0123503e9965  Birmingham Gospel 1\02. Track02.flac
+0012f4c06cd04eb9a149dba6e7e80c5d  Birmingham Gospel 1\03. Track03.flac
+3347ef37df1f99c55cb0e941c3ac0f07  Birmingham Gospel 1\04. Track04.flac
+da6fc282544a0a079b4efb486597b61f  Birmingham Gospel 1\05. Track05.flac
+10f04c6f0a8b1cb362225f15c3e33c6f  Birmingham Gospel 1\06. Track06.flac
+cb36a9729f4b52632df8a14529b127d9  Birmingham Gospel 1\07. Track07.flac
+13de05e74e8bce70989e993fbcd4b3c3  Birmingham Gospel 1\08. Track08.flac
+cd78b990519b2508f672077feb98ba00  Birmingham Gospel 1\09. Track09.flac
+e1f93120688c2e680934633a73b1d780  Birmingham Gospel 1\10. Track10.flac
+3eef8d10783535793245d6e8b6d2d615  Birmingham Gospel 1\11. Track11.flac
+9cfa059823886f634033ea59686e0e9b  Birmingham Gospel 1\12. Track12.flac
+82cdfc2f986f8d785b9e5c8153a351a1  Birmingham Gospel 1\13. Track13.flac
+80f3052ec02eb83af41f3ff714b3abd2  Birmingham Gospel 1\14. Track14.flac
+a91d8a77965be79c03ff7eb0e1574c7d  Birmingham Gospel 1\15. Track15.flac
+6e477f4eef2f29b8bb30bf2a609e463e  Birmingham Gospel 1\16. Track16.flac
+4e9a989b3e99e22ae9f4cd330970e7ed  Birmingham Gospel 1\17. Track17.flac
+aee32dec526003696d97b32c7d8eb59d  Birmingham Gospel 1\18. Track18.flac
+1497351fef1c53ac415fcf043e98db8e  Birmingham Gospel 1\19. Track19.flac
+b4fdbb791bc6ec7447a8da20980fefbd  Birmingham Gospel 1\Birmingham Gospel 1.md5
+7cf3d208bbc877d63c0eb044327f106a  Birmingham Gospel 2\01. Track01.flac
+16a86bab883603297b86e71b56611d99  Birmingham Gospel 2\02. Track02.flac
+4b9d1221e87ea2b5b965c32565b5124f  Birmingham Gospel 2\03. Track03.flac
+f45bc709744572a9cc648da9b72e0ecc  Birmingham Gospel 2\04. Track04.flac
+b9c3b510fe67e56e3f5b6963db008731  Birmingham Gospel 2\05. Track05.flac
+949fe472b2be36ed185e188c5fea2bb5  Birmingham Gospel 2\06. Track06.flac
+0823af78b4d90f130dac19e64cea71ef  Birmingham Gospel 2\07. Track07.flac
+cf3decd76da870685d2d3ef76d2ff501  Birmingham Gospel 2\08. Track08.flac
+2a8e675fbf5bee3d4fdc3598e6703de0  Birmingham Gospel 2\09. Track09.flac
+ed4bf197e386dd33993cf9b057d2c99d  Birmingham Gospel 2\Birmingham Gospel 2.log
+96d259b3b36980d0d56a1e1f0fdcb05e  Birmingham Gospel 2\Birmingham Gospel 2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-05-b.flacf\Birmingham Gospel 1 
+=================== 
+=================== 
+=================== 
+01. Track01.flac:1c21e3fc9fd04d5109a22cbbc0305a4d
+02. Track02.flac:a99cdb7d2bd72cd1cbaf4d2e67ca961f
+03. Track03.flac:35acac058d2ea570af2e5540a98027d6
+04. Track04.flac:a144e7908921262f2e2f7bcc54c90807
+05. Track05.flac:e1614b87b8223891c1228d59daab4df6
+06. Track06.flac:6ee6d5756e72220d41cb0423aa59194a
+07. Track07.flac:0d8988ceee1c5af1746041663bc7958d
+08. Track08.flac:602d71e28d0b5d0f015d1f0812528f85
+09. Track09.flac:62135c7c5fa8d992b6b82e8acca4b3f7
+10. Track10.flac:843aa983f1f5bbd1136e7d9b7799cb80
+11. Track11.flac:545ec0df3aefb0095709466bba8b9f54
+12. Track12.flac:6a3cabb8d30931715da58e201ed3f249
+13. Track13.flac:3d82b0a21bc10b79090fec9a54b10800
+14. Track14.flac:0eefd0497c639e8c84afa79bf5bf9e6c
+15. Track15.flac:b9ae334d87bd4b62eef22d9bd243a06a
+16. Track16.flac:874941f5ac35bdaa56ccc332d2e16a59
+17. Track17.flac:95f53808820762ec90efd0b47217e3bc
+18. Track18.flac:00d99ed02218f2b816e65d7f7a25ade4
+19. Track19.flac:564cfa181c3b8c8c2abc4b8289cb3b66
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-05-b.flacf\Birmingham Gospel 2 
+=================== 
+=================== 
+=================== 
+01. Track01.flac:cdf2486db033c117b61135bd04b6d97b
+02. Track02.flac:2e6cdf9415942bcbe5a13c31374a4fd9
+03. Track03.flac:47ad57edf8f53990d46677bdfe6181ec
+04. Track04.flac:73fd5e98e6c19960189c603953ec3365
+05. Track05.flac:79b84d0465537b4379ee960b5ca45125
+06. Track06.flac:fad3f1b0942482e593ffdfd2a644babc
+07. Track07.flac:c4b8114eca16fb0283e621cb0194f781
+08. Track08.flac:b89c0ae618c87675eb055082855d69bf
+09. Track09.flac:862156eb02f9b437589617a110cce26c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-05-b.flacf\Birmingham Gospel 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.51       45983996 B   ---   --   ---xx   flac  0.6892  01. Track01.flac
+     4:01.62       42658268 B   ---   --   ---xx   flac  0.6615  02. Track02.flac
+     2:39.27       28111148 B   ---   --   ---xx   flac  0.7080  03. Track03.flac
+     2:53.17       30557228 B   ---   --   ---xx   flac  0.6835  04. Track04.flac
+     3:52.41       41021276 B   ---   --   ---xx   flac  0.7104  05. Track05.flac
+     4:44.36       50182316 B   ---   --   ---xx   flac  0.6791  06. Track06.flac
+     6:20.52       67154348 B   ---   --   ---xx   flac  0.6991  07. Track07.flac
+     3:21.32       35531708 B   ---   --   ---xx   flac  0.6323  08. Track08.flac
+     4:56.29       52282652 B   ---   --   ---xx   flac  0.6698  09. Track09.flac
+     3:45.56       39821756 B   ---   --   ---xx   flac  0.6996  10. Track10.flac
+     4:32.69       48143132 B   ---   --   ---xx   flac  0.6599  11. Track11.flac
+     3:39.23       38685740 B   ---   --   ---xx   flac  0.6761  12. Track12.flac
+     5:26.73       57678140 B   ---   --   ---xx   flac  0.6644  13. Track13.flac
+     4:32.67       48138428 B   ---   --   ---xx   flac  0.6953  14. Track14.flac
+     4:48.47       50913788 B   ---   --   ---xx   flac  0.6747  15. Track15.flac
+     0:45.17        7978028 B   ---   --   ---xx   flac  0.6137  16. Track16.flac
+     4:27.11       47124716 B   ---   --   ---xx   flac  0.6563  17. Track17.flac
+     6:01.11       63706316 B   ---   --   ---xx   flac  0.7017  18. Track18.flac
+     3:45.46       39798236 B   ---   --   ---xx   flac  0.7187  19. Track19.flac
+    78:56.17      835471220 B                            0.6816  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-05-b.flacf\Birmingham Gospel 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.10       49944764 B   ---   --   ---xx   flac  0.6683  01. Track01.flac
+     4:16.09       45179612 B   ---   --   ---xx   flac  0.6849  02. Track02.flac
+     5:19.45       56377484 B   ---   --   ---xx   flac  0.6671  03. Track03.flac
+     3:11.69       33854732 B   ---   --   ---xx   flac  0.6946  04. Track04.flac
+     5:15.59       55704812 B   ---   --   ---xx   flac  0.6824  05. Track05.flac
+     9:54.06      104795756 B   ---   --   ---xx   flac  0.6576  06. Track06.flac
+     4:33.20       48204284 B   ---   --   ---xx   flac  0.6853  07. Track07.flac
+     5:44.47       60792188 B   ---   --   ---xx   flac  0.6980  08. Track08.flac
+     5:18.22       56146988 B   ---   --   ---xx   flac  0.6979  09. Track09.flac
+    48:16.62      511000620 B                            0.6791  (9 files)
+=================== 
+=================== 
+=================== 

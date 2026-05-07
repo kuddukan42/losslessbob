@@ -1,0 +1,52 @@
+===================
+===================
+===================
+=== bd80-04-17.txt
+===================
+===================
+===================
+Bob Dylan, 
+4/17/80, 
+Massey Hall,
+Toronto, Ontario, Canada 
+
+1CDR LB-0866
+
+(33min), from etree, Soundchecks, poor sound, downloaded from a.b.m.s.d. 2/03
+
+
+1 Ain't Gonna Go To Hell, 
+2 Ain't Gonna Go To Hell, 
+3 Instrumental, 
+4 Cover Down, Break Through,  
+5 Cover Down, Break Through, 
+6 Cover Down, Break Through, 
+7 Ain't Gonna Go To Hell, 
+8 I Will Glorify His Name, 
+9 I Will Glorify His Name, 
+10 I Will Glorify His Name, 
+11 Pressing On, 
+12 You Can Talk About Me
+===================
+===================
+===================
+=== Toronto 17April80 Soundcheck.md5
+===================
+===================
+===================
+9cad0a7bd4252ac97bd7c89a2b029f6f *04-17-80 Snck -  1.flac
+e4046e7e003c6829c9514a43b59840fb *04-17-80 Snck -  10.flac
+137b56944e19e0fb76b504a645dfc2a9 *04-17-80 Snck -  11.flac
+889c3bcb4422d538928542a99c312bb6 *04-17-80 Snck -  12.flac
+7251d5a76dd39da02b9ab286f6deb453 *04-17-80 Snck -  2.flac
+4ce91b267096c0b4c8ae40ce56f80074 *04-17-80 Snck -  3.flac
+0d90dbe55755e6e3ca096a0c74bf8ece *04-17-80 Snck -  4.flac
+b6fe1210483347287dc36747882ea96b *04-17-80 Snck -  5.flac
+98a9a4f1169c84430a601e873061f411 *04-17-80 Snck -  6.flac
+48d342c6591164a57710942486b60566 *04-17-80 Snck -  7.flac
+885feedca355afd629b7485e86c11645 *04-17-80 Snck -  8.flac
+243b6cedb2255dd6fbe6a24644bc48c5 *04-17-80 Snck -  9.flac
+1cde9d9510740b1da85f83482b601896 *bd80-04-17.txt
+===================
+===================
+===================

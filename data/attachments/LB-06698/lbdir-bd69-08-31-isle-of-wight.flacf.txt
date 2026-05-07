@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-08-31-isle-of-wight.flacf 
+=================== 
+=================== 
+=================== 
+6ae4008d3489d9516f3b07fc99588ea6  bd69-08-31-isle-of-wight-t01.flac
+ebab47a69924f8b22a6c22ca9e78dfff  bd69-08-31-isle-of-wight-t02.flac
+d697c9029fdb859f1501949c604bb212  bd69-08-31-isle-of-wight-t03.flac
+60ffb4a11673cec40636baea4aa6e1b8  bd69-08-31-isle-of-wight-t04.flac
+c8868de70876ea0e3bfc3925074b977e  bd69-08-31-isle-of-wight-t05.flac
+9f4c3c595e6ef659a3cf78fecc88eac0  bd69-08-31-isle-of-wight-t06.flac
+305afcfcbb80a056992abab425d1d2eb  bd69-08-31-isle-of-wight-t07.flac
+799f213644d2a156cec25f47eab65fc3  bd69-08-31-isle-of-wight-t08.flac
+6fa8dd01f0d02da2d9fe2dfa3440d967  bd69-08-31-isle-of-wight-t09.flac
+1b1aa9f6074a9a22dcc57d3d394aeb87  bd69-08-31-isle-of-wight-t10.flac
+e5b48c6fde479f885e2c62dd52857a7a  bd69-08-31-isle-of-wight-t11.flac
+890371c1cb9f064c9dc8450761501a58  bd69-08-31-isle-of-wight-t12.flac
+b347fc2afef9b0443a1f3edce95b7fce  bd69-08-31-isle-of-wight-t13.flac
+590b7bf0299d4e51021f7791c856b2db  bd69-08-31-isle-of-wight-t14.flac
+27358effde1dec88ba4212970d5507b2  bd69-08-31-isle-of-wight-t15.flac
+f0e9a1597b9e64fdd3efd7ba78f8ccd8  bd69-08-31-isle-of-wight-t16.flac
+8aebca4bbbfd6b36af76f05563a051bd  bd69-08-31-isle-of-wight-t17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-08-31-isle-of-wight.flacf 
+=================== 
+=================== 
+=================== 
+bd69-08-31-isle-of-wight-t01.flac:1aa6e2fa7fa8ad917d8914f5095f66e9
+bd69-08-31-isle-of-wight-t02.flac:02057154cdf9d6d34a69338997678cc9
+bd69-08-31-isle-of-wight-t03.flac:6d89bff2750c0ca5490eabbeb7b44824
+bd69-08-31-isle-of-wight-t04.flac:c0195281b3bc4cc36bab6853250eb05c
+bd69-08-31-isle-of-wight-t05.flac:4d17c69ff54781f1c73980487a8e1a7d
+bd69-08-31-isle-of-wight-t06.flac:75fda220293fc817cb56b8df89c6f560
+bd69-08-31-isle-of-wight-t07.flac:28fa96d6a6da18461f451a615af4b336
+bd69-08-31-isle-of-wight-t08.flac:16d77e64777c5955d140bf27ef54da3a
+bd69-08-31-isle-of-wight-t09.flac:f045d05a6287a58217ab532d8f8a41c9
+bd69-08-31-isle-of-wight-t10.flac:bebc2b2bfae31b907a16ce0582283ec1
+bd69-08-31-isle-of-wight-t11.flac:1cb6f85e255920afc2a973e17d3bf984
+bd69-08-31-isle-of-wight-t12.flac:116d91cb48aa28fbaa9ff9bec881cc9a
+bd69-08-31-isle-of-wight-t13.flac:35d6e0d0b78bf9beed8e83471ff125a4
+bd69-08-31-isle-of-wight-t14.flac:725b4714ab666530099a3e44fa6b7027
+bd69-08-31-isle-of-wight-t15.flac:571637564b4b3d3fa471b0c8dedead5f
+bd69-08-31-isle-of-wight-t16.flac:782407bc2fc41c3313f004ac8c7ba2d1
+bd69-08-31-isle-of-wight-t17.flac:42d5ec7f893ea819fa390d23e2c0f946
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-08-31-isle-of-wight.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:46.10       29305964 B   ---   --   ---xx   flac  0.5278  bd69-08-31-isle-of-wight-t01.flac
+     3:14.65       34374524 B   ---   --   ---xx   flac  0.4837  bd69-08-31-isle-of-wight-t02.flac
+     3:46.05       39878204 B   ---   --   ---xx   flac  0.6488  bd69-08-31-isle-of-wight-t03.flac
+     2:33.65       27142124 B   ---   --   ---xx   flac  0.5502  bd69-08-31-isle-of-wight-t04.flac
+     3:22.02       35637548 B   ---   --   ---xx   flac  0.5713  bd69-08-31-isle-of-wight-t05.flac
+     2:14.28       23703500 B   ---   --   ---xx   flac  0.5204  bd69-08-31-isle-of-wight-t06.flac
+     2:57.32       31298108 B   ---   --   ---xx   flac  0.5975  bd69-08-31-isle-of-wight-t07.flac
+     3:15.20       34445084 B   ---   --   ---xx   flac  0.5724  bd69-08-31-isle-of-wight-t08.flac
+     3:24.70       36150284 B   ---   --   ---xx   flac  0.5806  bd69-08-31-isle-of-wight-t09.flac
+     3:31.03       37227500 B   ---   --   ---xx   flac  0.6602  bd69-08-31-isle-of-wight-t10.flac
+     2:17.32       24242108 B   ---   --   ---xx   flac  0.6038  bd69-08-31-isle-of-wight-t11.flac
+     3:29.65       37020524 B   ---   --   ---xx   flac  0.5940  bd69-08-31-isle-of-wight-t12.flac
+     5:17.43       56019980 B   ---   --   ---xx   flac  0.5488  bd69-08-31-isle-of-wight-t13.flac
+     3:31.57       37354508 B   ---   --   ---xx   flac  0.5316  bd69-08-31-isle-of-wight-t14.flac
+     2:44.68       29089580 B   ---   --   ---xx   flac  0.5503  bd69-08-31-isle-of-wight-t15.flac
+     3:34.12       37777868 B   ---   --   ---xx   flac  0.4821  bd69-08-31-isle-of-wight-t16.flac
+     3:09.35       33421964 B   ---   --   ---xx   flac  0.6631  bd69-08-31-isle-of-wight-t17.flac
+    55:11.12      584089372 B                            0.5704  (17 files)
+=================== 
+=================== 
+=================== 

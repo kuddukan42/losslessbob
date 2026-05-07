@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-Les-Kokay-LikeARollingStone 
+=================== 
+=================== 
+=================== 
+871c7d17756c4b1373329cf47a1d3c42  bd-Les-Kokay-LikeARollingStone.txt
+6c683a5ff70371cfb0aa497daee5cc15  lars_singles.jpg
+975a2b75f983e4f23d3950655882f246  LK - Like A Rolling Stone.md5
+f64e8f70baef70596bbf4e22c7dc7a23  LK - Like A Rolling Stone.txt
+ee20fb4221867d9837d08bcc286cfdc9  LK - Like A Rolling Stone_t01.shn
+8ce07cfb7b3f16ade42f39a26885f802  LK - Like A Rolling Stone_t02.shn
+8fd9bc9ee171234713d023c6e10c4df8  LK - Like A Rolling Stone_t03.shn
+508f4dad86472e07a46b12f1b28b5f4d  LK - Like A Rolling Stone_t04.shn
+cadb87aabb9a2a2d347b501070c752a4  LK - Like A Rolling Stone_t05.shn
+1a9b8025af0f7695864b70f88654076c  LK - Like A Rolling Stone_t06.shn
+bacf5876d5e4684791d5d2f9a0526083  LK - Like A Rolling Stone_t07.shn
+8e5d8265fe70ba33b579550212dcdd29  LK - Like A Rolling Stone_t08.shn
+c154af96ff28088c49284ea53d086e2d  LK - Like A Rolling Stone_t09.shn
+a2bc7d6b8a75ba4a3e98b123b39ff512  LK - Like A Rolling Stone_t10.shn
+639f6c970f757b505cd19937d3a78911  LK - Like A Rolling Stone_t11.shn
+1c63a43bdded53c13c72d899226eacd1  LK - Like A Rolling Stone_t12.shn
+b3014e0f05206264c153b822320ef6c6  LK - Like A Rolling Stone_t13.shn
+ef810c8b998bad8c555fd11ca7e1a834  LK - Like A Rolling Stone_t14.shn
+5b263d83fd47a8183aa65be23c097ac4  LK - Like A Rolling Stone_t15.shn
+5d6609a574f564bc43e29f94230f0c4f  LK - Like A Rolling Stone_t16.shn
+51eaed0bcffd42bc1c98be3e9a6a3ada  LK - Like A Rolling Stone_t17.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Les-Kokay-LikeARollingStone 
+=================== 
+=================== 
+=================== 
+f880abc795e54d447ff9da238b86a39a  [shntool]  LK_-_Like_A_Rolling_Stone_t01.wav
+9cae66542fda5772f6d0b43d03d5ec61  [shntool]  LK_-_Like_A_Rolling_Stone_t02.wav
+7ae5691cb60886bc1df3870547235f47  [shntool]  LK_-_Like_A_Rolling_Stone_t03.wav
+92ace993159b5843333b3d93d9d5a6d4  [shntool]  LK_-_Like_A_Rolling_Stone_t04.wav
+52bfabf394a2c5b9413e5950ab6dcacc  [shntool]  LK_-_Like_A_Rolling_Stone_t05.wav
+08d7d3030d36fc614b8e6cc860c8102f  [shntool]  LK_-_Like_A_Rolling_Stone_t06.wav
+b79cd491e290286bd163a56c411b307a  [shntool]  LK_-_Like_A_Rolling_Stone_t07.wav
+ffde48dc1327c053971a09aa9c4c8a12  [shntool]  LK_-_Like_A_Rolling_Stone_t08.wav
+e1c164426da083a3725a6f614d4c3f21  [shntool]  LK_-_Like_A_Rolling_Stone_t09.wav
+239bff3e621ac884cc69fd37ed5f6ced  [shntool]  LK_-_Like_A_Rolling_Stone_t10.wav
+24400ddbf0f38c5001aa81cdf80b12c2  [shntool]  LK_-_Like_A_Rolling_Stone_t11.wav
+57c4f22fc7878cf3bde76905faf2fa15  [shntool]  LK_-_Like_A_Rolling_Stone_t12.wav
+cfbdd049af6bae7314905f2a8b662ad6  [shntool]  LK_-_Like_A_Rolling_Stone_t13.wav
+307f6d7677005b842629e8625e3ea39f  [shntool]  LK_-_Like_A_Rolling_Stone_t14.wav
+243a7934da1ed6af4d8e869c4bf3e55a  [shntool]  LK_-_Like_A_Rolling_Stone_t15.wav
+bdcdd00dc06db7d3a488573c6c43eb91  [shntool]  LK_-_Like_A_Rolling_Stone_t16.wav
+0a9fafbaa4dfbbf1000b52222d61a15b  [shntool]  LK_-_Like_A_Rolling_Stone_t17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Les-Kokay-LikeARollingStone 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:08.26       12056410 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t01.wav
+     2:01.18       21386794 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t02.wav
+     1:38.35       17369578 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t03.wav
+     2:25.56       25709770 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t04.wav
+     0:33.59        5960026 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t05.wav
+     1:24.27       14881162 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t06.wav
+     0:31.44        5571946 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t07.wav
+     1:45.09       18543226 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t08.wav
+     0:25.50        4527658 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t09.wav
+     1:45.54       18649066 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t10.wav
+     6:33.63       69473434 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t11.wav
+     5:58.72       63320602 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t12.wav
+     5:53.06       62283370 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t13.wav
+     5:57.25       63033658 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t14.wav
+     6:13.45       65903098 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t15.wav
+     6:13.20       65844298 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t16.wav
+     6:15.29       66218266 B   ---   h-   -----    wav  1.0000  LK_-_Like_A_Rolling_Stone_t17.wav
+    56:45.38      600732362 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

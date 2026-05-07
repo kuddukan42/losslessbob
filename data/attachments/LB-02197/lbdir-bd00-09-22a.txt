@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-09-22a 
+=================== 
+=================== 
+=================== 
+7bcee29f84e4c0fdc1eec006d380b89e  2000-09-22 Sheffield Arena, Sheffield, England.doc
+c688b71ec7b4f97e6354fd3758fe5f8a  bd00-09-22a.txt
+d663002f17367cf348261dab5bdb912f  CD1\01 Intro.shn
+36d4954c3c13871958a5d087ed679aa7  CD1\02 I am the man, Thomas.shn
+ac183e21f76ac993b5beab77244a2f1d  CD1\03 The times they are a-changin'.shn
+2ae006424f32475af3b052c4b25a7b52  CD1\04 It's alright, ma (I'm only bleeding).shn
+dc4017389ecd47ecbba4d98de62fe27b  CD1\05 Love minus zero - no limit.shn
+8c5ad95a1ff8d2c563cff59e34ae5eb3  CD1\06 Tangled up in blue.shn
+3b3edf2edbf7528e9e867561b7fc145b  CD1\07 Searching for a soldier's grave.shn
+ef5d34223974e62400a7cdd90d0974a3  CD1\08 Country Pie.shn
+7ce7f237850392296da3259b6e63a4ef  CD1\09 Dignity.shn
+f24f88b1cfd5a889d6660376d38c2841  CD1\10 All along the watchtower.shn
+8924906aafa8122ea41e2aa5490f5e59  CD1\11 Not dark yet.shn
+c0eda8e4118e98521432699b609b5db4  CD1\12 Cold irons bound.shn
+91a0183f11c452d0e1b9751493f67484  CD1\13 Leopard-skin pill-box hat.shn
+520b8e78309e1c77fca0f04e1a3ec184  CD1\14 Love sick.shn
+b6d30d9489ea4fbe48e3f228262dfe65  CD1\15 Like a rolling stone.shn
+f0dae93f034a7a91fcfd591aa871d83d  CD1\2000-09-22 Sheffield, England d1.md5
+7f41bd715a25cd8a35583b4ddb05e46e  CD2\16 Mr. Tambourine Man.shn
+e85044f36fd2b6114e93c5369299b257  CD2\17 Things have changed.shn
+e465a8d7322de630e502d236fdab3643  CD2\18 Forever young.shn
+4257d19bdef8efb39111c258e46e9487  CD2\19 Highway 61 revisited.shn
+051a8a0d3a382a74745c1a546d278a51  CD2\20 Blowin' in the wind.shn
+e675cc19efa0ccdc0f5b3c02366bd4d0  CD2\2000-09-22 Sheffield, England d2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-09-22a\CD1 
+=================== 
+=================== 
+=================== 
+58db4a15e412bb941560e5bfdeaaee09  [shntool]  01_Intro.wav
+6f28565a0b1b96d200bd825254cc2700  [shntool]  02_I_am_the_man,_Thomas.wav
+59cc51c7823aaa84cffebdf07d255ea7  [shntool]  03_The_times_they_are_a-changin_.wav
+c77d66af33245af7e73d966bfcc2abea  [shntool]  04_It_s_alright,_ma__I_m_only_bleeding_.wav
+617d70530b8c9f1f04393ac957648419  [shntool]  05_Love_minus_zero_-_no_limit.wav
+b047def10141292cf48bc93baa67da7e  [shntool]  06_Tangled_up_in_blue.wav
+5862e9eea6e4e04341f1d70632872bd7  [shntool]  07_Searching_for_a_soldier_s_grave.wav
+10434f6310d763dba0818a04a32e4005  [shntool]  08_Country_Pie.wav
+98db285e7c8c39fed87847ffc38e65ab  [shntool]  09_Dignity.wav
+829b24738cebd196daeb8230d6f79edc  [shntool]  10_All_along_the_watchtower.wav
+095c6890b32fc29ed45f7fea4fdc23ba  [shntool]  11_Not_dark_yet.wav
+bf85a3aea1e6773c3086d6ef7d363bca  [shntool]  12_Cold_irons_bound.wav
+6a5f2b352ab970dc05643f53a1ae7631  [shntool]  13_Leopard-skin_pill-box_hat.wav
+4b2fd4a4137e09107951d67bc6c3f26b  [shntool]  14_Love_sick.wav
+cca940a1013d767e541ac785a01fcedd  [shntool]  15_Like_a_rolling_stone.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-09-22a\CD2 
+=================== 
+=================== 
+=================== 
+c6df90b1a228c585aa8cbbb41ba529eb  [shntool]  16_Mr._Tambourine_Man.wav
+618ae7c934b3efa923b13e7a856c389c  [shntool]  17_Things_have_changed.wav
+19211395ebb4667ddd68d3b460a66bff  [shntool]  18_Forever_young.wav
+a72492f571dceb145422d68624436eff  [shntool]  19_Highway_61_revisited.wav
+d60f5d55faef0f37f6ce4c597204a1c1  [shntool]  20_Blowin__in_the_wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-22a\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:17.52        3121148 B   ---   --   -----    wav  1.0000  01_Intro.wav
+     2:06.35       22308764 B   ---   --   -----    wav  1.0000  02_I_am_the_man,_Thomas.wav
+     6:06.70       64727084 B   ---   --   -----    wav  1.0000  03_The_times_they_are_a-changin_.wav
+     7:00.52       74210348 B   ---   --   -----    wav  1.0000  04_It_s_alright,_ma__I_m_only_bleeding_.wav
+     5:39.19       59844332 B   ---   --   -----    wav  1.0000  05_Love_minus_zero_-_no_limit.wav
+     7:53.05       83449004 B   ---   --   -----    wav  1.0000  06_Tangled_up_in_blue.wav
+     3:16.74       34748492 B   ---   --   -----    wav  1.0000  07_Searching_for_a_soldier_s_grave.wav
+     3:06.01       32812796 B   ---   --   -----    wav  1.0000  08_Country_Pie.wav
+     5:33.05       58753004 B   ---   --   -----    wav  1.0000  09_Dignity.wav
+     4:04.61       43185116 B   ---   --   -----    wav  1.0000  10_All_along_the_watchtower.wav
+     6:26.18       68132780 B   ---   --   -----    wav  1.0000  11_Not_dark_yet.wav
+     6:36.61       69997916 B   ---   --   -----    wav  1.0000  12_Cold_irons_bound.wav
+     6:45.71       71609036 B   ---   --   -----    wav  1.0000  13_Leopard-skin_pill-box_hat.wav
+     5:57.18       63017180 B   ---   --   -----    wav  1.0000  14_Love_sick.wav
+     7:47.19       82423532 B   ---   --   -----    wav  1.0000  15_Like_a_rolling_stone.wav
+    78:38.36      832340532 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-22a\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:32.70       79897484 B   ---   --   -----    wav  1.0000  16_Mr._Tambourine_Man.wav
+     6:13.03       65804300 B   ---   --   -----    wav  1.0000  17_Things_have_changed.wav
+     6:45.01       71444396 B   ---   --   -----    wav  1.0000  18_Forever_young.wav
+     5:43.74       60679292 B   ---   --   -----    wav  1.0000  19_Highway_61_revisited.wav
+     7:58.02       84323948 B   ---   --   -----    wav  1.0000  20_Blowin__in_the_wind.wav
+    34:13.00      362149420 B                            1.0000  (5 files)
+=================== 
+=================== 
+=================== 

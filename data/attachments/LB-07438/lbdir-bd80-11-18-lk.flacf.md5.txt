@@ -1,0 +1,32 @@
+e0f0ed825ca9ef1cee195b0c10c940bd  D1\01 G Ride.flac
+d31c5561522d985a4d21c7bb424b49b4  D1\02 G Rain.flac
+7d83860d28c08193479d3f29fc4cd40a  D1\03 G House.flac
+16c98d85364109500af1e11bcef532d5  D1\04 G Grace.flac
+5f5f1cfe8b82703abb5942263b219cc5  D1\05 Gotta Serve.flac
+f1fd620aa175de7a5a0df5e55ecfa290  D1\06 Believe.flac
+c6edf6c46fd7451d8498a24ddad0b809  D1\07 LRS.flac
+0c173a64577805573aba5f54e3904b53  D1\08 G Right.flac
+d1b7de8f5ed8d331d1dec4a31ea03fe3  D1\09 Animals.flac
+cc63cf8adc03ccf58170fd38383897ae  D1\10 Watchtower.flac
+2096f7eb3ef68c207d763929940e31fc  D1\11 Ramona.flac
+c505f6cbbbcf51c8be9a441b885d86df  D1\12 Hell.flac
+45b7c4aa0a90967c05ee87a57ea0c9b5  D1\13 GirlNC.flac
+f171aa58d6f10ca820a320dd1651546e  D1\14 Slow Train.flac
+038044534b483144c0d7931bd4f69b1e  D1\15 G Heaven.flac
+1bc7b3e0a8a6efb13d01bae188cd661d  D1\16 Rise.flac
+0cccdae4e37410c3b4db82a1ecc9ff70  D1\17 Between.flac
+1f50fc5424d4a440daea0364ff148786  D1\D1.md5
+ef028b6cf2731d181f1b1a9004a36cf5  D2\18 Do Right.flac
+89a2687132013dd8b665b548c5eef25a  D2\19 Moor.flac
+d9a851698951cff7084b362fb3948b38  D2\20 Solid Rock.flac
+7a36e9b9620d85fde55876def9eab3ce  D2\21 JLAW.flac
+1394faa74c5eb6dcc37543a5b601c818  D2\22 Senor.flac
+33030a85308905575533704fe2db5c65  D2\23 Do for you.flac
+0295ae0204986af78a3dea9940fa3501  D2\24 Wake up.flac
+92f13d657c6c3c2c2fefdaae9f53bb75  D2\25 Garden.flac
+3ab5975c82c947eeabd97910d6c2a48c  D2\26 Blowin.flac
+3254d26eddbead7bcf1c7a02eb84f08e  D2\27 City of Gold.flac
+3ac21a2ea5795dff36f9b2b6f829f320  D2\28 Baby Blue.flac
+6b4b8de343f10f84b9287cf8b5e575fb  D2\29 Hard Rain.flac
+89a96ca1ff98f9c08788d31ce2f84f6d  D2\D2.md5
+508963245ebf87439859c7591bc98c77  Disc 2.md5

@@ -1,0 +1,10 @@
+Bob Dylan, 4/4/00, Omaha, Nebraska, 2CDR
+
+LB-7387, (68min+47min), version "b"; Unidentified taper, Source/Lineage: no info, I tried to compare with LB4000 & LB4001 but I cannot listen the same fingerprints, maybe you will...; bittorrent download 04/09;  this is a not close eac match on d1t1 to LB-4001; this does not have the drops noted on that one but has other flaws; (did not listen to all of this)
+
+drop/cut between cdrs; t13 1:45, t18 1:19, discontinuities near track boundaries plus lots more occasionally
+
+01. Roving Gambler (trad.) [04:13], 02. The Times They Are A-Changin' [06:26], 03. Desolation Row [08:47], 04. The Lonesome Death Of Hattie Carroll [06:42], 05. Tangled Up In Blue [08:14], 06. Rock Of Ages (trad.) [04:04], 07. Country Pie [03:18], 08. This Wheel's On Fire (Bob Dylan/Rick Danko) [], 09. Watching The River Flow [05:08], 10. Stuck Inside Of Mobile With The Memphis Blues Again [07:42], 11. Not Dark Yet [06:17], Total time [67:16], 12. Leopard-Skin Pill-Box Hat [08:57], 13. Love Sick [05:55], 14. Like A Rolling Stone [07:21], 15. Don't Think Twice, It's All Right [06:35], 16. Not Fade Away (Norman Petty/Charles Hardin) [04:32], 17. Blowin' In The Wind [06:16], 18. Rainy Day Women # 12 & 35 [06:24], Total time [46:02]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

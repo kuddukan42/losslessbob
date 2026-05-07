@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-10-30.flac16 
+=================== 
+=================== 
+=================== 
+4b8b8317116dd1eeed4434d465c1a939  bd1998-10-30.aud.sbeok.flac16 Ottawa.ffp
+395aae694f8191f3a5d2ea40427938bd  bd1998-10-30.aud.sbeok.flac16 Ottawa.md5
+6ab5d6a30b66d280b1a65d9f914b854e  bd1998-10-30.aud.sbeok.flac16 Ottawa.st5
+cc729f0ec6669b3c776e6b01bee4c7ed  bd1998-10-30.info.txt
+7592a6f0e22769b83caa651f0001afdd  bd98-10-30-LB-4546.txt
+a30adf9e33e14e5f0b2a7e79e756123c  d1t03.PNG
+524bb6bbafabddce940c3219e35ac6b4  d2t05.PNG
+9ba55860692851dda5c25a1d5ea62771  disc 1\bd1998-10-30d1t01.flac
+dcd244da1fddcbc520d6375bb1a2af82  disc 1\bd1998-10-30d1t02.flac
+450f0061d4c30de7475baeac447ff037  disc 1\bd1998-10-30d1t03.flac
+b875ada57c987b8bfdd69efcf06fca49  disc 1\bd1998-10-30d1t04.flac
+5cf2c905ba04afbed91794666e2f427a  disc 1\bd1998-10-30d1t05.flac
+188ef1780e66bb534df28fc99772aecc  disc 1\bd1998-10-30d1t06.flac
+94d1d720ea7205bdd8e53bad0b16a108  disc 1\bd1998-10-30d1t07.flac
+655a3dbc8c1a42a155ca0fca2c6473d7  disc 1\bd1998-10-30d1t08.flac
+dd2d6e4018adadc59d7285e3b71334ae  disc 1\bd1998-10-30d1t09.flac
+1479baefb124ca3de466ab8ce887aee6  disc 1\disc 1.shntool.txt
+7154922a37fe0aa7c258126f2d2f13c2  disc 2\bd1998-10-30d2t01.flac
+6a4650fb179bfede5833856bc4b099e6  disc 2\bd1998-10-30d2t02.flac
+bb9d3a04fab97d98bc4c976603c633ab  disc 2\bd1998-10-30d2t03.flac
+ffafda186e4fdacf8867e8e7ef8cf10b  disc 2\bd1998-10-30d2t04.flac
+27dbd6890760617c4d0f9df3314b84cb  disc 2\bd1998-10-30d2t05.flac
+675363299edb661e4c5267b03d99e74e  disc 2\bd1998-10-30d2t06.flac
+18c3b4bcc5c4c2ffa3fb81f7c1b75878  disc 2\bd1998-10-30d2t07.flac
+1604f6ca487077598f2f878f1bc99fcb  disc 2\disc 2.shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-30.flac16\disc 1 
+=================== 
+=================== 
+=================== 
+bd1998-10-30d1t01.flac:e4c32e5dc7c1d34886a5ad17bbd422be
+bd1998-10-30d1t02.flac:52ab6dc394e1ab26136438bbee968482
+bd1998-10-30d1t03.flac:411731333affafb246c99c5d4581167f
+bd1998-10-30d1t04.flac:4a6d4b0801b1a65865482c6c47372f4c
+bd1998-10-30d1t05.flac:f16263c6adc8d11bac3fec68365f3998
+bd1998-10-30d1t06.flac:ff32bd80529c84f4573a94eff1ab371f
+bd1998-10-30d1t07.flac:67682675d81f4d5f903aea5bc10df473
+bd1998-10-30d1t08.flac:572fc447cb9c925faa8e4b4766cff7ad
+bd1998-10-30d1t09.flac:f467a248174c2f8825bd95f2533166ac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-30.flac16\disc 2 
+=================== 
+=================== 
+=================== 
+bd1998-10-30d2t01.flac:190e7f0d3729a892bed0493231b47324
+bd1998-10-30d2t02.flac:ae2108dfe94d5b13327f51f5fa624ba4
+bd1998-10-30d2t03.flac:fad8405ba5917e0f4eec4501733ec51f
+bd1998-10-30d2t04.flac:5dda4bda05c004d6a72c27a846550d57
+bd1998-10-30d2t05.flac:9941530ca171a54afc45024b3c9c7ccb
+bd1998-10-30d2t06.flac:852480ab704325136f68d0d3ef9deefe
+bd1998-10-30d2t07.flac:6edbd2ea8cfe951bbdeee662e99e2445
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-30.flac16\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:59.01       42161996 B   ---   --   ---xx   flac  0.6245  bd1998-10-30d1t01.flac
+     5:03.21       53498636 B   ---   --   ---xx   flac  0.5963  bd1998-10-30d1t02.flac
+     4:28.59       47414012 B   ---   --   ---xx   flac  0.6284  bd1998-10-30d1t03.flac
+     7:45.43       82127180 B   ---   --   ---xx   flac  0.5455  bd1998-10-30d1t04.flac
+     7:07.44       75426332 B   ---   --   ---xx   flac  0.5730  bd1998-10-30d1t05.flac
+     5:29.69       58197932 B   ---   --   ---xx   flac  0.4337  bd1998-10-30d1t06.flac
+     7:09.07       75692108 B   ---   --   ---xx   flac  0.5145  bd1998-10-30d1t07.flac
+     5:09.61       54651116 B   ---   --   ---xx   flac  0.5591  bd1998-10-30d1t08.flac
+     8:14.51       87261596 B   ---   --   ---xx   flac  0.6311  bd1998-10-30d1t09.flac
+    54:27.56      576430908 B                            0.5653  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-30.flac16\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:14.12       87169868 B   ---   --   ---xx   flac  0.5545  bd1998-10-30d2t01.flac
+     5:35.56       59225756 B   ---   --   ---xx   flac  0.6255  bd1998-10-30d2t02.flac
+     5:05.39       53893772 B   ---   --   ---xx   flac  0.6100  bd1998-10-30d2t03.flac
+     4:43.30       49991804 B   ---   --   ---xx   flac  0.6411  bd1998-10-30d2t04.flac
+     6:01.10       63703964 B   ---   --   ---xx   flac  0.5261  bd1998-10-30d2t05.flac
+     6:14.46       66081836 B   ---   --   ---xx   flac  0.5980  bd1998-10-30d2t06.flac
+     6:12.56       65752556 B   ---   --   ---xx   flac  0.5721  bd1998-10-30d2t07.flac
+    42:07.24      445819556 B                            0.5853  (7 files)
+=================== 
+=================== 
+=================== 

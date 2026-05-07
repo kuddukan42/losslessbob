@@ -1,0 +1,204 @@
+===================
+===================
+===================
+=== Bob Dylan2004-06-18.ffp
+===================
+===================
+===================
+101 intro.flac:a22d0eca4fd252b5793d62d202291e3e
+102 seeing the real you at last.flac:972d76524bcbf1a2d627b141e35d5e0b
+103 it's all over now babe.flac:e29f55d00ef2c6235f0765a668c41347
+104 tweedle dum and tweedle dee.flac:753795bf482041fb53aad3b53663bdc2
+105 just like a woman.flac:f3b2d072b6cb153000a9893044a6a0fc
+106 most likely you go your way and i`ll go mine.flac:ea40daed741f3e1e91453f9523acaff2
+107 girl from the north country.flac:92c9ab49ee13bfa90e0b1ccfd4eb7c89
+108 cold irons bound.flac:2e932f13ff684a39190eec231fef9689
+109 if dogs run free.flac:441c22525d9818a5ed2a09ddf63c2b85
+110 highway 61 revisited.flac:140cf929beb649c3028f229f554790b5
+111 shooting star.flac:0a055b50c9b880891d84d10bd6ce2053
+112 stuck inside of mobile with the memphis blues again.flac:b7c14fdc09df5300f8e5cdd6a7629252
+113 honest with me.flac:9fdd9b034326414bb03e874ab4344a28
+201 it ain`t me babe.flac:e6a4859cd709eb74052ba714bf0fe9ee
+202 summer days.flac:028e477f4bfc7ef828a6c06d0c4cd80a
+203 applause.flac:80f5365c8a3770171cd5f0ef239315f9
+204 cat`s in the well.flac:7d81765adc7675b21462608fee774e61
+205 like a rolling stone.flac:a8d8c4d89224bc35120f431faa58324e
+206 all along the watchtower.flac:0741acdf8fc8fbbec7fbaf8c824ca035
+207 applause.flac:8291753b605d8032dc379290a701d7d0
+===================
+===================
+===================
+=== ffp_original.txt
+===================
+===================
+===================
+FLAC Fingerprint:
+101 intro.flac:a22d0eca4fd252b5793d62d202291e3e
+102 seeing the real you at last & it`s all over now baby blue.flac:4c8ca8f583cb89b3da832d9c392936d8
+103 tweedle dum and tweedle dee.flac:753795bf482041fb53aad3b53663bdc2
+104 just like a woman.flac:f3b2d072b6cb153000a9893044a6a0fc
+105 most likely you go your way and i`ll go mine.flac:ea40daed741f3e1e91453f9523acaff2
+106 girl from the north country.flac:92c9ab49ee13bfa90e0b1ccfd4eb7c89
+107 cold irons bound & if dogs run free.flac:e25099d2d319a14b68a258e2e3609995
+108 highway 61 revisited.flac:140cf929beb649c3028f229f554790b5
+109 shooting star& stuck inside of mobile with the memphis blues agai.flac:c070cc1671fd1359ace744640c700d84
+110 honest with me.flac:9fdd9b034326414bb03e874ab4344a28
+201 it ain`t me babe.flac:e6a4859cd709eb74052ba714bf0fe9ee
+202 summer days.flac:028e477f4bfc7ef828a6c06d0c4cd80a
+203 applause.flac:80f5365c8a3770171cd5f0ef239315f9
+204 cat`s in the well.flac:7d81765adc7675b21462608fee774e61
+205 like a rolling stone.flac:a8d8c4d89224bc35120f431faa58324e
+206 all along the watchtower.flac:0741acdf8fc8fbbec7fbaf8c824ca035
+207 applause.flac:8291753b605d8032dc379290a701d7d0
+===================
+===================
+===================
+=== ffp_retracked.txt
+===================
+===================
+===================
+FLAC Fingerprint:
+101 intro.flac:a22d0eca4fd252b5793d62d202291e3e
+102 seeing the real you at last.flac:972d76524bcbf1a2d627b141e35d5e0b
+103 it's all over now babe.flac:e29f55d00ef2c6235f0765a668c41347
+104 tweedle dum and tweedle dee.flac:753795bf482041fb53aad3b53663bdc2
+105 just like a woman.flac:f3b2d072b6cb153000a9893044a6a0fc
+106 most likely you go your way and i`ll go mine.flac:ea40daed741f3e1e91453f9523acaff2
+107 girl from the north country.flac:92c9ab49ee13bfa90e0b1ccfd4eb7c89
+108 cold irons bound.flac:2e932f13ff684a39190eec231fef9689
+109 if dogs run free.flac:441c22525d9818a5ed2a09ddf63c2b85
+110 highway 61 revisited.flac:140cf929beb649c3028f229f554790b5
+111 shooting star.flac:0a055b50c9b880891d84d10bd6ce2053
+112 stuck inside of mobile with the memphis blues again.flac:b7c14fdc09df5300f8e5cdd6a7629252
+113 honest with me.flac:9fdd9b034326414bb03e874ab4344a28
+201 it ain`t me babe.flac:e6a4859cd709eb74052ba714bf0fe9ee
+202 summer days.flac:028e477f4bfc7ef828a6c06d0c4cd80a
+203 applause.flac:80f5365c8a3770171cd5f0ef239315f9
+204 cat`s in the well.flac:7d81765adc7675b21462608fee774e61
+205 like a rolling stone.flac:a8d8c4d89224bc35120f431faa58324e
+206 all along the watchtower.flac:0741acdf8fc8fbbec7fbaf8c824ca035
+207 applause.flac:8291753b605d8032dc379290a701d7d0
+===================
+===================
+===================
+=== setlist_original.txt
+===================
+===================
+===================
+Cardiif 04-06-18
+DISC ONE
+
+01 intro
+02 seeing the real you  & it`s all over now baby blue
+03 tweedle dee and tweedle dum
+04 just like a woman
+05 most likely you go your way and i`ll go mine
+06 girl from the north country
+07 cold irons bound and if dogs run free
+08 highway 61 revisited
+09 shooting star and stuck inside of mobile with the memphis blues again
+10 honest with me
+
+DISC TWO
+01 it ain`t me babe
+02 summerdays
+03 applause
+04 cat`s in the well
+05 like a rolling stone
+06 all along the watchtower
+07 applause
+===================
+===================
+===================
+=== setlist_retracked.txt
+===================
+===================
+===================
+LB-2081 had some inaccurate tracking.  Three pairs of songs were not tracked separately (ref. original setlist).  I retracked these so the tunes are separate.  These are now d01, tracks 2, 3, 8, 9, 11, and 12 (ref. retracked setlist).  The check for SBEs was clear and I generated a new .ffp file.  Parts of the FLAC Fingerprint (below0 were also changed as a result.     
+
+Bob Dylan
+International Arena
+Cardiff, Wales
+June 18, 2004
+
+Source:  Unknown audience recording.  LB-2081
+
+CD 1:
+01. (intro)
+02. Seeing The Real You At Last
+03. It's All Over Now, Baby Blue
+04. Tweedle Dee & Tweedle Dum
+05. Just Like A Woman
+06. Most Likely You Go Your Way (And I'll Go Mine)
+07. Girl Of The North Country (acoustic)
+08. Cold Irons Bound
+09. If Dogs Run Free
+10. Highway 61 Revisited
+11. Shooting Star
+12. Stuck Inside Of Mobile With The Memphis Blues Again
+13. Honest With Me
+
+CD 2:
+01. It Ain't Me, Babe (acoustic)
+02. Summer Days
+
+(encore)
+03. (applause)
+04. Cat's In The Well
+05. Like A Rolling Stone
+06. All Along The Watchtower
+07. (outro)
+
+FLAC Fingerprint:
+101 intro.flac:a22d0eca4fd252b5793d62d202291e3e
+102 seeing the real you at last.flac:972d76524bcbf1a2d627b141e35d5e0b
+103 it's all over now babe.flac:e29f55d00ef2c6235f0765a668c41347
+104 tweedle dum and tweedle dee.flac:753795bf482041fb53aad3b53663bdc2
+105 just like a woman.flac:f3b2d072b6cb153000a9893044a6a0fc
+106 most likely you go your way and i`ll go mine.flac:ea40daed741f3e1e91453f9523acaff2
+107 girl from the north country.flac:92c9ab49ee13bfa90e0b1ccfd4eb7c89
+108 cold irons bound.flac:2e932f13ff684a39190eec231fef9689
+109 if dogs run free.flac:441c22525d9818a5ed2a09ddf63c2b85
+110 highway 61 revisited.flac:140cf929beb649c3028f229f554790b5
+111 shooting star.flac:0a055b50c9b880891d84d10bd6ce2053
+112 stuck inside of mobile with the memphis blues again.flac:b7c14fdc09df5300f8e5cdd6a7629252
+113 honest with me.flac:9fdd9b034326414bb03e874ab4344a28
+201 it ain`t me babe.flac:e6a4859cd709eb74052ba714bf0fe9ee
+202 summer days.flac:028e477f4bfc7ef828a6c06d0c4cd80a
+203 applause.flac:80f5365c8a3770171cd5f0ef239315f9
+204 cat`s in the well.flac:7d81765adc7675b21462608fee774e61
+205 like a rolling stone.flac:a8d8c4d89224bc35120f431faa58324e
+206 all along the watchtower.flac:0741acdf8fc8fbbec7fbaf8c824ca035
+207 applause.flac:8291753b605d8032dc379290a701d7d0
+===================
+===================
+===================
+=== shntool_len_retracked.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.07        9189308 B   ---   --   -----    wav  1.0000  101 intro.wav
+     5:28.62       58005068 B   ---   --   -----    wav  1.0000  102 seeing the real you at last.wav
+     5:35.15       59129324 B   ---   --   -----    wav  1.0000  103 it's all over now babe.wav
+     5:26.48       57619340 B   ---   --   -----    wav  1.0000  104 tweedle dum and tweedle dee.wav
+     7:15.01       76736396 B   ---   --   -----    wav  1.0000  105 just like a woman.wav
+     7:08.69       75661532 B   ---   --   -----    wav  1.0000  106 most likely you go your way and i`ll go mine.wav
+     5:13.48       55326140 B   ---   --   -----    wav  1.0000  107 girl from the north country.wav
+     5:58.13       63181820 B   ---   --   -----    wav  1.0000  108 cold irons bound.wav
+     5:13.14       55246172 B   ---   --   -----    wav  1.0000  109 if dogs run free.wav
+     6:35.20       69725084 B   ---   --   -----    wav  1.0000  110 highway 61 revisited.wav
+     5:54.53       62570300 B   ---   --   -----    wav  1.0000  111 shooting star.wav
+     7:02.66       74596076 B   ---   --   -----    wav  1.0000  112 stuck inside of mobile with the memphis blues again.wav
+     7:09.19       75720332 B   ---   --   -----    wav  1.0000  113 honest with me.wav
+     6:21.50       67326044 B   ---   --   -----    wav  1.0000  201 it ain`t me babe.wav
+     7:10.07       75868508 B   ---   --   -----    wav  1.0000  202 summer days.wav
+     1:14.31       13126556 B   ---   --   -----    wav  1.0000  203 applause.wav
+     4:47.28       50692700 B   ---   --   -----    wav  1.0000  204 cat`s in the well.wav
+     7:18.04       77272652 B   ---   --   -----    wav  1.0000  205 like a rolling stone.wav
+     6:16.55       66455804 B   ---   --   -----    wav  1.0000  206 all along the watchtower.wav
+     0:40.65        7208924 B   ---   --   -----    wav  1.0000  207 applause.wav
+   108:43.00     1150658080 B                            1.0000  (20 files)
+===================
+===================
+===================

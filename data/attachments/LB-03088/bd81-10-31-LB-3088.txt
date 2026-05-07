@@ -1,0 +1,14 @@
+Bob Dylan, 10/31/81, Kitchener, Ontario, Canada, Kitchener Arena, 2CDR
+
+LB-3088, (68min+66min), flac cdrs are reversed; good sound [C]
+
+d1 has noticable small gaps between tracks; has analog drop/cut d1t10 0:00; has analog drop/cut d1t2 4:22 after music, small gap d2t9 0:00
+
+CD1
+1 Gotta Serve Somebody 2 I Believe In You 3 Like A Rolling Stone 4 I Want You 5 Man Gave Names To All The Animals 6 Maggie's Farm 7 Girl From The NorthCountry 8 Ballad Of A Thin Man 9 Heart Of Mine 10 All Along The Watchtower 11 It's All In The Game 12  Forever Young 13 Gamblin' Man 14 The Times They Are A-Changin' 15 A Hard Rain's A-Gonna Fall 
+
+CD2
+1 Masters Of War 2 Watered-Down Love 3 Dead Man, Dead Man 4 Just Like A Woman 5 Solid Rock 6 Mr. Tambourine Man 7 When You Gonna Wake Up 8 In The Garden 9 Blowin' In The Wind + Don't ThinkTwice, It's All Right (acoustic) 10  It's Alright, Ma (I'm Only Bleeding)(acoustic) 11 Are You Ready? 12 Knockin' On Heaven's Door
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

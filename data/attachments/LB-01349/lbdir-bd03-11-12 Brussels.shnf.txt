@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-12 Brussels.shnf 
+=================== 
+=================== 
+=================== 
+0031231cf5b78d29ff2e36b6b138f4ea  bd03-11-12.txt
+1bc9190a83a74a951f798becb2ef40c7  d1\01.shn
+f0d288b81fd756963d4b4165893a4ffb  d1\02.shn
+983414f5a14f3dadc45c00f812419d2e  d1\03.shn
+623a7d8efdef1fb4dcb0cdef00011427  d1\04.shn
+6a66832e475d7e383848dfcc9d8e4af5  d1\05.shn
+4cf52ae8c8be0f0eb22efa242ffd58c7  d1\06.shn
+468631a9bcab8e1a9561ffd495cc4caa  d1\07.shn
+b7e105a9eced1aa62b4fd7d0ee5e51bb  d1\08.shn
+6c0f51906f8ec408e650c4e1754158ab  d1\09.shn
+8419d78c9e8894941d956bd3c85f7bca  d1\noname.md5
+9a18a5531533a12050f9e7d6aa4df21c  d2\01.shn
+2eebce48656d16db52c41f59ee3507d0  d2\02.shn
+6012e8d0e907a28fb2f50e6c2d87f0dd  d2\03.shn
+ad23d5b8d386152886f885e9f750ef57  d2\04.shn
+062c19b4a487789611ca29718fb02f5f  d2\05.shn
+7945489c4baac09e5a5021fbbabb287b  d2\06.shn
+fcb3e66dca61b82360c5708218618dd2  d2\07.shn
+c3cbce0777f14a80a25d25f0c8d177ee  d2\08.shn
+9ce73dd8f88c57db50d8c01403727883  d2\09.shn
+52b38873d9382ffa25928bd213a7af33  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-12 Brussels.shnf\d2 
+=================== 
+=================== 
+=================== 
+06e376ce30b33cd58c2b3a5eee5b9223  [shntool]  01.wav
+a6acd5124ef2d85b66edcf60e2c4463d  [shntool]  02.wav
+5894a1f78e01c2bae2770b576b6a5606  [shntool]  03.wav
+71386c1ecb9e32c7b79bf949148e3f2a  [shntool]  04.wav
+977a9a6b1df2bf1c4b6dfbebe189d555  [shntool]  05.wav
+02654789b066c9931074cae4a41cbf4a  [shntool]  06.wav
+1cb2bf4b2f2c167c01c7249664b5ed72  [shntool]  07.wav
+ad5bef69ad16775a055f6811ff1d45a5  [shntool]  08.wav
+672224581a41028c929348a1061e8fe0  [shntool]  09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-12 Brussels.shnf\d1 
+=================== 
+=================== 
+=================== 
+0dd9a66ee41e8b627a88e7023aa3ab43  [shntool]  01.wav
+ddbeb3c9521c3575c8b415c64ff4e35b  [shntool]  02.wav
+e9541e73452a4a71d6f9e1d7df389486  [shntool]  03.wav
+d1913fd4052f6dac7f44aa868b4bfdff  [shntool]  04.wav
+3988d29735934acd6766426ab8fbbab2  [shntool]  05.wav
+3732fa2d1f953ac1e040e888456bcba4  [shntool]  06.wav
+b6ea82fd58b027a094a5e6ec4c1dca4c  [shntool]  07.wav
+1226a20b237b565bf17b38106dad9e9f  [shntool]  08.wav
+7f371d825a6c835fa3a9c040f0390797  [shntool]  09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-12 Brussels.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:25.33       67991660 B   ---   --   -----    wav  1.0000  01.wav
+     6:50.30       72394604 B   ---   --   -----    wav  1.0000  02.wav
+     8:10.28       86501900 B   ---   --   -----    wav  1.0000  03.wav
+     7:05.30       75040604 B   ---   --   -----    wav  1.0000  04.wav
+     5:30.19       58256732 B   ---   --   -----    wav  1.0000  05.wav
+    10:00.43      105941180 B   ---   --   -----    wav  1.0000  06.wav
+     5:50.67       61897628 B   ---   --   -----    wav  1.0000  07.wav
+     7:37.34       80694812 B   ---   --   -----    wav  1.0000  08.wav
+     7:59.39       84587372 B   ---   --   -----    wav  1.0000  09.wav
+    65:30.23      693306492 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-12 Brussels.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:00.27       74151548 B   ---   --   -----    wav  1.0000  01.wav
+     6:10.37       65355068 B   ---   --   -----    wav  1.0000  02.wav
+     5:50.37       61827068 B   ---   --   -----    wav  1.0000  03.wav
+     9:46.05      103382204 B   ---   --   -----    wav  1.0000  04.wav
+     8:00.22       84723788 B   ---   --   -----    wav  1.0000  05.wav
+     5:55.23       62676140 B   ---   --   -----    wav  1.0000  06.wav
+     5:45.40       60952124 B   ---   --   -----    wav  1.0000  07.wav
+     4:35.31       48582956 B   ---   --   -----    wav  1.0000  08.wav
+     8:16.08       87513260 B   ---   --   -----    wav  1.0000  09.wav
+    61:20.05      649164156 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

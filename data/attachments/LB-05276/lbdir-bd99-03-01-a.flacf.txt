@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-03-01-a.flacf 
+=================== 
+=================== 
+=================== 
+136a8742c21fe2333a2915a26eb458a1  Disk 1\Track01.flac
+9433436b600ec6deb14c7318198dbfda  Disk 1\Track02.flac
+48017323897746428cdfd2e1f675139e  Disk 1\Track03.flac
+33df674e5ea4a658aabe707daa118967  Disk 1\Track04.flac
+a2345e1a8942156854b569bab8038276  Disk 1\Track05.flac
+6d0203964584e9461ed57e948ff0b63d  Disk 1\Track06.flac
+021dd74dfdca05489d6aa2561c94212a  Disk 1\Track07.flac
+ec7defdf6eccfbb3589d32e25949eea5  Disk 1\Track08.flac
+4e0c146e131f5f16f6bf5907715cbb5e  Disk 1\Track09.flac
+c5bf9964edd9ae1cdc1850f06179db8f  Disk 1\Track10.flac
+abbdecae5e781c38de3ad35526455210  Disk 1\Track11.flac
+442214da4e95ad4e9eafa2e55d37f912  Disk 2\Track01.flac
+5e3a4cd89aaa16283840d0113eed4203  Disk 2\Track02.flac
+0a5fb11de86ee02d8382ce7ff847c868  Disk 2\Track03.flac
+dbe9504d471c48872a8e83b1a3e42312  info.txt
+8e2b665e3b5019066f51ab5a87345ee1  sfv.sfv
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-03-01-a.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:eadeca9c57335f76163a5a4a24ee7b98
+Track02.flac:644c007122df794b1eeb86274781e03e
+Track03.flac:d2b7e4d0857269460c1bbc881347485a
+Track04.flac:8c52e9d3ce2c84f3904ac4d288b3e264
+Track05.flac:7b9119bb2b6beccc895734ea3e5d36a2
+Track06.flac:ea604de7645075a08754a538d3e4f842
+Track07.flac:1ea11a02b47b8285b4f987919f9ea92a
+Track08.flac:af19414ce7eedc45161b40cdd92cff69
+Track09.flac:68b2d61e51144c91247a5467adaf1635
+Track10.flac:a1734a12d6ea89f3e5c8765b14442b0d
+Track11.flac:cc16a0401a3b4f86c8e9102251c57955
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-03-01-a.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:b272eda3389629df51775afbcfd94e10
+Track02.flac:03851025d55a9cc4bd8a43a838708874
+Track03.flac:9332024da8c57f0901308d86e1d0e430
+=================== 
+=================== 
+=================== 
+=== shntool for: bd99-03-01-a.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.50       43864844 B   ---   --   ---xx   flac  0.4912  Track01.flac
+     4:31.38       47893820 B   ---   --   ---xx   flac  0.4665  Track02.flac
+     7:19.67       77597228 B   ---   --   ---xx   flac  0.5304  Track03.flac
+     6:03.04       64042652 B   ---   --   ---xx   flac  0.4994  Track04.flac
+     5:30.02       58216748 B   ---   --   ---xx   flac  0.5600  Track05.flac
+     8:13.20       87012284 B   ---   --   ---xx   flac  0.4132  Track06.flac
+     6:07.58       64875260 B   ---   --   ---xx   flac  0.4630  Track07.flac
+     7:50.20       82955084 B   ---   --   ---xx   flac  0.5340  Track08.flac
+     6:43.05       71101004 B   ---   --   ---xx   flac  0.4684  Track09.flac
+     4:33.48       48270140 B   ---   --   ---xx   flac  0.4288  Track10.flac
+     6:21.00       67208444 B   ---   --   ---xx   flac  0.5547  Track11.flac
+    67:22.12      713037508 B                            0.4925  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd99-03-01-a.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:47.16       61248476 B   ---   --   ---xx   flac  0.4676  Track01.flac
+     6:10.55       65397404 B   ---   --   ---xx   flac  0.4734  Track02.flac
+     4:23.39       46484972 B   ---   --   ---xx   flac  0.5138  Track03.flac
+    16:21.35      173130852 B                            0.4822  (3 files)
+=================== 
+=================== 
+=================== 

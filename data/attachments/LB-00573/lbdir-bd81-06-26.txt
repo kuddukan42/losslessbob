@@ -1,0 +1,123 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-06-26 
+=================== 
+=================== 
+=================== 
+b2922089f5c786b2d650145ecf630d2c  bd81-06-26.txt
+a68f01c5ad573b83ba930add7395eaef  d1\Track01.shn
+6ad57d172d4628cadf89888be7c0ba32  d1\Track02.shn
+d91f07deecd3c0bbca625d034d5f37b8  d1\Track03.shn
+390ddff8c2dfd30cf386296631276b76  d1\Track04.shn
+b79881329d1ec99247d37036a59d43c3  d1\Track05.shn
+642e479b4f819b9f7ef6e6d20afe2af0  d1\Track06.shn
+14d9c551f2ed5f1483bf5534b273c089  d1\Track07.shn
+39172d0483036860d8b1be6ce7a8ae85  d1\Track08.shn
+8c7f63e4432172918ba215d8026937cc  d1\Track09.shn
+d6a6fe8ac6fa40b1c4d4e14fd2084c0f  d1\Track10.shn
+7e4924c01b94b6823232e4a66b793d89  d1\Track11.shn
+94e2d3a93700e103318255b3a782be32  d1\Track12.shn
+a103fb793eb3fb8dcd02b2473f57720f  d1\Track13.shn
+914f336f4577014ad983baf0d151eb78  d1\Track14.shn
+b77c6e8ccf1e934729b0869d4894f205  d1\noname.md5
+61ad121b2df1779d977e974f3ba49b26  d2\Track01.shn
+f97fad00480622a8063886c476db85c0  d2\Track02.shn
+998adf3c5d9f4f0fb87ccc451b24b904  d2\Track03.shn
+e7274344626efbb0d51bc71e40eda2b2  d2\Track04.shn
+07464216d95e7e64071e6300ebb8c3c0  d2\Track05.shn
+3bc03c697514a9a9062ed624ca530f48  d2\Track06.shn
+75f36d8a3d66ab26e58e7a8d65f70921  d2\Track07.shn
+aaae641248bf68e5b527186d11fcb13d  d2\Track08.shn
+e4af0b70f9434863b3e048fa1461806e  d2\Track09.shn
+d4a4725d141a22e6cba5131eeb4fe90f  d2\Track10.shn
+afa906f516ac1e5548583fdda4b9713d  d2\Track11.shn
+2829a820648a060f021ce8ff4797a466  d2\Track12.shn
+51039a44a60ee57b4e6daf5349e81bf0  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd81-06-26\d2 
+=================== 
+=================== 
+=================== 
+f2e8d13a681beaf2e563e8b36e98f5da  [shntool]  Track01.wav
+57bd056407850ede2fa739e733c641ad  [shntool]  Track02.wav
+ccd939c8b462d1f0efc96d13e5de42e1  [shntool]  Track03.wav
+4609c1a816a8e8a742e7d7d3b92b491f  [shntool]  Track04.wav
+fd048a67dd32d31a2f636fd0d634e7b0  [shntool]  Track05.wav
+c6b811f9b82136239eedea3d01a06ad7  [shntool]  Track06.wav
+8e4e5fec43bb7386568b179fe6874583  [shntool]  Track07.wav
+31978d7f4be8d32813683fb312ca4a40  [shntool]  Track08.wav
+015b04a9dadbc7990fee7fd67eccf905  [shntool]  Track09.wav
+7b3defaffd4b624c12a20d320908f0d5  [shntool]  Track10.wav
+65637773efcc871381140c6a519ac537  [shntool]  Track11.wav
+913bfa06249f088f13f72d8378c323c5  [shntool]  Track12.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd81-06-26\d1 
+=================== 
+=================== 
+=================== 
+b88f30ad2b908c487d35cfb5011e0c62  [shntool]  Track01.wav
+881fca3715a7dd8a7dab1a34ef45c4c8  [shntool]  Track02.wav
+49301230d95b1127ee21f4f4dd033012  [shntool]  Track03.wav
+e053b35de2630cd1dba1cecbfefc80b7  [shntool]  Track04.wav
+85bb8d35bfd8c8a73f41d49dfddaea87  [shntool]  Track05.wav
+2f579861c40fff080fb5e8077c73d929  [shntool]  Track06.wav
+65a31dade684d0922059927cf87f50f2  [shntool]  Track07.wav
+6c4dd0d50b856e8ceca1f0d4270a8e47  [shntool]  Track08.wav
+8a61a30b45e357970e177935a0b59fc6  [shntool]  Track09.wav
+e8eb447cc3610cca51a2bb86d1ccc518  [shntool]  Track10.wav
+ad7a771fea28e19893b8917f1f87bd3f  [shntool]  Track11.wav
+90b4d4a13700c55f18311619159dbe4e  [shntool]  Track12.wav
+fa9ced978555dd85f38d5e2cf0fd1e6a  [shntool]  Track13.wav
+069d0e5e80cb671033f59438e6fcabc6  [shntool]  Track14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-06-26\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.71       53792636 B   ---   --   ---xx    shn  0.6862  Track01.shn
+     5:07.62       54300668 B   ---   --   ---xx    shn  0.6597  Track02.shn
+     4:00.28       42401900 B   ---   --   ---xx    shn  0.6694  Track03.shn
+     4:30.58       47764460 B   ---   --   ---xx    shn  0.7052  Track04.shn
+     4:50.47       51266588 B   ---   --   ---xx    shn  0.7081  Track05.shn
+     5:16.39       55834172 B   ---   --   ---xx    shn  0.6909  Track06.shn
+     5:00.00       52920044 B   ---   --   ---xx    shn  0.6791  Track07.shn
+     3:25.48       36274940 B   ---   --   ---xx    shn  0.7103  Track08.shn
+     4:30.63       47776220 B   ---   --   ---xx    shn  0.7158  Track09.shn
+    11:32.28      122134700 B   ---   --   ---xx    shn  0.6853  Track10.shn
+     5:11.60       55001564 B   ---   --   ---xx    shn  0.7292  Track11.shn
+     5:06.40       54072524 B   ---   --   ---xx    shn  0.7315  Track12.shn
+    63:38.19      673540416 B                            0.6962  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-06-26\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.09       53117612 B   ---   --   ---xx    shn  0.7154  Track01.shn
+     5:06.03       53985500 B   ---   --   ---xx    shn  0.6904  Track02.shn
+     6:58.49       73850492 B   ---   --   ---xx    shn  0.7566  Track03.shn
+     3:14.37       34308668 B   ---   --   ---xx    shn  0.6712  Track04.shn
+     5:07.48       54267740 B   ---   --   ---xx    shn  0.7102  Track05.shn
+     3:56.01       41632796 B   ---   --   ---xx    shn  0.7369  Track06.shn
+     5:19.56       56403356 B   ---   --   ---xx    shn  0.6583  Track07.shn
+     3:26.70       36503084 B   ---   --   ---xx    shn  0.6832  Track08.shn
+     4:58.29       52635452 B   ---   --   ---xx    shn  0.6692  Track09.shn
+     5:12.45       55142684 B   ---   --   ---xx    shn  0.7264  Track10.shn
+     5:39.71       59966636 B   ---   --   ---xx    shn  0.7314  Track11.shn
+     5:39.16       59837276 B   ---   --   ---xx    shn  0.7342  Track12.shn
+     4:47.00       50626844 B   ---   --   ---xx    shn  0.6637  Track13.shn
+     3:35.02       37930748 B   ---   --   ---xx    shn  0.6428  Track14.shn
+    68:02.61      720208888 B                            0.7033  (14 files)
+=================== 
+=================== 
+=================== 

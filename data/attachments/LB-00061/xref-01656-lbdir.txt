@@ -1,0 +1,180 @@
+===================
+===================
+===================
+=== md5 for: bd76-04-29-a.flacf
+===================
+===================
+===================
+b199657f218ce22bd6b1e4a5b73d0758 *CD1\01 Flint Hill special [instrumental].flac
+cc9cab7853fa1de382b250bc8d210439 *CD1\02 Werevolves of London [T-Bone J. Henry Burnett].flac
+c86f9aabc6b646c3761bb47ef60eecba *CD1\03 Too good to be wasted [Rob Stoner].flac
+98e6435051e99c54f60440c64ecdb288 *CD1\04 Mad man [Steven Soles].flac
+ab84b2c7d4c0f917b2b13a0cb115cf7d *CD1\05 Tears on my pillow [Donna Weiss].flac
+461022ffe3c2d0fcf6a84be283c778e7 *CD1\06 Is there life on Mars [Mick Ronson].flac
+e65b4c4dcb3a1246bf6a339388617d76 *CD1\07 Mercedes Benz [Bob Neuwirth].flac
+6664deefc966afc72b1af8026fc2ce2a *CD1\08 Alabama dark [Bob Neuwirth].flac
+bb00219ec59f4c1514654b61fa37b8e1 *CD1\09 They had to move away [Bob Neuwirth].flac
+8ccd7491ec862059d2783a3e69877fea *CD1\10 Battle of New Orleans [Bob Neuwirth].flac
+09cde4bbe44bd85e5946578addc46ffb *CD1\11 Rock and roll across the USA [Kinky Friedman].flac
+f5afd704bb3990aefe45b31ff336821a *CD1\12 Dear Abbie [Kinky Friedman].flac
+54715ab0d4e358ba836128d7206dc3c4 *CD1\13 Asshole from El Paso [Kinky Friedman].flac
+d84c6755328a27c33d9692da783127fc *CD1\14 Mr. Tambourine Man.flac
+a2115e2841555a42ac4bad24eb5f433b *CD1\15 It's alright, ma (I'm only bleeding).flac
+31b44ea97801618e060ffa6d51756743 *CD1\16 Vincent van Gogh [w Rob Stoner].flac
+9f43f4605fff2ba040f6208330c200c3 *CD1\17 I'll be your baby tonight.flac
+3e7bb4b3a8c9f800c548c54ec6181f67 *CD1\FLAC CD1.md5
+a086eb0707f57b0a5791eddadbd6dfd6 *CD2\18 Maggie's farm.flac
+822fc06749d8f3d699997643cc3f5730 *CD2\19 One too many mornings.flac
+1d861910170bbace62b3ea6f443a563b *CD2\20 Isis.flac
+1f1ce6cc3f686ce288ccf623102338c2 *CD2\21 Eight miles high [Roger McGuinn].flac
+edf0d65f351dd9efce035f02cef34460 *CD2\22 Cardiff rose [Roger McGuinn].flac
+d4a62c672c27ac8b212c44ef73253d29 *CD2\23 Lover of the Bayou [Roger McGuinn].flac
+cfa1ed8c136c6fbc04089e30cf394154 *CD2\24 Chestnut Mare [Roger McGuinn].flac
+1cf216fbe6ecafcde5c4fcc6b33ef943 *CD2\25 Do right woman, do right man [Joan Baez].flac
+c4e84e2f60eb9940464bc2c4985e5fac *CD2\27 Love song to a stranger [Joan Baez].flac
+c62eac3cfa7ba3893889ba56ae17fc87 *CD2\28 The night they drove old Dixie down [Joan Baez].flac
+626ed9a55288d63768719af315de896b *CD2\29 Diamonds and rust [Joan Baez].flac
+42720ae54347ab3d9c06e44ff840de68 *CD2\30 Blowin' in the wind [w Joan Baez].flac
+404f3197c771d1f2d8844aea1e8f0604 *CD2\31 Railroad Boy [w Joan Baez].flac
+fb3a81daa404d5560c0d730afc2beaf3 *CD2\32 I pity the poor immigrant [w Joan Baez].flac
+29c50c9bc168ca03be2dcf1d3d0081ed *CD2\33 Shelter from the storm.flac
+6d15c3c475c9296601203593f36e2b18 *CD2\FLAC CD2.md5
+cc4a9420aa5f466de1482f7a709fa660 *CD3\34 I threw it all away.flac
+a2211e386cc70e21f7df0ad3bfd37d43 *CD3\35 Stuck inside of Mobile with the Memphis blues again.flac
+26c8d99741674664f4bb56e5201e08b8 *CD3\36 You're gonna make me lonesome when you go.flac
+aa3c831d8f56963a9f7f35d7ae8e8e38 *CD3\37 Going, going, gone.flac
+838bf267052a110a8c680574a04b5b35 *CD3\38 Lay lady lay.flac
+1d45cd2239dc55e93e0385549464b14f *CD3\39 Silver mantis.flac
+40039dfe8e0b0c669a55bdd7e77db17e *CD3\40 Mozambique.flac
+7e288654f261ca049354a9686e9fe023 *CD3\41 Idiot wind.flac
+1a916214cf915e9cc15f0e9a07621566 *CD3\42 Knockin' on heaven's door [w Roger McGuinn].flac
+9516cab6232b61cbb0ccdacc4d66b94f *CD3\43 Gotta travel on.flac
+b23d6941b78ae66756d6f21772421dc7 *CD3\FLAC CD3.md5
+be33c96ca48fbb8a92fe867a5d20209f *Info\1976-04-29 Mobile, Alabama d1.md5
+61753b589a38a68092a6bb55f4b0e4db *Info\1976-04-29 Mobile, Alabama d2.md5
+fef97c840a9de1249183f5e15948e326 *Info\1976-04-29 Mobile, Alabama d3.md5
+7cb1362ff857372c5681cd7740892963 *Info\1976-0~1.TXT
+efc062b79dbff9ae14ed4c3249b694e2 *Info\EAC d1.LOG
+09ed96e086e125eb6142dce0cd127cb7 *Info\EAC d2.LOG
+dcbea5458b2870c5a210ae674953057d *Info\EAC d3.LOG
+===================
+===================
+===================
+=== ffp for: bd76-04-29-a.flacf
+===================
+===================
+===================
+CD1\01 Flint Hill special [instrumental].flac:b39a9a183d85c45bf7bc9b7f4eeb7d27
+CD1\02 Werevolves of London [T-Bone J. Henry Burnett].flac:01a1498fe3cc010739d42d51de1b7b8c
+CD1\03 Too good to be wasted [Rob Stoner].flac:15dd50d96e8563ad5b3e15a9c8e0fea4
+CD1\04 Mad man [Steven Soles].flac:7058e124a33443373819ef73379306ba
+CD1\05 Tears on my pillow [Donna Weiss].flac:fae06a8f87c0be94066c125f4c853bed
+CD1\06 Is there life on Mars [Mick Ronson].flac:4d5adadc29c5d5fe7c1b76ed277c38a3
+CD1\07 Mercedes Benz [Bob Neuwirth].flac:44094d998f2a46905f82fcc21d1f1aaa
+CD1\08 Alabama dark [Bob Neuwirth].flac:1e281d102a377073acb1d4f89dea948f
+CD1\09 They had to move away [Bob Neuwirth].flac:eecff2101edbe234d071842e7e40df73
+CD1\10 Battle of New Orleans [Bob Neuwirth].flac:1b9f240e763f2e3e37874c8d84763fa5
+CD1\11 Rock and roll across the USA [Kinky Friedman].flac:993c3c564c6b1c8d9c60edd61543105a
+CD1\12 Dear Abbie [Kinky Friedman].flac:6e45e0bd3d2a4c9ba925f22bc441da8a
+CD1\13 Asshole from El Paso [Kinky Friedman].flac:1f0bba9dedd8160f8b4c66b053698251
+CD1\14 Mr. Tambourine Man.flac:0eb2a28a2590d2b91c8e03a427b73aa7
+CD1\15 It's alright, ma (I'm only bleeding).flac:5133ff6ef102af85243da2a299e8e963
+CD1\16 Vincent van Gogh [w Rob Stoner].flac:508297f0320bcdf67e059270c3af271b
+CD1\17 I'll be your baby tonight.flac:7d1e78447c7de2d7e7a8afb934c1d3da
+CD2\18 Maggie's farm.flac:aacc38da4fa117bd85a7ed1ccf69c018
+CD2\19 One too many mornings.flac:824535e2bbf75c3506d207be492dfe43
+CD2\20 Isis.flac:4b92d1e2ec4a98b370a5c6477ebb9d2e
+CD2\21 Eight miles high [Roger McGuinn].flac:b96a8768e3bfdd6d06ef8dd978e4471b
+CD2\22 Cardiff rose [Roger McGuinn].flac:bdc5ed11909a187c3bacb74b8fbb11b5
+CD2\23 Lover of the Bayou [Roger McGuinn].flac:787adacb0ade7e4ea515ceb07fb1900b
+CD2\24 Chestnut Mare [Roger McGuinn].flac:dac3aaf7391ced977823b7a15c310170
+CD2\25 Do right woman, do right man [Joan Baez].flac:20d684c283fbd29473b50feadf8ab27d
+CD2\27 Love song to a stranger [Joan Baez].flac:d680f62a142d8bb04891a14a70c5cd32
+CD2\28 The night they drove old Dixie down [Joan Baez].flac:558f5b9cd2ba4c0257de5345e58e8192
+CD2\29 Diamonds and rust [Joan Baez].flac:bcf1db766136a7d6ddf5ea0c9bb9c2a5
+CD2\30 Blowin' in the wind [w Joan Baez].flac:b1c43ff46bef4d42385ed64c3c040d0a
+CD2\31 Railroad Boy [w Joan Baez].flac:657eb6d836fd3a547a97cb76557e093f
+CD2\32 I pity the poor immigrant [w Joan Baez].flac:80cc78c49e383227278244705e4c1d7b
+CD2\33 Shelter from the storm.flac:c64a062e10bfa8d3670b632bc369bbdb
+CD3\34 I threw it all away.flac:8e93a6abce5b7448e34d611823382d2d
+CD3\35 Stuck inside of Mobile with the Memphis blues again.flac:9719f45c582bd8924e63941e6cc778dc
+CD3\36 You're gonna make me lonesome when you go.flac:61c96c2757dc1314a3b185c250fe4cc4
+CD3\37 Going, going, gone.flac:d7a4b05fb33048e8b0b2b22ef7498619
+CD3\38 Lay lady lay.flac:9e3f803e3582cd57a77cdecd1a922214
+CD3\39 Silver mantis.flac:41c29e5d5f195af3b830cd4830da7888
+CD3\40 Mozambique.flac:3338438b2489fb612dd6368595f7d7bf
+CD3\41 Idiot wind.flac:b02681fa8b9769d3960429495cb5cbac
+CD3\42 Knockin' on heaven's door [w Roger McGuinn].flac:21f9487c0b21d969feee8fbb59ec087c
+CD3\43 Gotta travel on.flac:9002aaa4bcbde49273b7a047ed69a90a
+===================
+===================
+===================
+=== shntool len for: bd76-04-29-a.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:49.71       29978636 B   ---   --   ---xx   flac  0.5072  01 Flint Hill special [instrumental].flac
+     6:32.32       69224108 B   ---   --   ---xx   flac  0.5401  02 Werevolves of London [T-Bone J. Henry Burnett].flac
+     4:23.27       46456748 B   ---   --   ---xx   flac  0.5039  03 Too good to be wasted [Rob Stoner].flac
+     5:03.27       53512748 B   ---   --   ---xx   flac  0.5323  04 Mad man [Steven Soles].flac
+     4:07.34       43650812 B   ---   --   ---xx   flac  0.5433  05 Tears on my pillow [Donna Weiss].flac
+     5:04.08       53644460 B   ---   --   ---xx   flac  0.5326  06 Is there life on Mars [Mick Ronson].flac
+     2:02.26       21581996 B   ---   --   ---xx   flac  0.5278  07 Mercedes Benz [Bob Neuwirth].flac
+     3:34.50       37867244 B   ---   --   ---xx   flac  0.5511  08 Alabama dark [Bob Neuwirth].flac
+     7:48.06       82569356 B   ---   --   ---xx   flac  0.5425  09 They had to move away [Bob Neuwirth].flac
+     3:09.48       33452540 B   ---   --   ---xx   flac  0.5722  10 Battle of New Orleans [Bob Neuwirth].flac
+     3:28.60       36832364 B   ---   --   ---xx   flac  0.5139  11 Rock and roll across the USA [Kinky Friedman].flac
+     3:22.07       35649308 B   ---   --   ---xx   flac  0.4941  12 Dear Abbie [Kinky Friedman].flac
+     2:34.59       27304412 B   ---   --   ---xx   flac  0.5302  13 Asshole from El Paso [Kinky Friedman].flac
+     5:16.02       55747148 B   ---   --   ---xx   flac  0.5124  14 Mr. Tambourine Man.flac
+     5:39.15       59834924 B   ---   --   ---xx   flac  0.4982  15 It's alright, ma (I'm only bleeding).flac
+     2:58.51       31519196 B   ---   --   ---xx   flac  0.4971  16 Vincent van Gogh [w Rob Stoner].flac
+     3:44.36       39598316 B   ---   --   ---xx   flac  0.5368  17 I'll be your baby tonight.flac
+    71:39.34      758424316 B                            0.5265  (17 files)
+===================
+===================
+===================
+=== shntool len for: bd76-04-29-a.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.20       54554684 B   ---   --   ---xx   flac  0.5270  18 Maggie's farm.flac
+     4:06.36       43479116 B   ---   --   ---xx   flac  0.5003  19 One too many mornings.flac
+     5:56.64       62948972 B   ---   --   ---xx   flac  0.5217  20 Isis.flac
+     3:37.03       38285900 B   ---   --   ---xx   flac  0.5203  21 Eight miles high [Roger McGuinn].flac
+     4:41.69       49730732 B   ---   --   ---xx   flac  0.5064  22 Cardiff rose [Roger McGuinn].flac
+     3:56.09       41651612 B   ---   --   ---xx   flac  0.5256  23 Lover of the Bayou [Roger McGuinn].flac
+     5:51.39       62008172 B   ---   --   ---xx   flac  0.5246  24 Chestnut Mare [Roger McGuinn].flac
+     2:56.26       31107596 B   ---   --   ---xx   flac  0.5213  25 Do right woman, do right man [Joan Baez].flac
+     5:34.31       58990556 B   ---   --   ---xx   flac  0.4992  27 Love song to a stranger [Joan Baez].flac
+     3:45.43       39791180 B   ---   --   ---xx   flac  0.5672  28 The night they drove old Dixie down [Joan Baez].flac
+     4:07.53       43695500 B   ---   --   ---xx   flac  0.5152  29 Diamonds and rust [Joan Baez].flac
+     3:32.02       37401548 B   ---   --   ---xx   flac  0.5482  30 Blowin' in the wind [w Joan Baez].flac
+     2:57.70       31387484 B   ---   --   ---xx   flac  0.5360  31 Railroad Boy [w Joan Baez].flac
+     4:29.67       47609228 B   ---   --   ---xx   flac  0.5617  32 I pity the poor immigrant [w Joan Baez].flac
+     5:49.26       61624796 B   ---   --   ---xx   flac  0.5807  33 Shelter from the storm.flac
+    66:32.33      704267076 B                            0.5303  (15 files)
+===================
+===================
+===================
+=== shntool len for: bd76-04-29-a.flacf\CD3
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.03       47811500 B   ---   --   ---xx   flac  0.5585  34 I threw it all away.flac
+     8:30.37       90051068 B   ---   --   ---xx   flac  0.5415  35 Stuck inside of Mobile with the Memphis blues again.flac
+     4:22.33       46294460 B   ---   --   ---xx   flac  0.5265  36 You're gonna make me lonesome when you go.flac
+     3:59.34       42239612 B   ---   --   ---xx   flac  0.5086  37 Going, going, gone.flac
+     4:56.28       52280300 B   ---   --   ---xx   flac  0.5268  38 Lay lady lay.flac
+     6:45.12       71470268 B   ---   --   ---xx   flac  0.4573  39 Silver mantis.flac
+     3:51.16       40786076 B   ---   --   ---xx   flac  0.5347  40 Mozambique.flac
+    10:12.57      108090908 B   ---   --   ---xx   flac  0.5003  41 Idiot wind.flac
+     4:29.43       47552780 B   ---   --   ---xx   flac  0.5100  42 Knockin' on heaven's door [w Roger McGuinn].flac
+     6:58.34       73815212 B   ---   --   ---xx   flac  0.5007  43 Gotta travel on.flac
+    58:36.72      620392184 B                            0.5136  (10 files)
+===================
+===================
+===================

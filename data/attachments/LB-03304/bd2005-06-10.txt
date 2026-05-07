@@ -1,0 +1,93 @@
+Bob Dylan
+Salem Memorial Baseball Stadium
+Salem, Virginia
+June 10, 2005
+
+Source:
+FOB, DC - GA Field
+AKG (ck91>mk90/3+h98>se300b) > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > CD Wave (tracking) > FLAC frontend
+
+Disc 1 of 2:
+d1t01	Introduction [00:41]
+d1t02	To Be Alone With You [05:28]
+d1t03	Hazel [05:40]
+d1t04	Cry A While [06:01]
+d1t05	Shelter From The Storm [08:45]
+d1t06	Cold Irons Bound [05:49]
+d1t07	Chimes Of Freedom [08:17]
+d1t08	Highway 61 Revisited [07:25]
+d1t09	Love Sick [05:42]
+d1t10	Watching The River Flow [08:06]
+Total time: [61:53]
+
+Disc 2 of 2:
+d2t01	Most Likely You Go Your Way (And I'll Go Mine) [09:13]
+d2t02	Make You Feel My Love [05:04]
+d2t03	Summer Days [11:51]
+d2t04	Don't Think Twice, It's All Right [07:08]
+d2t05	Band Introduction [00:29]
+d2t06	All Along The Watchtower [05:33]
+Total time: [39:17]
+
+Band Members:
+Bob Dylan - keyboard, harp
+Stu Kimball - guitar
+Denny Freeman - guitar
+Donnie Herron - electric mandolin, banjo, pedal steel, lap steel, violin
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-06-10d1t01.flac:9e2336d1b9f85e25b3da6ebe95775c03
+bd2005-06-10d1t02.flac:e1e50ba6feb6628bc1e4bb63154185b9
+bd2005-06-10d1t03.flac:f764c0288d108d3b0801abc436cd2b6f
+bd2005-06-10d1t04.flac:a69a776c45fc5a245e078f4a1b044e29
+bd2005-06-10d1t05.flac:61036622080a5c10d413f6b0ad875ef9
+bd2005-06-10d1t06.flac:5770a181ef3e8c0eca5c16cf0ac425e5
+bd2005-06-10d1t07.flac:bb07b46492adfe0d78cbf65ab759c2d5
+bd2005-06-10d1t08.flac:29811b7a03aae728dae39ca3311d27c9
+bd2005-06-10d1t09.flac:1aea502fc768052007b0c99081e9bebc
+bd2005-06-10d1t10.flac:e31ec076974047758090a0dbe0852cf6
+bd2005-06-10d2t01.flac:6571331f73430465318d873c50f85ccd
+bd2005-06-10d2t02.flac:a8e8d14e6d83ea3b5bea12b250da593b
+bd2005-06-10d2t03.flac:eec83c90e781ae48b9a7e96bfaa76e1a
+bd2005-06-10d2t04.flac:64371e7e4bda4856400c2cabda65a446
+bd2005-06-10d2t05.flac:27824901b64d6e22db145d991362ac92
+bd2005-06-10d2t06.flac:4cd97d9192b04129caef343b970524aa
+
+flac md5
+14e1644f6547c8b771287850a967a845 *bd2005-06-10d1t01.flac
+eed4018fa68bae3e8c4e7527f09074a0 *bd2005-06-10d1t02.flac
+ffc007887c3122ad14b4d811697bfe4c *bd2005-06-10d1t03.flac
+ffce19dc8f46d565651c6b31a865813c *bd2005-06-10d1t04.flac
+b24457d91ddf36c66f19dfce1cf232e8 *bd2005-06-10d1t05.flac
+160b0ce506f75779e9e80bb0bec463b3 *bd2005-06-10d1t06.flac
+924961c8ee7854aa199b0d17ed58cdc9 *bd2005-06-10d1t07.flac
+30b634aea964d1d19c3747a13cfcd22f *bd2005-06-10d1t08.flac
+60addca80c8832735f99f6c5f4bfa15c *bd2005-06-10d1t09.flac
+d6b5ed070ea1216873bede604b4d15ad *bd2005-06-10d1t10.flac
+2cb0931eb8fb15f3bbfd1b1085b7085a *bd2005-06-10d2t01.flac
+3c8ba2497a56cf9caaa5b2d44c0d6640 *bd2005-06-10d2t02.flac
+e4a7c525d2a1f884bd03ecac2b6eb2b1 *bd2005-06-10d2t03.flac
+a0145c7e77935942ebf0e1c7c0206679 *bd2005-06-10d2t04.flac
+02cd50b954a541883564ed991b680e85 *bd2005-06-10d2t05.flac
+3c1b939d6e3b9ea20485ad712d4d92c0 *bd2005-06-10d2t06.flac
+
+wav md5
+f4122c9dd9f24773a531b55be629cf02 *bd2005-06-10d1t01.wav
+8446de32a6ade4fe1e148b781f382bc7 *bd2005-06-10d1t02.wav
+3f9363e7f61731230e23e0f2016b450a *bd2005-06-10d1t03.wav
+e7207c3d7eab8422f665df76f88c5a56 *bd2005-06-10d1t04.wav
+07466c1868125138090de06e1a6c0530 *bd2005-06-10d1t05.wav
+925fd1b1ab5931921a585ed2318268aa *bd2005-06-10d1t06.wav
+593a51088ee2730f8eba60851a26f0e5 *bd2005-06-10d1t07.wav
+c48cc751e46115d3813ac3a0da518951 *bd2005-06-10d1t08.wav
+9e41ee6fed456374e1c34bd80a0ac43c *bd2005-06-10d1t09.wav
+212cf5cb59f5f279ced50e3905693a96 *bd2005-06-10d1t10.wav
+c516a0df699a25bc0c73dac8971e1f0a *bd2005-06-10d2t01.wav
+a72653a8ad9789fbf411ece578e3e316 *bd2005-06-10d2t02.wav
+4f35b8f965a5019512bc190eb29c3144 *bd2005-06-10d2t03.wav
+a48951320f23656d19bcd2de02d62d4f *bd2005-06-10d2t04.wav
+3117898cc2d99309f7035ed5d6a156b1 *bd2005-06-10d2t05.wav
+62d93ac81268d2f0be21ebfc630bdb95 *bd2005-06-10d2t06.wav

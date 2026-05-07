@@ -1,0 +1,9 @@
+14282d05872ca78cd58164ffd44a1658 *1992-10-28 Springfield D2.CUE
+9160d7e7b4b1be825a4bf40e58906327 *2-01-Unbelievable.wav
+bfb08c73f1bbc2d10329aa9d48d17c4a *2-02-I'll Remember You.wav
+456b087becb2f67d0b5b631ee157cd4b *2-03-The Times They Are A-Changin'.wav
+a31e8119e37efb6c0aa10179315ce3cf *2-04-Maggie's Farm.wav
+63f1a9a0ba0eecb0f1e0ca578e265d51 *2-05-Ballad Of A Thin Man.wav
+3fdc9fced4a03dbbf211bffcaf02c421 *2-06-Highway 61 Revisited.wav
+9c9f58fbefbeda9be4926c52aa2b6f92 *2-07-It Ain't Me, Babe.wav
+8b7250318e5234d659d0af9cb3732be4 *1992-10-28 Springfield D2.LOG

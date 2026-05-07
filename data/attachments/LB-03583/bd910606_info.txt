@@ -1,0 +1,64 @@
+Bob Dylan
+June 6, 1991
+Roma, Palaeur
+
+AUD Cassette Master>DAT>DAT>DAT>WAV>Soundforge 6.0>FLAC
+
+
+CD 1  [79:57]
+
+01 When I Paint My Masterpiece
+02 Lay Lady Lay
+03 All Along The Watchtower
+04 The Man In Me
+05 Gotta Serve Somebody
+06 Wiggle Wiggle
+07 Bob Dylan's Dream
+08 Homeward Bound 
+09 It Ain't Me, Babe
+10 Mr. Tambourine Man
+11 People Putting People Down 
+12 Everything Is Broken
+13 Man In The Long Black Coat
+14 Shooting Star
+15 Highway 61 Revisited
+16 I Shall Be Released
+17 Like A Rolling Stone
+18 I Want You
+
+
+
+Bob Dylan - guitar, harmonica, vocal
+John Jackson - guitar
+Tony Garnier - bass 
+Ian Wallace - drums
+
+further info:
+http://www.bjorner.com/DSN12210%20-%201991%20Europe%20Summer%20Tour.htm#DSN12210
+
+I did not harm the sound of the recording in any way.
+
+New transfer, very likely same recording as LB-2811. 
+
+Please retain this info file as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+bd910606_d1t01.flac:5b40533a02a64a58de919cc9840cf988
+bd910606_d1t02.flac:b0d7fa3bb04563352baf6563fbb38afa
+bd910606_d1t03.flac:3d8b8d47545d12dbaef7ddbd3a648bad
+bd910606_d1t04.flac:979cc4abbb55da12382eed1cbac9ca5c
+bd910606_d1t05.flac:8089bc510988b1a0bf544b6386702f0c
+bd910606_d1t06.flac:c1606568191fee90f29c9906d3937d9b
+bd910606_d1t07.flac:3c5d5d77098bbc09f72190f784c8c408
+bd910606_d1t08.flac:2f02588643144a92923262d7c01cbb47
+bd910606_d1t09.flac:5de232a63aeee10a20f7eeaf23e6531e
+bd910606_d1t10.flac:cf97f55444830596f3f7f23ffaeacde4
+bd910606_d1t11.flac:967125e266cc9fc6943063f20679e44e
+bd910606_d1t12.flac:f82167df3de1a28906ccc6675e883ccf
+bd910606_d1t13.flac:47a1a184ae32d77a78d44049afa903bd
+bd910606_d1t14.flac:085709eddeb3a01d5509c20b226c7eb9
+bd910606_d1t15.flac:bfce6b633b6c58a6520967b1858a931f
+bd910606_d1t16.flac:6c23ae37273602a767595a29f54641b2
+bd910606_d1t17.flac:af1fb19b54ad9e0a04828cbc5ecfdda6
+bd910606_d1t18.flac:e04be098de943372ac9d32fbe787aaf7
+

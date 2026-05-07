@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd64-10-10-complete.flacf 
+=================== 
+=================== 
+=================== 
+d87ca05a8925e6ec81e835e16d0e5b5c  01 The times they are a-changin'.flac
+d2205eee7966c85bb4048243f37e20c3  02 Girl from the North Country.flac
+cc07b48a53435cb80d84fcfd83a9cdfb  03 Who killed Davey Moore.flac
+22186d61b7d4a14c6364368652a6021c  04 Talking John Birch paranoid blues.flac
+274f3bfcc37a4046a9a52ee1c7385996  05 To Ramona.flac
+17c223b94e12c8c88b932a9fe3bf4575  06 Ballad of Hollis Brown.flac
+fc6782c1f95da2beaf331ba663c17e82  07 Chimes of freedom.flac
+c52d67f6ec262dfef3983d45f18ecad2  08 I don't believe you (she acts like we never have met).flac
+b0b2695844a25c4279c0c0d476ea94f6  09 It's alright, ma (I'm only bleeding).flac
+83e4e69dc86852234096cc6a1cc251c5  10 Mr. Tambourine Man.flac
+b5f49e6d49339f51cf4555fe34722a9a  11 Talking World War III Blues.flac
+a62697c787c3ba32f11e21df744c51ac  12 A hard rain's a-gonna fall.flac
+11083bd94153241099c9b473998e5cc5  13 Don't think twice, it's all right.flac
+44468a882fc1d94aa31f06422fdbd849  14 Only a pawn in their game.flac
+a0e4251cc2d2bf9f64a4abeb99eb4b7a  15 With God on our side.flac
+2b6952b9863ba04696d750fb879ea5c4  16 It ain't me, babe.flac
+d94b715f6496bfe626b312e9882501ad  17 The lonesome death of Hattie Carroll.flac
+2f0b7282179d9d8bedb8dd2fa6fb3bcf  18 All I really want to do.flac
+84eab6e7622b63662a834f83885518c5  bd64-10-10-complete-LB-3424.txt
+21e305fe111b40904a734db8370b2309  Info\1964-09-28 Town Hall, Philadelphia, Pennsylvania, USA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd64-10-10-complete.flacf 
+=================== 
+=================== 
+=================== 
+01 The times they are a-changin'.flac:8ea5aac8b095bfbfcaaf40f46db03a4a
+02 Girl from the North Country.flac:e9ac14e7b512af3aadb1a6600ab13b45
+03 Who killed Davey Moore.flac:698ab6e2d474d320560cb88a2e5b6d5a
+04 Talking John Birch paranoid blues.flac:391d3c8fef3832668995c98bf3297498
+05 To Ramona.flac:c7e93003f84f8e73b02be7dc0815822d
+06 Ballad of Hollis Brown.flac:9e0bcb4d42b2c4c3d29c09add613e7c6
+07 Chimes of freedom.flac:f334fc8dc6265b9951f5b304cec9e57b
+08 I don't believe you (she acts like we never have met).flac:a4ac6efd239d4941d9828140bcb017b1
+09 It's alright, ma (I'm only bleeding).flac:dad6b90e5e10a12995c8532b40bde11e
+10 Mr. Tambourine Man.flac:dd0f0c72d0200d4b1c6ee7d7d8ddca59
+11 Talking World War III Blues.flac:c2f3b8fa577e8266526f3a232a8058fa
+12 A hard rain's a-gonna fall.flac:4ab57e334a3f018077d72e3b45cd9a25
+13 Don't think twice, it's all right.flac:9f6c295df12b7d3675a3d4d402f81612
+14 Only a pawn in their game.flac:2fe3896c9c724ff9edaa501ac57de4e7
+15 With God on our side.flac:66075679d7c7af1998fb45dd5d6ee305
+16 It ain't me, babe.flac:98e4afb0c48df0871e77e67ee7384887
+17 The lonesome death of Hattie Carroll.flac:48d036f80fe1fbe21d08a6f90b7b78a6
+18 All I really want to do.flac:138e5e02cb8d797ff2855372d61bd4db
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd64-10-10-complete.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:35.62       38071868 B   ---   --   ---xx   flac  0.5564  01 The times they are a-changin'.flac
+     4:28.31       47348156 B   ---   --   ---xx   flac  0.5304  02 Girl from the North Country.flac
+     3:52.70       41089484 B   ---   --   ---xx   flac  0.5426  03 Who killed Davey Moore.flac
+     4:34.42       48432428 B   ---   --   ---xx   flac  0.5517  04 Talking John Birch paranoid blues.flac
+     5:29.16       58073276 B   ---   --   ---xx   flac  0.5374  05 To Ramona.flac
+     6:52.70       72841484 B   ---   --   ---xx   flac  0.5407  06 Ballad of Hollis Brown.flac
+     7:44.32       81924908 B   ---   --   ---xx   flac  0.5523  07 Chimes of freedom.flac
+     5:10.34       54764012 B   ---   --   ---xx   flac  0.5461  08 I don't believe you (she acts like we never have met).flac
+    11:11.65      118517324 B   ---   --   ---xx   flac  0.5511  09 It's alright, ma (I'm only bleeding).flac
+     7:11.10       76051964 B   ---   --   ---xx   flac  0.5585  10 Mr. Tambourine Man.flac
+     5:35.21       59143436 B   ---   --   ---xx   flac  0.5629  11 Talking World War III Blues.flac
+     9:10.26       97081196 B   ---   --   ---xx   flac  0.5085  12 A hard rain's a-gonna fall.flac
+     4:38.23       49093340 B   ---   --   ---xx   flac  0.5002  13 Don't think twice, it's all right.flac
+     5:21.07       56640908 B   ---   --   ---xx   flac  0.4948  14 Only a pawn in their game.flac
+     8:56.04       94559852 B   ---   --   ---xx   flac  0.5018  15 With God on our side.flac
+     5:18.63       56243420 B   ---   --   ---xx   flac  0.5016  16 It ain't me, babe.flac
+     6:57.08       73577660 B   ---   --   ---xx   flac  0.5006  17 The lonesome death of Hattie Carroll.flac
+     3:14.66       34376876 B   ---   --   ---xx   flac  0.5100  18 All I really want to do.flac
+   109:23.50     1157831592 B                            0.5304  (18 files)
+=================== 
+=================== 
+=================== 

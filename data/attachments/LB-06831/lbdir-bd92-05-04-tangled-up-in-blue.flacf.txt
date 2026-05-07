@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-05-04-tangled-up-in-blue.flacf 
+=================== 
+=================== 
+=================== 
+c355fc865f423bc250dc7977ce5a4e64  bd92-05-04-tangled-up-in-blue-d1t01.flac
+38bc72c85a36b53569695ab12191e6f0  bd92-05-04-tangled-up-in-blue-d1t02.flac
+02c9d6ca5e2635914a1df402dd0de30f  bd92-05-04-tangled-up-in-blue-d1t03.flac
+34eca60f245b04e829a98bd038b31923  bd92-05-04-tangled-up-in-blue-d1t04.flac
+4f2d3c5d8e381f2359cf7211a28b6956  bd92-05-04-tangled-up-in-blue-d1t05.flac
+b6f47c8279f81f9b3c32860c7325597b  bd92-05-04-tangled-up-in-blue-d1t06.flac
+16fd4b06e4b53ab5d31f2095c746a042  bd92-05-04-tangled-up-in-blue-d1t07.flac
+0b5e266d725c9378560f1ce99bbc0b8b  bd92-05-04-tangled-up-in-blue-d1t08.flac
+89948dd7139f0c68c83cbe8906017208  bd92-05-04-tangled-up-in-blue-d1t09.flac
+3c800496428df4d2bfb94d66f4a08e4e  bd92-05-04-tangled-up-in-blue-d1t10.flac
+77fffda0ccadef3312b3dbdf7d05c468  bd92-05-04-tangled-up-in-blue-d1t11.flac
+758e286cae127d3c65707135f689414e  bd92-05-04-tangled-up-in-blue-d1t12.flac
+739a0cc559413a266b6098a757c61c7f  bd92-05-04-tangled-up-in-blue-d2t01.flac
+1cb7047531c7058b6e99170c9dfbcbae  bd92-05-04-tangled-up-in-blue-d2t02.flac
+42d77d622320701e653121fba4ac2d55  bd92-05-04-tangled-up-in-blue-d2t03.flac
+5dda584797b8d667fc02fbb849d6aa8c  bd92-05-04-tangled-up-in-blue-d2t04.flac
+8d3c55fbd0cc1aca46174b3c00b0da01  bd92-05-04-tangled-up-in-blue-d2t05.flac
+06f812c335b2e10a100d98d1bcbe9f7a  bd92-05-04-tangled-up-in-blue-d2t06.flac
+6a33f317bd58e710c80629f7da821618  bd92-05-04-tangled-up-in-blue-d2t07.flac
+6c1a14fff0906b858a793969d6373e90  bd92-05-04-tangled-up-in-blue-d2t08.flac
+22b74b50eb8e29c199936663d6eb9193  bd92-05-04-tangled-up-in-blue-d2t09.flac
+178706e54cf041eccc41a7dc16b0d08e  bd92-05-04-tangled-up-in-blue-d2t10.flac
+a9d77cdb2b703249f70a377756dde8b4  bd92-05-04-tangled-up-in-blue-d2t11.flac
+9f44ad376d263b923d22279fa55a637e  bd92-05-04-tangled-up-in-blue-d2t12.flac
+c8d774a1115ed9b3601126c115479041  bd92-05-04-tangled-up-in-blue.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-05-04-tangled-up-in-blue.flacf 
+=================== 
+=================== 
+=================== 
+bd92-05-04-tangled-up-in-blue-d1t01.flac:f2e8071943bf898762e6016261d21011
+bd92-05-04-tangled-up-in-blue-d1t02.flac:e05e9a21825002e74bdd4add758e74df
+bd92-05-04-tangled-up-in-blue-d1t03.flac:f8819d0f4c36024c446aae425d97b4e2
+bd92-05-04-tangled-up-in-blue-d1t04.flac:4b776883c0b5ddf6e1422e55d390b0b4
+bd92-05-04-tangled-up-in-blue-d1t05.flac:24abd4f06e898a886ffa3443c2fe5e7a
+bd92-05-04-tangled-up-in-blue-d1t06.flac:aa138ffc9326574fd5fe0aa9aab8df8e
+bd92-05-04-tangled-up-in-blue-d1t07.flac:65a65a14a48461701c8a742669d249dc
+bd92-05-04-tangled-up-in-blue-d1t08.flac:4bfaaca6d45d8dc302affc85d77c796d
+bd92-05-04-tangled-up-in-blue-d1t09.flac:5d61e480f70beaa80bd685ba9a239e7e
+bd92-05-04-tangled-up-in-blue-d1t10.flac:d0cb0d77815a975ce36aaa2b27691e3f
+bd92-05-04-tangled-up-in-blue-d1t11.flac:b6d23ad8ba6d473a0b42a8322253f319
+bd92-05-04-tangled-up-in-blue-d1t12.flac:eac4f9ed8a0deadaf05da132b4a67e45
+bd92-05-04-tangled-up-in-blue-d2t01.flac:225750469cc638edba80394f4bfd8fdd
+bd92-05-04-tangled-up-in-blue-d2t02.flac:053f22e647394777a8021a467c04600f
+bd92-05-04-tangled-up-in-blue-d2t03.flac:960331cdb4ddf1b15a4bd528bb57a577
+bd92-05-04-tangled-up-in-blue-d2t04.flac:a0ef08a68d3e5488b8e34cc3cdde571d
+bd92-05-04-tangled-up-in-blue-d2t05.flac:cd6321c4c63a377a48312318fdced155
+bd92-05-04-tangled-up-in-blue-d2t06.flac:cee74fa01f212b7747047dec8112ef68
+bd92-05-04-tangled-up-in-blue-d2t07.flac:179a1d42bee9217d04538ec6e616e19d
+bd92-05-04-tangled-up-in-blue-d2t08.flac:d4fb67f38c303e622d9914351cb0a827
+bd92-05-04-tangled-up-in-blue-d2t09.flac:f07c0c9284d6c7b6297f8e535edbabc5
+bd92-05-04-tangled-up-in-blue-d2t10.flac:44b3b1423142599e330fbd2ffba9181a
+bd92-05-04-tangled-up-in-blue-d2t11.flac:816ae205fa2818baff65ba130665a55a
+bd92-05-04-tangled-up-in-blue-d2t12.flac:cce45a05b83bb78c35d010015e881e61
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-05-04-tangled-up-in-blue.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:39.23       28101740 B   ---   --   ---xx   flac  0.7373  bd92-05-04-tangled-up-in-blue-d1t01.flac
+     6:44.30       71336204 B   ---   --   ---xx   flac  0.6709  bd92-05-04-tangled-up-in-blue-d1t02.flac
+     4:51.50       51450044 B   ---   --   ---xx   flac  0.7411  bd92-05-04-tangled-up-in-blue-d1t03.flac
+     6:43.07       71105708 B   ---   --   ---xx   flac  0.7106  bd92-05-04-tangled-up-in-blue-d1t04.flac
+     8:47.03       92969900 B   ---   --   ---xx   flac  0.7251  bd92-05-04-tangled-up-in-blue-d1t05.flac
+     6:16.42       66425228 B   ---   --   ---xx   flac  0.7108  bd92-05-04-tangled-up-in-blue-d1t06.flac
+     5:00.18       52962380 B   ---   --   ---xx   flac  0.6284  bd92-05-04-tangled-up-in-blue-d1t07.flac
+     3:10.72       33685388 B   ---   --   ---xx   flac  0.5605  bd92-05-04-tangled-up-in-blue-d1t08.flac
+     3:42.45       39266684 B   ---   --   ---xx   flac  0.5417  bd92-05-04-tangled-up-in-blue-d1t09.flac
+     5:55.50       62739644 B   ---   --   ---xx   flac  0.6259  bd92-05-04-tangled-up-in-blue-d1t10.flac
+     8:41.73       92076140 B   ---   --   ---xx   flac  0.6224  bd92-05-04-tangled-up-in-blue-d1t11.flac
+     4:02.20       42735884 B   ---   --   ---xx   flac  0.7042  bd92-05-04-tangled-up-in-blue-d1t12.flac
+     9:39.15      102170924 B   ---   --   ---xx   flac  0.6736  bd92-05-04-tangled-up-in-blue-d2t01.flac
+     5:50.38       61829420 B   ---   --   ---xx   flac  0.6309  bd92-05-04-tangled-up-in-blue-d2t02.flac
+     6:44.02       71270348 B   ---   --   ---xx   flac  0.7251  bd92-05-04-tangled-up-in-blue-d2t03.flac
+     5:24.50       57271244 B   ---   --   ---xx   flac  0.7320  bd92-05-04-tangled-up-in-blue-d2t04.flac
+     6:04.40       64303724 B   ---   --   ---xx   flac  0.7023  bd92-05-04-tangled-up-in-blue-d2t05.flac
+     4:05.60       43359164 B   ---   --   ---xx   flac  0.5795  bd92-05-04-tangled-up-in-blue-d2t06.flac
+     4:11.68       44436380 B   ---   --   ---xx   flac  0.7020  bd92-05-04-tangled-up-in-blue-d2t07.flac
+     5:22.10       56824364 B   ---   --   ---xx   flac  0.6727  bd92-05-04-tangled-up-in-blue-d2t08.flac
+     8:20.25       88258844 B   ---   --   ---xx   flac  0.7052  bd92-05-04-tangled-up-in-blue-d2t09.flac
+     5:19.07       56288108 B   ---   --   ---xx   flac  0.6791  bd92-05-04-tangled-up-in-blue-d2t10.flac
+     5:43.70       60669884 B   ---   --   ---xx   flac  0.7060  bd92-05-04-tangled-up-in-blue-d2t11.flac
+     7:13.38       76470620 B   ---   --   ---xx   flac  0.6235  bd92-05-04-tangled-up-in-blue-d2t12.flac
+   140:35.31     1488007968 B                            0.6748  (24 files)
+=================== 
+=================== 
+=================== 

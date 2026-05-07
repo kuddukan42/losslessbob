@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-05.flacf 
+=================== 
+=================== 
+=================== 
+def65376eac495446f672d44ae9d116f  bd05-04-05-chicago-d1\Track 01.flac
+c7afd950038f65095027f608d4c37750  bd05-04-05-chicago-d1\Track 02.flac
+35429772d226d26b3631c5694b14c3a1  bd05-04-05-chicago-d1\Track 03.flac
+471f3a20593a905764014eb108af1314  bd05-04-05-chicago-d1\Track 04.flac
+0e2feb54ead5297e90db65cc8b1df09a  bd05-04-05-chicago-d1\Track 05.flac
+dbcf7e1c3cf52bcf6787f911bd1b591a  bd05-04-05-chicago-d1\Track 06.flac
+49ef95bdc7493ca6e7df19584b344b24  bd05-04-05-chicago-d1\Track 07.flac
+87ae88492024442e17f3fb01fe092d6b  bd05-04-05-chicago-d1\Track 08.flac
+90246e3e934b50bb9675b4ec8b1e5ffb  bd05-04-05-chicago-d1\Track 09.flac
+45106aaa4ca5f99531b82d49de98fee5  bd05-04-05-chicago-d1\Track 10.flac
+786df880982aa73c09769c3fc40ee673  bd05-04-05-chicago-d1\Track 11.flac
+d55f56e27b339c05cd53ecb8f0f79ee1  bd05-04-05-chicago-d1\Track 12.flac
+4653ca4111e03e34b1283e71e9bbd94e  bd05-04-05-chicago-d1\bd05-04-05-d1-fingerprints.txt
+584de4806ad4ca34c33c26e9f7502acf  bd05-04-05-chicago-d2\Track 01.flac
+0affea33748162f3476d6607b1e337b3  bd05-04-05-chicago-d2\Track 02.flac
+59e0b4cbe529271f1f5d5c19d8561584  bd05-04-05-chicago-d2\bd05-04-05-chicago-d2-fingerprints.txt
+57f6ddbffc20f8dd3405ae37f0ffc9e2  bd05-04-05-chicago.txt
+639c8030a998d9594da5dd315e556d8c  bd05-04-05-LB-2670.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-05.flacf\bd05-04-05-chicago-d1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:5d33facb84c48b87aa952c303783b703
+Track 02.flac:626f63008663374865f169f099a2d1d3
+Track 03.flac:1889e23dfe56d5dbfee2a981f148d9d0
+Track 04.flac:1586576465191d6da58713ebec593b4f
+Track 05.flac:415f015697226f7bb21cd12b0d55763a
+Track 06.flac:9514fcd7bd41c05f9c53f18dbd2334b3
+Track 07.flac:f3ad90227adacc7162209bbfaae545ec
+Track 08.flac:9af3fd9c8101992a5e50069145e99a68
+Track 09.flac:b9626fd5e12f56e4280bfbfd9ed18d24
+Track 10.flac:a17508ea490357638d2860e8a03a9858
+Track 11.flac:8590a8e0e2f8bb8a6e63253fe27cf6f8
+Track 12.flac:7f829e49076ac7b86fb78da950b7ffdf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-05.flacf\bd05-04-05-chicago-d2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:8062d0f82ed49ff1ffeeab0fc94d34a9
+Track 02.flac:9ab168fdbfd57d08437f7a138e77645b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-05.flacf\bd05-04-05-chicago-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:11.05       65456204 B   ---   --   ---xx   flac  0.5449  Track 01.flac
+     7:10.25       75910844 B   ---   --   ---xx   flac  0.4581  Track 02.flac
+     7:36.50       80556044 B   ---   --   ---xx   flac  0.5286  Track 03.flac
+     6:40.61       70703516 B   ---   --   ---xx   flac  0.5020  Track 04.flac
+     5:32.00       58564844 B   ---   --   ---xx   flac  0.4790  Track 05.flac
+     5:51.14       61949372 B   ---   --   ---xx   flac  0.5200  Track 06.flac
+     6:04.64       64360172 B   ---   --   ---xx   flac  0.4225  Track 07.flac
+     6:08.06       64929356 B   ---   --   ---xx   flac  0.4628  Track 08.flac
+     6:00.30       63574604 B   ---   --   ---xx   flac  0.5652  Track 09.flac
+     6:07.69       64901132 B   ---   --   ---xx   flac  0.4076  Track 10.flac
+     5:28.37       57946268 B   ---   --   ---xx   flac  0.5253  Track 11.flac
+     8:56.48       94663340 B   ---   --   ---xx   flac  0.4597  Track 12.flac
+    77:48.34      823515696 B                            0.4886  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-05.flacf\bd05-04-05-chicago-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:38.04       80800652 B   ---   --   ---xx   flac  0.4662  Track 01.flac
+     5:52.02       62097548 B   ---   --   ---xx   flac  0.5327  Track 02.flac
+    13:30.06      142898200 B                            0.4951  (2 files)
+=================== 
+=================== 
+=================== 

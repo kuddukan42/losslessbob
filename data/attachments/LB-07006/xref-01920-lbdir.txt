@@ -1,0 +1,56 @@
+===================
+===================
+===================
+=== md5 for: bd00-07-14-sbd-inc-d.flacf
+===================
+===================
+===================
+1cb7ae2048174c53caf58904f8cad6e9 *01 Unbroken Chain, Not Fade Away.flac
+21e17e72b5570babd5e3b7a81e5c712a *02 crowd.flac
+d502678eedf135d8fc9cda8919b19d0a *03 Scarlet Begonias.flac
+5db36e953b1657516390bca44212fd92 *04 intro, Fat Man In The Bathtub.flac
+f9eaf8516aff1ef9d70f8b80013ee32a *05 outro.flac
+c0fbd239b7ab8dbd56d39a91b85741c0 *06 Things Have Changed.flac
+a59d795753acd52bdf2cdb288127ab5e *07 Like A Rolling Stone.flac
+7d06c16dd2490777da8b6c95fbd4528b *08 Girl From North Country.flac
+50530bce838ff21d0633f47c88ac0261 *09 tuning.flac
+409c267733b7c0e5cc2deb5a511c7e39 *PF_2000-07-14 MN info.txt
+d2ad9881863b7f945f2d2a2825cfb839 *PF_2000-07-14 MN spectral.JPG
+dbcaa90fc256b4f8a9f3631ad37092cb *Phil & Friends 2000-07-14 Minneapolis, MN.md5
+===================
+===================
+===================
+=== ffp for: bd00-07-14-sbd-inc-d.flacf
+===================
+===================
+===================
+01 Unbroken Chain, Not Fade Away.flac:8f1f77f111f07577eae7665fdb0170e1
+02 crowd.flac:6cd40d95bca1f6a8121f8f672a115c52
+03 Scarlet Begonias.flac:c1d81af8fede79d4d76b821e99ef44d7
+04 intro, Fat Man In The Bathtub.flac:6a7995eaf64e7fe98cb8070e14818269
+05 outro.flac:8baca07ecc881ef3cea937fc0168f7a8
+06 Things Have Changed.flac:2f9d49927d928f950e65bcb4a20f0e7e
+07 Like A Rolling Stone.flac:774b4338362e753933fecefc36811a3a
+08 Girl From North Country.flac:0e98562c4c008ef3482be3b0bfe6b44f
+09 tuning.flac:ef0b60cd8e1a47b0fc2eac0e1bffef26
+===================
+===================
+===================
+=== shntool len for: bd00-07-14-sbd-inc-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    17:20.47      183566588 B   ---   --   ---xx   flac  0.4170  01 Unbroken Chain, Not Fade Away.flac
+     0:28.52        5061548 B   ---   --   ---xx   flac  0.2575  02 crowd.flac
+     8:27.00       89434844 B   ---   --   ---xx   flac  0.4322  03 Scarlet Begonias.flac
+     9:24.47       99600188 B   ---   --   ---xx   flac  0.4175  04 intro, Fat Man In The Bathtub.flac
+     0:18.47        3285788 B   ---   --   ---xx   flac  0.2675  05 outro.flac
+     6:06.69       64724732 B   ---   --   ---xx   flac  0.3929  06 Things Have Changed.flac
+     7:13.32       76456508 B   ---   --   ---xx   flac  0.4107  07 Like A Rolling Stone.flac
+     8:02.58       85161260 B   ---   --   ---xx   flac  0.2899  08 Girl From North Country.flac
+     0:20.12        3556268 B   ---   --   ---xx   flac  0.2517  09 tuning.flac
+    57:42.64      610847724 B                            0.3952  (9 files)
+===================
+===================
+===================

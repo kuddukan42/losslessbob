@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-04-20-realistic.flacf 
+=================== 
+=================== 
+=================== 
+213105a4e24bd9920d09d290352f89a8  Bob Dylan 1991-04-20 Pelham, Al Flac16FFP.ffp
+935704c7a0381bd04cbcf55a6fcc5948  Dylan 1991-04-20 Pelham.txt
+10403a841439f509ca0d30dc8ae25542  Dylan1991-04-20d1t01.flac
+ec8b8d93326fb12b5df7e7793974fdb1  Dylan1991-04-20d1t02.flac
+f0af7ad0a8f3ba67536923b9860e142b  Dylan1991-04-20d1t03.flac
+56255f87f847048489d754174bdaf45e  Dylan1991-04-20d1t04.flac
+a14f6dca0ff91b1a36e2fa5ea7a0acbb  Dylan1991-04-20d1t05.flac
+3e5aa3d3a658dd21386446440334ef9f  Dylan1991-04-20d1t06.flac
+55c562f7bd6713e6726f9536f20a3d1a  Dylan1991-04-20d1t07.flac
+08dc312ddebdf58042ad693fa95bab31  Dylan1991-04-20d1t08.flac
+999783c300d02d4b96291d7682a4c6a4  Dylan1991-04-20d1t09.flac
+920e3749049d7986e46b172760319c7a  Dylan1991-04-20d1t10.flac
+e350531a6c13ae25cb2aab5aadef9a01  Dylan1991-04-20d2t01.flac
+ec173a91b1f6624b08d850a69b5fa6f8  Dylan1991-04-20d2t02.flac
+0e414f57c0dc753bb8cfc27025a55bde  Dylan1991-04-20d2t03.flac
+8f025456079791a4ce64a4eac4aa870a  Dylan1991-04-20d2t04.flac
+d5fa5f5ea41a23685be4f61402dac5c4  Dylan1991-04-20d2t05.flac
+a2b5bdb5e3dcf31276c98016d952d607  Dylan1991-04-20d2t06.flac
+275390bde47e55e5d2d31eeb9bc67840  Dylan1991-04-20d2t07.flac
+b4ed4f523562222855a4436b1a50e408  Dylan1991-04-20d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-04-20-realistic.flacf 
+=================== 
+=================== 
+=================== 
+Dylan1991-04-20d1t01.flac:12d5780757e21b3e79ed67962cc37832
+Dylan1991-04-20d1t02.flac:1457672bd99cce2f026d712d79837fcc
+Dylan1991-04-20d1t03.flac:1219c3e4d478fc103c72fb15fdb54450
+Dylan1991-04-20d1t04.flac:0bbf10bb92f534fc7dd1a3c520a9d20d
+Dylan1991-04-20d1t05.flac:a908605da98bd2b3a2d132983c1575da
+Dylan1991-04-20d1t06.flac:83230463952625f05e33cdaec8e34d46
+Dylan1991-04-20d1t07.flac:06f6fd026bebfa9748ee47ab2430c451
+Dylan1991-04-20d1t08.flac:9ff211832e09a4433a5671978a8d440f
+Dylan1991-04-20d1t09.flac:4121b6a03764a8a282c7d4db06d891b2
+Dylan1991-04-20d1t10.flac:e89d239534a78680353fc9f76dc7cd4a
+Dylan1991-04-20d2t01.flac:8ae5bbf270216f87ef825fc65083af2c
+Dylan1991-04-20d2t02.flac:fee66aa3080977fde494ff848144cca5
+Dylan1991-04-20d2t03.flac:ad1e2f494a645106c3865f7d3e16cea4
+Dylan1991-04-20d2t04.flac:dbabf7cfa1eb86febcb46ab30907ba83
+Dylan1991-04-20d2t05.flac:824581cadd77ce416e51b7ef30b8524e
+Dylan1991-04-20d2t06.flac:6dd7f5f616712d5ea1e187d27a342d59
+Dylan1991-04-20d2t07.flac:0f70d7cee4cd26053a9155ba3e37bfb7
+Dylan1991-04-20d2t08.flac:aeafaa713c6054620409953a4f9e6a3c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-04-20-realistic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.35       46651964 B   ---   --   ---xx   flac  0.5718  Dylan1991-04-20d1t01.flac
+     5:02.02       53277548 B   ---   --   ---xx   flac  0.5713  Dylan1991-04-20d1t02.flac
+     3:05.40       32728124 B   ---   --   ---xx   flac  0.5820  Dylan1991-04-20d1t03.flac
+     4:45.30       50344604 B   ---   --   ---xx   flac  0.5794  Dylan1991-04-20d1t04.flac
+     5:42.07       60345308 B   ---   --   ---xx   flac  0.5882  Dylan1991-04-20d1t05.flac
+     3:29.32       36942908 B   ---   --   ---xx   flac  0.5884  Dylan1991-04-20d1t06.flac
+     5:58.06       63165356 B   ---   --   ---xx   flac  0.5607  Dylan1991-04-20d1t07.flac
+     5:12.71       55203836 B   ---   --   ---xx   flac  0.5466  Dylan1991-04-20d1t08.flac
+     4:02.23       42742940 B   ---   --   ---xx   flac  0.5279  Dylan1991-04-20d1t09.flac
+     4:14.56       44937356 B   ---   --   ---xx   flac  0.5522  Dylan1991-04-20d1t10.flac
+     3:55.30       41524604 B   ---   --   ---xx   flac  0.5814  Dylan1991-04-20d2t01.flac
+     5:16.66       55897676 B   ---   --   ---xx   flac  0.5738  Dylan1991-04-20d2t02.flac
+     5:11.43       54961580 B   ---   --   ---xx   flac  0.5904  Dylan1991-04-20d2t03.flac
+     4:28.01       47277596 B   ---   --   ---xx   flac  0.5478  Dylan1991-04-20d2t04.flac
+     4:23.06       46407356 B   ---   --   ---xx   flac  0.5559  Dylan1991-04-20d2t05.flac
+     6:17.21       66552236 B   ---   --   ---xx   flac  0.5713  Dylan1991-04-20d2t06.flac
+     5:44.72       60850988 B   ---   --   ---xx   flac  0.4888  Dylan1991-04-20d2t07.flac
+     5:42.54       60455852 B   ---   --   ---xx   flac  0.5275  Dylan1991-04-20d2t08.flac
+    86:56.70      920267832 B                            0.5602  (18 files)
+=================== 
+=================== 
+=================== 

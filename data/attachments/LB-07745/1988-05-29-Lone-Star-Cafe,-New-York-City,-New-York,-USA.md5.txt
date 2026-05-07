@@ -1,0 +1,32 @@
+31ae81c57eb4872a260857ecf5410946 *CD1\01 Unidentified song.flac
+e45d2cef9ce2084da12f8f3861ba3036 *CD1\02 Unidentified song.flac
+7c763d409f9f57ed847c62bf93254517 *CD1\03 Instrumental.flac
+61b0a90ff2073c1528584fcd7553e978 *CD1\04 Unidentified song.flac
+f2e5ea6ed45d6a26e9338952ee587539 *CD1\05 Unidentified song.flac
+f870223d55b148069009ae61cd494790 *CD1\06 Unidentified song.flac
+afb4ca85694bce4d0bcea7454315b1c8 *CD1\07 Unidentified song.flac
+e4e8289b9a897ac293597b8c606c29f2 *CD1\08 Unidentified song.flac
+7e4d170da5e3b32559c993ee370041ae *CD1\09 Unidentified song [tape abrupt].flac
+e9e820e2fc0b73e6b81164ed60b74069 *CD1\10 Unidentified song.flac
+16ad4935d8e58cddf32adc8eebc2de07 *CD1\11 Unidentified song.flac
+95226ac7bd8bc54c68426a54dd829e64 *CD1\12 Unidentified song.flac
+f9fdfbc31916cc6c17d950d543a86bf5 *CD1\13 Unidentified song.flac
+98f96c75e6d90dad2deb50efa1aadee1 *CD1\14 Rag mama rag.flac
+c9c6a0a5afc6e35dfc89cf22bd591a00 *CD1\15 Unidentified song.flac
+2c5131b4ea5bea86c1d5ce08c2fc1f08 *CD1\16 Georgia wine.flac
+15170aeebd6814e0daca6c1bcd5d7a3c *CD1\CD1 ffp.ffp
+a4df81a0e768202c18bf51789243d8cb *CD1\CD1 fingerprints.txt
+2c1505c821527eba77eb4052ded3582e *CD2\17 Unidentified song.flac
+62f351202502b8afdf4ab90465945bad *CD2\18 Unidentified song.flac
+0266ae8e28ae813c6c3643189ca13cdb *CD2\19 Unidentified song.flac
+8876754c0eb3fb302f1047eb36a546bb *CD2\20 Instrumental.flac
+1a64d70a2a4784b669c5e5c44947a8be *CD2\21 Unidentified song.flac
+744acf3948ceb2264400389773a7fb33 *CD2\22 Unidentified song.flac
+6e4df9d64ad87bdbc0d679d2e51443cc *CD2\23 The Weight [Dylan & Helm and band].flac
+80acc7eb2f24021652aa16fe6c5ad5b7 *CD2\24 Nadine [Dylan & Helm and band].flac
+748d28dbe8997a38e66ab0b91105bcec *CD2\25 Unidentified song.flac
+d17e78f00dbdea29c9a5c98f91bbba4a *CD2\26 Unidentified song.flac
+e95869428139bda1216108b4fa0394f5 *CD2\27 Instrumental.flac
+f12664c5e7c19803ccc2ef124282f81a *CD2\CD2 fingerprints.txt
+d5a7fe877811759f36844a6871fd8ec7 *CD2\CD2.ffp
+ba1549bf8acac8dc25de1195c942efa4 *Info\1988-05-29 Lone Star Cafe, New York City, New York, USA.txt

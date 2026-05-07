@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-04-jj-rec.flacf 
+=================== 
+=================== 
+=================== 
+ef36e870b4faa63a56f06e0f27049f48  bd-clermont-2006-07-04-j.j.rec.d1\d1.fingerprints.txt
+49e91f377a5415e6c2da228008770fd1  bd-clermont-2006-07-04-j.j.rec.d1\d1t01-intro-maggie's farm.flac
+177f40fd7d119584f598acc2a96e0948  bd-clermont-2006-07-04-j.j.rec.d1\d1t02-the times they're a-changin'.flac
+8d29be87495c282d2b2a0b9cd2f2c40f  bd-clermont-2006-07-04-j.j.rec.d1\d1t03-down along the cove.flac
+f99e70715638e9547406e1c2417274ac  bd-clermont-2006-07-04-j.j.rec.d1\d1t04-mr tambourine man.flac
+380dc1313e879ae60d9197136af89b9d  bd-clermont-2006-07-04-j.j.rec.d1\d1t05-tweedle dee & tweedle dum.flac
+f8469d1beb01c4c97672ef47afe8caaf  bd-clermont-2006-07-04-j.j.rec.d1\d1t06-to ramona.flac
+ce2a6ece9a6e1e58f0e7432ea8d21f22  bd-clermont-2006-07-04-j.j.rec.d1\d1t07-highway 61 revisited.flac
+1aea905777ed6b3a94d106d6695f6fc7  bd-clermont-2006-07-04-j.j.rec.d1\d1t08-boots of spanish leather.flac
+e786eb407e0a3618dae99540f428ad25  bd-clermont-2006-07-04-j.j.rec.d1\d1t09-honest with me.flac
+686380dcc8600f211992382c879f8dfc  bd-clermont-2006-07-04-j.j.rec.d1\d1t10-positively 4th street.flac
+b9de3f5e1ebba3cc760278eae26f5365  bd-clermont-2006-07-04-j.j.rec.d1\d1t11-stuck inside of mobile.flac
+d17786fb7a9531a759770c8bb9b9fb17  bd-clermont-2006-07-04-j.j.rec.d2\d2.fingerprints.txt
+1fafaee9b556a8a74a0db7cc4cb12a3c  bd-clermont-2006-07-04-j.j.rec.d2\d2t01-masters of war.flac
+c1e3bf6fdd25a72da80a5ad40aff9480  bd-clermont-2006-07-04-j.j.rec.d2\d2t02-summer days.flac
+f3a33a89c8103c6e38c514b03544f454  bd-clermont-2006-07-04-j.j.rec.d2\d2t03-like a rolling stone.flac
+aed625f1d0210917b427bba65cc5d91b  bd-clermont-2006-07-04-j.j.rec.d2\d2t04-all along the watchtower.flac
+fa1753c64b25d782e792fd0092c0e56c  bd-clermont-2006-07-04-j.j.rec.flacf.md5
+af43664b13a7013fc85d4e371e06103b  bd-clermont-2006-07-04.txt
+22252a1bb1878a78a72fe89dc16b6397  bd-clermont-2006-back.jpg
+cc980bab5909088e0eacfd2d3e1a4301  bd-clermont-2006-front.jpg
+6ecb90731cd4909b5785431b75c0f0b3  bd-clermont-2006-inside.jpg
+85a523fad3a2e84d0ae46dc7ea69b08e  bd06-07-04-jj-rec-LB-3958.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-04-jj-rec.flacf\bd-clermont-2006-07-04-j.j.rec.d1 
+=================== 
+=================== 
+=================== 
+d1t01-intro-maggie's farm.flac:8df94e0ccacf427be61ff48a7198de0b
+d1t02-the times they're a-changin'.flac:03b0b32d1f602cd4611dafba65933fbe
+d1t03-down along the cove.flac:cfc73159ba795722b06cb6f714a00d4b
+d1t04-mr tambourine man.flac:06a1ad6aa7960329df8223040c226a82
+d1t05-tweedle dee & tweedle dum.flac:1f5346dcbc4e172cc6644cf52110a1dd
+d1t06-to ramona.flac:7e089fbef3919dd18fbe766669060d19
+d1t07-highway 61 revisited.flac:158193f69f21d673244aec329adef96a
+d1t08-boots of spanish leather.flac:364f960dc41e608066954f86f1eb113a
+d1t09-honest with me.flac:982d192605a879213ce95f318a332c00
+d1t10-positively 4th street.flac:0b534ee4f657f23b82eabd4369244da2
+d1t11-stuck inside of mobile.flac:e70cc6a75aff5683351e96d813ace7a6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-04-jj-rec.flacf\bd-clermont-2006-07-04-j.j.rec.d2 
+=================== 
+=================== 
+=================== 
+d2t01-masters of war.flac:af06e350f33a34a5c88f1a36eedb217e
+d2t02-summer days.flac:633710403a13191cf2f2a86725acf31c
+d2t03-like a rolling stone.flac:722886b9c2174aab2513798e0336f9e2
+d2t04-all along the watchtower.flac:45c996ce6ee904806e24f9358b032c5f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-04-jj-rec.flacf\bd-clermont-2006-07-04-j.j.rec.d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.40       61834124 B   ---   --   ---xx   flac  0.5784  d1t01-intro-maggie's farm.flac
+     7:20.62       77761868 B   ---   --   ---xx   flac  0.5593  d1t02-the times they're a-changin'.flac
+     7:10.23       75906140 B   ---   --   ---xx   flac  0.5826  d1t03-down along the cove.flac
+     7:05.56       75101756 B   ---   --   ---xx   flac  0.5342  d1t04-mr tambourine man.flac
+     5:45.46       60966236 B   ---   --   ---xx   flac  0.5327  d1t05-tweedle dee & tweedle dum.flac
+     6:00.46       63612236 B   ---   --   ---xx   flac  0.4950  d1t06-to ramona.flac
+     6:28.64       68593772 B   ---   --   ---xx   flac  0.5756  d1t07-highway 61 revisited.flac
+     6:25.44       68017532 B   ---   --   ---xx   flac  0.4428  d1t08-boots of spanish leather.flac
+     6:26.14       68123372 B   ---   --   ---xx   flac  0.5829  d1t09-honest with me.flac
+     7:00.36       74172716 B   ---   --   ---xx   flac  0.5220  d1t10-positively 4th street.flac
+     8:27.29       89503052 B   ---   --   ---xx   flac  0.5593  d1t11-stuck inside of mobile.flac
+    74:02.10      783592804 B                            0.5432  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-04-jj-rec.flacf\bd-clermont-2006-07-04-j.j.rec.d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:33.51       58861196 B   ---   --   ---xx   flac  0.5286  d2t01-masters of war.flac
+     9:51.14      104285372 B   ---   --   ---xx   flac  0.5203  d2t02-summer days.flac
+     6:48.26       72032396 B   ---   --   ---xx   flac  0.5640  d2t03-like a rolling stone.flac
+     5:50.56       61871756 B   ---   --   ---xx   flac  0.5454  d2t04-all along the watchtower.flac
+    28:03.72      297050720 B                            0.5378  (4 files)
+=================== 
+=================== 
+=================== 

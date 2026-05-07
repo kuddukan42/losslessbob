@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-22-jt_Concord 
+=================== 
+=================== 
+=================== 
+350b24cdcb110975143cfad790c829a0  bd00-06-22.txt
+e3352d520266e33e5b429411c99c9bd2  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 1.shn
+a56aeae7a901b033134f5c2b1149f209  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 2.shn
+a26a789b30258bd66cd66f1385cf53e5  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 3.shn
+8761323f51b1155a53add50cc0549637  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 4.shn
+d03b051762a22ae16629c20aa4747688  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 5.shn
+f701ca2534927e58540d037c84df9eac  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 6.shn
+b3c9bb3d92954c46cc65be8c2b915c0c  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 7.shn
+1154bad482dd5dbbf23fd3ffead9adbe  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 8.shn
+35da48a14053aaa746e7db26469fc122  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_Track 9.shn
+96f9c3882cca449524143884aed5448d  bd_00-06-22_cd1.shnf\bd_00-06-22_cd1_shn.md5
+6e3cabf70d90d9dc722cd7112376d3c3  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 1.shn
+57390e53d824e82b460958b43841b48b  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 2.shn
+0287b876c14cc098d7b764aafeac14d3  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 3.shn
+83ea0ba3a9c78d7bc90c43ec0bcc2970  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 4.shn
+1a67fe1b1d7d2530a4cd23454135b676  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 5.shn
+d49be3903bd617fa2c92578550169548  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 6.shn
+ae3c818848660a0595141962257973a1  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 7.shn
+ca5f5ca5578547dd0049352d46fc7fe8  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 8.shn
+503f5cebf62b7386f3342ec1a019f14c  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_Track 9.shn
+9577b2c5bdaa60acb0a97bf795c43c26  bd_00-06-22_cd2.shnf\bd_00-06-22_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-06-22-jt_Concord\bd_00-06-22_cd1.shnf 
+=================== 
+=================== 
+=================== 
+e8812c0e2fc527ecea752dc1f464176b  [shntool]  bd_00-06-22_cd1_Track_1.wav
+dbc4284e42035b9a29110137d6e61503  [shntool]  bd_00-06-22_cd1_Track_2.wav
+76c728302945b1290a50aebdc1f199d5  [shntool]  bd_00-06-22_cd1_Track_3.wav
+2118b49e2d7b096a924083d6e130b93a  [shntool]  bd_00-06-22_cd1_Track_4.wav
+270f38a84166cd77afb58cc5a3b117df  [shntool]  bd_00-06-22_cd1_Track_5.wav
+f20a8a441f82ca206130ad669dbd5d49  [shntool]  bd_00-06-22_cd1_Track_6.wav
+c62ff516713084c37f882d777a8b4d41  [shntool]  bd_00-06-22_cd1_Track_7.wav
+d311c4a50c26175622794deccfe6210f  [shntool]  bd_00-06-22_cd1_Track_8.wav
+b937d5621f9dc7072eb514364ee61395  [shntool]  bd_00-06-22_cd1_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-06-22-jt_Concord\bd_00-06-22_cd2.shnf 
+=================== 
+=================== 
+=================== 
+fe55df69f57afe9ab300f19a14e9583e  [shntool]  bd_00-06-22_cd2_Track_1.wav
+60c7a950cead51ef4709244cdc0b742b  [shntool]  bd_00-06-22_cd2_Track_2.wav
+56aa56572bb6bf45e1de69de03dd68ae  [shntool]  bd_00-06-22_cd2_Track_3.wav
+c93dfe7836a0b9daa7cdd6934e3204d9  [shntool]  bd_00-06-22_cd2_Track_4.wav
+2cf761e0aa5e9ba4fa4d54641204e315  [shntool]  bd_00-06-22_cd2_Track_5.wav
+96172f0454a2a0ccc96dcdccb5d75331  [shntool]  bd_00-06-22_cd2_Track_6.wav
+675c85409d374511f6299ae06e71f987  [shntool]  bd_00-06-22_cd2_Track_7.wav
+d2a026deaa6d74b45c739ca6106e2fa1  [shntool]  bd_00-06-22_cd2_Track_8.wav
+8a3cb2d683e923ae3eee2a297b5112e6  [shntool]  bd_00-06-22_cd2_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-22-jt_Concord\bd_00-06-22_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:34.36       37834398 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_1.wav
+     4:48.64       50953854 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_2.wav
+     5:42.40       60423006 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_3.wav
+     6:34.13       69532302 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_4.wav
+     7:36.35       80520846 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_5.wav
+     3:11.15       33727806 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_6.wav
+     2:55.05       30881886 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_7.wav
+     3:50.68       40732062 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_8.wav
+     5:52.57       62226990 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd1_Track_9.wav
+    44:06.33      466833150 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-22-jt_Concord\bd_00-06-22_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:57.59       63113694 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_1.wav
+     3:57.23       41861022 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_2.wav
+     0:27.50        4880526 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_3.wav
+     5:19.31       56344638 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_4.wav
+     2:03.28       21763182 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_5.wav
+     6:12.55       65750286 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_6.wav
+     7:02.51       74560878 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_7.wav
+     4:35.36       48594798 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_8.wav
+     5:26.61       57649998 B   ---   -e   -----    wav  1.0000  bd_00-06-22_cd2_Track_9.wav
+    41:03.19      434519022 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

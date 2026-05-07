@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-11-akg393 
+=================== 
+=================== 
+=================== 
+fb4752d6d40e966bb82d3de43be1b4ba  bd04-06-11-akg393.txt
+3ecfdc9cd44f07bfcf5737dc1e0026dc  dylan2004-06-11.txt
+966b0c42e911177100cc83e578d94f46  dylan2004-06-11d1\dylan2004-06-11d1.ffp.txt
+224640a2593ccf9063b724d87e05e003  dylan2004-06-11d1\dylan2004-06-11d1t01.flac
+bd9548b8e87cc6484ca2d69a8c99a87f  dylan2004-06-11d1\dylan2004-06-11d1t02.flac
+739d771d101c5e1147215f841eb2862d  dylan2004-06-11d1\dylan2004-06-11d1t03.flac
+ca26ae5696bb246a63d7cb4ba207c348  dylan2004-06-11d1\dylan2004-06-11d1t04.flac
+17c45eb0e3d345c5c62ff74d3d9a9057  dylan2004-06-11d1\dylan2004-06-11d1t05.flac
+9238952c157adde8ddd7c00a924b7988  dylan2004-06-11d1\dylan2004-06-11d1t06.flac
+33126ef779e8c32f3498092fd2a1202d  dylan2004-06-11d1\dylan2004-06-11d1t07.flac
+7944d0b475a41e71ebffdccfca603803  dylan2004-06-11d1\dylan2004-06-11d1t08.flac
+a36864aa7f363f697e403ccef16bf698  dylan2004-06-11d1\dylan2004-06-11d1t09.flac
+a45cd529c4e9ed3b3853057eae86536d  dylan2004-06-11d1\dylan2004-06-11d1t10.flac
+5ac52459b690a64e8c6e2d611645f6cf  dylan2004-06-11d1\dylan2004-06-11d1t11.flac
+60261cad06d28b99276004856643d3ab  dylan2004-06-11d1\dylan2004-06-11d1t12.flac
+e5d81c71a8a6e2cd497b2e863913b0db  dylan2004-06-11d1\dylan2004-06-11d1t13.flac
+8690ad735ba2dd83a23bd99fd39995db  dylan2004-06-11d2\dylan2004-06-11d2.ffp.txt
+2d2c39085ef247a24cd3997677664a1b  dylan2004-06-11d2\dylan2004-06-11d2t01.flac
+f11cdabcabbad197447a9d6f1df66962  dylan2004-06-11d2\dylan2004-06-11d2t02.flac
+c48936e9c280b7484c4c760ed342e158  dylan2004-06-11d2\dylan2004-06-11d2t03.flac
+765a62d85ce93dbb7642cf9e323d6bff  dylan2004-06-11d2\dylan2004-06-11d2t04.flac
+bb1608c611e49f29d17b3b6995d09526  dylan2004-06-11d2\dylan2004-06-11d2t05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-11-akg393\dylan2004-06-11d1 
+=================== 
+=================== 
+=================== 
+dylan2004-06-11d1t01.flac:bce9366e67860f21ca153d67eac4c569
+dylan2004-06-11d1t02.flac:65dd15d755446559313b86a63211f6a8
+dylan2004-06-11d1t03.flac:13659ce709f799596fa328566339e90f
+dylan2004-06-11d1t04.flac:62e0f25be189b4d1ff154a179de3c10b
+dylan2004-06-11d1t05.flac:93cf68514aecc819a27cf4d9c6799fe1
+dylan2004-06-11d1t06.flac:c365c7b3f62db7e2a9d7d87a80e85fe0
+dylan2004-06-11d1t07.flac:bf50752a749a708fc4306e28cff27417
+dylan2004-06-11d1t08.flac:205e3b67a44e627cf7c76dda5b21d02d
+dylan2004-06-11d1t09.flac:7da22872d9fd25231ba02d5f245a8882
+dylan2004-06-11d1t10.flac:2aa8525fde373286233470c8a6cc38bb
+dylan2004-06-11d1t11.flac:634850973ea5e404d2922b09e04484c1
+dylan2004-06-11d1t12.flac:e13d72d0a9350b9521ad2a31101eb503
+dylan2004-06-11d1t13.flac:86b79fe457608aea1b9bb8409318205e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-11-akg393\dylan2004-06-11d2 
+=================== 
+=================== 
+=================== 
+dylan2004-06-11d2t01.flac:f1c9cc8859efc49087d53a22b3d1ad65
+dylan2004-06-11d2t02.flac:ea0abbce7183e19cc825978c5792c4e5
+dylan2004-06-11d2t03.flac:20e6283d77453a5c7e495b7437cc7e26
+dylan2004-06-11d2t04.flac:ac4b038944bca71f34488aa613391014
+dylan2004-06-11d2t05.flac:cc84690822a6d5b860cf36f014f3b221
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-11-akg393\dylan2004-06-11d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:16.08       13425260 B   ---   --   ---xx   flac  0.4682  dylan2004-06-11d1t01.flac
+     6:17.49       66618092 B   ---   --   ---xx   flac  0.5026  dylan2004-06-11d1t02.flac
+     4:24.63       46717820 B   ---   --   ---xx   flac  0.4430  dylan2004-06-11d1t03.flac
+     6:10.49       65383292 B   ---   --   ---xx   flac  0.4722  dylan2004-06-11d1t04.flac
+     6:07.73       64910540 B   ---   --   ---xx   flac  0.4980  dylan2004-06-11d1t05.flac
+     4:44.19       50142332 B   ---   --   ---xx   flac  0.4175  dylan2004-06-11d1t06.flac
+     6:06.39       64654172 B   ---   --   ---xx   flac  0.5000  dylan2004-06-11d1t07.flac
+     4:53.29       51753452 B   ---   --   ---xx   flac  0.4364  dylan2004-06-11d1t08.flac
+     7:22.49       78084092 B   ---   --   ---xx   flac  0.4962  dylan2004-06-11d1t09.flac
+     6:16.41       66422876 B   ---   --   ---xx   flac  0.5079  dylan2004-06-11d1t10.flac
+     7:07.54       75449852 B   ---   --   ---xx   flac  0.3823  dylan2004-06-11d1t11.flac
+     6:29.14       68652572 B   ---   --   ---xx   flac  0.5089  dylan2004-06-11d1t12.flac
+     6:31.37       69059468 B   ---   --   ---xx   flac  0.4619  dylan2004-06-11d1t13.flac
+    73:48.74      781273820 B                            0.4706  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-11-akg393\dylan2004-06-11d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.58       77223260 B   ---   --   ---xx   flac  0.5115  dylan2004-06-11d2t01.flac
+     7:44.44       81953132 B   ---   --   ---xx   flac  0.4277  dylan2004-06-11d2t02.flac
+    10:00.42      105938828 B   ---   --   ---xx   flac  0.4872  dylan2004-06-11d2t03.flac
+     6:01.60       63821564 B   ---   --   ---xx   flac  0.5095  dylan2004-06-11d2t04.flac
+     7:28.59       79166012 B   ---   --   ---xx   flac  0.5149  dylan2004-06-11d2t05.flac
+    38:33.38      408102796 B                            0.4887  (5 files)
+=================== 
+=================== 
+=================== 

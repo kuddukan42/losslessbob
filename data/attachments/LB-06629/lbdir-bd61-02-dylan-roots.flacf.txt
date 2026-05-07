@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-02-dylan-roots.flacf 
+=================== 
+=================== 
+=================== 
+0b36f955e15c4238e2c1c76c19877640  bd61-02-dylan-roots-t01.flac
+6af98698e304301efd2ed8d41055865b  bd61-02-dylan-roots-t02.flac
+91679057d66c7e660105763dd9886517  bd61-02-dylan-roots-t03.flac
+fa5021e482ceb1834277d6df78f27fcd  bd61-02-dylan-roots-t04.flac
+224c7a965658ba90a8348ca1b1c192e9  bd61-02-dylan-roots-t05.flac
+84d4ff4eab57e0bcc3fb26607550e9c0  bd61-02-dylan-roots-t06.flac
+559076ef54755a03e6b485f4b70f85bd  bd61-02-dylan-roots-t07.flac
+557c4bc286acea81cc27e3cd840b1e8e  bd61-02-dylan-roots-t08.flac
+ce4d5d253f5b9f4b14fbfbec9ddd26ef  bd61-02-dylan-roots-t09.flac
+63889a346218fd31f279b4c49d52a52d  bd61-02-dylan-roots-t10.flac
+662c55d061d8c39063d8b4cc6372cb92  bd61-02-dylan-roots-t11.flac
+60bd1a3861490b4467c5217c0c7b81bc  bd61-02-dylan-roots-t12.flac
+dd82353b2e6741ed0de6b5a4d19beb1b  bd61-02-dylan-roots-t13.flac
+f7e4917f0c5077c9e2e4a91713211b2c  bd61-02-dylan-roots-t14.flac
+4565ae204bb14decdfd2202a24795681  bd61-02-dylan-roots.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-02-dylan-roots.flacf 
+=================== 
+=================== 
+=================== 
+bd61-02-dylan-roots-t01.flac:f08439f440f9cc918b9421b207b034f7
+bd61-02-dylan-roots-t02.flac:ba0c4fa9e1ff68da2f9a9d9d36b700c1
+bd61-02-dylan-roots-t03.flac:634ae1b2478717abf0b24b9519642b72
+bd61-02-dylan-roots-t04.flac:1f39070f2d982d47e96dfead147d31ac
+bd61-02-dylan-roots-t05.flac:23a3304b6b327635e87e4996a0b18aec
+bd61-02-dylan-roots-t06.flac:f727a3ca920b7a15433cf3978edd3da6
+bd61-02-dylan-roots-t07.flac:53834852b5d3d3bcfceb18f536e639e8
+bd61-02-dylan-roots-t08.flac:d3439c3814424f52619bd56e228478f9
+bd61-02-dylan-roots-t09.flac:a61cdbc600451f10cc61dec8574643a0
+bd61-02-dylan-roots-t10.flac:5cddb594ed86d66b85d35918630866e9
+bd61-02-dylan-roots-t11.flac:39ae1f7edbc2bff1757c044ed6402311
+bd61-02-dylan-roots-t12.flac:196580eaf373d1ce18c68c1eba7a66af
+bd61-02-dylan-roots-t13.flac:41c9cfa10c7178db54838d724be96217
+bd61-02-dylan-roots-t14.flac:81cf71cb847e7591fd551014c7d249b8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-02-dylan-roots.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:51.00       19580444 B   ---   --   ---xx   flac  0.4514  bd61-02-dylan-roots-t01.flac
+     2:34.00       27165644 B   ---   --   ---xx   flac  0.4304  bd61-02-dylan-roots-t02.flac
+     3:59.32       42234908 B   ---   --   ---xx   flac  0.4180  bd61-02-dylan-roots-t03.flac
+     6:32.43       69249980 B   ---   --   ---xx   flac  0.4116  bd61-02-dylan-roots-t04.flac
+     6:20.00       67032044 B   ---   --   ---xx   flac  0.4451  bd61-02-dylan-roots-t05.flac
+     2:00.25       21226844 B   ---   --   ---xx   flac  0.4279  bd61-02-dylan-roots-t06.flac
+     2:56.07       31062908 B   ---   --   ---xx   flac  0.4048  bd61-02-dylan-roots-t07.flac
+     3:32.05       37408604 B   ---   --   ---xx   flac  0.5011  bd61-02-dylan-roots-t08.flac
+     8:33.53       90617900 B   ---   --   ---xx   flac  0.4701  bd61-02-dylan-roots-t09.flac
+     4:28.47       47385788 B   ---   --   ---xx   flac  0.4855  bd61-02-dylan-roots-t10.flac
+     6:29.43       68720780 B   ---   --   ---xx   flac  0.4525  bd61-02-dylan-roots-t11.flac
+     5:11.45       54966284 B   ---   --   ---xx   flac  0.4855  bd61-02-dylan-roots-t12.flac
+     7:44.00       81849644 B   ---   --   ---xx   flac  0.4345  bd61-02-dylan-roots-t13.flac
+     3:52.00       40924844 B   ---   --   ---xx   flac  0.4700  bd61-02-dylan-roots-t14.flac
+    66:05.00      699426616 B                            0.4505  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,97 @@
+===================
+===================
+===================
+=== md5 for: bd00-05-12-d.flacf
+===================
+===================
+===================
+b074eb9a5e3b907bb28feb3880551897 *artwork\neroback.jpg
+65202735b48baaf68f083faabb363561 *artwork\nerofront.jpg
+13ca21ac31ddc34212970a19e94b6d0c *artwork\neroinside.jpg
+053688c0a4de62bd93c6189a105efb4c *disc 1\01 Intro.flac
+a7a78f60f6619d1ceb46f608eeded401 *disc 1\02 Roving Gambler (acoustic).flac
+619ce82642c25dabe7b3cd2329344dbb *disc 1\03 The Times They Are A-Changin' (acoustic).flac
+88c4ec8029a0f32149cbbb7e37df3d92 *disc 1\04 Desolation Row (acoustic).flac
+d6ee1117de472755addceb0ed2546c15 *disc 1\05 Tomorrow Is A Long Time (acoustic).flac
+06f465c2152716c91537da6410cb5647 *disc 1\06 Tangled Up In Blue (acoustic).flac
+521bb8397f621c46015ed0aff12bb8d3 *disc 1\07 Ring Them Bells (acoustic).flac
+73f5395b0a888523d2690d0267df3131 *disc 1\08 Country Pie.flac
+62123f3000a96e5730b3557c9d9c2860 *disc 1\09 Things Have Changed.flac
+9b966a3c037820421ceaefac50f2354c *disc 1\10 I'll Be Your Baby Tonight.flac
+f65f30afbcafa1d8626224c276a976ce *disc 1\11 Tombstone Blues.flac
+27b475eed44589cd5007feafb717436f *disc 2\12 Can't Wait.flac
+c12f0110da279e6dc08077a50ef0e37f *disc 2\13 Leopard-Skin Pillbox Hat (Bob on harp).flac
+2896ed80adf164c7e6b19a900a678d4a *disc 2\14 Love Sick.flac
+7d7c9ea69ee0f9d4c0059948c07ebffa *disc 2\15 Like A Rolling Stone.flac
+dd3039a693c45c2c0c83a35ea3ef65c9 *disc 2\16 It Ain't Me, Babe (acoustic).flac
+ef635f7ddae3349968b6fb1c4bcdbf4a *disc 2\17 Not Fade Away.flac
+ba9099eb7d4e36f61cace568cea7e7e9 *disc 2\18 Blowin' In The Wind (acoustic).flac
+86653a656ef49a3cbb91cd51e8083722 *disc 2\19 Rainy Day Women #12 & 35.flac
+bead1246aa462c5f2a42f34fe4b86a81 *info\bd2000-05-12.txt
+0ebcaeff723c6f356648d259382f621a *Praise Be To Nero's Neptune! bd 2000-05-12.md5
+===================
+===================
+===================
+=== ffp for: bd00-05-12-d.flacf
+===================
+===================
+===================
+disc 1\01 Intro.flac:00000000000000000000000000000000
+disc 1\02 Roving Gambler (acoustic).flac:00000000000000000000000000000000
+disc 1\03 The Times They Are A-Changin' (acoustic).flac:00000000000000000000000000000000
+disc 1\04 Desolation Row (acoustic).flac:00000000000000000000000000000000
+disc 1\05 Tomorrow Is A Long Time (acoustic).flac:00000000000000000000000000000000
+disc 1\06 Tangled Up In Blue (acoustic).flac:00000000000000000000000000000000
+disc 1\07 Ring Them Bells (acoustic).flac:00000000000000000000000000000000
+disc 1\08 Country Pie.flac:00000000000000000000000000000000
+disc 1\09 Things Have Changed.flac:00000000000000000000000000000000
+disc 1\10 I'll Be Your Baby Tonight.flac:00000000000000000000000000000000
+disc 1\11 Tombstone Blues.flac:00000000000000000000000000000000
+disc 2\12 Can't Wait.flac:00000000000000000000000000000000
+disc 2\13 Leopard-Skin Pillbox Hat (Bob on harp).flac:00000000000000000000000000000000
+disc 2\14 Love Sick.flac:00000000000000000000000000000000
+disc 2\15 Like A Rolling Stone.flac:00000000000000000000000000000000
+disc 2\16 It Ain't Me, Babe (acoustic).flac:00000000000000000000000000000000
+disc 2\17 Not Fade Away.flac:00000000000000000000000000000000
+disc 2\18 Blowin' In The Wind (acoustic).flac:00000000000000000000000000000000
+disc 2\19 Rainy Day Women #12 & 35.flac:00000000000000000000000000000000
+===================
+===================
+===================
+=== shntool len for: bd00-05-12-d.flacf\disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:00.00             44 B   --s   --   ---xx   flac  50918.7273  01 Intro.flac
+     0:00.00             44 B   --s   --   ---xx   flac  564320.0000  02 Roving Gambler (acoustic).flac
+     0:00.00             44 B   --s   --   ---xx   flac  900635.9091  03 The Times They Are A-Changin' (acoustic).flac
+     0:00.00             44 B   --s   --   ---xx   flac  1242707.5000  04 Desolation Row (acoustic).flac
+     0:00.00             44 B   --s   --   ---xx   flac  544744.5455  05 Tomorrow Is A Long Time (acoustic).flac
+     0:00.00             44 B   --s   --   ---xx   flac  1155769.2727  06 Tangled Up In Blue (acoustic).flac
+     0:00.00             44 B   --s   --   ---xx   flac  703702.9545  07 Ring Them Bells (acoustic).flac
+     0:00.00             44 B   --s   --   ---xx   flac  401768.5000  08 Country Pie.flac
+     0:00.00             44 B   --s   --   ---xx   flac  807161.1591  09 Things Have Changed.flac
+     0:00.00             44 B   --s   --   ---xx   flac  835035.5682  10 I'll Be Your Baby Tonight.flac
+     0:00.00             44 B   --s   --   ---xx   flac  894175.7955  11 Tombstone Blues.flac
+     0:00.00            484 B                            736449.0847  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd00-05-12-d.flacf\disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:00.00             44 B   --s   --   ---xx   flac  700626.5682  12 Can't Wait.flac
+     0:00.00             44 B   --s   --   ---xx   flac  1311685.6591  13 Leopard-Skin Pillbox Hat (Bob on harp).flac
+     0:00.00             44 B   --s   --   ---xx   flac  773402.3636  14 Love Sick.flac
+     0:00.00             44 B   --s   --   ---xx   flac  1202721.7045  15 Like A Rolling Stone.flac
+     0:00.00             44 B   --s   --   ---xx   flac  982921.8636  16 It Ain't Me, Babe (acoustic).flac
+     0:00.00             44 B   --s   --   ---xx   flac  684031.2955  17 Not Fade Away.flac
+     0:00.00             44 B   --s   --   ---xx   flac  706382.2273  18 Blowin' In The Wind (acoustic).flac
+     0:00.00             44 B   --s   --   ---xx   flac  1009827.0682  19 Rainy Day Women #12 & 35.flac
+     0:00.00            352 B                            921449.8438  (8 files)
+===================
+===================
+===================

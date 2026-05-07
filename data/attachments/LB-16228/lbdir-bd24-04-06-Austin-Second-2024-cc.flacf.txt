@@ -1,0 +1,125 @@
+===================
+===================
+===================
+=== md5 for: bd24-04-06-Austin-Second-2024-cc.flacf
+===================
+===================
+===================
+552c7a484dcba8aefb5308912f4547ac *Bob Dylan_2024-04-06_Moody Theatre, Austin, TX.md5
+0baba3d7316d1d456372e31908985358 *Bob Dylan_2024-04-06_Moody Theatre, Austin, TX.txt
+55af93187f4a619ed1bbcfe308c67141 *Booklet 1.jpg
+e5862ae05f87642598588db52201bc73 *Booklet 2.jpg
+34ed164443e4e3328a0574b2f4e0c334 *Booklet 3.jpg
+44b990e3749d22c4742ab01fbb99ef8b *Booklet 4.jpg
+8fc4b7252eb5cfc92076c568bb7e227e *Booklet 5.jpg
+4de47f095aab4dcd2691524182e03a6b *Booklet 6.jpg
+0fd5d49fa918a809155bcea84b6872c8 *Booklet 7.jpg
+177019de6ba7b0c3b6d37c4c0b1cbc99 *Booklet cover.jpg
+e3c268fcfb2b318a8debef0e87ed44b8 *Disc 1\01 Intro.flac
+8522dcf653196b34542077a49aec2be3 *Disc 1\02 Watching The River Fl;ow.flac
+4829ad1d5b4f8feb79444a6d7b7cd5e3 *Disc 1\03 Most Likely You Go Your Way (And I'll Go Mine).flac
+5c73886365debca13635fedad01288db *Disc 1\04 I Contain Multitudes.flac
+eb1dbb8601b16b68ad52d6e75ba31faa *Disc 1\05 False Prophet.flac
+3a33ad03c7ababfc3116976c7e38c4b8 *Disc 1\06 When I Paint My Masterpiece.flac
+4cc3a1e107a1f24f3d06757019776354 *Disc 1\07 Black Rider.flac
+48f21b05cee84b63c69486003b21768e *Disc 1\08 Bob Introduces Jimmie Vaughan.flac
+4158b10bd90f1a0909476771a0bed7f0 *Disc 1\09 I'll Be Your Baby Tonight.flac
+e9ed7d03a93b2f89c285344951973cc9 *Disc 1\10 My Own Version Of You.flac
+da964aa160494a22e5dd2964de86526e *Disc 1\11 Crossing The Rubicon.flac
+23c931cdd198aab78314cf4a088efd0d *Disc 2\01 To Be Alone With You.flac
+232328a3c43d7aac30207fdd3a95a73a *Disc 2\02 Key West (Philosopher Pirate).flac
+eef4cb59ace39d3323a9aaf902690794 *Disc 2\03 Gotta Serve Somebody.flac
+0d98c46d1e0cc50abef7ebe75cc37818 *Disc 2\04 Walking By Myself.flac
+5510fb04aa705e8985fb90e3a362d160 *Disc 2\05 I've Made Up My Mind To Give Myself To You.flac
+4fa051536c273183aef075aad1eb7155 *Disc 2\06 Big River.flac
+2a7e30e7b3e217c5ed94a4609ec2120c *Disc 2\07 Mother Of Muses.flac
+b982e48d6d226175db9acedc21de0f39 *Disc 2\08 Goodbye Jimmie Reed.flac
+bb45626036af2874c8265269f6cd0c31 *Disc 2\09 Every Grain Of Sand.flac
+79d9a3ced5a6e25d7fe9aa6a4137a708 *Disc 2\10 Intro....flac
+7225a993bfa835fea0204afbbfe557ae *Disc 2\11 The Roving Blade.flac
+a77cebd108b63718640cf045253483c5 *Disc 2\12 On The Banks Of The Old Ponchartrain.flac
+eeb078264349f2e1465ba156da9b1543 *Disc 2\13 Jambalaya.flac
+43200c6b13bde25666d4cf3d2e317357 *Disc 2\14 Intro....flac
+5a0bb17d2b72763d5e87538ffcddd7ce *Disc 2\15 Watching The River Flow.flac
+b8f75c2a2cffda0db18848312bc60b14 *Front cover inner.jpg
+2f9595b9f82082231e251614df513418 *Front cover.jpg
+===================
+===================
+===================
+=== ffp for: bd24-04-06-Austin-Second-2024-cc.flacf
+===================
+===================
+===================
+Disc 1\01 Intro.flac:77c63fc58cb9b815a01c617f7992e0bc
+Disc 1\02 Watching The River Fl;ow.flac:b21ff6c2f0d6320957684e6ebbc81a1a
+Disc 1\03 Most Likely You Go Your Way (And I'll Go Mine).flac:6a6abba9192c9859227a27913e94b3ac
+Disc 1\04 I Contain Multitudes.flac:84fbc452f462afe9064e90d5ea689dd4
+Disc 1\05 False Prophet.flac:b31a577a4e362ac7963dd8976bc4ef44
+Disc 1\06 When I Paint My Masterpiece.flac:0e472458b1eb80a8aad352096beb853d
+Disc 1\07 Black Rider.flac:2cbc16a172c18ba6f8a81d74abe4a205
+Disc 1\08 Bob Introduces Jimmie Vaughan.flac:2c1e72b071069b8f33b23ea01e598825
+Disc 1\09 I'll Be Your Baby Tonight.flac:b275e550bcddda00f0ea7d3a894b0b48
+Disc 1\10 My Own Version Of You.flac:6b5da660f68df6ba14bebc17721ffccd
+Disc 1\11 Crossing The Rubicon.flac:815837741810a3deee97946569437b63
+Disc 2\01 To Be Alone With You.flac:c7d93fac6bd22e56d0a1417d462499e5
+Disc 2\02 Key West (Philosopher Pirate).flac:7b2943f232457b7193762d49897f260b
+Disc 2\03 Gotta Serve Somebody.flac:1f352daace3f5c7868c4b11baa5ba069
+Disc 2\04 Walking By Myself.flac:d8f717990bdff5aebc66d6bdbb16be0c
+Disc 2\05 I've Made Up My Mind To Give Myself To You.flac:2b936fe821dba4744c31806320f48302
+Disc 2\06 Big River.flac:a36142b9976551d8811758d021488fa5
+Disc 2\07 Mother Of Muses.flac:4d3cd4a357ab383bc816babb3540af4e
+Disc 2\08 Goodbye Jimmie Reed.flac:400288c0c92c41e4898dfcd6d200a20a
+Disc 2\09 Every Grain Of Sand.flac:3ae2c280176e0f9b6bc85c501ba6a2bb
+Disc 2\10 Intro....flac:807b67243a4178ca53edf0ed5ca877f2
+Disc 2\11 The Roving Blade.flac:6d5a7e0dab1b17b41d7184d72bffea2a
+Disc 2\12 On The Banks Of The Old Ponchartrain.flac:0b2f4fd1792c3f744f306145ba64bd7a
+Disc 2\13 Jambalaya.flac:3ecc3ffed2726f1b819e432fa9e2c8ca
+Disc 2\14 Intro....flac:d1944762db8f8a690cbfb12a496116c8
+Disc 2\15 Watching The River Flow.flac:7219aee9d479299970703997ec150c87
+===================
+===================
+===================
+=== shntool len for: bd24-04-06-Austin-Second-2024-cc.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.56        9304556 B   ---   --   ---xx   flac  0.5913  01 Intro.flac
+     4:08.10       43770764 B   ---   --   ---xx   flac  0.5790  02 Watching The River Fl;ow.flac
+     4:20.52       45986348 B   ---   --   ---xx   flac  0.5771  03 Most Likely You Go Your Way (And I'll Go Mine).flac
+     5:35.57       59228108 B   ---   --   ---xx   flac  0.5537  04 I Contain Multitudes.flac
+     6:53.40       72947324 B   ---   --   ---xx   flac  0.5732  05 False Prophet.flac
+     5:05.74       53976092 B   ---   --   ---xx   flac  0.5485  06 When I Paint My Masterpiece.flac
+     5:03.73       53620940 B   ---   --   ---xx   flac  0.5405  07 Black Rider.flac
+     0:10.70        1928684 B   ---   --   ---xx   flac  0.5994  08 Bob Introduces Jimmie Vaughan.flac
+     4:24.71       46736636 B   ---   --   ---xx   flac  0.5805  09 I'll Be Your Baby Tonight.flac
+     7:54.56       83745356 B   ---   --   ---xx   flac  0.5356  10 My Own Version Of You.flac
+     8:14.19       87186332 B   ---   --   ---xx   flac  0.5536  11 Crossing The Rubicon.flac
+    52:45.53      558431140 B                            0.5587  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd24-04-06-Austin-Second-2024-cc.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.49       61149692 B   ---   --   ---xx   flac  0.5874  01 To Be Alone With You.flac
+    10:22.11      109746716 B   ---   --   ---xx   flac  0.5370  02 Key West (Philosopher Pirate).flac
+     5:49.41       61660076 B   ---   --   ---xx   flac  0.5653  03 Gotta Serve Somebody.flac
+     3:16.21       34623836 B   ---   --   ---xx   flac  0.6059  04 Walking By Myself.flac
+     6:28.12       68471468 B   ---   --   ---xx   flac  0.5421  05 I've Made Up My Mind To Give Myself To You.flac
+     4:27.61       47242316 B   ---   --   ---xx   flac  0.5744  06 Big River.flac
+     5:15.59       55704812 B   ---   --   ---xx   flac  0.5529  07 Mother Of Muses.flac
+     6:04.26       64270796 B   ---   --   ---xx   flac  0.6006  08 Goodbye Jimmie Reed.flac
+     8:20.43       88301180 B   ---   --   ---xx   flac  0.5855  09 Every Grain Of Sand.flac
+     0:13.73        2464940 B   ---   --   ---xx   flac  0.5483  10 Intro....flac
+     4:01.03       42519500 B   ---   --   ---xx   flac  0.4924  11 The Roving Blade.flac
+     4:01.67       42670028 B   ---   --   ---xx   flac  0.5785  12 On The Banks Of The Old Ponchartrain.flac
+     3:55.21       41503436 B   ---   --   ---xx   flac  0.5445  13 Jambalaya.flac
+     0:41.54        7359452 B   ---   --   ---xx   flac  0.5821  14 Intro....flac
+     9:15.45       98007884 B   ---   --   ---xx   flac  0.6099  15 Watching The River Flow.flac
+    78:00.61      825696132 B                            0.5688  (15 files)
+===================
+===================
+===================

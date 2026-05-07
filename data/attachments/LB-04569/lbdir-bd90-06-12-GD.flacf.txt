@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-06-12-GD.flacf 
+=================== 
+=================== 
+=================== 
+eb0f375902656000dc27e33f6430321a  bd1990-06-12-LaCrosse-d1\Track01.flac
+bd9143cb2cecdfd4da022a0d4d57ed4a  bd1990-06-12-LaCrosse-d1\Track02.flac
+c1f6ee803f9d6ceb74e57f6f4be4661e  bd1990-06-12-LaCrosse-d1\Track03.flac
+887680806279c0e40b7a8a2b0c370a80  bd1990-06-12-LaCrosse-d1\Track04.flac
+dd8c5263e49e6adb69d66c010321bab0  bd1990-06-12-LaCrosse-d1\Track05.flac
+7bbdaf9773fdfcbf9de520d9208db062  bd1990-06-12-LaCrosse-d1\Track06.flac
+68c4ef35f528664e69c7adc7c7196288  bd1990-06-12-LaCrosse-d1\Track07.flac
+682277e4b31fe8f1c83280f50ee63e33  bd1990-06-12-LaCrosse-d1\Track08.flac
+7f39adc552c3f5f0774f33f1754e9bf0  bd1990-06-12-LaCrosse-d1\Track09.flac
+ebb011f8701b3f84d1c65adc110eb3fd  bd1990-06-12-LaCrosse-d2\Track01.flac
+7f145a118b01b7ed631e29acfd5cb36f  bd1990-06-12-LaCrosse-d2\Track02.flac
+351878d70c5421f55206a11c073cea1c  bd1990-06-12-LaCrosse-d2\Track03.flac
+bca6910ce94c4b9649a111ecb884fc69  bd1990-06-12-LaCrosse-d2\Track04.flac
+31929e41cca6cfd8f91754ec45b6e35c  bd1990-06-12-LaCrosse-d2\Track05.flac
+fb33d1020abc10865a69c7281335b06c  bd1990-06-12-LaCrosse-d2\Track06.flac
+4934135feaf300b27e09f1e1c7a781cf  bd1990-06-12-LaCrosse-d2\Track07.flac
+d56a4e95dc1c53efd73ac4523c40863f  bd1990-06-12-LaCrosse-d2\Track08.flac
+b64c0223ad31fb527db08db6a9ab2d31  bd1990-06-12-LaCrosse-d2\Track09.flac
+15c6afb26a2a794030992ff7f6d160c7  bd1990-06-12-LaCrosse-d2\Track10.flac
+4ba3312f451c2049de0bc0fa4fae1928  bd1990-06-12-LaCrosse-GD.txt
+211c7697bb695ce604406af9a4690199  bd90-06-12-GD-LB-4569.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-12-GD.flacf\bd1990-06-12-LaCrosse-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:df0e30924d4003d475755cafaef1630c
+Track02.flac:e5ac33cef922c6a1cb4ea1b902bc149b
+Track03.flac:2d151691be2ef0d8d95ecf11a2a87afa
+Track04.flac:5331749012a95b3b531a902617110d5f
+Track05.flac:dfa9170460e38f7efa0db903726f8b82
+Track06.flac:9f940911311954deb86dfdc2bcecc381
+Track07.flac:8df5fb8083c048ecfaf7dfc075f2e284
+Track08.flac:7e36b520d0deaa93b64350ef6922d5d0
+Track09.flac:d6eea73d3a3edf1e71a87f417896d1f7
+Track10.flac:5b518a3e4b89cc78284c920cd78cca04
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-12-GD.flacf\bd1990-06-12-LaCrosse-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:157482f868857ba1ff97854666e3609b
+Track02.flac:3901abbdc6dd96f406983b96e7cd69c0
+Track03.flac:e01a76475f61dcbe33a7136976fd71b7
+Track04.flac:33945dea08c8c5c63055a9acdb669c5a
+Track05.flac:19745995cb9e8a0c59cb28c3983f6681
+Track06.flac:68a7603c3bc1d72edc921a66a1bac651
+Track07.flac:dd5d7c9b07029bef3f30d6e86e98fc62
+Track08.flac:3920ffc59d577ce203e4cf0165bf8adb
+Track09.flac:7f90f4a4d82e267f1f0425b068cf63d6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-12-GD.flacf\bd1990-06-12-LaCrosse-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.19       43791932 B   ---   --   ---xx   flac  0.4186  Track01.flac
+     6:34.58       69638060 B   ---   --   ---xx   flac  0.4290  Track02.flac
+     4:10.32       44175308 B   ---   --   ---xx   flac  0.4454  Track03.flac
+     4:40.26       49453196 B   ---   --   ---xx   flac  0.4436  Track04.flac
+     3:46.51       39986396 B   ---   --   ---xx   flac  0.4212  Track05.flac
+     3:33.63       37721420 B   ---   --   ---xx   flac  0.4642  Track06.flac
+     3:50.07       40588508 B   ---   --   ---xx   flac  0.4427  Track07.flac
+     6:12.51       65740796 B   ---   --   ---xx   flac  0.4598  Track08.flac
+     5:50.02       61744748 B   ---   --   ---xx   flac  0.5109  Track09.flac
+     5:11.28       54926300 B   ---   --   ---xx   flac  0.5272  Track10.flac
+    47:58.37      507766664 B                            0.4586  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-12-GD.flacf\bd1990-06-12-LaCrosse-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.60       44064764 B   ---   --   ---xx   flac  0.4545  Track01.flac
+     4:01.41       42608876 B   ---   --   ---xx   flac  0.4601  Track02.flac
+     6:25.70       68078684 B   ---   --   ---xx   flac  0.4720  Track03.flac
+     5:39.16       59837276 B   ---   --   ---xx   flac  0.4446  Track04.flac
+     4:12.60       44593964 B   ---   --   ---xx   flac  0.4809  Track05.flac
+     5:28.66       58014476 B   ---   --   ---xx   flac  0.4659  Track06.flac
+     7:09.37       75762668 B   ---   --   ---xx   flac  0.4315  Track07.flac
+     5:15.37       55653068 B   ---   --   ---xx   flac  0.4350  Track08.flac
+     6:06.71       64729436 B   ---   --   ---xx   flac  0.4308  Track09.flac
+    48:30.08      513343212 B                            0.4512  (9 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,57 @@
+e646c77abe89793c545f13597cfc15bb  aTrack01.flac
+b4a9bfc6984a9f1a03010043ad3397f2  aTrack02.flac
+d229d693e9c1bdd5fab89de215c4ad98  aTrack03.flac
+8ab20a6a9cc7aedfb643a8451f897c3c  aTrack04.flac
+f4805c43e40513b441ea16fb4e3d413c  aTrack05.flac
+870deccf41f4c6f677a2015671c7a3be  aTrack06.flac
+eb6d583b37e13201e9fee244e8b111ab  aTrack07.flac
+3c73cf1164e0c5c5e2c1969a1ea71ee0  aTrack08.flac
+349fdf2c36f59af72a2219e3a7488568  aTrack09.flac
+c10b775d0d47365cb60635c1fe95f4fb  aTrack10.flac
+3e09921b5229c7faa3ea8018128f5516  aTrack11.flac
+bd1c3dcf833f13eeb6af33a4dd382c88  aTrack12.flac
+c5d0d15461d52717f9c9f3c8a56390f4  aTrack13.flac
+fb2334445eb195b891ab1e06da918746  aTrack14.flac
+dca6b8f37a09acbe96ac8ea96ea2f17e  aTrack15.flac
+5c152473c0f36f59aa6a21cdf500e933  bd66-01-Bob-Fass-interview-LB-3527.txt
+7dd87b43cfbfc3748043cf70d7d7dfde  bd92-06-Kaatskill-Serenade.flacf\bd92-06-Kaatskill-Serenade-LB-3542.txt
+bd9601fb9117c77c738d506828190796  bd92-06-Kaatskill-Serenade.flacf\Bob Dylan - Bromberg Session.md5
+5b39650174a5db454c905d67612c0f98  bd92-06-Kaatskill-Serenade.flacf\BobDylanKaatskillSerenade.txt
+35fe90a2bd823de1b485e8503cc8200c  bd92-06-Kaatskill-Serenade.flacf\DylanKaatskillBack.jpg
+54fd5bc0bcc4120eb00c24ed135ed3f3  bd92-06-Kaatskill-Serenade.flacf\DylanKaatskillFront.jpg
+35caeb4835cf39ff1998f779d8c43e8a  bd92-06-Kaatskill-Serenade.flacf\DylanKaatskillFrontInside.jpg
+7d4fb018219352e589d7ecc82af87a55  bd92-06-Kaatskill-Serenade.flacf\Track01.flac
+f9b288b6fecbbae8c889623d18195b0e  bd92-06-Kaatskill-Serenade.flacf\Track02.flac
+e40ad7bb17a9483f8b8ad68ed3038cf2  bd92-06-Kaatskill-Serenade.flacf\Track03.flac
+731695ca348a158854d26f58740493c8  bd92-06-Kaatskill-Serenade.flacf\Track04.flac
+55a605d24d46f9425891f495e0721653  bTrack01.flac
+d1c37a9385a5a5bd4537c0ffb412aaaf  bTrack02.flac
+3bde44a1e33a433eefd3c37506d90391  bTrack03.flac
+59bce6da148e2417bacdf82f274ab476  bTrack04.flac
+16b4c07bd047a46625354266712f2c6b  Fass66.txt
+0b5983278eff4ca2cd3c8b1380265876  md5.md5
+d41d8cd98f00b204e9800998ecf8427e  md5.txt
+
+aTrack01.flac:0d7f89550bfdb88e889885e00eff6e8e
+aTrack02.flac:c0bb5fb5e5a3f349cd4c818b7cb7b49a
+aTrack03.flac:1f4b463ba8ef4c1952f2e2f3096dff69
+aTrack04.flac:c40892b5690c488a7d36a3d9eb7671ad
+aTrack05.flac:dbd7b58c75396045adcccc4ec5d9521a
+aTrack06.flac:649ff6f63f3efd525f9609855712220b
+aTrack07.flac:da994514e07efb96fdce8c0ba072de96
+aTrack08.flac:b64ba86a2c5d77afebf836b783dbfcf7
+aTrack09.flac:19589e64da430f861b95c33a6375d9c1
+aTrack10.flac:a3629fafb281595266166c3aa2904121
+aTrack11.flac:4bcfe75ed9ec2f6533fa0c74b9094df9
+aTrack12.flac:9e72eb966f88e94e14222508df8f34ff
+aTrack13.flac:d874181bbe515cee7d6ad9b205085f08
+aTrack14.flac:614c2eb720646993eec7d70cd963aeb6
+aTrack15.flac:536f6e1b24952fd1431af0204689ffae
+bTrack01.flac:a6a5316ed4f71a89eae8c475de1fd277
+bTrack02.flac:278aee2b0c124ca3a6378caf677c934c
+bTrack03.flac:706cdb6aa30fda276fb228a8f2f4f350
+bTrack04.flac:ac356917bcc7fe92fc2a65bfcea01689
+bd92-06-Kaatskill-Serenade.flacf\Track01.flac:c67abec121bc16ef6937fd7513e4626d
+bd92-06-Kaatskill-Serenade.flacf\Track02.flac:2507999893f742f611e33a8666f38b25
+bd92-06-Kaatskill-Serenade.flacf\Track03.flac:dc32e686eaba5e730445a13ac6f00f8b
+bd92-06-Kaatskill-Serenade.flacf\Track04.flac:4d761e0c470bd60ba160c48d8104c914

@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-05-schubert-asm-a.flacf 
+=================== 
+=================== 
+=================== 
+c9ecccecb41284b83577bd80395ddf39  101 Rainy Day Women # 12 & 35.flac
+28df0f83838322a018ad4f4ca1520730  102 Like A Rolling Stone.flac
+8e495eccbb3c6f230152930b28a0557a  103 Maggie's Farm.flac
+1e513616096ef843a5d9ba53cfc628e9  104 I'll Be Your Baby Tonight.flac
+8ddbbaf2122ca47aa33ca526d034810a  105 Dead Man, Dead Man.flac
+993207d71fbbc4bd1bed00b7560dfcf3  106 The Ballad Of Frankie Lee And Judas Priest.flac
+46f04556abaca2e2a596cc2ad3f759b3  107 Seeing The Real You At Last.flac
+fbc373d1e0fce9f540fd19f9589e61f2  108 Watching The River Flow.flac
+4b0948635d84642435171f6eb5c1c629  109 Simple Twist Of Fate.flac
+69e0ad9530f9c6dc2f75cb5ef1567751  110 Tomorrow Is A Long Time.flac
+beeceaa1c5d9f16fd8a5676ba98d12aa  111 Ballad Of A Thin Man.flac
+5ae86f7bd7938f0acab23fcbfc671b5f  112 Shot Of Love.flac
+8c18f5b33d6e2a7a5d9695cd3be28ab7  113 Trust Yourself.flac
+bb6a5258365918ecc4bd44416e346f30  114 Blowin' In The Wind.flac
+4e2fe510e0c7f011c308971ee3af057d  1987-10-05 Locarno Schubert asm info.txt
+0a180d44ff0a2fa1a7668c3e61b8ee2a  1987-10-05locarno+asm_flacs.md5
+fad6b47e4cf31f85a324ca22e52c19cf  1987-10-05locarno+asm_wavs.md5
+122dc81b024b09550edd5a55aa86a43e  bd87-10-05-schubert-asm-a-LB-4389.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-05-schubert-asm-a.flacf 
+=================== 
+=================== 
+=================== 
+101 Rainy Day Women # 12 & 35.flac:56476907da0eb07c63b6ccb3093c2b11
+102 Like A Rolling Stone.flac:98f61c45020f6867780cb5c8a34b563a
+103 Maggie's Farm.flac:bc79f70298d9ad062a4e5c5f9b3bc9e5
+104 I'll Be Your Baby Tonight.flac:a62db4626a98b8e1a1ebd3ae52642edf
+105 Dead Man, Dead Man.flac:6514b0596fa054f1aec040d9f078784c
+106 The Ballad Of Frankie Lee And Judas Priest.flac:177a09bd145655b20f2b57c6799d36de
+107 Seeing The Real You At Last.flac:c19a93e3ff383394db0db9f5bbf08f03
+108 Watching The River Flow.flac:e3228614c8bc628c1bfc6b5b198f57ad
+109 Simple Twist Of Fate.flac:a9c13ed0f8ae05d151cb95b748d526cd
+110 Tomorrow Is A Long Time.flac:338ab12d2353bf97d461c54d628d8a78
+111 Ballad Of A Thin Man.flac:c5adb106bcb9db9540a001b332c37011
+112 Shot Of Love.flac:81e23c67fc21fdf2a44ecba24a261b45
+113 Trust Yourself.flac:4447b46ad14d462240dfe3b370c33b50
+114 Blowin' In The Wind.flac:5fe1e94df70ac850668ad46a46b91a74
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-05-schubert-asm-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:33.71       37740236 B   ---   --   ---xx   flac  0.6847  101 Rainy Day Women # 12 & 35.flac
+     6:00.21       63553436 B   ---   --   ---xx   flac  0.6742  102 Like A Rolling Stone.flac
+     4:22.74       46390892 B   ---   --   ---xx   flac  0.6746  103 Maggie's Farm.flac
+     5:19.63       56419820 B   ---   --   ---xx   flac  0.6869  104 I'll Be Your Baby Tonight.flac
+     4:26.18       46964780 B   ---   --   ---xx   flac  0.6983  105 Dead Man, Dead Man.flac
+     5:43.56       60636956 B   ---   --   ---xx   flac  0.6399  106 The Ballad Of Frankie Lee And Judas Priest.flac
+     4:38.06       49053356 B   ---   --   ---xx   flac  0.7027  107 Seeing The Real You At Last.flac
+     3:58.42       42082028 B   ---   --   ---xx   flac  0.6923  108 Watching The River Flow.flac
+     5:34.70       59082284 B   ---   --   ---xx   flac  0.6152  109 Simple Twist Of Fate.flac
+     4:13.10       44652764 B   ---   --   ---xx   flac  0.5944  110 Tomorrow Is A Long Time.flac
+     5:53.39       62360972 B   ---   --   ---xx   flac  0.6954  111 Ballad Of A Thin Man.flac
+     7:11.61       76171916 B   ---   --   ---xx   flac  0.6914  112 Shot Of Love.flac
+     3:20.74       35454092 B   ---   --   ---xx   flac  0.6814  113 Trust Yourself.flac
+     5:31.73       58560140 B   ---   --   ---xx   flac  0.6613  114 Blowin' In The Wind.flac
+    69:50.03      739123672 B                            0.6707  (14 files)
+=================== 
+=================== 
+=================== 

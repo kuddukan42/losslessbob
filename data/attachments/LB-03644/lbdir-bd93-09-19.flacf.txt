@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-19.flacf 
+=================== 
+=================== 
+=================== 
+c5d0f3ef3f4a17528dec15367be792dd  bd93-09-19-LB-3644.txt
+723b98dcad491707e0578dd74d7ebaf2  D1\01 Track01.flac
+cd6718a9b81b5414d31856d09d3f5afe  D1\02 Track02.flac
+d9d0beec41f742c0c569b04c1df8903e  D1\03 Track03.flac
+2107c910ac13b9e962f1fe6a05751cd7  D1\04 Track04.flac
+0e8b3dbf306d8348bde6aa75533a00ae  D1\05 Track05.flac
+ae51351b1a101c0a9147f3e8a1a4a1c4  D1\06 Track06.flac
+cbb540a5c4fd95cb457645dd5fe3f41d  D1\07 Track07.flac
+19bebc4441b00859086c062a7da3380d  D2\01 Track01.flac
+1175d2b1bcdef359f34e09c43ed85e6b  D2\02 Track02.flac
+1aaadc37418faf2363700a5b96959a2b  D2\03 Track03.flac
+446c4b13fb94eefcce71136a94f56e31  D2\04 Track04.flac
+9e8044a841e3662f2454edba370b2d77  D2\05 Track05.flac
+4686ee2dca4e402d58fd5d357a31a410  D2\06 Track06.flac
+42f2cd020777bcb06e3ad810dd5a6bde  fingerprint.ffpD1.txt
+48267200ded53ab9e2098752f4d87c5d  fingerprint.ffpD2.txt
+1f35c183acda00f3fd46befea2a7472d  info.txt
+0b8abdcb321011eac719d2acc6b9e96e  Raleigh190993.Jpg
+0e5077fdacf285d38b332e7bd3ddf93f  Raleigh_190993.Jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-19.flacf\D1 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:700f00f0412b475e7f474d6b3ac161a3
+02 Track02.flac:78b20801545a5abe2d87eacacef7c6cf
+03 Track03.flac:0293e8adfe9606b921e5f1ca25dd8418
+04 Track04.flac:3e3ef72f2d2731d96d95308a28b954d0
+05 Track05.flac:6c8b76a80ab6db7ed0ce8fa22846ea2f
+06 Track06.flac:5aff531b4750edf4669b0bf4dfe421d0
+07 Track07.flac:ebb12eca6c93e86fb167fe285288a963
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-19.flacf\D2 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:a9f0efc47afcadf3b81d802b84e6b492
+02 Track02.flac:747f87fbb8e73186c58544b3ed06e950
+03 Track03.flac:ca6427e69497247e91e19bb139b2ba0a
+04 Track04.flac:79e86c0cc6e69fb48c191c4d087079c5
+05 Track05.flac:c4596797162cb679863dceccb3e90582
+06 Track06.flac:aaa1ecf2a28d20001a6bd0c8e233abd5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-19.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:34.08       37768460 B   ---   --   ---xx   flac  0.6269  01 Track01.flac
+     7:32.32       79808108 B   ---   --   ---xx   flac  0.6261  02 Track02.flac
+     5:39.36       59884316 B   ---   --   ---xx   flac  0.6263  03 Track03.flac
+     7:09.23       75729740 B   ---   --   ---xx   flac  0.6243  04 Track04.flac
+     8:52.27       93908348 B   ---   --   ---xx   flac  0.6267  05 Track05.flac
+     7:00.15       74123324 B   ---   --   ---xx   flac  0.6364  06 Track06.flac
+     5:39.06       59813756 B   ---   --   ---xx   flac  0.6108  07 Track07.flac
+    45:26.72      481036052 B                            0.6257  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-19.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:30.03       79387100 B   ---   --   ---xx   flac  0.6271  01 Track01.flac
+     9:34.51      101373596 B   ---   --   ---xx   flac  0.6279  02 Track02.flac
+     6:55.22       73257788 B   ---   --   ---xx   flac  0.6441  03 Track03.flac
+     6:15.34       66230012 B   ---   --   ---xx   flac  0.6558  04 Track04.flac
+     6:58.26       73796396 B   ---   --   ---xx   flac  0.6445  05 Track05.flac
+     8:45.71       92777036 B   ---   --   ---xx   flac  0.6409  06 Track06.flac
+    45:59.57      486821928 B                            0.6390  (6 files)
+=================== 
+=================== 
+=================== 

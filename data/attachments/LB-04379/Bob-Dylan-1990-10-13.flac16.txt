@@ -1,0 +1,53 @@
+Bob Dylan 
+Eisenhower Hall Theater
+West Point, NY  
+13 October 1990
+
+CD1
+1.	Tangled Up In Blue* 
+2.	I Want You*
+3.	Man In The Long Black Coat  
+4.	Masters Of War  
+5.	Stuck Inside Of Mobile With The Memphis Blues Again  
+6.	Gotta Serve Somebody  
+7.	It's Alright Ma (I'm Only Bleeding)  
+8.	Gates Of Eden  
+9.	Don't Think Twice It's All Right  
+10.	Trail Of The Buffalo  
+
+CD2
+1.	Under The Red Sky  
+2.	Wiggle Wiggle  
+3.	I'll Remember You  
+4.	All Along The Watchtower  
+5.	I Shall Be Released  
+6.	Like A Rolling Stone  
+7.	E: Blowin' In The Wind  
+8.	Highway 61 Revisited  
+
+
+Taped by Kevin Hall except the first two tracks patched.
+* Patches taken from a first generation tape received from the taper shortly after the show.
+
+
+Sony WM-D6C Professional Walkman recorder
+2 Beyer M-700 microphones
+Maxell metal cassettes
+
+
+Mastered and FLAC'ed by Carl Morstadt (dantalion8@yahoo.com)
+	
+Master Cassette -> 
+Sony K707ES cassette deck -> 
+M-Audio Firewire Audiophile 2496 -> 
+CDWAV 24-bit/96-KHz wav files ->
+Goldwave (normalizing and crossfades) ->
+CD Wave (track breaks) 
+
+dBpowerAMP Audio Converter (24-bit/96-KHz wav files converted to 
+  16-bit/44.1 KHz wav files) ->
+FLAC Front End (with sector boundary alignment)
+
+No EQ'ing.
+
+A 24-bit/96-KHz flac24 version of this recording is also available.

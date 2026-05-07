@@ -1,0 +1,117 @@
+===================
+===================
+===================
+=== ffp.txt
+===================
+===================
+===================
+292c632a953aa1e8030a2dfb81b483c1 *01 Track01.flac
+95b7ca2a5b6f5c29165ad4bae1533b87 *02 Track02.flac
+c04541b8b5de46d77635b0841c541617 *03 Track03.flac
+c13ff94f6b85d491cc7249738832c2ed *04 Track04.flac
+b2419544997950608324c8762d132f7f *05 Track05.flac
+0b2d1bd6993f4de6e424905aa46377af *06 Track06.flac
+c00d714da0e8a2c62beafadc53cb9db0 *07 Track07.flac
+662241485009ab87a06169ff9355e817 *08 Track08.flac
+8eca4a4a54cc8dd36ecddfec8695914c *09 Track09.flac
+a35e3d045680460c44a3787099a99bf7 *10 Track10.flac
+9a41fde6dded0d2de1d30bafc3ee67fa *11 Track11.flac
+
+9ab2f73acbb82a087e31e7c612759d8d *01 Track01.flac
+5aa2ea43e3d6cd3d86abde23efb1b319 *02 Track02.flac
+3214edf081e7f259ccede5fba465246b *03 Track03.flac
+a302e2e58aaede7b8e979e7101e1a5c9 *04 Track04.flac
+3efbe4782141bd68952d14ba1bbdb95f *05 Track05.flac
+b4ac7a2f9f4e6e28a033461ee6cf801d *06 Track06.flac
+dd4005f00a5c5ba9ae334c2e2359167b *07 Track07.flac
+d9c82d8e4765c361c94f2e55972e7700 *08 Track08.flac
+
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+
+Aug 21, 2002
+
+Omaha, NE
+
+Omaha Civic Arena
+
+
+
+
+
+A Voice From On High - 
+
+Seor (Tales Of Yankee Power) - 
+
+It's Alright, Ma (I'm Only Bleeding) - 
+
+Girl From The North Country - 
+
+Solid Rock - 
+
+Just Like A Woman - 
+
+Lonesome Day Blues - 
+
+High Water (For Charley Patton) - 
+
+Don't Think Twice, It's All Right - 
+
+Masters Of War - 
+
+One Too Many Mornings - 
+
+Summer Days - 
+
+Standing In The Doorway - 
+
+Cold Irons Bound - 
+
+Rainy Day Women #12 & 35 - 
+
+Like A Rolling Stone - 
+
+Knockin' On Heaven's Door - 
+
+All Along The Watchtower 
+===================
+===================
+===================
+=== disc 1.md5
+===================
+===================
+===================
+292c632a953aa1e8030a2dfb81b483c1 *01 Track01.flac
+95b7ca2a5b6f5c29165ad4bae1533b87 *02 Track02.flac
+c04541b8b5de46d77635b0841c541617 *03 Track03.flac
+c13ff94f6b85d491cc7249738832c2ed *04 Track04.flac
+b2419544997950608324c8762d132f7f *05 Track05.flac
+0b2d1bd6993f4de6e424905aa46377af *06 Track06.flac
+c00d714da0e8a2c62beafadc53cb9db0 *07 Track07.flac
+662241485009ab87a06169ff9355e817 *08 Track08.flac
+8eca4a4a54cc8dd36ecddfec8695914c *09 Track09.flac
+a35e3d045680460c44a3787099a99bf7 *10 Track10.flac
+9a41fde6dded0d2de1d30bafc3ee67fa *11 Track11.flac
+===================
+===================
+===================
+=== disc 2.md5
+===================
+===================
+===================
+9ab2f73acbb82a087e31e7c612759d8d *01 Track01.flac
+5aa2ea43e3d6cd3d86abde23efb1b319 *02 Track02.flac
+3214edf081e7f259ccede5fba465246b *03 Track03.flac
+a302e2e58aaede7b8e979e7101e1a5c9 *04 Track04.flac
+3efbe4782141bd68952d14ba1bbdb95f *05 Track05.flac
+b4ac7a2f9f4e6e28a033461ee6cf801d *06 Track06.flac
+dd4005f00a5c5ba9ae334c2e2359167b *07 Track07.flac
+d9c82d8e4765c361c94f2e55972e7700 *08 Track08.flac
+===================
+===================
+===================

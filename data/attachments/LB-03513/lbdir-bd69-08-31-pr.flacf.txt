@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-08-31-pr.flacf 
+=================== 
+=================== 
+=================== 
+2711ae377cfad25116035e97e7b4568d  bd69-08-31-pr-LB-3513.txt
+b0b302c53bd75107042feddc22572c36  BobDylanIOW.md5
+10ba70b88bbd34581f0d6c69a401021c  BobDylanIOW.txt
+13af3f856246c77684b0ac98c279e37e  DylanIOWBack.jpg
+b7c7ab8bd9069da1a662727b31f9d234  DylanIOWFront.jpg
+9840304c3b62ae7a6d61bc42be0f289c  Track01.flac
+9d84d81d3d504fe489b0df4c73ea7295  Track02.flac
+7852292d1334bd1f9672094b77872a7d  Track03.flac
+be1fdf8dbfab364215a0e6fa8f88c80c  Track04.flac
+e437a648f9c411ff6d9175a047d0e726  Track05.flac
+c8b815392475025405e4e1dfb0126d08  Track06.flac
+d3972dabf89da7fdd4a39111dec0c02b  Track07.flac
+c80bf5425af8e3c896f33bc4337cc985  Track08.flac
+cb5a916ce59840237444c26171807951  Track09.flac
+41a65cbc025033acc0477e5488d50e8a  Track10.flac
+fed19cd2da078d8c2399cd29ad0522dd  Track11.flac
+3eab435da624a75be7671dc22dffdd4d  Track12.flac
+0eb1483c579966324f8deef04a9a0596  Track13.flac
+e600e49d0e0fe118b57c689e2e576253  Track14.flac
+0e66e05d132eaad54908949506a77724  Track15.flac
+50828b13bfb3e8d7b6968b52fb1595cf  Track16.flac
+f40d0ab9258620760b9d3791377247f4  Track17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-08-31-pr.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:803433d8053ff12f774f5b0f77200f37
+Track02.flac:d5497674201c54bc39f4c48389250111
+Track03.flac:0e6b65e6140a5ee590036c520182c74f
+Track04.flac:4676b843481edfaac7be5cd2211b558a
+Track05.flac:f66f4536ddb503d054c2c5dad4d505e0
+Track06.flac:e187cc292a1e0735fdad83c01f8c0709
+Track07.flac:34373f41548738e16374724c02e29fef
+Track08.flac:5dec9703a606737494857772198a3d58
+Track09.flac:32a5981c87391cbc640d8af5fdbdce42
+Track10.flac:98f907f21d453862f182426ffaf0ae1c
+Track11.flac:e8c6a51c65040c8cebc48433ec532c10
+Track12.flac:17b34fba269ee78702bdee2ab1e58956
+Track13.flac:fe94602007d4ba62cec3f5e6788b3952
+Track14.flac:8e02f0779f6935597ebb7d3fa5b04618
+Track15.flac:8e2d6687d71e6e5c7f59220024ede176
+Track16.flac:887c452c3829166ccdcdb4a1b2f3e512
+Track17.flac:255554b7ba82cb4b20c95445f87f8f98
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-08-31-pr.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:33.56       27120956 B   ---   --   ---xx   flac  0.5041  Track01.flac
+     3:00.58       31888460 B   ---   --   ---xx   flac  0.4527  Track02.flac
+     3:46.67       40024028 B   ---   --   ---xx   flac  0.5324  Track03.flac
+     3:03.47       32391788 B   ---   --   ---xx   flac  0.4123  Track04.flac
+     3:22.39       35724572 B   ---   --   ---xx   flac  0.4420  Track05.flac
+     2:08.69       22741532 B   ---   --   ---xx   flac  0.4329  Track06.flac
+     2:48.12       29663468 B   ---   --   ---xx   flac  0.4548  Track07.flac
+     3:48.66       40374476 B   ---   --   ---xx   flac  0.4951  Track08.flac
+     3:32.35       37479164 B   ---   --   ---xx   flac  0.5002  Track09.flac
+     3:19.70       35268284 B   ---   --   ---xx   flac  0.5571  Track10.flac
+     2:23.32       25300508 B   ---   --   ---xx   flac  0.5102  Track11.flac
+     3:56.56       41762156 B   ---   --   ---xx   flac  0.4858  Track12.flac
+     5:17.49       56034092 B   ---   --   ---xx   flac  0.5053  Track13.flac
+     3:19.25       35162444 B   ---   --   ---xx   flac  0.4851  Track14.flac
+     2:42.13       28607420 B   ---   --   ---xx   flac  0.5067  Track15.flac
+     3:16.48       34688044 B   -b-   --   ---xx   flac  0.4613  Track16.flac
+     2:45.72       29275388 B   ---   --   ---xx   flac  0.5072  Track17.flac
+    55:07.64      583506780 B                            0.4871  (17 files)
+=================== 
+=================== 
+=================== 

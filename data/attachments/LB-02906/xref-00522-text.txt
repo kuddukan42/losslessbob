@@ -1,0 +1,223 @@
+===================
+===================
+===================
+=== 1997-04-10 Sullivan Gym, University of Southern Maine, Portland, Maine, USA [supposedly Holy Grail].md5
+===================
+===================
+===================
+2e2097c9497783279f6b44d648cad8ec *CD1\01 Crash on the Levee (Down in the flood).flac
+1c5edefb05c8cbb71e9c7c8297b702a1 *CD1\02 Seor (Tales of Yankee Power).flac
+179bbb7db1537b470c8a9c95df01c899 *CD1\03 All along the watchtower.flac
+7b7486b66c4c1ee9dba70a87995d64f2 *CD1\04 You ain't goin' nowhere.flac
+00b5ec98d8d6edcb1a477aa19b81b63f *CD1\05 Watching the river flow.flac
+ccdcb27f4a8a97cd447969e6e089c383 *CD1\06 Silvio.flac
+dbd8767c4d0a2739581a9f2c84e33231 *CD1\07 Friend of the Devil.flac
+2da51c3fc4ae6d659cd695ba9846b5e7 *CD1\08 To Ramona.flac
+7ed35f3762b4db4fa34b17eb6ea9e6ae *CD1\09 Tangled up in blue.flac
+984230983bfa49dc878e5d154fbf73fa *CD1\CD1.shntool_len.txt
+b5eabbacc88fefa4ed082c2e43def6e1 *CD1\ffp_CD1.ffp
+b5eabbacc88fefa4ed082c2e43def6e1 *CD1\ffp_CD1.txt
+2f0b6292078a10d6189516fd4d9709a0 *CD2\10 Stuck inside of Mobile with the Memphis blues again.flac
+bc6e9e22090330ce4ff53c66fa1f3338 *CD2\11 Tears of rage.flac
+30d64d2f2e34cec7dcfb3de1226f1889 *CD2\12 Highway 61 revisited.flac
+c1a8966f29f76b46d92736c2519ffa0d *CD2\13 Like a rolling stone.flac
+7602254c690bcc12d73a321ca702dda9 *CD2\14 A hard rain's a-gonna fall.flac
+6b290e2398aedb603c40e8c1bf9a109e *CD2\15 Rainy day women # 12 & 35.flac
+6107c2beabdaa3d1de436c286369e119 *CD2\CD2.shntool_len.txt
+b98b377ccc96fca727b6020aad4a7ca3 *CD2\ffp_CD2.ffp
+b98b377ccc96fca727b6020aad4a7ca3 *CD2\ffp_CD2.txt
+ed7d18590375d8c337f0abd7384882f8 *Info\1997-04-10 Sullivan Gym, University of Southern Maine, Portland, Maine, USA [supposedly Holy Grail].txt
+===================
+===================
+===================
+=== CD1.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.10       50473964 B   ---   --   ---xx   flac  0.7746  01 Crash on the Levee (Down in the flood).flac
+     5:48.73       61558940 B   ---   --   ---xx   flac  0.7542  02 Seor (Tales of Yankee Power).flac
+     5:44.36       60766316 B   ---   --   ---xx   flac  0.8081  03 All along the watchtower.flac
+     4:36.46       48794636 B   ---   --   ---xx   flac  0.7639  04 You ain't goin' nowhere.flac
+     6:37.10       70054364 B   ---   --   ---xx   flac  0.7536  05 Watching the river flow.flac
+     9:09.71       97010636 B   ---   --   ---xx   flac  0.7757  06 Silvio.flac
+     7:47.66       82534076 B   ---   --   ---xx   flac  0.7751  07 Friend of the Devil.flac
+     6:07.74       64912892 B   ---   --   ---xx   flac  0.7640  08 To Ramona.flac
+     8:51.59       93807212 B   ---   --   ---xx   flac  0.8036  09 Tangled up in blue.flac
+    59:30.70      629913036 B                            0.7762  (9 files)
+===================
+===================
+===================
+=== ffp_CD1.ffp
+===================
+===================
+===================
+01 Crash on the Levee (Down in the flood).flac:368e334340c6640a837291cafa850133
+02 Seor (Tales of Yankee Power).flac:df4fa074e1e52dbc6241e413920caf68
+03 All along the watchtower.flac:8735a74c84d84360fb969dcfe82579bc
+04 You ain't goin' nowhere.flac:54931d3153d7ff4448ec100b3f090640
+05 Watching the river flow.flac:fe827dd19750f3645a0d6debf8f5022d
+06 Silvio.flac:240452dbfc6954cbd728e6651e39d554
+07 Friend of the Devil.flac:5a4fc029203ad61141442ed269253a9b
+08 To Ramona.flac:c16075dc738c595002d0cc7e3a34817e
+09 Tangled up in blue.flac:5245f72f9c6412a42fd3376807e859da
+===================
+===================
+===================
+=== ffp_CD1.txt
+===================
+===================
+===================
+01 Crash on the Levee (Down in the flood).flac:368e334340c6640a837291cafa850133
+02 Seor (Tales of Yankee Power).flac:df4fa074e1e52dbc6241e413920caf68
+03 All along the watchtower.flac:8735a74c84d84360fb969dcfe82579bc
+04 You ain't goin' nowhere.flac:54931d3153d7ff4448ec100b3f090640
+05 Watching the river flow.flac:fe827dd19750f3645a0d6debf8f5022d
+06 Silvio.flac:240452dbfc6954cbd728e6651e39d554
+07 Friend of the Devil.flac:5a4fc029203ad61141442ed269253a9b
+08 To Ramona.flac:c16075dc738c595002d0cc7e3a34817e
+09 Tangled up in blue.flac:5245f72f9c6412a42fd3376807e859da
+===================
+===================
+===================
+=== CD2.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:34.40       90763724 B   ---   --   ---xx   flac  0.7681  10 Stuck inside of Mobile with the Memphis blues again.flac
+     8:06.70       85895084 B   ---   --   ---xx   flac  0.7377  11 Tears of rage.flac
+     7:21.57       77926508 B   ---   --   ---xx   flac  0.7800  12 Highway 61 revisited.flac
+    12:04.33      127791260 B   ---   --   ---xx   flac  0.7599  13 Like a rolling stone.flac
+    12:27.59      131909612 B   ---   --   ---xx   flac  0.7314  14 A hard rain's a-gonna fall.flac
+     6:53.73       73024940 B   ---   --   ---xx   flac  0.7705  15 Rainy day women # 12 & 35.flac
+    55:29.32      587311128 B                            0.7555  (6 files)
+===================
+===================
+===================
+=== ffp_CD2.ffp
+===================
+===================
+===================
+10 Stuck inside of Mobile with the Memphis blues again.flac:1fe40c4ea2761bd130344dcfd79df50f
+11 Tears of rage.flac:4876ec634e30ff53972c758f5aa99ebc
+12 Highway 61 revisited.flac:88707365e595d92b8d67fc3549917fdd
+13 Like a rolling stone.flac:2aeebf88032c1c1c06f6a6447691fc1a
+14 A hard rain's a-gonna fall.flac:170df8a3dab70a26c5d15a8b8fc68b1e
+15 Rainy day women # 12 & 35.flac:85777cac8a7cde064af2996b92f6fc03
+===================
+===================
+===================
+=== ffp_CD2.txt
+===================
+===================
+===================
+10 Stuck inside of Mobile with the Memphis blues again.flac:1fe40c4ea2761bd130344dcfd79df50f
+11 Tears of rage.flac:4876ec634e30ff53972c758f5aa99ebc
+12 Highway 61 revisited.flac:88707365e595d92b8d67fc3549917fdd
+13 Like a rolling stone.flac:2aeebf88032c1c1c06f6a6447691fc1a
+14 A hard rain's a-gonna fall.flac:170df8a3dab70a26c5d15a8b8fc68b1e
+15 Rainy day women # 12 & 35.flac:85777cac8a7cde064af2996b92f6fc03
+===================
+===================
+===================
+=== 1997-04-10 Sullivan Gym, University of Southern Maine, Portland, Maine, USA [supposedly Holy Grail].txt
+===================
+===================
+===================
+Sullivan Gym, University of Southern Maine
+Portland, Maine
+April 10, 1997
+
+Jeff; no LB-number reference found!
+
+When receiving, my trader stated this was a Holy Grail;
+I never managed to verify that, anyone with an opinion;
+or better, an LB-number I've overseen?
+
+01. Crash On The Levee (Down In The Flood) [04:46]
+02. Seor (Tales Of Yankee Power) [05:48]
+03. All Along The Watchtower [05:44]
+04. You Ain't Goin' Nowhere [04:36]
+05. Watching The River Flow [06:37]
+06. Silvio (Bob Dylan & Robert Hunter) [09:09]
+07. Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson) [07:47]
+08. To Ramona [06:07]
+09. Tangled Up In Blue [08:51]
+Total time: [59:30]
+
+10. Stuck Inside Of Mobile With The Memphis Blues Again [08:34]
+11. Tears Of Rage (Bob Dylan & Richard Manuel) [08:06]
+12. Highway 61 Revisited [07:21]
+13. Like A Rolling Stone [12:04]
+14. A Hard Rain's A-Gonna Fall [12:27]
+15. Rainy Day Women # 12 & 35 [06:53]
+Total time: [55:29]
+
+Concert # 861 of The Never-Ending Tour
+Concert # 8 of the 1997 Spring Tour of Canada and USA
+1997 concert # 19
+
+Concert # 8 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+7-9, 14 acoustic with the band
+8 Bob Dylan (harmonica)
+4, 6, 15 Larry Campbell & Bucky Baxter (backup vocals)
+
+NOTE: Live debut of You Ain't Goin Nowhere!
+
+9 new songs (60%) compared to previous concert
+4 new songs for this tour
+
+Stereo audience recording, 115 minutes
+
+ffp_CD1:
+01 Crash on the Levee (Down in the flood).flac:368e334340c6640a837291cafa850133
+02 Seor (Tales of Yankee Power).flac:df4fa074e1e52dbc6241e413920caf68
+03 All along the watchtower.flac:8735a74c84d84360fb969dcfe82579bc
+04 You ain't goin' nowhere.flac:54931d3153d7ff4448ec100b3f090640
+05 Watching the river flow.flac:fe827dd19750f3645a0d6debf8f5022d
+06 Silvio.flac:240452dbfc6954cbd728e6651e39d554
+07 Friend of the Devil.flac:5a4fc029203ad61141442ed269253a9b
+08 To Ramona.flac:c16075dc738c595002d0cc7e3a34817e
+09 Tangled up in blue.flac:5245f72f9c6412a42fd3376807e859da
+
+ffp_CD2:
+10 Stuck inside of Mobile with the Memphis blues again.flac:1fe40c4ea2761bd130344dcfd79df50f
+11 Tears of rage.flac:4876ec634e30ff53972c758f5aa99ebc
+12 Highway 61 revisited.flac:88707365e595d92b8d67fc3549917fdd
+13 Like a rolling stone.flac:2aeebf88032c1c1c06f6a6447691fc1a
+14 A hard rain's a-gonna fall.flac:170df8a3dab70a26c5d15a8b8fc68b1e
+15 Rainy day women # 12 & 35.flac:85777cac8a7cde064af2996b92f6fc03
+
+shntool_len_CD1:
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.10       50473964 B   ---   --   ---xx   flac  0.7746  01 Crash on the Levee (Down in the flood).flac
+     5:48.73       61558940 B   ---   --   ---xx   flac  0.7542  02 Seor (Tales of Yankee Power).flac
+     5:44.36       60766316 B   ---   --   ---xx   flac  0.8081  03 All along the watchtower.flac
+     4:36.46       48794636 B   ---   --   ---xx   flac  0.7639  04 You ain't goin' nowhere.flac
+     6:37.10       70054364 B   ---   --   ---xx   flac  0.7536  05 Watching the river flow.flac
+     9:09.71       97010636 B   ---   --   ---xx   flac  0.7757  06 Silvio.flac
+     7:47.66       82534076 B   ---   --   ---xx   flac  0.7751  07 Friend of the Devil.flac
+     6:07.74       64912892 B   ---   --   ---xx   flac  0.7640  08 To Ramona.flac
+     8:51.59       93807212 B   ---   --   ---xx   flac  0.8036  09 Tangled up in blue.flac
+    59:30.70      629913036 B                            0.7762  (9 files)
+
+shntool_len_CD2:
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:34.40       90763724 B   ---   --   ---xx   flac  0.7681  10 Stuck inside of Mobile with the Memphis blues again.flac
+     8:06.70       85895084 B   ---   --   ---xx   flac  0.7377  11 Tears of rage.flac
+     7:21.57       77926508 B   ---   --   ---xx   flac  0.7800  12 Highway 61 revisited.flac
+    12:04.33      127791260 B   ---   --   ---xx   flac  0.7599  13 Like a rolling stone.flac
+    12:27.59      131909612 B   ---   --   ---xx   flac  0.7314  14 A hard rain's a-gonna fall.flac
+     6:53.73       73024940 B   ---   --   ---xx   flac  0.7705  15 Rainy day women # 12 & 35.flac
+    55:29.32      587311128 B                            0.7555  (6 files)
+
+===================
+===================
+===================

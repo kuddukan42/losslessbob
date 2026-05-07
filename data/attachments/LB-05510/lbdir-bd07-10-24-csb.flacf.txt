@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-10-24-csb.flacf 
+=================== 
+=================== 
+=================== 
+6ac8b568c20daf732f470bf499649744  Bob Dylan - 2007-10-24 01 Rainy Day Women #12 & 35.flac
+175ccb1fcc71ed82d75d98c80e413d65  Bob Dylan - 2007-10-24 02 Girl From The North Country.flac
+0f9af091520c6f33d26da4ad8bac6ec5  Bob Dylan - 2007-10-24 03 Watching The River Flow.flac
+f1a2967f4dd11bf64b941dca4d2251cf  Bob Dylan - 2007-10-24 04 Tangled Up In Blue.flac
+fb3cd79c6f667a54917f8e4dbdf954a1  Bob Dylan - 2007-10-24 05 Rollin' And Tumblin'.flac
+e1e11c7129df8241305d8e8580c16381  Bob Dylan - 2007-10-24 06 Spirit On The Water.flac
+e8176c4f972566956577f46aec635a65  Bob Dylan - 2007-10-24 07 Honest With Me.flac
+8d808658893dd07ae0a930fbdec48c18  Bob Dylan - 2007-10-24 08 Workingman's Blues #2.flac
+d0ec4f144f969217416e17a589ee4178  Bob Dylan - 2007-10-24 09 High Water (For Charlie Patton).flac
+f8da7eaaee616a8d8cc6984b5e34fae9  Bob Dylan - 2007-10-24 10 Desolation Row.flac
+4f6fc6d112e07182f2a5f3acf70e7d40  Bob Dylan - 2007-10-24 11 Highway 61 Revisited.flac
+f029212a30b1177257689cc7fb89a987  Bob Dylan - 2007-10-24 12 Ain't Talkin'.flac
+fc8c03f9c470b1dd0d0f122b6913072b  Bob Dylan - 2007-10-24 13 Summer Days.flac
+cbabb8fcdc87ddc230a1ed0413628297  Bob Dylan - 2007-10-24 14 Masters Of War.flac
+5cd8eb9bc981b3ce9966271223cbb0e6  Bob Dylan - 2007-10-24 14.5 Crowd.flac
+cdc0e87930dc0a868ef5c4bd7b7eb795  Bob Dylan - 2007-10-24 15 Thunder On The Mountain.flac
+109fa3619fa4b5a35c28e5a9ef19777f  Bob Dylan - 2007-10-24 15.5 Band Intros.flac
+edb9784b42bae29d6176b1b73b56c6cc  Bob Dylan - 2007-10-24 16 Like A Rolling Stone.flac
+180f0a30dcb5438aa580e79f37ae6f68  Bob Dylan - 2007-10-24 16.5 Crowd.flac
+50d6950cc3705b13cc3745bc2642305d  Bob Dylan - 2007-10-24 ffp.txt
+e39d85f033c12b17595b6ddaec17c8c7  Bob Dylan - 2007-10-24.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-10-24-csb.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan - 2007-10-24 01 Rainy Day Women #12 & 35.flac:e50e3b2114bd1f4f2798b0ce5c713ee6
+Bob Dylan - 2007-10-24 02 Girl From The North Country.flac:70e8f95bef8a852c62641be4ab2d140e
+Bob Dylan - 2007-10-24 03 Watching The River Flow.flac:b4de9cf78a190f304c42c39250b6872d
+Bob Dylan - 2007-10-24 04 Tangled Up In Blue.flac:181b9155db8194c336516ae8d708767d
+Bob Dylan - 2007-10-24 05 Rollin' And Tumblin'.flac:27dd4db9bf7d7b7983c11e71c0f3f89b
+Bob Dylan - 2007-10-24 06 Spirit On The Water.flac:10013480875d20852283fd1c3b77401d
+Bob Dylan - 2007-10-24 07 Honest With Me.flac:783e72e850e481fa135d196b38cce545
+Bob Dylan - 2007-10-24 08 Workingman's Blues #2.flac:4b02bb284eb205dd32588c118e2d0d2a
+Bob Dylan - 2007-10-24 09 High Water (For Charlie Patton).flac:0cc4f29e6c54b43c1d00bb2982a3bc43
+Bob Dylan - 2007-10-24 10 Desolation Row.flac:ad6a87b90e907e92286d84bd81f6dd98
+Bob Dylan - 2007-10-24 11 Highway 61 Revisited.flac:0a3d9a53f1befebc6b2d7b74238ff6f7
+Bob Dylan - 2007-10-24 12 Ain't Talkin'.flac:16c3a890bd6b961a1ad3d539dbadaefc
+Bob Dylan - 2007-10-24 13 Summer Days.flac:4f707ae0d85c5283ce6d036829f6cf23
+Bob Dylan - 2007-10-24 14 Masters Of War.flac:8c666f62a398c218a9d61a001e3ecece
+Bob Dylan - 2007-10-24 14.5 Crowd.flac:a0ce4438dc567a341a6fb2a22fccd393
+Bob Dylan - 2007-10-24 15 Thunder On The Mountain.flac:2e2e1ddea13626a9fd7ecae730bdb9bb
+Bob Dylan - 2007-10-24 15.5 Band Intros.flac:2e8c63c20f553681ded347fcc370cf2b
+Bob Dylan - 2007-10-24 16 Like A Rolling Stone.flac:dba5352f0dd9b7f8ac4ca6942b2d9485
+Bob Dylan - 2007-10-24 16.5 Crowd.flac:1bdb2904c307b4b679034f02b2c1a568
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-10-24-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.66       58367276 B   ---   --   ---xx   flac  0.5609  Bob Dylan - 2007-10-24 01 Rainy Day Women #12 & 35.flac
+     6:09.28       65157500 B   ---   --   ---xx   flac  0.5108  Bob Dylan - 2007-10-24 02 Girl From The North Country.flac
+     5:58.70       63315884 B   ---   --   ---xx   flac  0.5654  Bob Dylan - 2007-10-24 03 Watching The River Flow.flac
+     8:34.49       90784892 B   ---   --   ---xx   flac  0.5654  Bob Dylan - 2007-10-24 04 Tangled Up In Blue.flac
+     8:12.62       86934668 B   ---   --   ---xx   flac  0.5634  Bob Dylan - 2007-10-24 05 Rollin' And Tumblin'.flac
+     7:07.11       75348716 B   ---   --   ---xx   flac  0.4960  Bob Dylan - 2007-10-24 06 Spirit On The Water.flac
+     6:33.18       69367580 B   ---   --   ---xx   flac  0.5912  Bob Dylan - 2007-10-24 07 Honest With Me.flac
+     6:57.08       73577660 B   ---   --   ---xx   flac  0.5171  Bob Dylan - 2007-10-24 08 Workingman's Blues #2.flac
+     6:25.25       67972844 B   ---   --   ---xx   flac  0.5688  Bob Dylan - 2007-10-24 09 High Water (For Charlie Patton).flac
+    12:13.19      129345932 B   ---   --   ---xx   flac  0.5354  Bob Dylan - 2007-10-24 10 Desolation Row.flac
+     6:56.74       73556492 B   ---   --   ---xx   flac  0.5681  Bob Dylan - 2007-10-24 11 Highway 61 Revisited.flac
+     8:26.17       89298428 B   ---   --   ---xx   flac  0.5103  Bob Dylan - 2007-10-24 12 Ain't Talkin'.flac
+     6:03.17       64073228 B   ---   --   ---xx   flac  0.5712  Bob Dylan - 2007-10-24 13 Summer Days.flac
+     5:55.54       62749052 B   ---   --   ---xx   flac  0.5442  Bob Dylan - 2007-10-24 14 Masters Of War.flac
+     3:31.74       37394492 B   ---   --   ---xx   flac  0.5058  Bob Dylan - 2007-10-24 14.5 Crowd.flac
+     5:33.65       58894124 B   ---   --   ---xx   flac  0.5808  Bob Dylan - 2007-10-24 15 Thunder On The Mountain.flac
+     0:30.41        5388476 B   ---   --   ---xx   flac  0.5499  Bob Dylan - 2007-10-24 15.5 Band Intros.flac
+     7:03.19       74661932 B   ---   --   ---xx   flac  0.5705  Bob Dylan - 2007-10-24 16 Like A Rolling Stone.flac
+     1:58.19       20859932 B   ---   --   ---xx   flac  0.4473  Bob Dylan - 2007-10-24 16.5 Crowd.flac
+   119:42.61     1267049108 B                            0.5466  (19 files)
+=================== 
+=================== 
+=================== 

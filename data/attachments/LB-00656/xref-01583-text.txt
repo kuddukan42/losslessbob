@@ -1,0 +1,157 @@
+===================
+===================
+===================
+=== bd92-04-05 - Melbourne - MK.md5
+===================
+===================
+===================
+0c39144a2bcc72afc46754fe2a5b6d05 *bd92-04-05 - Melbourne - MK.st5
+4fd417c7526b16cbb07b8266b3cf088a *bd92-04-05 - Melbourne - MK.txt
+5caea453c879146545ff258ac3138221 *bd92-04-05d1t01.shn
+011fc1f3b24a8bec2330a88b4470c313 *bd92-04-05d1t02.shn
+147dc2b62b65f449ce2972dc379e44e5 *bd92-04-05d1t03.shn
+d78f331901c9f2afebac1bc4d5634709 *bd92-04-05d1t04.shn
+eaae21bc3899aefd370e7664452abd4a *bd92-04-05d1t05.shn
+8905928065ac314a94a4c2a8ff99f6f5 *bd92-04-05d1t06.shn
+b8cb3c279bf2a2e97c774e753192561d *bd92-04-05d1t07.shn
+17da0feb9ebd5a5d49f571cbcbf82e83 *bd92-04-05d1t08.shn
+d3f883acc1b1adee0391494493f54a33 *bd92-04-05d1t09.shn
+17fe469c16adf504b722c3ea7112fa73 *bd92-04-05d1t10.shn
+4910655ae46f37695e0a59713e9c5bd8 *bd92-04-05d1t11.shn
+4d75ed417b9f96b9bece78fd115ec0fe *bd92-04-05d2t01.shn
+2fa68aba5c06fa1c4cd503f3d9e74206 *bd92-04-05d2t02.shn
+177f868f7638fed2e83d826cb9c7ca4d *bd92-04-05d2t03.shn
+26bebd93e4db6f2a79c419ac1c702c1e *bd92-04-05d2t04.shn
+bec87a63e430eed9afda695cbf0e4253 *bd92-04-05d2t05.shn
+d12581b77f934ea09a7dc320c8055d44 *bd92-04-05d2t06.shn
+d821b9d3a19e50746d5c281a825feb2d *bd92-04-05d2t07.shn
+6bf7266970f191833c43b95094ef2f39 *bd92-04-05d2t08.shn
+4fc3c9a3987168b2889456db9e4e748f *noname.md5
+===================
+===================
+===================
+=== bd92-04-05 - Melbourne - MK.st5
+===================
+===================
+===================
+f271cbe775dcee3cb856a8c018a9bec4  [shntool]  bd92-04-05d1t01.shn
+086230bc1f0b1f2a7f7882547c7db8a9  [shntool]  bd92-04-05d1t02.shn
+0fdb35f0d87bd92a08bfd36dfda9426b  [shntool]  bd92-04-05d1t03.shn
+362f6de38be8d687a5b32b6bcf484784  [shntool]  bd92-04-05d1t04.shn
+20207b88bbe8dab2facf3633813ec952  [shntool]  bd92-04-05d1t05.shn
+e8b4bf4315edd88aa25dea321da77824  [shntool]  bd92-04-05d1t06.shn
+4b53e49ea1eb1cf5b7671a36563dbeb3  [shntool]  bd92-04-05d1t07.shn
+979d7f4143052dc0bf62dfe95d118dca  [shntool]  bd92-04-05d1t08.shn
+a2efce41c4ee87b5f1b8f8c118f6cdf1  [shntool]  bd92-04-05d1t09.shn
+f785d0124d9f88face0acd72cd8a1954  [shntool]  bd92-04-05d1t10.shn
+62b5edb74fb158bae5f2887f6f9af086  [shntool]  bd92-04-05d1t11.shn
+57e09f1b8dbef54b0331c7315c16b8f9  [shntool]  bd92-04-05d2t01.shn
+81a8f0f925f27f0f301c45a6582f53ac  [shntool]  bd92-04-05d2t02.shn
+4b16f2e077feca9e1fcfc9b0b136dda7  [shntool]  bd92-04-05d2t03.shn
+28574159335f8347b9d1d596f030fc4d  [shntool]  bd92-04-05d2t04.shn
+45e895b9c760b5a449524a2ea1b7936f  [shntool]  bd92-04-05d2t05.shn
+e5f5486af5c07b5946b649a4ac053e0a  [shntool]  bd92-04-05d2t06.shn
+437fd3db3eba7e684d4291ebfe644aba  [shntool]  bd92-04-05d2t07.shn
+717ac71c8b738aa968be9057d3847fbf  [shntool]  bd92-04-05d2t08.shn
+===================
+===================
+===================
+=== bd92-04-05 - Melbourne - MK.txt
+===================
+===================
+===================
+#11 - 1992 Australian Tour - MK/LK Series - May 2015
+
+xxxxx
+
+Palais Theatre
+Melbourne, Victoria, Australia
+5 April 1992
+
+1.  All Along The Watchtower
+2.  What Good Am I?
+3.  I Don't Believe You (She Acts Like We Never Have Met)
+4.  Just Like A Woman
+5.  Tangled Up In Blue
+6.  It Takes A Lot To Laugh, It Takes A Train To Cry
+7.  Maggie's Farm
+8.  Love Minus Zero/No Limit
+9.  Little Moses (Bert A. Williams/Earle C. Jones)
+10.  Female Rambling Sailor (trad.)
+11.  Desolation Row
+12.  Cat's In The Well
+13.  Idiot Wind
+14.  The Times They Are A-Changin'
+15.  Highway 61 Revisited
+
+16.  Absolutely Sweet Marie
+17.  Rainy Day Women # 12 & 35
+18.  Blowin' In The Wind
+
+Concert # 375 of The Never-Ending Tour.  Concert # 11 of the 1992 Tour Of Australia. 1992 concert # 11.
+Concert # 11 with the 6th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+
+8, 9, 18  Bob Dylan (acoustic guitar & vocal).
+10  Bob Dylan (acoustic guitar & vocal) & Tony Garnier (upright bass).
+11, 14  acoustic with the band.
+2, 4, 5, 8, 14, 18  Bob Dylan harmonica.
+5, 14  Bucky Baxter electric mandolin.
+
+Note.
+There is strong evidence that Bob Dylan almost started crying during the last two lines of the "Einstein verse" in Desolation Row. Members in the front row in the audience report that they saw tears pouring out of his eyes and that he stepped back and spoke briefly with Jackson and Garnier and then retreated to the back of the stage while the band went into a lengthy instrumental. He then came back and finished the song. Desolation Row was not played until April 14, when the same thing happened again!
+
+BobTalk:
+Thank you! That was a recent song [sic], here's one of my older. (after Idiot Wind).
+
+5 new songs (27%) compared to previous concert. 2 new songs for this tour.
+
+xxxxx
+
+f271cbe775dcee3cb856a8c018a9bec4  [shntool]  bd92-04-05d1t01.shn
+086230bc1f0b1f2a7f7882547c7db8a9  [shntool]  bd92-04-05d1t02.shn
+0fdb35f0d87bd92a08bfd36dfda9426b  [shntool]  bd92-04-05d1t03.shn
+362f6de38be8d687a5b32b6bcf484784  [shntool]  bd92-04-05d1t04.shn
+20207b88bbe8dab2facf3633813ec952  [shntool]  bd92-04-05d1t05.shn
+e8b4bf4315edd88aa25dea321da77824  [shntool]  bd92-04-05d1t06.shn
+4b53e49ea1eb1cf5b7671a36563dbeb3  [shntool]  bd92-04-05d1t07.shn
+979d7f4143052dc0bf62dfe95d118dca  [shntool]  bd92-04-05d1t08.shn
+a2efce41c4ee87b5f1b8f8c118f6cdf1  [shntool]  bd92-04-05d1t09.shn
+f785d0124d9f88face0acd72cd8a1954  [shntool]  bd92-04-05d1t10.shn
+62b5edb74fb158bae5f2887f6f9af086  [shntool]  bd92-04-05d1t11.shn
+57e09f1b8dbef54b0331c7315c16b8f9  [shntool]  bd92-04-05d2t01.shn
+81a8f0f925f27f0f301c45a6582f53ac  [shntool]  bd92-04-05d2t02.shn
+4b16f2e077feca9e1fcfc9b0b136dda7  [shntool]  bd92-04-05d2t03.shn
+28574159335f8347b9d1d596f030fc4d  [shntool]  bd92-04-05d2t04.shn
+45e895b9c760b5a449524a2ea1b7936f  [shntool]  bd92-04-05d2t05.shn
+e5f5486af5c07b5946b649a4ac053e0a  [shntool]  bd92-04-05d2t06.shn
+437fd3db3eba7e684d4291ebfe644aba  [shntool]  bd92-04-05d2t07.shn
+717ac71c8b738aa968be9057d3847fbf  [shntool]  bd92-04-05d2t08.shn
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+d78f331901c9f2afebac1bc4d5634709 *d1t04.shn
+011fc1f3b24a8bec2330a88b4470c313 *d1t02.shn
+147dc2b62b65f449ce2972dc379e44e5 *d1t03.shn
+5caea453c879146545ff258ac3138221 *d1t01.shn
+eaae21bc3899aefd370e7664452abd4a *d1t05.shn
+8905928065ac314a94a4c2a8ff99f6f5 *d1t06.shn
+b8cb3c279bf2a2e97c774e753192561d *d1t07.shn
+17da0feb9ebd5a5d49f571cbcbf82e83 *d1t08.shn
+d3f883acc1b1adee0391494493f54a33 *d1t09.shn
+17fe469c16adf504b722c3ea7112fa73 *d1t10.shn
+4910655ae46f37695e0a59713e9c5bd8 *d1t11.shn
+4d75ed417b9f96b9bece78fd115ec0fe *d2t01.shn
+2fa68aba5c06fa1c4cd503f3d9e74206 *d2t02.shn
+177f868f7638fed2e83d826cb9c7ca4d *d2t03.shn
+26bebd93e4db6f2a79c419ac1c702c1e *d2t04.shn
+bec87a63e430eed9afda695cbf0e4253 *d2t05.shn
+d12581b77f934ea09a7dc320c8055d44 *d2t06.shn
+d821b9d3a19e50746d5c281a825feb2d *d2t07.shn
+6bf7266970f191833c43b95094ef2f39 *d2t08.shn
+===================
+===================
+===================

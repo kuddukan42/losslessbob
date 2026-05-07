@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-29-a.flacf 
+=================== 
+=================== 
+=================== 
+9bb4c204a312ca93cf21d6c8f595f649  fingerprint.txt
+e9bca2e6abd1ab9f49abd1a7824c3947  info.txt
+a05ab209453bc2500d32c6b0ec972389  Track101.flac
+959be350bbfb3d954d7d85c6eb07469c  Track102.flac
+d93a525fbc0a812e2c8477e631cb5e75  Track103.flac
+8186ec11dc6b6c5c705ccb233a4842f8  Track104.flac
+b23407e06b6a9e1b3f1f32e92b1d134f  Track105.flac
+e690200b6684d95a721891ff8689bc14  Track106.flac
+0d4472b1176da75d41c1256ae685e290  Track107.flac
+dd8cb33da4732ad8cd425d99111d5033  Track108.flac
+ba040089b02eaad2f0c9c17d807b663b  Track109.flac
+b5e70d9c2e67935d231ff372c131f1bf  Track201.flac
+9992ab199186ec551bbc27a23fe8ea5f  Track202.flac
+d6da280488f0acafe8cb81203e41be89  Track203.flac
+10d71a17392734643f20e76621a752b2  Track204.flac
+d7bad84bfc180b3ffae8b9ede4d65fd1  Track205.flac
+e8bcf0dbdda93e8e39bf0c912114c614  Track206.flac
+a3d1930ee78cd7691dd58fa7abbd073b  Track207.flac
+7cf8b432844b51d9dc085dd7734820a3  Track208.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-29-a.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:1d66621d38906cbb0fa6234f0bda3fe2
+Track102.flac:a02714cebe39ec0c7ad3a7a801b131ce
+Track103.flac:3d57b5db0a32c5163c948a8e1cd078a7
+Track104.flac:ff708a451c0664cff07b849b2f79b180
+Track105.flac:887437d6b4dc8e2448a345713b73500b
+Track106.flac:034a30d0e6e1249bb9c689d9d7b9c08a
+Track107.flac:8744a1e5c6852ebb5d37ff21e4bdd89f
+Track108.flac:f8eb83db7c94d6978518dc29a5abe0fb
+Track109.flac:2e17105fac27d3764bd01315e2af5f87
+Track201.flac:c83a4a51c8479ac19f60b076d7505506
+Track202.flac:d020e740584698d00858606ce8485cdc
+Track203.flac:ac40be9cf65b30a64c3f68b6d4917543
+Track204.flac:e1bec6871892c1d416528e5243b4da5d
+Track205.flac:bb8741d2b12d841590aaca42337b5d0a
+Track206.flac:4924275056fe64a2f40828789ae49ace
+Track207.flac:12bb217f891790368bb4924dcd87840d
+Track208.flac:540d9f16fde00ee43cc1524137c60338
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-06-29-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.72       52560188 B   ---   --   ---xx   flac  0.5015  Track101.flac
+     9:30.63      100696220 B   ---   --   ---xx   flac  0.5678  Track102.flac
+     7:05.37       75057068 B   ---   --   ---xx   flac  0.5682  Track103.flac
+     7:24.18       78363980 B   ---   --   ---xx   flac  0.5630  Track104.flac
+    12:17.15      130042124 B   ---   --   ---xx   flac  0.5861  Track105.flac
+    12:37.20      133581884 B   ---   --   ---xx   flac  0.5534  Track106.flac
+     7:14.50       76675244 B   ---   --   ---xx   flac  0.5225  Track107.flac
+     7:18.60       77404364 B   ---   --   ---xx   flac  0.4650  Track108.flac
+     5:33.02       58745948 B   ---   --   ---xx   flac  0.4615  Track109.flac
+     9:56.10      105157964 B   ---   --   ---xx   flac  0.4483  Track201.flac
+    13:44.32      145428908 B   ---   --   ---xx   flac  0.4766  Track202.flac
+     7:05.38       75059420 B   ---   --   ---xx   flac  0.5681  Track203.flac
+    10:05.47      106832588 B   ---   --   ---xx   flac  0.5636  Track204.flac
+     5:27.23       57736940 B   ---   --   ---xx   flac  0.5210  Track205.flac
+     8:21.65       88529324 B   ---   --   ---xx   flac  0.5348  Track206.flac
+     5:46.24       61090892 B   ---   --   ---xx   flac  0.5612  Track207.flac
+    11:07.32      117734108 B   ---   --   ---xx   flac  0.4879  Track208.flac
+   145:34.08     1540697164 B                            0.5271  (17 files)
+=================== 
+=================== 
+=================== 

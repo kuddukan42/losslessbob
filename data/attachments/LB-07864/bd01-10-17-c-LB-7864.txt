@@ -1,0 +1,10 @@
+Bob Dylan, 10/17/01, La Jolla, California, 2CDR
+
+LB-7864, (62min+66min), version "c"; received in trade as a rip from audio CD, CDR > EAC > .wav > FLAC Frontend > FLAC, Quality: Very Good; bittorrent download 08/09; this is a not close eac match to LB-2413 on d1t1 and has that ones levels; this does not have all the drops/skipping on that one but has different discontinuities; (did not listen to all of this)
+
+drop d1t9, between cdrs, discontinuities between tracks; has some discontinuities
+
+Disc 2, 1) Wait For The Light To Shine, 2) My Back Pages, 3) Desolation Row, 4) Searching For A Soldier's Grave, 5) Tweedle Dee & Tweedle Dum, 6) Just Like A Woman, 7) Stuck Inside Of Mobile With The Memphis Blues Again, 8) Mississippi, 9) Masters Of War, 10) One Too Many Mornings, Disc 2, 1) Visions Of Johanna, 2) Summer Days, 3) Sugar Baby, 4) Cold Irons Bound, 5) Rainy Day Women #12 & 35, 6) Things Have Changed, 7) Like A Rolling Stone, 8) If Dogs Run Free, 9) Honest With Me, 10) Blowing In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,60 @@
+===================
+===================
+===================
+=== bob dylan dec 17 1995.txt
+===================
+===================
+===================
+Bob Dylan
+Electric Factory
+Philadelphia, PA
+December 17, 1995
+LB-5164
+
+AKG 522>Teac DA-P20(@48khz)
+Transfer: DAT MASTER>Sony TCD-D100>Edirol R-4>Wavelab 5 (Fades & Sample Rate Conversion to 44.1khz)>CDWAV>FLAC,
+I recorded my initial download to CDR, and for this upload used EAC to convert back to FLAC.  There were no errors.
+Recorded By Bobby Bourbon
+
+1. Crash On The Levee (Down In 	The Flood) 
+2. Seor (Tales Of Yankee Power) 
+3. All Along The Watchtower 
+4. Every Grain Of Sand 
+5. Leopard-Skin Pill-Box Hat 
+6. Silvio 
+7. Tangled Up In Blue (acoustic) 
+8. Desolation Row (acoustic) 
+9. It's All Over Now, Baby Blue (acoustic) 
+
+
+1. Dark Eyes (acoustic - vocals shared with Patti Smith) 
+2. Maggie's Farm 
+3. She Belongs To Me 
+4. West LA Fadeaway 
+5. Knockin' On Heaven's Door ( vocals shared with Patti Smith) 
+6. Rainy Day Women #12 & 35 (Cesar Diaz on guitar) 
+===================
+===================
+===================
+=== Bob Dylan_December_17_1995.md5
+===================
+===================
+===================
+dcb610d9ffa85d9aff55f4ad5afdf5fa *Disc01_Track01.flac
+afa3f42b0545687d78fa4210e1ca81e2 *Disc01_Track02.flac
+299ce11960e3b451c44b80855a86ca81 *Disc01_Track03.flac
+de84c854ebc28e469ba14b00f5b3570a *Disc01_Track04.flac
+8b5d401a242f8915f87b888fd1eb63ed *Disc01_Track05.flac
+41979639a610032c20ca16b38c534c2e *Disc01_Track06.flac
+3bf0d6c1674b40b8e50add368a2de6fc *Disc01_Track07.flac
+ed3cbd7b558829925d3f85d12add0afa *Disc01_Track08.flac
+ad78265b9ccb6ec4d2287188d2361ccd *Disc01_Track09.flac
+fe14bde0ca4f744777d20fd5ef38089c *Disc02_Track01.flac
+d964d06e1fab33c0d4afbc2c42607376 *Disc02_Track02.flac
+fb11add2561d93bd13c345b8ded800e7 *Disc02_Track03.flac
+c567a6680d049c9b38db524c674e43d4 *Disc02_Track04.flac
+0e0398ff69f6900521244f1c7034bf44 *Disc02_Track05.flac
+77d773b6f6fbcc8fc1bc624d2daaf421 *Disc02_Track06.flac
+===================
+===================
+===================

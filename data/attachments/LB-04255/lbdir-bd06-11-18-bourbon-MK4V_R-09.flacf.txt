@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-11-18-bourbon-MK4V_R-09.flacf 
+=================== 
+=================== 
+=================== 
+5013655b9235a619617ab9373e52404a  bd06-11-18-bourbon-MK4V_R-09-LB-4255.txt
+d44001f2ec8755aca369352427b0d398  BD2006-11-18.txt
+7b54eaf151103063e90a17ab65c490b9  BD2006-11-18mk4v01.flac
+23475747472e4eed9fc4d2f9fc6ff0b5  BD2006-11-18mk4v02.flac
+6cd57f36dbbd6b922706a06091d76bea  BD2006-11-18mk4v03.flac
+7af2a97945303f2fa6bef4968e018c74  BD2006-11-18mk4v04.flac
+7fd051060aaad25959fd934cd15c00bd  BD2006-11-18mk4v05.flac
+3b66d391f93624d3f4a5101e9db8b9ae  BD2006-11-18mk4v06.flac
+7180b9dd4bb18f0d16532d57aa6bfc94  BD2006-11-18mk4v07.flac
+b62d02017627d3d30ab64c44201359cb  BD2006-11-18mk4v08.flac
+8a487a4d86ce41c2968ab69c84d48e05  BD2006-11-18mk4v09.flac
+bc7bcab1dda9628434e57ed24c652206  BD2006-11-18mk4v10.flac
+0b59af560f50dd339ea7760bc6ad50f3  BD2006-11-18mk4v11.flac
+56c482b39f976d01d0d13da155fa3f91  BD2006-11-18mk4v12.flac
+7a056b258aac298a1a6db1ca23f55f15  BD2006-11-18mk4v13.flac
+5e98467c224d0a21df47b2df9131c3f9  BD2006-11-18mk4v14.flac
+ff0b93a9e8e1107406268d8eff4a4cdb  BD2006-11-18mk4v15.flac
+a8534bafb7f8864ceb334eab25d7c15d  BD2006-11-18mk4v16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-11-18-bourbon-MK4V_R-09.flacf 
+=================== 
+=================== 
+=================== 
+BD2006-11-18mk4v01.flac:3b73b3921fee247121ba25d45bb8e578
+BD2006-11-18mk4v02.flac:1948c87c88e36d5bbbed4778fd752c89
+BD2006-11-18mk4v03.flac:d6d69c9613ed0b449e63a2a5df6a193a
+BD2006-11-18mk4v04.flac:fde686dd12c04e722588985706ba3db8
+BD2006-11-18mk4v05.flac:c089d9c97b5dadddfa183cc3d3fd6bec
+BD2006-11-18mk4v06.flac:3a241a4843b2ed4b2cc19fc3a71d10b2
+BD2006-11-18mk4v07.flac:bbd32e21a0569c4ed88746f3ca00572d
+BD2006-11-18mk4v08.flac:db020751e185e715de2916388aeb98fd
+BD2006-11-18mk4v09.flac:a76178adff8615bde45009c56d99fd27
+BD2006-11-18mk4v10.flac:e55352ab770ff3b7df6d16306f633eaf
+BD2006-11-18mk4v11.flac:b1e6251c8b3c941df743b033f61d66fe
+BD2006-11-18mk4v12.flac:6556d98c227bd5e519dedc5499379214
+BD2006-11-18mk4v13.flac:4077a474d61065fee63522c065df66fc
+BD2006-11-18mk4v14.flac:bc902a4104c435c3e5f845428fb07f1e
+BD2006-11-18mk4v15.flac:84481a5fc6be5f01c966de12d8472364
+BD2006-11-18mk4v16.flac:21e5660cbb6049d4679adeac8819896d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-11-18-bourbon-MK4V_R-09.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:33.27       69388748 B   ---   --   ---xx   flac  0.4695  BD2006-11-18mk4v01.flac
+     7:13.62       76527068 B   ---   --   ---xx   flac  0.4723  BD2006-11-18mk4v02.flac
+     6:20.04       67041452 B   ---   --   ---xx   flac  0.4971  BD2006-11-18mk4v03.flac
+     5:54.12       62473868 B   ---   --   ---xx   flac  0.4471  BD2006-11-18mk4v04.flac
+     6:08.66       65070476 B   ---   --   ---xx   flac  0.4801  BD2006-11-18mk4v05.flac
+     9:34.52      101375948 B   ---   --   ---xx   flac  0.4253  BD2006-11-18mk4v06.flac
+     6:11.54       65571452 B   ---   --   ---xx   flac  0.4959  BD2006-11-18mk4v07.flac
+     5:37.30       59517404 B   ---   --   ---xx   flac  0.4029  BD2006-11-18mk4v08.flac
+     5:13.32       55288508 B   ---   --   ---xx   flac  0.5190  BD2006-11-18mk4v09.flac
+     7:00.62       74233868 B   ---   --   ---xx   flac  0.3843  BD2006-11-18mk4v10.flac
+     7:57.40       84236924 B   ---   --   ---xx   flac  0.5127  BD2006-11-18mk4v11.flac
+     7:27.19       78895532 B   ---   --   ---xx   flac  0.3957  BD2006-11-18mk4v12.flac
+    10:52.13      115043420 B   ---   --   ---xx   flac  0.4851  BD2006-11-18mk4v13.flac
+     5:50.17       61780028 B   ---   --   ---xx   flac  0.5287  BD2006-11-18mk4v14.flac
+     6:22.12       67413068 B   ---   --   ---xx   flac  0.5024  BD2006-11-18mk4v15.flac
+     6:47.22       71846588 B   ---   --   ---xx   flac  0.5148  BD2006-11-18mk4v16.flac
+   111:04.74     1175704352 B                            0.4693  (16 files)
+=================== 
+=================== 
+=================== 

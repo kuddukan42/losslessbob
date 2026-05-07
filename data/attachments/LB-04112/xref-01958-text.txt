@@ -1,0 +1,119 @@
+===================
+===================
+===================
+=== bd-19990619-MountainView.ffp
+===================
+===================
+===================
+bd1999-06-19-d1t01.flac:f560d57a88d2f970bb7f2317c3175185
+bd1999-06-19-d1t02.flac:a140e982f5916e050fdd55898ef1ae89
+bd1999-06-19-d1t03.flac:b70adad6413611f172853858becbb52e
+bd1999-06-19-d1t04.flac:e80e9a105b5234504430679aa2479ef6
+bd1999-06-19-d1t05.flac:07c993a278f5cc466aac3ee2cfcd1928
+bd1999-06-19-d1t06.flac:9f8a1f87139cc4638d398c4c00acfca2
+bd1999-06-19-d1t07.flac:b3e1f356ea964baba7a5ac90f6e05469
+bd1999-06-19-d1t08.flac:e5353d312d65d62aeea025d2a11a3b72
+bd1999-06-19-d1t09.flac:f8a301ee2f0abf647b85f95c0c8c9f09
+bd1999-06-19-d1t10.flac:6f68ecfdeee32146ec28229aacf40832
+bd1999-06-19-d2t01.flac:2876c7df282435e7923e58a1586bfeec
+bd1999-06-19-d2t02.flac:380981120f4c4d5938a9f5e9c1e64f71
+bd1999-06-19-d2t03.flac:0dcf87ab1d773bd9f2e3a2017be9dea0
+bd1999-06-19-d2t04.flac:cbd05647071ecff26f769c8537d56a5c
+bd1999-06-19-d2t05.flac:397a9ab91765384e3c7f541b5589854e
+bd1999-06-19-d2t06.flac:525bbbfc80d4afd82b2ccf7ad8b6d1cc
+bd1999-06-19-d2t07.flac:e855e6502f831b63622689a1758b1bc9
+bd1999-06-19-d2t08.flac:e375fed18202189df807178b4022328d
+bd1999-06-19-d2t09.flac:5fe523be1feda802f8c1499d33e582fa
+bd1999-06-19-d2t10.flac:2d27bbdf10771ced8c67ee13e0f7445a
+===================
+===================
+===================
+=== bd-19990619-MountainView.md5
+===================
+===================
+===================
+f8392f0e9f60469c435609d2418da7a0 *bd1999-06-19-d1t01.flac
+58c189f0d0b6279ef76879806573d8ca *bd1999-06-19-d1t02.flac
+ff06d2481fc33c05587af2dbb60edc04 *bd1999-06-19-d1t03.flac
+bcfc36559d2924e26d2cb07dc58c6294 *bd1999-06-19-d1t04.flac
+1a19df81327f42c8500e85a0d1018af5 *bd1999-06-19-d1t05.flac
+b840b720e2d760e0723bdb8050e16590 *bd1999-06-19-d1t06.flac
+5a5cd63e062da15335d957c8fa14772c *bd1999-06-19-d1t07.flac
+5cc40600875d0adaac6df7b27ab4a840 *bd1999-06-19-d1t08.flac
+e6e20b3ded17c773ff92a694b95e3ed7 *bd1999-06-19-d1t09.flac
+43727992a05db3f222d8f65541c0bda5 *bd1999-06-19-d1t10.flac
+7b14709b73b58faea652db63ef15b941 *bd1999-06-19-d2t01.flac
+1f43e7d4c43f8903b5e3421a7a527cb4 *bd1999-06-19-d2t02.flac
+8a79fd67bfa6bec3fcadb97c5f48aaba *bd1999-06-19-d2t03.flac
+a1093030a888963717783b24256f8c42 *bd1999-06-19-d2t04.flac
+44da94b422cb0640fe3cc75d3d563042 *bd1999-06-19-d2t05.flac
+ced4a73723038df147174741a95fada9 *bd1999-06-19-d2t06.flac
+577283d44125536cf889fa6b8f3608e3 *bd1999-06-19-d2t07.flac
+3cad35fcc52a6348da791e274350e6f5 *bd1999-06-19-d2t08.flac
+c1666f3f3de2c34f15b5c5dc4f279684 *bd1999-06-19-d2t09.flac
+b415299b00208a187f84bf3b85e261e7 *bd1999-06-19-d2t10.flac
+24e160dc879abb56fcf09a22adacbb71 *bd1999-06-19-info.txt
+692ee880e12d8fa5e8e5248ebb281415 *bd-19990619-MountainView.ffp
+===================
+===================
+===================
+=== bd1999-06-19-info.txt
+===================
+===================
+===================
+Bob Dylan
+Shoreline Amphitheater
+Mountain View, California
+19 June 1999
+
+1   intro
+2 The Sound Of Silence (Paul Simon)
+3 I Walk The Line (Johnny Cash) / Blue Moon Of Kentucky (Bill Monroe)
+4 Knockin' On Heaven's Door
+
+Bob Dylan (acoustic guitar)
+Paul Simon (electric guitar)
+Mark Stewart (electric guitar)
+Vincent Nguini (electric guitar)
+Chris Botti, Jay Ashby, Andy Stitzer (horns)
+Tony Cedras (keyboards)
+Alain Mallet (keyboards)
+Bakhithi Kumalo (bass)
+Jamie Haddad (percussion)
+Steve Shehan (percussion)
+Steve Gadd (drums)
+
+5   intro
+6 Hallelujah, I'm Ready To Go (trad.)
+7 Mr. Tambourine Man
+8 Masters Of War
+9 One Too Many Mornings
+10 Tangled Up In Blue
+
+1 All Along The Watchtower
+2 Just Like A Woman
+3 Stuck Inside Of Mobile With The Memphis Blues Again
+4 Not Dark Yet
+5   band introduction
+6 Highway 61 Revisited
+7 Love Sick
+8 Like A Rolling Stone
+9 Don't Think Twice, It's All Right
+10 Not Fade Away (Norman Petty/Charles Hardin)
+
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+further info www.bjorner.com
+
+? -> portable DATrecorder - clone ? ->(digital transfer) m-audio delta audiophile 2496
+   -> Wavelab -> cdwave, tracking -> tlh 
+
+I did not harm the sound of the recording in any way
+
+===================
+===================
+===================

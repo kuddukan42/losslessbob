@@ -1,0 +1,62 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-65-Pre-Columbia-Records-vol-4-inc.flacf 
+=================== 
+=================== 
+=================== 
+81de77439c069b52fb5a7af93e360f9b  01 Talking Columbia.flac
+798298d87aa7e50b3f000e875993cb8d  02 Slipknot, hang not (hangknot, slipknot).flac
+a0e71b7737c7cdd5341e606dcfa55d3d  03 Talking Fishing Blues.flac
+3063a96e3485347982ad39571f82d2b5  04 Sally Girl.flac
+b1bbfff37bfe26f49c46f1a4a90afba6  05 The girl I left behind.flac
+1027045b571f1bd22339cc3d93549d14  09 Introduction.flac
+54784dd4ecd48a951c8be9c8b1b6f4f8  10 The lonesome death of Hattie Carroll.flac
+616a621f1448ef3bfda47dfd4a0b477c  11 Introduction.flac
+1aa9f884a3b1056cabd251438b1ab498  12 It's all over now, baby blue.flac
+9c9a2f79b886d1ff7dd0a8d8e2d516ed  13 Les Crane, Dylan and other guests rap.flac
+dcc6132b6c57499c0f5b0c766b340cda  14 It's alright, ma (I'm only bleeding).flac
+aebb4d7fd115287222b34b4d0f5db2a7  Artwork and info\Front cover.jpg.jpg
+72e86f826598d90b9053133fb8dab042  Artwork and info\Info of all shows.txt
+7993d9d705017518abed8bd29aa0d318  bd61-65-Pre-Columbia-Records-vol-4-inc-LB-3524.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-65-Pre-Columbia-Records-vol-4-inc.flacf 
+=================== 
+=================== 
+=================== 
+01 Talking Columbia.flac:7374a4e7995f3999cbb03e95f5b94017
+02 Slipknot, hang not (hangknot, slipknot).flac:0ae669729715d135e1b19b02a25b138f
+03 Talking Fishing Blues.flac:8a5e2520554755ffa2c461640b408a89
+04 Sally Girl.flac:81ee80ea68b0a903d1d2d9e1e8dd6575
+05 The girl I left behind.flac:46b42032232d54dad456052b5087ee0f
+09 Introduction.flac:1ad47a8b2eb0a2f1c287362ca98957af
+10 The lonesome death of Hattie Carroll.flac:5ad23805e307ef54822162cd8fff8727
+11 Introduction.flac:6e28fd74f3db1f5424f2ba30964e5975
+12 It's all over now, baby blue.flac:98abfb6b31544dd073532867231edd41
+13 Les Crane, Dylan and other guests rap.flac:df766680feb9e2347d647cb3bd0e0e4a
+14 It's alright, ma (I'm only bleeding).flac:a731fd18d099e1da4d61256878505e21
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-65-Pre-Columbia-Records-vol-4-inc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:52.69       41087132 B   ---   --   ---xx   flac  0.5819  01 Talking Columbia.flac
+     5:02.72       53442188 B   ---   --   ---xx   flac  0.5075  02 Slipknot, hang not (hangknot, slipknot).flac
+     5:51.10       61939964 B   ---   --   ---xx   flac  0.5252  03 Talking Fishing Blues.flac
+     3:07.02       32991548 B   ---   --   ---xx   flac  0.5121  04 Sally Girl.flac
+     5:41.73       60324140 B   ---   --   ---xx   flac  0.4895  05 The girl I left behind.flac
+     0:17.35        3081164 B   ---   --   ---xx   flac  0.5297  09 Introduction.flac
+     5:53.38       62358620 B   ---   --   ---xx   flac  0.5545  10 The lonesome death of Hattie Carroll.flac
+     0:55.56        9833756 B   ---   --   ---xx   flac  0.5269  11 Introduction.flac
+     4:12.31       44525756 B   ---   --   ---xx   flac  0.5779  12 It's all over now, baby blue.flac
+    18:00.23      190566140 B   ---   --   ---xx   flac  0.5247  13 Les Crane, Dylan and other guests rap.flac
+     7:26.41       78770876 B   ---   --   ---xx   flac  0.5696  14 It's alright, ma (I'm only bleeding).flac
+    60:22.00      638921284 B                            0.5352  (11 files)
+=================== 
+=================== 
+=================== 

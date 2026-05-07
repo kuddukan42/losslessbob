@@ -1,0 +1,55 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-29-b.flacf 
+=================== 
+=================== 
+=================== 
+46fa88088213d937cde237e593e8c617  1 Audiotrack.flac
+d6efe93cafd5c702c77b2a2bac9d39f8  2 Audiotrack.flac
+227833ba1b8ae6f97f34eaed1e4c1966  3 Audiotrack.flac
+8cad8d0dca9e9c792e3f66b1d7368a11  4 Audiotrack.flac
+9f7233cd28fdd41069250c747d65b5a1  5 Audiotrack.flac
+8c9e5b094b5575ea0c0bf6db06664ba4  6 Audiotrack.flac
+14484d8b2e262e87396ac9285f841463  7 Audiotrack.flac
+23e10f7b2eaa6dea90bd6874518ac5e7  8 Audiotrack.flac
+6a420786d63a4ee18e2e20549adfc54d  9 Audiotrack.flac
+c9606619e0179004b3feb59b307a3d30  BD 1996-06-29 London alt.txt
+2121ca054e2250dcb189b966b7298b97  md5sum.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-06-29-b.flacf 
+=================== 
+=================== 
+=================== 
+1 Audiotrack.flac:b0458bcedfc9e8c8a56b2926bd8dd85e
+2 Audiotrack.flac:9d12010bd070d21442a0a6a346871a3a
+3 Audiotrack.flac:1728f930ec138c84b7c0010f2f59de86
+4 Audiotrack.flac:16ea50e30fa273e8473bf982b1a09e6f
+5 Audiotrack.flac:305010857a9038e26714c5264b421fa9
+6 Audiotrack.flac:a7f90411042d814d5d103ab7386d423f
+7 Audiotrack.flac:34ad63c18a1c3763a734f1032e92d558
+8 Audiotrack.flac:63788ccb9525ac6d6bef6387ae46b293
+9 Audiotrack.flac:a6eb83d0bd9896ed5dc675ee2d75817b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-29-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.50       52155644 B   ---   --   ---xx   flac  0.5327  1 Audiotrack.flac
+     5:55.51       62741996 B   ---   --   ---xx   flac  0.5352  2 Audiotrack.flac
+     7:38.55       80920604 B   ---   --   ---xx   flac  0.5489  3 Audiotrack.flac
+     7:43.14       81706172 B   ---   --   ---xx   flac  0.5612  4 Audiotrack.flac
+     9:20.20       98831084 B   ---   --   ---xx   flac  0.5757  5 Audiotrack.flac
+     7:13.15       76416524 B   ---   --   ---xx   flac  0.5651  6 Audiotrack.flac
+     7:54.42       83712428 B   ---   --   ---xx   flac  0.5499  7 Audiotrack.flac
+     5:33.44       58844732 B   ---   --   ---xx   flac  0.5351  8 Audiotrack.flac
+     6:46.43       71719580 B   ---   --   ---xx   flac  0.5493  9 Audiotrack.flac
+    63:01.34      667048764 B                            0.5526  (9 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,157 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-02-10-b.flacf 
+=================== 
+=================== 
+=================== 
+29d2e9ebf553382dba754b7e6e8fdb40  CD1\01 Justine.shn
+89ecfc762521a4ff8c635a67c753133d  CD1\02 Positively 4th Street.shn
+a74fcabe03325f41ea04ea03d316489b  CD1\03 Clean cut kid.shn
+9d85a8c77904cd8c6921b38391318069  CD1\04 Shake.shn
+c8b1fa4c336fdc9fc5f290232b065cc2  CD1\05 I'll remember you.shn
+3b66ff8811603753a968364f08159e98  CD1\06 Trust yourself.shn
+f486dcc73a6204b107835b0b2b1e7a8d  CD1\07 That lucky old sun.shn
+a2a78a64943d34f107de9cc0490fdab1  CD1\08 Masters of war.shn
+010930757b522a11f5bdefa9ed2cf5e3  CD1\09 Straight into darkness [Tom Petty & The Heartbreakers].shn
+758a519ccf64041b1e3cb0217aad9f15  CD1\10 American girl [Tom Petty & The Heartbreakers].shn
+9d7fdef374d7093321b09f6edea1c164  CD1\11 It's alright, ma (I'm only bleeding).shn
+bad9f20fb2413788cb671275f7dcf03e  CD1\12 The times they are a-changin'.shn
+6627fff6ae4b550ebedf7420fce0bf25  CD1\13 It ain't me, babe.shn
+804121005330311bee5b09b32846fdba  CD1\1986-02-10 Sydney, New South Wales, Australia d1.md5
+46dcd42050423643f8d06bb1e5d45559  CD2\01 I forgot more than you'll ever know.shn
+535f104d4ef624596af0f1980f03428e  CD2\02 Just like a woman.shn
+9f5f3219e8f66025c5442a02b960889e  CD2\03 I'm moving on.shn
+71557985893921aa0831673fc2ea7a8f  CD2\04 Lenny Bruce.shn
+82648ee907fc5354209e5539d72cad6c  CD2\05 When the night comes falling from the sky.shn
+64895155b3821b9d7433c064440e9a4a  CD2\06 Lonesome town.shn
+7bac0521645e1bb2a013e2aa29708734  CD2\07 Seeing the real you at last.shn
+371027da17411af369e6db4ec8924332  CD2\08 Ballad of a thin man.shn
+568d22953958dfa96b560cbd640966b0  CD2\09 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].shn
+1e39e283c43d4fbe347610e7f3ebf34a  CD2\10 Refugee [Tom Petty & The Heartbreakers].shn
+0f65b14cedfd6fd228de4b774dd1108f  CD2\1986-02-10 Sydney, New South Wales, Australia d2.md5
+c62598a93ba2e796b133957f5e5d1831  CD3\01 Rainy day women # 12 & 35.shn
+2c2ed629b7654440459b29585f2d1637  CD3\02 Shot of love.shn
+28d656ef97f014b86678970f06f72f25  CD3\03 Across the borderline.shn
+ce372739f5a7fed51682a32a563e3f80  CD3\04 I and I.shn
+cc6f133139c79ff42a8358a660161086  CD3\05 Like a rolling stone.shn
+a9d562c9b350322e320ae77712b9419d  CD3\06 In the garden.shn
+b17fdede4e308e11d7204c7f2738879a  CD3\07 Blowin' in the wind.shn
+7efe4ec53a21c8981e7ad8959305a3c5  CD3\08 Uranium rock.shn
+5ff429bd169043f8a6f43b6ce4295358  CD3\09 Knockin' on heaven's door.shn
+e924b97a8bf57b53614de5183a7edef0  CD3\1986-02-10 Sydney, New South Wales, Australia d3.md5
+a28cac4b2aa7486ac992e147fcda8b3b  info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-02-10-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+6ab81a5a77e9cb862af7b775fccd8afe  [shntool]  01_Justine.wav
+43d33bc74d73fcd1f7097641021ff565  [shntool]  02_Positively_4th_Street.wav
+c3fbdff2238d1b97bf6cdc18a50a067a  [shntool]  03_Clean_cut_kid.wav
+7a25161232453072a901edbfd7f22e16  [shntool]  04_Shake.wav
+4dee72d03ba568a47eb710f8420437f5  [shntool]  05_I'll_remember_you.wav
+acd71337f72a3f4fee45cc87e24c6c8e  [shntool]  06_Trust_yourself.wav
+e3f75eb2c15c57f5e3c1246e036d50c4  [shntool]  07_That_lucky_old_sun.wav
+3d2a8aadf33b24060bbe5b6c2a77a313  [shntool]  08_Masters_of_war.wav
+95819c12d701a3e26868d731448a0aec  [shntool]  09_Straight_into_darkness_[Tom_Petty___The_Heartbreakers].wav
+abfbf7eecb765dc09081b3b1107bc5e5  [shntool]  10_American_girl_[Tom_Petty___The_Heartbreakers].wav
+e2de696d4b1708e4b37de73ec534170f  [shntool]  11_It's_alright,_ma_(I'm_only_bleeding).wav
+cfc25f7698e1bec53a8ea84fc6b059e3  [shntool]  12_The_times_they_are_a-changin'.wav
+94cd8717a1c3149297ba5f44f3b948c6  [shntool]  13_It_ain't_me,_babe.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-02-10-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+6f732fca914ee9dd5442100f43455ccc  [shntool]  01_I_forgot_more_than_you'll_ever_know.wav
+2e43fc20b678b13cb3d295ad76f589b6  [shntool]  02_Just_like_a_woman.wav
+084106f616b3e43c91876964ae39b15f  [shntool]  03_I'm_moving_on.wav
+4b7f2d9416b5d6a0ad98dd8f0ef27235  [shntool]  04_Lenny_Bruce.wav
+fca143c7dd000b9fff4286502c093082  [shntool]  05_When_the_night_comes_falling_from_the_sky.wav
+9832b41afe53ad04f3ef9b07d36b8c70  [shntool]  06_Lonesome_town.wav
+66dfac40aa7785dc973615b1ac641770  [shntool]  07_Seeing_the_real_you_at_last.wav
+bb9e0e7d1a60956ce10d99e0fd5a37f9  [shntool]  08_Ballad_of_a_thin_man.wav
+2a34f2778518aa3f753e535f2eb9ee2a  [shntool]  09_So_you_want_to_be_a_rock___roll_star_[Tom_Petty___The_Heartbreakers].wav
+a3e26df4a1b9478a9b4074036ae8d551  [shntool]  10_Refugee_[Tom_Petty___The_Heartbreakers].wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-02-10-b.flacf\CD3 
+=================== 
+=================== 
+=================== 
+2d1593edef49016562554ad75770edcc  [shntool]  01_Rainy_day_women_#_12___35.wav
+1701319b51c5e592449f7c9c0484b428  [shntool]  02_Shot_of_love.wav
+7ba1b3776183386ed93db4baf75696a1  [shntool]  03_Across_the_borderline.wav
+8aff425374f38351986ef19c6a93957f  [shntool]  04_I_and_I.wav
+7637c0299163426e08a679df1fc46afd  [shntool]  05_Like_a_rolling_stone.wav
+b4d84c51637dbef0c392cbffd901e42c  [shntool]  06_In_the_garden.wav
+049230c2e9dca6009e4bd35dddc58502  [shntool]  07_Blowin'_in_the_wind.wav
+f127f98a687e93457a637b8e3cfd1f28  [shntool]  08_Uranium_rock.wav
+8ac18c188c02749dad1720c65d9e44ad  [shntool]  09_Knockin'_on_heaven's_door.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-10-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.37       47362268 B   ---   --   ---xx    shn  0.6137  01 Justine.shn
+     4:06.04       43403852 B   ---   --   ---xx    shn  0.5950  02 Positively 4th Street.shn
+     3:38.46       38563436 B   ---   --   ---xx    shn  0.5940  03 Clean cut kid.shn
+     3:26.74       36512492 B   ---   --   ---xx    shn  0.5856  04 Shake.shn
+     4:45.09       50295212 B   ---   --   ---xx    shn  0.5693  05 I'll remember you.shn
+     3:18.50       35044844 B   ---   --   ---xx    shn  0.5838  06 Trust yourself.shn
+     3:59.30       42230204 B   ---   --   ---xx    shn  0.5753  07 That lucky old sun.shn
+     5:35.62       59239868 B   ---   --   ---xx    shn  0.5953  08 Masters of war.shn
+     4:58.19       52611932 B   ---   --   ---xx    shn  0.5807  09 Straight into darkness [Tom Petty & The Heartbreakers].shn
+     5:09.50       54625244 B   ---   --   ---xx    shn  0.6031  10 American girl [Tom Petty & The Heartbreakers].shn
+     8:19.12       88051868 B   ---   --   ---xx    shn  0.5832  11 It's alright, ma (I'm only bleeding).shn
+     3:37.56       38410556 B   ---   --   ---xx    shn  0.5849  12 The times they are a-changin'.shn
+     6:34.30       69572204 B   ---   --   ---xx    shn  0.5810  13 It ain't me, babe.shn
+    61:58.29      655923980 B                            0.5878  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-10-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.27       42575948 B   ---   --   ---xx    shn  0.5642  01 I forgot more than you'll ever know.shn
+     4:06.62       43540268 B   ---   --   ---xx    shn  0.5721  02 Just like a woman.shn
+     2:53.69       30679532 B   ---   --   ---xx    shn  0.5669  03 I'm moving on.shn
+     5:29.35       58117964 B   ---   --   ---xx    shn  0.5475  04 Lenny Bruce.shn
+     7:28.18       79069580 B   ---   --   ---xx    shn  0.5493  05 When the night comes falling from the sky.shn
+     4:03.00       42865244 B   ---   --   ---xx    shn  0.5172  06 Lonesome town.shn
+     5:49.32       61638908 B   ---   --   ---xx    shn  0.5636  07 Seeing the real you at last.shn
+     8:10.01       86438396 B   ---   --   ---xx    shn  0.5354  08 Ballad of a thin man.shn
+     4:03.30       42935804 B   ---   --   ---xx    shn  0.5788  09 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].shn
+     6:44.04       71275052 B   ---   --   ---xx    shn  0.5658  10 Refugee [Tom Petty & The Heartbreakers].shn
+    52:49.53      559136696 B                            0.5543  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-10-b.flacf\CD3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:18.45       24449084 B   ---   --   ---xx    shn  0.5540  01 Rainy day women # 12 & 35.shn
+     6:03.49       64148492 B   ---   --   ---xx    shn  0.5883  02 Shot of love.shn
+     4:30.73       47799740 B   ---   --   ---xx    shn  0.5754  03 Across the borderline.shn
+     6:39.30       70454204 B   ---   --   ---xx    shn  0.6101  05 Like a rolling stone.shn
+     8:46.42       92885228 B   ---   --   ---xx    shn  0.5896  06 In the garden.shn
+     5:55.70       62786684 B   ---   --   ---xx    shn  0.5952  07 Blowin' in the wind.shn
+     5:13.71       55380236 B   ---   --   ---xx    shn  0.5987  08 Uranium rock.shn
+     8:29.60       89928764 B   ---   --   ---xx    shn  0.5167  09 Knockin' on heaven's door.shn
+    47:58.65      507832432 B                            0.5780  (8 files)
+=================== 
+=================== 
+=================== 

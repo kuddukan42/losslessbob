@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-17-cedarv2.shnf 
+=================== 
+=================== 
+=================== 
+05da4b21ed4da076ecc5c137587cdfb3  bd02-11-17-cedarv2.txt
+056c1da52b82d6326a721ddb9731982c  D1\D1.md5
+9db2058b1067a43c6b33474e1d90bd57  D1\Dylan_2002-11-17_101.shn
+675b0fd53835f2747129c00f86fe3df6  D1\Dylan_2002-11-17_102.shn
+b92eff526f1b43a2a3bcc816b1912067  D1\Dylan_2002-11-17_103.shn
+67797e3b7ba4013cb2458e74481bc79a  D1\Dylan_2002-11-17_104.shn
+6587589387b214efe3e3d9c01de43f8e  D1\Dylan_2002-11-17_105.shn
+d98dee1db02bb6c697609c59afb428da  D1\Dylan_2002-11-17_106.shn
+be5639052912596551c71d85940d477e  D1\Dylan_2002-11-17_107.shn
+33e570de45ecaf4d29fe314d6585bcbf  D1\Dylan_2002-11-17_108.shn
+f9211300d1480f71a8038336040aa4d3  D1\Dylan_2002-11-17_109.shn
+c2cfcf6c5bf0d973fcdb067b1fa4dee9  D1\Dylan_2002-11-17_110.shn
+2734dfd25b33f1b36ecf50d460b6349a  D1\Dylan_2002-11-17_111.shn
+73a0cc641dc82a0618b2ad35c2c794c1  D1\Dylan_2002-11-17_112.shn
+98b8c22b6c3318cbde73799e1313ceef  D2\D2.md5
+6d2e207bebae90bed5fa3a82f163bc45  D2\Dylan_2002-11-17_201.shn
+bda7a582414ff282a25cf04e805f1112  D2\Dylan_2002-11-17_202.shn
+1b506493a745ccac54667cc59e72c474  D2\Dylan_2002-11-17_203.shn
+5890746710952cc2a1b44adcb74cf0f4  D2\Dylan_2002-11-17_204.shn
+fc7227ade74edf59bd6b2260485785ce  D2\Dylan_2002-11-17_205.shn
+25ec22dfaa379889a654ea31ebeb3d99  D2\Dylan_2002-11-17_206.shn
+a127bf7875e2e606311234b3e284af66  D2\Dylan_2002-11-17_207.shn
+994255692723f8ff2cd53e314c469cbf  D2\Dylan_2002-11-17_208.shn
+5f3e700a1b8ea2fc8d6e0e17ae6e760a  D2\Dylan_2002-11-17_209.shn
+f48b92acaaaf2a00611a983384bdecdc  HartfordB.jpg
+f5b1f71810179b2fbe24878e0b672f76  HartfordF.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-17-cedarv2.shnf\D1 
+=================== 
+=================== 
+=================== 
+a3c223d09cce01b4f1d4d19cf4cdfa45  [shntool]  Dylan_2002-11-17_101.wav
+18f1e4f752551c98bee405325b4c8dc0  [shntool]  Dylan_2002-11-17_102.wav
+08dd34e763cb0998078a633c49d7fe58  [shntool]  Dylan_2002-11-17_103.wav
+accb1b552b2d32415867c8e592b0b508  [shntool]  Dylan_2002-11-17_104.wav
+3081dd73e18bb8ea002fe42b5131d3da  [shntool]  Dylan_2002-11-17_105.wav
+4c1df4a34452ec4000e2b3a16bf8dd41  [shntool]  Dylan_2002-11-17_106.wav
+079d2c6d450ea89c582127d413c95660  [shntool]  Dylan_2002-11-17_107.wav
+0d99c3f939a53b10d4cbab0b5caaa03a  [shntool]  Dylan_2002-11-17_108.wav
+96efe6c8f849b0c944b41052b97e443f  [shntool]  Dylan_2002-11-17_109.wav
+82d7488781c1999aefc7769059246e5c  [shntool]  Dylan_2002-11-17_110.wav
+bcee7df36003cca671da00759700a422  [shntool]  Dylan_2002-11-17_111.wav
+da02c66beb3121f57d7b44a3f6c3cf85  [shntool]  Dylan_2002-11-17_112.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-17-cedarv2.shnf\D2 
+=================== 
+=================== 
+=================== 
+5ca009c2979e356172c626abb466fd09  [shntool]  Dylan_2002-11-17_201.wav
+3b73716e0c5a5b26aba5c27fc13cd0a5  [shntool]  Dylan_2002-11-17_202.wav
+f47f19d22bc5b38dd1e86d22ef563d90  [shntool]  Dylan_2002-11-17_203.wav
+e44ea363ad233798b4eae74d589cafe0  [shntool]  Dylan_2002-11-17_204.wav
+e349b4bdb91d4322a7e3354e534ad3b7  [shntool]  Dylan_2002-11-17_205.wav
+d2c36ab9e64e838f7916769329b76a31  [shntool]  Dylan_2002-11-17_206.wav
+b77b5e272b36a2ef842af302ab7459e1  [shntool]  Dylan_2002-11-17_207.wav
+5529cc60916348feb75b72b5052a8137  [shntool]  Dylan_2002-11-17_208.wav
+95d037c1f15b58518c684d5f5f858af0  [shntool]  Dylan_2002-11-17_209.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-17-cedarv2.shnf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.15        9560924 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_101.wav
+     5:19.52       56393948 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_102.wav
+     6:48.26       72032396 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_103.wav
+     6:31.61       69115916 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_104.wav
+     5:43.44       60608732 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_105.wav
+     6:50.23       72378140 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_106.wav
+     4:03.71       43032236 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_107.wav
+     7:13.41       76477676 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_108.wav
+     7:49.28       82797500 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_109.wav
+     6:32.49       69264092 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_110.wav
+     5:49.17       61603628 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_111.wav
+     5:23.08       56996060 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_112.wav
+    68:59.60      730261248 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-17-cedarv2.shnf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.52       45986348 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_201.wav
+     6:46.31       71691356 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_202.wav
+     9:36.43      101707580 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_203.wav
+     7:40.66       81299276 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_204.wav
+     3:15.20       34445084 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_205.wav
+     6:41.05       70748204 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_206.wav
+     7:55.43       83891180 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_207.wav
+     6:03.46       64141436 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_208.wav
+     6:24.30       67808204 B   ---   --   -----    wav  1.0000  Dylan_2002-11-17_209.wav
+    58:44.36      621718668 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

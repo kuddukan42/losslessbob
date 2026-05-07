@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-05-03-tom-moore-remaster.flacf 
+=================== 
+=================== 
+=================== 
+31e132a31aa0a0b807911089a3d5d3ac  2007_05_03_Dylan_Info.txt
+dd93072ef31dc2ade8ee621b3dd63dff  bd07-05-03-tom-moore-remaster-LB-4809.txt
+358cd7475b6f9d822123191678072ecb  Dylan_2007_05_03_CD1_01.flac
+f816c9aec15db1bfd0e8bcf07e1789c5  Dylan_2007_05_03_CD1_02.flac
+419b0884ba66f8e8a5600b42e5d7dbd3  Dylan_2007_05_03_CD1_03.flac
+2019eb6e06312d7d70129ea451c73854  Dylan_2007_05_03_CD1_04.flac
+2a13e9c0367f5d36e4e226628b13a070  Dylan_2007_05_03_CD1_05.flac
+37f43f87a4eb823f87dcaebe474760bf  Dylan_2007_05_03_CD1_06.flac
+25669af802944f9af429c591c49f372e  Dylan_2007_05_03_CD1_07.flac
+455d7d3c06672695090d789e05e9db07  Dylan_2007_05_03_CD1_08.flac
+7127c73903cc5d67af4229fca3cda467  Dylan_2007_05_03_CD1_09.flac
+2c074bc4b42da603d4397423d8860f7e  Dylan_2007_05_03_CD1_10.flac
+3f6f8086435b1d9b28a88ec217ea21ec  Dylan_2007_05_03_CD1_11.flac
+b62e36909899e10244d56b75189e7d6f  Dylan_2007_05_03_CD2_01.flac
+52dffca1fe3a7f15273d59fd85bf4243  Dylan_2007_05_03_CD2_02.flac
+09636e56f14e1905d4dee9f01c7ac0bb  Dylan_2007_05_03_CD2_03.flac
+3ce5e1a8d20a2920c19bd1094a0c1604  Dylan_2007_05_03_CD2_04.flac
+76596bac83522b592aa93057877a31fc  Dylan_2007_05_03_CD2_05.flac
+f1bcacc95d573522373f3e11cf12a25f  Dylan_2007_05_03_CD2_06.flac
+e4f9ce81e6a139f4ccd3aa1b182e330f  Dylan_2007_05_03_CD2_07.flac
+956ab5ef543f1d05b84e9afe8213676d  fingerprint.md5
+16c81eff51c44a85bc9a716a78fa2fd9  lbdir-bd07-05-03-tom-moore-remaster.flacf.md5
+0bc96c6c200ce7d619bbe226cd632edb  more-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-05-03-tom-moore-remaster.flacf 
+=================== 
+=================== 
+=================== 
+Dylan_2007_05_03_CD1_01.flac:627a8123e2e2e7a5c89e4e0c86b3787c
+Dylan_2007_05_03_CD1_02.flac:a54382cfc506a7142292f824cec59624
+Dylan_2007_05_03_CD1_03.flac:33a7e0ae449896f25a20e66842f6998b
+Dylan_2007_05_03_CD1_04.flac:38b9aa4fbbca346469a3e28c41daeeeb
+Dylan_2007_05_03_CD1_05.flac:536646c431cf75027a4c4cea8bae93f0
+Dylan_2007_05_03_CD1_06.flac:26a32f79588ee3c274c0e5625f52b80e
+Dylan_2007_05_03_CD1_07.flac:488fc5059deb9e59acc56422274c75b6
+Dylan_2007_05_03_CD1_08.flac:f8546a56d9ec7a363f497e3bf735ff72
+Dylan_2007_05_03_CD1_09.flac:cd8df68f34bf03590a19f9c089dee2aa
+Dylan_2007_05_03_CD1_10.flac:12281a862c996b1cf437f1c2925c85ca
+Dylan_2007_05_03_CD1_11.flac:3728f2d1a6663d6874c7722ba5e467d5
+Dylan_2007_05_03_CD2_01.flac:1478ebba5ad9a42d8cf5cd90b79d15bf
+Dylan_2007_05_03_CD2_02.flac:901511a5dcb795ea1fd2de20dc6b94bb
+Dylan_2007_05_03_CD2_03.flac:945f32e569a192c0485eaf1f6bce72c4
+Dylan_2007_05_03_CD2_04.flac:bfd4edb51cbe21712b15f39923c28eb1
+Dylan_2007_05_03_CD2_05.flac:cf43fec7306ddb4e9359aedb23cbff69
+Dylan_2007_05_03_CD2_06.flac:63fbc5e2ae3340054fc95921678e7dc4
+Dylan_2007_05_03_CD2_07.flac:5e77f2a9da6f3172aa6d306637474c1c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-05-03-tom-moore-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:04.45       11395484 B   ---   --   ---xx   flac  0.7272  Dylan_2007_05_03_CD1_01.flac
+     5:58.57       63285308 B   ---   --   ---xx   flac  0.7320  Dylan_2007_05_03_CD1_02.flac
+     6:44.45       71371484 B   ---   --   ---xx   flac  0.6850  Dylan_2007_05_03_CD1_03.flac
+     7:34.60       80226764 B   ---   --   ---xx   flac  0.7095  Dylan_2007_05_03_CD1_04.flac
+     7:24.51       78441596 B   ---   --   ---xx   flac  0.7460  Dylan_2007_05_03_CD1_05.flac
+     6:58.27       73798748 B   ---   --   ---xx   flac  0.6987  Dylan_2007_05_03_CD1_06.flac
+    10:31.41      111404876 B   ---   --   ---xx   flac  0.6660  Dylan_2007_05_03_CD1_07.flac
+     6:56.25       73441244 B   ---   --   ---xx   flac  0.7436  Dylan_2007_05_03_CD1_08.flac
+     6:31.39       69064172 B   ---   --   ---xx   flac  0.6211  Dylan_2007_05_03_CD1_09.flac
+     6:40.70       70724684 B   ---   --   ---xx   flac  0.7243  Dylan_2007_05_03_CD1_10.flac
+     7:43.54       81800252 B   ---   --   ---xx   flac  0.6987  Dylan_2007_05_03_CD1_11.flac
+     6:49.07       72164108 B   ---   --   ---xx   flac  0.6486  Dylan_2007_05_03_CD2_01.flac
+     7:09.43       75776780 B   ---   --   ---xx   flac  0.6619  Dylan_2007_05_03_CD2_02.flac
+     7:34.10       80109164 B   ---   --   ---xx   flac  0.6099  Dylan_2007_05_03_CD2_03.flac
+     6:04.49       64324892 B   ---   --   ---xx   flac  0.7235  Dylan_2007_05_03_CD2_04.flac
+     9:50.47      104186588 B   ---   --   ---xx   flac  0.7092  Dylan_2007_05_03_CD2_05.flac
+     7:11.58       76164860 B   ---   --   ---xx   flac  0.7601  Dylan_2007_05_03_CD2_06.flac
+     6:47.22       71846588 B   ---   --   ---xx   flac  0.7310  Dylan_2007_05_03_CD2_07.flac
+   125:37.00     1329527592 B                            0.6974  (18 files)
+=================== 
+=================== 
+=================== 

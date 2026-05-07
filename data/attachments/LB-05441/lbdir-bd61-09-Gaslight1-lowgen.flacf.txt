@@ -1,0 +1,47 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-09-Gaslight1-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+e0ab6b1c7bc1bc81c04e3279483c3520  all.md5
+9ed5e0f04cb33fb9ba539af5ad263759  bd61-09-Gaslight1-lowgen-LB-5441.txt
+df40fba86075f4adcc8fad3e8dad189e  Gas1Track01.flac
+8da617da2318392c9808b28e425b37f1  Gas1Track02.flac
+bb1fb0f52d8281524d648ecef316decf  Gas1Track03.flac
+42a7ede793ad97ff217856108794b2dc  Gas1Track04.flac
+b9faa25162b4d06c1aa309da7797eabb  Gas1Track05.flac
+570098204c89cd64619378f05de4ffa6  Gas1Track06.flac
+ab7c91f5b6294ffd7fc57175407d8989  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-09-Gaslight1-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+Gas1Track01.flac:6767aca3354c367afe91eb780b0a7f36
+Gas1Track02.flac:d2f089b45c75f53e58f876da91f682c7
+Gas1Track03.flac:43101a2579cf49ae83f34372da91397f
+Gas1Track04.flac:41ba972d24dca774fb16d12ca8eb7b9c
+Gas1Track05.flac:5f440cfbb13b1f77b9c59aa963c25160
+Gas1Track06.flac:85aaeb81c8580532c280e8225ff735cb
+=================== 
+=================== 
+=================== 
+=== shntool for: bd61-09-Gaslight1-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:27.05       25942604 B   ---   --   ---xx   flac  0.3597  Gas1Track01.flac
+     4:39.39       49307372 B   ---   --   ---xx   flac  0.3613  Gas1Track02.flac
+     6:15.18       66192380 B   ---   --   ---xx   flac  0.3580  Gas1Track03.flac
+     3:14.20       34268684 B   ---   --   ---xx   flac  0.3361  Gas1Track04.flac
+     2:27.64       26081372 B   ---   --   ---xx   flac  0.3820  Gas1Track05.flac
+     6:32.20       69195884 B   ---   --   ---xx   flac  0.3489  Gas1Track06.flac
+    25:36.16      270988296 B                            0.3560  (6 files)
+=================== 
+=================== 
+=================== 

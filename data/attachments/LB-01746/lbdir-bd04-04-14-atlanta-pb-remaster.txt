@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04 04 14 atlanta pb remaster 
+=================== 
+=================== 
+=================== 
+2898bd44879295b3929d434662761d46  04 04 14 d1 t01.shn
+458f6d085933b901973bbfe95703d99d  04 04 14 d1 t02.shn
+b40143bad43a94a0ffa3e7624261e1f0  04 04 14 d1 t03.shn
+9c36f02cd0e0af919ad0587473153146  04 04 14 d1 t04.shn
+830b938f16e3039a9128190df9611799  04 04 14 d1 t05.shn
+99557828132d9d341ed9dcab7b0bb2f5  04 04 14 d1 t06.shn
+86782e35dc1e0c2d2fa31ae5ce18fb42  04 04 14 d1 t07.shn
+12084a335dd8d22e525863b8145e8336  04 04 14 d1 t08.shn
+0b2f4c1eb484f7c007b29833bd8d54c4  04 04 14 d1 t09.shn
+14c74426b55252eb9b41271cb88771b0  04 04 14 d2 t01.shn
+42a4e32c008a980cac0d78b5f00e2d8e  04 04 14 d2 t02.shn
+aa0aaf524f3fb01c233892480c181134  04 04 14 d2 t03.shn
+5bca352a0e9bb5a1ca5ecd19c32890b7  04 04 14 d2 t04.shn
+fb58003ec0fa61a29ea3c1e83b2f6d91  04 04 14 d2 t05.shn
+9dc78e60d67d4cc7e2a6e299573f60bf  04 04 14 d2 t06.shn
+f38805b2e84375965b5110adf03fdbea  04 04 14 d2 t07.shn
+9093520e88b47c752f4b8e98eea4ee45  04 04 14 d2 t08.shn
+2653d63c9a66fdc593105e1a42964101  04 04 14.md5
+6b0691bad4124ed6521f8726fb45f096  bd04 04 14 atlanta pb remaster-LB-1746.txt
+91e66b47776be281ef5aa840feddcd1b  bd04-04-14-pb-remaster.txt
+11d596e339eda76376cd106226b4ac79  bd04-04-14d1tr1fix\04 04 14 d1 t01fix.shn
+fd2e462ab895006907de71f910218e56  bd04-04-14d1tr1fix\bd2004-04-14d1tr1fix.md5
+c05f5415fc0fb8adc0745ce870790d0d  bd04-04-14d1tr1fix\bd2004-04-14d1tr1fix.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04 04 14 atlanta pb remaster 
+=================== 
+=================== 
+=================== 
+4bb0dffed41786802dfd60e7daa6b025  [shntool]  04_04_14_d1_t01.wav
+8595ee815cc6cb0da3889d0bff410dc4  [shntool]  04_04_14_d1_t02.wav
+103cab2e30857e2512621a933b4c4c50  [shntool]  04_04_14_d1_t03.wav
+13b4dd8df659d4a263326cf4f44288de  [shntool]  04_04_14_d1_t04.wav
+2187a8c114b7fa427f268488cecb085e  [shntool]  04_04_14_d1_t05.wav
+a4d4cf267b95676aae6e2ee06ee0c53a  [shntool]  04_04_14_d1_t06.wav
+28800d612d035059b627f3ccffbf428c  [shntool]  04_04_14_d1_t07.wav
+ec3c026dd5aa5b1f9f94c2512ec66eb0  [shntool]  04_04_14_d1_t08.wav
+17ab6ff2d2811ee3890c3db5975c2624  [shntool]  04_04_14_d1_t09.wav
+78bb7a3e87c663e2874162b2c88c808c  [shntool]  04_04_14_d2_t01.wav
+78647b9a2bd114aa835788b936be41c6  [shntool]  04_04_14_d2_t02.wav
+bc6b36216579edf46336936a0dfa6154  [shntool]  04_04_14_d2_t03.wav
+d918a4e163b001563757ec961bc7de84  [shntool]  04_04_14_d2_t04.wav
+3cf2201311d1920e9a03d20de3a54364  [shntool]  04_04_14_d2_t05.wav
+e6482e63734e9e67389b776dbee8da47  [shntool]  04_04_14_d2_t06.wav
+fb33a37501789a1def56ab9a2be08d53  [shntool]  04_04_14_d2_t07.wav
+ba979db124dc58ba11e3def4685048f3  [shntool]  04_04_14_d2_t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04 04 14 atlanta pb remaster\bd04-04-14d1tr1fix 
+=================== 
+=================== 
+=================== 
+515e754a03bd8f43ad9f44e76c292e4f  [shntool]  04_04_14_d1_t01fix.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04 04 14 atlanta pb remaster 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.45       56201084 B   ---   --   ---xx    shn  0.6041  04 04 14 d1 t01.shn
+     7:05.09       74991212 B   ---   --   ---xx    shn  0.5681  04 04 14 d1 t02.shn
+     5:43.00       60505244 B   ---   --   ---xx    shn  0.6040  04 04 14 d1 t03.shn
+     7:12.23       76258940 B   ---   --   ---xx    shn  0.6197  04 04 14 d1 t04.shn
+     7:08.13       75529820 B   ---   --   ---xx    shn  0.6223  04 04 14 d1 t05.shn
+     5:11.04       54869852 B   ---   --   ---xx    shn  0.5687  04 04 14 d1 t06.shn
+     6:22.71       67551836 B   ---   --   ---xx    shn  0.6101  04 04 14 d1 t07.shn
+     5:18.35       56177564 B   ---   --   ---xx    shn  0.4867  04 04 14 d1 t08.shn
+     7:27.35       78933164 B   ---   --   ---xx    shn  0.6059  04 04 14 d1 t09.shn
+     5:49.45       61669484 B   ---   --   ---xx    shn  0.5413  04 04 14 d2 t01.shn
+     6:44.50       71383244 B   ---   --   ---xx    shn  0.5426  04 04 14 d2 t02.shn
+     7:27.30       78921404 B   ---   --   ---xx    shn  0.5860  04 04 14 d2 t03.shn
+     6:14.20       66020684 B   ---   --   ---xx    shn  0.5274  04 04 14 d2 t04.shn
+    11:02.56      116908556 B   ---   --   ---xx    shn  0.5856  04 04 14 d2 t05.shn
+     5:48.07       61403708 B   ---   --   ---xx    shn  0.6333  04 04 14 d2 t06.shn
+     7:56.61       84109916 B   ---   --   ---xx    shn  0.6147  04 04 14 d2 t07.shn
+     9:02.13       95639420 B   ---   --   ---xx    shn  0.5938  04 04 14 d2 t08.shn
+   116:52.67     1237075132 B                            0.5852  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04 04 14 atlanta pb remaster\bd04-04-14d1tr1fix 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.06       56109344 B   -b-   --   ---xx    shn  0.6044  04 04 14 d1 t01fix.shn
+     5:18.06       56109344 B                            0.6044  (1 file)
+=================== 
+=================== 
+=================== 

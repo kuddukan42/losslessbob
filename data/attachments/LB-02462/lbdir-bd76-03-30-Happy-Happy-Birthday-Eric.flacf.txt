@@ -1,0 +1,62 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-03-30-Happy-Happy-Birthday-Eric.flacf 
+=================== 
+=================== 
+=================== 
+d7ed43f703f9bae516472cfc12157d46  bd76-03-30-Happy-Happy-Birthday-Eric.txt
+c118ddcbe57e7575ea3f34944c0f06e8  DylanHappyBirthdayBack.jpg
+3c70c4d89bd36d93c6780365496c9ab6  h-08f.jpg
+b5067dac5e342864e7c869da38c2ae6a  h-08fi.jpg
+a0015b1849bf89d08e92f62c85261251  Happy, Happy Birthday Eric - 1976-03-30 - flac.md5
+657ced635e7a71c4fa228b424be3adbc  Happy, Happy Birthday Eric - t01.flac
+241c472b4ae8e59c1a3b31df2d2658e8  Happy, Happy Birthday Eric - t02.flac
+fcf20fac98472eb8b2f4c4c87b47916d  Happy, Happy Birthday Eric - t03.flac
+9291324450748a0e335b642931b57968  Happy, Happy Birthday Eric - t04.flac
+caa4a7833268d642c167a420e53c846b  Happy, Happy Birthday Eric - t05.flac
+a977bac93b21c1728a1139680e706b82  Happy, Happy Birthday Eric - t06.flac
+84ec0ff6ff7666b3e6ebb6a3ed2dc6bb  Happy, Happy Birthday Eric - t07.flac
+19bd096dfb9d45fdb4faae710a2e9286  Happy, Happy Birthday Eric - t08.flac
+657bf20653c30d3dc4ec9d00f22a2bda  Happy, Happy Birthday Eric - t09.flac
+f8d39148bc8062b3e70461677a1487d8  Happy, Happy Birthday Eric - t10.flac
+bf2844884c223d3112f8b79c75c2cc90  Happy, Happy Birthday Eric.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-03-30-Happy-Happy-Birthday-Eric.flacf 
+=================== 
+=================== 
+=================== 
+Happy, Happy Birthday Eric - t01.flac:c79741000856a3da7313fc7997b644aa
+Happy, Happy Birthday Eric - t02.flac:d2dca280d547750a245247dce0cf9085
+Happy, Happy Birthday Eric - t03.flac:e2bb42e816bfddadfdddf1e901693d83
+Happy, Happy Birthday Eric - t04.flac:2bec501f1428d63936aa08e931332827
+Happy, Happy Birthday Eric - t05.flac:84189de3da8a25db77770451ff6984cf
+Happy, Happy Birthday Eric - t06.flac:ac355363efe573989e0a224ecddc0df0
+Happy, Happy Birthday Eric - t07.flac:c0d2343c2ff32d03f7695e47c3a69c87
+Happy, Happy Birthday Eric - t08.flac:672949f72d5ff2f1f0114edca3add738
+Happy, Happy Birthday Eric - t09.flac:e706aa0b118065692b7d49f4a0ff48fe
+Happy, Happy Birthday Eric - t10.flac:fc750faa6a492f20978d456445012ff8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-03-30-Happy-Happy-Birthday-Eric.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:33.04      101086652 B   ---   --   ---xx   flac  0.4548  Happy, Happy Birthday Eric - t01.flac
+     7:53.39       83528972 B   ---   --   ---xx   flac  0.4501  Happy, Happy Birthday Eric - t02.flac
+     8:22.33       88630460 B   ---   --   ---xx   flac  0.4248  Happy, Happy Birthday Eric - t03.flac
+     7:47.19       82423532 B   ---   --   ---xx   flac  0.4347  Happy, Happy Birthday Eric - t04.flac
+    10:35.63      112162220 B   ---   --   ---xx   flac  0.4643  Happy, Happy Birthday Eric - t05.flac
+     1:10.45       12453884 B   ---   --   ---xx   flac  0.4379  Happy, Happy Birthday Eric - t06.flac
+     5:51.15       61951724 B   ---   --   ---xx   flac  0.4733  Happy, Happy Birthday Eric - t07.flac
+     4:49.11       51005516 B   ---   --   ---xx   flac  0.4839  Happy, Happy Birthday Eric - t08.flac
+     2:02.57       21654908 B   ---   --   ---xx   flac  0.4601  Happy, Happy Birthday Eric - t09.flac
+     4:16.41       45254876 B   ---   --   ---xx   flac  0.4509  Happy, Happy Birthday Eric - t10.flac
+    62:22.27      660152744 B                            0.4529  (10 files)
+=================== 
+=================== 
+=================== 

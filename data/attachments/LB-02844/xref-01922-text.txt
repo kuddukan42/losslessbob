@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== BobDylan-JonesBeach NY -1988-06-30-SBD (Speed Corrected).ffp
+===================
+===================
+===================
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d1 - Track 01.flac:f89fb0fd80cde8713bb99403d94269e8
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d1 - Track 02.flac:6dccef87804f52aed7adae5d908a9783
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d1 - Track 03.flac:6d7a14cb8dd7806709887eacda4a2620
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d1 - Track 04.flac:3c4baa289abd7615ccdab9fced86fb63
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d1 - Track 05.flac:0b5efdfce5cecea9e85aa60be1fa9653
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d1 - Track 06.flac:3f45c20343a91dba0d92740640739843
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d1 - Track 07.flac:ef023c90f37e99cbbc063eac13b3edd9
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d1 - Track 08.flac:db31202d2853b216e55481074df172eb
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 01.flac:595523283359fe9f1b9d4fdb9c83f941
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 02.flac:2869bd27ac43ea7f6e57da709e80fda0
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 03.flac:5d5e39aaf0e2a7c2d8e595a1a775262d
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 04.flac:120dc8c5d626ce0c51a0c5e298c36cc0
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 05.flac:20a41b88ac85889e1c17e7b1d8501c8b
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 06.flac:e4c169e2c4c0285b2317df01d6be72f1
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 07.flac:73cbd27657658b5429d828509e699949
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 08.flac:b2565783928f53234e9b91918dc37693
+BobDylan-JonesBeach-1988-06-30 SpeedAdjst d2 - Track 09.flac:b55b015512714ac3794b54c3347b7613
+===================
+===================
+===================
+=== BobDylan-JonesBeach-1988-06-30-SBD SpeedAdjst info.txt
+===================
+===================
+===================
+JUN 30, 1988
+Wantagh, NY
+Jones Beach Theater
+SBD  (Speed corrected by decreasing speed 3.3%). 
+
+CD's Ripped to 16 bit WAVE w/EAC > Encoded to FLAC (level 6) w/TLH
+
+SET LIST:
+*****Disc One*****
+1. Subterranean Homesick Blues
+2. Just Like Tom Thumbs Blues
+3. Youre A Big Girl Now
+4. Tangled Up In Blue
+5. Masters Of War
+6. I Shall Be Released
+7. Stuck Inside Of Mobile With The Memphis Blues Again
+8. Lakes Of Pontchartrain
+*****Disc Two*****
+1. A Hard Rains A-Gonna Fall
+2. Eileen Aroon
+3. Boots Of Spanish Leather
+4. Silvio
+5. Gates Of Eden
+6. Like A Rolling Stone
+7. The Times They Are A-Changin
+8. All Along The Watchtower
+9. Maggies Farm
+
+________________________________________________________________________________________________
+After learning this recording ran fast by 3.3% I reduced speed for each track with Audacity and re-made fingerprints and torrents.
+Flacs re-encoded to level 8 and aligned on sector boundaries. 
+-TennDave57
+________________________________________________________________________________________________
+===================
+===================
+===================

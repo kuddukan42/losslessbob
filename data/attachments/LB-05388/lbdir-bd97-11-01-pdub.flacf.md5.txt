@@ -1,0 +1,21 @@
+42fe7f7eb5bb4fea44d57b0318478b24  bd1997-11-01.txt
+ba832e291350979523ee6963d9ae944c  bd97-11-01-d1\bd97-11-01-d1-fingerprints.txt
+3d4a67a47d2f6f4541b0c39bdf2d1276  bd97-11-01-d1\bd97-11-01-d1.md5
+589ec0366b2adba6122d1a82cf43846d  bd97-11-01-d1\Track01 - Track01.flac
+193106cc18183e825c0471637822d4d6  bd97-11-01-d1\Track02 - Track02.flac
+c611cda15450011eefe6ece696a0e634  bd97-11-01-d1\Track03 - Track03.flac
+060b3fc5f2534608e6ad8b4c297e9ba5  bd97-11-01-d1\Track04 - Track04.flac
+b8e8cd4113c9fbba88118512379eec50  bd97-11-01-d1\Track05 - Track05.flac
+483a3ad74ef143c4e00e488f610eee7c  bd97-11-01-d1\Track06 - Track06.flac
+197824c94e2e98b17fee1c57c608db14  bd97-11-01-d1\Track07 - Track07.flac
+4cbf8afdbf0649733d72a9439c3c864d  bd97-11-01-d1\Track08 - Track08.flac
+93c25cb6cf4d7524c9d7f5eee5b5e1dd  bd97-11-01-d1\Track09 - Track09.flac
+9e977c166e7c0e632b10e58b500a1e9d  bd97-11-01-d2\bd97-11-01-d2-fingerpprints.txt
+09643778d45d13826437a6b8408fa710  bd97-11-01-d2\bd97-11-01-d2.md5
+352766a88354aa7541ae62c1df0d3ca9  bd97-11-01-d2\Bob Dylan - Track01 - Copy.flac
+a65dc31144c70b8fbf2cbb07415e801c  bd97-11-01-d2\Bob Dylan - Track02 - Copy.flac
+39fadaa936b6a1c2d48bc1d2659a8b70  bd97-11-01-d2\Bob Dylan - Track03 - Copy.flac
+184e148c902a0999c6c262c3a50514b8  bd97-11-01-d2\Bob Dylan - Track04 - Copy.flac
+3ac06ae5ca466881b1a5234478915be7  bd97-11-01-d2\Bob Dylan - Track05 - Copy.flac
+4bbff9dbca3dec978cff6910dec306e9  bd97-11-01-d2\Bob Dylan - Track06 - Copy.flac
+f36cba8c1390581446772ed220214fde  bd97-11-01-d2\Bob Dylan - Track07 - Copy.flac

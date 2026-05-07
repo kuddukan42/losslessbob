@@ -1,0 +1,65 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-07-01-sbd 
+=================== 
+=================== 
+=================== 
+2de4de5707e8cfa6945c8cce5995fcac  bd84-07-01is.md5
+ab580e5084e6eb39ca4428a65c168d04  bd84-07-01is.txt
+9e39fb5d8ef6165786983cec82b8c015  bd84-07-01ist01.shn
+44ca76683ec35f04b63f199466a006cf  bd84-07-01ist02.shn
+38619165c2d9f8e81e41f8e5114b25a0  bd84-07-01ist03.shn
+eb53b4233552ecdbe89aea2b4495f02d  bd84-07-01ist04.shn
+d508271db347eacc78638c0bfe610f88  bd84-07-01ist05.shn
+07c59228ca4a50400d944a8c20e4d121  bd84-07-01ist06.shn
+4ce16b26e8741c9448072a5fb14c189e  bd84-07-01ist07.shn
+70ec584d26ad279bddde5a7ddf9e6086  bd84-07-01ist08.shn
+9fa01022beebd30dfff2062fb6a01cfd  bd84-07-01ist09.shn
+38bc1462b6fe93f757ba6e6d813bae2f  bd84-07-01ist10.shn
+7a46e44297f902bcf49f0860ad405fff  bd84-07-01ist11.shn
+bb20a44fa8aa2319c7d601a57d8cbd93  bd84-07-01ist12.shn
+0a5f8f9c602de694747f4aadb32602fd  bd84-07sbds.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd84-07-01-sbd 
+=================== 
+=================== 
+=================== 
+03e415a7a5b6084b2dc29a53a6c823ea  [shntool]  bd84-07-01ist01.wav
+de0e05668cf35bf8dbc8c8c89f92116b  [shntool]  bd84-07-01ist02.wav
+3d672b573d82dcd7be1dc9c720539c7b  [shntool]  bd84-07-01ist03.wav
+1bb604748cf45a329dd83393379c3b4f  [shntool]  bd84-07-01ist04.wav
+61cb17a88e26a1ea0e8682a57eebcc7a  [shntool]  bd84-07-01ist05.wav
+662c0d73be4ed7582480421ae015b77b  [shntool]  bd84-07-01ist06.wav
+08c7483b7a4df0ef5370ef188bda2273  [shntool]  bd84-07-01ist07.wav
+96ea57942a829d0847c60cd836b82b33  [shntool]  bd84-07-01ist08.wav
+bc42f35505b5d99308158da678364b68  [shntool]  bd84-07-01ist09.wav
+6ac2359bb24627fdd5451d53c3fc3572  [shntool]  bd84-07-01ist10.wav
+4d553de031ae8b4d25d89354ab69d132  [shntool]  bd84-07-01ist11.wav
+cd318cc9bf23615194e4c0cacad5ce59  [shntool]  bd84-07-01ist12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-07-01-sbd 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.03       57689900 B   ---   --   ---xx    shn  0.5891  bd84-07-01ist01.shn
+     6:36.17       69894428 B   ---   --   ---xx    shn  0.6201  bd84-07-01ist02.shn
+     4:17.12       45363068 B   ---   --   ---xx    shn  0.6462  bd84-07-01ist03.shn
+     2:05.58       22186460 B   ---   --   ---xx    shn  0.6163  bd84-07-01ist04.shn
+     6:59.74       74085692 B   ---   --   ---xx    shn  0.6120  bd84-07-01ist05.shn
+     5:27.39       57774572 B   ---   --   ---xx    shn  0.6269  bd84-07-01ist06.shn
+     5:46.48       61147340 B   ---   --   ---xx    shn  0.6385  bd84-07-01ist07.shn
+     5:43.30       60575804 B   ---   --   ---xx    shn  0.6131  bd84-07-01ist08.shn
+     6:00.64       63654572 B   ---   --   ---xx    shn  0.6054  bd84-07-01ist09.shn
+     3:25.22       36213788 B   ---   --   ---xx    shn  0.6472  bd84-07-01ist10.shn
+     4:37.53       48987500 B   ---   --   ---xx    shn  0.6415  bd84-07-01ist11.shn
+     4:59.39       52835372 B   ---   --   ---xx    shn  0.6143  bd84-07-01ist12.shn
+    61:27.09      650408496 B                            0.6210  (12 files)
+=================== 
+=================== 
+=================== 

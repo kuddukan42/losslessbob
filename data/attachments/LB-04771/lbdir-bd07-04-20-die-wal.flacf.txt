@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-20-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+ca674e2dadeb1adaa48f52a4491c3967  BD-4_20_2007-fingerprint.txt
+982e9545697ef863c0e976c262ff7054  BD-4_20_2007.txt
+de78dadf0748560d3113e3dd169c3a83  BD-4_20_2007d1t01.flac
+93f77035c1c70d89d0f0627a7d3dc963  BD-4_20_2007d1t02.flac
+2296190f34c1c2a5afb3a6853aaea96c  BD-4_20_2007d1t03.flac
+a0de1ffcee5a02e1041db6cda6dd38be  BD-4_20_2007d1t04.flac
+39e92326f0019686947c4a9b6e398d7e  BD-4_20_2007d1t05.flac
+2fab1cd41fb1d5e4b7d9e729c10071b3  BD-4_20_2007d1t06.flac
+a8c525c95ee2801f48f4402051e267f9  BD-4_20_2007d1t07.flac
+db4d1948feb6cb97716c3047b0274828  BD-4_20_2007d1t08.flac
+d1c88dd27ecacc7f8e0dd13f7d7c26bc  BD-4_20_2007d1t09.flac
+d982a154dfc7e2925729c03b51ccad79  BD-4_20_2007d1t10.flac
+062d8fc4fa0672d1d13f92cebad0f197  BD-4_20_2007d1t11.flac
+3439f9ff64b70827ec0630cf74cdf488  BD-4_20_2007d2t01.flac
+1e792de889c0ee9eba199c8dfa980d68  BD-4_20_2007d2t02.flac
+39bd7a7d68fc34f9f9a13e84be7ede58  BD-4_20_2007d2t03.flac
+fe99727e0cce309e3fe8fefb9ff1c9cc  BD-4_20_2007d2t04.flac
+b86e780a7ed71e0c6931c824b32429f5  BD-4_20_2007d2t05.flac
+56d2563a01444dd03c2edc97504d0aed  BD-4_20_2007d2t06.flac
+5139f86899cb2eed4124c0bb1ac8ea61  BD-4_20_2007d2t07.flac
+76f9fb0aa7cdb4fb353f93a3c922f3b7  BD-4_20_2007d2t08.flac
+de75b475f72850af2c124c326fb84cdf  bd07-04-20-die-wal-LB-4771.txt
+145e759ae668d707191f8d657d1b41df  lbdir-bd07-04-20-die-wal.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-20-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+BD-4_20_2007d1t01.flac:f4e0dfbea26cdd8247ff785738b6dd75
+BD-4_20_2007d1t02.flac:d2f7966a64523d202234c1ca66f9b7f8
+BD-4_20_2007d1t03.flac:f2d39db5ed82e4598387115053c8d329
+BD-4_20_2007d1t04.flac:70eb0ac0846d3a9ad686600d68839a5c
+BD-4_20_2007d1t05.flac:41e39e7833d2cc4bdf957ac25626f45d
+BD-4_20_2007d1t06.flac:09543acfc964a7cab9ea768a59ace470
+BD-4_20_2007d1t07.flac:a614f85b47e37025a4c8204d1ba75685
+BD-4_20_2007d1t08.flac:104624e88471b765de0527215af247c4
+BD-4_20_2007d1t09.flac:e455c81f0fecb5f00f2d9e9cf7eb0af1
+BD-4_20_2007d1t10.flac:908a96f718e0cc7c44a296bc7637a4b2
+BD-4_20_2007d1t11.flac:9f6af05f01dc83703bbdf59e853ea45a
+BD-4_20_2007d2t01.flac:2bb226b75f325ed13e40f84668ae2e9b
+BD-4_20_2007d2t02.flac:34685735b97fb90eb4887bd3c0bf9a47
+BD-4_20_2007d2t03.flac:dbe77a2bb148d92625480c5ea883c98b
+BD-4_20_2007d2t04.flac:6d645386144daa5f9a0887667b4e6c02
+BD-4_20_2007d2t05.flac:5cb385736dddb5f6465c753e0b1225c9
+BD-4_20_2007d2t06.flac:045ddcc9096f0cff381a2f049b2740c1
+BD-4_20_2007d2t07.flac:f44dbd445d7ffdc3179ebb435b6da925
+BD-4_20_2007d2t08.flac:2cb41ca66d179f33d4d34cd023cf37db
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-20-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.70       56259884 B   ---   --   ---xx   flac  0.5294  BD-4_20_2007d1t01.flac
+     5:32.26       58625996 B   ---   --   ---xx   flac  0.5937  BD-4_20_2007d1t02.flac
+     6:09.64       65242172 B   ---   --   ---xx   flac  0.6091  BD-4_20_2007d1t03.flac
+     6:17.47       66613388 B   ---   --   ---xx   flac  0.5974  BD-4_20_2007d1t04.flac
+     7:22.16       78006476 B   ---   --   ---xx   flac  0.5983  BD-4_20_2007d1t05.flac
+     7:12.74       76378892 B   ---   --   ---xx   flac  0.4733  BD-4_20_2007d1t06.flac
+     5:24.02       57158348 B   ---   --   ---xx   flac  0.5920  BD-4_20_2007d1t07.flac
+     6:19.58       66992060 B   ---   --   ---xx   flac  0.4252  BD-4_20_2007d1t08.flac
+     8:48.06       93153356 B   ---   --   ---xx   flac  0.6001  BD-4_20_2007d1t09.flac
+     6:18.12       66707468 B   ---   --   ---xx   flac  0.5241  BD-4_20_2007d1t10.flac
+     6:35.03       69685100 B   ---   --   ---xx   flac  0.6035  BD-4_20_2007d1t11.flac
+     7:06.07       75162908 B   ---   --   ---xx   flac  0.4752  BD-4_20_2007d2t01.flac
+     8:30.34       90044012 B   ---   --   ---xx   flac  0.5735  BD-4_20_2007d2t02.flac
+     7:41.19       81365132 B   ---   --   ---xx   flac  0.4528  BD-4_20_2007d2t03.flac
+     5:58.36       63235916 B   ---   --   ---xx   flac  0.6090  BD-4_20_2007d2t04.flac
+     6:52.45       72782684 B   ---   --   ---xx   flac  0.5504  BD-4_20_2007d2t05.flac
+     3:53.11       41127116 B   ---   --   ---xx   flac  0.4747  BD-4_20_2007d2t06.flac
+     6:56.27       73445948 B   ---   --   ---xx   flac  0.5889  BD-4_20_2007d2t07.flac
+     6:45.16       71478628 B   -b-   --   ---xx   flac  0.5460  BD-4_20_2007d2t08.flac
+   125:02.48     1323465484 B                            0.5491  (19 files)
+=================== 
+=================== 
+=================== 

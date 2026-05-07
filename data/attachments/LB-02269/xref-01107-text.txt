@@ -1,0 +1,133 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 
+Fiddler's Green 
+Englewood, Colorado 
+31 August 1989 
+
+
+Lineage info: This was originallly LB-2269, but had many tiny gaps between the tracks which I removed (see list below). I also patched one channel in d1t10 for a short while as it fell very low. removed silence: end d1t3 end d1t6 end d1t7 (plus gap near end) end d1t9 end d1t10 end d2t2 beg d2t3 end d2t3 beg d2t4 end d2t4 beg d2t5 end d2t6 beg d2t7 end d2t7 beg d2t8 
+
+LosslessBob entry of lineage above = LB-2269 xref-00066: (58min+41min), not much above 19k; slight hiss; background talking d1t2,d1t5, d1t9, d1t10; very good sound [B+] (a bittorrent from 11/09 is a close eac match on d2t2; described as " This was originallly LB-2269, but had many tiny gaps between the tracks which I removed (see list below). I also patched one channel in d1t10 for a short while as it fell very low" with filenames like "disc one\Track01.flac"; in comparison many of the gaps were reduced in size but are still there plus a gap was added at the end of d1t1 plus more were added; d1t10 was a close eac match except for the last 6 seconds of crowd which now fade out; xref-00066 ) 
+
+
+Fix of LB-2269 xref-00066: Wave Repair 4.9.3 to fix index gaps and clicks > FLAC 
+
+
+01 E-Thang [instr] 
+02 Positively 4th Street 
+03 Seeing The Real You At Last 
+04 Masters Of War 
+05 The Man In Me 
+06 Stuck Inside Of Mobile With The Memphis Blues Again 
+07 SimpleTwist Of Fate 
+08 To Ramona (acoustic) 
+09 One Too Many Mornings (acoustic) 
+10 Mr.Tambourine Man (acoustic) 
+
+CD2 
+
+11 One Irish Rover 
+12 I'll Remember You 
+13 Silvio 
+14 I Shall Be Released 
+15 Like A Rolling Stone 
+16 It's All Over Now, Baby Blue(acoustic) 
+17 Rank Strangers To Me (acoustic->electric) 
+18 Maggie's Farm 
+
+original ffp: 
+
+disc one\Track01.flac:d4a4c8e29ad8e1b126f396d5210eefd8 
+disc one\Track02.flac:cdd6b89a0ee2c50bc526071abc6ab8f0 
+disc one\Track03.flac:79270fd8ee5a76a4dd0418b1b2d85727 
+disc one\Track04.flac:2216326f256f588ed1f18a17bd9b1e23 
+disc one\Track05.flac:d789df3d08de6b95f7f46b56c1c53438 
+disc one\Track06.flac:00a28b2d7b5650fcc5f3620c12f44a3f 
+disc one\Track07.flac:3aff53325b0043482e2fcb8b7a89fa7c 
+disc one\Track08.flac:d010db01766814e4e0771abad1a74e76 
+disc one\Track09.flac:160fb7419a359e7d4621aebdf4623c69 
+disc one\Track10.flac:96da8910cf69fc81c96fb7d0dc902b29 
+disc too\Track01.flac:d40efdf94089dbf8fd9b5d6076e4f043 
+disc too\Track02.flac:ff281a400c517e0c36eb9ca3a82c6b14 
+disc too\Track03.flac:bccabbad3ee4c868a52580918e33f0c9 
+disc too\Track04.flac:b6d7ca9c5efbb8a713939123167773d8 
+disc too\Track05.flac:980fc3033500fd3a856be51dd789d4db 
+disc too\Track06.flac:cf000b8824a5d928b6e5d0b2c7474ebf 
+disc too\Track07.flac:ff3a2210171ca1dec045bd3a8c9bc914 
+disc too\Track08.flac:56b366d8ead78f132939625c6bb1cb0c 
+
+original md5: 
+
+
+12b439a76c8a5eecbb52b77a74cfd0f5 *disc one\Track01.flac 
+c22eda4e7509ee77f75689332b89ef72 *disc one\Track02.flac 
+d6971bd18b1ae174d0021052247a9017 *disc one\Track03.flac 
+97773bb6b7da8a84b81530e1a85243a3 *disc one\Track04.flac 
+11de0015921ff701f6ebb4537c50ab9a *disc one\Track05.flac 
+983f5bb1144feca44c0cab597dc9219b *disc one\Track06.flac 
+bc74017a8130b6ef299c4f2c6d6cea0f *disc one\Track07.flac 
+a6421223a48377bba3ae758dea7152cb *disc one\Track08.flac 
+b9144044c26fbbb36cb548f2fea77124 *disc one\Track09.flac 
+4c0b79477fb083b056547fa83785e8af *disc one\Track10.flac 
+5d39d2fed6aa052817332c10ba537237 *disc too\Track01.flac 
+618f95ac0c3038714b4cffe862eee21c *disc too\Track02.flac 
+84464aea1532c9847be16fcf3812c27a *disc too\Track03.flac 
+2ab07bc40dcd7caad57d7486954b6320 *disc too\Track04.flac 
+8436d22f5dea4d0510c8a8056514764c *disc too\Track05.flac 
+49689221c6d947eee2a308ffb2388a0a *disc too\Track06.flac 
+651b49ca6c112b47963fc1bcc94a3b03 *disc too\Track07.flac 
+21cd992755ee5ac016b5a444e8adb4d5 *disc too\Track08.flac 
+
+
+new ffp: 
+
+Track 01.flac:467bc9ddbbdc85dd56eda826d47e506b 
+Track 02.flac:617aa5bc334001e4851d906d56a91c42 
+Track 03.flac:45c4cd8fc7ab2bb5edd0e5442dfa80df 
+Track 04.flac:29350599c74cb081fd3ffd306e968e88 
+Track 05.flac:d4d9624f5f0412dcb680d2260ae0f956 
+Track 06.flac:db8398533a020092531668725818587b 
+Track 07.flac:a693990f420b0143c160b01e2bcc0071 
+Track 08.flac:ce7ad9c9650f1ebd964c5e0ec410e35e 
+Track 09.flac:3e95585da040a78102dc32349ddff87f 
+Track 10.flac:ccf6d7fb96e940c215fff7125b4032a6 
+Track 11.flac:bce5cd04dcbbbec069e8fef06d033dd5 
+Track 12.flac:6d2323e1b8da82a4db17bfa67d9aec89 
+Track 13.flac:3e50ca4cab551def3ede57916c0891c3 
+Track 14.flac:69296cf49c51c550e4d125421ac6af87 
+Track 15.flac:f94d067ad5f5d368cf01fcc3f3283dc2 
+Track 16.flac:05644cee3b21e64b5d290cea624c09af 
+Track 17.flac:266ef35b021f6e89e6311626b32ac787 
+Track 18.flac:380f0c7b617992ea0a031cd70a6701c2 
+
+
+new md5: 
+
+
+df2778574bb6a1c2b021caf312099e50 *Track 01.flac 
+c032b3564fea1fd7c89121bfb6102e28 *Track 02.flac 
+20a8740ab50b67c5364a87ebe6fba970 *Track 03.flac 
+3e740b2bf3b57014bc5d4db5f47a478d *Track 04.flac 
+4ca338350bd426419fb7b7296162104c *Track 05.flac 
+ef13bf918e283d6fff54c5ddf533173c *Track 06.flac 
+debd4f7e459b831236e00d9384a5fb25 *Track 07.flac 
+5c22d9c4cdeab95213878cf77bda53c9 *Track 08.flac 
+11c57efef27138a7d7c444ddbaeee130 *Track 09.flac 
+00eed68dd5e07bf723beb6363b3ed1f4 *Track 10.flac 
+aeb0736d2f8a752740eac9a8f23b2b57 *Track 11.flac 
+25defe919d90cb763be030885b4a69c8 *Track 12.flac 
+bd4b7b832653d8fd44e4bf6ea37e3d1c *Track 13.flac 
+9f96748e00b4abe2507e2d79f76ae74c *Track 14.flac 
+24285b1f8d188b3d37c2559e26893910 *Track 15.flac 
+5c5f34676312ffca1fba8e611848e3b3 *Track 16.flac 
+3e6ccfa074824681743e77d50964fdd8 *Track 17.flac 
+13e86937a7325623549efbab40e48900 *Track 18.flac 
+===================
+===================
+===================

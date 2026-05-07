@@ -1,0 +1,66 @@
+Bob Dylan
+University Of California Santa Barbara
+Events Center
+Santa Barbara, California
+October 14, 2001
+
+source: soomlos
+fob, center, ga floor
+core-sound cardioids > denecke ad-20 > sony d8
+sony d8 > microtrack > sound forge 7.0 > cd wave > flac
+  
+Disc 1:
+01. Wait For The Light To Shine [02:56]
+02. The Times They Are A-Changin' [07:13]
+03. Desolation Row [08:22]
+04. Searching For A Soldier's Grave [03:37]
+05. Tweedle Dee & Tweedle Dum [04:40]
+06. Positively 4th Street [07:47]
+07. Stuck Inside Of Mobile With The Memphis Blues Again [08:06]
+08. Moonlight [05:15]
+09. Masters Of War [05:11]
+10. Girl Of The North Country [06:38]
+11. A Hard Rain's A-Gonna Fall [09:23]
+Total time: [69:14]
+
+Disc 2:
+01. Summer Days [05:57]
+02. Sugar Baby [07:26]
+03. The Wicked Messenger [05:05]
+04. To Be Alone With You [08:10]
+     (encore) 
+05. Things Have Changed [05:56]
+06. Like A Rolling Stone [07:39]
+07. Forever Young [06:54]
+08. Honest With Me [07:03]
+09. Blowin' In The Wind [05:22]
+Total time: [59:37]
+
+Band Members
+Bob Dylan - vocals, guitar, harp
+Charlie Sexton - guitar, dobro
+Larry Campbell - guitar, mandolin, bouzouki, violin
+David Kemper - drums
+Tony Garnier - bass 
+
+Flac Fingerprint
+bd2001-10-14d1t01.flac:cc0bd0c09ecd293ba410ce0bc33ce166
+bd2001-10-14d1t02.flac:8c8b0ca424055b9f060a1290ac8a14e0
+bd2001-10-14d1t03.flac:96cc64d3c1f12c61b18c6ecb844c8179
+bd2001-10-14d1t04.flac:3e50ac1845bab9d484d34d4ef7337753
+bd2001-10-14d1t05.flac:5b591f6a1c42eaa78985a055305c506b
+bd2001-10-14d1t06.flac:be74ce7041ca540533789eede81b2b82
+bd2001-10-14d1t07.flac:1dc9dbd329349fd0522e65c6f3a6c7d9
+bd2001-10-14d1t08.flac:e419dd70839568c2cb26b197c9ad41c1
+bd2001-10-14d1t09.flac:22b0ecbff03da19df46b727d0a90759e
+bd2001-10-14d1t10.flac:d2462bfc68c562443c1f7d31795353e4
+bd2001-10-14d1t11.flac:92796ce837b3566ec93ad1c3eca1a3d6
+bd2001-10-14d2t01.flac:ed476c43d8569e8dad4dcd70ad166a09
+bd2001-10-14d2t02.flac:07b83af6c4c1efbb890ed65c996380ef
+bd2001-10-14d2t03.flac:abdd72e28c7cc2707f6610ae196c71a6
+bd2001-10-14d2t04.flac:f29fad0fd8cca96d7aaec09983dd2439
+bd2001-10-14d2t05.flac:9dc71d94acc1f403cc9fc307ea398a3a
+bd2001-10-14d2t06.flac:c24a3a96a1115a881fb20af2407253b6
+bd2001-10-14d2t07.flac:78f25b8b937b8446377542ba232af111
+bd2001-10-14d2t08.flac:3e864f5c5e725512f9ef3a23bda1a3c4
+bd2001-10-14d2t09.flac:e74021f50f7b2f25390589088927fe1d

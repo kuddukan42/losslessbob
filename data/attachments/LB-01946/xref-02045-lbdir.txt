@@ -1,0 +1,71 @@
+===================
+===================
+===================
+=== md5 for: bd95-04-06-Trade-Tapes.flacf
+===================
+===================
+===================
+b7e39ae3042e67f4db3bc204f1f1e0a0 *101 Crash On The Levee (Down In The Flood).flac
+cb6ba32db758c55fbadb31556410d285 *102 What Was It You Wanted.flac
+ca3c2098ac39ba3477c2388881611552 *103 All Along The Watchtower.flac
+4b8cde1e5e0780eb78afd8dc3ab87beb *104 Disease Of Conceit.flac
+8164202b5d47667da366733e0d4b3b45 *105 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+aa9e329c7b8940ca7d731bba9e5cba3f *106 Simple Twist Of Fate.flac
+b4dea66fb6019f0e3daa11989adb2ef9 *107 Mr. Tambourine Man.flac
+367e75535243ace0c15a7a2f7442f729 *201 Masters Of War.flac
+ae561547d2bf86763ec6e035c8ccd671 *202 It’s All Over Now, Baby Blue.flac
+d5d4ab4295711ebc85aba5d6a567ce45 *203 God Knows.flac
+c1308c6314ae7c601227f0dce1b13f1c *204 Lenny Bruce.flac
+c234f6f7a7678f50699faddf06dd9e2f *205 Jokerman.flac
+3d4fada6b79726af6a6752badda488df *206 Like A Rolling Stone.flac
+91fd559eebb40baef16d427bd52b164b *207 It Ain't Me, Babe.flac
+09b87adbb0d60ceb9fd8d4f117a4f773 *Bob Dylan 1995-04-06 The Playhouse Edinburgh UK-Trade Tapes.md5
+bb4ec97a8eb9ddb9ae7895d48348db94 *DylanEdinburgh6Apr.txt
+6dad8f66e1f7aa454150b11ffccbea23 *DylanEdinburgh95.jpg
+===================
+===================
+===================
+=== ffp for: bd95-04-06-Trade-Tapes.flacf
+===================
+===================
+===================
+101 Crash On The Levee (Down In The Flood).flac:d5d1b3fc79fa314146929d68795fd8e0
+102 What Was It You Wanted.flac:44081a89b7abd126b023d2d479894f10
+103 All Along The Watchtower.flac:0bf80ac07ad0bfd6f4ceb33efa5e2d5d
+104 Disease Of Conceit.flac:8278273033122c5b43941c65325f7d4f
+105 Stuck Inside Of Mobile With The Memphis Blues Again.flac:99405428ca752f7440a32722721530f4
+106 Simple Twist Of Fate.flac:241d4643c27f961502fe1f7277bcfd64
+107 Mr. Tambourine Man.flac:4e86ed938b45af621e67dbd7f9489ad0
+201 Masters Of War.flac:be0f3f235e1e0c726d889a814ef5f46b
+202 It’s All Over Now, Baby Blue.flac:5c1d0f584da4b8b38e684a9049dc6bce
+203 God Knows.flac:195c8cb835f2e03b01ec7617fc3156b7
+204 Lenny Bruce.flac:8fbe080e98d308786a50fc3c9e035e98
+205 Jokerman.flac:9b65f6c9c08546c2c824beabee8aa7a0
+206 Like A Rolling Stone.flac:a06d72bfc80eae1429966a46a819820b
+207 It Ain't Me, Babe.flac:49308527eaa11ce7008dcbf31e2115b2
+===================
+===================
+===================
+=== shntool len for: bd95-04-06-Trade-Tapes.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.28       54749900 B   ---   --   ---xx   flac  0.5552  101 Crash On The Levee (Down In The Flood).flac
+     6:14.38       66063020 B   ---   --   ---xx   flac  0.4342  102 What Was It You Wanted.flac
+     6:29.15       68654924 B   ---   --   ---xx   flac  0.5175  103 All Along The Watchtower.flac
+     7:14.52       76679948 B   ---   --   ---xx   flac  0.4239  104 Disease Of Conceit.flac
+    10:26.46      110534636 B   ---   --   ---xx   flac  0.4871  105 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     7:58.65       84472124 B   ---   --   ---xx   flac  0.4023  106 Simple Twist Of Fate.flac
+     7:00.21       74137436 B   ---   --   ---xx   flac  0.3118  107 Mr. Tambourine Man.flac
+     5:59.58       63464060 B   ---   --   ---xx   flac  0.3523  201 Masters Of War.flac
+     7:47.25       82437644 B   ---   --   ---xx   flac  0.2932  202 It’s All Over Now, Baby Blue.flac
+     6:18.38       66768620 B   ---   --   ---xx   flac  0.4782  203 God Knows.flac
+     9:05.40       96232124 B   ---   --   ---xx   flac  0.4485  204 Lenny Bruce.flac
+     8:16.31       87567356 B   ---   --   ---xx   flac  0.4719  205 Jokerman.flac
+     7:29.30       79274204 B   ---   --   ---xx   flac  0.4743  206 Like A Rolling Stone.flac
+     8:42.16       92118476 B   ---   --   ---xx   flac  0.3722  207 It Ain't Me, Babe.flac
+   104:13.53     1103154472 B                            0.4287  (14 files)
+===================
+===================
+===================

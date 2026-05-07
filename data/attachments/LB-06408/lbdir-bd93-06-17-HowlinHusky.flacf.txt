@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-17-HowlinHusky.flacf 
+=================== 
+=================== 
+=================== 
+a17bb722248dad841c6998be369d036e  01 hard times (Stephen Foster).flac
+2b25a638ff43188bcbac90fbc54d549a  02 Stuck inside the moblie with the Mempis blues again.flac
+848580672c51a28d0e2e9599c3b0010b  03 All along the watchtower.flac
+4c88acb3d648c62bbb637f3c96d925a0  04 Just like a woman.flac
+380fe39f012732b5da9d94b0e9c9e285  05 Tangled up in blue.flac
+4b5a74bc81d1dadee9c6c936869a07c2  06 You re a big girl now.flac
+cb28b30a269f4b46534da011ea1dc02b  07 Watching the river flow.flac
+a66ad7894c28ee8d5b13cde0dbacbf64  08 Jim Jones (traditional).flac
+f90936339babd39679b42ee845c973a1  09 Tomorrow night (Sam Coslow - Will Grosz).flac
+d52949b4f8cabe20e5a6fa4608993fe0  10 Mr. Tambourine man.flac
+03ff4eb0e61b41ab2c8e899df76b9131  21 Don t thinks twice, it s all right.flac
+9d7ce0fc095d27e18ac2b0c9b9cf75fc  22 Everything is broken.flac
+3688f215fd97c61bbdd920bf85afda1e  23 I and I.flac
+b66a45252800ae58ff2b18b1a843738d  24 Simple twist of fate.flac
+ffdffafab0cfd98d3e0acbe6c5b20fb4  25 Maggie s farm.flac
+2918a63af15959f013d32753f1573947  26 Ballad of a thin man (-1-1-).flac
+c9998bc09ee08605c4293720c342d032  27 Highway 61 revisited (cut end).flac
+1106288c385f78fb63183a67d3c32bf0  Bob Dylan Tel Aviv Isr. June 17, 1993 {Rem.Upgrade By HowlinHusky}.ffp
+c7dbef82cde625413ccc4ba2c9b4afdd  Bob Dylan Tel Aviv Isr. June 17, 1993 {Rem.Upgrade By HowlinHusky}.md5
+7b12306945fd02d3ff0c648c047a008f  Bob Dylan Tel Aviv Isr. June 17, 1993 {Rem.Upgrade By HowlinHusky}.shntool_len.txt
+5f96f42301325717735e49bd029dcc2a  content.txt
+9199dd9f4175e80f5d8aa18dac323c1a  Tel Aviv Mann Auditorium June 17th 1993 .doc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-17-HowlinHusky.flacf 
+=================== 
+=================== 
+=================== 
+01 hard times (Stephen Foster).flac:900f505ac24763c4cf734217735a4f42
+02 Stuck inside the moblie with the Mempis blues again.flac:95c82b44d5350aaa40e678a505d7de35
+03 All along the watchtower.flac:5a5ac9c0ec4483e8fc32622a70acce8a
+04 Just like a woman.flac:5df040a10ff1eb446ccddb06890511b3
+05 Tangled up in blue.flac:4a94d6969fdb4c9528fc651d978be9af
+06 You re a big girl now.flac:cfa236652f431d698c3bcc5c7f72d2ef
+07 Watching the river flow.flac:aa3093ada17fc7aca468a4e6f0ef1364
+08 Jim Jones (traditional).flac:e62b706a76d1d9325db08343944d9a4b
+09 Tomorrow night (Sam Coslow - Will Grosz).flac:df16a404899faf7e8ded4b8b2bca859f
+10 Mr. Tambourine man.flac:e55db5fe06e56ee04b6c9037f46ee2ee
+21 Don t thinks twice, it s all right.flac:dd42558eb1c1e2f53681f78caac14cad
+22 Everything is broken.flac:3072607a94b5d43ddcae1b8d60d77894
+23 I and I.flac:e41b41bd5b499b9274d4227d248abaf7
+24 Simple twist of fate.flac:c63895cb66f49ec04300d13bc7b8d0ce
+25 Maggie s farm.flac:68ce4c2fabe55382a7ebd0ce14ff6b0a
+26 Ballad of a thin man (-1-1-).flac:3bd4745ff798ad5a000514e4531e37d5
+27 Highway 61 revisited (cut end).flac:1dbdc353ff3f9b5162c7f5d4960960b1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-06-17-HowlinHusky.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.59       54822092 B   -b-   --   ---xx   flac  0.4938  01 hard times (Stephen Foster).flac
+     7:56.60       84107904 B   -b-   --   ---xx   flac  0.6715  02 Stuck inside the moblie with the Mempis blues again.flac
+     5:17.59       56058080 B   -b-   --   ---xx   flac  0.6433  03 All along the watchtower.flac
+     7:35.58       80399280 B   -b-   --   ---xx   flac  0.6279  04 Just like a woman.flac
+    12:41.27      134304564 B   -b-   --   ---xx   flac  0.6378  05 Tangled up in blue.flac
+     5:59.44       63431972 B   -b-   --   ---xx   flac  0.5474  06 You re a big girl now.flac
+     6:12.45       65727788 B   -b-   --   ---xx   flac  0.5483  07 Watching the river flow.flac
+     6:39.52       70505472 B   -b-   --   ---xx   flac  0.5026  08 Jim Jones (traditional).flac
+     5:41.05       60164724 B   -b-   --   ---xx   flac  0.5380  09 Tomorrow night (Sam Coslow - Will Grosz).flac
+     8:32.70       90481664 B   -b-   --   ---xx   flac  0.5644  10 Mr. Tambourine man.flac
+     7:15.53       76859644 B   -b-   --   ---xx   flac  0.4801  21 Don t thinks twice, it s all right.flac
+     4:18.54       45639392 B   -b-   --   ---xx   flac  0.6356  22 Everything is broken.flac
+     7:48.45       82662064 B   -b-   --   ---xx   flac  0.6249  23 I and I.flac
+    10:55.19      115586636 B   -b-   --   ---xx   flac  0.5402  24 Simple twist of fate.flac
+     6:00.25       63563864 B   -b-   --   ---xx   flac  0.5987  25 Maggie s farm.flac
+     7:57.19       84186748 B   -b-   --   ---xx   flac  0.5836  26 Ballad of a thin man (-1-1-).flac
+     4:13.68       44788240 B   -b-   --   ---xx   flac  0.6463  27 Highway 61 revisited (cut end).flac
+   120:18.15     1273290128 B                            0.5824  (17 files)
+=================== 
+=================== 
+=================== 

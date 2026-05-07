@@ -1,0 +1,91 @@
+===================
+===================
+===================
+=== bd1981-07-18 mannheim.shnf.txt
+===================
+===================
+===================
+Bob Dylan
+Eisstadion
+Mannheim, West Germany
+18 July 1981
+
+SOURCE : "off master" AUD recording
+LINEAGE : ?>shns>me>you
+NOTES : very good+ sound ; missing girls' songs (Till I Get It Right, Walk Around Heaven All Day) 
+
+DISC ONE [1:01:59]
+1 Saved (Dylan / Drummond)
+2 I Believe In You
+3 Like A Rolling Stone
+4 Man Gave Names To All The Animals
+5 Maggie's Farm
+6 Girl Of The North Country
+7 Ballad Of A Thin Man
+8 We Just Disagree (Jim Krueger)
+9 Shot Of Love
+10 Forever Young
+11 The Times They Are A-Changin'
+12 Let's Begin (Jim Webb)
+13 Lenny Bruce
++ 14 Slow Train
+15 Mr. Tambourine Man
+16 What Can I Do For You?
+
+DISC TWO [48:39]
+1 Solid Rock
+2 Just Like A Woman
+3 Saved By The Grace Of Your Love (Willie Smith / David Palmer)
+4 Watered-Down Love
+5 When You Gonna Wake Up?
+6 Heart Of Mine
+7 In The Garden
+8 Blowin' In The Wind
+9 It's All Over Now, Baby Blue
+10 Knockin' On Heaven's Door
+
+http://www.bjorner.com/DSN06290%20-%201981%20Europe%20Summer%20Tour.htm#DSN06480
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+c97d1b4e342316a1b4b78146ad0fdbe8 *Track01.shn
+0b77138d49a8e4030dd7eac8eb3a466f *Track02.shn
+021cea38caaaa4f24d64fa2424c4b657 *Track03.shn
+3fbcc0af2ae3846fd7a9ba9d26f675f9 *Track04.shn
+97214597d68fd0d1f8efa63eb4f1e2e2 *Track05.shn
+772479592da05b7ac03ace3a7d0ebae2 *Track06.shn
+8de7ace3bea908c141fb466c8d0b27cb *Track07.shn
+f4325cbecbae3bebe6a97b9a87abfafc *Track08.shn
+e2472b69965d2a1d332276c8d96767cb *Track09.shn
+e8d31a4d3e51d431ecf29625d1010357 *Track10.shn
+4a04fc9600a9786a6953d5c96e471d09 *Track11.shn
+49dcddd9a2eae7b4be40c8189dd03b7c *Track12.shn
+27ffb71395013b57532a9a8f3d9b5fd7 *Track13.shn
+e6a0517fb029178dc0f6d3e5d4b07539 *Track14.shn
+a03ed6440f9b732a12c6004058d56840 *Track15.shn
+1c3a381a15a3adcd7c6f170f214a17c6 *Track16.shn
+8ebcaf560785e16bf80981e309a5dd56 *Track07_sample.mp3
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+f53e4b9ebf2e36e9e5dd9dec9ada8a90 *Track01.shn
+b50651c3fe20ded85879960d2f7f705d *Track02.shn
+ab94e68e91895aec7e1617730953f15e *Track03.shn
+9b40d277980524544861ad5f15fefce8 *Track04.shn
+0c38ee42211dc8b98d1d0447095ef092 *Track05.shn
+9f1bb17169655509081bf07b0b782c65 *Track06.shn
+50721ae6972f502c74ef0ee1a2a0f6a7 *Track07.shn
+d129171bf501cb2382fd7b00e7c6dcda *Track08.shn
+e39551f324967f687aad55315ae6be48 *Track09.shn
+49f48cd00aa85ddeb468852fed9d5d5d *Track10.shn
+===================
+===================
+===================

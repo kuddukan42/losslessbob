@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-09-25-cc-d.flacf 
+=================== 
+=================== 
+=================== 
+bd85bae541a576701c3d0dd2ab80fe99  bd2000-09-25-d1-01 Introduction.flac
+e42f6babb2c734a4a0c913e5de2bf4b6  bd2000-09-25-d1-02 Hallelujah, I'm ReadyTo Go.flac
+5b42639487fd896c4292ba2c874626d5  bd2000-09-25-d1-03 Mr. Tambourine Man.flac
+7d4bfd9c63f001fe655927cefa730cf6  bd2000-09-25-d1-04 A Hard Rain's A-Gonna Fall.flac
+25c9bd5efd5ee7877bf6e453f7eafdf0  bd2000-09-25-d1-05 The Ballad Of Frankie Lee and Judas Priest.flac
+bf755580e34675b8c02aa9b77a3d796d  bd2000-09-25-d1-06 Tangled Up In Blue.flac
+f201c3008cbe7ea02cb1e8927f4d45d8  bd2000-09-25-d1-07 Searching For A Soldier's Grave.flac
+7c8a2513f98076f9c335520a02ed8830  bd2000-09-25-d1-08 Country Pie.flac
+0dc0af1559dcc40433c5b642ba80f891  bd2000-09-25-d1-09 She Belongs To Me.flac
+2382da942fd265cb08d5f934f44af1a8  bd2000-09-25-d1-10 Tombstone Blues.flac
+6ba5b2e3810fb1bc1b7f669600ee57fb  bd2000-09-25-d2-01 Trying To Get To Heaven.flac
+d03226e3562a568a8756961b464585e3  bd2000-09-25-d2-02 Drifter's Escape.flac
+1e11e0c7f84eb929e21ce3bb72071979  bd2000-09-25-d2-03 Everything's Broken.flac
+4ead8469114d2fc4279d09f53c06fd1c  bd2000-09-25-d2-04 Things Have Changed.flac
+1a25490f3e422893128ab4a9a59e9b20  bd2000-09-25-d2-05 Like A Rolling Stone.flac
+675a952b2f05ad009c50a2937b8b259d  bd2000-09-25-d2-06 It Ain't Me, Babe.flac
+9f31b54fbf8a327ae7731c28cec9848e  bd2000-09-25-d2-07 Watching The River Flow.flac
+766cf58e2fa7814b7da407e956b84304  bd2000-09-25-d2-08 Forever Young.flac
+ac122aeef85d86bcd90d881f0ee88c09  bd2000-09-25-d2-09 Highway 61 Revisited.flac
+c5efc6ec176c32f44559bf8765dc00c2  bd2000-09-25-d2-10 Blowin' In The Wind.flac
+f279a604c7d14d97197c7e1cdb5b638e  bd2000-09-25-d2-11 Dear Landlord.flac
+62fca6af56700bd4fffb73c69d11e3e0  bd2000-09-25-d2-12 Positively Fourth Street.flac
+4d633391edbbfe7ceefd9b55572b9cf1  bd_2000_09-25-crystal cat-flac.txt
+ace37cf308cf91532152484b7fe7b7b4  bd_2000_09-25-crystal cat-new-info.txt
+de5768f6b8443da92dc040eeb4d0d985  fingerprint.ffp.txt
+93a78968520ac31f860116dd734d6111  md5sum.md5
+921d63c8060969b68b262200946bc3f6  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-09-25-cc-d.flacf 
+=================== 
+=================== 
+=================== 
+bd2000-09-25-d1-01 introduction.flac:a19cf8e1637627cf209995bece69957e
+bd2000-09-25-d1-02 hallelujah, i'm readyto go.flac:a8d82f8367526270ad092a70d17e6958
+bd2000-09-25-d1-03 mr. tambourine man.flac:48e96e96cdca7e69272511a10fe4b7fd
+bd2000-09-25-d1-04 a hard rain's a-gonna fall.flac:f6959ef5db74c05e5c03a95200bae0f8
+bd2000-09-25-d1-05 the ballad of frankie lee and judas priest.flac:1a7c9074d7133d37cd2f5ab95b01d965
+bd2000-09-25-d1-06 tangled up in blue.flac:e313bef51000a328945fec51240939fc
+bd2000-09-25-d1-07 searching for a soldier's grave.flac:0eaac327334cfdf464f90118be1e310c
+bd2000-09-25-d1-08 country pie.flac:0d8a66835ac0353007dce9762b645823
+bd2000-09-25-d1-09 she belongs to me.flac:a5d1eceb388805e5ac0dc432470b1be7
+bd2000-09-25-d1-10 tombstone blues.flac:f27618ec5a6bfedf33c0b3c76b60f813
+bd2000-09-25-d2-01 trying to get to heaven.flac:059fd037afce0f9f5d40d301203d7816
+bd2000-09-25-d2-02 drifter's escape.flac:9265172b1eccea8ddc5e7721c279bb56
+bd2000-09-25-d2-03 everything's broken.flac:8928556963dc9082e2cb7d6d1c5a5f3d
+bd2000-09-25-d2-04 things have changed.flac:d5be73dc4b71e21c555e099cfebff9e9
+bd2000-09-25-d2-05 like a rolling stone.flac:73895e3e697dddd9d8829645c4743de5
+bd2000-09-25-d2-06 it ain't me, babe.flac:8ec0fb48b7d5f91a969d87757f60ceb7
+bd2000-09-25-d2-07 watching the river flow.flac:16284edf0b98c66cdf8c338852904d75
+bd2000-09-25-d2-08 forever young.flac:7eef60dc8441e4250411498d1585903e
+bd2000-09-25-d2-09 highway 61 revisited.flac:8803583d9d18457d5c707f812de1a126
+bd2000-09-25-d2-10 blowin' in the wind.flac:58226e1e521d192b28cca36cc74a4525
+bd2000-09-25-d2-11 dear landlord.flac:1c0abae8d276cc33bacf584657774bac
+bd2000-09-25-d2-12 positively fourth street.flac:555fa0adbd275778148589ccce94d1c8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-25-cc-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.20        9749084 B   ---   --   ---xx   flac  0.5771  bd2000-09-25-d1-01 Introduction.flac
+     2:54.05       30705404 B   ---   --   ---xx   flac  0.7102  bd2000-09-25-d1-02 Hallelujah, I'm ReadyTo Go.flac
+     6:16.10       66349964 B   ---   --   ---xx   flac  0.6925  bd2000-09-25-d1-03 Mr. Tambourine Man.flac
+     9:39.65      102288524 B   ---   --   ---xx   flac  0.6826  bd2000-09-25-d1-04 A Hard Rain's A-Gonna Fall.flac
+     5:08.55       54460604 B   ---   --   ---xx   flac  0.6682  bd2000-09-25-d1-05 The Ballad Of Frankie Lee and Judas Priest.flac
+     8:00.25       84730844 B   ---   --   ---xx   flac  0.7225  bd2000-09-25-d1-06 Tangled Up In Blue.flac
+     3:22.15       35668124 B   ---   --   ---xx   flac  0.6404  bd2000-09-25-d1-07 Searching For A Soldier's Grave.flac
+     2:44.50       29047244 B   ---   --   ---xx   flac  0.6906  bd2000-09-25-d1-08 Country Pie.flac
+     5:33.10       58764764 B   ---   --   ---xx   flac  0.6784  bd2000-09-25-d1-09 She Belongs To Me.flac
+     5:31.47       58498988 B   ---   --   ---xx   flac  0.7008  bd2000-09-25-d1-10 Tombstone Blues.flac
+     5:34.05       58929404 B   ---   --   ---xx   flac  0.5743  bd2000-09-25-d2-01 Trying To Get To Heaven.flac
+     4:23.25       46452044 B   ---   --   ---xx   flac  0.6891  bd2000-09-25-d2-02 Drifter's Escape.flac
+     8:40.45       91833884 B   ---   --   ---xx   flac  0.6348  bd2000-09-25-d2-03 Everything's Broken.flac
+     5:47.45       61316684 B   ---   --   ---xx   flac  0.6933  bd2000-09-25-d2-04 Things Have Changed.flac
+     6:37.70       70195484 B   ---   --   ---xx   flac  0.6704  bd2000-09-25-d2-05 Like A Rolling Stone.flac
+     6:55.00       73206044 B   ---   --   ---xx   flac  0.5575  bd2000-09-25-d2-06 It Ain't Me, Babe.flac
+     4:48.70       50967884 B   ---   --   ---xx   flac  0.6735  bd2000-09-25-d2-07 Watching The River Flow.flac
+     6:28.05       68455004 B   ---   --   ---xx   flac  0.6435  bd2000-09-25-d2-08 Forever Young.flac
+     5:46.10       61057964 B   ---   --   ---xx   flac  0.6801  bd2000-09-25-d2-09 Highway 61 Revisited.flac
+     7:39.00       80967644 B   ---   --   ---xx   flac  0.6317  bd2000-09-25-d2-10 Blowin' In The Wind.flac
+     4:46.55       50579804 B   ---   --   ---xx   flac  0.5811  bd2000-09-25-d2-11 Dear Landlord.flac
+     8:03.17       85241228 B   ---   --   ---xx   flac  0.5911  bd2000-09-25-d2-12 Positively Fourth Street.flac
+   125:36.49     1329466616 B                            0.6543  (22 files)
+=================== 
+=================== 
+=================== 

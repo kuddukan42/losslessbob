@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-11-22-dancing-in-the-dark.flacf 
+=================== 
+=================== 
+=================== 
+a38f98d743c2c7d860c8a4c2d268cf3c  bd87-11-22-dancing-in-the-dark.flacf.md5
+48048af581bad23942fb1e5050b2463d  bd87-11-22dancing-in-the-dark-d1t01.flac
+70e81d572c1586753f1624b87672968e  bd87-11-22dancing-in-the-dark-d1t02.flac
+74d949e62b0ea396e0efff0027ef93bb  bd87-11-22dancing-in-the-dark-d1t03.flac
+c6e030beabc0018717e1dedc747c8850  bd87-11-22dancing-in-the-dark-d1t04.flac
+4506c83c6c0342b1c0b089963dafab06  bd87-11-22dancing-in-the-dark-d1t05.flac
+ca59e28f4d8ffc64bee19909c54174bb  bd87-11-22dancing-in-the-dark-d1t06.flac
+619aacda6cd7e7fa8981617a6cba2845  bd87-11-22dancing-in-the-dark-d1t07.flac
+24d3ab53c49646bccc8b45123fa0475e  bd87-11-22dancing-in-the-dark-d1t08.flac
+5e6a695d711403520bcaf27332a6901b  bd87-11-22dancing-in-the-dark-d1t09.flac
+e4c6e1a21ad504408a3868510576344c  bd87-11-22dancing-in-the-dark-d1t10.flac
+2f7a9fe4d55f095d9897f07856ee9448  bd87-11-22dancing-in-the-dark-d1t11.flac
+63c2d2a1a4bed8dbc23125cc739a0178  bd87-11-22dancing-in-the-dark-d1t12.flac
+c2698714144a10c7b402988d42089dae  bd87-11-22dancing-in-the-dark-d1t13.flac
+8c47d8d07d02e0948b1201eb14932f0c  bd87-11-22dancing-in-the-dark-d1t14.flac
+697ee711f73ed062ffd6bbde0a0eed63  bd87-11-22dancing-in-the-dark-d2t01.flac
+f2e7688e6a464249e1b5af074eeef9a2  bd87-11-22dancing-in-the-dark-d2t02.flac
+e51297a51a826791204f22c023035c69  bd87-11-22dancing-in-the-dark-d2t03.flac
+ef9a8a2d33386aea6c20da017594f5e4  bd87-11-22dancing-in-the-dark-d2t04.flac
+95ce720ce3531e107e0d626e411dc7b1  bd87-11-22dancing-in-the-dark-d2t05.flac
+2511b383b9e84a991cde316c447032bf  bd87-11-22dancing-in-the-dark-d2t06.flac
+6682829c2188a8feefd843131bef36c7  bd87-11-22dancing-in-the-dark-d2t07.flac
+ea7dac4ff52fc2aff4830f1acfd19da3  bd87-11-22dancing-in-the-dark-d2t08.flac
+c9c29b400afceaf424b11b26c42007ad  bd87-11-22dancing-in-the-dark-d2t09.flac
+a6b8be9da8cedaf07f444b380b5b9013  bd87-11-22dancing-in-the-dark-d2t10.flac
+0f203bb6c19d9f6361bba4c4653ad5ad  bd87-11-22dancing-in-the-dark-d2t11.flac
+353cc77ce66120d7f1fee87ffed28583  bd87-11-22dancing-in-the-dark-d2t12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-11-22-dancing-in-the-dark.flacf 
+=================== 
+=================== 
+=================== 
+bd87-11-22dancing-in-the-dark-d1t01.flac:6e71e6cd6045461572b7dafc33125741
+bd87-11-22dancing-in-the-dark-d1t02.flac:e6387a297e4269264471f4e3de3ba420
+bd87-11-22dancing-in-the-dark-d1t03.flac:0019cd27a26311dc9a02cdda7ec40019
+bd87-11-22dancing-in-the-dark-d1t04.flac:1f7263f5effbc4b4e940d54e8378ed49
+bd87-11-22dancing-in-the-dark-d1t05.flac:0fa52cd653f41a3da7ee950a3ce4c571
+bd87-11-22dancing-in-the-dark-d1t06.flac:08198a15af0c7c2d327ef7fae1c89516
+bd87-11-22dancing-in-the-dark-d1t07.flac:6c8be2c26a9a56fc22dd1d303342d96c
+bd87-11-22dancing-in-the-dark-d1t08.flac:23d4e8d57752d294a4b034ebb954e1d4
+bd87-11-22dancing-in-the-dark-d1t09.flac:9cbc89e3182f3188ce1712b15aed8a50
+bd87-11-22dancing-in-the-dark-d1t10.flac:8720c60f6103e73d799c920d52473c54
+bd87-11-22dancing-in-the-dark-d1t11.flac:604f7549abd4e7f8ecfabdeb138f5f70
+bd87-11-22dancing-in-the-dark-d1t12.flac:2f57aac9b94867e58e03c307ac865bad
+bd87-11-22dancing-in-the-dark-d1t13.flac:81a31357a871892c5a166312fc157e89
+bd87-11-22dancing-in-the-dark-d1t14.flac:74d20346350e4500f628cfb9194648b3
+bd87-11-22dancing-in-the-dark-d2t01.flac:a52aaa7a89eef2850f021f0631d9869e
+bd87-11-22dancing-in-the-dark-d2t02.flac:9b6ae23abcbf92811e1ef69641618759
+bd87-11-22dancing-in-the-dark-d2t03.flac:a2d9d90513310935d61bbfb5ec52f666
+bd87-11-22dancing-in-the-dark-d2t04.flac:f74bace82044f8a25a65777f348009e8
+bd87-11-22dancing-in-the-dark-d2t05.flac:b162b49ec8f4ccb45a78761fd28cfbc8
+bd87-11-22dancing-in-the-dark-d2t06.flac:664e6fafea7b2619c2750668f2989a12
+bd87-11-22dancing-in-the-dark-d2t07.flac:a8b32ba9499a1616f33c9b062882727c
+bd87-11-22dancing-in-the-dark-d2t08.flac:7e52c3a09b67152c97dd280cff328eb8
+bd87-11-22dancing-in-the-dark-d2t09.flac:d7ac28b728d0b8768c9893e6733e551f
+bd87-11-22dancing-in-the-dark-d2t10.flac:6e4264ea212e0213c23367f6379cb798
+bd87-11-22dancing-in-the-dark-d2t11.flac:d47b1bf73e643bc34edb00618f66cb69
+bd87-11-22dancing-in-the-dark-d2t12.flac:4913216cac5650de654396589731a156
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-11-22-dancing-in-the-dark.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:28.65       26260124 B   ---   --   ---xx   flac  0.4631  bd87-11-22dancing-in-the-dark-d1t01.flac
+     3:58.15       42018524 B   ---   --   ---xx   flac  0.4860  bd87-11-22dancing-in-the-dark-d1t02.flac
+     5:54.00       62445644 B   ---   --   ---xx   flac  0.4858  bd87-11-22dancing-in-the-dark-d1t03.flac
+     4:04.25       43100444 B   ---   --   ---xx   flac  0.4911  bd87-11-22dancing-in-the-dark-d1t04.flac
+     5:19.60       56412764 B   ---   --   ---xx   flac  0.4963  bd87-11-22dancing-in-the-dark-d1t05.flac
+     3:08.45       33269084 B   ---   --   ---xx   flac  0.5087  bd87-11-22dancing-in-the-dark-d1t06.flac
+     4:28.25       47334044 B   ---   --   ---xx   flac  0.5063  bd87-11-22dancing-in-the-dark-d1t07.flac
+     2:38.30       27941804 B   ---   --   ---xx   flac  0.5176  bd87-11-22dancing-in-the-dark-d1t08.flac
+     1:21.10       14311964 B   ---   --   ---xx   flac  0.4318  bd87-11-22dancing-in-the-dark-d1t09.flac
+     6:04.30       64280204 B   ---   --   ---xx   flac  0.5396  bd87-11-22dancing-in-the-dark-d1t10.flac
+     4:00.15       42371324 B   ---   --   ---xx   flac  0.4671  bd87-11-22dancing-in-the-dark-d1t11.flac
+     3:16.45       34680284 B   ---   --   ---xx   flac  0.4987  bd87-11-22dancing-in-the-dark-d1t12.flac
+     5:58.35       63233564 B   ---   --   ---xx   flac  0.5076  bd87-11-22dancing-in-the-dark-d1t13.flac
+     5:42.30       60399404 B   ---   --   ---xx   flac  0.4940  bd87-11-22dancing-in-the-dark-d1t14.flac
+     5:49.45       61669484 B   ---   --   ---xx   flac  0.4793  bd87-11-22dancing-in-the-dark-d2t01.flac
+     5:42.45       60434684 B   ---   --   ---xx   flac  0.4673  bd87-11-22dancing-in-the-dark-d2t02.flac
+     2:43.60       28894364 B   ---   --   ---xx   flac  0.4446  bd87-11-22dancing-in-the-dark-d2t03.flac
+     5:12.65       55189724 B   ---   --   ---xx   flac  0.4806  bd87-11-22dancing-in-the-dark-d2t04.flac
+     2:37.10       27718364 B   ---   --   ---xx   flac  0.4564  bd87-11-22dancing-in-the-dark-d2t05.flac
+     5:23.20       57024284 B   ---   --   ---xx   flac  0.4765  bd87-11-22dancing-in-the-dark-d2t06.flac
+     7:05.65       75122924 B   ---   --   ---xx   flac  0.5949  bd87-11-22dancing-in-the-dark-d2t07.flac
+     6:22.22       67436588 B   ---   --   ---xx   flac  0.5347  bd87-11-22dancing-in-the-dark-d2t08.flac
+     6:07.00       64738844 B   ---   --   ---xx   flac  0.5971  bd87-11-22dancing-in-the-dark-d2t09.flac
+     5:23.23       57031340 B   ---   --   ---xx   flac  0.6059  bd87-11-22dancing-in-the-dark-d2t10.flac
+     6:49.45       72253484 B   ---   --   ---xx   flac  0.5595  bd87-11-22dancing-in-the-dark-d2t11.flac
+     4:29.45       47557484 B   ---   --   ---xx   flac  0.5562  bd87-11-22dancing-in-the-dark-d2t12.flac
+   122:10.50     1293130744 B                            0.5144  (26 files)
+=================== 
+=================== 
+=================== 

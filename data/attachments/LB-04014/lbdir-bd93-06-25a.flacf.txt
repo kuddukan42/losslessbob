@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-25a.flacf 
+=================== 
+=================== 
+=================== 
+301a35879210f70e07dab324961ee79a  bd1993-06-25 info.txt
+c11bed281333bad7b9111e9bcbbec0e5  bd1993-06-25.flac Naples, Italy.ffp
+63d71cb5d94568d9630e1ae7d51b65c5  bd1993-06-25.flac Naples, Italy.md5
+0fbb3a6f261cbf15b57abc06a52c3d41  bd1993-06-25.flac Naples, Italy.st5
+1b8ac9292445ad577e888ffcf79b0b85  bd1993-06-25d1t07fa.PNG
+8bada6b30d02682dbda9d2e60de828d7  bd1993-06-25d1t07sa.PNG
+740860491327e502a237ba8c2b9008a2  bd93-06-25a-LB-4014.txt
+680d91ba05ed5f3a8f488a9fbbfbbfe9  neapel 1\Bob Dylan - Neapel 1993 1.m3u
+1e43796ffdc53b229c794a79971ea206  neapel 1\Neapel 1993 1.log
+ec7fbadb4c49c25f6da402bffe5701b0  neapel 1\bd1993-06-25d1t01.flac
+d74cd6ea172555f54972ea0c24ab85a7  neapel 1\bd1993-06-25d1t02.flac
+3eb6420c794c96f63cb3bc37183b1a40  neapel 1\bd1993-06-25d1t03.flac
+53f2ecbb7bfd13fb86c4435ba6fcfefe  neapel 1\bd1993-06-25d1t04.flac
+bffd4896bea651681e9bea50e54eb3e3  neapel 1\bd1993-06-25d1t05.flac
+4d3c3e556ea7d2dab9923cae7bf0e163  neapel 1\bd1993-06-25d1t06.flac
+3999cfbcf8f74ca0eea9d7dab1bcbb30  neapel 1\bd1993-06-25d1t07.flac
+e8f464eaa8a8863ccb5aee72488e6d3f  neapel 1\bd1993-06-25d1t08.flac
+2c5cd3b3b88453b13ba5680ded6762dc  neapel 1\bd1993-06-25d1t09.flac
+9ca732e698b49ba565c355e7263aa8ce  neapel 1\bd1993-06-25d1t10.flac
+b32a62d6087e41de80ca26cfb0eacd63  neapel 1\d1.txt
+4c4839dc87677c02c577da480047dac7  neapel 1\neapel 1.shntool.txt
+0137226614ff7767091e38cba7e3c8a7  neapel 2\Bob Dylan - Neapel 1993 2.m3u
+16825272ce58c89ca20626fb6fe9029c  neapel 2\Neapel 1993 2.log
+2b7e3adacca01b3867011f80421e4173  neapel 2\bd1993-06-25d2t01.flac
+6da4165721110ab5586809f948e3042c  neapel 2\bd1993-06-25d2t02.flac
+04a55035a9667fbdceace198adcbb6f0  neapel 2\bd1993-06-25d2t03.flac
+88f9b2dae77b3ac2d6a93ab0df032ada  neapel 2\bd1993-06-25d2t04.flac
+0e4047a780bb6fa0cf11735f2aed997a  neapel 2\bd1993-06-25d2t05.flac
+ccbfbc2fcce945e517f15a85f1577148  neapel 2\bd1993-06-25d2t06.flac
+d861e21483b0f14590db63537e1883a9  neapel 2\bd1993-06-25d2t07.flac
+05ea5a248e776ce18bd6016adc3c0616  neapel 2\bd1993-06-25d2t08.flac
+8ab6c5debe7ed0f3671427e7ccdf2e8e  neapel 2\d2.txt
+9a48969d78041858bdb7c96e71b04740  neapel 2\neapel 2.shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-25a.flacf\neapel 1 
+=================== 
+=================== 
+=================== 
+bd1993-06-25d1t01.flac:22406beefa294484d7654598440ed40c
+bd1993-06-25d1t02.flac:8232c368387730a4657c82654dfb8bf6
+bd1993-06-25d1t03.flac:30e65b6eadb570a736d79d93add28b73
+bd1993-06-25d1t04.flac:fc2ee089a2cf43f193ed22e61e4b34b4
+bd1993-06-25d1t05.flac:428ed8598af37f8e6ba1fc78db112d69
+bd1993-06-25d1t06.flac:57a4cd22e2e3a1032e7ba3ed8126dc7c
+bd1993-06-25d1t07.flac:3636f6e4758d6ff8207c7649412ec34d
+bd1993-06-25d1t08.flac:775e511e48048188a439d2d124e10cad
+bd1993-06-25d1t09.flac:1ba9fe8963a45a1aa92715ec065947d6
+bd1993-06-25d1t10.flac:7c54b8764b048d46d71ea008cc34a6fb
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-25a.flacf\neapel 2 
+=================== 
+=================== 
+=================== 
+bd1993-06-25d2t01.flac:a34d441abde21e589308c487eb083307
+bd1993-06-25d2t02.flac:e633e12322f9259cdc9684060bf2cdc7
+bd1993-06-25d2t03.flac:59e2a725b1bc6c4853010ea56e364565
+bd1993-06-25d2t04.flac:10bc4fbf3fa11ce04579649b03aa0b62
+bd1993-06-25d2t05.flac:9636c0293ba224dee33152fe1c2cf5e0
+bd1993-06-25d2t06.flac:6ac3b89a06eb0904bf8f3a573434da4e
+bd1993-06-25d2t07.flac:c1928caa259f10dcd2067881e6531843
+bd1993-06-25d2t08.flac:685aa9e187df7c44b637874559b01d2f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-06-25a.flacf\neapel 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.09       60350012 B   ---   --   ---xx   flac  0.6039  bd1993-06-25d1t01.flac
+     7:38.66       80946476 B   ---   --   ---xx   flac  0.6148  bd1993-06-25d1t02.flac
+     5:37.50       59564444 B   ---   --   ---xx   flac  0.6124  bd1993-06-25d1t03.flac
+     6:09.57       65225708 B   ---   --   ---xx   flac  0.6166  bd1993-06-25d1t04.flac
+    11:20.18      119994380 B   ---   --   ---xx   flac  0.6265  bd1993-06-25d1t05.flac
+     6:28.47       68553788 B   ---   --   ---xx   flac  0.6052  bd1993-06-25d1t06.flac
+     5:24.39       57245372 B   ---   --   ---xx   flac  0.5984  bd1993-06-25d1t07.flac
+     5:30.05       58223804 B   ---   --   ---xx   flac  0.5878  bd1993-06-25d1t08.flac
+     5:15.49       55681292 B   ---   --   ---xx   flac  0.5849  bd1993-06-25d1t09.flac
+     8:30.59       90102812 B   ---   --   ---xx   flac  0.6050  bd1993-06-25d1t10.flac
+    67:38.24      715888088 B                            0.6078  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-06-25a.flacf\neapel 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:24.13      110104220 B   ---   --   ---xx   flac  0.6035  bd1993-06-25d2t01.flac
+     6:12.11       65646716 B   ---   --   ---xx   flac  0.6265  bd1993-06-25d2t02.flac
+     8:26.08       89277260 B   ---   --   ---xx   flac  0.6177  bd1993-06-25d2t03.flac
+     8:58.17       94943228 B   ---   --   ---xx   flac  0.6158  bd1993-06-25d2t04.flac
+     6:45.60       71583164 B   ---   --   ---xx   flac  0.6160  bd1993-06-25d2t05.flac
+     7:20.17       77656028 B   ---   --   ---xx   flac  0.6093  bd1993-06-25d2t06.flac
+     5:05.05       53813804 B   ---   --   ---xx   flac  0.6195  bd1993-06-25d2t07.flac
+    11:44.56      124317356 B   ---   --   ---xx   flac  0.5981  bd1993-06-25d2t08.flac
+    64:56.37      687341776 B                            0.6115  (8 files)
+=================== 
+=================== 
+=================== 

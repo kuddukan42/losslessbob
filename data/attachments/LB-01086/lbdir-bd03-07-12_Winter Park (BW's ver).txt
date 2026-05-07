@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-12_Winter Park (BW's ver) 
+=================== 
+=================== 
+=================== 
+ff76387caae1ffd406ecbe31916a6a35  bd03-07-12.txt
+b8a20c83c284205e7f4576bc004a1c13  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 1.shn
+21567ee56d08e75be3047c90056dcf43  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 2.shn
+d90e408ec4e3266db7545441d5ff9ad1  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 3.shn
+0d0d631e9d7c394cca9d65bb1f78bb2e  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 4.shn
+39d3864f7c380c50bf24e043f0144d0f  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 5.shn
+b2cc9edbdaf58c1ebc0a082f4ca45010  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 6.shn
+b6c336952feecbc8323710e6c893b0f5  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 7.shn
+2377bdf97cbfb4b57295c1e49b9ca112  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 8.shn
+6d099569fe155f354b7e28915e2e6dcb  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_Track 9.shn
+4b0fd9fcbf30ae1aeccaa2402de940ff  bd_03-07-12_cd1.shnf\bd_03-07-12_cd1_shn.md5
+4932614eb96d9a2fb24ec98a586a5e50  bd_03-07-12_cd2.shnf\bd_03-07-12_cd2_Track 1.shn
+62240c00b4f9fec07c391fdc065fd294  bd_03-07-12_cd2.shnf\bd_03-07-12_cd2_Track 2.shn
+3a5edf8a2dbb11065ae8dd7e546154ae  bd_03-07-12_cd2.shnf\bd_03-07-12_cd2_Track 3.shn
+2b2cda1be44b7b6ca6fa5cd8f25eac4d  bd_03-07-12_cd2.shnf\bd_03-07-12_cd2_Track 4.shn
+01a53d89a6b1e69ca875d63202543571  bd_03-07-12_cd2.shnf\bd_03-07-12_cd2_Track 5.shn
+633a728e6e5b6736ff1751e59634d313  bd_03-07-12_cd2.shnf\bd_03-07-12_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-12_Winter Park (BW's ver)\bd_03-07-12_cd1.shnf 
+=================== 
+=================== 
+=================== 
+e7fa64a3e32da3289cdd6a1076bde9c9  [shntool]  bd_03-07-12_cd1_Track_1.wav
+1c6b9a70abc5fe9275fe3313d4a69969  [shntool]  bd_03-07-12_cd1_Track_2.wav
+db46ebb62c6a76f0d656d3a0a35c3e73  [shntool]  bd_03-07-12_cd1_Track_3.wav
+3399ff5d0950330105110ef5dd121e2a  [shntool]  bd_03-07-12_cd1_Track_4.wav
+41415246080604d78d52b291ae977984  [shntool]  bd_03-07-12_cd1_Track_5.wav
+79f8bfc13059f61e4f8bac70671402b9  [shntool]  bd_03-07-12_cd1_Track_6.wav
+d64d5112918bb015c858705da34dc5db  [shntool]  bd_03-07-12_cd1_Track_7.wav
+09c15294ac6452d7ce2efba92061f72c  [shntool]  bd_03-07-12_cd1_Track_8.wav
+e1d042c64fbcb2f3c4c23a3327996b0a  [shntool]  bd_03-07-12_cd1_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-12_Winter Park (BW's ver)\bd_03-07-12_cd2.shnf 
+=================== 
+=================== 
+=================== 
+49a480bfa9863f641400f216490641f4  [shntool]  bd_03-07-12_cd2_Track_1.wav
+da1edd75608c831983b2c444eeb2880f  [shntool]  bd_03-07-12_cd2_Track_2.wav
+b86e605e24a9f9294dc4de1aefcb9334  [shntool]  bd_03-07-12_cd2_Track_3.wav
+f937663db870d0bb6314329d9a905398  [shntool]  bd_03-07-12_cd2_Track_4.wav
+d40998e7b68c50ccffff82b2b2acc035  [shntool]  bd_03-07-12_cd2_Track_5.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-12_Winter Park (BW's ver)\bd_03-07-12_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:01.09       74285250 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_1.wav
+     5:11.04       54870250 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_2.wav
+     5:14.65       55541994 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_3.wav
+     6:00.49       63619306 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_4.wav
+     5:46.12       61063402 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_5.wav
+     7:35.50       80380138 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_6.wav
+     6:31.71       69140714 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_7.wav
+     6:36.52       69976298 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_8.wav
+     6:49.52       72270058 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd1_Track_9.wav
+    56:47.64      601147410 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-12_Winter Park (BW's ver)\bd_03-07-12_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:03.71       95952466 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd2_Track_1.wav
+     0:37.36        6611842 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd2_Track_2.wav
+     6:32.45       69255442 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd2_Track_3.wav
+     7:10.03       75858194 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd2_Track_4.wav
+     6:11.73       65616130 B   -b-   -e   -----    wav  1.0000  bd_03-07-12_cd2_Track_5.wav
+    29:36.03      313294074 B                            1.0000  (5 files)
+=================== 
+=================== 
+=================== 

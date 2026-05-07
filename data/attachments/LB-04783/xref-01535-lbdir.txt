@@ -1,0 +1,76 @@
+===================
+===================
+===================
+=== md5 for: bd95-10-12-c.flacf
+===================
+===================
+===================
+c4706042be34e9d758e351ed20484bb7 *bd1995-10-12 Dothan.md5
+5e39592092cce9a3c997548b18f68b88 *bd1995-10-12 Dothan01.flac
+b98d05255043a9e56880a03b1868ea1a *bd1995-10-12 Dothan02.flac
+7c28d457085ee886d271e8113e319236 *bd1995-10-12 Dothan03.flac
+396c8db662155d8bc9e61a5b876a8e8d *bd1995-10-12 Dothan04.flac
+8b15b39090134ff4e545cf45a0400487 *bd1995-10-12 Dothan05.flac
+d594419d21f660ad27ad9b85727d4175 *bd1995-10-12 Dothan06.flac
+189947c1e173e3b21f474522805aa8d5 *bd1995-10-12 Dothan07.flac
+193acc3df8e1cf7bd5c6888a4a2929e4 *bd1995-10-12 Dothan08.flac
+6832136dee7d33c8d10f2be7206b2d3d *bd1995-10-12 Dothan09.flac
+578b5dc877b494291fcf4ce08e00f074 *bd1995-10-12 Dothan10.flac
+2e8a019b4fd0bcefa124fcb6394bc12c *bd1995-10-12 Dothan11.flac
+d95264883a0ae308e2df9dd7bfca58b4 *bd1995-10-12 Dothan12.flac
+8cbe0e9a25de7fe7815aa4a8fd66fa71 *bd1995-10-12 Dothan13.flac
+4c1cdf0443f776009810fcbcbc6f1aec *bd1995-10-12 Dothan14.flac
+5d4b718dc720b5463c900c08892569c0 *bd1995-10-12 Dothan15.flac
+17b324b5e37f6738fd00d8a77545895c *bd1995-10-12 Dothan16.flac
+4c72b2d5151ca1d6bd9495c68bd6eafb *Note.txt
+===================
+===================
+===================
+=== ffp for: bd95-10-12-c.flacf
+===================
+===================
+===================
+bd1995-10-12 Dothan01.flac:42e7296ee9ad37468541f8f321ff1979
+bd1995-10-12 Dothan02.flac:e1fd67ac926e37d41938f56e8dfd2046
+bd1995-10-12 Dothan03.flac:7d3b0b577411dfdcf64d204ad3a2b5e5
+bd1995-10-12 Dothan04.flac:5a60d1a41ff02f043d6ab03a169bdea6
+bd1995-10-12 Dothan05.flac:a5851c7785c6438f5ea35e197c38b4d6
+bd1995-10-12 Dothan06.flac:af9c4ef57c534f719c05b32b2a5c0d6b
+bd1995-10-12 Dothan07.flac:f80fa29b33aaa906689d3e55b7d863d2
+bd1995-10-12 Dothan08.flac:c73c42f7ea40f96ed57480c6fe311f32
+bd1995-10-12 Dothan09.flac:fbac494aeb6062092507f587ca13ae96
+bd1995-10-12 Dothan10.flac:6f11f52cc82d6a56b7067fcbd8d61984
+bd1995-10-12 Dothan11.flac:48a69105c1291e27bc10750350aacd14
+bd1995-10-12 Dothan12.flac:cd130be370930534ed4d6f75a38b65bf
+bd1995-10-12 Dothan13.flac:33d473c96ef81fe1fb4149f89ca68530
+bd1995-10-12 Dothan14.flac:217506d0227cf26be10f17a40ed5785c
+bd1995-10-12 Dothan15.flac:0463b1ae47e4ead7385bebd7b087d04b
+bd1995-10-12 Dothan16.flac:4216834984232c6410ce2bd3ebfec3fe
+===================
+===================
+===================
+=== shntool len for: bd95-10-12-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:05.02       64390748 B   ---   --   ---xx   flac  0.5895  bd1995-10-12 Dothan01.flac
+     5:48.20       61434284 B   ---   --   ---xx   flac  0.5715  bd1995-10-12 Dothan02.flac
+     7:01.64       74414972 B   ---   --   ---xx   flac  0.5930  bd1995-10-12 Dothan03.flac
+     7:09.21       75725036 B   ---   --   ---xx   flac  0.5798  bd1995-10-12 Dothan04.flac
+     5:57.37       63061868 B   ---   --   ---xx   flac  0.5733  bd1995-10-12 Dothan05.flac
+     6:57.06       73572956 B   ---   --   ---xx   flac  0.6015  bd1995-10-12 Dothan06.flac
+     9:48.24      103779692 B   ---   --   ---xx   flac  0.5294  bd1995-10-12 Dothan07.flac
+     6:11.67       65602028 B   ---   --   ---xx   flac  0.5163  bd1995-10-12 Dothan08.flac
+     6:46.61       71761916 B   ---   --   ---xx   flac  0.5314  bd1995-10-12 Dothan09.flac
+     6:18.59       66818012 B   ---   --   ---xx   flac  0.5892  bd1995-10-12 Dothan10.flac
+     7:42.21       81546236 B   ---   --   ---xx   flac  0.5679  bd1995-10-12 Dothan11.flac
+     0:28.54        5066252 B   ---   --   ---xx   flac  0.5387  bd1995-10-12 Dothan12.flac
+     7:01.70       74429084 B   ---   --   ---xx   flac  0.5968  bd1995-10-12 Dothan13.flac
+     9:37.56      101914556 B   ---   --   ---xx   flac  0.6043  bd1995-10-12 Dothan14.flac
+     8:36.53       91147100 B   ---   --   ---xx   flac  0.5477  bd1995-10-12 Dothan15.flac
+     5:51.04       61924708 B   -b-   --   ---xx   flac  0.6365  bd1995-10-12 Dothan16.flac
+   107:23.19     1136589448 B                            0.5738  (16 files)
+===================
+===================
+===================

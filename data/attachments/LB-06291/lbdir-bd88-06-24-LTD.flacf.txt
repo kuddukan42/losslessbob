@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-24-LTD.flacf 
+=================== 
+=================== 
+=================== 
+99e931baf8c392e0376887387c1bd8f1  bd-19880624-Holmdel.ffp
+4578ce7e74807f6409806c2635bea86c  bd-19880624-Holmdel.md5
+e869072fcc1572eebbe5ad907902a1f9  bd1988-06-24-d1t01.flac
+99f29305c86254f05da76b1de48fc0e8  bd1988-06-24-d1t02.flac
+5816c242fce2dab7f170b60c08326ebb  bd1988-06-24-d1t03.flac
+a285c0a48974f4cad86c02d5f7ae4c46  bd1988-06-24-d1t04.flac
+24e766a591c8450badbf520f1cf98438  bd1988-06-24-d1t05.flac
+a56f6ec10b3a0064484324d66f1debf8  bd1988-06-24-d1t06.flac
+076aef7c538545fc9438c7da36df6993  bd1988-06-24-d1t07.flac
+cb167cffb72e743e9f0e86751b0ca365  bd1988-06-24-d1t08.flac
+43e5acd64187cd19c9df7f60558d294b  bd1988-06-24-d1t09.flac
+e7ffce0b5a8515a5634bc2cf803ea725  bd1988-06-24-d1t10.flac
+01e62e480cad455f89e24e4f5fa07dae  bd1988-06-24-d1t11.flac
+c7e8ccea53a885166695049ec32263f5  bd1988-06-24-d1t12.flac
+eedff8b4950687e62eaae4436386bfd3  bd1988-06-24-d1t13.flac
+6b06a8147c7142897c5bdcae22f2f227  bd1988-06-24-d1t14.flac
+d8ca85dccf5519c9d1c2d9fdfa0b979e  bd1988-06-24-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-24-LTD.flacf 
+=================== 
+=================== 
+=================== 
+bd1988-06-24-d1t01.flac:5d79c588a13a49f79b0646bd55f4062b
+bd1988-06-24-d1t02.flac:542ffca125c87196a89b1fd35665d660
+bd1988-06-24-d1t03.flac:926ab2fee157b07c2ed3b05e45ad8e34
+bd1988-06-24-d1t04.flac:24050a783562b51d20fd66b36756ea7f
+bd1988-06-24-d1t05.flac:8245511f20afdad96437fbf5eb9d51b3
+bd1988-06-24-d1t06.flac:54c080cc47fc13e44cecba78001ac3e1
+bd1988-06-24-d1t07.flac:b50854e3ee731eb60dd7ea15e0c288b2
+bd1988-06-24-d1t08.flac:b8fac3f2bd56142dda3ab21870582d68
+bd1988-06-24-d1t09.flac:c8693c77aa8792ef389af4ccf4c202c1
+bd1988-06-24-d1t10.flac:372df1627726bd24a34f94e2e77045bd
+bd1988-06-24-d1t11.flac:a0b7d9dc60fd8bd8e8206900ba0e484c
+bd1988-06-24-d1t12.flac:d71b405b11be96cfbc76f4976b939ee8
+bd1988-06-24-d1t13.flac:905c29ba54ccf8c4b479e1b4463ed9c2
+bd1988-06-24-d1t14.flac:3535fafc6331bb59b4223e5ae88041fa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-24-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.14       43603772 B   ---   --   ---xx   flac  0.6457  bd1988-06-24-d1t01.flac
+     6:03.34       64113212 B   ---   --   ---xx   flac  0.6417  bd1988-06-24-d1t02.flac
+     4:39.09       49236812 B   ---   --   ---xx   flac  0.6665  bd1988-06-24-d1t03.flac
+     6:14.45       66079484 B   ---   --   ---xx   flac  0.6049  bd1988-06-24-d1t04.flac
+     4:57.14       52423772 B   ---   --   ---xx   flac  0.6543  bd1988-06-24-d1t05.flac
+     5:07.28       54220700 B   ---   --   ---xx   flac  0.5987  bd1988-06-24-d1t06.flac
+     5:18.36       56179916 B   ---   --   ---xx   flac  0.6335  bd1988-06-24-d1t07.flac
+     4:21.27       46103948 B   ---   --   ---xx   flac  0.6538  bd1988-06-24-d1t08.flac
+     8:26.35       89340764 B   ---   --   ---xx   flac  0.6408  bd1988-06-24-d1t09.flac
+     3:36.01       38104796 B   ---   --   ---xx   flac  0.6498  bd1988-06-24-d1t10.flac
+     4:11.20       44323484 B   ---   --   ---xx   flac  0.6168  bd1988-06-24-d1t11.flac
+     8:50.39       93583772 B   ---   --   ---xx   flac  0.6313  bd1988-06-24-d1t12.flac
+     4:43.05       49933004 B   ---   --   ---xx   flac  0.6406  bd1988-06-24-d1t13.flac
+     5:24.43       57254780 B   ---   --   ---xx   flac  0.6573  bd1988-06-24-d1t14.flac
+    76:00.50      804502216 B                            0.6372  (14 files)
+=================== 
+=================== 
+=================== 

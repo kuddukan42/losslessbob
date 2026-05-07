@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-12b.flacf 
+=================== 
+=================== 
+=================== 
+38b12a1623930600ce92e08d8a6a358c  bd97-04-12b-LB-3385.txt
+2da03cd50750856d26085ff3a4eb50ae  Bob Dylan  Waltham 12 april 1997.txt
+eb0aae5631d7cba71436abefcc180e2e  D1\D1T1.flac
+44beedc3fcf049de3af856dee7745873  D1\D1T10.flac
+b9cd3e4390fc719e7d43f1aaff684d8a  D1\D1T11.flac
+d2ee5ba26a8aa3f675e0ffbf477260d5  D1\D1T2.flac
+c3d5e93628fe8ee23cffe9f298a77ac0  D1\D1T3.flac
+093f18e4c7d8832d13d5a6fb9377d82d  D1\D1T4.flac
+c98c44ee49aabb787bd7ea2c49e5e5ab  D1\D1T5.flac
+5a5af979b9e2f2fd93610544099adb75  D1\D1T6.flac
+40b276cae6e71e4e4aaabf4679b3e5a0  D1\D1T7.flac
+97e74c2738ed77b55cf9a5f0cf74807e  D1\D1T8.flac
+3539088aa07b7370ce184e339a0bf8e5  D1\D1T9.flac
+fb5acd6e07c3de9fcae23a7982ccd3c7  D2\D2T1.flac
+6645a2a2f2ad47855e2c4dbce36b0ea0  D2\D2T2.flac
+eed86668773b26377f005d36e8aafab1  D2\D2T3.flac
+4a0ae198c093f7ad88e5e80a14ba6ebb  D2\D2T4.flac
+2956ec76212c38f45d5d3d4a1b2991a7  D2\D2T5.flac
+bd2108670853fcac7e01104a9fada0ba  D2\D2T6.flac
+2a9f104601bbe41e998dfc630be71156  fingerprint.ffpD1.txt
+c6f7569c4aec502b1ed0d1aa26e41172  fingerprint.ffpD2.txt
+29193cab0c879b997f1dbcc37c55674a  Waltham_120497.Jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-12b.flacf\D1 
+=================== 
+=================== 
+=================== 
+D1T1.flac:5d6b99e2cceb56ebd9e0eff6b86833c8
+D1T10.flac:c712a085fb7c8682276c965910807b81
+D1T11.flac:f5a69a62e696908a22fa6b3cb3be08a2
+D1T2.flac:cdbc527103461b66c53b5d4b93cb472e
+D1T3.flac:86391d03d4703813917df20bf6708b67
+D1T4.flac:cdc28c13a4ce8d2cec2a59f41e41795c
+D1T5.flac:cba8c01476c9b0938c467c50c657854d
+D1T6.flac:09a074fe96033f6600a78ebcd4ff4829
+D1T7.flac:f93c7ba477f2a6b728cd1ae9f257b808
+D1T8.flac:80b00332807fc3207c91f8dfe91a441c
+D1T9.flac:0f2bf5a9e1aa135624648e2a3cce77c1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-12b.flacf\D2 
+=================== 
+=================== 
+=================== 
+D2T1.flac:76a35d5f0073afc22131702c04ea066e
+D2T2.flac:b85c9bff3096d92ee8a58f16c994f868
+D2T3.flac:f1e1919e9672ea1682b3fd853ff38e69
+D2T4.flac:85623c648f370ede4ff82f517b325480
+D2T5.flac:4f2a3a6f052ba5153b921840045a7471
+D2T6.flac:28885391c7eb0465b29fb0125e1e0981
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-12b.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.70       48145484 B   ---   --   ---xx   flac  0.6373  D1T1.flac
+     0:28.00        4939244 B   ---   --   ---xx   flac  0.5396  D1T10.flac
+     6:27.61       68410316 B   ---   --   ---xx   flac  0.6297  D1T11.flac
+     5:48.10       61410764 B   ---   --   ---xx   flac  0.6280  D1T2.flac
+     6:19.40       66949724 B   ---   --   ---xx   flac  0.6567  D1T3.flac
+     7:28.60       79168364 B   ---   --   ---xx   flac  0.6131  D1T4.flac
+     7:51.70       83249084 B   ---   --   ---xx   flac  0.6268  D1T5.flac
+     7:40.70       81308684 B   ---   --   ---xx   flac  0.6578  D1T6.flac
+     7:12.45       76310684 B   ---   --   ---xx   flac  0.6141  D1T7.flac
+     6:53.65       73006124 B   ---   --   ---xx   flac  0.5766  D1T8.flac
+     7:39.70       81132284 B   ---   --   ---xx   flac  0.6143  D1T9.flac
+    68:24.36      724030756 B                            0.6242  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-12b.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:08.55       75628604 B   ---   --   ---xx   flac  0.5671  D2T1.flac
+     8:56.25       94609244 B   ---   --   ---xx   flac  0.6127  D2T2.flac
+     9:15.00       97902044 B   ---   --   ---xx   flac  0.6327  D2T3.flac
+     7:59.30       84566204 B   ---   --   ---xx   flac  0.5977  D2T4.flac
+     1:54.60       20250764 B   ---   --   ---xx   flac  0.5447  D2T5.flac
+     5:45.01       60860396 B   ---   --   ---xx   flac  0.6523  D2T6.flac
+    40:59.21      433817256 B                            0.6087  (6 files)
+=================== 
+=================== 
+=================== 

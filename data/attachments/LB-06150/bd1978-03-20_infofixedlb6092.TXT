@@ -1,0 +1,92 @@
+Bob Dylan
+March 20, 1978
+Myer Music Bowl
+Melbourne, Australia 
+Fixed LB-6092
+
+unknown AUD [presumably low generation] > ? > CD > EAC > Soundforge 6.0 > FLAC > HC > HD - became LB-6092 > Wave Repair- fixed micro gaps found 3 seconds after indexes on LB-6092 No ASM > flac frontend lvl 8 verify
+
+
+Disc 1  [44:12.28]
+
+     likely missing: 
+     A Hard Rain's A-Gonna Fall (instrumental)
+
+01 // Love Her With A Feeling  [02:09.00]
+02 Mr. Tambourine Man  [05:00.03]
+03 I Threw It All Away  [05:06.00]
+04 Shelter From The Storm  [04:49.59]
+05 Love Minus Zero / No Limit  [03:36.70]
+06 Girl From The North Country  [05:45.15]
+07 Ballad Of A Thin Man  [04:36.04]
+08 Maggie's Farm  [04:38.43]
+09 I Don’t Believe You (She Acts Like We Never Have Met)  [04:35.16]  %
+
+      likely missing: 
+      Like A Rolling Stone 
+      I Shall Be Released
+
+10 Going, Going, Gone   [03:55.43]
+
+
+Disc 2   [43:47.62]
+
+01 One Of Us Must Know (Sooner Or Later)  [04:38.11]
+02 You're A Big Girl Now  [04:48.07]
+03 One More Cup Of Coffee (Valley Below)  [04:12.13]
+04 Blowin' In The Wind   [04:42.20]
+05 I Want You   [02:55.39]
+06 Don't Think Twice, It's All Right  [05:13.14] %
+07 // Just Like A Woman  [04:49.64]
+08 Oh, Sister  [04:12.45]
+09 To Ramona  [04:34.71]
+10 All Along The Watchtower  [03:41.03]
+
+     likely missing: 
+     The Man In Me 
+     All I Really Want To Do
+     It's Alright, Ma (I'm Only Bleeding)
+     Forever Young
+     The Times They Are A-Changin'
+     Knockin' On Heaven's Door
+
+
+LB ENTRY for LB6092
+
+Bob Dylan, 3/20/78, Melbourne, Australia, 2CDR 
+LB-6092, (45min+44min), version "a"; unknown AUD [presumably low generation] > ? > CD > EAC > Soundforge 6.0 > FLAC, I did not harm the sound of the recordings in any way. My CD copy received in a trade has d1t10, but it is not in ANY listing I've seen !, Soundquality of the track compared to the rest of the show makes it likely that it is in fact from this show, but of course there still remains some doubt ..., d1t08 cuts @ 0:58, about 30 seconds missing. d1t01 and d2t07 slightly incomplete at start. d2t03 4'06" to d2t04 0'04" patched from old cassette of same master., all other flaws on both versions and also on LB-4164, Please retain this info file as a marker for this lossless set, and if you spread it please list it in the description to avoid others getting duplicates; bittorrent download 05/08; similar wav and spectral view to LB-4164 on d1t6 except levels slightly higher; this does not have the discontinuity pops noted on that one; good sound [C+] 
+
+
+small gaps near begin of each track 
+
+
+Disc 1 [44:12.28], likely missing:, A Hard Rain's A-Gonna Fall (instrumental), 01 // Love Her With A Feeling [02:09.00], 02 Mr. Tambourine Man [05:00.03], 03 I Threw It All Away [05:06.00], 04 Shelter From The Storm [04:49.59], 05 Love Minus Zero / No Limit [03:36.70], 06 Girl From The North Country [05:45.15], 07 Ballad Of A Thin Man [04:36.04], 08 Maggie's Farm [04:38.43], 09 I Don't Believe You (She Acts Like We Never Have Met) [04:35.16] %, likely missing:, Like A Rolling Stone, I Shall Be Released, 10 Going, Going, Gone [03:55.43], Disc 2 [43:47.62], 01 One Of Us Must Know (Sooner Or Later) [04:38.11], 02 You're A Big Girl Now [04:48.07], 03 One More Cup Of Coffee (Valley Below) [04:12.13], 04 Blowin' In The Wind [04:42.20], 05 I Want You [02:55.39], 06 Don't Think Twice, It's All Right [05:13.14] %, 07 // Just Like A Woman [04:49.64], 08 Oh, Sister [04:12.45], 09 To Ramona [04:34.71], 10 All Along The Watchtower [03:41.03], likely missing:, The Man In Me, All I Really Want To Do, It's Alright, Ma (I'm Only Bleeding), Forever Young, The Times They Are A-Changin', Knockin' On Heaven's Door 
+
+
+
+Bob Dylan - vocal, guitar, harmonica
+Billy Cross - lead guitar
+Alan Pasqua - keyboards
+Steven Soles - rhythm guitar, backup vocals
+David Mansfield - violin & mandolin
+Steve Douglas - saxophone, trumpet
+Rob Stoner - bass
+Bobbye Hall - percussion
+Ian Wallace - drums
+Helena Springs, Jo Ann Harris, Debbie Dye - background vocals
+
+
+
+I did not harm the sound of the recordings in any way. My CD copy received in a trade has d1t10, but it is not in ANY listing I've seen ! 
+Soundquality of the track compared to the rest of the show makes it likely that it is in fact from this show, but of course there still remains some doubt ...
+d1t08 cuts @ 0:58, about 30 seconds missing. d1t01 and d2t07 slightly incomplete at start. d2t03 4'06" to d2t04 0'04" patched from old cassette of same master. 
+all other flaws on both versions and also on LB-4164
+
+
+Please retain this info file as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+http://www.bjorner.com/DSN03650%201978%20Far%20East%20Tour.htm#DSN03810
+
+
+

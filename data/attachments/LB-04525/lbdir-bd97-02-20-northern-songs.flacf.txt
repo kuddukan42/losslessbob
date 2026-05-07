@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-20-northern-songs.flacf 
+=================== 
+=================== 
+=================== 
+247951f5c5e2fd31ed336889a819d8c3  bd97-02-20-northern-songs-LB-4525.txt
+6d806c95f6f647ff47c83e28f72819a4  bd97-02-20-northern-songs.md5
+40bc0d227d67fba365bf62434088e997  bd97-02-20-northernsongs-d1t01.flac
+ac682e13b7fbfcbcffb3ae82ff81559b  bd97-02-20-northernsongs-d1t02.flac
+bba1948efb199433494cd46a892e0fd7  bd97-02-20-northernsongs-d1t03.flac
+1131ed9ac20bff37616f01977e01d3a2  bd97-02-20-northernsongs-d1t04.flac
+eab3adf7c8143ab9c55551e8f971ba12  bd97-02-20-northernsongs-d1t05.flac
+1a49198b3a33ff3b1ed4def5a4dd8114  bd97-02-20-northernsongs-d1t06.flac
+ae007388a6ca4e2d32bafaf23f68a3eb  bd97-02-20-northernsongs-d1t07.flac
+e46a13ba4c13e00d03a42e92ad7f41a5  bd97-02-20-northernsongs-d1t08.flac
+4f0c3928c33f8fe1ce5b25e1e21780e1  bd97-02-20-northernsongs-d1t09.flac
+e028a3d8456253ff79a2fc0398285381  bd97-02-20-northernsongs-d1t10.flac
+d20f52567bccffafa112467afb884a52  bd97-02-20-northernsongs-d2t01.flac
+1c27d84ac0a7e4928172df8caef29e2d  bd97-02-20-northernsongs-d2t02.flac
+8f24c65626d75c173e451473b8e2fea7  bd97-02-20-northernsongs-d2t03.flac
+262d709cd7b0faf8d5a8638b1c228064  bd97-02-20-northernsongs-d2t04.flac
+9235f34175efb0e517bbdaa4ec8c51cc  bd97-02-20-northernsongs-d2t05.flac
+8b03a896e1cd72e964dae3c94822c2cc  bd97-02-20-northernsongs-d2t06.flac
+cdc0a9224d800d15ba93de5123765c3a  bd97-02-20-northernsongs-d2t07.flac
+619b1459fb4835e77b6d7178828acad8  bd97-02-20-northernsongs-d2t08.flac
+de1c4f82bbe628a8d8054f528348bd41  bd97-02-20-northernsongs-d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-20-northern-songs.flacf 
+=================== 
+=================== 
+=================== 
+bd97-02-20-northernsongs-d1t01.flac:5dec067b7d280d66e24bde324d6a351c
+bd97-02-20-northernsongs-d1t02.flac:0877e66f4de3fc01f9fb936e90de452b
+bd97-02-20-northernsongs-d1t03.flac:c8abcc438648771802881037dfd91687
+bd97-02-20-northernsongs-d1t04.flac:1a0fde7e5de3148806db947a5ec79f64
+bd97-02-20-northernsongs-d1t05.flac:63c1571dd5f4c00b8491eac59e2eed84
+bd97-02-20-northernsongs-d1t06.flac:7ef3eea0bb9697ba07fd488cf282583d
+bd97-02-20-northernsongs-d1t07.flac:b53cccad60a94e207ac59f76848b00d4
+bd97-02-20-northernsongs-d1t08.flac:96596f948ed9ebab3f1290cf84ab5ae0
+bd97-02-20-northernsongs-d1t09.flac:6f63a7ca1078c3f139595e370f32572d
+bd97-02-20-northernsongs-d1t10.flac:a8220b5e457bd5ca36e436b0a68dd536
+bd97-02-20-northernsongs-d2t01.flac:752bcdbca94c0aa6ab0223ecb2ddf047
+bd97-02-20-northernsongs-d2t02.flac:139dc7398938c303246429ec1a476afd
+bd97-02-20-northernsongs-d2t03.flac:7bdb6b7cbb8d4ec6320797fe8968a804
+bd97-02-20-northernsongs-d2t04.flac:b56200f5c48d07473803e498988d1518
+bd97-02-20-northernsongs-d2t05.flac:68477e392146495aff926ad0592010e2
+bd97-02-20-northernsongs-d2t06.flac:becbfaf289662de88fcd1afb600bd8e8
+bd97-02-20-northernsongs-d2t07.flac:d2de0dfe9568f4ac0c7edb433ca41685
+bd97-02-20-northernsongs-d2t08.flac:e991491bf642a8e2a9d9e255abfdff5f
+bd97-02-20-northernsongs-d2t09.flac:7b89bb62a61544abb8bd0cceaf14c25d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-20-northern-songs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.43       54079580 B   ---   --   ---xx   flac  0.5922  bd97-02-20-northernsongs-d1t01.flac
+     5:46.05       61046204 B   ---   --   ---xx   flac  0.5642  bd97-02-20-northernsongs-d1t02.flac
+     6:50.40       72418124 B   ---   --   ---xx   flac  0.5955  bd97-02-20-northernsongs-d1t03.flac
+     7:06.35       75228764 B   ---   --   ---xx   flac  0.4820  bd97-02-20-northernsongs-d1t04.flac
+     8:30.50       90081644 B   ---   --   ---xx   flac  0.5674  bd97-02-20-northernsongs-d1t05.flac
+     7:37.37       80701868 B   ---   --   ---xx   flac  0.6301  bd97-02-20-northernsongs-d1t06.flac
+     7:35.10       80285564 B   ---   --   ---xx   flac  0.5729  bd97-02-20-northernsongs-d1t07.flac
+     7:07.48       75435740 B   ---   --   ---xx   flac  0.5064  bd97-02-20-northernsongs-d1t08.flac
+     7:46.05       82214204 B   ---   --   ---xx   flac  0.5622  bd97-02-20-northernsongs-d1t09.flac
+     9:03.15       95820524 B   ---   --   ---xx   flac  0.5797  bd97-02-20-northernsongs-d1t10.flac
+     8:07.07       85923308 B   ---   --   ---xx   flac  0.5686  bd97-02-20-northernsongs-d2t01.flac
+     8:00.53       84796700 B   ---   --   ---xx   flac  0.6037  bd97-02-20-northernsongs-d2t02.flac
+    11:33.40      122339324 B   ---   --   ---xx   flac  0.5994  bd97-02-20-northernsongs-d2t03.flac
+    10:44.70      113766284 B   ---   --   ---xx   flac  0.5839  bd97-02-20-northernsongs-d2t04.flac
+     7:53.20       83484284 B   ---   --   ---xx   flac  0.6200  bd97-02-20-northernsongs-d2t05.flac
+     5:33.60       58882364 B   ---   --   ---xx   flac  0.4709  bd97-02-20-northernsongs-d2t06.flac
+     6:59.10       73935164 B   ---   --   ---xx   flac  0.4897  bd97-02-20-northernsongs-d2t07.flac
+     9:17.57       98388908 B   ---   --   ---xx   flac  0.5165  bd97-02-20-northernsongs-d2t08.flac
+     7:13.73       76552940 B   ---   --   ---xx   flac  0.4962  bd97-02-20-northernsongs-d2t09.flac
+   147:54.03     1565381492 B                            0.5609  (19 files)
+=================== 
+=================== 
+=================== 

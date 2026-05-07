@@ -1,0 +1,50 @@
+
+NET Tapers Series #8
+
+Bob Dylan
+1995-07-19
+Madrid
+Offmaster audience recording. AUdio cdr > (feurio) > wav > (flac frontend) > flac. 
+
+Comment: The recording is excellent. The concert itself would have been a great one to have
+attended (me, I was probably off in some corner of Africa at the time preoccupied with
+some complex Bantu tone system). The atmosphere is boistrous and enthusiastic to say the 
+least. Much to recommend it, I think.
+
+Disk One
+Crash On The Levee (Down In The Flood)
+Lay Lady Lay
+All Along The Watchtower
+Simple Twist Of Fate
+Watching The River Flow
+Silvio
+Tangled Up In Blue (acoustic w band)
+Boots Of Spanish Leather (acoustic w band)
+
+Disk Two
+Love Minus Zero/No Limit (acoustic w band)
+Tombstone Blues
+She Belongs To Me
+Obviously Five Believers
+Like A Rolling Stone
+It Ain't Me, Babe (acoustic w band)
+Rainy Day Women # 12 & 35
+
+Disk One
+Track 01.flac:eda5e15935c060179cbc2b3b125a6656
+Track 02.flac:dc8ac6e70281475e1177682d4ba43cae
+Track 03.flac:cd802491854c9b70cee052cea246bae1
+Track 04.flac:a3d3e19a5757ba86e40f2a960d2395ed
+Track 05.flac:9b12ff9095da48d88a38c0106316f2c0
+Track 06.flac:7fa7303dee4688b78ac5c5326a312737
+Track 07.flac:f512fc64b5e210cc694b7cc631f0655a
+Track 08.flac:14c6f64435c21aea0f117823aefa4164
+
+Disk Two
+Track 01.flac:40e10670b488d0e9860391f3b6cea493
+Track 02.flac:d36db1372aea9b4fb443f8a0ad15c127
+Track 03.flac:36a49b1a0e335e7a0253b8a5420d4cb2
+Track 04.flac:8454d0604fcdeaa1c9b551a70c6dc218
+Track 05.flac:046748cf863f3d3955eeb214a1245292
+Track 06.flac:c0551fcfd11264b26ee1004687be3c06
+Track 07.flac:8255b189689ff3988c7bca88601eb6f1

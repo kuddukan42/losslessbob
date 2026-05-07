@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd99-11-05-Schoeps-Dolphinsmile.flac1648
+===================
+===================
+===================
+fab6cdcd16d8f2ef128dffbe296abf1b *01 Roving Gambler.flac
+f95c2b752dc5ec487990071979265025 *02 Love Minus Zero.flac
+82dcec860f7ca295a4289efc6e94a25e *03 Desolation Row.flac
+29bf230faf6ac4fca7d92a1bcb00b233 *04 Cocaine Blues.flac
+f2cbc80ea33e3b24e5d2e2b72a34b05f *05 Tangled Up in Blue.flac
+39d8796b2f59c2ecb6fae8b0dc0fea8f *06 Just Like Tom Thumbs Blues.flac
+2cc59ca1185b5f74a521c01fa564bb70 *07 Shelter from the Storm.flac
+61d80e3059e779f09f8b9fdbc9a98f66 *08 Tombstone Blues.flac
+925af0728c7f56b8f87bcf6e5fa61aed *09 Blind Willie McTell.flac
+2a4e7fdb1dc48a96eaebe13afe7f9514 *10 You Aint Going Nowhere.flac
+9036ee558b515ee476c67b85d1fe5a6f *11 Highway 61.flac
+d7e4bf4c53d12fd8470d0dacf528cf7a *12 Love Sick.flac
+7ad8ed010d1d8063da8798d98bfac40a *13 Cats in the Well.flac
+2ff599febef92869a0e2c5fbecd6e4e5 *14 Dont Think Twice.flac
+8fdd95eb214f42b5e418d330df26fff6 *15 Not Fade Away.flac
+7138b07a49f6c0da59fc9d0b1b8e4284 *Bob Dylan  Civc Arena Pittsburgh 11-5-1999.ffp
+def2c8dec435db7d6b1c8da38eadbbd9 *Bob Dylan  Civc Arena Pittsburgh 11-5-1999.md5
+7138b07a49f6c0da59fc9d0b1b8e4284 *ffp.txt
+b00b6f3b60c7a0fa53beec5f73564a75 *info.txt
+===================
+===================
+===================
+=== ffp for: bd99-11-05-Schoeps-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Roving Gambler.flac:eef9d2061d814b3172260f4aad053c25
+02 Love Minus Zero.flac:4bd2cdca8548508d6c86a5bd1bb39b33
+03 Desolation Row.flac:d1146e47638cdf408fd6b16a81d7c702
+04 Cocaine Blues.flac:76eb1d3c66878a83edf1c09d2ae4a877
+05 Tangled Up in Blue.flac:0f638da6123f3f585ae59d18ebcfb60a
+06 Just Like Tom Thumbs Blues.flac:15065b24a4098cf322b0ce9b04105ffc
+07 Shelter from the Storm.flac:a19b688677cab58fddf3fe2abea44ef1
+08 Tombstone Blues.flac:1fad0e0a8c129fb1edfd809ca02c2b8b
+09 Blind Willie McTell.flac:2e7f1fc1be1bc6ec8557477568084775
+10 You Aint Going Nowhere.flac:a51472d7c81870fef3b8fcd48dd8c388
+11 Highway 61.flac:07e3d683cc5f1483968ddbe0cd9bf51d
+12 Love Sick.flac:416854dd0129b4c11c5a1a0b4aca4c39
+13 Cats in the Well.flac:6b0fa0d8e0c6a372464129fbb1721ac0
+14 Dont Think Twice.flac:131b1e663016744c3ce69799fac8f9ab
+15 Not Fade Away.flac:74091583409bae17a9ee2085ebcaa0e4
+===================
+===================
+===================
+=== shntool len for: bd99-11-05-Schoeps-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.01       43925996 B   ---   --   ---xx   flac  0.5692  01 Roving Gambler.flac
+     5:21.00       56624444 B   ---   --   ---xx   flac  0.5338  02 Love Minus Zero.flac
+     9:08.61       96810716 B   ---   --   ---xx   flac  0.5411  03 Desolation Row.flac
+     5:07.15       54190124 B   ---   --   ---xx   flac  0.5409  04 Cocaine Blues.flac
+     9:26.71      100009436 B   ---   --   ---xx   flac  0.6048  05 Tangled Up in Blue.flac
+     6:42.68       71072780 B   ---   --   ---xx   flac  0.5317  06 Just Like Tom Thumbs Blues.flac
+     6:05.37       64473068 B   ---   --   ---xx   flac  0.5245  07 Shelter from the Storm.flac
+     6:56.54       73509452 B   ---   --   ---xx   flac  0.5937  08 Tombstone Blues.flac
+     6:41.04       70745852 B   ---   --   ---xx   flac  0.5499  09 Blind Willie McTell.flac
+     4:58.70       52731884 B   ---   --   ---xx   flac  0.5762  10 You Aint Going Nowhere.flac
+     6:55.34       73286012 B   ---   --   ---xx   flac  0.6241  11 Highway 61.flac
+     6:10.56       65399756 B   ---   --   ---xx   flac  0.5287  12 Love Sick.flac
+     5:19.65       56424524 B   ---   --   ---xx   flac  0.6098  13 Cats in the Well.flac
+     8:48.02       93143948 B   ---   --   ---xx   flac  0.5267  14 Dont Think Twice.flac
+     3:53.55       41230604 B   ---   --   ---xx   flac  0.6058  15 Not Fade Away.flac
+    95:45.68     1013578596 B                            0.5631  (15 files)
+===================
+===================
+===================

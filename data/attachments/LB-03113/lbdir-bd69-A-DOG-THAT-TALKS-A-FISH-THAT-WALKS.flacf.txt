@@ -1,0 +1,204 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-A-DOG-THAT-TALKS-A-FISH-THAT-WALKS.flacf 
+=================== 
+=================== 
+=================== 
+5fb315132e44ac9cf54328bd41a30167  ADogThatTalksAFishThatWalks.doc
+01de8965f2a8fb05dc5d3643cb965d4d  ADogThatTalksAFishThatWalks.txt
+f557443d6ba64fbc856b2c433b197a88  ADTTAFTW__InsideCover.jpg
+d94f927f0825f7ad0f825667b62221c5  ADTTAFTW_OutsideCover.jpg
+fdf1a5550b4fb3421abb0eaa846b9035  bd69-A-DOG-THAT-TALKS-A-FISH-THAT-WALKS-LB-3113.txt
+78684bae04c3f9a6c5d0bc9d08cc49fb  Disc 1\ADTTAFTWD1.fpp
+1cea13e083b2b75bdf563c9bf7e41f92  Disc 1\ADTTAFTWD1.md5
+4759cbdd425c004323fa587fdb494f26  Disc 1\ADTTAFTWD1T01.flac
+4f23c807a2c289fb2ee6a8fd21985f62  Disc 1\ADTTAFTWD1T02.flac
+e9d523451dbb3af2a76b391f44a500ac  Disc 1\ADTTAFTWD1T03.flac
+8f9745181acf1ea9f0825b9bac9dda5d  Disc 1\ADTTAFTWD1T04.flac
+c9a055250a164229e6180841904841bc  Disc 1\ADTTAFTWD1T05.flac
+a9ec00009728c2f5d186bf0ab08558c4  Disc 1\ADTTAFTWD1T06.flac
+5833f5c334c4d261897364b8a866936a  Disc 1\ADTTAFTWD1T07.flac
+6a07ba5c0fd8d90bacf8f7cddc9f9c6e  Disc 1\ADTTAFTWD1T08.flac
+ff4d0b55e8afed9382eb6d0dd2740c0b  Disc 1\ADTTAFTWD1T09.flac
+e077f099d49ea4bc365d2d4b351cdf77  Disc 1\ADTTAFTWD1T10.flac
+1dcb57dcc8a4c72d5f680b1a1da7f87a  Disc 1\ADTTAFTWD1T11.flac
+73b676b175785615367db02827859d97  Disc 1\ADTTAFTWD1T12.flac
+0e5576a28cae255a4817bd66a61899ff  Disc 1\ADTTAFTWD1T13.flac
+50d4fae8d434a23f27658041e3273a97  Disc 1\ADTTAFTWD1T14.flac
+76b9b377dfe16484de6148a976aaecdf  Disc 1\ADTTAFTWD1T15.flac
+b19c73fc691260dd15f824e2d677f02b  Disc 1\ADTTAFTWD1T16.flac
+34a400c57e595b916b665d9e654a2481  Disc 1\ADTTAFTWD1T17.flac
+ea3981f64e9cb1a2b5672aa2ead5d5a4  Disc 1\ADTTAFTWD1T18.flac
+cb98893153ffac5bf0734926b3c4160b  Disc 1\ADTTAFTWD1T19.flac
+2bf21192d3acc1cbd0319f6954d9e11f  Disc 1\ADTTAFTWD1T20.flac
+5326784ab560401b89dd54fabe499b74  Disc 1\ADTTAFTWD1T21.flac
+eee1e47079c053dc4a877c3317b3642f  Disc 1\ADTTAFTWD1T22.flac
+34250c780bb62b97f224fa87cf3e06bb  Disc 1\ADTTAFTWD1T23.flac
+2dd49a0c967b9f816b12e0bdcce6ad0f  Disc 1\ADTTAFTWD1T24.flac
+504988542354673988a0fe0551a54d02  Disc 1\ADTTAFTWD1T25.flac
+06f0a5919872e991f8d3af71a7baf22a  Disc 1\ADTTAFTWD1T26.flac
+e36e4d964387a0bb83db3ddedebeec03  Disc 2\ADTTAFTWD2.ffp
+f4e78ac438504b830e6c42b9bc0b3569  Disc 2\ADTTAFTWD2.md5
+97f1271489a511d28c55c8b1fdbb72e3  Disc 2\ADTTAFTWD2T01.flac
+df18848f0fa171b59c16b5c8d76315d1  Disc 2\ADTTAFTWD2T02.flac
+454cc1be416fd1e477638bb730fb86b1  Disc 2\ADTTAFTWD2T03.flac
+92baeb32b607f9c1f13464a271d5877b  Disc 2\ADTTAFTWD2T04.flac
+3413237ef37bbe2915baa3568cfde2fe  Disc 2\ADTTAFTWD2T05.flac
+2d085252d448e43b137d9a2579549b00  Disc 2\ADTTAFTWD2T06.flac
+59ec1e00c1c7182412236bd7a7c8ed8d  Disc 2\ADTTAFTWD2T07.flac
+51d67319e4746f97fb1e9d908c52f171  Disc 2\ADTTAFTWD2T08.flac
+ccec74203210bd1598e07b4c8eebe6e1  Disc 2\ADTTAFTWD2T09.flac
+8ddca66d60ee060a17cd5701e3704daf  Disc 2\ADTTAFTWD2T10.flac
+0ee08b0a9ab232a548fba9d2ec8a03bc  Disc 2\ADTTAFTWD2T11.flac
+0e8fa87cb41f80d0b101d1f760c7be9a  Disc 2\ADTTAFTWD2T12.flac
+600127a399050875f2abb7c02ad0c98a  Disc 2\ADTTAFTWD2T13.flac
+39cefd4e4e0c4c1707a6eaed96604014  Disc 2\ADTTAFTWD2T14.flac
+f15d0d9106b676c7aa881a1a1f3ae333  Disc 2\ADTTAFTWD2T15.flac
+4ddb9468ded5443bcd64511944a9deb6  Disc 2\ADTTAFTWD2T16.flac
+35dcdce40ae5c04c438f4920b8195dc6  Disc 2\ADTTAFTWD2T17.flac
+3442f3bddb4041df106454472cf9a665  Disc 2\ADTTAFTWD2T18.flac
+19e0f3b5508be97fe2b923bb9b1d6ae7  Disc 2\ADTTAFTWD2T19.flac
+05eedcb3f290da9be4fe581c2c0979fa  Disc 2\ADTTAFTWD2T20.flac
+ac3b5b8f2d307f0c7bd91803754f4100  Disc 2\ADTTAFTWD2T21.flac
+f958ab8d066d1864b5e6e942ec6567e3  Disc 2\ADTTAFTWD2T22.flac
+f23ed9708b9c80e599c986484a555180  Disc 2\ADTTAFTWD2T23.flac
+615f9c8474feae223eb45f6d9159f1b7  Disc 2\ADTTAFTWD2T24.flac
+902bc954ade8141f03edfdb0b4b28166  Disc 2\ADTTAFTWD2T25.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-A-DOG-THAT-TALKS-A-FISH-THAT-WALKS.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+ADTTAFTWD1T01.flac:9e5047e0ba52d9921a4f25d23ad0c134
+ADTTAFTWD1T02.flac:9a9b83d8f0b1486d68c2941d2356d769
+ADTTAFTWD1T03.flac:57f79b3f2be87b578cbc055d88747f6d
+ADTTAFTWD1T04.flac:07662905d387128c5eacf302629501c3
+ADTTAFTWD1T05.flac:ffc715da121360a99b78ab68e161de24
+ADTTAFTWD1T06.flac:a67060c35279548212e3cf925c168715
+ADTTAFTWD1T07.flac:f6e6759fcb5bc372e9fc70213e114008
+ADTTAFTWD1T08.flac:26985359042b20f15dedf15deb5a3b3b
+ADTTAFTWD1T09.flac:036aca5737efad3c2dfebb8cb41be1be
+ADTTAFTWD1T10.flac:d192a3a644ed907304a3fbaf61c5b3bd
+ADTTAFTWD1T11.flac:dc6189a899781cb8dbe90da33e9c22f0
+ADTTAFTWD1T12.flac:0c0be9cea67f9ab70e6a3bad7b72ecb6
+ADTTAFTWD1T13.flac:3c8ed70d83b5835ff6caedebd269f051
+ADTTAFTWD1T14.flac:671c3867858ca588e5a1155c40f5d50b
+ADTTAFTWD1T15.flac:b0662aa33eaf64261aaee339b6d45f43
+ADTTAFTWD1T16.flac:4a0961b1d21a5590aa1608e9909e7059
+ADTTAFTWD1T17.flac:d927e7d5b73050c3099f08408bad75c3
+ADTTAFTWD1T18.flac:0dce566be8d351b95ccd5f153afd103f
+ADTTAFTWD1T19.flac:5e8a957ef5aca425b940c6ca3d773010
+ADTTAFTWD1T20.flac:8fcd0e2e9c1cb5a3743ca845599e91cc
+ADTTAFTWD1T21.flac:4bc7c06c61feac6dd9008cd18b1006f0
+ADTTAFTWD1T22.flac:d9f1decc2fac7f13ea107f38b1763005
+ADTTAFTWD1T23.flac:3d0e2cf9ec010588008e0328ca974b71
+ADTTAFTWD1T24.flac:fcf38ea1358698599c3ba488cdf5d733
+ADTTAFTWD1T25.flac:2e424a2a834ee3fdabb6a030b555c34a
+ADTTAFTWD1T26.flac:6121a2a19350df7c05ba68a578de503d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-A-DOG-THAT-TALKS-A-FISH-THAT-WALKS.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+ADTTAFTWD2T01.flac:07070163d7b107a31727c9b7a3a54597
+ADTTAFTWD2T02.flac:26f9c9e8e15a95cba8194a87a0a3084c
+ADTTAFTWD2T03.flac:8130c5edeeac3ba61d6a21c5caff3836
+ADTTAFTWD2T04.flac:620f586814e650843f9c7b9a197976a8
+ADTTAFTWD2T05.flac:03e25c959b01f99480999cf85ee25afc
+ADTTAFTWD2T06.flac:551d1dd9d9865ed3adf016da47b7d68e
+ADTTAFTWD2T07.flac:1d40a3f43bfbacec792e1b875ad8364d
+ADTTAFTWD2T08.flac:569d65756a5c93e7b60fdd355d617468
+ADTTAFTWD2T09.flac:4adbe3ff74bf4f0f2955e62e9599e6ca
+ADTTAFTWD2T10.flac:4ae47af5a62c1ee76a814b89dcddcb51
+ADTTAFTWD2T11.flac:8cbcd5c0ad5d775fd4d6b8ae4fa6c99c
+ADTTAFTWD2T12.flac:a0c667d21c100270627d41b03a49fcc5
+ADTTAFTWD2T13.flac:893ecbef6e391b06a6d43a80f5eca4dc
+ADTTAFTWD2T14.flac:e7f8f7714e72b487cbff71c63e35c9ca
+ADTTAFTWD2T15.flac:660c425388b51a33b99e101cf44fb0ac
+ADTTAFTWD2T16.flac:6a82e8bdcdd3cb17e666e4b287758485
+ADTTAFTWD2T17.flac:762e9fac7e5de4de799db7968f04ce92
+ADTTAFTWD2T18.flac:b3d78429ad40d620f8c77606316bfad0
+ADTTAFTWD2T19.flac:46fa54a29bf0ca7ac0d62841f036a29d
+ADTTAFTWD2T20.flac:de96e83cec97eebb1fb3271383764488
+ADTTAFTWD2T21.flac:c8fbb3c72a0e702ac6232492d42d776d
+ADTTAFTWD2T22.flac:723c2aff238b9d5299739faec3166632
+ADTTAFTWD2T23.flac:2db0633dd900da9b1959f00c1e4ed642
+ADTTAFTWD2T24.flac:dbacee555e38df115ceaae1d4816759e
+ADTTAFTWD2T25.flac:3234219b553c93425c09aafe6144b331
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-A-DOG-THAT-TALKS-A-FISH-THAT-WALKS.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.21       35153036 B   ---   --   ---xx   flac  0.5822  ADTTAFTWD1T01.flac
+     1:53.00       19933244 B   ---   --   ---xx   flac  0.6011  ADTTAFTWD1T02.flac
+     2:34.32       27240908 B   ---   --   ---xx   flac  0.5972  ADTTAFTWD1T03.flac
+     6:50.09       72345212 B   ---   --   ---xx   flac  0.5960  ADTTAFTWD1T04.flac
+     3:11.60       33833564 B   ---   --   ---xx   flac  0.6147  ADTTAFTWD1T05.flac
+     2:47.12       29487068 B   ---   --   ---xx   flac  0.6048  ADTTAFTWD1T06.flac
+     2:02.29       21589052 B   ---   --   ---xx   flac  0.6207  ADTTAFTWD1T07.flac
+     3:48.31       40292156 B   ---   --   ---xx   flac  0.5714  ADTTAFTWD1T08.flac
+     2:44.59       29068412 B   ---   --   ---xx   flac  0.6055  ADTTAFTWD1T09.flac
+     3:26.29       36406652 B   ---   --   ---xx   flac  0.6054  ADTTAFTWD1T10.flac
+     2:30.50       26577644 B   ---   --   ---xx   flac  0.6249  ADTTAFTWD1T11.flac
+     1:48.16       19088876 B   ---   --   ---xx   flac  0.6225  ADTTAFTWD1T12.flac
+     2:52.10       30364364 B   ---   --   ---xx   flac  0.5859  ADTTAFTWD1T13.flac
+     3:10.74       33690092 B   ---   --   ---xx   flac  0.5990  ADTTAFTWD1T14.flac
+     2:42.42       28675628 B   ---   --   ---xx   flac  0.5871  ADTTAFTWD1T15.flac
+     4:05.69       43380332 B   ---   --   ---xx   flac  0.6071  ADTTAFTWD1T16.flac
+     2:17.61       24310316 B   ---   --   ---xx   flac  0.5634  ADTTAFTWD1T17.flac
+     3:33.70       37737884 B   ---   --   ---xx   flac  0.5691  ADTTAFTWD1T18.flac
+     3:31.59       37359212 B   ---   --   ---xx   flac  0.5026  ADTTAFTWD1T19.flac
+     2:25.66       25733276 B   ---   --   ---xx   flac  0.5616  ADTTAFTWD1T20.flac
+     2:30.71       26627036 B   ---   --   ---xx   flac  0.5324  ADTTAFTWD1T21.flac
+     3:20.31       35352956 B   ---   --   ---xx   flac  0.5824  ADTTAFTWD1T22.flac
+     3:32.17       37436828 B   ---   --   ---xx   flac  0.5550  ADTTAFTWD1T23.flac
+     2:39.07       28064108 B   ---   --   ---xx   flac  0.6112  ADTTAFTWD1T24.flac
+     2:45.23       29160140 B   ---   --   ---xx   flac  0.5784  ADTTAFTWD1T25.flac
+     3:00.30       31822604 B   ---   --   ---xx   flac  0.5259  ADTTAFTWD1T26.flac
+    79:26.03      840730600 B                            0.5838  (26 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-A-DOG-THAT-TALKS-A-FISH-THAT-WALKS.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:39.21       38681036 B   ---   --   ---xx   flac  0.4880  ADTTAFTWD2T01.flac
+     4:42.67       49902428 B   ---   --   ---xx   flac  0.5605  ADTTAFTWD2T02.flac
+     2:51.68       30324380 B   ---   --   ---xx   flac  0.5815  ADTTAFTWD2T03.flac
+     1:47.48       18987740 B   ---   --   ---xx   flac  0.5438  ADTTAFTWD2T04.flac
+     3:16.68       34734380 B   ---   --   ---xx   flac  0.5612  ADTTAFTWD2T05.flac
+     3:57.12       41835068 B   ---   --   ---xx   flac  0.5995  ADTTAFTWD2T06.flac
+     3:08.08       33182060 B   ---   --   ---xx   flac  0.6076  ADTTAFTWD2T07.flac
+     6:07.28       64804700 B   ---   --   ---xx   flac  0.5627  ADTTAFTWD2T08.flac
+     3:30.67       37201628 B   ---   --   ---xx   flac  0.6253  ADTTAFTWD2T09.flac
+     3:37.21       38328236 B   ---   --   ---xx   flac  0.5609  ADTTAFTWD2T10.flac
+     3:45.50       39807644 B   ---   --   ---xx   flac  0.5448  ADTTAFTWD2T11.flac
+     2:41.16       28438076 B   ---   --   ---xx   flac  0.5692  ADTTAFTWD2T12.flac
+     4:21.15       46075724 B   ---   --   ---xx   flac  0.5805  ADTTAFTWD2T13.flac
+     2:31.23       26690540 B   ---   --   ---xx   flac  0.5585  ADTTAFTWD2T14.flac
+     3:04.49       32572892 B   ---   --   ---xx   flac  0.5792  ADTTAFTWD2T15.flac
+     3:31.43       37321580 B   ---   --   ---xx   flac  0.6132  ADTTAFTWD2T16.flac
+     1:31.10       16075964 B   ---   --   ---xx   flac  0.5589  ADTTAFTWD2T17.flac
+     1:59.37       21078668 B   ---   --   ---xx   flac  0.5523  ADTTAFTWD2T18.flac
+     0:29.25        5174444 B   ---   --   ---xx   flac  0.5650  ADTTAFTWD2T19.flac
+     2:06.55       22355804 B   ---   --   ---xx   flac  0.5970  ADTTAFTWD2T20.flac
+     1:29.51       15819596 B   ---   --   ---xx   flac  0.5645  ADTTAFTWD2T21.flac
+     3:29.37       36954668 B   ---   --   ---xx   flac  0.5229  ADTTAFTWD2T22.flac
+     3:50.05       40583804 B   ---   --   ---xx   flac  0.5859  ADTTAFTWD2T23.flac
+     2:47.63       29607020 B   ---   --   ---xx   flac  0.6449  ADTTAFTWD2T24.flac
+     3:37.03       38285900 B   ---   --   ---xx   flac  0.6340  ADTTAFTWD2T25.flac
+    77:55.65      824823980 B                            0.5751  (25 files)
+=================== 
+=================== 
+=================== 

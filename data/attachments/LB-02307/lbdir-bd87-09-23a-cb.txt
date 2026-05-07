@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-23a-cb 
+=================== 
+=================== 
+=================== 
+86a6c1fc73235c32908dec599c476ce1  23sep87_101.shn
+7fa36361f57be9a78b19fa1b4c1cd916  23sep87_102.shn
+c24cbdf4f9f809b9f4ae4e188211bea2  23sep87_103.shn
+a452cf08f3dc4aca5ce6dbcd3537eba0  23sep87_104.shn
+b30986f58ea4fda0bb0a34be122817d3  23sep87_105.shn
+47281ea893d272016ab3d9df7a75e3f6  23sep87_106.shn
+1e1a8989c45938afe054f381adfc20be  23sep87_107.shn
+1033558bcccb77ff07f9882dc6949dd9  23sep87_108.shn
+2fbfb69aa3829fe0c69d61935c3340f1  23sep87_109.shn
+703b9e438533c08f93761359c03b8444  23sep87_110.shn
+34522f8355d0b8ef3e16673749851b3e  23sep87_111.shn
+6b6d4da22344bfae308d6d7405406876  23sep87_112.shn
+7cdf94335082c6d6e6cd3e4af90959b1  23sep87_113.shn
+d34068c099677408386c08b98d8f9fb7  23sep87_114.shn
+c273d159e0c206bf9949aec395f6d278  23sep87_115.shn
+60cb8232f454e44d6fa61485b1b493bb  bd87-09-23a-cb.txt
+8b04b7f76fa44e5318760f95b1a65860  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-09-23a-cb 
+=================== 
+=================== 
+=================== 
+bf1ef18113779095cef4330adedf72ed  [shntool]  23sep87_101.wav
+88ff694696e9b632c97e9dfb5c929a6a  [shntool]  23sep87_102.wav
+edabf4261c4d45d2550b6173318896ca  [shntool]  23sep87_103.wav
+930d8f78c82787d030b6e71a7df3716b  [shntool]  23sep87_104.wav
+ae3858325f46bcd13b99122f1ee7108f  [shntool]  23sep87_105.wav
+ce4599fb9346a9fbddeccd9119fad679  [shntool]  23sep87_106.wav
+9ef20937629563830fdd63a63c13200b  [shntool]  23sep87_107.wav
+97a99712b20e224f0bc67806eb08c319  [shntool]  23sep87_108.wav
+e01e2b58340bfe7ab9ed4e6f16b1064f  [shntool]  23sep87_109.wav
+a15a04aa981d8fb3bfa0db25b2bd95ec  [shntool]  23sep87_110.wav
+b7a524b502819069e7d3d503e14e912f  [shntool]  23sep87_111.wav
+fde63481798f48b4e1e7cf10f23fbb97  [shntool]  23sep87_112.wav
+d46a7e9c5188059a772291772b604cee  [shntool]  23sep87_113.wav
+d65cbfa439faa0a65bf277894c78e220  [shntool]  23sep87_114.wav
+032cb0135bbb7185c4462bef96fde5d0  [shntool]  23sep87_115.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-23a-cb 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.05       51697004 B   ---   --   -----    wav  1.0000  23sep87_101.wav
+     5:09.21       54557036 B   ---   --   -----    wav  1.0000  23sep87_102.wav
+     3:01.42       32027228 B   ---   --   -----    wav  1.0000  23sep87_103.wav
+     4:47.31       50699756 B   ---   --   -----    wav  1.0000  23sep87_104.wav
+     3:44.24       39570092 B   ---   --   -----    wav  1.0000  23sep87_105.wav
+     3:57.08       41825660 B   ---   --   -----    wav  1.0000  23sep87_106.wav
+     5:32.05       58576604 B   ---   --   -----    wav  1.0000  23sep87_107.wav
+     6:36.59       69993212 B   ---   --   -----    wav  1.0000  23sep87_108.wav
+     3:50.31       40644956 B   ---   --   -----    wav  1.0000  23sep87_109.wav
+     5:44.30       60752204 B   ---   --   -----    wav  1.0000  23sep87_110.wav
+     4:32.17       48020828 B   ---   --   -----    wav  1.0000  23sep87_111.wav
+     6:00.62       63649868 B   ---   --   -----    wav  1.0000  23sep87_112.wav
+     7:30.64       79530572 B   ---   --   -----    wav  1.0000  23sep87_113.wav
+     4:49.55       51109004 B   ---   --   -----    wav  1.0000  23sep87_114.wav
+     2:31.50       26754044 B   ---   --   -----    wav  1.0000  23sep87_115.wav
+    72:41.54      769408068 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

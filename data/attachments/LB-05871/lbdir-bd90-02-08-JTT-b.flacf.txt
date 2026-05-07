@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-08-JTT-b.flacf 
+=================== 
+=================== 
+=================== 
+e47795d8b0b39c1d63656cd90d1dbe0f  Disc One\BD_08.02.90_Disc01Track01.flac
+52719e073746bdcbb01a8f18474aa401  Disc One\BD_08.02.90_Disc01Track02.flac
+36ce95b7206e6e561da180e528d69317  Disc One\BD_08.02.90_Disc01Track03.flac
+1033300c6db72db95b3547a82ab87bb8  Disc One\BD_08.02.90_Disc01Track04.flac
+25bc2b883d9d3d6091d6ee91c49d0e37  Disc One\BD_08.02.90_Disc01Track05.flac
+032e275837de20b38f62b7e8c62ca0b2  Disc One\BD_08.02.90_Disc01Track06.flac
+58c22b0158bb86abbdca60d079611e01  Disc One\BD_08.02.90_Disc01Track07.flac
+6145bf4f0c53549b7a5d601a99ce2d5a  Disc One\BD_08.02.90_Disc01Track08.flac
+4c037115a577528f5b5db629830f1ba1  Disc One\BD_08.02.90_Disc01Track09.flac
+686578afd51e743bcea12650d5117487  Disc One\BD_08.02.90_Disc01Track10.flac
+1ae5b1921de204379bccffd16df2e652  Disc One\BD_08.02.90_Disc01Track11.flac
+016f03881e5d29ecc6210c225315300b  Disc One\BD_08.02.90_Disc01Track12.flac
+aae142d077873c5f21f717da7f05abeb  Disc One\BD_08.02.90_Disc01Track13.flac
+6f4c7eee181ac4033eaf1c7a8a7d4b7a  Disc Two\BD_08.02.90_Disc02Track01.flac
+bd14ce6f5672878647d0971438200f02  Disc Two\BD_08.02.90_Disc02Track02.flac
+a36f7440e5e40109a9cbef55ac35ca4a  Disc Two\BD_08.02.90_Disc02Track03.flac
+4633ea5bbe7de9d161dc9fd583b47641  Disc Two\BD_08.02.90_Disc02Track04.flac
+395d82917893a886984733e449e76a85  Disc Two\BD_08.02.90_Disc02Track05.flac
+a49c048cbfb641c4895a0b28305615d4  Disc Two\BD_08.02.90_Disc02Track06.flac
+7b88067f487165c58a69d8033081ef87  Disc Two\BD_08.02.90_Disc02Track07.flac
+8757b286f85e6273a672921adbae8ec4  Disc Two\BD_08.02.90_Disc02Track08.flac
+f47d7d3e34f5780a30543929334d1cea  Disc Two\BD_08.02.90_Disc02Track09.flac
+3ba5444c09e0d0e72aea1941c09f2769  Disc Two\BD_08.02.90_Disc02Track10.flac
+5a6a8e8a89ab9a9ac258646cdb6abb71  Dylan - Hammersmith 08.02.1990 JTT.md5
+72210857cc343e67e41612f2cd9a0812  Hammersmith 08.02.1990 - F.jpg
+76cfd6c361dae87f0247db0e621d3637  Hammersmith 08.02.1990 - R.jpg
+238615ea92f1bc2858ae181eccda1e74  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-08-JTT-b.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+BD_08.02.90_Disc01Track01.flac:06fa904985e066d0460693b7e08aa75e
+BD_08.02.90_Disc01Track02.flac:f3f6eb24396e3a02f5660ed3da2fc801
+BD_08.02.90_Disc01Track03.flac:50730e08fa95e8b1b8938daa4a6f3794
+BD_08.02.90_Disc01Track04.flac:37d4f2b953701c3586e4fa4bfd710b7b
+BD_08.02.90_Disc01Track05.flac:c79a7af44035eb963cffb4cc087bb269
+BD_08.02.90_Disc01Track06.flac:ba908e1ca2bc71ac29e2a92c2a34af9f
+BD_08.02.90_Disc01Track07.flac:575a1ed7ba3bc01211be8ff152ae7bc8
+BD_08.02.90_Disc01Track08.flac:747ecf8c70ccb4ef58e7e8391bdd2b9d
+BD_08.02.90_Disc01Track09.flac:465f20c2af58d1b1320fa058198f7cab
+BD_08.02.90_Disc01Track10.flac:7a80adca89601b7986ce87cca52cca50
+BD_08.02.90_Disc01Track11.flac:7bc35e0d7dea749e46af721ecdb342f7
+BD_08.02.90_Disc01Track12.flac:43086a4523889274ed74dfeb899a0ac6
+BD_08.02.90_Disc01Track13.flac:7f79da9f23a58721da17835ef9d03601
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-08-JTT-b.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+BD_08.02.90_Disc02Track01.flac:9d64c07398383021f17a6c4b1c36aafe
+BD_08.02.90_Disc02Track02.flac:772da0f5c61851a60c717291dca76f80
+BD_08.02.90_Disc02Track03.flac:4a357f025fea4ed37a187d56ac92c56f
+BD_08.02.90_Disc02Track04.flac:ac414a92d54da9efa8bffb1f11211512
+BD_08.02.90_Disc02Track05.flac:18b2c6af9c04788d800aec65bee11dd8
+BD_08.02.90_Disc02Track06.flac:114472427bac5d7a294eb193f9a9cd2e
+BD_08.02.90_Disc02Track07.flac:bd14d5827f3d5d5e545e5d54323070f4
+BD_08.02.90_Disc02Track08.flac:a62a651c2242add5b556d61e1510ddd9
+BD_08.02.90_Disc02Track09.flac:1213f4a298a6d2bf5a4ee5f39b134a11
+BD_08.02.90_Disc02Track10.flac:8a2e02305c7a8577ef6161470d64dec5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-08-JTT-b.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:21.69       46202732 B   ---   --   ---xx   flac  0.6014  BD_08.02.90_Disc01Track01.flac
+     4:11.52       44398748 B   ---   --   ---xx   flac  0.5717  BD_08.02.90_Disc01Track02.flac
+     4:59.12       52771868 B   ---   --   ---xx   flac  0.6077  BD_08.02.90_Disc01Track03.flac
+     6:07.04       64748252 B   ---   --   ---xx   flac  0.6188  BD_08.02.90_Disc01Track04.flac
+     3:45.66       39845276 B   ---   --   ---xx   flac  0.6251  BD_08.02.90_Disc01Track05.flac
+     5:46.67       61192028 B   ---   --   ---xx   flac  0.6298  BD_08.02.90_Disc01Track06.flac
+     3:03.32       32356508 B   ---   --   ---xx   flac  0.6390  BD_08.02.90_Disc01Track07.flac
+     3:13.42       34144028 B   ---   --   ---xx   flac  0.6110  BD_08.02.90_Disc01Track08.flac
+     3:25.47       36272588 B   ---   --   ---xx   flac  0.6127  BD_08.02.90_Disc01Track09.flac
+     4:53.30       51755804 B   ---   --   ---xx   flac  0.5612  BD_08.02.90_Disc01Track10.flac
+     4:51.62       51478268 B   ---   --   ---xx   flac  0.5603  BD_08.02.90_Disc01Track11.flac
+     3:46.67       40024028 B   ---   --   ---xx   flac  0.5833  BD_08.02.90_Disc01Track12.flac
+     6:36.16       69892076 B   ---   --   ---xx   flac  0.5554  BD_08.02.90_Disc01Track13.flac
+    59:03.41      625082204 B                            0.5960  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-08-JTT-b.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.49       47037692 B   ---   --   ---xx   flac  0.5715  BD_08.02.90_Disc02Track01.flac
+     5:04.13       53656220 B   ---   --   ---xx   flac  0.6196  BD_08.02.90_Disc02Track02.flac
+     3:21.20       35503484 B   ---   --   ---xx   flac  0.6005  BD_08.02.90_Disc02Track03.flac
+     4:13.35       44711564 B   ---   --   ---xx   flac  0.6237  BD_08.02.90_Disc02Track04.flac
+     6:19.24       66912092 B   ---   --   ---xx   flac  0.5999  BD_08.02.90_Disc02Track05.flac
+     3:06.23       32864540 B   ---   --   ---xx   flac  0.6571  BD_08.02.90_Disc02Track06.flac
+     7:23.30       78215804 B   ---   --   ---xx   flac  0.6599  BD_08.02.90_Disc02Track07.flac
+     6:26.70       68255084 B   ---   --   ---xx   flac  0.5790  BD_08.02.90_Disc02Track08.flac
+     4:24.32       46644908 B   ---   --   ---xx   flac  0.5978  BD_08.02.90_Disc02Track09.flac
+     5:22.49       56916092 B   ---   --   ---xx   flac  0.6492  BD_08.02.90_Disc02Track10.flac
+    50:08.45      530717480 B                            0.6162  (10 files)
+=================== 
+=================== 
+=================== 

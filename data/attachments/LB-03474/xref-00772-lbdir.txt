@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-10-b.flacf 
+=================== 
+=================== 
+=================== 
+c9925df9a2c68bd1d44d96f186cbdc2e  Bob Dylan 1997.08.10 Clarkston, Michigan, Pine Knob Music Theatre.ffp
+8943c4e2c40032aaf4dadcde1f1ad21d  Disk 1\01 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+27bdc2c3748d00641828614be0e2f1fa  Disk 1\02 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+554669a9ca69d6c4935b4f6a9ceaaa27  Disk 1\03 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+31bff7551f9eae8cb9c0f228ff6b7d8a  Disk 1\04 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+950bdf1c524fdf78f37ccf9655ea65b4  Disk 1\05 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+16fe9cf63cdd32b7f4b73644d5c3092c  Disk 1\06 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+7ed0c119a227fb95341c67b881a6c79a  Disk 1\07 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+625678920dad70be48b1d8f4b27873a0  Disk 2\01 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+c47481ea8206360f8022d05bde22e34e  Disk 2\02 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+344ce719d714be803c26ded480ad2228  Disk 2\03 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+283d16aacf626e6808909fe0d7730dd7  Disk 2\04 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+01e2ec0a1129ca3361274faef48e1c55  Disk 2\05 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+de1895f02f3a9853e0a02f9967959896  Disk 2\06 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+40e3e7e8372ced7ab3f1d1677f0754ca  Disk 2\07 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+dff819b7d9590863ba9bb590abd89951  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-10-b.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+01 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac:403f179ca943d6daf71f1c2980528cbb
+02 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac:6ba531c0deb029636686c9aee276cc31
+03 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac:7175b36858b656477aa951a924539829
+04 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac:a2e281b60631f9df9d7f842a5bad5ee2
+05 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac:2644d52d1f4f129539cf7e485592836b
+06 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac:18337285c98b4dd9c799490bfccfb4e5
+07 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac:0c42c18d4b10fd7f37047efdf266a2e8
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-10-b.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+01 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac:18232eb3b6cf0c82cfecb965c7b78f3c
+02 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac:c9b06a3be4f9b4ca420628ffc2b43c70
+03 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac:e28bd9a5c389124ad73f891a15fe76eb
+04 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac:f1e3420947c41e90cc03241c2fb45451
+05 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac:43e49a52f3ec28125a7822357df903d6
+06 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac:832348293d300caf15954304bfc28926
+07 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac:6dc7ad19352523ef6ff968876e2baa48
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-10-b.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.19       54199196 B   -b-   --   ---xx   flac  0.6574  01 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+     5:25.10       57353468 B   -b-   --   ---xx   flac  0.6217  02 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+     5:05.47       53912348 B   -b-   --   ---xx   flac  0.6364  03 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+     5:11.11       54885548 B   -b-   --   ---xx   flac  0.6384  04 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+     8:26.34       89339228 B   -b-   --   ---xx   flac  0.6589  05 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+     8:26.18       89300780 B   ---   --   ---xx   flac  0.6449  06 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+     8:36.37       91110092 B   -b-   --   ---xx   flac  0.6837  07 of Bob Dylan - 1997-08-10 - Clarkston - CD1.flac
+    46:18.26      490100660 B                            0.6517  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-10-b.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:47.29       61279964 B   -b-   --   ---xx   flac  0.5958  01 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+     6:05.20       64432076 B   -b-   --   ---xx   flac  0.6089  02 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+     6:59.59       74050796 B   -b-   --   ---xx   flac  0.6115  03 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+     8:16.61       87638924 B   -b-   --   ---xx   flac  0.6728  04 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+    10:49.50      114600764 B   -b-   --   ---xx   flac  0.6569  05 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+     8:41.30       91974188 B   -b-   --   ---xx   flac  0.6409  06 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+     7:27.32       78926108 B   ---   --   ---xx   flac  0.6611  07 of Bob Dylan - 1997-08-10 - Clarkston - CD2.flac
+    54:07.56      572902820 B                            0.6395  (7 files)
+=================== 
+=================== 
+=================== 

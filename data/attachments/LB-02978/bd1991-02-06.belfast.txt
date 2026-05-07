@@ -1,0 +1,92 @@
+Bob Dylan
+Dundonald Ice Bowl
+Belfast, Northern Ireland
+6 February 1991
+
+Source: aud 
+Lineage: aud > ? > CD-R > EAC > CoolEdit Pro > CD Wave Editor > FLAC frontend > .flac
+Taped by: ?
+Transfered by: ?
+Filler material selected & sequenced by Ronald Zavala. 
+Sound Quality: most tracks A (electric tracks 2/2/91 A-)
+Sound processing: 2/6/91 normalized; 2/2/91 (electric tracks) had -7db removed @ 55Hz with a width of 15Hz
+
+Bootleg Title: n/a
+File Size: 1 gig .flac
+
+disk 1 
+
+1. Most Likely You Go Your Way (And I'll Go Mine)
+2. Lay Lady Lay
+3. All Along The Watchtower
+4. Stuck Inside Of Mobile With The Memphis Blues Again
+5. The Man In Me
+6. Wiggle Wiggle
+7. Bob Dylan's Dream
+8. A Hard Rain's A-Gonna Fall
+9. Girl From The North Country
+10. The Lonesome Death Of Hattie Carroll
+11. Everything Is Broken
+12. Gotta Serve Somebody
+13. Seeing The Real You At Last
+14. Tupelo Honey/Why Must I Always Explain (Van Morrison)
+15. God Knows
+16. I Shall Be Released
+
+disk 2
+
+1. Like A Rolling Stone
+2. Blowin' In The Wind
+3. Maggie's Farm
+-----------------
+4. Positively 4th Street - 3 February 1991 - Glasgow
+5. Ballad Of Hollis Brown 
+6. Boots Of Spanish Leather 
+7. Mr. Tambourine Man 
+8. Under The Red Sky 
+9. Just Like A Woman
+10. Political World 
+-----------------
+11. Gates Of Eden - 5 February 1991 - Dublin
+-----------------
+12. It Ain't Me, Babe  - 2 February 1991 - Glasgow
+13. In The Garden
+14. Masters Of War
+
+MD5/FLAC Fingerprints:
+
+disk 1
+
+55b1b989dbf2fd0ae73ef6fe3907fce8 *bd1991-02-06d1t01.flac
+96408b1f51ef5f8bead498f2ea30b705 *bd1991-02-06d1t02.flac
+5485e3d38c10395e3ddcfa87c909f9bb *bd1991-02-06d1t03.flac
+90779074a2efcde8b78664303db29d10 *bd1991-02-06d1t04.flac
+16d82767ba3be7a51e60ab9af129108c *bd1991-02-06d1t05.flac
+956ceee780c2c3504b9e538455bcdd06 *bd1991-02-06d1t06.flac
+32588ca29191bc566caeffefb03141e4 *bd1991-02-06d1t07.flac
+991a0ee444e2481645e029aebd6d27b2 *bd1991-02-06d1t08.flac
+493be3216f087a318e8a31179bf3e208 *bd1991-02-06d1t09.flac
+be01a95b424337e796ad4631bb30e05f *bd1991-02-06d1t10.flac
+c4a082ea5bea7140a3a7ebc7363535b6 *bd1991-02-06d1t11.flac
+e7981d34b09a033322b121d69a04cd10 *bd1991-02-06d1t12.flac
+6f1029054ac3d9afda955a31b362a467 *bd1991-02-06d1t13.flac
+9fcafd39b4a83cc49ded9b0415eafe31 *bd1991-02-06d1t14.flac
+92aa8199ce2426b83300419c0c9eae16 *bd1991-02-06d1t15.flac
+fcad05c7bf25ff444979260abe0f7189 *bd1991-02-06d1t16.flac
+
+disk 2
+
+99107ac59871ef85174e84c6f9147717 *bd1991-02-06d2t01.flac
+e085ed5dccd677166bac6ca6fb7ab2cf *bd1991-02-06d2t02.flac
+4c606a0808a6466d1f602af5ff968401 *bd1991-02-06d2t03.flac
+7c3739ecf3f05d3759f29812c11c7c17 *d2t04-filler-bd1991-02-03.flac
+ad1045a5542882ce1e58f7c50cbfbdea *d2t05-filler-bd1991-02-03.flac
+1aba0c883402090d7cdfee3664558cf0 *d2t06-filler-bd1991-02-03.flac
+e72f3d74c9b84255e14da0d6c7e22940 *d2t07-filler-bd1991-02-03.flac
+4b8c77bca7971dbd5e8f571123854ad4 *d2t08-filler-bd1991-02-03.flac
+bd0b50f4901cacd60c0d841b4fd98001 *d2t09-filler-bd1991-02-03.flac
+3b5eee520888a5f16c421e13648e271c *d2t10-filler-bd1991-02-03.flac
+5785c824c85554e774769b60dcda1153 *d2t11-filler-bd1991-02-05.flac
+3eb3c9908dc5cd3e74fe961d93f8eea1 *d2t12-filler-bd1991-02-02.flac
+771b3bb4c5c0677137c1fd9a9142a668 *d2t13-filler-bd1991-02-02.flac
+56456f51b90f9c5eb5f0918fed89da20 *d2t14-filler-bd1991-02-02.flac

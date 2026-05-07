@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-12-c.flacf 
+=================== 
+=================== 
+=================== 
+13185b6c1c97a75a010463d4972d4059  05-12-2000fingerprint.txt
+eaad9112caa3ffa66c6d64a806374c70  bd00-05-12-c-LB-4618.txt
+80cc31af9e794b8e201d051840ec1e3d  bd2000-05-12_info.txt
+1b8e98f5d6c788b48deca16a54ac0b9f  d1Track01.flac
+5346f9e1bc778f0c390336a7a2eca13b  d1Track02.flac
+4f032db75067e3c0cfcc9a8f731db2fa  d1Track03.flac
+30ae230a524431b7b7b9acc9c2bc1515  d1Track04.flac
+bf16136f26c4c80ecf61e15c3640727c  d1Track05.flac
+551ce7405a5bf37223656a9bca62bfef  d1Track06.flac
+cb5d957c5b34e6da8599aafaa41855d3  d1Track07.flac
+1d3d9786e99a983eaec7f65799a34b1b  d1Track08.flac
+f725938e73c5c59c74fb94e0a0e9d557  d1Track09.flac
+6ef8048f08c896089e93ce179b9e58d2  d1Track10.flac
+3fc643b08bfaf9125031c517e8ac2bad  d1Track11.flac
+732cdcd93bfcf782d48544cf53d5ecc3  d1Track12.flac
+af4d6b3f3b5faa8e0600fe18507ed5a7  d2Track01.flac
+9b4d978ef3d4fe5c4da9e7ec4f1f7f45  d2Track02.flac
+6af8ca843ce5b3093692d9a6d36fe9af  d2Track03.flac
+fc171a97783cf335aea40426c8340148  d2Track04.flac
+b8601da3eb2419621d574a70bf8820f7  d2Track05.flac
+41f5f5c17b26a1505353281ca7ec3cfa  d2Track06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-12-c.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:f642855e4f0c7c9cb81083355fda4244
+d1Track02.flac:b9d12745fd7fb119f55b5fda7394021f
+d1Track03.flac:fff24141a4e20ce56a5af8294a8acdc6
+d1Track04.flac:f5766938efaa8f2cf615930b316264c1
+d1Track05.flac:b8f1c14874660a05558346c9056c5db6
+d1Track06.flac:795fa02c608af4890a5906cbd579c415
+d1Track07.flac:27ec2beaa000fda6798826936394bd00
+d1Track08.flac:97d0991d7c5b2fc598e3b5071bd72a8d
+d1Track09.flac:b0c86a99d7918d7c3134481162f9fc32
+d1Track10.flac:3ef18977f6fe5509a3f153d01915968e
+d1Track11.flac:ae7d492b7118dfa6d926632fa3bcf491
+d1Track12.flac:372b9b8bb93718632811afd2f547a6ca
+d2Track01.flac:d1806ed4a1f20fd7d513ac5bc4f5ddce
+d2Track02.flac:dd7e657e64f4d76d498f13cc200ffae4
+d2Track03.flac:b65f7b1cd0a5b63fbd86990035ea4a27
+d2Track04.flac:2dbbfb51c3472bdc2cb5bfa286baf1ec
+d2Track05.flac:58f05e0205c258bad5ecc07c30c350ca
+d2Track06.flac:94b22fe2b5433dc71d99290f15297ee1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-12-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:10.08       44118860 B   ---   --   ---xx   flac  0.4942  d1Track01.flac
+     6:56.00       73382444 B   ---   --   ---xx   flac  0.4441  d1Track02.flac
+     9:21.63       99108620 B   ---   --   ---xx   flac  0.4641  d1Track03.flac
+     5:05.45       53907884 B   ---   --   ---xx   flac  0.4016  d1Track04.flac
+     7:34.36       80170316 B   ---   --   ---xx   flac  0.5105  d1Track05.flac
+     5:30.69       58374332 B   ---   --   ---xx   flac  0.4041  d1Track06.flac
+     2:46.26       29343596 B   ---   --   ---xx   flac  0.5835  d1Track07.flac
+     5:30.56       58343756 B   ---   --   ---xx   flac  0.5072  d1Track08.flac
+     6:16.56       66458156 B   ---   --   ---xx   flac  0.5004  d1Track09.flac
+     6:00.56       63635756 B   ---   --   ---xx   flac  0.5199  d1Track10.flac
+     5:44.37       60768668 B   ---   --   ---xx   flac  0.4018  d1Track11.flac
+     8:35.45       90951884 B   ---   --   ---xx   flac  0.4927  d1Track12.flac
+     5:54.33       62523260 B   ---   --   ---xx   flac  0.4665  d2Track01.flac
+     7:39.20       81014684 B   ---   --   ---xx   flac  0.5360  d2Track02.flac
+     8:27.49       89550092 B   ---   --   ---xx   flac  0.4803  d2Track03.flac
+     4:31.40       47898524 B   ---   --   ---xx   flac  0.5266  d2Track04.flac
+     4:45.41       50370476 B   ---   --   ---xx   flac  0.4943  d2Track05.flac
+     8:03.30       85271804 B   ---   --   ---xx   flac  0.5098  d2Track06.flac
+   112:55.35     1195193112 B                            0.4836  (18 files)
+=================== 
+=================== 
+=================== 

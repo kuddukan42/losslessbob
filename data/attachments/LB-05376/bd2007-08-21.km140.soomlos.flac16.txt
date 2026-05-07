@@ -1,0 +1,67 @@
+Bob Dylan
+Adelaide Entertainment Centre
+Adelaide, Australia
+August 21, 2007
+ 
+Disc 1:
+01. introduction [00:45]
+02. Cat's In The Well [04:18]  
+03. Lay, Lady, Lay [05:16]  
+04. You Ain't Goin' Nowhere [03:50]  
+05. It's Alright, Ma (I'm Only Bleeding) [07:16]
+06. The Levee's Gonna Break [07:09]
+07. Beyond The Horizon [06:35]* 
+08. Things Have Changed [06:37]  
+09. Cry A While [05:54]  
+10. Workingman's Blues #2 [07:24]  
+11. Highway 61 Revisited [06:03]  
+12. John Brown [06:20]  
+Total time: [67:34]
+
+Disc 2:
+01. I Don't Believe You (She Acts Like We Never Have Met) [06:25]
+02. Ain't Talkin' [08:25]  
+03. Summer Days [06:14]  
+04. Masters Of War [07:40]  
+    (encore) 
+05. Thunder On The Mountain [06:09] 
+06. band introduction [00:46]
+07. Blowin' In The Wind [07:59]  
+Total time: [43:43]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+ 
+notes:
+* First live concert performance
+
+source: soomlos
+13th row center floor
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-08-21d1t01.flac:c355ef5b5f6c0e04ea61974abb89b9a4
+bd2007-08-21d1t02.flac:9fa4af3db9a8f1b1d35745612b2890bf
+bd2007-08-21d1t03.flac:2a1a83b522ea9c960322030e5cec950b
+bd2007-08-21d1t04.flac:ac4b99f2be2b9497ca0203a788a0bb41
+bd2007-08-21d1t05.flac:8e9ea33716f789cf558ffaf50b357acc
+bd2007-08-21d1t06.flac:85f331087f7a0e77d983e9507c5aa876
+bd2007-08-21d1t07.flac:9a682f8cf83c6a125a2f49648ca4bd71
+bd2007-08-21d1t08.flac:4a423d889615e9258360f4040020a64e
+bd2007-08-21d1t09.flac:ee0b6f46dfd22a0d4a7bd7e3d1f9d60a
+bd2007-08-21d1t10.flac:0c50b23512e6ed8ab1ae5114f2f3bae8
+bd2007-08-21d1t11.flac:b224de9956b87a58b043e5e7a3feac34
+bd2007-08-21d1t12.flac:b37c40d5f7094eeceb28d68755b94e26
+bd2007-08-21d2t01.flac:4c870ce6b17fe48b28f8582875d79f1e
+bd2007-08-21d2t02.flac:300ff69d4d2d157958860cea365cb5bf
+bd2007-08-21d2t03.flac:1c23285c447a900efc6079473be7f002
+bd2007-08-21d2t04.flac:6baa89bc39ae0d560f48047965c427c0
+bd2007-08-21d2t05.flac:e5e2e32273b5b533e5ef6fd81b948463
+bd2007-08-21d2t06.flac:26930ff5d402b395dbc72b2da22fbd95
+bd2007-08-21d2t07.flac:4cb5374bb52a194801152e901ee5e91e

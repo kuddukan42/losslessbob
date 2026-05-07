@@ -1,0 +1,69 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+Apr 15, 2002	Frankfurt, Germany	Jahrhunderthalle	
+
+dat clone to upload
+by dolphinsmile
+
+I Am The Man, Thomas
+The Times They Are A-Changin'
+It's Alright, Ma (I'm Only Bleeding)
+My Back Pages
+Stuck Inside Of Mobile With The Memphis Blues Again
+MoonlightSolid Rock
+Lonesome Day Blues
+Mr. Tambourine Man
+Mama, You Been On My Mind
+Tangled Up In Blue
+Summer Days
+Shelter From The Storm
+The Wicked Messenger
+Rainy Day Women #12 & 35
+Man Of Constant Sorrow
+Like A Rolling Stone
+Knockin' On Heaven's Door
+Honest With Me
+Blowin' In The Wind
+===================
+===================
+===================
+=== disc 1.ffp
+===================
+===================
+===================
+01 Track01.flac:78aa95d2add5fe29dcf385134eceb7e0
+02 Track02.flac:72cc525126f5897ef634cf721cac61ac
+03 Track03.flac:4194c38bcc9977de60aa612d0d11ae40
+04 Track04.flac:e530800152901138e00586fd47ae7d4f
+05 Track05.flac:3be8b631cf9b2e0b9ea0601de2cb1411
+06 Track06.flac:75d3abbccb822c1ab3721a52361d786e
+07 Track07.flac:63fc662a4da832914925505f7d1545f2
+08 Track08.flac:80bf6c9206395f26f8ea72bb84541ec4
+09 Track09.flac:3758bc43628a900082b5eb5d72d32a0b
+10 Track10.flac:c4d32081dc3dbe4766d4daa798ad85bf
+11 Track11.flac:8243187fd75641a3f81d1a5a6e77f471
+===================
+===================
+===================
+=== disc 2.ffp
+===================
+===================
+===================
+01 Track01.flac:28e2fc14ea97243da577ecf95a9329a4
+02 Track02.flac:581f7b118f5b3ce4d3e913813e085ed8
+03 Track03.flac:486a34c8aedd7ca0ffc846ceceb18c84
+04 Track04.flac:d0c3c4e4ac24492a1d7c4187a892482a
+05 Track05.flac:729b9a57a5ae6c10747ef984af5b88ac
+06 Track06.flac:f11cfab2ece93f8d6b1752c71d773c6b
+07 Track07.flac:350f2c15cd4cd8c44f47cc3551e07501
+08 Track08.flac:0235dd4ba2ce16c365e84b81c7abe789
+09 Track09.flac:8a07bf32df7326df9a2d1864771841c2
+===================
+===================
+===================

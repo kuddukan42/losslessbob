@@ -1,0 +1,163 @@
+===================
+===================
+===================
+=== 1998-01-24 Fleet Center, Boston, Massachusetts, USA [ut].md5
+===================
+===================
+===================
+bb1966cb0562c18c76b34aeced69c0d8 *CD1\01 Absolutely sweet Marie.flac
+fccab48e09598ceaa63f3f2bbf33b065 *CD1\02 Tonight I'll be staying here with you.flac
+79622dc58276e8511c38018715eccdb4 *CD1\03 Cold irons bound.flac
+8259f4695860fa9672110352a288257a *CD1\04 Just like a woman.flac
+392832b62da36ff5ef547c4d52de4686 *CD1\05 Silvio.flac
+dcc88a8ceba5364a55fa456478a81833 *CD1\06 A hard rain's a-gonna fall.flac
+3bb66e332378a21b337467b5c2bf4fb8 *CD1\07 Love minus zero - no limit.flac
+1b8ddece3f3c0abf2fefa2842c1042bb *CD1\08 Tangled up in blue.flac
+6b1340aba8adecb6afa15c0cf177de62 *CD1\FLAC CD1.md5
+8fd48f745ad13cda97a5184ef6dd2b40 *CD2\09 Million miles.flac
+9831e51436a5daedc1376c9b895d4da9 *CD2\10 Positively 4th street.flac
+3b777f24d05aaee3f5a3ee84c49bd032 *CD2\11 'Til I fell in love with you.flac
+49e30b3bc6a12c33968ac3e00fe03c57 *CD2\12 Highway 61 revisited.flac
+06325c7e00143b27267adf6df0ff94c7 *CD2\13 Knockin' on heaven's door [Dylan & Morrison].flac
+ee163bcd286ef2c9a9ea0b0190211a87 *CD2\14 Love sick.flac
+9b23693075f838e9c11a8c56c8de3790 *CD2\15 Rainy day women # 12 & 35.flac
+6e7756e3f5d6eced47ea89e7ce89a26f *CD2\FLAC CD2.md5
+7fb4270b829c4dd310a6f92af940c6a4 *Info\1998-01-24 Fleet Center, Boston, Massachusetts, USA [ut].txt
+===================
+===================
+===================
+=== bd98-01-24-a.flacf_mychecksums.txt
+===================
+===================
+===================
+8553e09f754c64ea81ba352aca677bc7  1998-01-24 Fleet Center, Boston, Massachusetts, USA [ut].md5
+bb1966cb0562c18c76b34aeced69c0d8  CD1\01 Absolutely sweet Marie.flac
+fccab48e09598ceaa63f3f2bbf33b065  CD1\02 Tonight I'll be staying here with you.flac
+79622dc58276e8511c38018715eccdb4  CD1\03 Cold irons bound.flac
+8259f4695860fa9672110352a288257a  CD1\04 Just like a woman.flac
+392832b62da36ff5ef547c4d52de4686  CD1\05 Silvio.flac
+dcc88a8ceba5364a55fa456478a81833  CD1\06 A hard rain's a-gonna fall.flac
+3bb66e332378a21b337467b5c2bf4fb8  CD1\07 Love minus zero - no limit.flac
+1b8ddece3f3c0abf2fefa2842c1042bb  CD1\08 Tangled up in blue.flac
+6b1340aba8adecb6afa15c0cf177de62  CD1\FLAC CD1.md5
+8fd48f745ad13cda97a5184ef6dd2b40  CD2\09 Million miles.flac
+9831e51436a5daedc1376c9b895d4da9  CD2\10 Positively 4th street.flac
+3b777f24d05aaee3f5a3ee84c49bd032  CD2\11 'Til I fell in love with you.flac
+49e30b3bc6a12c33968ac3e00fe03c57  CD2\12 Highway 61 revisited.flac
+06325c7e00143b27267adf6df0ff94c7  CD2\13 Knockin' on heaven's door [Dylan & Morrison].flac
+ee163bcd286ef2c9a9ea0b0190211a87  CD2\14 Love sick.flac
+9b23693075f838e9c11a8c56c8de3790  CD2\15 Rainy day women # 12 & 35.flac
+6e7756e3f5d6eced47ea89e7ce89a26f  CD2\FLAC CD2.md5
+a6b24ffb46b370f1620c720acde4b8e5  DigiFlawFinder-bd98-01-24-a.flacf.wavf.html
+260add84cdab130f645a6ae3417a5868  Info\1998-01-24 Fleet Center, Boston, Massachusetts, USA [ut].txt
+7709f2042baede56d98370f8c90a7f55  lbdir-bd98-01-24-a.flacf.md5
+6865f32402d38dd57ea456a1c0fd04eb  lbdir-bd98-01-24-a.flacf.txt
+
+CD1\01 Absolutely sweet Marie.flac:16384eec84dd6daccc75ecf9ea9ce39a
+CD1\02 Tonight I'll be staying here with you.flac:8541b4cd36a35f4a7f81c416f7a8d3d2
+CD1\03 Cold irons bound.flac:47a28cd3f0dc9842f520c1ce82216d78
+CD1\04 Just like a woman.flac:cfbcff3ba63f5d07993ccac2907d40b2
+CD1\05 Silvio.flac:493dfb1548c7193ff8899989f05cc6b3
+CD1\06 A hard rain's a-gonna fall.flac:0723d3dec4dcb2743fe269d789c144c3
+CD1\07 Love minus zero - no limit.flac:59c48d1fec25ba11b7384afd98997457
+CD1\08 Tangled up in blue.flac:dcbc59dc0f1c33f6291c82ed52d4e5d5
+CD2\09 Million miles.flac:2d83499ed4e618e9c329a75c3abd4c18
+CD2\10 Positively 4th street.flac:261d78960b6eff4e6f721d528b389101
+CD2\11 'Til I fell in love with you.flac:8ea830c17ddfa3311c52b74720cb5a42
+CD2\12 Highway 61 revisited.flac:bb5e53f7314bb63d61369dec6e4f624b
+CD2\13 Knockin' on heaven's door [Dylan & Morrison].flac:d6686d401e1d4219f77ed7cc191e89ae
+CD2\14 Love sick.flac:530d3e85a48b59647158afb5bab3c520
+CD2\15 Rainy day women # 12 & 35.flac:9c52516232a28b74ebdb6f39a695c017
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+bb1966cb0562c18c76b34aeced69c0d8 *01 Absolutely sweet Marie.flac
+fccab48e09598ceaa63f3f2bbf33b065 *02 Tonight I'll be staying here with you.flac
+79622dc58276e8511c38018715eccdb4 *03 Cold irons bound.flac
+8259f4695860fa9672110352a288257a *04 Just like a woman.flac
+392832b62da36ff5ef547c4d52de4686 *05 Silvio.flac
+dcc88a8ceba5364a55fa456478a81833 *06 A hard rain's a-gonna fall.flac
+3bb66e332378a21b337467b5c2bf4fb8 *07 Love minus zero - no limit.flac
+1b8ddece3f3c0abf2fefa2842c1042bb *08 Tangled up in blue.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+8fd48f745ad13cda97a5184ef6dd2b40 *09 Million miles.flac
+9831e51436a5daedc1376c9b895d4da9 *10 Positively 4th street.flac
+3b777f24d05aaee3f5a3ee84c49bd032 *11 'Til I fell in love with you.flac
+49e30b3bc6a12c33968ac3e00fe03c57 *12 Highway 61 revisited.flac
+06325c7e00143b27267adf6df0ff94c7 *13 Knockin' on heaven's door [Dylan & Morrison].flac
+ee163bcd286ef2c9a9ea0b0190211a87 *14 Love sick.flac
+9b23693075f838e9c11a8c56c8de3790 *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================
+=== 1998-01-24 Fleet Center, Boston, Massachusetts, USA [ut].txt
+===================
+===================
+===================
+Fleet Center
+Boston, Massachusetts
+January 24, 1998
+
+HC STAFF: even as this torrent contains a duet with Van Morrison, and Morriosn is on the NAB-list, it has been allowed!
+
+****  This is the same recording as LB-4645; but has a different MD5 checksum ****
+NOTE: based on exact tracking times matches
+
+Taper: unidentified
+Lineage: received in a trade as SHNs; now converted to FLAC (hence a diff. checksum)
+Rating: A-
+Frequency analysis: full spectrum
+
+01. Absolutely Sweet Marie [04:09]
+02. Tonight I'll Be Staying Here With You [05:35]
+03. Cold Irons Bound [06:31]
+04. Just Like A Woman [06:57]
+05. Silvio (Bob Dylan & Robert Hunter) [06:36]
+06. A Hard Rain's A-Gonna Fall [08:55]
+07. Love Minus Zero/No Limit [05:42]
+08. Tangled Up In Blue [08:18]
+Total time: [52:46]
+
+09. Million Miles [05:44]
+10. Positively 4th Street [07:44]
+11. 'Til I Fell In Love With You [06:33]
+12. Highway 61 Revisited [05:49]
+13. Knockin' On Heaven's Door [duet w Morrison] [08:17]
+14. Love Sick [06:00]
+15. Rainy Day Women # 12 & 35 [04:35]
+Total time: [44:46]
+
+Concert # 945 of The Never-Ending Tour
+Concert # 9 of the 1998 Winter Tour
+1998 concert # 9
+
+Concert # 92 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+6-8, 13 acoustic with the band
+13 Bob Dylan (harmonica)
+13 Van Morrison (shared vocal)
+
+NOTE: Double bill with Van Morrison
+
+7 new songs (46%) compared to previous concert
+No new songs for this tour
+
+Stereo audience recording, 105 minutes
+===================
+===================
+===================

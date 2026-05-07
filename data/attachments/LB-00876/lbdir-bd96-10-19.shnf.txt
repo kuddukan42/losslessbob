@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-10-19.shnf 
+=================== 
+=================== 
+=================== 
+ab580a13a278bac945095fe632064759  10-19-96 Disc 1- 1.shn
+a9563ff73068e0e2d8fcc3debc8bba0d  10-19-96 Disc 1- 2.shn
+81ec89cfc9857133b01c36a66c0f0b6a  10-19-96 Disc 1- 3.shn
+302b5c24b4c37e4818a5f500e30b254c  10-19-96 Disc 1- 4.shn
+19704d4e0a33601c72dee78ccefcd714  10-19-96 Disc 1- 5.shn
+c3ac99f1b6d34ee8d5f67503f764ee37  10-19-96 Disc 1- 6.shn
+09e624f5422178dd1a41d392bbd1f8dc  10-19-96 Disc 1- 7.shn
+1371afcf8d41708bec226d80b6d9fd4b  10-19-96 Disc 1- 8.shn
+82b5015b85d5a609e273924f0cbd0d16  10-19-96 Disc 1.md5
+5f4d3d8d0c30956d546f5c90a61b6105  10-19-96 Disc 2- 1.shn
+8212c7af63b8db2bee3509ea9e2453c6  10-19-96 Disc 2- 2.shn
+f8141d902b99cbba4f40775573ceddf4  10-19-96 Disc 2- 3.shn
+7217485704d89094ec6dd3fcbf0fab14  10-19-96 Disc 2- 4.shn
+54579fbb47a1b5accf30c5d57bed0884  10-19-96 Disc 2- 5.shn
+241aeae0f3a59b2d12858cee9a9275f5  10-19-96 Disc 2- 6.shn
+4be2bfb184a1fa9e1cd84e94e5bffd4c  10-19-96 Disc 2- 7.shn
+ffcccce503436ad2ec057dc607ced367  10-19-96 Disc 2.md5
+aedd01f260d52bdd3caed6c41d5bee45  bd96-10-19.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-10-19.shnf 
+=================== 
+=================== 
+=================== 
+048a5c7487355f565ac041bf3954fb2c  [shntool]  10-19-96_Disc_1-_1.wav
+31118c618b01bd9a5f33baba889904b5  [shntool]  10-19-96_Disc_1-_2.wav
+9dc2206627726b0a7c0856d86a01f935  [shntool]  10-19-96_Disc_1-_3.wav
+b4aa185d87aab30f60cf3e0dbec58554  [shntool]  10-19-96_Disc_1-_4.wav
+470b6cb2c9a43f20f0bbc4cb8b5445cd  [shntool]  10-19-96_Disc_1-_5.wav
+f323010a066bef345a15f6b5029a2c6d  [shntool]  10-19-96_Disc_1-_6.wav
+3ae4f818c6639a53e108fa656c70ee30  [shntool]  10-19-96_Disc_1-_7.wav
+a01d28ee2ff5f04656ded0edbdc26c37  [shntool]  10-19-96_Disc_1-_8.wav
+f7c7517a36c2b54e1e9b60b0dbfa444e  [shntool]  10-19-96_Disc_2-_1.wav
+4113e570ee4413350ed855b44d2be12e  [shntool]  10-19-96_Disc_2-_2.wav
+05555ded9e033801316db183bc2b4c8c  [shntool]  10-19-96_Disc_2-_3.wav
+4df1612e09851558745591145956eac3  [shntool]  10-19-96_Disc_2-_4.wav
+a7cc3357a0521c7beef57db2954ad989  [shntool]  10-19-96_Disc_2-_5.wav
+21746558f5e9c5c0b880d0b760f4bf6f  [shntool]  10-19-96_Disc_2-_6.wav
+34101951ca29913ee11e795a59b286e8  [shntool]  10-19-96_Disc_2-_7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-19.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.08       50117176 B   -b-   --   ---xx    shn  0.6033  10-19-96 Disc 1- 1.shn
+     5:56.46       62906636 B   ---   --   ---xx    shn  0.5712  10-19-96 Disc 1- 2.shn
+     5:38.39       59714972 B   ---   --   ---xx    shn  0.6086  10-19-96 Disc 1- 3.shn
+     8:53.00       94021244 B   ---   --   ---xx    shn  0.5688  10-19-96 Disc 1- 4.shn
+     6:13.06       65811356 B   ---   --   ---xx    shn  0.6157  10-19-96 Disc 1- 5.shn
+     8:46.51       92906396 B   ---   --   ---xx    shn  0.6114  10-19-96 Disc 1- 6.shn
+     7:37.69       80777132 B   ---   --   ---xx    shn  0.6103  10-19-96 Disc 1- 7.shn
+     6:39.70       70548368 B   -b-   --   ---xx    shn  0.5400  10-19-96 Disc 1- 8.shn
+     6:05.23       64439168 B   -b-   --   ---xx    shn  0.5393  10-19-96 Disc 2- 1.shn
+     7:31.43       79657580 B   ---   --   ---xx    shn  0.6116  10-19-96 Disc 2- 2.shn
+     8:02.37       85111868 B   ---   --   ---xx    shn  0.5501  10-19-96 Disc 2- 3.shn
+     7:38.39       80882972 B   ---   --   ---xx    shn  0.5605  10-19-96 Disc 2- 4.shn
+    11:03.17      116994228 B   -b-   --   ---xx    shn  0.5937  10-19-96 Disc 2- 5.shn
+     6:45.11       71467916 B   ---   --   ---xx    shn  0.5666  10-19-96 Disc 2- 6.shn
+     7:57.24       84199292 B   ---   --   ---xx    shn  0.6205  10-19-96 Disc 2- 7.shn
+   109:33.33     1159556304 B                            0.5852  (15 files)
+=================== 
+=================== 
+=================== 

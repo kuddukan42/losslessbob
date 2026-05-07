@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+dcf15a75d68f2890c8eed183c6fcae23 *00 Announcement.flac
+978b00d2b5596110433a32f883af7ada *01 Absolutely sweet Marie.flac
+240010d528368e2b723bf40b0774c8cc *02 Tonight I'll be staying here with youCan't wait.flac
+553d42d2b331ced2ebdbba1dc47b2366 *03 Can't wait.flac
+5528a1dc36fde9bd00306fd0be2d527e *04 Just like a woman.flac
+d76ad13ede7bedbb488de2630680f52e *05 Silvio.flac
+fe8ec82fe1f0ab88f792091c3d999daa *06 Cocaine blues.flac
+921e3fd8f883bf014c997cf21648298a *07 Masters of war.flac
+b73b3b6a799b9e1f8c096778be5fd650 *08 Tangled up in blue.flac
+d76a2f30b3c222db7894056237a1b40f *09 Million miles.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+0effeff5e47b3058c6583a5b4727580a *10 Positively 4th Street.flac
+a4ff89ff2421bfe3034187bbfc95ac24 *11 (band intro).flac
+346a0f2f518b64024aacdf896e8140d0 *11 Highway 61 revisited.flac
+063a87bdbf2f8156613ae4c28c9c522a *12 'Til I fell in love with you.flac
+0f4cb5893f42c575ce8aa9dffab5a9df *13 It ain't me, babe.flac
+571dc901df7d9511f2dab20337d6c53c *14 Love sick.flac
+83a8f015a5bb85a2a7f68bec60920d01 *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================
+=== setlist.txt
+===================
+===================
+===================
+Viking Hall, Bristol University
+Bristol, Tennessee
+February 20, 1998
+
+Unidentified taper
+No source/no lineage
+
+00.	Announcement [00:37]
+01.	Absolutely Sweet Marie [04:02]
+02.	Tonight I'll Be Staying Here With You [05:19]
+03.	Can't Wait [06:03]
+04.	Just Like A Woman [05:45]
+05.	Silvio (Bob Dylan & Robert Hunter) [06:34]
+06.	Cocaine Blues (trad.) [04:03]
+07.	Masters Of War [04:46]
+08.	Tangled Up In Blue [07:24]
+09.	Million Miles [06:04]
+Total time: [50:41]
+
+10.	Positively 4th Street [07:24]
+11.	(band intro) [00:34]
+11.	Highway 61 Revisited [07:47]
+12.	‘Til I Fell In Love With You [06:16]
+13.	It Ain't Me, Babe [07:38]
+14.	Love Sick [05:25]
+15.	Rainy Day Women # 12 & 35 [04:40]
+Total time: [39:47]
+
+Concert # 956 of The Never-Ending Tour
+Concert # 20 of the 1998 Winter Tour
+1998 concert # 20
+
+Concert # 103 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar), Buck
+Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+6–8, 13 acoustic with the band
+
+2 new songs (13%) compared to previous concert
+No new songs for this tour
+
+Stereo audience recording, 95 minutes
+===================
+===================
+===================

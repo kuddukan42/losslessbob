@@ -1,0 +1,10 @@
+Bob Dylan, 1/10/74, Toronto, Ontario, Canada, Maple Leaf Gardens, 2CDR
+
+LB-2651, (69min+64min), from lk aud set,; Master tape > CDR > EAC > Flac; looks as if everything around 16k hiss band was removed similar to remastered version; this version is an improvement on both previous versions as unprocessed version has the hiss and the previous remastered version sounds unaturally sound processed in comparison; very good sound [B]
+
+0. Bill Graham intro 1. Most Likely You Go Your Way (And I'll Go Mine), 2. I Don't Believe You (She Acts Like We Never Have Met), 3. As I Went Out One Morning, 4. Lay Lady Lay, 5. Just Like Tom Thumb's Blues, 6. Ballad Of A Thin Man, 7. Stage Fright (The Band), 8. The Night They Drove Old Dixie Down (The Band), 9. King Harvest (Has Surely Come) (The Band), 10. This Wheel's On Fire (The Band), 11. I Shall Be Released (The Band), 12. Up On Cripple Creek (The Band), 13. All Along The Watchtower, 14. Ballad Of Hollis Brown, 15. Knockin' On Heaven's Door, 
+
+<Disk 2>, 16. The Times They Are A-Changin', (solo), 17. Don't Think Twice, It's All Right, (solo), 18. Gates Of Eden - (solo), 19. Love Minus Zero/No Limit, (solo), 20. It's Alright Ma (I'm Only Bleeding), (solo), 21. Rag Mama Rag (The Band), 22. When You Awake (The Band), 23. The Shape I'm In (The Band), 24. The Weight (The Band), 25. Forever Young, 26. Something There Is About You, 27. Like A Rolling Stone, 28. Most Likely You Go Your Way (And I'll Go Mine)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

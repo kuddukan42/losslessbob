@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-19-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+74a0e4e1ffd6b9a6c7baca7fb3d6cbdd  bd87-09-19-pink-robert-LB-5156.txt
+1703763a6486ea6deef481ceb8f398ec  BobDylan09Rotterdam.txt
+43ac6ce28adbb205484546fb112b0be9  DylanRotterdam1987.jpg
+254fa9a96bebe4eaeaa8686db6830b03  Rotterdam.md5
+92da1d6695f8ae2b4738d8601d13e3b3  Track01.flac
+763b65006802b998b68d67c5e7a4de43  Track02.flac
+672d216834887831c0fb6ffed7011aeb  Track03.flac
+643a0b8bae9a7041f6e5a34d7c7458c9  Track04.flac
+87ddf4ae3b9011ee36111577158d223d  Track05.flac
+79a2035b816f875cbc43fce278dc3874  Track06.flac
+9770b35d2a7bfc52e00ccfc281a13442  Track07.flac
+69f646afbea92b85f4fab716855cf65a  Track08.flac
+1518f88eb8d8bfce860c151f2464c579  Track09.flac
+4f9fe3fba8fe4dff9da50c0e73a7da52  Track10.flac
+bdb8a0bd7d4c1424fe5fe373caeb222c  Track11.flac
+750219faaa15a94a9c71d24c6ae572dc  Track12.flac
+33b119bffae3b6950f107de917a89476  Track13.flac
+12ca0f70ed5d42f14939c33208bd5441  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-19-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:04fb12ca5cb7288e4fd2cb0eb6dc7d32
+Track02.flac:c4f43ea2c7de73e0a893bdd6633d25a3
+Track03.flac:f830e2a156fb6d4040fc16ceb7a17801
+Track04.flac:a6434815abf4f56edf07096ce228c1be
+Track05.flac:09ce9ae18e73df73fdcd7993f14ee2de
+Track06.flac:8a73afab761d89dabf2068837c7c8c32
+Track07.flac:bc2191d2b5f392d317319aa2e4b29b76
+Track08.flac:eb65ce2722aa69f2eed606344753cc3c
+Track09.flac:d3129dd6f66fb42b8a164650c71726c8
+Track10.flac:10f5b40121942fa3a968f5458be89c1a
+Track11.flac:c953e9d339bab8122b439f39eda7d1af
+Track12.flac:0d4eadeb418981a05533e88cef0261db
+Track13.flac:20a06e779e01a54d79b7dc8557d3feb5
+Track14.flac:3fe2e48f75fe40d4905d150dd40901c3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-19-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:28.10       36714764 B   ---   --   ---xx   flac  0.5963  Track01.flac
+     2:35.53       27466700 B   ---   --   ---xx   flac  0.5965  Track02.flac
+     4:52.25       51567644 B   ---   --   ---xx   flac  0.5861  Track03.flac
+     4:23.02       46397948 B   ---   --   ---xx   flac  0.5981  Track04.flac
+     4:29.43       47552780 B   ---   --   ---xx   flac  0.5750  Track05.flac
+     4:15.42       45080828 B   ---   --   ---xx   flac  0.5883  Track06.flac
+     4:15.35       45064364 B   ---   --   ---xx   flac  0.5155  Track07.flac
+     2:25.20       25625084 B   ---   --   ---xx   flac  0.5983  Track08.flac
+     4:30.60       47769164 B   ---   --   ---xx   flac  0.5546  Track09.flac
+     4:28.38       47364620 B   ---   --   ---xx   flac  0.5158  Track10.flac
+     2:36.70       27683084 B   ---   --   ---xx   flac  0.5953  Track11.flac
+     5:52.42       62191628 B   ---   --   ---xx   flac  0.5366  Track12.flac
+     4:26.38       47011820 B   ---   --   ---xx   flac  0.5791  Track13.flac
+     3:51.67       40906028 B   ---   --   ---xx   flac  0.5794  Track14.flac
+    56:32.20      598396456 B                            0.5688  (14 files)
+=================== 
+=================== 
+=================== 

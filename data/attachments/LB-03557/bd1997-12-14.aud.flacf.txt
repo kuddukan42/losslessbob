@@ -1,0 +1,80 @@
+1997-12-14 
+Chicago, Illinois
+Metro
+
+Audience recording
+Unknown taper > ? > CDR > EAC > FLAC
+
+			
+Disc One [68:12]
+			
+1	Maggie's Farm 	05:59
+2	Tonight I'll Be Staying Here with You 	05:33
+3	Cold Irons Bound 	06:49
+4	Simple Twist of Fate 	08:02
+5	Can't Wait 	06:11
+6	Silvio 	05:55
+7	Roving Gambler 	05:00
+8	To Ramona 	05:06
+9	Tangled Up in Blue 	08:23
+10	Ragtime Annie 	03:51
+11	It Takes a Lot to Laugh, It Takes a Train to Cry	07:23
+		
+10  Acoustic instrumental with David Bromberg (guitar), Larry Campbell (fiddle).
+11  David Bromberg (electric slide guitar).
+		
+		
+Disc Two [31:49]
+		
+1	Joey 	07:19
+2	'Til I Fell in Love with You 	06:39
+3	Don't Think Twice, It's All Right 	07:35
+4	Love Sick 	05:30
+5	Rainy Day Women #12 & 35	04:43
+
+
+
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+
+md5
+32482c79d1aa25d4a351723bef6039aa *bd1997-14-12d1t01.flac
+1072e3b317367f712830194cb2c7ec9d *bd1997-14-12d1t02.flac
+88c7c8ca5667138d7ee4a725d43f8a63 *bd1997-14-12d1t03.flac
+b788525f054915d0847282af849da657 *bd1997-14-12d1t04.flac
+b4d6c98a43621f577da2372978b6ecaf *bd1997-14-12d1t05.flac
+825761cfddee46e1a208b069d7a71962 *bd1997-14-12d1t06.flac
+1264c59e76f5972740fa91e376376b91 *bd1997-14-12d1t07.flac
+6ac7690eb36c5ad26212d041223bd76a *bd1997-14-12d1t08.flac
+40a381afd12c09c72ec3a32e368925e2 *bd1997-14-12d1t09.flac
+d5fe2e04ce27026623fe33d3e3c3be47 *bd1997-14-12d1t10.flac
+0a3465cc6c3caf08cb9f682f37a2db26 *bd1997-14-12d1t11.flac
+e31f8ae9e7b583cbcc225f3cc4f890e9 *bd1997-14-12d2t01.flac
+bff96893992baecb3e9d0000abaf8e36 *bd1997-14-12d2t02.flac
+6383bcbaa0fd9cc2473ad42244ee492e *bd1997-14-12d2t03.flac
+101d6e4b5d79e884500bbf32edc6a56b *bd1997-14-12d2t04.flac
+0a949a82d1dbf0bc50dc66664bba3b56 *bd1997-14-12d2t05.flac
+
+flac fingerprint
+bd1997-14-12d1t01.flac:b6e2cc9180783299d20e7cb84220f78d
+bd1997-14-12d1t02.flac:7f186c8e45f0f9b0fcf00ceb5ff483de
+bd1997-14-12d1t03.flac:9b55f0b049f7f3167ddb669b99e64eb7
+bd1997-14-12d1t04.flac:26aef5c52d5aea51de93dc81f4bfd8b2
+bd1997-14-12d1t05.flac:e8807695b486e4bb6716e425acf002be
+bd1997-14-12d1t06.flac:bedf3902bde2d4b10ee46c85f3dcee64
+bd1997-14-12d1t07.flac:0f412688627b6f9c167f2e8c20be4efd
+bd1997-14-12d1t08.flac:5201357d92cbab7aea47c599b69b766b
+bd1997-14-12d1t09.flac:1afbace88a64454484ccdccc29c208e6
+bd1997-14-12d1t10.flac:f7f7eb0993b6a02b7c7f9fb192cbf620
+bd1997-14-12d1t11.flac:aae8e218ccdd5a4e819409e8c99d9edf
+bd1997-14-12d2t01.flac:894fe8d0639f36e475e0688d58d844f9
+bd1997-14-12d2t02.flac:8c7729dc5fd46c4d9ae4ca1d3c3ef573
+bd1997-14-12d2t03.flac:1b560abebf3e41574fd30a8b3f0adf47
+bd1997-14-12d2t04.flac:7fc4b6ce1c012abe0a0e0c36bcd6a420
+bd1997-14-12d2t05.flac:355e9605393be10a6b3c18d2d521cec6
+
+ 

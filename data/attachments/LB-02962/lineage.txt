@@ -1,0 +1,15 @@
+This 2 CDR set
+Bob Dylan
+All Along The Watchtower
+Deutschlandhalle, West Berlin, West Germany
+was remastered from a perfect copy of the commonly circulating boot. The tracks were de hissed, and the track changovers on disc 2 were corrected where necessary. (Primarily between Don't Think Twice and All Along the Watchtower.) There are no glitches to the best of my knowledge.
+
+The SHNs were created from the remastered wave files, so are "1st generation", and the original tracks were extracted from the boot disc using EAC - the extract log is enclosed on this disc.
+
+The wave checksums were created from the remastered wave files.
+
+21 June 2003
+
+enjoy
+
+The OldToaD

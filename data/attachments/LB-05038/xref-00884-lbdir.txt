@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-11-04-d.flacf 
+=================== 
+=================== 
+=================== 
+54d55b60a59eae235b92c388b825e75a  bd1994-11-04 Gainesville.ffp
+07582298ac5e2377b8b5bded03904e5c  bd1994-11-04d1t01.flac
+f48ff76f3badf97cf528c8c8700b6e1b  bd1994-11-04d1t02.flac
+a54d2a91f5618786de692c8e8d1fd99a  bd1994-11-04d1t03.flac
+e0f8b4cb2daaf208e679fab835132a18  bd1994-11-04d1t04.flac
+1735d78b9fb398207c11e27354dbd3c0  bd1994-11-04d1t05.flac
+a88d70d7056c6a47ac0b3484370c90e0  bd1994-11-04d1t06.flac
+9aade67cecdee444979d1e193ad54123  bd1994-11-04d1t07.flac
+8e5688fd4055c128286a4a7f4cbfec5f  bd1994-11-04d1t08.flac
+fcb78fc6873f1537203b895df40e8cc0  bd1994-11-04d1t09.flac
+a3bf4219a6f8b55ce76233cb7b4a3b1d  bd1994-11-04d2t01.flac
+2500cbb33d8fd53fde48f412c48ddb6c  bd1994-11-04d2t02.flac
+95cdb6f72b264057b7d16f71805b5b78  bd1994-11-04d2t03.flac
+a71e229b3244592b4fb2fadb4fabc9a8  bd1994-11-04d2t04.flac
+ee712c0c6fb5ec7418f9d3411cb7b166  bd1994-11-04d2t05.flac
+893683350835559ae1eb61d81c2bb01c  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-11-04-d.flacf 
+=================== 
+=================== 
+=================== 
+bd1994-11-04d1t01.flac:48d1a222201127c73d158c9fa0dd3543
+bd1994-11-04d1t02.flac:8603864d194b80922724ce2da678d12e
+bd1994-11-04d1t03.flac:5f2df583a93463c4b78c7f01ef8ec22f
+bd1994-11-04d1t04.flac:c1bdfc22eecd7e54f09878002df9a47e
+bd1994-11-04d1t05.flac:76ea9f32f69cf7632aa334b1d82278db
+bd1994-11-04d1t06.flac:ec4aaff73af6ed48e7a5fc636dc1d9ef
+bd1994-11-04d1t07.flac:6647383493f5799de22d4f8d2a2aa548
+bd1994-11-04d1t08.flac:84cd1c6bf5b06b72fc4fa25d34208f62
+bd1994-11-04d1t09.flac:08e75b9c28ab435956ac07d1e4071f50
+bd1994-11-04d2t01.flac:a2f3c3cb927659293a39fd88797ca898
+bd1994-11-04d2t02.flac:4d1a3e914ef2d1d6f91faef4a51ba159
+bd1994-11-04d2t03.flac:ad34ddae25a190fbb391b0f9d8287dda
+bd1994-11-04d2t04.flac:1b2bef3ee5401a43f911ae1df833b153
+bd1994-11-04d2t05.flac:9411a3887921bfeeea4b5dd5dfa4a964
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-11-04-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:59.36       84580316 B   ---   --   ---xx   flac  0.5011  bd1994-11-04d1t01.flac
+     6:34.05       69513404 B   ---   --   ---xx   flac  0.5040  bd1994-11-04d1t02.flac
+     6:02.22       63908588 B   ---   --   ---xx   flac  0.5439  bd1994-11-04d1t03.flac
+     9:49.64      104050172 B   ---   --   ---xx   flac  0.4794  bd1994-11-04d1t04.flac
+     9:18.53       98555900 B   ---   --   ---xx   flac  0.5170  bd1994-11-04d1t05.flac
+     6:56.65       73535324 B   ---   --   ---xx   flac  0.4828  bd1994-11-04d1t06.flac
+     6:32.63       69297020 B   ---   --   ---xx   flac  0.4070  bd1994-11-04d1t07.flac
+     6:20.61       67175516 B   ---   --   ---xx   flac  0.4009  bd1994-11-04d1t08.flac
+     8:44.27       92497124 B   -b-   --   ---xx   flac  0.4655  bd1994-11-04d1t09.flac
+    10:36.14      112223372 B   ---   --   ---xx   flac  0.5239  bd1994-11-04d2t01.flac
+     7:14.71       76724636 B   ---   --   ---xx   flac  0.4935  bd1994-11-04d2t02.flac
+    10:06.14      106931372 B   ---   --   ---xx   flac  0.5377  bd1994-11-04d2t03.flac
+     8:16.27       87557948 B   ---   --   ---xx   flac  0.5122  bd1994-11-04d2t04.flac
+     7:22.18       78011156 B   -b-   --   ---xx   flac  0.4534  bd1994-11-04d2t05.flac
+   111:55.15     1184561848 B                            0.4905  (14 files)
+=================== 
+=================== 
+=================== 

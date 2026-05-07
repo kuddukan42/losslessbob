@@ -1,0 +1,8 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:29.09      110976812 B   ---   --   ---xx   flac  0.5867  Dylan_1996_07_27_Stockholm_CD2_01.flac
+     8:42.20       92127884 B   ---   --   ---xx   flac  0.6115  Dylan_1996_07_27_Stockholm_CD2_02.flac
+     7:07.46       75431036 B   ---   --   ---xx   flac  0.5966  Dylan_1996_07_27_Stockholm_CD2_03.flac
+    10:30.14      111164972 B   ---   --   ---xx   flac  0.6211  Dylan_1996_07_27_Stockholm_CD2_04.flac
+    12:57.65      137215724 B   ---   --   ---xx   flac  0.5980  Dylan_1996_07_27_Stockholm_CD2_05.flac
+     7:57.03       84149900 B   ---   --   ---xx   flac  0.6278  Dylan_1996_07_27_Stockholm_CD2_06.flac
+    57:44.07      611066328 B                            0.6061  (6 files)

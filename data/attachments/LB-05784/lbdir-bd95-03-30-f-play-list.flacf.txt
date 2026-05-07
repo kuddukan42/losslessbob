@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-30-f-play-list.flacf 
+=================== 
+=================== 
+=================== 
+4dfcee1e5664b37af77cea4d5219f63a  bd95-03-30-f-play-list-d1t01.flac
+89b196eee6b51d04e50f0803695094c0  bd95-03-30-f-play-list-d1t02.flac
+78b5e5962f57cddb4f0815c4c12c615a  bd95-03-30-f-play-list-d1t03.flac
+2ff9fe1924b88f9adaabc8fb038671a1  bd95-03-30-f-play-list-d1t04.flac
+2c0247477c2204f06ed3770560cf6244  bd95-03-30-f-play-list-d1t05.flac
+647520610f44418d6eaaa741b7f97850  bd95-03-30-f-play-list-d1t06.flac
+c93e747d98235bd0ad72f5a5763bff5f  bd95-03-30-f-play-list-d1t07.flac
+5b4426db1e1f3086f31572111ada5b40  bd95-03-30-f-play-list-d1t08.flac
+00d94bd567621bd0a5c92bbd38335984  bd95-03-30-f-play-list-d1t09.flac
+a5a34b07904693386874b3ab51ec364f  bd95-03-30-f-play-list-d1t10.flac
+db582d20fe9f01c5e35fec8ead9f46ff  bd95-03-30-f-play-list-d2t01.flac
+87c75c4987fb12e1b69258c7dfe36b05  bd95-03-30-f-play-list-d2t02.flac
+02935cb627d4ad8ebaf2dbf512ec8d70  bd95-03-30-f-play-list-d2t03.flac
+f1db5fb7c43a70be9978764c218554d5  bd95-03-30-f-play-list-d2t04.flac
+d28103f44a462fd1bebe20098c551bff  bd95-03-30-f-play-list-d2t05.flac
+21d820206a6f0b83229d267b258f0038  bd95-03-30-f-play-list-d2t06.flac
+6749496b8e9baaa99d6a9f06dbbe8628  bd95-03-30-f-play-list-d2t07.flac
+63ebd68d696663a5853208d1b07c7158  bd95-03-30-f-play-list-d2t08.flac
+23514b69b4826362b72192d70cd04ea9  bd95-03-30-f-play-list-d2t09.flac
+0b3d0f1dc85df54c66ef04bdfd5e4d94  bd95-03-30-f-play-list-d2t10.flac
+5f619f0cb4215f342666a9b9c2fed3f1  bd95-03-30-f-play-list-d2t11.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-30-f-play-list.flacf 
+=================== 
+=================== 
+=================== 
+bd95-03-30-f-play-list-d1t01.flac:be67d4e00af3860ac7907b5701c85be7
+bd95-03-30-f-play-list-d1t02.flac:a55fe02fdcd9247b57269ad324506956
+bd95-03-30-f-play-list-d1t03.flac:e6c91b04e01ac71f707eeb2a5993d90c
+bd95-03-30-f-play-list-d1t04.flac:f4d373d511179d4da5b30dcb7a5d26fe
+bd95-03-30-f-play-list-d1t05.flac:982770709828c9bfbf26ed8b981814a3
+bd95-03-30-f-play-list-d1t06.flac:cca14ad89cce331f2676a24f63273f42
+bd95-03-30-f-play-list-d1t07.flac:3729ca19cfb80bb167b30f61ee27193f
+bd95-03-30-f-play-list-d1t08.flac:d23126f74e51901995231f4c86df9fd6
+bd95-03-30-f-play-list-d1t09.flac:f37d59f25192fb9cd2914826d5928d5a
+bd95-03-30-f-play-list-d1t10.flac:5af6b19a6911f842a9c28f674cfba982
+bd95-03-30-f-play-list-d2t01.flac:23500ee06d3693b660d46d0d586b1213
+bd95-03-30-f-play-list-d2t02.flac:7c020322e61d27a9df4da34518215521
+bd95-03-30-f-play-list-d2t03.flac:ab8d9b901bcfb1ace3a4a0da5c475a07
+bd95-03-30-f-play-list-d2t04.flac:f8198fc84cd4c298cd4ca1ec5332c915
+bd95-03-30-f-play-list-d2t05.flac:23993d8a29d2f483165e3fe3e5c8de97
+bd95-03-30-f-play-list-d2t06.flac:ab8b937c733048d3bea8c49d801defae
+bd95-03-30-f-play-list-d2t07.flac:de859dc48d6e10f78b23fad6a594e58e
+bd95-03-30-f-play-list-d2t08.flac:4f6eee512a791ac12bae2f37eca8d915
+bd95-03-30-f-play-list-d2t09.flac:9ce7f4a9eeefc15ce625203e7cdc479c
+bd95-03-30-f-play-list-d2t10.flac:79aa06602647904f74bd457283e27d5b
+bd95-03-30-f-play-list-d2t11.flac:bf44fa311e107b64dda32902253361be
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-03-30-f-play-list.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.40       54954524 B   ---   --   ---xx   flac  0.7401  bd95-03-30-f-play-list-d1t01.flac
+     6:39.38       70473020 B   ---   --   ---xx   flac  0.7072  bd95-03-30-f-play-list-d1t02.flac
+     5:52.20       62139884 B   ---   --   ---xx   flac  0.7103  bd95-03-30-f-play-list-d1t03.flac
+     7:43.55       81802604 B   ---   --   ---xx   flac  0.7013  bd95-03-30-f-play-list-d1t04.flac
+     8:13.37       87052268 B   ---   --   ---xx   flac  0.6701  bd95-03-30-f-play-list-d1t05.flac
+     6:29.60       68760764 B   ---   --   ---xx   flac  0.7163  bd95-03-30-f-play-list-d1t06.flac
+     6:22.73       67556540 B   ---   --   ---xx   flac  0.6145  bd95-03-30-f-play-list-d1t07.flac
+     5:25.07       57346508 B   ---   --   ---xx   flac  0.6330  bd95-03-30-f-play-list-d1t08.flac
+     6:34.15       69536924 B   ---   --   ---xx   flac  0.6116  bd95-03-30-f-play-list-d1t09.flac
+     6:00.18       63546380 B   ---   --   ---xx   flac  0.6922  bd95-03-30-f-play-list-d1t10.flac
+     9:49.00      103899644 B   ---   --   ---xx   flac  0.7163  bd95-03-30-f-play-list-d2t01.flac
+     0:29.45        5221484 B   ---   --   ---xx   flac  0.6281  bd95-03-30-f-play-list-d2t02.flac
+     7:04.27       74857148 B   ---   --   ---xx   flac  0.6855  bd95-03-30-f-play-list-d2t03.flac
+     7:58.23       84373340 B   ---   --   ---xx   flac  0.6854  bd95-03-30-f-play-list-d2t04.flac
+     6:24.12       67765868 B   ---   --   ---xx   flac  0.6403  bd95-03-30-f-play-list-d2t05.flac
+     6:21.55       67337804 B   ---   --   ---xx   flac  0.6834  bd95-03-30-f-play-list-d2t06.flac
+     4:14.40       44899724 B   ---   --   ---xx   flac  0.6345  bd95-03-30-f-play-list-d2t07.flac
+     5:21.03       56631500 B   ---   --   ---xx   flac  0.6269  bd95-03-30-f-play-list-d2t08.flac
+     6:59.02       73916348 B   ---   --   ---xx   flac  0.6315  bd95-03-30-f-play-list-d2t09.flac
+     7:27.43       78951980 B   ---   --   ---xx   flac  0.4956  bd95-03-30-f-play-list-d2t10.flac
+     5:42.50       60446444 B   ---   --   ---xx   flac  0.5870  bd95-03-30-f-play-list-d2t11.flac
+   132:24.63     1401470700 B                            0.6604  (21 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd80-05-11-b.flacf
+===================
+===================
+===================
+0321cc2760389fe85271ab2751496950 *CD 1\01 Gotta Serve Somebody.flac
+6396ec819223b65ec639128cb1a3dc8e *CD 1\02 I Believe In You.flac
+a3e54c5c849ec2671fa4ad75aa0b6bc3 *CD 1\03 When You Gonna Wake Up.flac
+2e1e966e7dc0a495a785d87edee9fc72 *CD 1\04 Ain't Gonna Go To Hell For Anybody.flac
+bbcc83f71acf7e59f8bcce8836dcc71a *CD 1\05 Cover Down, Break Through.flac
+9dd2c9b2bb09a88a5c352b8f685c3c35 *CD 1\06 Precious Angel.flac
+c72c9be0a32295cab0cc358becffbdc5 *CD 1\07 Man Gave Names To All The Animals.flac
+25951ea53bf22a365f864e809c9bd90f *CD 1\08 Slow Train.flac
+0085cde37d494cfb665f4cbba523e78e *CD 1\11.5.80 Providence.log
+4d20af392767c876b3c9203dbadcd75c *CD 1\CD 1.ffp
+4d20af392767c876b3c9203dbadcd75c *CD 1\CD 1.txt
+e41240352eb20f9e4b7a0677baab8066 *CD 2\09 Bob-rant.flac
+b95db33a838ee14cc8ac5c8c99f8487f *CD 2\10 Do Right To Me Baby (Do Unto Others).flac
+f373914ccf5c5d5876077670392274ac *CD 2\11 Solid Rock.flac
+815ff3903242e3527d340f164bc3cf57 *CD 2\11.5.80 Providence.log
+34b14d607d60c84fee39650d8a5ed5ca *CD 2\12 Saving Grace.flac
+3d30ddba3fe95f5d8444d5e96c02a0cc *CD 2\13 Saved.flac
+3411923a398dec260fa7cdfadeff67b0 *CD 2\14 What Can I Do For You.flac
+d59540417abd4d08354cfe515ce6ea27 *CD 2\15 In The Garden.flac
+a4b3a28c20883834a4baec1b6049c3dc *CD 2\16 Are You Ready.flac
+6d38cbb72b8e6fa41f43445a3af24af6 *CD 2\17 Pressing On.flac
+f0ca71a610c7ec4a08ccccc88c1744fb *CD 2\CD 2.ffp
+f0ca71a610c7ec4a08ccccc88c1744fb *CD 2\CD 2.txt
+48d26aebf6d3118f49f5b1fd8cd4b57f *Info\Bob Dylan 1980-05-11 Ocean State Performing Arts Center, Providence, Rhode Island, USA [possibly LB-959].txt
+===================
+===================
+===================
+=== ffp for: bd80-05-11-b.flacf
+===================
+===================
+===================
+CD 1\01 Gotta Serve Somebody.flac:ac4993cabe8845bf0703d7c42caad12f
+CD 1\02 I Believe In You.flac:8ec035710d72f86e7b7f648ada5f2434
+CD 1\03 When You Gonna Wake Up.flac:d8e240b6d0d4752d4b9fdb9fbc4d4ad8
+CD 1\04 Ain't Gonna Go To Hell For Anybody.flac:b597396f2aba6610c6eca5c9119ef8e3
+CD 1\05 Cover Down, Break Through.flac:ad96a7ec847c11f624f631e05ee9fdbb
+CD 1\06 Precious Angel.flac:3fe285abac83a711b9ef6a9880b704ad
+CD 1\07 Man Gave Names To All The Animals.flac:f21b1c9f59e2c18e72f335b51abc832c
+CD 1\08 Slow Train.flac:86e3f4d4baa39f547674648a2dfcc389
+CD 2\09 Bob-rant.flac:ba82745a6893bfceac277403a496d36f
+CD 2\10 Do Right To Me Baby (Do Unto Others).flac:118a2e8bcbbf6bddc75a49bbabd7a395
+CD 2\11 Solid Rock.flac:463259fd361567e9bd8748aa3d57c573
+CD 2\12 Saving Grace.flac:d68942ae2861865291dc34bc2f417817
+CD 2\13 Saved.flac:d040533f76c94dfb375f1ab212d00864
+CD 2\14 What Can I Do For You.flac:81d60de57ae74c566600d289313e43af
+CD 2\15 In The Garden.flac:fcb92e3a1200c4538acb35913caf21a4
+CD 2\16 Are You Ready.flac:8786e86986e839bfe43d4fe2243070a4
+CD 2\17 Pressing On.flac:77fe325f5dfb6605ffe97d55ce127fa5
+===================
+===================
+===================
+=== shntool len for: bd80-05-11-b.flacf\CD 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:27.38       68356220 B   ---   --   ---xx   flac  0.6424  01 Gotta Serve Somebody.flac
+     4:37.30       48933404 B   ---   --   ---xx   flac  0.6155  02 I Believe In You.flac
+     5:17.59       56057612 B   ---   --   ---xx   flac  0.6616  03 When You Gonna Wake Up.flac
+     4:16.18       45200780 B   ---   --   ---xx   flac  0.6644  04 Ain't Gonna Go To Hell For Anybody.flac
+     5:09.71       54674636 B   ---   --   ---xx   flac  0.6461  05 Cover Down, Break Through.flac
+     5:34.69       59079932 B   ---   --   ---xx   flac  0.6371  06 Precious Angel.flac
+     5:50.23       61794140 B   ---   --   ---xx   flac  0.6183  07 Man Gave Names To All The Animals.flac
+     9:06.13       96345020 B   ---   --   ---xx   flac  0.6431  08 Slow Train.flac
+    46:20.21      490441744 B                            0.6408  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd80-05-11-b.flacf\CD 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.27        6943148 B   ---   --   ---xx   flac  0.5540  09 Bob-rant.flac
+     5:00.62       53065868 B   ---   --   ---xx   flac  0.6156  10 Do Right To Me Baby (Do Unto Others).flac
+     4:21.21       46089836 B   ---   --   ---xx   flac  0.6454  11 Solid Rock.flac
+     4:42.33       49822460 B   ---   --   ---xx   flac  0.5622  12 Saving Grace.flac
+     4:46.52       50572748 B   ---   --   ---xx   flac  0.6210  13 Saved.flac
+     6:51.12       72528668 B   ---   --   ---xx   flac  0.5717  14 What Can I Do For You.flac
+     6:19.63       67003820 B   ---   --   ---xx   flac  0.5828  15 In The Garden.flac
+     7:30.34       79460012 B   ---   --   ---xx   flac  0.6104  16 Are You Ready.flac
+     3:56.65       41783324 B   ---   --   ---xx   flac  0.6020  17 Pressing On.flac
+    44:08.69      467269884 B                            0.5989  (9 files)
+===================
+===================
+===================

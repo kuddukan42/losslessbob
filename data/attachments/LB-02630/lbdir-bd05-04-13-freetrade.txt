@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-13-freetrade 
+=================== 
+=================== 
+=================== 
+8a8c61f314a9ed9ed0582451e1e1e687  bd05-04-13-freetrade-LB-2630.txt
+b810b3f254d4f6112c00f5cf7d2301f6  bd20050413_Buffalo_freetrade.txt
+28a5f030d9a47e7e0ce24565e0dfc374  d1Track01.shn
+8d37e2b6836d9175b14b702ecd47eebb  d1Track02.shn
+c0bfcaa6bb5a7bb411dc53bc96aae02c  d1Track03.shn
+64bcaabcaf06c399dd83068bbbf02ae8  d1Track04.shn
+f9e8a41813566fd44b72d86ca7059fe0  d1Track05.shn
+298eb820dffed0282eeb71b5bddf4fa1  d1Track06.shn
+7a6b96bcb62e08473bd04a89b5756d70  d1Track07.shn
+cceebb517fc73b4534ce60110dad351b  d1Track08.shn
+7d679e17aac15ee588387314efbb18a0  d1Track09.shn
+ae8f17c53b6cd418fa12660a09b107a1  d1Track10.shn
+20c5932b95af3d67f76f550309cb2022  d1Track11.shn
+757fda9fd8e8595587e6697da4717c7e  d1Track12.shn
+b26d10c45a66ca5f655b65e2228c8f30  d2Track01.shn
+24f9c09d57d251d81f113ffd5c82fc2c  d2Track02.shn
+feb1cb5cad40026387871e9cc12a45f7  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-04-13-freetrade 
+=================== 
+=================== 
+=================== 
+9b6dc8a60c9cdc3d7152587bbd050128  [shntool]  d1Track01.wav
+2195e72ff30348581bef3b9db07f2f7c  [shntool]  d1Track02.wav
+095a06e567737c23176a20cde96be48e  [shntool]  d1Track03.wav
+75c84e5e11b187908a1b7f4506a0810a  [shntool]  d1Track04.wav
+cfb828824b4b0c1575a9669167b4dc31  [shntool]  d1Track05.wav
+83491bb64f97d08ce4a8a3f054a87a4a  [shntool]  d1Track06.wav
+2ddac7e89ccc3d0eea527765df6f4597  [shntool]  d1Track07.wav
+e708cb732e6759c682b7e3dab10add85  [shntool]  d1Track08.wav
+0dd54e68ef5721a11047462a13ac6048  [shntool]  d1Track09.wav
+f0be7ba25f9938c9809c021325381bd6  [shntool]  d1Track10.wav
+5d4679b36ef4f1aec6b516576ea6171e  [shntool]  d1Track11.wav
+8730d338d3e506498a597c1a9997b03d  [shntool]  d1Track12.wav
+4f3b100e6a697fb450ce3e6c8a858515  [shntool]  d2Track01.wav
+f82d85d1ac56456313eede984fec4003  [shntool]  d2Track02.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-13-freetrade 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:30.11       37069916 B   ---   --   -----    wav  1.0000  d1Track01.wav
+     6:07.22       64790588 B   ---   --   -----    wav  1.0000  d1Track02.wav
+     8:21.05       88388204 B   ---   --   -----    wav  1.0000  d1Track03.wav
+     6:49.48       72260540 B   ---   --   -----    wav  1.0000  d1Track04.wav
+     5:58.17       63191228 B   ---   --   -----    wav  1.0000  d1Track05.wav
+    11:13.19      118761932 B   ---   --   -----    wav  1.0000  d1Track06.wav
+     8:43.33       92334860 B   ---   --   -----    wav  1.0000  d1Track07.wav
+     4:31.30       47875004 B   ---   --   -----    wav  1.0000  d1Track08.wav
+     5:13.45       55319084 B   ---   --   -----    wav  1.0000  d1Track09.wav
+     5:35.32       59169308 B   ---   --   -----    wav  1.0000  d1Track10.wav
+     5:47.20       61257884 B   ---   --   -----    wav  1.0000  d1Track11.wav
+     7:37.57       80748908 B   ---   --   -----    wav  1.0000  d1Track12.wav
+     7:17.28       77152700 B   ---   --   -----    wav  1.0000  d2Track01.wav
+     6:15.14       66182972 B   ---   --   -----    wav  1.0000  d2Track02.wav
+    93:01.06      984503128 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

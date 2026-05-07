@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-07-best-wishes-d2-only.flacf 
+=================== 
+=================== 
+=================== 
+ded27a6ba24e3a83edc2821773ba78ea  bd78-06-07-best-wishes-d2-only.flacf.md5
+307af480d5bc89d37313e4e7fa4f4e57  bd78-06-07-best-wishes-d2t01.flac
+c926b83105db4f4fc33251b5bff1dec1  bd78-06-07-best-wishes-d2t02.flac
+fdf2e9629947150988412fd9bccd32c7  bd78-06-07-best-wishes-d2t03.flac
+af695a62995a918a00e2b46275ab3a3d  bd78-06-07-best-wishes-d2t04.flac
+2b2eb1a4f427cd54dd3050b48ca8b6b1  bd78-06-07-best-wishes-d2t05.flac
+99b9fb502dbe6da1b1977c307c5437cf  bd78-06-07-best-wishes-d2t06.flac
+c949dd0f8956481e446667d816e76852  bd78-06-07-best-wishes-d2t07.flac
+37295a375e2ee17509605a30d044b0bf  bd78-06-07-best-wishes-d2t08.flac
+39c800358f187412f339d8e487b33b46  bd78-06-07-best-wishes-d2t09.flac
+2024b62fd84d291b9bbdf29f1fd609c0  bd78-06-07-best-wishes-d2t10.flac
+0578f799fd5c1273e420fe7ea899f414  bd78-06-07-best-wishes-d2t11.flac
+becb57851c09477afe72f3b155435459  bd78-06-07-best-wishes-d2t12.flac
+a2ef751afeceb65c2e43e80bfa5e11ed  bd78-06-07-best-wishes-d2t13.flac
+adfcca792224cad4836e63362a82f164  bd78-06-07-best-wishes-d2t14.flac
+8d670aa2880c8ee69409b907479b8809  bd78-06-07-best-wishes-d2t15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-07-best-wishes-d2-only.flacf 
+=================== 
+=================== 
+=================== 
+bd78-06-07-best-wishes-d2t01.flac:5d1d2ae6a1d382d67d8c492128d55cf8
+bd78-06-07-best-wishes-d2t02.flac:909e07b6645a467b3242be5043ac8830
+bd78-06-07-best-wishes-d2t03.flac:eda5d57d9c086cadaa1ad98908920847
+bd78-06-07-best-wishes-d2t04.flac:11dbb781675329b938f65e926b9ca777
+bd78-06-07-best-wishes-d2t05.flac:5496aca3b2e0d3e33a4d88a76debedaf
+bd78-06-07-best-wishes-d2t06.flac:db5093ad2d48ee46fb20876cd96ae452
+bd78-06-07-best-wishes-d2t07.flac:70a556598aa3d553bfc161e2bff29cee
+bd78-06-07-best-wishes-d2t08.flac:0b60065dd39a52d1944180f24c6ceeef
+bd78-06-07-best-wishes-d2t09.flac:d4b85574c00a9c64c50eaeef74d0c7cb
+bd78-06-07-best-wishes-d2t10.flac:a49cb752585cb6791a166e64e8d94c4e
+bd78-06-07-best-wishes-d2t11.flac:653824b98e8d6cca52e5bf55aa2b911c
+bd78-06-07-best-wishes-d2t12.flac:1893e7ffd6dc9981cd55232014d08ef3
+bd78-06-07-best-wishes-d2t13.flac:edcbde3ceea30c99d08482eceb9b167a
+bd78-06-07-best-wishes-d2t14.flac:c036d57ae89269330713b713c5dce969
+bd78-06-07-best-wishes-d2t15.flac:9d2123e9fe2ea9e32a9c4a66e14fd28f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-07-best-wishes-d2-only.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.22       54206588 B   ---   --   ---xx   flac  0.5852  bd78-06-07-best-wishes-d2t01.flac
+     3:43.13       39367820 B   ---   --   ---xx   flac  0.5929  bd78-06-07-best-wishes-d2t02.flac
+     4:57.72       52560188 B   ---   --   ---xx   flac  0.5848  bd78-06-07-best-wishes-d2t03.flac
+     2:54.70       30858284 B   ---   --   ---xx   flac  0.5782  bd78-06-07-best-wishes-d2t04.flac
+     5:46.50       61152044 B   ---   --   ---xx   flac  0.5733  bd78-06-07-best-wishes-d2t05.flac
+     4:20.25       45922844 B   ---   --   ---xx   flac  0.6148  bd78-06-07-best-wishes-d2t06.flac
+     5:48.48       61500140 B   ---   --   ---xx   flac  0.6241  bd78-06-07-best-wishes-d2t07.flac
+     5:03.50       53566844 B   ---   --   ---xx   flac  0.6253  bd78-06-07-best-wishes-d2t08.flac
+     5:07.30       54225404 B   ---   --   ---xx   flac  0.6202  bd78-06-07-best-wishes-d2t09.flac
+     3:52.60       41065964 B   ---   --   ---xx   flac  0.6371  bd78-06-07-best-wishes-d2t10.flac
+     4:16.25       45217244 B   ---   --   ---xx   flac  0.6514  bd78-06-07-best-wishes-d2t11.flac
+     6:54.15       73064924 B   ---   --   ---xx   flac  0.6391  bd78-06-07-best-wishes-d2t12.flac
+     7:15.15       76769324 B   ---   --   ---xx   flac  0.6493  bd78-06-07-best-wishes-d2t13.flac
+     7:41.50       81438044 B   ---   --   ---xx   flac  0.6683  bd78-06-07-best-wishes-d2t14.flac
+     6:59.62       74057468 B   ---   --   ---xx   flac  0.6359  bd78-06-07-best-wishes-d2t15.flac
+    79:50.07      844973124 B                            0.6226  (15 files)
+=================== 
+=================== 
+=================== 

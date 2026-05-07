@@ -1,0 +1,161 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-02-neumann-km140.flacf 
+=================== 
+=================== 
+=================== 
+6aa0c9e9296473e0379ebb0a4024c402  cd 1\cd 1.ffp
+49a73ae6466732eea58cf5e6567dedcc  cd 1\Track01.flac
+2f45dc74eddbc143c937d3bb085f932d  cd 1\Track02.flac
+e9edc422059b15ecfde8081007428ffb  cd 1\Track03.flac
+6d1ca06dd86ef63102d59898bd4a3780  cd 1\Track04.flac
+0c762ef2004d399622d9e8004d14d305  cd 1\Track05.flac
+ea4ef24771d9ea1df226429fa7ef249e  cd 1\Track06.flac
+3699a34515cba974c09cf10e66213016  cd 1\Track07.flac
+d7b64bdd4b57187972486ddc1c2182e8  cd 1\Track08.flac
+0cb4bbf8cec1d71484c658d2829b3f2c  cd 1\Track09.flac
+3b5a6a496fb57c7c6e839bd11aceab8f  cd 1\Track10.flac
+f856aae26fd9495204ea458b1f3780d2  cd 1\Track11.flac
+0f685fdce778a5836c3cbe1acac7dc46  cd 1\Track12.flac
+987e33b15745474d842c114f0e8906d7  cd 2\cd 2.ffp
+5b8b1754f1e3bf3c1286c565be7a91be  cd 2\Track01.flac
+3ce489d0e4d0cfaff9e6f71dbbca47a1  cd 2\Track02.flac
+d658980f48f2af6e68101b06d31568cf  cd 2\Track03.flac
+c61c391c9b0ba36cbead80026da58097  cd 2\Track04.flac
+b9724559139e61c8775acaf51d1c7023  cd 2\Track05.flac
+7210b102c3c41a0bf06f29bdb3edf3c5  cd 2\Track06.flac
+798d5cf2216a203a00c7a3e2c9bcc73d  cd 2\Track07.flac
+2504b868086f1684c70927be4414db43  cd 2\Track08.flac
+e40560cf7d2f08ed235cc57e59381f99  cd 2\Track09.flac
+8dafe51dff1b760edee25f840ad87069  cd 2\Track10.flac
+62aa38aa94983b82a8ea7b15bc11f665  cd 2\Track11.flac
+4eb37a47acd059a04f71f4097285d3f9  cd 2\Track12.flac
+ef2a12647ad586aa552003a7bd1c0ad9  cd 3\cd 3.ffp
+7d5044a067bb2e746f5074186674f1f6  cd 3\Track01.flac
+f73a3df68d07a46d4e1e141b4c5d45fd  cd 3\Track02.flac
+508415ba920b1bd70ffd735b8f8f9fed  cd 3\Track03.flac
+32093397c22f252047cfad9b1d9cf7aa  cd 3\Track04.flac
+61b018fadb6f6ce35a4b5705d166b22d  cd 3\Track05.flac
+6c0e8103b6bb73a9754e64f373150222  cd 3\Track06.flac
+4fada193d015d04fd36e4275cece0bfa  cd 3\Track07.flac
+599709e1cebb2b55ae94dba760e1f880  cd 3\Track08.flac
+aa56f38611b89549a66f09eae1848667  cd 3\Track09.flac
+c801adceef1054251cfbda79956f4128  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-02-neumann-km140.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:0d46a2c4eac7c2503cd14835a90e0145
+Track02.flac:8d4436ca280bc3250d2bdabdc9efe6f5
+Track03.flac:2da1fef1c64c7553d32575b1cc21cd9e
+Track04.flac:cdbd6351f0b15abda968250c2dbb8c71
+Track05.flac:bf8b7ad1e0cfed1fcbacadd427ca6a78
+Track06.flac:ddebca54f3884d0b3f96767c77590a74
+Track07.flac:321032a2ef525335e9f0d6503b1940dd
+Track08.flac:54c5b2b10a33177414eee5acb9eac11d
+Track09.flac:ef74f80981cd466a0e0df3aab949c51b
+Track10.flac:77caa410e9eb9c1f0e3aeb20f244e503
+Track11.flac:7449eac0929f07d2e432d0b3f6b3ad32
+Track12.flac:58461609a86210544bdff2d4cf59575a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-02-neumann-km140.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:ec9c32f8f028fdb7a60043578cad2a94
+Track02.flac:17ad1b3b38c0b379fe1ea2301ce4dae5
+Track03.flac:854b7019a604de5590840bc08d9e2f46
+Track04.flac:910c879754dccb3cd53e489778a38f89
+Track05.flac:b08a41924d123964cb915a5d86184352
+Track06.flac:a2f8a2e8d5c0b00eef9e5fa26dcfe7f0
+Track07.flac:db190748f024ea4295a99b2a7063ef90
+Track08.flac:31b8bbb5585360b41710c1dfaeba349f
+Track09.flac:6040070f61d6cb80fa49e8f72b849bc7
+Track10.flac:8211714259a6fd96f5811f2dc482f5b0
+Track11.flac:454c4054ca301e3502d97b664530e7b3
+Track12.flac:9e7bc8a76a893a5ad0f48792d9971ec8
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-02-neumann-km140.flacf\cd 3 
+=================== 
+=================== 
+=================== 
+Track01.flac:19981f3d52f29244c6f30b349b247414
+Track02.flac:f36069a5ae14cfd14031f3b71d74a601
+Track03.flac:254794ec460d6c408786cd0b19727edb
+Track04.flac:6505e22594187819eafa2f708e6d0e12
+Track05.flac:326fbaa290837b6c263084ff178ec35b
+Track06.flac:b83aa5ce76845371f2ed2cadc16fecc9
+Track07.flac:999729f8ddbea45af276e2c96ed3bf2e
+Track08.flac:c4751315b5f580ccf6db1fd7916eddb2
+Track09.flac:046ee8c772e493b536d7d5f4f459fab7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-02-neumann-km140.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.18       48728780 B   ---   --   ---xx   flac  0.5855  Track01.flac
+     3:40.35       38890364 B   ---   --   ---xx   flac  0.5162  Track02.flac
+     7:33.53       80033900 B   ---   --   ---xx   flac  0.5346  Track03.flac
+     1:50.29       19472252 B   ---   --   ---xx   flac  0.6034  Track04.flac
+     1:37.00       17110844 B   ---   --   ---xx   flac  0.6251  Track05.flac
+     6:20.30       67102604 B   ---   --   ---xx   flac  0.6175  Track06.flac
+     2:55.54       30997052 B   ---   --   ---xx   flac  0.5985  Track07.flac
+     7:26.31       78747356 B   ---   --   ---xx   flac  0.5725  Track08.flac
+     9:18.16       98468876 B   ---   --   ---xx   flac  0.5633  Track09.flac
+     5:36.69       59432732 B   ---   --   ---xx   flac  0.5576  Track10.flac
+     9:18.17       98471228 B   ---   --   ---xx   flac  0.5630  Track11.flac
+     5:36.69       59432732 B   ---   --   ---xx   flac  0.5576  Track12.flac
+    65:50.46      696888720 B                            0.5684  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-02-neumann-km140.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:48.25       50862044 B   ---   --   ---xx   flac  0.5696  Track01.flac
+     3:16.06       34588556 B   ---   --   ---xx   flac  0.5992  Track02.flac
+     6:36.01       69856796 B   ---   --   ---xx   flac  0.6509  Track03.flac
+     5:35.40       59188124 B   ---   --   ---xx   flac  0.5867  Track04.flac
+     5:31.19       58433132 B   ---   --   ---xx   flac  0.5469  Track05.flac
+     7:13.63       76529420 B   ---   --   ---xx   flac  0.6459  Track06.flac
+     5:41.28       60218300 B   ---   --   ---xx   flac  0.5199  Track07.flac
+     5:25.73       57501740 B   ---   --   ---xx   flac  0.6106  Track08.flac
+     6:03.66       64188476 B   ---   --   ---xx   flac  0.5927  Track09.flac
+     4:37.33       48940460 B   ---   --   ---xx   flac  0.4873  Track10.flac
+     6:58.17       73775228 B   ---   --   ---xx   flac  0.5942  Track11.flac
+     6:22.01       67387196 B   ---   --   ---xx   flac  0.5747  Track12.flac
+    68:09.72      721469472 B                            0.5851  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-02-neumann-km140.flacf\cd 3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:58.31       94976156 B   ---   --   ---xx   flac  0.6173  Track01.flac
+     4:25.00       46746044 B   ---   --   ---xx   flac  0.6218  Track02.flac
+     4:19.09       45708812 B   ---   --   ---xx   flac  0.5101  Track03.flac
+     8:25.48       89194940 B   ---   --   ---xx   flac  0.5986  Track04.flac
+     6:40.18       70602380 B   ---   --   ---xx   flac  0.4739  Track05.flac
+     8:43.24       92313692 B   ---   --   ---xx   flac  0.6027  Track06.flac
+     7:50.11       82933916 B   ---   --   ---xx   flac  0.6130  Track07.flac
+     9:20.02       98788748 B   ---   --   ---xx   flac  0.5272  Track08.flac
+     4:55.36       52122716 B   ---   --   ---xx   flac  0.5911  Track09.flac
+    63:37.29      673387404 B                            0.5751  (9 files)
+=================== 
+=================== 
+=================== 

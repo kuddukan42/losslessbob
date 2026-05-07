@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-26a.flacf 
+=================== 
+=================== 
+=================== 
+46ebc5c79d285d866ccf9a37f230a238  bd-95-03-26-brighton-master-d1 (Track 01).flac
+4f047dadc3f4d9453b75925fc636ad8d  bd-95-03-26-brighton-master-d1 (Track 02).flac
+f289ba6bba72654a05d3cb8b006d4874  bd-95-03-26-brighton-master-d1 (Track 03).flac
+71fd683b8b8bf35997c85d99a34c0714  bd-95-03-26-brighton-master-d1 (Track 04).flac
+743c5776dfc1c5e4693bc015f55a0b56  bd-95-03-26-brighton-master-d1 (Track 05).flac
+993cf7951f7dad36c6ccdd040fa84b17  bd-95-03-26-brighton-master-d1 (Track 06).flac
+3447da7ac1813fed064f30236fedec65  bd-95-03-26-brighton-master-d1 (Track 07).flac
+6dd4fdbd465290732fea2ebb728ff164  bd-95-03-26-brighton-master-d1 (Track 08).flac
+9fe4cbf4128460e96bfa77b4318bee41  bd-95-03-26-brighton-master-d2 (Track 01).flac
+253a6f98bf8bdb82627662d8822e9285  bd-95-03-26-brighton-master-d2 (Track 02).flac
+5a801eaf9f0c8579f980ad1cb4f29470  bd-95-03-26-brighton-master-d2 (Track 03).flac
+674f5696a35518e016984dd637046e69  bd-95-03-26-brighton-master-d2 (Track 04).flac
+0a9b968c89c02ee9e6c1fcffb3053cd7  bd-95-03-26-brighton-master-d2 (Track 05).flac
+8d59fd388d7d68e7f960ab711128d686  bd-95-03-26-brighton-master-d2 (Track 06).flac
+965d3bb7bd8c5bc182a42844828c4249  bd-95-03-26-brighton-master-d2 (Track 07).flac
+11a0ea8f252cafbfc94119766db29b20  bd-95-03-26-brighton-master.txt
+9fecf1d424257dc6fc1f59038fb8a86f  bd95-03-26a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-26a.flacf 
+=================== 
+=================== 
+=================== 
+bd-95-03-26-brighton-master-d1 (Track 01).flac:8e763edb234e5f317e99d788685b7e7c
+bd-95-03-26-brighton-master-d1 (Track 02).flac:fb88ec77e80c8de021a99570aefde92c
+bd-95-03-26-brighton-master-d1 (Track 03).flac:d6cc7ca053fea98990bd2e81adc5bf5f
+bd-95-03-26-brighton-master-d1 (Track 04).flac:a04b310dbdc827cad803d7c20839c0e1
+bd-95-03-26-brighton-master-d1 (Track 05).flac:8969910aea797960c306307906f331e0
+bd-95-03-26-brighton-master-d1 (Track 06).flac:2353f20c4ea1617e053a9a7e25265cc5
+bd-95-03-26-brighton-master-d1 (Track 07).flac:52f2fb1914128954d59c97000022f568
+bd-95-03-26-brighton-master-d1 (Track 08).flac:9ba40e8b5b74aefa619d4468d4eda9c8
+bd-95-03-26-brighton-master-d2 (Track 01).flac:ff4448dcac0acf254b2f987dac4a76ca
+bd-95-03-26-brighton-master-d2 (Track 02).flac:29a8f15777d7b776def35288fbe1e87e
+bd-95-03-26-brighton-master-d2 (Track 03).flac:c0c5fec4d1fa832ea4537775298114e1
+bd-95-03-26-brighton-master-d2 (Track 04).flac:1506a7f2e0ccad3375f61b8385c091a6
+bd-95-03-26-brighton-master-d2 (Track 05).flac:bb0ecee598f53be3a53d0cc416706e57
+bd-95-03-26-brighton-master-d2 (Track 06).flac:9e529052406cec503a18865520fc18ea
+bd-95-03-26-brighton-master-d2 (Track 07).flac:9a536fc269bc17ff621d7621b408158b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-26a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.72       53971960 B   -b-   --   ---xx   flac  0.5877  bd-95-03-26-brighton-master-d1 (Track 01).flac
+     4:38.66       49194476 B   ---   --   ---xx   flac  0.5179  bd-95-03-26-brighton-master-d1 (Track 02).flac
+     5:45.28       60923900 B   ---   --   ---xx   flac  0.5743  bd-95-03-26-brighton-master-d1 (Track 03).flac
+     5:26.33       57584060 B   ---   --   ---xx   flac  0.5100  bd-95-03-26-brighton-master-d1 (Track 04).flac
+     8:18.05       87859004 B   ---   --   ---xx   flac  0.5349  bd-95-03-26-brighton-master-d1 (Track 05).flac
+     7:26.37       78761468 B   ---   --   ---xx   flac  0.5049  bd-95-03-26-brighton-master-d1 (Track 06).flac
+     6:39.61       70527116 B   ---   --   ---xx   flac  0.3890  bd-95-03-26-brighton-master-d1 (Track 07).flac
+     5:55.16       62659676 B   ---   --   ---xx   flac  0.3519  bd-95-03-26-brighton-master-d1 (Track 08).flac
+     4:24.73       46741856 B   -b-   --   ---xx   flac  0.4695  bd-95-03-26-brighton-master-d2 (Track 01).flac
+     7:36.60       80579548 B   -b-   --   ---xx   flac  0.5695  bd-95-03-26-brighton-master-d2 (Track 02).flac
+     7:40.18       81186376 B   -b-   --   ---xx   flac  0.4731  bd-95-03-26-brighton-master-d2 (Track 03).flac
+     6:10.37       65355068 B   ---   --   ---xx   flac  0.5929  bd-95-03-26-brighton-master-d2 (Track 04).flac
+     9:17.74       98428892 B   ---   --   ---xx   flac  0.5506  bd-95-03-26-brighton-master-d2 (Track 05).flac
+     8:48.47       93249788 B   ---   --   ---xx   flac  0.4751  bd-95-03-26-brighton-master-d2 (Track 06).flac
+     7:40.34       81224012 B   ---   --   ---xx   flac  0.5446  bd-95-03-26-brighton-master-d2 (Track 07).flac
+   100:55.61     1068247200 B                            0.5107  (15 files)
+=================== 
+=================== 
+=================== 

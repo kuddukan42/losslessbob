@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-01-new-found-faith.flacf 
+=================== 
+=================== 
+=================== 
+8e205d76a4e0f229b4445c0171741cac  bd79-11-01-new-found-d1t01.flac
+98f2ab62abd1dea2c523673024d9bc0d  bd79-11-01-new-found-d1t02.flac
+8bd1b42f5ae91aadbd110367091d1cff  bd79-11-01-new-found-d1t03.flac
+c85ab95b6d0bc1ba31dde44fa37fd907  bd79-11-01-new-found-d1t04.flac
+7df2f6114131e415abfd467f7e13724d  bd79-11-01-new-found-d1t05.flac
+aa8c201b725cabda1f48044b31ad188d  bd79-11-01-new-found-d1t06.flac
+3f133b7a0de5e858afcadb041bd6c0c1  bd79-11-01-new-found-d1t07.flac
+0bf6466a66e0abc0758fd119dc2fc427  bd79-11-01-new-found-d1t08.flac
+8f750f34f8cb1e04beb85f7bf58a56bb  bd79-11-01-new-found-d2t01.flac
+9b52787be677501cc17b3eed5f8691f2  bd79-11-01-new-found-d2t02.flac
+bf7442ec47c28f2e50678f199f7fbb53  bd79-11-01-new-found-d2t03.flac
+e169d17d1210318188e11d5525fa4132  bd79-11-01-new-found-d2t04.flac
+326770879c8b930c569ef50dd2937ce2  bd79-11-01-new-found-d2t05.flac
+b906ed53faeacd25918fb91d17392dbc  bd79-11-01-new-found-d2t06.flac
+b5474c431bb5f4569a6d74d76a8536ae  bd79-11-01-new-found-d2t07.flac
+6f9acf3ff4c6c8ffd437c3af0cd9b159  bd79-11-01-new-found-d2t08.flac
+297e5c781d169e7e97e96dc0d0ee8573  bd79-11-01-new-found-d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-01-new-found-faith.flacf 
+=================== 
+=================== 
+=================== 
+bd79-11-01-new-found-d1t01.flac:4e2e440f29a3c90d01873b745b50f5f7
+bd79-11-01-new-found-d1t02.flac:72f1499b87921a5119ac483ebcf8d871
+bd79-11-01-new-found-d1t03.flac:25b2905f748cae68bf7e0a1247c8c6de
+bd79-11-01-new-found-d1t04.flac:d16c94e3b52b8790a19acda6e180cce7
+bd79-11-01-new-found-d1t05.flac:005204377867797922b27f8b566ed0f5
+bd79-11-01-new-found-d1t06.flac:68a8695ff30e258d11730a528ee4ef4f
+bd79-11-01-new-found-d1t07.flac:5a4d5e30b5b86fb7ea5582d5b68fe850
+bd79-11-01-new-found-d1t08.flac:47e53a8b616727a4c056ef676eab002e
+bd79-11-01-new-found-d2t01.flac:e39fbc9ebc18a390a1536359a22a402a
+bd79-11-01-new-found-d2t02.flac:1828668e03e6c0456f2462f1df36cf51
+bd79-11-01-new-found-d2t03.flac:7b3cd816fff3ee5fc1a9b0864ccdc816
+bd79-11-01-new-found-d2t04.flac:6c2d15ebc13731f686c6e619e85fbe2f
+bd79-11-01-new-found-d2t05.flac:818504dcb0241405e042e6745bcc790f
+bd79-11-01-new-found-d2t06.flac:70f74d1c828781b2f2b632ccf972fb84
+bd79-11-01-new-found-d2t07.flac:9ac4d3f89aeb6d52e8dcd2e26514314d
+bd79-11-01-new-found-d2t08.flac:ec352c06f5671440a154af7704dd9ee0
+bd79-11-01-new-found-d2t09.flac:954db54af006cb6974e5bc0e48ebc573
+=================== 
+=================== 
+=================== 
+=== shntool for: bd79-11-01-new-found-faith.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.22       77844188 B   ---   --   ---xx   flac  0.6693  bd79-11-01-new-found-d1t01.flac
+     5:43.53       60629900 B   ---   --   ---xx   flac  0.6588  bd79-11-01-new-found-d1t02.flac
+     5:50.60       61881164 B   ---   --   ---xx   flac  0.6751  bd79-11-01-new-found-d1t03.flac
+     5:14.50       55507244 B   ---   --   ---xx   flac  0.6555  bd79-11-01-new-found-d1t04.flac
+     5:18.25       56154044 B   ---   --   ---xx   flac  0.6817  bd79-11-01-new-found-d1t05.flac
+     6:02.50       63974444 B   ---   --   ---xx   flac  0.6887  bd79-11-01-new-found-d1t06.flac
+     6:14.50       66091244 B   ---   --   ---xx   flac  0.6981  bd79-11-01-new-found-d1t07.flac
+     5:47.45       61316684 B   ---   --   ---xx   flac  0.6712  bd79-11-01-new-found-d1t08.flac
+     5:00.32       52995308 B   ---   --   ---xx   flac  0.6834  bd79-11-01-new-found-d2t01.flac
+     3:56.20       41677484 B   ---   --   ---xx   flac  0.6585  bd79-11-01-new-found-d2t02.flac
+     4:33.30       48227804 B   ---   --   ---xx   flac  0.6919  bd79-11-01-new-found-d2t03.flac
+     4:40.33       49469660 B   ---   --   ---xx   flac  0.6385  bd79-11-01-new-found-d2t04.flac
+     5:27.40       57776924 B   ---   --   ---xx   flac  0.6553  bd79-11-01-new-found-d2t05.flac
+     3:52.15       40960124 B   ---   --   ---xx   flac  0.7037  bd79-11-01-new-found-d2t06.flac
+     7:41.42       81419228 B   ---   --   ---xx   flac  0.6423  bd79-11-01-new-found-d2t07.flac
+     4:54.15       51896924 B   ---   --   ---xx   flac  0.6789  bd79-11-01-new-found-d2t08.flac
+     6:47.73       71966540 B   ---   --   ---xx   flac  0.6460  bd79-11-01-new-found-d2t09.flac
+    94:27.55      999788908 B                            0.6693  (17 files)
+=================== 
+=================== 
+=================== 

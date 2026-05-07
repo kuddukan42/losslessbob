@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-09-22 
+=================== 
+=================== 
+=================== 
+803e284e1f51c40c8571b6229cdab5dc  101 I'm Ready (cut).shn
+0efe64b5a14befae529bfd2f605bfab8  102 Is Your Love In Vain.shn
+e70a84e14d18310b9403e33a5a095485  103 Shelter From The Storm.shn
+cbe38abd8495ac97994d35aa8519fbb5  104 Love Minus Zero No Limit.shn
+ee0daeaad9d17f5df9be995bff9576a7  105 Tangled Up In Blue.shn
+eec832f49b541f5856220942778ac1df  106 Ballad Of A Thin Man.shn
+ebf9cf1d8f686e34815fb43fe46853d9  107 Maggie's Farm.shn
+11b5a09d1aa85c698aacfe27f3aba4f5  108 I Don't Believe You.shn
+e5409ea10c96b2b897c3ca182b280d7e  109 Like A Rolling Stone.shn
+01ca445540af84fc7e1713072c88daf1  110 I Shall Be Released.shn
+f5585222768e827f1c7c8d9a354d9d89  111 Going Going Gone.shn
+a78962577b43485775f6f0740c5e5c6e  112 One Of Us Must Know.shn
+0074842edd18454a5671cbb8dfa5465c  113 Fourth Time Around.shn
+b9f178a960aadbc29f6014409c580478  114 Am I Your Stepchild.shn
+22109144fd8ce06f9083576b21ea552c  115 One More Cup Of Coffee.shn
+3f7b75f76c6fdfb6a8703783811886dc  201 Blowin' In The Wind.shn
+fc364cbddc81fd6c6ea2a5dea6e28f08  202 I Want You.shn
+0639ad394cfcb9b2e74d58383eb1e72a  203 Senor.shn
+6afd2be061bc45baccd236494df9eb6f  204 Masters Of War.shn
+97a31032c94aade64a03853b655b5938  205 Just Like A Woman.shn
+9e365a06b69c9a9d2a547148c02c72de  206 Simple Twist Of Fate.shn
+cca02534e993c1c1c8cab794cdcfaf03  207 All Along The Watchtower.shn
+66a22e770feb319999b67504ed0c0c00  208 All I Really Want To Do.shn
+a9b32dcc44b588767a3952c3ad9734a8  209 It's Alright Ma.shn
+99c4908750e6ccdc78d644d557730630  210 Forever Young.shn
+f325301ac0d50f172c361fbf2375db66  211 Changing Of The Guards.shn
+89b3e6b8f7b7858b2bd11d4914c94f3f  bd78-09-22.txt
+0d80cd16ed34ebd881cea5fbfd575c94  Dylan_-_78-09-22 Syracuse.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-09-22 
+=================== 
+=================== 
+=================== 
+df53542bce28e060ef13fd82d1590fea  [shntool]  101_I_m_Ready__cut_.wav
+b34443b2284ce023897f9bbdae56fd6d  [shntool]  102_Is_Your_Love_In_Vain.wav
+b9d1d00b143452bcd1581d6c404da6da  [shntool]  103_Shelter_From_The_Storm.wav
+2676e991af311eaa0b144c8ada1481d6  [shntool]  104_Love_Minus_Zero_No_Limit.wav
+30cd1acbf43afcb317eb8040756f3e9c  [shntool]  105_Tangled_Up_In_Blue.wav
+8beb393dd1a3522090c6986d58a43d86  [shntool]  106_Ballad_Of_A_Thin_Man.wav
+d2f76998dad2d6a34a7f7c694088475e  [shntool]  107_Maggie_s_Farm.wav
+f71568a5596d4d90dcdf521fa9890c95  [shntool]  108_I_Don_t_Believe_You.wav
+ffdeb4afee2d8b0555656dfa1ea63ed8  [shntool]  109_Like_A_Rolling_Stone.wav
+75fa48ea4b4a70d7c2ca02fc0b82bc78  [shntool]  110_I_Shall_Be_Released.wav
+86d736510757c40d3e7a7697c2d86531  [shntool]  111_Going_Going_Gone.wav
+47ba48fd3ba2a6970a3d9bfcabd96db5  [shntool]  112_One_Of_Us_Must_Know.wav
+30881add1d90d49bb1a1fffcb943282c  [shntool]  113_Fourth_Time_Around.wav
+f2d26050346ab37690869bf593070abb  [shntool]  114_Am_I_Your_Stepchild.wav
+34bd68452e3997cf8b0c1ad527501fc7  [shntool]  115_One_More_Cup_Of_Coffee.wav
+742be5b2d6883b82d35f9372f1352e62  [shntool]  201_Blowin__In_The_Wind.wav
+43324caa590b878fa7e8996b3b55c75c  [shntool]  202_I_Want_You.wav
+b7d03b054b680fbf5004a3ec20e92f22  [shntool]  203_Senor.wav
+2c5736a1fbe665f75fb01171baaedc73  [shntool]  204_Masters_Of_War.wav
+516d3e878fccf5a005e991954c4150b5  [shntool]  205_Just_Like_A_Woman.wav
+6440e5b868452a0f7bbeddcc5a9e2865  [shntool]  206_Simple_Twist_Of_Fate.wav
+e65f59ef1e9944458fb322ffa68a5ae0  [shntool]  207_All_Along_The_Watchtower.wav
+92420f14a01b66e02ccd8d0b50d69831  [shntool]  208_All_I_Really_Want_To_Do.wav
+83d8ebfbde9f1e8071292b2971cf4d25  [shntool]  209_It_s_Alright_Ma.wav
+ad32964e276a80ecf5a843cb61fe5879  [shntool]  210_Forever_Young.wav
+0e30893141a0e1fa8e12439106539873  [shntool]  211_Changing_Of_The_Guards.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-09-22 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:48.58       19187660 B   ---   --   -----    wav  1.0000  101_I_m_Ready__cut_.wav
+     4:33.45       48263084 B   ---   --   -----    wav  1.0000  102_Is_Your_Love_In_Vain.wav
+     4:37.22       48914588 B   ---   --   -----    wav  1.0000  103_Shelter_From_The_Storm.wav
+     3:53.36       41185916 B   ---   --   -----    wav  1.0000  104_Love_Minus_Zero_No_Limit.wav
+     7:51.35       83166764 B   ---   --   -----    wav  1.0000  105_Tangled_Up_In_Blue.wav
+     4:47.15       50662124 B   ---   --   -----    wav  1.0000  106_Ballad_Of_A_Thin_Man.wav
+     4:48.45       50909084 B   ---   --   -----    wav  1.0000  107_Maggie_s_Farm.wav
+     4:24.44       46673000 B   -b-   --   -----    wav  1.0000  108_I_Don_t_Believe_You.wav
+     6:56.74       73556624 B   -b-   --   -----    wav  1.0000  109_Like_A_Rolling_Stone.wav
+     4:25.30       46816604 B   ---   --   -----    wav  1.0000  110_I_Shall_Be_Released.wav
+     4:51.67       51489836 B   -b-   --   -----    wav  1.0000  111_Going_Going_Gone.wav
+     4:19.69       45849644 B   -b-   --   -----    wav  1.0000  112_One_Of_Us_Must_Know.wav
+     4:09.63       44071820 B   ---   --   -----    wav  1.0000  113_Fourth_Time_Around.wav
+     3:27.01       36517196 B   ---   --   -----    wav  1.0000  114_Am_I_Your_Stepchild.wav
+     4:24.49       46684892 B   ---   --   -----    wav  1.0000  115_One_More_Cup_Of_Coffee.wav
+     2:25.09       25599212 B   ---   --   -----    wav  1.0000  201_Blowin__In_The_Wind.wav
+     3:37.56       38410556 B   ---   --   -----    wav  1.0000  202_I_Want_You.wav
+     5:11.06       54874556 B   ---   --   -----    wav  1.0000  203_Senor.wav
+     4:09.46       44031836 B   ---   --   -----    wav  1.0000  204_Masters_Of_War.wav
+     5:42.57       60462908 B   ---   --   -----    wav  1.0000  205_Just_Like_A_Woman.wav
+     4:26.28       46988300 B   ---   --   -----    wav  1.0000  206_Simple_Twist_Of_Fate.wav
+     4:40.20       49439084 B   ---   --   -----    wav  1.0000  207_All_Along_The_Watchtower.wav
+     3:14.25       34280444 B   ---   --   -----    wav  1.0000  208_All_I_Really_Want_To_Do.wav
+     8:54.08       94216460 B   ---   --   -----    wav  1.0000  209_It_s_Alright_Ma.wav
+     6:07.53       64863500 B   ---   --   -----    wav  1.0000  210_Forever_Young.wav
+     7:11.15       76064300 B   -b-   --   -----    wav  1.0000  211_Changing_Of_The_Guards.wav
+   125:01.01     1323179992 B                            1.0000  (26 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-15.flacf 
+=================== 
+=================== 
+=================== 
+bbf771880539802e81c76dcf7cb01b06  101 Crash On The Levee (Down In The Flood).flac
+543cddc6a2d7490733e16c51dce8d4a8  102 Lay, Lady, Lay.flac
+a7612c316e74ecfb1066a78057db132d  103 All Along The Watchtower.flac
+63711bd9493823e73cb7781f0588ff7d  104 Shelter From The Storm.flac
+4d787f1f877d2400f23cf315ab762547  105 Watching The River Flow.flac
+229679dac1366b9e77396e3c9b315f10  106 Silvio.flac
+97edb9d893c68372e7dc4c0cad7022b5  107 Friend Of The Devil.flac
+0a47a303c87516645c8afaf1c5d4d296  108 John Brown.flac
+5e6cb44229706a699736139a0c750871  109 Dont Think Twice Its All Right.flac
+9011bffe368b3307e13615ca2855be9f  1997-04-15_northampton_d1.log.LOG
+fedc92469f287a55f9445f17b82e5ef3  1997-04-15_northampton_d2.log.LOG
+2e83b8d1d41c58c9d3bc13f638f0ba4f  1997-04-15_northampton_flacs.md5
+b814f7d21df679f6796cba83532e130f  1997-04-15_northampton_wav.md5
+0501fb4c47926c1994c0a0d16f5af23f  201 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+e3800836cb8f0324306ec4a7213caeb3  202 Ill Remember You.flac
+8f31e67c1553a75b51f8040b9131114f  203 Leopard Skin Pill Box Hat.flac
+b487a4aada98316be3a26a834da6460c  204 Like A Rolling Stone.flac
+ed613e184f82b6ee6e51572eac39ec0c  205 It Aint Me Babe.flac
+0db9973d142bf854b51b8a55c27f1de6  206 Rainy Day Women # 12 & 35.flac
+7e9676fabad26398e492962921434a26  bd97-04-15-LB-3377.txt
+3d72d9ae3dc7d3232bf0b74be7eb5e3a  bd_ northampton 150497.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-15.flacf 
+=================== 
+=================== 
+=================== 
+101 Crash On The Levee (Down In The Flood).flac:9564efd7e91dfa43862f8f4769f14a87
+102 Lay, Lady, Lay.flac:1904c973506f23e833ac8752a76f7118
+103 All Along The Watchtower.flac:011ab02e425fc1c29e748bb2f906a703
+104 Shelter From The Storm.flac:9ce78881f0bc8d9955dc6fe1cd1531bc
+105 Watching The River Flow.flac:3c6130391eafb7fa72f204498c5b02ce
+106 Silvio.flac:5ae637726cf003f7379181ce598ec788
+107 Friend Of The Devil.flac:24de69e6585f682783a4ae449052059c
+108 John Brown.flac:a94156d883325ac38cd6facd50cbc8a2
+109 Dont Think Twice Its All Right.flac:495403b17a9706c59587419178fa3800
+201 Stuck Inside Of Mobile With The Memphis Blues Again.flac:a8e15b3f3658cf0300c107b239cf0245
+202 Ill Remember You.flac:b0cb24dbf2ab32a6b529cdb46cbf4325
+203 Leopard Skin Pill Box Hat.flac:c572e6143407adef1b9689ec66693341
+204 Like A Rolling Stone.flac:96b131451db1175c09d9987fb3a2bd39
+205 It Aint Me Babe.flac:41143fdd458de0356b59cff4fed20f5b
+206 Rainy Day Women # 12 & 35.flac:88c603847910e774f0c0f4eb42139fc9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-15.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:51.38       51421820 B   ---   --   ---xx   flac  0.5658  101 Crash On The Levee (Down In The Flood).flac
+     5:14.12       55417868 B   ---   --   ---xx   flac  0.5439  102 Lay, Lady, Lay.flac
+     7:21.65       77945324 B   ---   --   ---xx   flac  0.6152  103 All Along The Watchtower.flac
+     7:43.73       81844940 B   ---   --   ---xx   flac  0.5502  104 Shelter From The Storm.flac
+     7:23.43       78246380 B   ---   --   ---xx   flac  0.5521  105 Watching The River Flow.flac
+     8:33.04       90502652 B   ---   --   ---xx   flac  0.6017  106 Silvio.flac
+     7:58.41       84415676 B   ---   --   ---xx   flac  0.5624  107 Friend Of The Devil.flac
+     8:01.17       84888428 B   ---   --   ---xx   flac  0.4940  108 John Brown.flac
+     8:59.22       95131388 B   ---   --   ---xx   flac  0.5849  109 Dont Think Twice Its All Right.flac
+    10:54.35      115447964 B   ---   --   ---xx   flac  0.5956  201 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:15.31       66222956 B   ---   --   ---xx   flac  0.5699  202 Ill Remember You.flac
+     8:12.61       86932316 B   ---   --   ---xx   flac  0.5941  203 Leopard Skin Pill Box Hat.flac
+     9:28.19      100239932 B   ---   --   ---xx   flac  0.5580  204 Like A Rolling Stone.flac
+     9:12.18       97415180 B   ---   --   ---xx   flac  0.5527  205 It Aint Me Babe.flac
+     7:48.69       82717532 B   ---   --   ---xx   flac  0.6029  206 Rainy Day Women # 12 & 35.flac
+   117:59.23     1248790356 B                            0.5707  (15 files)
+=================== 
+=================== 
+=================== 

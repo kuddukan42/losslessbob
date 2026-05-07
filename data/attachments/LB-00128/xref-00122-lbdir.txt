@@ -1,0 +1,56 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-Bits-n-pieces-beyond-tours.flacf 
+=================== 
+=================== 
+=================== 
+7a6991ef6f8fab06c3730095238fe81d  bd-1979-1980 Bits n' pieces - beyond tours.md5
+109e99800486ccaac964b38f94bf342f  bd1979-1980 Bits.txt
+936e6a51b095c5ae95ea1cc8cc2a675e  fingerprint.txt
+b308c8d5b7e412cdac9942ae8f802ee3  Track01.flac
+71fd3ec5267690d7c19f2915ca85686c  Track02.flac
+13fd1f219f3decba157aff8cdd2eb0f9  Track03.flac
+50cca57a8db44b306225aee89f29b724  track04.flac
+5487ed42f908a134f0013297eccb0228  Track05.flac
+c0e53274062b85d10292c3c6c91de937  Track06.flac
+eeac17ea4062ef4350f79a59206d65a3  Track07.flac
+77129ec17068be0a3aa53e5ddc991032  Track08.flac
+1bd6fc9aece9bb4ba8373afc5b57b05a  Track09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-Bits-n-pieces-beyond-tours.flacf 
+=================== 
+=================== 
+=================== 
+track01.flac:d09495c9161aff0d5f61540fd9c8a434
+track02.flac:b55e29c4c13a2d3e202c0b451fe3d4f1
+track03.flac:243e0fc81d4f7ac06ba742c38ecfc066
+track04.flac:ace059b02d28556b52d59c2ac2e3c686
+track05.flac:f548eb0006e0197a51b73fb072fb689b
+track06.flac:5f104b5ee6c41909eda995813fbe1e8a
+track07.flac:dc910c56035e3cd9acb4192bd656770d
+track08.flac:37cf3881f7fc30d7f438d1a4305501cf
+track09.flac:6c92922d510422e8e200ca68e5b1471b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-Bits-n-pieces-beyond-tours.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.20       53143484 B   ---   --   ---xx   flac  0.4971  Track01.flac
+     4:20.33       45941660 B   ---   --   ---xx   flac  0.4843  Track02.flac
+     4:15.59       45120812 B   ---   --   ---xx   flac  0.5133  Track03.flac
+     4:00.11       42361916 B   ---   --   ---xx   flac  0.4744  track04.flac
+     1:45.37       18609068 B   ---   --   ---xx   flac  0.3275  Track05.flac
+     3:16.21       34623836 B   ---   --   ---xx   flac  0.3238  Track06.flac
+     2:35.47       27452588 B   ---   --   ---xx   flac  0.3094  Track07.flac
+     4:15.11       45007916 B   ---   --   ---xx   flac  0.5582  Track08.flac
+     1:10.15       12383324 B   ---   --   ---xx   flac  0.5975  Track09.flac
+    30:40.29      324644604 B                            0.4628  (9 files)
+=================== 
+=================== 
+=================== 

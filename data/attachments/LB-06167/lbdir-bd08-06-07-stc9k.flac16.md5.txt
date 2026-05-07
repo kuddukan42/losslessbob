@@ -1,0 +1,27 @@
+954ebec9f4ab13fb4c7a7c9536e7244f  bd2008-06-07.md5
+dd36061795163c0b62e3356bcc1cce68  bd2008-06-07info.txt
+9a45e77cb73ae41b479e84276f492431  bd2008-06-07t01 (intro).flac
+9bd49c2476c96f63f65a43fb0566f5da  bd2008-06-07t02 Tweedle Dee & Tweedle Dum.flac
+1836325f257c0d90727eb0fcb6e30792  bd2008-06-07t03 Love Minus Zero No Limit.flac
+f0d5aa911e4365ef0a22e85531d28631  bd2008-06-07t04 Rollin' And Tumblin'.flac
+f25edf965310b1ef3993085a469d7705  bd2008-06-07t05 The Lonesome Death of Hattie Carroll.flac
+88e141ffba4819909a3f7bdfdc10b2f1  bd2008-06-07t06 Lonesome Day Blues.flac
+1081b83646b5cd168103e886d87645d0  bd2008-06-07t07 Workingman's Blues #2.flac
+82d1d72a7acff1f029b35c4b55bf2d68  bd2008-06-07t08 Ballad of Hollis Brown.flac
+645c4bd6b2ad953d2f10545f5fd03ce2  bd2008-06-07t09 Honest with Me.flac
+1c29261cd5bd1c2151e5d07456b347e6  bd2008-06-07t10 Make You Feel My Love.flac
+e9710f40cf9773b9828fc1b0c8d0d703  bd2008-06-07t11 The Levee's Gonna Break.flac
+ef83c446f51e8d657d69bbface907376  bd2008-06-07t12 Beyond the Horizon.flac
+48b8bd38be60936b0ab4b1cce6302a66  bd2008-06-07t13 Highway 61 Revisited.flac
+584b53fb4b1d95c258f882e9b7198f20  bd2008-06-07t14 Ain't Talkin'.flac
+93af9d00b449625fa07714c44ea7c08c  bd2008-06-07t15 Summer Days.flac
+71d362f903dd5fb45f643c4e9e81e517  bd2008-06-07t16 I Shall Be Released.flac
+07dcc1ab0fdbb24708c8dd1d34282a4f  bd2008-06-07t17 Thunder on the Mountain.flac
+6e2e29d253fcd34cfb40f2f2fda159c1  bd2008-06-07t18 Like a Rolling Stone.flac
+0205e1b2faed84d837bed6318f3b71ac  pictures\bd2008-06-07_1.jpg
+a4d849953b5a645c56b8b0638ded32eb  pictures\bd2008-06-07_2.jpg
+5bf7dc85ea00eb94ff29ce4cf97622ea  pictures\bd2008-06-07_3.jpg
+b86e20692c5e6725df26905a40e953c8  pictures\bd2008-06-07_4.jpg
+b74e580983340521a7355a3bba4e4243  pictures\bd2008-06-07_5.jpg
+42c0538701c27241925cb5aaa4bb1740  pictures\bd2008-06-07_6.jpg
+8f6fb0b688f79ca6cc9e4f648acc236e  pictures\bd2008-06-07_7.jpg

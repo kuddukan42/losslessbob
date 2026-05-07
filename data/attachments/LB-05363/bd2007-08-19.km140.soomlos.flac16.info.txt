@@ -1,0 +1,64 @@
+Bob Dylan
+Rod Laver Arena
+Melbourne, Australia
+August 19, 2007
+ 
+Disc 1:
+01. introduction [00:47]
+02. Leopard-Skin Pill-Box Hat [05:20]  
+03. Don't Think Twice, It's All Right [06:11]  
+04. Watching The River Flow [04:55] 
+05. Just Like A Woman [07:19]  
+06. Rollin' And Tumblin' [06:33]  
+07. When The Deal Goes Down [06:23]  
+08. Highway 61 Revisited [06:04] 
+09. Blind Willie McTell [06:40]  
+10. My Back Pages [07:14] 
+11. Honest With Me [06:39]  
+12. Spirit On The Water [06:57]  
+Total time: [71:08]
+
+Disc 2:
+01. Stuck Inside Of Mobile With The Memphis Blues Again [07:58]
+02. Ain't Talkin' [08:24]  
+03. Summer Days [06:46]  
+04. I Believe In You [08:25]  
+    (encore) 
+05. Thunder On The Mountain [06:12]  
+06. band introduction [00:45]
+07. All Along The Watchtower [06:57]  
+Total time: [45:31]    
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+10th row center
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-08-19d1t01.flac:e59b4a277069cd0855eae9b6ee07112c
+bd2007-08-19d1t02.flac:5587c559a47a1d7b0cd16a4713ab6402
+bd2007-08-19d1t03.flac:9ca7e7a66de3359b88bb70abf29b0187
+bd2007-08-19d1t04.flac:369ded11b9f8d241c01f8a659ee4c37e
+bd2007-08-19d1t05.flac:3e8781029e9723461e2867d9c612b09a
+bd2007-08-19d1t06.flac:71c12a18056ce62e4ae96c953800b530
+bd2007-08-19d1t07.flac:9e313952719ceab3582921ad0ffa9e7d
+bd2007-08-19d1t08.flac:c415d3c1a78f62011d6d1796dc1c6ef5
+bd2007-08-19d1t09.flac:4101339cea4723dc8619fa7b8c883d61
+bd2007-08-19d1t10.flac:9aade340abde07403485c4be47bf7b98
+bd2007-08-19d1t11.flac:560df2822eec3641b54d90dd11b135bb
+bd2007-08-19d1t12.flac:3fe1cac8a85c77510761816cfaad1892
+bd2007-08-19d2t01.flac:70ec0b63f231823be7f63e4aa8323864
+bd2007-08-19d2t02.flac:beb3b385dd17e771b918bd11739a5b57
+bd2007-08-19d2t03.flac:a4c56104bfec761d59b99281bd4d807a
+bd2007-08-19d2t04.flac:e358ab51dff6f1723b6d3e1dc391e521
+bd2007-08-19d2t05.flac:e9acc67be22f11cec1ee0a3e846731de
+bd2007-08-19d2t06.flac:fb35555b86826b3cf112861018a614ca
+bd2007-08-19d2t07.flac:56e79524f588780a4b7018ee19be6e5b

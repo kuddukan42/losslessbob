@@ -1,0 +1,154 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-London-Bridges-v3.flacf 
+=================== 
+=================== 
+=================== 
+8665b48410978a9bae9ca5719c0da8f7  LONDON BRIDGES\London Bridges Summary.txt
+a0a8b8e29218acc8d7bd3d7f597fd56c  LONDON BRIDGES\London Bridges-CDback.jpg
+fa7a0b3047c115e7aa58b937e02c3a16  LONDON BRIDGES\London Bridges-CDfront.jpg
+3ec02c8069b321477586636f0e83cc48  LONDON BRIDGES\LONDON BRIDGES-DVD Notes.rtf
+1dd5bbc51fbf8557a81c445b9595ab50  LONDON BRIDGES\London Bridges-DVD.jpg
+5d8e813adec6b7ff6bfd80dac2ae1805  London Bridges CD Disk 1\London Bridges CD Disk 1.md5
+636854dc6e9e5b9a6c7a78aaf55f2347  London Bridges CD Disk 1\Track01.flac
+cd1944c2ca8a39e685f7f090c3ba6555  London Bridges CD Disk 1\Track02.flac
+40be1837d115d86f93d6d263a5ca2ddc  London Bridges CD Disk 1\Track03.flac
+b6999b54019132c0c1250cf933829549  London Bridges CD Disk 1\Track04.flac
+c822557726d6c5f6511f8b51523ee4fd  London Bridges CD Disk 1\Track05.flac
+89dbcc97fd29129022e6812eb7b280db  London Bridges CD Disk 1\Track06.flac
+0264bd53edac8304e059a87b4121d81a  London Bridges CD Disk 1\Track07.flac
+82f3775862978a63a7108fa71a2162ce  London Bridges CD Disk 1\Track08.flac
+1a23b04f0c8f409600d86f76cba4ce3f  London Bridges CD Disk 1\Track09.flac
+8768df9ab3d059bce005eaa55b71a139  London Bridges CD Disk 1\Track10.flac
+da83f05421713e679f55c04ffa3a1553  London Bridges CD Disk 1\Track11.flac
+6efae2cafc3258aee3da8f8581877ae9  London Bridges CD Disk 1\Track12.flac
+97ed5e86b42568430dbf94dda000c221  London Bridges CD Disk 1\Track13.flac
+312da3b58c9b6eec254b8e62965655a8  London Bridges CD Disk 1\Track14.flac
+addf252c17ef6d94e5ec55a12d072e49  London Bridges CD Disk 1\Track15.flac
+a52ca8ebd389372bff72d42e9fb1e29c  London Bridges CD Disk 2\London Bridges CD Disk 2.md5
+254f13cbf799bd6afd7f1d830d732481  London Bridges CD Disk 2\Track01.flac
+abf91df657afef74f4269987c4d00631  London Bridges CD Disk 2\Track02.flac
+442cbca75736b4ca4b0ce34d40df17d9  London Bridges CD Disk 2\Track03.flac
+f14f506914ede3c109af3a60be338095  London Bridges CD Disk 2\Track04.flac
+5450d62123120a6a901225dee3312173  London Bridges CD Disk 2\Track05.flac
+13b909311ec5b7fe4bb9f9c8e90cf54a  London Bridges CD Disk 2\Track06.flac
+0f4968656122e81c9567af2b43253fe3  London Bridges CD Disk 2\Track07.flac
+60a1084eef5336c4ae5754ac5f658ed7  London Bridges CD Disk 2\Track08.flac
+4458246ea43a59040429222219e471ad  London Bridges CD Disk 2\Track09.flac
+967bea979503188624d250ec34e0f3b1  London Bridges CD Disk 2\Track10.flac
+7541b699e362ccdb5263765dd9a141a5  London Bridges CD Disk 2\Track11.flac
+aa040ca0952fd46191ed8e7c1790cb6f  London Bridges CD Disk 2\Track12.flac
+134842f9cb3f5c12cf51c01ed40c4057  London Bridges CD Disk 2\Track13.flac
+4072c3feaa94fc45b49da9fd5c83c168  London Bridges CD Disk 2\Track14.flac
+79a490a897eebe281716c1eb11cd007b  London Bridges CD Disk 2\Track15.flac
+2cd6412e681368f3fe82191cb33f422d  London Bridges CD Disk 2\Track16.flac
+c9e2fd23d0a567d448bcf3a7864d565f  London Bridges CD Disk 2\Track17.flac
+45c58967f7ea15091251be9c52959bc0  London Bridges CD Disk 2\Track18.flac
+9a50502eced42b370804d37b4498540c  London Bridges CD Disk 2\Track19.flac
+fbf4ad16dd249882fd979badcd41b819  London Bridges CD Disk 2\Track20.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-London-Bridges-v3.flacf\London Bridges CD Disk 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:67a74c94b2faf5318d2ed13ca8dc02da
+Track02.flac:880caf03512f47a7c6bc22e8630923e3
+Track03.flac:2d8e0c484306440bcb4bea44b60e36ca
+Track04.flac:fd8271fb966038e394a79b989da4eec2
+Track05.flac:629d030541323923836c1cb0efe843b1
+Track06.flac:0ff3484dea1b0201588bc81f212566c5
+Track07.flac:85624a18dba061c034e4b4b2a83d98d8
+Track08.flac:6ec0eb8bcc869acef2d330ae6f1074a0
+Track09.flac:5256195dfca993fdd4c0587043faf68e
+Track10.flac:23a0562480644211c3fe5a70f3c74885
+Track11.flac:73383e1b471a29dbb327ab98c175fecc
+Track12.flac:296ffb804ef0c3e67096d2fd82706ef0
+Track13.flac:a6dfb2dcce4581872ece8072f7b226f5
+Track14.flac:960a28c632d94607f492cf4e00fa36bb
+Track15.flac:77f4c17d3eba95fae7ffe911fb06e909
+Track16.flac:b8e735b200d7130435eeb3170e91799f
+Track17.flac:05d6de533e51f7fd9e115818ccdcf495
+Track18.flac:3e0a66b7d0292a2dec6513f178227ea1
+Track19.flac:e51af386451d3b22fcdb6f796459a3f7
+Track20.flac:7550ba7a36d30991de04984fbb1c0e06
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-London-Bridges-v3.flacf\London Bridges CD Disk 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:bcdaef193764ce299e53e0ad8595ef6f
+Track02.flac:af002d03945c70de009a347878e4493b
+Track03.flac:c48c954e3cc2f0342bb2c51d459f7745
+Track04.flac:bc034b77b34de7fc25c71703126b46b6
+Track05.flac:c018fb2e3a9fd7969a9a03d483d6806d
+Track06.flac:16e91b41ab1b851a360830e0ee383a3a
+Track07.flac:ecf5fc3b82a3a9234faddec7f86bac2a
+Track08.flac:1584a34d3e0bf2919956c0a7e5e6b027
+Track09.flac:a35f4bdaddc5ba00d3709c1181f19bcd
+Track10.flac:23837deba4c6805dbfa8edc7f5bf4e9c
+Track11.flac:735157c6bb92993225f163768f745036
+Track12.flac:e13f7ed84744e2191481f40e77c2224e
+Track13.flac:5318d586e176f57e37d01025fd24bdde
+Track14.flac:f0bd6025ca95d5684e06971a08f724a5
+Track15.flac:26fa319c4d3c3dbfe4d3f7865889d1c6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-London-Bridges-v3.flacf\London Bridges CD Disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:02.64       11087372 B   ---   --   ---xx   flac  0.5496  Track01.flac
+     1:00.42       10682828 B   ---   --   ---xx   flac  0.5223  Track02.flac
+     4:20.30       45934604 B   ---   --   ---xx   flac  0.5061  Track03.flac
+     5:21.51       56744396 B   ---   --   ---xx   flac  0.5722  Track04.flac
+     3:01.70       32093084 B   ---   --   ---xx   flac  0.5648  Track05.flac
+     1:12.70       12865484 B   ---   --   ---xx   flac  0.4961  Track06.flac
+     8:00.54       84799052 B   ---   --   ---xx   flac  0.4657  Track07.flac
+     3:17.57       34884908 B   ---   --   ---xx   flac  0.5564  Track08.flac
+     3:50.61       40715516 B   ---   --   ---xx   flac  0.5405  Track09.flac
+     3:49.16       40433276 B   ---   --   ---xx   flac  0.5541  Track10.flac
+     6:16.05       66338204 B   ---   --   ---xx   flac  0.4665  Track11.flac
+     2:36.57       27652508 B   ---   --   ---xx   flac  0.6040  Track12.flac
+     4:46.03       50457500 B   ---   --   ---xx   flac  0.5408  Track13.flac
+     1:54.62       20255468 B   ---   --   ---xx   flac  0.5257  Track14.flac
+     2:39.31       28120556 B   ---   --   ---xx   flac  0.6195  Track15.flac
+     8:09.28       86325500 B   ---   --   ---xx   flac  0.5468  Track16.flac
+     3:39.33       38709260 B   ---   --   ---xx   flac  0.4988  Track17.flac
+     5:31.73       58560140 B   ---   --   ---xx   flac  0.5542  Track18.flac
+     0:59.48       10520540 B   ---   --   ---xx   flac  0.5172  Track19.flac
+     4:08.69       43909532 B   ---   --   ---xx   flac  0.5588  Track20.flac
+    75:41.24      801089728 B                            0.5332  (20 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-London-Bridges-v3.flacf\London Bridges CD Disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.56       35235356 B   ---   --   ---xx   flac  0.5522  Track01.flac
+     5:09.18       54549980 B   ---   --   ---xx   flac  0.5275  Track02.flac
+     7:12.47       76315388 B   ---   --   ---xx   flac  0.5236  Track03.flac
+     2:51.30       30235004 B   ---   --   ---xx   flac  0.5596  Track04.flac
+     8:22.15       88588124 B   ---   --   ---xx   flac  0.5228  Track05.flac
+     4:58.38       52656620 B   ---   --   ---xx   flac  0.5258  Track06.flac
+     6:28.04       68452652 B   ---   --   ---xx   flac  0.5501  Track07.flac
+     4:17.43       45435980 B   ---   --   ---xx   flac  0.6120  Track08.flac
+     3:47.69       40205132 B   ---   --   ---xx   flac  0.5762  Track09.flac
+     5:21.11       56650316 B   ---   --   ---xx   flac  0.5772  Track10.flac
+     4:10.10       44123564 B   ---   --   ---xx   flac  0.5637  Track11.flac
+     4:25.69       46908332 B   ---   --   ---xx   flac  0.5792  Track12.flac
+     6:50.28       72389900 B   ---   --   ---xx   flac  0.5624  Track13.flac
+     3:26.16       36376076 B   ---   --   ---xx   flac  0.5747  Track14.flac
+     6:36.57       69988508 B   ---   --   ---xx   flac  0.5534  Track15.flac
+    77:17.61      818110932 B                            0.5535  (15 files)
+=================== 
+=================== 
+=================== 

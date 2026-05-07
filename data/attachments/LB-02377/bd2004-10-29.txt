@@ -1,0 +1,53 @@
+Bob Dylan
+University Of Iowa
+Carver-Hawkeye Arena
+Iowa City, Iowa
+October 29, 2004
+
+Source: soomlos
+
+Disc 1:
+01. Intro [00:54]
+02. To Be Alone With You [04:18]
+03. Tonight I'll Be Staying Here With You [04:57]
+04. Tweedle Dee & Tweedle Dum [05:30]
+05. Mr. Tambourine Man [06:04]
+06. Cold Irons Bound [05:36]
+07. If Dogs Run Free [04:55]
+08. Stuck Inside Of Mobile With The Memphis Blues Again [07:05]
+09. Love Sick [05:25]
+10. Highway 61 Revisited [05:52]
+11. Make You Feel My Love [05:21]
+12. Watching The River Flow [06:04]
+Total time: [62:00]
+
+Disc 2:
+01. Honest With Me [06:55]
+02. Standing In The Doorway [07:35]
+03. Summer Days [11:15]
+04. Like A Rolling Stone [06:38]
+05. Band Intros & Joke [00:58]
+06. All Along The Watchtower [05:42]
+Total time: [39:02]
+
+bd2004-10-29d1.flac
+bd2004-10-29d1t01.flac:063d33c9317af6cac033dac82f024e29
+bd2004-10-29d1t02.flac:3dbb41427bcb552f0919a49a2c5e1d37
+bd2004-10-29d1t03.flac:8a3d43449b2c4a3e3ced0cbaa510cd25
+bd2004-10-29d1t04.flac:a6a6b012d9e725bcce8c7862927902d5
+bd2004-10-29d1t05.flac:0ce83ae35f4884f6f64ebd7b50e31c6c
+bd2004-10-29d1t06.flac:eb17d3bb0502018356f24cdb136fd182
+bd2004-10-29d1t07.flac:beaacbff46926dadb9b7b468431c876d
+bd2004-10-29d1t08.flac:898c93243a76d0eb3c0fde9c56703ef8
+bd2004-10-29d1t09.flac:b57529c1c217b3e4b09917ccb8f95f87
+bd2004-10-29d1t10.flac:ea2b3a75fba0fbcf773f016f1ad57dc0
+bd2004-10-29d1t11.flac:4b654f989441566bd63c03d9ed3d58d8
+bd2004-10-29d1t12.flac:b406f562880c2f4a0cdfdfa4e97131dd
+
+bd2004-10-29d2.flac
+bd2004-10-29d2t01.flac:d7c84f1e5fbfc5c63f99eff6608ea8ee
+bd2004-10-29d2t02.flac:e26fdc659a17b499e94d71ba2a1c075d
+bd2004-10-29d2t03.flac:856fb710f6027f6ee793270c26fa2e7c
+bd2004-10-29d2t04.flac:6236fd6cf1646c0347780da041ffdb7c
+bd2004-10-29d2t05.flac:1499c4a4def1ff3a8c8332f34c968fc9
+bd2004-10-29d2t06.flac:dc709513f0d6ddfa417c36ceee428f11

@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-07-10-csb.flacf 
+=================== 
+=================== 
+=================== 
+b14a276a072c3cac49fafcde80ec4d24  Bob Dylan 2009-07-10 Dayton, OhFFP.ffp
+1412abf522c948c13b2b0b9925ef53cb  Bob Dylan 2009-07-10 info.txt
+1de4e048f9bef164aa433767de2c29c8  Unknown Artist\Bob Dylan 2009-07-10 d1t01.flac
+3ac2f4ef8fe84a34a82c292497817b36  Unknown Artist\Bob Dylan 2009-07-10 d1t02.flac
+35ac6a40342dab021aaf0eaf218fbfce  Unknown Artist\Bob Dylan 2009-07-10 d1t03.flac
+a9f7e2c7d2ac9f75c6f3e547caff603e  Unknown Artist\Bob Dylan 2009-07-10 d1t04.flac
+75baf98cbc86c9c7edc218abab5c120f  Unknown Artist\Bob Dylan 2009-07-10 d1t05.flac
+3ae927608370b7e395a588cd24d7ae7a  Unknown Artist\Bob Dylan 2009-07-10 d1t06.flac
+d9f56bf452d8ac9161d11a8f2cab5b1c  Unknown Artist\Bob Dylan 2009-07-10 d1t07.flac
+cf1a7d44b27ad9236c6c18886e71d1fb  Unknown Artist\Bob Dylan 2009-07-10 d1t08.flac
+2ebc6c494e7edd92e85675707ab125a9  Unknown Artist\Bob Dylan 2009-07-10 d1t09.flac
+187afa30f5c6c1bf8c819f3bcb8c96f5  Unknown Artist\Bob Dylan 2009-07-10 d2t01.flac
+de6b3bf229ca1ffd50399f59934d3898  Unknown Artist\Bob Dylan 2009-07-10 d2t02.flac
+b59cfcdaedef4e160f1f94bf7370e5b1  Unknown Artist\Bob Dylan 2009-07-10 d2t03.flac
+a708f41bce1d46282cf5f3ce9ae5382d  Unknown Artist\Bob Dylan 2009-07-10 d2t04.flac
+35bd0f060fd78427eb1ecd1f643c50f6  Unknown Artist\Bob Dylan 2009-07-10 d2t05.flac
+4633b99c679d1b9eec3c265e416d0399  Unknown Artist\Bob Dylan 2009-07-10 d2t06.flac
+9ebc64138a5cfdbbea7fcd110f245019  Unknown Artist\Bob Dylan 2009-07-10 d2t07.flac
+3927a078ab89e5670a5ce59c5de2d16f  Unknown Artist\Bob Dylan 2009-07-10 d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-07-10-csb.flacf\Unknown Artist 
+=================== 
+=================== 
+=================== 
+Bob Dylan 2009-07-10 d1t01.flac:3109402c688075344633fb8d44bc91e7
+Bob Dylan 2009-07-10 d1t02.flac:dd9d0dbbd0668b52688190f63ecd0f12
+Bob Dylan 2009-07-10 d1t03.flac:2779abb4aaff233e04706684fed2124a
+Bob Dylan 2009-07-10 d1t04.flac:f6dcb2f19e85dab2cc62697e87173fa7
+Bob Dylan 2009-07-10 d1t05.flac:b161cfd623c150d68a3ac5b3fcc59b1d
+Bob Dylan 2009-07-10 d1t06.flac:04ff33d7e12bf9a0891af76eac91131c
+Bob Dylan 2009-07-10 d1t07.flac:1803f6eb9e9a216169549aca17492917
+Bob Dylan 2009-07-10 d1t08.flac:1d0ee92da15eaf971148dde024f7e581
+Bob Dylan 2009-07-10 d1t09.flac:289dbdf1839a16cecf4ef864abc055bc
+Bob Dylan 2009-07-10 d2t01.flac:b735a2c4609b2cca9a77d4adc9a673c2
+Bob Dylan 2009-07-10 d2t02.flac:743caeb4b738e921570601a25ed438a2
+Bob Dylan 2009-07-10 d2t03.flac:7b38af6da549570a9d249290de9faf92
+Bob Dylan 2009-07-10 d2t04.flac:bf2efbe6f5df43d01a8daad0bf1bdaa4
+Bob Dylan 2009-07-10 d2t05.flac:3a51de0d206d0ad4b32ed7c326090d89
+Bob Dylan 2009-07-10 d2t06.flac:ab1435ba75bb2f87401cb7e4257e8dae
+Bob Dylan 2009-07-10 d2t07.flac:0962a0f1bc724815a0c6956fc21da454
+Bob Dylan 2009-07-10 d2t08.flac:ec28216b11932ad4720394cea3102ee0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-07-10-csb.flacf\Unknown Artist 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:31.00       16052444 B   ---   --   ---xx   flac  0.4412  Bob Dylan 2009-07-10 d1t01.flac
+     3:31.68       37380380 B   ---   --   ---xx   flac  0.4431  Bob Dylan 2009-07-10 d1t02.flac
+     5:09.13       54538220 B   ---   --   ---xx   flac  0.4553  Bob Dylan 2009-07-10 d1t03.flac
+     7:44.71       82016636 B   ---   --   ---xx   flac  0.4807  Bob Dylan 2009-07-10 d1t04.flac
+     5:54.17       62485628 B   ---   --   ---xx   flac  0.4636  Bob Dylan 2009-07-10 d1t05.flac
+     7:16.19       76955132 B   ---   --   ---xx   flac  0.4924  Bob Dylan 2009-07-10 d1t06.flac
+     5:56.27       62861948 B   ---   --   ---xx   flac  0.4060  Bob Dylan 2009-07-10 d1t07.flac
+     6:54.56       73161356 B   ---   --   ---xx   flac  0.5141  Bob Dylan 2009-07-10 d1t08.flac
+     5:14.03       55396700 B   ---   --   ---xx   flac  0.4566  Bob Dylan 2009-07-10 d1t09.flac
+     7:34.55       80215004 B   ---   --   ---xx   flac  0.5165  Bob Dylan 2009-07-10 d2t01.flac
+     6:10.05       65279804 B   ---   --   ---xx   flac  0.4851  Bob Dylan 2009-07-10 d2t02.flac
+     7:38.06       80805356 B   ---   --   ---xx   flac  0.5083  Bob Dylan 2009-07-10 d2t03.flac
+     6:30.37       68883068 B   ---   --   ---xx   flac  0.5206  Bob Dylan 2009-07-10 d2t04.flac
+     3:42.03       39167900 B   ---   --   ---xx   flac  0.4370  Bob Dylan 2009-07-10 d2t05.flac
+     4:42.48       49857740 B   ---   --   ---xx   flac  0.4986  Bob Dylan 2009-07-10 d2t06.flac
+     0:34.43        6098780 B   ---   --   ---xx   flac  0.4779  Bob Dylan 2009-07-10 d2t07.flac
+     5:44.23       60735740 B   ---   --   ---xx   flac  0.5184  Bob Dylan 2009-07-10 d2t08.flac
+    91:49.44      971891836 B                            0.4832  (17 files)
+=================== 
+=================== 
+=================== 

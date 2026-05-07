@@ -1,0 +1,64 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-07-24-sbd 
+=================== 
+=================== 
+=================== 
+7480a1515d84dc593ce262df4f21cbf7  bd86-07-24ps.txt
+606fbee4df218be70adf3b2721f12d83  bd86-07-24psbd.md5
+5598b722e689c15d8e7ce2db53cac92d  bd86-07-24psbdt01.shn
+1d9df115d91f9fe429e816dcbec04f43  bd86-07-24psbdt02.shn
+aa78df80a969e9ddbe5971fd9bd65e31  bd86-07-24psbdt03.shn
+fad2f7e9000089f80f1ca5205c9113b7  bd86-07-24psbdt04.shn
+4e49a2834d30b170c2c7d31db8615e92  bd86-07-24psbdt05.shn
+f1685f1c9b7dcf6dd6474a599ec65917  bd86-07-24psbdt06.shn
+672b4ba95f0c2556816338f8c9737410  bd86-07-24psbdt07.shn
+7ede5eb1c6d6fc8ce94fb9f0fe57b7d9  bd86-07-24psbdt08.shn
+89c7f0c01cf9012054a9e8ecb39d3c1e  bd86-07-24psbdt09.shn
+f767f0f39b930e865a9ffd507c3cd4a5  bd86-07-24psbdt10.shn
+191447608f820382121bdee7b8d7810b  bd86-07-24psbdt11.shn
+a800321632ab14ba39207d4376a6c82a  bd86-07-24psbdt12.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-07-24-sbd 
+=================== 
+=================== 
+=================== 
+70acde5561acfa2dffbb51d344846b7e  [shntool]  bd86-07-24psbdt01.wav
+68dfe071ef8e7f43ff0fa8d90444e673  [shntool]  bd86-07-24psbdt02.wav
+3c4e70ff883a97b9cfb0a5d0522814fa  [shntool]  bd86-07-24psbdt03.wav
+07c6427c1be1da046fce212f7dd66622  [shntool]  bd86-07-24psbdt04.wav
+a698651bc44b0c518f1817a1a6af1046  [shntool]  bd86-07-24psbdt05.wav
+af269a10e4690085152dec8b9373b20b  [shntool]  bd86-07-24psbdt06.wav
+e4cf9e5ec2632cb8cccdfaf95b55a274  [shntool]  bd86-07-24psbdt07.wav
+2c20cbe07a9fc4559fac869fc339fd4f  [shntool]  bd86-07-24psbdt08.wav
+3966d80fddf0a98376368569d3f4cad7  [shntool]  bd86-07-24psbdt09.wav
+616951d3d537316ab8190368474a7aaf  [shntool]  bd86-07-24psbdt10.wav
+0617a39ee18d700d3412f59d4627d0a3  [shntool]  bd86-07-24psbdt11.wav
+dab47d2fd8bf787e75205e4bf4ac49c4  [shntool]  bd86-07-24psbdt12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-24-sbd 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:11.31       65517356 B   ---   --   ---xx    shn  0.6729  bd86-07-24psbdt01.shn
+     5:13.54       55340252 B   ---   --   ---xx    shn  0.6898  bd86-07-24psbdt02.shn
+     4:14.62       44951468 B   ---   --   ---xx    shn  0.6655  bd86-07-24psbdt03.shn
+     5:10.69       54846332 B   ---   --   ---xx    shn  0.6724  bd86-07-24psbdt04.shn
+     6:01.15       63715724 B   ---   --   ---xx    shn  0.6460  bd86-07-24psbdt05.shn
+     5:55.32       62697308 B   ---   --   ---xx    shn  0.6952  bd86-07-24psbdt06.shn
+     5:15.39       55657772 B   ---   --   ---xx    shn  0.6445  bd86-07-24psbdt07.shn
+     7:41.14       81353372 B   ---   --   ---xx    shn  0.6685  bd86-07-24psbdt08.shn
+     6:52.36       72761516 B   ---   --   ---xx    shn  0.6983  bd86-07-24psbdt09.shn
+     5:05.30       53872604 B   ---   --   ---xx    shn  0.6531  bd86-07-24psbdt10.shn
+     4:20.63       46012220 B   ---   --   ---xx    shn  0.6728  bd86-07-24psbdt11.shn
+     6:55.21       73255436 B   ---   --   ---xx    shn  0.6824  bd86-07-24psbdt12.shn
+    68:58.16      729981360 B                            0.6726  (12 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd98-01-23-a.flacf
+===================
+===================
+===================
+7933f9969d1d733241e4041591054937 *BD 01-23-1998 Boston.md5
+e92bcb571282e571ddb0f6c6640706b6 *bd01231998.txt
+885fc995b2394005d8ae313725124646 *d1\01 Track01.flac
+e298f13a71ecf5ae46f1937bfd628c93 *d1\02 Track02.flac
+0310c7de229762539b3114ba166121b4 *d1\03 Track03.flac
+65db6adb10a169f058732fcaa5eb4d7c *d1\04 Track04.flac
+00031743c527dbcd3fb15520730ca417 *d1\05 Track05.flac
+d7748b71cc57f612b418b457afa8880e *d1\06 Track06.flac
+f1ed1ca9b7c48b89ffc2e060ae65b668 *d1\07 Track07.flac
+650572729f06fb53982237ced475ae39 *d1\08 Track08.flac
+a2e5a4204c273b6b4fd4c0402089dab8 *d2\01 Track01.flac
+85b77f45070ed8ff31a60f14e35401e2 *d2\02 Track02.flac
+e5153b668615fbb3c827cd86a133e814 *d2\03 Track03.flac
+c66735c7bee6752c9a5197993238de98 *d2\04 Track04.flac
+faee3a73d27cb37f1e48d6d86d80490e *d2\05 Track05.flac
+d45aa461b89f8d62104ba8f083059e3f *d2\06 Track06.flac
+1c25118e50fe5129243c88e1e7e86379 *d2\07 Track07.flac
+===================
+===================
+===================
+=== ffp for: bd98-01-23-a.flacf
+===================
+===================
+===================
+d1\01 Track01.flac:7b0bc72fcfd886cd240cab122a3bd9f7
+d1\02 Track02.flac:8d53fb362dc55a4485d4cd8925d57387
+d1\03 Track03.flac:3c807f64665bda2988dc0ed3e01e29c2
+d1\04 Track04.flac:0feab8332fe91354ac0efddd38f3f016
+d1\05 Track05.flac:378ba326af7eeaaa82d60f0ba2af7dee
+d1\06 Track06.flac:5d7ba6dd0c4aa3870cdc1f1ed8d00ac5
+d1\07 Track07.flac:7ad413aa158edb07b25359a81c576d12
+d1\08 Track08.flac:83ad7b004ff293eeaaf535a246232573
+d2\01 Track01.flac:238b04a82b7af042201324e0f57d11b3
+d2\02 Track02.flac:fce46049356261bc1caf2dd11963531e
+d2\03 Track03.flac:1ae030adfe45c25fd10d1bb044be0653
+d2\04 Track04.flac:f044425680c3126798a25cb6b5df25b8
+d2\05 Track05.flac:84a9c450619c680aad1e2f4554dd7489
+d2\06 Track06.flac:6e50028115886b238767984861bb7b40
+d2\07 Track07.flac:b2d9deb0d1e7bdfaacb097232f127762
+===================
+===================
+===================
+=== shntool len for: bd98-01-23-a.flacf\d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.29       42404252 B   ---   --   ---xx   flac  0.5351  01 Track01.flac
+     4:37.49       48978092 B   ---   --   ---xx   flac  0.4951  02 Track02.flac
+     6:28.65       68596124 B   ---   --   ---xx   flac  0.5359  03 Track03.flac
+     7:09.67       75833228 B   ---   --   ---xx   flac  0.4937  04 Track04.flac
+     7:02.61       74584316 B   ---   --   ---xx   flac  0.5616  05 Track05.flac
+     9:33.49      101192492 B   ---   --   ---xx   flac  0.4936  06 Track06.flac
+     5:54.09       62466812 B   ---   --   ---xx   flac  0.4641  07 Track07.flac
+     7:25.33       78575660 B   ---   --   ---xx   flac  0.5567  08 Track08.flac
+    52:12.62      552630976 B                            0.5170  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd98-01-23-a.flacf\d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:07.14       64771772 B   ---   --   ---xx   flac  0.5268  01 Track01.flac
+     6:37.67       70188428 B   ---   --   ---xx   flac  0.5583  02 Track02.flac
+     7:04.26       74854796 B   ---   --   ---xx   flac  0.5387  03 Track03.flac
+     7:33.46       80017436 B   ---   --   ---xx   flac  0.5423  04 Track04.flac
+     6:21.49       67323692 B   ---   --   ---xx   flac  0.4994  05 Track05.flac
+     8:03.32       85276508 B   ---   --   ---xx   flac  0.5110  06 Track06.flac
+     2:35.39       27433772 B   ---   --   ---xx   flac  0.5940  07 Track07.flac
+    44:23.48      469866404 B                            0.5332  (7 files)
+===================
+===================
+===================

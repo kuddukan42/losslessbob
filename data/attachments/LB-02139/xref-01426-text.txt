@@ -1,0 +1,138 @@
+===================
+===================
+===================
+=== Bob Dylan 13 Nov 2003 - Paris Cedar 2mdrm.md5
+===================
+===================
+===================
+16ec284e9eb08f9bec8e45e21305442d *Part_One\flac.txt
+5a15e05f92b8243c36e5b2902382c2e1 *Part_One\Track  1.flac
+5c6d1b5179f07d6743d2469aac575b76 *Part_One\Track  2.flac
+ab6db685508574cb57794a150e5ae301 *Part_One\Track  3.flac
+c7ac430ea4c5804f4eabd731743de4c9 *Part_One\Track  4.flac
+6059a30dfeb246433945b72617f95289 *Part_One\Track  5.flac
+75fb607f82c423e2aead4a65aa86960e *Part_One\Track  6.flac
+120b82778db5220b9fa639f85ae3ddef *Part_One\Track  7.flac
+bc70470b6121dcc8939ab0ea508dab26 *Part_One\Track  8.flac
+78d5f1d08c85a99ab9b64b97597e6add *Part_One\Track  9.flac
+fd38f826086cdfd8ae09f967d3f89330 *Part_One\Track 10.flac
+dea4aef88d512e33f3c1e44984397e05 *Part_One\Track 11.flac
+4ff21839ec576df315092a1b788705a0 *Part_Two\flac.txt
+31ce543195bedd0d27617f10c0108478 *Part_Two\Track  1.flac
+02465c83d97a96b25429b9758986961f *Part_Two\Track  2.flac
+445304e20487b6e79ac4400839fb7ec6 *Part_Two\Track  3.flac
+ee6387baaf1a0a067ac8317046e8564c *Part_Two\Track  4.flac
+ca595736b2a495634a8996153c21a9ea *Part_Two\Track  5.flac
+431b0bcde5112c4cb8a973578f728023 *Part_Two\Track  6.flac
+bde9b919d91183237b415c4bdb2696eb *Part_Two\Track  7.flac
+4924e25cb3f5d9fea218fbce6c9d4d69 *Part_Two\Track  8.flac
+96a4260c7ccf01fa3983ceb7e848d996 *set_info.txt
+===================
+===================
+===================
+=== set_info.txt
+===================
+===================
+===================
+This is not the Cedar 4 Remaster but in fact a remaster I did of Cedar 2 and though many say 
+the remaster of Cedar 4 is the one to get I swear this is by far superior. I just compared
+them again and yes this one has a warmer fuller sound plus the crowd on this recording
+is less intrusive. I know many will dispute me still I just wanted to share this because 
+before those three fateful London's there was this Paris which is quite possibly the show of 
+this entire beatific tour! Ya I know he did Jokerman and Romance In Durango and so many other 
+rarely played songs at the three legendary London shows and all I am saying is before that he 
+did this exquisite and majestic performance in the City of Light!!! The whole thing astounds me 
+but Senor (listen to that harp toward the end) and Visions well it doesn't get much better 
+than this. ENJOY! ---  Charlespoet
+
+Bob Dylan
+Paris, France
+Le Znith
+November 13, 2003
+
+Taper: Unknown (Cedar Two)
+Source: Unknown generation audio disks > (Audio Catalyst) wav > (flacfrontend) flac8. 
+
+I remastered this with the program T-Racks. 
+Remastered for Bob. 
+
+Disc One: 
+
+1. Maggie's Farm (Bob on piano) 
+2. Seor (Tales Of Yankee Power) (Bob on piano and harp) 
+3. Tweedle Dee & Tweedle Dum (Bob on piano) 
+4. Visions Of Johanna 
+   (Bob on piano, Larry on acoustic guitar, Freddy on electric guitar, Tony on electric bass) 
+5. It's Alright, Ma (I'm Only Bleeding) 
+   (Bob on piano, Larry on cittern, Freddy on electric guitar, Tony on electric bass) 
+6. Boots Of Spanish Leather (acoustic)
+   (Bob on piano and harp, Larry on cittern, Freddy on electric guitar) 
+7. Things Have Changed (Bob on piano) 
+8. Highway 61 Revisited (Bob on piano, Freddy on slide guitar) 
+(20 minute break) 
+9. Down Along The Cove (Bob on piano) 
+10. Mr. Tambourine Man (acoustic)
+    (Bob on piano and harp, Larry on acoustic guitar, Freddy on electric guitar) 
+11. Cold Irons Bound (Bob on piano) 
+
+Disc Two:
+
+1. Most Likely You Go Your Way (And I'll Go Mine) (Bob on piano and harp) 
+2. The Lonesome Death Of Hattie Carroll (acoustic)
+   (Bob on piano, Larry on acoustic guitar, Freddy on electric guitar, Tony on standup bass) 
+3. Honest With Me (Bob on piano, Larry on slide guitar) 
+4. Every Grain Of Sand (Bob on piano and harp) 
+5. Summer Days (Bob on piano, Tony on standup bass) 
+(encore) 
+6. Cat's In The Well (Bob on piano) 
+7. Like A Rolling Stone (Bob on piano) 
+8. All Along The Watchtower (Bob on piano and harp) 
+
+Band Members
+Bob Dylan - piano, harp
+Larry Campbell - guitar, slide guitar, cittern
+Freddy Koella - guitar, slide guitar
+Tony Garnier - bass
+George Recile - drums 
+
+Thank you Bill Pagel!
+Enjoy!
+Charlespoet
+
+
+===================
+===================
+===================
+=== flac.txt
+===================
+===================
+===================
+Track  1.flac:886fa6ed29f7c2ade4bc6aafc97af30a
+Track  2.flac:a885d13c07cd57e6148536551a4064a8
+Track  3.flac:d409d7c62e795a79eb09e10d7dedc35c
+Track  4.flac:ed52ed16538cd080d302c7ec6a2b6ffa
+Track  5.flac:2875b48de5723fe6bdfdf37ccfd75feb
+Track  6.flac:6b77bc67cfa2f490318878b6c662af41
+Track  7.flac:831ff282365290e0bbc837168a44515f
+Track  8.flac:26641dab72a7d87631a824e8b5c29ff6
+Track  9.flac:b0d284db23fe71ca5cca0998ee3bc438
+Track 10.flac:040d497d9e2fa8ed53e0850ab84c2805
+Track 11.flac:331be817ec2b8a8992426dc50b0ffdde
+===================
+===================
+===================
+=== flac.txt
+===================
+===================
+===================
+Track  1.flac:c61001ddd3c4d8f2643a66c8279a5368
+Track  2.flac:bb2fab60a58c7855284d3787bb5b91f0
+Track  3.flac:a493bf853c6355c9c465a617547678f4
+Track  4.flac:26944684ea7b6e01661250610faaff90
+Track  5.flac:3eac7f7ff012d2c46ea6fbe7ce2ddeaf
+Track  6.flac:0a955bc031abd4434eedbf0901b18336
+Track  7.flac:e27c0ee14cdb08e1231bcc1767004081
+Track  8.flac:8ceff0803f5b6361fb312f88508069b5
+===================
+===================
+===================

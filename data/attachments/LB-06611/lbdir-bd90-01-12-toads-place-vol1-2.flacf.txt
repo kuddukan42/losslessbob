@@ -1,0 +1,177 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-01-12-toads-place-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+d469c79d138589d05b3b213cd97c1e7e  bd90-01-12-toads-place-vol1-2.flacf.md5
+a373887bfc33938d0b356283d6991596  bd90-01-12-toads-place-vol1-d1t01.flac
+626bb50e7e24e04eab448cd2236fae25  bd90-01-12-toads-place-vol1-d1t02.flac
+7c948fb98976119499f54caca18b9318  bd90-01-12-toads-place-vol1-d1t03.flac
+0ca38e31b9dcd453a315d6e7068d7e79  bd90-01-12-toads-place-vol1-d1t04.flac
+014c458f5ec710b7c2aca7d22ba754df  bd90-01-12-toads-place-vol1-d1t05.flac
+7a85565ce32c4154caf4e36e77a7e9af  bd90-01-12-toads-place-vol1-d1t06.flac
+0450c1a29090d47533f1766076ef3a34  bd90-01-12-toads-place-vol1-d1t07.flac
+0cb643e4d8bae1369320444ca0b8015f  bd90-01-12-toads-place-vol1-d1t08.flac
+05ee5aa928557ac74ce9e72c9fe8ed1e  bd90-01-12-toads-place-vol1-d1t09.flac
+8e759ae5b98c5c2e6162e3416bc33517  bd90-01-12-toads-place-vol1-d1t10.flac
+c046fd57c5c99a6320a53ee99249f967  bd90-01-12-toads-place-vol1-d1t11.flac
+1ea558c858805687cd9f79156c553d37  bd90-01-12-toads-place-vol1-d1t12.flac
+33bdf37044518095e0c94cea9c2bf3ea  bd90-01-12-toads-place-vol1-d1t13.flac
+f73e119e97099f98fa6e809bd2299771  bd90-01-12-toads-place-vol1-d1t14.flac
+82639095a36f10acbd9fab987af78a93  bd90-01-12-toads-place-vol1-d2t01.flac
+7e6c1370cb8dddb090cb22669ee289c5  bd90-01-12-toads-place-vol1-d2t02.flac
+f717e8ce417a043ad99c0258b6205a02  bd90-01-12-toads-place-vol1-d2t03.flac
+df09fb869c0661cbaba21368f1bea7e7  bd90-01-12-toads-place-vol1-d2t04.flac
+402c2286d5dc963b30acbbee5b614344  bd90-01-12-toads-place-vol1-d2t05.flac
+155d1a8d4ccf7a1d44a814453e630741  bd90-01-12-toads-place-vol1-d2t06.flac
+51e8e6319a484cda0e3504ce6a9c4ee4  bd90-01-12-toads-place-vol1-d2t07.flac
+55a230f02a2c88e71cb1efc6a3c4b831  bd90-01-12-toads-place-vol1-d2t08.flac
+ddbedf03e8b1095b421a1ccaa6e34053  bd90-01-12-toads-place-vol1-d2t09.flac
+7a4de7546b06ffc79e5f9aa41aea2143  bd90-01-12-toads-place-vol1-d2t10.flac
+ba7392f46e29f8592cc32fe75525aed1  bd90-01-12-toads-place-vol1-d2t11.flac
+1f4995742f156e5cd1147cb05ec28cc5  bd90-01-12-toads-place-vol1-d2t12.flac
+91a646569c53c09793a98628ecadbe5e  bd90-01-12-toads-place-vol1-d2t13.flac
+8145bbc979a1e64ebe223fb213d346ce  bd90-01-12-toads-place-vol1-d2t14.flac
+7117752ab38a6eb0eb2939529eddbf11  bd90-01-12-toads-place-vol2-d1t01.flac
+4ed641889819a9d55ea3fcfec0d667aa  bd90-01-12-toads-place-vol2-d1t02.flac
+5a1ca39d37896629c0dd3eae9f38502a  bd90-01-12-toads-place-vol2-d1t03.flac
+2d12dbd21ae332e0e12f045c53a41918  bd90-01-12-toads-place-vol2-d1t04.flac
+cf6f70a485d371d9087634d8a1cc5870  bd90-01-12-toads-place-vol2-d1t05.flac
+35fef9b28bc2078475d452ca8968559f  bd90-01-12-toads-place-vol2-d1t06.flac
+c3709036f301881c48700b3204ac9baf  bd90-01-12-toads-place-vol2-d1t07.flac
+cf6ac5e2af70763a08a101124afa93a5  bd90-01-12-toads-place-vol2-d1t08.flac
+4cfe7e32b9d38b6de6b45c1832bc10fb  bd90-01-12-toads-place-vol2-d1t09.flac
+cc48b69282e52d60c64182569ebe5bb7  bd90-01-12-toads-place-vol2-d1t10.flac
+ac6d5f766fb4f5711734e9730f157299  bd90-01-12-toads-place-vol2-d1t11.flac
+9457576ccc2a3a000625d8524855c823  bd90-01-12-toads-place-vol2-d1t12.flac
+4224a295905213212a1b005db9894a4a  bd90-01-12-toads-place-vol2-d1t13.flac
+389c915b7134db3e7c03c43920b92cab  bd90-01-12-toads-place-vol2-d2t01.flac
+608afe3ccdc296fe3269517daf026881  bd90-01-12-toads-place-vol2-d2t02.flac
+6c6c53b3c50c93967f61a8c5090ac0fc  bd90-01-12-toads-place-vol2-d2t03.flac
+0b18b5b888a15cc18f303ae062daa8ec  bd90-01-12-toads-place-vol2-d2t04.flac
+2b7f8b95a4c0a0f286bda612a5e7d5eb  bd90-01-12-toads-place-vol2-d2t05.flac
+bab588db1e52df5285492dae8d397d70  bd90-01-12-toads-place-vol2-d2t06.flac
+fdc303423b3a3a00fdcefb21667f6621  bd90-01-12-toads-place-vol2-d2t07.flac
+29e3383ee47c458cc26665232c735bd7  bd90-01-12-toads-place-vol2-d2t08.flac
+753cd3b92104b933ebdea7007fd8d4af  bd90-01-12-toads-place-vol2-d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-12-toads-place-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+bd90-01-12-toads-place-vol1-d1t01.flac:7d638c346e6ecb94d95a032cb0651c2a
+bd90-01-12-toads-place-vol1-d1t02.flac:04123ca59248e0a477be2d23e9f4f4e2
+bd90-01-12-toads-place-vol1-d1t03.flac:a87ed66e1f64404b3ef8ab2149d240c2
+bd90-01-12-toads-place-vol1-d1t04.flac:03cc3e8c9ff488d27bd74268724982da
+bd90-01-12-toads-place-vol1-d1t05.flac:1768ad95cb51fb30abcbdd6598039bc9
+bd90-01-12-toads-place-vol1-d1t06.flac:d09f0fafc264fdc96414a8c7f9206cc3
+bd90-01-12-toads-place-vol1-d1t07.flac:b45954f5f81699f1f89f9dcb8b52adca
+bd90-01-12-toads-place-vol1-d1t08.flac:47b5116a0f01fda4c5239b915f39006b
+bd90-01-12-toads-place-vol1-d1t09.flac:84707e803eadf892193fe5c0abae6a54
+bd90-01-12-toads-place-vol1-d1t10.flac:a5263bb38f237d0f3a09006e15c8258f
+bd90-01-12-toads-place-vol1-d1t11.flac:c7677a7a4a3099fd0240859e6e146235
+bd90-01-12-toads-place-vol1-d1t12.flac:12d8805fbc5973f6ee6efd1709a3bcac
+bd90-01-12-toads-place-vol1-d1t13.flac:11c0ec05ed5c5443b45d4417e1c2bdf0
+bd90-01-12-toads-place-vol1-d1t14.flac:ba55773b193ddb1a7c68334a87e0e3de
+bd90-01-12-toads-place-vol1-d2t01.flac:af5a19e11e3f6758523800cf2cf6aa01
+bd90-01-12-toads-place-vol1-d2t02.flac:333125c0f4b8210cfb4457bdb1639bac
+bd90-01-12-toads-place-vol1-d2t03.flac:17b7f8422cec2aabdea4e41357d48301
+bd90-01-12-toads-place-vol1-d2t04.flac:0aef9814829b8f0ad1b12064c629a377
+bd90-01-12-toads-place-vol1-d2t05.flac:233fc9ea0df78fe7afe27687454e5e00
+bd90-01-12-toads-place-vol1-d2t06.flac:672e0ced88d23c55db78804c72b86250
+bd90-01-12-toads-place-vol1-d2t07.flac:e38a92d0d73106ecf671a6048338a3ea
+bd90-01-12-toads-place-vol1-d2t08.flac:42e246cf4d9c16bdda69b195ee9871d7
+bd90-01-12-toads-place-vol1-d2t09.flac:0c6d25109c3bc9163e312b01705da9db
+bd90-01-12-toads-place-vol1-d2t10.flac:5f38ff26764149a0585d42ef0082ff65
+bd90-01-12-toads-place-vol1-d2t11.flac:a36565e2a0979a1f575e59a5583260a0
+bd90-01-12-toads-place-vol1-d2t12.flac:e584da66f153e2cc37bd91a1e200daf6
+bd90-01-12-toads-place-vol1-d2t13.flac:3b2f665e276d2134cd3ba208d9afa144
+bd90-01-12-toads-place-vol1-d2t14.flac:90eff8e9e7465d649c5c50b1b793d84c
+bd90-01-12-toads-place-vol2-d1t01.flac:c6bcb3486d411258df59e31d2ed3e24d
+bd90-01-12-toads-place-vol2-d1t02.flac:eb448edbccc46afdaf34b1d611d492f3
+bd90-01-12-toads-place-vol2-d1t03.flac:d5640264f53c23597bf819c0ea29f356
+bd90-01-12-toads-place-vol2-d1t04.flac:8c39ae61775800eda6fc9b4e9cdd047b
+bd90-01-12-toads-place-vol2-d1t05.flac:cfc664377a6bb8cd6a8f90dd5e1be37f
+bd90-01-12-toads-place-vol2-d1t06.flac:1ceb00c4ac09514095ed93f2aab095c7
+bd90-01-12-toads-place-vol2-d1t07.flac:793270bce554e50b88573df92b77f5de
+bd90-01-12-toads-place-vol2-d1t08.flac:bf1d8c69820d4901e4277aa39f8d84b6
+bd90-01-12-toads-place-vol2-d1t09.flac:af220fed9a31c4d3babe689bc61e7c5e
+bd90-01-12-toads-place-vol2-d1t10.flac:3a36504d27c627e5509c84a69ca87c02
+bd90-01-12-toads-place-vol2-d1t11.flac:76d2fdbc5314de1d599a40408bdb9de1
+bd90-01-12-toads-place-vol2-d1t12.flac:2ca897c06c6fa608c42be9d38739f3d2
+bd90-01-12-toads-place-vol2-d1t13.flac:6bad6316523a0bfcb96d52afd3341cf2
+bd90-01-12-toads-place-vol2-d2t01.flac:dbe212338f7fcecc875975221995416d
+bd90-01-12-toads-place-vol2-d2t02.flac:0cb6091e16b57b0ff5cbba6466fb1423
+bd90-01-12-toads-place-vol2-d2t03.flac:cde20d7dbbbae042f761d56a548081b8
+bd90-01-12-toads-place-vol2-d2t04.flac:e6aaa571d7e87dd700140baeabe46057
+bd90-01-12-toads-place-vol2-d2t05.flac:1659324a9a8a9668da22db14f359b6c8
+bd90-01-12-toads-place-vol2-d2t06.flac:f33bb65cc1d832f46cd3a74f2638a6d2
+bd90-01-12-toads-place-vol2-d2t07.flac:c336a9c6b5fa55a6bef7055230058fd5
+bd90-01-12-toads-place-vol2-d2t08.flac:962b012a1544ecc644f6b5305ffb4671
+bd90-01-12-toads-place-vol2-d2t09.flac:68c295f71a33c54eae444042b356fd28
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-12-toads-place-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:04.52       64331948 B   ---   --   ---xx   flac  0.6770  bd90-01-12-toads-place-vol1-d1t01.flac
+     5:18.03       56102300 B   ---   --   ---xx   flac  0.6902  bd90-01-12-toads-place-vol1-d1t02.flac
+     6:11.22       65496188 B   ---   --   ---xx   flac  0.6759  bd90-01-12-toads-place-vol1-d1t03.flac
+     4:09.48       44036540 B   ---   --   ---xx   flac  0.6827  bd90-01-12-toads-place-vol1-d1t04.flac
+     4:57.27       52454348 B   ---   --   ---xx   flac  0.6630  bd90-01-12-toads-place-vol1-d1t05.flac
+     7:14.48       76670540 B   ---   --   ---xx   flac  0.6875  bd90-01-12-toads-place-vol1-d1t06.flac
+     3:27.42       36613628 B   ---   --   ---xx   flac  0.6496  bd90-01-12-toads-place-vol1-d1t07.flac
+     4:19.00       45687644 B   ---   --   ---xx   flac  0.6554  bd90-01-12-toads-place-vol1-d1t08.flac
+     5:12.23       55090940 B   ---   --   ---xx   flac  0.6542  bd90-01-12-toads-place-vol1-d1t09.flac
+     4:22.22       46268588 B   ---   --   ---xx   flac  0.6409  bd90-01-12-toads-place-vol1-d1t10.flac
+     3:27.23       36568940 B   ---   --   ---xx   flac  0.6239  bd90-01-12-toads-place-vol1-d1t11.flac
+     4:00.10       42359564 B   ---   --   ---xx   flac  0.7129  bd90-01-12-toads-place-vol1-d1t12.flac
+     5:00.60       53061164 B   ---   --   ---xx   flac  0.7077  bd90-01-12-toads-place-vol1-d1t13.flac
+     3:58.25       42042044 B   ---   --   ---xx   flac  0.6731  bd90-01-12-toads-place-vol1-d1t14.flac
+     5:19.55       56401004 B   ---   --   ---xx   flac  0.6421  bd90-01-12-toads-place-vol1-d2t01.flac
+     5:08.05       54343004 B   ---   --   ---xx   flac  0.6450  bd90-01-12-toads-place-vol1-d2t02.flac
+     4:40.72       49561388 B   ---   --   ---xx   flac  0.6967  bd90-01-12-toads-place-vol1-d2t03.flac
+     4:26.15       46957724 B   ---   --   ---xx   flac  0.6099  bd90-01-12-toads-place-vol1-d2t04.flac
+     3:09.50       33457244 B   ---   --   ---xx   flac  0.6962  bd90-01-12-toads-place-vol1-d2t05.flac
+     4:04.73       43213340 B   ---   --   ---xx   flac  0.6972  bd90-01-12-toads-place-vol1-d2t06.flac
+     4:35.45       48615884 B   ---   --   ---xx   flac  0.6643  bd90-01-12-toads-place-vol1-d2t07.flac
+     6:12.60       65761964 B   ---   --   ---xx   flac  0.7012  bd90-01-12-toads-place-vol1-d2t08.flac
+     7:12.05       76216604 B   ---   --   ---xx   flac  0.6293  bd90-01-12-toads-place-vol1-d2t09.flac
+     2:29.62       26429468 B   ---   --   ---xx   flac  0.6764  bd90-01-12-toads-place-vol1-d2t10.flac
+     5:43.45       60611084 B   ---   --   ---xx   flac  0.6981  bd90-01-12-toads-place-vol1-d2t11.flac
+     4:34.65       48486524 B   ---   --   ---xx   flac  0.6459  bd90-01-12-toads-place-vol1-d2t12.flac
+     4:23.30       46463804 B   ---   --   ---xx   flac  0.6288  bd90-01-12-toads-place-vol1-d2t13.flac
+     4:15.38       45071420 B   ---   --   ---xx   flac  0.6242  bd90-01-12-toads-place-vol1-d2t14.flac
+     3:11.62       33838268 B   ---   --   ---xx   flac  0.6224  bd90-01-12-toads-place-vol2-d1t01.flac
+     3:53.05       41113004 B   ---   --   ---xx   flac  0.6886  bd90-01-12-toads-place-vol2-d1t02.flac
+     6:20.68       67191980 B   ---   --   ---xx   flac  0.6790  bd90-01-12-toads-place-vol2-d1t03.flac
+     3:20.45       35385884 B   ---   --   ---xx   flac  0.6346  bd90-01-12-toads-place-vol2-d1t04.flac
+     6:25.02       67918748 B   ---   --   ---xx   flac  0.6629  bd90-01-12-toads-place-vol2-d1t05.flac
+     6:07.70       64903484 B   ---   --   ---xx   flac  0.6575  bd90-01-12-toads-place-vol2-d1t06.flac
+     4:34.28       48399500 B   ---   --   ---xx   flac  0.6423  bd90-01-12-toads-place-vol2-d1t07.flac
+     3:57.50       41924444 B   ---   --   ---xx   flac  0.6278  bd90-01-12-toads-place-vol2-d1t08.flac
+     4:40.72       49561388 B   ---   --   ---xx   flac  0.6855  bd90-01-12-toads-place-vol2-d1t09.flac
+     4:55.13       52068620 B   ---   --   ---xx   flac  0.6573  bd90-01-12-toads-place-vol2-d1t10.flac
+     3:47.32       40118108 B   ---   --   ---xx   flac  0.6525  bd90-01-12-toads-place-vol2-d1t11.flac
+     5:09.48       54620540 B   ---   --   ---xx   flac  0.6544  bd90-01-12-toads-place-vol2-d1t12.flac
+     5:02.12       53301068 B   ---   --   ---xx   flac  0.6567  bd90-01-12-toads-place-vol2-d1t13.flac
+     4:43.47       50031788 B   ---   --   ---xx   flac  0.6419  bd90-01-12-toads-place-vol2-d2t01.flac
+     4:53.30       51755804 B   ---   --   ---xx   flac  0.6611  bd90-01-12-toads-place-vol2-d2t02.flac
+     4:06.40       43488524 B   ---   --   ---xx   flac  0.6297  bd90-01-12-toads-place-vol2-d2t03.flac
+     6:06.50       64680044 B   ---   --   ---xx   flac  0.6917  bd90-01-12-toads-place-vol2-d2t04.flac
+     4:58.15       52602524 B   ---   --   ---xx   flac  0.6450  bd90-01-12-toads-place-vol2-d2t05.flac
+     4:27.38       47188220 B   ---   --   ---xx   flac  0.6695  bd90-01-12-toads-place-vol2-d2t06.flac
+     5:29.12       58063868 B   ---   --   ---xx   flac  0.6854  bd90-01-12-toads-place-vol2-d2t07.flac
+     5:13.70       55377884 B   ---   --   ---xx   flac  0.6649  bd90-01-12-toads-place-vol2-d2t08.flac
+     8:46.13       92817020 B   ---   --   ---xx   flac  0.7188  bd90-01-12-toads-place-vol2-d2t09.flac
+   244:12.47     2584725544 B                            0.6656  (50 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-10-27.shnf 
+=================== 
+=================== 
+=================== 
+38498f5b7f539c76469e0bc5cdb699a7  BD - 03-10-27.md5
+a2e7b74dd754f89591414395e17e31eb  BD - 03-10-27D101 - Intro.shn
+62a38cdbfc1422458639abfe12fc8d63  BD - 03-10-27D102 - To Be Alone With You.shn
+c230c39810e274ae09b4eb7df5884b51  BD - 03-10-27D103 - It's All Over Now, Baby Blue.shn
+552dbf391f3a19dd298df87a9431d6ba  BD - 03-10-27D104 - Cry A While.shn
+2d3cb43a07f4163d17b12f1fa18de8f1  BD - 03-10-27D105 - The Lonesome Death Of Hattie Carroll.shn
+ef2269fa8a711fdb8a4902e2f7910e50  BD - 03-10-27D106 - It's Alright, Ma (I'm Only Bleeding).shn
+1d735e2bdf67f4c87d137d299e42367a  BD - 03-10-27D107 - Don't Think Twice, It's All Right.shn
+fde281acad3052a94f9c93417b62c4e6  BD - 03-10-27D108 - Things Have Changed.shn
+83b406cba4daafcecdeb5da8d427a212  BD - 03-10-27D109 - Most Likely You Go Your Way (And I'll Go.shn
+cc73a0788d3b2856f655ae31fb1288db  BD - 03-10-27D110 - Make You Feel My Love.shn
+4d5d93ab480c43934615c32c689fd11a  BD - 03-10-27D111 - Tweedle Dee & Tweedle Dum.shn
+8b34ac90cdc8c9c7993ce0439e682761  BD - 03-10-27D201 - Every Grain Of Sand.shn
+783868048b3ee30655bba386d905bab2  BD - 03-10-27D202 - Honest With Me.shn
+930486799af8e6ad5239324a94769027  BD - 03-10-27D203 - Mr. Tambourine Man.shn
+e2b923bb932bc37e54a4be54e8aa7b5b  BD - 03-10-27D204 - Summer Days.shn
+adc3a6140affe72d61c63a5158c09a54  BD - 03-10-27D205 - Cat's In The Well.shn
+2b9a97095ac1492958752634e28174f8  BD - 03-10-27D206 - Like A Rolling Stone.shn
+ee0ed849edda7dadb5d09382420ea57c  BD - 03-10-27D207 - All Along The Watchtower.shn
+4d38753d7cfcb0172bd4581327376040  bd03-10-27.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-10-27.shnf 
+=================== 
+=================== 
+=================== 
+a881ce98e01c04d5001bfa23fdccaa49  [shntool]  BD_-_03-10-27D101_-_Intro.wav
+10ecc2528b224e2e30a948eb645a95f1  [shntool]  BD_-_03-10-27D102_-_To_Be_Alone_With_You.wav
+153461b0526184e9b53eaa8bc4c65182  [shntool]  BD_-_03-10-27D103_-_It_s_All_Over_Now,_Baby_Blue.wav
+1e476baa0df2da145606ae0042044213  [shntool]  BD_-_03-10-27D104_-_Cry_A_While.wav
+47c5e211aabbbedebad242d2a21d40f7  [shntool]  BD_-_03-10-27D105_-_The_Lonesome_Death_Of_Hattie_Carroll.wav
+001b5da5b1baa0d22ce0a753ef0f92f9  [shntool]  BD_-_03-10-27D106_-_It_s_Alright,_Ma_(I_m_Only_Bleeding).wav
+56cd1d6227c7f9633c8fc7e07b9b9d15  [shntool]  BD_-_03-10-27D107_-_Don_t_Think_Twice,_It_s_All_Right.wav
+ecbfc06f021a45ce90b2fd395ff649bc  [shntool]  BD_-_03-10-27D108_-_Things_Have_Changed.wav
+6af60da9ad9c71bd9c0b82acf336de24  [shntool]  BD_-_03-10-27D109_-_Most_Likely_You_Go_Your_Way_(And_I_ll_Go.wav
+dc0372f1a526f43ec34e6dc9003f3527  [shntool]  BD_-_03-10-27D110_-_Make_You_Feel_My_Love.wav
+5fec46e8f3ced447d197016443cee885  [shntool]  BD_-_03-10-27D111_-_Tweedle_Dee___Tweedle_Dum.wav
+cf99f07ec7535eeff8f19b49cc0d9fb3  [shntool]  BD_-_03-10-27D201_-_Every_Grain_Of_Sand.wav
+71862c12bbc59e0d0fdaeb649f37831a  [shntool]  BD_-_03-10-27D202_-_Honest_With_Me.wav
+e615094c8b792c9cbf0b7640b3615691  [shntool]  BD_-_03-10-27D203_-_Mr._Tambourine_Man.wav
+80ed6bd0a14c95f3b33ff676eb5a5a8f  [shntool]  BD_-_03-10-27D204_-_Summer_Days.wav
+cc78b102e5691953d7a79fd116c34eed  [shntool]  BD_-_03-10-27D205_-_Cat_s_In_The_Well.wav
+44ee22a9f8916fcf07f1432493e2ccca  [shntool]  BD_-_03-10-27D206_-_Like_A_Rolling_Stone.wav
+12eefd05abe3f09f3efafeb099eb9be1  [shntool]  BD_-_03-10-27D207_-_All_Along_The_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-27.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.14        9734974 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D101_-_Intro.wav
+     4:47.40       50720926 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D102_-_To_Be_Alone_With_You.wav
+     6:55.74       73380094 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D103_-_It_s_All_Over_Now,_Baby_Blue.wav
+     5:41.30       60223006 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D104_-_Cry_A_While.wav
+     6:33.62       69471070 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D105_-_The_Lonesome_Death_Of_Hattie_Carroll.wav
+     7:32.64       79883374 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D106_-_It_s_Alright,_Ma_(I_m_Only_Bleeding).wav
+     7:53.50       83554846 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D107_-_Don_t_Think_Twice,_It_s_All_Right.wav
+     7:14.73       76729342 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D108_-_Things_Have_Changed.wav
+     8:08.04       86092654 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D109_-_Most_Likely_You_Go_Your_Way_(And_I_ll_Go.wav
+     5:47.47       61321390 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D110_-_Make_You_Feel_My_Love.wav
+     5:33.12       58769470 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D111_-_Tweedle_Dee___Tweedle_Dum.wav
+     7:46.73       82374142 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D201_-_Every_Grain_Of_Sand.wav
+     7:08.04       75508654 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D202_-_Honest_With_Me.wav
+     7:16.73       77082142 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D203_-_Mr._Tambourine_Man.wav
+    11:42.35      123915166 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D204_-_Summer_Days.wav
+     4:56.72       52383790 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D205_-_Cat_s_In_The_Well.wav
+     7:03.49       74732494 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D206_-_Like_A_Rolling_Stone.wav
+     6:33.00       69325246 B   ---   h-   -----    wav  1.0000  BD_-_03-10-27D207_-_All_Along_The_Watchtower.wav
+   119:32.26     1265202780 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

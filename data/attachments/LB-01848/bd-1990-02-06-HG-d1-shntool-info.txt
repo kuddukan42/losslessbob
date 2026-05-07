@@ -1,0 +1,498 @@
+Below is information from shntool on the FLAC files in this directory.
+
+First is the output of  shntool len  in column form.
+In the table, a - means OK; an x means not applicable or not determined. 
+Other letters indicate potential problems.
+
+A b in the CDR column indicates an SBE (sector boundary error)
+An h in the WAVE column indicates a non-canonical header
+An e in the WAVE column indicates extra RIFF chunks
+A c in the CDR column indicates audio is not CD quality
+
+An s in the CDR column indicates audio is too short to burn
+A 3 in the problems column indicates the file contains an ID3v2 tag
+An a in the problems column indicates the audio data is not block-aligned
+An i in the problems column indicates an inconsistent header
+
+    length     expanded size   cdr  WAVE problems filename
+     0:45.60        8079164    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 01)-fixed.flac
+     4:15.47       45092588    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 02).flac
+     4:25.72       46915388    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 03).flac
+     5:10.43       54785180    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 04).flac
+     3:54.51       41397596    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 05).flac
+     6:50.59       72462812    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 06).flac
+     2:51.51       30284396    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 07).flac
+     3:16.56       34706156    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 08).flac
+     4:27.23       47152940    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 09)-fixed.flac
+     4:32.61       48124316    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 10)-fixed.flac
+     6:12.68       65780780    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 11)-fixed.flac
+     7:03.59       74756012    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 12)-fixed.flac
+     3:43.34       39417212    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 13)-fixed.flac
+     4:23.43       46494380    ---   --   ---xx   bd-1990-02-06-london-HG-d1 (Track 14)-fixed.flac
+    61:55.52      655448920 B                     (totals for 14 files, 0.6938 overall compression ratio)
+
+*******************************************************************************
+*******************************************************************************
+Next is the output of  shntool info  (long form), one file at a time.
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 01)-fixed.flac
+handled by:                   flac format module
+length:                       0:45.60
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    8079120 bytes
+chunk size:                   8079156 bytes
+total size (chunk size + 8):  8079164 bytes
+actual file size:             4533384
+file is compressed:           yes
+compression ratio:            0.5611
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 02).flac
+handled by:                   flac format module
+length:                       4:15.47
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    45092544 bytes
+chunk size:                   45092580 bytes
+total size (chunk size + 8):  45092588 bytes
+actual file size:             32462247
+file is compressed:           yes
+compression ratio:            0.7199
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 03).flac
+handled by:                   flac format module
+length:                       4:25.72
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    46915344 bytes
+chunk size:                   46915380 bytes
+total size (chunk size + 8):  46915388 bytes
+actual file size:             34127461
+file is compressed:           yes
+compression ratio:            0.7274
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 04).flac
+handled by:                   flac format module
+length:                       5:10.43
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    54785136 bytes
+chunk size:                   54785172 bytes
+total size (chunk size + 8):  54785180 bytes
+actual file size:             37849631
+file is compressed:           yes
+compression ratio:            0.6909
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 05).flac
+handled by:                   flac format module
+length:                       3:54.51
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    41397552 bytes
+chunk size:                   41397588 bytes
+total size (chunk size + 8):  41397596 bytes
+actual file size:             30757808
+file is compressed:           yes
+compression ratio:            0.7430
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 06).flac
+handled by:                   flac format module
+length:                       6:50.59
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    72462768 bytes
+chunk size:                   72462804 bytes
+total size (chunk size + 8):  72462812 bytes
+actual file size:             51820537
+file is compressed:           yes
+compression ratio:            0.7151
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 07).flac
+handled by:                   flac format module
+length:                       2:51.51
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    30284352 bytes
+chunk size:                   30284388 bytes
+total size (chunk size + 8):  30284396 bytes
+actual file size:             21928884
+file is compressed:           yes
+compression ratio:            0.7241
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 08).flac
+handled by:                   flac format module
+length:                       3:16.56
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    34706112 bytes
+chunk size:                   34706148 bytes
+total size (chunk size + 8):  34706156 bytes
+actual file size:             25062616
+file is compressed:           yes
+compression ratio:            0.7221
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 09)-fixed.flac
+handled by:                   flac format module
+length:                       4:27.23
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    47152896 bytes
+chunk size:                   47152932 bytes
+total size (chunk size + 8):  47152940 bytes
+actual file size:             31866404
+file is compressed:           yes
+compression ratio:            0.6758
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 10)-fixed.flac
+handled by:                   flac format module
+length:                       4:32.61
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    48124272 bytes
+chunk size:                   48124308 bytes
+total size (chunk size + 8):  48124316 bytes
+actual file size:             32134377
+file is compressed:           yes
+compression ratio:            0.6677
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 11)-fixed.flac
+handled by:                   flac format module
+length:                       6:12.68
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    65780736 bytes
+chunk size:                   65780772 bytes
+total size (chunk size + 8):  65780780 bytes
+actual file size:             42723648
+file is compressed:           yes
+compression ratio:            0.6495
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 12)-fixed.flac
+handled by:                   flac format module
+length:                       7:03.59
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    74755968 bytes
+chunk size:                   74756004 bytes
+total size (chunk size + 8):  74756012 bytes
+actual file size:             50462816
+file is compressed:           yes
+compression ratio:            0.6750
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 13)-fixed.flac
+handled by:                   flac format module
+length:                       3:43.34
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    39417168 bytes
+chunk size:                   39417204 bytes
+total size (chunk size + 8):  39417212 bytes
+actual file size:             25802676
+file is compressed:           yes
+compression ratio:            0.6546
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1990-02-06-london-HG-d1 (Track 14)-fixed.flac
+handled by:                   flac format module
+length:                       4:23.43
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    46494336 bytes
+chunk size:                   46494372 bytes
+total size (chunk size + 8):  46494380 bytes
+actual file size:             33211549
+file is compressed:           yes
+compression ratio:            0.7143
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a

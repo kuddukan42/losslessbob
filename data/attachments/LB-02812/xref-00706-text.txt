@@ -1,0 +1,123 @@
+===================
+===================
+===================
+=== bd1992-04-06.txt
+===================
+===================
+===================
+Improved Air Remasters
+
+Some history cribbed directly from the creator of this fine series: The fan who began Improved Air Remasters did so for the simple reason of wanting to hear more natural-sounding recordings.  His process, and he works alone, of remastering includes restoration and light or hard tweaking of the original source, among other things. Obviously each new project is a different case. For ease of trading he regrets not foot printing his sets early on, but may list out the cd times one day. He is currently working on an ambitious and exciting project, namely remastering the entire USA/Canada Spring 1997 Tour.     
+
+
+NOTE: all information below (with one or two slight edits) comes from the sole owner and operator of Improved Air Remasters, so consider this accurate and up to date as of July 2003. If I receive additional updates I will certainly put them here. This date format goes DD/MM/YY.
+
+Bob Dylan - Melbourne, Australia, April 6, 1992, 
+
+IAR056 CD1
+
+01. Intro  00:30
+02. New Morning  02:55
+03. Lay Lady Lay  04:14
+04. All Along The Watchtower  03:31
+05. Just Like A Woman  05:41
+06. Tangled Up In Blue  07:17
+07. Black Muddy River  05:00
+08. Leopard-Skin Pill-Box Hat  04:11
+09. Love Minus Zero-No Limit  02:47
+10. Little Moses  03:53
+11. Golden Vanity  06:15
+12. Mr. Tambourine Man  06:48
+
+
+Bob Dylan - Melbourne, Australia, April 6, 1992, 
+
+IAR056 CD2
+
+01. Cat's In The Well  03:20
+02. Idiot Wind  08:52
+03. The Times They Are A-Changin'  05:39
+04. Highway 61 Revisited  05:49
+05. Absolutely Sweet Mary  05:27
+06. Ballad Of A Thin Man  06:21
+07. Blowin' In The Wind  05:12
+
+Improved Air Remaster 056, released April 1, 2003
+
+
+
+Palais Theatre
+Melbourne, Victoria, Australia
+6 April 1992
+
+Bob Dylan (vocal & guitar), 
+Bucky Baxter (pedal steel guitar & electric slide guitar), 
+John Jackson (guitar), 
+Tony Garnier (bass), 
+Ian Wallace (drums).
+===================
+===================
+===================
+=== bd1992-04-06d1 SHN.md5
+===================
+===================
+===================
+dd2e2efe391adc46667c1238568f1196 *bd1992-04-06d1t01.shn
+fcde3159498c298051ab5788ee038861 *bd1992-04-06d1t02.shn
+2de7f7af20a99be0adfc74dbdca7f3ce *bd1992-04-06d1t03.shn
+ac2228eb76f00456d946c94ddeef46ee *bd1992-04-06d1t05.shn
+28bd67de6c5fc0c8f3561cc8ea28a807 *bd1992-04-06d1t07.shn
+4b9eae2bf655afa0905219ab9ccd74f6 *bd1992-04-06d1t10.shn
+f53fd31be01e2d41df682be98a962d15 *bd1992-04-06d1t11.shn
+1f6e4c40ef241f4160c1e2d7ceb27aaa *bd1992-04-06d1t04.shn
+8d1c7536cff4997b914e2dbc84bedc1d *bd1992-04-06d1t06.shn
+d44078fbc9c3d761711978c694f800a3 *bd1992-04-06d1t08.shn
+2e2774ff50b1aac4de06f4ef4813bba3 *bd1992-04-06d1t09.shn
+8c939d7a71650a503d8f7c5fd20a8f54 *bd1992-04-06d1t12.shn
+===================
+===================
+===================
+=== bd1992-04-06d2 SHN.md5
+===================
+===================
+===================
+a6432cfdb9f10f69396d5fdaddde0e1e *bd1992-04-06d2t01.shn
+2cacc482c8b064c91f1262b9418e6765 *bd1992-04-06d2t02.shn
+1e6f534b522805300c7c7ad884f13bc5 *bd1992-04-06d2t03.shn
+359db2c174e0ade0dc40df6c010e76e5 *bd1992-04-06d2t04.shn
+6285eb462fa1d73cb7c36e4d4eff291e *bd1992-04-06d2t05.shn
+1569fc32297ee765e8f3d6f62643354b *bd1992-04-06d2t06.shn
+c1bedd1e4632f2416bfb8e2fbfd32cfa *bd1992-04-06d2t07.shn
+===================
+===================
+===================
+=== IAR 056 - Melbourne, Australia, April 6, 1992.md5
+===================
+===================
+===================
+052839566f361f6f3445e5ed07447186 *bd1992-04-06.txt
+15483648c80910ab92d640f8250bd8a1 *bd1992-04-06d1 SHN.md5
+ea620b4a73694b621f8817dde50090ae *bd1992-04-06d1t01.flac
+796fd6615893be0d480f04242b9e9add *bd1992-04-06d1t02.flac
+25292b514b6fbfb9e2650bc259567d14 *bd1992-04-06d1t03.flac
+0150aa1ea5ec6d9c36246bc405bdc2df *bd1992-04-06d1t04.flac
+5bfc728b8bffa1d623b4bc720b18cc41 *bd1992-04-06d1t05.flac
+1c8d9fbaeb8d2920fb18b7a4520f7ff7 *bd1992-04-06d1t06.flac
+9cfb9932af1b9435a7613d397ebc35b6 *bd1992-04-06d1t07.flac
+96f56a8ecd2041985c7fe753f1f83f86 *bd1992-04-06d1t08.flac
+fdf58371b4f4d7627e56c1749ba7f304 *bd1992-04-06d1t09.flac
+05277220067b6fc5ccfb9efa97ea5fef *bd1992-04-06d1t10.flac
+787d1378116803eb677dd42fab0ae644 *bd1992-04-06d1t11.flac
+316210d45d6e11dd7c589364291407f0 *bd1992-04-06d1t12.flac
+270132af45a9260c5459351e402e6860 *bd1992-04-06d2 SHN.md5
+68ecb6acc87e5abe22dded11e71afe4b *bd1992-04-06d2t01.flac
+a9f4ac4c8549a41abab0c2a49ce4e77f *bd1992-04-06d2t02.flac
+82eaea679f136a8d48fb17b849dc3323 *bd1992-04-06d2t03.flac
+f6e504534ad1f1cc710be8a7af43177f *bd1992-04-06d2t04.flac
+2d4985b1c650edaf2b8b4d7770229577 *bd1992-04-06d2t05.flac
+1c51c49d8d44ee4bdc3a5cce0c779dbf *bd1992-04-06d2t06.flac
+a2080e67501fa1bf6cab47631b91d2c2 *bd1992-04-06d2t07.flac
+ed4fd6b881d2b85a514358218d265aad *IAR Uploads.zip
+===================
+===================
+===================

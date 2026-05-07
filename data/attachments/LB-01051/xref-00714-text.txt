@@ -1,0 +1,136 @@
+===================
+===================
+===================
+=== IAR 054 - Basel, Switzerland, June 2, 1984.md5
+===================
+===================
+===================
+79647f85378024b443fbb8d6c730863c *CD1\01 Highway 61 Revisited.flac
+eee227f02610b322cd170eff1446edbf *CD1\02 Jokerman.flac
+b7e00b6280fbdea0180939b27d4481a9 *CD1\03 All Along The Watchtower.flac
+ca2802e97a241a90d020369a1b982d55 *CD1\04 Just Like A Woman.flac
+4b065feca021c04761b0eb8590552985 *CD1\05 Maggie's Farm.flac
+54844db22fd48ed4732c2f5bba7bc4a1 *CD1\06 I And I.flac
+b13ba7a427dd214abb4516613ac62f40 *CD1\07 License To Kill.flac
+830ebe29a84cbdebc2d3204b96f73e1b *CD1\08 Greg Sutton , Got My Mojo Working.flac
+0a1ce78a8e1852665d9775d5703ea1ab *CD1\09 It Ain't Me, Babe.flac
+82cf32e59e677f6e8b2d5102ff3f319f *CD1\10 It's Alright, Ma (I'm Only Bleeding).flac
+e3da5b91fde0a234528c43647fa4bcbf *CD1\11 Don't Think Twice, It's All Right.flac
+a372e289a2b23da4e568376e659c0976 *CD1\12 It's All Over Now, Baby Blue.flac
+1a6e819f5db44c357672edbf199f3079 *CD1\Basel, Switzerland, June 2, 1984, IAR CD1.log
+eafad117f5af6c7ccde4997afbf63ff8 *CD1\bd 1984-06-02 CD1 SHN.md5
+9c556eea2e6056b1921a0c38e529ef3a *CD2\01 Masters Of War.flac
+166fdd377fc06bd33e34b94d515291a2 *CD2\02 Ballad Of A Thin Man.flac
+93f8b26e654629043f49398f4418dd84 *CD2\03 When You Gonna Wake Up.flac
+c7b5bf311dcfb83824557bf7c97f6534 *CD2\04 Every Grain Of Sand.flac
+5a65ffd97714a9f0ce27c0c86b31dc86 *CD2\05 Band Introduction.flac
+c77915c014d0b2b7fdabdc3b46b20c40 *CD2\06 Like A Rolling Stone.flac
+c4df6a6390b5ef908421bb9d1c12107e *CD2\07 To Ramona.flac
+4fcb5eb23f77d0d70715d476edb19097 *CD2\08 Girl Of The North Country.flac
+8ebff9cb76a177f3285dc3e83b500a3b *CD2\09 Tombstone Blues.flac
+6c37553bd528370c06c5c2e46933fbcd *CD2\10 Why Do I Have To Choose.flac
+d04b24330f1e65bfd53c333445cddb17 *CD2\11 Blowin' In The Wind.flac
+7f302c8647c3ad8d7f50543de5fe99d0 *CD2\Basel, Switzerland, June 2, 1984, IAR CD2.log
+f575a30068e69412fa60dfeaa3f8f190 *CD2\bd 1984-06-02 CD2 SHN.md5
+51ca0e2d8a09e5984cce4042249e2cc7 *IAR 054 - Basel, Switzerland, June 2, 1984.txt
+fbdcd474fa87215f311e6e967e5584a6 *IAR Uploads.xls
+===================
+===================
+===================
+=== IAR 054 - Basel, Switzerland, June 2, 1984.txt
+===================
+===================
+===================
+St. Jakob Stadion
+Basel, Switzerland
+2 June 1984
+
+CD 1
+1. Highway 61 Revisited
+2. Jokerman
+3. All Along The Watchtower
+4. Just Like A Woman
+5. Maggie's Farm
+6. I And I
+7. License To Kill
+8. Greg Sutton: Got My Mojo Working (McKinley Morganfield)
+9. It Ain't Me, Babe
+10. It's Alright, Ma (I'm Only Bleeding)
+11. Don't Think Twice, It's All Right
+12. It's All Over Now, Baby Blue
+
+CD 2
+12. Masters Of War
+13. Ballad Of A Thin Man
+14. When You Gonna Wake Up
+15. Every Grain Of Sand
+16. Band Intro
+17. Like A Rolling Stone
+
+18. To Ramona
+19. Girl From The North Country
+20. Tombstone Blues
+21. Why Do I Have To Choose? (Willie Nelson)
+22. Blowin' In The Wind
+
+Concert #4 of the 1984 Europe Tour.
+
+Bob Dylan (vocal & guitar), 
+Mick Taylor (guitar), 
+Ian MacLagan (keyboards), 
+Greg Sutton (bass), 
+Colin Allen (drums).
+
+8-10, 17, 18 Bob Dylan solo (vocal & guitar).
+4, 8 Bob Dylan harmonica.
+19-20 Carlos Santana (guitar).
+21 Bob Dylan (vocal & guitar), Mick Taylor (guitar).
+
+Notes
+ Live debut of Why Do I Have To Choose?.
+ 17 partly broadcast by DRS, TSR and TSI-TV, Switzerland, 3 June 1984.
+
+BobTalk
+Thank you! Greg Suttons gonna sing a song for you now. A song he wrote last night. Got My Mojo Working.
+All right, thank you. I wanna introduce the man over here playing keyboards tonight, Ian MacLagan. On the bass guitar,
+Greg Sutton. On drums, Colin Allen. Guitar, Mick Taylor. (before Like A Rolling Stone)
+===================
+===================
+===================
+=== bd 1984-06-02 CD1 SHN.md5
+===================
+===================
+===================
+3e7a3c8524cec9dec28e57c2690f9f7e *01 Highway 61 Revisited.shn
+23cddfb9ada32a1ecc7432f11971df7a *02 Jokerman.shn
+a594ba5b7686cf640f005a69930c4d93 *03 All Along The Watchtower.shn
+0361eae41d162b85970a83c7367c7fd9 *04 Just Like A Woman.shn
+61c77a40c16a0799ff1ec816d8d4bd42 *05 Maggie's Farm.shn
+447535f5bdfffa45ebabc6ea45b25731 *06 I And I.shn
+93299e00f92876278118bd3377f7f26e *07 License To Kill.shn
+ffa73ab2bff7031836787a6477cdb7ec *08 Greg Sutton , Got My Mojo Working.shn
+4425664527837daed2c6ea10a1e38152 *09 It Ain't Me, Babe.shn
+68219355267ef6770617be16219f3341 *10 It's Alright, Ma (I'm Only Bleeding).shn
+02f8c7ca77d8e26795b4f38d458cc667 *11 Don't Think Twice, It's All Right.shn
+6a838d868166cfe8b6fbbbf93b1016cf *12 It's All Over Now, Baby Blue.shn
+===================
+===================
+===================
+=== bd 1984-06-02 CD2 SHN.md5
+===================
+===================
+===================
+657b3b1db15db0a323faada7e1044a02 *01 Masters Of War.shn
+19e2389f63bc2d96703ee66cf269ff21 *02 Ballad Of A Thin Man.shn
+d4266d651dd42636736decd9d9bf3490 *03 When You Gonna Wake Up.shn
+03d6fdc7b83282646868b56def6b7e98 *04 Every Grain Of Sand.shn
+d5ee05fdcbd8e428817ac8aec9748845 *05 Band Introduction.shn
+e0b1dc2144f98ed5731ec4d10f365922 *06 Like A Rolling Stone.shn
+e3b619e89bae524160a45aa4e999d410 *07 To Ramona.shn
+4d1dc9c84dcac29386bf099632feb022 *08 Girl Of The North Country.shn
+84005b798593cd408347dcf1f4d31973 *09 Tombstone Blues.shn
+d55a97f25a7ee57310e2c6f77c246ebd *10 Why Do I Have To Choose.shn
+7ccc2934d901135636f161b849936c87 *11 Blowin' In The Wind.shn
+===================
+===================
+===================

@@ -1,0 +1,110 @@
+===================
+===================
+===================
+=== CD1.md5
+===================
+===================
+===================
+d1ca95f6a1fd736a084fbe9eb4b18ec9 *01 Crash on the levee (down in the flood).flac
+93f11c337a33f440b84be26a6101bb9c *02 If you see her, say hello.flac
+e16961d19b3172e096d06500e634835f *03 All along the watchtower.flac
+f6b654806247872dfd78c651ec818c3b *04 Just like a woman.flac
+6964a0b3e91dbd3aa6b50597a4ca17a8 *05 Unbelievable.flac
+fef9b5750a383533eb356ed07f16036a *06 I'll be your baby tonight.flac
+91016c8fdfb3d313d6df0d4214a9e4f6 *07 Mr. Tambourine Man.flac
+===================
+===================
+===================
+=== CD2.md5
+===================
+===================
+===================
+cea7810d77ebb928ff5ec9dcf43ab7d4 *08 Masters of war.flac
+e42e9a0744f6d3161620cdf4d3e1899e *09 Boots of Spanish leather.flac
+9d55f9ac68b6928fe6d02fedaf0ab28e *10 Stuck inside of Mobile with the Memphis blues again.flac
+25b05decc8729b1f214b3430566dc250 *11 Man in the long black coat.flac
+71012aea56d6dddcc111e3b6ae4e7a02 *12 Maggie's farm.flac
+47d1a7a8eb3e914fac16c621b43f63cb *13 (audience wait).flac
+035628d6e0b360c242d028779ac0474d *13 Like a rolling stone.flac
+===================
+===================
+===================
+=== Bob Dylan 1995-03-14 Stadthalle, Fuerth, Germany [off master + Olav ASM].txt
+===================
+===================
+===================
+Bob Dylan
+
+Stadthalle
+Frth, Germany
+March 14, 1995
+
+Another March 1995 concert; Offmaster audience recording.
+The 1st concert after the famous Prague ones; slightly warmer tone added and volume boosted 6dB; no eq
+
+Taper: no info
+Lineage: FLAC DVD > WAV > CoolEdit (checking; nothing found) > T-RackS 2.0 > FLAC frontend (aligned on sector boundaries) > DIME
+
+CD1:
+01 Crash On The Levee (Down In The Flood)
+02 If You See Her, Say Hello
+03 All Along The Watchtower
+04 Just Like A Woman
+05 Unbelievable
+06 I'll Be Your Baby Tonight
+07 Mr. Tambourine Man
+
+CD2:
+08 Masters Of War
+09 Boots Of Spanish Leather
+10 Stuck Inside Of Mobile With The Memphis Blues Again
+11 Man In The Long Black Coat
+12 Maggie's Farm
+13 (audience wait)
+13 Like A Rolling Stone
+
+Concert # 644 of The Never-Ending Tour
+Concert # 4 of the 1995 European Spring Tour
+Concert # 4 in 1995
+
+Concert # 188 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar), Bucky 
+Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+79 acoustic with the band
+112 (!) Bob Dylan harmonica
+
+BobTalk:
+Thanks everybody! Were gonna try a song here. We havent tried this in a while (before Unbelievable)
+
+NOTE: First Unbelievable since November 6, 1992 in Gainesville, Florida
+
+5 new songs (38%) compared to previous concert
+5 new songs for this tour
+Stereo audience recording, 100 minutes
+
+CD1 .ffp:
+d1ca95f6a1fd736a084fbe9eb4b18ec9 *01 Crash on the levee (down in the flood).flac
+93f11c337a33f440b84be26a6101bb9c *02 If you see her, say hello.flac
+e16961d19b3172e096d06500e634835f *03 All along the watchtower.flac
+f6b654806247872dfd78c651ec818c3b *04 Just like a woman.flac
+6964a0b3e91dbd3aa6b50597a4ca17a8 *05 Unbelievable.flac
+fef9b5750a383533eb356ed07f16036a *06 I'll be your baby tonight.flac
+91016c8fdfb3d313d6df0d4214a9e4f6 *07 Mr. Tambourine Man.flac
+
+CD2 .ffp:
+cea7810d77ebb928ff5ec9dcf43ab7d4 *08 Masters of war.flac
+e42e9a0744f6d3161620cdf4d3e1899e *09 Boots of Spanish leather.flac
+9d55f9ac68b6928fe6d02fedaf0ab28e *10 Stuck inside of Mobile with the Memphis blues again.flac
+25b05decc8729b1f214b3430566dc250 *11 Man in the long black coat.flac
+71012aea56d6dddcc111e3b6ae4e7a02 *12 Maggie's farm.flac
+47d1a7a8eb3e914fac16c621b43f63cb *13 (audience wait).flac
+035628d6e0b360c242d028779ac0474d *13 Like a rolling stone.flac
+
+* * * Enjoy your Bobby Hobby * * *
+===================
+===================
+===================

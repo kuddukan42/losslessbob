@@ -1,0 +1,143 @@
+===================
+===================
+===================
+=== Bob Dylan The Complete Pat Garratt & Billy The Kid.md5
+===================
+===================
+===================
+2dd51b299f2b49625bbfa96f1c9fb0f5 *Pat Garratt & Billy The Kid 1973...info.txt
+af148e114e772a0c4298d523a5fc78fb *disc1\01 Track01.flac
+57b38afdc89e59aba54e53ec0d3c3333 *disc1\02 Track02.flac
+a79e6aa0259013fff21d581be65e1e77 *disc1\03 Track03.flac
+33e10653c5958437e829cd06d15d3948 *disc1\04 Track04.flac
+9321ff248ffa561d34d7e7171b8e43ed *disc1\05 Track05.flac
+3d69fda9ae907e2f3537d58f6b56f108 *disc1\06 Track06.flac
+b1622b21e5ef24358b9fd798636da351 *disc1\07 Track07.flac
+9779fab2c5e1ea456c207f0964dab310 *disc1\08 Track08.flac
+2cc37d7122ca826d0e200392a15fb951 *disc1\09 Track09.flac
+9e18ac1ea434f429879fb1ca72d25fb5 *disc1\10 Track10.flac
+91f1c3dd1caa1ee409b35c6941e3508d *disc1\11 Track11.flac
+d03153937a9a0fd2a9f099b00b233c6e *disc1\12 Track12.flac
+ef8d5ebd682e75919c44da1b5bb47b10 *disc1\13 Track13.flac
+bbc6ac291c01ee4f8ab3ae5bcefdd2e7 *disc1\14 Track14.flac
+d809e4891dbd46471bc51fb39431289a *disc1\15 Track15.flac
+f46481ee88420d4478439874628520c2 *disc1\16 Track16.flac
+dd64c05ec2775fffe2a248dc7a7aadcf *disc1\17 Track17.flac
+603895fc316aebff9d5f3c623af53916 *disc1\18 Track18.flac
+c532ee27fac89de2a7559ee71097c4c1 *disc1\19 Track19.flac
+64c40900fb080b520f2720d4a79dda71 *disc2\01 Track01.flac
+b21beebf0de7ef1eb86496b8a5093d5d *disc2\02 Track02.flac
+a82848b3e208ce2f667251ae7a6317cc *disc2\03 Track03.flac
+3f1bc1ad851d1f1b75b8b839397773de *disc2\04 Track04.flac
+29b3caadcb56365cfc1ac4e8d568f343 *disc2\05 Track05.flac
+06a1b105bc4f4345069fd124cd548870 *disc2\06 Track06.flac
+aea3fc014e2fe359a35076267d67a05a *disc2\07 Track07.flac
+eb58189d3b832ea2e5e43a2f036b2a4c *disc2\08 Track08.flac
+efa5ed0934befac8486c29e936c99538 *disc2\09 Track09.flac
+15ace04494ec0066cae71204a132e55e *disc2\10 Track10.flac
+9a86f5156b02e1873c1158dfff1b5ae9 *disc2\11 Track11.flac
+cd4fcf9b269fad51b7f31ccfc1f0e6b4 *disc2\12 Track12.flac
+1230030771a4d2f1499e28f2a39018fa *disc2\13 Track13.flac
+cbda2d5207c1a4b0fb3cf308a6067717 *disc2\14 Track14.flac
+967c8e84ff345027544c9c717843845e *disc2\15 Track15.flac
+6c2f6c5eab9d04a1ec47d753dbb8ec87 *disc2\16 Track16.flac
+9b8c87240e593e37f579973dc02c4ee1 *disc2\17 Track17.flac
+2e8e15f1496ce3fa1bc236162c9643d6 *disc2\18 Track18.flac
+b8d6ce74f371b2650f2923aa92f821f5 *disc2\19 Track19.flac
+0ac24dd154fab08fe8ed5a7cadcc9e8e *disc2\20 Track20.flac
+226f32c108a86ca28deff86eefbbef2c *disc2\21 Track21.flac
+2ba2d9beb37feabef497171a95bfb2a1 *disc2\22 Track22.flac
+===================
+===================
+===================
+=== Pat Garratt & Billy The Kid 1973...info.txt
+===================
+===================
+===================
+BOB DYLAN
+The Complete Pat Garratt & Billy The Kid
+[BTG007]
+
+
+Lineage: CDR > EAC (Secure Mode)Wav  > Flac (Level 8)
+
+Disc 1
+1st Session, CBS Disco Studio,
+Mexico City, Mexico, 20th Jan 1973:
+
+01. Billy (1a) 			b
+02. Billy (2a)			b
+03. Billy (3a)			C
+04. Billy (4)			C
+05. "Wild Take" (corn, beans, peas.
+       succotash, quacamole, second coming
+       coffee and climax tobacco)
+06. Turkey			B
+07. Turkey			C
+08. Turkey #2 (Tom Turkey)		C
+09. intro to Billy Surrenders
+10. Billy Surrenders			C
+11. tuning
+12. Billy Surrenders			C
+13. Billy Surrenders (And He's Killed Me Too) B
+14. Billy Surrenders (And He's Killed Me Too) C
+15. Holly's Song (Goodbye Holly)		C
+16. Peco's Blues			b
+17. Peco's Blues			C
+- -  bonus tracks - - 
+18. Billy Surrenders *
+19. Billy Surrenders *
+
+tracks 18 & 19 are from the same take as track 12
+but with overdubbed vocals.
+
+Disc 2
+2nd Session, Burbank Studios,
+Burbank, California. Feb 1973
+
+01. Billy (5a)			C
+- - Knockin' On Heaven's Door - -
+02. Knockin' On heaven's Door *
+03.  ditto  				C
+04. Sweet Amarillo  (Trad)		C
+05. Knockin' On Heaven's Door		C
+06. diitto				b
+07. Final Theme			C
+08. Rock Me Mamma (A Crudup)		C
+09. Billy (6a)			B
+10. Billy (6a)			B
+11. Instrumental tune			B
+12. Instrumental blues		B
+13. Final Theme (Ride Billy)		b
+14. Final Theme (Ride Billy)		C
+15. unidentified snippet
+
+3rd Session, Burbank Studios,
+Burbank, California, Feb 1973
+
+_ _ Main Title Theme _ _
+_ _ Cantina Theme (Workin' For The Law) _ _
+16/17 Cantina Theme (Workin' For The Law)  *
+_ _ Billy 1 _ _
+18. Billy (2b) *
+19. Billy (3b) *
+20. Billy (4b) *
+_ _ River Theme _ _  **
+21/22 River Theme (Escaping On The Run) *
+_ _ River Theme _ _
+_ _ Turkey Chase _ _ 
+
+C = complete take
+b = short false start
+B = long false start /interrupted
+
+all tracks stereo studio recordings except
+* = mono film tracks
+
+* * = only available on "director's cut"
+version of the movie.
+
+[January 2007 by Bob T Guevara] 
+===================
+===================
+===================

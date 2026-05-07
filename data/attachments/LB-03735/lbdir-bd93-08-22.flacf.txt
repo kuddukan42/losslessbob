@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-08-22.flacf 
+=================== 
+=================== 
+=================== 
+847c6eeb5e6cb74c46db67ba73c1882f  bd93-08-22-LB-3735.txt
+adac6a1734cc6af810b0c1081ae369b9  Bob Dylan 22 aug 1993 Vancouver.txt
+9c14ae9e7683869b605bc17991f06395  d1\BD19930822D1T1.shn
+2b5a09146cf9f1494f0cc7706df246f9  d1\BD19930822D1T2.shn
+313f35ab16709ed101c50a350601cd36  d1\BD19930822D1T3.shn
+afcc865b316a319b40379b8e89e3babe  d1\BD19930822D1T4.shn
+67041f73a070aa1a680efbf967e8e35f  d1\BD19930822D1T5.shn
+81f60804e5d21007348e1ea9ce639e94  d1\BD19930822D1T6.shn
+be4e1f06a55adcca71f06150c9e880fe  d1\BD19930822D1T7.shn
+3f52a7ca7928c9e09183cd9741624fca  d1\BD19930822D1T8.shn
+9df64304b27520b09ae14fc389d6d6dc  d1\BD19930822D1T9.shn
+0945f7d30b919968bb98b162caf2fe60  d2\BD19930822D2T1.shn
+297d5bbd2daeec3c2a0d91a1e1bc9ed7  d2\BD19930822D2T2.shn
+9333d8da07ac15c08ce639690c209a6a  d2\BD19930822D2T3.shn
+5da8ce788ade25398a516221d66b631f  d2\BD19930822D2T4.shn
+9e5126845a4a156d54b46711ec9d8bf2  md5sumD1.md5
+904f53f8453c322a510391890b205745  md5sumD2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-08-22.flacf\d1 
+=================== 
+=================== 
+=================== 
+bc1a4341790999f42c5d8180e8225441  [shntool]  BD19930822D1T1.wav
+98107f2ac1678e0babfdedce6bd04f60  [shntool]  BD19930822D1T2.wav
+ce1375b8feea281acd4851b0d9b184bb  [shntool]  BD19930822D1T3.wav
+cc12a3eef869487c86a4393e34f00483  [shntool]  BD19930822D1T4.wav
+08d227d182450937c7268ba96e33b358  [shntool]  BD19930822D1T5.wav
+8aebd16c90118e56b3c8671152aff7f9  [shntool]  BD19930822D1T6.wav
+8e937e75d0e83f2d531aedb032110460  [shntool]  BD19930822D1T7.wav
+880404350835f68589e9da51b2d4a117  [shntool]  BD19930822D1T8.wav
+1b526e37a2b47eeed0af1effdab3d8e9  [shntool]  BD19930822D1T9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-08-22.flacf\d2 
+=================== 
+=================== 
+=================== 
+9fdcd2c30f1aa44ffa086ac6adb0dbc0  [shntool]  BD19930822D2T1.wav
+9f62fe9b71724ad09a7d528a1f891cd3  [shntool]  BD19930822D2T2.wav
+3e596744db2b4e13fe4a2bd282e356ca  [shntool]  BD19930822D2T3.wav
+b9da1e1a2b6ef026c4fa1dc57c30685f  [shntool]  BD19930822D2T4.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-08-22.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.00       58035644 B   ---   --   -----    wav  1.0000  BD19930822D1T1.wav
+     8:57.59       94865612 B   ---   --   -----    wav  1.0000  BD19930822D1T2.wav
+     6:56.70       73547084 B   ---   --   -----    wav  1.0000  BD19930822D1T3.wav
+     8:48.61       93282716 B   ---   --   -----    wav  1.0000  BD19930822D1T4.wav
+    11:14.56      119025356 B   ---   --   -----    wav  1.0000  BD19930822D1T5.wav
+     6:51.43       72601580 B   ---   --   -----    wav  1.0000  BD19930822D1T6.wav
+     5:51.46       62024636 B   ---   --   -----    wav  1.0000  BD19930822D1T7.wav
+     8:37.18       91241180 B   ---   --   -----    wav  1.0000  BD19930822D1T8.wav
+     8:42.25       92139644 B   ---   --   -----    wav  1.0000  BD19930822D1T9.wav
+    71:30.03      756763452 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-08-22.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:15.42       76832828 B   ---   --   -----    wav  1.0000  BD19930822D2T1.wav
+     8:54.13       94228220 B   ---   --   -----    wav  1.0000  BD19930822D2T2.wav
+     7:30.33       79457660 B   ---   --   -----    wav  1.0000  BD19930822D2T3.wav
+    10:54.02      115370348 B   ---   --   -----    wav  1.0000  BD19930822D2T4.wav
+    34:34.15      365889056 B                            1.0000  (4 files)
+=================== 
+=================== 
+=================== 

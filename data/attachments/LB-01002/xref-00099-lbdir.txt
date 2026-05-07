@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-07-cc-b.flacf 
+=================== 
+=================== 
+=================== 
+dec2789bc412914c50685f7b9de17cec  d1\d1eac.LOG
+33bcac8c8c2495f39fb84ae1d1b80b56  d1\d1shn.md5
+5a6b5a3ed53238d182b89139ad649236  d1\d1wav.md5
+f0af58086d5210d51ec1a7079f091239  d1\Red_Bluff_2002_d1t01.shn
+6903418634812921b7139569e022840f  d1\Red_Bluff_2002_d1t02.shn
+f4182da8fa225345cf5c1752bc2368f8  d1\Red_Bluff_2002_d1t03.shn
+6f5d80b31693ec94838942c204c5afe2  d1\Red_Bluff_2002_d1t04.shn
+303818b42800db95b31ca924a9727a47  d1\Red_Bluff_2002_d1t05.shn
+6fb4dc687c1a0643a1a3119ee468b7df  d1\Red_Bluff_2002_d1t06.shn
+ac3754bd7dc0c2d318a99013847d513e  d1\Red_Bluff_2002_d1t07.shn
+87c9525770ab2fb523c39ac51a6b6e2d  d1\Red_Bluff_2002_d1t08.shn
+69c4407b014e2ec8d6e8d0accaef4f0a  d1\Red_Bluff_2002_d1t09.shn
+b8b8a872f140274806b8414a3db06c2f  d1\Red_Bluff_2002_d1t10.shn
+79b5c42587b35472520a039856480680  d1\Red_Bluff_2002_d1t11.shn
+aec580a51a2383ff958be7a924ca2d20  d1\Red_Bluff_2002_d1t12.shn
+504ead87d35837cc91caaad7245beffa  d1\Red_Bluff_2002_d1t13.shn
+44be294ae17d923683f5064ad3615462  d2\d2eac.LOG
+ae5807e5d5953431cde6404769c7c076  d2\d2shn.md5
+c0c521aad97ed81858499e14da3888d9  d2\d2wav.md5
+cf3656e1fd7de74430ab6020b0e8d87c  d2\Red_Bluff_2002_d2t01.shn
+b999ee792d56c7080ffa3e6970f44815  d2\Red_Bluff_2002_d2t02.shn
+d53d64956fc165d0b948b8cfa2e2e7e1  d2\Red_Bluff_2002_d2t03.shn
+b4f2d89520e8435a370fc5ba012b076a  d2\Red_Bluff_2002_d2t04.shn
+b019adf70d6acb879af0ffe6db6e9584  d2\Red_Bluff_2002_d2t05.shn
+c5e674b66ba57884321747833a074656  d2\Red_Bluff_2002_d2t06.shn
+8ebc04afddf793f5393fde71208966d7  d2\Red_Bluff_2002_d2t07.shn
+b20efc2e2537baa28cf0bbb48c468ad3  d2\Red_Bluff_2002_d2t08.shn
+9dd1ba632c0909846b927fca12e1b94e  d2\Red_Bluff_2002_d2t09.shn
+aff96602d3b8f439ce1a6860b7ad9cfb  d2\Red_Bluff_2002_d2t10.shn
+d14e45b44fa7f8526baee7b29f405d15  d2\Red_Bluff_2002_d2t11.shn
+6fd6e7c18e71b67ce3bfa5bfea7690a9  d2\Red_Bluff_2002_d2t12.shn
+7c76e0ef6ce6aae6a57f479469cdbe51  inserts\booklet1.jpg
+f428b0d9a81e76b7703139a5abf5b422  inserts\booklet2.jpg
+53348cd41b6463b04bc1b8a89635ea45  inserts\booklet3.jpg
+f68ea5fb39df740de0b8e75a5bee0c5c  inserts\booklet4.jpg
+e38b540d964bb1c265d47a31973aac91  inserts\trayback.jpg
+3054c75e07cfe301a3575c21938ed398  inserts\trayinside.jpg
+cb938f67cb9846398b3f76500e6dc4b0  Red_Bluff_2002.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-07-cc-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+a795ad2bf8e9168827f608d413b482ca  [shntool]  red_bluff_2002_d1t01.wav
+fa18bfda91676a028848b3e07f856c31  [shntool]  red_bluff_2002_d1t02.wav
+e86e43f502b80bab261a011d16b71236  [shntool]  red_bluff_2002_d1t03.wav
+92243b933cf32ccfb3448fcfab12f2bb  [shntool]  red_bluff_2002_d1t04.wav
+454cfbed2627ee4575f4af4f7a9e8f00  [shntool]  red_bluff_2002_d1t05.wav
+f95cf63f0d60b684527d8627843d82f6  [shntool]  red_bluff_2002_d1t06.wav
+69a6c9026c7310fe3fba8b63c684960d  [shntool]  red_bluff_2002_d1t07.wav
+76d8fa2ed2b2b6d265c7da13c13bc105  [shntool]  red_bluff_2002_d1t08.wav
+c6699d46bb9d8539806dc2ca78adca6a  [shntool]  red_bluff_2002_d1t09.wav
+e09d0cf1143af6817ac1789ebdac4d8e  [shntool]  red_bluff_2002_d1t10.wav
+78133e2560402934a728ac2063c38eca  [shntool]  red_bluff_2002_d1t11.wav
+f21a24b053eb12867484c0e3b822f95e  [shntool]  red_bluff_2002_d1t12.wav
+8c56ec0d94fe64d87071e6e1f159f4f9  [shntool]  red_bluff_2002_d1t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-07-cc-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+c6b4c7758b867960313fa4237625dfd4  [shntool]  red_bluff_2002_d2t01.wav
+0811df7e9164469d44566abb61ad8162  [shntool]  red_bluff_2002_d2t02.wav
+81747f13a053b6b737587c035d765306  [shntool]  red_bluff_2002_d2t03.wav
+736c82984c1de0f79276ab2337b4be61  [shntool]  red_bluff_2002_d2t04.wav
+4483d9f889c5bb4557ff73d8ce4cb664  [shntool]  red_bluff_2002_d2t05.wav
+141dc9400e09ba39b33dc31b3851f285  [shntool]  red_bluff_2002_d2t06.wav
+bc9a879dbff5d338ff05c9cb7a0673f7  [shntool]  red_bluff_2002_d2t07.wav
+0b481b2026d23017f0fa1735947683c1  [shntool]  red_bluff_2002_d2t08.wav
+6e4cecd666b5f59d6a186814faf12ce4  [shntool]  red_bluff_2002_d2t09.wav
+f458156633c370e22568bd6f112a3a21  [shntool]  red_bluff_2002_d2t10.wav
+63e04a746d2599cf2c818d2eca22beda  [shntool]  red_bluff_2002_d2t11.wav
+582b2402e2bedad9720b6424c3fa7aa4  [shntool]  red_bluff_2002_d2t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-07-cc-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:33.00        5821244 B   ---   --   ---xx    shn  0.6363  Red_Bluff_2002_d1t01.shn
+     4:32.00       47980844 B   ---   --   ---xx    shn  0.7623  Red_Bluff_2002_d1t02.shn
+     6:26.00       68090444 B   ---   --   ---xx    shn  0.7261  Red_Bluff_2002_d1t03.shn
+     5:43.39       60596972 B   ---   --   ---xx    shn  0.7500  Red_Bluff_2002_d1t04.shn
+     3:57.00       41806844 B   ---   --   ---xx    shn  0.7280  Red_Bluff_2002_d1t05.shn
+     5:16.00       55742444 B   ---   --   ---xx    shn  0.7410  Red_Bluff_2002_d1t06.shn
+     4:16.00       45158444 B   ---   --   ---xx    shn  0.7859  Red_Bluff_2002_d1t07.shn
+     7:16.00       76910444 B   ---   --   ---xx    shn  0.7544  Red_Bluff_2002_d1t08.shn
+     7:31.00       79556444 B   ---   --   ---xx    shn  0.7408  Red_Bluff_2002_d1t09.shn
+     6:14.00       65973644 B   ---   --   ---xx    shn  0.7506  Red_Bluff_2002_d1t10.shn
+     6:17.10       66526364 B   ---   --   ---xx    shn  0.7556  Red_Bluff_2002_d1t11.shn
+     5:41.05       60164204 B   ---   --   ---xx    shn  0.7413  Red_Bluff_2002_d1t12.shn
+     9:37.74      101956892 B   ---   --   ---xx    shn  0.7371  Red_Bluff_2002_d1t13.shn
+    73:20.53      776285228 B                            0.7457  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-07-cc-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:04.00       74793644 B   ---   --   ---xx    shn  0.7710  Red_Bluff_2002_d2t01.shn
+     7:02.00       74440844 B   ---   --   ---xx    shn  0.7197  Red_Bluff_2002_d2t02.shn
+     8:20.00       88200044 B   ---   --   ---xx    shn  0.7557  Red_Bluff_2002_d2t03.shn
+     3:20.00       35280044 B   ---   --   ---xx    shn  0.7059  Red_Bluff_2002_d2t04.shn
+     7:05.00       74970044 B   ---   --   ---xx    shn  0.6758  Red_Bluff_2002_d2t05.shn
+     7:40.00       81144044 B   ---   --   ---xx    shn  0.7867  Red_Bluff_2002_d2t06.shn
+     7:17.00       77086844 B   ---   --   ---xx    shn  0.7774  Red_Bluff_2002_d2t07.shn
+     6:21.00       67208444 B   ---   --   ---xx    shn  0.7253  Red_Bluff_2002_d2t08.shn
+     5:59.00       63327644 B   ---   --   ---xx    shn  0.7954  Red_Bluff_2002_d2t09.shn
+     5:28.00       57859244 B   ---   --   ---xx    shn  0.6904  Red_Bluff_2002_d2t10.shn
+     6:46.00       71618444 B   ---   --   ---xx    shn  0.6738  Red_Bluff_2002_d2t11.shn
+     5:13.34       55293212 B   ---   --   ---xx    shn  0.6030  Red_Bluff_2002_d2t12.shn
+    77:35.34      821222496 B                            0.7280  (12 files)
+=================== 
+=================== 
+=================== 

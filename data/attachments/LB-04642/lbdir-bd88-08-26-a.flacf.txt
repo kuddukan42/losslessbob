@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-08-26-a.flacf 
+=================== 
+=================== 
+=================== 
+af25c48224cadf44a5b014e166d47a88  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track01.flac
+2628db493ec585ff1384cff67c47a696  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track02.flac
+35dbcef84e813532e5c285a27b5a5562  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track03.flac
+ce97705ff67fe94f85b8f3a66a605afb  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track04.flac
+f4a99c522ca9b55fcdd1752788f7bd9d  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track05.flac
+ebe18866fa797768e1c8957eef95df6e  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track06.flac
+e466ecc796e15acb433b4ebbd622125f  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track07.flac
+74da0b7170b5b4cc62b976f77219e4a9  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track08.flac
+42f987898f886c814fc62e3fbfabb852  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track09.flac
+ba62c1447d4dd849e1ff55b23d7c546b  1988-08-26 Winnipeg Arena, Winnipeg,D1\Track10.flac
+5bbf2757216c1779103e311f77822d39  1988-08-26 Winnipeg Arena, Winnipeg,D2\Track01.flac
+48602e10ed165ce634b2bff8b5ef0bfa  1988-08-26 Winnipeg Arena, Winnipeg,D2\Track02.flac
+0b8f7dd46b71e48ae06aca8fbfd6848a  1988-08-26 Winnipeg Arena, Winnipeg,D2\Track03.flac
+f75afba7fd023e7a9027b8790ce90ced  1988-08-26 Winnipeg Arena, Winnipeg,D2\Track04.flac
+c95793e21c6c357e29620d858b8680f7  1988-08-26 Winnipeg Arena, Winnipeg,D2\Track05.flac
+a3d8777bb75808572fca7fa267cdd081  1988-08-26 Winnipeg.jpg
+49ff40d604fe2cd57b7097559219677e  bd88-08-26-a-LB-4642.txt
+3a2287f9df7d2e51429e03eb11340a55  Bob Dylan 1988-08-26 Winnipeg.txt
+fa963dee740d56d732e5683658f977cb  fingerprint.ffpD1.txt
+f12ba9ef97ed4fadc2e6d3c5d02278e4  fingerprint.ffpD2.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-08-26-a.flacf\1988-08-26 Winnipeg Arena, Winnipeg,D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:71824a48603276879342cb561499a845
+Track02.flac:a6b0fa68ecf0f5def281a074d35126b5
+Track03.flac:aa93ebafa5a13fd7cc2cf0e0df1ac808
+Track04.flac:5e104b113e20072d8125fa96dcfe9eb0
+Track05.flac:d9c2c657d98acd1ec1eb2e00b1955ec0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-08-26-a.flacf\1988-08-26 Winnipeg Arena, Winnipeg,D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:a3f66695504ce876f01022bba436054d
+Track02.flac:7ed2302df27c70a28946c42262266736
+Track03.flac:2706b2e10389cb9c8d267e52c99bbdf0
+Track04.flac:30912331b1be6f386f6339ed1965ef16
+Track05.flac:8e8c7df889e27f91daf9b044f0359662
+Track06.flac:cd3f6673e2a289062bc30358123b40ca
+Track07.flac:58a7d8220652c6e679bbc1c2382b9442
+Track08.flac:7ead04aff0cb4df92d43966796f741de
+Track09.flac:d2aa3e6ca84ede5e41026ac4ab8f9885
+Track10.flac:aa6b689426fb9d4e49e49d43a229b24e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-08-26-a.flacf\1988-08-26 Winnipeg Arena, Winnipeg,D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.03       52397900 B   ---   --   ---xx   flac  0.5122  Track01.flac
+     3:49.01       40397996 B   ---   --   ---xx   flac  0.5239  Track02.flac
+     6:15.23       66204140 B   ---   --   ---xx   flac  0.5227  Track03.flac
+     5:49.05       61575404 B   ---   --   ---xx   flac  0.4895  Track04.flac
+     5:11.10       54883964 B   ---   --   ---xx   flac  0.4925  Track05.flac
+    26:01.42      275459404 B                            0.5074  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-08-26-a.flacf\1988-08-26 Winnipeg Arena, Winnipeg,D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:41.59       39123212 B   ---   --   ---xx   flac  0.5194  Track01.flac
+     3:57.57       41940908 B   ---   --   ---xx   flac  0.5063  Track02.flac
+     4:09.20       43970684 B   ---   --   ---xx   flac  0.5079  Track03.flac
+     4:49.27       51043148 B   ---   --   ---xx   flac  0.4960  Track04.flac
+     4:43.66       50076476 B   ---   --   ---xx   flac  0.5026  Track05.flac
+     6:19.49       66970892 B   ---   --   ---xx   flac  0.4999  Track06.flac
+     4:17.33       45412460 B   ---   --   ---xx   flac  0.4912  Track07.flac
+     6:47.37       71881868 B   ---   --   ---xx   flac  0.4881  Track08.flac
+     4:13.34       44709212 B   ---   --   ---xx   flac  0.4883  Track09.flac
+     5:40.65       60128924 B   ---   --   ---xx   flac  0.4891  Track10.flac
+    48:40.72      515257784 B                            0.4978  (10 files)
+=================== 
+=================== 
+=================== 

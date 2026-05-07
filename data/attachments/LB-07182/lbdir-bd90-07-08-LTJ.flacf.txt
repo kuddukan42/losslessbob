@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-07-08-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+8a9c2b201460d952ce2174ec767b9b48  bd-19900708-Werchter.ffp
+9f4764dacaa454b672ba4a1a774aeda4  bd-19900708-Werchter.md5
+d6f18da6cfb6460057c26620026c03ab  bd1990-07-08-d1t01.flac
+4c4a70f0ab0382d0007c0cd60fe8a1c4  bd1990-07-08-d1t02.flac
+ec0b7416e4be73669b8ccb6a68b8b893  bd1990-07-08-d1t03.flac
+8e31fd3a52e2e1d8729bc827fc6d7eca  bd1990-07-08-d1t04.flac
+5cb0e6a855f9657ef5b285a862d774a9  bd1990-07-08-d1t05.flac
+ba27cb644ad6afb5b8ad515fddce69ec  bd1990-07-08-d1t06.flac
+bfd8626910e78c7b9a238fd862edc93c  bd1990-07-08-d1t07.flac
+b52fee67bd9dcef8c3f13a71ddfd278d  bd1990-07-08-d1t08.flac
+388bf7078e6dbfbe0a3d0ae4030076ef  bd1990-07-08-d1t09.flac
+7d3bf3534a3c293619277b5d62ce6699  bd1990-07-08-d1t10.flac
+7881dc75b5ade8f3f19cfeb1153a401d  bd1990-07-08-d1t11.flac
+62d831adab05d75e62e336e916234c6c  bd1990-07-08-d1t12.flac
+474fccc6b7aac5cf9727e3a34d6796c1  bd1990-07-08-d1t13.flac
+d2931f91a809c57721fad00634189791  bd1990-07-08-d1t14.flac
+476d17936f9ffcaa4b027ffbfde60cd2  bd1990-07-08-d1t15.flac
+6463b1a50d3b8e0c14f8b9aedef5a89a  bd1990-07-08-d1t16.flac
+ae830879d4f42289c6511d697f97224b  bd1990-07-08-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-07-08-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+bd1990-07-08-d1t01.flac:3002d040001fa538f15d4d8090fa4822
+bd1990-07-08-d1t02.flac:7cd425c87701e6f7bf55acae6b51e265
+bd1990-07-08-d1t03.flac:8df8871b3d4f987a9131654f6b4f81fd
+bd1990-07-08-d1t04.flac:e4d2df03cc4758a916acc040e564db0f
+bd1990-07-08-d1t05.flac:23aaad3d25c69373c8db99ec4d2ca368
+bd1990-07-08-d1t06.flac:3a042d113fd8d74ff8ff023dc93c1152
+bd1990-07-08-d1t07.flac:415a96aa324631cc98ee26ba51ce3545
+bd1990-07-08-d1t08.flac:dd1112075dbbf7a7f159c8afd0fd741c
+bd1990-07-08-d1t09.flac:182a1bb3318c973e522ec2bec027a730
+bd1990-07-08-d1t10.flac:69d661255094e6644027b394a6fd69be
+bd1990-07-08-d1t11.flac:a9331f7559cbdcf59bb86f25df3e0bc7
+bd1990-07-08-d1t12.flac:e29bce2911c6db5bbe537b5abfac6ff8
+bd1990-07-08-d1t13.flac:20ae82bafb12b490094aefa69e3f7101
+bd1990-07-08-d1t14.flac:661f07a17672b482d8492b148a0fb29b
+bd1990-07-08-d1t15.flac:6b58ddce6c2d2dcb50ef1e1e6d643f09
+bd1990-07-08-d1t16.flac:f2271fd50df758c6984d3d06aed4aded
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-07-08-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:17.03        3005900 B   ---   --   ---xx   flac  0.4292  bd1990-07-08-d1t01.flac
+     2:42.46       28685036 B   ---   --   ---xx   flac  0.5889  bd1990-07-08-d1t02.flac
+     3:11.29       33760652 B   ---   --   ---xx   flac  0.5653  bd1990-07-08-d1t03.flac
+     4:10.69       44262332 B   ---   --   ---xx   flac  0.5865  bd1990-07-08-d1t04.flac
+     4:10.03       44107100 B   ---   --   ---xx   flac  0.6164  bd1990-07-08-d1t05.flac
+     4:59.56       52875356 B   ---   --   ---xx   flac  0.5967  bd1990-07-08-d1t06.flac
+     5:27.65       57835724 B   ---   --   ---xx   flac  0.5913  bd1990-07-08-d1t07.flac
+     6:20.37       67119068 B   ---   --   ---xx   flac  0.6020  bd1990-07-08-d1t08.flac
+     4:39.37       49302668 B   ---   --   ---xx   flac  0.6197  bd1990-07-08-d1t09.flac
+     4:22.34       46296812 B   ---   --   ---xx   flac  0.6106  bd1990-07-08-d1t10.flac
+     3:21.71       35623436 B   ---   --   ---xx   flac  0.5909  bd1990-07-08-d1t11.flac
+     4:36.07       48702908 B   ---   --   ---xx   flac  0.5969  bd1990-07-08-d1t12.flac
+     3:47.13       40073420 B   ---   --   ---xx   flac  0.5838  bd1990-07-08-d1t13.flac
+     7:05.35       75052364 B   ---   --   ---xx   flac  0.6020  bd1990-07-08-d1t14.flac
+     4:43.56       50052956 B   ---   --   ---xx   flac  0.6009  bd1990-07-08-d1t15.flac
+     4:39.73       49387340 B   ---   --   ---xx   flac  0.6219  bd1990-07-08-d1t16.flac
+    68:36.34      726143072 B                            0.5989  (16 files)
+=================== 
+=================== 
+=================== 

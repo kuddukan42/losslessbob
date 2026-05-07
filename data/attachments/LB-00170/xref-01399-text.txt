@@ -1,0 +1,76 @@
+===================
+===================
+===================
+=== bd 1999-04-22 barcelona shns.txt
+===================
+===================
+===================
+Bob Dylan and Band
+22 April 1999
+Barcelona, Spain
+Palau Municipal dels Esports
+
+--------------------
+uploader linage: dylantree data vine cd copy shns (files dated Jul 2004) > harddrive > upload
+comments:   files verified error free with original .md5 file.  there wasn't a txt file with this.
+sounds good. no idea which LB it is, but the disks split is the same as one of them (LB-170) and there is a slight glitch at d2t3 5:15 as w/ that LB number.  some nice artwork included which sez this (or just the artwork?) is a Moose production.
+thanks to the artists, tapers and sharers!  enjoy!
+----------------------------
+  info from bjorner.com: 
+1. 	Cocaine Blues (trad.)	   
+2.	Mr. Tambourine Man	   
+3.	Masters Of War	   
+4.	It's All Over Now, Baby Blue	   
+5.	Mama, You Been On My Mind	   
+6.	Tangled Up In Blue	   
+7.	One Too Many Mornings	   
+		   
+8.	Can't Wait	   
+9.	I'll Be Your Baby Tonight	   
+10.	Stuck Inside Of Mobile With The Memphis Blues Again	   
+11.	Not Dark Yet	   
+12.	Highway 61 Revisited	   
+		   
+13.	Love Sick	< crank it up at 3:27! sounds like Bucky's getting into the act!   
+14.	To Be Alone With You	   
+15.	Blowin' In The Wind	   
+16.	Like A Rolling Stone	 
+Concert # 1087 of The Never-Ending Tour. Concert # 13 of the 1999 Europe Spring Tour. 1999 concert # 41.
+Concert # 234 with the 11th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), Larry Campbell (guitar), Tony Garnier (bass), David Kemper (drums & percussion).
+17, 15 acoustic with the band.
+5 Bob Dylan harmonica.
+1, 15 Bucky Baxter and Larry Campbell backup vocal. 
+BobTalk
+Ive been here for a while, but I havent seen a bull fight yet! (after Cant Wait).
+9 new songs (52%) compared to previous concert. 3 new songs for this tour.
+Stereo audience recording, 105 minutes.
+Session info updated 13 January 2000.
+===================
+===================
+===================
+=== checksum.md5
+===================
+===================
+===================
+ba37294bbc7f2c337d4f668849801211 *0203 Stuck Inside Of Mobile.shn
+147a2cde816e3f86d05e5640ae668b5f *0104 It's All Over Now.shn
+9d319b79c1a29152f43e6335e87aec41 *0209 Like A Rolling Stone.shn
+103b12dd1c74d763d61c37b8a089ac49 *0208 Blowin' In The Wind .shn
+e10fd5f2b957ca064abc80498dfa2396 *0101 Cocaine Blues.shn
+613885259e3465baefdbdae91a3130f3 *0205 Highway 61 Revisited.shn
+0de3d0f0a779b4f34e46f3072ef4dc5b *0204 Not Dark Yet.shn
+b006cc18f3350aff5e86f1de480be6f1 *0107 One To Many Mornings.shn
+b3d88e06cea4d2e05cbf7f2de424b086 *0103 Master Of War.shn
+ef52e98f719805c951d1a0fb823da5c1 *0106 Tangled Up In Blue.shn
+64dbfb837a45942fc19c41e3c7ac77b5 *0202 I'll Be Your Baby.shn
+1a7a53b03897b6b6e06b45fa749476d9 *0100 Intro.shn
+7bfccd8dd183188d8b18e5133bf15e7a *0102 Mr. Tambourine Man.shn
+d737b5630597c02dc0e3b6cd46edb2ab *0207 To Be Alone With You .shn
+affeb89756330f701c559418027d84f5 *0206 Love Sick.shn
+413f3a455305a2788524c5b433fffcdd *0206 Intro.shn
+0fbaba7d6640d351a235490110840455 *0105 Mama, You Been.shn
+16cac20eed787a745b4571a17062ea32 *0201 Can't Wait.shn
+
+===================
+===================
+===================

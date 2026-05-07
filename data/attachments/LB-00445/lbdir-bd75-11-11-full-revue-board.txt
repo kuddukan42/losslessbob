@@ -1,0 +1,173 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-11-full-revue-board 
+=================== 
+=================== 
+=================== 
+b2c9c5a2260ab9dc86a8fc56dc710770  bd75-11-11.txt
+09eb1063ab7a2bcd5d34f0ae65bb0fbf  D1\1-01 - Good Love Is Hard To Find.shn
+291775be9952bd91e2f271db77514876  D1\1-02 - Sleazy.shn
+2d716777337f6b01d7c544e2d54c188b  D1\1-03 - Werewolves Of London.shn
+c54c2950106e7737c60524f025bd7d0c  D1\1-04 - Don't Blame Me.shn
+d76d35a8f62e1272f33b14a1391d08ed  D1\1-05 - Catfish.shn
+f77caa72fa87e363e94c4a0454774256  D1\1-06 - Is There Life On Mars.shn
+dbbd19bc7f96fdc483f634202e550145  D1\1-07 - Hank Williams Is Dead.shn
+b5c3bcc7564a6aafbd0631525970a528  D1\1-08 - A New Sunrise.shn
+4b4b92499168bf51796dd528fd682ed0  D1\1-09 - Cindy When I Get Home.shn
+ce4fcb4108f0dac4e91c1699896ac2c4  D1\1-10 - Mercedes Benz.shn
+8a4d163f56a62e4730c03425e993cb4f  D1\1-11 - Ramblin' Jack.shn
+0bf0ff3813311eea2b318ff49928a94d  D1\1-12 - Muleskinner Blues.shn
+217ba528277d74f5b9b3f6dc4bae638c  D1\1-13 - Hard Rain.shn
+22994e753209a392bb452a09422a7fbb  D1\1-14 - Romance In Durango.shn
+314b87608e2c264c856211c13ca68adf  D1\bd75-11-11d1.md5
+5918bfed742fb5f99d57b79baff313cb  D2\2-01 - Isis.shn
+9cf4337369b997e78b3e6c1e239eb1b9  D2\2-02 - Blowin' In The Wind.shn
+81b3fd1bc975cf41abc366d4ab0e4f67  D2\2-03 - Water Is Wide.shn
+e8ab9f87c4a370d399ba166a600384fc  D2\2-04 - I Dreamed I Saw St Augustine.shn
+5a1b8c6ed5dcf2f9d782fcbd2a9f4f5a  D2\2-05 - Never Let Me Go.shn
+16afbff052a36f9f4d66a23372fb01fc  D2\2-06 - I Shall Be Released.shn
+55d116daaabc6fd60c27368353359b5f  D2\2-07 - Diamonds And Rust.shn
+122e5d86ad4975431b86f4abe12a94ef  D2\2-08 - Swing Low Sweet Chariot.shn
+e240f3a5aaa171e1b597a7ac4ab5cb2d  D2\2-09 - Joe Hill.shn
+19ec28e3e121d24e02792e6a5e1ea668  D2\2-10 - Love Song To A Stranger.shn
+115de86231ef414061e98dd67645e4c8  D2\2-11 - Long Black Veil.shn
+bcbacc71080ff15ed174a8270cece9eb  D2\2-12 - Please Come To Boston.shn
+b425f4e9a9adcdfe27443d89c75db88f  D2\2-13 - Chesnut Mare.shn
+eee8bf318582bd19efbc2cbbeb47d86f  D2\2-14 - 8 Miles High.shn
+27748df5c96c1da4c7a8a2e2ddcfbb1c  D2\2-15 - Night They Drove Old Dixie Down.shn
+ba2a1eb845e7a561e2f5df1383570a12  D2\noname.md5
+51d56794f52a43eb3981c0b0e93573ed  D3\3-01 - Simple Twist Of Fate.shn
+fcf3b68b55f1dab56c9b6b48f2d69f74  D3\3-02 - Oh Sister.shn
+32a01afe5579d191417fae8abea1c54e  D3\3-03 - Hurricane.shn
+4e675974d397836f2280c13d4a1d8d9a  D3\3-04 - One More Cup Of Coffee.shn
+22d0ebef22cd11a351bbdf2709e2b6fd  D3\3-05 - Sara.shn
+d62398c7716338fff8043839e9bfb100  D3\3-06 - Just Like A Woman.shn
+db070832783a149916db345e84822508  D3\3-07 - Knockin' On Heaven's Door.shn
+9cff9cdf285bf899f5e02929259547e1  D3\3-08 - This Land Is Your Land.shn
+3ed519c87e0592be73bcb47e484233f9  D3\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd75-11-11-full-revue-board\D1 
+=================== 
+=================== 
+=================== 
+8ea04ce0510da51427cd3bd23a5a7221  [shntool]  1-01_-_Good_Love_Is_Hard_To_Find.wav
+08bc6982e6d6c3d9a54777c8c80f8762  [shntool]  1-02_-_Sleazy.wav
+71b143dc21b508e9d62fbe23b194be0b  [shntool]  1-03_-_Werewolves_Of_London.wav
+361c4722964a71e9451291526ec63681  [shntool]  1-04_-_Don_t_Blame_Me.wav
+77346bc6e69619cf9f41a2d4d0650e45  [shntool]  1-05_-_Catfish.wav
+00308728dc539f7c0bf61f0a0793c4b8  [shntool]  1-06_-_Is_There_Life_On_Mars.wav
+4e09dd50559467c622a7a85152a97caf  [shntool]  1-07_-_Hank_Williams_Is_Dead.wav
+7ca4a94560b26ec3c9f740d173953f2f  [shntool]  1-08_-_A_New_Sunrise.wav
+4b0f3315229c263f4a6833e6ce4e7c84  [shntool]  1-09_-_Cindy_When_I_Get_Home.wav
+1737c2bf9b4e99e0f4cd223a1c1d1d48  [shntool]  1-10_-_Mercedes_Benz.wav
+5befdd3f2af82638a8441512af851b51  [shntool]  1-11_-_Ramblin__Jack.wav
+95cea346f8f061c5ddd07072a3d5a97a  [shntool]  1-12_-_Muleskinner_Blues.wav
+6a51271aff1d366bb68c065eafe504db  [shntool]  1-13_-_Hard_Rain.wav
+122719eb625d50637e7f867531fcd2b7  [shntool]  1-14_-_Romance_In_Durango.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd75-11-11-full-revue-board\D2 
+=================== 
+=================== 
+=================== 
+d539df4fc9924ebb96d54b31d979011e  [shntool]  2-01_-_Isis.wav
+4c9b532f99b83be8259d9dda01c364e7  [shntool]  2-02_-_Blowin__In_The_Wind.wav
+eece5676c1ffe16de21fd3aca85442dd  [shntool]  2-03_-_Water_Is_Wide.wav
+d5ac200ba98c6e2c62323d16395dc633  [shntool]  2-04_-_I_Dreamed_I_Saw_St_Augustine.wav
+c217cab75137e0e40a523687c42e15c5  [shntool]  2-05_-_Never_Let_Me_Go.wav
+6c0580c346b1cadb159fc297b970cfe6  [shntool]  2-06_-_I_Shall_Be_Released.wav
+24ddd51c9f40e8096a4c1a1d5f8163b2  [shntool]  2-07_-_Diamonds_And_Rust.wav
+79bb867514a1faea96af9696e85d1c0d  [shntool]  2-08_-_Swing_Low_Sweet_Chariot.wav
+e7285f4148328a9be640acf4e7cd29d1  [shntool]  2-09_-_Joe_Hill.wav
+7c06f0464586ecb87a7e56b8be370166  [shntool]  2-10_-_Love_Song_To_A_Stranger.wav
+0bd4eb1ad0204cf354bfe64d9322602e  [shntool]  2-11_-_Long_Black_Veil.wav
+b558dce1674190262268301bd39e35a6  [shntool]  2-12_-_Please_Come_To_Boston.wav
+1fcf36c16c22e577956bb831c54d5e24  [shntool]  2-13_-_Chesnut_Mare.wav
+59af03c00b9fdc283f8573d1f53ae4b1  [shntool]  2-14_-_8_Miles_High.wav
+5cfae9b9b16f25dca260a635c9ec7d1f  [shntool]  2-15_-_Night_They_Drove_Old_Dixie_Down.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd75-11-11-full-revue-board\D3 
+=================== 
+=================== 
+=================== 
+b44e2717e32325876758d416b33ded74  [shntool]  3-01_-_Simple_Twist_Of_Fate.wav
+caa5bca001e88a504c7128f756f59aef  [shntool]  3-02_-_Oh_Sister.wav
+8255042f4e32d94d0e6627f795ab99be  [shntool]  3-03_-_Hurricane.wav
+ad7a518a9465ca80924002bccbc3f12c  [shntool]  3-04_-_One_More_Cup_Of_Coffee.wav
+0f73c19ecca3b2fc247bd37114a3a35a  [shntool]  3-05_-_Sara.wav
+9a863fde3f63fca234b6e2cd4c979356  [shntool]  3-06_-_Just_Like_A_Woman.wav
+86f5940519a693a1722c440aa00ef744  [shntool]  3-07_-_Knockin__On_Heaven_s_Door.wav
+d3f2690f78927a6f3cb9dd75f0a60796  [shntool]  3-08_-_This_Land_Is_Your_Land.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-11-full-revue-board\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.71       45501836 B   ---   --   -----    wav  1.0000  1-01_-_Good_Love_Is_Hard_To_Find.wav
+     3:02.71       32271836 B   ---   --   -----    wav  1.0000  1-02_-_Sleazy.wav
+     5:07.73       54326540 B   ---   --   -----    wav  1.0000  1-03_-_Werewolves_Of_London.wav
+     3:07.72       33156188 B   ---   --   -----    wav  1.0000  1-04_-_Don_t_Blame_Me.wav
+     4:30.01       47630396 B   ---   --   -----    wav  1.0000  1-05_-_Catfish.wav
+     7:17.58       77223260 B   ---   --   -----    wav  1.0000  1-06_-_Is_There_Life_On_Mars.wav
+     4:33.15       48192524 B   ---   --   -----    wav  1.0000  1-07_-_Hank_Williams_Is_Dead.wav
+     3:50.72       40741388 B   ---   --   -----    wav  1.0000  1-08_-_A_New_Sunrise.wav
+     3:58.35       42065564 B   ---   --   -----    wav  1.0000  1-09_-_Cindy_When_I_Get_Home.wav
+     2:42.64       28727372 B   ---   --   -----    wav  1.0000  1-10_-_Mercedes_Benz.wav
+     1:12.25       12759644 B   ---   --   -----    wav  1.0000  1-11_-_Ramblin__Jack.wav
+     2:13.12       23489468 B   ---   --   -----    wav  1.0000  1-12_-_Muleskinner_Blues.wav
+     6:21.68       67368380 B   ---   --   -----    wav  1.0000  1-13_-_Hard_Rain.wav
+     5:35.33       59171660 B   ---   --   -----    wav  1.0000  1-14_-_Romance_In_Durango.wav
+    57:52.70      612626056 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-11-full-revue-board\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.42       59722028 B   ---   --   -----    wav  1.0000  2-01_-_Isis.wav
+     3:02.47       32215388 B   ---   --   -----    wav  1.0000  2-02_-_Blowin__In_The_Wind.wav
+     4:55.69       52200332 B   ---   --   -----    wav  1.0000  2-03_-_Water_Is_Wide.wav
+     3:08.70       33327884 B   ---   --   -----    wav  1.0000  2-04_-_I_Dreamed_I_Saw_St_Augustine.wav
+     2:33.29       27057452 B   ---   --   -----    wav  1.0000  2-05_-_Never_Let_Me_Go.wav
+     4:39.54       49342652 B   ---   --   -----    wav  1.0000  2-06_-_I_Shall_Be_Released.wav
+     4:47.67       50784428 B   ---   --   -----    wav  1.0000  2-07_-_Diamonds_And_Rust.wav
+     3:36.44       38205932 B   ---   --   -----    wav  1.0000  2-08_-_Swing_Low_Sweet_Chariot.wav
+     2:36.17       27558428 B   ---   --   -----    wav  1.0000  2-09_-_Joe_Hill.wav
+     5:13.42       55312028 B   ---   --   -----    wav  1.0000  2-10_-_Love_Song_To_A_Stranger.wav
+     4:39.22       49267388 B   ---   --   -----    wav  1.0000  2-11_-_Long_Black_Veil.wav
+     4:30.69       47790332 B   ---   --   -----    wav  1.0000  2-12_-_Please_Come_To_Boston.wav
+     5:58.70       63315884 B   ---   --   -----    wav  1.0000  2-13_-_Chesnut_Mare.wav
+     4:17.37       45421868 B   ---   --   -----    wav  1.0000  2-14_-_8_Miles_High.wav
+     3:45.66       39845276 B   ---   --   -----    wav  1.0000  2-15_-_Night_They_Drove_Old_Dixie_Down.wav
+    63:25.70      671367300 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-11-full-revue-board\D3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.72       52560188 B   ---   --   -----    wav  1.0000  3-01_-_Simple_Twist_Of_Fate.wav
+     4:17.21       45384236 B   ---   --   -----    wav  1.0000  3-02_-_Oh_Sister.wav
+     8:20.17       88240028 B   ---   --   -----    wav  1.0000  3-03_-_Hurricane.wav
+     4:30.18       47670380 B   ---   --   -----    wav  1.0000  3-04_-_One_More_Cup_Of_Coffee.wav
+     4:44.34       50177612 B   ---   --   -----    wav  1.0000  3-05_-_Sara.wav
+     4:29.42       47550428 B   ---   --   -----    wav  1.0000  3-06_-_Just_Like_A_Woman.wav
+     4:43.43       50022380 B   ---   --   -----    wav  1.0000  3-07_-_Knockin__On_Heaven_s_Door.wav
+     4:25.35       46828364 B   ---   --   -----    wav  1.0000  3-08_-_This_Land_Is_Your_Land.wav
+    40:28.57      428433616 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

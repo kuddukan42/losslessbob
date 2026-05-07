@@ -1,0 +1,65 @@
+Bob Dylan
+October 30, 2005
+Wetzlar, Mittelhessen Arena
+
+AUD DAT Master>CD>CD>EAC>WAV>Soundforge 6.0>FLAC
+
+CD 1 [67:19]
+
+01 Drifter's Escape 
+02 Señor (Tales Of Yankee Power) 
+03 God Knows
+04 The Times They Are A-Changin'
+05 Cry A While  
+06 Don't Think Twice, It's All Right 
+07 Highway 61 Revisited 
+08 Shooting Star  
+09 You Ain't Goin' Nowhere 
+10 Just Like A Woman
+
+CD 2 [44:13]
+
+01 Honest With Me
+02 A Hard Rain's A-Gonna Fall
+03 New Morning 
+04 Summer Days 
+05 Like A Rolling Stone 
+06 All Along The Watchtower
+
+
+Bob Dylan - electric piano, harmonica, vocal
+Stu Kimball - electric & acoustic guitars
+Denny Freeman - electric guitar
+Donny Herron - pedal steel guitar, lap steel, banjo, electric mandolin
+Tony Garnier - bass 
+George Receli - drums
+
+
+I did not harm the sound of the recording in any way. I did fade the show itself in and out, 
+but the CDs can be seamlessly patched together, in case someone prefers a different CD split.
+Levels are a bit low but I decided not to normalize. Sorry, no equipment information yet.
+
+Please retain this info file as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+
+
+
+bd051030_d1t01.flac:68926bf9e75088d30ba346ac3c93dade
+bd051030_d1t02.flac:88565b28f41a46ff74f988614eed0ba5
+bd051030_d1t03.flac:a3e441ae7603009fe6bb96fcbc8b191e
+bd051030_d1t04.flac:4255418b6e7f3c4ec379155f148641c4
+bd051030_d1t05.flac:16baf419a02a7884c5f115f1ddf90e3a
+bd051030_d1t06.flac:4ae8f4adf783c4cd132ebc708ea62717
+bd051030_d1t07.flac:2c1d2664bd9023df7e8a311707e8d879
+bd051030_d1t08.flac:588b81b4bc8d8a0ba9553ad1f0e962ae
+bd051030_d1t09.flac:f033eac258a8e1c47a96778cd55cc306
+bd051030_d1t10.flac:df7eac3496fb4b6508e37846c13370c4
+bd051030_d2t01.flac:24f59819ce91396c7e249141e7731b4c
+bd051030_d2t02.flac:06969f75bc9d8b02169afd5b14a5b598
+bd051030_d2t03.flac:e5690f245a8a8aa9f71fb5cb66279fde
+bd051030_d2t04.flac:2674477c3680b34c0b35222322b83523
+bd051030_d2t05.flac:edcb030973d9e6f4a63f6e10073ded0e
+bd051030_d2t06.flac:1a65af10530e868c9295e392fa34e1ac
+
+

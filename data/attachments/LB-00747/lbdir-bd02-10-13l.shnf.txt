@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-13l.shnf 
+=================== 
+=================== 
+=================== 
+7acba6a280f920bf61fcd1687dd17972  10-13-02 Late Disc 1- 1.shn
+77e710d6185149bf574eca77283eeef9  10-13-02 Late Disc 1- 10.shn
+c2c4c92097dbddb835343bb13798c0c3  10-13-02 Late Disc 1- 11.shn
+043d6ae54085259657b924fdc257a865  10-13-02 Late Disc 1- 12.shn
+ec85128ceaee00b6a8df083522f93875  10-13-02 Late Disc 1- 13.shn
+cc273a577539242df8422d47a4ac8625  10-13-02 Late Disc 1- 14.shn
+399ca0dd4314839cef7a2178b0add6fa  10-13-02 Late Disc 1- 2.shn
+1cc152e708a4a2491a8a2c4a0bdd01f2  10-13-02 Late Disc 1- 3.shn
+e59e38a45e547641a3b6db94356d9ff3  10-13-02 Late Disc 1- 4.shn
+a9d086eae042380bf53f9c859b6d1290  10-13-02 Late Disc 1- 5.shn
+3ee31deb0adf3b833312ebb6caf855db  10-13-02 Late Disc 1- 6.shn
+423075f02d808a01f35165161aa6c256  10-13-02 Late Disc 1- 7.shn
+c2cbc0ebca8160cc819c035ef2510e14  10-13-02 Late Disc 1- 8.shn
+e55cd192fb881edfe8c473dd8e507f56  10-13-02 Late Disc 1- 9.shn
+19c0ae37cb25a9616a269b642cf4f721  10-13-02 Late Disc 1.md5
+fd03f965f3ccf360e9eae8c488e1ecc2  10-13-02 Late Disc 2- 1.shn
+98c64c2bd618951c605262c5e9d69831  10-13-02 Late Disc 2- 2.shn
+f44b264f34a13e61235b697905401048  10-13-02 Late Disc 2.md5
+4dd144d745ba36283d218189667e74d6  10-13-02 Late.nfo
+9a899f09af24ca7727d52c9862caa794  bd02-10-13La.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-13l.shnf 
+=================== 
+=================== 
+=================== 
+22dac8c58d7f151ce5e91bc7850afaec  [shntool]  10-13-02_Late_Disc_1-_1.wav
+71d8f4882aba8e018b11302f95fdaf05  [shntool]  10-13-02_Late_Disc_1-_2.wav
+9eb7a18a7b6cd8d5805bed6ea0786bf6  [shntool]  10-13-02_Late_Disc_1-_3.wav
+8ebf2f9074e37394fcb0200c7e4df46b  [shntool]  10-13-02_Late_Disc_1-_4.wav
+911b40c86f040094d71b310a33a1d4ce  [shntool]  10-13-02_Late_Disc_1-_5.wav
+c8336aaedb65035d4bcc272a3e04f8b0  [shntool]  10-13-02_Late_Disc_1-_6.wav
+29be6c2b27f9bce47de5247b121b2f53  [shntool]  10-13-02_Late_Disc_1-_7.wav
+8e8d0660b25ea74aa47db6e410297a30  [shntool]  10-13-02_Late_Disc_1-_8.wav
+76bf495b007e8f4a8cf924dd1e4b1097  [shntool]  10-13-02_Late_Disc_1-_9.wav
+71f58618fa4a13658a94f6c972700bf1  [shntool]  10-13-02_Late_Disc_1-_10.wav
+48bb3b9286953e8f6f921ec73e878e17  [shntool]  10-13-02_Late_Disc_1-_11.wav
+c096ca525f4d74166ecbc8fc84548887  [shntool]  10-13-02_Late_Disc_1-_12.wav
+1cbb82547b572655f5be0a9adde00a87  [shntool]  10-13-02_Late_Disc_1-_13.wav
+434bfd16600605ac23f25be76c5463c3  [shntool]  10-13-02_Late_Disc_1-_14.wav
+f3759b8a70b891c310051bf7e17b4c05  [shntool]  10-13-02_Late_Disc_2-_1.wav
+71f7a6efb6155f4ff66b00d2c20a9f6c  [shntool]  10-13-02_Late_Disc_2-_2.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-13l.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:00.73       21339740 B   ---   --   ---xx    shn  0.3788  10-13-02 Late Disc 1- 1.shn
+     6:38.68       70367180 B   ---   --   ---xx    shn  0.4455  10-13-02 Late Disc 1- 10.shn
+     4:05.28       43283900 B   ---   --   ---xx    shn  0.5788  10-13-02 Late Disc 1- 11.shn
+     6:02.04       63866252 B   ---   --   ---xx    shn  0.4914  10-13-02 Late Disc 1- 12.shn
+     4:51.35       51414764 B   ---   --   ---xx    shn  0.5042  10-13-02 Late Disc 1- 13.shn
+     7:32.54       79860632 B   -b-   --   ---xx    shn  0.6065  10-13-02 Late Disc 1- 14.shn
+     5:26.50       57624044 B   ---   --   ---xx    shn  0.6005  10-13-02 Late Disc 1- 2.shn
+     5:25.00       57330044 B   ---   --   ---xx    shn  0.4749  10-13-02 Late Disc 1- 3.shn
+     5:53.44       62372732 B   ---   --   ---xx    shn  0.5323  10-13-02 Late Disc 1- 4.shn
+     4:10.19       44144732 B   ---   --   ---xx    shn  0.4583  10-13-02 Late Disc 1- 5.shn
+     6:05.13       64416620 B   ---   --   ---xx    shn  0.5098  10-13-02 Late Disc 1- 6.shn
+     4:25.14       46778972 B   ---   --   ---xx    shn  0.5657  10-13-02 Late Disc 1- 7.shn
+     5:57.73       63146540 B   ---   --   ---xx    shn  0.4539  10-13-02 Late Disc 1- 8.shn
+     7:10.41       75948476 B   ---   --   ---xx    shn  0.5347  10-13-02 Late Disc 1- 9.shn
+     6:54.42       73128428 B   ---   --   ---xx    shn  0.4931  10-13-02 Late Disc 2- 1.shn
+     6:25.64       68063440 B   -b-   --   ---xx    shn  0.5767  10-13-02 Late Disc 2- 2.shn
+    89:06.22      943086496 B                            0.5189  (16 files)
+=================== 
+=================== 
+=================== 

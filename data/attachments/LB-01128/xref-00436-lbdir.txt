@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-16-b.flacf 
+=================== 
+=================== 
+=================== 
+07d184f1ed2cdec29c8fb2e31e2b705c  Bob Dylan 2003.08.16 Bushkill, Pennsylvania.md5
+70899aa0eef6e579d985f163bff05c5b  disc 1\Track01.flac
+cd14fedd05ae394a4b7f60dd5638168b  disc 1\Track02.flac
+1c144088050e7a22da0f0e4d1783c944  disc 1\Track03.flac
+bb1fa421ebfa69c796ff887365143b14  disc 1\Track04.flac
+9549dd8de9dfa7cc2c6e4cadf54190f9  disc 1\Track05.flac
+2280047d905b6ab0a3989e011439109e  disc 1\Track06.flac
+d732948cf102c6141a9ffa757f004f11  disc 1\Track07.flac
+74e1bb2546efb3208b1bddffec96ef24  disc 1\Track08.flac
+6592d4edd9e45b18fe6913123b4470e1  disc 1\Track09.flac
+ba9314928c5ad2ea510604de43032b5e  disc 1\Track10.flac
+d0766a2758c83661210a00f52b881282  disc 1\Track11.flac
+10c8134eb8d7397ab596d76e6b22bb98  disc 1\Track12.flac
+cbd2d3fbbf669ce99e2cddbb7446c79d  disc 1\Track13.flac
+a83f0843f1b4a6af4da207f516df822a  disc 2\Track01.flac
+1ba4b08039f41504b322e4b436d23a40  disc 2\Track02.flac
+7ddab8f4eb2f4c2b000a33bacc552d66  disc 2\Track03.flac
+de8c323baeef36ce4d3fa7894f5104e6  disc 2\Track04.flac
+e8036e5cb2ca2837050801731eed4454  disc 2\Track05.flac
+64bf229e5518cb2e2ebce7304aa7cd0e  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-08-16-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+track01.flac:6e39b14d1b3c30699f4e7127714a03f8
+track02.flac:30f37c022625e24222e201cb3e696058
+track03.flac:53b7eb74c23641ee5a838d88b233f529
+track04.flac:6538dfb1eb44b85d146ec5e178e8a728
+track05.flac:8abbe5aff2213eeaf81296386914454f
+track06.flac:776fb155c64cea755653e54b946cac9a
+track07.flac:6bf6778cc2aec2ff53e1bd1ddbf3e1df
+track08.flac:6c1736153bc7d7c33c7275ff893a8529
+track09.flac:3a7643d32c2fbe5eb5761ff81d512a7d
+track10.flac:6ecf4c844d52ff1aefd0b47e231476b9
+track11.flac:97f221f4aa02c7e7ed1b2f213c4e4aee
+track12.flac:d7906bef2a8455b7490d4713488c3587
+track13.flac:e2bb325270f1795408532a9e17514cad
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-08-16-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+track01.flac:baa2a4c8d987f27893cc70b80570113b
+track02.flac:019e491148a6b1523a9b7cd77b834236
+track03.flac:783215596d3626d715ea75f175d3910b
+track04.flac:a1eecf3a224398b5913d4f4676dde7e5
+track05.flac:8f4c8b68ff1fc4f642bf54e7bbc8c253
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-16-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.51        7175996 B   ---   --   ---xx   flac  0.5219  Track01.flac
+     5:59.24       63384092 B   ---   --   ---xx   flac  0.5611  Track02.flac
+     4:46.51       50570396 B   ---   --   ---xx   flac  0.5271  Track03.flac
+     5:28.16       57896876 B   ---   --   ---xx   flac  0.5224  Track04.flac
+     5:17.11       55944716 B   ---   --   ---xx   flac  0.5349  Track05.flac
+     7:54.47       83724188 B   ---   --   ---xx   flac  0.5438  Track06.flac
+     7:33.22       79960988 B   ---   --   ---xx   flac  0.5718  Track07.flac
+     5:46.54       61161452 B   ---   --   ---xx   flac  0.5105  Track08.flac
+     7:39.00       80967644 B   ---   --   ---xx   flac  0.5476  Track09.flac
+     6:23.70       67725884 B   ---   --   ---xx   flac  0.5727  Track10.flac
+     7:34.13       80116220 B   ---   --   ---xx   flac  0.5274  Track11.flac
+     5:44.57       60815708 B   ---   --   ---xx   flac  0.4626  Track12.flac
+     6:33.48       69438140 B   ---   --   ---xx   flac  0.5692  Track13.flac
+    77:22.14      818882300 B                            0.5393  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-16-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:27.41       78947276 B   ---   --   ---xx   flac  0.5567  Track01.flac
+     0:34.65        6150524 B   ---   --   ---xx   flac  0.5187  Track02.flac
+    11:54.62      126095468 B   ---   --   ---xx   flac  0.5658  Track03.flac
+     6:50.08       72342860 B   ---   --   ---xx   flac  0.5967  Track04.flac
+     6:46.22       71670188 B   ---   --   ---xx   flac  0.5975  Track05.flac
+    33:33.48      355206316 B                            0.5757  (5 files)
+=================== 
+=================== 
+=================== 

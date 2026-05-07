@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-22a-lille-master.flacf 
+=================== 
+=================== 
+=================== 
+27166fa54fb73c29c733b7f3f7a76a82  bd-95-03-22-lille-master-d1 (Track 01).flac
+9f77b2e65319a1ce60af1bd64a5a0611  bd-95-03-22-lille-master-d1 (Track 02).flac
+054fbbaa660c7a8653b816671410297d  bd-95-03-22-lille-master-d1 (Track 03).flac
+7ae92ba84e297f69299083dd2eabe667  bd-95-03-22-lille-master-d1 (Track 04).flac
+5b71920e1238a8955b1d1fb9b4b73c7d  bd-95-03-22-lille-master-d1 (Track 05).flac
+59388d9e5fd3cbffcdb1673b5d671fc4  bd-95-03-22-lille-master-d1 (Track 06).flac
+7c883eccedac089622d901a736456ff1  bd-95-03-22-lille-master-d1 (Track 07).flac
+00b9ec01d05c4b26256c5f77ff78805f  bd-95-03-22-lille-master-d1 (Track 08).flac
+3b662b35f65a79dcf8e05c8c94de7adb  bd-95-03-22-lille-master-d2 (Track 01).flac
+bc13f93232fe27644ad433f874cf7b38  bd-95-03-22-lille-master-d2 (Track 02).flac
+69a9dcdaec733b6e55989f4da0215ade  bd-95-03-22-lille-master-d2 (Track 03).flac
+c649e0fad5b19085d78131eed1764452  bd-95-03-22-lille-master-d2 (Track 04).flac
+3b5971255ae39cb5ac9209e89f0adb88  bd-95-03-22-lille-master-d2 (Track 05).flac
+91363759eba6ce8ecebe0a3ef1c303d7  bd-95-03-22-lille-master-d2 (Track 06).flac
+8f4d5fa53acd94ffba034561c13093a2  bd-95-03-22-lille-master-d2 (Track 07).flac
+98cfd7eb93b4042a636e59a5912172c5  bd-95-03-22-lille-master-d2 (Track 08).flac
+7bb473ac4595a29858331402183988a4  bd-95-3-22-lille-master.txt
+c3b9f083900a29e00dacbd431ad8d7cf  bd95-03-22a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-22a-lille-master.flacf 
+=================== 
+=================== 
+=================== 
+bd-95-03-22-lille-master-d1 (Track 01).flac:816f8eee69298456df5036108347daed
+bd-95-03-22-lille-master-d1 (Track 02).flac:1b7ad492c433b1bef407b394a3c73fe9
+bd-95-03-22-lille-master-d1 (Track 03).flac:843a62348ad2b8f15f68cdf8a06583b2
+bd-95-03-22-lille-master-d1 (Track 04).flac:9885dcda6f3ea57bbb2c166b0323e5b3
+bd-95-03-22-lille-master-d1 (Track 05).flac:0883df4aeffa0142c77459bacdd0bbfb
+bd-95-03-22-lille-master-d1 (Track 06).flac:3efb1ed33d0d4ef565317c79977afeaa
+bd-95-03-22-lille-master-d1 (Track 07).flac:3ed3605a27eaf793393a99890ef3af7a
+bd-95-03-22-lille-master-d1 (Track 08).flac:5c8ab3baca98d77b780dc1ee90f678ac
+bd-95-03-22-lille-master-d2 (Track 01).flac:e0ce60668e5058677b1da1116e910a52
+bd-95-03-22-lille-master-d2 (Track 02).flac:c024a9de07f4f63ad7da6e268877b991
+bd-95-03-22-lille-master-d2 (Track 03).flac:f549d6ced20ebdd077b1a2f5e7c32b10
+bd-95-03-22-lille-master-d2 (Track 04).flac:7c4f7661face968bafc048b583585def
+bd-95-03-22-lille-master-d2 (Track 05).flac:a88acd4fd579ea00258926a16ed5f28b
+bd-95-03-22-lille-master-d2 (Track 06).flac:9e2092d79362bcaf88729ae52579ed05
+bd-95-03-22-lille-master-d2 (Track 07).flac:fb57eb43dea1ae14d108908290a89fc6
+bd-95-03-22-lille-master-d2 (Track 08).flac:fc6f9ecc85b626af30af63d5b9c69003
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-22a-lille-master.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.31       54404732 B   -b-   --   ---xx   flac  0.6491  bd-95-03-22-lille-master-d1 (Track 01).flac
+     4:32.17       48020828 B   ---   --   ---xx   flac  0.5889  bd-95-03-22-lille-master-d1 (Track 02).flac
+     5:17.31       55991756 B   ---   --   ---xx   flac  0.6326  bd-95-03-22-lille-master-d1 (Track 03).flac
+     5:32.61       58708316 B   ---   --   ---xx   flac  0.5421  bd-95-03-22-lille-master-d1 (Track 04).flac
+     7:40.30       81214604 B   ---   --   ---xx   flac  0.5768  bd-95-03-22-lille-master-d1 (Track 05).flac
+     7:00.27       74151548 B   ---   --   ---xx   flac  0.5656  bd-95-03-22-lille-master-d1 (Track 06).flac
+     6:26.55       68219804 B   ---   --   ---xx   flac  0.4114  bd-95-03-22-lille-master-d1 (Track 07).flac
+     4:41.66       49723672 B   -b-   --   ---xx   flac  0.4226  bd-95-03-22-lille-master-d1 (Track 08).flac
+     5:25.02       57335268 B   -b-   --   ---xx   flac  0.5006  bd-95-03-22-lille-master-d2 (Track 01).flac
+     7:10.70       76016684 B   ---   --   ---xx   flac  0.5721  bd-95-03-22-lille-master-d2 (Track 02).flac
+     6:58.72       73904588 B   ---   --   ---xx   flac  0.5979  bd-95-03-22-lille-master-d2 (Track 03).flac
+     6:04.57       64343708 B   ---   --   ---xx   flac  0.6171  bd-95-03-22-lille-master-d2 (Track 04).flac
+     8:54.39       94289372 B   ---   --   ---xx   flac  0.5371  bd-95-03-22-lille-master-d2 (Track 05).flac
+     8:21.53       88501100 B   ---   --   ---xx   flac  0.4969  bd-95-03-22-lille-master-d2 (Track 06).flac
+     7:55.35       83872160 B   -b-   --   ---xx   flac  0.5500  bd-95-03-22-lille-master-d2 (Track 07).flac
+     7:46.58       82339528 B   -b-   --   ---xx   flac  0.4902  bd-95-03-22-lille-master-d2 (Track 08).flac
+   104:58.30     1111037668 B                            0.5454  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-19-38f.flacf 
+=================== 
+=================== 
+=================== 
+eed2b4536ba6d368c700bbc59aaaa854  Bob Dylan 6.19.89.md5
+c02e54d9fb8beb057c5e0d2fb3e50ec8  Bob Dylan 6.19.89.txt
+e9381b39147b75e738d34cda29758ffd  cd1\01.flac
+47645507a93d011b6b00975dc7d0a565  cd1\02.flac
+7e63ca832401f05bf4c83577a7d27ca8  cd1\03.flac
+e0d9c42ec6264b3c6f1a69336f4080e5  cd1\04.flac
+7451d6be4d082c6905b5ad85496ede88  cd1\05.flac
+a190b5f6c81c8838409749d0c4a4f8bf  cd1\06.flac
+77455d2e9385dcf7d6d97f82f7739362  cd1\07.flac
+b6295d437847bf42d761193ea0f119db  cd1\08.flac
+436e07790e1668e6543c9a653791ee7e  cd1\fingerprints.txt
+b005c4547ef85e0bf1b71e66cb3ceb94  cd2\01.flac
+9adbc00426ab30a530c831d9521c17e3  cd2\02.flac
+999e4db2a2bedfb4546ee1772199935d  cd2\03.flac
+2c3a663d90eb37c92b9ac1b968f2bcbb  cd2\04.flac
+ab09d00ab776dd960daf3dbd4ff9a859  cd2\05.flac
+0f632f5d1d9437135f2017650355b397  cd2\06.flac
+6deb1b4d375cf2ead5e9d5065de1e348  cd2\07.flac
+6ab5ed9ceb77cc724d18cc47a59cb053  cd2\08.flac
+fbcfc8cf77e85cec5e807c59055d6a51  cd2\09.flac
+0f0f41d39afd94d66164e1ec644f4205  cd2\fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-19-38f.flacf\cd2 
+=================== 
+=================== 
+=================== 
+01.flac:047257bb84dd5f0ece10fa02e022d95e
+02.flac:647dc530223b24b22b0f0009b11e0fa9
+03.flac:af6b3c754cf6a25953df06ce97d7fb61
+04.flac:05e9b125b99c23f119353a1995812614
+05.flac:9bcb27a88c5f2a4cd5531df188739944
+06.flac:a1352d8bd955684fe4d30b30366d4df3
+07.flac:3653168f1976c56e40eee4429ee38fdc
+08.flac:64404b51422adcd61f779696e5ea3736
+09.flac:0fb257fa9bf257c33af0cd97c925d608
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-19-38f.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01.flac:62959c1d70b87383ee8374c21dba9d1a
+02.flac:c3e9bddc0435d3b5a26ae5e2e2495aa3
+03.flac:5f888b43473488f7769dcdf99f6ba2a8
+04.flac:73fe4374d76309c2a8358d35d489c78b
+05.flac:673feb77ba7c4a4794083b331f0bb53c
+06.flac:4f514662a1592e1af140461fa978c83b
+07.flac:77fadee3ee7233ffe285941f3e268226
+08.flac:afa68c7c58cde50b992b58aef933be53
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-06-19-38f.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:40.05       59987804 B   ---   --   ---xx   flac  0.6914  01.flac
+     4:50.22       51207788 B   ---   --   ---xx   flac  0.7161  02.flac
+     4:40.37       49479068 B   ---   --   ---xx   flac  0.7145  03.flac
+     4:57.23       52444940 B   ---   --   ---xx   flac  0.7054  04.flac
+     7:09.38       75765020 B   ---   --   ---xx   flac  0.7204  05.flac
+     4:51.61       51475916 B   ---   --   ---xx   flac  0.6736  06.flac
+     5:03.11       53475116 B   ---   --   ---xx   flac  0.6778  07.flac
+     4:16.66       45313676 B   ---   --   ---xx   flac  0.7037  08.flac
+     0:18.19        3219932 B   ---   --   ---xx   flac  0.6018  09.flac
+    41:47.57      442369260 B                            0.7004  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-06-19-38f.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:20.41       67128476 B   ---   --   ---xx   flac  0.7119  01.flac
+     5:07.08       54173660 B   ---   --   ---xx   flac  0.7094  02.flac
+     4:55.51       52157996 B   ---   --   ---xx   flac  0.7162  03.flac
+     4:41.40       49662524 B   ---   --   ---xx   flac  0.7117  04.flac
+     5:16.21       55791836 B   ---   --   ---xx   flac  0.7064  05.flac
+     4:14.29       44873852 B   ---   --   ---xx   flac  0.7155  06.flac
+     7:17.64       77237372 B   ---   --   ---xx   flac  0.6732  07.flac
+     4:47.35       50709164 B   ---   --   ---xx   flac  0.6715  08.flac
+    42:40.64      451734880 B                            0.7006  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,182 @@
+GRATEFUL DEAD 
+JFK Stadium 
+Philadelphia PA 
+07-10-1987 
+
+Disc One (59:56) 
+
+01 crowd & tuning 
+02 Iko Iko 
+03 Jack Straw 
+04 Sugaree 
+05 Minglewood Blues 
+06 Althea 
+07 My Brother Esau 
+08 mexican hat dance 
+09 When Push Comes to Shove 
+10 Cassidy 
+
+Disc Two (66:10) 
+
+01 China Cat Sunflower > 
+02 I Know You Rider 
+03 Looks Like Rain 
+04 //Terrapin > 
+05 Drums > 
+06 Space > 
+07 I Need a Miracle > 
+08 Black Peter > 
+09 Around & Around > 
+10 //One More Saturday Night 
+-- set break -- 
+
+Disc Three (77:21) 
+
+01 Tangled Up in Blue 
+02 I'll Be Your Baby Tonight 
+03 Man of Peace 
+04 The Ballad of Frankie Lee and Judas Priest 
+05 John Brown 
+06 Simple Twist of Fate 
+07 Ballad of a Thin Man 
+08 //Stuck Inside of Mobile with the Memphis Blues Again 
+09 Chimes of Freedom 
+10 Queen Jane Approximately (falls apart after aprx 45 seconds) 
+11 Gotta Serve Somebody 
+12 Joey 
+13 All Along the Watchtower 
+-- encore -- 
+14 Touch of Grey 
+
+AUD: Nakamichi CM-700's > patched from one Sony D5 > Sony TC-D5M > 
+Maxell MX-90's (no Dolby), set up FOB. Taped by Ted Carpenter. 
+
+Transfer: MAC > Nakamichi BX-125 (no Dolby) > Audiophile 2496 > 
+Soundforge > CD-Wave > TLH > FLAC. Transferred by Andrew F. 
+
+Notes: 
+- Levels go up gradually in Iko. 
+- ShnID-3859 patch in Minglewood (crowd noise only) 7:25 > 7:32. 
+- ShnID-3859 patch Cassidy (crowd noise) 7:14 > China Cat 0:28. 
+- Terrapin cuts in on first notes. 
+- ShnID-3859 patch OMSN 0:00 > 0:03 (but some is still missing). 
+- Stuck Inside Mobile cuts in on first notes. 
+- Various mic-bumps thru-out the show, none major. 
+- Break between Cassidy and China Cat is seamless. 
+- Soundforge used to make fades, adjust levels, add patches. 
+- TLH used for SBE-OK, FLAC compression, and checksums. 
+
+md5 
+
+5a7a3a4db8ee2108590bfcaae5fa7989 *gd1987-07-10d1t01.flac 
+afdfb54382750704ccb3c518f2281e79 *gd1987-07-10d1t02.flac 
+d0cd2df089a985a7b4b1fcb27ba567ee *gd1987-07-10d1t03.flac 
+5fb66a0229ef1e1b2d8418c40538d3f1 *gd1987-07-10d1t04.flac 
+23d9e173811c7c2263830f787acebbd2 *gd1987-07-10d1t05.flac 
+67d546a93573ec155c86762322b35a7b *gd1987-07-10d1t06.flac 
+0efbcaa9a71169b8199e51d31b01a5ac *gd1987-07-10d1t07.flac 
+2db645c1b3ae43f8212c7d38d5cab922 *gd1987-07-10d1t08.flac 
+f2cca13f480d64e6c67b2a6e1081c46a *gd1987-07-10d1t09.flac 
+38da1689e7f6a8dd533725cdf785a380 *gd1987-07-10d1t10.flac 
+e684266fff9b0c8a60a575808c923d59 *gd1987-07-10d2t01.flac 
+768c711ac2c56f9b5182f898dd50b097 *gd1987-07-10d2t02.flac 
+fc5a5251630c8a3da107176a528d7368 *gd1987-07-10d2t03.flac 
+835c3d6b5a9f9a7801a7fe5804f4acf0 *gd1987-07-10d2t04.flac 
+4981b824554e0d9e519bd708a30df11b *gd1987-07-10d2t05.flac 
+38b977a9cda672f7c0606c06ccd36ee8 *gd1987-07-10d2t06.flac 
+842d62e965eeb6b230f8696b5cfe1e66 *gd1987-07-10d2t07.flac 
+7b57292b74ed735dd37f5b048952201b *gd1987-07-10d2t08.flac 
+6265b6c4815b73d52aef3093d4444d14 *gd1987-07-10d2t09.flac 
+fb89c333a80a3ed7eabeb1b31d97959f *gd1987-07-10d2t10.flac 
+e091c01c680e335774a668da6ccd2efa *gd1987-07-10d3t01.flac 
+a91fbc827c9d1339f723180052cbf342 *gd1987-07-10d3t02.flac 
+b4b05f3d711bf9a02fcabb6d59c151ad *gd1987-07-10d3t03.flac 
+cc9709ba797df0e255270543078766f7 *gd1987-07-10d3t04.flac 
+4fb36af8ed659f6f357d6b7a5273888d *gd1987-07-10d3t05.flac 
+d96edead4746d8c491e55cd362853a4f *gd1987-07-10d3t06.flac 
+1c14b480dacc9ce7e856782b381c88f2 *gd1987-07-10d3t07.flac 
+c5015ef1811a95423ba191b04c761743 *gd1987-07-10d3t08.flac 
+2ffc3d4c47f59e3d16c4ba0e07cc62e9 *gd1987-07-10d3t09.flac 
+982e0d78f5cca4e9413209841764a531 *gd1987-07-10d3t10.flac 
+2d9867f5968004c503cd4dde92c18a63 *gd1987-07-10d3t11.flac 
+5c34565af35a3f19089794b6cc4be5bf *gd1987-07-10d3t12.flac 
+86294664b7919b075f84faee86fe1a51 *gd1987-07-10d3t13.flac 
+ca3416820cfb179c26cb02f620061eac *gd1987-07-10d3t14.flac 
+
+ffp 
+
+gd1987-07-10d1t01.flac:8e73abae24f1f16cfd513a4f326e57e2 
+gd1987-07-10d1t02.flac:34c0ddb78ae18e89fca8f9df753be6d4 
+gd1987-07-10d1t03.flac:6b4cd70125bcac9b5d889ed82072d66e 
+gd1987-07-10d1t04.flac:15d515aae8e79da265a3128a474f350d 
+gd1987-07-10d1t05.flac:33d7e47acb85386ca7bf433cd9a9e4a7 
+gd1987-07-10d1t06.flac:4923952c556fe3e486bb2b9ad40b8096 
+gd1987-07-10d1t07.flac:826d905bd01a3a4009f963301dd14511 
+gd1987-07-10d1t08.flac:7a2e5395f48ce8c5368d7cfd321a0080 
+gd1987-07-10d1t09.flac:1a30c6afa5d48b6f8286e8e3b3e723cf 
+gd1987-07-10d1t10.flac:bf111c3f68d68b4352ddb962b70542fe 
+gd1987-07-10d2t01.flac:61cf5e0a72ae53a51b15c748e8adca5a 
+gd1987-07-10d2t02.flac:5bb7a75321f8658006f594d2a42b8389 
+gd1987-07-10d2t03.flac:35c562c689e5b80eae23d6cc32dc542d 
+gd1987-07-10d2t04.flac:271ca2f24740b86b2afd53d467210ed8 
+gd1987-07-10d2t05.flac:13ef05762bcd9ef53495b4c35b7cdc18 
+gd1987-07-10d2t06.flac:943030d16c23df8c4fc8cbfc86a94a8c 
+gd1987-07-10d2t07.flac:9a684cae347d98242ad0dac7ef8a3249 
+gd1987-07-10d2t08.flac:b219cc4c7c17a38837d2019fcd59b737 
+gd1987-07-10d2t09.flac:64622e24d8ac832c8bfa5ac444288cf6 
+gd1987-07-10d2t10.flac:918c429c68250f51e47b067b9c1925b8 
+gd1987-07-10d3t01.flac:45534b83e0a83fe42faa23522d00a649 
+gd1987-07-10d3t02.flac:a834f3944369e984b9a6fccc924c0945 
+gd1987-07-10d3t03.flac:f3518e50b8ace6083e834a1be0ed59d9 
+gd1987-07-10d3t04.flac:0f3d12d67841e45099327b9991c5148d 
+gd1987-07-10d3t05.flac:c4238ba5dd177193e0caadeadfebda61 
+gd1987-07-10d3t06.flac:284a440e2db2051d8bd94299beea9814 
+gd1987-07-10d3t07.flac:54f3626f28055a174ae377a30b2e8589 
+gd1987-07-10d3t08.flac:d37f1cd54b521e7f6d29e30f1893b418 
+gd1987-07-10d3t09.flac:d7ddb625201750d9fe4265253b02fe7e 
+gd1987-07-10d3t10.flac:bcc0ec6e6da87b4e06b038532260d430 
+gd1987-07-10d3t11.flac:389a176aeb91263e4cedee01740c40da 
+gd1987-07-10d3t12.flac:5466156cdf3aaf836f51955ec66908d3 
+gd1987-07-10d3t13.flac:327615d6398d24ec2cd900d5766a9d9b 
+gd1987-07-10d3t14.flac:7bc52ec682578fa69f8b55454e950817 
+
+shntool 
+
+    length     expanded size   cdr  WAVE problems filename
+     2:05.07       22066508    ---   --   ---xx   gd1987-07-10d1t01.flac 
+     7:40.66       81299276    ---   --   ---xx   gd1987-07-10d1t02.flac 
+     6:08.72       65084588    ---   --   ---xx   gd1987-07-10d1t03.flac 
+     8:25.73       89253740    ---   --   ---xx   gd1987-07-10d1t04.flac 
+     8:03.00       85201244    ---   --   ---xx   gd1987-07-10d1t05.flac 
+     6:59.27       73975148    ---   --   ---xx   gd1987-07-10d1t06.flac 
+     4:53.25       51744044    ---   --   ---xx   gd1987-07-10d1t07.flac 
+     1:37.62       17256668    ---   --   ---xx   gd1987-07-10d1t08.flac 
+     6:02.64       64007372    ---   --   ---xx   gd1987-07-10d1t09.flac 
+     7:59.51       84615596    ---   --   ---xx   gd1987-07-10d1t10.flac 
+     5:28.53       57983900    ---   --   ---xx   gd1987-07-10d2t01.flac 
+     6:03.28       64099100    ---   --   ---xx   gd1987-07-10d2t02.flac 
+     8:19.51       88143596    ---   --   ---xx   gd1987-07-10d2t03.flac 
+    10:32.02      111489548    ---   --   ---xx   gd1987-07-10d2t04.flac 
+     9:28.24      100251692    ---   --   ---xx   gd1987-07-10d2t05.flac 
+     4:10.71       44267036    ---   --   ---xx   gd1987-07-10d2t06.flac 
+     5:23.00       56977244    ---   --   ---xx   gd1987-07-10d2t07.flac 
+     7:48.14       82588172    ---   --   ---xx   gd1987-07-10d2t08.flac 
+     4:18.42       45610028    ---   --   ---xx   gd1987-07-10d2t09.flac 
+     4:37.18       48905180    ---   --   ---xx   gd1987-07-10d2t10.flac 
+     5:57.12       63003068    ---   --   ---xx   gd1987-07-10d3t01.flac 
+     5:09.06       54521756    ---   --   ---xx   gd1987-07-10d3t02.flac 
+     4:49.15       51014924    ---   --   ---xx   gd1987-07-10d3t03.flac 
+     5:25.14       57362972    ---   --   ---xx   gd1987-07-10d3t04.flac 
+     6:05.02       64390748    ---   --   ---xx   gd1987-07-10d3t05.flac 
+     5:57.24       63031292    ---   --   ---xx   gd1987-07-10d3t06.flac 
+     5:11.66       55015676    ---   --   ---xx   gd1987-07-10d3t07.flac 
+     6:07.22       64790588    ---   --   ---xx   gd1987-07-10d3t08.flac 
+     5:50.51       61859996    ---   --   ---xx   gd1987-07-10d3t09.flac 
+     1:11.64       12674972    ---   --   ---xx   gd1987-07-10d3t10.flac 
+     4:28.29       47343452    ---   --   ---xx   gd1987-07-10d3t11.flac 
+     9:31.47      100834988    ---   --   ---xx   gd1987-07-10d3t12.flac 
+     4:49.08       50998460    ---   --   ---xx   gd1987-07-10d3t13.flac 
+     6:48.01       71973596    ---   --   ---xx   gd1987-07-10d3t14.flac 
+   203:28.61     2153636168 B                     (totals for 34 files, 0.5911 overall compression ratio) 
+
+There were no sector boundary errors. 

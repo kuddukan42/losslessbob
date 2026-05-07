@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-07-07-sbd 
+=================== 
+=================== 
+=================== 
+c1144eab4c659d7ddff1a03eb872af42  bd86-07-07.md5
+62b7fbd3cf399561b931036d7302afac  bd86-07-07d1t01.shn
+a49541fb8f664abb66612667e0797777  bd86-07-07d1t02.shn
+6aeda3eab281be8c8b2800a6798257a3  bd86-07-07d1t03.shn
+6f044ed99d4e32a363ca4467c9a03431  bd86-07-07d1t04.shn
+b6ffdb82983bce49afffc41bd013bc38  bd86-07-07d1t05.shn
+eecc0c654f18ba824ebea7e1ee1c2e59  bd86-07-07d1t06.shn
+4124455f075b1b3672a85bad923d85a3  bd86-07-07d1t07.shn
+c6fec95247d458d6802c9f60ce0aff4a  bd86-07-07d1t08.shn
+077b568697e9df04c0b6df1ab9c12c07  bd86-07-07d1t09.shn
+04d65cb32f158c5c4fb62fc30edb331e  bd86-07-07d1t10.shn
+dbf94c9cc80438dae58e2acfcd434453  bd86-07-07d1t11.shn
+7256d9c0aaa39116c2d9bac599660347  bd86-07-07d1t12.shn
+4f5cb6db0725db60abd4cba060d3185d  bd86-07-07d1t13.shn
+76889c67a5ab366ea48c942e2ed8f066  bd86-07-07d1t14.shn
+1410dba30781e2a0edd7a64a65415de9  bd86-07-07d1t15.shn
+485bac05f535a75533aa732214e98a11  bd86-07-07d1t16.shn
+47b25f588be5758d96ffa8c16e4fa71d  bd86-07-07d2t01.shn
+4ffc05fb5224cbc658a8caad74b7b6d1  bd86-07-07d2t02.shn
+ca093326fa390021dcc4f8aee6f138b2  bd86-07-07d2t03.shn
+5436f790d20db0540da840c6f77b128d  bd86-07-07d2t04.shn
+5a87faee0633bc36585c339b6e9454e0  bd86-07-07d2t05.shn
+4ff62e38e4f44382a9a2ae56dfba5e8e  bd86-07-07d2t06.shn
+377deb360f4d8ac34d9d4c2dad712356  bd86-07-07d2t07.shn
+b1e93d53ee1072eb876c16f003c66cd4  bd86-07-07d2t08.shn
+9ff4171f3fc67db9f1063b9d11ab377b  bd86-07-07d2t09.shn
+9ce98506a1d31e25fdc1e43b00fdd8be  bd86-07-07d2t10.shn
+3f0dccbf9d3e683da06030c07a0c2a76  bd86-07-07d2t11.shn
+fabd945a816af731d7499799a0fa111f  bd86-07-07s.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-07-07-sbd 
+=================== 
+=================== 
+=================== 
+9b29e58fb16863b517d2f4681bc3da5f  [shntool]  bd86-07-07d1t01.wav
+d99450fa3e05489c1452595a2ded84e3  [shntool]  bd86-07-07d1t02.wav
+cca72947b56a8bb5003b51645d127d69  [shntool]  bd86-07-07d1t03.wav
+6c7bec015ac27d6e961dbe358bc1623a  [shntool]  bd86-07-07d1t04.wav
+7af9ab0b2d5111896dc3f98f95815689  [shntool]  bd86-07-07d1t05.wav
+9d7827a0cca1066bb1ed38f1749ec0c2  [shntool]  bd86-07-07d1t06.wav
+d31b395e96fab5975001f6b895d59b26  [shntool]  bd86-07-07d1t07.wav
+b6377951da586a507ec6e6484fefd4a6  [shntool]  bd86-07-07d1t08.wav
+8d9d514451cbc7eaf671bb01b15228b6  [shntool]  bd86-07-07d1t09.wav
+321c775f721596b8633674afc1a01b11  [shntool]  bd86-07-07d1t10.wav
+0f4672e30f5a735ab5399ee0e0238fd0  [shntool]  bd86-07-07d1t11.wav
+f5d42511b43fa653933882b3575ef3c0  [shntool]  bd86-07-07d1t12.wav
+76cff425513493420a4a7a7e626aef6e  [shntool]  bd86-07-07d1t13.wav
+79a37981b265bc97f2369e7fe4324746  [shntool]  bd86-07-07d1t14.wav
+318aff72777ecee1df2c376463652ce2  [shntool]  bd86-07-07d1t15.wav
+a30c225e5bc3c65357b585a39f7816e8  [shntool]  bd86-07-07d1t16.wav
+ffcfd3f94d6c348d0375d7662085be73  [shntool]  bd86-07-07d2t01.wav
+9438ab278b1a34e5592ca4659c0b6c2d  [shntool]  bd86-07-07d2t02.wav
+1283b172e1669d9aaaeae3aa3b6f1a6d  [shntool]  bd86-07-07d2t03.wav
+1f82270f7b6ff946ef03157219d1c648  [shntool]  bd86-07-07d2t04.wav
+dd1f2d6ed5b2438b60cd45a01e54f9a1  [shntool]  bd86-07-07d2t05.wav
+b02707b2c7b6961c047fba15bdc8648e  [shntool]  bd86-07-07d2t06.wav
+5d4224296cae5d450776dbd2f026e60c  [shntool]  bd86-07-07d2t07.wav
+7f439347525d552c1935a9e1aa509a66  [shntool]  bd86-07-07d2t08.wav
+3d4e5a1f6b612b7adcfc7130401d0a2e  [shntool]  bd86-07-07d2t09.wav
+1135edbe8aa73a4f24e6e6494ab2d846  [shntool]  bd86-07-07d2t10.wav
+c5b35009864878c2def421b73ab61ded  [shntool]  bd86-07-07d2t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-07-sbd 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:38.21       38504636 B   ---   --   -----    wav  1.0000  bd86-07-07d1t01.wav
+     3:47.71       40209836 B   ---   --   -----    wav  1.0000  bd86-07-07d1t02.wav
+     2:45.68       29265980 B   ---   --   -----    wav  1.0000  bd86-07-07d1t03.wav
+     5:23.42       57076028 B   ---   --   -----    wav  1.0000  bd86-07-07d1t04.wav
+     5:20.40       56542124 B   ---   --   -----    wav  1.0000  bd86-07-07d1t05.wav
+     3:07.05       32998604 B   ---   --   -----    wav  1.0000  bd86-07-07d1t06.wav
+     4:41.42       49667228 B   ---   --   -----    wav  1.0000  bd86-07-07d1t07.wav
+     4:07.69       43733132 B   ---   --   -----    wav  1.0000  bd86-07-07d1t08.wav
+     3:23.26       35870396 B   ---   --   -----    wav  1.0000  bd86-07-07d1t09.wav
+     5:19.25       56330444 B   ---   --   -----    wav  1.0000  bd86-07-07d1t10.wav
+     4:49.15       51014924 B   ---   --   -----    wav  1.0000  bd86-07-07d1t11.wav
+     2:11.38       23197820 B   ---   --   -----    wav  1.0000  bd86-07-07d1t12.wav
+     4:29.16       47489276 B   ---   --   -----    wav  1.0000  bd86-07-07d1t13.wav
+     5:57.03       62981900 B   ---   --   -----    wav  1.0000  bd86-07-07d1t14.wav
+     4:47.64       50777372 B   ---   --   -----    wav  1.0000  bd86-07-07d1t15.wav
+     5:23.17       57017228 B   ---   --   -----    wav  1.0000  bd86-07-07d1t16.wav
+     4:04.66       43196876 B   ---   --   -----    wav  1.0000  bd86-07-07d2t01.wav
+     3:58.67       42140828 B   ---   --   -----    wav  1.0000  bd86-07-07d2t02.wav
+     4:02.30       42759404 B   ---   --   -----    wav  1.0000  bd86-07-07d2t03.wav
+     7:08.40       75593324 B   ---   --   -----    wav  1.0000  bd86-07-07d2t04.wav
+     4:23.47       46503788 B   ---   --   -----    wav  1.0000  bd86-07-07d2t05.wav
+     8:47.56       93094556 B   ---   --   -----    wav  1.0000  bd86-07-07d2t06.wav
+     4:56.46       52322636 B   ---   --   -----    wav  1.0000  bd86-07-07d2t07.wav
+     3:40.58       38944460 B   ---   --   -----    wav  1.0000  bd86-07-07d2t08.wav
+     7:44.50       81967244 B   ---   --   -----    wav  1.0000  bd86-07-07d2t09.wav
+     6:25.49       68029292 B   ---   --   -----    wav  1.0000  bd86-07-07d2t10.wav
+    10:26.72      110595788 B   ---   --   -----    wav  1.0000  bd86-07-07d2t11.wav
+   134:54.18     1427825124 B                            1.0000  (27 files)
+=================== 
+=================== 
+=================== 

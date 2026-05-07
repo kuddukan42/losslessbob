@@ -1,0 +1,96 @@
+===================
+===================
+===================
+=== is this normal.txt
+===================
+===================
+===================
+IS THIS NORMAL
+no label 2CDR
+
+(1) Redbird Arena (Normal, IL); February 13, 1999
+(2) SIU Arena (Carbondale, IL); February 12, 1999
+
+
+
+Tracklist: (1) 
+Gotta Serve Somebody, 
+Million Miles, 
+Watching The River Flow, 
+She Belongs To Me, 
+Silvio, 
+Cocaine Blues, 
+Masters Of War, 
+Love Minus Zero, 
+Tangled Up In Blue, 
+Make You Feel My Love, 
+Ballad Of A Thin Man, 
+Highway 61 Revisited, 
+Love Sick, 
+Rainy Day Women #12 & 35, 
+Blowin' In The Wind, 
+Not Fade Away
+
+(2) 
+My Back Pages, 
+'Til I Fell In Love With You, 
+Positively Fourth Street, 
+Highway 61 Revisited, 
+Love Sick, 
+Leopard-Skin Pillbox Hat (cut)
+Blowin In The Wind, 
+Not Fade Away
+
+
+All info compiled from:http://www.angelfire.com/wa/monicasdude/isnorm.htm
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+6bf0ec9152176b0cf6cab03e30362632 *1 Piste audio.flac
+a3c229f11b9aa46b7fc200726ce5e874 *10 Piste audio.flac
+5511dce9a1c3588378ce574638fb1750 *11 Piste audio.flac
+c078ec22aa211706225951cbe9f147c8 *12 Piste audio.flac
+a6f92ae09d778677c878376ff7066ddf *2 Piste audio.flac
+ea8155b17cd99fe2ca05d924a86c2e37 *3 Piste audio.flac
+6c6ff2ffada81c2c6ecaeb9b6f553e3a *4 Piste audio.flac
+3f63e3e6d2f275674dd60288880eb6c9 *5 Piste audio.flac
+88745bfc83621391e2af532723142ea9 *6 Piste audio.flac
+d0549fb00a20721938acccb3a57eb7aa *7 Piste audio.flac
+41b95a0f49a58220e4198a7e73f0960d *8 Piste audio.flac
+c5d9980e7dd26833ae5085033c31c54e *9 Piste audio.flac
+6bf0ec9152176b0cf6cab03e30362632 *1 Piste audio.flac
+a3c229f11b9aa46b7fc200726ce5e874 *10 Piste audio.flac
+5511dce9a1c3588378ce574638fb1750 *11 Piste audio.flac
+c078ec22aa211706225951cbe9f147c8 *12 Piste audio.flac
+a6f92ae09d778677c878376ff7066ddf *2 Piste audio.flac
+ea8155b17cd99fe2ca05d924a86c2e37 *3 Piste audio.flac
+6c6ff2ffada81c2c6ecaeb9b6f553e3a *4 Piste audio.flac
+3f63e3e6d2f275674dd60288880eb6c9 *5 Piste audio.flac
+88745bfc83621391e2af532723142ea9 *6 Piste audio.flac
+d0549fb00a20721938acccb3a57eb7aa *7 Piste audio.flac
+41b95a0f49a58220e4198a7e73f0960d *8 Piste audio.flac
+c5d9980e7dd26833ae5085033c31c54e *9 Piste audio.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+1 Piste audio.flac:1bf6cc4f3e0e9b0095fa0ad3bc5c242b10 Piste audio.flac:c1d45a33710da75e6708f23db2b3a32711 Piste audio.flac:bad8f99a798a352285022590a74519e212 Piste audio.flac:9ef044659ea6e1f4544b3e287846bb1c2 Piste audio.flac:63e3c20dc39f9de81dbff2be3c2c99c23 Piste audio.flac:ab025efe1fe77a315d84c241763bc1d54 Piste audio.flac:a3090a84ac0d47c777781005128b1f675 Piste audio.flac:4266ba6b6389b55d3d1c7e41bb8a908c6 Piste audio.flac:207ea91b1409ae22d59fd2f4b710e4777 Piste audio.flac:18cb48d2e3d2b55a45d967b2e09561768 Piste audio.flac:6c5b7d7bd550b3f06f75680565f7d2659 Piste audio.flac:24d614cbfbe3d2ea635f6df65f088b7b
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+1 Piste audio.flac:3bbf41850da90f4ec8a6181b5f53993710 Piste audio.flac:af83641f7bf5a98e957d3bc97f85c46511 Piste audio.flac:bc19677549752ba734bcaa800912798512 Piste audio.flac:4762a62faba4a16d427f4ef59ddd1a6e2 Piste audio.flac:8e8e0e3c7fac68330f333e8156991f023 Piste audio.flac:d0cac23120e1635be21a8b1f516d7b1a4 Piste audio.flac:0d390694159551fac6d3c5b5850147145 Piste audio.flac:1033cafdff3aa719075b7f6a04338a8a6 Piste audio.flac:6231d78490f39951d512a749a40e18c07 Piste audio.flac:d1dbfe3310ecf596abc3929b3d84aa398 Piste audio.flac:a09eaf67cc8711768a13be0c30edb82a9 Piste audio.flac:e8a976372764154ce14a015e7aa2e759
+===================
+===================
+===================

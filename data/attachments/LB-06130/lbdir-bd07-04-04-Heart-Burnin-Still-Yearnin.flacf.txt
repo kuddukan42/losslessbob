@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-04-Heart-Burnin-Still-Yearnin.flacf 
+=================== 
+=================== 
+=================== 
+e107a398124d6e3b4940ebd0891a1cec  artwork\back.JPG
+d6830ef12fe74e72b44fdbcd888dad96  artwork\cd-1.JPG
+8f4223d895a99032861bfbe442691b17  artwork\cd-2.JPG
+c02012abe2658dc3e8dc8b3b434c187b  artwork\front.JPG
+58bc3c6b9868b0eb5bb01c97bb6dd987  cd-1\cd-1.md5
+bfa2ff587b454d64ddd6e4e9e07e35ae  cd-1\cd-1.txt
+64f43c7b448981187ca9f2d6b9b123ce  cd-1\Heart Burnin',Still Yearnin' cd-1.log
+3ec83c8950e59975a59834719ef2ee55  cd-1\Track01.flac
+621d2925ef116fa0cc946ed66c54da91  cd-1\Track02.flac
+b354fddf46e97a66746d9e47d09d80d2  cd-1\Track03.flac
+bdcca94489184b226869d000aa970645  cd-1\Track04.flac
+6f881b028e6902a586bca6e0d96564f4  cd-1\Track05.flac
+4f66bad2442703c3ed226393734717f3  cd-1\Track06.flac
+ad333b3e75a035eee2860d33dc0e46fa  cd-1\Track07.flac
+b1f16d300fe7c0cd35f5afb3b66172ac  cd-1\Track08.flac
+3dc5d5d5b3c518cf40201dcc87904d6e  cd-1\Track09.flac
+c5c76f3514fd8da2bde1e56017b76e6b  cd-1\Track10.flac
+b8f3d65dedbf8080bfe9a021f083da42  cd-1\Track11.flac
+c2ced7b47e91d6fb4dccc0a3824ac070  cd-2\cd-2.md5
+966ad82b33c4b986e0c355527840da55  cd-2\cd-2.txt
+7351094b2190ac7a8b7dd38292df5792  cd-2\Heart Burnin',Still Yearnin' cd-2.log
+f21edb19eb389fd31bbe58768ffede17  cd-2\Track01.flac
+cd16659c241474e63f5e66be52149e44  cd-2\Track02.flac
+b2950b727382edd090326620d54ce5d4  cd-2\Track03.flac
+f2d238ccd4895c4ec0e7dc19881e82c1  cd-2\Track04.flac
+05a69257076127bd38396ce288f10aee  cd-2\Track05.flac
+e5e0f54e770b2a038cd578b16de3702a  cd-2\Track06.flac
+9ef47891f31f991db41201fb406500c1  cd-2\Track07.flac
+d69dc5cbb9d5f955141f1e7e2040bce0  cd-2\Track08.flac
+c521919ad20b794c50f252ebf566f428  fingerprint.txt
+42fdf76bb57765aec83a53aed482f84e  Heart Burnin',Still Yearnin'.md5
+4f1ffb35b7d7bc2c1110ef4157cbb57f  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-04-Heart-Burnin-Still-Yearnin.flacf\cd-1 
+=================== 
+=================== 
+=================== 
+Track01.flac:2ec76db9966a4158d5dc506fd868d9db
+Track02.flac:11b7ebd176abe5dddea911b53ed7cb60
+Track03.flac:057d36e5f3eb6d06844d6bc2f20c2428
+Track04.flac:218671a0b97003d0d20ee3caf2ab06d4
+Track05.flac:bbc48dfea7c94d6b611dde26f20b6257
+Track06.flac:c25969b6290ddf9047a986a6447431b4
+Track07.flac:7e0010db0fd087d0440e6ad8a2920637
+Track08.flac:68b5a6f2bbff05d6c646e7a75c29dfbd
+Track09.flac:88a17e945aaf2f554ddb8425bc7791ac
+Track10.flac:712b0eb8ad291bca7782466fd6883b92
+Track11.flac:b246ecd0145f61590482244e18a65dd6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-04-Heart-Burnin-Still-Yearnin.flacf\cd-2 
+=================== 
+=================== 
+=================== 
+Track01.flac:b64f4c00019577543593919e8d8bc859
+Track02.flac:ea26b24f72f0b14ef336c33744bb1073
+Track03.flac:e9e8b4e44aea6a1e19cfbd0c95e31660
+Track04.flac:c9d6fbed65127b1614fa2c9ee28d28fc
+Track05.flac:e87e51b5459a45390226c600d2a41059
+Track06.flac:f3dd24954bffc91685f08f3d6a3a71d3
+Track07.flac:6f575f0c7c74272fe32aab4dd38619ae
+Track08.flac:f4cfda92b7f8df1d93777d9e4365fff6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-04-Heart-Burnin-Still-Yearnin.flacf\cd-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:02.45       11042684 B   ---   --   ---xx   flac  0.5290  Track01.flac
+     4:26.59       47061212 B   ---   --   ---xx   flac  0.6188  Track02.flac
+     5:26.54       57633452 B   ---   --   ---xx   flac  0.6118  Track03.flac
+     5:21.25       56683244 B   ---   --   ---xx   flac  0.6276  Track04.flac
+     7:26.19       78719132 B   ---   --   ---xx   flac  0.5999  Track05.flac
+     5:55.74       62796092 B   ---   --   ---xx   flac  0.5044  Track06.flac
+     7:14.32       76632908 B   ---   --   ---xx   flac  0.6134  Track07.flac
+     5:13.47       55323788 B   ---   --   ---xx   flac  0.5433  Track08.flac
+     6:35.13       69708620 B   ---   --   ---xx   flac  0.6080  Track09.flac
+     7:00.67       74245628 B   ---   --   ---xx   flac  0.5727  Track10.flac
+     7:01.17       74304428 B   ---   --   ---xx   flac  0.5323  Track11.flac
+    62:45.02      664151188 B                            0.5815  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-04-Heart-Burnin-Still-Yearnin.flacf\cd-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:06.30       64633004 B   ---   --   ---xx   flac  0.6283  Track01.flac
+     7:42.09       81518012 B   ---   --   ---xx   flac  0.5308  Track02.flac
+     5:58.02       63155948 B   ---   --   ---xx   flac  0.5989  Track03.flac
+    10:05.49      106837292 B   ---   --   ---xx   flac  0.5704  Track04.flac
+     8:20.21       88249436 B   ---   --   ---xx   flac  0.5770  Track05.flac
+     6:42.31       70985756 B   ---   --   ---xx   flac  0.6339  Track06.flac
+     5:17.38       56008220 B   ---   --   ---xx   flac  0.6161  Track07.flac
+    10:48.23      114361340 B   ---   --   ---xx   flac  0.5797  Track08.flac
+    61:00.53      645749008 B                            0.5875  (8 files)
+=================== 
+=================== 
+=================== 

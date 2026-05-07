@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-20-km140-romeo.flacf 
+=================== 
+=================== 
+=================== 
+b3dc6cb379a408047a97b257f6468ad9  bd2009-04-20.km140.romeo.ffp
+d2c0eb937f03707d0db3a8e80891dc78  bd2009-04-20.km140.romeo.md5
+c7409db26ceb08816e93b3a485d172d3  bd2009-04-20.km140.romeo.txt
+1df2dfb65788e81edcc6f2ddc16337df  bd2009-04-20d1t01.flac
+39292455c2958128748bd9dd5bc15650  bd2009-04-20d1t02.flac
+1d819eae380c2b7a2f3ef5b222b44ba6  bd2009-04-20d1t03.flac
+8255b5973801f9c89fdfb654b7bfa130  bd2009-04-20d1t04.flac
+f897b425eef1ebbfe435569a5d0550af  bd2009-04-20d1t05.flac
+6b920d3670f79707ac542450b36f5a03  bd2009-04-20d1t06.flac
+85d30720aac61e5f20a5474088841c72  bd2009-04-20d1t07.flac
+76adf22e46b34a3b058f8cc9cfe0dd66  bd2009-04-20d1t08.flac
+13426c1ccccafeaa08eb835798c926e0  bd2009-04-20d1t09.flac
+fb17a842bb154fdd474b4bc3ee42dfa3  bd2009-04-20d1t10.flac
+06eda4a062ccc2aab82a3b5286fea7d0  bd2009-04-20d1t11.flac
+3947fbadf0ede62c0b8263e25ad4ccfb  bd2009-04-20d1t12.flac
+b25865f47d6f3932a44ba1e59f6135f3  bd2009-04-20d2t01.flac
+4a76951ddd0d233a5b22d275eec5c3af  bd2009-04-20d2t02.flac
+79b3c28790f26b788fc50a8662d9f4c0  bd2009-04-20d2t03.flac
+1da846b06356dda2ad29b7f05a835b4c  bd2009-04-20d2t04.flac
+3edad7e46203ac60b8b0096c1f6317ee  bd2009-04-20d2t05.flac
+6e3c94175ca20767453f0ace1c824b51  bd2009-04-20d2t06.flac
+fc9e7209adb655b7f92d6b1b562909c8  bd2009-04-20d2t07.flac
+57b8296cf3656a6a62cf4b391bb16a93  bd2009-04-20d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-20-km140-romeo.flacf 
+=================== 
+=================== 
+=================== 
+bd2009-04-20d1t01.flac:bb0e83a42fbf64fa0d35ca117e23abd0
+bd2009-04-20d1t02.flac:9517d0b62636d01ab79cff77226b6b3b
+bd2009-04-20d1t03.flac:61f477528f584d52b2adc4d8c6d62be2
+bd2009-04-20d1t04.flac:23c3640be2deec176977d7f65585ffa5
+bd2009-04-20d1t05.flac:f420ec052f7ce31695b01cd17ebc3e94
+bd2009-04-20d1t06.flac:b341bf87b60f6d3e51cbf9c38a95faec
+bd2009-04-20d1t07.flac:a21392519a003de8c9ee42ed62d8d66b
+bd2009-04-20d1t08.flac:731aaecc40523897a7a46d803e1f9da6
+bd2009-04-20d1t09.flac:f97c59007e8fb432dc33a85d63c42b55
+bd2009-04-20d1t10.flac:5d1efce078849788b50c9e144bf14a0d
+bd2009-04-20d1t11.flac:d61db8570cbf607c504b01a5490a56d7
+bd2009-04-20d1t12.flac:6a2c82984b7d1dea8e6fc7e81f4cd84a
+bd2009-04-20d2t01.flac:b2d1da546810562d3fefb5aa25c022e3
+bd2009-04-20d2t02.flac:8d892a15136c66b12f8110d088746c4c
+bd2009-04-20d2t03.flac:de85645be9829fd84853001ed15711d8
+bd2009-04-20d2t04.flac:756c517bf8d4481ef44f3f0434b9acb2
+bd2009-04-20d2t05.flac:25362bbc6e6b6bace1000e719268d612
+bd2009-04-20d2t06.flac:9074d4945773f215f601defbc531d753
+bd2009-04-20d2t07.flac:692398f35b621271668feaa10f290d9d
+bd2009-04-20d2t08.flac:ad02ec47df3c9d10090a20d2e910efae
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-20-km140-romeo.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:42.25        7467644 B   ---   --   ---xx   flac  0.3844  bd2009-04-20d1t01.flac
+     4:43.27       49984748 B   ---   --   ---xx   flac  0.4799  bd2009-04-20d1t02.flac
+     5:19.10       56295164 B   ---   --   ---xx   flac  0.4478  bd2009-04-20d1t03.flac
+     6:58.62       73881068 B   ---   --   ---xx   flac  0.4641  bd2009-04-20d1t04.flac
+     6:24.62       67883468 B   ---   --   ---xx   flac  0.4702  bd2009-04-20d1t05.flac
+     7:40.66       81299276 B   ---   --   ---xx   flac  0.4161  bd2009-04-20d1t06.flac
+     4:33.29       48225452 B   ---   --   ---xx   flac  0.4677  bd2009-04-20d1t07.flac
+     6:59.41       74008076 B   ---   --   ---xx   flac  0.3998  bd2009-04-20d1t08.flac
+     8:01.17       84888428 B   ---   --   ---xx   flac  0.4583  bd2009-04-20d1t09.flac
+     6:11.17       65484428 B   ---   --   ---xx   flac  0.3400  bd2009-04-20d1t10.flac
+     7:50.29       82976252 B   ---   --   ---xx   flac  0.4573  bd2009-04-20d1t11.flac
+     5:58.21       63200636 B   ---   --   ---xx   flac  0.3681  bd2009-04-20d1t12.flac
+     7:00.73       74259740 B   ---   --   ---xx   flac  0.4380  bd2009-04-20d2t01.flac
+     7:27.20       78897884 B   ---   --   ---xx   flac  0.4801  bd2009-04-20d2t02.flac
+     6:49.70       72312284 B   ---   --   ---xx   flac  0.4739  bd2009-04-20d2t03.flac
+     3:47.39       40134572 B   ---   --   ---xx   flac  0.3936  bd2009-04-20d2t04.flac
+     5:12.34       55116812 B   ---   --   ---xx   flac  0.4819  bd2009-04-20d2t05.flac
+     7:11.44       76131932 B   ---   --   ---xx   flac  0.3897  bd2009-04-20d2t06.flac
+     0:53.17        9389228 B   ---   --   ---xx   flac  0.4023  bd2009-04-20d2t07.flac
+     5:10.29       54752252 B   ---   --   ---xx   flac  0.4349  bd2009-04-20d2t08.flac
+   114:56.57     1216589344 B                            0.4364  (20 files)
+=================== 
+=================== 
+=================== 

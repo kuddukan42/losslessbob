@@ -1,0 +1,14 @@
+bca99fb937a61512bcdd09dd4702cac0 *bd_95-12-13_Bethlehem_PA_cd1_Track 01.shn
+0a36c074e22972147ec28fd5cd457eaf *bd_95-12-13_Bethlehem_PA_cd1_Track 02.shn
+75864d11b08095358561865782b83b57 *bd_95-12-13_Bethlehem_PA_cd1_Track 03.shn
+303d5a26dc99924ca170edefc4b44002 *bd_95-12-13_Bethlehem_PA_cd1_Track 04.shn
+fe333511ea3daff5f98d045ced376c05 *bd_95-12-13_Bethlehem_PA_cd1_Track 05.shn
+b439f08a0e46863d088233854017495c *bd_95-12-13_Bethlehem_PA_cd1_Track 06.shn
+725494ea2528f7995305e044015016fe *bd_95-12-13_Bethlehem_PA_cd1_Track 07.shn
+c8490ca16a55167aab6a75f9bfb86519 *bd_95-12-13_Bethlehem_PA_cd1_Track 08.shn
+bb84057f39bf237f1d9d0071faf940e4 *bd_95-12-13_Bethlehem_PA_cd1_Track 09.shn
+3f2b2dff9a7fb4d53e75d3fe1a32de6f *bd_95-12-13_Bethlehem_PA_cd1_Track 10.shn
+eff3bbfdd486c9e4c3f53255bd603a23 *bd_95-12-13_Bethlehem_PA_cd1_Track 11.shn
+70b8431a1fc8b9348bd04b115010e5d0 *bd_95-12-13_Bethlehem_PA_cd1_Track 12.shn
+5467b4ae8bc96829b76f36b6c02b00d2 *bd_95-12-13_Bethlehem_PA_cd1_Track 13.shn
+fb1a1ae2dbd806b8c626154b12f6d414 *bd_95-12-13_Bethlehem_PA_cd1_Track 14.shn

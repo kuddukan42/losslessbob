@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-11-twelve-a-Pound-Captain-Acid-RM.flacf 
+=================== 
+=================== 
+=================== 
+ff25762e40dc7a9d61ff14ff840a9f66  1995-03-11 Prague - 12 Shillings A Pound (Captain Acid RM).ffp
+43fd3d710c45d6ea83985b47afd0c9cc  1995-03-11 Prague - 12 Shillings A Pound (Captain Acid RM).md5
+31f40fc90c38bc55757f68e47a0d86ab  CD 1\01 Crash On The Leeve (Down In The Flood).flac
+a6eeabc9aa02e396c9c2eeddbd75aef4  CD 1\02 If Not For You.flac
+441a23aa4482cc93fbbda33c3a83648d  CD 1\03 All Along The Watchtower.flac
+7a815e338c5b21b23fd23f8a267c9766  CD 1\04 Just Like A Woman.flac
+75399b3c52a71de3059f1c4a6685a0f4  CD 1\05 Tangled Up In Blue.flac
+814cfc51d27955a721a1cc4706203238  CD 1\06 Watching The River Flow.flac
+5fdb65c9d883580f921bbbcf92748d52  CD 1\07 Mr. Tambourine Man.flac
+19f2f67eea8cbb0aea9c6ffae70815b4  CD 1\08 Boots Of Spanish Leather.flac
+32bf9444c6a8e7082d50df7adfa8418e  CD 1\09 It's All Over Now Baby Blue.flac
+2129904761fa1bfc4bd0803a2d409f0f  CD 1\10 Man In The Long Black Coat.flac
+c8b0050674dbc8bfc45874393234d3ba  CD 1\11 God Knows.flac
+c99569ec5095b767495cb7346522781f  CD 2\01 Track 01.flac
+fd62a2fbf687e03a4d07f91584154067  CD 2\02 Track 02.flac
+e013f21ef7f53510c72623140dd643a8  CD 2\03 Track 03.flac
+64036ad2dce5e567b8ff92b991b9b9fe  CD 2\04 Track 04.flac
+2b68ede7c2474ac1250d4bce65a7c176  CD 2\05 Track 05.flac
+71e53e27ab3b3e58be455d3c0969b3fc  CD 2\06 Track 06.flac
+9616315cd3f783b2cec45ecc5b6f1cd3  CD 2\07 Track 07.flac
+adf21e1647ccc474a85ca1470863a361  CD 2\08 Track 08.flac
+ab8c5fcc63e4dfa8d9ef8f5aab85111c  CD 2\09 Track 09.flac
+dbb4ab1893f604ed5b23adf2b0d8cbc4  CD 2\10 Track 10.flac
+bbe0254fb21979728510e3de03c949a8  Dylan12APound.txt
+b452b9c632ead5879ff1d6eaeaa87245  Dylan12Pound.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-11-twelve-a-Pound-Captain-Acid-RM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+01 Crash On The Leeve (Down In The Flood).flac:40103f62eaf70f2ecc751dfd55072432
+02 If Not For You.flac:7d81df69b10ba6992046dc98b12fdfe5
+03 All Along The Watchtower.flac:d1ad879ec61e4596c94443fca916e317
+04 Just Like A Woman.flac:d178cc56eb51896e41fca0d2ddc6c23d
+05 Tangled Up In Blue.flac:0a4137aa14400d3a9b642f86942482f5
+06 Watching The River Flow.flac:4952a11916b10c3fce0747428a5022f0
+07 Mr. Tambourine Man.flac:dbf987108cdeabb5c8662702ea50f1c0
+08 Boots Of Spanish Leather.flac:9ed7a0754cc161f22393f9cea245c656
+09 It's All Over Now Baby Blue.flac:839860b50ead09d98ffdf0273447658d
+10 Man In The Long Black Coat.flac:87472c49cacb0a4de8ec6a54d9090fd1
+11 God Knows.flac:b71e480cd2d9740dc802d58f83d022b6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-11-twelve-a-Pound-Captain-Acid-RM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+01 Track 01.flac:3f8436985169343d355af3d0526e0a21
+02 Track 02.flac:f98d5be8084319ef08e4203cf69e161f
+03 Track 03.flac:adc63983e8689a3921dd5d515cdf6482
+04 Track 04.flac:b171e6b3d43b786f790edf22f6adcdf4
+05 Track 05.flac:786d2a283af169133b29868eeb1a7c1d
+06 Track 06.flac:e4bd930e6b2ddd5cae188ab9be32f20c
+07 Track 07.flac:2156e7981e3b21d326ef9481f36b1bdd
+08 Track 08.flac:ab1b7da8243dc0b2f0dd3fd85050e45b
+09 Track 09.flac:602094db633ba1c0144c80689b60a8d9
+10 Track 10.flac:2b1ab4994d922c91d7c669cb4ef1acd2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-11-twelve-a-Pound-Captain-Acid-RM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.40       51073724 B   ---   --   ---xx   flac  0.7386  01 Crash On The Leeve (Down In The Flood).flac
+     4:11.45       44382284 B   ---   --   ---xx   flac  0.7170  02 If Not For You.flac
+     5:02.70       53437484 B   ---   --   ---xx   flac  0.7411  03 All Along The Watchtower.flac
+     7:36.58       80574860 B   ---   --   ---xx   flac  0.7154  04 Just Like A Woman.flac
+     7:45.15       82061324 B   ---   --   ---xx   flac  0.7120  05 Tangled Up In Blue.flac
+     7:05.67       75127628 B   ---   --   ---xx   flac  0.7328  06 Watching The River Flow.flac
+     6:39.42       70482428 B   ---   --   ---xx   flac  0.6630  07 Mr. Tambourine Man.flac
+     6:45.73       71613740 B   ---   --   ---xx   flac  0.6478  08 Boots Of Spanish Leather.flac
+     8:23.35       88811564 B   ---   --   ---xx   flac  0.6847  09 It's All Over Now Baby Blue.flac
+     7:40.47       81254588 B   ---   --   ---xx   flac  0.7027  10 Man In The Long Black Coat.flac
+     6:05.67       64543628 B   ---   --   ---xx   flac  0.7381  11 God Knows.flac
+    72:07.34      763363252 B                            0.7060  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-11-twelve-a-Pound-Captain-Acid-RM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.08       65816060 B   ---   --   ---xx   flac  0.7380  01 Track 01.flac
+     5:08.74       54505292 B   ---   --   ---xx   flac  0.7393  02 Track 02.flac
+     5:54.28       62511500 B   ---   --   ---xx   flac  0.6953  03 Track 03.flac
+     4:58.22       52618988 B   ---   --   ---xx   flac  0.7385  04 Track 04.flac
+     7:47.63       82527020 B   ---   --   ---xx   flac  0.7056  05 Track 05.flac
+     7:50.54       83035052 B   ---   --   ---xx   flac  0.7047  06 Track 06.flac
+     8:28.40       89705900 B   -b-   --   ---xx   flac  0.6951  07 Track 07.flac
+     5:43.12       60533804 B   -b-   --   ---xx   flac  0.7134  08 Track 08.flac
+     9:11.13       97226796 B   -b-   --   ---xx   flac  0.6399  09 Track 09.flac
+     7:59.41       84592508 B   -b-   --   ---xx   flac  0.6888  10 Track 10.flac
+    69:15.55      733072920 B                            0.7011  (10 files)
+=================== 
+=================== 
+=================== 

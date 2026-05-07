@@ -1,0 +1,32 @@
+cdbd4fe1aeacf8ac4ebbaa7cea8f3a37  Artwork\Montreal, The Forum, 01-11-1974 (Back Cover).jpg
+30311f8897c1d119763e58bf420f90fe  Artwork\Montreal, The Forum, 01-11-1974 (Front Cover).jpg
+3ad92845fd67dfe75f31f705e4446e54  Bob Dylan - Montreal, Canada (1974) [FLAC] (2CDs).md5
+dc532cf3ff5108fd534239207dcb7d60  Bob Dylan - Montreal, Canada (1974) [FLAC] (2CDs).txt
+ceb6e819a7869d4ebe0bb7721a86eb73  Disc 1\Disc1Track01.flac
+a93124f446608f280f5a974fffdcfb90  Disc 1\Disc1Track02.flac
+a80df59667efc04eab316d98ac7c385a  Disc 1\Disc1Track03.flac
+5efc7bb4cc2ad65d87ca22506135a2e0  Disc 1\Disc1Track04.flac
+85b22902f0d0a880080ea00df10509e7  Disc 1\Disc1Track05.flac
+145658747535273ed3cf0b2d2e270b6a  Disc 1\Disc1Track06.flac
+40913872ff6fd842256b4c38603893f1  Disc 1\Disc1Track07.flac
+e903f0cf252a7bcbab2f789e98875759  Disc 1\Disc1Track08.flac
+d35ec131831ecdc3174abfb97938a0fd  Disc 1\Disc1Track09.flac
+d6fddf45fd6f0a66b215d024eb9789a9  Disc 1\Disc1Track10.flac
+c0a87161339f21b94d9656d6343147fb  Disc 1\Disc1Track11.flac
+326e8affa8e8f8f1df623bec4fd1c5f8  Disc 1\Disc1Track12.flac
+d7585d46ca0e88fd7fc9418949759b04  Disc 1\Disc1Track13.flac
+f5c52e8c4d31daca2735a1216c34dedd  Disc 1\Disc1Track14.flac
+5ad129ee75781dec3979b23fb2220e9e  Disc 1\Disc1Track15.flac
+b0af60c9387101d34c43929ed8d8b58a  Disc 2\Disc2Track01.flac
+b7b7947f60032e4629b8f6dcf6ab20b6  Disc 2\Disc2Track02.flac
+32780d9d9a862aaa8073149d74f6103b  Disc 2\Disc2Track03.flac
+d48a570858311aa08c1743bfd9caa34e  Disc 2\Disc2Track04.flac
+08c58260f556d7a8ba0526dbeb638c22  Disc 2\Disc2Track05.flac
+9e923c5d751dca278ebef9e7ad949848  Disc 2\Disc2Track06.flac
+61c1b58936e03157c13dfc5bb5eb6440  Disc 2\Disc2Track07.flac
+6454ffc4c3d0bb4998c210c2dedba3c0  Disc 2\Disc2Track08.flac
+68eda2bfe4f62ffda7649238269e9575  Disc 2\Disc2Track09.flac
+d27f5ba10481d62f8ae53d965831edcb  Disc 2\Disc2Track10.flac
+3a74083350c9fd9256aa0fa666fbdee4  Disc 2\Disc2Track11.flac
+3da6c06957009cf995844d23617a137b  Disc 2\Disc2Track12.flac
+74393eefb9b20f5dfd3c3a1b7cc52bf2  Disc 2\Disc2Track13.flac

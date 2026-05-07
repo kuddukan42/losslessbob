@@ -1,0 +1,124 @@
+===================
+===================
+===================
+=== Bob Dylan - 1992-04-10 Launceston (JLT - shn) info.txt
+===================
+===================
+===================
+Bob Dylan - 1992-04-10 Launceston (JLT - shn)
+
+JLT/LK TAPES
+COMPLETE SET
+I'm sharing some concerts from the 1992 Australian Tour that I have received from a friend. He received them straight from Les Kokay, who has agreed to openly publish them. The only information that came to me was:
+
+"These files are exactly as I received them, no changes made in any form.
+Thanks to the taper, to LK for making them available, and to my friend Marcos for sharing them with me."
+
+I've added the info file and a new .md5
+Setlist below from the Olof Bjorner Page: http://bjorner.com/still.htm
+
+Silver Dome Launceston, Tasmania, Australia 
+10 April 1992 
+
+1. All Along The Watchtower 
+2. Most Of The Time 
+3. Everything Is Broken 
+4. Just Like A Woman 
+5. Tangled Up In Blue 
+6. She Belongs To Me 
+7. Maggie's Farm 
+8. Love Minus Zero/No Limit 
+9. Little Moses (Bert A. Williams/Earle C. Jones) 
+10. Golden Vanity (trad.) 
+11. Mr. Tambourine Man 
+12. Cat's In The Well 
+13. I'll Remember You 
+14. Visions Of Johanna 
+15. Highway 61 Revisited 
+16. Absolutely Sweet Marie 
+17. Ballad Of A Thin Man 
+18. Blowin' In The Wind 
+
+Concert # 378 of The Never-Ending Tour. Concert # 14 of the 1992 Tour Of Australia. 1992 concert # 14. Concert # 14 with the 6th Never-Ending Tour band: 
+Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums). 
+8, 9, 18 Bob Dylan (acoustic guitar & vocal). 
+4, 5, 7, 8, 11, 15, 16, 18 Bob Dylan harmonica. 
+10 acoustic with the band except drums. 
+11, 14 acoustic with the band. 
+5, 10, 11, 14 Bucky Baxter (mandolin). 
+15 Bucky Baxter (electric slide guitar). 
+
+BobTalk: 
+It's the comedy part of the show right here! ???? Anybody here ???? this guitar? (after interrupting Love Minus Zero). 
+This is off my new record. It's called Cat's In The Well. 
+
+4 new songs (22%) compared to previous concert. 1 new song for this tour. 
+Stereo audience recording, 100 minutes. Session info updated 31 August 1993.
+
+Thanks to everybody involved!!
+
+
+1.md5
+26dd9ab0b0ffd6c437f97e44917d080a *01 All Along The Watchtower.shn
+2698fb61254101dee3791cd434d3cf09 *02 Most Of The Time.shn
+345fc1a8ca9b63bac8da0a07a327b7a1 *03 Everything Is Broken.shn
+102be1fb4345869d62bbe75cf05fcba4 *04 Just Like A Woman.shn
+9eeb0f36698316d8d6e9554fedda45f4 *05 Tangled Up In Blue.shn
+cd009b9fe1ee5e78160c980aa93f1b7d *06 She Belongs To Me.shn
+9a725864a0b6f9081d15310f0f68172b *07 Maggie's Farm.shn
+ce4a83083995f186747e6a24e390e533 *08 Love Minus Zero - No Limit.shn
+f3ab493551f4a4ab2ec9a39dcb2be44a *09 Little Moses.shn
+5ca172d92d9b11dbef768d3d53e3dc17 *10 Golden Vanity.shn
+
+2.md5
+69b03951585e8bcc248117eb1021dfa5 *1 Mr. Tambourine Man.shn
+e0c5eee4e2b6b37aa82f6efbd22f9262 *2 Cat's In The Well.shn
+359ae5a994aeecea68a8efb6b57687dd *3 I'll Remember You.shn
+75b9fcf3576042393303d58daf61fdd2 *4 Visions Of Johanna.shn
+290383cbba451481794948c98d69e23a *5 Highway 61 Revisited.shn
+56425c8d9198d8664b41d162f3c87e5e *6 Absolutely Sweet Marie.shn
+9cd0690080f31e76525d4379ee13f342 *7 Ballad Of A Thin Man.shn
+5fbec9c3ca828f6eeb6a538277063df9 *8 Blowin' In The Wind.shn
+===================
+===================
+===================
+=== Bob Dylan - 1992-04-10 Launceston (JLT - shn) info.txt.md5
+===================
+===================
+===================
+539bcc068239425335c8c93c9a216ceb *Bob Dylan - 1992-04-10 Launceston (JLT - shn) info.txt
+===================
+===================
+===================
+=== 1.md5
+===================
+===================
+===================
+26dd9ab0b0ffd6c437f97e44917d080a *01 All Along The Watchtower.shn
+2698fb61254101dee3791cd434d3cf09 *02 Most Of The Time.shn
+345fc1a8ca9b63bac8da0a07a327b7a1 *03 Everything Is Broken.shn
+102be1fb4345869d62bbe75cf05fcba4 *04 Just Like A Woman.shn
+9eeb0f36698316d8d6e9554fedda45f4 *05 Tangled Up In Blue.shn
+cd009b9fe1ee5e78160c980aa93f1b7d *06 She Belongs To Me.shn
+9a725864a0b6f9081d15310f0f68172b *07 Maggie's Farm.shn
+ce4a83083995f186747e6a24e390e533 *08 Love Minus Zero - No Limit.shn
+f3ab493551f4a4ab2ec9a39dcb2be44a *09 Little Moses.shn
+5ca172d92d9b11dbef768d3d53e3dc17 *10 Golden Vanity.shn
+===================
+===================
+===================
+=== 2.md5
+===================
+===================
+===================
+69b03951585e8bcc248117eb1021dfa5 *1 Mr. Tambourine Man.shn
+e0c5eee4e2b6b37aa82f6efbd22f9262 *2 Cat's In The Well.shn
+359ae5a994aeecea68a8efb6b57687dd *3 I'll Remember You.shn
+75b9fcf3576042393303d58daf61fdd2 *4 Visions Of Johanna.shn
+290383cbba451481794948c98d69e23a *5 Highway 61 Revisited.shn
+56425c8d9198d8664b41d162f3c87e5e *6 Absolutely Sweet Marie.shn
+9cd0690080f31e76525d4379ee13f342 *7 Ballad Of A Thin Man.shn
+5fbec9c3ca828f6eeb6a538277063df9 *8 Blowin' In The Wind.shn
+===================
+===================
+===================

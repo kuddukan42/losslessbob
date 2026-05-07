@@ -1,0 +1,121 @@
+===================
+===================
+===================
+=== 2003-07-19 Lake Tahoe, Nev.ffp
+===================
+===================
+===================
+2003-07-19_101.flac:a0acef5b6adf8cd48483afd3d3c7934d
+2003-07-19_102.flac:a5368c717091c1eaa270ef288bc0e732
+2003-07-19_103.flac:4ad22d948cdfca67c568040349db8d0e
+2003-07-19_104.flac:4e3786d03a6ed9062ce51de36030aa4e
+2003-07-19_105.flac:4b9c892ad7a981b904054bce99d66f84
+2003-07-19_106.flac:0957e827fa54c59ba371d40990a842ee
+2003-07-19_107.flac:563722b502fa8ee32edc25364e188c1d
+2003-07-19_108.flac:96a5f8d3a46df8bea5317373e937c236
+2003-07-19_109.flac:2ddb47d5e0f0b31356b6ff0e806d8ef5
+2003-07-19_110.flac:8f040230e0a03106a987b1a7c72d63ee
+2003-07-19_201.flac:0430ae6b06bccb121c7543547cd57abd
+2003-07-19_202.flac:c5408a0bdd5352eb3e9487a010477563
+2003-07-19_203.flac:385d63bada864e78e810ec768fbc06b7
+2003-07-19_204.flac:c98df4f2f2f7b3355bc3c0614918e990
+2003-07-19_205.flac:7d423c6c87a1f44ea0479d72b86d6a28
+2003-07-19_206.flac:a85feba6f5939415ba8a3baf8cc29db4
+2003-07-19_207.flac:7a7af15ec1294e25916f7a470c4f3e4f
+2003-07-19_208.flac:e7f5032bc7a7b7f488fb2f9709243136
+===================
+===================
+===================
+=== 2003-07-19 Lake Tahoe, Nevada.txt
+===================
+===================
+===================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I recieved this shows in 2003 on CD-R Trade 
+LINE:
+CD-Rs -> EAC (secure mode) => Traders Littlke Helper => 
+FLAC Level 8 => DIME => you!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+BOB DYLAN
+
+Harveys Outdoor Amphitheatre
+Lake Tahoe, Nevada
+19 July 2003
+
+Disc 1
+1. Tombstone Blues
+2. Lay Lady Lay
+3. Tweedle Dee & Tweedle Dum
+4. Don't Think Twice, It's All Right
+5. Things Have Changed
+6. Watching The River Flow
+7. It's Alright, Ma (I'm Only Bleeding)
+8. Make You Feel My Love
+9. A Hard Rain's A-Gonna Fall
+
+Disc 2
+10. Cold Irons Bound
+11. Under The Red Sky
+12. Honest With Me
+13. Moonlight
+14. Summer Days
+15. Like A Rolling Stone
+16. All Along The Watchtower
+
+Concert # 1530 of The Never-Ending Tour. 
+Concert # 6 of the 2003 US Summer Tour. 2003 concert # 40.
+Concert # 29 with the 16th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & piano), 
+Freddie Koella (guitar), 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion).
+
+4, 7, 9 acoustic with the band.
+1, 4, 6, 11, 16 Bob Dylan (harmonica).
+2, 11 Larry Campbell (pedal steel guitar).
+4, 7, 9 Larry Campbell (cittern).
+12 Larry Campbell (slide guitar).
+
+Notes.
+LB-number for this concert: LB-1115, LB-1300, LB-1387, LB-6175.
+Previous Bob Dylan concert in Lake Tahoe, Nevada:
+13 October 2002 Harrah's South Shore Room, Harrah's Casino
+9 new songs (56%) compared to previous concert. 3 new songs for this tour.
+Stereo audience recording, 105 minutes.
+Session info updated 3 June 2009.
+===================
+===================
+===================
+=== BD 2003-07-19 Lake Tahoe, Nev.md5
+===================
+===================
+===================
+8036ab85646303a598afb2e1a9e06e47 *2003-07-19 D1 - Bob Dylan.log
+acad7bd5196fdfdc2034b8ee83274b7b *2003-07-19 D2 - Bob Dylan.log
+5f0ff4b38bf1d90515bfb0b7dbacb47c *2003-07-19 Lake Tahoe, Nev.ffp
+bd250e8df68f9414448f5640a61d2973 *2003-07-19 Lake Tahoe, Nevada.txt
+b9d4afdc19ad10ae9202aaad818a0e2b *2003-07-19_101.flac
+44756ea508a329034ef56bbde11f9844 *2003-07-19_102.flac
+d09829cb2b4a7c628d6ddffd411a6885 *2003-07-19_103.flac
+3f244cff565723155c942fdd89f906c7 *2003-07-19_104.flac
+58caedfcdfdfe192d56a336ef55f2101 *2003-07-19_105.flac
+160b44710bee2764d80f76ef20e1204f *2003-07-19_106.flac
+48f3e34eb36154ec550a619e8e230816 *2003-07-19_107.flac
+d45dd9f07f7047f3313bd7bd358112c1 *2003-07-19_108.flac
+1da88602c5901f749f1b1bba5723cf87 *2003-07-19_109.flac
+ca2ad25f75e73211adaaff1817d49a1d *2003-07-19_110.flac
+4f83be47535df4d42fdb7a6198324df6 *2003-07-19_201.flac
+15a949696075c7f9a535bd91fee2822b *2003-07-19_202.flac
+5653804377a78596465c13331817f5c2 *2003-07-19_203.flac
+907cc0260234e8d6c055ddc2917a53cc *2003-07-19_204.flac
+2aca33c350172034f10973c366c8e936 *2003-07-19_205.flac
+ab995f2248f449f1a9cd211eb0d7f596 *2003-07-19_206.flac
+758fa984a5a2f538b184522ada47358c *2003-07-19_207.flac
+f9fdf3ca0802aef7fbdb45c487831b71 *2003-07-19_208.flac
+===================
+===================
+===================

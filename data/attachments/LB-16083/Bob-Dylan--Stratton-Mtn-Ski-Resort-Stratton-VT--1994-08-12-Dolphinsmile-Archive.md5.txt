@@ -1,0 +1,15 @@
+f3f014bd3b13a9ea400342549f209b6f *01 Jokerman.flac
+66aa813a838285ae06fbba26df8df786 *02 The Man In Me.flac
+5e3a15770e51523d861bf5c4f354c7e8 *03 All Along The Watchtower.flac
+0e0136c40a85a53e56776984bacc68d2 *04 Positively Fourth Street.flac
+9d4080e620f41b1049dc5299e6146473 *05 Tangled Up In Blue.flac
+2b1ecabedbad5a69f00c92769e8fb601 *06 It Takes A Lot to Laugh.flac
+9be579c2c074557c0b2c6250912ff876 *07 Tamborine Man.flac
+071c616208891493829d2a5a8ffe4ec5 *08 Masters of War.flac
+8079b2a231e392a79f63604a1dab7fd1 *09 Its All Over Now Baby Blue.flac
+39437bf246ba70204d3b731a88e92397 *10 God Knows.flac
+bffee29ba85cb3d702896f6fb6218ee4 *11 Man In the Long Black Coat.flac
+31e5f691e4dc502d002ba83a8577f350 *12 Maggies Farm.flac
+6c33637c014e41b0ad1e329fc5226890 *13 Rainy Day Women.flac
+a5352f26c146e8ee609a8df6011b4a79 *14 It Aint Me Babe.flac
+d9dfabdc54daac9fa9d2a59f307bef16 *info.txt

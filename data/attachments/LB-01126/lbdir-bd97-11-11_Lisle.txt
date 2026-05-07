@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-11-11_Lisle 
+=================== 
+=================== 
+=================== 
+e0fba9d5b43278e84aeb527c07476204  bd97-11-11_Lisle.txt
+fb0c71d7616d3acb6f95865e365bb1f9  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 1.shn
+22ab4c98e556361efb1012050c81fd28  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 2.shn
+32bb3b49ee8493c2e96dfec372b5073c  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 3.shn
+06c4d5b864f6451e9ff653c35d8db2ba  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 4.shn
+db2f6511219e9752b4e2a421e5c8768b  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 5.shn
+5b30e056196e4a27c829c7520b8e8319  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 6.shn
+3a4c1ada4113ce9683f7bc7fbea154e8  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 7.shn
+2657414615f09e53293fdda34205ab72  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 8.shn
+39519dbe58a73bc72c40f0ae3e2be44f  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_Track 9.shn
+c25ce422ed73a0d43436bfb454ba55ee  bd_97-11-11_cd1.shnf\bd_97-11-11_cd1_shn.md5
+7b9f9781a16c01d181e6bb7e8e0ac820  bd_97-11-11_cd2.shnf\bd_97-11-11_cd2_Track 1.shn
+e7828960e1a40ecac8562846813938b6  bd_97-11-11_cd2.shnf\bd_97-11-11_cd2_Track 2.shn
+076ef6e94ad1eddfe0f3d6c47ef8ebcb  bd_97-11-11_cd2.shnf\bd_97-11-11_cd2_Track 3.shn
+38024e8a4b064b731dec1c114f233c55  bd_97-11-11_cd2.shnf\bd_97-11-11_cd2_Track 4.shn
+f208a22c3c8a33a4bd2a76a48cc0d96b  bd_97-11-11_cd2.shnf\bd_97-11-11_cd2_Track 5.shn
+37e48d9d628f50f6c18b1c4922e305e4  bd_97-11-11_cd2.shnf\bd_97-11-11_cd2_Track 6.shn
+c5fb7d6389d7fd2fd84c78338d8bbe0c  bd_97-11-11_cd2.shnf\bd_97-11-11_cd2_Track 7.shn
+04c60f854796cb32e8fa7c24de99ce7d  bd_97-11-11_cd2.shnf\bd_97-11-11_cd2_shn.md5
+270a931a9f726c3d451758f95ec51b67  readme.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-11-11_Lisle\bd_97-11-11_cd1.shnf 
+=================== 
+=================== 
+=================== 
+cb35f8a4f2f033f04634323b927f3898  [shntool]  bd_97-11-11_cd1_Track_1.wav
+60a71474d699e4228b5a92ae9f7bbadf  [shntool]  bd_97-11-11_cd1_Track_2.wav
+336b24e24ae410cc9a15ae5fad69a2bf  [shntool]  bd_97-11-11_cd1_Track_3.wav
+82b9f41444063b622733d9dcbee0a258  [shntool]  bd_97-11-11_cd1_Track_4.wav
+4ac4fc0bc314e19d509b51c3b87e219e  [shntool]  bd_97-11-11_cd1_Track_5.wav
+65d558a44cd2dd03340c7b1297515e9f  [shntool]  bd_97-11-11_cd1_Track_6.wav
+54a6c96fa4dc7527797fb3a9e95de062  [shntool]  bd_97-11-11_cd1_Track_7.wav
+a8984046639ae88c21b66f894a26fbcb  [shntool]  bd_97-11-11_cd1_Track_8.wav
+146de242553530140d9a1f4f41058b0d  [shntool]  bd_97-11-11_cd1_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-11-11_Lisle\bd_97-11-11_cd2.shnf 
+=================== 
+=================== 
+=================== 
+951ac359a51d08db9c8a112042667fb7  [shntool]  bd_97-11-11_cd2_Track_1.wav
+747b0a577a7a55ce6efba68ffc51b559  [shntool]  bd_97-11-11_cd2_Track_2.wav
+502dc01a010f21b10410849187e52faf  [shntool]  bd_97-11-11_cd2_Track_3.wav
+ea3f1d98511d51f180c8224acc06ade5  [shntool]  bd_97-11-11_cd2_Track_4.wav
+9d0839e969d766d086fb60f0ca2041fc  [shntool]  bd_97-11-11_cd2_Track_5.wav
+c603d63a3728c844dd814664bde26a22  [shntool]  bd_97-11-11_cd2_Track_6.wav
+f87c67dbddf22da3ac92474ac90a80db  [shntool]  bd_97-11-11_cd2_Track_7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-11-11_Lisle\bd_97-11-11_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:43.16       60542958 B   ---   -e   ---xx    shn  0.6594  bd_97-11-11_cd1_Track 1.shn
+     5:31.24       58444974 B   ---   -e   ---xx    shn  0.6561  bd_97-11-11_cd1_Track 2.shn
+     7:38.58       80927742 B   ---   -e   ---xx    shn  0.6805  bd_97-11-11_cd1_Track 3.shn
+     6:33.38       69414702 B   ---   -e   ---xx    shn  0.6519  bd_97-11-11_cd1_Track 4.shn
+     6:02.13       63887502 B   ---   -e   ---xx    shn  0.6840  bd_97-11-11_cd1_Track 5.shn
+     7:04.58       74930142 B   ---   -e   ---xx    shn  0.7202  bd_97-11-11_cd1_Track 6.shn
+     4:47.58       50763342 B   ---   -e   ---xx    shn  0.5783  bd_97-11-11_cd1_Track 7.shn
+     8:11.57       86746590 B   ---   -e   ---xx    shn  0.7285  bd_97-11-11_cd1_Track 8.shn
+     6:00.23       63558222 B   ---   -e   ---xx    shn  0.6590  bd_97-11-11_cd1_Track 9.shn
+    57:33.45      609216174 B                            0.6741  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-11-11_Lisle\bd_97-11-11_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:55.16       73243758 B   ---   -e   ---xx    shn  0.6562  bd_97-11-11_cd2_Track 1.shn
+     6:52.56       72808638 B   ---   -e   ---xx    shn  0.6643  bd_97-11-11_cd2_Track 2.shn
+     6:56.39       73474254 B   ---   -e   ---xx    shn  0.7036  bd_97-11-11_cd2_Track 3.shn
+     9:22.67       99294510 B   ---   -e   ---xx    shn  0.6601  bd_97-11-11_cd2_Track 4.shn
+     6:58.03       73742382 B   ---   -e   ---xx    shn  0.6577  bd_97-11-11_cd2_Track 5.shn
+     5:43.52       60627630 B   ---   -e   ---xx    shn  0.6204  bd_97-11-11_cd2_Track 6.shn
+     6:33.46       69433518 B   ---   -e   ---xx    shn  0.7085  bd_97-11-11_cd2_Track 7.shn
+    49:22.54      522624690 B                            0.6677  (7 files)
+=================== 
+=================== 
+=================== 

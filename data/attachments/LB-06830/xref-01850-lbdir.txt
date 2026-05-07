@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd92-04-24-Paradise-Hawaiian-Style-Pitch-Corrected.flacf
+===================
+===================
+===================
+173b5e73d42b71f8463d8b6d6d04517f *bd1992-04-24_SBD_corr_d1t01.flac
+738b049ba7519043eca31875685744ef *bd1992-04-24_SBD_corr_d1t02.flac
+025437e423060cd343202a000cba56a8 *bd1992-04-24_SBD_corr_d1t03.flac
+74382d8186def06d362deba013558e05 *bd1992-04-24_SBD_corr_d1t04.flac
+4f99df85f637ec295eb8c2ca1ca26500 *bd1992-04-24_SBD_corr_d1t05.flac
+c2417bc6715a6352501b7fe02a8a5658 *bd1992-04-24_SBD_corr_d1t06.flac
+871a92e3bb2ec1c8c02fbf9cf6c7f14e *bd1992-04-24_SBD_corr_d1t07.flac
+93a8ef1b2ff2411a0a1865059d127469 *bd1992-04-24_SBD_corr_d1t08.flac
+02abd448b4e4b9b968d1c0baf5ff6e86 *bd1992-04-24_SBD_corr_d1t09.flac
+1e5d8c0f39d719600dbc395eb5201252 *bd1992-04-24_SBD_corr_d1t10.flac
+1664905ada7fe46412b08fbd0e8cbbdf *bd1992-04-24_SBD_corr_d1t11.flac
+0a33eedc137a67d256ea6289bc41e7aa *bd1992-04-24_SBD_corr_d1t12.flac
+da9a7914818d556ce4e3a741a97fe1ad *bd1992-04-24_SBD_corr_d1t13.flac
+117a258865e106e5318603938de27886 *bd1992-04-24_SBD_corr_d2t01.flac
+7563801f07e5c06177ae5dc1b35e8a37 *bd1992-04-24_SBD_corr_d2t02.flac
+f4d3e16f189d33c118e7d21ba4c97019 *bd1992-04-24_SBD_corr_d2t03.flac
+8fb1cf81b6c233720003ab5ee1673bef *bd1992-04-24_SBD_corr_d2t04.flac
+4cdc88ecbedd777777b58d69a68f2195 *bd1992-04-24_SBD_corr_d2t05.flac
+09027c3a1699f222c0da0d804afbf725 *bd1992-04-24sbd.txt
+99494508882ba2af0d64605398e96142 *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd92-04-24-Paradise-Hawaiian-Style-Pitch-Corrected.flacf
+===================
+===================
+===================
+bd1992-04-24_SBD_corr_d1t01.flac:c1436537b2787dd7b0a6b07de85dd35d
+bd1992-04-24_SBD_corr_d1t02.flac:c2ed78aaad43bac9f22191cc7ed344c0
+bd1992-04-24_SBD_corr_d1t03.flac:42ada6b4466b76c0ff4aa029be718721
+bd1992-04-24_SBD_corr_d1t04.flac:78f6f70cef998a4950118c3dee122a0a
+bd1992-04-24_SBD_corr_d1t05.flac:58cf0f3d743536dcabe3dbceee841bc5
+bd1992-04-24_SBD_corr_d1t06.flac:58c9ea1569c06abfbc73f85c67c6e633
+bd1992-04-24_SBD_corr_d1t07.flac:f413fce64a26a82e7c3098b3e7f53601
+bd1992-04-24_SBD_corr_d1t08.flac:0053b5a0460cdb09e220b48156e943aa
+bd1992-04-24_SBD_corr_d1t09.flac:82fc47b02370158a3a82a021d374dadc
+bd1992-04-24_SBD_corr_d1t10.flac:c97cff641ba5d5b0c2bfc10c2fd5b7d1
+bd1992-04-24_SBD_corr_d1t11.flac:c4f6d47ecf3d8e894d6e53ef4c221adf
+bd1992-04-24_SBD_corr_d1t12.flac:d4e7ccbef1cf283e67ba9db95692b23d
+bd1992-04-24_SBD_corr_d1t13.flac:53349d27d4c1e262a50b264b6e247227
+bd1992-04-24_SBD_corr_d2t01.flac:007feda1b35ea4f1f5dbe5075615d6c2
+bd1992-04-24_SBD_corr_d2t02.flac:98fea20da67c050086483f5ecfa71633
+bd1992-04-24_SBD_corr_d2t03.flac:8ec45400c4a974c79abfb76f1181d62f
+bd1992-04-24_SBD_corr_d2t04.flac:26ec34ace0cd3b49146e8983b8f71e9b
+bd1992-04-24_SBD_corr_d2t05.flac:111a436c75013681da462ea91e3a546e
+===================
+===================
+===================
+=== shntool len for: bd92-04-24-Paradise-Hawaiian-Style-Pitch-Corrected.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:09.25       22814444 B   ---   --   ---xx   flac  0.6233  bd1992-04-24_SBD_corr_d1t01.flac
+     6:25.65       68066924 B   ---   --   ---xx   flac  0.6130  bd1992-04-24_SBD_corr_d1t02.flac
+     3:59.15       42194924 B   ---   --   ---xx   flac  0.6160  bd1992-04-24_SBD_corr_d1t03.flac
+     5:17.62       56064668 B   ---   --   ---xx   flac  0.5904  bd1992-04-24_SBD_corr_d1t04.flac
+     6:24.70       67902284 B   ---   --   ---xx   flac  0.5919  bd1992-04-24_SBD_corr_d1t05.flac
+     5:04.15       53660924 B   ---   --   ---xx   flac  0.5817  bd1992-04-24_SBD_corr_d1t06.flac
+     4:32.05       47992604 B   ---   --   ---xx   flac  0.5343  bd1992-04-24_SBD_corr_d1t07.flac
+     2:21.45       24978284 B   ---   --   ---xx   flac  0.5108  bd1992-04-24_SBD_corr_d1t08.flac
+     3:30.30       37114604 B   ---   --   ---xx   flac  0.5025  bd1992-04-24_SBD_corr_d1t09.flac
+     5:55.28       62687900 B   ---   --   ---xx   flac  0.5181  bd1992-04-24_SBD_corr_d1t10.flac
+     6:24.32       67812908 B   ---   --   ---xx   flac  0.4945  bd1992-04-24_SBD_corr_d1t11.flac
+     2:40.68       28383980 B   ---   --   ---xx   flac  0.5316  bd1992-04-24_SBD_corr_d1t12.flac
+     8:56.52       94672748 B   ---   --   ---xx   flac  0.5179  bd1992-04-24_SBD_corr_d1t13.flac
+     7:30.17       79420028 B   ---   --   ---xx   flac  0.5037  bd1992-04-24_SBD_corr_d2t01.flac
+     6:28.10       68466764 B   ---   --   ---xx   flac  0.5388  bd1992-04-24_SBD_corr_d2t02.flac
+     5:04.50       53743244 B   ---   --   ---xx   flac  0.5484  bd1992-04-24_SBD_corr_d2t03.flac
+     4:04.38       43131020 B   ---   --   ---xx   flac  0.5444  bd1992-04-24_SBD_corr_d2t04.flac
+     4:14.32       44880908 B   ---   --   ---xx   flac  0.5150  bd1992-04-24_SBD_corr_d2t05.flac
+    91:04.59      963989160 B                            0.5463  (18 files)
+===================
+===================
+===================

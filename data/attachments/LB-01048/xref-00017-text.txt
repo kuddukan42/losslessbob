@@ -1,0 +1,114 @@
+===================
+===================
+===================
+=== 1992-03-25 State Theatre, Sydney, New South Wales, Australia [JL].md5
+===================
+===================
+===================
+a7e06a202d561559f72bb4956a1e7604 *CD1\01 Most likely you go your way (and I'll go mine).flac
+4a078531155e600144b1d938ee81fefb *CD1\02 Most of the time.flac
+cc51b87acc1790efada247236e954249 *CD1\03 All along the watchtower.flac
+39314339174265474cccc9fd020fc06a *CD1\04 Just like a woman.flac
+f4335b54f8ad42955fc9ee7838894b5f *CD1\05 Tangled up in blue.flac
+8c2f7925196b3a552f0446f625e951db *CD1\06 She belongs to me.flac
+8540ebfdeb557cdf964eed3fba5b8e3c *CD1\07 Maggie's farm.flac
+27200faef7b129fdf36569c0e83b3028 *CD1\08 Love minus zero - no limit.flac
+c50723c032ff70dcc438d1e5d0518bd1 *CD1\09 Little Moses.flac
+506e1ef377758d95d9a1fce39221de11 *CD1\10 Trail of the buffalo.flac
+2918cb75740b158d7d7fe09f8b8e9b12 *CD2\11 It's all over now, baby blue.flac
+0906990efd7e5d2543264be881f00dd0 *CD2\12 Cat's in the well.flac
+0884890f45ba7b8b9ef590e11c9c1141 *CD2\13 Simple twist of fate.flac
+93156201ccfdca20b82fcbc34ad10463 *CD2\14 The times they are a-changin'.flac
+215612e62b203d8a0550aa3455e07457 *CD2\15 Highway 61 revisited.flac
+91d26ecb4489e12466da95b17b808a7a *CD2\16 Ballad of a thin man.flac
+0dae1431bffb2256243c858fa223a57a *CD2\17 Watching the river flow.flac
+349875ffa31382f86d9f656bcbb07c65 *CD2\18 Blowin' in the wind.flac
+5ebba5da163b428f5c7ec46335fcd7e0 *Info\1992-03-25 State Theatre, Sydney, New South Wales, Australia [JL].txt
+===================
+===================
+===================
+=== 1992-03-25 State Theatre, Sydney, New South Wales, Australia [JL].txt
+===================
+===================
+===================
+State Theatre
+Sydney, New South Wales, Australia
+March 25, 1992
+
+5th ’92 down under concert!
+Due to recent information (disc times) about which show was taped by whom, this signify a 'JL' recording. My copy’s times on disc 1 vary greatly... with approximately 3 minutes; on disc 2, the time measured is more accurate.
+
+W/reference to disc 1’s time, see kisseber’s comment below:
+“disks times do help when we know the sources... but there are often problems when the same show by a given taper has been transferred from the master at different points in time and tracking is different... thus the same show may turn up with different track times... and sometimes the total times do not match either for reasons that may be extraneous to the music (e.g. some tapers may leave the tape running while conversation goes on at the end of the show, and some people may delete this and others not)”.
+
+and angrycrow adds: "Your Sydney recording from March 25, 1992 is also the JLT recording, transferred and remastered by Les Kokay."
+
+Differences:
+No differences in tracks listing
+
+Losslessbob says: LB-1048, (49min+42min), JL recording, excellent sound, sounds fuller and slightly better than the MK recording
+1. pop d1t10 4:46 after music where recording ends on cd1;
+2. d2t1 begins abruptly in song;
+3. foghorn d2t5 0:27
+The above are in accordance with this set!
+
+Conversion: received as SHNs, converted to FLACs, via WAVs.
+Set’s given song titles, as I find it more convenient, and I trust others do too…
+
+01. Most Likely You Go Your Way (And I'll Go Mine) [04:38]
+02. Most Of The Time [04:17]
+03. All Along The Watchtower [03:28]
+04. Just Like A Woman [05:52]
+05. Tangled Up In Blue [06:05]
+06. She Belongs To Me [04:03]
+07. Maggie's Farm [05:37]
+08. Love Minus Zero/No Limit [03:04]
+09. Little Moses (Bert A. Williams/Earle C. Jones) [03:46]
+10. Trail Of The Buffalo (trad. arr. Woody Guthrie) [04:50]
+Total time [45:42]
+
+11. It's All Over Now, Baby Blue [07:33]
+12. Cat's In The Well [03:45]
+13. Simple Twist Of Fate [06:34]
+14. The Times They Are A-Changin' [05:38]
+15. Highway 61 Revisited [05:03]
+16. Ballad Of A Thin Man [05:30]
+17. Watching The River Flow [04:13]
+18. Blowin' In The Wind [03:04]
+Total time [41:23]
+
+Concert # 369 of The Never-Ending Tour
+Concert # 5 of the 1992 Tour Of Australia
+1992 concert # 5
+
+Concert # 5 with the 6th Never-Ending Tour band:
+Bob Dylan (vocal & guitar),
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass),
+Ian Wallace (drums)
+
+8, 9, 18 Bob Dylan (acoustic guitar & vocal)
+4, 8, 11, 13, 14, 16, 18 Bob Dylan harmonica
+10 Bob Dylan (acoustic guitar & vocal) & John Jackson (guitar)
+11, 14 acoustic with the band
+5, 14 Bucky Baxter (mandolin)
+11 Bucky Baxter (dobro)
+15 Bucky Baxter (electric slide guitar)
+
+NOTE: Full band credits during intro to Watching The River Flow
+
+BobTalk:
+Thanks everybody! There's a line in that last song about headin' for another joint. Of course you ???? joint though. It's more like a pub, kind of 
+That's a song trying to say goodbye to somebody who just don't know how ... called Cat's In The Well
+Thanks everybody! That last song was a song about trying to say goodbye to somebody. This one is about trying to say hello to somebody. (before Simple Twist Of Fate)
+
+4 new songs (22%) compared to previous concert¨
+1 new song for this tour
+
+Stereo audience recording, 85 minutes
+
+* * * Fixin' a hole * * *
+===================
+===================
+===================

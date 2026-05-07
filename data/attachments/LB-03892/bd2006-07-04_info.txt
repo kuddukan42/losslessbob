@@ -1,0 +1,59 @@
+Bob Dylan 
+July 4, 2006
+Zenith d'Auvergne
+Clermont-Ferrand, France
+
+
+AUD DAT master [DPA or Sennheiser mics] > WAV > FLAC
+
+
+CD 1  [73:59.36] 
+
+01 Maggie's Farm  [05:50.04] 
+02 The Times They Are A-Changin’  [07:20.62] 
+03 Down Along The Cove  [07:00.10] 
+04 Mr. Tambourine Man  [07:15.69] 
+05 Tweedle Dee & Tweedle Dum  [05:45.46] 
+06 To Ramona  [06:00.45] 
+07 Highway 61 Revisited  [06:28.64] 
+08 Boots Of Spanish Leather  [06:25.44] 
+09 Honest With Me  [06:26.14]
+10 Positively 4th Street  [07:00.36] 
+11 Stuck Inside Of Mobile With The Memphis Blues Again  [08:24.55] 
+
+CD 2  [28:03.16] 
+
+01 Masters Of War  [05:32.70] 
+02 Summer Days  [09:51.14] 
+03 Like A Rolling Stone  [06:48.26] 
+04 All Along The Watchtower  [05:50.56] 
+
+
+
+Bob Dylan - vocal, keyboard, harmonica
+Denny Freeman - lead guitar
+Tony Garnier - bass 
+Donnie Herron - pedal steel, lap steel, electric mandolin, violin
+Stu Kimball - rhythm guitar
+George Recile - drums 
+
+
+I did not harm the sound of the recording in any way other than fixing some microphone problems.
+On the original master, there were severe microphone troubles, causing the right channel to 
+completely drop during the following spots -
+
+d1t03 @ 48.507 to 48.715 and 7:10.001 to 7:10.185
+d1t04 @ 10.000 to 30.487
+d1t06 @ 20.366 to 27.236 - 1:23.322 to 1:25.492 - 2:19.452 to 2:19.902
+d2t04 @ 5:09.442 to 5:15.651
+
+these spots were patched with the signal from the left channel. Of course, this is not pefect, but as the original 
+recording is not wide stereo, it's acceptable I think - in any case it's no more disturbing than the original ! 
+
+CDs can be seamlessly patched in case someone prefers a different CD split, this is as the taper decided to split them.
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates
+
+further info:
+http://my.execpc.com/~billp61/070406s.html

@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-10a_ Holmdel 
+=================== 
+=================== 
+=================== 
+654b29d940c8070e9773bc91c220907b  2003-08-10 - Holmdel, New Jersey - Disc 1\Track01.shn
+cf64e8cf34c09f2b80d41d937a3561ee  2003-08-10 - Holmdel, New Jersey - Disc 1\Track02.shn
+ad45eadf6fcac9dcf7e38bff45120354  2003-08-10 - Holmdel, New Jersey - Disc 1\Track03.shn
+b8b53909c1ed44495a169388d94f7b2f  2003-08-10 - Holmdel, New Jersey - Disc 1\Track04.shn
+57abecbbfbe54d468eb2d81a2fcca264  2003-08-10 - Holmdel, New Jersey - Disc 1\Track05.shn
+5e67f6180344dd1320e531e63395898b  2003-08-10 - Holmdel, New Jersey - Disc 1\Track06.shn
+85b2ed193f3b85c5e5860dbd69f201ef  2003-08-10 - Holmdel, New Jersey - Disc 1\Track07.shn
+bdb537a194bf28e9210a701e5d24ecb8  2003-08-10 - Holmdel, New Jersey - Disc 1\Track08.shn
+6cd2d75c4c06d7bbfcc8c14b9a4a661f  2003-08-10 - Holmdel, New Jersey - Disc 1\Track09.shn
+ddc9645beb94c566aa501663af1e3e16  2003-08-10 - Holmdel, New Jersey - Disc 1\noname.md5
+47067e24e574f995216f894ec83e0ec7  2003-08-10 - Holmdel, New Jersey - Disc 2\Track01.shn
+df0cd17d2c6e1a059464aabf9ee6797a  2003-08-10 - Holmdel, New Jersey - Disc 2\Track02.shn
+0b772e47eab1957e6b939481af1058ea  2003-08-10 - Holmdel, New Jersey - Disc 2\Track03.shn
+e90301e3224a5a9e2979f4d77ee2261b  2003-08-10 - Holmdel, New Jersey - Disc 2\Track04.shn
+622e99f118abe0b3d398b0cb773af594  2003-08-10 - Holmdel, New Jersey - Disc 2\Track05.shn
+7b954dea52d437c33fe2b5678fcbb6d6  2003-08-10 - Holmdel, New Jersey - Disc 2\Track06.shn
+326ab4aa0514c74eeaca664c602f1c78  2003-08-10 - Holmdel, New Jersey - Disc 2\Track07.shn
+ae43eae192615137a116d50d30d23926  2003-08-10 - Holmdel, New Jersey - Disc 2\Track08.shn
+4f208e6a818c943946faf482df1b04f0  2003-08-10 - Holmdel, New Jersey - Disc 2\noname.md5
+ebf65ce843450ef0ccb2227244299b53  bd03-08-10a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-10a_ Holmdel\2003-08-10 - Holmdel, New Jersey - Disc 2 
+=================== 
+=================== 
+=================== 
+1376201f9ed9b165ad0f7ebc61c75d8b  [shntool]  Track01.wav
+2d5225c9b3b9470a02e3e7f49c8171e8  [shntool]  Track02.wav
+6af248cb79a42d49512da3bbfba82581  [shntool]  Track03.wav
+6e93b1579b9ca248d68fc0a391649b13  [shntool]  Track04.wav
+b7fedb781b6dbf6f7127255f9c65aa2c  [shntool]  Track05.wav
+bac19d3a097dfa97166c1b178e499d2c  [shntool]  Track06.wav
+299ab685b8e60c7ac32657828efde4a3  [shntool]  Track07.wav
+4d4eece0cf4604e547c4d700786e3faf  [shntool]  Track08.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-10a_ Holmdel\2003-08-10 - Holmdel, New Jersey - Disc 1 
+=================== 
+=================== 
+=================== 
+c437079b014605cf590d9168fbf44ca7  [shntool]  Track01.wav
+7fbd741de0d2efe25f665dae61bfff0c  [shntool]  Track02.wav
+046f725f6fdb73ce51387db1552e3f6e  [shntool]  Track03.wav
+7c4ac6fb6f2a179c9c846324eb10beea  [shntool]  Track04.wav
+ff9259d0f10d9e74357116ffa4469a56  [shntool]  Track05.wav
+301a41f5014723a3521af2ccaac764c3  [shntool]  Track06.wav
+67885127039de6c097010cb3999d8390  [shntool]  Track07.wav
+8a7e300193ec3865d8bd8da7abefa25d  [shntool]  Track08.wav
+614572ed76e19b0ab053c10002dbecd1  [shntool]  Track09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-10a_ Holmdel\2003-08-10 - Holmdel, New Jersey - Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.12       48714668 B   ---   --   ---xx    shn  0.6527  Track01.shn
+     6:14.21       66023036 B   ---   --   ---xx    shn  0.4926  Track02.shn
+     6:49.63       72295820 B   ---   --   ---xx    shn  0.6460  Track03.shn
+     0:38.01        6705596 B   ---   --   ---xx    shn  0.5347  Track04.shn
+    10:34.40      111931724 B   ---   --   ---xx    shn  0.5485  Track05.shn
+     7:42.07       81513308 B   ---   --   ---xx    shn  0.6134  Track06.shn
+     4:55.30       52108604 B   ---   --   ---xx    shn  0.6493  Track07.shn
+     3:40.12       38836268 B   ---   --   ---xx    shn  0.6199  Track08.shn
+    45:10.36      478129024 B                            0.5938  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-10a_ Holmdel\2003-08-10 - Holmdel, New Jersey - Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:49.69        8805932 B   ---   --   ---xx    shn  0.5165  Track01.shn
+     5:27.06       57696956 B   ---   --   ---xx    shn  0.6490  Track02.shn
+     4:36.64       48836972 B   ---   --   ---xx    shn  0.6232  Track03.shn
+     5:32.56       58696556 B   ---   --   ---xx    shn  0.5983  Track04.shn
+     7:10.01       75854396 B   ---   --   ---xx    shn  0.6018  Track05.shn
+     6:34.33       69579260 B   ---   --   ---xx    shn  0.6364  Track06.shn
+     7:35.55       80391404 B   ---   --   ---xx    shn  0.6375  Track07.shn
+     7:20.00       77616044 B   ---   --   ---xx    shn  0.6362  Track08.shn
+     6:46.23       71672540 B   ---   --   ---xx    shn  0.5810  Track09.shn
+    51:53.07      549150060 B                            0.6187  (9 files)
+=================== 
+=================== 
+=================== 

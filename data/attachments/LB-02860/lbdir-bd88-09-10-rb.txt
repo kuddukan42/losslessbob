@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-10-rb 
+=================== 
+=================== 
+=================== 
+2b5da0e394424a24546020e63e4d3b38  bd88-09-10-rb-d1t01.shn
+dec19b7838c0bd6f7c5888c4b5f7b533  bd88-09-10-rb-d1t02.shn
+80bb13b190a2bc350c4b795b7f0c746b  bd88-09-10-rb-d1t03.shn
+bb7b271de8dc31de63984827435bd490  bd88-09-10-rb-d1t04.shn
+3826a2f684a74cf9d4e7b3e030786ec4  bd88-09-10-rb-d1t05.shn
+515c6038a73255d80bfb9818b994fa30  bd88-09-10-rb-d1t06.shn
+196cf75472518672b6720106ac04ec81  bd88-09-10-rb-d1t07.shn
+dfae64c3bb8993d5f61f588cc8c8dd5c  bd88-09-10-rb-d1t08.shn
+542631a14c2cb7e1ce0813cdee728a70  bd88-09-10-rb-d1t09.shn
+c26edcf78762477543905bcc1836256b  bd88-09-10-rb-d1t10.shn
+df4d78cabbf39c6d8e0c2e671c28875e  bd88-09-10-rb-d1t11.shn
+88c7ee1cf908b32d6c8354f0b1605ef3  bd88-09-10-rb-d1t12.shn
+93030a2ac5dcd2cd656bad066412c799  bd88-09-10-rb-d1t13.shn
+b062405cb79c6e0fabaca11acfb1b9f5  bd88-09-10-rb-d1t14.shn
+f78fbeec766f937dd039111e29609768  bd88-09-10-rb-LB-2860.txt
+4be3cc8e9e81f86c277c2dafdddc9f72  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-09-10-rb 
+=================== 
+=================== 
+=================== 
+556cfbfced875a9141cd529f8877636b  [shntool]  bd88-09-10-rb-d1t01.wav
+471cb25ab618caaf22514eed1c062b60  [shntool]  bd88-09-10-rb-d1t02.wav
+3998ed662db8942af405e52001dc1dcb  [shntool]  bd88-09-10-rb-d1t03.wav
+8afe8e8a53b32a113894556c0c8ad66c  [shntool]  bd88-09-10-rb-d1t04.wav
+150582f6f7ea3d2256d7126345e1fa62  [shntool]  bd88-09-10-rb-d1t05.wav
+8dd5269d377a3c40bfa8ea3633adaf15  [shntool]  bd88-09-10-rb-d1t06.wav
+86b98b9b68f2e4e2a0f340a235018da3  [shntool]  bd88-09-10-rb-d1t07.wav
+739ee8f44745e87c3fc3e6baccf3583f  [shntool]  bd88-09-10-rb-d1t08.wav
+136a5cad2ff3854b7546c671792a9c21  [shntool]  bd88-09-10-rb-d1t09.wav
+23a3971b61a77dc6a12f8f1bc4e68585  [shntool]  bd88-09-10-rb-d1t10.wav
+08d7175407c243fb6339056e212d6dc7  [shntool]  bd88-09-10-rb-d1t11.wav
+78980f72d18be09e465d2819a7e5f324  [shntool]  bd88-09-10-rb-d1t12.wav
+18d0aa713fb626f762e0b22de1eca758  [shntool]  bd88-09-10-rb-d1t13.wav
+cbd56e7c28465f76d95bab5182c74f97  [shntool]  bd88-09-10-rb-d1t14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-10-rb 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:23.06       46407356 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t01.wav
+     4:48.16       50840876 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t02.wav
+     4:41.14       49601372 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t03.wav
+     4:14.32       44880908 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t04.wav
+     4:32.20       48027884 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t05.wav
+     5:47.45       61316684 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t06.wav
+     5:45.40       60952124 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t07.wav
+     3:39.69       38793932 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t08.wav
+     4:41.66       49723676 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t09.wav
+     6:57.26       73619996 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t10.wav
+     7:03.30       74687804 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t11.wav
+     5:23.39       57068972 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t12.wav
+     4:28.19       47319932 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t13.wav
+     4:19.29       45755852 B   ---   --   -----    wav  1.0000  bd88-09-10-rb-d1t14.wav
+    70:46.01      748997368 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

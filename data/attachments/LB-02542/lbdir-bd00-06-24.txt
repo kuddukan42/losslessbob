@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-24 
+=================== 
+=================== 
+=================== 
+f2477a3e43dcba6f5501cffc4476f7b2  bd00-06-24.txt
+e620e15b98be34bdd13389100fe16bf6  bd2000-06-24 d1t1_FIX.shn
+c6b33f0fcb5b1f16c13b791c1316bee4  bd2000-06-24 d1t2.shn
+e02adedb5b8f342bef4529980b23c075  bd2000-06-24 d1t3.shn
+39a3c4cd7ab23ca37500061ae7794242  bd2000-06-24 d1t4.shn
+b0eea68462e391517d1f44f6d3b76128  bd2000-06-24 d1t5.shn
+e3f1ed275880b5db12ecd961c6592733  bd2000-06-24 d1t6.shn
+10418a2c97437b9059432cf37d83f9b0  bd2000-06-24 d1t7.shn
+f5036d1ec69573ac498c66dd8508ef3f  bd2000-06-24 d1t8.shn
+fb78faab15fa04efd5352734d49805f0  bd2000-06-24 d1t9.shn
+733e400ee224cc079d95deb832ce6d77  bd2000-06-24 d2t1.shn
+c10ff9abda70a62fe4ba784a5f85d056  bd2000-06-24 d2t2.shn
+cacf3b60c5e2fdbb923efe9a6c096387  bd2000-06-24 d2t3.shn
+83ab90a245f8c673c92fb43ed33fbddb  bd2000-06-24 d2t4.shn
+b5c459e5761848bb08b4d4bf461e621f  bd2000-06-24 d2t5.shn
+03df30217bb35386a9433e8543911534  bd2000-06-24 d2t6.shn
+76281b8d95a09a02d71c31c39a8dc110  bd2000-06-24 d2t7.shn
+94e0e18efbcc192d287586718edfe0c3  bd2000-06-24 mountain view.FIX_shn.txt
+310037c1c14376a3faa62c1c7924c5f0  bd2000-06-24 mountain view.shn.md5
+eeaea4b7f4b83ca6376a5ca21123db5e  bd2000-06-24 mountain view.shn.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-06-24 
+=================== 
+=================== 
+=================== 
+d0c3a235aa8999a0ce190ee3ac1e9f0d  [shntool]  bd2000-06-24_d1t1_FIX.wav
+95bc352c5c76e21bd75776afb9661d46  [shntool]  bd2000-06-24_d1t2.wav
+a384ef700554c873bf74ef8135616bf8  [shntool]  bd2000-06-24_d1t3.wav
+e78b4d8ff08d518863ad6148a33561c8  [shntool]  bd2000-06-24_d1t4.wav
+3ce6c33aceb85dc9a905f1e52541a814  [shntool]  bd2000-06-24_d1t5.wav
+a6b8714bdc5461f14c094af6182ac805  [shntool]  bd2000-06-24_d1t6.wav
+b6c8e1643fb035382f41accf2b139ea5  [shntool]  bd2000-06-24_d1t7.wav
+295f344bc551d456755ee25758c3c362  [shntool]  bd2000-06-24_d1t8.wav
+1aaac5ea37ef49cb949f975617e41de8  [shntool]  bd2000-06-24_d1t9.wav
+fb01d00d351505a9b9431e8fa8917199  [shntool]  bd2000-06-24_d2t1.wav
+b9aecff89d0ea5827f8b5ab83cfdbc7e  [shntool]  bd2000-06-24_d2t2.wav
+3f5aef1521e966e34bea7e2656d93b15  [shntool]  bd2000-06-24_d2t3.wav
+3efbecbbcb4a346a953b7105f2cbd903  [shntool]  bd2000-06-24_d2t4.wav
+15b6d2aa40e0224cd45c02478df03b13  [shntool]  bd2000-06-24_d2t5.wav
+c75c978e1e4d31674106790d574af62a  [shntool]  bd2000-06-24_d2t6.wav
+2720ac2e93d2aa8a10aac59403853710  [shntool]  bd2000-06-24_d2t7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-24 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.21       35505836 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t1_FIX.wav
+     5:09.17       54547628 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t2.wav
+     7:58.59       84458012 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t3.wav
+     4:31.33       47882060 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t4.wav
+     8:05.31       85626956 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t5.wav
+     5:26.37       57593468 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t6.wav
+     2:54.62       30839468 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t7.wav
+     6:09.30       65162204 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t8.wav
+     4:01.37       42599468 B   ---   --   -----    wav  1.0000  bd2000-06-24_d1t9.wav
+     5:24.41       57250076 B   ---   --   -----    wav  1.0000  bd2000-06-24_d2t1.wav
+     4:34.51       48453596 B   ---   --   -----    wav  1.0000  bd2000-06-24_d2t2.wav
+     5:41.41       60248876 B   ---   --   -----    wav  1.0000  bd2000-06-24_d2t3.wav
+     6:02.74       64030892 B   ---   --   -----    wav  1.0000  bd2000-06-24_d2t4.wav
+     7:16.17       76950428 B   ---   --   -----    wav  1.0000  bd2000-06-24_d2t5.wav
+     6:18.43       66780380 B   ---   --   -----    wav  1.0000  bd2000-06-24_d2t6.wav
+     6:21.13       67239020 B   ---   --   -----    wav  1.0000  bd2000-06-24_d2t7.wav
+    89:18.07      945168368 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

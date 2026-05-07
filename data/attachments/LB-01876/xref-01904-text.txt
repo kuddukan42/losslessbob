@@ -1,0 +1,115 @@
+===================
+===================
+===================
+=== 1999-04-18 Palacio Municipal de Deportes, Granada, Spain info.txt
+===================
+===================
+===================
+Palacio Municipal de Deportes
+Granada, Spain
+April 18, 1999
+
+No lineage. No info. Taper unidentified
+
+01. Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson)
+02. Fourth Time Around
+03. Masters Of War
+04. Visions Of Johanna
+05. Mr. Tambourine Man
+06. Tangled Up In Blue
+07. The Lonesome Death Of Hattie Carroll
+08. I Don't Believe You (She Acts Like We Never Have Met)
+09. It Takes A Lot To Laugh, It Takes A Train To Cry
+10. Can't Wait
+11. Make You Feel My Love
+12. Highway 61 Revisited
+13. Love Sick
+14. Rainy Day Women # 12 & 35
+15. Blowin' In The Wind
+16. Maggie's Farm
+
+Concert # 1084 of The Never-Ending Tour
+Concert # 10 of the 1999 Europe Spring Tour
+1999 concert # 38
+
+Concert # 231 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+17, 15  acoustic with the band
+5  Bob Dylan harmonica
+1, 14, 15  Bucky Baxter and Larry Campbell backup vocal
+
+10 new songs (62%) compared to previous concert
+4 new songs for this tour
+
+Stereo audience recording, 105 minutes
+
+165c549b420d0bd5e3ff1400a756f255  [shntool]  01 Friend of the devil.flac
+ff5e9e802f4b8aa67c04dcc3b9920a49  [shntool]  02 Fourth time around.flac
+d3b7263909de5e3915c00845baf98b3c  [shntool]  03 Masters of war.flac
+e498f4d8ae1db23764370c1778d78f5a  [shntool]  04 Visions of Johanna.flac
+9b9410cb102e0dd97e16ad750423713e  [shntool]  05 Mr. Tambourine Man.flac
+d90dc44564f70f35f4f3a141be68a868  [shntool]  06 Tangled up in blue.flac
+269fc655fcee6b63a311f550237f46ee  [shntool]  07 The lonesome death of Hattie Carroll.flac
+54e8576846f386e8b228b6013a0dd6c1  [shntool]  08 I don't believe you (she acts like we never have met).flac
+350dc658bedf2e0ae43b89eebe54917a  [shntool]  09 It takes a lot to laugh, it takes a trian to cry.flac
+065ac50cc90a1ce8afbd12fc501cb343  [shntool]  10 Can't wait.flac
+237ccb2aa682c26cabe3d9fc71db160d  [shntool]  11 Make you feel my love.flac
+b8fed7dc0fba22f5036f173aebdf9012  [shntool]  12 Highway 61 revisited.flac
+939a7834617ba1d49f70ea37708a58dd  [shntool]  13 Love sick.flac
+21fa95be2337a298918522d8b6d8a9cc  [shntool]  14 Rainy day women # 12 & 35.flac
+827e69a43bb71c4b17159d9a7be213eb  [shntool]  15 Blowin' in the wind.flac
+952cb901a389ea73c768be54f2da34ac  [shntool]  16 Maggie's farm.flac
+===================
+===================
+===================
+=== Bob Dylan 1999-04-18.st5
+===================
+===================
+===================
+165c549b420d0bd5e3ff1400a756f255  [shntool]  01 Friend of the devil.flac
+ff5e9e802f4b8aa67c04dcc3b9920a49  [shntool]  02 Fourth time around.flac
+d3b7263909de5e3915c00845baf98b3c  [shntool]  03 Masters of war.flac
+e498f4d8ae1db23764370c1778d78f5a  [shntool]  04 Visions of Johanna.flac
+9b9410cb102e0dd97e16ad750423713e  [shntool]  05 Mr. Tambourine Man.flac
+d90dc44564f70f35f4f3a141be68a868  [shntool]  06 Tangled up in blue.flac
+269fc655fcee6b63a311f550237f46ee  [shntool]  07 The lonesome death of Hattie Carroll.flac
+54e8576846f386e8b228b6013a0dd6c1  [shntool]  08 I don't believe you (she acts like we never have met).flac
+350dc658bedf2e0ae43b89eebe54917a  [shntool]  09 It takes a lot to laugh, it takes a trian to cry.flac
+065ac50cc90a1ce8afbd12fc501cb343  [shntool]  10 Can't wait.flac
+237ccb2aa682c26cabe3d9fc71db160d  [shntool]  11 Make you feel my love.flac
+b8fed7dc0fba22f5036f173aebdf9012  [shntool]  12 Highway 61 revisited.flac
+939a7834617ba1d49f70ea37708a58dd  [shntool]  13 Love sick.flac
+21fa95be2337a298918522d8b6d8a9cc  [shntool]  14 Rainy day women # 12 & 35.flac
+827e69a43bb71c4b17159d9a7be213eb  [shntool]  15 Blowin' in the wind.flac
+952cb901a389ea73c768be54f2da34ac  [shntool]  16 Maggie's farm.flac
+===================
+===================
+===================
+=== Bob Dylan 1999-04-18.txt
+===================
+===================
+===================
+165c549b420d0bd5e3ff1400a756f255  [shntool]  01 Friend of the devil.flac
+ff5e9e802f4b8aa67c04dcc3b9920a49  [shntool]  02 Fourth time around.flac
+d3b7263909de5e3915c00845baf98b3c  [shntool]  03 Masters of war.flac
+e498f4d8ae1db23764370c1778d78f5a  [shntool]  04 Visions of Johanna.flac
+9b9410cb102e0dd97e16ad750423713e  [shntool]  05 Mr. Tambourine Man.flac
+d90dc44564f70f35f4f3a141be68a868  [shntool]  06 Tangled up in blue.flac
+269fc655fcee6b63a311f550237f46ee  [shntool]  07 The lonesome death of Hattie Carroll.flac
+54e8576846f386e8b228b6013a0dd6c1  [shntool]  08 I don't believe you (she acts like we never have met).flac
+350dc658bedf2e0ae43b89eebe54917a  [shntool]  09 It takes a lot to laugh, it takes a trian to cry.flac
+065ac50cc90a1ce8afbd12fc501cb343  [shntool]  10 Can't wait.flac
+237ccb2aa682c26cabe3d9fc71db160d  [shntool]  11 Make you feel my love.flac
+b8fed7dc0fba22f5036f173aebdf9012  [shntool]  12 Highway 61 revisited.flac
+939a7834617ba1d49f70ea37708a58dd  [shntool]  13 Love sick.flac
+21fa95be2337a298918522d8b6d8a9cc  [shntool]  14 Rainy day women # 12 & 35.flac
+827e69a43bb71c4b17159d9a7be213eb  [shntool]  15 Blowin' in the wind.flac
+952cb901a389ea73c768be54f2da34ac  [shntool]  16 Maggie's farm.flac
+===================
+===================
+===================

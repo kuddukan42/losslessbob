@@ -1,0 +1,61 @@
+Bob Dylan
+University Of Missouri
+Hearnes Center
+Columbia, Missouri
+October 27, 2004
+
+Disc 1:
+01. introduction
+02. Down Along The Cove
+03. The Times They Are A-Changin'
+04. Tweedle Dee & Tweedle Dum
+05. Tryin' To Get To Heaven
+06. Stuck Inside Of Mobile With The Memphis Blues Again
+07. Ballad Of Hollis Brown
+08. Bye And Bye
+09. Highway 61 Revisited
+10. Ballad Of A Thin Man
+11. I'll Be Your Baby Tonight
+12. Boots Of Spanish Leather
+
+Disc 2:
+01. Honest With Me
+02. Every Grain Of Sand
+03. Summer Days
+(encore)
+04. Like A Rolling Stone
+05. band introduction
+06. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+11th row center floor
+at853's > sp-spsb-1 > denecke ad-20 > sony tcd-d8 (16bit/44.1kHz)
+sony tcd-d8 > m-audio mt1 > usb > hdd
+sony sound forge 9.0 > cd wave > flac
+
+ffp
+bd2004-10-27d1t01.flac:97f0e1e3383476164dd50b0594f1d7b8
+bd2004-10-27d1t02.flac:78c17a8a3fe5fdfae3f5a41e917f03cb
+bd2004-10-27d1t03.flac:67b92687937f212b8a0a1b4074342598
+bd2004-10-27d1t04.flac:385a72681c29b8fe552590f603fde188
+bd2004-10-27d1t05.flac:b8e658672c4e4037b5007b3027c86be5
+bd2004-10-27d1t06.flac:83839537a646bcaf5fefef7654c71229
+bd2004-10-27d1t07.flac:dd3d22a7c13d55b71a6fc6d92282857a
+bd2004-10-27d1t08.flac:4dff09413a0b9fadb43b1be9c0406c58
+bd2004-10-27d1t09.flac:8b7685e466d7e3bddb04ab60895fcb9d
+bd2004-10-27d1t10.flac:ad4fa1bd4d291b4c76c4eab257e3c2fd
+bd2004-10-27d1t11.flac:527c5bfa7486063c8c56fd8611218df1
+bd2004-10-27d1t12.flac:bc2eac24bfb3f5f657b7ecedd7dac411
+bd2004-10-27d2t01.flac:28ee6c997b7c08cf989feb21c23e881d
+bd2004-10-27d2t02.flac:547b1a72e46f785f2f3991246a08132c
+bd2004-10-27d2t03.flac:3d06230eb9dc6a37a380dd49ab07ed72
+bd2004-10-27d2t04.flac:174b3514e538ba55bfba743de260bebf
+bd2004-10-27d2t05.flac:c3cc4a144a5fb5786e01a89d97f7f0a0
+bd2004-10-27d2t06.flac:f3aeb5e5b1a6387a8cdf5dca6a3bf5a6

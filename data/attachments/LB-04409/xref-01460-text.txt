@@ -1,0 +1,60 @@
+===================
+===================
+===================
+=== checksums.md5
+===================
+===================
+===================
+MD5(01 Intro.flac)= 509fb840c234f69f3098a72be64a6708
+MD5(02 To Be Alone With You.flac)= b86c9140e073251a44de1a4e724c8920
+MD5(03 It's All Over Now, Baby Blue.flac)= 0124f7edee3fb7620445fcd0e5256d4f
+MD5(04 Cry A While.flac)= 3859d4225aa3dca0ea2dfb397fe71cbb
+MD5(05 Love Minus Zero_No Limit.flac)= 13eea34c70c3af9506b627f510fc2e9a
+MD5(06 It's Alright, Ma (I'm Only Bleeding).flac)= 1868de4c38f7b30db80289a49aec859e
+MD5(07 The Lonesome Death Of Hattie Carroll.flac)= fe0a73c0a91b0ce33ea5b8df4e66bb2d
+MD5(08 Cold Irons Bound.flac)= 7a5119779b7555ee73bee2f2262e3811
+MD5(09 Mr. Tambourine Man.flac)= 7925cadb81d9bfaffef72bb8571a0cd0
+MD5(10 Man In The Long Black Coat.flac)= 95e558724b2bd82963a8dc888bc468ec
+MD5(2-01 Highway 61 Revisited.flac)= d0f5f32a448af57352450b1631f63813
+MD5(2-02 Every Grain Of Sand.flac)= cf06ecffeba6d04dd38fa6fd2503323e
+MD5(2-03 Honest With Me.flac)= a9863237fab8a56ac9e71f2a8f70c7ce
+MD5(2-04 Boots Of Spanish Leather.flac)= 523f46c235b68146865566b7f123eb5d
+MD5(2-05 Summer Days.flac)= c12b8db2fa1834f02d1fd0d3a1c14602
+MD5(2-06 Cat's In The Well.flac)= 905fbfda89af812becce3d69d6e2d078
+MD5(2-07 Like A Rolling Stone.flac)= 0d7c69de35686cff8cdfb24f8371bd26
+MD5(2-08 All Along The Watchtower.flac)= d5dd4190d7e21a31c1319c2574882303
+
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Mnchen, Germany
+Olympiahalle
+October 29, 2003
+
+To Be Alone With You (Bob on piano)
+It's All Over Now, Baby Blue 
+(Bob on piano and harp, Larry on pedal steel, Freddy on electric guitar, Tony on electric bass)
+Cry A While (Bob on piano, Larry on slide guitar)
+Love Minus Zero/No Limit (acoustic) (Bob on piano and harp)
+It's Alright, Ma (I'm Only Bleeding) (acoustic) (Bob on piano and harp, Larry on cittern)
+The Lonesome Death Of Hattie Carroll (acoustic) (Bob on piano and harp)
+Cold Irons Bound (Bob on piano)
+Mr. Tambourine Man (acoustic) (Bob on piano and harp)
+Man In The Long Black Coat (Bob on piano and harp)
+Highway 61 Revisited (Bob on piano)
+Every Grain Of Sand (Bob on piano and harp)
+Honest With Me (Bob on piano, Larry on slide guitar)
+Boots Of Spanish Leather (acoustic) (Bob on piano and harp)
+Summer Days (Bob on piano, Tony on standup bass)
+(encore)
+Cat's In The Well (Bob on piano)
+Like A Rolling Stone (Bob on piano and harp)
+All Along The Watchtower (Bob on piano and harp)
+
+===================
+===================
+===================

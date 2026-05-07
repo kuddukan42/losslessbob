@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-07-05-St-Etienne.flacf 
+=================== 
+=================== 
+=================== 
+a1b6541faf6f61afafdb7740645dd5a6  bd 07-05-2004, Palais des Spectacles, St. Etienne, France.md5
+500f2099404b0a0870b92bc263935bfb  bd 07-05-2004, Palais des Spectacles, St. Etienne, France.txt
+e02f5ccac6e21649be2b3fe9d2593f04  bd04-07-05.txt
+0f5766ea13274cdcd890207c3fd7f932  bd07-05-2004 cover.jpg
+c792e7e6a78cb68c63790ebc4fde956a  t00d1-Intro.flac
+c787c9183564eec6143b2066f0907b0d  t01d1-Drifter's Escape.flac
+ec0db86decf72626055528e5cb5284fc  t02d1-I'll Be Your Baby Tonight.flac
+01ff29c93cc92ff439d031edad7c094f  t03d1-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+a30bb1f9bfc11778bc2bc1ffe3552116  t04d1-Moonlight.flac
+50b9ac01de887641ccd82d7458fe786c  t05d1-It's Alright, Ma (I'm Only Bleeding).flac
+860f1c3881866dad300a0f17cbc860f1  t06d1-Tweedle Dee & Tweedle Dum.flac
+3b1e029e4abd50ba7fd3a9571c2e9306  t07d1-Man In The Long Black Coat.flac
+dd28d00bbda7797bb66951b2800bbb2b  t08d1-Highway 61 Revisited.flac
+f3e691dac07bab58ec6a2a72df21be3f  t09d1-Standing In The Doorway.flac
+1ac3f7e9318d4f2d91166b7c816f79dd  t10d2-I Don't Believe You (She Acts Like We Never Have Met).flac
+051a5c1e154130e04ff29c51198c692d  t11d2-It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+5df2631cb89affe29b01baf346283f58  t12d2-Honest With Me.flac
+24acba4419bd52394264441e91cc1e3f  t13d2-Every Grain Of Sand.flac
+93b57ab5bcae3ecadc22b10af27d14b1  t14d2-Summer Days.flac
+07987fc5f6ead36dbfe2598da1600de9  t15d2-Like A Rolling Stone.flac
+f730fa496360444fd425762217f12811  t16d2-All Along The Watchtower  .flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-05-St-Etienne.flacf 
+=================== 
+=================== 
+=================== 
+t00d1-Intro.flac:5f8a2f91dc04a275f34ae14669c20cfe
+t01d1-Drifter's Escape.flac:dd64b4b648d3eb1dfb909cfee48f302e
+t02d1-I'll Be Your Baby Tonight.flac:dbbdf690b9854735a15a556911dc2712
+t03d1-Stuck Inside Of Mobile With The Memphis Blues Again.flac:48791e5dc57fd47414047d787a9e3676
+t04d1-Moonlight.flac:45b2b2fac52930ae18dc0f0d3b7269b7
+t05d1-It's Alright, Ma (I'm Only Bleeding).flac:b811f4cd1701586a091cd93198e4d5fc
+t06d1-Tweedle Dee & Tweedle Dum.flac:8962a34f82f72e51e99cb90843e5a924
+t07d1-Man In The Long Black Coat.flac:c338cd1ceaa43be63d489c7de27e7571
+t08d1-Highway 61 Revisited.flac:eb5fd070d6f9bbc874b06165ea3e2bcb
+t09d1-Standing In The Doorway.flac:6e5266ab54e370d8fb339c33e33f7061
+t10d2-I Don't Believe You (She Acts Like We Never Have Met).flac:0258daeb26623f44bbb8af3fca1f89df
+t11d2-It Takes A Lot To Laugh, It Takes A Train To Cry.flac:07e56c5f12c91a0ff3b521164979d938
+t12d2-Honest With Me.flac:32cca593179ae20745d32afa45b893eb
+t13d2-Every Grain Of Sand.flac:9eb9868e11dc1613b52999b195b2d327
+t14d2-Summer Days.flac:e3c7d4876a4bf27761dd33acefa406cd
+t15d2-Like A Rolling Stone.flac:f07dd65f8f99395560484999f280a5c5
+t16d2-All Along The Watchtower  .flac:7662934455d822313c1cc0d4b5e7eeac
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-05-St-Etienne.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.03       10061144 B   -b-   --   ---xx   flac  0.3171  t00d1-Intro.flac
+     5:35.64       59244312 B   -b-   --   ---xx   flac  0.3654  t01d1-Drifter's Escape.flac
+     6:27.60       68407900 B   -b-   --   ---xx   flac  0.3407  t02d1-I'll Be Your Baby Tonight.flac
+     7:59.32       84571828 B   -b-   --   ---xx   flac  0.3570  t03d1-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:31.09       68993660 B   -b-   --   ---xx   flac  0.3123  t04d1-Moonlight.flac
+     8:49.54       93442164 B   -b-   --   ---xx   flac  0.3597  t05d1-It's Alright, Ma (I'm Only Bleeding).flac
+     6:21.05       67220668 B   -b-   --   ---xx   flac  0.3258  t06d1-Tweedle Dee & Tweedle Dum.flac
+     5:33.70       58906192 B   -b-   --   ---xx   flac  0.3230  t07d1-Man In The Long Black Coat.flac
+     7:49.45       82837752 B   -b-   --   ---xx   flac  0.3752  t08d1-Highway 61 Revisited.flac
+     7:46.50       82319108 B   -b-   --   ---xx   flac  0.3216  t09d1-Standing In The Doorway.flac
+     8:20.33       88277084 B   -b-   --   ---xx   flac  0.3498  t10d2-I Don't Believe You (She Acts Like We Never Have Met).flac
+     7:08.45       75605144 B   -b-   --   ---xx   flac  0.3351  t11d2-It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+     7:09.23       75729544 B   -b-   --   ---xx   flac  0.3628  t12d2-Honest With Me.flac
+     7:52.70       83426036 B   -b-   --   ---xx   flac  0.2891  t13d2-Every Grain Of Sand.flac
+    10:46.15      113989208 B   -b-   --   ---xx   flac  0.3572  t14d2-Summer Days.flac
+     8:26.66       89413120 B   -b-   --   ---xx   flac  0.3584  t15d2-Like A Rolling Stone.flac
+     7:59.10       84519456 B   -b-   --   ---xx   flac  0.3548  t16d2-All Along The Watchtower  .flac
+   121:35.53     1286964320 B                            0.3439  (17 files)
+=================== 
+=================== 
+=================== 

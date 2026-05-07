@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-07-05-dildor.flacf 
+=================== 
+=================== 
+=================== 
+dc692cb8584261c8ab7e67c0fcce7e8b  01 Intro.flac
+a88f6d7fc5f3856645750f19adefb7b2  02 Rainy Day Women #12&35.flac
+9fcee34b1d2adeb621bba593d2ebd965  03 Don't Think Twice, It's All Right.flac
+18facf2bb8a077f942538d95f3f40824  04 Watching the River Flow.flac
+b9df4267fe445129d944f6d54d543cbc  05 It's Alright Mama (I'm Only Bleeding).flac
+b03c074dc1ebeeef7023abb1cb6c5cbd  06 Girl of the North Country.flac
+776f5cfb9c5f40496e1ed0b28adedffb  07 Rollin' and Tumblin'.flac
+04a12b8a0da69cfe5e1d6c679384e116  08 When the Deal Goes Down.flac
+a14217c72b1bcf7d1706e0a286dfa50f  09 Honest Whith Me.flac
+9c818699def97ff5d002e42c89d94463  10 Spirit of the Water.flac
+d9c074c5ffa3bafc0c5eeef33af14055  11 Tangled Up in Blue.flac
+882f8f1f3f50668ca5d9787554aeb9c2  12 Masters of War.flac
+f5bf593526a1848115b4a36dbb5d8613  13 Highway 61 Revisited.flac
+4bf9e0be8244dc0cb8fad048774663c3  14 Like a Rolling Stone.flac
+89cde6da54f840e314909a7fe7bce467  15 Crowd.flac
+82b9daea330cb8509f370eebc204c2fc  16 Thunder on the Mountain.flac
+fa1c27eebb505e50ff3c53dd2176c9f0  17 Band Introduction.flac
+22c048c76bad901e11d0a1ab19ee4b59  18 All Along the Watchtower.flac
+086b3528cdc3dd44e14caf07621066bd  Dylan July 5,2007.md5
+268b4299d4fa563db7f69667e003eccb  Ottawa.shntool_len.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-07-05-dildor.flacf 
+=================== 
+=================== 
+=================== 
+01 Intro.flac:18943b484a59f44b526539b87f7d0f95
+02 Rainy Day Women #12&35.flac:8f5a5312f2d7662f06d8eac2d36362b2
+03 Don't Think Twice, It's All Right.flac:4c12400026bcc53753fafa6a8f11595f
+04 Watching the River Flow.flac:722e8528227e134ecfce1c68b3d0fc9c
+05 It's Alright Mama (I'm Only Bleeding).flac:5107008ccb7455fa5accdaa062d4f25e
+06 Girl of the North Country.flac:03c460f908b22396608164a2b871d522
+07 Rollin' and Tumblin'.flac:ddda51318e9d119182ad08d983d5260c
+08 When the Deal Goes Down.flac:5e09935841c3a36887ccd8b954c13036
+09 Honest Whith Me.flac:3490a2b23a583c11a3c5e3d0362fef70
+10 Spirit of the Water.flac:2dd422570fa235c9642dfa1f14afeb9a
+11 Tangled Up in Blue.flac:467aebc641e2b6262033a0d4603fc5d6
+12 Masters of War.flac:c5ef377823089c629e9c57ed3fadb319
+13 Highway 61 Revisited.flac:50c5c3607f1497c1e9c244e46cc9e25e
+14 Like a Rolling Stone.flac:27f5317c6d55992b2bf9723ef97766a6
+15 Crowd.flac:85647cb3cfee96e72ebabc4b6e1e6931
+16 Thunder on the Mountain.flac:e158a7b27e0df870e255c8e505992e79
+17 Band Introduction.flac:662f199c40217c7553661dc675cebffc
+18 All Along the Watchtower.flac:3fe6439129f3394d06edf7ded401afa6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-07-05-dildor.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:38.02        6707948 B   ---   --   ---xx   flac  0.2683  01 Intro.flac
+     4:20.28       45929900 B   ---   --   ---xx   flac  0.3286  02 Rainy Day Women #12&35.flac
+     6:12.28       65686700 B   ---   --   ---xx   flac  0.3147  03 Don't Think Twice, It's All Right.flac
+     4:34.34       48413612 B   ---   --   ---xx   flac  0.3369  04 Watching the River Flow.flac
+     7:16.39       77002172 B   ---   --   ---xx   flac  0.3440  05 It's Alright Mama (I'm Only Bleeding).flac
+     5:35.44       59197532 B   ---   --   ---xx   flac  0.2967  06 Girl of the North Country.flac
+     6:05.40       64480124 B   ---   --   ---xx   flac  0.3386  07 Rollin' and Tumblin'.flac
+     6:14.59       66112412 B   ---   --   ---xx   flac  0.2791  08 When the Deal Goes Down.flac
+     6:39.49       70498892 B   ---   --   ---xx   flac  0.3446  09 Honest Whith Me.flac
+     6:56.45       73488284 B   ---   --   ---xx   flac  0.2915  10 Spirit of the Water.flac
+     7:12.45       76310684 B   ---   --   ---xx   flac  0.3356  11 Tangled Up in Blue.flac
+     5:14.32       55464908 B   ---   --   ---xx   flac  0.3146  12 Masters of War.flac
+     5:21.16       56662076 B   ---   --   ---xx   flac  0.3575  13 Highway 61 Revisited.flac
+     6:33.51       69445196 B   ---   --   ---xx   flac  0.3393  14 Like a Rolling Stone.flac
+     2:55.34       30950012 B   ---   --   ---xx   flac  0.2658  15 Crowd.flac
+     5:42.55       60458204 B   ---   --   ---xx   flac  0.3633  16 Thunder on the Mountain.flac
+     0:52.46        9281036 B   ---   --   ---xx   flac  0.3153  17 Band Introduction.flac
+     7:09.03       75682700 B   ---   --   ---xx   flac  0.3184  18 All Along the Watchtower.flac
+    95:35.50     1011772392 B                            0.3242  (18 files)
+=================== 
+=================== 
+=================== 

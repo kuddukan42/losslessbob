@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-29-neumann-km140.flacf 
+=================== 
+=================== 
+=================== 
+9fd40b87424d61bf58cb2700fef01244  bd07-04-29-neumann-km140-LB-4815.txt
+56bb48a2eeca0fe5d1f0b00a8feb34e7  BobDylan2007-04-29.ffp
+156c3af688e7b0665907bd6aaf914768  BobDylan2007-04-29.txt
+cd99d8d615b18cd9dcb56798509c85cd  BobDylan2007-04-29_1644_t01.flac
+806fd8dbc09a4a8432913cb1a232bb38  BobDylan2007-04-29_1644_t02.flac
+45b8e63986748adb91663eb55b8164c0  BobDylan2007-04-29_1644_t03.flac
+36520f10d41fee7b2e8f664293cb5d8e  BobDylan2007-04-29_1644_t04.flac
+4bd48137ef14059ba5664f7551c7e865  BobDylan2007-04-29_1644_t05.flac
+3d8b72cd06a92f9a22bf041bdebc232b  BobDylan2007-04-29_1644_t06.flac
+d19141256c34dc755ccc879a473cceb9  BobDylan2007-04-29_1644_t07.flac
+79e4eafc774d6976d2f2f1917cb61816  BobDylan2007-04-29_1644_t08.flac
+7d4587ad027751285c2a09fecd4abe4d  BobDylan2007-04-29_1644_t09.flac
+267c412601f018ec4ece1eb9f8429960  BobDylan2007-04-29_1644_t10.flac
+d1cedb6eb70a367a0e1ac2383cdb4d33  BobDylan2007-04-29_1644_t11.flac
+9d96261c84e19433d872d1acd6d608ce  BobDylan2007-04-29_1644_t12.flac
+3e290b68aca16b9b57d6023818ea6366  BobDylan2007-04-29_1644_t13.flac
+94807cd696d94aae2de020950a48d618  BobDylan2007-04-29_1644_t14.flac
+c7cd29359dc2307eeb2494e6f72eaed7  BobDylan2007-04-29_1644_t15.flac
+770a9fa3abb0ee0450302e09ce7a5d37  BobDylan2007-04-29_1644_t16.flac
+ad83d993ef76075d9ad09df2c128bad4  BobDylan2007-04-29_1644_t17.flac
+d08501eadb82d09531d7b1f2b0cd5e5f  lbdir-bd07-04-29-neumann-km140.flacf.md5
+7c6f3f2e6205cf8f35590717082c0717  lbdir-bd07-04-29-neumann-km140.flacf.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-29-neumann-km140.flacf 
+=================== 
+=================== 
+=================== 
+BobDylan2007-04-29_1644_t01.flac:b158f77b768e953befa7dbed3d82c236
+BobDylan2007-04-29_1644_t02.flac:1d1bf1dc2d9bd56cc8ce61a5adb52cb6
+BobDylan2007-04-29_1644_t03.flac:e0577031dbbab0596c45cadfa8de1580
+BobDylan2007-04-29_1644_t04.flac:a6014004630c2e6904d9f18ff5794a0b
+BobDylan2007-04-29_1644_t05.flac:3ab765bab28b458dc2cb337945032fed
+BobDylan2007-04-29_1644_t06.flac:69580efd3e6af8edfa6ced893d3ef28c
+BobDylan2007-04-29_1644_t07.flac:3694866dfb40d175eb1f46ed468011d6
+BobDylan2007-04-29_1644_t08.flac:2bb9dc5a4180469ec31ca13ad854a196
+BobDylan2007-04-29_1644_t09.flac:5993d38b0aa93001ce9ed4e7f6f9eb50
+BobDylan2007-04-29_1644_t10.flac:643cc39d3c8c1cbb25c3cf32cbeac45b
+BobDylan2007-04-29_1644_t11.flac:d9599082fbf561282f861921cab501b1
+BobDylan2007-04-29_1644_t12.flac:55ae558dce229c50f8e0915f83fe7257
+BobDylan2007-04-29_1644_t13.flac:31921d327b0c6f395b9ff65cfe9bc701
+BobDylan2007-04-29_1644_t14.flac:8f121640190732096437cc43bda99e94
+BobDylan2007-04-29_1644_t15.flac:a7d67062ee9a4815443f5ef0b16b2fbb
+BobDylan2007-04-29_1644_t16.flac:94152d14d75e92edcbd32305586e43c7
+BobDylan2007-04-29_1644_t17.flac:e8a18fc35fbd5e14fabb90189dc95817
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-29-neumann-km140.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.74       56445692 B   ---   --   ---xx   flac  0.4703  BobDylan2007-04-29_1644_t01.flac
+     5:44.21       60731036 B   ---   --   ---xx   flac  0.4956  BobDylan2007-04-29_1644_t02.flac
+     5:25.59       57468812 B   ---   --   ---xx   flac  0.5277  BobDylan2007-04-29_1644_t03.flac
+     7:15.31       76806956 B   ---   --   ---xx   flac  0.5450  BobDylan2007-04-29_1644_t04.flac
+     5:41.20       60199484 B   ---   --   ---xx   flac  0.4070  BobDylan2007-04-29_1644_t05.flac
+     6:14.48       66086540 B   ---   --   ---xx   flac  0.5151  BobDylan2007-04-29_1644_t06.flac
+     9:44.66      103172876 B   ---   --   ---xx   flac  0.4095  BobDylan2007-04-29_1644_t07.flac
+     7:11.51       76148396 B   ---   --   ---xx   flac  0.4844  BobDylan2007-04-29_1644_t08.flac
+     6:38.64       70357772 B   ---   --   ---xx   flac  0.3820  BobDylan2007-04-29_1644_t09.flac
+     5:30.23       58266140 B   ---   --   ---xx   flac  0.5332  BobDylan2007-04-29_1644_t10.flac
+     6:53.41       72949676 B   ---   --   ---xx   flac  0.4251  BobDylan2007-04-29_1644_t11.flac
+     8:23.54       88856252 B   ---   --   ---xx   flac  0.5098  BobDylan2007-04-29_1644_t12.flac
+     7:42.67       81654428 B   ---   --   ---xx   flac  0.3939  BobDylan2007-04-29_1644_t13.flac
+     6:56.49       73497692 B   ---   --   ---xx   flac  0.5324  BobDylan2007-04-29_1644_t14.flac
+     8:43.69       92419532 B   ---   --   ---xx   flac  0.4792  BobDylan2007-04-29_1644_t15.flac
+     7:21.38       77881820 B   ---   --   ---xx   flac  0.5228  BobDylan2007-04-29_1644_t16.flac
+     7:22.49       78084128 B   -b-   --   ---xx   flac  0.5215  BobDylan2007-04-29_1644_t17.flac
+   118:11.74     1251027232 B                            0.4778  (17 files)
+=================== 
+=================== 
+=================== 

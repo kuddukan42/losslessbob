@@ -1,0 +1,154 @@
+===================
+===================
+===================
+=== 1995-12-10 The Orpheum, Boston, Massachusetts, USA [Glen Dundas].md5
+===================
+===================
+===================
+863cab20ca2cfdc36592d795acc985c1 *CD1\01 Drifter's escape.flac
+424822770b0e8c45e8e007297c94c960 *CD1\02 Seor (Tales of Yankee Power).flac
+137105df978ffea964b424754ae87b1b *CD1\03 All along the watchtower.flac
+34a79087e2898ba5e51b44539833cd9e *CD1\04 Tears of rage.flac
+88241dcfe2e5110e8c4746c47e8ab5f9 *CD1\05 I don't believe you (she acts like we never have met).flac
+041b546c2de50e275caf0ac6732baea6 *CD1\06 Silvio.flac
+533e09df25bc8012f7da66ab6950ebe2 *CD1\07 Mr. Tambourine Man.flac
+2ac700cea41fab66e82cdf55a552fb0c *CD1\08 Masters of war.flac
+1c7d5e36a5912bb897da4e82a80c16b3 *CD1\09 Mama, you been on my mind.flac
+e441843175e5d21c2e1d68735bd4273b *CD1\FLAC CD1.md5
+f73492f26b868858c62506c64003d5c8 *CD2\10 Dark eyes.flac
+54a20e1be4c6d1ec205b70c3d7a0bec0 *CD2\11 Jokerman.flac
+4618fb1fd4f9de1a365723655583256f *CD2\12 Highway 61 revisited.flac
+36d9f46ced4693bc197539e59fd80130 *CD2\13 Alabama getaway.flac
+bd9e4a0641de510552d9e2bd83b9e195 *CD2\14 My back pages.flac
+656e1694e12fcd38244db809873fd1f9 *CD2\15 Rainy day women # 12 & 35.flac
+7d5757540fd9cf3dac74649634ec5f09 *CD2\FLAC CD2.md5
+091caf28eff9c5f5600bb67d748ca5a4 *Info\1995-12-10 The Orpheum Theatre, Boston, Massachusetts, USA [Glen Dundas].txt
+91f2bc8d17760bc8113179550029ef37 *Info\bd1995-12-10-GD.txt
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+863cab20ca2cfdc36592d795acc985c1 *01 Drifter's escape.flac
+424822770b0e8c45e8e007297c94c960 *02 Seor (Tales of Yankee Power).flac
+137105df978ffea964b424754ae87b1b *03 All along the watchtower.flac
+34a79087e2898ba5e51b44539833cd9e *04 Tears of rage.flac
+88241dcfe2e5110e8c4746c47e8ab5f9 *05 I don't believe you (she acts like we never have met).flac
+041b546c2de50e275caf0ac6732baea6 *06 Silvio.flac
+533e09df25bc8012f7da66ab6950ebe2 *07 Mr. Tambourine Man.flac
+2ac700cea41fab66e82cdf55a552fb0c *08 Masters of war.flac
+1c7d5e36a5912bb897da4e82a80c16b3 *09 Mama, you been on my mind.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+f73492f26b868858c62506c64003d5c8 *10 Dark eyes.flac
+54a20e1be4c6d1ec205b70c3d7a0bec0 *11 Jokerman.flac
+4618fb1fd4f9de1a365723655583256f *12 Highway 61 revisited.flac
+36d9f46ced4693bc197539e59fd80130 *13 Alabama getaway.flac
+bd9e4a0641de510552d9e2bd83b9e195 *14 My back pages.flac
+656e1694e12fcd38244db809873fd1f9 *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================
+=== 1995-12-10 The Orpheum Theatre, Boston, Massachusetts, USA [Glen Dundas].txt
+===================
+===================
+===================
+The Orpheum Theatre
+Boston, Massachusetts
+December 10, 1995
+
+*  This recording is the same as LB-4344; but with a different MD5 checksum!  *
+
+Taper: Glen Dundas
+Lineage: downloaded 12/06 as FLACs; now given song titles
+LB Rating: A
+Frequency analysis: not much above 17kHz
+
+LB-notes: Audio disks from taper (transferred 2006) > (dBpowerAMP set to
+compression level 6) FLAC; bittorrent download 12/06.; nothing above 17k; different recording than LB-947 as this does not have noted taper comment; in comparison this has a warmer sound; excellent sound [A]
+
+01. Drifter's Escape [05:44]
+02. Seor (Tales Of Yankee Power) [06:40]
+03. All Along The Watchtower [06:14]
+04. Tears Of Rage (Bob Dylan & Richard Manuel) [08:07]
+05. I Don't Believe You (She Acts Like We Never Have Met) [07:13]
+06. Silvio (Bob Dylan & Robert Hunter) [07:59]
+07. Mr. Tambourine Man [09:14]
+08. Masters Of War [05:54]
+09. Mama, You Been On My Mind [06:01]
+Total time [73:09]
+
+10. Dark Eyes [05:24]
+11. Jokerman [09:42]
+12. Highway 61 Revisited [09:57]
+13. Alabama Getaway (Robert Hunter/Jerry Garcia) [06:56]
+14. My Back Pages [08:42]
+15. Rainy Day Women # 12 & 35 [07:31]
+Total time [48:14]
+
+Concert # 750 of The Never-Ending Tour
+Concert # 4 of the 1995 Paradise Lost Tour
+Concert # 110 in 1995
+
+Concert # 294 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+7-10, 14 acoustic with the band
+7, 9, 14 Bob Dylan harmonica
+10 Patti Smith (shared vocal)
+13 John Jackson backup vocal
+
+BobTalk: 
+A lot of girls have come along since Patti started, but Patti is still the best, you know. (after Dark Eyes)
+
+11 new songs (73%) compared to previous concert
+8 new songs for this tour
+
+Stereo audience recording, 115 minutes
+===================
+===================
+===================
+=== bd1995-12-10-GD.txt
+===================
+===================
+===================
+Bob Dylan, 12/10/95, The Orpheum Theatre, Boston, Massachusetts, 2CDR 
+
+Taper: Glen Dundas
+
+Source: AUdio disks from taper (transferred 2006) > (dBpowerAMP set to
+compression level 6) flac.
+
+Disk One
+
+Drifter's Escape 
+Se?or (Tales Of Yankee Power) 
+All Along The Watchtower
+Tears Of Rage
+I Don't Believe You 
+Silvio 
+Mr. Tambourine Man (acoustic w band) 
+Masters Of War (acoustic w band) 
+Mama, You Been On My Mind (acoustic w band) 
+
+Disk Two
+Dark Eyes (acoustic w band) 
+Jokerman /
+Highway 61 Revisited 
+Alabama Getaway 
+My Back Pages (acoustic w band) 
+Rainy Day Women # 12 & 35
+===================
+===================
+===================

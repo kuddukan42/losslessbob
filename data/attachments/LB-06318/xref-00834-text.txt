@@ -1,0 +1,165 @@
+===================
+===================
+===================
+=== 1997-10-28-Athens-info.txt
+===================
+===================
+===================
+Bob Dylan
+Exhibition Hall
+Classic Center
+Athens, GA
+1997-10-28
+CD 1
+
+01 Introduction - Maggie's Farm
+02 Tonight I'll Be Staying Here with You
+03 Cold Irons Bound
+04 Tears of Rage
+05 Can't Wait
+06 Silvio
+07 Stone Walls and Steel Bars
+08 Tangled up in Blue
+09 Mr. Tambourine Man
+10 Friend of the Devil
+11 'Til I Fell in Love with You - Band Introduction
+71:14
+
+CD 2
+
+01 Highway 61 Revisited
+02 Like a Rolling Stone - audience
+
+   (encore)
+03 Forever Young
+04 Love Sick
+05 Rainy Day Women #12 & 35
+34:06
+
+2CDs 105:20
+
+SHN 0.7840 (16 files)
+
+FILES 2004-12-20
+
+---------------------------------------------------------------------------------
+Uploader's note:
+
+This is this is very harsh and tinny and looks like LB-6318 but I did not hear 
+the "lots of drops on d1t1, d2t1, d1t9"
+---------------------------------------------------------------------------------
+
+===================
+===================
+===================
+=== 1997-10-28-Athens.txt
+===================
+===================
+===================
+Bob Dylan
+Exhibition Hall
+Classic Center
+Athens, GA
+1997-10-28
+CD 1
+
+01 Introduction - Maggie's Farm				05:32
+02 Tonight I'll Be Staying Here with You	05:26
+03 Cold Irons Bound							06:48
+04 Tears of Rage							08:07	Bob Dylan, Richard George Manuel
+05 Can't Wait								06:28
+06 Silvio									07:39	Bob Dylan, Robert Hunter
+07 Stone Walls and Steel Bars				03:46	Ray Pennington, Roy E. Marcum
+08 Tangled up in Blue						07:58
+09 Mr. Tambourine Man						05:46
+10 Friend of the Devil						07:07	Jerome John Garcia [Jerry Garcia], Robert Hunter, John Collins Dawson IV [John Dawson]
+11 'Til I Fell in Love with You - 
+	Band Introduction						06:31
+71:14
+
+CD 2
+
+01 Highway 61 Revisited						06:30
+02 Like a Rolling Stone - audience			09:55
+
+   (encore)
+03 Forever Young							06:40
+04 Love Sick								05:27
+05 Rainy Day Women #12 & 35					05:32
+34:06
+
+2CD 105:20
+
+SHN 0.7840 (16 files)
+
+FILES 2004-12-20
+
+Vuze Beta 4.6.0.5_B01/4 az2 >
+Dime 2011-06-25 by serge
+===================
+===================
+===================
+=== 10-28-97 Athens shn disk 1.md5
+===================
+===================
+===================
+c2aa36fb7ec50d4a9663f49e6744edde *Track01-fixed.shn
+f927b817df1d372dda6974b48c25acc0 *Track02-fixed.shn
+c058609948fe28bf5339ec579db6af4c *Track03-fixed.shn
+54c2b0e9746be79dc59d74a9332fae85 *Track04-fixed.shn
+39c4fd1d1e4d750b3dd391d72e5bd3ba *Track05-fixed.shn
+54ae920eb0dd924ddfe6873d3df57854 *Track06-fixed.shn
+860d070591b9714fb493440598afadef *Track07-fixed.shn
+52644c5ade22c5588042dd6490d7dfa8 *Track08-fixed.shn
+602e5fb9abbee201281d0b1be003fa2c *Track09-fixed.shn
+96cbc93aa59415976fe25b1da4454b80 *Track10-fixed.shn
+b9e9ec3bad5723c20aea64c6adefa0c9 *Track11-fixed.shn
+===================
+===================
+===================
+=== shntoolresults.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     5:32.20       58611884    ---   --   ---xx   Track01-fixed.shn
+     5:26.03       57513500    ---   --   ---xx   Track02-fixed.shn
+     6:48.14       72004172    ---   --   ---xx   Track03-fixed.shn
+     8:07.56       86038556    ---   --   ---xx   Track04-fixed.shn
+     6:28.27       68506748    ---   --   ---xx   Track05-fixed.shn
+     7:39.45       81073484    ---   --   ---xx   Track06-fixed.shn
+     3:46.64       40016972    ---   --   ---xx   Track07-fixed.shn
+     7:58.58       84455660    ---   --   ---xx   Track08-fixed.shn
+     5:46.72       61203788    ---   --   ---xx   Track09-fixed.shn
+     7:07.53       75447500    ---   --   ---xx   Track10-fixed.shn
+     6:31.53       69097100    ---   --   ---xx   Track11-fixed.shn
+    71:14.15         719.04 MB                    (totals for 11 files, 0.7823 overall compression ratio)
+===================
+===================
+===================
+=== 10-28-97 Athens shn disk 2.md5
+===================
+===================
+===================
+bb1e3215b8c4d8af6e325878a9cea9b7 *Track01.shn
+87d95f262f3ceabd5e728b3a3c936f2b *Track02.shn
+d5ec8a3235b53d83ba668c93ceeea4f5 *Track03.shn
+602793d0a773a1e13ee4cae5bab831b8 *Track04.shn
+28e6534f0ec4f9b96f8f16cbc63e8d3e *Track05.shn
+===================
+===================
+===================
+=== shntoolresults.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     6:30.08       68814860    ---   --   ---xx   Track01.shn
+     9:55.41      105054476    ---   --   ---xx   Track02.shn
+     6:40.74       70734092    ---   --   ---xx   Track03.shn
+     5:27.13       57713420    ---   --   ---xx   Track04.shn
+     5:32.48       58677740    ---   --   ---xx   Track05.shn
+    34:06.34         344.27 MB                    (totals for 5 files, 0.7876 overall compression ratio)
+===================
+===================
+===================

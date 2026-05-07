@@ -1,0 +1,129 @@
+===================
+===================
+===================
+=== fingerprint.ffp
+===================
+===================
+===================
+disc1
+Piste  1.flac:54e6b5c5788afcb5512c239d5a2896a1Piste  2.flac:df546d04f62f82fc4cff03040bc8d5cbPiste  3.flac:f4e69179f4b27c6d5b670b9566bf7650Piste  4.flac:5492e6ff4a0716164910396df3b5eaf1Piste  5.flac:65f6eb9109592e776f8d91a87e0e44f4Piste  6.flac:69e0b751f298396bda4e1b21354b7de8Piste  7.flac:7bd939fb51fb018c0542d01d58b45351Piste  8.flac:a93876ff003eb23c772ab3d8e769b3ccPiste  9.flac:3af891b3f8d07e65b3b34e979208b4acPiste 10.flac:2cfe21599359926bad02f3673539521dPiste 11.flac:7e58d98fb25a57616a624f200584867e
+
+disc2
+Piste  1.flac:1506c83f9ec56264d9b9fa0a97a67ca2Piste  2.flac:199d49cbb0731fa9351a7fc126e6ba27Piste  3.flac:c0ddb675b57c883606940de4f03b2ef2Piste  4.flac:388a3a57466e8fb1e8a55ade0b6bc2e5Piste  5.flac:aa003487c3d48fc7baaedca5ddb6ef6dPiste  6.flac:919a6ea09fed84dcba2bfde909a136cdPiste  7.flac:75c2efa3147846cd5cb739fc3cf08288
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Parc des Expositions
+Reims, France
+1 July 1992
+ 
+ 1.  A Hazy Shade Of Winter (Paul Simon)
+ 2.  You're A Big Girl Now
+ 3.  All Along The Watchtower
+ 4.  Simple Twist Of Fate
+ 5.  Watching The River Flow
+ 6.  I And I
+ 7.  Stuck Inside Of Mobile With The Memphis Blues Again
+ 8.  Love Minus Zero/No Limit
+ 9.  The Roving Blade (trad.)
+10.  Desolation Row
+11.  Don't Think Twice, It's All Right
+12.  Everything Is Broken
+13.  I'll Remember You
+14.  The Times They Are A-Changin'
+15.  Maggie's Farm
+
+16.  Rainy Day Women # 12 & 35
+17.  Ballad Of A Thin Man
+18.  It Ain't Me, Babe
+ 
+Concert # 409 of The Never-Ending Tour.  Concert # 4 of the 1992 Summer Festival Tour Of Europe. 1992 concert # 45.
+ 
+Concert # 23 with the 7th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Charlie Quintana (drums & percussion).
+ 
+8, 9, 18  Bob Dylan (acoustic guitar & vocal).
+ 
+10, 11, 14  acoustic with the band.
+ 
+2, 4, 8, 10, 11, 18  Bob Dylan harmonica.
+ 
+10, 11  Bucky Baxter (dobro or acoustic slide).
+ 
+14 Bucky Baxter (mandolin).
+ 
+Notes.
+1.     Live debuts of A Hazy Shade Of Winter and The Roving Blade.
+2.     Dylan changes from acoustic to electric guitar during The Times They Are A-Changin'.
+3.     Desolation Row is 11 minutes and Don't Think Twice is 9 minutes!
+ 
+12 new songs (66%) compared to previous concert. 7 new songs for this tour.
+ 
+Stereo audience recording, 115 minutes.
+ 
+Session info updated 15 March 1996.
+
+===================
+===================
+===================
+=== shntool len.txt
+===================
+===================
+===================
+     3:20.45       35385884 B   ---   --   ---xx  Piste  1.flac     6:59.23       73965740 B   ---   --   ---xx  Piste  2.flac     4:24.00       46569644 B   ---   --   ---xx  Piste  3.flac     8:03.38       85290620 B   ---   --   ---xx  Piste  4.flac     5:50.00       61740044 B   ---   --   ---xx  Piste  5.flac     7:16.00       76910444 B   ---   --   ---xx  Piste  6.flac     7:32.00       79732844 B   ---   --   ---xx  Piste  7.flac     3:15.00       34397092 B   -b-   --   ---xx  Piste  8.flac     4:24.73       46741952 B   -b-   --   ---xx  Piste  9.flac    11:22.45      120410684 B   ---   --   ---xx  Piste 10.flac     9:06.30       96385004 B   ---   --   ---xx  Piste 11.flac     4:08.08       43766060 B   ---   --   ---xx  Piste  1.flac     5:54.00       62445644 B   ---   --   ---xx  Piste  2.flac     6:59.53       74036300 B   ---   --   ---xx  Piste  3.flac     6:54.38       73119020 B   ---   --   ---xx  Piste  4.flac     5:16.38       55831820 B   ---   --   ---xx  Piste  5.flac     7:44.15       81884924 B   ---   --   ---xx  Piste  6.flac     6:06.68       64722380 B   ---   --   ---xx  Piste  7.flac   114:38.24     1213336100 B                            0.6321  (18 files)
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+Piste  1.flac:54e6b5c5788afcb5512c239d5a2896a1Piste  2.flac:df546d04f62f82fc4cff03040bc8d5cbPiste  3.flac:f4e69179f4b27c6d5b670b9566bf7650Piste  4.flac:5492e6ff4a0716164910396df3b5eaf1Piste  5.flac:65f6eb9109592e776f8d91a87e0e44f4Piste  6.flac:69e0b751f298396bda4e1b21354b7de8Piste  7.flac:7bd939fb51fb018c0542d01d58b45351Piste  8.flac:a93876ff003eb23c772ab3d8e769b3ccPiste  9.flac:3af891b3f8d07e65b3b34e979208b4acPiste 10.flac:2cfe21599359926bad02f3673539521dPiste 11.flac:7e58d98fb25a57616a624f200584867e
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+dc218bdf86b2d029151f38a9d6c33836 *Piste  1.flac
+c78912d7afe84a27bba07b1fcf390416 *Piste  2.flac
+a6c5f314d2eb58b4581695d68822bb6c *Piste  3.flac
+4d792b15e3c2ca9b328fb5ee0a4eedc2 *Piste  4.flac
+96fa0062055451cb83dee0b927de53c2 *Piste  5.flac
+e1ab6a85980c6fca2359da11099879a6 *Piste  6.flac
+e6c6a851fc6353c98040c85aa004000a *Piste  7.flac
+e93d3629f3cd0ee23d5c1d1fb56593eb *Piste  8.flac
+bfa0c2b19be9942049f991a911ef4ee5 *Piste  9.flac
+ddf9d5159bfb77be49724a8dd4e2af61 *Piste 10.flac
+131d74b9f19f0d93693164b04b9733f8 *Piste 11.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+Piste  1.flac:1506c83f9ec56264d9b9fa0a97a67ca2Piste  2.flac:199d49cbb0731fa9351a7fc126e6ba27Piste  3.flac:c0ddb675b57c883606940de4f03b2ef2Piste  4.flac:388a3a57466e8fb1e8a55ade0b6bc2e5Piste  5.flac:aa003487c3d48fc7baaedca5ddb6ef6dPiste  6.flac:919a6ea09fed84dcba2bfde909a136cdPiste  7.flac:75c2efa3147846cd5cb739fc3cf08288
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+efca1a74f43610e924c5ffbb7cf59c4d *Piste  1.flac
+ed016c04b4a43003f3a503e0cc02501b *Piste  2.flac
+8e9431a8dce310d125130df25f12333c *Piste  3.flac
+94120d6f077950a5744115f1e940f6b3 *Piste  4.flac
+16612f4a40b9e46ab564ae4625608260 *Piste  5.flac
+5307a5793b2eec3926d268fd546a0e1f *Piste  6.flac
+556d31723d7a68bab7f43b6d0d19cb6c *Piste  7.flac
+
+===================
+===================
+===================

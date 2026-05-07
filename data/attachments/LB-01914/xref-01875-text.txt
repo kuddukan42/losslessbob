@@ -1,0 +1,110 @@
+===================
+===================
+===================
+=== Bob Dylan 1995-05-12 Las Vegas, Nevada (LB-1914, IA065).txt
+===================
+===================
+===================
+Bob Dylan
+The Joint
+Hard Rock Hotel
+Las Vegas, Nevada
+12 May 1995
+
+Improved Air Remaster 065
+Unknown source tape > Pioneer CT-W503R > M-Audio Delta 2496 > Processing > CDR > rip > flac
+
+CD1:
+01. Intro
+02. Crash On The Levee (Down In The Flood)
+03. If Not For You
+04. All Along The Watchtower
+05. Simple Twist Of Fate
+06. Most Likely You Go Your Way (And I'll Go Mine)
+07. Shelter From The Storm
+08. Mr. Tambourine Man
+09. Boots Of Spanish Leather
+10. Love Minus Zero/No Limit
+
+CD2:
+01. Thank you intro
+02. Seeing The Real You At Last
+03. Joey (Bob DylanJacques Levy/Bob Dylan)
+04. Band introduction
+05. Highway 61 Revisited
+06. Audience
+07. Like A Rolling Stone
+08. It Aint Me, Babe
+09. Outro
+
+Concert # 668 of The Never-Ending Tour.
+Second concert of the 1995 US Spring Tour.
+Concert # 28 in 1995.
+
+Concert # 212 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar),
+Bucky Baxter (pedal steel guitar & electric slide guitar),
+John Jackson (guitar),
+Tony Garnier (bass),
+Winston Watson (drums & percussion).
+===================
+===================
+===================
+=== Bob Dylan 1995-05-12 Las Vegas, NV (LB-1914, IA065).md5
+===================
+===================
+===================
+d9b582238bc7d3fad91bb26bcea904f3 *cd1-01. Intro.flac
+51bc4edd7f24a79df683a4796e15fe67 *cd1-02. Crash On The Levee (Down In The Flood).flac
+35e4c5f865e4e39832874df4346676c2 *cd1-03. If Not For You.flac
+53aa7bec10f9363e8b4abce2dc5cc0da *cd1-04. All Along The Watchtower.flac
+34b74ebe7cf3a8a86688a67966fa9294 *cd1-05. Simple Twist Of Fate.flac
+42736a6f503238a702deafab9446c402 *cd1-06. Most Likely You Go Your Way (And I'll Go Mine).flac
+686e8685924a54a663ecfdb0073a18c3 *cd1-07. Shelter From The Storm.flac
+65a0bb471d9fbb8071d178e48035211c *cd1-08. Mr. Tambourine Man.flac
+60fd023a2ef2e707442e3b96a30a7a8a *cd1-09. Boots Of Spanish Leather.flac
+505c8c553301978ae7c3acc9c930c237 *cd1-10. Love Minus Zero - No Limit.flac
+68bb7fc47857f03b8e7d5e283fd44b6c *cd2-01. Thank You Intro.flac
+663a663f750efc14c4faf8feba013394 *cd2-02. Seeing The Real You At Last.flac
+2823e35e724def7d30b656481824ef68 *cd2-03. Joey.flac
+a0388bfa89cc9ac8a116630725ff58d9 *cd2-04. Band Introduction.flac
+7656da03ec3f07206c3500e15b5373f3 *cd2-05. Highway 61 Revisited.flac
+e1632033f32f966d73095d5d5a44946c *cd2-06. Audience.flac
+a85cfa5dec1cc345f015f89a60b5c93e *cd2-07. Like A Rolling Stone.flac
+ce87601445cd3bbd572b72ab6172c346 *cd2-08. It Ain't Me, Babe.flac
+e6f5a99bf1326b8ac5325b747dcdac51 *cd2-09. Outro.flac
+8f696559b4ce2a338192ceacb6faf03f *Bob Dylan - The Joint, Hard Rock Hotel, Las Vegas, Nevada, May 12, 1995, IAR CD1.log
+b1f35a48d4b6758bc181e4e7bba16907 *Bob Dylan - The Joint, Hard Rock Hotel, Las Vegas, Nevada, May 12, 1995, IAR CD2.log
+746721601c990d8bc77bf37e5b5fbbc2 *Bob Dylan 1995-05-12 Las Vegas, Nevada (LB-1914, IA065).txt
+43d0c475a08f9f4aaf1aa3dcfb983927 *LBF-01914-bd95-05-12-ia.txt
+c01d51c51ec5160c806691966a753340 *LBS.txt
+===================
+===================
+===================
+=== LBF-01914-bd95-05-12-ia.txt
+===================
+===================
+===================
+Bob Dylan, 5/12/95, The Joint, Hard Rock Hotel, Las Vegas, Nevada, 2CDR
+
+(50min+49min), Improved Air Remaster IA065, LINEAGE: ?>shns(encoded by ia remasterer)>me>you; bittorrent download 07/04; upgrade over previous version; excellent sound
+
+DISC ONE, 1. Intro, 2. Crash On The Levee (Down In The Flood), 3. If Not For You, 4. All Along The Watchtower, 5. Simple Twist Of Fate, 6. Most Likely You Go Your Way (And I'll Go Mine), 7. Shelter From The Storm, 8. Mr. Tambourine Man, 9. Boots Of Spanish Leather, 10. Love Minus Zero - No Limit, 
+
+DISC TWO, 1. Thank You Intro, 2. Seeing The Real You At Last, 3. Joey, 4. Band Introduction, 5. Highway 61 Revisited, 6. Audience, 7. Like A Rolling Stone, 8. It Ain't Me, Babe, 9. Outro
+===================
+===================
+===================
+=== LBS.txt
+===================
+===================
+===================
+This version of LB-1914 / IA065 is distributed exclusively for the sake of historical documentation and for collectors collecting all the variants of recordings in a row.
+
+According to the Lossless Bob there is a better version of Dylan's 1995-05-12 under the number of LB-5901 (I don't have it and I didn-t listen to it). Listening to quality recordings, you do not spoil your idea of music and its impact on people in general.
+
+Best,
+Remasterman
+===================
+===================
+===================

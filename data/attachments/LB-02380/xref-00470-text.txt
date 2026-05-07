@@ -1,0 +1,72 @@
+===================
+===================
+===================
+=== 930706.md5
+===================
+===================
+===================
+ef8b9013aca7f9ec890ed927e448a5dd *bd930706_d2t07.shn
+bec977d4e2ceb89eebadc45fb7380e47 *bd930706_d1t01.shn
+965d4549eeeb3271fca4b42e3574c487 *bd930706_d1t02.shn
+bedcde1aa87a67e3916809bda00bb0ff *bd930706_d1t03.shn
+f46e36d7763341468ef98fab9a1aac0f *bd930706_d1t04.shn
+91e8680ebba865714bb44d5126970840 *bd930706_d1t05.shn
+8d6bc1e13a466729c9927a998d3bf617 *bd930706_d1t06.shn
+ebce9a106190481654ef555f993e5e1e *bd930706_d1t07.shn
+a117183cf1eb7c018d57cd8b30fc5631 *bd930706_d1t08.shn
+6739bbdd57bdea231d78e17fad181033 *bd930706_d1t09.shn
+b24bdb449d5558138210179e0bc3b1f3 *bd930706_d1t10.shn
+15eee555426e65593fc651b61ecf0723 *bd930706_d2t01.shn
+b766636602033aa6dadadba8fcf9b016 *bd930706_d2t02.shn
+bd1ae3e7b72da1e0cb7629a9b3af8815 *bd930706_d2t03.shn
+00865548c1fac8f1b78176159cecf764 *bd930706_d2t04.shn
+ad78572b84bc99694776d5266bc8f630 *bd930706_d2t05.shn
+579c899e67e9b7dc7adc4b4394ee72b3 *bd930706_d2t06.shn
+===================
+===================
+===================
+=== 930706.txt
+===================
+===================
+===================
+Plaza des Toros
+Huesca, Spain
+6 July 1993
+1.  Hard Times (Stephen Foster)
+2.  Stuck Inside Of Mobile With The Memphis Blues Again
+3.  All Along The Watchtower
+4.  Just Like A Woman
+5.  Tangled Up In Blue
+6.  Shelter From The Storm
+7.  Watching The River Flow
+8.  Little Moses (Bert A. Williams/Earle C. Jones)
+9.  Tomorrow Night (Sam Coslow/Will Grosz)
+10.  The Lonesome Death Of Hattoe Carroll
+11.  Boots Of Spanish Leather
+12.  Cat's In The Well
+13.  I And I
+14.  You're A Big Girl Now
+15.  Maggie's Farm
+16.  Man In The Long Black Coat
+17.  It Ain't Me, Babe
+
+ef8b9013aca7f9ec890ed927e448a5dd *bd930706_d2t07.shn
+bec977d4e2ceb89eebadc45fb7380e47 *bd930706_d1t01.shn
+965d4549eeeb3271fca4b42e3574c487 *bd930706_d1t02.shn
+bedcde1aa87a67e3916809bda00bb0ff *bd930706_d1t03.shn
+f46e36d7763341468ef98fab9a1aac0f *bd930706_d1t04.shn
+91e8680ebba865714bb44d5126970840 *bd930706_d1t05.shn
+8d6bc1e13a466729c9927a998d3bf617 *bd930706_d1t06.shn
+ebce9a106190481654ef555f993e5e1e *bd930706_d1t07.shn
+a117183cf1eb7c018d57cd8b30fc5631 *bd930706_d1t08.shn
+6739bbdd57bdea231d78e17fad181033 *bd930706_d1t09.shn
+b24bdb449d5558138210179e0bc3b1f3 *bd930706_d1t10.shn
+15eee555426e65593fc651b61ecf0723 *bd930706_d2t01.shn
+b766636602033aa6dadadba8fcf9b016 *bd930706_d2t02.shn
+bd1ae3e7b72da1e0cb7629a9b3af8815 *bd930706_d2t03.shn
+00865548c1fac8f1b78176159cecf764 *bd930706_d2t04.shn
+ad78572b84bc99694776d5266bc8f630 *bd930706_d2t05.shn
+579c899e67e9b7dc7adc4b4394ee72b3 *bd930706_d2t06.shn
+===================
+===================
+===================

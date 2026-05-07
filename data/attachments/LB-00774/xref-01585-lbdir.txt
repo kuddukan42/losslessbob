@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd92-04-06-e.flacf
+===================
+===================
+===================
+2f0774fb7755d65c7eb5c084cc881920 *bd92-04-06 - Melbourne - MK.ffp
+39f273c0b4456a25ae4baf3db4f3a1c1 *bd92-04-06 - Melbourne - MK.md5
+c95efc77de117ec2a6c54f699e48d45c *bd92-04-06 - Melbourne - MK.txt
+9e6b02e006f78857036b5438e0ca7146 *bd92-04-06d1t01.flac
+0ab297639b1bcd44fcc80b5b4e339e38 *bd92-04-06d1t02.flac
+54538be638b6aaa55417649dd2897db1 *bd92-04-06d1t03.flac
+39e6693c27e7bd53215e9e3f641e7b81 *bd92-04-06d1t04.flac
+a4cc3883603186ab7a94175e1199664a *bd92-04-06d1t05.flac
+adfe622554a1db2b29fa3043a3d8d988 *bd92-04-06d1t06.flac
+786a7e2052af55e6e00dca5ba868f8bb *bd92-04-06d1t07.flac
+767e4040141bc5a289ce3a250e525f4f *bd92-04-06d1t08.flac
+4fbcff9fe827ce53d929efa21a0aa871 *bd92-04-06d1t09.flac
+4c70a2ac48637f2401cc5dc24eb18490 *bd92-04-06d1t10.flac
+a229ad12d97bd0d4bed05b8eb9afe9f3 *bd92-04-06d2t01.flac
+0cc6ca0d565ab9d76751713eeb31080f *bd92-04-06d2t02.flac
+dcf9a7e5711f29baace78ce2e520003d *bd92-04-06d2t03.flac
+7de46e21798b50787e050d0fec5dfa32 *bd92-04-06d2t04.flac
+31c94df4d8222debf21d05543297d2d4 *bd92-04-06d2t05.flac
+c1a2af55bc9f0e8c890f47c330ee10d6 *bd92-04-06d2t06.flac
+a134bb0fc9024f3a0fcd81ac87701737 *bd92-04-06d2t07.flac
+890b8e236e1f86be68ce706d935eaf0c *bd92-04-06d2t08.flac
+===================
+===================
+===================
+=== ffp for: bd92-04-06-e.flacf
+===================
+===================
+===================
+bd92-04-06d1t01.flac:1c2644f2fe3c55a48d933112474852fe
+bd92-04-06d1t02.flac:3504829e2a76984669eea0641de25096
+bd92-04-06d1t03.flac:9f4ca8cfeb38c171a4f116fe32ab0333
+bd92-04-06d1t04.flac:d97440f63667580d77462fa7ac78cfaf
+bd92-04-06d1t05.flac:413ea32cadb1804839ad899480a579c7
+bd92-04-06d1t06.flac:058048531b705e8a71cc85d59a2126de
+bd92-04-06d1t07.flac:c4d57f7f68fd1e32b4968cb4e3f84df7
+bd92-04-06d1t08.flac:fe4a3d72487ec58bee99d659903327a1
+bd92-04-06d1t09.flac:0dbeecc6af5893e704c26049a16b5ea7
+bd92-04-06d1t10.flac:9a6380dc5e4c56e0e1afb54a8e3c349c
+bd92-04-06d2t01.flac:59deab6103a82d1740a6d8eb43444baf
+bd92-04-06d2t02.flac:cb44ce9238a728ceba090f283100775a
+bd92-04-06d2t03.flac:056c67821c3f0ca97a26845735720f95
+bd92-04-06d2t04.flac:b2abdcecaa4dc897580966d9f4162d33
+bd92-04-06d2t05.flac:780a7fefafcce1a38e59d524d2ba998e
+bd92-04-06d2t06.flac:97139b3520501ed45e1d29b1378e2abc
+bd92-04-06d2t07.flac:5e91f1d618f71e4497b092a9a241bba0
+bd92-04-06d2t08.flac:4a863f84d8fa4ce434cbe40cdc2147a6
+===================
+===================
+===================
+=== shntool len for: bd92-04-06-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:23.73       35980940 B   ---   --   ---xx   flac  0.6291  bd92-04-06d1t01.flac
+     4:11.26       44337596 B   ---   --   ---xx   flac  0.6438  bd92-04-06d1t02.flac
+     3:31.15       37255724 B   ---   --   ---xx   flac  0.6601  bd92-04-06d1t03.flac
+     5:40.35       60058364 B   ---   --   ---xx   flac  0.6493  bd92-04-06d1t04.flac
+     7:12.61       76348316 B   ---   --   ---xx   flac  0.6577  bd92-04-06d1t05.flac
+     5:00.24       52976492 B   ---   --   ---xx   flac  0.6012  bd92-04-06d1t06.flac
+     4:06.39       43486172 B   ---   --   ---xx   flac  0.6788  bd92-04-06d1t07.flac
+     2:57.35       31305164 B   ---   --   ---xx   flac  0.5846  bd92-04-06d1t08.flac
+     3:45.49       39805292 B   ---   --   ---xx   flac  0.5642  bd92-04-06d1t09.flac
+     6:30.72       68965388 B   ---   --   ---xx   flac  0.5616  bd92-04-06d1t10.flac
+     6:47.26       71855996 B   ---   --   ---xx   flac  0.6016  bd92-04-06d2t01.flac
+     3:22.49       35748092 B   ---   --   ---xx   flac  0.6686  bd92-04-06d2t02.flac
+     8:44.32       92508908 B   ---   --   ---xx   flac  0.6402  bd92-04-06d2t03.flac
+     5:33.48       58854140 B   ---   --   ---xx   flac  0.6317  bd92-04-06d2t04.flac
+     5:48.52       61509548 B   ---   --   ---xx   flac  0.6692  bd92-04-06d2t05.flac
+     5:25.67       57487628 B   ---   --   ---xx   flac  0.6937  bd92-04-06d2t06.flac
+     6:14.19       66018332 B   ---   --   ---xx   flac  0.6580  bd92-04-06d2t07.flac
+     5:16.62       55888268 B   ---   --   ---xx   flac  0.5884  bd92-04-06d2t08.flac
+    93:34.34      990390360 B                            0.6328  (18 files)
+===================
+===================
+===================

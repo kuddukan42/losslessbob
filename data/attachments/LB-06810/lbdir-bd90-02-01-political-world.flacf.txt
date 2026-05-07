@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-01-political-world.flacf 
+=================== 
+=================== 
+=================== 
+7ff7cff421befad1cbf57572c7d0544b  bd90-02-01-political-world-d1t01.flac
+f56459bbbe69ebed8942e9fc110fb87f  bd90-02-01-political-world-d1t02.flac
+4120852fece0ba80e052fe9281f51c28  bd90-02-01-political-world-d1t03.flac
+be87bdafd09fe5ed01344ec158244de3  bd90-02-01-political-world-d1t04.flac
+057523f55b5399b8d0b1fb24fcecf0f1  bd90-02-01-political-world-d1t05.flac
+6a5ac0431d523407514e10acf14b8375  bd90-02-01-political-world-d1t06.flac
+03d44c47137e0d52fde79f21160ac48f  bd90-02-01-political-world-d1t07.flac
+25b20070c769d20aa48a4bcc4a485735  bd90-02-01-political-world-d1t08.flac
+de6101dd5060034f12d4c51cb4bd8012  bd90-02-01-political-world-d1t09.flac
+39d7317f43fe263c06780233f1a81427  bd90-02-01-political-world-d1t10.flac
+c5f50a249e2ccec41a53403f4ad74f56  bd90-02-01-political-world-d1t11.flac
+326dab4d1f40274f86d3b82bfb205d60  bd90-02-01-political-world.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-01-political-world.flacf 
+=================== 
+=================== 
+=================== 
+bd90-02-01-political-world-d1t01.flac:1ac7fb162f76726bc0864e5f2d9ca29a
+bd90-02-01-political-world-d1t02.flac:bd7403aa12dda35213543073e507c7f8
+bd90-02-01-political-world-d1t03.flac:2161fa761d70ddec0da925f1d7a9c42a
+bd90-02-01-political-world-d1t04.flac:2b12a43ca75ed8d437ca22528389b2ca
+bd90-02-01-political-world-d1t05.flac:70b1d24a7a3001198b0a0fe6bf02e356
+bd90-02-01-political-world-d1t06.flac:06e09ddbaa321f77d48070edc23d49c4
+bd90-02-01-political-world-d1t07.flac:8ebf2b0246c1e890d4366a199427a2ef
+bd90-02-01-political-world-d1t08.flac:617894407b7b83739a1b2757040ecc29
+bd90-02-01-political-world-d1t09.flac:cc994b29f87d582de3fa1efcced340a2
+bd90-02-01-political-world-d1t10.flac:22d54656068a87dad94892086a240ed7
+bd90-02-01-political-world-d1t11.flac:7eca678c9d562dd08bae1c5e1e74b6d2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-01-political-world.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:56.55       31175804 B   ---   --   ---xx   flac  0.6400  bd90-02-01-political-world-d1t01.flac
+     3:08.55       33292604 B   ---   --   ---xx   flac  0.6055  bd90-02-01-political-world-d1t02.flac
+     3:27.30       36585404 B   ---   --   ---xx   flac  0.6702  bd90-02-01-political-world-d1t03.flac
+     4:24.30       46640204 B   ---   --   ---xx   flac  0.5141  bd90-02-01-political-world-d1t04.flac
+     3:52.53       41049500 B   ---   --   ---xx   flac  0.5658  bd90-02-01-political-world-d1t05.flac
+     4:59.50       52861244 B   ---   --   ---xx   flac  0.5135  bd90-02-01-political-world-d1t06.flac
+     4:07.60       43711964 B   ---   --   ---xx   flac  0.4920  bd90-02-01-political-world-d1t07.flac
+     3:50.60       40713164 B   ---   --   ---xx   flac  0.5915  bd90-02-01-political-world-d1t08.flac
+     4:27.52       47221148 B   ---   --   ---xx   flac  0.5624  bd90-02-01-political-world-d1t09.flac
+     5:00.65       53072924 B   ---   --   ---xx   flac  0.5628  bd90-02-01-political-world-d1t10.flac
+     4:28.08       47294060 B   ---   --   ---xx   flac  0.5634  bd90-02-01-political-world-d1t11.flac
+    44:44.68      473618020 B                            0.5651  (11 files)
+=================== 
+=================== 
+=================== 

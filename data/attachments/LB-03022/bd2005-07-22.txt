@@ -1,0 +1,106 @@
+Bob Dylan
+Prospera Place
+Kelowna, British Columbia
+July 22, 2005
+
+Lineage:
+12th row center
+AKG (ck91>mk90/3-h98>se300b) > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > Cool Edit 96 > CD Wave Editor > FLAC frontend
+
+Recorded and compiled by:
+soomlos
+
+Disc 1:
+01. Introduction [00:38]
+02. Maggie's Farm [04:47]
+03. Tonight I'll Be Staying Here With You [05:28]
+04. I'll Be Your Baby Tonight [05:13]
+05. Lay, Lady, Lay [05:38]
+06. Stuck Inside Of Mobile With The Memphis Blues Again [07:07]
+07. Moonlight [04:42]
+08. Highway 61 Revisited [07:59]
+09. Shelter From The Storm [07:39]
+10. Cry A While [06:33]
+11. Just Like A Woman [07:46]
+Total time: [63:28]
+
+Disc 2:
+01. Honest With Me [06:52]
+02. The Times They Are A-Changin' [06:50]
+03. Floater (Too Much To Ask) [07:17]
+04. Summer Days [10:50]
+     (encore)
+05. Like A Rolling Stone [06:15]
+06. Band Introductions [00:33]
+07. All Along The Watchtower [05:45]
+Total time: [44:22]
+
+Band Members:
+Bob Dylan - keyboards, harp
+Stu Kimball - guitar
+Denny Freeman - guitar
+Donnie Herron - banjo, electric mandolin, pedal steel
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-07-22d1t01.flac:825aa98ff88db79f78ce238e65a0502a
+bd2005-07-22d1t02.flac:2d4fd64986ef09849ef419e6643f5b9a
+bd2005-07-22d1t03.flac:cc59d514a93dd38d96e9a6db143581a9
+bd2005-07-22d1t04.flac:d97d412f35dd8e2c6cb826786dea1fc3
+bd2005-07-22d1t05.flac:3c781d7c86185e951a990520a1ce3218
+bd2005-07-22d1t06.flac:094285017354dd03a45643c07c6bdb2e
+bd2005-07-22d1t07.flac:b54f17c6a7e64e204309e476fff823ce
+bd2005-07-22d1t08.flac:214c9ba2b8560be7328e8d9f2d170dae
+bd2005-07-22d1t09.flac:11538c52e88134e60b1de215dd44f27f
+bd2005-07-22d1t10.flac:189979885cb8024b759f9892b519dfca
+bd2005-07-22d1t11.flac:0c201c0b8db50b46b1ec69c4c1cbc118
+bd2005-07-22d2t01.flac:6c7919d2e65e80b31530191f58bce0be
+bd2005-07-22d2t02.flac:d395d26a31e3a8ef643de93e7fd35eb1
+bd2005-07-22d2t03.flac:0e530637662a063a928988eea9cf6f12
+bd2005-07-22d2t04.flac:b43d1c74fa9ba561945737e72f843f75
+bd2005-07-22d2t05.flac:34db2c523d49e88a25d0acba8a57e979
+bd2005-07-22d2t06.flac:aaf326b90f73f1cf049fc8bf96c411cc
+bd2005-07-22d2t07.flac:265543acea6543efb5ec6d003d25079d
+
+flac md5
+58235cdf0264774d8bcc468f54bc7b49 *bd2005-07-22d1t01.flac
+b6d8702258ae8e9c7471430abe4ba8c9 *bd2005-07-22d1t02.flac
+acb2ad76ad9be0e17cfd16318daca254 *bd2005-07-22d1t03.flac
+1500acf47b4ec701a9b407fff5afdd3b *bd2005-07-22d1t04.flac
+0b7ca3b353ca9e63fb64b5d921513ff6 *bd2005-07-22d1t05.flac
+8343266273f689b7ea570688666ff029 *bd2005-07-22d1t06.flac
+f4352679ac7b8f0b6a49b4c2f1f42b4f *bd2005-07-22d1t07.flac
+b125ed44e229ed0f28b0bb15e0666cc6 *bd2005-07-22d1t08.flac
+15a5c2828a239ba407a1b81a8da7485a *bd2005-07-22d1t09.flac
+3224b9d14298d07e534f723305439a14 *bd2005-07-22d1t10.flac
+35be8500de816bc8194e11294e11158a *bd2005-07-22d1t11.flac
+330cf48f06ecde4d1d09bf4e6f923114 *bd2005-07-22d2t01.flac
+72be66ef72193613ceadadc29c857998 *bd2005-07-22d2t02.flac
+093396b577f9ec79b619bfff131ae177 *bd2005-07-22d2t03.flac
+b1c32b8f7cbc7227337f4ff19df6b324 *bd2005-07-22d2t04.flac
+62eff8874a5a70eef98828198851ed8b *bd2005-07-22d2t05.flac
+401b06c195693c262e3d7c3f86df6894 *bd2005-07-22d2t06.flac
+2b5c92af91ed1dca9ae12f61c0b110db *bd2005-07-22d2t07.flac
+
+wav md5
+6ccd3349597ff3bcb0b214a00445b1aa *bd2005-07-22d1t01.wav
+65590245232d06c3cf01d413a1caf24a *bd2005-07-22d1t02.wav
+abf67b362fb707f8fbff57c88185106e *bd2005-07-22d1t03.wav
+cb9b2f27c07953957eacbd93990f04fd *bd2005-07-22d1t04.wav
+f0673fa3bdb8013ed2f62e4f9a499fe9 *bd2005-07-22d1t05.wav
+951d642d1920017f70433db190411d66 *bd2005-07-22d1t06.wav
+d467ec9bfbe04c735d07f03c3227c381 *bd2005-07-22d1t07.wav
+2e9efdac8d49e115743d832118e91432 *bd2005-07-22d1t08.wav
+0ad5733aacbb000ba7c8b7f99162f486 *bd2005-07-22d1t09.wav
+183bf56991ed4d4b45673a5bf9e1c6f1 *bd2005-07-22d1t10.wav
+9c004d8e50145efdd9734ddb2b7e9233 *bd2005-07-22d1t11.wav
+8c682cf526c485229e198590994c912e *bd2005-07-22d2t01.wav
+f8d5e34a7a4cab83223d282b05d49af8 *bd2005-07-22d2t02.wav
+9f80c8550f1e79a77fea9c84bfa8360e *bd2005-07-22d2t03.wav
+b577979ee713ac7acb8b522aabfb6792 *bd2005-07-22d2t04.wav
+5376267ff02382de6fd19d8e97217840 *bd2005-07-22d2t05.wav
+80f8e3e18953ae72ed9db7d8bee5882f *bd2005-07-22d2t06.wav
+665a0eb1d1f86876409c647e35f015aa *bd2005-07-22d2t07.wav
+

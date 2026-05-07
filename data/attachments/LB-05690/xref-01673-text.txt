@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== bd-1994-10-23-Syracuse-HG.md5
+===================
+===================
+===================
+0049c237003821afea600beae9a762a7 *Disc1\bd-1994-10-23-HG-d1t01.flac
+47a959196f754587fd6a7797f32f9748 *Disc1\bd-1994-10-23-HG-d1t02.flac
+8c2894dae8404e3b2408c1fdfae42655 *Disc1\bd-1994-10-23-HG-d1t03.flac
+2c302021f404c96114a207b074643039 *Disc1\bd-1994-10-23-HG-d1t04.flac
+daa23cf8880842f6af30e4673c27432b *Disc1\bd-1994-10-23-HG-d1t05.flac
+0b9326e6e9dba9972ed8a123329dfb5e *Disc1\bd-1994-10-23-HG-d1t06.flac
+a05947182611f21fbc119549c21f79fe *Disc1\bd-1994-10-23-HG-d1t07.flac
+e2488f65de005ce703f083f53256cf37 *Disc1\bd-1994-10-23-HG-d1t08.flac
+7432cfd129e59f4a4c5ad03aebc980e3 *Disc1\bd-1994-10-23-HG-d1t09.flac
+211e7bc81517bf9b7fb54922dbc8803a *Disc2\bd-1994-10-23-HG-d2t01.flac
+8a5f1a6718ada13a3b4913fea6f6ce55 *Disc2\bd-1994-10-23-HG-d2t02.flac
+149c6c9bfb1494a2a8eb453924544c82 *Disc2\bd-1994-10-23-HG-d2t03.flac
+f3c14d16b9b15aebeddb9fb0e8324ac7 *Disc2\bd-1994-10-23-HG-d2t04.flac
+3330d16dd59e3a8c6b1a09b18147c1d6 *Disc2\bd-1994-10-23-HG-d2t05.flac
+09f8f32648aceb4c01ab89745be792b2 *Syr10-23-94(HG)-B.JPG
+4e550abdc458d2b3bace53c01d7f3b08 *Syr10-23-94(HG)-F.JPG
+===================
+===================
+===================
+=== bd-1994-10-23-Syracuse-HG.txt
+===================
+===================
+===================
+Bob Dylan
+Landmark Theater
+Syracuse, New York
+October 23, 1994
+
+Holy Grail Series: Michelangelo Indeed Could've Carved Out Your Features
+
+Source/Lineage: No Info
+
+Sound Quality: Excellent
+
+Disk 1
+
+01 Jokerman
+02 Senor (Tales Of Yankee Power)
+03 All Along The Watchtower
+04 Shelter From The Storm (Bob on Harp)
+05 Tangled Up In Blue
+06 Man In The Long Black Coat
+07 Mr. Tambourine Man (Acoustic)
+08 Masters Of War (Acoustic)
+09 To Ramona (Acoustic)
+
+Disc 2
+
+01 Highway 61 Revisited
+02 Joey
+03 Maggie's Farm
+04 Ballad Of A Thin Man
+05 The Times They Are A-Changin' (Acoustic, Bob on Harp)
+
+
+=========================
+=========================
+=========================
+=== md5 for bd-1994-10-23-Syracuse-HG
+=========================
+=========================
+=========================
+
+
+0049c237003821afea600beae9a762a7 *Disc1/bd-1994-10-23-HG-d1t01.flac
+47a959196f754587fd6a7797f32f9748 *Disc1/bd-1994-10-23-HG-d1t02.flac
+8c2894dae8404e3b2408c1fdfae42655 *Disc1/bd-1994-10-23-HG-d1t03.flac
+2c302021f404c96114a207b074643039 *Disc1/bd-1994-10-23-HG-d1t04.flac
+daa23cf8880842f6af30e4673c27432b *Disc1/bd-1994-10-23-HG-d1t05.flac
+0b9326e6e9dba9972ed8a123329dfb5e *Disc1/bd-1994-10-23-HG-d1t06.flac
+a05947182611f21fbc119549c21f79fe *Disc1/bd-1994-10-23-HG-d1t07.flac
+e2488f65de005ce703f083f53256cf37 *Disc1/bd-1994-10-23-HG-d1t08.flac
+7432cfd129e59f4a4c5ad03aebc980e3 *Disc1/bd-1994-10-23-HG-d1t09.flac
+211e7bc81517bf9b7fb54922dbc8803a *Disc2/bd-1994-10-23-HG-d2t01.flac
+8a5f1a6718ada13a3b4913fea6f6ce55 *Disc2/bd-1994-10-23-HG-d2t02.flac
+149c6c9bfb1494a2a8eb453924544c82 *Disc2/bd-1994-10-23-HG-d2t03.flac
+f3c14d16b9b15aebeddb9fb0e8324ac7 *Disc2/bd-1994-10-23-HG-d2t04.flac
+3330d16dd59e3a8c6b1a09b18147c1d6 *Disc2/bd-1994-10-23-HG-d2t05.flac
+09f8f32648aceb4c01ab89745be792b2 *Syr10-23-94(HG)-B.JPG
+4e550abdc458d2b3bace53c01d7f3b08 *Syr10-23-94(HG)-F.JPG
+
+
+
+===================
+===================
+===================

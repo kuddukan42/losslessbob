@@ -1,0 +1,59 @@
+===================
+===================
+===================
+=== md5 for: bd05-07-16-jtt.flacf
+===================
+===================
+===================
+4a875ae61e95959f52797e0f0e22b1c2 *AUDIO VERSION\AUDIO VERSION.ffp
+1a1142b54eb8ec58c8a769d27c7cf861 *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 01.flac
+84595d59a4f1d3a4d403f33a832b9e67 *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 02.flac
+50b865280d2bf66c31e044dd8a2754e8 *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 03.flac
+0371fd584571e50d45c2d2286168aca5 *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 04.flac
+a6c5aa891fb4475ab99f382fc4a5ba08 *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 05.flac
+44d6219ccb24ab23ce606d321311c2ac *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 06.flac
+e28ceefb7820b7e8bb8446721b5987bf *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 07.flac
+795f0fed1d297705ef4ecab70c1c7223 *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 08.flac
+1ae930e896c49902164da683005d9287 *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 09.flac
+02c86dcd592cb33529f93ff8fe8e23b9 *AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 10.flac
+2b771ab7acf42adf66336b60b38341e8 *BOB DYLAN - Amazon.com 10th Ann. Event July 16th 2005 (DVD & AUDIO VERSIONS)_Info.txt
+2e5bfdc7850f111f0150f7d1af9c5db3 *BOB DYLAN - Amazon.com 10th Ann. Event July 16th 2005 (DVD & AUDIO).md5
+===================
+===================
+===================
+=== ffp for: bd05-07-16-jtt.flacf
+===================
+===================
+===================
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 01.flac:b72739301d24d0b7d697d64e3f998e2f
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 02.flac:85ef57d80d56cb86230b61d437ca9d21
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 03.flac:b65253ffc9ef986d230b2d409d77dff3
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 04.flac:8bfb896e20d8fc5559736e04494c66f5
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 05.flac:b697d7f8cfdc4e9a8bb5364d290435c2
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 06.flac:3f5983f0f5781f4482a874efc6eb83fb
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 07.flac:a609fa797647f38254e2bb15546adb5c
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 08.flac:f05506051064a97430f70666fb8cb64b
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 09.flac:d6807d330bc319c897c19c471edc8bf0
+AUDIO VERSION\BOB DYLAN - Amazon.com July 16th 2005_Track 10.flac:2d62e6da750a368db45bdbbeb78961b3
+===================
+===================
+===================
+=== shntool len for: bd05-07-16-jtt.flacf\AUDIO VERSION
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:34.20        6044684 B   ---   --   ---xx   flac  0.3860  BOB DYLAN - Amazon.com July 16th 2005_Track 01.flac
+     4:37.60       49003964 B   ---   --   ---xx   flac  0.5473  BOB DYLAN - Amazon.com July 16th 2005_Track 02.flac
+     4:04.42       43140428 B   ---   --   ---xx   flac  0.4989  BOB DYLAN - Amazon.com July 16th 2005_Track 03.flac
+     5:09.35       54589964 B   ---   --   ---xx   flac  0.5138  BOB DYLAN - Amazon.com July 16th 2005_Track 04.flac
+     5:18.16       56132876 B   ---   --   ---xx   flac  0.4842  BOB DYLAN - Amazon.com July 16th 2005_Track 05.flac
+     6:03.19       64077932 B   ---   --   ---xx   flac  0.5199  BOB DYLAN - Amazon.com July 16th 2005_Track 06.flac
+     5:59.54       63454652 B   ---   --   ---xx   flac  0.5063  BOB DYLAN - Amazon.com July 16th 2005_Track 07.flac
+     5:54.18       62487980 B   ---   --   ---xx   flac  0.5097  BOB DYLAN - Amazon.com July 16th 2005_Track 08.flac
+     6:07.33       64816460 B   ---   --   ---xx   flac  0.4839  BOB DYLAN - Amazon.com July 16th 2005_Track 09.flac
+     4:51.35       51414764 B   ---   --   ---xx   flac  0.4904  BOB DYLAN - Amazon.com July 16th 2005_Track 10.flac
+    48:40.32      515163704 B                            0.5043  (10 files)
+===================
+===================
+===================

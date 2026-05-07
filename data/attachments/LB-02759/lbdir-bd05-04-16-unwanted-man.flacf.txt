@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-16-unwanted-man.flacf 
+=================== 
+=================== 
+=================== 
+6d53e768aeba58621f28ac0f9ca210b5  bd05-04-16-unwanted-man-LB-2759.txt
+9225c49a41eebb0f24401e35dea6298a  Disc1\01 Track01.flac
+34c64931c9f7e998c4e93851ffce1e50  Disc1\02 Track02.flac
+ba8d3efabb877b5a5c8f607326636a27  Disc1\03 Track03.flac
+c6f932bf2a32f199f66000981eebdd2d  Disc1\04 Track04.flac
+c6b749e244790529cae86706697c4624  Disc1\05 Track05.flac
+1101f05f5f52326ef23306546bb2cec7  Disc1\06 Track06.flac
+8aa99d59ee440b661858318d7ae1aeac  Disc1\07 Track07.flac
+0b7aee6eba458e216cde6bf888e7c8c4  Disc1\08 Track08.flac
+1be37bdb3f17bbaa934666d1c4e53518  Disc1\09 Track09.flac
+56527dea58642118dca163c793f34b9a  Disc1\10 Track10.flac
+d27e3928d600873458b9dd3656af00ac  Disc1\11 Track11.flac
+fc206b7d9aa1f89e5f51d2b4005f94ff  Disc1\12 Track12.flac
+a5181c7e002b34ede6dfd71ed1794fa3  Disc1\Info.txt
+6cedafcdcb5f984be3792de41e1e25a6  Disc2\01 Track01.flac
+8fbc6e565c61cdb8e4b3f141ece18dd3  Disc2\02 Track02.flac
+4f264d5119249e30efdc9a32b3ae5c4b  Disc2\Info.txt
+8ca952e038a7386abdc5b8b69a4a6b46  Setlist.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-16-unwanted-man.flacf\Disc2 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:7f575943f233af9e27a3fff29839352d
+02 Track02.flac:2c7108943e4c4bdc045c65a227de5b72
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-16-unwanted-man.flacf\Disc1 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:40de8d0b73381ced6ee5736bd9e961b8
+02 Track02.flac:56291d1ba09c1cf1226e6d12723d2337
+03 Track03.flac:a7cae5429735ca5b6be8b6ab7cb02ce9
+04 Track04.flac:daf51b188332835eecce6d76bf928391
+05 Track05.flac:62f7c4f7b6565ef530013199e83677b7
+06 Track06.flac:d2960495370633f42845d2cb4bfff5f4
+07 Track07.flac:823df4b85e413bfc155e1d36bfbf4c47
+08 Track08.flac:a7dda175d14d966ba8ab67887cb48dbb
+09 Track09.flac:fef4e3abec631b0c0ab33845c4a3ca33
+10 Track10.flac:48608eb0c2df65d37f16c909d0064960
+11 Track11.flac:b0654e8e0d561785cc5aec96b41e39a8
+12 Track12.flac:8c5f515464ece8c883c0e66eb04dbb32
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-16-unwanted-man.flacf\Disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:00.03       74095100 B   ---   --   ---xx   flac  0.5782  01 Track01.flac
+     7:14.31       76630556 B   ---   --   ---xx   flac  0.6159  02 Track02.flac
+    14:14.34      150725656 B                            0.5973  (2 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-16-unwanted-man.flacf\Disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.11       50123516 B   ---   --   ---xx   flac  0.6253  01 Track01.flac
+     6:08.54       65042252 B   ---   --   ---xx   flac  0.5505  02 Track02.flac
+     5:57.20       63021884 B   ---   --   ---xx   flac  0.5990  03 Track03.flac
+     5:54.35       62527964 B   ---   --   ---xx   flac  0.5130  04 Track04.flac
+     5:24.10       57177164 B   ---   --   ---xx   flac  0.5293  05 Track05.flac
+     6:07.22       64790588 B   ---   --   ---xx   flac  0.6004  06 Track06.flac
+     6:05.73       64557740 B   ---   --   ---xx   flac  0.5583  07 Track07.flac
+     6:43.44       71192732 B   ---   --   ---xx   flac  0.6127  08 Track08.flac
+     6:10.58       65404460 B   ---   --   ---xx   flac  0.5410  09 Track09.flac
+     7:30.10       79403564 B   ---   --   ---xx   flac  0.5859  10 Track10.flac
+     7:44.20       81896684 B   ---   --   ---xx   flac  0.5363  11 Track11.flac
+     7:45.33       82103660 B   ---   --   ---xx   flac  0.6010  12 Track12.flac
+    76:16.15      807242208 B                            0.5711  (12 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-18-Old-Men-With-Broken-Teeth-f.flacf 
+=================== 
+=================== 
+=================== 
+203b905cfd650df646b846e85a8a6ce9  Bob Dylan 1988.10.18 NYC (Old Men With Broken Teeth).md5
+521043a0845ec65090d76ffcd19be286  d1\Track01.flac
+087c8d09f94971470e497b91aef928ed  d1\Track02.flac
+480109a1e66712d7edb2c8e84fec51c5  d1\Track03.flac
+9d0cd189ab8100fd6679c70c891962f4  d1\Track04.flac
+e9138cd2511c15543e234a3e107987a9  d1\Track05.flac
+b640af205240cc2c4f693a93751d527d  d1\Track06.flac
+8f8cf9811731801b2bb7c31fe738ca50  d1\Track07.flac
+6f90a6c1600be0a591e640de9163774c  d1\Track08.flac
+e93ce43be793929fd107aa1ee26665ea  d1\Track09.flac
+337307a10111e219cf11a315cfb6a857  d1\Track10.flac
+f8c43427e0e422f5e224381b8dbb8a92  d1\Track11.flac
+7db6139798378882c4680432dffbfe88  d2\Track01.flac
+67b8ff24811a1d579152af49504d0f39  d2\Track02.flac
+a76da418161eb35a4dc7450fac8d4ee3  d2\Track03.flac
+2dd92482df4f81e92a22a8da92ee0396  d2\Track04.flac
+ebcf1961644c341157a719191807e241  d2\Track05.flac
+8d272bc9f1f0f32b86beb13195adccf7  d2\Track06.flac
+a4f5f5f69cfe02b616250c913e167ac3  d2\Track07.flac
+88aabc136accd512bead485274c390b8  d2\Track08.flac
+73f9183bb2aebba2fd4064dc608705f4  d2\Track09.flac
+db2963d91cd82ec0b8ad465e322dd060  d2\Track10.flac
+66bd90553bb1d70525f724260b030c5c  d2\Track11.flac
+5618ff6f7cc8f6b1a3c2113367540ef4  d2\Track12.flac
+a21bbf1d3a5db553f99fe67edc483d67  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-18-Old-Men-With-Broken-Teeth-f.flacf\d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:06ab50db09cbe77fc77eedf72ca6da7f
+Track02.flac:64078cec50744d30e5dfd2f2461b817a
+Track03.flac:9465db316322400e49e13fd0d8e0c0e5
+Track04.flac:babdc80494217224aa0bcb76059fed58
+Track05.flac:eead349105a2fc437bd5eb54953efd23
+Track06.flac:155b3bc6a84bcee26f3c1677fa698dd3
+Track07.flac:ad58c6854601b321710883d4e30d4332
+Track08.flac:6773a9ac2c9800a7a0fc66db7ac05eb3
+Track09.flac:a01c0ddecf47e6cf24a48d3dc1a7d74d
+Track10.flac:3d73a93781a4cc044eaf899fbe8b5111
+Track11.flac:9d294af7a671f62d583220f7cc4fdbdc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-18-Old-Men-With-Broken-Teeth-f.flacf\d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:425a5ccef2826bf09581fe1ad849f5f0
+Track02.flac:067d230677e922bcb7b9acdf5ae18880
+Track03.flac:44c10498cd50e1d124917b0fcf0c4b01
+Track04.flac:14728e7886a1939b67b57a388397fc30
+Track05.flac:212d54a7b6554e7c9740c53dee4a9153
+Track06.flac:4b2e6231a1750e88fde1635317e97c45
+Track07.flac:9b562a3745f1b9723b72e93e7985b15a
+Track08.flac:d0218943c44432c2035bf3807900d07f
+Track09.flac:5102b82be4d621f9c70528abc9e6a1df
+Track10.flac:3259a36eb5ea0f786856a0b62a77ce23
+Track11.flac:f9d85271c181280ef89b7eeafe4d5518
+Track12.flac:2f93a347a030428447a5d3f703c06f05
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-18-Old-Men-With-Broken-Teeth-f.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:11.18       33734780 B   ---   --   ---xx   flac  0.6720  Track01.flac
+     4:47.36       50711516 B   ---   --   ---xx   flac  0.6638  Track02.flac
+     5:01.23       53150540 B   ---   --   ---xx   flac  0.6882  Track03.flac
+     5:20.10       56471564 B   ---   --   ---xx   flac  0.6766  Track04.flac
+     6:26.44       68193932 B   ---   --   ---xx   flac  0.6914  Track05.flac
+     6:35.02       69682748 B   ---   --   ---xx   flac  0.6786  Track06.flac
+     7:28.18       79069580 B   ---   --   ---xx   flac  0.6585  Track07.flac
+     7:25.14       78530972 B   ---   --   ---xx   flac  0.6521  Track08.flac
+     5:25.23       57384140 B   ---   --   ---xx   flac  0.6724  Track09.flac
+     4:26.07       46938908 B   ---   --   ---xx   flac  0.6705  Track10.flac
+     4:01.45       42618284 B   ---   --   ---xx   flac  0.6884  Track11.flac
+    60:08.15      636486964 B                            0.6728  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-18-Old-Men-With-Broken-Teeth-f.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:55.04       73215452 B   ---   --   ---xx   flac  0.6946  Track01.flac
+     4:51.09       51353612 B   ---   --   ---xx   flac  0.6706  Track02.flac
+     4:09.04       43933052 B   ---   --   ---xx   flac  0.6786  Track03.flac
+     5:48.18       61429580 B   ---   --   ---xx   flac  0.6861  Track04.flac
+     5:42.12       60357068 B   ---   --   ---xx   flac  0.6881  Track05.flac
+     4:35.39       48601772 B   ---   --   ---xx   flac  0.6881  Track06.flac
+     3:47.55       40172204 B   ---   --   ---xx   flac  0.6070  Track07.flac
+     5:47.63       61359020 B   ---   --   ---xx   flac  0.6138  Track08.flac
+     4:29.37       47538668 B   ---   --   ---xx   flac  0.6076  Track09.flac
+     4:09.60       44064764 B   ---   --   ---xx   flac  0.6154  Track10.flac
+     4:56.34       52294412 B   ---   --   ---xx   flac  0.6210  Track11.flac
+     5:06.16       54016076 B   ---   --   ---xx   flac  0.5914  Track12.flac
+    60:18.51      638335680 B                            0.6497  (12 files)
+=================== 
+=================== 
+=================== 

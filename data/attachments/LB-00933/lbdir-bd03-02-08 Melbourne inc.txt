@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-02-08 Melbourne inc 
+=================== 
+=================== 
+=================== 
+32f29f97fa4e052de4e49bd13401e9ea  bd03-02-08i.txt
+2485af5f3032646b4d7caaaf8ec38a4a  bd03-02-08t01.shn
+3445712cc0035ec3fd56b60f6f32bb0b  bd03-02-08t02.shn
+92efeaae94b1f9bf18fd8ce558ae33d4  bd03-02-08t03.shn
+c1978e496d6bac56475fec35e4cf25e4  bd03-02-08t04.shn
+c1c22315a3f688a35103cfd9134cb0a2  bd03-02-08t05.shn
+fcd3653effcf5d605adb4aa036917c3a  bd03-02-08t06.shn
+ff9581308a888c1aae47ac92c867491e  bd03-02-08t07.shn
+e6d577fc79aa70ff6a0a0340d7f65448  bd03-02-08t08.shn
+d4e59c72d4a8bd78126e7eb52a3277f2  bd03-02-08t09.shn
+c23c561fdbccb4aebcd122baff540639  bd03-02-08t10.shn
+1b8374eb6e59c3794b86e7cd0bde88a9  bd03-02-08t11.shn
+1963fc46ec5dbfeb220878e5fb8fc1e7  bd03-02-08t12.shn
+33409b26e9382348483c6b03b629e52f  bd03-02-08t13.shn
+9c13a9eef1211df8db8aec285724e50e  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-02-08 Melbourne inc 
+=================== 
+=================== 
+=================== 
+b16576d8dfa18038046035cb303feaa2  [shntool]  bd03-02-08t01.wav
+4c48129c7acce27f074e842a1391861d  [shntool]  bd03-02-08t02.wav
+21a15f6b0ecc6cc2169d1d1c5c3f7dc4  [shntool]  bd03-02-08t03.wav
+cfa3dc1c97057551f4f66bbb4a6d4adf  [shntool]  bd03-02-08t04.wav
+8d869771126eb877cc6d4d29a569690f  [shntool]  bd03-02-08t05.wav
+52d25527ccda4e7b42bc999638cb53ec  [shntool]  bd03-02-08t06.wav
+b59cfb13f031ce0ef52b476a91831c05  [shntool]  bd03-02-08t07.wav
+07091b8c702a09382fb6c6e805b01ed9  [shntool]  bd03-02-08t08.wav
+f2bfabdb8b50e9df8c6db30c92ad0755  [shntool]  bd03-02-08t09.wav
+e8ebddc3f95f029fc4ad8209f7daec4c  [shntool]  bd03-02-08t10.wav
+37c02240ce13beedab60457866a0d25f  [shntool]  bd03-02-08t11.wav
+967ebdf02184481f0928637c18e153d3  [shntool]  bd03-02-08t12.wav
+5953af89ff5d866d55e2364cd7cb10be  [shntool]  bd03-02-08t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-02-08 Melbourne inc 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.27       13822748 B   ---   --   ---xx    shn  0.4889  bd03-02-08t01.shn
+     4:46.32       50525708 B   ---   --   ---xx    shn  0.6324  bd03-02-08t02.shn
+     6:03.45       64139084 B   ---   --   ---xx    shn  0.6094  bd03-02-08t03.shn
+     5:42.34       60408812 B   ---   --   ---xx    shn  0.6663  bd03-02-08t04.shn
+     4:05.54       43345052 B   ---   --   ---xx    shn  0.6051  bd03-02-08t05.shn
+     6:38.67       70364828 B   ---   --   ---xx    shn  0.6515  bd03-02-08t06.shn
+     6:19.34       66935612 B   ---   --   ---xx    shn  0.6822  bd03-02-08t07.shn
+     7:26.52       78796748 B   ---   --   ---xx    shn  0.6250  bd03-02-08t08.shn
+     7:12.30       76275404 B   ---   --   ---xx    shn  0.6624  bd03-02-08t09.shn
+     5:46.24       61090892 B   ---   --   ---xx    shn  0.5767  bd03-02-08t10.shn
+     9:11.06       97210556 B   ---   --   ---xx    shn  0.6274  bd03-02-08t11.shn
+     5:29.73       58207340 B   ---   --   ---xx    shn  0.5494  bd03-02-08t12.shn
+     5:08.71       54498236 B   ---   --   ---xx    shn  0.4618  bd03-02-08t13.shn
+    75:10.24      795621020 B                            0.6145  (13 files)
+=================== 
+=================== 
+=================== 

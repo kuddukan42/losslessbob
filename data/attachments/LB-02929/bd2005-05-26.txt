@@ -1,0 +1,90 @@
+Bob Dylan
+Ft. Lauderdale Stadium
+Ft. Lauderdale, Florida
+May 26, 2005
+
+Source:
+FOB, Center GA Field
+AKG (ck91>mk90/3+h98>se300b) > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > Cool Edit 96 > CD Wave > FLAC frontend
+
+Notes:
+Approximately 2 minutes 30 seconds of the pre-encore crowd applause has been removed
+to fit this on 1 CD... no music lost
+
+Recorded and compiled by:
+Soomlos
+
+Disc 1:
+01. Introduction [00:43]
+02. Drifter's Escape [05:17]
+03. Señor (Tales Of Yankee Power) [05:47]
+04. Cry A While [05:51]
+05. I'll Remember You [07:14]
+06. Things Have Changed [07:17]
+07. Forever Young [06:29]
+08. Cat's In The Well [04:45]
+09. Just Like Tom Thumb's Blues [07:14]
+10. It Ain't Me, Babe [05:29]
+11. Highway 61 Revisted [09:14]
+     (encore)
+12. Don't Think Twice, It's All Right [08:02]
+13. Band Introductions [00:32]
+14. All Along The Watchtower [05:51]
+Total time: [79:46]
+
+Band Members:
+Bob Dylan - keyboard, harp
+Stu kimball - guitar
+Denny freeman - guitar
+Donnie Herron - electric mandolin, violin, banjo, pedal steel
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-05-26d1t01.flac:3c200a42236745c86e5a4c41fdff8553
+bd2005-05-26d1t02.flac:83c8df242231ba8dcbed426f55fd36d2
+bd2005-05-26d1t03.flac:730a1f4c9a5efa0b32d982b0337990e0
+bd2005-05-26d1t04.flac:77a72ca554f812bad08617666fb62073
+bd2005-05-26d1t05.flac:32322681b3b3868f11de9c3eb77674bb
+bd2005-05-26d1t06.flac:23e01125fcb9a41556727fe0e13cf394
+bd2005-05-26d1t07.flac:9012132d40158df2f7d304d904a55d49
+bd2005-05-26d1t08.flac:af45e2343b37abc17ba9d518b656544a
+bd2005-05-26d1t09.flac:3775d3cde2a9839c8ded8f9584fdaeb9
+bd2005-05-26d1t10.flac:058df0bbc5bab9b6966bef95f0c6b58e
+bd2005-05-26d1t11.flac:ec88b0dbd42af5dd5f384bb7457590e9
+bd2005-05-26d1t12.flac:bcb525135eb834b419a95729554dd04c
+bd2005-05-26d1t13.flac:7f3e1da607f2b0a61c3ac5693abd3071
+bd2005-05-26d1t14.flac:3504e2bfe1195b1391029188e6fe102e
+
+flac md5
+ff72e577b906d277bb118f5bc8a373ca *bd2005-05-26d1t01.flac
+2618cf537feddc40d718cb9250cfb3a6 *bd2005-05-26d1t02.flac
+eee3c4ac40b1990f73ad596ad79543d4 *bd2005-05-26d1t03.flac
+1cc98388d5f145e771290f714f5cb325 *bd2005-05-26d1t04.flac
+6c7e8876a5145632e7d00c6b71517e8b *bd2005-05-26d1t05.flac
+7a8f25da3265c7bd672ceccd003c16ca *bd2005-05-26d1t06.flac
+59f11ad1a3d1b7ff228a419b35a83777 *bd2005-05-26d1t07.flac
+a7083a1051804386438653d94e97aa43 *bd2005-05-26d1t08.flac
+666dd65b93628a743e01b369573b2279 *bd2005-05-26d1t09.flac
+06d1faf8d61090665c21ec1f4ced5da5 *bd2005-05-26d1t10.flac
+0449ac16f09bc8637e29e779181233a9 *bd2005-05-26d1t11.flac
+3bad085084cc41ddbd732b079fbc91b8 *bd2005-05-26d1t12.flac
+959cb8171c00e3d74064ee5f61487521 *bd2005-05-26d1t13.flac
+68db50a3543a05b43cddec4d1af701d3 *bd2005-05-26d1t14.flac
+
+wav md5
+b06da5d69b0fc0a2ab03f1093950b1da *bd2005-05-26d1t01.wav
+7eba1cf43abf2a722762b9382f77f119 *bd2005-05-26d1t02.wav
+c821675c2ef7eba056b7491ab0ef440c *bd2005-05-26d1t03.wav
+03db60c3b62e218e06951fb17473f014 *bd2005-05-26d1t04.wav
+94020712568856ead366e20a5db999cb *bd2005-05-26d1t05.wav
+e8a2bfd001510c4b332f973b71be94f1 *bd2005-05-26d1t06.wav
+643bb93a04b6ec0a54918fe2915bdfa4 *bd2005-05-26d1t07.wav
+027a3887cdb98d8fc570f09561dbe39e *bd2005-05-26d1t08.wav
+fb35447b1bbe929d6ce2e1eb3f6da45a *bd2005-05-26d1t09.wav
+3288e7aacdb17fd691fec0edb8e31f0a *bd2005-05-26d1t10.wav
+55c2c270c5c660a422c58c79aa0d7f2d *bd2005-05-26d1t11.wav
+82284b75905dd0d7afb74c4c922ebf0f *bd2005-05-26d1t12.wav
+ff2f04974fcbc25908a2e59424a9507d *bd2005-05-26d1t13.wav
+f733f4238b89342acc4a672d24d8e7b6 *bd2005-05-26d1t14.wav

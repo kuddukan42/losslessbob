@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-08-JMP 
+=================== 
+=================== 
+=================== 
+2857cf684cb46552c5063925ceeed86e  bd-2004-06-08_Johnny's Mixin' Productions.txt
+a9c2646db62290bede08de03ff0138ad  bd04-06-08-Johnny's-Mixin'-Productions.txt
+4660f8766ca02395c83fc210e72b54f1  bd_2004_06_08d1_12Tracks version.md5
+19ee550bad9d0fb627517c3789ea6246  bd_2004_06_08d1t01.shn
+bd383ec084b20f77233ab0849281a8c9  bd_2004_06_08d1t02.shn
+8d460c8f0c61a1370610172d56cc8239  bd_2004_06_08d1t03.shn
+61c183084572805dea3f76aa6c3fda21  bd_2004_06_08d1t04.shn
+b662efbd5e9f835ad32387f1e8dd4b52  bd_2004_06_08d1t05.shn
+5ae74623ee3f054f07b7460f65f84772  bd_2004_06_08d1t06.shn
+4ab5ada72159b41bc34daa2aec32b016  bd_2004_06_08d1t07.shn
+a2323739416bf419810d2a56f7652fcd  bd_2004_06_08d1t08.shn
+669ce24a289026da74098436ba5aec50  bd_2004_06_08d1t09.shn
+87000ec4b708da1f6b1040e02af899d3  bd_2004_06_08d1t10.shn
+9219ad2dbe73fce592ebc0b198e30194  bd_2004_06_08d1t11.shn
+bced744321e02f7b2fcc6e3b39c381b8  bd_2004_06_08d1t12.shn
+94af44ea26858c0fa154279928a60335  bd_2004_06_08d2.md5
+779de37c3da3d315d259778014f270da  bd_2004_06_08d2t01.shn
+86017fbdc5fe705119170b683adb4e9d  bd_2004_06_08d2t02.shn
+2975a965dcef22b3753adb585394805d  bd_2004_06_08d2t03.shn
+41528b9ea06e8d48e6c4eef554469451  bd_2004_06_08d2t04.shn
+acee524d7280b7d3424fc2cc928e6555  bd_2004_06_08d2t05.shn
+b61144bcee29fca227db3ae4f12993be  bd_2004_06_08d2t06.shn
+315ddb8c2bd2baba86a148f78ed7c4ce  bd_2004_06_08d2t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-06-08-JMP 
+=================== 
+=================== 
+=================== 
+a0666a7ff4b834306780fb7597431d9b  [shntool]  bd_2004_06_08d1t01.wav
+6ca6363f381618d88ad27afbeb84ed1f  [shntool]  bd_2004_06_08d1t02.wav
+f5dae668160543ee789bc5fb8e04b87b  [shntool]  bd_2004_06_08d1t03.wav
+7868297a7227f3bb54eca36dd8174a27  [shntool]  bd_2004_06_08d1t04.wav
+f8ccb5a9450f6ccd14b1c07b73176877  [shntool]  bd_2004_06_08d1t05.wav
+3715c48071cef9446ce02779e75b5555  [shntool]  bd_2004_06_08d1t06.wav
+ef5424e9490044df3ca34f312ca149f7  [shntool]  bd_2004_06_08d1t07.wav
+33a631f1f48eac422cf6145ed9628268  [shntool]  bd_2004_06_08d1t08.wav
+584fcddee1adfe5ecf1ed94dbc50d677  [shntool]  bd_2004_06_08d1t09.wav
+5a9c80bb8fee5c2a96a7f6516bc0e62d  [shntool]  bd_2004_06_08d1t10.wav
+f70f31b93b30f2f46030de98daab62f5  [shntool]  bd_2004_06_08d1t11.wav
+b5bd2447bf4c05a0c3107fb6ee42bed0  [shntool]  bd_2004_06_08d1t12.wav
+58a997f96426cdb612a12ceb53dfe9d9  [shntool]  bd_2004_06_08d2t01.wav
+60ec1cbee95e013855e2b7a6fc4724f9  [shntool]  bd_2004_06_08d2t02.wav
+b67b8d5acbd39d4a1761c63d5e888b8c  [shntool]  bd_2004_06_08d2t03.wav
+66f9a3d3b6b9cdd7eb2053252c8e03a0  [shntool]  bd_2004_06_08d2t04.wav
+dd2156d7234c902c452ac6172bf17062  [shntool]  bd_2004_06_08d2t05.wav
+5ad8a164adc8250dc57703cbae1cb62c  [shntool]  bd_2004_06_08d2t06.wav
+336d332919c8e89ed4fe689c0830610e  [shntool]  bd_2004_06_08d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-08-JMP 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.68        6510380 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t01.wav
+     4:09.61       44067116 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t02.wav
+     5:38.46       59731436 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t03.wav
+     6:40.24       70616492 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t04.wav
+     4:55.02       52042748 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t05.wav
+     7:48.42       82654028 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t06.wav
+     5:12.42       55135628 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t07.wav
+     5:55.56       62753756 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t08.wav
+     5:34.51       59037596 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t09.wav
+     6:49.59       72286412 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t10.wav
+     5:59.01       63329996 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t11.wav
+     5:12.33       55114460 B   ---   --   -----    wav  1.0000  bd_2004_06_08d1t12.wav
+     6:36.16       69892076 B   ---   --   -----    wav  1.0000  bd_2004_06_08d2t01.wav
+     5:00.41       53016476 B   ---   --   -----    wav  1.0000  bd_2004_06_08d2t02.wav
+     7:59.71       84662636 B   ---   --   -----    wav  1.0000  bd_2004_06_08d2t03.wav
+     4:45.33       50351660 B   ---   --   -----    wav  1.0000  bd_2004_06_08d2t04.wav
+     6:31.27       69035948 B   ---   --   -----    wav  1.0000  bd_2004_06_08d2t05.wav
+     0:40.67        7213628 B   ---   --   -----    wav  1.0000  bd_2004_06_08d2t06.wav
+     6:09.48       65204540 B   ---   --   -----    wav  1.0000  bd_2004_06_08d2t07.wav
+   102:17.38     1082657012 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

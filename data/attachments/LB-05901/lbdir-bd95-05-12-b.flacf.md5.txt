@@ -1,0 +1,21 @@
+4f7ac152f0fabd607eb836d6089b3700  BD 1995-05-12 Las Vegas.txt
+0d2e8be7d7c5414843ad38b804041ce0  disc 1\12.5.95 Las Vegas.log
+98e3f6a814089feb2b6e6c1bf4c071e6  disc 1\Bob Dylan - 12.5.95 Las Vegas.m3u
+a33dee0776ce768822735f27cd4fc63f  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t01.flac
+5251b3d9c053cf5a36ec00bf5b23ec2f  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t02.flac
+33f866ce8fd3af98ebc309ac0e2054f6  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t03.flac
+e59e6fbe1df47099250e9b203fae6fd9  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t04.flac
+24c38fc1452faba2697db0e7fd9a6258  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t05.flac
+c3d5fab0d5449a5240d3affd6c7eb6c0  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t06.flac
+3da590aaa9b6cacd4d7a6fd3aab8d8f6  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t07.flac
+8a0ad3fd0b04cd0deee37df7f9a96453  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t08.flac
+8010f0dcb3540dfd44a367f4bdb6e75a  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t09.flac
+849a7d6ca7fbecc87f5130384140dbf4  disc 2\12.5.95 Las Vegas.log
+dbba1de5aa9fcf517da921c0c69f0f98  disc 2\Bob Dylan - 12.5.95 Las Vegas.m3u
+427d34365e01cb156c4ef7bb527ef549  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t01.flac
+9f1674ad96b0c69f5e27d5ade1d355c6  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t02.flac
+774c143478edd68c2bb751c3539273d6  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t03.flac
+b66dcc23089bc04948d580bcafe52094  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t04.flac
+337753918567364ede1e4d1c1a4c0010  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t05.flac
+23a09009959ba8793acf639cadf7f4cd  fingerprintD1.ffp
+1d0e5ea858e9d829e62e91f2db376a9a  fingerprintD2.ffp

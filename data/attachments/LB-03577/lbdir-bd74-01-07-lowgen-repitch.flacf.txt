@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-07-lowgen-repitch.flacf 
+=================== 
+=================== 
+=================== 
+0872dc578f81937f5f70c78a54509f7f  740107aTrack01.flac
+9a96a5aa97ae8bcae8df06c2296123f1  740107aTrack02.flac
+f11a65512ed3edf2c622beca6b790f7d  740107aTrack03.flac
+9e528f1b4b84c7a129c41c71c73ce7d1  740107aTrack04.flac
+0d0c515f83538de37b35fae43dc02a45  740107aTrack05.flac
+da86ebfe50a8cb6d9179affd54799f70  740107aTrack06.flac
+c01070ea81f6247674838b2b1f294e63  740107aTrack07.flac
+99e7b3938f8cfc717bc3f8c4814b1750  740107aTrack08.flac
+27fcea7cfb3d96f820d48d6d29ed2d31  740107aTrack09.flac
+1edb3e4f7a6bc6c3c7da34727974ebb8  740107aTrack10.flac
+208e21c9e8f436acdd14639e8861e0b9  740107aTrack11.flac
+074a01c81d79e993dc457ab62e63bda4  740107aTrack12.flac
+357151ac27689bf786dd9c02ecf1331e  740107aTrack13.flac
+98c2fdd9cb2715a219f0bef9c6506849  740107aTrack14.flac
+fa9f7c2b0717baa676a1ae0e95711c33  740107aTrack15.flac
+5c21aa5d9a86d9a9d93b53e092e7b020  740107bTrack01.flac
+5a9ba45c3f9bbbab7f4fd62fe8cdcb82  740107bTrack02.flac
+c5590c7bc7109ff119e727d1af65177d  740107bTrack03.flac
+a16af170a9750529a0f192448c053a11  bd74-01-07-lowgen-repitch-LB-3577.txt
+cf6fd0b8ac10e918768057d3b027eb9f  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-07-lowgen-repitch.flacf 
+=================== 
+=================== 
+=================== 
+740107aTrack01.flac:afa4c41da18dc7573009865e484da9b4
+740107aTrack02.flac:15ae12245568b7e4ea64c20f402d6d5d
+740107aTrack03.flac:13ba99d679875729459701f67ef5fdeb
+740107aTrack04.flac:d1f8dcc1245b76c7d881744e6b2bd6b0
+740107aTrack05.flac:fbb41712e280ae3462360cfdbf2a84a5
+740107aTrack06.flac:007a9b2777a918e287d6a06d526bd2dd
+740107aTrack07.flac:efc533b9eda5da24d82e8ba98e0cdff3
+740107aTrack08.flac:688969137bdd60b0ddcaa145135afca2
+740107aTrack09.flac:ae38d1fe684edff1bbb9fd5cd870dd84
+740107aTrack10.flac:59c9e60009d531a6f9c1aad9b3e329a0
+740107aTrack11.flac:3827c4ebd232b430fe941f2276275094
+740107aTrack12.flac:ed94a31e354d014a7cc49cfe13199140
+740107aTrack13.flac:d2ee48cbb4f2526659ef5bf213cf5aac
+740107aTrack14.flac:74b47cef37dab5ea5a1f0e8f9745c364
+740107aTrack15.flac:e2fb78fe77b30eaf423ec0576f162e85
+740107bTrack01.flac:408149abd9a3b96feedbf727392c67ef
+740107bTrack02.flac:448151597189f5c8d217e89a72a85965
+740107bTrack03.flac:d0c3334a400957b442302cf70b8bb543
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-07-lowgen-repitch.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.18       30206780 B   ---   --   ---xx   flac  0.6475  740107aTrack01.flac
+     3:31.35       37302764 B   ---   --   ---xx   flac  0.6434  740107aTrack02.flac
+     5:35.54       59221052 B   ---   --   ---xx   flac  0.6506  740107aTrack03.flac
+     4:22.25       46275644 B   ---   --   ---xx   flac  0.6495  740107aTrack04.flac
+     5:39.16       59837276 B   ---   --   ---xx   flac  0.6602  740107aTrack05.flac
+     6:08.64       65065772 B   ---   --   ---xx   flac  0.6319  740107aTrack06.flac
+     3:04.59       32596412 B   ---   --   ---xx   flac  0.6786  740107aTrack07.flac
+     4:57.22       52442588 B   ---   --   ---xx   flac  0.6609  740107aTrack08.flac
+     4:58.68       52727180 B   ---   --   ---xx   flac  0.6550  740107aTrack09.flac
+     4:01.29       42580652 B   ---   --   ---xx   flac  0.6708  740107aTrack10.flac
+     3:09.23       33393740 B   ---   --   ---xx   flac  0.6517  740107aTrack11.flac
+     4:24.55       46699004 B   ---   --   ---xx   flac  0.6786  740107aTrack12.flac
+     3:03.70       32445884 B   ---   --   ---xx   flac  0.6657  740107aTrack13.flac
+     5:38.13       59653820 B   ---   --   ---xx   flac  0.6791  740107aTrack14.flac
+     4:53.68       51845180 B   ---   --   ---xx   flac  0.6535  740107aTrack15.flac
+     5:23.15       57012524 B   ---   --   ---xx   flac  0.6253  740107bTrack01.flac
+     8:17.72       87840188 B   ---   --   ---xx   flac  0.6304  740107bTrack02.flac
+     4:24.41       46666076 B   ---   --   ---xx   flac  0.6186  740107bTrack03.flac
+    84:26.72      893812536 B                            0.6511  (18 files)
+=================== 
+=================== 
+=================== 

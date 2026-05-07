@@ -1,0 +1,31 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-03-13-interview.flacf 
+=================== 
+=================== 
+=================== 
+6e0928e88e8fe2648ce81f519ee89ee3  1992-03-13 Stuart Coupe telephone interview(s).flac
+242723bbbf03abeca704f8bc6a006d73  1992-03-18 Perth Entertainment Center, Perth, West Australia, Australia [MK & JLT].txt
+df1d0129b60f2d6e7416c4d09e15113c  bd92-03-13-interview-LB-4336.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-03-13-interview.flacf 
+=================== 
+=================== 
+=================== 
+1992-03-13 Stuart Coupe telephone interview(s).flac:167af7e1dba28337a7f8ceb42d79aae0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-03-13-interview.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    14:57.49      158345708 B   -b-   --   ---xx   flac  0.3744  1992-03-13 Stuart Coupe telephone interview(s).flac
+    14:57.49      158345708 B                            0.3744  (1 file)
+=================== 
+=================== 
+=================== 

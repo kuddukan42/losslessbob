@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-23-christiania-bootleg.flacf 
+=================== 
+=================== 
+=================== 
+bc97c56a96874ee4b837cb72a9ef81f9  bd96-07-23-christiania-bootleg-LB-5955.txt
+772de0cc4e5e1e3cf81475c9a13cfb89  bd96-07-23-christiania-bootleg.flacf.md5
+32b7976c9da8acf4d07dbd7c5338ce17  bd96-07-23-christiania-d1t01.flac
+b1e1d23b00618d974905f3ff389d2ce5  bd96-07-23-christiania-d1t02.flac
+adc38a7bdc6b82265757ab82d744e89a  bd96-07-23-christiania-d1t03.flac
+8351661278a98ba448c76cd8524b16fd  bd96-07-23-christiania-d1t04.flac
+f146e9bfafd2dd7a33191008d4301734  bd96-07-23-christiania-d1t05.flac
+9c8b56a0cbe0535f9057cc43d0f876e0  bd96-07-23-christiania-d1t06.flac
+75052ce158466a30850f393d9622e9ac  bd96-07-23-christiania-d1t07.flac
+c25a2ce23debc6569aafbc3d0c92c82c  bd96-07-23-christiania-d1t08.flac
+2cf72f321a3082e855ccadf2754a37c1  bd96-07-23-christiania-d1t09.flac
+719db3353961031b712ae38f6cd8d47b  bd96-07-23-christiania-d1t10.flac
+492827436bf32c6826cb43c7a939c9b6  bd96-07-23-christiania-d1t11.flac
+426203327828798fe40f0ef42db9cdd2  bd96-07-23-christiania-d2t01.flac
+50d9919b7c93d9a5142e1dfca6c8146d  bd96-07-23-christiania-d2t02.flac
+5bc6d20ae3c859c05be6f08e3b9a3788  bd96-07-23-christiania-d2t03.flac
+57dd6f0afa6b072d1195f15759a85695  bd96-07-23-christiania-d2t04.flac
+f1d6f3fff2485a18de6ae0160af1acfb  bd96-07-23-christiania-d2t05.flac
+8d33a2a29192437b336fc011e9d8a193  bd96-07-23-christiania-d2t06.flac
+00f4805b2c5998ccd0a825da2e071489  bd96-07-23-christiania-d2t07.flac
+e7e43d9228c8703594d8fbba4361b1ef  bd96-07-23-christiania-d2t08.flac
+438a395537189d52e9273dd80daba706  bd96-07-23-christiania-d2t09.flac
+52cf789e057dd486b715c273eae16c8e  bd96-07-23-christiania-d2t10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-23-christiania-bootleg.flacf 
+=================== 
+=================== 
+=================== 
+bd96-07-23-christiania-d1t01.flac:4dead3d92826c6d26675b8e9eef6146e
+bd96-07-23-christiania-d1t02.flac:91b605c2bf14d82693bb53a495285c19
+bd96-07-23-christiania-d1t03.flac:62ce5103e9b6a5d0a01a9823cc76d6da
+bd96-07-23-christiania-d1t04.flac:8501670590e06c9960dbf23581486589
+bd96-07-23-christiania-d1t05.flac:d684e3ffee29cc1e89fa2ed0933b49df
+bd96-07-23-christiania-d1t06.flac:2a793648c44f8028502a05057c0cee88
+bd96-07-23-christiania-d1t07.flac:33f4ea5a7f250fb3d6f558cfd1029e89
+bd96-07-23-christiania-d1t08.flac:1c6e1475223bd17dbd0e2b4460a9308e
+bd96-07-23-christiania-d1t09.flac:6db7682d01cfc3f7ecbe1146fb04c72c
+bd96-07-23-christiania-d1t10.flac:20b99921bcf2359cc0bd87ccbc71b82f
+bd96-07-23-christiania-d1t11.flac:22439c4c0442bb210d17beee368088b7
+bd96-07-23-christiania-d2t01.flac:8a3fa7175b56a77b1296676328013afb
+bd96-07-23-christiania-d2t02.flac:300661a72cee8d02e79d6eb0996714cc
+bd96-07-23-christiania-d2t03.flac:b2035f7f95d521121ba2fc83ce9d487d
+bd96-07-23-christiania-d2t04.flac:9cf0a8c06a18a0f15110063c8da2377d
+bd96-07-23-christiania-d2t05.flac:4636042d499935600d7277fe6275008b
+bd96-07-23-christiania-d2t06.flac:4e1372bbe1ae690d92a1c248ca777aa8
+bd96-07-23-christiania-d2t07.flac:155462db43e4f5124eafb6e15c464e0a
+bd96-07-23-christiania-d2t08.flac:177517f6c2df276cc73f2c214aa916f9
+bd96-07-23-christiania-d2t09.flac:87e6b967bddbea500aaafe09035738a7
+bd96-07-23-christiania-d2t10.flac:3aa248c3345622457cb105d579c52ae1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-23-christiania-bootleg.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.42        6272828 B   ---   --   ---xx   flac  0.5450  bd96-07-23-christiania-d1t01.flac
+     4:49.35       51061964 B   ---   --   ---xx   flac  0.7041  bd96-07-23-christiania-d1t02.flac
+     6:19.50       66973244 B   ---   --   ---xx   flac  0.6854  bd96-07-23-christiania-d1t03.flac
+     6:39.68       70543580 B   ---   --   ---xx   flac  0.6903  bd96-07-23-christiania-d1t04.flac
+     8:13.62       87111068 B   ---   --   ---xx   flac  0.6458  bd96-07-23-christiania-d1t05.flac
+     7:25.73       78669740 B   ---   --   ---xx   flac  0.6647  bd96-07-23-christiania-d1t06.flac
+     8:01.40       84942524 B   ---   --   ---xx   flac  0.6972  bd96-07-23-christiania-d1t07.flac
+     8:30.40       90058124 B   ---   --   ---xx   flac  0.6500  bd96-07-23-christiania-d1t08.flac
+     6:27.12       68295068 B   ---   --   ---xx   flac  0.6547  bd96-07-23-christiania-d1t09.flac
+     7:21.30       77863004 B   ---   --   ---xx   flac  0.6675  bd96-07-23-christiania-d1t10.flac
+     8:28.55       89740604 B   ---   --   ---xx   flac  0.7190  bd96-07-23-christiania-d1t11.flac
+     8:08.47       86193788 B   ---   --   ---xx   flac  0.6294  bd96-07-23-christiania-d2t01.flac
+     6:42.60       71053964 B   ---   --   ---xx   flac  0.7311  bd96-07-23-christiania-d2t02.flac
+    13:19.13      140974220 B   ---   --   ---xx   flac  0.6675  bd96-07-23-christiania-d2t03.flac
+     7:13.52       76503548 B   ---   --   ---xx   flac  0.7373  bd96-07-23-christiania-d2t04.flac
+     5:59.28       63393500 B   ---   --   ---xx   flac  0.6514  bd96-07-23-christiania-d2t05.flac
+     6:33.10       69348764 B   ---   --   ---xx   flac  0.6564  bd96-07-23-christiania-d2t06.flac
+     6:41.00       70736444 B   ---   --   ---xx   flac  0.6404  bd96-07-23-christiania-d2t07.flac
+     7:11.50       76146044 B   ---   --   ---xx   flac  0.6817  bd96-07-23-christiania-d2t08.flac
+     6:43.02       71093948 B   ---   --   ---xx   flac  0.6256  bd96-07-23-christiania-d2t09.flac
+     6:31.18       69014780 B   ---   --   ---xx   flac  0.6396  bd96-07-23-christiania-d2t10.flac
+   147:57.37     1565990748 B                            0.6710  (21 files)
+=================== 
+=================== 
+=================== 

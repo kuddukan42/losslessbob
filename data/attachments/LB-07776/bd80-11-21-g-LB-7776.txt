@@ -1,0 +1,10 @@
+Bob Dylan, 11/21/80, San Francisco, California, 2CDR
+
+LB-7776, (40min+72min), version "g"; Slow Train, Senor, When You Gonna Wake Up from diff source?, low gen audio-CDs -> eac -> Wavelab, levels raised, last 5 separately -> tlh, I did not harm the sound of the recording in any way; bittorrent download 07/09; a lot of tracks have same md5 as LB-7757; this fixes the 3 small pops noted on that one; (did not listen to all of this)
+
+drop/cut between cdrs, d2t1 6:03 between songs, d2t2 0:00, end of d2t9, d2t11, d2t12 6:38 between songs
+
+1 Gotta Serve Somebody, 2 I Believe In You, 3 Like A Rolling Stone, 4 Man Gave Names To All The Animals, 5 We Just Disagree (Jim Krueger), 6 All Along The Watchtower, 7 Simple Twist Of Fate, 8 Ain't Gonna Go To Hell For Anybody, 9 Girl From The North Country, 1 Slow Train, 2 Abraham, Martin And John (Dick Holler), 3 Rise Again (Dallas Holm), 4 Let's Keep It Between Us, 5 Mary From The Wild Moor (trad.), 6 Just Like Tom Thumb's Blues, 7 What Can I Do For You?, 8 Solid Rock, 9 Just Like A Woman, 10 Senor (Tales Of Yankee Power), 11 When You Gonna Wake Up, 12 In The Garden, 13 Blowin' In The Wind, 14 City Of Gold, 15 Don't Think Twice, It's All Right, 16 Love Minus Zero/No Limit
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

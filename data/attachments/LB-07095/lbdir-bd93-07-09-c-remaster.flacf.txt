@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-09-c-remaster.flacf 
+=================== 
+=================== 
+=================== 
+169cfb9ab9d7bfe195d8c18d3c659e7e  1993-07-09 La Coruna remaster.md5
+3206d01e18cb2c659cab12103909e94f  cd1\bd 1993-07-09 La Coruna remaster d1.log
+b6a13ee6ade32ca47f099bcf828ae0a6  cd1\bd 1993-07-09 La Coruna remaster d1t01.flac
+1d6d23dab27ba12876f2e9a036c2fcd4  cd1\bd 1993-07-09 La Coruna remaster d1t02.flac
+06a7af0205c02ff4385223cc16a909bb  cd1\bd 1993-07-09 La Coruna remaster d1t03.flac
+0db3431e2e0408635b5de6562162750f  cd1\bd 1993-07-09 La Coruna remaster d1t04.flac
+4e32c81621ee2cb4e361f14ffc84f970  cd1\bd 1993-07-09 La Coruna remaster d1t05.flac
+3895830aa28c0c1b123caef02f33fc9f  cd1\bd 1993-07-09 La Coruna remaster d1t06.flac
+e5900913bfce0c3676c7121fada03506  cd2\bd 1993-07-09 La Coruna remaster d2.log
+a455920d8f144f61bb3f2bb98dabf08b  cd2\bd 1993-07-09 La Coruna remaster d2t01.flac
+23704681e6b1ab82216faa51b76873ba  cd2\bd 1993-07-09 La Coruna remaster d2t02.flac
+bf60121a7bd7651967c58a8332b954bd  cd2\bd 1993-07-09 La Coruna remaster d2t03.flac
+6abc1d1e73781a7bb749fce82e69d6e0  cd2\bd 1993-07-09 La Coruna remaster d2t04.flac
+1f40711633df6590791984932e6fdc6a  cd2\bd 1993-07-09 La Coruna remaster d2t05.flac
+2d4600dc045e21d3fe4d2565385e176a  cd2\bd 1993-07-09 La Coruna remaster d2t06.flac
+7f243dce4d5559467963b7bd122ae2f5  cd2\bd 1993-07-09 La Coruna remaster d2t07.flac
+ae7f414214fd362b2d091b718691ec98  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-09-c-remaster.flacf\cd1 
+=================== 
+=================== 
+=================== 
+bd 1993-07-09 La Coruna remaster d1t01.flac:e772e3e4e59a6745ca60feb1938a7cb8
+bd 1993-07-09 La Coruna remaster d1t02.flac:0bbb390204eb8af9ac42842a6764856d
+bd 1993-07-09 La Coruna remaster d1t03.flac:4fb3dd8ba84832b3995f45a142fb71b4
+bd 1993-07-09 La Coruna remaster d1t04.flac:de8152116cae1fb1aad354957d1b67f4
+bd 1993-07-09 La Coruna remaster d1t05.flac:e560bf8b65a202482563a4cb6201ec9a
+bd 1993-07-09 La Coruna remaster d1t06.flac:f916223c0ad0a87a1a2f4d79decae21f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-09-c-remaster.flacf\cd2 
+=================== 
+=================== 
+=================== 
+bd 1993-07-09 La Coruna remaster d2t01.flac:a43d7b2fa86d9d1b266004c45feeb7c9
+bd 1993-07-09 La Coruna remaster d2t02.flac:c8fe7c555bd5dbfaec1b2fdc035a81f4
+bd 1993-07-09 La Coruna remaster d2t03.flac:88ed4a1dc5da745ef6c4090db5c6128c
+bd 1993-07-09 La Coruna remaster d2t04.flac:3d437c6189a618dc45df9f1006b298f7
+bd 1993-07-09 La Coruna remaster d2t05.flac:7162ea469d7e7d60c4d070b83730c65a
+bd 1993-07-09 La Coruna remaster d2t06.flac:11c060c1e57dfd13e771ca70ee77a852
+bd 1993-07-09 La Coruna remaster d2t07.flac:4d88602b3933db158adf176595fef785
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-09-c-remaster.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:35.30       48580604 B   ---   --   ---xx   flac  0.5740  bd 1993-07-09 La Coruna remaster d1t01.flac
+     8:20.54       88327052 B   ---   --   ---xx   flac  0.6603  bd 1993-07-09 La Coruna remaster d1t02.flac
+     6:18.36       66763916 B   ---   --   ---xx   flac  0.6813  bd 1993-07-09 La Coruna remaster d1t03.flac
+     7:29.63       79351820 B   ---   --   ---xx   flac  0.6692  bd 1993-07-09 La Coruna remaster d1t04.flac
+    10:49.64      114634172 B   ---   --   ---xx   flac  0.6889  bd 1993-07-09 La Coruna remaster d1t05.flac
+     7:02.11       74466716 B   ---   --   ---xx   flac  0.6441  bd 1993-07-09 La Coruna remaster d1t06.flac
+    44:36.33      472124280 B                            0.6603  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-09-c-remaster.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.60       49003964 B   ---   --   ---xx   flac  0.6155  bd 1993-07-09 La Coruna remaster d2t01.flac
+     6:14.23       66027740 B   ---   --   ---xx   flac  0.5419  bd 1993-07-09 La Coruna remaster d2t02.flac
+     7:23.36       78229916 B   ---   --   ---xx   flac  0.6016  bd 1993-07-09 La Coruna remaster d2t03.flac
+     8:59.32       95154908 B   ---   --   ---xx   flac  0.6083  bd 1993-07-09 La Coruna remaster d2t04.flac
+     8:18.73       88018940 B   ---   --   ---xx   flac  0.6961  bd 1993-07-09 La Coruna remaster d2t05.flac
+     7:35.03       80269100 B   ---   --   ---xx   flac  0.6527  bd 1993-07-09 La Coruna remaster d2t06.flac
+     9:56.07      105150908 B   ---   --   ---xx   flac  0.6063  bd 1993-07-09 La Coruna remaster d2t07.flac
+    53:05.09      561855476 B                            0.6199  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd62-acetates-on-the-track-vol1.flacf 
+=================== 
+=================== 
+=================== 
+cb3cd53daff2d219a1d50ee3d6f23fb0  bd62-acetates-on-the-track-vol1-t01.flac
+75c41f2b82596f754e9c40762548cc26  bd62-acetates-on-the-track-vol1-t02.flac
+1ec3915a0f51ede17dcbb0f4fa7a5ec3  bd62-acetates-on-the-track-vol1-t03.flac
+b38768575a7d833844de15a59c32ef7c  bd62-acetates-on-the-track-vol1-t04.flac
+a9d394125070f1ee88e2574c1e64d047  bd62-acetates-on-the-track-vol1-t05.flac
+7a926af7d18cc682652f99e9d5c941b0  bd62-acetates-on-the-track-vol1-t06.flac
+cbb0c3b53d6f84032d8ad74f3c592cbb  bd62-acetates-on-the-track-vol1-t07.flac
+656af74265005b4b35f421e55fb3bdce  bd62-acetates-on-the-track-vol1-t08.flac
+55ef1c59420c55b18ce3773e43786702  bd62-acetates-on-the-track-vol1-t09.flac
+5cf323d5ac13d74b311298cd2c5473ac  bd62-acetates-on-the-track-vol1-t10.flac
+976fd6c54529159960f3eb8e6421d8f1  bd62-acetates-on-the-track-vol1-t11.flac
+ab6d0d75bd12a4c55e078927b97e27f6  bd62-acetates-on-the-track-vol1-t12.flac
+dfa625dbd3550b3bb80bb58aa9cc9970  bd62-acetates-on-the-track-vol1-t13.flac
+cb9e0a0ae2e84e3234aa235f92a30dd7  bd62-acetates-on-the-track-vol1-t14.flac
+3fc128fcde8de2b744b1ed5d1b722221  bd62-acetates-on-the-track-vol1-t15.flac
+fc3911be7d6bdac7a05a3150fb8cbc25  bd62-acetates-on-the-track-vol1-t16.flac
+f331b031771472c9f6c60d58571fe8ad  bd62-acetates-on-the-track-vol1-t17.flac
+50b2f9ba541711cbb19f4c4ff415bdc3  bd62-acetates-on-the-track-vol1-t18.flac
+43c3f426276c0f19d2b8bf8840bb34c4  bd62-acetates-on-the-track-vol1-t19.flac
+f2ecb61a0f92e845bf60220e6895ce82  bd62-acetates-on-the-track.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-acetates-on-the-track-vol1.flacf 
+=================== 
+=================== 
+=================== 
+bd62-acetates-on-the-track-vol1-t01.flac:0231e84606250f85e379f9f63a18f03b
+bd62-acetates-on-the-track-vol1-t02.flac:342b3a8ad79d4c448b49f8b55acecd91
+bd62-acetates-on-the-track-vol1-t03.flac:bf96dd2d2861cd88976bf5b3fb38ff3b
+bd62-acetates-on-the-track-vol1-t04.flac:754688eec5ed5f3f8a6b429b5c819bfe
+bd62-acetates-on-the-track-vol1-t05.flac:8b38956180be9b5f94d5f96829997389
+bd62-acetates-on-the-track-vol1-t06.flac:9b6953d9338ea51155c90895e0e592bd
+bd62-acetates-on-the-track-vol1-t07.flac:620d10408fe52828f8bf1c2878c85e21
+bd62-acetates-on-the-track-vol1-t08.flac:8a5fd63dedeb4cea1ebfeb0ba5de07e2
+bd62-acetates-on-the-track-vol1-t09.flac:f0e999920f4d4ca7e0784fd2d21a5af1
+bd62-acetates-on-the-track-vol1-t10.flac:05be3969959b6a5b0cc88f2c2a8305d1
+bd62-acetates-on-the-track-vol1-t11.flac:b9469600e900627f68d4618d8e960a39
+bd62-acetates-on-the-track-vol1-t12.flac:38ad653d87b638d5a9336b0b200a5511
+bd62-acetates-on-the-track-vol1-t13.flac:138a6919751ae0187f518e2cb2ba2f07
+bd62-acetates-on-the-track-vol1-t14.flac:af627e95497875addb869e5407fc8701
+bd62-acetates-on-the-track-vol1-t15.flac:550ac578719841eb2d5a8f87778915ba
+bd62-acetates-on-the-track-vol1-t16.flac:df6bab2b65c37bbd7b57c7977dccf6d5
+bd62-acetates-on-the-track-vol1-t17.flac:8d789da75facc97cb630029b7830ae23
+bd62-acetates-on-the-track-vol1-t18.flac:7befb3e7e78b34282ad30bd3065dabdf
+bd62-acetates-on-the-track-vol1-t19.flac:4dac8bb5e507f59af9b7f8a6ea3b6935
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd62-acetates-on-the-track-vol1.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:16.60       34715564 B   ---   --   ---xx   flac  0.6142  bd62-acetates-on-the-track-vol1-t01.flac
+     2:31.00       26636444 B   ---   --   ---xx   flac  0.5756  bd62-acetates-on-the-track-vol1-t02.flac
+     2:49.45       29917484 B   ---   --   ---xx   flac  0.5545  bd62-acetates-on-the-track-vol1-t03.flac
+     3:06.02       32815148 B   ---   --   ---xx   flac  0.6108  bd62-acetates-on-the-track-vol1-t04.flac
+     2:57.33       31300460 B   ---   --   ---xx   flac  0.6101  bd62-acetates-on-the-track-vol1-t05.flac
+     2:05.52       22172348 B   ---   --   ---xx   flac  0.5925  bd62-acetates-on-the-track-vol1-t06.flac
+     3:21.40       35550524 B   ---   --   ---xx   flac  0.5821  bd62-acetates-on-the-track-vol1-t07.flac
+     3:46.68       40026380 B   ---   --   ---xx   flac  0.6190  bd62-acetates-on-the-track-vol1-t08.flac
+     2:06.55       22355804 B   ---   --   ---xx   flac  0.5871  bd62-acetates-on-the-track-vol1-t09.flac
+     4:25.30       46816604 B   ---   --   ---xx   flac  0.5761  bd62-acetates-on-the-track-vol1-t10.flac
+     7:09.52       75797948 B   ---   --   ---xx   flac  0.5742  bd62-acetates-on-the-track-vol1-t11.flac
+     4:31.30       47875004 B   ---   --   ---xx   flac  0.5895  bd62-acetates-on-the-track-vol1-t12.flac
+     4:29.08       47470460 B   ---   --   ---xx   flac  0.5925  bd62-acetates-on-the-track-vol1-t13.flac
+     4:01.42       42611228 B   ---   --   ---xx   flac  0.6761  bd62-acetates-on-the-track-vol1-t14.flac
+     7:35.25       80320844 B   ---   --   ---xx   flac  0.5929  bd62-acetates-on-the-track-vol1-t15.flac
+     0:55.23        9756140 B   ---   --   ---xx   flac  0.5435  bd62-acetates-on-the-track-vol1-t16.flac
+     6:08.47       65025788 B   ---   --   ---xx   flac  0.6708  bd62-acetates-on-the-track-vol1-t17.flac
+     5:54.05       62457404 B   ---   --   ---xx   flac  0.6777  bd62-acetates-on-the-track-vol1-t18.flac
+     3:24.63       36133820 B   ---   --   ---xx   flac  0.6022  bd62-acetates-on-the-track-vol1-t19.flac
+    74:37.05      789755396 B                            0.6083  (19 files)
+=================== 
+=================== 
+=================== 

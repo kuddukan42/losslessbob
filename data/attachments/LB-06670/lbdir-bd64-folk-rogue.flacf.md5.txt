@@ -1,0 +1,16 @@
+6c5792f98e9cdadd2ef0bbaf195fa786  bd64-folk-rogue.flacf.md5
+9eee9e919bf14331c7a7cd861f43d390  bd64-folk-rougue-t01.flac
+24b688f48e8d3748105a877162c50ab5  bd64-folk-rougue-t02.flac
+ce5b4608a7b82c64fe9d948f3d7a27ed  bd64-folk-rougue-t03.flac
+d9cd33ccfa2fe9b7054931a87d335b3b  bd64-folk-rougue-t04.flac
+552fbdf72bf4e1709364300e711ccfe7  bd64-folk-rougue-t05.flac
+82e60fc08fe44e830a6d4482accee8e6  bd64-folk-rougue-t06.flac
+0f26fadbb966d84643b6f2015fec1d1c  bd64-folk-rougue-t07.flac
+73f4ef2d42079b3eb3a7f03d5e207580  bd64-folk-rougue-t08.flac
+f306ae416c73ebbb8e9424465aa686c1  bd64-folk-rougue-t09.flac
+771c9f74b0865ea5a4877d9ef174da56  bd64-folk-rougue-t10.flac
+62f7c7e185f2ca50295b461c28a175a7  bd64-folk-rougue-t11.flac
+44241a09656961329130613dee011b03  bd64-folk-rougue-t12.flac
+bf4dfcf831485ec87af99afd80a975f8  bd64-folk-rougue-t13.flac
+1f7bbb40c54b0e892444d025390f7d24  bd64-folk-rougue-t14.flac
+f2c6c884d107e70ba0f23c67d7f5d819  bd64-folk-rougue-t15.flac

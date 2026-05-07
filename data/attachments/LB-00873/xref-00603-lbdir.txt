@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-11-05-b.flacf 
+=================== 
+=================== 
+=================== 
+b17d9aaf54fbadef6934e7c121762cd3  1-01 Introduction.flac
+8f024ef570fe67501dcf28760fcf42d3  1-02 New Morning.flac
+57fb46d258df00a9b0809f3975c680b2  1-03 Lay, Lady, Lay.flac
+2436a79d98956f6a0591507fa346206a  1-04 Watching The River Flow.flac
+7b413f8bdfaebf6629f665dc425939a0  1-05 Simple Twist Of Fate.flac
+f8e87ca384674f6d7da1e01fcd36c7bb  1-06 I'll Be Your Baby Tonight.flac
+c2bab5c4516b0b84657532c02e634d30  1-07 Gotta Serve Somebody.flac
+4ec52f8c16860663c2f2c84f72496db5  1-08 You Don't Know Me.flac
+30dd2ebb9da01f0a9c42467739eb5abd  1-09 All Along The Watchtower.flac
+ebe2cceb83a5aa7afbbf4f138ab61092  1-10 Buffalo Skinners.flac
+a3f08d946f75fe5c4e728927286a45d5  1-11 It's All Over Now, Baby Blue.flac
+affd697e62ee163bddb1b41322050950  1-12 Mr. Tambourine Man.flac
+6645d26133d43dcad9ac134b64662896  1-13 That Lucky Old Sun.flac
+5e16913d64a3110cccb57352324ad4d2  1991-11-05 Madison - edited MJS - FFP.txt
+54655bd453390e45a47eead8e7bff3ac  1991-11-05 Madison - edited MJS - FLAC.md5
+385a438752e1c08ec52f3ad08b25c2fb  2-01 Rainy Day Women #12 & 35.flac
+20ea754fa13101e7d40c95e5fcddba9f  2-02 Shooting Star.flac
+178f8dd6cccb95b493d402111b51272b  2-03 Everything Is Broken.flac
+cd9107cf00dfb86d7801abf3924d4215  2-04 I Believe In You.flac
+2f010e37bfe8511c7c29136d422a2a67  2-05 Man In The Long Black Coat.flac
+de524e841b0b581b7f30900fc3f733f4  2-06 Maggie's Farm.flac
+88d4cbff2706560beca86e7028f9c8ee  Extras_dylan_1991-11-05_edited_MJS\1991-11-05 Madison - edited MJS - Disc 1.cue
+08ed6bffc4f63a8b28df7dcf22415a3a  Extras_dylan_1991-11-05_edited_MJS\1991-11-05 Madison - edited MJS - Disc 2.cue
+667784eae01249bdbade2e23585f7431  Extras_dylan_1991-11-05_edited_MJS\1991-11-05 Madison - edited MJS - shntool-info.txt
+43ab341d2124b123e46e17ec03c7771f  Extras_dylan_1991-11-05_edited_MJS\1991-11-05 Madison - edited MJS - WAV.md5
+030ebd1a52ad62e04f3247469639eef0  Extras_dylan_1991-11-05_edited_MJS\1991-11-05-D1-shn-original-INVALID.md5
+5f160ae02d0f0cdb0e0f09346b4bf52a  Extras_dylan_1991-11-05_edited_MJS\1991-11-05-D2-shn-original-INVALID.md5
+68e8ae3776e118e470d63528cc80ae61  Extras_dylan_1991-11-05_edited_MJS\cuesheet1991-11-05.gif
+f2bd95021a84aa46bb61e2f71a104f66  Extras_dylan_1991-11-05_edited_MJS\d1t03-FreqAnal.gif
+3c820a14942f9007ca8c4738b2d8f26f  Extras_dylan_1991-11-05_edited_MJS\d1t03-SpectralView.gif
+62b35aa1f5b2bb94d7e0b214cae116e4  Extras_dylan_1991-11-05_edited_MJS\d1t03-WaveView.gif
+184fe12f2a72222a29fa91c99d66b587  Extras_dylan_1991-11-05_edited_MJS\d1t10-10sec-FreqAnal.gif
+b396bc436ef3beaa56084a41da125771  Extras_dylan_1991-11-05_edited_MJS\d1t10-10sec-SpectralView.gif
+564f8e826e41f93cbe1c542b474169be  Extras_dylan_1991-11-05_edited_MJS\d1t10-10sec-WaveView.gif
+434b54d79fe2ffb8acb62bfe31bb6164  Extras_dylan_1991-11-05_edited_MJS\d2t01-FreqAnal.gif
+fcb333d0359f4729579ca03efe6c5a77  Extras_dylan_1991-11-05_edited_MJS\d2t01-SpectralView.gif
+64c621c77ed7dcffab9fde7a86d3b93d  Extras_dylan_1991-11-05_edited_MJS\d2t01-WaveView.gif
+724a5b1c4f8d69cca557e48e2096ea17  Extras_dylan_1991-11-05_edited_MJS\dylan_1991-11-05_edited_MJS-tracklist.html
+082456145fcbfeed08ac6ee5eb07b9c0  Extras_dylan_1991-11-05_edited_MJS\Thumbs.db
+49cef317764e8734c42d4e3b3e111719  README-dylan_1991-11-05_edited_MJS-Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-11-05-b.flacf 
+=================== 
+=================== 
+=================== 
+1-01 introduction.flac:73702ad7c809fa9cea5ae025a657a8ae
+1-02 new morning.flac:7bfe625ea0986699282df2d07936747b
+1-03 lay, lady, lay.flac:d16b88a8fd7ffe9281f9618fb4f696c3
+1-04 watching the river flow.flac:294f5dbd264c02c67dbd2f1792c340cc
+1-05 simple twist of fate.flac:6d13c619f774e00f3a7b92cd95e742e7
+1-06 i'll be your baby tonight.flac:76e66b47e264004b5803ce42984b967d
+1-07 gotta serve somebody.flac:0ea4eb9cdcf4c49da86c8edee630c70d
+1-08 you don't know me.flac:78c662c4494c62b485c5b07359197203
+1-09 all along the watchtower.flac:ac2cc5dc10772f54dc9476faf71e75bb
+1-10 buffalo skinners.flac:83086a8b13860c0c3f27718222fb91af
+1-11 it's all over now, baby blue.flac:d3a92515d96415ef0e42a0887f9ad1f9
+1-12 mr. tambourine man.flac:33d2bcb216c3f099e49410ccaded7a67
+1-13 that lucky old sun.flac:3e189b2d45e7f682e0770bd6c7ecb4a8
+2-01 rainy day women #12 & 35.flac:df866fa95de112f9be3f29246c8f4695
+2-02 shooting star.flac:84e5f2693b7fc44139d9a37d0181b060
+2-03 everything is broken.flac:091485d218b11cf3eb51df2ea3ff97d9
+2-04 i believe in you.flac:0a3b4a8ed82a74fd9d512ff84579a581
+2-05 man in the long black coat.flac:2f4262114c7339a5f784afb30881fee2
+2-06 maggie's farm.flac:ae73662eb5f925624395fcb7559de610
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-11-05-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:15.53        2770700 B   ---   --   ---xx   flac  0.5314  1-01 Introduction.flac
+     3:54.36       41362316 B   ---   --   ---xx   flac  0.6024  1-02 New Morning.flac
+     5:37.39       59538572 B   ---   --   ---xx   flac  0.6228  1-03 Lay, Lady, Lay.flac
+     4:52.53       51633500 B   ---   --   ---xx   flac  0.6161  1-04 Watching The River Flow.flac
+     8:22.59       88691612 B   ---   --   ---xx   flac  0.5697  1-05 Simple Twist Of Fate.flac
+     4:15.10       45005564 B   ---   --   ---xx   flac  0.5993  1-06 I'll Be Your Baby Tonight.flac
+     5:21.32       56699708 B   ---   --   ---xx   flac  0.6120  1-07 Gotta Serve Somebody.flac
+     4:29.00       47451644 B   ---   --   ---xx   flac  0.5641  1-08 You Don't Know Me.flac
+     5:11.02       54865148 B   ---   --   ---xx   flac  0.6231  1-09 All Along The Watchtower.flac
+     5:28.51       57979196 B   ---   --   ---xx   flac  0.6036  1-10 Buffalo Skinners.flac
+     6:59.36       73996316 B   ---   --   ---xx   flac  0.6323  1-11 It's All Over Now, Baby Blue.flac
+     6:47.10       71818364 B   ---   --   ---xx   flac  0.6327  1-12 Mr. Tambourine Man.flac
+     4:38.35       49121564 B   ---   --   ---xx   flac  0.5932  1-13 That Lucky Old Sun.flac
+     6:15.65       66302924 B   ---   --   ---xx   flac  0.6575  2-01 Rainy Day Women #12 & 35.flac
+     4:48.28       50869100 B   ---   --   ---xx   flac  0.5896  2-02 Shooting Star.flac
+     4:18.02       45515948 B   ---   --   ---xx   flac  0.6495  2-03 Everything Is Broken.flac
+     8:15.32       87393308 B   ---   --   ---xx   flac  0.6279  2-04 I Believe In You.flac
+     7:01.62       74410268 B   ---   --   ---xx   flac  0.6221  2-05 Man In The Long Black Coat.flac
+     6:14.61       66117116 B   ---   --   ---xx   flac  0.6588  2-06 Maggie's Farm.flac
+   103:07.66     1091542868 B                            0.6163  (19 files)
+=================== 
+=================== 
+=================== 

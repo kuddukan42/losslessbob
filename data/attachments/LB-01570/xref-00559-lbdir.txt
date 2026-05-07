@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-10-c.flacf 
+=================== 
+=================== 
+=================== 
+e9616ff7919e2cd4eb58da45885d07dc  1992-04-10 Launceston, Tasmania, Australia d1\01 Track01.flac
+31b4e2767e116b963b3dced714bd05bf  1992-04-10 Launceston, Tasmania, Australia d1\02 Track02.flac
+18a79ca25ae20d1e28e39efe9d6b780f  1992-04-10 Launceston, Tasmania, Australia d1\03 Track03.flac
+21c6080478462cecca5b459b21c1e317  1992-04-10 Launceston, Tasmania, Australia d1\04 Track04.flac
+153fc134234ee8d40756b7b43a9e2752  1992-04-10 Launceston, Tasmania, Australia d1\05 Track05.flac
+eda8b6604675332f7bafbce6edd3f9a5  1992-04-10 Launceston, Tasmania, Australia d1\06 Track06.flac
+82d8d438a2e1c82caa667015c5eec5eb  1992-04-10 Launceston, Tasmania, Australia d1\07 Track07.flac
+bae5dafae9a42aad47b954e388ca5065  1992-04-10 Launceston, Tasmania, Australia d1\08 Track08.flac
+5a41e579cdc6ad51a2bae7af74480d4d  1992-04-10 Launceston, Tasmania, Australia d1\09 Track09.flac
+9b870cd24f4b80ac7829e409a9edec98  1992-04-10 Launceston, Tasmania, Australia d1\10 Track10.flac
+c956a0842cc21f5ebf626d2c6320fcea  1992-04-10 Launceston, Tasmania, Australia d2\01 Track01.flac
+440d0539994afe46c6922a411ba948e8  1992-04-10 Launceston, Tasmania, Australia d2\02 Track02.flac
+7e68b27bb0a80d1b70b26ea094f4bc35  1992-04-10 Launceston, Tasmania, Australia d2\03 Track03.flac
+94de92363332199f28cda6d59b57c13c  1992-04-10 Launceston, Tasmania, Australia d2\04 Track04.flac
+a3601ea0f24df4a240e070880dbf60f0  1992-04-10 Launceston, Tasmania, Australia d2\05 Track05.flac
+f34614c358c50b5eefd371b44ce4f83a  1992-04-10 Launceston, Tasmania, Australia d2\06 Track06.flac
+c828acac76e5240b858e1abe562216cc  1992-04-10 Launceston, Tasmania, Australia d2\07 Track07.flac
+397d47815082b66b59ccd360aebfe6f9  1992-04-10 Launceston, Tasmania, Australia d2\08 Track08.flac
+8a70de251bef8a661f20520a6826abd3  1992.04.10 Launceston, Tasmania, Australia,Silver Dome.md5
+9d771918f8d8231f5d48c9293c0bf3b5  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-10-c.flacf\1992-04-10 launceston, tasmania, australia d1 
+=================== 
+=================== 
+=================== 
+01 track01.flac:a060ed66f32f99148f8ed7b623a4d371
+02 track02.flac:8156ed9db238567dc98e0ca535113c96
+03 track03.flac:84ab0bd2b0a6ea77bf57eaa4212d55f8
+04 track04.flac:6347a32c498faaf9d1fd79a57d0d2042
+05 track05.flac:ba72c8e8a312ab420f97eae47af5a59d
+06 track06.flac:345d7268957ced21aae03373d3893e1c
+07 track07.flac:f5c9f15636e914a39c37562a901735f4
+08 track08.flac:93cfb98286af48eb32ea3dec279751d7
+09 track09.flac:9c0167d1846b5984fddbc3812fe49e47
+10 track10.flac:a0dc781fe40d87ccd96f6528c3681fab
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-10-c.flacf\1992-04-10 launceston, tasmania, australia d2 
+=================== 
+=================== 
+=================== 
+01 track01.flac:a0f2d3562e390110a3084f97df680463
+02 track02.flac:9f615364a8034ed1ef55f7422ff5a1f7
+03 track03.flac:0b8406ed76b62ac50679236d643d9eff
+04 track04.flac:32cb0c9d06f2c649e13b854b429f950c
+05 track05.flac:b554ee35429f897b4e601205cb677251
+06 track06.flac:c5a7276ee4c28c6ce4a6bb6b89871db2
+07 track07.flac:a4d5b73dbfaae076be59710a70eb8659
+08 track08.flac:599783cb51a81d9929c91f2181a95194
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-10-c.flacf\1992-04-10 launceston, tasmania, australia d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.09       56116412 B   ---   --   ---xx   flac  0.6386  01 Track01.flac
+     4:04.18       43083980 B   ---   --   ---xx   flac  0.6427  02 Track02.flac
+     3:44.21       39563036 B   ---   --   ---xx   flac  0.6538  03 Track03.flac
+     5:37.32       59522108 B   ---   --   ---xx   flac  0.6524  04 Track04.flac
+     7:47.15       82414124 B   ---   --   ---xx   flac  0.6510  05 Track05.flac
+     4:22.16       46254476 B   ---   --   ---xx   flac  0.6354  06 Track06.flac
+     5:52.54       62219852 B   ---   --   ---xx   flac  0.6325  07 Track07.flac
+     4:41.39       49660172 B   ---   --   ---xx   flac  0.6919  08 Track08.flac
+     4:16.67       45316028 B   ---   --   ---xx   flac  0.6886  09 Track09.flac
+     6:42.60       71053964 B   ---   --   ---xx   flac  0.6790  10 Track10.flac
+    52:27.31      555204152 B                            0.6564  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-10-c.flacf\1992-04-10 launceston, tasmania, australia d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:11.18       76070780 B   ---   --   ---xx   flac  0.6699  01 Track01.flac
+     4:24.15       46604924 B   ---   --   ---xx   flac  0.6311  02 Track02.flac
+     4:52.43       51609980 B   ---   --   ---xx   flac  0.6357  03 Track03.flac
+     6:03.68       64193180 B   ---   --   ---xx   flac  0.6645  04 Track04.flac
+     5:27.51       57802796 B   ---   --   ---xx   flac  0.6389  05 Track05.flac
+     5:17.43       56019980 B   ---   --   ---xx   flac  0.6607  06 Track06.flac
+     6:38.08       70226060 B   ---   --   ---xx   flac  0.6430  07 Track07.flac
+     4:17.40       45428924 B   ---   --   ---xx   flac  0.7048  08 Track08.flac
+    44:12.61      467956624 B                            0.6559  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-09-20Schubert-16 
+=================== 
+=================== 
+=================== 
+5986f1a665ad1a00ec9515425417647d  2000_09_20_BIRMINGHAM_CD1\NONAME.MD5
+c5751545bc2b3c1660fabe626b2c8fdd  2000_09_20_BIRMINGHAM_CD1\TRACK01.SHN
+7ab572222fe658077b90653e4c73a86b  2000_09_20_BIRMINGHAM_CD1\TRACK02.SHN
+ee9e42f03e84d5f19c20ce8f0b471e35  2000_09_20_BIRMINGHAM_CD1\TRACK03.SHN
+55c8e05e5e2b7bcd6d0ee61c3602c6b9  2000_09_20_BIRMINGHAM_CD1\TRACK04.SHN
+ce7093209393d59bf35d3f9e32ab2532  2000_09_20_BIRMINGHAM_CD1\TRACK05.SHN
+0a2c34ddc0fb997fbe5057982de0367f  2000_09_20_BIRMINGHAM_CD1\TRACK06.SHN
+23e063ca1a00d7e175b7b95185e2334a  2000_09_20_BIRMINGHAM_CD1\TRACK07.SHN
+f48b8f221920b9a1f691f0fd3e45c2f8  2000_09_20_BIRMINGHAM_CD1\TRACK08.SHN
+67ad7584c899e4bd8138ea0f68e9b7c6  2000_09_20_BIRMINGHAM_CD1\TRACK09.SHN
+38ce6b4a9c6935382299fc2368ed2049  2000_09_20_BIRMINGHAM_CD1\TRACK10.SHN
+b98cb44e2ed99d67a08112e1766e853f  2000_09_20_BIRMINGHAM_CD1\TRACK11.SHN
+d873444ca6a0b7117ca98e03b96e5899  2000_09_20_BIRMINGHAM_CD2\NONAME.MD5
+ecf23f5c5e74f86d572d309f2c7daaf3  2000_09_20_BIRMINGHAM_CD2\TRACK01.SHN
+c3700d99f9413c2078f49ca5f7f82bbc  2000_09_20_BIRMINGHAM_CD2\TRACK02.SHN
+8ad7a9f3d50a55a157e7567cb87725e5  2000_09_20_BIRMINGHAM_CD2\TRACK03.SHN
+bdf10e1726ed0b6630a86d25fe5c7060  2000_09_20_BIRMINGHAM_CD2\TRACK04.SHN
+e9659abc3ed3f643c1829f13adc54567  2000_09_20_BIRMINGHAM_CD2\TRACK05.SHN
+d680d0f7816a2181d0608732ea1af0cd  2000_09_20_BIRMINGHAM_CD2\TRACK06.SHN
+b1f74e4cb06f3ccb180edfde7dc9f6ab  2000_09_20_BIRMINGHAM_CD2\TRACK07.SHN
+d4bce72bd4fe41ca7cd4bd87b57b593d  2000_09_20_BIRMINGHAM_CD2\TRACK08.SHN
+462a69d47c82ac20d278abea6670151d  2000_09_20_BIRMINGHAM_CD2\TRACK09.SHN
+90129af0ab6f66a49da07630bb1a2fb4  bd00-09-20Schubert.txt
+1d927f6e428c05e440910a8fad1cc86c  BIRMINGHAM_2000\2000_09_20_BIRMINGHAM1_9.JPG
+c5c2dc64b689bde351cf5f01590503d9  BIRMINGHAM_2000\BIRMINGHAM2000_1.JPG
+e0aec84339ab61454bc1bb7003b656d2  BIRMINGHAM_2000\BIRMINGHAM2000_3.JPG
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-09-20Schubert-16\2000_09_20_BIRMINGHAM_CD1 
+=================== 
+=================== 
+=================== 
+25ea0402cfc741a5cdbf7ad52a8565f5  [shntool]  TRACK01.wav
+af9fe5c55692d815f093f739e8cd252a  [shntool]  TRACK02.wav
+2546a8ab82fc7b5df14ed4f60104eb65  [shntool]  TRACK03.wav
+238d412e34344c15cde11236b0d399df  [shntool]  TRACK04.wav
+dfa1ecb0a1e4087bf6024b3406d84373  [shntool]  TRACK05.wav
+34d4db74dfecc86dc4afb7018351d2c7  [shntool]  TRACK06.wav
+dfb9214be4696a345c747539c8539b99  [shntool]  TRACK07.wav
+7594f0142a1bf01c6dc88f21ab32b12b  [shntool]  TRACK08.wav
+06da28beff7f6ee777c7a300d39453cd  [shntool]  TRACK09.wav
+bbb8d04f89679300b58621e25d7ab999  [shntool]  TRACK10.wav
+f85f9861fe7666f235f9d48157c7a28d  [shntool]  TRACK11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-09-20Schubert-16\2000_09_20_BIRMINGHAM_CD2 
+=================== 
+=================== 
+=================== 
+6b4b529a0eabe665670e30a9746d71cc  [shntool]  TRACK01.wav
+7dbf44e5bce7db28644958b4f0e70a3e  [shntool]  TRACK02.wav
+e13bdf80949c306e7cfc42a39c4dc12a  [shntool]  TRACK03.wav
+5b412e010860fd683e87b803e36c4330  [shntool]  TRACK04.wav
+ecb97a9a543a4adc02915ca9b000070c  [shntool]  TRACK05.wav
+1b5aaaa99fe912b952aaf47b6b73c2d6  [shntool]  TRACK06.wav
+5a9f26d8bfa66efe69e2a533e6c22ccf  [shntool]  TRACK07.wav
+f414c1e3a01a771bdc0c828dcc365004  [shntool]  TRACK08.wav
+639c9538beb7e9ea33f608f1cda242c4  [shntool]  TRACK09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-20Schubert-16\2000_09_20_BIRMINGHAM_CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:34.56        6129356 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     2:10.51       23051996 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     5:48.50       61504844 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     7:40.67       81301628 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     5:52.02       62097548 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     8:01.18       84890780 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     3:29.74       37041692 B   ---   --   -----    wav  1.0000  TRACK07.wav
+     2:47.67       29616428 B   ---   --   -----    wav  1.0000  TRACK08.wav
+     5:54.34       62525612 B   ---   --   -----    wav  1.0000  TRACK09.wav
+     3:54.18       41319980 B   ---   --   -----    wav  1.0000  TRACK10.wav
+     5:43.28       60571100 B   ---   --   -----    wav  1.0000  TRACK11.wav
+    51:58.15      550050964 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-20Schubert-16\2000_09_20_BIRMINGHAM_CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:34.62       69647468 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     8:35.39       90937772 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     5:39.07       59816108 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     7:15.01       76736396 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     6:54.31       73102556 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     6:08.25       64974044 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     6:33.66       69480476 B   ---   --   -----    wav  1.0000  TRACK07.wav
+     5:34.71       59084636 B   ---   --   -----    wav  1.0000  TRACK08.wav
+     7:45.47       82136588 B   ---   --   -----    wav  1.0000  TRACK09.wav
+    61:01.49      645916044 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

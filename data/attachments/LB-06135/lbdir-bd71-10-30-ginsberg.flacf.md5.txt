@@ -1,0 +1,8 @@
+aafe2cbe2f36c8f77febf71f82304586  Allen Ginsberg & Friends - PBS-TV Studios 30 October 1971.md5
+bc5c902ac0fb95ed2ef60e3091f520e7  info.txt
+196da93850de6e359a7373206f682e59  Track01.flac
+695a266d10551a5f91fc4d0dc5262378  Track02.flac
+ea79d41bdeabac084ffcd4d7064b21c8  Track03.flac
+50f832d6675bf8a34dc5b22844aa8e8d  Track04.flac
+1a37b7530459ffc6cfb9b5382dcc1973  Track05.flac
+b3e14e751eea3e8e0f25cf6bb1a1a6f7  Track06.flac

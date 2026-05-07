@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-Dream-Dylan-Live-jtt-a.flacf 
+=================== 
+=================== 
+=================== 
+00aca1b365ed86585c99dcbf41bdc036  bd07-Dream-Dylan-Live-jtt-LB-5412.txt
+6b4455ccc5f611f31edab6cbdc4288ec  Dream Bob Live_Track01.flac
+537d6306a683d5b0fd6575918b6b956e  Dream Bob Live_Track02.flac
+22145ce3098100866f3a8ac45af165f9  Dream Bob Live_Track03.flac
+d2742ae8e66757766838e3132cc533e8  Dream Bob Live_Track04.flac
+2a2f6f351fdbcb4d873c26dc6288f792  Dream Bob Live_Track05.flac
+69795b8f769980a5a9ed7c65c106e3d0  Dream Bob Live_Track06.flac
+5752b9c3c2305577471dcb44cf9e2551  Dream Bob Live_Track07.flac
+742a0078afe56f0ce70ad507a19fa9fc  Dream Bob Live_Track08.flac
+19f33ad63571154dba7349e8070f5222  Dream Bob Live_Track09.flac
+22b0eb14a428d584ea40d8ec6b78f7c7  Dream Bob Live_Track10.flac
+73c956f6711af7a3709fba0d8e30d5d9  Dream Bob Live_Track11.flac
+d1a4f2d1851784bdbbc0dcfd909a6448  Dream Bob Live_Track11_Fixed.flac
+2172ac7989f35b74f9935ef60da29ac5  Dream Dylan Live - F.jpg
+40566f39c3cbaad0ac31d88cff1b11db  Dream Dylan Live - R.jpg
+76b21093836eed0c65d9fbe39ec26e62  Dream Dylan Live_Info.txt
+e4a75206cb55f7c7b97bb7a4ecd1fe2d  Dylan - Dream Dylan Live.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-Dream-Dylan-Live-jtt-a.flacf 
+=================== 
+=================== 
+=================== 
+Dream Bob Live_Track01.flac:233e7f75dd216c59a33f7b69d925de4a
+Dream Bob Live_Track02.flac:ea4c68538ccbfb6a5dfb1a513524e79a
+Dream Bob Live_Track03.flac:adbd73cf1346b85f717a38f763f8be5a
+Dream Bob Live_Track04.flac:76466cbed27e55a560338804fb1cf93d
+Dream Bob Live_Track05.flac:76ac6d90d9b5224e0b4bce2e97553a51
+Dream Bob Live_Track06.flac:fa36b21400921adb2200cf3a64fa3a8d
+Dream Bob Live_Track07.flac:cf55fe8219fd09f7c77b4d7d5a2190ea
+Dream Bob Live_Track08.flac:a2d19c8d8f7c8b94d07cedad39e05bf8
+Dream Bob Live_Track09.flac:5b2acb75fe35210bfca00f114dc4cfd1
+Dream Bob Live_Track10.flac:7a78fec83bb76fa316aa98db8df39b6d
+Dream Bob Live_Track11.flac:e38e75853f9f93e920f5e4d7011b622d
+Dream Bob Live_Track11_Fixed.flac:9cdb66bf9941ee6e04e02205311d8614
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-Dream-Dylan-Live-jtt-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:23.03       35815468 B   -b-   --   ---xx   flac  0.6295  Dream Bob Live_Track01.flac
+     4:59.61       52887596 B   -b-   --   ---xx   flac  0.5930  Dream Bob Live_Track02.flac
+     3:04.62       32604204 B   -b-   --   ---xx   flac  0.6100  Dream Bob Live_Track03.flac
+     4:32.38       48070700 B   -b-   --   ---xx   flac  0.6383  Dream Bob Live_Track04.flac
+     6:15.66       66306092 B   -b-   --   ---xx   flac  0.6762  Dream Bob Live_Track05.flac
+     5:12.34       55115820 B   -b-   --   ---xx   flac  0.6432  Dream Bob Live_Track06.flac
+     6:19.38       66945068 B   -b-   --   ---xx   flac  0.6901  Dream Bob Live_Track07.flac
+     5:37.67       59605036 B   -b-   --   ---xx   flac  0.6661  Dream Bob Live_Track08.flac
+     3:58.46       42090540 B   -b-   --   ---xx   flac  0.6297  Dream Bob Live_Track09.flac
+     5:46.26       61095980 B   -b-   --   ---xx   flac  0.6980  Dream Bob Live_Track10.flac
+     5:44.16       60719148 B   -b-   --   ---xx   flac  0.6053  Dream Bob Live_Track11.flac
+     5:43.43       60606380 B   ---   --   ---xx   flac  0.6075  Dream Bob Live_Track11_Fixed.flac
+    60:38.50      641862032 B                            0.6441  (12 files)
+=================== 
+=================== 
+=================== 

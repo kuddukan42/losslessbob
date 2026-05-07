@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-07-03-c.flacf 
+=================== 
+=================== 
+=================== 
+238417bce4b6720c5349ad467616ad8c  CD1\01 Most likely you go your way (and I'll go mine).flac
+d8b3f3143353309f2b2cce8718490c83  CD1\02 Ballad of a thin man.flac
+62498e31f36ffff954d260c8b7bf7679  CD1\03 Stuck inside of Mobile with the Memphis blues again.flac
+abf6842de3601975a19c65f60e8df3d9  CD1\04 I believe in you.flac
+c79dbe6f8f563e078f8f0995a2fa0a55  CD1\05 Masters of war.flac
+b8cedc6631c67bed3b21453736aa6685  CD1\06 Gotta serve somebody.flac
+8d2083c2f29839b1f752008dc8df8861  CD1\07 It's alright, ma (I'm only bleeding).flac
+ecd6859686f5117db1b37524c5913988  CD1\08 It's all over now, baby blue.flac
+887dcbd2dbe070b73e4fb391f878334b  CD1\09 Desolation Row.flac
+835809403a757b41481b148d84c4246a  CD1\FLAC CD1.md5
+535dd8bd9acfe074183a951eaeb26a84  CD2\10 The lonesome death of Hattie Carroll.flac
+24c09200ff2fd129aada7e8e179c6eaa  CD2\11 It ain't me, babe.flac
+a1f4c604b7ff931bfc1794123c7d2f5e  CD2\12 Everything is broken.flac
+fed2e5cf9e39b1e198e32846e70273dd  CD2\13 No more one more time.flac
+43ecfa5283076eb749d2b6b76138dc23  CD2\14 Political world.flac
+ece8bcab59b871c13c80038d09d5d473  CD2\15 Old rock & roller.flac
+3a40ec4259f675598aeb8be2dfd0d86c  CD2\16 All along the watchtower.flac
+999e0a4ee95364161f57c2242c5c2811  CD2\17 I shall be released.flac
+306b51add28e32eb533f589f61e28f9b  CD2\18 Like a rolling stone.flac
+682eaf4046e398ed167283fd787c88f1  CD2\19 Blowin' in the wind.flac
+50b28068ab262028b96c7ad4768cb25d  CD2\20 Highway 61 revisited.flac
+5f3cd6238a93b4490923ae4be6e9f9ff  CD2\FLAC CD2.md5
+e7e70b44a4a80e16ca0c4c910ca4e550  Info\1990-07-03 Stadtpark, Hamburg, Germany [uT].txt
+8af4075f915391f0a5b2f8de3a31423c  Info\EAC d1.log
+5bab3182e9038553e2b0e66458ddcfa6  Info\EAC d2.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-07-03-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Most likely you go your way (and I'll go mine).flac:78cc15c639e545bacdecbb54e93b3efb
+02 Ballad of a thin man.flac:542e07755ed4656ef7bb05b017e03948
+03 Stuck inside of Mobile with the Memphis blues again.flac:687db07c1ef2af915cace2bd858e5f7c
+04 I believe in you.flac:4883239c8e5cdb54aa3089a41a7662cd
+05 Masters of war.flac:41157b07ff5cff604d25cb936bd319ae
+06 Gotta serve somebody.flac:cf86e79265ab2e25aaf1f473bfa8e69f
+07 It's alright, ma (I'm only bleeding).flac:ae68d8a3e93f342d8ebea5d60ec4be00
+08 It's all over now, baby blue.flac:c6064873b985c70612ab721458580413
+09 Desolation Row.flac:1400a2dd14ab01fa3671cca7a4c40767
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-07-03-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 The lonesome death of Hattie Carroll.flac:50f145cdd909451526a261a84919017a
+11 It ain't me, babe.flac:6e29f18145de925ee1a488556ea94cbf
+12 Everything is broken.flac:83df529c30417b4bf12c4e37a3bd7a95
+13 No more one more time.flac:18d2d4dde730b2822dc46a2cc26e5054
+14 Political world.flac:801203f659c26e7b9e927fa909182c6a
+15 Old rock & roller.flac:2da85d8fea9fc7da73118c68f8a992d3
+16 All along the watchtower.flac:b70423f399a9f2af7e2a3be13528e557
+17 I shall be released.flac:4f3431c8680e34a141b621fca00f8cda
+18 Like a rolling stone.flac:9a93b235e08a61ff3779f44b40ef7c60
+19 Blowin' in the wind.flac:d001a6b785c1aa2b80a2dd28cfa344a6
+20 Highway 61 revisited.flac:a0a2ea71f2c87a18687f5a57503d8934
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-07-03-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:52.72       51678188 B   ---   --   ---xx   flac  0.5384  01 Most likely you go your way (and I'll go mine).flac
+     4:47.40       50720924 B   ---   --   ---xx   flac  0.5443  02 Ballad of a thin man.flac
+     6:42.39       71004572 B   ---   --   ---xx   flac  0.5056  03 Stuck inside of Mobile with the Memphis blues again.flac
+     4:52.15       51544124 B   ---   --   ---xx   flac  0.4840  04 I believe in you.flac
+     4:42.19       49789532 B   ---   --   ---xx   flac  0.5166  05 Masters of war.flac
+     4:55.41       52134476 B   ---   --   ---xx   flac  0.5094  06 Gotta serve somebody.flac
+     5:28.36       57943916 B   ---   --   ---xx   flac  0.4577  07 It's alright, ma (I'm only bleeding).flac
+     5:51.62       62062268 B   ---   --   ---xx   flac  0.4614  08 It's all over now, baby blue.flac
+     6:00.51       63623996 B   ---   --   ---xx   flac  0.5316  09 Desolation Row.flac
+    48:14.00      510501996 B                            0.5045  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-07-03-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:26.35       68172764 B   ---   --   ---xx   flac  0.4950  10 The lonesome death of Hattie Carroll.flac
+     5:44.47       60792188 B   ---   --   ---xx   flac  0.4568  11 It ain't me, babe.flac
+     3:28.16       36728876 B   ---   --   ---xx   flac  0.5248  12 Everything is broken.flac
+     4:23.32       46468508 B   ---   --   ---xx   flac  0.4856  13 No more one more time.flac
+     3:55.25       41512844 B   ---   --   ---xx   flac  0.5156  14 Political world.flac
+     4:02.25       42747644 B   ---   --   ---xx   flac  0.4600  15 Old rock & roller.flac
+     2:46.68       29442380 B   ---   --   ---xx   flac  0.5190  16 All along the watchtower.flac
+     3:38.04       38464652 B   ---   --   ---xx   flac  0.4877  17 I shall be released.flac
+     6:21.35       67290764 B   ---   --   ---xx   flac  0.5166  18 Like a rolling stone.flac
+     4:03.07       42881708 B   ---   --   ---xx   flac  0.5675  19 Blowin' in the wind.flac
+     4:48.73       50974940 B   ---   --   ---xx   flac  0.5656  20 Highway 61 revisited.flac
+    49:38.67      525477268 B                            0.5069  (11 files)
+=================== 
+=================== 
+=================== 

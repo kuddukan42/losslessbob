@@ -1,0 +1,73 @@
+Bob Dylan
+Warner Park
+Madison, Wisconsin
+August 27, 2004
+------------------------------------------------------------------------------------------------------------
+Source:
+Soomlos
+
+Notes:
++ with Elana Fremerman on violin
+* with Willie Nelson and his sons
+------------------------------------------------------------------------------------------------------------
+Disc 1:
+01. Intro                             		[00:60]
+02. Drifter's Escape +              		[04:32]
+03. The Times They Are A-Changin' +		[06:35]
+04. Seeing The Real You At Last		[05:46]
+05. Heartland *                     		[04:18]
+06. It's Alright, Ma (I'm only Bleeding)		[07:12]
+07. If Dogs Run Free               		[05:16]
+08. High Water (For Charley Patton)		[06:13]
+09. Mr. Tambourine Man          		[06:12]
+10. Love Sick                       		[05:27]
+Total time: [52:30]
+
+Disc 2:
+01. Honest With Me                		[06:58]
+02. Sugar Baby                     		[07:37]
+03. Summer Days                  		[10:19]
+04. Like A Rolling Stone            		[06:15]
+05. Band Intros And Joke         		[00:47]
+06. All Along The Watchtower		[05:44]
+Total time: [37:40]
+------------------------------------------------------------------------------------------------------------
+bd2004-08-27d1.md5
+e10133b33d1744d9a5414bc76647acb3 *bd2004-08-27d1t01.shn
+dfb54035a49de3643d876bc0fbf3f495 *bd2004-08-27d1t02.shn
+7ef54aeaec672e13de26ea59db1e4b77 *bd2004-08-27d1t03.shn
+a206a3176c129719408e556051525f3d *bd2004-08-27d1t04.shn
+4ff71d4a787d3367a6788a966f18d0e5 *bd2004-08-27d1t05.shn
+29cd81f1b9d42f574475e36627421b75 *bd2004-08-27d1t06.shn
+dfe008ace13d8e1d881fa9ea5e27b021 *bd2004-08-27d1t07.shn
+d378ae5eaced2852a3138ad8fdf4b5a8 *bd2004-08-27d1t08.shn
+a2895f2076a3a6b7b30056529acee4bb *bd2004-08-27d1t09.shn
+24b375eb767c8190bd81cf2bec424dbc *bd2004-08-27d1t10.shn
+
+bd2004-08-27d2.md5
+ac78faf802b2e04c79f00fc6c3633e8f *bd2004-08-27d2t01.shn
+7b0de25478c9105f25c67b901ec782fc *bd2004-08-27d2t02.shn
+53f9e4a99fac5cf307c7eba0d4df0015 *bd2004-08-27d2t03.shn
+2a2ec2d2f7acdb03c71c7dcb513e3fde *bd2004-08-27d2t04.shn
+5b83b6370aba7c897fece3b11747ebda *bd2004-08-27d2t05.shn
+c0adcee291f41d829657ec6c28edebd2 *bd2004-08-27d2t06.shn
+
+bd2004-08-27d1wav.md5
+51307c437b5d5939c2eea321e487a5c7 *bd2004-08-27d1t01.wav
+790fc53065c3f56c7ba33ba323d64865 *bd2004-08-27d1t02.wav
+fc78a6264f2c6f547cfafa7b03050b5a *bd2004-08-27d1t03.wav
+c904d2ff0df502757396d182b7dff0f8 *bd2004-08-27d1t04.wav
+34033651073958c40402e9f67ee3c10c *bd2004-08-27d1t05.wav
+44577a6b8a26b20c63084d42ffeb3281 *bd2004-08-27d1t06.wav
+d0c109c8b3b4cda151e139a117e53c69 *bd2004-08-27d1t07.wav
+542a1a3e34f8bb0f1ce0556fa08893b1 *bd2004-08-27d1t08.wav
+f8778f229dff430799dca92baff79120 *bd2004-08-27d1t09.wav
+8061f42046ecaaa7f0b807cbbe2e6529 *bd2004-08-27d1t10.wav
+
+bd2004-08-27d2wav.md5
+d69bcdf645281ce1efd31526974a5732 *bd2004-08-27d2t01.wav
+89c8e8d62fc73b410d21c4cd0be09bee *bd2004-08-27d2t02.wav
+c4b59b7fc6386c2ffacdffca2bfb4c6f *bd2004-08-27d2t03.wav
+21690d16a1c12d7008ab1c35fe65a149 *bd2004-08-27d2t04.wav
+1edcbef297e0194c943825759f939cb1 *bd2004-08-27d2t05.wav
+8d1244d36d568a329be8635222a0899f *bd2004-08-27d2t06.wav

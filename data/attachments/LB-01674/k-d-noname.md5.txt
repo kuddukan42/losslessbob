@@ -1,0 +1,12 @@
+04d0d713ef59e7050dde9784426cf155 *dylan01.shn
+6b7d48f4fd7fd3c65fc3bab615c37e0b *dylan02.shn
+b5be79c0fc273cdc36dbd7041cba35f6 *friedman01.shn
+7f924f6b2522aa29c802bf8c51caf698 *friedman02.shn
+cd00469d92e9ce9d648020fd64cfffe5 *friedman03.shn
+7a0981e0e768e6035f688e2e5e025c5e *friedman04.shn
+ca98c10781075209491b49395ee5b55b *friedman05.shn
+570a89c6a61b70649b0246a05ac9ec80 *friedman06.shn
+c2eccbcd0e5ae1a0e6526b86420d0f16 *friedman07.shn
+76e5f2cffac31bdccf8893eda08d7f9b *friedman08.shn
+b74e3a976d069e870ce4f7275d2bd56d *friedman09.shn
+41146daf89eebd8b70b9067bed8242de *friedman10.shn

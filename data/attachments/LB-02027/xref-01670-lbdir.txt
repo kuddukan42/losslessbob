@@ -1,0 +1,92 @@
+===================
+===================
+===================
+=== md5 for: bd04-06-06-e.flacf
+===================
+===================
+===================
+e0644227a92001aeb93387f8a3866c2b *bd04-06-06-remaster-by-schubert.txt
+b7e0edc7ed5f46cc626a1dda0ae9a519 *bd_04-06-06_d1\01 Intro.flac
+cdb7d62ee0536fdbac3ba368e7bd6a7d *bd_04-06-06_d1\02 God Knows.flac
+f508c16149d3db5fc89f931ef42d2d13 *bd_04-06-06_d1\03 Forever Young.flac
+ae92ea8eed1c6befd97f0cdf8744b107 *bd_04-06-06_d1\04 Watching The River Flow.flac
+4e2ee7c57966a39401803ca96639e4f8 *bd_04-06-06_d1\05 Tryin' To Get To Heaven.flac
+a36369acef745e797663a4c510df6e3c *bd_04-06-06_d1\06 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+30c1178ed214e8a70522e198d25b1277 *bd_04-06-06_d1\07 Tweedle Dee & Tweedle Dum.flac
+5e427e267c9e5f9bd41f298d34d4e49f *bd_04-06-06_d1\08 Blind Willie McTell.flac
+37959251e49ae2a1e202f2df1b6db98c *bd_04-06-06_d1\09 Highway 61 Revisited.flac
+fb4f001153c195bedef99fe96924df83 *bd_04-06-06_d1\10 I Shall Be Released.flac
+46e374583871d485e182a38c124dffde *bd_04-06-06_d2\1 High Water (For Charley Patton).flac
+76b787829ef4fc335bee512d6db2ac83 *bd_04-06-06_d2\2 Moonlight.flac
+f8b937b0e0028c6486b06ea1ac437718 *bd_04-06-06_d2\3 Honest With Me.flac
+b95256fb18d8e92f554f2ea8e09aa736 *bd_04-06-06_d2\4 Lay, Lady, Lay.flac
+ded838f5596ced80bf82dd9133e6c2d7 *bd_04-06-06_d2\5 Summer Days.flac
+2cc8acf5a3f207a2bf6da486a46d5c58 *bd_04-06-06_d2\6 Cat's In The Well.flac
+7fb70e114b860f7f5fc0fc23ca75e403 *bd_04-06-06_d2\7 Like A Rolling Stone.flac
+cde5c026bf3b264fc443856e6fe24226 *bd_04-06-06_d2\8 All Along The Watchtower.flac
+60e6f8b4b61f83c485aac4a05ffbaac5 *bd_04-06-06_remaster by schubert.md5
+a61316ab07d8c8a48f6de7f3e45c3012 *setlist.txt
+===================
+===================
+===================
+=== ffp for: bd04-06-06-e.flacf
+===================
+===================
+===================
+bd_04-06-06_d1\01 Intro.flac:1bec58350b86f0dbd6ec85ae1d7e43fe
+bd_04-06-06_d1\02 God Knows.flac:24b42c508c94cdc85c75a538643495e0
+bd_04-06-06_d1\03 Forever Young.flac:11e9e44c1b78a784e4e0753021ef534f
+bd_04-06-06_d1\04 Watching The River Flow.flac:c9fda600c88ac6ce5f420438d9eb539d
+bd_04-06-06_d1\05 Tryin' To Get To Heaven.flac:862acba8e10607d8c725bb1e9a7a6813
+bd_04-06-06_d1\06 Stuck Inside Of Mobile With The Memphis Blues Again.flac:bb47646c4bdb848ed27fad861417157a
+bd_04-06-06_d1\07 Tweedle Dee & Tweedle Dum.flac:ecf39e27d61715ad2050f103f8155d39
+bd_04-06-06_d1\08 Blind Willie McTell.flac:0ba9784f43236993d66cf7c5617e0893
+bd_04-06-06_d1\09 Highway 61 Revisited.flac:6e9d005daa1d42a545283f1ecbe65a18
+bd_04-06-06_d1\10 I Shall Be Released.flac:44069143e7c7874d48673ca0a6a16f8d
+bd_04-06-06_d2\1 High Water (For Charley Patton).flac:82e73045a14050bed4a9b73758b17d88
+bd_04-06-06_d2\2 Moonlight.flac:cb219e18eacb92fc7ab92225e0fbb49f
+bd_04-06-06_d2\3 Honest With Me.flac:b14521736855762032de0a24afec6b22
+bd_04-06-06_d2\4 Lay, Lady, Lay.flac:1b01f59dc2a057cb6a068758ae7dd475
+bd_04-06-06_d2\5 Summer Days.flac:ffca1e199968bc468968bd4622c53bbd
+bd_04-06-06_d2\6 Cat's In The Well.flac:be8b443d5a777f7a20e0143900e730d6
+bd_04-06-06_d2\7 Like A Rolling Stone.flac:8662cdc352271dedc994d260afaa39c6
+bd_04-06-06_d2\8 All Along The Watchtower.flac:2c5b316e7160c0de277ff46ef65bbeb7
+===================
+===================
+===================
+=== shntool len for: bd04-06-06-e.flacf\bd_04-06-06_d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:11.09       12545612 B   ---   --   ---xx   flac  0.5725  01 Intro.flac
+     3:26.04       36347852 B   ---   --   ---xx   flac  0.6282  02 God Knows.flac
+     6:34.59       69640412 B   ---   --   ---xx   flac  0.5944  03 Forever Young.flac
+     6:13.51       65917196 B   ---   --   ---xx   flac  0.6273  04 Watching The River Flow.flac
+     6:39.58       70520060 B   ---   --   ---xx   flac  0.5713  05 Tryin' To Get To Heaven.flac
+     6:52.29       72745052 B   ---   --   ---xx   flac  0.6473  06 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     5:37.66       59602076 B   ---   --   ---xx   flac  0.5889  07 Tweedle Dee & Tweedle Dum.flac
+     5:49.51       61683596 B   ---   --   ---xx   flac  0.6122  08 Blind Willie McTell.flac
+     7:06.21       75195836 B   ---   --   ---xx   flac  0.6674  09 Highway 61 Revisited.flac
+     6:38.02       70211948 B   ---   --   ---xx   flac  0.5809  10 I Shall Be Released.flac
+    56:09.50      594409640 B                            0.6123  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd04-06-06-e.flacf\bd_04-06-06_d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:05.05       74981804 B   ---   --   ---xx   flac  0.6274  1 High Water (For Charley Patton).flac
+     5:04.34       53705612 B   ---   --   ---xx   flac  0.4971  2 Moonlight.flac
+     6:44.44       71369132 B   ---   --   ---xx   flac  0.6574  3 Honest With Me.flac
+     5:43.21       60554636 B   ---   --   ---xx   flac  0.5463  4 Lay, Lady, Lay.flac
+     8:19.21       88073036 B   ---   --   ---xx   flac  0.6289  5 Summer Days.flac
+     4:40.45       49497884 B   ---   --   ---xx   flac  0.6555  6 Cat's In The Well.flac
+     7:11.10       76051964 B   ---   --   ---xx   flac  0.6321  7 Like A Rolling Stone.flac
+     5:33.34       58821212 B   ---   --   ---xx   flac  0.6308  8 All Along The Watchtower.flac
+    50:21.64      533055280 B                            0.6130  (8 files)
+===================
+===================
+===================

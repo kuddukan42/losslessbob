@@ -1,0 +1,38 @@
+79fd67aad1fcb3ef5976ca37b44f18ae  1990-11-18 NEU.md5
+4c786ca64a85b74f4df3143f4d6c8b17  info.txt
+69ee27d523149976ee042f0e115260f5  So much for romace [CD1]\1990-11-18_101.flac
+9ce791e255c40da6393a6157c24fa0ea  So much for romace [CD1]\1990-11-18_102.flac
+ebf128cf3ff466b700bf734ad8d62e27  So much for romace [CD1]\1990-11-18_103.flac
+b55fdfcfe263ba829254ab1b57fc8b9c  So much for romace [CD1]\1990-11-18_104.flac
+2d1ded3663292ed051e3322b4d49f55e  So much for romace [CD1]\1990-11-18_105.flac
+83eabbcf70c453b5adb147db077782ac  So much for romace [CD1]\1990-11-18_106.flac
+3d52cbf99e621a0de8b333e37a1aef88  So much for romace [CD1]\1990-11-18_107.flac
+530f8cf83c4f03bbdf0e687825b8e676  So much for romace [CD1]\1990-11-18_108.flac
+c89108d070719bb13570f2ae85b0002d  So much for romace [CD1]\1990-11-18_109.flac
+c0291f79f8da23db768a0193a8e2817f  So much for romace [CD1]\1990-11-18_110.flac
+4d5841ff7fe5658c2e0747f3cc3030bf  So much for romace [CD1]\1990-11-18_111.flac
+308d8017ffbb1a5f565db7e0239ee017  So much for romace [CD1]\1990-11-18_112.flac
+8eea6126c29f3cbf71ad46927416944c  So much for romace [CD1]\1990-11-18_113.flac
+e3d526ec141a500f5402e7a624aa868d  So much for romace [CD1]\1990-11-18_114.flac
+04d5691ced8dd0bc1a3545f03699b55f  So much for romace [CD1]\1990-11-18_115.flac
+afcaad32dbe4cc49ce11f240812456b2  So much for romace [CD1]\1990-11-18_116.flac
+abc6317bf195f4f23030aa42339e2d62  So much for romace [CD1]\1990-11-18_117.flac
+b66ef2670e25ba690a0317426f3f4fe7  So much for romace [CD1]\So much for romace [CD1].md5
+9e201e1971d5df0bbbbfee975d68337a  So much for romace [CD2]\1990-11-18_201.flac
+ec01b5d2622e1bb182a0d74ec5b96552  So much for romace [CD2]\1990-11-18_202.flac
+3af0096c596c04e8515aa3e295931a65  So much for romace [CD2]\1990-11-18_203.flac
+0ac0864c5ececee2d306f2d756a54eba  So much for romace [CD2]\1990-11-18_204.flac
+09864247fb0ba505361ef2303ebef67b  So much for romace [CD2]\1990-11-18_205.flac
+829ecc0e1b74b893975e536d25f87714  So much for romace [CD2]\1990-11-18_206.flac
+78a45b1e0309c4100fdabcd341d1e122  So much for romace [CD2]\1990-11-18_207.flac
+64b1d24d28d4fb4c22c25c3857ae92f5  So much for romace [CD2]\1990-11-18_208.flac
+7e23970c4766465710c44972a10bf4e5  So much for romace [CD2]\1990-11-18_209.flac
+9f156d833d3b5923a93cf33af1d4da16  So much for romace [CD2]\1990-11-18_210.flac
+44296162bc88036a95d15a804f8d1b52  So much for romace [CD2]\1990-11-18_211.flac
+f15b8ea5fa900542fb7df84146871de4  So much for romace [CD2]\1990-11-18_212.flac
+ee11809dbdbb9764934e1a1ce56669a5  So much for romace [CD2]\1990-11-18_213.flac
+b4dafffbb13996f014a60d29e5149cac  So much for romace [CD2]\1990-11-18_214.flac
+914cf247732f76636062dc66a7e57637  So much for romace [CD2]\1990-11-18_215.flac
+a7d00226d0e29fce9aa7d7a1aa3be23b  So much for romace [CD2]\1990-11-18_216.flac
+02c4260a13e26932080608903d1564d3  So much for romace [CD2]\So much for romace [CD2].md5
+784db2065f9fbd236a53f3a89aecebff  torrent-corrections-comments.txt

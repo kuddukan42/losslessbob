@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-02-20-a.flacf 
+=================== 
+=================== 
+=================== 
+dcf15a75d68f2890c8eed183c6fcae23  CD1\00 Announcement.flac
+978b00d2b5596110433a32f883af7ada  CD1\01 Absolutely sweet Marie.flac
+240010d528368e2b723bf40b0774c8cc  CD1\02 Tonight I'll be staying here with youCan't wait.flac
+553d42d2b331ced2ebdbba1dc47b2366  CD1\03 Can't wait.flac
+5528a1dc36fde9bd00306fd0be2d527e  CD1\04 Just like a woman.flac
+d76ad13ede7bedbb488de2630680f52e  CD1\05 Silvio.flac
+fe8ec82fe1f0ab88f792091c3d999daa  CD1\06 Cocaine blues.flac
+921e3fd8f883bf014c997cf21648298a  CD1\07 Masters of war.flac
+b73b3b6a799b9e1f8c096778be5fd650  CD1\08 Tangled up in blue.flac
+d76a2f30b3c222db7894056237a1b40f  CD1\09 Million miles.flac
+0effeff5e47b3058c6583a5b4727580a  CD2\10 Positively 4th Street.flac
+a4ff89ff2421bfe3034187bbfc95ac24  CD2\11 (band intro).flac
+346a0f2f518b64024aacdf896e8140d0  CD2\11 Highway 61 revisited.flac
+063a87bdbf2f8156613ae4c28c9c522a  CD2\12 'Til I fell in love with you.flac
+0f4cb5893f42c575ce8aa9dffab5a9df  CD2\13 It ain't me, babe.flac
+571dc901df7d9511f2dab20337d6c53c  CD2\14 Love sick.flac
+83a8f015a5bb85a2a7f68bec60920d01  CD2\15 Rainy day women # 12 & 35.flac
+48a35c60ac8163ab366ede30574c91b8  Info\FLAC CD1.md5
+abff869897182c13f34f6df67835f433  Info\FLAC CD2.md5
+9beadb1ee86a98a469ccee32c0167a88  Info\setlist.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-02-20-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:964407dc4b71577a87747582af48cbf7
+01 Absolutely sweet Marie.flac:01e6ad6c4a025999f5cc4b2f2299b07c
+02 Tonight I'll be staying here with youCan't wait.flac:f96e9cc5863107b60d5a858e59946727
+03 Can't wait.flac:15db7ff49c9f66c308eab5aee6fb0b34
+04 Just like a woman.flac:8ce1392b0724dfc4b0bdd4955a21204c
+05 Silvio.flac:c30ec377fdc5bd8229ee720ff2e19143
+06 Cocaine blues.flac:35fcf77e0e2ad54daaafe27530365ef6
+07 Masters of war.flac:b54c328c476d09e3eaa3e56c1263c0bb
+08 Tangled up in blue.flac:4d1328b83c535aae6283e1104f004389
+09 Million miles.flac:22c66ba9bdb058609604e4124ad1151a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-02-20-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Positively 4th Street.flac:771a3806eb477141c4dafed05209c8d7
+11 (band intro).flac:70f9953c8da2688ab6598a7d92d4a348
+11 Highway 61 revisited.flac:42b92eb8a96813d54982fc9aa5403b08
+12 'Til I fell in love with you.flac:5a6a724aa2085c9388ff2aae6809f03c
+13 It ain't me, babe.flac:30b07b20ce9cda88f66c12858269cc88
+14 Love sick.flac:dd517cb6e6b7ab4e7353728668ef888a
+15 Rainy day women # 12 & 35.flac:ac1c2b4f2e446fdabc74b396c8fb9b55
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-20-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.54        6653852 B   ---   --   ---xx   flac  0.5615  00 Announcement.flac
+     4:02.54       42815852 B   ---   --   ---xx   flac  0.6910  01 Absolutely sweet Marie.flac
+     5:19.07       56288108 B   ---   --   ---xx   flac  0.6771  02 Tonight I'll be staying here with youCan't wait.flac
+     6:03.58       64169660 B   ---   --   ---xx   flac  0.6814  03 Can't wait.flac
+     5:45.46       60966236 B   ---   --   ---xx   flac  0.6474  04 Just like a woman.flac
+     6:34.28       69567500 B   ---   --   ---xx   flac  0.6901  05 Silvio.flac
+     4:03.22       42916988 B   ---   --   ---xx   flac  0.6258  06 Cocaine blues.flac
+     4:46.51       50570396 B   ---   --   ---xx   flac  0.6220  07 Masters of war.flac
+     7:24.22       78373388 B   ---   --   ---xx   flac  0.6875  08 Tangled up in blue.flac
+     6:04.21       64259036 B   ---   --   ---xx   flac  0.6570  09 Million miles.flac
+    50:41.63      536581016 B                            0.6654  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-20-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:24.44       78425132 B   ---   --   ---xx   flac  0.6709  10 Positively 4th Street.flac
+     0:34.74        6171692 B   ---   --   ---xx   flac  0.5478  11 (band intro).flac
+     7:47.70       82543484 B   ---   --   ---xx   flac  0.6873  11 Highway 61 revisited.flac
+     6:16.38       66415820 B   ---   --   ---xx   flac  0.6930  12 'Til I fell in love with you.flac
+     7:38.22       80842988 B   ---   --   ---xx   flac  0.5184  13 It ain't me, babe.flac
+     5:25.04       57339452 B   ---   --   ---xx   flac  0.6411  14 Love sick.flac
+     4:40.42       49490828 B   ---   --   ---xx   flac  0.7060  15 Rainy day women # 12 & 35.flac
+    39:47.69      421229396 B                            0.6466  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-07-01-les-temps-changent.flacf 
+=================== 
+=================== 
+=================== 
+7a28dd54acaefddd4a9340f4f6e16721  bd84-07-01-les-temps-changent-d1t01.flac
+99074a4df4f57f43fc8d2f6aa9e4880d  bd84-07-01-les-temps-changent-d1t02.flac
+b991b64a0af61f8b1a3ae15b2a944950  bd84-07-01-les-temps-changent-d1t03.flac
+1beb5e772fae49ec3c04c9f50054b9f4  bd84-07-01-les-temps-changent-d1t04.flac
+8ca7455d9b84ac68a3b3c17eba2e17a3  bd84-07-01-les-temps-changent-d1t05.flac
+1ab7238b24d9997a1237fec7be893cd1  bd84-07-01-les-temps-changent-d1t06.flac
+f837c6aa67dd58ed750befe73966c595  bd84-07-01-les-temps-changent-d1t07.flac
+33d9ba6937d0de320a5f8beca337be56  bd84-07-01-les-temps-changent-d1t08.flac
+5239a751f33c296540cd9d8e35b64815  bd84-07-01-les-temps-changent-d1t09.flac
+b3debfacabe517f7de085ab2d5c3df82  bd84-07-01-les-temps-changent-d1t10.flac
+b88454d4d27e283471abef5a10b7b52b  bd84-07-01-les-temps-changent-d1t11.flac
+6d8324309c9d693f3252baab1601a0a7  bd84-07-01-les-temps-changent-d1t12.flac
+c8ca5d4caabc4c4799c356e76af507e3  bd84-07-01-les-temps-changent-d1t13.flac
+6d8ec055d74208ae47d796a2958c32af  bd84-07-01-les-temps-changent-d1t14.flac
+df12a90c351c0c086cc8fe333d4d366b  bd84-07-01-les-temps-changent-d2t01.flac
+450ea9588dd5ccfda1acd6937f83d170  bd84-07-01-les-temps-changent-d2t02.flac
+b28cc2fe2ecec11fb388cf3d90858437  bd84-07-01-les-temps-changent-d2t03.flac
+322f8cc3a59f43639f029e17e780a4ce  bd84-07-01-les-temps-changent-d2t04.flac
+46667b31cd7e5c35786bef6367d39532  bd84-07-01-les-temps-changent-d2t05.flac
+faf37b8f431684abd95befccf6a51306  bd84-07-01-les-temps-changent-d2t06.flac
+e0407607ffa3c16c7cdd365c75e4c331  bd84-07-01-les-temps-changent-d2t07.flac
+4f6fe324d1cf2c16c664c5d98440e81d  bd84-07-01-les-temps-changent-d2t08.flac
+e09d5a697b41da92c2a974d84a2886a1  bd84-07-01-les-temps-changent-d2t09.flac
+3eca1241a6495c3394b78c487bd7dca4  bd84-07-01-les-temps-changent-d2t10.flac
+f8331728776ac1f84bb7af0559c11566  bd84-07-01-les-temps-changent-d2t11.flac
+b0a95f25665c44472074428111192a44  bd84-07-01-les-temps-changent-d2t12.flac
+2b270959ebafe3af9388f09870b73951  bd84-07-01-les-temps-changent-d2t13.flac
+b584a196937440fc355769842b23e747  bd84-07-01-les-temps-changent-d2t14.flac
+36a490e71006565176583a149d78b097  bd84-07-01-les-temps-changent.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-07-01-les-temps-changent.flacf 
+=================== 
+=================== 
+=================== 
+bd84-07-01-les-temps-changent-d1t01.flac:36eb8e043c082baaf744114588d37d51
+bd84-07-01-les-temps-changent-d1t02.flac:4669cb17979d2706d7b57b7e697d0150
+bd84-07-01-les-temps-changent-d1t03.flac:0111755ac44271f6bdecda3f389f2df5
+bd84-07-01-les-temps-changent-d1t04.flac:c67be2dcbd02df123f4c754e9c62b170
+bd84-07-01-les-temps-changent-d1t05.flac:b1b53212ef99fb4fde36f511fc4c4c9b
+bd84-07-01-les-temps-changent-d1t06.flac:50bba636ad8a74f112c7ac6457f6680f
+bd84-07-01-les-temps-changent-d1t07.flac:bf8a3dd676c69f79454f4b3f2452d522
+bd84-07-01-les-temps-changent-d1t08.flac:27ea08c08fa081bf6fa0a945f66a2572
+bd84-07-01-les-temps-changent-d1t09.flac:0b8011965ef5592e5f8410253251bf10
+bd84-07-01-les-temps-changent-d1t10.flac:009b5e577ded49b570500c94e4253952
+bd84-07-01-les-temps-changent-d1t11.flac:df04f7d17d4218274a00082d60cfc028
+bd84-07-01-les-temps-changent-d1t12.flac:6b7973e343ac91ca9afb3eeb26aacf54
+bd84-07-01-les-temps-changent-d1t13.flac:0d68e7bac9c5e09d1ba7e8a35cb9a171
+bd84-07-01-les-temps-changent-d1t14.flac:8cadfc4d80e948e249ab489328ab2c76
+bd84-07-01-les-temps-changent-d2t01.flac:944c59f3663c8b86143fe191d7e3780f
+bd84-07-01-les-temps-changent-d2t02.flac:49efe423fb1e5b631666787a49d167ad
+bd84-07-01-les-temps-changent-d2t03.flac:678289074a337b33c9a0dbc6dae8c922
+bd84-07-01-les-temps-changent-d2t04.flac:fa435fd3c1682bd7fdd5c98af6725be4
+bd84-07-01-les-temps-changent-d2t05.flac:4a5528dc16c7d1d85eb18528952cc671
+bd84-07-01-les-temps-changent-d2t06.flac:c21173a3eb08135269c401fc909673a2
+bd84-07-01-les-temps-changent-d2t07.flac:c39c5f1ad765af0019789480585b2eb1
+bd84-07-01-les-temps-changent-d2t08.flac:ade9c7ed28c09b65061716b17e88d107
+bd84-07-01-les-temps-changent-d2t09.flac:cef6f2d5a45c27ad61bdde149199e97c
+bd84-07-01-les-temps-changent-d2t10.flac:1c8b4a4d0df474de88f174a702cde0a3
+bd84-07-01-les-temps-changent-d2t11.flac:7d072aa4523412041d07e994fe6dca6d
+bd84-07-01-les-temps-changent-d2t12.flac:ea78f2f53b38dceaea0dd8fd0c814b14
+bd84-07-01-les-temps-changent-d2t13.flac:167b018a3bced40c384665d45dac53e6
+bd84-07-01-les-temps-changent-d2t14.flac:5eec8144f69e1d1fd1bdb7b46805b59c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-07-01-les-temps-changent.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.27       58099148 B   ---   --   ---xx   flac  0.6902  bd84-07-01-les-temps-changent-d1t01.flac
+     6:20.50       67149644 B   ---   --   ---xx   flac  0.6747  bd84-07-01-les-temps-changent-d1t02.flac
+     4:08.10       43770764 B   ---   --   ---xx   flac  0.6908  bd84-07-01-les-temps-changent-d1t03.flac
+     5:51.50       62034044 B   ---   --   ---xx   flac  0.6779  bd84-07-01-les-temps-changent-d1t04.flac
+     4:37.63       49011020 B   ---   --   ---xx   flac  0.7000  bd84-07-01-les-temps-changent-d1t05.flac
+     6:02.42       63955628 B   ---   --   ---xx   flac  0.6687  bd84-07-01-les-temps-changent-d1t06.flac
+     3:44.33       39591260 B   ---   --   ---xx   flac  0.6721  bd84-07-01-les-temps-changent-d1t07.flac
+     6:09.37       65178668 B   ---   --   ---xx   flac  0.6233  bd84-07-01-les-temps-changent-d1t08.flac
+     7:24.50       78439244 B   ---   --   ---xx   flac  0.6414  bd84-07-01-les-temps-changent-d1t09.flac
+     6:21.53       67333100 B   ---   --   ---xx   flac  0.6462  bd84-07-01-les-temps-changent-d1t10.flac
+     5:30.22       58263788 B   ---   --   ---xx   flac  0.6840  bd84-07-01-les-temps-changent-d1t11.flac
+     6:40.70       70724684 B   ---   --   ---xx   flac  0.6882  bd84-07-01-les-temps-changent-d1t12.flac
+     4:06.08       43413260 B   ---   --   ---xx   flac  0.6945  bd84-07-01-les-temps-changent-d1t13.flac
+     3:35.52       38048348 B   ---   --   ---xx   flac  0.6867  bd84-07-01-les-temps-changent-d1t14.flac
+     6:05.57       64520108 B   ---   --   ---xx   flac  0.6659  bd84-07-01-les-temps-changent-d2t01.flac
+     6:48.45       72077084 B   ---   --   ---xx   flac  0.7099  bd84-07-01-les-temps-changent-d2t02.flac
+     5:21.33       56702060 B   ---   --   ---xx   flac  0.6344  bd84-07-01-les-temps-changent-d2t03.flac
+     5:54.55       62575004 B   ---   --   ---xx   flac  0.6323  bd84-07-01-les-temps-changent-d2t04.flac
+     6:26.62       68236268 B   ---   --   ---xx   flac  0.6512  bd84-07-01-les-temps-changent-d2t05.flac
+     5:46.43       61135580 B   ---   --   ---xx   flac  0.6729  bd84-07-01-les-temps-changent-d2t06.flac
+     3:24.72       36154988 B   ---   --   ---xx   flac  0.7051  bd84-07-01-les-temps-changent-d2t07.flac
+     4:39.40       49309724 B   ---   --   ---xx   flac  0.7141  bd84-07-01-les-temps-changent-d2t08.flac
+     5:09.38       54597020 B   ---   --   ---xx   flac  0.6598  bd84-07-01-les-temps-changent-d2t09.flac
+     5:09.22       54559388 B   ---   --   ---xx   flac  0.6620  bd84-07-01-les-temps-changent-d2t10.flac
+     6:30.15       68831324 B   ---   --   ---xx   flac  0.6555  bd84-07-01-les-temps-changent-d2t11.flac
+     4:00.10       42359564 B   ---   --   ---xx   flac  0.6596  bd84-07-01-les-temps-changent-d2t12.flac
+     4:21.68       46200380 B   ---   --   ---xx   flac  0.6678  bd84-07-01-les-temps-changent-d2t13.flac
+     4:35.20       48557084 B   ---   --   ---xx   flac  0.6647  bd84-07-01-les-temps-changent-d2t14.flac
+   150:18.22     1590828176 B                            0.6694  (28 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-23a ShepherdsBush.alt.shnf 
+=================== 
+=================== 
+=================== 
+61a3ed0821d1f52f1dcec0872e82d86e  bd03-11-23a.txt
+b2fb4bf5143ea17870749bfd6ef5a4b6  d1\01.shn
+71382a244fc6191ad2cc11d40c1da8b9  d1\02.shn
+46f7a275e9b688dd16ef82f1b49a1137  d1\03.shn
+86b6d03cc34619cddeaaf7d4d6af58f1  d1\04.shn
+29d4341ffe67c8f2b4cc514b62c7c0ed  d1\05.shn
+13b35dfccdfcde81a4b622cc6ccc5951  d1\06.shn
+689f74ca8dccba7b7d86b30f1c60bc4a  d1\07.shn
+3dec47b0afa36242456740b4a447874a  d1\08.shn
+def07bcfca3cd504f024cf8fe85de975  d1\09.shn
+217550e6530d19199f6d9e1a96602103  d1\10.shn
+58719de8ccb279a452aa430994efdf52  d1\noname.md5
+58ac180865b0355525da11084895df6a  d2\01.shn
+a50fcc4e8c30da130439cd7c32942263  d2\02.shn
+91cde48ecc8ecd450d02210a64881d65  d2\03.shn
+9935192d92e1381779c16f48622c7f52  d2\04.shn
+9cc43ec58e4678975c8af2178fe179d1  d2\05.shn
+7b6afd64d8cb491fd778bffd9ce626cc  d2\06.shn
+f32c0f9dcad23564cdef346c8a7c08b6  d2\07.shn
+da4b694757ffab1da106e0801f230c7e  d2\08.shn
+be2a9bfa2f8149baba2c529da1ca4e3d  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-23a ShepherdsBush.alt.shnf\d1 
+=================== 
+=================== 
+=================== 
+9ddc71699f0371a0d0359c8da86338b4  [shntool]  01.wav
+06991dab1949df30582cd744279937ea  [shntool]  02.wav
+24850ec9ae600ab22dbc93255760e215  [shntool]  03.wav
+273dea6da76c8068bbb3205e8d5fb95d  [shntool]  04.wav
+2063b881f9779c418d7128b8f14d9129  [shntool]  05.wav
+6d082bba42faccc32d8d1bad50c8f3f7  [shntool]  06.wav
+1acae36cae391ebc13de9446c43c6603  [shntool]  07.wav
+b3a67d8bfb0da087982b7df22f032dad  [shntool]  08.wav
+9fe8b17d7f5d1ed6112569b82444f7e0  [shntool]  09.wav
+60b7d76aa9801a4c1a4c9e93842725e9  [shntool]  10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-23a ShepherdsBush.alt.shnf\d2 
+=================== 
+=================== 
+=================== 
+001b57bf5485dc484ae160495005b4e0  [shntool]  01.wav
+405fc14f8b3db8571bf3e3026a40d515  [shntool]  02.wav
+0369bacff523c68c768f309d08584f13  [shntool]  03.wav
+120c9fb39225d65eab7c5c8191f8c6a4  [shntool]  04.wav
+8bc9649dbcf23a63d0c2434b78b39f79  [shntool]  05.wav
+24a193692de674e85b343abf8fcaba71  [shntool]  06.wav
+502fe02174d80891a4a3835af28d306c  [shntool]  07.wav
+b13665f5ab805caee289d39f658df503  [shntool]  08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-23a ShepherdsBush.alt.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:56.60       10019564 B   ---   --   -----    wav  1.0000  01.wav
+     5:15.52       55688348 B   ---   --   -----    wav  1.0000  02.wav
+     4:23.60       46534364 B   ---   --   -----    wav  1.0000  03.wav
+     5:54.40       62539724 B   ---   --   -----    wav  1.0000  04.wav
+     6:20.26       67093196 B   ---   --   -----    wav  1.0000  05.wav
+     6:47.40       71888924 B   ---   --   -----    wav  1.0000  06.wav
+     7:12.44       76308332 B   ---   --   -----    wav  1.0000  07.wav
+     6:36.27       69917948 B   ---   --   -----    wav  1.0000  08.wav
+     7:03.73       74788940 B   ---   --   -----    wav  1.0000  09.wav
+     7:04.00       74793644 B   ---   --   -----    wav  1.0000  10.wav
+    57:35.47      609572984 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-23a ShepherdsBush.alt.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.06       67222556 B   ---   --   -----    wav  1.0000  01.wav
+     6:17.27       66566348 B   ---   --   -----    wav  1.0000  02.wav
+     6:58.35       73817564 B   ---   --   -----    wav  1.0000  03.wav
+     6:58.45       73841084 B   ---   --   -----    wav  1.0000  04.wav
+    10:37.37      112453868 B   ---   --   -----    wav  1.0000  05.wav
+     5:43.49       60620492 B   ---   --   -----    wav  1.0000  06.wav
+     7:29.49       79318892 B   ---   --   -----    wav  1.0000  07.wav
+     7:14.13       76588220 B   ---   --   -----    wav  1.0000  08.wav
+    57:40.36      610429024 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

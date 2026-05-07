@@ -1,0 +1,39 @@
+Bob Dylan
+Reno Hilton Theater
+Reno, Nevada
+March 17, 2000(late show)
+
+Disc 1: 
+01. Roving Gambler [04:10]
+02. My Back Pages [06:03]
+03. It's Alright, Ma (I'm Only Bleeding) [07:40]
+04. Don't Think Twice, It's All Right [05:50]
+05. Tangled Up In Blue [07:30]
+06. Roving Blade [04:39]
+07. Leopard-Skin Pill-Box Hat [06:24]
+08. Tell Me That It Isn't True [03:51]
+09. Stuck Inside Of Mobile With The Memphis Blues Again [07:20]
+10. Make You Feel My Love [04:02]
+11. band introduction [00:33]
+12. Maggie's Farm [07:56]
+Total time: [66:05]
+
+Disc 2: (encores) 
+01. Man In The Long Black Coat [07:10]
+02. Like A Rolling Stone [07:06]
+03. Blowin' In The Wind [06:54]
+04. Not Fade Away [05:15]
+Total time: [26:30]
+
+Band Members
+Bob Dylan - vocals, guitars, harp
+Charlie Sexton - guitars, vocals
+Larry Campbell - guitars, fiddle, pedal steel, vocals
+David Kemper - drums
+Tony Garnier - bass
+
+source: soomlos
+fob, center table
+core-sound cardioids > sony tcd-d8
+sony tcd-d8 > m-audio mt24/96 (16/44.1)
+sound forge 7.0 > audacity > cd wave > flac

@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-04-06-b.flacf 
+=================== 
+=================== 
+=================== 
+3f5917f46ea576150dab727f92c5bec2  Disc One\Disc One.ffp
+65a5026b4211239ed89d17197fdb56bc  Disc One\Dylan - 06.04.00_Disc01Track01.flac
+a62ecd459ebe245203e663f565f4b247  Disc One\Dylan - 06.04.00_Disc01Track02.flac
+82361b6aa8ea7a809a2682303d19875a  Disc One\Dylan - 06.04.00_Disc01Track03.flac
+1eb3eba71a2319ab8dc60c40001ab038  Disc One\Dylan - 06.04.00_Disc01Track04.flac
+3533ad703c1a5a4b9de6db0e10de9a8c  Disc One\Dylan - 06.04.00_Disc01Track05.flac
+4ec4771cb8986710120f3573d0baaf01  Disc One\Dylan - 06.04.00_Disc01Track06.flac
+4f8f5302a2feb8315b1ffd75238761f3  Disc One\Dylan - 06.04.00_Disc01Track07.flac
+e7b6e7af153ad0938ff47ace5fa16217  Disc One\Dylan - 06.04.00_Disc01Track08.flac
+4e217ff05d8c2104caa0ed83558e079c  Disc One\Dylan - 06.04.00_Disc01Track09.flac
+d9035fea2c0067ad3387f8e7c5d31bde  Disc One\Dylan - 06.04.00_Disc01Track10.flac
+24c38410fe3cc78a95fff7ecc9f6a4ff  Disc Two\Disc Two.ffp
+076006e63709001add069dc8f3a6b37a  Disc Two\Dylan - 06.04.00_Disc02Track01.flac
+fc23dc8d43fa654160670b457d743a13  Disc Two\Dylan - 06.04.00_Disc02Track02.flac
+21ae4db7c0a8e7b83c5b86ed5d1fb2bc  Disc Two\Dylan - 06.04.00_Disc02Track03.flac
+a1330326034f38b7c78b860c798e3285  Disc Two\Dylan - 06.04.00_Disc02Track04.flac
+974537b6724463586f6c5cc7d6a1dcdf  Disc Two\Dylan - 06.04.00_Disc02Track05.flac
+487088f4cfe05095d8e947845bbc2cf3  Disc Two\Dylan - 06.04.00_Disc02Track06.flac
+b2c105ec14e22fd25e2782bec921ebc6  Disc Two\Dylan - 06.04.00_Disc02Track07.flac
+b7f01f07f8e74ed0101410972539acdb  Disc Two\Dylan - 06.04.00_Disc02Track08.flac
+f53770e3b6e1b849fb1de96c61770d95  Dylan - Denver April 6th 2000.md5
+cf3dd5887072b47b5c154b02cf758b57  Dylan - Denver April 6th 2000.txt
+824b6462639dea0a3324705ddc65973a  Dylan - Denver April 6th 2000_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-04-06-b.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - 06.04.00_Disc01Track01.flac:84372eddd3f4df5d669b41a5bf8ac942
+Dylan - 06.04.00_Disc01Track02.flac:cd6a7ab9d50f2696b6616facb6d7a480
+Dylan - 06.04.00_Disc01Track03.flac:480b2107f6677b74c005c0dca70f032d
+Dylan - 06.04.00_Disc01Track04.flac:f4060fe14122f1e43a82259df5c95c8a
+Dylan - 06.04.00_Disc01Track05.flac:8527f5923cb5812a690acdc3927b0012
+Dylan - 06.04.00_Disc01Track06.flac:f64df1d49633398ed42fc249b273d7e8
+Dylan - 06.04.00_Disc01Track07.flac:15cdf3e465b500a87a0ccadce2394036
+Dylan - 06.04.00_Disc01Track08.flac:8c8d0df165684e2eec560757c9612220
+Dylan - 06.04.00_Disc01Track09.flac:0afdfaea724e514f5fa59bb88122a73f
+Dylan - 06.04.00_Disc01Track10.flac:d9b88c02bf5a3295a4313dc0b164bb43
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-04-06-b.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - 06.04.00_Disc02Track01.flac:d2882bfb01b84b5797925435318450f6
+Dylan - 06.04.00_Disc02Track02.flac:1dfa39f490187c010b7739bc007416f2
+Dylan - 06.04.00_Disc02Track03.flac:6cd6fc1eb4b9231a92ab34ecdfad48e1
+Dylan - 06.04.00_Disc02Track04.flac:7e2e62482e637b272925893d58863761
+Dylan - 06.04.00_Disc02Track05.flac:d4b9f692dda2aef0c119f88de2e9250e
+Dylan - 06.04.00_Disc02Track06.flac:ace67d4f35575902b6a1f3bd57b47031
+Dylan - 06.04.00_Disc02Track07.flac:2ff20b203f4d829ac35aea5e1df6af72
+Dylan - 06.04.00_Disc02Track08.flac:2b432fd03e591911387d41e5df6f5f04
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-04-06-b.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:19.31       45760556 B   ---   --   ---xx   flac  0.5396  Dylan - 06.04.00_Disc01Track01.flac
+     6:16.20       66373484 B   ---   --   ---xx   flac  0.5290  Dylan - 06.04.00_Disc01Track02.flac
+    10:13.41      108229676 B   ---   --   ---xx   flac  0.5273  Dylan - 06.04.00_Disc01Track03.flac
+     4:16.51       45278396 B   ---   --   ---xx   flac  0.5513  Dylan - 06.04.00_Disc01Track04.flac
+     8:06.34       85810412 B   ---   --   ---xx   flac  0.5763  Dylan - 06.04.00_Disc01Track05.flac
+     6:32.58       69285260 B   ---   --   ---xx   flac  0.4989  Dylan - 06.04.00_Disc01Track06.flac
+     3:09.23       33393740 B   ---   --   ---xx   flac  0.5568  Dylan - 06.04.00_Disc01Track07.flac
+     5:57.02       62979548 B   ---   --   ---xx   flac  0.5028  Dylan - 06.04.00_Disc01Track08.flac
+     5:54.60       62586764 B   ---   --   ---xx   flac  0.5551  Dylan - 06.04.00_Disc01Track09.flac
+     8:00.24       84728492 B   ---   --   ---xx   flac  0.5626  Dylan - 06.04.00_Disc01Track10.flac
+    62:46.44      664426328 B                            0.5396  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-04-06-b.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.24       45038492 B   ---   --   ---xx   flac  0.5194  Dylan - 06.04.00_Disc02Track01.flac
+     6:22.36       67469516 B   ---   --   ---xx   flac  0.5586  Dylan - 06.04.00_Disc02Track02.flac
+     6:46.25       71677244 B   ---   --   ---xx   flac  0.5047  Dylan - 06.04.00_Disc02Track03.flac
+     8:45.32       92685308 B   ---   --   ---xx   flac  0.5530  Dylan - 06.04.00_Disc02Track04.flac
+     8:36.72       91191788 B   ---   --   ---xx   flac  0.5119  Dylan - 06.04.00_Disc02Track05.flac
+     4:24.12       46597868 B   ---   --   ---xx   flac  0.5501  Dylan - 06.04.00_Disc02Track06.flac
+     6:18.29       66747452 B   ---   --   ---xx   flac  0.4776  Dylan - 06.04.00_Disc02Track07.flac
+     6:57.07       73575308 B   ---   --   ---xx   flac  0.5373  Dylan - 06.04.00_Disc02Track08.flac
+    52:26.12      554982976 B                            0.5266  (8 files)
+=================== 
+=================== 
+=================== 

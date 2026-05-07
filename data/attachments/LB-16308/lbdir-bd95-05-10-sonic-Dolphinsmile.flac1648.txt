@@ -1,0 +1,72 @@
+===================
+===================
+===================
+=== md5 for: bd95-05-10-sonic-Dolphinsmile.flac1648
+===================
+===================
+===================
+a5684fa321f06cf04623f06d4af2daa5 *01 Crash On The Levee.flac
+44c7535749c5f6c98212facfce3662a5 *02 I Want You.flac
+1180e7129ffe7900de4d97c2cef7c176 *03 All Along The Watchtower.flac
+35c55c5162a14515595d528347a84149 *04 Just Like A Woman.flac
+6d032650305a5c8826d084a0792115e5 *05 Silvio.flac
+b9e9088854fa2bfc02cd65975f13a0ac *06 Shooting Star.flac
+94e45122b8ed20c24eb27a0843bd2809 *07 Tamborine Man.flac
+f8834b5b4f77a76124f317f60d62140f *08 Boots Of Spanish Leather.flac
+fb1bfde6ff5f9ccdea1f8e513ccb0e26 *09 Dont Think Twice.flac
+6ca776fb3b90ea77bd69df2b0e3e4ae9 *10 Seeing The Real You At Last.flac
+0fbe4c75ca5c389d7fbede6e7d3a67a3 *11 Man In Long Black Coat.flac
+b8d74af92639041723e0845872c5cae8 *12 Highway 61.flac
+8e525f62fb4d6ef1d2f7cfd04ced3f66 *13 Like A Rolling Stone.flac
+ad1bdd20a4518c95dd4bb1c15177ccaa *14 It Aint Me Babe.flac
+44aa4629b346ab4da6c0cba400de6b34 *Bob Dylan Embarcadero San Diego CA  1995-05-10 Dolphinsmile Archive.ffp
+27d14d0e9bf9f906cc0057dc1621cdab *Bob Dylan Embarcadero San Diego CA  1995-05-10 Dolphinsmile Archive.md5
+44aa4629b346ab4da6c0cba400de6b34 *Bob Dylan Embarcadero San Diego CA  1995-05-10 Dolphinsmile Archive.txt
+2a25570f45ebccb89966bc813bb02aa0 *info.txt
+===================
+===================
+===================
+=== ffp for: bd95-05-10-sonic-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Crash On The Levee.flac:d8bf4772c63523af9506bd38a0403271
+02 I Want You.flac:1e5585fa72e97386e19ceb5c968d4b4a
+03 All Along The Watchtower.flac:0e6297ddb90b0e72cbd9c1baa4899e1a
+04 Just Like A Woman.flac:e24abfa0eb948694b9b023a95ea715cc
+05 Silvio.flac:a64b75e336b472b0a5a448cba88c4671
+06 Shooting Star.flac:1a37ac48319473ce05221b5e57230787
+07 Tamborine Man.flac:4a515bc0e2c7e9c92c2f357c5cd2e238
+08 Boots Of Spanish Leather.flac:2baeaba660913bfd9c4a892ac9808e7b
+09 Dont Think Twice.flac:5474a55df15d34408475f81fd5a726fa
+10 Seeing The Real You At Last.flac:e28cd2eb333de02113199b889c69f084
+11 Man In Long Black Coat.flac:06ab51816a48fc8c679860d16db20b6e
+12 Highway 61.flac:eadc5195ccbbf0ff890f713bef22c879
+13 Like A Rolling Stone.flac:3900622cfd07616e55f0fe45e0b2aecb
+14 It Aint Me Babe.flac:2a2337e6caba558c932be18834926a34
+===================
+===================
+===================
+=== shntool len for: bd95-05-10-sonic-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:24.297      62265092 B   cxx   --   ---xx   flac  0.5311  01 Crash On The Levee.flac
+     4:01.869      46438936 B   cxx   --   ---xx   flac  0.5159  02 I Want You.flac
+     6:18.971      72762552 B   cxx   --   ---xx   flac  0.5333  03 All Along The Watchtower.flac
+     6:31.863      75237712 B   cxx   --   ---xx   flac  0.4967  04 Just Like A Woman.flac
+     5:20.325      61502460 B   cxx   --   ---xx   flac  0.5326  05 Silvio.flac
+     5:29.184      63203280 B   cxx   --   ---xx   flac  0.4933  06 Shooting Star.flac
+     7:17.841      84065564 B   cxx   --   ---xx   flac  0.4904  07 Tamborine Man.flac
+     8:15.634      95161828 B   cxx   --   ---xx   flac  0.4955  08 Boots Of Spanish Leather.flac
+     6:40.874      76967788 B   cxx   --   ---xx   flac  0.5480  09 Dont Think Twice.flac
+     5:46.443      66517064 B   cxx   --   ---xx   flac  0.5346  10 Seeing The Real You At Last.flac
+     8:10.128      94104664 B   cxx   --   ---xx   flac  0.4589  11 Man In Long Black Coat.flac
+     8:37.202      99302912 B   cxx   --   ---xx   flac  0.5337  12 Highway 61.flac
+     8:32.542      98408144 B   cxx   --   ---xx   flac  0.5117  13 Like A Rolling Stone.flac
+     8:53.053     102346244 B   cxx   --   ---xx   flac  0.5248  14 It Aint Me Babe.flac
+    95:20.227    1098284240 B                            0.5131  (14 files)
+===================
+===================
+===================

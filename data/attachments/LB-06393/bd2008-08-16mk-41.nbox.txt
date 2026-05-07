@@ -1,0 +1,31 @@
+Bob Dylan
+2008-08-16 The Event Center
+Borgata Hotel Casino & Spa
+Atlantic City NJ USA
+
+source : schoeps mk-41 > actives > nbox+ >
+edirol r-09 > 24/44.1 wav > 
+dsp-quattro x (volume,tracking, & fades) > 
+MBIT+ dither > 16/44.1 wav > xACT 1.62 > flac
+
+Intro
+Watching The River Flow
+Mr Tamborine Man
+Things Have Changed
+Mississippi
+You Go Your Way (And I'll Go Mine)
+Hollis Brown
+Make You Feel My Love
+Tweedle Dee & Tweedle Dum
+Visions of Johanna
+Honest With Me
+Lenny Bruce
+I Don't Believe You
+Highway 61 Revisited
+Ain't Talkin'
+Thunder On The Mountain
+
+Like A Rolling Stone
+All Along The Watchtower
+
+

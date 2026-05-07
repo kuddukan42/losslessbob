@@ -1,0 +1,34 @@
+5aeec4f06995edd59ae812126451412d  D1\D1.md5
+d02e58fa43b6cab649e8bd55dad6721d  D1\memphis 1dec78 101.flac
+2bf0904359de605925c0b3be70a31525  D1\memphis 1dec78 102.flac
+6e2fad5c14fe1a4713653426a4ca94d4  D1\memphis 1dec78 103.flac
+4a641f657dd2d1edff9409db42389736  D1\memphis 1dec78 104.flac
+89e5b9489cb6a879ff665db9d93c38be  D1\memphis 1dec78 105.flac
+42187d0ce9b458165773fbf046e0831b  D1\memphis 1dec78 106.flac
+0f33c0bbcc50257de5dc9dfbdb944d30  D1\memphis 1dec78 107.flac
+d874f8fd116825c2db35ea653eb4e8a9  D1\memphis 1dec78 108.flac
+be955a499633a02f83adb7a1d0eed4a0  D1\memphis 1dec78 109.flac
+197cce45e2efd3bdbb538f17e7fa128b  D1\memphis 1dec78 110.flac
+5bad60e40bcf6c2e1acefe44ab8b8c08  D1\memphis 1dec78 111.flac
+3d2108001e77fde3f3cd17ebd9c263bf  D1\memphis 1dec78 112.flac
+64bc357b8d018c47f30a9f27e6442108  D1\memphis 1dec78 113.flac
+44465a4d4f7650a7002fa82bb1966849  D1\memphis 1dec78 114.flac
+f1ebf6a48f2404bcddabee2c404fa763  D1\memphis 1dec78 115.flac
+8d4e4ebfb5d9450d056867e2bccf7df9  D2\D2.md5
+723faa4628626bcac9c624f9f405ff48  D2\memphis 1dec78 201.flac
+d79ce0402bc2a6d37215c54581c6ae3f  D2\memphis 1dec78 202.flac
+0a5ada3882b446699d90d65af8d5cd96  D2\memphis 1dec78 203.flac
+65f4a1f014f26ae1e1f6437783bfc6d2  D2\memphis 1dec78 204.flac
+f00eeb7bc877161efe6d80112db0e655  D2\memphis 1dec78 205.flac
+3fcb414e79efe3b4c6d6460aa608b3ef  D2\memphis 1dec78 206.flac
+158a64abe03ef2c33e55e086121a75a2  D2\memphis 1dec78 207.flac
+bb5191158fa7d730872234e6de83e359  D2\memphis 1dec78 208.flac
+8e632de0fb26e04ad204db50608997b0  D2\memphis 1dec78 209.flac
+69fe16748d5437802ad4dcac533f74f4  D2\memphis 1dec78 210.flac
+54fab0c19efe7cb0a41b745d6878d214  D2\memphis 1dec78 211.flac
+a807f4a18f5314b9d2cc3a8e3701b410  D2\memphis 1dec78 212.flac
+46278098ea4cd62c7ed14501db94ec8b  D2\memphis 1dec78 213.flac
+0ab136014133469af674bff9a18fa9ad  D2\memphis 1dec78 214.flac
+04178f1ff102ecb39bf9d1477290c7d3  D2\memphis 1dec78 215.flac
+7b1f8e6d94ea717a20c40277c163d7ae  Info.txt
+db44399d5a346ad173a5ee60a3b19808  LK 1978 Leg 3 DVD 10.md5

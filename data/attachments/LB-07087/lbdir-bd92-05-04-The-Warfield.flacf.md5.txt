@@ -1,0 +1,42 @@
+4e00fbe467e79dd91fb39a8733cfd03a  Artwork\The Warfield Booklet 01.png
+4c68fd88259c9a5a0e8444a32f3931f8  Artwork\The Warfield Booklet 02.png
+52714ae60b0c1d9bd9cf5638ee6cb3ae  Artwork\The Warfield Disc 01.png
+b2ef26c762a42219369982f8f52283d1  Artwork\The Warfield Disc 02.png
+8727457c3337e645acf58999b07d1d9a  Artwork\The Warfield Tray.png
+0ed071d5d2dc7bb0c626ae86aeb22491  Disc 1of2\01 - Rainy Day Women #12 & 35.flac
+2b344e55b90b5b115d242b14d746a514  Disc 1of2\02 - Every Grain Of Sand.flac
+cd9b9d7086280f8a18a84f0000cada07  Disc 1of2\03 - Union Sundown.flac
+726ff0de6f1e644433da1572ed340885  Disc 1of2\04 - Just Like A Woman.flac
+2fa2ad020987b933a52ecf03e5af6356  Disc 1of2\05 - Tangled Up In Blue.flac
+b29ce484ab0d3aeb6dbeccf20b710071  Disc 1of2\06 - I'll Be Your Baby Tonight.flac
+0c5ab0a94a532a5ea7ed4ad1ca7143e3  Disc 1of2\07 - She Belongs To Me.flac
+ee2419500fdf9f5cfa69931dde3bb061  Disc 1of2\08 - Love Minus Zero-No Limit.flac
+eef9902549b05a79e009b6d93283ab9c  Disc 1of2\09 - Little Moses.flac
+162082a53f8f698d928b8aff56425b7c  Disc 1of2\10 - The Lonesome Death Of Hattie Carrol.flac
+bab7d23e9cf7bafce2607f65ef058579  Disc 1of2\11 - Desolation Row.flac
+5e78681b6c5bdb6ea4323a67e59762ab  Disc 1of2\12 - Cats In The Well.flac
+5563a1f709084a8160be836fa26c1f89  Disc 1of2\The Warfield.cue
+57d0e701d36ed8b9ad12bec85b89a94b  Disc 1of2\The Warfield.ffp
+75c02ff8a9dedea9943a4eeac11a929f  Disc 1of2\The Warfield.log
+a20d1ea187234ca35b0ab1975aebc2b9  Disc 1of2\The Warfield.m3u
+a2a897bcc312043c0378f1a75dbdeb82  Disc 1of2\The Warfield.md5
+042386fb70d2135ecd7fb0117d59143b  Disc 1of2\The Warfield.st5
+6065c641097c7395dae2a6cd1c83944a  Disc 2of2\01 - Idiot Wind.flac
+f3733d55b98acc860f6e2a19b9ca1537  Disc 2of2\02 - The Times They Are A-Changin'.flac
+743a21f59949dd168711c100e657962f  Disc 2of2\03 - Highway 61 Revisited.flac
+367e6a0b12358ccfbfbf01a8fd5f37b2  Disc 2of2\04 - Absolutley Sweet Marie.flac
+038482f5a4ec3a93b6be91526ecbedac  Disc 2of2\05 - Ballad Of A Thin Main.flac
+884e6a181f411b2ae4d0df4a37f61db6  Disc 2of2\06 - Blowing In The Wind.flac
+709399778cf6aa31c23c5a751e7dd4a0  Disc 2of2\07 - Rainy Day Women # 12 & 35.flac
+54b123990bef4f7166d3a35de635cd33  Disc 2of2\08 - Lenny Bruce.flac
+174d47a022f80b89852b843ec189534f  Disc 2of2\09 - Stuck Inside Of Mobile With The Memphis Blues Again.flac
+71a8f066d83f4421f2114c23d38f679f  Disc 2of2\10 - I Don't Believe You.flac
+b08e3e270ed845917e9824ad7b0307b3  Disc 2of2\11 - Shelter From The Storm.flac
+85085b10e77088f798bf7d8ca2532838  Disc 2of2\12 - Gates Of Eden.flac
+785eba4fcc47740205ba557ca0046be4  Disc 2of2\The Warfield.cue
+bb69a77b3087c92de109a641c1583feb  Disc 2of2\The Warfield.ffp
+149bd6780aaab70e0d12f6c293cc6ffd  Disc 2of2\The Warfield.log
+5018debe47873dc3aca866c9d06cf115  Disc 2of2\The Warfield.m3u
+284574cc7e65f86b200fc1536509f8ee  Disc 2of2\The Warfield.md5
+9d09eaffaf2b0ab8ba8bc8ca9b7f26ee  Disc 2of2\The Warfield.st5
+6b94b59e96b30678237f896594c6b97d  The Warfield info.txt

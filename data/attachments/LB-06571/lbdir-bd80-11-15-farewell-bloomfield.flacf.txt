@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-15-farewell-bloomfield.flacf 
+=================== 
+=================== 
+=================== 
+1bbdf2ceabe9306f9b2417844cf8bdf0  bd80-11-15-farewell-bloomfield-d1t01.flac
+e0d2b6e366b259a3cee6f12d05bd43a9  bd80-11-15-farewell-bloomfield-d1t02.flac
+4eef360297305e43e39b0604c067686e  bd80-11-15-farewell-bloomfield-d1t03.flac
+425e4a5974d1ac7823f3baa07aa71676  bd80-11-15-farewell-bloomfield-d1t04.flac
+c7b92474f56a9499775218a5e93f7fa0  bd80-11-15-farewell-bloomfield-d1t05.flac
+8d668e5e21c7d61ce6a011328068f549  bd80-11-15-farewell-bloomfield-d1t06.flac
+c0d3c31823b89556b9a6d20f6b3a0ebb  bd80-11-15-farewell-bloomfield-d1t07.flac
+95025db792ce4d4b5876121c9deb4433  bd80-11-15-farewell-bloomfield-d1t08.flac
+4b01f32af2b8ee47a004352aa7768d33  bd80-11-15-farewell-bloomfield-d1t09.flac
+a1b80c9c9d487c5115afacd63f1f313c  bd80-11-15-farewell-bloomfield-d1t10.flac
+f9905686058719c4fae12c2be0212804  bd80-11-15-farewell-bloomfield-d2t01.flac
+80ef94a5b17c492427901bcac4866506  bd80-11-15-farewell-bloomfield-d2t02.flac
+5c9bafeec942e881798076967b2aaf5d  bd80-11-15-farewell-bloomfield-d2t03.flac
+2b654e58f6fdaec2345a5a157d1d4fa8  bd80-11-15-farewell-bloomfield-d2t04.flac
+c7a713ff0cae91b7962a7c0be2265a11  bd80-11-15-farewell-bloomfield-d2t05.flac
+190768793eda146eb6a016bcd68c9f9b  bd80-11-15-farewell-bloomfield-d2t06.flac
+8017ada91d0edbfb96172f7973d4f271  bd80-11-15-farewell-bloomfield-d2t07.flac
+730806342330abb98d3f8259ec1ec9e0  bd80-11-15-farewell-bloomfield-d2t08.flac
+f7497b948362a49bfc4aac2dd1b7422d  bd80-11-15-farewell-bloomfield-d2t09.flac
+58626bd463b377c1a818965fe7c5f272  bd80-11-15-farewell-bloomfield.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-15-farewell-bloomfield.flacf 
+=================== 
+=================== 
+=================== 
+bd80-11-15-farewell-bloomfield-d1t01.flac:3e3d34cdd363cbf4fb0d2a602caac436
+bd80-11-15-farewell-bloomfield-d1t02.flac:ac4ee9948184d3dc0768aa8068c4aa3d
+bd80-11-15-farewell-bloomfield-d1t03.flac:183cb1acb6a0c06c2989d4182866508d
+bd80-11-15-farewell-bloomfield-d1t04.flac:a73cbe78ceae343ea56020cf39bf886d
+bd80-11-15-farewell-bloomfield-d1t05.flac:457a6930a076f08bb92822f557a775b5
+bd80-11-15-farewell-bloomfield-d1t06.flac:94c4832a2be61428c0dae0924b6877b8
+bd80-11-15-farewell-bloomfield-d1t07.flac:9a9e0454f3ddef0989389c1bdc867791
+bd80-11-15-farewell-bloomfield-d1t08.flac:35fef9721e6d2d6bb4d9fa2af981c30e
+bd80-11-15-farewell-bloomfield-d1t09.flac:a04a92ac0d6c37e23f199fa765677504
+bd80-11-15-farewell-bloomfield-d1t10.flac:e28e0948442e9c4cb5863a5702fa06e5
+bd80-11-15-farewell-bloomfield-d2t01.flac:c49588496918f05a74933ca3ec530077
+bd80-11-15-farewell-bloomfield-d2t02.flac:dfbe69f9e1541c20bbc1de60a785ed7c
+bd80-11-15-farewell-bloomfield-d2t03.flac:f2d422f617c386c6883d900b83383313
+bd80-11-15-farewell-bloomfield-d2t04.flac:96cd6eb28b9306c1590dca075a9a982c
+bd80-11-15-farewell-bloomfield-d2t05.flac:892455de9f5e02cfeed83c81cd31a542
+bd80-11-15-farewell-bloomfield-d2t06.flac:6e73fdd3a1bdda14dcb7780c87bac1f5
+bd80-11-15-farewell-bloomfield-d2t07.flac:2c9cd351d2c55deebf0ab5afa6bd83e2
+bd80-11-15-farewell-bloomfield-d2t08.flac:cd0abd02559cab13b9ca8da46b95af2f
+bd80-11-15-farewell-bloomfield-d2t09.flac:9dad27a5e2ad513729a523752e0786d9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-15-farewell-bloomfield.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:34.42       59016428 B   ---   --   ---xx   flac  0.5726  bd80-11-15-farewell-bloomfield-d1t01.flac
+     6:28.03       68450300 B   ---   --   ---xx   flac  0.5400  bd80-11-15-farewell-bloomfield-d1t02.flac
+     5:58.45       63257084 B   ---   --   ---xx   flac  0.5802  bd80-11-15-farewell-bloomfield-d1t03.flac
+     5:53.42       62368028 B   ---   --   ---xx   flac  0.5491  bd80-11-15-farewell-bloomfield-d1t04.flac
+     4:05.60       43359164 B   ---   --   ---xx   flac  0.5480  bd80-11-15-farewell-bloomfield-d1t05.flac
+     3:03.53       32405900 B   ---   --   ---xx   flac  0.5700  bd80-11-15-farewell-bloomfield-d1t06.flac
+     4:59.67       52901228 B   ---   --   ---xx   flac  0.5155  bd80-11-15-farewell-bloomfield-d1t07.flac
+     5:37.43       59547980 B   ---   --   ---xx   flac  0.5647  bd80-11-15-farewell-bloomfield-d1t08.flac
+     3:17.12       34779068 B   ---   --   ---xx   flac  0.4897  bd80-11-15-farewell-bloomfield-d1t09.flac
+     4:22.33       46294460 B   ---   --   ---xx   flac  0.5398  bd80-11-15-farewell-bloomfield-d1t10.flac
+     4:13.05       44641004 B   ---   --   ---xx   flac  0.4976  bd80-11-15-farewell-bloomfield-d2t01.flac
+     6:04.60       64350764 B   ---   --   ---xx   flac  0.5299  bd80-11-15-farewell-bloomfield-d2t02.flac
+     3:57.72       41976188 B   ---   --   ---xx   flac  0.5382  bd80-11-15-farewell-bloomfield-d2t03.flac
+     3:57.03       41813900 B   ---   --   ---xx   flac  0.5170  bd80-11-15-farewell-bloomfield-d2t04.flac
+     6:37.70       70195484 B   ---   --   ---xx   flac  0.5538  bd80-11-15-farewell-bloomfield-d2t05.flac
+     4:25.35       46828364 B   ---   --   ---xx   flac  0.5566  bd80-11-15-farewell-bloomfield-d2t06.flac
+     6:25.25       67972844 B   ---   --   ---xx   flac  0.5242  bd80-11-15-farewell-bloomfield-d2t07.flac
+     4:18.62       45657068 B   ---   --   ---xx   flac  0.5505  bd80-11-15-farewell-bloomfield-d2t08.flac
+     3:02.68       32264780 B   ---   --   ---xx   flac  0.5103  bd80-11-15-farewell-bloomfield-d2t09.flac
+    92:24.50      978080036 B                            0.5414  (19 files)
+=================== 
+=================== 
+=================== 

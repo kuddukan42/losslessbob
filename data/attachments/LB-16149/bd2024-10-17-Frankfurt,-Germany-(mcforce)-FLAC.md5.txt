@@ -1,0 +1,17 @@
+3c0eb79487b5c9f2763417c5a6568ce0 *Bob Dylan-2024-10-17-mcforce-t01.flac
+95df9a4f4e771523eb8e16fc5006f92d *Bob Dylan-2024-10-17-mcforce-t02.flac
+1f616be2e3f96c3163f305debe3d3829 *Bob Dylan-2024-10-17-mcforce-t03.flac
+bec43a2fe3a15a4d01f4020114f17ae3 *Bob Dylan-2024-10-17-mcforce-t04.flac
+af153ba0d648690cd022a9e6f8e0aa21 *Bob Dylan-2024-10-17-mcforce-t05.flac
+40dd8f64cb7ea0d0354d224734b719d6 *Bob Dylan-2024-10-17-mcforce-t06.flac
+a2cb79509beea78f5a8500248f8756d9 *Bob Dylan-2024-10-17-mcforce-t07.flac
+301f5e18fb5f358d60ba50b84f10c7e9 *Bob Dylan-2024-10-17-mcforce-t08.flac
+8b10c758e9e864a202db18d5af868bd2 *Bob Dylan-2024-10-17-mcforce-t09.flac
+70237eb93ee439400c03bbfb7ecafe92 *Bob Dylan-2024-10-17-mcforce-t10.flac
+19463e79a4d07e57b531708ce6fd7aa2 *Bob Dylan-2024-10-17-mcforce-t11.flac
+94c520c64c8c8841ba3c3280b5f1c371 *Bob Dylan-2024-10-17-mcforce-t12.flac
+00976b9769e518342bfcfeb2b9618652 *Bob Dylan-2024-10-17-mcforce-t13.flac
+f1d2375107ffcd05560849205870bafd *Bob Dylan-2024-10-17-mcforce-t14.flac
+fee1dc4ca130966f3f02ed048ab48c28 *Bob Dylan-2024-10-17-mcforce-t15.flac
+547f185146cc74ad51a32492864be6cf *Bob Dylan-2024-10-17-mcforce-t16.flac
+a3251925ecfd9983443ed078af58068e *Bob Dylan-2024-10-17-mcforce-t17.flac

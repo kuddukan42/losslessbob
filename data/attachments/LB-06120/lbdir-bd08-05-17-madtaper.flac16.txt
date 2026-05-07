@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-05-17-madtaper.flac16 
+=================== 
+=================== 
+=================== 
+0051e075630d8620b173ecfb65f07844  bd2008-05-17-lewiston.madtaper.d1t10.sa_fa.JPG
+92926b35ecb6217605ba45bd85e62575  bd2008-05-17-lewiston.madtaper.flac16.md5
+9300c54e16b09c2988b477eead0a85f2  bd2008-05-17-lewiston.madtaper.txt
+fb1d3f4869d3cc195b1fe9ef8a60a952  d1\bobdylan2008-05-17d1t01.flac
+945b5bb41b260c929ee5970d96b4e062  d1\bobdylan2008-05-17d1t02.flac
+6fffe197d1ad5fc0b82b04a41975a1b9  d1\bobdylan2008-05-17d1t03.flac
+7ebff61551030c45e605ed06e2c6b90d  d1\bobdylan2008-05-17d1t04.flac
+52817e432c37d0eff1caaa579b5ad7aa  d1\bobdylan2008-05-17d1t05.flac
+dfa5f6e3a29fb81d0d7ef39e599909dd  d1\bobdylan2008-05-17d1t06.flac
+fa1ce5b7240fd3e18c2d021868565846  d1\bobdylan2008-05-17d1t07.flac
+85f9ce0fde439fca9a11a60dedb703d6  d1\bobdylan2008-05-17d1t08.flac
+5ea5b379f0aa099f1edf62d785af98f0  d1\bobdylan2008-05-17d1t09.flac
+c7f96f3841c990540c7d9654a8ba3291  d1\bobdylan2008-05-17d1t10.flac
+d781581ade822a08e3f04563fe399e76  d1\bobdylan2008-05-17d1t11.flac
+5dd886769bafbc2b6f714f6a0b8bbf89  d1\d1.ffp.txt
+b0139bed585c09029c4a01820626a209  d1\d1.flac.md5
+c7dfe8c46d7b0d76ff97406e3edff8f6  d1\d1.wav.md5
+07256f75ff031393a8629ad7edabb03b  d2\bobdylan2008-05-17d2t01.flac
+a9b2ba5021db201be5656452d61920bb  d2\bobdylan2008-05-17d2t02.flac
+7c8a7ffc53fbfb118e7a42d16ce1b479  d2\bobdylan2008-05-17d2t03.flac
+777df155eb9e5ccfc09834c972262d82  d2\bobdylan2008-05-17d2t04.flac
+c48f3067dd1594558368b6e5d49fcb3f  d2\bobdylan2008-05-17d2t05.flac
+efa1a0a9af92d7a4b88d6e9b974da604  d2\bobdylan2008-05-17d2t06.flac
+d23c8d8fe6d26ac5914b9900b3f5faa8  d2\d2.ffp.txt
+ddbddfc73886e4e176ee38f803b22e69  d2\d2.flac.md5
+9bb2a80266eb0b525c95adf86dc56d39  d2\d2.wav.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-05-17-madtaper.flac16\d1 
+=================== 
+=================== 
+=================== 
+bobdylan2008-05-17d1t01.flac:9076d1d05829554ed8f3e08285e36d7b
+bobdylan2008-05-17d1t02.flac:17c7ae2f74c4045603727a635731ecde
+bobdylan2008-05-17d1t03.flac:3bfd957253a27367a44805124546779c
+bobdylan2008-05-17d1t04.flac:24f248eca0e6031471405d3ab687ef36
+bobdylan2008-05-17d1t05.flac:095e71c91340fd0806bb8c732934e7f0
+bobdylan2008-05-17d1t06.flac:4f075295a15cf3b5c9ddab281c857109
+bobdylan2008-05-17d1t07.flac:88781262a3518fb32c53bc364884ca1c
+bobdylan2008-05-17d1t08.flac:0960420ed956261bcb5aeb64867e4537
+bobdylan2008-05-17d1t09.flac:a14f16db6213c64390d84aafef29efe9
+bobdylan2008-05-17d1t10.flac:e230081ee34a983ecb2ac397805c27b7
+bobdylan2008-05-17d1t11.flac:2f1079d5aac53a7cb00367ea9f3243e5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-05-17-madtaper.flac16\d2 
+=================== 
+=================== 
+=================== 
+bobdylan2008-05-17d2t01.flac:706be02bb257761e29528fc67829bb66
+bobdylan2008-05-17d2t02.flac:d535ad750d7b180c41c1a44db1b8136d
+bobdylan2008-05-17d2t03.flac:a8ece8d1fda96d9a5dca2ce5f49b6ff9
+bobdylan2008-05-17d2t04.flac:96aa3d51f1e2176b0c3a5d6a822f598f
+bobdylan2008-05-17d2t05.flac:bd150a2aa498b8af748fe8dd3d130bec
+bobdylan2008-05-17d2t06.flac:f24a08e2f82d2e17c48b7bf2b49ef820
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-05-17-madtaper.flac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.28       53162300 B   ---   --   ---xx   flac  0.5918  bobdylan2008-05-17d1t01.flac
+     5:11.19       54905132 B   ---   --   ---xx   flac  0.5790  bobdylan2008-05-17d1t02.flac
+     6:47.37       71881868 B   ---   --   ---xx   flac  0.6152  bobdylan2008-05-17d1t03.flac
+     6:47.45       71900684 B   ---   --   ---xx   flac  0.5181  bobdylan2008-05-17d1t04.flac
+     6:32.37       69235868 B   ---   --   ---xx   flac  0.6115  bobdylan2008-05-17d1t05.flac
+     6:41.26       70797596 B   ---   --   ---xx   flac  0.4931  bobdylan2008-05-17d1t06.flac
+     2:59.41       31672076 B   ---   --   ---xx   flac  0.5633  bobdylan2008-05-17d1t07.flac
+     6:20.65       67184924 B   ---   --   ---xx   flac  0.6091  bobdylan2008-05-17d1t08.flac
+     6:38.16       70244876 B   ---   --   ---xx   flac  0.6390  bobdylan2008-05-17d1t09.flac
+     7:18.43       77364380 B   ---   --   ---xx   flac  0.5296  bobdylan2008-05-17d1t10.flac
+     7:01.01       74266796 B   ---   --   ---xx   flac  0.5961  bobdylan2008-05-17d1t11.flac
+    67:19.58      712616500 B                            0.5766  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-05-17-madtaper.flac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:23.44       78248732 B   ---   --   ---xx   flac  0.4596  bobdylan2008-05-17d2t01.flac
+     5:51.14       61949372 B   ---   --   ---xx   flac  0.5248  bobdylan2008-05-17d2t02.flac
+     6:10.64       65418572 B   ---   --   ---xx   flac  0.5928  bobdylan2008-05-17d2t03.flac
+    11:29.69      121701932 B   ---   --   ---xx   flac  0.5141  bobdylan2008-05-17d2t04.flac
+     7:42.37       81583868 B   ---   --   ---xx   flac  0.5988  bobdylan2008-05-17d2t05.flac
+     7:08.38       75588620 B   ---   --   ---xx   flac  0.5545  bobdylan2008-05-17d2t06.flac
+    45:46.41      484491096 B                            0.5379  (6 files)
+=================== 
+=================== 
+=================== 

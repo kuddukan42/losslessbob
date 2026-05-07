@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-11-15-jtt.flacf 
+=================== 
+=================== 
+=================== 
+056604cee711224ab8bee8043fe27b8e  Bob Dylan - Wilkes Barre November 15th 1991.md5
+40135a5969500182871c913f0a1ff8d7  Bob Dylan - Wilkes Barre November 15th 1991.txt
+ea617b0c67cc54e7411ed1874a5a23b1  Bob Dylan - Wilkes Barre November 15th 1991_Info.txt
+b406024936ea41f87e04aa82a397ef17  Disc One\Disc One.ffp
+020ce27ed87e9ddcfc97cd18ec21f9e5  Disc One\Disc01Track01 Dylan 15.11.91.flac
+b5099bf6bec6a152bef98379d4a7a6fa  Disc One\Disc01Track02 Dylan 15.11.91.flac
+efa97b2b7c526ac776332dfac9d372c0  Disc One\Disc01Track03 Dylan 15.11.91.flac
+92cb58733f66dae65ab396349389ca96  Disc One\Disc01Track04 Dylan 15.11.91.flac
+0789fd0848869aec5c62dc23a89eb07a  Disc One\Disc01Track05 Dylan 15.11.91.flac
+7159c6895a7ec2ee6dbb249087d3e35c  Disc One\Disc01Track06 Dylan 15.11.91.flac
+439c10908e9f64413a827ae78f8e67e6  Disc One\Disc01Track07 Dylan 15.11.91.flac
+d6633bfb07205654e4a29731c994cffc  Disc One\Disc01Track08 Dylan 15.11.91.flac
+82dbd43e49a18fe76062ea3a80954eeb  Disc One\Disc01Track09 Dylan 15.11.91.flac
+9e5a4c82cfffb6612fb6f116dd34b957  Disc One\Disc01Track10 Dylan 15.11.91.flac
+bc7a0f7538c39897f5e98e00d55864d0  Disc Two\Disc Two.ffp
+110c562c591077f5ec9e09a47c248ab3  Disc Two\Disc02Track01 Dylan 15.11.91.flac
+038990030cabc0137db7c2a612c83d8e  Disc Two\Disc02Track02 Dylan 15.11.91.flac
+0d174ebb1b45bcefd13ece09191e9f93  Disc Two\Disc02Track03 Dylan 15.11.91.flac
+81b3c1a1efb5458744f6e0f90be63d33  Disc Two\Disc02Track04 Dylan 15.11.91.flac
+5437f6846618ce3ac5e9e74989d2cb92  Disc Two\Disc02Track05 Dylan 15.11.91.flac
+090b86955fb272025213baede740095d  Disc Two\Disc02Track06 Dylan 15.11.91.flac
+c801631439592baed65044075bafdab2  Disc Two\Disc02Track07 Dylan 15.11.91.flac
+fee7daf1e3f57c84cc43fe33676b1445  Disc Two\Disc02Track08 Dylan 15.11.91.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-11-15-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Dylan 15.11.91.flac:3566c4b7cfdbdca799627a6ffb072269
+Disc01Track02 Dylan 15.11.91.flac:952713e6957d6f35e8747d170bac83d5
+Disc01Track03 Dylan 15.11.91.flac:a5f99c54c619eea5a63f7a6f5279890a
+Disc01Track04 Dylan 15.11.91.flac:af0a8544e2f45eca361bf15eae7a9128
+Disc01Track05 Dylan 15.11.91.flac:37ca537e322ef4e39c826d859dcfac5a
+Disc01Track06 Dylan 15.11.91.flac:845d939c993b4ea81cfd2253876722df
+Disc01Track07 Dylan 15.11.91.flac:d8026b42b3135aedecf2c338819e356b
+Disc01Track08 Dylan 15.11.91.flac:1345b49ec0a44e55e46f99b922ac5791
+Disc01Track09 Dylan 15.11.91.flac:cb20528c72071d16a11a335f78712b57
+Disc01Track10 Dylan 15.11.91.flac:89dcf9adb8a07be3382374b1eaeab1c2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-11-15-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Dylan 15.11.91.flac:1928fc7a54507b3fb47be1350e6292c6
+Disc02Track02 Dylan 15.11.91.flac:dded8ddcac6e24df829f8ab1ffeeab6e
+Disc02Track03 Dylan 15.11.91.flac:36650ec8c783aeedc7c414940dbdce4e
+Disc02Track04 Dylan 15.11.91.flac:87f19238debdfaf7d5510cac733239b6
+Disc02Track05 Dylan 15.11.91.flac:474162d4bb8ff1cd8adbec4f60c99004
+Disc02Track06 Dylan 15.11.91.flac:843529b01f4bf6f3a5f3b2ca83a8a554
+Disc02Track07 Dylan 15.11.91.flac:68a69437d2a20a9db205a1a9e27d1a52
+Disc02Track08 Dylan 15.11.91.flac:9c2404d414c54aedadee0c033d64edfd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-11-15-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:07.46       64847036 B   ---   --   ---xx   flac  0.5777  Disc01Track01 Dylan 15.11.91.flac
+     6:19.52       66977948 B   ---   --   ---xx   flac  0.5814  Disc01Track02 Dylan 15.11.91.flac
+     4:20.39       45955772 B   ---   --   ---xx   flac  0.5867  Disc01Track03 Dylan 15.11.91.flac
+     7:30.28       79445900 B   ---   --   ---xx   flac  0.5797  Disc01Track04 Dylan 15.11.91.flac
+     5:15.04       55575452 B   ---   --   ---xx   flac  0.5856  Disc01Track05 Dylan 15.11.91.flac
+     5:41.18       60194780 B   ---   --   ---xx   flac  0.5765  Disc01Track06 Dylan 15.11.91.flac
+     4:36.73       48858140 B   ---   --   ---xx   flac  0.5638  Disc01Track07 Dylan 15.11.91.flac
+     4:01.64       42662972 B   ---   --   ---xx   flac  0.5728  Disc01Track08 Dylan 15.11.91.flac
+     4:21.00       46040444 B   ---   --   ---xx   flac  0.5123  Disc01Track09 Dylan 15.11.91.flac
+     7:55.41       83886476 B   ---   --   ---xx   flac  0.5312  Disc01Track10 Dylan 15.11.91.flac
+    56:09.65      594444920 B                            0.5666  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-11-15-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.23       52444940 B   ---   --   ---xx   flac  0.5242  Disc02Track01 Dylan 15.11.91.flac
+     7:30.74       79554092 B   ---   --   ---xx   flac  0.5294  Disc02Track02 Dylan 15.11.91.flac
+     4:49.17       51019628 B   ---   --   ---xx   flac  0.5672  Disc02Track03 Dylan 15.11.91.flac
+     4:23.51       46513196 B   ---   --   ---xx   flac  0.5512  Disc02Track04 Dylan 15.11.91.flac
+     3:51.21       40797836 B   ---   --   ---xx   flac  0.5751  Disc02Track05 Dylan 15.11.91.flac
+     6:36.10       69877964 B   ---   --   ---xx   flac  0.5859  Disc02Track06 Dylan 15.11.91.flac
+     7:45.73       82197740 B   ---   --   ---xx   flac  0.5363  Disc02Track07 Dylan 15.11.91.flac
+     5:26.30       57577004 B   ---   --   ---xx   flac  0.5724  Disc02Track08 Dylan 15.11.91.flac
+    45:20.74      479982400 B                            0.5534  (8 files)
+=================== 
+=================== 
+=================== 

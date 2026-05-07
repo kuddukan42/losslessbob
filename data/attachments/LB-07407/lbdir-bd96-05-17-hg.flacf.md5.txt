@@ -1,0 +1,25 @@
+80796b64cdb8ddf551ce3906803afb89  Artwork and info\1996-05-17 Nautica Stage, Cleveland, Ohio, USA [Holy Grail].txt
+e96300bb8f1414e7fda2ae5ded3beec0  Artwork and info\HG_96_CLEVELAND_BACK.JPG
+82b53f110bc2496e7ca258fc9527e0a9  Artwork and info\HG_96_CLEVELAND_FRONT.JPG
+0a43ff3a91034890220c05ba89d20a11  CD1\00 Announcement.flac
+0eaef5c23e5d4b1a70b80193aba2674b  CD1\01 Drifter's escape.flac
+f1b3d728f09d4d80d1fac663edd9d30b  CD1\02 Senor (Tales of Yankee Power).flac
+a87a8516b250c5476241e3a3f670cfa9  CD1\03 All along the watchtower.flac
+5953dda20f80e8850dca124479f46b39  CD1\04 I don't believe you (she acts like we never have met).flac
+cffb7b4954332644d2c202bcdf851538  CD1\05 Watching the river flow.flac
+bcd733f793db3848a4d24786f2571d97  CD1\06 Silvio.flac
+67d64c6dcadcf194b53b0341deb6cfd1  CD1\07 Tangled up in blue.flac
+af3aa4ee38d3ab764ee289d32aa12921  CD1\08 To Ramona.flac
+0332f0138ac1b87f6d7eac5093508498  CD1\09 Friend of the Devil.flac
+6b8be380eb02a4fa768d5d6103bdbdb8  CD1\FLAC CD1.md5
+a73460a655975ec8d8f070a4f1694a49  CD2\10 Seeing the real you at last.flac
+b4ec7aab7fd6ba9af9fd97d44cc9a3ee  CD2\11 She belongs to me.flac
+8c18a8339cb919a41fadcbd17be422fd  CD2\12 Maggie's farm.flac
+56af91717dea31988f5c5cbdb29c0836  CD2\13 (audience wait).flac
+9fe750347ceb1bce8149c956baedc564  CD2\13 Alabama getaway.flac
+cf3a526d0cb0b8b3bcd6a2f25a676bed  CD2\14 (audience wait).flac
+38030023f0377652ede1dd1e8f340879  CD2\14 My back pages.flac
+e1bc6a91f1487859fbe0c52e66c1ef37  CD2\15 (audience wait).flac
+ee5a5c32c024787d1e54e4a8beef724d  CD2\15 Rainy day women # 12 & 35.flac
+80dc845cadad619063a035966abf7a6a  CD2\FLAC CD2.md5
+89a6fb3f1388fd19bf251d3d89ed5d6b  DigiFlawFinder-bd96-05-17-hg.flacf.wavf.html

@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-23-b.flacf 
+=================== 
+=================== 
+=================== 
+c52d9f34621b49ff4b8651112b377a7a  Bob Dylan 2001-10-23 d1\Track01.flac
+3ff921db630a59c1096d4b3542b49643  Bob Dylan 2001-10-23 d1\Track02.flac
+14e41dbe059c3284e57901a8d7cb0207  Bob Dylan 2001-10-23 d1\Track03.flac
+c7c80c3f1d0688eea758fdac99f4d4ce  Bob Dylan 2001-10-23 d1\Track04.flac
+baaa8cdb7470bf906f56aa87795ceec6  Bob Dylan 2001-10-23 d1\Track05.flac
+8c780e4bc2f827fb812bd017fea0d049  Bob Dylan 2001-10-23 d1\Track06.flac
+c69ad07ba36880cc6671a5a5914179ca  Bob Dylan 2001-10-23 d1\Track07.flac
+ff6d3131795957e8eaf005dabf175ba2  Bob Dylan 2001-10-23 d1\Track08.flac
+71cce0e2f0087c585ba89f340d92049b  Bob Dylan 2001-10-23 d1\Track09.flac
+9c950aa9c9f08ff30e9918ce395b5205  Bob Dylan 2001-10-23 d1\Track10.flac
+9c24ec5d64e3fae64b1f8e45a569098a  Bob Dylan 2001-10-23 d1\Track11.flac
+0723da4673c9b9cfe2205c590846c750  Bob Dylan 2001-10-23 d2\Track01.flac
+f6caea4667d49a4765177ae7b58edad9  Bob Dylan 2001-10-23 d2\Track02.flac
+c9caf61487994458b7b99fb046b4a1e5  Bob Dylan 2001-10-23 d2\Track03.flac
+5f0f68adf6eb1fc01cb78d6f3852deb2  Bob Dylan 2001-10-23 d2\Track04.flac
+a612406b2775467e2eb1783e0fe3bdc2  Bob Dylan 2001-10-23 d2\Track05.flac
+99618b25fb77a51d777ebffadc8188b8  Bob Dylan 2001-10-23 d2\Track06.flac
+66acf72df593479e6e17bbfe3d4a681a  Bob Dylan 2001-10-23 d2\Track07.flac
+b3375e56d9552940f1d610279b529e54  Bob Dylan 2001-10-23 d2\Track08.flac
+5ad4e8d2952f6c05855ff1eec4afa188  Bob Dylan 2001-10-23 d2\Track09.flac
+c8365403e0d400c23e16b86cb1966053  Bob Dylan 2001-10-23 Orpheum Theatre, Souix City, Iowa.md5
+dea98bea92e9aed17795a80b5b3dfa14  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-23-b.flacf\Bob Dylan 2001-10-23 d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:0b05cda3d2e4d93dd41ef63e6f4b17a1
+Track02.flac:d06e40d214af7e281686c39fe87107e8
+Track03.flac:8a7aa42b90251c268b81d9bf8867d0c1
+Track04.flac:aa9b63bf22e97b6a2f89d119ebbfb55e
+Track05.flac:71e26768c429d0fe9219dc54bd8fd754
+Track06.flac:a7e1989cbfb960a77c8aa58b81a45d54
+Track07.flac:557dee9c401b03deefee03898518679a
+Track08.flac:97656760146556474646cb35b51046c0
+Track09.flac:7e2e46786d48508a97427ccdafe83646
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-23-b.flacf\Bob Dylan 2001-10-23 d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:b8ae6be423942dfe8025ce2d5baea33b
+Track02.flac:c35bd7fa0647e40955598a18fd4fac2d
+Track03.flac:31893b1ab1a409fcc1e4248938c90ce9
+Track04.flac:305313a826dbdc8f2eaeb8a4ee02948c
+Track05.flac:e3b8b92692a472084952b8a0e419b597
+Track06.flac:b869d4c7a324b91dc1759366c1511451
+Track07.flac:464b781466ee2031a427471df597d35e
+Track08.flac:dab421505734ca314336eb20ebda428b
+Track09.flac:9a88289e548b1c0800970961997ca134
+Track10.flac:5f381a274d13ff001392bbf53a326550
+Track11.flac:4c8aa77a7ade200970b6de4bdca2874e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-23-b.flacf\Bob Dylan 2001-10-23 d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.07       46586108 B   ---   --   ---xx   flac  0.6024  Track01.flac
+     7:30.03       79387100 B   ---   --   ---xx   flac  0.4073  Track02.flac
+     6:18.60       66820364 B   ---   --   ---xx   flac  0.5716  Track03.flac
+     5:57.56       63106556 B   ---   --   ---xx   flac  0.6222  Track04.flac
+     6:05.31       64458956 B   ---   --   ---xx   flac  0.5539  Track05.flac
+     7:23.27       78208748 B   ---   --   ---xx   flac  0.6122  Track06.flac
+     4:10.37       44187068 B   ---   --   ---xx   flac  0.5154  Track07.flac
+     6:40.25       70618844 B   ---   --   ---xx   flac  0.6438  Track08.flac
+     5:33.12       58769468 B   ---   --   ---xx   flac  0.5528  Track09.flac
+    54:03.33      572143212 B                            0.5631  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-23-b.flacf\Bob Dylan 2001-10-23 d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:56.28       31112300 B   ---   --   ---xx   flac  0.6392  Track01.flac
+     5:31.13       58419020 B   ---   --   ---xx   flac  0.5545  Track02.flac
+     8:38.50       91492844 B   ---   --   ---xx   flac  0.5811  Track03.flac
+     3:12.71       34035836 B   ---   --   ---xx   flac  0.5533  Track04.flac
+     5:32.02       58569548 B   ---   --   ---xx   flac  0.6279  Track05.flac
+     6:37.38       70120220 B   ---   --   ---xx   flac  0.5503  Track06.flac
+     3:49.20       40442684 B   ---   --   ---xx   flac  0.6168  Track07.flac
+     5:46.27       61097948 B   ---   --   ---xx   flac  0.6083  Track08.flac
+     7:40.68       81303980 B   ---   --   ---xx   flac  0.5545  Track09.flac
+     6:28.13       68473820 B   ---   --   ---xx   flac  0.5207  Track10.flac
+     4:49.27       51043148 B   ---   --   ---xx   flac  0.5762  Track11.flac
+    61:02.57      646111348 B                            0.5756  (11 files)
+=================== 
+=================== 
+=================== 

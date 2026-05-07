@@ -1,0 +1,21 @@
+d4cce5f05238e9087fe2609094d76a14  Bob Dylan - Waltham Massachusetts - April 12, 1997.ffp
+546ca9629cc2a0f72dabbfb510333975  D-1 extraction log.LOG
+2b7b52c06b6faa922acbde14663b1a3f  D-2 extraction log.LOG
+361643678e8d13aa3ed6149e9eff0d31  info file.txt
+4074a3de95d31dae3c0effde4e500013  Track 101.flac
+dec17c633c45b17d657587d70f801304  Track 102.flac
+a8aee5a286e74eba8d7d1c44b6d0f3ab  Track 103.flac
+e1a2f7f3ebab6a4839dadb0bd07fae57  Track 104.flac
+d59a0b7de8d2b8b93b77d857764e456b  Track 105.flac
+09010b8085686f2082f045f7020a00bb  Track 106.flac
+964ac6f4a368f07840bae56fe2cddf6b  Track 107.flac
+57cec40c9e5850681832466cc63e80fc  Track 108.flac
+e2f01b6a85a0ec118e422f80c10dfbc4  Track 109.flac
+f2bf85463b56e29a91ca6d1e9f97a6f2  Track 110.flac
+319e093d722da05344ecf25beb58e84e  Track 111.flac
+438d3ec38b556cc1ed5d06da3e3f782e  Track 201.flac
+b46fbbe9bcea117f5c7bd7b7fabedc78  Track 202.flac
+d48bd6e013aeb3d9241d2a3a047900a9  Track 203.flac
+b7bd32f7fcd428a1e5477f2256dfc0a4  Track 204.flac
+41513c4de2f6d459d88a8c300049a112  Track 205.flac
+10b76c42cfb83345c6128523387f0c9c  Track 206.flac

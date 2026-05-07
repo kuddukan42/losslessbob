@@ -1,0 +1,33 @@
+Bob Dylan
+Forum de Montréal
+Montréal, Quebec, Canada
+8 July 1988
+
+Musicians: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Kenny Aaronson (bass), Christopher Parker (drums).
+7-9 and 13 Bob Dylan (vocal & guitar), G.E. Smith (guitar).
+1 G.E. Smith (back-up vocal).
+6 G.E. Smith (electric slide guitar).
+Source: Aud
+Lineage: ?? > CD-R > EAC (secure mode) > CoolEdit Pro > shntool > .shn
+Taped by: ?
+Transfered by: ?
+Sound Quality: VG, but a bit "roomy" due to hall acoustics
+Sound Processing: significant bass reduction (-9.1db @ 80 Hz w/ .16Q) & normalization after reduction
+File Size: 572 megs .shn
+
+Note. First of only two live performances of Hallelujah (as of 9/04).
+
+1. Subterranean Homesick Blues - cut at start
+2. I Shall Be Released
+3. Stuck Inside Of Mobile With The Memphis Blues Again
+4. Hallelujah (Leonard Cohen)
+5. Ballad Of A Thin Man
+6. Highway 61 Revisited
+7. Lakes Of Pontchartrain (trad.)
+8. A Hard Rain's A-Gonna Fall - cut at end
+9. Boots Of Spanish Leather
+10. Tangled Up In Blue
+11. In The Garden
+12. Like A Rolling Stone - edit at end
+13. It Ain't Me, Babe - left channel sound muffled 1:30 > 3:10; edit at end
+14. All Along The Watchtower

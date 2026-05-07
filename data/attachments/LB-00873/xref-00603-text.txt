@@ -1,0 +1,215 @@
+===================
+===================
+===================
+=== 1991-11-05 Madison - edited MJS - FFP.txt
+===================
+===================
+===================
+1-01 Introduction.flac:73702ad7c809fa9cea5ae025a657a8ae
+1-02 New Morning.flac:7bfe625ea0986699282df2d07936747b
+1-03 Lay, Lady, Lay.flac:d16b88a8fd7ffe9281f9618fb4f696c3
+1-04 Watching The River Flow.flac:294f5dbd264c02c67dbd2f1792c340cc
+1-05 Simple Twist Of Fate.flac:6d13c619f774e00f3a7b92cd95e742e7
+1-06 I'll Be Your Baby Tonight.flac:76e66b47e264004b5803ce42984b967d
+1-07 Gotta Serve Somebody.flac:0ea4eb9cdcf4c49da86c8edee630c70d
+1-08 You Don't Know Me.flac:78c662c4494c62b485c5b07359197203
+1-09 All Along The Watchtower.flac:ac2cc5dc10772f54dc9476faf71e75bb
+1-10 Buffalo Skinners.flac:83086a8b13860c0c3f27718222fb91af
+1-11 It's All Over Now, Baby Blue.flac:d3a92515d96415ef0e42a0887f9ad1f9
+1-12 Mr. Tambourine Man.flac:33d2bcb216c3f099e49410ccaded7a67
+1-13 That Lucky Old Sun.flac:3e189b2d45e7f682e0770bd6c7ecb4a8
+2-01 Rainy Day Women #12 & 35.flac:df866fa95de112f9be3f29246c8f4695
+2-02 Shooting Star.flac:84e5f2693b7fc44139d9a37d0181b060
+2-03 Everything Is Broken.flac:091485d218b11cf3eb51df2ea3ff97d9
+2-04 I Believe In You.flac:0a3b4a8ed82a74fd9d512ff84579a581
+2-05 Man In The Long Black Coat.flac:2f4262114c7339a5f784afb30881fee2
+2-06 Maggie's Farm.flac:ae73662eb5f925624395fcb7559de610
+===================
+===================
+===================
+=== 1991-11-05 Madison - edited MJS - FLAC.md5
+===================
+===================
+===================
+b17d9aaf54fbadef6934e7c121762cd3 *1-01 Introduction.flac
+8f024ef570fe67501dcf28760fcf42d3 *1-02 New Morning.flac
+57fb46d258df00a9b0809f3975c680b2 *1-03 Lay, Lady, Lay.flac
+2436a79d98956f6a0591507fa346206a *1-04 Watching The River Flow.flac
+7b413f8bdfaebf6629f665dc425939a0 *1-05 Simple Twist Of Fate.flac
+f8e87ca384674f6d7da1e01fcd36c7bb *1-06 I'll Be Your Baby Tonight.flac
+c2bab5c4516b0b84657532c02e634d30 *1-07 Gotta Serve Somebody.flac
+4ec52f8c16860663c2f2c84f72496db5 *1-08 You Don't Know Me.flac
+30dd2ebb9da01f0a9c42467739eb5abd *1-09 All Along The Watchtower.flac
+ebe2cceb83a5aa7afbbf4f138ab61092 *1-10 Buffalo Skinners.flac
+a3f08d946f75fe5c4e728927286a45d5 *1-11 It's All Over Now, Baby Blue.flac
+affd697e62ee163bddb1b41322050950 *1-12 Mr. Tambourine Man.flac
+6645d26133d43dcad9ac134b64662896 *1-13 That Lucky Old Sun.flac
+385a438752e1c08ec52f3ad08b25c2fb *2-01 Rainy Day Women #12 & 35.flac
+20ea754fa13101e7d40c95e5fcddba9f *2-02 Shooting Star.flac
+178f8dd6cccb95b493d402111b51272b *2-03 Everything Is Broken.flac
+cd9107cf00dfb86d7801abf3924d4215 *2-04 I Believe In You.flac
+2f010e37bfe8511c7c29136d422a2a67 *2-05 Man In The Long Black Coat.flac
+de524e841b0b581b7f30900fc3f733f4 *2-06 Maggie's Farm.flac
+===================
+===================
+===================
+=== README-dylan_1991-11-05_edited_MJS-Info.txt
+===================
+===================
+===================
+Madison, WI, November 5, 1991 - edited MJS master - 2 discs
+Bob Dylan
+Dane County Coliseum, Madison, WI, November 5, 1991
+
+Source/lineage information: AUD > tape (MJS master) > SHN >
+ posted to alt.binaries.music.shn.dylan by taper in February 2003 > WAV >
+ edited track breaks & disc division > Flac 1.1.2 with tags > dime (July 2005)
+
+I edited some track boundaries, moved the first two tracks of disc 2
+ to the end of disc 1, and split off an intro track.  I did not edit the music.
+ I no longer have the originals, so I'm posting my edited version.  The 
+ fingerprints and the right-channel dropouts tell me that this is not the 
+ same source as the boot "Madison '91".  If you want to compare this to a 
+ source you have, check the fingerprints below and check the right channel.  
+ The fingerprint one minute into That Lucky Old Sun is a particularly good one.  
+ (Remember, I changed the track breaks, so the times have changed.)
+
+NOTE: The right channel drops way down in volume or cuts out several times;
+ I marked some but not all of those places below.  In particular, it seems 
+ that from the start of the concert until 3:00 of Gotta Serve Somebody, 
+ the right channel is much lower.
+
+I've included an MD5 file and a Flac fingerprint for the Flac files.
+
+The Extras folder contains cue sheets, spectral/frequency views,
+md5s for WAV files, HTML tracklist, shntool len output.  It also contains
+the md5 files for the original SHN files (no longer valid, of course).
+
+I found no art that matches this version.
+
+************************************************************************
+ANNOTATED TRACK LIST
+
+DISC 1 (66:14)
+01 Introduction (0:16)
+02 New Morning (3:54)
+03 Lay, Lady, Lay (5:38)
+04 Watching The River Flow (4:53)
+05 Simple Twist Of Fate (8:22)
+*Fingerprints: At 0:09, a man yells "Oh! Yeah!" and at 0:14, a man says something like "If your ass is here, be the best concert you ever set through" (??) At 0:38, a man yells "Oh, Bob-O.  Oh!".  Singing starts at 1:26, with a "Yea Bob!" shouted out at 1:31.
+06 I'll Be Your Baby Tonight (4:15)
+07 Gotta Serve Somebody (5:21)
+*right channel volume picks up at 3:00, possibly for the first time in the concert
+08 You Don't Know Me (4:29)
+09 All Along The Watchtower (5:11)
+*right channel almost completely gone 4:25-4:57; edit at 4:57
+10 Buffalo Skinners [Trail of the Buffalo] (5:29)
+*right channel almost completely gone 0:11-0:21
+11 It's All Over Now, Baby Blue (6:59)
+12 Mr. Tambourine Man (6:47)
+*Fingerprint: There is some conversation between men and women at several points in this song.  For example, at 3:19, a woman(?) on the left says "Yeah" and then a man on the left says "I figured out I don't want to do ...". At 3:44, Dylan sings "Take me disappearing ..."
+13 That Lucky Old Sun (4:38)
+*Fingerprints: Singing starts at 0:16.  At 1:02, a man says "ain't got nothin' to [?]" just before Dylan sings "got nothin' to do".  At 4:15, a man says "You missed it, I was doing my ...", just as Dylan is singing the final "all day" and at 4:17, a man asks "Where is he?"
+
+DISC 2 (36:54)
+01 Rainy Day Women #12 & 35 (6:16)
+*right channel almost completely gone 3:08-4:17
+02 Shooting Star (4:48)
+*right channel down in volume from 2:12 to end of song; edit with brief silence at end
+03 Everything Is Broken (4:18)
+*right channel almost completely gone 0:47-1:10, 1:20-1:47
+04 I Believe In You (8:15)
+*edit at 8:14
+05 Man In The Long Black Coat (7:02)
+06 Maggie's Farm (6:15)
+
+===================
+===================
+===================
+=== 1991-11-05 Madison - edited MJS - shntool-info.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     0:15.53        2770700    ---   --   ---xx   1-01 Introduction.flac
+     3:54.36       41362316    ---   --   ---xx   1-02 New Morning.flac
+     5:37.39       59538572    ---   --   ---xx   1-03 Lay, Lady, Lay.flac
+     4:52.53       51633500    ---   --   ---xx   1-04 Watching The River Flow.flac
+     8:22.59       88691612    ---   --   ---xx   1-05 Simple Twist Of Fate.flac
+     4:15.10       45005564    ---   --   ---xx   1-06 I'll Be Your Baby Tonight.flac
+     5:21.32       56699708    ---   --   ---xx   1-07 Gotta Serve Somebody.flac
+     4:29.00       47451644    ---   --   ---xx   1-08 You Don't Know Me.flac
+     5:11.02       54865148    ---   --   ---xx   1-09 All Along The Watchtower.flac
+     5:28.51       57979196    ---   --   ---xx   1-10 Buffalo Skinners.flac
+     6:59.36       73996316    ---   --   ---xx   1-11 It's All Over Now, Baby Blue.flac
+     6:47.10       71818364    ---   --   ---xx   1-12 Mr. Tambourine Man.flac
+     4:38.35       49121564    ---   --   ---xx   1-13 That Lucky Old Sun.flac
+     6:15.65       66302924    ---   --   ---xx   2-01 Rainy Day Women #12 & 35.flac
+     4:48.28       50869100    ---   --   ---xx   2-02 Shooting Star.flac
+     4:18.02       45515948    ---   --   ---xx   2-03 Everything Is Broken.flac
+     8:15.32       87393308    ---   --   ---xx   2-04 I Believe In You.flac
+     7:01.62       74410268    ---   --   ---xx   2-05 Man In The Long Black Coat.flac
+     6:14.61       66117116    ---   --   ---xx   2-06 Maggie's Farm.flac
+   103:07.66     1091542868 B                     (totals for 19 files, 0.6163 overall compression ratio)
+
+===================
+===================
+===================
+=== 1991-11-05 Madison - edited MJS - WAV.md5
+===================
+===================
+===================
+5fd7d299d8c8a4c2b2c21c1cf590f615 *1-01 Introduction.wav
+5e645373fd687a7d272f51ceba3c2c7f *1-02 New Morning.wav
+2c07bf26d9b65078dcbb208d4efffcfd *1-03 Lay, Lady, Lay.wav
+b408245f06eaa6dbb61094e899a6a8a3 *1-04 Watching The River Flow.wav
+deb1819d58f1f23ed40f34eb175e6982 *1-05 Simple Twist Of Fate.wav
+6cf4a58518443f8d87837587acdc5253 *1-06 I'll Be Your Baby Tonight.wav
+85d43bd48f7fec06a195dbe1c3f159e1 *1-07 Gotta Serve Somebody.wav
+fa5e3c110430ca4be79d2c43805a7055 *1-08 You Don't Know Me.wav
+0f7efff1a7ba2387d8afef6c76ac1419 *1-09 All Along The Watchtower.wav
+9c5bf9ea8d70a5dc21c6e35aa3943003 *1-10 Buffalo Skinners.wav
+e2e1ca4e89d095a9d9e74bb36250c521 *1-11 It's All Over Now, Baby Blue.wav
+718f55d09b5e021d795f95a880703f40 *1-12 Mr. Tambourine Man.wav
+e9be9f02c1d9511724fd7887cfd71f6b *1-13 That Lucky Old Sun.wav
+cadd532e9340e96844a6d00f36fff0db *2-01 Rainy Day Women #12 & 35.wav
+014417694f0e0c009beefa67bcb50f40 *2-02 Shooting Star.wav
+32cb6e9b972e9c714ec984da44dd66d6 *2-03 Everything Is Broken.wav
+e1ffa0e58387b47f8110c6cfceabcd1b *2-04 I Believe In You.wav
+5597026d81988ec8d1b51d59ab241078 *2-05 Man In The Long Black Coat.wav
+1712afb9384e427e68a0d82eb3f65baa *2-06 Maggie's Farm.wav
+===================
+===================
+===================
+=== 1991-11-05-D1-shn-original-INVALID.md5
+===================
+===================
+===================
+da5fae3f617fb270f4ddb490e504dc8f *101 New Morning.shn
+3288be67d37ba39fb046f4f41cea9808 *102 Lay Lady Lay.shn
+fff12fe99a29f1d5071ee0db939f747f *103 Watching The River Flow.shn
+83034ddd6f1a6e90fac6ec22f955d388 *104 Simple Twist Of Fate.shn
+4fb898f27c371e0ca8a0e0bbe8b325ea *105 I'll Be Your Baby Tonight.shn
+fc4b1d42161869327982acbf953018dd *106 Gotta Serve Somebody.shn
+5335fa448a865937c6c9efab289a6d57 *107 You Don't Know Me.shn
+d8f8ea008dff2f7251ae1f3e76832531 *108 All Along The Watchtower.shn
+997012a025ab32310247351ca19aa08f *109 Trail Of The Buffalo.shn
+3d00219f6efb4fb10dc80cd01e43fa8f *110 It's All Over Now, Baby Blue.shn
+===================
+===================
+===================
+=== 1991-11-05-D2-shn-original-INVALID.md5
+===================
+===================
+===================
+6afd2a182d8c18b7cc52f9515e0d8abf *201 Mr Tambourine Man.shn
+b9c62790daa9109155099f561ec0103d *202 That Lucky Old Sun.shn
+17347c236990e374ce2eb76af595f6ac *203 Rainy Day Womenn 12-35.shn
+f8dce41f1e64bcf350326a666eae4ad0 *204 Shooting Star.shn
+4192ea33015c8435a1736cf04535bd56 *205 Everything Is Broken.shn
+e6978cd741c991a75b7321d198c115bc *206 I Believe In You.shn
+78eb5a61a3ed281aafc93246da13d4a4 *207 Man In The Long Black Coat.shn
+32d7f52208a811a6f566c2580ed2abc6 *208 Maggie's Farm.shn
+===================
+===================
+===================

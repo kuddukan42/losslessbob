@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-05-18-NET-Taper-A.flacf 
+=================== 
+=================== 
+=================== 
+c0a4df99fa0cb5bfa943380654d36c55  1996 An American Spring v.1.txt
+81a806aefc3fc82c5b85e4d0595c814d  bd1996-05-18-d1\Track01.flac
+5c16f1995c781435e75ecbdf51548673  bd1996-05-18-d1\Track02.flac
+3d6eeaed4da0acaac3cb5ad05c23580e  bd1996-05-18-d1\Track03.flac
+6f4dad97ed4c42bd7713f0ea1afadbe1  bd1996-05-18-d1\Track04.flac
+3073cfd62bfa33e358bd5a211433b623  bd1996-05-18-d1\Track05.flac
+faea2cb1adf648cbcf496470f5bfa27d  bd1996-05-18-d1\Track06.flac
+c74929964fc2046aa66dab190f2e103a  bd1996-05-18-d1\Track07.flac
+84b907961d2f16657c67eceb6411f88d  bd1996-05-18-d1\Track08.flac
+a4c733c50111dc8d3eb55494c6ce4b39  bd1996-05-18-d1\Track09.flac
+8cfb3bc76a627fa75d7f236a1ba315b1  bd1996-05-18-d1\Track10.flac
+a157ec6f3837de759fe0dd7b022914c0  bd1996-05-18-d1\bd1996-05-18-d1 EAC log.LOG
+72d326b84b5b357c8b65514ef00921c0  bd1996-05-18-d1\bd1996-05-18-d1-fingerprints.txt
+94ef3b74bb72c71b458fd32571a59e09  bd1996-05-18-d2\Track01.flac
+c0821f671fe1e76afa71a4b701a469f1  bd1996-05-18-d2\Track02.flac
+1524a3d6760bd231fd8976152f325005  bd1996-05-18-d2\Track03.flac
+2321239232885f77e6d822f023372bd2  bd1996-05-18-d2\Track04.flac
+38f8d2e88d03090ec3bf333ebf6c5324  bd1996-05-18-d2\Track05.flac
+6c72bf4c3cfa43c60b2e38c867187e09  bd1996-05-18-d2\bd1996-05-18-d2 EAC log.LOG
+6492f4d9a7d78c6c50273cc82875ce42  bd1996-05-18-d2\bd1996-05-18-d2-fingerprints.txt
+84801e501c1ffe274500df99bfc3fe68  bd1996-05-18.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-18-NET-Taper-A.flacf\bd1996-05-18-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:98aa8a9ebc98fb47349b1e448a1d33ba
+Track02.flac:f97e9e9abe3c24d9c66a396a9b69fc38
+Track03.flac:0bceb51da1c041302775453f92a08f21
+Track04.flac:1b701ed83b7217af236c86d3be9045e1
+Track05.flac:e5c23c8d9a8b9f882a526f4f1854b346
+Track06.flac:567a0b342ae06459ef65acdf003d48df
+Track07.flac:5776503349312a55987f3a822bba4b7a
+Track08.flac:56662d9e0aeb00aa33ab9686cb61675e
+Track09.flac:54394af5c7f3882ab30ce038a4883be4
+Track10.flac:111677c32d4d3170089d8673aec36411
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-18-NET-Taper-A.flacf\bd1996-05-18-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:f77ae6e8b957094772c8feca235125ed
+Track02.flac:c249ac1c8477a1a9da9e716edea61a14
+Track03.flac:842a548499238819de680d2a74a5d199
+Track04.flac:e02c5f74c9dba9a3afb4826e663fe225
+Track05.flac:8f9dc458351ebe8498d2de1bfcd3bab8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-18-NET-Taper-A.flacf\bd1996-05-18-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:34.14       58950572 B   ---   --   ---xx   flac  0.6039  Track01.flac
+     6:15.04       66159452 B   ---   --   ---xx   flac  0.5334  Track02.flac
+     5:57.11       63000716 B   ---   --   ---xx   flac  0.5965  Track03.flac
+     6:37.24       70087292 B   ---   --   ---xx   flac  0.5523  Track04.flac
+     7:40.17       81184028 B   ---   --   ---xx   flac  0.5609  Track05.flac
+    10:28.59      110918012 B   ---   --   ---xx   flac  0.5743  Track06.flac
+     8:11.54       86739452 B   ---   --   ---xx   flac  0.5514  Track07.flac
+     5:45.20       60905084 B   ---   --   ---xx   flac  0.4929  Track08.flac
+     7:05.44       75073532 B   ---   --   ---xx   flac  0.5341  Track09.flac
+     6:29.15       68654924 B   ---   --   ---xx   flac  0.5798  Track10.flac
+    70:04.37      741673064 B                            0.5584  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-18-NET-Taper-A.flacf\bd1996-05-18-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:42.65       71065724 B   ---   --   ---xx   flac  0.4759  Track01.flac
+     9:37.05      101794604 B   ---   --   ---xx   flac  0.6004  Track02.flac
+     8:16.18       87536780 B   ---   --   ---xx   flac  0.5661  Track03.flac
+    13:00.49      137707292 B   ---   --   ---xx   flac  0.5153  Track04.flac
+     7:50.17       82948028 B   ---   --   ---xx   flac  0.5532  Track05.flac
+    45:27.04      481052428 B                            0.5433  (5 files)
+=================== 
+=================== 
+=================== 

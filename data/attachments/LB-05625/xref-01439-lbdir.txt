@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd99-10-31-e.flacf
+===================
+===================
+===================
+fa19f0cd44c76034a61970951bd9aa65 *Art & Info\1999.10.31 Chicago Recording Info.txt
+87264298ef1b9736886801dac111b394 *Art & Info\1999.10.31 Concert Info.rtf
+44cc83877f7420cafdd777c628a461c7 *Art & Info\chicago_311099.jpg
+d2e7421365b3460c069cb76815b35370 *Art & Info\md5sum.md5
+743c182f4da6c6a635a43e61385424ca *Disc 1\1999.10.31 Chicago cd1.LOG
+76c23d0e4275e3ac0a0f71bfd3c625e5 *Disc 1\d1t01 I Am The Man, Thomas.flac
+3d271fbb4c4f1a9466cd88c57b5b166c *Disc 1\d1t02 Mr. Tambourine Man.flac
+40a8f294b3893046803722c54aebaeed *Disc 1\d1t03 It's Alright, Ma (I'm Only Bleeding).flac
+9bcf00719591b9e040b5a7e1655fa1f0 *Disc 1\d1t04 Love Minus Zero.flac
+40438479c60eff8fbbdaa7af71e7840e *Disc 1\d1t05 Tangled Up In Blue.flac
+d2e7421365b3460c069cb76815b35370 *Disc 1\md5sum.md5
+0f1ac2ba882232240137547b7e384535 *Disc 2\1999.10.31 Chicago cd2.LOG
+eaab9797177657b314af040fc57cab9d *Disc 2\d2t01 All Along The Watchtower.flac
+8d2b73becf858c675d257ffb75b2e692 *Disc 2\d2t02 Simple Twist Of Fate.flac
+bccf5f84d0dbbb242f16cf3fdabe4c08 *Disc 2\d2t03 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+7a44b120e611aa3d42bb763d02424df4 *Disc 2\d2t04 Not Dark Yet.flac
+ad0484f86c8a75ee8c59b5b9ba025f4b *Disc 2\d2t05 Highway 61 Revisited.flac
+6c779ae982fbefabf30c8cd30d5a89e3 *Disc 2\d2t06 Love Sick.flac
+118b3625a9d9bca499d14ad04455f00e *Disc 2\d2t07 Like A Rolling Stone.flac
+de87d707583480f947640a22798b1d3d *Disc 2\d2t08 Don't Think Twice, It's All Right.flac
+96fabc6a68ebef642cea10079f1dd722 *Disc 2\d2t09 Not Fade Away.flac
+99db1a5e04581bd2f0b589b9fc0ee8c8 *Disc 2\md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd99-10-31-e.flacf
+===================
+===================
+===================
+Disc 1\d1t01 I Am The Man, Thomas.flac:7dfcb8318fd25b177dae3d154494dd76
+Disc 1\d1t02 Mr. Tambourine Man.flac:9a675003d8dd49972f6fd395b4bb3ba1
+Disc 1\d1t03 It's Alright, Ma (I'm Only Bleeding).flac:b08dfcb1d39167feb5ef290fa6ac8643
+Disc 1\d1t04 Love Minus Zero.flac:b7f109d4babb59c28cedee3066e9e8b6
+Disc 1\d1t05 Tangled Up In Blue.flac:b73f7cff6e7a0adcdc15e73c44a5a341
+Disc 2\d2t01 All Along The Watchtower.flac:e771e6bdf65f68ce558f592a6e138302
+Disc 2\d2t02 Simple Twist Of Fate.flac:5d10879fe9ba1bd946522792a61bb120
+Disc 2\d2t03 Stuck Inside Of Mobile With The Memphis Blues Again.flac:4189fb35c925a40f4f480fa47543023b
+Disc 2\d2t04 Not Dark Yet.flac:048ff2cc7c9d8844540319b9aa0684d4
+Disc 2\d2t05 Highway 61 Revisited.flac:0b1ef9efdde3f6c40b38ff9d934b23df
+Disc 2\d2t06 Love Sick.flac:6264eccc65aa5b7bf816280871cc028e
+Disc 2\d2t07 Like A Rolling Stone.flac:a113d4899c03503694e5981dd789cbfb
+Disc 2\d2t08 Don't Think Twice, It's All Right.flac:44fb28c77663ed9bf932bf9f9fe4115a
+Disc 2\d2t09 Not Fade Away.flac:28784f5e8367d05861034390ac71d20f
+===================
+===================
+===================
+=== shntool len for: bd99-10-31-e.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:46.44       29385932 B   ---   --   ---xx   flac  0.6942  d1t01 I Am The Man, Thomas.flac
+     5:51.24       61972892 B   ---   --   ---xx   flac  0.6737  d1t02 Mr. Tambourine Man.flac
+     7:26.53       78799100 B   ---   --   ---xx   flac  0.6531  d1t03 It's Alright, Ma (I'm Only Bleeding).flac
+     6:19.30       66926204 B   ---   --   ---xx   flac  0.6337  d1t04 Love Minus Zero.flac
+     7:49.53       82856300 B   ---   --   ---xx   flac  0.7170  d1t05 Tangled Up In Blue.flac
+    30:13.54      319940428 B                            0.6733  (5 files)
+===================
+===================
+===================
+=== shntool len for: bd99-10-31-e.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.05       43582604 B   ---   --   ---xx   flac  0.6915  d2t01 All Along The Watchtower.flac
+     8:35.01       90848396 B   ---   --   ---xx   flac  0.5883  d2t02 Simple Twist Of Fate.flac
+     7:19.45       77545484 B   ---   --   ---xx   flac  0.6742  d2t03 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:51.46       72608636 B   ---   --   ---xx   flac  0.5488  d2t04 Not Dark Yet.flac
+     9:38.22      102010988 B   ---   --   ---xx   flac  0.6730  d2t05 Highway 61 Revisited.flac
+     5:42.60       60469964 B   ---   --   ---xx   flac  0.5957  d2t06 Love Sick.flac
+     8:15.46       87426236 B   ---   --   ---xx   flac  0.6523  d2t07 Like A Rolling Stone.flac
+     7:53.18       83479580 B   ---   --   ---xx   flac  0.5825  d2t08 Don't Think Twice, It's All Right.flac
+     5:37.63       59595020 B   ---   --   ---xx   flac  0.6642  d2t09 Not Fade Away.flac
+    64:01.06      677566908 B                            0.6282  (9 files)
+===================
+===================
+===================

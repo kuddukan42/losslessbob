@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-02-24.flac16 
+=================== 
+=================== 
+=================== 
+a917f1bdba2121cd33bcbc2689df1fd9  bd02-02-24-LB-4481.txt
+ef76eb05d1bbf0d48558259825b2264f  bd2002-02-24.aud.sbeok.flac16 Austin, TX.ffp
+5bf852c6084ce98f1866a747b94220a1  bd2002-02-24.aud.sbeok.flac16 Austin, TX.st5
+a40a2ec6b0a3e5171b3c2e310f1a5ed0  d1\bd2002-02-24d1.LOG
+7a58a815cf7e6480ff3c135d5846a05a  d1\bd2002-04-24d1t01.flac
+29f86e2fd3c82e1913ca61ff3f367a02  d1\bd2002-04-24d1t02.flac
+fa8666ea01f95daccccabbf40c42a41c  d1\bd2002-04-24d1t03.flac
+aff13aa24e0c0032497e774e758d2bc5  d1\bd2002-04-24d1t04.flac
+76bfa0913786b978525ca260569770cf  d1\bd2002-04-24d1t05.flac
+1d795e5b9f3b323073dfd1fa40880621  d1\bd2002-04-24d1t06.flac
+8fa8033f448c6d15d4fb57533e797551  d1\bd2002-04-24d1t07.flac
+87ae28a98a2c2d8122f8b545c811e0e6  d1\bd2002-04-24d1t08.flac
+b27fc29961326f6a5fa7eb5374598caa  d1\bd2002-04-24d1t09.flac
+959ac92f782bed82742db8cc763468b7  d1\bd2002-04-24d1t10.flac
+88219f78953f822bc414d903a480d4eb  d1\d1.shntool.txt
+9ea6ba5ff910e8dcc6165eced4fd84dc  d1t03.PNG
+ec1a5650e70bf4cdd226d2ec55f2b20d  d2\bd2002-04-24d2.LOG
+682dbd770eec7c4273f31f712463b19b  d2\bd2002-04-24d2t01.flac
+45c4644d8932d4da51dce4805eecec54  d2\bd2002-04-24d2t02.flac
+f04d68e01133953e1ce9b697273de630  d2\bd2002-04-24d2t03.flac
+0fd4d1c0930c5ad177de944711b1fc3a  d2\bd2002-04-24d2t04.flac
+07f58ebfc06e6b15b891602ab7081a32  d2\bd2002-04-24d2t05.flac
+fe120cca4a8055393cdb6e0302c0f445  d2\bd2002-04-24d2t06.flac
+4c93df308ec1badd13aac9c9abe0c029  d2\bd2002-04-24d2t07.flac
+c470b491b586fc9a2cdfafe6818094bd  d2\bd2002-04-24d2t08.flac
+dd77826234b8088aee06da7064f15113  d2\bd2002-04-24d2t09.flac
+55e21c31b88b0afc895498a385ad6320  d2\bd2002-04-24d2t10.flac
+6b8d3f7f648dd05ab309f6189d2ea948  d2\d2.shntool.txt
+ce02dc41726127139aa6b51039f92946  d2t07.PNG
+5ea18df94f837da6ec6571f8e4adde5c  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-02-24.flac16\d1 
+=================== 
+=================== 
+=================== 
+bd2002-04-24d1t01.flac:c880dd1dba38adf191e460ce8d2a80da
+bd2002-04-24d1t02.flac:e6d968ebe22187a4607d0faa70f46577
+bd2002-04-24d1t03.flac:ba00cfc27c2fcf7b7a1c63f9cbf03d13
+bd2002-04-24d1t04.flac:4c80a654b5ef5b112b87c335621d713f
+bd2002-04-24d1t05.flac:f736ceed47f0c0df0588e124ff8caafa
+bd2002-04-24d1t06.flac:976fdd718114d783f7631691c29aa4b3
+bd2002-04-24d1t07.flac:b23ac3f5599d991139e2268421c56a52
+bd2002-04-24d1t08.flac:66aa27ab6f555dc281eb3cba258f4efa
+bd2002-04-24d1t09.flac:724540d1be185cbc7f4c0b9253dfa854
+bd2002-04-24d1t10.flac:322d4ea6b617f7089c540aed6439b689
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-02-24.flac16\d2 
+=================== 
+=================== 
+=================== 
+bd2002-04-24d2t01.flac:cce2c10d81a085ceefda29d32abe0b32
+bd2002-04-24d2t02.flac:747711048d0eeac9950740067eb7ff75
+bd2002-04-24d2t03.flac:14e8ae8614bcc610529bb99343afa28e
+bd2002-04-24d2t04.flac:a7ccd2b1603fea7a912e428391f40a02
+bd2002-04-24d2t05.flac:4b9d8776e1d66958735cb4e7d897ff9a
+bd2002-04-24d2t06.flac:f8d440bacecfbba7b9f943021efc24ed
+bd2002-04-24d2t07.flac:22957e742b960fc6558d275fe11052d9
+bd2002-04-24d2t08.flac:0fb915a9d834f7b5ff17c5751aba54ba
+bd2002-04-24d2t09.flac:704455832ffe37203479787c8dc92802
+bd2002-04-24d2t10.flac:a3f7df057e312392c1ae02ceb7c3c055
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-02-24.flac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:33.72       48326588 B   ---   --   ---xx   flac  0.4342  bd2002-04-24d1t01.flac
+     7:07.34       75402812 B   ---   --   ---xx   flac  0.2971  bd2002-04-24d1t02.flac
+     6:52.13       72707420 B   ---   --   ---xx   flac  0.3738  bd2002-04-24d1t03.flac
+     3:51.54       40875452 B   ---   --   ---xx   flac  0.3682  bd2002-04-24d1t04.flac
+     6:28.58       68579660 B   ---   --   ---xx   flac  0.4404  bd2002-04-24d1t05.flac
+     6:11.34       65524412 B   ---   --   ---xx   flac  0.4008  bd2002-04-24d1t06.flac
+     7:43.69       81835532 B   ---   --   ---xx   flac  0.4419  bd2002-04-24d1t07.flac
+     4:59.07       52760108 B   ---   --   ---xx   flac  0.3608  bd2002-04-24d1t08.flac
+     6:35.21       69727436 B   ---   --   ---xx   flac  0.4085  bd2002-04-24d1t09.flac
+     9:26.40       99936524 B   ---   --   ---xx   flac  0.3289  bd2002-04-24d1t10.flac
+    63:50.27      675675944 B                            0.3828  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-02-24.flac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.57       61874108 B   ---   --   ---xx   flac  0.3339  bd2002-04-24d2t01.flac
+     7:51.59       83223212 B   ---   --   ---xx   flac  0.4455  bd2002-04-24d2t02.flac
+     6:15.72       66319388 B   ---   --   ---xx   flac  0.4770  bd2002-04-24d2t03.flac
+     7:42.67       81654428 B   ---   --   ---xx   flac  0.3336  bd2002-04-24d2t04.flac
+     5:29.51       58155596 B   ---   --   ---xx   flac  0.4949  bd2002-04-24d2t05.flac
+     8:43.23       92311340 B   ---   --   ---xx   flac  0.4641  bd2002-04-24d2t06.flac
+     8:07.60       86047964 B   ---   --   ---xx   flac  0.4774  bd2002-04-24d2t07.flac
+     6:54.62       73175468 B   ---   --   ---xx   flac  0.5084  bd2002-04-24d2t08.flac
+     6:29.41       68716076 B   ---   --   ---xx   flac  0.4339  bd2002-04-24d2t09.flac
+     7:13.16       76418876 B   ---   --   ---xx   flac  0.5175  bd2002-04-24d2t10.flac
+    70:39.58      747896456 B                            0.4491  (10 files)
+=================== 
+=================== 
+=================== 

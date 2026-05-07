@@ -1,0 +1,104 @@
+===================
+===================
+===================
+=== md5 for: bd01-10-31-c.flacf
+===================
+===================
+===================
+8f5e06283caa570da9a7d57a7acb2e44 *disc 1\01 Track01.flac
+9e4789144cb25663aef8464c6aafd0d8 *disc 1\02 Track02.flac
+a34c0e9c39eec6052033f3462c673380 *disc 1\03 Track03.flac
+633ea510a6dd9fa330afb9328b283332 *disc 1\04 Track04.flac
+2da6d962ece6af499b5643bb03dcd47a *disc 1\05 Track05.flac
+84a3b80db73cd29de87946f25ba030e7 *disc 1\06 Track06.flac
+da2b82f766b150004bb34212ea363ad4 *disc 1\07 Track07.flac
+2d22720af2ad57944e6f28b94665fd9c *disc 1\08 Track08.flac
+915e283b57306e7b6c3881c4eed0a5ee *disc 1\09 Track09.flac
+7dacd69c552c58e3382b1ff23a5608a3 *disc 1\10 Track10.flac
+d60366455c0f23f48f6b1f67fdd9b310 *disc 1\11 Track11.flac
+f1775c562a23d74c7ad489a98b2947b6 *disc 1\disc 1.md5
+f526e3e257bcb51acb86f3adbb0988e9 *disc 2\01 Track01.flac
+c2e37acf6359489287924ea163c04f4d *disc 2\02 Track02.flac
+f662ebc0552ba7a3687f86e3074c7eb0 *disc 2\03 Track03.flac
+b7dfda01984896b24b9445cfab5ce2a8 *disc 2\04 Track04.flac
+3ddfee108037eff3bc018b601f6ec836 *disc 2\05 Track05.flac
+fe3d2d8d0d5b2409e41944b51a354752 *disc 2\06 Track06.flac
+7cad3fa134239857ea83f32e604ea633 *disc 2\07 Track07.flac
+92ab6f2e78f29e477495d87b456591d2 *disc 2\08 Track08.flac
+8855235352bb87c15d8f7c730e6476dd *disc 2\09 Track09.flac
+6343fd5ccbdce3075267f12716850224 *disc 2\10 Track10.flac
+86cbf3fbcc696739c24b70b9d61454c1 *disc 2\11 Track11.flac
+5179b706f055bd19b46e8518376a081f *disc 2\disc 2.md5
+7d364d2a4deb0d7421540be38aa169f3 *fpt.txt
+===================
+===================
+===================
+=== ffp for: bd01-10-31-c.flacf
+===================
+===================
+===================
+disc 1\01 Track01.flac:e0145f5a99acaa0c8afbf9efef8159e4
+disc 1\02 Track02.flac:594a0f72c11a452d2f1f5f93653a2215
+disc 1\03 Track03.flac:99c26820e3b3f01b827a9a381ac10b7a
+disc 1\04 Track04.flac:deb203f2915c0b53a3a0591abf14ce11
+disc 1\05 Track05.flac:9b3bfa48a7ef20e99c9954cf2a514ae9
+disc 1\06 Track06.flac:e18ee98cf4298f2cab06ecfba7910fa5
+disc 1\07 Track07.flac:6d3dac4a2417cfa7c59aadff3ce92227
+disc 1\08 Track08.flac:c87ce76ebd24670136cd05c6f5590803
+disc 1\09 Track09.flac:c8da22b40337aaa61e66c66c358b4605
+disc 1\10 Track10.flac:fab0c5ca41236e9a67f8500e0bc0d20f
+disc 1\11 Track11.flac:68c569d4dfba6b61944b2b2389b00398
+disc 2\01 Track01.flac:da3c409f617acb365c0604bc5d0d8d54
+disc 2\02 Track02.flac:85055cd45f12b46246a0ad959362cf49
+disc 2\03 Track03.flac:72289229789c367ab706762af63024f5
+disc 2\04 Track04.flac:e8c29d9bf52944ee0245fbb9551676fe
+disc 2\05 Track05.flac:0c41a00d3585a66c2f119acc10c66d81
+disc 2\06 Track06.flac:dbfda7bd45f37a773cb74c89dccd60c6
+disc 2\07 Track07.flac:3104fd09be80e4b959ed0dd1a3a2f625
+disc 2\08 Track08.flac:2251c91f0a9a0ce5ff01beec3cdf7417
+disc 2\09 Track09.flac:1a06271b2aaa2da41618146e7dad245b
+disc 2\10 Track10.flac:75959ffb239abf9f04e56dd351a9f108
+disc 2\11 Track11.flac:025716781e7b0c6bf79aaae307c7e6da
+===================
+===================
+===================
+=== shntool len for: bd01-10-31-c.flacf\disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.66       45313676 B   ---   --   ---xx   flac  0.5881  01 Track01.flac
+     8:59.34       95159612 B   ---   --   ---xx   flac  0.5319  02 Track02.flac
+     8:54.74       94371692 B   ---   --   ---xx   flac  0.5854  03 Track03.flac
+     4:18.43       45612380 B   ---   --   ---xx   flac  0.5688  04 Track04.flac
+     8:49.03       93322700 B   ---   --   ---xx   flac  0.5990  05 Track05.flac
+     7:27.24       78907292 B   ---   --   ---xx   flac  0.5479  06 Track06.flac
+     6:53.09       72874412 B   ---   --   ---xx   flac  0.6061  07 Track07.flac
+     5:50.54       61867052 B   ---   --   ---xx   flac  0.4860  08 Track08.flac
+     5:16.40       55836524 B   ---   --   ---xx   flac  0.5029  09 Track09.flac
+     8:11.67       86770028 B   ---   --   ---xx   flac  0.5252  10 Track10.flac
+     9:11.72       97365788 B   ---   --   ---xx   flac  0.5910  11 Track11.flac
+    78:10.36      827401156 B                            0.5596  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd01-10-31-c.flacf\disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:12.32       65696108 B   ---   --   ---xx   flac  0.5248  01 Track01.flac
+     6:07.04       64748252 B   ---   --   ---xx   flac  0.5465  02 Track02.flac
+     6:07.05       64750604 B   ---   --   ---xx   flac  0.5280  03 Track03.flac
+     8:43.07       92273708 B   ---   --   ---xx   flac  0.5527  04 Track04.flac
+     5:31.30       58459004 B   ---   --   ---xx   flac  0.5113  05 Track05.flac
+     8:07.33       85984460 B   ---   --   ---xx   flac  0.5407  06 Track06.flac
+     4:12.47       44563388 B   ---   --   ---xx   flac  0.5009  07 Track07.flac
+     6:54.46       73137836 B   ---   --   ---xx   flac  0.5878  08 Track08.flac
+     5:06.10       54001964 B   ---   --   ---xx   flac  0.5166  09 Track09.flac
+     5:53.52       62391548 B   ---   --   ---xx   flac  0.5593  10 Track10.flac
+     5:20.48       56560940 B   ---   --   ---xx   flac  0.5082  11 Track11.flac
+    68:16.14      722567812 B                            0.5374  (11 files)
+===================
+===================
+===================

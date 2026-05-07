@@ -1,0 +1,14 @@
+52569f4cfbf71483f580fbdde9a5226f  bd87-07-04-foxboro-d1t01.flac
+6f3517111a648e3e86913cb709dcafc0  bd87-07-04-foxboro-d1t02.flac
+a60a73a516a60e329f6af3b702ddbe28  bd87-07-04-foxboro-d1t03.flac
+4108a95039ecfebd50f63b73a59c931e  bd87-07-04-foxboro-d1t04.flac
+e83b0fe1fd85bb44f95c1c46fb8a56db  bd87-07-04-foxboro-d1t05.flac
+0b1fae28a06774bed80e18e337ec94c5  bd87-07-04-foxboro-d1t06.flac
+e50a9e57d2d9f440781e3569ba53c85f  bd87-07-04-foxboro-d1t07.flac
+6a29e41d96e28e1a0e985fb49d016cb1  bd87-07-04-foxboro-d1t08.flac
+486f1d8c836d5f86dec983fc45e4083c  bd87-07-04-foxboro-d1t09.flac
+9f263d83f77696c793bfca3c9a20a8c2  bd87-07-04-foxboro-d1t10.flac
+edef46be48986ddf473c1336d222bd23  bd87-07-04-foxboro-d1t11.flac
+caa42d49ae9a151ebf8cf91811e7dac7  bd87-07-04-foxboro-d1t12.flac
+c6be98a63f63b891535352b8b2900d43  bd87-07-04-foxboro-d1t13.flac
+6153322f2a95e2fec20a568922753ddf  bd87-07-04-foxboro.flacf.md5

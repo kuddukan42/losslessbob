@@ -1,0 +1,119 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-10-03-Never-Mind-the-Bollocks-f.flacf 
+=================== 
+=================== 
+=================== 
+536e750c1cf9bbe990ca4d0d9c1e021e  Bob Dylan  - Never Mind the Bollocks, Here's Bob Dylan - Liberated Boot.md5
+35aa09486bcb87ed6234b47738d118cd  Bob Dylan  Never Mind the Bollocks, Here's Bob Dylan - Liberated Boot.txt
+94c1fe9607cf2bbac139636997a504c6  CD1\Track01.flac
+246c9bb3c79398a1b5fe14fde544b60d  CD1\Track02.flac
+1e5dc4833550d5cc12a380706f6796c4  CD1\Track03.flac
+d2e1739b1ca937860c28c3267b49a4b2  CD1\Track04.flac
+0baf5bd2bb44617979116c55d797c4b4  CD1\Track05.flac
+26e3fe4a94412d88d236cf44302f6de0  CD1\Track06.flac
+44d6c79dd0ec6a4eed558040b99b7c4d  CD1\Track07.flac
+4f68c0597ef9afe39221167aaa49b6aa  CD1\Track08.flac
+558da3269df2656a7cc077871726f4a7  CD1\Track09.flac
+389b852fec84efdc4cc155c67e7d00a6  CD1\Track10.flac
+765706a4eec8a8489d243a0ddf4a6977  CD1\Track11.flac
+b6c8a9c38b0a361b9ff377ac39d39008  CD1\Track12.flac
+60d3c41fa36a28d5b585fd1b06f72cdd  CD2\Track01.flac
+074201cbfcb86ac92d572432c3a28837  CD2\Track02.flac
+5ce88a45253834c0cc40d2fc66e44095  CD2\Track03.flac
+3c40609ca306258132a05d8fcd86c455  CD2\Track04.flac
+5d413a94d3e7cc495b81fa19ca105ddd  CD2\Track05.flac
+41fc0cd6c229e5b378c9ae521634618f  CD2\Track06.flac
+a1c3cfc6cb22b3e5dea2c37f712d319d  CD2\Track07.flac
+fe2f08d6e1f30350a4c89db75fc0ccf1  CD2\Track08.flac
+53e111faab55018be660dbb7ea89436e  CD2\Track09.flac
+0c65dc2a8ad63859cc2596f9db121bc3  CD2\Track10.flac
+d2204444d7316f5f75423882aeefc3b3  CD2\Track11.flac
+acc49ba36be68fb4ef04b619926f14ec  CD2\Track12.flac
+f764b035397bdec2616da55259823f36  CD2\Track13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-03-Never-Mind-the-Bollocks-f.flacf\cd1 
+=================== 
+=================== 
+=================== 
+track01.flac:ef8e146f4f5a10d35ea05f667b107501
+track02.flac:71c3a781b0e3715d1d2a25ddc9e628d1
+track03.flac:ad0565f4472de125efdf629d337f369b
+track04.flac:c87b32bbef818798086e275b97e0c72a
+track05.flac:422e26ca68e56f338a9bba05cde96aaa
+track06.flac:0b8eeac880026942fbb625fce2e7480a
+track07.flac:c9f4dc70b889dc7099ab1c8cf49e2140
+track08.flac:ae03b2e3597152a5535fa721b029d993
+track09.flac:b46e5947d32c3638081c9f6058d3da41
+track10.flac:6266a99f917791b84eb6c8a039340963
+track11.flac:b6a4ca9c64394857573c58e1be6cf415
+track12.flac:6c3024387e8aef69bb3a9f0435d78f4d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-03-Never-Mind-the-Bollocks-f.flacf\cd2 
+=================== 
+=================== 
+=================== 
+track01.flac:a85cd950277f1c4f9b1150ff18d09cad
+track02.flac:48d994b72ea11a976fdb73228d5fe4d4
+track03.flac:4cf3a324a13d7f7a851e0c49c220031c
+track04.flac:ccaa448c32d33980f9f8da9152bee204
+track05.flac:bf2dfb51883a7cea67a8d30928daff81
+track06.flac:bdeccf82a22025c5fc69c3b04e05e2e1
+track07.flac:0d379e29b7cf5560d5f1db9440062e0b
+track08.flac:cd71f631256e292940c46821ceb9bc44
+track09.flac:76e5f4aeb76a643fe3cd4800b4ad6e4e
+track10.flac:12e28cfeb36f337f15c2a6c1a736a90a
+track11.flac:2e54500459b6b0051bb28b2aa02381af
+track12.flac:2a197279bb9edc5729fa1b849d8a4c88
+track13.flac:117b397efa9f861bf1edff2d743bb535
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-10-03-Never-Mind-the-Bollocks-f.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.65        5444924 B   ---   --   ---xx   flac  0.5095  Track01.flac
+     4:30.44       47731532 B   ---   --   ---xx   flac  0.6840  Track02.flac
+     5:04.37       53712668 B   ---   --   ---xx   flac  0.6490  Track03.flac
+     4:52.15       51544124 B   ---   --   ---xx   flac  0.6534  Track04.flac
+     5:50.27       61803548 B   ---   --   ---xx   flac  0.6324  Track05.flac
+     7:10.74       76026092 B   ---   --   ---xx   flac  0.6828  Track06.flac
+     3:10.61       33659516 B   ---   --   ---xx   flac  0.5891  Track07.flac
+     7:22.55       78098204 B   ---   --   ---xx   flac  0.6642  Track08.flac
+     8:57.25       94785644 B   ---   --   ---xx   flac  0.5530  Track09.flac
+     7:23.12       78173468 B   ---   --   ---xx   flac  0.6730  Track10.flac
+     6:36.41       69950876 B   ---   --   ---xx   flac  0.6359  Track11.flac
+     5:59.74       63501692 B   ---   --   ---xx   flac  0.6902  Track12.flac
+    67:30.05      714432288 B                            0.6438  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-10-03-Never-Mind-the-Bollocks-f.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:15.58       87454460 B   ---   --   ---xx   flac  0.6634  Track01.flac
+     5:51.11       61942316 B   ---   --   ---xx   flac  0.6235  Track02.flac
+     5:08.30       54401804 B   ---   --   ---xx   flac  0.5718  Track03.flac
+     5:08.54       54458252 B   ---   --   ---xx   flac  0.6747  Track04.flac
+     4:47.24       50683292 B   ---   --   ---xx   flac  0.5061  Track05.flac
+     3:51.61       40891916 B   ---   --   ---xx   flac  0.5607  Track06.flac
+     4:05.69       43380332 B   ---   --   ---xx   flac  0.5706  Track07.flac
+     5:59.04       63337052 B   ---   --   ---xx   flac  0.5745  Track08.flac
+     6:08.21       64964636 B   ---   --   ---xx   flac  0.5899  Track09.flac
+     6:11.19       65489132 B   ---   --   ---xx   flac  0.5718  Track10.flac
+     4:26.10       46945964 B   ---   --   ---xx   flac  0.5399  Track11.flac
+     8:33.03       90500300 B   ---   --   ---xx   flac  0.5305  Track12.flac
+     5:35.57       59228108 B   ---   --   ---xx   flac  0.5537  Track13.flac
+    74:02.46      783677564 B                            0.5820  (13 files)
+=================== 
+=================== 
+=================== 

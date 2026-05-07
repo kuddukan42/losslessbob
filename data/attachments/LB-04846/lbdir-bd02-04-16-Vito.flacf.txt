@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-04-16-Vito.flacf 
+=================== 
+=================== 
+=================== 
+37fd97ae30673cd812280af72e01f3e3  bd2002-04-16_Vito.ffp
+9b15217a5659730014d10e8e7b7cfb77  bd2002-04-16_Vito.md5
+4cd1f14ee127bf1fc837710da5c1d0b6  bd2002-04-16_Vito.txt
+e7dd9e3cdf4cde95a200b85e27611cb4  bd2002-04-16d1t01.flac
+9f69e750c3d3b073b3d8d0d741e46b60  bd2002-04-16d1t02.flac
+f6c1d036d1206f10d8f41f0d74ae5693  bd2002-04-16d1t03.flac
+9a36e449804e51440859fcfa43a52067  bd2002-04-16d1t04.flac
+d63890163a69ea19ead89d70e596e1ff  bd2002-04-16d1t05.flac
+0bf6129943577c8e8a5c40ac34421df4  bd2002-04-16d1t06.flac
+0b4f5d7204b8c735a809d8bf3af08b5b  bd2002-04-16d1t07.flac
+ee381343abfd9f1d85116a61917818cb  bd2002-04-16d1t08.flac
+bf1087861dae675e4050898ab0f8317f  bd2002-04-16d1t09.flac
+707ab7675ce62c8a87397182e9fa4f8f  bd2002-04-16d1t10.flac
+fe1c80c26603ff5b361410fd6bc630ab  bd2002-04-16d1t11.flac
+6dc3ef0b2f31f8823dee8a2f630ed88c  bd2002-04-16d2t01.flac
+d906bf396d256f4c9d3445876f0b74ad  bd2002-04-16d2t02.flac
+be25a0973b74bc8663fc812d333264d2  bd2002-04-16d2t03.flac
+c37319c422fa1ed424facf395832d0fb  bd2002-04-16d2t04.flac
+c47249421f376815b8a7da10bf67f0b4  bd2002-04-16d2t05.flac
+3266b10ca6020a141156b0d8d1a4a4db  bd2002-04-16d2t06.flac
+68b3957eee230cb396fdb48378051f6c  bd2002-04-16d2t07.flac
+ced3e08b2ebe5ee8c1e3d24bb7346e72  bd2002-04-16d2t08.flac
+ae45d3cb516607fdf31a0170a06ec86c  bd2002-04-16d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-04-16-Vito.flacf 
+=================== 
+=================== 
+=================== 
+bd2002-04-16d1t01.flac:612cfaa3925186067cc1ff8317b5940f
+bd2002-04-16d1t02.flac:b76cba7b4fa9e0389371a86c49ee7089
+bd2002-04-16d1t03.flac:163bc11eb44de53f6c4827ea2777b3f5
+bd2002-04-16d1t04.flac:7ade6dee1b8103f18af656fb78c8ea0c
+bd2002-04-16d1t05.flac:3b7fafdcffc31cddffaffa22abf38934
+bd2002-04-16d1t06.flac:856ba737c349563e2cf04be8ad1f2ef1
+bd2002-04-16d1t07.flac:ae6efcb1059966eec065ec31071c60fa
+bd2002-04-16d1t08.flac:74255f506e0f1b35c73bd04c2e0326e4
+bd2002-04-16d1t09.flac:a5d28237db49d7aaf0be64a0e277fd29
+bd2002-04-16d1t10.flac:e5a3b30deee8cfc21a3868b74ead943d
+bd2002-04-16d1t11.flac:1aba5457a8d25d5ea1674897b9628cbb
+bd2002-04-16d2t01.flac:76ad2b72b53a61aa7fd2ce285d15f371
+bd2002-04-16d2t02.flac:6a690654e756b3d629d2f1e1a22c4423
+bd2002-04-16d2t03.flac:d5be88cad627035da7c7d959fbc39796
+bd2002-04-16d2t04.flac:2f442b34dbb966977c718ca44ca5fcd9
+bd2002-04-16d2t05.flac:7878a10a4fb1769f47d5b0177099d1da
+bd2002-04-16d2t06.flac:0d38ce1aa0da3145ac579ff04f31368a
+bd2002-04-16d2t07.flac:41d2ba9b4577b45ec49d0558a5a9dc3f
+bd2002-04-16d2t08.flac:dfd5b85d87b8add6c375ca14c2082134
+bd2002-04-16d2t09.flac:0217f0d65e49dafcfe2aac2ed017ef7a
+=================== 
+=================== 
+=================== 
+=== shntool for: bd02-04-16-Vito.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:10.49       44215292 B   ---   --   ---xx   flac  0.6266  bd2002-04-16d1t01.flac
+     6:33.60       69466364 B   ---   --   ---xx   flac  0.6064  bd2002-04-16d1t02.flac
+     6:29.68       68779580 B   ---   --   ---xx   flac  0.6028  bd2002-04-16d1t03.flac
+     4:54.16       51899276 B   ---   --   ---xx   flac  0.5734  bd2002-04-16d1t04.flac
+     5:00.38       53009420 B   ---   --   ---xx   flac  0.6580  bd2002-04-16d1t05.flac
+     5:49.13       61594220 B   ---   --   ---xx   flac  0.6510  bd2002-04-16d1t06.flac
+     7:49.18       82773980 B   ---   --   ---xx   flac  0.5822  bd2002-04-16d1t07.flac
+     6:49.12       72175868 B   ---   --   ---xx   flac  0.6633  bd2002-04-16d1t08.flac
+     5:07.38       54244220 B   ---   --   ---xx   flac  0.6143  bd2002-04-16d1t09.flac
+     5:53.43       62370380 B   ---   --   ---xx   flac  0.5249  bd2002-04-16d1t10.flac
+     8:40.59       91866812 B   ---   --   ---xx   flac  0.6181  bd2002-04-16d1t11.flac
+     7:31.35       79638764 B   ---   --   ---xx   flac  0.6583  bd2002-04-16d2t01.flac
+     8:21.38       88465820 B   ---   --   ---xx   flac  0.5633  bd2002-04-16d2t02.flac
+     5:59.20       63374684 B   ---   --   ---xx   flac  0.6297  bd2002-04-16d2t03.flac
+    14:56.06      158068556 B   ---   --   ---xx   flac  0.6507  bd2002-04-16d2t04.flac
+     4:33.32       48232508 B   ---   --   ---xx   flac  0.6535  bd2002-04-16d2t05.flac
+     8:19.48       88136540 B   ---   --   ---xx   flac  0.6633  bd2002-04-16d2t06.flac
+     7:01.36       74349116 B   ---   --   ---xx   flac  0.6146  bd2002-04-16d2t07.flac
+     6:50.45       72429884 B   ---   --   ---xx   flac  0.6911  bd2002-04-16d2t08.flac
+     7:52.12       83289068 B   ---   --   ---xx   flac  0.5941  bd2002-04-16d2t09.flac
+   138:44.11     1468380352 B                            0.6233  (20 files)
+=================== 
+=================== 
+=================== 

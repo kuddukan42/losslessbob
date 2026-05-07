@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-04-30-b.flacf 
+=================== 
+=================== 
+=================== 
+405293f442ace5d77f30332853e5c308  800430-Buffalo.info.lbp51.txt
+2582bf06f361acad60ea529de167ba4a  800430-Buffalo.md5
+007db1d5508ea679a99cc1e393e4bf58  800430.ffp.txt
+c7abc5ffd6c79129331ebef4db0b3655  800430aTrack01.flac
+8a4d0b55891363ce82a5b04b7088f083  800430aTrack02.flac
+46d6c2222ea5399ec2162b7a7d8ee1a1  800430aTrack03.flac
+3d36dae2837f1abb0cfe1811d3c2a86c  800430aTrack04.flac
+1c50b58cc33815450c3f04aabed6f8ff  800430aTrack05.flac
+435008f832044f26971ae0ee449f7f8a  800430aTrack06.flac
+55bd0fbb80282e9335424dcff7264e4c  800430aTrack07.flac
+08de584e9232df3fc654efb00c430995  800430aTrack08.flac
+6fb4d524ff335ee685e156e34d754647  800430aTrack09.flac
+dd1f2719169a65014852916c80608060  800430aTrack10.flac
+92cf0a5e7ec7e8ced6bde4095dd3285b  800430aTrack11.flac
+c17093338907908359df5ce3fba8fe34  800430aTrack12.flac
+fb0e9d8ed93a477f91049fbe559f830b  800430aTrack13.flac
+2791a96bfb2ed34ab0e2aac31e11e801  800430bTrack01.flac
+354c9ccb7dba827d8f206f36e2adc3d6  800430bTrack02.flac
+e1d846f0475b1552fe16bf282c58c8f6  800430bTrack03.flac
+80e2ce21f245255248902440a08d4c4c  bd1980-04-30-Buffalo.flacf.md5
+782d30e942d55a19ca39aaa5ae7c37d8  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-04-30-b.flacf 
+=================== 
+=================== 
+=================== 
+800430aTrack01.flac:4edae0d752e60b55abdb167a1ea1d50a
+800430aTrack02.flac:8e8e555d6616c73f0434ec9d3783e61c
+800430aTrack03.flac:b1f1a7bb5525b75fbcdac1d4eaf2ec13
+800430aTrack04.flac:522309b5f3dd74d4e507821fba856e92
+800430aTrack05.flac:45d908c228079b3e81e657cf93af4c03
+800430aTrack06.flac:b917c835b9e8bf7aca700c6e09b0484b
+800430aTrack07.flac:27c9ea5475a353fcecfaef680ec41573
+800430aTrack08.flac:e3010094bb12718e5c584336e00b60a2
+800430aTrack09.flac:c2166f33979b17f104a41a0b4a53fde7
+800430aTrack10.flac:6d5e2e271b421cbefa156afdf51e400f
+800430aTrack11.flac:08db05c3c7e373b017998ba03f03401d
+800430aTrack12.flac:3dd607b2f231db0af8648880aac09f35
+800430aTrack13.flac:0ffe5aade9dc42da377cfd12b8b68920
+800430bTrack01.flac:237bb10cf5aaf6287c98b6c0b7fa59b7
+800430bTrack02.flac:e0edafd10e394a61a82d15bba8674fa5
+800430bTrack03.flac:a752448c5bbbf026a0ba15b7b7991956
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-04-30-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.69       77954732 B   ---   --   ---xx   flac  0.6493  800430aTrack01.flac
+     4:54.26       51922796 B   ---   --   ---xx   flac  0.6040  800430aTrack02.flac
+     5:46.29       61102652 B   ---   --   ---xx   flac  0.6544  800430aTrack03.flac
+     4:11.64       44426972 B   ---   --   ---xx   flac  0.6557  800430aTrack04.flac
+     4:37.30       48933404 B   ---   --   ---xx   flac  0.6581  800430aTrack05.flac
+     5:31.38       58477820 B   ---   --   ---xx   flac  0.6548  800430aTrack06.flac
+     6:25.46       68022236 B   ---   --   ---xx   flac  0.6202  800430aTrack07.flac
+     7:50.48       83020940 B   ---   --   ---xx   flac  0.6519  800430aTrack08.flac
+     8:13.09       86986412 B   ---   --   ---xx   flac  0.6036  800430aTrack09.flac
+     4:04.23       43095740 B   ---   --   ---xx   flac  0.6740  800430aTrack10.flac
+     5:39.53       59924300 B   ---   --   ---xx   flac  0.6023  800430aTrack11.flac
+     4:48.00       50803244 B   ---   --   ---xx   flac  0.6621  800430aTrack12.flac
+     6:54.25       73088444 B   ---   --   ---xx   flac  0.6219  800430aTrack13.flac
+    11:07.12      117687068 B   ---   --   ---xx   flac  0.6438  800430bTrack01.flac
+     5:18.03       56102300 B   ---   --   ---xx   flac  0.6565  800430bTrack02.flac
+     5:01.59       53235212 B   ---   --   ---xx   flac  0.5960  800430bTrack03.flac
+    97:46.09     1034784272 B                            0.6368  (16 files)
+=================== 
+=================== 
+=================== 

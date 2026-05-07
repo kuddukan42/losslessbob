@@ -1,0 +1,76 @@
+Bob Dylan
+Scandinavium
+Gothenburg, Sweden
+12 July 1978
+
+Source/Lineage: AUD MR>RR>DAT>Soundforge 6.0>CD Wave>CD [me]>EAC>shntool>.shn [you]
+(probable lineage for alt. "patch" source d1t14&t15: AUD MR>Cassette>DAT>CD [me]>EAC>shntool>.shn [you])
+Musicians: Bob Dylan (vocal, guitar & harmonica), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Jerry Scheff (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Carolyn Dennis (background vocals)
+
+Notes:
+occasional channel specific drops occur throughout recording, normally on the left channel
+d1t03 [4:29>4:36] minor tape problems
+d1t05 [3:47>4:02] minor tape problems
+d1t06 [3:20>3:46] minor tape problems
+d1t07 [2:07>2:16] minor clicking noise left channel
+d1t09>t10 edit; minor taper gap
+d1t13>t14 edit/5 seconds of silence/switch to alt. AUD MR>Cassette source (AUD MR>RR missing RDW & start of TLTTF)
+**** IF used, bd1978-07-12d1t15-d2t01.merge.shn replaces BOTH bd1978-07-12d1t15.shn AND bd1978-07-12d2t01.shn (see "note on merge file.txt"). bd1978-07-12d1t15-d2t01.merge.shn merged @ 1:01 ****
+d2t01 AUD MR>RR source resumes; cut at start/tape problems at start
+d2t01>d2t02 edit
+d2t06 [2:19] digi-bump
+d2t07 [1:02] fixed 3 minor digi-tears in audio fabric; micro digi-bump remains
+d2t08 [1:35] left channel doubled > end of d2t09 due to problems with right channel
+d2t09>t10 edit
+d2t14>t15 edit
+
+disc 1
+
+1. My Back Pages
+2. Love Her With A Feeling (Tampa Red)
+3. Baby Stop Crying
+4. Mr. Tambourine Man
+5. Shelter From The Storm
+6. It's All Over Now, Baby Blue
+7. Girl From The North Country
+8. Ballad Of A Thin Man
+9. Maggie's Farm
+10. Simple Twist Of Fate
+11. Like A Rolling Stone
+12. I Shall Be Released
+13. Going, Going, Gone
+14. Rainy Day Women # 12 & 35 - alt. AUD MR>Cassette source
+15. True Love Tends To Forget - alt. AUD MR>Cassette source
+
+
+disc 2
+
+1. True Love Tends To Forget 
+2. Gates Of Eden
+3. The Man In Me
+4. One More Cup Of Coffee (Valley Below)
+5. Blowin' In The Wind
+6. I Want You
+7. Señor (Tales Of Yankee Power)
+8. Masters Of War
+9. Just Like A Woman
+10. To Ramona
+11. All Along The Watchtower
+12. All I Really Want To Do
+13. It's Alright, Ma (I'm Only Bleeding)
+14. Forever Young
+15. Changing Of The Guards
+16. The Times They Are A-Changin'
+
+
+BobTalk
+
+(before Señor) Thank you! This is a new song written about six months ago on a trip through the southern part of the ... northern part of the States. Anyway it's entitled Tales Of Yankee Power.
+
+(before It's Alright Ma, I'm Only Bleeding) Thank you! ... On the drums, from ... Mr. Ian Wallace. You can do better than that ! Ian Wallace ! That's better I couldn't hear you. On the bass guitar, Mr. Jerry Scheff. On the keyboards tonight, Alan Pasqua. On the lead guitar, Billy Cross. On the conga drums from Detroit, ... Miss Bobbye Hall. All right, on rhythm guitar, Steve Soles. On the mandolin and the violin, a young man who's got a great future indeed, Mr. David Mansfield. Tenor saxophone, the genius of the group, Steve
+Douglas. And on the background vocals tonight we got ladies who do mean, it must be said, a great deal to me. Anyway, on
+the right a very good friend of mine, Jo Ann Harris. In the middle, my ex-wife Helena Springs. And on the left, another girl
+who's got a wonderful future ahead, Carolyn Dennis. This is entitled, a song I wrote in 1963, recorded in New York City
+called, It's Alright Ma, I'm Only Bleeding.
+
+(before Forever Young) Thank you! We're gonna go now. We're gonna see you next year. Or if you ever come to the States, look us up. 

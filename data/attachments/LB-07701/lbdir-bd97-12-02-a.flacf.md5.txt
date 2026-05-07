@@ -1,0 +1,22 @@
+0403e7e01996bd562a0970af5153e065  1997-12-02 Roxy, Atlanta, Georgia, USA.md5
+e7ec9e246876448e7e151098dff0bcc6  CD1\01 Maggie's farm.flac
+445e8e9f58da650abc4778401a164ded  CD1\02 Lay lady lay.flac
+5f1730860306518c3f1b31c5e3b42790  CD1\03 Cold irons bound.flac
+adad481fc64d1069dde54d48c47be8db  CD1\04 You're a big girl now.flac
+933f0cfc9a52e41e70399d1210c084c4  CD1\05 Can't wait.flac
+cbd599f79507dc0d6eef090a4f4cfcc4  CD1\06 Silvio.flac
+fedaaf9d3b51a2fea9f1dba66108a4a2  CD1\07 I'm a roving gambler.flac
+66bef1737478da305db80a0098ddea47  CD1\08 One too many mornings.flac
+00c067f1733182767cb99bac7791da39  CD1\09 Tangled up in blue.flac
+4e501b9d1d63fd342b6fa6f74e192b3a  CD1\10 The white dove.flac
+0d0b631cdf19c796f27ce4a730fecb0e  CD1\11 'Til I fell in love with you.flac
+28f811374f02c1804d1bf7b82074c666  CD1\12 (band intro).flac
+1fbc3e3313a56d190464ded02039c2b1  CD1\12 Highway 61 revisited.flac
+967647bc77d0cdb610600f993b048e95  CD1\FLAC CD1.md5
+b17aba52184b220d3a9adce76c947acc  CD2\13 Like a rolling stone.flac
+3a7ea004c3703779bd239f9826ac44c1  CD2\14 It ain't me, babe.flac
+32fa78531849133eb5b20ce6f96e7842  CD2\15 Love sick.flac
+b1ea6266541d7dac8fa755cc858eb64d  CD2\16 Rainy day women # 12 & 35.flac
+84a286469fcd42a53b8547637913ea0c  CD2\FLAC CD2.md5
+a0bfeb827208b14bc3132ef09305e45b  Info\1997-12-02 Roxy, Atlanta, Georgia, USA.txt
+270397abbd5ae294984c76e3ea078050  Info\Info.txt

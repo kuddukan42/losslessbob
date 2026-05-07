@@ -1,0 +1,9 @@
+Bob Dylan, 10/14/04, Leavey Center, Santa Clara University: Santa Clara, CA, 2CDR
+
+(57min+49min), with 'additional soundmastering' (remaster by 'schubert'), source: originally posted in a.b.m.s.d., Source: AT831's > SP SB-6 > Sony TCD-D100 @44.1 kHz, Transfer: Fostex D-5 > M-Audio DiO 2496 > ASIO > n-track 3.3 > WAV @44.1 kHz, Editing/Tracking: Sound Forge 6.0e, Conversion: WAV > shntool 2.0.3 > flac 1.1.1 > FLAC;  downloaded from a.b.m.s.d. 10/04; background talking d1t10, d2t1, d2t6; excellent sound [A]; this is slightly warmer sounding than original version and seems to be an improvement;  the csheb recording is much warmer
+
+static  caused by cuts (2 cuts surrounding out of place segment) (these are on original a.b.m.s.d. version too) d1t5 3:06, d2t3  6:03, 6:12, 6:25
+
+remastered version:, Disk 1 [56:02], 1. Announcement [00:40], 2. Blues Instrumental [01:57] (Bob on guitar), 3. Drifter's Escape [04:35], 4. I'll Be Your Baby Tonight [05:19], 5. Tweedle Dee & Tweedle Dum [05:32], 6. Just Like A Woman [06:28], 7. Things Have Changed [06:34], 8. Girl Of The North Country [05:42] (acoustic), 9. Cold Irons Bound [05:35], 10. Every Grain Of Sand [07:18], 11. Highway 61 Revisited [06:20], 
+
+Disk 2 [48:57], 1. Sugar Baby [07:50] (acoustic), 2. Most Likely You Go Your Way (And I'll Go Mine) [07:53], 3. Honest With Me [06:43], 4. It Ain't Me, Babe [05:53] (acoustic), 5. Summer Days [07:17], (encore), 6. Like A Rolling Stone [06:59], 7. All Along The Watchtower [06:20]

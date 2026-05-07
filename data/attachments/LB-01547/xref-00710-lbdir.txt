@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-11-Holy-Grail-b.flacf 
+=================== 
+=================== 
+=================== 
+e656cc810d54f421fe8fc1c3de28334f  CD1\01 Crash on the Levee (down in the flood).flac
+2b197467f03f4325ced792602f277ba5  CD1\02 Lay lady lay.flac
+916292cadfc948d8420e8dc175f48498  CD1\03 All along the watchtower.flac
+ed66b489799bb74834fecadd18dcb7da  CD1\04 I don't believe you (she acts like we never have met).flac
+586e9f25d682eb4f2d34fdaaa3347116  CD1\05 Watching the river flow.flac
+1b58ea9c0086b45b4d721c54a58a6aca  CD1\06 Silvio.flac
+c3bee5676bd42b445caddbebc66d3ee9  CD1\07 Oh baby it ain't no lie.flac
+b8f7d4918221aff89627cdf14dd8ab28  CD1\08 Mr. Tambourine man.flac
+41e30292438dce78612bc3cb4f0dbc3f  CD1\09 Boots of Spanish leather.flac
+875d8589a3332353bcd3f190a5210116  CD1\FLAC CD1.md5
+80fc1041f2a84ff76850d3a0673462e4  CD2\10 Stuck inside of Mobile with the Memphis blues again.flac
+8c46caecef550e558d9539807fe17b62  CD2\11 She belongs to me.flac
+b7388437a6704cb1e39bc76b9d6034e5  CD2\12 Ballad of a thin man.flac
+19a6f3d7fa9bb7e8a5ef4c81d3b108c0  CD2\13 Like a rolling stone.flac
+7716b69f1e3f93f5ac9164daee8ad01f  CD2\14 One too many mornings.flac
+7dd745a96a10a360256834018c9e54e2  CD2\15 Rainy day women # 12 & 35.flac
+2ed92a4eefc1cfd77b65e499ac7827d3  CD2\FLAC CD2.md5
+918d49aa38a1a86f0fe22377dc18c67c  Info\bd-1997-02-11.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-11-Holy-Grail-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the Levee (down in the flood).flac:d3f6e4e38ce81269da4dfd44c3fa52fc
+02 Lay lady lay.flac:908f1a05119a93c6a5c75e2f2e3769da
+03 All along the watchtower.flac:60a0cb2a7fe39fde43ead0c4ea2ed914
+04 I don't believe you (she acts like we never have met).flac:e4739f8946b8634a372cd9a287964979
+05 Watching the river flow.flac:8c70da744e1e5e82ee9bfb6e7c9684f5
+06 Silvio.flac:f5f6ab5502480ac70a20d243fde0cd22
+07 Oh baby it ain't no lie.flac:cb1c4e995a51ddf6b36f73be697bf6d3
+08 Mr. Tambourine man.flac:6f5c931b7c5fb7d8d88cd11273a13a15
+09 Boots of Spanish leather.flac:283c02c67205107dc0f7b1f786b7d57c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-11-Holy-Grail-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Stuck inside of Mobile with the Memphis blues again.flac:d8a1caf0c50538a922883deef52e652a
+11 She belongs to me.flac:cfeba0fad552ee9bc728cdd284a21ffc
+12 Ballad of a thin man.flac:5a75bae3858e00c3652de2fbd3d9a0e8
+13 Like a rolling stone.flac:602d31d71f7ace6d344fa3e267b2860f
+14 One too many mornings.flac:1d40813d8eb0d9eba4cc5226cf256be7
+15 Rainy day women # 12 & 35.flac:fc9e9f16325c6b21472c9095fe68b6ae
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-11-Holy-Grail-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:21.62       56770268 B   ---   --   ---xx   flac  0.6305  01 Crash on the Levee (down in the flood).flac
+     5:22.74       56974892 B   ---   --   ---xx   flac  0.5615  02 Lay lady lay.flac
+     6:53.22       72904988 B   ---   --   ---xx   flac  0.6066  03 All along the watchtower.flac
+     7:05.24       75026492 B   ---   --   ---xx   flac  0.5754  04 I don't believe you (she acts like we never have met).flac
+     7:20.71       77783036 B   ---   --   ---xx   flac  0.5728  05 Watching the river flow.flac
+     8:01.43       84949580 B   ---   --   ---xx   flac  0.6344  06 Silvio.flac
+     6:13.01       65799596 B   ---   --   ---xx   flac  0.5850  07 Oh baby it ain't no lie.flac
+     7:20.47       77726588 B   ---   --   ---xx   flac  0.5252  08 Mr. Tambourine man.flac
+     7:45.30       82096604 B   ---   --   ---xx   flac  0.5065  09 Boots of Spanish leather.flac
+    61:24.74      650032044 B                            0.5762  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-11-Holy-Grail-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    11:02.21      116826236 B   ---   --   ---xx   flac  0.5954  10 Stuck inside of Mobile with the Memphis blues again.flac
+     8:08.52       86205548 B   ---   --   ---xx   flac  0.5699  11 She belongs to me.flac
+    11:50.59      125382812 B   ---   --   ---xx   flac  0.5811  12 Ballad of a thin man.flac
+    10:41.10      113095964 B   ---   --   ---xx   flac  0.6128  13 Like a rolling stone.flac
+     8:55.43       94475180 B   ---   --   ---xx   flac  0.5416  14 One too many mornings.flac
+     7:11.40       76122524 B   ---   --   ---xx   flac  0.6816  15 Rainy day women # 12 & 35.flac
+    57:50.00      612108264 B                            0.5945  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,121 @@
+===================
+===================
+===================
+=== 1996-10-30 Shreveport Civic Center Complex, Shreveport, Louisiana, USA.md5
+===================
+===================
+===================
+680e038923c35b341c6f0fb0ec5d22f2 *CD1\01 Crash on the Levee (down in the flood).flac
+784df6518fa40c99396b9a62a24b63c2 *CD1\02 Tonight I'll be staying here with you.flac
+0dad96b7761a0f72f13ab93a83c0c26f *CD1\03 All along the watchtower.flac
+a1574c1a74b342757ade75e2cc93edb0 *CD1\04 Just like a woman.flac
+0813227821e0c69b7c370927c6b51dfb *CD1\05 Watching the river flow.flac
+056aae0ca1273aee08d59f48fc5a1e6e *CD1\06 Silvio.flac
+f43dcbb3e6f85aa45c1f81bbecaffd84 *CD1\07 Mr. Tambourine Man.flac
+a9cf963d17e05392451a45f179e2e330 *CD1\08 Masters of war.flac
+6cc238a0cf92729b1fb4f4118d80520f *CD1\09 One too many mornings.flac
+fbca98553fd0060b7185205799f66728 *CD1\10 Seeing the real you at last.flac
+f08c91f3dfd808e3ef1623d13121935c *CD1\11 (encore).flac
+335655c770cbba9659cf90cb4486ffe9 *CD1\FLAC CD1.md5
+54f8d4aeec1eaad9d2778ceb981d2fe5 *CD2\11 She belongs to me.flac
+ad6f8371402c0cde2255fec4d68ae8f9 *CD2\12 Maggie's farm.flac
+d561ca8841ab83eb4d86d0e69974119f *CD2\13 Like a rolling stone.flac
+1b39e224225404e17f4a08e62e007fd4 *CD2\14 It ain't me, babe.flac
+0faa0c6ac2dfeb11389d7b8e8fb5e06b *CD2\15 Rainy day women # 12 & 35.flac
+05595e0b0f588585c753aa50af7ec050 *CD2\FLAC CD2.md5
+286317bda524d62e8a81e53e5264721a *Info\1996-10-30 Municipal Auditorium, Shreveport Civic Center Complex, Shreveport, Louisiana, USA.txt
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+680e038923c35b341c6f0fb0ec5d22f2 *01 Crash on the Levee (down in the flood).flac
+784df6518fa40c99396b9a62a24b63c2 *02 Tonight I'll be staying here with you.flac
+0dad96b7761a0f72f13ab93a83c0c26f *03 All along the watchtower.flac
+a1574c1a74b342757ade75e2cc93edb0 *04 Just like a woman.flac
+0813227821e0c69b7c370927c6b51dfb *05 Watching the river flow.flac
+056aae0ca1273aee08d59f48fc5a1e6e *06 Silvio.flac
+f43dcbb3e6f85aa45c1f81bbecaffd84 *07 Mr. Tambourine Man.flac
+a9cf963d17e05392451a45f179e2e330 *08 Masters of war.flac
+6cc238a0cf92729b1fb4f4118d80520f *09 One too many mornings.flac
+fbca98553fd0060b7185205799f66728 *10 Seeing the real you at last.flac
+f08c91f3dfd808e3ef1623d13121935c *11 (encore).flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+54f8d4aeec1eaad9d2778ceb981d2fe5 *11 She belongs to me.flac
+ad6f8371402c0cde2255fec4d68ae8f9 *12 Maggie's farm.flac
+d561ca8841ab83eb4d86d0e69974119f *13 Like a rolling stone.flac
+1b39e224225404e17f4a08e62e007fd4 *14 It ain't me, babe.flac
+0faa0c6ac2dfeb11389d7b8e8fb5e06b *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================
+=== 1996-10-30 Municipal Auditorium, Shreveport Civic Center Complex, Shreveport, Louisiana, USA.txt
+===================
+===================
+===================
+Municipal Auditorium, Shreveport Civic Center Complex
+Shreveport, Louisiana
+October 30, 1996
+
+*****  This recording is the same as LB-0661; now with a different MD5 checksum!  *****
+
+Uploader's note:
+Tracking times match on all tracks, and recording is as bad as LB says it is!
+
+For completists only?
+
+Taper: unidentified
+Lineage: received in a trade as SHNs; now converted to FLAC
+LB Rating: D+
+Frequency analysis: mostly below 9kHz
+
+01. Crash On The Levee (Down In The Flood) [04:50]
+02. Tonight I'll Be Staying Here With You [05:59]
+03. All Along The Watchtower [07:03]
+04. Just Like A Woman [06:56]
+05. Watching The River Flow [07:32]
+06. Silvio (Bob Dylan & Robert Hunter) [07:53]
+07. Mr. Tambourine Man [07:21]
+08. Masters Of War [06:29]
+09. One Too Many Mornings [06:57]
+10. Seeing The Real You At Last [06:26]
+11. (band intro) [00:23]
+Total time []
+
+11. She Belongs To Me [09:17]
+12. Maggie's Farm [07:40]
+13. Like A Rolling Stone [09:09]
+14. It Ain't Me, Babe [09:57]
+15. Rainy Day Women # 12 & 35 [07:03]
+Total time [43:08]
+
+Concert # 824 of The Never-Ending Tour
+Concert # 10 of the 1996 US Fall Tour
+1996 concert # 68
+
+Concert # 10 with the 10th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+7-9, 14 acoustic with the band
+10-13, 15 James Burton (electric guitar)
+12, 15 John Jackson, Bucky Baxter (backup vocals)
+
+7 new songs (46%) compared to previous concert
+No new songs for this tour
+
+1-3, 7-15 audience recording, 85 minutes
+===================
+===================
+===================

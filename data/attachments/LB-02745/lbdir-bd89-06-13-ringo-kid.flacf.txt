@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-13-ringo-kid.flacf 
+=================== 
+=================== 
+=================== 
+35821fe025ff0391f7ab68584d7342b3  bd89-06-13-ringo-kid-LB-2745.txt
+e63e9dc43f8015a9ea03846e3da6e3e3  disco 1\Track01.flac
+728dc2da3e45b6f19a72f9acbf3c7d19  disco 1\Track02.flac
+c0961605f27e809123aba7e8a646f727  disco 1\Track03.flac
+3a6be2e6e077eac4b225c9d44aa27cac  disco 1\Track04.flac
+1d7f47758ce2dc5067b5674dba9c615d  disco 1\Track05.flac
+61c74cfa0ffca611c6135a8dde2954a1  disco 1\Track06.flac
+72615ac1651fa1e8965ede6c213dcce2  disco 1\Track07.flac
+8585f7f8f57e59f671f36de2b0fff1b8  disco 1\Track08.flac
+72f838c4303840c4a254fe8076b0e904  disco 1\Track09.flac
+583ffc6e80f6d2d9907927ed582d5558  disco 1\Track10.flac
+03e5ac78231e3ff085037839d9608dd3  disco 1\Unknown Title.log
+e7c9c6a450f6d7f68598e7bd7189d9eb  disco 1\ffp.disc1.txt
+166aa4c65cc60526de0dfceaecd8289b  disco 2\Track01.flac
+b02d5262ed1b91b751b324f5aff19c80  disco 2\Track02.flac
+fe226a7fbc2e903b12f4432c4c28779c  disco 2\Track03.flac
+d52a77bf53beac64325535f316405c84  disco 2\Track04.flac
+0d164b03510a5ca1884d54c82a5b36c0  disco 2\Track05.flac
+fa6aef935f37d68baa62b672342e900b  disco 2\Track06.flac
+62c11cbb9335ef38e99d014e3a1fbcb2  disco 2\Unknown Title.log
+2424583558a70eea40fcedd9024d9d16  disco 2\ffp.disc2.txt
+65ee5da12af91e847b9d81447c884bf0  frejus\frontal1.jpg
+6409b393dd2f72e14118dd6d911df69c  frejus\frontal2.jpg
+ec7afce0a6123fddb23d1df69a326a6d  frejus\trasera.jpg
+746f6e7fa7dbcdd8119227375c6ad162  frejus\trasera2.jpg
+114dc181dd8d08bc13a325d088219834  info.txt
+240e3bbbc7dd274231392854c1515878  Ringo Kid & The Gunfighters.doc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-13-ringo-kid.flacf\disco 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:dc8612df02022c59af7717d906de01e4
+Track02.flac:095e6a8e3e3dd2670d3cd5419c69a0eb
+Track03.flac:73140882be1a75003b226889472770f3
+Track04.flac:f1a04f00c8e02c86a08731cf21e2df20
+Track05.flac:46b415e7a5de57b14eee19e652ca21e1
+Track06.flac:f9a0904bde16c014495a30a47a7688f4
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-13-ringo-kid.flacf\disco 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:c7ec4e2ea177388c1465a72690bbab16
+Track02.flac:63b18a97811c677817ce722de55ea1a7
+Track03.flac:a481fe3e485239e439bbe7f844dc7c3e
+Track04.flac:0a25cc2644fe2f59db754a0a4a198f15
+Track05.flac:7d4b5568b0583c83f8dc57d811fd9f5b
+Track06.flac:752361fbbbc76ec5e2aa499deb1b34d3
+Track07.flac:28c3680375dda6e01b98970d1f20d36a
+Track08.flac:9115c6a77b3d38dc7ac04533a4251a47
+Track09.flac:6f6c3461a89a484f75fd6a2c1e215240
+Track10.flac:8699b407a43bc6da6ea04b8d738b280d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-13-ringo-kid.flacf\disco 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:06.46       43502636 B   ---   --   ---xx   flac  0.7194  Track01.flac
+     7:36.54       80565452 B   ---   --   ---xx   flac  0.6780  Track02.flac
+     5:40.34       60056012 B   ---   --   ---xx   flac  0.6510  Track03.flac
+     5:01.69       53258732 B   ---   --   ---xx   flac  0.6512  Track04.flac
+     4:19.26       45748796 B   ---   --   ---xx   flac  0.6056  Track05.flac
+     5:21.48       56737340 B   ---   --   ---xx   flac  0.6872  Track06.flac
+    32:06.52      339868968 B                            0.6661  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-13-ringo-kid.flacf\disco 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.25       47334044 B   ---   --   ---xx   flac  0.6642  Track01.flac
+     5:10.05       54695804 B   ---   --   ---xx   flac  0.6929  Track02.flac
+     5:12.20       55083884 B   ---   --   ---xx   flac  0.6936  Track03.flac
+     3:39.64       38782172 B   ---   --   ---xx   flac  0.7242  Track04.flac
+     7:11.05       76040204 B   ---   --   ---xx   flac  0.6870  Track05.flac
+     5:41.60       60293564 B   ---   --   ---xx   flac  0.6712  Track06.flac
+     5:33.16       58778876 B   ---   --   ---xx   flac  0.6941  Track07.flac
+     5:47.59       61349612 B   ---   --   ---xx   flac  0.6406  Track08.flac
+     5:26.10       57529964 B   ---   --   ---xx   flac  0.6874  Track09.flac
+     5:56.51       62918396 B   ---   --   ---xx   flac  0.6800  Track10.flac
+    54:07.15      572806520 B                            0.6822  (10 files)
+=================== 
+=================== 
+=================== 

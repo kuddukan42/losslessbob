@@ -1,0 +1,12 @@
+40a2df10702545057888790af2db6f6d  bd61-11-04-acoustic-troubador-t01.flac
+178cc1253396458f412ab900aa7d632c  bd61-11-04-acoustic-troubador-t02.flac
+ec8175ee8e457c889001296b0ba8f812  bd61-11-04-acoustic-troubador-t03.flac
+52e70e5d92abfe64579e7b4da6ccad27  bd61-11-04-acoustic-troubador-t04.flac
+60f12f96c4f038fa66de4cdebfe3c9b0  bd61-11-04-acoustic-troubador-t05.flac
+4f10d317e2ce2ec8f500506da80b6276  bd61-11-04-acoustic-troubador-t06.flac
+d042ad2453efa26c8f1f94946b8cddf6  bd61-11-04-acoustic-troubador-t07.flac
+440e2fcf2ca31e4550f4b2136179caa3  bd61-11-04-acoustic-troubador-t08.flac
+364157a406428f0e689d009d4829bf78  bd61-11-04-acoustic-troubador-t09.flac
+c631e5d8b5878b215f2e6b1046168d4c  bd61-11-04-acoustic-troubador-t10.flac
+43966787175b1145f4259eaaedde7622  bd61-11-04-acoustic-troubador-t11.flac
+8548a3e174064b04b7154d12b1b85247  bd61-11-04-acoustic-troubador.flacf.md5

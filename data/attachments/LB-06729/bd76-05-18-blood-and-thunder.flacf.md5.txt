@@ -1,0 +1,16 @@
+3b5bf80272fb1317ef211f42f82416e0 *bd76-05-18-blood-and-thunder-d1t01.flac
+28fb8c0bc37a1f2afc6bb9c592694a28 *bd76-05-18-blood-and-thunder-d1t02.flac
+a81b01ea4c59679ab88f574346081001 *bd76-05-18-blood-and-thunder-d1t03.flac
+a36c2a6ff45c373c88eb360ab00e770c *bd76-05-18-blood-and-thunder-d1t04.flac
+50b87c6b15d9753b510630aa5e2de57a *bd76-05-18-blood-and-thunder-d1t05.flac
+f7d4b3ec7e945e695c19cbd717346164 *bd76-05-18-blood-and-thunder-d1t06.flac
+cb1fa9f918aaa0e4b304eadcace9eb32 *bd76-05-18-blood-and-thunder-d1t07.flac
+5168484f6f1cf8e501bb989099fcf343 *bd76-05-18-blood-and-thunder-d1t08.flac
+dab966d4822b67079cd2f3b34681ef26 *bd76-05-18-blood-and-thunder-d1t09.flac
+733bd9f22e4e7c055972bd3e87fef27c *bd76-05-18-blood-and-thunder-d1t10.flac
+47e5ba74512773386dd707ba42b581df *bd76-05-18-blood-and-thunder-d1t11.flac
+0bd0bbf54b83b1fa35b542abc171b386 *bd76-05-18-blood-and-thunder-d1t12.flac
+4fba3aefa78eb6e5d194c829fce3c38c *bd76-05-18-blood-and-thunder-d1t13.flac
+4643419cafefccfa1c997f2d4bd94005 *bd76-05-18-blood-and-thunder-d1t14.flac
+cda75aa43cc3af4be538dcdb66f95412 *bd76-05-18-blood-and-thunder-d1t15.flac
+5c5a39657288a2fb7b22d26f065a1735 *eac.LOG

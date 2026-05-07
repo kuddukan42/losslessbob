@@ -1,0 +1,30 @@
+Bob Dylan
+Hollywood Sportatorium
+Hollywood, FL
+19 January 1974 late
+ 
+Lineage: master to DAT >>> DAT clone from TL > Tascam DA-20 > m-audio > WAV > ssrc > 
+> Wavelab, some level corrections > CDwav > TLH,flac > foobar,tagging
+Taper: JT
+
+1 intro
+2 Most Likely You Go Your Way (And I'll Go Mine)
+3 Lay Lady Lay
+4 Just Like Tom Thumb's Blues
+5 Rainy Day Women # 12 & 35
+6 It Ain't Me, Babe
+7 Ballad Of A Thin Man
+8 All Along The Watchtower
+9 Ballad Of Hollis Brown
+10 Knockin' On Heaven's Door
+11 The Times They Are A-Changin'
+12 Don't Think Twice, It's All Right
+13 Gates Of Eden
+14 Just Like A Woman
+15 It's Alright, Ma (I'm Only Bleeding)
+16 Forever Young
+17 Something There Is About You
+18 Like A Rolling Stone
+19 Most Likely You Go Your Way (And I'll Go Mine)
+ 
+

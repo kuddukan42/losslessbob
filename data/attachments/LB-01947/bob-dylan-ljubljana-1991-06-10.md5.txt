@@ -1,0 +1,44 @@
+; Using hkSFV on 07.21.2004 at 20:33:16
+; http://www.big-o-software.com
+;
+;/----
+;      3066027 19:47.12 2004-07-20 101 intro.flac
+;     19097902 19:48.15 2004-07-20 102 new morning.flac
+;     36512066 19:49.28 2004-07-20 103 ballad of a thin man.flac
+;     26099985 19:50.19 2004-07-20 104 all along the watchtower.flac
+;     29436363 19:51.12 2004-07-20 105 shelter from the storm.flac
+;     55809199 19:52.38 2004-07-20 106 gotta serve somebody.flac
+;     19766267 19:53.22 2004-07-20 107 wiggle wiggle.flac
+;     31918660 19:54.23 2004-07-20 108 love minus zero.flac
+;     35028734 19:55.12 2004-07-20 109 gates of eden.flac
+;     34996437 19:55.59 2004-07-20 110 don`t think twice it`s all right.flac
+;     43617799 20:02.00 2004-07-20 111 it ain`t me babe.flac
+;     26502015 16:14.24 2004-07-21 201 rainy day women #12 &35.flac
+;     34589229 16:15.34 2004-07-21 202 just like a woman.flac
+;     42706214 16:17.28 2004-07-21 203 knockin` on heavens door.flac
+;     33568835 16:18.24 2004-07-21 204 highway 61 revisited.flac
+;     30071050 16:19.41 2004-07-21 205 i shall be released.flac
+;     43272292 17:51.38 2004-07-21 206 like a rolling stone.flac
+;     38916874 17:52.54 2004-07-21 207 the times they are a- changin`.flac
+;     35753014 17:54.08 2004-07-21 208 maggies farm.flac
+;\----
+;
+32750d832708244d99eb0a37a8f61763 *101 intro.flac
+55e7aff4f04da2dd5ff9e16c2df5d8ea *102 new morning.flac
+34c0201a8b2ba72e82e887b58eef6f34 *103 ballad of a thin man.flac
+927f8d5ff1cd7af6e43bd0b025239237 *104 all along the watchtower.flac
+d342eefc9fe162597d684e3dbd1aa10a *105 shelter from the storm.flac
+f3064e8175b493b09832ea013222160b *106 gotta serve somebody.flac
+5736a4a42db5ad2c9b2bc7a9a8640e64 *107 wiggle wiggle.flac
+af308c8079bab9c1ee7ed26787c191e4 *108 love minus zero.flac
+8e08606327f785d732900babf50e3830 *109 gates of eden.flac
+10e897bee455fd33578c551d7027236b *110 don`t think twice it`s all right.flac
+26043c80745e894efba936e11cbd4d16 *111 it ain`t me babe.flac
+daec5633a94920146388d3275d0c2b54 *201 rainy day women #12 &35.flac
+a0b17989e28c1fcd01803bf2857e4c44 *202 just like a woman.flac
+996659406c9fad7cbf5a96e1cdee29e7 *203 knockin` on heavens door.flac
+0b1a21890ceb3e2aa0de606b51d0406d *204 highway 61 revisited.flac
+0f16d0f10372844b59b66122bec5e320 *205 i shall be released.flac
+7354cece2eb508e3d5e2e95c275010b5 *206 like a rolling stone.flac
+860962eb53cb0b46b68827afcf31ea54 *207 the times they are a- changin`.flac
+712e7d4c88f4a31b625ccc5797c25975 *208 maggies farm.flac

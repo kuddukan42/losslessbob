@@ -1,0 +1,58 @@
+Bob Dylan
+Forum
+Copenhagen, Denmark
+April 2, 2007
+
+source: soomlos
+fob, center, ga floor
+km140 > v3 > mt24/96 (24/48)
+audacity > cd wave > flac (24/48)
+
+01. introduction [00:52]
+02. Tweedle Dee & Tweedle Dum [05:18]
+03. Man In The Long Black Coat [04:44]
+04. Watching The River Flow [05:53]
+05. It's Alright, Ma (I'm Only Bleeding) [07:13]
+06. When The Deal Goes Down [05:24]
+07. Highway 61 Revisited [06:28]
+08. Visions Of Johanna [09:15]
+09. Rollin' And Tumblin' [05:49]
+10. Desolation Row [11:26]
+11. Spirit On The Water [07:19]
+12. Stuck Inside Of Mobile with The Memphis Blues Again [08:11]
+13. Nettie Moore [07:39]
+14. Summer Days [06:24]
+15. Like A Rolling Stone [11:12]
+     (encore) 
+16. Thunder On The Mountain [06:14]
+17. band introductions [00:43]
+18. All Along The Watchtower [05:31]
+Total time: [115:42]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar, slide guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - electric & stand-up bass
+
+Flac Fingerprint
+bd2007-04-02t01.flac:2a14eb912a3e375e0afefe798b1f10b3
+bd2007-04-02t02.flac:6034c2fa60b02ec93b9a79b948b1dc7d
+bd2007-04-02t03.flac:73ab9a118e5fe5f1f78718ef1070bf00
+bd2007-04-02t04.flac:5d34947adabe5af11820fe3555d6ddc2
+bd2007-04-02t05.flac:86412cde1c35f6717f6609ceccdc2009
+bd2007-04-02t06.flac:ef64372f2d42959f829108cb3d297341
+bd2007-04-02t07.flac:8d81886350083f96c8340fff0b02148f
+bd2007-04-02t08.flac:bca027fcfdf1799c28da3f1716337934
+bd2007-04-02t09.flac:248dc54ccb852cc46043c9be7b5fea31
+bd2007-04-02t10.flac:f09684b5cea96b8a21ac0887c4aaa075
+bd2007-04-02t11.flac:00ca2dd5a6d3486e9f4a386fee9a5ea7
+bd2007-04-02t12.flac:2cdfa69b3ec22f03a84d44c9d817e8ef
+bd2007-04-02t13.flac:625560eaeebaf54645e5b66a0b9a146c
+bd2007-04-02t14.flac:e9294945b7a988c395e549905f18e060
+bd2007-04-02t15.flac:584a3e9c709a868e77e492d8738284a2
+bd2007-04-02t16.flac:b818cf32d54d94a3f231081604be8729
+bd2007-04-02t17.flac:6ec950a8b9bf89a6a9348c37b59469a6
+bd2007-04-02t18.flac:3365fc9171305b0d45ce47a7e6f7058f

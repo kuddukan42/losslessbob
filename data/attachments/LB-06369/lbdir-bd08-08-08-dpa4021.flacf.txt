@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-08-08-dpa4021.flacf 
+=================== 
+=================== 
+=================== 
+1a9b77e0302154f7ed05b1d7c77a7112  bd08-08-08.txt
+5f4ad4a693c83e4099e250cd0d5ba267  dylan08-08-08.ffp
+d2666bebcf26d7557bfdaf94fde65a8c  dylan08-08-08d1t01.flac
+6b3b4e2409dc025ea1df239b923db79c  dylan08-08-08d1t02.flac
+11f67ac1e26d8d4a1e1102f6e74cec2c  dylan08-08-08d1t03.flac
+4777a122f9907a685b5fff2a1c575975  dylan08-08-08d1t04.flac
+fc71ff3505ece5c4f7a1b57941b2fc71  dylan08-08-08d1t05.flac
+61951e62fb62e43b6ce84618226a58c4  dylan08-08-08d1t06.flac
+0262160cfba1c1209dff25adc8fc43a7  dylan08-08-08d1t07.flac
+0e04bf005bb546129ceb4867cbc910a8  dylan08-08-08d1t08.flac
+32d697d68c4a58d2fcec723dc90c6722  dylan08-08-08d1t09.flac
+73afc37cffea523e30b3f7d7bb413f3c  dylan08-08-08d1t10.flac
+e4ea991050a6a9e553eee5e3b4d3edb4  dylan08-08-08d1t11.flac
+eec59b7abaf27eb508d28c691ea248b3  dylan08-08-08d1t12.flac
+9fda3e8c5bf598f4f07cd450cd6fd7c0  dylan08-08-08d2t01.flac
+626656d3f78d942195c62ead411d123d  dylan08-08-08d2t02.flac
+29e451e39316bfe869adcc2bc978c0ff  dylan08-08-08d2t03.flac
+f41863e0961ef83dadc27441de68491f  dylan08-08-08d2t04.flac
+5f270151415a2ed63a8696ce6f3e84a2  dylan08-08-08d2t05.flac
+ddb864647de99e781e204593d37827e1  dylan08-08-08d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-08-08-dpa4021.flacf 
+=================== 
+=================== 
+=================== 
+dylan08-08-08d1t01.flac:25b70e41077be43e8835e4009faa8735
+dylan08-08-08d1t02.flac:6985d2caf135acbe080ee595fc8457d7
+dylan08-08-08d1t03.flac:5e93e201734444571a3daaefb63a51ce
+dylan08-08-08d1t04.flac:a576e950e99de0d2288dae7e9f136f58
+dylan08-08-08d1t05.flac:64bba0575e327738cd2dc4964070e8da
+dylan08-08-08d1t06.flac:5ac0964549ee410bcd9750e0d1c7afe9
+dylan08-08-08d1t07.flac:db1394324450af4d36aa0a990140df5b
+dylan08-08-08d1t08.flac:f84ccbde6d1b707795581be27fae3636
+dylan08-08-08d1t09.flac:5b022cfc9b5ad060aa9cd769e57242cb
+dylan08-08-08d1t10.flac:66be41698bb5ff41fc78df871d9a6e22
+dylan08-08-08d1t11.flac:943f9bd5e4f2d7f22a0cdd519ba54b3b
+dylan08-08-08d1t12.flac:dc347f9d5bd6f2fe72607b2cdd6c76be
+dylan08-08-08d2t01.flac:320107e5349c34141554ab6f3ae0f416
+dylan08-08-08d2t02.flac:5413a307929d6ae80fea1c18834cd514
+dylan08-08-08d2t03.flac:4b8d96478fb35a11bb6f781eac886631
+dylan08-08-08d2t04.flac:21169c414a7c72056e82d45168eaa193
+dylan08-08-08d2t05.flac:ccd4abad66cab12be4183cc315751e61
+dylan08-08-08d2t06.flac:01b9e39057fad2a8c409ba6bb00fe291
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-08-08-dpa4021.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.16        9210476 B   ---   --   ---xx   flac  0.4747  dylan08-08-08d1t01.flac
+     4:01.58       42648860 B   ---   --   ---xx   flac  0.4996  dylan08-08-08d1t02.flac
+     5:31.01       58390796 B   ---   --   ---xx   flac  0.4773  dylan08-08-08d1t03.flac
+     7:31.23       79610540 B   ---   --   ---xx   flac  0.4832  dylan08-08-08d1t04.flac
+     5:03.18       53491580 B   ---   --   ---xx   flac  0.4110  dylan08-08-08d1t05.flac
+     7:53.64       83587772 B   ---   --   ---xx   flac  0.4629  dylan08-08-08d1t06.flac
+     6:49.08       72166460 B   ---   --   ---xx   flac  0.4758  dylan08-08-08d1t07.flac
+     6:49.28       72213500 B   ---   --   ---xx   flac  0.4146  dylan08-08-08d1t08.flac
+     7:06.29       75214652 B   ---   --   ---xx   flac  0.4934  dylan08-08-08d1t09.flac
+     6:18.15       66714524 B   ---   --   ---xx   flac  0.4341  dylan08-08-08d1t10.flac
+     8:03.02       85205948 B   ---   --   ---xx   flac  0.4868  dylan08-08-08d1t11.flac
+     6:34.48       69614540 B   ---   --   ---xx   flac  0.4641  dylan08-08-08d1t12.flac
+     6:06.25       64621244 B   ---   --   ---xx   flac  0.5020  dylan08-08-08d2t01.flac
+     8:23.50       88846844 B   ---   --   ---xx   flac  0.4163  dylan08-08-08d2t02.flac
+     6:26.56       68222156 B   ---   --   ---xx   flac  0.4877  dylan08-08-08d2t03.flac
+     7:26.28       78740300 B   ---   --   ---xx   flac  0.4649  dylan08-08-08d2t04.flac
+     7:28.56       79158956 B   ---   --   ---xx   flac  0.4886  dylan08-08-08d2t05.flac
+     5:24.01       57155996 B   ---   --   ---xx   flac  0.4650  dylan08-08-08d2t06.flac
+   113:50.01     1204815144 B                            0.4660  (18 files)
+=================== 
+=================== 
+=================== 

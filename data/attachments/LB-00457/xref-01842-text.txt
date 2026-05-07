@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== 1975_12_4_MONTREAL.ffp
+===================
+===================
+===================
+D1\TRACK01.FLAC:1337f4a9d34e13e6e90608d0b9000152
+D1\TRACK02.FLAC:157df0435d4ff6b8435c102068c11f18
+D1\TRACK03.FLAC:9c14fe5f68db572a9025f1ad3913c6ab
+D1\TRACK04.FLAC:df14be4cf71b2ef0e0f441321fdca1a7
+D1\TRACK05.FLAC:4ea74951c7413746086937efec3114fd
+D1\TRACK06.FLAC:fea62739a3c33d018f75a1be769b15be
+D1\TRACK07.FLAC:4d5968eff9d4ded6aa2bbc89f301e0f0
+D1\TRACK08.FLAC:efe9f964c1bf1ea13962ec3b1639a6f9
+D1\TRACK09.FLAC:3c49f23a9fc4c5b132e0d70c916e33cf
+D1\TRACK10.FLAC:1b2c467f607eecd28d2785e72f3ddce0
+D1\TRACK11.FLAC:f7b8f49b1a38ec926be5dfc243e8c686
+D1\TRACK12.FLAC:f40f5402f7e8e648fd9687ce2dd8aeac
+D1\TRACK13.FLAC:ec313ab6794f1a986f6aa60fd09b3f69
+D2\TRACK01.FLAC:3c75fb0d769ddb7b5d622fe78de23d73
+D2\TRACK02.FLAC:1152efd41d25551bb55b951e4b782399
+D2\TRACK03.FLAC:19f88718e80b6f5d589496c0d88b150b
+D2\TRACK04.FLAC:16f05d7c313728d55ff56cf213bec601
+D2\TRACK05.FLAC:a1b8e792076688c1d36eca99c904901f
+D2\TRACK06.FLAC:c34427724c62962fee9ef86a834b1c4f
+D2\TRACK07.FLAC:c4045ce6641a378f8e075a4ee64ad593
+D2\TRACK08.FLAC:0886428b3bd1873b7b80be43c6cec504
+D2\TRACK09.FLAC:279a945eeaa2fd2358803e3b2a3ff995
+D2\TRACK10.FLAC:636c6a2ed98c57cce57adedf6a550ec5
+===================
+===================
+===================
+=== D1.MD5
+===================
+===================
+===================
+087353331557cceada4e50a14d329f05 *Track01.flac
+0179060c18ddca92b7b7654747999088 *Track02.flac
+1506857bd9687b8acd6bb99fb730284e *Track03.flac
+ab348ea972af2bcf34dabe6ebd01c190 *Track04.flac
+f4863cba28ef126f1c4fd319e2e39928 *Track05.flac
+57d5106a853a6d0e9d650b85d727e877 *Track06.flac
+893d26220006872cb1bdae041a047e4f *Track07.flac
+bf2d6cbc1f540d74740f8a1f17c17f60 *Track08.flac
+9939d5c36372d6f42e46be467d8919ba *Track09.flac
+99539bbb5ebaf951b338338574c03dc6 *Track10.flac
+3e4be4f516cc7cdedbdf089446d0b55f *Track11.flac
+299139c1b7ac2bfbd7f9ec9b554facba *Track12.flac
+b8b7490035a532e2afe9b980e02e2c77 *Track13.flac
+===================
+===================
+===================
+=== D2.MD5
+===================
+===================
+===================
+ca0a3b481b2e7b8412de15a920fb08a5 *Track01.flac
+6787204c0249408fb277ee2aa2524377 *Track02.flac
+aa621b1206f196ac68906592e031bd90 *Track03.flac
+a5dd75a5bd858da3a56e473c16a5a704 *Track04.flac
+380ee3279ef0dda8089d9e8243fe7ed2 *Track05.flac
+6edde54366a8cecbf1ecbf55c4d1df4e *Track06.flac
+b445fa2935619c3d3e4dbb65132dc517 *Track07.flac
+caa475b2df09cb01c795e1cfc47dcad8 *Track08.flac
+93add7151421a659ed00f525b9e5c85f *Track09.flac
+4d0d7f8b260123372fb11b9f4a5bc547 *Track10.flac
+===================
+===================
+===================

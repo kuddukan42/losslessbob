@@ -1,0 +1,36 @@
+; Using hkSFV on 04.17.2008 at 15:29:49
+; http://www.big-o-software.com
+;
+;/----
+;     46758834 15:26.40 2008-04-17 01 - Track01.flac
+;     22196291 15:26.29 2008-04-17 02 - Track02.flac
+;     32349274 15:26.34 2008-04-17 03 - Track03.flac
+;     36314968 15:26.35 2008-04-17 04 - Track04.flac
+;     24073491 15:26.38 2008-04-17 05 - Track05.flac
+;     34123354 15:26.44 2008-04-17 06 - Track06.flac
+;     34926952 15:26.45 2008-04-17 07 - Track07.flac
+;     28245827 15:26.47 2008-04-17 08 - Track08.flac
+;     30745880 15:26.51 2008-04-17 09 - Track09.flac
+;     43970510 15:26.57 2008-04-17 10 - Track10.flac
+;     41599899 15:27.00 2008-04-17 11 - Track11.flac
+;     49501415 15:27.04 2008-04-17 12 - Track12.flac
+;     44494948 15:27.03 2008-04-17 13 - Track13.flac
+;     45184457 15:27.06 2008-04-17 14 - Track14.flac
+;          581 15:29.31 2008-04-17 1987-09-15-Dortmund.txt
+;\----
+;
+6f7e4b93cee6a70a66682db1901c3f2c *01 - Track01.flac
+3548b1854b04e9fd0498b72bb924f440 *02 - Track02.flac
+c54fe159da60c70b133ec0c8cac6b024 *03 - Track03.flac
+410e675f6901a70954d12807a5c550d3 *04 - Track04.flac
+94e72df5955484f16db14936d536bea1 *05 - Track05.flac
+19f26b54772721e2d7537e4035b4223b *06 - Track06.flac
+c295b95e41fefd5c744894344f3f0458 *07 - Track07.flac
+3a7984d3ea3c3c3e173903afd7c8da51 *08 - Track08.flac
+06a78f971a698d5c0f4bfe88b7c57b1f *09 - Track09.flac
+7fe5a6aad342c312c11a8d5f7040b6c8 *10 - Track10.flac
+5911be53631dd64c216122ef874818df *11 - Track11.flac
+2ab087f7fdf9f43100a184794898bf04 *12 - Track12.flac
+9db45f7bb581dd8b819e3abe6dee76f3 *13 - Track13.flac
+aa58a80ded5e2fbcd1ef962ad50dd582 *14 - Track14.flac
+b491d389598d6ed7d0efd783f0c7cccb *1987-09-15-Dortmund.txt

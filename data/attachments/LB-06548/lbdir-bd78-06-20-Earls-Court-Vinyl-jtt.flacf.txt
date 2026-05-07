@@ -1,0 +1,61 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-20-Earls-Court-Vinyl-jtt.flacf 
+=================== 
+=================== 
+=================== 
+ca9600df8ede791cd3af6e644ed91d10  Dylan - Earls Court 1978 Vinyl.md5
+73d99be8af735df8ec10e0fbadc99588  Dylan - Earls Court 1978 Vinyl.txt
+28140ce8daf094a9b1c49e72bf176824  Dylan - Earls Court 20.06.1978 Vinyl_Info.txt
+20a3c02608dcb3717d889e539b86fb29  Earls Court 20.06.1978 - F.jpg
+40f10347e2f95b48adfa362305d7a805  Earls Court 20.06.1978 - R.jpg
+3c339ed3b0b9c014add92846337300bc  Track01 Earls Court_Vinyl.flac
+7c7c9bedd81364a6db05821cf51aff03  Track02 Earls Court_Vinyl.flac
+298baa9a17c00456a5613fba16d10c0b  Track03 Earls Court_Vinyl.flac
+fb9b7b755d3d8151b176b2f11c1b082a  Track04 Earls Court_Vinyl.flac
+57be1da99fe7d659024c401434d8a95c  Track05 Earls Court_Vinyl.flac
+2c3ed6c4381aafc21b88a29a0027f268  Track06 Earls Court_Vinyl.flac
+e9c392126513b6cd6af03881f9ce976d  Track07 Earls Court_Vinyl.flac
+00dc227fdb9b633b0dcb6ed2bf175406  Track08 Earls Court_Vinyl.flac
+21116b8f97590bb15f8da8dbdcbbca23  Track09 Earls Court_Vinyl.flac
+6b49c142dc6096c1f47f1ac927e8941e  Track10 Earls Court_Vinyl.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-20-Earls-Court-Vinyl-jtt.flacf 
+=================== 
+=================== 
+=================== 
+Track01 Earls Court_Vinyl.flac:5c4255d527dcd083e691d3cb91a222de
+Track02 Earls Court_Vinyl.flac:7d3c786aab2bc14298d809e5ebcd1234
+Track03 Earls Court_Vinyl.flac:ca8078d52e45f12683739e46535aba89
+Track04 Earls Court_Vinyl.flac:395c21098c7b609d20bb699c9a5cd44b
+Track05 Earls Court_Vinyl.flac:34f0d3e41b1d83bdd58a7950789793e9
+Track06 Earls Court_Vinyl.flac:b2b428473825289450db5fa572dcc218
+Track07 Earls Court_Vinyl.flac:8e1bbeb65babcef37d9a72822636b1db
+Track08 Earls Court_Vinyl.flac:38cc2272dafd357f1f066e80b814a4c1
+Track09 Earls Court_Vinyl.flac:7f9a3ab6d950d079b1ac620b0d9d35a1
+Track10 Earls Court_Vinyl.flac:9e514a1e18e851307b08dcaf28b14639
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-20-Earls-Court-Vinyl-jtt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.01       50099996 B   ---   --   ---xx   flac  0.5881  Track01 Earls Court_Vinyl.flac
+     5:03.61       53592716 B   ---   --   ---xx   flac  0.5919  Track02 Earls Court_Vinyl.flac
+     4:14.30       44876204 B   ---   --   ---xx   flac  0.5555  Track03 Earls Court_Vinyl.flac
+     6:15.66       66305276 B   ---   --   ---xx   flac  0.6100  Track04 Earls Court_Vinyl.flac
+     4:52.57       51642908 B   ---   --   ---xx   flac  0.5868  Track05 Earls Court_Vinyl.flac
+     5:07.40       54248924 B   ---   --   ---xx   flac  0.6056  Track06 Earls Court_Vinyl.flac
+     4:14.29       44873852 B   ---   --   ---xx   flac  0.6416  Track07 Earls Court_Vinyl.flac
+     5:38.14       59656172 B   ---   --   ---xx   flac  0.6287  Track08 Earls Court_Vinyl.flac
+     5:00.21       52969436 B   ---   --   ---xx   flac  0.6087  Track09 Earls Court_Vinyl.flac
+     6:25.55       68043404 B   ---   --   ---xx   flac  0.5880  Track10 Earls Court_Vinyl.flac
+    51:36.74      546308888 B                            0.6009  (10 files)
+=================== 
+=================== 
+=================== 

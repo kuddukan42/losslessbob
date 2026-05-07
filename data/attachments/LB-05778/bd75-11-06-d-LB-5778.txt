@@ -1,0 +1,12 @@
+Bob Dylan, 11/6/75, Springfield, Massachusetts, Civic Center, 2CDR
+
+LB-5778, (80min+39min), version "d"; Afternoon, ., Source 1: 1-17 (14, 16 incomplete), Source 2: 10-17, .flac files taken from Les Kokay RTR 1975 data dvds. All files speed corrected.; bittorrent download 02/08; CD2 described as (alt inc); CD1 matches LB-487 with similar wav and spectral view on d1t1 except this is slower; CD2 matches LB-146 in wav and spectral view on d2t1 except this is faster; (did not listen to all of this)
+
+CD1
+1. When I Paint My Masterpiece, 2. It Ain't Me, Babe, 3. The Lonesome Death Of Hattie Carroll, 4. Romance In Durango (Bob Dylan, Jacques Levy/Bob Dylan), 5. Isis (Bob Dylan, Jacques Levy/Bob Dylan), 6. The Water Is Wide (trad.), 7. I Dreamed I Saw St. Augustine, 8. Never Let Me Go (Joseph C. Scott), 9. I Shall Be Release, 10. I Don't Believe You (She Acts Like We Never Have Met), 11. Oh, Sister (Bob Dylan, Jacques Levy/Bob Dylan), 12. Hurricane (Bob Dylan, Jacques Levy/Bob Dylan), 13. One More Cup Of Coffee (Valley Below), 14. Sara, 15. Just Like A Woman, 16. Knockin' On Heaven's Door, 17. This Land Is Your Land (Woody Guthrie) 
+
+CD2
+10. I Don't Believe You (She Acts Like We Never Have Met), 11. Oh, Sister (Bob Dylan, Jacques Levy/Bob Dylan), 12. Hurricane (Bob Dylan, Jacques Levy/Bob Dylan), 13. One More Cup Of Coffee (Valley Below), 14. Sara, 15. Just Like A Woman, 16. Knockin' On Heaven's Door, 17. This Land Is Your Land (Woody Guthrie)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

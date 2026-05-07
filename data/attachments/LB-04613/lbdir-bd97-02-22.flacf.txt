@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-22.flacf 
+=================== 
+=================== 
+=================== 
+99e1d8eb9d3c88f31e2026d2bd86cc42  1997-02-22-Akita.txt
+923c79a0c12612c1e4d18891d993c9f0  Akita-1997.md5
+631ad4b361e177d091c291ff3309b66d  bd97-02-22-LB-4613.txt
+0e8d2a19ffc8a73659a145144ef358b3  Track101.flac
+f3ba443aed086a8c2d2599e6d257ce97  Track102.flac
+7316d129842af04ccedc3912c57be03c  Track103.flac
+c77b0c9b6b78f2bbdcc9284b4d94efdc  Track104.flac
+2c28ed0fbaaf85bc09ada2d91cf88ab7  Track105.flac
+d1fd6a5c2d5fbea0c51da5c28d5d0402  Track106.flac
+2e9b966fb1cb300536e249236e8e3177  Track107.flac
+e0ad83d8afdde0d23969dc68ecf4b6fa  Track108.flac
+1347afb92fe3ca11c0f26b29bab686a2  Track109.flac
+106aa3934be349af697c909741f810df  Track110.flac
+a53a1188d7b1465253b07d1cb1f7edf9  Track111.flac
+b575bc454ab7851b2f5618b158b908bb  Track112.flac
+5bb6ecfef3f5f4a650b1727f3dc20275  Track201.flac
+93bbb25f16b57110af50eca50f6da4e6  Track202.flac
+ab9796ddd510364b06bbba66bcf1c814  Track203.flac
+98a2e72fadae4be4db7cb8f91b5148bd  Track204.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-22.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:07c5a6f5c1e3010b6961826e086086be
+Track102.flac:ec282c4c4217c6eba8e50463fe0d44ef
+Track103.flac:e1ebee338edbbb0c76cbda4fe6d87bc5
+Track104.flac:188784099c58a44a1a5ef1871c738ffe
+Track105.flac:f16b072d62876b27664cba00c4af9cbd
+Track106.flac:a7f6e75c3357ff3997050fff5e7ea994
+Track107.flac:fafbdac32de43f597f866973903c0c33
+Track108.flac:fc8b71beaafdba21187ad188d31122ce
+Track109.flac:9acfa56716d97804f441481bb9f02db1
+Track110.flac:95a763cc4dc4feb603e09395da94c47d
+Track111.flac:9fcf69859a8ddeff5a85b40ab0dc30c7
+Track112.flac:6922a2b412cbe8409ae0e7b5a172bdad
+Track201.flac:102afc2af38254ec21f0720d6e717ae3
+Track202.flac:af6e83dfa3b00cd07598837bbe4d2e6e
+Track203.flac:d581da375c841f86796b7e8c6e43a51e
+Track204.flac:38af93a131a88d644f9d05fc397430e0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-22.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:19.07        3368108 B   ---   --   ---xx   flac  0.4309  Track101.flac
+     5:39.29       59867852 B   ---   --   ---xx   flac  0.5329  Track102.flac
+     5:46.46       61142636 B   ---   --   ---xx   flac  0.4889  Track103.flac
+     5:58.65       63304124 B   ---   --   ---xx   flac  0.5416  Track104.flac
+     7:12.35       76287164 B   ---   --   ---xx   flac  0.4868  Track105.flac
+     6:30.53       68920700 B   ---   --   ---xx   flac  0.5279  Track106.flac
+     8:27.45       89540684 B   ---   --   ---xx   flac  0.5709  Track107.flac
+     7:32.33       79810460 B   ---   --   ---xx   flac  0.5035  Track108.flac
+     7:40.13       81174620 B   ---   --   ---xx   flac  0.4733  Track109.flac
+     5:23.41       57073676 B   ---   --   ---xx   flac  0.4310  Track110.flac
+     5:55.39       62713772 B   ---   --   ---xx   flac  0.4747  Track111.flac
+     8:53.35       94103564 B   ---   --   ---xx   flac  0.5054  Track112.flac
+     9:16.45       98184284 B   ---   --   ---xx   flac  0.5492  Track201.flac
+    10:59.50      116365244 B   ---   --   ---xx   flac  0.5738  Track202.flac
+     9:09.17       96883628 B   ---   --   ---xx   flac  0.4774  Track203.flac
+     7:12.35       76287164 B   ---   --   ---xx   flac  0.5924  Track204.flac
+   111:57.63     1185027680 B                            0.5188  (16 files)
+=================== 
+=================== 
+=================== 

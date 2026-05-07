@@ -1,0 +1,64 @@
+Bob Dylan
+Civic Theatre
+Auckland, New Zealand
+August 26, 2007
+
+Disc 1:
+01. introduction [00:39]
+02. Leopard-Skin Pill-Box Hat [05:11] 
+03. The Times They Are A-Changin' [05:55] 
+04. You Ain't Goin' Nowhere [04:19] 
+05. It's Alright, Ma (I'm Only Bleeding) [06:54] 
+06. The Levee's Gonna Break [06:09] 
+07. My Back Pages [07:05] 
+08. High Water (For Charley Patton) [06:18] 
+09. Beyond The Horizon [06:37] 
+10. I Don't Believe You (She Acts Like We Never Have Met) [06:59] 
+11. Honest With Me [06:48] 
+12. Workingman's Blues #2 [06:58] 
+Total time: [69:58]
+
+Disc 2: 
+01. Highway 61 Revisited [07:22] 
+02. Ain't Talkin' [08:45] 
+03. Summer Days [08:24] 
+04. Ballad Of A Thin Man [10:41] 
+    (encore)
+05. Thunder On The Mountain [06:36] 
+06. band introduction [00:59]
+07. Like A Rolling Stone [07:25]
+Total time: [50:18]  
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+5th row center floor
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-08-26d1t01.flac:fffde8d288ec8cb75f15e41322abf79b
+bd2007-08-26d1t02.flac:b99d3a33ff8d8d0a4e2318f6d838332c
+bd2007-08-26d1t03.flac:3340adbc3ed8fdc1f01e2e7a7c8b352d
+bd2007-08-26d1t04.flac:5251269141f9df46cd3135d761936735
+bd2007-08-26d1t05.flac:d3b1496078637903d8a7e64e5fd12174
+bd2007-08-26d1t06.flac:7a019050442fb028730bd6a311a9736d
+bd2007-08-26d1t07.flac:d4ff9b9d643572f744910064ecbb2258
+bd2007-08-26d1t08.flac:09a3385a73d2ba22e91b3ec93788260b
+bd2007-08-26d1t09.flac:8bcca2f944a90caefae31f59f89261f2
+bd2007-08-26d1t10.flac:14b4b08bbfc50b9623a801df1bedc8a2
+bd2007-08-26d1t11.flac:a663cccde728b12cffafc83e557a111b
+bd2007-08-26d1t12.flac:b02f8197610c124f16dbfbf4b0358937
+bd2007-08-26d2t01.flac:b92bbb32652cde9b2d67545b51cb5293
+bd2007-08-26d2t02.flac:85ab854e43fd1a7d8cf4b100a0f9d06f
+bd2007-08-26d2t03.flac:91780bf43f372a9ffae0a14d41398830
+bd2007-08-26d2t04.flac:0b1c7a3c3e4055071bef18eb4d90b00b
+bd2007-08-26d2t05.flac:12e0c10d47dff3b7c2c5236ff8f0068e
+bd2007-08-26d2t06.flac:5901abee682e177c753e3dfc742c8a5e
+bd2007-08-26d2t07.flac:827f35aa0eaa84c752fb9e460f2e99f6

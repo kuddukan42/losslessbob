@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== bd90-06-14-LB-199.txt
+===================
+===================
+===================
+Bob Dylan
+6/14/90 Fargo 2 cdrs   80min +20min 
+LB-199
+
+
+very good sound
+
+
+CD1
+
+1 Absolutely Sweet Marie 2 Ballad Of A Thin Man 3 Stuck Inside Of Mobile With The Memphis Blues Again 4 You're A Big Girl Now 5 Masters Of War 6 Gotta Serve Somebody 7 It's Alright, Ma (I'm Only Bleeding) (acoustic w band) 8 Love Minus Zero - No Limit (acoustic w band) 9 Girl From The North Country (acoustic w band) 10 The Lonesome Death Of Hattie Carroll (acoustic w band) 11 Mr. Tambourine Man (acoustic w band) 12 It Ain't Me, Babe (acoustic w band) 13 Everything Is Broken 14 What Was It You Wanted 15 Shooting Star 16 All Along The Watchtower 
+
+
+CD2
+
+1 I Shall Be Released / Like A Rolling Stone / Blowin' In The Wind (acoustic w band) / Highway 61 Revisited 
+===================
+===================
+===================
+=== bd90-06-14.md5
+===================
+===================
+===================
+36399b90d2b6316ebc9125ca6675b8be *bd90-06-14d1t01.flac
+6adf9e4596058190bb86d66766e61139 *bd90-06-14d1t02.flac
+ae36a54e436717fa02aee90d0103af80 *bd90-06-14d1t03.flac
+583ea6ad5cd2371c732a6b20465b88f5 *bd90-06-14d1t04.flac
+4564ca63a32f03b9d0eac28d19f507c5 *bd90-06-14d1t05.flac
+51669b6eca0c3c315c492ef5141e1bc3 *bd90-06-14d1t06.flac
+f4c1f6d0f6651b7d634b964cfaa1cd5b *bd90-06-14d1t07.flac
+03031927346feb62a381b5961a90b70c *bd90-06-14d1t08.flac
+ecd97a3a369b1b206294666eed5caf22 *bd90-06-14d1t09.flac
+2bd09809b6f43708492d5b8d3c29bde7 *bd90-06-14d1t10.flac
+7984de7e0e1732c83631d95ae335f5e1 *bd90-06-14d1t11.flac
+4ead6019963e6ceebae0b750d75193f1 *bd90-06-14d1t12.flac
+6fc96509c3a73833786697b0d2739d32 *bd90-06-14d1t13.flac
+48b627779fc3e93e9ba73e739bd391cb *bd90-06-14d1t14.flac
+72721521a2b7c886345691f56029661f *bd90-06-14d1t15.flac
+cfcd93ea3416ada7565b1a2c511b053c *bd90-06-14d1t16.flac
+c4237974e6e02f2c7b3fb08921a15261 *bd90-06-14d2t01.flac
+b4de41418ec9261b3f21a2f334de9272 *bd90-06-14d2t02.flac
+67f5b92905bd65b688577010a8c6d0f7 *bd90-06-14d2t03.flac
+a04dcfe03ee81d40ddfa0f462818781d *bd90-06-14d2t04.flac
+===================
+===================
+===================
+=== bd90-06-14.txt
+===================
+===================
+===================
+Bob Dylan, 6/14/90, Fargo, 2CDR
+
+(80min+20min), very good sound;
+
+CD1 
+1 Absolutely Sweet Marie 2 Ballad Of A Thin Man 3 Stuck Inside Of Mobile With The Memphis Blues Again 4 You're A Big Girl Now 5 Masters Of War 6 Gotta Serve Somebody 7 It's Alright, Ma (I'm Only Bleeding) (acoustic w band) 8 Love Minus Zero - No Limit (acoustic w band) 9 Girl From The North Country (acoustic w band) 10 The Lonesome Death Of Hattie Carroll (acoustic w band) 11 Mr. Tambourine Man (acoustic w band) 12 It Ain't Me, Babe (acoustic w band) 13 Everything Is Broken 14 What Was It You Wanted 15 Shooting Star 16 All Along The Watchtower 
+
+CD2 
+1 I Shall Be Released 2 Like A Rolling Stone 3 Blowin' In The Wind (acoustic w band) 4 Highway 61 Revisited
+
+===================
+===================
+===================

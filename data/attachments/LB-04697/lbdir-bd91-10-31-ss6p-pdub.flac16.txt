@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-10-31-ss6p-pdub.flac16 
+=================== 
+=================== 
+=================== 
+2e372c7de599a1a20852dea492f36e3f  bd1991-10-31.info.txt
+77ff0374f11e5617d668967f3d78d4a1  bd1991-10-31.ss6p.pdub.sbeok.flac16 Wichita, KS.ffp
+99eb4ef38e4960ab54f01b1da0f54d20  bd1991-10-31.ss6p.pdub.sbeok.flac16 Wichita, KS.md5
+a59568ae1bebd1b286d0bbe58a03df69  bd1991-10-31.ss6p.pdub.sbeok.flac16 Wichita, KS.st5
+15abc6030de2eb927c14a5ecc0ca4bbd  bd91-10-31-ss6p-pdub-LB-4697.txt
+038831725633e17f9b6208cd5e717e94  d1\bd1991-10-31d1.LOG
+4bc1df8bd15a35a245b206dfe594f4a3  d1\bd1991-10-31d1t01.flac
+fc7e904e1f2fee6d6de50905113e01bb  d1\bd1991-10-31d1t02.flac
+a1480f54eceffa83dc31aabf646aa999  d1\bd1991-10-31d1t03.flac
+08e5287d1e896466f2892f490c7b42fd  d1\bd1991-10-31d1t04.flac
+cd2e5ceda444e767ebddd09976b9fd77  d1\bd1991-10-31d1t05.flac
+817ff732dd5f24a3df53ca07138d8957  d1\bd1991-10-31d1t06.flac
+7136577cadbefcab3449796ea39343ad  d1\bd1991-10-31d1t07.flac
+08d9f8281727116cc67fe916d6bd7af3  d1\bd1991-10-31d1t08.flac
+01120868d86db8b34aea7c93403a8332  d1\bd1991-10-31d1t09.flac
+9ffbf48f233accc72e41848a654f7b06  d1\bd1991-10-31d1t10.flac
+052f43c4f447502b7db9ed2693d10d52  d1\bd1991-10-31d1t11.flac
+a9048f7b14c80bea630febdb7f0e3c45  d1\bd1991-10-31d1t12.flac
+c800d3f96260c9f891d7c5e353dc1799  d1\d1.shntool.txt
+b2066206404ed7728cb09d285613daf1  d1t03.PNG
+75273de9e10e7dc2b9493e1dd958ff12  d2\bd1991-10-31d2.LOG
+3c55b0dfc183b312b4d22d49f46aa434  d2\bd1991-10-31d2t01.flac
+5e374318a070b961d5b25def4efcae64  d2\bd1991-10-31d2t02.flac
+a615afc795d76590c272000fb1d2db79  d2\bd1991-10-31d2t03.flac
+5f1cd64655f1c8747f18696060caa64d  d2\bd1991-10-31d2t04.flac
+9ee449e421aacf421ccdb962bc4b5e38  d2\bd1991-10-31d2t05.flac
+db13acb9f340d7792acf3efce9881dca  d2\bd1991-10-31d2t06.flac
+6284ebc8a94248cd359cfdf3f4ec3d2c  d2\d2.shntool.txt
+9790685b667f6e36ec1858c9e0430ae2  d2t04.PNG
+c67759f692237443e0d17df228f02437  lbdir-bd91-10-31-ss6p-pdub.flac16.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-10-31-ss6p-pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+bd1991-10-31d1t01.flac:5cda5c16b645709fdea601c838b671fb
+bd1991-10-31d1t02.flac:612f370f62913839a9b4d8e566338355
+bd1991-10-31d1t03.flac:40f0d820909ae0c828c1d2d8cae5bc5e
+bd1991-10-31d1t04.flac:a600f3228d7dbb4fb070d5ebc9cfea72
+bd1991-10-31d1t05.flac:ea5d5608627493961aedbd888ee7e4dc
+bd1991-10-31d1t06.flac:21b292596f26f55c444bf551e7dd21d0
+bd1991-10-31d1t07.flac:f8d0255d1776a3bf3348808a084e84bf
+bd1991-10-31d1t08.flac:94cebff8cf55521b18fa4ad21ae6a0ba
+bd1991-10-31d1t09.flac:ab1f5cc61da682d07d585de2cc103684
+bd1991-10-31d1t10.flac:b78010d72530afafbb18e6a82b86ffcf
+bd1991-10-31d1t11.flac:b3d1566f3a1a3997de64e18c0763c15c
+bd1991-10-31d1t12.flac:a5c44521e2b57622d03be73c37845c84
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-10-31-ss6p-pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+bd1991-10-31d2t01.flac:7448b60502b0de4130cbeb3898a4e530
+bd1991-10-31d2t02.flac:c0d603af732d6bfa3143f29c45bb5202
+bd1991-10-31d2t03.flac:5c81c738aa47b5e68ea6a8e561a0c253
+bd1991-10-31d2t04.flac:000cc5ea64c343eab663ccf4ca69bf54
+bd1991-10-31d2t05.flac:5e27b0e46bcde5abcb58ac0b6c7bd0b8
+bd1991-10-31d2t06.flac:b6512bcec1a2521cdfed34f04f3d8162
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-10-31-ss6p-pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.61       43361516 B   ---   --   ---xx   flac  0.5375  bd1991-10-31d1t01.flac
+     4:53.16       51722876 B   ---   --   ---xx   flac  0.5194  bd1991-10-31d1t02.flac
+     4:59.12       52771868 B   ---   --   ---xx   flac  0.5474  bd1991-10-31d1t03.flac
+     3:40.00       38808044 B   ---   --   ---xx   flac  0.5322  bd1991-10-31d1t04.flac
+     6:42.07       70929308 B   ---   --   ---xx   flac  0.5215  bd1991-10-31d1t05.flac
+     5:00.67       53077628 B   ---   --   ---xx   flac  0.5443  bd1991-10-31d1t06.flac
+     6:01.65       63833324 B   ---   --   ---xx   flac  0.5343  bd1991-10-31d1t07.flac
+     5:07.05       54166604 B   ---   --   ---xx   flac  0.5418  bd1991-10-31d1t08.flac
+     6:05.26       64447196 B   ---   --   ---xx   flac  0.4913  bd1991-10-31d1t09.flac
+     6:05.62       64531868 B   ---   --   ---xx   flac  0.5275  bd1991-10-31d1t10.flac
+     4:31.12       47832668 B   ---   --   ---xx   flac  0.5026  bd1991-10-31d1t11.flac
+     7:15.17       76774028 B   ---   --   ---xx   flac  0.5162  bd1991-10-31d1t12.flac
+    64:27.50      682256928 B                            0.5253  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-10-31-ss6p-pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.12       60886268 B   ---   --   ---xx   flac  0.5289  bd1991-10-31d2t01.flac
+     3:51.62       40894268 B   ---   --   ---xx   flac  0.5418  bd1991-10-31d2t02.flac
+     6:34.22       69553388 B   ---   --   ---xx   flac  0.5123  bd1991-10-31d2t03.flac
+     7:53.40       83531324 B   ---   --   ---xx   flac  0.5476  bd1991-10-31d2t04.flac
+     6:41.58       70872860 B   ---   --   ---xx   flac  0.5176  bd1991-10-31d2t05.flac
+     4:33.28       48223100 B   ---   --   ---xx   flac  0.5505  bd1991-10-31d2t06.flac
+    35:19.72      373961208 B                            0.5320  (6 files)
+=================== 
+=================== 
+=================== 

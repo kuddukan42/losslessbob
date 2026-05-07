@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-12.flacf 
+=================== 
+=================== 
+=================== 
+fcccb9ac8696f30fe88b613eb6387fe6  bd00-03-12-LB-4018.txt
+60244b99252bbe92e827c8220eab4395  bd2000-03-12.flac Bakersfield, CA.ffp
+31cfe6135d81dc7770d57d57cd30349f  bd2000-03-12.flac Bakersfield, CA.st5
+c21bed2c6c01cf2aeba24e6215415457  bd2000-03-12d1t03fa.PNG
+0e37269adf8e795bfc25f8fb2f71c9a5  bd2000-03-12d1t03sa.PNG
+5a9c71549e0ab663ff43eebbb24e896d  bd2000-03-12d2t03fa.PNG
+2be9c90b62b44ba107b6e1fc814292e0  bd2000-03-12d2t03sa.PNG
+6eacd06e89d609b59c828bb003380412  d1\bd2000-03-12d1.LOG
+d11d9e585fb345c8ba809de8fe95273d  d1\bd2000-03-12d1t01.flac
+eb6ac26d2640636c07e03f61adfbe233  d1\bd2000-03-12d1t02.flac
+fb8ef8f7bea96e214b041d3a0a3124a2  d1\bd2000-03-12d1t03.flac
+4c9d6f074e1396d1138a790d277ada2a  d1\bd2000-03-12d1t04.flac
+ce99ed217ec716333fae2af3de212829  d1\bd2000-03-12d1t05.flac
+845259e260e2c81fc94b1cfb3b6728f2  d1\bd2000-03-12d1t06.flac
+2947194e5f5655099ed9c798fdd2a913  d1\bd2000-03-12d1t07.flac
+53539a03730e2799f38cf624d873106a  d1\bd2000-03-12d1t08.flac
+2b7a8fc352cdb9fe5188dc27b1e8f11d  d1\bd2000-03-12d1t09.flac
+ea050d4b66d405c26d59e9e45ddea08a  d1\bd2000-03-12d1t10.flac
+b340586647ee06893d9879f848ea0586  d1\bd2000-03-12d1t11.flac
+7b66a757433966a8a99ab08e53b8fefa  d1\bd2000-03-12d1t12.flac
+45e17b03a4b8e7e1bf0453968447d48a  d1\bd2000-03-12d1t13.flac
+7a0ed244824e558cb7756e02ca2b5f19  d1\d1.shntool.txt
+52606480dbf21bd7a085df32547f32f5  d1\d1.txt
+0153a5503bd4eda568643c6de9f98c98  d2\bd2000-03-12d2.LOG
+0ea28d4f895232ff6b02efb109f3cda2  d2\bd2000-03-12d2t01.flac
+a580504f58dc63420a0e6427587772fb  d2\bd2000-03-12d2t02.flac
+e7eb746c194e48d23e15c8376f41371d  d2\bd2000-03-12d2t03.flac
+674106eec723792f8c6dd0dfe0f1b389  d2\bd2000-03-12d2t04.flac
+1e30f28829c394f5b57818d51e18850f  d2\d2.shntool.txt
+dbbef8a6daa5776f4f168f24310b8ab2  d2\d2.txt
+19f01d3cf142c2d5889d208ec27549c6  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-12.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd2000-03-12d1t01.flac:821f3e7faa2c44e1673595648f4f2c97
+bd2000-03-12d1t02.flac:1ac005414a2dd4fdfb5c2d59724f10d6
+bd2000-03-12d1t03.flac:4300f1161f5da65a95d9990b39d001a9
+bd2000-03-12d1t04.flac:e4cf78b1b82bbee9483546c938c24180
+bd2000-03-12d1t05.flac:4a41d386f0904591770b320e51de3e3a
+bd2000-03-12d1t06.flac:90dccc1180fcb1bad282db6aace5f97e
+bd2000-03-12d1t07.flac:24870c5891fcb6d1f39572a6fe72ed40
+bd2000-03-12d1t08.flac:67231f94622d406cdfffadaf69526a8c
+bd2000-03-12d1t09.flac:3837f58ae2f0e247db06d7d4203cdf60
+bd2000-03-12d1t10.flac:1a4ed2f046fa216fef6ad95e2753df61
+bd2000-03-12d1t11.flac:e9f5e025e5440fef0395aed925b391c8
+bd2000-03-12d1t12.flac:e52575a58222e42f1eee0b4405f00299
+bd2000-03-12d1t13.flac:e8435780541f98a2334cc4453da67d0e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-12.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd2000-03-12d2t01.flac:3d7e3634a070670ae9e0fb25cfe0a242
+bd2000-03-12d2t02.flac:021460c2aafd991010be6ce015f70225
+bd2000-03-12d2t03.flac:4e66cc6ebcf6fc7ae4b93134cdf31a70
+bd2000-03-12d2t04.flac:fcd4433d8a62ba074dbc1544ceac7af0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-12.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:41.25       28459244 B   ---   --   ---xx   flac  0.5574  bd2000-03-12d1t01.flac
+     7:03.72       74786588 B   ---   --   ---xx   flac  0.5203  bd2000-03-12d1t02.flac
+     7:25.24       78554492 B   ---   --   ---xx   flac  0.5096  bd2000-03-12d1t03.flac
+     6:00.20       63551084 B   ---   --   ---xx   flac  0.5043  bd2000-03-12d1t04.flac
+     6:36.64       70004972 B   ---   --   ---xx   flac  0.5892  bd2000-03-12d1t05.flac
+     4:18.66       45666476 B   ---   --   ---xx   flac  0.4854  bd2000-03-12d1t06.flac
+     5:21.28       56690300 B   ---   --   ---xx   flac  0.5812  bd2000-03-12d1t07.flac
+     2:41.31       28473356 B   ---   --   ---xx   flac  0.5783  bd2000-03-12d1t08.flac
+     7:00.46       74196236 B   ---   --   ---xx   flac  0.5821  bd2000-03-12d1t09.flac
+     6:32.54       69275852 B   ---   --   ---xx   flac  0.5109  bd2000-03-12d1t10.flac
+     5:15.34       55646012 B   ---   --   ---xx   flac  0.5454  bd2000-03-12d1t11.flac
+     6:53.45       72959084 B   ---   --   ---xx   flac  0.4289  bd2000-03-12d1t12.flac
+     5:47.46       61319036 B   ---   --   ---xx   flac  0.5986  bd2000-03-12d1t13.flac
+    73:39.30      779582732 B                            0.5344  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-12.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:04.41       64306076 B   ---   --   ---xx   flac  0.5217  bd2000-03-12d2t01.flac
+     5:21.31       56697356 B   ---   --   ---xx   flac  0.5752  bd2000-03-12d2t02.flac
+     6:20.51       67151996 B   ---   --   ---xx   flac  0.4505  bd2000-03-12d2t03.flac
+     4:04.14       43074572 B   ---   --   ---xx   flac  0.5648  bd2000-03-12d2t04.flac
+    21:50.62      231230000 B                            0.5222  (4 files)
+=================== 
+=================== 
+=================== 

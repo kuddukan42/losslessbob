@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-04_West Palm Beach, Florida_CEDAR 2 
+=================== 
+=================== 
+=================== 
+e85206c292c6bce7af71eeef50164e50  101_MAGG.shn
+8ce9f0ced42603bfcaf254f35b3d6a76  102_SENO.shn
+9e1c0ebad61bb3ab0c7640890cbcf672  103_STUC.SHN
+91dd68a7fd3fbaf9d80261357c02be23  104_LAY_.SHN
+e6374ddddbb0a8bda6a821d3d3fcd416  105_THIN.SHN
+c622a69f005499c012b6c1275b65461b  106_DRIF.SHN
+fb2a3389eed4510dace6ebf4a7193163  107_IT_A.SHN
+8300af8e1d0598bbf4c98cdb3da5cd03  108_COLD.SHN
+602452d31469bb68b46bba70d064e7cc  2003-05-.MD5
+3bb1acd3d806563a470460eda406758b  201_JUST.SHN
+e20fb339628ee6cc7fddfa64866a16c7  202_LOVE.SHN
+dc98b80dd2dec8149e6f0f69fa76c361  203_YOU_.SHN
+41e40e6453f1feca218e113bb380fd03  204_HONE.SHN
+ec5b4094a901da6f5cc75111a042f883  205_BYE_.SHN
+113e67ed8b07352981b0f61ebb20ac81  206_BAND.SHN
+8fb7b3506617e7f8047d0cad37cb654e  207_SUMM.SHN
+4e550e7ef445a8bfdad88a56e8c3b27f  208_LIKE.SHN
+b75b72779145a40a32e0b06c685a18cd  209_ALL_.SHN
+2a91b96b4f6cdac25ca2a56a26141540  bd03-05-04c2.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-05-04_West Palm Beach, Florida_CEDAR 2 
+=================== 
+=================== 
+=================== 
+0c1745e7d5b1f9d31c123b1ac3bab86b  [shntool]  101_MAGG.wav
+ae99bb53d4fc80632d254f7b63f04708  [shntool]  102_SENO.wav
+106c063e14acb6e17a88dca08d8e2577  [shntool]  103_STUC.wav
+5e5c2aec8a138d55b8df9b1de5da1bbc  [shntool]  104_LAY_.wav
+057adf792dd13dd6acda2ce6b8f47148  [shntool]  105_THIN.wav
+7d652ba491c96c355810b249268d3bef  [shntool]  106_DRIF.wav
+ec46312abc40700c493e5fc7d3cdb826  [shntool]  107_IT_A.wav
+dee57c3b13d50f4be81455272df03cbe  [shntool]  108_COLD.wav
+643b35878ba1e062ea2d65b6f342e631  [shntool]  201_JUST.wav
+9f986f4ea640d792d95ce0f35f07954b  [shntool]  202_LOVE.wav
+6763ec49c742b7bdfe00ed77eebb874f  [shntool]  203_YOU_.wav
+37c22650143190f23d1f8675179bfc77  [shntool]  204_HONE.wav
+d1df84bc64cc30558ed0d9545249dccd  [shntool]  205_BYE_.wav
+dfd35259a07a25aa3ce8a43956c5dfb2  [shntool]  206_BAND.wav
+86dff366e82cb04ea3cc63f1a79f10f3  [shntool]  207_SUMM.wav
+4e06f0690de2caba34e3b9e42e40e448  [shntool]  208_LIKE.wav
+f529e478b2452351ce821c2afca1e521  [shntool]  209_ALL_.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-04_West Palm Beach, Florida_CEDAR 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:11.32       65519716 B   ---   -e   ----j    wav  1.0000  101_MAGG.wav
+     4:38.00       49039252 B   ---   -e   ----j    wav  1.0000  102_SENO.wav
+     8:02.18       85067188 B   ---   -e   ----j    wav  1.0000  103_STUC.wav
+     4:39.36       49300324 B   ---   -e   ----j    wav  1.0000  104_LAY_.wav
+     6:34.14       69534580 B   ---   -e   ----j    wav  1.0000  105_THIN.wav
+     5:33.26       58802404 B   ---   -e   ----j    wav  1.0000  106_DRIF.wav
+     6:58.11       73761124 B   ---   -e   ----j    wav  1.0000  107_IT_A.wav
+     6:20.46       67140244 B   ---   -e   ----j    wav  1.0000  108_COLD.wav
+     7:46.41       82298884 B   ---   -e   ----j    wav  1.0000  201_JUST.wav
+     6:28.50       68560852 B   ---   -e   ----j    wav  1.0000  202_LOVE.wav
+     4:45.54       50401060 B   ---   -e   ----j    wav  1.0000  203_YOU_.wav
+     7:15.10       76757572 B   ---   -e   ----j    wav  1.0000  204_HONE.wav
+     5:50.17       61780036 B   ---   -e   ----j    wav  1.0000  205_BYE_.wav
+     0:43.13        7615828 B   ---   -e   ----j    wav  1.0003  206_BAND.wav
+     9:46.62      103516276 B   ---   -e   ----j    wav  1.0000  207_SUMM.wav
+     6:50.20       72371092 B   ---   -e   ----j    wav  1.0000  208_LIKE.wav
+     6:01.16       63718084 B   ---   -e   ----j    wav  1.0000  209_ALL_.wav
+   104:25.16     1105184516 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,38 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-helena-spring-demos-alt.flacf 
+=================== 
+=================== 
+=================== 
+2299a7ff99b568ad32c84b9474d737de  bd79-helena-spring-demos-alt-LB-4496.txt
+fa7ef5200956059b985abfce27b2db83  bd79-helena-spring-demos.alt.ffp
+fb76c00eba5e7e75616dc03edbb32df9  bd79-helena-spring-demos.alt.md5
+bf16484708bd87e48cdde7254b240028  Track05.flac
+7b9eb686dffd0e7001f169df158f53f1  Track06.flac
+338047ec87ee546b6457408d1607b7a4  Track07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-helena-spring-demos-alt.flacf 
+=================== 
+=================== 
+=================== 
+Track05.flac:a0d3195dc977e4608af5df0977e36644
+Track06.flac:f5414f1b8d406ec2aa9d31fb4a71efa4
+Track07.flac:bc01918105df6a6196277116de237ed5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-helena-spring-demos-alt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:45.37       18609068 B   ---   --   ---xx   flac  0.3652  Track05.flac
+     3:16.21       34623836 B   ---   --   ---xx   flac  0.3558  Track06.flac
+     2:35.47       27452588 B   ---   --   ---xx   flac  0.3281  Track07.flac
+     7:37.30       80685492 B                            0.3485  (3 files)
+=================== 
+=================== 
+=================== 

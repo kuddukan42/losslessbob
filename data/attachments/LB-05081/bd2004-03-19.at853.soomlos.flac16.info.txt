@@ -1,0 +1,66 @@
+Bob Dylan
+Ricoh Coliseum
+Toronto, Ontario
+March 19, 2004
+
+source: soomlos
+fob, center, ga floor 
+at853's > spsb-1 > denecke ad-20 > sony d8
+sony d8 > tascam cd-rw700 > eac > flac
+
+Disc 1:
+01. introduction [00:35]
+02. Drifter's Escape [04:36]
+03. It's All Over Now, Baby Blue [05:02]
+04. Tweedle Dee & Tweedle Dum [05:19]
+05. Just Like A Woman [05:51]
+06. Things Have changed [06:46]
+07. Highway 61 Revisited [06:12]
+08. Ballad Of A Thin Man [06:08]
+09. Stuck Inside Of Mobile With The Memphis Blues Again [07:58]
+10. Floater (Too Much To Ask) [06:35]
+11. Most Likely You Go Your Way And I'll Go Mine [06:52]
+12. Make You Feel My Love [05:02]
+Total time: [66:58]
+
+Disc 2:
+01. Honest With Me [06:52]
+02. Girl Of The North Country [05:01]
+03. Summer Days [11:04]
+     (encore)
+04. Cat's In The Well [04:24]
+05. Like A Rolling Stone [06:49]
+06. band introduction [00:54]
+07. All Along The Watchtower [06:06]
+Total time: [41:10]
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, pedal steel
+Freddy Koella - guitar, violin
+Richie Hayward - drums
+George Recile - drums
+Tony Garnier - bass
+
+flac fingerprint
+bd2004-03-19d1t01.flac:dc0faae28ced39337717072341065cc1
+bd2004-03-19d1t02.flac:0943ac99ca8cd592dd3c4f6d0a93355f
+bd2004-03-19d1t03.flac:cbe6d326b7d5d65fbb98f10d885094df
+bd2004-03-19d1t04.flac:e80d6e42b1dc59092ad4e788081b2f82
+bd2004-03-19d1t05.flac:419257052b7f5a6f1b1d24944c34c2a5
+bd2004-03-19d1t06.flac:5be2fc1ec5ef50f799e48d988be2a9f8
+bd2004-03-19d1t07.flac:d0d47f51c974823deaf38b548bcc831e
+bd2004-03-19d1t08.flac:6fb1a55f8efbe66dded90f322dde7c0c
+bd2004-03-19d1t09.flac:be90050557fc72b0206e5b5c58d5b844
+bd2004-03-19d1t10.flac:bf9e74733ad2404a75bd7f2a136b05cd
+bd2004-03-19d1t11.flac:f3a41ead377fdca3223b86f777698254
+bd2004-03-19d1t12.flac:301e652cb39790cfc4beaf87bfb131c9
+bd2004-03-19d2t01.flac:85a2fd89ffed095523f73df9e8ca9789
+bd2004-03-19d2t02.flac:9add8a3f484a29cb27e6cc5839da85f8
+bd2004-03-19d2t03.flac:6e05e757cd4047698610ae0df39f9622
+bd2004-03-19d2t04.flac:29f12d72af91424a30b0103609e26aca
+bd2004-03-19d2t05.flac:5a1a45e5007aec121d9d4bac0dfc5727
+bd2004-03-19d2t06.flac:f81349ca009889dc697833cc03c1d69d
+bd2004-03-19d2t07.flac:3f18c0768d7881f95fe0f992f822b301
+
+

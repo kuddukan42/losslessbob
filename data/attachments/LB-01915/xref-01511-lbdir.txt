@@ -1,0 +1,88 @@
+===================
+===================
+===================
+=== md5 for: bd95-05-13-IAR-e.flacf
+===================
+===================
+===================
+1bfbab977a31b5388579a68850943050 *bd1995-05-13 Las Vegas IAR.md5
+fe64808323b2a848fc5305f0c9c46674 *d1\Track01.flac
+94358e8ca903565818cccac5d3f4e28c *d1\Track02.flac
+47df9d16b2a0a5425337d02c9829ab9a *d1\Track03.flac
+d8393fcb036cdba618dcd1cbd291881c *d1\Track04.flac
+8b159b10f5744a0c6377467794870bcb *d1\Track05.flac
+58c8c23f525a834af08dde4cf367aadb *d1\Track06.flac
+3e68e0db8ab4ab4137f8c5c3c1777b3c *d1\Track07.flac
+cefc9b3b2c51e970e27ceeba12cc65a4 *d2\Track01.flac
+34b8b931022641fa0b8e2bb434ec9305 *d2\Track02.flac
+6ed2273f93976838653605ce751579e5 *d2\Track03.flac
+3e4fb79e57f1558d8677e772a6c03b45 *d2\Track04.flac
+fa7c898df3cca77df7614c6e53b357da *d2\Track05.flac
+c0c925a41b57a0c83e55b735fa9c2f79 *d2\Track06.flac
+da1c709f80ac7bbadaa1a12f87fd3719 *d2\Track07.flac
+c9d63733887426b1e6f9980c94232555 *d2\Track08.flac
+8894190c7d3573a5c81bbac13bf20df2 *d2\Track09.flac
+ba3b81c338ae61addb9945f389f9b056 *d2\Track10.flac
+ee18bf473790f27d7160a3960a1eef21 *note.txt
+===================
+===================
+===================
+=== ffp for: bd95-05-13-IAR-e.flacf
+===================
+===================
+===================
+d1\Track01.flac:8100e1c0c31467388fe167ca2d92c3fe
+d1\Track02.flac:1d28ae91624a6c0c16c750ff2d865b73
+d1\Track03.flac:84cc85780543aed2ede8f872a81c5f61
+d1\Track04.flac:d2090f09e6679c3aedfdffdd18de05fd
+d1\Track05.flac:4112ce4570b0ebf38f3ca50f3f646b4e
+d1\Track06.flac:78996defbacf0e76251cacd7b095962b
+d1\Track07.flac:958780a42a464805db2c2b62b4183a99
+d2\Track01.flac:6c9ce221af446fda06084c900cf2eeea
+d2\Track02.flac:7d881bb00ecd7a00e0aee7d0e14a7e25
+d2\Track03.flac:214f695b74534e0c85ad0c3f3210fe1d
+d2\Track04.flac:eb678fa036598797a61e2b8183d8f717
+d2\Track05.flac:d4825f99ee3b5e9da806d349c6e256ba
+d2\Track06.flac:caf9b8a53efffa8f6da282c735a09495
+d2\Track07.flac:b79f007e11ddfc21f5e0d84403f78860
+d2\Track08.flac:f47c4243cd9a2ef7474f51138e3af818
+d2\Track09.flac:4abc36a0e2225ef136aecde49d1796dc
+d2\Track10.flac:89325278bb3019a0d1b4df17f4c70292
+===================
+===================
+===================
+=== shntool len for: bd95-05-13-IAR-e.flacf\d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:14.47        2580188 B   ---   --   ---xx   flac  0.4257  Track01.flac
+     4:50.58       51292460 B   ---   --   ---xx   flac  0.6791  Track02.flac
+     5:11.17       54900428 B   ---   --   ---xx   flac  0.6048  Track03.flac
+     5:59.10       63351164 B   ---   --   ---xx   flac  0.6366  Track04.flac
+     6:20.36       67116716 B   ---   --   ---xx   flac  0.5799  Track05.flac
+     7:01.15       74299724 B   ---   --   ---xx   flac  0.6498  Track06.flac
+     7:37.32       80690108 B   ---   --   ---xx   flac  0.6449  Track07.flac
+    37:14.65      394230788 B                            0.6309  (7 files)
+===================
+===================
+===================
+=== shntool len for: bd95-05-13-IAR-e.flacf\d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.65       77945324 B   ---   --   ---xx   flac  0.4775  Track01.flac
+     6:03.73       64204940 B   ---   --   ---xx   flac  0.5037  Track02.flac
+     6:25.12       67942268 B   ---   --   ---xx   flac  0.5686  Track03.flac
+     5:49.62       61709468 B   ---   --   ---xx   flac  0.6443  Track04.flac
+     7:27.19       78895532 B   ---   --   ---xx   flac  0.6003  Track05.flac
+     0:25.12        4438268 B   ---   --   ---xx   flac  0.5346  Track06.flac
+     7:56.49       84081692 B   ---   --   ---xx   flac  0.6288  Track07.flac
+     1:13.37       12964268 B   ---   --   ---xx   flac  0.5422  Track08.flac
+     7:41.39       81412172 B   ---   --   ---xx   flac  0.6132  Track09.flac
+     9:06.65       96467324 B   ---   --   ---xx   flac  0.5198  Track10.flac
+    59:31.58      630061256 B                            0.5677  (10 files)
+===================
+===================
+===================

@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-31-i.flacf 
+=================== 
+=================== 
+=================== 
+97f6f069b8fb8012b25463ee3aa68dc1  dylan-band74-01-30.md5
+3e5e8ea9e7a968eecf6f7bbbb43c967f  dylan-band74-01-30.txt
+009a22f3d0680de77af4d85baf415913  dylan-band74-01-30d1t01.shn
+d45b10369c413c7c491fb4990e5e31e0  dylan-band74-01-30d1t02.shn
+20e08b1eb239ccfb3ffabd92e75c8f92  dylan-band74-01-30d1t03.shn
+767d01e5e29e1f1d1ab4feaa713a5c21  dylan-band74-01-30d1t04.shn
+34450c41b1435da7a4668394378ef9d2  dylan-band74-01-30d1t05.shn
+416ddb38c56e7209d8d1dfedd0a79693  dylan-band74-01-30d1t06.shn
+29c5b929c619da7128b6f611c438c237  dylan-band74-01-30d1t07.shn
+7ff441e9cebee3ade872c91d58e655de  dylan-band74-01-30d1t08.shn
+d6afa5558f17c09b45d7bece0ec95ded  dylan-band74-01-30d1t09.shn
+2a6103b3289e87fe27c7058abf2eaf72  dylan-band74-01-30d1t10.shn
+c0ac0deaf9683e018df41085645359de  dylan-band74-01-30d1t11.shn
+e0a3c865045115a0d21a87c5c9151a0a  dylan-band74-01-30d1t12.shn
+bf98675401b8eaa3fdac7b483943522a  dylan-band74-01-30d1t13.shn
+ab51b02add16403072208dd4303ffbdf  dylan-band74-01-30d1t14.shn
+aae48e966c7c07372aee85afd2c5663c  dylan-band74-01-30d2t01.shn
+c23808565d43e9d4b3a7a946d0d520d6  dylan-band74-01-30d2t02.shn
+69474563dcf541d3e6f462aff0af561b  dylan-band74-01-30d2t03.shn
+56f9a584bb81bdb5cc9b93ba3abd5e18  dylan-band74-01-30d2t04.shn
+a73dc0c9b2f1d856c9a85f1bb6e1dd1b  dylan-band74-01-30d2t05.shn
+56050490e21c0cbbb5f07d58dd182850  dylan-band74-01-30d2t06.shn
+2d22d6af5ddde839c331688f9029e380  dylan-band74-01-30d2t07.shn
+d8091bd04138c660d1db4b49d1b81fe7  dylan-band74-01-30d2t08.shn
+d317531672d6eef5083aa4baca3cf238  dylan-band74-01-30d2t09.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-01-31-i.flacf 
+=================== 
+=================== 
+=================== 
+792f67b1d014740cf80e16024485a43d  [shntool]  dylan-band74-01-30d1t01.wav
+725c2905a9f3022ed1181dce6aaa13cc  [shntool]  dylan-band74-01-30d1t02.wav
+9a4dce112b86d01228d8a6089ba98c30  [shntool]  dylan-band74-01-30d1t03.wav
+9fd0f4ac49a8527653ad053b38c2f473  [shntool]  dylan-band74-01-30d1t04.wav
+8aa17622ab9082fd9a057a2dafe5dee6  [shntool]  dylan-band74-01-30d1t05.wav
+b70a7bc4d4a8f8b9a2786b00050e1373  [shntool]  dylan-band74-01-30d1t06.wav
+0f2f8b578c716a5349a001188b3bd67a  [shntool]  dylan-band74-01-30d1t07.wav
+fd2959936e0e1e0e81ce8fb086d0886f  [shntool]  dylan-band74-01-30d1t08.wav
+fc9cb4458f09e0e77c773a4762501dec  [shntool]  dylan-band74-01-30d1t09.wav
+b19d62dcc3bf832370577048dc11227d  [shntool]  dylan-band74-01-30d1t10.wav
+382e7e7139539ba4da4ca7c877fed1ae  [shntool]  dylan-band74-01-30d1t11.wav
+e64d97b9cd0d2b27c1d25917f2a82811  [shntool]  dylan-band74-01-30d1t12.wav
+87a84b200045ad537101f1750e0a66ce  [shntool]  dylan-band74-01-30d1t13.wav
+2db708b4cf088f1575fd3a936a0c5611  [shntool]  dylan-band74-01-30d1t14.wav
+e07c5c52318d883990fe9d982e42a32a  [shntool]  dylan-band74-01-30d2t01.wav
+8c5bd2ecdcb55ad13f4e085c9c487b58  [shntool]  dylan-band74-01-30d2t02.wav
+e57112e90f7c9091350674f8bf4669ac  [shntool]  dylan-band74-01-30d2t03.wav
+23e5c042d3934df4c414e1cea4f8bae8  [shntool]  dylan-band74-01-30d2t04.wav
+46d69b6a4082ec9f38e8e1ce9edcf4cf  [shntool]  dylan-band74-01-30d2t05.wav
+2d9e911ba3649f2aaf622df7d575f44e  [shntool]  dylan-band74-01-30d2t06.wav
+43a82f4731085f0b2e47ce5ef7ca5060  [shntool]  dylan-band74-01-30d2t07.wav
+e7c9e26b80ad88c59f98dbd65087c777  [shntool]  dylan-band74-01-30d2t08.wav
+712e6f5b8653bb4690fe28c08d278f54  [shntool]  dylan-band74-01-30d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-31-i.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.57       37530908 B   ---   --   ---xx    shn  0.7303  dylan-band74-01-30d1t01.shn
+     3:06.01       32812796 B   ---   --   ---xx    shn  0.7559  dylan-band74-01-30d1t02.shn
+     5:53.53       62393900 B   ---   --   ---xx    shn  0.7600  dylan-band74-01-30d1t03.shn
+     3:31.64       37370972 B   ---   --   ---xx    shn  0.7640  dylan-band74-01-30d1t04.shn
+     3:29.72       37036988 B   ---   --   ---xx    shn  0.7493  dylan-band74-01-30d1t05.shn
+     4:05.55       43347404 B   ---   --   ---xx    shn  0.7388  dylan-band74-01-30d1t06.shn
+     4:42.60       49885964 B   ---   --   ---xx    shn  0.7436  dylan-band74-01-30d1t07.shn
+     4:33.38       48246620 B   ---   --   ---xx    shn  0.7298  dylan-band74-01-30d1t08.shn
+     3:33.44       37676732 B   ---   --   ---xx    shn  0.7375  dylan-band74-01-30d1t09.shn
+     3:24.52       36107948 B   ---   --   ---xx    shn  0.7324  dylan-band74-01-30d1t10.shn
+     4:13.71       44796236 B   ---   --   ---xx    shn  0.7739  dylan-band74-01-30d1t11.shn
+     2:27.06       25944332 B   -b-   --   ---xx    shn  0.7885  dylan-band74-01-30d1t12.shn
+     4:16.41       45254876 B   ---   --   ---xx    shn  0.7645  dylan-band74-01-30d1t13.shn
+     3:50.22       40623788 B   ---   --   ---xx    shn  0.7694  dylan-band74-01-30d1t14.shn
+     3:10.30       33586604 B   ---   --   ---xx    shn  0.7217  dylan-band74-01-30d2t01.shn
+     3:51.62       40894268 B   ---   --   ---xx    shn  0.6982  dylan-band74-01-30d2t02.shn
+     5:16.05       55754204 B   ---   --   ---xx    shn  0.7032  dylan-band74-01-30d2t03.shn
+     5:04.28       53691500 B   ---   --   ---xx    shn  0.7001  dylan-band74-01-30d2t04.shn
+     6:03.13       64063820 B   ---   --   ---xx    shn  0.7082  dylan-band74-01-30d2t05.shn
+     4:20.57       45998108 B   ---   --   ---xx    shn  0.6582  dylan-band74-01-30d2t06.shn
+     3:44.29       39581852 B   ---   --   ---xx    shn  0.7676  dylan-band74-01-30d2t07.shn
+     3:19.31       35176556 B   ---   --   ---xx    shn  0.7703  dylan-band74-01-30d2t08.shn
+     5:47.00       61210844 B   ---   --   ---xx    shn  0.6744  dylan-band74-01-30d2t09.shn
+    95:19.66     1008987220 B                            0.7329  (23 files)
+=================== 
+=================== 
+=================== 

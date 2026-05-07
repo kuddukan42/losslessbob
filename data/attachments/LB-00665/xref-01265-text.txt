@@ -1,0 +1,146 @@
+===================
+===================
+===================
+=== BD 1992-10-30 Beverly, Mass - Bob Dylan.txt
+===================
+===================
+===================
+Bob Dylan
+An Open Tent
+Endicott College
+Beverly, Massachusetts
+30 October 1992
+1. I Can't Be Satisfied (McKinley Morganfield)
+2. Dear Landlord
+3. All Along The Watchtower
+4. Positively 4th Street
+5. Shelter From The Storm
+6. She Belongs To Me
+7. Silvio (Bob Dylan & Robert Hunter)
+8. Mama, You Been On My Mind
+9. Boots Of Spanish Leather
+10. Mr. Tambourine Man
+11. Don't Think Twice, It's All Right
+12. Unbelievable
+13. When I Paint My Masterpiece
+14. The Times They Are A-Changin'
+15. Maggie's Farm
+ 
+16. What Good Am I?
+17. Highway 61 Revisited
+18. It Ain't Me, Babe
+
+Concert # 446 of The Never-Ending Tour. 
+Concert # 10 of the 1992 US Fall Tour. 
+1992 concert # 82.Concert # 15 with the 8th Never-Ending Tour band: 
+Bob Dylan
+(vocal & guitar), 
+Bucky Baxter (pedal steel guitar & electric slide
+guitar), 
+John Jackson (guitar), 
+Tony Garnier (bass), I
+an Wallace
+(drums), 
+Winston Watson (drums & percussion).
+
+8-10, 18 Bob Dylan (acoustic guitar & vocal).
+11 Bob Dylan (acoustic guitar & vocal) & Tony Garnier (bass).
+14 acoustic with the band.
+3, 5, 8-11, 18 Bob Dylan harmonica.
+14 Bucky Baxter (mandolin).
+
+5 new songs (27%) compared to previous concert. No new songs
+for this tour.
+Stereo audience recording, 115 minutes.
+Session info updated 28 March 1993.
+===================
+===================
+===================
+=== BD 1992-10-30 Beverly, Mass.ffp
+===================
+===================
+===================
+CD 1\01 1992-10-30_101.flac:dcbd805890bac0676cef4b0fa5b417ca
+CD 1\02 1992-10-30_102.flac:365f0db21c0b3150b8785660230db3a4
+CD 1\03 1992-10-30_103.flac:d495c396ef92be95ba20f9f2beb7a4c1
+CD 1\04 1992-10-30_104.flac:ccead8728b270548df5adc0e2913c1df
+CD 1\05 1992-10-30_105.flac:307e24cdb24cc582c39dd64488fc0345
+CD 1\06 1992-10-30_106.flac:57d998045402af570b808e9821c19f61
+CD 1\07 1992-10-30_107.flac:4d3dc2658e8569485390a86c5bb82cbc
+CD 1\08 1992-10-30_108.flac:9af6a8ab1302e115098f78bb205695ac
+CD 1\09 1992-10-30_109.flac:60441ccb912ab1cc91571bae92df8f98
+CD 2\01 1992-10-30_201.flac:a03eaf6b9a5b26947ffec9b25d5e1fcb
+CD 2\02 1992-10-30_202.flac:09edd9bf1eff5d89e16d97b687d73970
+CD 2\03 1992-10-30_203.flac:dee2edd42d9fd82bab6183cf27138640
+CD 2\04 1992-10-30_204.flac:0698f94f916251963d56e437f1ed8ecb
+CD 2\05 1992-10-30_205.flac:ea53c03bc47aafefe0eb0f6f3f8163d6
+CD 2\06 1992-10-30_206.flac:80e24138f2dfcfdcb567f58eecb0bc67
+CD 2\07 1992-10-30_207.flac:6407a03630312c40b0c5760c76e7bf23
+CD 2\08 1992-10-30_208.flac:4e8d85875417ef816f8b11857056f626
+CD 2\09 1992-10-30_209.flac:4a2eab76ed9552a9c525aeeb0f531283
+===================
+===================
+===================
+=== BD 1992-10-30 Beverly, Mass.md5
+===================
+===================
+===================
+4d184ae0ecd269d8ebcf9bcc881bbe76 *BD 1992-10-30 Beverly, Mass - Bob Dylan.txt
+df2d0efbe73a20df41714f3111e41414 *BD 1992-10-30 Beverly, Mass.md5
+7c8f1862a07a012b9e90938ba2cf4ed0 *CD 1\01 1992-10-30_101.flac
+8c7db4bdf01137db869ebccbc0778926 *CD 1\02 1992-10-30_102.flac
+731bf134be866d908a4f5237fc62d032 *CD 1\03 1992-10-30_103.flac
+df7c2b2b3f7c34e2fa3a4dca15d360f9 *CD 1\04 1992-10-30_104.flac
+ddceb9419586e0c1bf34a8b629c205a8 *CD 1\05 1992-10-30_105.flac
+d4a716e4501fc98e1ecb0261dd0e5c7e *CD 1\06 1992-10-30_106.flac
+ad56e1fdc08cf431a0849cb81a591d50 *CD 1\07 1992-10-30_107.flac
+c488206247a1a9379a99c8afa2ba6945 *CD 1\08 1992-10-30_108.flac
+81c0af81777049bc46aac597f23fcdf3 *CD 1\09 1992-10-30_109.flac
+55c5e147bd223be426bcdc7da921ee91 *CD 1\BD 1992-10-30 Beverly, Mass - Bob Dylan.log
+1dbd66c8011ded02360cca7c8a37d63a *CD 1\CD 1.ffp
+ef1c9e95c8be11e0c76273e55af9fb31 *CD 2\01 1992-10-30_201.flac
+8404426f19747e5b34438e76fa152aa2 *CD 2\02 1992-10-30_202.flac
+c898de5ad75b877acc141d784d4e0a68 *CD 2\03 1992-10-30_203.flac
+4caac85ce81f9d4df607ccdc8b80099a *CD 2\04 1992-10-30_204.flac
+ed9005a546e31dd7fb72eb574c4fe6cf *CD 2\05 1992-10-30_205.flac
+27f3b9782fe6c8dcbfc7d45387aabb0d *CD 2\06 1992-10-30_206.flac
+dc5c1417c61969b4b8043848788734b6 *CD 2\07 1992-10-30_207.flac
+3241f6f91727d71c38cd1ca8e59923ba *CD 2\08 1992-10-30_208.flac
+e81a0bcea19d0ff47ecdb83f9e03bace *CD 2\09 1992-10-30_209.flac
+b54088079c3dbb22892f12310edfc274 *CD 2\CD 2.ffp
+812b52813f676ee3db5596b144094b83 *CD 2\Unbekannter Titel - Unbekannter Knstler.log
+===================
+===================
+===================
+=== CD 1.ffp
+===================
+===================
+===================
+01 1992-10-30_101.flac:dcbd805890bac0676cef4b0fa5b417ca
+02 1992-10-30_102.flac:365f0db21c0b3150b8785660230db3a4
+03 1992-10-30_103.flac:d495c396ef92be95ba20f9f2beb7a4c1
+04 1992-10-30_104.flac:ccead8728b270548df5adc0e2913c1df
+05 1992-10-30_105.flac:307e24cdb24cc582c39dd64488fc0345
+06 1992-10-30_106.flac:57d998045402af570b808e9821c19f61
+07 1992-10-30_107.flac:4d3dc2658e8569485390a86c5bb82cbc
+08 1992-10-30_108.flac:9af6a8ab1302e115098f78bb205695ac
+09 1992-10-30_109.flac:60441ccb912ab1cc91571bae92df8f98
+===================
+===================
+===================
+=== CD 2.ffp
+===================
+===================
+===================
+01 1992-10-30_201.flac:a03eaf6b9a5b26947ffec9b25d5e1fcb
+02 1992-10-30_202.flac:09edd9bf1eff5d89e16d97b687d73970
+03 1992-10-30_203.flac:dee2edd42d9fd82bab6183cf27138640
+04 1992-10-30_204.flac:0698f94f916251963d56e437f1ed8ecb
+05 1992-10-30_205.flac:ea53c03bc47aafefe0eb0f6f3f8163d6
+06 1992-10-30_206.flac:80e24138f2dfcfdcb567f58eecb0bc67
+07 1992-10-30_207.flac:6407a03630312c40b0c5760c76e7bf23
+08 1992-10-30_208.flac:4e8d85875417ef816f8b11857056f626
+09 1992-10-30_209.flac:4a2eab76ed9552a9c525aeeb0f531283
+===================
+===================
+===================

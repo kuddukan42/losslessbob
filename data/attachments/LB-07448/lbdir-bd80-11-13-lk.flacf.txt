@@ -1,0 +1,123 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-13-lk.flacf 
+=================== 
+=================== 
+=================== 
+ed19b031fcc069aa4ff5c54a6687cf4a  D1\01 G Ride.flac
+7a235aea16c6ed5326a3255ed7023fb1  D1\02 G Rain.flac
+6d0b73390414875e8e9dfd7d1a4aec0d  D1\03 G House.flac
+7c3cd510cf1ca91b83c1e424c994031d  D1\04 G Grace.flac
+cb2c94e200a5079ce15104d2f3193790  D1\05 Gotta Serve.flac
+d052026523bf89c06d39097468d507e3  D1\06 Believe.flac
+8fc8c90689d265455ac0286404bd65ad  D1\07 LRS.flac
+defb165ce9bc445ce890bb68b9e43db4  D1\08 G Right.flac
+1d5bfd935f998b483d2fc51eac765ca9  D1\09 Animals.flac
+8cad34986e3b5f50ced5bff2c1d6886d  D1\10 Ramona.flac
+8e2e48dc820d9b68c08baf045cd0b0a4  D1\11 Hell.flac
+a4d54927afbb1a5f5e792679dad2aeb1  D1\12 GirlNC.flac
+50668cacd099b5e5b5c88e21f89cb1ad  D1\13 Slow Train.flac
+464dc317fe3fa27a54d0f08b65aaf0f2  D1\14 G Heaven.flac
+f455adee4bde7fadbedea9a1f23982c6  D1\15 AM&J.flac
+9258d87a09d1e85101880157d79b4445  D1\16 Between.flac
+e47040a38a63c637da1b32e4982394a4  D1\D1.md5
+1ec06b7fa6c701ae72f6e489da70e77b  D2\17 Covenant.flac
+181c96bf41cb0c3d8fccab51ecd19051  D2\18 Solid Rock.flac
+230bb82b5b396693070116cd8c50158b  D2\19 Do for Yoy.flac
+9e35dd6798e06ffb5a8ba85155f5ed09  D2\20 Groom.flac
+865cb35e4490c5944f658881f31e2c7d  D2\21 JLAW.flac
+df3dbe667812bac2079d6a145f55e0a1  D2\22 Senor.flac
+ab6c2a3c85deee5f7fcf6b5d03efd00e  D2\23 Garden.flac
+8b7ff4d0573a285cc89c993f6b392dc6  D2\24 Blowin.flac
+4c80fa48e97e7ff760f9a9d8ec2313db  D2\25 City of Gold.flac
+138995ffcaa2c1c8120efab60c84d007  D2\26 Aint Me.flac
+3ae55e2d81bb2722544047d7955f11f1  D2\D2.md5
+1446bd6eee1953e45a613e4944e96844  Les Kokay Fall 1980 tour DVD 1.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-13-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+01 G Ride.flac:70b2a34f7890190e166c26fe61e3003b
+02 G Rain.flac:f5bfdbc06c18cc27184d316e8f5f7142
+03 G House.flac:70b38d03c30490cdfaac55daee094a70
+04 G Grace.flac:57669486ea17786bd842cdd05ac261ff
+05 Gotta Serve.flac:054be389c3b342d2da2426abb86e0e0a
+06 Believe.flac:8afae9304f9ad687e9e26f3e4b3b70a1
+07 LRS.flac:7630a6dc4aae94bc92a269a4b5982051
+08 G Right.flac:67cef0e20c47eab490d7d6bb190554c4
+09 Animals.flac:d5d09b66e7fb72b7f2ec056358ea4a44
+10 Ramona.flac:8ff1218c49126cb6ce9a3c2d46d350be
+11 Hell.flac:b73af0f2be560a43654c3c32156674ec
+12 GirlNC.flac:33ec6e16b4929f10b32af503eedabbbf
+13 Slow Train.flac:353f19f5f3641ce9dfc0fd0b9c152e9f
+14 G Heaven.flac:515c751c58047c8d35c67c6eabeaf0f5
+15 AM&J.flac:d3d39ad3c423ea1f8508e8db94863ea2
+16 Between.flac:d7dd4e2fd7f2879e8ce1f83088861e24
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-13-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+17 Covenant.flac:c287ce69f346d8920dcb6d23c8203bca
+18 Solid Rock.flac:aa53e950ce0f69262ec2769f50fba5eb
+19 Do for Yoy.flac:47130fba7a6a79b43802c38713772054
+20 Groom.flac:06e2e91d67b9613d0e33de47c2d351a8
+21 JLAW.flac:1e3eac19d459b2f8c119b1030fd185de
+22 Senor.flac:e38373c0e862d72e0428a95a21e66e41
+23 Garden.flac:5dc64a44e85038d6ab3561710c8c8d6f
+24 Blowin.flac:08954e993f85a492fb4c4288cdfb8ff7
+25 City of Gold.flac:5840941e8026cbb98eb83ab9f53cff7c
+26 Aint Me.flac:90ae01798fbc366154389c9c07a2008c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-13-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.60       35244764 B   ---   --   ---xx   flac  0.5001  01 G Ride.flac
+     3:55.65       41606924 B   ---   --   ---xx   flac  0.5256  02 G Rain.flac
+     4:32.55       48110204 B   ---   --   ---xx   flac  0.5456  03 G House.flac
+     3:34.15       37784924 B   ---   --   ---xx   flac  0.5260  04 G Grace.flac
+     4:24.59       46708412 B   ---   --   ---xx   flac  0.5612  05 Gotta Serve.flac
+     4:46.17       50490428 B   ---   --   ---xx   flac  0.5305  06 Believe.flac
+     5:20.23       56502140 B   ---   --   ---xx   flac  0.5413  07 LRS.flac
+     3:35.53       38050700 B   ---   --   ---xx   flac  0.4829  08 G Right.flac
+     6:16.09       66347612 B   ---   --   ---xx   flac  0.4859  09 Animals.flac
+     5:01.37       53183468 B   ---   --   ---xx   flac  0.5069  10 Ramona.flac
+     4:46.23       50504540 B   ---   --   ---xx   flac  0.5338  11 Hell.flac
+     4:42.36       49829516 B   ---   --   ---xx   flac  0.4556  12 GirlNC.flac
+     5:11.01       54862796 B   ---   --   ---xx   flac  0.5379  13 Slow Train.flac
+     5:08.01       54333596 B   ---   --   ---xx   flac  0.4730  14 G Heaven.flac
+     3:03.58       32417660 B   ---   --   ---xx   flac  0.4569  15 AM&J.flac
+     3:57.09       41828012 B   ---   --   ---xx   flac  0.5040  16 Between.flac
+    71:35.71      757805696 B                            0.5114  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-13-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:34.04       90679052 B   ---   --   ---xx   flac  0.5236  17 Covenant.flac
+     4:16.67       45316028 B   ---   --   ---xx   flac  0.5649  18 Solid Rock.flac
+     5:25.33       57407660 B   ---   --   ---xx   flac  0.5262  19 Do for Yoy.flac
+     6:31.71       69139436 B   ---   --   ---xx   flac  0.5600  20 Groom.flac
+     4:11.43       44377580 B   ---   --   ---xx   flac  0.5150  21 JLAW.flac
+     4:47.68       50786780 B   ---   --   ---xx   flac  0.5074  22 Senor.flac
+     5:29.38       58125020 B   ---   --   ---xx   flac  0.5403  23 Garden.flac
+     4:10.23       44154140 B   ---   --   ---xx   flac  0.5467  24 Blowin.flac
+     3:37.37       38365868 B   ---   --   ---xx   flac  0.5151  25 City of Gold.flac
+     6:04.23       64263740 B   ---   --   ---xx   flac  0.5290  26 Aint Me.flac
+    53:09.32      562615304 B                            0.5331  (10 files)
+=================== 
+=================== 
+=================== 

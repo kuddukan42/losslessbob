@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-08-02-b.flacf 
+=================== 
+=================== 
+=================== 
+eeb17c07c49bbd17c62cebec6cecf94a  01 Humming Bird.flac
+2b127b9692ecd4d3704e5afa70eca87e  02 My Back Pages.flac
+adff9b6c8e92fdc7eca8fde4b5d7bc28  03 It's Alright, Ma (I'm Only Bleeding).flac
+a86b7626c0f0a62f81883cb912d7b9ac  04 To Ramona.flac
+acf9f8c49a365d277a94eb9149d6830f  05 Tombstone Blues.flac
+06a2ffe535aa31bb4a654d1488e006b8  06 Standing In The Doorway.flac
+412502f8d6a186f5b2206286bd0b0a29  07 High Water (For Charley Patton).flac
+29da0511a3c538f7fd04b7de71654566  08 Watching The River Flow.flac
+95b232e304e8db867a7767815bfac39a  09 Masters Of War.flac
+44659d2a4b222aca2ad8810b62686da5  10 Don't Think Twice, It's All Right.flac
+1b0df86c0b3ecd30e885f5e1a22e0516  11 Tangled Up In Blue.flac
+69351b49758dce4c4787e2e1d29f5446  12 Summer Days.flac
+380fb7385cc4ee74944922537a50244c  13 Never Gonna Be The Same Again.flac
+2a6f27fc0edc5079b46f7f1ce8bfb9f5  14 Drifter's Escape.flac
+8e91938728391330ca9cdb0c04aa6601  15 Leopard-Skin Pill-Box Hat.flac
+17dc7ed43d4eaa8a083c08168f9945b9  16 Like A Rolling Stone.flac
+00c1091a2cb5c8e9ddef15b63ac7e134  17 Honest With Me.flac
+28f1ee042ef284a64886d0ed39113a68  18 Blowin' In The Wind.flac
+63c2340331640441373195e4df8ac6f2  19 All Along The Watchtower.flac
+1f270f2b79713211bd68079fca9d1ed0  bd02-08-02-b-LB-5437.txt
+6299f307acff9b42bf85cdb790b3d97a  fingerprints.ffp
+93eaf949d9193c2b9b60eae0c7238ad5  info.txt
+9f53c2d01802973b35b8bb1a1949d646  lbdir-bd02-08-02-b.flacf.md5
+216f0df97072b958fad171bea1be1386  lbdir-bd02-08-02-b.flacf.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-02-b.flacf 
+=================== 
+=================== 
+=================== 
+01 Humming Bird.flac:30d4296f4e8290027720a15d3087f616
+02 My Back Pages.flac:fc2e1a92e7317c5c898edcd3b77d069b
+03 It's Alright, Ma (I'm Only Bleeding).flac:277613d69a05a749974e59237d7792d1
+04 To Ramona.flac:27ab2a4dffe3802513b3c9570e057509
+05 Tombstone Blues.flac:80a918bf39469145732e613c3cdc5071
+06 Standing In The Doorway.flac:e972f2d7b1c9a3bbfb6bc8f2a79d8679
+07 High Water (For Charley Patton).flac:0a4ce708d30da6cb252d7f105230e5d0
+08 Watching The River Flow.flac:85c31db1fc8d330597824422303088fb
+09 Masters Of War.flac:023ac48af5f0c38446b4cb28dc11ce9c
+10 Don't Think Twice, It's All Right.flac:70412df94709b2bd4dbd61ab0a834941
+11 Tangled Up In Blue.flac:45ccb6a46c28e13e37edbdbe5091f251
+12 Summer Days.flac:a91776fa08ca9040c77be5f53429733e
+13 Never Gonna Be The Same Again.flac:1558636b099e2662cd86c9b5012db525
+14 Drifter's Escape.flac:60bc26014a54d8481f690b730f36d99e
+15 Leopard-Skin Pill-Box Hat.flac:cdb459d75e0bc9876d32939def3ce13b
+16 Like A Rolling Stone.flac:99862f90b66507cc2044a60e1a786a3a
+17 Honest With Me.flac:7275c9b999c9adbfbd78eb03d4dc2fa3
+18 Blowin' In The Wind.flac:4bdf5a4409dde715cb8ae7db9fd968e4
+19 All Along The Watchtower.flac:75d7c0a3d8f398df1bd5e17767f155b5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-02-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:18.63       35076548 B   -b-   --   ---xx   flac  0.6939  01 Humming Bird.flac
+     4:47.65       50779516 B   -b-   --   ---xx   flac  0.7065  02 My Back Pages.flac
+     6:33.58       69460928 B   -b-   --   ---xx   flac  0.6885  03 It's Alright, Ma (I'm Only Bleeding).flac
+     5:11.06       54873824 B   -b-   --   ---xx   flac  0.6315  04 To Ramona.flac
+     5:02.73       53443808 B   -b-   --   ---xx   flac  0.6777  05 Tombstone Blues.flac
+     8:23.70       88893152 B   -b-   --   ---xx   flac  0.6089  06 Standing In The Doorway.flac
+     6:04.31       64281824 B   -b-   --   ---xx   flac  0.6662  07 High Water (For Charley Patton).flac
+     5:42.42       60426896 B   -b-   --   ---xx   flac  0.5357  08 Watching The River Flow.flac
+     4:35.63       48657492 B   -b-   --   ---xx   flac  0.4000  09 Masters Of War.flac
+     5:45.04       60868180 B   -b-   --   ---xx   flac  0.4000  10 Don't Think Twice, It's All Right.flac
+     7:33.67       80066096 B   -b-   --   ---xx   flac  0.6042  11 Tangled Up In Blue.flac
+     6:03.35       64114832 B   -b-   --   ---xx   flac  0.6048  12 Summer Days.flac
+     6:11.60       65585564 B   ---   --   ---xx   flac  0.3839  13 Never Gonna Be The Same Again.flac
+     5:06.67       54135296 B   -b-   --   ---xx   flac  0.6236  14 Drifter's Escape.flac
+     8:04.17       85416896 B   -b-   --   ---xx   flac  0.5600  15 Leopard-Skin Pill-Box Hat.flac
+     7:50.17       82947296 B   -b-   --   ---xx   flac  0.5774  16 Like A Rolling Stone.flac
+     6:43.37       71175536 B   -b-   --   ---xx   flac  0.6039  17 Honest With Me.flac
+     6:04.25       64267712 B   -b-   --   ---xx   flac  0.5209  18 Blowin' In The Wind.flac
+     5:20.32       56522576 B   -b-   --   ---xx   flac  0.6243  19 All Along The Watchtower.flac
+   114:25.03     1210993972 B                            0.5827  (19 files)
+=================== 
+=================== 
+=================== 

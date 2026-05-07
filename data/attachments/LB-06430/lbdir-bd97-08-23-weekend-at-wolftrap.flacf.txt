@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-23-weekend-at-wolftrap.flacf 
+=================== 
+=================== 
+=================== 
+0cd8c457d18e5a2c15326edaaf454420  bd97-08-23-weekend-at-d1t01.flac
+26887f22d60f48635cf45aa090e4c2f9  bd97-08-23-weekend-at-d1t02.flac
+6377b9ab34089e428bb4fbad819c3805  bd97-08-23-weekend-at-d1t03.flac
+ee21e3e8db6de4bef0c6c197d9ff1568  bd97-08-23-weekend-at-d1t04.flac
+ca8b20b066a51b9a0c0bc80be773188f  bd97-08-23-weekend-at-d1t05.flac
+6ed0cec83db20a87954089b653d6a22b  bd97-08-23-weekend-at-d1t06.flac
+bbfddc4b4cae3ec47efe08b63da70583  bd97-08-23-weekend-at-d1t07.flac
+f8fa5c6c890d2f1fb81e83c945e8901e  bd97-08-23-weekend-at-d1t08.flac
+938ee54b67719d9df5906c5dfac4ec12  bd97-08-23-weekend-at-d1t09.flac
+bba85223e93593036d637eeb5ad2485f  bd97-08-23-weekend-at-d1t10.flac
+4aa02806ad9b88d1b5bc35ecabee1d2d  bd97-08-23-weekend-at-d2t01.flac
+46582a8d8467cdf6a1fed3cd556d1539  bd97-08-23-weekend-at-d2t02.flac
+63d95abcfb5d29b4bfacd2aac20b5fe3  bd97-08-23-weekend-at-d2t03.flac
+82465e00a37690f2b2ec4b1f88f2c0b7  bd97-08-23-weekend-at-d2t04.flac
+96c4c94e7512c0ff9e7878372013f436  bd97-08-23-weekend-at-d2t05.flac
+4e4c67f808411089c02836701cf2c890  bd97-08-23-weekend-at-d2t06.flac
+32d01aa208da217dc65e743bd0f90fcd  bd97-08-23-weekend-at-d2t07.flac
+78ab8848b883eb0219b0ddf739a18042  bd97-08-23-weekend-at-d2t08.flac
+40cc9e3523b94824c4f5ba5e1af15e67  bd97-08-23-weekend-at-d2t09.flac
+e4b0de0d9e9ad17b23df32ea2c23cbd8  bd97-08-23-weekend-at-d2t10.flac
+5645fa2948436a049add67401d1db6e0  bd97-08-23-weekend-at-d3t01.flac
+3ef75838130ccbf1861239a15695b21c  bd97-08-23-weekend-at-d3t02.flac
+26513878e765df49446da2b6de0cbdc8  bd97-08-23-weekend-at-d3t03.flac
+df8f8bfbb012eca44c8a46ef33ae951b  bd97-08-23-weekend-at-d3t04.flac
+c7a5433f2d0f611250249136bd17fbed  bd97-08-23-weekend-at-d3t05.flac
+f6afdabbee2a46fea8fb96b80397fa2e  bd97-08-23-weekend-at-d3t06.flac
+9c5c80f6cd12dc2b29f4aa0a67feb84b  bd97-08-23-weekend-at-d3t07.flac
+783d1fa0096e56b30be23950eb4d22be  bd97-08-23-weekend-at-d3t08.flac
+b41eb8b5e954d9410f7e8dfd3e682964  bd97-08-23-weekend-at-d3t09.flac
+1993e9210ece6cec895ba1105e009e68  bd97-08-23-weekend-at-wolftrap.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-23-weekend-at-wolftrap.flacf 
+=================== 
+=================== 
+=================== 
+bd97-08-23-weekend-at-d1t01.flac:b141bdee6f0eb63387d357b11aa83a85
+bd97-08-23-weekend-at-d1t02.flac:d8be0e7d02be3aa3b89dc50377ee922d
+bd97-08-23-weekend-at-d1t03.flac:598155af6e7ee56e47ca6de7aae06f34
+bd97-08-23-weekend-at-d1t04.flac:3db341b6d85bcb5d787938f71c06300b
+bd97-08-23-weekend-at-d1t05.flac:21bdb864706d2de1543790130ace48b0
+bd97-08-23-weekend-at-d1t06.flac:e684770d173621976e3399c92e12f89e
+bd97-08-23-weekend-at-d1t07.flac:7df064fa840e5e5f23e69f11d3961d65
+bd97-08-23-weekend-at-d1t08.flac:e2f85e374a76c48aad05af83e35694f2
+bd97-08-23-weekend-at-d1t09.flac:606fc80daed2fd09f3f919e2181252eb
+bd97-08-23-weekend-at-d1t10.flac:43a68b36fd6345e9a76ed878d04fa2f6
+bd97-08-23-weekend-at-d2t01.flac:619d5d3242ce240885e421ebd32febe8
+bd97-08-23-weekend-at-d2t02.flac:a8f1334ec1f5f5557e9c2aa119cba9a8
+bd97-08-23-weekend-at-d2t03.flac:0f35269a699c9a434dc9faa3a4558568
+bd97-08-23-weekend-at-d2t04.flac:897d472c0e0de859afd24b5b9d6b55c9
+bd97-08-23-weekend-at-d2t05.flac:a38df6f57dac21008f053d41e331bd51
+bd97-08-23-weekend-at-d2t06.flac:11a65b3e0e90f3df3f16524f9a62e078
+bd97-08-23-weekend-at-d2t07.flac:cc866afe60df88cccafb081894dab0cf
+bd97-08-23-weekend-at-d2t08.flac:e266a544a371027e2ddad4a9ed4035cb
+bd97-08-23-weekend-at-d2t09.flac:20fce1b9ac093ca4ad397827016bdf4b
+bd97-08-23-weekend-at-d2t10.flac:fb00f2c3ce65756ae6164257a11bf029
+bd97-08-23-weekend-at-d3t01.flac:f5aa8870b0230b36d343fd3699f1b4d4
+bd97-08-23-weekend-at-d3t02.flac:82f2cb490993d7b90d75ba6927fd0f7c
+bd97-08-23-weekend-at-d3t03.flac:408929fc8ba52283c0238db2ccefaf7e
+bd97-08-23-weekend-at-d3t04.flac:af0872a4b31b7c378d2f9720394d9927
+bd97-08-23-weekend-at-d3t05.flac:0b57b8ada10f7bef83d5caa9e7dd4cf5
+bd97-08-23-weekend-at-d3t06.flac:e337ec8bd2e6648d5ef19d7236ee5739
+bd97-08-23-weekend-at-d3t07.flac:5fa0010a9e273b98eae2ecd59215d2b6
+bd97-08-23-weekend-at-d3t08.flac:dccb89dd010455383840adeaa5acfd82
+bd97-08-23-weekend-at-d3t09.flac:98e8c177e720537879853cc8b69d6450
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-23-weekend-at-wolftrap.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:39.30       49286204 B   ---   --   ---xx   flac  0.6022  bd97-08-23-weekend-at-d1t01.flac
+     0:04.12         733868 B   ---   --   ---xx   flac  0.4591  bd97-08-23-weekend-at-d1t02.flac
+     6:08.25       64974044 B   ---   --   ---xx   flac  0.5487  bd97-08-23-weekend-at-d1t03.flac
+     5:30.38       58301420 B   ---   --   ---xx   flac  0.5753  bd97-08-23-weekend-at-d1t04.flac
+     5:13.60       55354364 B   ---   --   ---xx   flac  0.5584  bd97-08-23-weekend-at-d1t05.flac
+     7:32.12       79761068 B   ---   --   ---xx   flac  0.5860  bd97-08-23-weekend-at-d1t06.flac
+     3:36.40       38196524 B   ---   --   ---xx   flac  0.4977  bd97-08-23-weekend-at-d1t07.flac
+     7:20.28       77681900 B   ---   --   ---xx   flac  0.4985  bd97-08-23-weekend-at-d1t08.flac
+     9:00.30       95326604 B   ---   --   ---xx   flac  0.5732  bd97-08-23-weekend-at-d1t09.flac
+     8:52.37       93931868 B   ---   --   ---xx   flac  0.5706  bd97-08-23-weekend-at-d1t10.flac
+     7:38.12       80819468 B   ---   --   ---xx   flac  0.5434  bd97-08-23-weekend-at-d2t01.flac
+     6:00.48       63616940 B   ---   --   ---xx   flac  0.5883  bd97-08-23-weekend-at-d2t02.flac
+     8:49.55       93445004 B   ---   --   ---xx   flac  0.5919  bd97-08-23-weekend-at-d2t03.flac
+     6:40.45       70665884 B   ---   --   ---xx   flac  0.5679  bd97-08-23-weekend-at-d2t04.flac
+     5:57.32       63050108 B   ---   --   ---xx   flac  0.6087  bd97-08-23-weekend-at-d2t05.flac
+     4:56.33       52292060 B   ---   --   ---xx   flac  0.5269  bd97-08-23-weekend-at-d2t06.flac
+     5:55.00       62622044 B   ---   --   ---xx   flac  0.5113  bd97-08-23-weekend-at-d2t07.flac
+     5:00.15       52955324 B   ---   --   ---xx   flac  0.5220  bd97-08-23-weekend-at-d2t08.flac
+     4:34.30       48404204 B   ---   --   ---xx   flac  0.5143  bd97-08-23-weekend-at-d2t09.flac
+     7:16.07       76926908 B   ---   --   ---xx   flac  0.5272  bd97-08-23-weekend-at-d2t10.flac
+     4:16.36       45243116 B   ---   --   ---xx   flac  0.4777  bd97-08-23-weekend-at-d3t01.flac
+     8:11.52       86734748 B   ---   --   ---xx   flac  0.5236  bd97-08-23-weekend-at-d3t02.flac
+     5:32.30       58635404 B   ---   --   ---xx   flac  0.4566  bd97-08-23-weekend-at-d3t03.flac
+     5:58.65       63304124 B   ---   --   ---xx   flac  0.5089  bd97-08-23-weekend-at-d3t04.flac
+     7:32.71       79899836 B   ---   --   ---xx   flac  0.4802  bd97-08-23-weekend-at-d3t05.flac
+     6:33.29       69393452 B   ---   --   ---xx   flac  0.5324  bd97-08-23-weekend-at-d3t06.flac
+     8:48.72       93308588 B   ---   --   ---xx   flac  0.5141  bd97-08-23-weekend-at-d3t07.flac
+     6:53.19       72897932 B   ---   --   ---xx   flac  0.5022  bd97-08-23-weekend-at-d3t08.flac
+     6:40.02       70564748 B   ---   --   ---xx   flac  0.5152  bd97-08-23-weekend-at-d3t09.flac
+   181:14.65     1918327756 B                            0.5385  (29 files)
+=================== 
+=================== 
+=================== 

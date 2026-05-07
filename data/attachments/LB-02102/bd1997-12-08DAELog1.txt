@@ -1,0 +1,46 @@
+PlexTools Professional V2.16        Digital Audio Extraction
+Copyright (C) 1999-2004 Plextor SA/NV
+29 September 2004
+---------------------------------------------------------------
+
+
+Software information
+--------------------
+Windows XP V5.01.2600 Service Pack 1
+ASPI Manager: n/a
+Description : n/a
+
+Source
+------
+ID:0 PLEXTOR  CD-R   PREMIUM   V1.05 (#098893), Read Speed: 18-40X CAV
+Disc Type    : AudioCD , 1 sessions, 11 Tracks, 70:35.27
+Taiyo Yuden (type 1), 74:43:00
+
+Digital Audio Extraction Error Information log
+----------------------------------------------
+
+Start of extraction
+Extracting track 1    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track01.wav - 06:03)
+    Elapsed time: 00:23
+Extracting track 2    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track02.wav - 05:36)
+    Elapsed time: 00:15
+Extracting track 3    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track03.wav - 07:03)
+    Elapsed time: 00:17
+Extracting track 4    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track04.wav - 05:49)
+    Elapsed time: 00:13
+Extracting track 5    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track05.wav - 06:09)
+    Elapsed time: 00:12
+Extracting track 6    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track06.wav - 06:38)
+    Elapsed time: 00:13
+Extracting track 7    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track07.wav - 05:32)
+    Elapsed time: 00:10
+Extracting track 8    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track08.wav - 06:00)
+    Elapsed time: 00:10
+Extracting track 9    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track09.wav - 09:06)
+    Elapsed time: 00:15
+Extracting track 10    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track10.wav - 04:55)
+    Elapsed time: 00:07
+Extracting track 11    (G:\DVDbackup\BobDylan_White_Dove\WhiteDove_d1Track11.wav - 07:40)
+    Elapsed time: 00:11
+11 track(s) successfully extracted
+Total Elapsed Time : 02:30

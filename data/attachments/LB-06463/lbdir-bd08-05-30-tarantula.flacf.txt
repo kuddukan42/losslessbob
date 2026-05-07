@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-05-30-tarantula.flacf 
+=================== 
+=================== 
+=================== 
+f9a886ae064f4a8164575b20b99b91d0  2008-05-30-Stavanger.txt
+0cd8fff0419e86d78c3dd5de007a166a  Stavanger.md5
+e736cc5faec443f3087b353475252b5d  Track101.flac
+3c3f52ce92c643de5a71d504fe43e5f6  Track102.flac
+a0846e27733d25ff4479b56d5857169a  Track103.flac
+520141d01e42f60d8667410483c0e686  Track104.flac
+20ee1d3d68b1ba897389a279879f53b1  Track105.flac
+7aacdf76a73898ab175d082528efcfcc  Track106.flac
+1c506b0aba70288fa17bc17e3967de3d  Track107.flac
+c16e32a518b158429ed10adbe61c341e  Track108.flac
+37d80dbd3890829e0c1fba1a0c24c21c  Track109.flac
+e159f92e92c323f8bf10e8e0c875aff5  Track110.flac
+9b1f03b91b3d2168f1e90846bc73eeac  Track111.flac
+79f7fbbb792193fe0e55522ab6017e49  Track201.flac
+04893525711a12ba2469a7735a254861  Track202.flac
+abf1fd3415c5030abec27fe45ff2f98d  Track203.flac
+b4366929da0bd5e8a978a3e6c4b94f38  Track204.flac
+660a09626cbf07decf5fe21967c1784c  Track205.flac
+2dcb318c4e6b395a5e172fde57bff53d  Track206.flac
+5132580631bfb894b9bb4f08461db659  Track207.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-05-30-tarantula.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:4f11b3cb10d7c001788007abb60adca4
+Track102.flac:34045553ab91b46dd26d1e1f7a0d6ecc
+Track103.flac:744db0820b02d11be1cce7bbb33ac3c4
+Track104.flac:bd42ff5c2fc5351078f1cbf5cf200ca2
+Track105.flac:5e4877f75ebd0939ef44b5214070d488
+Track106.flac:9045be8679db6b432ead15677f4873b2
+Track107.flac:4bee9ad52a17a6cb81dbc59558cefe66
+Track108.flac:15c62f9f74c5e5aed5ab7a96c418fca8
+Track109.flac:a331bbf658d46b834fb7b783c6395a5c
+Track110.flac:b5930f1ab8877d5505aee4da3ed78caf
+Track111.flac:3e2f6d34ead5c257f1c7d146180dc283
+Track201.flac:a1646bed5cb8e0457e5120218c408548
+Track202.flac:08f290c70e0a740daea1c49d78097ac1
+Track203.flac:bef77e77f6d70b40fcecde701adfdd29
+Track204.flac:80ed60da2d995d1e2fecdfd6630df332
+Track205.flac:59c78bb5b846a264cb113c5a02dd4022
+Track206.flac:e4d4bf574229f7c918c8af5875314535
+Track207.flac:231a9828408f3569ef7d1250fcf4d640
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-05-30-tarantula.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:49.06        8657756 B   ---   --   ---xx   flac  0.6618  Track101.flac
+     4:26.33       47000060 B   ---   --   ---xx   flac  0.6808  Track102.flac
+     6:06.04       64571852 B   ---   --   ---xx   flac  0.6331  Track103.flac
+     7:09.33       75753260 B   ---   --   ---xx   flac  0.6677  Track104.flac
+     7:05.62       75115868 B   ---   --   ---xx   flac  0.6517  Track105.flac
+     5:21.06       56638556 B   ---   --   ---xx   flac  0.6644  Track106.flac
+     5:30.49       58327292 B   ---   --   ---xx   flac  0.6906  Track107.flac
+     7:33.31       79982156 B   ---   --   ---xx   flac  0.6356  Track108.flac
+     6:50.06       72338156 B   ---   --   ---xx   flac  0.6997  Track109.flac
+     6:50.48       72436940 B   ---   --   ---xx   flac  0.5625  Track110.flac
+     6:13.17       65837228 B   ---   --   ---xx   flac  0.6930  Track111.flac
+     7:13.37       76468268 B   ---   --   ---xx   flac  0.6407  Track201.flac
+     7:15.57       76868108 B   ---   --   ---xx   flac  0.7025  Track202.flac
+     5:30.39       58303772 B   ---   --   ---xx   flac  0.5654  Track203.flac
+     6:05.19       64430732 B   ---   --   ---xx   flac  0.6985  Track204.flac
+     5:45.57       60992108 B   ---   --   ---xx   flac  0.6670  Track205.flac
+     7:58.11       84345116 B   ---   --   ---xx   flac  0.7156  Track206.flac
+     7:02.34       74520812 B   ---   --   ---xx   flac  0.6925  Track207.flac
+   110:47.24     1172588040 B                            0.6630  (18 files)
+=================== 
+=================== 
+=================== 

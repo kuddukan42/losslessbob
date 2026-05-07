@@ -1,0 +1,37 @@
+Bob Dylan
+ 
+Noblesville, Indiana
+Sunday July 9, 2000
+Deer Creek Music Center
+
+CD1 68:56
+
+01. Duncan And Brady (acoustic) 
+02. Song To Woody (acoustic) (Larry on mandolin) 
+03. Desolation Row (acoustic) 
+04. It's All Over Now, Baby Blue (acoustic) 
+05. Tangled Up In Blue (acoustic) (Bob on harp) 
+06. Searching For A Soldier's Grave (acoustic - Larry on mandolin)
+07. Country Pie 
+08. Positively 4th Street 
+09. Maggie's Farm 
+10. I Don't Believe You (She Acts Like We Never Have Met) 
+11. Drifter's Escape (Bob on harp)
+12. band intros and joke 
+13. Leopard-Skin Pill-Box Hat 
+
+CD2 26:40
+
+  (encore) 
+
+15. Things Have Changed 
+16. Like A Rolling Stone 
+17. Girl Of The North Country (acoustic) 
+18. Highway 61 Revisited 
+
+Audience MD recording > MD(m) > ?unknown transfer? > CDR(x) > EAC (Secure) > WAV > FLAC > DIME
+
+MD source was spotted using Spectral Analysis ("lego parapet" artifacts are apparent which indicates ATRAC DSP Type-R SP or a close cousin), it is most likely recorded to MD by the original taper, although that is an educated guess as no lineage was received.
+
+CEDAR-type fingerprint d1t5@0:05 "not too bad" (male voice); click at start of d1. Wind noise on the mics from time to time. Sound is distant, thin, and brittle.
+

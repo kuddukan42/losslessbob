@@ -1,0 +1,52 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-05-17-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+a978316a478a91a588eb44507b98665e  660517Track01.flac
+c673000b7ea2f1c57e11ec2df20fb114  660517Track02.flac
+94705873d11bd53b4d4735e3e6752bcf  660517Track03.flac
+383b40ba7536342a4a0c1867396f30bb  660517Track04.flac
+d7d6f938ee7cee5a896c94c86239b92a  660517Track05.flac
+22c152ba893ee47f257e69cea2408733  660517Track06.flac
+c834260f0b543b4228a77b57f42b6693  660517Track07.flac
+43e4334095e570a0486fbd18ee792e46  660517Track08.flac
+c801be60a7e33933f54c297993a211b2  bd66-05-17-lowgen-LB-3859.txt
+568021b0a2c7f4263196d1772ea8dbd4  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-05-17-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+660517Track01.flac:cb9720ef9597106fa96467a290a47524
+660517Track02.flac:e761b017a020ecc75401b4554af784cb
+660517Track03.flac:20edee41de7b12c1ffc71c13313cd04b
+660517Track04.flac:32cd24f7234255d9c0f682fc3017b2b6
+660517Track05.flac:c0d0088dccfce8c7e7c3a78d0a32cc43
+660517Track06.flac:740449215d6e92031a204d70e6f684d4
+660517Track07.flac:c79b9b3142965878196d08e6dfda1f90
+660517Track08.flac:dbc72a89337d0381aaacc9670b9d7cd5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-05-17-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.06       48700556 B   ---   --   ---xx   flac  0.6165  660517Track01.flac
+     6:01.02       63685148 B   ---   --   ---xx   flac  0.6335  660517Track02.flac
+     3:32.34       37476812 B   ---   --   ---xx   flac  0.6572  660517Track03.flac
+     6:52.13       72707420 B   ---   --   ---xx   flac  0.6638  660517Track04.flac
+     4:45.54       50401052 B   ---   --   ---xx   flac  0.6782  660517Track05.flac
+     3:47.20       40089884 B   ---   --   ---xx   flac  0.6663  660517Track06.flac
+     7:29.58       79340060 B   ---   --   ---xx   flac  0.6836  660517Track07.flac
+     7:49.49       82846892 B   ---   --   ---xx   flac  0.6887  660517Track08.flac
+    44:54.11      475247824 B                            0.6637  (8 files)
+=================== 
+=================== 
+=================== 

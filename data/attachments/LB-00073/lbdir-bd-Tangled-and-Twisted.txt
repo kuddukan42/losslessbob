@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-Tangled-and-Twisted 
+=================== 
+=================== 
+=================== 
+bfb548133666da3b3709a0b7ee913b82  1786_1access_outside1.jpg
+67e3ff720548f4acb0121a9172e9ca0b  1786_1best_inside1.jpg
+6807365fb01bbee1089be0390f433188  1786_1BOTT_FRONT1.jpg
+f990221cd359e72e822c7ad0c7787f18  1786_1Inside_Access1.jpg
+fb2c12bcd48e5e1de04a37ad05854146  bdTangled-and-Twisted_d1t01.shn
+36cb458527e4733a6adfe0b2bcb9ee74  bdTangled-and-Twisted_d1t02.shn
+d4b7907781fe7abf10ac834a8fc8802f  bdTangled-and-Twisted_d1t03.shn
+6403ae79a85f9b993885037f6342d8e2  bdTangled-and-Twisted_d1t04.shn
+44bd6306d5d2bf4b084d2f4bd266ccc8  bdTangled-and-Twisted_d1t05.shn
+bc5e09ae2e999d9cd623a7a26b769cce  bdTangled-and-Twisted_d1t06.shn
+ef9953d3b8b466d378e63d7701652dba  bdTangled-and-Twisted_d1t07.shn
+ab13091ce31e65666b0bb33b939c06e9  bdTangled-and-Twisted_d1t08.shn
+0115fb9c0e4a33300d4b91d84702965e  bdTangled-and-Twisted_d1t09.shn
+0dcd3e519689ff705e7d5d17c2864c38  bdTangled-and-Twisted_d1t10.shn
+d37296a397298e91b7ca2324e528e28a  bdTangled-and-Twisted_d1t11.shn
+1681f287f41ff8493f9cf36c91422398  bdTangled-and-Twisted_d2t01.shn
+7f66c99cad9d470b9b87d479d0b1c135  bdTangled-and-Twisted_d2t02.shn
+a95c2097a2258b8ebc27c48952a252cf  bdTangled-and-Twisted_d2t03.shn
+62541ba9309040d4be862d96ab50353a  bdTangled-and-Twisted_d2t04.shn
+33ec8ef493759e0ed7cc6714e1b4885f  bdTangled-and-Twisted_d2t05.shn
+72f55aa2a94d76ecd7673006f6f0fcbb  bdTangled-and-Twisted_d2t06.shn
+ff81144ff644c1626dd3aaaafcb08ec8  bdTangled-and-Twisted_d2t07.shn
+d86a7e0fdfc2cf1d56653a1e3c41b975  bdTangled-and-Twisted_d2t08.shn
+0c45f2cb5ccfb90e1324f07d2038091b  bdTangled-and-Twisted_d2t09.shn
+6c37625eb8e480f3de2ac5065b1ae001  bdTangled-and-Twisted_d2t10.shn
+e7174c62d4a4abb7fe8a81286d92d0be  bdTangled-and-Twisted_d2t11.shn
+3d72e04ca25ba89b205f924c2b75d06a  bdTangled-and-Twisted_d2t12.shn
+e1515099c343d495f73e91321b4abf98  Copy(1) of noname.md5
+782b2f7c16e7adde793c7d848cc04c1b  Copy(1) of readme.txt
+2d6d29197db8e2a8f70bc1d04d7ea6c6  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Tangled-and-Twisted 
+=================== 
+=================== 
+=================== 
+b302bf3b01bd23d17b625b4be5237a46  [shntool]  bdTangled-and-Twisted_d1t01.wav
+6b1dbdeb6708c45bb03839d2e826b0b2  [shntool]  bdTangled-and-Twisted_d1t02.wav
+5039a8af3ba97a88ba504feec7b87544  [shntool]  bdTangled-and-Twisted_d1t03.wav
+ab682ecff941877e81f9f453b1ddbfec  [shntool]  bdTangled-and-Twisted_d1t04.wav
+b51cb31e7505fa1ebe5eb8ad1d1e0a26  [shntool]  bdTangled-and-Twisted_d1t05.wav
+753dd94e4a9aa076b32e5e8106310ff6  [shntool]  bdTangled-and-Twisted_d1t06.wav
+04d4e16d8d9eb6a0ad32586db4a17909  [shntool]  bdTangled-and-Twisted_d1t07.wav
+3322eb0d934d19aa600b301fb342073b  [shntool]  bdTangled-and-Twisted_d1t08.wav
+161410d2f26617a6fd58cad33f53807e  [shntool]  bdTangled-and-Twisted_d1t09.wav
+eab56dbb28f9f5a795aeb86b221389e1  [shntool]  bdTangled-and-Twisted_d1t10.wav
+f1fcd612edabaf27878af98c9076717e  [shntool]  bdTangled-and-Twisted_d1t11.wav
+cf08b4c57039846cf28983219a9e6756  [shntool]  bdTangled-and-Twisted_d2t01.wav
+2e29f0ace3c5ec0a1197e7186c9075c7  [shntool]  bdTangled-and-Twisted_d2t02.wav
+0307eccf72c74a9c0912c7c8f039b60c  [shntool]  bdTangled-and-Twisted_d2t03.wav
+fb4936546703d1f4f661ccbb563a671f  [shntool]  bdTangled-and-Twisted_d2t04.wav
+da699242278dcbdc0c71b3fef1c066a7  [shntool]  bdTangled-and-Twisted_d2t05.wav
+049ca5fa898297d153c2666cfc4ead13  [shntool]  bdTangled-and-Twisted_d2t06.wav
+b6ddfc4fcacda35494afdf538a6833a2  [shntool]  bdTangled-and-Twisted_d2t07.wav
+acb23bfad8409a255d9b9335135b4f46  [shntool]  bdTangled-and-Twisted_d2t08.wav
+373bbe0bd9e8ec1bb9c009d1eb59f24f  [shntool]  bdTangled-and-Twisted_d2t09.wav
+3b6c3144541b445fdbeaf20d73c5a04a  [shntool]  bdTangled-and-Twisted_d2t10.wav
+214c99cf6ddd6aa506e39092ad57e82c  [shntool]  bdTangled-and-Twisted_d2t11.wav
+db5353c42e41fbe790170e0ec0f60ad5  [shntool]  bdTangled-and-Twisted_d2t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Tangled-and-Twisted 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.24       48390092 B   ---   --   ---xx    shn  0.5613  bdTangled-and-Twisted_d1t01.shn
+     4:26.05       46934204 B   ---   --   ---xx    shn  0.5976  bdTangled-and-Twisted_d1t02.shn
+     6:51.41       72596876 B   ---   --   ---xx    shn  0.5391  bdTangled-and-Twisted_d1t03.shn
+    10:38.25      112602044 B   ---   --   ---xx    shn  0.5454  bdTangled-and-Twisted_d1t04.shn
+     3:13.03       34052300 B   ---   --   ---xx    shn  0.5081  bdTangled-and-Twisted_d1t05.shn
+     4:15.30       45052604 B   ---   --   ---xx    shn  0.5585  bdTangled-and-Twisted_d1t06.shn
+     9:52.57      104562908 B   ---   --   ---xx    shn  0.5815  bdTangled-and-Twisted_d1t07.shn
+     7:41.60       81461564 B   ---   --   ---xx    shn  0.6765  bdTangled-and-Twisted_d1t08.shn
+    12:27.55      131900204 B   ---   --   ---xx    shn  0.5909  bdTangled-and-Twisted_d1t09.shn
+     3:58.28       42049100 B   ---   --   ---xx    shn  0.5825  bdTangled-and-Twisted_d1t10.shn
+     8:01.73       85020140 B   ---   --   ---xx    shn  0.6167  bdTangled-and-Twisted_d1t11.shn
+     5:58.00       63151244 B   ---   --   ---xx    shn  0.6220  bdTangled-and-Twisted_d2t01.shn
+     3:49.55       40525004 B   ---   --   ---xx    shn  0.6469  bdTangled-and-Twisted_d2t02.shn
+     6:13.74       65971292 B   ---   --   ---xx    shn  0.6929  bdTangled-and-Twisted_d2t03.shn
+    12:01.69      127346732 B   ---   --   ---xx    shn  0.6966  bdTangled-and-Twisted_d2t04.shn
+    10:45.40      113872124 B   ---   --   ---xx    shn  0.7255  bdTangled-and-Twisted_d2t05.shn
+     5:01.22       53148188 B   ---   --   ---xx    shn  0.7196  bdTangled-and-Twisted_d2t06.shn
+     4:35.26       48571196 B   ---   --   ---xx    shn  0.6670  bdTangled-and-Twisted_d2t07.shn
+     6:22.50       67502444 B   ---   --   ---xx    shn  0.6588  bdTangled-and-Twisted_d2t08.shn
+     7:17.49       77202092 B   ---   --   ---xx    shn  0.6659  bdTangled-and-Twisted_d2t09.shn
+     7:20.69       77778332 B   ---   --   ---xx    shn  0.6573  bdTangled-and-Twisted_d2t10.shn
+     6:15.39       66241772 B   ---   --   ---xx    shn  0.6815  bdTangled-and-Twisted_d2t11.shn
+     3:53.21       41150636 B   ---   --   ---xx    shn  0.6796  bdTangled-and-Twisted_d2t12.shn
+   155:37.15     1647083092 B                            0.6328  (23 files)
+=================== 
+=================== 
+=================== 

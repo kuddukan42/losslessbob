@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-19a-Murcia 
+=================== 
+=================== 
+=================== 
+b08450d78dd5b8c99cedef72a066b428  bd99-04-19a.txt
+0cba8c6d1f910812fd175175617f1b96  LisbonToBarcelonaInfo.doc
+6b452d7c6b9171c0edee62ebb694aadf  Malaga.jpg
+ff93a671a7dca894cf2a68dce0af81af  Mur-0419-d1-t01.shn
+43db6bbbecd8fe9d674057107bae140a  Mur-0419-d1-t02.shn
+17e07bf1ec93728815f488d1a442e6a5  Mur-0419-d1-t03.shn
+e893cb2f60b2751dbaa2cfcc5d878052  Mur-0419-d1-t04.shn
+731a871ab656f87575c6fe29431d898c  Mur-0419-d1-t05.shn
+a4444baf3ef6f2bac919736805d55f0d  Mur-0419-d1-t06.shn
+30faa2ed5373b46978cd6566b20570bc  Mur-0419-d1-t07.shn
+ea15ba3867b2640989fd6b62b3bbab1d  Mur-0419-d1-t08.shn
+45a92d3bcd893b686cf4dc169cf9c3d1  Mur-0419-d1-t09.shn
+e1130bfae96775aeaf88c6935f1066d6  Mur-0419-d1-t10.shn
+f1c14e6451fd300e688be66de78fb502  Mur-0419-d2-t01.shn
+fae922103f099828e170eaca9e888bd9  Mur-0419-d2-t02.shn
+56a0bd6d0620c55266f5b1d6f7d13af8  Mur-0419-d2-t03.shn
+c9d2e4b1e27c5602e101726e08268855  Mur-0419-d2-t04.shn
+835ce863bfdb7f170171e37ce079faa4  Mur-0419-d2-t05.shn
+ce4b84a164e96fdf75819e47ec80e156  Mur-0419-d2-t06.shn
+e389f515f6a599ae864fecea4dd9c03f  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-04-19a-Murcia 
+=================== 
+=================== 
+=================== 
+7ace5f40bf508e6380e0e0273757dbee  [shntool]  Mur-0419-d1-t01.wav
+9fddae6bdbfe9bfcbc4bf0ab60eaafc1  [shntool]  Mur-0419-d1-t02.wav
+49ef45c7e2ce45ffa203988758f164c1  [shntool]  Mur-0419-d1-t03.wav
+7f4aabe897165dae8ea10cb43cfc10ba  [shntool]  Mur-0419-d1-t04.wav
+4ebd6a792121549b27fa0409521c36ea  [shntool]  Mur-0419-d1-t05.wav
+6f53bbe0deb254c5a121dc6c4ea8d70d  [shntool]  Mur-0419-d1-t06.wav
+fbbd0bb53be3f4e84f44840c2d8b6624  [shntool]  Mur-0419-d1-t07.wav
+6963d0c3ea0a76ba5cadfa1e43fbe750  [shntool]  Mur-0419-d1-t08.wav
+7b343ae0ef1f430cbc42756fd940e695  [shntool]  Mur-0419-d1-t09.wav
+933769315132949d65345b751c233453  [shntool]  Mur-0419-d1-t10.wav
+642819762b696266c22d89c14173ce79  [shntool]  Mur-0419-d2-t01.wav
+a7b14329b206c32adfaa0668ab33f942  [shntool]  Mur-0419-d2-t02.wav
+b6d722590fd7a6283777d2bd594ab499  [shntool]  Mur-0419-d2-t03.wav
+176fe5caf5ac68da6e7be8413e20c38d  [shntool]  Mur-0419-d2-t04.wav
+bca94f82ad6f8fd30d7622f4a7dfae81  [shntool]  Mur-0419-d2-t05.wav
+da4950df478a307015e5cfeb8e6b5491  [shntool]  Mur-0419-d2-t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-19a-Murcia 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:16.43        2924588 B   -b-   --   -----    wav  1.0000  Mur-0419-d1-t01.wav
+     6:18.14       66713220 B   -b-   --   -----    wav  1.0000  Mur-0419-d1-t02.wav
+     6:21.65       67362384 B   -b-   -e   -----    wav  1.0000  Mur-0419-d1-t03.wav
+     5:51.01       61918596 B   -b-   -e   -----    wav  1.0000  Mur-0419-d1-t04.wav
+     5:42.42       60428692 B   -b-   -e   -----    wav  1.0000  Mur-0419-d1-t05.wav
+     6:38.40       70300292 B   -b-   -e   -----    wav  1.0000  Mur-0419-d1-t06.wav
+     8:24.02       88911604 B   -b-   -e   -----    wav  1.0000  Mur-0419-d1-t07.wav
+     6:24.08       67755492 B   -b-   -e   -----    wav  1.0000  Mur-0419-d1-t08.wav
+     4:45.43       50374872 B   -b-   -e   -----    wav  1.0000  Mur-0419-d1-t09.wav
+     5:50.43       61842460 B   -b-   -e   -----    wav  1.0000  Mur-0419-d1-t10.wav
+     7:22.03       77975788 B   -b-   -e   -----    wav  1.0000  Mur-0419-d2-t01.wav
+     6:20.71       67200292 B   -b-   -e   -----    wav  1.0000  Mur-0419-d2-t02.wav
+     5:38.16       59661480 B   -b-   -e   -----    wav  1.0000  Mur-0419-d2-t03.wav
+     4:51.35       51414788 B   -b-   -e   -----    wav  1.0000  Mur-0419-d2-t04.wav
+     8:27.27       89499012 B   -b-   -e   -----    wav  1.0000  Mur-0419-d2-t05.wav
+     7:00.00       74088808 B   -b-   -e   -----    wav  1.0000  Mur-0419-d2-t06.wav
+    96:13.05     1018372368 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,23 @@
+Checksum
+--------------------------------------------------------------------------------------------------
+bd2009-03-23-d1-01.flac 20 029 923 2009-03-24  00:46        A 4fffba679603c863645d8a697b226703 Winamp media file
+bd2009-03-23-d1-02.flac 27 097 186 2009-03-24  00:52        A 767c59709cd3d831d577b7dc9752ca34 Winamp media file
+bd2009-03-23-d1-03.flac 47 393 175 2009-03-24  01:08        A 71fca59ad4387756ae278bb4ad5a6226 Winamp media file
+bd2009-03-23-d1-04.flac 38 505 863 2009-03-24  01:12        A bca1b6b50537cf4ac824432c2281f1c6 Winamp media file
+bd2009-03-23-d1-05.flac 32 052 360 2009-03-24  01:15        A 9eeca80907a8e98ec22b902e06ea5ec1 Winamp media file
+bd2009-03-23-d1-06.flac 36 132 221 2009-03-24  01:17        A 53277b063d6697b234e4831d26add5db Winamp media file
+bd2009-03-23-d1-07.flac 27 944 429 2009-03-24  01:23        A 8791f8d1d39cee299c8810849c4d18bf Winamp media file
+bd2009-03-23-d1-08.flac 56 393 173 2009-03-24  01:25        A a947a1643de4ae00cd99f144ebb34785 Winamp media file
+bd2009-03-23-d1-09.flac 29 007 231 2009-03-24  01:29        A 6cf112ea8f60874b6bfd2744e9babe11 Winamp media file
+bd2009-03-23-d1-10.flac 21 021 992 2009-03-24  02:09        A 824b3b05fb74757bdf16e45267d0c400 Winamp media file
+bd2009-03-23-d2-01.flac 36 313 789 2009-03-24  01:40        A bfc587f12d4942b4297af0b360afeac6 Winamp media file
+bd2009-03-23-d2-02.flac 22 924 844 2009-03-24  01:41        A 14de071b7d7095d2d1399075c5264dbf Winamp media file
+bd2009-03-23-d2-03.flac 34 620 181 2009-03-24  01:42        A e3da4e54618f51194d50edd1d7c1ca75 Winamp media file
+bd2009-03-23-d2-04.flac 37 902 961 2009-03-24  01:42        A 4eea75255c8ecde9e70c2a2e649adc1e Winamp media file
+bd2009-03-23-d2-05.flac 43 723 529 2009-03-24  01:43        A ff235fe921213f988daf43f1fa8ff67f Winamp media file
+bd2009-03-23-d2-06.flac 30 471 816 2009-03-24  01:44        A 96f25e6e260cd9beb7f93317fbe776aa Winamp media file
+bd2009-03-23-d2-07.flac  3 509 787 2009-03-24  01:44        A d4406d3bd15edcd8489e6daa78f001c0 Winamp media file
+bd2009-03-23-d2-08.flac 32 979 653 2009-03-24  01:45        A 3f6f27a453dce5c829712a944942afa8 Winamp media file
+bd2009-03-23.md5             1 105 2009-03-24  02:46        A                                  MD5-Fil
+inf.txt                        940 2009-03-24  02:18        A 16498fc862531da90cfb444f30f28961 Textdokument
+

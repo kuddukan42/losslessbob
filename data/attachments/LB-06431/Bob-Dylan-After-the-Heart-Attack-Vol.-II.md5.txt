@@ -1,0 +1,25 @@
+e2a01e2b417d624bab14328500e40f6a *1997-08-24.txt
+5d25082df77f4033fee3219809520607 *Art\jpg\heart_attack_II_back.jpg
+400c2aa66288dea98498b8a895ba814d *Art\jpg\heart_attack_II_front.jpg
+c1c1d102cc050bfc9641805b9afd4fa9 *Art\tif\heart_attack_II_back.tif
+67d20fd8873347ce5f74ecacb761e9c7 *Art\tif\heart_attack_II_front.tif
+07e2a7acc214491ee7d4c610d28a28c6 *d1\d1.ffp
+e3aee4314e3e08262bea545c462b81b9 *d1\d1wavs.st5
+b676a0de9809002fcc1c6a61aea9bb0a *d1\Track01.flac
+768ada068bb48d020c850fbf0a3729f0 *d1\Track02.flac
+c8d5104bcd105d6c0a29dcb953875fea *d1\Track03.flac
+c4647ae90736f0c3f9c99a8be7b6f30b *d1\Track04.flac
+7d5d98090cbb666c493c44fd2db7203d *d1\Track05.flac
+307673a54ac6eb0d70fe67f351c26454 *d1\Track06.flac
+f203fc5d1d2347fb4a91e5792cdc6fa6 *d1\Track07.flac
+b5ae756c7eb45d9714a9f9d4e3300540 *d1\Track08.flac
+f689249c443e86260d51c3782ee09d22 *d1\Unknown Title.log
+de6cd0c9547bca4ffdd1e599fa6aadd6 *d2\d2.ffp
+a857c2d9ca2c443113b53bc162d313d0 *d2\d2wavs.st5
+60fd94a13e06aaa6dc6e49b9b48c6382 *d2\Track01.flac
+a9432e923ab5dcebcae89ee134bb6f22 *d2\Track02.flac
+4f75a0de1dff41d4fbb3338f91d4f3c9 *d2\Track03.flac
+144b2a771acea4c0dd0cca6342b4127d *d2\Track04.flac
+caa67e447ba3d5788546433a99787f59 *d2\Track05.flac
+8ef0d700e44de3d0785ce8a4f036aef6 *d2\Track06.flac
+3b6bdc7704ed696772c089ab0a8edafc *d2\Unknown Title.log

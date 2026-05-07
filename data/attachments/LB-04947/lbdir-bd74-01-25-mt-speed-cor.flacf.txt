@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-25-mt-speed-cor.flacf 
+=================== 
+=================== 
+=================== 
+130f735285419e34abc60e28e89132ed  740125Track01.flac
+023c288229a0fc0b91614b02c109aa30  740125Track02.flac
+f36cfd78a6383f1be496323678a845cf  740125Track03.flac
+5215248cc5acec6562054a957f895ac8  740125Track04.flac
+fa850a1a67b7a4ec4d78b8cb5b02552a  740125Track05.flac
+d6cdfe7f6e6a6903e493754b1dd74895  740125Track06.flac
+8c9ad2eb294652203f0c3d7d3b2a892b  740125Track07.flac
+c2a04ae6b1c12b8ef07fd4711b9d4903  740125Track08.flac
+102316c8c18e7da1ce7de37056ec7489  740125Track09.flac
+d8f485913c476be039f7e96028f7c31c  740125Track10.flac
+fdc2b418cd75d87220ac58b05d4e85da  740125Track11.flac
+246111698fbbc04c10a3fe4128ba9e28  740125Track12.flac
+da48bb1c328433fb75eeff7c54c10d2e  740125Track13.flac
+1036295356f2c2a6875e40287a676c53  740125Track14.flac
+c5dda800b619f2b3fc33159b7d49d119  740125Track15.flac
+4268adc8b5da3006307cb9cd662e4770  740125Track16.flac
+35c4e27e96e2a1becb501a3edb1b4224  740125Track17.flac
+1b23bfac2785e07510eade50cf6b3000  740125Track18.flac
+ac2f787dbc6cc664d681b19d79038189  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-25-mt-speed-cor.flacf 
+=================== 
+=================== 
+=================== 
+740125Track01.flac:df907d3cc6b9e78bbd3e488136cf68a9
+740125Track02.flac:984868de25bb8d956d3aa9a1b6c21cfa
+740125Track03.flac:7ad1058f05e1d87f115ca4fdb1961e89
+740125Track04.flac:d493c04a4563dfae43cb727ed1311568
+740125Track05.flac:6342e95ba656eabbc777cb6c691fc62a
+740125Track06.flac:9acaab1f6f6655abdd5ce4622659ed50
+740125Track07.flac:1e7a8278d34eca3fadab6ca5b7610f9b
+740125Track08.flac:ddbb8b918283ec73359bc737cfea013a
+740125Track09.flac:61151fc8a7e1986152f05e5afce99144
+740125Track10.flac:b71d7518383538b557aa5e7dff34075e
+740125Track11.flac:8283c9bc02d0f9195303cbfbd839e8ae
+740125Track12.flac:4cb8b54a10a70611ed27c41ffe9f69b1
+740125Track13.flac:e2e6400857e474e9e47b8a0b0ecee73d
+740125Track14.flac:d75d65ba0472f3d3efc32fe814146e22
+740125Track15.flac:1dd2f8e6f239dfbc01ce1ef06713cb43
+740125Track16.flac:5b160258bc617f7d826d87273478547d
+740125Track17.flac:8b5308e7b0ea5b66cb284e126abdcdf7
+740125Track18.flac:15b5e9c911967bf7d9d0a552413169ed
+=================== 
+=================== 
+=================== 
+=== shntool for: bd74-01-25-mt-speed-cor.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.19       41145932 B   ---   --   ---xx   flac  0.6825  740125Track01.flac
+     2:57.23       31276940 B   ---   --   ---xx   flac  0.6977  740125Track02.flac
+     5:21.35       56706764 B   ---   --   ---xx   flac  0.6951  740125Track03.flac
+     3:39.43       38732780 B   ---   --   ---xx   flac  0.6988  740125Track04.flac
+     3:46.30       39937004 B   ---   --   ---xx   flac  0.7019  740125Track05.flac
+     3:38.57       38589308 B   ---   --   ---xx   flac  0.6918  740125Track06.flac
+     3:07.08       33005660 B   ---   --   ---xx   flac  0.6936  740125Track07.flac
+     3:47.69       40205132 B   ---   --   ---xx   flac  0.7049  740125Track08.flac
+     4:16.74       45332492 B   ---   --   ---xx   flac  0.6761  740125Track09.flac
+     3:13.73       34216940 B   ---   --   ---xx   flac  0.6788  740125Track10.flac
+     3:40.62       38953868 B   ---   --   ---xx   flac  0.6825  740125Track11.flac
+     4:17.64       45485372 B   ---   --   ---xx   flac  0.6442  740125Track12.flac
+     5:22.52       56923148 B   ---   --   ---xx   flac  0.6647  740125Track13.flac
+     6:00.24       63560492 B   ---   --   ---xx   flac  0.6544  740125Track14.flac
+     4:51.20       51379484 B   ---   --   ---xx   flac  0.6750  740125Track15.flac
+     4:41.25       49627244 B   ---   --   ---xx   flac  0.6763  740125Track16.flac
+     5:47.36       61295516 B   ---   --   ---xx   flac  0.6780  740125Track17.flac
+     4:21.43       46141580 B   ---   --   ---xx   flac  0.6402  740125Track18.flac
+    76:46.07      812515656 B                            0.6780  (18 files)
+=================== 
+=================== 
+=================== 

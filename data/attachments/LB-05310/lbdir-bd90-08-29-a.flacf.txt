@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-08-29-a.flacf 
+=================== 
+=================== 
+=================== 
+4137bc95bc93ceb8b61b73b8523fa7fb  bd 19900829 aud flac.md5
+cd9c85be6362d9b6a713712a0ee409a4  bd 19900829 info.txt
+db0983f5aec1caaa4ac1516525093e1d  bd 19900829 t01.flac
+4347f65a8abfeaad9f843d0381e01356  bd 19900829 t02.flac
+1e82eddc707b1fff3dd350c390d6ac6b  bd 19900829 t03.flac
+d13ea434436b060ecae87ae905ffa908  bd 19900829 t04.flac
+9e5bdcf8728d92fc3564a4d6e4b7ed1b  bd 19900829 t05.flac
+5cd9352204297861e7ea76128040f2d9  bd 19900829 t06.flac
+cffb23953181b1366f45a11d18a183a2  bd 19900829 t07.flac
+fed4351ea847858009d8580eaad852dc  bd 19900829 t08.flac
+c86beedd699dd3958d44504ec048cd1a  bd 19900829 t09.flac
+d57419868962282d32724b89ba63b785  bd 19900829 t10.flac
+95303c820c413157dc3adb98475a1bf2  bd 19900829 t11.flac
+74c230b9f6c53a06494f6c9a1e94a985  bd 19900829 t12.flac
+377d56f75098a1fbe2b8aebdddc34a87  bd 19900829 t13.flac
+4473406a30ad32923eaaf9fb4bedff03  bd 19900829 t14.flac
+52ca72e7c176936b1676ead068cdb0a2  bd 19900829 t15.flac
+2223c361d08442fdbb0ebac201c60f49  bd 19900829 t16.flac
+dac207068bb34652aa71587cf9ff8ce3  bd 19900829 t17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-08-29-a.flacf 
+=================== 
+=================== 
+=================== 
+bd 19900829 t01.flac:480c594224bc595b7cef44e44bac632e
+bd 19900829 t02.flac:b1513e4682430917491c05367734d9b5
+bd 19900829 t03.flac:4a7ca8bbb51a8ecf4af85837f12ca0f1
+bd 19900829 t04.flac:68aa7796cd24427ae6e71e5179ef1a3b
+bd 19900829 t05.flac:9ef3a2d6ff3a33e8c3d6c56835b39383
+bd 19900829 t06.flac:bd52a734dc706766259a54e2130230d3
+bd 19900829 t07.flac:5ad23df5120af1f71f86fc2182e8a200
+bd 19900829 t08.flac:e02e5b2fbe61aec445c10b28e3bbfa50
+bd 19900829 t09.flac:0b18a240dd2914b5ae9556fc1a14a9f7
+bd 19900829 t10.flac:3dfafc2bdc7af0f8d79bce03df37b687
+bd 19900829 t11.flac:ec38e9159773dc37463a58ddf7d9394b
+bd 19900829 t12.flac:1114677d04172df180476e84aa4196ee
+bd 19900829 t13.flac:a5c9534d8d9961247adef9e6e8b93992
+bd 19900829 t14.flac:49e967b4a18aa9c76cd4b8d52fe20f4b
+bd 19900829 t15.flac:7cc872f12dc362887d420c857ee2a0ad
+bd 19900829 t16.flac:1d3a22010ce1bfefe56be931340daaa9
+bd 19900829 t17.flac:2df30ebb79b64343b16fc59c3905835e
+=================== 
+=================== 
+=================== 
+=== shntool for: bd90-08-29-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.01       42690032 B   -b-   --   ---xx   flac  0.6691  bd 19900829 t01.flac
+     4:23.19       46438444 B   -b-   --   ---xx   flac  0.6877  bd 19900829 t02.flac
+     4:12.30       44523564 B   -b-   --   ---xx   flac  0.6588  bd 19900829 t03.flac
+     6:02.69       64018476 B   -b-   --   ---xx   flac  0.6934  bd 19900829 t04.flac
+     4:56.54       52340780 B   -b-   --   ---xx   flac  0.6963  bd 19900829 t05.flac
+     4:00.57       42469420 B   -b-   --   ---xx   flac  0.6666  bd 19900829 t06.flac
+     4:42.67       49901612 B   -b-   --   ---xx   flac  0.6917  bd 19900829 t07.flac
+     6:17.62       66648108 B   -b-   --   ---xx   flac  0.6891  bd 19900829 t08.flac
+     3:40.30       38879276 B   -b-   --   ---xx   flac  0.6698  bd 19900829 t09.flac
+     3:27.34       36593708 B   -b-   --   ---xx   flac  0.7099  bd 19900829 t10.flac
+     3:17.14       34783276 B   -b-   --   ---xx   flac  0.6822  bd 19900829 t11.flac
+     5:03.40       53542956 B   -b-   --   ---xx   flac  0.6916  bd 19900829 t12.flac
+     3:12.41       33966124 B   -b-   --   ---xx   flac  0.7098  bd 19900829 t13.flac
+     4:35.27       48572460 B   -b-   --   ---xx   flac  0.6746  bd 19900829 t14.flac
+     5:52.71       62259244 B   -b-   --   ---xx   flac  0.7060  bd 19900829 t15.flac
+     3:55.40       41547820 B   -b-   --   ---xx   flac  0.6686  bd 19900829 t16.flac
+     4:29.10       47475336 B   -b-   --   ---xx   flac  0.6896  bd 19900829 t17.flac
+    76:12.63      806650636 B                            0.6862  (17 files)
+=================== 
+=================== 
+=================== 

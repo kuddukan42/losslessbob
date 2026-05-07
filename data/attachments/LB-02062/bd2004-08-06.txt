@@ -1,0 +1,76 @@
+Bob Dylan
+Doubleday Field
+Cooperstown, New York
+August 6, 2004
+------------------------------------------------------------------------------------------------------------
+Source:
+Soomlos Dat Master
+
+Transfer:
+Sony D8 > Tascam CD-RW 700 > EAC > Cool Edit 96 > CD Wave > mkwACT > SHN
+-----------------------------------------------------------------------------------------------------------
+Disc 1:
+01. Intro                                                                     		[01:45]
+02. Drifter's Escape                                                    		[04:42]
+03. I'll Be Your Baby Tonight                                           		[05:27]
+04. Tweedle Dee & Tweedle Dum                                  		[05:30]
+05. Tonight I'll Be Staying Here With You                          		[05:15]
+06. Seeing The Real You At Last                                    		[06:07]
+07. Girl Of The North Country                                         		[05:07]
+08. Cold Irons Bound                                                   		[06:05]
+09. Make You Feel My Love                                            		[06:05]
+10. I Don't Believe You (She Acts Like We Never Have Met)		[05:58]
+Total time: [52:01]
+
+Disc 2:
+01. Honest With Me                                                    		[06:16]
+02. Forever Young                                                     		[06:47]
+03. Summer Days                                                      		[09:24]
+04. Don't Think Twice, It's All Right                                 		[06:16]
+05. Like A Rolling Stone                                               		[06:14]
+06. Band Intros                                                           		[00:54]
+07. All Along The Watchtower                                      		[06:02]
+Total time: [41:53]
+-----------------------------------------------------------------------------------------------------------
+bd2004-08-06d1.md5
+b87143cccc59f4a17bf1527edb59f653 *bd2004-08-06d1t01.shn
+ad06c886d3492c7ffd7c7e2def9b86fa *bd2004-08-06d1t02.shn
+4aebd03555a62253f359c3d4e373e195 *bd2004-08-06d1t03.shn
+86f6fb0f1c06f298c6c8e9746821d249 *bd2004-08-06d1t04.shn
+614113393723fb87ff2f24860b48ef77 *bd2004-08-06d1t05.shn
+985620fb3d16c86ce43609e432b33dd3 *bd2004-08-06d1t06.shn
+b71f451d5d438e4a1a81c4b1ef2b67ec *bd2004-08-06d1t07.shn
+b743965da09b9c4e654dfd5266ee1a4e *bd2004-08-06d1t08.shn
+4d84edf35f04e155f37ccddd449ff8a0 *bd2004-08-06d1t09.shn
+51102845d9f026bb9ec15226bff95ae4 *bd2004-08-06d1t10.shn
+
+bd2004-08-06d2.md5
+3a0a00f147dfa5a17a1b715d665e2aa7 *bd2004-08-06d2t01.shn
+2817fa32230a498297204d656d9c96f9 *bd2004-08-06d2t02.shn
+a71d07880c645cc9f70122df062d5283 *bd2004-08-06d2t03.shn
+402fc5e3f8cc421907d717e288bd5925 *bd2004-08-06d2t04.shn
+454095740006d830f71a694459c800ed *bd2004-08-06d2t05.shn
+d203801a573afd70fc45a0ae0519107c *bd2004-08-06d2t06.shn
+41302e2f38635b9e66d5cabc9e7542bb *bd2004-08-06d2t07.shn
+
+bd2004-08-06d1wav.md5
+77bac7d7d3c4261e4b5128d8638630ab *bd2004-08-06d1t01.wav
+210aa9bf00b9d0716f9facc7614c9741 *bd2004-08-06d1t02.wav
+6920404eb659cf05152c3b22e5313644 *bd2004-08-06d1t03.wav
+14de946cdbb83d255b87224cdffeffcd *bd2004-08-06d1t04.wav
+f923c3c17cdd0fd5a3f99ef9db3c68f7 *bd2004-08-06d1t05.wav
+d030e191c58d22d365ec44ddcc247794 *bd2004-08-06d1t06.wav
+4d42d7c3f1cd9f37c708fce894cc0808 *bd2004-08-06d1t07.wav
+e85a21b8d6e4ba371ba34777afdf4cf9 *bd2004-08-06d1t08.wav
+8932df38651ec2d98e5cfdfec1fc95ac *bd2004-08-06d1t09.wav
+7e51a92e4ad3f0266d4ef4c75b14de79 *bd2004-08-06d1t10.wav
+
+bd2004-08-06d2wav.md5
+9513c69c5ec2d079cc216ddde6fb4721 *bd2004-08-06d2t01.wav
+6109b9c7537569804a8582c8bd7438d8 *bd2004-08-06d2t02.wav
+4a0b3e79e42df7f95176de2b5213b954 *bd2004-08-06d2t03.wav
+6643df850349f678f1728f489eaa0b48 *bd2004-08-06d2t04.wav
+e8e662da71c19b2d7bfaa1a44bb8ab26 *bd2004-08-06d2t05.wav
+2f91d3c892cf0799c35d10e66bec58d2 *bd2004-08-06d2t06.wav
+019a033134215991dea42a7e7375527e *bd2004-08-06d2t07.wav
+

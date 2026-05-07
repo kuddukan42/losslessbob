@@ -1,0 +1,40 @@
+Bob Dylan
+1998-02-14 Public Hall, Cleveland, OH
+AUD > ? > CD-R > EAC (secure) > WAV > FLAC
+
+Disc 1
+01. Absolutely Sweet Marie
+02. Senor (Tales Of Yankee Power)
+03. Can't Wait
+04. Simple Twist Of Fate
+05. Silvio
+06. Cocaine Blues
+07. Masters Of War
+08. Tangled Up In Blue
+
+Disc 2
+01. Million Miles
+02. Queen Jane Approximately
+03. Highway 61 Revisited
+ENCORE
+04. 'Till I Fell In Love With You
+05. Don't Think Twice, It's All Right
+06. Love Sick
+07. Rainy Day Women #12 + 35
+
+
+dylan1998-02-14d1t01.flac:cf8bf63f1b07f1e03251b63dff2e0b58
+dylan1998-02-14d1t02.flac:a8b08e381b4c271e82df5cb5f144e724
+dylan1998-02-14d1t03.flac:775f98b7deda5be5c9c07d6e3e38989c
+dylan1998-02-14d1t04.flac:6a21aafe48756a67ed366a52417a8a9e
+dylan1998-02-14d1t05.flac:ce47d6cec8e17e3dad5288f877453a1e
+dylan1998-02-14d1t06.flac:4c101b884cde6c3699a79a49dc9f9aa5
+dylan1998-02-14d1t07.flac:d375f26a6bc8dca612d0e6af0240a054
+dylan1998-02-14d1t08.flac:d3a9bdd4a81f83e185bc2ca00d079ef9
+dylan1998-02-14d2t01.flac:9feee385110205efcbd9dfd66782b8af
+dylan1998-02-14d2t02.flac:219753bb4702d83987c993b673b13c1c
+dylan1998-02-14d2t03.flac:e0e00495566967257440be03500c5bc6
+dylan1998-02-14d2t04.flac:6260dc82afeb85a4182dd985dff8905f
+dylan1998-02-14d2t05.flac:6d362e215f0d4be9ea1b83b40ab7f191
+dylan1998-02-14d2t06.flac:e5b8859786bc39928343c02f8269e6f4
+dylan1998-02-14d2t07.flac:9067150a0f1b718c7f592245f7879e0a

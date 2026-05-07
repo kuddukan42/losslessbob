@@ -1,0 +1,6 @@
+dylan-1989-09-03-MP-d2t01.flac:1aceb199dec6da3a749f3140788f6b20
+dylan-1989-09-03-MP-d2t02.flac:4cdcfca4817fc77020f04c2901dbcc87
+dylan-1989-09-03-MP-d2t03.flac:844256f81dc3a7e279db28fa1bc563c2
+dylan-1989-09-03-MP-d2t04.flac:80f2cb5797e7baf0d7c06f19bcfb137f
+dylan-1989-09-03-MP-d2t05.flac:f7c07cc22fc1b132b80cbd5cf221dc3e
+dylan-1989-09-03-MP-d2t06.flac:5a51c6b15d9c1296ec3799f94b99fc9d

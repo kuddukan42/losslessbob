@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-09-01-travelin-man-b.flacf 
+=================== 
+=================== 
+=================== 
+3259f908a945f1d008356ec3d903e6de  bd2004-09-01d1t01.flac
+176e8d99539328cb93ebfddae91c8968  bd2004-09-01d1t02.flac
+444fbd732e73f7363fa3c7a8dc0768a2  bd2004-09-01d1t03.flac
+a6994420329aa1b834aae6a3016b53cc  bd2004-09-01d1t04.flac
+ccc91143647f177ab79fec0a406472d6  bd2004-09-01d1t05.flac
+b2752521d42a046c49bcab03016225ce  bd2004-09-01d1t06.flac
+a58c12d8b9d548db708d94c562cbdf5d  bd2004-09-01d1t07.flac
+126399657f55b677a9e9ae512295bf12  bd2004-09-01d1t08.flac
+0ce6a2b23fb316f006c20807c45a6be5  bd2004-09-01d1t09.flac
+3c962a4c462a556264f28a55fdde358b  bd2004-09-01d2t01.flac
+a9fe07d675b2f6aba61021fcebec7c27  bd2004-09-01d2t02.flac
+9e57383523be25c8280e1c080782bae7  bd2004-09-01d2t03.flac
+fd194a163e7efd885513bf5e288b670d  bd2004-09-01d2t04.flac
+985d839084b73c0cc7d01c088f3db266  bd2004-09-01d2t05.flac
+48f6ad1fb34108212b805fbe2a6fb263  bd2004-09-01d2t06.flac
+625bc359ef7a552073a3402c97f54676  Bob Dylan 09-01-2004.ffp
+fc5b22eb1a7273a25347bfe613352f85  Bob Dylan 09-01-2004.md5
+d8c857cd8c763732762813abc80d1b76  Bob Dylan 9-1-2004.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-09-01-travelin-man-b.flacf 
+=================== 
+=================== 
+=================== 
+bd2004-09-01d1t01.flac:3227523b63b6368a27e85f0941efd565
+bd2004-09-01d1t02.flac:aa5835de7e1c88eab85c3992df571333
+bd2004-09-01d1t03.flac:8f28d407ee75f5749e8c6d371cb1317c
+bd2004-09-01d1t04.flac:1b04af1e5b9f7cd00a91ffe7caf481b5
+bd2004-09-01d1t05.flac:34a8080352b2806175e9f8a902eb1f73
+bd2004-09-01d1t06.flac:5ac0783b5a78883e9b5b128e3e73c832
+bd2004-09-01d1t07.flac:ef03a126e8d48dc6e3d0ab6e1c1e6ff9
+bd2004-09-01d1t08.flac:0f5b8d366c181eaa5032823324baa517
+bd2004-09-01d1t09.flac:ae95cef0aaac630673176cb9f97d1557
+bd2004-09-01d2t01.flac:d5ebe5b3de5e82e5efb63973c450cad6
+bd2004-09-01d2t02.flac:39ddc6fe7d001652f151b99e0810720d
+bd2004-09-01d2t03.flac:4e962f676a3e0f0bbdd7d0b75e940cdf
+bd2004-09-01d2t04.flac:3df547f0979590a74f589329a1682acb
+bd2004-09-01d2t05.flac:f94f2cda0fc51f05e6c93e8062f1c3a6
+bd2004-09-01d2t06.flac:a1d58e857f4080fb021914a1d0bddf2d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-09-01-travelin-man-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.00       76557644 B   ---   --   ---xx   flac  0.5209  bd2004-09-01d1t01.flac
+     4:51.00       51332444 B   ---   --   ---xx   flac  0.4991  bd2004-09-01d1t02.flac
+     5:26.00       57506444 B   ---   --   ---xx   flac  0.4894  bd2004-09-01d1t03.flac
+     5:01.00       53096444 B   ---   --   ---xx   flac  0.4958  bd2004-09-01d1t04.flac
+     7:21.00       77792444 B   ---   --   ---xx   flac  0.5229  bd2004-09-01d1t05.flac
+     6:22.00       67384844 B   ---   --   ---xx   flac  0.4445  bd2004-09-01d1t06.flac
+     7:05.00       74970044 B   ---   --   ---xx   flac  0.5667  bd2004-09-01d1t07.flac
+     5:04.00       53625644 B   ---   --   ---xx   flac  0.4262  bd2004-09-01d1t08.flac
+     7:18.21       77312636 B   ---   --   ---xx   flac  0.4326  bd2004-09-01d1t09.flac
+     6:44.00       71265644 B   ---   --   ---xx   flac  0.5433  bd2004-09-01d2t01.flac
+     5:44.00       60681644 B   ---   --   ---xx   flac  0.4083  bd2004-09-01d2t02.flac
+    11:32.00      122068844 B   ---   --   ---xx   flac  0.4625  bd2004-09-01d2t03.flac
+     7:19.00       77439644 B   ---   --   ---xx   flac  0.5006  bd2004-09-01d2t04.flac
+     0:39.00        6879644 B   ---   --   ---xx   flac  0.4189  bd2004-09-01d2t05.flac
+     7:47.18       82421180 B   ---   --   ---xx   flac  0.4483  bd2004-09-01d2t06.flac
+    95:27.39     1010335188 B                            0.4830  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-03-31-Schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+db9d6679df58c242e9b45bf5c35fb839  2001-03-31 Kingsford Smith Park, Seagulls Rugby League Footb.txt
+09c482bfbf70005d4baefedc45e8384b  Back.jpg
+ff1a2a28bcdd990d28da5c895fc48784  bd01-03-31-Schubert-remaster-LB-2924.txt
+e7f90292e1093d43e98e8ea96afb5d17  CD1\00 Announcement.flac
+200296ab4c1f59845363dd2719f32c3b  CD1\01 Duncan and Brady.flac
+8db754f075773e480454ee038475fcf9  CD1\02 My back pages.flac
+bef24f36ec27ff8556b5374e81581897  CD1\03 Desolation Row.flac
+aad115e326b8de3fcafe4c7f628c131f  CD1\04 Crash on the Levee (down in the flood).flac
+b49eb2c342d0251567415f8497c1aedc  CD1\05 I want you.flac
+085bd7293be51eac0ed742022bc86bac  CD1\06 Seeing the real you at last.flac
+4af4c4d88f383e12ff69434fd4635805  CD1\07 Tomorrow is a long time.flac
+acd81225907b76bba55abb4a28cd10a4  CD1\08 Gates of Eden.flac
+59f1d3317f7223cce16ead1e927542ef  CD1\09 It ain't me, babe.flac
+58799f230cfc95457533cc991d469c4b  CD1\10 Watching the river flow.flac
+a1b50e14ae5171744448a3181361c0df  CD1\EAC log d1.LOG
+6fb7efb56933f409fa23fd726ae33e9f  CD1\ffp d1.txt
+ec8e2871aea15f9deda29865a95c45b7  CD2\11 The wicked messenger.flac
+9ad3c8371a8bef9f6b34332a9b6ef46b  CD2\12 Leopard-skin pill-box hat.flac
+f5537d9559e0072e87bac5d2025d102a  CD2\13 Country Pie.flac
+d009e40a446f4322059275086b2bdf98  CD2\14 Like a rolling stone.flac
+deddcfdd3fc07ecdd2372614abb15c7d  CD2\15 If dogs run free.flac
+1a4079aacf16062960a4225ac740325e  CD2\16 All along the watchtower.flac
+b5949777d9fb46881ab9e7ca44828ba5  CD2\17 I shall be released.flac
+a57b854ecbd313cfaf29b05001ed6691  CD2\18 Highway 61 revisited.flac
+9c448b8f31c3350793fb1d121d89237d  CD2\19 Blowin' in the wind.flac
+e4517f5fe52fdf27bee2d7fba58bdd7c  CD2\20 Not fade away.flac
+89476d94150770eba6da3e7f2783479a  CD2\21 Rainy day women # 12 & 35.flac
+3073e428ef7271bc1bc6fe1d47b888d6  CD2\EAC log d2.LOG
+13c6cf81c0cad24c9dae9f0e893b0ccd  front.jpg
+d4247c95bd18bc7c7d48ce971f0d5384  Thumbs.db
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-31-Schubert-remaster.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:1186d3f9cb8ab7b11822c3f4b23413e7
+01 Duncan and Brady.flac:4af7cc9cbc47c103ac51a2ad053c5bec
+02 My back pages.flac:fd2c7f480fcb64ca88810c11d50a516f
+03 Desolation Row.flac:3a0539ee2ad45c4774d8fc3c760b1932
+04 Crash on the Levee (down in the flood).flac:a3258922b6ef3cb2bf16f8631ac9d1cc
+05 I want you.flac:f4ee73713eab7128f641c66b297c4a38
+06 Seeing the real you at last.flac:6261700712162bc46153682b1bd5afe6
+07 Tomorrow is a long time.flac:5010a8d6c2513c86239ee4df5d8afc30
+08 Gates of Eden.flac:cf51073ba3da297248f7af0d646cf1be
+09 It ain't me, babe.flac:bbf7b4c43c74cf8404d6ce6ed86eaadf
+10 Watching the river flow.flac:4efd2112b30aec906c4e542afe24f467
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-31-Schubert-remaster.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11 The wicked messenger.flac:bb01f8df95ed24ca7ff10877bfe1d85d
+12 Leopard-skin pill-box hat.flac:0c54520014175f1593e6636d932914ea
+13 Country Pie.flac:c31fda512c725b7b79b6467930e0057b
+14 Like a rolling stone.flac:5afcbe5167eb56a88a1b8297b56f3d55
+15 If dogs run free.flac:6bd15bdd587ac3418d011efb2cafb3d6
+16 All along the watchtower.flac:1bf0c680de0a12da928efda2dbac7a1b
+17 I shall be released.flac:47812154499f28f76b52d64e5e7a40c9
+18 Highway 61 revisited.flac:4176c4f1631d76c5363dcdfda06e4a2e
+19 Blowin' in the wind.flac:d3efaa5a896736efb01df362b94bdc29
+20 Not fade away.flac:fab9f7183b581206bb0154d3992c11e0
+21 Rainy day women # 12 & 35.flac:8b0ab1e853d0c04f401c3e42a822adda
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-31-Schubert-remaster.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:16.53        2947100 B   ---   --   ---xx   flac  0.5166  00 Announcement.flac
+     3:14.24       34278092 B   ---   --   ---xx   flac  0.6516  01 Duncan and Brady.flac
+     6:33.37       69412268 B   ---   --   ---xx   flac  0.5888  02 My back pages.flac
+     9:37.05      101794604 B   ---   --   ---xx   flac  0.5927  03 Desolation Row.flac
+     4:34.60       48474764 B   ---   --   ---xx   flac  0.6408  04 Crash on the Levee (down in the flood).flac
+     6:51.30       72571004 B   ---   --   ---xx   flac  0.6143  05 I want you.flac
+     5:47.73       61382540 B   ---   --   ---xx   flac  0.6410  06 Seeing the real you at last.flac
+     5:51.07       61932908 B   ---   --   ---xx   flac  0.4953  07 Tomorrow is a long time.flac
+     5:13.05       55225004 B   ---   --   ---xx   flac  0.5692  08 Gates of Eden.flac
+     8:31.66       90295676 B   ---   --   ---xx   flac  0.5227  09 It ain't me, babe.flac
+     5:08.71       54498236 B   ---   --   ---xx   flac  0.6351  10 Watching the river flow.flac
+    61:40.56      652812196 B                            0.5882  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-31-Schubert-remaster.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.57       47056508 B   ---   --   ---xx   flac  0.6747  11 The wicked messenger.flac
+     7:56.25       84025244 B   ---   --   ---xx   flac  0.6250  12 Leopard-skin pill-box hat.flac
+     2:57.10       31246364 B   ---   --   ---xx   flac  0.6566  13 Country Pie.flac
+     7:30.69       79542332 B   ---   --   ---xx   flac  0.6542  14 Like a rolling stone.flac
+     4:01.44       42615932 B   ---   --   ---xx   flac  0.5257  15 If dogs run free.flac
+     4:58.55       52696604 B   ---   --   ---xx   flac  0.6524  16 All along the watchtower.flac
+     4:46.60       50591564 B   ---   --   ---xx   flac  0.6123  17 I shall be released.flac
+     6:37.58       70167260 B   ---   --   ---xx   flac  0.6653  18 Highway 61 revisited.flac
+     7:45.73       82197740 B   ---   --   ---xx   flac  0.5920  19 Blowin' in the wind.flac
+     4:10.02       44104748 B   ---   --   ---xx   flac  0.7036  20 Not fade away.flac
+     5:07.43       54255980 B   ---   --   ---xx   flac  0.6478  21 Rainy day women # 12 & 35.flac
+    60:19.46      638500276 B                            0.6360  (11 files)
+=================== 
+=================== 
+=================== 

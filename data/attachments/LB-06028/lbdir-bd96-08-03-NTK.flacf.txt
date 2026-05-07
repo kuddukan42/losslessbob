@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-08-03-NTK.flacf 
+=================== 
+=================== 
+=================== 
+f1327b46032242249f67c2208f24783d  bd-19960803-Atlanta.ffp
+1861dc15baa6d5878e1d3cef121fb166  bd-19960803-Atlanta.md5
+23cf45be08ff6c795e60a09f6bb163d2  bd1996-08-03-d1t01.flac
+e3bb6f219d21be0c00da39752010a381  bd1996-08-03-d1t02.flac
+d7826c94bc5b3ab4ea95beb79e0505d6  bd1996-08-03-d1t03.flac
+464ce6fef64b17fe44b492d075cfe4ac  bd1996-08-03-d1t04.flac
+fa04a3b1bf703ad59daa12800292e34d  bd1996-08-03-d1t05.flac
+02ee5b74f7ff248f50ba4f085f6341a4  bd1996-08-03-d1t06.flac
+2bdb8d6b0e0d6a4441f3b1f8ce42e908  bd1996-08-03-d1t07.flac
+e611a0a3b58ca8e469477bf00ea8126a  bd1996-08-03-d1t08.flac
+eb2bb3b1d3395129fe68450123d9b94b  bd1996-08-03-d1t09.flac
+b7d01fb1a102ecaa9d2c1404311c83c3  bd1996-08-03-d2t01.flac
+37cd447e6b2a5818d09f76a9d40525b3  bd1996-08-03-d2t02.flac
+f9fed885541fd79707f3ba30791e51a1  bd1996-08-03-d2t03.flac
+22db6c6797572d799c236abcc7a7a45b  bd1996-08-03-d2t04.flac
+91633ab2cad9a691af5f8173529fd3d3  bd1996-08-03-d2t05.flac
+62066f5f9ff3469532461d51e812677a  bd1996-08-03-d2t06.flac
+dcaa1ec3eaf6256dfe50a15a4d52ea9d  bd1996-08-03-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-08-03-NTK.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-08-03-d1t01.flac:ca7c5b86299ece836513b75f199e9bdb
+bd1996-08-03-d1t02.flac:5eef3225dc9deec04c7f24666d77bf2e
+bd1996-08-03-d1t03.flac:ef65cf5718db4bedba44efd14c20c528
+bd1996-08-03-d1t04.flac:b5c98f97743dd86aeaff956077c2de5f
+bd1996-08-03-d1t05.flac:18bd692c3a48f4d50b4bb84ebbf0a50f
+bd1996-08-03-d1t06.flac:ba89070cd4bf4c24f6421552c0b28118
+bd1996-08-03-d1t07.flac:cc1ef2566eaa4961b67b6d31d382d53d
+bd1996-08-03-d1t08.flac:d10b66bbfd6c2beb5b6efff7e2980d17
+bd1996-08-03-d1t09.flac:0dd3851eb3fb5ee6ef641d18b6d7f168
+bd1996-08-03-d2t01.flac:ce73574bee70fe07ecc0159309e471be
+bd1996-08-03-d2t02.flac:1b256e91417198dc3c412d586dffdf1c
+bd1996-08-03-d2t03.flac:f4af6acf4e0fec737019592e040f238a
+bd1996-08-03-d2t04.flac:85c1c6d96d7f93d3738636b78b68aee6
+bd1996-08-03-d2t05.flac:6404a2f8ee2c290bc7d49f7f4e3b2bc5
+bd1996-08-03-d2t06.flac:52588196b06f06ba6e1245f3317e9836
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-08-03-NTK.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.17       49432028 B   ---   --   ---xx   flac  0.5496  bd1996-08-03-d1t01.flac
+     5:36.72       59439788 B   ---   --   ---xx   flac  0.4670  bd1996-08-03-d1t02.flac
+     6:36.34       69934412 B   ---   --   ---xx   flac  0.5355  bd1996-08-03-d1t03.flac
+     6:30.53       68920700 B   ---   --   ---xx   flac  0.4597  bd1996-08-03-d1t04.flac
+     9:04.74       96135692 B   ---   --   ---xx   flac  0.5317  bd1996-08-03-d1t05.flac
+     7:34.66       80240876 B   ---   --   ---xx   flac  0.5624  bd1996-08-03-d1t06.flac
+     8:07.11       85932716 B   ---   --   ---xx   flac  0.4120  bd1996-08-03-d1t07.flac
+     6:09.66       65246876 B   ---   --   ---xx   flac  0.4360  bd1996-08-03-d1t08.flac
+     9:00.09       95277212 B   ---   --   ---xx   flac  0.4954  bd1996-08-03-d1t09.flac
+     8:10.22       86487788 B   ---   --   ---xx   flac  0.5449  bd1996-08-03-d2t01.flac
+     6:43.47       71199788 B   ---   --   ---xx   flac  0.4617  bd1996-08-03-d2t02.flac
+     7:54.54       83740652 B   ---   --   ---xx   flac  0.5724  bd1996-08-03-d2t03.flac
+     7:48.66       82710476 B   ---   --   ---xx   flac  0.5724  bd1996-08-03-d2t04.flac
+     9:04.25       96020444 B   ---   --   ---xx   flac  0.5099  bd1996-08-03-d2t05.flac
+     6:34.16       69539276 B   ---   --   ---xx   flac  0.5949  bd1996-08-03-d2t06.flac
+   109:37.32     1160258724 B                            0.5145  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,12 @@
+Bob Dylan, 7/21/00, Hartford, Connecticut, Meadows Music Theatre, 2CDR
+
+LB-3957, (66min+32min), Audience recording > ? > CDR > EAC (Secure) > WAV > FLAC > Trade DVD > HD > WAV > Audacity > WAV > FLAC (Level 8) > DIME, If you look at the original EAC logs you will see how low the volume was on this, so I used Audacity to amplify it without allowing it to clip. While I was at it I removed a few digi clicks in d1t12. Some track transitions are not entirely seemless., The first track was 0.01 seconds long so I deleted it; Background talking throughout; CEDAR-type fingerprint d1t9@4:51 "Have you been writing down the songs, can I please take a look?". Sound is good to very good.; bittorrent download 08/06; excellent sound [A]; background talking d1t2, d1t3 and continues like this for awhile before building back up for d2t5
+
+CD1
+65:52, 01. Duncan And Brady (acoustic), 02. To Ramona (acoustic) (Larry on mandolin), 03. Desolation Row (acoustic), 04. Tomorrow Is A Long Time (acoustic), 05. Tangled Up In Blue (acoustic), 06. Searching For A Soldier's Grave (acoustic) (Larry on mandolin), 07. Country Pie, 08. If Not For You, 09. Tombstone Blues, 10. Tears Of Rage, 11. Cold Irons Bound, 12. Leopard-Skin Pill-Box Hat, 
+
+CD2
+31:42, (encore), 13. Things Have Changed, 14. Like A Rolling Stone, 15. Mr. Tambourine Man (acoustic) (Bob on harp), 16. Highway 61 Revisited, 17. Blowin' In The Wind (acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

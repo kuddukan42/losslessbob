@@ -1,0 +1,55 @@
+Bob Dylan
+First Energy Stadium
+Reading, Pennsylvannia
+August 23, 2006
+
+Source: soomlos
+fob, center ga field
+neumann km140's > edirol ua-5(bm2p+) > microtrack 24/96 (24/48)
+audacity > cd wave > flac (24/48)
+
+**24 bit version**
+
+01. Introduction [01:55]
+02. Cats In The Well [04:17]
+03. You Ain't Goin' Nowhere [04:47]
+04. Tweedle Dee & Tweedle Dum [05:42]
+05. Lay, Lady, Lay [06:03]
+06. Watching The River Flow [05:30]
+07. High Water (For Charley Patton) [06:49]
+08. Not Dark Yet [06:29]
+09. Tangled Up In Blue [08:03]
+10. Make You Feel My Love [05:10]
+11. Highway 61 Revisted [06:07]
+12. Lenny Bruce [06:49]
+13. Summer Days [08:53]
+14. Like A Rolling Stone [06:45]
+15. Band Introduction [00:40]
+16. Rainy Day Women #12 & 35 [05:42]
+Total time: [89:48]
+
+Band members:
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, electric mandolin, pedal steel, lap steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2006-08-23t01.flac:08dd3da0f761912933acdb665c1773b7
+bd2006-08-23t02.flac:f1a12e8e56f87dbbe2c90be20e3b9066
+bd2006-08-23t03.flac:bf6b189c73fa19fa995eda671a2a67a1
+bd2006-08-23t04.flac:1759358b2d5d2452e301755086857ab9
+bd2006-08-23t05.flac:90ec3b4691306b4586ccd786ae153fe6
+bd2006-08-23t06.flac:4122da73fa0f02cdb3c89fb61f55a862
+bd2006-08-23t07.flac:6e798d14a2953ce5372b5b9003d1a96f
+bd2006-08-23t08.flac:20d775f3ebc0cb9de2bacefa889b9518
+bd2006-08-23t09.flac:ecdf300c33113691657cd155cc7f6f34
+bd2006-08-23t10.flac:54d55a5d0c1c4b318d05713d854cfe61
+bd2006-08-23t11.flac:e816dfba1d583b3558caf0171b48f804
+bd2006-08-23t12.flac:b17420db730318aeec1b2419ca93e29b
+bd2006-08-23t13.flac:d5e291a3e50e6a1e4a4e17f4a57a2a7c
+bd2006-08-23t14.flac:a298b32509e8c621937bd6371ae3efaf
+bd2006-08-23t15.flac:fad72208c9027d1fe30c6dbaabdb6242
+bd2006-08-23t16.flac:450ea750b13529114a6e2e937ccf9f54

@@ -1,0 +1,257 @@
+Forum de Montreal, Montreal, Quebec, Canada, 11th Jan 1974
+
+Low gen tape > CDR > Eac > Flac
+
+1.	Most Likely You Go Your Way (And I’ll Go Mine)
+2.	Lay Lady Lay
+3.	Just Like Tom Thumb's Blues
+4.	I Don't Believe You (She Acts Like We Never Have Met)
+5.	It Ain't Me Babe
+6.	Ballad Of A Thin Man
+
+7.	Stage Fright (The Band)
+8.	The Night They Drove Old Dixie Down (The Band)
+9.	King Harvest (Has Surely Come)  (The Band)
+10.	This Wheel's On Fire (The Band)
+11.	I Shall Be Released (The Band)
+12.	Up On Cripple Creek (The Band)
+
+13.	All Along The Watchtower
+14.	Ballad Of Hollis Brown
+15.	Knockin' On Heaven's Door
+
+<disk2>
+
+16.	The Times They Are A-Changin' – (solo)
+17.	Don't Think Twice, It’s All Right – (solo)
+18.	Gates Of Eden - (solo)
+19.	Nobody 'Cept You – (solo)
+20.	It's Alright Ma (I’m Only Bleeding) – (solo)
+
+21.	Rag Mama Rag (The Band)
+22.	When You Awake (The Band)
+23.	The Shape I'm In (The Band)
+24.	The Weight (The Band)
+
+25.	Forever Young
+26.	Something There Is About You
+27.	Like A Rolling Stone
+
+28.	Most Likely You Go Your Way (And I’ll Go Mine)
+
+---------------------------------------------------------
+ 
+Forum de Montreal, Montreal, Quebec, Canada, 12th Jan 1974
+
+Low gen tape > CDR > Eac > Flac
+
+1.	Most Likely You Go Your Way (And I’ll Go Mine)
+2.	Lay Lady Lay
+3.	Just Like Tom Thumb's Blues
+4.	I Don't Believe You (She Acts Like We Never Have Met)
+5.	It Ain't Me Babe
+6.	Ballad Of A Thin Man
+
+(first band set is unknown)
+
+7.	All Along The Watchtower
+8.	Ballad Of Hollis Brown
+9.	Knockin' On Heaven's Door
+
+10.	Blowin' In The Wind – (solo)
+11.	Don't Think Twice, It’s All Right – (solo)
+12.	Gates Of Eden - (solo)
+13.	Just Like A Woman – (solo)
+14.	It's Alright Ma (I’m Only Bleeding) – (solo)
+
+(second band set is unknown)
+
+15.	Forever Young
+16.	Something There Is About You
+17.	Like A Rolling Stone
+
+18.	Most Likely You Go Your Way (And I’ll Go Mine)
+
+-----------------------------------------------------------
+ 
+Boston Gardens, Boston, Massachusetts, 14th Jan 1974 (Afternoon)
+
+
+Source: AUD > MC (Joe Maloney) > shn by Jamie Salerno 
+
+Recorded on a Sony TC-110A, using the built-in microphone. Original cassettes were transferred to a Mac DAW using a Denon DR-M10HR. The analog signal was first run through: a) a SAE 2800 parametric equalizer to bump the highs slightly and to remove "room boom" at around 80 MHz; & b) a Phase Linear Autocorrelator to remove hiss & expand the signal (the TC-110A did not have controls for recording; the recorder, designed for dictation, compressed the signal and recorded at a fixed level). Transferred to the Mac using a MOTU 896.  Bias Deck used to splice tape flips & even out volume levels.  Bias Peak used to transfer SDII files to WAV files for shn compression.  Shntool used to fix SBEs. Converted to Flac for consistency with this set.
+
+
+1.	Rainy Day Women # 12 & 35
+2.	Lay Lady Lay
+3.	Just Like Tom Thumb's Blues
+4.	It Ain't Me Babe
+5.	I Don't Believe You (She Acts Like We Never Have Met)
+6.	Ballad Of A Thin Man
+
+7.	Stage Fright (the Band)
+8.	The Night they Drove Old Dixie Down (the Band)
+9.	King Harvest (has surely come)(the Band)
+10.	This Wheel's on Fire (the Band)
+11.	I shall be released (the Band)
+12.	Up on Cripple Creek (the Band)
+
+13.	All Along The Watchtower
+14.	Ballad Of Hollis Brown
+15.	Knockin' On Heaven's Door
+
+<disk2>
+
+16.	The Times They Are A-Changin' – (solo)
+17.	Don't Think Twice, It’s All Right – (solo)
+18.	Gates Of Eden - (solo)
+19.	Just Like A Woman – (solo)
+20.	It's Alright Ma (I’m Only Bleeding) – (solo)
+
+21.	Rag Mama Rag (the Band)
+22.	When you Awake (the Band)
+23.	The Shape I'm in (the Band)
+24.	The Weight (the Band)
+
+25.	Forever Young
+26.	Something There Is About You
+27.	Like A Rolling Stone
+
+28.	Most Likely You Go Your Way (And I’ll Go Mine)
+
+-----------------------------------------------------------
+ 
+Boston Gardens, Boston, Massachusetts, 14th Jan 1974 (Evening)
+
+Source: AUD > MC (Joe Maloney) > shn by Jamie Salerno 
+Recorded on a Sony TC-110A, using the built-in microphone. Original cassettes were transferred to a Mac DAW using a Denon DR-M10HR. The analog signal was first run through: a) a SAE 2800 parametric equalizer to bump the highs slightly and to remove "room boom" at around 80 MHz; & b) a Phase Linear Autocorrelator to remove hiss & expand the signal (the TC-110A did not have controls for recording; the recorder, designed for dictation, compressed the signal and recorded at a fixed level). Transferred to the Mac using a MOTU 896.  Bias Deck used to splice tape flips & even out volume levels.  Bias Peak used to transfer SDII files to WAV files for shn compression.  Shntool used to fix SBEs. Converted to Flac for consistency with this set.
+
+
+1.	Most Likely You Go Your Way (And I’ll Go Mine)
+2.	Lay Lady Lay
+3.	Just Like Tom Thumb's Blues
+4.	Rainy Day Women # 12 & 35
+5.	It Ain't Me Babe
+6.	Ballad Of A Thin Man
+
+7.	Stage Fright (the Band)
+8.	The Night they Drove Old Dixie Down (the Band)
+9.	King Harvest (has surely come)(the Band)
+10.	This Wheel's on Fire (the Band)
+11.	I shall be Released (the Band)
+12.	Up on Cripple Creek (the Band)
+
+13.	All Along The Watchtower
+14.	Ballad Of Hollis Brown
+15.	Knockin' On Heaven's Door
+
+< disk 2 >
+
+16.	Blowin' In The Wind – (solo)
+17.	Don't Think Twice, It’s All Right – (solo)
+18.	Gates Of Eden - (solo)
+19.	Love Minus Zero/No Limit – (solo)
+20.	It's Alright Ma (I’m Only Bleeding) – (solo)
+
+21.	Rag Mama Rag (the Band)
+22.	When you Awake (the Band)
+23.	The Shape I'm in (the Band)
+24.	The Weight (the Band)
+
+25.	Forever Young
+26.	Something There Is About You
+27.	Like A Rolling Stone
+
+28.	Most Likely You Go Your Way (And I’ll Go Mine)
+
+
+-------------------------------------------------------------
+
+Capitol Center, Largo, Maryland, 15th Jan 1974
+
+Low gen tape > CDR > Eac > Flac
+The Band sets are from the CD 'Into the Flood'
+
+1.	Most Likely You Go Your Way (And I’ll Go Mine)
+2.	Lay Lady Lay
+3.	Just Like Tom Thumb's Blues
+4.	I Don't Believe You (She Acts Like We Never Have Met)
+5.	It Ain't Me Babe
+6.	Ballad Of A Thin Man
+
+7.	Stage Fright (the Band)
+8.	The Night they Drove Old Dixie Down (the Band)
+9.	King Harvest (has surely come)(the Band)
+10.	This Wheel's on Fire (the Band)
+11.	I shall be released (the Band)
+12.	Up on Cripple Creek (the Band)
+
+13.	All Along The Watchtower
+14.	Ballad Of Hollis Brown
+15.	Knockin' On Heaven's Door
+
+<disk2>
+
+16.	The Times They Are A-Changin' – (solo)
+17.	Don't Think Twice, It’s All Right – (solo)
+18.	Wedding Song - (solo)
+19.	Just Like A Woman – (solo)
+20.	It's Alright Ma (I’m Only Bleeding) – (solo)
+
+21.	Rag Mama Rag (the Band)
+22.	Loving You Is Sweeter Than Ever (The Band)
+23.	The Shape I'm in (the Band)
+24.	The Weight (the Band)
+
+25.	Forever Young
+26.	Something There Is About You
+27.	Like A Rolling Stone
+
+28.	Most Likely You Go Your Way (And I’ll Go Mine)
+
+-------------------------------------------------------
+ 
+Capitol Center, Largo, Maryland, 16th Jan 1974
+
+Low gen tape > CDR > Eac > Flac
+The Band sets are from a different tape.
+
+1.	Most Likely You Go Your Way (And I’ll Go Mine)
+2.	Lay Lady Lay
+3.	Just Like Tom Thumb's Blues
+4.	One Too Many Mornings
+5.	It Ain't Me Babe
+6.	Ballad Of A Thin Man
+
+7.	Stage Fright (the Band)
+8.	The Night they Drove Old Dixie Down (the Band)
+9.	King Harvest (has surely come)(the Band)
+10.	This Wheel's on Fire (the Band)
+11.	I shall be released (the Band)
+12.	Up on Cripple Creek (the Band)
+
+13.	All Along The Watchtower
+14.	Ballad Of Hollis Brown (cut)
+15.	Knockin' On Heaven's Door
+
+<disk2>
+
+16.	The Times They Are A-Changin' – (solo)
+17.	Don't Think Twice, It’s All Right – (solo)
+18.	Gates Of Eden - (solo)
+19.	Nobody 'Cept You – (solo)
+20.	It's Alright Ma (I’m Only Bleeding) – (solo)
+
+21.	Rag Mama Rag (the Band)
+22.	When you Awake (the Band)
+23.	The Shape I'm in (the Band)
+24.	The Weight (the Band)
+
+25.	Forever Young
+26.	Something There Is About You
+27.	Like A Rolling Stone
+
+28.	Most Likely You Go Your Way (And I’ll Go Mine)
+
+-------------------------------------------------------
+ 

@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-06-madhasse.flacf 
+=================== 
+=================== 
+=================== 
+72a58f22fa842c70aba7efb50c4eed28  bd07-04-06-madhasse-LB-4722.txt
+9dc2122a9099be7145d40d5fb5cb077e  bd2007-04-6d1t01.flac
+a6b41b2e914fc153b2382a0dacf35631  bd2007-04-6d1t02.flac
+2fce4e1859b04395da6c6d2f2eca65c5  bd2007-04-6d1t03.flac
+9d2d15c146663e34ddb07bf9784899ad  bd2007-04-6d1t04.flac
+7e9c278a83f2de6bac4e7bc367920fbc  bd2007-04-6d1t05.flac
+4032ee5b2b9c8d80aa0dde4ea1ad18a7  bd2007-04-6d1t06.flac
+4354261a7a595624c4389a27ae19a3c0  bd2007-04-6d1t07.flac
+810cbef537c79c7c9df43add6e6f8e7b  bd2007-04-6d1t08.flac
+9f67afa0ebb04d7ee0a149e1ecc24889  bd2007-04-6d1t09.flac
+079e11600064357da8fb5ef054183833  bd2007-04-6d1t10.flac
+314bc8ee0804c052655bfa5879005980  bd2007-04-6d1t11.flac
+fb414f60b650f86c359af569208b2128  bd2007-04-6d2t01.flac
+1bc6bb464f5e612dd3b869b377a1ec39  bd2007-04-6d2t02.flac
+74fc55b564279420118e0d6067b06a87  bd2007-04-6d2t03.flac
+280cbd8b7eba462e1a95bebb3d635b61  bd2007-04-6d2t04.flac
+533c49b53d79e6c49a4763dc5d8825b6  bd2007-04-6d2t05.flac
+753f168e81e9df0063f2efee9ca18115  bd2007-04-6d2t06.flac
+db8633e468ac40c9b497d21c52962ed0  bd2007-04-6d2t07.flac
+6b881b72e048cf27a531d4ff2e1bd924  bd2007-04-6d2t08.flac
+6084dfddb9702a2b1fc9aa06e9573be7  bd2007-04-6d2t09.flac
+8d70546b1873f8a78740eeae7facc59a  bob dylan brussels 2007.txt
+311d9c0d4c731791ceeb4d89e9d4eff5  lbdir-bd07-04-06-madhasse.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-06-madhasse.flacf 
+=================== 
+=================== 
+=================== 
+bd2007-04-6d1t01.flac:56c0bc07e08e9e82fdf72f26e10fe9d5
+bd2007-04-6d1t02.flac:a8225c05ae152c117e823f217e97fd5a
+bd2007-04-6d1t03.flac:0082def50ba6a8221bb15a4b0d0c2bd5
+bd2007-04-6d1t04.flac:450555370edade44cb06b6e226247800
+bd2007-04-6d1t05.flac:daffe51eca759c3547bc6b643fb9f9e9
+bd2007-04-6d1t06.flac:24ad785385d9ac6664c9bc1830a7ee81
+bd2007-04-6d1t07.flac:498d077a0c332976d64a85096c3cc1bc
+bd2007-04-6d1t08.flac:f38960e7263ef8212e3bb1fdd5f9df1a
+bd2007-04-6d1t09.flac:fd71d0fc979a84b75fbe1c5871f43c15
+bd2007-04-6d1t10.flac:789b7f7a31c56c735c8820fb0ec460fc
+bd2007-04-6d1t11.flac:efdea210abde4841fc78f4296c137171
+bd2007-04-6d2t01.flac:1926523fa42e427d40fd5a8db17c8917
+bd2007-04-6d2t02.flac:d3233c354e011b3e88739e452a5d5d75
+bd2007-04-6d2t03.flac:11edd5fb020bfc56145fa56105966a5c
+bd2007-04-6d2t04.flac:378896344ddc106455daf4c42b5e0ae3
+bd2007-04-6d2t05.flac:5759f73a48340fc9114f569daeb8e409
+bd2007-04-6d2t06.flac:a2874310d45bf5401cc39735312d5ca2
+bd2007-04-6d2t07.flac:39e13a0479a1667a1cdd7e0bdfb8ccea
+bd2007-04-6d2t08.flac:80a335264ac429fb0bb1158256763308
+bd2007-04-6d2t09.flac:00fdb55204d79163dc43f25543d438e6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-06-madhasse.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:56.28        9944300 B   ---   --   ---xx   flac  0.5103  bd2007-04-6d1t01.flac
+     5:23.52       57099548 B   ---   --   ---xx   flac  0.6430  bd2007-04-6d1t02.flac
+     6:32.35       69231164 B   ---   --   ---xx   flac  0.6635  bd2007-04-6d1t03.flac
+     6:23.14       67594172 B   ---   --   ---xx   flac  0.7099  bd2007-04-6d1t04.flac
+     7:23.51       78265196 B   ---   --   ---xx   flac  0.7024  bd2007-04-6d1t05.flac
+     6:04.57       64343708 B   ---   --   ---xx   flac  0.5461  bd2007-04-6d1t06.flac
+     7:51.25       83143244 B   ---   --   ---xx   flac  0.6751  bd2007-04-6d1t07.flac
+     6:46.20       71665484 B   ---   --   ---xx   flac  0.6773  bd2007-04-6d1t08.flac
+     5:57.22       63026588 B   ---   --   ---xx   flac  0.7051  bd2007-04-6d1t09.flac
+     6:42.42       71011628 B   ---   --   ---xx   flac  0.5428  bd2007-04-6d1t10.flac
+     5:42.55       60458204 B   ---   --   ---xx   flac  0.7170  bd2007-04-6d1t11.flac
+     7:22.54       78095852 B   ---   --   ---xx   flac  0.6152  bd2007-04-6d2t01.flac
+     8:40.10       91751564 B   ---   --   ---xx   flac  0.6472  bd2007-04-6d2t02.flac
+     7:58.00       84319244 B   ---   --   ---xx   flac  0.6267  bd2007-04-6d2t03.flac
+     6:00.17       63544028 B   ---   --   ---xx   flac  0.6941  bd2007-04-6d2t04.flac
+     7:35.13       80292620 B   ---   --   ---xx   flac  0.6788  bd2007-04-6d2t05.flac
+     1:58.35       20897564 B   ---   --   ---xx   flac  0.5785  bd2007-04-6d2t06.flac
+     6:10.62       65413868 B   ---   --   ---xx   flac  0.6935  bd2007-04-6d2t07.flac
+     0:44.13        7792220 B   ---   --   ---xx   flac  0.6156  bd2007-04-6d2t08.flac
+     5:38.27       59686748 B   ---   --   ---xx   flac  0.6371  bd2007-04-6d2t09.flac
+   117:52.32     1247576944 B                            0.6540  (20 files)
+=================== 
+=================== 
+=================== 

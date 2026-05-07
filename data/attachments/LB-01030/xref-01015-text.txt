@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== Bob Dylan - 1995-03-24  Paris, France.ffp
+===================
+===================
+===================
+Disc 1\01 Crash On The Levee.flac:4ccca9bb945c7c0a2c27768732d27b92
+Disc 1\02 I Want You.flac:e836326d14a4af45bbd3266e304581c4
+Disc 1\03 All Along The Watchtower.flac:ce3230490f329ef583bb6590769e0196
+Disc 1\04 Just Like A Woman.flac:d569a448d50c4d23e4b5bf9b177e20b5
+Disc 1\05 Tangled Up In Blue.flac:807852c93ebd6e367c36939e79b975ff
+Disc 1\06 You're A Big Girl Now.flac:21a8c6b315d6731b9ee56afbe7977967
+Disc 1\07 Mr. Tambourine Man.flac:a29de97adaedabfd6e97ef2b9101ac04
+Disc 1\08 Masters Of War.flac:2645e9c26e6cb83efceaf9559c6adbb1
+Disc 1\09 Don't Think Twice, It's All Right.flac:dce10d03ac0fd65628ec567bfb6b7d39
+Disc 2\01 Dignity.flac:226f35f6a860e0282a7dac5d0cdc1d03
+Disc 2\02 I'll Remember You.flac:de7329a7f112e21420ed04bbd597b2e2
+Disc 2\03 Maggie's Farm.flac:db83c43d3b0941f82e9b242d9c8c6985
+Disc 2\04 Like A Rolling Stone.flac:7b35214149ef707753ac6e137d2cae03
+Disc 2\05 It Ain't Me, Babe.flac:a6589599cfd179c645a71d17d1e23a43
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+Bob Dylan
+Le Znith
+Paris, France
+March 24, 1995
+
+Lineage: Audio Trade CDR's -> EAC secure/offset correct -> Wav -> TLH-FLAC level 8
+
+
+Disc 1
+01- Crash On The Levee (Down In The Flood)
+02- I Want You
+03- All Along The Watchtower
+04- Just Like A Woman
+05- Tangled Up In Blue
+06- You're A Big Girl Now
+07- Mr. Tambourine Man
+08- Masters Of War
+09- Don't Think Twice, Its All Right
+
+Disc 2
+10- Dignity 
+11- I'll Remember You
+12- Maggie's Farm
+13- Like A Rolling Stone
+14- It Ain't Me, Babe
+
+=======================================
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+
+Disc 1\01 Crash On The Levee.flac:4ccca9bb945c7c0a2c27768732d27b92
+Disc 1\02 I Want You.flac:e836326d14a4af45bbd3266e304581c4
+Disc 1\03 All Along The Watchtower.flac:ce3230490f329ef583bb6590769e0196
+Disc 1\04 Just Like A Woman.flac:d569a448d50c4d23e4b5bf9b177e20b5
+Disc 1\05 Tangled Up In Blue.flac:807852c93ebd6e367c36939e79b975ff
+Disc 1\06 You're A Big Girl Now.flac:21a8c6b315d6731b9ee56afbe7977967
+Disc 1\07 Mr. Tambourine Man.flac:a29de97adaedabfd6e97ef2b9101ac04
+Disc 1\08 Masters Of War.flac:2645e9c26e6cb83efceaf9559c6adbb1
+Disc 1\09 Don't Think Twice, It's All Right.flac:dce10d03ac0fd65628ec567bfb6b7d39
+Disc 2\01 Dignity.flac:226f35f6a860e0282a7dac5d0cdc1d03
+Disc 2\02 I'll Remember You.flac:de7329a7f112e21420ed04bbd597b2e2
+Disc 2\03 Maggie's Farm.flac:db83c43d3b0941f82e9b242d9c8c6985
+Disc 2\04 Like A Rolling Stone.flac:7b35214149ef707753ac6e137d2cae03
+Disc 2\05 It Ain't Me, Babe.flac:a6589599cfd179c645a71d17d1e23a43
+===================
+===================
+===================

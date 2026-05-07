@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-18-LK-PA-Fixed-LB4327.flacf 
+=================== 
+=================== 
+=================== 
+8f4bd14d6bd50e958773fdb5cba517b0  1.cue
+bd474622688289a84a75b8d35fb905a5  bd_1976-05-18_Oklahoma City_ LK PA Fixed LB4327.md5
+e18e294023510616407f4d0ad854ad1b  fp.txt
+8f41d372d9650f9f73a23fe567528f2d  LB-4327.mht
+694142c57f7f72d271d943e060d325e6  Notes.txt
+883a30c554acc3fcbc38a26ac81f2dee  Olof1976-05-18.pdf
+00b6752a4c8dcda5efdca72a46f42451  Track01.flac
+9a66f26a8fcdc60980e977e54442ea1b  Track02.flac
+f75ca8628bc71f0cc0b6802c609f26f4  Track03.flac
+75e3b7855319d7b6ce8a2d27a32f449e  Track04.flac
+288738cd3e8225a472e20152d2f7d869  Track05.flac
+2352fc04d17e577152071492c10c333c  Track06.flac
+524cfb4be6fe23191920e82f00f44d18  Track07.flac
+8c967479ae59b33c976383b62394a369  Track08.flac
+afbbd5fa1ca09facf5b7f26595e86ee9  Track09.flac
+495d40de3528e2599b5de369bd97c661  Track10.flac
+90da9d899883a80c8bbbd82b0b8f0530  Track11.flac
+14b879911e02a84c54d587edc167c28a  Track12.flac
+0c14334978db2df214fa7e5894745381  Track13.flac
+08fcee21b5e09e4cc39064ac81b976fd  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-18-LK-PA-Fixed-LB4327.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:ef05c49e6228e4d0ad160cfe9abf641a
+Track02.flac:f213b06ecc7d1d5f273ecc4782d1d436
+Track03.flac:302602d2409b5c24e47c87d100b11197
+Track04.flac:2220f79bcdcc4c1fa507a34e215cf319
+Track05.flac:85b6471e7f39ec352983e6869e163198
+Track06.flac:d14e42bc60a331ebf570ee782f237e93
+Track07.flac:ae36bc0a8bda0e0100158c0d2aef354b
+Track08.flac:630cee37f6808b4870f8c292c160c1c9
+Track09.flac:163f3a171c1429a0c6618fccdee156e0
+Track10.flac:74b671af92c47370882934c1e8cca9ca
+Track11.flac:6e93f10d47e55986f8426ed5ec47568c
+Track12.flac:5b6e5a01d5cb5cb131e502e53d01d7f3
+Track13.flac:13467601527abe48bec9c26a47d8b9cc
+Track14.flac:4e3df1a8da6c9035bbf71f8e83220c61
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-18-LK-PA-Fixed-LB4327.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:33.12       37601468 B   ---   --   ---xx   flac  0.4249  Track01.flac
+     3:01.10       31951964 B   ---   --   ---xx   flac  0.4607  Track02.flac
+     3:38.01       38457596 B   ---   --   ---xx   flac  0.4626  Track03.flac
+     4:41.40       49662524 B   ---   --   ---xx   flac  0.4905  Track04.flac
+     0:47.73        8462540 B   ---   --   ---xx   flac  0.4173  Track05.flac
+     3:32.10       37420364 B   ---   --   ---xx   flac  0.4627  Track06.flac
+     6:24.58       67874060 B   ---   --   ---xx   flac  0.4630  Track07.flac
+     4:43.53       50045900 B   ---   --   ---xx   flac  0.4462  Track08.flac
+     5:12.10       55060364 B   ---   --   ---xx   flac  0.4507  Track09.flac
+     5:07.18       54197180 B   ---   --   ---xx   flac  0.4470  Track10.flac
+     3:46.73       40038140 B   ---   --   ---xx   flac  0.4493  Track11.flac
+     4:58.72       52736588 B   ---   --   ---xx   flac  0.4513  Track12.flac
+     4:32.22       48032588 B   ---   --   ---xx   flac  0.4554  Track13.flac
+     5:05.67       53959628 B   ---   --   ---xx   flac  0.4578  Track14.flac
+    59:05.69      625500904 B                            0.4554  (14 files)
+=================== 
+=================== 
+=================== 

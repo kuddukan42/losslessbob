@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-07-01-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+ff7b755c2b9e0647fa2286963dd3ccac  bd1998-07-01 info.txt
+28c9a0dfb7d78281810745e2a6ac3cfc  bd1998-07-01.md5
+b59e6f8d11078d22b5463f44c84475cd  bd1998-07-01d1t01.flac
+93fdaaab2b16dd2131db47cc9c979d74  bd1998-07-01d1t02.flac
+b3fe477655408bcfdd81309e6fe61862  bd1998-07-01d1t03.flac
+f89505c62cc221f290082563ae72a25b  bd1998-07-01d1t04.flac
+ce67add1ca93b81cd87a74fc342fc270  bd1998-07-01d1t05.flac
+eeb78dd6dd1a0a48d5c43528068f8c67  bd1998-07-01d1t06.flac
+46485bbb159216f91ae64daad8bab092  bd1998-07-01d1t07.flac
+587f075a2b88afa6d5a280b1282d4bf6  bd1998-07-01d1t08.flac
+bf5d2f8eebd3e5677445be7abc2dc48d  bd1998-07-01d1t09.flac
+0dd596d205e19f3126d2ca9ff9b9f9f0  bd1998-07-01d1t10.flac
+39b57bfc322b4b0588ec74ec2f70b85b  bd1998-07-01d2t01.flac
+46bacb69b1bb96f66ef0068e8cdc8b7e  bd1998-07-01d2t02.flac
+cc1535934a0985a704d670a23985ff15  bd1998-07-01d2t03.flac
+6b1b583891b09a34519359132178c2d8  bd1998-07-01d2t04.flac
+41cc92a04439a0a25c1054aa9a3a05fa  bd1998-07-01d2t05.flac
+1efe81b11572413ce85facc506673de4  bd1998-07-01d2t06.flac
+31a80da0ba604ce0063808bd3945011e  bd1998-07-01d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-07-01-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+bd1998-07-01d1t01.flac:02b77444f5b58d8cc2c1bdb169c6ac7c
+bd1998-07-01d1t02.flac:65ed12af5a2964c652bdb828ddf997d0
+bd1998-07-01d1t03.flac:3161d10a09f6bcab2099344dbbea3f56
+bd1998-07-01d1t04.flac:0c84ab18cd285a66348fa232616f7fbe
+bd1998-07-01d1t05.flac:e5978e16b85dab28de09295755666b41
+bd1998-07-01d1t06.flac:d9f3dbbbbaf7dd4f73c4acfa0cdc10dc
+bd1998-07-01d1t07.flac:ed022a7a68c21ba01f84b6a47cc05a51
+bd1998-07-01d1t08.flac:03a307024db829aed0f37c85fae453da
+bd1998-07-01d1t09.flac:b2173e9bf97c8d843e64408b62d7b512
+bd1998-07-01d1t10.flac:d6317453c5cffb7cc0adb1ce894161c8
+bd1998-07-01d2t01.flac:7cb79fd91effa9e2a257d8d2253603d9
+bd1998-07-01d2t02.flac:c76ca53c56569ca1e507979bb7ad3cd0
+bd1998-07-01d2t03.flac:80fcfe42009e1897f5dd782c8760e61c
+bd1998-07-01d2t04.flac:370ffe747575f1673a405bb19da9087d
+bd1998-07-01d2t05.flac:1cd097aecaf49ad5e4bdb62b43846528
+bd1998-07-01d2t06.flac:ca702df48a2f848fc47e4b9c20cc30cf
+bd1998-07-01d2t07.flac:428308e055cef2f37e842eafe5198857
+=================== 
+=================== 
+=================== 
+=== shntool for: bd98-07-01-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.58       52350860 B   ---   --   ---xx   flac  0.5028  bd1998-07-01d1t01.flac
+     5:19.63       56419820 B   ---   --   ---xx   flac  0.5052  bd1998-07-01d1t02.flac
+     6:35.14       69710972 B   ---   --   ---xx   flac  0.5123  bd1998-07-01d1t03.flac
+     6:00.00       63504044 B   ---   --   ---xx   flac  0.4817  bd1998-07-01d1t04.flac
+     6:58.23       73789340 B   ---   --   ---xx   flac  0.5392  bd1998-07-01d1t05.flac
+     6:17.66       66658076 B   ---   --   ---xx   flac  0.4717  bd1998-07-01d1t06.flac
+     9:53.11      104631116 B   ---   --   ---xx   flac  0.4623  bd1998-07-01d1t07.flac
+     4:22.03       46223900 B   ---   --   ---xx   flac  0.4447  bd1998-07-01d1t08.flac
+    10:12.23      108010940 B   ---   --   ---xx   flac  0.5198  bd1998-07-01d1t09.flac
+     5:59.52       63449948 B   ---   --   ---xx   flac  0.4682  bd1998-07-01d1t10.flac
+     8:00.73       84843740 B   ---   --   ---xx   flac  0.5062  bd1998-07-01d2t01.flac
+     6:34.41       69598076 B   ---   --   ---xx   flac  0.5088  bd1998-07-01d2t02.flac
+     8:35.26       90907196 B   ---   --   ---xx   flac  0.4899  bd1998-07-01d2t03.flac
+     8:13.12       86993468 B   ---   --   ---xx   flac  0.4481  bd1998-07-01d2t04.flac
+     5:43.27       60568748 B   ---   --   ---xx   flac  0.4514  bd1998-07-01d2t05.flac
+     4:30.19       47672732 B   ---   --   ---xx   flac  0.5048  bd1998-07-01d2t06.flac
+     6:32.64       69299372 B   ---   --   ---xx   flac  0.3996  bd1998-07-01d2t07.flac
+   114:45.50     1214632348 B                            0.4842  (17 files)
+=================== 
+=================== 
+=================== 

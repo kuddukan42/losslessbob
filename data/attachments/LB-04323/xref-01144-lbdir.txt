@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== md5 for: bd76-05-01-jtt.flacf
+===================
+===================
+===================
+2f0bff2804423056cf862ef86430bbe3 *BOB DYLAN - Hattiesburg, Mississippi May 1st 1976.md5
+45afca69d27a1f9e1b8f464a88448214 *BOB DYLAN - Hattiesburg, Mississippi May 1st 1976.txt
+ef0ddc89fe3acffd188444431b6d5dc0 *BOB DYLAN - Hattiesburg, Mississippi May 1st 1976_Info.txt
+5b15228f6235baabbee8ea2f9c1288cd *Disc One\Disc One.ffp
+6bc4890e72043914be08787cf7a8c5cb *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 01.flac
+da76d659cabb5190ea706302cd88977b *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 02.flac
+0e688daaec08f4dcd6721ac5545b0b22 *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 03.flac
+cb0bfd4437989da564dcdbc78228be11 *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 04.flac
+7b7180651e9b61efcca0dea820e69b56 *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 05.flac
+95a25604e7500d255901909f803682ae *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 06.flac
+a90be13b59c556793a0ef0cd5c85b9e7 *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 07.flac
+e9fd7d0a7db3415efce5b71209eec834 *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 08.flac
+130391874160512b02766bd3e6e69f82 *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 09.flac
+203dff38f0cdda2b0ebc9c8f47f232af *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 10.flac
+cecd22e9a153fbb65c9e74310886c6c0 *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 11.flac
+247738a76e6862b738229210bc9c60ea *Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 12.flac
+da7a1907561ee0901bc97b08f29c6040 *Disc Two\Disc Two.ffp
+f0c6d0908505a147f051fa6a909278c3 *Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 01.flac
+101d87bddb917b8bc37c24ccc8789234 *Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 02.flac
+12954addbcb93fc65e42b55c7fc46468 *Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 03.flac
+8158775e1fea400a6e35a7670ed2feff *Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 04.flac
+945f7c4f32f259cff7de5d20853ca120 *Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 05.flac
+681cb970d8a08c9d13c0fc3733dd3a41 *Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 06.flac
+303bcccde7ca7cd67ae9be808c65595a *Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 07.flac
+d634f031158184e1b28f8256b5fd4aa8 *Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 08.flac
+615281013120c4a9ef59b2d3ded044ce *Hattiesburg, Mississippi 01.05.1976 - F.jpg
+f0f2a55d03ae427b2a6fcdd31f95129f *Hattiesburg, Mississippi 01.05.1976 - R.jpg
+===================
+===================
+===================
+=== ffp for: bd76-05-01-jtt.flacf
+===================
+===================
+===================
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 01.flac:bfda8505dfa43628552df8828cf2ddd5
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 02.flac:46c78f7e22b2746e66d0254a81ef36d5
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 03.flac:6b61ec1b7d127a00cfc25899e10fed45
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 04.flac:7d1ebd3742c2822a8a6f04ffa8006ca7
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 05.flac:2231db86481c6f44ddce295ad142d770
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 06.flac:7a7407edf7ff716545864d9e2aef0572
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 07.flac:8a16592b8acae80c28aab1934ba57aef
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 08.flac:f8ff676e8b68b9c737e2bfd7e0feb562
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 09.flac:99a3536f2186ad825c4d1233e603dc32
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 10.flac:9744ac1556dcd6b4961951ea5776a11a
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 11.flac:27aad7d71b1dde5d934e643e72f4e6d4
+Disc One\Dylan - Hattiesburg May 1st 1976_Disc 01 Track 12.flac:b1b04da8f6b563031ac746a839257f1e
+Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 01.flac:0cdb4e28baa268d5de7514204c9630ec
+Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 02.flac:802ca2f0a650d3198b4218459ea268ef
+Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 03.flac:3f7bc4a543b273d9476b2c295f8efb01
+Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 04.flac:4ac30e83c9614313578f0ee6e9ee2740
+Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 05.flac:0539a04f64ceb5d63b03c99dbb592a4e
+Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 06.flac:7adcda9e8047d462d33c0359f2f99ab7
+Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 07.flac:1c4e340f64d7d5232777fc06d95e1a86
+Disc Two\Dylan - Hattiesburg May 1st 1976_Disc 02 Track 08.flac:910d816ac9696428e934d8d0087c3f68
+===================
+===================
+===================
+=== shntool len for: bd76-05-01-jtt.flacf\Disc One
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.19       57374732 B   ---   --   ---xx   flac  0.3977  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 01.flac
+     4:43.01       49923596 B   ---   --   ---xx   flac  0.3912  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 02.flac
+     2:56.56       31178156 B   ---   --   ---xx   flac  0.3961  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 03.flac
+     4:07.46       43679036 B   ---   --   ---xx   flac  0.4111  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 04.flac
+     4:40.52       49514348 B   ---   --   ---xx   flac  0.4066  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 05.flac
+     3:54.33       41355260 B   ---   --   ---xx   flac  0.3958  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 06.flac
+     5:46.13       61065020 B   ---   --   ---xx   flac  0.3958  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 07.flac
+     3:26.00       36338444 B   ---   --   ---xx   flac  0.3878  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 08.flac
+     2:52.01       30343196 B   ---   --   ---xx   flac  0.3902  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 09.flac
+     4:51.27       51395948 B   ---   --   ---xx   flac  0.4054  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 10.flac
+     1:46.61       18841916 B   ---   --   ---xx   flac  0.3774  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 11.flac
+     2:21.56       25004156 B   ---   --   ---xx   flac  0.3841  Dylan - Hattiesburg May 1st 1976_Disc 01 Track 12.flac
+    46:51.65      496013808 B                            0.3968  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd76-05-01-jtt.flacf\Disc Two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:03.60       74758364 B   ---   --   ---xx   flac  0.4266  Dylan - Hattiesburg May 1st 1976_Disc 02 Track 01.flac
+     6:50.40       72418124 B   ---   --   ---xx   flac  0.3801  Dylan - Hattiesburg May 1st 1976_Disc 02 Track 02.flac
+     4:04.00       43041644 B   ---   --   ---xx   flac  0.4056  Dylan - Hattiesburg May 1st 1976_Disc 02 Track 03.flac
+     4:37.04       48872252 B   ---   --   ---xx   flac  0.4206  Dylan - Hattiesburg May 1st 1976_Disc 02 Track 04.flac
+     3:41.67       39142028 B   ---   --   ---xx   flac  0.4402  Dylan - Hattiesburg May 1st 1976_Disc 02 Track 05.flac
+     8:04.14       85410572 B   ---   --   ---xx   flac  0.4126  Dylan - Hattiesburg May 1st 1976_Disc 02 Track 06.flac
+     3:52.64       41075372 B   ---   --   ---xx   flac  0.4104  Dylan - Hattiesburg May 1st 1976_Disc 02 Track 07.flac
+     7:35.71       80429036 B   ---   --   ---xx   flac  0.4142  Dylan - Hattiesburg May 1st 1976_Disc 02 Track 08.flac
+    45:50.20      485147392 B                            0.4124  (8 files)
+===================
+===================
+===================

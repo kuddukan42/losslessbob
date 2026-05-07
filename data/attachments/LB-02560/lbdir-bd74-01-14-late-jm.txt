@@ -1,0 +1,132 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-14-late-jm 
+=================== 
+=================== 
+=================== 
+f9559951e8fec191d4d6cc98fa0e857e  bd74-01-14-late-jm.txt
+5d65f7bff51a60c1bb839e6fb18cc8be  Disc_1\Dylan I CDDA.TEXT
+3c7e70ca8484eb3b67343e61986c5c73  Disc_1\dylan&band1974-01-14.late.d01t01.shn
+cf5d618367be9fa9eb16ad41ac937dd0  Disc_1\dylan&band1974-01-14.late.d01t02.shn
+6be855172a69cbc3b7cfcbf65a814cab  Disc_1\dylan&band1974-01-14.late.d01t03.shn
+67458b26cfe7b1fde6b0945985cb83fd  Disc_1\dylan&band1974-01-14.late.d01t04.shn
+148db1d53bd0dea761eb098fe5dc96bf  Disc_1\dylan&band1974-01-14.late.d01t05.shn
+75511f9679d77f6ff862c73b2354a9f2  Disc_1\dylan&band1974-01-14.late.d01t06.shn
+f76a352bcee839708db1df57f60be19f  Disc_1\dylan&band1974-01-14.late.d01t07.shn
+d2f5916ec95f8920aa319bb5df1bc889  Disc_1\dylan&band1974-01-14.late.d01t08.shn
+de19f2df8c37229dcdd30a70878fe24f  Disc_1\dylan&band1974-01-14.late.d01t09.shn
+a011994eb047c13eea15fd990de745cc  Disc_1\dylan&band1974-01-14.late.d01t10.shn
+a0f97dbd175aa7226d71771d511752ed  Disc_1\dylan&band1974-01-14.late.d01t11.shn
+c0b0997d801a6457f84a8866d406227f  Disc_1\dylan&band1974-01-14.late.d01t12.shn
+cd7d7c8f398f6f4817c8f523680aaf40  Disc_1\dylan&band1974-01-14.late.d01t13.shn
+ec967aa97de63721045d453316f01c10  Disc_1\dylan&band1974-01-14.late.d01t14.shn
+32c40d41a5b88f7efc14f60a12eb7606  Disc_1\dylan&band1974-01-14.late.d01t15.shn
+48bd5ee8ed2dead3dbf3755451d188cb  Disc_1\shntool.txt
+47d520622b6c56b5cfba31a8110d5208  Disc_2\Dylan II CDDA.TEXT
+4f8b82f8fc8d4d74eaac9b28817fbfc4  Disc_2\dylan&band1974-01-14.late.d02t01.shn
+841e6d6c95948254f77e17c31efb30a3  Disc_2\dylan&band1974-01-14.late.d02t02.shn
+1832c3a9a1869f2306c481585a75b4c7  Disc_2\dylan&band1974-01-14.late.d02t03.shn
+d5837f00e7d48f47a24583f7b5ea64b1  Disc_2\dylan&band1974-01-14.late.d02t04.shn
+a9d2a0c716c81214678f8a3a65b914a6  Disc_2\dylan&band1974-01-14.late.d02t05.shn
+48c22f2477d6bcdfed9d3818ed79783f  Disc_2\dylan&band1974-01-14.late.d02t06.shn
+a5d58429f4f4573c71654ab46e9c18f8  Disc_2\dylan&band1974-01-14.late.d02t07.shn
+cf67d3caec450ddca9173dd69db041a2  Disc_2\dylan&band1974-01-14.late.d02t08.shn
+520584119d06724ab6f8ec4d50b7fea8  Disc_2\dylan&band1974-01-14.late.d02t09.shn
+de52f4aec73c3165747fd75c736d7388  Disc_2\dylan&band1974-01-14.late.d02t10.shn
+f51d691d47469a818272d567366c1b33  Disc_2\dylan&band1974-01-14.late.d02t11.shn
+29d3b6f71548929afa0c9366cd81a81f  Disc_2\dylan&band1974-01-14.late.d02t12.shn
+493e3f474f1fc6ec34ab00cfc6813379  Disc_2\dylan&band1974-01-14.late.d02t13.shn
+3fee1649e2221adea9a4b4ccdc6830ca  Disc_2\shntool.txt
+ff7bf945ca104cfa182b2b4d45ba409b  dylan&band1974-01-14.late.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-01-14-late-jm\Disc_1 
+=================== 
+=================== 
+=================== 
+f05ba902b54cb33e887d5baa82bc87c1  [shntool]  dylan_band1974-01-14.late.d01t01.wav
+bce24efd3574e55a2507eaa58f9bd6bf  [shntool]  dylan_band1974-01-14.late.d01t02.wav
+85c0632b9e7f66dfbc01dbc50f37afb5  [shntool]  dylan_band1974-01-14.late.d01t03.wav
+a75015ea227e4777e3bd0e235a89eada  [shntool]  dylan_band1974-01-14.late.d01t04.wav
+2a8d139c4d241e9ac2fcac8cac153c83  [shntool]  dylan_band1974-01-14.late.d01t05.wav
+98bf099f147e9fda41bf12a1a755369f  [shntool]  dylan_band1974-01-14.late.d01t06.wav
+29fd2c39839b1526bee639fd87c60531  [shntool]  dylan_band1974-01-14.late.d01t07.wav
+dd1a9498bec0be768bb2c305ac40ca59  [shntool]  dylan_band1974-01-14.late.d01t08.wav
+5db8abee14a8bcd5af7de49a88dda1a8  [shntool]  dylan_band1974-01-14.late.d01t09.wav
+f6326c945c7d7d1e38e7bb47efcccda5  [shntool]  dylan_band1974-01-14.late.d01t10.wav
+f873250978ac9e20fe6d0f2dedfd78ca  [shntool]  dylan_band1974-01-14.late.d01t11.wav
+e65123516e6dd7880938f137369df790  [shntool]  dylan_band1974-01-14.late.d01t12.wav
+13c0a53bd280b6425a97de7218fd492b  [shntool]  dylan_band1974-01-14.late.d01t13.wav
+6f25fc6b203f0f630857957a31979046  [shntool]  dylan_band1974-01-14.late.d01t14.wav
+ebc652c45e027f906b7d241ea72d24f3  [shntool]  dylan_band1974-01-14.late.d01t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-01-14-late-jm\Disc_2 
+=================== 
+=================== 
+=================== 
+5a156d2ca589ce45554db655dda36701  [shntool]  dylan_band1974-01-14.late.d02t01.wav
+7cb5a2fa4da9147ea369b735c78cfa3a  [shntool]  dylan_band1974-01-14.late.d02t02.wav
+dd53696068ea33ee8a100943f2f164dc  [shntool]  dylan_band1974-01-14.late.d02t03.wav
+65304d86425955d1d1e86cf6a0c3a35f  [shntool]  dylan_band1974-01-14.late.d02t04.wav
+b425ea196698bbc41df0f18b63ddb431  [shntool]  dylan_band1974-01-14.late.d02t05.wav
+9c7dd3597fda01944e43cb88700c4e05  [shntool]  dylan_band1974-01-14.late.d02t06.wav
+11b7b51668edb25a1f40af0faabedccc  [shntool]  dylan_band1974-01-14.late.d02t07.wav
+640064e6dfda3563159036f8cac3103a  [shntool]  dylan_band1974-01-14.late.d02t08.wav
+0e824b68469ec86b5cac1c04ce232799  [shntool]  dylan_band1974-01-14.late.d02t09.wav
+ed96c57b0df7f96c790e4ef813cf456c  [shntool]  dylan_band1974-01-14.late.d02t10.wav
+8fba79e691b97778bbcd64de5e007e45  [shntool]  dylan_band1974-01-14.late.d02t11.wav
+ff430a24690d69bf5e6bd2d728304da0  [shntool]  dylan_band1974-01-14.late.d02t12.wav
+7e235b4e788a0d7d829037a38d67b717  [shntool]  dylan_band1974-01-14.late.d02t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14-late-jm\Disc_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:41.15       39019724 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t01.wav
+     3:06.67       32968028 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t02.wav
+     6:11.08       65463260 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t03.wav
+     3:31.30       37291004 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t04.wav
+     3:52.67       41082428 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t05.wav
+     4:09.15       43958924 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t06.wav
+     4:41.45       49674284 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t07.wav
+     4:33.68       48317180 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t08.wav
+     3:40.67       38965628 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t09.wav
+     3:55.60       41595164 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t10.wav
+     3:44.00       39513644 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t11.wav
+     4:31.68       47964380 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t12.wav
+     3:23.52       35931548 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t13.wav
+     4:13.53       44753900 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t14.wav
+     3:41.60       39125564 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d01t15.wav
+    61:00.00      645624660 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14-late-jm\Disc_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:52.22       30392588 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t01.wav
+     4:04.53       43166300 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t02.wav
+     4:47.37       50713868 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t03.wav
+     3:28.15       36726524 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t04.wav
+     5:49.30       61634204 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t05.wav
+     4:22.60       46357964 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t06.wav
+     3:36.60       38243564 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t07.wav
+     3:57.53       41931500 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t08.wav
+     4:32.00       47980844 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t09.wav
+     5:13.37       55300268 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t10.wav
+     4:44.38       50187020 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t11.wav
+     6:15.15       66185324 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t12.wav
+     4:22.68       46376780 B   ---   --   -----    wav  1.0000  dylan_band1974-01-14.late.d02t13.wav
+    58:07.38      615196748 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

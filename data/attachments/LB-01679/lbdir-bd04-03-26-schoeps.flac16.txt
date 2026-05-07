@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-26-schoeps.flac16 
+=================== 
+=================== 
+=================== 
+fca90251abde8fb2e055ba2c128eaa5c  bd04-03-26-schoeps.txt
+63f61899a81340ec707f93c47bcf9926  dylan2004-03-26.txt
+9c19d4b96ebf5a7bbdc98d0bdd46d387  dylan2004-03-26d1t01.flac
+34a1c621f402cea23600a9214ef188e5  dylan2004-03-26d1t02.flac
+b67b6ea81ac912c9fa13bf8920f9efcf  dylan2004-03-26d1t03.flac
+f3cf0232c5b904d0a719ee9ed9b2774c  dylan2004-03-26d1t04.flac
+83e8070678d2d727cd5757cf70435a6f  dylan2004-03-26d1t05.flac
+930ce9022ef29b60e56889f393aedca2  dylan2004-03-26d1t06.flac
+bea1db3a50d3899c098e6876d1b58e55  dylan2004-03-26d1t07.flac
+50ab7bb51d042f9c85528a1df2ae8a6f  dylan2004-03-26d1t08.flac
+7b1afde2875796a782b2237a11dd6974  dylan2004-03-26d1t09.flac
+81f0e9105ecb167f36c1e563c4ef4cbe  dylan2004-03-26d1t10.flac
+72a62306e019b43790f39c1c1fe9aeed  dylan2004-03-26d1t11.flac
+1b90ad23302021eb0c7ee632858a64d2  dylan2004-03-26d1t12.flac
+0547208880ca6c6e9955b443d5577488  dylan2004-03-26d1t13.flac
+9bfd4d3748b34d179f26f97ce17c9c6b  dylan2004-03-26d2t01.flac
+e39292db2d45b594caf5c268d93d69fa  dylan2004-03-26d2t02.flac
+54322cefc8fab39f7972e696bf312be8  dylan2004-03-26d2t03.flac
+270cdbe580af15b7ca0338a17cf1832e  dylan2004-03-26d2t04.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-03-26-schoeps.flac16 
+=================== 
+=================== 
+=================== 
+dylan2004-03-26d1t01.flac:c5a49375502705ed73ad7d7659a2f6ed
+dylan2004-03-26d1t02.flac:402f6300c3616700627eb8199d13133f
+dylan2004-03-26d1t03.flac:a972570c76d88215bf0af3346ad09909
+dylan2004-03-26d1t04.flac:834d2e0627d3634e82f08277b2c04203
+dylan2004-03-26d1t05.flac:8f77455069d9652c6fa11c33ffe7e31d
+dylan2004-03-26d1t06.flac:50474b3363d715f38f0e54337a2fcf04
+dylan2004-03-26d1t07.flac:5c3bc61ceaf1c5f96ad7f2547a681dfa
+dylan2004-03-26d1t08.flac:314ca4404b5525250d98aa5eeda9cd1b
+dylan2004-03-26d1t09.flac:c69507ca3658d2b3f4c2d0a7e3cb2bf7
+dylan2004-03-26d1t10.flac:7a9fbb1399daa3c8ca864956fb26c0bc
+dylan2004-03-26d1t11.flac:e58b293ab891b6192df5fb7c1d4688b3
+dylan2004-03-26d1t12.flac:a2f61118904a9009d3be9bef2f8707bf
+dylan2004-03-26d1t13.flac:39d94fe6572486be4845512c948f7a3d
+dylan2004-03-26d2t01.flac:e79da88d72e9f268db2f26fa4997ef4b
+dylan2004-03-26d2t02.flac:72e94327b636bae3508a077d6965efd2
+dylan2004-03-26d2t03.flac:55f918ceeb48bc7af5ed3a4b8535393c
+dylan2004-03-26d2t04.flac:363f2133481e91e07cb8b09b9598a46f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-26-schoeps.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.19       51729932 B   ---   --   ---xx   flac  0.5877  dylan2004-03-26d1t01.flac
+     5:17.02       55923548 B   ---   --   ---xx   flac  0.5884  dylan2004-03-26d1t02.flac
+     6:02.40       63950924 B   ---   --   ---xx   flac  0.6153  dylan2004-03-26d1t03.flac
+     6:18.50       66796844 B   ---   --   ---xx   flac  0.4974  dylan2004-03-26d1t04.flac
+     7:32.16       79770476 B   ---   --   ---xx   flac  0.6403  dylan2004-03-26d1t05.flac
+     5:32.18       58607180 B   ---   --   ---xx   flac  0.5420  dylan2004-03-26d1t06.flac
+     5:48.72       61556588 B   ---   --   ---xx   flac  0.6207  dylan2004-03-26d1t07.flac
+     6:49.41       72244076 B   ---   --   ---xx   flac  0.6072  dylan2004-03-26d1t08.flac
+     5:54.36       62530316 B   ---   --   ---xx   flac  0.5738  dylan2004-03-26d1t09.flac
+     5:39.22       59851388 B   ---   --   ---xx   flac  0.5799  dylan2004-03-26d1t10.flac
+     6:47.69       71957132 B   ---   --   ---xx   flac  0.5070  dylan2004-03-26d1t11.flac
+     6:59.71       74078636 B   ---   --   ---xx   flac  0.5699  dylan2004-03-26d1t12.flac
+     5:03.11       53475116 B   ---   --   ---xx   flac  0.5063  dylan2004-03-26d1t13.flac
+     9:01.74       95606492 B   ---   --   ---xx   flac  0.5485  dylan2004-03-26d2t01.flac
+     9:57.31      105383756 B   ---   --   ---xx   flac  0.5228  dylan2004-03-26d2t02.flac
+     6:46.51       71738396 B   ---   --   ---xx   flac  0.5704  dylan2004-03-26d2t03.flac
+     7:50.64       83058572 B   ---   --   ---xx   flac  0.5539  dylan2004-03-26d2t04.flac
+   112:16.12     1188259372 B                            0.5652  (17 files)
+=================== 
+=================== 
+=================== 

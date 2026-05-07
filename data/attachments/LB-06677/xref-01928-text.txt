@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 
+University of Michigan
+Hill Auditorium
+Ann Arbor, Michigan, USA
+November 5, 2000  
+
+I'm filling in a few more gaps from the great run of Bob Dylan 2000 shows that have recently been posted.
+
+After digging around a bit, and clouds of dust, I found a box of old trades. 
+
+The source of all of these is.... Trade CDR > Wav > Flac > You
+
+
+Disc one
+========
+
+Duncan And Brady 
+To Ramona 
+Desolation Row 
+Mama, You Been On My Mind 
+Tangled Up In Blue 
+Searching For A Soldier's Grave 
+Country Pie  
+Standing In The Doorway  
+Tombstone Blues 
+Simple Twist Of Fate 
+
+
+Disc two 
+========
+
+Cold Irons Bound 
+Leopard-Skin Pill-Box Hat
+
+(encore) 
+
+Things Have Changed  
+Like A Rolling Stone  
+If Dogs Run Free  
+All Along The Watchtower  
+I Shall Be Released 
+Highway 61 Revisited  
+Blowin' In The Wind 
+
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+a920dc57503f9c31412ab25d573c3946 *info.txt
+0c3a84f22f5cb40f2004c0e55ebd07ab *CD1\1-01 Duncan And Brady [Live].flac
+ae03f98322decee19e84d10355b2f96a *CD1\1-02 To Ramona [Live].flac
+5aa4bce30fde8a9c3da2f2489de1e8d4 *CD1\1-03 Desolation Row [Live].flac
+2be32c810441da44f1daf34ae4b0b8a9 *CD1\1-04 Mama, You Been On My Mind [Live.flac
+eebc6c27fc579e688aa9d7e193238b79 *CD1\1-05 Tangled Up In Blue [Live].flac
+69761f19362e56249fc38a7d1838a4b0 *CD1\1-06 Searching For A Soldier's Grave.flac
+d96f7bdc72d1aadc43be2e2abd97231c *CD1\1-07 Country Pie [Live].flac
+2b5b1129a3beff16bfc450290fafcea2 *CD1\1-08 Standing In The Doorway [Live].flac
+1abe0bd53689c7e53bb7c7d185aa0c39 *CD1\1-09 Tombstone Blues [Live].flac
+da562f89a108395c8092bedd6717b2c2 *CD1\1-10 Simple Twist Of Fate [Live].flac
+8ca13f899f37ae5e040e521006919876 *CD2\2-01 Cold Irons Bound [Live].flac
+6d45de2b198f99369ccd35f3e504ed8f *CD2\2-02 Leopard-Skin Pill-Box Hat [Live.flac
+2f3a1bebe757aeb5d6c54c92be9f1147 *CD2\2-03 Things Have Changed [Live].flac
+f5e747ec04240c67357a573de54ac5af *CD2\2-04 Like A Rolling Stone [Live].flac
+11592eb453e214ac06bd76eb0807040f *CD2\2-05 If Dogs Run Free [Live].flac
+87ab00dcd506edf29ebc135e70035f4d *CD2\2-06 All Along The Watchtower [Live].flac
+e06fbb8db20fa5b6ac20e0a2d52abf72 *CD2\2-07 I Shall Be Released [Live].flac
+7c82cd9db388f540ef04e22d899b4841 *CD2\2-08 Highway 61 Revisited [Live].flac
+340bf321365abf802249a7a9e5568f0a *CD2\2-09 Blowin' In The Wind [Live].flac
+===================
+===================
+===================

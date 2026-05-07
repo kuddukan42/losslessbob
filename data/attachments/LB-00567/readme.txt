@@ -1,0 +1,1 @@
+This master was originally on 4cds and for some reason the taper put all the guam stuff, joan and roger stuff before the bob stuff and had all the bob songs in a row.  i just went through and placed it in the correct setlist for the show.  thought i'd share that fact.  it sounds a lot better with the correct flow of the setlist.

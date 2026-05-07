@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-12-ia 
+=================== 
+=================== 
+=================== 
+cbc5c9f11d139467f7264069ad258695  1\01 Intro.shn
+c73c5502e139a9c2f84c5ed447f5bf23  1\02 Crash On The Levee (Down In The Flood).shn
+6ce4f6050e2e290ee1d796e93ce2759c  1\03 If Not For You.shn
+21bfc9bebc1618d3806b96417c3d6ad1  1\04 All Along The Watchtower.shn
+ebb93739500f3bcc62aff8dd29961252  1\05 Simple Twist Of Fate.shn
+e5be0a3db3e5c85f83dcaf0e62934a0a  1\06 Most Likely You Go Your Way (And I'll Go Mine).shn
+99935926d31c6f053d44404692a5debc  1\07 Shelter From The Storm.shn
+51526556ce203ff5b2e8ee22fb64962c  1\08 Mr. Tambourine Man.shn
+e91ea23460c0c098d6a8fa5997736847  1\09 Boots Of Spanish Leather.shn
+5da77cab56a6bb73df0fa0ed4a1463a2  1\10 Love Minus Zero - No Limit.shn
+5c0efcd29f0cc4d04b04350fab80f78e  1\BD 1995-05-12 CD1.md5
+a9ec1293c272444872a5f0c54e3143d3  2\01 Thank You Intro.shn
+e9ae92ce90b4a50b46f2cda0175903e7  2\02 Seeing The Real You At Last.shn
+3cc064455a12e0e241946842c89b9525  2\03 Joey.shn
+80b123e93d697428f681535648cd7247  2\04 Band Introduction.shn
+ecbeda320eec60ec15fc07018582c1bc  2\05 Highway 61 Revisited.shn
+4372fd72023b029c32fe71ea37eb9c09  2\06 Audience.shn
+36234d1dd0a2ce2c2c52ff04eb8c8637  2\07 Like A Rolling Stone.shn
+7c299dcc054eadb40b1cd4fc3d6d2eac  2\08 It Ain't Me, Babe.shn
+b0a78004731d255d11ac7eee7e2fd741  2\09 Outro.shn
+573ee219cd3985233bfb6d4cf7acb51c  2\BD 1995-05-12 CD2.md5
+006cd73c8247d4cd9d5abeeeb75a0803  BD 1995-05-12.txt
+43d0c475a08f9f4aaf1aa3dcfb983927  bd95-05-12-ia.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-05-12-ia\1 
+=================== 
+=================== 
+=================== 
+779e8414cd00aa5691b05479da870c6d  [shntool]  01_Intro.wav
+6a8aa0d3285d9296a774e9b3ff9892db  [shntool]  02_Crash_On_The_Levee__Down_In_The_Flood_.wav
+a0c65802907fd2e3011b178309e940a0  [shntool]  03_If_Not_For_You.wav
+97865bc20a243c1139bba584c88262f6  [shntool]  04_All_Along_The_Watchtower.wav
+e373262a5a92e8084488bf67c640f387  [shntool]  05_Simple_Twist_Of_Fate.wav
+c29b7d9f42113a74663b4805691be903  [shntool]  06_Most_Likely_You_Go_Your_Way__And_I_ll_Go_Mine_.wav
+b385509280cada460769e8610b5b52da  [shntool]  07_Shelter_From_The_Storm.wav
+fb22a54198f406371209636483bb9c65  [shntool]  08_Mr._Tambourine_Man.wav
+74204322675324d73183c86d03b069e1  [shntool]  09_Boots_Of_Spanish_Leather.wav
+efbfaa54249665431c1bda25ec4f9a75  [shntool]  10_Love_Minus_Zero_-_No_Limit.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-05-12-ia\2 
+=================== 
+=================== 
+=================== 
+e2997a54dd2d95e2c630197bc772792e  [shntool]  01_Thank_You_Intro.wav
+0d10fc1f64fe8b0ede88980f950801aa  [shntool]  02_Seeing_The_Real_You_At_Last.wav
+d8af8d29b2f2fa22abcf3d770c9d21c7  [shntool]  03_Joey.wav
+af8d033d040f278aa6cac982d27cd076  [shntool]  04_Band_Introduction.wav
+a987e82776f7ffd359781e98564f904a  [shntool]  05_Highway_61_Revisited.wav
+581f49adcaad18a3d42a48b8a53c20ca  [shntool]  06_Audience.wav
+5cc0c698233c200790cf57f7d7e41e34  [shntool]  07_Like_A_Rolling_Stone.wav
+d8225306e83e91f81336214c6c57c1fb  [shntool]  08_It_Ain_t_Me,_Babe.wav
+4b47aa95906035d63d65e3895bcaca4a  [shntool]  09_Outro.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-12-ia\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:15.26        2707196 B   ---   --   -----    wav  1.0000  01_Intro.wav
+     4:49.39       51071372 B   ---   --   -----    wav  1.0000  02_Crash_On_The_Levee__Down_In_The_Flood_.wav
+     4:06.74       43568492 B   ---   --   -----    wav  1.0000  03_If_Not_For_You.wav
+     5:16.00       55742444 B   ---   --   -----    wav  1.0000  04_All_Along_The_Watchtower.wav
+     7:13.45       76487084 B   ---   --   -----    wav  1.0000  05_Simple_Twist_Of_Fate.wav
+     7:55.46       83898236 B   ---   --   -----    wav  1.0000  06_Most_Likely_You_Go_Your_Way__And_I_ll_Go_Mine_.wav
+     5:13.71       55380236 B   ---   --   -----    wav  1.0000  07_Shelter_From_The_Storm.wav
+     6:37.70       70195484 B   ---   --   -----    wav  1.0000  08_Mr._Tambourine_Man.wav
+     7:55.40       83884124 B   ---   --   -----    wav  1.0000  09_Boots_Of_Spanish_Leather.wav
+     6:11.18       65486780 B   ---   --   -----    wav  1.0000  10_Love_Minus_Zero_-_No_Limit.wav
+    55:35.54      588421448 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-12-ia\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:13.70        2457884 B   ---   --   -----    wav  1.0000  01_Thank_You_Intro.wav
+     6:18.07       66695708 B   ---   --   -----    wav  1.0000  02_Seeing_The_Real_You_At_Last.wav
+    10:06.19      106943132 B   ---   --   -----    wav  1.0000  03_Joey.wav
+     0:24.55        4363004 B   ---   --   -----    wav  1.0000  04_Band_Introduction.wav
+     7:17.52       77209148 B   ---   --   -----    wav  1.0000  05_Highway_61_Revisited.wav
+     1:10.07       12364508 B   ---   --   -----    wav  1.0000  06_Audience.wav
+     7:27.19       78895532 B   ---   --   -----    wav  1.0000  07_Like_A_Rolling_Stone.wav
+     8:13.39       87056972 B   ---   --   -----    wav  1.0000  08_It_Ain_t_Me,_Babe.wav
+     0:55.64        9852572 B   ---   --   -----    wav  1.0000  09_Outro.wav
+    42:07.32      445838460 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

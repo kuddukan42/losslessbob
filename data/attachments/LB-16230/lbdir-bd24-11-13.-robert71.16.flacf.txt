@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd24-11-13.-robert71.16.flacf
+===================
+===================
+===================
+9a8ecb71dd8209d5a504a2f455b17875 *bob.dylan-2024-11-13.london.aud.flac.16.ffp
+cffb950e6c077931497da3133539c832 *bob.dylan-2024-11-13.london.aud.flac.16.md5
+a43dc5dbe49e06f18ab26842f1e85885 *bob.dylan-2024-11-13.london.aud.flac.16.txt
+ed5648af1d6abceba2473370bfeea059 *bob.dylan-2024-11-13_tr.01.flac
+ee06b85d3b7cdfa2e0aeaa39cc0d34e6 *bob.dylan-2024-11-13_tr.02.flac
+6be8bbefffe4d083fc1f27de2048b688 *bob.dylan-2024-11-13_tr.03.flac
+e80efab1f0d959bc3fb1e4b8b6bae482 *bob.dylan-2024-11-13_tr.04.flac
+65d55484ebe1238a7f11d53543f841f6 *bob.dylan-2024-11-13_tr.05.flac
+9da0bea5fbb3be42d80a06d885bcd566 *bob.dylan-2024-11-13_tr.06.flac
+cdadcf189eba7ca4b8064f2e9085430a *bob.dylan-2024-11-13_tr.07.flac
+21ff9e355e1529a28a3a2db58e7965c6 *bob.dylan-2024-11-13_tr.08.flac
+1b65b5d88fa73b909a7d86db3dbfd1c6 *bob.dylan-2024-11-13_tr.09.flac
+39bca3eb208ee73be9231928c3c022bc *bob.dylan-2024-11-13_tr.10.flac
+a0eb8dfa6332927949457051d1d4baf5 *bob.dylan-2024-11-13_tr.11.flac
+3f5af58d097c4c4a185a8dc81d24af7b *bob.dylan-2024-11-13_tr.12.flac
+02a92602259e7d09a4516d1ecbf32d53 *bob.dylan-2024-11-13_tr.13.flac
+accd96f009dde5d1a59e6e2d651e9934 *bob.dylan-2024-11-13_tr.14.flac
+4b4c3423ab8694bd3425435ba55da375 *bob.dylan-2024-11-13_tr.15.flac
+2f0576a2a493c83b356bb4ca1ee884d2 *bob.dylan-2024-11-13_tr.16.flac
+a049b3185c2877a4f586a0f93889c34c *bob.dylan-2024-11-13_tr.17.flac
+881b90668dc99107e27b752180b51f9d *bob.dylan-2024-11-13_tr.18.flac
+84a29c84edadf0a0d7213c5a8327f067 *bob.dylan-2024-11-13_tr.19.flac
+===================
+===================
+===================
+=== ffp for: bd24-11-13.-robert71.16.flacf
+===================
+===================
+===================
+bob.dylan-2024-11-13_tr.01.flac:eebefb66944fbab946db6ec50caa39a1
+bob.dylan-2024-11-13_tr.02.flac:26d237e95b0fd2e065c164ad1e2640ed
+bob.dylan-2024-11-13_tr.03.flac:9198c73df5756bfd6ae6f6eb283f94e1
+bob.dylan-2024-11-13_tr.04.flac:216953f1f8513dbb0a526cce7e6d50eb
+bob.dylan-2024-11-13_tr.05.flac:f0b92b9a886d40857ed718abd096c5c9
+bob.dylan-2024-11-13_tr.06.flac:ca792ed5d9d815e72a675581b573e1ec
+bob.dylan-2024-11-13_tr.07.flac:d0f9f2d92ad12c8b1ee493b3cfeded5e
+bob.dylan-2024-11-13_tr.08.flac:46bb5de63fbc3252e047aa545339ec4e
+bob.dylan-2024-11-13_tr.09.flac:69ee6e5662d8f8981c4cdbf36017ec5e
+bob.dylan-2024-11-13_tr.10.flac:11f60cf0449c866c0f063e7c803e6332
+bob.dylan-2024-11-13_tr.11.flac:e6e63b75ae6f57b0fcae368b05c7cbe4
+bob.dylan-2024-11-13_tr.12.flac:52e591e3eaabfe5f507e351c222d68f0
+bob.dylan-2024-11-13_tr.13.flac:513a8b052c65b81566514de77c81125b
+bob.dylan-2024-11-13_tr.14.flac:f110fcd825a5d1540f0726fb076338dd
+bob.dylan-2024-11-13_tr.15.flac:e2af6c0061d7d70e94e82b233e45cffe
+bob.dylan-2024-11-13_tr.16.flac:cd8c226702b9b6ed47eeb0863e58fefd
+bob.dylan-2024-11-13_tr.17.flac:ba736110598da665a2d6ad95fd1e02d4
+bob.dylan-2024-11-13_tr.18.flac:7f8d96dc692248864241ef7e0332aa27
+bob.dylan-2024-11-13_tr.19.flac:fd89609ba4e3a9bad11eda7305b035f1
+===================
+===================
+===================
+=== shntool len for: bd24-11-13.-robert71.16.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:26.00        4586444 B   ---   --   ---xx   flac  0.6446  bob.dylan-2024-11-13_tr.01.flac
+     4:38.00       49039244 B   ---   --   ---xx   flac  0.6180  bob.dylan-2024-11-13_tr.02.flac
+     6:58.00       73735244 B   ---   --   ---xx   flac  0.6455  bob.dylan-2024-11-13_tr.03.flac
+     5:48.00       61387244 B   ---   --   ---xx   flac  0.5949  bob.dylan-2024-11-13_tr.04.flac
+     7:11.00       76028444 B   ---   --   ---xx   flac  0.6061  bob.dylan-2024-11-13_tr.05.flac
+     5:16.00       55742444 B   ---   --   ---xx   flac  0.5712  bob.dylan-2024-11-13_tr.06.flac
+     5:10.00       54684044 B   ---   --   ---xx   flac  0.5484  bob.dylan-2024-11-13_tr.07.flac
+     6:25.00       67914044 B   ---   --   ---xx   flac  0.5266  bob.dylan-2024-11-13_tr.08.flac
+     3:49.00       40395644 B   ---   --   ---xx   flac  0.5938  bob.dylan-2024-11-13_tr.09.flac
+     8:05.00       85554044 B   ---   --   ---xx   flac  0.5784  bob.dylan-2024-11-13_tr.10.flac
+     6:46.00       71618444 B   ---   --   ---xx   flac  0.5984  bob.dylan-2024-11-13_tr.11.flac
+     7:54.00       83613644 B   ---   --   ---xx   flac  0.5048  bob.dylan-2024-11-13_tr.12.flac
+     5:18.00       56095244 B   ---   --   ---xx   flac  0.5868  bob.dylan-2024-11-13_tr.13.flac
+     4:24.00       46569644 B   ---   --   ---xx   flac  0.5319  bob.dylan-2024-11-13_tr.14.flac
+     6:17.00       66502844 B   ---   --   ---xx   flac  0.5371  bob.dylan-2024-11-13_tr.15.flac
+     5:38.69       59785532 B   ---   --   ---xx   flac  0.5195  bob.dylan-2024-11-13_tr.16.flac
+     5:22.00       56800844 B   ---   --   ---xx   flac  0.6049  bob.dylan-2024-11-13_tr.17.flac
+     6:24.00       67737644 B   ---   --   ---xx   flac  0.5403  bob.dylan-2024-11-13_tr.18.flac
+     1:00.39       10675276 B   -b-   --   ---xx   flac  0.6524  bob.dylan-2024-11-13_tr.19.flac
+   102:50.33     1088465956 B                            0.5714  (19 files)
+===================
+===================
+===================

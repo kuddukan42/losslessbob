@@ -1,0 +1,50 @@
+BOB DYLAN
+The Gorge at George, Washington
+June 17, 2000
+
+CDR -> WAV -> FLAC
+
+Disc 1 (1:04:59)
+
+01 Somebody Touched Me (acoustic)
+02 Long Black Veil (acoustic)
+03 Desolation Row (acoustic)
+04 It's All Over Now, Baby Blue (acoustic) (with harp)
+05 Tangled Up In Blue (acoustic)
+06 Searching For A Soldier's Grave
+07 Country Pie
+08 Tough Mama
+09 Down In The Flood
+10 Tonight I'll Be Staying Here With You
+11 Drifter's Escape (Bob on harp)
+12 (band intro)
+13 Leopard-Skin Pill-Box Hat
+
+Disc 2 (32:40)
+
+(encore)
+14 Ballad Of A Thin Man
+15 Like A Rolling Stone
+16 Blowin' In The Wind (acoustic)
+17 Not Fade Away
+18 Rainy Day Women #12 & #35
+
+Setlist: http://my.execpc.com/~billp61/061700s.html
+Reviews: http://my.execpc.com/~billp61/061700r.html
+Field Recordings: http://members.tripod.com/monicasdude/DATEFRAM.HTM
+
+
+RMD: "This is really a great performance, as good as any I have heard from the year 2000...."
+
+Not sure which version (if any) this checks out with on The Field
+Recordings Guide.  This version comes two or three CDR generations from
+the taper.  Monica's Dude says that many of the early circulating
+versions of this show were from lossy files posted shortly after
+the show. I checked the frequency and spectral analyses (attached)
+and they show no signs of such compression.  This version had two
+intro tracks & one outro track with the crowd & background jazz music,
+which have been deleted since it's official material (therefor
+the first & last tracks have received fade-ins/out; no other changes made).
+
+Checked with shntool for SBEs. Pretty decent sound, samples to come.
+

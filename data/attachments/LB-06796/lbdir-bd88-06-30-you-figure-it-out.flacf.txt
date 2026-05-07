@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-30-you-figure-it-out.flacf 
+=================== 
+=================== 
+=================== 
+662ba50fef00a1261b04ec8ea8fdeb99  bd88-06-30-you-figure-it-out-d1t01.flac
+dc2934d545edc09478fcbd45bcb55317  bd88-06-30-you-figure-it-out-d1t02.flac
+88227698c9135eae39911d544b24bd09  bd88-06-30-you-figure-it-out-d1t03.flac
+4649e1d1df8c0237c6a9f0dd6c1e8b14  bd88-06-30-you-figure-it-out-d1t04.flac
+b0e0d14d2bd2cec16786403af8088ab8  bd88-06-30-you-figure-it-out-d1t05.flac
+532ee02c3c9b2232c42c67861176b686  bd88-06-30-you-figure-it-out-d1t06.flac
+2e2a4a4c917d2a1e654e9df3a92eb26b  bd88-06-30-you-figure-it-out-d1t07.flac
+83a4fff7bce816304127713fc5a1bb19  bd88-06-30-you-figure-it-out-d1t08.flac
+90db71a9b440c71f3de3ce5597cfec5d  bd88-06-30-you-figure-it-out-d1t09.flac
+918a4c4d788d0d3f228a576c70ca7ce5  bd88-06-30-you-figure-it-out-d1t10.flac
+11ae6c8ec7805803f615c56e7ed65276  bd88-06-30-you-figure-it-out-d1t11.flac
+8d517a5601093c929812a56d5c5545d4  bd88-06-30-you-figure-it-out-d1t12.flac
+0e8fe33aaa81185bfbdf19d1226b6d0a  bd88-06-30-you-figure-it-out-d1t13.flac
+9baa68329475b70516768a9abc54907c  bd88-06-30-you-figure-it-out-d1t14.flac
+ee66057812d8d91739f41ce943b83b5b  bd88-06-30-you-figure-it-out-d1t15.flac
+3ae4fa4aca3a0e8403e2d09fedba5f50  bd88-06-30-you-figure-it-out.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-30-you-figure-it-out.flacf 
+=================== 
+=================== 
+=================== 
+bd88-06-30-you-figure-it-out-d1t01.flac:66230554bc96f5be2ce0b206d9586ce6
+bd88-06-30-you-figure-it-out-d1t02.flac:e6119feeae9d99d8860fed6766f6c2ca
+bd88-06-30-you-figure-it-out-d1t03.flac:d3272ae81fc8ad44ef8c0485f79ea599
+bd88-06-30-you-figure-it-out-d1t04.flac:03d1ee994c26491e8103d3be0db289f8
+bd88-06-30-you-figure-it-out-d1t05.flac:50e6c1416cf3af6a2baee41fd52aa60e
+bd88-06-30-you-figure-it-out-d1t06.flac:c778e40be82cdd11e4d3f5553ad19baf
+bd88-06-30-you-figure-it-out-d1t07.flac:3a68aa7a2661cae640eb60952f796192
+bd88-06-30-you-figure-it-out-d1t08.flac:c984ccadc9b6c98aea917523cf0f9f35
+bd88-06-30-you-figure-it-out-d1t09.flac:83863553f71c70a17ee6a01e237e72c1
+bd88-06-30-you-figure-it-out-d1t10.flac:aed8c1d7e32a50c5c8d74355a62ed070
+bd88-06-30-you-figure-it-out-d1t11.flac:0514cfdd6a6fa21e9774ce470fc49793
+bd88-06-30-you-figure-it-out-d1t12.flac:d3f9c3ceef9d46960332fde35faf3528
+bd88-06-30-you-figure-it-out-d1t13.flac:b1dfc3b693c15c0dc39d35ad1b8a562e
+bd88-06-30-you-figure-it-out-d1t14.flac:973b0cd47a2f22b42b0a29d7b64f23e2
+bd88-06-30-you-figure-it-out-d1t15.flac:3d5dde904e0e5a8e8b4f55ad949a44a3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-30-you-figure-it-out.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.65       36667724 B   ---   --   ---xx   flac  0.6314  bd88-06-30-you-figure-it-out-d1t01.flac
+     4:34.42       48432428 B   ---   --   ---xx   flac  0.6318  bd88-06-30-you-figure-it-out-d1t02.flac
+     4:42.43       49845980 B   ---   --   ---xx   flac  0.5686  bd88-06-30-you-figure-it-out-d1t03.flac
+     6:15.20       66197084 B   ---   --   ---xx   flac  0.5942  bd88-06-30-you-figure-it-out-d1t04.flac
+     4:06.50       43512044 B   ---   --   ---xx   flac  0.6259  bd88-06-30-you-figure-it-out-d1t05.flac
+     4:18.25       45570044 B   ---   --   ---xx   flac  0.5634  bd88-06-30-you-figure-it-out-d1t06.flac
+     5:42.12       60357068 B   ---   --   ---xx   flac  0.6013  bd88-06-30-you-figure-it-out-d1t07.flac
+     5:25.10       57353564 B   ---   --   ---xx   flac  0.5098  bd88-06-30-you-figure-it-out-d1t08.flac
+     7:59.20       84542684 B   ---   --   ---xx   flac  0.5495  bd88-06-30-you-figure-it-out-d1t09.flac
+     4:35.18       48552380 B   ---   --   ---xx   flac  0.5562  bd88-06-30-you-figure-it-out-d1t10.flac
+     4:13.05       44641004 B   ---   --   ---xx   flac  0.6245  bd88-06-30-you-figure-it-out-d1t11.flac
+     6:44.30       71336204 B   ---   --   ---xx   flac  0.6881  bd88-06-30-you-figure-it-out-d1t12.flac
+     4:37.00       48862844 B   ---   --   ---xx   flac  0.5820  bd88-06-30-you-figure-it-out-d1t13.flac
+     4:15.35       45064364 B   ---   --   ---xx   flac  0.6641  bd88-06-30-you-figure-it-out-d1t14.flac
+     4:46.50       50568044 B   ---   --   ---xx   flac  0.6782  bd88-06-30-you-figure-it-out-d1t15.flac
+    75:43.50      801503460 B                            0.6026  (15 files)
+=================== 
+=================== 
+=================== 

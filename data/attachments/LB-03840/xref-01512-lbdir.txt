@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== md5 for: bd95-05-15-a.flacf
+===================
+===================
+===================
+8c19938516b6e0acf9f196d5ca82fd78 *bd1995-05-15 Palm Desert.md5
+bcf96587b86e9f277d6e7fd07cdbe2bb *bd1995-05-15 Palm Desert01.flac
+35b57e871eb87f23905d953e2c555998 *bd1995-05-15 Palm Desert02.flac
+9b5305eaeaae926ef6e93801aa1d6488 *bd1995-05-15 Palm Desert03.flac
+3017937e0265b660c402985b18a066bb *bd1995-05-15 Palm Desert04.flac
+d9b1f5ac99b10038ad87886fcb2eb914 *bd1995-05-15 Palm Desert05.flac
+1d0401bdfb7446ab40dee0765ebcf0cd *bd1995-05-15 Palm Desert06.flac
+3c759eace3b422fa6766270e4588a605 *bd1995-05-15 Palm Desert07.flac
+52e7ab229f03a88be436c65cbe21b7b0 *bd1995-05-15 Palm Desert08.flac
+4916fc3efb43de42b65c5d0df6b86968 *bd1995-05-15 Palm Desert09.flac
+6a0d6d44a3b5376c24e4bad749950630 *bd1995-05-15 Palm Desert10.flac
+ce6ecaadd19812a1426710c41199b1d6 *bd1995-05-15 Palm Desert11.flac
+89ba6926b3d00cfdfe87378be329c02d *bd1995-05-15 Palm Desert12.flac
+77748399c41fa857721ca9567f85b357 *bd1995-05-15 Palm Desert13.flac
+1c126252210bda441e1d805462ac34ce *bd1995-05-15 Palm Desert14.flac
+58c4fb3899632921d8c9eb85c35508e8 *Note.txt
+===================
+===================
+===================
+=== ffp for: bd95-05-15-a.flacf
+===================
+===================
+===================
+bd1995-05-15 Palm Desert01.flac:bb2a48ee3556332fb5add95aa37bc353
+bd1995-05-15 Palm Desert02.flac:07fcd87f47b6754654a05b676ccca216
+bd1995-05-15 Palm Desert03.flac:a8e3d29255a5ddbfef38bb07a04faf56
+bd1995-05-15 Palm Desert04.flac:9b10518281a9c78a843cb8933ecfc73c
+bd1995-05-15 Palm Desert05.flac:003de438360021341a593c3c20427e13
+bd1995-05-15 Palm Desert06.flac:4bdb6debc8578736231128ad87c00301
+bd1995-05-15 Palm Desert07.flac:e76c4a717093c9a70a7348ca38d9660e
+bd1995-05-15 Palm Desert08.flac:b45b1b2f0a681f58a14e3e53636d356e
+bd1995-05-15 Palm Desert09.flac:78143b9ca0d37205c9e780e71d018f75
+bd1995-05-15 Palm Desert10.flac:47d1c5f634a9e254636f846f7ef81847
+bd1995-05-15 Palm Desert11.flac:81de1bf543600b4a3934692c96d29f82
+bd1995-05-15 Palm Desert12.flac:24f886fea1f1a8526c37bbb4fb9fd528
+bd1995-05-15 Palm Desert13.flac:212574beae9498364304eb580c92f300
+bd1995-05-15 Palm Desert14.flac:9cc81b4fda190de5c447291fee6ada37
+===================
+===================
+===================
+=== shntool len for: bd95-05-15-a.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.24       54387692 B   ---   --   ---xx   flac  0.5537  bd1995-05-15 Palm Desert01.flac
+     4:45.49       50389292 B   ---   --   ---xx   flac  0.5213  bd1995-05-15 Palm Desert02.flac
+     5:33.20       58788284 B   ---   --   ---xx   flac  0.5617  bd1995-05-15 Palm Desert03.flac
+     6:29.20       68666684 B   ---   --   ---xx   flac  0.5286  bd1995-05-15 Palm Desert04.flac
+     6:48.18       72013580 B   ---   --   ---xx   flac  0.5566  bd1995-05-15 Palm Desert05.flac
+     6:01.20       63727484 B   ---   --   ---xx   flac  0.5639  bd1995-05-15 Palm Desert06.flac
+     6:48.47       72081788 B   ---   --   ---xx   flac  0.4571  bd1995-05-15 Palm Desert07.flac
+     6:09.63       65239820 B   ---   --   ---xx   flac  0.4820  bd1995-05-15 Palm Desert08.flac
+     8:41.02       91909148 B   ---   --   ---xx   flac  0.4720  bd1995-05-15 Palm Desert09.flac
+     6:01.23       63734540 B   ---   --   ---xx   flac  0.5699  bd1995-05-15 Palm Desert10.flac
+     6:50.64       72474572 B   ---   --   ---xx   flac  0.5326  bd1995-05-15 Palm Desert11.flac
+     6:43.42       71188028 B   ---   --   ---xx   flac  0.5650  bd1995-05-15 Palm Desert12.flac
+     7:51.58       83220860 B   ---   --   ---xx   flac  0.5615  bd1995-05-15 Palm Desert13.flac
+     9:18.56       98562688 B   -b-   --   ---xx   flac  0.5037  bd1995-05-15 Palm Desert14.flac
+    93:11.56      986384460 B                            0.5282  (14 files)
+===================
+===================
+===================

@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== 62991.txt
+===================
+===================
+===================
+Bob Dylan
+Never Ending Tour 
+6-29-1991
+Midfyns, Ringe, Denmark  
+
+
+SBD
+CDA>WAVELAB>FLAC 
+
+ 
+Disc one 
+
+Lay Lady Lay 
+All Along The Watchtower 
+Shelter From The Storm 
+Gotta Serve Somebody 
+Wiggle Wiggle 
+Rainy Day Women #12 & 35 
+Positively Fourth Street 
+Barbara Allen 
+Bob Dylan's Dream 
+Lonesome Death Of Hattie Carroll 
+It Ain't Me Babe 
+Man In The Long Black Coat 
+Everything Is Broken 
+Lenny Bruce 
+Highway 61 Revisited 
+
+
+Disc two 
+
+What Good Am I 
+Ballad Of A Thin Man 
+
+
+
+
+
+
+Review: 
+This set represents a good quality soundboard tape of the Denmark show.  
+Along with the 7-8 star rating all one had to judge the set by, it seems most desirable. 
+However, consider the following. The Denmark show is not only unremarkable, but some songs teeter on the brink of disaster. 
+The band sometimes falters, Dylan's phrasing and pitch sometimes float around into other worlds (the lifeless, and uninhabited ones); 
+the guitar is a tad out of tune, and even though Dylan is talkative; the general feeling seems to be "Let's get this job over with" 
+Even though the tape is soundboard with audience buried far to the background, the tape is muffled somewhat
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+7815d7fa748355e211a72ea826aa4f74 *Track 01.flac
+fedaeda37982a4e7c035134a3506c2e7 *Track 02.flac
+647a5ef9957cb8151bc00329dc4b811f *Track 03.flac
+17932c62231181938aa18b41b0a46fa0 *Track 04.flac
+ed301f74a8bc993eb4413b139b923fbe *Track 05.flac
+440df08785744a7912eb7fc4ddec1ba9 *Track 06.flac
+be326215191d64aa574c04dcbf137d96 *Track 07.flac
+827a1c7a48bb6c3af9bd3ad34a6d0dae *Track 08.flac
+30bc9f9e384a9fc917d739188ad5907c *Track 09.flac
+f86337c90814074b5c9b59c78ea4f020 *Track 10.flac
+015f6d4877136ee9379b9ea798d6702f *Track 11.flac
+6e81e946e9ed0a57096d060908573899 *Track 12.flac
+5470b1f2b85f51b7d234582043adab79 *Track 13.flac
+ab8b395ce3369d168fcd616552e57bd0 *Track 14.flac
+a26c0ed65c09cac30f7231850c4b59da *Track 15.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+a18c913413b1bee7bd7298385393c289 *Track 01.flac
+3a6b2a0ea0e885292465f96c3e067e1a *Track 02.flac
+
+===================
+===================
+===================

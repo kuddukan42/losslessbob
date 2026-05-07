@@ -1,0 +1,63 @@
+Bob Dylan
+Edinburgh Playhouse
+Edinburgh, Scotland
+2009-05-03
+
+01. introduction
+02. Leopard-Skin Pill-Box Hat
+03. Lay, Lady, Lay
+04. Tangled Up In Blue
+05. When The Deal Goes Down
+06. Rollin' And Tumblin'
+07. Tryin' To Get To Heaven
+08. Stuck Inside Of Mobile With The Memphis Blues Again
+09. Sugar Baby
+10. High Water (For Charley Patton)
+11. I Don't Believe You (She Acts Like We Never Have Met)
+12. Po' Boy
+13. Highway 61 Revisited
+14. Ain't Talkin'
+15. Summer Days
+16. Like A Rolling Stone
+    (encore)
+17. All Along The Watchtower
+18. Just Like A Woman
+19. Blowin' In The Wind
+
+Band Members
+Bob Dylan - vocals, keyboard, guitar, harp
+Denny Freeman - guitar
+Stu Kimball - guitar
+Donnie Herron - violin, viola, banjo, mandolin, steel guitar
+George Recile - drums
+Tony Garnier - bass
+
+Comments:
+Bob on guitar tracks 3,10,11,18
+
+source: soomlos
+neumann skm140 > sound devices mixpre > edirol r-09hr (24/48)
+edirol r-09hr > usb > hdd > sound forge 9.0 > cd wave > tlh
+
+ffp
+bd2009-05-03t01.flac:13de22bce6f53b1b0b3bfd2c88ae5b61
+bd2009-05-03t02.flac:2db43445bb580c6255976ed3134a6f2c
+bd2009-05-03t03.flac:c29956e4139695b19287dea61cbe8568
+bd2009-05-03t04.flac:7afdd55d998c0b31ca8ddc16f28c0542
+bd2009-05-03t05.flac:664b62ad2818d52d0ac99006dd13e6d8
+bd2009-05-03t06.flac:0631951013eea6b45abe71517d331d31
+bd2009-05-03t07.flac:80b2dc3c4bd7a13490caad9ac126b481
+bd2009-05-03t08.flac:87c43957a4ddfc3ddd6b6e663e3f16ae
+bd2009-05-03t09.flac:6923d45c57ada7bee0237c84b7173ddf
+bd2009-05-03t10.flac:bdcdaa1c2990190b48b3c9bc7f9ce8bc
+bd2009-05-03t11.flac:d0509d327c71fd6eca428936dca9ff08
+bd2009-05-03t12.flac:dddde36d69b62f22a861ab75ae8a3d2f
+bd2009-05-03t13.flac:b7d19e13e12d39f4f47b6ff989ef13b8
+bd2009-05-03t14.flac:e42af47231ae94afc6f90b69ec5d5589
+bd2009-05-03t15.flac:0d78a752e75945236dad007ff96fcbe1
+bd2009-05-03t16.flac:5dd08232f99c60183b9d1bd5e50919c2
+bd2009-05-03t17.flac:bf945eae85df9895d1a0a36af05a3aa9
+bd2009-05-03t18.flac:d3bb5ebd34c627b8b25f76e79b8116c9
+bd2009-05-03t19.flac:791a983cebe449230f098c723c48883f
+
+bd2009-05-03.km140.soomlos.flac16 created May 11, 2009

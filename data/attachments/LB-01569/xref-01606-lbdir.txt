@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd92-04-11-jlt-c.shnf
+===================
+===================
+===================
+dbc4b74c4f0b48355d2576fe899b32ec *1\01 All Along The Watchtower.shn
+04f7df703a2b6b3b2600ab979b50e530 *1\02 Most Of The Time.shn
+985a195a04aab3149be6f6fe7823674d *1\03 John Brown.shn
+ddec7bf5fc79c178b02fae6c7da6dcbe *1\04 I Want You.shn
+9c32b71ff6480997e807f40e5c617f3e *1\05 Tangled Up In Blue.shn
+dab1a5d58077b67ae6f95fc93294a8e8 *1\06 You're A Big Girl Now.shn
+b8b60313064adb7e7c6bbde7fe601466 *1\07 Maggie's Farm.shn
+77f33eea9d860d5fa032dc5cb96469b6 *1\08 Love Minus Zero - No Limit.shn
+a5b99c2d77dd43a09949dc316ae9d439 *1\09 Little Moses.shn
+a8a21fb89c99d8ada5c55cacb14b0fda *1\1.md5
+f5fd8b02e68ddd155ae54652407c2ccb *1\10 Gates Of Eden.shn
+56f89258de1e2a0703c5964c3aa5ee6e *2\1 Don't Think Twice It's All Right.shn
+d75bd42f47317f5e5e60420a156d3dbf *2\2 Cat's In The Well.shn
+41af2aa554273395c4348d891da3af8f *2\2.md5
+8e5fe244fae0537930891a427dd4b0b7 *2\3 Idiot Wind.shn
+5b000ce7af149e84b26065148800563f *2\4 The Times They Are A-Changin'.shn
+0fa7f938b2ea8c3ae05f7b94310369bc *2\5 Highway 61 Revisited.shn
+d4225e8f28b03968ec15f799c61130a6 *2\6 Absolutely Sweet Marie.shn
+d77a49b3ccb8150e833f68798425b765 *2\7 Ballad Of A Thin Man.shn
+3ed5078c063f7784510b2fd53ae5bfab *2\8 Blowin' In The Wind.shn
+75b7b0f1eb26f8967569c6039ca3e74e *Bob Dylan - 1992-04-11 Hobart (JLT - shn) info.txt
+57e06185ca0eed007b473b425813febf *Bob Dylan - 1992-04-11 Hobart (JLT - shn) info.txt.md5
+===================
+===================
+===================
+=== shntool md5/hash for: bd92-04-11-jlt-c.shnf
+===================
+===================
+===================
+9f8ec242b46ec68d70405e633a1e50c0  [shntool]  1\01 All Along The Watchtower.shn
+a62fc20e87c41d10727dc6554cb3c227  [shntool]  1\02 Most Of The Time.shn
+e8ee6290391e04e652435019495ce1c6  [shntool]  1\03 John Brown.shn
+785c0a171f437ffc4ee51d8867907e20  [shntool]  1\04 I Want You.shn
+86762326d5d3c13655b99f3dc69401f9  [shntool]  1\05 Tangled Up In Blue.shn
+5607f4958f3d25f18346e063a6ecd321  [shntool]  1\06 You're A Big Girl Now.shn
+141d89858a81db9a8e935b02c1706ca1  [shntool]  1\07 Maggie's Farm.shn
+bdaf5fdd3ca9717f221548e6e6b10706  [shntool]  1\08 Love Minus Zero - No Limit.shn
+d88decfa83a2ae178afbcd19595c17bf  [shntool]  1\09 Little Moses.shn
+1b8d4fb94c8b24fb69566c3224968aff  [shntool]  1\10 Gates Of Eden.shn
+3b44612aabeb59da7db4858d82f31b91  [shntool]  2\1 Don't Think Twice It's All Right.shn
+65e41a548ae941f28df40cf19d590c64  [shntool]  2\2 Cat's In The Well.shn
+dca455423b6745386d55a4b1f51cf75e  [shntool]  2\3 Idiot Wind.shn
+f10075a5a1b1aa5a33cf236e2f6ab40f  [shntool]  2\4 The Times They Are A-Changin'.shn
+bfec073e48071d73f23a0bb575edd237  [shntool]  2\5 Highway 61 Revisited.shn
+a3c05d6f3f191cc60009ba0eb6c066ce  [shntool]  2\6 Absolutely Sweet Marie.shn
+2652a0809f02a569e23ac10435c275d3  [shntool]  2\7 Ballad Of A Thin Man.shn
+086af370686d29549da7a11b208fdb0c  [shntool]  2\8 Blowin' In The Wind.shn
+===================
+===================
+===================
+=== shntool len for: bd92-04-11-jlt-c.shnf\1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.04       44462252 B   ---   --   ---xx    shn  0.6542  01 All Along The Watchtower.shn
+     4:18.13       45541820 B   ---   --   ---xx    shn  0.6641  02 Most Of The Time.shn
+     6:08.07       64931708 B   ---   --   ---xx    shn  0.6904  03 John Brown.shn
+     4:52.44       51612332 B   ---   --   ---xx    shn  0.7115  04 I Want You.shn
+     8:09.52       86381948 B   ---   --   ---xx    shn  0.7124  05 Tangled Up In Blue.shn
+     4:38.69       49201532 B   ---   --   ---xx    shn  0.6814  06 You're A Big Girl Now.shn
+     5:10.52       54806348 B   ---   --   ---xx    shn  0.7018  07 Maggie's Farm.shn
+     3:22.73       35804540 B   ---   --   ---xx    shn  0.6291  08 Love Minus Zero - No Limit.shn
+     3:26.24       36394892 B   ---   --   ---xx    shn  0.6093  09 Little Moses.shn
+     5:24.02       57158348 B   ---   --   ---xx    shn  0.6595  10 Gates Of Eden.shn
+    49:43.40      526295720 B                            0.6779  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd92-04-11-jlt-c.shnf\2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:39.65       70536524 B   ---   --   ---xx    shn  0.6200  1 Don't Think Twice It's All Right.shn
+     3:40.35       38890364 B   ---   --   ---xx    shn  0.6471  2 Cat's In The Well.shn
+     8:05.48       85666940 B   ---   --   ---xx    shn  0.6289  3 Idiot Wind.shn
+     7:06.34       75226412 B   ---   --   ---xx    shn  0.6124  4 The Times They Are A-Changin'.shn
+     5:50.38       61829420 B   ---   --   ---xx    shn  0.6546  5 Highway 61 Revisited.shn
+     5:00.53       53044700 B   ---   --   ---xx    shn  0.6571  6 Absolutely Sweet Marie.shn
+     5:10.68       54843980 B   ---   --   ---xx    shn  0.6330  7 Ballad Of A Thin Man.shn
+     3:35.44       38029532 B   ---   --   ---xx    shn  0.5835  8 Blowin' In The Wind.shn
+    45:10.10      478067872 B                            0.6298  (8 files)
+===================
+===================
+===================

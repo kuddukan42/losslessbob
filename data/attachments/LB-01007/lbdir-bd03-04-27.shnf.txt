@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-27.shnf 
+=================== 
+=================== 
+=================== 
+141522b8d81bbd9c8d755fb921aecfd2  bd-d1-t1.shn
+b8ea8119a10b319498ab17280a084f32  bd-d1-t2.shn
+f39d241d39f9fb07106a0d6c9e1b474e  bd-d1-t3.shn
+7c8ebc0ebc0386305e99b7ba4acf701d  bd-d1-t4.shn
+520d10c7606eb29304c87a8053a12bc4  bd-d1-t5.shn
+23de27bf7ec1803fe0c7c68f73e8ec11  bd-d1-t6.shn
+dd771c24c770fdb1d6f68d2dbe11e3a2  bd-d1-t7.shn
+1f91845f23eb48e7d2e12c42668f6610  bd-d1-t8.shn
+30b7ea34c146fed895f77e4b564ccd8e  bd-d1-t9.shn
+81cb8bc641dfffeb6958ae696211ad08  bd-d2-t1.shn
+a7214c1a6c62dcc747ad88f428e8e70b  bd-d2-t2.shn
+d6a97e3923aee53fbb268e27a0d50c12  bd-d2-t3.shn
+dde7d084afbd2a7124b5eb3065ed462a  bd-d2-t4.shn
+8c1a5709aa243720c30989e933614fe8  bd-d2-t5.shn
+f59e2902472ed28a315aca4bf6b12812  bd-d2-t6.shn
+3e69cec9679b087158bc79c2fb0fed12  bd-d2-t7.shn
+d630aca00baa3f2e17792b394d2deb44  bd-d2-t8.shn
+0602093bc058bd675d59378c2f7bae3a  bd-d2-t9.shn
+57834bbe663c89a81afb39a10fcb744b  bd03-04-27.txt
+b9ff57ff94c746a182b7ddc1e8a71319  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-27.shnf 
+=================== 
+=================== 
+=================== 
+72fb1309cf8447f2f0cd2d047aac54e6  [shntool]  bd-d1-t1.wav
+c9f184e1895fa2f8a95e5dfbf8acfafa  [shntool]  bd-d1-t2.wav
+522a7e81273c1860fb9e267e6ce29061  [shntool]  bd-d1-t3.wav
+4748abb6df8b7e91d5d1bb53fe825929  [shntool]  bd-d1-t4.wav
+c2622c77f953271d5d75e42d8669bb0f  [shntool]  bd-d1-t5.wav
+288559e47d60270025fc9c9f7ba07464  [shntool]  bd-d1-t6.wav
+c4e8562295ff4f17994624adb0b8a06e  [shntool]  bd-d1-t7.wav
+9933df88da7a9a40c53796fd79d4910f  [shntool]  bd-d1-t8.wav
+d0a573c6c88141bdd232d8a03e45c4f1  [shntool]  bd-d1-t9.wav
+b98d5fd9554a6d9d1982f32f97083c12  [shntool]  bd-d2-t1.wav
+e28c54a73f8615131e6f9305432328ee  [shntool]  bd-d2-t2.wav
+cde25a18223c541451356effeea302cc  [shntool]  bd-d2-t3.wav
+41b53edef2b8906dde1f0f32582406f9  [shntool]  bd-d2-t4.wav
+f296ba73260d454deb98635362a8d80e  [shntool]  bd-d2-t5.wav
+0a8660cb1db3f0bfece792c32752fbb4  [shntool]  bd-d2-t6.wav
+f364d053324d72fd8a7ec368a3a21f66  [shntool]  bd-d2-t7.wav
+fca0ac9b3736e926fd5448b54fe7d4ca  [shntool]  bd-d2-t8.wav
+971ef6ae45527d3fbbb8c6bf8f8ca463  [shntool]  bd-d2-t9.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-27.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:12.53       12825500 B   ---   --   ---xx    shn  0.4931  bd-d1-t1.shn
+     5:03.30       53519804 B   ---   --   ---xx    shn  0.5644  bd-d1-t2.shn
+     4:37.70       49027484 B   ---   --   ---xx    shn  0.5440  bd-d1-t3.shn
+     4:56.15       52249724 B   ---   --   ---xx    shn  0.6252  bd-d1-t4.shn
+     6:17.50       66620444 B   ---   --   ---xx    shn  0.5313  bd-d1-t5.shn
+     6:01.50       63798044 B   ---   --   ---xx    shn  0.5928  bd-d1-t6.shn
+     5:02.60       53413964 B   ---   --   ---xx    shn  0.5278  bd-d1-t7.shn
+     4:52.60       51649964 B   ---   --   ---xx    shn  0.6395  bd-d1-t8.shn
+     6:12.25       65679644 B   ---   --   ---xx    shn  0.5480  bd-d1-t9.shn
+     5:27.71       57849836 B   ---   --   ---xx    shn  0.6141  bd-d2-t1.shn
+     4:18.60       45652364 B   ---   --   ---xx    shn  0.4729  bd-d2-t2.shn
+     6:46.05       71630204 B   ---   --   ---xx    shn  0.6421  bd-d2-t3.shn
+     5:23.60       57118364 B   ---   --   ---xx    shn  0.4504  bd-d2-t4.shn
+     5:56.40       62892524 B   ---   --   ---xx    shn  0.6099  bd-d2-t5.shn
+     0:28.60        5080364 B   ---   --   ---xx    shn  0.5406  bd-d2-t6.shn
+     9:29.45      100477484 B   ---   --   ---xx    shn  0.5816  bd-d2-t7.shn
+     6:53.60       72994364 B   ---   --   ---xx    shn  0.6488  bd-d2-t8.shn
+     8:32.29       90385052 B   ---   --   ---xx    shn  0.5688  bd-d2-t9.shn
+    97:35.18     1032865128 B                            0.5746  (18 files)
+=================== 
+=================== 
+=================== 

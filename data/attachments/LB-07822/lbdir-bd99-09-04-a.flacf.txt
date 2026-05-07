@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-09-04-a.flacf 
+=================== 
+=================== 
+=================== 
+a50e1693807b73940dfae3a2913a312c  1999-09-04 Troy G. Chastain Memorial Park Amphitheatre, Atlanta, Georgia, USA.md5
+947a85d1a06cdbe24092338c45d08e74  Info\1999-09-04 Troy G. Chastain Memorial Park Amphitheatre, Atlanta, Georgia, USA [uT].txt
+4f3405ebc8013dbdcff4c60a72a9e592  Info\shntool_len - Dylan's set [duets included].txt
+8658b4789941c0f2bedac06eac8724a7  Part 2 Dylan's set [duets included]\01 The boxer [Dylan & Simon].flac
+afb3dcd547ddabdc0877232e1b4bbaa1  Part 2 Dylan's set [duets included]\02 That'll be the day [Dylan & Simon].flac
+57208cdcf424c1a9b51b88102b94571b  Part 2 Dylan's set [duets included]\03 The wanderer [Dylan & Simon].flac
+53237cff2e6dcbcde3113bf357149cde  Part 2 Dylan's set [duets included]\04 Knockin' on heaven's door [Dylan & Simon].flac
+c1e56e712eb9126281b4fe85b85dc36a  Part 2 Dylan's set [duets included]\05 I am the man, Thomas.flac
+062ee4488facf8b3bb28cb1a84217838  Part 2 Dylan's set [duets included]\06 Mr. Tambourine Man.flac
+1476654d0ed7fad4d608f1df5bf75855  Part 2 Dylan's set [duets included]\07 Desolation Row.flac
+b2ec4faec4573bea7296c0c21cced302  Part 2 Dylan's set [duets included]\08 It's all over now, baby blue.flac
+431d727c7a81319eb0ee4643fddc7414  Part 2 Dylan's set [duets included]\09 Tangled up in blue.flac
+3123ce71805e4b0c4beed545509f0ab1  Part 2 Dylan's set [duets included]\11 All along the watchtower.flac
+3b27b0b3311207c95c1a8d623aa0e727  Part 2 Dylan's set [duets included]\11 Lay lady lay.flac
+c1bbf8c2b1a3013a0ee1fbc2e0ff801f  Part 2 Dylan's set [duets included]\12 Stuck inside of Mobile with the Memphis blues again.flac
+0b6812486ad5d4084c291c5c1a80d751  Part 2 Dylan's set [duets included]\13 Not dark yet.flac
+49a2ac9feb2c5ae1f230847933bd58b4  Part 2 Dylan's set [duets included]\14 (band intro).flac
+35b25f52872af741c120b1e9a55c3053  Part 2 Dylan's set [duets included]\14 Highway 61 revisited.flac
+8d0b13504b977d04e0d25a4dd4b280fa  Part 2 Dylan's set [duets included]\15 Like a rolling stone.flac
+601cc98cce000551a65b029f04ca4640  Part 2 Dylan's set [duets included]\16 Blowin' in the wind.flac
+cd27fd97e1e80f86a8ff74c8d2dcc812  Part 2 Dylan's set [duets included]\17 Not fade away.flac
+ee51851f1035e1238d34dbb685eacded  Part 2 Dylan's set [duets included]\CD2 Dylan's set [duets included].ffp
+72fb5274c016138aaf0f88794b8d0990  Part 2 Dylan's set [duets included]\CD2 Dylan's set [duets included].txt
+2235971c6a8900e9d331dcdfb4d90e40  ~uTorrentPartFile_3FBA5BF2.dat
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-09-04-a.flacf\Part 2 Dylan's set [duets included] 
+=================== 
+=================== 
+=================== 
+01 The boxer [Dylan & Simon].flac:ff0460843cfff87b57f951f4cf99326d
+02 That'll be the day [Dylan & Simon].flac:66a96078c252678df1be7268758a2796
+03 The wanderer [Dylan & Simon].flac:d8b4515c7e2ddb05432eae4662b82c89
+04 Knockin' on heaven's door [Dylan & Simon].flac:21a2956ddc7b82a70a562826679988d4
+05 I am the man, Thomas.flac:55871c3d763a4750ea1cc31c97bee3ac
+06 Mr. Tambourine Man.flac:dda590914a5e3312cf2815f7c5667aca
+07 Desolation Row.flac:3541c0d6efae041bcef57db88150215f
+08 It's all over now, baby blue.flac:f661bee89d49b5a317a622f7222a3f22
+09 Tangled up in blue.flac:8cb5cf6cb6aadd6cbaa9c3fb37b45da2
+11 All along the watchtower.flac:51e1fa7d3c752f7c771df03b952ecb84
+11 Lay lady lay.flac:a5c9396ef8d3b6d86a85da8a9a39c975
+12 Stuck inside of Mobile with the Memphis blues again.flac:74d38aa3dbe94fdb2d2e7f0f2459fde2
+13 Not dark yet.flac:9a31fa2d2e4719a88d44e5e1422287ea
+14 (band intro).flac:b3e4f225835d4eb5ff54cab1069efdd7
+14 Highway 61 revisited.flac:f735f6fb4b346bb04c8ceb0c87801b74
+15 Like a rolling stone.flac:741626e1faa0abd53dd5030d9c044d41
+16 Blowin' in the wind.flac:8bddc51f791fa3883e780451054e9a58
+17 Not fade away.flac:c2f3a3bb0c1b45f22c9965d7e43ac7ea
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-04-a.flacf\Part 2 Dylan's set [duets included] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.18       52433544 B   -b-   --   ---xx   flac  0.5990  01 The boxer [Dylan & Simon].flac
+     2:07.40       22495788 B   -b-   --   ---xx   flac  0.6900  02 That'll be the day [Dylan & Simon].flac
+     2:32.59       26952544 B   -b-   --   ---xx   flac  0.6953  03 The wanderer [Dylan & Simon].flac
+     5:41.73       60324680 B   -b-   --   ---xx   flac  0.6102  04 Knockin' on heaven's door [Dylan & Simon].flac
+     2:48.60       29775632 B   -b-   --   ---xx   flac  0.6262  05 I am the man, Thomas.flac
+     6:48.60       72112588 B   -b-   --   ---xx   flac  0.6662  06 Mr. Tambourine Man.flac
+     8:11.36       86697204 B   -b-   --   ---xx   flac  0.6651  07 Desolation Row.flac
+     7:42.43       81598484 B   -b-   --   ---xx   flac  0.6136  08 It's all over now, baby blue.flac
+     8:57.17       94766056 B   -b-   --   ---xx   flac  0.5737  09 Tangled up in blue.flac
+     4:10.05       44110648 B   -b-   --   ---xx   flac  0.6076  11 All along the watchtower.flac
+     4:28.67       47432500 B   -b-   --   ---xx   flac  0.5618  11 Lay lady lay.flac
+     7:43.58       81809860 B   -b-   --   ---xx   flac  0.6356  12 Stuck inside of Mobile with the Memphis blues again.flac
+     6:24.36       67823268 B   -b-   --   ---xx   flac  0.5248  13 Not dark yet.flac
+     0:58.55       10360164 B   -b-   --   ---xx   flac  0.5105  14 (band intro).flac
+     6:40.42       70658192 B   -b-   --   ---xx   flac  0.6865  14 Highway 61 revisited.flac
+     7:35.16       80299692 B   -b-   --   ---xx   flac  0.6749  15 Like a rolling stone.flac
+     6:18.08       66698864 B   -b-   --   ---xx   flac  0.5771  16 Blowin' in the wind.flac
+     4:18.29       45579196 B   -b-   --   ---xx   flac  0.6527  17 Not fade away.flac
+    98:26.47     1041928904 B                            0.6224  (18 files)
+=================== 
+=================== 
+=================== 

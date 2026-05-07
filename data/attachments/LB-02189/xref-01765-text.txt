@@ -1,0 +1,203 @@
+===================
+===================
+===================
+=== CD1.ffp
+===================
+===================
+===================
+01 Subterranean homesick blues.flac:5712cf6e88bf6ef7130f2d9c622d1d9b
+02 Simple twist of fate.flac:d64749a1d96aa5a01f82c88d82ec29be
+03 Driftin' too far from shore.flac:46a6036a429d865e91e94ce9ef35768e
+04 Absolutely sweet Marie.flac:0bd44140ba8ab4e629c00dc6a3709d5c
+05 Ballad of a thin man.flac:e12809973713f36a3841d7de0f8e3f65
+06 It's all over now, baby blue.flac:10e22569b38a567401f3edc49501743f
+07 Mama, you been on my mind.flac:8a8a13f46d9291ecea22c46a8bd3287b
+08 It ain't me, babe.flac:e18650ecc3f0c35af066fda8f41fb9c2
+===================
+===================
+===================
+=== CD1.txt
+===================
+===================
+===================
+01 Subterranean homesick blues.flac:5712cf6e88bf6ef7130f2d9c622d1d9b
+02 Simple twist of fate.flac:d64749a1d96aa5a01f82c88d82ec29be
+03 Driftin' too far from shore.flac:46a6036a429d865e91e94ce9ef35768e
+04 Absolutely sweet Marie.flac:0bd44140ba8ab4e629c00dc6a3709d5c
+05 Ballad of a thin man.flac:e12809973713f36a3841d7de0f8e3f65
+06 It's all over now, baby blue.flac:10e22569b38a567401f3edc49501743f
+07 Mama, you been on my mind.flac:8a8a13f46d9291ecea22c46a8bd3287b
+08 It ain't me, babe.flac:e18650ecc3f0c35af066fda8f41fb9c2
+===================
+===================
+===================
+=== CD2.ffp
+===================
+===================
+===================
+09 The lonesome death of Hattie Carroll.flac:40b62f3f4ac341ca69e7ceba0e633934
+10 Barbara Allen.flac:ef05fab30ca55ff890aad466b1ef3e89
+11 Silvio.flac:e0c31d4cf0eb6437722beff95c8cd600
+12 In the garden.flac:2c56ea572554d80f129542acd98613ca
+13 Like a rolling stone.flac:ccc709acd332ea312ac5c90396cdb77f
+14 Blowin' in the wind.flac:550cdf1198e625806badaf7632b93c21
+15 Gotta serve somebody.flac:76e4fcfa5112305de1401c63ac34f0bc
+16 Maggie's farm.flac:bc430ea567546371ae419aa749b1820c
+===================
+===================
+===================
+=== CD2.txt
+===================
+===================
+===================
+09 The lonesome death of Hattie Carroll.flac:40b62f3f4ac341ca69e7ceba0e633934
+10 Barbara Allen.flac:ef05fab30ca55ff890aad466b1ef3e89
+11 Silvio.flac:e0c31d4cf0eb6437722beff95c8cd600
+12 In the garden.flac:2c56ea572554d80f129542acd98613ca
+13 Like a rolling stone.flac:ccc709acd332ea312ac5c90396cdb77f
+14 Blowin' in the wind.flac:550cdf1198e625806badaf7632b93c21
+15 Gotta serve somebody.flac:76e4fcfa5112305de1401c63ac34f0bc
+16 Maggie's farm.flac:bc430ea567546371ae419aa749b1820c
+===================
+===================
+===================
+=== Bob Dylan 1988-07-01 Jones Beach Theater, Jones Beach State Park, Wantagh, New York, USA [no LB-number].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Jones Beach Theater
+Jones Beach State Park
+Wantagh, New York
+July 1, 1988
+
+Unidentified taper
+No LB-number
+
+My source wrote:
+***************************************************************************************
+As promised earlier, another in "The Paul Williams Required Listening Series". This
+is an outstanding quality recording of an awesome '88 NET show. Thanks Messrs V & K ;_)
+
+Conversion: CD-r>EAC(secure)>FLAC Frontend Compression Tool>flac 
+Source: Excellent Audience Recording
+Total Size: 575 MB
+***************************************************************************************
+
+CD1:
+01. Subterranean Homesick Blues
+02. Simple Twist Of Fate
+03. Driftin' Too Far From Shore
+04. Absolutely Sweet Marie
+05. Ballad Of A Thin Man
+06. It's All Over Now, Baby Blue
+07. Mama, You Been On My Mind
+08. It Ain't Me, Babe
+
+CD2:
+09. The Lonesome Death Of Hattie Carroll
+10. Barbara Allen (trad.)
+11. Silvio (Bob Dylan & Robert Hunter)
+12. In The Garden
+13. Like A Rolling Stone
+14. Blowin' In The Wind
+15. Gotta Serve Somebody
+16. Maggie's Farm
+
+
+Concert # 16 of The Never-Ending Tour
+Concert # 16 of the Interstate 88 Tour, part 1: Summer Tour of North America
+
+Concert # 16 with the first Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+G. E. Smith (guitar)
+Kenny Aaronson (bass)
+Christopher Parker (drums)
+
+7-10 and 14 Bob Dylan (vocal & guitar), G.E. Smith (guitar)
+3, 11 G. E. Smith (backup vocal)
+
+BobTalk:
+How am I doing, baby? (after Barbara Allen)
+
+12 new songs (75%) compared to previous concert
+No new songs for this tour
+
+Stereo audience recording, 80 minutes
+
+CD1 .ffp:
+01 Subterranean homesick blues.flac:5712cf6e88bf6ef7130f2d9c622d1d9b
+02 Simple twist of fate.flac:d64749a1d96aa5a01f82c88d82ec29be
+03 Driftin' too far from shore.flac:46a6036a429d865e91e94ce9ef35768e
+04 Absolutely sweet Marie.flac:0bd44140ba8ab4e629c00dc6a3709d5c
+05 Ballad of a thin man.flac:e12809973713f36a3841d7de0f8e3f65
+06 It's all over now, baby blue.flac:10e22569b38a567401f3edc49501743f
+07 Mama, you been on my mind.flac:8a8a13f46d9291ecea22c46a8bd3287b
+08 It ain't me, babe.flac:e18650ecc3f0c35af066fda8f41fb9c2
+
+CD2 .ffp:
+09 The lonesome death of Hattie Carroll.flac:40b62f3f4ac341ca69e7ceba0e633934
+10 Barbara Allen.flac:ef05fab30ca55ff890aad466b1ef3e89
+11 Silvio.flac:e0c31d4cf0eb6437722beff95c8cd600
+12 In the garden.flac:2c56ea572554d80f129542acd98613ca
+13 Like a rolling stone.flac:ccc709acd332ea312ac5c90396cdb77f
+14 Blowin' in the wind.flac:550cdf1198e625806badaf7632b93c21
+15 Gotta serve somebody.flac:76e4fcfa5112305de1401c63ac34f0bc
+16 Maggie's farm.flac:bc430ea567546371ae419aa749b1820c
+
+* * *  Enjoy your Bobby Hobby * * *
+===================
+===================
+===================
+=== ORIGINAL Bob Dylan - Wantagh 1 July 1988.txt
+===================
+===================
+===================
+Bob Dylan - Wantagh, New York 1 July 1988
+
+As promised earlier, another in "The Paul Williams Required Listening Series". This
+is an outstanding quality recording of an awesome '88 NET show. Thanks Messrs V & K ;_)
+
+Conversion: CD-r>EAC(secure)>FLAC Frontend Compression Tool>flac 
+Source: Excellent Audience Recording
+Total Size: 575 MB
+ 	
+Disc 1
+1.Subterranean Homesick Blues
+2.Simple Twist Of Fate
+3.Driftin' Too Far From Shore
+4.Absolutely Sweet Marie
+5.Ballad Of A Thin Man
+6.It's All Over Now, Baby Blue
+7.Mama, You Been On My Mind
+8.It Ain't Me, Babe
+
+Disc 2
+1.The Lonesome Death Of Hattie Carroll
+2.Barbara Allen (trad.)
+3.Silvio (Bob Dylan & Robert Hunter)
+4.In The Garden
+5.Like A Rolling Stone
+6.Blowin' In The Wind
+7.Gotta Serve Somebody
+8.Maggie's Farm
+
+
+Info courtesy of Olof:
+Concert # 16 of The Never-Ending Tour. Concert # 16 of the Interstate 88 Tour, 
+part 1: Summer Tour of North America.
+
+Concert # 16 with the first Never-Ending Tour Band: Bob Dylan (vocal & guitar), G. E. Smith (guitar),
+Kenny Aaronson (bass), Christopher Parker (drums).
+
+BobTalk:
+How am I doing, baby? (after Barbara Allen)
+
+12 new songs (75%) compared to previous concert. No new songs for this tour.
+
+ 
+
+===================
+===================
+===================

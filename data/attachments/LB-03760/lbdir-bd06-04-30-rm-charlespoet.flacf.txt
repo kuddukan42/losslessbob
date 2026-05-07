@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-30-rm-charlespoet.flacf 
+=================== 
+=================== 
+=================== 
+371a5a2682bdb08171190180341a02b9  bd06-04-30-rm-charlespoet-LB-3760.txt
+d51b9310bcefba3a784acfc2f027e456  Bob Dylan 4-30-06.txt
+0aed61ab8926dc9ed6fe7e2602f6e8e1  CD_1_COVER.jpg
+cbb36e2c2dacf38daeb6b758f7e7fba9  CD_1_COVER_INSIDE.jpg
+b82dd9f623ea7350503b381117c1c2f5  CD_2_COVER.jpg
+1034de1e4d1777fc0b0d57917934c710  CD_2_COVER_INSIDE.jpg
+d320422f773797f2815de9d8c977f17c  disc_1\Track_1.flac
+db7900060fee2d99b62ec2b842382cd1  disc_1\Track_2.flac
+ce48f57eb521456c554b40efdf907468  disc_1\Track_3.flac
+cd2ec5d166b2a51e3324d7da4c800085  disc_1\Track_4.flac
+d188b374a704a16c3a2c190b0b1ea250  disc_1\Track_5.flac
+5c546bad15d7523cad2935b4f6b6992d  disc_1\Track_6.flac
+b5a5274a9404725a5e8d6737d47f8957  disc_1\Track_7.flac
+1feb304d9a621f0249bc36ce8f550c07  disc_1\Track_8.flac
+664da2c2b3ef59c8722ea9e1f03ba4f9  disc_2\Track_1.flac
+064c88743df12fd4dfb006f7b7bdc12e  disc_2\Track_2.flac
+3bd8c45894ac77ddd5f786b9eaf25557  disc_2\Track_3.flac
+10ea217ef1aca8af70a5742df2c4be28  disc_2\Track_4.flac
+700faa201659bc23adbe5dcfbacd022c  disc_2\Track_5.flac
+c05639bd3b1aec50f7510f18e0d003cf  disc_2\Track_6.flac
+d780c31b9be1cdf0b565a712a4f015b8  SOUND_FLUCTUATION_FIXED_NOTES.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-30-rm-charlespoet.flacf\disc_1 
+=================== 
+=================== 
+=================== 
+Track_1.flac:00394009c7846442ce02c68c77aa1c33
+Track_2.flac:c41a51ab9481566bda75ffd92c35767a
+Track_3.flac:a9cee572eed94f61e07fe6a7e664fabe
+Track_4.flac:cd0ce8ee664b2c3b0cd5a51d49f0434d
+Track_5.flac:be6f5bfa1a550538fbb26a9363640017
+Track_6.flac:d67acb7ad328d08ae3e89b574947fe25
+Track_7.flac:ec5239120b03619eed2f1ec83627d173
+Track_8.flac:a919e2a037d346a8836ef090b66c8044
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-30-rm-charlespoet.flacf\disc_2 
+=================== 
+=================== 
+=================== 
+Track_1.flac:2d4bcabb7e5e0711318f7433fd3e037a
+Track_2.flac:3e8e30b887b5389a3c5bdbf2bd720ecf
+Track_3.flac:2b4ea2ea969d7ee3eceeabac6348b4bc
+Track_4.flac:42ed6cd5e262003a963054f454388697
+Track_5.flac:ca153e362383952f7381bea9e31d1eb9
+Track_6.flac:69a2765ed9cf5749cdd9008c215c7cc6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-30-rm-charlespoet.flacf\disc_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:36.10       59293964 B   ---   --   ---xx   flac  0.5894  Track_1.flac
+     6:20.12       67060268 B   ---   --   ---xx   flac  0.6016  Track_2.flac
+     5:36.02       59275148 B   ---   --   ---xx   flac  0.5722  Track_3.flac
+     6:30.03       68803100 B   ---   --   ---xx   flac  0.5611  Track_4.flac
+     6:55.13       73236620 B   ---   --   ---xx   flac  0.5656  Track_5.flac
+     7:41.07       81336908 B   ---   --   ---xx   flac  0.5739  Track_6.flac
+     8:47.30       93033404 B   ---   --   ---xx   flac  0.5549  Track_7.flac
+     7:39.64       81118172 B   ---   --   ---xx   flac  0.5880  Track_8.flac
+    55:05.66      583157584 B                            0.5749  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-30-rm-charlespoet.flacf\disc_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:13.49      108248492 B   ---   --   ---xx   flac  0.5437  Track_1.flac
+     6:57.64       73709372 B   ---   --   ---xx   flac  0.5684  Track_2.flac
+     5:40.16       60013676 B   ---   --   ---xx   flac  0.5596  Track_3.flac
+     7:38.12       80819468 B   ---   --   ---xx   flac  0.5671  Track_4.flac
+     7:05.60       75111164 B   ---   --   ---xx   flac  0.5807  Track_5.flac
+     5:52.60       62233964 B   ---   --   ---xx   flac  0.5684  Track_6.flac
+    43:28.36      460136136 B                            0.5633  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,320 @@
+===================
+===================
+===================
+=== 14Jan74 (aft).md5
+===================
+===================
+===================
+2b10dca530e92a6c57974e210d8625dd *D1\dylan&band1974-01-14.early.d01t01.flac
+3508da52eb1f0568b987bc9dd4480939 *D1\dylan&band1974-01-14.early.d01t02.flac
+d394422b231134e0df6cb71fd36a1985 *D1\dylan&band1974-01-14.early.d01t03.flac
+5e95099c2a21ef943f2c5cbaa01fb4f5 *D1\dylan&band1974-01-14.early.d01t04.flac
+5a6db06bb4d1a59e68b48f863413ce69 *D1\dylan&band1974-01-14.early.d01t05.flac
+ba797e4ed92e71b6aa0c5f989718cf86 *D1\dylan&band1974-01-14.early.d01t06.flac
+41124e01e2fa6674960cee9054c7e604 *D1\dylan&band1974-01-14.early.d01t07.flac
+5a49d9fad7cc0f11ca25ba967127b662 *D1\dylan&band1974-01-14.early.d01t08.flac
+2863101c428e78b523901c37550f5b1f *D1\dylan&band1974-01-14.early.d01t09.flac
+fecc8a9788a2723b5eb760747c5f651b *D1\dylan&band1974-01-14.early.d01t10.flac
+e50acb8b44d0b21d3457e7f95c6bd262 *D1\dylan&band1974-01-14.early.d01t11.flac
+bcea7919512880f3bdaeba842531a9ea *D1\dylan&band1974-01-14.early.d01t12.flac
+c8915bcf5a907558bb5f49563d595a1c *D1\dylan&band1974-01-14.early.d01t13.flac
+4511fcb2dd9ee40180a4920db8b3b01f *D1\dylan&band1974-01-14.early.d01t14.flac
+5e40a34fe5b01f0c52af013f0f09f008 *D1\dylan&band1974-01-14.early.d01t15.flac
+39ce2c408b0c7f9301b93f842d3e1df8 *D2\dylan&band1974-01-14.early.d02t01.flac
+12af814a5a2477f8bc0669a62c3ef25c *D2\dylan&band1974-01-14.early.d02t02.flac
+5153252a9a2923db377ed0fab299c676 *D2\dylan&band1974-01-14.early.d02t03.flac
+de1f786915df96275bea06d6429b5862 *D2\dylan&band1974-01-14.early.d02t04.flac
+d0bd3438c2ff66a44656c448bf92807f *D2\dylan&band1974-01-14.early.d02t05.flac
+cc9dcee17879b4fbe82cab667da0d507 *D2\dylan&band1974-01-14.early.d02t06.flac
+2fb1d78ca6a7b4460673ed41bf49ca0d *D2\dylan&band1974-01-14.early.d02t07.flac
+aa7f89bf300301dbcd562550238480c0 *D2\dylan&band1974-01-14.early.d02t08.flac
+27e6ba332e1f023ef3d0ce6cacfbaa06 *D2\dylan&band1974-01-14.early.d02t09.flac
+04ee28b0738ee41d0bbfc3d9cbd2addf *D2\dylan&band1974-01-14.early.d02t10.flac
+9e3195dfee9f0566c6fe87134d00b332 *D2\dylan&band1974-01-14.early.d02t11.flac
+76f563ff81293efe8cb4840d33d1aa4a *D2\dylan&band1974-01-14.early.d02t12.flac
+4ba935c634f17165b0ef32a53a919bef *D2\dylan&band1974-01-14.early.d02t13.flac
+===================
+===================
+===================
+=== Bob Dylan 1974-01-14 Boston [Afternoon].ffp
+===================
+===================
+===================
+D1\dylan&band1974-01-14.early.d01t01.flac:3cd117573b31a3ac01d712ab5d2aa84b
+D1\dylan&band1974-01-14.early.d01t02.flac:e443ea0be38f04dca7366dee5d8076d8
+D1\dylan&band1974-01-14.early.d01t03.flac:40ed04b7260d8073f2f57a2b859fa4d9
+D1\dylan&band1974-01-14.early.d01t04.flac:4c487a1485cdb32a2a52afd2c9831e89
+D1\dylan&band1974-01-14.early.d01t05.flac:81bcd2b0d73109070d8aa1c9c4029910
+D1\dylan&band1974-01-14.early.d01t06.flac:fbfd77d40f4de1d507c3ad857268c8c9
+D1\dylan&band1974-01-14.early.d01t07.flac:bfe010bc24c3a9b41c35501157661739
+D1\dylan&band1974-01-14.early.d01t08.flac:4e8bf13fd7d109397a37a63e4bcf839c
+D1\dylan&band1974-01-14.early.d01t09.flac:122b367dcf77cbfcd21dc7a75bc074a1
+D1\dylan&band1974-01-14.early.d01t10.flac:58aaf32a3b3ef69eb3c1e01f1f9d9494
+D1\dylan&band1974-01-14.early.d01t11.flac:ed5c68add3fd21a92ac775c9a23898fd
+D1\dylan&band1974-01-14.early.d01t12.flac:9ffe737d2cb503262c48f20cfcad4729
+D1\dylan&band1974-01-14.early.d01t13.flac:5c255af4b6bd2f019ddff89d4c842a4d
+D1\dylan&band1974-01-14.early.d01t14.flac:589a1f98d3b9afbb3d663f528d014246
+D1\dylan&band1974-01-14.early.d01t15.flac:0424698726cdee1324ae759581ada4bd
+D2\dylan&band1974-01-14.early.d02t01.flac:fe20e2ed1d163756e6291fc9e872facf
+D2\dylan&band1974-01-14.early.d02t02.flac:ae04463759541b5e473342dbadf602d5
+D2\dylan&band1974-01-14.early.d02t03.flac:b6afb268f21515937a5c8085e297fc75
+D2\dylan&band1974-01-14.early.d02t04.flac:f064c19a38ac1093a60409b5568bc12a
+D2\dylan&band1974-01-14.early.d02t05.flac:ebec38f2c9513858e5f3537bb0dd9da8
+D2\dylan&band1974-01-14.early.d02t06.flac:44255b22fe9caeb97452570c319e59dc
+D2\dylan&band1974-01-14.early.d02t07.flac:a8194804f306b591deb53b16e7ba8c6b
+D2\dylan&band1974-01-14.early.d02t08.flac:7eb06f540d2bece72704107da2f00cd8
+D2\dylan&band1974-01-14.early.d02t09.flac:e90573bc41b48f0a5c994ee1308cd279
+D2\dylan&band1974-01-14.early.d02t10.flac:176e9e5d46cb87edacc6516bb96b078b
+D2\dylan&band1974-01-14.early.d02t11.flac:d1c6c8af23d14ff3bbc5fa9904e58b58
+D2\dylan&band1974-01-14.early.d02t12.flac:36f5d2aa5133f721970ce4340b95ef02
+D2\dylan&band1974-01-14.early.d02t13.flac:b27949689e72644a78b784a4e77a1b5e
+===================
+===================
+===================
+=== Bob Dylan 1974-01-14 Boston [afternoon].txt
+===================
+===================
+===================
+Bob Dylan & The Band
+Boston Gardens, Boston
+Massachusetts
+14 January 1974 (Afternoon)
+
+
+Lineage: Source: AUD > MC (Joe Maloney) > shn by Jamie Salerno. Recorded on a Sony TC-110A, using the built-in microphone. Original cassettes were transferred to a Mac DAW using a Denon DR-M10HR. The analog signal was first run through: a) a SAE 2800 parametric equalizer to bump the highs slightly and to remove "room boom" at around 80 MHz; & b) a Phase Linear Autocorrelator to remove hiss & expand the signal (the TC-110A did not have controls for recording; the recorder, designed for dictation, compressed the signal and recorded at a fixed level). Transferred to the Mac using a MOTU 896.  Bias Deck used to splice tape flips & even out volume levels.  Bias Peak used to transfer SDII files to WAV files for shn compression.  Shntool used to fix SBEs. Converted to Flac for consistency with this set. [from lk aud set]
+
+
+No FLAC md5 or ffp available on LosslessBob to match exact fileset. No fix is required on lineage above. DFF reports digital leading/trailing digital silences (seee [1]DFF). These do not warrant fixing because sector alignment would alter all the files, which are otherwise without any digital flaws. flaw reported on d02t06 is probably an on source edit or noise.
+
+
+<disk1>
+
+01.	Rainy Day Women # 12 & 35
+02.	Lay Lady Lay
+03.	Just Like Tom Thumb's Blues
+04.	It Ain't Me Babe
+05.	I Don't Believe You (She Acts Like We Never Have Met)
+06.	Ballad Of A Thin Man
+
+07.	Stage Fright (the Band)
+08.	The Night they Drove Old Dixie Down (the Band)
+09.	King Harvest (has surely come)(the Band)
+10.	This Wheel's on Fire (the Band)
+11.	I shall be released (the Band)
+12.	Up on Cripple Creek (the Band)
+
+13.	All Along The Watchtower
+14.	Ballad Of Hollis Brown
+15.	Knockin' On Heaven's Door
+
+
+<disk2>
+
+01.	The Times They Are A-Changin'  (solo)
+02.	Don't Think Twice, Its All Right  (solo)
+03.	Gates Of Eden - (solo)
+04.	Just Like A Woman  (solo)
+05.	It's Alright Ma (Im Only Bleeding)  (solo)
+
+06.	Rag Mama Rag (the Band)
+07.	When you Awake (the Band)
+08.	The Shape I'm in (the Band)
+09.	The Weight (the Band)
+
+10.	Forever Young
+11.	Something There Is About You
+12.	Like A Rolling Stone
+
+13.	Most Likely You Go Your Way (And Ill Go Mine)
+
+
+md5:
+
+2b10dca530e92a6c57974e210d8625dd *D1\dylan&band1974-01-14.early.d01t01.flac
+3508da52eb1f0568b987bc9dd4480939 *D1\dylan&band1974-01-14.early.d01t02.flac
+d394422b231134e0df6cb71fd36a1985 *D1\dylan&band1974-01-14.early.d01t03.flac
+5e95099c2a21ef943f2c5cbaa01fb4f5 *D1\dylan&band1974-01-14.early.d01t04.flac
+5a6db06bb4d1a59e68b48f863413ce69 *D1\dylan&band1974-01-14.early.d01t05.flac
+ba797e4ed92e71b6aa0c5f989718cf86 *D1\dylan&band1974-01-14.early.d01t06.flac
+41124e01e2fa6674960cee9054c7e604 *D1\dylan&band1974-01-14.early.d01t07.flac
+5a49d9fad7cc0f11ca25ba967127b662 *D1\dylan&band1974-01-14.early.d01t08.flac
+2863101c428e78b523901c37550f5b1f *D1\dylan&band1974-01-14.early.d01t09.flac
+fecc8a9788a2723b5eb760747c5f651b *D1\dylan&band1974-01-14.early.d01t10.flac
+e50acb8b44d0b21d3457e7f95c6bd262 *D1\dylan&band1974-01-14.early.d01t11.flac
+bcea7919512880f3bdaeba842531a9ea *D1\dylan&band1974-01-14.early.d01t12.flac
+c8915bcf5a907558bb5f49563d595a1c *D1\dylan&band1974-01-14.early.d01t13.flac
+4511fcb2dd9ee40180a4920db8b3b01f *D1\dylan&band1974-01-14.early.d01t14.flac
+5e40a34fe5b01f0c52af013f0f09f008 *D1\dylan&band1974-01-14.early.d01t15.flac
+39ce2c408b0c7f9301b93f842d3e1df8 *D2\dylan&band1974-01-14.early.d02t01.flac
+12af814a5a2477f8bc0669a62c3ef25c *D2\dylan&band1974-01-14.early.d02t02.flac
+5153252a9a2923db377ed0fab299c676 *D2\dylan&band1974-01-14.early.d02t03.flac
+de1f786915df96275bea06d6429b5862 *D2\dylan&band1974-01-14.early.d02t04.flac
+d0bd3438c2ff66a44656c448bf92807f *D2\dylan&band1974-01-14.early.d02t05.flac
+cc9dcee17879b4fbe82cab667da0d507 *D2\dylan&band1974-01-14.early.d02t06.flac
+2fb1d78ca6a7b4460673ed41bf49ca0d *D2\dylan&band1974-01-14.early.d02t07.flac
+aa7f89bf300301dbcd562550238480c0 *D2\dylan&band1974-01-14.early.d02t08.flac
+27e6ba332e1f023ef3d0ce6cacfbaa06 *D2\dylan&band1974-01-14.early.d02t09.flac
+04ee28b0738ee41d0bbfc3d9cbd2addf *D2\dylan&band1974-01-14.early.d02t10.flac
+9e3195dfee9f0566c6fe87134d00b332 *D2\dylan&band1974-01-14.early.d02t11.flac
+76f563ff81293efe8cb4840d33d1aa4a *D2\dylan&band1974-01-14.early.d02t12.flac
+4ba935c634f17165b0ef32a53a919bef *D2\dylan&band1974-01-14.early.d02t13.flac
+
+
+ffp:
+
+dylan&band1974-01-14.early.d01t01.flac:3cd117573b31a3ac01d712ab5d2aa84b
+dylan&band1974-01-14.early.d01t02.flac:e443ea0be38f04dca7366dee5d8076d8
+dylan&band1974-01-14.early.d01t03.flac:40ed04b7260d8073f2f57a2b859fa4d9
+dylan&band1974-01-14.early.d01t04.flac:4c487a1485cdb32a2a52afd2c9831e89
+dylan&band1974-01-14.early.d01t05.flac:81bcd2b0d73109070d8aa1c9c4029910
+dylan&band1974-01-14.early.d01t06.flac:fbfd77d40f4de1d507c3ad857268c8c9
+dylan&band1974-01-14.early.d01t07.flac:bfe010bc24c3a9b41c35501157661739
+dylan&band1974-01-14.early.d01t08.flac:4e8bf13fd7d109397a37a63e4bcf839c
+dylan&band1974-01-14.early.d01t09.flac:122b367dcf77cbfcd21dc7a75bc074a1
+dylan&band1974-01-14.early.d01t10.flac:58aaf32a3b3ef69eb3c1e01f1f9d9494
+dylan&band1974-01-14.early.d01t11.flac:ed5c68add3fd21a92ac775c9a23898fd
+dylan&band1974-01-14.early.d01t12.flac:9ffe737d2cb503262c48f20cfcad4729
+dylan&band1974-01-14.early.d01t13.flac:5c255af4b6bd2f019ddff89d4c842a4d
+dylan&band1974-01-14.early.d01t14.flac:589a1f98d3b9afbb3d663f528d014246
+dylan&band1974-01-14.early.d01t15.flac:0424698726cdee1324ae759581ada4bd
+dylan&band1974-01-14.early.d02t01.flac:fe20e2ed1d163756e6291fc9e872facf
+dylan&band1974-01-14.early.d02t02.flac:ae04463759541b5e473342dbadf602d5
+dylan&band1974-01-14.early.d02t03.flac:b6afb268f21515937a5c8085e297fc75
+dylan&band1974-01-14.early.d02t04.flac:f064c19a38ac1093a60409b5568bc12a
+dylan&band1974-01-14.early.d02t05.flac:ebec38f2c9513858e5f3537bb0dd9da8
+dylan&band1974-01-14.early.d02t06.flac:44255b22fe9caeb97452570c319e59dc
+dylan&band1974-01-14.early.d02t07.flac:a8194804f306b591deb53b16e7ba8c6b
+dylan&band1974-01-14.early.d02t08.flac:7eb06f540d2bece72704107da2f00cd8
+dylan&band1974-01-14.early.d02t09.flac:e90573bc41b48f0a5c994ee1308cd279
+dylan&band1974-01-14.early.d02t10.flac:176e9e5d46cb87edacc6516bb96b078b
+dylan&band1974-01-14.early.d02t11.flac:d1c6c8af23d14ff3bbc5fa9904e58b58
+dylan&band1974-01-14.early.d02t12.flac:36f5d2aa5133f721970ce4340b95ef02
+dylan&band1974-01-14.early.d02t13.flac:b27949689e72644a78b784a4e77a1b5e
+===================
+===================
+===================
+=== (updated indo file from torrent commnet) Bob Dylan 1974-01-14 Boston [afternoon].txt
+===================
+===================
+===================
+
+Bob Dylan & The Band
+Boston Gardens, Boston
+Massachusetts
+14 January 1974 (Afternoon)
+
+
+Lineage: Source: AUD > MC (Joe Maloney) > shn by Jamie Salerno. Recorded on a Sony TC-110A, using the built-in microphone. Original cassettes were transferred to a Mac DAW using a Denon DR-M10HR. The analog signal was first run through: a) a SAE 2800 parametric equalizer to bump the highs slightly and to remove "room boom" at around 80 MHz; & b) a Phase Linear Autocorrelator to remove hiss & expand the signal (the TC-110A did not have controls for recording; the recorder, designed for dictation, compressed the signal and recorded at a fixed level). Transferred to the Mac using a MOTU 896.  Bias Deck used to splice tape flips & even out volume levels.  Bias Peak used to transfer SDII files to WAV files for shn compression.  Shntool used to fix SBEs. Converted to Flac for consistency with this set. [from lk aud set]
+
+LosslessBob entry: LB-2518 xref-00777. also from lk aud set in flac with matching flac fingerprints; described with same info with filenames like "D1\dylan&band1974-01-14.early.d01t01.flac"; xref-00777. [LB-2518 = bittorrent download 03/05; very good sound [B]; this is different recording than that used for the aud portion of pa LB-0617 and LB-1497 based on different crowd after d2t10].
+
+
+No fix is required on fileset above. DFF reports digital leading/trailing digital silences (seee [1]DFF). These do not warrant fixing because sector alignment would alter all the files, which are otherwise without any digital flaws. Flaw reported on d02t06 is probably an on source edit or noise.
+
+
+<disk1>
+
+01.	Rainy Day Women # 12 & 35
+02.	Lay Lady Lay
+03.	Just Like Tom Thumb's Blues
+04.	It Ain't Me Babe
+05.	I Don't Believe You (She Acts Like We Never Have Met)
+06.	Ballad Of A Thin Man
+
+07.	Stage Fright (the Band)
+08.	The Night they Drove Old Dixie Down (the Band)
+09.	King Harvest (has surely come)(the Band)
+10.	This Wheel's on Fire (the Band)
+11.	I shall be released (the Band)
+12.	Up on Cripple Creek (the Band)
+
+13.	All Along The Watchtower
+14.	Ballad Of Hollis Brown
+15.	Knockin' On Heaven's Door
+
+
+<disk2>
+
+01.	The Times They Are A-Changin' – (solo)
+02.	Don't Think Twice, It’s All Right – (solo)
+03.	Gates Of Eden - (solo)
+04.	Just Like A Woman – (solo)
+05.	It's Alright Ma (I’m Only Bleeding) – (solo)
+
+06.	Rag Mama Rag (the Band)
+07.	When you Awake (the Band)
+08.	The Shape I'm in (the Band)
+09.	The Weight (the Band)
+
+10.	Forever Young
+11.	Something There Is About You
+12.	Like A Rolling Stone
+
+13.	Most Likely You Go Your Way (And I’ll Go Mine)
+
+
+md5:
+
+2b10dca530e92a6c57974e210d8625dd *D1\dylan&band1974-01-14.early.d01t01.flac
+3508da52eb1f0568b987bc9dd4480939 *D1\dylan&band1974-01-14.early.d01t02.flac
+d394422b231134e0df6cb71fd36a1985 *D1\dylan&band1974-01-14.early.d01t03.flac
+5e95099c2a21ef943f2c5cbaa01fb4f5 *D1\dylan&band1974-01-14.early.d01t04.flac
+5a6db06bb4d1a59e68b48f863413ce69 *D1\dylan&band1974-01-14.early.d01t05.flac
+ba797e4ed92e71b6aa0c5f989718cf86 *D1\dylan&band1974-01-14.early.d01t06.flac
+41124e01e2fa6674960cee9054c7e604 *D1\dylan&band1974-01-14.early.d01t07.flac
+5a49d9fad7cc0f11ca25ba967127b662 *D1\dylan&band1974-01-14.early.d01t08.flac
+2863101c428e78b523901c37550f5b1f *D1\dylan&band1974-01-14.early.d01t09.flac
+fecc8a9788a2723b5eb760747c5f651b *D1\dylan&band1974-01-14.early.d01t10.flac
+e50acb8b44d0b21d3457e7f95c6bd262 *D1\dylan&band1974-01-14.early.d01t11.flac
+bcea7919512880f3bdaeba842531a9ea *D1\dylan&band1974-01-14.early.d01t12.flac
+c8915bcf5a907558bb5f49563d595a1c *D1\dylan&band1974-01-14.early.d01t13.flac
+4511fcb2dd9ee40180a4920db8b3b01f *D1\dylan&band1974-01-14.early.d01t14.flac
+5e40a34fe5b01f0c52af013f0f09f008 *D1\dylan&band1974-01-14.early.d01t15.flac
+39ce2c408b0c7f9301b93f842d3e1df8 *D2\dylan&band1974-01-14.early.d02t01.flac
+12af814a5a2477f8bc0669a62c3ef25c *D2\dylan&band1974-01-14.early.d02t02.flac
+5153252a9a2923db377ed0fab299c676 *D2\dylan&band1974-01-14.early.d02t03.flac
+de1f786915df96275bea06d6429b5862 *D2\dylan&band1974-01-14.early.d02t04.flac
+d0bd3438c2ff66a44656c448bf92807f *D2\dylan&band1974-01-14.early.d02t05.flac
+cc9dcee17879b4fbe82cab667da0d507 *D2\dylan&band1974-01-14.early.d02t06.flac
+2fb1d78ca6a7b4460673ed41bf49ca0d *D2\dylan&band1974-01-14.early.d02t07.flac
+aa7f89bf300301dbcd562550238480c0 *D2\dylan&band1974-01-14.early.d02t08.flac
+27e6ba332e1f023ef3d0ce6cacfbaa06 *D2\dylan&band1974-01-14.early.d02t09.flac
+04ee28b0738ee41d0bbfc3d9cbd2addf *D2\dylan&band1974-01-14.early.d02t10.flac
+9e3195dfee9f0566c6fe87134d00b332 *D2\dylan&band1974-01-14.early.d02t11.flac
+76f563ff81293efe8cb4840d33d1aa4a *D2\dylan&band1974-01-14.early.d02t12.flac
+4ba935c634f17165b0ef32a53a919bef *D2\dylan&band1974-01-14.early.d02t13.flac
+
+
+ffp:
+
+dylan&band1974-01-14.early.d01t01.flac:3cd117573b31a3ac01d712ab5d2aa84b
+dylan&band1974-01-14.early.d01t02.flac:e443ea0be38f04dca7366dee5d8076d8
+dylan&band1974-01-14.early.d01t03.flac:40ed04b7260d8073f2f57a2b859fa4d9
+dylan&band1974-01-14.early.d01t04.flac:4c487a1485cdb32a2a52afd2c9831e89
+dylan&band1974-01-14.early.d01t05.flac:81bcd2b0d73109070d8aa1c9c4029910
+dylan&band1974-01-14.early.d01t06.flac:fbfd77d40f4de1d507c3ad857268c8c9
+dylan&band1974-01-14.early.d01t07.flac:bfe010bc24c3a9b41c35501157661739
+dylan&band1974-01-14.early.d01t08.flac:4e8bf13fd7d109397a37a63e4bcf839c
+dylan&band1974-01-14.early.d01t09.flac:122b367dcf77cbfcd21dc7a75bc074a1
+dylan&band1974-01-14.early.d01t10.flac:58aaf32a3b3ef69eb3c1e01f1f9d9494
+dylan&band1974-01-14.early.d01t11.flac:ed5c68add3fd21a92ac775c9a23898fd
+dylan&band1974-01-14.early.d01t12.flac:9ffe737d2cb503262c48f20cfcad4729
+dylan&band1974-01-14.early.d01t13.flac:5c255af4b6bd2f019ddff89d4c842a4d
+dylan&band1974-01-14.early.d01t14.flac:589a1f98d3b9afbb3d663f528d014246
+dylan&band1974-01-14.early.d01t15.flac:0424698726cdee1324ae759581ada4bd
+dylan&band1974-01-14.early.d02t01.flac:fe20e2ed1d163756e6291fc9e872facf
+dylan&band1974-01-14.early.d02t02.flac:ae04463759541b5e473342dbadf602d5
+dylan&band1974-01-14.early.d02t03.flac:b6afb268f21515937a5c8085e297fc75
+dylan&band1974-01-14.early.d02t04.flac:f064c19a38ac1093a60409b5568bc12a
+dylan&band1974-01-14.early.d02t05.flac:ebec38f2c9513858e5f3537bb0dd9da8
+dylan&band1974-01-14.early.d02t06.flac:44255b22fe9caeb97452570c319e59dc
+dylan&band1974-01-14.early.d02t07.flac:a8194804f306b591deb53b16e7ba8c6b
+dylan&band1974-01-14.early.d02t08.flac:7eb06f540d2bece72704107da2f00cd8
+dylan&band1974-01-14.early.d02t09.flac:e90573bc41b48f0a5c994ee1308cd279
+dylan&band1974-01-14.early.d02t10.flac:176e9e5d46cb87edacc6516bb96b078b
+dylan&band1974-01-14.early.d02t11.flac:d1c6c8af23d14ff3bbc5fa9904e58b58
+dylan&band1974-01-14.early.d02t12.flac:36f5d2aa5133f721970ce4340b95ef02
+dylan&band1974-01-14.early.d02t13.flac:b27949689e72644a78b784a4e77a1b5e
+===================
+===================
+===================

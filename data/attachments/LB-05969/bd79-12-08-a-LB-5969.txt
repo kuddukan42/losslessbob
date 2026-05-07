@@ -1,0 +1,14 @@
+Bob Dylan, 12/8/79, Community Center, Tucson, AZ, 2CDR
+
+LB-5969, (52min+52min), One known reference tape circulating source for LB-4127 & 081279PBMD., This version:, Trade image+cue sheet > Wave Repair 4.9.2. manual fixing of index clicks (use of available cue sheet) and 50+ digi pops mostly on disc 1 (e.g. 1.22/9, 8:11, 14:49, 15.44,29:34, 30:07/14, 42:19/50/8, 43:10, 46:12), No ASM. LB-4127 notes lots of digi-pops d2t1. None were present on this copy. Recording fades out on encore applause followed by 5 second male voice speaking to audience (unrelated to recording) > Flac frontend lvl 8, verify., *Indexes strategically placed on edits between songs which are present on all sources.; bittorrent download 03/08 ;very close to true mono; light tv band; this is not close eac match on d2t9 to LB-4127; this does not have the digi-pops on d2t1 on that one; very good to excellent sound [B+]
+
+analog drop d1t2 4:57 digital drop d1t3 0:00
+
+CD1
+1 Gotta Serve Somebody 2 I Believe In You 3 When You Gonna Wake Up? 4 When He Returns 5 Man Gave Names To All The Animals 6 Precious Angel 7 Slow Train 8 Covenant Woman 9 What are you doing with your heart, 
+
+CD2
+1 Gonna Change My Way Of Thinking 2 Do Right To Me, Baby (Do Unto Others) 3 Solid Rock 4 Saving Grace 5 Saved 6 What Can I Do For You? 7 In The Garden 8 Blessed Is The Name 9 Pressing On
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

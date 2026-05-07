@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-02-24-true-confessions.flacf 
+=================== 
+=================== 
+=================== 
+89333c1976aa86c50804ce4d5dc97133  bd86-02-24-true-confessions-d1t01.flac
+35053f056b77b7e497c393a7f136b0d8  bd86-02-24-true-confessions-d1t02.flac
+3a590fd3f1b3726deeec61f1cdc4cf6b  bd86-02-24-true-confessions-d1t03.flac
+b0687609bf51c4a7dc280824bba07753  bd86-02-24-true-confessions-d1t04.flac
+108672308e769e9fc04bbb731913f360  bd86-02-24-true-confessions-d1t05.flac
+2b962f171d477e597b6489b8f9864ad9  bd86-02-24-true-confessions-d1t06.flac
+4ee023277800832b134cca29d8601606  bd86-02-24-true-confessions-d1t07.flac
+cb85f0879b173325b4b44ca938524d06  bd86-02-24-true-confessions-d1t08.flac
+e8ab411f5f2b3edc4ecf8529c459251c  bd86-02-24-true-confessions-d1t09.flac
+4558e6d46fc2baf25799d6c5f0494247  bd86-02-24-true-confessions-d1t10.flac
+6c65e484c56506d6946052439f6e3f7f  bd86-02-24-true-confessions-d1t11.flac
+1ec54588a3635884cb9492782e865c42  bd86-02-24-true-confessions-d1t12.flac
+1771146da92b2e78c876527427b7516e  bd86-02-24-true-confessions-d1t13.flac
+6beafa03cb1ba40f30eaa671e2315ef1  bd86-02-24-true-confessions-d1t14.flac
+cd76348c225d3a6b3addaed475411b2f  bd86-02-24-true-confessions.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-24-true-confessions.flacf 
+=================== 
+=================== 
+=================== 
+bd86-02-24-true-confessions-d1t01.flac:8c2258482562346989a615ca9330c2ee
+bd86-02-24-true-confessions-d1t02.flac:c8f4aea7c52a7213aa740cd1f4a52345
+bd86-02-24-true-confessions-d1t03.flac:d46eb4ee3d7577189e6fadc0869386a4
+bd86-02-24-true-confessions-d1t04.flac:ca750229a0184ab66cd4714863c39781
+bd86-02-24-true-confessions-d1t05.flac:e827e8c6ecd045440936e0a71b3d15e4
+bd86-02-24-true-confessions-d1t06.flac:058781ab1b2d0ddc0f0d12af30419b36
+bd86-02-24-true-confessions-d1t07.flac:8073b55f88e142e259b97e1e58b6a558
+bd86-02-24-true-confessions-d1t08.flac:94b398d0b67b6a6ea5aebd5234f03e14
+bd86-02-24-true-confessions-d1t09.flac:fed259e77b6528624cba04350dd443a1
+bd86-02-24-true-confessions-d1t10.flac:6d8647fa0810d59153c546cbcab4451f
+bd86-02-24-true-confessions-d1t11.flac:ab94efbddd9bd5c827eaf58d1de271d9
+bd86-02-24-true-confessions-d1t12.flac:709a8c5c5f61f6d5de55b82400ad7aaf
+bd86-02-24-true-confessions-d1t13.flac:0abf15a241b145081ff0c4b738cc6cf0
+bd86-02-24-true-confessions-d1t14.flac:191645059fed4f3804cc0a1c3686e33f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-24-true-confessions.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.28       56337500 B   ---   --   ---xx   flac  0.6583  bd86-02-24-true-confessions-d1t01.flac
+     4:43.70       50085884 B   ---   --   ---xx   flac  0.6221  bd86-02-24-true-confessions-d1t02.flac
+     4:52.72       51678188 B   ---   --   ---xx   flac  0.6652  bd86-02-24-true-confessions-d1t03.flac
+     4:35.28       48575900 B   ---   --   ---xx   flac  0.6349  bd86-02-24-true-confessions-d1t04.flac
+     3:49.65       40548524 B   ---   --   ---xx   flac  0.6243  bd86-02-24-true-confessions-d1t05.flac
+     3:15.17       34438028 B   ---   --   ---xx   flac  0.6820  bd86-02-24-true-confessions-d1t06.flac
+     7:37.55       80744204 B   ---   --   ---xx   flac  0.5457  bd86-02-24-true-confessions-d1t07.flac
+     5:07.30       54225404 B   ---   --   ---xx   flac  0.6765  bd86-02-24-true-confessions-d1t08.flac
+     4:01.65       42665324 B   ---   --   ---xx   flac  0.6470  bd86-02-24-true-confessions-d1t09.flac
+     3:08.45       33269084 B   ---   --   ---xx   flac  0.6058  bd86-02-24-true-confessions-d1t10.flac
+     4:02.23       42742940 B   ---   --   ---xx   flac  0.6834  bd86-02-24-true-confessions-d1t11.flac
+     7:19.37       77526668 B   ---   --   ---xx   flac  0.5541  bd86-02-24-true-confessions-d1t12.flac
+     6:09.40       65185724 B   ---   --   ---xx   flac  0.6985  bd86-02-24-true-confessions-d1t13.flac
+     8:01.45       84954284 B   ---   --   ---xx   flac  0.6700  bd86-02-24-true-confessions-d1t14.flac
+    72:05.20      762977656 B                            0.6362  (14 files)
+=================== 
+=================== 
+=================== 

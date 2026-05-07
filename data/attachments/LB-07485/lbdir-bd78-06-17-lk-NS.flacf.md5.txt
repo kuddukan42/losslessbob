@@ -1,0 +1,32 @@
+d004588b1280378a8a2cd70ce7dea7ba  D1\Track01.flac
+0f9a311a04de565f8c39d8b05d6f9d26  D1\Track02.flac
+df2740a021b1e4fb2f05c922916148e1  D1\Track03.flac
+b1792de2ff69cce989374c84ddc78e11  D1\Track04.flac
+04b95a9968a6102c954e5e1ad36561d2  D1\Track05.flac
+c5038393c026b03b4dd07cd2fa4ecb09  D1\Track06.flac
+699d5668777dd056cab08267d3085063  D1\Track07.flac
+fa05ea415915bb122ca851ed3cd92446  D1\Track08.flac
+fedde546841f6185d05f5f04c928e120  D1\Track09.flac
+68ea7f608333b3a4e95aa4a7938eeeaa  D1\Track10.flac
+47de8feda05b09628c35ae6b7667aacd  D1\Track11.flac
+3854e0c862344ae863021e83ae97abf4  D1\Track12.flac
+716c2a6537481bc809549a53bedd92ad  D1\Track13.flac
+c484bc72c427e057d31087c3e74fc9bc  D2\Track01.flac
+c29cae2ae3d5fd32778ea96a11adb018  D2\Track02.flac
+2082051121f30ce957ef6ce6e6e3f4f9  D2\Track03.flac
+3d7bb65f493297736e74e08f2fb7998d  D2\Track04.flac
+ec692184b9ef199807cd1e55e3c0a909  D2\Track05.flac
+340c1a8925011537c33dd83c1e976202  D2\Track06.flac
+73477243bfa73e4efc38a375deed2b56  D2\Track07.flac
+e551b25234ab1577683198a807466031  D2\Track08.flac
+ffce0a608482ef88f1f18d32b738eb20  D2\Track09.flac
+0138a8cd869ff34385f67d76ef0a2863  D2\Track10.flac
+8c7d5bc319d994f09b1de66ddc86eaae  D2\Track11.flac
+ee9bec2f536ada36961e71f9f42f390a  D2\Track12.flac
+17aee5eb10ff968357c8c17da0429f59  D2\Track13.flac
+2277ab64a8d6b10d61cf1687f9210a56  D2\Track14.flac
+7d588020ade3a5bff876bafbb8d509e6  D2\Track15.flac
+33fee774432ee35ab0f64afc8dc7a241  D2\Track16.flac
+1a58fb5f15ca7db9d5ae033a0fd37e0d  D2\Track17.flac
+6da297c2e1b0cddf5c724f41d3eedd3b  EC 17 June 78 (NS).md5
+bfe5abfb880e39245ea8b6a67b3927d2  LK 1978 Leg 2 DVD 2.md5

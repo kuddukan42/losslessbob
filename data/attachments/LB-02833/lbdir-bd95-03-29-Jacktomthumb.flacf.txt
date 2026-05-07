@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-29-Jacktomthumb.flacf 
+=================== 
+=================== 
+=================== 
+33da862f11acecd45668355b7aa91bf4  bd95-03-29-Jacktomthumb-LB-2833.txt
+8ca5d3755307372c709372db2cdcc189  Brixton - 29.03.1995 - F.jpg
+0657b3398e71d1ff6cfa5aad27154a4a  Brixton - 29.03.1995 - R.jpg
+0d1aa884608d5343bd918c89607db39a  Brixton 29.03.95 Info.txt
+87cdf6b8be57879ae356e62febfabc27  Disc 1\Track01.shn
+fca67839a95a527d9dd6bb7feeead01a  Disc 1\Track02.shn
+cae766a7ace67bc49e4c8ac96cb61438  Disc 1\Track03.shn
+6291743f8e3bd51d674c37249f4b2f36  Disc 1\Track04.shn
+b80010efbfe95f9f1d8853193102bee1  Disc 1\Track05.shn
+f572dc0905e095b5642449070988bf93  Disc 1\Track06.shn
+11ffda38db86484d2beb37b0e4256377  Disc 1\Track07.shn
+bc58544a2dbcaebe09a4a0d1dd19f41f  Disc 1\Track08.shn
+2d34230e5ca29dcd83795f33f5056754  Disc 1\Track09.shn
+25c19aa2b052ff3a978930a5af59808d  Disc 1\noname.md5
+048ecfbc2ca69db0b21cd97d01394d4e  Disc 2\Track01.shn
+2fc9bf9d6e46e36e1abf5b2160699f5f  Disc 2\Track02.shn
+8706f2b8bc8079b52d8496a07a7382c9  Disc 2\Track03.shn
+ede552baea393c131f848b944436a6af  Disc 2\Track04.shn
+4faca686b98162f21854e58ca7cd49e1  Disc 2\Track05.shn
+9bc14ef13bbe7b5c79b8eb8af89b8b30  Disc 2\Track06.shn
+f28976fade6a167c381171099d5cfe08  Disc 2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-03-29-Jacktomthumb.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+ed38bcd241d99a23963e25ff73433704  [shntool]  Track01.wav
+ebcac4b682ac5162325b79dfea2b0097  [shntool]  Track02.wav
+669e02e582963f75623199e060799ba1  [shntool]  Track03.wav
+b5c90fca9d68e1cd83b01f98434ba037  [shntool]  Track04.wav
+9d8150bfe475c82a070f7745bfdc5452  [shntool]  Track05.wav
+72935a0dd662fcd810875ae27ec19b09  [shntool]  Track06.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-03-29-Jacktomthumb.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+ecbdd43bbce505826d34a19fd3a1fb0a  [shntool]  Track01.wav
+75de73e66d643c9d9ea5a39c9110cc5c  [shntool]  Track02.wav
+4a0ee8efe3df72e52c867eb3aaa013bf  [shntool]  Track03.wav
+7594f2d88e64bdee477f791058c3c17f  [shntool]  Track04.wav
+6d8f35461e5d6d23ffd186c10ed68515  [shntool]  Track05.wav
+be5b43353a65dd8bcdcfae385cf7b980  [shntool]  Track06.wav
+585b4de8a537ccf1304d0a3c7564c685  [shntool]  Track07.wav
+26b9babc99af3c5cdc000ff95f43dce9  [shntool]  Track08.wav
+9d2b3fc3bf5cb81b2254778e64175771  [shntool]  Track09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-29-Jacktomthumb.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:35.05       80273804 B   ---   --   -----    wav  1.0000  Track01.wav
+     6:59.08       73930460 B   ---   --   -----    wav  1.0000  Track02.wav
+     7:18.47       77373788 B   ---   --   -----    wav  1.0000  Track03.wav
+     8:03.41       85297676 B   ---   --   -----    wav  1.0000  Track04.wav
+     8:33.14       90526172 B   ---   --   -----    wav  1.0000  Track05.wav
+     7:30.22       79431788 B   ---   --   -----    wav  1.0000  Track06.wav
+    45:59.62      486833688 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-29-Jacktomthumb.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:24.17       57193628 B   ---   --   -----    wav  1.0000  Track01.wav
+     4:18.67       45668828 B   ---   --   -----    wav  1.0000  Track02.wav
+     5:16.34       55822412 B   ---   --   -----    wav  1.0000  Track03.wav
+     5:32.06       58578956 B   ---   --   -----    wav  1.0000  Track04.wav
+     8:28.63       89759420 B   ---   --   -----    wav  1.0000  Track05.wav
+     7:08.67       75656828 B   ---   --   -----    wav  1.0000  Track06.wav
+     6:42.09       70934012 B   ---   --   -----    wav  1.0000  Track07.wav
+     7:35.31       80334956 B   ---   --   -----    wav  1.0000  Track08.wav
+     5:59.59       63466412 B   ---   --   -----    wav  1.0000  Track09.wav
+    56:26.53      597415452 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

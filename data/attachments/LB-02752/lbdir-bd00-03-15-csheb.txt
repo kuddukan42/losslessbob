@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-15-csheb 
+=================== 
+=================== 
+=================== 
+873d1cf6c895f72d0f07916f5d2032bd  bd00-03-15-csheb-d1t01.shn
+f99080cf9a077141e4b3caa3d5f38d3c  bd00-03-15-csheb-d1t02.shn
+ac8f879ce381cc5e4113305f63c60762  bd00-03-15-csheb-d1t03.shn
+b11cdc96659932753b5f5cbc3027ba46  bd00-03-15-csheb-d1t04.shn
+cda1bdb7829cda1c61f1be622259554d  bd00-03-15-csheb-d1t05.shn
+83da109085eee417de8cbb96b4e0d650  bd00-03-15-csheb-d1t06.shn
+cf21e95904ae6ebedd7da1eeb7b825f6  bd00-03-15-csheb-d1t07.shn
+2a44db22ca7ee9faf52b3119fac68ed9  bd00-03-15-csheb-d1t08.shn
+7bc141194ab23e78adeaca7aac6923df  bd00-03-15-csheb-d1t09.shn
+84b96feb578d21f191a8b09c3f353a90  bd00-03-15-csheb-d1t10.shn
+b95826553c8629a18d9ad622ce2651c1  bd00-03-15-csheb-d1t11.shn
+7c90731c5281c41a4b4ff2b9dde07516  bd00-03-15-csheb-d2t01.shn
+eaa55666fe4264e59557c872015a5b89  bd00-03-15-csheb-d2t02.shn
+100a08811f9b07849cc9973925590e15  bd00-03-15-csheb-d2t03.shn
+6105311bd3c5b0cf8d879388d3ecece7  bd00-03-15-csheb-d2t04.shn
+4ddf6a15224ede9e146f4f05e78848ec  bd00-03-15-csheb-d2t05.shn
+5e91bcabb4e7630aace5a689543a39d8  bd00-03-15-csheb-LB-2752.txt
+9211f93e5d57f11adbee9a3297115245  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-03-15-csheb 
+=================== 
+=================== 
+=================== 
+db77e68ab2b22c4afe43e89872cedc4d  [shntool]  bd00-03-15-csheb-d1t01.wav
+c159436de010a72b3662cc65ec52c905  [shntool]  bd00-03-15-csheb-d1t02.wav
+e4703c1cf6dd219791e93c8879221a19  [shntool]  bd00-03-15-csheb-d1t03.wav
+9ec99d66cb3f980c99e97e1e040be391  [shntool]  bd00-03-15-csheb-d1t04.wav
+e40c9fb0e15d304edb1189393007fa10  [shntool]  bd00-03-15-csheb-d1t05.wav
+657404b2db22b63f9d2515a132fe3878  [shntool]  bd00-03-15-csheb-d1t06.wav
+5255d43af5ac17fcdbc9459ebd4c3588  [shntool]  bd00-03-15-csheb-d1t07.wav
+25548aeeeb13b69d04f7c3d22979fbfa  [shntool]  bd00-03-15-csheb-d1t08.wav
+8a711d2610ecba3ffbf87535384efa91  [shntool]  bd00-03-15-csheb-d1t09.wav
+ab88e982b6df5b4c86e939b30f71c015  [shntool]  bd00-03-15-csheb-d1t10.wav
+e44ed4386b083f621619471258ed94e9  [shntool]  bd00-03-15-csheb-d1t11.wav
+f664468bc246cea97fa00ebb3477385b  [shntool]  bd00-03-15-csheb-d2t01.wav
+24f96814ccff727e78e8ba0679382173  [shntool]  bd00-03-15-csheb-d2t02.wav
+d288ccc3f412053b08d6bd11080dbf4e  [shntool]  bd00-03-15-csheb-d2t03.wav
+7ade55d4a8ebe9488cdc9f4f53ee846e  [shntool]  bd00-03-15-csheb-d2t04.wav
+c9c1eb30046136538395d9be017eb013  [shntool]  bd00-03-15-csheb-d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-15-csheb 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:34.25       37808444 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t01.wav
+     6:28.45       68549084 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t02.wav
+     5:49.42       61662428 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t03.wav
+     6:18.73       66850940 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t04.wav
+     7:33.48       80022140 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t05.wav
+     5:11.35       54942764 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t06.wav
+     6:48.63       72119420 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t07.wav
+     8:00.49       84787292 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t08.wav
+     4:40.22       49443788 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t09.wav
+     5:47.25       61269644 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t10.wav
+     6:32.11       69174716 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d1t11.wav
+     7:50.13       82938620 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d2t01.wav
+     5:58.68       63311180 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d2t02.wav
+     5:00.28       52985900 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d2t03.wav
+    10:00.40      105934124 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d2t04.wav
+     6:19.09       66876812 B   ---   --   -----    wav  1.0000  bd00-03-15-csheb-d2t05.wav
+   101:54.71     1078677296 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

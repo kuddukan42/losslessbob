@@ -1,0 +1,80 @@
+Bob Dylan
+Palais Des Sports
+Besançon, France
+July 4, 1994
+
+This is most likely the circulated analog source of this show, different recording than LB-1059.
+Received this one in trade from the late Jan Tempelman; however, different than his upload at dime, LB-4033, which looks like same as LB-1059. As with many Jan's sets, no info on lineage or taper was provided. But I can tell it was coming as flac, straight from a reliable source who made an eac extraction off his audio discs (original log files are included). His original version had gaps at track transitions and some drops I slightly rectified to make them as seamless as possible when a certain appearence of continuity was viable. Didn't harm the sound of the recording in any way, though, at least no further than the mentioned details. Sounds to me like running a little bit faster than the recording device, but didn't want to try a pitch correction work without success guaranteed.
+
+Corrections made:
+
+d1t01 @ [0:02.450-464] drop patched
+d1t09 @ [0:25.408-841][0:26.590-885] some scratches removed
+d2t03 @ [2:09.741-832] small pop removed (still flawed, but less audible)
+
+gaps of about 155 samples removed at track transitions but for d1t07-8 where a single patch was performed.
+
+still a few drops and minor flaws remain as they were; these are the most noticeable ones, as far as I could detect:
+
+d1t01 starts abruptly just before the very beginning of the actual song
+d1t01 @ [7:08.350] a feeble vibration briefly apparent
+d1t03 @ [0:00.000] 32 samples gap
+d1t04 @ [0:00.000] 33 samples gap
+d1t05 @ [8:53.587] 7 samples gap
+d1t06 @ [0:00.000] 14 samples gap
+d1t06 @ [5:39.388] 153 samples gap
+d1t07 @ [0:00.000] 32 samples gap
+d1t07 @ [0:04.563-05.546] dropout
+d1t09 @ [0:01.335-604] dropout
+d1t12 @ [6:23.030] drop at discs split
+
+d2t02 @ [0:01.131] 786 samples drop
+d2t03 @ [0:10.650-11.340][0:16.516-17.186] light scratchiness
+
+
+Lineage: audio discs (unknown gen) > wav (eac) > flac (flac frontend) > flac (data DVD) > wav (flac frontend 1.1.3) > wav (adobe audition 1.0/corrections) > flac (flac frontend 1.1.3 - align on sb option - level 8 - verify on)
+
+Renamed tracks like this (using rename-it.exe freeware): "bd1994-07-04d1t??"
+
+Tracklist:
+
+CD 1  [71:02:820]
+
+01. [07:17:686] Jokerman
+02. [05:58:760] Lay, Lady, Lay
+03. [05:20:899] All Along the Watchtower
+04. [05:46:646] Under the Red Sky
+05. [08:35:595] Tangled Up In Blue
+06. [05:39:541] I'll Be Your Baby Tonight
+07. [03:20:114] Lady Came From Baltimore
+08. [05:21:893] Masters of War
+09. [04:06:961] Mama, You Been On My Mind
+10. [05:40:573] God Knows
+11. [07:30:706] Tears Of Rage
+12. [06:23:446] She Belongs To Me
+
+CD 2  [20:19:477]
+
+01. [05:39:392] Maggie's Farm
+02. [05:43:186] What Good Am I ?
+03. [08:56:899] It Ain't Me, Babe
+
+Global Time [91:22.297]
+
+
+Bob Dylan - vocal, guitar, harmonica
+Bucky Baxter - pedal steel, lap steel, mandolin, dobro
+Tony Garnier - bass
+John Jackson - guitar
+Winston Watson - drums
+
+
+further info:
+http://www.bjorner.com/DSN15100%20-%201994%20Europe%20Summer%20Tour.htm#DSN15110
+
+Enjoy!
+
+Luisbp51 (Hungercity June 2009)
+
+Please retain this info file as a marker for this lossless set and if you spread it
+please list it in the description to avoid others getting duplicates.

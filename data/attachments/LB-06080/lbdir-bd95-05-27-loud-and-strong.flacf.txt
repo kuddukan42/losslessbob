@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-27-loud-and-strong.flacf 
+=================== 
+=================== 
+=================== 
+560bcb981c686d868d06c1fc9d19e786  bd5-05-27-loud-and-strongd1t01.flac
+28b4590b12d12a433a43d45bb55a4923  bd5-05-27-loud-and-strongd1t02.flac
+4a166e33f65ba4ae8107a911d7039109  bd5-05-27-loud-and-strongd1t03.flac
+9bbd10cc1d59bbafd5221484e3077c10  bd5-05-27-loud-and-strongd1t04.flac
+af211be0083182dfc693459e81c02e5d  bd5-05-27-loud-and-strongd1t05.flac
+491e0b6d8940799f007454ee22e93093  bd5-05-27-loud-and-strongd1t06.flac
+690107a992114d6b91379ffc1aab575f  bd5-05-27-loud-and-strongd1t07.flac
+88b0de717114623f83084bfccf721597  bd5-05-27-loud-and-strongd1t08.flac
+c024803a7538166af2a3b374fcbf902e  bd5-05-27-loud-and-strongd1t09.flac
+68550345149f08e527c0937011bbe1bb  bd5-05-27-loud-and-strongd1t10.flac
+cdbedc44aa9e6b4a391a245336b0c597  bd5-05-27-loud-and-strongd1t11.flac
+26db8f8d567c71795f66cdb37e60a90e  bd5-05-27-loud-and-strongd2t01.flac
+3dbe5b6a9440e794b716cc64c5cddd8d  bd5-05-27-loud-and-strongd2t02.flac
+8a12a8d55d35936a36d454d704412987  bd5-05-27-loud-and-strongd2t03.flac
+67039167c1d0bd80c73e19c2a64a3bfa  bd5-05-27-loud-and-strongd2t04.flac
+705584c63f4599b0be0471c5fe701981  bd5-05-27-loud-and-strongd2t05.flac
+a696c0e672e40ec94935cff0e69c26d0  bd5-05-27-loud-and-strongd2t06.flac
+c1e43a41c7361350291e8c6109885f23  bd5-05-27-loud-and-strongd2t07.flac
+846f571ca1d85d256d17641b1866b6e3  bd5-05-27-loud-and-strongd2t08.flac
+60aa30da479dd9caa5639caaf784142b  bd5-05-27-loud-and-strongd2t09.flac
+3a6458821a1355a50a84f19f08aa7882  bd5-05-27-loud-and-strongd2t10.flac
+ea6a715f339438d80d12a7769541cd32  bd5-05-27-loud-and-strongd2t11.flac
+418f5c0c2eaa031a3a2d24b4c317feb4  bd95-05-27-loud-and-strong.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-27-loud-and-strong.flacf 
+=================== 
+=================== 
+=================== 
+bd5-05-27-loud-and-strongd1t01.flac:dc4cfbf2ff4fa16368a60128bf86ef54
+bd5-05-27-loud-and-strongd1t02.flac:b34aad54eb83fab9ff01a4d411b2e2d9
+bd5-05-27-loud-and-strongd1t03.flac:0ac8001afe44f9423f89a14ec01377c8
+bd5-05-27-loud-and-strongd1t04.flac:5bd5ba65ea029dd5949f01493eeef68c
+bd5-05-27-loud-and-strongd1t05.flac:f8ef59b8151c57b18f8e92faa5ff81b1
+bd5-05-27-loud-and-strongd1t06.flac:d518129c0ff7dda30c9d9c4f784b8b97
+bd5-05-27-loud-and-strongd1t07.flac:721472e9009cc77c28ba1855aed5a929
+bd5-05-27-loud-and-strongd1t08.flac:355f5f27d31fef0ba6bea8232d9ddcf3
+bd5-05-27-loud-and-strongd1t09.flac:855d532a6202e45ad203106987a7d3b3
+bd5-05-27-loud-and-strongd1t10.flac:712e7b56428d93a438cb2185bda823d0
+bd5-05-27-loud-and-strongd1t11.flac:3e035fc20bfaf351ba3589460202e434
+bd5-05-27-loud-and-strongd2t01.flac:adcd8b1f8aa6d88cb4a5d7e161bd34ff
+bd5-05-27-loud-and-strongd2t02.flac:7e391fc6c0ad448a41492531ce2d21f1
+bd5-05-27-loud-and-strongd2t03.flac:b63a7dd733a38a697626f424790e3864
+bd5-05-27-loud-and-strongd2t04.flac:1d939564b57a632ee2dc70219dde3c9e
+bd5-05-27-loud-and-strongd2t05.flac:cab42fea648f71d19665985bb2a996e0
+bd5-05-27-loud-and-strongd2t06.flac:fa8113c040f9a64e7ad8db039b1da46b
+bd5-05-27-loud-and-strongd2t07.flac:0ffd4acf05059758695a0699ecc8ec75
+bd5-05-27-loud-and-strongd2t08.flac:4dfb65955884722188c3576deae03a7b
+bd5-05-27-loud-and-strongd2t09.flac:31804e98fda9b87c7f326c4d9fe0a19c
+bd5-05-27-loud-and-strongd2t10.flac:8d2cf518a5cdd65e839f3c7a5eee1d1e
+bd5-05-27-loud-and-strongd2t11.flac:a36a6657d71d0b768cb1d50b372b1e7d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-27-loud-and-strong.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.12       53301068 B   ---   --   ---xx   flac  0.6914  bd5-05-27-loud-and-strongd1t01.flac
+     6:41.28       70802300 B   ---   --   ---xx   flac  0.6503  bd5-05-27-loud-and-strongd1t02.flac
+     6:40.70       70724684 B   ---   --   ---xx   flac  0.6674  bd5-05-27-loud-and-strongd1t03.flac
+     8:33.45       90599084 B   ---   --   ---xx   flac  0.5934  bd5-05-27-loud-and-strongd1t04.flac
+     6:54.25       73088444 B   ---   --   ---xx   flac  0.6724  bd5-05-27-loud-and-strongd1t05.flac
+     7:51.30       83155004 B   ---   --   ---xx   flac  0.6723  bd5-05-27-loud-and-strongd1t06.flac
+     7:24.45       78427484 B   ---   --   ---xx   flac  0.4517  bd5-05-27-loud-and-strongd1t07.flac
+     5:35.02       59098748 B   ---   --   ---xx   flac  0.5022  bd5-05-27-loud-and-strongd1t08.flac
+     7:17.03       77093900 B   ---   --   ---xx   flac  0.5166  bd5-05-27-loud-and-strongd1t09.flac
+     6:01.70       63845084 B   ---   --   ---xx   flac  0.6662  bd5-05-27-loud-and-strongd1t10.flac
+     8:40.50       91845644 B   ---   --   ---xx   flac  0.5834  bd5-05-27-loud-and-strongd1t11.flac
+     9:48.02      103727948 B   ---   --   ---xx   flac  0.6308  bd5-05-27-loud-and-strongd2t01.flac
+     7:42.30       81567404 B   ---   --   ---xx   flac  0.6097  bd5-05-27-loud-and-strongd2t02.flac
+     5:53.08       62288060 B   ---   --   ---xx   flac  0.6503  bd5-05-27-loud-and-strongd2t03.flac
+     5:16.02       55747148 B   ---   --   ---xx   flac  0.6162  bd5-05-27-loud-and-strongd2t04.flac
+     5:15.40       55660124 B   ---   --   ---xx   flac  0.6443  bd5-05-27-loud-and-strongd2t05.flac
+     5:15.25       55624844 B   ---   --   ---xx   flac  0.6786  bd5-05-27-loud-and-strongd2t06.flac
+     5:24.58       57290060 B   ---   --   ---xx   flac  0.6301  bd5-05-27-loud-and-strongd2t07.flac
+     5:34.60       59058764 B   ---   --   ---xx   flac  0.6095  bd5-05-27-loud-and-strongd2t08.flac
+     6:15.55       66279404 B   ---   --   ---xx   flac  0.6987  bd5-05-27-loud-and-strongd2t09.flac
+     9:56.32      105209708 B   ---   --   ---xx   flac  0.5517  bd5-05-27-loud-and-strongd2t10.flac
+     6:51.05       72512204 B   ---   --   ---xx   flac  0.5616  bd5-05-27-loud-and-strongd2t11.flac
+   149:56.22     1586947112 B                            0.6117  (22 files)
+=================== 
+=================== 
+=================== 

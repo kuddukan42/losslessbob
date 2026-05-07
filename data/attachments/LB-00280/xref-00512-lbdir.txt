@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-05-09-c.flacf 
+=================== 
+=================== 
+=================== 
+48fc6c4429fce570fc408d421867a530  d1\01-Good Evening Ladies And Gentlemen ....flac
+5dc468afca1157852d7087cfeb1c66c4  d1\02-Maggie's Farm.flac
+4cfc21d79efe60616c4338e40f40fe22  d1\03-Senor (Tales Of Yankee Power).flac
+767181d6438f1bdec29eac89404e67de  d1\04-It's Alright Ma (I'm Only Bleeding).flac
+06377de48f4876d5296fbe8b5e678eed  d1\05-One Too Many Mornings.flac
+275d81e5b711928cbd01665fce6fd2af  d1\06-Memphis Blues Again.flac
+cd06982e29326bc104e6f053330d922f  d1\07-Moonlight.flac
+22b805973d086b6fbc8f1416345f1db3  d1\08-I Don't Believe You.flac
+77629a2f6f81dfa15ce4ae3a7df7dfc1  d1\09-Lonesome Day Blues.flac
+6e814d9b1ca12a8817382f9be47269ad  d1\10-Masters Of War.flac
+0930e6243911952d87532287e0eb0a8f  d1\11-Visions of Johanna.flac
+f00d657b8a0c0028cfcd48b770c183ca  d1\12-Don't Think Twice, It's All Right.flac
+d2878432233623e2742386f18e1c4f3f  d2\01-Blind Willie McTell.flac
+4c77fa61990840eac3d1604343627c50  d2\02-Summer Days.flac
+fbed74c6881c9a2b37f1d5b0842dfc5b  d2\03-Drifter's Escape.flac
+e7feb9cf3af0d19ef815cc914bf2e51b  d2\04-Rainy Day Women #12 & 35.flac
+6a58808eb8df718e6b13d60f92a22dd7  d2\05-Things Have Changed.flac
+a40b152fe6b719d0f418eb7f34c62ddd  d2\06-Like A Rolling Stone.flac
+06be0af6f8384865d67ab2e04af49763  d2\07-Forever Young.flac
+f46a40115da2336f58d0627b63608626  d2\08-Honest With Me.flac
+53385e422cea368ecf999c655a3a0960  d2\09-Blowin' In The Wind.flac
+bbe15778a73ff0c4bd5c724dd3a6c4d6  d2\10-All Along The Watchtower.flac
+35a836d55558c519a5f024bda79c9b00  flac.fingerprint.txt
+bec791f876faf925318b6b4645874c8d  flac.md5
+d73b0c9683e3911bb4498a6a001c273f  flac.shntool_len.txt
+d711ecf199333d0ca0b6141fc6d37994  info.txt
+564f83001e2ccf937eb52ec27fcfff1a  wav.fingerprint.txt
+9f254b226f1dd2e2af7cdb3dadcbd091  wav.md5
+305fbbbcf1261a4a0bf8dd31c06dc13a  wav.shntool_len.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-05-09-c.flacf\d1 
+=================== 
+=================== 
+=================== 
+01-good evening ladies and gentlemen ....flac:b2ff2afdf12def8846a3acd0c08cddb4
+02-maggie's farm.flac:f35fa922de4b384877748720136b501b
+03-senor (tales of yankee power).flac:270dea81130adcbff102bbb6d208a5fd
+04-it's alright ma (i'm only bleeding).flac:b64ad395385576d2c63bd9bd1be5090a
+05-one too many mornings.flac:cf97712459d00692d307a9f42ecdcd4b
+06-memphis blues again.flac:2ad246396946cc673e06abc387830324
+07-moonlight.flac:86a0f9ba872971a7299bf0a5c8e2409d
+08-i don't believe you.flac:7ee14446d633e1fdc1e1593ce0d810f5
+09-lonesome day blues.flac:75effb4c709d9adce0cf86c4e48aef60
+10-masters of war.flac:cf78433d2db337e81c4accdfa8d474d1
+11-visions of johanna.flac:6282afa3d289c6c45d29b83ecab1a8e7
+12-don't think twice, it's all right.flac:da6fa8886c908c4058a6ee85515128b6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-05-09-c.flacf\d2 
+=================== 
+=================== 
+=================== 
+01-blind willie mctell.flac:6f510a6b732db94478bebb377d718f7f
+02-summer days.flac:9141b8720bfc78c6d0589b0cf1df30d3
+03-drifter's escape.flac:c1f569e37dbdebb1af2fe18e52cfde2f
+04-rainy day women #12 & 35.flac:e654207905a79781537c76ce37951f1e
+05-things have changed.flac:fb5c05a5a831251f062d1ecc217c75a9
+06-like a rolling stone.flac:804040499db37d311c9731ccc7f8b126
+07-forever young.flac:1522940e16bca2e063e8374ed37d75a9
+08-honest with me.flac:f42d951ba456d9339188cb6d4fd919cf
+09-blowin' in the wind.flac:710d1b0beb49cb27e9de5cea8cb1ec40
+10-all along the watchtower.flac:447113d82a2450999adad6e7b51bda6a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-05-09-c.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:02.66       11092076 B   ---   --   ---xx   flac  0.5418  01-Good Evening Ladies And Gentlemen ....flac
+     3:29.15       36902924 B   ---   --   ---xx   flac  0.7035  02-Maggie's Farm.flac
+     4:53.48       51798140 B   ---   --   ---xx   flac  0.6094  03-Senor (Tales Of Yankee Power).flac
+     6:38.48       70320140 B   ---   --   ---xx   flac  0.6156  04-It's Alright Ma (I'm Only Bleeding).flac
+     6:15.06       66164156 B   ---   --   ---xx   flac  0.5640  05-One Too Many Mornings.flac
+     7:51.66       83239676 B   ---   --   ---xx   flac  0.6656  06-Memphis Blues Again.flac
+     4:57.26       52451996 B   ---   --   ---xx   flac  0.5063  07-Moonlight.flac
+     6:19.26       66916796 B   ---   --   ---xx   flac  0.6255  08-I Don't Believe You.flac
+     7:22.33       78046460 B   ---   --   ---xx   flac  0.7013  09-Lonesome Day Blues.flac
+     5:09.33       54585260 B   ---   --   ---xx   flac  0.5825  10-Masters Of War.flac
+     9:08.05       96679004 B   ---   --   ---xx   flac  0.5565  11-Visions of Johanna.flac
+     6:27.64       68417372 B   ---   --   ---xx   flac  0.5397  12-Don't Think Twice, It's All Right.flac
+    69:35.61      736614000 B                            0.6044  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-05-09-c.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:20.60       77757164 B   ---   --   ---xx   flac  0.6040  01-Blind Willie McTell.flac
+     7:33.36       79993916 B   ---   --   ---xx   flac  0.6684  02-Summer Days.flac
+     5:41.56       60284156 B   ---   --   ---xx   flac  0.7018  03-Drifter's Escape.flac
+     8:20.52       88322348 B   ---   --   ---xx   flac  0.6704  04-Rainy Day Women #12 & 35.flac
+     6:04.44       64313132 B   ---   --   ---xx   flac  0.6312  05-Things Have Changed.flac
+     8:20.22       88251788 B   ---   --   ---xx   flac  0.6417  06-Like A Rolling Stone.flac
+     6:13.56       65928956 B   ---   --   ---xx   flac  0.5880  07-Forever Young.flac
+     7:03.43       74718380 B   ---   --   ---xx   flac  0.6714  08-Honest With Me.flac
+     6:21.49       67323692 B   ---   --   ---xx   flac  0.5974  09-Blowin' In The Wind.flac
+     5:48.49       61502492 B   ---   --   ---xx   flac  0.6769  10-All Along The Watchtower.flac
+    68:49.17      728396024 B                            0.6452  (10 files)
+=================== 
+=================== 
+=================== 

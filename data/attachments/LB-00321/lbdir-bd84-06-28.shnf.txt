@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-28.shnf 
+=================== 
+=================== 
+=================== 
+310088d34024daccfffbd06ae8ae8983  barcelona_84_tree_back.jpg
+8f903437000a6c8a460af7a7948888ce  barcelona_84_tree_front.jpg
+6977eebd3ee57812830acf6a07c8f4f3  bd84-06-28.txt
+46fc6040713b704817c58bde782c8290  bobarc2checksum.md5
+f6c75e4c2e2576c048dfdcc4ea397278  bobbarc1checksum.md5
+0c090df928a28b401f265431d7ba6ae3  bobbarcelona84-D1T01.shn
+1c88bc9ca74a0c983f46e2ad72b13a97  bobbarcelona84-D1T02.shn
+fa6b3ad441c4a162ed5ca5a57a81538f  bobbarcelona84-D1T03.shn
+b8c5c7b2a99e2f09c41379a29d26322b  bobbarcelona84-D1T04.shn
+26978a887303bcfab96aa7af94550cca  bobbarcelona84-D1T05.shn
+c921011835b61d1188395f010d6fcfb9  bobbarcelona84-D1T06.shn
+15c08228742ee56068a34c9426d2fe4e  bobbarcelona84-D1T07.shn
+23615018573c906e76454a1d87c7650e  bobbarcelona84-D1T08.shn
+bc21602d0324f3d248188d4be098f806  bobbarcelona84-D1T09.shn
+a23460f74dab4ee6462e1a8f7dd24be9  bobbarcelona84-D1T10.shn
+cd0cfea14cbccb7be09a373661bd13fb  bobbarcelona84-D1T11.shn
+3a3d9e67fb289f8c4bafde6aa1c16538  bobbarcelona84-D1T12.shn
+a68348442e7d118d9be97f9d565e4168  bobbarcelona84-D1T13.shn
+28af05162863e4eb96c5bf6a7dba02ba  bobbarcelona84-D1T14.shn
+03105b295709060ccfc0f40dd7573c8d  bobbarcelona84-D1T15.shn
+efc9ac75bf8a132c5aa72648bf7158d7  bobbarcelona84-D2T01.shn
+e6546cf1b9ac110b4a89838d7f9079d2  bobbarcelona84-D2T02.shn
+29022af520ce74feba830da5b8740e9a  bobbarcelona84-D2T03.shn
+839458c5f90c996b5a3d3615579e65c1  bobbarcelona84-D2T04.shn
+38566bfe33a68ce5b546cdbb0589a3f7  bobbarcelona84-D2T05.shn
+a5f557d0675e3210642d2e774e8d8ba0  bobbarcelona84-D2T06.shn
+c8dbe3be5c69fa1dc0785d5ed9849f80  bobbarcelona84-D2T07.shn
+9594950dc19bae6ef82e88c46c6d2656  bobbarcelona84-D2T08.shn
+d56ed27e19661822fcf73dfa1d369e09  bobbarcelona84-D2T09.shn
+3fc5ee9cb6dd874f2c450dcd3f4a1c84  bobbarcelona84-D2T10.shn
+2f05cdd36f6d3b11374f841d984cd633  bobbarcelona84-D2T11.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd84-06-28.shnf 
+=================== 
+=================== 
+=================== 
+b70a8872a179f3fa4ee15e5399126b45  [shntool]  bobbarcelona84-D1T01.wav
+1f1749df0fb7f1b95f3eafa17820f6ef  [shntool]  bobbarcelona84-D1T02.wav
+3efed671d32927ee434d4ebb4c94f191  [shntool]  bobbarcelona84-D1T03.wav
+bb70195dfaed37c3b53b00037f205e1d  [shntool]  bobbarcelona84-D1T04.wav
+bbd050050b9bf3050588135b3dd8cfc9  [shntool]  bobbarcelona84-D1T05.wav
+c85593a08d46f40ec91e0ffdcab85323  [shntool]  bobbarcelona84-D1T06.wav
+1d48d490881ad2eb34ca23e214f5ba9d  [shntool]  bobbarcelona84-D1T07.wav
+a02bc6234475c696337b7aef0a1822f8  [shntool]  bobbarcelona84-D1T08.wav
+06ccc5932b2e4b1016c8a92ca89df90d  [shntool]  bobbarcelona84-D1T09.wav
+79b79d8b1b16403233432ed419434568  [shntool]  bobbarcelona84-D1T10.wav
+8acd9694e88144b7b9c75567a8118d6c  [shntool]  bobbarcelona84-D1T11.wav
+b842ecf7c46a583d1039a2bc2954fe3f  [shntool]  bobbarcelona84-D1T12.wav
+82d98e3e94f747f8d8d2d34b1bc9fd40  [shntool]  bobbarcelona84-D1T13.wav
+9cfa2055f80af814831bf2df4ee8984b  [shntool]  bobbarcelona84-D1T14.wav
+49de799f4b64f76b19cbaddce72feed5  [shntool]  bobbarcelona84-D1T15.wav
+0cba0300b2307f562aa35b123f77c715  [shntool]  bobbarcelona84-D2T01.wav
+d2a83c4a6d917624e93ffd4ede72829d  [shntool]  bobbarcelona84-D2T02.wav
+b89e8a46a8579a59f073622c09971c44  [shntool]  bobbarcelona84-D2T03.wav
+4c301d724cd6bf1733ea86a537bc10e0  [shntool]  bobbarcelona84-D2T04.wav
+7b89e4db91f5805ebe513704388b4ba0  [shntool]  bobbarcelona84-D2T05.wav
+19ee81fb3ebbf49f34d787f43ff0aac9  [shntool]  bobbarcelona84-D2T06.wav
+b4940d7adb978a96b7ad5de57d257e04  [shntool]  bobbarcelona84-D2T07.wav
+56c3c6b8477facb04e7c80bba668b7c8  [shntool]  bobbarcelona84-D2T08.wav
+1d509d051e1ee18cb81306a93dcd17d7  [shntool]  bobbarcelona84-D2T09.wav
+c40647d161fdd998091439c3df084020  [shntool]  bobbarcelona84-D2T10.wav
+0992972da856b506ea24f814c48c576e  [shntool]  bobbarcelona84-D2T11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-28.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.56       53757356 B   ---   --   ---xx    shn  0.6582  bobbarcelona84-D1T01.shn
+     6:12.59       65759612 B   ---   --   ---xx    shn  0.6147  bobbarcelona84-D1T02.shn
+     4:08.48       43860140 B   ---   --   ---xx    shn  0.7028  bobbarcelona84-D1T03.shn
+     5:10.19       54728732 B   ---   --   ---xx    shn  0.6743  bobbarcelona84-D1T04.shn
+     4:41.30       49639004 B   ---   --   ---xx    shn  0.6888  bobbarcelona84-D1T05.shn
+     5:53.29       62337452 B   ---   --   ---xx    shn  0.6474  bobbarcelona84-D1T06.shn
+     3:47.72       40212188 B   ---   --   ---xx    shn  0.6257  bobbarcelona84-D1T07.shn
+     6:23.16       67598876 B   ---   --   ---xx    shn  0.6809  bobbarcelona84-D1T08.shn
+     5:27.15       57718124 B   ---   --   ---xx    shn  0.6159  bobbarcelona84-D1T09.shn
+     6:10.06       65282156 B   ---   --   ---xx    shn  0.5944  bobbarcelona84-D1T10.shn
+     5:32.22       58616588 B   ---   --   ---xx    shn  0.6167  bobbarcelona84-D1T11.shn
+     5:33.18       58783580 B   ---   --   ---xx    shn  0.6377  bobbarcelona84-D1T12.shn
+     5:53.11       62295116 B   ---   --   ---xx    shn  0.6464  bobbarcelona84-D1T13.shn
+     3:55.34       41534012 B   ---   --   ---xx    shn  0.6516  bobbarcelona84-D1T14.shn
+     3:53.40       41195324 B   ---   --   ---xx    shn  0.6707  bobbarcelona84-D1T15.shn
+     6:19.46       66963836 B   ---   --   ---xx    shn  0.6371  bobbarcelona84-D2T01.shn
+     4:12.41       44549276 B   ---   --   ---xx    shn  0.6301  bobbarcelona84-D2T02.shn
+     8:44.20       92480684 B   ---   --   ---xx    shn  0.6246  bobbarcelona84-D2T03.shn
+     5:57.56       63106556 B   ---   --   ---xx    shn  0.6156  bobbarcelona84-D2T04.shn
+     4:22.26       46277996 B   ---   --   ---xx    shn  0.6331  bobbarcelona84-D2T05.shn
+     4:32.38       48070220 B   ---   --   ---xx    shn  0.5761  bobbarcelona84-D2T06.shn
+     4:18.39       45602972 B   ---   --   ---xx    shn  0.6250  bobbarcelona84-D2T07.shn
+     4:31.60       47945564 B   ---   --   ---xx    shn  0.6192  bobbarcelona84-D2T08.shn
+     6:32.58       69285260 B   ---   --   ---xx    shn  0.6303  bobbarcelona84-D2T09.shn
+     4:48.69       50965532 B   ---   --   ---xx    shn  0.6808  bobbarcelona84-D2T10.shn
+     5:21.58       56760860 B   ---   --   ---xx    shn  0.6550  bobbarcelona84-D2T11.shn
+   137:30.11     1455327016 B                            0.6392  (26 files)
+=================== 
+=================== 
+=================== 

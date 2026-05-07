@@ -1,0 +1,59 @@
+Bob Dylan
+Orpheum Theatre
+Boston, Massachusetts
+April 17, 2005
+
+Disc 1:
+d1t01 [00:26] Introduction
+d1t02 [04:36] Drifter's Escape
+d1t03 [07:04] Love Minus Zero/No Limit
+d1t04 [05:04] God Knows
+d1t05 [05:38] Ring Them Bells
+d1t06 [08:14] Leopard-Skin Pill-Box Hat
+d1t07 [04:55] Tryin' To Get To Heaven
+d1t08 [08:44] Down Along The Cove
+d1t09 [05:33] I Believe In You
+d1t10 [05:31] Tweedle Dee & Tweedle Dum
+Total time: [55:45]
+
+Disc 2:
+d2t01 [05:41] I Dreamed I Saw St. Augustine
+d2t02 [06:49] Ballad Of A Thin Man
+d2t03 [09:59] A Hard Rain's A-Gonna Fall
+d2t04 [06:44] It Takes A Lot To Laugh, It Takes A Train To Cry
+d2t05 [00:23] Band Introduction
+d2t06 [05:31] All Along The Watchtower
+Total time: [35:08]
+
+Band Members:
+Bob Dylan - vocals, keyboard, harp
+Donnie Herron - violin, banjo, guitar, pedal steel
+Denny Freeman - guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Source:
+13th row - in front of right stack
+akg 391's > denecke ps-2 > denecke ad-20 > sony d8
+sony d8 > tascam cd-rw700 > eac > cool edit > cd wave > flac
+
+Flac Fingerprint
+bd2005-04-17d1t01.flac:80f5819ebf78f511054bca1dfe2f7903
+bd2005-04-17d1t02.flac:a2944cf2656ceba3271d775fe94fdf94
+bd2005-04-17d1t03.flac:704d26ee9a0a00d895c93bd6ea71f8e6
+bd2005-04-17d1t04.flac:cb6aea930deb5d7d96f78584c64ed03d
+bd2005-04-17d1t05.flac:b037cacf9ab4fbca7def54f58bbced4c
+bd2005-04-17d1t06.flac:1e5b98762c9bbf33c05e1402688afb3a
+bd2005-04-17d1t07.flac:29015ae8010fa2ed8670df7803a7d711
+bd2005-04-17d1t08.flac:3c552f14a052b773f566485b4cf4a837
+bd2005-04-17d1t09.flac:032b86c9ebc2901abe96ff6b70b9f0a8
+bd2005-04-17d1t10.flac:b253c5a4f48c896e91e46ca74c732a2f
+bd2005-04-17d2t01.flac:978d324c2a7bb2a135b6511f01046212
+bd2005-04-17d2t02.flac:36e1e989736f886b063489c09ef9b9f9
+bd2005-04-17d2t03.flac:968fd48ace905d06c48f14a0880706e2
+bd2005-04-17d2t04.flac:cbadaf711cae2adcdfd011466190e550
+bd2005-04-17d2t05.flac:eb57d902f247ce2d69b7f251d726b86f
+bd2005-04-17d2t06.flac:cf4a4c8e1ae61514026319557ff81e6d
+
+

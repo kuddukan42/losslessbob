@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-08-c.flacf 
+=================== 
+=================== 
+=================== 
+fbf4f47356e1f461c10b63f29ebdfa42  Artwork & Info\1999-04-08 Colisio Oporto, Oporto, Portugal.txt
+d843c2a0a953ea29eaf90bce6c404629  Artwork & Info\Info.txt
+68bb27878ad1ba297cb58977a95f7b10  Artwork & Info\oporto b.JPG
+007e17b0b89e7ea4715a1bd1183cedd9  Artwork & Info\oporto f.JPG
+9e83dfdcfb0a8b2618c2c2f3fa95d7ed  bd99-04-08-c-LB-4659.txt
+a1d3dfad2cf2186f6a1d346dbf46dbdd  CD1\01 You're gonna quit me.flac
+769ae425b997c52b01fbc20495604f63  CD1\02 Mr. Tambourine Man.flac
+84065cec07780df899c4431261121d31  CD1\03 Mama, you been on my mind.flac
+d381ade5ac42097e99d8c019bb240648  CD1\04 Masters of war.flac
+cae69029926800c9dc4fbcb440927a1f  CD1\05 Fourth time around.flac
+c65cb3fa868f1fe56518adbb21183a5f  CD1\06 Tangled up in blue.flac
+d49887ba9f8d6340d0b406af12e5a2dc  CD1\07 Watching the river flow.flac
+8a1af6f7707a238e9c39a1fe00c7a833  CD1\08 Just like a woman.flac
+e25848d5483a2777e33ee92395a3d7c0  CD1\09 Tough mama.flac
+41c083a8242967d71e9047f79c5de403  CD1\10 Simple twist of fate.flac
+e64ec214b50e7749af1128494f3845b3  CD1\11 Stuck inside of Mobile with the Memphis blues again.flac
+37e20ceb2e844ff8273356f246e66894  CD2\12 Make you feel my love.flac
+04adda917c879f8bc6ccc8f9b5fef57c  CD2\13 Highway 61 revisited.flac
+27657bb636b54c69cd91ce9be35dc991  CD2\14 Love sick.flac
+fb1fa78102546a85d2cdcc92592c9655  CD2\15 Leopard-skin pill-box hat.flac
+5841b5eee41d64b8bcc4a1893e9447c8  CD2\16 Don't think twice, it's all right.flac
+f9a9b4381f9dcc67a04b919957c9501f  CD2\17 Like a rolling stone.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-08-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 You're gonna quit me.flac:3a9144e1f573dcbca133c8ee3c8c153d
+02 Mr. Tambourine Man.flac:b6ffecae056b207cef04e4625e80b304
+03 Mama, you been on my mind.flac:68202a107d0be35ba1cc721d84c80636
+04 Masters of war.flac:badf7c204157a3c360710b87d3ea9d62
+05 Fourth time around.flac:9d3aa8ed1ea8603a338af2b4c6696fc1
+06 Tangled up in blue.flac:6714068db1afbb101d6e411d6e999398
+07 Watching the river flow.flac:add199b9b3fad107c9e71de13689dac7
+08 Just like a woman.flac:ef3983594120ea564e1f90a0fcbbefda
+09 Tough mama.flac:dd0e8bf60dfd65fd5b34c536b9712c2a
+10 Simple twist of fate.flac:1020ed003946e2fcccb6e99294fec3e5
+11 Stuck inside of Mobile with the Memphis blues again.flac:4f0ab42dc330e373059d131b5d9869ee
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-08-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+12 Make you feel my love.flac:87c1933e496723fcc9ccbc412ed81620
+13 Highway 61 revisited.flac:38babe99fdfdc3c2dae3ec582435bc75
+14 Love sick.flac:c48ebef1ef2f8090033495e0d9a9858e
+15 Leopard-skin pill-box hat.flac:488adbc9ffe1d1d9133e81e24b27ac46
+16 Don't think twice, it's all right.flac:89ceb9a23c90d837e0edd75f1fa75450
+17 Like a rolling stone.flac:4a2281287c5b8d4165de84659a5ddf67
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-08-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:25.00       36162044 B   ---   --   ---xx   flac  0.5814  01 You're gonna quit me.flac
+     6:11.16       65482076 B   ---   --   ---xx   flac  0.5827  02 Mr. Tambourine Man.flac
+     4:35.33       48587660 B   ---   --   ---xx   flac  0.5701  03 Mama, you been on my mind.flac
+     5:12.60       55177964 B   ---   --   ---xx   flac  0.5860  04 Masters of war.flac
+     4:23.16       46430876 B   ---   --   ---xx   flac  0.5662  05 Fourth time around.flac
+     8:06.27       85793948 B   ---   --   ---xx   flac  0.6093  06 Tangled up in blue.flac
+     5:31.51       58508396 B   ---   --   ---xx   flac  0.6037  07 Watching the river flow.flac
+     7:24.46       78429836 B   ---   --   ---xx   flac  0.5888  08 Just like a woman.flac
+     6:00.10       63527564 B   ---   --   ---xx   flac  0.5627  09 Tough mama.flac
+     7:49.52       82853948 B   ---   --   ---xx   flac  0.5592  10 Simple twist of fate.flac
+     7:46.22       82254188 B   ---   --   ---xx   flac  0.5956  11 Stuck inside of Mobile with the Memphis blues again.flac
+    66:26.33      703208500 B                            0.5835  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-08-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.41       44020076 B   ---   --   ---xx   flac  0.5493  12 Make you feel my love.flac
+     6:05.03       64393100 B   ---   --   ---xx   flac  0.6170  13 Highway 61 revisited.flac
+     5:41.47       60262988 B   ---   --   ---xx   flac  0.5756  14 Love sick.flac
+     5:26.29       57574652 B   ---   --   ---xx   flac  0.6116  15 Leopard-skin pill-box hat.flac
+     6:17.73       66674540 B   ---   --   ---xx   flac  0.5187  16 Don't think twice, it's all right.flac
+     8:22.73       88724540 B   ---   --   ---xx   flac  0.5553  17 Like a rolling stone.flac
+    36:03.41      381649896 B                            0.5703  (6 files)
+=================== 
+=================== 
+=================== 

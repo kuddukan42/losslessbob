@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-20 FinsburyPark 
+=================== 
+=================== 
+=================== 
+df7137fc61a0f5cd9fb4556d24cf3a4a  bd04-06-20.txt
+dd820b0ed96e38d11873a0d4c39c72fe  bd2004-06-20 FinsburyPark.txt
+00ffebc4cda2526086be885d0f840455  d1\Track01.shn
+6cddab71ef106d08093a03a9fed87298  d1\Track02.shn
+e84c818b44004ed6167492604a26a7b8  d1\Track03.shn
+c5bce004af6222db9e3ad1bc332acb9f  d1\Track04.shn
+e93526491db92c31db4f1688865762f9  d1\Track05.shn
+2165652cd8ded37d19acc251d6c95d3d  d1\Track06.shn
+799722c9db3ee7983c2bf684d6c4c172  d1\Track07.shn
+037d39d46c40f338493db41a91f93177  d1\Track08.shn
+6479a1f3b75050d67e7d94486be6599d  d1\Track09.shn
+2f288ec51c42529caf8a3008726e53b2  d1\Track10.shn
+6a424a25c221313fa412fd6a2679c6e4  d1\Track11.shn
+1e0b401f90be40168824ff3ba8b7bb8b  d1\noname.md5
+64e8990ddfe4651f845c113784c52e39  d2\Track01.shn
+299d9d90cd5b743cfc6388bf57f55dba  d2\Track02.shn
+1d96619a2612ca42fda965c6f565a2a3  d2\Track03.shn
+11d5cc2610b76022bb2c669815077cce  d2\Track04.shn
+2b686d329accb5d52f2854fc957822e6  d2\Track05.shn
+338b475f092dc58b52d052028c8c7718  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-06-20 FinsburyPark\d2 
+=================== 
+=================== 
+=================== 
+94be44386a8c085d5c1a877af7d85825  [shntool]  Track01.wav
+912126c39e4b3d977a3f0edecf611678  [shntool]  Track02.wav
+f45866412d94fd77261175e240cbd5ac  [shntool]  Track03.wav
+7e40714b17445bd8e34f531b54222446  [shntool]  Track04.wav
+f6fb9de7c0f4c149036916f22267e761  [shntool]  Track05.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-06-20 FinsburyPark\d1 
+=================== 
+=================== 
+=================== 
+dd4c2fc68753667c7d740e179a6d8e4e  [shntool]  Track01.wav
+30806fdb19a390031d0263d21d601ba0  [shntool]  Track02.wav
+7e04e7e670d94092b29888df4a3e4c6f  [shntool]  Track03.wav
+5c75edfcc17152ee620b35fb5bfd4a6b  [shntool]  Track04.wav
+faf72f7803aeb47c3c65211c7dd76024  [shntool]  Track05.wav
+64ee44c2f3adf775690a194e2620c533  [shntool]  Track06.wav
+8b1a693d3720d1c5f6515c45081bc145  [shntool]  Track07.wav
+674dcf2020a0cc05ef04874aeb32653b  [shntool]  Track08.wav
+de2607d4112e40c2d4ad23cd65efafb9  [shntool]  Track09.wav
+7633ad7839111f36874c26f449a29e5a  [shntool]  Track10.wav
+15846932191aa5aefc7c8b17eb1b0221  [shntool]  Track11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-20 FinsburyPark\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.21       61789436 B   ---   --   -----    wav  1.0000  Track01.wav
+     8:02.20       85071884 B   ---   --   -----    wav  1.0000  Track02.wav
+     6:32.29       69217052 B   ---   --   -----    wav  1.0000  Track03.wav
+    10:05.62      106867868 B   ---   --   -----    wav  1.0000  Track04.wav
+     9:24.61       99633116 B   ---   --   -----    wav  1.0000  Track05.wav
+    39:55.43      422579356 B                            1.0000  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-20 FinsburyPark\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:22.19       14509532 B   ---   --   -----    wav  1.0000  Track01.wav
+     6:22.38       67474220 B   ---   --   -----    wav  1.0000  Track02.wav
+     6:04.40       64303724 B   ---   --   -----    wav  1.0000  Track03.wav
+     7:58.63       84467420 B   ---   --   -----    wav  1.0000  Track04.wav
+     5:54.44       62549132 B   ---   --   -----    wav  1.0000  Track05.wav
+     9:41.69      102650732 B   ---   --   -----    wav  1.0000  Track06.wav
+     6:41.72       70905788 B   ---   --   -----    wav  1.0000  Track07.wav
+     7:49.01       82733996 B   ---   --   -----    wav  1.0000  Track08.wav
+     6:02.27       63920348 B   ---   --   -----    wav  1.0000  Track09.wav
+     6:21.04       67217852 B   ---   --   -----    wav  1.0000  Track10.wav
+     7:20.68       77775980 B   ---   --   -----    wav  1.0000  Track11.wav
+    71:39.70      758508724 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 

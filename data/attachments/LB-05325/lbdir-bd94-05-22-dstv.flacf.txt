@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-05-22-dstv.flacf 
+=================== 
+=================== 
+=================== 
+191a0ec38f2a998a871ed203c2e85aec  01.flac
+9d2030ee179e8696ecf761f589309d85  02.flac
+a436c77bbd61064d8dc52570a3a5b64c  03.flac
+e9c163f4414a4c2dd24e9509df245320  04.flac
+195fe01f029c19c702a596439433eb39  05.flac
+4d4afdeda207e31d2e0dd3adbaac415a  06.flac
+1af4d2e4fc9424f8aa78dadf2d0e9fe3  07.flac
+953a2c306724cd49eaf72b52e31f8278  08.flac
+5f5166e4fb86f73e7595df7282c69021  09.flac
+7a542283d438c8a2138349c62aad9af9  10.flac
+2201f8f1c5467f825b50b40837222693  11.flac
+9e66bad3fc4ff4aacf0c8c562ea8bde4  12.flac
+2a1b83c536d782264652f99e0604ae85  13.flac
+3530b539c582766c42a9c9de1e5e2d74  14.flac
+74cbcde9f843aba9f3772b03ead4b879  GME 1994-5-22.txt
+78ee8e75f9e070fb242620584de56c36  Great Music Experience 1994.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-05-22-dstv.flacf 
+=================== 
+=================== 
+=================== 
+01.flac:be560e5968565292266a3bd1fe351aad
+02.flac:565a29befeb774a2be4550515a768cd9
+03.flac:2153a4c68e67e2622648cd9a46fbb80e
+04.flac:7fb2a73be40f6f9c85bbeab95537e4fb
+05.flac:932b7a9f17cab965dcf53c05d6c9361a
+06.flac:427968f0bcc2934342fd0b4682562918
+07.flac:b13b968a09de4898d761d5de621c3374
+08.flac:74651afa6f885ddf9e53f33478733b5a
+09.flac:cca0bfbca1df27ff0f84b055fe81b9a4
+10.flac:e57665a98a63655f3a69178152bcbf30
+11.flac:c5b17c861ed875d2a6c3c81a1d5f2a50
+12.flac:a26aaae4799e73ee20b0dc5969496e6c
+13.flac:3a977e57a375e0d17af94536c34ed846
+14.flac:9421b7c6638ba5ea1ebd74c0148e2e36
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-05-22-dstv.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.01       55215596 B   ---   --   ---xx   flac  0.5492  01.flac
+     7:26.26       78735596 B   ---   --   ---xx   flac  0.5054  02.flac
+     5:12.00       55036844 B   ---   --   ---xx   flac  0.4783  03.flac
+     5:19.57       56405708 B   ---   --   ---xx   flac  0.5234  04.flac
+     8:57.57       94860908 B   ---   --   ---xx   flac  0.5680  05.flac
+     4:14.30       44876204 B   ---   --   ---xx   flac  0.6456  06.flac
+     4:43.39       50012972 B   ---   --   ---xx   flac  0.6012  07.flac
+     7:41.65       81473324 B   ---   --   ---xx   flac  0.6317  08.flac
+     3:42.74       39334892 B   ---   --   ---xx   flac  0.5776  09.flac
+     3:33.26       37634396 B   ---   --   ---xx   flac  0.5640  10.flac
+     2:08.00       22579244 B   ---   --   ---xx   flac  0.5546  11.flac
+     7:23.63       78293420 B   ---   --   ---xx   flac  0.5866  12.flac
+     4:49.39       51071372 B   ---   --   ---xx   flac  0.6088  13.flac
+     5:44.52       60803948 B   ---   --   ---xx   flac  0.6045  14.flac
+    76:11.04      806334424 B                            0.5712  (14 files)
+=================== 
+=================== 
+=================== 

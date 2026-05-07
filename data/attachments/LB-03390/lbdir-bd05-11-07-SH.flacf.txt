@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-07-SH.flacf 
+=================== 
+=================== 
+=================== 
+a626b4093d1e0fd572fa452a3ab65b19  2005-11-07-Prag.md5
+e1b9fb43b411e18685cad5858a94157e  bd05-11-07-SH-LB-3390.txt
+99b335b18551796639f4a0ebbccda8ce  Titel 101.flac
+6f36c8728be4beeea85842ec777a6a69  Titel 102.flac
+805284d6958d81c8574690e20886aa60  Titel 103.flac
+22419d4b91defc653bcc0a65f483fb26  Titel 104.flac
+5daffe5d4cdc26e02c4af79b681d7932  Titel 105.flac
+d7daf5db54cfde0ac0da049d606e97df  Titel 106.flac
+4196497302bd60be36c7a34628132a92  Titel 107.flac
+76acc3cdc79ce207a98ed1213dd31d7b  Titel 108.flac
+8fe89c4e0a94c9bb42d7990a62ca1f93  Titel 109.flac
+7aa72ac80eb813534b85b3b2c53c8f5d  Titel 110.flac
+58287189ef5a81a9edc37bc9b9e3ada9  Titel 111.flac
+f39fb40e1db6ac08584fb9a106be584b  Titel 201.flac
+1aca95044f85e95fc905269a1a03ebf9  Titel 202.flac
+91a03727e4a998cbc51834cab8d7de96  Titel 203.flac
+e0e4fc9ca88a591ee33c002758d69970  Titel 204.flac
+f4a3607ebb3eac0dba9138882fdcb5ee  Titel 205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-07-SH.flacf 
+=================== 
+=================== 
+=================== 
+Titel 101.flac:92d88837259125daba0b6f83eb61c0df
+Titel 102.flac:34fe4a7e7aa9c3aaf58a285d4fe880cd
+Titel 103.flac:59d1640876c998a20bc82e19d92f5b49
+Titel 104.flac:89cf1dc790520b61af4893b09c7035e7
+Titel 105.flac:45b78d733ef9e51d55bae896314082c6
+Titel 106.flac:f37013d6ffd53ce6c3f9df999358ec65
+Titel 107.flac:2b259270d0dcc2a2791c3fdb4527b6ca
+Titel 108.flac:47f6dbedf50ba7337ae89f7df519f7fa
+Titel 109.flac:8b0fac96906ebdaeb7f41f60578700fb
+Titel 110.flac:c84052c99308d8d647976dd664e1ff69
+Titel 111.flac:8a7c486235bc9c605d6e7567d6edffe5
+Titel 201.flac:9204859bc95bfa3d119469bcb3d2bffe
+Titel 202.flac:549bb5778a3d66b26791b500b61bab92
+Titel 203.flac:9cff4a37c0960d350de5a605f3f0fb2d
+Titel 204.flac:6135dbd7da348f47f4d206e3c52d7247
+Titel 205.flac:eb69441c7e597fe53c9336009fbc1ec7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-07-SH.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.22       66201788 B   ---   --   ---xx   flac  0.4672  Titel 101.flac
+     5:26.40       57600524 B   ---   --   ---xx   flac  0.4313  Titel 102.flac
+     6:17.70       66667484 B   ---   --   ---xx   flac  0.4234  Titel 103.flac
+     5:43.41       60601676 B   ---   --   ---xx   flac  0.3903  Titel 104.flac
+     7:37.70       80779484 B   ---   --   ---xx   flac  0.4601  Titel 105.flac
+     6:49.53       72272300 B   ---   --   ---xx   flac  0.4507  Titel 106.flac
+     4:53.45       51791084 B   ---   --   ---xx   flac  0.4087  Titel 107.flac
+     7:53.01       83439596 B   ---   --   ---xx   flac  0.4843  Titel 108.flac
+     5:19.21       56321036 B   ---   --   ---xx   flac  0.3136  Titel 109.flac
+     7:55.58       83926460 B   ---   --   ---xx   flac  0.4567  Titel 110.flac
+     8:33.31       90566156 B   ---   --   ---xx   flac  0.3665  Titel 111.flac
+     7:03.04       74626652 B   ---   --   ---xx   flac  0.4584  Titel 201.flac
+     7:44.03       81856700 B   ---   --   ---xx   flac  0.3376  Titel 202.flac
+    11:47.08      124733660 B   ---   --   ---xx   flac  0.4428  Titel 203.flac
+     7:13.00       76381244 B   ---   --   ---xx   flac  0.3818  Titel 204.flac
+     5:59.31       63400556 B   ---   --   ---xx   flac  0.4796  Titel 205.flac
+   112:32.48     1191166400 B                            0.4238  (16 files)
+=================== 
+=================== 
+=================== 

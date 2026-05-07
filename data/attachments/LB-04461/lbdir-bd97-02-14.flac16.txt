@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-14.flac16 
+=================== 
+=================== 
+=================== 
+9d64822e05c3d7fd0ee96ad47919c010  bd1997-02-14.flac16.sbeok Fukuoka.ffp
+1493e99384fc49a58a204fb44ce3ea6f  bd1997-02-14.flac16.sbeok Fukuoka.st5
+8442778fb9c53e691f6cfea4df68737e  bd1997-02-14d1t03.PNG
+881fdad75dc2bd30f1e48c59648a8765  bd1997-02-14d2t02.PNG
+3560fe8c3ebe6b2dfb99103d63ba0d37  bd97-02-14-LB-4461.txt
+39cdd96db9cfe1d5a9b1f7d4c3b3788c  cd1\Fukuoka1997-02-14cd1.log
+1bdc71ae7df30c327ded749962445ed6  cd1\Unknown Artist - Fukuoka1997-02-14cd1.m3u
+bfc2136c9c29457ced4f7023b0ab20ff  cd1\bd1997-02-14d1t01.flac
+0cf0eb3dc6c9b662e88277b89fe5a1c6  cd1\bd1997-02-14d1t02.flac
+d27fb5d3a052739a9bc80b73fb966187  cd1\bd1997-02-14d1t03.flac
+26afabe37cd1b3286ab59cbd82cda2af  cd1\bd1997-02-14d1t04.flac
+22c406c7a5c836dfee25945832671e2d  cd1\bd1997-02-14d1t05.flac
+6f408de5f8559728380c8a6366e23d1d  cd1\bd1997-02-14d1t06.flac
+ebfda3c5b07be3dd4f1bea2920618f2b  cd1\bd1997-02-14d1t07.flac
+1d007fc4e3db8dd594f78eb16798f78f  cd1\bd1997-02-14d1t08.flac
+27dfe55291b227816d9358d0af569593  cd1\bd1997-02-14d1t09.flac
+7a10d49527a8e9d62fc82fc415e78d2e  cd1\cd1.shntool.txt
+406a3f3c725009daeb69d84b9167b8e9  cd2\Unknown Artist - bdFukuoka1997-02-14cd2.m3u
+7a2d71919a5e8ab9033ee96099feea64  cd2\bd1997-02-14d2t01.flac
+695c0492091884fead96e9f2a15a656c  cd2\bd1997-02-14d2t02.flac
+e08bb424f2c30ed83f24c453025ce1d9  cd2\bd1997-02-14d2t03.flac
+b295a4b12f380c8508d15d5b36918481  cd2\bd1997-02-14d2t04.flac
+10f1143a3ca2a16bfa0b5ccab7461851  cd2\bd1997-02-14d2t05.flac
+e252a7ab4fa9fc25440cc4f8cca6f891  cd2\bd1997-02-14d2t06.flac
+1cad12db76b20027b111e49d1cabe6f8  cd2\bdFukuoka1997-02-14cd2.log
+c65aa67f58678d2c6d71493c29299697  cd2\cd2.shntool.txt
+17cc0ce01608b11595b9d93e3deaa040  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-14.flac16\cd1 
+=================== 
+=================== 
+=================== 
+bd1997-02-14d1t01.flac:0803a0c091f7f61897801e184b44e510
+bd1997-02-14d1t02.flac:721335410ca06a13aa3970535f152cb3
+bd1997-02-14d1t03.flac:edfe246a481c29f521a1109c0597cc7a
+bd1997-02-14d1t04.flac:e5dcb7d08301926c63d9d74e274f55f1
+bd1997-02-14d1t05.flac:09ba3a3407537d124e6e0044b68288d4
+bd1997-02-14d1t06.flac:bd073abce39a7ff49be52d7443c133d6
+bd1997-02-14d1t07.flac:da7f8aef13f15c61b439ba717ca627d9
+bd1997-02-14d1t08.flac:23f6404c156129e73bd9e391abfe9c32
+bd1997-02-14d1t09.flac:7b373cdc2399ecbf75804c4f3c968c80
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-14.flac16\cd2 
+=================== 
+=================== 
+=================== 
+bd1997-02-14d2t01.flac:01957add5d0acc19d2d3c28fb983ea1e
+bd1997-02-14d2t02.flac:65575f767a9174cd92dc740c0c8070b9
+bd1997-02-14d2t03.flac:a653b53a480109c18066e55a67da38ff
+bd1997-02-14d2t04.flac:e5031a7febedf5d496d9dfd40b5c54c9
+bd1997-02-14d2t05.flac:be85557fea80493b7d0169aedade1a01
+bd1997-02-14d2t06.flac:117efa578b710045bf6f663008adae8a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-14.flac16\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.04       51694652 B   ---   --   ---xx   flac  0.6405  bd1997-02-14d1t01.flac
+     6:11.17       65484428 B   ---   --   ---xx   flac  0.6198  bd1997-02-14d1t02.flac
+     6:40.15       70595324 B   ---   --   ---xx   flac  0.6370  bd1997-02-14d1t03.flac
+     8:45.10       92633564 B   ---   --   ---xx   flac  0.6108  bd1997-02-14d1t04.flac
+     7:49.69       82893932 B   ---   --   ---xx   flac  0.6159  bd1997-02-14d1t05.flac
+     7:41.24       81376892 B   ---   --   ---xx   flac  0.6281  bd1997-02-14d1t06.flac
+     8:05.16       85591676 B   ---   --   ---xx   flac  0.6372  bd1997-02-14d1t07.flac
+     6:53.58       72989660 B   ---   --   ---xx   flac  0.6007  bd1997-02-14d1t08.flac
+     6:38.37       70294268 B   ---   --   ---xx   flac  0.6068  bd1997-02-14d1t09.flac
+    63:38.25      673554396 B                            0.6213  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-14.flac16\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:22.10       77992364 B   ---   --   ---xx   flac  0.6127  bd1997-02-14d2t01.flac
+     6:44.24       71322092 B   ---   --   ---xx   flac  0.5608  bd1997-02-14d2t02.flac
+     9:00.21       95305436 B   ---   --   ---xx   flac  0.6395  bd1997-02-14d2t03.flac
+    11:37.37      123037868 B   ---   --   ---xx   flac  0.6274  bd1997-02-14d2t04.flac
+    13:00.13      137622620 B   ---   --   ---xx   flac  0.6377  bd1997-02-14d2t05.flac
+     7:23.64       78295772 B   ---   --   ---xx   flac  0.6352  bd1997-02-14d2t06.flac
+    55:08.19      583576152 B                            0.6228  (6 files)
+=================== 
+=================== 
+=================== 

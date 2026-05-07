@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-09-05-sony.flacf 
+=================== 
+=================== 
+=================== 
+608fe08a986da43e511914797e9d2a7c  INFO\050989Tracks.txt
+59cd910cfbca1d1389f5a4e076e6068a  INFO\BD050989.log
+68559346fdbcbe4247dda80936f559fc  INFO\SANTA BARABARA 05_09_89.txt
+5030a5e9a83af1e3f0adf06495cc2c38  INFO\SB050989.ffp
+c7f91b39ee240c374e7ae34a847b95fb  INFO\SB050989.md5
+d745d8dc31d82f10c4c6918b9384ff6d  Track01.flac
+a8ebf17bb7aa87a2fb4e738a90915b8e  Track02.flac
+373a99933079ae1a824ec56b9261454b  Track03.flac
+f162c9fa2d164422d4df9078cd4e5c50  Track04.flac
+9ca13a22d021094cda081eb8fc6919db  Track05.flac
+71874c9a8878a304dfda75162f65146b  Track06.flac
+131882937d353960cb394610fb275647  Track07.flac
+cf1d4a823ab7be8c4461f94d485c6cb5  Track08.flac
+4fb3e076d1ae33235e72529b96d38d84  Track09.flac
+5ef5d84a0d8e08be0a851f37934cae7c  Track10.flac
+1f0dab835cf2edcda76b847cca10947d  Track11.flac
+b2ef7924d8a9437e20bc28752cfbacaa  Track12.flac
+c04ec737e0c44ff88b8e280b42d8dc16  Track13.flac
+2dce3b4f17269bceaa3b023d76010fb7  Track14.flac
+8a235a3212bf528b708a2420baf1a555  Track15.flac
+5e538a42979d97991d5fa3dbc24d0768  Track16.flac
+7006b8053b1d1e6d2ea30cd7e0311d29  Track17.flac
+e3903184568dbd2d8e809b430ffa1ac5  Track18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-09-05-sony.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:4fc27a5aa99f16da52f0c980a3142d26
+Track02.flac:2c8723f40c7148e2ed5cd8a85cbb8f14
+Track03.flac:97b48196915df704bc6bc21fc065f1e7
+Track04.flac:cca0849817087e52790335fb828d9e66
+Track05.flac:d0594928d1ae8a0fdd36a3a20133e901
+Track06.flac:83429b6d266848682e3014a6edd4640e
+Track07.flac:b56f15c3addd28a6925eff360bdd14d3
+Track08.flac:3dda1f06da57ac1ab53efc61ea2fede9
+Track09.flac:12b76b4a23f4a51eedf55e984e2ec66f
+Track10.flac:dd40e96714fb47ab102a0a06845b3b51
+Track11.flac:e97f4e2890f87742918c264bcf674036
+Track12.flac:139180b01955715370a23db04dec0464
+Track13.flac:dee9a32b2044a9020db0e46efdc33ca9
+Track14.flac:b07db2df2970ae14b220d22c9dc3ce53
+Track15.flac:71d2e9c31feadc09b82b768169a687b6
+Track16.flac:ad54ea09a1893339919ca276232ed4b9
+Track17.flac:6aea601c8d58655c7d5fd2575df7c2fe
+Track18.flac:743f9d19580e6185a3cbf399f0eea2e1
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-09-05-sony.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:04.47       32568188 B   ---   --   ---xx   flac  0.6433  Track01.flac
+     7:52.49       83376092 B   ---   --   ---xx   flac  0.6727  Track02.flac
+     5:52.02       62097548 B   ---   --   ---xx   flac  0.6612  Track03.flac
+     4:39.15       49250924 B   ---   --   ---xx   flac  0.6688  Track04.flac
+     5:00.64       53070572 B   ---   --   ---xx   flac  0.6547  Track05.flac
+     6:40.38       70649420 B   ---   --   ---xx   flac  0.6630  Track06.flac
+     6:50.74       72498092 B   ---   --   ---xx   flac  0.6759  Track07.flac
+     6:35.11       69703916 B   ---   --   ---xx   flac  0.6582  Track08.flac
+     5:23.33       57054860 B   ---   --   ---xx   flac  0.6521  Track09.flac
+     6:16.02       66331148 B   ---   --   ---xx   flac  0.6492  Track10.flac
+     5:15.49       55681292 B   ---   --   ---xx   flac  0.6353  Track11.flac
+     6:01.03       63687500 B   ---   --   ---xx   flac  0.6429  Track12.flac
+     4:45.38       50363420 B   ---   --   ---xx   flac  0.6714  Track13.flac
+     5:26.38       57595820 B   ---   --   ---xx   flac  0.6574  Track14.flac
+     8:05.56       85685756 B   ---   --   ---xx   flac  0.6098  Track15.flac
+     7:00.26       74149196 B   ---   --   ---xx   flac  0.6752  Track16.flac
+     6:56.14       73415372 B   ---   --   ---xx   flac  0.6449  Track17.flac
+     4:07.12       43599068 B   ---   --   ---xx   flac  0.6639  Track18.flac
+   105:53.46     1120778184 B                            0.6552  (18 files)
+=================== 
+=================== 
+=================== 

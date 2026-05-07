@@ -1,0 +1,10 @@
+    length     expanded size   cdr  WAVE problems filename
+     3:29.25       36926444    ---   --   ---xx   01 Duncan and Brady.flac
+     7:32.00       79732844    ---   --   ---xx   02 It ain't me, babe.flac
+     6:31.07       68988908    ---   --   ---xx   03 Masters of war.flac
+     6:32.40       69242924    ---   --   ---xx   04 It's all over now, baby blue.flac
+     7:51.64       83234972    ---   --   ---xx   05 Tangled up in blue.flac
+     8:27.01       89437196    ---   --   ---xx   06 Don't think twice, it's all right.flac
+     2:56.62       31192268    ---   --   ---xx   07 Country Pie.flac
+     6:35.43       69779180    ---   --   ---xx   08 Shooting star.flac
+    49:56.17      528534736 B                     (totals for 8 files, 0.5056 overall compression ratio)

@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-03-03a 
+=================== 
+=================== 
+=================== 
+9460d261212424d10a0936e5ea74a11d  780303aTrack01.shn
+06e9b96e478cfdd1615fb2f2f4fd4c91  780303aTrack02.shn
+2322719bee151bf54d1b3ef36e879255  780303aTrack03.shn
+ebbd0be3a6e65ee5b41228139dbf5c67  780303aTrack04.shn
+0fae582d3d0c7255ed9f982c9a8d358d  780303aTrack05.shn
+4f890ef74579d0f83c19ee6452dc7d89  780303aTrack06.shn
+244590924d9add8c8ac8d9cc49fcaaa7  780303aTrack07.shn
+2e8fb329834123749808e9e6790e85e0  780303aTrack08.shn
+25d7ad57991f64f101560875f4db56f2  780303aTrack09.shn
+1119eb87f440d60db394a3999581e9ab  780303aTrack10.shn
+18a666e5539a0ea89ef570fe56b339a1  780303aTrack11.shn
+e737a28b9c88499ed87c779417934643  780303aTrack12.shn
+be15c544f68b08758bc7d0bf02bfec21  780303aTrack13.shn
+9f3ce93f1541163468128796849e0371  780303bTrack01.shn
+a7f03edb404b99712305568f2ceddf4e  780303bTrack02.shn
+2f9bc79b281e4461a373c50e6485ccaa  780303bTrack03.shn
+9753522c67c922a961ed88bbae672ab1  780303bTrack04.shn
+5fa370d499c8c4c4602122abf78a3773  780303bTrack05.shn
+9418730ae73fc8e1708ebda299ef091e  780303bTrack06.shn
+322fdc0923902d46f39e7ac29e3dc709  780303bTrack07.shn
+6d1297759ff462306add0ac0a847b535  780303bTrack08.shn
+25eca255062940e8f2265b8a6e817b3c  780303bTrack09.shn
+dd13d4705e28ffdc0673738bf49595ee  780303bTrack10.shn
+cf33be1a5c2ee1aa6d1ca6a5243b16e7  780303bTrack11.shn
+81ed62dc62257c1be98fc30a918412f4  780303bTrack12.shn
+c2a67a619a16f3a410b50ce3559b324d  780303bTrack13.shn
+1dfcd6599913cd0ea8329ccd651419c8  780303bTrack14.shn
+f2ea9335afdf73db31e6eccc676c1c4d  bd78-03-03a.txt
+3c01e6741f9f6aef13e9070b067bd126  Info.txt
+39c6614c1d38720346f728d9d2ab1b75  md5.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-03-03a 
+=================== 
+=================== 
+=================== 
+a9558250e8036e23b9c0ac951e137561  [shntool]  780303aTrack01.wav
+3e33548a0433e4c31b4043d055a14917  [shntool]  780303aTrack02.wav
+d825c4853caf45fd27e9c857155c7bed  [shntool]  780303aTrack03.wav
+fc40cdace95d6c11c750a14662652ccd  [shntool]  780303aTrack04.wav
+afe0560ebf01657eadcb6091d8dc7736  [shntool]  780303aTrack05.wav
+63006a579291b73760e2ee14b119a418  [shntool]  780303aTrack06.wav
+b5cbc286569f9c10405ecef5c48d7f7b  [shntool]  780303aTrack07.wav
+d83491ea73bd7dff88d2324875076b90  [shntool]  780303aTrack08.wav
+550cc4f84d4b0934e10db95117b24c37  [shntool]  780303aTrack09.wav
+930b30956e68ca7616c95c6ff7121520  [shntool]  780303aTrack10.wav
+6fe08715b04d7b095cee1d41149f3530  [shntool]  780303aTrack11.wav
+fd0133facb5a26f19c0d7aa69c0a6eaa  [shntool]  780303aTrack12.wav
+128e34afeefa3aed1644744cca0fffbe  [shntool]  780303aTrack13.wav
+5da0873ca50a8df48c626de02a6ce481  [shntool]  780303bTrack01.wav
+efb7a7f69d144cf2bd00d078eb38e3a7  [shntool]  780303bTrack02.wav
+8fa32620a0979309949e9eac11a09567  [shntool]  780303bTrack03.wav
+f6b1c56567db07197364f2589f87d5d6  [shntool]  780303bTrack04.wav
+7a7823797e0da09ab63f6bfa6f66795a  [shntool]  780303bTrack05.wav
+9f3f34b6fe14bc53716671b1dac578ca  [shntool]  780303bTrack06.wav
+35508f69c12dfce1fdff104cfa05d7fd  [shntool]  780303bTrack07.wav
+8da65d4b4d4f16a0dac481e636b9239e  [shntool]  780303bTrack08.wav
+4104688f75c0f45b5985d5af033e6443  [shntool]  780303bTrack09.wav
+456fdaa18844fdfb642d1d7dc5c6bf83  [shntool]  780303bTrack10.wav
+fee457605e135354cad5d1fe358caebc  [shntool]  780303bTrack11.wav
+cadacca20749f59a55af2d5602041fa8  [shntool]  780303bTrack12.wav
+3d63e43a404cde0606ff9eb193e70b05  [shntool]  780303bTrack13.wav
+6eb359d5fcdd5d4bacfeea03432159d6  [shntool]  780303bTrack14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-03-03a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.22       41682188 B   ---   --   -----    wav  1.0000  780303aTrack01.wav
+     2:55.48       30982940 B   ---   --   -----    wav  1.0000  780303aTrack02.wav
+     6:01.58       63816860 B   ---   --   -----    wav  1.0000  780303aTrack03.wav
+     5:25.53       57454700 B   ---   --   -----    wav  1.0000  780303aTrack04.wav
+     4:12.36       44537516 B   ---   --   -----    wav  1.0000  780303aTrack05.wav
+     3:42.24       39217292 B   ---   --   -----    wav  1.0000  780303aTrack06.wav
+     5:35.18       59136380 B   ---   --   -----    wav  1.0000  780303aTrack07.wav
+     4:42.23       49798940 B   ---   --   -----    wav  1.0000  780303aTrack08.wav
+     5:03.14       53482172 B   ---   --   -----    wav  1.0000  780303aTrack09.wav
+     3:57.07       41823308 B   ---   --   -----    wav  1.0000  780303aTrack10.wav
+     6:24.19       67782332 B   ---   --   -----    wav  1.0000  780303aTrack11.wav
+     4:16.29       45226652 B   ---   --   -----    wav  1.0000  780303aTrack12.wav
+     4:17.04       45344252 B   ---   --   -----    wav  1.0000  780303aTrack13.wav
+     4:54.65       52014524 B   ---   --   -----    wav  1.0000  780303bTrack01.wav
+     5:03.25       53508044 B   ---   --   -----    wav  1.0000  780303bTrack02.wav
+     3:18.42       35026028 B   ---   --   -----    wav  1.0000  780303bTrack03.wav
+     5:14.27       55453148 B   ---   --   -----    wav  1.0000  780303bTrack04.wav
+     2:55.29       30938252 B   ---   --   -----    wav  1.0000  780303bTrack05.wav
+     4:07.33       43648460 B   ---   --   -----    wav  1.0000  780303bTrack06.wav
+     3:31.26       37281596 B   ---   --   -----    wav  1.0000  780303bTrack07.wav
+     5:22.63       56949020 B   ---   --   -----    wav  1.0000  780303bTrack08.wav
+     3:55.23       41508140 B   ---   --   -----    wav  1.0000  780303bTrack09.wav
+     2:43.26       28814396 B   ---   --   -----    wav  1.0000  780303bTrack10.wav
+     6:02.62       64002668 B   ---   --   -----    wav  1.0000  780303bTrack11.wav
+     6:35.51       69797996 B   ---   --   -----    wav  1.0000  780303bTrack12.wav
+     7:07.04       75332252 B   ---   --   -----    wav  1.0000  780303bTrack13.wav
+     5:05.71       53969036 B   ---   --   -----    wav  1.0000  780303bTrack14.wav
+   126:28.02     1338529092 B                            1.0000  (27 files)
+=================== 
+=================== 
+=================== 

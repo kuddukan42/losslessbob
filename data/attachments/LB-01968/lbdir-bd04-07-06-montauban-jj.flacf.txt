@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-07-06-montauban-jj.flacf 
+=================== 
+=================== 
+=================== 
+103a71a32210ab068d5069094987a758  bd-montauban2004-07-06 - jj rec.d1.flac\bd-montauban04-07-06-jj rec.d1.log
+6ffc5c6a44247a2c9f19bc4b75bb3bdb  bd-montauban2004-07-06 - jj rec.d1.flac\track01.flac
+266b94698932726d338214cd89b10e18  bd-montauban2004-07-06 - jj rec.d1.flac\track02.flac
+849d6f1c0c3ab72d21e990586a6e169d  bd-montauban2004-07-06 - jj rec.d1.flac\track03.flac
+9eb5a0653e2ab2de04f4ce28a058c7e9  bd-montauban2004-07-06 - jj rec.d1.flac\track04.flac
+6a2f42483fd9af505b1f8e705d98836f  bd-montauban2004-07-06 - jj rec.d1.flac\track05.flac
+d55dc214653460d8e717cfd6c3874d81  bd-montauban2004-07-06 - jj rec.d1.flac\track06.flac
+0f140baed580a7e3f00dca28d97bb8d0  bd-montauban2004-07-06 - jj rec.d1.flac\track07.flac
+a89b00212fa80d5b394997b6370acc5e  bd-montauban2004-07-06 - jj rec.d1.flac\track08.flac
+11e6b98995565357651c30e0ec667cf6  bd-montauban2004-07-06 - jj rec.d1.flac\track09.flac
+d89740cb8fc627bdf3fa5256b0336148  bd-montauban2004-07-06 - jj rec.d2.flac\bd-montauban2004-07-06 - jj rec - d2.log
+a72d43a16774343ada526fb120597fe7  bd-montauban2004-07-06 - jj rec.d2.flac\track01.flac
+273df56536f54df4eb64ec9f08b0e25a  bd-montauban2004-07-06 - jj rec.d2.flac\track02.flac
+953783f9c8aca532763f34d914fdf1a5  bd-montauban2004-07-06 - jj rec.d2.flac\track03.flac
+be20b2d9bb0dd9d40c3e33a8f238e4b6  bd-montauban2004-07-06 - jj rec.d2.flac\track04.flac
+fa8d6f83abc78287d49adab534745be4  bd-montauban2004-07-06 - jj rec.d2.flac\track05.flac
+78f8c4a3d8db0050784cd07e03172ef8  bd-montauban2004-07-06 - jj rec.d2.flac\track06.flac
+efa5873b04b8b21468b9285e81b5c6ea  bd-montauban2004-07-06 - jj rec.d2.flac\track07.flac
+87d635b370677f77765f2c77e72cb9cb  bd-montauban2004-07-06 - jj rec.d2.flac\track08.flac
+84b5159e323ca8647d67173384569ecb  bd04-07-06-jj.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-06-montauban-jj.flacf\bd-montauban2004-07-06 - jj rec.d1.flac 
+=================== 
+=================== 
+=================== 
+track01.flac:5b7696e81281ea5441cbe96653d32d13
+track02.flac:541b1ace35806160247a4da7b0f36b61
+track03.flac:0ab040582ab9421381aaa9e1e0111f27
+track04.flac:83fe805adaa9e68a4fe26faf638ffd53
+track05.flac:c0c026857a6aaad98aadf634ee6702f2
+track06.flac:8619af0b4cb0fc67fbcf12713a942fb9
+track07.flac:96c73c35037339f2438bb64d4d2a04e4
+track08.flac:0459a4c0dcf5dab21d158cbd0dcbf023
+track09.flac:b221d30c5e839ed976e2cde867fd85cb
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-06-montauban-jj.flacf\bd-montauban2004-07-06 - jj rec.d2.flac 
+=================== 
+=================== 
+=================== 
+track01.flac:b2b1e205e23e7a625c7771fb22497d06
+track02.flac:727214baff401481a4b11fdd8c7bde15
+track03.flac:18f8bcaed595e3446914d7c9f8aa052f
+track04.flac:83bd851135d77ef69d4917d34391fbd3
+track05.flac:d1f456363d0064721c0c786f9b339f60
+track06.flac:33f43d7ea47e97d199133b970630328b
+track07.flac:46113c5bc08e6abf86fb2c8755363e59
+track08.flac:cfafde59b4a16f428437e027d35ef11a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-06-montauban-jj.flacf\bd-montauban2004-07-06 - jj rec.d1.flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.51       53921996 B   ---   --   ---xx   flac  0.5480  track01.flac
+     6:15.41       66246476 B   ---   --   ---xx   flac  0.5564  track02.flac
+     7:30.38       79469420 B   ---   --   ---xx   flac  0.5818  track03.flac
+     9:20.53       98908700 B   ---   --   ---xx   flac  0.5533  track04.flac
+     7:20.53       77740700 B   ---   --   ---xx   flac  0.5833  track05.flac
+     5:45.32       60933308 B   ---   --   ---xx   flac  0.5229  track06.flac
+     6:10.35       65350364 B   ---   --   ---xx   flac  0.5273  track07.flac
+     7:30.46       79488236 B   ---   --   ---xx   flac  0.5732  track08.flac
+    19:41.20      208375484 B   ---   --   ---xx   flac  0.5290  track09.flac
+    74:40.69      790434684 B                            0.5501  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-06-montauban-jj.flacf\bd-montauban2004-07-06 - jj rec.d2.flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.45       61845884 B   ---   --   ---xx   flac  0.5346  track01.flac
+     6:25.47       68024588 B   ---   --   ---xx   flac  0.5379  track02.flac
+     7:15.45       76839884 B   ---   --   ---xx   flac  0.5660  track03.flac
+     5:10.31       54756956 B   ---   --   ---xx   flac  0.5163  track04.flac
+    11:25.37      120921068 B   ---   --   ---xx   flac  0.5060  track05.flac
+     7:36.62       80584268 B   ---   --   ---xx   flac  0.5019  track06.flac
+     7:41.28       81386300 B   ---   --   ---xx   flac  0.5561  track07.flac
+     8:40.69       91890332 B   ---   --   ---xx   flac  0.5036  track08.flac
+    60:06.64      636249280 B                            0.5259  (8 files)
+=================== 
+=================== 
+=================== 

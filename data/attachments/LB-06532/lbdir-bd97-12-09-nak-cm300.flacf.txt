@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-09-nak-cm300.flacf 
+=================== 
+=================== 
+=================== 
+5937f03e03c3b43e95efb61f8d4b5938  1997-12-09-Boston.md5
+ebb553cad085c044225f7ada66aaac47  1997-12-09-Boston.txt
+def49170a80e3c8f90580c82f29cb2cc  Track101.flac
+9ab6aeb0ad72a77bae63986c868a5489  Track102.flac
+e893469ba8501371892c5ae59244796b  Track103.flac
+4e8dc96e42a0c51526645e0c58a98978  Track104.flac
+c7afad08b3e0765e210d613694b1a480  Track105.flac
+5472141c0839383cd084290c2b02b0ad  Track106.flac
+5ed5e9dfafe3bdf8912587f7a0d9cb96  Track107.flac
+0e5515f5b85b8a0d6a202ad8f2240ac4  Track108.flac
+4abb738113df692163385a7a12512ba6  Track109.flac
+7a25b63596b45c7e7d6a0646fc42e727  Track110.flac
+19382880957a6a9d065654e127716c99  Track111.flac
+b7fe67db8556ae1ae6d1adcabf932948  Track201.flac
+be52f34f5db21a95c9abb12b19e09125  Track202.flac
+42f87fd96872e41e17e2c3e3058384fe  Track203.flac
+2adbe193ce8f12ce2a3668f39577816a  Track204.flac
+5ed01b890a59a1bf418d03235f13eb7e  Track205.flac
+8fa3c972dc7c0df479f08b70a4101730  Track206.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-09-nak-cm300.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:6b44539fd49a2617e81cf1bb7de83eb2
+Track102.flac:9aa94badf51f353516d10ea221be6d7f
+Track103.flac:fe2da0dc9065f5de4426298172708ac0
+Track104.flac:371190597b48ae97e3c5d0c7ffb342fc
+Track105.flac:621250998e72825e8be4d9dae757809d
+Track106.flac:b451a2e67dfc8e016b4951ac0cb5bbd7
+Track107.flac:fbb1b72367155cae1149969ec355f98b
+Track108.flac:6c83f8f1ce4f854f5d2fcb9b57077686
+Track109.flac:43eb6053b08dbad3e84d4d613c625963
+Track110.flac:89beca03e151bd516bb703d4e8877bfb
+Track111.flac:229b4b8dc9780c743286bc6e4db8a222
+Track201.flac:bcebec94088c0250aa2ddb06eb02dc00
+Track202.flac:1a322ede24aa31cb0b45fb332556f12b
+Track203.flac:d0a00352b5d59395c85548b47bb28393
+Track204.flac:2305f3d7715bab584bfacac9edd8a370
+Track205.flac:269f840cff50ca9c671f38c2f65c2148
+Track206.flac:ff8374aeb8678ec6a300d9f815b5ce45
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-09-nak-cm300.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:15.54        2773052 B   ---   --   ---xx   flac  0.5147  Track101.flac
+     5:16.26       55803596 B   ---   --   ---xx   flac  0.6316  Track102.flac
+     5:50.10       61763564 B   ---   --   ---xx   flac  0.5883  Track103.flac
+     7:05.19       75014732 B   ---   --   ---xx   flac  0.6052  Track104.flac
+     8:15.26       87379196 B   ---   --   ---xx   flac  0.5818  Track105.flac
+     6:17.65       66655724 B   ---   --   ---xx   flac  0.6007  Track106.flac
+     7:25.40       78592124 B   ---   --   ---xx   flac  0.6389  Track107.flac
+     5:27.24       57739292 B   ---   --   ---xx   flac  0.5194  Track108.flac
+     6:50.53       72448700 B   ---   --   ---xx   flac  0.5252  Track109.flac
+     9:04.68       96121580 B   ---   --   ---xx   flac  0.6159  Track110.flac
+     8:45.55       92739404 B   ---   --   ---xx   flac  0.6060  Track111.flac
+     4:43.17       49961228 B   ---   --   ---xx   flac  0.5650  Track201.flac
+     6:36.42       69953228 B   ---   --   ---xx   flac  0.5988  Track202.flac
+     9:43.71      103008236 B   ---   --   ---xx   flac  0.6274  Track203.flac
+     7:55.67       83947628 B   ---   --   ---xx   flac  0.5899  Track204.flac
+     5:36.00       59270444 B   ---   --   ---xx   flac  0.5630  Track205.flac
+     4:46.36       50535116 B   ---   --   ---xx   flac  0.6353  Track206.flac
+   109:56.73     1163706844 B                            0.5952  (17 files)
+=================== 
+=================== 
+=================== 

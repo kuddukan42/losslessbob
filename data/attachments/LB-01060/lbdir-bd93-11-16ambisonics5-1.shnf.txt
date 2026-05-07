@@ -1,0 +1,61 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-11-16ambisonics5-1.shnf 
+=================== 
+=================== 
+=================== 
+deba0fcd73e4cce871bf05e37fd4df5d  1.shn
+496401622582ec866392070c93a35ee7  10.shn
+a5103ce977968d8619297d894474d268  2.shn
+c8284ba4abe733d8f68fc2e25f859e65  3.shn
+7abcb04e3116fa5f2de36aa8ba5af5c0  4.shn
+e7f00118c634b3dfc03319ceab16cc5b  5.shn
+7a016b4fdc2fc512b2989dd8eee19934  6.shn
+4cd17f7663d293632fe29605d8d1a643  7.shn
+8b69e1f77b61f3ec27f2d8b3f067f2ce  8.shn
+c7a07164a05e91ba95d7c5367edbff9c  9.shn
+44283165d74d2664d8d8c68ec2a02216  backrelease.jpg
+6c9a4361993cccf8c890d0068682051b  frontrelease.jpg
+8672eff1252d737070e4284205383001  readme.md5
+fb865c6e53a4e166ea0e759269928e99  readme.txt
+1fe05b591fd2ac79203381c7c2d2381d  SupperClubDTS.cue
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-11-16ambisonics5-1.shnf 
+=================== 
+=================== 
+=================== 
+869c51e8436093ef064b1fa04eb5c869  [shntool]  1.wav
+509ba3dcf79f662dc53aa519533b2aeb  [shntool]  2.wav
+91cc59825994d7627db1e49d4c54b24c  [shntool]  3.wav
+2d22067b0a76139e781b6350f6a7c675  [shntool]  4.wav
+cee379324cbdefe2c69e0cea162a8275  [shntool]  5.wav
+7313bc4dc9ec22e48022332367c0a80b  [shntool]  6.wav
+9ea5e749a6701b6363349108c5cc26df  [shntool]  7.wav
+6a1dbea7c6a73119aee7ddca0ff2a901  [shntool]  8.wav
+9eef04a2685449a31eac717f4d73dd66  [shntool]  9.wav
+801ba58f0337bd6fe4b18d81a5255f28  [shntool]  10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16ambisonics5-1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.53       59572268 B   -b-   --   ---xx    shn  0.8998  1.shn
+     9:02.17       95649836 B   -b-   --   ---xx    shn  0.8997  10.shn
+     4:46.21       50499628 B   -b-   --   ---xx    shn  0.8999  2.shn
+     5:02.71       53440556 B   -b-   --   ---xx    shn  0.8997  3.shn
+     8:29.06       89800748 B   -b-   --   ---xx    shn  0.8994  4.shn
+     6:17.24       66560044 B   -b-   --   ---xx    shn  0.9000  5.shn
+     5:47.35       61292588 B   -b-   --   ---xx    shn  0.8996  6.shn
+     6:11.53       65568812 B   -b-   --   ---xx    shn  0.8998  7.shn
+     5:43.28       60571692 B   -b-   --   ---xx    shn  0.8999  8.shn
+     6:02.43       63959084 B   -b-   --   ---xx    shn  0.8998  9.shn
+    63:00.52      666915256 B                            0.8997  (10 files)
+=================== 
+=================== 
+=================== 

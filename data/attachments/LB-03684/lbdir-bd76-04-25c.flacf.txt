@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-04-25c.flacf 
+=================== 
+=================== 
+=================== 
+0f3f78aa6fb6644cde321072aca65fef  bd76-04-25c-LB-3684.txt
+99e698a2193dcd6092d4f28a0e96492e  bd76-04-25c.flacf.md5
+2ef6688f202316a56793c217f873b8b1  bd76-04-25d1t12.flac
+f0e21ce3f99847147139c1107be64854  bd76-04-25d1t13.flac
+67ce5ce92dea5d80690dbca86bd6a971  bd76-04-25d1t14.flac
+8588eae993c496282781ba7c71ecd520  bd76-04-25d1t15.flac
+7d91ddd45e855a03c80a9197d10610b8  bd76-04-25d1t16.flac
+820870d71d4e0e81e19e815dde1136e3  bd76-04-25d2t01.flac
+77591aa88ba8efc5f731dfe3b9bbe26d  bd76-04-25d2t02.flac
+afcdf5598878f9a3580dc02c33989958  bd76-04-25d2t03.flac
+f16a8912ac65457970ba5b1032fb3f10  bd76-04-25d2t04.flac
+2c064f19607c6776bccfcbbe381049c1  bd76-04-25d2t05.flac
+fd73112611ad17030e0add474c8c166c  bd76-04-25d2t06.flac
+29916c88d553246fceab6689ab423721  bd76-04-25d2t07.flac
+e757baa52ea9955b7e67cb723dd5d6cd  bd76-04-25d2t08.flac
+ae119bdb2d185b55111f1bf50383ec28  bd76-04-25d2t09.flac
+4e6537fecec407ef6b3b1b0c19d5826f  bd76-04-25d2t10.flac
+d10fbe33889bdb0566c1894a14bd603e  bd76-04-25d2t11.flac
+3483edab960353f93fdd41a724025fbc  bd76-04-25d2t12.flac
+e057a03092539219ae500ba2edbe2562  bd76-04-25d2t13.flac
+30ba7b115340a00e5580d8669616f423  bd76-04-25d2t14.flac
+5701e983c15e1a9d9fd3d5369bd80900  bd76-04-25d2t15.flac
+0d7649e8a55c74c997807b66692dcdbb  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-04-25c.flacf 
+=================== 
+=================== 
+=================== 
+bd76-04-25d1t12.flac:be428c761e29b1ac6eb9c85274b6260d
+bd76-04-25d1t13.flac:84a111b8fa08ad60c6b246bf6abe2a27
+bd76-04-25d1t14.flac:b9a2d529a8288595ca17910e079d32f3
+bd76-04-25d1t15.flac:18475e811f5a6044da18301436d8cbdc
+bd76-04-25d1t16.flac:369a9c7600c97550d83ab0d0af75dd22
+bd76-04-25d2t01.flac:723bd4ecfbbc42431cf03b480ab3283b
+bd76-04-25d2t02.flac:b4d251e542374f7322c81ec77fd5757a
+bd76-04-25d2t03.flac:f71bcd3b6dde6f58a65e105bd814c8f4
+bd76-04-25d2t04.flac:6be57713dafe6c7c1064c6fc705b6f7e
+bd76-04-25d2t05.flac:b382085d81cffb1c10d0f987bc10c268
+bd76-04-25d2t06.flac:8a755aeb8bf6db561e63acb96238cfa6
+bd76-04-25d2t07.flac:15c3062ba505a9a8d9b3411fe3d9e211
+bd76-04-25d2t08.flac:f2a1b5543e876718d057f25d9738a95c
+bd76-04-25d2t09.flac:0f905a60ddfa867d1e69acba8f80e5d5
+bd76-04-25d2t10.flac:8e069906c92226165bd75fb84dcc9b0c
+bd76-04-25d2t11.flac:c37a95c4eae518a36843469b91f6c9a2
+bd76-04-25d2t12.flac:16e1bb0b672847d236fd624750300f91
+bd76-04-25d2t13.flac:8131b94e97d3a24460d800bddeaaf97c
+bd76-04-25d2t14.flac:010da926122d8cf07d8dc1053ca33c77
+bd76-04-25d2t15.flac:0806774a35277de977673dbca33f6b75
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-04-25c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:26.11       57532316 B   ---   --   ---xx   flac  0.4459  bd76-04-25d1t12.flac
+     2:57.57       31356908 B   ---   --   ---xx   flac  0.3627  bd76-04-25d1t13.flac
+     4:02.21       42738236 B   ---   --   ---xx   flac  0.3591  bd76-04-25d1t14.flac
+     4:25.02       46750748 B   ---   --   ---xx   flac  0.3626  bd76-04-25d1t15.flac
+     3:43.19       39381932 B   ---   --   ---xx   flac  0.3437  bd76-04-25d1t16.flac
+     5:54.57       62579708 B   ---   --   ---xx   flac  0.3694  bd76-04-25d2t01.flac
+     3:46.08       39885260 B   ---   --   ---xx   flac  0.3431  bd76-04-25d2t02.flac
+     3:30.24       37100492 B   ---   --   ---xx   flac  0.3236  bd76-04-25d2t03.flac
+     3:00.14       31784972 B   ---   --   ---xx   flac  0.3618  bd76-04-25d2t04.flac
+     4:46.49       50565692 B   ---   --   ---xx   flac  0.3692  bd76-04-25d2t05.flac
+     5:23.46       57085436 B   ---   --   ---xx   flac  0.3363  bd76-04-25d2t06.flac
+     4:41.72       49737788 B   ---   --   ---xx   flac  0.3365  bd76-04-25d2t07.flac
+     5:24.61       57297116 B   ---   --   ---xx   flac  0.3360  bd76-04-25d2t08.flac
+     4:29.17       47491628 B   ---   --   ---xx   flac  0.3370  bd76-04-25d2t09.flac
+     3:41.72       39153788 B   ---   --   ---xx   flac  0.3341  bd76-04-25d2t10.flac
+     3:35.44       38029532 B   ---   --   ---xx   flac  0.3842  bd76-04-25d2t11.flac
+     4:49.19       51024332 B   ---   --   ---xx   flac  0.3703  bd76-04-25d2t12.flac
+    10:40.59      113034812 B   ---   --   ---xx   flac  0.3242  bd76-04-25d2t13.flac
+     4:22.08       46235660 B   ---   --   ---xx   flac  0.3664  bd76-04-25d2t14.flac
+     7:07.15       75358124 B   ---   --   ---xx   flac  0.3760  bd76-04-25d2t15.flac
+    95:49.00     1014124480 B                            0.3565  (20 files)
+=================== 
+=================== 
+=================== 

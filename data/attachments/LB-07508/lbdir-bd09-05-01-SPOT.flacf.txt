@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-05-01-SPOT.flacf 
+=================== 
+=================== 
+=================== 
+4d9375c5a0efe12d6fd37c373f927b86  bd09-05-01-Liverpool.SPOT.ffp
+11cd7eb8c92f76c018442c96e59dd602  bd09-05-01.txt
+135af305439d417577d6bccef7b59841  bd09-05-01d1tr01.flac
+99df2b04f0058025c6bae2063a71a9cc  bd09-05-01d1tr02.flac
+5a93f7003e7c7ea1ca6b28bb1a4557c7  bd09-05-01d1tr03.flac
+98385a9cd752b49afbef779b55452ee2  bd09-05-01d1tr04.flac
+da2ecb153f6b7abe227f137de36f56d7  bd09-05-01d1tr05.flac
+c6f63567bc988f6ad0a7000fb0cda70b  bd09-05-01d1tr06.flac
+452d658a963aab74dac6d6e2619bd936  bd09-05-01d1tr07.flac
+0ffb9cfd3954079e6e5cdcafe294ba3a  bd09-05-01d1tr08.flac
+838840ac478e4bc1f4e2edf1851c2ed3  bd09-05-01d1tr09.flac
+63ac72d567c7454e862c023314ed15f2  bd09-05-01d1tr10.flac
+bcff8456d918205645b1e37b0b7d3907  bd09-05-01d1tr11.flac
+37eaf2e2d2580e9f009ea975ae5ba8ab  bd09-05-01d1tr12.flac
+9e19d032900ba5012ea68b54db946a81  bd09-05-01d2tr01.flac
+7edb6d7a26e9e46bb727062eb630e57c  bd09-05-01d2tr02.flac
+8d0a6fdad2dba90f66cd49ce40db2d0d  bd09-05-01d2tr03.flac
+16aae5424827d5ee5744fa9e3da5fa59  bd09-05-01d2tr04.flac
+f41ed765c0d66b7cb1b13c4b99ea737d  bd09-05-01d2tr05.flac
+fcc9c6591d171387a2f004cc78680608  bd09-05-01d2tr06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-05-01-SPOT.flacf 
+=================== 
+=================== 
+=================== 
+bd09-05-01d1tr01.flac:51ef6f3486c3140b9c2520c33d87c55c
+bd09-05-01d1tr02.flac:b40ff13e57072ac20098c79fdb268573
+bd09-05-01d1tr03.flac:94e9193380b3e66b01ce1c83ceebe26c
+bd09-05-01d1tr04.flac:e202925567e2b68b118158a3780dc203
+bd09-05-01d1tr05.flac:1af307f5063104e6c22ec2a7807fa845
+bd09-05-01d1tr06.flac:7208393fc73e7be63c4cff4c6b4e0835
+bd09-05-01d1tr07.flac:bdb0f2860618fa2eccaa45b79a7ce32c
+bd09-05-01d1tr08.flac:06058021f5a9f228bb7ab1012f73364b
+bd09-05-01d1tr09.flac:05121ef7f2d38426f0a65d07860cfc45
+bd09-05-01d1tr10.flac:f01af8bbf3cec06baa167936f51ce0b1
+bd09-05-01d1tr11.flac:debf8f43115288c72d320921986a6622
+bd09-05-01d1tr12.flac:7d942e232dcbb59dd8252b6cee824f32
+bd09-05-01d2tr01.flac:4516bf00a614a541f404f267e90c71dd
+bd09-05-01d2tr02.flac:f9df8b591b66884fb6ae42b2b2ebe61a
+bd09-05-01d2tr03.flac:d99ce80173585fe41519d0843923ae02
+bd09-05-01d2tr04.flac:d70732fe5c0d6030880654ad38a53e8e
+bd09-05-01d2tr05.flac:ba8de192f97683c5ba4957e3b4650677
+bd09-05-01d2tr06.flac:93bf6528f0532c3ca8b446a0f058ca11
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-05-01-SPOT.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:09.60       12312764 B   ---   --   ---xx   flac  0.3902  bd09-05-01d1tr01.flac
+     4:40.32       49467308 B   ---   --   ---xx   flac  0.5073  bd09-05-01d1tr02.flac
+     6:22.24       67441292 B   ---   --   ---xx   flac  0.4531  bd09-05-01d1tr03.flac
+     6:58.61       73878716 B   ---   --   ---xx   flac  0.5006  bd09-05-01d1tr04.flac
+     5:31.11       58414316 B   ---   --   ---xx   flac  0.3973  bd09-05-01d1tr05.flac
+     7:48.51       82675196 B   ---   --   ---xx   flac  0.5170  bd09-05-01d1tr06.flac
+     5:19.72       56440988 B   ---   --   ---xx   flac  0.3952  bd09-05-01d1tr07.flac
+     4:48.11       50829116 B   ---   --   ---xx   flac  0.4766  bd09-05-01d1tr08.flac
+     4:40.65       49544924 B   ---   --   ---xx   flac  0.4402  bd09-05-01d1tr09.flac
+     7:34.60       80226764 B   ---   --   ---xx   flac  0.4975  bd09-05-01d1tr10.flac
+     6:00.40       63598124 B   ---   --   ---xx   flac  0.4476  bd09-05-01d1tr11.flac
+     5:56.37       62885468 B   ---   --   ---xx   flac  0.5182  bd09-05-01d1tr12.flac
+     3:26.02       36343148 B   ---   --   ---xx   flac  0.4759  bd09-05-01d2tr01.flac
+     8:48.51       93259196 B   ---   --   ---xx   flac  0.5289  bd09-05-01d2tr02.flac
+     7:43.39       81764972 B   ---   --   ---xx   flac  0.5055  bd09-05-01d2tr03.flac
+     5:06.25       54037244 B   ---   --   ---xx   flac  0.5095  bd09-05-01d2tr04.flac
+     7:34.15       80120924 B   ---   --   ---xx   flac  0.4062  bd09-05-01d2tr05.flac
+     5:15.69       55728332 B   ---   --   ---xx   flac  0.4630  bd09-05-01d2tr06.flac
+   104:46.50     1108968792 B                            0.4748  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-04-01-rm-madhasse.flacf 
+=================== 
+=================== 
+=================== 
+bec4f7cb070894fcdd5809d502d86484  bd2000-04-01d1\bd2000-04-01d1t01rm.flac
+6f6dcdc4ad1deec788d4d2c441331e14  bd2000-04-01d1\bd2000-04-01d1t02rm.flac
+22e0aae77807ea716401c7544ee3c546  bd2000-04-01d1\bd2000-04-01d1t03rm.flac
+2ad7271486cc84eccbb27e5ae862e925  bd2000-04-01d1\bd2000-04-01d1t04rm.flac
+95a5f1320207c2c30b4caf27d6f450dd  bd2000-04-01d1\bd2000-04-01d1t05rm.flac
+46f82352bff2ec14fdeac40e48d43b28  bd2000-04-01d1\bd2000-04-01d1t06rm.flac
+b4465b3d26c9a27ddf1d30cb17e2ba3b  bd2000-04-01d1\bd2000-04-01d1t07rm.flac
+709649cedc582a9ad6ffbef908f95414  bd2000-04-01d1\bd2000-04-01d1t08rm.flac
+c9fe5baddcf5a253a7cc8850a0190335  bd2000-04-01d1\bd2000-04-01d1t09rm.flac
+ddc9edc17ffa906ae3f15ea3a43d0c65  bd2000-04-01d2\bd2000-04-01d2t01rm.flac
+f3b1717aa3b0357978c8a422ad85b0f2  bd2000-04-01d2\bd2000-04-01d2t02rm.flac
+dc71867afd60cb03ae5412e0615544fd  bd2000-04-01d2\bd2000-04-01d2t03rm.flac
+da650cc16cc17514a6239ab38ec33d2a  bd2000-04-01d2\bd2000-04-01d2t04rm.flac
+772f45dc683c0b9018d90224a7190c5e  bd2000-04-01d2\bd2000-04-01d2t05rm.flac
+b4ebbb4c4bb84456e8c7247943bb001b  bd2000-04-01d2\bd2000-04-01d2t06rm.flac
+c1ed8e73bc4a59b336f4cae7b4aa175c  bd2000-04-01d2\bd2000-04-01d2t07rm.flac
+703c9d38455394e491e975d6627fa405  bd2000-04-01d2\bd2000-04-01d2t08rm.flac
+0c33c851df5fb7f6c45d8b6d2dd874ec  bd2000-04-01d2\bd2000-04-01d2t09rm.flac
+8e9453c02314794817ec98cceef0e02a  bd2000-04-01rm.md5
+fde6bd1f339964dddaf55cf97aeda754  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-04-01-rm-madhasse.flacf\bd2000-04-01d1 
+=================== 
+=================== 
+=================== 
+bd2000-04-01d1t01rm.flac:5a9ddf07b1ad8b9bdc9bbd77980b1a3b
+bd2000-04-01d1t02rm.flac:8b08ced4b99fa8b8762330cff3971b09
+bd2000-04-01d1t03rm.flac:cd7dc2d0ecc40f4321c5a74d414fa05f
+bd2000-04-01d1t04rm.flac:440135aff7250ab8fb4556e5637548db
+bd2000-04-01d1t05rm.flac:11f079eb5f1e7ae85967c87fe678374e
+bd2000-04-01d1t06rm.flac:dcf349d80b19d8178a26b950349adcd9
+bd2000-04-01d1t07rm.flac:4024d0aa12b2eefc14df3cba3807898b
+bd2000-04-01d1t08rm.flac:c61af74e57b14c7733af2d313667930c
+bd2000-04-01d1t09rm.flac:cf256389c6921234b21c52e0d00640d8
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-04-01-rm-madhasse.flacf\bd2000-04-01d2 
+=================== 
+=================== 
+=================== 
+bd2000-04-01d2t01rm.flac:da56f254180165829de427325fd8cd6c
+bd2000-04-01d2t02rm.flac:c348cca67f912fe188fbc283f00d824c
+bd2000-04-01d2t03rm.flac:e521ab622ecb863072290bcf43074d54
+bd2000-04-01d2t04rm.flac:53fe59b058c8153eab4e4e1a12f4b0d9
+bd2000-04-01d2t05rm.flac:b1ffc4c54e8001ccb821a185413967c0
+bd2000-04-01d2t06rm.flac:14fc6b6399cc79735517be371c59448e
+bd2000-04-01d2t07rm.flac:0712b18e97002503347823226e1d6d27
+bd2000-04-01d2t08rm.flac:f705d5c01d6f10e81c4177a4de40910a
+bd2000-04-01d2t09rm.flac:75b029d253e059d92905dcf50cf6834c
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-04-01-rm-madhasse.flacf\bd2000-04-01d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.66       43726076 B   ---   --   ---xx   flac  0.6492  bd2000-04-01d1t01rm.flac
+     6:45.25       71500844 B   ---   --   ---xx   flac  0.6014  bd2000-04-01d1t02rm.flac
+     5:32.53       58689500 B   ---   --   ---xx   flac  0.6014  bd2000-04-01d1t03rm.flac
+     4:00.35       42418364 B   ---   --   ---xx   flac  0.6075  bd2000-04-01d1t04rm.flac
+     8:15.53       87442700 B   ---   --   ---xx   flac  0.6729  bd2000-04-01d1t05rm.flac
+     8:47.21       93012236 B   ---   --   ---xx   flac  0.5762  bd2000-04-01d1t06rm.flac
+     3:10.24       33572492 B   ---   --   ---xx   flac  0.6382  bd2000-04-01d1t07rm.flac
+     4:03.47       42975788 B   ---   --   ---xx   flac  0.6134  bd2000-04-01d1t08rm.flac
+     4:19.62       45833468 B   ---   --   ---xx   flac  0.6524  bd2000-04-01d1t09rm.flac
+    49:03.11      519171468 B                            0.6213  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-04-01-rm-madhasse.flacf\bd2000-04-01d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.20       65138684 B   ---   --   ---xx   flac  0.6486  bd2000-04-01d2t01rm.flac
+     4:56.22       52266188 B   ---   --   ---xx   flac  0.5722  bd2000-04-01d2t02rm.flac
+     8:50.05       93503804 B   ---   --   ---xx   flac  0.6375  bd2000-04-01d2t03rm.flac
+     5:36.66       59425676 B   ---   --   ---xx   flac  0.5916  bd2000-04-01d2t04rm.flac
+     7:43.36       81757916 B   ---   --   ---xx   flac  0.6435  bd2000-04-01d2t05rm.flac
+     9:56.64      105284972 B   ---   --   ---xx   flac  0.5827  bd2000-04-01d2t06rm.flac
+     4:47.00       50626844 B   ---   --   ---xx   flac  0.6321  bd2000-04-01d2t07rm.flac
+     5:09.57       54641708 B   ---   --   ---xx   flac  0.5917  bd2000-04-01d2t08rm.flac
+     6:30.46       68904236 B   ---   --   ---xx   flac  0.6597  bd2000-04-01d2t09rm.flac
+    59:40.16      631550028 B                            0.6186  (9 files)
+=================== 
+=================== 
+=================== 

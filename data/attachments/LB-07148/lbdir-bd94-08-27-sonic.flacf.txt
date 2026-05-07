@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-08-27-sonic.flacf 
+=================== 
+=================== 
+=================== 
+646b7ac9ae0d437362225cb550164063  Bob Dylan 1994-08-27 Kalamazoo, Mi Flac16FFP.ffp
+437da325729f6e38e3a87ad7db5d6c29  Dylan 1994-08-27 Kalamazoo.txt
+3e7b09ba352a65ee23c7e58d59200ae9  Dylan1994-08-27d1t01.flac
+e3d1d1234abf2961ba654ba098096aa5  Dylan1994-08-27d1t02.flac
+5fcd45a0b59d2fef5ae564bbaac057c0  Dylan1994-08-27d1t03.flac
+b6303385bc0232a00b3a366cb64372b8  Dylan1994-08-27d1t04.flac
+d2484969e4682b5fba982c4e59ce772b  Dylan1994-08-27d1t05.flac
+44d70e3b7314a5b45c7a043182209876  Dylan1994-08-27d1t06.flac
+df9b31d846ac0679ad25938dd6812ba2  Dylan1994-08-27d1t07.flac
+423f4b47dea6fbef350459fdd24e260e  Dylan1994-08-27d1t08.flac
+c913e23aaa7bd2d548ee67caad2296f3  Dylan1994-08-27d1t09.flac
+2abb19c2507ae2b77e945ff8dcd812b3  Dylan1994-08-27d2t01.flac
+ec05861a8c48f8c343fffde98beccb2e  Dylan1994-08-27d2t02.flac
+36311a7e7cd92991ee7345473f3f7920  Dylan1994-08-27d2t03.flac
+ca7a32484bccd9a7c66e80cf63c2da0f  Dylan1994-08-27d2t04.flac
+b17647c295fc10e0371b8efd0a050c17  Dylan1994-08-27d2t05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-08-27-sonic.flacf 
+=================== 
+=================== 
+=================== 
+Dylan1994-08-27d1t01.flac:e787bca72c2b4b54ec489e2c191802e9
+Dylan1994-08-27d1t02.flac:f1762389b2c171a4b8663b28a475f3c2
+Dylan1994-08-27d1t03.flac:03db7b33c99688a1521bb8816dbc1f21
+Dylan1994-08-27d1t04.flac:5a76a2035f046f671a946a84a49c7173
+Dylan1994-08-27d1t05.flac:7c79147f92bcdbafc9f016c1f3a329b0
+Dylan1994-08-27d1t06.flac:ef03e147b31c16eb4aaa3235b057eba6
+Dylan1994-08-27d1t07.flac:c1a1bd788d2f7db88bdacc0f05c7b24c
+Dylan1994-08-27d1t08.flac:d77a173eb332afd3478c81ed3bf0b2d8
+Dylan1994-08-27d1t09.flac:081e0b973e43a7ee9dd70032a1ce2391
+Dylan1994-08-27d2t01.flac:533084b27aaa764e98c6d2ceaca59360
+Dylan1994-08-27d2t02.flac:c7ca84a590a3d069015526ac700c9500
+Dylan1994-08-27d2t03.flac:f1e59be40d9ce57ec1281515481ffbd5
+Dylan1994-08-27d2t04.flac:ff86bb5381a95b7774a7a0086b3ff5d0
+Dylan1994-08-27d2t05.flac:f52f4ccfeff103a9fec1b78da6832185
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-08-27-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:04.47       85488188 B   ---   --   ---xx   flac  0.5495  Dylan1994-08-27d1t01.flac
+     7:22.69       78131132 B   ---   --   ---xx   flac  0.5362  Dylan1994-08-27d1t02.flac
+     5:55.28       62687900 B   ---   --   ---xx   flac  0.5767  Dylan1994-08-27d1t03.flac
+    10:15.41      108582476 B   ---   --   ---xx   flac  0.5614  Dylan1994-08-27d1t04.flac
+     9:40.36      102396716 B   ---   --   ---xx   flac  0.5668  Dylan1994-08-27d1t05.flac
+     7:46.68       82362380 B   ---   --   ---xx   flac  0.5608  Dylan1994-08-27d1t06.flac
+     5:35.43       59195180 B   ---   --   ---xx   flac  0.4433  Dylan1994-08-27d1t07.flac
+     6:10.27       65331548 B   ---   --   ---xx   flac  0.4295  Dylan1994-08-27d1t08.flac
+     7:50.60       83049164 B   ---   --   ---xx   flac  0.5031  Dylan1994-08-27d1t09.flac
+     6:25.32       67989308 B   ---   --   ---xx   flac  0.5854  Dylan1994-08-27d2t01.flac
+     7:35.06       80276156 B   ---   --   ---xx   flac  0.5216  Dylan1994-08-27d2t02.flac
+     8:50.53       93616700 B   ---   --   ---xx   flac  0.6058  Dylan1994-08-27d2t03.flac
+     7:27.03       78857900 B   ---   --   ---xx   flac  0.5181  Dylan1994-08-27d2t04.flac
+     8:17.15       87706124 B   ---   --   ---xx   flac  0.4955  Dylan1994-08-27d2t05.flac
+   107:18.03     1135670872 B                            0.5362  (14 files)
+=================== 
+=================== 
+=================== 

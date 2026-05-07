@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-10.shnf 
+=================== 
+=================== 
+=================== 
+dba50a90ad47223a9bf1e52368c9d859  06-10-98 Disc 1- 1.shn
+489a548bb1a671aa37f45067bdb25515  06-10-98 Disc 1- 2.shn
+3042209f3e14d57cb625d6a00f5c43a9  06-10-98 Disc 1- 3.shn
+90da7e7ba593036b440d29cd1325fe76  06-10-98 Disc 1- 4.shn
+7b5fe6965a7a73f7e4ced5762167c1f7  06-10-98 Disc 1- 5.shn
+eb833e241606744f8bf2b8eb8bc2ea41  06-10-98 Disc 1- 6.shn
+8e234ec96405b443875df2d0bef304f6  06-10-98 Disc 1- 7.shn
+63d46c366e527340dcfa6d51a1068df5  06-10-98 Disc 1- 8.shn
+1ca41e0b590cd35b4a05e25115f07a89  06-10-98 Disc 1- 9.shn
+b29e3e0ff42ec6fe78cbd71989d8e14e  06-10-98 Disc 1.md5
+0044fec28a68c2da5e6224959945f3b1  06-10-98 Disc 2- 1.shn
+ef19fe153ca2b28bb7479ab71980ca22  06-10-98 Disc 2- 2.shn
+7c2106d0e1119b26c55dedaa21fd6834  06-10-98 Disc 2- 3.shn
+01c6bfeb12ab84b44ebd37427f511202  06-10-98 Disc 2- 4.shn
+ee1c5995daa7dc982c2052a862f75da3  06-10-98 Disc 2- 5.shn
+726154fdfbed34add7e3b8b40a66c443  06-10-98 Disc 2- 6.shn
+a4110f6d599922d02b4018b7771b16cc  06-10-98 Disc 2- 7.shn
+9da32cab53f7c78d534688f6a4a5207b  06-10-98 Disc 2.md5
+15f65049ca14016778a883a1fcaec4f3  06-10-98.nfo
+d0173673af8dfabf52bb3930a7ffdffa  bd98-06-10.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-06-10.shnf 
+=================== 
+=================== 
+=================== 
+b3bd1e1ebd630854cc30019ad9bbcaff  [shntool]  06-10-98_Disc_1-_1.wav
+70d65e44c1e86ff86268f711e8e44152  [shntool]  06-10-98_Disc_1-_2.wav
+f78d4599b18c3e1f4416dede0e2b5f2c  [shntool]  06-10-98_Disc_1-_3.wav
+65710d9f554917c61b4d56ca819a5a1c  [shntool]  06-10-98_Disc_1-_4.wav
+3f73d53e19deebd826e322e6bf6138b2  [shntool]  06-10-98_Disc_1-_5.wav
+21093c23d8db1e1b7a97d6eee1f1b3a7  [shntool]  06-10-98_Disc_1-_6.wav
+c395e5ad5db4b69ef706efb32d2b458d  [shntool]  06-10-98_Disc_1-_7.wav
+a80cd900f6b826fd8f2af6499ef50b37  [shntool]  06-10-98_Disc_1-_8.wav
+4f09dcfbd92990d34656815b9fff1231  [shntool]  06-10-98_Disc_1-_9.wav
+9d3532ee7c7f4caffa7ca0fd2d465ef0  [shntool]  06-10-98_Disc_2-_1.wav
+fc40dae02b43c3b9bb54d8c41524dbec  [shntool]  06-10-98_Disc_2-_2.wav
+37edc2a1a880d5205bd538fd46cacc03  [shntool]  06-10-98_Disc_2-_3.wav
+ef7b470fa639efbda72a403edf2eba7c  [shntool]  06-10-98_Disc_2-_4.wav
+e2feb9fc19aadab14ad18e896554434c  [shntool]  06-10-98_Disc_2-_5.wav
+ed121050c5be6cee77e623bd654690a7  [shntool]  06-10-98_Disc_2-_6.wav
+53283b1d35c4003b07a0534694840cf0  [shntool]  06-10-98_Disc_2-_7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-10.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:57.64       41956508 B   -b-   --   ---xx    shn  0.7525  06-10-98 Disc 1- 1.shn
+     6:04.66       64364876 B   ---   --   ---xx    shn  0.6991  06-10-98 Disc 1- 2.shn
+     6:39.69       70545932 B   ---   --   ---xx    shn  0.7504  06-10-98 Disc 1- 3.shn
+     5:41.02       60157148 B   ---   --   ---xx    shn  0.6956  06-10-98 Disc 1- 4.shn
+     7:03.17       74657228 B   ---   --   ---xx    shn  0.7778  06-10-98 Disc 1- 5.shn
+     6:35.32       69753308 B   ---   --   ---xx    shn  0.6928  06-10-98 Disc 1- 6.shn
+     9:44.17      103057628 B   ---   --   ---xx    shn  0.6994  06-10-98 Disc 1- 7.shn
+     5:37.39       59538572 B   ---   --   ---xx    shn  0.6926  06-10-98 Disc 1- 8.shn
+     7:55.10       83813564 B   ---   --   ---xx    shn  0.7794  06-10-98 Disc 1- 9.shn
+     5:16.42       55840548 B   -b-   --   ---xx    shn  0.7231  06-10-98 Disc 2- 1.shn
+     6:11.11       65470316 B   ---   --   ---xx    shn  0.7488  06-10-98 Disc 2- 2.shn
+     4:22.36       46301516 B   ---   --   ---xx    shn  0.6101  06-10-98 Disc 2- 3.shn
+     4:52.23       51562940 B   ---   --   ---xx    shn  0.7782  06-10-98 Disc 2- 4.shn
+     7:23.08       78164060 B   ---   --   ---xx    shn  0.6727  06-10-98 Disc 2- 5.shn
+     5:32.56       58696556 B   ---   --   ---xx    shn  0.6759  06-10-98 Disc 2- 6.shn
+     4:41.12       49596668 B   ---   --   ---xx    shn  0.7473  06-10-98 Disc 2- 7.shn
+    97:38.53     1033477368 B                            0.7194  (16 files)
+=================== 
+=================== 
+=================== 

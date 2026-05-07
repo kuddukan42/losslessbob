@@ -1,0 +1,62 @@
+Legendary Tapers Series #30
+
+Bob Dylan
+1979-11-13
+Fox Warfield Theatre, San Francisco
+Offmaster audience recording. Audio cdr>(feurio) wav> (flac frontend) flac.
+Taped by Legendary Taper E.
+
+Watt Alexander in the "Gospel Project" cites two "source recordings" (as before, he guesses
+they may come from the same original). The first includes all the girls' songs, but is 
+incomplete with respect to the Dylan tracks. The second lacks all but one of the girls' 
+songs, but is complete with respect to Dylan's songs. The offmaster recording here is 
+the second recording that the "Gospel Project" cites. This recording has some defects: 
+"There is a brief drop-out during "Do Right" and some obtrusive audience chatter during 
+"Saving Grace," Sadly, the quality of the recording suffers a great deal of fluctuation 
+beginning with "Solid Rock" and marring every song thereafter." Thus while the performances
+for this show are of outstanding quality, the recording is not without problems.
+
+
+Disk One
+Gotta Serve Somebody
+I Believe In You
+When You Gonna Wake Up
+When He Returns
+Man Gave Names To All The Animals
+Precious Angel
+Slow Train
+Covenant Woman
+
+God Uses Ordinary People (Mona Lisa Young)
+
+Gonna Change My Way Of Thinking + Do Right To Me Baby (Do Unto Others) (joined in single track)
+Solid Rock
+Saving Grace
+
+Disk Two
+Saved
+What Can I Do For You?
+In The Garden
+Blessed Be The Name
+Pressing On
+
+Disk One
+bd1979-11-13d1t01.flac:534692dbb2ded0b16510f30abd6f8830
+bd1979-11-13d1t02.flac:a976011d827bcf5639ebc01cce58e6d4
+bd1979-11-13d1t03.flac:a5ccc86098c792c05fc81036ead19b24
+bd1979-11-13d1t04.flac:e6fc4bff66dbf48af1451763e2f619c6
+bd1979-11-13d1t05.flac:9eb8cee3296c4d14c7c17fbb354a928c
+bd1979-11-13d1t06.flac:bcb01abfd25d588fe6b129ffda3fb59f
+bd1979-11-13d1t07.flac:0aa46b66bfe3244d247622708a346c2f
+bd1979-11-13d1t08.flac:c213e7b5028891a8dbc26b4d392411b1
+bd1979-11-13d1t09.flac:f1fc9aaad53fdd8f2ef60ea4b1a69a0e
+bd1979-11-13d1t10.flac:bf38546525f43128f11d6a2bf2ce75eb
+bd1979-11-13d1t11.flac:35511d951c5f6695c0540cd8727a91b0
+bd1979-11-13d1t12.flac:fa6bb1d1bd827fe51e1c52d73cc90ca7
+
+Disk Two
+bd1979-11-13d2t01.flac:98b9b4b6ac5da2bf92a5b28af783ecd4
+bd1979-11-13d2t02.flac:9497944668650f4b6326701f8cc0f34d
+bd1979-11-13d2t03.flac:f9e07f630186ac857cbf5fcf855317ad
+bd1979-11-13d2t04.flac:c039d36b5cbed2a624c50319afc8d7fd
+bd1979-11-13d2t05.flac:a2b4a47daf6252b605b9dab347a0ce97

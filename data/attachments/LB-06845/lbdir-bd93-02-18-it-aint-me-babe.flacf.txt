@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-18-it-aint-me-babe.flacf 
+=================== 
+=================== 
+=================== 
+bcb27753b484ccd8ea11002a85103049  bd93-02-18-it-aint-me-babe-d1t01.flac
+c55112ee4c0a836e2bc949392ab7e221  bd93-02-18-it-aint-me-babe-d1t02.flac
+d64275ce9c46865c185bfffa9b93316e  bd93-02-18-it-aint-me-babe-d1t03.flac
+8e0944616f983080eeb04658ffae56e6  bd93-02-18-it-aint-me-babe-d1t04.flac
+90e71b7b5561240217a1d5e7c2eb25b2  bd93-02-18-it-aint-me-babe-d1t05.flac
+369ca26cc8d474a18a9379fdd8135925  bd93-02-18-it-aint-me-babe-d1t06.flac
+2b7dfbc607674dc317d3c02642040a89  bd93-02-18-it-aint-me-babe-d1t07.flac
+7ed9eb32ce0039eba558d48885a14ad1  bd93-02-18-it-aint-me-babe-d1t08.flac
+2d20cadc7368d0c998bcf54386094bf7  bd93-02-18-it-aint-me-babe-d1t09.flac
+23e290c8644fdd6edc87a8460e299669  bd93-02-18-it-aint-me-babe-d1t10.flac
+e767ff08a228448bc148a004fb39c47b  bd93-02-18-it-aint-me-babe-d1t11.flac
+bdbe1db0cf969be71d692fcf84472162  bd93-02-18-it-aint-me-babe-d1t12.flac
+9a43df8d8f0e7190e2761e9fcad5d9d8  bd93-02-18-it-aint-me-babe-d2t01.flac
+a7df09288e913b2cecb5062bdc63eeb2  bd93-02-18-it-aint-me-babe-d2t02.flac
+1c90a1afc00011b2611487e32d80532e  bd93-02-18-it-aint-me-babe-d2t03.flac
+6ef82616aac811c4bf9b61e471936b29  bd93-02-18-it-aint-me-babe-d2t04.flac
+80d1ad94fd0514909cbd6c7e8ec31793  bd93-02-18-it-aint-me-babe-d2t05.flac
+3b705549d7264be930b407bffc6175a3  bd93-02-18-it-aint-me-babe-d2t06.flac
+fcc36c7c3144dbf5f8e4b18ad8efad94  bd93-02-18-it-aint-me-babe-d2t07.flac
+2f9cdfe51d6ad2e63e6393ca9ff7ab2f  bd93-02-18-it-aint-me-babe-d2t08.flac
+ca793f12a468248bbea9280c00fcc2bf  bd93-02-18-it-aint-me-babe-d2t09.flac
+4901917d5afcd3c7b34d85ff247ee067  bd93-02-18-it-aint-me-babe.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-18-it-aint-me-babe.flacf 
+=================== 
+=================== 
+=================== 
+bd93-02-18-it-aint-me-babe-d1t01.flac:47e7dce27c6b28e852ebee792dc74617
+bd93-02-18-it-aint-me-babe-d1t02.flac:dc19109be7ff45d94fe478634f2d4564
+bd93-02-18-it-aint-me-babe-d1t03.flac:c86a22450cac7096f9762547194b0234
+bd93-02-18-it-aint-me-babe-d1t04.flac:9981c04ae60dca3e9c947a00a4e8f4a2
+bd93-02-18-it-aint-me-babe-d1t05.flac:6facc4fd244a67785783cb274240e7ba
+bd93-02-18-it-aint-me-babe-d1t06.flac:316b21040fd78a34b2096328546b5a50
+bd93-02-18-it-aint-me-babe-d1t07.flac:6b27f3b0af0cf84358cbacb9414d8a59
+bd93-02-18-it-aint-me-babe-d1t08.flac:8c09fe12d931cd9b93d1c91ca7766f9f
+bd93-02-18-it-aint-me-babe-d1t09.flac:66f9ebdae95b38355ae7bfc9a05bf64a
+bd93-02-18-it-aint-me-babe-d1t10.flac:e6f7a72fc03d1a51793ef45cabc48f46
+bd93-02-18-it-aint-me-babe-d1t11.flac:5211432b33b36f17b86ea832f7bd2fbb
+bd93-02-18-it-aint-me-babe-d1t12.flac:c4928dba4bfd02519e66ecf64de7f7cb
+bd93-02-18-it-aint-me-babe-d2t01.flac:4e0b12435328752b87d9fe53674aa635
+bd93-02-18-it-aint-me-babe-d2t02.flac:931026e4548377490ffa88c5253b7bbd
+bd93-02-18-it-aint-me-babe-d2t03.flac:fc68b6f0521f34d1f85bc32fc82cb801
+bd93-02-18-it-aint-me-babe-d2t04.flac:e288bef95423ffff1a3117315d4a4a05
+bd93-02-18-it-aint-me-babe-d2t05.flac:c431d9be233bda63db69dd1dc6f564d5
+bd93-02-18-it-aint-me-babe-d2t06.flac:bf1ac734b82daab2f9a76ffda5b49b41
+bd93-02-18-it-aint-me-babe-d2t07.flac:e00a013651c3f32e5b96bd7467f1ecc8
+bd93-02-18-it-aint-me-babe-d2t08.flac:19f26f0c654ad4d36747401fc0f27c71
+bd93-02-18-it-aint-me-babe-d2t09.flac:56597a5bfda4643563457f865d14aecf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-18-it-aint-me-babe.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.45       45264284 B   ---   --   ---xx   flac  0.6530  bd93-02-18-it-aint-me-babe-d1t01.flac
+     4:20.52       45986348 B   ---   --   ---xx   flac  0.6254  bd93-02-18-it-aint-me-babe-d1t02.flac
+     6:26.50       68208044 B   ---   --   ---xx   flac  0.6867  bd93-02-18-it-aint-me-babe-d1t03.flac
+    10:04.10      106569164 B   ---   --   ---xx   flac  0.6836  bd93-02-18-it-aint-me-babe-d1t04.flac
+     5:31.45       58494284 B   ---   --   ---xx   flac  0.6975  bd93-02-18-it-aint-me-babe-d1t05.flac
+     8:54.28       94263500 B   ---   --   ---xx   flac  0.6563  bd93-02-18-it-aint-me-babe-d1t06.flac
+     7:13.52       76503548 B   ---   --   ---xx   flac  0.6784  bd93-02-18-it-aint-me-babe-d1t07.flac
+     4:24.63       46717820 B   ---   --   ---xx   flac  0.4967  bd93-02-18-it-aint-me-babe-d1t08.flac
+     6:26.35       68172764 B   ---   --   ---xx   flac  0.5425  bd93-02-18-it-aint-me-babe-d1t09.flac
+     7:10.27       75915548 B   ---   --   ---xx   flac  0.5731  bd93-02-18-it-aint-me-babe-d1t10.flac
+     7:54.35       83695964 B   ---   --   ---xx   flac  0.5897  bd93-02-18-it-aint-me-babe-d1t11.flac
+     6:23.50       67678844 B   ---   --   ---xx   flac  0.6989  bd93-02-18-it-aint-me-babe-d1t12.flac
+     8:57.15       94762124 B   ---   --   ---xx   flac  0.6665  bd93-02-18-it-aint-me-babe-d2t01.flac
+     8:16.27       87557948 B   ---   --   ---xx   flac  0.5825  bd93-02-18-it-aint-me-babe-d2t02.flac
+     8:12.63       86937020 B   ---   --   ---xx   flac  0.6851  bd93-02-18-it-aint-me-babe-d2t03.flac
+     7:30.25       79438844 B   ---   --   ---xx   flac  0.5692  bd93-02-18-it-aint-me-babe-d2t04.flac
+     6:50.42       72422828 B   ---   --   ---xx   flac  0.6753  bd93-02-18-it-aint-me-babe-d2t05.flac
+     7:26.00       78674444 B   ---   --   ---xx   flac  0.5147  bd93-02-18-it-aint-me-babe-d2t06.flac
+     7:45.55       82155404 B   ---   --   ---xx   flac  0.5891  bd93-02-18-it-aint-me-babe-d2t07.flac
+     8:24.23       88959740 B   ---   --   ---xx   flac  0.6551  bd93-02-18-it-aint-me-babe-d2t08.flac
+     6:21.57       67342508 B   ---   --   ---xx   flac  0.6483  bd93-02-18-it-aint-me-babe-d2t09.flac
+   148:52.49     1575720972 B                            0.6293  (21 files)
+=================== 
+=================== 
+=================== 

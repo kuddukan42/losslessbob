@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-29-salt-for-salt.flacf 
+=================== 
+=================== 
+=================== 
+54b54c1bfb658ddc6916a3b69f90b06c  bd95-06-29-salt-for-salt-d1t01.flac
+b010aebc5a763546ac1ba2f7b158afa7  bd95-06-29-salt-for-salt-d1t02.flac
+d08565781a6c3ad386e12aa646e75047  bd95-06-29-salt-for-salt-d1t03.flac
+05437d971c60c832f910ebf807d4f728  bd95-06-29-salt-for-salt-d1t04.flac
+fde1b42968eecf712aec5b0cc2150c60  bd95-06-29-salt-for-salt-d1t05.flac
+8310a1aad2df11ec0dda6cc11d6c25d5  bd95-06-29-salt-for-salt-d1t06.flac
+88d5084f94ad8db4c4ae6d3dee468adc  bd95-06-29-salt-for-salt-d1t07.flac
+b3d7a10078f4794fb60c4cb671d1143e  bd95-06-29-salt-for-salt-d1t08.flac
+f0322c515794b250e27d2c1ac41bba3f  bd95-06-29-salt-for-salt-d1t09.flac
+91c548380561681fc9e56c15a7aee4b8  bd95-06-29-salt-for-salt-d1t10.flac
+8fb7e03ec792c1fdf92f2fd20896c2c9  bd95-06-29-salt-for-salt-d1t11.flac
+53bf744639238b798a035b82f50c0eae  bd95-06-29-salt-for-salt-d1t12.flac
+4947ce39b144e71c5a273bb2663af579  bd95-06-29-salt-for-salt-d2t01.flac
+b3937417e7d9c0aa20f67ee0af9de11b  bd95-06-29-salt-for-salt-d2t02.flac
+187f3758dc8e5aafc84b1d79b5ae7613  bd95-06-29-salt-for-salt-d2t03.flac
+f9698630703dc4268eb971bdce5814b8  bd95-06-29-salt-for-salt-d2t04.flac
+250e3e37bebf465526d35e50a14e7541  bd95-06-29-salt-for-salt-d2t05.flac
+5b325e49fef709703896498f877f6b97  bd95-06-29-salt-for-salt-d2t06.flac
+5123f38700773c3c5e0f77b5b981ba2a  bd95-06-29-salt-for-salt-d2t07.flac
+7e03943bbaa84ffd325c835de50ab45a  bd95-06-29-salt-for-salt-d2t08.flac
+36a75b77684ba221d48a59a9dd1106c6  bd95-06-29-salt-for-salt-d2t09.flac
+1ea5f5c7754e48d8ac1eaa86d7f50f92  bd95-06-29-salt-for-salt-d2t10.flac
+003cff53581d2591369ddbd18c0fb290  bd95-06-29-salt-for-salt.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-29-salt-for-salt.flacf 
+=================== 
+=================== 
+=================== 
+bd95-06-29-salt-for-salt-d1t01.flac:fe0367d743f61ed11e9cbea0fb67ed65
+bd95-06-29-salt-for-salt-d1t02.flac:40e5dd6c33305b5ac0dbb241f1680b37
+bd95-06-29-salt-for-salt-d1t03.flac:f42a80f87847bfb1d3c524d81cfa989d
+bd95-06-29-salt-for-salt-d1t04.flac:f1eb87cb9de86f0b4c4ea328d7282744
+bd95-06-29-salt-for-salt-d1t05.flac:5c81d030222a56eeee3ea68b96fb7a18
+bd95-06-29-salt-for-salt-d1t06.flac:8ef1d8fb64d2998810741c129b40d179
+bd95-06-29-salt-for-salt-d1t07.flac:5aa254d990077246509e7e9259b273fa
+bd95-06-29-salt-for-salt-d1t08.flac:697f25ee8bdd595c4506944a7c7489a9
+bd95-06-29-salt-for-salt-d1t09.flac:f55a252995070be603a5f7115a990c42
+bd95-06-29-salt-for-salt-d1t10.flac:78fef49cdbbd2e8ff8d61ba9ae7319fe
+bd95-06-29-salt-for-salt-d1t11.flac:308161b145be107248295a929f3839c5
+bd95-06-29-salt-for-salt-d1t12.flac:e1e657d6557ea9e0575556922a35645f
+bd95-06-29-salt-for-salt-d2t01.flac:c3afc4e15a49e4219edf2e285d1450d6
+bd95-06-29-salt-for-salt-d2t02.flac:6e095a9e5db6b65f290a05cfc425e0eb
+bd95-06-29-salt-for-salt-d2t03.flac:3f92764a08f62c39445d1f73c873d6f2
+bd95-06-29-salt-for-salt-d2t04.flac:c115f52f95bab124712b64474f1086a3
+bd95-06-29-salt-for-salt-d2t05.flac:1f2f1566d47d949d6613e26da21e1b36
+bd95-06-29-salt-for-salt-d2t06.flac:abe93e9aa2ecdde659b4728eb6bb19a0
+bd95-06-29-salt-for-salt-d2t07.flac:a6d6c3a70c299483b451a30d1e15ca51
+bd95-06-29-salt-for-salt-d2t08.flac:8923e926b5d4e7612e0f6d243946e4f5
+bd95-06-29-salt-for-salt-d2t09.flac:991ab03e6562ac35608fd54fb9de42e1
+bd95-06-29-salt-for-salt-d2t10.flac:4ac5004a154cd571201538437ce2ec2c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-06-29-salt-for-salt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:17.60        3139964 B   ---   --   ---xx   flac  0.5719  bd95-06-29-salt-for-salt-d1t01.flac
+     4:54.62       52007468 B   ---   --   ---xx   flac  0.7038  bd95-06-29-salt-for-salt-d1t02.flac
+     5:32.20       58611884 B   ---   --   ---xx   flac  0.6682  bd95-06-29-salt-for-salt-d1t03.flac
+     6:17.20       66549884 B   ---   --   ---xx   flac  0.6997  bd95-06-29-salt-for-salt-d1t04.flac
+     5:21.48       56737340 B   ---   --   ---xx   flac  0.6502  bd95-06-29-salt-for-salt-d1t05.flac
+     7:30.07       79396508 B   ---   --   ---xx   flac  0.6395  bd95-06-29-salt-for-salt-d1t06.flac
+     7:11.55       76157804 B   ---   --   ---xx   flac  0.7019  bd95-06-29-salt-for-salt-d1t07.flac
+     8:59.43       95180780 B   ---   --   ---xx   flac  0.6595  bd95-06-29-salt-for-salt-d1t08.flac
+     5:37.05       59458604 B   ---   --   ---xx   flac  0.6296  bd95-06-29-salt-for-salt-d1t09.flac
+     8:08.17       86123228 B   ---   --   ---xx   flac  0.6548  bd95-06-29-salt-for-salt-d1t10.flac
+     9:29.20      100418684 B   ---   --   ---xx   flac  0.7053  bd95-06-29-salt-for-salt-d1t11.flac
+     8:51.23       93722540 B   ---   --   ---xx   flac  0.6967  bd95-06-29-salt-for-salt-d1t12.flac
+     8:18.30       87917804 B   ---   --   ---xx   flac  0.6848  bd95-06-29-salt-for-salt-d2t01.flac
+    10:07.45      107180684 B   ---   --   ---xx   flac  0.6711  bd95-06-29-salt-for-salt-d2t02.flac
+     9:31.20      100771484 B   ---   --   ---xx   flac  0.5986  bd95-06-29-salt-for-salt-d2t03.flac
+     6:29.37       68706668 B   ---   --   ---xx   flac  0.6769  bd95-06-29-salt-for-salt-d2t04.flac
+     6:55.18       73248380 B   ---   --   ---xx   flac  0.6662  bd95-06-29-salt-for-salt-d2t05.flac
+     7:19.07       77456108 B   ---   --   ---xx   flac  0.6230  bd95-06-29-salt-for-salt-d2t06.flac
+     6:18.50       66796844 B   ---   --   ---xx   flac  0.6805  bd95-06-29-salt-for-salt-d2t07.flac
+     8:30.63       90112220 B   ---   --   ---xx   flac  0.6450  bd95-06-29-salt-for-salt-d2t08.flac
+     7:18.35       77345564 B   ---   --   ---xx   flac  0.6113  bd95-06-29-salt-for-salt-d2t09.flac
+     6:08.15       64950524 B   ---   --   ---xx   flac  0.6971  bd95-06-29-salt-for-salt-d2t10.flac
+   155:08.25     1641990968 B                            0.6639  (22 files)
+=================== 
+=================== 
+=================== 

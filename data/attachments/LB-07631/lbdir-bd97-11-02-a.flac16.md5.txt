@@ -1,0 +1,28 @@
+61fcebc2285c669bb61e81f3eff757e5  bd1997-11-02-Columbia.flac16.md5
+a4e2e03ebec47df06d96293c73799733  bd1997-11-02-columbia.txt
+cca5498bb8df445909d7de6b886333d7  d1t09.fixed\Bob Dylan- 2.11.97 Columbia-d1-t09.fix.flac
+75c4a86bb433bf52c42ed903b09ca311  d1t09.fixed\d1t09.fixed.ffp.txt
+396b3eea5d70e495d0fb3a131749cddd  d1t09.fixed\d1t09.fixed.sbeok.log.txt
+cb0c6e6804ea8125063d857995438f7e  d2t02.sa_fa.JPG
+9bae0b53ebf020ee535248781f1ac674  Disc 1\2.11.97 Columbia.log
+3598bceeceed835c4a2b2a3a0b750ae0  Disc 1\Bob Dylan - 2.11.97 Columbia.m3u
+008c5ce2b61c5dab92027c7be14b5b0e  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t01.flac
+081b8df2c8f0ea81dea58fd6705059c3  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t02.flac
+d23b3dc1516c9a5bfb8bda0eef5b21d0  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t03.flac
+25ff1c93843694f264d73d734d9dfb27  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t04.flac
+9ea9fabd2af3174f36f84e9aba38bccd  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t05.flac
+1e112a5c0ec76fa6b8b1fb4ab00cc754  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t06.flac
+9e00e09a97339642906edfaad60878f2  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t07.flac
+aa400a6e4e6c52dfe5288002068e0f2a  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t08.flac
+d7f859838d9dbca094f9e2a149fe81f6  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t09.flac
+4ec795d7ee5bed6c2209fa032307d222  Disc 1\Bob Dylan- 2.11.97 Columbia-d1-t10.flac
+f6b844cdf6503b81dc141bb7eef2c6af  Disc 1\d1.ffp.txt
+52f1ddd105f8449a3eb9b3c638989558  Disc 2\2.11.97 Columbia.log
+29e7d2a2be69bb0086e4a91ed0f6d1eb  Disc 2\Bob Dylan - 2.11.97 Columbia.m3u
+91bf48b0007ecb6152d32703b567eb75  Disc 2\Bob Dylan- 2.11.97 Columbia-d2-t01.flac
+f8a9a11832202f05826e7e086c407237  Disc 2\Bob Dylan- 2.11.97 Columbia-d2-t02.flac
+9a23d698ee37fe8968727009b84778b8  Disc 2\Bob Dylan- 2.11.97 Columbia-d2-t03.flac
+37ed63b11da4b255685ce3c23ce2ddb0  Disc 2\Bob Dylan- 2.11.97 Columbia-d2-t04.flac
+0b0a84fa7a93998b723b00ddc331b89e  Disc 2\Bob Dylan- 2.11.97 Columbia-d2-t05.flac
+e2a7dd16334679752a285ce8972a8b7c  Disc 2\Bob Dylan- 2.11.97 Columbia-d2-t06.flac
+a3d8df678b247977a5283330de361641  Disc 2\d2.ffp.txt

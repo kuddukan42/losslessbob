@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-21-Preaching to the Converted-lk.flacf 
+=================== 
+=================== 
+=================== 
+c1319c66dd0a4360a29374b9fbb45155  1980 Leg 1 DVD 4.md5
+56b07e12e6398fb1c428dc3743dd66d0  D1\D1.md5
+e88b7b416741e5f87c3cfded8d129200  D1\Track01.flac
+2b8192430c613865192a388a6d804d07  D1\Track02.flac
+fe004c8631d8c8fa280ed813b31d8cca  D1\Track03.flac
+c4f43ce29ef091974fc9ec708fbd3061  D1\Track04.flac
+04ba6b776cc1dba952e0aeaa166f2ce4  D1\Track05.flac
+9cad9569200dea1340e9bd714110afb3  D1\Track06.flac
+4ce841c2d5ad1d7d3c534597db0d98e6  D1\Track07.flac
+5b0d705ee12c072d3d0345bbfdd0db72  D1\Track08.flac
+c3bf1b53c9b23a850d87060fad5ab9e4  D2\D2.md5
+bbedf3d76896042360bb9d54d65ee358  D2\Track01.flac
+9d933249c7d103ed85725b880c55cd86  D2\Track02.flac
+a36f3073c7716a3d5ec3f5168a5b2573  D2\Track03.flac
+57a3a1a21dfaa30414113022c1c15fae  D2\Track04.flac
+51012791be7914b8e546abd96b7b19ac  D2\Track05.flac
+e5237566c08524cdadc19ba04bf66491  D2\Track06.flac
+2e319409359cfb42d1f84b4454ea6d95  D2\Track07.flac
+1bc6167cd32009f66709087d9e2fa58f  D2\Track08.flac
+ae69b5674b731b58d9e36cb81f5c8f00  D2\Track09.flac
+465d9831fb21925c7f2c8d637e8251cf  D2\Track10.flac
+2b6742f5cfae63a587541ea6fd2cf591  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-21-Preaching to the Converted-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:bae2608f878e4e532fc7a5e0a3e00981
+Track02.flac:edbe5747991fa3faf1ac07303db36e32
+Track03.flac:9f263cd7b36da8288309108871e985a4
+Track04.flac:a3c6ee5e846da6e0ca785f60a64933c1
+Track05.flac:c002c98e6cb90d5e70fc1cb4350225de
+Track06.flac:59fc77c1909ead54be3ece330327a1eb
+Track07.flac:1cb077a65fee9e001c641ac8cee8cab7
+Track08.flac:7b2fe72dde16f6edd71788ee64bcb914
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-21-Preaching to the Converted-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:394d4805b18aa7ed8c00907621b9ecb8
+Track02.flac:b2d3122f070410f23de757d33cd36641
+Track03.flac:a74791e94e343b8fd39e9d3bbd0cb534
+Track04.flac:08c68fe5473ad561a19d2d35962e2e45
+Track05.flac:8b3c61224a6c9bf90fa1f7f7c4bc9f67
+Track06.flac:4915254f6479ef6a64a4f882f5ac32a0
+Track07.flac:d39606ff42b331c3a6914f483aa4ea98
+Track08.flac:d224c985b6478fabd0dcf18f51d97ec3
+Track09.flac:ca6f197902045865d9f40a8c7d2d6cb0
+Track10.flac:3ce04e427cdb7ced620e684a718b6a00
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-21-Preaching to the Converted-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:49.04       72157052 B   ---   --   ---xx   flac  0.6322  Track01.flac
+     5:26.03       57513500 B   ---   --   ---xx   flac  0.5615  Track02.flac
+     6:10.19       65312732 B   ---   --   ---xx   flac  0.6401  Track03.flac
+     4:50.20       51203084 B   ---   --   ---xx   flac  0.5370  Track04.flac
+     5:25.34       57410012 B   ---   --   ---xx   flac  0.5799  Track05.flac
+     6:44.61       71409116 B   ---   --   ---xx   flac  0.6075  Track06.flac
+     6:11.51       65564396 B   ---   --   ---xx   flac  0.6560  Track07.flac
+     5:44.19       60726332 B   ---   --   ---xx   flac  0.5737  Track08.flac
+    47:21.61      501296224 B                            0.6019  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-21-Preaching to the Converted-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.36       30249116 B   ---   --   ---xx   flac  0.4913  Track01.flac
+     5:07.02       54159548 B   ---   --   ---xx   flac  0.6421  Track02.flac
+     4:43.64       50071772 B   ---   --   ---xx   flac  0.5855  Track03.flac
+     4:40.35       49474364 B   ---   --   ---xx   flac  0.6631  Track04.flac
+     4:59.20       52790684 B   ---   --   ---xx   flac  0.5424  Track05.flac
+     4:23.20       46440284 B   ---   --   ---xx   flac  0.6384  Track06.flac
+     6:08.46       65023436 B   ---   --   ---xx   flac  0.5607  Track07.flac
+     8:21.66       88531676 B   ---   --   ---xx   flac  0.5764  Track08.flac
+     4:49.12       51007868 B   ---   --   ---xx   flac  0.6405  Track09.flac
+     7:30.31       79452956 B   ---   --   ---xx   flac  0.5366  Track10.flac
+    53:35.32      567201704 B                            0.5868  (10 files)
+=================== 
+=================== 
+=================== 

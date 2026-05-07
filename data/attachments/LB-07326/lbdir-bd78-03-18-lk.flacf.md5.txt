@@ -1,0 +1,34 @@
+349498b865f3ccea9bf97634cc2c068c  1978 Leg 1 Disc 4.md5
+e100d1cef622588f6b59ef432ebe6e95  bd78-03-18.txt
+63a88c23c444c534add1a05505aa75b7  D1\Adelaide 18Mar78 101.flac
+b042f7859b35fb88601a74a9d0aaa991  D1\Adelaide 18Mar78 102.flac
+dc9c520e0bcd26ba5361b170e79d6a60  D1\Adelaide 18Mar78 103.flac
+d3672657ecdb3cfbb8ee8254fd94df6a  D1\Adelaide 18Mar78 104.flac
+ff2a33ffce192eb985e87793472515e4  D1\Adelaide 18Mar78 105.flac
+174fe0f86b22ca0cb2d2f47f89a46bff  D1\Adelaide 18Mar78 106.flac
+098a8e2f880920113b3669dafd36e426  D1\Adelaide 18Mar78 107.flac
+d57c767254548a565958eb86a8f055c6  D1\Adelaide 18Mar78 108.flac
+522e7dddf93499a035b5c0c0641b3694  D1\Adelaide 18Mar78 109.flac
+2bb92717d05ec91fb6fba6d3c9e1e456  D1\Adelaide 18Mar78 110.flac
+e5bb89a763dbbc61e47007c5757485b9  D1\Adelaide 18Mar78 111.flac
+bfcc0d4fa2c21dffebe69d20157dd955  D1\Adelaide 18Mar78 112.flac
+779e5002497660105b139c3ce30ad956  D1\Adelaide 18Mar78 113.flac
+e501fce927154bd4f35078bff778d5c4  D1\D1.md5
+caf8b9651324140f1c832bbb017b5e0e  D2\Adelaide 18Mar78 201.flac
+8ba20c85c78328cf96197f2b6a84fa74  D2\Adelaide 18Mar78 202.flac
+c6079d1edba7277552287c454d032cf0  D2\Adelaide 18Mar78 203.flac
+1647b9963b3a83b5060405968d6d3fd2  D2\Adelaide 18Mar78 204.flac
+08e08ef5603b3954932d9f700f68f815  D2\Adelaide 18Mar78 205.flac
+b234a991756956039c517745c997aa4d  D2\Adelaide 18Mar78 206.flac
+fb4c227d839038660b421acc1a41fbac  D2\Adelaide 18Mar78 207.flac
+738aa90fca5a6bf3d9180c8479355a3d  D2\Adelaide 18Mar78 208.flac
+d9d4aab04d0d1fe5639b255a9d0d929f  D2\Adelaide 18Mar78 209.flac
+2c30af1d322954429ca99006a359b7dd  D2\Adelaide 18Mar78 210.flac
+3a7b0c88ef8e9abe8d5638bcc0ad9b36  D2\Adelaide 18Mar78 211.flac
+c2fa436f66ea64b7cc988c422a9a84b6  D2\Adelaide 18Mar78 212.flac
+ce9f82ec80c4a4c6ec0ddbde6b2a9c84  D2\Adelaide 18Mar78 213.flac
+7e8069ebbadfce8d4e1238e518a483d7  D2\Adelaide 18Mar78 214.flac
+dbc51afd241110969fbd3bc1536e3136  D2\Adelaide 18Mar78 215.flac
+818db27d15c3e06c740df83f0e7e07e3  D2\Adelaide 18Mar78 216.flac
+73db24e781056fa8be23fa16daed5b74  D2\Adelaide 18Mar78 217.flac
+d2dc8075db5b27b156d2710dca10a957  D2\D2.md5

@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-08-27-Complete-Hearts-Of-Fire-Outtakes-PR.flacf 
+=================== 
+=================== 
+=================== 
+a84c09d4a73a83dc5b979a4861af83f3  bd86-08-27-Complete-Hearts-Of-Fire-Outtakes-PR-LB-3485.txt
+2c32f860244dbe63c9f535ff2ab03384  BobDylanHeartsOfFire.md5
+32c2bcc9f9a7b94ea4c52b0e04739fee  BobDylanHeartsOfFire.txt
+a27d2bd7195d9b89c24462b0306860f7  DylanHeartsOfFire.jpg
+40fdca36f355dffe704d4853e52caa93  Track01.flac
+3b6f621f07b6af0ea90897983a6bb8f2  Track02.flac
+0100e560ec998eeeb719df6d335b84a6  Track03.flac
+818a898110102911a24ddb0b2a5abcff  Track04.flac
+c8b041653c372bcdb83d65df65c7772d  Track05.flac
+9f11bc5af8b734739e87282880bb165f  Track06.flac
+d7aa36cdd019def5270823a763072a80  Track07.flac
+8d706b795923889fbe421276a9bf1190  Track08.flac
+a21ade013018bba16948b87f4feafbbb  Track09.flac
+7a8eca890512dfc1175f508f8c1de3ee  Track10.flac
+9a37b8c5c39df48af50aac3326185a92  Track11.flac
+751d15bacd9ce7278c2c3e0b12159b5a  Track12.flac
+ddbe769f30fcb7b3e5affc3afbff98fa  Track13.flac
+bc29062dd677eb1b8f1fb4fe4cb5f501  Track14.flac
+905f09b0f196998596d222d6c42ce24f  Track15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-08-27-Complete-Hearts-Of-Fire-Outtakes-PR.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:fd61231053373cffd374e7e9451c1b23
+Track02.flac:b59cacd2c2bcf04e132206590b0ff1dd
+Track03.flac:e269b7d5afa6b4958ca37685b8e56965
+Track04.flac:80c350ef6285dbd0530339e3662ee139
+Track05.flac:1fe83442cfa16fa346a92c6e7f6943c4
+Track06.flac:a95d2a7bce5bfcc2670a4cbd31e27e7c
+Track07.flac:3c383d8abc09dbe02fdf58f9a4de1cba
+Track08.flac:906d33e19f8db88611b3912933654951
+Track09.flac:290f00c63ab47ce3823a0dfe935fc81f
+Track10.flac:4304949f975ff9d52c2a126a44021ad3
+Track11.flac:57b23226724d1b744c195ace24e58d36
+Track12.flac:3ad4fac8ed58bc430eba215c433d7b24
+Track13.flac:f5d8ef116e5281fbb11e6c05e4d69d03
+Track14.flac:c05a68ac244d24bc04e50e2f04cc7085
+Track15.flac:f5a2af0b827b463477299877f365d5b2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-08-27-Complete-Hearts-Of-Fire-Outtakes-PR.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.66       36140876 B   ---   --   ---xx   flac  0.6821  Track01.flac
+     3:33.17       37613228 B   ---   --   ---xx   flac  0.6676  Track02.flac
+     3:48.69       40381532 B   ---   --   ---xx   flac  0.6746  Track03.flac
+     4:28.72       47444588 B   ---   --   ---xx   flac  0.6329  Track04.flac
+     3:37.15       38314124 B   ---   --   ---xx   flac  0.6679  Track05.flac
+     3:31.21       37269836 B   ---   --   ---xx   flac  0.6606  Track06.flac
+     5:15.46       55674236 B   ---   --   ---xx   flac  0.6696  Track07.flac
+     4:36.26       48747596 B   ---   --   ---xx   flac  0.6497  Track08.flac
+     3:53.09       41122412 B   ---   --   ---xx   flac  0.6623  Track09.flac
+     3:09.40       33433724 B   ---   --   ---xx   flac  0.5047  Track10.flac
+     2:51.21       30213836 B   ---   --   ---xx   flac  0.6367  Track11.flac
+     5:14.26       55450796 B   ---   --   ---xx   flac  0.6933  Track12.flac
+     4:39.32       49290908 B   ---   --   ---xx   flac  0.6785  Track13.flac
+     2:48.65       29788124 B   ---   --   ---xx   flac  0.7385  Track14.flac
+     1:24.69       14979932 B   ---   --   ---xx   flac  0.6097  Track15.flac
+    56:17.69      595865748 B                            0.6588  (15 files)
+=================== 
+=================== 
+=================== 

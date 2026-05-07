@@ -1,0 +1,9 @@
+19e158765ce12ebddd4e6158d7160e3a *bd-heroblues-allt02.shn
+0aa56e15adea9d6c7bd728b9a51d2991 *bd-heroblues-allt01.shn
+232e4c6e925d8dbb95bfeac9275321f4 *bd-heroblues-allt03.shn
+f6ef64028fa3408395fe705cb3652317 *bd-heroblues-allt04.shn
+b44758fc9f46a32e9e3430b5c29c2ab4 *bd-heroblues-allt05.shn
+9eacf58b737d58b4a3b28fa5833e4708 *bd-heroblues-allt06.shn
+c0e4436a6321730d2726492f6b173339 *bd-heroblues-allt07.shn
+fdf076944468ba0eff8cd38d943417a1 *bd-heroblues-allt08.shn
+67d62d4a307b38fb78df711bd9ec9d6b *bd-heroblues-allt09.shn

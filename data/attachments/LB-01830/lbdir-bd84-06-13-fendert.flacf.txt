@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-13-fendert.flacf 
+=================== 
+=================== 
+=================== 
+f424761edfdfc0b133ca06d14f2c4824  101 Highway 61 Revisited.flac
+698e39a102402f5b44cf28fe2c5e108c  102 Jokerman.flac
+af86425683fcf158c8ee4fee5d05a720  103 All Along the Watchtower.flac
+0f90b154d1f2283ce172b8436ff471b4  104 Just Like a Woman.flac
+38ddd4a2b49b4fb11aa1771c249cf955  105 Maggies Farm.flac
+f8f2fe4ad3721765df7e64561460a18a  106 I and I.flac
+74ac6e3c06ccc82ec543a4da027e529c  107 License to Kill.flac
+40d1001d8e24cd5daf2f647b4d8fcce0  108 Imagination.flac
+38112d9712890aaef5bdb9765343d076  109 Tangled Up In Blue.flac
+a03873c88b77383b7802cc8f3ea2355f  110 It Aint Me Babe.flac
+4ee9d66e482867a4ddf5264bface44fd  111 Its Alright Ma.flac
+f2c52096a27ee92f4109a54618bdae3a  112 Its All Over Now Baby Blue.flac
+c49734be0a151011e4f795a0079c20d2  201 Masters of War.flac
+ac4bb0072aff3046e951df11cff3e5d0  202 Ballad of a Thin Man.flac
+6e741bd48a4bd471735c9e532e3cb07c  203 Man of Peace.flac
+d09700d361e112dc4b2c6a9207d024a1  204 Every Grain of Sand.flac
+10dd9b16053f04b909cb528b64e84349  205 Like A Rolling Stone.flac
+67a76ba4f1dcd276d0647c97a81401dd  206 Dont Think Twice.flac
+b42448f13f9dafa98d76509a3c0d023e  207 Girl From the North Country.flac
+179efbe0acbff860612eb0898c04bcc0  208 Lonesome Death of Hattie Carroll.flac
+6d5c19801942e36fd949e3427a5c95f0  209 Tombstone Blues.flac
+34723840627b25e6036ccce1ec43c464  210 Blowing in the Wind.flac
+8f14404b64bb84f00effe704e4d539d5  bd84-06-13-fendert.txt
+86305f3ac5219e874684d00edde91ebb  Bob Dylan 12 Berlin 06-13-84.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-13-fendert.flacf 
+=================== 
+=================== 
+=================== 
+101 Highway 61 Revisited.flac:3701485ef07c0c8c5eacdf5ca66400e8
+102 Jokerman.flac:81391b0d049718822eb748926e15fc02
+103 All Along the Watchtower.flac:d5c6ca99833d4367245dafd1cf5d4e79
+104 Just Like a Woman.flac:ed6b9aae479b392187c8b5be87c392a6
+105 Maggies Farm.flac:afde561c29c48584e8776fc5e33241fc
+106 I and I.flac:f37d8fe6bbe6d1d1d510b344fae8e19a
+107 License to Kill.flac:bfab58154efd5fe1223343d5c05b5433
+108 Imagination.flac:b212715cd1b53126c1e04ed49ddcfead
+109 Tangled Up In Blue.flac:41bf90c52bf14b49d8785ab6c0ded340
+110 It Aint Me Babe.flac:fd507852999ce3e4b8027d4f3c57e2a5
+111 Its Alright Ma.flac:472600ce61f935bad64a96ac592fa95c
+112 Its All Over Now Baby Blue.flac:b6f45908362a14e9ece4e21271135bc6
+201 Masters of War.flac:0490fa834bf8542482daecfbbe3f355f
+202 Ballad of a Thin Man.flac:7f6649f3a096247160e73a1d184d0687
+203 Man of Peace.flac:1b47a41a42c099621d3b66296bd6c016
+204 Every Grain of Sand.flac:a3a5e070a34a6a11c5c9ac251102545b
+205 Like A Rolling Stone.flac:5812faa089c8b40c58ec1842ade02e12
+206 Dont Think Twice.flac:8453d8149a3f9a18a3e18d92d56342e8
+207 Girl From the North Country.flac:896ffa3e1623d48d660ab754523a5ba9
+208 Lonesome Death of Hattie Carroll.flac:65aa61ae705e2f4dd17cfcd29a03821e
+209 Tombstone Blues.flac:879c61fbab322ab7c0fdced9e04de91a
+210 Blowing in the Wind.flac:74699c854d7a1f4c7e4437c23848f491
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-13-fendert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.08       53291660 B   ---   --   ---xx   flac  0.6226  101 Highway 61 Revisited.flac
+     7:22.19       78013532 B   ---   --   ---xx   flac  0.6170  102 Jokerman.flac
+     5:43.67       60662828 B   ---   --   ---xx   flac  0.6161  103 All Along the Watchtower.flac
+     6:43.38       71178620 B   ---   --   ---xx   flac  0.6129  104 Just Like a Woman.flac
+     4:29.39       47543372 B   ---   --   ---xx   flac  0.6233  105 Maggies Farm.flac
+     7:09.55       75805004 B   ---   --   ---xx   flac  0.6000  106 I and I.flac
+     4:22.52       46339148 B   ---   --   ---xx   flac  0.6023  107 License to Kill.flac
+     5:25.18       57372380 B   ---   --   ---xx   flac  0.6039  108 Imagination.flac
+     7:27.18       78893180 B   ---   --   ---xx   flac  0.6140  109 Tangled Up In Blue.flac
+     5:54.60       62586764 B   ---   --   ---xx   flac  0.6493  110 It Aint Me Babe.flac
+     6:32.49       69264092 B   ---   --   ---xx   flac  0.6035  111 Its Alright Ma.flac
+     5:32.18       58607180 B   ---   --   ---xx   flac  0.6162  112 Its All Over Now Baby Blue.flac
+     6:06.58       64698860 B   ---   --   ---xx   flac  0.6171  201 Masters of War.flac
+     5:09.23       54561740 B   ---   --   ---xx   flac  0.6151  202 Ballad of a Thin Man.flac
+     4:28.03       47282300 B   ---   --   ---xx   flac  0.6222  203 Man of Peace.flac
+     5:45.48       60970940 B   ---   --   ---xx   flac  0.6067  204 Every Grain of Sand.flac
+     7:12.02       76209548 B   ---   --   ---xx   flac  0.6175  205 Like A Rolling Stone.flac
+     4:00.33       42413660 B   ---   --   ---xx   flac  0.6098  206 Dont Think Twice.flac
+     5:17.41       56015276 B   ---   --   ---xx   flac  0.5910  207 Girl From the North Country.flac
+     5:19.71       56438636 B   ---   --   ---xx   flac  0.5999  208 Lonesome Death of Hattie Carroll.flac
+     5:13.50       55330844 B   ---   --   ---xx   flac  0.6193  209 Tombstone Blues.flac
+     5:44.10       60705164 B   ---   --   ---xx   flac  0.5963  210 Blowing in the Wind.flac
+   126:03.30     1334184728 B                            0.6125  (22 files)
+=================== 
+=================== 
+=================== 

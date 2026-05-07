@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-22-c.flacf 
+=================== 
+=================== 
+=================== 
+6d60addb88f77bce907781836eb918d6  01 Drifter's Escape.flac
+99e1716675155ca91f30e8ab91222978  02 It Takes a Lot to Laugh, it Takes a Train to Cry.flac
+ae1d33883c9a32c0e9c1c080fa07935c  03 All along the Watchtower.flac
+b7125da406eb4d9586de68bc88536028  04 Shelter from the Storm.flac
+8584bc92fdb5738882814be222d1f31a  05 Positively 4th Street.flac
+eb7a2d425bbe817afd9ea52eca3f2ea9  06 Silvio.flac
+565571a036c976d21209070ca4ee9e1c  07 Mr Tambourine Man.flac
+e5727de46408e2acc1750fd3277dc18f  08 Masters of War.flac
+ead0ff9d81804c525285f76701cc3f82  09 One Too Many Mornings.flac
+ca4956672a2dd77e1a456590956ab1be  10 Seeing the Real You at Last.flac
+690bcc5a6b1c71496ecbcad024e00b44  11 What Good Am I.flac
+fccda1ae6f55dfa7415b893181e51da2  12 Cat's in the Well.flac
+ef1e0b5b5a6a2dd7080d74a87a7ff1e9  13 I Shall Be Released.flac
+68df90b991393dd7ebc6a384c5cbfe7e  14 My Back Pages.flac
+cc43f0668dbe8509d4e0c27267d7b4d0  15 Like a Rolling Stone.flac
+0993c2a4e4235b6420806b5b21466291  BOB DYLAN - 1995-06-22 PHILADELPHIA PA (Xfer from 1st gen cassette).ffp
+91bb59554fe466911c941479b13b2ea7  BOB DYLAN - 1995-06-22 PHILADELPHIA PA (Xfer from 1st gen cassette).md5
+ec6affa4060cd31504f51b3e8ea473b3  BOB DYLAN - 1995-06-22 PHILADELPHIA PA (Xfer from 1st gen cassette).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-22-c.flacf 
+=================== 
+=================== 
+=================== 
+01 Drifter's Escape.flac:bd370e179f0fdd51932b6b5be3fa2743
+02 It Takes a Lot to Laugh, it Takes a Train to Cry.flac:5398cf425bf2b9a7bad05db4c5c1cbcd
+03 All along the Watchtower.flac:311227423d60d60bab869db4227777a6
+04 Shelter from the Storm.flac:11dc27d0334e10fd45b08f29085cb8c3
+05 Positively 4th Street.flac:5325edbb020c1fba53cc8f754f8de00f
+06 Silvio.flac:ee9bc50ac26667ed33411c0ec2c439d5
+07 Mr Tambourine Man.flac:a29c76cb83091a8c52380147a930d3ff
+08 Masters of War.flac:a61e10a708fab13ba468dd9ed1f47163
+09 One Too Many Mornings.flac:9ff25fbc4fa5b52f72b3f33a1df807af
+10 Seeing the Real You at Last.flac:cc87632aa718319c3b8ef0773dc9d03f
+11 What Good Am I.flac:98b6967724ded6501989836a9ecdebe8
+12 Cat's in the Well.flac:ac37b705a48071fd601d8fdd5a2ec4ee
+13 I Shall Be Released.flac:9271c152638bd60aa6c8244af0ab9225
+14 My Back Pages.flac:eb2e4c69b3493369ba1af26e2c9cc76d
+15 Like a Rolling Stone.flac:0765969c1122ec31baae03c0f6c11c89
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-06-22-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.59       62231612 B   ---   --   ---xx   flac  0.6549  01 Drifter's Escape.flac
+     7:08.39       75590972 B   ---   --   ---xx   flac  0.6367  02 It Takes a Lot to Laugh, it Takes a Train to Cry.flac
+     6:51.02       72505148 B   ---   --   ---xx   flac  0.6519  03 All along the Watchtower.flac
+     8:14.31       87214556 B   ---   --   ---xx   flac  0.6113  04 Shelter from the Storm.flac
+     9:03.72       95954588 B   ---   --   ---xx   flac  0.6386  05 Positively 4th Street.flac
+     6:14.43       66074780 B   ---   --   ---xx   flac  0.6546  06 Silvio.flac
+     8:39.53       91676300 B   ---   --   ---xx   flac  0.5380  07 Mr Tambourine Man.flac
+     5:55.64       62772572 B   ---   --   ---xx   flac  0.5691  08 Masters of War.flac
+     6:05.25       64445216 B   -b-   --   ---xx   flac  0.5236  09 One Too Many Mornings.flac
+     7:48.20       82601912 B   -b-   --   ---xx   flac  0.6580  10 Seeing the Real You at Last.flac
+    10:05.41      106818476 B   ---   --   ---xx   flac  0.5973  11 What Good Am I.flac
+     8:05.04       85563452 B   ---   --   ---xx   flac  0.6423  12 Cat's in the Well.flac
+     8:05.34       85634012 B   ---   --   ---xx   flac  0.6257  13 I Shall Be Released.flac
+     9:33.46      101185436 B   ---   --   ---xx   flac  0.5821  14 My Back Pages.flac
+     8:13.38       87055336 B   -b-   --   ---xx   flac  0.6022  15 Like a Rolling Stone.flac
+   115:57.46     1227324368 B                            0.6117  (15 files)
+=================== 
+=================== 
+=================== 

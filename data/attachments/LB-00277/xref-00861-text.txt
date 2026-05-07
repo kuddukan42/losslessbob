@@ -1,0 +1,96 @@
+===================
+===================
+===================
+=== Bob Dylan - stuttgart 16-4-2002.ffp
+===================
+===================
+===================
+File 'INFO.txt' does not appear to be a flac file.
+1\Track01.flac:71f2033013b120dbf7be582775fa4c72
+1\Track02.flac:6b4d8109aaff3333bda3185be4d80a75
+1\Track03.flac:e552810f5b4c37defbaf3e80f5a3e7cf
+1\Track04.flac:4f4056d7495de193c74f4903da26df69
+1\Track05.flac:514a608606b3414b1842bf584d94593c
+1\Track06.flac:ca2044d26a96c2f1381302de6f28ef9e
+1\Track07.flac:509b37baa9cd30a3cdcd733056c8794c
+1\Track08.flac:73632c488c041330d1b3e9c364248385
+1\Track09.flac:23a0b7f02a444b041fd82f2e1aba7a3e
+1\Track10.flac:253e578dcae023ec9d1c80a035de969e
+1\Track11.flac:deb5b853fb1c5ca198b6443b95e9130d
+2\Track01.flac:9601f86252128158ffe71c236e55cdac
+2\Track02.flac:14594cc11cc18b9c052e313cc09592ce
+2\Track03.flac:cd9f8829d3e162c27604933a4390411b
+2\Track04.flac:9f5c06cec8a11945b19b6f1b78bc4abc
+2\Track05.flac:f620278e113b8ed90196fda6d9357ed5
+2\Track06.flac:1e902ad72ec2296b57b3863695a4056d
+2\Track07.flac:6f92ef38353dc32f3b8fba7ab5e73361
+2\Track08.flac:3479ab11859dc15f93b4de98c727c9ad
+2\Track09.flac:109b10872ab738d9f9b9bdf44592b192
+
+There were errors.
+===================
+===================
+===================
+=== Bob Dylan - stuttgart 16-4-2002.md5
+===================
+===================
+===================
+f29c6ed9faa3dd6f25856a5c77975c71 *INFO.txt
+cdda826418a4838d1c9d2981241bbfef *1\Track01.flac
+5317f0643467ca5e967ef951d2ef795f *1\Track02.flac
+584d6fa194de9f2383654c070c7fb0c8 *1\Track03.flac
+a26655b110c4d318dc6a52c8bed19838 *1\Track04.flac
+8200422f379241903f3fbed5745c28a1 *1\Track05.flac
+6f0e87e7bdd03bbd78ef23f743c0aa35 *1\Track06.flac
+c57c9f4cec5bad40640aac199d2441aa *1\Track07.flac
+841bb15a3cf0c69b65a8516fc29082ad *1\Track08.flac
+65b82bd3355468f24b265e4594ebd4b2 *1\Track09.flac
+c8d1aa94bf40b7673fc56954c3b99fb4 *1\Track10.flac
+9d2aac0943ae2b97a4f5de99ab1e206d *1\Track11.flac
+942cc05a17f61ad718cd47b94cdcbb61 *2\Track01.flac
+f2183389a911fc8f0ef7f180542952fc *2\Track02.flac
+4060917c55776fec50ababbe7d85d8a6 *2\Track03.flac
+518ea6add7d076d3f68bcb539afe06fc *2\Track04.flac
+5fb4903d536084fb76e5e34784dc6af8 *2\Track05.flac
+fef23de2c2fea9f986157afc785e1098 *2\Track06.flac
+ad4ab2aa68df89f0fad268c327be623a *2\Track07.flac
+3c4828d386ab6e4d99c9472745109f24 *2\Track08.flac
+c1154a83236ce8e40c5d165fe673b30e *2\Track09.flac
+===================
+===================
+===================
+=== INFO.txt
+===================
+===================
+===================
+Bob Dylan 
+Stuttgart 16-4-2002
+unknown origin
+no LB match
+Jantemp Collection Data DVD 503
+
+
+1 Hallelujah, I'm Ready To Go
+2 The Times They Are A-Changin' 
+3 It's Alright, Ma (I'm Only Bleeding)
+4 Fourth Time Around
+5 Solid Rock
+6 Cry A While
+7 Every Grain Of Sand
+8 Highway 61 Revisited
+9 Masters Of War
+10 Tomorrow Is A Long Time
+11 A Hard Rain's A-Gonna Fall
+
+1 Summer Days
+2 Simple Twist Of Fate
+3 Cold Irons Bound
+4 Rainy Day Women #12 & 35
+5 Man Of Constant Sorrow
+6 Like A Rolling Stone
+7 I Shall Be Released
+8 Honest With Me
+9 Blowin' In The Wind
+===================
+===================
+===================

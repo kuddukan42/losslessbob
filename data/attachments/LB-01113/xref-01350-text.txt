@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== bd030730.md5
+===================
+===================
+===================
+73a3947e7203bb5ba27a8b98a9d10c8e *bd030730d1t01.shn
+3c9a8a5257dd2e9c55b80a550b0ea476 *bd030730d1t02.shn
+e8de90fc738e352a6381bd8a872fbc5d *bd030730d1t03.shn
+61a30531c401c6765c11a3a7920a8b62 *bd030730d1t04.shn
+483c8286f04725d40d8c2963581e613b *bd030730d1t05.shn
+ab232d6202af677035b6f2df2ad6ee49 *bd030730d1t06.shn
+3069dfa4ad37fb93c9f5019302f72612 *bd030730d1t07.shn
+df6ff5108280c9d068e6631a510bdf23 *bd030730d1t08.shn
+d36922011d98fa9edc09f7b88a81be6b *bd030730d1t09.shn
+2b6194b6dac2fc4213d32c324ced8c17 *bd030730d1t10.shn
+85bbe712fe9ac1dce6d823197c8f3b5c *bd030730d1t11.shn
+10da426427d488f3e5140d7c6f9118c4 *bd030730d2t01.shn
+996f86d1539d96e67666903bb6f76e7f *bd030730d2t02.shn
+d617e537d279b6ec7e4113c46490ba33 *bd030730d2t03.shn
+===================
+===================
+===================
+=== Setlist.txt
+===================
+===================
+===================
+Bob Dylan
+St. Pete Times Forum
+Tampa, Florida  USA
+July 30, 2003
+
+Source:  Unknown audience recording. LB-1113
+
+CD 1:
+01. Silvio  
+02. If You See Her, Say Hello  
+03. Tweedle Dee & Tweedle Dum  
+04. You Ain't Goin' Nowhere  
+05. Highway 61 Revisited 
+06. Saving Grace  
+07. The Wicked Messenger  
+08. Most Likely You Go Your Way  
+09. Honest With Me  
+10. Summer Days  
+11. Rainy Day Women #12 & 35 
+
+CD 2 (Dylan with The Dead):
+01. Friend of the Devil
+02. Gotta Serve Somebody
+03. Like a Rolling Stone
+
+Total time = 96:44 
+
+Personnel:
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, pedal steel, and cittern
+Freddie Koella - guitar
+Tony Garnier - bass
+George Recile - drums
+
+73a3947e7203bb5ba27a8b98a9d10c8e *bd030730d1t01.shn
+3c9a8a5257dd2e9c55b80a550b0ea476 *bd030730d1t02.shn
+e8de90fc738e352a6381bd8a872fbc5d *bd030730d1t03.shn
+61a30531c401c6765c11a3a7920a8b62 *bd030730d1t04.shn
+483c8286f04725d40d8c2963581e613b *bd030730d1t05.shn
+ab232d6202af677035b6f2df2ad6ee49 *bd030730d1t06.shn
+3069dfa4ad37fb93c9f5019302f72612 *bd030730d1t07.shn
+df6ff5108280c9d068e6631a510bdf23 *bd030730d1t08.shn
+d36922011d98fa9edc09f7b88a81be6b *bd030730d1t09.shn
+2b6194b6dac2fc4213d32c324ced8c17 *bd030730d1t10.shn
+85bbe712fe9ac1dce6d823197c8f3b5c *bd030730d1t11.shn
+10da426427d488f3e5140d7c6f9118c4 *bd030730d2t01.shn
+996f86d1539d96e67666903bb6f76e7f *bd030730d2t02.shn
+d617e537d279b6ec7e4113c46490ba33 *bd030730d2t03.shn
+===================
+===================
+===================
+=== shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.14       76590572 B   ---   --   -----    wav  1.0000  bd030730d1t01.wav
+     5:21.67       56782028 B   ---   --   -----    wav  1.0000  bd030730d1t02.wav
+     5:04.63       53773820 B   ---   --   -----    wav  1.0000  bd030730d1t03.wav
+     5:35.39       59185772 B   ---   --   -----    wav  1.0000  bd030730d1t04.wav
+     6:25.05       67925804 B   ---   --   -----    wav  1.0000  bd030730d1t05.wav
+     5:56.04       62807852 B   ---   --   -----    wav  1.0000  bd030730d1t06.wav
+     4:22.63       46365020 B   ---   --   -----    wav  1.0000  bd030730d1t07.wav
+     8:10.20       86483084 B   ---   --   -----    wav  1.0000  bd030730d1t08.wav
+     6:50.64       72474572 B   ---   --   -----    wav  1.0000  bd030730d1t09.wav
+     7:32.66       79888076 B   ---   --   -----    wav  1.0000  bd030730d1t10.wav
+     8:37.71       91365836 B   ---   --   -----    wav  1.0000  bd030730d1t11.wav
+    10:31.29      111376652 B   ---   --   -----    wav  1.0000  bd030730d2t01.wav
+     7:24.56       78453356 B   ---   --   -----    wav  1.0000  bd030730d2t02.wav
+     7:35.38       80351420 B   ---   --   -----    wav  1.0000  bd030730d2t03.wav
+    96:43.74     1023823864 B                            1.0000  (14 files)
+===================
+===================
+===================

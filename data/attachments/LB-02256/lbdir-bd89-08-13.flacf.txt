@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-08-13.flacf 
+=================== 
+=================== 
+=================== 
+df4d5d3456ac9accd99e1050b01c138e  bd89-08-13.flacf.md5
+a1023dce127d73ea1b85746589e50381  bd89-08-13.txt
+a1833ad0da5185cfa12a8dff72c88c54  bd89-08-13d1t01.flac
+f9e3da1e744b27c43bf99927b5743d6b  bd89-08-13d1t02.flac
+bc4efbb580f7fb21373342d4d96f5136  bd89-08-13d1t03.flac
+bb2d8f7ba93d989196f348bcfb244032  bd89-08-13d1t04.flac
+95e832a581e8b0322248ad95edd52ad0  bd89-08-13d1t05.flac
+4a1531d4351d6d0260000cf81ef178bd  bd89-08-13d1t06.flac
+1e6a7e662099268e6870295be03e8721  bd89-08-13d1t07.flac
+3c63ff2acecb32d981df18214c0ae898  bd89-08-13d1t08.flac
+036dff370f1e97c6b8021c4009c011b3  bd89-08-13d1t09.flac
+79a1d76d1cb6047a5c1218f53dcffc94  bd89-08-13d2t01.flac
+f27b7ed97d0f0b54a7b8130cf78acb69  bd89-08-13d2t02.flac
+c4b3e1182bf7c49633eb4d60d45274ce  bd89-08-13d2t03.flac
+edd6a5b46ffb17e617110025f7e50f95  bd89-08-13d2t04.flac
+2ca40ea6eacacc3ce0c11127ca461058  bd89-08-13d2t05.flac
+f49ddaedaf0bebe0f28bd9c7263dee91  bd89-08-13d2t06.flac
+b6512eb613f10fd1b7b8297b6aead7a0  bd89-08-13d2t07.flac
+0f99ec73949fc65962f5305c89d72572  bd89-08-13d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-08-13.flacf 
+=================== 
+=================== 
+=================== 
+bd89-08-13d1t01.flac:95614f25f8e198b2470f6c9be95bbe9c
+bd89-08-13d1t02.flac:019bac7f25f56e4591aab61e465b7290
+bd89-08-13d1t03.flac:4a7bb9db8ec1e3cda26a51a8a7e40a9e
+bd89-08-13d1t04.flac:efb17e257102b5f353a11d01e0e961e7
+bd89-08-13d1t05.flac:800d967145e1fa84d6a6b46ea07d894c
+bd89-08-13d1t06.flac:6cfc5e51b5ed1b2515c2a4cfdd7b0c3b
+bd89-08-13d1t07.flac:603ebf2566d91b55740f585b976f5e12
+bd89-08-13d1t08.flac:eff0d8bdeed682a9476602a391b674a8
+bd89-08-13d1t09.flac:e74b9d862a0abe2c54ff6bd2d1bd8101
+bd89-08-13d2t01.flac:4272c22349331e1d0dc312776e8fceec
+bd89-08-13d2t02.flac:274c9fab37777cf4adb8799c1aa9b76c
+bd89-08-13d2t03.flac:9ededb8a8be0fc0618e8d30dfe444b05
+bd89-08-13d2t04.flac:ce31a27c379691c2005de8595e603acd
+bd89-08-13d2t05.flac:1e4e27072e7b190f3f8563e83067d832
+bd89-08-13d2t06.flac:a6daccc9a3034b083ab573613a89fa24
+bd89-08-13d2t07.flac:f6f6d2f3aab955133f03793189ab3b61
+bd89-08-13d2t08.flac:b2f0fc744de6bad1b262b29d02119e05
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-08-13.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.10       57000764 B   ---   --   ---xx   flac  0.6279  bd89-08-13d1t01.flac
+     6:37.33       70108460 B   ---   --   ---xx   flac  0.6069  bd89-08-13d1t02.flac
+     5:27.17       57722828 B   ---   --   ---xx   flac  0.6250  bd89-08-13d1t03.flac
+     6:14.49       66088892 B   ---   --   ---xx   flac  0.6062  bd89-08-13d1t04.flac
+     5:39.21       59849036 B   ---   --   ---xx   flac  0.6019  bd89-08-13d1t05.flac
+     4:48.44       50906732 B   ---   --   ---xx   flac  0.6160  bd89-08-13d1t06.flac
+     7:49.56       82863356 B   ---   --   ---xx   flac  0.6007  bd89-08-13d1t07.flac
+     3:48.04       40228652 B   ---   --   ---xx   flac  0.6022  bd89-08-13d1t08.flac
+     5:42.53       60453500 B   ---   --   ---xx   flac  0.5887  bd89-08-13d1t09.flac
+     6:22.32       67460108 B   ---   --   ---xx   flac  0.6075  bd89-08-13d2t01.flac
+     3:48.13       40249820 B   ---   --   ---xx   flac  0.6609  bd89-08-13d2t02.flac
+     3:45.23       39744140 B   ---   --   ---xx   flac  0.6437  bd89-08-13d2t03.flac
+     4:43.70       50085884 B   ---   --   ---xx   flac  0.6401  bd89-08-13d2t04.flac
+     8:05.28       85619900 B   ---   --   ---xx   flac  0.6494  bd89-08-13d2t05.flac
+     5:21.43       56725580 B   ---   --   ---xx   flac  0.6138  bd89-08-13d2t06.flac
+     8:44.63       92581820 B   ---   --   ---xx   flac  0.6280  bd89-08-13d2t07.flac
+     5:49.11       61589516 B   ---   --   ---xx   flac  0.6572  bd89-08-13d2t08.flac
+    98:11.45     1039278988 B                            0.6213  (17 files)
+=================== 
+=================== 
+=================== 

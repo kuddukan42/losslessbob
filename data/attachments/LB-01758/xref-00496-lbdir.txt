@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-16-c.flac 
+=================== 
+=================== 
+=================== 
+2c3f256051b14600b4e464851715bbda  01 Silvio.flac
+7cc085308ea6c59e051fa00b06661a6c  02 Señor (Tales of Yankee Power).flac
+b6bd1c4abec754a3dcbc75b3cb28968b  03 Cry a while.flac
+b1173b936be6dc0a6ebb13359f7a8d97  04 Boots of Spanish leather.flac
+de3f9dc1953903f3fb61172f21d26794  05 Watching the river flow.flac
+747295e1455ffde4831f792802ddc365  06 Make you feel my love.flac
+dee9987c255ddf2329919ebefe342177  07 Highway 61 revisited.flac
+b61d58b396e934f24c0f5f0df4114e51  08 Tell me that it isn't true.flac
+31daa3023546a8dfcf7b264a06812b51  09 Stuck inside of Mobile with the Memphis blues again.flac
+1de606278c027738dc2bafccb44c34ba  10 Cold irons bound.flac
+8000841ec4a8c4df3ad31ade488af601  11 It ain't me babe.flac
+66254d50765bfa1884474937cbfc2276  12 Honest with me.flac
+371573f75d6e01a668c6d343ae3e714a  13 Shooting star.flac
+37c30e3558b7b59ad922da7595dd79bf  14 Summer days.flac
+ed279d6f96ea253b2e3fcaf89fb333db  15 Cat's in the well.flac
+41fb91fc8d6d3f6aa000306cc96908ca  16 Like a rolling stone.flac
+73dc2fc64ce9e1fc0ff4473a81311741  17 All along the watchtower.flac
+ee964bce28f00d6f028f9ba995f62fb6  18 Get out of Denver.flac
+8dfbcec00f326158344b9a528a11b4d3  2004-03-16 State Theatre, Detroit, Michigan  [Travelin' Man Records] info.txt
+7d76437cea9de9510fd3f1fff41c0bb3  2004-03-16 State Theatre, Detroit, Michigan, USA [Travelin' Man Records] txt.txt
+7d76437cea9de9510fd3f1fff41c0bb3  2004-03-16 State Theatre, Detroit, Michigan, USA [Travelin' Man Records].ffp
+91941834bc41083cacca16cf0f4ff969  2004-03-16 State Theatre, Detroit, Michigan, USA [Travelin' Man Records].md5
+1ea7380a7dcc7ee93988fbc1f75f0afa  2004-03-16 State Theatre, Detroit, Michigan, USA [Travelin' Man Records].shntool_len.txt
+b00cd7cecbe6c5b3a1723713b05b2c4f  Detroit Second 2004 TMR source.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-03-16-c.flac 
+=================== 
+=================== 
+=================== 
+01 silvio.flac:9549661ab06874b7082852fba825209c
+02 señor (tales of yankee power).flac:23e6193ace7994e3bed5c0a9e6cd3b7b
+03 cry a while.flac:5afae16ea37dfd0733c10a41d9d21851
+04 boots of spanish leather.flac:763fce9a08baff360510fa1ad34b28c2
+05 watching the river flow.flac:5e72a82dc06db22e3f5bacc8e75a9715
+06 make you feel my love.flac:d53fc9ea2c0cc8de803e69da3ae36c73
+07 highway 61 revisited.flac:0fa0c69c50801c79bdf1c4e4ee3cdc12
+08 tell me that it isn't true.flac:39f90b0c4cb9cbd1b0f6c4476b7f8ed5
+09 stuck inside of mobile with the memphis blues again.flac:2936aef75ffd3c2db57a9de5340c302c
+10 cold irons bound.flac:181cc332b1650ffd48f5b958f7aab979
+11 it ain't me babe.flac:18e0b8f45ddc335c5aee0871c41a9113
+12 honest with me.flac:b010ce57beb8a7ff0511bcdafab96b82
+13 shooting star.flac:dfec968faea95e1a0f9163af1f4ac133
+14 summer days.flac:b0e8707f2b070a0a1c1eb802f1817917
+15 cat's in the well.flac:7e111cbe4bd1580f48082c054484706b
+16 like a rolling stone.flac:1d7bf429833b84c0f76673fa434d69b7
+17 all along the watchtower.flac:55d6d6564921ecf04ecca57822b1c380
+18 get out of denver.flac:49bf7efdd707e4f48830b876c8292f25
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-16-c.flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:18.00       77263244 B   ---   --   ---xx   flac  0.5193  01 Silvio.flac
+     5:38.00       59623244 B   ---   --   ---xx   flac  0.5272  02 Señor (Tales of Yankee Power).flac
+     5:50.00       61740044 B   ---   --   ---xx   flac  0.5584  03 Cry a while.flac
+     6:14.00       65973644 B   ---   --   ---xx   flac  0.4699  04 Boots of Spanish leather.flac
+     6:43.00       71089244 B   ---   --   ---xx   flac  0.5457  05 Watching the river flow.flac
+     5:00.00       52920044 B   ---   --   ---xx   flac  0.4907  06 Make you feel my love.flac
+     7:12.00       76204844 B   ---   --   ---xx   flac  0.5714  07 Highway 61 revisited.flac
+     4:17.00       45334844 B   ---   --   ---xx   flac  0.5123  08 Tell me that it isn't true.flac
+     6:50.00       72324044 B   ---   --   ---xx   flac  0.5501  09 Stuck inside of Mobile with the Memphis blues again.flac
+     5:33.07       58757708 B   ---   --   ---xx   flac  0.5663  10 Cold irons bound.flac
+     6:10.00       65268044 B   ---   --   ---xx   flac  0.5125  11 It ain't me babe.flac
+     6:51.00       72500444 B   ---   --   ---xx   flac  0.5640  12 Honest with me.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.4829  13 Shooting star.flac
+    10:37.00      112366844 B   ---   --   ---xx   flac  0.5452  14 Summer days.flac
+     5:17.00       55918844 B   ---   --   ---xx   flac  0.5723  15 Cat's in the well.flac
+     7:03.00       74617244 B   ---   --   ---xx   flac  0.5793  16 Like a rolling stone.flac
+     6:51.00       72500444 B   ---   --   ---xx   flac  0.5664  17 All along the watchtower.flac
+     7:14.16       76595276 B   ---   --   ---xx   flac  0.5458  18 Get out of Denver.flac
+   115:35.23     1223388888 B                            0.5400  (18 files)
+=================== 
+=================== 
+=================== 

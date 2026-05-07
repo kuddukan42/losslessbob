@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-26-Loving-Of-Liverpool 
+=================== 
+=================== 
+=================== 
+a6537be544c36dcc715c2588d8b78761  bd96-06-26-Loving-Of-Liverpool-LB-3002.txt
+6758e4203efe3a8db49bb28ea1a81f54  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t01.shn
+2db0138fda8504ba88da41366586d8a5  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t02.shn
+05a390f6dbd40ca8ea0cacdf96e06b8a  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t03.shn
+25f3ae1fd794e304312623990560bf37  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t04.shn
+56a5d250be483426fd94d014cc1ce779  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t05.shn
+457121419b2203aaaec28259da8f2d58  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t06.shn
+171c3a37e13b28e1fd053199277bd766  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t07.shn
+6c240f6b722d810ed69a133d0afb8d92  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t08.shn
+5b26277b69576cf0c13464e181abb955  Dylan_Loving_Of_Liverpool_d1\Loving_Of_Liverpool_d1t09.shn
+0875f2e9eec35e32d445eb78a207baa3  Dylan_Loving_Of_Liverpool_d1\d1.md5
+600f96f17dbdea04ff67aa1c24059c42  Dylan_Loving_Of_Liverpool_d1\d1_EAC_Log.txt
+4d7e15078ab103e4143862b85a521da4  Dylan_Loving_Of_Liverpool_d2\Loving_Of_Liverpool_d2t01.shn
+3df3b296b09b4cfe47a1c5de6c39d23f  Dylan_Loving_Of_Liverpool_d2\Loving_Of_Liverpool_d2t02.shn
+0e83e07a7f3c74f429d02843366b448b  Dylan_Loving_Of_Liverpool_d2\Loving_Of_Liverpool_d2t03.shn
+51d2e847086878a8cc317de352da97fe  Dylan_Loving_Of_Liverpool_d2\Loving_Of_Liverpool_d2t04.shn
+c340d9dcca2bcb82bc6aa45eff9fbfff  Dylan_Loving_Of_Liverpool_d2\Loving_Of_Liverpool_d2t05.shn
+75cd120611d69f58db19d1c0541fc16d  Dylan_Loving_Of_Liverpool_d2\Loving_Of_Liverpool_d2t06.shn
+9f5f9e0daee69c554717096209c39792  Dylan_Loving_Of_Liverpool_d2\Loving_Of_Liverpool_d2t07.shn
+d5f5f20248686b01bb73a5362c014c3a  Dylan_Loving_Of_Liverpool_d2\Loving_Of_Liverpool_d2t08.shn
+009e60666f2c2f65597056f58fa9b11e  Dylan_Loving_Of_Liverpool_d2\d2.md5
+d746d3b36123a56264d81e6cd5b3a9d6  Dylan_Loving_Of_Liverpool_d2\d2_EAC_log.txt
+ed2d166b4fb98dd45a6ab2cb1fab872d  inserts\loving_back.jpg
+c5e32dee888cc29ee4c7bf3a368c3aaa  inserts\loving_front.jpg
+c8fda39ebeafa054a46254436cbdacf1  inserts\loving_front_inside.jpg
+204feac7229b8f3be5b75029cfe5745f  inserts\loving_inside_back.jpg
+ed4e94a70e588bd6bcb25ef86b661836  Loving_Of _Liverpool_.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-06-26-Loving-Of-Liverpool\Dylan_Loving_Of_Liverpool_d1 
+=================== 
+=================== 
+=================== 
+e6d9f1dab099e587f7d798f8989b76f5  [shntool]  Loving_Of_Liverpool_d1t01.wav
+b176902cd782436f0ae9c64b7027f27f  [shntool]  Loving_Of_Liverpool_d1t02.wav
+6f391957c6bec82e6f17eb77512f1b66  [shntool]  Loving_Of_Liverpool_d1t03.wav
+eddaeaf6ec786cab0a2ee99da046b350  [shntool]  Loving_Of_Liverpool_d1t04.wav
+a13b5f9531d6d5e74633f60333cf6a18  [shntool]  Loving_Of_Liverpool_d1t05.wav
+dec13ab923a6962929b96263e132107b  [shntool]  Loving_Of_Liverpool_d1t06.wav
+ed86b6bf7a4750c851c4b9cefba26735  [shntool]  Loving_Of_Liverpool_d1t07.wav
+94fadeb4d5a5c67706d1ab4b5e4406e2  [shntool]  Loving_Of_Liverpool_d1t08.wav
+46f281b4edfef8ede2bc7306a4be9b1c  [shntool]  Loving_Of_Liverpool_d1t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-06-26-Loving-Of-Liverpool\Dylan_Loving_Of_Liverpool_d2 
+=================== 
+=================== 
+=================== 
+af8b56399ae8208f96f079d33749ecb3  [shntool]  Loving_Of_Liverpool_d2t01.wav
+16a219173f495d0c12d4c201dda3f50d  [shntool]  Loving_Of_Liverpool_d2t02.wav
+ea5fbc6a86532d02fb3bfde9be1d2b32  [shntool]  Loving_Of_Liverpool_d2t03.wav
+4df92915171f405fcffffedf9bd097ae  [shntool]  Loving_Of_Liverpool_d2t04.wav
+110e23ad2b616016de2668486d207821  [shntool]  Loving_Of_Liverpool_d2t05.wav
+3e6509b1e845c56659caaa0279e88bbc  [shntool]  Loving_Of_Liverpool_d2t06.wav
+605ca610d622b01c516b35957d382de9  [shntool]  Loving_Of_Liverpool_d2t07.wav
+4761d97d8955b52dac83ab55f55fa960  [shntool]  Loving_Of_Liverpool_d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-26-Loving-Of-Liverpool\Dylan_Loving_Of_Liverpool_d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.30       57400604 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t01.wav
+     8:07.34       85986812 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t02.wav
+     6:25.32       67989308 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t03.wav
+     8:42.66       92236076 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t04.wav
+     6:02.46       63965036 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t05.wav
+     7:24.34       78401612 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t06.wav
+    10:30.47      111242588 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t07.wav
+     6:10.07       65284508 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t08.wav
+     6:09.55       65221004 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d1t09.wav
+    64:58.51      687727548 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-26-Loving-Of-Liverpool\Dylan_Loving_Of_Liverpool_d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:39.47      102246188 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d2t01.wav
+     6:24.50       67855244 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d2t02.wav
+     0:39.61        7023116 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d2t03.wav
+     8:57.06       94740956 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d2t04.wav
+     7:16.12       76938668 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d2t05.wav
+     9:50.23      104130140 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d2t06.wav
+     6:17.59       66641612 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d2t07.wav
+     7:12.60       76345964 B   ---   --   -----    wav  1.0000  Loving_Of_Liverpool_d2t08.wav
+    56:18.18      595921888 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

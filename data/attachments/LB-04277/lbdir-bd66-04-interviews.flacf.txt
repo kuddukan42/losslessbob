@@ -1,0 +1,55 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-04-interviews.flacf 
+=================== 
+=================== 
+=================== 
+1eac7292e2fee6c1743209bd2f44ac8c  bd1966-04-00.rofe.flac16\bd1966-04-00.rofe.flac16.ffp
+6dccafc3356ecd4577d2f105bd8c47f1  bd1966-04-00.rofe.flac16\bd1966-04-00.rofe.txt
+701d995a0bc360f3e32f8f83cef6254b  bd1966-04-00.rofe.flac16\bd1966-04-xx-Stan.Rofe.interview.flac
+8029d7d3686dce3431d10a857af8b78c  bd1966-04-21.interview.flac16\bd1966-04-21.interview.flac16.ffp
+c4869b28a64b70b9040970d5375d73e0  bd1966-04-21.interview.flac16\bd1966-04-21.interview.txt
+a04841759e7cfb8d8cc0caab3c77c1d1  bd1966-04-21.interview.flac16\bd1966-04-21pc.flac
+a17fe89e226111dfd1314aa843223868  bd1966-04_interviews.md5
+7dfa77f41e01b7baffaa0bdf099ef3ab  bd1966-04_interviews.txt
+090c154ebe2fa4319cbcf81716e25fe1  bd66-04-interviews-LB-4277.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-04-interviews.flacf\bd1966-04-21.interview.flac16 
+=================== 
+=================== 
+=================== 
+bd1966-04-21pc.flac:d72a3c0bdcaaf22e4d4cf8c757cd0cf0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-04-interviews.flacf\bd1966-04-00.rofe.flac16 
+=================== 
+=================== 
+=================== 
+bd1966-04-xx-Stan.Rofe.interview.flac:ca582cd05b5f0750e791862c151dcf9b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-04-interviews.flacf\bd1966-04-21.interview.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.00       63504044 B   ---   --   ---xx   flac  0.2192  bd1966-04-21pc.flac
+     6:00.00       63504044 B                            0.2192  (1 file)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-04-interviews.flacf\bd1966-04-00.rofe.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:19.18       13977980 B   ---   --   ---xx   flac  0.2706  bd1966-04-xx-Stan.Rofe.interview.flac
+     1:19.18       13977980 B                            0.2706  (1 file)
+=================== 
+=================== 
+=================== 

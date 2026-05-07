@@ -1,0 +1,41 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-aj-weberman 
+=================== 
+=================== 
+=================== 
+891d7debe8d391f07ef7c0c673be80b9  bd-aj-checksum.md5
+e6eada92d1dd3cfa6624cb9ea0d52c2c  bd-aj-no email, no repost.txt
+a1ab12c27cf739d5f8de9b21376de6c1  bd-aj-Track  1.shn
+58c7c132684e41bab5cc28bbe91f57da  bd-aj-Track  2.shn
+f3d1913d238ca1df8c41eda4a269f582  bd-aj-Track  3.shn
+fd9f6d9e45012d65e304f5654c805e57  bd-aj-Track  4.shn
+9f3ce028ebba4fbf70f3a976aa3bd569  bd-weberman-phone-calls.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-aj-weberman 
+=================== 
+=================== 
+=================== 
+ff810c8fb32b14ae7779a8caf75dc382  [shntool]  bd-aj-Track__1.wav
+15d86077f176e9c86eb678ae20023977  [shntool]  bd-aj-Track__2.wav
+442371c27c6d44adcbbdbe8082fde26c  [shntool]  bd-aj-Track__3.wav
+ec4c15f342b8f5ad436c1b15477ce34a  [shntool]  bd-aj-Track__4.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-aj-weberman 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.35        7843964 B   ---   --   -----    wav  1.0000  bd-aj-Track__1.wav
+     2:52.22       30392588 B   ---   --   -----    wav  1.0000  bd-aj-Track__2.wav
+    17:21.27      183695948 B   ---   --   -----    wav  1.0000  bd-aj-Track__3.wav
+    29:12.24      309109292 B   ---   --   -----    wav  1.0000  bd-aj-Track__4.wav
+    50:10.33      531041792 B                            1.0000  (4 files)
+=================== 
+=================== 
+=================== 

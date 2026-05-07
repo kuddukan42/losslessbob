@@ -1,0 +1,23 @@
+    length     expanded size   cdr  WAVE problems filename
+     3:46.62       40012268    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t01.flac
+     5:49.00       61563644    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t02.flac
+     8:38.62       91521068    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t03.flac
+     6:27.41       68363276    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t04.flac
+     4:07.28       43636700    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t05.flac
+     7:44.20       81896684    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t06.flac
+     6:28.68       68603180    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t07.flac
+     8:16.00       87494444    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t08.flac
+     8:09.57       86393708    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t09.flac
+     3:02.70       32269484    ---   --   ---xx   BobDylan2001-05-01.GEMS.d1t10.flac
+     8:00.45       84777884    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t01.flac
+     5:04.23       53679740    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t02.flac
+    10:31.69      111470732    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t03.flac
+     6:10.73       65439740    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t04.flac
+     7:25.72       78667388    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t05.flac
+     4:02.11       42714716    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t06.flac
+     5:22.60       56941964    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t07.flac
+     4:24.39       46661372    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t08.flac
+     7:08.31       75572156    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t09.flac
+     6:30.66       68951276    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t10.flac
+     8:11.04       86621852    ---   --   ---xx   BobDylan2001-05-01.GEMS.d2t11.flac
+   135:25.01     1433253276 B                     (totals for 21 files, 0.5324 overall compression ratio)

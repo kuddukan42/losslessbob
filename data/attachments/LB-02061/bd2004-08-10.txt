@@ -1,0 +1,77 @@
+Bob Dylan
+Dutchess Stadium
+Fishkill, New York
+August 10, 2004
+-------------------------------------------------------------------------------------------------------------
+Source:
+Soomlos Dat Master
+
+Transfer:
+Sony D8 > Tascam CD-RW 700 > EAC > Cool Edit 96 > CD Wave > mkwACT > SHN
+-------------------------------------------------------------------------------------------------------------
+
+Disc 1:
+01. Intro                                                      		[01:05]
+02. Rainy Day Women #12 & 35                        		[05:10]
+03. Tweedle Dee & Tweedle Dum                      		[05:20]
+04. It's All Over Now, Baby Blue                        		[06:07]
+05. Lonesome Day Blues                                  		[07:15]
+06. Stuck Inside Of Mobile With The Memphis Blues Again		[06:55]
+07. Lay, Lady, Lay                                           		[05:18]
+08. Bye And Bye                                             		[05:53]
+09. Highway 61 Revisited                                		[06:51]
+10. Not Dark Yet                                          		[06:23]
+Total time: [56:16]
+
+Disc 2:
+01. Honest With Me                                        		[06:35]
+02. Masters Of War                                         		[05:16]
+03. Summer Days                                          		[09:22]
+04. Mr. Tambourine Man                                 		[06:32]
+05. Like A Rolling Stone                                  		[06:13]
+06. Band Intros                                              		[01:06]
+07. All Along The Watchtower                         		[05:18]
+Total time: [40:23]
+--------------------------------------------------------------------------------------------------------------
+bd2004-08-10d1.md5
+ecd2b1b4ad52e634cf3784815dc2e27e *bd2004-08-10d1t01.shn
+3e09b4dd4480bc1aa659cef63cc2e728 *bd2004-08-10d1t02.shn
+fcba6c718d70d879c45c248c936a1514 *bd2004-08-10d1t03.shn
+ed9b84f9799ae14690138d2b01227377 *bd2004-08-10d1t04.shn
+6ba61d31b546ca95f8fb773f4ef5bc97 *bd2004-08-10d1t05.shn
+b75a2e406dff965ab4c8f203307827e7 *bd2004-08-10d1t06.shn
+4d3f9aaf57743cb1691e052e944ba8f0 *bd2004-08-10d1t07.shn
+6f92c26197e50d1942572bad2162c5ac *bd2004-08-10d1t08.shn
+17dfbf6bfbdfba09db15a61de10fc14f *bd2004-08-10d1t09.shn
+5c9cb58a4e645a049dd356e1632751ca *bd2004-08-10d1t10.shn
+
+bd2004-08-10d2.md5
+584b3f0d07defd99f3d301917ba6f60c *bd2004-08-10d2t01.shn
+96dbc5af1d26879d902c1d761b6cc526 *bd2004-08-10d2t02.shn
+aa96ac21772ce922f45bbdf9eb957874 *bd2004-08-10d2t03.shn
+4fd4c09fac9452a0a082fef80fdd4849 *bd2004-08-10d2t04.shn
+1a00f8399300aa1a9dfa59326c708098 *bd2004-08-10d2t05.shn
+9e1470ea7557a3f40a06d8be37ab9721 *bd2004-08-10d2t06.shn
+56ada20d445770d55bc804d5c9e53b41 *bd2004-08-10d2t07.shn
+
+bd2004-08-10d1wav.md5
+6810f55c6d37a09f30f78c57c79b4419 *bd2004-08-10d1t01.wav
+42bb59fe8f60babdd261004bc19c3235 *bd2004-08-10d1t02.wav
+b2384f9d6a3c77c6368591acc1181984 *bd2004-08-10d1t03.wav
+1cf251841718c863f6235095470af2e7 *bd2004-08-10d1t04.wav
+00986688b101b826a00cbac4df3d34b4 *bd2004-08-10d1t05.wav
+601884a8e43642c903fe0f289fca1313 *bd2004-08-10d1t06.wav
+f9580e80b6a3e00a412b44f323aa5454 *bd2004-08-10d1t07.wav
+b5cc538181fe3951701dd3c4281a29ad *bd2004-08-10d1t08.wav
+887f8400cc59de433829601f3a9576f6 *bd2004-08-10d1t09.wav
+90e268edbb363c1b011bc9feedecc168 *bd2004-08-10d1t10.wav
+
+bd2004-08-10d2wav.md5
+035b05da167306262ceae17a34a3eb6d *bd2004-08-10d2t01.wav
+f5ab34e26ca33ef00a4a07576ee7be90 *bd2004-08-10d2t02.wav
+94053ff155dc15bcc9acb14bc4a06188 *bd2004-08-10d2t03.wav
+d09a45f110372c9882296d35c6de63a2 *bd2004-08-10d2t04.wav
+00a62a4c3467e86f64c55f0585dc8666 *bd2004-08-10d2t05.wav
+7ee96ddffb4d13f6dd23df9e659ab5db *bd2004-08-10d2t06.wav
+7fe0e178d825ba35aad37ba1c2178423 *bd2004-08-10d2t07.wav
+

@@ -1,0 +1,127 @@
+===================
+===================
+===================
+=== Bob Dylan - 1995-03-13 Prague (AUD Xfer from cassette).ffp
+===================
+===================
+===================
+01 Down in the Flood.flac:def689c29a8842875d09d465fb571c83
+02 Lay Lady Lay.flac:651abde40421a7629c9af5e0134b3b26
+03 All Along the Watchtower.flac:44d24aa3face11eafd0ccdf8c73dc038
+04 Just Like a Woman.flac:f9f2428c461638371d4d879f951c859f
+05 Tangled Up in Blue.flac:9867f47c12a65a8d29f8390ad21a697e
+06 License to Kill.flac:83aca861ed56c67358a35858df26d32c
+07 Mr Tambourine Man.flac:3522700b8afa1a922d1e7b014e928386
+08 The Times They Are A'Changin'.flac:3db08ee808e3c7cf3986415280ef3c8d
+09 Boots of Spanish Leather.flac:686be76b138adfbb714ba763cc53e5f1
+10 God Knows.flac:99555c9cd563296f9b1a93b81a4e022d
+11 Man in the Long Black Coat.flac:b2b91e96ec12d2826644033e2bac9755
+12 Maggie's Farm.flac:9b9b4b0f437045b5a6d87879971f1c87
+13 Like a Rolling Stone.flac:13d42378287bb7c668ce7f32d47bc584
+===================
+===================
+===================
+=== Bob Dylan - 1995-03-13 Prague (AUD Xfer from cassette).md5
+===================
+===================
+===================
+662c1943ee6ac56abacdc9ca9217ad42 *01 Down in the Flood.flac
+7a530cdb1768e894cbf77ea8d9da4bf4 *02 Lay Lady Lay.flac
+e898a162da900b8680a18d335bf4fbc4 *03 All Along the Watchtower.flac
+38ad17b95abe6f04aaba471a2f14f14e *04 Just Like a Woman.flac
+f63101bd757373882a5656f7d704805e *05 Tangled Up in Blue.flac
+c377d5871b5aca96b1c65b35f7f5acec *06 License to Kill.flac
+a7fd66c1c914d1b9c99e1f076c527117 *07 Mr Tambourine Man.flac
+e9102d26eb16e44df6bb850b18419549 *08 The Times They Are A'Changin'.flac
+368d154eba0c1172921ccd9e1017f954 *09 Boots of Spanish Leather.flac
+9222799f55f578d936053c791cfc828c *10 God Knows.flac
+0b95d70f977e6e504cc397768aa96f5e *11 Man in the Long Black Coat.flac
+54ea4d58d4a8c7a3586472a90e50881c *12 Maggie's Farm.flac
+d8344efadd20b97ac699889021281eb1 *13 Like a Rolling Stone.flac
+===================
+===================
+===================
+=== Prague 1995-03-13 info.txt
+===================
+===================
+===================
+BOB DYLAN
+Prague, Czech Republic
+13th March 1995
+
+Good quality first generation audience recording, transferred from cassette tape via Tascam DR07, WAV file edited 
+in Audio Cleaning Lab. A DVD of this show already exists on this tracker, this is audio only from an unknown audio taper.
+
+These early shows of the 1995 European tour were interesting for the fact that Bob was suffering from a back injury and/or 
+some gastric ailment which meant that he could not play guitar for long. Thus plenty of harmonica, being the only 
+instrument he had left to play in the pre-keyboard days. Also more concentration on vocal rendition which makes 
+for some very interesting versions.
+
+
+Disc One
+1. Down in the Flood
+2. Lay Lady Lay
+3. All Along the Watchtower
+4. Just Like a Woman
+5. Tangled Up in Blue
+6. License to Kill
+7. Mr Tambourine Man
+
+Disc Two
+8. The Times They Are A'Changin'
+9. Boots of Spanish Leather
+10.God Knows
+11.Man in the Long Black Coat
+12.Maggie's Farm
+13.Like a Rolling Stone
+
+
+Bob Dylan - vocals, harmonica, maybe a little guitar
+John (JJ) Jackson - guitars
+Bucky Baxter - guitars, (pedal steel and slide)
+Tony Garnier - bass
+Winston Watson - drums
+
+
+
+MD5
+662c1943ee6ac56abacdc9ca9217ad42 *01 Down in the Flood.flac
+7a530cdb1768e894cbf77ea8d9da4bf4 *02 Lay Lady Lay.flac
+e898a162da900b8680a18d335bf4fbc4 *03 All Along the Watchtower.flac
+38ad17b95abe6f04aaba471a2f14f14e *04 Just Like a Woman.flac
+f63101bd757373882a5656f7d704805e *05 Tangled Up in Blue.flac
+c377d5871b5aca96b1c65b35f7f5acec *06 License to Kill.flac
+a7fd66c1c914d1b9c99e1f076c527117 *07 Mr Tambourine Man.flac
+e9102d26eb16e44df6bb850b18419549 *08 The Times They Are A'Changin'.flac
+368d154eba0c1172921ccd9e1017f954 *09 Boots of Spanish Leather.flac
+9222799f55f578d936053c791cfc828c *10 God Knows.flac
+0b95d70f977e6e504cc397768aa96f5e *11 Man in the Long Black Coat.flac
+54ea4d58d4a8c7a3586472a90e50881c *12 Maggie's Farm.flac
+d8344efadd20b97ac699889021281eb1 *13 Like a Rolling Stone.flac
+
+No errors occured.
+
+
+
+FFP
+01 Down in the Flood.flac:def689c29a8842875d09d465fb571c83
+02 Lay Lady Lay.flac:651abde40421a7629c9af5e0134b3b26
+03 All Along the Watchtower.flac:44d24aa3face11eafd0ccdf8c73dc038
+04 Just Like a Woman.flac:f9f2428c461638371d4d879f951c859f
+05 Tangled Up in Blue.flac:9867f47c12a65a8d29f8390ad21a697e
+06 License to Kill.flac:83aca861ed56c67358a35858df26d32c
+07 Mr Tambourine Man.flac:3522700b8afa1a922d1e7b014e928386
+08 The Times They Are A'Changin'.flac:3db08ee808e3c7cf3986415280ef3c8d
+09 Boots of Spanish Leather.flac:686be76b138adfbb714ba763cc53e5f1
+10 God Knows.flac:99555c9cd563296f9b1a93b81a4e022d
+11 Man in the Long Black Coat.flac:b2b91e96ec12d2826644033e2bac9755
+12 Maggie's Farm.flac:9b9b4b0f437045b5a6d87879971f1c87
+13 Like a Rolling Stone.flac:13d42378287bb7c668ce7f32d47bc584
+
+Checksum file saved to disk.
+
+No errors occured.
+
+===================
+===================
+===================

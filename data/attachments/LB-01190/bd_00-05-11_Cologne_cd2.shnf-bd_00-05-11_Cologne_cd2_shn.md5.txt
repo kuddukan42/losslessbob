@@ -1,0 +1,9 @@
+b473ebd3f876f4f6ffbd91a21dcfbea4 *bd_00-05-11_Cologne_cd2_Track 1.shn
+7ff5314e037327e4abf72870f9b53d05 *bd_00-05-11_Cologne_cd2_Track 2.shn
+dea1718ae6284a86c900d701a2d96cc0 *bd_00-05-11_Cologne_cd2_Track 3.shn
+9b7e61d5bade85079cc685dbab52cf68 *bd_00-05-11_Cologne_cd2_Track 4.shn
+65eb3c8392ece2395bb5d2e46027262a *bd_00-05-11_Cologne_cd2_Track 5.shn
+a517e20b0f379c3c1bdf305595c7ea25 *bd_00-05-11_Cologne_cd2_Track 6.shn
+3bd0dd65fa5fba0f9e98fb90201d340f *bd_00-05-11_Cologne_cd2_Track 7.shn
+32d9c1d5090989742a64d2d6a851ea00 *bd_00-05-11_Cologne_cd2_Track 8.shn
+8bd8b2091fcf258f2e3a436e148eccff *bd_00-05-11_Cologne_cd2_Track 9.shn

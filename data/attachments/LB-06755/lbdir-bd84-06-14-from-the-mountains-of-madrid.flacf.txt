@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-14-from-the-mountains-of-madrid.flacf 
+=================== 
+=================== 
+=================== 
+c80c7ad6d8d25e60751b3d4d76f26615  bd84-06-14-from-the-mountains-of-madrid-d1t01.flac
+1113c8d6e04fc3903ba915258b0bbb0a  bd84-06-14-from-the-mountains-of-madrid-d1t02.flac
+d27893159eec8be197e7e747f8e4b14e  bd84-06-14-from-the-mountains-of-madrid-d1t03.flac
+a9cd93b119df4f2850b59774efa7ac95  bd84-06-14-from-the-mountains-of-madrid-d1t04.flac
+f3bf59a79e416abf62ba0c5068717803  bd84-06-14-from-the-mountains-of-madrid-d1t05.flac
+c6dcc1ba864c2c4b59e139cc09a73ee2  bd84-06-14-from-the-mountains-of-madrid-d1t06.flac
+eaec0c63618e894fae90d6dddf4fd681  bd84-06-14-from-the-mountains-of-madrid-d1t07.flac
+7b4d4d65cc76052ae5c530c03822cf6c  bd84-06-14-from-the-mountains-of-madrid-d1t08.flac
+02eed914027cb9db3634957e651973fa  bd84-06-14-from-the-mountains-of-madrid-d1t09.flac
+f8d17d715e016571aa24add7d9437581  bd84-06-14-from-the-mountains-of-madrid-d1t10.flac
+ff4545d049aaf43533beaf4420cc1a9d  bd84-06-14-from-the-mountains-of-madrid-d1t11.flac
+03c3675822f0bc2cf8b9b57c7e958e80  bd84-06-14-from-the-mountains-of-madrid-d1t12.flac
+7dad83be727f0e65bd620ce0b7783e02  bd84-06-14-from-the-mountains-of-madrid-d1t13.flac
+b524c88a006d28121ac353913b2f7faa  bd84-06-14-from-the-mountains-of-madrid-d1t14.flac
+92c0f4afc87d2ef7e4816008d89dc93f  bd84-06-14-from-the-mountains-of-madrid-d1t15.flac
+bf247e711c12f24df7113dfffae77ce7  bd84-06-14-from-the-mountains-of-madrid.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-14-from-the-mountains-of-madrid.flacf 
+=================== 
+=================== 
+=================== 
+bd84-06-14-from-the-mountains-of-madrid-d1t01.flac:61fd6c75f5177e36a2c8c6aaf136453e
+bd84-06-14-from-the-mountains-of-madrid-d1t02.flac:03c12ba9d00722a1c51f2f2836283670
+bd84-06-14-from-the-mountains-of-madrid-d1t03.flac:1d852527e1d29cb50b7e8c2ab5001d31
+bd84-06-14-from-the-mountains-of-madrid-d1t04.flac:f71485bdb722a5a35d88c0328bdd48d2
+bd84-06-14-from-the-mountains-of-madrid-d1t05.flac:949b010e516940f8dcff3efc9a246750
+bd84-06-14-from-the-mountains-of-madrid-d1t06.flac:b3fb48a6faf32593a63371d5f5f3b569
+bd84-06-14-from-the-mountains-of-madrid-d1t07.flac:cc5b576f835fa911559cf668e161c6df
+bd84-06-14-from-the-mountains-of-madrid-d1t08.flac:76607fd3487a48cae6f376a9bd1cd8d8
+bd84-06-14-from-the-mountains-of-madrid-d1t09.flac:93a3c92846f8a71dc810200831000cc5
+bd84-06-14-from-the-mountains-of-madrid-d1t10.flac:b71a44032745f2f0f6c742d66ca6e14e
+bd84-06-14-from-the-mountains-of-madrid-d1t11.flac:6e02d3be10176fe234dd6ab33f681a05
+bd84-06-14-from-the-mountains-of-madrid-d1t12.flac:fd9e8d5360b14f99cdf72de84de3e876
+bd84-06-14-from-the-mountains-of-madrid-d1t13.flac:a08aa5224866cf42432a1b3f49b88794
+bd84-06-14-from-the-mountains-of-madrid-d1t14.flac:0588c8f8687f0f43fe650162f90c0704
+bd84-06-14-from-the-mountains-of-madrid-d1t15.flac:34d5f586145cbb73b626ac463c45bff3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-14-from-the-mountains-of-madrid.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:38.00       38455244 B   ---   --   ---xx   flac  0.6388  bd84-06-14-from-the-mountains-of-madrid-d1t01.flac
+     7:16.25       76969244 B   ---   --   ---xx   flac  0.6091  bd84-06-14-from-the-mountains-of-madrid-d1t02.flac
+     7:06.50       75264044 B   ---   --   ---xx   flac  0.6559  bd84-06-14-from-the-mountains-of-madrid-d1t03.flac
+     4:53.02       51689948 B   ---   --   ---xx   flac  0.6465  bd84-06-14-from-the-mountains-of-madrid-d1t04.flac
+     5:19.70       56436284 B   ---   --   ---xx   flac  0.6440  bd84-06-14-from-the-mountains-of-madrid-d1t05.flac
+     4:21.43       46141580 B   ---   --   ---xx   flac  0.5519  bd84-06-14-from-the-mountains-of-madrid-d1t06.flac
+     4:30.65       47780924 B   ---   --   ---xx   flac  0.5275  bd84-06-14-from-the-mountains-of-madrid-d1t07.flac
+     4:48.27       50866748 B   ---   --   ---xx   flac  0.6121  bd84-06-14-from-the-mountains-of-madrid-d1t08.flac
+     4:38.10       49062764 B   ---   --   ---xx   flac  0.6393  bd84-06-14-from-the-mountains-of-madrid-d1t09.flac
+     3:28.35       36773564 B   ---   --   ---xx   flac  0.6334  bd84-06-14-from-the-mountains-of-madrid-d1t10.flac
+     4:34.40       48427724 B   ---   --   ---xx   flac  0.5959  bd84-06-14-from-the-mountains-of-madrid-d1t11.flac
+     5:32.08       58583660 B   ---   --   ---xx   flac  0.5914  bd84-06-14-from-the-mountains-of-madrid-d1t12.flac
+     3:25.00       36162044 B   ---   --   ---xx   flac  0.5786  bd84-06-14-from-the-mountains-of-madrid-d1t13.flac
+     4:04.02       43046348 B   ---   --   ---xx   flac  0.5832  bd84-06-14-from-the-mountains-of-madrid-d1t14.flac
+     4:54.50       51979244 B   ---   --   ---xx   flac  0.5746  bd84-06-14-from-the-mountains-of-madrid-d1t15.flac
+    72:31.52      767639364 B                            0.6076  (15 files)
+=================== 
+=================== 
+=================== 

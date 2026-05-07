@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-02-16-cos11.flacf 
+=================== 
+=================== 
+=================== 
+3c852dd65ef19bb1b5fef3aa3326ac2d  a01.flac
+084fb417a41485404d7f82c4c56e45de  a02.flac
+cf10c8c3535151253bba4fe42bdaef38  a03.flac
+12739963d8f9fe342111a54d92a49159  a04.flac
+02a86e12cc35c6968809864d843475b5  a05.flac
+ab68d8b0cb352e16672131d0563f67ff  a06.flac
+55ec223884bf9f69af311b566c12587c  a07.flac
+e85f6ff2dd94037cb5158467bac2f99b  a08.flac
+19e70db37c1a07c285b87d03dcba91db  a09.flac
+7f6925989b53ba5bfad5b113d15347a4  b01.flac
+7a7afefaa4d392d272cc78f7f63031db  b02.flac
+7eb6c9a3182749edf36df0b73297229c  b03.flac
+bede9aab4e68ac26b50b829b3bf61721  b04.flac
+0abecb0f6be1ebb5fe01e09419791bdd  b05.flac
+005c6724384a6dccfbc90fccac1df2f7  bd 1994-02-16 Hiroshima.txt
+1201c73de6e3c5a9eceb0501db999f96  bd94-02-16.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-02-16-cos11.flacf 
+=================== 
+=================== 
+=================== 
+a01.flac:f96c09cfb707c5bbf016303445adc922
+a02.flac:779c6ddae310988fe06379860d8985de
+a03.flac:3b1ff5194966e596c83fcef9e1d0dd7f
+a04.flac:d312f1884dc572d8fd61d33d859b99d7
+a05.flac:d7b032f3378810fd05b2b32cb61327e2
+a06.flac:092991022ad19fd81bdf178cf662f2e5
+a07.flac:99c58317eb2a000c4e4311461b4c2969
+a08.flac:660e24fe08bdc9ed8070ad2078f0211e
+a09.flac:1107376428bd1953571d1b859f2808a2
+b01.flac:3bf8ad8b889a8759d8185caa0e9431a8
+b02.flac:aa57b4a7b4d8a65ea5b75112cccc090a
+b03.flac:1e4ec772103000cacd73145c3738a07c
+b04.flac:f329998352e8691531c0ad395efdeb12
+b05.flac:6b90c3a9b3a85ce3c0c9ae983cf8a44e
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-02-16-cos11.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:40.00       91728044 B   ---   --   ---xx   flac  0.5964  a01.flac
+     7:44.00       81849644 B   ---   --   ---xx   flac  0.5595  a02.flac
+     5:22.00       56800844 B   ---   --   ---xx   flac  0.6374  a03.flac
+     7:54.00       83613644 B   ---   --   ---xx   flac  0.5587  a04.flac
+     9:52.00      104428844 B   ---   --   ---xx   flac  0.5833  a05.flac
+     5:14.00       55389644 B   ---   --   ---xx   flac  0.5490  a06.flac
+     4:16.00       45158444 B   ---   --   ---xx   flac  0.4969  a07.flac
+     5:08.00       54331244 B   ---   --   ---xx   flac  0.4271  a08.flac
+     6:26.00       68090444 B   ---   --   ---xx   flac  0.5135  a09.flac
+     6:46.00       71618444 B   ---   --   ---xx   flac  0.5508  b01.flac
+     7:00.00       74088044 B   ---   --   ---xx   flac  0.6158  b02.flac
+     8:56.00       94550444 B   ---   --   ---xx   flac  0.6221  b03.flac
+     7:40.00       81144044 B   ---   --   ---xx   flac  0.5862  b04.flac
+     9:16.00       98078444 B   ---   --   ---xx   flac  0.4998  b05.flac
+   100:14.00     1060870216 B                            0.5616  (14 files)
+=================== 
+=================== 
+=================== 

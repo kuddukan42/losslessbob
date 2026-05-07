@@ -1,0 +1,62 @@
+===================
+===================
+===================
+=== BD91-04-27.txt
+===================
+===================
+===================
+Here's one I found in a old folder of stuff I posted to usenet years ago. These are the original files
+in shn format, I didn't want to uncompress and compress again for fear of losing a generation. These were
+downloaded from an ftp.
+
+Bob Dylan
+April 27th, 1991
+Miami, FL
+01.New Morning 
+02. Lay Lady Lay 
+03.All Along The Watchtower 
+04.The Man In Me 
+05.Gotta Serve Somebody 
+06.Wiggle Wiggle 
+07.John Brown (acoustic w band) 
+08.Boots Of Spanish Leather (acoustic w band) 
+09.Mr. Tambourine Man (acoustic w band) 
+10.Bob Dylan's Dream (acoustic w band) 
+11.Everything Is Broken 
+12.Man In The Long Black Coat 
+13.Seeing The Real You At Last 
+14.Under The Red Sky 
+15.Like A Rolling Stone 
+16.Blowin' In The Wind (acoustic w band) 
+17.Highway 61 Revisited 
+
+SBE's fixed with TTLH and new checksum file added.
+===================
+===================
+===================
+=== Bob Dylan - 1991-04-27 - Sunrise.md5
+===================
+===================
+===================
+020c7fbe7c0db11463e9660ae891ac1b *101 New Morning.shn
+8bb6ce921ee672bad53adc303ddbd423 *102 Lay Lady Lay.shn
+cf65e563045dd206db7c61ec58fef689 *103 All Along The Watchtower.shn
+1282ada563a0ba74aae8c19e8c2a2ba4 *104 The Man In Me.shn
+ed7f1fa3a5466dfbf89f359de476e1cc *105 Gotta Serve Somebody.shn
+6eb02175c424292e5959b9481709c48c *106 Wiggle Wiggle.shn
+3b0327688a816d38f75d436d6f7f5e83 *107 John Brown.shn
+26b0f54c1c7b2c811e52a97760003475 *108 Boots Of Spanish Leather.shn
+f5a14531c5a976316c48554b8409c596 *109 Mr Tambourine Man.shn
+798f0b240d146f1f1aba86e30223ee0d *110 Bob Dylan's Dream.shn
+69f0a12f1cc9bd9b9e93c6663ef6eb47 *201 Everything Is Broken.shn
+68b7402c34f40ba50a6b54d5c00be698 *202 Man In The Long Black Coat.shn
+daadf4d7c0945a1711d87353fd6130a3 *203 Seeing The Real You At Last.shn
+98d43976f171fb2b59162d43ac80f165 *204 Under The Red Sky.shn
+832c6caf1ba30d0d15642636e445c780 *205 I Shall Be Released.shn
+0868c61f48a04131c20292d94ec0c11e *206 Like A Rolling Stone.shn
+ca07d6285ea9d36ce4e7161da627b8b3 *207 Blowin' In The Wind.shn
+972173eb2bd68ab8b47c5b9f6c83d553 *208 Highway 61 Revisited.shn
+09f4faf84a4c8ec263914ff15bdd15fd *BD91-04-27.txt
+===================
+===================
+===================

@@ -1,0 +1,120 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-21-Danneberg.flacf 
+=================== 
+=================== 
+=================== 
+378e56b3d23268d03d5dca8a815e3251  Bob Dylan (1981) Vienna 1981 CD 1\01. Track 1.flac
+fe036fc00229816a11a6654adc7a3aaf  Bob Dylan (1981) Vienna 1981 CD 1\02. Track 2.flac
+83a3ba74b9a5cf210c773a91e4bac100  Bob Dylan (1981) Vienna 1981 CD 1\03. Track 3.flac
+2ef60c1b416ef57ec35d8c5eb876b001  Bob Dylan (1981) Vienna 1981 CD 1\04. Track 4.flac
+23535048f69540207f0b247ced988208  Bob Dylan (1981) Vienna 1981 CD 1\05. Track 5.flac
+fc165034d3acbf3ec61e32fa76d13f88  Bob Dylan (1981) Vienna 1981 CD 1\06. Track 6.flac
+4b24c559de721100a8df61f60a995a11  Bob Dylan (1981) Vienna 1981 CD 1\07. Track 7.flac
+30bb59454e839d3ca26438099cf79893  Bob Dylan (1981) Vienna 1981 CD 1\08. Track 8.flac
+a8edce597a33bf654f1e50c7768d07c3  Bob Dylan (1981) Vienna 1981 CD 1\09. Track 9.flac
+f311fdac48c3ff36c97bb54adf74dfc3  Bob Dylan (1981) Vienna 1981 CD 1\10. Track 10.flac
+6396d2a64bfaf819441e7c4cdda520a8  Bob Dylan (1981) Vienna 1981 CD 1\11. Track 11.flac
+99da722d1e07d299b5a9023d3d099a45  Bob Dylan (1981) Vienna 1981 CD 1\12. Track 12.flac
+dfba6d79b79b5179bdba7abd54e70742  Bob Dylan (1981) Vienna 1981 CD 1\Bob Dylan (1981) Vienna 1981 CD 1.md5
+6f4a00ef73f04326558e0507e4b7cf63  Bob Dylan (1981) Vienna 1981 CD 2\01. Track 1.flac
+60808a2b9caef65946d91443c5aea197  Bob Dylan (1981) Vienna 1981 CD 2\02. Track 2.flac
+5dd2634835b2fccf9dc8094da76986e2  Bob Dylan (1981) Vienna 1981 CD 2\03. Track 3.flac
+b8d61e23b748837facff716a643dc8c7  Bob Dylan (1981) Vienna 1981 CD 2\04. Track 4.flac
+d83e0974433a228c40d0fdf84b56dd8b  Bob Dylan (1981) Vienna 1981 CD 2\05. Track 5.flac
+30987f0bc89aceec415a6f579ca25321  Bob Dylan (1981) Vienna 1981 CD 2\06. Track 6.flac
+8af8eb32d480851d1ec82d82b19529b1  Bob Dylan (1981) Vienna 1981 CD 2\07. Track 7.flac
+5078e9600406905466de41a36eedc4f9  Bob Dylan (1981) Vienna 1981 CD 2\08. Track 8.flac
+5a7d9f728bd60ed0bb160a3f3900d02c  Bob Dylan (1981) Vienna 1981 CD 2\09. Track 9.flac
+b5553a01e69cd25281ff07c63d9438ff  Bob Dylan (1981) Vienna 1981 CD 2\10. Track 10.flac
+965327f08aeff9a8828c0856f7ee0530  Bob Dylan (1981) Vienna 1981 CD 2\11. Track 11.flac
+67b2611245a647f26da2815b73459233  Bob Dylan (1981) Vienna 1981 CD 2\12. Track 12.flac
+fec4181705f0c33e6085bf05b9433738  Bob Dylan (1981) Vienna 1981 CD 2\13. Track 13.flac
+dd60bc1cad2c8e11da99f2bd4bffa56e  Bob Dylan (1981) Vienna 1981 CD 2\Bob Dylan (1981) Vienna 1981 CD 2.md5
+3e723145f2c6f9b741f6d9133456a17b  BobDylanVienna1981.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-21-Danneberg.flacf\Bob Dylan (1981) Vienna 1981 CD 1 
+=================== 
+=================== 
+=================== 
+01. Track 1.flac:4a26be499556abf8f3343eeee8a9d535
+02. Track 2.flac:a0e673734c29a6219e78c661c4ec1e51
+03. Track 3.flac:5bd5168991ac1efb1c58a0a8439e38b7
+04. Track 4.flac:fd0ab2f4034e2b35e946a91f0185d12b
+05. Track 5.flac:185a2b79a2573d184bee07e7904f9d04
+06. Track 6.flac:15a3b8c498bda6250582e58481ca5e64
+07. Track 7.flac:6b67795732e07fe1ca36ec361780da92
+08. Track 8.flac:e0c34e6f4d58dd43fa5343a6b46bc20c
+09. Track 9.flac:de1c5e3fe561b2358e1dec806db55fa1
+10. Track 10.flac:d23caad088f1a03b9583819c509349da
+11. Track 11.flac:fe01fd0b9c10e2a14b05e311619e4745
+12. Track 12.flac:683050f172c6f4c4bf2aabd7189e1aea
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-21-Danneberg.flacf\Bob Dylan (1981) Vienna 1981 CD 2 
+=================== 
+=================== 
+=================== 
+01. Track 1.flac:5a26b3643d74b3e9609a480c707ded50
+02. Track 2.flac:71bd0cd17a47489d52389e6538e85192
+03. Track 3.flac:e8b13e0f3c57973ad023201d778c94ff
+04. Track 4.flac:000ef4eea33e3218006481fbb39d77fe
+05. Track 5.flac:e6d5b0e27701c909255b53a30d34d0a0
+06. Track 6.flac:43ce9f8d725be1038f1780426b4e9a33
+07. Track 7.flac:aa495a7ceaeb5e406b6d64780b176e1d
+08. Track 8.flac:f9b72a08d2c89c13279f40af0ee978cb
+09. Track 9.flac:af438dea5a825e3ae1aa40e4da856837
+10. Track 10.flac:ae663c03b96157bb276cb2e47d4f9110
+11. Track 11.flac:df7c90eeb1a88cfb3d205c838e0d4edc
+12. Track 12.flac:99240a4cb9088a1562887dc8a326f469
+13. Track 13.flac:c0ea885042c84bb92395affd861d19ca
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-21-Danneberg.flacf\Bob Dylan (1981) Vienna 1981 CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:10.05       33527804 B   ---   --   ---xx   flac  0.5825  01. Track 1.flac
+     2:15.05       23825804 B   ---   --   ---xx   flac  0.5905  02. Track 2.flac
+     4:43.53       50045900 B   ---   --   ---xx   flac  0.5595  03. Track 3.flac
+     5:38.43       59724380 B   ---   --   ---xx   flac  0.5757  04. Track 4.flac
+     1:01.67       10918028 B   ---   --   ---xx   flac  0.4539  05. Track 5.flac
+     4:41.02       49573148 B   ---   --   ---xx   flac  0.5546  06. Track 6.flac
+     3:31.01       37222796 B   ---   --   ---xx   flac  0.6056  07. Track 7.flac
+     4:51.46       51440636 B   ---   --   ---xx   flac  0.5583  08. Track 8.flac
+     3:36.70       38267084 B   ---   --   ---xx   flac  0.5716  09. Track 9.flac
+     3:25.04       36171452 B   ---   --   ---xx   flac  0.5552  10. Track 10.flac
+     4:58.00       52567244 B   ---   --   ---xx   flac  0.6062  11. Track 11.flac
+     4:44.15       50132924 B   ---   --   ---xx   flac  0.5789  12. Track 12.flac
+    46:37.11      493417200 B                            0.5726  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-21-Danneberg.flacf\Bob Dylan (1981) Vienna 1981 CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.54       44579852 B   ---   --   ---xx   flac  0.6064  01. Track 1.flac
+     3:21.01       35458796 B   ---   --   ---xx   flac  0.5608  02. Track 2.flac
+     4:37.38       48952220 B   ---   --   ---xx   flac  0.5636  03. Track 3.flac
+     4:31.30       47875004 B   ---   --   ---xx   flac  0.6039  04. Track 4.flac
+     5:33.04       58750652 B   ---   --   ---xx   flac  0.6010  05. Track 5.flac
+     4:20.51       45983996 B   ---   --   ---xx   flac  0.6022  06. Track 6.flac
+     4:45.70       50438684 B   ---   --   ---xx   flac  0.5249  07. Track 7.flac
+     3:46.03       39873500 B   ---   --   ---xx   flac  0.5545  08. Track 8.flac
+     4:45.00       50274044 B   ---   --   ---xx   flac  0.5741  09. Track 9.flac
+     9:28.00      100195244 B   ---   --   ---xx   flac  0.5388  10. Track 10.flac
+     4:43.54       50048252 B   ---   --   ---xx   flac  0.5819  11. Track 11.flac
+     6:11.01       65446796 B   ---   --   ---xx   flac  0.5849  12. Track 12.flac
+     7:28.04       79036652 B   ---   --   ---xx   flac  0.5817  13. Track 13.flac
+    67:44.10      716913692 B                            0.5736  (13 files)
+=================== 
+=================== 
+=================== 

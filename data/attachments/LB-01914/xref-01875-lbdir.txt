@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== md5 for: bd95-05-12-IA065.flacf
+===================
+===================
+===================
+8f696559b4ce2a338192ceacb6faf03f *Bob Dylan - The Joint, Hard Rock Hotel, Las Vegas, Nevada, May 12, 1995, IAR CD1.log
+b1f35a48d4b6758bc181e4e7bba16907 *Bob Dylan - The Joint, Hard Rock Hotel, Las Vegas, Nevada, May 12, 1995, IAR CD2.log
+746721601c990d8bc77bf37e5b5fbbc2 *Bob Dylan 1995-05-12 Las Vegas, Nevada (LB-1914, IA065).txt
+ef722a2fa9667ba634d5f46c64780c6a *Bob Dylan 1995-05-12 Las Vegas, NV (LB-1914, IA065).md5
+d9b582238bc7d3fad91bb26bcea904f3 *cd1-01. Intro.flac
+51bc4edd7f24a79df683a4796e15fe67 *cd1-02. Crash On The Levee (Down In The Flood).flac
+35e4c5f865e4e39832874df4346676c2 *cd1-03. If Not For You.flac
+53aa7bec10f9363e8b4abce2dc5cc0da *cd1-04. All Along The Watchtower.flac
+34b74ebe7cf3a8a86688a67966fa9294 *cd1-05. Simple Twist Of Fate.flac
+42736a6f503238a702deafab9446c402 *cd1-06. Most Likely You Go Your Way (And I'll Go Mine).flac
+686e8685924a54a663ecfdb0073a18c3 *cd1-07. Shelter From The Storm.flac
+65a0bb471d9fbb8071d178e48035211c *cd1-08. Mr. Tambourine Man.flac
+60fd023a2ef2e707442e3b96a30a7a8a *cd1-09. Boots Of Spanish Leather.flac
+505c8c553301978ae7c3acc9c930c237 *cd1-10. Love Minus Zero - No Limit.flac
+68bb7fc47857f03b8e7d5e283fd44b6c *cd2-01. Thank You Intro.flac
+663a663f750efc14c4faf8feba013394 *cd2-02. Seeing The Real You At Last.flac
+2823e35e724def7d30b656481824ef68 *cd2-03. Joey.flac
+a0388bfa89cc9ac8a116630725ff58d9 *cd2-04. Band Introduction.flac
+7656da03ec3f07206c3500e15b5373f3 *cd2-05. Highway 61 Revisited.flac
+e1632033f32f966d73095d5d5a44946c *cd2-06. Audience.flac
+a85cfa5dec1cc345f015f89a60b5c93e *cd2-07. Like A Rolling Stone.flac
+ce87601445cd3bbd572b72ab6172c346 *cd2-08. It Ain't Me, Babe.flac
+e6f5a99bf1326b8ac5325b747dcdac51 *cd2-09. Outro.flac
+43d0c475a08f9f4aaf1aa3dcfb983927 *LBF-01914-bd95-05-12-ia.txt
+c01d51c51ec5160c806691966a753340 *LBS.txt
+===================
+===================
+===================
+=== ffp for: bd95-05-12-IA065.flacf
+===================
+===================
+===================
+cd1-01. Intro.flac:15be9823ed9e36ac8e6826206130c66f
+cd1-02. Crash On The Levee (Down In The Flood).flac:298f1ddd22b9bab71e8e64cb0da1afd2
+cd1-03. If Not For You.flac:4eb457e80a55ec59aacff4c8107825e5
+cd1-04. All Along The Watchtower.flac:5e7ff2b406150e94a5ccec11b29a9417
+cd1-05. Simple Twist Of Fate.flac:d215c39cbb85fda2df6c3425e81d5d0a
+cd1-06. Most Likely You Go Your Way (And I'll Go Mine).flac:da2bd7d8dc8a746ef013fffa3f7933f7
+cd1-07. Shelter From The Storm.flac:c5cc45d10d6745ade6b2736003ecf033
+cd1-08. Mr. Tambourine Man.flac:a45ab491c0cdeeda174124241bb8cd9e
+cd1-09. Boots Of Spanish Leather.flac:c677f31a4e1970a829d9b656412228ab
+cd1-10. Love Minus Zero - No Limit.flac:ea10b811dc7293aa2735142a51328af5
+cd2-01. Thank You Intro.flac:7bf996c7c7b89c8901a73f01c61f6161
+cd2-02. Seeing The Real You At Last.flac:38438b962f55628c4ceffc27c2b256bd
+cd2-03. Joey.flac:7b2f9647fe67f3b865ab54dd03b82ba2
+cd2-04. Band Introduction.flac:b71d0807d523d221420cb0001bcf0e8f
+cd2-05. Highway 61 Revisited.flac:d2e1b00b68452a34348cd9c15f733ca6
+cd2-06. Audience.flac:12163daa982aae63a35145f46a29a9fa
+cd2-07. Like A Rolling Stone.flac:3991dc20ee66edcc5a041f652ecf1fe4
+cd2-08. It Ain't Me, Babe.flac:8fc05cfd1a5587c5fdb85a1acdf422bb
+cd2-09. Outro.flac:34200dba3ce35c7737a64158eaefd97d
+===================
+===================
+===================
+=== shntool len for: bd95-05-12-IA065.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:15.26        2707196 B   ---   --   ---xx   flac  0.4991  cd1-01. Intro.flac
+     4:49.39       51071372 B   ---   --   ---xx   flac  0.5910  cd1-02. Crash On The Levee (Down In The Flood).flac
+     4:06.74       43568492 B   ---   --   ---xx   flac  0.5782  cd1-03. If Not For You.flac
+     5:16.00       55742444 B   ---   --   ---xx   flac  0.5877  cd1-04. All Along The Watchtower.flac
+     7:13.45       76487084 B   ---   --   ---xx   flac  0.5625  cd1-05. Simple Twist Of Fate.flac
+     7:55.46       83898236 B   ---   --   ---xx   flac  0.5938  cd1-06. Most Likely You Go Your Way (And I'll Go Mine).flac
+     5:13.71       55380236 B   ---   --   ---xx   flac  0.5621  cd1-07. Shelter From The Storm.flac
+     6:37.70       70195484 B   ---   --   ---xx   flac  0.5409  cd1-08. Mr. Tambourine Man.flac
+     7:55.40       83884124 B   ---   --   ---xx   flac  0.5370  cd1-09. Boots Of Spanish Leather.flac
+     6:11.18       65486780 B   ---   --   ---xx   flac  0.5512  cd1-10. Love Minus Zero - No Limit.flac
+     0:13.70        2457884 B   ---   --   ---xx   flac  0.4838  cd2-01. Thank You Intro.flac
+     6:18.07       66695708 B   ---   --   ---xx   flac  0.6103  cd2-02. Seeing The Real You At Last.flac
+    10:06.19      106943132 B   ---   --   ---xx   flac  0.6076  cd2-03. Joey.flac
+     0:24.55        4363004 B   ---   --   ---xx   flac  0.5694  cd2-04. Band Introduction.flac
+     7:17.52       77209148 B   ---   --   ---xx   flac  0.6122  cd2-05. Highway 61 Revisited.flac
+     1:10.07       12364508 B   ---   --   ---xx   flac  0.5727  cd2-06. Audience.flac
+     7:27.19       78895532 B   ---   --   ---xx   flac  0.5911  cd2-07. Like A Rolling Stone.flac
+     8:13.39       87056972 B   ---   --   ---xx   flac  0.5689  cd2-08. It Ain't Me, Babe.flac
+     0:55.64        9852572 B   ---   --   ---xx   flac  0.4877  cd2-09. Outro.flac
+    97:43.11     1034259908 B                            0.5775  (19 files)
+===================
+===================
+===================

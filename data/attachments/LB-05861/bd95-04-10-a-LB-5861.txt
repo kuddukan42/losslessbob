@@ -1,0 +1,8 @@
+Bob Dylan, 4/10/95, Belfast, Northern Ireland, King's Hall, 2CDR
+
+LB-5861, (56min+45min), version "a"; source/lineage:, I found this labelled as 'off master' in flac format without further details or md5s. The only entry for this date is LB-1280 which has no source/lineage info either. No fingerprints., My version was wrongly tracked on d1, IWY and AATW as tr2, tr3 about 5s of applause. The intro is missing. There is a slight boost in level at d1tr1@ 0:28., Disc splice was after BOSL. (49:01.66+51:14.37), I retracked d1 with cdwave and included DTT on d1 to have the acoustic set together (similar to LB-1280)., Any help on identifying taper or gen would be highly appreciated. It might be an LTD recording? Thanks in advance!, Other than that, it is an rather excellent recording -- and it has RTB. The crowd is quite enthusiastic, some shouting and singing along, but not annoying.; bittorrent download 02/08; different recording than LB-1280 based on different crowd at end of d1t2; in comparison this is a little warmer and more upfront; excellent sound [A]
+
+disc 1:, 01 Crash On The Levee, 02 I Want You, 03 All Along The Watchtower, 04 Just Like A Woman, 05 Silvio, 06 What Good Am I ?, 07 Mr. Tambourine Man, 08 Boots Of Spanish Leather, 09 Don't Think Twice, disc 2:, 01 God Knows, 02 Ring Them Bells, 03 Highway 61, 04 Like A Rolling Stone, 05 The Times They Are A-Changing, 06 Rainy Day Women#12&35, Enjoy!
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

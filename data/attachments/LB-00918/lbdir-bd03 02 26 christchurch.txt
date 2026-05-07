@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03 02 26 christchurch 
+=================== 
+=================== 
+=================== 
+7bbc87aacd4d73292fb59c9846d76828  bd03-02-26.txt
+91d5be603634e24491d3b1063087334a  noname.md5
+b32ec0524ae395d56d576412c4177b2b  t01.shn
+437e59e23ac1704cb5f17217dd81ecb2  t02.shn
+c3793000987fe22c8aba4aa1c332b8c4  t03.shn
+6164e64136d84b86d5def606cdb782f4  t04.shn
+8de44a4de2792be3e3d7fb35b9aaddf0  t05.shn
+27f03be8685dbbdfeb61b0afd05bb320  t06.shn
+3c1ffc333a5dd76f1ae2fd0283a1a0c4  t07.shn
+64a06174ca9964b94415977360e13a82  t08.shn
+ac5e056e5525d4693cd919023c7b7675  t09.shn
+92acb6d222710e141627b82400713b5a  t10.shn
+05b13ca312858fbd8303f703844bf61e  t11.shn
+dfd6136feb44f1df0dbde8e2d2d88856  t12.shn
+fb3f6e79520067372dc33f52d463b251  t13.shn
+e508bef65b30402c764ad0b574caf748  t14.shn
+0e9d006fa4b5dcb946d724eb0fc0f338  t15.shn
+d6e356f5a4b8ed7864bfc201e5a8e451  t16.shn
+f7e1d03604d7e60729b271bb0358834e  t17.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03 02 26 christchurch 
+=================== 
+=================== 
+=================== 
+c420c3a34c518626da16d4c68ec2f41e  [shntool]  t01.wav
+1e83506d08cb54431ebe12a35de0adbb  [shntool]  t02.wav
+b2ad2c7aa39a91e09da3b6d977be7cae  [shntool]  t03.wav
+73c33a4b2f2caaa73e823688f8bbd1f4  [shntool]  t04.wav
+be822ae6b642a28cf48733e169982048  [shntool]  t05.wav
+df3d78e9d765ae6f29f9593443051b74  [shntool]  t06.wav
+b2af9f6ab8f4a8026a3a67c4e0d74c1a  [shntool]  t07.wav
+41dbe55bf21afb1fa6fc895a866a9c65  [shntool]  t08.wav
+d0e61b7a406248c45b277a6f60b9a8da  [shntool]  t09.wav
+8085aabd8e26a0f89a131325ab9bcf4f  [shntool]  t10.wav
+0d07b028560b4e18b199b60e1ed97d5c  [shntool]  t11.wav
+5b1e14473400c8a6102327b326e1dbb2  [shntool]  t12.wav
+1d654c39e0796f15ac5974584f81c7eb  [shntool]  t13.wav
+0d1530efb114d0e91b035f239627329d  [shntool]  t14.wav
+1489082afbd28d9d34a9bef204cd8bd1  [shntool]  t15.wav
+ccce72b741ecfcd366668f9647f3bf23  [shntool]  t16.wav
+2e31944007f7fc30ee40c5a2698621a8  [shntool]  t17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03 02 26 christchurch 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.22       62850920 B   -b-   --   ---xx    shn  0.5134  t01.shn
+     6:08.11       64940172 B   -b-   --   ---xx    shn  0.5311  t02.shn
+     6:09.10       65114260 B   -b-   --   ---xx    shn  0.5720  t03.shn
+     9:03.26       95845584 B   -b-   --   ---xx    shn  0.5463  t04.shn
+     7:25.63       78646824 B   -b-   --   ---xx    shn  0.5596  t05.shn
+     6:10.09       65288556 B   -b-   --   ---xx    shn  0.5942  t06.shn
+     7:13.40       76476104 B   -b-   --   ---xx    shn  0.5128  t07.shn
+     8:41.43       92005076 B   -b-   --   ---xx    shn  0.5381  t08.shn
+     8:16.01       87496676 B   -b-   --   ---xx    shn  0.4323  t09.shn
+     8:03.53       85325952 B   -b-   --   ---xx    shn  0.5432  t10.shn
+     4:57.17       52431228 B   -b-   --   ---xx    shn  0.5158  t11.shn
+     8:15.05       87329712 B   -b-   --   ---xx    shn  0.5743  t12.shn
+     6:29.04       68628124 B   -b-   --   ---xx    shn  0.4122  t13.shn
+     9:21.36       99045612 B   -b-   --   ---xx    shn  0.5731  t14.shn
+     5:03.47       53560468 B   -b-   --   ---xx    shn  0.5525  t15.shn
+     7:40.16       81181568 B   -b-   --   ---xx    shn  0.5750  t16.shn
+     5:24.01       57156656 B   -b-   --   ---xx    shn  0.5839  t17.shn
+   120:18.29     1273323492 B                            0.5371  (17 files)
+=================== 
+=================== 
+=================== 

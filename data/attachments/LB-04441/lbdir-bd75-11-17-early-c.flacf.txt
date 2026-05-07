@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-17-early-c.flacf 
+=================== 
+=================== 
+=================== 
+30293974ff7efa568803d959b208c881  bd1975-11-17.early.info.txt
+63c410352b109830e696d835dffbdc18  bd1975-11-17.early.t01.flac
+b107cc23b352cdb2973e17b2d1955336  bd1975-11-17.early.t02.flac
+4289e60e261dbb35a98983f66bb92f85  bd1975-11-17.early.t03.flac
+8abe6b1999f2dbaeaf695da3a871be50  bd1975-11-17.early.t04.flac
+bdd081ec0f7032247e8904018016783b  bd1975-11-17.early.t05.flac
+d353f74e11d4c476b66d93da0d3427a8  bd1975-11-17.early.t06.flac
+bbd0619f79dfc2b6694934d6eab6034b  bd1975-11-17.early.t07.flac
+775f3e564b1e6dab612efb8128200e0e  bd1975-11-17.early.t08.flac
+36905cf530f82d0489ce93d4e17fa134  bd1975-11-17.early.t09.flac
+f7eb794af0a75b1b482b6b40a950996c  bd1975-11-17.early.t10.flac
+54a642228b4d6fecd05c3f854f67d41b  bd1975-11-17.early.t11.flac
+1c0a9396f95d7d9947dedea10eb9d7d8  bd1975-11-17.early.t12.flac
+b415d5574e19f39c74db913619f031a9  bd1975-11-17.early.t13.flac
+a124eacd1209329fdbc7c70304188526  bd1975-11-17.early.t14.flac
+b741ad5446b6556178d7df9532690265  bd1975-11-17.early.t15.flac
+c0e00ed2f042018af134de2981d8f42a  bd1975-11-17.early.t16.flac
+c2862d7d741277e5c7c56e4635266a76  bd1975-11-17.early.t17.flac
+d07dba8e4cc82caed8aedfb8c1ac372f  bd1975-11-17.early.t18.flac
+78d90fbc642b55358923405b3625257b  bd1975-11-17.early.t19.flac
+44a459ac853d7c96561eff29fde2b964  bd75-11-17-early-c-LB-4441.txt
+b095887b52af00e0a30e124ba179a133  flac.ffp
+8cfd2e9eba25c50329cf0a1f5a328060  foobar2000_wav2flac_bitcompare.txt
+00e041eed4cced456e7cee6ce0cd6c90  wav.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-17-early-c.flacf 
+=================== 
+=================== 
+=================== 
+bd1975-11-17.early.t01.flac:1df56c99cdfa253a2d4e45d2adcc6b25
+bd1975-11-17.early.t02.flac:6fb48b5d8539ba34c162377855f2c90c
+bd1975-11-17.early.t03.flac:6ab88fcca556390b05ef13725ed5a4f7
+bd1975-11-17.early.t04.flac:38e2e40b7312c4f94186e8e35f2beb12
+bd1975-11-17.early.t05.flac:870b1c996e047851075c1514f2cf1e77
+bd1975-11-17.early.t06.flac:62ec8527b3acfffc09dea28c64f730bb
+bd1975-11-17.early.t07.flac:b4b0b70dab276c4342583a75b8a96d28
+bd1975-11-17.early.t08.flac:c8d35afb47bab438b0617058a35fdd90
+bd1975-11-17.early.t09.flac:3f15b22cb028d2f682005d03deb4b195
+bd1975-11-17.early.t10.flac:87357fa0c981d067be9629d2f8a5ffab
+bd1975-11-17.early.t11.flac:62a7d23cca0a65559675407e35565aa4
+bd1975-11-17.early.t12.flac:7f0193901b59c1e3d3079a2d5e85a8b4
+bd1975-11-17.early.t13.flac:52fbfb6e297d2eadeab2f23dfd8b1e55
+bd1975-11-17.early.t14.flac:279eff93c94d8019bcf528b1ef4fde59
+bd1975-11-17.early.t15.flac:122d34a85eb7db5f32876ef90dca1835
+bd1975-11-17.early.t16.flac:4ee21ca882c7c9f1fc885b33d4a59a03
+bd1975-11-17.early.t17.flac:1ec7aa86380f9225e7927ef0b5346122
+bd1975-11-17.early.t18.flac:b9dea91f4fa3b2f07a21cdca3a9cd194
+bd1975-11-17.early.t19.flac:cc8dff58741a6f54916256bc0debab09
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-17-early-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.32       48056108 B   ---   --   ---xx   flac  0.5568  bd1975-11-17.early.t01.flac
+     5:55.50       62739644 B   ---   --   ---xx   flac  0.5713  bd1975-11-17.early.t02.flac
+     6:23.46       67669436 B   ---   --   ---xx   flac  0.5665  bd1975-11-17.early.t03.flac
+     4:17.47       45445388 B   ---   --   ---xx   flac  0.5803  bd1975-11-17.early.t04.flac
+     2:37.63       27843020 B   ---   --   ---xx   flac  0.5616  bd1975-11-17.early.t05.flac
+     0:57.20       10101884 B   ---   --   ---xx   flac  0.5491  bd1975-11-17.early.t06.flac
+     2:42.57       28710908 B   ---   --   ---xx   flac  0.5880  bd1975-11-17.early.t07.flac
+     3:17.65       34903724 B   ---   --   ---xx   flac  0.5670  bd1975-11-17.early.t08.flac
+     3:51.05       40760204 B   ---   --   ---xx   flac  0.5603  bd1975-11-17.early.t09.flac
+     2:27.68       26090780 B   ---   --   ---xx   flac  0.5628  bd1975-11-17.early.t10.flac
+     4:53.35       51767564 B   ---   --   ---xx   flac  0.5562  bd1975-11-17.early.t11.flac
+     4:14.26       44866796 B   ---   --   ---xx   flac  0.5572  bd1975-11-17.early.t12.flac
+     3:55.48       41566940 B   ---   --   ---xx   flac  0.5622  bd1975-11-17.early.t13.flac
+     8:12.64       86939372 B   ---   --   ---xx   flac  0.5829  bd1975-11-17.early.t14.flac
+     3:56.49       41745692 B   ---   --   ---xx   flac  0.5674  bd1975-11-17.early.t15.flac
+     4:49.08       50998460 B   ---   --   ---xx   flac  0.5590  bd1975-11-17.early.t16.flac
+     4:20.27       45927548 B   ---   --   ---xx   flac  0.5829  bd1975-11-17.early.t17.flac
+     4:48.64       50953772 B   ---   --   ---xx   flac  0.5905  bd1975-11-17.early.t18.flac
+     3:42.24       39217292 B   ---   --   ---xx   flac  0.5996  bd1975-11-17.early.t19.flac
+    79:57.48      846304532 B                            0.5708  (19 files)
+=================== 
+=================== 
+=================== 

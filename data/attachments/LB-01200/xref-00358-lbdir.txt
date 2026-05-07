@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-08-10-LTC.flacf 
+=================== 
+=================== 
+=================== 
+91875c0d0e698e4122b0b805f48875ba  bd1989-08-10-cincinnati-LTC.md5
+8eb19194c9e06c37ee74346397817fda  bd1989-08-10-cincinnati-LTC.txt
+6c945a0cf0b0bec41b43e9225e6fe59c  bd1989-08-10-LTC.ffp.txt
+cf509cc447bd2e4492716470e473a939  bd1989-08-10.d1t01.flac
+1598743039e2d8f4ea410c8c94e96fd6  bd1989-08-10.d1t02.flac
+def654c54836e44074425edabc6ee5f1  bd1989-08-10.d1t03.flac
+517d6a15b68a3e75560d5ebfed8bb9dd  bd1989-08-10.d1t04.flac
+588ee7e70461c6a8a9785658252269ac  bd1989-08-10.d1t05.flac
+dc7f92d9e480e22056ec7cf36f1bda4b  bd1989-08-10.d1t06.flac
+17d34456ad7ad9bb20bb6a50c5ccaa30  bd1989-08-10.d1t07.flac
+9f24138ffd4da3df7e1a641b07f63c07  bd1989-08-10.d1t08.flac
+a3c2abecc02e8f972e631fa950936464  bd1989-08-10.d2t01.flac
+e9c0feaadc53b708989d59ff7f286726  bd1989-08-10.d2t02.flac
+938114bb90f34df5de739d92ee80f929  bd1989-08-10.d2t03.flac
+33543ca8a395ea803573b262ddc96aaa  bd1989-08-10.d2t04.flac
+03e4a658c5dde9b1c5ed1ef094ce0be5  bd1989-08-10.d2t05.flac
+8de2b0ea303f39e03bc90dd50f2aabba  bd1989-08-10.d2t06.flac
+3920f1c8511dc98af1194aa0a205b788  bd1989-08-10.d2t07.flac
+de927b434f7f9680665fcfde8ba4f7bf  bd1989-08-10.d2t08.flac
+005dbe45c7895e5cfed9ba5ee41220c9  DigiFlawFinder for - bd1989-08-10-cincinnati-LTC_wav.mht
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-08-10-LTC.flacf 
+=================== 
+=================== 
+=================== 
+bd1989-08-10.d1t01.flac:21c25408d0840bddeffdcc56dd5b93b0
+bd1989-08-10.d1t02.flac:84f43b5b7ff3f6d8075ca40a48a936ad
+bd1989-08-10.d1t03.flac:279cf76494fb0fe7412c8166e6dff964
+bd1989-08-10.d1t04.flac:25989ef21e0049eae8eea8a13893881c
+bd1989-08-10.d1t05.flac:ee4e53fa719eb899ecf9d243266db472
+bd1989-08-10.d1t06.flac:a8d59462f8b35eb9d7dbe0b685854a5f
+bd1989-08-10.d1t07.flac:deb9584288a724dae9d813aec7605cea
+bd1989-08-10.d1t08.flac:4d0305386afa1b3aa05e1e6612a6a783
+bd1989-08-10.d2t01.flac:c95a55ead5eb5f8ed304d50c0fcf5cab
+bd1989-08-10.d2t02.flac:a6efecc5feb3beaf9f7920d4e9ec0a34
+bd1989-08-10.d2t03.flac:cc2659e3ee64425d53db55dd6cf8fdc1
+bd1989-08-10.d2t04.flac:0af1aa870714c298d46a67b80514239e
+bd1989-08-10.d2t05.flac:c7bc54894161916aa275ca4ba98b7ff3
+bd1989-08-10.d2t06.flac:0783bee93fe8279c138365ce90bf58c5
+bd1989-08-10.d2t07.flac:19dab04459a3d1639cbaf15c0ee5125d
+bd1989-08-10.d2t08.flac:d0087d3dd0f6a0ae31411e4153248619
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-08-10-LTC.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.40       62010524 B   ---   --   ---xx   flac  0.6501  bd1989-08-10.d1t01.flac
+     4:20.06       45878156 B   ---   --   ---xx   flac  0.6858  bd1989-08-10.d1t02.flac
+     6:09.61       65235116 B   ---   --   ---xx   flac  0.6580  bd1989-08-10.d1t03.flac
+     5:24.32       57228908 B   ---   --   ---xx   flac  0.6926  bd1989-08-10.d1t04.flac
+     6:38.34       70287212 B   ---   --   ---xx   flac  0.6771  bd1989-08-10.d1t05.flac
+     5:30.12       58240268 B   ---   --   ---xx   flac  0.6324  bd1989-08-10.d1t06.flac
+     6:25.59       68052812 B   ---   --   ---xx   flac  0.6304  bd1989-08-10.d1t07.flac
+     7:07.15       75358124 B   ---   --   ---xx   flac  0.5768  bd1989-08-10.d1t08.flac
+     8:19.27       88087148 B   ---   --   ---xx   flac  0.6070  bd1989-08-10.d2t01.flac
+     3:49.15       40430924 B   ---   --   ---xx   flac  0.6924  bd1989-08-10.d2t02.flac
+     3:40.03       38815100 B   ---   --   ---xx   flac  0.6216  bd1989-08-10.d2t03.flac
+     5:07.58       54291260 B   ---   --   ---xx   flac  0.7072  bd1989-08-10.d2t04.flac
+     4:19.01       45689996 B   ---   --   ---xx   flac  0.6818  bd1989-08-10.d2t05.flac
+     8:46.58       92922860 B   ---   --   ---xx   flac  0.7197  bd1989-08-10.d2t06.flac
+     8:21.14       88409372 B   ---   --   ---xx   flac  0.5803  bd1989-08-10.d2t07.flac
+     4:58.28       52633100 B   ---   --   ---xx   flac  0.6706  bd1989-08-10.d2t08.flac
+    94:49.13     1003570880 B                            0.6514  (16 files)
+=================== 
+=================== 
+=================== 

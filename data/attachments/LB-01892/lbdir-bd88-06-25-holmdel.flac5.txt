@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-25-holmdel.flac5 
+=================== 
+=================== 
+=================== 
+d1646920b43858a779d4d6ad0773c4bc  bd1988-06-25.txt
+99ffb08e8927e936d91a48001f44958a  bd1988-06-25d1.ffp.txt
+b87ba1dc14ba5e173661dd0acdca1595  bd1988-06-25d1.flacs.md5
+650f5a23ab93139166c59f6f07cf5bae  bd1988-06-25d1.shntoolresults.txt
+0bf39535ac934443a1567cf4e9bb4430  bd1988-06-25d1.waves.md5
+6eb3860f563cb2a5f14d3bf8e84dce63  bd1988-06-25d1t01.flac
+286daa0ebb97268c5a254663d1476a77  bd1988-06-25d1t02.flac
+0c8f7ee1cbe20d1c7b2fd2e6577ecbaf  bd1988-06-25d1t03.flac
+052f8354cebf6180be2a4e82a64f615e  bd1988-06-25d1t04.flac
+eaa03652a59b379bf550adbd5ac004b1  bd1988-06-25d1t05.flac
+577cb0baf679af253f25e1e46d91f4de  bd1988-06-25d1t06.flac
+d94f57e4a56d5671d636f69e51c5355b  bd1988-06-25d1t07.flac
+caea27c194e6bbb1396d4c614f4752f8  bd1988-06-25d2.ffp.txt
+0e95c03c5a44aafbe74a273b39b77ac9  bd1988-06-25d2.flacs.md5
+83606a49e1b487f39706c43170ba9d15  bd1988-06-25d2.shntoolresults.txt
+dadbc95c680820f94fd0ef4b9e74b270  bd1988-06-25d2.waves.md5
+6e58a97854eb6dda3f0fdc7bf2988a09  bd1988-06-25d2t01.flac
+29bc49fa944284c7b0577e2d0fc124d3  bd1988-06-25d2t02.flac
+85462321066800b62a1af124a7227a89  bd1988-06-25d2t03.flac
+b63cf6733779e983741435dcee592834  bd1988-06-25d2t04.flac
+7534b585b50e8809e6940b9ebfafba63  bd1988-06-25d2t05.flac
+0a07d81e97176300ddaa948599b18a88  bd1988-06-25d2t06.flac
+30da9fcaa7d0fd6b0ee25700b98a61d5  bd1988-06-25d2t07.flac
+772efaf857bd4654686bfc91b2240f26  bd1988-06-25d2t08.flac
+59387ecad20b7be28be404bdc3911f48  bd88-06-25.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-25-holmdel.flac5 
+=================== 
+=================== 
+=================== 
+bd1988-06-25d1t01.flac:d44ffe25aa9d6a71e348949d872a013b
+bd1988-06-25d1t02.flac:1ebc0f13ee4f2ff74d3f743d3d6dcfb2
+bd1988-06-25d1t03.flac:5ee84d44209d9ce6b02806ea84ed556d
+bd1988-06-25d1t04.flac:1f789f67f98b761bd7f470863b33d0bc
+bd1988-06-25d1t05.flac:6c760efe257132348bdde043258e80e8
+bd1988-06-25d1t06.flac:9485431f41064b5a3356b7dbd953a784
+bd1988-06-25d1t07.flac:e1cfe86171bbda39de0955fba842e47b
+bd1988-06-25d2t01.flac:224bdad97fc897000f1c5d7d782a41b1
+bd1988-06-25d2t02.flac:dcbabb633e7f45b5d83e335f153e182b
+bd1988-06-25d2t03.flac:844e796f40a363d11eabbd2d84526d27
+bd1988-06-25d2t04.flac:a8cfb3a44e5cb15bd77bd159931fae19
+bd1988-06-25d2t05.flac:49eff2001b6edb2ab1e1ae1facbddef7
+bd1988-06-25d2t06.flac:01e2331f373f58f3a3eaaa48549b3981
+bd1988-06-25d2t07.flac:185fffd3048d5927cd614e67f85c2c6c
+bd1988-06-25d2t08.flac:12aca604ad1122bc7e60fcb7dfcffa92
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-25-holmdel.flac5 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.57       42999308 B   ---   --   ---xx   flac  0.6931  bd1988-06-25d1t01.flac
+     5:42.15       60364124 B   ---   --   ---xx   flac  0.6907  bd1988-06-25d1t02.flac
+     6:16.34       66406412 B   ---   --   ---xx   flac  0.6834  bd1988-06-25d1t03.flac
+     6:44.11       71291516 B   ---   --   ---xx   flac  0.7013  bd1988-06-25d1t04.flac
+     6:15.12       66178268 B   ---   --   ---xx   flac  0.6573  bd1988-06-25d1t05.flac
+     8:22.33       88630460 B   ---   --   ---xx   flac  0.7002  bd1988-06-25d1t06.flac
+     6:13.53       65921900 B   ---   --   ---xx   flac  0.6818  bd1988-06-25d1t07.flac
+     5:51.26       61977596 B   ---   --   ---xx   flac  0.6553  bd1988-06-25d2t01.flac
+     4:50.16       51193676 B   ---   --   ---xx   flac  0.6404  bd1988-06-25d2t02.flac
+     4:16.56       45290156 B   ---   --   ---xx   flac  0.6828  bd1988-06-25d2t03.flac
+     8:58.36       94987916 B   ---   --   ---xx   flac  0.6910  bd1988-06-25d2t04.flac
+     6:40.60       70701164 B   ---   --   ---xx   flac  0.7277  bd1988-06-25d2t05.flac
+     2:45.17       29146028 B   ---   --   ---xx   flac  0.6169  bd1988-06-25d2t06.flac
+     3:46.28       39932300 B   ---   --   ---xx   flac  0.6841  bd1988-06-25d2t07.flac
+     5:44.57       60815708 B   ---   --   ---xx   flac  0.6961  bd1988-06-25d2t08.flac
+    86:31.61      915836532 B                            0.6840  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-07-23-km140-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+004466af1433534e1494b097ff6618d2  bd2009-07-23.km140.soomlos.flac16.ffp
+b1b9a9c0483f52d6965413dacb827c29  bd2009-07-23.km140.soomlos.flac16.info.txt
+737c23b27d3bf8fb872b3f5756056d11  bd2009-07-23.km140.soomlos.flac16.md5
+f48c859cf3eaab2b5ee756c6da78d8a6  bd2009-07-23d1t01.flac
+25696b27d413c11d59d5c221c4a703fb  bd2009-07-23d1t02.flac
+f173391755d46a47edace6b3664092ff  bd2009-07-23d1t03.flac
+c102c2342a0fc3af29d01bef49e30057  bd2009-07-23d1t04.flac
+f10bfff0d799348e066285162c265243  bd2009-07-23d1t05.flac
+42b01ba946fdfde9a7b2dd455b8d0ff4  bd2009-07-23d1t06.flac
+9a36ca1c61f78643d02380f1e07a2308  bd2009-07-23d1t07.flac
+bbfadf8fb9f21842aa2ca129b13cb456  bd2009-07-23d1t08.flac
+1817858635640d4aaca399558bfe65dd  bd2009-07-23d1t09.flac
+27b3517784837ea14e78f696fd8ecbb3  bd2009-07-23d1t10.flac
+db8b26986a103dc5d4ba64283a12520b  bd2009-07-23d1t11.flac
+4f8874b6bbcb112add7830ffcf5bdba2  bd2009-07-23d1t12.flac
+c9ce2ee35c43f3d121d4415fbbe5d23e  bd2009-07-23d2t01.flac
+b4752df114cd2d3b8594e244670e03a8  bd2009-07-23d2t02.flac
+a71c5afc5c6bab284dfd2d4c04517743  bd2009-07-23d2t03.flac
+43e8cb871b8e35b23e5186dbc4d29df2  bd2009-07-23d2t04.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-07-23-km140-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+bd2009-07-23d1t01.flac:410434537f5190c711d4d1c2a32af729
+bd2009-07-23d1t02.flac:86af9db6bf840278c3a2c45221fe022c
+bd2009-07-23d1t03.flac:d7ddea4aff1c048084c4deb7d06b5b24
+bd2009-07-23d1t04.flac:0c39f5f3b93ef5842bcb39dd318760c8
+bd2009-07-23d1t05.flac:0ca32f0403612c54c7d25ca78a5bf596
+bd2009-07-23d1t06.flac:5490fb20bb5d662b042a99c34607742c
+bd2009-07-23d1t07.flac:a1f4a8f71f2c8e3662fb820ce3b8b045
+bd2009-07-23d1t08.flac:1468af83a424da206d59d057ddae750f
+bd2009-07-23d1t09.flac:1cf9849b985ff60b201bf848a3b9a95a
+bd2009-07-23d1t10.flac:4c54d40f0aac8ce8a4fa267f4c93a974
+bd2009-07-23d1t11.flac:51b67f92ba8a2c0da344d94a8246b0d2
+bd2009-07-23d1t12.flac:58e8d59f2401bdd33ed7844019ec222f
+bd2009-07-23d2t01.flac:f7fdcd8bcf81e7d97c83fb49b3661919
+bd2009-07-23d2t02.flac:719fe1a79df7b85de68a19f91ed834da
+bd2009-07-23d2t03.flac:d2bc6255b60428833bce72b615a42730
+bd2009-07-23d2t04.flac:d2a5ad86314478cf020cba6d80705f3b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-07-23-km140-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:30.57       16010108 B   ---   --   ---xx   flac  0.4110  bd2009-07-23d1t01.flac
+     4:53.48       51798140 B   ---   --   ---xx   flac  0.4879  bd2009-07-23d1t02.flac
+     4:32.61       48124316 B   ---   --   ---xx   flac  0.4023  bd2009-07-23d1t03.flac
+     7:56.53       84091100 B   ---   --   ---xx   flac  0.4718  bd2009-07-23d1t04.flac
+     6:34.67       69659228 B   ---   --   ---xx   flac  0.4667  bd2009-07-23d1t05.flac
+     4:51.17       51372428 B   ---   --   ---xx   flac  0.4469  bd2009-07-23d1t06.flac
+     6:36.41       69950876 B   ---   --   ---xx   flac  0.4493  bd2009-07-23d1t07.flac
+     7:08.61       75642716 B   ---   --   ---xx   flac  0.4874  bd2009-07-23d1t08.flac
+     7:23.27       78208748 B   ---   --   ---xx   flac  0.4432  bd2009-07-23d1t09.flac
+     7:35.02       80266748 B   ---   --   ---xx   flac  0.4912  bd2009-07-23d1t10.flac
+     8:17.23       87724940 B   ---   --   ---xx   flac  0.4225  bd2009-07-23d1t11.flac
+     9:46.11      103396316 B   ---   --   ---xx   flac  0.4447  bd2009-07-23d1t12.flac
+     7:07.41       75419276 B   ---   --   ---xx   flac  0.4750  bd2009-07-23d2t01.flac
+     4:11.28       44342300 B   ---   --   ---xx   flac  0.4791  bd2009-07-23d2t02.flac
+     0:34.69        6159932 B   ---   --   ---xx   flac  0.4357  bd2009-07-23d2t03.flac
+     5:17.59       56057612 B   ---   --   ---xx   flac  0.4776  bd2009-07-23d2t04.flac
+    94:18.65      998224784 B                            0.4591  (16 files)
+=================== 
+=================== 
+=================== 

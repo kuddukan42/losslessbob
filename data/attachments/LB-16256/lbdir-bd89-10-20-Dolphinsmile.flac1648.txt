@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd89-10-20-Dolphinsmile.flac1648
+===================
+===================
+===================
+4ce61d6201214924a033aed325374803 *01 The Times Are A Changin.flac
+4d0c8ed6c51a72fb274cb40769cf0bc8 *02 Absolutey Sweet Marie.flac
+d94c78151487be1d4f22febc21592516 *03 The Real You At Last.flac
+8dc17303bc50b4510cc561925ff405a3 *04 What Good Am I.flac
+4018da465a3aac6262c653e4945a7aea *05 Dead Man Dead Man.flac
+8ff19fd54a547b6f344a1c4987e6e5e7 *06 I'll Remember You.flac
+c631267c6bf2b502736207e2c45048f3 *07 Love Minus Zero.flac
+59abf3535e3c192558e0b4167bfba8d4 *08Tamborine Man.flac
+7daa0933824b2714ed89d4359cc247df *09 One Too Many Mornings.flac
+11acac6c5581ac5b71d96c850dc93718 *10 Dont Think Twice.flac
+778b7f19529827be8c085bc330e8ea20 *11 Everything Is Broken.flac
+a97239468c6e81032bfa569dc58488e5 *12 When You Gonna Wake Up.flac
+e6cddcf0b661c352bb9ff97c08bbc223 *13 Ring Them Bells.flac
+64acdd54535e4eae6b20966d81369024 *14 Tears Of Rage.flac
+49592f51c6842373c0418c30bbca70dd *15 Everybodys Movin.flac
+fe228ebde044bc29f7fe8285da6b4ebb *16 Like A Rolling Stone.flac
+f585a7f0e4683831d3f2d94cb2755c2f *17 Most of The Time.flac
+82d21bbe91c96dfaa0d71d80db1294a5 *18 All Along The Watchtower.flac
+3112fc0788a097d1c8aadfc8f6940a67 *Bob Dylan  Mid Hudson Civic Center Poughkeepsie NY 1989-10-20 Dolphinsmile Archive.ffp
+faf3daa0142949c01548984fa5d22000 *Bob Dylan  Mid Hudson Civic Center Poughkeepsie NY 1989-10-20 Dolphinsmile Archive.md5
+3112fc0788a097d1c8aadfc8f6940a67 *Bob Dylan  Mid Hudson Civic Center Poughkeepsie NY 1989-10-20 Dolphinsmile Archive.txt
+4d42a522b9d2d0cdc230822db30feba4 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-10-20-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 The Times Are A Changin.flac:7487808f6bff98526874574b78648313
+02 Absolutey Sweet Marie.flac:1e9e6bdc47d355fb6c859c0e1bf56adb
+03 The Real You At Last.flac:56c8c9341b79556fdfc505597f29221e
+04 What Good Am I.flac:32b589388366450cefd1bb6f75250429
+05 Dead Man Dead Man.flac:b991a3f159068b4362f38a3f6d8a64c7
+06 I'll Remember You.flac:fc6ba0cb1cead8d3bbd59ff470d193be
+07 Love Minus Zero.flac:5e7936ff9da222cb7d1f3f4223475a5a
+08Tamborine Man.flac:a5c64390e32a2b6aba55c8b4540955ac
+09 One Too Many Mornings.flac:39edb431f06bea102b2a68c7aee39a04
+10 Dont Think Twice.flac:b50c09c5b7548592d81e195a94b40f76
+11 Everything Is Broken.flac:2f99fb6e7e40c93e6eeffe0059f217eb
+12 When You Gonna Wake Up.flac:abd8f741f5977d653ca2cca2e182be19
+13 Ring Them Bells.flac:8bea461f06f1926e7bf850a03562d9dd
+14 Tears Of Rage.flac:f9785589d0e8455915a81516c600abe3
+15 Everybodys Movin.flac:4c4bfd077fc324fdf84f07717ceb141b
+16 Like A Rolling Stone.flac:3148e38cebbd142ab5dc2b1eac8b28e0
+17 Most of The Time.flac:897f8d1695cc80d84d0abcd1c84df1ce
+18 All Along The Watchtower.flac:199be3231fb7dae673f486b72078fda5
+===================
+===================
+===================
+=== shntool len for: bd89-10-20-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.087      62416668 B   cxx   --   ---xx   flac  0.5871  01 The Times Are A Changin.flac
+     5:02.799      58137516 B   cxx   --   ---xx   flac  0.6253  02 Absolutey Sweet Marie.flac
+     4:52.094      56082076 B   cxx   --   ---xx   flac  0.5979  03 The Real You At Last.flac
+     5:26.649      62716676 B   cxx   --   ---xx   flac  0.5857  04 What Good Am I.flac
+     6:28.634      74617740 B   cxx   --   ---xx   flac  0.6095  05 Dead Man Dead Man.flac
+     6:29.638      74810560 B   cxx   --   ---xx   flac  0.6199  06 I'll Remember You.flac
+     3:29.977      40315644 B   cxx   --   ---xx   flac  0.6020  07 Love Minus Zero.flac
+     8:24.853      96931844 B   cxx   --   ---xx   flac  0.6125  08Tamborine Man.flac
+     5:39.232      65132528 B   cxx   --   ---xx   flac  0.5770  09 One Too Many Mornings.flac
+     5:50.218      67241868 B   cxx   --   ---xx   flac  0.6212  10 Dont Think Twice.flac
+     4:07.356      47492456 B   cxx   --   ---xx   flac  0.6041  11 Everything Is Broken.flac
+     4:27.487      51357564 B   cxx   --   ---xx   flac  0.5786  12 When You Gonna Wake Up.flac
+     5:40.651      65405112 B   cxx   --   ---xx   flac  0.5451  13 Ring Them Bells.flac
+     5:37.652      64829260 B   cxx   --   ---xx   flac  0.5901  14 Tears Of Rage.flac
+     5:11.880      59881076 B   cxx   --   ---xx   flac  0.6136  15 Everybodys Movin.flac
+     6:35.486      75933452 B   cxx   --   ---xx   flac  0.6242  16 Like A Rolling Stone.flac
+     5:04.911      58542952 B   cxx   --   ---xx   flac  0.5753  17 Most of The Time.flac
+     6:48.797      78489104 B   cxx   --   ---xx   flac  0.6097  18 All Along The Watchtower.flac
+   100:43.403    1160334096 B                            0.5999  (18 files)
+===================
+===================
+===================

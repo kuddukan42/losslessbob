@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-07-c.flacf 
+=================== 
+=================== 
+=================== 
+cd823b314fff1ffc89fc1b2d6c8546aa  bd84-06-07-Brussels-d01t01.flac
+d592e14640ce22f8a7f65243a7d7f941  bd84-06-07-Brussels-d01t02.flac
+257ed1716d4879454fb9e00e2a6a1981  bd84-06-07-Brussels-d01t03.flac
+a5224e9a1e910c040d0856145bdf8872  bd84-06-07-Brussels-d01t04.flac
+05bf76d07f1de15d949feba45b5c2c9f  bd84-06-07-Brussels-d01t05.flac
+cf813902ca534fb004eb147ddf173e0e  bd84-06-07-Brussels-d01t06.flac
+e0af296a44fa697d2ad762580d8b42c5  bd84-06-07-Brussels-d01t07.flac
+51935e93c3bbfb920ccef2fb50120165  bd84-06-07-Brussels-d01t08.flac
+ad11bbe47194800840d3fe4d84befadf  bd84-06-07-Brussels-d01t09.flac
+53d5ff1f31c706b142838f8350b495dc  bd84-06-07-Brussels-d01t10.flac
+fc721cf9de90417f056a76c174825914  bd84-06-07-Brussels-d01t11.flac
+36352298f40b4c8ed5f17c0007c5f845  bd84-06-07-Brussels-d01t12.flac
+a59ee6b6c2bfb6496846b88b79d94a0e  bd84-06-07-Brussels-d02t01.flac
+cbb7553881938b10dec24899987f7a5c  bd84-06-07-Brussels-d02t02.flac
+6223ad9024259f5850d7dc820231c18c  bd84-06-07-Brussels-d02t03.flac
+fbf7f29091ac2262fa1480ac0e9dac7e  bd84-06-07-Brussels-d02t04.flac
+30bfee59b28ec42763074cd26af5ba39  bd84-06-07-Brussels-d02t05.flac
+212b8189972bb7750ae65062b84e8290  bd84-06-07-Brussels-d02t06.flac
+478d803d46cf4cf0333807789b63cdb2  bd84-06-07-Brussels-d02t07.flac
+2ec5064fd3e24a7ca0a4ddc9eba20d1b  bd84-06-07-Brussels-d02t08.flac
+24edf67ec316358cabcf58f97c68b822  bd84-06-07-Brussels-d02t09.flac
+a9eabc3655bb504100de4abe6b4f0a51  bd84-06-07-Brussels.md5
+86ba30bd0529236a0e222062c6e8b2a0  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-07-c.flacf 
+=================== 
+=================== 
+=================== 
+bd84-06-07-Brussels-d01t01.flac:3efd549f22ddc789212cb706b417b3d8
+bd84-06-07-Brussels-d01t02.flac:9799f3deb513c8675156cc6680f0a4ae
+bd84-06-07-Brussels-d01t03.flac:67499f2d87081077112664ce9f49327d
+bd84-06-07-Brussels-d01t04.flac:519027769b413a65233b95a6720311fe
+bd84-06-07-Brussels-d01t05.flac:608e6c1799c1f34771d789e79d5fa631
+bd84-06-07-Brussels-d01t06.flac:36cbdb7a7991fb064e171d1172e1124f
+bd84-06-07-Brussels-d01t07.flac:12fc20bf6c436333b104f9c6d8033fd0
+bd84-06-07-Brussels-d01t08.flac:5166ca9ed06529d146fc18521e37cd38
+bd84-06-07-Brussels-d01t09.flac:6f40aaa9fdd497eea0af690d05e3bbd1
+bd84-06-07-Brussels-d01t10.flac:0988b79acb2d92a4bcd495b1616f3d06
+bd84-06-07-Brussels-d01t11.flac:aa4ee54f417f640c872ebda65edf9376
+bd84-06-07-Brussels-d01t12.flac:d44268c83fe2abb3237c459144b5e2fd
+bd84-06-07-Brussels-d02t01.flac:3476334cafc3b92043d03188cc59ba46
+bd84-06-07-Brussels-d02t02.flac:42f6a4d3dea68dd3f88609c4fec5ace4
+bd84-06-07-Brussels-d02t03.flac:5bc8eac358adee9024a2e978caf9197c
+bd84-06-07-Brussels-d02t04.flac:273ebf3201bef70a34a678212cc9fb5c
+bd84-06-07-Brussels-d02t05.flac:6ffb28e0726f7fd7a1f5bde86f3938bc
+bd84-06-07-Brussels-d02t06.flac:072dfb066ecc35660e7a64a6233b1809
+bd84-06-07-Brussels-d02t07.flac:0b6bc6b974adb05da47cc046e26e1cec
+bd84-06-07-Brussels-d02t08.flac:19182bb1a16dbd8b463cffd6fa2eda38
+bd84-06-07-Brussels-d02t09.flac:7f7ce621056a2b1350cac2a84ec70e80
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-07-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:26.74       57680492 B   ---   --   ---xx   flac  0.6482  bd84-06-07-Brussels-d01t01.flac
+     6:33.62       69471068 B   ---   --   ---xx   flac  0.6404  bd84-06-07-Brussels-d01t02.flac
+     7:22.14       78001772 B   ---   --   ---xx   flac  0.6435  bd84-06-07-Brussels-d01t03.flac
+     6:55.21       73255436 B   ---   --   ---xx   flac  0.6330  bd84-06-07-Brussels-d01t04.flac
+     5:30.09       58233212 B   ---   --   ---xx   flac  0.6342  bd84-06-07-Brussels-d01t05.flac
+     7:31.02       79561148 B   ---   --   ---xx   flac  0.6178  bd84-06-07-Brussels-d01t06.flac
+     4:17.56       45466556 B   ---   --   ---xx   flac  0.6218  bd84-06-07-Brussels-d01t07.flac
+     6:18.61       66822716 B   ---   --   ---xx   flac  0.6015  bd84-06-07-Brussels-d01t08.flac
+     6:53.63       73001420 B   ---   --   ---xx   flac  0.6076  bd84-06-07-Brussels-d01t09.flac
+     6:24.67       67895228 B   ---   --   ---xx   flac  0.6194  bd84-06-07-Brussels-d01t10.flac
+     6:30.00       68796044 B   ---   --   ---xx   flac  0.6457  bd84-06-07-Brussels-d01t11.flac
+     6:53.22       72904988 B   ---   --   ---xx   flac  0.6405  bd84-06-07-Brussels-d01t12.flac
+     4:38.10       49062764 B   ---   --   ---xx   flac  0.6320  bd84-06-07-Brussels-d02t01.flac
+     5:42.64       60479372 B   ---   --   ---xx   flac  0.6241  bd84-06-07-Brussels-d02t02.flac
+     5:50.63       61888220 B   ---   --   ---xx   flac  0.6199  bd84-06-07-Brussels-d02t03.flac
+     7:44.21       81899036 B   ---   --   ---xx   flac  0.6435  bd84-06-07-Brussels-d02t04.flac
+     7:26.35       78756764 B   ---   --   ---xx   flac  0.5813  bd84-06-07-Brussels-d02t05.flac
+     3:59.18       42201980 B   ---   --   ---xx   flac  0.5619  bd84-06-07-Brussels-d02t06.flac
+     4:29.52       47573948 B   ---   --   ---xx   flac  0.6212  bd84-06-07-Brussels-d02t07.flac
+     7:14.33       76635260 B   ---   --   ---xx   flac  0.6476  bd84-06-07-Brussels-d02t08.flac
+     5:57.09       62996012 B   ---   --   ---xx   flac  0.6182  bd84-06-07-Brussels-d02t09.flac
+   129:41.06     1372583436 B                            0.6251  (21 files)
+=================== 
+=================== 
+=================== 

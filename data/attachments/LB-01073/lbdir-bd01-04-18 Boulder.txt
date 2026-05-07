@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-04-18 Boulder 
+=================== 
+=================== 
+=================== 
+ec7b91e2b694c13cea6c8f5ef7a40ab4  bd01-04-18.txt
+017fe42e6427738e1dd50acef44d0aad  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_01 Roving Gambler.shn
+b07b6c83e64566fd11b02fcd4c285c52  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_02 To Ramona.shn
+9e64222bb22e0eadc5de1764006b6661  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_03 Desolation Row.shn
+5f4cdbf06ac23fcf39711e2f246e1785  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_04 To Be Alone With You.shn
+b6f3d9e937ef9eac3e040d6f9f84b825  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_05 Tears Of Rage.shn
+1ccde5144501f3eabeb600783a09a2b2  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_06 Things Have Changed.shn
+0625096fe67d3d3269e88f419fa992f9  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_07 Don't Think Twice, It's All Right.shn
+88e7b4753f657179f210d311c378519f  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_08 Masters Of War.shn
+2bfb6a4ff7eca58b31313e9741133b03  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_09 Tangled Up In Blue.shn
+53f6ed280ee9a39b6aa05ddba752b709  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_10 Standing In The Doorway.shn
+4189a46f34aacac733491e614ac922f6  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_11 Drifter's Escape.shn
+297d0f552bbdd5e139631493cc717a55  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_12 Leopard-Skin Pill-Box Hat.shn
+67db62b4667770ec221184201cba6c84  bd_01-04-18_Boulder_cd1.shnf\bd_01-04-18_Boulder_cd1_shn.md5
+bba9eb13a4782d2ebf055493cf05d82c  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_01 Love Sick.shn
+450c196b82c5863bcf4e4d62e8bb2b57  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_02 Like A Rolling Stone.shn
+1e2b201ccd03438d060bc753facf477d  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_03 If Dogs Run Free.shn
+ea83adf6c6bf7d0d84795a3cd43bb115  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_04 All Along The Watchtower.shn
+03e3ad458728c4af4edba18315608042  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_05 Girl Of The North Country.shn
+106d80efd30ca3940c0e39e78aa0c195  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_06 Highway 61 Revisited.shn
+d596c0e9d479d2df4fa0cc44bf4d6fdc  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_07 Blowin' In The Wind.shn
+643f45ef8f916e42d35fa4577890e283  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_08 Rainy Day Women #12 & 35.shn
+18efdd559aa0e388d5c536abb37c513a  bd_01-04-18_Boulder_cd2.shnf\bd_01-04-18_Boulder_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-04-18 Boulder\bd_01-04-18_Boulder_cd1.shnf 
+=================== 
+=================== 
+=================== 
+5581e0cdc74e82510f9267fb73dd3115  [shntool]  bd_01-04-18_Boulder_cd1_01_Roving_Gambler.wav
+0dbcce5870806474537af969a9c4e995  [shntool]  bd_01-04-18_Boulder_cd1_02_To_Ramona.wav
+e007eeaff63ad9d7acc71a45c4ab9461  [shntool]  bd_01-04-18_Boulder_cd1_03_Desolation_Row.wav
+95369125c86258ec8a027e40847ff4df  [shntool]  bd_01-04-18_Boulder_cd1_04_To_Be_Alone_With_You.wav
+539f0e4d5e025bc368a6c2e6da4dab76  [shntool]  bd_01-04-18_Boulder_cd1_05_Tears_Of_Rage.wav
+8a0de2ef9414ba85eb8b27c824db91be  [shntool]  bd_01-04-18_Boulder_cd1_06_Things_Have_Changed.wav
+9a8523d62579857d12d883ff341400d8  [shntool]  bd_01-04-18_Boulder_cd1_07_Don't_Think_Twice,_It's_All_Right.wav
+bf5bdbe40a34df9c26883e0ab435c9ae  [shntool]  bd_01-04-18_Boulder_cd1_08_Masters_Of_War.wav
+bee20fdd48ef90a9e3f4dc7d8ce5dfc1  [shntool]  bd_01-04-18_Boulder_cd1_09_Tangled_Up_In_Blue.wav
+b73adb56f1dd900610158343348166d2  [shntool]  bd_01-04-18_Boulder_cd1_10_Standing_In_The_Doorway.wav
+554edc64957127a74ee4168ffe176e4d  [shntool]  bd_01-04-18_Boulder_cd1_11_Drifter's_Escape.wav
+dc0502901b07bf34727f8a9ef2144aea  [shntool]  bd_01-04-18_Boulder_cd1_12_Leopard-Skin_Pill-Box_Hat.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-04-18 Boulder\bd_01-04-18_Boulder_cd2.shnf 
+=================== 
+=================== 
+=================== 
+7501796ed366ca501a07ae24177f12af  [shntool]  bd_01-04-18_Boulder_cd2_01_Love_Sick.wav
+3238a1dfc11254d4f37441060bc65533  [shntool]  bd_01-04-18_Boulder_cd2_02_Like_A_Rolling_Stone.wav
+194e76f700d71d51e4b2b23a6f2df5f7  [shntool]  bd_01-04-18_Boulder_cd2_03_If_Dogs_Run_Free.wav
+6b0404991a163c297d1edbec247f4ce1  [shntool]  bd_01-04-18_Boulder_cd2_04_All_Along_The_Watchtower.wav
+9cb9c694940264737bb6b3c2d1371c29  [shntool]  bd_01-04-18_Boulder_cd2_05_Girl_Of_The_North_Country.wav
+4cdc1e5bb171a9bdd95afbd0c947687c  [shntool]  bd_01-04-18_Boulder_cd2_06_Highway_61_Revisited.wav
+67086ff40bede5c87c59318963d2f910  [shntool]  bd_01-04-18_Boulder_cd2_07_Blowin'_In_The_Wind.wav
+e9d4fc598929a6dff7ec439640981b89  [shntool]  bd_01-04-18_Boulder_cd2_08_Rainy_Day_Women_#12___35.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-04-18 Boulder\bd_01-04-18_Boulder_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:39.70       38796366 B   ---   -e   ---xx    shn  0.6809  bd_01-04-18_Boulder_cd1_01 Roving Gambler.shn
+     5:23.32       57052590 B   ---   -e   ---xx    shn  0.6761  bd_01-04-18_Boulder_cd1_02 To Ramona.shn
+     9:03.49       95900574 B   ---   -e   ---xx    shn  0.6748  bd_01-04-18_Boulder_cd1_03 Desolation Row.shn
+     4:41.46       49676718 B   ---   -e   ---xx    shn  0.6809  bd_01-04-18_Boulder_cd1_04 To Be Alone With You.shn
+     8:36.56       91154238 B   ---   -e   ---xx    shn  0.6656  bd_01-04-18_Boulder_cd1_05 Tears Of Rage.shn
+     6:14.13       66004302 B   ---   -e   ---xx    shn  0.6786  bd_01-04-18_Boulder_cd1_06 Things Have Changed.shn
+     6:11.38       65533902 B   ---   -e   ---xx    shn  0.6536  bd_01-04-18_Boulder_cd1_07 Don't Think Twice, It's All Right.shn
+     5:38.07       59639790 B   ---   -e   ---xx    shn  0.6502  bd_01-04-18_Boulder_cd1_08 Masters Of War.shn
+    10:08.01      107253678 B   ---   -e   ---xx    shn  0.7200  bd_01-04-18_Boulder_cd1_09 Tangled Up In Blue.shn
+     7:42.49       81612174 B   ---   -e   ---xx    shn  0.6188  bd_01-04-18_Boulder_cd1_10 Standing In The Doorway.shn
+     4:11.35       44358846 B   ---   -e   ---xx    shn  0.6908  bd_01-04-18_Boulder_cd1_11 Drifter's Escape.shn
+     6:58.04       73744734 B   ---   -e   ---xx    shn  0.6701  bd_01-04-18_Boulder_cd1_12 Leopard-Skin Pill-Box Hat.shn
+    78:29.25      830727912 B                            0.6722  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-04-18 Boulder\bd_01-04-18_Boulder_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.03       62805582 B   ---   -e   ---xx    shn  0.6351  bd_01-04-18_Boulder_cd2_01 Love Sick.shn
+     8:06.39       85822254 B   ---   -e   ---xx    shn  0.6649  bd_01-04-18_Boulder_cd2_02 Like A Rolling Stone.shn
+     3:57.60       41948046 B   ---   -e   ---xx    shn  0.6346  bd_01-04-18_Boulder_cd2_03 If Dogs Run Free.shn
+     4:33.33       48234942 B   ---   -e   ---xx    shn  0.6631  bd_01-04-18_Boulder_cd2_04 All Along The Watchtower.shn
+     6:59.60       74052846 B   ---   -e   ---xx    shn  0.6070  bd_01-04-18_Boulder_cd2_05 Girl Of The North Country.shn
+     5:41.04       60161934 B   ---   -e   ---xx    shn  0.6827  bd_01-04-18_Boulder_cd2_06 Highway 61 Revisited.shn
+     5:02.31       53345838 B   ---   -e   ---xx    shn  0.6722  bd_01-04-18_Boulder_cd2_07 Blowin' In The Wind.shn
+     5:11.52       54982830 B   ---   -e   ---xx    shn  0.6536  bd_01-04-18_Boulder_cd2_08 Rainy Day Women #12 & 35.shn
+    45:28.57      481354272 B                            0.6510  (8 files)
+=================== 
+=================== 
+=================== 

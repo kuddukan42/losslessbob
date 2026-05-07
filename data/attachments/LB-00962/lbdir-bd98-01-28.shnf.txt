@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-28.shnf 
+=================== 
+=================== 
+=================== 
+7ed60121e6d0f27246d0f1d3709cd96c  BD98-01-28.md5
+a36e3fd35a1de4430a4c5d2deb33dc3a  BD98-01-28.nfo
+3e58356b8cb56a795a879981f0970c1d  bd98-01-28.txt
+12dd3f6d9e57178a087728bbfc50feeb  Disc 1- 01 Absolutely Sweet Marie .shn
+2735ce6ddea2523c547c2d857207f8c4  Disc 1- 02 The Man In Me.shn
+2a1ec53893d2495b9c36af9f64902c65  Disc 1- 03 Can't Wait.shn
+c7a55aa8693ecddb2fe7f5bd5be74666  Disc 1- 04 I Don't Believe You.shn
+4bc7a98da41f358177dd24e12df79da4  Disc 1- 05 Silvio .shn
+3715cae69e582e6c9bc9cb7a15b146cc  Disc 1- 06 Cocaine Blues.shn
+63ee643dcc9e8dbd56feab3db3c1bd8b  Disc 1- 07 Masters Of War.shn
+a450a9c2fb288b414475506df0d230ce  Disc 1- 08 Tangled Up In Blue.shn
+179c09cb8902d92fbed0271a56f82548  Disc 2 - 01 Million Miles.shn
+794accf45c02a781f42d3b3e0fdf22ce  Disc 2 - 02 Stuck Inside Of Mobile.shn
+857972d1a5ad7fd11c74a6b9c0586c77  Disc 2 - 03 Ballad Of A Thin Man.shn
+20aa4e1d33941295e409f879838b7708  Disc 2 - 04 Like A Rolling Stone .shn
+c0fedaf5f98d0fb7815167a4999cabbb  Disc 2 - 05 It Ain't Me, Babe.shn
+910d29e87febcc7a4b53f77cc6ae8cd9  Disc 2 - 06 Love Sick.shn
+7e3c4d3857ebcd80377a1c5ce7883642  Disc 2 - 07 Rainy Day Women #12 & 35.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-01-28.shnf 
+=================== 
+=================== 
+=================== 
+fc329a292c2f0b9a6229eb2ed98e94d1  [shntool]  Disc_1-_01_Absolutely_Sweet_Marie_.wav
+736a9bf9e45caf717a57f2d314c71b07  [shntool]  Disc_1-_02_The_Man_In_Me.wav
+0268d73e36a9c4a8ed47d0cba1ce3149  [shntool]  Disc_1-_03_Can't_Wait.wav
+98813f3cc685fbeb0f633d6ab60fc1b7  [shntool]  Disc_1-_04_I_Don't_Believe_You.wav
+e6daacd40cee3e8f011c6f6aa1b2c6e2  [shntool]  Disc_1-_05_Silvio_.wav
+56860c4cae504b3e4fe32aeac2208f08  [shntool]  Disc_1-_06_Cocaine_Blues.wav
+94671a813f81579ebe176f0952469949  [shntool]  Disc_1-_07_Masters_Of_War.wav
+6b168bc4392fe2c1247916f9df7b02c3  [shntool]  Disc_1-_08_Tangled_Up_In_Blue.wav
+2b62b0c026a4a3860430b63f97bd7d91  [shntool]  Disc_2_-_01_Million_Miles.wav
+66f8b35ec3fa0728e856337444ec06a1  [shntool]  Disc_2_-_02_Stuck_Inside_Of_Mobile.wav
+06592fdb6f309b2159a5b28c3262f2a9  [shntool]  Disc_2_-_03_Ballad_Of_A_Thin_Man.wav
+72c1f93c6b10087ad3affb80daab4552  [shntool]  Disc_2_-_04_Like_A_Rolling_Stone_.wav
+6473685407d5225878d474e16b56d5c5  [shntool]  Disc_2_-_05_It_Ain't_Me,_Babe.wav
+87526df0efc8f18001c0309943c7f0b3  [shntool]  Disc_2_-_06_Love_Sick.wav
+044a3225937ae98bb2035432433e1691  [shntool]  Disc_2_-_07_Rainy_Day_Women_#12___35.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-28.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.20       44499884 B   ---   --   ---xx    shn  0.6181  Disc 1- 01 Absolutely Sweet Marie .shn
+     4:30.04       47637452 B   ---   --   ---xx    shn  0.5681  Disc 1- 02 The Man In Me.shn
+     5:53.26       62330396 B   ---   --   ---xx    shn  0.6003  Disc 1- 03 Can't Wait.shn
+     5:36.29       59338652 B   ---   --   ---xx    shn  0.5699  Disc 1- 04 I Don't Believe You.shn
+     7:03.64       74767772 B   ---   --   ---xx    shn  0.6033  Disc 1- 05 Silvio .shn
+     4:12.74       44626892 B   ---   --   ---xx    shn  0.5089  Disc 1- 06 Cocaine Blues.shn
+     4:39.51       49335596 B   ---   --   ---xx    shn  0.4761  Disc 1- 07 Masters Of War.shn
+     7:26.28       78740300 B   ---   --   ---xx    shn  0.6064  Disc 1- 08 Tangled Up In Blue.shn
+     6:27.62       68412668 B   ---   --   ---xx    shn  0.5610  Disc 2 - 01 Million Miles.shn
+     8:27.73       89606540 B   ---   --   ---xx    shn  0.6016  Disc 2 - 02 Stuck Inside Of Mobile.shn
+     7:25.52       78620348 B   ---   --   ---xx    shn  0.6022  Disc 2 - 03 Ballad Of A Thin Man.shn
+     8:55.09       94395212 B   ---   --   ---xx    shn  0.6054  Disc 2 - 04 Like A Rolling Stone .shn
+     8:11.31       86685356 B   ---   --   ---xx    shn  0.5777  Disc 2 - 05 It Ain't Me, Babe.shn
+     6:02.34       63936812 B   ---   --   ---xx    shn  0.5926  Disc 2 - 06 Love Sick.shn
+     4:41.30       49639004 B   ---   --   ---xx    shn  0.6793  Disc 2 - 07 Rainy Day Women #12 & 35.shn
+    93:46.62      992572884 B                            0.5877  (15 files)
+=================== 
+=================== 
+=================== 

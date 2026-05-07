@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-21 SantaBarbara 
+=================== 
+=================== 
+=================== 
+ab2e3bfb2c10e88153598eb2fa9f3f76  bd04-10-21.txt
+144ddeecac427ee503d2a22bca838e4e  bd04-10-21d1t01.shn
+566b2d64c61b3e8c9edd522154b0f53e  bd04-10-21d1t02.shn
+7bc52b4f8a1f9a7a0a5dac1111635acd  bd04-10-21d1t03.shn
+ef7781805314501b85b0666a0ce920e7  bd04-10-21d1t04.shn
+59beda31e7297737d0722a8fd754e58d  bd04-10-21d1t05.shn
+d4e01e468f643a2e7c5cc78a23a9fded  bd04-10-21d1t06.shn
+7d8d8952f5f4134492a512ef304f8c97  bd04-10-21d1t07.shn
+42288c0a791d617bfe4515c54e4cce97  bd04-10-21d1t08.shn
+f645c2a02bf3e39e8794339327ba372e  bd04-10-21d1t09.shn
+5f926f96a1bd4d1358a3167694a25925  bd04-10-21d1t10.shn
+8656de3f3714782fb3632a97326dd29a  bd04-10-21d2t01.shn
+9d484ff67f48a270d44142b1837a0fc2  bd04-10-21d2t02.shn
+e97dc1785331d63b5922aa8ee37feb4b  bd04-10-21d2t03.shn
+e03b62ce8f49470b4b3c16796bb47df8  bd04-10-21d2t04.shn
+63958f97aff0ef691ce3d5798b138969  bd04-10-21d2t05.shn
+c093a89df75f1ddcb51303abc589adb8  bd04-10-21d2t06.shn
+a7b896764d02b3be647e81a3e545d6ab  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-10-21 SantaBarbara 
+=================== 
+=================== 
+=================== 
+30208b48e1bae8706200bd2f21dd9a07  [shntool]  bd04-10-21d1t01.wav
+f39850109b9650c89683b2934b327190  [shntool]  bd04-10-21d1t02.wav
+4ab91c33c603f98757ac2f32e77d9c93  [shntool]  bd04-10-21d1t03.wav
+f6ad10de139642a286e96da290b57fff  [shntool]  bd04-10-21d1t04.wav
+a16e9b09eb98293f2717abce546ada22  [shntool]  bd04-10-21d1t05.wav
+5e32a987750762d852c4b54b55c0d360  [shntool]  bd04-10-21d1t06.wav
+c39ebd5d41852712102e6aba0b7b1ea9  [shntool]  bd04-10-21d1t07.wav
+9986a3b413b2798e64a279cbdab4f4ca  [shntool]  bd04-10-21d1t08.wav
+5a6dccb600f19e1c1047350dfe0bf7ff  [shntool]  bd04-10-21d1t09.wav
+afc4cad4ce2098073876b526cbce8a2c  [shntool]  bd04-10-21d1t10.wav
+239602a87e25ace32c5e9d75d407c7be  [shntool]  bd04-10-21d2t01.wav
+a0c0e66861fa3baa1f867efe12ea3ea4  [shntool]  bd04-10-21d2t02.wav
+faf88c81934d88512d87ff8196103e92  [shntool]  bd04-10-21d2t03.wav
+90b4a7facec71b6ff18cc84df998a0b3  [shntool]  bd04-10-21d2t04.wav
+0de5e076e34881523b6e89a196357b68  [shntool]  bd04-10-21d2t05.wav
+db7e1a38a7af5b042882ebfe9202e94f  [shntool]  bd04-10-21d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-21 SantaBarbara 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.25       59682044 B   ---   --   -----    wav  1.0000  bd04-10-21d1t01.wav
+     5:15.47       55676588 B   ---   --   -----    wav  1.0000  bd04-10-21d1t02.wav
+     6:36.69       70016732 B   ---   --   -----    wav  1.0000  bd04-10-21d1t03.wav
+     6:58.09       73756412 B   ---   --   -----    wav  1.0000  bd04-10-21d1t04.wav
+     5:22.45       56906684 B   ---   --   -----    wav  1.0000  bd04-10-21d1t05.wav
+     5:21.62       56770268 B   ---   --   -----    wav  1.0000  bd04-10-21d1t06.wav
+     6:06.00       64562444 B   ---   --   -----    wav  1.0000  bd04-10-21d1t07.wav
+     6:27.17       68306828 B   ---   --   -----    wav  1.0000  bd04-10-21d1t08.wav
+     5:07.67       54312428 B   ---   --   -----    wav  1.0000  bd04-10-21d1t09.wav
+     5:18.73       56266940 B   ---   --   -----    wav  1.0000  bd04-10-21d1t10.wav
+     4:47.58       50763260 B   ---   --   -----    wav  1.0000  bd04-10-21d2t01.wav
+     6:30.63       68944220 B   ---   --   -----    wav  1.0000  bd04-10-21d2t02.wav
+     6:49.29       72215852 B   ---   --   -----    wav  1.0000  bd04-10-21d2t03.wav
+     6:50.54       72451052 B   ---   --   -----    wav  1.0000  bd04-10-21d2t04.wav
+     8:55.07       94390508 B   ---   --   -----    wav  1.0000  bd04-10-21d2t05.wav
+     6:04.41       64306076 B   ---   --   -----    wav  1.0000  bd04-10-21d2t06.wav
+    98:11.66     1039328336 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

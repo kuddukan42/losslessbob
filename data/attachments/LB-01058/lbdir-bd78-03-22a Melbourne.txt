@@ -1,0 +1,133 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-03-22a Melbourne 
+=================== 
+=================== 
+=================== 
+38e1c4972e6bf8f46d18a6bcb313625c  bd78-03-22a.txt
+db8f8a21e14daee4fc26df44cbb509e6  cd1\032278d1.md5
+2a600cc48d0ae3dfece084def0af83f5  cd1\Track01.shn
+62d266ad20ad4c60a4f2881d0492b983  cd1\Track02.shn
+dde054f8ea1525e3042a148391392b7d  cd1\Track03.shn
+ee116dacfabc6e2049c5062c41be42ae  cd1\Track04.shn
+4221bf163093a95f02458dde758a626f  cd1\Track05.shn
+1d97d93178b6fa02bac1656a2525d8ef  cd1\Track06.shn
+d4aafb332d8d4c045ef49feb5d47d263  cd1\Track07.shn
+88b59b06a7b2658636062671c13a1e8a  cd1\Track08.shn
+6151e40555073af76e5c6af62de61e1b  cd1\Track09.shn
+e85ee8f45c27726bed99995b6e3c2429  cd1\Track10.shn
+c9a70b923d8a6d9eff76e073b5fa4584  cd1\Track11.shn
+9ff524c51c14d63088f6ff112e08acd5  cd1\Track12.shn
+b784fd5549b734cad3c19aa5819affd3  cd1\Track13.shn
+56c49e65be240bad58d080cbfb98006f  cd2\032278d2.md5
+c39dbcf9d5744ba80fdc8ffbff833be8  cd2\Track01.shn
+57bba33ecc12ea5478aea9a3e787aa8a  cd2\Track02.shn
+51b6a28e4df4c7760590458596bff278  cd2\Track03.shn
+945ef43f20396b12d86d04806e1665f5  cd2\Track04.shn
+0bf7bec70c48574bd263e188dd3cb261  cd2\Track05.shn
+60e2415fab9c701ef74caf138657331d  cd2\Track06.shn
+c5e073b26c4c60bc13c9ff1bf2c78927  cd2\Track07.shn
+2ae61017205cf334d4d6561de1cb7c45  cd2\Track08.shn
+7667581bb2e45fc5d64db3d5efeae4c7  cd2\Track09.shn
+c33dfaf4dd19db2ed393483c62dc5a21  cd2\Track10.shn
+fb991385985d45466a976e9359724965  cd2\Track11.shn
+06d584df7b230afb685523145eb72aaa  cd2\Track12.shn
+5fc3c49b9ec553be477e13c7e89906f3  cd2\Track13.shn
+775fbd53bd339b091d23ad369544e521  cd2\Track14.shn
+691056c604432d4723ac11d7edd9cd72  cd2\Track15.shn
+8f6e7bd3a5bf308a666a19e34ac4d793  cd2\Track16.shn
+d0162f3c6388ebabfd913d904fd4e146  Project '78- 03-22.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-03-22a Melbourne\cd1 
+=================== 
+=================== 
+=================== 
+31fe7e44a8a3f94a094706e3f101da84  [shntool]  Track01.wav
+caf543ee9fd7528069b81b31dcf7868d  [shntool]  Track02.wav
+4fc5066618c55adbd66eb356461a68cf  [shntool]  Track03.wav
+636155bee7ce350625c073805c841f6a  [shntool]  Track04.wav
+ae806052d6d23d2d0339b57884ca823f  [shntool]  Track05.wav
+30e3d7874aa72b9232e3dbe686a805a3  [shntool]  Track06.wav
+3f18b08db1e0b135daf2146676ce3ff9  [shntool]  Track07.wav
+100be5164cf98ad0ccedad27e10cc024  [shntool]  Track08.wav
+e4a498a7cae5c46656c7c77049b7957d  [shntool]  Track09.wav
+e241e68def82a3210a4deee850c1bcae  [shntool]  Track10.wav
+7b7ca1ec633f793e7b2f9620d7554ba9  [shntool]  Track11.wav
+361d68ef7666c1fa912d36b34b73ee98  [shntool]  Track12.wav
+3f66dadc48156d0e7c707d766598e115  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-03-22a Melbourne\cd2 
+=================== 
+=================== 
+=================== 
+3a26920720dae8f809a186058d3a2a1b  [shntool]  Track01.wav
+ca86697055c37e4b55373b9e2411ed31  [shntool]  Track02.wav
+1f684a391381c0b54fde94d34d70cea9  [shntool]  Track03.wav
+cb159c2051ecf42a3e3a35882e067ac5  [shntool]  Track04.wav
+f3dbb46fa9266e3f17206c4fcb8c8389  [shntool]  Track05.wav
+3aaf9da411c786761b1161afb7bc9425  [shntool]  Track06.wav
+8ffc716446cbe967a701f3ec3ae873e7  [shntool]  Track07.wav
+d7b1688b5d0219bdb9ca00cfe54b0f75  [shntool]  Track08.wav
+cb041eca6ae5f719ec8973029ff1ee03  [shntool]  Track09.wav
+7c3eab07333c9bc8ce5b3bdf87c8e72d  [shntool]  Track10.wav
+17868c35ebe0c3344b891df9acbd1fff  [shntool]  Track11.wav
+21db8da2660037f1ddbeeaca8f4a8e19  [shntool]  Track12.wav
+733ebb65a2b6c19a64b4271ace3c7c8c  [shntool]  Track13.wav
+8a7dd79f6d5a365728b633dad016811d  [shntool]  Track14.wav
+2dcb68dc18e496bb5398b82e0e1c0f75  [shntool]  Track15.wav
+d9f1da6b7a67a034dc13b893cf767a32  [shntool]  Track16.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-03-22a Melbourne\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:57.22       20690588 B   ---   --   ---xx    shn  0.6233  Track01.shn
+     2:56.08       31065260 B   ---   --   ---xx    shn  0.6064  Track02.shn
+     4:45.38       50363420 B   ---   --   ---xx    shn  0.6062  Track03.shn
+     4:51.59       51471212 B   ---   --   ---xx    shn  0.5962  Track04.shn
+     4:16.41       45254876 B   ---   --   ---xx    shn  0.5962  Track05.shn
+     3:27.12       36543068 B   ---   --   ---xx    shn  0.5990  Track06.shn
+     5:35.50       59211644 B   ---   --   ---xx    shn  0.5763  Track07.shn
+     4:21.15       46075724 B   ---   --   ---xx    shn  0.6055  Track08.shn
+     4:25.29       46814252 B   ---   --   ---xx    shn  0.6422  Track09.shn
+     4:29.49       47566892 B   ---   --   ---xx    shn  0.5930  Track10.shn
+     6:29.68       68779580 B   ---   --   ---xx    shn  0.6225  Track11.shn
+     4:20.33       45941660 B   ---   --   ---xx    shn  0.6130  Track12.shn
+     4:17.09       45356012 B   ---   --   ---xx    shn  0.6070  Track13.shn
+    56:13.58      595134188 B                            0.6060  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-03-22a Melbourne\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:20.46       35388236 B   ---   --   ---xx    shn  0.6094  Track01.shn
+     4:35.38       48599420 B   ---   --   ---xx    shn  0.5972  Track02.shn
+     3:55.25       41512844 B   ---   --   ---xx    shn  0.5954  Track03.shn
+     4:57.16       52428476 B   ---   --   ---xx    shn  0.5839  Track04.shn
+     2:45.51       29225996 B   ---   --   ---xx    shn  0.5831  Track05.shn
+     4:51.31       51405356 B   ---   --   ---xx    shn  0.6064  Track06.shn
+     5:05.43       53903180 B   ---   --   ---xx    shn  0.5985  Track07.shn
+     4:09.55       44053004 B   ---   --   ---xx    shn  0.6001  Track08.shn
+     3:43.46       39445436 B   ---   --   ---xx    shn  0.6132  Track09.shn
+     3:42.68       39320780 B   ---   --   ---xx    shn  0.6191  Track10.shn
+     3:56.72       41799788 B   ---   --   ---xx    shn  0.6250  Track11.shn
+     5:46.68       61194380 B   ---   --   ---xx    shn  0.6143  Track12.shn
+     6:17.25       66561644 B   ---   --   ---xx    shn  0.6361  Track13.shn
+     5:11.11       54886316 B   ---   --   ---xx    shn  0.6476  Track14.shn
+     4:25.74       46920092 B   ---   --   ---xx    shn  0.6236  Track15.shn
+     1:57.72       20808188 B   ---   --   ---xx    shn  0.6091  Track16.shn
+    68:43.66      727453136 B                            0.6116  (16 files)
+=================== 
+=================== 
+=================== 

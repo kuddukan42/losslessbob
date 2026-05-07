@@ -1,0 +1,136 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-20-ss6p-pdubflac16 
+=================== 
+=================== 
+=================== 
+87199e5a8ff5cfd4aa2c338f3abca432  bd1997-12-20.info.txt
+afcc13d6191128294a469716c5857eb4  bd1997-12-20.ss6p.pdub.sbeok.flac16 Los Angeles.ffp
+33c707e5fed61520cef73c5f5ccf75e1  bd1997-12-20.ss6p.pdub.sbeok.flac16 Los Angeles.md5
+7f9e9cd7ae4e4830a407564f1ef84ca6  bd1997-12-20.ss6p.pdub.sbeok.flac16 Los Angeles.st5
+f94ce4d9ec4dab8d433ba3d2481e4a75  d1\bd1997-12-20d1.LOG
+dafdd5b9df91e2f5e94b674094c060c1  d1\bd1997-12-20d1t01.flac
+eebab23c9f0742487222e5881dba1646  d1\bd1997-12-20d1t02.flac
+2eb1c0a0b4e168c20166e6bd3468accb  d1\bd1997-12-20d1t03.flac
+1b21c129c62235d8af9661672e45bcbb  d1\bd1997-12-20d1t04.flac
+146a744b8f32486fbe8ccc85ca17b9c4  d1\bd1997-12-20d1t05.flac
+bc1a33e9ce2a409a125350c8ceb7825b  d1\bd1997-12-20d1t06.flac
+b37198b46b457e0d7d7784b1d98660c8  d1\bd1997-12-20d1t07.flac
+9ac36defe43dceb557e2a23868e0e30b  d1\bd1997-12-20d1t08.flac
+70bd448c4d1d37abbfa331b428954944  d1\bd1997-12-20d1t09.flac
+7cebe55f88eeb96c038f921df5f548d6  d1\bd1997-12-20d1t10.flac
+2a6bbe07a1cd1a324e66831a190333d2  d1\bd1997-12-20d1t11.flac
+b7eff324366e8d264ea3b9143522f894  d1\bd1997-12-20d1t12.flac
+ab9a3240fc4965d59c887d4caa1e6e83  d1\d1.shntool.txt
+7e5438e588e16033c1a0099bea7dcec3  d1t03.PNG
+d358cf64db048339c3fe81691a9b19da  d2\bd1997-12-20d2.LOG
+7e3a5181e1f5efd613b21b1add22c039  d2\bd1997-12-20d2t01.flac
+940f8018f4be37ecc0d82110850f8a20  d2\bd1997-12-20d2t02.flac
+3a21eb03e5e54d01ee1be7a91dd988bf  d2\bd1997-12-20d2t03.flac
+1de78252e2528c91d4ae6cf698c1da36  d2\bd1997-12-20d2t04.flac
+1a723b613eafaf3622bc5bb21182a3e7  d2\bd1997-12-20d2t05.flac
+d1a70883a6f4151823b9c5d00929ec13  d2\bd1997-12-20d2t06.flac
+8773ca5d7919ae7262d0d9f21e78ea69  d2\bd1997-12-20d2t07.flac
+ead5a848e3f5f1a18aaa27bd491919a5  d2\bd1997-12-20d2t08.flac
+cf7892e6ff5a6f141ebada52425f0bb2  d2\bd1997-12-20d2t09.flac
+5a5f0565991bf8f5d8cb18c5c8ad102b  d2\bd1997-12-20d2t10.flac
+4d7b8d0a9f8923f40647a9be6e7de0cd  d2\bd1997-12-20d2t11.flac
+887f7bdf27d8a66bc7c9cdc2576cf75f  d2\bd1997-12-20d2t12.flac
+20a151d49dc0c9cc6dd01bef08abbf6d  d2\bd1997-12-20d2t13.flac
+9f99d07e61d750f02d606d799d93099e  d2\bd1997-12-20d2t14.flac
+6852353b04e7c1220c00924b6e145012  d2\bd1997-12-20d2t15.flac
+07f6bd9cb217b65db968cbdec633e5a8  d2\bd1997-12-20d2t16.flac
+533d545df68f33cc1bad50ef094d01e1  d2\d2.shntool.txt
+e3f2e61698f24dd438d8cd19666708ab  d2t15.PNG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-20-ss6p-pdubflac16\d1 
+=================== 
+=================== 
+=================== 
+bd1997-12-20d1t01.flac:7e3a9e2e4c8911468ebf6e272f5ae636
+bd1997-12-20d1t02.flac:d93b3045ce280f4a95ec381965997014
+bd1997-12-20d1t03.flac:f74709a0d410de97bafc120943626241
+bd1997-12-20d1t04.flac:3212c7d517ee0f9b53c3581a7a28f58c
+bd1997-12-20d1t05.flac:bd09de381549d98952d567613aef1779
+bd1997-12-20d1t06.flac:f44ba67d8fc08f63ffc481d2fb1cdc20
+bd1997-12-20d1t07.flac:e181b9742f0019703e531bf131eccfbc
+bd1997-12-20d1t08.flac:3859316d16d8c5c73a7a2b8c96566fb2
+bd1997-12-20d1t09.flac:84addd19db7c3bec072fc42ff39f709c
+bd1997-12-20d1t10.flac:7e6462a0c8a32fe4f6a66744ad628917
+bd1997-12-20d1t11.flac:189d4f92d28eca12ef8717ce2f3fca66
+bd1997-12-20d1t12.flac:1a787f36b8635106dce93f307e0ef404
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-20-ss6p-pdubflac16\d2 
+=================== 
+=================== 
+=================== 
+bd1997-12-20d2t01.flac:c584023c7226395d3c2d0b4f11c8990d
+bd1997-12-20d2t02.flac:ca466c9c99adbaa4b9847abc4a72b4e1
+bd1997-12-20d2t03.flac:23ad739391e87b26212ec8ce19ed8189
+bd1997-12-20d2t04.flac:abeeaeb7551fd30395fc8337f556eb63
+bd1997-12-20d2t05.flac:0bd339aa0a92425afbf153ed82d06a0b
+bd1997-12-20d2t06.flac:af8a0b59a6aab54b7ac9bf95b5174b8e
+bd1997-12-20d2t07.flac:9fc078e2b5ecbd606d0ac67c096b0539
+bd1997-12-20d2t08.flac:2c507b99d8294d507ddeca2c68d86526
+bd1997-12-20d2t09.flac:d0f96bb633fa228702ba34a1b99b6eb3
+bd1997-12-20d2t10.flac:0eeeebd06cd023fb41e45590b441de92
+bd1997-12-20d2t11.flac:7a7fa375ae3f81b5917bac24a178eadd
+bd1997-12-20d2t12.flac:f5015e47675a9ad464805c7248f2c7e0
+bd1997-12-20d2t13.flac:1096352f1506bf929fa46dbbf64503ab
+bd1997-12-20d2t14.flac:a9e4c9cee9dc84d118e0f9dffa717314
+bd1997-12-20d2t15.flac:a39fb6711ae231e80eb7cc951d14f470
+bd1997-12-20d2t16.flac:8504ce80164a9b4f10d0c63fc5e9748b
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-12-20-ss6p-pdubflac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:00.23       74142140 B   ---   --   ---xx   flac  0.5258  bd1997-12-20d1t01.flac
+     5:30.36       58296716 B   ---   --   ---xx   flac  0.5456  bd1997-12-20d1t02.flac
+     6:33.59       69464012 B   ---   --   ---xx   flac  0.5765  bd1997-12-20d1t03.flac
+     5:12.56       55168556 B   ---   --   ---xx   flac  0.5454  bd1997-12-20d1t04.flac
+     6:12.72       65790188 B   ---   --   ---xx   flac  0.5801  bd1997-12-20d1t05.flac
+     7:02.31       74513756 B   ---   --   ---xx   flac  0.6006  bd1997-12-20d1t06.flac
+     5:02.63       53421020 B   ---   --   ---xx   flac  0.4689  bd1997-12-20d1t07.flac
+     6:52.57       72810908 B   ---   --   ---xx   flac  0.5077  bd1997-12-20d1t08.flac
+     8:14.47       87252188 B   ---   --   ---xx   flac  0.5767  bd1997-12-20d1t09.flac
+     7:24.63       78469820 B   ---   --   ---xx   flac  0.5134  bd1997-12-20d1t10.flac
+     6:32.35       69231164 B   ---   --   ---xx   flac  0.5288  bd1997-12-20d1t11.flac
+     7:35.28       80327900 B   ---   --   ---xx   flac  0.5408  bd1997-12-20d1t12.flac
+    79:15.45      838888368 B                            0.5442  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-12-20-ss6p-pdubflac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:16.74       87668492 B   ---   --   ---xx   flac  0.5557  bd1997-12-20d2t01.flac
+     6:11.61       65587916 B   ---   --   ---xx   flac  0.5030  bd1997-12-20d2t02.flac
+     5:38.18       59665580 B   ---   --   ---xx   flac  0.4887  bd1997-12-20d2t03.flac
+     5:43.55       60634604 B   ---   --   ---xx   flac  0.5560  bd1997-12-20d2t04.flac
+     3:15.58       34534460 B   ---   --   ---xx   flac  0.4047  bd1997-12-20d2t05.flac
+     3:50.32       40647308 B   ---   --   ---xx   flac  0.4250  bd1997-12-20d2t06.flac
+     1:37.32       17186108 B   ---   --   ---xx   flac  0.4313  bd1997-12-20d2t07.flac
+     6:06.02       64567148 B   ---   --   ---xx   flac  0.3686  bd1997-12-20d2t08.flac
+     2:34.07       27182108 B   ---   --   ---xx   flac  0.3910  bd1997-12-20d2t09.flac
+     4:29.69       47613932 B   ---   --   ---xx   flac  0.3684  bd1997-12-20d2t10.flac
+     2:16.23       24044540 B   ---   --   ---xx   flac  0.4387  bd1997-12-20d2t11.flac
+     3:45.61       39833516 B   ---   --   ---xx   flac  0.3580  bd1997-12-20d2t12.flac
+     5:00.04       52929452 B   ---   --   ---xx   flac  0.4241  bd1997-12-20d2t13.flac
+     2:45.60       29247164 B   ---   --   ---xx   flac  0.3488  bd1997-12-20d2t14.flac
+     2:43.25       28812044 B   ---   --   ---xx   flac  0.3949  bd1997-12-20d2t15.flac
+     3:45.25       39748844 B   ---   --   ---xx   flac  0.4443  bd1997-12-20d2t16.flac
+    68:01.06      719903216 B                            0.4469  (16 files)
+=================== 
+=================== 
+=================== 

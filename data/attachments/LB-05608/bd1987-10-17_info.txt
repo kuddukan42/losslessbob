@@ -1,0 +1,66 @@
+Bob Dylan
+London, England
+Wembley Arena
+17 October 1987
+
+Taper: LTB
+Lineage: Analogue Master > DAT > CD-R > Flac 
+
+DISC ONE --- 75:22.20
+01. [05:47.38] The Times They Are A-Changin'
+02. [05:05.19] Like A Rolling Stone
+03. [04:12.35] Maggie's Farm
+04. [06:45.29] Forever Young
+05. [04:35.02] Dead Man, Dead Man
+06. [05:19.20] I Dreamed I Saw St. Augustine
+07. [05:33.71] Simple Twist Of Fate
+08. [04:50.22] I'll Be Your Baby Tonight
+- tape flip -
+09. [03:13.44] Watching The River Flow
+10. [03:42.32] Gotta Serve Somebody
+11. [04:48.64] Man Of Peace
+12. [04:36.56] I And I
+13. [03:19.25] Don't Think Twice, It's All Right
+14. [03:56.65] Tomorrow Is A Long Time
+15. [04:05.28] Heart Of Mine
+16. [05:29.70] In The Garden
+
+DISC TWO --- 21:00.32
+01. [08:15.02] Knockin' On Heaven's Door
+- encore / tape flip -
+02. [04:06.12] Chimes Of Freedom
+03. [03:47.34] Rainy Day Women # 12 & 35
+04. [04:51.59] Go Down, Moses (trad.)
+
+Bob Dylan (vocal & guitar) 
+
+Tom Petty (guitar), 
+Mike Campbell (guitar), 
+Benmont Tench (keyboards), 
+Howie Epstein (bass), 
+Stan Lynch (drums)
+Carolyn Dennis, Queen Esther Marrow, Madelyn Quebec (backing vocals).
+
+d2t02-03 Roger McGuinn (guitar & shared vocal).
+d2t03 George Harrison (guitar & shared vocal).
+
+Fixes:
+d1t16 tiny drop (less than 1/4 of a second) patched from another version of this same recording.
+I fixed a really bad pop at the tape flip between d1t08/09 and in d2t01 during the encore pause.
+Apart from that I did not harm the sound of the recording in any way.
+
+NOTES:
+Concert #30 and last of the 1987 Temples In Flames Tour.
+I know of at least two other recordings of this date.  The other tapers I know of are LTJ and NTB.
+This recording has been incorrectly archived as the "CB" recording, but to the best of my knowledge "CB" didn't tape this show.
+The bootleg "The Final Night And More" is sourced from this recording (heavily remastered).
+
+Clinton Heylin writes in his book "Bob Dylan: A Life In Stolen Moments - Day By Day: 1941-1995" on page 293:
+October 17, Wembley Arena, London
+"Although not as consistent or impressive as on the previous night, Dylan pulls out all the stops for his final London show, playing the longest show of the tour (20 songs compared to a norm of 14).  The opening song "The Times They Are a-Changin'" features a lengthy harmonica introduction.  The set then includes a cross-section of some of the most effective songs from the tour set." ... "Dylan seemingly finishes the set with "In the Garden".  The lights go down, but his scarf has caught in his guitar strings.  As he wrenches it free, he launches into "Knockin' on Heaven's Door" while the Heartbreakers hastily return to the stage.  Then, after a first encore of "Chimes of Freedom" surprise guest George Harrison joins Dylan for "Rainy Day Women". Again the lights go down, but Dylan stays onstage, bringing the tour full circle by launching into an impressive version of "Go Down Moses".  He leaves the stage having closed his best tour in six years in fine style, thanks in no small part to the Heartbreakers, who have rediscovered something lacking in 1986."
+
+This is the last show from this run.  
+Now the entire Temples in Flames tour has been seeded here with clear taper attribution and lineage.
+Many thanks to Hanspeter for undertaking this project and preparing the filesets, thanks to oecourt for all the help and assistance and to rumrunners for his invaluable LB archive.
+Finally and most of all thanks to LTB and LTD for taping the entire tour and preserving it for future generations!
+HT

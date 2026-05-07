@@ -1,0 +1,71 @@
+===================
+===================
+===================
+=== bd1995-09-23_RM_FLACfingerprint.txt
+===================
+===================
+===================
+bd1995-09-23d1t01.flac:a8bd84958e07b0fc27e0b1ace2273d78
+bd1995-09-23d1t02.flac:0aa82c38d23e4d1c7d2ebf959a08ec81
+bd1995-09-23d1t03.flac:8e186ee418240e042e7a3e91cb231d32
+bd1995-09-23d1t04.flac:aff31c9c3424bbb767847d3e925dbd2d
+bd1995-09-23d1t05.flac:94d1c6c21ea85333517e35e0581f4d47
+bd1995-09-23d1t06.flac:886371ffb4d5c9e1fdd3696142b292ab
+bd1995-09-23d1t07.flac:47bc5a31f4fa2489588225e57b24d231
+bd1995-09-23d1t08.flac:fab29dc768a0240d9f4890cce6585c76
+bd1995-09-23d1t09.flac:3ff18f0755b8f871e18a369ddd47dbcf
+bd1995-09-23d1t10.flac:ac7e0e4b0a0be6c18f831ff4902a49ba
+bd1995-09-23d1t11.flac:094a2e01e0d8235bde507c01553a3c2d
+bd1995-09-23d2t01.flac:8dba131c407fa04a6fa1d2a20ee50a63
+bd1995-09-23d2t02.flac:24d99251e1eae698754a8b6828d72df3
+bd1995-09-23d2t03.flac:a8867f08859ad6025e7d3dc5b004fa61
+===================
+===================
+===================
+=== bd95-09-23_RM.flac.txt
+===================
+===================
+===================
+Bob Dylan
+September 23, 1995
+The Edge  Ft Lauderdale, FL (private party/free show)
+
+Source: 
+Mics Unknown, DAT Audience x 2
+
+Conversion: 
+Sony M-1  > Midiman Optical > SPDIF SB Platinum >
+CoolEdit WAV > 
+CDWav >  SHN (mkw)
+
+Additional notes after remastering:
+SHN (mkw) > Wav > CoolEditPro > Wav > FLAC (Frontend)
+
+Improvement over the "Mida's Touch" bootleg, even with audience talking and some pops here and there.
+
+Disc 1:
+01: Real Real Gone
+02: Friend of the Devil
+03: Maggie's Farm
+04: It's Too Late
+05: Sylvio
+06: Confidential
+07: Willin'
+08: That Luck Old Sun
+09: West La Fadeaway
+10: When I Paint My Masterpiece
+11: Key To the Highway
+
+Disc 2:
+01: Tangled Up In Blue
+02: With God on Our Side
+03: Highway 61 Revisited
+
+
+Carl's notes: This was the first show after the death of Jerry Garcia.  It's an obvious tribute.
+THIS SHOW IS FOR PERSONAL LISTENING PLEASURE ONLY.
+
+NO PERSONAL PROFIT OR OTHERWISE IS TO BE MADE FROM THIS RECORDING!
+===================
+===================
+===================

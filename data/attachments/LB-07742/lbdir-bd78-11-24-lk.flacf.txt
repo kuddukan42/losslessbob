@@ -1,0 +1,133 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-11-24-lk.flacf 
+=================== 
+=================== 
+=================== 
+dd7431fd848c8e69edd95ed285636a67  D1\D1.md5
+c2a6543490cfeed0d32ed3903bb7cce3  D1\Ft Worth 24nov78 101.flac
+299cdbbe73744c26a62c110c3609970a  D1\Ft Worth 24nov78 102.flac
+0c3c27d8b0046425587840ce405a42f8  D1\Ft Worth 24nov78 103.flac
+64320319206d77bb0b34ee6472eb1505  D1\Ft Worth 24nov78 104.flac
+42c1d2652256dc2954e37d9bf0217baa  D1\Ft Worth 24nov78 105.flac
+9f49f9cc9a2987faecde36c317df6299  D1\Ft Worth 24nov78 106.flac
+b6d005c910fe7023f4518d42c17044da  D1\Ft Worth 24nov78 107.flac
+0c7ed3e7142aff6ee9663dac07d7cd90  D1\Ft Worth 24nov78 108.flac
+2cc003ab36e1b53d4620f00173322227  D1\Ft Worth 24nov78 109.flac
+5f7d572e128ae5dcbaf29130adb98323  D1\Ft Worth 24nov78 110.flac
+01e4c5b6aa6bae1170d90a4f74656583  D1\Ft Worth 24nov78 111.flac
+c71c72a47ce54b65b22ade4441834870  D1\Ft Worth 24nov78 112.flac
+b50359e59e8952fa2e73af53741e323d  D1\Ft Worth 24nov78 113.flac
+98e0ee94737a951a12eed573e11639cd  D1\Ft Worth 24nov78 114.flac
+acddf009e9ad51b74c38548be9bcd617  D2\D2.md5
+b5da13c2426229fe17c9f4a320419b4c  D2\Ft Worth 24nov78 201.flac
+983fbedd5a87f13eb9a2446be8b3d24b  D2\Ft Worth 24nov78 202.flac
+f975462b25441b60e137fb2730480a25  D2\Ft Worth 24nov78 203.flac
+a4b6af20c1107945f3b0cb7649977aac  D2\Ft Worth 24nov78 204.flac
+80bbe1a609138943f6e1f8c32674f278  D2\Ft Worth 24nov78 205.flac
+ef3edef47e815c239bf49e2b0b14aa55  D2\Ft Worth 24nov78 206.flac
+acaeec604cd2a21abfa1e7485c5239b0  D2\Ft Worth 24nov78 207.flac
+5524005bc22a6c7535a72a3ff2e7a002  D2\Ft Worth 24nov78 208.flac
+524432fd0c14ffd82faef9aa3815066e  D2\Ft Worth 24nov78 209.flac
+1f08307845fbf002a2cec0acb1d60896  D2\Ft Worth 24nov78 210.flac
+2d7347e9ad5ccdbfa91bb1b69ba60b5e  D2\Ft Worth 24nov78 211.flac
+356d8c8be25143bbe8caa9d9e87c823a  D2\Ft Worth 24nov78 212.flac
+4e8493d8b39dfaa28ad53f904582460e  D2\Ft Worth 24nov78 213.flac
+8064c0777cd06f51e9db046a6dc97926  D2\Ft Worth 24nov78 214.flac
+973f7eeb79a22a7c1c019ebd075f1d32  D2\Ft Worth 24nov78 215.flac
+ea0a94175d51adadbc084866f21e17c9  info.txt
+9f17f2c565ea1af56f78d8ff262a1840  LK 1978 Leg 3 DVD 9.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-24-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+Ft Worth 24nov78 101.flac:fb48f2d716ea21633fa1c597427da93a
+Ft Worth 24nov78 102.flac:47771332db301a7b5ba5fe775b516952
+Ft Worth 24nov78 103.flac:252b727484d90941d7e22ff74d6ad6b2
+Ft Worth 24nov78 104.flac:6332999b3236171b2a1257c258398c8d
+Ft Worth 24nov78 105.flac:31ab0ab73b24cbacc36cd3185b06245b
+Ft Worth 24nov78 106.flac:5bbe5c7803f62580071ccc55a6697581
+Ft Worth 24nov78 107.flac:e3e798a3fe2400c2cef8228deeb80b0f
+Ft Worth 24nov78 108.flac:d7718abae59df64c33c826817ba41b53
+Ft Worth 24nov78 109.flac:817a3234d5168d78a2a6b44fcbfd9d8b
+Ft Worth 24nov78 110.flac:c9120bd280fd2e14476a782b837c9e9f
+Ft Worth 24nov78 111.flac:de3cb3ae5d0108a47443605c73739d4b
+Ft Worth 24nov78 112.flac:9cf7aa68f46537dea7a2c439d74c77ff
+Ft Worth 24nov78 113.flac:73e4bd0eaff4398824d9aacef7d1b4b7
+Ft Worth 24nov78 114.flac:2360e00193a40ebfbf4f893f51d7cc45
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-24-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+Ft Worth 24nov78 201.flac:986fd96f5184b9af93527b69455a1e52
+Ft Worth 24nov78 202.flac:6aa5c774e6f813558b9ea83922108939
+Ft Worth 24nov78 203.flac:29970dcf5484b27b4b84e3de67307fc1
+Ft Worth 24nov78 204.flac:bde6ba3dc85e6efa01bfa55ffc5f753d
+Ft Worth 24nov78 205.flac:c5f9a4d1917f4d2169b394e71f45344c
+Ft Worth 24nov78 206.flac:934b16791af4eb282c1150c20858408b
+Ft Worth 24nov78 207.flac:42809c2903edf3f5f7a6ce55581d46c0
+Ft Worth 24nov78 208.flac:3a1fa318b0d16ac9439d1829a95f7f5f
+Ft Worth 24nov78 209.flac:1bc31c991af92a95c76f61db0611cd9d
+Ft Worth 24nov78 210.flac:53150d1da8d8636a9a3b6ed6ac6b4869
+Ft Worth 24nov78 211.flac:57564fd1c645b300869d8bc51592dce1
+Ft Worth 24nov78 212.flac:8389c5311e5e22a9abd192d8c99f3bae
+Ft Worth 24nov78 213.flac:29068367d0894be825579ee7d98fb83d
+Ft Worth 24nov78 214.flac:3047efc88a940d5a03dfe4810efa66fd
+Ft Worth 24nov78 215.flac:9d66da0b1f0d66fef593b99e1d09a1b4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-24-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:03.58       32417660 B   ---   --   ---xx   flac  0.5703  Ft Worth 24nov78 101.flac
+     2:32.54       26939852 B   ---   --   ---xx   flac  0.5535  Ft Worth 24nov78 102.flac
+     4:42.45       49850684 B   ---   --   ---xx   flac  0.5308  Ft Worth 24nov78 103.flac
+     4:06.35       43476764 B   ---   --   ---xx   flac  0.5378  Ft Worth 24nov78 104.flac
+     4:35.63       48658220 B   ---   --   ---xx   flac  0.5436  Ft Worth 24nov78 105.flac
+     8:15.58       87454460 B   ---   --   ---xx   flac  0.5213  Ft Worth 24nov78 106.flac
+     5:13.26       55274396 B   ---   --   ---xx   flac  0.5330  Ft Worth 24nov78 107.flac
+     5:14.27       55453148 B   ---   --   ---xx   flac  0.5292  Ft Worth 24nov78 108.flac
+     4:25.71       46913036 B   ---   --   ---xx   flac  0.5179  Ft Worth 24nov78 109.flac
+     7:48.72       82724588 B   ---   --   ---xx   flac  0.5613  Ft Worth 24nov78 110.flac
+     4:26.63       47070620 B   ---   --   ---xx   flac  0.5562  Ft Worth 24nov78 111.flac
+     6:30.24       68852492 B   ---   --   ---xx   flac  0.5504  Ft Worth 24nov78 112.flac
+     4:18.21       45560636 B   ---   --   ---xx   flac  0.5739  Ft Worth 24nov78 113.flac
+     3:31.25       37279244 B   ---   --   ---xx   flac  0.5735  Ft Worth 24nov78 114.flac
+    68:46.42      727925800 B                            0.5446  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-24-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:23.58       67697660 B   ---   --   ---xx   flac  0.5455  Ft Worth 24nov78 201.flac
+     3:44.13       39544220 B   ---   --   ---xx   flac  0.5537  Ft Worth 24nov78 202.flac
+     6:12.07       65637308 B   ---   --   ---xx   flac  0.5552  Ft Worth 24nov78 203.flac
+     4:52.51       51628796 B   ---   --   ---xx   flac  0.5318  Ft Worth 24nov78 204.flac
+     5:34.44       59021132 B   ---   --   ---xx   flac  0.5177  Ft Worth 24nov78 205.flac
+     3:53.04       41110652 B   ---   --   ---xx   flac  0.5555  Ft Worth 24nov78 206.flac
+     4:53.26       51746396 B   ---   --   ---xx   flac  0.5641  Ft Worth 24nov78 207.flac
+     5:29.65       58188524 B   ---   --   ---xx   flac  0.5550  Ft Worth 24nov78 208.flac
+     4:13.65       44782124 B   ---   --   ---xx   flac  0.5410  Ft Worth 24nov78 209.flac
+     3:52.33       41002460 B   ---   --   ---xx   flac  0.5524  Ft Worth 24nov78 210.flac
+     3:29.69       37029932 B   ---   --   ---xx   flac  0.5625  Ft Worth 24nov78 211.flac
+     2:53.37       30604268 B   ---   --   ---xx   flac  0.5243  Ft Worth 24nov78 212.flac
+     6:51.15       72535724 B   ---   --   ---xx   flac  0.5309  Ft Worth 24nov78 213.flac
+     6:55.63       73354220 B   ---   --   ---xx   flac  0.5208  Ft Worth 24nov78 214.flac
+     7:07.52       75445148 B   ---   --   ---xx   flac  0.5259  Ft Worth 24nov78 215.flac
+    76:28.02      809328564 B                            0.5409  (15 files)
+=================== 
+=================== 
+=================== 

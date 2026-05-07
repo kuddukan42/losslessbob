@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-10 Atlantic City-cedar 1 with Waifs 
+=================== 
+=================== 
+=================== 
+94008acc25ed0936f99c50ffe4a30b19  bd03-05-10c1.txt
+a3d077a0ad8cdf696b425f76dd56ea56  bd030510-cedar1.md5
+0a84f8920f0991638b2334e0128f4425  bd030510-d1t01.shn
+c7567855ff566289e8b512c7997adc98  bd030510-d1t02.shn
+7c6a5d9f124d86c6aed04a90e4e0f3d5  bd030510-d1t03.shn
+3846b4bf7665d85b6db643261c98c920  bd030510-d1t04.shn
+023cb15d4d8cf014c01537948c65168e  bd030510-d1t05.shn
+16914737e41eed9dcb610061ced37df4  bd030510-d1t06.shn
+5d1a9107ae67af540cd842af1e067a2d  bd030510-d1t07.shn
+25b12d155b7dc41f64bfed978eded4bf  bd030510-d2t01.shn
+ed5a7b7ea8400f4eb5840f06cdbf0769  bd030510-d2t02.shn
+0a14d7890dc66b6c2afff20f2da0e3a4  bd030510-d2t03.shn
+b43b35cd67c8fa8b6b06f13c4cea3fdc  bd030510-d2t04.shn
+c06ce9600eaefa1af89069e5ab34b0fd  bd030510-d2t05.shn
+61615126cc5291f0d1ff0b89d272c137  bd030510-d2t06.shn
+18050d771703765d16e73d6e3bd2964e  bd030510-d2t07.shn
+1bcdb5f01134a7bc4f35be00f1006d3e  bd030510-d2t08.shn
+775c1a4b00406568af3f3f8cccf173ab  bd030510-d2t09.shn
+4d7973ff6c062b9a652cb954225ae329  bd030510-d2t10.shn
+00ebab01857a881de7acc4b6e451f3f3  bd030510-d2t11.shn
+2fcdb83464992a4a8c17475abbe0bfb0  bd030510-d2t12.shn
+a3f97d25426f6fc9595af8dc7ff588cd  bd030510-d2t13.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-05-10 Atlantic City-cedar 1 with Waifs 
+=================== 
+=================== 
+=================== 
+fd3714d68e9a3f3bcddba4f5d09907d5  [shntool]  bd030510-d1t01.wav
+bdc5e4073128225b061ca192bb12972d  [shntool]  bd030510-d1t02.wav
+fca10b4987c20a323d3cdda9dc617f94  [shntool]  bd030510-d1t03.wav
+446855fccd0e71581815b2c8bfd9edb5  [shntool]  bd030510-d1t04.wav
+40fd609d6c83409e4efbb545e7114cb7  [shntool]  bd030510-d1t05.wav
+d8e72d243f4161ab0742d4711b2b75f4  [shntool]  bd030510-d1t06.wav
+47cb50635bcb6ea4a82f0eb32f595beb  [shntool]  bd030510-d1t07.wav
+2f6c8c8cf37e35e01415da2a8a429e1a  [shntool]  bd030510-d2t01.wav
+50238883c9dd686cee7e5e72ace89109  [shntool]  bd030510-d2t02.wav
+a41db83bcc43b441e304f8801bdbcd88  [shntool]  bd030510-d2t03.wav
+ad7d75465bfaf8a1cb9b5ed93938c630  [shntool]  bd030510-d2t04.wav
+0ce44667b3c85b3c6c99eef44d5e19c4  [shntool]  bd030510-d2t05.wav
+01a0b7ed47a99bc5db30ca54ce4fe6a0  [shntool]  bd030510-d2t06.wav
+d30bd9c6846ef8b04254ef79ae0f58b2  [shntool]  bd030510-d2t07.wav
+4a0021c272e41a30dc083d4e18a53eb8  [shntool]  bd030510-d2t08.wav
+ce525c413d14e0b475356abdae2016f5  [shntool]  bd030510-d2t09.wav
+72a576ce7996b5e75d3c149231a37308  [shntool]  bd030510-d2t10.wav
+35fe6219689f5e376aa5f3faea8a497c  [shntool]  bd030510-d2t11.wav
+92befc43c8da9b07f2d2d7383092ff25  [shntool]  bd030510-d2t12.wav
+459deef70d71aafdfc8e301348f5e9c4  [shntool]  bd030510-d2t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-10 Atlantic City-cedar 1 with Waifs 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:29.02       68624356 B   ---   -e   ---xx    shn  0.5501  bd030510-d1t01.shn
+     6:30.69       68958340 B   ---   -e   ---xx    shn  0.5656  bd030510-d1t02.shn
+     5:17.30       55989412 B   ---   -e   ---xx    shn  0.5093  bd030510-d1t03.shn
+     4:57.49       52506100 B   ---   -e   ---xx    shn  0.5052  bd030510-d1t04.shn
+     6:48.61       72114724 B   ---   -e   ---xx    shn  0.5549  bd030510-d1t05.shn
+     6:12.67       65778436 B   ---   -e   ---xx    shn  0.6116  bd030510-d1t06.shn
+    10:46.22      114006196 B   ---   -e   ---xx    shn  0.4230  bd030510-d1t07.shn
+     5:55.24       62678500 B   ---   -e   ---xx    shn  0.5889  bd030510-d2t01.shn
+     6:38.10       70230772 B   ---   -e   ---xx    shn  0.5887  bd030510-d2t02.shn
+     6:50.64       72474580 B   ---   -e   ---xx    shn  0.6004  bd030510-d2t03.shn
+     6:28.27       68506756 B   ---   -e   ---xx    shn  0.4177  bd030510-d2t04.shn
+    10:15.42      108584836 B   ---   -e   ---xx    shn  0.5375  bd030510-d2t05.shn
+     7:02.41       74537284 B   ---   -e   ---xx    shn  0.5981  bd030510-d2t06.shn
+     5:45.11       60883924 B   ---   -e   ---xx    shn  0.5794  bd030510-d2t07.shn
+     4:28.53       47399908 B   ---   -e   ---xx    shn  0.4044  bd030510-d2t08.shn
+     3:36.14       38135380 B   ---   -e   ---xx    shn  0.4652  bd030510-d2t09.shn
+     6:07.30       64809412 B   ---   -e   ---xx    shn  0.4384  bd030510-d2t10.shn
+     3:47.65       40195732 B   ---   -e   ---xx    shn  0.4376  bd030510-d2t11.shn
+     5:12.45       55142692 B   ---   -e   ---xx    shn  0.4037  bd030510-d2t12.shn
+     7:41.15       81355732 B   ---   -e   ---xx    shn  0.4957  bd030510-d2t13.shn
+   126:52.66     1342913072 B                            0.5171  (20 files)
+=================== 
+=================== 
+=================== 

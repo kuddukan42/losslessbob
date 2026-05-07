@@ -1,0 +1,155 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-18-NTE.flacf 
+=================== 
+=================== 
+=================== 
+c0d27cf3c9bcd7c88e1fbb2b6b96a6aa  bd2000-11-18-d1\bd2000-11-18-d1.md5
+7c26d2665ad98ab6baa621113a2e3747  bd2000-11-18-d1\Track01.flac
+98c94aa7396b6071b56ee214c0ecf85c  bd2000-11-18-d1\Track02.flac
+d86b1c0e9251d24b8655ff520839cf35  bd2000-11-18-d1\Track03.flac
+9375c190be5cf3ceca1cbed17841d156  bd2000-11-18-d1\Track04.flac
+a41899429116798545bcd23b7fd4929b  bd2000-11-18-d1\Track05.flac
+9c7ab35cdda9bcc5e07a827ae858452e  bd2000-11-18-d1\Track06.flac
+fc60b53e7cd77c073347dc43fc3afb55  bd2000-11-18-d1\Track07.flac
+ab264ea164b87f9a05bebb27c5fa462a  bd2000-11-18-d1\Track08.flac
+2f47d9f7aec88652407b5f15db69ebaf  bd2000-11-18-d1\Track09.flac
+730358260a2d6b505c1f46a2f6aea5b5  bd2000-11-18-d1\Track10.flac
+669058cbd602dfa83ea2a7f593a1dfbd  bd2000-11-18-d1\Track11.flac
+9561ae0661af7c229189b6f6e04d3923  bd2000-11-18-d1\Track12.flac
+89524f9664feb43d9db69484dbf0592e  bd2000-11-18-d2\bd2000-11-18-d2.md5
+80daee1e0458badee6cdd028de509588  bd2000-11-18-d2\Track01.flac
+af9dd2611a13f53f34906ec9248c9349  bd2000-11-18-d2\Track02.flac
+6713e7d34e27fbe919fa72c0fd18f6a7  bd2000-11-18-d2\Track03.flac
+7a3ea41a95a92ddebbe1b4c836eaf9de  bd2000-11-18-d2\Track04.flac
+59fc0a56fdea24bb559e8bdd3d344339  bd2000-11-18-d2\Track05.flac
+93e7982952b3d170a2e8a7b97a2c5055  bd2000-11-18-d2\Track06.flac
+14852300c5d05f976746631629426e2e  bd2000-11-18-d2\Track07.flac
+acded5ed9570d5185f30470facf2dfdb  bd2000-11-18-d2\Track08.flac
+ba5e01d8c16ab7a1562a07b70d4995d0  bd2000-11-18-d2\Track09.flac
+5ff701d8c3579e5afbb8ba785c2cd8fc  bd2000-11-18-d2\Track10.flac
+7ed7750893fed9008097b6bb3f4dc1a0  bd2000-11-18-d2\Track11.flac
+d866612e6715d5eaa3ac3ba60992a14a  bd2000-11-18-d3\bd2000-11-18-d3.md5
+f5b3a6cb534302ac722d809e88a7d4f9  bd2000-11-18-d3\Track01.flac
+3d15c44d7ac97f401e2eb7e963fe4888  bd2000-11-18-d3\Track02.flac
+9218d3095d29853d02bb0584fb9df1f9  bd2000-11-18-d3\Track03.flac
+81d00d64c0978d6c3043531ceabeb8cf  bd2000-11-18-d3\Track04.flac
+1ab8c273d43eca4879cfdaa80c052e42  bd2000-11-18-d3\Track05.flac
+650aebe2b04400c566fa49725701a9d9  bd2000-11-18-d3\Track06.flac
+5fd2c9f14998f9a66c547fcac21bf2da  bd2000-11-18-d3\Track07.flac
+287e8fd0589662730477cb38a117a65f  bd2000-11-18-d3\Track08.flac
+4c029c56a7962a443f96010e07aecdd3  bd2000-11-18-eary and late.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-18-NTE.flacf\bd2000-11-18-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:f9ce6e9f0705dffdc48a5f1d7a2c3991
+Track02.flac:2c2f5cba1196c161eda48a48f3ea17c1
+Track03.flac:fac07c923b260e758aba24e1859cbff3
+Track04.flac:796ac522dcbba2a2b5aeccd0987c9a76
+Track05.flac:d9df55d17d305cdb08c8a3bde9427e16
+Track06.flac:0e81d422f9e82256d8632d277cbf7c94
+Track07.flac:b37416330475952dc4c7b5dd50ee7e8f
+Track08.flac:9878a6aea083e2358b684e06ebe0c5ac
+Track09.flac:ca793180ea089f8104d836b9b345cc54
+Track10.flac:75e530c11743ea236a4cd29e38ee2d25
+Track11.flac:73f0fcd48c42abc0752b3f9582bf6dc7
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-18-NTE.flacf\bd2000-11-18-d3 
+=================== 
+=================== 
+=================== 
+Track01.flac:a696e40bbda1c8d8865d1f4d2c9e9d3f
+Track02.flac:41c45f5ede2b6af77b842f0bf1e08cb1
+Track03.flac:7a44f4b6b4ee509a595d0650d013a676
+Track04.flac:403a694c933148696910841350233c80
+Track05.flac:b88621075c36855f8184bf06bf9b832a
+Track06.flac:40622aab334014867f0bea43b5486ee6
+Track07.flac:692dfe39c8e552483ccbc36efbd89313
+Track08.flac:7916ff7a9054dd07c810c9b461d71c62
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-18-NTE.flacf\bd2000-11-18-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:8159d7382fa1e8d6193a2bec463161af
+Track02.flac:645201bbc21c5deda020bc545d60e45f
+Track03.flac:1a521e9504d0b646265b705881d19a14
+Track04.flac:17ad12bbad805cae9d72045d228a3627
+Track05.flac:6e449bacde853578b4a58b1f0fbf8f07
+Track06.flac:83e06093508fffcbcdee56abfd012a1b
+Track07.flac:b89b1ef88f4c4f5441721c1374b9ff31
+Track08.flac:300b5e1bb027621e3e9715273431da79
+Track09.flac:d7bbc8fa297f91ad2f3682e24d27bb8b
+Track10.flac:afea8259b3a6797935e56dcf2f03cd57
+Track11.flac:8887f494eb452b02b151f27ed1be7036
+Track12.flac:ec7a6c229d4d927ec0c29622cf0a174d
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-11-18-NTE.flacf\bd2000-11-18-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:33.21       69374636 B   ---   --   ---xx   flac  0.5373  Track01.flac
+     3:48.45       40325084 B   ---   --   ---xx   flac  0.3962  Track02.flac
+     7:05.57       75104108 B   ---   --   ---xx   flac  0.5474  Track03.flac
+     2:45.64       29256572 B   ---   --   ---xx   flac  0.5328  Track04.flac
+     5:32.36       58649516 B   ---   --   ---xx   flac  0.4409  Track05.flac
+     7:56.44       84069932 B   ---   --   ---xx   flac  0.4008  Track06.flac
+     4:52.10       51532364 B   ---   --   ---xx   flac  0.4315  Track07.flac
+     8:35.09       90867212 B   ---   --   ---xx   flac  0.5541  Track08.flac
+     3:06.59       32949212 B   ---   --   ---xx   flac  0.4586  Track09.flac
+     2:47.12       29487068 B   ---   --   ---xx   flac  0.5379  Track10.flac
+     5:32.67       58722428 B   ---   --   ---xx   flac  0.5214  Track11.flac
+    58:36.49      620338132 B                            0.4895  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-11-18-NTE.flacf\bd2000-11-18-d3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.16       61072076 B   ---   --   ---xx   flac  0.5493  Track01.flac
+     4:57.04       52400252 B   ---   --   ---xx   flac  0.4123  Track02.flac
+     4:33.33       48234860 B   ---   --   ---xx   flac  0.5767  Track03.flac
+     5:37.14       59479772 B   ---   --   ---xx   flac  0.5698  Track04.flac
+     6:03.37       64120268 B   ---   --   ---xx   flac  0.5601  Track05.flac
+     3:47.23       40096940 B   ---   --   ---xx   flac  0.4084  Track06.flac
+     5:31.35       58470764 B   ---   --   ---xx   flac  0.5826  Track07.flac
+     4:50.27       51219548 B   ---   --   ---xx   flac  0.5032  Track08.flac
+    41:06.39      435094480 B                            0.5263  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-11-18-NTE.flacf\bd2000-11-18-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.35       35185964 B   ---   --   ---xx   flac  0.5745  Track01.flac
+     5:11.03       54867500 B   ---   --   ---xx   flac  0.5029  Track02.flac
+     9:13.31       97622156 B   ---   --   ---xx   flac  0.5287  Track03.flac
+     6:41.33       70814060 B   ---   --   ---xx   flac  0.4590  Track04.flac
+     7:43.36       81757916 B   ---   --   ---xx   flac  0.5563  Track05.flac
+     3:06.39       32902172 B   ---   --   ---xx   flac  0.4676  Track06.flac
+     2:46.51       29402396 B   ---   --   ---xx   flac  0.5397  Track07.flac
+     4:56.03       52221500 B   ---   --   ---xx   flac  0.4810  Track08.flac
+     7:04.60       74934764 B   ---   --   ---xx   flac  0.5257  Track09.flac
+     3:54.00       41277644 B   ---   --   ---xx   flac  0.4300  Track10.flac
+     6:31.41       69068876 B   ---   --   ---xx   flac  0.5347  Track11.flac
+     5:29.40       58129724 B   ---   --   ---xx   flac  0.5698  Track12.flac
+    65:57.72      698184672 B                            0.5170  (12 files)
+=================== 
+=================== 
+=================== 

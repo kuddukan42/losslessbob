@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-05-04-c.flacf 
+=================== 
+=================== 
+=================== 
+84a760f21dab9b6c3e38e4c502b20923  bd-2001-05-04 Atlanta d1t01.flac
+a6fab713867db9b38e451bdf45ef9017  bd-2001-05-04 Atlanta d1t02.flac
+e944508d1876a0800bd61212389fef6d  bd-2001-05-04 Atlanta d1t03.flac
+4027c5777452107aeb67818514a0f17f  bd-2001-05-04 Atlanta d1t04.flac
+de739bcaf36acde61ff64cb38df90fec  bd-2001-05-04 Atlanta d1t05.flac
+6e7c6fdebf332299dbb25b14e5672b56  bd-2001-05-04 Atlanta d1t06.flac
+99ab33561af6b53e08b02e9759c3e866  bd-2001-05-04 Atlanta d1t07.flac
+2d536317001971b916c856bb2d6d25c8  bd-2001-05-04 Atlanta d1t08.flac
+fe877976ce5bcd6f9ab8204762d7d6b9  bd-2001-05-04 Atlanta d1t09.flac
+69ae499f4b8e5c2646429e93583abc25  bd-2001-05-04 Atlanta d1t10.flac
+826ec61c0cb15acce684e6693e74d875  bd-2001-05-04 Atlanta d1t11.flac
+9a032717ea2538c2ee5dae9dfc7cf307  bd-2001-05-04 Atlanta d1t12.flac
+c09cb706e77120488e757fd43151c4a5  bd-2001-05-04 Atlanta d2t01.flac
+4b921d953e2a08e350e747aeb0297df3  bd-2001-05-04 Atlanta d2t02.flac
+681093b377e0f112fdcfc9c8c1047566  bd-2001-05-04 Atlanta d2t03.flac
+4542ed59025076334c50e07c5c94d80e  bd-2001-05-04 Atlanta d2t04.flac
+ce9b195e1bff41bdfe2a9feaee0aed38  bd-2001-05-04 Atlanta d2t05.flac
+c8e9a3c195030ff539179757ac9d4485  bd-2001-05-04 Atlanta d2t06.flac
+0d6bce7b2b3cb78233aead7576195436  bd-2001-05-04 Atlanta d2t07.flac
+5dfa3dee5eb91f5a2fcc35fb42939aa0  bd-2001-05-04 Atlanta, GA.txt
+46aa33a8f3a0d0a5aa71c8d0dfcdfe02  bd-2001-05-04D1.log
+226b4f11efbf022bca4fe1bcca32b865  bd-2001-05-04D2.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-05-04-c.flacf 
+=================== 
+=================== 
+=================== 
+bd-2001-05-04 atlanta d1t01.flac:4998d5470cc3f42a14f93b723310b0a8
+bd-2001-05-04 atlanta d1t02.flac:10da32e9f2e228cab766002c7488eee7
+bd-2001-05-04 atlanta d1t03.flac:1bbe49bde1708f1637fcb769e768a675
+bd-2001-05-04 atlanta d1t04.flac:295e632391b84a8625cfe842aaeac001
+bd-2001-05-04 atlanta d1t05.flac:93bca1662015dc9711a9530dd22341c9
+bd-2001-05-04 atlanta d1t06.flac:2e47fa6054d07f37660d2aa913354957
+bd-2001-05-04 atlanta d1t07.flac:3e67c1867ee0b8d33a8f07c780c77f46
+bd-2001-05-04 atlanta d1t08.flac:81a57a77e78daae904f1d35c8913d5dc
+bd-2001-05-04 atlanta d1t09.flac:cd89c9df880f98acc6d187cbf092270e
+bd-2001-05-04 atlanta d1t10.flac:7393440830685b8793af8b9f4396d441
+bd-2001-05-04 atlanta d1t11.flac:44a596acaf4a2b2d2d495b14f98ddd01
+bd-2001-05-04 atlanta d1t12.flac:698a879fb72567248a3b6056b78548d1
+bd-2001-05-04 atlanta d2t01.flac:0d610cde3b6d0d915e1880c6bf81db8c
+bd-2001-05-04 atlanta d2t02.flac:b39d391c24784627e79e5c1b9ed0d1b8
+bd-2001-05-04 atlanta d2t03.flac:b8ee3d226e88b16dbe414b26e0fbfe1d
+bd-2001-05-04 atlanta d2t04.flac:553e48fb4bdb340ec44536bc50035457
+bd-2001-05-04 atlanta d2t05.flac:57024ccbf76f0029b3089ede72cb7146
+bd-2001-05-04 atlanta d2t06.flac:3e417a3a126df8072dd35996d1d923c3
+bd-2001-05-04 atlanta d2t07.flac:d74f679fa35ae36b2b74fe3ddcb41559
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-05-04-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.60        9843164 B   ---   --   ---xx   flac  0.4815  bd-2001-05-04 Atlanta d1t01.flac
+     3:07.04       32996252 B   ---   --   ---xx   flac  0.5501  bd-2001-05-04 Atlanta d1t02.flac
+     6:09.30       65162204 B   ---   --   ---xx   flac  0.5214  bd-2001-05-04 Atlanta d1t03.flac
+     8:19.01       88025996 B   ---   --   ---xx   flac  0.5176  bd-2001-05-04 Atlanta d1t04.flac
+     9:28.67      100352828 B   ---   --   ---xx   flac  0.5462  bd-2001-05-04 Atlanta d1t05.flac
+     4:15.00       44982044 B   ---   --   ---xx   flac  0.4790  bd-2001-05-04 Atlanta d1t06.flac
+     5:47.45       61316684 B   ---   --   ---xx   flac  0.5454  bd-2001-05-04 Atlanta d1t07.flac
+     6:22.23       67438940 B   ---   --   ---xx   flac  0.5042  bd-2001-05-04 Atlanta d1t08.flac
+     8:29.16       89825276 B   ---   --   ---xx   flac  0.5277  bd-2001-05-04 Atlanta d1t09.flac
+     4:15.59       45120812 B   ---   --   ---xx   flac  0.4749  bd-2001-05-04 Atlanta d1t10.flac
+     4:53.09       51706412 B   ---   --   ---xx   flac  0.5369  bd-2001-05-04 Atlanta d1t11.flac
+     8:56.09       94571612 B   ---   --   ---xx   flac  0.5182  bd-2001-05-04 Atlanta d1t12.flac
+     6:34.55       69631004 B   ---   --   ---xx   flac  0.5061  bd-2001-05-04 Atlanta d2t01.flac
+     7:04.62       74939468 B   ---   --   ---xx   flac  0.5136  bd-2001-05-04 Atlanta d2t02.flac
+     4:03.63       43013420 B   ---   --   ---xx   flac  0.4371  bd-2001-05-04 Atlanta d2t03.flac
+     5:48.70       61551884 B   ---   --   ---xx   flac  0.5138  bd-2001-05-04 Atlanta d2t04.flac
+     4:46.52       50572748 B   ---   --   ---xx   flac  0.4898  bd-2001-05-04 Atlanta d2t05.flac
+     7:01.44       74367932 B   ---   --   ---xx   flac  0.5180  bd-2001-05-04 Atlanta d2t06.flac
+     5:45.57       60992108 B   ---   --   ---xx   flac  0.4767  bd-2001-05-04 Atlanta d2t07.flac
+   112:05.51     1186410788 B                            0.5128  (19 files)
+=================== 
+=================== 
+=================== 

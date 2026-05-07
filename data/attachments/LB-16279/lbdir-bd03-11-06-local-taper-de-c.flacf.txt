@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd03-11-06-local-taper-de-c.flacf
+===================
+===================
+===================
+30a78e073d848c4409dad68d0cfe0f48 *bd-20031106-Frankfurt.ffp
+1dab9de90a9ca8d2a16c791359a5f620 *bd-20031106-Frankfurt.md5
+55ae92f6eb1f957ca0708175727115a4 *bd2003-11-06-d1t01.flac
+13327662fee610242f1eb509c4ecae15 *bd2003-11-06-d1t02.flac
+a434a80740fea5f3dbccd72319aac889 *bd2003-11-06-d1t03.flac
+9f60216eb638926548f70f9adceee78b *bd2003-11-06-d1t04.flac
+bcc9bc7818f930805e8fafe00ffa454f *bd2003-11-06-d1t05.flac
+4e292ba6a81b2bf795451d61c49ee0ad *bd2003-11-06-d1t06.flac
+ab058dbac99559431ea64bc15c99c2fd *bd2003-11-06-d1t07.flac
+f9eb7b614260f7c8841f805dbad1abc1 *bd2003-11-06-d1t08.flac
+eee9482adbf6f9a69eac167cbb38a94d *bd2003-11-06-d1t09.flac
+077fe214713bf967b5f4f8851b6bb14e *bd2003-11-06-d1t10.flac
+2789107a28ceeb8d24f9c0ec6a714048 *bd2003-11-06-d1t11.flac
+9d661585fefaa32ac5774188b72fd6a4 *bd2003-11-06-d1t12.flac
+beeec635db5c8441e2ade0a7f618853d *bd2003-11-06-d2t01.flac
+3d79fbcf83df4de6d43dc80b49e9da55 *bd2003-11-06-d2t02.flac
+099ed5f1cfaed330c82095f859f5a0ef *bd2003-11-06-d2t03.flac
+0957512570ec9f65bfb51ab023eb8a8b *bd2003-11-06-d2t04.flac
+603fba09319dd1e529ee0b8d1618ef43 *bd2003-11-06-d2t05.flac
+f8082cc6eeed55e66b42dcbe95ab91d2 *bd2003-11-06-d2t06.flac
+d89620643060da2913dd57e82c0643ee *bd2003-11-06-d2t07.flac
+621016c6cb4713e1ef509aa3b4126830 *bd2003-11-06-info.txt
+===================
+===================
+===================
+=== ffp for: bd03-11-06-local-taper-de-c.flacf
+===================
+===================
+===================
+bd2003-11-06-d1t01.flac:e3303d64f3f861740083aa33aaec35f9
+bd2003-11-06-d1t02.flac:b4a0f41b225695ffc25af5c1eb876694
+bd2003-11-06-d1t03.flac:f07789f98c36654e8a1c35fcd7a9a4aa
+bd2003-11-06-d1t04.flac:a723d3476602ba56a64fdf6fa012b77c
+bd2003-11-06-d1t05.flac:769d7dad5ffb04c84a2457e173b9c85a
+bd2003-11-06-d1t06.flac:994b3d5559013ea7e4ff14715aee21d1
+bd2003-11-06-d1t07.flac:fec8257c35f0fa109fc71b6b20ca344e
+bd2003-11-06-d1t08.flac:709d2fad605f4df7567433694442f137
+bd2003-11-06-d1t09.flac:98ff061e2b4d0f157673b2d9b69d2565
+bd2003-11-06-d1t10.flac:71403b0630268b5e48c21ce1d159559d
+bd2003-11-06-d1t11.flac:1924806099671220cb7a25236a3bc00a
+bd2003-11-06-d1t12.flac:bd1be06c60a7dab290ece578835447e6
+bd2003-11-06-d2t01.flac:b045d4644e19ce4d0431f3db5d48ca6b
+bd2003-11-06-d2t02.flac:82eb20dad0cc5caff393c43973a821fb
+bd2003-11-06-d2t03.flac:b828a98bf8d87d55644f6e1aa6a8217a
+bd2003-11-06-d2t04.flac:8ac387a73dd23cc111858abc24379442
+bd2003-11-06-d2t05.flac:ba59d86cbd1deb3cd7b91e0f1625e09f
+bd2003-11-06-d2t06.flac:8c7617250e78afbf9f7381d35d692a52
+bd2003-11-06-d2t07.flac:52e7c114f377478743ef740d88d0b989
+===================
+===================
+===================
+=== shntool len for: bd03-11-06-local-taper-de-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:32.19       16273532 B   ---   --   ---xx   flac  0.4562  bd2003-11-06-d1t01.flac
+     6:11.08       65463260 B   ---   --   ---xx   flac  0.5366  bd2003-11-06-d1t02.flac
+     6:25.25       67972844 B   ---   --   ---xx   flac  0.4799  bd2003-11-06-d1t03.flac
+     5:52.45       62198684 B   ---   --   ---xx   flac  0.5254  bd2003-11-06-d1t04.flac
+     6:15.21       66199436 B   ---   --   ---xx   flac  0.4311  bd2003-11-06-d1t05.flac
+     7:56.33       84044060 B   ---   --   ---xx   flac  0.5120  bd2003-11-06-d1t06.flac
+     6:54.11       73055516 B   ---   --   ---xx   flac  0.4431  bd2003-11-06-d1t07.flac
+     6:45.69       71604332 B   ---   --   ---xx   flac  0.5161  bd2003-11-06-d1t08.flac
+     4:46.32       50525708 B   ---   --   ---xx   flac  0.4136  bd2003-11-06-d1t09.flac
+     6:07.33       64816460 B   ---   --   ---xx   flac  0.4945  bd2003-11-06-d1t10.flac
+     6:31.69       69134732 B   ---   --   ---xx   flac  0.5382  bd2003-11-06-d1t11.flac
+     7:27.15       78886124 B   ---   --   ---xx   flac  0.4351  bd2003-11-06-d1t12.flac
+     7:14.15       76592924 B   ---   --   ---xx   flac  0.5102  bd2003-11-06-d2t01.flac
+     6:36.45       69960284 B   ---   --   ---xx   flac  0.4550  bd2003-11-06-d2t02.flac
+    12:43.57      134727308 B   ---   --   ---xx   flac  0.5034  bd2003-11-06-d2t03.flac
+     4:18.54       45638252 B   ---   --   ---xx   flac  0.5329  bd2003-11-06-d2t04.flac
+     6:36.03       69861500 B   ---   --   ---xx   flac  0.5390  bd2003-11-06-d2t05.flac
+     0:36.22        6402188 B   ---   --   ---xx   flac  0.5282  bd2003-11-06-d2t06.flac
+     6:59.18       73953980 B   ---   --   ---xx   flac  0.5064  bd2003-11-06-d2t07.flac
+   117:50.69     1247311124 B                            0.4929  (19 files)
+===================
+===================
+===================

@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-24-pzm-russjcan-inc.flac16 
+=================== 
+=================== 
+=================== 
+cb009c4dd3213030165fe44009bb8c67  gdbd1987-07-24.pzm.russjcan.xxxxxx.sbeok.flac16.md5
+7aa283d32f491de660212a2eeaa749b4  gdbd1987.07.24.d1t12.flac
+f1161b43b7bf524906fcc6a033510514  gdbd1987.07.24.d1t13.flac
+4346c554a6be981c6b50d18713d672be  gdbd1987.07.24.d3t01.flac
+4a2641c8d3a943f5c835a7e03ed473ff  gdbd1987.07.24.d3t02.flac
+ceffa3571376f6f737356c9339a9f9a9  gdbd1987.07.24.d3t03.flac
+9f995406b8e651d10e0dcff347413dbc  gdbd1987.07.24.d3t04.flac
+0f3407723fc49834f46518ff957fb02e  gdbd1987.07.24.d3t05.flac
+2186570069be218ddd18e2af699d43f8  gdbd1987.07.24.d3t06.flac
+228cf2f98ab268a41c319adee743a791  gdbd1987.07.24.d3t07.flac
+544e2d94d7996d41eb9ef00421b341d6  gdbd1987.07.24.d3t08.flac
+e1877ea1b926d66df6e5d7483296e8ea  gdbd1987.07.24.d3t09.flac
+0fa87496f203f9532ff48dc2c6fb4f04  gdbd1987.07.24.d3t10.flac
+a09fdfb181b6d9858130e61f1204d0c9  gdbd1987.07.24.d3t11.flac
+929adb08b0b41d2c1b024d9a4956967b  gdbd1987.07.24.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-07-24-pzm-russjcan-inc.flac16 
+=================== 
+=================== 
+=================== 
+gdbd1987.07.24.d1t12.flac:7779466ce7e4fc8c561246b57b84435b
+gdbd1987.07.24.d1t13.flac:a6731e621644aa7e71bf717e4af47fab
+gdbd1987.07.24.d3t01.flac:0b8076d8f8c0c523c5b6087355a92a3a
+gdbd1987.07.24.d3t02.flac:d4a3a3b60c8fb5ed8f8830f030f52aa6
+gdbd1987.07.24.d3t03.flac:69e8a849f9a18eaa81cbe3e0b90ca107
+gdbd1987.07.24.d3t04.flac:b1b1a17ee8daf36266f9b8464ac35e93
+gdbd1987.07.24.d3t05.flac:880df913e9d4cee7898252486accaa57
+gdbd1987.07.24.d3t06.flac:953cf7a2ff0cc78f9277164dc49013b7
+gdbd1987.07.24.d3t07.flac:4a86877c5ff0ad09f26deb2517272373
+gdbd1987.07.24.d3t08.flac:6234da40f0ffb08b0d574bc47af53c69
+gdbd1987.07.24.d3t09.flac:28510ab9930f52a076535710fd9880c5
+gdbd1987.07.24.d3t10.flac:14f0eaa534fa48c3b609f7e59a3714f6
+gdbd1987.07.24.d3t11.flac:4b8e272d6fe38dc8503514a26d270c64
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-24-pzm-russjcan-inc.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:24.23       67791740 B   ---   --   ---xx   flac  0.6544  gdbd1987.07.24.d1t12.flac
+     6:26.48       68203340 B   ---   --   ---xx   flac  0.6504  gdbd1987.07.24.d1t13.flac
+     6:18.68       66839180 B   ---   --   ---xx   flac  0.6203  gdbd1987.07.24.d3t01.flac
+     4:40.16       49429676 B   ---   --   ---xx   flac  0.6361  gdbd1987.07.24.d3t02.flac
+     5:10.16       54721676 B   ---   --   ---xx   flac  0.6594  gdbd1987.07.24.d3t03.flac
+     5:09.02       54512348 B   ---   --   ---xx   flac  0.5851  gdbd1987.07.24.d3t04.flac
+     4:48.30       50873804 B   ---   --   ---xx   flac  0.6630  gdbd1987.07.24.d3t05.flac
+     6:22.51       67504796 B   ---   --   ---xx   flac  0.6268  gdbd1987.07.24.d3t06.flac
+     6:31.16       69010076 B   ---   --   ---xx   flac  0.6451  gdbd1987.07.24.d3t07.flac
+     6:07.36       64823516 B   ---   --   ---xx   flac  0.6392  gdbd1987.07.24.d3t08.flac
+     5:42.70       60493484 B   ---   --   ---xx   flac  0.5991  gdbd1987.07.24.d3t09.flac
+     5:32.19       58609532 B   ---   --   ---xx   flac  0.6181  gdbd1987.07.24.d3t10.flac
+     8:56.33       94628060 B   ---   --   ---xx   flac  0.6085  gdbd1987.07.24.d3t11.flac
+    78:10.53      827441228 B                            0.6304  (13 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-12-everything-looks-far-away.flacf 
+=================== 
+=================== 
+=================== 
+a10a88b3abdd2b5571b770cac202fa7a  bd98-06-12-everything-looks-far-away-d1t01.flac
+34e5501419f24414f9d421e89f85fb0d  bd98-06-12-everything-looks-far-away-d1t02.flac
+797418660a69ad3838b257203b7f8e46  bd98-06-12-everything-looks-far-away-d1t03.flac
+5159437138dbc719e93a7659c70c4d6b  bd98-06-12-everything-looks-far-away-d1t04.flac
+0831926f24f80f74dc50886c6afae988  bd98-06-12-everything-looks-far-away-d1t05.flac
+76699b705d1f7bcd044f3e80356feb9a  bd98-06-12-everything-looks-far-away-d1t06.flac
+2dc44bf34a9aa9407344d3d536b19fdb  bd98-06-12-everything-looks-far-away-d1t07.flac
+640ec4c8c5c9a3cdb4363f5100ae2166  bd98-06-12-everything-looks-far-away-d1t08.flac
+00608484c02dd859dbbd536c2d1e4648  bd98-06-12-everything-looks-far-away-d1t09.flac
+34b26da157a49ece3cee2ad2223f1151  bd98-06-12-everything-looks-far-away-d1t10.flac
+4c0ea847d12bdb2c4fe6c3ac3f43b7f4  bd98-06-12-everything-looks-far-away-d1t11.flac
+ad830570e293ff5312e8c7c86737b745  bd98-06-12-everything-looks-far-away-d1t12.flac
+b597f756c58e4c80d06708d77958e044  bd98-06-12-everything-looks-far-away-d2t01.flac
+8ed649dab53ffa175ef3d17d42e94b53  bd98-06-12-everything-looks-far-away-d2t02.flac
+8dd5a1b015bffab05e4625b8ca9511da  bd98-06-12-everything-looks-far-away-d2t03.flac
+b7f82f0871150c612a9e0f3e1f0a5348  bd98-06-12-everything-looks-far-away-d2t04.flac
+48fba63f315b1740d73160a0fca6e81b  bd98-06-12-everything-looks-far-away-d2t05.flac
+9bbb71a0217479a25609256b8b3f16f1  bd98-06-12-everything-looks-far-away-d2t06.flac
+c559441832930005589e2405ad75082c  bd98-06-12-everything-looks-far-away-d2t07.flac
+78f8b76eae127d1666de5b55e0d65926  bd98-06-12-everything-looks-far-away-d2t08.flac
+06c8cf83bcde4f23dc660b971942e922  bd98-06-12-everything-looks-far-away-d2t09.flac
+0914b7b6563ad177c496a8969f8b401e  bd98-06-12-everything-looks-far-away-d2t10.flac
+bbec56b6b23eca2d44edfcc8d655024a  bd98-06-12-everything-looks-far-away-d2t11.flac
+0e317b50ec1c1e3fc8414608fac580f8  bd98-06-12-everything-looks-far-away-d2t12.flac
+d16930bd7f2013b1fbb7370254345601  bd98-06-12-everything-looks-far-away.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-12-everything-looks-far-away.flacf 
+=================== 
+=================== 
+=================== 
+bd98-06-12-everything-looks-far-away-d1t01.flac:5bbbc77ff90aa4181c6b8180f8178933
+bd98-06-12-everything-looks-far-away-d1t02.flac:4cc0356defc9a9113c466f86913f3612
+bd98-06-12-everything-looks-far-away-d1t03.flac:64c54ba77afce3a1da1206f5c126c470
+bd98-06-12-everything-looks-far-away-d1t04.flac:80285fd6639bd5d5c8476bf470973c18
+bd98-06-12-everything-looks-far-away-d1t05.flac:162d8b80ab520cc355341f654c95b320
+bd98-06-12-everything-looks-far-away-d1t06.flac:fcd48a96408ff352fc16a921baaf40c0
+bd98-06-12-everything-looks-far-away-d1t07.flac:cc0238e83ac9bc3902c27b2ff20dec00
+bd98-06-12-everything-looks-far-away-d1t08.flac:3aa363b0d8988fd9b1aea519764dcc06
+bd98-06-12-everything-looks-far-away-d1t09.flac:acaca78037041d21e71ea547fb739c7f
+bd98-06-12-everything-looks-far-away-d1t10.flac:a7f93ba1a2e8d2abdd40243bf78ef468
+bd98-06-12-everything-looks-far-away-d1t11.flac:eb51d3a61db2dcf80004b2169f83aeb1
+bd98-06-12-everything-looks-far-away-d1t12.flac:2f799fc58eae82b7e3a1412c581bc1e8
+bd98-06-12-everything-looks-far-away-d2t01.flac:2c091fa20859dd5ee05107cad9408edb
+bd98-06-12-everything-looks-far-away-d2t02.flac:996ce36d4dcab3818cd226a88f32c59c
+bd98-06-12-everything-looks-far-away-d2t03.flac:60880725671232137c0b11f6b6813bf0
+bd98-06-12-everything-looks-far-away-d2t04.flac:ca3d3589472f6b92150f07edfe709e09
+bd98-06-12-everything-looks-far-away-d2t05.flac:66b95ffaefef553313cb64aa38dcdba5
+bd98-06-12-everything-looks-far-away-d2t06.flac:7bf681bc47ffac0b969b1fa83f436b0b
+bd98-06-12-everything-looks-far-away-d2t07.flac:83ed70255649daea9011370e606b6c8a
+bd98-06-12-everything-looks-far-away-d2t08.flac:38149b513029d734ab3a4b2cb84f29a2
+bd98-06-12-everything-looks-far-away-d2t09.flac:99d33456d7f71c9524c2f570800f1b70
+bd98-06-12-everything-looks-far-away-d2t10.flac:50f79e2c3d98b16f339a67ea28167269
+bd98-06-12-everything-looks-far-away-d2t11.flac:94444c2b226be68db7cd84a70438aa9a
+bd98-06-12-everything-looks-far-away-d2t12.flac:7a969a6d43c4f3fe42c49a51a3f397b6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-12-everything-looks-far-away.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.19       57021932 B   ---   --   ---xx   flac  0.5861  bd98-06-12-everything-looks-far-away-d1t01.flac
+     5:21.13       56655020 B   ---   --   ---xx   flac  0.6091  bd98-06-12-everything-looks-far-away-d1t02.flac
+     6:01.13       63711020 B   ---   --   ---xx   flac  0.6163  bd98-06-12-everything-looks-far-away-d1t03.flac
+     7:20.38       77705420 B   ---   --   ---xx   flac  0.5840  bd98-06-12-everything-looks-far-away-d1t04.flac
+     6:58.57       73869308 B   ---   --   ---xx   flac  0.6434  bd98-06-12-everything-looks-far-away-d1t05.flac
+     5:22.07       56817308 B   ---   --   ---xx   flac  0.6220  bd98-06-12-everything-looks-far-away-d1t06.flac
+     5:30.26       58273196 B   ---   --   ---xx   flac  0.5819  bd98-06-12-everything-looks-far-away-d1t07.flac
+     6:21.40       67302524 B   ---   --   ---xx   flac  0.5076  bd98-06-12-everything-looks-far-away-d1t08.flac
+     8:35.57       90980108 B   ---   --   ---xx   flac  0.6357  bd98-06-12-everything-looks-far-away-d1t09.flac
+     5:45.30       60928604 B   ---   --   ---xx   flac  0.6110  bd98-06-12-everything-looks-far-away-d1t10.flac
+     4:33.03       48164300 B   ---   --   ---xx   flac  0.5256  bd98-06-12-everything-looks-far-away-d1t11.flac
+     5:55.22       62673788 B   ---   --   ---xx   flac  0.6290  bd98-06-12-everything-looks-far-away-d1t12.flac
+     7:20.39       77707772 B   ---   --   ---xx   flac  0.5784  bd98-06-12-everything-looks-far-away-d2t01.flac
+     7:09.62       75821468 B   ---   --   ---xx   flac  0.5613  bd98-06-12-everything-looks-far-away-d2t02.flac
+     5:26.67       57664028 B   ---   --   ---xx   flac  0.5567  bd98-06-12-everything-looks-far-away-d2t03.flac
+     5:42.61       60472316 B   ---   --   ---xx   flac  0.6158  bd98-06-12-everything-looks-far-away-d2t04.flac
+     5:11.56       54992156 B   ---   --   ---xx   flac  0.5339  bd98-06-12-everything-looks-far-away-d2t05.flac
+     5:36.16       59308076 B   ---   --   ---xx   flac  0.5424  bd98-06-12-everything-looks-far-away-d2t06.flac
+     6:49.17       72187628 B   ---   --   ---xx   flac  0.5451  bd98-06-12-everything-looks-far-away-d2t07.flac
+     3:35.33       38003660 B   ---   --   ---xx   flac  0.5320  bd98-06-12-everything-looks-far-away-d2t08.flac
+     5:30.70       58376684 B   ---   --   ---xx   flac  0.5939  bd98-06-12-everything-looks-far-away-d2t09.flac
+     6:48.62       72117068 B   ---   --   ---xx   flac  0.5903  bd98-06-12-everything-looks-far-away-d2t10.flac
+     4:12.51       44572796 B   ---   --   ---xx   flac  0.6028  bd98-06-12-everything-looks-far-away-d2t11.flac
+     8:36.53       91147100 B   ---   --   ---xx   flac  0.5684  bd98-06-12-everything-looks-far-away-d2t12.flac
+   145:10.12     1536473280 B                            0.5839  (24 files)
+=================== 
+=================== 
+=================== 

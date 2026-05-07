@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96 11 13 madison 
+=================== 
+=================== 
+=================== 
+f96f5adc1e37b79e331426dca3e5ddde  bd96 11 13 d1 t01.shn
+e75cc4c938f74120be997113f0ed2a9b  bd96 11 13 d1 t02.shn
+5f5f6826f21e254eaa178730a00472a6  bd96 11 13 d1 t03.shn
+33dc01cf0cdf3cddf35009e389e421a2  bd96 11 13 d1 t04.shn
+997b3e78bf25a34f982389cfbcd54cc3  bd96 11 13 d1 t05.shn
+c5fcf4027bef335959b519a5d92da197  bd96 11 13 d1 t06.shn
+6f5977ca5dcdfea7a0921b1a27b250bd  bd96 11 13 d1 t07.shn
+2fbfd943d8efd05c654d7d34aa1c8f8d  bd96 11 13 d1 t08.shn
+d3a23d2465208d5227bca636c3143fee  bd96 11 13 d1 t09.shn
+2bba85b6e39fba79e04069a31f354a39  bd96 11 13 d2 t01.shn
+18e05a5db691c95b6ac89ebf37b6e275  bd96 11 13 d2 t02.shn
+bbadec9ec8c9b875a8b0fd4164b54ae1  bd96 11 13 d2 t03.shn
+773777dfbd5715965dc1a77f2fef8ba1  bd96 11 13 d2 t04.shn
+a8f754db4321ec06e5b65efcb37d0449  bd96 11 13 d2 t05.shn
+da4ddd0a19fc38b662704accbf0448ef  bd96 11 13 d2 t06.shn
+b0f1dddb24480fc8dc2fbd0c52b56096  bd96 11 13.md5
+e6f81e934de38f60130a91a862e0089e  bd96-11-13.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96 11 13 madison 
+=================== 
+=================== 
+=================== 
+8013003b9ab472641aa039f941abcc3f  [shntool]  bd96_11_13_d1_t01.wav
+cb806cdf287ff98a9e06ae1935a07256  [shntool]  bd96_11_13_d1_t02.wav
+e6bc5b0aeaf5c092bb72e7fcd7d7a6a4  [shntool]  bd96_11_13_d1_t03.wav
+a22a4aeab5054e2ae8d42183ea7886c6  [shntool]  bd96_11_13_d1_t04.wav
+1f2aca5fe342b6e9f52b8af16a617ce8  [shntool]  bd96_11_13_d1_t05.wav
+6b1bea446eb8224aa316ef10b8e91efd  [shntool]  bd96_11_13_d1_t06.wav
+43217b3a35b141327aff9c979cbe15a5  [shntool]  bd96_11_13_d1_t07.wav
+3dbb1f0bc2d53bf16fdb6881c8897304  [shntool]  bd96_11_13_d1_t08.wav
+5916ded6e93bca7d183577bb0f8e98a8  [shntool]  bd96_11_13_d1_t09.wav
+26a0443f9c250828919f0ae78b304aba  [shntool]  bd96_11_13_d2_t01.wav
+b435ac0e1a6b5980cb0f6097b6123704  [shntool]  bd96_11_13_d2_t02.wav
+b776d3356fe1b46d982c06672bcbf66f  [shntool]  bd96_11_13_d2_t03.wav
+dc7bc5d0a071326d7a393b49dd712bce  [shntool]  bd96_11_13_d2_t04.wav
+4a30bca2a6378e2461733cf5167d09e8  [shntool]  bd96_11_13_d2_t05.wav
+9aa43db0b24d66e496d9c6f6fa1ac78a  [shntool]  bd96_11_13_d2_t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96 11 13 madison 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:23.69       46555532 B   ---   --   ---xx    shn  0.6534  bd96 11 13 d1 t01.shn
+     6:15.66       66305276 B   ---   --   ---xx    shn  0.5723  bd96 11 13 d1 t02.shn
+     6:26.16       68128076 B   ---   --   ---xx    shn  0.6253  bd96 11 13 d1 t03.shn
+     7:32.11       79758716 B   ---   --   ---xx    shn  0.5445  bd96 11 13 d1 t04.shn
+     7:58.38       84408620 B   ---   --   ---xx    shn  0.5815  bd96 11 13 d1 t05.shn
+     7:44.43       81950780 B   ---   --   ---xx    shn  0.6205  bd96 11 13 d1 t06.shn
+     7:58.27       84382748 B   ---   --   ---xx    shn  0.5601  bd96 11 13 d1 t07.shn
+     6:34.27       69565148 B   ---   --   ---xx    shn  0.5502  bd96 11 13 d1 t08.shn
+     7:32.52       79855148 B   ---   --   ---xx    shn  0.5877  bd96 11 13 d1 t09.shn
+     7:24.05       78333404 B   ---   --   ---xx    shn  0.6061  bd96 11 13 d2 t01.shn
+     7:55.33       83867660 B   ---   --   ---xx    shn  0.5337  bd96 11 13 d2 t02.shn
+     8:23.20       88776284 B   ---   --   ---xx    shn  0.6033  bd96 11 13 d2 t03.shn
+    10:17.26      108899996 B   ---   --   ---xx    shn  0.6046  bd96 11 13 d2 t04.shn
+     8:49.09       93336812 B   ---   --   ---xx    shn  0.5432  bd96 11 13 d2 t05.shn
+     7:15.17       76774028 B   ---   --   ---xx    shn  0.5603  bd96 11 13 d2 t06.shn
+   112:31.09     1190898228 B                            0.5812  (15 files)
+=================== 
+=================== 
+=================== 

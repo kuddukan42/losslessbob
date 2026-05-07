@@ -1,0 +1,18 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.68       53609180 B   ---   --   ---xx   flac  0.6658  bd1995-06-24.evans.aud.GEMS.d1t01.flac
+     4:23.20       46440284 B   ---   --   ---xx   flac  0.6529  bd1995-06-24.evans.aud.GEMS.d1t02.flac
+     6:25.55       68043404 B   ---   --   ---xx   flac  0.6618  bd1995-06-24.evans.aud.GEMS.d1t03.flac
+     7:10.68       76011980 B   ---   --   ---xx   flac  0.6424  bd1995-06-24.evans.aud.GEMS.d1t04.flac
+     7:02.00       74440844 B   ---   --   ---xx   flac  0.6562  bd1995-06-24.evans.aud.GEMS.d1t05.flac
+     8:20.46       88308236 B   ---   --   ---xx   flac  0.5982  bd1995-06-24.evans.aud.GEMS.d1t06.flac
+     7:14.30       76628204 B   ---   --   ---xx   flac  0.5304  bd1995-06-24.evans.aud.GEMS.d1t07.flac
+     7:39.07       80984108 B   ---   --   ---xx   flac  0.5786  bd1995-06-24.evans.aud.GEMS.d1t08.flac
+     6:49.73       72319340 B   ---   --   ---xx   flac  0.6384  bd1995-06-24.evans.aud.GEMS.d1t09.flac
+     9:38.31      102032156 B   ---   --   ---xx   flac  0.6611  bd1995-06-24.evans.aud.GEMS.d2t01.flac
+     7:34.22       80137388 B   ---   --   ---xx   flac  0.6400  bd1995-06-24.evans.aud.GEMS.d2t02.flac
+     1:36.27       16997948 B   ---   --   ---xx   flac  0.5037  bd1995-06-24.evans.aud.GEMS.d2t03.flac
+     7:34.53       80210300 B   ---   --   ---xx   flac  0.6628  bd1995-06-24.evans.aud.GEMS.d2t04.flac
+     0:55.66        9857276 B   ---   --   ---xx   flac  0.4156  bd1995-06-24.evans.aud.GEMS.d2t05.flac
+     8:09.43       86360780 B   ---   --   ---xx   flac  0.6137  bd1995-06-24.evans.aud.GEMS.d2t06.flac
+     6:31.53       69097100 B   ---   --   ---xx   flac  0.6162  bd1995-06-24.evans.aud.GEMS.d2t07.flac
+   102:10.62     1081478528 B                            0.6245  (16 files)

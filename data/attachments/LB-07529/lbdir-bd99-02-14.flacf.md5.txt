@@ -1,0 +1,21 @@
+e536bb97f53138410cbe3a071565983b  CD1\01 Gotta serve somebody.flac
+bbba17902d7f489b52195efef590c1d3  CD1\02 Million miles.flac
+e5a43697c10e414c15247c547a75ee5b  CD1\03 Stuck inside of Mobile with the Memphis blues again.flac
+944333fff0b51ad08ca7a7460decc283  CD1\04 You're a big girl now.flac
+7394478888cf89a521fe8c273b10db6a  CD1\05 Silvio.flac
+6107ef1b366fd2ae53c33559736c8d8f  CD1\06 Mr. Tambourine Man.flac
+d0815904ce4e4a30e375c107dfad430b  CD1\07 Desolation Row.flac
+94c0acaa99b52a67ca74d29ce99dd915  CD1\08 Tangled up in blue.flac
+e408627d99ec1af806f1e3a707c119f9  CD1\09 The times they are a-changin'.flac
+fb90ff2c554c1a3b6b94acda323700b4  CD1\10 Make you feel my love.flac
+06321cd5ec7d13f1c6feef5143b1396e  CD1\11 Can't wait.flac
+e679e587d6e62399b61ca38f4608e948  CD1\FLAC CD1.md5
+99673c51d57b9c19b4beb1db236d7c5a  CD2\12 (band intro).flac
+265388ff8f0bfed5622a08df7919fbe5  CD2\12 Highway 61 revisited.flac
+53775ab32fe4a7ca6120b3092df07c34  CD2\13 (audience ballistic).flac
+4919a4045da33b4dff10f7de4d08feb3  CD2\13 Love sick.flac
+3bf487904d87b32ee2ab3d28ee1c843b  CD2\14 Leopard-skin pill-box hat.flac
+6591024e86efac373b66856377498c44  CD2\15 Don't think twice, it's all right.flac
+74fc77a549825ffebf9721af1f15a70e  CD2\16 Not fade away.flac
+fd17b7cb392d634d8f1a2b8cabe7662e  CD2\FLAC CD2.md5
+b94334977cc2a25212496cddea5f79b3  Info\1999-02-14 Joyce Center, Notre Dame University, South Bend, Indiana, USA.txt

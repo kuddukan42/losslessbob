@@ -1,0 +1,128 @@
+===================
+===================
+===================
+=== 2003-05-08 - Portsmouth, Virginia.txt
+===================
+===================
+===================
+NTELOS Pavilion Harbor Center
+Portsmouth, Virginia --(Thursday) 
+May 8, 2003
+  
+
+
+Unknown Source
+Audience
+Excellent Sound A
+
+        
+Disc 1:
+1. Columbia Recording Artist
+2. Maggie's Farm (Bob on piano)
+3. Tonight I'll Be Staying Here With You (Bob on piano, Larry on pedal steel)
+4. Tweedle Dee & Tweedle Dum (Bob on piano)
+5. Just Like A Woman (Bob on piano and harp, Larry on pedal steel)
+6. Things Have Changed (Bob on piano)
+7. I'll Remember You (Bob on piano, Larry on pedal steel)
+8. Drifter's Escape (Bob on electric guitar and harp)
+9. One Too Many Mornings (acoustic) (Bob on acoustic guitar, Larry on pedal steel)
+
+Time :47:37
+
+Disc 2:
+
+10. Dignity (Bob on piano)
+11. Saving Grace (Bob on piano, Larry on pedal steel)
+12. Highway 61 Revisited (Bob on piano)
+13. Honest With Me (Bob on piano, Larry on slide guitar)
+14. Floater (Too Much To Ask) (Bob on piano, Freddie on violin, Tony on standup bass)
+15. Summer Days (Bob on piano, Tony on standup bass)
+ (Encore)
+16. Like A Rolling Stone (Bob on piano)
+17. All Along The Watchtower (Bob on piano and electric guitar, Bruce Hornsby on piano)
+
+Time :57:25
+===================
+===================
+===================
+=== 2003-05-08 Portsmouth, Virginia.ffp
+===================
+===================
+===================
+1-00 - intro.flac:317ca6c7e84fe81afb63e64bb9ee43c6
+1-01 - Maggie's Farm.flac:9e616445d669ce5c7d0fd39d296a3e0b
+1-02 - Tonight I'll Be Staying Here With You.flac:ebff246237f6919b0e6231a101796c6a
+1-03 - Tweedle Dee & Tweedle Dum.flac:1f4793eb39363fb65b8a2e08c2905aca
+1-04 - Just Like A Woman.flac:90e25ceba79d6123eece63196caa31c1
+1-05 - Things Have Changed.flac:df051da483f2bf09c9f990cc4dc48e7f
+1-06 - I'll Remember You.flac:621204f0b76f8e16ca344cc3dd27eeba
+1-07 - Drifter's Escape.flac:2b52a3524815779ba14d87b52693eb53
+1-08 - One Too Many Mornings.flac:43e8c26d2507e7548116e3cc796f6d78
+2-09 - Dignity.flac:df452fa49c5a9d9d459a7fd4cb58d130
+2-10 - Saving Grace.flac:3f3c84e7f081b7c6d9977df54f785456
+2-11 - Highway 61 Revisited.flac:47b98040df4cfd7a4cb75dc7b5ebf57d
+2-12 - Honest With Me.flac:c3491b7b645adf7f3056f50b3ad1f332
+2-13 - Floater (Too Much To Ask).flac:fc08792f8b33ca474a1f1bd777ab160c
+2-14 - band introduction.flac:9ec10b6c5a07a8b493b0193bc9e0e62f
+2-15 - Summer Days.flac:50d05fa9390c3de4ed3621842713de78
+2-16 - Like A Rolling Stone.flac:3353113402f3d480d433b5ac985d3db1
+2-17 - All Along The Watchtower.flac:0bd8e6f784c4659c6f9604069ef2312f
+===================
+===================
+===================
+=== 2003-05-08 Portsmouth, Virginia.md5
+===================
+===================
+===================
+42ee59f530906bdd9feaae5a547c7e4d *1-00 - intro.flac
+8cbeb206339372874dc10e904c8a7818 *1-01 - Maggie's Farm.flac
+391a017615e7a81144660f5bbfc1c318 *1-02 - Tonight I'll Be Staying Here With You.flac
+7a2bcc90c8beadaaa0ab092e680f3ece *1-03 - Tweedle Dee & Tweedle Dum.flac
+57a281b5e1ddd90f8f7d83d27a70d065 *1-04 - Just Like A Woman.flac
+051aeb8c35857bd7e19426b061bd7bfc *1-05 - Things Have Changed.flac
+9fd52e321eddb64f8ce608cfcbc6479a *1-06 - I'll Remember You.flac
+689d284d10aded518cbb11e5868e5a61 *1-07 - Drifter's Escape.flac
+1dadab64478f0a74bd7ac4a5d279808f *1-08 - One Too Many Mornings.flac
+ab99cc6aa6ded22e24b00849f6bc635b *2003-05-08 - Portsmouth, Virginia.txt
+27c13fd01f3439b0fc71bb54960c3e0c *2-09 - Dignity.flac
+6fddbaa97aaa4a92c40b2b9c7c76fa9b *2-10 - Saving Grace.flac
+bc7f33c09ac2d9dda2c1f67b62235384 *2-11 - Highway 61 Revisited.flac
+fb6216cb5bd9be53571bdf24122596a5 *2-12 - Honest With Me.flac
+f311e90b00958ac9b3c44fd3dba46444 *2-13 - Floater (Too Much To Ask).flac
+c5e0e64627072d4b7c127bf92fc09dc8 *2-14 - band introduction.flac
+c402412bcdd56b20963a63a18f120f9e *2-15 - Summer Days.flac
+52499fa03219eaec924dc882fce48883 *2-16 - Like A Rolling Stone.flac
+bb4b461540b78ee982f88d0a92acee18 *2-17 - All Along The Watchtower.flac
+48d7e0b0420c29448c8c11579671cc65 *bd-2003may8-back.jpg
+c0ecbbb79728f227ff3fb1254f133892 *bd-2003may8-front.jpg
+228e3d40056a0d3d8206fb849ad7a063 *shntool_len.txt
+===================
+===================
+===================
+=== shntool_len.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     0:33.30        5891804    ---   --   ---xx   1-00 - intro.flac
+     5:09.65       54660524    ---   --   ---xx   1-01 - Maggie's Farm.flac
+     4:27.20       47145884    ---   --   ---xx   1-02 - Tonight I'll Be Staying Here With You.flac
+     5:23.29       57045452    ---   --   ---xx   1-03 - Tweedle Dee & Tweedle Dum.flac
+     7:54.49       83728892    ---   --   ---xx   1-04 - Just Like A Woman.flac
+     6:44.19       71310332    ---   --   ---xx   1-05 - Things Have Changed.flac
+     5:34.66       59072876    ---   --   ---xx   1-06 - I'll Remember You.flac
+     5:35.11       59119916    ---   --   ---xx   1-07 - Drifter's Escape.flac
+     6:15.09       66171212    ---   --   ---xx   1-08 - One Too Many Mornings.flac
+     5:56.34       62878412    ---   --   ---xx   2-09 - Dignity.flac
+     3:54.02       41282348    ---   --   ---xx   2-10 - Saving Grace.flac
+     6:09.41       65188076    ---   --   ---xx   2-11 - Highway 61 Revisited.flac
+     7:14.44       76661132    ---   --   ---xx   2-12 - Honest With Me.flac
+     7:36.65       80591324    ---   --   ---xx   2-13 - Floater (Too Much To Ask).flac
+     0:44.11        7787516    ---   --   ---xx   2-14 - band introduction.flac
+    11:29.66      121694876    ---   --   ---xx   2-15 - Summer Days.flac
+     6:49.31       72220556    ---   --   ---xx   2-16 - Like A Rolling Stone.flac
+     7:30.42       79478828    ---   --   ---xx   2-17 - All Along The Watchtower.flac
+   105:03.34     1111929960 B                     (totals for 18 files, 0.5529 overall compression ratio)
+===================
+===================
+===================

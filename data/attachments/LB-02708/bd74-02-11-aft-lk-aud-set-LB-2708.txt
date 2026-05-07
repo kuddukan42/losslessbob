@@ -1,0 +1,10 @@
+Bob Dylan, 2/11/74, Oakland, California, Coliseum, 1CDR
+
+LB-2708, (56min), (Afternoon),  from lk aud set, Low Gen tape > CDR > EAC > Flac; upgrade over previous version since does not have the scratchiness sound; good sound [C+]
+
+has small gaps between tracks; stray clap/noise t2 2:16, t3 3;23, small noise t13 1:33
+
+1. Most Likely You Go Your Way (And I'll Go Mine), 2. Lay Lady Lay, 3. Just Like Tom Thumb's Blues, 4. Rainy Day Women # 12 & 35, 5. It Ain't Me Babe, 6. Ballad Of A Thin Man, (first band set is unknown), 7. All Along The Watchtower, 8. Ballad Of Hollis Brown, 9. Knockin' On Heaven's Door, 10. She Belongs To Me, (solo), 11. The Times They Are A-Changin', (solo), 12. The Lonesome Death of Hattie Carroll, (solo), 13. Don't Think Twice, It's All Right, (solo), 14. Wedding Song, (solo), (second band set is unknown), 15. Forever Young, 16. Highway 61 Revisited, 17. Like A Rolling Stone, 18. Most Likely You Go Your Way (And I'll Go Mine), 19. Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

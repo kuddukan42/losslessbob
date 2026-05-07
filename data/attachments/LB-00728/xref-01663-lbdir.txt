@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== md5 for: bd02-10-30-d.flacf
+===================
+===================
+===================
+26f87e757c56a9194a0b9d6ad7eb85f7 *Bob Dylan 2002-10-30 St Paul PART ONE\01 Track01.flac
+8fce0a975b9de78db77579d49d2282eb *Bob Dylan 2002-10-30 St Paul PART ONE\02 Track02.flac
+3f9710be4b9dcfb3d235977db0a0d689 *Bob Dylan 2002-10-30 St Paul PART ONE\03 Track03.flac
+2b3b0366499e4c3013ae9a4610ec506e *Bob Dylan 2002-10-30 St Paul PART ONE\04 Track04.flac
+c352dd667c6a78676be4f95d07562073 *Bob Dylan 2002-10-30 St Paul PART ONE\05 Track05.flac
+f3590d5e5168ef855d9422ac6d18a019 *Bob Dylan 2002-10-30 St Paul PART ONE\06 Track06.flac
+4a8438119f9b83da9e4e9fce9a7deab5 *Bob Dylan 2002-10-30 St Paul PART ONE\07 Track07.flac
+f6dc92dcb1de22dc603026d8ff5aaa0e *Bob Dylan 2002-10-30 St Paul PART ONE\08 Track08.flac
+18875a2d4abd18ae3a758e75b985a2e4 *Bob Dylan 2002-10-30 St Paul PART ONE\09 Track09.flac
+af714600a07929eeca1394785e922782 *Bob Dylan 2002-10-30 St Paul PART ONE\10 Track10.flac
+6541a5a01a7e268925beaca734e42a11 *Bob Dylan 2002-10-30 St Paul PART ONE\11 Track11.flac
+40cc57909f49b7da0954424aed7b3419 *Bob Dylan 2002-10-30 St Paul PART ONE\Bob Dylan 2002-10-30 St Paul PART ONE.ffp
+ebf91eefafbb4b1d784a2f258583a9ef *Bob Dylan 2002-10-30 St Paul PART TWO\01 Track01.flac
+b4c6185c0b629ce3a0dcc3767fd0e0d4 *Bob Dylan 2002-10-30 St Paul PART TWO\02 Track02.flac
+87499d4f78932b21959831532da19a14 *Bob Dylan 2002-10-30 St Paul PART TWO\03 Track03.flac
+b69a9ec343760bcb37d320ef49307fce *Bob Dylan 2002-10-30 St Paul PART TWO\04 Track04.flac
+8f38c27f320301b8b6255703134c0933 *Bob Dylan 2002-10-30 St Paul PART TWO\05 Track05.flac
+547a8c4cfe841341d9baa60541f9d359 *Bob Dylan 2002-10-30 St Paul PART TWO\06 Track06.flac
+16702f3f0980fefb1115ba0fe772bb4f *Bob Dylan 2002-10-30 St Paul PART TWO\07 Track07.flac
+2cdf2a35d29700d3b2386a0330aab9aa *Bob Dylan 2002-10-30 St Paul PART TWO\08 Track08.flac
+0e2249af6b54b4c5396897f2c176357c *Bob Dylan 2002-10-30 St Paul PART TWO\09 Track09.flac
+734f6bf9a96bbeb23f864b2c0e0efe3a *Bob Dylan 2002-10-30 St Paul PART TWO\Bob Dylan 2002-10-30 St Paul PART TWO.ffp
+b387c3032a9592fba3431cb53cd9cd9d *Bob Dylan 2002-10-30 St Paul.txt
+===================
+===================
+===================
+=== ffp for: bd02-10-30-d.flacf
+===================
+===================
+===================
+Bob Dylan 2002-10-30 St Paul PART ONE\01 Track01.flac:13dae01acd9c1cc8b92677a860f9522f
+Bob Dylan 2002-10-30 St Paul PART ONE\02 Track02.flac:0916a511fd346183cd1a46048f35897b
+Bob Dylan 2002-10-30 St Paul PART ONE\03 Track03.flac:d4796cfcbff755b73b984718ee1a4016
+Bob Dylan 2002-10-30 St Paul PART ONE\04 Track04.flac:8029c7a3ed60588dd11daea08182ed55
+Bob Dylan 2002-10-30 St Paul PART ONE\05 Track05.flac:b05e24a95d3ab2ffb4756741e355a696
+Bob Dylan 2002-10-30 St Paul PART ONE\06 Track06.flac:3b38886189e5bd012282763866a50d9e
+Bob Dylan 2002-10-30 St Paul PART ONE\07 Track07.flac:fa3428e659432610c1cf1a130b65cfa9
+Bob Dylan 2002-10-30 St Paul PART ONE\08 Track08.flac:ac73935b7bfb5c12ef2ce92f18ee61a8
+Bob Dylan 2002-10-30 St Paul PART ONE\09 Track09.flac:63027d14b1e8780ff8bdb66a6b45a231
+Bob Dylan 2002-10-30 St Paul PART ONE\10 Track10.flac:b40a398b94649c7826ee273caf60de09
+Bob Dylan 2002-10-30 St Paul PART ONE\11 Track11.flac:4b7a0df1a293f049e436f6de7dc414eb
+Bob Dylan 2002-10-30 St Paul PART TWO\01 Track01.flac:1122f86bf423984e2521de4ad8c55d24
+Bob Dylan 2002-10-30 St Paul PART TWO\02 Track02.flac:94fd9dff40fb2febbbf464cd4b230c04
+Bob Dylan 2002-10-30 St Paul PART TWO\03 Track03.flac:05b804e1590b51fd468122048e2934f9
+Bob Dylan 2002-10-30 St Paul PART TWO\04 Track04.flac:f012ea72bd3a592f19f6c3e347cdad95
+Bob Dylan 2002-10-30 St Paul PART TWO\05 Track05.flac:75027aad71ba53bab1a4e5b895802cba
+Bob Dylan 2002-10-30 St Paul PART TWO\06 Track06.flac:e09e0d75c98ddeecdbc5f709afd147f7
+Bob Dylan 2002-10-30 St Paul PART TWO\07 Track07.flac:3827f0115ef785fbf68f5141e7a501cf
+Bob Dylan 2002-10-30 St Paul PART TWO\08 Track08.flac:3229554b880b981f090e411c070f8675
+Bob Dylan 2002-10-30 St Paul PART TWO\09 Track09.flac:22f731bc195f597921de943adc1e2c38
+===================
+===================
+===================
+=== shntool len for: bd02-10-30-d.flacf\Bob Dylan 2002-10-30 St Paul PART ONE
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:12.04       65630252 B   ---   --   ---xx   flac  0.6380  01 Track01.flac
+     3:35.57       38060108 B   ---   --   ---xx   flac  0.6595  02 Track02.flac
+     5:39.32       59874908 B   ---   --   ---xx   flac  0.6407  03 Track03.flac
+     5:17.47       56029388 B   ---   --   ---xx   flac  0.5975  04 Track04.flac
+     5:19.12       56299868 B   ---   --   ---xx   flac  0.6292  05 Track05.flac
+     4:19.22       45739388 B   ---   --   ---xx   flac  0.2597  06 Track06.flac
+     6:50.23       72378140 B   ---   --   ---xx   flac  0.4517  07 Track07.flac
+     7:03.23       74671340 B   ---   --   ---xx   flac  0.5860  08 Track08.flac
+     5:41.54       60279452 B   ---   --   ---xx   flac  0.6032  09 Track09.flac
+     6:01.32       63755708 B   ---   --   ---xx   flac  0.6274  10 Track10.flac
+     6:58.33       73812860 B   ---   --   ---xx   flac  0.5566  11 Track11.flac
+    62:58.39      666531412 B                            0.5701  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd02-10-30-d.flacf\Bob Dylan 2002-10-30 St Paul PART TWO
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.53       46694300 B   ---   --   ---xx   flac  0.6255  01 Track01.flac
+     7:06.67       75304028 B   ---   --   ---xx   flac  0.6391  02 Track02.flac
+     6:36.54       69981452 B   ---   --   ---xx   flac  0.5891  03 Track03.flac
+     7:25.02       78502748 B   ---   --   ---xx   flac  0.6151  04 Track04.flac
+     3:37.02       38283548 B   ---   --   ---xx   flac  0.5244  05 Track05.flac
+     5:48.35       61469564 B   ---   --   ---xx   flac  0.5000  06 Track06.flac
+     8:19.56       88155356 B   ---   --   ---xx   flac  0.6611  07 Track07.flac
+     6:02.38       63946220 B   ---   --   ---xx   flac  0.5792  08 Track08.flac
+     6:45.19       71486732 B   ---   --   ---xx   flac  0.6613  09 Track09.flac
+    56:06.26      593823948 B                            0.6067  (9 files)
+===================
+===================
+===================

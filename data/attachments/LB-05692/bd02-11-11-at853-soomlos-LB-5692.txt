@@ -1,0 +1,10 @@
+Bob Dylan, 11/11/02, New York, New York, Madison Square Garden, 2CDR
+
+LB-5692, (70min+59min), source: soomlos, 12th row - left front floor, at853's > sony tcd-d8 (line-in 16/48), sony tcd-d8 > m-audio mt24/96 (16/48), audacity > r8brain > cd wave > flac (16/44.1); bittorrent download 01/08; in 3-way comparison these are different recordings based on different crowd at end of d1t3; LB-736 is the warmest fullest sound but bass is louder and interferes with vocals making them not as clear; LB-740 is next warmest and then this; levels get too loud on d1t7 and clip; excellent sound [A-]
+
+small analog pop d2t7 1:56
+
+Disc 1:, 01. introduction [00:37], 02. Tweedle Dee & Tweedle Dum [04:40], 03. Yea! Heavy And A Bottle Of Bread [04:08] *, 04. Tombstone Blues [06:18], 05. The End Of The Innocence [05:00], 06. Things Have Changed [06:24], 07. Brown Sugar [04:27], 08. Masters Of War [05:13], 09. It's Alright, Ma (I'm Only Bleeding) [08:02], 10. Just Like A Woman [07:42], 11. Drifter's Escape [06:49], 12. Shelter From The Storm [06:09], 13. Old Man [04:17], Total time: [69:54], Disc 2:, 01. Honest With Me [07:24], 02. The Lonesome Death Of Hattie Carroll [06:11], 03. High Water (For Charley Patton) [07:56], 04. Mutineer [03:26], 05. Bye And Bye [05:21], 06. band introduction [00:41], 07. Summer Days [11:47], (encore), 08. Knockin' On Heaven's Door [06:53], 09. All Along The Watchtower [09:15], Total time: [59:01]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

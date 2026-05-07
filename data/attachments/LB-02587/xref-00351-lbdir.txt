@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-15-jtt.flacf 
+=================== 
+=================== 
+=================== 
+636ac5f5668869b2efe351a3259a3d54  Bob Dylan - Chapel Hill September 15th 1988.ffp
+728263b6116db589d17c6ccf6a9de1ae  Bob Dylan - Chapel Hill September 15th 1988.md5
+e6021a39154722fe9ca268d76ea35efe  Bob Dylan - Chapel Hill September 15th 1988.txt
+d96e602ef723b2618c956304c5433fa4  Bob Dylan - Chapel Hill September 15th 1988_Info.txt
+62878d41de2154668b49beabbd947b36  Dylan - Chapel Hill 15.09.1988_Track01.flac
+dc2f90a24de63286b9ae84ba7416f12c  Dylan - Chapel Hill 15.09.1988_Track02.flac
+dba0a4002de059900d9666c15d86d694  Dylan - Chapel Hill 15.09.1988_Track03.flac
+fb5e67f57196734d884f97c693d87a7a  Dylan - Chapel Hill 15.09.1988_Track04.flac
+8befd485059cf3479965bfcf94f49fff  Dylan - Chapel Hill 15.09.1988_Track05.flac
+aa09064275668cad97a9bace62459ac3  Dylan - Chapel Hill 15.09.1988_Track06.flac
+e9e8eb65dbbd057da6c04dfa5cfdfd70  Dylan - Chapel Hill 15.09.1988_Track07.flac
+ebf5392b73b37d9197fb237c25c51120  Dylan - Chapel Hill 15.09.1988_Track08.flac
+a511fd31af9311f4a668bb9bb2e252a4  Dylan - Chapel Hill 15.09.1988_Track09.flac
+4af220302187f6d440da44332194f343  Dylan - Chapel Hill 15.09.1988_Track10.flac
+ace27029f6957e8956ec318fdf8fe458  Dylan - Chapel Hill 15.09.1988_Track11.flac
+fc4e86ef515278369f63a7e2ce386c50  Dylan - Chapel Hill 15.09.1988_Track12.flac
+b7b9c5e1b5ad0cac7b4c7bc86c3bed5f  Dylan - Chapel Hill 15.09.1988_Track13.flac
+2969970a42f9c6b56a96f9ed2685185c  Dylan - Chapel Hill 15.09.1988_Track14.flac
+8a61f9c04ac8382514a8a68ac0dd8d75  Dylan - Chapel Hill 15.09.1988_Track15.flac
+c13ff6fdebc0964160bf958e7913e999  Dylan - Chapel Hill 15.09.1988_Track16.flac
+b15375ccf968527247d1961cde266ba4  Dylan - Chapel Hill 15.09.1988_Track17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-15-jtt.flacf 
+=================== 
+=================== 
+=================== 
+dylan - chapel hill 15.09.1988_track01.flac:d8cf36707f26168c2e9301ce9d156edc
+dylan - chapel hill 15.09.1988_track02.flac:03dad46d40efc16ab09c51cc192fb522
+dylan - chapel hill 15.09.1988_track03.flac:07a50b67351dcba0f737e701128ec0d0
+dylan - chapel hill 15.09.1988_track04.flac:3a359b6ae77f5d18d9f91e38d95f64f4
+dylan - chapel hill 15.09.1988_track05.flac:60f5defc4b806fe35304623be15fefee
+dylan - chapel hill 15.09.1988_track06.flac:92f49c74d7b68aa99db4947fc702222a
+dylan - chapel hill 15.09.1988_track07.flac:0e6f25c16b560e7417a55dfc64eda7fd
+dylan - chapel hill 15.09.1988_track08.flac:ef6d5d7802fb99ab5b00ea941eac712f
+dylan - chapel hill 15.09.1988_track09.flac:1e521a552727731599ce8a05cf10320e
+dylan - chapel hill 15.09.1988_track10.flac:e1641eaf69681ddfc8d79b2832f9dac4
+dylan - chapel hill 15.09.1988_track11.flac:ba71119bd9be8f788545b4773a4b269d
+dylan - chapel hill 15.09.1988_track12.flac:f0ba4e5fdc6c982e6731a976c83b6d68
+dylan - chapel hill 15.09.1988_track13.flac:36541b8c3e1908e1ea2b14b9a0bcb613
+dylan - chapel hill 15.09.1988_track14.flac:f91881c56cfdc7703e0f5b118200d1ae
+dylan - chapel hill 15.09.1988_track15.flac:c54057fc9630627874f4601e14fb2770
+dylan - chapel hill 15.09.1988_track16.flac:00aac3a06c169fd2bf701dfb65bdbc2f
+dylan - chapel hill 15.09.1988_track17.flac:d98e00665c5d0dde4d8d7d5264dd3846
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-15-jtt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.05        6891404 B   ---   --   ---xx   flac  0.4986  Dylan - Chapel Hill 15.09.1988_Track01.flac
+     3:28.13       36721820 B   ---   --   ---xx   flac  0.5230  Dylan - Chapel Hill 15.09.1988_Track02.flac
+     4:29.61       47595116 B   ---   --   ---xx   flac  0.5066  Dylan - Chapel Hill 15.09.1988_Track03.flac
+     5:29.36       58120316 B   ---   --   ---xx   flac  0.5154  Dylan - Chapel Hill 15.09.1988_Track04.flac
+     4:59.72       52912988 B   ---   --   ---xx   flac  0.5177  Dylan - Chapel Hill 15.09.1988_Track05.flac
+     4:53.50       51802844 B   ---   --   ---xx   flac  0.5284  Dylan - Chapel Hill 15.09.1988_Track06.flac
+     4:22.35       46299164 B   ---   --   ---xx   flac  0.5268  Dylan - Chapel Hill 15.09.1988_Track07.flac
+     5:42.56       60460556 B   ---   --   ---xx   flac  0.4818  Dylan - Chapel Hill 15.09.1988_Track08.flac
+     5:40.05       59987804 B   ---   --   ---xx   flac  0.4707  Dylan - Chapel Hill 15.09.1988_Track09.flac
+     5:03.05       53461004 B   ---   --   ---xx   flac  0.4916  Dylan - Chapel Hill 15.09.1988_Track10.flac
+     3:38.41       38551676 B   ---   --   ---xx   flac  0.5040  Dylan - Chapel Hill 15.09.1988_Track11.flac
+     5:30.63       58360220 B   ---   --   ---xx   flac  0.4924  Dylan - Chapel Hill 15.09.1988_Track12.flac
+     6:19.10       66879164 B   ---   --   ---xx   flac  0.5049  Dylan - Chapel Hill 15.09.1988_Track13.flac
+     4:58.74       52741292 B   ---   --   ---xx   flac  0.4902  Dylan - Chapel Hill 15.09.1988_Track14.flac
+     4:26.42       47021228 B   ---   --   ---xx   flac  0.4911  Dylan - Chapel Hill 15.09.1988_Track15.flac
+     4:38.62       49185068 B   ---   --   ---xx   flac  0.5225  Dylan - Chapel Hill 15.09.1988_Track16.flac
+     5:13.36       55297916 B   ---   --   ---xx   flac  0.5352  Dylan - Chapel Hill 15.09.1988_Track17.flac
+    79:34.66      842289580 B                            0.5054  (17 files)
+=================== 
+=================== 
+=================== 

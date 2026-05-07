@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-04-27-Who-lives-outside-the-law-d.flacf 
+=================== 
+=================== 
+=================== 
+fdc62cc1a73a2d6c5947b5337778b949  Cd1\cd1.log
+1d033c3d50fc88ffd725cbbeff8530bc  Cd1\Track01.flac
+acca0aeb54467d9ae3071e48f4796adc  Cd1\Track02.flac
+2642fdbec21e803fb05c2b05f2ac9dd8  Cd1\Track03.flac
+bd8e8b06a7997bbfe7f0156e3527ae8a  Cd1\Track04.flac
+f45e2f8692b098a82436742ccc9f7120  Cd1\Track05.flac
+ad9524c8c1d7350cb5fe88faa76ac1d8  Cd1\Track06.flac
+1cc63c70f1c9991dae5bccbce66283c0  Cd1\Track07.flac
+5cc444ed88fa8605197f1c7b8812e1bb  Cd1\Track08.flac
+238f03987baeb79aaf0e0561c0d87c36  Cd1\Track09.flac
+758d4458e42f2b846a6efd2c94a578d1  Cd1\Track10.flac
+7212f6eba08b7edd7d8de164032401e4  Cd1\Track11.flac
+297164673272c2dc57f16db955b7714f  Cd2\cd2.log
+8d528b3abff4163ca1c7f08b42873239  Cd2\Track01.flac
+2a4dade234eac913dc1917945acbac0c  Cd2\Track02.flac
+314ebf8c4b86a4a663129169627ee200  Cd2\Track03.flac
+365ed9ed3193587bf1bcfa26edfb612c  Cd2\Track04.flac
+53f82cff56574653bfd5912b189b8f81  Cd2\Track05.flac
+469493cf60666270aab78011cc60d6d7  Cd2\Track06.flac
+23fb5594160eec732902c30e0438ee4b  Cd2\Track07.flac
+85e718620c72ef30c92c1181c4c5ea43  Cd2\Track08.flac
+507059f082a857be00b67762ca29f4b3  Cd2\Track09.flac
+1da093d9ab6ea95c4905ed4364d86e63  info.txt
+712f9813a031713073a3c92ccf011a56  Oberhausen 27-4-2002 Who live outside the law.ffp
+b0e5caf813eb7dfbf109c2186adbddff  Oberhausen 27-4-2002 Who live outside the law.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-04-27-Who-lives-outside-the-law-d.flacf\cd1 
+=================== 
+=================== 
+=================== 
+track01.flac:ac5fae55b2c4435eae510fdaa281d31e
+track02.flac:0d7b8bfc02ae06a86adaabe679581124
+track03.flac:53a587d10d827c4690b0528ace27053d
+track04.flac:7b3a673b2795782fe2fc0f04e496bb27
+track05.flac:faa5174fa8aacb2be4920a15289d9e54
+track06.flac:02dc63936a1d9a9f3e773570b2335d88
+track07.flac:0390ffc46ec3828df626d975116cde43
+track08.flac:7c442dce2cd5aa5c51ebf6989cec50f7
+track09.flac:5b7af56247ddceaa0f04eabab4ea918d
+track10.flac:c52bf99b35071000e3347c3ad0c210c7
+track11.flac:628dfab784b78e0c018bef775dc8adb6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-04-27-Who-lives-outside-the-law-d.flacf\cd2 
+=================== 
+=================== 
+=================== 
+track01.flac:e87bbb96a13584374436b5928cee7c0c
+track02.flac:f26facc44a7afa102830df17a538603b
+track03.flac:eb3cd2bfc4bf09810cb0644255eedcf7
+track04.flac:b9d240136241ab6afa2f7e30851a6976
+track05.flac:565a74e01ef9447e7cbe6639aad0e395
+track06.flac:2df9d18ad36fe518e919adbe2f893c56
+track07.flac:2642da0c28a8c78dd34c834cca4bb568
+track08.flac:71267a4b422d6cb55b071b12274bfdc0
+track09.flac:2c06650441f955bbe40bf2f843844d0c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-27-Who-lives-outside-the-law-d.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.38       43660220 B   ---   --   ---xx   flac  0.6113  Track01.flac
+     5:45.40       60952124 B   ---   --   ---xx   flac  0.5811  Track02.flac
+     9:42.43      102765980 B   ---   --   ---xx   flac  0.5937  Track03.flac
+     7:32.30       79803404 B   ---   --   ---xx   flac  0.5610  Track04.flac
+     6:16.04       66335852 B   ---   --   ---xx   flac  0.5835  Track05.flac
+     7:54.07       83630108 B   ---   --   ---xx   flac  0.5593  Track06.flac
+     6:09.09       65112812 B   ---   --   ---xx   flac  0.5984  Track07.flac
+     5:02.61       53416316 B   ---   --   ---xx   flac  0.5825  Track08.flac
+     5:17.65       56071724 B   ---   --   ---xx   flac  0.5092  Track09.flac
+     4:56.58       52350860 B   ---   --   ---xx   flac  0.5215  Track10.flac
+     8:27.45       89540684 B   ---   --   ---xx   flac  0.5858  Track11.flac
+    71:12.25      753640084 B                            0.5729  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-27-Who-lives-outside-the-law-d.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:49.69       93477932 B   ---   --   ---xx   flac  0.5933  Track01.flac
+     7:59.48       84608540 B   ---   --   ---xx   flac  0.5432  Track02.flac
+     5:42.59       60467612 B   ---   --   ---xx   flac  0.5830  Track03.flac
+    10:36.56      112322156 B   ---   --   ---xx   flac  0.5748  Track04.flac
+     6:40.62       70705868 B   ---   --   ---xx   flac  0.5864  Track05.flac
+     8:29.48       89900540 B   ---   --   ---xx   flac  0.5438  Track06.flac
+     5:31.21       58437836 B   ---   --   ---xx   flac  0.5434  Track07.flac
+     6:56.07       73398908 B   ---   --   ---xx   flac  0.6004  Track08.flac
+     6:14.14       66006572 B   ---   --   ---xx   flac  0.5409  Track09.flac
+    67:01.09      709325964 B                            0.5683  (9 files)
+=================== 
+=================== 
+=================== 

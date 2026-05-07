@@ -1,0 +1,97 @@
+===================
+===================
+===================
+=== bd-1997-04-10-Portland-HG.md5
+===================
+===================
+===================
+e3fd6fc5594e23a3d71bfc6118fc3005 *Disc1\bd-1997-04-10-HG-d1t01.flac
+b5d1352fdcc9e957f81167bc95e34eea *Disc1\bd-1997-04-10-HG-d1t02.flac
+4f37114b59db7075fb1b5b7104741c68 *Disc1\bd-1997-04-10-HG-d1t03.flac
+65b3c4defdb6dabf5971dfb9bdc9d732 *Disc1\bd-1997-04-10-HG-d1t04.flac
+82b9ddee3c2b862b15c66725791a0e99 *Disc1\bd-1997-04-10-HG-d1t05.flac
+ad0cdc481ce75243b27367c7105e82b4 *Disc1\bd-1997-04-10-HG-d1t06.flac
+1af89602488b991e773fe5278ad85cd5 *Disc1\bd-1997-04-10-HG-d1t07.flac
+cc9ba29dddf120914d2ed8351a1d51de *Disc1\bd-1997-04-10-HG-d1t08.flac
+32fcf70093c1696ef54f5638a89c9323 *Disc1\bd-1997-04-10-HG-d1t09.flac
+b0d7e149fc63b10f35f10d21a10149fb *Disc2\bd-1997-04-10-HG-d2t01.flac
+c2c0cfbc5a7dc078cbd61480a9b43337 *Disc2\bd-1997-04-10-HG-d2t02.flac
+bbd2522a3491497ede90cb4055aa0fd4 *Disc2\bd-1997-04-10-HG-d2t03.flac
+1c158f3d6bb2ad3eb373e7d4764e6d8c *Disc2\bd-1997-04-10-HG-d2t04.flac
+1810a381fb62c1640da8d7961c7a12b5 *Disc2\bd-1997-04-10-HG-d2t05.flac
+11635324faa8813fd2135b7bfb7a96f0 *Disc2\bd-1997-04-10-HG-d2t06.flac
+095f485a17d0fb0aabbc845eb640ce98 *Port04-10-97(HG)-B.jpg
+a5487b68a7665d5cf374a8bdc8559746 *Port04-10-97(HG)-F.jpg
+===================
+===================
+===================
+=== bd-1997-04-10-Portland-HG.txt
+===================
+===================
+===================
+Bob Dylan
+Sullivan Gym
+University of Southern Maine
+Portland, Maine
+April 10, 1997
+
+Holy Grail Series: Why Must I Always Be The Thief?
+
+Source/Lineage: No Info
+
+Sound Quality: Excellent
+
+Disk 1
+
+01 Crash On The Levee (Down In The Flood) 
+02 Senor (Tales Of Yankee Power) 
+03 All Along The Watchtower 
+04 You Ain't Goin' Nowhere 
+05 Watching The River Flow 
+06 Silvio 
+07 Friend Of The Devil (Acoustic W Band) 
+08 To Ramona (Acoustic W Band) 
+09 Tangled Up In Blue (Acoustic W Band) 
+
+Disc 2
+
+01 Stuck Inside Of Mobile With The Memphis Blues Again 
+02 Tears Of Rage 
+03 Highway 61 Revisited 
+04 Like A Rolling Stone 
+05 A Hard Rain's A-Gonna Fall (Acoustic W Band) 
+06 Rainy Day Women # 12 & 35
+
+
+=========================
+=========================
+=========================
+=== md5 for bd-1997-04-10-Portland-HG
+=========================
+=========================
+=========================
+
+
+e3fd6fc5594e23a3d71bfc6118fc3005 *Disc1/bd-1997-04-10-HG-d1t01.flac
+b5d1352fdcc9e957f81167bc95e34eea *Disc1/bd-1997-04-10-HG-d1t02.flac
+4f37114b59db7075fb1b5b7104741c68 *Disc1/bd-1997-04-10-HG-d1t03.flac
+65b3c4defdb6dabf5971dfb9bdc9d732 *Disc1/bd-1997-04-10-HG-d1t04.flac
+82b9ddee3c2b862b15c66725791a0e99 *Disc1/bd-1997-04-10-HG-d1t05.flac
+ad0cdc481ce75243b27367c7105e82b4 *Disc1/bd-1997-04-10-HG-d1t06.flac
+1af89602488b991e773fe5278ad85cd5 *Disc1/bd-1997-04-10-HG-d1t07.flac
+cc9ba29dddf120914d2ed8351a1d51de *Disc1/bd-1997-04-10-HG-d1t08.flac
+32fcf70093c1696ef54f5638a89c9323 *Disc1/bd-1997-04-10-HG-d1t09.flac
+b0d7e149fc63b10f35f10d21a10149fb *Disc2/bd-1997-04-10-HG-d2t01.flac
+c2c0cfbc5a7dc078cbd61480a9b43337 *Disc2/bd-1997-04-10-HG-d2t02.flac
+bbd2522a3491497ede90cb4055aa0fd4 *Disc2/bd-1997-04-10-HG-d2t03.flac
+1c158f3d6bb2ad3eb373e7d4764e6d8c *Disc2/bd-1997-04-10-HG-d2t04.flac
+1810a381fb62c1640da8d7961c7a12b5 *Disc2/bd-1997-04-10-HG-d2t05.flac
+11635324faa8813fd2135b7bfb7a96f0 *Disc2/bd-1997-04-10-HG-d2t06.flac
+095f485a17d0fb0aabbc845eb640ce98 *Port04-10-97(HG)-B.jpg
+a5487b68a7665d5cf374a8bdc8559746 *Port04-10-97(HG)-F.jpg
+
+
+
+===================
+===================
+===================

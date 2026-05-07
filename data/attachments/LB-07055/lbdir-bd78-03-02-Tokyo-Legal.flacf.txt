@@ -1,0 +1,137 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-03-02-Tokyo-Legal.flacf 
+=================== 
+=================== 
+=================== 
+843836fbe31179a6631382828c16817a  Artwork\Tokyo Legal Disc01.png
+033d9c956c1f54d933e90acbd7ed3455  Artwork\Tokyo Legal Disc02.png
+80a076a5696fac382d7ff5abdb88c404  Artwork\Tokyo Legal Front.png
+1f35198d517da3941a2d46490c946437  Artwork\Tokyo Legal Inside.png
+cfe57f5627d95c0d990d5cecde6272ee  Disc 1of2\01 - A Hard Rain's A-Gonna Fall (Instrumental).flac
+cac1122ca14748dc09477a79155e93ae  Disc 1of2\02 - Love Her With A Feeling.flac
+b08b92bfcc77a1fbe58238f0dd4e09f4  Disc 1of2\03 - Mr. Tambourine Man.flac
+3506cdae2d68174b7c9814479639d50a  Disc 1of2\04 - I Threw It All Away.flac
+371ea21e04eeea41ee0198b855147925  Disc 1of2\05 - Shelter From The Storm.flac
+0a81034e62ba51dd0dfedbe3b2b9eb24  Disc 1of2\06 - Love Minus Zero - No Limit.flac
+6ce8c46f4d74619c8166457bf4c53db2  Disc 1of2\07 - Girl From The North Country.flac
+1afcf6f4c2d7106fc2921ce20b07ea33  Disc 1of2\08 - Ballad Of A Thin Man.flac
+9371b5305bc30f6672c3d96cd63a4692  Disc 1of2\09 - Maggie's Farm.flac
+45aabd3b41ba6da5c9c2f347557320d3  Disc 1of2\10 - To Ramona.flac
+5636073d5a51b9e7a5241d176cd381ef  Disc 1of2\11 - Like A Rolling Stone.flac
+0d45d67eaf11ca16ed6d859f195eb2de  Disc 1of2\12 - I Shall Be Released.flac
+7eb1949831720dae8828413466bc84bf  Disc 1of2\13 - Is Your Love In Vain.flac
+ab327b126fc7c040406704ab017deb97  Disc 1of2\14 - Going, Going, Gone.flac
+fce5de06212480c732e48ac22bf21faf  Disc 1of2\Tokyo Legal Disc01.cue
+f8d46ebb7f602eb1e9f0e72032979b14  Disc 1of2\Tokyo Legal Disc01.ffp
+b57070cfbe614de7dbbe1734ea32c0a7  Disc 1of2\Tokyo Legal Disc01.log
+16c755f19b88aaef7950a0504c7bc280  Disc 1of2\Tokyo Legal Disc01.m3u
+7af46497878fa4d4b30d6744b2e179b1  Disc 1of2\Tokyo Legal Disc01.md5
+4f381f6fe7cb6b98eeda1a872bfebc5a  Disc 1of2\Tokyo Legal Disc01.st5
+28c39377894a4297ddf29e92dd841f46  Disc 2of2\01 - One More Cup Of Coffee (Valley Below).flac
+382ee58ba65ecac7493d92e7f54dd56e  Disc 2of2\02 - Blowin In The Wind.flac
+d679df1a2086789be007e954db658689  Disc 2of2\03 - Just Like A Woman.flac
+b40a70ec27425e303c340fa676824b52  Disc 2of2\04 - Oh, Sister.flac
+9cc5b20d3d28080704ad1a6a73e2ca9b  Disc 2of2\05 - Simple Twist Of Fate.flac
+3b61b43a196c4670e8401d76ff91a7e7  Disc 2of2\06 - You're A Big Girl Now.flac
+2136a524c3b05ccf157bb31dec24fcf0  Disc 2of2\07 - All Along The Watchtower.flac
+1d59829ffcfc203a0dbad4c98ad80d30  Disc 2of2\08 - The Man In Me.flac
+228070f23458cf7ef765f9cc11e7870d  Disc 2of2\09 - Don't Think Twice, It's All Right.flac
+ae185538a8040624258d2146cd7927ea  Disc 2of2\10 - It's Alright, Ma (I'm Only Bleeding).flac
+eb9d783ad7aac34cc5c97c6101309ac2  Disc 2of2\11 - Forever Young.flac
+33e64235df0d9645570d141adc329520  Disc 2of2\12 - The Times They Are A-Changin'.flac
+8ea7d45bc6ebc9dc59b5f092fc8184c7  Disc 2of2\Tokyo Legal Disc02.cue
+c1af15ad841b9f6ea566e6847f3b8b40  Disc 2of2\Tokyo Legal Disc02.ffp
+572a452b6f1d11e6b211eaa4a52e3e07  Disc 2of2\Tokyo Legal Disc02.log
+f73a55f30c043f471608023643860212  Disc 2of2\Tokyo Legal Disc02.m3u
+cf8207e8e434d38c3046d52e74391f22  Disc 2of2\Tokyo Legal Disc02.md5
+e1b76f2c4aa79e85fa5c00175b3e8e49  Disc 2of2\Tokyo Legal Disc02.st5
+11fe14371c17fddbd8cf03dcda6e416e  Tokyo Legal info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-03-02-Tokyo-Legal.flacf\Disc 1of2 
+=================== 
+=================== 
+=================== 
+01 - A Hard Rain's A-Gonna Fall (Instrumental).flac:d43f815d11236674f6701c24293644ff
+02 - Love Her With A Feeling.flac:819e8271ed52e87490d9b74be19bde53
+03 - Mr. Tambourine Man.flac:36cdee5bd0dd2b4525db046400e137fc
+04 - I Threw It All Away.flac:b5d44c876d8c36414dcf5ea9e456dd02
+05 - Shelter From The Storm.flac:8591b6c8a10a3616299a3454bbbf60f7
+06 - Love Minus Zero - No Limit.flac:763abd65be41ad59dd50395e2a45205a
+07 - Girl From The North Country.flac:89179ba22d3feab3ff8f5789e01add06
+08 - Ballad Of A Thin Man.flac:5528064648f57cc7e3b1915b5094f947
+09 - Maggie's Farm.flac:85ced93c11d5a885405376f2fbb07dc3
+10 - To Ramona.flac:cb4906314e79b779907166d1536470d3
+11 - Like A Rolling Stone.flac:5d805cdc1de136d006bcf9dcd2054661
+12 - I Shall Be Released.flac:f779e73bdb90684c7cd4afc10f14e486
+13 - Is Your Love In Vain.flac:9f7616ae9bd99e3d17bc6da96351d455
+14 - Going, Going, Gone.flac:2598950af935179ad01ce09ec8cef0ce
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-03-02-Tokyo-Legal.flacf\Disc 2of2 
+=================== 
+=================== 
+=================== 
+01 - One More Cup Of Coffee (Valley Below).flac:746a14a99be438e4582083f3b834b2ca
+02 - Blowin In The Wind.flac:1b461d921614541e10dc50bd00cecfff
+03 - Just Like A Woman.flac:fc01cfce7ff96b4dda25d51aa42dedb2
+04 - Oh, Sister.flac:29df16cf02820392e42cd5b3acb12858
+05 - Simple Twist Of Fate.flac:3020fbb9e4290d82f3f9a5634f820c80
+06 - You're A Big Girl Now.flac:115a4ad6fb91332c8a022c570a00f5da
+07 - All Along The Watchtower.flac:dae4e6861d6d55847618b29628e53e67
+08 - The Man In Me.flac:f850d4fa8315db0fe63d87aa9a9059c3
+09 - Don't Think Twice, It's All Right.flac:9106975b4276b595763af30d4fe79494
+10 - It's Alright, Ma (I'm Only Bleeding).flac:e8fc345b981dc330be7fb9957eba4816
+11 - Forever Young.flac:d0874ec3f78571c5db8663c70aed3d96
+12 - The Times They Are A-Changin'.flac:2abfea1bae3088108b0fb0dd4a3df7f0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-03-02-Tokyo-Legal.flacf\Disc 1of2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.58       34005260 B   ---   --   ---xx   flac  0.4494  01 - A Hard Rain's A-Gonna Fall (Instrumental).flac
+     2:54.39       30785372 B   ---   --   ---xx   flac  0.5219  02 - Love Her With A Feeling.flac
+     4:51.60       51473564 B   ---   --   ---xx   flac  0.5324  03 - Mr. Tambourine Man.flac
+     5:26.71       57673436 B   ---   --   ---xx   flac  0.5328  04 - I Threw It All Away.flac
+     4:40.06       49406156 B   ---   --   ---xx   flac  0.5394  05 - Shelter From The Storm.flac
+     3:34.19       37794332 B   ---   --   ---xx   flac  0.5772  06 - Love Minus Zero - No Limit.flac
+     5:32.38       58654220 B   ---   --   ---xx   flac  0.4987  07 - Girl From The North Country.flac
+     4:38.58       49175660 B   ---   --   ---xx   flac  0.5620  08 - Ballad Of A Thin Man.flac
+     5:08.32       54406508 B   ---   --   ---xx   flac  0.5751  09 - Maggie's Farm.flac
+     4:19.03       45694700 B   ---   --   ---xx   flac  0.5521  10 - To Ramona.flac
+     6:38.31       70280156 B   ---   --   ---xx   flac  0.5593  11 - Like A Rolling Stone.flac
+     4:04.69       43203932 B   ---   --   ---xx   flac  0.5486  12 - I Shall Be Released.flac
+     4:12.59       44591612 B   ---   --   ---xx   flac  0.5397  13 - Is Your Love In Vain.flac
+     4:20.65       46016924 B   ---   --   ---xx   flac  0.5415  14 - Going, Going, Gone.flac
+    63:36.08      673161832 B                            0.5398  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-03-02-Tokyo-Legal.flacf\Disc 2of2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:25.44       46849532 B   ---   --   ---xx   flac  0.5171  01 - One More Cup Of Coffee (Valley Below).flac
+     4:57.27       52454348 B   ---   --   ---xx   flac  0.4659  02 - Blowin In The Wind.flac
+     5:05.12       53830268 B   ---   --   ---xx   flac  0.5080  03 - Just Like A Woman.flac
+     4:12.09       44474012 B   ---   --   ---xx   flac  0.4187  04 - Oh, Sister.flac
+     5:01.20       53143484 B   ---   --   ---xx   flac  0.4761  05 - Simple Twist Of Fate.flac
+     4:45.41       50370476 B   ---   --   ---xx   flac  0.4605  06 - You're A Big Girl Now.flac
+     3:37.15       38314124 B   ---   --   ---xx   flac  0.5211  07 - All Along The Watchtower.flac
+     3:47.62       40188668 B   ---   --   ---xx   flac  0.4984  08 - The Man In Me.flac
+     5:38.05       59635004 B   ---   --   ---xx   flac  0.4734  09 - Don't Think Twice, It's All Right.flac
+     7:35.47       80372588 B   ---   --   ---xx   flac  0.4689  10 - It's Alright, Ma (I'm Only Bleeding).flac
+     5:38.54       59750252 B   ---   --   ---xx   flac  0.4799  11 - Forever Young.flac
+     7:56.66       84121676 B   ---   --   ---xx   flac  0.4636  12 - The Times They Are A-Changin'.flac
+    62:41.27      663504432 B                            0.4773  (12 files)
+=================== 
+=================== 
+=================== 

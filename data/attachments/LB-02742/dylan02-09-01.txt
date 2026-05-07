@@ -1,0 +1,62 @@
+Bob Dylan 
+Aspen, Colorado
+Buttermilk Mountain
+Janus Jazz Fesival
+September 1, 2002
+  
+Source: Neumann KM 140's (in a hat)>EAA_PSP-2>Sony SBM-1>Sony D-100
+Transfer: DAT master >Tascam DA-P1>Sek'd Prodif 96@48Khz >Sek'd Red Roaster Ultra (v5.58)>WAV>mkwACT (v0.97b1)>SHN(archival one track shn)>mkwACT>WAV>CDWAV(v1.6)(to split tracks)>shntool (verify tracks cut on sector boundaries)>FLAC frontend (v1.0.3)>FLAC; NO DAE in process.
+taped and transferred by HH; CDWAV, shntool, and FLAC conversion by Hans Voight (salmonjock@hotmail.com)
+
+Disk 1
+t1.  Intro
+t2.  Duncan And Brady (acoustic) 
+t3.  I'll Be Your Baby Tonight (acoustic) (Larry on pedal steel) 
+t4.  It's Alright, Ma (I'm Only Bleeding) (acoustic) (Charlie on dobro and Larry on cittern) 
+t5.  This World Can't Stand Long (acoustic) (Larry on mandolin) 
+t6.  Tweedle Dee & Tweedle Dum 
+t7.  Quinn, The Eskimo (The Mighty Quinn) 
+t8.  Subterranean Homesick Blues (Larry on slide guitar) 
+t9.  Lonesome Day Blues (Larry on slide guitar) 
+t10.  Mr. Tambourine Man (acoustic) 
+t11.  Masters Of War (acoustic) (Charlie on dobro) 
+t12.  Tangled Up In Blue (acoustic) 
+t13.  Summer Days 
+t14.  Make You Feel My Love 
+
+Disk 2
+t1.  Cold Irons Bound 
+t2.  Rainy Day Women #12 & 35 (Larry on steel guitar) 
+(encore) 
+t3.  Like A Rolling Stone 
+t4.  Blowin' In The Wind (acoustic) 
+t5.  All Along The Watchtower 
+ 
+
+
+
+C:\dylan>shntool len *.wav
+    length     expanded size   cdr  WAVE  probs   filename
+     0:36.60       6491564     ---   --    ---    dylan02-09-01d1t01.wav
+     3:20.68      35439980     ---   --    ---    dylan02-09-01d1t02.wav
+     5:39.53      59924300     ---   --    ---    dylan02-09-01d1t03.wav
+     6:35.66      69833276     ---   --    ---    dylan02-09-01d1t04.wav
+     4:29.60      47592764     ---   --    ---    dylan02-09-01d1t05.wav
+     4:13.68      44789180     ---   --    ---    dylan02-09-01d1t06.wav
+     4:31.64      47954972     ---   --    ---    dylan02-09-01d1t07.wav
+     5:30.24      58268492     ---   --    ---    dylan02-09-01d1t08.wav
+     7:19.51      77559596     ---   --    ---    dylan02-09-01d1t09.wav
+     6:52.30      72747404     ---   --    ---    dylan02-09-01d1t10.wav
+     5:06.05      53990204     ---   --    ---    dylan02-09-01d1t11.wav
+     9:23.52      99435548     ---   --    ---    dylan02-09-01d1t12.wav
+     6:55.26      73267196     ---   --    ---    dylan02-09-01d1t13.wav
+     5:27.43      57783980     ---   --    ---    dylan02-09-01d1t14.wav
+     6:32.00      69148844     ---   --    ---    dylan02-09-01d2t01.wav
+    10:51.33     114914060     ---   --    ---    dylan02-09-01d2t02.wav
+     7:21.18      77834780     ---   --    ---    dylan02-09-01d2t03.wav
+     6:20.60      67173164     ---   --    ---    dylan02-09-01d2t04.wav
+     5:13.22      55264988     ---   --    ---    dylan02-09-01d2t05.wav
+   112:22.53    1189414292 B                      (totals for 19 files)
+
+
+

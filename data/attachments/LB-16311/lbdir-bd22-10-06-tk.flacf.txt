@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd22-10-06-tk.flacf
+===================
+===================
+===================
+f387c5f8a02ceda4d06bc73fe078bc3e *01 2022-10-06 Berlin TK_1_1.flac
+3df4bcbf8ad3306ae96abec7bc4a2279 *bd2022-10-06 Berlin TK.md5
+57745130c5ba0ac2761d06ad4a0fb49f *bd2022-10-06 Berlin TK_02.flac
+134a18da754501df8e1cf766e4487a14 *bd2022-10-06 Berlin TK_03.flac
+66544305ff05cc7831775a24c815f672 *bd2022-10-06 Berlin TK_04.flac
+5459fde9c10ff67e6f020bea86d1dae6 *bd2022-10-06 Berlin TK_05.flac
+0fbfa0709cd622920c361297586ccbf7 *bd2022-10-06 Berlin TK_06.flac
+9729e56d4982ca40aac28e8295edcca7 *bd2022-10-06 Berlin TK_07.flac
+1e97cd7214a8b629888063b0c197384b *bd2022-10-06 Berlin TK_08.flac
+d4dbe8f0b331b0aee2047c0ce9b69de0 *bd2022-10-06 Berlin TK_09.flac
+6dad1689f415a1f4dcca85d807de3e8e *bd2022-10-06 Berlin TK_10.flac
+ba18a5c76be5f5330f562147006c2daf *bd2022-10-06 Berlin TK_11.flac
+1e938826a103c619758566af33010154 *bd2022-10-06 Berlin TK_12.flac
+26e62065bb3e3913925826483b5085f1 *bd2022-10-06 Berlin TK_13.flac
+cc0d1bca7090e855681487dd415298b2 *bd2022-10-06 Berlin TK_14.flac
+a4d61bc72e7cda2fd143c5ccb5abb8b8 *bd2022-10-06 Berlin TK_15.flac
+91df518ccd5cf29718c9eed8499b521d *bd2022-10-06 Berlin TK_16.flac
+7363dccd5efccb961b75ce474281930e *bd2022-10-06 Berlin TK_17.flac
+40a441d5b68c50d04d1bede4d8a1a348 *bd2022-10-06 Berlin TK_18.flac
+673fbe318cbe7788692b19f86c119868 *Info.txt
+===================
+===================
+===================
+=== ffp for: bd22-10-06-tk.flacf
+===================
+===================
+===================
+01 2022-10-06 Berlin TK_1_1.flac:7fc779204c04c96c18da6a84653a87bc
+bd2022-10-06 Berlin TK_02.flac:297804d31df0c8fcefd8466cdc6dac51
+bd2022-10-06 Berlin TK_03.flac:2a084a891f27e4ce8214189045249be2
+bd2022-10-06 Berlin TK_04.flac:24fed612c40e64b2f622896ff3e139df
+bd2022-10-06 Berlin TK_05.flac:16847872c67ec8cadddec1654bce59d7
+bd2022-10-06 Berlin TK_06.flac:dfc192f125545449e4b167da603ac7b7
+bd2022-10-06 Berlin TK_07.flac:a19f0ff35e4b9c14689fda767d408f64
+bd2022-10-06 Berlin TK_08.flac:b2386f381f9dca93e4e7d58bad1f4003
+bd2022-10-06 Berlin TK_09.flac:42f8a6fa7ab92add0a91035318162d21
+bd2022-10-06 Berlin TK_10.flac:670af9dfb6bc959ea3c4438749145984
+bd2022-10-06 Berlin TK_11.flac:bf787b189030d7b7594be63e88e97ca8
+bd2022-10-06 Berlin TK_12.flac:15ad24aa6fb5346db8e966ab63311b2a
+bd2022-10-06 Berlin TK_13.flac:05ef30d44b38f6b566e947510a0a433a
+bd2022-10-06 Berlin TK_14.flac:e2b115b12f047ca1672726a3d2bbec74
+bd2022-10-06 Berlin TK_15.flac:5d2d269dbc67ba356962c43231d3c2cd
+bd2022-10-06 Berlin TK_16.flac:24e65a21274e970244ca494086a530cf
+bd2022-10-06 Berlin TK_17.flac:cf194985fe23fc2515948e27903b1265
+bd2022-10-06 Berlin TK_18.flac:09e9044a9da76ba11b58972d73728b62
+===================
+===================
+===================
+=== shntool len for: bd22-10-06-tk.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.813     103338284 B   cxx   --   ---xx   flac  0.6486  01 2022-10-06 Berlin TK_1_1.flac
+     5:12.680      90051878 B   cxx   --   ---xx   flac  0.6582  bd2022-10-06 Berlin TK_02.flac
+     5:42.067      98515238 B   cxx   --   ---xx   flac  0.5692  bd2022-10-06 Berlin TK_03.flac
+     7:05.867     122649644 B   cxx   --   ---xx   flac  0.6265  bd2022-10-06 Berlin TK_04.flac
+     6:06.280     105488684 B   cxx   --   ---xx   flac  0.6100  bd2022-10-06 Berlin TK_05.flac
+     6:31.040     112619564 B   cxx   --   ---xx   flac  0.5621  bd2022-10-06 Berlin TK_06.flac
+     7:41.587     132936998 B   cxx   --   ---xx   flac  0.6022  bd2022-10-06 Berlin TK_07.flac
+     5:04.360      87655718 B   cxx   --   ---xx   flac  0.6193  bd2022-10-06 Berlin TK_08.flac
+     7:46.333     134304038 B   cxx   --   ---xx   flac  0.5872  bd2022-10-06 Berlin TK_09.flac
+     4:56.893      85505318 B   cxx   --   ---xx   flac  0.6232  bd2022-10-06 Berlin TK_10.flac
+    11:04.467     191366438 B   cxx   --   ---xx   flac  0.5607  bd2022-10-06 Berlin TK_11.flac
+     6:14.867     107961644 B   cxx   --   ---xx   flac  0.6376  bd2022-10-06 Berlin TK_12.flac
+     6:41.173     115537964 B   cxx   --   ---xx   flac  0.5894  bd2022-10-06 Berlin TK_13.flac
+     3:19.787      57538604 B   cxx   --   ---xx   flac  0.6510  bd2022-10-06 Berlin TK_14.flac
+     6:08.227     106049324 B   cxx   --   ---xx   flac  0.5583  bd2022-10-06 Berlin TK_15.flac
+     5:39.707      97835558 B   cxx   --   ---xx   flac  0.6135  bd2022-10-06 Berlin TK_16.flac
+     0:50.733      14611244 B   cxx   --   ---xx   flac  0.7113  bd2022-10-06 Berlin TK_17.flac
+     7:00.299     121046168 B   cxx   --   ---xx   flac  0.6237  bd2022-10-06 Berlin TK_18.flac
+   109:05.179    1885012308 B                            0.6049  (18 files)
+===================
+===================
+===================

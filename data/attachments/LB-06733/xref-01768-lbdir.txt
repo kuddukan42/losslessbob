@@ -1,0 +1,121 @@
+===================
+===================
+===================
+=== md5 for: bd78-02-26-f.flacf
+===================
+===================
+===================
+4846449a85258ef6f2b277c3e6720077 *CD1\01 A hard rain's a-gonna fall [instrumental].flac
+c9745b4b475dbf8fc5740d8f9de0d051 *CD1\02 Love her with a feeling (Tampa Red).flac
+c1fb1186979f4444c536a687d547667f *CD1\03 One more cup of coffee (valley below).flac
+8b0d2f08a2bd4ccd0c878d3a30302254 *CD1\04 Mr. Tambourine Man.flac
+e5480a19044aab68928a68d333158102 *CD1\05 I threw it all away.flac
+40f0962156e35b0b360dddfd606231bf *CD1\07 Girl from the North Country.flac
+2ad02499f8d060f507cc55c983e3400c *CD1\08 I'll be your baby tonight.flac
+22a8f9ebba6c2374a8d65f5fc06712d8 *CD1\09 Shelter from the storm.flac
+16f43076d3597be352b44a1feaa0df4c *CD1\10 Ballad of a thin man.flac
+49c93c97ff17fdc922004a0c7e882c47 *CD1\11 Maggie's farm.flac
+0aab7bf705afbf9a3048b6dcebfc97e6 *CD1\12 To Ramona.flac
+9860b0c51b1534a8e7502e5d8f32abc2 *CD1\13 Like a rolling stone.flac
+092cc4d5dfffc72e1355a0dd771ea059 *CD1\14 I shall be released.flac
+cd3b3e11ca35497deee79ee0fd5a55e5 *CD1\15 Going, going, gone.flac
+6d51be6c7ba89247b513274c360c2768 *CD1\CD1.ffp
+6d51be6c7ba89247b513274c360c2768 *CD1\CD1.txt
+4d591af68d9d7d7ac07789886054a633 *CD2\01 One of us must know (sooner or later).flac
+17e856ccdb3a1c782e7abfecc1b9291a *CD2\02 Blowin' in the wind.flac
+bd42399e1d1c9f6656d46d5bd5ed8ff5 *CD2\03 Just like a woman.flac
+f9f6558ba713aca63b402422f985aa5b *CD2\04 Oh, sister.flac
+c28b647bd3238d118b9692cd17326f14 *CD2\05 You're a big girl now.flac
+d39b1b9b82d381ba8baf2ec3ae8f90b4 *CD2\06 All along the watchtower.flac
+89e1e89fce0f83c505160adfd22ea0c1 *CD2\07 I want you.flac
+231f2806bfcbfe10ca98e928b6039dcf *CD2\08 All I really want to do.flac
+614ce780b8f6fcf2b890474f3c249075 *CD2\09 The man in me.flac
+29ec90a1dfd9afb1bb9efc22c9960d08 *CD2\10 Knockin' on heaven's door.flac
+e43d3c532ef4be908374475009c2f385 *CD2\11 It's alright, ma (I'm only bleeding).flac
+829c082656414cb5a93c8fc52a3288f7 *CD2\12 Forever young.flac
+4a3257ebec42118cbf7e7304d0937e07 *CD2\13 The times they are a-changin'.flac
+7180ffd0bd113569c5f0c2cbd8b4e669 *CD2\CD2.ffp
+7180ffd0bd113569c5f0c2cbd8b4e669 *CD2\CD2.txt
+21bd49cc7129140280635055b5148848 *Info\Bob Dylan 1978-02-26 Matsushita Denki Taiikukan, Hirakata City, Osaka Fu, Japan [remaster].txt
+===================
+===================
+===================
+=== ffp for: bd78-02-26-f.flacf
+===================
+===================
+===================
+CD1\01 A hard rain's a-gonna fall [instrumental].flac:176fc3b499f34bffcc734e7c000579f3
+CD1\02 Love her with a feeling (Tampa Red).flac:138d25919dd23d65f2752ce6b6258afa
+CD1\03 One more cup of coffee (valley below).flac:e72094c4dcbecc721a6be9ddd26e8dc0
+CD1\04 Mr. Tambourine Man.flac:7c926f058d2110f18e1f15af607ca11d
+CD1\05 I threw it all away.flac:9b98495f8bbea37e7512a13e0b5daed2
+CD1\07 Girl from the North Country.flac:248053ce9bfab9a0dc3610ec81e79ec2
+CD1\08 I'll be your baby tonight.flac:5f15c80c9219260a9afad67494beb40b
+CD1\09 Shelter from the storm.flac:20120912b9570a4981e9e5d70493e205
+CD1\10 Ballad of a thin man.flac:bf3504b52fc4eabdfd41ac30f9196437
+CD1\11 Maggie's farm.flac:ba134faa7f3444bf8472a070851684db
+CD1\12 To Ramona.flac:ebeeb62ef069a0b6001f2d717e4fd32f
+CD1\13 Like a rolling stone.flac:d2babe04a3de86604a6924f6a2464868
+CD1\14 I shall be released.flac:5f527eedf838537b7b9a7458efaf7bcc
+CD1\15 Going, going, gone.flac:527f490107b6eab460f7e838bf96c360
+CD2\01 One of us must know (sooner or later).flac:f95bc7299091363a0f5058d1e5349a5e
+CD2\02 Blowin' in the wind.flac:ba791062c88fb81d45dc99c00aaef72c
+CD2\03 Just like a woman.flac:af81b367a19e669bef537f9d0f266306
+CD2\04 Oh, sister.flac:d657d47f779766d60bf47141d713bffd
+CD2\05 You're a big girl now.flac:e1f30f26e21de03c2c4c07654dfb4440
+CD2\06 All along the watchtower.flac:e71e49b3b64565191c86575cfa17d902
+CD2\07 I want you.flac:6a4fae690af998b7d0e0813302fa5ba2
+CD2\08 All I really want to do.flac:f3c4a77b682714cfee56c4d5e4ebebdb
+CD2\09 The man in me.flac:ff8da2302929a0f4626770760f9193e7
+CD2\10 Knockin' on heaven's door.flac:14e230a78417e3919ced6f039f1bbb20
+CD2\11 It's alright, ma (I'm only bleeding).flac:0517b93fa3912538d6fa0de9ca0a5fac
+CD2\12 Forever young.flac:135171169318fb3c3eec66d46ca32940
+CD2\13 The times they are a-changin'.flac:1e574c8121a86cfae918c6b06913c197
+===================
+===================
+===================
+=== shntool len for: bd78-02-26-f.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.11       40068716 B   ---   --   ---xx   flac  0.6881  01 A hard rain's a-gonna fall [instrumental].flac
+     2:47.36       29543516 B   ---   --   ---xx   flac  0.6759  02 Love her with a feeling (Tampa Red).flac
+     4:58.07       52583708 B   ---   --   ---xx   flac  0.6814  03 One more cup of coffee (valley below).flac
+     5:10.05       54695804 B   ---   --   ---xx   flac  0.7032  04 Mr. Tambourine Man.flac
+     4:29.21       47501036 B   ---   --   ---xx   flac  0.6814  05 I threw it all away.flac
+     5:30.69       58374332 B   ---   --   ---xx   flac  0.6685  07 Girl from the North Country.flac
+     3:37.10       38302364 B   ---   --   ---xx   flac  0.6785  08 I'll be your baby tonight.flac
+     5:02.55       53402204 B   ---   --   ---xx   flac  0.6875  09 Shelter from the storm.flac
+     4:46.43       50551580 B   ---   --   ---xx   flac  0.6869  10 Ballad of a thin man.flac
+     4:57.73       52562540 B   ---   --   ---xx   flac  0.6928  11 Maggie's farm.flac
+     4:29.71       47618636 B   ---   --   ---xx   flac  0.6899  12 To Ramona.flac
+     5:43.05       60517004 B   ---   --   ---xx   flac  0.6966  13 Like a rolling stone.flac
+     4:04.07       43058108 B   ---   --   ---xx   flac  0.6849  14 I shall be released.flac
+     4:05.23       43272140 B   ---   --   ---xx   flac  0.6826  15 Going, going, gone.flac
+    63:29.61      672051688 B                            0.6861  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd78-02-26-f.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:35.44       48613532 B   ---   --   ---xx   flac  0.6916  01 One of us must know (sooner or later).flac
+     5:05.73       53973740 B   ---   --   ---xx   flac  0.6725  02 Blowin' in the wind.flac
+     4:54.44       51965132 B   ---   --   ---xx   flac  0.6850  03 Just like a woman.flac
+     4:22.61       46360316 B   ---   --   ---xx   flac  0.6762  04 Oh, sister.flac
+     4:59.43       52844780 B   ---   --   ---xx   flac  0.6761  05 You're a big girl now.flac
+     3:26.22       36390188 B   ---   --   ---xx   flac  0.6870  06 All along the watchtower.flac
+     2:51.13       30195020 B   ---   --   ---xx   flac  0.6736  07 I want you.flac
+     3:36.47       38212988 B   ---   --   ---xx   flac  0.6899  08 All I really want to do.flac
+     4:10.31       44172956 B   ---   --   ---xx   flac  0.6758  09 The man in me.flac
+     3:48.02       40223948 B   ---   --   ---xx   flac  0.6853  10 Knockin' on heaven's door.flac
+     7:56.70       84131084 B   ---   --   ---xx   flac  0.6933  11 It's alright, ma (I'm only bleeding).flac
+     5:45.02       60862748 B   ---   --   ---xx   flac  0.6942  12 Forever young.flac
+     5:07.30       54225404 B   ---   --   ---xx   flac  0.6903  13 The times they are a-changin'.flac
+    60:40.32      642171836 B                            0.6847  (13 files)
+===================
+===================
+===================

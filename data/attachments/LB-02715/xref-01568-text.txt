@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== 780712_Gothenburg.txt
+===================
+===================
+===================
+Bob Dylan
+
+Scandinavium
+Gothenburg, Sweden
+12 July 1978
+
+
+01 My Back Pages
+02 Love Her With a Feeling (Tampa Red)
+03 Baby Stop Crying
+04 Mr. Tambourine Man
+05 Shelter from the Storm
+06 It's All Over Now, Baby Blue
+07 Girl from the North Country
+08 Ballad of a Thin Man
+09 Maggie's Farm
+10 Simple Twist of Fate
+11 Like a Rolling Stone
+12 I Shall Be Released
+13 Going, Going, Gone
+14 Rainy Day Women # 12 & 35
+15 True Love Tends to Forget
+16 Gates of Eden
+17 The Man in Me
+18 One More Cup of Coffee (Valley Below)
+19 Blowin' in the Wind
+20 I Want You
+21 Seor (Tales of Yankee Power)
+22 Masters Oo War
+23 Just Like a Woman
+24 To Ramona
+25 All Along the Watchtower
+26 All I Really Want to Do
+27 It's Alright, Ma (I'm Only Bleeding)
+28 Forever Young
+29 Changing of the Guards
+30 The Times They are A-Changin'
+
+Musicians: Bob Dylan (vocal, guitar & harmonica), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Jerry Scheff (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Carolyn Dennis (background vocals)
+
+
+
+===================
+===================
+===================
+=== Bob_Dylan_1978-07-12_Scandinavium, Gothenburg.md5
+===================
+===================
+===================
+9ba10a61cb84de3d8d1942f1945f52dc *780712_Gothenburg.txt
+db5f850f20398b3351a531c0eda5cc71 *FLAC\01 My Back Pages.flac
+a1eabd8ec0812656cbf89141a2f7a51a *FLAC\02 Love Her With a Feeling.flac
+2a18ecca08a32a28ed53ee5371e01329 *FLAC\03 Baby Stop Crying.flac
+cdcb90151ff3c5a58d93088b6bf73c71 *FLAC\04 Mr. Tambourine Man.flac
+6c603d9675bd4368e0654830a684e625 *FLAC\05 Shelter from the Storm.flac
+799192a32df280b96a826070792e6874 *FLAC\06 It's All Over Now, Baby Blue.flac
+8c6d03e85454e2f5a7e54a178b92bebe *FLAC\07 Girl from the North Country.flac
+b99fe78a03487acdb8528590715c5326 *FLAC\08 Ballad of a Thin Man.flac
+0d27043b9f547da6fe5cf6491850124d *FLAC\09 Maggie's Farm.flac
+fa686567f00710b1914b4526f75d7baf *FLAC\10 Simple Twist of Fate.flac
+b39c5a8878ba9dca03cd86f3467e62a8 *FLAC\11 Like a Rolling Stone.flac
+1759b1413e87f1a76d7c5a87470a8fe0 *FLAC\12 I Shall Be Released.flac
+74b8b9a82a0aa43d671d537b4a218b24 *FLAC\13 Going, Going, Gone.flac
+85491c57ba2c2388d9af265f26827ba9 *FLAC\14 Rainy Day Women # 12 & 35.flac
+8cc0bfd626ec12858913ead5394fb5e0 *FLAC\15 True Love Tends to Forget.flac
+76637fbff40b73e99f46209cebc88ce3 *FLAC\16 Gates of Eden.flac
+fe13668517bb75f0ca2682496afcbfa8 *FLAC\17 The Man in Me.flac
+8d5fee992463b3142cfb6fc6c14bb830 *FLAC\18 One More Cup of Coffee (Valley Below).flac
+9a959a59f900a12ee29021a5a74ed7e7 *FLAC\19 Blowin' in the Wind.flac
+7266f40a478277c40949d09633afeb49 *FLAC\20 I Want You.flac
+c8d1d7277cdf523c26741d0607c7654b *FLAC\21 Seor (Tales of Yankee Power).flac
+dda133df4eddf1927c1870194e3e97c9 *FLAC\22 Masters of War.flac
+f570ca43729cbde4fac34ebd00956d10 *FLAC\23 Just Like a Woman.flac
+deabfde04082514a85db1ec8b1b77a09 *FLAC\24 To Ramona.flac
+1ab74195414ea54676e4d7ccf76a982d *FLAC\25 All Along the Watchtower.flac
+6e4dfbc8a7450ef6f9637e7de21d1462 *FLAC\26 All I Really Want to Do.flac
+9472418c85e7f00caf5f79fed180f3b8 *FLAC\27 It's Alright, Ma (I'm Only Bleeding).flac
+ce70a5d228980de488baf3c5cd3fd4e7 *FLAC\28 Forever Young.flac
+25c342cddfe9ac99e2cd04be41b3a7d4 *FLAC\29 Changing of the Guards.flac
+7aa613301f98fc41dc8cc4d4ee72ff51 *FLAC\30 The Times They are A-Changin'.flac
+===================
+===================
+===================

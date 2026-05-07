@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-04-a.flacf 
+=================== 
+=================== 
+=================== 
+cbe15e160347ffdfe9c848d61026c952  CD1\01 Crash on the Levee (Down in the flood).flac
+3dc4f563acb99c5596a5ef3460d6444b  CD1\02 If you see her, say hello.flac
+4dfc8b2dbd2980d39c8db07d5cc4750f  CD1\03 All along the watchtower.flac
+fd11fa21dccb5803e7b5c76e40c3e7ae  CD1\04 I don't believe you (she acts like we never have met.flac
+e4f5bc2e1a39741183791f37f6cef947  CD1\06 Shooting star.flac
+8bdca58d56e9a31022c4f7ea8bd7e8d7  CD1\06 Silvio.flac
+7c21f3fe1ef0d0f7c8141fbfd37ece5f  CD1\07 Mr. Tambourine Man.flac
+617335510f69c8ebff146f1a841963d9  CD1\08 Boots of Spanish leather.flac
+7a36558a78257faa213771eeaf5c6344  CD1\09 Don't think twice, it's all right.flac
+8591d1008185e7eb015a0ebb7f655d77  CD1\10 Stuck inside of Mobile with the Memphis blues again.flac
+2c7e5ffaf1ce85a7e5549b1c06688a4f  CD1\FLAC CD1.md5
+885791d2d20a3b763af94117f75e5984  CD2\11 I believe in you.flac
+c080d9cfd5f67395658dfc6c8aac0c17  CD2\12 Obviously 5 believers.flac
+82c0ed7b0ab66f69104c5ddde2dc82ea  CD2\13 Cat's in the well.flac
+433ac653bd0ff2b86255ee81ec6e3297  CD2\14 My back pages.flac
+7ceeac31e736a2e9051db5e8b26ca50d  CD2\15 I shall be released.flac
+707baac87b11d8ab18946852b30f879b  CD2\FLAC CD2.md5
+09c1af69c6d967b1a75e7bea45aa2d4b  Info\1995-06-04 Paramount Theater, Seattle, Washington.txt
+485c3fc7626b906777456bd56102d7c2  Info\1995-06-04 Seattle, Washington d1.md5
+e304e093afe81b40a453e17949fb3993  Info\1995-06-04 Seattle, Washington d2.md5
+d592effd6d9dd923c4992a8f120af4fe  Info\WAV CD1.md5
+c5e3cde3f1db374eed215c3a33b5f046  Info\WAV CD2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-04-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the Levee (Down in the flood).flac:d0b90600ba4784150608ee4e2ec58959
+02 If you see her, say hello.flac:e81b8be58605752e275de6fef7f1a109
+03 All along the watchtower.flac:aeeb79bcaa9f121af68f3641440a3ce1
+04 I don't believe you (she acts like we never have met.flac:d8746603a33e9fd8c6681943e3abc99a
+06 Shooting star.flac:15bddea582174a641f032947181521bf
+06 Silvio.flac:60922986bc47023aaf159970da3fc21e
+07 Mr. Tambourine Man.flac:7c8537f44f1d019b0886678c9a7fd3ee
+08 Boots of Spanish leather.flac:02d27d15a5e7bab6c45b9f0575d853a1
+09 Don't think twice, it's all right.flac:411781f7d295867dbe72cc4059ac689e
+10 Stuck inside of Mobile with the Memphis blues again.flac:96956b78739c0ec684f477cc318f6e44
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-04-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11 I believe in you.flac:4c421711108614a3c65c7799de6f134d
+12 Obviously 5 believers.flac:91ecb12cc51ddfd67e393951ee7f7b76
+13 Cat's in the well.flac:1511ab2505dbbac60051e3d7064d4251
+14 My back pages.flac:737ec9941d0ad25b9be138937e421dfc
+15 I shall be released.flac:4c487a99a9925e551434ca7e2cde51a3
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-06-04-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.00       53625644 B   ---   --   ---xx   flac  0.6279  01 Crash on the Levee (Down in the flood).flac
+     5:30.00       58212044 B   ---   --   ---xx   flac  0.5798  02 If you see her, say hello.flac
+     6:49.00       72147644 B   ---   --   ---xx   flac  0.6193  03 All along the watchtower.flac
+     8:18.00       87847244 B   ---   --   ---xx   flac  0.5795  04 I don't believe you (she acts like we never have met.flac
+     6:26.00       68090444 B   ---   --   ---xx   flac  0.5469  06 Shooting star.flac
+     7:02.00       74440844 B   ---   --   ---xx   flac  0.6208  06 Silvio.flac
+     8:02.00       85024844 B   ---   --   ---xx   flac  0.4249  07 Mr. Tambourine Man.flac
+     8:38.00       91375244 B   ---   --   ---xx   flac  0.4291  08 Boots of Spanish leather.flac
+     6:57.00       73558844 B   ---   --   ---xx   flac  0.5358  09 Don't think twice, it's all right.flac
+     9:08.00       96667244 B   ---   --   ---xx   flac  0.5914  10 Stuck inside of Mobile with the Memphis blues again.flac
+    71:54.00      760990040 B                            0.5498  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-06-04-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:19.00       88023644 B   ---   --   ---xx   flac  0.5763  11 I believe in you.flac
+     7:28.00       79027244 B   ---   --   ---xx   flac  0.6122  12 Obviously 5 believers.flac
+     7:31.00       79556444 B   ---   --   ---xx   flac  0.6512  13 Cat's in the well.flac
+     9:11.00       97196444 B   ---   --   ---xx   flac  0.5550  14 My back pages.flac
+     7:17.00       77086844 B   ---   --   ---xx   flac  0.6131  15 I shall be released.flac
+    39:46.00      420890620 B                            0.5990  (5 files)
+=================== 
+=================== 
+=================== 

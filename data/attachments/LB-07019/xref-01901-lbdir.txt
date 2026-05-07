@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== md5 for: bd99-02-24-f.flacf
+===================
+===================
+===================
+2f81436b0d4aefaab154c52328453258 *01 Gotta Serve Somebody.flac
+2a37dcc39f6de4a67b1c66875f79dcdb *02 Million Miles.flac
+18bf48a37804d3095b5e265139ace90f *03 Maggie's Farm.flac
+561e9c45443ad0d3219c3aef3130e6b7 *04 Make You Feel My Love.flac
+b72d9471ed123f6451987cbd2f7a9b7f *05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+04e0594914d6e7ea895ef02c9950a7b0 *06 Masters Of War.flac
+0e9bf2f6e63f2fab7af43376602a071f *07 Pass Me Not, O Gentle Saviour.flac
+4b44f36baea6dcd51633a1bb56dab681 *08 Tangled Up In Blue.flac
+85672492813b457b7aeb72b5eb1a761d *09 Girl From The North Country.flac
+525d32392a98f09e586b10397feefe72 *10 I Don't Believe You (She Acts Like We Never Have Met).flac
+cd244cfa70e942bd15a5c7c6a6ce9857 *11 Love Sick.flac
+cc3de7c6c924f27e55286b1856eb5e1d *12 Highway 61 Revisited.flac
+d2ee7f3d878619193de7bba7b0259fb9 *13 Like A Rolling Stone.flac
+ec59bcc2fcb711b7c9975c25e3fad967 *14 Everything Is Broken.flac
+65709ca17bc5d1d3c9e317e3f31cf5e7 *15 Don't Think Twice, It's All Right.flac
+b7dbc82e38923a33d10a59a827d2c816 *16 Not Fade Away.flac
+01102451741c2ddc893ce3469f6253b2 *1999-02-24 Mullins Center, University of Massachusetts, Amherst, Massachusetts, USA [no LB-ref. unidentified taper].txt
+61843d6788057c93501fe8309344991d *Bob Dylan 1999-02-24 Amherst, Massachusetts, USA [no LB-ref. unidentified taper].md5
+61843d6788057c93501fe8309344991d *Bob Dylan 1999-02-24 Amherst, Massachusetts, USA [no LB-ref. unidentified taper].txt
+===================
+===================
+===================
+=== ffp for: bd99-02-24-f.flacf
+===================
+===================
+===================
+01 Gotta Serve Somebody.flac:fe4361f83b7acd02975d925f1653ceaf
+02 Million Miles.flac:b200f322dfa65edb249ca6905d40b1f3
+03 Maggie's Farm.flac:8ee5e18df474ff06721e517b189f36af
+04 Make You Feel My Love.flac:46e420aedf1d9b4d6ba614dccbcabd0f
+05 Stuck Inside Of Mobile With The Memphis Blues Again.flac:e967b53c63887704f0c7331beb5812be
+06 Masters Of War.flac:a04e996382253d76ddd1a44f9bc6e9c0
+07 Pass Me Not, O Gentle Saviour.flac:8c00704ac3b0685a5d025fcb82c19191
+08 Tangled Up In Blue.flac:5edbed94f1153167bfd4b4bf883659e7
+09 Girl From The North Country.flac:8d3ff7c06502a01d55d1fb232df544b2
+10 I Don't Believe You (She Acts Like We Never Have Met).flac:1893e4cfcf98ce97f0c24356b04eab18
+11 Love Sick.flac:9d39e559238f799e86bd2b94728733d6
+12 Highway 61 Revisited.flac:04514890eb968a99c96310ed97831c10
+13 Like A Rolling Stone.flac:02cd09f02a8f05d0139541e8f952c39a
+14 Everything Is Broken.flac:513b6d783a47bc64e321c6c452dc0fef
+15 Don't Think Twice, It's All Right.flac:8cfd6f21854a8eab19c0d08893829eca
+16 Not Fade Away.flac:b2bafd7bcaacf8c0769ee0e75e42b17d
+===================
+===================
+===================
+=== shntool len for: bd99-02-24-f.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.37       45069068 B   ---   --   ---xx   flac  0.5563  01 Gotta Serve Somebody.flac
+     5:06.23       54032540 B   ---   --   ---xx   flac  0.5088  02 Million Miles.flac
+     6:06.47       64672988 B   ---   --   ---xx   flac  0.5421  03 Maggie's Farm.flac
+     4:10.23       44154140 B   ---   --   ---xx   flac  0.4515  04 Make You Feel My Love.flac
+     7:21.67       77950028 B   ---   --   ---xx   flac  0.5487  05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     5:45.51       60977996 B   ---   --   ---xx   flac  0.5002  06 Masters Of War.flac
+     4:59.31       52816556 B   ---   --   ---xx   flac  0.4634  07 Pass Me Not, O Gentle Saviour.flac
+     8:47.21       93012236 B   ---   --   ---xx   flac  0.5727  08 Tangled Up In Blue.flac
+     6:04.46       64317836 B   ---   --   ---xx   flac  0.4676  09 Girl From The North Country.flac
+     7:15.27       76797548 B   ---   --   ---xx   flac  0.5444  10 I Don't Believe You (She Acts Like We Never Have Met).flac
+     5:16.06       55756556 B   ---   --   ---xx   flac  0.4808  11 Love Sick.flac
+     8:00.73       84843740 B   ---   --   ---xx   flac  0.5465  12 Highway 61 Revisited.flac
+     7:43.52       81795548 B   ---   --   ---xx   flac  0.5179  13 Like A Rolling Stone.flac
+     5:35.31       59166956 B   ---   --   ---xx   flac  0.5341  14 Everything Is Broken.flac
+     7:08.16       75536876 B   ---   --   ---xx   flac  0.5426  15 Don't Think Twice, It's All Right.flac
+     3:53.01       41103596 B   ---   --   ---xx   flac  0.5829  16 Not Fade Away.flac
+    97:30.27     1032004208 B                            0.5257  (16 files)
+===================
+===================
+===================

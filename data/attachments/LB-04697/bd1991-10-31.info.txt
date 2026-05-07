@@ -1,0 +1,38 @@
+Bob Dylan
+
+Civic Center
+Wichita, Kansas
+31 October 1991
+
+CD1 64:27
+
+1. New Morning
+2. You Don't Know Me
+3. All Along The Watchtower
+4. Willing
+5. You're A Big Girl Now
+6. Gotta Serve Somebody
+7. When I Paint My Masterpiece
+8. Watching The River Flow
+9. Golden Vanity
+10. Girl From The North Country
+11. Answer Me
+12. Visions Of Johanna
+
+CD2 35:19
+
+13. Lenny Bruce
+14. Everything Is Broken
+15. Shooting Star
+16. Ballad Of A Thin Man
+
+17. What Good Am I?
+18. I'll Be Your Baby Tonight
+
+PDub Master: Sonic Studios 6p mics > Sony D6 > Unknown transfer > CDR(1) > EAC (Secure/Offset) > FLAC (Level 8) > HungerCity
+
+Edit (tape flip) between the original d1t09 - t10 and then a 3" track, so I applied a short fade out to d1t09 and added the 3" track to the start of d1t10. I removed a glitch at the end of d1t12. Edit (tape flip) between d2t04 - t05. I removed a glitch at the end of d2t06. Excellent sound [A-].
+
+Please retain this info file as an indicator for this particular lossless set of files. If you happen to pass it on in trades, then please list it as such in your description, thereby reducing the possibility of others getting duplicates.
+
+

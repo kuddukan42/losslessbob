@@ -1,0 +1,78 @@
+Bob Dylan and his band
+Eastlake, Ohio
+Classic Park
+June 26, 2005
+
+AUDIENCE recording by M&A
+
+MBHO 603a > Lunatech V-3 > Sony-D100 > Audio CDs from M&A
+(wav encoded to FLAC with xACT 1.4b24)
+
+Disc 1  53:40
+1.      Intro  0:33
+2.	Tombstone Blues  6:15
+3.	Se–or (Tales Of Yankee Power)  5:12
+4.	God Knows  5:24
+5.	Visions Of Johanna (acoustic)  9:07
+6.	Cry A While  6:23
+7.	Shooting Star  6:49
+8.	Highway 61 Revisited  8:19
+9.	Tryin' To Get To Heaven  5:36
+
+Disc 2  44:28
+1.	Stuck Inside Of Mobile With The Memphis Blues Again  9:30
+2.	Floater (Too Much To Ask)  6:19
+3.	Ballad Of A Thin Man  7:09
+12.	Summer Days  8:23
+(encore - one second pause at edit)
+13.	The Times They Are A-Changin'  7:39
+14.	All Along The Watchtower  5:27
+ 	 
+Band Members
+Bob Dylan - keyboard, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - electric mandolin, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+ffp.txt
+bd2005-06-26d1t1.flac:437ebd496eb6d82d1324085459aba994bd2005-06-26d1t2.flac:e0b4793003d4363f6991da6639f4f587bd2005-06-26d1t3.flac:01969f77c4011cc4f4fedb8b1c880f9dbd2005-06-26d1t4.flac:65f2aafbdfbf9a713c86e89443acf5f5bd2005-06-26d1t5.flac:e7ff9614fe34fbe832c7026ccaa588e8bd2005-06-26d1t6.flac:911b519072d8f967874990926dc2dbdabd2005-06-26d1t7.flac:30ac039f437796bd65cd086f66082e85bd2005-06-26d1t8.flac:4260453580cd20875a38283d43e8253fbd2005-06-26d1t9.flac:7e7303e8bf10b726ce264b2aa500db17bd2005-06-26d2t1.flac:8c75b90ea5e1d858fc372f2f8773ed8ebd2005-06-26d2t2.flac:4c342ebd056d05c00c29e40a34ad24bebd2005-06-26d2t3.flac:be0b5e6307ac99cd58e1ea00016bcfd5bd2005-06-26d2t4.flac:26b8d54dbff77f92bbd33c23f8cc8c54bd2005-06-26d2t5.flac:5d3a8b8aa58ef3a9b2f5176e80a9a919bd2005-06-26d2t6.flac:9e4ce489418afd768a7f489b8bc13155
+
+flac.md5
+ebf2938a24315c5a5e1e37c399bbea2f *bd2005-06-26d2t6.flac
+9808d399dc27d83edc5e02b8b33c39c0 *bd2005-06-26d2t5.flac
+c11164e63ae0468bfbfa0b4f8af1cb22 *bd2005-06-26d2t4.flac
+d81c66c8f806f7a7069c02df51f64088 *bd2005-06-26d2t3.flac
+49eb205e02422e2d02f9c184fe9ee0a6 *bd2005-06-26d2t2.flac
+47cd485dc93f0cdda8900acb470a3c9c *bd2005-06-26d2t1.flac
+3520004a4411a518929531369831f253 *bd2005-06-26d1t9.flac
+2daca48635eecf5c3b7f7297829c6e0e *bd2005-06-26d1t8.flac
+a370e8d2c4ec0cdfd10c07777bab5938 *bd2005-06-26d1t7.flac
+c6fea74004bcd514671e986e7d123abd *bd2005-06-26d1t6.flac
+ec487625e6ff461779b0a2c1b9bcfd3c *bd2005-06-26d1t5.flac
+3b65d77cf3f0b624dd39413978260cbd *bd2005-06-26d1t4.flac
+89d63c5a0bedf35e587419d80469340e *bd2005-06-26d1t3.flac
+b9b321127cbc69bb9a179ec18f661532 *bd2005-06-26d1t2.flac
+888ea4c89fcd4daf20106fd8d25c8f3a *bd2005-06-26d1t1.flac
+
+wave.md5
+88adc1ac6849f2ebf78a3a5df9b1664e *bd2005-06-26d1t1.wav
+760cab930f40fbb95853609e8feb46a4 *bd2005-06-26d1t2.wav
+a12802096737126bfeac22c9d9fd873e *bd2005-06-26d1t3.wav
+9d52c40894d35d39fa83a2425ec3524b *bd2005-06-26d1t4.wav
+699edaa76b3b714526e4fcf4ab16d246 *bd2005-06-26d1t5.wav
+ca74d7e5bba582cae0eca04a702cf952 *bd2005-06-26d1t6.wav
+863a43aa128448e94a72ea5138c9d909 *bd2005-06-26d1t7.wav
+2ae9777b120799e0ef01c7b25d3f4916 *bd2005-06-26d1t8.wav
+aaab5695a79749f6ae411c53f8f964f7 *bd2005-06-26d1t9.wav
+ddc969303a23fbd9a170fb03b1c0042e *bd2005-06-26d2t1.wav
+31750346a0791c5a4a4e8d631c7ce4ee *bd2005-06-26d2t2.wav
+025404c9072e9f1c11523755cd507758 *bd2005-06-26d2t3.wav
+e072fcb8e6e95c221354f9cb03091637 *bd2005-06-26d2t4.wav
+a172a32496029807712fe6c8a4babefb *bd2005-06-26d2t5.wav
+d19fe5d30795aa7e8b17b8a25e52951b *bd2005-06-26d2t6.wav
+
+
+
+

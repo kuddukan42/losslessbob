@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-19-jtt-1st-gen 
+=================== 
+=================== 
+=================== 
+4605b8baf75064f09d9fc8dec2e486bc  bd78-06-19-jtt-1st-gen-LB-2854.txt
+8eeeb63b82e935f22a018a52f080c04e  Disc 1\Track01.shn
+89074e4361306c926e86be8ed8612c5a  Disc 1\Track02.shn
+687b710f10b0e1eb16a666872da91cc0  Disc 1\Track03.shn
+cde127605e8fade725147e05e8754100  Disc 1\Track04.shn
+38642af2083af76e8a2b966aaf10371c  Disc 1\Track05.shn
+82bbadcaba2836e35afb81dac18c2514  Disc 1\Track06.shn
+5a19ff4809ec265cc3856ab2c49b2386  Disc 1\Track07.shn
+4a8206ace62747663023e6d80ac31148  Disc 1\Track08.shn
+559022f203bd98552f074c3aa6e3c41b  Disc 1\Track09.shn
+2fc5a94706ba1aa87323bcb86af3ea82  Disc 1\Track10.shn
+bce1aab29ad9ba5c79db10f942e481ac  Disc 1\Track11.shn
+957c4359802cee6c4214e976c3919e4a  Disc 1\Track12.shn
+2a87c52dac440ed278602fb5a6b71a8d  Disc 1\Track13.shn
+038f72ebc597df4979cd013b3650c3f7  Disc 1\noname.md5
+b72c233bf6a90f943811c9ea7500c9ee  Disc 2\Track01.shn
+ae32597bec375e0ee8c91e32d81ed139  Disc 2\Track02.shn
+188c1aeaee15acdb70547dbee2972aa9  Disc 2\Track03.shn
+162e03653f2ff6ea3f890842c6f030e1  Disc 2\Track04.shn
+75c21e33dc3bc5641bfba6599b5ec5ed  Disc 2\Track05.shn
+f15e3ba331e949ffefc9bf8065320662  Disc 2\Track06.shn
+d8fb0dabd186b1810dd583a29198af14  Disc 2\Track07.shn
+08fc4a75782db93bfc0494bb9d142a2d  Disc 2\Track08.shn
+66de543253b3e5bae7ba1422e7afcf42  Disc 2\Track09.shn
+e7173a7ca7d789313acf1fc7d268cbf1  Disc 2\Track10.shn
+0edce9da71f6339d1d60bbd9249a0cd9  Disc 2\Track11.shn
+87dbfd9200e745343125a0a70527c3d4  Disc 2\Track12.shn
+a99aed734516e37f6ba65e8c7cc65ace  Disc 2\Track13.shn
+35c03372574f190d8b506139744e521b  Disc 2\Track14.shn
+dbddd18c7deb4521308374d64b5c4d09  Disc 2\Track15.shn
+f6ca02e22f31028846818b5229070a4f  Disc 2\noname.md5
+0a2c536816cd60871af606d6debe7ea6  Earls Court 19.06.78 Info..txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-06-19-jtt-1st-gen\Disc 1 
+=================== 
+=================== 
+=================== 
+4785957c6cd6b6fb84af78ed9042044f  [shntool]  Track01.wav
+9e7f23ec9ce7805b15c89ad8be641776  [shntool]  Track02.wav
+cbc00d2b08bf3e061c1b57dd4cf4a467  [shntool]  Track03.wav
+f5fb87ecdbce776e781cd27c69d9d145  [shntool]  Track04.wav
+b2bcdab5fe79b3d3b14dd0de2cd93bfa  [shntool]  Track05.wav
+d9231cfc3b9766d9c7207a0a9cd7435f  [shntool]  Track06.wav
+62a39851e3be03e7676864baf824b196  [shntool]  Track07.wav
+91b2d1153e525305aed65af299913096  [shntool]  Track08.wav
+40accd8f722d57aa3d8a8c81d02ceb12  [shntool]  Track09.wav
+4e0e25238f1ed9e0b68981fa256d29ff  [shntool]  Track10.wav
+d0401080c4d8cbc14631d724a2596d59  [shntool]  Track11.wav
+3a03ec67b3caaa25766621381dcea260  [shntool]  Track12.wav
+b307338dfdfc2761a8ec8efe3176f86b  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-06-19-jtt-1st-gen\Disc 2 
+=================== 
+=================== 
+=================== 
+85c524c403edf21b74f7a40c93d411e9  [shntool]  Track01.wav
+26eb5f982703ccf21f4b09810dc15d1b  [shntool]  Track02.wav
+4b99d3fd25b54355af4bdb950a633b13  [shntool]  Track03.wav
+7b95e3753264035b96774b891c49b8a1  [shntool]  Track04.wav
+7927b558b148645806c20f142828123a  [shntool]  Track05.wav
+e508d56f39573f9c38e2af861415a473  [shntool]  Track06.wav
+68237d6499bab4c00dd900a8c0aaf950  [shntool]  Track07.wav
+7560864b9a589b42100817d7df2a8e6d  [shntool]  Track08.wav
+83ce4295503e8edcfc6752ce75ce080c  [shntool]  Track09.wav
+9c2371d97edc4e27b2ede55322e3d9d6  [shntool]  Track10.wav
+95a9fad12ecf16dc2644e4162ffeddb1  [shntool]  Track11.wav
+55d747fcae9a489430ac35959d3d4f3d  [shntool]  Track12.wav
+64383f29697e9b1078c7ca5fe68a35ef  [shntool]  Track13.wav
+e40e5d1d1e2702c964c118f22cdd2eea  [shntool]  Track14.wav
+929d8a67de1cea7ca5d0c717de273629  [shntool]  Track15.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-19-jtt-1st-gen\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.17       41670428 B   ---   --   -----    wav  1.0000  Track01.wav
+     2:33.54       27116252 B   ---   --   -----    wav  1.0000  Track02.wav
+     5:24.56       57285356 B   ---   --   -----    wav  1.0000  Track03.wav
+     5:23.18       57019580 B   ---   --   -----    wav  1.0000  Track04.wav
+     4:44.35       50179964 B   ---   --   -----    wav  1.0000  Track05.wav
+     3:47.01       40045196 B   ---   --   -----    wav  1.0000  Track06.wav
+     7:12.38       76294220 B   ---   --   -----    wav  1.0000  Track07.wav
+     4:44.47       50208188 B   ---   --   -----    wav  1.0000  Track08.wav
+     4:49.30       51050204 B   ---   --   -----    wav  1.0000  Track09.wav
+     4:15.60       45123164 B   ---   --   -----    wav  1.0000  Track10.wav
+     7:10.12       75880268 B   ---   --   -----    wav  1.0000  Track11.wav
+     4:39.02       49220348 B   ---   --   -----    wav  1.0000  Track12.wav
+     4:29.55       47581004 B   ---   --   -----    wav  1.0000  Track13.wav
+    63:10.50      668674172 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-19-jtt-1st-gen\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.63        7204220 B   ---   --   -----    wav  1.0000  Track01.wav
+     3:57.13       41837420 B   ---   --   -----    wav  1.0000  Track02.wav
+     4:45.12       50302268 B   ---   --   -----    wav  1.0000  Track03.wav
+     3:28.43       36792380 B   ---   --   -----    wav  1.0000  Track04.wav
+     5:01.19       53141132 B   ---   --   -----    wav  1.0000  Track05.wav
+     3:06.61       32953916 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:02.37       53359868 B   ---   --   -----    wav  1.0000  Track07.wav
+     3:57.63       41955020 B   ---   --   -----    wav  1.0000  Track08.wav
+     5:32.33       58642460 B   ---   --   -----    wav  1.0000  Track09.wav
+     4:51.25       51391244 B   ---   --   -----    wav  1.0000  Track10.wav
+     4:25.41       46842476 B   ---   --   -----    wav  1.0000  Track11.wav
+     5:36.06       59284556 B   ---   --   -----    wav  1.0000  Track12.wav
+     6:31.73       69144140 B   ---   --   -----    wav  1.0000  Track13.wav
+     6:20.63       67180220 B   ---   --   -----    wav  1.0000  Track14.wav
+     4:25.43       46847180 B   ---   --   -----    wav  1.0000  Track15.wav
+    67:43.70      716878500 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

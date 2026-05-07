@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-07-04-rich-for-poor.flacf 
+=================== 
+=================== 
+=================== 
+f63a7e75d767cc1a8ea1ea03c224b676  bd86-07-04-rich-for-poor-d1t01.flac
+7206df80e7f7a61e6100d4689b71c344  bd86-07-04-rich-for-poor-d1t02.flac
+900f0c9f077f54c4c7c15c739f535df3  bd86-07-04-rich-for-poor-d1t03.flac
+cabd8d50b71212d217f4b4d053b4e4e7  bd86-07-04-rich-for-poor-d1t04.flac
+44faba745065ffb8f5a1df24aa9a6638  bd86-07-04-rich-for-poor-d1t05.flac
+8a8eda0199b58119ba44948b56c767fa  bd86-07-04-rich-for-poor-d1t06.flac
+54bba7a8d2e512336bfbe008703b34c5  bd86-07-04-rich-for-poor-d1t07.flac
+5e04333fe9d0503800bee57b97b684d4  bd86-07-04-rich-for-poor-d1t08.flac
+3179c8b038495698a5975b7c2332d393  bd86-07-04-rich-for-poor-d1t09.flac
+1760323c0f89a56ee5193f48ade6e849  bd86-07-04-rich-for-poor-d1t10.flac
+383bfc650f6e19c4445263cb1ea9c376  bd86-07-04-rich-for-poor-d1t11.flac
+41c5a01f529ca8d50474c02a6b6a830a  bd86-07-04-rich-for-poor-d1t12.flac
+17a1a60e1988096ef3999d1770525517  bd86-07-04-rich-for-poor-d1t13.flac
+9a8475d5ff2b4917b562d5146548afc0  bd86-07-04-rich-for-poor-d1t14.flac
+2fc7627e17c282f20b2b707ee7a247ac  bd86-07-04-rich-for-poor-d2t01.flac
+3c500d5ad287d7a7378574fd58d3d978  bd86-07-04-rich-for-poor-d2t02.flac
+4175ac6ea4935326f306aadd12e8848a  bd86-07-04-rich-for-poor-d2t03.flac
+56fa293dc2a6f073c804e4f83af0149f  bd86-07-04-rich-for-poor-d2t04.flac
+d5ebb3641c51594ab1955a865c1d849d  bd86-07-04-rich-for-poor-d2t05.flac
+bf5536a1f7510cec04b47af24704b4ab  bd86-07-04-rich-for-poor-d2t06.flac
+493aa61fe5e3306f8f20362f89673f3d  bd86-07-04-rich-for-poor-d2t07.flac
+317f43ea10b712b186a194e94be9a032  bd86-07-04-rich-for-poor-d2t08.flac
+fbc747dca1570f48a60f96f2a328ba4a  bd86-07-04-rich-for-poor-d2t09.flac
+c992535a443b19092113bf4c7e48c920  bd86-07-04-rich-for-poor-d2t10.flac
+9048dfffd14cdb8ba29abdd9e17ccd4f  bd86-07-04-rich-for-poor-d2t11.flac
+1bf7e937f5b1a9bd932af78541ec1887  bd86-07-04-rich-for-poor-d2t12.flac
+67ac00303d8916b22ea5747f90715699  bd86-07-04-rich-for-poor-d2t13.flac
+6f983692abeffc71045b88ca3f5a63d7  bd86-07-04-rich-for-poor.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-07-04-rich-for-poor.flacf 
+=================== 
+=================== 
+=================== 
+bd86-07-04-rich-for-poor-d1t01.flac:50b8888231fa5ab4eedb639e24c80043
+bd86-07-04-rich-for-poor-d1t02.flac:1e389a185393949f3c3d481f117daeef
+bd86-07-04-rich-for-poor-d1t03.flac:58154c4f11c9026260307901edd4f0d4
+bd86-07-04-rich-for-poor-d1t04.flac:5e3766d4ae9f8102a4db454c3020268f
+bd86-07-04-rich-for-poor-d1t05.flac:7bd7bf0d5357f0b6a17426be1eaa0f48
+bd86-07-04-rich-for-poor-d1t06.flac:bd7ea40504f70245ed5ffd4fd45d90ac
+bd86-07-04-rich-for-poor-d1t07.flac:8f5814590d7e4f66acf4f5b439cc6dbf
+bd86-07-04-rich-for-poor-d1t08.flac:9d0a253f059b13ea63728f4d16a749bb
+bd86-07-04-rich-for-poor-d1t09.flac:ee1b5210948727e31bf303cc7166002d
+bd86-07-04-rich-for-poor-d1t10.flac:8c8d85ba31c60d0b52b9923e28e623af
+bd86-07-04-rich-for-poor-d1t11.flac:1897ab3a96db3335803b0974ce4c5ddc
+bd86-07-04-rich-for-poor-d1t12.flac:7d3b71d4a69052e5b1b8a36544b89243
+bd86-07-04-rich-for-poor-d1t13.flac:f4d8351eaa5dbb2a32a45c074b98f298
+bd86-07-04-rich-for-poor-d1t14.flac:7dd2dbfad6921b3fc3ee65111f045247
+bd86-07-04-rich-for-poor-d2t01.flac:dc9419cd4cc93835992c9add71990095
+bd86-07-04-rich-for-poor-d2t02.flac:69b74631f4ecbb04610e59ecc09ef7d1
+bd86-07-04-rich-for-poor-d2t03.flac:68e1dea4f6888b7231b6db60e89602b3
+bd86-07-04-rich-for-poor-d2t04.flac:aaa0a449566af1855836ed4a05e1a11c
+bd86-07-04-rich-for-poor-d2t05.flac:2fc17d44f55eef94432036736ee3eac8
+bd86-07-04-rich-for-poor-d2t06.flac:db36331c9fbd738c2f9ac03b8ab1288e
+bd86-07-04-rich-for-poor-d2t07.flac:77bda1b67c0a88d535c4e7802c7c2548
+bd86-07-04-rich-for-poor-d2t08.flac:abf591b2c280e35fbf81223bbcc99d37
+bd86-07-04-rich-for-poor-d2t09.flac:0b509403ac4123e6f73195c9c684d5f2
+bd86-07-04-rich-for-poor-d2t10.flac:17d6c43e082411b89042afa0739523c6
+bd86-07-04-rich-for-poor-d2t11.flac:21fc8354f1f236e52780f4b2c8fac51f
+bd86-07-04-rich-for-poor-d2t12.flac:823ad9ab1b6cecf47b0a018ae58128bb
+bd86-07-04-rich-for-poor-d2t13.flac:ee0e593d0829c30ef73a4cce37afc923
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-04-rich-for-poor.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.28       43989500 B   ---   --   ---xx   flac  0.5228  bd86-07-04-rich-for-poor-d1t01.flac
+     3:57.02       41811548 B   ---   --   ---xx   flac  0.5313  bd86-07-04-rich-for-poor-d1t02.flac
+     2:30.65       26612924 B   ---   --   ---xx   flac  0.5424  bd86-07-04-rich-for-poor-d1t03.flac
+     4:39.55       49345004 B   ---   --   ---xx   flac  0.5237  bd86-07-04-rich-for-poor-d1t04.flac
+     2:59.63       31723820 B   ---   --   ---xx   flac  0.5332  bd86-07-04-rich-for-poor-d1t05.flac
+     3:10.07       33532508 B   ---   --   ---xx   flac  0.5324  bd86-07-04-rich-for-poor-d1t06.flac
+     4:32.73       48152540 B   ---   --   ---xx   flac  0.5363  bd86-07-04-rich-for-poor-d1t07.flac
+     5:14.20       55436684 B   ---   --   ---xx   flac  0.5434  bd86-07-04-rich-for-poor-d1t08.flac
+     4:20.30       45934604 B   ---   --   ---xx   flac  0.5408  bd86-07-04-rich-for-poor-d1t09.flac
+     5:00.17       52960028 B   ---   --   ---xx   flac  0.5410  bd86-07-04-rich-for-poor-d1t10.flac
+     6:04.70       64374284 B   ---   --   ---xx   flac  0.5234  bd86-07-04-rich-for-poor-d1t11.flac
+     3:52.23       40978940 B   ---   --   ---xx   flac  0.5581  bd86-07-04-rich-for-poor-d1t12.flac
+     3:13.30       34115804 B   ---   --   ---xx   flac  0.5401  bd86-07-04-rich-for-poor-d1t13.flac
+     6:19.15       66890924 B   ---   --   ---xx   flac  0.5432  bd86-07-04-rich-for-poor-d1t14.flac
+     3:51.50       40866044 B   ---   --   ---xx   flac  0.5396  bd86-07-04-rich-for-poor-d2t01.flac
+     4:00.33       42413660 B   ---   --   ---xx   flac  0.5438  bd86-07-04-rich-for-poor-d2t02.flac
+     5:00.37       53007068 B   ---   --   ---xx   flac  0.5363  bd86-07-04-rich-for-poor-d2t03.flac
+     3:46.73       40038140 B   ---   --   ---xx   flac  0.5188  bd86-07-04-rich-for-poor-d2t04.flac
+     4:44.10       50121164 B   ---   --   ---xx   flac  0.5293  bd86-07-04-rich-for-poor-d2t05.flac
+     3:34.65       37902524 B   ---   --   ---xx   flac  0.5337  bd86-07-04-rich-for-poor-d2t06.flac
+     3:57.72       41976188 B   ---   --   ---xx   flac  0.5413  bd86-07-04-rich-for-poor-d2t07.flac
+     7:04.65       74946524 B   ---   --   ---xx   flac  0.5165  bd86-07-04-rich-for-poor-d2t08.flac
+     5:38.18       59665580 B   ---   --   ---xx   flac  0.5383  bd86-07-04-rich-for-poor-d2t09.flac
+     2:45.47       29216588 B   ---   --   ---xx   flac  0.5400  bd86-07-04-rich-for-poor-d2t10.flac
+     3:52.10       40948364 B   ---   --   ---xx   flac  0.5402  bd86-07-04-rich-for-poor-d2t11.flac
+     4:10.10       44123564 B   ---   --   ---xx   flac  0.5255  bd86-07-04-rich-for-poor-d2t12.flac
+     2:12.20       23331884 B   ---   --   ---xx   flac  0.5303  bd86-07-04-rich-for-poor-d2t13.flac
+   114:44.33     1214416404 B                            0.5345  (27 files)
+=================== 
+=================== 
+=================== 

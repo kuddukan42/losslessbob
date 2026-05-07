@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd89-07-21-Dolphinsmile.flac1648
+===================
+===================
+===================
+e27fc836f271c2095f8ac6c30afb052e *01 Trouble.flac
+2ba4cb5c36d1aed0867c7a7fba82de5e *02 One Irish Rover.flac
+097e763d0641d21cd1bd2b38ec46e0a6 *03 I Dont Believe You.flac
+2011ce871f7f6b0ae8ecdf4dfeebcfa1 *04 Just Like A Woman.flac
+43a6712c15a1280bc5eee2a501a40e3c *05 Ballad Of A Thin Man.flac
+8cf7b69f3d75de87acf35efa45e233aa *06 Shot Of Love.flac
+0a6ab9f23c09ce9998ee3ac8385cfb68 *07 Love Minus Zero.flac
+bf77eecc3dd33e9c354a54922909d592 *08 Its Alright Ma.flac
+ade5e317aa432ed136ab21b2b593e0a8 *09 When Did You Leave Heaven.flac
+8251a6e0b6aa5670ea9b21674792077d *10 Boots of Spanish Leather.flac
+cd15cc1955cffc6699906092924ffae9 *11 All Along The Watchtower.flac
+2e7529fa8771992e063b3bfa9c3b9e35 *12 I ll Remember You.flac
+fcc95387c15145f90af0a7428520a391 *13 I Shall Be Released.flac
+7deee2ec3c64ec28fc719f0c308e8b65 *14 Like A Rolling Stone.flac
+cdce904d638c69ecc30663a6ee5a423d *15 Tamborine Man.flac
+cf74d117634be15b4b88b75dd325b552 *16 Maggies Farm.flac
+e49c08d33b1b514c5771b0aa06463598 *Bob Dylan Garden State Arts Center  Holmdel NJ 1989-07-21 Dolphinsmile Archive.ffp
+fa8578ff90df4ece73a3165981a0d0ec *Bob Dylan Garden State Arts Center  Holmdel NJ 1989-07-21 Dolphinsmile Archive.md5
+e49c08d33b1b514c5771b0aa06463598 *Bob Dylan Garden State Arts Center  Holmdel NJ 1989-07-21 Dolphinsmile Archive.txt
+4c619982edd8d4cc8a11c2c36f459206 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-07-21-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Trouble.flac:7057c329926c89393ab57d3885bf6dff
+02 One Irish Rover.flac:59b2e3782824cb9f8ca3f69601815d13
+03 I Dont Believe You.flac:d79d7ad6e5b712555e99f113de4da67d
+04 Just Like A Woman.flac:9232130445908883cdafec86cda4bcee
+05 Ballad Of A Thin Man.flac:dc0bdda3b0179cdc30ac19a3e7292098
+06 Shot Of Love.flac:faf2f6aca043055d0ed9654a2e76f69e
+07 Love Minus Zero.flac:e7f02a19df99a4e497e65023dfd3c652
+08 Its Alright Ma.flac:13ec40260acde34a9cffef349bee3489
+09 When Did You Leave Heaven.flac:ae018cfc0a6e624534a4a63350ad4d7c
+10 Boots of Spanish Leather.flac:4df7dbe02bbeb531c8577ca58a655bb7
+11 All Along The Watchtower.flac:40afdc5e152eadbea9008f42c8cab0e9
+12 I ll Remember You.flac:6a3f40cc557349aff90d1b7a93f4509d
+13 I Shall Be Released.flac:873cfd55a4d62c09e52041ade7d28197
+14 Like A Rolling Stone.flac:8d765d615d54f11598eb384e2d9ea2eb
+15 Tamborine Man.flac:949031ff586df90dac3a1919d89d6a2d
+16 Maggies Farm.flac:035bb2299155a28f1347f346ed565e09
+===================
+===================
+===================
+=== shntool len for: bd89-07-21-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.894      45867716 B   cxx   --   ---xx   flac  0.6129  01 Trouble.flac
+     3:13.223      37098792 B   cxx   --   ---xx   flac  0.5502  02 One Irish Rover.flac
+     5:30.426      63441856 B   cxx   --   ---xx   flac  0.6015  03 I Dont Believe You.flac
+     5:20.417      61520100 B   cxx   --   ---xx   flac  0.5850  04 Just Like A Woman.flac
+     5:14.200      60326464 B   cxx   --   ---xx   flac  0.6077  05 Ballad Of A Thin Man.flac
+     5:08.356      59204340 B   cxx   --   ---xx   flac  0.6063  06 Shot Of Love.flac
+     3:57.320      45565400 B   cxx   --   ---xx   flac  0.5366  07 Love Minus Zero.flac
+     5:31.727      63691620 B   cxx   --   ---xx   flac  0.5434  08 Its Alright Ma.flac
+     3:00.995      34751120 B   cxx   --   ---xx   flac  0.5055  09 When Did You Leave Heaven.flac
+     5:39.171      65120864 B   cxx   --   ---xx   flac  0.5271  10 Boots of Spanish Leather.flac
+     4:18.972      49722656 B   cxx   --   ---xx   flac  0.5993  11 All Along The Watchtower.flac
+     4:07.333      47487972 B   cxx   --   ---xx   flac  0.5620  12 I ll Remember You.flac
+     4:01.345      46338352 B   cxx   --   ---xx   flac  0.5701  13 I Shall Be Released.flac
+     7:08.466      82265452 B   cxx   --   ---xx   flac  0.5954  14 Like A Rolling Stone.flac
+     7:17.446      83989680 B   cxx   --   ---xx   flac  0.5027  15 Tamborine Man.flac
+     5:49.831      67167560 B   cxx   --   ---xx   flac  0.5696  16 Maggies Farm.flac
+    79:18.121     913559944 B                            0.5676  (16 files)
+===================
+===================
+===================

@@ -1,0 +1,43 @@
+Bob Dylan
+Orfeo Superdomo
+Córdoba, Argentina
+March 13, 2008
+
+Disc 1:
+01. introduction [00:57]
+02. Leopard-Skin Pill-Box Hat [04:46] 
+03. It Ain't Me, Babe [05:57]
+04. Watching The River Flow [05:03]
+05. Love Sick [05:44]
+06. Rollin' And Tumblin' [07:22]
+07. Spirit On The Water [07:18]
+08. High Water (For Charlie Patton) [05:59]
+09. Workingman's Blues #2 [07:02]
+10. Desolation Row [09:24]
+11. Honest With Me [06:43]
+12. When The Deal Goes Down [06:22]
+Total time: [72:44]
+
+Disc 2:
+01. Highway 61 Revisited [06:08]
+02. Ain't Talkin' [08:22]
+03. Summer Days [05:35]
+04. Like A Rolling Stone [09:35]
+(encore)
+05. Thunder On The Mountain [07:17]
+06. band introduction [00:54]
+07. Blowin' In The Wind [06:19]
+Total time: [44:15]
+
+Band Members
+Bob Dylan - vocals, electric guitar, keyboard, harp
+Denny Freeman - lead guitar
+Donnie Herron - violin, viola, banjo, electric mandolin, pedal steel, lap steel
+Stu Kimball - rhythm guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+15th row right/center
+neumann km140's > denecke ps-2/ad20 > m-audio mt1 (16/44.1)
+m-audio mt1 > hd > audacity > cd wave > flac

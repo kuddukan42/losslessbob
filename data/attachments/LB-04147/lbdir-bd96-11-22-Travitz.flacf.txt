@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-22-Travitz.flacf 
+=================== 
+=================== 
+=================== 
+f6b3118fe497cd63c9164d56a2dc258d  bd1996-11-22.txt
+2b9b2a97b3ed3e6ee28feb47079ba4bc  bd1996-11-22d1t01.flac
+58e61b7de7e8f0bb8285409cbc7c99f1  bd1996-11-22d1t02.flac
+7076c86101b83432aaa60a0640d60c32  bd1996-11-22d1t03.flac
+c0161b229d89dc1bf8510c00423f49ed  bd1996-11-22d1t04.flac
+8b5ddf7ce387d188e4eeb65d8dcef53f  bd1996-11-22d1t05.flac
+b6feb80ec2c844daa7d36536feb4d2b7  bd1996-11-22d1t06.flac
+094c49b1fce7236165fd16aeb37b6556  bd1996-11-22d1t07.flac
+11d3e1750161f4bc5b1987cfb85c859c  bd1996-11-22d1t08.flac
+c063bb26a770240590e6aae6864451ae  bd1996-11-22d1t09.flac
+abab2d156e6ea39a9c997d78bfff3aff  bd1996-11-22d1t10.flac
+06371eb7f5fce32b9a5e28a0c48a202b  bd1996-11-22d1t11.flac
+444f99680a4c9c777176618769dceba6  bd1996-11-22d2t01.flac
+68e6d473751bb8bfb7636751d36a04ff  bd1996-11-22d2t02.flac
+0666972d94b555e1386484b2809b8dd0  bd1996-11-22d2t03.flac
+835ee1f748ac3e2caa198215c927150a  bd1996-11-22d2t04.flac
+c3a2648d3ccac44073ef4a377c15c02c  bd96-11-22-Travitz-LB-4147.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-22-Travitz.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-11-22d1t01.flac:67e3e98a3213d46cf39b59ce2af18256
+bd1996-11-22d1t02.flac:4189baae18d58f986fa4e049ea59b301
+bd1996-11-22d1t03.flac:e74486e1a4c0f5bd15aeec85462a960a
+bd1996-11-22d1t04.flac:239a55d38563fd93803b2d801e5ad25e
+bd1996-11-22d1t05.flac:54eee1818c065f0d3cb78faa110244e6
+bd1996-11-22d1t06.flac:344f4d7eb14ec4548658ec94bb2b6d32
+bd1996-11-22d1t07.flac:77f1f366e02a9fd6e4b2f57f070b2ebf
+bd1996-11-22d1t08.flac:3002005f09ad39b0380ac0b3a1845c5f
+bd1996-11-22d1t09.flac:ac079cc736c1ac727bdb537f27c5cc57
+bd1996-11-22d1t10.flac:169ddd8a66d7961b27c3ff766a4e48ed
+bd1996-11-22d1t11.flac:0fcdff579dbbac79b7f296288eead439
+bd1996-11-22d2t01.flac:2cdce1b538e6dbaf356de34a9877d24e
+bd1996-11-22d2t02.flac:af35fde0be569e35953e15ff2fdb1b7f
+bd1996-11-22d2t03.flac:b263fe9dc6c5d858baf8a02cb0a63d8c
+bd1996-11-22d2t04.flac:95e9bd5995874da2904256b9e5c7a312
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-22-Travitz.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.42       45080828 B   ---   --   ---xx   flac  0.5694  bd1996-11-22d1t01.flac
+     4:33.59       48296012 B   ---   --   ---xx   flac  0.5400  bd1996-11-22d1t02.flac
+     5:41.14       60185372 B   ---   --   ---xx   flac  0.5860  bd1996-11-22d1t03.flac
+     6:59.35       73993964 B   ---   --   ---xx   flac  0.5383  bd1996-11-22d1t04.flac
+     7:12.44       76308332 B   ---   --   ---xx   flac  0.5567  bd1996-11-22d1t05.flac
+     7:33.44       80012732 B   ---   --   ---xx   flac  0.5931  bd1996-11-22d1t06.flac
+     9:24.66       99644876 B   ---   --   ---xx   flac  0.5813  bd1996-11-22d1t07.flac
+     4:28.03       47282300 B   ---   --   ---xx   flac  0.5174  bd1996-11-22d1t08.flac
+     6:30.69       68958332 B   ---   --   ---xx   flac  0.5621  bd1996-11-22d1t09.flac
+     7:07.40       75416924 B   ---   --   ---xx   flac  0.5753  bd1996-11-22d1t10.flac
+     7:08.23       75553340 B   ---   --   ---xx   flac  0.4936  bd1996-11-22d1t11.flac
+    10:36.56      112322156 B   ---   --   ---xx   flac  0.5969  bd1996-11-22d2t01.flac
+    11:06.74      117656492 B   ---   --   ---xx   flac  0.5781  bd1996-11-22d2t02.flac
+    10:13.44      108236732 B   ---   --   ---xx   flac  0.5654  bd1996-11-22d2t03.flac
+     7:44.02       81854348 B   ---   --   ---xx   flac  0.6080  bd1996-11-22d2t04.flac
+   110:37.15     1170802740 B                            0.5677  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,64 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-09-Blood-on-the-Tracks-Test-Pressing-HH.flacf 
+=================== 
+=================== 
+=================== 
+a83b133aa60caa0c522ed138d0c1e44d  back 600 dpi.jpg
+a90634b7f89228b1a11e5322f539a5be  Blood on the Tracks Test Pressing.ffp
+94af11abe94299da2796839239339e5b  Blood on the Tracks Test Pressing.md5
+2b247e0fc9d395322f6b4d51d2b95088  bott -  - 01 - Track 1 incl comment.flac
+11b009f7615ff6d65ff83b686b1a109f  bott -  - 02 - Track 2.flac
+c9da06d596a4ca88ff8f6bbec1cbd47b  bott -  - 03 - Track 3.flac
+e09b490618cd497d1cc6c162c1f0f29d  bott -  - 04 - Track 4.flac
+2aaa5f32608b0a29de568d16d6367d2a  bott -  - 05 - Track 5.flac
+d0f20b02b61c5dd70410e22d14f84475  bott -  - 06 - Track 6.flac
+627f792fef99fddd9cab01e29de3cc5c  bott -  - 07 - Track 7.flac
+d81badd6797373956d09db92e51c9a6d  bott -  - 08 - Track 8.flac
+e3609a79e28d9196eda7cbeecaaa8eb8  bott -  - 09 - Track 9.flac
+aafa95557707eb3274f76e483fcbc09b  bott -  - 10 - Track 10.flac
+7b0b1bed9202f0a21a842858a2058513  content.txt
+8bdd54ad1cc60c5209a12254c6ba7b02  disc 1.jpg
+c04fd9bacf24f085167b396a3262499d  disc 2.jpg
+b6537964e16d30b3ec066bf0e2a6acf7  front 600 dpi.jpg
+4bcb56700fac9ef9d7343718288743b7  inside 600 dpi.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-09-Blood-on-the-Tracks-Test-Pressing-HH.flacf 
+=================== 
+=================== 
+=================== 
+bott -  - 01 - Track 1 incl comment.flac:161173304fff9127ad3349ae79f91b9c
+bott -  - 02 - Track 2.flac:28f2247520dc519d55adc89f399d514d
+bott -  - 03 - Track 3.flac:1889a1e5351ca6f534dc53247a3258b3
+bott -  - 04 - Track 4.flac:de7894a15d216a0c115f846d4ff6a821
+bott -  - 05 - Track 5.flac:b53ffb4efe79078262cd4271a610e41e
+bott -  - 06 - Track 6.flac:48e5e869127b5cabdb8ad55ed459450b
+bott -  - 07 - Track 7.flac:493d6a5843e66ef136b29e713843f0c3
+bott -  - 08 - Track 8.flac:5f754a7f839e7b207d374ccd13cdd4dc
+bott -  - 09 - Track 9.flac:d818dd865e80bcb43ec01cb6bade6ce3
+bott -  - 10 - Track 10.flac:e4c6643b3abd4a8f81fcede5e017712f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-09-Blood-on-the-Tracks-Test-Pressing-HH.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:04.41       74890076 B   ---   --   ---xx   flac  0.5526  bott -  - 01 - Track 1 incl comment.flac
+     4:23.19       46437932 B   ---   --   ---xx   flac  0.5457  bott -  - 02 - Track 2.flac
+     4:26.57       47056508 B   ---   --   ---xx   flac  0.5130  bott -  - 03 - Track 3.flac
+     8:56.05       94562204 B   ---   --   ---xx   flac  0.5183  bott -  - 04 - Track 4.flac
+     2:58.51       31519196 B   ---   --   ---xx   flac  0.5491  bott -  - 05 - Track 5.flac
+     4:27.18       47141180 B   ---   --   ---xx   flac  0.5754  bott -  - 06 - Track 6.flac
+     9:53.23      104659340 B   ---   --   ---xx   flac  0.5863  bott -  - 07 - Track 7.flac
+     3:26.11       36364316 B   ---   --   ---xx   flac  0.5012  bott -  - 08 - Track 8.flac
+     5:03.14       53482172 B   ---   --   ---xx   flac  0.5466  bott -  - 09 - Track 9.flac
+     3:24.00       35985644 B   ---   --   ---xx   flac  0.5079  bott -  - 10 - Track 10.flac
+    54:03.14      572098568 B                            0.5443  (10 files)
+=================== 
+=================== 
+=================== 

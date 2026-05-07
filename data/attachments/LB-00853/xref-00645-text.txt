@@ -1,0 +1,66 @@
+===================
+===================
+===================
+=== Bob Dylan At the Beeb.txt
+===================
+===================
+===================
+Bob Dylan
+At The Beeb
+[Mainstream MSBR-039]
+
+BBC Studios, BBC broadcast session, London, June 1, 1965
+BBC broadcast in two parts on BBC radio, June 19 & 26, 1965
+No source/lineage information
+Remastered by Improved Air Remasters, April, 2003
+
+broadcast part 1, June 19, 1965:
+1. Ballad Of Hollis Brown
+2. Mr Tambourine Man 
+3. Gates Of Eden
+4. If You Gotta Go Go Now 
+5. Lonesome Death Of Hattie Carroll 
+6. It Ain't Me Babe
+
+broadcast part 2, June 26, 1965:
+7. Annoucement / Love Minus Zero/No Limit 
+8. One Too Many Mornings 
+9. Boots Of Spanish Leather 
+10. It's Alright Ma (I'm Only Bleeding) 
+11. She Belongs To Me
+12. It's All Over Now Baby Blue 
+
+NOTE: While this disc is an upgrade over the commonly circulating
+commercial boots and their clones, it is definitely not taken from
+the BBC tapes which turned up in private hands in 2002. Those tapes
+have not been circulated.
+
+===================
+===================
+===================
+=== IAR 057 - Bob Dylan At The Beeb.md5
+===================
+===================
+===================
+5fc0491676c5755631f492e389b0533b *01 Ballad Of Hollis Brown.flac
+b13ef61d6ef648279bf19da834652e58 *02 Mr. Tambourine Man.flac
+f259c694888d7a6c74c0898a0b429ca9 *03 Gates Of Eden.flac
+fc8cd98916523781b772c4bff1a76c53 *04 If You Gotta Go, Go Now.flac
+a91d0bd240fae46509904dba807a424f *05 Lonesome Death Of Hattie Carroll.flac
+64c301ec4e4bb02ebac374348d64d720 *06 It Ain't Me Babe.flac
+f2d8571ec8163a43024f44bedfdce61c *07 Annoucement & Love Minus Zero-No Limit.flac
+cb433087fc4676c96a5ad5f0481674a8 *08 One Too Many Mornings.flac
+fee713dff9b64ff857bf401b26a0f5ce *09 Boots Of Spanish Leather.flac
+465d87d6daf6b543cf170baba5858742 *10 It's Alright Ma (I'm Only Bleeding).flac
+ce3597b2dfc8111dd4b1bb966a754d89 *11 She Belongs To Me.flac
+d28ed0b19eee2844fbed33cbea24f0b2 *12 It's All Over Now Baby Blue.flac
+afbb5f7de3c8b4da2a467682b1429e2f *Artwork and notes\2651_Beeb_back.jpg
+2c8717a76f6b51fa71d030e4be9b18f5 *Artwork and notes\2651_Beeb_front.jpg
+5b467db385c3709caa32b661f7fea52f *Artwork and notes\2652_Beeb_back.jpg
+bb6ad39a56ecd15e0bd61bf0fc7af643 *Artwork and notes\Beeb_back.bmp
+eef38b4d7bb00a1524d3a45ab6e0ae1f *Artwork and notes\Beeb_front.bmp
+a0bb4e02a5692bc33bf959c406435e3d *At The Beeb.log
+013c51858fc157181c69edec61d1ddec *Bob Dylan At the Beeb.txt
+===================
+===================
+===================

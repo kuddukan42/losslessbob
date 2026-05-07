@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-06-16-Live-at-the-Summer-Sound-Festival.flacf 
+=================== 
+=================== 
+=================== 
+97c1512a606413791222dc6d9622b292  Artwork\l-21b.jpg
+1f30342f067f44a391e269b520633c7d  Artwork\l-21cd.jpg
+c74789a8a5d6dcdb6e6462aa852023c5  Artwork\l-21f.jpg
+d23aa6727d6e024d9cb091725cf57c9c  Artwork\l-21in.jpg
+6932faa244146053394555d3cebc2574  Artwork\l-21out.jpg
+626d5f189d6978b50205ad8756509783  bd-Live at the Summer Sound Festival-d1\bd-Live at the Summer Sound Festival-d1.md5
+13bffa32ad22ae2a00cffddcc2c4da12  bd-Live at the Summer Sound Festival-d1\Track01.flac
+f533a77adcde169f1a6e046ab5a1ece5  bd-Live at the Summer Sound Festival-d1\Track02.flac
+0b90a1186707ffa6c345364a575c6dde  bd-Live at the Summer Sound Festival-d1\Track03.flac
+b2b15622999be1378f832e8525959c0a  bd-Live at the Summer Sound Festival-d1\Track04.flac
+2e5c6ab18fbd3dc7406cf5c1440c032e  bd-Live at the Summer Sound Festival-d1\Track05.flac
+64c2a0dc271b334db7844cea76eaa447  bd-Live at the Summer Sound Festival-d1\Track06.flac
+a25e9738be4c5e76f7e68e3beb9a23be  bd-Live at the Summer Sound Festival-d1\Track07.flac
+11eba072ab9137e1eaa16301f997dc8f  bd-Live at the Summer Sound Festival-d1\Track08.flac
+2c2849824c4d53bd7cd2c805ac230b44  bd-Live at the Summer Sound Festival-d1\Track09.flac
+8fa556e7ca66cc2f86dc544a44d7f95a  bd-Live at the Summer Sound Festival-d1\Track10.flac
+8c6a56953ded5103856f2bd0156e1051  bd-Live at the Summer Sound Festival-d1\Track11.flac
+6c5f16b421661ce7afefd4bc4c66b04e  bd-Live at the Summer Sound Festival-d2\bd-Live at the Summer Sound Festival-d2.md5
+8dc3dd9874cdd856e4c6b55c1158b303  bd-Live at the Summer Sound Festival-d2\Track01.flac
+3ef65b17f0b1307bc42d6e41065b119d  bd-Live at the Summer Sound Festival-d2\Track02.flac
+da3cb3c140e2df194e7f285d730c4fe8  bd-Live at the Summer Sound Festival-d2\Track03.flac
+398f254ede3a83e2dc42f65fe1ad46b2  bd-Live at the Summer Sound Festival-d2\Track04.flac
+658a3fd8f4eea295b8af6e4f846a4600  bd-Live at the Summer Sound Festival-d2\Track05.flac
+2a8a555901a32bee8e79ffa379147d20  bd-Live at the Summer Sound Festival-d2\Track06.flac
+e2ecd1111e9e464982c0ab0a7656695c  bd-Live at the Summer Sound Festival-d2\Track07.flac
+5007d75b6a75e72ef18a00f895905926  bd-Live at the Summer Sound Festival-d2\Track08.flac
+a70bb51873425001ab25862387e5ff81  bd-Live at the Summer Sound Festival-d2\Track09.flac
+a41a6ebd13ec777f4939cc1ae0d085de  bd-Live at the Summer Sound Festival-d2\Track10.flac
+d39189c24a33bdb7abc0d6dff4ca0407  bd-Live at the Summer Sound Festival-d2\Track11.flac
+5d33a1dbce8f96a1eca62d3e84f4a627  bd-Live at the Summer Sounds Festival (Godfather) 2008-06-16.txt
+8908c5bb1c843d2dac2680e3d35506e5  reviews.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-16-Live-at-the-Summer-Sound-Festival.flacf\bd-Live at the Summer Sound Festival-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:6274e47427518e6587d860d08a36cc84
+Track02.flac:963156162ceb235551ac709dbf4e4eb9
+Track03.flac:eb4ebe2d67ce45dff4f0c5b9133dc106
+Track04.flac:90859169ca93a711ff5cc9452dcc54b4
+Track05.flac:81b138bd3d604ba6c2f69e65d9d1fad4
+Track06.flac:100b0c50a2d8126b1a7724a99129e6ea
+Track07.flac:1f8a5bb883fb17ae1f74d18463fdaeef
+Track08.flac:23642fd58feb5defc28c5f22b04c568e
+Track09.flac:f8c10f0c65f085048dfca80dcd96ce18
+Track10.flac:66dbc6fe38724a97f68bbbbaf42df09c
+Track11.flac:15a0fe02cc176b9ca4f573b24fa10b2d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-16-Live-at-the-Summer-Sound-Festival.flacf\bd-Live at the Summer Sound Festival-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:994671758b97987f87b407f456c1abab
+Track02.flac:224657b088059d403e99a270728fa17d
+Track03.flac:9292f3da2a00c251169224800e33b68b
+Track04.flac:94856c98e13612a149b09c1143a0f5bc
+Track05.flac:8cee6ac423d8d2aed669f84db26a0f5b
+Track06.flac:f9b4230da731562439525a6cc852dbcb
+Track07.flac:e8e4a51a20011962584c9fb52bec073d
+Track08.flac:ac093b2b65f774e46d146f6ac7746c64
+Track09.flac:d5a33ff6e937bc206c6446782396d849
+Track10.flac:9cf23eff7d4e6a7e7923227924b513d2
+Track11.flac:8cf1d0e93ff6298920a0d439b6e8fbb3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-16-Live-at-the-Summer-Sound-Festival.flacf\bd-Live at the Summer Sound Festival-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.23       58089740 B   ---   --   ---xx   flac  0.6424  Track01.flac
+     6:26.36       68175116 B   ---   --   ---xx   flac  0.6576  Track02.flac
+     6:50.28       72389900 B   ---   --   ---xx   flac  0.6540  Track03.flac
+     7:00.03       74095100 B   ---   --   ---xx   flac  0.6660  Track04.flac
+     5:05.38       53891420 B   ---   --   ---xx   flac  0.5731  Track05.flac
+     6:51.67       72658028 B   ---   --   ---xx   flac  0.6542  Track06.flac
+     6:25.73       68085740 B   ---   --   ---xx   flac  0.6526  Track07.flac
+     6:00.64       63654572 B   ---   --   ---xx   flac  0.6742  Track08.flac
+     6:48.52       72093548 B   ---   --   ---xx   flac  0.5762  Track09.flac
+     6:36.01       69856796 B   ---   --   ---xx   flac  0.6693  Track10.flac
+     7:41.39       81412172 B   ---   --   ---xx   flac  0.6484  Track11.flac
+    71:16.49      754402132 B                            0.6438  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-16-Live-at-the-Summer-Sound-Festival.flacf\bd-Live at the Summer Sound Festival-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:29.59       68758412 B   ---   --   ---xx   flac  0.6778  Track01.flac
+     5:57.00       62974844 B   ---   --   ---xx   flac  0.6173  Track02.flac
+     6:13.22       65848988 B   ---   --   ---xx   flac  0.6701  Track03.flac
+    11:09.37      118098668 B   ---   --   ---xx   flac  0.5781  Track04.flac
+     0:41.61        7375916 B   ---   --   ---xx   flac  0.6098  Track05.flac
+     6:53.74       73027292 B   ---   --   ---xx   flac  0.7004  Track06.flac
+     6:38.18       70249580 B   ---   --   ---xx   flac  0.6815  Track07.flac
+     5:45.36       60942716 B   ---   --   ---xx   flac  0.7048  Track08.flac
+     7:35.39       80353772 B   ---   --   ---xx   flac  0.7095  Track09.flac
+     5:56.66       62953676 B   ---   --   ---xx   flac  0.6294  Track10.flac
+     5:33.67       58898828 B   ---   --   ---xx   flac  0.6596  Track11.flac
+    68:55.29      729482692 B                            0.6578  (11 files)
+=================== 
+=================== 
+=================== 

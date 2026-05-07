@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd73-01-20-pecos-blues.flacf 
+=================== 
+=================== 
+=================== 
+f26b62da73d32fab776fe0220aa12fc6  bd73-20-01-pecos-blues-t01.flac
+08af6efc838c3ee4b67114e182311cff  bd73-20-01-pecos-blues-t02.flac
+37281593ea12cb403660d304d01acf1a  bd73-20-01-pecos-blues-t03.flac
+bb0f69a9fdd8337b50720cfaadbec616  bd73-20-01-pecos-blues-t04.flac
+0f3270df136705f5f0204399301d2290  bd73-20-01-pecos-blues-t05.flac
+87bd5e694b639374219d2d4725487869  bd73-20-01-pecos-blues-t06.flac
+7f541ac1fc86eb9829a8f77459f83259  bd73-20-01-pecos-blues-t07.flac
+0595908fdf6bc04733d7f91c0e0eaaa4  bd73-20-01-pecos-blues-t08.flac
+dcfffafc7d22acaaf538e9e34725d035  bd73-20-01-pecos-blues-t09.flac
+f23fc65da71117f25605f8e095080b6f  bd73-20-01-pecos-blues-t10.flac
+ec9e5e2eee12dede5fb84a86f948f12b  bd73-20-01-pecos-blues-t11.flac
+ccfcb555b0f44795139cb0180862cad6  bd73-20-01-pecos-blues-t12.flac
+eef94053c94a4fe3c3aafb3913f1e607  bd73-20-01-pecos-blues-t13.flac
+98deab1c8c3851c84fa0427165e04468  bd73-20-01-pecos-blues-t14.flac
+c064a691a5d2f09142d5e885574d2dc4  bd73-20-01-pecos-blues-t15.flac
+cde6f46afd9129777cfecb40b87e2783  bd73-20-01-pecos-blues-t16.flac
+1e4a7e91052ba52d7ff19fc19a7d8aa0  bd73-20-01-pecos-blues-t17.flac
+fc3a5adbb1d21e1b7d7505354fc87821  bd73-20-01-pecos-blues-t18.flac
+635f145b74ff1f0139fce3a6f3eeca03  bd73-20-01-pecos-blues-t19.flac
+0488d9d0518abe0193d299da185f5265  bd73-20-01-pecos-blues-t20.flac
+c150403fe0c935fa8daf0992b1ab9dc0  bd73-20-01-pecos-blues-t21.flac
+8dc52e56f9128ab3974303bb375caafb  bd73-20-01-pecos-blues-t22.flac
+73e14033687175e52615bd48f1d2c8f1  bd73-20-01-pecos-blues-t23.flac
+ded87210e0feaf8f4c467c919bec031a  bd73-20-01-pecos-blues-t24.flac
+cf884e2660eb7640a1911eee1682178a  bd73-20-01-pecos-blues-t25.flac
+1a356f5ffb5e6b48343bcc3057c45e7b  bd73-20-01-pecos-blues.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd73-01-20-pecos-blues.flacf 
+=================== 
+=================== 
+=================== 
+bd73-20-01-pecos-blues-t01.flac:f9606a9bfe022b5da3aa00684fc821ad
+bd73-20-01-pecos-blues-t02.flac:0954d961eb47f41a6679a77d75b613cf
+bd73-20-01-pecos-blues-t03.flac:dc0be599bb7c91d750d2edcdea95504e
+bd73-20-01-pecos-blues-t04.flac:4c2ea428a10c824e4e1ae24b8f0301d3
+bd73-20-01-pecos-blues-t05.flac:74bca4ff0e88d2ac3d35508b9de82ecc
+bd73-20-01-pecos-blues-t06.flac:9ec3621ad6c2b8326ee7673fbe16364e
+bd73-20-01-pecos-blues-t07.flac:5839070299a3d519c655cae16993dbcd
+bd73-20-01-pecos-blues-t08.flac:d6ec0d684c4982b5341167b97d63738c
+bd73-20-01-pecos-blues-t09.flac:a4d9c037257f1b42d9cd5bad97300ac0
+bd73-20-01-pecos-blues-t10.flac:dccaf538fa4f92e86c8c080c02ba47d7
+bd73-20-01-pecos-blues-t11.flac:71e75ecee8098bf0e8537335eab92d57
+bd73-20-01-pecos-blues-t12.flac:fce14d26b33d587cbce089e20bc0b387
+bd73-20-01-pecos-blues-t13.flac:fc39c00f48e7ea0c1ab2fd6253970aaf
+bd73-20-01-pecos-blues-t14.flac:12809a114825cef4e02b39f0f657c884
+bd73-20-01-pecos-blues-t15.flac:100ba697330d9da25f20965c27ee301f
+bd73-20-01-pecos-blues-t16.flac:90ab24c64747e408aa06d42daddfeff0
+bd73-20-01-pecos-blues-t17.flac:bd9a0259fcd97e4595ac25f1f6b76341
+bd73-20-01-pecos-blues-t18.flac:c9c0d2068a7ed78e8a401e450dadbdda
+bd73-20-01-pecos-blues-t19.flac:a96a439a365f6c84ec91947903090cee
+bd73-20-01-pecos-blues-t20.flac:f419ca4acaa058509a25067943232efd
+bd73-20-01-pecos-blues-t21.flac:be20892bf178b9102b4af10a4b36c208
+bd73-20-01-pecos-blues-t22.flac:41131c76ceb2813bb675e733e0d17b41
+bd73-20-01-pecos-blues-t23.flac:795c64f4addeff6afb92c29d70a7d968
+bd73-20-01-pecos-blues-t24.flac:4be80060ea300c5a3f3a732d1e651255
+bd73-20-01-pecos-blues-t25.flac:f44008d787c53fd042dff06512a66ddb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd73-01-20-pecos-blues.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:58.25       20874044 B   ---   --   ---xx   flac  0.5642  bd73-20-01-pecos-blues-t01.flac
+     6:46.20       71665484 B   ---   --   ---xx   flac  0.6140  bd73-20-01-pecos-blues-t02.flac
+     3:53.27       41164748 B   ---   --   ---xx   flac  0.5570  bd73-20-01-pecos-blues-t03.flac
+     5:50.53       61864700 B   ---   --   ---xx   flac  0.5912  bd73-20-01-pecos-blues-t04.flac
+     3:26.60       36479564 B   ---   --   ---xx   flac  0.5614  bd73-20-01-pecos-blues-t05.flac
+     4:14.40       44899724 B   ---   --   ---xx   flac  0.5751  bd73-20-01-pecos-blues-t06.flac
+     2:07.22       22454588 B   ---   --   ---xx   flac  0.6108  bd73-20-01-pecos-blues-t07.flac
+     0:52.38        9262220 B   ---   --   ---xx   flac  0.5730  bd73-20-01-pecos-blues-t08.flac
+     3:59.15       42194924 B   ---   --   ---xx   flac  0.6290  bd73-20-01-pecos-blues-t09.flac
+     4:56.25       52273244 B   ---   --   ---xx   flac  0.6008  bd73-20-01-pecos-blues-t10.flac
+     4:18.50       45628844 B   ---   --   ---xx   flac  0.6166  bd73-20-01-pecos-blues-t11.flac
+     1:13.25       12936044 B   ---   --   ---xx   flac  0.5819  bd73-20-01-pecos-blues-t12.flac
+     1:06.60       11783564 B   ---   --   ---xx   flac  0.5404  bd73-20-01-pecos-blues-t13.flac
+     2:31.15       26671724 B   ---   --   ---xx   flac  0.5955  bd73-20-01-pecos-blues-t14.flac
+     0:51.00        8996444 B   ---   --   ---xx   flac  0.5282  bd73-20-01-pecos-blues-t15.flac
+     7:01.00       74264444 B   ---   --   ---xx   flac  0.5805  bd73-20-01-pecos-blues-t16.flac
+     1:31.47       16162988 B   ---   --   ---xx   flac  0.5620  bd73-20-01-pecos-blues-t17.flac
+     1:57.53       20763500 B   ---   --   ---xx   flac  0.6097  bd73-20-01-pecos-blues-t18.flac
+     1:30.10       15899564 B   ---   --   ---xx   flac  0.5981  bd73-20-01-pecos-blues-t19.flac
+     0:56.65       10031324 B   ---   --   ---xx   flac  0.6022  bd73-20-01-pecos-blues-t20.flac
+     2:14.00       23637644 B   ---   --   ---xx   flac  0.5898  bd73-20-01-pecos-blues-t21.flac
+     1:53.00       19933244 B   ---   --   ---xx   flac  0.5919  bd73-20-01-pecos-blues-t22.flac
+     0:51.15        9031724 B   ---   --   ---xx   flac  0.5682  bd73-20-01-pecos-blues-t23.flac
+     3:36.35       38184764 B   ---   --   ---xx   flac  0.6115  bd73-20-01-pecos-blues-t24.flac
+     0:30.65        5444924 B   ---   --   ---xx   flac  0.4983  bd73-20-01-pecos-blues-t25.flac
+    70:09.15      742503980 B                            0.5906  (25 files)
+=================== 
+=================== 
+=================== 

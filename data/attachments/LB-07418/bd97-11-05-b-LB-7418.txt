@@ -1,0 +1,10 @@
+Bob Dylan, 11/5/97, Huntington, West Virginia, 2CDR
+
+LB-7418, (51min+52min), version "b"; Unidentified taper, Source/Lineage: no info, Derived from LB-4269, http://jokerman.org.uk/lb/detail/LB-04269.html, No alterations, except giving songs titles..; bittorrent download 04/09; same recording as LB-4269 with similar wav and spectral view except levels are higher and this seems to have less discontinuity flaws; (did not listen to all of this)
+
+drop/cut between cdrs, end of d24; discontinuities between tracks
+
+01. Maggie's Farm [05:50], 02. I Want You [05:46], 03. Cold Irons Bound [06:44], 04. I'll Be Your Baby Tonight [06:13], 05. Can't Wait [06:24], 06. Silvio (Bob Dylan & Robert Hunter) [07:37], 07. Roving Gambler (trad.) [03:46], 08. Tangled Up In Blue [08:19], Total time [50:43], 09. Stone Walls And Steel Bars (Ray Pennington / Ray Marcum) [03:45], 10. Mr. Tambourine Man [07:13], 11. 'Til I Fell In Love With You [06:28], 12. Highway 61 Revisited [06:16], 13. Like A Rolling Stone [08:25], 14. It Ain't Me, Babe [07:49], 15. Love Sick [05:24], 16. Alabama Getaway (Robert Hunter/Jerry Garcia) [06:21], Total time [51:45]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

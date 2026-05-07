@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd24-03-27-gravenb.flacf
+===================
+===================
+===================
+f62bd5d4d35354c5ed1ac3536de23fc1 *01. introduction.flac
+330955b91dadcfdd2b14618447d3ca3b *02. Watching the River Flow.flac
+36582d22283a2c6a85f1c95f98706507 *03. Most Likely You Go Your Way (and I'll Go Mine).flac
+14be1352d368bedd2621e68147abe8a0 *04. I Contain Multitudes.flac
+1cda5773668b4f554321f12bded23c7d *05. False Prophet.flac
+fdc956e5a962eddd87b9617faec39844 *06. When I Paint My Masterpiece.flac
+8bc53a64b4ed899e3f3995b60feaab3d *07. Black Rider.flac
+7ba0ab294d34003e60b9c4811229ea7b *08. I'll Be Your Baby Tonight.flac
+e92c7f8b6ed5f8e0eda1bacabb1bf7b6 *09. My Own Version of You.flac
+49d06f80fae78b1329196ba08ab6355a *10. Crossing the Rubicon.flac
+c9c508be7ec4fb89636be8548e509797 *11. To Be Alone with You.flac
+06b826d8f4720d6ee6096450f8a61a65 *12. Key West (Philosopher Pirate).flac
+925a24427b0e2cc27e6f4d253c98ecdc *13. Gotta Serve Somebody.flac
+56120123e7da761af347ec085d38320a *14. I've Made Up My Mind to Give Myself to You.flac
+3bcd30849ef3ffa66344c0a7e1cb917a *15. Big River (Johnny Cash).flac
+dd22399c8cead45fff6354a44006c267 *16. Mother of Muses.flac
+44b6ae3a38997e54646928f09867b932 *17. Goodbye Jimmy Reed.flac
+8fb5f8fe66d178ca93f92c67f78c9c3d *18. Every Grain of Sand.flac
+422cbb6d7728621d6468c9c92b278bcb *fingerprint.ffp.txt
+b95fea7ff68215cb529e3b44438f5bcd *info.txt
+5b35132e402aab89696550b427a3004b *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd24-03-27-gravenb.flacf
+===================
+===================
+===================
+01. introduction.flac:b27e923c1a2b172a6600b17dc462e657
+02. Watching the River Flow.flac:09a6f3b503f025fb9e6113f28541a8b6
+03. Most Likely You Go Your Way (and I'll Go Mine).flac:973bb6b911581969fd49a2af04d44123
+04. I Contain Multitudes.flac:1153b51648cfa0eac5e33e15026669d3
+05. False Prophet.flac:d9100620052ef585656e32b707bbad2c
+06. When I Paint My Masterpiece.flac:faf16c13e127e1ac2c933e528f708026
+07. Black Rider.flac:2a013a287dd8f88415877a6fdc2906cf
+08. I'll Be Your Baby Tonight.flac:9faf9b35e058813f5c3a6f0afae3f19e
+09. My Own Version of You.flac:8d40a789b45b2da806d21854170ae540
+10. Crossing the Rubicon.flac:80bb93656917fafabd305fc41bae0ae5
+11. To Be Alone with You.flac:4f70e668af29aca01129213fb1bdee01
+12. Key West (Philosopher Pirate).flac:8cc38e2cf176a04c345ac938b9b30552
+13. Gotta Serve Somebody.flac:a5193d8115b0c0040aa77766a1b86974
+14. I've Made Up My Mind to Give Myself to You.flac:81081341c5dd905e206210bd309cfef0
+15. Big River (Johnny Cash).flac:193e9a166d6e87389f5a2372b2557664
+16. Mother of Muses.flac:58c6cbf18107067be91285b5874ca212
+17. Goodbye Jimmy Reed.flac:6685c3252ce8d989868fcbd6f5d43096
+18. Every Grain of Sand.flac:aff15c78708a5da9a963a5058b8a31d8
+===================
+===================
+===================
+=== shntool len for: bd24-03-27-gravenb.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:28.08        4958544 B   -b-   --   ---xx   flac  0.8657  01. introduction.flac
+     4:16.31       45231848 B   -b-   --   ---xx   flac  0.6689  02. Watching the River Flow.flac
+     4:31.31       47878528 B   -b-   --   ---xx   flac  0.6508  03. Most Likely You Go Your Way (and I'll Go Mine).flac
+     5:44.65       60835020 B   -b-   --   ---xx   flac  0.6180  04. I Contain Multitudes.flac
+     7:03.54       74744572 B   -b-   --   ---xx   flac  0.6420  05. False Prophet.flac
+     5:27.29       57750448 B   -b-   --   ---xx   flac  0.6213  06. When I Paint My Masterpiece.flac
+     5:05.69       53963960 B   -b-   --   ---xx   flac  0.5924  07. Black Rider.flac
+     6:04.03       64215812 B   -b-   --   ---xx   flac  0.6381  08. I'll Be Your Baby Tonight.flac
+     7:08.54       75626800 B   -b-   --   ---xx   flac  0.5882  09. My Own Version of You.flac
+     8:04.05       85389244 B   -b-   --   ---xx   flac  0.6005  10. Crossing the Rubicon.flac
+     5:33.50       58858060 B   -b-   --   ---xx   flac  0.6332  11. To Be Alone with You.flac
+    11:12.22      118591864 B   -b-   --   ---xx   flac  0.5816  12. Key West (Philosopher Pirate).flac
+     4:25.35       46828872 B   -b-   --   ---xx   flac  0.6636  13. Gotta Serve Somebody.flac
+     6:39.58       70520188 B   -b-   --   ---xx   flac  0.5768  14. I've Made Up My Mind to Give Myself to You.flac
+     3:05.61       32777648 B   -b-   --   ---xx   flac  0.6261  15. Big River (Johnny Cash).flac
+     5:34.08       58935336 B   -b-   --   ---xx   flac  0.5749  16. Mother of Muses.flac
+     7:21.05       77803388 B   -b-   --   ---xx   flac  0.6320  17. Goodbye Jimmy Reed.flac
+     7:16.59       77049952 B   -b-   --   ---xx   flac  0.5748  18. Every Grain of Sand.flac
+   105:03.47     1111960084 B                            0.6131  (18 files)
+===================
+===================
+===================

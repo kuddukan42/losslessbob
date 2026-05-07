@@ -1,0 +1,12 @@
+a95145a308615ce8cd5a42fa8aac14c3 *bd81-07-10-rw02-in-the-sum-t01.flac
+f7ee3fdc883c24cd90135d8ccacfefb5 *bd81-07-10-rw02-in-the-sum-t02.flac
+fe9805adb8d07b8fe06ca6cbe9da078b *bd81-07-10-rw02-in-the-sum-t03.flac
+6ccb024bcf8939fc3af5bb247a232559 *bd81-07-10-rw02-in-the-sum-t04.flac
+6fe186c639ff54113129701d3c250c28 *bd81-07-10-rw02-in-the-sum-t05.flac
+e42c825105f743151efea660064b1925 *bd81-07-10-rw02-in-the-sum-t06.flac
+dfd219f3a53a03b55a13048f9284ad17 *bd81-07-10-rw02-in-the-sum-t07.flac
+97ae9a32a1f359b92ff0b1c4868c8a76 *bd81-07-10-rw02-in-the-sum-t08.flac
+db50a897fab60b2338f3241d3a48c768 *bd81-07-10-rw02-in-the-sum-t09.flac
+faed4bb740ad1f11249029c72656be93 *bd81-07-10-rw02-in-the-sum-t10.flac
+a03d132e5caaa2d413574509944340ec *bd81-07-10-rw02-in-the-sum-t11.flac
+2e3af75310bfe1dc1b4e57202ca8978e *bd81-07-10-rw02-in-the-sum-t12.flac

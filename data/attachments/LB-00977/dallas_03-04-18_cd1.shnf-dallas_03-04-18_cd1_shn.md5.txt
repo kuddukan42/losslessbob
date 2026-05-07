@@ -1,0 +1,9 @@
+5c7a35e33c21b6da4f5d572490497c19 *dallas_03-04-18_cd1_Track 01.shn
+9ebc5b4404901453413e482c950d99aa *dallas_03-04-18_cd1_Track 02.shn
+e0cc56d76b64fd80af3c7b92d020f766 *dallas_03-04-18_cd1_Track 03.shn
+6909cea61fc80c1ca95810a23a6263c0 *dallas_03-04-18_cd1_Track 04.shn
+4248bc6855c3582ecaebf1b699e3e014 *dallas_03-04-18_cd1_Track 05.shn
+5c9c397a4476749d0c33c31dfb94f97e *dallas_03-04-18_cd1_Track 06.shn
+934b0e7dc69a82ff96f7da7d71edef95 *dallas_03-04-18_cd1_Track 07.shn
+ec1e54acbadc4ce6f1c0d1ee66083ce1 *dallas_03-04-18_cd1_Track 08.shn
+c03b3352cdc1a9539af89dd9a8f83f4c *dallas_03-04-18_cd1_Track 09.shn

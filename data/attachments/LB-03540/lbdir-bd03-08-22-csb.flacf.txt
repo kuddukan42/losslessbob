@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-22-csb.flacf 
+=================== 
+=================== 
+=================== 
+699eff02eef280e82ae429442557035f  bd03-08-22-csb-LB-3540.txt
+635a5a39fc3f72a41b3e63db6f0277ad  bobdylanfair.txt
+e12ab0ddc5f9ee8697534965a13140d3  bobdylannysfair082203disc101.flac
+4e65438e8ca5498841f9fc601e86bb3a  bobdylannysfair082203disc102.flac
+6ee57ba8d94ea37acfa13cfb5e9ff1aa  bobdylannysfair082203disc103.flac
+0d013428f4948ab7bdda786eabf5fe0c  bobdylannysfair082203disc104.flac
+333004cbabf53e8a7f60b1882e46d1bb  bobdylannysfair082203disc105.flac
+e374727cd79509c7bd881f949e2c2eb7  bobdylannysfair082203disc106.flac
+268ab3a96ae431853f471bcc366f474d  bobdylannysfair082203disc107.flac
+db660af432b0533bd93ca039db65a09c  bobdylannysfair082203disc108.flac
+4e197313d6cec8a3bbdb3489fd84dde4  bobdylannysfair082203disc201.flac
+f7da1a6dbb820419e06451c86603ecd8  bobdylannysfair082203disc202.flac
+65a9fca7464057fe1a0949967dccb0b6  bobdylannysfair082203disc203.flac
+150677bf3ce5e56a5a9cabee24291a88  bobdylannysfair082203disc204.flac
+feace186602f6512e780cf0d6629f51e  bobdylannysfair082203disc205.flac
+85ee6ce61dce8f934581d6003dc9554f  bobdylannysfair082203disc206.flac
+5d0466f6c9536160e3ac5d2e1cb2d94f  bobdylannysfair082203disc207.flac
+1a911a78819fb43fa60f603ddd1c792d  bobdylannysfair082203disc208.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-08-22-csb.flacf 
+=================== 
+=================== 
+=================== 
+bobdylannysfair082203disc101.flac:85aac22679043eb373f2dc22c23dee9e
+bobdylannysfair082203disc102.flac:da3bf5ea6c93d23224ba767fbc4b95d2
+bobdylannysfair082203disc103.flac:0b910f404cf48dbe21856a77b918c976
+bobdylannysfair082203disc104.flac:b0e8717767784df24ccc344f077c820b
+bobdylannysfair082203disc105.flac:b6676b3313b2802d8be744174ee77e18
+bobdylannysfair082203disc106.flac:c5b9f811ce9be742abf26768b5041a37
+bobdylannysfair082203disc107.flac:950d237c3b15b4b02177d9573de993ea
+bobdylannysfair082203disc108.flac:f5d5c04f0c5345197f029cf4280f3345
+bobdylannysfair082203disc201.flac:4422b216e0c1e00c7a084c79b0656b7a
+bobdylannysfair082203disc202.flac:2acffe740c02d5a4dbcddbbaf6bffe7a
+bobdylannysfair082203disc203.flac:44c64ce5d2947e6dfe3f7601c14ee449
+bobdylannysfair082203disc204.flac:ec72a34a78b81823ea6d4aee16787339
+bobdylannysfair082203disc205.flac:249c03402ea3f9b8725dfa7e3a29c5aa
+bobdylannysfair082203disc206.flac:838e7dab30f1a380ea1581fe4e70805d
+bobdylannysfair082203disc207.flac:45a54bf135e3673390361524bae08f09
+bobdylannysfair082203disc208.flac:1096ee86bdf073681a73f43fe6641ad5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-22-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:03.39       74708972 B   ---   --   ---xx   flac  0.6138  bobdylannysfair082203disc101.flac
+     5:28.68       58019180 B   ---   --   ---xx   flac  0.5946  bobdylannysfair082203disc102.flac
+     5:09.49       54622892 B   ---   --   ---xx   flac  0.5619  bobdylannysfair082203disc103.flac
+     6:54.42       73128428 B   ---   --   ---xx   flac  0.5497  bobdylannysfair082203disc104.flac
+     6:08.49       65030492 B   ---   --   ---xx   flac  0.6112  bobdylannysfair082203disc105.flac
+     6:55.09       73227212 B   ---   --   ---xx   flac  0.5395  bobdylannysfair082203disc106.flac
+     7:10.08       75870860 B   ---   --   ---xx   flac  0.5809  bobdylannysfair082203disc107.flac
+     7:31.21       79605836 B   ---   --   ---xx   flac  0.5379  bobdylannysfair082203disc108.flac
+     6:38.61       70350716 B   ---   --   ---xx   flac  0.5928  bobdylannysfair082203disc201.flac
+     5:10.33       54761660 B   ---   --   ---xx   flac  0.4870  bobdylannysfair082203disc202.flac
+     6:56.45       73488284 B   ---   --   ---xx   flac  0.6522  bobdylannysfair082203disc203.flac
+     8:00.33       84749660 B   ---   --   ---xx   flac  0.5795  bobdylannysfair082203disc204.flac
+    11:03.37      117040268 B   ---   --   ---xx   flac  0.5990  bobdylannysfair082203disc205.flac
+     6:59.62       74057468 B   ---   --   ---xx   flac  0.6530  bobdylannysfair082203disc206.flac
+     6:06.30       64633004 B   ---   --   ---xx   flac  0.6362  bobdylannysfair082203disc207.flac
+    10:41.40      113166524 B   ---   --   ---xx   flac  0.6261  bobdylannysfair082203disc208.flac
+   113:59.26     1206461456 B                            0.5912  (16 files)
+=================== 
+=================== 
+=================== 

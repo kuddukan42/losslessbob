@@ -1,0 +1,59 @@
+===================
+===================
+===================
+=== bd1994-04-24 Rochester.ffp
+===================
+===================
+===================
+bd94-04-24d1t01.flac:2ba90cbedf2288ab70f40d82041dae37
+bd94-04-24d1t02.flac:6caef862002f6f5a163a1836a2b94fab
+bd94-04-24d1t03.flac:36c4f04aba6ed9c3adb72ac34d17e31d
+bd94-04-24d1t04.flac:d67b68ad8ea4dfbba867bbf00abc86ef
+bd94-04-24d1t05.flac:87bcacd3db5e68f0fa06a3340de62ae5
+bd94-04-24d1t06.flac:b43ecf0bbf16ad1ef7eab8bbbaf0dc9a
+bd94-04-24d1t07.flac:5171ac17382501f786f23a8864b30e2b
+bd94-04-24d1t08.flac:f4fc36508d28482fa62aa1b2dc322d79
+bd94-04-24d1t09.flac:3cb3687bfccdec215307a375d73f5af8
+bd94-04-24d1t10.flac:deb72b768f927053ab0a82ed1e1c83ba
+bd94-04-24d2t01.flac:45f54d634c7c854ef7cffa8bcdae87e9
+bd94-04-24d2t02.flac:cb8725d95999d538745bc1c6e69c6e02
+bd94-04-24d2t03.flac:83447ed5961c6ed2b5817c61981e7841
+bd94-04-24d2t04.flac:2f591802f0f57feab07e67f68c5956e9
+bd94-04-24d2t05.flac:6d7ec7d8208ee522462fc9d6a7f06b23
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 
+Mayo Civic Center
+Rochester, Minnesota 
+24 April 1994
+
+lineage : cdr trade>eac>tlh>flac6
+source : same as LB-1356 with same fingerprints (the taper (apparently) says very clearly:, "Shut up!" at the end of Jokerman)
+
+CD1
+1.  Jokerman
+2.  Seor (Tales Of Yankee Power)
+3.  All Along The Watchtower
+4.  Disease Of Conceit
+5.  Tangled Up In Blue
+6.  I Shall Be Released
+7.  Mama, You Been On My Mind
+8.  Masters Of War
+9.  To Ramona
+10.  God Knows
+
+CD2
+1.  I And I
+2.  I Believe In You
+3.  Maggie's Farm
+4.  Ballad Of A Thin Man
+5.  It Ain't Me, Babe
+
+===================
+===================
+===================

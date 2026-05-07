@@ -1,0 +1,42 @@
+Bob Dylan
+Eagle's Ballroom
+Milwaukee, WI
+11/12/97
+
+?Aud > ? > cdr > EAC > FLAC
+
+d1t01 Maggie's Farm
+d1t02 Man In The Long Black Coat
+d1t03 Cold Irons Bound
+d1t04 You Ain't Goin' Nowhere
+d1t05 Can't Wait
+d1t06 Silvio
+d1t07 Cocaine
+d1t08 One Too Many Mornings
+d1t09 Tangled Up In Blue
+d1t10 Till I Fell In Love With You
+d1t11 Blind Willie McTell
+d2t01 Highway 61 Revisited
+d2t02 E: Like A Rolling Stone
+d2t03 Don't Think Twice It's All Right
+d2t04 Love Sick
+d2t05 Rainy Day Women # 12 & 35
+
+Notes:  Major level adjustments throughout Maggie's Farm.
+ 	
+bd1997-11-12d1t10.flac:c85b61c3897661ef8be944b8d039e4ab
+bd1997-11-12d1t02.flac:6fb0fc67e1e7e0a20024d02fe374af8a
+bd1997-11-12d1t03.flac:e370440fd8a5db9d804078d70b232fe4
+bd1997-11-12d1t04.flac:6a1e46ad4620bc4076b22c29f8539e22
+bd1997-11-12d1t05.flac:be8d655ddac73cf6251ebacc8c2c917b
+bd1997-11-12d1t06.flac:9e69f731243b81c0040fa6dfdda9bce2
+bd1997-11-12d1t07.flac:d7e8c4d7bae127d382a0c74bdedfee53
+bd1997-11-12d1t08.flac:ef803f4c20d4d7367f1f0165b8bb6b24
+bd1997-11-12d1t09.flac:bdbedaebc6eb52be2e288c5c41edb06b
+bd1997-11-12d1t01.flac:db406187988f4b331c3d1ed4c9025b63
+bd1997-11-12d1t11.flac:e67c0134d9815609f13b8fe1ba37f1ef
+bd1997-11-12d2t01.flac:315efe39e4e177a9dd90cc3e0e715e9d
+bd1997-11-12d2t02.flac:35a9cb493c2cefae31ad47657c17eebb
+bd1997-11-12d2t03.flac:3aefdb9b565fc677b0b6cf648592b9e4
+bd1997-11-12d2t04.flac:0dc1befdd5703a494de3ab848653e705
+bd1997-11-12d2t05.flac:c22a5f3ff04e7c47d702bc196c950863

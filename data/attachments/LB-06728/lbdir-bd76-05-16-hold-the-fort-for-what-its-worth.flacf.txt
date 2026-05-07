@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-16-hold-the-fort-for-what-its-worth.flacf 
+=================== 
+=================== 
+=================== 
+1ddc0f3193c58a2d1b9cadae1cec60a6  bd76-05-16-hold-the-fort-for-what-its-worth-d1t01.flac
+97dab461f175f6f2854f66854c1071fa  bd76-05-16-hold-the-fort-for-what-its-worth-d1t02.flac
+538c30ae33f878437208b0366550b948  bd76-05-16-hold-the-fort-for-what-its-worth-d1t03.flac
+bbae56be3dffaa69317479af960fe303  bd76-05-16-hold-the-fort-for-what-its-worth-d1t04.flac
+d46b757a76053f61b6e84f1436a085e0  bd76-05-16-hold-the-fort-for-what-its-worth-d1t05.flac
+7cbec9c967a96ae5a425d46b8346abcb  bd76-05-16-hold-the-fort-for-what-its-worth-d1t06.flac
+746c2aa50ad34a14aeeb81084788c32f  bd76-05-16-hold-the-fort-for-what-its-worth-d1t07.flac
+89895b4723d15609ec089e9a4e4dac7f  bd76-05-16-hold-the-fort-for-what-its-worth-d1t08.flac
+477e5219c59175d91ad3f1156c7b5180  bd76-05-16-hold-the-fort-for-what-its-worth-d1t09.flac
+0a18abdd4b023eb35d11dfab0273232f  bd76-05-16-hold-the-fort-for-what-its-worth-d1t10.flac
+5dbfd740c6f22bd06dfb98a8fcd6f2b3  bd76-05-16-hold-the-fort-for-what-its-worth-d1t11.flac
+7276a1226071c441e4687f29dc202784  bd76-05-16-hold-the-fort-for-what-its-worth-d1t12.flac
+42c1bf623b3010a605991e70c498f54c  bd76-05-16-hold-the-fort-for-what-its-worth-d1t13.flac
+77595a4e79085ae2ac73ca1ae694ac96  bd76-05-16-hold-the-fort-for-what-its-worth-d1t14.flac
+f874fad0704787eae7f107393c5db7c5  bd76-05-16-hold-the-fort-for-what-its-worth-d2t01.flac
+804a76a6d975db15f265219402b6308a  bd76-05-16-hold-the-fort-for-what-its-worth-d2t02.flac
+27f5b10b442949bf221c03998530105e  bd76-05-16-hold-the-fort-for-what-its-worth-d2t03.flac
+e1c1cd221410f08c7c997a1722c2fecb  bd76-05-16-hold-the-fort-for-what-its-worth-d2t04.flac
+9097984f87d062c4fd31abc926b19d2f  bd76-05-16-hold-the-fort-for-what-its-worth-d2t05.flac
+1c520e312136a381e9f7657f3ca4ecb2  bd76-05-16-hold-the-fort-for-what-its-worth-d2t06.flac
+a37fe3975cc82955775d0b53173b77da  bd76-05-16-hold-the-fort-for-what-its-worth-d2t07.flac
+517a8442a8b26f21c217eeecbdc382cf  bd76-05-16-hold-the-fort-for-what-its-worth-d2t08.flac
+1fda48940d929d6df6ee1d2ce37ede57  bd76-05-16-hold-the-fort-for-what-its-worth-d2t09.flac
+d7c599849e963f285640c9ae99dce884  bd76-05-16-hold-the-fort-for-what-its-worth-d2t10.flac
+519138034f5829170d3fe958a812a474  bd76-05-16-hold-the-fort-for-what-its-worth-LB-6728.txt
+4189ef3bb5590720e97f462061e1a8b3  bd76-05-16-hold-the-fort-for-what-its-worth.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-16-hold-the-fort-for-what-its-worth.flacf 
+=================== 
+=================== 
+=================== 
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t01.flac:a2af5c839c6f8c096a1526560bc10ec7
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t02.flac:83145704e95c506118179e87cb54be21
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t03.flac:f5018a6e3deca0c94a4eb2ac455cb28f
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t04.flac:00d013d6667cd77f44e2e6fa909af366
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t05.flac:b837ead83745b0e69e69862d6eebc326
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t06.flac:51651ae514fc755f60513a6084abce1f
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t07.flac:e571061fc42959432551a643595af663
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t08.flac:f53e8499a90ce88be3cf0cb05a822315
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t09.flac:3557485015a6bab2301cda5c26af7e39
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t10.flac:1648e955b5fd6848c9dd4f650f46ed32
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t11.flac:3b1bb58f86c994f3a8b0cbf5d66fcfdd
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t12.flac:b1efeb83efaef95509d5e7247c10478b
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t13.flac:14a92578ca6d0c44807d20df97a03593
+bd76-05-16-hold-the-fort-for-what-its-worth-d1t14.flac:97805c12e69b123df3d985c5518e0a69
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t01.flac:e655a111a45533705239e6a4bc6c631b
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t02.flac:8a6b2543269a1c810443c57ba5e35abf
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t03.flac:bf623177987b0928f103c475a1ac7e31
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t04.flac:c76451b17465703adfb796ea2b7887c4
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t05.flac:7c6056c4e40a8aae0b522073553ef374
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t06.flac:8f8e5778a321ce87baeef55328264fe2
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t07.flac:a056cf41a98f8a0036f0dc030ac27ff7
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t08.flac:df1dfe6c3fcb9811a0957d8ff2a72cbf
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t09.flac:9eaa761c0f5ae2dfcb7280c9ac3d3df2
+bd76-05-16-hold-the-fort-for-what-its-worth-d2t10.flac:48d07df6a578b75b82125d6c43400cd8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-16-hold-the-fort-for-what-its-worth.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:31.72       69141788 B   ---   --   ---xx   flac  0.5391  bd76-05-16-hold-the-fort-for-what-its-worth-d1t01.flac
+     4:30.63       47776220 B   ---   --   ---xx   flac  0.5383  bd76-05-16-hold-the-fort-for-what-its-worth-d1t02.flac
+     2:59.55       31705004 B   ---   --   ---xx   flac  0.5207  bd76-05-16-hold-the-fort-for-what-its-worth-d1t03.flac
+     4:52.62       51654668 B   ---   --   ---xx   flac  0.5621  bd76-05-16-hold-the-fort-for-what-its-worth-d1t04.flac
+     4:37.48       48975740 B   ---   --   ---xx   flac  0.5559  bd76-05-16-hold-the-fort-for-what-its-worth-d1t05.flac
+     4:06.05       43406204 B   ---   --   ---xx   flac  0.5877  bd76-05-16-hold-the-fort-for-what-its-worth-d1t06.flac
+     6:50.10       72347564 B   ---   --   ---xx   flac  0.5664  bd76-05-16-hold-the-fort-for-what-its-worth-d1t07.flac
+     3:24.45       36091484 B   ---   --   ---xx   flac  0.5326  bd76-05-16-hold-the-fort-for-what-its-worth-d1t08.flac
+     3:04.15       32492924 B   ---   --   ---xx   flac  0.5352  bd76-05-16-hold-the-fort-for-what-its-worth-d1t09.flac
+     5:03.50       53566844 B   ---   --   ---xx   flac  0.5060  bd76-05-16-hold-the-fort-for-what-its-worth-d1t10.flac
+     5:08.57       54465308 B   ---   --   ---xx   flac  0.5383  bd76-05-16-hold-the-fort-for-what-its-worth-d1t11.flac
+     6:09.03       65098700 B   ---   --   ---xx   flac  0.5599  bd76-05-16-hold-the-fort-for-what-its-worth-d1t12.flac
+     3:48.67       40376828 B   ---   --   ---xx   flac  0.5280  bd76-05-16-hold-the-fort-for-what-its-worth-d1t13.flac
+     6:19.48       66968540 B   ---   --   ---xx   flac  0.5532  bd76-05-16-hold-the-fort-for-what-its-worth-d1t14.flac
+     4:51.05       51344204 B   ---   --   ---xx   flac  0.5199  bd76-05-16-hold-the-fort-for-what-its-worth-d2t01.flac
+     7:00.45       74193884 B   ---   --   ---xx   flac  0.4617  bd76-05-16-hold-the-fort-for-what-its-worth-d2t02.flac
+     3:15.55       34527404 B   ---   --   ---xx   flac  0.5387  bd76-05-16-hold-the-fort-for-what-its-worth-d2t03.flac
+     5:01.12       53124668 B   ---   --   ---xx   flac  0.5363  bd76-05-16-hold-the-fort-for-what-its-worth-d2t04.flac
+     7:53.10       83460764 B   ---   --   ---xx   flac  0.4163  bd76-05-16-hold-the-fort-for-what-its-worth-d2t05.flac
+     5:56.35       62880764 B   ---   --   ---xx   flac  0.5057  bd76-05-16-hold-the-fort-for-what-its-worth-d2t06.flac
+    10:36.48      112303340 B   ---   --   ---xx   flac  0.5441  bd76-05-16-hold-the-fort-for-what-its-worth-d2t07.flac
+     4:39.52       49337948 B   ---   --   ---xx   flac  0.6304  bd76-05-16-hold-the-fort-for-what-its-worth-d2t08.flac
+     8:01.15       84883724 B   ---   --   ---xx   flac  0.6525  bd76-05-16-hold-the-fort-for-what-its-worth-d2t09.flac
+     8:57.23       94780940 B   ---   --   ---xx   flac  0.5719  bd76-05-16-hold-the-fort-for-what-its-worth-d2t10.flac
+   133:41.00     1414905456 B                            0.5417  (24 files)
+=================== 
+=================== 
+=================== 

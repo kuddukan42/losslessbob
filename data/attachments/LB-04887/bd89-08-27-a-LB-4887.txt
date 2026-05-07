@@ -1,0 +1,14 @@
+Bob Dylan, 8/27/89, Starplex Amphitheatre, Dallas, TX, 2CDR
+
+LB-4887, (75min+08min), version "a"; AUD(Sony D6>Realistic Omnidirectional in left channel)>Cass/0>Adobe Audition(Sony TC-KE500S>Edirol UA-1EX)>Flac(CDWav), The master was recorded in only one channel so I used Audition to pan the mix into both channels, and remove a couple dropouts. CDWav was used to cut the tracks and compress to FLAC., Track 1 has a few anomalies as I got the mic and levels set. After a couple seconds, the levels, and sound balance out pretty nicely. Check the mp3 sample for quality., It's a decent AUD recording. Sorry about the talking ; ); bittorrent download 05/07; cdr splits not specified; very close to true mono; in comparison to LB-2266 this is not as harsh
+
+mic noise and level fluctuations at begin of d1t1; multiple drops d1t2 1:05 to 1:06, 1:12, 1:14
+
+CD1
+01. Instrumental> (anyone got the title of this?), 02. Positively 4th Street, 03. John Brown, 04. I Want You>, 05. Ballad of a Thin Man, 06. Memphis Blues, 07. Love Minus Zero/No Limit, 08. Gates of Eden, (tape flip), 09. It's Alright Ma, 10. Rank Strangers To Me, 11. You Don't Know Me, 12. It takes A Lot To Laugh, 13. I Shall Be Released, 14. Like A Rolling Stone, Encore:, 
+
+CD2
+15. /Mr. Tambourine Man, Total Time 82:18
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

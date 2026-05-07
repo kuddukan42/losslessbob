@@ -1,0 +1,140 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-ONE-PUSH-OF-THE-BUTTON.flacf 
+=================== 
+=================== 
+=================== 
+7fe298422b2d5b64407b60e59b32f2ca  BD - ONE PUSH OF THE BUTTON.md5
+281a256ec8951f4032e11a47dbadfc96  cd 1\Track 01.flac
+9296b14b2981ea8854d2ab17cf85a193  cd 1\Track 02.flac
+cb4e560a0fc8b43d956d1e0d6aaed459  cd 1\Track 03.flac
+97b97ae73875d48af4be7fbaf1f44d24  cd 1\Track 04.flac
+842b602d9a1e1a438c8f1de95b4a531e  cd 1\Track 05.flac
+2a615b2e6dc292cfe31a89a3cdf15d7a  cd 1\Track 06.flac
+b0e4d645a9e268b934fb3a805f92c7b1  cd 1\Track 07.flac
+41f48cc711f6f694ee608cd911a03051  cd 1\Track 08.flac
+ac5206aeaa70c28dd874ea69f9f41283  cd 1\Track 09.flac
+dd63ab8cf2c21acb405cb34436d012ca  cd 1\Track 10.flac
+3a837f2d5ac3cbf24433a6800db35b4e  cd 1\Track 11.flac
+9f182e82aee3315bc1482d3fd129b236  cd 1\Track 12.flac
+3a815980a5fab612302ee428347503a6  cd 1\Track 13.flac
+38e16d13cceeefb92bae663d8b7d4912  cd 1\Track 14.flac
+3f81f38ed56abfecb00bf5c4f373340e  cd 1\Track 15.flac
+e0ddf11f348efc6b9754c3df6dcd4f4f  cd 1\Track 16.flac
+7b3d9dfc8dc9b70bccbd93800ba27efe  cd 1\Track 17.flac
+5aa6f65d014146fc434d53ddeb775123  cd 1\Track 18.flac
+8f532c1cf90c94c9f7ce80eed8348908  cd 1\Track 19.flac
+9b72f546354b7d48d2aaf71a8ea0edfb  cd 2\Track 01.flac
+3593e72743bbb188d8adcd5a25f45241  cd 2\Track 02.flac
+4e50ed6e963f88653c3f74def550e76a  cd 2\Track 03.flac
+a1756ed40c00adf783940d4391ea3f1e  cd 2\Track 04.flac
+ce58b6efe31013bbb8ec52ad03c7267a  cd 2\Track 05.flac
+ce904e513fc6de4d41f57c54fb93cc30  cd 2\Track 06.flac
+0181fc27e9e377134488d41c185a01be  cd 2\Track 07.flac
+aa52d10584ea31282f048bfb73f59582  cd 2\Track 08.flac
+96f639cb203abbbc4252874195cd0c46  cd 2\Track 09.flac
+8363ae3c45a99aa190831f5c083be657  cd 2\Track 10.flac
+492cc0b2123cb0abdd4a505d2f112f7a  cd 2\Track 11.flac
+0bda2208687780e813b5549e0c6600df  cd 2\Track 12.flac
+1fb7dc6620ee4c1641d699eeca008bce  cd 2\Track 13.flac
+d9acead550c8f31ab0e57d2c8c12316d  ONE PUSH OF THE BUTTON.doc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-ONE-PUSH-OF-THE-BUTTON.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:391265b68f8dc8e45d2b56bdcfdae43e
+Track 02.flac:5c017b90b3f3b9462b4b134a0ab1a5c0
+Track 03.flac:c02abcaac63b8c4d65976fe615d2d530
+Track 04.flac:5dcddcc2a52f944fe6d91cfbc1fcb21b
+Track 05.flac:32ead395ec6a92ce1841cf25a7caa370
+Track 06.flac:c6c6b46229d1499b3adc5e28e65cfc97
+Track 07.flac:aa3c07d7f498e8c8b412483256f23f44
+Track 08.flac:35cf273ec58346beb2939143eb0daf35
+Track 09.flac:526fc797544123b6dbde6b7f0a334b17
+Track 10.flac:a2afe6961e0c4a33351777176b4e65ca
+Track 11.flac:d37b3782902e9d144964641793825eb6
+Track 12.flac:a96943e63318f76f697704245e9a99eb
+Track 13.flac:5a5428202c1004aeec998912dd075b1d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-ONE-PUSH-OF-THE-BUTTON.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:df6ab01022a0a54eee920389d88323c2
+Track 02.flac:a1197962375ac80b5f7b7b4371b5b3ce
+Track 03.flac:2957fefac846f47e23d37b6ca53d1280
+Track 04.flac:bb737331cc35fbacfb20732c10d66183
+Track 05.flac:fc08f4d76b035fde5de7a0447277824e
+Track 06.flac:aae72445a7cb0e3f3778c944bd0bda4c
+Track 07.flac:29189a8c16467d95e64f42b726de562b
+Track 08.flac:c7677b0910ee446b7ffc804451784eeb
+Track 09.flac:bf909a1e431794ca048646ee9cea5ca7
+Track 10.flac:58fc4c2b9c4a4f00e8446e6257f48d6f
+Track 11.flac:9608a9d9b8dc25ce4957cbf60512018c
+Track 12.flac:f85a07a0170517829b9a09d497a8abc5
+Track 13.flac:950dfca389ed6e984ba8a969dba144cd
+Track 14.flac:1eb467d492ca2c4d6424e8c8bc6480c7
+Track 15.flac:486be1a089633564953b741b7b3067f8
+Track 16.flac:877641ec535c4c6e2e1e4ba229f5ea19
+Track 17.flac:0ee59a6af7f93debb8edde7d7a642f9a
+Track 18.flac:572e61a89a4c2f014a238c58700d3f3f
+Track 19.flac:903dbd0c81f3c178340c5596b9f6f2f7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-ONE-PUSH-OF-THE-BUTTON.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:17.60       56060164 B   -b-   --   ---xx   flac  0.3769  Track 01.flac
+     6:07.41       64835276 B   ---   --   ---xx   flac  0.4110  Track 02.flac
+     7:04.56       74925356 B   ---   --   ---xx   flac  0.3842  Track 03.flac
+     2:44.63       29077820 B   ---   --   ---xx   flac  0.4067  Track 04.flac
+     6:13.63       65945420 B   ---   --   ---xx   flac  0.3826  Track 05.flac
+     4:01.33       42590060 B   ---   --   ---xx   flac  0.4065  Track 06.flac
+     3:49.41       40492076 B   ---   --   ---xx   flac  0.3942  Track 07.flac
+     4:14.11       44831516 B   ---   --   ---xx   flac  0.3706  Track 08.flac
+     6:40.11       70585916 B   ---   --   ---xx   flac  0.3626  Track 09.flac
+     9:02.03       95615900 B   ---   --   ---xx   flac  0.3671  Track 10.flac
+     4:46.18       50492780 B   ---   --   ---xx   flac  0.3766  Track 11.flac
+     5:03.20       53495896 B   -b-   --   ---xx   flac  0.3819  Track 12.flac
+     6:26.42       68190124 B   -b-   --   ---xx   flac  0.4963  Track 13.flac
+    71:32.12      757138304 B                            0.3929  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-ONE-PUSH-OF-THE-BUTTON.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:55.18       30912180 B   -b-   --   ---xx   flac  0.4413  Track 01.flac
+     3:01.63       32076620 B   ---   --   ---xx   flac  0.4766  Track 02.flac
+     4:59.00       52743644 B   ---   --   ---xx   flac  0.4392  Track 03.flac
+     3:17.03       34757900 B   ---   --   ---xx   flac  0.3905  Track 04.flac
+     3:32.38       37486308 B   -b-   --   ---xx   flac  0.3937  Track 05.flac
+     2:33.27       27051592 B   -b-   --   ---xx   flac  0.5350  Track 06.flac
+     4:50.33       51233660 B   ---   --   ---xx   flac  0.5364  Track 07.flac
+     5:23.22       57028988 B   ---   --   ---xx   flac  0.5256  Track 08.flac
+     3:14.07       34238108 B   ---   --   ---xx   flac  0.5000  Track 09.flac
+     5:58.33       63228860 B   ---   --   ---xx   flac  0.5127  Track 10.flac
+     5:04.37       53712668 B   ---   --   ---xx   flac  0.5112  Track 11.flac
+     7:21.11       77818316 B   ---   --   ---xx   flac  0.4938  Track 12.flac
+     2:16.45       24096284 B   ---   --   ---xx   flac  0.4800  Track 13.flac
+     3:12.27       33931840 B   -b-   --   ---xx   flac  0.3734  Track 14.flac
+     6:01.11       63706016 B   -b-   --   ---xx   flac  0.4553  Track 15.flac
+     6:56.03       73388792 B   -b-   --   ---xx   flac  0.4647  Track 16.flac
+     2:17.70       24332656 B   -b-   --   ---xx   flac  0.6358  Track 17.flac
+     2:29.45       26389484 B   ---   --   ---xx   flac  0.6226  Track 18.flac
+     3:16.28       34640672 B   -b-   --   ---xx   flac  0.5835  Track 19.flac
+    78:40.70      832774588 B                            0.4890  (19 files)
+=================== 
+=================== 
+=================== 

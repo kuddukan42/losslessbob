@@ -1,0 +1,37 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: Newcastle 5 Jul 84 PA 
+=================== 
+=================== 
+=================== 
+b6acf96e68f03d22fd0b6689b0b1f7e8  01 license (o).flac
+01729fa911ab58666533c98201de9abb  02 Mr T.flac
+4a79fb8b72da604c119026efa84905d4  03 Tombstone (o).flac
+b222ebb0df51cdfcd6fa9bded97d6148  Newcastle 7 Jul 84 PA.md5
+27d4f5c17e2943ecf3dce061cbed1686  note.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: Newcastle 5 Jul 84 PA 
+=================== 
+=================== 
+=================== 
+01 license (o).flac:b1e8552af5ce8a47fc38ec8e17e42f36
+02 Mr T.flac:e2b8c330510ec8326edb5c526897dbb2
+03 Tombstone (o).flac:10d712e0f060e01c8769904ea869c1e0
+=================== 
+=================== 
+=================== 
+=== shntool for: Newcastle 5 Jul 84 PA 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:46.53       39991100 B   ---   --   ---xx   flac  0.6547  01 license (o).flac
+     5:46.57       61168508 B   ---   --   ---xx   flac  0.5603  02 Mr T.flac
+     4:34.60       48474764 B   ---   --   ---xx   flac  0.6916  03 Tombstone (o).flac
+    14:08.20      149634372 B                            0.6281  (3 files)
+=================== 
+=================== 
+=================== 

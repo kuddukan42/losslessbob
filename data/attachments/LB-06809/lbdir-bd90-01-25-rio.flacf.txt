@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-01-25-rio.flacf 
+=================== 
+=================== 
+=================== 
+e35bfaee21c71e78b07cc8648bfbefbe  bd90-01-25-rio-d1t01.flac
+82ef7b2925900bcd429b4cdc00a11ce1  bd90-01-25-rio-d1t02.flac
+ca5dd27f1dbe4d5a03f21e47428a67af  bd90-01-25-rio-d1t03.flac
+e35f5afb1a780d663e346b68aad2a576  bd90-01-25-rio-d1t04.flac
+0ae57edff1f17017f86727ba5d7826c7  bd90-01-25-rio-d1t05.flac
+ff0af77e4290cde7386f823f4abc3f56  bd90-01-25-rio-d1t06.flac
+ca6bba0fb4ce9b3b876123156f42e79c  bd90-01-25-rio-d1t07.flac
+987302f41997a44391b5bbb89c71aef9  bd90-01-25-rio-d1t08.flac
+feb9cd69320299ea7a4ee9c2725d7335  bd90-01-25-rio-d1t09.flac
+582f09d99962794342c00d9c0e19bde3  bd90-01-25-rio-d1t10.flac
+0278fd5fa91e3674d038d0590a3d144e  bd90-01-25-rio-d1t11.flac
+c785718a559a0c49499224440811867a  bd90-01-25-rio-d1t12.flac
+6f83acda65c3236661a24720d7cc5912  bd90-01-25-rio-d1t13.flac
+7187338332fed15d6c49514525f584dc  bd90-01-25-rio-d1t14.flac
+d4c2b60911298cc1065e953dce92c27b  bd90-01-25-rio.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-25-rio.flacf 
+=================== 
+=================== 
+=================== 
+bd90-01-25-rio-d1t01.flac:4a106ece3bc0b9a8d6581afaac877a67
+bd90-01-25-rio-d1t02.flac:837a0991675c58b57a9a4dad499b8545
+bd90-01-25-rio-d1t03.flac:79296b405bd45e65d45241bcf8c40f24
+bd90-01-25-rio-d1t04.flac:47153c1a505486f40b23cc647f8b2dbf
+bd90-01-25-rio-d1t05.flac:55146a5e1a182c44e9a2af6866c8aea8
+bd90-01-25-rio-d1t06.flac:a33e323a4f55d48cf53bb0aa1c1aaca2
+bd90-01-25-rio-d1t07.flac:2364287b96a654325ce6d8e0521e4729
+bd90-01-25-rio-d1t08.flac:cd312746943dd3898ff9125cdb2e8c26
+bd90-01-25-rio-d1t09.flac:00fd716d2f4bda3a25f58e39f43a77e6
+bd90-01-25-rio-d1t10.flac:4f347496648058b27b1911cc3423e5e0
+bd90-01-25-rio-d1t11.flac:b1a2ebf9616a2a831f7a3a40f8146ff4
+bd90-01-25-rio-d1t12.flac:307efa7b96dc51d671026b6f56071e0d
+bd90-01-25-rio-d1t13.flac:43711e05e4737fdf50a3b194acd854f4
+bd90-01-25-rio-d1t14.flac:e7bb8b9a546f9380ea1ec76c33ecaf8f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-25-rio.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.07       33885308 B   ---   --   ---xx   flac  0.5510  bd90-01-25-rio-d1t01.flac
+     4:32.38       48070220 B   ---   --   ---xx   flac  0.5670  bd90-01-25-rio-d1t02.flac
+     3:06.57       32944508 B   ---   --   ---xx   flac  0.5742  bd90-01-25-rio-d1t03.flac
+     6:57.38       73648220 B   ---   --   ---xx   flac  0.6143  bd90-01-25-rio-d1t04.flac
+     4:16.55       45287804 B   ---   --   ---xx   flac  0.6027  bd90-01-25-rio-d1t05.flac
+     5:18.67       56252828 B   ---   --   ---xx   flac  0.5894  bd90-01-25-rio-d1t06.flac
+     4:56.63       52362620 B   ---   --   ---xx   flac  0.6061  bd90-01-25-rio-d1t07.flac
+     3:49.27       40459148 B   ---   --   ---xx   flac  0.5826  bd90-01-25-rio-d1t08.flac
+     5:07.10       54178364 B   ---   --   ---xx   flac  0.5537  bd90-01-25-rio-d1t09.flac
+     5:13.10       55236764 B   ---   --   ---xx   flac  0.5992  bd90-01-25-rio-d1t10.flac
+     6:14.65       66126524 B   ---   --   ---xx   flac  0.5395  bd90-01-25-rio-d1t11.flac
+     5:28.10       57882764 B   ---   --   ---xx   flac  0.5007  bd90-01-25-rio-d1t12.flac
+     6:51.58       72636860 B   ---   --   ---xx   flac  0.5964  bd90-01-25-rio-d1t13.flac
+     5:18.60       56236364 B   ---   --   ---xx   flac  0.6170  bd90-01-25-rio-d1t14.flac
+    70:24.40      745208296 B                            0.5792  (14 files)
+=================== 
+=================== 
+=================== 

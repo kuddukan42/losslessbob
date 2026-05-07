@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-05-a.flacf 
+=================== 
+=================== 
+=================== 
+dc0fd86223f0d9e1079b4a773ac6c214  Ann Arbor - 05.11.2000 - F.jpg
+faca9d76e6d12417e5fa46ac3e612712  Ann Arbor - 05.11.2000 - R.jpg
+b82f2f1fb6e41d398e9d3b15ff41b57c  Disc One\Dylan - 05.11.00_Disc01Track01.flac
+9b852afeeb4ade401a903932a9e695a9  Disc One\Dylan - 05.11.00_Disc01Track02.flac
+d95e6fdd8af8605247a62eeed3d41cb1  Disc One\Dylan - 05.11.00_Disc01Track03.flac
+fa8aa6de04c7324e4135076af878f272  Disc One\Dylan - 05.11.00_Disc01Track04.flac
+9053651e12e23f3525ea7dc3292d2c09  Disc One\Dylan - 05.11.00_Disc01Track05.flac
+69f51b49ae1e68ac7f3d5031effaf917  Disc One\Dylan - 05.11.00_Disc01Track06.flac
+e856784ebccf874ffd90799ed22e4496  Disc One\Dylan - 05.11.00_Disc01Track07.flac
+6460f26d1f15575d79aa92c0419e50cb  Disc One\Dylan - 05.11.00_Disc01Track08.flac
+07e9f67adeb1b949f3772ec8bc6821da  Disc One\Dylan - 05.11.00_Disc01Track09.flac
+43a1c407a897d1f871ddb89ea95b7f7e  Disc One\Dylan - 05.11.00_Disc01Track10.flac
+921874bd3d1d9ccaceae23c3e8039fcf  Disc Two\Dylan - 05.11.00_Disc02Track01.flac
+03fbeb645bedda68ce032d8478989d77  Disc Two\Dylan - 05.11.00_Disc02Track02.flac
+050ab1c1f45f67bc7bf9c8de14a1a3a1  Disc Two\Dylan - 05.11.00_Disc02Track03.flac
+fa8463b474548da699499b7c427bc671  Disc Two\Dylan - 05.11.00_Disc02Track04.flac
+34307aa09efda34efaeaf35a7a6687dc  Disc Two\Dylan - 05.11.00_Disc02Track05.flac
+6f25ccc285caa1e0d866dc7bbbac2948  Disc Two\Dylan - 05.11.00_Disc02Track06.flac
+d9c7bb77d5ba9a65421500598c2041fd  Disc Two\Dylan - 05.11.00_Disc02Track07.flac
+be1846c4b94c18187655d51f738f66d2  Disc Two\Dylan - 05.11.00_Disc02Track08.flac
+e92110442227bfa923c3fb06d83e6130  Disc Two\Dylan - 05.11.00_Disc02Track09.flac
+cb0d69fe9d967574745e8e3a62658c2f  Dylan - Ann Arbor November 5th 2000.md5
+2eea838f145559edf6849a635684eb29  Dylan - Ann Arbor November 5th 2000.txt
+5ffe443eaa0fe68f7dad5981adb6ff10  Dylan - Ann Arbor November 5th 2000_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-05-a.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - 05.11.00_Disc01Track01.flac:2419d032f03aedd7768bd5395966fe3d
+Dylan - 05.11.00_Disc01Track02.flac:5813984b5ccd7aa034b87c52d1242885
+Dylan - 05.11.00_Disc01Track03.flac:06c7225ca954dbb1b299db1e0c25255a
+Dylan - 05.11.00_Disc01Track04.flac:6cbd7f61eb0ca050277754e94aece922
+Dylan - 05.11.00_Disc01Track05.flac:603d1c1040daec0d29082b76f7a52053
+Dylan - 05.11.00_Disc01Track06.flac:570fc25773d3c64f1a33da2b498a26fb
+Dylan - 05.11.00_Disc01Track07.flac:9f1add33ac0638b78b15e1ff4ebad090
+Dylan - 05.11.00_Disc01Track08.flac:cd34269e329ea477aaf1bd213cbbfc07
+Dylan - 05.11.00_Disc01Track09.flac:84ff94f8fa35fbb57366f7db9fc1be51
+Dylan - 05.11.00_Disc01Track10.flac:4a6fc5446f2b11b2a122ce4d13177c1a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-05-a.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - 05.11.00_Disc02Track01.flac:53590f6eabf054c86c17e275dfae9f8c
+Dylan - 05.11.00_Disc02Track02.flac:bf284b577bb69b68b199d6c2ea7e4050
+Dylan - 05.11.00_Disc02Track03.flac:18444fdd1d7e7b5a41a40434b771daeb
+Dylan - 05.11.00_Disc02Track04.flac:522f4633096c94d64e8c7dd31ff3e187
+Dylan - 05.11.00_Disc02Track05.flac:4e6effe0e68e24e7dbaa84e71ef93f79
+Dylan - 05.11.00_Disc02Track06.flac:07508e72f1c13835325ca3c48ead4fe6
+Dylan - 05.11.00_Disc02Track07.flac:6b058746e688a2ebed0c9b0c407d751c
+Dylan - 05.11.00_Disc02Track08.flac:45277d220fe59eaab207ab7516e7ee2f
+Dylan - 05.11.00_Disc02Track09.flac:a05a05c0f87b54f59f03f9b5385ea228
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-05-a.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.04       37406252 B   ---   --   ---xx   flac  0.6661  Dylan - 05.11.00_Disc01Track01.flac
+     5:10.65       54836924 B   ---   --   ---xx   flac  0.5886  Dylan - 05.11.00_Disc01Track02.flac
+     9:28.74      100369292 B   ---   --   ---xx   flac  0.6207  Dylan - 05.11.00_Disc01Track03.flac
+     4:47.05       50638604 B   ---   --   ---xx   flac  0.5326  Dylan - 05.11.00_Disc01Track04.flac
+     7:59.04       84505052 B   ---   --   ---xx   flac  0.6591  Dylan - 05.11.00_Disc01Track05.flac
+     3:18.02       34931948 B   ---   --   ---xx   flac  0.5309  Dylan - 05.11.00_Disc01Track06.flac
+     3:08.67       33320828 B   ---   --   ---xx   flac  0.6129  Dylan - 05.11.00_Disc01Track07.flac
+     8:30.00       89964044 B   ---   --   ---xx   flac  0.5081  Dylan - 05.11.00_Disc01Track08.flac
+     6:38.01       70209596 B   ---   --   ---xx   flac  0.6038  Dylan - 05.11.00_Disc01Track09.flac
+     7:21.72       77961788 B   ---   --   ---xx   flac  0.5586  Dylan - 05.11.00_Disc01Track10.flac
+    59:54.69      634144328 B                            0.5879  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-05-a.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:54.01       73031996 B   ---   --   ---xx   flac  0.5978  Dylan - 05.11.00_Disc02Track01.flac
+     6:37.69       70193132 B   ---   --   ---xx   flac  0.6185  Dylan - 05.11.00_Disc02Track02.flac
+     6:04.74       64383692 B   ---   --   ---xx   flac  0.5981  Dylan - 05.11.00_Disc02Track03.flac
+     7:10.11       75877916 B   ---   --   ---xx   flac  0.6021  Dylan - 05.11.00_Disc02Track04.flac
+     3:55.01       41456396 B   ---   --   ---xx   flac  0.4621  Dylan - 05.11.00_Disc02Track05.flac
+     4:38.65       49192124 B   ---   --   ---xx   flac  0.6114  Dylan - 05.11.00_Disc02Track06.flac
+     4:52.04       51518252 B   ---   --   ---xx   flac  0.5562  Dylan - 05.11.00_Disc02Track07.flac
+     5:59.01       63329996 B   ---   --   ---xx   flac  0.6130  Dylan - 05.11.00_Disc02Track08.flac
+     5:58.66       63306476 B   ---   --   ---xx   flac  0.5386  Dylan - 05.11.00_Disc02Track09.flac
+    52:10.67      552289980 B                            0.5832  (9 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-12-Great-Woods.shnf 
+=================== 
+=================== 
+=================== 
+2ba09c7d47d25125eea7088b5e3ceef3  bd93-09-12-Great-Woods.txt
+e6ae93626adf830f41c58631c9d472f2  bd93-09-12.txt
+3fceb40dc40849f763db26e9fc7bcbc2  d1\01 - Track01.shn
+b62eb605128e1880316722069196ffc5  d1\02 - Track02.shn
+2e057d7481175cfe1f4b691bf4838898  d1\03 - Track03.shn
+ded2091d46b59842d58d082bc4b01c3a  d1\04 - Track04.shn
+f02a51644b228baf8907a2d397d20e9e  d1\05 - Track05.shn
+81d75c35aaed8ff88b3b402d7373e2e7  d1\06 - Track06.shn
+b8fb7cbae547d1a1336ec2ee36188412  d1\07 - Track07.shn
+b36594a96a7f248bc3d2a4d1a98fbe72  d1\08 - Track08.shn
+d38b6c54295a4d6fe05cc9542bad9c6d  d1\09 - Track09.shn
+30e7e790aea348e11d9377529f7309f3  d1\10 - Track10.shn
+b47c7756056c88f7a640a22f41e94231  d1\11 - Track11.shn
+0402be3a067bc132c4eef1bc77e4a961  d1\12 - Track12.shn
+acef238cd0196f82a8dc932ada5c6a84  d1\Great Woods I.md5
+066d3a340b14b47ec286183a64c108ae  d2\01 - Track01.shn
+2fbf3d494aa25c447a84ddd810ab5dab  d2\02 - Track02.shn
+3305e7816df77a742511fdff395ba39c  d2\03 - Track03.shn
+be1ede5fe909ee62d0b933941452fbcb  d2\04 - Track04.shn
+041c71a74d125b904a8813ba8c68ffca  d2\05 - Track05.shn
+d1e39b98c2aca65896030c57c15e8cde  d2\06 - Track06.shn
+a78253e04603393b13cf5588b2c65859  d2\07 - Track07.shn
+3107253885eebb65ac152199abdf7f87  d2\08 - Track08.shn
+18afb0524b357c07f00e850d561f6bef  d2\Great Woods 2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-09-12-Great-Woods.shnf\d2 
+=================== 
+=================== 
+=================== 
+93be614f48644ccee87d8298b13980c4  [shntool]  01_-_Track01.wav
+c25d845305becc581ff204e53fae74fe  [shntool]  02_-_Track02.wav
+4f0b9760a0ff7830897cd03cfad72ac3  [shntool]  03_-_Track03.wav
+e6ef8a81b80c4467ca6c9f6be254ae02  [shntool]  04_-_Track04.wav
+796112a506c3bf51cd34ea783824df00  [shntool]  05_-_Track05.wav
+4b022a8c7e270f2060d3ebc0c66db8c6  [shntool]  06_-_Track06.wav
+bc0e13043a60949551f58c2453de5469  [shntool]  07_-_Track07.wav
+d1b724d3bae03f4190eaa95311dbdd47  [shntool]  08_-_Track08.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-09-12-Great-Woods.shnf\d1 
+=================== 
+=================== 
+=================== 
+3879d633f873d9e07737b965c3c7f943  [shntool]  01_-_Track01.wav
+c1326d4b25d33d79cd718737f5c7fca9  [shntool]  02_-_Track02.wav
+b5086fb8f365f0b52012424d74b9e28d  [shntool]  03_-_Track03.wav
+11749dc85631b1e1e5f63d134732c2cd  [shntool]  04_-_Track04.wav
+7d4ddac2976eb27e8867062f73a7f6a1  [shntool]  05_-_Track05.wav
+c355671694f48260f20d68d85bfeeadf  [shntool]  06_-_Track06.wav
+63c93ec7f7adeb5657ad52d378d88d8a  [shntool]  07_-_Track07.wav
+12a348fb17c71382f9ca28ee91b45d58  [shntool]  08_-_Track08.wav
+9d787068e4cd253da89ed8651bd84a63  [shntool]  09_-_Track09.wav
+899b4850e55c7aef7159a00d072047d6  [shntool]  10_-_Track10.wav
+092b9e476c4b8dae6f8c4eb3dbff8573  [shntool]  11_-_Track11.wav
+eccc3dd5f7d9f7588fe4dfcf6db26aa7  [shntool]  12_-_Track12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-12-Great-Woods.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:35.25       90904844 B   ---   --   -----    wav  1.0000  01_-_Track01.wav
+     9:10.33       97097660 B   ---   --   -----    wav  1.0000  02_-_Track02.wav
+     8:30.30       90034604 B   ---   --   -----    wav  1.0000  03_-_Track03.wav
+     8:32.35       90399164 B   ---   --   -----    wav  1.0000  04_-_Track04.wav
+     8:23.36       88813916 B   ---   --   -----    wav  1.0000  05_-_Track05.wav
+     8:37.08       91217660 B   ---   --   -----    wav  1.0000  06_-_Track06.wav
+     8:46.20       92833484 B   ---   --   -----    wav  1.0000  07_-_Track07.wav
+     7:17.44       77190332 B   ---   --   -----    wav  1.0000  08_-_Track08.wav
+    67:53.06      718491664 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-12-Great-Woods.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.28       43813100 B   ---   --   -----    wav  1.0000  01_-_Track01.wav
+     8:54.40       94291724 B   ---   --   -----    wav  1.0000  02_-_Track02.wav
+     6:13.07       65813708 B   ---   --   -----    wav  1.0000  03_-_Track03.wav
+     7:16.04       76919852 B   ---   --   -----    wav  1.0000  04_-_Track04.wav
+     7:37.64       80765372 B   ---   --   -----    wav  1.0000  05_-_Track05.wav
+     6:07.67       64896428 B   ---   --   -----    wav  1.0000  06_-_Track06.wav
+     6:34.40       69595724 B   ---   --   -----    wav  1.0000  07_-_Track07.wav
+     5:26.16       57544076 B   ---   --   -----    wav  1.0000  08_-_Track08.wav
+     7:59.28       84561500 B   ---   --   -----    wav  1.0000  09_-_Track09.wav
+     6:32.46       69257036 B   ---   --   -----    wav  1.0000  10_-_Track10.wav
+     6:23.34       67641212 B   ---   --   -----    wav  1.0000  11_-_Track11.wav
+     0:13.01        2295596 B   ---   --   -----    wav  1.0000  12_-_Track12.wav
+    73:27.00      777395328 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

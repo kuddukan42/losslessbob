@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-11-little-guy.flacf 
+=================== 
+=================== 
+=================== 
+b241f61f027e440d327de2e4fddcf1f3  Bob Dylan  Shoreline  6.11.88.md5
+9231a46f1003e0885f5c7cf563ebe81e  Bob Dylan  Shoreline  6.11.88.txt
+14eb09eb7880a5b4392fc1a2ddf018bb  Track01.flac
+226a303833e2aefe95edf618e8b96935  Track02.flac
+795561a7ec01e88300dbc6224c2d1e06  Track03.flac
+9b18714dbdac8c36f1e55bc06be8ae39  Track04.flac
+a78dd2dbdbf21fd97298238b36bfab8a  Track05.flac
+a80eb34db14e978f440bbf455e8c3f14  Track06.flac
+1846cddd96fa7801d47fb8dd8892f94e  Track07.flac
+ad43255b092d343a9a2974ef308b805c  Track08.flac
+376fdffb88832b4270f98be7e0a1932b  Track09.flac
+e892e4cfd8ef7c8e80b4967316bc4f1f  Track10.flac
+a25d88eb9282da893d2331790a73eff3  Track11.flac
+bb2b6fbdcf2f5233e3fa5c99fb560899  Track12.flac
+ea67c660585b904b90ed51d07d69ba4f  Track13.flac
+c105a36e4781690cd39494aad7cefae2  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-11-little-guy.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:35c6ccd1fe730b8fe3760d9c2ae6c4ef
+Track02.flac:c95d7f414c1ca915274daa86e4f94b41
+Track03.flac:664faed77fd41fa5dcddc12aabacde55
+Track04.flac:881a1bddaf0bc9b1a09e9a2a0c006c98
+Track05.flac:cde719f0ef7bc0e3eaf7dad7f535643c
+Track06.flac:f9cbc6881719f2ac8488373e32cf74d5
+Track07.flac:3f4b087b606aef3bf5dd80aba8966dc5
+Track08.flac:2f7f70f7f76d7918b384aaf206d43d13
+Track09.flac:2e12bcc9b0977dde149995c4ac361c7c
+Track10.flac:8b790439fae0ecc835cc13710797ef80
+Track11.flac:435244f1af9f0ef8fb12d70f5fc016c4
+Track12.flac:dbc2ffa757372cdee55ac63d7135ede0
+Track13.flac:ebb6ae615bb06ba33828c582d8951f56
+Track14.flac:e314f96e42b2f2b7f3c7437a8676e8b6
+=================== 
+=================== 
+=================== 
+=== shntool for: bd88-06-11-little-guy.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.42       47374028 B   ---   --   ---xx   flac  0.5098  Track01.flac
+     4:34.37       48420668 B   ---   --   ---xx   flac  0.5146  Track02.flac
+     4:13.38       44718620 B   ---   --   ---xx   flac  0.4926  Track03.flac
+     7:19.21       77489036 B   ---   --   ---xx   flac  0.5206  Track04.flac
+     5:56.00       62798444 B   ---   --   ---xx   flac  0.4869  Track05.flac
+     3:55.52       41576348 B   ---   --   ---xx   flac  0.5183  Track06.flac
+     4:49.02       50984348 B   ---   --   ---xx   flac  0.4802  Track07.flac
+     5:10.30       54754604 B   ---   --   ---xx   flac  0.5110  Track08.flac
+     5:13.60       55354364 B   ---   --   ---xx   flac  0.5121  Track09.flac
+     4:31.25       47863244 B   ---   --   ---xx   flac  0.4920  Track10.flac
+     5:34.17       58957628 B   ---   --   ---xx   flac  0.5251  Track11.flac
+     5:27.17       57722828 B   ---   --   ---xx   flac  0.4869  Track12.flac
+     7:19.33       77517260 B   ---   --   ---xx   flac  0.5351  Track13.flac
+     5:46.71       61201436 B   ---   --   ---xx   flac  0.5259  Track14.flac
+    74:19.70      786732856 B                            0.5093  (14 files)
+=================== 
+=================== 
+=================== 

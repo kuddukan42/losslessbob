@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-02-08-Hide.flacf 
+=================== 
+=================== 
+=================== 
+9cc4f8676e1c459deb7d0b126eafb7da  bd1994-02-08-info.txt
+370103a3dacb167054919a11b3baef20  bd1994-02-08-Tokyo (Hide).md5
+364dcac61fe5fa31410ab6f09c37ee96  track_01.flac
+911aa343044b3d1cafa22835a9dcf944  track_02.flac
+4927fbeb177106dd500778a4145e95cc  track_03.flac
+1d7bc83c64991796bd9e92202b0c6873  track_04.flac
+2eae4426d64e3a2a25e1997433c54934  track_05.flac
+f69812b3f23276e6effaff391f87ff13  track_06.flac
+b90f633c078e4b5161974c5a71ca182d  track_07.flac
+2fa998db9ab8c4f536195ca69d623edc  track_08.flac
+c6ca142740070e58be8a15433ea9b700  track_09.flac
+1e3d185591c2302fee31962e57f156cb  track_10.flac
+13fcf603a7315afffaeae2ef69eb26b1  track_11.flac
+5d46b7a04a23573c89f0f7ad68f3c1ea  track_12.flac
+80b652dcbc7d3c7052d1223065abd33b  track_13.flac
+bdc22ecc3592831e53e972f3665620f4  track_14.flac
+989e2c27b5484190310cca8ece239e63  track_15.flac
+306e598049ae3de47ee484ee221ac67d  track_16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-02-08-Hide.flacf 
+=================== 
+=================== 
+=================== 
+track_01.flac:78faf683da93ad20b53d45a8844629ef
+track_02.flac:085bfa0d6ebe0a234768f8239e111700
+track_03.flac:44947d1ef55ff910aa942749cc658e30
+track_04.flac:f52b2271c899983bf5e78ed0c54be740
+track_05.flac:b6aa6d0d95389f5ad981538d021f913f
+track_06.flac:bdc910d71d429952c5c953cfa38efffa
+track_07.flac:9b7b97b033aece804d5235c8ee9639d3
+track_08.flac:54b471081e13734442d2afb2b6d64085
+track_09.flac:33be0d1e3f9ec2af605a2d6233f10155
+track_10.flac:c3fb97512d7b7c5a996797208e1b7841
+track_11.flac:3aff19d4c62f227a14104d3c237742d6
+track_12.flac:78e8893893a37153a36a6af4356f5ef6
+track_13.flac:d75f143eda097e242db7f0ca6e282f08
+track_14.flac:6678a1ec17b79e1e1d37640d99547474
+track_15.flac:0a8629d3f2bc42f4ada513ab8e3d408d
+track_16.flac:951799538209e0cccbbefbb3180dadd3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-02-08-Hide.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.74        8465832 B   -b-   --   ---xx   flac  0.4616  track_01.flac
+     7:54.21       83662896 B   -b-   --   ---xx   flac  0.5275  track_02.flac
+     5:47.41       61307908 B   -b-   --   ---xx   flac  0.5036  track_03.flac
+     5:27.71       57849764 B   -b-   --   ---xx   flac  0.5355  track_04.flac
+     8:26.02       89263184 B   -b-   --   ---xx   flac  0.5077  track_05.flac
+     9:01.20       95479228 B   -b-   --   ---xx   flac  0.5009  track_06.flac
+     7:53.73       83608272 B   -b-   --   ---xx   flac  0.4718  track_07.flac
+     4:25.12       46773256 B   -b-   --   ---xx   flac  0.4441  track_08.flac
+     8:07.41       86002728 B   -b-   --   ---xx   flac  0.4514  track_09.flac
+     7:29.38       79293472 B   -b-   --   ---xx   flac  0.4481  track_10.flac
+     7:08.27       75562904 B   -b-   --   ---xx   flac  0.4799  track_11.flac
+     6:08.32       64990436 B   -b-   --   ---xx   flac  0.5039  track_12.flac
+     7:37.26       80675856 B   -b-   --   ---xx   flac  0.5097  track_13.flac
+     8:28.38       89701540 B   -b-   --   ---xx   flac  0.5422  track_14.flac
+     8:33.19       90537380 B   -b-   --   ---xx   flac  0.5236  track_15.flac
+    11:04.46      117238456 B   -b-   --   ---xx   flac  0.4795  track_16.flac
+   114:21.56     1210413112 B                            0.4957  (16 files)
+=================== 
+=================== 
+=================== 

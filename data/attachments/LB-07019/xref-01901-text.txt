@@ -1,0 +1,122 @@
+===================
+===================
+===================
+=== 1999-02-24 Mullins Center, University of Massachusetts, Amherst, Massachusetts, USA [no LB-ref. unidentified taper].txt
+===================
+===================
+===================
+Mullins Center
+University of Massachusetts
+Amherst, Massachusetts
+February 24, 1999
+
+No info accompanying this snail trade ...
+
+NOTE: Could not identify LB-number, because, unlike other LBs,
+this one split the CDrs after d1t08 08 'Tangled Up In Blue'
+Footprints noticed: fluctuation/discontinuity pops 01 'Gotta Serve Somebody' @ 00:34 & 09 'Girl From The North Country' @ 00:34
+
+Taper unidentified. Good recording
+
+01 Gotta Serve Somebody
+02 Million Miles
+03 Maggie's Farm
+04 Make You Feel My Love
+05 Stuck Inside Of Mobile With The Memphis Blues Again
+06 Masters Of War
+07 Pass Me Not, O Gentle Saviour (Frances J. Crosby/William H. Doane)
+08 Tangled Up In Blue
+
+09 Girl From The North Country
+10 I Don't Believe You (She Acts Like We Never Have Met)
+11 Love Sick
+12 Highway 61 Revisited
+13 Like A Rolling Stone
+14 Everything Is Broken
+15 Don't Think Twice, It's All Right
+16 Not Fade Away (Norman Petty/Charles Hardin)
+
+Concert # 1069 of The Never-Ending Tour
+Concert # 23 of the 1999 US Winter Tour
+1999 concert # 23
+
+Concert # 216 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+69, 15 acoustic with the band
+1, 7, 16 Bucky Baxter and Larry Campbell backup vocal
+
+10 new songs (62%) compared to previous concert
+1 new song for this tour
+
+Stereo audience recording, 100 minutes
+
+2f81436b0d4aefaab154c52328453258 *01 Gotta Serve Somebody.flac
+2a37dcc39f6de4a67b1c66875f79dcdb *02 Million Miles.flac
+18bf48a37804d3095b5e265139ace90f *03 Maggie's Farm.flac
+561e9c45443ad0d3219c3aef3130e6b7 *04 Make You Feel My Love.flac
+b72d9471ed123f6451987cbd2f7a9b7f *05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+04e0594914d6e7ea895ef02c9950a7b0 *06 Masters Of War.flac
+0e9bf2f6e63f2fab7af43376602a071f *07 Pass Me Not, O Gentle Saviour.flac
+4b44f36baea6dcd51633a1bb56dab681 *08 Tangled Up In Blue.flac
+85672492813b457b7aeb72b5eb1a761d *09 Girl From The North Country.flac
+525d32392a98f09e586b10397feefe72 *10 I Don't Believe You (She Acts Like We Never Have Met).flac
+cd244cfa70e942bd15a5c7c6a6ce9857 *11 Love Sick.flac
+cc3de7c6c924f27e55286b1856eb5e1d *12 Highway 61 Revisited.flac
+d2ee7f3d878619193de7bba7b0259fb9 *13 Like A Rolling Stone.flac
+ec59bcc2fcb711b7c9975c25e3fad967 *14 Everything Is Broken.flac
+65709ca17bc5d1d3c9e317e3f31cf5e7 *15 Don't Think Twice, It's All Right.flac
+b7dbc82e38923a33d10a59a827d2c816 *16 Not Fade Away.flac
+===================
+===================
+===================
+=== Bob Dylan 1999-02-24 Amherst, Massachusetts, USA [no LB-ref. unidentified taper].md5
+===================
+===================
+===================
+2f81436b0d4aefaab154c52328453258 *01 Gotta Serve Somebody.flac
+2a37dcc39f6de4a67b1c66875f79dcdb *02 Million Miles.flac
+18bf48a37804d3095b5e265139ace90f *03 Maggie's Farm.flac
+561e9c45443ad0d3219c3aef3130e6b7 *04 Make You Feel My Love.flac
+b72d9471ed123f6451987cbd2f7a9b7f *05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+04e0594914d6e7ea895ef02c9950a7b0 *06 Masters Of War.flac
+0e9bf2f6e63f2fab7af43376602a071f *07 Pass Me Not, O Gentle Saviour.flac
+4b44f36baea6dcd51633a1bb56dab681 *08 Tangled Up In Blue.flac
+85672492813b457b7aeb72b5eb1a761d *09 Girl From The North Country.flac
+525d32392a98f09e586b10397feefe72 *10 I Don't Believe You (She Acts Like We Never Have Met).flac
+cd244cfa70e942bd15a5c7c6a6ce9857 *11 Love Sick.flac
+cc3de7c6c924f27e55286b1856eb5e1d *12 Highway 61 Revisited.flac
+d2ee7f3d878619193de7bba7b0259fb9 *13 Like A Rolling Stone.flac
+ec59bcc2fcb711b7c9975c25e3fad967 *14 Everything Is Broken.flac
+65709ca17bc5d1d3c9e317e3f31cf5e7 *15 Don't Think Twice, It's All Right.flac
+b7dbc82e38923a33d10a59a827d2c816 *16 Not Fade Away.flac
+===================
+===================
+===================
+=== Bob Dylan 1999-02-24 Amherst, Massachusetts, USA [no LB-ref. unidentified taper].txt
+===================
+===================
+===================
+2f81436b0d4aefaab154c52328453258 *01 Gotta Serve Somebody.flac
+2a37dcc39f6de4a67b1c66875f79dcdb *02 Million Miles.flac
+18bf48a37804d3095b5e265139ace90f *03 Maggie's Farm.flac
+561e9c45443ad0d3219c3aef3130e6b7 *04 Make You Feel My Love.flac
+b72d9471ed123f6451987cbd2f7a9b7f *05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+04e0594914d6e7ea895ef02c9950a7b0 *06 Masters Of War.flac
+0e9bf2f6e63f2fab7af43376602a071f *07 Pass Me Not, O Gentle Saviour.flac
+4b44f36baea6dcd51633a1bb56dab681 *08 Tangled Up In Blue.flac
+85672492813b457b7aeb72b5eb1a761d *09 Girl From The North Country.flac
+525d32392a98f09e586b10397feefe72 *10 I Don't Believe You (She Acts Like We Never Have Met).flac
+cd244cfa70e942bd15a5c7c6a6ce9857 *11 Love Sick.flac
+cc3de7c6c924f27e55286b1856eb5e1d *12 Highway 61 Revisited.flac
+d2ee7f3d878619193de7bba7b0259fb9 *13 Like A Rolling Stone.flac
+ec59bcc2fcb711b7c9975c25e3fad967 *14 Everything Is Broken.flac
+65709ca17bc5d1d3c9e317e3f31cf5e7 *15 Don't Think Twice, It's All Right.flac
+b7dbc82e38923a33d10a59a827d2c816 *16 Not Fade Away.flac
+===================
+===================
+===================

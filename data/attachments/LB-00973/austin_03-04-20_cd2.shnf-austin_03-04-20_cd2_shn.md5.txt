@@ -1,0 +1,6 @@
+38bdbb4d93ccd85af9f970fed31564b1 *austin_03-04-20_cd2_Track 01.shn
+d7a50925028315c6104df02e58eba2e2 *austin_03-04-20_cd2_Track 02.shn
+7efee2647c13ee1bf37737a6fcd66003 *austin_03-04-20_cd2_Track 03.shn
+501c627bf7837e7e9ee0b589a12fc7b8 *austin_03-04-20_cd2_Track 04.shn
+c209b5c7aa2092853d3ae95b518cbc88 *austin_03-04-20_cd2_Track 05.shn
+4e158cc3c1245e58afff4d8c24b93e94 *austin_03-04-20_cd2_Track 06.shn

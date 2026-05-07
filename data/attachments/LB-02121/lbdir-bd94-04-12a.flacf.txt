@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-04-12a.flacf 
+=================== 
+=================== 
+=================== 
+3ad9afbc1610aa31d5085faede1bee85  bd1994-04-12_d1t01.flac
+871e7931f54a63031adb44ec622e9452  bd1994-04-12_d1t02.flac
+fd3be73cee88aa778b4501430cafcd6e  bd1994-04-12_d1t03.flac
+2c9d463451f80cf6172422a781f591b6  bd1994-04-12_d1t04.flac
+f6210851aab8db340e56f12654c9f185  bd1994-04-12_d1t05.flac
+c4fc3bfd10602f1f7733f69e72f16b4f  bd1994-04-12_d1t06.flac
+c23e5fd44cdfbf6ca0bf90570f9bdd6a  bd1994-04-12_d1t07.flac
+c233511e3773a6f99ba19c4f8879ace7  bd1994-04-12_d1t08.flac
+278db13464de2742f2e1b657645e81b4  bd1994-04-12_d2t01.flac
+acdaddb1d0d31b37fbd884bed36b853e  bd1994-04-12_d2t02.flac
+ac3b170694ef4aedbae094edc74e1eaf  bd1994-04-12_d2t03.flac
+1a6f1db5a9763c1bcd6ad3f37a3f8f66  bd1994-04-12_d2t04.flac
+4bb96d4e5d37602fa82d8465ad132284  bd1994-04-12_d2t05.flac
+addc65e3f7a4892e52ddf948422f1ff6  bd1994-04-12_d2t06.flac
+520d2562c8300446ecbcfcf143037e18  bd1994-04-12_d2t07.flac
+6e33f58e1b9fe3cbf2ea483476cbae46  bd1994-04-12_FLACfingerprint.txt
+25f0b141ffd33e0ed074e4e74e615e8d  bd1994-04-12_Rockford.txt
+2c3975bc12376341a52b92f2a13595f5  bd1994-04-12_Rockford_FLAC.md5
+4ed3f1fb14446096e27d2daa0e482411  bd1994-04-12_Rockford_wav.md5
+9b48d811ff9713835ac545593770d008  bd94-04-12a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-04-12a.flacf 
+=================== 
+=================== 
+=================== 
+bd1994-04-12_d1t01.flac:e35d3dd3a57ed06dc551b5f32326b618
+bd1994-04-12_d1t02.flac:99e721b3d9eb3c190ff863cafe0083fb
+bd1994-04-12_d1t03.flac:47245dbcae5adcac938e6c877294a511
+bd1994-04-12_d1t04.flac:3d4df58e754e11569351bf73cdb5b0df
+bd1994-04-12_d1t05.flac:deb1186c74245e6c8c5f8fcf63fbc7f5
+bd1994-04-12_d1t06.flac:d4aef623ee40fb3d29a73eb66bcfd8c0
+bd1994-04-12_d1t07.flac:a626e01da932a927b670cb5d6928a97f
+bd1994-04-12_d1t08.flac:ca36b0410eee0a038430504ea3cbffdf
+bd1994-04-12_d2t01.flac:0e39321cc81209e05658cce554078d5e
+bd1994-04-12_d2t02.flac:fca1816908f6218531f17b66f12c1e80
+bd1994-04-12_d2t03.flac:5f97d8cf3a6fd4af60359f980ef807e3
+bd1994-04-12_d2t04.flac:97a13a22208ec17ed6c463d4775442e3
+bd1994-04-12_d2t05.flac:61e3cf4e237bbdb1e13193fd56920e5c
+bd1994-04-12_d2t06.flac:ae19f93df49d33c9ef87755638dcf674
+bd1994-04-12_d2t07.flac:1eec18b3b26f56f725242b82f878b9d8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-04-12a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:29.19       89832332 B   ---   --   ---xx   flac  0.5772  bd1994-04-12_d1t01.flac
+     7:10.00       75852044 B   ---   --   ---xx   flac  0.5976  bd1994-04-12_d1t02.flac
+     6:26.12       68118668 B   ---   --   ---xx   flac  0.6469  bd1994-04-12_d1t03.flac
+     9:28.67      100352828 B   ---   --   ---xx   flac  0.6003  bd1994-04-12_d1t04.flac
+    10:11.37      107867468 B   ---   --   ---xx   flac  0.5704  bd1994-04-12_d1t05.flac
+     6:38.34       70287212 B   ---   --   ---xx   flac  0.5447  bd1994-04-12_d1t06.flac
+     4:58.69       52729532 B   ---   --   ---xx   flac  0.4777  bd1994-04-12_d1t07.flac
+     6:05.41       64482476 B   ---   --   ---xx   flac  0.4714  bd1994-04-12_d1t08.flac
+     5:45.21       60907436 B   ---   --   ---xx   flac  0.5151  bd1994-04-12_d2t01.flac
+     7:06.03       75153500 B   ---   --   ---xx   flac  0.5486  bd1994-04-12_d2t02.flac
+     7:57.25       84201644 B   ---   --   ---xx   flac  0.6073  bd1994-04-12_d2t03.flac
+     8:40.42       91826828 B   ---   --   ---xx   flac  0.5947  bd1994-04-12_d2t04.flac
+     7:10.24       75908492 B   ---   --   ---xx   flac  0.6367  bd1994-04-12_d2t05.flac
+     9:23.57       99447308 B   ---   --   ---xx   flac  0.5551  bd1994-04-12_d2t06.flac
+     9:02.06       95622956 B   ---   --   ---xx   flac  0.5363  bd1994-04-12_d2t07.flac
+   114:34.07     1212590724 B                            0.5691  (15 files)
+=================== 
+=================== 
+=================== 

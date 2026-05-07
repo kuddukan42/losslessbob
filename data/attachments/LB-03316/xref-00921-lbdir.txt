@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-01-Zimmy21-e.flacf 
+=================== 
+=================== 
+=================== 
+9488056016648fdc59e74c9a6cb532a3  Bob Dylan - 2005-11-01 Brussels (Zimmy21 recording).md5
+3a18a7a84b4a1be3b7c621818c307b48  Bob Dylan - 2005-11-01 Brussels (Zimmy21 recording).txt
+7808f77cccb4961ddf46d1b1d0471884  d1Track01.flac
+0ddef273d24411acd07490a570d356fc  d1Track02.flac
+82e1c84642de1ebef76e2dc200012d2e  d1Track03.flac
+ed0878175c8dadc688ba2c6bcde3e207  d1Track04.flac
+d0fdb488613e3ce51b972c1a0368535f  d1Track05.flac
+7362f869f30553b60a5e129508f4aa7c  d1Track06.flac
+f20d3bff6bad81fda5a573a2512fa3af  d1Track07.flac
+1f7c16c0dc1c5b6ac1dc8ea09277d5a7  d1Track08.flac
+2eb42b9bb00feb509e64f5f2c8bde437  d1Track09.flac
+3b5aca3d9d7d680b7add4623f302c5bb  d1Track10.flac
+6e12e4b46dda29ac955f04aaa1856cd3  d1Track11.flac
+b0a1c264917317b93e1caf95a6b8edb9  d2Track01.flac
+515be7ff360df16acddf7eb38fdfc207  d2Track02.flac
+cf48a2e6793b0c372b915e5795a4007d  d2Track03.flac
+00f4f214ec608b25976b1232d7982cd1  d2Track04.flac
+3b79aa5de5d8b76f0c5b2cfce4b91774  d2Track05.flac
+6661600b3498175b7bfaf9454c5998ea  d2Track06.flac
+b10efa000a1cd4702745b708b16dbbec  d2Track07.flac
+841050b774291bbecde7d3671c0c3d8a  d2Track08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-01-Zimmy21-e.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:ec868d214dacb2ec0521a015f8c7981b
+d1Track02.flac:d9a196f9f410fbf617b9d3d0af150d0a
+d1Track03.flac:9f36849a2c5bbc0d36d2fa91f86c0e0b
+d1Track04.flac:d27e6bd1b7bf07987c44b731272c2b8f
+d1Track05.flac:d6ba5346c8aff117e372331521998673
+d1Track06.flac:7213d47ec76eeffb984b28d9ec01efdf
+d1Track07.flac:c6d627cdb77b14000427aa8d49701c5c
+d1Track08.flac:49bba309b9cb59d57dd8ed5784643ea8
+d1Track09.flac:f17fcee0960ff6af85b9ec272f939637
+d1Track10.flac:6288ba343a87c1b06f9c9feeb64f2caa
+d1Track11.flac:8dfefcd466ccabf6d74788432eaae61a
+d2Track01.flac:d0e90e8e67699a45fbcb56a379900927
+d2Track02.flac:5a0f19cc703fdddc9c8b2343fd02d535
+d2Track03.flac:ae12250b53bc0bd27455795a75ac0645
+d2Track04.flac:07087b023ac3dcdd9abc046a52e7dc89
+d2Track05.flac:c13d8d7fb5227a8347137a8fc2640056
+d2Track06.flac:77afa04fdf5a03dee0c2dfad28e081db
+d2Track07.flac:b2aab6ee27db2e50d3d5799ed548a440
+d2Track08.flac:9d6efc78837ff0d803109541973629ba
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-01-Zimmy21-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.40        6444524 B   ---   --   ---xx   flac  0.4535  d1Track01.flac
+     4:59.61       52887116 B   ---   --   ---xx   flac  0.6433  d1Track02.flac
+     7:42.68       81656780 B   ---   --   ---xx   flac  0.5761  d1Track03.flac
+     7:28.13       79057820 B   ---   --   ---xx   flac  0.6370  d1Track04.flac
+     4:43.57       50055308 B   ---   --   ---xx   flac  0.5252  d1Track05.flac
+     7:57.06       84156956 B   ---   --   ---xx   flac  0.6209  d1Track06.flac
+     5:25.05       57341804 B   ---   --   ---xx   flac  0.5781  d1Track07.flac
+     5:57.36       63059516 B   ---   --   ---xx   flac  0.6092  d1Track08.flac
+     5:41.36       60237116 B   ---   --   ---xx   flac  0.5175  d1Track09.flac
+     9:07.10       96514364 B   ---   --   ---xx   flac  0.6253  d1Track10.flac
+     5:49.32       61638908 B   ---   --   ---xx   flac  0.5542  d1Track11.flac
+    12:03.56      127668956 B   ---   --   ---xx   flac  0.5594  d2Track01.flac
+     6:26.56       68222156 B   ---   --   ---xx   flac  0.6316  d2Track02.flac
+     5:39.21       59849036 B   ---   --   ---xx   flac  0.5898  d2Track03.flac
+     7:51.16       83122076 B   ---   --   ---xx   flac  0.6435  d2Track04.flac
+     1:20.37       14199068 B   ---   --   ---xx   flac  0.5157  d2Track05.flac
+     6:25.41       68010476 B   ---   --   ---xx   flac  0.6444  d2Track06.flac
+     0:42.46        7517036 B   ---   --   ---xx   flac  0.5722  d2Track07.flac
+     5:54.15       62480924 B   ---   --   ---xx   flac  0.6259  d2Track08.flac
+   111:52.52     1184119940 B                            0.5979  (19 files)
+=================== 
+=================== 
+=================== 

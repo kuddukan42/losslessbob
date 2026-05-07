@@ -1,0 +1,153 @@
+Grateful Dead and Bob Dylan
+Sunday July 26th,1987
+Anaheim Stadium
+Anaheim,California,USA
+
+Modified Nak 700's omni with
+Sony D5
+FOB Spread 6 feet apart
+Maxell MX 90 nr dbx II
+
+Recorded by Tazuo Yamaguchi and Jamie Poris
+Transferred by Russ Cansler
+ 
+Master>Nak CR-3A>dbx224>HD>Audacity>CDWave>TLH
+
+notes:encore placed at end of disk 1
+ source for encore nak 300's w/ d5 2nd gen
+ numerous PHIL BOMBS during begining of Shakedown Street
+ begining of Mr Tambourine Man cut
+ 
+Set 1  CD 1
+01) tuning [00:09]
+02) Aiko Aiko [05:47]
+03) Minglewood Blues [08:27]
+04) Tons of Steel [05:27]
+05) West LA Fadeaway [08:16]
+06) When I Paint My Masterpiece [03:36]
+07) Mexicali Blues [04:33] tape flip
+08) Bird Song [08:40]
+09) Promised Land [04:19]
+ encore
+10) Touch of Grey [06:13]
+11) Knockin on Heavens' Door [06:29]
+ total 62:03
+
+ Set 2  CD 2
+01) tuning [00:46]
+02) Shakedown Street [11:37]
+03) Looks Like Rain [08:15]
+04) Terrapin Station [11:34]
+05) Drums [09:02] tape flip
+06) Space [06:40]
+07) The Other One [05:51]
+08) Stella Blue [07:05]
+09) Throwin Stones [08:40]
+10) Not Fade Away [08:45]
+  total 78:21
+
+ Set 3  CD 3
+01) /Mr Tambourine Man [05:10]
+02) Deadman, Deadman [06:21]
+03) Maggies Farm [05:03]
+04) Simple Twist of Fate [06:05]
+05) Watching the River Flow [04:18]
+06) It's All Over Now,Baby Blue [06:35]
+07) Chimes of Freedom [05:24] tape flip
+08) tuning [01:50]
+09) Queen Jane [04:15]
+10) Memphis Blues [07:21]
+11) Ballad of a Thin Man [06:47]
+12) Rainy Day Women 12 and 35 [05:02]
+13) Gotta Serve Somebody [06:11]
+14) All Along the Watchtower [06:36]
+   total 77:06
+
+Jerry Garcia-Guitar,Vocals
+Bob Weir-Guitar,Vocals
+Phil Lesh-Bass
+Billy Kreutzmann-Drums
+Micky Hart-Percussion
+Brent Mydland-Keyboards,Vocals
+Bob Dylan-Guitar,Vocals on set 3 and encore
+
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:09.70        1752284 B   ---   --   ---xx   flac  0.5592  gdbd87-07-26d1t01.flac
+     5:47.23       61264940 B   ---   --   ---xx   flac  0.6439  gdbd87-07-26d1t02.flac
+     8:27.63       89583020 B   ---   --   ---xx   flac  0.6331  gdbd87-07-26d1t03.flac
+     5:27.30       57753404 B   ---   --   ---xx   flac  0.6463  gdbd87-07-26d1t04.flac
+     8:16.38       87583820 B   ---   --   ---xx   flac  0.6123  gdbd87-07-26d1t05.flac
+     3:36.64       38252972 B   ---   --   ---xx   flac  0.6632  gdbd87-07-26d1t06.flac
+     4:33.31       48230156 B   ---   --   ---xx   flac  0.6341  gdbd87-07-26d1t07.flac
+     8:40.32       91803308 B   ---   --   ---xx   flac  0.5997  gdbd87-07-26d1t08.flac
+     4:19.26       45748796 B   ---   --   ---xx   flac  0.6360  gdbd87-07-26d1t09.flac
+     6:29.05       68631404 B   ---   --   ---xx   flac  0.6974  gdbd87-07-26d1t10.flac
+     6:13.12       65825468 B   ---   --   ---xx   flac  0.7194  gdbd87-07-26d1t11.flac
+     0:46.60        8255564 B   ---   --   ---xx   flac  0.4985  gdbd87-07-26d2t01.flac
+    11:37.64      123101372 B   ---   --   ---xx   flac  0.6065  gdbd87-07-26d2t02.flac
+     8:15.33       87395660 B   ---   --   ---xx   flac  0.5744  gdbd87-07-26d2t03.flac
+    11:34.25      122480444 B   ---   --   ---xx   flac  0.6005  gdbd87-07-26d2t04.flac
+     9:02.58       95745260 B   ---   --   ---xx   flac  0.5567  gdbd87-07-26d2t05.flac
+     6:40.06       70574156 B   ---   --   ---xx   flac  0.5295  gdbd87-07-26d2t06.flac
+     5:51.28       61982300 B   ---   --   ---xx   flac  0.6329  gdbd87-07-26d2t07.flac
+     7:05.66       75125276 B   ---   --   ---xx   flac  0.5769  gdbd87-07-26d2t08.flac
+     8:40.27       91791548 B   ---   --   ---xx   flac  0.6569  gdbd87-07-26d2t09.flac
+     8:45.01       92612396 B   ---   --   ---xx   flac  0.6415  gdbd87-07-26d2t10.flac
+     5:10.46       54792236 B   ---   --   ---xx   flac  0.6100  gdbd87-07-26d3t01.flac
+     6:21.23       67262540 B   ---   --   ---xx   flac  0.6025  gdbd87-07-26d3t02.flac
+     5:03.52       53571548 B   ---   --   ---xx   flac  0.6191  gdbd87-07-26d3t03.flac
+     6:05.49       64501292 B   ---   --   ---xx   flac  0.5709  gdbd87-07-26d3t04.flac
+     4:18.65       45664124 B   ---   --   ---xx   flac  0.6473  gdbd87-07-26d3t05.flac
+     6:35.52       69800348 B   ---   --   ---xx   flac  0.5964  gdbd87-07-26d3t06.flac
+     5:24.01       57155996 B   ---   --   ---xx   flac  0.6201  gdbd87-07-26d3t07.flac
+     1:50.00       19404044 B   ---   --   ---xx   flac  0.4394  gdbd87-07-26d3t08.flac
+     4:15.28       45047900 B   ---   --   ---xx   flac  0.5870  gdbd87-07-26d3t09.flac
+     7:21.00       77792444 B   ---   --   ---xx   flac  0.6281  gdbd87-07-26d3t10.flac
+     6:47.52       71917148 B   ---   --   ---xx   flac  0.6083  gdbd87-07-26d3t11.flac
+     5:02.03       53279900 B   ---   --   ---xx   flac  0.6326  gdbd87-07-26d3t12.flac
+     6:11.74       65618492 B   ---   --   ---xx   flac  0.6127  gdbd87-07-26d3t13.flac
+     6:36.40       69948524 B   ---   --   ---xx   flac  0.6592  gdbd87-07-26d3t14.flac
+   217:25.47     2301250084 B                            0.6158  (35 files)
+
+
+; flac fingerprint file generated by Trader's Little Helper
+; generated on April 1, 2009, at 12:07:01
+
+gdbd87-07-26d1t01.flac:129aec41ecffd9ab53d00d4459812f33
+gdbd87-07-26d1t02.flac:2cb5617a02669a31fe3cdc63ab491cc5
+gdbd87-07-26d1t03.flac:40cd75f99dc2f391812e259b332bd19a
+gdbd87-07-26d1t04.flac:430b0956aac5d8d3a2f8f6e958c271ca
+gdbd87-07-26d1t05.flac:998cd06eaeb1515a87300fb4cb29e73a
+gdbd87-07-26d1t06.flac:bade902239152123cd34b3febb3039de
+gdbd87-07-26d1t07.flac:00e8dc603dd3de128ee3f82205e9af9b
+gdbd87-07-26d1t08.flac:c83def9bf9ca2df03f222a69c067d76b
+gdbd87-07-26d1t09.flac:a1a0963deb25654d3d769eaa516828f5
+gdbd87-07-26d1t10.flac:58e02759729bd0311283ff3afa406f00
+gdbd87-07-26d1t11.flac:4d5ff3636da3f421f8c35843965bc94a
+gdbd87-07-26d2t01.flac:40897e072a7e811c30a7ecf1c55018fe
+gdbd87-07-26d2t02.flac:d8a7af913b7e5b2ab515e8a42edd95d6
+gdbd87-07-26d2t03.flac:69e9448c25b87849ce1fe49d539ce428
+gdbd87-07-26d2t04.flac:368e00b8b53924d9d776a330c3eac3fd
+gdbd87-07-26d2t05.flac:048c9bc9cf529138a27e6fc2b84f8a39
+gdbd87-07-26d2t06.flac:972f125d50ac603d6bee65fb033419ef
+gdbd87-07-26d2t07.flac:6bc0fe8a73bd1ab439b248e27479b583
+gdbd87-07-26d2t08.flac:b70c598d3ead8a4c6fd3563e8e0e00c4
+gdbd87-07-26d2t09.flac:ef39441048428259eec32ea55466716c
+gdbd87-07-26d2t10.flac:28ef1793252c9eebbad2201ffb605e9a
+gdbd87-07-26d3t01.flac:6f74306658af265b37fd427bc300b24b
+gdbd87-07-26d3t02.flac:5c46533819bc3f0eb8b02d524483b8cc
+gdbd87-07-26d3t03.flac:cb81a2cf3c997dea66aef072e160d5bf
+gdbd87-07-26d3t04.flac:88cf90c13568ab5eedc2c6957c70fcd2
+gdbd87-07-26d3t05.flac:f32f8c062ea3f8b0b6e95dbd7b6af557
+gdbd87-07-26d3t06.flac:ead7c2713063cfd031dfd8ce004be8d2
+gdbd87-07-26d3t07.flac:246381903c2258a9f6d6743b1dff2fea
+gdbd87-07-26d3t08.flac:f9f64f94f4778311509e79e9e7ff4754
+gdbd87-07-26d3t09.flac:d910ae9a6bf63d8ae7ebfe07bb6514e6
+gdbd87-07-26d3t10.flac:f7630fd7949d4959508100122e22c5d2
+gdbd87-07-26d3t11.flac:3baac7c80657325efc314157b7ae2262
+gdbd87-07-26d3t12.flac:ff526d1453c1fb2e9d5af5eb7d74b9e0
+gdbd87-07-26d3t13.flac:1c457507d66c6d216ec47abce407322a
+gdbd87-07-26d3t14.flac:55463f95f3d506fba6d6c564d51a539e

@@ -1,0 +1,172 @@
+===================
+===================
+===================
+=== Bob Dylan1992-03-21.md5
+===================
+===================
+===================
+e9f1cd7b9c7d4bc06a4108b52d401350 *d1t01-fixed.shn
+936fa2eec6f724b0e0f04e67c5d42a13 *d1t02-fixed.shn
+6ac2eb562141b635ef20b7678ebb84fa *d1t03-fixed.shn
+37ee62bf3b171af53a2458e613870be0 *d1t04-fixed.shn
+683d2b225860f4bc7389c375a08512f0 *d1t05-fixed.shn
+4288d5b463e569fd13d8e3fde74c5abb *d1t06-fixed.shn
+3e5b4019040fbbbce26b821b637c8a06 *d1t07-fixed.shn
+af47ee48e946dd68e127d22692285546 *d1t08-fixed.shn
+8ad9f5f945169f2da546eda164730330 *d1t09-fixed.shn
+6236fb4f403ac44775461f8bbc02d56e *d1t10-fixed.shn
+17da7a18dda1f2d89fedd809852707f8 *d2t01-fixed.shn
+ce8d82aa8dc8755764044edebf9e05fe *d2t02-fixed.shn
+aa69bff76dfba841d26aa7f96235a695 *d2t03-fixed.shn
+4395ba7403a3bc87971866aa33944a20 *d2t04-fixed.shn
+8a311e69b071024c1ed424c1f4754fc0 *d2t05-fixed.shn
+3f6c440b48113949cb7903e7d6e7be06 *d2t06-fixed.shn
+f578183e3934b5838b0feeeaeca6a785 *d2t07-fixed.shn
+b58aff5842bfa164da5f90e920bb65c1 *d2t08-fixed.shn
+===================
+===================
+===================
+=== Setlist.txt
+===================
+===================
+===================
+This source has not been seen here since forever.  Unfortunately, it was filled with SBEs at every turn, so I fixed them and then re-encoded to SHN.
+
+This is not LB-7649, which looks like a fixed version of LB-1036 too.  It was re-encoded to FLAC but not before "levels have been raised on this so it has a lot of bad clipping" (on some or all of it)(http://jokerman.org.uk/lb/detail/LB-07649.html).   
+
+We received in '04 several DVDs of data files from someone in Australia for a slew of '92 Australia shows, but we had mislaid one of the DVDs.  I found it during our off day from work Monday (really bad snow storm clobbering the Midwest), and this Adelaide show is the first one I listened to, then decided to upload, and then realized I needed to fix.  I then looked back and saw I already posted everything from another DVD (1992-04-11 and later).  The shows in the current data DVD are dated March 18 - 29.  Like the other data DVD, I may post them all (after I fix them, which seems abundantly likely).   
+
+Bob Dylan
+Entertainment Centre
+Adelaide, South Australia (Australia)
+March 21, 1992  
+
+Source:  "jl recording."  
+
+My part:
+
+SHN > TLH (SHN > WAV, fix SBEs, WAV > SHN) > SHN.  
+
+Fixed LB-1036
+
+CD 1:
+01. Most Likely You Go Your Way (And I'll Go Mine)
+02. Most Of The Time
+03. All Along The Watchtower
+04. Just Like A Woman
+05. Stuck Inside Of Mobile With The Memphis Blues Again
+06. I'll Be Your Baby Tonight
+07. Maggie's Farm
+08. Love Minus Zero/No Limit
+09. Little Moses
+10. Female Rambling Sailor
+
+CD 2:
+01. Desolation Row
+02. Cat's In The Well
+03. I'll Remember You
+04. The Times They Are A-Changin'
+05. Highway 61 Revisited
+06. Ballad Of A Thin Man
+07. Rainy Day Women # 12 & 35
+08. Blowin' In The Wind 
+
+Total time = 89:32
+
+Original:
+01fe1d48c76ce75768f5c2204c012f85*d1t01.shn
+da21f2a4ee184dc200ce92ba315544d8*d1t02.shn
+9b82f52208cd54d0168d8def7f39ab05*d1t03.shn
+0c5f3341048387e8e704d1f8e3ca6c77*d1t04.shn
+6e834adb8941d231cef6cde6268d3d72*d1t05.shn
+7f159c82ed63184f496c2b05121be356*d1t06.shn
+37fddb0b3bfe6fd6f84b96ce287cf7c1*d1t07.shn
+4a73595924aa4fe057b7e23a4f9b6264*d1t08.shn
+60a120c92a3a43951e5268b1e6e78088*d1t09.shn
+b7e99ce177f244937a73f6edc7434f89*d1t10.shn
+6d59b570272639ea88677c87ca6310ba*d2t01.shn
+80a531348d80b6a8a74ebac9d400f8c1*d2t02.shn
+ddd8d6ba51ae107e57650e056e8c7685*d2t03.shn
+c903d4780075c0632afa6ec4b2c9854b*d2t04.shn
+a2c8ea990332acd2d7cbb9d0d5f3ab84*d2t05.shn
+fbbb1fa675e9fabd853ba31806434324*d2t06.shn
+f70f6a632bbe84dd46635204491b7ab5*d2t07.shn
+597024bb73f81b897af4800637c179e5*d2t08.shn
+
+Fixed:
+e9f1cd7b9c7d4bc06a4108b52d401350*d1t01-fixed.shn
+936fa2eec6f724b0e0f04e67c5d42a13*d1t02-fixed.shn
+6ac2eb562141b635ef20b7678ebb84fa*d1t03-fixed.shn
+37ee62bf3b171af53a2458e613870be0*d1t04-fixed.shn
+683d2b225860f4bc7389c375a08512f0*d1t05-fixed.shn
+4288d5b463e569fd13d8e3fde74c5abb*d1t06-fixed.shn
+3e5b4019040fbbbce26b821b637c8a06*d1t07-fixed.shn
+af47ee48e946dd68e127d22692285546*d1t08-fixed.shn
+8ad9f5f945169f2da546eda164730330*d1t09-fixed.shn
+6236fb4f403ac44775461f8bbc02d56e*d1t10-fixed.shn
+17da7a18dda1f2d89fedd809852707f8*d2t01-fixed.shn
+ce8d82aa8dc8755764044edebf9e05fe*d2t02-fixed.shn
+aa69bff76dfba841d26aa7f96235a695*d2t03-fixed.shn
+4395ba7403a3bc87971866aa33944a20*d2t04-fixed.shn
+8a311e69b071024c1ed424c1f4754fc0*d2t05-fixed.shn
+3f6c440b48113949cb7903e7d6e7be06*d2t06-fixed.shn
+f578183e3934b5838b0feeeaeca6a785*d2t07-fixed.shn
+b58aff5842bfa164da5f90e920bb65c1*d2t08-fixed.shn
+
+===================
+===================
+===================
+=== shntool_len_fixed.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.60       55177964 B   ---   --   -----    wav  1.0000  d1t01-fixed.wav
+     4:24.62       46715468 B   ---   --   -----    wav  1.0000  d1t02-fixed.wav
+     4:04.32       43116908 B   ---   --   -----    wav  1.0000  d1t03-fixed.wav
+     5:20.73       56619740 B   ---   --   -----    wav  1.0000  d1t04-fixed.wav
+     6:45.13       71472620 B   ---   --   -----    wav  1.0000  d1t05-fixed.wav
+     3:30.17       37084028 B   ---   --   -----    wav  1.0000  d1t06-fixed.wav
+     5:34.05       58929404 B   ---   --   -----    wav  1.0000  d1t07-fixed.wav
+     3:15.71       34565036 B   ---   --   -----    wav  1.0000  d1t08-fixed.wav
+     4:56.48       52327340 B   ---   --   -----    wav  1.0000  d1t09-fixed.wav
+     3:50.29       40640252 B   ---   --   -----    wav  1.0000  d1t10-fixed.wav
+     4:50.65       51308924 B   ---   --   -----    wav  1.0000  d2t01-fixed.wav
+     5:16.28       55808300 B   ---   --   -----    wav  1.0000  d2t02-fixed.wav
+     4:55.10       52061564 B   ---   --   -----    wav  1.0000  d2t03-fixed.wav
+     7:31.31       79629356 B   ---   --   -----    wav  1.0000  d2t04-fixed.wav
+     6:30.02       68800748 B   ---   --   -----    wav  1.0000  d2t05-fixed.wav
+     5:20.58       56584460 B   ---   --   -----    wav  1.0000  d2t06-fixed.wav
+     4:58.19       52611932 B   ---   --   -----    wav  1.0000  d2t07-fixed.wav
+     3:13.57       34179308 B   ---   --   -----    wav  1.0000  d2t08-fixed.wav
+    89:32.05      947633352 B                            1.0000  (18 files)
+===================
+===================
+===================
+=== shntool_len_original.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.60       55178584 B   -b-   --   -----    wav  1.0000  d1t01.wav
+     4:24.62       46716564 B   -b-   --   -----    wav  1.0000  d1t02.wav
+     4:04.32       43116792 B   -b-   --   -----    wav  1.0000  d1t03.wav
+     5:20.73       56618920 B   -b-   --   -----    wav  1.0000  d1t04.wav
+     6:45.13       71472880 B   -b-   --   -----    wav  1.0000  d1t05.wav
+     3:30.18       37085304 B   -b-   --   -----    wav  1.0000  d1t06.wav
+     5:34.04       58928080 B   -b-   --   -----    wav  1.0000  d1t07.wav
+     3:15.71       34564796 B   -b-   --   -----    wav  1.0000  d1t08.wav
+     4:56.48       52327664 B   -b-   --   -----    wav  1.0000  d1t09.wav
+     3:50.29       40640864 B   -b-   --   -----    wav  1.0000  d1t10.wav
+     4:50.65       51309424 B   -b-   --   -----    wav  1.0000  d2t01.wav
+     5:16.28       55807812 B   -b-   --   -----    wav  1.0000  d2t02.wav
+     4:55.10       52060524 B   -b-   --   -----    wav  1.0000  d2t03.wav
+     7:31.31       79629432 B   -b-   --   -----    wav  1.0000  d2t04.wav
+     6:30.02       68801164 B   -b-   --   -----    wav  1.0000  d2t05.wav
+     5:20.58       56584048 B   -b-   --   -----    wav  1.0000  d2t06.wav
+     4:58.19       52612948 B   -b-   --   -----    wav  1.0000  d2t07.wav
+     3:13.56       34177484 B   -b-   --   -----    wav  1.0000  d2t08.wav
+    89:32.05      947633284 B                            1.0000  (18 files)
+===================
+===================
+===================

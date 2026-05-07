@@ -1,0 +1,49 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-10-17-tve-broadcast-mono.flac16 
+=================== 
+=================== 
+=================== 
+67544e26f8261fe3eaaee6f38ba386bb  bd1991-10-17-sevilla.mono.ffp.txt
+439cec7397e1af15167988c922c82c7e  bd1991-10-17-sevilla.mono.t01.flac
+81c8464625dd209d80095c245245a7fd  bd1991-10-17-sevilla.mono.t01.sa_fa.JPG
+6d889526372f315e5a885714fdd697c9  bd1991-10-17-sevilla.mono.t02.flac
+c5bb1dc152bb2cb03137d1c4b89bbe80  bd1991-10-17-sevilla.mono.t03.flac
+a5da61f001477af32972476df22c2d89  bd1991-10-17-sevilla.mono.t03.sa_fa.JPG
+8be6376a525684e145f54d0f15ecf723  bd1991-10-17-sevilla.mono.t04.flac
+83a6d7de05be1d96a7220974cd588b82  bd1991-10-17-sevilla.mono.t05.flac
+4b42abc177df386b546db2a75f704022  bd1991-10-17-sevilla.mono.t06.flac
+fa32d60b007cbd0d02f6d2288613708d  bd1991-10-17-sevilla.tve-broadcast.mono.flac16.md5
+e49fa06ef3ae4ff5c5f017d251015d50  bd1991-10-17-sevilla.tve-broadcast.mono.info.lbp51.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-10-17-tve-broadcast-mono.flac16 
+=================== 
+=================== 
+=================== 
+bd1991-10-17-sevilla.mono.t01.flac:28df205a8db849de966026a205d83468
+bd1991-10-17-sevilla.mono.t02.flac:b5df5ad8a5c3de8332e0dcb9a0966283
+bd1991-10-17-sevilla.mono.t03.flac:ff5b747a85a9a3923214daf77d6f98fc
+bd1991-10-17-sevilla.mono.t04.flac:1c8d9d8bd8099e65bb0fe2d311419045
+bd1991-10-17-sevilla.mono.t05.flac:38d192f0ad89d17159d49ad86159d4b1
+bd1991-10-17-sevilla.mono.t06.flac:a83001fcf9f1f4b86188933c53d0b962
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-10-17-tve-broadcast-mono.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:41.42       70835228 B   ---   --   ---xx   flac  0.2822  bd1991-10-17-sevilla.mono.t01.flac
+     3:07.21       33036236 B   ---   --   ---xx   flac  0.2561  bd1991-10-17-sevilla.mono.t02.flac
+     5:02.52       53395148 B   ---   --   ---xx   flac  0.2527  bd1991-10-17-sevilla.mono.t03.flac
+     3:32.30       37467404 B   ---   --   ---xx   flac  0.2425  bd1991-10-17-sevilla.mono.t04.flac
+     4:54.18       51903980 B   ---   --   ---xx   flac  0.2962  bd1991-10-17-sevilla.mono.t05.flac
+     4:41.63       49716620 B   ---   --   ---xx   flac  0.3096  bd1991-10-17-sevilla.mono.t06.flac
+    28:00.01      296354616 B                            0.2760  (6 files)
+=================== 
+=================== 
+=================== 

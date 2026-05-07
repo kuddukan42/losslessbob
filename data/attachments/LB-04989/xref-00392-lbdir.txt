@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-27-b.flacf 
+=================== 
+=================== 
+=================== 
+b46d65a05e203cbeadfec1dc4afdf065  01 Absolutely sweet Marie.flac
+f58e3462801a985ddf8286f285524bce  02 If not for you.flac
+4eec5827770d3b36cb31a25eb0661671  03 Can't wait.flac
+1495133d21393b85447471b32de8d852  04 I'll be your baby tonight.flac
+006a5e0c2eb43f4b31d96f885c2d7983  05 Silvio.flac
+064536c008fc150a0b3fb2f13abca49f  06 Cocaine blues.flac
+7e24936d5533a2745d3f88a23acd9915  07 Boots of Spanish leather.flac
+a9214013b56df2227a9937f4cc50a5ae  08 Tangled up in blue.flac
+5bd3695923beee6831649ed89aef3c35  09 Million miles.flac
+e26775225f3aaa626de522bafbc754e7  10 Queen Jane approximately.flac
+88560662b4eadbe9aa34410db5a6707c  11 'Til I fell in love with you.flac
+69f850b9933edec4dc4a7aa1c7d58fd4  12 Highway 61 revisited.flac
+fba7653fdbb0c75287145f6013f4fa75  13 It ain't me, babe.flac
+eea1963ebeec92f993c28dd36605d74e  14 Love sick.flac
+c26ad6a4d513ce65c422c48f06f64ae4  15 Rainy day women #12 & 35.flac
+ff71788300057fc1b22c20b83f8a299a  Bob Dylan 1998.01.27 Mid-Hudson Arena, Poughkeepsie, NY.md5
+74455bd4b20337559795933822370739  DigiFlawFinder-bd98-01-27-b.flacf.wavf.html
+a577f957285494d616e23c628c9dba08  Jan 27 Poughkeepsie.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-27-b.flacf 
+=================== 
+=================== 
+=================== 
+01 absolutely sweet marie.flac:e5c19720bf61f09feee7f4f5c2fd1f61
+02 if not for you.flac:c7d14edda191d8e8c2c2d652c464d8df
+03 can't wait.flac:f529b2a9972a170d63a50f9c9f7dfb35
+04 i'll be your baby tonight.flac:9a2e1734d0575c01b1070546c9537675
+05 silvio.flac:c21eabfe2c145b73793430e2af8912ef
+06 cocaine blues.flac:4265e1f1a3545bffbe3cabffea36f14a
+07 boots of spanish leather.flac:97f50001806b1fddae64b333b0c7b0df
+08 tangled up in blue.flac:641da0aa47110aa9d4e425d7c8627201
+09 million miles.flac:bd1a3b47536bf77fb075e83a2539d754
+10 queen jane approximately.flac:690dac184ac4033574c539d1a56d5f0b
+11 'til i fell in love with you.flac:0292870fd9b675a85c72f2f193e124dd
+12 highway 61 revisited.flac:6eada021a1d6e5fac714c65e381f41f2
+13 it ain't me, babe.flac:f6df435afdc5a699684db8226552258b
+14 love sick.flac:86bbb24241599e8184987919236a0352
+15 rainy day women #12 & 35.flac:6cee16fc227ea3bfec41ff44cd4457a2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-27-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:19.19       45732332 B   ---   --   ---xx   flac  0.6122  01 Absolutely sweet Marie.flac
+     4:09.18       43965980 B   ---   --   ---xx   flac  0.6216  02 If not for you.flac
+     6:24.68       67897580 B   ---   --   ---xx   flac  0.6380  03 Can't wait.flac
+     5:44.47       60792188 B   ---   --   ---xx   flac  0.6431  04 I'll be your baby tonight.flac
+     7:18.12       77291468 B   ---   --   ---xx   flac  0.6582  05 Silvio.flac
+     4:07.64       43721372 B   ---   --   ---xx   flac  0.6182  06 Cocaine blues.flac
+     5:59.31       63400556 B   ---   --   ---xx   flac  0.6220  07 Boots of Spanish leather.flac
+     8:33.14       90526172 B   ---   --   ---xx   flac  0.6681  08 Tangled up in blue.flac
+     5:49.70       61728284 B   ---   --   ---xx   flac  0.6133  09 Million miles.flac
+     7:07.33       75400460 B   ---   --   ---xx   flac  0.6181  10 Queen Jane approximately.flac
+     6:06.14       64595372 B   ---   --   ---xx   flac  0.6403  11 'Til I fell in love with you.flac
+     7:12.00       76204844 B   ---   --   ---xx   flac  0.6380  12 Highway 61 revisited.flac
+     7:50.02       82912748 B   ---   --   ---xx   flac  0.6048  13 It ain't me, babe.flac
+     5:35.62       59239868 B   ---   --   ---xx   flac  0.6145  14 Love sick.flac
+     4:27.38       47188220 B   ---   --   ---xx   flac  0.6436  15 Rainy day women #12 & 35.flac
+    90:45.42      960597444 B                            0.6318  (15 files)
+=================== 
+=================== 
+=================== 

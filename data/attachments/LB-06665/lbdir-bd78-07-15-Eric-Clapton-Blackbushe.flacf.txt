@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-15-Eric-Clapton-Blackbushe.flacf 
+=================== 
+=================== 
+=================== 
+083377a8288262ad652a1e7c350f2233  Artwork\EC - 1978-07-15blackbushe-back-inside.jpg
+2bf9c53bf765af08766d8f3fb2e412cf  Artwork\EC - 1978-07-15blackbushe-back.jpg
+7a3e7bf7945332bf89f2ed2e9e725c38  Artwork\EC - 1978-07-15blackbushe-front-inside.jpg
+179e21a17e2e085efadf9bec55d3fa4f  Artwork\EC - 1978-07-15blackbushe-front.jpg
+0d5cd4633353e9765f1ae97b75f9d5e2  CD1\101-The Core.flac
+78fb2f27f98aa32e1b8a8954ec52140c  CD1\102-Worried Life Blues.flac
+2ea2589f3945ddd46f222a0770abc291  CD1\103-Wonderful Tonight.flac
+3304a4f9c935a15e22234880a1c29011  CD1\104-Lay Down Sally.flac
+3ae96b5b3021ba7e8e01d6b188750878  CD1\105-Rodeo Man.flac
+9d61ef8166849bbffca10c1515e650f0  CD1\106-Fool's Paradise.flac
+35a097479e90dd1a27335e882cb1d949  CD1\107-Cocaine.flac
+b04a97edad9f767cd11b248ebde3e1d0  CD1\108-Double Trouble.flac
+7e3a970af3a270484623ec2f2c79910e  CD2\201-Nobody Knows You When You're Down And Out.flac
+d580aa7deac16e5c604f7334eaa1b9e3  CD2\202-Badge.flac
+56d88b3bb0b9e3aed3986ec697ea9c79  CD2\203-Knockin' On Heaven's Door.flac
+8259cfdadb4a4526643a46935c3c4b3a  CD2\204-Key To The Highway.flac
+177290a3db069163c75e364a8ed1360a  CD2\205-Layla.flac
+9f624d5ecb69831da4d1e5d7e3b5e42a  CD2\206-Bottle Of Red Wine.flac
+5672929a14ba8a0c05700299b450227a  CD2\207-Forever Young with Dylan.flac
+b4da85a8ea552a059362cd4746fdf9e4  EC - Blackbushe July 15, 1978_fp.txt
+4bfe1729d241e2aad4284708a8cc202c  EC - Blackbushe July 15, 1978_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-15-Eric-Clapton-Blackbushe.flacf\CD1 
+=================== 
+=================== 
+=================== 
+101-The Core.flac:9f59421e02f671cd19a62592140fd8d5
+102-Worried Life Blues.flac:7af8210ff00d4afead3f62e2af974354
+103-Wonderful Tonight.flac:88e9ea5071c1fc7eed405c42c332581f
+104-Lay Down Sally.flac:c1d8328083f497d1fc4d3e691979e417
+105-Rodeo Man.flac:edbadc6298d4319447dca8487377b4e5
+106-Fool's Paradise.flac:de98ca8d9dfe290ba07d774665d27904
+107-Cocaine.flac:8fc48471f200b8cb0fd9433b9a913529
+108-Double Trouble.flac:58d1fe559c7cff0c18213d8fb156864f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-15-Eric-Clapton-Blackbushe.flacf\CD2 
+=================== 
+=================== 
+=================== 
+201-Nobody Knows You When You're Down And Out.flac:d1b5103dcb3bb1ba53c3aec89edbdd64
+202-Badge.flac:669e9c7ab0c8cb4bb9a34fc355f1333c
+203-Knockin' On Heaven's Door.flac:4c2600605231d18def78d183078837bb
+204-Key To The Highway.flac:2aa027bb1a3a4c10fd4c620a5bad69fd
+205-Layla.flac:e0e90f62e0802e018e7099fe8c7eb1c8
+206-Bottle Of Red Wine.flac:b1f2d05c6a14f60f10f626f749c67bfb
+207-Forever Young with Dylan.flac:ddc197b542798324483ce866f233c5d4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-15-Eric-Clapton-Blackbushe.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:33.30       90563804 B   ---   --   ---xx   flac  0.6037  101-The Core.flac
+     6:07.74       64912892 B   ---   --   ---xx   flac  0.5770  102-Worried Life Blues.flac
+     4:40.00       49392044 B   ---   --   ---xx   flac  0.5535  103-Wonderful Tonight.flac
+     5:29.62       58181468 B   ---   --   ---xx   flac  0.5703  104-Lay Down Sally.flac
+     3:46.46       39974636 B   ---   --   ---xx   flac  0.5670  105-Rodeo Man.flac
+     4:36.17       48726428 B   ---   --   ---xx   flac  0.5985  106-Fool's Paradise.flac
+     5:04.49       53740892 B   ---   --   ---xx   flac  0.5912  107-Cocaine.flac
+     6:06.16       64600076 B   ---   --   ---xx   flac  0.5517  108-Double Trouble.flac
+    44:24.69      470092240 B                            0.5784  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-15-Eric-Clapton-Blackbushe.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.56       53933756 B   ---   --   ---xx   flac  0.5802  201-Nobody Knows You When You're Down And Out.flac
+     7:14.01       76559996 B   ---   --   ---xx   flac  0.6309  202-Badge.flac
+     5:52.60       62233964 B   ---   --   ---xx   flac  0.5589  203-Knockin' On Heaven's Door.flac
+     7:21.70       77957084 B   ---   --   ---xx   flac  0.6034  204-Key To The Highway.flac
+     4:51.38       51421820 B   ---   --   ---xx   flac  0.6228  205-Layla.flac
+     4:35.57       48644108 B   ---   --   ---xx   flac  0.6339  206-Bottle Of Red Wine.flac
+     7:17.66       77242076 B   ---   --   ---xx   flac  0.6660  207-Forever Young with Dylan.flac
+    42:19.48      447992804 B                            0.6155  (7 files)
+=================== 
+=================== 
+=================== 

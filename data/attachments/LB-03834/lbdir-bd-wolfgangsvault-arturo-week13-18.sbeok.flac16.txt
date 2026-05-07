@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-wolfgangsvault-arturo-week13-18.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+e65e7b76aaccacf50db4ff7fac8d87cd  01 1974-01-14-thiswheel.flac
+4f4d66db4e39302a0abe203136fa4cef  02 1974-02-13-lll.flac
+74291a99e676d63da12fb94a5a3e7a7b  03 1974-02-13-h61r.flac
+12d84f6ef98e80aa4a3abb403deaae1e  04 1974-02-14-jlaw.flac
+40c9d7a89e777ac5992f04fd2a61fa5f  05 1975-10-31-lifeonmars.flac
+23b1dc53744c2be2078658d049eb2cf3  06 1975-11-11-catfish.flac
+70396caf32f3d1b0bc42bbcf5137b748  07 1975-11-20-romance.flac
+be134226e9522222de5bb9940bfc8c87  08 1975-11-20-stof.flac
+8583bc5dfe34a2cf92258ac08b6fc171  09 1975-11-20-knockin.flac
+e01e399d38bf7674784bc84aa08f47aa  10 1975-11-21e-hattie.flac
+77fde67c385e53b32f58bc09172ca1af  11 1975-11-21a_mtm.flac
+c8277d92085ff344b6c8d568db171854  12 1975-11-21e-sara.flac
+edb5cbb65627112e39cb7a2b2eea205e  13 1975-12-04-hula.flac
+3c0b78ac128d06f09a51446e811cce4d  14 1975-12-08-laissez.flac
+55fe01a3be6cee534b29f990a39ec30b  15 1975-12-08-cindy.flac
+2f002bd98b45f202e9c67202352da9ef  16 1975-12-08-diamonds.flac
+34e9dd6a0fc74161c8fb984629e4411c  17 1976-11-25-dryyoureyes.flac
+c30a614f5be7ddd4ce142a5509ed3292  artwork_300dpi_vr_w13-18.jpg
+92e628a482f3153ca0899dc0f89f3b4e  bd-wolfgangsvault-arturo-week13-18-LB-3834.txt
+aa3faa8b05c68978348b7fe596a502a0  wvr_wks13-18_info.txt
+ec2596c7ec4c7813d2a6d82780adcab1  wvradio.weeks13_18.sbeok.flac16.ffp
+bc53bfc4eb8b58ca8d9817726563c3a0  wvradio.weeks13_18.sbeok.flac16.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-wolfgangsvault-arturo-week13-18.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+01 1974-01-14-thiswheel.flac:c36dc6af0e1bd1416b2c8e14c5f39bf4
+02 1974-02-13-lll.flac:6c74663cda0512b6fc0df96c6a512cb2
+03 1974-02-13-h61r.flac:4032d6ec4e40035affed4d1eb16798d3
+04 1974-02-14-jlaw.flac:33645544da907df4a6b6f5f296b3a166
+05 1975-10-31-lifeonmars.flac:d3a4a8c64928c6db2d54c3c2d2a7ef16
+06 1975-11-11-catfish.flac:7a59790d9ab35abe69428f7534699e1b
+07 1975-11-20-romance.flac:54d4a9dc6bef29a21579733a8a1f2c2e
+08 1975-11-20-stof.flac:12811b68d28e74242bd08697523bf65a
+09 1975-11-20-knockin.flac:2baf35a7e3d40a276061bb22a0b4af67
+10 1975-11-21e-hattie.flac:537f16993b795c83a8d7986ef8c4910a
+11 1975-11-21a_mtm.flac:b07af34b428b129c060ffc1e96b50ad4
+12 1975-11-21e-sara.flac:c2657be9ab12bc24df77d36cb25de6c8
+13 1975-12-04-hula.flac:c9c19b7f704c018d4af02fb8177330a0
+14 1975-12-08-laissez.flac:bba82cddd117c97923c244ab444f4682
+15 1975-12-08-cindy.flac:53e0becc4368db6f36fb15670ee302ca
+16 1975-12-08-diamonds.flac:3a5f78bb726e47ebc08389dcd6320f7d
+17 1976-11-25-dryyoureyes.flac:1d543994e4960dd793786565cf5a0f2b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-wolfgangsvault-arturo-week13-18.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.13       40073420 B   ---   --   ---xx   flac  0.6608  01 1974-01-14-thiswheel.flac
+     3:12.10       33892364 B   ---   --   ---xx   flac  0.5996  02 1974-02-13-lll.flac
+     4:05.10       43241564 B   ---   --   ---xx   flac  0.6082  03 1974-02-13-h61r.flac
+     4:54.26       51922796 B   ---   --   ---xx   flac  0.5185  04 1974-02-14-jlaw.flac
+     4:04.17       43081628 B   ---   --   ---xx   flac  0.6261  05 1975-10-31-lifeonmars.flac
+     4:21.01       46042796 B   ---   --   ---xx   flac  0.6367  06 1975-11-11-catfish.flac
+     5:23.70       57141884 B   ---   --   ---xx   flac  0.5971  07 1975-11-20-romance.flac
+     4:10.73       44271740 B   ---   --   ---xx   flac  0.5317  08 1975-11-20-stof.flac
+     4:21.46       46148636 B   ---   --   ---xx   flac  0.5588  09 1975-11-20-knockin.flac
+     5:27.52       57805148 B   ---   --   ---xx   flac  0.5908  10 1975-11-21e-hattie.flac
+     5:23.38       57066620 B   ---   --   ---xx   flac  0.5461  11 1975-11-21a_mtm.flac
+     4:18.16       45548876 B   ---   --   ---xx   flac  0.5888  12 1975-11-21e-sara.flac
+     5:02.64       53423372 B   ---   --   ---xx   flac  0.6254  13 1975-12-04-hula.flac
+     4:33.54       48284252 B   ---   --   ---xx   flac  0.6213  14 1975-12-08-laissez.flac
+     3:21.31       35529356 B   ---   --   ---xx   flac  0.6782  15 1975-12-08-cindy.flac
+     4:18.66       45666476 B   ---   --   ---xx   flac  0.6397  16 1975-12-08-diamonds.flac
+     3:54.16       41315276 B   ---   --   ---xx   flac  0.5914  17 1976-11-25-dryyoureyes.flac
+    74:41.03      790456204 B                            0.5984  (17 files)
+=================== 
+=================== 
+=================== 

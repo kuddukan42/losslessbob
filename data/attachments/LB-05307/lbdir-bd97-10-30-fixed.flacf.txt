@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-10-30-fixed.flacf 
+=================== 
+=================== 
+=================== 
+e7e1945573f82b43066800e04e01619a  CD1\bd1997-10-30.d1.ffp.txt
+4f890d3cb54574d0510b9e32e12d4d08  CD1\bd1997-10-30.d1.flac.md5
+e045a013e876be6663cce1ca8c13cb2e  CD1\bd1997-10-30.d1.sbeok.ffp.txt
+04cbd016039b086c45344807d31903b5  CD1\bd1997-10-30.d1.sbeok.flac.md5
+594f944a8c740286976d4258183c5f90  CD1\bd1997-10-30.d1.sbeok.wav.md5
+a678a38dc1ee0197d4ea425322bb9dea  CD1\bd1997-10-30.d1.wav.md5
+b295ce9cf562f6b013d16b2e9ae21003  CD1\bd1997-10-30.d1t01.sbeok.flac
+6f33702a75c5b480634ff729f896f17d  CD1\bd1997-10-30.d1t02.sbeok.flac
+796261ad826c3ebdd312a278ecc6c998  CD1\bd1997-10-30.d1t03.sbeok.flac
+2799363ec1290c16cf88b599e62b46fd  CD1\bd1997-10-30.d1t04.sbeok.flac
+e4dc39cb1801af428d6828f4bf09c34f  CD1\bd1997-10-30.d1t05.sbeok.flac
+b719d37642c4e2bfd8c07cd22903d018  CD1\bd1997-10-30.d1t06.sbeok.flac
+c62d11fd663f0667fb81858c34bdc88c  CD1\bd1997-10-30.d1t07.sbeok.flac
+4ad02b7468dbec82635946ed2a517cfa  CD1\bd1997-10-30.d1t08.sbeok.flac
+5172d5ca478dc41f9c56b888bc318a92  CD1\bd1997-10-30.d1t09.sbeok.flac
+f6c88b267967ce6d4f399630d9882d1d  CD1\bd1997-10-30.d1t10.sbeok.flac
+060b78836cb1bd0abc81a0b615a6b5bb  CD1\bd1997-10-30.d1t11.sbeok.flac
+7e689e904d18769bd188432c9db2923f  CD2\bd1997-10-30.d2.ffp.txt
+0f09042ff25c17b85155a6d26ea74214  CD2\bd1997-10-30.d2.flac.md5
+3ebaddb82d861ddbaec4cb2de134ed4f  CD2\bd1997-10-30.d2.sbeok.ffp.txt
+0d81773dc4f3fcc839192d90d5d5c778  CD2\bd1997-10-30.d2.sbeok.flac.md5
+8ffec2e43bb38b45c7c2c70284c42a18  CD2\bd1997-10-30.d2.sbeok.wav.md5
+92266b5669d92ca7b4a9753f4706a1b3  CD2\bd1997-10-30.d2.wav.md5
+a59f2c504392b9aaf2e1f44850cc52cc  CD2\bd1997-10-30.d2t01.sbeok.flac
+6b0bf74eab045a48678d2c5484206921  CD2\bd1997-10-30.d2t02.sbeok.flac
+39bca342a019cbba31eeb1395f14a7d9  CD2\bd1997-10-30.d2t03.sbeok.flac
+67d1c5d48bf0148baa3115f62f36db74  CD2\bd1997-10-30.d2t04.sbeok.flac
+e74d0ca847c6a7dfeef64803455b6149  CD2\bd1997-10-30.d2t05.sbeok.flac
+e0fd49810cfdcbbd20556457534005ab  Info\1997-10-30 Columbus Civic Center, Columbus, Georgia, USA.doc
+43850134fcff0b237dbb8a26fbed81f4  Info\bd1997-10-30-columbus.ga.d1t11.sa&fa.JPG
+9d70b9160253a13f6ab22059c3ac8de5  Info\bd1997-10-30-columbus.ga.fixed.lbp51.info.txt
+17c812a777bf2875cfe0379360369c60  Info\bd1997-10-30-columbus.ga.lbp51.info.txt
+42bf29852811f7b86cd70b4203ba0629  Info\bd1997-10-30.d1.fixed.lbp51.encoded-flac.sbeok.log.txt
+aaa48b9037e2c267ab3125ffda19db32  Info\bd1997-10-30.d2.fixed.lbp51.encoded-flac.sbeok.log.txt
+a2829ba3aacb7ef9aa83c6fc74734d2b  Info\Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-30-fixed.flacf\CD1 
+=================== 
+=================== 
+=================== 
+bd1997-10-30.d1t01.sbeok.flac:f74dd79e22943dc38d9902ea2bb27046
+bd1997-10-30.d1t02.sbeok.flac:cc79f5aaed445df7460394c0b79d1f67
+bd1997-10-30.d1t03.sbeok.flac:26650cb53b942384b7701bb3443167eb
+bd1997-10-30.d1t04.sbeok.flac:42b80a14aa9435bb12290617a15372de
+bd1997-10-30.d1t05.sbeok.flac:06323daf3155069bbbab554171cf8b68
+bd1997-10-30.d1t06.sbeok.flac:28f9b84c6928ecc2d92a2498e0988027
+bd1997-10-30.d1t07.sbeok.flac:cb6d6c0d296de17eb5302d4c15180338
+bd1997-10-30.d1t08.sbeok.flac:bcc155dd9cb230ff2ad0bd12a95086e6
+bd1997-10-30.d1t09.sbeok.flac:227e1041e9fef83a6a7b31529829934c
+bd1997-10-30.d1t10.sbeok.flac:e7fac315e698bb9eefdbfaf60087af32
+bd1997-10-30.d1t11.sbeok.flac:9b2bbf5c0466377e786d654f5990d697
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-30-fixed.flacf\CD2 
+=================== 
+=================== 
+=================== 
+bd1997-10-30.d2t01.sbeok.flac:9cdeec7f0adf5162459be391dd426073
+bd1997-10-30.d2t02.sbeok.flac:9f89089749a5d12684a5ba7fe5ed7c4d
+bd1997-10-30.d2t03.sbeok.flac:757ab4ba6ffbc5e32226c0a03e354899
+bd1997-10-30.d2t04.sbeok.flac:659657d67d66d9a2c6f3084e38122291
+bd1997-10-30.d2t05.sbeok.flac:88df1de7b168bfb9cf027dfea56c6812
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-10-30-fixed.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.05       61399004 B   ---   --   ---xx   flac  0.5765  bd1997-10-30.d1t01.sbeok.flac
+     4:32.25       48039644 B   ---   --   ---xx   flac  0.5599  bd1997-10-30.d1t02.sbeok.flac
+     6:27.25       68325644 B   ---   --   ---xx   flac  0.5704  bd1997-10-30.d1t03.sbeok.flac
+     5:10.25       54742844 B   ---   --   ---xx   flac  0.5582  bd1997-10-30.d1t04.sbeok.flac
+     6:12.74       65794892 B   ---   --   ---xx   flac  0.5686  bd1997-10-30.d1t05.sbeok.flac
+     6:55.25       73264844 B   ---   --   ---xx   flac  0.5819  bd1997-10-30.d1t06.sbeok.flac
+     4:35.01       48512396 B   ---   --   ---xx   flac  0.5427  bd1997-10-30.d1t07.sbeok.flac
+     7:55.25       83848844 B   ---   --   ---xx   flac  0.5928  bd1997-10-30.d1t08.sbeok.flac
+     6:45.49       71557292 B   ---   --   ---xx   flac  0.5573  bd1997-10-30.d1t09.sbeok.flac
+     5:53.51       62389196 B   ---   --   ---xx   flac  0.5751  bd1997-10-30.d1t10.sbeok.flac
+     5:29.34       58115612 B   ---   --   ---xx   flac  0.5641  bd1997-10-30.d1t11.sbeok.flac
+    65:45.39      695990212 B                            0.5696  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-10-30-fixed.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:01.57       63814508 B   ---   --   ---xx   flac  0.5843  bd1997-10-30.d2t01.sbeok.flac
+     8:30.25       90022844 B   ---   --   ---xx   flac  0.5800  bd1997-10-30.d2t02.sbeok.flac
+     6:52.25       72735644 B   ---   --   ---xx   flac  0.5725  bd1997-10-30.d2t03.sbeok.flac
+     6:25.47       68024588 B   ---   --   ---xx   flac  0.5460  bd1997-10-30.d2t04.sbeok.flac
+     4:27.34       47178812 B   ---   --   ---xx   flac  0.5900  bd1997-10-30.d2t05.sbeok.flac
+    32:17.38      341776396 B                            0.5738  (5 files)
+=================== 
+=================== 
+=================== 

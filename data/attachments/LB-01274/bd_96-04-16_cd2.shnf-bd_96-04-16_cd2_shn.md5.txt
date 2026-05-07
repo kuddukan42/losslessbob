@@ -1,0 +1,6 @@
+c3e30a9465b8c51d786e0420d590ed50 *bd_96-04-16_cd2_Track 1.shn
+e14e580cfb68e8d66caafc2c43836d94 *bd_96-04-16_cd2_Track 2.shn
+d2a731dabe295197eecfdf286a2016a9 *bd_96-04-16_cd2_Track 3.shn
+cd5823458f475e1e4a3684bdfe0ac953 *bd_96-04-16_cd2_Track 4.shn
+a2c6876a3eefcbfb200d74b168ac82b2 *bd_96-04-16_cd2_Track 5.shn
+4aa80fc3ffddd01884e935b6409124e2 *bd_96-04-16_cd2_Track 6.shn

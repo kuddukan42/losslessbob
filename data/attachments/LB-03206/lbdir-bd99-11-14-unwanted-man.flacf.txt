@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-14-unwanted-man.flacf 
+=================== 
+=================== 
+=================== 
+126e2e9037865155b8bc06603add03aa  bd-Centrum Performance-UMM.txt
+86b4451f96e7f0a06af3a1599d35ef43  bd99-11-14-unwanted-man-LB-3206.txt
+d976aab6a5d2d554dcf12c94ec659114  Centrum Performance d1\Bob Dylan - Track 01.flac
+a0baba806109fbd13ec42c73c5ae56a4  Centrum Performance d1\Bob Dylan - Track 02.flac
+920405c23fb291603c6c4a17e8c771c4  Centrum Performance d1\Bob Dylan - Track 03.flac
+9c2001a38d3f60d1145d0eb39e7752b7  Centrum Performance d1\Bob Dylan - Track 04.flac
+4669ab27de76c8fa015604879b482706  Centrum Performance d1\Bob Dylan - Track 05.flac
+bf59f99edca324e4e34e97f5135bae63  Centrum Performance d1\Bob Dylan - Track 06.flac
+9c19d6ffaab36ee8fb6bf199cadcee01  Centrum Performance d1\Bob Dylan - Track 07.flac
+63304135991a1a48049ff9103c14cfb5  Centrum Performance d1\Bob Dylan - Track 08.flac
+627aefdc9051eea5ea3c98ff73663a0c  Centrum Performance d1\Bob Dylan - Track 09.flac
+69865f8062d8104c5c835be30603e79a  Centrum Performance d1\Bob Dylan - Track 10.flac
+d5cc0e7bc3a207021a3b4ac642690caf  Centrum Performance d1\Centrum Performance d1 fingerprints.txt
+3ffc28764092961dfb75022c76d23b69  Centrum Performance d2\Bob Dylan - Track 01.flac
+f6d551a83b163716d872651ef1c81124  Centrum Performance d2\Bob Dylan - Track 02.flac
+b942738c187640a36580a80ec49ba4fa  Centrum Performance d2\Bob Dylan - Track 03.flac
+c6143589f85dc6eb05ad16d3efb28230  Centrum Performance d2\Bob Dylan - Track 04.flac
+60f44f6c29c5175414623d9f66bdb5d3  Centrum Performance d2\Bob Dylan - Track 05.flac
+fd6e43acc2dc9b940e2340984a29664c  Centrum Performance d2\Bob Dylan - Track 06.flac
+6c9c5a539a6f3e61f0babd7979446b12  Centrum Performance d2\Bob Dylan - Track 07.flac
+b2cfadb72d2a1dcb646b02ae3649f61f  Centrum Performance d2\Bob Dylan - Track 08.flac
+b16c9c4c0890aa303d548d5b90a91c27  Centrum Performance d2\Bob Dylan - Track 09.flac
+23770a6103af1967d931f57c2877e5ec  Centrum Performance d2\Bob Dylan - Track 10.flac
+ddee7ed9f0bef18438e002ba878ff7a4  Centrum Performance d2\Bob Dylan - Track 11.flac
+9806953570260a3c0d69f72dc5a4c5ad  Centrum Performance d2\Bob Dylan - Track 12.flac
+767a9beb91e09d2e45380af9268f0080  Centrum Performance d2\Centrum Performance d2 fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-14-unwanted-man.flacf\Centrum Performance d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:72e8c474047c3a889f276f44dba9c6bc
+Bob Dylan - Track 02.flac:97783788c40ddcb33e86c0fe48a71152
+Bob Dylan - Track 03.flac:82b66fd0d42228b7906442afab79a876
+Bob Dylan - Track 04.flac:274d93d3a774c2ebe46098e7a6e1c649
+Bob Dylan - Track 05.flac:a2547133449343e2c9568befb1d0dc8d
+Bob Dylan - Track 06.flac:b0ed848188e1cea8fd8030671aff1836
+Bob Dylan - Track 07.flac:a6f6b244098076d5d030bce4a43f27b1
+Bob Dylan - Track 08.flac:371ae858487867ce99a9b65bfd057230
+Bob Dylan - Track 09.flac:6739574fa3329dd1f431d69543cd73a8
+Bob Dylan - Track 10.flac:92391be9d6f1e0f563a33581ac2ee2a2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-14-unwanted-man.flacf\Centrum Performance d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:0c86c6c66a923d2ee1030489dd84953b
+Bob Dylan - Track 02.flac:d3891fd66c65c1b24d6c49ab05a564b4
+Bob Dylan - Track 03.flac:75b871921fa560103e2ada47994acabe
+Bob Dylan - Track 04.flac:616b7c36d1fcfa41ce34df0f096675ca
+Bob Dylan - Track 05.flac:efd3108953a13dfbbf078be31c69d5b0
+Bob Dylan - Track 06.flac:2707049272cb7f9f76fe252d98f3e5ef
+Bob Dylan - Track 07.flac:b8352e27cfaf30cfbfaf25b651090344
+Bob Dylan - Track 08.flac:bacf6b299c3de3fb67a401b9ed37c9b4
+Bob Dylan - Track 09.flac:fc3fd479989a12c57db3d511721c82d8
+Bob Dylan - Track 10.flac:f7aac470a7a785c7571cc96ed23721cf
+Bob Dylan - Track 11.flac:df0416a6966154689e04e66ecc18b440
+Bob Dylan - Track 12.flac:973a29f6160aa9358e1e2e34d656c362
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-14-unwanted-man.flacf\Centrum Performance d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:49.49       29926892 B   ---   --   ---xx   flac  0.5668  Bob Dylan - Track 01.flac
+     6:33.08       69344060 B   ---   --   ---xx   flac  0.5545  Bob Dylan - Track 02.flac
+     6:07.46       64847036 B   ---   --   ---xx   flac  0.5711  Bob Dylan - Track 03.flac
+    10:17.70      109003484 B   ---   --   ---xx   flac  0.5661  Bob Dylan - Track 04.flac
+     8:34.38       90759020 B   ---   --   ---xx   flac  0.5564  Bob Dylan - Track 05.flac
+     5:05.65       53954924 B   ---   --   ---xx   flac  0.5548  Bob Dylan - Track 06.flac
+    10:25.16      110287676 B   ---   --   ---xx   flac  0.5378  Bob Dylan - Track 07.flac
+     8:17.09       87692012 B   ---   --   ---xx   flac  0.5648  Bob Dylan - Track 08.flac
+     7:00.61       74231516 B   ---   --   ---xx   flac  0.5109  Bob Dylan - Track 09.flac
+     6:45.22       71493788 B   ---   --   ---xx   flac  0.5831  Bob Dylan - Track 10.flac
+    71:57.09      761540408 B                            0.5555  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-14-unwanted-man.flacf\Centrum Performance d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:59.13       63358220 B   ---   --   ---xx   flac  0.5483  Bob Dylan - Track 01.flac
+     7:17.74       77260892 B   ---   --   ---xx   flac  0.5694  Bob Dylan - Track 02.flac
+     6:19.59       66994412 B   ---   --   ---xx   flac  0.5350  Bob Dylan - Track 03.flac
+     4:47.70       50791484 B   ---   --   ---xx   flac  0.5567  Bob Dylan - Track 04.flac
+     3:56.51       41750396 B   ---   --   ---xx   flac  0.5127  Bob Dylan - Track 05.flac
+     6:19.04       66865052 B   ---   --   ---xx   flac  0.5127  Bob Dylan - Track 06.flac
+     3:10.22       33567788 B   ---   --   ---xx   flac  0.5283  Bob Dylan - Track 07.flac
+     7:55.02       83794748 B   ---   --   ---xx   flac  0.5208  Bob Dylan - Track 08.flac
+     7:24.26       78382796 B   ---   --   ---xx   flac  0.4942  Bob Dylan - Track 09.flac
+     5:31.19       58433132 B   ---   --   ---xx   flac  0.4927  Bob Dylan - Track 10.flac
+     5:48.50       61504844 B   ---   --   ---xx   flac  0.4951  Bob Dylan - Track 11.flac
+     6:11.50       65562044 B   ---   --   ---xx   flac  0.4689  Bob Dylan - Track 12.flac
+    70:41.65      748265808 B                            0.5194  (12 files)
+=================== 
+=================== 
+=================== 

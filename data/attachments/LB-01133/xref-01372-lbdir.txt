@@ -1,0 +1,118 @@
+===================
+===================
+===================
+=== md5 for: bd03-05-17-c.flacf
+===================
+===================
+===================
+855f692f3e2e334e50cfbe302f5b0689 *disc1\01 The Waifs - Intro.flac
+e8a4f9c05a6fa4e07f00d792b26a366f *disc1\02 The Waifs - Three Down.flac
+0b2b4c08fbb5c608233fb6f762d4565f *disc1\03 The Waifs - Fisherman's Daughter.flac
+54cc89a511de80887c2529a5bf91fa0f *disc1\04 The Waifs - Lies.flac
+bf3f710438d8bf895b29a7d82dc5843d *disc1\05 The Waifs - Highway One.flac
+94e8389c12eea2fae5dcd3f3e5ca6773 *disc1\06 The Waifs - Bridal Train.flac
+032835c6f4eefab7831a2e4fbea7700f *disc1\07 The Waifs - Love Serenade.flac
+103303b61fdd91ea6b0cf797df078398 *disc1\08 The Waifs - Heartbreakin'.flac
+98748ca476db4c9d0c1430eafbbdcaa4 *disc1\09 The Waifs - Flesh And Blood _ Crazy Train.flac
+88bc4ed03a82a8c89495d1f794f2b01d *disc1\10 The Waifs - Lighthouse.flac
+ff7a5c85a6832f61de73b0981c28ada8 *disc1\11 The Waifs - When I Die.flac
+602734ae59472d18446e2a59af8e6880 *disc1\12 The Waifs - Take It In.flac
+aac01872ba271ef1bd7bc2bdf5b764c2 *disc1\2003-05-17 Jackson, MS; Jubilee Jam.log
+4f34f775b699736eb21540da63d36e4b *disc1\fingerprint.ffp.txt
+5ffb8402aa22ebce4ecd59fdeaf7ff8e *disc1\md5sum.md5
+1317b1dc4f88bacfbd849cb5bd7dcc2e *disc2\01 Hoodoo.flac
+cd4a1264e526117c554a7f189f758839 *disc2\02 Maggie's Farm.flac
+5f38a49b3bb67f58dd6f867b98d3717d *disc2\03 Tonight I'll Be Staying Here With You.flac
+36b914c908ee96d74b816152721a1d37 *disc2\04 Tweedle Dee & Tweedle Dum.flac
+be7f6d283524241043e1795bc7ff0ffa *disc2\05 Don't Think Twice, It's All Right.flac
+c651480463c44581c400b591f6be9665 *disc2\06 Drifter's Escape.flac
+3d13dfacffc1e3c2445f64f2de65b169 *disc2\07 Floater (Too Much To Ask).flac
+7be44f1c819b92fe68b2819de6c66ee3 *disc2\08 Highway 61 Revisited.flac
+e57d51a4e2619c5e9c3f69e5e452aa4d *disc2\09 Make You Feel My Love.flac
+1022e35e3b11a798725d34e7d049834b *disc2\10 Honest With Me.flac
+beb1a172a3c6af21c33cf04475b9d73f *disc2\11 Summer Days.flac
+210686b774675b089049677f975f0061 *disc2\12 Like A Rolling Stone.flac
+aaddd5269b005a0e434980a3cac3a151 *disc2\13 All Along The Watchtower.flac
+768ee90dc61a28af74e08183be5331e7 *disc2\CD audio.log
+d76df018ec76769290183ab0eb314cbb *disc2\fingerprint.ffp.txt
+0e01fd7b7ca9718186db1d9d492dd3f3 *disc2\md5sum.md5
+f106c07a92db5f2a1136a69255c65cf5 *infos.txt
+d76aa34e1845f29ca21fadd5498e7b2f *notes.txt
+===================
+===================
+===================
+=== ffp for: bd03-05-17-c.flacf
+===================
+===================
+===================
+disc1\01 The Waifs - Intro.flac:26aa5a9b0a9f371813cff04e3563fd6a
+disc1\02 The Waifs - Three Down.flac:9fa3c02a8a411dde59ebf0701a311e87
+disc1\03 The Waifs - Fisherman's Daughter.flac:75e77a54b18e89ae85722081c2940e36
+disc1\04 The Waifs - Lies.flac:7ef01a3aea7df7f20347c8227bccc614
+disc1\05 The Waifs - Highway One.flac:33292b0556fb7f589fafa0158fd8acaa
+disc1\06 The Waifs - Bridal Train.flac:8c4a1054733686024598d234e030c7e0
+disc1\07 The Waifs - Love Serenade.flac:aca9be374d0de5b1cb486fcc7ad1e3ec
+disc1\08 The Waifs - Heartbreakin'.flac:4f67c04806755addd74bdd0c8254fb55
+disc1\09 The Waifs - Flesh And Blood _ Crazy Train.flac:ec544be3803eb4bad44b577b35ddb441
+disc1\10 The Waifs - Lighthouse.flac:820ccf09866a295cea4567ec193fa11d
+disc1\11 The Waifs - When I Die.flac:c7ef60f00402dda0ed5b5be0406ad162
+disc1\12 The Waifs - Take It In.flac:d369a4398c21e4dd5905dadc0dac8044
+disc2\01 Hoodoo.flac:9166bae953166373913a772e4db57f68
+disc2\02 Maggie's Farm.flac:e28424ff23f00433e7c943b909896e10
+disc2\03 Tonight I'll Be Staying Here With You.flac:18b959d6b3cb2268e0a5755d2bc2959f
+disc2\04 Tweedle Dee & Tweedle Dum.flac:fed3c1c373820a0729cd6fe451acc0ce
+disc2\05 Don't Think Twice, It's All Right.flac:9c93fcb5d769db9202507ec27b0d3139
+disc2\06 Drifter's Escape.flac:af347bbb9ae23e6a25f5bc4bcec561ba
+disc2\07 Floater (Too Much To Ask).flac:01ee2c9dbe5364e25f5e678d67c7a10b
+disc2\08 Highway 61 Revisited.flac:edc412809271e2ef97bf39cf0b9bc12b
+disc2\09 Make You Feel My Love.flac:408f6d20adef39f129e9759213b0d781
+disc2\10 Honest With Me.flac:2b6920213da94fef58b2bd9a51bff627
+disc2\11 Summer Days.flac:f2677636d947b4598baf1ca7d8185329
+disc2\12 Like A Rolling Stone.flac:138cc76822c99b16a47c2b6b5dc156b1
+disc2\13 All Along The Watchtower.flac:09a20acac6385449e83497b9ce98bbe2
+===================
+===================
+===================
+=== shntool len for: bd03-05-17-c.flacf\disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:23.57        4191308 B   ---   --   ---xx   flac  0.3669  01 The Waifs - Intro.flac
+     4:09.63       44071820 B   ---   --   ---xx   flac  0.4695  02 The Waifs - Three Down.flac
+     6:03.72       64202588 B   ---   --   ---xx   flac  0.5188  03 The Waifs - Fisherman's Daughter.flac
+     4:54.63       52009820 B   ---   --   ---xx   flac  0.5672  04 The Waifs - Lies.flac
+     5:58.15       63186524 B   ---   --   ---xx   flac  0.4853  05 The Waifs - Highway One.flac
+     4:57.54       52517852 B   ---   --   ---xx   flac  0.4526  06 The Waifs - Bridal Train.flac
+     4:24.18       46611980 B   ---   --   ---xx   flac  0.4775  07 The Waifs - Love Serenade.flac
+     4:53.30       51755804 B   ---   --   ---xx   flac  0.5284  08 The Waifs - Heartbreakin'.flac
+    11:20.57      120086108 B   ---   --   ---xx   flac  0.5268  09 The Waifs - Flesh And Blood _ Crazy Train.flac
+     4:42.45       49850684 B   ---   --   ---xx   flac  0.4879  10 The Waifs - Lighthouse.flac
+     5:03.63       53597420 B   ---   --   ---xx   flac  0.4818  11 The Waifs - When I Die.flac
+     3:53.48       41214140 B   ---   --   ---xx   flac  0.5761  12 The Waifs - Take It In.flac
+    60:46.60      643296048 B                            0.5071  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd03-05-17-c.flacf\disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:46.60        8255564 B   ---   --   ---xx   flac  0.4854  01 Hoodoo.flac
+     4:49.33       51057260 B   ---   --   ---xx   flac  0.5967  02 Maggie's Farm.flac
+     5:21.36       56709116 B   ---   --   ---xx   flac  0.5337  03 Tonight I'll Be Staying Here With You.flac
+     5:18.72       56264588 B   ---   --   ---xx   flac  0.5424  04 Tweedle Dee & Tweedle Dum.flac
+     6:12.18       65663180 B   ---   --   ---xx   flac  0.5225  05 Don't Think Twice, It's All Right.flac
+     6:15.36       66234716 B   ---   --   ---xx   flac  0.6217  06 Drifter's Escape.flac
+     6:53.48       72966140 B   ---   --   ---xx   flac  0.4533  07 Floater (Too Much To Ask).flac
+     6:36.27       69917948 B   ---   --   ---xx   flac  0.5733  08 Highway 61 Revisited.flac
+     5:20.57       56582108 B   ---   --   ---xx   flac  0.4923  09 Make You Feel My Love.flac
+     7:00.09       74109212 B   ---   --   ---xx   flac  0.5936  10 Honest With Me.flac
+    10:45.36      113862716 B   ---   --   ---xx   flac  0.5205  11 Summer Days.flac
+     6:47.12       71823068 B   ---   --   ---xx   flac  0.6070  12 Like A Rolling Stone.flac
+     6:36.27       69917948 B   ---   --   ---xx   flac  0.4946  13 All Along The Watchtower.flac
+    78:44.21      833363564 B                            0.5438  (13 files)
+===================
+===================
+===================

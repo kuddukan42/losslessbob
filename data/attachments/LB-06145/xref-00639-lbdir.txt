@@ -1,0 +1,42 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-11-jtt-internet-stream-4-Tracks.flacf 
+=================== 
+=================== 
+=================== 
+367be8b8c62a729242a5745a80011a9b  Bob Dylan - 4 Tracks from Bonnaroo.ffp
+bd49a4a8e13ea7fb279bc8b20899722c  Bob Dylan - 4 Tracks from Bonnaroo.md5
+995f5d651893a79b76ec7c9e4423eb44  Bob Dylan - 4 Tracks from Bonnaroo.txt
+a96b1656a6aedb8f9d43ae2c16f984a5  BOB DYLAN - 4 Tracks from Bonnaroo_Info.txt
+c63e297e73cb2dd88b7e2726667c449f  Dylan - 11.06.04_01. Samson & Delilah.flac
+493582120ff3a919b063cc95cf816a00  Dylan - 11.06.04_02. You Win Again.flac
+d658bcdde9146dc28b7ab7f03ab729ff  Dylan - 11.06.04_03. Sing Me Back Home.flac
+68d3fe275dbfc0040fd827ff56a1b43e  Dylan - 11.06.04_04. Pancho & Lefty.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-11-jtt-internet-stream-4-Tracks.flacf 
+=================== 
+=================== 
+=================== 
+Dylan - 11.06.04_01. Samson & Delilah.flac:b90606f686cfefe118048c0db7e5347e
+Dylan - 11.06.04_02. You Win Again.flac:4f93b428c959c2706b40e37406f3cc1d
+Dylan - 11.06.04_03. Sing Me Back Home.flac:1d0b71c412dad07703ee52187670930a
+Dylan - 11.06.04_04. Pancho & Lefty.flac:08021a2314f748e967fea3fbb3373ce0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-11-jtt-internet-stream-4-Tracks.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.48       53032940 B   ---   --   ---xx   flac  0.5016  Dylan - 11.06.04_01. Samson & Delilah.flac
+     4:24.60       46710764 B   ---   --   ---xx   flac  0.4815  Dylan - 11.06.04_02. You Win Again.flac
+     4:30.42       47726828 B   ---   --   ---xx   flac  0.4777  Dylan - 11.06.04_03. Sing Me Back Home.flac
+     6:13.44       65900732 B   ---   --   ---xx   flac  0.4767  Dylan - 11.06.04_04. Pancho & Lefty.flac
+    20:09.44      213371264 B                            0.4842  (4 files)
+=================== 
+=================== 
+=================== 

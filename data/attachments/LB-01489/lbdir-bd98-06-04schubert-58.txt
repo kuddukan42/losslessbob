@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-04schubert-58 
+=================== 
+=================== 
+=================== 
+0f317f5d6ff21d4bcca2910cad6f18fd  bd98-06-04schubert.txt
+e403314f4f409893e8aeacd72fe7eebc  CD_1\01ANNOUNCEMENT.SHN
+62e02b12ad7ed4688530470c313ef7af  CD_1\02ALL_ALONG_THE_WATCHTOWER.SHN
+b2dfbd10969d8b582b3b09f809b59342  CD_1\03TONIGHT_I_LL_BE_STAYING.SHN
+278a3287f6cf005fabe6792c9aa66922  CD_1\04COLD_IRONS_BOUND.SHN
+b94c8a324a4dd320631245c53ea1af05  CD_1\05WHAT_GOOD_AM_I_.SHN
+1cf3dae2a9a5e8daa0660d41148da3af  CD_1\06SILVIO.SHN
+c341100e4bf114a0ef13a576d86e9852  CD_1\07GIRL_OF_THE_NORTH_COUNTRY.SHN
+a9b618386d73c5f47e11909f73e48e25  CD_1\08MASTERS_OF_WAR.SHN
+9541c9de6c123ec1adb5ca6a50055ed3  CD_1\09TANGLED_UP_IN_BLUE.SHN
+ee91f98b270ad9c19fdf607587ae6ee6  CD_1\10TEARS_OF_RAGE.SHN
+ab4a7928072c1f0cec303fbe811eb1ad  CD_1\CD_1.MD5
+9e670d7762728bb54f539a09e98251f8  CD_2\01YOU_AIN_T_GOIN__NOWHERE.SHN
+6128d4df74f3c5310acdccc1f0aceb4a  CD_2\02HIGHWAY_61_REVISITED.SHN
+886629409ae71f4151e7e445c654abed  CD_2\03MY_BACK_PAGES.SHN
+31cf7a0fa8cc932f110444a4d2cac35c  CD_2\04LOVE_SICK.SHN
+5efe2ac54b2206f3bcc0204b6b57c112  CD_2\06RAINY_DAY_WOMEN__12___35.SHN
+a2c465bf297a159a48b5364c6ea6bed8  CD_2\07IT_AIN_T_ME__BABE.SHN
+ffdc6bb088a85447076398d999dce3c3  CD_2\CD_2.MD5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-06-04schubert-58\CD_1 
+=================== 
+=================== 
+=================== 
+5a5756b6ba7424e63ba04bfe6f301be8  [shntool]  01ANNOUNCEMENT.wav
+af5bdfc5058d7c8755bb3a69cc670405  [shntool]  02ALL_ALONG_THE_WATCHTOWER.wav
+0d8f2f31e4b9223dcc0a1590318925d0  [shntool]  03TONIGHT_I_LL_BE_STAYING.wav
+25b0a97540c1fa19a2530d546df52bba  [shntool]  04COLD_IRONS_BOUND.wav
+b70677b64dc9475340de6e6803c6364c  [shntool]  05WHAT_GOOD_AM_I_.wav
+1ee79dfeba159b724a437db6f8c6e14d  [shntool]  06SILVIO.wav
+da68da54ffbb7dd802ffd5f79bb28b7e  [shntool]  07GIRL_OF_THE_NORTH_COUNTRY.wav
+352316aed8d88ce99350a9251425f447  [shntool]  08MASTERS_OF_WAR.wav
+35053ad4fcd053514c26da59eb6bb375  [shntool]  09TANGLED_UP_IN_BLUE.wav
+673ed02a18361f3b5067269860386506  [shntool]  10TEARS_OF_RAGE.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-06-04schubert-58\CD_2 
+=================== 
+=================== 
+=================== 
+be3d0a8e0a3132e05885f647dd79cd31  [shntool]  01YOU_AIN_T_GOIN__NOWHERE.wav
+9909993a90c0b4954b4189f3e2988ea6  [shntool]  02HIGHWAY_61_REVISITED.wav
+f7aa0faf968a34e115c3f7fb9f85e563  [shntool]  03MY_BACK_PAGES.wav
+c19012d94f657ae3527dcc1d7566b14b  [shntool]  04LOVE_SICK.wav
+ef474565c0291e0fe9122122ad99b9e4  [shntool]  06RAINY_DAY_WOMEN__12___35.wav
+73ff5a5b0f51a8f39f5b187f1e83f859  [shntool]  07IT_AIN_T_ME__BABE.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-04schubert-58\CD_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.08        9720860 B   ---   --   -----    wav  1.0000  01ANNOUNCEMENT.wav
+     4:10.63       44248220 B   ---   --   -----    wav  1.0000  02ALL_ALONG_THE_WATCHTOWER.wav
+     4:59.13       52774220 B   ---   --   -----    wav  1.0000  03TONIGHT_I_LL_BE_STAYING.wav
+     6:45.45       71547884 B   ---   --   -----    wav  1.0000  04COLD_IRONS_BOUND.wav
+     6:15.23       66204140 B   ---   --   -----    wav  1.0000  05WHAT_GOOD_AM_I_.wav
+     7:24.62       78467468 B   ---   --   -----    wav  1.0000  06SILVIO.wav
+     6:25.48       68026940 B   ---   --   -----    wav  1.0000  07GIRL_OF_THE_NORTH_COUNTRY.wav
+     5:51.69       62078732 B   ---   --   -----    wav  1.0000  08MASTERS_OF_WAR.wav
+     8:12.67       86946428 B   ---   --   -----    wav  1.0000  09TANGLED_UP_IN_BLUE.wav
+     7:50.24       82964492 B   ---   --   -----    wav  1.0000  10TEARS_OF_RAGE.wav
+    58:51.47      622979384 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-04schubert-58\CD_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.03       63158300 B   ---   --   -----    wav  1.0000  01YOU_AIN_T_GOIN__NOWHERE.wav
+     7:50.34       82988012 B   ---   --   -----    wav  1.0000  02HIGHWAY_61_REVISITED.wav
+     5:18.26       56156396 B   ---   --   -----    wav  1.0000  03MY_BACK_PAGES.wav
+     5:20.29       56516252 B   ---   --   -----    wav  1.0000  04LOVE_SICK.wav
+     4:55.24       52094492 B   ---   --   -----    wav  1.0000  06RAINY_DAY_WOMEN__12___35.wav
+     9:02.52       95731148 B   ---   --   -----    wav  1.0000  07IT_AIN_T_ME__BABE.wav
+    38:25.18      406644600 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

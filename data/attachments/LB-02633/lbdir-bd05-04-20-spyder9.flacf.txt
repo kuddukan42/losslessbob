@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-20-spyder9.flacf 
+=================== 
+=================== 
+=================== 
+529d366c6b8d02d084e75e65ac0ff794  101. Intro.flac
+a7d298cb8c6213ddf4c1875779d80a25  102. The Wicked Messenger.flac
+76b073d8ba359fd69d66d3fee2d9ad09  103. She Belongs To Me.flac
+b21b1121411c7f4a587c9541d9c267ed  104. Its Alright Ma.flac
+086d586d95d60542fa8b45b82b1ce94f  105. Just Like A Woman.flac
+5d3510d3919b2ded795f95f53f60f543  106. Cold Irons Bound.flac
+d8b7de16eed179a61188d8dd4820cfe9  107. Desolation Row.flac
+b38b8554845a4bcbd4c9a15b87ee9230  108. Stuck Inside of Mobile.flac
+f39baf1607f72dbe15e34b55eaee009a  201. Man in the Long Black Coat.flac
+f7159aab6ae50414878c12f9d9951c12  202. Cat's In the Well.flac
+fbfa7ccf1c20e330c9c0b2a4ed48acb1  203. Ballad of Hollis Brown.flac
+0c1d7d06bf0cdf34e4df27c3db6ef239  204. You Ain't Goin' Nowhere.flac
+127d3ebe84a0731c83f71c63c9293473  205. Like A Rolling Stone.flac
+136e0099fd69c0ba84724ef565b38046  206. Just Like Tom Thumb's Blues.flac
+acabef7ae5e8a177ff2b004b99497005  207. Band Introductions.flac
+8630bcb5a25d26adaa9530843324430d  208. All Along the Watchtower.flac
+4982c12eb48fa391a7da6a3f9367c090  bd-2005-04-20.spyder9.txt
+425efb4a8780c08ace74a7f7128edd09  bd05-04-20-spyder9-LB-2633.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-20-spyder9.flacf 
+=================== 
+=================== 
+=================== 
+101. Intro.flac:81685da3fcbb529ac0c57ebdcb79a02f
+102. The Wicked Messenger.flac:35239a8e1574960404a6a1f417f5d21b
+103. She Belongs To Me.flac:5fa9b37bd559309eacd02dffa6858421
+104. Its Alright Ma.flac:2b3f49c4ad7438abbb0e11393b91f27d
+105. Just Like A Woman.flac:9515f328a40dfaae31834920bebeca2e
+106. Cold Irons Bound.flac:3890767107dcc91850213b200bbb87d5
+107. Desolation Row.flac:f74f12dcb98c93b4735e30e507feaec3
+108. Stuck Inside of Mobile.flac:456c7ce6008b9aeab0824f7bd1773d7f
+201. Man in the Long Black Coat.flac:a197e2f8db7a0c0d7de83433b4bfd71b
+202. Cat's In the Well.flac:dc0dd4232d4437d5b81ad012f4c1304b
+203. Ballad of Hollis Brown.flac:20e2552e1c84b98d3908ebbc84864ce7
+204. You Ain't Goin' Nowhere.flac:42becd847abc36ff6f8bfbe4b450f4ba
+205. Like A Rolling Stone.flac:739cd0ef9e9d9abaa8fceb4af5b8d3df
+206. Just Like Tom Thumb's Blues.flac:5001d62ec6ab7082f078599c55dd6137
+207. Band Introductions.flac:a5abd4417b0193adff0dac207852bbf1
+208. All Along the Watchtower.flac:490119a69015f99113ae1edac8afc1d5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-20-spyder9.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.74        8464892 B   ---   --   ---xx   flac  0.4975  101. Intro.flac
+     3:51.00       40748444 B   ---   --   ---xx   flac  0.5885  102. The Wicked Messenger.flac
+     5:21.00       56624444 B   ---   --   ---xx   flac  0.5011  103. She Belongs To Me.flac
+     7:36.70       80603084 B   ---   --   ---xx   flac  0.5537  104. Its Alright Ma.flac
+     8:56.01       94552796 B   ---   --   ---xx   flac  0.5137  105. Just Like A Woman.flac
+     5:32.45       58670684 B   ---   --   ---xx   flac  0.5464  106. Cold Irons Bound.flac
+    13:11.32      139607708 B   ---   --   ---xx   flac  0.4934  107. Desolation Row.flac
+     8:39.00       91551644 B   ---   --   ---xx   flac  0.5451  108. Stuck Inside of Mobile.flac
+     5:07.73       54326540 B   ---   --   ---xx   flac  0.4847  201. Man in the Long Black Coat.flac
+     5:08.00       54331244 B   ---   --   ---xx   flac  0.5572  202. Cat's In the Well.flac
+     5:56.06       62812556 B   ---   --   ---xx   flac  0.4410  203. Ballad of Hollis Brown.flac
+     6:02.73       64028540 B   ---   --   ---xx   flac  0.5414  204. You Ain't Goin' Nowhere.flac
+    11:35.00      122598044 B   ---   --   ---xx   flac  0.5420  205. Like A Rolling Stone.flac
+     7:21.04       77801852 B   ---   --   ---xx   flac  0.5459  206. Just Like Tom Thumb's Blues.flac
+     0:31.67        5626028 B   ---   --   ---xx   flac  0.5398  207. Band Introductions.flac
+     6:03.60       64174364 B   ---   --   ---xx   flac  0.5514  208. All Along the Watchtower.flac
+   101:42.55     1076522864 B                            0.5266  (16 files)
+=================== 
+=================== 
+=================== 

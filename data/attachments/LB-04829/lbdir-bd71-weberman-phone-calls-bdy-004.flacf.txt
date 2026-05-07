@@ -1,0 +1,52 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd71-weberman-phone-calls-bdy-004.flacf 
+=================== 
+=================== 
+=================== 
+f3769ee0ecef0505daed543ac29f0baa  lbdir-bd71-weberman-phone-calls-bdy-004.flacf.md5
+e46487bc3d3e92d69ce03704b05cb763  Track 01.flac
+cb1bc69b7307e227a5c91b0da3e99a23  Track 02.flac
+e369ab739ef845d98ad13b2e67e82afa  Track 03.flac
+c1289458b19d8cdab7ff88d8d71ebd8d  Track 04.flac
+3430ea95accbe6dda0bca485ffd82d35  Track 05.flac
+61bd8fc874a6d91397e74f346c7578a3  Track 06.flac
+fd284a30ced3cf412a53ec2e4f757a54  Track 07.flac
+a5d338b5e1c5e3e7b278965784b91f03  Track 08.flac
+40945656fc83ba740ce0b394740c99b0  weberman take 2.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd71-weberman-phone-calls-bdy-004.flacf 
+=================== 
+=================== 
+=================== 
+Track 01.flac:949beec0baccc99627908fadb0c63036
+Track 02.flac:6a331022c3dfb955110a2018813e2ce2
+Track 03.flac:63f0eb5a4b6ca1a5927b8e543b8ac8eb
+Track 04.flac:1061b94ea4dff72b5bed275675f55d8e
+Track 05.flac:c7746b8fd1e06f31750424529bf91f3c
+Track 06.flac:8af3bf5a4438610fd471e936cc8d04e9
+Track 07.flac:11c42658e7c1f2f3a828c8175c262828
+Track 08.flac:680fbc0146e7f25ef2e047c3266eea5c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd71-weberman-phone-calls-bdy-004.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:41.65        7385324 B   ---   --   ---xx   flac  0.4687  Track 01.flac
+     2:50.66       30143276 B   ---   --   ---xx   flac  0.4759  Track 02.flac
+    45:52.30      485523404 B   ---   --   ---xx   flac  0.4329  Track 03.flac
+     6:41.00       70736444 B   ---   --   ---xx   flac  0.4358  Track 04.flac
+     4:15.71       45149036 B   ---   --   ---xx   flac  0.4308  Track 05.flac
+     3:56.03       41637500 B   ---   --   ---xx   flac  0.4304  Track 06.flac
+     4:29.42       47550428 B   ---   --   ---xx   flac  0.4245  Track 07.flac
+     4:40.48       49504940 B   ---   --   ---xx   flac  0.4227  Track 08.flac
+    73:28.25      777630352 B                            0.4338  (8 files)
+=================== 
+=================== 
+=================== 

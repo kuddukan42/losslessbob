@@ -1,0 +1,14 @@
+Bob Dylan, 9/5/99, Charlotte, North Carolina, Blockbuster Pavilion, 2CDR
+
+LB-5079, (65min+32min), version "b"; Audience recording (Full spectrum) > Unknown transfer > CDR(x) > Unknown DAE > FLAC > Data DVD Trade, Version "b".;;harhs; severe limitng on d1t1 causes distortion and harshness; after d1t1 it is still happening mainly just on the loud part of loud songs but not heard as much; otherwise the sound when it is at its best is comparable to LB-4903 which has the wind noise
+
+drop/pop at each track start
+
+CD1
+64:47, 1. Roving Gambler, 2. Mr. Tambourine Man, 3. It's Alright, Ma (I'm Only Bleeding), 4. To Ramona, 5. Tangled Up In Blue, 6. All Along The Watchtower, 7. Lay Lady Lay, 8. Stuck Inside Of Mobile With The Memphis Blues Again, 9. Not Dark Yet, 10. Silvio, 
+
+CD2
+31:08, 11. Like A Rolling Stone, 12. It Ain't Me, Babe, 13. The Boxer, 14. I Walk The Line / Blue Moon Of Kentucky, 15. Knockin' On Heaven's Door
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

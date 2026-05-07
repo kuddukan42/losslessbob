@@ -1,0 +1,46 @@
+===================
+===================
+===================
+=== bd 16 October 1987 Wembley Arena London [SC].txt
+===================
+===================
+===================
+
+Bob Dylan [Souncheck]
+16 October 1987 
+Wembley Arena London, England
+Bob Dylan is likely not present.
+
+15. Hickory Wind (Parsons/Buchanon) [2:38]
+16. (instrumentals) [2:28]
+17. I Wanna Hold Your Hand (Petty) [2:36]
+18. Turn! Turn! Turn! (McGuinn) [6:41] 
+
+
+
+
+===================
+===================
+===================
+=== bd 1987-10-16 Wembley Arena London [SC].ffp
+===================
+===================
+===================
+bd 1987-10-16 Wembley Arena London [SC]\Track01.flac:3358d21c84a9fd6f739e078d1ae40d5a
+bd 1987-10-16 Wembley Arena London [SC]\Track02.flac:126a79895a5294ef91b0313c4275be91
+bd 1987-10-16 Wembley Arena London [SC]\Track03.flac:02b2eed37fc0639e85dce31109dff998
+bd 1987-10-16 Wembley Arena London [SC]\Track18.flac:7d3aa7923dede6bc8aaf51545554603e
+===================
+===================
+===================
+=== bd 1987-10-16 Wembley Arena London [SC].md5
+===================
+===================
+===================
+ed6b1acafa443a60dd4ead477259c5ae *bd 1987-10-16 Wembley Arena London [SC]\Track01.flac
+d803344ffabfcfd4b1324583bae31e1d *bd 1987-10-16 Wembley Arena London [SC]\Track02.flac
+7b8920c18fa1cf940388142254b30a25 *bd 1987-10-16 Wembley Arena London [SC]\Track03.flac
+3fc73c58262eaf5d1b9815382d1f40c2 *bd 1987-10-16 Wembley Arena London [SC]\Track18.flac
+===================
+===================
+===================

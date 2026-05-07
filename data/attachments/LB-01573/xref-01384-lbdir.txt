@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd99-06-05-b.flacf
+===================
+===================
+===================
+2826557c099736cbe87c1efd7e06a3d4 *5 June 1999 text.txt
+0a4c6aced78fc207edf1468e9bfe948b *5 June 99, d1\5June99, d1t01.flac
+d2576f2d165ff9da705bae412124a77b *5 June 99, d1\5June99, d1t02.flac
+646a4d623d57fad580a7a6d91261f7c9 *5 June 99, d1\5June99, d1t03.flac
+3dd5fdd62f0a5fec7500030721112845 *5 June 99, d1\5June99, d1t04.flac
+159e3df89dc2c1451d2163e92ee4ef85 *5 June 99, d1\5June99, d1t05.flac
+5194db10d5c7536732a64162fcdc7790 *5 June 99, d1\5June99, d1t06.flac
+a53d3f97796ca7eeeb2c2540e6ac2207 *5 June 99, d1\5June99, d1t07.flac
+d0e4cdb9d55ef744206d0583d1fe8ba4 *5 June 99, d1\5June99, d1t08.flac
+5adfbef0abbae0ca797f5ab2089a1602 *5 June 99, d1\5June99, d1t09.flac
+37ddb096356baceb0a30ba65e277f6b5 *5 June 99, d1\5June99, d1t10.flac
+7b8413c3bae74ba09800d176b9534066 *5 June 99, d1\5June99, d1t11.flac
+beaa414fa558528a5e7ebb9d28780eb1 *5 June 99, d2\5June99, d2t01.flac
+dc3108090a1fa8239188c5a98adfada8 *5 June 99, d2\5June99, d2t02.flac
+98952fece6209c22def843ce19e60aca *5 June 99, d2\5June99, d2t03.flac
+7aa10af848821e78f6897d46f28ed97d *5 June 99, d2\5June99, d2t04.flac
+4dc03df06ddf49992cdb8c9f641edbfc *5 June 99, d2\5June99, d2t05.flac
+471619c69f7a7894dc14c665d8c90e94 *Denver, 5 June 1999 torrent.md5
+===================
+===================
+===================
+=== ffp for: bd99-06-05-b.flacf
+===================
+===================
+===================
+5 June 99, d1\5June99, d1t01.flac:9c1e0c9702d082a25f9ad4c96c295052
+5 June 99, d1\5June99, d1t02.flac:558b64ea85332f3514dd00f974947a2c
+5 June 99, d1\5June99, d1t03.flac:c72a11805f789151cce253c77a8d3a89
+5 June 99, d1\5June99, d1t04.flac:76a2cf09d63a64ae0e28fa6503add3de
+5 June 99, d1\5June99, d1t05.flac:61054789ee581b392e662cc840ca0800
+5 June 99, d1\5June99, d1t06.flac:5399179123bffaaa529f79ef75f95d77
+5 June 99, d1\5June99, d1t07.flac:04b5d382858bb75ed7882fb9634b24fd
+5 June 99, d1\5June99, d1t08.flac:3bab844e1c0696daabd957418007f33b
+5 June 99, d1\5June99, d1t09.flac:5aad7072aefcb0b3e404854ea02dbbc5
+5 June 99, d1\5June99, d1t10.flac:f3d3d2b7a4e6110508f624987a9c1766
+5 June 99, d1\5June99, d1t11.flac:804c1efa1302b71e4c037e0d7d5c6ddf
+5 June 99, d2\5June99, d2t01.flac:6afe066de39dd30aa9526eb45d3c6ade
+5 June 99, d2\5June99, d2t02.flac:64c286ae48aaadc8b1a9c2e3fc4dc273
+5 June 99, d2\5June99, d2t03.flac:e84e7e3025cc1e0cb5bb438a7f21b132
+5 June 99, d2\5June99, d2t04.flac:d6072390fd58d5d18adb0f311ab97a3f
+5 June 99, d2\5June99, d2t05.flac:d87a31b6be140a5e438102e62ff39537
+===================
+===================
+===================
+=== shntool len for: bd99-06-05-b.flacf\5 June 99, d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:16.54       66453452 B   ---   --   ---xx   flac  0.5878  5June99, d1t01.flac
+     5:57.02       62979548 B   ---   --   ---xx   flac  0.5868  5June99, d1t02.flac
+     5:18.45       56201084 B   ---   --   ---xx   flac  0.5622  5June99, d1t03.flac
+     5:25.33       57407660 B   ---   --   ---xx   flac  0.5119  5June99, d1t04.flac
+     8:26.02       89263148 B   ---   --   ---xx   flac  0.6231  5June99, d1t05.flac
+     4:40.13       49422620 B   ---   --   ---xx   flac  0.4833  5June99, d1t06.flac
+     7:13.19       76425932 B   ---   --   ---xx   flac  0.5849  5June99, d1t07.flac
+     9:21.09       98981612 B   ---   --   ---xx   flac  0.5256  5June99, d1t08.flac
+     6:14.04       65983052 B   ---   --   ---xx   flac  0.4467  5June99, d1t09.flac
+     7:09.07       75692108 B   ---   --   ---xx   flac  0.5765  5June99, d1t10.flac
+     5:51.32       61991708 B   ---   --   ---xx   flac  0.5234  5June99, d1t11.flac
+    71:52.70      760801924 B                            0.5505  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd99-06-05-b.flacf\5 June 99, d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.15       60364124 B   ---   --   ---xx   flac  0.6040  5June99, d2t01.flac
+     6:28.47       68553788 B   ---   --   ---xx   flac  0.4823  5June99, d2t02.flac
+     6:27.63       68415020 B   ---   --   ---xx   flac  0.4564  5June99, d2t03.flac
+     3:43.54       39464252 B   ---   --   ---xx   flac  0.5369  5June99, d2t04.flac
+     6:04.06       64223756 B   ---   --   ---xx   flac  0.5186  5June99, d2t05.flac
+    28:26.35      301020940 B                            0.5157  (5 files)
+===================
+===================
+===================

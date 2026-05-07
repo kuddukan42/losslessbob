@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-08-13-km140-soomlos.flacf 
+=================== 
+=================== 
+=================== 
+017e172664cf59e6b44b2035ebd8be04  bd06-08-13-km140-soomlos-LB-4042.txt
+e9ae446d92319dc85e1e91bbe2ba6796  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13.km140.soomlos.flac16.info.txt
+28406c6f1c36198b1fad7e81b61285a5  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13.km140.soomlos.flac16.md5
+ec6191260db69545b0a407e09029677c  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13.km140.soomlos.wav16.md5
+ff6b0ecf70987ed753b004764830dc28  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t01.flac
+256ba0f91b0384e61e1a64dfe9b5bee6  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t02.flac
+710f1efca61552d74a1cd08519f91408  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t03.flac
+efcfd062f3d60a10c006dd05ad724cbf  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t04.flac
+bf6957e4d16295b03689bc025cac6c7a  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t05.flac
+3eba44101138c7a2cb35cca22209a31c  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t06.flac
+61dae217a83d1645dbb142f0e2d4a0b1  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t07.flac
+f3710643a6b1a278a9afc3c1df58258c  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t08.flac
+922cc7453e3db9dddad2adafe08f2a3f  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t09.flac
+ae7bc0f5ad8a3ae266ec125d33b073f8  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d1t10.flac
+a7139757651f6d9c6778b79331e762de  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d2t01.flac
+ee9ce86bee69b7e1a3fe9836d05a7c32  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d2t02.flac
+89d0fc578195a7084f12401e8745e446  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d2t03.flac
+247d240f1440ba07a889ab15ca6eadf7  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d2t04.flac
+977632a4f7844f5a13c67110efc6dcae  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d2t05.flac
+5a2e5ff4bee41225c5297f5402a2f1ed  bd2006-08-13.km140.soomlos.flac16\bd2006-08-13d2t06.flac
+fd400ef7d273cd5a6407a7bc0acf5b61  jvec2006-08-13.km140.soomlos.flac16\jvec2006-08-13.km140.soomlos.flac16.info.txt
+9d6f2450f855149d43570979a92253fe  jvec2006-08-13.km140.soomlos.flac16\jvec2006-08-13.km140.soomlos.flac16.md5
+26250058d71094e0d981cbe1a9adb8bf  jvec2006-08-13.km140.soomlos.flac16\jvec2006-08-13.km140.soomlos.wav16.md5
+fc624ac3c7d2a0bbdf865166b2dfe25e  jvec2006-08-13.km140.soomlos.flac16\jvec2006-08-13t01.flac
+0955dc30028855a99175fdca92d1b855  jvec2006-08-13.km140.soomlos.flac16\jvec2006-08-13t02.flac
+a5b0411d52e697db493a9525498e7726  jvec2006-08-13.km140.soomlos.flac16\jvec2006-08-13t03.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-08-13-km140-soomlos.flacf\bd2006-08-13.km140.soomlos.flac16 
+=================== 
+=================== 
+=================== 
+bd2006-08-13d1t01.flac:1a781649940383418145aaf5859d3d53
+bd2006-08-13d1t02.flac:18bfeba9dd910642af4f0d92f6455a74
+bd2006-08-13d1t03.flac:a38bf4757b09afab99f97729f267c148
+bd2006-08-13d1t04.flac:8e0bcc79ff43df03ca0b9fd3ff3ed12f
+bd2006-08-13d1t05.flac:b2da70ae668f7ac12372380d5a3dc1b5
+bd2006-08-13d1t06.flac:cabc42a45f2d16b12651eabdfe2595bd
+bd2006-08-13d1t07.flac:7a30809773428f083e643b169af9dd0a
+bd2006-08-13d1t08.flac:97fedec7bb2840d0e6c27ac96ee2e563
+bd2006-08-13d1t09.flac:4803f9dcf6e20cd826603d1c083efaf1
+bd2006-08-13d1t10.flac:a8d22a899bb820432275c3f073328c94
+bd2006-08-13d2t01.flac:5791e801b5f33b60623ea329930062a6
+bd2006-08-13d2t02.flac:b133c1ec8be7266670e683bc1389ff44
+bd2006-08-13d2t03.flac:5d6123a9c399dabe216139d1c6434377
+bd2006-08-13d2t04.flac:1008aa9d17360b87f91748fee79af507
+bd2006-08-13d2t05.flac:6b12ce342ce33400cb71922ad1ffc16f
+bd2006-08-13d2t06.flac:80eca23620cae33edab284a94136e7a8
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-08-13-km140-soomlos.flacf\jvec2006-08-13.km140.soomlos.flac16 
+=================== 
+=================== 
+=================== 
+jvec2006-08-13t01.flac:9393691503d8e235d906f78eb2414fee
+jvec2006-08-13t02.flac:e98e83370de15383a19e58e87dfb78ac
+jvec2006-08-13t03.flac:0ea7c29eca3fd03688b441b5308e1891
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-08-13-km140-soomlos.flacf\bd2006-08-13.km140.soomlos.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:26.26       25815596 B   ---   --   ---xx   flac  0.3872  bd2006-08-13d1t01.flac
+     4:56.40       52308524 B   ---   --   ---xx   flac  0.5766  bd2006-08-13d1t02.flac
+     5:33.11       58767116 B   ---   --   ---xx   flac  0.5449  bd2006-08-13d1t03.flac
+     9:32.60      101041964 B   ---   --   ---xx   flac  0.5486  bd2006-08-13d1t04.flac
+     6:07.06       64752956 B   ---   --   ---xx   flac  0.4981  bd2006-08-13d1t05.flac
+     5:17.33       55996460 B   ---   --   ---xx   flac  0.4991  bd2006-08-13d1t06.flac
+     6:58.45       73841084 B   ---   --   ---xx   flac  0.5220  bd2006-08-13d1t07.flac
+     5:42.40       60422924 B   ---   --   ---xx   flac  0.4826  bd2006-08-13d1t08.flac
+     6:32.58       69285260 B   ---   --   ---xx   flac  0.4608  bd2006-08-13d1t09.flac
+     5:39.34       59879612 B   ---   --   ---xx   flac  0.5200  bd2006-08-13d1t10.flac
+     6:42.42       71011628 B   ---   --   ---xx   flac  0.5570  bd2006-08-13d2t01.flac
+     7:26.46       78782636 B   ---   --   ---xx   flac  0.4536  bd2006-08-13d2t02.flac
+     8:27.28       89500700 B   ---   --   ---xx   flac  0.5101  bd2006-08-13d2t03.flac
+     6:48.45       72077084 B   ---   --   ---xx   flac  0.5492  bd2006-08-13d2t04.flac
+     0:49.64        8794172 B   ---   --   ---xx   flac  0.4488  bd2006-08-13d2t05.flac
+     6:52.35       72759164 B   ---   --   ---xx   flac  0.5351  bd2006-08-13d2t06.flac
+    95:54.13     1015036880 B                            0.5143  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-08-13-km140-soomlos.flacf\jvec2006-08-13.km140.soomlos.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.45       42794684 B   ---   --   ---xx   flac  0.5397  jvec2006-08-13t01.flac
+     7:01.42       74363228 B   ---   --   ---xx   flac  0.5665  jvec2006-08-13t02.flac
+     4:49.13       51010220 B   ---   --   ---xx   flac  0.5425  jvec2006-08-13t03.flac
+    15:53.25      168168132 B                            0.5524  (3 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,22 @@
+3dda90d01b5adf4e82d5a87f20589222 *01 Subterranean Homesick Blues.flac
+da8dcc0c4d68665d623bb5874267e374 *02 Lay Lady Lay.flac
+79505c3c4deb9fd8a3df190b703d86e4 *03 All Along The Watchtower.flac
+543c94c8d215ea69ba1622e32eed75e9 *04 Stuck Inside Of Mobile.flac
+5995cc11ee9b507986b838d5badb0c47 *05 Highway 61 Revisited.flac
+395b736f2003f0c4fe52bf41a6ac8f34 *06 Youre a Big Girl Now.flac
+7e5bc16021090fd611b339a9de9aa36e *07 Seeing The Real You.flac
+c05eed910f9564572d946650f558f650 *08 Gates Of Eden.flac
+4aaf6bb3a602a5672906292a66ec0117 *09 Love Minus Zero.flac
+fa6d80e67910de57a98c0b700bce8aad *10 Tamborine Man.flac
+4746154db55f31b27e861a2581e19439 *11 One Too Many Mornings.flac
+9d232189c7f201addcf1d3b37a6b9ee2 *12 Dont Think Twice.flac
+0101b339198b025cbff931d3235bc5a6 *13 Just Like A Woman.flac
+a6b9d30664ecdc6114572f0215deef30 *14 Political World.flac
+f10d567ad2a1f8b51cf0fa642ba90901 *15 What Good Am I.flac
+6c329db8be2351ca3bcb962d7d2241f3 *16 Man Gave Names.flac
+be432c55de80e0a08081af2884b2cfd3 *17 Everything Is Broken.flac
+4cd4db071ddce3a175ca681e7ae846aa *18 I Shall Be Released.flac
+37292b7a1cd17d5bb2594d126e295a4b *19 Like A Rolling Stone.flac
+33778a1df7ef190ae7972f6bbd132065 *20 Forever Young.flac
+b4ac65f750aeaebee34b9fa6a43031dc *21 Rainy Day Women.flac
+8ae6a672beba28ec40d310e5118330ad *info.txt

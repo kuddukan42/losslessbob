@@ -1,0 +1,150 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-complete-collection.flacf 
+=================== 
+=================== 
+=================== 
+b3987ce093b5543e46703875ac4bb437  bd88-complete-collection-d1t01.flac
+c225832c0bde08f8330f278d9f036465  bd88-complete-collection-d1t02.flac
+70c95530f2826133331682f850eb9dcf  bd88-complete-collection-d1t03.flac
+60ffa84c537f3d1fea74827ee73afd8c  bd88-complete-collection-d1t04.flac
+58cbab05fc7f0cafa1fa39e423fbff32  bd88-complete-collection-d1t05.flac
+b847808a096b0af10cd073fe7b47e609  bd88-complete-collection-d1t06.flac
+120f040074be905f52a3b719707e7405  bd88-complete-collection-d1t07.flac
+097a7e84039a73f8db9f858d5cf9c03e  bd88-complete-collection-d1t08.flac
+c4a478f686a73aff6780f692c9392aeb  bd88-complete-collection-d1t09.flac
+5f41eef9b7b9fa86a30a47bb2cb1dec2  bd88-complete-collection-d1t10.flac
+9ff52729b4204e0e902abf61a56cc903  bd88-complete-collection-d1t11.flac
+df377a40113ca46b85c0b370acababf3  bd88-complete-collection-d1t12.flac
+ca0056f16dec35602ce45fcd87302013  bd88-complete-collection-d1t13.flac
+d65421280b5786a105160b722262e7cf  bd88-complete-collection-d1t14.flac
+149e4c7d931e58b1842eb6edc5363fb4  bd88-complete-collection-d1t15.flac
+5080116c6de50ea3aa4c0230a2195efa  bd88-complete-collection-d1t16.flac
+837ecc4dc3ccda6c3dd88b431f4fdac9  bd88-complete-collection-d1t17.flac
+286e18add0951fca5450e027ddd6a934  bd88-complete-collection-d1t18.flac
+30064606cf15e9fb0c61f5d1f1d3b1dc  bd88-complete-collection-d1t19.flac
+c9f012f754e78a4ab2d6c05e93195c14  bd88-complete-collection-d2t01.flac
+643e3d55b2a982490acc8c3e1bc96112  bd88-complete-collection-d2t02.flac
+c5141202f0960bcc829332de8767031b  bd88-complete-collection-d2t03.flac
+878e2beb967c0724b806d9cffb9970df  bd88-complete-collection-d2t04.flac
+7c77e74b829d2a891019d5c5ebd0f3fc  bd88-complete-collection-d2t05.flac
+3dafdadec56aa60c3c743b14c144d874  bd88-complete-collection-d2t06.flac
+f33f8cce833b65e91357fea42712b76a  bd88-complete-collection-d2t07.flac
+b76f984e3ed6f9f78f17c3c9caeb4601  bd88-complete-collection-d2t08.flac
+1763a3bcaa2bec2203ab85702823fd9c  bd88-complete-collection-d2t09.flac
+c9ecdd6a064779604184d7e3b8c94351  bd88-complete-collection-d2t10.flac
+8d001f424cb8c12a1db1542a441a05e9  bd88-complete-collection-d2t11.flac
+356b6364df2a27d75147e466fb29ca58  bd88-complete-collection-d2t12.flac
+a768823af970992623ee202f7c5b1860  bd88-complete-collection-d2t13.flac
+cb6a00b9210c1b6a52778bef025b2054  bd88-complete-collection-d2t14.flac
+75c240c6067c728fa6ec4886e8389bef  bd88-complete-collection-d2t15.flac
+2276dd56df332f396a649934f64f3e4d  bd88-complete-collection-d2t16.flac
+106683b2b0972fd3affb025ec8cb9247  bd88-complete-collection-d2t17.flac
+6de339b5227736fbcf88d3adaea9488e  bd88-complete-collection-d2t18.flac
+33d2c6f10bcea9c15e013d8000f48000  bd88-complete-collection-d2t19.flac
+27a4f38d8c443bc656a8725a71ebc708  bd88-complete-collection-d2t20.flac
+4285f878377d01a179542ad8d69cf58f  bd88-complete-collection-d2t21.flac
+7b0df060c75ac77a0829b7cfca62c2eb  bd88-complete-collection-d2t22.flac
+cedd857599730607d766e7551f5ae1d6  bd88-complete-collection.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-complete-collection.flacf 
+=================== 
+=================== 
+=================== 
+bd88-complete-collection-d1t01.flac:71b303738dcc975b947f493158c58869
+bd88-complete-collection-d1t02.flac:47eaa982f77cce8a712f4fd2e65f8c0d
+bd88-complete-collection-d1t03.flac:fbebbf85e2540a2bb517d3d0d02cac34
+bd88-complete-collection-d1t04.flac:cdb1c54e48729880e608d793f8eb166c
+bd88-complete-collection-d1t05.flac:00adc2a875d9589a6dfb9767630b4d5b
+bd88-complete-collection-d1t06.flac:64d89b56d38921a3d54eea68c8a3570f
+bd88-complete-collection-d1t07.flac:b95cca0d1d09e16e03416b1c29feea9a
+bd88-complete-collection-d1t08.flac:1b300629aa16a5fcfea30975006119e6
+bd88-complete-collection-d1t09.flac:f0e6a0b9e7dbb8ffe2d7a0453d31b14d
+bd88-complete-collection-d1t10.flac:27a8a5ed09d9977ecbafbb04058e79f3
+bd88-complete-collection-d1t11.flac:d7bae9d478c977ca7ce6897b023b3797
+bd88-complete-collection-d1t12.flac:8130a4dbdf676334b3ef2a1e31e591c6
+bd88-complete-collection-d1t13.flac:e092d58b3d4e0c001479e3c753a3d0fb
+bd88-complete-collection-d1t14.flac:2ebaa4d9a8949fe02984246ed37cafdb
+bd88-complete-collection-d1t15.flac:0ca54b9bf2f4e38630fff26174953ffa
+bd88-complete-collection-d1t16.flac:d2c99f313aec8d9f3f170a84e275ddf9
+bd88-complete-collection-d1t17.flac:8607afd5cfcfc9b694b4a0feb2c67b99
+bd88-complete-collection-d1t18.flac:a50c958d1fc5d353bccdc7c1142354f2
+bd88-complete-collection-d1t19.flac:6439b8e54bf1fc848d63b147f29ff1d6
+bd88-complete-collection-d2t01.flac:57eab3edf46585f00a6f737c1d99bbe1
+bd88-complete-collection-d2t02.flac:d858af767232242c1cb14639328ad5a9
+bd88-complete-collection-d2t03.flac:14e66f685ca99755734ed222f8143163
+bd88-complete-collection-d2t04.flac:353c1d0aead51b34ebe40558f843e308
+bd88-complete-collection-d2t05.flac:17b827ae0fc3997ecc51f0c00d86250f
+bd88-complete-collection-d2t06.flac:e24fe059a59deffb8caeec97278a2463
+bd88-complete-collection-d2t07.flac:742086b2a244e157aab6b5a42f25f91c
+bd88-complete-collection-d2t08.flac:2f92faa848f08f07a909c61fe480e6a5
+bd88-complete-collection-d2t09.flac:9349a08bd4d0d9a26a8acd255bd14b9e
+bd88-complete-collection-d2t10.flac:64fbc8b43f82bd1e78360ed13d70f6be
+bd88-complete-collection-d2t11.flac:016fc63a1958233e752fd4f2c0e29aea
+bd88-complete-collection-d2t12.flac:8bc6c842c2e1ca44d7318f6c1336acfd
+bd88-complete-collection-d2t13.flac:15b88657ef6dbbe013caa144dd636703
+bd88-complete-collection-d2t14.flac:e790e15232f4bdf3484f315872910abc
+bd88-complete-collection-d2t15.flac:455edb91ddefbf75adbbb76b5bde5e44
+bd88-complete-collection-d2t16.flac:bfc0f20dc900518f7127918bc4904aed
+bd88-complete-collection-d2t17.flac:1d2b64ae45db079cb63cfde77e5c094f
+bd88-complete-collection-d2t18.flac:918f8782f98155704e50080f90ecc5ed
+bd88-complete-collection-d2t19.flac:f9077520e53206e19d9813439a71f86a
+bd88-complete-collection-d2t20.flac:a04f25f91af082e8aba55b24b1f5444f
+bd88-complete-collection-d2t21.flac:45ae0476c3a1b35e1cfd1bbc02b86324
+bd88-complete-collection-d2t22.flac:0ca592a911488696825c587692d4af34
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-complete-collection.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:20.50       35397644 B   ---   --   ---xx   flac  0.6496  bd88-complete-collection-d1t01.flac
+     2:38.00       27871244 B   ---   --   ---xx   flac  0.6216  bd88-complete-collection-d1t02.flac
+     3:02.13       32135420 B   ---   --   ---xx   flac  0.6437  bd88-complete-collection-d1t03.flac
+     3:53.62       41247068 B   ---   --   ---xx   flac  0.6129  bd88-complete-collection-d1t04.flac
+     3:17.25       34809644 B   ---   --   ---xx   flac  0.6073  bd88-complete-collection-d1t05.flac
+     3:50.25       40630844 B   ---   --   ---xx   flac  0.6229  bd88-complete-collection-d1t06.flac
+     3:21.25       35515244 B   ---   --   ---xx   flac  0.6085  bd88-complete-collection-d1t07.flac
+     7:48.50       82672844 B   ---   --   ---xx   flac  0.6478  bd88-complete-collection-d1t08.flac
+     5:34.00       58917644 B   ---   --   ---xx   flac  0.6420  bd88-complete-collection-d1t09.flac
+     5:16.13       55773020 B   ---   --   ---xx   flac  0.6692  bd88-complete-collection-d1t10.flac
+     3:36.62       38248268 B   ---   --   ---xx   flac  0.7137  bd88-complete-collection-d1t11.flac
+     3:47.50       40160444 B   ---   --   ---xx   flac  0.6084  bd88-complete-collection-d1t12.flac
+     3:08.13       33193820 B   ---   --   ---xx   flac  0.6960  bd88-complete-collection-d1t13.flac
+     3:34.37       37836668 B   ---   --   ---xx   flac  0.6442  bd88-complete-collection-d1t14.flac
+     2:58.38       31488620 B   ---   --   ---xx   flac  0.6675  bd88-complete-collection-d1t15.flac
+     2:50.62       30133868 B   ---   --   ---xx   flac  0.6282  bd88-complete-collection-d1t16.flac
+     3:32.63       37545020 B   ---   --   ---xx   flac  0.6557  bd88-complete-collection-d1t17.flac
+     2:51.12       30192668 B   ---   --   ---xx   flac  0.5800  bd88-complete-collection-d1t18.flac
+     4:08.13       43777820 B   ---   --   ---xx   flac  0.6326  bd88-complete-collection-d1t19.flac
+     3:21.25       35515244 B   ---   --   ---xx   flac  0.6844  bd88-complete-collection-d2t01.flac
+     3:28.00       36691244 B   ---   --   ---xx   flac  0.6578  bd88-complete-collection-d2t02.flac
+     4:13.62       44775068 B   ---   --   ---xx   flac  0.6373  bd88-complete-collection-d2t03.flac
+     2:34.25       27224444 B   ---   --   ---xx   flac  0.5943  bd88-complete-collection-d2t04.flac
+     3:14.50       34339244 B   ---   --   ---xx   flac  0.5771  bd88-complete-collection-d2t05.flac
+     3:24.25       36044444 B   ---   --   ---xx   flac  0.5609  bd88-complete-collection-d2t06.flac
+     2:29.50       26401244 B   ---   --   ---xx   flac  0.6815  bd88-complete-collection-d2t07.flac
+     2:51.50       30282044 B   ---   --   ---xx   flac  0.5948  bd88-complete-collection-d2t08.flac
+     3:40.00       38808044 B   ---   --   ---xx   flac  0.5598  bd88-complete-collection-d2t09.flac
+     2:21.63       25020620 B   ---   --   ---xx   flac  0.5397  bd88-complete-collection-d2t10.flac
+     3:56.37       41717468 B   ---   --   ---xx   flac  0.4551  bd88-complete-collection-d2t11.flac
+     3:22.63       35781020 B   ---   --   ---xx   flac  0.5785  bd88-complete-collection-d2t12.flac
+     3:42.12       39189068 B   ---   --   ---xx   flac  0.5727  bd88-complete-collection-d2t13.flac
+     3:13.38       34134620 B   ---   --   ---xx   flac  0.5737  bd88-complete-collection-d2t14.flac
+     3:22.00       35632844 B   ---   --   ---xx   flac  0.5630  bd88-complete-collection-d2t15.flac
+     3:23.12       35837468 B   ---   --   ---xx   flac  0.5710  bd88-complete-collection-d2t16.flac
+     3:16.00       34574444 B   ---   --   ---xx   flac  0.5757  bd88-complete-collection-d2t17.flac
+     3:04.13       32488220 B   ---   --   ---xx   flac  0.5552  bd88-complete-collection-d2t18.flac
+     3:41.25       39043244 B   ---   --   ---xx   flac  0.5540  bd88-complete-collection-d2t19.flac
+     3:25.50       36279644 B   ---   --   ---xx   flac  0.5893  bd88-complete-collection-d2t20.flac
+     3:18.62       35073068 B   ---   --   ---xx   flac  0.5434  bd88-complete-collection-d2t21.flac
+     2:56.13       31077020 B   ---   --   ---xx   flac  0.6020  bd88-complete-collection-d2t22.flac
+   144:53.13     1533477580 B                            0.6113  (41 files)
+=================== 
+=================== 
+=================== 

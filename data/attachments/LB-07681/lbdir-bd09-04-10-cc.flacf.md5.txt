@@ -1,0 +1,33 @@
+c563e3285fe5f0294090c8da4cbaaec4  101-Intro.flac
+32311f38d6040da80dbb4e0a0086d428  102-Leopard Skin Pill Box Hat.flac
+1b73d78adac2ee84587b390186e9ecb2  103-When I Paint My Masterpiece.flac
+c15335e029b1416e08b2c8b2399f29af  104-Watching The River Flow.flac
+e9f9c055f51e065402019a0cfa90aaae  105-Boots Of Spannish Leather.flac
+5e4e06f31949064142f07cafe175f705  106-Rollin' And Tumblin'.flac
+89788384169b410212a91089e1b087f6  107-Po' Boy.flac
+86b3477510c8378c4e513721908f0eb0  108-Honest With Me.flac
+cb8ff443beecd8a5a45506db8b8474eb  109-Workingman's Blues #2.flac
+a3d66680ac15d456d00707b2101d9102  110-High Water (For Charley Patton).flac
+78a507e5df827fad047784ba84425886  201-Love Sick.flac
+ab0cb183c5dbad61e7cbbf3ed2f32bfa  202-Highway 61 Revisited.flac
+e4845074c7090cb1beefd896521ba80a  203-Nettie Moore.flac
+ad9fe06779e12f89a95dedd467cfb843  204-Summer Days.flac
+9fa543e0c88d8c44af203e7f70727ad7  205-Like A Rolling Stone.flac
+dcef5d587f1d8d6f7dd3e2df91209049  206-All Along The Watchtower.flac
+13606e6d8d446bcf9d40979cd1a152fc  207-Spirit On The Water.flac
+791392c2ffe70c32aee90a802ade81a8  208-Blowin' In The Wind.flac
+00e982e392d4255e426b470091627ba6  209-If You Ever Go To Houston.flac
+bd722adfce7c3688cd837ed61a04e8ad  210-Something.flac
+d18c37f546759ab494b3502375d6bbe9  211-One More Cup Of Coffe (Valley Below).flac
+299045b21786604aac39d6315ea7348e  212-This Wheel's On Fire.flac
+06420e7c0f3ff16e1e3859711cf0e04a  Amsterdam First Evening Back.jpg
+3953f9573f0c2ff890e2df3400610f39  Amsterdam First Evening Disc 01 flac.md5
+796c53eb48496d885708f3beed3e5d8f  Amsterdam First Evening Disc 01 waw.md5
+0438f1d714033a8e464cb0f57e93cd17  Amsterdam First Evening Disc 01.jpg
+e4596b513ff567f7cabafccebe7c8ebb  Amsterdam First Evening Disc 01.log
+7ac2ef983ce426cc242a9a2fff2da968  Amsterdam First Evening Disc 02 flac.md5
+621a4d6cd6aaf114a8389d075165ddaa  Amsterdam First Evening Disc 02 waw.md5
+2e7156a2f3156b8a1c20cbfe9adffac0  Amsterdam First Evening Disc 02.jpg
+da9a745871ea6ddad2c896e20a789255  Amsterdam First Evening Disc 02.log
+b91bf4fda8bd66fa4f1284b0ac08bfc1  Amsterdam First Evening Front.jpg
+7dfb12b2576031d7fbc2fc6b24f1f088  Amsterdam First Evening.txt

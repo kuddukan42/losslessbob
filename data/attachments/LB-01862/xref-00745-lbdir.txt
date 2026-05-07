@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-07-ASM-by-Schubert-b.flacf 
+=================== 
+=================== 
+=================== 
+a22a39159344e79f86426ef32c114d0d  101 Announcement.flac
+78f4672f723389cfb2dfb3be74fba2b4  102 Roving Gambler.flac
+3520c596d2c3a40dc38c39f9402157a0  103 Mr. Tambourine Man.flac
+20e6437b791008a05bfadca9966df35c  104 Masters Of War.flac
+549910843c637887a216e0267ae84d4a  105 Girl Of The North Country.flac
+237d69aff1a5ce93372c4d62f85f64de  106 Tangled Up In Blue.flac
+e1fb2e14ef607dc6d23e702d2114e4f7  107 Trying To Get To Heaven.flac
+4ad2fca8f71004eb506435e2a9e79286  108 Maggie's Farm .flac
+5afe81e105e2e1d1241ca08f5d6fd263  109 Lay, Lady, Lay.flac
+55d942d0c810368eeb580f6095293eef  110 Blind Willie McTell.flac
+279f8e5ae8c42a8466da32a4a4d3d402  1999-04-07 Lisboa (ASM by Schubert).md5
+af34d843311c5648a343623cb9213850  1999-04-07 Lisboa (ASM by Schubert).txt
+1fd8ef6aaf4a1a6c869ae86b4dec4ebe  201 Just Like A Woman.flac
+49403583449226018f4a400c4a2165d6  202 Can't Wait.flac
+7397a6a91ccaa4622ad5aa47cc39e79b  203 Like a Rolling Stone.flac
+7f123652cb36a775bb91afba2d1317f4  204 Love Sick.flac
+5e0b762fca7cc294136145dbd962f37c  205 Leopard-Skin Pill-Box Hat .flac
+bef4fab9725217c069f69542f4209093  206 Blowin' In The Wind.flac
+3a38599ef0bd9fbf78213e24a0793b24  207 Highway 61 Revisited .flac
+887c0c0b4e18f2324d987d841647a6e8  ~uTorrentPartFile_25CB4997.dat
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-07-ASM-by-Schubert-b.flacf 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:132ae35613adcc2c2d2a51e4af2f0604
+102 Roving Gambler.flac:a3f1cbce9d69494ecf4a3f07ddfe07e6
+103 Mr. Tambourine Man.flac:36d66c22c74208ff0d580517df0dba27
+104 Masters Of War.flac:5ec6630e9d9fe200309ea809252b5db8
+105 Girl Of The North Country.flac:88594d0bd9a74eabf0030939f2b105a6
+106 Tangled Up In Blue.flac:34b283c9d8d943d411d9acb83f762ed4
+107 Trying To Get To Heaven.flac:a74e2eb412340bb60e4157a95a44e773
+108 Maggie's Farm .flac:4dbb16aeae65937fddf07aaadbc99c41
+109 Lay, Lady, Lay.flac:076cee5fac0573266cca3f5812e2b9af
+110 Blind Willie McTell.flac:c9831ec0b7a1a97fd39c4fb131c27bf2
+201 Just Like A Woman.flac:969eb87440e68a8f466d1be2f396a961
+202 Can't Wait.flac:aa74f78667e6362e7d7aa2ca6047cc21
+203 Like a Rolling Stone.flac:f5c6be7d913ab19e61a26727d20e33e8
+204 Love Sick.flac:772779f01c434e237f3a7d1851db2b28
+205 Leopard-Skin Pill-Box Hat .flac:febff83d41d560e3a812797c7de19c8e
+206 Blowin' In The Wind.flac:1a7b63d83dda41ff12aaf42639dfa694
+207 Highway 61 Revisited .flac:46b739260c773de41630fe8da94615f2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-07-ASM-by-Schubert-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.52        9824348 B   ---   --   ---xx   flac  0.4749  101 Announcement.flac
+     4:03.20       42912284 B   ---   --   ---xx   flac  0.5652  102 Roving Gambler.flac
+     6:08.32       64990508 B   ---   --   ---xx   flac  0.5399  103 Mr. Tambourine Man.flac
+     5:05.31       53874956 B   ---   --   ---xx   flac  0.5269  104 Masters Of War.flac
+     6:06.27       64625948 B   ---   --   ---xx   flac  0.4544  105 Girl Of The North Country.flac
+     7:34.29       80153852 B   ---   --   ---xx   flac  0.6053  106 Tangled Up In Blue.flac
+    11:02.67      116934428 B   ---   --   ---xx   flac  0.3858  107 Trying To Get To Heaven.flac
+     6:04.27       64273148 B   ---   --   ---xx   flac  0.5972  108 Maggie's Farm .flac
+     4:46.01       50452796 B   ---   --   ---xx   flac  0.5243  109 Lay, Lady, Lay.flac
+     6:22.01       67387196 B   ---   --   ---xx   flac  0.5397  110 Blind Willie McTell.flac
+     9:32.27      100964348 B   ---   --   ---xx   flac  0.5424  201 Just Like A Woman.flac
+     6:47.10       71818364 B   ---   --   ---xx   flac  0.6357  202 Can't Wait.flac
+    10:39.62      112865468 B   ---   --   ---xx   flac  0.5992  203 Like a Rolling Stone.flac
+     5:20.71       56615036 B   ---   --   ---xx   flac  0.5511  204 Love Sick.flac
+     5:13.16       55250876 B   ---   --   ---xx   flac  0.6421  205 Leopard-Skin Pill-Box Hat .flac
+     4:48.20       50850284 B   ---   --   ---xx   flac  0.5391  206 Blowin' In The Wind.flac
+     8:04.71       85544636 B   ---   --   ---xx   flac  0.6087  207 Highway 61 Revisited .flac
+   108:35.39     1149338476 B                            0.5488  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,28 @@
+ba9d73eacfa9729556c24c1f61daa94f  101 Tweedle Dee & Tweedle Dum.flac
+9e06dee367a5dac9a4e56eeb990a4c3d  102 I'll Be Your Baby Tonight.flac
+5b667d25b5e2318e0feaefe77883f405  103 Highway 61 Revisited.flac
+f4afe6710a52c4ce2185cccd1d703813  104 Just Like A Woman.flac
+77503728227bd75154af29bfbcd34284  105 Things Have Changed.flac
+4aa0db0f4ca22ba4b579997de6d41425  106 Cold Irons Bound.flac
+117513b9684377f1731426510094229a  107 Mr Tambourine Man.flac
+d8aa239dea2d94792d64aeea656f8af1  108 Desolation Row.flac
+b7d4d95fc4fcee231c077b22bd45884a  109 Girl From The North Country.flac
+5342c785ba27f82e09e259a1b631a7df  110 It's Alright Ma.flac
+d6957d614f9e4409f35824b2be5f70d0  111 Tell Me That It Isn't True.flac
+624cad532f874d277f34f1db8ee2d6ae  201 Honest With Me.flac
+778a931921caf902b9c6559bb1990536  202 Bye And Bye.flac
+2c7f7e44963d84150bbfb35556d82ce9  203 Summer Days.flac
+2e3c7407607f00bc09e834592bd335ec  204 Blowin' In The Wind.flac
+219103143e73311753ed191108531e32  205 Like A Rolling Stone.flac
+5fa5ad593a2dba2a591ad228e6f7b558  206 All Along The Watchtower.flac
+94eec7c94827e8d6146765e3b7b83ead  bd2003-02-26.d1t07.sa_fa.JPG
+60a1b7f66e8164f5515efc0ec09fcd15  bd2003-02-26.ffp.txt
+cb2e2497076e227a59a9e0137acc6bef  bd2003-02-26.info.lbp51.txt
+2dedf65d2355fb462f747d42fd453732  bd2003-02-26.md5
+d7babfc3bd0d7de6e39822adede66cb5  Chr02-26-03(SA)-B.jpg
+972e63b171c38cec5e16e3ce9d652aa9  Chr02-26-03(SA)-F.jpg
+db27840de6bacb89141eebb51235dac1  Christchurch 2003.txt
+c0a385878587972a73488803cd4cdcd0  Dylan 2003_ChristchurchBack.jpg
+c68bcc8440d1465337ac35b7c2bea776  Dylan 2003_ChristchurchFront.jpg
+0c9ffaefc413c33f80630c308ceb2be5  Feb26_2003_b.jpg
+747469dc9d1a2810534c41c05c87d28d  Feb26_2003_f.jpg

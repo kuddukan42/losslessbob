@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-03-live-at-the-warehouse.flacf 
+=================== 
+=================== 
+=================== 
+336664c1de155b14893d47240df40bb0  bd76-05-03-live-at-the-warehouse-d1t01.flac
+0c1d026ba9611337410b0c762632ca09  bd76-05-03-live-at-the-warehouse-d1t02.flac
+0c1411936e50c10408002ce4559158fe  bd76-05-03-live-at-the-warehouse-d1t03.flac
+63bb07989e7283db33d95667411e474e  bd76-05-03-live-at-the-warehouse-d1t04.flac
+d80b67670f601e00040ff325825d2491  bd76-05-03-live-at-the-warehouse-d1t05.flac
+8694f6b27f2455985dfc06e74575b391  bd76-05-03-live-at-the-warehouse-d1t06.flac
+cb3ca3055045c8fdb7a452f18f5de12d  bd76-05-03-live-at-the-warehouse-d1t07.flac
+6d3684fe5877bfc7c92fccb3e4952dc3  bd76-05-03-live-at-the-warehouse-d1t08.flac
+0164e0f2204750a5240b6ae998c6d32c  bd76-05-03-live-at-the-warehouse-d1t09.flac
+e88bc430fe13c05b1d6faf5d4b3c59b5  bd76-05-03-live-at-the-warehouse-d1t10.flac
+9b6f41e8602a21227abaf816b86bd1e2  bd76-05-03-live-at-the-warehouse-d1t11.flac
+e4ecf4fabd0824a2469c99a5471b0f7c  bd76-05-03-live-at-the-warehouse-d1t12.flac
+5dc67c3ede5cf80f4c0dbd117230a94f  bd76-05-03-live-at-the-warehouse-d1t13.flac
+82be7c769f91c23f417432d251a9c186  bd76-05-03-live-at-the-warehouse-d2t01.flac
+8c4bc8c3b1350b1476ec55f0ec8d828e  bd76-05-03-live-at-the-warehouse-d2t02.flac
+6b703527dde6c4463800dd9d6039b376  bd76-05-03-live-at-the-warehouse-d2t03.flac
+c1ea6ba25b50f990081e697c26d4015c  bd76-05-03-live-at-the-warehouse-d2t04.flac
+46cd66a39a9c9b943aaa184372e8c77d  bd76-05-03-live-at-the-warehouse-d2t05.flac
+a20648a3f878d86e2dcbc3ffd4d33f9b  bd76-05-03-live-at-the-warehouse-d2t06.flac
+1bbbe6c9e2fa74286117be7736aefe0b  bd76-05-03-live-at-the-warehouse.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-03-live-at-the-warehouse.flacf 
+=================== 
+=================== 
+=================== 
+bd76-05-03-live-at-the-warehouse-d1t01.flac:1e18395bd3bd3c95dcb9fcae6ca4146d
+bd76-05-03-live-at-the-warehouse-d1t02.flac:539f96365b61211eee6cf5a61b1c03a1
+bd76-05-03-live-at-the-warehouse-d1t03.flac:74ced11d04ce68966261b15de02ef044
+bd76-05-03-live-at-the-warehouse-d1t04.flac:da5dd2d39a30102afd320a425be8cbdf
+bd76-05-03-live-at-the-warehouse-d1t05.flac:ad027b0d477b78c97c43ffe1dacd4a00
+bd76-05-03-live-at-the-warehouse-d1t06.flac:210a02fda73046784b4697dee88de7e1
+bd76-05-03-live-at-the-warehouse-d1t07.flac:c81a651bf9f47a22eaec1c1f8e670892
+bd76-05-03-live-at-the-warehouse-d1t08.flac:8e1dcfc1e1159835f332e5c9c440af30
+bd76-05-03-live-at-the-warehouse-d1t09.flac:586618d2376d9345ca6a5b69825c9a80
+bd76-05-03-live-at-the-warehouse-d1t10.flac:35d33a896b16e4777e1fe14de4addacb
+bd76-05-03-live-at-the-warehouse-d1t11.flac:92c23a8fd3d434d4fa0bb15d003d3f0d
+bd76-05-03-live-at-the-warehouse-d1t12.flac:e21a94140776e37b622e2ced658556d6
+bd76-05-03-live-at-the-warehouse-d1t13.flac:c1ba8ebc02cd23377fdeb97c4262b829
+bd76-05-03-live-at-the-warehouse-d2t01.flac:0cc727bf0cfc03ecf1033ac7556fa9dd
+bd76-05-03-live-at-the-warehouse-d2t02.flac:722333669ac2d6ef63e1cf8248f2a8a4
+bd76-05-03-live-at-the-warehouse-d2t03.flac:2d7203727fcf123a056a29da4a43cf93
+bd76-05-03-live-at-the-warehouse-d2t04.flac:6b0dc1706e6d746cc503d056d7aef4a3
+bd76-05-03-live-at-the-warehouse-d2t05.flac:880090286dec3bb0171745228851efe9
+bd76-05-03-live-at-the-warehouse-d2t06.flac:a4e18624de145db6834854122aacee25
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-03-live-at-the-warehouse.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.50       59564444 B   ---   --   ---xx   flac  0.6263  bd76-05-03-live-at-the-warehouse-d1t01.flac
+     3:50.60       40713164 B   ---   --   ---xx   flac  0.6144  bd76-05-03-live-at-the-warehouse-d1t02.flac
+     3:34.15       37784924 B   ---   --   ---xx   flac  0.5883  bd76-05-03-live-at-the-warehouse-d1t03.flac
+     5:39.15       59834924 B   ---   --   ---xx   flac  0.6325  bd76-05-03-live-at-the-warehouse-d1t04.flac
+     4:41.52       49690748 B   ---   --   ---xx   flac  0.6431  bd76-05-03-live-at-the-warehouse-d1t05.flac
+     4:42.20       49791884 B   ---   --   ---xx   flac  0.5592  bd76-05-03-live-at-the-warehouse-d1t06.flac
+     3:07.38       33076220 B   ---   --   ---xx   flac  0.6113  bd76-05-03-live-at-the-warehouse-d1t07.flac
+     4:41.32       49643708 B   ---   --   ---xx   flac  0.6598  bd76-05-03-live-at-the-warehouse-d1t08.flac
+     6:35.33       69755660 B   ---   --   ---xx   flac  0.6394  bd76-05-03-live-at-the-warehouse-d1t09.flac
+     6:58.10       73758764 B   ---   --   ---xx   flac  0.6491  bd76-05-03-live-at-the-warehouse-d1t10.flac
+     8:06.30       85801004 B   ---   --   ---xx   flac  0.5780  bd76-05-03-live-at-the-warehouse-d1t11.flac
+     3:47.45       40148684 B   ---   --   ---xx   flac  0.6320  bd76-05-03-live-at-the-warehouse-d1t12.flac
+     4:42.17       49784828 B   ---   --   ---xx   flac  0.6262  bd76-05-03-live-at-the-warehouse-d1t13.flac
+    10:55.42      115640828 B   ---   --   ---xx   flac  0.5772  bd76-05-03-live-at-the-warehouse-d2t01.flac
+     4:46.55       50579804 B   ---   --   ---xx   flac  0.5650  bd76-05-03-live-at-the-warehouse-d2t02.flac
+     8:14.28       87207500 B   ---   --   ---xx   flac  0.6212  bd76-05-03-live-at-the-warehouse-d2t03.flac
+     9:27.60      100159964 B   ---   --   ---xx   flac  0.6445  bd76-05-03-live-at-the-warehouse-d2t04.flac
+     4:28.50       47392844 B   ---   --   ---xx   flac  0.5990  bd76-05-03-live-at-the-warehouse-d2t05.flac
+     4:32.15       48016124 B   ---   --   ---xx   flac  0.5802  bd76-05-03-live-at-the-warehouse-d2t06.flac
+   108:29.67     1148346020 B                            0.6131  (19 files)
+=================== 
+=================== 
+=================== 

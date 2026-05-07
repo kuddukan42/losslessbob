@@ -1,0 +1,78 @@
+Mann Auditorium
+Tel-Aviv, Israel
+17 June 1993
+
+Disc 1    [71:50]
+1. Hard Times [5:02]
+2. Stuck Inside Of Mobile With The Memphis Blues Again [8:11] 
+3. All Along The Watchtower [5:04]
+4. Just Like A Woman [7:38]
+5. Tangled Up In Blue [12:39]
+6. You're A Big Girl Now [6:05]
+7. Watching The River Flow [6:01]
+8. Jim Jones [6:46]
+9. Tomorrow Night [5:49]
+10. Mr. Tambourine Man [8:30]
+
+Disc 2    [49:48]
+1. Don't Think Twice, It's All Right [6:58]
+2. Everything Is Broken [4:34]
+3. I And I [7:47]
+4. Simple Twist Of Fate [10:52]
+5. Maggie's Farm [5:44]
+6. Ballad Of A Thin Man [9:37]
+7. Highway 61 Revisited [4:13]
+ 
+
+NOTES:
+Blowin' In The Wind is missing
+D2 T1:  [1:32] volume drop
+D2 T6:  [8:17, 8:30 - 9:25] intermittent channel-to-channel fuzz, ending in a split-second dropout
+D2 T7:  intermittent channel-to-channel fuzz leading up to the song cutting out at 4:10.
+
+Concert # 482 of The Never-Ending Tour.  Second concert of the 1993 Europe Summer Tour. 1993 concert # 26.
+Concert # 26 with the 9th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Winston Watson (drums & percussion).
+1, 8-11, 18 acoustic with the band.
+4, 5, 7, 9-11, 14, 18  Bob Dylan harmonica.
+1  Bucky Baxter (concertina).
+9 new songs (50%) compared to previous concert. 9 new songs for this tour.
+ 
+md5
+9ffe151a469fbf3a7e0376b7d0e9a72b *bd1993-06-17_d1t01.flac
+d198c7609d55a626633fd2120bdad144 *bd1993-06-17_d1t02.flac
+9ed73e5985ca5f69dcb317694e794044 *bd1993-06-17_d1t03.flac
+3c4834e54fcc6617c4b0ed8601bb4e4a *bd1993-06-17_d1t04.flac
+261f63618183c6f6e04330c750739a66 *bd1993-06-17_d1t05.flac
+de27d4285cfd5b4cf6a9e5c72df5f835 *bd1993-06-17_d1t06.flac
+56ecbbaa9909955ad0b90c4042cfb9ec *bd1993-06-17_d1t07.flac
+ac3ab667a929e3e4c29638066c2f2055 *bd1993-06-17_d1t08.flac
+03ad7cfde3677c044d163ae2e395e1cf *bd1993-06-17_d1t09.flac
+fd4cc8da513a66b0ccb260c4d6d0c931 *bd1993-06-17_d1t10.flac
+5378c1b051183484dc199a26f71497f0 *bd1993-06-17_d2t01.flac
+83ad3ee4394f9f6e58a5067a0f014337 *bd1993-06-17_d2t02.flac
+b52317ed1d9d8bc9245d5cf66464daaa *bd1993-06-17_d2t03.flac
+e3d99de58dfa1301b6ecebcd4fbd6cf3 *bd1993-06-17_d2t04.flac
+b8e9c5e117438f18590277cf848702d7 *bd1993-06-17_d2t05.flac
+1b5a58808383d152bfdf482f717eaa79 *bd1993-06-17_d2t06.flac
+769f76ed7c61bb42efe75b2576e27c35 *bd1993-06-17_d2t07.flac
+
+Flac fingerprint
+bd1993-06-17_d1t01.flac:a46b9db2d27255ddd2e7dbb96f624f8a
+bd1993-06-17_d1t02.flac:b56a11964fe146016cc2a3b0b279129e
+bd1993-06-17_d1t03.flac:2d68c4059f27372001daa32c6529df1c
+bd1993-06-17_d1t04.flac:7689daf79b4fdef4b19cba61a5cadd86
+bd1993-06-17_d1t05.flac:5e1088f28118e7caa048aefb730b0829
+bd1993-06-17_d1t06.flac:13e5969fe34661c1f86b270ab2d31576
+bd1993-06-17_d1t07.flac:0cf783ea78d698d7d7c6c53e5b575582
+bd1993-06-17_d1t08.flac:2fbc56fcc112f64e2783d72f70b1c568
+bd1993-06-17_d1t09.flac:cdb78b1d809d808980a9a5f8c532294d
+bd1993-06-17_d1t10.flac:a352d5db097c4eb6476c99fc3ef3c3b8
+bd1993-06-17_d2t01.flac:2d14c9252c15416faf74334147a3073d
+bd1993-06-17_d2t02.flac:2544ad22e01b53139808a9acaa97a2df
+bd1993-06-17_d2t03.flac:af732a830320f5095758f8313c8d2d8e
+bd1993-06-17_d2t04.flac:9a71b1e8d26bc6aee21a06b54385c23d
+bd1993-06-17_d2t05.flac:369f36d5c970c26e34201f4ac21b803c
+bd1993-06-17_d2t06.flac:7d3d6349ebbcc415932a27467579472f
+bd1993-06-17_d2t07.flac:70a09987020c567ac551b33265d4061a
+
+

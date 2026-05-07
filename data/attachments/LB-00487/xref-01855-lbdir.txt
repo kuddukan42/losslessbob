@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd75-11-06-early-f.flacf
+===================
+===================
+===================
+27f7948503b19583926a0a206009eec1 *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-01 - When I Paint My Masterpiece.flac
+05f99d2b5fe7d180ed98180328eefc0c *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-02 - It Ain't Me, Babe.flac
+32d6d07da69f8f985a6a282d052257d3 *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-03 - The Lonesome Death Of Hattie Carroll.flac
+90289844d4ab665cd3330dffd775c3d9 *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-04 - Romance In Durango.flac
+df0cec2e1cad5f5f85aa37cf4858fafe *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-05 - Isis.flac
+771e0a0971d1b5c71f9d2ce4f977722c *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-06 - The Water Is Wide.flac
+b2be955358234aa4b027ddd24202eace *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-07 - I Dreamed I Saw St. Augustine.flac
+4166b3dc97af647c2e05d5fc28696136 *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-08 - Never Let Me Go.flac
+627166fced579587283b909fa68ff52d *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-09 - I Shall Be Released.flac
+7fa0e1541755c867e7f04e2bf890a27e *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1975-11-06 - Springfield, Massachusetts - afternoon show (LB-00487, flac).md5
+f8300d5cddc9cb6c46ca30eae1d5d8d3 *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1975-11-06 - Springfield, Massachusetts - afternoon show.txt
+212a267d89266d656e12cc422a6eaffb *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-10 - I DonÆt Believe You (She Acts Like We Never Have Met).flac
+be7ae90cd6e3b32b51256802f0eb6ba5 *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-11 - Oh, Sister.flac
+5ca10a7a632a2656bd3781b3544636f4 *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-12 - Hurricane.flac
+b1350ad479bdec8c357cee8e8420a0ac *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-13 - One More Cup Of Coffee (Valley Below).flac
+af2c843c12628c502cfeda81686263aa *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-14 - (MASTER CUT) Sara.flac
+6519cee05f667c09b30b8977f5c586df *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-15 - Just Like A Woman.flac
+6bf1619435047c87a22a03c413faaeba *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-16 - Knockin' On Heaven's Door.flac
+7f719086bf2b8e11be5ec0f4e06b0d61 *1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-17 - This Land Is Your Land.flac
+===================
+===================
+===================
+=== ffp for: bd75-11-06-early-f.flacf
+===================
+===================
+===================
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-01 - When I Paint My Masterpiece.flac:4b8fdff256f6d4c4be27f1db7c3a9701
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-02 - It Ain't Me, Babe.flac:c72bc2fedb7dac9529b57d82ff233152
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-03 - The Lonesome Death Of Hattie Carroll.flac:25d4044a10eb9625f06019e0daf531f7
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-04 - Romance In Durango.flac:00c36209e940a0c660343b545a49b502
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-05 - Isis.flac:6d26f7b5c3f88dd90ed651d6818005ff
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-06 - The Water Is Wide.flac:550523e5fb1f0d52d8a38d3cc40c57c0
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-07 - I Dreamed I Saw St. Augustine.flac:d940407b0daf7b4bef3994febfb085ee
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-08 - Never Let Me Go.flac:2f3f85b44bf906ef581b98c18a479762
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\1-09 - I Shall Be Released.flac:24ad24bb67b8a42898d4fb2414bd906f
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-10 - I DonÆt Believe You (She Acts Like We Never Have Met).flac:8784b7cba7e941f3c3d3b96695437864
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-11 - Oh, Sister.flac:a1e9f3889ad14a90d92b3c92d9ecd1ab
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-12 - Hurricane.flac:ef89f5dde129856abf2c2cbde309bfc5
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-13 - One More Cup Of Coffee (Valley Below).flac:e23320e9e3bebfdb1bd23cf2a5083a85
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-14 - (MASTER CUT) Sara.flac:3a082222fb317e3cb596609abda2fc7e
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-15 - Just Like A Woman.flac:369d41bec70c4e61c40570a2e55d41de
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-16 - Knockin' On Heaven's Door.flac:72b57b30d59688c670e965725fd6da62
+1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)\2-17 - This Land Is Your Land.flac:923c44269a355c8e3a6bd5862f627c03
+===================
+===================
+===================
+=== shntool len for: bd75-11-06-early-f.flacf\1975-11-06 - Springfield, Massachusetts - early (LB-00487, flac)
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.09       48002156 B   -b-   --   ---xx   flac  0.6381  1-01 - When I Paint My Masterpiece.flac
+     5:20.37       56535980 B   -b-   --   ---xx   flac  0.6359  1-02 - It Ain't Me, Babe.flac
+     6:42.28       70977596 B   -b-   --   ---xx   flac  0.6274  1-03 - The Lonesome Death Of Hattie Carroll.flac
+     5:03.47       53560748 B   -b-   --   ---xx   flac  0.6518  1-04 - Romance In Durango.flac
+     6:15.28       66216332 B   -b-   --   ---xx   flac  0.6553  1-05 - Isis.flac
+     3:26.15       36374108 B   -b-   --   ---xx   flac  0.6255  1-06 - The Water Is Wide.flac
+     3:17.20       34797164 B   -b-   --   ---xx   flac  0.6383  1-07 - I Dreamed I Saw St. Augustine.flac
+     4:06.02       43400108 B   -b-   --   ---xx   flac  0.6342  1-08 - Never Let Me Go.flac
+     4:17.54       45460796 B   -b-   --   ---xx   flac  0.6221  1-09 - I Shall Be Released.flac
+     3:47.41       40139804 B   -b-   --   ---xx   flac  0.6267  2-10 - I DonÆt Believe You (She Acts Like We Never Have Met).flac
+     4:27.66       47255228 B   -b-   --   ---xx   flac  0.6597  2-11 - Oh, Sister.flac
+     8:06.74       85903628 B   -b-   --   ---xx   flac  0.6604  2-12 - Hurricane.flac
+     4:12.01       44455148 B   -b-   --   ---xx   flac  0.6553  2-13 - One More Cup Of Coffee (Valley Below).flac
+     1:41.14       17849612 B   -b-   --   ---xx   flac  0.6621  2-14 - (MASTER CUT) Sara.flac
+     4:01.20       42560396 B   -b-   --   ---xx   flac  0.6539  2-15 - Just Like A Woman.flac
+     2:59.18       31619132 B   -b-   --   ---xx   flac  0.6346  2-16 - Knockin' On Heaven's Door.flac
+     3:22.69       35796188 B   -b-   --   ---xx   flac  0.6550  2-17 - This Land Is Your Land.flac
+    75:40.20      800904124 B                            0.6437  (17 files)
+===================
+===================
+===================

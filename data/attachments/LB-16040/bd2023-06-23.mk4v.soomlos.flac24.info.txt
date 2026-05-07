@@ -1,0 +1,61 @@
+Bob Dylan
+Gran Teatre del Liceu
+Barcelona, Spain
+June 23, 2023
+
+01. Watching The River Flow
+02. Most Likely You Go Your Way (And I'll Go Mine)
+03. I Contain Multitudes
+04. False Prophet
+05. When I Paint My Masterpiece
+06. Black Rider
+07. My Own Version Of You
+08. I'll Be Your Baby Tonight
+09. Crossing The Rubicon
+10. To Be Alone With You
+11. Key West (Philosopher Pirate)
+12. Gotta Serve Somebody
+13. I've Made Up My Mind To Give Myself To You
+14. Tweedle Dee And Tweedle Dum
+15. Stella Blue
+16. Mother Of Muses
+17. Goodbye Jimmy Reed
+18. Every Grain Of Sand 	 
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Jerry Pentecost - drums
+Doug Lancio - guitar
+Bob Britt - guitar
+Donnie Herron - steel guitar, mandolin, violin
+Tony Garnier - bass
+
+Comment
+Occasional static noise coming through PA during first four songs. 
+First known live performance of Stella Blue (song by Jerry Garcia / Robert Hunter)
+Band introduction after Gotta Serve Somebody.
+
+Recorded by: soomlos
+schoeps mk4v > nbob actives > sound devices mixpre-3 (24/48)
+sound devices mixpre-3 > usb > pc > poly wav (24/48)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24/48)
+
+ffp
+bd2023-06-23-soomlos-t01.flac:4bc2e9cf94b782f4efd8be2ee7e7dcc0
+bd2023-06-23-soomlos-t02.flac:d3460a2aef3c5955d87dbe5e7bb00640
+bd2023-06-23-soomlos-t03.flac:71a35ab41e823bdb8c4627b9991f7e15
+bd2023-06-23-soomlos-t04.flac:2b34668f54f6829620a4123b964cf9e8
+bd2023-06-23-soomlos-t05.flac:32666c04ac3658e47af0d5bd7016b430
+bd2023-06-23-soomlos-t06.flac:1a281f2e2cf269e9de1b2066a6998714
+bd2023-06-23-soomlos-t07.flac:7d83d4326320dbdaed587e9de468418b
+bd2023-06-23-soomlos-t08.flac:90203c681c120d1c3699a75a000e7ffa
+bd2023-06-23-soomlos-t09.flac:526e17626078d2e2eedeb7e73bb78cec
+bd2023-06-23-soomlos-t10.flac:2ff66267dd1073d7d243fc2ae6397d6b
+bd2023-06-23-soomlos-t11.flac:1af1ff2a8fd7f4a328182eb426311f32
+bd2023-06-23-soomlos-t12.flac:dcffaa9ffdb84bd20f9150692c7f10a1
+bd2023-06-23-soomlos-t13.flac:fe0797330154b79673d81365227aa77f
+bd2023-06-23-soomlos-t14.flac:e5b64a1422ce24103d138af7d41a1930
+bd2023-06-23-soomlos-t15.flac:40c72edb601db9b88c85a85045185acc
+bd2023-06-23-soomlos-t16.flac:4bd98839c5e3d16f70111c7719316980
+bd2023-06-23-soomlos-t17.flac:4711c6040f7a1d997266d812583323f3
+bd2023-06-23-soomlos-t18.flac:03c5bb3632ea3c21c1a74e6a629d60fe

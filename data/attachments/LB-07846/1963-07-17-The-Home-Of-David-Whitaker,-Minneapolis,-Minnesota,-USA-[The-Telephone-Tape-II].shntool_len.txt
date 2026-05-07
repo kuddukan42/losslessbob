@@ -1,0 +1,11 @@
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.40        9266924 B   ---   --   ---xx   flac  0.5788  03 Girl from The North Country.flac
+     0:20.49        3643292 B   ---   --   ---xx   flac  0.5692  04 Boots of Spanish Leather.flac
+     1:10.39       12439772 B   ---   --   ---xx   flac  0.5776  05 Eternal circle.flac
+     0:58.48       10344140 B   ---   --   ---xx   flac  0.5919  07 Intrumental jam.flac
+     1:25.35       15076364 B   ---   --   ---xx   flac  0.5649  09 Hero blues.flac
+     0:25.21        4459436 B   ---   --   ---xx   flac  0.5755  15 Ballad of Hollis Brown.flac
+     5:13.07       55229928 B                            0.5763  (6 files)

@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-30-ma.flacf 
+=================== 
+=================== 
+=================== 
+28c732c0ecb82141c6482e79388ab0b5  4-30-06 disc101.flac
+e0d957d78d3ce4e8f8c4d95801f27c4c  4-30-06 disc102.flac
+71ecc691be535591e20c126c67fd71b0  4-30-06 disc103.flac
+e37d3c0dac5aaa62dd90365ecd3cdec3  4-30-06 disc104.flac
+55ab27f66667dde0268fd5df42744268  4-30-06 disc105.flac
+d5000f09710bb09ec98c5af9e9802825  4-30-06 disc106.flac
+00087574f3dae3c1bf18c3ed2af8c92d  4-30-06 disc107.flac
+2eef9d13544012863e8d9b64df7c9c74  4-30-06 disc108.flac
+a3cb3e1bff7bdd5a682baf8ce5f52b8f  4-30-06 disc109.flac
+57dfba42a571b947031f2e839693009a  4-30-06 disc201.flac
+6f926c299d556b67d4985449f341bd6d  4-30-06 disc202.flac
+d24b6006d01ec3799eafc8db748d6926  4-30-06 disc203.flac
+94a1e2d1eeafbe791bf78ffa1cdec1dc  4-30-06 disc204.flac
+b30c8cfeae5c513e3a11fb8e3c56dc94  4-30-06 disc205.flac
+e5632288e8beb3c94deb9f1a5ec43f60  4-30-06 disc206.flac
+690990d9b92597c90c1754935b5fe861  4-30-06 disc207.flac
+713788df1c91320ff8c8f7464dfa32a7  bd06-04-30-ma-LB-3808.txt
+49bd7da617d331de2cdf4eff48131887  bob dylan 4-30-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-30-ma.flacf 
+=================== 
+=================== 
+=================== 
+4-30-06 disc101.flac:b0b80bff879e1b104943520be99190a9
+4-30-06 disc102.flac:5efd4252faf3ddf9fa314c94815a5293
+4-30-06 disc103.flac:66e2ad2cacad00e3affb15ebbc72105c
+4-30-06 disc104.flac:8145eff5c585513eadf2a8166fff9e9e
+4-30-06 disc105.flac:c586120a28e412dad7190ad620d6812d
+4-30-06 disc106.flac:5b49bcee5a6667ad3320c8a57dc28a78
+4-30-06 disc107.flac:df24da632e9edcb029e744a20e733f77
+4-30-06 disc108.flac:c379f6867ad2df1a2ab3697c49baaaad
+4-30-06 disc109.flac:9ad86ae842d6eeb727f012d563764b96
+4-30-06 disc201.flac:cb756968b0406f095d5a8950fdefc67a
+4-30-06 disc202.flac:996bd527692fd3831783fe73dc01d367
+4-30-06 disc203.flac:88836e3771a572e245931a10702a9482
+4-30-06 disc204.flac:85afa36fa8efef55c6292dbf39ed7aec
+4-30-06 disc205.flac:f3ddc901b932b02165dd926a756b122d
+4-30-06 disc206.flac:273bdc0c14e91693302ee241d0b387e0
+4-30-06 disc207.flac:c1f2c6d1a1fb1daa509d439c8ed63d12
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-30-ma.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.07       13775708 B   ---   --   ---xx   flac  0.3917  4-30-06 disc101.flac
+     4:57.25       52449644 B   ---   --   ---xx   flac  0.5548  4-30-06 disc102.flac
+     6:21.08       67227260 B   ---   --   ---xx   flac  0.5714  4-30-06 disc103.flac
+     5:38.49       59738492 B   ---   --   ---xx   flac  0.5343  4-30-06 disc104.flac
+     6:37.49       70146092 B   ---   --   ---xx   flac  0.5508  4-30-06 disc105.flac
+     6:53.63       73001420 B   ---   --   ---xx   flac  0.5405  4-30-06 disc106.flac
+     7:45.16       82063676 B   ---   --   ---xx   flac  0.5706  4-30-06 disc107.flac
+     8:37.71       91365836 B   ---   --   ---xx   flac  0.5048  4-30-06 disc108.flac
+     7:50.53       83032700 B   ---   --   ---xx   flac  0.5644  4-30-06 disc109.flac
+    10:10.28      107669900 B   ---   --   ---xx   flac  0.4806  4-30-06 disc201.flac
+     6:51.45       72606284 B   ---   --   ---xx   flac  0.5231  4-30-06 disc202.flac
+     5:58.47       63261788 B   ---   --   ---xx   flac  0.4715  4-30-06 disc203.flac
+     7:28.42       79126028 B   ---   --   ---xx   flac  0.5528  4-30-06 disc204.flac
+     3:07.47       33097388 B   ---   --   ---xx   flac  0.3908  4-30-06 disc205.flac
+     6:33.18       69367580 B   ---   --   ---xx   flac  0.5557  4-30-06 disc206.flac
+     6:06.63       64710620 B   ---   --   ---xx   flac  0.5422  4-30-06 disc207.flac
+   102:17.31     1082640416 B                            0.5289  (16 files)
+=================== 
+=================== 
+=================== 

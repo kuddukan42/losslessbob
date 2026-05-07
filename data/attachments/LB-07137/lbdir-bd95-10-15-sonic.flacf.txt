@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-15-sonic.flacf 
+=================== 
+=================== 
+=================== 
+3467dfa8ca87628d622b457f4a4707fe  Bob Dylan 1995-10-15 Thibodaux, La Flac16FFP.ffp
+5eb9dbd5f79a01fbb9f4c79fcea1a071  Dylan 1995-10-15 Thibodaux.txt
+7a5c7f7c9c9ddefccf59f17abae1ab82  Dylan1995-10-15d1t01.flac
+8dff49d234055ea95f1ba0a6add06db5  Dylan1995-10-15d1t02.flac
+c66ea293bd78bd64534379a2c0365a19  Dylan1995-10-15d1t03.flac
+809ab69b01911f22d896575a76f11a46  Dylan1995-10-15d1t04.flac
+087a1c4a6d87e72c0d843ab42e5ecf11  Dylan1995-10-15d1t05.flac
+bf0272ca9be83c77a53c5d832eb52bbd  Dylan1995-10-15d1t06.flac
+3785f083ec58303e25fcbf50c0ec13bf  Dylan1995-10-15d1t07.flac
+e79695f6a74f3bb66129bcdaa25dedd0  Dylan1995-10-15d1t08.flac
+5a3162f6adb005a7600045dc7c4e8bb9  Dylan1995-10-15d1t09.flac
+663f07c27e15b80934a581c9c9e35e85  Dylan1995-10-15d2t01.flac
+86303a3492e08c9ce8e602a3256c0e19  Dylan1995-10-15d2t02.flac
+e3ceabdef23ccb33a615559397835dd5  Dylan1995-10-15d2t03.flac
+78084e9d1b7edddbe3c6eee586680bae  Dylan1995-10-15d2t04.flac
+4afeb1e68e2b12af1c6380767f7f7b62  Dylan1995-10-15d2t05.flac
+cb8b74f2c8d8aaf9a6a842295f9f01b0  Dylan1995-10-15d2t06.flac
+98fd6cf35c243041cfa9cc306d0c12cb  Dylan1995-10-15d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-15-sonic.flacf 
+=================== 
+=================== 
+=================== 
+Dylan1995-10-15d1t01.flac:cf76211daa65ebd26f3545ab2f21e9fd
+Dylan1995-10-15d1t02.flac:6bc1c82d8a6ece878b9287e44f3ef5d2
+Dylan1995-10-15d1t03.flac:fe3cfa41b688e21b3040d722f0fc0b49
+Dylan1995-10-15d1t04.flac:d06c35160de4b1a72ccec0d08289e7d0
+Dylan1995-10-15d1t05.flac:8063e81df5ceffecd46aa81895fe8780
+Dylan1995-10-15d1t06.flac:417194752281e8540989861d7a45d786
+Dylan1995-10-15d1t07.flac:cf91351d2431df92fffa2b9e4b47c6c6
+Dylan1995-10-15d1t08.flac:5571e9a088c29af1658763e69a545db3
+Dylan1995-10-15d1t09.flac:0ff3dc9fc6c3e06d1ef79d1af6e7b24a
+Dylan1995-10-15d2t01.flac:39bf87a8cb0f26b91c98e738ea008cdf
+Dylan1995-10-15d2t02.flac:6dce4ab73334aba41522cbbe2f042608
+Dylan1995-10-15d2t03.flac:e431f33d11d8a2e1d3b7e3973aae4eb1
+Dylan1995-10-15d2t04.flac:1b76781693f5caaab77ca457a7310f95
+Dylan1995-10-15d2t05.flac:1a8d35e8fc7feeec7b4f3d830338cd67
+Dylan1995-10-15d2t06.flac:075493618eb3f7f2a20b3029b989c290
+Dylan1995-10-15d2t07.flac:c96196e667e962f910760b0e10547ebd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-15-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.29       61455452 B   ---   --   ---xx   flac  0.5365  Dylan1995-10-15d1t01.flac
+     7:49.40       82825724 B   ---   --   ---xx   flac  0.4868  Dylan1995-10-15d1t02.flac
+     7:27.74       79024892 B   ---   --   ---xx   flac  0.5400  Dylan1995-10-15d1t03.flac
+    10:00.29      105908252 B   ---   --   ---xx   flac  0.4892  Dylan1995-10-15d1t04.flac
+     6:25.53       68038700 B   ---   --   ---xx   flac  0.4615  Dylan1995-10-15d1t05.flac
+     8:00.20       84719084 B   ---   --   ---xx   flac  0.5399  Dylan1995-10-15d1t06.flac
+    10:12.65      108109724 B   ---   --   ---xx   flac  0.4362  Dylan1995-10-15d1t07.flac
+     6:43.71       71256236 B   ---   --   ---xx   flac  0.3947  Dylan1995-10-15d1t08.flac
+     7:14.61       76701116 B   ---   --   ---xx   flac  0.4562  Dylan1995-10-15d1t09.flac
+     8:10.34       86516012 B   ---   --   ---xx   flac  0.5542  Dylan1995-10-15d2t01.flac
+     8:33.63       90641420 B   ---   --   ---xx   flac  0.4831  Dylan1995-10-15d2t02.flac
+     9:38.53      102083900 B   ---   --   ---xx   flac  0.5088  Dylan1995-10-15d2t03.flac
+     7:49.34       82811612 B   ---   --   ---xx   flac  0.5179  Dylan1995-10-15d2t04.flac
+     0:43.24        7641692 B   ---   --   ---xx   flac  0.4083  Dylan1995-10-15d2t05.flac
+     8:58.18       94945580 B   ---   --   ---xx   flac  0.4353  Dylan1995-10-15d2t06.flac
+     6:48.39       72062972 B   ---   --   ---xx   flac  0.4938  Dylan1995-10-15d2t07.flac
+   120:26.32     1274742368 B                            0.4878  (16 files)
+=================== 
+=================== 
+=================== 

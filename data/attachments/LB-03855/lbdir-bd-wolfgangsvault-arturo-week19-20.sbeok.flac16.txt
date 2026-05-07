@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-wolfgangsvault-arturo-week19-20.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+33631b5ef589538b64c8e78d68a84a12  01 1974-01-14harvest.flac
+100ac64311f142fb793153230468607a  02 1974-01-14isbr.flac
+a4e283792f5ac3adc0dedfe6c73be78c  03 1974-02-13-mostlikely.flac
+c4dcf6e883d2bb83302974048e91d3a7  04 1974-02-14-creek.flac
+3daa2555de848ad4e5797ddba4441cc4  05 1975-03-23helpless.flac
+c8ee44ce5fa24ae421c323d644f26cfe  06 1975-10-31hank.flac
+ec57eadd02b338c623295a9d1b5b834c  07 1975-10-31-jack-ramblin.flac
+a7e5b7af443d2e39b112a414d1fdcdb0  08 1975-11-02-baez-hill.flac
+f7971a83baf495afb14c0160d7346f2e  09 1975-11-11werewolves.flac
+4a6b00a2f9f15b08a38b6b678b01f6e3  10 1975-12-04bayblues.flac
+8a85a1a70f05fad67f3ff7504f2b44a5  11 1975-12-08-mars.flac
+2698ed423767ed561b7fa5e229ff252a  12 1976-11-25-charles.flac
+9c7e52fb4e24e6409dba9233f1406a1b  13 1976-11-25fy.flac
+0258e5ab6144a47f860e39539744f2fe  14 1968-04-19-hardrain-staples.flac
+bd1bf8ecc8d9cf71e79303716a60cfb1  15 1970-01-04-byrds-mtm.flac
+53433dbadf10cea232683bf36ddb351c  16 1987-10-15-jgb-forever.flac
+9bc83622c6a3295d73485dfe5556f661  17 2006-02-11npr.flac
+f4839ecd2de1812026f32353a2dab41e  20xWVR.pdf
+1c9431401a19d83afcce0723640b2b79  artwork_300dpi_vrw20.jpg
+95c5e8af55688dee7c261f75e26f17b8  bd-wolfgangsvault-arturo-week19-20-LB-3855.txt
+9b645b9ee03efe493b518178d12fdd4c  bill_sagan.jpg
+4ad895afdf23789111d003168b3ca10c  wvr_wks19-20_info.txt
+404ae96c573c4b0f3a7887bae43e6e77  wvradio.weeks19_20.sbeok.flac16.ffp
+396727f09777139ae83a107101701fa5  wvradio.weeks19_20.sbeok.flac16.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-wolfgangsvault-arturo-week19-20.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+01 1974-01-14harvest.flac:fab673f50d30b746404491d8c7660382
+02 1974-01-14isbr.flac:12e168ad5167e329846ba620b4ab7b8d
+03 1974-02-13-mostlikely.flac:c48e85c5018ae4f701ab9752d9c191e9
+04 1974-02-14-creek.flac:f8539e27bf6c11fa3502b03d23602ab1
+05 1975-03-23helpless.flac:f5b4d0433ab0e19df2266a822079775f
+06 1975-10-31hank.flac:4340b0fd793aa7fa600f7063c9263811
+07 1975-10-31-jack-ramblin.flac:696b204b52b3dd58e2ee29e095c07add
+08 1975-11-02-baez-hill.flac:6b294238529eaadda78a202978b88e5d
+09 1975-11-11werewolves.flac:b402ef6577d2651f4a8f4a39b05c7e24
+10 1975-12-04bayblues.flac:8fd0a3c6bb1091d419480426e5a1791e
+11 1975-12-08-mars.flac:d51e94aa2156da246b26b50a83385397
+12 1976-11-25-charles.flac:b2f450e872ca5b7c2f387fa18981f90b
+13 1976-11-25fy.flac:456006ee12a7cfb57b6d95301d0720be
+14 1968-04-19-hardrain-staples.flac:8120ee8318c1e28057193b27d4089b10
+15 1970-01-04-byrds-mtm.flac:d080d7b06a6c935c68bd8c81d5595837
+16 1987-10-15-jgb-forever.flac:f78b9197befa9202b218457480dcf7eb
+17 2006-02-11npr.flac:ecae19e27d3347db725802c1d8d2d0de
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-wolfgangsvault-arturo-week19-20.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:25.49       36277292 B   ---   --   ---xx   flac  0.6359  01 1974-01-14harvest.flac
+     3:36.11       38128316 B   ---   --   ---xx   flac  0.5911  02 1974-01-14isbr.flac
+     4:02.39       42780572 B   ---   --   ---xx   flac  0.5894  03 1974-02-13-mostlikely.flac
+     4:11.20       44323484 B   ---   --   ---xx   flac  0.6969  04 1974-02-14-creek.flac
+     4:16.54       45285452 B   ---   --   ---xx   flac  0.6256  05 1975-03-23helpless.flac
+     3:44.17       39553628 B   ---   --   ---xx   flac  0.6634  06 1975-10-31hank.flac
+     4:29.58       47588060 B   ---   --   ---xx   flac  0.6389  07 1975-10-31-jack-ramblin.flac
+     2:40.24       28280492 B   ---   --   ---xx   flac  0.6227  08 1975-11-02-baez-hill.flac
+     5:03.64       53599772 B   ---   --   ---xx   flac  0.6430  09 1975-11-11werewolves.flac
+     3:34.06       37763756 B   ---   --   ---xx   flac  0.6275  10 1975-12-04bayblues.flac
+     4:08.65       43900124 B   ---   --   ---xx   flac  0.6503  11 1975-12-08-mars.flac
+     2:56.59       31185212 B   ---   --   ---xx   flac  0.6153  12 1976-11-25-charles.flac
+     5:51.59       62055212 B   ---   --   ---xx   flac  0.5897  13 1976-11-25fy.flac
+     6:02.45       63962684 B   ---   --   ---xx   flac  0.5008  14 1968-04-19-hardrain-staples.flac
+     2:07.39       22494572 B   ---   --   ---xx   flac  0.5048  15 1970-01-04-byrds-mtm.flac
+     9:38.39      102050972 B   ---   --   ---xx   flac  0.5870  16 1987-10-15-jgb-forever.flac
+     9:40.42      102410828 B   ---   --   ---xx   flac  0.3968  17 2006-02-11npr.flac
+    79:31.15      841640428 B                            0.5831  (17 files)
+=================== 
+=================== 
+=================== 

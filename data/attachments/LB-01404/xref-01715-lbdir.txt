@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd97-04-18-reworked.shnf
+===================
+===================
+===================
+7ca37d1b0c3baba31b69875161675f9c *bd-1997-04-18-albany-AUD.txt
+abb4174748a07d5df39ec28614e6d2d7 *bd_97-04-18_cd1_Track 01-stripped.shn
+df4e705ab3774211acc0dc505f5a88a0 *bd_97-04-18_cd1_Track 02-stripped.shn
+95cc47393bc1534fa7daccf29b8ff8dc *bd_97-04-18_cd1_Track 03-stripped.shn
+5f611233857440303cb331e3cdd3953c *bd_97-04-18_cd1_Track 04-stripped.shn
+c12988a93588d1eb2d0b113f6911aafb *bd_97-04-18_cd1_Track 05-stripped.shn
+c02477737a421adb2e3b63bb73e0687d *bd_97-04-18_cd1_Track 06-stripped.shn
+96a7af31122910ba23b067acbd09e427 *bd_97-04-18_cd1_Track 07-stripped.shn
+548482a25f7959ff1eb3df80ccd7e586 *bd_97-04-18_cd1_Track 08-stripped.shn
+505dd177daabae0d3f0156995aca909b *bd_97-04-18_cd1_Track 09-stripped.shn
+dc2359666c815803567ab9f641219900 *bd_97-04-18_cd2_Track 01-stripped.shn
+48102d3ec4893132badbc81b10186462 *bd_97-04-18_cd2_Track 02-stripped.shn
+4ef022a20d3f69296d5268b17784d461 *bd_97-04-18_cd2_Track 03-stripped.shn
+52a1ebf5ee304d15f5e33ce72b881e2b *bd_97-04-18_cd2_Track 04-stripped.shn
+dd81a06f09e2916baf6c5c0c0bb0c06f *bd_97-04-18_cd2_Track 05-stripped.shn
+65b97ba5b51d8396425f6c384a104d8f *bd_97-04-18_cd2_Track 06-stripped.shn
+fe0ab3d59ab4a0a7269c4cf44d7fd8d8 *bd_97-04-18_cd2_Track 07-stripped.shn
+799ea3e456fca913079a1c3c2928d926 *bd_97-04-18_cd2_Track 08-stripped.shn
+9cf0ac023219e8d3a929fe7b26fa73cd *bd_97-04-18_cd2_Track 09-stripped.shn
+8b0578dfc9f4de497cab9ea086282fea *Bob Dylan1997-04-18.md5
+74c52f063daced12aa705b5554ff3409 *frequency and spectral views.bmp
+17f4ebac969e895e721152dfc1b35de6 *shntool_len.txt
+===================
+===================
+===================
+=== shntool md5/hash for: bd97-04-18-reworked.shnf
+===================
+===================
+===================
+458ddafd5b5537517338d0aff366aa4e  [shntool]  bd_97-04-18_cd1_Track 01-stripped.shn
+c1da8f1bac12e1ef10bc714848be8b0d  [shntool]  bd_97-04-18_cd1_Track 02-stripped.shn
+6134c4cd9939bfd133fcb5dc58e8e2c7  [shntool]  bd_97-04-18_cd1_Track 03-stripped.shn
+dbc3669d4553f2bb91507b4f0dbdf0d8  [shntool]  bd_97-04-18_cd1_Track 04-stripped.shn
+9be24475506f886fff4e945794c8ef48  [shntool]  bd_97-04-18_cd1_Track 05-stripped.shn
+bb2bc09c0226bdd4944ee38cfc460205  [shntool]  bd_97-04-18_cd1_Track 06-stripped.shn
+a983c04f54b734e7585f292b24c09e2c  [shntool]  bd_97-04-18_cd1_Track 07-stripped.shn
+ecff4a070e0906e3e2931d548d631cb8  [shntool]  bd_97-04-18_cd1_Track 08-stripped.shn
+521cf6a8c4ed20204fef6332611b6bf3  [shntool]  bd_97-04-18_cd1_Track 09-stripped.shn
+d598b7fe3607c7416a0dac03bd5515aa  [shntool]  bd_97-04-18_cd2_Track 01-stripped.shn
+69b165490e0418dfa06553f30d41790a  [shntool]  bd_97-04-18_cd2_Track 02-stripped.shn
+68a7e732bcef382a234ad48743bf3222  [shntool]  bd_97-04-18_cd2_Track 03-stripped.shn
+714fe17e3665900dccb9e1986c5ef560  [shntool]  bd_97-04-18_cd2_Track 04-stripped.shn
+ae013fd599ec7a1d91b1f71854a746dc  [shntool]  bd_97-04-18_cd2_Track 05-stripped.shn
+2fc96d95b7c77a91fb9e0f8415a825dc  [shntool]  bd_97-04-18_cd2_Track 06-stripped.shn
+e7c41dcc9406080d1118883e741aa969  [shntool]  bd_97-04-18_cd2_Track 07-stripped.shn
+59fddce77cb51e3fc25ad49b57d3ab05  [shntool]  bd_97-04-18_cd2_Track 08-stripped.shn
+c3955bdc30976c74b69a171bbf342878  [shntool]  bd_97-04-18_cd2_Track 09-stripped.shn
+===================
+===================
+===================
+=== shntool len for: bd97-04-18-reworked.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.50       43335644 B   ---   --   ---xx    shn  0.5808  bd_97-04-18_cd1_Track 01-stripped.shn
+     6:39.13       70414220 B   ---   --   ---xx    shn  0.5430  bd_97-04-18_cd1_Track 02-stripped.shn
+     7:52.10       83284364 B   ---   --   ---xx    shn  0.5922  bd_97-04-18_cd1_Track 03-stripped.shn
+     4:55.19       52082732 B   ---   --   ---xx    shn  0.5442  bd_97-04-18_cd1_Track 04-stripped.shn
+     7:13.41       76477676 B   ---   --   ---xx    shn  0.5557  bd_97-04-18_cd1_Track 05-stripped.shn
+     8:44.07       92450108 B   ---   --   ---xx    shn  0.5841  bd_97-04-18_cd1_Track 06-stripped.shn
+     7:44.67       82007228 B   ---   --   ---xx    shn  0.5397  bd_97-04-18_cd1_Track 07-stripped.shn
+     7:22.43       78069980 B   ---   --   ---xx    shn  0.4377  bd_97-04-18_cd1_Track 08-stripped.shn
+     6:51.43       72601580 B   ---   --   ---xx    shn  0.4837  bd_97-04-18_cd1_Track 09-stripped.shn
+     0:39.31        6952556 B   ---   --   ---xx    shn  0.3546  bd_97-04-18_cd2_Track 01-stripped.shn
+     7:52.55       83390204 B   ---   --   ---xx    shn  0.5487  bd_97-04-18_cd2_Track 02-stripped.shn
+     1:00.01       10586396 B   ---   --   ---xx    shn  0.4889  bd_97-04-18_cd2_Track 03-stripped.shn
+     8:40.69       91890332 B   ---   --   ---xx    shn  0.4584  bd_97-04-18_cd2_Track 04-stripped.shn
+     7:21.03       77799500 B   ---   --   ---xx    shn  0.5622  bd_97-04-18_cd2_Track 05-stripped.shn
+     3:05.61       32777516 B   ---   --   ---xx    shn  0.4721  bd_97-04-18_cd2_Track 06-stripped.shn
+    10:30.51      111251996 B   ---   --   ---xx    shn  0.5909  bd_97-04-18_cd2_Track 07-stripped.shn
+     9:33.24      101133692 B   ---   --   ---xx    shn  0.5382  bd_97-04-18_cd2_Track 08-stripped.shn
+     5:25.70       57494684 B   ---   --   ---xx    shn  0.6077  bd_97-04-18_cd2_Track 09-stripped.shn
+   115:38.58     1224000408 B                            0.5400  (18 files)
+===================
+===================
+===================

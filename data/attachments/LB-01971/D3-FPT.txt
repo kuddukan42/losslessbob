@@ -1,0 +1,15 @@
+c2d8d7b4666aeb0f408c5bb36b2a57fd  [shntool]  01 I&I D-M D2t7.shn
+e1e6c547c4b07edcb18554f50c6e32e0  [shntool]  02 I&I e I1.shn
+074d9b7e6a44ddffdff2c1081176dc4e  [shntool]  03 I&I O t7.shn
+debebd158f3224489aa19b06e749a430  [shntool]  04 I&I RW (mono) D3t11.shn
+0e74be7b7d7660feb612716ce3678fe4  [shntool]  05 I&I W t14.shn
+a8c1168a8c2795e9d149ab4e0d2a13e1  [shntool]  06 Jokerman D-M D2t1.shn
+623a10193a5ad55ee665ebacd82f875c  [shntool]  07 Jokerman I1.shn
+e941e0be4d2c2eb5185c11648d79844a  [shntool]  08 Jokerman O t1.shn
+e6ec469ec90a90d3204d8b21f37adfcc  [shntool]  09 Jokerman RW (mono) D4t10.shn
+97b9ad5b92211680bdec88448e23ed7b  [shntool]  10 Jokerman W t8.shn
+78d628fe5e3f1a42a5ab9306b8835cfb  [shntool]  11 License D-M D2t4.shn
+06a52323e79508a7d51cc3674a6baa06  [shntool]  12 License I1.shn
+a0c748a5e310c487ee092952f8578d4f  [shntool]  13 License O t4.shn
+d5465d6560c88b0c1bb327446152e6fd  [shntool]  14 License RW (mono) D1t3.shn
+dbf435c865ebbe71b3a2ed67a991ddf6  [shntool]  15 License W t11.shn

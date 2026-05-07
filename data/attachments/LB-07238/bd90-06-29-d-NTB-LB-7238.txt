@@ -1,0 +1,8 @@
+Bob Dylan, 6/29/90, Roskilde, 2CDR
+
+LB-7238, (55min+44min), version "d"; NTB; cassette flip after Don't Think Twice, end of Don't Think Twice cut (@ 1:38 missing), Taper: NET Taper B, Sennheiser MKE-2002 Binaural Microphones >, Uher CR 240 AV >, Master cassette >, Maxell XL II-S 90/Maxell XL II 90 (last track) >, JVC TD-W501 >, iMac Intel Core 2 Duo >, Amadeus II 3.8.7 >, channel balance, tracking >, bias Peak 4.1.4 >, delete marks, DC offset removed (batch processed) >, xACT 1.64 >, FLAC (lvl 6) 0.6039 (20 files), FLAC tags, md5, st5, ffp >, Azureus/Vuze 4.0.0.4/213 >, Dime 2009-02-21 by serge, ***NOT USED***, TangledUpInTorrents 2009-01-27 by mixedup LB-7169 (45min+51min); bittorrent download 02/09; same recording as NTB LB-7169; in comparison this is harsher and 2% slower on d1t9; (did not listen to all of this)
+
+CD 1, 01 Introduction >, Absolutely Sweet Marie 04:12, 02 Ballad of a Thin Man 05:22, 03 Stuck Inside of Mobile with the, Memphis Blues Again 06:07, 04 Queen Jane Approximately 07:37, 05 Masters of War 04:36, 06 Gotta Serve Somebody 05:22, 07 It's Alright, Ma (I'm only Bleeding) 05:59, 08 It's All over now, Baby Blue 06:30, 09 One Too Many Mornings 04:24, 10 Don't Think Twice, It's All Right // 03:50, 54:03, CD 2, 01 Mr. Tambourine Man 06:44, 02 Leopard-Skin Pill-Box Hat 04:06, 03 Political World 03:25, 04 Shooting Star 03:49, 05 All along the Watchtower 03:37, 06 I Shall Be Released 03:54, 07 Like a Rolling Stone 06:11, 08 -audience- 01:29, (encore), 09 Blowin' in the Wind 04:49, 10 Highway 61 Revisited 05:10, 43:20, 2CD 97:23
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

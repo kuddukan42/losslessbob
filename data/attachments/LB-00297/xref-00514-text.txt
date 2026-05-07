@@ -1,0 +1,56 @@
+===================
+===================
+===================
+=== bd1991-08-12 Montevideo.ffp
+===================
+===================
+===================
+bd91-08-12t01.flac:dac50b8600e3516836468ec2045e0a70
+bd91-08-12t02.flac:b0085f1d8a0425a3f19d99a11bc9c55e
+bd91-08-12t03.flac:9d423fd7d87b17f4fb787fe0ffeba85a
+bd91-08-12t04.flac:d94013a92cb30304701781a415b9c3fe
+bd91-08-12t05.flac:89cef67f8ff610bb4af430fd75e60965
+bd91-08-12t06.flac:93315e6e6b8330047801cd04fac48c5f
+bd91-08-12t07.flac:ce6039e7b82b3d1dac0c542fd9be23c8
+bd91-08-12t08.flac:9703d9cba31e7059b2037e4f0f51ce17
+bd91-08-12t09.flac:08b4c8e2028299770535aa358e192f19
+bd91-08-12t10.flac:9c4f93e2bef79f1f0bb63aa0831a6eab
+bd91-08-12t11.flac:6cd82a23a6933094f7c686a458532bf7
+bd91-08-12t12.flac:67269a502564329d38b8f9d37d9ca838
+bd91-08-12t13.flac:2015b0cf3a5f611812f32c2d21b17b2c
+bd91-08-12t14.flac:3e1addb3511d1d0c1512347829308446
+===================
+===================
+===================
+=== bd1991-08-12 Montevideo_WAV.md5
+===================
+===================
+===================
+0425e805098d0ae40799a8db8666e13f *bd91-08-12t01.wav
+8982b4a989542d82f088f397c6a763ba *bd91-08-12t02.wav
+ef15b855279751d207e931c36e8bf99d *bd91-08-12t03.wav
+229ef9801e1cde8965d8a65da6d8fe14 *bd91-08-12t04.wav
+15aa897ea4bd18a107bb0bf6d54b4133 *bd91-08-12t05.wav
+34d8a4bb7c82fdbcc3a8a0a8b8539b8d *bd91-08-12t06.wav
+9d1de5e22f1c177a084f9465408c18c7 *bd91-08-12t07.wav
+0889d5842a044dac795c63b8d9e2a0b4 *bd91-08-12t08.wav
+6a48678a5f940d1110c610eab50c0e8d *bd91-08-12t09.wav
+952a2141324b2bee39b68a46054e82ee *bd91-08-12t10.wav
+b2fc4dcc345de564c78f502dacaac09d *bd91-08-12t11.wav
+a8015d0c07bbac886b077950ac4c90c2 *bd91-08-12t12.wav
+d0cad1cb4873706ed3c097cc658aa23c *bd91-08-12t13.wav
+a76fc7201538144dc4f10533ed7020ff *bd91-08-12t14.wav
+===================
+===================
+===================
+=== bd91-08-12.txt
+===================
+===================
+===================
+Bob Dylan, 8/12/91, Montevideo, 1CDR 70min, incomplete, good sound, distant & muffled; t7 very short
+
+1 When Did You Leave Heaven 2 All Along The Watchtower 3 I'll Remember You 4 Gotta Serve Somebody 5 Wiggle Wiggle 6 I'll Be Your Baby Tonight 7 Boots of Spanish Leather 8 Don't Think Twice, It's All Right (acoustic w band) 9 Leopard Skin Pill Box Hat 10 Everything Is Broken 11 Man in the Long Black Coat 12 Highway 61 Revisited 13 What Good Am I? 14 Ballad Of A Thin Man + talking
+
+===================
+===================
+===================

@@ -1,0 +1,167 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-01-complete 
+=================== 
+=================== 
+=================== 
+547ce1150c01c29287ce6b4606950bc4  bd81-07-01a.txt
+1c9f2f5a1163319e67fcec1813be8744  d1\81 07 01 d1 t01.shn
+6ec0c07d89804584cad6b92bb9bf6011  d1\81 07 01 d1 t02.shn
+833f2f715b86ad1ab7f6f7c21794aa19  d1\81 07 01 d1 t03.shn
+afa56868dc60e95905cfa04279004895  d1\81 07 01 d1 t04.shn
+307c19df7ff7a0f957a53aa5f9c218eb  d1\81 07 01 d1 t05.shn
+f3e83c96d65ed22475eaa689ad1242b1  d1\81 07 01 d1 t06.shn
+7d5a09b68be74da2911483c554537040  d1\81 07 01 d1 t07.shn
+56ea2c1b4cc92fc7e2e0ba207d48ddc1  d1\81 07 01 d1 t08.shn
+57ee407f3cee38a207e28bf40d5b4e11  d1\81 07 01 d1 t09.shn
+d2a5aaf234e75da0bd5576bceb399e8f  d1\81 07 01 d1 t10.shn
+ef526aeedd98d9571dcf74252fca1120  d1\81 07 01 d1 t11.shn
+0421924142f2ee37ee12ff550d9cfd94  d1\81 07 01 d1 t12.shn
+bbffd4b706b12d5e9f754c3d592162e8  d1\81 07 01 d1 t13.shn
+edbd77fbdbf1515aaefbe36c59abcb84  d1\81 07 01 d1 t14.shn
+62b4ab618caeeef9168c854d92f1fe96  d1\81 07 01 d1 t15.shn
+ea06401b65263b8ad06194f6e91334d1  d1\81 07 01 d1 t16.shn
+fbe834c0749f26bcaa6951935449ea94  d1\81 07 01 d1 t17.shn
+b7a632c219d884bf6bf3fbc05e62c2d5  d1\81 07 01 d1.md5
+17e6f0ac888d47ad0f7b0d165dc82617  d1\WS_FTP.LOG
+3b8eeb6ce7f1a0593f7228b32a226a54  d2\81 07 01 d2 t01.shn
+a66ef21de61ca13d57dd8fb8e536fc7c  d2\81 07 01 d2 t02.shn
+8fb629ffdfdcaa7a870c122661c61044  d2\81 07 01 d2 t03.shn
+57bde24a935c35ba73ab6e2f32f852f9  d2\81 07 01 d2 t04.shn
+a11bd2ebd0907de5dceb07d83818acde  d2\81 07 01 d2 t05.shn
+2260d5a769a9b47daeff7ab0564cbea0  d2\81 07 01 d2 t06.shn
+cde790208cdd337f568926920c88dc96  d2\81 07 01 d2 t07.shn
+2f57071e86dcb3158caaa925d5cb9393  d2\81 07 01 d2 t08.shn
+b74afe5bf30550c9a45814065817b20d  d2\81 07 01 d2 t09.shn
+365f1fa94a20e7dd4cee0eb4bf307220  d2\81 07 01 d2 t10.shn
+91653432d70a6737c2351d6ac93a9d3f  d2\81 07 01 d2 t11.shn
+3a60795c6cc50101e96dff9355e7b3c7  d2\81 07 01 d2 t12.shn
+bf21923b2dddaf792004215b3d70ccdb  d2\81 07 01 d2 t13.shn
+5e57881d2c6d3e1999bb02efff6717ed  d2\81 07 01 d2 t14.shn
+9be092a45d638894027b2dbb383da245  d2\81 07 01 d2 t15.shn
+ba3ff071a0fd5bd6d9f9c56261f7da48  d2\81 07 01 d2.md5
+f820d69d789d1e7b73a5f592f0c8b059  Track05.shn
+d991a25e60578fa01021c9396165bc4c  Track09.shn
+5ef838f5cb6870d505588931b6967984  Track12.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd81-07-01-complete\d1 
+=================== 
+=================== 
+=================== 
+cdd7774ae85d91440877ed72a97e1ee7  [shntool]  81_07_01_d1_t01.wav
+cab4d94879677c2f3f70a15392a1d8c3  [shntool]  81_07_01_d1_t02.wav
+e26505fd5a15f77fbc4457452939af06  [shntool]  81_07_01_d1_t03.wav
+570d380559e3fd2b7d226efd4dd0f3d1  [shntool]  81_07_01_d1_t04.wav
+3e4c9c307832594dfe42d5371e819893  [shntool]  81_07_01_d1_t05.wav
+439d8556c6b4ba7a865d374df58f9e53  [shntool]  81_07_01_d1_t06.wav
+03a1ee51544574e6d5bb673a8dcbe393  [shntool]  81_07_01_d1_t07.wav
+f832ac2f415f57f713420fb25a7d72f1  [shntool]  81_07_01_d1_t08.wav
+74cda792bc0da800e31dcd8006be04ec  [shntool]  81_07_01_d1_t09.wav
+30dc07084b393b4e8f42e1f3722ad162  [shntool]  81_07_01_d1_t10.wav
+6907df10d5d2f40fc22dfbee809e9e24  [shntool]  81_07_01_d1_t11.wav
+dc5a95d36969a472c0f30948e2bff04d  [shntool]  81_07_01_d1_t12.wav
+9734c8b6ee0d7f4ddaf0533a4fd03792  [shntool]  81_07_01_d1_t13.wav
+c4535741d72226d227190db9f72af48b  [shntool]  81_07_01_d1_t14.wav
+1614b15188c58d2b7e46e24dc613c6d7  [shntool]  81_07_01_d1_t15.wav
+70911d6ff8a857c7ce1f2f20a76e13b9  [shntool]  81_07_01_d1_t16.wav
+ee896596407804bd78e139b37671a71d  [shntool]  81_07_01_d1_t17.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd81-07-01-complete\d2 
+=================== 
+=================== 
+=================== 
+eb1b705c211db955fe09d161472ec26a  [shntool]  81_07_01_d2_t01.wav
+b92f3ac93feff49ab15049c9b8723bc5  [shntool]  81_07_01_d2_t02.wav
+700dd4295e75ae37f1c9a2b2e8c5dfde  [shntool]  81_07_01_d2_t03.wav
+180bcb614445c206c05e64a9c131810f  [shntool]  81_07_01_d2_t04.wav
+8703ae5199d93e425652401a035964dd  [shntool]  81_07_01_d2_t05.wav
+c4fb74509e4f12ec9bf9287ca4c1c3b9  [shntool]  81_07_01_d2_t06.wav
+cbdf142a52a36b381fe78207f2eef14c  [shntool]  81_07_01_d2_t07.wav
+67a4257c9545344281b4fd038171d6c4  [shntool]  81_07_01_d2_t08.wav
+210f986b69d5e77ed82f8c92a5ec2bd6  [shntool]  81_07_01_d2_t09.wav
+cdef1c2efc3ad45adcfa4717674176d1  [shntool]  81_07_01_d2_t10.wav
+05a6f3887c327c19a91588167e902b58  [shntool]  81_07_01_d2_t11.wav
+2237c8ec7e9bb842e4f1bf3c4d6d8a71  [shntool]  81_07_01_d2_t12.wav
+fd600cd980de9fef1710f9b82c5bf7f3  [shntool]  81_07_01_d2_t13.wav
+40377f407d5747b93aee9a013fed7357  [shntool]  81_07_01_d2_t14.wav
+bb8ba8cce76015e134f4e436309efd17  [shntool]  81_07_01_d2_t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd81-07-01-complete\ 
+=================== 
+=================== 
+=================== 
+668a43041f2670b7311f27a6d2346e46  [shntool]  Track05.wav
+82c2d3f2ce65094f66c8760f24d1c341  [shntool]  Track09.wav
+8c36f5ca1dae32e3801ccdb8ba6d582e  [shntool]  Track12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-01-complete\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:13.60       44770364 B   ---   --   ---xx    shn  0.6955  81 07 01 d1 t01.shn
+     4:57.33       52468460 B   ---   --   ---xx    shn  0.6711  81 07 01 d1 t02.shn
+     5:57.34       63054812 B   ---   --   ---xx    shn  0.7209  81 07 01 d1 t03.shn
+     3:44.53       39638300 B   ---   --   ---xx    shn  0.6393  81 07 01 d1 t04.shn
+     4:47.09       50648012 B   ---   --   ---xx    shn  0.6820  81 07 01 d1 t05.shn
+     4:10.70       44264684 B   ---   --   ---xx    shn  0.6971  81 07 01 d1 t06.shn
+     1:24.31       14890556 B   ---   --   ---xx    shn  0.6535  81 07 01 d1 t07.shn
+     4:14.57       44939708 B   ---   --   ---xx    shn  0.6665  81 07 01 d1 t08.shn
+     4:56.37       52301468 B   ---   --   ---xx    shn  0.7105  81 07 01 d1 t09.shn
+     4:46.09       50471612 B   ---   --   ---xx    shn  0.6854  81 07 01 d1 t10.shn
+     3:21.31       35529356 B   ---   --   ---xx    shn  0.6936  81 07 01 d1 t11.shn
+     4:41.51       49688396 B   ---   --   ---xx    shn  0.7074  81 07 01 d1 t12.shn
+     5:09.07       54524108 B   ---   --   ---xx    shn  0.6524  81 07 01 d1 t13.shn
+     3:44.13       39544220 B   ---   --   ---xx    shn  0.6565  81 07 01 d1 t14.shn
+     5:24.50       57271244 B   ---   --   ---xx    shn  0.6926  81 07 01 d1 t15.shn
+     4:14.55       44935004 B   ---   --   ---xx    shn  0.6410  81 07 01 d1 t16.shn
+     4:52.60       51649964 B   ---   --   ---xx    shn  0.7217  81 07 01 d1 t17.shn
+    74:41.60      790590268 B                            0.6844  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-01-complete\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:07.66        1390076 B   ---   --   ---xx    shn  0.6608  81 07 01 d2 t01.shn
+     5:22.05       56812604 B   ---   --   ---xx    shn  0.7215  81 07 01 d2 t02.shn
+     4:16.26       45219596 B   ---   --   ---xx    shn  0.7058  81 07 01 d2 t03.shn
+     4:16.65       45311324 B   ---   --   ---xx    shn  0.6804  81 07 01 d2 t04.shn
+     2:41.10       28423964 B   ---   --   ---xx    shn  0.6484  81 07 01 d2 t05.shn
+     3:13.54       34172252 B   ---   --   ---xx    shn  0.6922  81 07 01 d2 t06.shn
+     4:28.22       47326988 B   ---   --   ---xx    shn  0.6789  81 07 01 d2 t07.shn
+     4:52.17       51548828 B   ---   --   ---xx    shn  0.6614  81 07 01 d2 t08.shn
+     4:33.16       48194876 B   ---   --   ---xx    shn  0.7096  81 07 01 d2 t09.shn
+     4:56.01       52216796 B   ---   --   ---xx    shn  0.7127  81 07 01 d2 t10.shn
+    11:26.71      121177436 B   ---   --   ---xx    shn  0.6770  81 07 01 d2 t11.shn
+     0:14.54        2596652 B   ---   --   ---xx    shn  0.6309  81 07 01 d2 t12.shn
+     4:59.14       52776572 B   ---   --   ---xx    shn  0.7139  81 07 01 d2 t13.shn
+     6:07.34       64818812 B   ---   --   ---xx    shn  0.6904  81 07 01 d2 t14.shn
+     6:01.47       63790988 B   ---   --   ---xx    shn  0.7060  81 07 01 d2 t15.shn
+    67:37.52      715777764 B                            0.6923  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-01-complete\ 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.57       35590508 B   ---   --   ---xx    shn  0.6244  Track05.shn
+    10:33.33      111738860 B   ---   --   ---xx    shn  0.6226  Track09.shn
+     8:00.29       84740252 B   ---   --   ---xx    shn  0.7145  Track12.shn
+    21:55.44      232069620 B                            0.6565  (3 files)
+=================== 
+=================== 
+=================== 

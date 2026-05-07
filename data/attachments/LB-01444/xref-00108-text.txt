@@ -1,0 +1,91 @@
+===================
+===================
+===================
+=== 2000-09-16 Aberdeen.txt
+===================
+===================
+===================
+
+Bob Dylan
+
+2000/09/16 Aberdeen; 
+Scotland  Aberdeen Exhibition & Conference Centre 
+Capacity: 7,500) 
+
+ 
+	 
+  
+Disk 1
+Announcement
+Hallelujah, I'm Ready To Go (acoustic)
+The Times They Are A-Changin' (acoustic)
+Desolation Row (acoustic)
+Boots Of Spanish Leather (acoustic)
+Tangled Up In Blue (acoustic) (Bob on harp)
+Searching For A Soldier's Grave (acoustic)
+Country Pie
+Under The Red Sky
+All Along The Watchtower
+Not Dark yet
+
+Disk 2
+Cold Irons Bound
+Leopard-Skin Pill-Box Hat
+(encore)
+Things Have Changed
+Like A Rolling Stone
+Don't Think Twice, It's All Right (acoustic)
+Highway 61 Revisited
+Blowin' In The Wind (acoustic)
+Cat's In The Well
+Forever Young (acoustic)
+
+	 
+  
+		   
+Musicians: 
+Bob Dylan (electric & acoustic guitar; voc; harp) 
+David Kemper (drums) 
+Larry Campbell (electric & acoustic guitar; pedal steel guitar; electric slide guitar; fiddle; bouzouki, mandolin, voc) 
+Tony Garnier (electric & acoustic bass, standup bass) 
+Charly Sexton (electric & acoustic guitar, voc)	 
+  
+				    
+  
+with additional SoundMastering
+Soundquality: 12+ 
+Technical Info: 
+Neumann SKM140 / Neumann BS48i-2 / SBM1 / Sony TDC-D100
+
+ 	 
+
+===================
+===================
+===================
+=== BD 2000-09-16 Aberdeen.md5
+===================
+===================
+===================
+c9129fb58156b5a717030717db84fb01 *101 Announcement.flac
+417f4f595896186c2483d668e8a06915 *102 Halallujah, I'm Ready To Go.flac
+a568f2ccb931ea3a501e435a188fbe4f *103 The Times They Are A-Changin'.flac
+89be28d188d119686c67c05c88ae8ec0 *104 Desolation Row.flac
+a0f75f1689c05d4ee3862458564595e7 *105 Boots Of Spanish Leather.flac
+c8c9653ebe905e8c5537485dc5b21d43 *106 Tangled Up In Blue.flac
+a3beb081f2daa7c8c5106fac70f01ccc *107 Searching For A Soldier's Grave.flac
+09f70c5284c24313b8e1b383bb9f89f6 *108 Country Pie.flac
+0f51ee5c6a621d565b1f10e01f56ba80 *109 Under The Red Sky.flac
+52542fe465f0bf971ab2754285457a65 *110 All Along The Watchtower.flac
+6d845e1be4921d93c8a754f5a2007a9c *111 Not Dark yet.flac
+4abb6303c6183427b1f767495ca604f7 *201 Cold Irons Bound.flac
+2db9d39ad32c461367a46ccf8d4061e7 *202 Leopard-Skin Pill-Box Hat.flac
+d15452fecb29f2f084c18a972f4bd563 *203 Things Have Changed.flac
+cba7d036c4d7ec23fcc9aa688615a447 *204 Like A Rolling Stone.flac
+5e437425cc4b1dbc72f934147fc4bc1b *205 Don't Think Twice, It's All Right.flac
+a38689f9fe9b4e3aaead1480a0af2cd0 *206 Highway 61 Revisited.flac
+22ff124c1916685c199656efcb51aa19 *207 Blowin' In The Wind.flac
+b653d5f1ef284e0379a60fef9201b5aa *208 Cat's In The Well.flac
+5ef64382bf8125522f372ec8e8acac19 *209 Forever Young.flac
+===================
+===================
+===================

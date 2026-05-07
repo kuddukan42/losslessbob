@@ -1,0 +1,136 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-08-24-UMM.flacf 
+=================== 
+=================== 
+=================== 
+fbf5acc5bc874d97e5d81dc40e14398f  bd06-08-24-UMM-LB-4025.txt
+1146bc5189a140a1b6441cfcf5e82464  bd2006-08-24-UMM-d1\Track01.flac
+9ec384f448c53515faf35cf486d2af36  bd2006-08-24-UMM-d1\Track02.flac
+2455f5120a6614193a469738ab213093  bd2006-08-24-UMM-d1\Track03.flac
+0c0c7c44bf0107739beac69619a15eec  bd2006-08-24-UMM-d1\Track04.flac
+c81c42054aa1d5b4d1b60db5a5d90139  bd2006-08-24-UMM-d1\Track05.flac
+3dfaa584cdef192d6d561ad5fe68c7e2  bd2006-08-24-UMM-d1\Track06.flac
+b66bdb7d74c4ca094e46f160d2ccb641  bd2006-08-24-UMM-d1\Track07.flac
+18790b9822a4b8d17c3364e71e0857f8  bd2006-08-24-UMM-d1\Track08.flac
+4b9ef70683fde2a7cfe224aa89155349  bd2006-08-24-UMM-d1\Track09.flac
+63adbde677f65d879e1834147efd6055  bd2006-08-24-UMM-d1\Track10.flac
+e424592cb10d7e32b39f344bd2a4b70e  bd2006-08-24-UMM-d1\Track11.flac
+1178d9b5ba8e1e75807436d19ce00f63  bd2006-08-24-UMM-d1\Track12.flac
+5f8ae3d3bb729ead48cd20944fbe089a  bd2006-08-24-UMM-d1\Track13.flac
+3c319b0c2d1d9cd53edcd17d524c59fe  bd2006-08-24-UMM-d1\bd2006-08-24-UMM-d1.md5
+a9ac4a5b69c250a6e7349e5031a437e0  bd2006-08-24-UMM-d2\Track01.flac
+8b5a534c5586a736d41ed39af5ed50d1  bd2006-08-24-UMM-d2\Track02.flac
+f22b3670ef63a835f42a4bb2426e0d9c  bd2006-08-24-UMM-d2\Track03.flac
+1edef79b74a85f4fd7f5cace0a07d1a5  bd2006-08-24-UMM-d2\Track04.flac
+68d60171a7d8a48cefdf6fc4785127d2  bd2006-08-24-UMM-d2\Track05.flac
+df9715dada425a2ef2747f3c7ab27a7f  bd2006-08-24-UMM-d2\Track06.flac
+48fa862d7060d9558a9be48606ebe4f8  bd2006-08-24-UMM-d2\Track07.flac
+7af79f6e8e9b9502c4b97b20a462a875  bd2006-08-24-UMM-d2\Track08.flac
+8d23f4c26cea1258f7d8e156a79edd06  bd2006-08-24-UMM-d2\Track09.flac
+559b36c38a3dbb7e4db90180c0a09c20  bd2006-08-24-UMM-d2\Track10.flac
+b2ca450df94669e1bbdab59de337782e  bd2006-08-24-UMM-d2\Track11.flac
+aff1e8d0251a736f731435e1bd2b8ccd  bd2006-08-24-UMM-d2\Track12.flac
+bc1bb5b64ed8b3e6a26ee09d4289b114  bd2006-08-24-UMM-d2\Track13.flac
+62d5307dce7adeca29220ddb6bc26abc  bd2006-08-24-UMM-d2\Track14.flac
+cb0411f0473b21b5c4c7e2846ecea08d  bd2006-08-24-UMM-d2\Track15.flac
+c02d7d4b3b923811b69323dd7f141d1c  bd2006-08-24-UMM-d2\Track16.flac
+844cd3d779393769211f6dba576e9a91  bd2006-08-24-UMM-d2\Track17.flac
+2bcf2c132ab424856983b7d908aeb875  bd2006-08-24-UMM-d2\bd2006-08-24-UMM-d2.md5
+ae33f3fb18d30d2ae49fb9350ec56fc7  bd2006-08-24-UMM.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-08-24-UMM.flacf\bd2006-08-24-UMM-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:d2f5f642053372c693e3a4c94d6c2a05
+Track02.flac:60e70542e5c75880d57af244c0b1d477
+Track03.flac:68522d58991c0bf5101052be8e7c2961
+Track04.flac:e2a138c6c29f3b3354cd423bac65397b
+Track05.flac:43854d853e66cda85af6ed80eac850b0
+Track06.flac:04d3a2bd65fcfd42e6160a17faf89d9c
+Track07.flac:c6a71da30a470e57848b757b078dbc81
+Track08.flac:5effd1a67fa30adcd177aaf25ac29ebc
+Track09.flac:fa5ff5b6495170cc1a7a3c38d13f11b9
+Track10.flac:b57c76aba95bc77309fe73984f2ae3aa
+Track11.flac:4f5efe89337965cb9fd4b4c070130bed
+Track12.flac:fba97ec01ffa618983e3ee7b84119a5d
+Track13.flac:fc1949b61d5ff7d7dbab33f1a91d4b0f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-08-24-UMM.flacf\bd2006-08-24-UMM-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:66a26c83a771bbf91835576258de580b
+Track02.flac:b8e904d32d71d774e3fc6f8c7156ae4d
+Track03.flac:7125489992f11bfa564d58ffccdd3121
+Track04.flac:295a946b19d1d35dd27bb7c683f5aabd
+Track05.flac:b1e62393119cd49e17459a3e1f3cce11
+Track06.flac:7e600c30f183df091aa330647be7c007
+Track07.flac:7302d44709ab4116de860898b0ab63d6
+Track08.flac:cd6cf75ffdb96fd308fc5a1193371a53
+Track09.flac:2e0c131d9518c83eb900ee3d7a192b99
+Track10.flac:5c264170f093a9c29f4ff8ea79e7769c
+Track11.flac:0595b1547aad09f7702158b361b9f274
+Track12.flac:62a677ac18fd094d4e7fe07f1ff6c8c9
+Track13.flac:9ccc37eb38c5df7329f91097a76f01f5
+Track14.flac:0b8d58b814d1594783180761886fc984
+Track15.flac:db8c3c7c6fdd7c762fe082ed667eeca8
+Track16.flac:371003a8f0f82d58faef98004d700fc1
+Track17.flac:bc1abb1272f10b439e72168f48d34dd1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-08-24-UMM.flacf\bd2006-08-24-UMM-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.55       10889804 B   ---   --   ---xx   flac  0.4814  Track01.flac
+     4:40.35       49474364 B   ---   --   ---xx   flac  0.5819  Track02.flac
+     4:38.24       49095692 B   ---   --   ---xx   flac  0.5829  Track03.flac
+     5:27.28       57748700 B   ---   --   ---xx   flac  0.5404  Track04.flac
+     7:30.71       79547036 B   ---   --   ---xx   flac  0.5529  Track05.flac
+     7:26.61       78817916 B   ---   --   ---xx   flac  0.5558  Track06.flac
+     5:16.46       55850636 B   ---   --   ---xx   flac  0.5632  Track07.flac
+     6:23.59       67700012 B   ---   --   ---xx   flac  0.5695  Track08.flac
+     7:35.67       80419628 B   ---   --   ---xx   flac  0.5426  Track09.flac
+     5:40.13       60006620 B   ---   --   ---xx   flac  0.5784  Track10.flac
+     7:37.42       80713628 B   ---   --   ---xx   flac  0.5868  Track11.flac
+     7:25.49       78613292 B   ---   --   ---xx   flac  0.5612  Track12.flac
+     6:28.54       68570252 B   ---   --   ---xx   flac  0.5893  Track13.flac
+    77:14.04      817447580 B                            0.5650  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-08-24-UMM.flacf\bd2006-08-24-UMM-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:51.37       72587468 B   ---   --   ---xx   flac  0.5630  Track01.flac
+     0:33.05        5833004 B   ---   --   ---xx   flac  0.5234  Track02.flac
+     5:23.31       57050156 B   ---   --   ---xx   flac  0.5693  Track03.flac
+     2:09.56       22887356 B   ---   --   ---xx   flac  0.4712  Track04.flac
+     2:51.25       30223244 B   ---   --   ---xx   flac  0.5069  Track05.flac
+     2:41.11       28426316 B   ---   --   ---xx   flac  0.4979  Track06.flac
+     2:47.00       29458844 B   ---   --   ---xx   flac  0.5175  Track07.flac
+     3:31.69       37382732 B   ---   --   ---xx   flac  0.4832  Track08.flac
+     6:14.54       66100652 B   ---   --   ---xx   flac  0.5488  Track09.flac
+     3:04.45       32563484 B   ---   --   ---xx   flac  0.5261  Track10.flac
+     2:15.55       23943404 B   ---   --   ---xx   flac  0.5027  Track11.flac
+     9:50.13      104106620 B   ---   --   ---xx   flac  0.5543  Track12.flac
+     6:35.49       69793292 B   ---   --   ---xx   flac  0.5416  Track13.flac
+     5:30.16       58249676 B   ---   --   ---xx   flac  0.5399  Track14.flac
+     3:42.36       39245516 B   ---   --   ---xx   flac  0.5443  Track15.flac
+     5:42.39       60420572 B   ---   --   ---xx   flac  0.5478  Track16.flac
+     6:57.11       73584716 B   ---   --   ---xx   flac  0.5602  Track17.flac
+    76:42.27      811857052 B                            0.5396  (17 files)
+=================== 
+=================== 
+=================== 

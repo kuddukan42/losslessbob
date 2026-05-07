@@ -1,0 +1,33 @@
+REM DISCID 4A07FE05
+REM COMMENT "ExactAudioCopy v0.95b4"
+PERFORMER "Bob Dylan"
+TITLE "1997-10-28 - Athens - CD2"
+FILE "Bob Dylan - 1997-10-28 - Athens - CD2.flac" WAVE
+  TRACK 01 AUDIO
+    TITLE "Track01"
+    PERFORMER "Bob Dylan"
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Track02"
+    PERFORMER "Bob Dylan"
+    FLAGS DCP
+    INDEX 00 06:27:27
+    INDEX 01 06:30:08
+  TRACK 03 AUDIO
+    TITLE "Track03"
+    PERFORMER "Bob Dylan"
+    FLAGS DCP
+    INDEX 00 16:22:64
+    INDEX 01 16:25:50
+  TRACK 04 AUDIO
+    TITLE "Track04"
+    PERFORMER "Bob Dylan"
+    FLAGS DCP
+    INDEX 00 23:03:59
+    INDEX 01 23:06:50
+  TRACK 05 AUDIO
+    TITLE "Track05"
+    PERFORMER "Bob Dylan"
+    FLAGS DCP
+    INDEX 00 28:31:63
+    INDEX 01 28:33:63

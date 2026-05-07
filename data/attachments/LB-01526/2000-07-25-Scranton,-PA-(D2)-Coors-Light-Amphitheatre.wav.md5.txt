@@ -1,0 +1,16 @@
+; Using hkSFV on 01.29.2004 at 23:37:16
+; http://www.big-o-software.com
+;
+;/----
+;     67420124 23:29.12 2004-01-29 2-01-Things Have Changed.wav
+;     84523868 23:30.34 2004-01-29 2-02-Like A Rolling Stone.wav
+;     68076332 23:31.38 2004-01-29 2-03-My Back Pages.wav
+;     62974844 23:32.32 2004-01-29 2-04-Highway 61 Revisited.wav
+;     73610588 23:33.34 2004-01-29 2-05-Blowin' In The Wind.wav
+;\----
+;
+c8a8f3c6ae7d2ace7dadbd436ec59748 *2-01-Things Have Changed.wav
+60700f046b4c1dc5b0a8d99145fd6426 *2-02-Like A Rolling Stone.wav
+bffbed93b1a90200e4895132985144a5 *2-03-My Back Pages.wav
+4ffd017628c54ca16c2d0e586f2282d6 *2-04-Highway 61 Revisited.wav
+3e719efc73329ee2dd801d38fcf25cb1 *2-05-Blowin' In The Wind.wav

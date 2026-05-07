@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-12-sp 
+=================== 
+=================== 
+=================== 
+870e87efa1a1d3d84dfd2c1692553101  bd05-03-12-sp.txt
+7c7f91236a1dcdfff18cbf7157d74cdf  bd2005-03-12.info.txt
+5de443a1a3a3d18e5d55f142aabc8089  bd2005-03-12.shns.md5
+c80bf25bb6813ad67b5d59669a945850  bd2005-03-12.shntoolfp.txt
+4a5cefa918c370bcd57b331c4b18a949  bd2005-03-12.shntoollength.txt
+8330834d4c2f4dbc809e84c1f8beb0fb  bd2005-03-12.waves.md5
+401542c46a8294e52ea0aef37c00af1f  bd2005-03-12d1t01.shn
+298f2383ce301a99285859d1179cb3c4  bd2005-03-12d1t02.shn
+5cf34dd3188e1785c8037b2271f86f7a  bd2005-03-12d1t03.shn
+04173b885a5cd33ecf24c6be1927d603  bd2005-03-12d1t04.shn
+3f82af10b3f9a13c3acac4690d5e1eda  bd2005-03-12d1t05.shn
+775a57f00bc2e7c9c0d576addb7d7d32  bd2005-03-12d1t06.shn
+aabe769e70707a6a0ac8007f76728722  bd2005-03-12d1t07.shn
+f2d0dba73c85131b89e49602c42ac878  bd2005-03-12d1t08.shn
+6da2c975227a0df73b732de1982e61b5  bd2005-03-12d1t09.shn
+72ba131d6d03fb2d1878a1bddaa1229e  bd2005-03-12d1t10.shn
+5c7ab349d3c48b9012d82e1d68f7c33f  bd2005-03-12d1t11.shn
+1b294249bf4442e8e7ec022fa72d55a2  bd2005-03-12d1t12.shn
+8915c8473b7b5bfe7fa26729499be070  bd2005-03-12d1t13.shn
+7dd3781bfcc763a617e8f5909c48ffa5  bd2005-03-12d2t01.shn
+53936dbfc58fb0eddb538cdfe1a8b7f7  bd2005-03-12d2t02.shn
+d24711ab7ad5b29532df08d526c5e65a  d1.LOG
+3e469a79a7cee5e92c6b3252a1e5abe4  d2.LOG
+f9e88ea749d4dda1cea0304bd46dd9b4  foobar2000_wav2shn_bitcompare.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-03-12-sp 
+=================== 
+=================== 
+=================== 
+6fa4aac98627496ac74c6b2e2f79014c  [shntool]  bd2005-03-12d1t01.wav
+b1b8feebd7aa958c99d6fc8823bdf42e  [shntool]  bd2005-03-12d1t02.wav
+c240a8cbf1f4fab231d387a584d05ed2  [shntool]  bd2005-03-12d1t03.wav
+ed5851f4cc5f62d32123d918eb45112f  [shntool]  bd2005-03-12d1t04.wav
+33de671d5f21129561e931005c5632b6  [shntool]  bd2005-03-12d1t05.wav
+3e54e5f5298469a8f0854c70f6d22fb0  [shntool]  bd2005-03-12d1t06.wav
+1f35bf82439990a61ec984789cd0f0c8  [shntool]  bd2005-03-12d1t07.wav
+9c60fdea9e92f57a4de50365baa1c902  [shntool]  bd2005-03-12d1t08.wav
+90a210e9bc407be5a0b51ed449cd094e  [shntool]  bd2005-03-12d1t09.wav
+d48163ca359369dfd09c92a4cb348e3c  [shntool]  bd2005-03-12d1t10.wav
+1621a25a20349b5dd869975f5b51d425  [shntool]  bd2005-03-12d1t11.wav
+b52e560f7a42f1aad26976fe4d778b94  [shntool]  bd2005-03-12d1t12.wav
+2f5128aeb89f927b6dc1201d6e8e26d2  [shntool]  bd2005-03-12d1t13.wav
+8a40b0b46f20e559ecf31768d67c4578  [shntool]  bd2005-03-12d2t01.wav
+f88192cd2ea63d5412bf4dcb83e6f070  [shntool]  bd2005-03-12d2t02.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-12-sp 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:53.70        9513884 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t01.wav
+     4:54.53       51986300 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t02.wav
+     4:36.47       48796988 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t03.wav
+     6:52.04       72686252 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t04.wav
+     7:57.39       84234572 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t05.wav
+     7:40.01       81146396 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t06.wav
+     5:57.29       63043052 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t07.wav
+     5:29.27       58099148 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t08.wav
+     6:12.28       65686700 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t09.wav
+     5:59.16       63365276 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t10.wav
+     6:46.52       71740748 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t11.wav
+     5:54.49       62560892 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t12.wav
+     7:12.55       76334204 B   ---   --   -----    wav  1.0000  bd2005-03-12d1t13.wav
+     3:37.42       38377628 B   ---   --   -----    wav  1.0000  bd2005-03-12d2t01.wav
+     5:35.39       59185772 B   ---   --   -----    wav  1.0000  bd2005-03-12d2t02.wav
+    85:40.26      906757812 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd88-09-10-Two-Of-Us-Master.flacf
+===================
+===================
+===================
+117316402c912c2f5fbb7a0d299a8b9a *01 Subterranean Homesick Blues.flac
+771a0241a69f810b7bc99400df337a37 *02 It's All Over Now, Baby Blue.flac
+462edeb78d09c617cd8e48a55ab2682f *03 Masters Of War.flac
+f27ac1bbeb9b8ed7e0b850951d0114de *04 Ballad Of A Thin Man.flac
+18ac4d14df8ac64c29547d1bc3ed5cc7 *05 Shelter From The Storm.flac
+b8dce9d97e9e4d637f4cc23296b7b242 *06 Highway 61 Revisited.flac
+965c437272ddc5b2a668303c3ce1b7e8 *07 To Ramona.flac
+6e86e504a1501fd3f6b537b30f3ba2f1 *08 One Too Many Mornings.flac
+7326e897aac2a48986705e0cace87a9a *09 Mr. Tambourine Man.flac
+a619fb190efa36a317c5f38590492eb1 *10 Girl From The North Country.flac
+c845fae31bf66968af8cf99bd1b80d3e *11 Silvio.flac
+296a42e4eedc4f1600ff330498d18576 *12 I Shall Be Released.flac
+cce6a4e43bba4dd9f472bff4ede0644b *13 Like A Rolling Stone.flac
+d3841a5d36cb3e63afe607b36e4e4eb6 *14 The Times They Are A-Changin'.flac
+6566c287ddd36b8c1ca75b909d12b774 *15 It Ain't Me, Babe.flac
+b5396c5d461e77ded3efc3b2532c8e35 *16 Maggie's Farm.flac
+a23468e9abf9226cb9b74f820a0590fd *17 All Along The Watchtower.flac
+f2d16df914e7f089bab75a66643fb489 *Bob Dylan 1988-09-10 Stanhope BACK.jpg
+f7f04f2ff4bc47c14f661dda478cf4a0 *Bob Dylan 1988-09-10 Stanhope FRONT.jpg
+e1e914b950c39da73141f9ad58c26246 *fingerprint.ffp
+5c450ce796168f62c3d70881364c8680 *info.txt
+2ae1d8755d65a2bfa4a3df399451d568 *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd88-09-10-Two-Of-Us-Master.flacf
+===================
+===================
+===================
+01 Subterranean Homesick Blues.flac:fa77b10d6d577fd007b9dc527736a86c
+02 It's All Over Now, Baby Blue.flac:bad5f2bc85d517c899e4c346ba560bab
+03 Masters Of War.flac:c04d2b7b1d07ca6b8f9b3bc65c7a9190
+04 Ballad Of A Thin Man.flac:f7f4e55f598a6182e308cec966dd2a6e
+05 Shelter From The Storm.flac:ed9c59689b11660404e5215de8aa70a2
+06 Highway 61 Revisited.flac:3496048e56416e51e1d2e66eb290e37a
+07 To Ramona.flac:199c3c146160076fff4475ecc51e5a29
+08 One Too Many Mornings.flac:c97dd5e0f236d7746d71fc8a32df0d7e
+09 Mr. Tambourine Man.flac:d4a816d57bb5fb992262d402d98be288
+10 Girl From The North Country.flac:17c77d7cbc43fb956a06d6a8ab82ac99
+11 Silvio.flac:ebacae46251016650c5d772507a8c1f3
+12 I Shall Be Released.flac:54761065457bf65cb5240999639595c9
+13 Like A Rolling Stone.flac:c0562df7e90e2ec3ba86d8c0182b26d4
+14 The Times They Are A-Changin'.flac:9e9fafef9fa524924a32ab924cb9155a
+15 It Ain't Me, Babe.flac:4325a4b09535aad1c3a1ba2edd472ea2
+16 Maggie's Farm.flac:656bb77d72327c78c64d292edab928c2
+17 All Along The Watchtower.flac:369d918335de754b6aac057e59de6872
+===================
+===================
+===================
+=== shntool len for: bd88-09-10-Two-Of-Us-Master.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:50.29       30056252 B   ---   --   ---xx   flac  0.6709  01 Subterranean Homesick Blues.flac
+     5:31.53       58513100 B   ---   --   ---xx   flac  0.6658  02 It's All Over Now, Baby Blue.flac
+     5:01.14       53129372 B   ---   --   ---xx   flac  0.6737  03 Masters Of War.flac
+     4:45.67       50431628 B   ---   --   ---xx   flac  0.6655  04 Ballad Of A Thin Man.flac
+     5:02.23       53326940 B   ---   --   ---xx   flac  0.6603  05 Shelter From The Storm.flac
+     4:24.68       46729580 B   ---   --   ---xx   flac  0.6679  06 Highway 61 Revisited.flac
+     4:14.11       44831516 B   ---   --   ---xx   flac  0.6552  07 To Ramona.flac
+     4:31.20       47851484 B   ---   --   ---xx   flac  0.6343  08 One Too Many Mornings.flac
+     5:46.32       61109708 B   ---   --   ---xx   flac  0.6505  09 Mr. Tambourine Man.flac
+     5:08.35       54413564 B   ---   --   ---xx   flac  0.6389  10 Girl From The North Country.flac
+     3:35.09       37947212 B   ---   --   ---xx   flac  0.6507  11 Silvio.flac
+     4:42.17       49784828 B   ---   --   ---xx   flac  0.6512  12 I Shall Be Released.flac
+     6:36.44       69957932 B   ---   --   ---xx   flac  0.6646  13 Like A Rolling Stone.flac
+     4:02.18       42731180 B   ---   --   ---xx   flac  0.6229  14 The Times They Are A-Changin'.flac
+     5:01.29       53164652 B   ---   --   ---xx   flac  0.6148  15 It Ain't Me, Babe.flac
+     4:14.61       44949116 B   ---   --   ---xx   flac  0.6801  16 Maggie's Farm.flac
+     4:01.44       42615932 B   ---   --   ---xx   flac  0.6896  17 All Along The Watchtower.flac
+    79:30.49      841543996 B                            0.6559  (17 files)
+===================
+===================
+===================

@@ -1,0 +1,12 @@
+Bob Dylan, 7/26/01, Naples, Italy, 2CDR
+
+LB-7307, (68min+58min), version "d", LB-7275 fixed (Track14), Again, I made a mistake when replacing t14 on the last version I torrented of this show, as I did actually not include a correct Track14, as I guessed, but a preliminar version in which digipops @ 5:16 had still not been fixed. So, please, excuse any inconveniences I may have caused through my forgetfulness and grab this new replacement if you want or let it pass if you think it's not worth the download. This is a new version of the same track where both digipops have been carefully removed without any other consequences, no samples to be carried over when aligning on sector boundaries, as verifiable reading the flac-conversion log file I'm attaching in this torrent, so no need to change anything else, but once more the flac fingerprints and md5 sigmatures. Third time is the right one, they say, so I hope everything is OK this last chance., Good luck!, Luisbp51 (Hungercity March 2009); bittorrent download 03/09; most of this matches LB-7302 except for a small part of t14 were the flaws noted on that are fixed on this one ; (did not listen to all of this)
+
+Cd1
+01. Hallelujah, I'm Ready To Go, 02. Mr. Tambourine Man, 03. Desolation Row, 04. I Don't Believe You (She Acts Like We Never Have Met), 05. Lay, Lady, Lay, 06. Gotta Serve Somebody, 07. Shelter From The Storm, 08. Masters Of War, 09. It's All Over Now, Baby Blue, 10. Don't Think Twice, It's All Right, 11. Everything Is Broken, 
+
+Cd2
+12. Make You Feel My Love, 13. Cold Irons Bound, 14. Rainy Day Women #12 & 35, 15. Country Pie, 16. Like A Rolling Stone, 17. One Too Many Mornings, 18. All Along The Watchtower, 19. Knockin' On Heaven's Door, 20. Highway 61 Revisited, 21. Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

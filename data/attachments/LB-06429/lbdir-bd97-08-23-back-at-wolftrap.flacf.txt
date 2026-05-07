@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-23-back-at-wolftrap.flacf 
+=================== 
+=================== 
+=================== 
+3a0219a9a9e94e73ce8816dbfe412428  bd97-08-23-back-at-d1t01.flac
+a5a7b4ca5cfd7acf493db82f2018773d  bd97-08-23-back-at-d1t02.flac
+98241386de5b69f83058b02b160aa409  bd97-08-23-back-at-d1t03.flac
+d15ccbcd58f7da85010a797db59de586  bd97-08-23-back-at-d1t04.flac
+28ed9f1e6abbcf3b7ecbd4c9dd2eb058  bd97-08-23-back-at-d1t05.flac
+fe794d1e649e1cadb82c37874430522b  bd97-08-23-back-at-d1t06.flac
+931c6bc4c2c3e0c81af05ec75d06af2a  bd97-08-23-back-at-d1t07.flac
+06b3322bf158453c9a9d66b07baf39a6  bd97-08-23-back-at-d1t08.flac
+1a73c5fe06122fe74909bb69f08905e4  bd97-08-23-back-at-d1t09.flac
+cc3a04469d9646750de0233f5ef5e096  bd97-08-23-back-at-d1t10.flac
+3701230be5f186d6297864583955a94d  bd97-08-23-back-at-d2t01.flac
+342d34ad6e9a204b842af6ab655b8336  bd97-08-23-back-at-d2t02.flac
+8ee38985715f1bf2ad8e21010cd713c8  bd97-08-23-back-at-d2t03.flac
+3a7dbf2bdbfa3c2cb819989ddbfc5d85  bd97-08-23-back-at-d2t04.flac
+8df8b640379f72ce3faaf13054842562  bd97-08-23-back-at-d2t05.flac
+b8420b227a7ca8db7f9c4a3b7a593695  bd97-08-23-back-at-d2t06.flac
+acfdcfaa649e325cdd010ed9e8231d70  bd97-08-23-back-at-d2t07.flac
+ba3ae839b303fd4abe367cc15911dda9  bd97-08-23-back-at-d2t08.flac
+46dfdf8f56164f99741976cb9a5c88bd  bd97-08-23-back-at-d2t09.flac
+5e9896175629a46b6f884ed68a2e9c5c  bd97-08-23-back-at-d2t10.flac
+00dfacb4598edde7d7dde60ca5308357  bd97-08-23-back-at-d2t11.flac
+191c25d496a36d7265d3676d08110200  bd97-08-23-back-at-wolftrap.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-23-back-at-wolftrap.flacf 
+=================== 
+=================== 
+=================== 
+bd97-08-23-back-at-d1t01.flac:73055f9fec4822bec6990baf062dafcf
+bd97-08-23-back-at-d1t02.flac:089b0572903a3af66dadb28297faa804
+bd97-08-23-back-at-d1t03.flac:db1ef4f61c857293031c42784e416a15
+bd97-08-23-back-at-d1t04.flac:08fb8a30d518fe757a73d666fac408b8
+bd97-08-23-back-at-d1t05.flac:877df993bb333dd0b7b5fb55132b2253
+bd97-08-23-back-at-d1t06.flac:d94aef72988c1289ebacda44a2f90bc3
+bd97-08-23-back-at-d1t07.flac:e69862417c0d0aa139e7aec51c1baa0f
+bd97-08-23-back-at-d1t08.flac:9afca9aab5e0310ca75771c71a8c3618
+bd97-08-23-back-at-d1t09.flac:ed6f12e4ec17a5fe5d40c0099ca2b99a
+bd97-08-23-back-at-d1t10.flac:39521a1d9424876c12b6ef3958c0cb70
+bd97-08-23-back-at-d2t01.flac:d30c2d1135cdf800c90b37d213a28955
+bd97-08-23-back-at-d2t02.flac:7d31964b93965defb51dff91de1c97f3
+bd97-08-23-back-at-d2t03.flac:5a3b16226e27f4da75b1ad6350fe607c
+bd97-08-23-back-at-d2t04.flac:7101eb7f4662962fcd5f6c0d7894c62e
+bd97-08-23-back-at-d2t05.flac:9ed814c6e895e15fa1b50412ac261fd9
+bd97-08-23-back-at-d2t06.flac:5289099c908ffc93514a79a6b6b0f605
+bd97-08-23-back-at-d2t07.flac:c94c54f71d18074545853488377105bc
+bd97-08-23-back-at-d2t08.flac:2857b09d500ce70d947fe168d6c8d337
+bd97-08-23-back-at-d2t09.flac:186faa089ed74167fe9f8caa90f8bedb
+bd97-08-23-back-at-d2t10.flac:e3dc184d36d11d1eab17d1a530e6d206
+bd97-08-23-back-at-d2t11.flac:6b34cce048f3ba9d0e180afa08e55e9f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-23-back-at-wolftrap.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.50       51979244 B   ---   --   ---xx   flac  0.6295  bd97-08-23-back-at-d1t01.flac
+     6:03.55       64162604 B   ---   --   ---xx   flac  0.5831  bd97-08-23-back-at-d1t02.flac
+     5:25.30       57400604 B   ---   --   ---xx   flac  0.6121  bd97-08-23-back-at-d1t03.flac
+     5:18.05       56107004 B   ---   --   ---xx   flac  0.5963  bd97-08-23-back-at-d1t04.flac
+     7:26.10       78697964 B   ---   --   ---xx   flac  0.6353  bd97-08-23-back-at-d1t05.flac
+     3:36.72       38271788 B   ---   --   ---xx   flac  0.5271  bd97-08-23-back-at-d1t06.flac
+     7:15.63       76882220 B   ---   --   ---xx   flac  0.5267  bd97-08-23-back-at-d1t07.flac
+     9:08.55       96796604 B   ---   --   ---xx   flac  0.6148  bd97-08-23-back-at-d1t08.flac
+     9:06.50       96432044 B   ---   --   ---xx   flac  0.6152  bd97-08-23-back-at-d1t09.flac
+     6:26.40       68184524 B   ---   --   ---xx   flac  0.5834  bd97-08-23-back-at-d1t10.flac
+     7:12.25       76263644 B   ---   --   ---xx   flac  0.5983  bd97-08-23-back-at-d2t01.flac
+     8:37.30       91269404 B   ---   --   ---xx   flac  0.6375  bd97-08-23-back-at-d2t02.flac
+     6:58.70       73899884 B   ---   --   ---xx   flac  0.5973  bd97-08-23-back-at-d2t03.flac
+     5:47.67       61368428 B   ---   --   ---xx   flac  0.6578  bd97-08-23-back-at-d2t04.flac
+     5:59.70       63492284 B   ---   --   ---xx   flac  0.6094  bd97-08-23-back-at-d2t05.flac
+     4:30.48       47740940 B   ---   --   ---xx   flac  0.6256  bd97-08-23-back-at-d2t06.flac
+     3:57.67       41964428 B   ---   --   ---xx   flac  0.5575  bd97-08-23-back-at-d2t07.flac
+     5:48.48       61500140 B   ---   --   ---xx   flac  0.5002  bd97-08-23-back-at-d2t08.flac
+     5:44.37       60768668 B   ---   --   ---xx   flac  0.6299  bd97-08-23-back-at-d2t09.flac
+     8:10.08       86454860 B   ---   --   ---xx   flac  0.5202  bd97-08-23-back-at-d2t10.flac
+     7:10.27       75915548 B   ---   --   ---xx   flac  0.5485  bd97-08-23-back-at-d2t11.flac
+   134:41.27     1425552828 B                            0.5920  (21 files)
+=================== 
+=================== 
+=================== 

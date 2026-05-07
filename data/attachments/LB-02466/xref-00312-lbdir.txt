@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-11-12-c.flacf 
+=================== 
+=================== 
+=================== 
+42f04ea2694463762cc70623b2acd0e1  disc 1\12.11.89 Miami.log
+d7a0ddad833102958e4cc7c42cde99c5  disc 1\BoB Dylan - 12.11.89 Miami.m3u
+9260701a0949be19368344c630427079  disc 1\BoB Dylan- 12.11.89 Miami-d1-t01.flac
+fbc321f5da41c52cd13d113e95b5de0e  disc 1\BoB Dylan- 12.11.89 Miami-d1-t02.flac
+fa6bc6fc56051664121f13c6174cef23  disc 1\BoB Dylan- 12.11.89 Miami-d1-t03.flac
+92b31eec5dfa28344927b9a4a224b94f  disc 1\BoB Dylan- 12.11.89 Miami-d1-t04.flac
+6d246d7f8f0d8985218b664adb582345  disc 1\BoB Dylan- 12.11.89 Miami-d1-t05.flac
+5b3212c533f21deb98860387c2915783  disc 1\BoB Dylan- 12.11.89 Miami-d1-t06.flac
+6003b28147829246558756a9b2513d8a  disc 1\BoB Dylan- 12.11.89 Miami-d1-t07.flac
+6637f78dafe3688bd5da184947e49563  disc 1\BoB Dylan- 12.11.89 Miami-d1-t08.flac
+3cddf1f0f55359903dbca552921feaa2  disc 1\BoB Dylan- 12.11.89 Miami-d1-t09.flac
+616219d77bad226fcb178a33bacf7b57  disc 1\BoB Dylan- 12.11.89 Miami-d1-t10.flac
+bcba9f8b4857217ac5d5b587d2b1a62c  disc 1\shntoolmd5sum.st5
+ce0cd8f42ad9bf55f7e2c612d37fb2b7  disc 2\12.11.89 Miami.log
+2e3993a2c2aa9d729c8ae61d9f54d178  disc 2\Bob Dylan - 12.11.89 Miami.m3u
+4dc6e19b97c68e97e573b1cc77f52b03  disc 2\Bob Dylan- 12.11.89 Miami-d2-t01.flac
+4a5230307dcdecb3adb999c1e39c361f  disc 2\Bob Dylan- 12.11.89 Miami-d2-t02.flac
+7256098d27d207d49c980b2629c56839  disc 2\Bob Dylan- 12.11.89 Miami-d2-t03.flac
+cb2c9800f46ce0a79a83f776249b4e31  disc 2\Bob Dylan- 12.11.89 Miami-d2-t04.flac
+26a73e7278769470e3803ad8e80728d7  disc 2\Bob Dylan- 12.11.89 Miami-d2-t05.flac
+5cd289596fa1ef5231d766950678bd78  disc 2\Bob Dylan- 12.11.89 Miami-d2-t06.flac
+07eeed18477a5f3b9502348c33a9d76b  disc 2\Bob Dylan- 12.11.89 Miami-d2-t07.flac
+f9ce5b1b8859b6e5bfd8ef95f5e66b42  disc 2\shntoolmd5sum.st5
+99c8209dc4537dd4dd506361d3c2ce07  infos.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-11-12-c.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+bob dylan- 12.11.89 miami-d1-t01.flac:8271b2c11051ba47db9ac58d241db6bf
+bob dylan- 12.11.89 miami-d1-t02.flac:d6d0a0bb89376d90367a067571628dd3
+bob dylan- 12.11.89 miami-d1-t03.flac:c6da093967d64999575e8c724d75e714
+bob dylan- 12.11.89 miami-d1-t04.flac:a1a121dde281f4734cc80b2b89ceb90a
+bob dylan- 12.11.89 miami-d1-t05.flac:d0f1933adcef549bb5424448951bf7e0
+bob dylan- 12.11.89 miami-d1-t06.flac:04b6fa4dd695883411607808a36060f5
+bob dylan- 12.11.89 miami-d1-t07.flac:5d21522385bf268d908bd9e76d67a885
+bob dylan- 12.11.89 miami-d1-t08.flac:f644df594bb6a700b6a4fdaeb71ec1a6
+bob dylan- 12.11.89 miami-d1-t09.flac:77487623759e6b999f9287ba9d9f086c
+bob dylan- 12.11.89 miami-d1-t10.flac:436c4527ca75b4a45db509ab926a7f3a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-11-12-c.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+bob dylan- 12.11.89 miami-d2-t01.flac:8d0e0ca14664285a899785619b330b7c
+bob dylan- 12.11.89 miami-d2-t02.flac:d69d57c8236773948c69c338e098ce2b
+bob dylan- 12.11.89 miami-d2-t03.flac:8842d1f6b4d488c60b719af8c1d9ca3b
+bob dylan- 12.11.89 miami-d2-t04.flac:79b47217900f79683bee56d405fe6bba
+bob dylan- 12.11.89 miami-d2-t05.flac:09a887809640dcb9a54c00f86792c81c
+bob dylan- 12.11.89 miami-d2-t06.flac:6b09f16434fcea2f250614bfec45ef3a
+bob dylan- 12.11.89 miami-d2-t07.flac:f0077866040858e70ba865d922a80a97
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-11-12-c.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:55.05       20297804 B   ---   --   ---xx   flac  0.5055  BoB Dylan- 12.11.89 Miami-d1-t01.flac
+     5:34.46       59025836 B   ---   --   ---xx   flac  0.5294  BoB Dylan- 12.11.89 Miami-d1-t02.flac
+     6:31.42       69071228 B   ---   --   ---xx   flac  0.5211  BoB Dylan- 12.11.89 Miami-d1-t03.flac
+     5:24.00       57153644 B   ---   --   ---xx   flac  0.5199  BoB Dylan- 12.11.89 Miami-d1-t04.flac
+     5:22.34       56880812 B   ---   --   ---xx   flac  0.4995  BoB Dylan- 12.11.89 Miami-d1-t05.flac
+     4:40.34       49472012 B   ---   --   ---xx   flac  0.5335  BoB Dylan- 12.11.89 Miami-d1-t06.flac
+     6:40.28       70625900 B   ---   --   ---xx   flac  0.4951  BoB Dylan- 12.11.89 Miami-d1-t07.flac
+     8:21.48       88489340 B   ---   --   ---xx   flac  0.5002  BoB Dylan- 12.11.89 Miami-d1-t08.flac
+     5:55.07       62638508 B   ---   --   ---xx   flac  0.5030  BoB Dylan- 12.11.89 Miami-d1-t09.flac
+     6:52.34       72756812 B   ---   --   ---xx   flac  0.5095  BoB Dylan- 12.11.89 Miami-d1-t10.flac
+    57:17.53      606411896 B                            0.5109  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-11-12-c.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.26       43279196 B   ---   --   ---xx   flac  0.5320  Bob Dylan- 12.11.89 Miami-d2-t01.flac
+     5:34.61       59061116 B   ---   --   ---xx   flac  0.5168  Bob Dylan- 12.11.89 Miami-d2-t02.flac
+     5:10.35       54766364 B   ---   --   ---xx   flac  0.5050  Bob Dylan- 12.11.89 Miami-d2-t03.flac
+     4:14.00       44805644 B   ---   --   ---xx   flac  0.5346  Bob Dylan- 12.11.89 Miami-d2-t04.flac
+     7:55.04       83799452 B   ---   --   ---xx   flac  0.5485  Bob Dylan- 12.11.89 Miami-d2-t05.flac
+     3:29.62       37013468 B   ---   --   ---xx   flac  0.4905  Bob Dylan- 12.11.89 Miami-d2-t06.flac
+     4:16.34       45238412 B   ---   --   ---xx   flac  0.5167  Bob Dylan- 12.11.89 Miami-d2-t07.flac
+    34:45.72      367963652 B                            0.5235  (7 files)
+=================== 
+=================== 
+=================== 

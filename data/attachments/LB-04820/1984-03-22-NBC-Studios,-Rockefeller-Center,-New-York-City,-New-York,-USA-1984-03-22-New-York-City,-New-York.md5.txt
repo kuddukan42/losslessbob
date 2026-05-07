@@ -1,0 +1,4 @@
+df7d0b81af7f3a968de941d13788bf44 *04 Jokerman.shn
+247ac2d709523eb099050ada9398145f *01 David Letterman introduction.shn
+a2255f4be62a836e7d58fe710e82f2ab *02 Don't start me talking.shn
+f3a9b6a885aa239a98579eaeca47ea69 *03 License to kill.shn

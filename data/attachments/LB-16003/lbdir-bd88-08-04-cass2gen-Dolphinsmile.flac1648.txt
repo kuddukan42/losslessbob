@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd88-08-04-cass2gen-Dolphinsmile.flac1648
+===================
+===================
+===================
+8b95ea62c0ef3caf84a1378582153d10 *01 SHBs.flac
+aac719342648a290f91cae7798ee909b *02 Hallelujah.flac
+9b4b70df7e5863faa80ffa27b0380a49 *03 Masters Of War.flac
+a49f0847df53d58d2079244e52ba54bf *04 Driftin Too Far From Shore.flac
+4ba20fa659432b20517af697c2111d23 *05 You re A Big Girl Now.flac
+0ca89ff719324c518125efe944829c6d *06 Highway 61.flac
+f0c66a2888674f08a6378c98c4899185 *07 Its Alright Ma.flac
+af8efe97bf2870b46b4efb257373e94b *08 Lakes Of The Ponchatrain.flac
+1ea71a5ba1bfb2424b8543995b83ee19 *09 It Aint Me Babe.flac
+f4b58692c27bdf00c5ca0a2de98c6cee *10 Im Glad I Got To See You.flac
+02566131e126ac539c435b88b21a5ad8 *11 Tamborine Man.flac
+70dc327e5a03010876c14533ca7e218b *12 Silvio.flac
+17fb0587e3be140fcb5da510d280d261 *13 In The Garden.flac
+fe2c5186bbd1450ce772a54ca920e046 *14 Like A Rolling Stone.flac
+45e8c5a912afd0c47ee096b8bfcb0928 *15 Barbara Allen.flac
+0384661f2974e33d50c36f3eb55a8c7b *16 Blowin In The Wind.flac
+f8776871e48ec711bfc55cbfdcdbfe11 *17 Knockin On Heavens Door.flac
+ad07a7beb5ad948c64e8b4e356f9c76c *Bob Dylan Greek Theater Los Angeles 1988-08-04 DS Archive.ffp
+c1d2cd888c62b694e1b9b63131991fa7 *Bob Dylan Greek Theater Los Angeles 1988-08-04 DS Archive.md5
+ad07a7beb5ad948c64e8b4e356f9c76c *Bob Dylan Greek Theater Los Angeles 1988-08-04 DS Archive.txt
+c24275f893d69c57ec88b03dee75eec6 *info.txt
+===================
+===================
+===================
+=== ffp for: bd88-08-04-cass2gen-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 SHBs.flac:73833c954183fc056e5743aa61101b1f
+02 Hallelujah.flac:415682b7c744e59cdc124dc38a0e4bc7
+03 Masters Of War.flac:2d2dfa2343b68feb56711b60a128b7f5
+04 Driftin Too Far From Shore.flac:b8facb5d069ac41fa2265d21b06095ee
+05 You re A Big Girl Now.flac:a468d814c3efbb38c516db001ab5f1a9
+06 Highway 61.flac:1e492f00dbe08aa1ea93dfe06580586a
+07 Its Alright Ma.flac:621ab22078e6aa147a741eabca1f4b60
+08 Lakes Of The Ponchatrain.flac:62c5958cef3499abe4079e624b318e35
+09 It Aint Me Babe.flac:9c37592580b857f1968d9ff2787d66d0
+10 Im Glad I Got To See You.flac:9e62f44c10c1bd1a76c0de6cd8e3f9ed
+11 Tamborine Man.flac:f4e78284273e3dbc5e9a7104a1e01d28
+12 Silvio.flac:225dd2bc76216bc4365dbb985f6eee83
+13 In The Garden.flac:07f9a4ea776438e561dcda6078394150
+14 Like A Rolling Stone.flac:60e53ab7695329386f10bb1e9a69359e
+15 Barbara Allen.flac:849ae54cafabde0bbfd26f097ad6076c
+16 Blowin In The Wind.flac:0c5d0cba092f3b34babc7d2ae3e7fed0
+17 Knockin On Heavens Door.flac:9e667e53f7fd15d7b3066c7936877313
+===================
+===================
+===================
+=== shntool len for: bd88-08-04-cass2gen-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:10.022      36484240 B   cxx   --   ---xx   flac  0.5608  01 SHBs.flac
+     5:01.819      57949236 B   cxx   --   ---xx   flac  0.5265  02 Hallelujah.flac
+     4:32.765      52370876 B   cxx   --   ---xx   flac  0.5962  03 Masters Of War.flac
+     4:23.763      50642576 B   cxx   --   ---xx   flac  0.5820  04 Driftin Too Far From Shore.flac
+     3:47.399      43660588 B   cxx   --   ---xx   flac  0.5441  05 You re A Big Girl Now.flac
+     4:15.119      48982884 B   cxx   --   ---xx   flac  0.5694  06 Highway 61.flac
+     6:07.984      70652944 B   cxx   --   ---xx   flac  0.5333  07 Its Alright Ma.flac
+     5:00.299      57657428 B   cxx   --   ---xx   flac  0.4964  08 Lakes Of The Ponchatrain.flac
+     4:25.210      50920324 B   cxx   --   ---xx   flac  0.5277  09 It Aint Me Babe.flac
+     2:45.984      31868912 B   cxx   --   ---xx   flac  0.4541  10 Im Glad I Got To See You.flac
+     4:49.762      55634360 B   cxx   --   ---xx   flac  0.5192  11 Tamborine Man.flac
+     3:53.826      44894572 B   cxx   --   ---xx   flac  0.5989  12 Silvio.flac
+     5:17.161      60894952 B   cxx   --   ---xx   flac  0.5937  13 In The Garden.flac
+     5:51.862      67557596 B   cxx   --   ---xx   flac  0.6104  14 Like A Rolling Stone.flac
+     4:18.916      49711912 B   cxx   --   ---xx   flac  0.4790  15 Barbara Allen.flac
+     3:30.113      40341836 B   cxx   --   ---xx   flac  0.5340  16 Blowin In The Wind.flac
+     5:17.348      60930948 B   cxx   --   ---xx   flac  0.5619  17 Knockin On Heavens Door.flac
+    76:29.351     881156184 B                            0.5490  (17 files)
+===================
+===================
+===================

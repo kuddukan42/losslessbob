@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-04-09a 
+=================== 
+=================== 
+=================== 
+38ae84ddc7ad20c705bbe0e4ef737121  bd1995-04-09 d1t1.shn
+c9948163e51a35171794c08e1473cb12  bd1995-04-09 d1t2.shn
+d74b2890a0e7aad555cf4e6b1ae1d41c  bd1995-04-09 d1t3.shn
+8d8e564f028c850b8574677794b6d952  bd1995-04-09 d1t4.shn
+b121ea05c45334e88d2cbe3a2e3c5549  bd1995-04-09 d1t5.shn
+64a2378399641586333c3885bdfa7b2c  bd1995-04-09 d1t6.shn
+0a3c8f23c4cc5e02b24cc7e724f14dae  bd1995-04-09 d1t7.shn
+8f615f46af8a41084c21ff3892e0bca0  bd1995-04-09 d1t8.shn
+36969abe1dd391e5d2565075efd021bd  bd1995-04-09 d2t1.shn
+90b62bcf48ce037bfc63c7c3bd8b891b  bd1995-04-09 d2t2.shn
+4143f6c501bd2e3cedf6798e3ecc6475  bd1995-04-09 d2t3.shn
+cbc960dc16172f592f3c8fa2a286887e  bd1995-04-09 d2t4.shn
+65f7644138ea2ea58165a7e9dd995582  bd1995-04-09 d2t5.shn
+722f35fde27a1dba2062d0356082bd63  bd1995-04-09 d2t6.shn
+e879e1e7af1aa42d04eaf09e8662b73c  bd1995-04-09 d2t7.shn
+f49144bd29ed67f22c27a0b5b4d01de5  bd1995-04-09 glasgow (off master).shnf.md5
+e6da66727375ccf32a233bb5bf4676f8  bd1995-04-09 glasgow (off master).shnf.txt
+9eda20ace6bb4aa0c7a6e274916ae0c9  bd95-04-09a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-04-09a 
+=================== 
+=================== 
+=================== 
+47684d626a8794dfcdcba4084941b984  [shntool]  bd1995-04-09_d1t1.wav
+305ba44ad3a531d7960034b862ae97ce  [shntool]  bd1995-04-09_d1t2.wav
+19f7e3724fd1aae6a9d7e81ee5f2cc24  [shntool]  bd1995-04-09_d1t3.wav
+a95a4c53213646f8da360f63b8dc0e40  [shntool]  bd1995-04-09_d1t4.wav
+18497fa1ca204ab83ec32e0d6c3af3e1  [shntool]  bd1995-04-09_d1t5.wav
+157d4fb1766245f4c1b0ffcf92dfc259  [shntool]  bd1995-04-09_d1t6.wav
+4ca003f26712099e9b103777e5c9b02f  [shntool]  bd1995-04-09_d1t7.wav
+4c0dda342346cfb2e9dba728d4ee8c11  [shntool]  bd1995-04-09_d1t8.wav
+0d8baf19f2c662402579e78e70136857  [shntool]  bd1995-04-09_d2t1.wav
+8e9bc6cf5c4c1b4c0f5da055b47ebf32  [shntool]  bd1995-04-09_d2t2.wav
+ea4565e7b38b77a87d02619cc475e281  [shntool]  bd1995-04-09_d2t3.wav
+d0574954ca891421e25f42739279ccfc  [shntool]  bd1995-04-09_d2t4.wav
+e545326be60419b6d57261b890c0f190  [shntool]  bd1995-04-09_d2t5.wav
+ba50d5410aa0dcef30a9c50644da928b  [shntool]  bd1995-04-09_d2t6.wav
+320722ff2f0f0cc6b04c9a4517ec22e0  [shntool]  bd1995-04-09_d2t7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-04-09a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.24       54211292 B   ---   --   -----    wav  1.0000  bd1995-04-09_d1t1.wav
+     5:21.68       56784380 B   ---   --   -----    wav  1.0000  bd1995-04-09_d1t2.wav
+     6:23.14       67594172 B   ---   --   -----    wav  1.0000  bd1995-04-09_d1t3.wav
+     6:49.10       72171164 B   ---   --   -----    wav  1.0000  bd1995-04-09_d1t4.wav
+     8:57.29       94795052 B   ---   --   -----    wav  1.0000  bd1995-04-09_d1t5.wav
+     5:53.63       62417420 B   ---   --   -----    wav  1.0000  bd1995-04-09_d1t6.wav
+     7:17.13       77117420 B   ---   --   -----    wav  1.0000  bd1995-04-09_d1t7.wav
+     8:06.42       85829228 B   ---   --   -----    wav  1.0000  bd1995-04-09_d1t8.wav
+     8:40.24       91784492 B   ---   --   -----    wav  1.0000  bd1995-04-09_d2t1.wav
+     6:41.34       70816412 B   ---   --   -----    wav  1.0000  bd1995-04-09_d2t2.wav
+     9:18.53       98555900 B   ---   --   -----    wav  1.0000  bd1995-04-09_d2t3.wav
+     8:36.09       91043612 B   ---   --   -----    wav  1.0000  bd1995-04-09_d2t4.wav
+     8:49.47       93426188 B   ---   --   -----    wav  1.0000  bd1995-04-09_d2t5.wav
+     8:36.21       91071836 B   ---   --   -----    wav  1.0000  bd1995-04-09_d2t6.wav
+     5:41.05       60164204 B   ---   --   -----    wav  1.0000  bd1995-04-09_d2t7.wav
+   110:20.06     1167782772 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

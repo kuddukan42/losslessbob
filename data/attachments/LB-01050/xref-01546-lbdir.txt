@@ -1,0 +1,120 @@
+===================
+===================
+===================
+=== md5 for: bd95-12-13-e.flacf
+===================
+===================
+===================
+8f045e9c95f3a0d97f02360790c85818 *bd1995-12-13.txt
+ccfb935f8127b22de8263840065e7ca8 *bd1995-12-13d1.shnf\bd1995-12-13d1.CUE
+7d1b11851a095a0828a7a779748613ac *bd1995-12-13d1.shnf\bd1995-12-13d1.shn.md5
+c89c94b1c98b2752e709ab93b9177ac3 *bd1995-12-13d1.shnf\bd1995-12-13d1.shnf.st5
+298450597e589e0e789f96ecd4c279c1 *bd1995-12-13d1.shnf\bd1995-12-13d1t01.shn
+230b9e5c9c9eaea4bdba36c44cc54dc5 *bd1995-12-13d1.shnf\bd1995-12-13d1t02.shn
+4b29115e62c6174c5dfb2a2603fd8694 *bd1995-12-13d1.shnf\bd1995-12-13d1t03.shn
+84b4da8cdf4378753516599f7b08685d *bd1995-12-13d1.shnf\bd1995-12-13d1t04.shn
+60c713d3ca3e459f89028c69b101053d *bd1995-12-13d1.shnf\bd1995-12-13d1t05.shn
+c3262c0dfe33e5e8ed77208a80b492e1 *bd1995-12-13d1.shnf\bd1995-12-13d1t06.shn
+a8def6c8dc568cb9b050a22feebbadb5 *bd1995-12-13d1.shnf\bd1995-12-13d1t07.shn
+09d91a1f9c39bc341b38dc9ce127c732 *bd1995-12-13d1.shnf\bd1995-12-13d1t08.shn
+406328b1bafe73150b7a5934a6715b7c *bd1995-12-13d1.shnf\bd1995-12-13d1t09.shn
+872b5505b5407937f124d0a8096a4c9d *bd1995-12-13d1.shnf\bd1995-12-13d1t10.shn
+68c794cf0e9ed97390c20a2351d1268d *bd1995-12-13d1.shnf\bd1995-12-13d1t11.shn
+315bde3eea9a3afa14a823c85bc96350 *bd1995-12-13d1.shnf\bd1995-12-13d1t12.shn
+42db10b82aacd7f361459afcf93cadbe *bd1995-12-13d1.shnf\bd1995-12-13d1t13.shn
+d0c409d71c4fdccbcdc3172eeec4524e *bd1995-12-13d1.shnf\bd1995-12-13d1t14.shn
+aa2207ea75738f8cb4051378c5b6147d *bd1995-12-13d2.shnf\bd1995-12-13d2.CUE
+e0c4f334f5c39ba6bc15c0569825b190 *bd1995-12-13d2.shnf\bd1995-12-13d2.shn.md5
+9d8a5004615c061644cb2e2b716e6ac6 *bd1995-12-13d2.shnf\bd1995-12-13d2.shnf.st5
+041cbf50282119d852216484dc257a32 *bd1995-12-13d2.shnf\bd1995-12-13d2t01.shn
+590d65b6cdaa563f85a70f0efde0555a *bd1995-12-13d2.shnf\bd1995-12-13d2t02.shn
+3b58974dd2329b9305da29f1ba5d10ec *bd1995-12-13d2.shnf\bd1995-12-13d2t03.shn
+b526ef54ae32425647203887c182d6fd *bd1995-12-13d2.shnf\bd1995-12-13d2t04.shn
+872810f2a97c62c581d70365b1c6cea5 *bd1995-12-13d2.shnf\bd1995-12-13d2t05.shn
+e071bb17c8f706aa892c0ed0386d9438 *bd1995-12-13d2.shnf\bd1995-12-13d2t06.shn
+19076d34c0b9ca0a13f3de330f78fc56 *bd1995-12-13d2.shnf\bd1995-12-13d2t07.shn
+10269dc36f2eb1d9881ed6064bf17671 *bd1995-12-13d2.shnf\bd1995-12-13d2t08.shn
+0d114f6e045fbf87c2eb847cd7359d9e *bd1995-12-13d2.shnf\bd1995-12-13d2t09.shn
+8a30aac559594c24fa40c6fcaffcde52 *bd1995-12-13d2.shnf\bd1995-12-13d2t10.shn
+991dbf708819d601e077521f96bb908b *bd1995-12-13d2.shnf\bd1995-12-13d2t11.shn
+b98912c594d429baa0d70b4d653357d6 *bd1995-12-13d2.shnf\bd1995-12-13d2t12.shn
+===================
+===================
+===================
+=== shntool md5/hash for: bd95-12-13-e.flacf
+===================
+===================
+===================
+1f5078731962076784064dc500e591ca  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t01.shn
+8c7e33b449597f385ea4f23d2e65c2f7  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t02.shn
+466aaa8728d232f8e89b6f486a5b4221  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t03.shn
+49174290304f30e6606ea76c902ac0e9  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t04.shn
+a1b490688908bf31a9486bb1a62a6294  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t05.shn
+7021b9fc6add45ed5ae7e67d1a142007  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t06.shn
+68d505ef730d9831f4cf191850881be1  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t07.shn
+3f3b67e02e0172ef1587921c84330701  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t08.shn
+cd97b4d4339f3926149c0976a6f30ea2  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t09.shn
+3e270d38c48e335209f21b08c5501436  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t10.shn
+bc8e9e5471f1add25e1384a04dff5d85  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t11.shn
+b15328c4d33d285a601f3c603b7eb413  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t12.shn
+f6968278699b34f6d4d81132dace693c  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t13.shn
+3de9bd8ed4e26333a746ff16df0e3724  [shntool]  bd1995-12-13d1.shnf\bd1995-12-13d1t14.shn
+c236ed9215db2ba7f42ca4df654ad439  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t01.shn
+e185284c68c182b88a86cd389b82e936  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t02.shn
+00d2bda7034235abc211280061cb30c9  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t03.shn
+b0706ca2cf6a78ec30429193e1a5d943  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t04.shn
+76b7fb3cc15411d21aeed1b7925c8c67  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t05.shn
+3dbd151235ebd112fe52d8aa986f816b  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t06.shn
+d7e8d5df47b64184618ebf21fef8edba  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t07.shn
+0b1b35fdc5a8bbf1917063baf0b0b2a3  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t08.shn
+6e3851ecc6fb65f91db92641fbb041b0  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t09.shn
+fea937620be4c2fdbb0aefa1f659b811  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t10.shn
+1c8b2bf9d719aab381c05486ca721cb7  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t11.shn
+cc644c3320dc8a91296349b719d705a6  [shntool]  bd1995-12-13d2.shnf\bd1995-12-13d2t12.shn
+===================
+===================
+===================
+=== shntool len for: bd95-12-13-e.flacf\bd1995-12-13d1.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:26.53        4711100 B   ---   --   ---xx    shn  0.4759  bd1995-12-13d1t01.shn
+     3:54.52       41399948 B   ---   --   ---xx    shn  0.6725  bd1995-12-13d1t02.shn
+     6:05.43       64487180 B   ---   --   ---xx    shn  0.6536  bd1995-12-13d1t03.shn
+     4:55.31       52110956 B   ---   --   ---xx    shn  0.6652  bd1995-12-13d1t04.shn
+     6:18.72       66848588 B   ---   --   ---xx    shn  0.5557  bd1995-12-13d1t05.shn
+     5:31.20       58435484 B   ---   --   ---xx    shn  0.6515  bd1995-12-13d1t06.shn
+     8:16.54       87621452 B   ---   --   ---xx    shn  0.6144  bd1995-12-13d1t07.shn
+     0:12.23        2170940 B   ---   --   ---xx    shn  0.5730  bd1995-12-13d1t08.shn
+     4:57.28       52456700 B   ---   --   ---xx    shn  0.7115  bd1995-12-13d1t09.shn
+     5:33.15       58776524 B   ---   --   ---xx    shn  0.6123  bd1995-12-13d1t10.shn
+     7:21.09       77813612 B   ---   --   ---xx    shn  0.6814  bd1995-12-13d1t11.shn
+     6:19.21       66905036 B   ---   --   ---xx    shn  0.5780  bd1995-12-13d1t12.shn
+     6:07.18       64781180 B   ---   --   ---xx    shn  0.6440  bd1995-12-13d1t13.shn
+     7:59.38       84585020 B   ---   --   ---xx    shn  0.6667  bd1995-12-13d1t14.shn
+    73:59.27      783103720 B                            0.6389  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd95-12-13-e.flacf\bd1995-12-13d2.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:57.15      105346124 B   ---   --   ---xx    shn  0.6057  bd1995-12-13d2t01.shn
+    11:30.00      121716044 B   ---   --   ---xx    shn  0.5848  bd1995-12-13d2t02.shn
+     5:17.66       56074076 B   ---   --   ---xx    shn  0.6779  bd1995-12-13d2t03.shn
+     5:59.22       63379388 B   ---   --   ---xx    shn  0.5840  bd1995-12-13d2t04.shn
+     7:09.10       75699164 B   ---   --   ---xx    shn  0.6822  bd1995-12-13d2t05.shn
+     0:28.42        5038028 B   ---   --   ---xx    shn  0.5803  bd1995-12-13d2t06.shn
+     8:46.72       92955788 B   ---   --   ---xx    shn  0.6592  bd1995-12-13d2t07.shn
+     1:15.63       13378220 B   ---   --   ---xx    shn  0.5847  bd1995-12-13d2t08.shn
+     6:01.60       63821564 B   ---   --   ---xx    shn  0.7115  bd1995-12-13d2t09.shn
+     1:59.24       21048092 B   ---   --   ---xx    shn  0.5665  bd1995-12-13d2t10.shn
+    12:04.44      127817132 B   ---   --   ---xx    shn  0.6543  bd1995-12-13d2t11.shn
+     5:50.28       61805900 B   ---   --   ---xx    shn  0.6855  bd1995-12-13d2t12.shn
+    76:20.71      808079520 B                            0.6398  (12 files)
+===================
+===================
+===================

@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-18-ma.flacf 
+=================== 
+=================== 
+=================== 
+8bbfbe3ddd71c872ca58cb4d27303f7e  4-18-06 disc1 t1.flac
+013ca1dc7f13095c2244a7cc4a4c6266  4-18-06 disc1 t2.flac
+ee95cb228c0ca5c4b1e1b5e9f0e9e155  4-18-06 disc1 t3.flac
+242b8cf394b63996bd3a773496b8e5ef  4-18-06 disc1 t4.flac
+ef98f075d67964a2d788d96d46e5dc97  4-18-06 disc1 t5.flac
+b5d785dcdc21b02464b15b40c6945788  4-18-06 disc1 t6.flac
+35b0fcccb434cd069945cae505179c1d  4-18-06 disc1 t7.flac
+11167f04c2a060a74933cea968c4edc5  4-18-06 disc1 t8.flac
+f243ceee5478aeb76267db198d2dd0c7  4-18-06 disc1 t9.flac
+b2a033f9f80559f53a66fbd3ba65a1ed  4-18-06 disc2 t1.flac
+eff527a664ff595aef7e86998dd6c6db  4-18-06 disc2 t2.flac
+053153b743f091fb0eebc7d2aebd0d6d  4-18-06 disc2 t3.flac
+c3c9dd015225c711b9f0534303a6fc6c  4-18-06 disc2 t4.flac
+d229e75d3f7df8d0ffeb5ebf6e1fdaa2  4-18-06 disc2 t5.flac
+60b8c0ea9e71a209d3398e0d7b536ede  4-18-06 disc2 t6.flac
+71ffc6c26cb73737569270f010e55430  4-18-06 disc2 t7.flac
+12a4353920884946a92faa4afea6d6d5  bd06-04-18-ma-LB-3770.txt
+296b323b3b88a91ab404e02328501052  bob dylan 4-18-06.txt.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-18-ma.flacf 
+=================== 
+=================== 
+=================== 
+4-18-06 disc1 t1.flac:512feb935e247081141e04bb6f5d8458
+4-18-06 disc1 t2.flac:069e009fe603182e3430e4c60650368d
+4-18-06 disc1 t3.flac:d82c6dbdd93da95a7659b880901b9db5
+4-18-06 disc1 t4.flac:d60ae73e5244960d30531075159f8db4
+4-18-06 disc1 t5.flac:16aa67b824edcefed468fb1d22ab948e
+4-18-06 disc1 t6.flac:83d1990226c01f25dba484e4c8302aed
+4-18-06 disc1 t7.flac:6bab2c443ef492326748e2a1ec6339f8
+4-18-06 disc1 t8.flac:7c4d842b56c7603471a618896ca8fa5b
+4-18-06 disc1 t9.flac:ad2e2fd6f3a7c15f5e95d429d018280e
+4-18-06 disc2 t1.flac:f4cc3b369da5bbc9a21eedf7cf3fdfec
+4-18-06 disc2 t2.flac:cf72feee522fdbb7e7ba6d9f07fc26c0
+4-18-06 disc2 t3.flac:2cb7044ebf1caa457b262272215b7630
+4-18-06 disc2 t4.flac:53112740c399abe0a0005fce034f143c
+4-18-06 disc2 t5.flac:d424e756cc18e78760ab8795187a3bac
+4-18-06 disc2 t6.flac:14534844e46894e6686c13f4c2fc6665
+4-18-06 disc2 t7.flac:a25a5850a06cb542bc02cc2a8bab345a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-18-ma.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:19.59       14074412 B   ---   --   ---xx   flac  0.4700  4-18-06 disc1 t1.flac
+     6:47.48       71907740 B   ---   --   ---xx   flac  0.5873  4-18-06 disc1 t2.flac
+     6:58.05       73747004 B   ---   --   ---xx   flac  0.5316  4-18-06 disc1 t3.flac
+     7:32.30       79803404 B   ---   --   ---xx   flac  0.5738  4-18-06 disc1 t4.flac
+     7:00.33       74165660 B   ---   --   ---xx   flac  0.5697  4-18-06 disc1 t5.flac
+     6:07.43       64839980 B   ---   --   ---xx   flac  0.5644  4-18-06 disc1 t6.flac
+     5:30.19       58256732 B   ---   --   ---xx   flac  0.5336  4-18-06 disc1 t7.flac
+     6:09.18       65133980 B   ---   --   ---xx   flac  0.5917  4-18-06 disc1 t8.flac
+     6:31.19       69017132 B   ---   --   ---xx   flac  0.4830  4-18-06 disc1 t9.flac
+     6:49.13       72178220 B   ---   --   ---xx   flac  0.6017  4-18-06 disc2 t1.flac
+     6:50.60       72465164 B   ---   --   ---xx   flac  0.5250  4-18-06 disc2 t2.flac
+     7:34.64       80236172 B   ---   --   ---xx   flac  0.5644  4-18-06 disc2 t3.flac
+     6:10.33       65345660 B   ---   --   ---xx   flac  0.6130  4-18-06 disc2 t4.flac
+     2:05.45       22155884 B   ---   --   ---xx   flac  0.4839  4-18-06 disc2 t5.flac
+     6:45.42       71540828 B   ---   --   ---xx   flac  0.6067  4-18-06 disc2 t6.flac
+     6:07.59       64877612 B   ---   --   ---xx   flac  0.5739  4-18-06 disc2 t7.flac
+    96:20.65     1019745584 B                            0.5627  (16 files)
+=================== 
+=================== 
+=================== 

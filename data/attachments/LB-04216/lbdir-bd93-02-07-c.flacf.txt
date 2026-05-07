@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-07-c.flacf 
+=================== 
+=================== 
+=================== 
+6a80801f59b3e74d491053dc0fb86faa  bd93-02-07-c-LB-4216.txt
+76fa10627ac5fa44df14756a4da2ee53  CD1\01 Maggie's farm.flac
+7449043a5be8fe7d3fa7fd303b6d3065  CD1\02 Lenny Bruce.flac
+f3cd2e7e7d8e636a6a77ec32d93a8d7d  CD1\03 All along the watchtower.flac
+882ce635f819b3278a63381285ca5c5a  CD1\04 Tangled up in blue.flac
+6e2d278f885bdb389d3d4227541fd0a1  CD1\05 Positively 4th street.flac
+6732af66b5c34fb5e14c8b87baab3c5e  CD1\06 Stuck inside of Mobile with the Memphis blues again.flac
+da68aa25e5e9264570bdbfc5b2736cb5  CD1\07 She belongs to me.flac
+6479cc8c595408fee7daca49aabfd89f  CD1\08 Tomorrow night.flac
+3a347c5ea562a007dbccdf3a36852843  CD1\09 Jim Jones.flac
+3acc696d0fdfa289d7703055b6ecdf22  CD1\10 Mr. Tambourine Man.flac
+63182133584ba498d302a943ebb3d8fc  CD2\11 Don't think twice, it's all right.flac
+e9dde2091f672100d0b8c4813ffb3eac  CD2\12 Cat's in the well.flac
+a11fb3545dfba3171cb4fcd6e518ce64  CD2\13 I and I.flac
+de3b6b96e054cf41309e271eb860c40c  CD2\14 The times they are a-changin'.flac
+18e5a8fd28d5373add1b0856e2a705ae  CD2\15 Highway 61 revisited.flac
+de71f522814bdcbf06bb005b5b737c08  CD2\16 Ballad of a thin man.flac
+bdbccf8fc484da0ca37736d7dfd03c46  CD2\17 Everything is broken.flac
+0207ea54c42f3adefa4c04ef87651707  Info\1993-02-07 Hammersmith Apollo, London, England.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-07-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Maggie's farm.flac:48623c03edef84738fcd0e06e5f4dca8
+02 Lenny Bruce.flac:fd2013eaad673f1a3e569620b76034e4
+03 All along the watchtower.flac:a1ee740410956e2ae320ce6ef01464a3
+04 Tangled up in blue.flac:c16b31c443279fa7fee06df5a0fbd5b2
+05 Positively 4th street.flac:d91ef1e6ae6f4ed5e0e675ce9f9ec99a
+06 Stuck inside of Mobile with the Memphis blues again.flac:8480e4fe4dce30dfc14bdf297ed3d4c2
+07 She belongs to me.flac:030b7d12a9655ee0b01ab5f3c712438f
+08 Tomorrow night.flac:9d1170c1aa14b44a1ed301b097ff7f55
+09 Jim Jones.flac:bd562d60b90fc887c881936c1c0ee416
+10 Mr. Tambourine Man.flac:a9c34846ddc8fe06507a93df0cecc854
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-07-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11 Don't think twice, it's all right.flac:ae120957280472f22ea909e6d78ffd83
+12 Cat's in the well.flac:0b97b4c430fa03d4d70affaba1de959a
+13 I and I.flac:c4693438e0bf14f929aeaaafeee66a2c
+14 The times they are a-changin'.flac:04bea3c1701f7adf1a92707afbe31c85
+15 Highway 61 revisited.flac:209c3ca4c3b4a8ce9038741198329cd8
+16 Ballad of a thin man.flac:81dcbe87c1192632f042104514a69b30
+17 Everything is broken.flac:0a5885f85e49fbfad2c1d5049ae42470
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-07-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.33       77870060 B   ---   --   ---xx   flac  0.6295  01 Maggie's farm.flac
+     5:56.58       62934860 B   ---   --   ---xx   flac  0.6048  02 Lenny Bruce.flac
+     6:36.00       69854444 B   ---   --   ---xx   flac  0.6194  03 All along the watchtower.flac
+     9:47.73      103718540 B   ---   --   ---xx   flac  0.6602  04 Tangled up in blue.flac
+     7:45.11       82051916 B   ---   --   ---xx   flac  0.6101  05 Positively 4th street.flac
+     9:46.19      103415132 B   ---   --   ---xx   flac  0.6364  06 Stuck inside of Mobile with the Memphis blues again.flac
+     6:44.72       71434988 B   ---   --   ---xx   flac  0.5705  07 She belongs to me.flac
+     4:34.69       48495932 B   ---   --   ---xx   flac  0.5714  08 Tomorrow night.flac
+     6:58.25       73794044 B   ---   --   ---xx   flac  0.4995  09 Jim Jones.flac
+     8:40.02       91732748 B   ---   --   ---xx   flac  0.5593  10 Mr. Tambourine Man.flac
+    74:11.62      785302664 B                            0.6002  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-07-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:01.46       74372636 B   ---   --   ---xx   flac  0.5238  11 Don't think twice, it's all right.flac
+     4:45.64       50424572 B   ---   --   ---xx   flac  0.6457  12 Cat's in the well.flac
+     9:00.15       95291324 B   ---   --   ---xx   flac  0.6347  13 I and I.flac
+     5:42.40       60422924 B   ---   --   ---xx   flac  0.5824  14 The times they are a-changin'.flac
+     8:16.40       87588524 B   ---   --   ---xx   flac  0.6599  15 Highway 61 revisited.flac
+     9:12.05       97384604 B   ---   --   ---xx   flac  0.6027  16 Ballad of a thin man.flac
+     7:35.28       80327900 B   ---   --   ---xx   flac  0.6119  17 Everything is broken.flac
+    51:34.13      545812484 B                            0.6098  (7 files)
+=================== 
+=================== 
+=================== 

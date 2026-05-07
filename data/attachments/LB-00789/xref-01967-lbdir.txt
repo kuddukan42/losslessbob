@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd94-07-19-Live-in-Poland-vol2-lk.flacf
+===================
+===================
+===================
+1b6290bb881d38c01dcf0ff7d8c15741 *01 Jokerman.flac
+d44acb555b0906ef2772d0b7ccb358df *02 Just Like A Woman.flac
+5bd3f21a72baba5067c31bdcb7c81f47 *03 All Along The Watchtower.flac
+b4dee69b6959974ecf099c9c35455e3e *04 You're A Big Girl Now.flac
+6e8abc9ace2b580ddaf35695c224141e *05 Tangled Up In Blue.flac
+12019606dfb408a1edb308d4f969b206 *06 Under The Red Sky.flac
+3f4896976165cf7a3e46d0e8fef9d410 *07 Mama, You Been On My Mind (acoustic w band).flac
+1e64b697b80b96599b98661aad8d1d3f *08 Masters Of War (acoustic w band).flac
+1bec840e92b9b5d00f9b7cdba74edb28 *09 Love Minus ZeroNo Limit (acoustic w band).flac
+2c8db063ce85602ee7f00fe625b36ebc *10 God Knows.flac
+3d192b5b05143926bca27669e4bbcd91 *11 In The Garden.flac
+fb84c42784668496600449c943212484 *12 Maggie's Farm.flac
+c51f30697781748e1d9c1f1cc411a70f *13 Ballad Of A Thin Man.flac
+7405677c8968c740d3caecaec446c053 *14 It Ain't Me, Babe (acoustic w band).flac
+a523cb8f87cc8a3cf2193ef663bf9050 *15 Blowin' In The Wind (acoustic w band).flac
+5e3c3fbde6fc33bd231309791bc36403 *Live in Poland vol2.md5
+a3335172d744ca7ee53eeb466c92d342 *Note.txt
+e6a55a11149fb4104bbf30506dbb5639 *Poland2 Back.jpg
+40174957f90e1e0bdc063b08c7eb3f99 *Poland2 Front.jpg
+===================
+===================
+===================
+=== ffp for: bd94-07-19-Live-in-Poland-vol2-lk.flacf
+===================
+===================
+===================
+01 Jokerman.flac:d85f66841c375ef85a95dc9a9df5709f
+02 Just Like A Woman.flac:e92e4fe1ae1ad646ceb25290e544a6dd
+03 All Along The Watchtower.flac:fa6564ad0e48aa4799108de9efa942a0
+04 You're A Big Girl Now.flac:c1d7572284b3678022d31d1ceae9fb40
+05 Tangled Up In Blue.flac:8f7eb5ac457f1398c2d140fcf8046ca8
+06 Under The Red Sky.flac:c9faec59f748a64c0be396e9097a5cc0
+07 Mama, You Been On My Mind (acoustic w band).flac:62e1c555f877fdbf38bbf1451197dd3b
+08 Masters Of War (acoustic w band).flac:318733c0ec801a125c509cf3a7e5c8dd
+09 Love Minus ZeroNo Limit (acoustic w band).flac:21c3b95864f338afd73b859b7460543a
+10 God Knows.flac:f18038ed3bf8ed389782c47803243c7a
+11 In The Garden.flac:2653bd04f04466fb186194d1eaa6bd03
+12 Maggie's Farm.flac:ff12c4bc41ead9d93ba8add4b1bf195d
+13 Ballad Of A Thin Man.flac:0fe43ce1f263d21439a347ddd0403e70
+14 It Ain't Me, Babe (acoustic w band).flac:d4ac6d579930c575f296bd7c3114937c
+15 Blowin' In The Wind (acoustic w band).flac:856bc1a71d8e9f4d3b50518a1a15ce6b
+===================
+===================
+===================
+=== shntool len for: bd94-07-19-Live-in-Poland-vol2-lk.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:58.68       84479180 B   ---   --   ---xx   flac  0.5932  01 Jokerman.flac
+     6:26.11       68116316 B   ---   --   ---xx   flac  0.5662  02 Just Like A Woman.flac
+     5:36.69       59432732 B   ---   --   ---xx   flac  0.5947  03 All Along The Watchtower.flac
+     7:00.40       74182124 B   ---   --   ---xx   flac  0.5061  04 You're A Big Girl Now.flac
+     9:57.12      105339068 B   ---   --   ---xx   flac  0.5642  05 Tangled Up In Blue.flac
+     6:42.23       70966940 B   ---   --   ---xx   flac  0.5210  06 Under The Red Sky.flac
+     4:41.60       49709564 B   ---   --   ---xx   flac  0.4376  07 Mama, You Been On My Mind (acoustic w band).flac
+     5:55.60       62763164 B   ---   --   ---xx   flac  0.3969  08 Masters Of War (acoustic w band).flac
+     5:32.20       58611884 B   ---   --   ---xx   flac  0.3946  09 Love Minus ZeroNo Limit (acoustic w band).flac
+     5:56.71       62965436 B   ---   --   ---xx   flac  0.5847  10 God Knows.flac
+     8:28.08       89630060 B   ---   --   ---xx   flac  0.5594  11 In The Garden.flac
+     7:32.24       79789292 B   ---   --   ---xx   flac  0.6497  12 Maggie's Farm.flac
+     7:29.04       79213052 B   ---   --   ---xx   flac  0.6182  13 Ballad Of A Thin Man.flac
+     8:38.10       91398764 B   ---   --   ---xx   flac  0.5456  14 It Ain't Me, Babe (acoustic w band).flac
+     4:23.61       46536716 B   ---   --   ---xx   flac  0.4914  15 Blowin' In The Wind (acoustic w band).flac
+   102:20.16     1083134292 B                            0.5431  (15 files)
+===================
+===================
+===================

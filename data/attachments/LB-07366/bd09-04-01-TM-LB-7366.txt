@@ -1,0 +1,10 @@
+Bob Dylan, 4/1/09, Berlin, 2CDR
+
+LB-7366, (73min+54min), Technical Information:, Taper: TOM MOORE, Microphones: OKM II R + A3 Adapter, Recorder: M-Audio Microtrack @ 44,1 kHz/16 bit + APC Powerpack, Software: edit and split with Steinberg WaveLabStudio 6.0, a few seconds of "Things Have Changed " are lost (@ 00:29 - listen to example), sorry for this, TOM MOORE, 2009-04-08; bittorrent download 04/09; has spectral fuzz band above 18k; in comparison this has a fuller sound than henwill LB-7332, soundman LB-7338, and stc-11 LB-7347; excellent sound [A-]
+
+drop/cut between cdrs; can hear the cut noted in t7; can hear clipping distortion d2t6 4:25
+
+CD 1 [72:29.74], (01) [Intro], (02) The Wicked Messenger, (03) When I Paint My Masterpiece, (04) You Ain't Goin' Nowhere, (05) The Levee's Gonna Break, (06) My Back Pages, (07) Things Have Changed, (08) Tweedle Dee & Tweedle Dum, (09) Beyond The Horizon, (10) Stuck Inside Of Mobile With The Memphis Blues Again, (11) Love Sick, (12) Highway 61 Revisited, (13) Workingman's Blues #2, CD 2 [53:45.51], (01) Thunder On The Mountain, (02) Like A Rolling Stone, (03) All Along The Watchtower, (04) Spirit On The Water, (05) [Band Intro], (06) Blowin' In The Wind, Bonus-Tracks:, (07) The Lonesome Death Of Hattie Carroll *, (08) Tweedle Dee & Tweedle Dum *, (09) Sugar Baby *, * 2009-04-04 M, nchen, Germany (TOM MOORE recording)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

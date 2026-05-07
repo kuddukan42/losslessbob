@@ -1,0 +1,30 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-dave-stewart-home-LB-300.shnf 
+=================== 
+=================== 
+=================== 
+0918cefe770cb012e837ff2b5636a56c  davestewart_home.md5
+cd365989fcfa99b2da7e46ed023a8a19  davestewart_home.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-dave-stewart-home-LB-300.shnf 
+=================== 
+=================== 
+=================== 
+ad62deedceb3f395ad9c841c40fcd690  [shntool]  davestewart_home.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-dave-stewart-home-LB-300.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.73       49034880 B   -b-   --   ---xx    shn  0.5307  davestewart_home.shn
+     4:37.73       49034880 B                            0.5307  (1 file)
+=================== 
+=================== 
+=================== 

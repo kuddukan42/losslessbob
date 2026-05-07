@@ -1,0 +1,37 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-31-deadset.shnf 
+=================== 
+=================== 
+=================== 
+527bcfed93a4ee5ef4420602eeb3c0b5  bd03-07-31-deadset.md5
+5e5b3a0a8dc11f696023d406de440723  bd03-07-31-deadset.txt
+7c786c5a2670d2501e89d7bbb4115498  bd03-07-31deadset-t01.shn
+6726065aab41c541917d9a913a514127  bd03-07-31deadset-t02.shn
+d45dd335b8fec00a9722c3915680641e  bd03-07-31deadset-t03.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-31-deadset.shnf 
+=================== 
+=================== 
+=================== 
+fdd863119b416c48f3b283b7ee2d433a  [shntool]  bd03-07-31deadset-t01.wav
+df7ec81e77f7d85fc1828699645cd009  [shntool]  bd03-07-31deadset-t02.wav
+0151b82c0c03258448225672df5d6af3  [shntool]  bd03-07-31deadset-t03.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-31-deadset.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:34.00       69501844 B   ---   -e   ---xx    shn  0.6159  bd03-07-31deadset-t01.shn
+     8:30.00       89964314 B   ---   -e   ---xx    shn  0.6086  bd03-07-31deadset-t02.shn
+     5:06.00       53978696 B   ---   -e   ---xx    shn  0.6495  bd03-07-31deadset-t03.shn
+    20:10.00      213444854 B                            0.6213  (3 files)
+=================== 
+=================== 
+=================== 

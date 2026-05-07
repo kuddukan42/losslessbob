@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd99-02-23-e.flacf
+===================
+===================
+===================
+136bb08a669897743408e24607fb0b1c *01 To be alone with you.flac
+5fe55e3e3d557d603d829facd559139b *02 Just like a woman.flac
+478eba28b18ec7a7a2c431650be09749 *03 All along the watchtower.flac
+868a26c6c754760c2374b6a6985b5314 *04 I'll be your baby tonight.flac
+421569b7b379c64dbfdbd1f55f28f525 *05 Can't wait.flac
+64901ac7dc71d54e835e07f556f3c97e *06 Masters of war.flac
+cad27ddf141fa643758c1abeea4404a5 *07 Pass me not, o gentle saviour.flac
+7417bdf9d1ae9bd71b72b3471c330e7c *08 It's all over now, baby blue.flac
+68f684888fcce3e4920c0c65409e7b3a *09 Tangled up in blue.flac
+bf928bb59a82689a926bd92f60db5466 *10 Honky Tonk blues.flac
+28bb2dcef87b718eb77cff018680b7c6 *11 'Til I fell in love with you.flac
+e3de095af1516da530f9be0a704fa037 *12 Highway 61 revisited.flac
+92ad86f22283939035230a96a0da4927 *13 Like a rolling stone.flac
+6651a246cfd06669d83db197bfd9f499 *14 Leopard-skin pill-box hat.flac
+dc18e58ff14108c44c9f542cff1da389 *15 Blowin' in the wind.flac
+e6d6d88180abb31bfb4b7cbfada11dd3 *16 Not fade away.flac
+b6725a86f29d64c54f29b08fd6ca0e5b *1999-02-23 Marine Midland Arena, Buffalo, New York, USA [no LB-no. unidentified taper].txt
+3492e64f574345b00d9cabf9a14711b3 *99 02 23 d2.LOG
+600b21cd2eda8d224426d84c51a7da0c *99 2 23 d1.LOG
+e6737aa9699ec0f9a975a6fdbd716b1b *Bob Dylan 1999-02-23 Buffalo, New York, USA [no LB-no. unidentified taper].md5
+e6737aa9699ec0f9a975a6fdbd716b1b *Bob Dylan 1999-02-23 Buffalo, New York, USA [no LB-no. unidentified taper].txt
+===================
+===================
+===================
+=== ffp for: bd99-02-23-e.flacf
+===================
+===================
+===================
+01 To be alone with you.flac:054479a1f4b60952f52322b672381c93
+02 Just like a woman.flac:13dca33db4d9d52a12269ff4c6f94b41
+03 All along the watchtower.flac:fc09f8c22d804baa830c89704f72a42f
+04 I'll be your baby tonight.flac:eadbc40b7f1bcf27eb7d1966b75c45bf
+05 Can't wait.flac:7956f6516bf17f65d1dd2d5b30489f9b
+06 Masters of war.flac:1c416550a92779452877903759dde829
+07 Pass me not, o gentle saviour.flac:ce1e20065814401769f011577d926988
+08 It's all over now, baby blue.flac:11e028ad0d2a4a86a627c2c1c943b24c
+09 Tangled up in blue.flac:fdff092123d71e4f4af48273539200bc
+10 Honky Tonk blues.flac:a541725997d8f01910bb35ddeaeb84e4
+11 'Til I fell in love with you.flac:e63c2eab6af104b030af542da2be1af3
+12 Highway 61 revisited.flac:3c0545c9602658d1c35d907ff30f79e4
+13 Like a rolling stone.flac:ce7e3e9fcd98ece3917de2a25b895fe3
+14 Leopard-skin pill-box hat.flac:6382bb33f90e9d68675ffae87829f1d5
+15 Blowin' in the wind.flac:4232495c5e5a2f9b06b19d2349ce7632
+16 Not fade away.flac:a728097c2fb5b2ee8e1308d874536e34
+===================
+===================
+===================
+=== shntool len for: bd99-02-23-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:50.06       40586156 B   ---   --   ---xx   flac  0.6038  01 To be alone with you.flac
+     5:34.38       59007020 B   ---   --   ---xx   flac  0.5918  02 Just like a woman.flac
+     4:31.43       47905580 B   ---   --   ---xx   flac  0.5938  03 All along the watchtower.flac
+     5:24.63       57301820 B   ---   --   ---xx   flac  0.5584  04 I'll be your baby tonight.flac
+     6:49.59       72286412 B   ---   --   ---xx   flac  0.5776  05 Can't wait.flac
+     5:17.21       55968236 B   ---   --   ---xx   flac  0.5212  06 Masters of war.flac
+     4:42.39       49836572 B   ---   --   ---xx   flac  0.5297  07 Pass me not, o gentle saviour.flac
+     7:10.72       76021388 B   ---   --   ---xx   flac  0.5347  08 It's all over now, baby blue.flac
+     8:35.10       90869564 B   ---   --   ---xx   flac  0.5842  09 Tangled up in blue.flac
+     4:24.09       46590812 B   ---   --   ---xx   flac  0.5197  10 Honky Tonk blues.flac
+     7:08.65       75652124 B   ---   --   ---xx   flac  0.5232  11 'Til I fell in love with you.flac
+     6:28.35       68525564 B   ---   --   ---xx   flac  0.5787  12 Highway 61 revisited.flac
+     7:38.08       80810060 B   ---   --   ---xx   flac  0.5509  13 Like a rolling stone.flac
+     5:43.69       60667532 B   ---   --   ---xx   flac  0.5402  14 Leopard-skin pill-box hat.flac
+     6:17.47       66613388 B   ---   --   ---xx   flac  0.4910  15 Blowin' in the wind.flac
+     3:51.63       40896620 B   ---   --   ---xx   flac  0.5675  16 Not fade away.flac
+    93:29.47      989538848 B                            0.5534  (16 files)
+===================
+===================
+===================

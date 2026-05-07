@@ -1,0 +1,59 @@
+Bob Dylan
+Kilkenny Source Festival
+Nowlan Park
+Kilkenny, Ireland
+June 24, 2006
+
+Source: soomlos
+fob, center, ga field
+neumann km140's > sound devices mp-2 > sony sbm-1(toddmod) > sony d8
+Sony d8 > tascam cd-rw700 > eac > cool edit > cd wave > flac frontend
+
+Disc 1:
+01. Introduction [01:01] 
+02. Maggie's Farm [05:03]
+03. She Belongs To Me [05:44]
+04. Tweedle Dee & Tweedle Dum [05:42]
+05. Lay, Lady, Lay [06:35]
+06. Stuck Inside Of Mobile With The Memphis Blues Again [08:49]
+07. Love Sick [05:47]
+08. Watching The River Flow [06:02]
+09. Ballad Of A Thin Man [07:08]
+10. Absolutely Sweet Marie [05:11]
+11. Highway 61 Revisited [07:04]
+12. Masters Of War [05:26]
+13. Summer Days [08:12]
+Total time: [77:52]
+    
+Disc 2:
+01. Like A Rolling Stone [07:11]
+02. Band Introduction [00:43]
+03. All Along The Watchtower [06:08] 
+Total time: [14:06]    
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - mandolin, violin, pedal steel, lap steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass 
+
+Flac Fingerprint
+bd2006-06-24d1t01.flac:03a02a2b4fb0bbb8323c364b3e548099
+bd2006-06-24d1t02.flac:23bd72d59c2c77b559ddf23770713800
+bd2006-06-24d1t03.flac:b09f8c70c048fa06dfb4fd37a005c8a8
+bd2006-06-24d1t04.flac:517ac6b4fa603d3d87c75b5bd8135ed9
+bd2006-06-24d1t05.flac:18520d51ffc981b9e1efcffd9138f9f9
+bd2006-06-24d1t06.flac:6785d7401fa92e52fbc58e3ec39519bb
+bd2006-06-24d1t07.flac:eeb9ff197c0c5973c6d4a5a168759ffc
+bd2006-06-24d1t08.flac:47c5606a4dcdcf682873149f7fd5793b
+bd2006-06-24d1t09.flac:29d61125d947a271dfd0c9fd6f3ae6dc
+bd2006-06-24d1t10.flac:067ce821cf365a5ee6f403f4003a950a
+bd2006-06-24d1t11.flac:c5d64c77de9d7aa22a38baa4ccba8fc8
+bd2006-06-24d1t12.flac:72ef233f81eb75477a559791e5402df4
+bd2006-06-24d1t13.flac:66d3fd03e4823c807b348a537b815e1c
+bd2006-06-24d2t01.flac:f144dcbb452386797810ec4f0cd4b27d
+bd2006-06-24d2t02.flac:e7a3a7b07dceea1d576e077fcc35e273
+bd2006-06-24d2t03.flac:f7a0cfc1f129c22387029e3df69d7cc2
+

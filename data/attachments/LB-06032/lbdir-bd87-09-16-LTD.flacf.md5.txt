@@ -1,0 +1,16 @@
+d2ecda8ddf637e2fa1a6c4a2ede6c18f  01 - Track01.flac
+b9579406fb75a4238f0cc6a4d7885b68  02 - Track02.flac
+8a0a7642bf03e84643d4a4536464623a  03 - Track03.flac
+aa175ef781beea843fdf2c85fc4fca52  04 - Track04.flac
+7671ec26dbc2232d1a2fc06d9221090d  05 - Track05.flac
+24639c125a5a9154c746f6ef8d8a4888  06 - Track06.flac
+aaf9677cb5e565ec006043496dde25d8  07 - Track07.flac
+754cbafde77177f33eb4b77c300c3c97  08 - Track08.flac
+7e4255c20f7b9a5434cb24bbdb65f765  09 - Track09.flac
+fae662dccd4bc5d7e17969f9ce6b1319  10 - Track10.flac
+1ea745e00a39563304e11d9f225accd4  11 - Track11.flac
+4bb2d91f42be3f551a4993a3af25cfa2  12 - Track12.flac
+2d67abee52656837d3cd2c3b69de521b  13 - Track13.flac
+c417924ff1c7bbf4250cd6975219d36b  14 - Track14.flac
+31a9f5dbb0bde57bdc167093375e4d60  1987-09-16-Nuernberg.md5
+6ac71a9b26deede1e27c638d2be8632e  1987-09-16-Nuernberg.txt

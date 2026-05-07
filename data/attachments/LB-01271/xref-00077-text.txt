@@ -1,0 +1,307 @@
+===================
+===================
+===================
+=== 1990-02-08 Hammersmith Odeon, London, England.txt
+===================
+===================
+===================
+Hammersmith Odeon
+London, England
+February 8, 1990
+
+*****  Most likely this is the same recording as LB-1271  *****
+based on close to identical SHN track lengths. Tracks now converted to FLAC and renamed
+http://jokerman.org.uk/lb/detail/LB-01271.html
+
+NOTE: This is not the "Staying Here With You" boot;
+When received it was named "Over Your Senses"
+
+a) Info file: original not present; new created
+b) md5 file: original not present; not needed as SHNs are converted to FLACs 
+c) ffp files: originals not present; created for renamed tracks
+d) FLAC .txt: original not present; re-created 
+e) shntool_len: original(s) not present; created (for separate CDs)
+
+Recording: Holy Grail
+Source: no information
+Lineage: received in an 08/2005 trade
+LB-Rating: A
+SpectralView: excellent
+DigiFlawFinder: html included
+
+00. (crowd noise) [00:21]
+01. Absolutely Sweet Marie [04:18]
+02. Man In The Long Black Coat [04:12]
+03. Positively 4th street [04:57]
+04. Ballad Of A Thin Man [06:04]
+05. Pledging My Time [03:44]
+06. I Want You [05:30]
+07. Political World [03:04]
+08. You Angel You [03:10]
+09. All Along The Watchtower [03:06]
+Total time [38:29]
+
+10. Boots Of Spanish Leather [04:49]
+11. To Ramona [04:51]
+12. She Belongs To Me (acoustic) [03:44]
+13. Mr. Tambourine Man (acoustic) [07:08]
+14. Disease Of Conceit [03:57]
+15. You're A Big Girl Now (interrupted) [00:58]
+16. I'll Remember You [04:02]
+17. Where Teardrops Fall [03:22]
+18. Seeing The Real You At Last [04:00]
+19. Every Grain Of Sand [06:28]
+20. Rainy Day Women # 12 & 35 [03:05]
+21. Like A Rolling Stone [06:35]
+22. It Ain't Me, Babe [04:51]
+23. I've Been All Around This World (trad.) [04:19]
+24. Highway 61 Revisited [04:41]
+Total time [68:56]
+
+Concert # 185 of The Never-Ending Tour
+Concert # 15 of the 1990 Fastbreak Tour
+1990 concert # 15
+
+Concert # 107 with the second Never-Ending Tour band:
+
+Bob Dylan (vocal & guitar)
+G. E. Smith (guitar)
+Tony Garnier (bass)
+Christopher Parker (drums)
+
+10-13 and 22 Bob Dylan (vocal & guitar), G.E. Smith (guitar)
+14 Bob Dylan piano
+15 interrupted, instrumental beginning only
+2-6, 10, 12, 13, 17, 19, 21, 22 Bob Dylan harmonica
+24 G.E. Smith (electric slide guitar)
+
+REFERENCE:
+Great show, eh? - article by John Bauldie in The Telegraph #35
+18 new songs (75%) compared to previous concert. 6 new songs for this tour
+
+Stereo audience recording, 105 minutes
+
+Disc #1:
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:21.73        3876140 B   ---   --   ---xx   flac  0.6226  00 (crowd noise).flac
+     4:18.09       45532412 B   ---   --   ---xx   flac  0.6458  01 Absolutely sweet Marie.flac
+     4:12.67       44610428 B   ---   --   ---xx   flac  0.5917  02 Man in the long black coat.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.6104  03 Positively 4th Street.flac
+     6:04.40       64303724 B   ---   --   ---xx   flac  0.6149  04 Ballad of a thin man.flac
+     3:44.18       39555980 B   ---   --   ---xx   flac  0.6134  05 Pledging my time.flac
+     5:30.47       58322588 B   ---   --   ---xx   flac  0.6318  06 I want you.flac
+     3:04.03       32464700 B   ---   --   ---xx   flac  0.6382  07 Political world.flac
+     3:10.02       33520748 B   ---   --   ---xx   flac  0.6073  08 You angel you.flac
+     3:06.35       32892764 B   ---   --   ---xx   flac  0.6167  09 All along the watchtower.flac
+    38:29.69      407470328 B                            0.6190  (10 files)
+
+
+Disc #2:
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.35       51061964 B   ---   --   ---xx   flac  0.5487  10 Boots of Spanish leather.flac
+     4:51.37       51419468 B   ---   --   ---xx   flac  0.5510  11 To Ramona.flac
+     3:44.40       39607724 B   ---   --   ---xx   flac  0.5767  12 She belongs to me (acoustic).flac
+     7:08.73       75670940 B   ---   --   ---xx   flac  0.5495  13 Mr. Tambourine man (acoustic).flac
+     3:57.27       41870348 B   ---   --   ---xx   flac  0.5593  14 Disease of conceit.flac
+     0:58.26       10292396 B   ---   --   ---xx   flac  0.5759  15 You're a big girl now.flac
+     4:02.28       42754700 B   ---   --   ---xx   flac  0.6156  16 I'll remember you.flac
+     3:22.29       35701052 B   ---   --   ---xx   flac  0.5905  17 Where teardrops fall.flac
+     4:00.56       42467756 B   ---   --   ---xx   flac  0.6252  18 Seeing the real you at last.flac
+     6:28.21       68492636 B   ---   --   ---xx   flac  0.5971  19 Every grain of sand.flac
+     3:05.14       32666972 B   ---   --   ---xx   flac  0.6655  20 Rainy day women # 12 & 35.flac
+     6:35.35       69760364 B   ---   --   ---xx   flac  0.6784  21 Like a rolling stone.flac
+     4:51.25       51391244 B   ---   --   ---xx   flac  0.5580  22 It ain't me, babe (acoustic).flac
+     4:19.60       45828764 B   ---   --   ---xx   flac  0.5878  23 I've been all around this world.flac
+     4:41.11       49594316 B   ---   --   ---xx   flac  0.6508  24 Highway 61 revisited.flac
+    66:56.67      708580644 B                            0.5954  (15 files)
+
+===================
+===================
+===================
+=== 1990-02-08 Hammersmith Odeon, London, UK.md5
+===================
+===================
+===================
+6b2f8c95f55738317ff130826ecac6f8 *Artwork & Info\1990-02-08 Hammersmith Odeon, London, England.txt
+d9535c53398b53932fee48d0d4bb22d3 *Artwork & Info\1990-02-08_Hammersmith_Odeon,_London,_UK_01_crowd_noise.wav.html
+db834f1a2562b930d271d3279ca9288d *Artwork & Info\Staying Here With You [bootleg art front].JPG
+3ad3f9f4cc4ebf82a6c792053138943c *Artwork & Info\Staying Here With You [bootleg art rear].JPG
+4c29dba09d2c7ec9055482a35251bbc3 *CD1\00 (crowd noise).flac
+9825f3c4485974886d8deb405bae690c *CD1\01 Absolutely sweet Marie.flac
+d891172658bc47a6acfbc52fdbc43641 *CD1\02 Man in the long black coat.flac
+65a50bbf933cb7ce550c4c4063868fff *CD1\03 Positively 4th Street.flac
+cdf2ddd83a4c029ae7160de581b99873 *CD1\04 Ballad of a thin man.flac
+635b7eb35a02a6277e4d2672ee757a9b *CD1\05 Pledging my time.flac
+405a128e612d9e90cbbbe14ad17a1b2a *CD1\06 I want you.flac
+d74e419b7e6212354ab31c78b1f5cde0 *CD1\07 Political world.flac
+9b66d80cb913eb7b4f94218219560898 *CD1\08 You angel you.flac
+51494bf0d62c1b98d2b4fc4712ead4ad *CD1\09 All along the watchtower.flac
+1dfb95b52b6899b8dbb7238f6ac6b7a9 *CD1\CD1.ffp
+c0a16e909f5701da292d2aceece30a73 *CD1\CD1.shntool_len.txt
+1f97e6eca1d591d8ef4baac17cf5c482 *CD1\CD1.txt
+7afb4a7615d19b5f540c62cd346cf7a7 *CD2\10 Boots of Spanish leather.flac
+8c15253026c596d7cee407b7666f464f *CD2\11 To Ramona.flac
+44a4a8e7e6b1868cb8f231166320e556 *CD2\12 She belongs to me (acoustic).flac
+633ad0a5c78caace8628edd0c583a4c0 *CD2\13 Mr. Tambourine man (acoustic).flac
+9f19571f8370e1b09ab40402ed91b6a8 *CD2\14 Disease of conceit.flac
+7e572fa11ec910d20f5f85efe22047ee *CD2\15 You're a big girl now.flac
+327177ebb479c2e13973666177d058e7 *CD2\16 I'll remember you.flac
+98e9fe3ffac8464e598ca0efccdff963 *CD2\17 Where teardrops fall.flac
+dc1d22106834087961f19be8f7ff701e *CD2\18 Seeing the real you at last.flac
+a05ec80fdca7382f7a772876eb2d9c0f *CD2\19 Every grain of sand.flac
+7144fa9a8b841384002851f7aa3ddca8 *CD2\20 Rainy day women # 12 & 35.flac
+0227ed71a265c3f3ccb71d5e155137dd *CD2\21 Like a rolling stone.flac
+ace69a3fb6b86fbaf332a6daf52e673b *CD2\22 It ain't me, babe (acoustic).flac
+db1aaec1bc4ea2f988cec86717cce8b0 *CD2\23 I've been all around this world.flac
+baee03d7d4d5b3dd0b371b472ca7855b *CD2\24 Highway 61 revisited.flac
+be55927be1828eeb733e9dbdfaf38cf2 *CD2\CD2.ffp
+26c454474455b202bcc8e268808ad22e *CD2\CD2.shntool_len.txt
+105e08a53e6c17da7de6fd871df41feb *CD2\CD2.txt
+===================
+===================
+===================
+=== CD1.ffp
+===================
+===================
+===================
+; flac fingerprint file generated by Trader's Little Helper
+; generated on November 16, 2009, at 01:55:02
+
+00 (crowd noise).flac:b5972c126a4afc5be49ee863625dae14
+01 Absolutely sweet Marie.flac:4b10464d9f74987ecad44974596e53a4
+02 Man in the long black coat.flac:07c3abaf9f11f20c71dc67de5cb94b44
+03 Positively 4th Street.flac:130db64137fad9c87480b89eb6cc0327
+04 Ballad of a thin man.flac:a246703ffd32b7fe8e0bc1ae7533055f
+05 Pledging my time.flac:6104c82690603f7e6e2ff4bcbb44e98e
+06 I want you.flac:c595511b7e5995aff004ccef1593b92b
+07 Political world.flac:9707f3236a34f97f9f2d2d9eade17c6f
+08 You angel you.flac:e9e4cea3c943b3601505ba88e0979f15
+09 All along the watchtower.flac:9408fde6b3caaa4f9e331342ec16e810
+===================
+===================
+===================
+=== CD1.shntool_len.txt
+===================
+===================
+===================
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:21.73        3876140 B   ---   --   ---xx   flac  0.6226  00 (crowd noise).flac
+     4:18.09       45532412 B   ---   --   ---xx   flac  0.6458  01 Absolutely sweet Marie.flac
+     4:12.67       44610428 B   ---   --   ---xx   flac  0.5917  02 Man in the long black coat.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.6104  03 Positively 4th Street.flac
+     6:04.40       64303724 B   ---   --   ---xx   flac  0.6149  04 Ballad of a thin man.flac
+     3:44.18       39555980 B   ---   --   ---xx   flac  0.6134  05 Pledging my time.flac
+     5:30.47       58322588 B   ---   --   ---xx   flac  0.6318  06 I want you.flac
+     3:04.03       32464700 B   ---   --   ---xx   flac  0.6382  07 Political world.flac
+     3:10.02       33520748 B   ---   --   ---xx   flac  0.6073  08 You angel you.flac
+     3:06.35       32892764 B   ---   --   ---xx   flac  0.6167  09 All along the watchtower.flac
+    38:29.69      407470328 B                            0.6190  (10 files)
+===================
+===================
+===================
+=== CD1.txt
+===================
+===================
+===================
+; flac fingerprint file generated by Trader's Little Helper
+; generated on November 16, 2009, at 01:55:03
+
+00 (crowd noise).flac:b5972c126a4afc5be49ee863625dae14
+01 Absolutely sweet Marie.flac:4b10464d9f74987ecad44974596e53a4
+02 Man in the long black coat.flac:07c3abaf9f11f20c71dc67de5cb94b44
+03 Positively 4th Street.flac:130db64137fad9c87480b89eb6cc0327
+04 Ballad of a thin man.flac:a246703ffd32b7fe8e0bc1ae7533055f
+05 Pledging my time.flac:6104c82690603f7e6e2ff4bcbb44e98e
+06 I want you.flac:c595511b7e5995aff004ccef1593b92b
+07 Political world.flac:9707f3236a34f97f9f2d2d9eade17c6f
+08 You angel you.flac:e9e4cea3c943b3601505ba88e0979f15
+09 All along the watchtower.flac:9408fde6b3caaa4f9e331342ec16e810
+===================
+===================
+===================
+=== CD2.ffp
+===================
+===================
+===================
+; flac fingerprint file generated by Trader's Little Helper
+; generated on November 16, 2009, at 01:54:36
+
+10 Boots of Spanish leather.flac:5b5f4bec70800a46a86f703bb9c03d3f
+11 To Ramona.flac:20f5104f96107cae9857c4424c8a3ca1
+12 She belongs to me (acoustic).flac:42cf214f9fd247b79ce6c94b5b5582d1
+13 Mr. Tambourine man (acoustic).flac:62b0fba31c114df3c5c54e443f5ae734
+14 Disease of conceit.flac:b05ed09b32042ed0539e8b2211c149b4
+15 You're a big girl now.flac:db658c511c25c75d0b27c6179c4ccc2c
+16 I'll remember you.flac:d8d70a77f1f649412cc6a8ef800391bf
+17 Where teardrops fall.flac:677d7c6483470c91448cfbaad2325a5e
+18 Seeing the real you at last.flac:f00685442171b0bce651a58901bd6ca3
+19 Every grain of sand.flac:7a362d5a30cb4894b44909a1163303af
+20 Rainy day women # 12 & 35.flac:3b8d311ce5bd67b902de58ae5a1f4a4a
+21 Like a rolling stone.flac:9431d3bae7a96fc7ae185528e9280c21
+22 It ain't me, babe (acoustic).flac:44044385b09f061491738b60e6b8613a
+23 I've been all around this world.flac:e02c49ac05f9abe63adb96e927dbd390
+24 Highway 61 revisited.flac:6dd637345e4285e4da6450ccfe5b0cc0
+===================
+===================
+===================
+=== CD2.shntool_len.txt
+===================
+===================
+===================
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.35       51061964 B   ---   --   ---xx   flac  0.5487  10 Boots of Spanish leather.flac
+     4:51.37       51419468 B   ---   --   ---xx   flac  0.5510  11 To Ramona.flac
+     3:44.40       39607724 B   ---   --   ---xx   flac  0.5767  12 She belongs to me (acoustic).flac
+     7:08.73       75670940 B   ---   --   ---xx   flac  0.5495  13 Mr. Tambourine man (acoustic).flac
+     3:57.27       41870348 B   ---   --   ---xx   flac  0.5593  14 Disease of conceit.flac
+     0:58.26       10292396 B   ---   --   ---xx   flac  0.5759  15 You're a big girl now.flac
+     4:02.28       42754700 B   ---   --   ---xx   flac  0.6156  16 I'll remember you.flac
+     3:22.29       35701052 B   ---   --   ---xx   flac  0.5905  17 Where teardrops fall.flac
+     4:00.56       42467756 B   ---   --   ---xx   flac  0.6252  18 Seeing the real you at last.flac
+     6:28.21       68492636 B   ---   --   ---xx   flac  0.5971  19 Every grain of sand.flac
+     3:05.14       32666972 B   ---   --   ---xx   flac  0.6655  20 Rainy day women # 12 & 35.flac
+     6:35.35       69760364 B   ---   --   ---xx   flac  0.6784  21 Like a rolling stone.flac
+     4:51.25       51391244 B   ---   --   ---xx   flac  0.5580  22 It ain't me, babe (acoustic).flac
+     4:19.60       45828764 B   ---   --   ---xx   flac  0.5878  23 I've been all around this world.flac
+     4:41.11       49594316 B   ---   --   ---xx   flac  0.6508  24 Highway 61 revisited.flac
+    66:56.67      708580644 B                            0.5954  (15 files)
+===================
+===================
+===================
+=== CD2.txt
+===================
+===================
+===================
+; flac fingerprint file generated by Trader's Little Helper
+; generated on November 16, 2009, at 01:54:38
+
+10 Boots of Spanish leather.flac:5b5f4bec70800a46a86f703bb9c03d3f
+11 To Ramona.flac:20f5104f96107cae9857c4424c8a3ca1
+12 She belongs to me (acoustic).flac:42cf214f9fd247b79ce6c94b5b5582d1
+13 Mr. Tambourine man (acoustic).flac:62b0fba31c114df3c5c54e443f5ae734
+14 Disease of conceit.flac:b05ed09b32042ed0539e8b2211c149b4
+15 You're a big girl now.flac:db658c511c25c75d0b27c6179c4ccc2c
+16 I'll remember you.flac:d8d70a77f1f649412cc6a8ef800391bf
+17 Where teardrops fall.flac:677d7c6483470c91448cfbaad2325a5e
+18 Seeing the real you at last.flac:f00685442171b0bce651a58901bd6ca3
+19 Every grain of sand.flac:7a362d5a30cb4894b44909a1163303af
+20 Rainy day women # 12 & 35.flac:3b8d311ce5bd67b902de58ae5a1f4a4a
+21 Like a rolling stone.flac:9431d3bae7a96fc7ae185528e9280c21
+22 It ain't me, babe (acoustic).flac:44044385b09f061491738b60e6b8613a
+23 I've been all around this world.flac:e02c49ac05f9abe63adb96e927dbd390
+24 Highway 61 revisited.flac:6dd637345e4285e4da6450ccfe5b0cc0
+===================
+===================
+===================

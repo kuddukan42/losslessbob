@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== 1975_11_13_NEW_HAVEN_LATE.ffp
+===================
+===================
+===================
+BD75_11_13_EVE_D1\TRACK_01.FLAC:6cc8aa54eafc9645ca889ccfb540d263
+BD75_11_13_EVE_D1\TRACK_02.FLAC:fa93fa098c52bc729a9bb54e7d8c8231
+BD75_11_13_EVE_D1\TRACK_03.FLAC:2e5312a9bfceda4fa06c2d7b3f1d1b6e
+BD75_11_13_EVE_D1\TRACK_04.FLAC:07dcc0ab7c00d93d9afbe6ce246cdd2e
+BD75_11_13_EVE_D1\TRACK_05.FLAC:4fa98e3dcd117825c184ffcdb3a355a1
+BD75_11_13_EVE_D1\TRACK_06.FLAC:6f42bdcbc57087c58585e36819d60399
+BD75_11_13_EVE_D1\TRACK_07.FLAC:3a374254f6008feaf1372a2fedeee3c3
+BD75_11_13_EVE_D1\TRACK_08.FLAC:8026224501cc3c97c418c09f7b5200b9
+BD75_11_13_EVE_D1\TRACK_09.FLAC:df606e2af649ec32509a61ba8e916078
+BD75_11_13_EVE_D1\TRACK_10.FLAC:8a09fa465180b2685853c5a88d5663ee
+BD75_11_13_EVE_D1\TRACK_11.FLAC:3b5550b98b8a0ca7f50dc58f38cf31ae
+BD75_11_13_EVE_D1\TRACK_12.FLAC:3320a2351404054ba81ac59cf71ed526
+BD75_11_13_EVE_D1\TRACK_13.FLAC:1d107107995651db0ff5a130129bafb0
+BD75_11_13_EVE_D1\TRACK_14.FLAC:16f811e9e9dc920774f98cc95dfb4ce3
+BD75_11_13_EVE_D1\TRACK_15.FLAC:226db988941599ddd4e2d9cf784236f8
+BD75_11_13_EVE_D1\TRACK_16.FLAC:6fff3084b2f307b09f64cc93ef81cdb6
+BD75_11_13_EVE_D2\TRACK_01.FLAC:cd1013c8ae179373950e772d456e77e9
+BD75_11_13_EVE_D2\TRACK_02.FLAC:0a037a89556631c70c2ac1b3cdf84d65
+BD75_11_13_EVE_D2\TRACK_03.FLAC:b1227eb0f27a36b823c8cf952317dcdf
+===================
+===================
+===================
+=== 1975_11_13_NEW_HAVEN_LATE.MD5
+===================
+===================
+===================
+dd1541d237360d928902fc3636037b94 *bd75-11-13-eve-d1\Track 01.flac
+2a09bb289ab5a28ba1cdd2b234604861 *bd75-11-13-eve-d1\Track 02.flac
+288d0e856996d65cc09ed139cde27f24 *bd75-11-13-eve-d1\Track 03.flac
+a1ca3fd43702967aa9a2ff3b99d72188 *bd75-11-13-eve-d1\Track 04.flac
+ff09a928adf78440639e77b549cbd687 *bd75-11-13-eve-d1\Track 05.flac
+185d5bef252761235d64e9509c680d24 *bd75-11-13-eve-d1\Track 06.flac
+bf65d496d476a5c67839a23f45ec54b9 *bd75-11-13-eve-d1\Track 07.flac
+880bf8b59e7f114aae30f500d2ba98a6 *bd75-11-13-eve-d1\Track 08.flac
+424a58a820da7c41f70c657371414733 *bd75-11-13-eve-d1\Track 09.flac
+e677709d72fdb5069380e554d8af0948 *bd75-11-13-eve-d1\Track 10.flac
+ee7f478c3e1e3cd6a25475f90380339b *bd75-11-13-eve-d1\Track 11.flac
+000b2b0de8028054e1d83d1a6c5bbbd4 *bd75-11-13-eve-d1\Track 12.flac
+6eb263dc0dab055a342c9d4848e186da *bd75-11-13-eve-d1\Track 13.flac
+40555fabcc3b156529d91d2827d68c5e *bd75-11-13-eve-d1\Track 14.flac
+3c328cefb3b3643bef73c0f9e91932b7 *bd75-11-13-eve-d1\Track 15.flac
+90dfd500696c3039678c1c8452c6660a *bd75-11-13-eve-d1\Track 16.flac
+a73876ecb73192f72a98834d5a28eb1c *bd75-11-13-eve-d2\Track 01.flac
+2eb4d57830698d1fd5264d4734850b69 *bd75-11-13-eve-d2\Track 02.flac
+04c754021b7c4a56a8bf8960a8909b22 *bd75-11-13-eve-d2\Track 03.flac
+51415a3500cdf6ea7d739beb9077cc48 *bd75-11-13-eve-LTE.txt
+===================
+===================
+===================
+=== BD75_11_13_EVE_LTE.TXT
+===================
+===================
+===================
+Bob Dylan
+November 13 1975 (Evening) 
+Veterans Memorial Coliseum  
+New Haven, Connecticut  
+
+Taper: LTE
+Source: Audio disks direct from taper > (Feurio) wav > (flacfrontend) 
+flac.
+
+Disk One
+When I Paint My Masterpiece 
+It Ain't Me, Babe 
+A Hard Rain's A-Gonna Fall 
+Romance In Durango 
+Isis 
+Blowin' In The Wind 
+The Water Is Wide 
+I Dreamed I Saw St. Augustine 
+Never Let Me Go 
+I Shall Be Released 
+I Dont Believe You (She Acts Like We Never Have Met) 
+Simple Twist Of Fate 
+Oh, Sister 
+Hurricane 
+One More Cup Of Coffee (Valley Below) 
+Sara 
+
+Disk Two
+Just Like A Woman 
+Knockin' On Heaven's Door 
+This Land Is Your Land
+===================
+===================
+===================

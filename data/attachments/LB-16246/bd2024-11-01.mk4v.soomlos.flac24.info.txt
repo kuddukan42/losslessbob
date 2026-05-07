@@ -1,0 +1,54 @@
+Bob Dylan
+BIC Windsor Hall
+Bournemouth, England
+November 1, 2024
+
+01. All Along The Watchtower
+02. It Ain't Me, Babe 
+03. I Contain Multitudes 
+04. False Prophet 
+05. When I Paint My Masterpiece 
+06. Black Rider 
+07. My Own Version Of You
+08. To Be Alone With You 
+09. Crossing The Rubicon 
+10. Desolation Row
+11. Key West (Philosopher Pirate) 
+12. It's All Over Now, Baby Blue
+13. I've Made Up My Mind To Give Myself To You
+14. Watching The River Flow
+15. Mother Of Muses
+16. Goodbye Jimmy Reed
+17. Every Grain Of Sand
+
+Band Members
+Bob Dylan - vocals, guitar, piano, harp
+Jim Keltner - drums
+Doug Lancio - guitar 
+Bob Britt - guitar
+Tony Garnier - bass
+
+Recorded by: soomlos
+5th row center right
+schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3 (24-bit / 48000 Hz)
+sound devices mixpre-3 > usb > pc > poly wav (24-bit / 48000 Hz)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24-bit / 48000 Hz)
+
+ffp
+bd2024-11-01-soomlos-t01.flac:a17868ea3185674d08a9fbdca4a1b6da
+bd2024-11-01-soomlos-t02.flac:f6160ea2df40d63b12af767682b74073
+bd2024-11-01-soomlos-t03.flac:127c92196c026e99adcde41130ff8056
+bd2024-11-01-soomlos-t04.flac:c77a51283e61324226e3ba9e670a6253
+bd2024-11-01-soomlos-t05.flac:66d7ab227ba8dc6f71440200d92eb51d
+bd2024-11-01-soomlos-t06.flac:9992306a38fbd6391a26edec46fe9b3e
+bd2024-11-01-soomlos-t07.flac:82e5cf9e98fe430f7bcf75e7743bd6a1
+bd2024-11-01-soomlos-t08.flac:af02a38802394099a956dd51e7982928
+bd2024-11-01-soomlos-t09.flac:323718a9e2ea8d1d755999fba3c3dab5
+bd2024-11-01-soomlos-t10.flac:b969aa87a8edb8c8de19546a7cd74baf
+bd2024-11-01-soomlos-t11.flac:d9f48ac01683b5fc26927d7122523b95
+bd2024-11-01-soomlos-t12.flac:c95bd2d8dbd20c011aad003954be5948
+bd2024-11-01-soomlos-t13.flac:0a17f5ecc8d54f32b51d3a2d25a442e4
+bd2024-11-01-soomlos-t14.flac:894fce0fc6a72ea466dc27d3fe0e2ec5
+bd2024-11-01-soomlos-t15.flac:a554d98d9b603c8f4fcc3a7127cc4e8d
+bd2024-11-01-soomlos-t16.flac:67aa57df98c6a1fb62a955ef3b3d3362
+bd2024-11-01-soomlos-t17.flac:53522a9208c5668f5256ac647c53a5c1

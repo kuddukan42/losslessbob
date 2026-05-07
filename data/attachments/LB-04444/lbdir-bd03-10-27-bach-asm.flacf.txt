@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-10-27-bach-asm.flacf 
+=================== 
+=================== 
+=================== 
+8878ae8b46f07edac43c454d5f66af2c  2003.10.27 Wien (Bach rec & asm) Info.txt
+2182ae614242011ebdd9fb15bdad0af1  bd03-10-27-bach-asm-LB-4444.txt
+7c23c8ab666f1acfe129b949e6fa6728  CD1\2003-10-27_d1t01.flac
+bd1e7395c54b56f4eacfd584dcdb2fae  CD1\2003-10-27_d1t02.flac
+d13fc7af9e22c09435c0d7ddbc5f3a1a  CD1\2003-10-27_d1t03.flac
+647230f473e0579984d42ee0c26e3b1d  CD1\2003-10-27_d1t04.flac
+0ca9e925e64743b6b503d660c81679a2  CD1\2003-10-27_d1t05.flac
+e4098e632d7f01c48e6d30e12017d290  CD1\2003-10-27_d1t06.flac
+1bb6745e347329a35eda795340822ed5  CD1\2003-10-27_d1t07.flac
+fdf086b9d69d5e132414cd10cd091932  CD1\2003-10-27_d1t08.flac
+5c826f6dc7cb57cdb4507f289c7b87a4  CD1\2003-10-27_d1t09.flac
+b39c66eb551b922eaf533a082f764c8d  CD1\2003-10-27_d1t10.flac
+9c59f754bb33ce501102dd8de960158f  CD1\2003-10-27_d1t11.flac
+7e84cd557dc5056e43439e1ad480a6ab  CD1\2003.10.27 Wien (Bach rec & asm) d1 tracks.TXT
+10e6c9a878547b9c984b0c460e3a7a08  CD1\2003.10.27 Wien (Bach rec & asm) d1.LOG
+4828f7038a463d268b1cc71ff63b19fa  CD1\CD1 flac.md5
+885feab8a50468429d9c6f696f2309c6  CD2\2003-10-27_d2t01.flac
+b6365dd5d1ee6d075dd163bdb1a24e42  CD2\2003-10-27_d2t02.flac
+fbf436fe4160fb3bc2b1a0d0bd168f50  CD2\2003-10-27_d2t03.flac
+b4ca9d268238f2a3a4f5efc5f48d7d3f  CD2\2003-10-27_d2t04.flac
+e367b61d79120e36de06b36597129ff9  CD2\2003-10-27_d2t05.flac
+293779e4477a94a166b677f44be22173  CD2\2003-10-27_d2t06.flac
+9d5206dbb9e404948b2fc4679f5e5f9e  CD2\2003-10-27_d2t07.flac
+f9bfe3617bb02ccb047219d84c680da9  CD2\2003.10.27 Wien (Bach rec & asm) d2 tracks.TXT
+45fe73639529c1f9dbfb55b1feb4837f  CD2\2003.10.27 Wien (Bach rec & asm) d2.LOG
+7ea242993d805d59b408039a044f728c  CD2\CD2 flac.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-10-27-bach-asm.flacf\CD1 
+=================== 
+=================== 
+=================== 
+2003-10-27_d1t01.flac:ac6531587b4bc0b23fd5740f52c8215d
+2003-10-27_d1t02.flac:2f788a9891435c298ecb7b0c24ed7915
+2003-10-27_d1t03.flac:918d37243627d58f2bd5cd7a7ceba1da
+2003-10-27_d1t04.flac:20208d00c6737d56337ebaf1e363a25a
+2003-10-27_d1t05.flac:9b0b14d0ec89443dc902d5ac585ceeeb
+2003-10-27_d1t06.flac:4130180fdeeccb959fbbbfd3be990dcb
+2003-10-27_d1t07.flac:c88db3a05729afb9439c29a9d99d3238
+2003-10-27_d1t08.flac:2f98781392ef3f268c116388f9a50bd1
+2003-10-27_d1t09.flac:dc8f62a8664a37c1f6b4efbf48b59a2f
+2003-10-27_d1t10.flac:4aaf6a6a840f8ca36b019d180a6a47e9
+2003-10-27_d1t11.flac:b3dfd424ee89220f7939d18a9d93abdd
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-10-27-bach-asm.flacf\CD2 
+=================== 
+=================== 
+=================== 
+2003-10-27_d2t01.flac:8db5c7ffd76e49a6ef0219d38663b958
+2003-10-27_d2t02.flac:0335231d0a9296963940561d80110993
+2003-10-27_d2t03.flac:7fe4db5c50e7184ac514d9ff6eb3e15d
+2003-10-27_d2t04.flac:3abceefc4b9be128db7e4665fcdac9a9
+2003-10-27_d2t05.flac:6cfa666e637e4bde6bfc00c139dc9227
+2003-10-27_d2t06.flac:e39c6457692710531cdc5b2cb916822a
+2003-10-27_d2t07.flac:2db002602d8a51ce90aabdc65d8b1582
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-27-bach-asm.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.46        9810236 B   ---   --   ---xx   flac  0.3733  2003-10-27_d1t01.flac
+     4:47.42       50725628 B   ---   --   ---xx   flac  0.5212  2003-10-27_d1t02.flac
+     6:56.01       73384796 B   ---   --   ---xx   flac  0.4789  2003-10-27_d1t03.flac
+     5:41.32       60227708 B   ---   --   ---xx   flac  0.5296  2003-10-27_d1t04.flac
+     6:33.64       69475772 B   ---   --   ---xx   flac  0.4594  2003-10-27_d1t05.flac
+     7:32.66       79888076 B   ---   --   ---xx   flac  0.5143  2003-10-27_d1t06.flac
+     7:53.52       83559548 B   ---   --   ---xx   flac  0.4459  2003-10-27_d1t07.flac
+     7:15.00       76734044 B   ---   --   ---xx   flac  0.4897  2003-10-27_d1t08.flac
+     8:08.06       86097356 B   ---   --   ---xx   flac  0.5205  2003-10-27_d1t09.flac
+     5:47.49       61326092 B   ---   --   ---xx   flac  0.4255  2003-10-27_d1t10.flac
+     5:33.59       58880012 B   ---   --   ---xx   flac  0.4631  2003-10-27_d1t11.flac
+    67:05.42      710109268 B                            0.4832  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-27-bach-asm.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:47.30       82449404 B   ---   --   ---xx   flac  0.4461  2003-10-27_d2t01.flac
+     7:08.06       75513356 B   ---   --   ---xx   flac  0.5210  2003-10-27_d2t02.flac
+     7:17.00       77086844 B   ---   --   ---xx   flac  0.4345  2003-10-27_d2t03.flac
+    11:42.37      123919868 B   ---   --   ---xx   flac  0.4758  2003-10-27_d2t04.flac
+     4:56.74       52388492 B   ---   --   ---xx   flac  0.5572  2003-10-27_d2t05.flac
+     7:03.51       74737196 B   ---   --   ---xx   flac  0.5128  2003-10-27_d2t06.flac
+     6:33.47       69435788 B   ---   --   ---xx   flac  0.5207  2003-10-27_d2t07.flac
+    52:29.20      555530948 B                            0.4901  (7 files)
+=================== 
+=================== 
+=================== 

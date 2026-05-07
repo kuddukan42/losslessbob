@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-03-09a.flacf 
+=================== 
+=================== 
+=================== 
+e8f185366c157802dd23695e50e8f405  (D1-01) Hallelujah,I'mReadyToGo.flac
+04937790557eec4d9cc1f631ba82ea3a  (D1-02) Mr.TambourineMan.flac
+2b6a51b567e00cc1e5ac2a7443fcc0cb  (D1-03) DesolationRow.flac
+316d3339a381d712be46ebb01ac178a1  (D1-04) ToBeAloneWithYou.flac
+119fe1470d571342be0822644d0f1139  (D1-05) JustLikeAWoman.flac
+1a7da274bf97d7dc9ce3a0678b218104  (D1-06) StuckInsideOfMobileWithTheMenphisBluesAgain.flac
+3fd88534d5c52e4ebdc65e2fed460992  (D1-07) MastersOfWar.flac
+bdbe1d5b162617df79b35bcfcd2fe363  (D1-08) RingThemBells.flac
+3bf32e1268186f31d3e34574ffb244a2  (D1-09) Don'tThinkTwice,It'sAllright.flac
+fbd2bf65ea7c80649491abac13914d3a  (D2-01) MostLikelyYouGoYourWay.flac
+b61d91e0c6bfd3d1b3ee41c26684ff98  (D2-02) Drifter'sEscape.flac
+b04d42f53eb30c930284a3f8cb3e5869  (D2-03) RainyDayWoman#12&35.flac
+2b7e67b54e68da6e437b0bde901b5c95  (D2-04) Encore-LoveSick.flac
+68c44de6b8246d112a960ea4e6b8e248  (D2-05) LikeARollingStone.flac
+1995105e2b4e32df998398c80a9b185b  (D2-06) IfDogsRunFree.flac
+cfed0805e8bcd2220ccc5e6df1c58006  (D2-07) AllAlongTheWatchtower.flac
+bc07dcf493a4d96ee28830225a686853  (D2-08) ItAin'tMe,Babe.flac
+1302c1e1b9f577b2aa4b9192839dcf85  (D2-09) Highway61Revisited.flac
+b3ba571d5635c5696e0a2c7d7dc4d16a  (D2-10) Blowin'InTheWind.flac
+9bde7b2bd94aa62b68161fa803cccfed  bd01-03-09a.txt
+1027526a3942b6aa21279faaff52b207  New Text Document (2).txt
+3992f02ee705822b145868c40b5af224  New Text Document.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-09a.flacf 
+=================== 
+=================== 
+=================== 
+(D1-01) Hallelujah,I'mReadyToGo.flac:e18bc39faacd9c8f317d9c04887d7d4f
+(D1-02) Mr.TambourineMan.flac:557ce862776850d525510a23ed76b601
+(D1-03) DesolationRow.flac:6a23b037aba9f74c3b8eeb75485ef487
+(D1-04) ToBeAloneWithYou.flac:fe33f51c98999773c1aec5dce62df097
+(D1-05) JustLikeAWoman.flac:b16bb1c6f432b39c9ac6e2e05dd5158c
+(D1-06) StuckInsideOfMobileWithTheMenphisBluesAgain.flac:55eeb5be5a505d9e7188ba73b34da456
+(D1-07) MastersOfWar.flac:f249517923ede44b0eb65c3082ceacaa
+(D1-08) RingThemBells.flac:d62ec7dbc2c9b939755594f835bbaf92
+(D1-09) Don'tThinkTwice,It'sAllright.flac:98cb10c47e04c36adab9d81647463cc2
+(D2-01) MostLikelyYouGoYourWay.flac:e5ddda86cd4955569f92267127beef57
+(D2-02) Drifter'sEscape.flac:ed5508e48deeb4fad8e584e98ee353f8
+(D2-03) RainyDayWoman#12&35.flac:841fa09d022ee01bb631ca5e3713624b
+(D2-04) Encore-LoveSick.flac:516a79ec2fbb3e359d2b939be16b544f
+(D2-05) LikeARollingStone.flac:15346a4a2ebd1f61ac9570eec6ec65d3
+(D2-06) IfDogsRunFree.flac:f2148349e8af7f93257daf9276ef1ccc
+(D2-07) AllAlongTheWatchtower.flac:7109ee387cae9592dec9f652830c0983
+(D2-08) ItAin'tMe,Babe.flac:8f56ad01a81e3b5cbfdd6bd3cd3304ee
+(D2-09) Highway61Revisited.flac:6a4ce19581e5b41db991789b18660c5f
+(D2-10) Blowin'InTheWind.flac:d8063abd0c616e12824a7a7e81b1d4e4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-09a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:30.73       37215740 B   ---   --   ---xx   flac  0.6137  (D1-01) Hallelujah,I'mReadyToGo.flac
+     5:52.66       62248076 B   ---   --   ---xx   flac  0.6428  (D1-02) Mr.TambourineMan.flac
+     9:12.59       97511612 B   ---   --   ---xx   flac  0.6181  (D1-03) DesolationRow.flac
+     5:21.13       56655020 B   ---   --   ---xx   flac  0.6627  (D1-04) ToBeAloneWithYou.flac
+     6:04.60       64350764 B   ---   --   ---xx   flac  0.6222  (D1-05) JustLikeAWoman.flac
+     7:41.39       81412172 B   ---   --   ---xx   flac  0.6866  (D1-06) StuckInsideOfMobileWithTheMenphisBluesAgain.flac
+     5:35.33       59171660 B   ---   --   ---xx   flac  0.5631  (D1-07) MastersOfWar.flac
+     5:44.65       60834524 B   ---   --   ---xx   flac  0.5796  (D1-08) RingThemBells.flac
+     6:35.02       69682748 B   ---   --   ---xx   flac  0.5923  (D1-09) Don'tThinkTwice,It'sAllright.flac
+     7:23.73       78316940 B   ---   --   ---xx   flac  0.6331  (D2-01) MostLikelyYouGoYourWay.flac
+     3:56.23       41684540 B   ---   --   ---xx   flac  0.7016  (D2-02) Drifter'sEscape.flac
+     7:55.64       83940572 B   ---   --   ---xx   flac  0.6405  (D2-03) RainyDayWoman#12&35.flac
+     6:10.34       65348012 B   ---   --   ---xx   flac  0.6218  (D2-04) Encore-LoveSick.flac
+     7:08.34       75579212 B   ---   --   ---xx   flac  0.6573  (D2-05) LikeARollingStone.flac
+     4:18.25       45570044 B   ---   --   ---xx   flac  0.5132  (D2-06) IfDogsRunFree.flac
+     4:42.45       49850684 B   ---   --   ---xx   flac  0.6671  (D2-07) AllAlongTheWatchtower.flac
+     8:54.26       94258796 B   ---   --   ---xx   flac  0.5466  (D2-08) ItAin'tMe,Babe.flac
+     5:30.73       58383740 B   ---   --   ---xx   flac  0.6870  (D2-09) Highway61Revisited.flac
+     5:42.32       60404108 B   ---   --   ---xx   flac  0.5875  (D2-10) Blowin'InTheWind.flac
+   117:23.14     1242418964 B                            0.6223  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03 04 26 new orleans cb 
+=================== 
+=================== 
+=================== 
+54bfee7bcfa0bd8c736119e2c1755445  03 04 26 cb d1 t01.shn
+cfef4fd30b0da8f5aa6595a35f38bb3f  03 04 26 cb d1 t02.shn
+b95be31318cf639708b20b3c182dd7f9  03 04 26 cb d1 t03.shn
+fafbae75d888e659965f6567f5403ee2  03 04 26 cb d1 t04.shn
+3d2f6c6d187c70ed38a7c0d2fae92947  03 04 26 cb d1 t05.shn
+22d508fef84f71c5c78a12dd14f5b892  03 04 26 cb d1 t06.shn
+4c4ba6e450b495916cb31a3198b24ab1  03 04 26 cb d1 t07.shn
+5c5ea3125e54c4a900d6b5813a4a3b7c  03 04 26 cb d1 t08.shn
+a7cccffe9c63841fd1c8edf38a4f4bbf  03 04 26 cb d1 t09.shn
+4d594780bb1306061c58b806a2b46aff  03 04 26 cb d1 t10.shn
+039c75284c969204d0e03df7b65e0707  03 04 26 cb d1 t11.shn
+48e247f1878a100f75bdc0ce6496b218  03 04 26 cb d1 t12.shn
+6fc9c8f4d7412786fd7f6e67ca2761be  03 04 26 cb d2 t01.shn
+1c90e9547a9548f330cbe9a256d990c6  03 04 26 cb d2 t02.shn
+9b12079d36fa5846ad83b7bfa14c9c0b  03 04 26 cb d2 t03.shn
+f4b242ab33c7ef188e50ce9e91092dfd  03 04 26 cb d2 t04.shn
+8855348934ca5e853ee4d65b15106daf  03 04 26 cb.md5
+4cc064e2728657157f29153f5d56452b  bd03-04-26cb.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03 04 26 new orleans cb 
+=================== 
+=================== 
+=================== 
+3ce0e300448e2180d3e726c8d116f434  [shntool]  03_04_26_cb_d1_t01.wav
+8d56896f4f237d09420211c03f211aaf  [shntool]  03_04_26_cb_d1_t02.wav
+5f2426b677e29ff7b1ba395e59d368cf  [shntool]  03_04_26_cb_d1_t03.wav
+e355b61a966ece4cdcc83ad3a308458f  [shntool]  03_04_26_cb_d1_t04.wav
+f26bd2a5939f1d6652e168198cb291f8  [shntool]  03_04_26_cb_d1_t05.wav
+4c13a39ded6c4cfc2b2558f54ec7ff5e  [shntool]  03_04_26_cb_d1_t06.wav
+b850c2c8acfef8f2859f4fb91bf3ddc7  [shntool]  03_04_26_cb_d1_t07.wav
+0f95bd8493e0018e0ac6f2e7c958267a  [shntool]  03_04_26_cb_d1_t08.wav
+2dec1afc4e6f339efc7ba1fc018ab1c5  [shntool]  03_04_26_cb_d1_t09.wav
+0c431f1b5180afbf27a47dacf0aebfce  [shntool]  03_04_26_cb_d1_t10.wav
+5d746723646f5fd2476b7ad9dd3b71ac  [shntool]  03_04_26_cb_d1_t11.wav
+173e3d7e49599cb945698fcd55f22e9f  [shntool]  03_04_26_cb_d1_t12.wav
+cdd27e2118235d56830aceff99434080  [shntool]  03_04_26_cb_d2_t01.wav
+ec70e12908734ded66a295d4b8712947  [shntool]  03_04_26_cb_d2_t02.wav
+272dd34443be9b7932a58770c34c2f18  [shntool]  03_04_26_cb_d2_t03.wav
+62e6d490b809b862dde822d2afc63748  [shntool]  03_04_26_cb_d2_t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03 04 26 new orleans cb 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:05.25       64444844 B   ---   --   ---xx    shn  0.4536  03 04 26 cb d1 t01.shn
+     3:57.45       41912684 B   ---   --   ---xx    shn  0.4636  03 04 26 cb d1 t02.shn
+     5:47.54       61337852 B   ---   --   ---xx    shn  0.5116  03 04 26 cb d1 t03.shn
+     4:55.58       52174460 B   ---   --   ---xx    shn  0.4653  03 04 26 cb d1 t04.shn
+     6:45.64       71592572 B   ---   --   ---xx    shn  0.5026  03 04 26 cb d1 t05.shn
+     7:09.53       75800300 B   ---   --   ---xx    shn  0.4825  03 04 26 cb d1 t06.shn
+     6:10.38       65357420 B   ---   --   ---xx    shn  0.5307  03 04 26 cb d1 t07.shn
+     6:04.46       64317836 B   ---   --   ---xx    shn  0.4260  03 04 26 cb d1 t08.shn
+     6:39.22       70435388 B   ---   --   ---xx    shn  0.5008  03 04 26 cb d1 t09.shn
+     7:03.34       74697212 B   ---   --   ---xx    shn  0.4668  03 04 26 cb d1 t10.shn
+     7:07.02       75327548 B   ---   --   ---xx    shn  0.5457  03 04 26 cb d1 t11.shn
+     6:59.54       74038652 B   ---   --   ---xx    shn  0.4082  03 04 26 cb d1 t12.shn
+     6:20.00       67032044 B   ---   --   ---xx    shn  0.4564  03 04 26 cb d2 t01.shn
+     9:34.70      101418284 B   ---   --   ---xx    shn  0.5098  03 04 26 cb d2 t02.shn
+     8:49.01       93317996 B   ---   --   ---xx    shn  0.5270  03 04 26 cb d2 t03.shn
+     8:47.02       92967548 B   ---   --   ---xx    shn  0.5213  03 04 26 cb d2 t04.shn
+   108:17.43     1146172640 B                            0.4889  (16 files)
+=================== 
+=================== 
+=================== 

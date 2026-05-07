@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd89-11-15-Dolphismile.flac1648
+===================
+===================
+===================
+ead997246c36a3ef92498d3405549f16 *01 Stuck Inside of Mobile.flac
+e7e43f67a2ba8216fdadef63f8b515e1 *02 Masters Of War.flac
+ed10ec734f3eba225e81ca0f66349f7c *03 Just Like A Woman.flac
+ec651c34b531c1ea20eac6e7478a507b *04 Man Of Peace.flac
+49564ac2838655dfc7ba424231671877 *05 Youre A Big Girl Now.flac
+4e3a835f7f095b1c4b0ec5cb544b9e16 *06 Lay Lady Lay.flac
+14e1b38534d321761fcce5874d93ff8c *07 Dont Think Twice.flac
+9138b42a2cadd024b64efd7ba5fb7204 *08 Gates Of Eden.flac
+f9e641f993f0fe201e39f7bd1a913dc0 *09 Hard Rain Gonna Fall.flac
+c5c9e8188aaf6f91c0224591993841ef *10 Everything Is Broken.flac
+ba121cc916353de5a539cb2cef1e5959 *11 Most Of The Time.flac
+249f23c45615d79e42194220733d717e *12 What Good Am I.flac
+0e5f2fd4279522d9c1118859f32172d0 *13 Tears Of Rage.flac
+b9f8181b0dd625cd05327c713c9abea5 *14 Leopard Skin Pillbox Hat.flac
+7b48978683b75930cebee67db4231dbf *15 In The Garden.flac
+88bd46465a33da80d8e7ca8fb9575942 *16 Like A Rolling Stone.flac
+6fe4f49564d01e8a79333fa65c4b550f *17 Disease Of Conceit.flac
+5a83d19a52d7e58e340606146ff8365d *18 All Along The Watchtower.flac
+ff7a7332a4209585ec5e747e9a544dec *Bob Dylan Festival Hall TBPAC Tampa FL 1989-11-15 Dolphinsmile Archive.ffp
+07cc9a413e7ef0df9dbf6879b7f34809 *Bob Dylan Festival Hall TBPAC Tampa FL 1989-11-15 Dolphinsmile Archive.md5
+ff7a7332a4209585ec5e747e9a544dec *Bob Dylan Festival Hall TBPAC Tampa FL 1989-11-15 Dolphinsmile Archive.txt
+83b632c4b3ad3f9f756eaddb0e1fadb5 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-11-15-Dolphismile.flac1648
+===================
+===================
+===================
+01 Stuck Inside of Mobile.flac:959caf846a6ec0f8b24a5df90b5703cb
+02 Masters Of War.flac:3153f79c8ac3ae22680e9fae00182fa8
+03 Just Like A Woman.flac:2992d8c615e0a08a2820a830b4b0cb52
+04 Man Of Peace.flac:2b2a077318994a7447fbb61e6851f15f
+05 Youre A Big Girl Now.flac:40716e56b8e01f6950e1877c802571bf
+06 Lay Lady Lay.flac:e14cb57a4ffd4ef47ce47e3a8f26367c
+07 Dont Think Twice.flac:4bcea68c91576e805254516596ccc79a
+08 Gates Of Eden.flac:16abb6ec5560824c19f27fba44e32d9f
+09 Hard Rain Gonna Fall.flac:0b1aa8de6146b8b5b78be4db71abecc5
+10 Everything Is Broken.flac:e8e9c4c5bf852786b8bae5c9e4bc8e6c
+11 Most Of The Time.flac:ac4da98c56ab1afb3bb2b4f34fa429e9
+12 What Good Am I.flac:a7c31c5c0ce6711183076d2eecaeaa3e
+13 Tears Of Rage.flac:f330364592f3602d663bb9b444028f51
+14 Leopard Skin Pillbox Hat.flac:d439cb58733d8779961f0d010998493e
+15 In The Garden.flac:4257054cd3bb851b0f4a53893f33128d
+16 Like A Rolling Stone.flac:cf89f557dabdb41b98c377fed5b6a916
+17 Disease Of Conceit.flac:41e07f6f6df3187842bcba8fa25f7528
+18 All Along The Watchtower.flac:5a51effa58bd06cc79b5a252ad8e0edf
+===================
+===================
+===================
+=== shntool len for: bd89-11-15-Dolphismile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.674      79233544 B   cxx   --   ---xx   flac  0.6666  01 Stuck Inside of Mobile.flac
+     4:37.868      53350748 B   cxx   --   ---xx   flac  0.6776  02 Masters Of War.flac
+     5:13.880      60264984 B   cxx   --   ---xx   flac  0.6698  03 Just Like A Woman.flac
+     4:26.372      51143488 B   cxx   --   ---xx   flac  0.6757  04 Man Of Peace.flac
+     5:02.552      58090088 B   cxx   --   ---xx   flac  0.6684  05 Youre A Big Girl Now.flac
+     4:08.929      47794356 B   cxx   --   ---xx   flac  0.6802  06 Lay Lady Lay.flac
+     6:47.450      78230500 B   cxx   --   ---xx   flac  0.6697  07 Dont Think Twice.flac
+     5:06.201      58790548 B   cxx   --   ---xx   flac  0.6606  08 Gates Of Eden.flac
+     7:51.628      90552588 B   cxx   --   ---xx   flac  0.6464  09 Hard Rain Gonna Fall.flac
+     3:16.722      37770736 B   cxx   --   ---xx   flac  0.6627  10 Everything Is Broken.flac
+     6:18.968      72761984 B   cxx   --   ---xx   flac  0.6454  11 Most Of The Time.flac
+     5:12.962      60088672 B   cxx   --   ---xx   flac  0.6379  12 What Good Am I.flac
+     6:14.400      71884860 B   cxx   --   ---xx   flac  0.6609  13 Tears Of Rage.flac
+     3:05.569      35629220 B   cxx   --   ---xx   flac  0.6865  14 Leopard Skin Pillbox Hat.flac
+     5:16.304      60730376 B   cxx   --   ---xx   flac  0.6726  15 In The Garden.flac
+     6:22.362      73413540 B   cxx   --   ---xx   flac  0.6843  16 Like A Rolling Stone.flac
+     4:32.304      52282388 B   cxx   --   ---xx   flac  0.6143  17 Disease Of Conceit.flac
+     4:00.887      46250344 B   cxx   --   ---xx   flac  0.6505  18 All Along The Watchtower.flac
+    94:28.032    1088262964 B                            0.6621  (18 files)
+===================
+===================
+===================

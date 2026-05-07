@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd92-04-10-jlt-lk-fixed.shnf
+===================
+===================
+===================
+7bba27aaaa7ab5bf98666915a87c458d *1992-04-10.txt
+bbfa8c801496f5a0823641684e2a5a1a *Bob Dylan1992-04-10.md5
+992a7006f28a3590d5d14a2c7ca0e663 *d1t01-fixed.shn
+4fac491ea0ae56c92b7bf444eb0755f4 *d1t02-fixed.shn
+bca25b44456b8c33eb654d6172eb5be3 *d1t03-fixed.shn
+41f1e9b4670fe926d319d575fc981246 *d1t04-fixed.shn
+20d5eb1bd1919351f144aa8452937a5c *d1t05-fixed.shn
+819f9972724384d76fe05c813ec09eda *d1t06-fixed.shn
+b25c766905b71acf3fa74dc79de4c1de *d1t07-fixed.shn
+b3fa5c07300794908bd86fdbef40acdb *d1t08-fixed.shn
+e98adaa9a230d940442d075cf3b4386d *d1t09-fixed.shn
+c4ffeb95f230b642aaa2aca74c1adbb9 *d1t10-fixed.shn
+73625a7b015b866a90dde4855cdc8c69 *d2t01-fixed.shn
+9990c03d2942703f3b112bf7c3fd90b9 *d2t02-fixed.shn
+e414c0a43167b510599db8bb0cf1dd29 *d2t03-fixed.shn
+20ea0d69ca0b529f9ba5605ef510224f *d2t04-fixed.shn
+8afe874a3fb4243ed36bf9db82c93ad2 *d2t05-fixed.shn
+2188957f3978bcf36f9225918260e2da *d2t06-fixed.shn
+7899543dd0e878bdd83ffb949c12d479 *d2t07-fixed.shn
+05264a247df6aebb179d7aa3e5fd7005 *d2t08-fixed.shn
+5e36f6b0be754fc17f92b5987ceca3e9 *frequency and spectral views.bmp
+8b4f2b729ce56015c3baa939b3fdf1e7 *shntool_len_fixed.txt
+51f56d51dd943b5a9c03bcd0ec903dbf *shntool_len_original.txt
+===================
+===================
+===================
+=== shntool md5/hash for: bd92-04-10-jlt-lk-fixed.shnf
+===================
+===================
+===================
+6c2430cb0cc69c3c6402ce1a1c89eda4  [shntool]  d1t01-fixed.shn
+0753c9c68839ade5116dd35d6bf8b6c8  [shntool]  d1t02-fixed.shn
+09af63ecbf1c40e05b97d65a92f1cb0e  [shntool]  d1t03-fixed.shn
+817a613b3f2319c50f34375c9f1a0f73  [shntool]  d1t04-fixed.shn
+fc3e09b2181e792186cc1b4a861be149  [shntool]  d1t05-fixed.shn
+e8da8f6876c1beb5f1f38345f71df639  [shntool]  d1t06-fixed.shn
+730a3f36f576a9b5cbd5929d3a3338ad  [shntool]  d1t07-fixed.shn
+2cd2f334f74db7c68f30d88a781b3d16  [shntool]  d1t08-fixed.shn
+82fbb7f056105fc69229547ccecee383  [shntool]  d1t09-fixed.shn
+2fd1f3984618004fc79314cbc45af29e  [shntool]  d1t10-fixed.shn
+b7d0000e3b92e76dde8a0a0d9c15ddd4  [shntool]  d2t01-fixed.shn
+186b4bac0f530c5c14a5e885776e398f  [shntool]  d2t02-fixed.shn
+c2d903730083a1d9b4d58ebfd093254f  [shntool]  d2t03-fixed.shn
+e0de24f4525d6169805f78b73c75d499  [shntool]  d2t04-fixed.shn
+99d2612f352d3c424c78353c18423d00  [shntool]  d2t05-fixed.shn
+d328348e2bbcdcfd1af588f1c8a1eb20  [shntool]  d2t06-fixed.shn
+161d73a14e85ccf5b210d00e03f50d81  [shntool]  d2t07-fixed.shn
+128eb3e30899ae76d895e4234cb7f287  [shntool]  d2t08-fixed.shn
+===================
+===================
+===================
+=== shntool len for: bd92-04-10-jlt-lk-fixed.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.09       56116412 B   ---   --   ---xx    shn  0.6377  d1t01-fixed.shn
+     4:04.19       43086332 B   ---   --   ---xx    shn  0.6461  d1t02-fixed.shn
+     3:44.21       39563036 B   ---   --   ---xx    shn  0.6731  d1t03-fixed.shn
+     5:37.32       59522108 B   ---   --   ---xx    shn  0.6675  d1t04-fixed.shn
+     7:47.16       82416476 B   ---   --   ---xx    shn  0.6664  d1t05-fixed.shn
+     4:22.16       46254476 B   ---   --   ---xx    shn  0.6090  d1t06-fixed.shn
+     5:52.55       62222204 B   ---   --   ---xx    shn  0.6536  d1t07-fixed.shn
+     4:41.39       49660172 B   ---   --   ---xx    shn  0.5588  d1t08-fixed.shn
+     4:16.68       45318380 B   ---   --   ---xx    shn  0.5771  d1t09-fixed.shn
+     6:42.60       71053964 B   ---   --   ---xx    shn  0.5834  d1t10-fixed.shn
+     7:11.18       76070780 B   ---   --   ---xx    shn  0.6429  d2t01-fixed.shn
+     4:24.15       46604924 B   ---   --   ---xx    shn  0.6487  d2t02-fixed.shn
+     4:52.44       51612332 B   ---   --   ---xx    shn  0.6433  d2t03-fixed.shn
+     6:03.69       64195532 B   ---   --   ---xx    shn  0.6406  d2t04-fixed.shn
+     5:27.51       57802796 B   ---   --   ---xx    shn  0.6682  d2t05-fixed.shn
+     5:17.43       56019980 B   ---   --   ---xx    shn  0.6949  d2t06-fixed.shn
+     6:38.09       70228412 B   ---   --   ---xx    shn  0.6595  d2t07-fixed.shn
+     4:17.42       45433628 B   ---   --   ---xx    shn  0.6368  d2t08-fixed.shn
+    96:40.26     1023181944 B                            0.6405  (18 files)
+===================
+===================
+===================

@@ -1,0 +1,95 @@
+===================
+===================
+===================
+=== md5 for: bd84-06-13-ltb.flacf
+===================
+===================
+===================
+766ec66f4965756cd32b1c727ad20d1d *bd-19840613-Berlin.ffp
+557782025fb5311aab56130a2eb76b08 *bd-19840613-Berlin.md5
+95806a579cd29219a5613c0c663b2831 *bd1984-06-13-d1t01.flac
+4d22f1e7a5cd5dd8d398157403944a16 *bd1984-06-13-d1t02.flac
+a37a81fb3692132f85d77e4a72223e3b *bd1984-06-13-d1t03.flac
+191e3ae8f5b03df1f5ba9ad91b501db1 *bd1984-06-13-d1t04.flac
+9e1fcfffbd77a4f43eedea55a71cd076 *bd1984-06-13-d1t05.flac
+1be7586cd90c20b453d5413862fbc6eb *bd1984-06-13-d1t06.flac
+38ba0711820afcef6eddb6381d15e530 *bd1984-06-13-d1t07.flac
+6ef264d4378cea7f09249561ad431c2f *bd1984-06-13-d1t08.flac
+e8dc55f7403350ab41d7c0165f5bf17b *bd1984-06-13-d1t09.flac
+9faa0416b329b1af2f6d00e5be76ab3b *bd1984-06-13-d1t10.flac
+270dbe062d6bb934059861c4a3364cfb *bd1984-06-13-d2t01.flac
+2ebdce7e0088b39948424d9e763f4d9f *bd1984-06-13-d2t02.flac
+fc8dddbde8665853cf94a62122beaf99 *bd1984-06-13-d2t03.flac
+ad5423c16d6224794ec859ad47240452 *bd1984-06-13-d2t04.flac
+a882030b84ffa218f5223239d376616b *bd1984-06-13-d2t05.flac
+394b692eb9b6581277ebdc8dcd4fde96 *bd1984-06-13-d2t06.flac
+0006fc1f3bc238474be6764870d3b311 *bd1984-06-13-d2t07.flac
+cb9e7b85ed93b3fb9196dc622626544e *bd1984-06-13-d2t08.flac
+03ae6b4cc3c4f7bb95cf8bfa0ec88eab *bd1984-06-13-d2t09.flac
+dcdaaca652e6a77897c8570e00b373ec *bd1984-06-13-d2t10.flac
+9fff7d5c30a2f8532d75ce4ff258e1e1 *bd1984-06-13-d2t11.flac
+975a280f884954b600cbbabc9068fa1d *bd1984-06-13-d2t12.flac
+b28b5cde2dd01e0fcc1648524a2a618b *bd1984-06-13-info.txt
+===================
+===================
+===================
+=== ffp for: bd84-06-13-ltb.flacf
+===================
+===================
+===================
+bd1984-06-13-d1t01.flac:00ad0689a0896e77d3f458dda373aa77
+bd1984-06-13-d1t02.flac:78cf4bb382dba967b583d3488d132e6f
+bd1984-06-13-d1t03.flac:353cbf368b6d0f3243acab396a2f2d41
+bd1984-06-13-d1t04.flac:fe2468aa443cfc216f4a61686aaeeb9c
+bd1984-06-13-d1t05.flac:e6805ec712c0b3a9da62494b6da8a609
+bd1984-06-13-d1t06.flac:514aee8b44e8724d2faae514a90837ce
+bd1984-06-13-d1t07.flac:6e3163ab17691556ee5ef703bfaadab3
+bd1984-06-13-d1t08.flac:1825462655117dab0bb09f99084c69df
+bd1984-06-13-d1t09.flac:651e1ae81625764c6ab68e294fafe8b6
+bd1984-06-13-d1t10.flac:9d77ef93fda9bd440c004a9be8fa6d39
+bd1984-06-13-d2t01.flac:77193336abd0a9ceddb0fc34a869b422
+bd1984-06-13-d2t02.flac:c3f7e003a93d2ed9e90fe5568e7c259a
+bd1984-06-13-d2t03.flac:633f6fd38b451b146ac92892914ec0a9
+bd1984-06-13-d2t04.flac:029be1189588e9d7823172c5f9d95ff9
+bd1984-06-13-d2t05.flac:a3c013eeebcd2b273e6ab632f42a1e87
+bd1984-06-13-d2t06.flac:a115d5bc29e9fc8cb22888990ce1790a
+bd1984-06-13-d2t07.flac:c4c673c7813bfe20142b88d2c9de15ff
+bd1984-06-13-d2t08.flac:e769b5e0447bb19b31d6396b496c56fd
+bd1984-06-13-d2t09.flac:28a333bc9c9ce576878eff1cc1ea5454
+bd1984-06-13-d2t10.flac:8d714a908262020d80d1a61c98041abf
+bd1984-06-13-d2t11.flac:0c77cebcf3794e57301f6934be8d48de
+bd1984-06-13-d2t12.flac:5a455f4e8c2756c33304eaee47c39c02
+===================
+===================
+===================
+=== shntool len for: bd84-06-13-ltb.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.10       54354764 B   ---   --   ---xx   flac  0.5755  bd1984-06-13-d1t01.flac
+     7:08.66       75654476 B   ---   --   ---xx   flac  0.5648  bd1984-06-13-d1t02.flac
+     5:46.04       61043852 B   ---   --   ---xx   flac  0.5547  bd1984-06-13-d1t03.flac
+     6:44.27       71329148 B   ---   --   ---xx   flac  0.5593  bd1984-06-13-d1t04.flac
+     4:15.15       45017324 B   ---   --   ---xx   flac  0.5804  bd1984-06-13-d1t05.flac
+     6:50.55       72453404 B   ---   --   ---xx   flac  0.5515  bd1984-06-13-d1t06.flac
+     4:05.10       43241564 B   ---   --   ---xx   flac  0.5686  bd1984-06-13-d1t07.flac
+     5:40.24       60032492 B   ---   --   ---xx   flac  0.5772  bd1984-06-13-d1t08.flac
+     7:38.17       80831228 B   ---   --   ---xx   flac  0.5781  bd1984-06-13-d1t09.flac
+     6:10.30       65338604 B   ---   --   ---xx   flac  0.5729  bd1984-06-13-d1t10.flac
+     6:35.00       69678044 B   ---   --   ---xx   flac  0.5770  bd1984-06-13-d2t01.flac
+     4:57.61       52534316 B   ---   --   ---xx   flac  0.5774  bd1984-06-13-d2t02.flac
+     5:57.20       63021884 B   ---   --   ---xx   flac  0.5799  bd1984-06-13-d2t03.flac
+     5:05.05       53813804 B   ---   --   ---xx   flac  0.5768  bd1984-06-13-d2t04.flac
+     4:19.42       45786428 B   ---   --   ---xx   flac  0.5835  bd1984-06-13-d2t05.flac
+     5:41.34       60232412 B   ---   --   ---xx   flac  0.5609  bd1984-06-13-d2t06.flac
+     7:21.50       77910044 B   ---   --   ---xx   flac  0.5930  bd1984-06-13-d2t07.flac
+     4:18.34       45591212 B   ---   --   ---xx   flac  0.5657  bd1984-06-13-d2t08.flac
+     5:07.60       54295964 B   ---   --   ---xx   flac  0.5204  bd1984-06-13-d2t09.flac
+     5:04.35       53707964 B   ---   --   ---xx   flac  0.5527  bd1984-06-13-d2t10.flac
+     5:02.02       53277548 B   ---   --   ---xx   flac  0.6190  bd1984-06-13-d2t11.flac
+     5:12.45       55142684 B   ---   --   ---xx   flac  0.5808  bd1984-06-13-d2t12.flac
+   124:10.46     1314289160 B                            0.5713  (22 files)
+===================
+===================
+===================

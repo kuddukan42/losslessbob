@@ -1,0 +1,129 @@
+===================
+===================
+===================
+=== BOB DYLAN - 1995-05-23 SAN FRANCISCO CA (AUD Xfer from 1st Gen cassette).ffp
+===================
+===================
+===================
+01 Down in the Flood.flac:bad0c9d6e1c75ebff5b95d400f3e1e36
+02 I Want You.flac:7e90e0e67bc1c8faf0fd6ee32966423b
+03 All Along the Watchtower.flac:d8b105de36b93b7fb2775232a259bd3b
+04 Queen Jane Approximately.flac:048a27e905ee3f1cc6b79a26d4fba518
+05 Jokerman.flac:7c5074e80d99db36627b05edad32a898
+06 Silvio.flac:a968c10fb1951fff266e36fed6d3f2ac
+07 Mr Tambourine Man.flac:cdf6616eb9b17ea696a5e88267755170
+08 Boots of Spanish Leather.flac:c2e5c0931698ffdc90ffaafdc23e612c
+09 Don't Think Twice, It's Alright.flac:59e3fd52f5e9b0c62f94a68bfa3f7b7e
+10 God Knows _.flac:4877f28d591b2370dcc68516ffd4a51f
+11 Never Gonna Be the Same Again.flac:f2b749cf2267988b6fee2ad234b4dfab
+12 Obviously 5 Believers.flac:8860f8af16585276be354395f534b67e
+13 Stuck Inside of Mobile With the Memphis Blues Again.flac:b442a2b6771b298611ae7a945dab7f72
+14 The Times They Are A'Changin'.flac:3e0a1eaf4d821cebcc41f2a83bc8cd24
+===================
+===================
+===================
+=== BOB DYLAN - 1995-05-23 SAN FRANCISCO CA (AUD Xfer from 1st Gen cassette).md5
+===================
+===================
+===================
+2156b619bbce5a137d9fcffb28a18518 *01 Down in the Flood.flac
+ac6a40bdf8ff3922418136878b56feb3 *02 I Want You.flac
+22d59666b33982527bf9e77039ea0b98 *03 All Along the Watchtower.flac
+f33bad98efee47dca73befc3f32ae0b6 *04 Queen Jane Approximately.flac
+e47d1ae5b64a141086999bfc3af9f74e *05 Jokerman.flac
+26ee06fb17d76429c2971fbb7b86378f *06 Silvio.flac
+8498f7a7460e8173e1ec1df2bef6886a *07 Mr Tambourine Man.flac
+7d092bb9e8b6003f19609918540d77a1 *08 Boots of Spanish Leather.flac
+97fb9657553d1962a3f31cce4459b0b0 *09 Don't Think Twice, It's Alright.flac
+58285fccb9ac307e498affe059e102c1 *10 God Knows _.flac
+bb8f6fb4fcc7609b7a1ad55bc909eea6 *11 Never Gonna Be the Same Again.flac
+a28866fb0067e30a34490b1fadbbeed0 *12 Obviously 5 Believers.flac
+8628367398fdfe2d0bdb5c0ade4ecf80 *13 Stuck Inside of Mobile With the Memphis Blues Again.flac
+9808581fa5f66f662b3a8a91dc396a5b *14 The Times They Are A'Changin'.flac
+6c4217f94343a40a335b49c0d3289c4b *BOB DYLAN - 1995-05-23 SAN FRANCISCO CA (AUD Xfer from 1st Gen cassette).ffp
+===================
+===================
+===================
+=== BOB DYLAN - 1995-05-23 SAN FRANCISCO CA (AUD Xfer from 1st Gen cassette).txt
+===================
+===================
+===================
+BOB DYLAN
+The Warfield Theater 
+San Francisco, California 
+23 May 1995 
+
+
+Good quality audience recording from 1st generation cassette off DAT clone > DR07, WAV > TLH > audio cleaning lab >
+edit end of Times, track marking, > flac 8
+
+(The last three minutes of Times They Are A'Changin' are from an inferior source, patched to the end for completeness)
+
+ 
+
+CD1
+1.  Crash On The Levee (Down In The Flood)
+2.  I Want You
+3.  All Along The Watchtower
+4.  Queen Jane Approximately
+5.  Jokerman
+6.  Silvio (Bob Dylan & Robert Hunter)
+7.  Mr. Tambourine Man
+8.  Boots Of Spanish Leather
+9.  Dont Think Twice, Its All Right
+
+ 
+CD2
+10.  God Knows
+11.  Never Gonna Be The Same Again
+12.  Obviously Five Believers
+
+13.  Stuck Inside Of Mobile With The Memphis Blues Again
+14.  The Times They Are A-Changin(last 3 minutes patched from inferior source)
+
+ 
+Concert # 676 of The Never-Ending Tour. Concert # 10 of the 1995 US Spring Tour. Concert # 36 in 1995.
+
+Concert # 220 with the 9th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & guitar), 
+Bucky Baxter (pedal steel guitar & electric slide guitar), 
+John Jackson (guitar), 
+Tony Garnier (bass), 
+Winston Watson (drums & percussion).
+
+ 
+
+79, 14 acoustic with the band.
+1, 2, 7, 8, 14  Bob Dylan harmonica.
+10 new songs (71%) compared to previous concert. 3 new songs for this tour.
+
+ 
+
+Stereo audience recording, 105 minutes.
+
+
+MD5
+2156b619bbce5a137d9fcffb28a18518 *01 Down in the Flood.flac
+ac6a40bdf8ff3922418136878b56feb3 *02 I Want You.flac
+22d59666b33982527bf9e77039ea0b98 *03 All Along the Watchtower.flac
+f33bad98efee47dca73befc3f32ae0b6 *04 Queen Jane Approximately.flac
+e47d1ae5b64a141086999bfc3af9f74e *05 Jokerman.flac
+26ee06fb17d76429c2971fbb7b86378f *06 Silvio.flac
+8498f7a7460e8173e1ec1df2bef6886a *07 Mr Tambourine Man.flac
+7d092bb9e8b6003f19609918540d77a1 *08 Boots of Spanish Leather.flac
+97fb9657553d1962a3f31cce4459b0b0 *09 Don't Think Twice, It's Alright.flac
+58285fccb9ac307e498affe059e102c1 *10 God Knows _.flac
+bb8f6fb4fcc7609b7a1ad55bc909eea6 *11 Never Gonna Be the Same Again.flac
+a28866fb0067e30a34490b1fadbbeed0 *12 Obviously 5 Believers.flac
+8628367398fdfe2d0bdb5c0ade4ecf80 *13 Stuck Inside of Mobile With the Memphis Blues Again.flac
+9808581fa5f66f662b3a8a91dc396a5b *14 The Times They Are A'Changin'.flac
+6c4217f94343a40a335b49c0d3289c4b *BOB DYLAN - 1995-05-23 SAN FRANCISCO CA (AUD Xfer from 1st Gen cassette).ffp
+
+No errors occured.
+
+Create checksum file log saved to file.
+
+===================
+===================
+===================

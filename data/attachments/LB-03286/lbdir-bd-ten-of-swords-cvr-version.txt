@@ -1,0 +1,563 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-ten-of-swords-cvr-version 
+=================== 
+=================== 
+=================== 
+c61486cd1cb7fbc3bae20461420a9095  bd-ten-of-swords-cvr-version-LB-3286.txt
+19fc577c73b12c3be7605b1a2e04ad3d  bd-tos-d1.shnf\01 - 11 Candy Man.shn
+f6dc0b598e3894b6b44d7843977c2424  bd-tos-d1.shnf\02 - 12 Baby Please Don_t Go.shn
+2ba7a2608cd6ca03bef202300be3a3f7  bd-tos-d1.shnf\03 - 13 Hard Times In New York.shn
+7a1071c68e9733ee294cdd3c21ebde89  bd-tos-d1.shnf\04 - 14 Stealin_.shn
+268d3038a4f1f63d2d7c6e8236f7971f  bd-tos-d1.shnf\05 - 15 Po_ Lazurus.shn
+7967576db3378476d6ae5eedbf9c1411  bd-tos-d1.shnf\06 - 16 I Ain_t Got No Home.shn
+d8cc0d2ef0c05a43bc940d05de99e170  bd-tos-d1.shnf\07 - 17 It_s Hard To Be Blind.shn
+26b531756b403f935aaa7a61b9e989fd  bd-tos-d1.shnf\08 - 18 Dink_s Song.shn
+66a41b40ddbe99cc5842bac7ae8d90da  bd-tos-d1.shnf\09 - 02 Wade In The.shn
+f8b08dfca7706256f1728294bab5b4e2  bd-tos-d1.shnf\10 - 04 In The Evening.shn
+21789aefb83e197c6150600feb512ed5  bd-tos-d1.shnf\11 - 05 Baby Let Me.shn
+d6a5874cf9e71ac4c6548a8d830111c2  bd-tos-d1.shnf\12 - 06 Sally Girl.shn
+96bc0985ca6b6e385408338c4b0916cf  bd-tos-d1.shnf\13 - 07 Gospel Plow.shn
+6d15a45da32911f4a026de63baf79e78  bd-tos-d1.shnf\14 - 19 Man Of Constant Sorrow.shn
+01644a2558975e5fcfd115a14cee1193  bd-tos-d1.shnf\15 - 01 Naomi Wise.shn
+cc58fc1f8e2556eec1505ac82ca04869  bd-tos-d1.shnf\16 - 03 I Was Young.shn
+2fbe187bf11203ac9c05fcbee1cd5a73  bd-tos-d1.shnf\17 - 09 Cocaine.wav.shn
+eca22919d9bd55dd1d7540ee33432bd9  bd-tos-d1.shnf\18 - 15 Ramblin Around.shn
+abbb190c640aa437847662653dc192a7  bd-tos-d1.shnf\19 - 10 VD Blues.shn
+6690142ed01a1a5fdbe6ce946736bdce  bd-tos-d1.shnf\20 - 11 VD Waltz.shn
+2d569ad41c47b9800afeb44a702f5339  bd-tos-d1.shnf\21 - 12 VD City.shn
+8e7214405c588223f9fdc85958468373  bd-tos-d1.shnf\22 - 13 VD Gunner.shn
+5a4e98ed218bc8916bea87e5a8180155  bd-tos-d1.shnf\23 - 16 Black Cross.shn
+9f5e9b9b21da2700238c96e23726871b  bd-tos-d1.shnf\24 - 08 Long John.shn
+b92b10164f309c16ab2960b4f9ae1345  bd-tos-d1.shnf\25 - 20 East Orange NJ.shn
+25b44cabe34901150f8c36db43190522  bd-tos-d1.shnf\noname.md5
+d33c74a5b9107fe815761a4e7c0d2c42  bd-tos-d2.shnf\26 - 16 Sally Gal (25 Apr 62).shn
+0c6990fefcedaa84fbe0f40c73bd06d2  bd-tos-d2.shnf\27 - 17 Baby  Please Don t Go (25 A.shn
+b00454058de8ef2566159db6a57100d3  bd-tos-d2.shnf\28 - 18 Milk Cow s Calf s Blues (25.shn
+aa783b24d73adfe3394ee88562b14163  bd-tos-d2.shnf\29 - 20 Talkin  Bear Mtn Picnic Mas.shn
+cb8cbe337343a216a0295a202353fd30  bd-tos-d2.shnf\30 - Lonesome Whistle (24 Apr 62).shn
+c275a82800cec0ad5bb582047de668fb  bd-tos-d2.shnf\31 - 15 Talkin  Hava Negeilah Blues.shn
+129a53ba45345f3da2d5bce1dc410fb3  bd-tos-d2.shnf\32 - 25 Worried Blues (9 Jul 62).shn
+38834114ee399bfbac274425f2cbc374  bd-tos-d2.shnf\33 - 22 Witchita (Going To Louisian.shn
+c7f20e1ce87a1b63bae47906160a4955  bd-tos-d2.shnf\34 - 06 Goin  To New Orleans (24 Ap.shn
+a8a6f99e5e061eebaa490d985f716762  bd-tos-d2.shnf\35 - Quit Your Lowdown Ways.shn
+c7982e9f48ea2259870d30f4e187266c  bd-tos-d2.shnf\36 - He Was A friend Of Mine.shn
+fa04854df56bc3cc88267e47cd93672a  bd-tos-d2.shnf\37 - Man On The Street.shn
+0296502326f609014d319c6be4d3e829  bd-tos-d2.shnf\38 - Hard Times In New York Town.shn
+468943d826cf422681a134063f48c070  bd-tos-d2.shnf\39 - Talking Bear Mountain Picnic M.shn
+b1b8251135943c44bedb7b97e0709516  bd-tos-d2.shnf\40 - Standing On The Highway.shn
+b2c1d858684f7013ff3bc005e9decbe1  bd-tos-d2.shnf\41 - Poor Boy blues.shn
+4cf40e809a6e56590e532f6f0be47c43  bd-tos-d2.shnf\42 - Ballad Of A Friend.shn
+b0ecc95febcf3a1484ca5a0dc22da9bf  bd-tos-d2.shnf\43 - Man On The Street.shn
+646ef702f9840eef9c6485bb4b221931  bd-tos-d2.shnf\44 - Rambling  Gambling Willie.shn
+869dbd977c471acf3043979f346f23e0  bd-tos-d2.shnf\45 - 08 Mixed Up Confusion (14 Nov.shn
+6563fbf4d26d8c0c2cef77320afbe248  bd-tos-d2.shnf\46 - 09 Corrina  Corrina (24 Apr 62.shn
+1d3d17b2dae23de8e0999e9e60a889d3  bd-tos-d2.shnf\47 - 11 Talkin  John Birch Paranoid.shn
+34b167aecf9c5b7f8001a3e732aa100a  bd-tos-d2.shnf\48 - 14 Let Me Die In My Footsteps.shn
+3a1e6c9841df1700da76520749d13e30  bd-tos-d2.shnf\49 - 26 Baby  I m In The Mood For Y.shn
+92a7bc8da2e53df4d3f1102aa94c673e  bd-tos-d2.shnf\50 - 08 Ramblin  Gamblin  Willie (2.shn
+741ae4b0f2b2b6c19e5d9de9dc706a53  bd-tos-d2.shnf\51 - Death Of Emett Till.shn
+e4d7d7e80fc18ea04af4c0fba8f0bff9  bd-tos-d2.shnf\noname.md5
+97bbe37096b3346424368d60c78bd58a  bd-tos-d3.shnf\52 - Ain_t Gonna Grieve.shn
+145841e9f0dba342f8c685866453576f  bd-tos-d3.shnf\53 - Long Time Gone.shn
+87fbfcc58146fbfa79cbc4e8dff7fe7b  bd-tos-d3.shnf\54 - Long Ago_ Far Away.shn
+31693d5db835bfd4cf67b14e13062c48  bd-tos-d3.shnf\55 - Hero Blues.shn
+6fe5954d249e2c60b6ce75b1c4f19ca0  bd-tos-d3.shnf\56 - Whatcha Gonna.shn
+aacc50f296ef8964c0b852c73d2489e0  bd-tos-d3.shnf\57 - Gypsy Lou.shn
+2b4f2a9fc1bd5748d94e0fa0b884da78  bd-tos-d3.shnf\58 - Guess I_m Doing Fine.shn
+7ad45c1420af532d187f6e0a80239d0e  bd-tos-d3.shnf\59 - Walkin_ Down The Line.shn
+d14e24703122f479dc9e8f09adf69248  bd-tos-d3.shnf\60 - All Over You.shn
+d30a0edc9fe3605bcfb8415fd0090773  bd-tos-d3.shnf\61 - Bound To Loose_ Bound To.shn
+c951b1a21690ccd8b1673d84da7ada3b  bd-tos-d3.shnf\62 - I Shall Be Free.shn
+2bd38e26d115f0ba2f206fa6b118a3d7  bd-tos-d3.shnf\63 - I_d Hate To Be You On THat Dre.shn
+ff236dbfc403ee73832acec37f039c55  bd-tos-d3.shnf\64 - When The Ship Comes In.shn
+2c14e40c929291e484087419bed42b3f  bd-tos-d3.shnf\65 - TRhe Times They Are A-Changin_.shn
+155576f0f61758f29162026b38c07447  bd-tos-d3.shnf\66 - Tomorrow Is a Long Time.shn
+a1881693a99182283a1dc897313bf128  bd-tos-d3.shnf\67 - Farewell.shn
+9871248b2095f6312d7fe64ab999e4bc  bd-tos-d3.shnf\noname.md5
+4ad9d83d61fc90a6560356af8e795c71  bd-tos-d4.shnf\68 - Ballad Of Hollis Brown.shn
+5b35751a7661c91c4878246cf6c24dda  bd-tos-d4.shnf\69 - Kind hearted Woman.shn
+c32a0d8cd106649ba400c1e1e6696faa  bd-tos-d4.shnf\70 - See That My Grave Is Kept Clea.shn
+e3a5114ee720557335deee1728014be4  bd-tos-d4.shnf\71 - Black Cross.shn
+79fcce3dd2e314d7d070fe8724cd33e2  bd-tos-d4.shnf\72 - No More Action block.shn
+983e930a36c4e5a5a053a445370cd762  bd-tos-d4.shnf\73 - Rocks And Gravle.shn
+6da424b5421dd406dd8d0d2711facd39  bd-tos-d4.shnf\74 - Barbara Allen.shn
+248e4f88bfe8c713068750df50db082d  bd-tos-d4.shnf\75 - Moonshine Blues.shn
+5ba5dbfc24bec7746f3338d7a4b81719  bd-tos-d4.shnf\76 - Motherless Children.shn
+15174c33579f7c590d82a4ac9dad677a  bd-tos-d4.shnf\77 - Handsome Molly.shn
+229718cdb5088b6c7642d02cf1a4c4cb  bd-tos-d4.shnf\78 - John Brown.shn
+0c46939fd0e79794b00140687af752df  bd-tos-d4.shnf\79 - Don t Think Twice.shn
+ea37422c1362dc0475e79921fece2343  bd-tos-d4.shnf\80 - Ain t No more Cane.shn
+16fc1be26bcdb4988acb234af8e8b368  bd-tos-d4.shnf\81 - Cocain.shn
+6213db5451731d3e377b29fa475bfe6e  bd-tos-d4.shnf\82 - The Cuckoo Is A Pretty bird.shn
+fb3dbb919057d18edb8d6eafd85ba96e  bd-tos-d4.shnf\83 - West Texas.shn
+727eabad82c4ce801b709d76601f6b49  bd-tos-d4.shnf\84 - A Hard Rain s A-Gonna Fall.shn
+6ff6bdc46efa3058cf4796c968bda136  bd-tos-d4.shnf\noname.md5
+ce3ece35ea767511fc4c12bdd4bd3add  bd-tos-d5.shnf\100 - 24 Walls Of Red Wing (24 Apr 6.shn
+1c6e7713285db1873ef2f97b19a1a605  bd-tos-d5.shnf\101 - Only A Hobo.shn
+ebbe51948df0291911cf8aab62957d45  bd-tos-d5.shnf\102 - Paths Of Victory.shn
+888e21331858a68189383aad5fddd7f8  bd-tos-d5.shnf\103 - Percy s Song.shn
+94b98c85b3538ff4b075f01237a387f4  bd-tos-d5.shnf\104 - Farewell.shn
+48da92029cb003d8b02e3befc4ad5167  bd-tos-d5.shnf\85 - Ramblin  Down Through The Worl.shn
+164306169a441c21bf0606235c64fd06  bd-tos-d5.shnf\86 - Who Killed Davy Moore.shn
+63869654fb0f0495a10541571dec3309  bd-tos-d5.shnf\87 - Hero Blues.shn
+1280a73fcfdde59736040fd75b0a71fa  bd-tos-d5.shnf\88 - Dusty Old Fairgrounds.shn
+3d1bc1f67d8c15f916596bea61e8eb60  bd-tos-d5.shnf\89 - Last Thoughts On Woody Guthrie.shn
+51623654f0be64753dc1a94174a9db29  bd-tos-d5.shnf\90 - Mr. Tambourine Man.shn
+a1dea8eba90870d757d877a8791caeac  bd-tos-d5.shnf\91 - 13 Rocks And Gravel (25 Apr 62.shn
+79f0e232945cdd826219f32a82d1e124  bd-tos-d5.shnf\92 - 10 Kingsport Town (14 Nov 62).shn
+4700b10c07d96d9039f7835e02690bda  bd-tos-d5.shnf\93 - 11 Watcha Gonna Do (14 Nov 62).shn
+94af477760f6601c931c9a9ca77b2a73  bd-tos-d5.shnf\94 - Moonshiner.shn
+5bdd9cd4f69fcec692066fd36f63c960  bd-tos-d5.shnf\95 - Suze (Cough Song).shn
+dea67e2ecaa73f522d88cce0c5628e00  bd-tos-d5.shnf\96 - Seven Curses.shn
+ed357237065b743ff84be3c10f2a7fa3  bd-tos-d5.shnf\97 - 10 Mama You Been On My Mind (9.shn
+02dc992575bdb0e9877836feba2f69ac  bd-tos-d5.shnf\98 - Mama You Been On My Mind.shn
+e00e788b15f208e7859aeceb5016f9c3  bd-tos-d5.shnf\99 - Eternal Circle.shn
+f437846972877812435276308122c898  bd-tos-d5.shnf\noname.md5
+b865d2f9586ee9a4bfe4964a7e74b36f  bd-tos-d6.shnf\105 - 1 - Lay Down Your Weary Tune.shn
+e3045a9e931214ac9b2330bbd0845eb7  bd-tos-d6.shnf\106 - 2 - Bob Dylan s New Orleans Ra.shn
+840e021992d90af7d14b5e84167d7a1b  bd-tos-d6.shnf\107 - 3 - I ll Keep It With Mine.shn
+c7b18bca64aaa4b9fcb022f2737dd239  bd-tos-d6.shnf\108 - 4 - Denise.shn
+103693c3f05559901d5487a01067a263  bd-tos-d6.shnf\109 - 5 - That s All Rig Mama - Sall.shn
+5a33529380b16d1aabd9babce862d909  bd-tos-d6.shnf\110 - 6 - East Lorado Blues  Take 1.shn
+4e5740c083edbbab41043274d4f74cae  bd-tos-d6.shnf\111 - 7 - Bob Dylan s New Orelans Ra.shn
+5bff84bf1b5cdf1907dcdf57cccde117  bd-tos-d6.shnf\112 - 8 - California.shn
+5572600ac026621668370e10bd5e6359  bd-tos-d6.shnf\113 - 9 - If You Gotta Go  Go Now.shn
+bb52bad56debb1039b56e158949f859c  bd-tos-d6.shnf\114 - 10 - Love Minus Zero.shn
+a6f524b7f005fae48db97c3db6fa40eb  bd-tos-d6.shnf\115 - 11 - She Belongs To Me.shn
+165dd9604a0e558661b595b440e34331  bd-tos-d6.shnf\116 - 12 - It s All Over Now  Baby B.shn
+149d1a2d572b365a4f12125f8964650b  bd-tos-d6.shnf\117 - 13 - Can You Please Crawl Out.shn
+59edd700228661af63c0fc0e5fb912b5  bd-tos-d6.shnf\118 - 14 - It Takes A Lot.shn
+e451d035c07297609759caca5804c682  bd-tos-d6.shnf\119 - 15 - From A buick 6.shn
+c1d9165468dfd0a6288260b79a00d883  bd-tos-d6.shnf\120 - 16 - Sitting On A Barbed Wire.shn
+c09f709414617b35911b5dd2478d16ae  bd-tos-d6.shnf\121 - 17 - Desolation Row.shn
+c012314efeed1adab816f0647af860f4  bd-tos-d6.shnf\122 - 18 - She s Your Lover Now.shn
+e140f84dfd75de76fc664ab807922d1d  bd-tos-d6.shnf\123 - 19 - Miami Sales Message.shn
+041f63c81298fe843d70c4c3d864101d  bd-tos-d6.shnf\noname.md5
+27e9fdcf477467d96c16e73ce3b7dc08  bd-tos-d7.shnf\124 - Medicine Sunday (TWMM).shn
+cc89049d0fd27e37978272b9897fb71d  bd-tos-d7.shnf\125 - Can You Please .... (TWMM).shn
+0ff5b31239a649e9249d85ea487365c7  bd-tos-d7.shnf\126 - I Wanna Be Your Lover (TWMM).shn
+3973075d0c48d7ffff58756d722b9e85  bd-tos-d7.shnf\127 - Visions Of Johanna (DM).shn
+1ee3d842e746db57437488aa2d27c2d9  bd-tos-d7.shnf\128 - She s Your Lover Now  TWMM).shn
+92d596ceef7e5849a0f8c0302bb7092e  bd-tos-d7.shnf\129 - Number One (TWMM).shn
+0acb2c81a4777d8411aea5891de53209  bd-tos-d7.shnf\130 - Tell Me_ Momma.shn
+8a38780f7e2764fdac1ee587be629fd5  bd-tos-d7.shnf\131 - I Don_t Believe You.shn
+f52f84a69a537b2a72b058852c709cc3  bd-tos-d7.shnf\132 - Baby_ Let Me Follow You Down.shn
+3c046ac3e0b467dbe4d8bbf8cd848046  bd-tos-d7.shnf\133 - Just Like Tom Thumb_s Blues.shn
+d74bcfa52e0cd4fcd6cc07d8c6039523  bd-tos-d7.shnf\134 - Leopard-Skin.shn
+e982f670794aca6234d5eefcf0027889  bd-tos-d7.shnf\135 - Tune-Up.shn
+29774404cf8b842968acc4e29e6e237f  bd-tos-d7.shnf\136 - One Too Many Mornings.shn
+885f31fd74cd261fbd22d9d2cd9609ca  bd-tos-d7.shnf\137 - Ballad Of A Thin Man.shn
+f89fe8c27da2188cdd4f0d458bf48756  bd-tos-d7.shnf\138 - Like A Rollingf Stone.shn
+c01f4655d4d835659adb8aa76c2647de  bd-tos-d7.shnf\noname.md5
+1487f261b2aa1100f4f3f5123182f548  bd-tos_artwork\200dpi\TOS_1.JPG
+80c19cfe49a51ab1810a040f01e25c5d  bd-tos_artwork\200dpi\TOS_2.JPG
+a7d2662e945c3c32e5eb62965a69a405  bd-tos_artwork\200dpi\TOS_3.JPG
+f25e0ec9deca01cc8559995c72b65c16  bd-tos_artwork\200dpi\TOS_4.JPG
+ec0329e7392f64ff93ac9214a51109f0  bd-tos_artwork\200dpi\TOS_BCK.JPG
+e556dc0e47ecaed13b1b1685ceeab6fc  bd-tos_artwork\200dpi\TOS_FR.JPG
+6c0572e38a1649b179f298bd44d5d20e  bd-tos_artwork\200dpi\Thumbs.db
+05485f16f971a89eac2884484cc7ac4e  bd-tos_artwork\PSPBRWSE.JBF
+30e2c164ac1462a2388f4580a95526a9  bd-tos_artwork\TEN_OF_SWORDS_CD1_2_BCK.JPG
+7bd7152ee2068c8863d5e6a9fc4a123a  bd-tos_artwork\TEN_OF_SWORDS_CD1_2_FR.JPG
+7f13273c3a30a371fb2dcc43278e0be6  bd-tos_artwork\TEN_OF_SWORDS_CD3_4_BCK.JPG
+ce8820ff99b22c6fdd55c8064568f488  bd-tos_artwork\TEN_OF_SWORDS_CD3_4_FR.JPG
+14de74073fb0ef095c5b42a9f49c0a8d  bd-tos_artwork\TEN_OF_SWORDS_CD5_6_BCK.JPG
+c6d4ecba1d624d2f97ce32b44eb541e9  bd-tos_artwork\TEN_OF_SWORDS_CD5_6_FR.JPG
+0327d469cab93b45d3e193f061694cb4  bd-tos_artwork\TEN_OF_SWORDS_CD7_BCK.JPG
+dea88c6e87ffdf5184d1f9b834ffaa56  bd-tos_artwork\TEN_OF_SWORDS_CD7_FR.JPG
+bea17f62040db1d224f14188e6f0c0eb  bd-tos_artwork\TEN_OF_SWORDS_INNER__BCK.JPG
+21bd68e2aaaca8fb8e1cf06ebf2b0a86  bd-tos_artwork\Thumbs.db
+683d1f8aa6d0bf221570ed3e315f1383  bd_ten of swords_best sources.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-ten-of-swords-cvr-version\bd-tos-d1.shnf 
+=================== 
+=================== 
+=================== 
+f2b9dbebda8c2533d3c93184f988be8f  [shntool]  01_-_11_Candy_Man.wav
+56c073440da5fb2365007081c11958c6  [shntool]  02_-_12_Baby_Please_Don_t_Go.wav
+1567d8b041f7f3f8d87437e517aeef04  [shntool]  03_-_13_Hard_Times_In_New_York.wav
+caf1b4991450cc273a49eb356bdb2175  [shntool]  04_-_14_Stealin_.wav
+157f9619bbb7504c6ea902a10bc6f955  [shntool]  05_-_15_Po__Lazurus.wav
+8b0a54521e0bf06cd35c8f9dbb4baf0d  [shntool]  06_-_16_I_Ain_t_Got_No_Home.wav
+c54f8a2f3baaaa74bbaa7ec88c4c38fc  [shntool]  07_-_17_It_s_Hard_To_Be_Blind.wav
+a3813ef17d8d51dc0024b4652f16828b  [shntool]  08_-_18_Dink_s_Song.wav
+364cd5cdb1ce68ab80d1166e6009423f  [shntool]  09_-_02_Wade_In_The.wav
+a0016d4a1a204fc95283a1fc686e1421  [shntool]  10_-_04_In_The_Evening.wav
+f8fc4c925e0762f167a46d21192b2c35  [shntool]  11_-_05_Baby_Let_Me.wav
+6e9570e0ab32c1dcd82bb8314a5bf149  [shntool]  12_-_06_Sally_Girl.wav
+719b21bc013436aa24c97a3fe7d3bea5  [shntool]  13_-_07_Gospel_Plow.wav
+d00e3ca85cf2f1ac4f3a9374e1783832  [shntool]  14_-_19_Man_Of_Constant_Sorrow.wav
+dd2182c0e9a9469bf0f93ec078b20127  [shntool]  15_-_01_Naomi_Wise.wav
+fee3bc003b46a1e9fa8ef51d55bd8fdc  [shntool]  16_-_03_I_Was_Young.wav
+0048750c6440215786fd8a4f50aa9bc3  [shntool]  17_-_09_Cocaine.wav.wav
+e18104e9dbbd9d16cfbd90ed80383454  [shntool]  18_-_15_Ramblin_Around.wav
+f0f0f54126d32383d01847c9acff6339  [shntool]  19_-_10_VD_Blues.wav
+3fda958189019c34f06d67f195768176  [shntool]  20_-_11_VD_Waltz.wav
+1604e221dbd669fbbd540003c81d9b17  [shntool]  21_-_12_VD_City.wav
+f82565f802dc207559a594c99fad3d44  [shntool]  22_-_13_VD_Gunner.wav
+fc4d1487ebd519a2582f78fb0eb45f44  [shntool]  23_-_16_Black_Cross.wav
+8caa05c4dd61239cb8f9eb6197f3582f  [shntool]  24_-_08_Long_John.wav
+17e089356cd260f87031d2b8bd1ccdc7  [shntool]  25_-_20_East_Orange_NJ.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-ten-of-swords-cvr-version\bd-tos-d5.shnf 
+=================== 
+=================== 
+=================== 
+1a543c525ebaae37ca39410021cc0079  [shntool]  85_-_Ramblin__Down_Through_The_Worl.wav
+6c4d95aae33ae6a867344b239c9e3286  [shntool]  86_-_Who_Killed_Davy_Moore.wav
+fcd0b00e174ff9a7ab88460f12d752fe  [shntool]  87_-_Hero_Blues.wav
+b6983d9abaf1c5ea777d4f4caf0b0c3d  [shntool]  88_-_Dusty_Old_Fairgrounds.wav
+2a45e859a2ddf2e95f824fbb914eda67  [shntool]  89_-_Last_Thoughts_On_Woody_Guthrie.wav
+ff8ac24eb1ac59a550f647df247f7408  [shntool]  90_-_Mr._Tambourine_Man.wav
+dfa0b3f3a97744761439f3e22f7d2601  [shntool]  91_-_13_Rocks_And_Gravel__25_Apr_62.wav
+1c8de9de1a5144031dfcbdaa63ff7658  [shntool]  92_-_10_Kingsport_Town__14_Nov_62_.wav
+4904b0a9c2581b45aa449333c99f5299  [shntool]  93_-_11_Watcha_Gonna_Do__14_Nov_62_.wav
+f9c3f43595a0908006d0c96df2a3d23e  [shntool]  94_-_Moonshiner.wav
+1c29a49298b85372927450c96a6e24fb  [shntool]  95_-_Suze__Cough_Song_.wav
+bde9d73c160e736bc8d69f0cf2993a8c  [shntool]  96_-_Seven_Curses.wav
+856bebbe653835a3bf0051accfbe57a6  [shntool]  97_-_10_Mama_You_Been_On_My_Mind__9.wav
+b899930e6d236e6238710c7cd2fd95d2  [shntool]  98_-_Mama_You_Been_On_My_Mind.wav
+a2cec252045ca0eeee9b349ff79ae8b8  [shntool]  99_-_Eternal_Circle.wav
+7bba25f0add6321511792879e469ccae  [shntool]  100_-_24_Walls_Of_Red_Wing__24_Apr_6.wav
+ab3d2e077c74db9b1e9d9f602c195f6b  [shntool]  101_-_Only_A_Hobo.wav
+37713c86843a7a04e41136181e0fd615  [shntool]  102_-_Paths_Of_Victory.wav
+7c028b0dda5a41696f61ca2f3e5ab108  [shntool]  103_-_Percy_s_Song.wav
+cbcfef540b0b7221abd4510b5bb39c23  [shntool]  104_-_Farewell.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-ten-of-swords-cvr-version\bd-tos-d6.shnf 
+=================== 
+=================== 
+=================== 
+7b6e1eb5689be1ee3a001e29c71265d9  [shntool]  105_-_1_-_Lay_Down_Your_Weary_Tune.wav
+00b88a378f976b8917ec6e6f15f7ce5a  [shntool]  106_-_2_-_Bob_Dylan_s_New_Orleans_Ra.wav
+1b4027b6a5289a6e0e7024121f2924c6  [shntool]  107_-_3_-_I_ll_Keep_It_With_Mine.wav
+5be182ffac4795676f59be06ad161b56  [shntool]  108_-_4_-_Denise.wav
+2004a4bb0331c30790542bc65ae832ec  [shntool]  109_-_5_-_That_s_All_Rig_Mama_-_Sall.wav
+e18273944025d3e68dad90a5acc1191e  [shntool]  110_-_6_-_East_Lorado_Blues__Take_1.wav
+6c2664a13dea3ee56fc4ce68e8809020  [shntool]  111_-_7_-_Bob_Dylan_s_New_Orelans_Ra.wav
+cd9b5ad45dfc2b901f5bd1fb863a236d  [shntool]  112_-_8_-_California.wav
+87009a37707e0c397de35ed114aede74  [shntool]  113_-_9_-_If_You_Gotta_Go__Go_Now.wav
+eadacf3ef5992a4420400bdcd065ec4c  [shntool]  114_-_10_-_Love_Minus_Zero.wav
+02fe8e3b25c6f760811d6162b343d827  [shntool]  115_-_11_-_She_Belongs_To_Me.wav
+8756539b38d3ea34e88273f4a6f6f9c3  [shntool]  116_-_12_-_It_s_All_Over_Now__Baby_B.wav
+20aef7c160a54fd2297a4cb666758a95  [shntool]  117_-_13_-_Can_You_Please_Crawl_Out.wav
+ad353b4b66f17af7394bb54d48122efc  [shntool]  118_-_14_-_It_Takes_A_Lot.wav
+f35912a9c6a334aa3928c22776297a4c  [shntool]  119_-_15_-_From_A_buick_6.wav
+a77560c045a031e3181f13ca329d09bd  [shntool]  120_-_16_-_Sitting_On_A_Barbed_Wire.wav
+53f5d0ccbd0f3833f390395d1b7afe4a  [shntool]  121_-_17_-_Desolation_Row.wav
+14eba0e9d1f00b7e9ac112dacf3d615c  [shntool]  122_-_18_-_She_s_Your_Lover_Now.wav
+23a8735ecb0850155a4345a00ff6d0dc  [shntool]  123_-_19_-_Miami_Sales_Message.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-ten-of-swords-cvr-version\bd-tos-d7.shnf 
+=================== 
+=================== 
+=================== 
+3d412a53ca9561034413dff8817f1ef5  [shntool]  124_-_Medicine_Sunday__TWMM_.wav
+649011cea307cdc2d86f23ff8cfbaf89  [shntool]  125_-_Can_You_Please_....__TWMM_.wav
+416c36f342d3861069b893c82dd81148  [shntool]  126_-_I_Wanna_Be_Your_Lover__TWMM_.wav
+40725b9e7002daab76f94d5669978f34  [shntool]  127_-_Visions_Of_Johanna__DM_.wav
+50e1bb0c94d41f0a0c5ecf6f79496e8c  [shntool]  128_-_She_s_Your_Lover_Now__TWMM_.wav
+69f0ac056c9e3e4acdf9b5449b255cbd  [shntool]  129_-_Number_One__TWMM_.wav
+7b1ca1f99abb0e1038c864c84fb64f0d  [shntool]  130_-_Tell_Me__Momma.wav
+9a027bafdbf5f82c635f3e3736a9aa1d  [shntool]  131_-_I_Don_t_Believe_You.wav
+921d1be4823fb94546d7dafac023e55c  [shntool]  132_-_Baby__Let_Me_Follow_You_Down.wav
+597ae18bae4e102e697dd826e69de662  [shntool]  133_-_Just_Like_Tom_Thumb_s_Blues.wav
+9387af64155db20bd088a950a8c6d3be  [shntool]  134_-_Leopard-Skin.wav
+c9d0f4ad84151619b522767b4d58c9bd  [shntool]  135_-_Tune-Up.wav
+a621da18e605072a1e88fc34cec0af85  [shntool]  136_-_One_Too_Many_Mornings.wav
+b6d4a87ee214b524b73d03d11e2d9541  [shntool]  137_-_Ballad_Of_A_Thin_Man.wav
+b13a20ba3ecd776982a2cc5ed25fa305  [shntool]  138_-_Like_A_Rollingf_Stone.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-ten-of-swords-cvr-version\bd-tos-d2.shnf 
+=================== 
+=================== 
+=================== 
+83644a3e09ccd2f813d83773d60689d1  [shntool]  26_-_16_Sally_Gal__25_Apr_62_.wav
+09c3f806d4fa9b7b1f1373cac69421b5  [shntool]  27_-_17_Baby__Please_Don_t_Go__25_A.wav
+47d36e864536e85753f887acae2195f6  [shntool]  28_-_18_Milk_Cow_s_Calf_s_Blues__25.wav
+21f100c781dfc59676a85b6b127dca4c  [shntool]  29_-_20_Talkin__Bear_Mtn_Picnic_Mas.wav
+e379da3ca18ad26348db35d2297668d2  [shntool]  30_-_Lonesome_Whistle__24_Apr_62_.wav
+700d04e03c9783f28613629ab71206b6  [shntool]  31_-_15_Talkin__Hava_Negeilah_Blues.wav
+6562e537cc73f0442ae86567dda0a33c  [shntool]  32_-_25_Worried_Blues__9_Jul_62_.wav
+1786cf29ded2bbb081aa53d46fa79715  [shntool]  33_-_22_Witchita__Going_To_Louisian.wav
+63d2cd6d8613692ec8e0c07a9f27dc05  [shntool]  34_-_06_Goin__To_New_Orleans__24_Ap.wav
+8e345bf2187fe3ac4e273566a1203bac  [shntool]  35_-_Quit_Your_Lowdown_Ways.wav
+287bde0b7ae6628684840bfeec9b56d6  [shntool]  36_-_He_Was_A_friend_Of_Mine.wav
+d979746f1c0e548adee9797d149511ba  [shntool]  37_-_Man_On_The_Street.wav
+faf72c729599ad99fcf2bec4183f51c9  [shntool]  38_-_Hard_Times_In_New_York_Town.wav
+403bc6f616c7757fe479dd9c62b7bf6c  [shntool]  39_-_Talking_Bear_Mountain_Picnic_M.wav
+d1413a0f25844a08b4e23970497b69ed  [shntool]  40_-_Standing_On_The_Highway.wav
+ca3aa95637d6dcc445506815fe609701  [shntool]  41_-_Poor_Boy_blues.wav
+41a0abba66ffbe3e65fa48815c250873  [shntool]  42_-_Ballad_Of_A_Friend.wav
+624103454de71bf2facf7a2a1a0bcc58  [shntool]  43_-_Man_On_The_Street.wav
+6c1ed7bfce6906c849831ba743be9c2f  [shntool]  44_-_Rambling__Gambling_Willie.wav
+7491954aaf5f67f7ca6a7cdc5be6f36d  [shntool]  45_-_08_Mixed_Up_Confusion__14_Nov.wav
+615ca050c803845c3d0471c2829fc3a7  [shntool]  46_-_09_Corrina__Corrina__24_Apr_62.wav
+18010a676b52e364ce2b84995ac3300f  [shntool]  47_-_11_Talkin__John_Birch_Paranoid.wav
+b548188a7e6e7837644b7f8d4a4d0c99  [shntool]  48_-_14_Let_Me_Die_In_My_Footsteps.wav
+dd3baef6bee42366e58754e4b2beb7fc  [shntool]  49_-_26_Baby__I_m_In_The_Mood_For_Y.wav
+110b8de077dac580172c9ec3b8f82d09  [shntool]  50_-_08_Ramblin__Gamblin__Willie__2.wav
+7f6e3cbd3c6a9b8c5ffcc4fa735fdd31  [shntool]  51_-_Death_Of_Emett_Till.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-ten-of-swords-cvr-version\bd-tos-d3.shnf 
+=================== 
+=================== 
+=================== 
+028d8b5e3188856303748076f84f3e74  [shntool]  52_-_Ain_t_Gonna_Grieve.wav
+de7239dd1ba5cc20bfa874dc481ac9bb  [shntool]  53_-_Long_Time_Gone.wav
+89810c416f15a9a2e85692d34e0451d0  [shntool]  54_-_Long_Ago__Far_Away.wav
+3219d1d2fe443eb58d65d1ad2aaccbee  [shntool]  55_-_Hero_Blues.wav
+9204d9d287409072838ed9dc3c28a4fb  [shntool]  56_-_Whatcha_Gonna.wav
+d6f52f917c3f13ad9cc0e2bada6e0b30  [shntool]  57_-_Gypsy_Lou.wav
+6a8c12050b46900295d64cd0f0f5db25  [shntool]  58_-_Guess_I_m_Doing_Fine.wav
+b6f6ca6574767f9a74b60eb16aa444a9  [shntool]  59_-_Walkin__Down_The_Line.wav
+50944cbebddf099d5be64b38c044979e  [shntool]  60_-_All_Over_You.wav
+9e393582c86f05184002cf5ea4b76a04  [shntool]  61_-_Bound_To_Loose__Bound_To.wav
+dd8381a87e2eb214c46f093b91fa0132  [shntool]  62_-_I_Shall_Be_Free.wav
+39a28bc3b75d694b29051b7633bb90f5  [shntool]  63_-_I_d_Hate_To_Be_You_On_THat_Dre.wav
+fcd89422d88c443e8cb01abe6eab6c46  [shntool]  64_-_When_The_Ship_Comes_In.wav
+a8372335469f5935b12b6493b45f75a9  [shntool]  65_-_TRhe_Times_They_Are_A-Changin_.wav
+0972742ac98e6d72761dcb60609e74ce  [shntool]  66_-_Tomorrow_Is_a_Long_Time.wav
+7c10d6162e1966e40a422eefd10a9fd4  [shntool]  67_-_Farewell.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-ten-of-swords-cvr-version\bd-tos-d4.shnf 
+=================== 
+=================== 
+=================== 
+a9fe789f163ab7bdc0958e86024487f8  [shntool]  68_-_Ballad_Of_Hollis_Brown.wav
+6c7265f3422ea44f77e574205fa3e385  [shntool]  69_-_Kind_hearted_Woman.wav
+a18bf32e65e3e3695edc97daea8f7094  [shntool]  70_-_See_That_My_Grave_Is_Kept_Clea.wav
+3873723287da257eca5b6e351fe64527  [shntool]  71_-_Black_Cross.wav
+7cfbd03d18a0ed055b8cf370d3ac03d4  [shntool]  72_-_No_More_Action_block.wav
+df5e87c24857aff58883a434ed178d8f  [shntool]  73_-_Rocks_And_Gravle.wav
+400ae318f53a6aedacde2148ba42179d  [shntool]  74_-_Barbara_Allen.wav
+fa6a5dcd2260f1f549b75aff1c674d01  [shntool]  75_-_Moonshine_Blues.wav
+21914816240edfb0fd0228ec3fced381  [shntool]  76_-_Motherless_Children.wav
+19a53ba395aad5b8266e6291eb6fa546  [shntool]  77_-_Handsome_Molly.wav
+18a13b5b8b39b64975bf02152cc7a294  [shntool]  78_-_John_Brown.wav
+34c0da421f0fb8b49390eed6a836cec0  [shntool]  79_-_Don_t_Think_Twice.wav
+183aa66ac7a78c51829802a8755c95be  [shntool]  80_-_Ain_t_No_more_Cane.wav
+ecb792d1b6a38abd3a301546c9d406ad  [shntool]  81_-_Cocain.wav
+db4ec2cfaceb2c360f362abe02c661b5  [shntool]  82_-_The_Cuckoo_Is_A_Pretty_bird.wav
+32d0c958bdd429a646e2973d46705a8a  [shntool]  83_-_West_Texas.wav
+a677a4976b938288090adaf179a93441  [shntool]  84_-_A_Hard_Rain_s_A-Gonna_Fall.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-ten-of-swords-cvr-version\bd-tos-d1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:08.04       33172652 B   ---   --   -----    wav  1.0000  01_-_11_Candy_Man.wav
+     4:14.33       44883256 B   -b-   --   -----    wav  1.0000  02_-_12_Baby_Please_Don_t_Go.wav
+     2:17.50       24284444 B   ---   --   -----    wav  1.0000  03_-_13_Hard_Times_In_New_York.wav
+     2:14.04       23647040 B   -b-   --   -----    wav  1.0000  04_-_14_Stealin_.wav
+     4:24.14       46602572 B   ---   --   -----    wav  1.0000  05_-_15_Po__Lazurus.wav
+     2:06.39       22318168 B   -b-   --   -----    wav  1.0000  06_-_16_I_Ain_t_Got_No_Home.wav
+     3:02.37       32191868 B   ---   --   -----    wav  1.0000  07_-_17_It_s_Hard_To_Be_Blind.wav
+     4:53.44       51788732 B   ---   --   -----    wav  1.0000  08_-_18_Dink_s_Song.wav
+     3:06.19       32855132 B   ---   --   -----    wav  1.0000  09_-_02_Wade_In_The.wav
+     3:58.09       42004592 B   -b-   --   -----    wav  1.0000  10_-_04_In_The_Evening.wav
+     2:58.04       31408652 B   ---   --   -----    wav  1.0000  11_-_05_Baby_Let_Me.wav
+     1:43.25       18228136 B   -b-   --   -----    wav  1.0000  12_-_06_Sally_Girl.wav
+     1:28.49       15638744 B   -b-   --   -----    wav  1.0000  13_-_07_Gospel_Plow.wav
+     3:33.73       37744940 B   ---   --   -----    wav  1.0000  14_-_19_Man_Of_Constant_Sorrow.wav
+     3:02.32       32179536 B   -b-   --   -----    wav  1.0000  15_-_01_Naomi_Wise.wav
+     5:44.57       60815940 B   -b-   --   -----    wav  1.0000  16_-_03_I_Was_Young.wav
+     2:17.13       24196936 B   -b-   --   -----    wav  1.0000  17_-_09_Cocaine.wav.wav
+     4:01.36       42597116 B   ---   --   -----    wav  1.0000  18_-_15_Ramblin_Around.wav
+     1:54.45       20216168 B   -b-   --   -----    wav  1.0000  19_-_10_VD_Blues.wav
+     0:50.48        8932516 B   -b-   --   -----    wav  1.0000  20_-_11_VD_Waltz.wav
+     1:48.11       19076528 B   -b-   --   -----    wav  1.0000  21_-_12_VD_City.wav
+     2:36.41       27613936 B   -b-   --   -----    wav  1.0000  22_-_13_VD_Gunner.wav
+     4:22.02       46222372 B   -b-   --   -----    wav  1.0000  23_-_16_Black_Cross.wav
+     6:23.56       67693488 B   -b-   --   -----    wav  1.0000  24_-_08_Long_John.wav
+     1:30.10       15899564 B   ---   --   -----    wav  1.0000  25_-_20_East_Orange_NJ.wav
+    77:41.05      822213028 B                            1.0000  (25 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-ten-of-swords-cvr-version\bd-tos-d5.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.22       53501184 B   -b-   --   -----    wav  1.0000  100_-_24_Walls_Of_Red_Wing__24_Apr_6.wav
+     3:26.65       36491312 B   -b-   --   -----    wav  1.0000  101_-_Only_A_Hobo.wav
+     3:14.37       34308652 B   -b-   --   -----    wav  1.0000  102_-_Paths_Of_Victory.wav
+     7:49.68       82891576 B   -b-   --   -----    wav  1.0000  103_-_Percy_s_Song.wav
+     2:04.50       21991236 B   -b-   --   -----    wav  1.0000  104_-_Farewell.wav
+     2:24.01       25403560 B   -b-   --   -----    wav  1.0000  85_-_Ramblin__Down_Through_The_Worl.wav
+     3:56.28       41696300 B   ---   --   -----    wav  1.0000  86_-_Who_Killed_Davy_Moore.wav
+     3:05.58       32770460 B   ---   --   -----    wav  1.0000  87_-_Hero_Blues.wav
+     5:14.72       55558988 B   ---   --   -----    wav  1.0000  88_-_Dusty_Old_Fairgrounds.wav
+     8:07.67       86064428 B   ---   --   -----    wav  1.0000  89_-_Last_Thoughts_On_Woody_Guthrie.wav
+     5:56.13       62829020 B   ---   --   -----    wav  1.0000  90_-_Mr._Tambourine_Man.wav
+     2:54.21       30743036 B   ---   --   -----    wav  1.0000  91_-_13_Rocks_And_Gravel__25_Apr_62.wav
+     3:27.65       36667724 B   ---   --   -----    wav  1.0000  92_-_10_Kingsport_Town__14_Nov_62_.wav
+     3:03.02       32285948 B   ---   --   -----    wav  1.0000  93_-_11_Watcha_Gonna_Do__14_Nov_62_.wav
+     5:07.35       54237164 B   ---   --   -----    wav  1.0000  94_-_Moonshiner.wav
+     1:38.16       17324876 B   ---   --   -----    wav  1.0000  95_-_Suze__Cough_Song_.wav
+     3:46.26       39927596 B   ---   --   -----    wav  1.0000  96_-_Seven_Curses.wav
+     2:55.26       30930384 B   -b-   --   -----    wav  1.0000  97_-_10_Mama_You_Been_On_My_Mind__9.wav
+     2:13.12       23488684 B   -b-   --   -----    wav  1.0000  98_-_Mama_You_Been_On_My_Mind.wav
+     2:37.28       27760944 B   -b-   --   -----    wav  1.0000  99_-_Eternal_Circle.wav
+    78:07.36      826873072 B                            1.0000  (20 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-ten-of-swords-cvr-version\bd-tos-d6.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:30.15       47662888 B   -b-   --   -----    wav  1.0000  105_-_1_-_Lay_Down_Your_Weary_Tune.wav
+     1:02.34       11016812 B   ---   --   -----    wav  1.0000  106_-_2_-_Bob_Dylan_s_New_Orleans_Ra.wav
+     4:21.17       46080428 B   ---   --   -----    wav  1.0000  107_-_3_-_I_ll_Keep_It_With_Mine.wav
+     2:55.61       31013516 B   ---   --   -----    wav  1.0000  108_-_4_-_Denise.wav
+     3:10.19       33560732 B   ---   --   -----    wav  1.0000  109_-_5_-_That_s_All_Rig_Mama_-_Sall.wav
+     3:15.00       34398044 B   ---   --   -----    wav  1.0000  110_-_6_-_East_Lorado_Blues__Take_1.wav
+     3:18.74       35101292 B   ---   --   -----    wav  1.0000  111_-_7_-_Bob_Dylan_s_New_Orelans_Ra.wav
+     3:04.33       32535260 B   ---   --   -----    wav  1.0000  112_-_8_-_California.wav
+     2:33.03       26996300 B   ---   --   -----    wav  1.0000  113_-_9_-_If_You_Gotta_Go__Go_Now.wav
+     3:45.12       39718268 B   ---   --   -----    wav  1.0000  114_-_10_-_Love_Minus_Zero.wav
+     3:05.65       32786924 B   ---   --   -----    wav  1.0000  115_-_11_-_She_Belongs_To_Me.wav
+     3:39.35       38713964 B   ---   --   -----    wav  1.0000  116_-_12_-_It_s_All_Over_Now__Baby_B.wav
+     4:04.48       43154540 B   ---   --   -----    wav  1.0000  117_-_13_-_Can_You_Please_Crawl_Out.wav
+     3:33.00       37573244 B   ---   --   -----    wav  1.0000  118_-_14_-_It_Takes_A_Lot.wav
+     3:11.45       33798284 B   ---   --   -----    wav  1.0000  119_-_15_-_From_A_buick_6.wav
+     4:07.61       43715356 B   -b-   --   -----    wav  1.0000  120_-_16_-_Sitting_On_A_Barbed_Wire.wav
+    11:57.60      126619284 B   -b-   --   -----    wav  1.0000  121_-_17_-_Desolation_Row.wav
+     8:26.38       89347724 B   -b-   --   -----    wav  1.0000  122_-_18_-_She_s_Your_Lover_Now.wav
+     0:53.08        9367820 B   -b-   --   -----    wav  1.0000  123_-_19_-_Miami_Sales_Message.wav
+    74:56.28      793160680 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-ten-of-swords-cvr-version\bd-tos-d7.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:58.47       10341352 B   -b-   --   -----    wav  1.0000  124_-_Medicine_Sunday__TWMM_.wav
+     0:55.10        9725564 B   ---   --   -----    wav  1.0000  125_-_Can_You_Please_....__TWMM_.wav
+     3:29.31       36940556 B   ---   --   -----    wav  1.0000  126_-_I_Wanna_Be_Your_Lover__TWMM_.wav
+     7:35.28       80327900 B   ---   --   -----    wav  1.0000  127_-_Visions_Of_Johanna__DM_.wav
+     6:28.17       68483228 B   ---   --   -----    wav  1.0000  128_-_She_s_Your_Lover_Now__TWMM_.wav
+     4:04.60       43182764 B   ---   --   -----    wav  1.0000  129_-_Number_One__TWMM_.wav
+     4:51.48       51445340 B   ---   --   -----    wav  1.0000  130_-_Tell_Me__Momma.wav
+     5:45.55       60987404 B   ---   --   -----    wav  1.0000  131_-_I_Don_t_Believe_You.wav
+     4:07.15       43606124 B   ---   --   -----    wav  1.0000  132_-_Baby__Let_Me_Follow_You_Down.wav
+     6:08.03       64922300 B   ---   --   -----    wav  1.0000  133_-_Just_Like_Tom_Thumb_s_Blues.wav
+     3:39.31       38704556 B   ---   --   -----    wav  1.0000  134_-_Leopard-Skin.wav
+     1:14.60       13194764 B   ---   --   -----    wav  1.0000  135_-_Tune-Up.wav
+     3:50.51       40691996 B   ---   --   -----    wav  1.0000  136_-_One_Too_Many_Mornings.wav
+     7:18.23       77317340 B   ---   --   -----    wav  1.0000  137_-_Ballad_Of_A_Thin_Man.wav
+     7:52.15       83296124 B   ---   --   -----    wav  1.0000  138_-_Like_A_Rollingf_Stone.wav
+    68:19.44      723167312 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-ten-of-swords-cvr-version\bd-tos-d2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.72       35272552 B   -b-   --   -----    wav  1.0000  26_-_16_Sally_Gal__25_Apr_62_.wav
+     1:59.68       21151580 B   ---   --   -----    wav  1.0000  27_-_17_Baby__Please_Don_t_Go__25_A.wav
+     2:30.13       26490620 B   ---   --   -----    wav  1.0000  28_-_18_Milk_Cow_s_Calf_s_Blues__25.wav
+     3:41.51       39104396 B   ---   --   -----    wav  1.0000  29_-_20_Talkin__Bear_Mtn_Picnic_Mas.wav
+     2:05.45       22155884 B   ---   --   -----    wav  1.0000  30_-_Lonesome_Whistle__24_Apr_62_.wav
+     0:49.08        8662460 B   ---   --   -----    wav  1.0000  31_-_15_Talkin__Hava_Negeilah_Blues.wav
+     2:35.24       27398492 B   ---   --   -----    wav  1.0000  32_-_25_Worried_Blues__9_Jul_62_.wav
+     2:56.10       31069964 B   ---   --   -----    wav  1.0000  33_-_22_Witchita__Going_To_Louisian.wav
+     3:13.45       34151084 B   ---   --   -----    wav  1.0000  34_-_06_Goin__To_New_Orleans__24_Ap.wav
+     2:44.25       28988444 B   ---   --   -----    wav  1.0000  35_-_Quit_Your_Lowdown_Ways.wav
+     4:07.73       43742440 B   -b-   --   -----    wav  1.0000  36_-_He_Was_A_friend_Of_Mine.wav
+     1:05.48       11578772 B   -b-   --   -----    wav  1.0000  37_-_Man_On_The_Street.wav
+     1:56.64       20612972 B   ---   --   -----    wav  1.0000  38_-_Hard_Times_In_New_York_Town.wav
+     3:45.24       39746492 B   ---   --   -----    wav  1.0000  39_-_Talking_Bear_Mountain_Picnic_M.wav
+     2:33.05       27001000 B   -b-   --   -----    wav  1.0000  40_-_Standing_On_The_Highway.wav
+     3:02.57       32238900 B   -b-   --   -----    wav  1.0000  41_-_Poor_Boy_blues.wav
+     2:23.28       25291100 B   ---   --   -----    wav  1.0000  42_-_Ballad_Of_A_Friend.wav
+     1:29.38       15789020 B   ---   --   -----    wav  1.0000  43_-_Man_On_The_Street.wav
+     3:41.12       39012620 B   -b-   --   -----    wav  1.0000  44_-_Rambling__Gambling_Willie.wav
+     2:28.68       26267072 B   -b-   --   -----    wav  1.0000  45_-_08_Mixed_Up_Confusion__14_Nov.wav
+     3:12.39       33960572 B   ---   --   -----    wav  1.0000  46_-_09_Corrina__Corrina__24_Apr_62.wav
+     3:47.43       40143980 B   ---   --   -----    wav  1.0000  47_-_11_Talkin__John_Birch_Paranoid.wav
+     4:03.70       43029884 B   ---   --   -----    wav  1.0000  48_-_14_Let_Me_Die_In_My_Footsteps.wav
+     2:53.35       30599564 B   ---   --   -----    wav  1.0000  49_-_26_Baby__I_m_In_The_Mood_For_Y.wav
+     4:09.04       43933052 B   ---   --   -----    wav  1.0000  50_-_08_Ramblin__Gamblin__Willie__2.wav
+     4:11.70       44441084 B   ---   --   -----    wav  1.0000  51_-_Death_Of_Emett_Till.wav
+    74:48.64      791834000 B                            1.0000  (26 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-ten-of-swords-cvr-version\bd-tos-d3.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:27.13       15377420 B   ---   --   -----    wav  1.0000  52_-_Ain_t_Gonna_Grieve.wav
+     3:47.25       40101644 B   ---   --   -----    wav  1.0000  53_-_Long_Time_Gone.wav
+     2:29.50       26401232 B   -b-   --   -----    wav  1.0000  54_-_Long_Ago__Far_Away.wav
+     1:38.62       17433068 B   ---   --   -----    wav  1.0000  55_-_Hero_Blues.wav
+     3:26.50       36456036 B   -b-   --   -----    wav  1.0000  56_-_Whatcha_Gonna.wav
+     3:36.50       38220044 B   ---   --   -----    wav  1.0000  57_-_Gypsy_Lou.wav
+     4:16.42       45257220 B   -b-   --   -----    wav  1.0000  58_-_Guess_I_m_Doing_Fine.wav
+     2:53.00       30517236 B   -b-   --   -----    wav  1.0000  59_-_Walkin__Down_The_Line.wav
+     3:45.38       39779416 B   -b-   --   -----    wav  1.0000  60_-_All_Over_You.wav
+     1:22.12       14493068 B   ---   --   -----    wav  1.0000  61_-_Bound_To_Loose__Bound_To.wav
+     4:29.25       47510444 B   ---   --   -----    wav  1.0000  62_-_I_Shall_Be_Free.wav
+     2:00.13       21198620 B   ---   --   -----    wav  1.0000  63_-_I_d_Hate_To_Be_You_On_THat_Dre.wav
+     2:54.20       30740680 B   -b-   --   -----    wav  1.0000  64_-_When_The_Ship_Comes_In.wav
+     3:00.00       31752044 B   ---   --   -----    wav  1.0000  65_-_TRhe_Times_They_Are_A-Changin_.wav
+     3:50.30       40642600 B   -b-   --   -----    wav  1.0000  66_-_Tomorrow_Is_a_Long_Time.wav
+     4:06.12       43422664 B   -b-   --   -----    wav  1.0000  67_-_Farewell.wav
+    49:03.67      519303436 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-ten-of-swords-cvr-version\bd-tos-d4.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:40.44       60079096 B   -b-   --   -----    wav  1.0000  68_-_Ballad_Of_Hollis_Brown.wav
+     2:28.48       26220136 B   -b-   --   -----    wav  1.0000  69_-_Kind_hearted_Woman.wav
+     3:24.21       36035032 B   -b-   --   -----    wav  1.0000  70_-_See_That_My_Grave_Is_Kept_Clea.wav
+     3:58.13       42013716 B   -b-   --   -----    wav  1.0000  71_-_Black_Cross.wav
+     2:52.68       30500688 B   -b-   --   -----    wav  1.0000  72_-_No_More_Action_block.wav
+     4:56.34       52294196 B   -b-   --   -----    wav  1.0000  73_-_Rocks_And_Gravle.wav
+     7:47.33       82456428 B   -b-   --   -----    wav  1.0000  74_-_Barbara_Allen.wav
+     4:03.58       43001552 B   -b-   --   -----    wav  1.0000  75_-_Moonshine_Blues.wav
+     3:09.00       33339616 B   -b-   --   -----    wav  1.0000  76_-_Motherless_Children.wav
+     2:43.67       28910816 B   -b-   --   -----    wav  1.0000  77_-_Handsome_Molly.wav
+     5:52.58       62229260 B   ---   --   -----    wav  1.0000  78_-_John_Brown.wav
+     3:07.55       33116204 B   ---   --   -----    wav  1.0000  79_-_Don_t_Think_Twice.wav
+     1:56.73       20634140 B   ---   --   -----    wav  1.0000  80_-_Ain_t_No_more_Cane.wav
+     2:55.22       30921704 B   -b-   --   -----    wav  1.0000  81_-_Cocain.wav
+     2:16.57       24123800 B   -b-   --   -----    wav  1.0000  82_-_The_Cuckoo_Is_A_Pretty_bird.wav
+     5:36.30       59340928 B   -b-   --   -----    wav  1.0000  83_-_West_Texas.wav
+     6:39.04       70393052 B   ---   --   -----    wav  1.0000  84_-_A_Hard_Rain_s_A-Gonna_Fall.wav
+    69:30.09      735610364 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,61 @@
+Bob Dylan
+Ohio State University
+Jerome Schottenstein Center
+Columbus, Ohio
+November 4, 2004
+
+Disc 1:
+01. introduction
+02. Drifter's Escape
+03. Dignity
+04. Tweedle Dee & Tweedle Dum
+05. Mr. Tambourine Man
+06. High Water (For Charley Patton)
+07. Po' Boy
+08. Cold Irons Bound
+09. Tryin' To Get To Heaven
+10. Highway 61 Revisited
+11. Blind Willie McTell
+12. Floater (Too Much To Ask)
+
+Disc 2:
+01. Honest With Me
+02. Every Grain Of Sand
+03. Summer Days
+(encore)
+04. Like A Rolling Stone
+05. band introduction
+06. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel, fiddle
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+center ga floor
+at853's > sp-spsb-1 > denecke ad-20 > sony tcd-d8
+sony tcd-d8 > m-audio mt1 > usb > hdd
+sony sound forge 9.0 > cd wave > flac
+
+ffp
+bd2004-11-04d1t01.flac:42e89b123e2803b9f9d7ba23a0198488
+bd2004-11-04d1t02.flac:3464fcf9ce588af413318efd2f0ce564
+bd2004-11-04d1t03.flac:40e1d39b541db24dbbac6ab4f71cf35f
+bd2004-11-04d1t04.flac:5e92b08cf1cfbe1d571b73ad606e7945
+bd2004-11-04d1t05.flac:1c1d2d154022dddc8cd99335b1d46289
+bd2004-11-04d1t06.flac:65d4e2e0f28386514df7b7f83119b632
+bd2004-11-04d1t07.flac:999bc123e5c72b706ccc527ce8831fc2
+bd2004-11-04d1t08.flac:e8c93dd5f4d0b8e174f3182950eb39f3
+bd2004-11-04d1t09.flac:6a76b37e204a1a0b3aa854d1066dd039
+bd2004-11-04d1t10.flac:2a5b10788ab1317337e16dddae987f5f
+bd2004-11-04d1t11.flac:8629b3fc9cfc60dc55c2502f29888fbe
+bd2004-11-04d1t12.flac:9ece7b22f225563599051e34757edfc1
+bd2004-11-04d2t01.flac:a296efe352e0e36d94e4e5dd78a0bda6
+bd2004-11-04d2t02.flac:56f4a3b59e5ca3520f91701c6f0aee15
+bd2004-11-04d2t03.flac:301088b06544a47ccda0c9ab8be13130
+bd2004-11-04d2t04.flac:d0e69a8e4975f11e574a41ef85f44b20
+bd2004-11-04d2t05.flac:904a92e9b0391c955426757af360b44b
+bd2004-11-04d2t06.flac:3295b46966bec2a4be921c33fd6b426e

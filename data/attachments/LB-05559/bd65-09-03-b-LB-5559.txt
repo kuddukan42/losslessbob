@@ -1,0 +1,11 @@
+Bob Dylan, 9/3/65, Hollywood Bowl, 2CDR
+
+LB-5559, (42min+43min), version "b"; Trade CDR > EAC > Audition flac conversion; bittorrent download 12/07 ; heavy tv band on end of d1t1 through beginning of d1t5 but not on rest; very similar wav and spetcral view to LB-518 except this has lower levels, nothing above 21.5k, a little more noise density in the upper end, is about 30 seconds slower spread out over the recording, and has the additional flaw on d2t8; sounds similar; (did not listen to all of this)
+
+Small analog source drops d1t5 6:08, and tempo change at d2t6 2:48 probably on source tape; drop d2t8 5:10
+
+1. She Belongs To Me, 2. To Ramona, 3. Gates Of Eden, 4. It's All Over Now, Baby Blue, 5. Desolation Row, 6. Love Minus Zero/No Limit, 7. Mr. Tambourine Man, CD2
+1. Tombstone Blues, 2. I Don't Believe You (She Acts Like We Never Have Met), 3. From A Buick 6, 4. Just Like Tom Thumb's Blues, 5. Maggie's Farm, 6 It Ain't Me Babe., 7. Ballad Of A Thin Man, 8. Like A Rolling Stone
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

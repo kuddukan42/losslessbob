@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-03-23-duets.flacf 
+=================== 
+=================== 
+=================== 
+a14f7c13c7edd9d62e51462a01d227e2  bd75-03-23-duets-d1t01.flac
+f12c9af88e705f9bfd1c511a749e8cda  bd75-03-23-duets-d1t02.flac
+a3373f783b19bd3a25efb7ad2c0a9346  bd75-03-23-duets-d1t03.flac
+eb2f25a019a11f630ae641c135bb1ee7  bd75-03-23-duets-d1t04.flac
+6e3d5bbb1b74a20ef6d9c03ec9520cab  bd75-03-23-duets-d1t05.flac
+daa822a4935d5ec087be91900faa478c  bd75-03-23-duets-d1t06.flac
+46a1feb67e7eea0b599daed154d6bdf3  bd75-03-23-duets-d1t07.flac
+401011f2fb31ed9c3355b151ead65889  bd75-03-23-duets-d1t08.flac
+2a17e1854c42d4c3872ca7bd1e86f6b3  bd75-03-23-duets-d1t09.flac
+2ad427f7ca17f238756536d98761436b  bd75-03-23-duets-d2t01.flac
+ed618f544a0cb3db00c690605158e644  bd75-03-23-duets-d2t02.flac
+89011c48b07b97ade9c4e59926ac962d  bd75-03-23-duets-d2t03.flac
+f0ebffc3a3fd6362a78e6fe1ebd16fc9  bd75-03-23-duets-d2t04.flac
+216b832ed63269b30dadb16e756cd4f6  bd75-03-23-duets-d2t05.flac
+a0fa5f500ccbe70a6798528326f52183  bd75-03-23-duets-d2t06.flac
+3dccd0f4e06110c95ff0fec2a136f0b1  bd75-03-23-duets-d2t07.flac
+ff62344958f50e185d22248ef0cb71c0  bd75-03-23-duets-d2t08.flac
+17a0f1663319a1864799314b5a0383d8  bd75-03-23-duets-d2t09.flac
+6447436f72787f288db9f9d224026008  bd75-03-23-duets-d2t10.flac
+e755b7b8beb75119a80af025b3309352  bd75-03-23-duets.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-03-23-duets.flacf 
+=================== 
+=================== 
+=================== 
+bd75-03-23-duets-d1t01.flac:67a29692ddd1c787b6c664559b82cd4e
+bd75-03-23-duets-d1t02.flac:4c251be1e26000d83b858e0dca1898be
+bd75-03-23-duets-d1t03.flac:3d7b171ce9c1f0d9c24b102e29d74216
+bd75-03-23-duets-d1t04.flac:08ad2f2aa86a385cd18a8b13e112b003
+bd75-03-23-duets-d1t05.flac:8c0d95b519e03d704e090d7219b4d452
+bd75-03-23-duets-d1t06.flac:cdd5032cc9428122e37ee5e4bfcc42bb
+bd75-03-23-duets-d1t07.flac:39f56e854091057aa51d482ea7e2c1fe
+bd75-03-23-duets-d1t08.flac:8da4d5f330e0e7ab1ee07808e336ec2c
+bd75-03-23-duets-d1t09.flac:55e9ace6512b023f232c3232d4bdae47
+bd75-03-23-duets-d2t01.flac:f1dacd9a053ede034e9ce966da596ced
+bd75-03-23-duets-d2t02.flac:df5cf19a83c154537670d6e17f125203
+bd75-03-23-duets-d2t03.flac:26efa4ec1208424e43533e55ef99a7f6
+bd75-03-23-duets-d2t04.flac:3d77d3e4fff805c756e149579ad3d4b5
+bd75-03-23-duets-d2t05.flac:bd763647ee2666dd967dc4d7b4ca036a
+bd75-03-23-duets-d2t06.flac:6bb36e088c8373cd48a24a3e8a5a5381
+bd75-03-23-duets-d2t07.flac:3a238fdd3e6681e49bd7f453fb903907
+bd75-03-23-duets-d2t08.flac:cff45a206e38e398b0f9276247470a00
+bd75-03-23-duets-d2t09.flac:64a70e7208c4171d03deb715bbacb8dc
+bd75-03-23-duets-d2t10.flac:1c51c0e3a6bdb26f8829aef52ee3eef7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-03-23-duets.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.67        6684428 B   ---   --   ---xx   flac  0.5504  bd75-03-23-duets-d1t01.flac
+     3:48.38       40308620 B   ---   --   ---xx   flac  0.5411  bd75-03-23-duets-d1t02.flac
+     4:05.02       43222748 B   ---   --   ---xx   flac  0.5886  bd75-03-23-duets-d1t03.flac
+     3:41.50       39102044 B   ---   --   ---xx   flac  0.4347  bd75-03-23-duets-d1t04.flac
+     4:07.55       43700204 B   ---   --   ---xx   flac  0.4274  bd75-03-23-duets-d1t05.flac
+     3:07.18       33029180 B   ---   --   ---xx   flac  0.4977  bd75-03-23-duets-d1t06.flac
+     4:13.15       44664524 B   ---   --   ---xx   flac  0.5589  bd75-03-23-duets-d1t07.flac
+     7:39.70       81132284 B   ---   --   ---xx   flac  0.5552  bd75-03-23-duets-d1t08.flac
+     2:13.22       23512988 B   ---   --   ---xx   flac  0.5245  bd75-03-23-duets-d1t09.flac
+     4:55.13       52068620 B   ---   --   ---xx   flac  0.3969  bd75-03-23-duets-d2t01.flac
+     4:37.50       48980444 B   ---   --   ---xx   flac  0.3670  bd75-03-23-duets-d2t02.flac
+     5:36.05       59282204 B   ---   --   ---xx   flac  0.4212  bd75-03-23-duets-d2t03.flac
+     6:33.10       69348764 B   ---   --   ---xx   flac  0.3611  bd75-03-23-duets-d2t04.flac
+     5:12.40       55130924 B   ---   --   ---xx   flac  0.3746  bd75-03-23-duets-d2t05.flac
+     4:14.00       44805644 B   ---   --   ---xx   flac  0.3805  bd75-03-23-duets-d2t06.flac
+     6:18.47       66789788 B   ---   --   ---xx   flac  0.3653  bd75-03-23-duets-d2t07.flac
+     4:12.08       44471660 B   ---   --   ---xx   flac  0.3294  bd75-03-23-duets-d2t08.flac
+     4:46.72       50619788 B   ---   --   ---xx   flac  0.3569  bd75-03-23-duets-d2t09.flac
+     5:16.35       55824764 B   ---   --   ---xx   flac  0.3810  bd75-03-23-duets-d2t10.flac
+    85:17.17      902679620 B                            0.4322  (19 files)
+=================== 
+=================== 
+=================== 

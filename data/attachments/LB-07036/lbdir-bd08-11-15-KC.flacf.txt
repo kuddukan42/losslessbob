@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-11-15-KC.flacf 
+=================== 
+=================== 
+=================== 
+e9fb4dac61a8679964112f001a353cdb  bd15tix.jpg
+6772cbb033f288b26bee17c302b5cd2f  bd_20081115.txt
+00ecfdcc037ceb51aacbad98a6703a55  bd_20081115_d1t01-fixed.flac
+5a3d554245bd679c40cb41a229ca23c0  bd_20081115_d1t02-fixed.flac
+7c262c43b955f00b07ae2431d165e4a3  bd_20081115_d1t03-fixed.flac
+9199c8121adfd5f47174206489ab4056  bd_20081115_d1t04-fixed.flac
+8c0988730b7537f335dee46036833436  bd_20081115_d1t05-fixed.flac
+9d424e6e2611d3a664964f5aa3e9e5d1  bd_20081115_d1t06-fixed.flac
+7b111c1579b779d25a6297f205d22bef  bd_20081115_d1t07-fixed.flac
+37d44a5656d28b6053b3825890b0b01a  bd_20081115_d1t08-fixed.flac
+4a3658885ee4cf4fd4b68df315a5e039  bd_20081115_d1t09-fixed.flac
+73082c5bbcd39da50b3dc0b25c71afe4  bd_20081115_d1t10-fixed.flac
+037a44294d884f6605541f4698e356f3  bd_20081115_d1t11-fixed.flac
+ed71472a2878d40decb8733d23f27034  bd_20081115_d1t12-fixed.flac
+27f0b4dbeebb23d6248ab918378486e8  bd_20081115_d2t01-fixed.flac
+631d5396326b9d222900dbb378761f8d  bd_20081115_d2t02-fixed.flac
+93e799ecd161300e3083b091233fa308  bd_20081115_d2t03-fixed.flac
+3f1e9d33c8e2ace2e8383474811f4256  bd_20081115_d2t04-fixed.flac
+2a1b4e784e7537f2dc0c648b8f53ab32  bd_20081115_d2t05-fixed.flac
+d08d2f95b7871a3b49de00d2304fa904  bd_20081115_d2t06-fixed.flac
+e118671d74c696721022ddca1de80889  bd_20081115_d2t07-fixed.flac
+e5c60540f8c0e6a64c466a346d3fe22f  bd_20081115_d2t08-fixed.flac
+2cf164656500600971cd982c8e6fd756  bd_20081115_fpt.txt
+32380eb004e001dc4714f2e22e4d5336  Bob Dylan 2008-11-15 KC.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-11-15-KC.flacf 
+=================== 
+=================== 
+=================== 
+bd_20081115_d1t01-fixed.flac:4f6d1eb09aa3065587a1ae5780c966ca
+bd_20081115_d1t02-fixed.flac:b442597b45b5622b199c89d23fec527a
+bd_20081115_d1t03-fixed.flac:e13f9ca50ef1abd6b42f244316aa24f2
+bd_20081115_d1t04-fixed.flac:6e9fddf3d3b52f8032dd28fa9b850916
+bd_20081115_d1t05-fixed.flac:9f96b17c7790a5b66d601187218633a6
+bd_20081115_d1t06-fixed.flac:392b6ccdad42f388ff6490b0e62010bd
+bd_20081115_d1t07-fixed.flac:1c842178514c60073a23dd29e9dd652d
+bd_20081115_d1t08-fixed.flac:64150cc9394f5cf2c12c4c97dbd66bcf
+bd_20081115_d1t09-fixed.flac:1b34075778f32ec232e9b5a20fa5055a
+bd_20081115_d1t10-fixed.flac:c8f59937c838b96e97e612daad27a455
+bd_20081115_d1t11-fixed.flac:c4531a557aec0568dd8bdcb14b9d459e
+bd_20081115_d1t12-fixed.flac:97ba16445f5f03293aa70a401822b6da
+bd_20081115_d2t01-fixed.flac:abbdf9a075781976d97af4c795beb3d5
+bd_20081115_d2t02-fixed.flac:7744659cb0e84bc48323e3e715f63155
+bd_20081115_d2t03-fixed.flac:b9a9162406db48180846895995925884
+bd_20081115_d2t04-fixed.flac:24863a7f6183d0c1d7c9e24113f3f4de
+bd_20081115_d2t05-fixed.flac:c81b9b70a518cf3e49971125b57601b9
+bd_20081115_d2t06-fixed.flac:fac0e0226b834574e08993ba56b3fdb5
+bd_20081115_d2t07-fixed.flac:b8309ed78864e6815147be16f07970b8
+bd_20081115_d2t08-fixed.flac:b081e356f5879651e54b98794e7a3871
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-11-15-KC.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.05        8302604 B   ---   --   ---xx   flac  0.4490  bd_20081115_d1t01-fixed.flac
+     3:25.33       36239660 B   ---   --   ---xx   flac  0.5060  bd_20081115_d1t02-fixed.flac
+     5:25.20       57377084 B   ---   --   ---xx   flac  0.4983  bd_20081115_d1t03-fixed.flac
+     6:31.16       69010076 B   ---   --   ---xx   flac  0.5164  bd_20081115_d1t04-fixed.flac
+     6:56.63       73530620 B   ---   --   ---xx   flac  0.4658  bd_20081115_d1t05-fixed.flac
+     4:49.03       50986700 B   ---   --   ---xx   flac  0.4910  bd_20081115_d1t06-fixed.flac
+     7:36.03       80445500 B   ---   --   ---xx   flac  0.4877  bd_20081115_d1t07-fixed.flac
+     7:58.67       84476828 B   ---   --   ---xx   flac  0.5242  bd_20081115_d1t08-fixed.flac
+     4:41.67       49726028 B   ---   --   ---xx   flac  0.4613  bd_20081115_d1t09-fixed.flac
+     7:55.34       83870012 B   ---   --   ---xx   flac  0.5078  bd_20081115_d1t10-fixed.flac
+     5:37.39       59538572 B   ---   --   ---xx   flac  0.4547  bd_20081115_d1t11-fixed.flac
+     7:22.36       78053516 B   ---   --   ---xx   flac  0.5156  bd_20081115_d1t12-fixed.flac
+     6:27.23       68320940 B   ---   --   ---xx   flac  0.4562  bd_20081115_d2t01-fixed.flac
+     7:17.28       77152700 B   ---   --   ---xx   flac  0.5191  bd_20081115_d2t02-fixed.flac
+     8:14.16       87179276 B   ---   --   ---xx   flac  0.4420  bd_20081115_d2t03-fixed.flac
+     6:32.73       69320540 B   ---   --   ---xx   flac  0.5341  bd_20081115_d2t04-fixed.flac
+     3:24.60       36126764 B   ---   --   ---xx   flac  0.4680  bd_20081115_d2t05-fixed.flac
+     6:43.42       71188028 B   ---   --   ---xx   flac  0.5335  bd_20081115_d2t06-fixed.flac
+     0:38.27        6766748 B   ---   --   ---xx   flac  0.4833  bd_20081115_d2t07-fixed.flac
+     4:54.30       51932204 B   ---   --   ---xx   flac  0.5532  bd_20081115_d2t08-fixed.flac
+   113:20.10     1199544400 B                            0.4965  (20 files)
+=================== 
+=================== 
+=================== 

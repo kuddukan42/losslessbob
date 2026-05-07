@@ -1,0 +1,147 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-10-31-aud-sbd.flacf 
+=================== 
+=================== 
+=================== 
+47398f0324a9f3d2b40ba55f7924f706  31 October 1975 Plymouth.txt
+46748e69ab0e64277598ebd6fb1db829  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t01.flac
+614ddf00e0e2c33b7cdc673f1d5d7561  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t02.flac
+48a90dff4d853250a2bc62a5f8e84f10  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t03.flac
+69c415a49925d06d97de8e1d4341a755  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t04.flac
+6d3efcaa191f3ce32530a5f0c96d7d98  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t05.flac
+5a721009261fce154d8967d8abc94b33  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t06.flac
+1218cd78ad649eb3563896bcfb0a1e57  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t07.flac
+6c13c12795ec0a656a535fa4f491abee  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t08.flac
+f780c6303c22c57f62d4456984a0366b  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d1t09.flac
+e95f1286ce395ca2b8de07a84d7b17a0  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d2t01.flac
+e228814b4e27a386525148cbf207a79e  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d2t02.flac
+2b382245c213b9fe25e200dc6ba6c2b7  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d2t03.flac
+3894a4bf551ae4bfd49790994982b7ca  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d2t04.flac
+57d87cc9eb405a3496f12e257f7af04c  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d2t05.flac
+9b7535d0064c17e8f1a76ba93f249b42  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d2t06.flac
+c4787335d6bdc02cc6c4bb278b7bcfc7  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.d2t07.flac
+0212da8564d672b618bf138c1b11d4b0  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.flac.ffp
+f8fc5fe2f7986f720e42240af592eba1  bd1975-10-31 Plymouth (aud.speed.cor) flac\bd1975-10-31.aud.speed.cor.wav.md5
+13bf03a3b972e6c8c0e1ad1a9b8a1acf  bd75-10-31-aud-sbd-LB-4282.txt
+4265584dff8f162ac48c7109b1512924  TTD BDRTRplym75full\Dylan19751031.ffp
+8f4ca660151f336523072716254060b9  TTD BDRTRplym75full\TD RTR 19751031.txt
+1bec3575344b81adf354faef6c2d5918  TTD BDRTRplym75full\t00 Bob Dylan When I Paint My Masterpiece.flac
+ac13ed916d655e95cc4ce2f08d7ac547  TTD BDRTRplym75full\t01 Bob Dylan  Romance In Durango.flac
+e7c6aea7bcccb41481725a8b849e077f  TTD BDRTRplym75full\t02 Bob Dylan Isis.flac
+ae4e9a34d161ea3945de50d890d2c724  TTD BDRTRplym75full\t03 Bob Dylan Joan Baez Never Let Me Go.flac
+3856764966768575bbc47f277f7df07c  TTD BDRTRplym75full\t04 Bob Dylan Joan Baez Mama You Been On my Mind.flac
+f5ad4b44999f390d92a3dfcb05635543  TTD BDRTRplym75full\t05 Joan Baez Diamonds and Rust.flac
+9a941c6f5519f54e851b413ef37d3d62  TTD BDRTRplym75full\t06 Joan Baez Oh Happy Day.flac
+8aab20d8ceaa9f5bde49704e71c16c65  TTD BDRTRplym75full\t07 Joan Baez Please Come To Boston.flac
+baf60883da656e9dc7b10113847a1d05  TTD BDRTRplym75full\t08 Roger McGuinn Chestnut Mare.flac
+cd3b946c558f1c2b32bd8b37c4200fa3  TTD BDRTRplym75full\t09 Joan Baez Night Dixie Down.flac
+2dd0cd6166243d836daf87adaf741e0e  TTD BDRTRplym75full\t10 Bob Dylan I Don't Believe You.flac
+f3bae12b9287e73b4762bc79ef1f47ff  TTD BDRTRplym75full\t11 Bob Dylan Hurricane.flac
+c60d25d782ac8571c1a339f482ef6b57  TTD BDRTRplym75full\t12 Bob Dylan Oh Sister.flac
+512cad6460dd03866b07670a85cfc3c1  TTD BDRTRplym75full\t13 Bob Dylan One More Cup Of Coffee.flac
+a5494307700f3ccdff03e918f78d7151  TTD BDRTRplym75full\t14  Bob Dylan Sara.flac
+39ea5aad44b92577ce916b9da65dd826  TTD BDRTRplym75full\t15 Bob Dylan Just Like A Woman.flac
+59a1e6aa3e92523e2d202faffd13a287  TTD BDRTRplym75full\t16 RTR This Land Is Your Land.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-10-31-aud-sbd.flacf\bd1975-10-31 Plymouth (aud.speed.cor) flac 
+=================== 
+=================== 
+=================== 
+bd1975-10-31.aud.speed.cor.d1t01.flac:bd02794a16a9d4b68e43c3b7b72d3589
+bd1975-10-31.aud.speed.cor.d1t02.flac:b6b729a931c2b667f3b1568cc9c9f6db
+bd1975-10-31.aud.speed.cor.d1t03.flac:6c72aeea7c9e832db45d2a662491786d
+bd1975-10-31.aud.speed.cor.d1t04.flac:f2956544809017db1038412d8c595d1c
+bd1975-10-31.aud.speed.cor.d1t05.flac:94ac30be71f3e3d8a516cdc4dd24111f
+bd1975-10-31.aud.speed.cor.d1t06.flac:dd2e02d0c8da0b85268cec30b149e9d4
+bd1975-10-31.aud.speed.cor.d1t07.flac:dc1f7b42184e70abdf063696b2dfc807
+bd1975-10-31.aud.speed.cor.d1t08.flac:59d24c024db4dd24a2fa110a98116ac2
+bd1975-10-31.aud.speed.cor.d1t09.flac:5d74f00eee5c79e11f467896a076d8aa
+bd1975-10-31.aud.speed.cor.d2t01.flac:b9dfe1a3a78c1c506e1c6bfb0c4d42c6
+bd1975-10-31.aud.speed.cor.d2t02.flac:352bbd4b5c1468522b42e51b1cfc918d
+bd1975-10-31.aud.speed.cor.d2t03.flac:8bad50c55b5df64a4b8efe976824e608
+bd1975-10-31.aud.speed.cor.d2t04.flac:72a693ac585022452a3d78180216c8f6
+bd1975-10-31.aud.speed.cor.d2t05.flac:0cc8f6aa6ca764214a6eb2e82b5b9282
+bd1975-10-31.aud.speed.cor.d2t06.flac:a4a242cb7066990b1ef590afed625deb
+bd1975-10-31.aud.speed.cor.d2t07.flac:06ee18d6d7559312b5503d19e7aa67a4
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-10-31-aud-sbd.flacf\TTD BDRTRplym75full 
+=================== 
+=================== 
+=================== 
+t00 Bob Dylan When I Paint My Masterpiece.flac:6faf21d18c5630c4bf793bcbcd99ad07
+t01 Bob Dylan  Romance In Durango.flac:26161a736a8a28a1b7e46fb3abbfaac3
+t02 Bob Dylan Isis.flac:ab8bd768ee5819430dac9e206f82d544
+t03 Bob Dylan Joan Baez Never Let Me Go.flac:079a863d625882894869bc237e4d2edc
+t04 Bob Dylan Joan Baez Mama You Been On my Mind.flac:9b2a158947d6fe2b2df4e9f92c57a0a8
+t05 Joan Baez Diamonds and Rust.flac:ee99aee6c8512c6a6ad7f9fb26a0aa11
+t06 Joan Baez Oh Happy Day.flac:b17c4119d38acbf892cd20722b1d7904
+t07 Joan Baez Please Come To Boston.flac:16a6110b9a5a5aab45890df39af96318
+t08 Roger McGuinn Chestnut Mare.flac:ccb2d29e7e7e6d16d2a60a6471df7a88
+t09 Joan Baez Night Dixie Down.flac:d245711f79ff5ccbe21f3a934c9db179
+t10 Bob Dylan I Don't Believe You.flac:d3d56ef7498e06b8ca7d38b6ae2deaf2
+t11 Bob Dylan Hurricane.flac:77b45820a6d67c2eda75dc2f320b1e23
+t12 Bob Dylan Oh Sister.flac:92bd9689f74835e48754b59b9faa3c6f
+t13 Bob Dylan One More Cup Of Coffee.flac:63b238248850f650418d8e323632068f
+t14  Bob Dylan Sara.flac:253282615e67a24f002edc9647fde72d
+t15 Bob Dylan Just Like A Woman.flac:f134af1c8b668a922953d9e9dd28aade
+t16 RTR This Land Is Your Land.flac:00f38f3d8b5fbf5cc4b0c4d32e137619
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-10-31-aud-sbd.flacf\bd1975-10-31 Plymouth (aud.speed.cor) flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.10       53296364 B   ---   --   ---xx   flac  0.5262  bd1975-10-31.aud.speed.cor.d1t01.flac
+     5:58.47       63261788 B   ---   --   ---xx   flac  0.5202  bd1975-10-31.aud.speed.cor.d1t02.flac
+     6:11.50       65562044 B   ---   --   ---xx   flac  0.5256  bd1975-10-31.aud.speed.cor.d1t03.flac
+     5:52.63       62241020 B   ---   --   ---xx   flac  0.5227  bd1975-10-31.aud.speed.cor.d1t04.flac
+     6:34.24       69558092 B   ---   --   ---xx   flac  0.5301  bd1975-10-31.aud.speed.cor.d1t05.flac
+     3:48.22       40270988 B   ---   --   ---xx   flac  0.5237  bd1975-10-31.aud.speed.cor.d1t06.flac
+     4:25.66       46901276 B   ---   --   ---xx   flac  0.5050  bd1975-10-31.aud.speed.cor.d1t07.flac
+     3:25.29       36230252 B   ---   --   ---xx   flac  0.5119  bd1975-10-31.aud.speed.cor.d1t08.flac
+     4:25.42       46844828 B   ---   --   ---xx   flac  0.5028  bd1975-10-31.aud.speed.cor.d1t09.flac
+     3:46.61       40009916 B   ---   --   ---xx   flac  0.5176  bd1975-10-31.aud.speed.cor.d2t01.flac
+     9:06.35       96396764 B   ---   --   ---xx   flac  0.5217  bd1975-10-31.aud.speed.cor.d2t02.flac
+     5:03.30       53519804 B   ---   --   ---xx   flac  0.5007  bd1975-10-31.aud.speed.cor.d2t03.flac
+     4:23.23       46447340 B   ---   --   ---xx   flac  0.5077  bd1975-10-31.aud.speed.cor.d2t04.flac
+     5:06.16       54016076 B   ---   --   ---xx   flac  0.4935  bd1975-10-31.aud.speed.cor.d2t05.flac
+     4:44.40       50191724 B   ---   --   ---xx   flac  0.5037  bd1975-10-31.aud.speed.cor.d2t06.flac
+     4:23.52       46515548 B   ---   --   ---xx   flac  0.5308  bd1975-10-31.aud.speed.cor.d2t07.flac
+    82:19.10      871263824 B                            0.5161  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-10-31-aud-sbd.flacf\TTD BDRTRplym75full 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.44       50201132 B   ---   --   ---xx   flac  0.5921  t00 Bob Dylan When I Paint My Masterpiece.flac
+     5:12.31       55109756 B   ---   --   ---xx   flac  0.5829  t01 Bob Dylan  Romance In Durango.flac
+     6:47.14       71827772 B   ---   --   ---xx   flac  0.5925  t02 Bob Dylan Isis.flac
+     3:57.35       41889164 B   ---   --   ---xx   flac  0.5958  t03 Bob Dylan Joan Baez Never Let Me Go.flac
+     3:31.12       37248668 B   ---   --   ---xx   flac  0.5792  t04 Bob Dylan Joan Baez Mama You Been On my Mind.flac
+     4:10.27       44163548 B   ---   --   ---xx   flac  0.5899  t05 Joan Baez Diamonds and Rust.flac
+     3:47.14       40075772 B   ---   --   ---xx   flac  0.6105  t06 Joan Baez Oh Happy Day.flac
+     0:54.29        9593852 B   ---   --   ---xx   flac  0.5940  t07 Joan Baez Please Come To Boston.flac
+     5:36.65       59423324 B   ---   --   ---xx   flac  0.6319  t08 Roger McGuinn Chestnut Mare.flac
+     4:07.58       43707260 B   ---   --   ---xx   flac  0.6391  t09 Joan Baez Night Dixie Down.flac
+     3:42.38       39250220 B   ---   --   ---xx   flac  0.6015  t10 Bob Dylan I Don't Believe You.flac
+     8:41.65       92057324 B   ---   --   ---xx   flac  0.6027  t11 Bob Dylan Hurricane.flac
+     4:57.05       52402604 B   ---   --   ---xx   flac  0.6028  t12 Bob Dylan Oh Sister.flac
+     3:59.38       42249020 B   ---   --   ---xx   flac  0.6056  t13 Bob Dylan One More Cup Of Coffee.flac
+     5:13.10       55236764 B   ---   --   ---xx   flac  0.5956  t14  Bob Dylan Sara.flac
+     4:35.00       48510044 B   ---   --   ---xx   flac  0.6552  t15 Bob Dylan Just Like A Woman.flac
+     4:24.74       46743692 B   ---   --   ---xx   flac  0.6644  t16 RTR This Land Is Your Land.flac
+    78:23.34      829689916 B                            0.6082  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== BD1994-07-10 Cologne, Germany info.txt
+===================
+===================
+===================
+Bob Dylan And His Band
+
+1994-07-10 Cologne, Germany (Tanzbrunnen)
+
+
+From my old DAT (received in trade 1995-03-xx).  Based on various conversational snippets, this seems to be from the same source tape as LB-2984.  I always thought this was a digital transfer from a digital master, but the LB listings all refer to hiss (generally an analog thing).  The only other version of this tape I have is the "bittorrent from 01/16" mentioned in the LB-2984 entry -- I have not, for example, heard the "Love Minus Zero" bootleg version of this tape -- but comparing my DAT (this) to the 01/16 bittorrent, this has substantially less hiss.  (I compared a quiet song, Love Minus Zero, and the hiss is very noticeable over the beginning of the song on the 01/16 bittorrent version, but I hear literally zero hiss over the beginning of the song on this version.)  Sometimes I think I can hear some hiss on mine during the intervals between songs, but other times I think that might just be crowd rumble.  (I'm still personally inclined to believe that this may be a direct transfer from a digital master.)  One more thing:  the 01/16 bittorrent speculated (with some evidence) that this tape might have originated as a DSBD ...  It's an excellent audience tape, but there are moments when you can clearly hear the taper or some of his nearby sectionmates talking in between songs (in German, I think) -- so definitely not a soundboard.  But at this audio level who cares??
+
+TRANSFER DATE: 2016-05-07
+
+WHAT I DID: DAT > WAV > Sound Forge (broke intro tracks, fade in 1, fade out 14, removed 1:41 of encore interval audience noise after 12) > FLAC.
+
+WHAT I DID NOT DO: resample the files (they remain @ 48 khz, just as on the original DAT, so you will have to convert them yourself in order to burn to CD).
+
+All thanks to the original taper and to the person who sent me the DAT (who may or may not be the same person)!
+
+
+01 Jokerman
+02 The Man In Me
+03 All Along The Watchtower
+04 I Don't Believe You (She Acts Like We Never Have Met)
+05 Tangled Up In Blue
+06 I'll Be Your Baby Tonight
+07 Love Minus Zero / No Limit
+08 Masters Of War
+09 Boots Of Spanish Leather
+10 God Knows
+11 I Believe In You
+12 Maggie's Farm
+13 Rainy Day Women # 12 & 35
+14 It Ain't Me, Babe 
+
+
+**
+===================
+===================
+===================
+=== BD1994-07-10 Cologne, Germany.ffp
+===================
+===================
+===================
+01 Jokerman.flac:5a961e1191c7c43ac90a120621527530
+02 The Man In Me.flac:fcc7f47e0f2a93772403ecef9ec56a3f
+03 All Along The Watchtower.flac:00f3aad16b6022b5c4ed4cd47f61d544
+04 I Don't Believe You (She Acts Like We Never Have Met).flac:dad8b3cb8a07c297a969d8fe01c7e33f
+05 Tangled Up In Blue.flac:a91033eea1d511a9e80c9568b325cd3c
+06 I'll Be Your Baby Tonight.flac:662653c0483f6f482f02f9891db4d08c
+07 Love Minus Zero _ No Limit.flac:7dff8ec58068cfeb3e85ec8e0a8320f9
+08 Masters Of War.flac:00fe02bf6030f2991169a405d83532d0
+09 Boots Of Spanish Leather.flac:8696c863b3c1d09316dc14371f3fcd0a
+10 God Knows.flac:5b3c8d56a08f73752ef7137201ac7e62
+11 I Believe In You.flac:44681e4d3f7334500a21c84b45d4be13
+12 Maggie's Farm.flac:98a89ebbd01ff89371cc32adf0544ace
+13 Rainy Day Women #s 12 & 35.flac:7fa35833701df4fb9ba135be45b015df
+14 It Ain't Me, Babe.flac:af8d7e05c151f73b35b2eaebe16e4581
+===================
+===================
+===================
+=== BD1994-07-10 Cologne, Germany.md5
+===================
+===================
+===================
+0ef711327396270f442807e5c65a9e0b *01 Jokerman.flac
+284d8ba8783cf5122ba62a91202fa943 *02 The Man In Me.flac
+bc80187556efceaf5b36eb0fcc73ff59 *03 All Along The Watchtower.flac
+75b31ff56490ed646216c6d8fc02d71b *04 I Don't Believe You (She Acts Like We Never Have Met).flac
+a8ac65d9893cd2471658c0f5929a41ac *05 Tangled Up In Blue.flac
+92765b1889a52936d3af1ef58b869846 *06 I'll Be Your Baby Tonight.flac
+f07a2b40b18b9c37f0c2876635f1ea2b *07 Love Minus Zero _ No Limit.flac
+9d29267a16c2d344371a8ff36e1b6a28 *08 Masters Of War.flac
+4c0ecaa298f3a06f9b964918d0cf13cf *09 Boots Of Spanish Leather.flac
+a9c30953667dd8754a4089dc39e5570d *10 God Knows.flac
+a6b0e4785581a9ceae2bb4fb21b283fe *11 I Believe In You.flac
+21a113627cb3180dedcef46a8b7b0c8f *12 Maggie's Farm.flac
+df79465d2dfacd83eb005095782a1ffe *13 Rainy Day Women #s 12 & 35.flac
+aa0d3c7ff9478fac894d207ce77c1113 *14 It Ain't Me, Babe.flac
+===================
+===================
+===================

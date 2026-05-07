@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-03-01 
+=================== 
+=================== 
+=================== 
+899a40c478f2ff79b3312d0ccf3feee3  bd99-03-10.txt
+1e4dee44beae429e905f44310bab87a0  dylan_-_99-03-01 d1t01.shn
+898eb9902adbb886a826f1fbc10e46ad  dylan_-_99-03-01 d1t02.shn
+33d291d2f841d89eafb5784287f1d3e7  dylan_-_99-03-01 d1t03.shn
+3a4ff2dd445136c822f04f24e91f9a01  dylan_-_99-03-01 d1t04.shn
+3a9988f7f1a979c2b3e9dd2b9fc6af0e  dylan_-_99-03-01 d1t05.shn
+247e156cf7bba60b6f23497ecdfd7b64  dylan_-_99-03-01 d1t06.shn
+bb80cb17bd2fdf6f8ce49d09690c279f  dylan_-_99-03-01 d1t07.shn
+dc1a0bfd50069af17fcbf3a0611079a9  dylan_-_99-03-01 d1t08.shn
+e6ee597f9482a9802ea91e7f1ecb68b3  dylan_-_99-03-01 d1t09.shn
+59ddbb0fcc480a4d9c1e954c220906dd  dylan_-_99-03-01 d2t01.shn
+f0be1902742e32817b272fc0c709317c  dylan_-_99-03-01 d2t02.shn
+072148ca1c8e8436262a4c5b4cf14377  dylan_-_99-03-01 d2t03.shn
+529a0418c22124edab2e7524b5c8c234  dylan_-_99-03-01 d2t04.shn
+2c5a37530caed217e1e43ebd1b683e3c  dylan_-_99-03-01 d2t05.shn
+f8438400e3c8d4a97fc72a37675743c5  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-03-01 
+=================== 
+=================== 
+=================== 
+9d1a8c6ce2539415c2ba6c8679a2112f  [shntool]  dylan_-_99-03-01_d1t01.wav
+17884837a1cee90eb2d0944b38b829e5  [shntool]  dylan_-_99-03-01_d1t02.wav
+53c404a12527002934f4537178bed058  [shntool]  dylan_-_99-03-01_d1t03.wav
+b4dcd56bf2c2427c7d3964daa9056f38  [shntool]  dylan_-_99-03-01_d1t04.wav
+e5fd127ee080170cddfd0143151f6eab  [shntool]  dylan_-_99-03-01_d1t05.wav
+89cfe500859bebab572cf388c8eaabb2  [shntool]  dylan_-_99-03-01_d1t06.wav
+ee4a6ebb0ce7bd66543f148d86b2e20e  [shntool]  dylan_-_99-03-01_d1t07.wav
+f3b98a16cd8a0a246d52a7700d060d65  [shntool]  dylan_-_99-03-01_d1t08.wav
+a411802b0c95320b3873d7185a5f764e  [shntool]  dylan_-_99-03-01_d1t09.wav
+2955314564b5f413f0d2865d38be5503  [shntool]  dylan_-_99-03-01_d2t01.wav
+6d6f69dd9085c0ab154fadd0fbb0a39b  [shntool]  dylan_-_99-03-01_d2t02.wav
+7761d0381fcb454e9c07d226b5a38d18  [shntool]  dylan_-_99-03-01_d2t03.wav
+f12b2e444578ec1193702ebe0a17c8bc  [shntool]  dylan_-_99-03-01_d2t04.wav
+dc0660ae6f1318061444c289f83f214c  [shntool]  dylan_-_99-03-01_d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-03-01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:06.21       43443850 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t01.wav
+     4:35.41       48606490 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t02.wav
+     7:15.70       76898698 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t03.wav
+     6:09.62       65237482 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t04.wav
+     5:30.05       58223818 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t05.wav
+     7:59.44       84599146 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t06.wav
+     6:13.71       65964250 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t07.wav
+     7:53.55       83566618 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t08.wav
+     6:42.38       71002234 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d1t09.wav
+     4:04.31       43114570 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d2t01.wav
+     6:09.36       65176330 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d2t02.wav
+     6:00.47       63614602 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d2t03.wav
+     6:13.61       65940730 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d2t04.wav
+     4:04.71       43208650 B   ---   h-   -----    wav  1.0000  dylan_-_99-03-01_d2t05.wav
+    83:00.53      878597468 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

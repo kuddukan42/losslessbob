@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== bd1993-04-17aud.md5
+===================
+===================
+===================
+13b777bdfa4f4ac8faf792de4136a5b6 *bd1993-04-17aud_d1t01.flac
+455c20efa5d7c890fc137684169a3dcb *bd1993-04-17aud_d1t02.flac
+7cdf5b71132ccb4c572fc49a65d12949 *bd1993-04-17aud_d1t03.flac
+70f3e101194e7cb757241d416cfe7237 *bd1993-04-17aud_d1t04.flac
+74307d49a3f75d18e5568390256d05e4 *bd1993-04-17aud_d1t05.flac
+25c92414619e1b849aeedc2e3f2dd6dd *bd1993-04-17aud_d1t06.flac
+8b0963dab7c916098f1c81b43abb30f2 *bd1993-04-17aud_d1t07.flac
+262f50880f9a2d9ea127e1ad8b65fb4b *bd1993-04-17aud_d1t08.flac
+f24d0bab08d300d0b8f0c4daded82554 *bd1993-04-17aud_d1t09.flac
+3c8730940ed4e48a72146e4f63be6844 *bd1993-04-17aud_d1t10.flac
+893c486a19b6f5c30e86e6173150fac2 *bd1993-04-17aud_d2t01.flac
+40add395bcdcf4974e2adfa07ee116da *bd1993-04-17aud_d2t02.flac
+349d1fe9840fb8301a5ad2cb0fc8d790 *bd1993-04-17aud_d2t03.flac
+f6fcb725496865fbca069ce3d238f75f *bd1993-04-17aud_d2t04.flac
+ce9dceb6d91c3f674c2780d53b04dcfc *bd1993-04-17aud_d2t05.flac
+9d850e148b261fee0bcfdd21badb0d61 *bd1993-04-17aud_d2t06.flac
+cdc8af0ab65332144f1f08981e7dec67 *bd1993-04-17aud_d2t07.flac
+63cdd7d6335288a9c2998eea073e03be *bd1993-04-17aud_d2t08.flac
+===================
+===================
+===================
+=== bd1993-04-17_Knoxville_aud.txt
+===================
+===================
+===================
+Bob Dylan
+Civic Auditorium
+Knoxville Civic Center
+Knoxville, Tennessee
+17 April 1993
+
+Audience recording
+
+Lineage: Unknown.
+
+Concert # 476 of The Never-Ending Tour.  Concert # 5 of the 1993 US Spring Tour. 1993 concert # 20
+Concert # 20 with the 9th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Winston Watson (drums & percussion)
+1, 8-12, 18 acoustic with the band
+9, 18  Bob Dylan harmonica..
+1  Bucky Baxter (accordion).
+4 new songs (22%) compared to previous concert. 3 new songs for this tour.
+
+Setlist and NET info  2001 by Olof Bjrner
+
+Disc One  [71:27]
+1	Hard Times (Stephen Foster)	6.10
+2	Stuck Inside Of Mobile With The Memphis Blues Again	10.51
+3	All Along The Watchtower	5.14
+4	You're A Big Girl Now	6.03
+5	Tangled Up In Blue	10.27
+6	Born In Time	6.28
+7	Watching The River Flow	5.58
+8	Jim Jones (Trad)	6.42
+9	Tomorrow Night (Sam Coslow/Will Grosz)	5.42
+10	Mr. Tambourine Man	7.50
+
+Disc Two  [63:55]
+1	It's All Over Now, Baby Blue	8.06
+2	Cat's In The Well	5.46
+3	I And I	7.42
+4	She Belongs To Me	6.24
+5	Everything Is Broken	9.38
+6	Man In The Long Black Coat	9.15
+7	Maggie's Farm	7.07
+8	It Ain't Me, Babe	9.53
+
+
+===================
+===================
+===================

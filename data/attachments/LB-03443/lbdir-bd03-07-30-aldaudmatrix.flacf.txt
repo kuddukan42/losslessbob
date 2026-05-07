@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-30-aldaudmatrix.flacf 
+=================== 
+=================== 
+=================== 
+3bf53fc84663208afe8b72b54756cb17  bd03-07-30-aldaudmatrix-LB-3443.txt
+d3dd78e51e457704825a88b257c0dbd9  disk1\1.flac
+10224a9af5593f92c1b03dc130aef8fa  disk1\10.flac
+b4bef2d9e052e8a95fe718d7998ee3c4  disk1\11.flac
+07e5ab6303368cbd69d7c2cfeb9ccda5  disk1\12.flac
+2c79ec6e7450e7cf96299e7f511bc58f  disk1\2.flac
+3533e9404d59537d19289965e5fda442  disk1\3.flac
+d61bf0c59956a09bc47b1b066a3b2115  disk1\4.flac
+4e3302a957f5313df5ce3ed6a01c45f4  disk1\5.flac
+b7be90c2f2a5bedc0917a9b11fd0655c  disk1\6.flac
+e2f886199e48497b5863d041677cf070  disk1\7.flac
+64cfc2d35449221eef652ce5900ddd81  disk1\8.flac
+f7a696e711f2ed71e1be303705930540  disk1\9.flac
+7d0d338b6be33a666c35decc9434d168  disk2\1.flac
+aebda7be96263f9b50ec10b90e3f8ae1  disk2\2.flac
+cd61f86017b1a3a6dd95758214cbc852  disk2\3.flac
+b8a523b1ed727aa91fa048d794213581  readme.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-07-30-aldaudmatrix.flacf\disk2 
+=================== 
+=================== 
+=================== 
+1.flac:2d4131ac1d7f5747bfb8a3a3a161b320
+2.flac:40cd39b22a5de0c3d8e496d197cf24dc
+3.flac:7dc031bd913721d974fa4a10d5c820f9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-07-30-aldaudmatrix.flacf\disk1 
+=================== 
+=================== 
+=================== 
+1.flac:77918362809d281528b00aae9c0a1e4c
+10.flac:30cdfea27c58a89ce60eb280736a6fb7
+11.flac:a766b8f3dd30f3697230790d252b2ef4
+12.flac:d7b85e26eb946418ce00eda5e782802f
+2.flac:7088f0a8bbe00f1efbf69b432930ac21
+3.flac:5d858e429e1d0cf35624cdcf16342fae
+4.flac:151c930e1ba80e9a7a3448cf4e751385
+5.flac:701f1c067516045466dbfee50401aa11
+6.flac:108b4ce4fcbdbec47d73cbb98a286534
+7.flac:f71e8a61c17838a0a51780194a7cd1cf
+8.flac:167c2bb990a63ffa554aad00dd119381
+9.flac:14b6dd558b710a3a1a3d70e57a268237
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-30-aldaudmatrix.flacf\disk2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:23.26       46454396 B   ---   --   ---xx   flac  0.5761  1.flac
+     8:11.40       86706524 B   ---   --   ---xx   flac  0.5736  2.flac
+     7:33.21       79958636 B   ---   --   ---xx   flac  0.5875  3.flac
+    20:08.12      213119556 B                            0.5793  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-30-aldaudmatrix.flacf\disk1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.34        9605612 B   ---   --   ---xx   flac  0.5765  1.flac
+     7:18.72       77432588 B   ---   --   ---xx   flac  0.5457  10.flac
+    10:10.44      107707532 B   ---   --   ---xx   flac  0.5425  11.flac
+     5:56.27       62861948 B   ---   --   ---xx   flac  0.5222  12.flac
+     6:08.25       64974044 B   ---   --   ---xx   flac  0.5560  2.flac
+     5:13.43       55314380 B   ---   --   ---xx   flac  0.5472  3.flac
+     5:34.48       59030540 B   ---   --   ---xx   flac  0.5298  4.flac
+     5:21.21       56673836 B   ---   --   ---xx   flac  0.5374  5.flac
+     6:31.73       69144140 B   ---   --   ---xx   flac  0.5460  6.flac
+     5:41.06       60166556 B   ---   --   ---xx   flac  0.5217  7.flac
+     4:30.50       47745644 B   ---   --   ---xx   flac  0.5515  8.flac
+     8:05.27       85617548 B   ---   --   ---xx   flac  0.5366  9.flac
+    71:27.20      756274368 B                            0.5403  (12 files)
+=================== 
+=================== 
+=================== 

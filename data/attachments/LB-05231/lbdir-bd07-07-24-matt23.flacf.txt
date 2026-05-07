@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-07-24-matt23.flacf 
+=================== 
+=================== 
+=================== 
+5da79cdee3ef5697581ae421d5cf81cc  Dylan-7-24-07-d1tr01.flac
+c98c720215131e356fc8d065e01836d4  Dylan-7-24-07-d1tr02.flac
+911a2e07c30b4fcfec0ad3fa0f12adf1  Dylan-7-24-07-d1tr03.flac
+5343f619cfff3859c51a0848d579b7ef  Dylan-7-24-07-d1tr04.flac
+d64533c30b1278f4782ed4a646ddd3ba  Dylan-7-24-07-d1tr05.flac
+82f57c8f56847f883e7b9adec8036663  Dylan-7-24-07-d1tr06.flac
+4f1ab698f3962dc59a1a5f7fbe1b72f2  Dylan-7-24-07-d1tr07.flac
+24c407a154fb41e064d073b672d13ad5  Dylan-7-24-07-d1tr08.flac
+14967d8a82276b87278c9903404bc2f0  Dylan-7-24-07-d1tr09.flac
+e460b7bc2ee7260a0685c4ce394fd458  Dylan-7-24-07-d2tr01.flac
+2d1cfa2cc568c85051bd117d15ea26ff  Dylan-7-24-07-d2tr02.flac
+9a3bb58679d5057dae7bcfdc2427cc3d  Dylan-7-24-07-d2tr03.flac
+c60364e2b29b36d6eccd1c532d19b115  Dylan-7-24-07-d2tr04.flac
+920ebdab20ed71b36d2ceb0c31a0eaef  Dylan-7-24-07-d2tr05.flac
+68dc33e3704001be93e328cbe11bca86  Dylan-7-24-07-d2tr06.flac
+23b17de9b77bba513538aea8cd404432  Dylan-7-24-07-d2tr07.flac
+8e97cafe91f2403bb17b836069a5f381  Dylan-7-24-07-d2tr08.flac
+672dbfc400591856d129eaa92713d7ea  Dylan-7-24-07-d2tr09.flac
+f1bc0cbaa791a080b96e8a70f352c45c  Dylan-7-24-07.ffp
+ee1a141adaf8fc37fe8d27e454687748  Dylan-7-24-07info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-07-24-matt23.flacf 
+=================== 
+=================== 
+=================== 
+Dylan-7-24-07-d1tr01.flac:c4612110c517c3229b279e30a3c0e480
+Dylan-7-24-07-d1tr02.flac:47e8f146223926d984e34ecfcdd5d42f
+Dylan-7-24-07-d1tr03.flac:7723420a3f2967ee31e8af92d79e821e
+Dylan-7-24-07-d1tr04.flac:23f8e08371bf09e61b0ed3c8db473560
+Dylan-7-24-07-d1tr05.flac:d331812ebd7981ea16600407751b1c04
+Dylan-7-24-07-d1tr06.flac:01daab7f5b925442de7e71fc85df5bcf
+Dylan-7-24-07-d1tr07.flac:e90d7815e013f4036174333a51ca88cb
+Dylan-7-24-07-d1tr08.flac:f2635054260eb7a2bfd677d96143a9b0
+Dylan-7-24-07-d1tr09.flac:b0b6b917f8eb0ba651072c2ee1187d22
+Dylan-7-24-07-d2tr01.flac:a4a82ec477250e4172e92e16a33c36e4
+Dylan-7-24-07-d2tr02.flac:7d1e7262b82c9790b00e3573f628c8ea
+Dylan-7-24-07-d2tr03.flac:2b2fbe553541f9959ba5ef640fecb289
+Dylan-7-24-07-d2tr04.flac:62bdd3558907bb4554dc2e0bad12a733
+Dylan-7-24-07-d2tr05.flac:0c2bb74ea755a9a5bf105880472bbb22
+Dylan-7-24-07-d2tr06.flac:b89a7ee034b62d8df5bf0320dedff67b
+Dylan-7-24-07-d2tr07.flac:215d46c54341563885d233b234f8e0d0
+Dylan-7-24-07-d2tr08.flac:09a7083fa4c4aa4945e2d998aaaadd54
+Dylan-7-24-07-d2tr09.flac:e5162e8da3aecbccdd56ba9c026d922b
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-07-24-matt23.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.71       58379036 B   ---   --   ---xx   flac  0.5365  Dylan-7-24-07-d1tr01.flac
+     5:20.64       56598572 B   ---   --   ---xx   flac  0.5059  Dylan-7-24-07-d1tr02.flac
+     5:29.47       58146188 B   ---   --   ---xx   flac  0.5387  Dylan-7-24-07-d1tr03.flac
+     6:55.41       73302476 B   ---   --   ---xx   flac  0.4730  Dylan-7-24-07-d1tr04.flac
+     5:43.28       60571100 B   ---   --   ---xx   flac  0.5394  Dylan-7-24-07-d1tr05.flac
+     8:00.28       84737900 B   ---   --   ---xx   flac  0.4519  Dylan-7-24-07-d1tr06.flac
+     7:56.70       84131084 B   ---   --   ---xx   flac  0.5312  Dylan-7-24-07-d1tr07.flac
+     6:37.58       70167260 B   ---   --   ---xx   flac  0.5403  Dylan-7-24-07-d1tr08.flac
+     6:25.20       67961084 B   ---   --   ---xx   flac  0.3748  Dylan-7-24-07-d1tr09.flac
+     7:48.17       82595228 B   ---   --   ---xx   flac  0.5111  Dylan-7-24-07-d2tr01.flac
+     4:56.46       52322636 B   ---   --   ---xx   flac  0.4916  Dylan-7-24-07-d2tr02.flac
+     5:58.68       63311180 B   ---   --   ---xx   flac  0.5840  Dylan-7-24-07-d2tr03.flac
+     7:05.58       75106460 B   ---   --   ---xx   flac  0.4115  Dylan-7-24-07-d2tr04.flac
+     5:58.01       63153596 B   ---   --   ---xx   flac  0.5496  Dylan-7-24-07-d2tr05.flac
+     5:03.09       53470412 B   ---   --   ---xx   flac  0.4667  Dylan-7-24-07-d2tr06.flac
+     7:22.68       78128780 B   ---   --   ---xx   flac  0.5661  Dylan-7-24-07-d2tr07.flac
+     0:49.55        8773004 B   ---   --   ---xx   flac  0.4687  Dylan-7-24-07-d2tr08.flac
+     5:46.54       61161452 B   ---   --   ---xx   flac  0.5087  Dylan-7-24-07-d2tr09.flac
+   108:50.53     1152017448 B                            0.5034  (18 files)
+=================== 
+=================== 
+=================== 

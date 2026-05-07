@@ -1,0 +1,69 @@
+Legendary Tapers Series #27
+
+Bob Dylan 
+Fox Warfield, San Francisco
+79-11-09
+Offmaster recording of an audience recording>(Feurio) wav> (flac frontend) >flac
+Taped by Legendary Taper E.
+
+
+The sources identified by Watt Alexander in the "Gospel Project" for this date are obviously derived
+from this LTE version (apparently the only ciculating version). The recording that I received has some
+"bonus tracks" appended to the end of the concert. I have no information as to the source of these particular tracks, 
+but I have left them in the torrent folder. They can of course be omitted in burning if one wishes to just keep 
+the 11-9-79 material.
+
+
+Disk One
+
+Gotta Serve Somebody
+I Believe In You
+When You Gonna Wake Up
+When He Returns
+Man Gave Names To All The Animals
+Slow Train
+Precious Angel
+Covenant Woman
+Gonna Change My Way Of Thinking + Do Right To Me Baby (Do Unto Others) (single track)
+Solid Rock
+Saving Grace
+What Can I Do For You?
+
+
+Disk Two
+Saved
+In The Garden
+Blessed Be The Name
+Pressing On
+
+bonus tracks of unknown origin:
+What Can I do for You?
+In the Garden
+Blessed Be the Name
+Pressing On
+
+
+Disk One
+bd1979-11-09d1t01.flac:cbe59b4a997111f548ef526ef3ce04e6
+bd1979-11-09d1t02.flac:d2eee987e2336d8c09abf0de8184141b
+bd1979-11-09d1t03.flac:48508f823f009c39a4e15d0f5419933c
+bd1979-11-09d1t04.flac:463e2298592bc9fa73ef7406697828d3
+bd1979-11-09d1t05.flac:8484de0e49331659a283c7f6087dcad8
+bd1979-11-09d1t06.flac:31f253d0b1cd2c5f875e26c449a4b5d3
+bd1979-11-09d1t07.flac:0790c65155a8c1bd327226bfc6ba93fd
+bd1979-11-09d1t08.flac:3b86d0bbdedc680178a82205ad8d23dc
+bd1979-11-09d1t09.flac:371a1d76797e9a8da3433b94e0f145dd
+bd1979-11-09d1t10.flac:1b29923f95098de4d3aaeaa7f3b5312f
+bd1979-11-09d1t11.flac:17821db1c170fdc7fc78af45c5260d7b
+bd1079-11-09d1t12.flac:e565cac2657f9d8752544d436384fe61
+
+
+Disk Two
+bd1979-11-09d2t01.flac:9601355bb20f89e040e9ebe51a69619e
+bd1979-11-09d2t02.flac:3f385caab49e6edd60b3237827c0b2e6
+bd1979-11-09d2t03.flac:34cd3da3c343f77ff791c88216c52646
+bd1979-11-09d2t04.flac:b12eeba6e9af24a5831e7b412514b785
+bd1979-11-09d2t05.flac:8100f451e6488cf10c3fce5ed6c21ea9
+bd1979-11-09d2t06.flac:d66a6536cfa899b31eb426077b8d348a
+bd1979-11-09d2t07.flac:b7730c6bf24db8da3b6a8d974ecf835a
+bd1979-11-09d2t08.flac:7c91a378100471ff7d9dc599926243fa

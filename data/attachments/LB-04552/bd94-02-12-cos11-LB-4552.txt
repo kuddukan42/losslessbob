@@ -1,0 +1,8 @@
+Bob Dylan, 2/12/94, Osaka, Japan, Osaka Jo Hall (Osaka Castle Hall), 2CDR
+
+LB-4552, (59min+51min), Equipment & Lineage, COS-11PT > handmade power supply > TCD-D3 > DAT (16bit/48kHz) > Roland UA-30 > PC > Soundforge 7.0 (48 > 44.1 conversion, editing) > Trader's Little Helper > FLAC (level8), a08 to b01 seamless; bittorrent download 03/07; same recording as LB-3266 based on same clapping at beginning of d1t2; same wav and spectral views except this has much lower levels; (did not listen to all of this)
+
+a01 Jokerman, a02 If Not For You, a03 All Along The Watchtower, a04 Ring Them Bells, a05 Tangled Up In Blue, a06 Under The Red Sky, a07 Tomorrow Night, a08 Mr. Tambourine Man, b01 Don't Think Twice, It's Alright, b02 Series Od Dreams, b03 I And I, b04 Maggie's Farm, b05 Ballad Of A Thin Man, b06 It Ain't Me, Babe
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

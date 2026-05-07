@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd94-07-17-inside-rain-lk.flacf
+===================
+===================
+===================
+e36e9c7a4840e11256b16063b3171e04 *01 Jokerman.flac
+231bfbbd0369511bd4b8f65e4706d802 *02 Just Like A Woman.flac
+227899416350c2ae7a4d60b395c81e27 *03 All Along The Watchtower.flac
+f0b0df7aac0696b9a9079c740d57b1db *04 I Don't Believe You.flac
+8b27fc96140626175d0d32151c31f9be *05 Tangled Up In Blue.flac
+b75e89a1877c5c68a26769807bdf1887 *06 Shelter From The Storm.flac
+96fd43cde805805a6ab03fa89117c182 *07 Love Minus Zero.flac
+e389837a5e2467ca7e9fd1a35ce598f0 *08 Masters Of War.flac
+04e5edddc0197d9c920b1c3574546b7d *09 Times They Are A-Changin'.flac
+d786db5f5eeaed4916df36af75a9ada5 *10 Announcement Andrzej Marzec.flac
+e5961d03c7be783fdd586fd4aab9226f *11 Heartland.flac
+e793b36397f0d13c96b4825e4aecf385 *12 Van Morrison tribute remarks.flac
+08c2962c8c25e3801bead356094cb860 *13 Tomorrow Night [fragment, wTricia Yearwood).flac
+6027002637125d2c7d6d5dac0e657496 *14 I Want You (inst(.flac
+c178b6addb6f86129772431490915bc2 *15 Mr. Alice Doesn't Live Here Anymore.flac
+c44d07a6f38e32d977d3c72d64a4fae7 *Inside the Rain.md5
+566a3b7ded2c74d9539331564ccb2804 *Note.txt
+f81a1e572d3c79718cdab3f6d52b4fe5 *Rain Back.jpg
+6102c752154d9d5065ab9522c7012ec7 *Rain Front.jpg
+===================
+===================
+===================
+=== ffp for: bd94-07-17-inside-rain-lk.flacf
+===================
+===================
+===================
+01 Jokerman.flac:34fda2dfd56406ea742c84dd2b4a1273
+02 Just Like A Woman.flac:3053809b0b03b473d2a050d60f9e07eb
+03 All Along The Watchtower.flac:ccd2e375a48ab0c238989872049f7d03
+04 I Don't Believe You.flac:0e8bab2b01f9cd830b0f019db581ad54
+05 Tangled Up In Blue.flac:3d77dcdd20a59b7b4fbb2ed888cc5afa
+06 Shelter From The Storm.flac:342e7589c39ffd63fe25c61702848696
+07 Love Minus Zero.flac:c5ab3c2cda5671b7ed051cd22762e318
+08 Masters Of War.flac:af3ea65e9637dcc89fb4aef7b47dce5e
+09 Times They Are A-Changin'.flac:717f21b7f604a23535e1dc2041cb93ec
+10 Announcement Andrzej Marzec.flac:3912137d86db5dadeda81f7bbaa1c77e
+11 Heartland.flac:071540bdfeae9e562428f9ff31ddbe1e
+12 Van Morrison tribute remarks.flac:0a535845e057a4cdb534075c903e972c
+13 Tomorrow Night [fragment, wTricia Yearwood).flac:5e6bd7178cefac9798ad64980a2b5880
+14 I Want You (inst(.flac:ec63e91bf4a5f5e82598f114a8ae30af
+15 Mr. Alice Doesn't Live Here Anymore.flac:2c9a5dd9f6a50d7da52ee4941a962a33
+===================
+===================
+===================
+=== shntool len for: bd94-07-17-inside-rain-lk.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:02.65       85177724 B   ---   --   ---xx   flac  0.5724  01 Jokerman.flac
+     6:42.39       71004572 B   ---   --   ---xx   flac  0.5633  02 Just Like A Woman.flac
+     5:36.10       59293964 B   ---   --   ---xx   flac  0.5786  03 All Along The Watchtower.flac
+     7:07.34       75402812 B   ---   --   ---xx   flac  0.5286  04 I Don't Believe You.flac
+     9:24.64       99640172 B   ---   --   ---xx   flac  0.5373  05 Tangled Up In Blue.flac
+     6:49.31       72220556 B   ---   --   ---xx   flac  0.5155  06 Shelter From The Storm.flac
+     5:18.17       56135228 B   ---   --   ---xx   flac  0.4473  07 Love Minus Zero.flac
+     6:03.53       64157900 B   ---   --   ---xx   flac  0.4263  08 Masters Of War.flac
+     9:01.29       95500652 B   ---   --   ---xx   flac  0.4474  09 Times They Are A-Changin'.flac
+     1:08.70       12159884 B   ---   --   ---xx   flac  0.4072  10 Announcement Andrzej Marzec.flac
+     2:44.66       29084876 B   ---   --   ---xx   flac  0.3766  11 Heartland.flac
+     0:29.32        5190908 B   ---   --   ---xx   flac  0.3225  12 Van Morrison tribute remarks.flac
+     0:44.25        7820444 B   ---   --   ---xx   flac  0.4993  13 Tomorrow Night [fragment, wTricia Yearwood).flac
+     0:56.56       10010156 B   ---   --   ---xx   flac  0.4422  14 I Want You (inst(.flac
+     4:01.69       42674732 B   ---   --   ---xx   flac  0.5666  15 Mr. Alice Doesn't Live Here Anymore.flac
+    74:12.60      785474580 B                            0.5079  (15 files)
+===================
+===================
+===================

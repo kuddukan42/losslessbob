@@ -1,0 +1,23 @@
+4543513b0cd8f64315809f2dae6dc9ad  101 Introduction.flac
+477fb3550b2774100c3bf2ef60ac15f2  102 Hallelujah, I'm Ready To Go.flac
+878a17ea80bdb1178c8d400d71db997a  103 My Back Pages.flac
+6f9f70e6f0ec73262855d9e88e924c4d  104 Masters Of War.flac
+ab5bade22de1f3ff44bd67ceae31237a  105 Tomorrow Is A Long Time.flac
+d711d082f5ac5d071cd5332e7e418144  106 A Hard Rain's A-Gonna Fall.flac
+e834b96979f1ec5c3262f26b9aa83c99  107 Tangled Up In Blue.flac
+eac6f55c47e5d9a18f5c2479fd532fed  108 The Lonesome Death Of Hattie Carroll.flac
+ca4952c7052add5d44a8ddc1b4d2b955  109 Gotta Serve Somebody.flac
+fd08a473dd45e2a41abeb27ecc592baa  110 You're A Big Girl Now.flac
+4cea2c351b451650a9c201eff2e1c6f6  111 All Along The Watchtower.flac
+353ad732f83cd0eff615a34c5d6365c6  2000-05-21 Horsens - schubert remaster 2008 (flac).md5
+4939b4df681c39cb839872ddbdaede40  2000-05-21 Horsens - schubert remaster 2008 (wav).md5
+7915990798b402e13e1264cb70131d75  201 Tryin' To Get To Heaven.flac
+ad4b3ebbad4937e9da4bef025d1ce48a  202 To Be Alone With You.flac
+7ad248cb05a15a81573301f6fcee1afb  203 Ballad Of A Thin Man.flac
+1a7b82fda87119073b0ad89c5a0f61c8  204 Like A Rolling Stone.flac
+4b98e59b0aee1221982f1eaf61647c87  205 Forever Young.flac
+75fc79e74ed966522b2b7f9b1dbcfb9b  206 Maggie's Farm.flac
+f50f17ab7a446a1fda0fba7663819596  207 It Ain't Me, Babe.flac
+031513ab8d4606829f273c724e55e6ee  208 Rainy Day Women #12 & #35.flac
+fd137545857ca4cf00cec1215bd58bd7  209 Blowin' In The Wind.flac
+810e3d11086c77f6051e91629ea85263  bd2000-05-21 horsens (schubert remaster 2008).txt

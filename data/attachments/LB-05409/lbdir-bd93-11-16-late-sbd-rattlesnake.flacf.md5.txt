@@ -1,0 +1,11 @@
+3fd0c4e062499e6c6700e8155c380ef6  Disc 1\01 Audio Track.flac
+4aac88cacca9887f7c2fe38e0071cfb8  Disc 1\02 Audio Track.flac
+c29c9ce07e0d35c5ac92927ced05e975  Disc 1\03 Audio Track.flac
+d4c6d36b74989a1d24355bc7087a7ef5  Disc 1\04 Audio Track.flac
+75ef663639962e7e7d262f3368639672  Disc 1\05 Audio Track.flac
+d7394296b026a2bd7986a99a621a2856  Disc 1\06 Audio Track.flac
+3976374082d372dd0eff8138737243b3  Disc 1\07 Audio Track.flac
+4b6145fe91fe508ec5e0c27cc4c119c5  Disc 1\08 Audio Track.flac
+17124eee99e3f215b1a066432b4f02f1  Disc 1\09 Audio Track.flac
+7b7303c3e17833262be87dee7284ec69  Disc 1\10 Audio Track.flac
+7812035bbbe3c62a93c2392144e9b5f2  info.txt

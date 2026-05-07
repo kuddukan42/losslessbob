@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-04-wanted-man.flacf 
+=================== 
+=================== 
+=================== 
+a7b106e0fa113ff00398fbf2f1716982  bd88-09-04-wanted-man-d1t01.flac
+6e07a0e8de32c257e845929ca9c855fe  bd88-09-04-wanted-man-d1t02.flac
+bcb26b327694d05ad448722046115695  bd88-09-04-wanted-man-d1t03.flac
+d400a9f05ef336d6c3df58d508a43ca9  bd88-09-04-wanted-man-d1t04.flac
+baf57852ec4fac87c7de1f1b4ed8c2ec  bd88-09-04-wanted-man-d1t05.flac
+cfeec3953703d1518e03cc8bdf0a6783  bd88-09-04-wanted-man-d1t06.flac
+ac329899bbfeb8b1cfe15b0b05a042e1  bd88-09-04-wanted-man-d1t07.flac
+1f6f8e0c1f628ec963ba9ad1065f3cb6  bd88-09-04-wanted-man-d1t08.flac
+35db9b314824097b8d4d5e948c9f4290  bd88-09-04-wanted-man-d1t09.flac
+75622ec4b31d225fdc0b33c55c1d876e  bd88-09-04-wanted-man-d1t10.flac
+9e12131c068bc9e17df2760a1e59221f  bd88-09-04-wanted-man-d1t11.flac
+b67cbba13c62d5c2819ee7ac3ea8dbdc  bd88-09-04-wanted-man-d1t12.flac
+4100c0008850690146d1dba3d631e276  bd88-09-04-wanted-man-d1t13.flac
+af85dc5068e5eb54d3caef532131e811  bd88-09-04-wanted-man-d1t14.flac
+6bc4f8c59d6fdbb45b6407285c34098f  bd88-09-04-wanted-man-d1t15.flac
+a6de863fd9560d48aedca10ecff116f1  bd88-09-04-wanted-man-d1t16.flac
+2fafbbde8be43ed7a66a70c7af0b9061  bd88-09-04-wanted-man.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-04-wanted-man.flacf 
+=================== 
+=================== 
+=================== 
+bd88-09-04-wanted-man-d1t01.flac:4ac7ed50b504d317ca76dd2410c1f5d6
+bd88-09-04-wanted-man-d1t02.flac:19a864743d0501448a92754aa35135c1
+bd88-09-04-wanted-man-d1t03.flac:32489ed0698d4542991b12a00aa03a99
+bd88-09-04-wanted-man-d1t04.flac:da2b5d63cc7b36b564ff9c89c2693fad
+bd88-09-04-wanted-man-d1t05.flac:dbde65b331181358f55c0d25858be881
+bd88-09-04-wanted-man-d1t06.flac:c2ae2b5015144e647fba12b8ff64e62f
+bd88-09-04-wanted-man-d1t07.flac:a877bcc3c28140517f4574bd205f0679
+bd88-09-04-wanted-man-d1t08.flac:af23bc236f1f23a5160a585e5cf3d0b7
+bd88-09-04-wanted-man-d1t09.flac:ea5372acbdfe01d726278b76b2ddf5fa
+bd88-09-04-wanted-man-d1t10.flac:8d8c3f4bb0cba3501b14ce98ac3427ae
+bd88-09-04-wanted-man-d1t11.flac:fa8b2c422477284bbeffac67794fbdb6
+bd88-09-04-wanted-man-d1t12.flac:39601726edf988a43d742a5f9a1d0120
+bd88-09-04-wanted-man-d1t13.flac:6e769de19b73eb3b1486a8f8ebfc88de
+bd88-09-04-wanted-man-d1t14.flac:10314eeba700daab0d21c39c8aa43ed7
+bd88-09-04-wanted-man-d1t15.flac:98df72ae135703ffb72a04b203bfe70a
+bd88-09-04-wanted-man-d1t16.flac:cf4e173f9fdf031ba8af748ce2eb79d8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-04-wanted-man.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:36.50       38220044 B   ---   --   ---xx   flac  0.5752  bd88-09-04-wanted-man-d1t01.flac
+     3:58.25       42042044 B   ---   --   ---xx   flac  0.5840  bd88-09-04-wanted-man-d1t02.flac
+     5:15.50       55683644 B   ---   --   ---xx   flac  0.5789  bd88-09-04-wanted-man-d1t03.flac
+     5:01.25       53155244 B   ---   --   ---xx   flac  0.5785  bd88-09-04-wanted-man-d1t04.flac
+     2:58.00       31399244 B   ---   --   ---xx   flac  0.5953  bd88-09-04-wanted-man-d1t05.flac
+     6:58.00       73735244 B   ---   --   ---xx   flac  0.5758  bd88-09-04-wanted-man-d1t06.flac
+     4:40.25       49450844 B   ---   --   ---xx   flac  0.5796  bd88-09-04-wanted-man-d1t07.flac
+     8:09.00       86259644 B   ---   --   ---xx   flac  0.5348  bd88-09-04-wanted-man-d1t08.flac
+     4:39.50       49333244 B   ---   --   ---xx   flac  0.5457  bd88-09-04-wanted-man-d1t09.flac
+     5:03.00       53449244 B   ---   --   ---xx   flac  0.5258  bd88-09-04-wanted-man-d1t10.flac
+     3:56.00       41630444 B   ---   --   ---xx   flac  0.5665  bd88-09-04-wanted-man-d1t11.flac
+     4:37.00       48862844 B   ---   --   ---xx   flac  0.5592  bd88-09-04-wanted-man-d1t12.flac
+     6:21.50       67326044 B   ---   --   ---xx   flac  0.5725  bd88-09-04-wanted-man-d1t13.flac
+     5:45.50       60975644 B   ---   --   ---xx   flac  0.5304  bd88-09-04-wanted-man-d1t14.flac
+     4:51.50       51450044 B   ---   --   ---xx   flac  0.5756  bd88-09-04-wanted-man-d1t15.flac
+     3:31.00       37220444 B   ---   --   ---xx   flac  0.5616  bd88-09-04-wanted-man-d1t16.flac
+    79:23.00      840193904 B                            0.5627  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-15-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+304c94377e2deb337a4b74120c77df6c  bd05-03-15-SP-CMC-8.txt
+811debb167f99d4f04f27266b8b31cf0  bd20050315.md5
+8cbc3f999e19953b8fcdb7cc7919ee98  bd20050315flcpnt.txt
+df35644853a6bb525b5ba6deb2ce1d92  bd20050315info.txt
+12eb812e19797173e6eae4c4f8699e98  bd20050315t01-drifters.flac
+cb97fe5d9b51d047ad5de823a02909e9  bd20050315t02-uaintgoinnowhere.flac
+187f609b6ebfdedcbb949d512fad5c8d  bd20050315t03-tweedle.flac
+d947e5e64495120385723fe5b63fe8c1  bd20050315t04-highwater.flac
+37a079515048e5648bd00b1c747f3e34  bd20050315t05-highway61.flac
+b5e3235659acae51ed071365ce971de4  bd20050315t06-tryin2get2heaven.flac
+7679af8b53bacecafdba720e8f6656e3  bd20050315t07-downalongcove.flac
+25274a54c530d1ff500e86c72d91606a  bd20050315t08-wheelsonfire.flac
+725f65c557a197f4378200310030ef5b  bd20050315t09-mastersofwar.flac
+2b83c6aea37345401335f138470bc78b  bd20050315t10-honestwitme.flac
+3e6f4e07fcf304ee210d038c0161a0b9  bd20050315t11-foreveryoung.flac
+ae7c859ff875912116b426ee1c90de42  bd20050315t12-summerdaze.flac
+8205c8a813a766244b912329a7db9a0f  bd20050315t13-singmebackhome.flac
+c62a590ded51f3f24d2f1169010910ca  bd20050315t14-bandintros.flac
+c3f8736fd3d17cfe4d29f39832ce6a2c  bd20050315t15-watchtower.flac
+c4c05d0f046f09046a9fa54905c9f351  bd20050315t16-outro.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-03-15-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+bd20050315t01-drifters.flac:2df6acc2ac873aeec2c800a60dff6c56
+bd20050315t02-uaintgoinnowhere.flac:60b6dd38865550e3bf829b8fb37f9ae9
+bd20050315t03-tweedle.flac:e854672c8751520a8e4f7664439c34b4
+bd20050315t04-highwater.flac:8922b923451b778ce9441ad256db30a2
+bd20050315t05-highway61.flac:d02e5c87689ba0fb3d45341e45434ac8
+bd20050315t06-tryin2get2heaven.flac:b7d0652c411423419f3f66bbc1213ef4
+bd20050315t07-downalongcove.flac:438ea412c6d535c312dce4153cf80fce
+bd20050315t08-wheelsonfire.flac:237980a95386a76a36da7cb9e85fa870
+bd20050315t09-mastersofwar.flac:2bd8da83ae10e540a12eb3bee9be0baa
+bd20050315t10-honestwitme.flac:e72b2ae8124d96f07a63f6fa4e1d585d
+bd20050315t11-foreveryoung.flac:4cdb8cd8fcbf5ef2c0a30df0f708b9d0
+bd20050315t12-summerdaze.flac:c9296d9b8bbffad13e519e794cd99f25
+bd20050315t13-singmebackhome.flac:fc12aa139f0971639002d6493ddbb874
+bd20050315t14-bandintros.flac:5acd5e0d969f3f1304d3dc7ca57f8b63
+bd20050315t15-watchtower.flac:d341b8862334c0928fdd524ad3bb2eff
+bd20050315t16-outro.flac:8e503e7df0bfa2258555bb7802ca9c4d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-15-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:48.54       50930252 B   ---   --   ---xx   flac  0.4074  bd20050315t01-drifters.flac
+     4:19.25       45746444 B   ---   --   ---xx   flac  0.3891  bd20050315t02-uaintgoinnowhere.flac
+     5:23.59       57116012 B   ---   --   ---xx   flac  0.3704  bd20050315t03-tweedle.flac
+     6:31.07       68988908 B   ---   --   ---xx   flac  0.3966  bd20050315t04-highwater.flac
+     5:46.25       61093244 B   ---   --   ---xx   flac  0.4165  bd20050315t05-highway61.flac
+     6:05.00       64386044 B   ---   --   ---xx   flac  0.3486  bd20050315t06-tryin2get2heaven.flac
+     6:33.22       69376988 B   ---   --   ---xx   flac  0.3901  bd20050315t07-downalongcove.flac
+     6:05.19       64430732 B   ---   --   ---xx   flac  0.3845  bd20050315t08-wheelsonfire.flac
+     5:01.36       53181116 B   ---   --   ---xx   flac  0.3625  bd20050315t09-mastersofwar.flac
+     6:39.07       70400108 B   ---   --   ---xx   flac  0.3996  bd20050315t10-honestwitme.flac
+     7:17.10       77110364 B   ---   --   ---xx   flac  0.3382  bd20050315t11-foreveryoung.flac
+     7:41.27       81383948 B   ---   --   ---xx   flac  0.4012  bd20050315t12-summerdaze.flac
+     5:55.50       62739644 B   ---   --   ---xx   flac  0.3613  bd20050315t13-singmebackhome.flac
+     0:30.11        5317916 B   ---   --   ---xx   flac  0.3908  bd20050315t14-bandintros.flac
+     5:29.53       58160300 B   ---   --   ---xx   flac  0.3864  bd20050315t15-watchtower.flac
+     0:40.36        7140716 B   ---   --   ---xx   flac  0.3824  bd20050315t16-outro.flac
+    84:47.66      897502736 B                            0.3820  (16 files)
+=================== 
+=================== 
+=================== 

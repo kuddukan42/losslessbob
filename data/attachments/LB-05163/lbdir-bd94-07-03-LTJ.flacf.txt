@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-03-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+819b711a6524887bfe9db2ba61bed7c4  bd1994-07-03-d1\bd1994-07-03-d1.md5
+43030606920baa5c037c8e5d35bd19c7  bd1994-07-03-d1\Track01.flac
+f4df298a60666515386684f42e382271  bd1994-07-03-d1\Track02.flac
+712f9d2060a7f43d73bf4530c5cbb025  bd1994-07-03-d1\Track03.flac
+f0403e445ee472f52ef5171642d912c8  bd1994-07-03-d1\Track04.flac
+d047a78a079b283e6bc02881a31f7e0d  bd1994-07-03-d1\Track05.flac
+2a46ec45602d1c40865155c4b42bed19  bd1994-07-03-d1\Track06.flac
+4f1620a2cd9eeda6d34407dd0b9004ec  bd1994-07-03-d1\Track07.flac
+d6704f61339a6f9b71ac1256d8b0d4c6  bd1994-07-03-d1\Track08.flac
+d007963fc3f1af9ebae65e64fdfca1a5  bd1994-07-03-d2\bd1994-07-03-d2.md5
+d25d6b0983e562ee059b985bc5f389c5  bd1994-07-03-d2\Track01.flac
+975948318c7c216d0077d85cfa2144ae  bd1994-07-03-d2\Track02.flac
+6862f8595d0302604dcb3d5ec94c4356  bd1994-07-03-d2\Track03.flac
+77b0b9e170dbb9f9604db205e750ac99  bd1994-07-03-d2\Track04.flac
+dacced244a18915646865f4f8ab72810  bd1994-07-03-d2\Track05.flac
+0cbb651e83468a1e29346a49303540ab  bd1994-07-03-Paris.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-03-LTJ.flacf\bd1994-07-03-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:4f9ed0c44d1d20d7e9a196996bd32106
+Track02.flac:1448f6fc0c12ffd8fd54a8c6affa150d
+Track03.flac:384f02ab31b420adb2586ceb63b5e38a
+Track04.flac:9aa5c864a0f30661ce1865701b48323e
+Track05.flac:c6c55b2450216377e324e641c3283788
+Track06.flac:40cd639efa05b12049be814b9b6bae1d
+Track07.flac:14634c7ffed52e3107d4a97bfff32237
+Track08.flac:b802265d25014135516ef35d0cb7d0c1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-03-LTJ.flacf\bd1994-07-03-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:dcc282659d9008631fb5510b9e4dac9f
+Track02.flac:add8a0ed93353f6696f1b49e31e96080
+Track03.flac:c7b4475eaa72ce51d96f000cd1385f53
+Track04.flac:3ae9d0d6a8c654964694f94d419e126d
+Track05.flac:7cbad4f343dd271dab0174cc49f4ab62
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-07-03-LTJ.flacf\bd1994-07-03-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:41.54       60279452 B   ---   --   ---xx   flac  0.5475  Track01.flac
+     6:02.72       64026188 B   ---   --   ---xx   flac  0.5317  Track02.flac
+     5:44.21       60731036 B   ---   --   ---xx   flac  0.5725  Track03.flac
+     7:16.60       77051564 B   ---   --   ---xx   flac  0.5474  Track04.flac
+     9:16.36       98163116 B   ---   --   ---xx   flac  0.5409  Track05.flac
+     6:05.40       64480124 B   ---   --   ---xx   flac  0.4961  Track06.flac
+     5:55.51       62741996 B   ---   --   ---xx   flac  0.4344  Track07.flac
+     4:40.05       49403804 B   ---   --   ---xx   flac  0.5098  Track08.flac
+    50:43.39      536877280 B                            0.5243  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-07-03-LTJ.flacf\bd1994-07-03-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:48.61       72114716 B   ---   --   ---xx   flac  0.5739  Track01.flac
+     7:06.21       75195836 B   ---   --   ---xx   flac  0.5687  Track02.flac
+     7:47.63       82527020 B   ---   --   ---xx   flac  0.5285  Track03.flac
+     6:05.66       64541276 B   ---   --   ---xx   flac  0.4960  Track04.flac
+     8:33.50       90610844 B   ---   --   ---xx   flac  0.5057  Track05.flac
+    36:22.36      384989692 B                            0.5340  (5 files)
+=================== 
+=================== 
+=================== 

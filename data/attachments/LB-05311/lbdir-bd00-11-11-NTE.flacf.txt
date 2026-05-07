@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-11-NTE.flacf 
+=================== 
+=================== 
+=================== 
+e6c8fdaa5bfae12df49c98a8c77fa1a9  bd2000-11-11-Lowell-d1\bd2000-11-11-Lowell-d1.md5
+9c5fd5506c968cea7c9fcc96c8001d20  bd2000-11-11-Lowell-d1\Track01.flac
+e90559b33a49ba55d590cd102181e174  bd2000-11-11-Lowell-d1\Track02.flac
+3d1f531483a785fffcea06e623e79517  bd2000-11-11-Lowell-d1\Track03.flac
+8179e864e25b87be5142b218b15ea392  bd2000-11-11-Lowell-d1\Track04.flac
+922a0b0f6b88111a06e8a329f1f775f0  bd2000-11-11-Lowell-d1\Track05.flac
+4c148d9326845d15f9d6cbebc2ed46d3  bd2000-11-11-Lowell-d1\Track06.flac
+d8a3e4ff928ea56c716e7e267286794e  bd2000-11-11-Lowell-d1\Track07.flac
+425931b5fc9c6a41e1dd8d52c4604cab  bd2000-11-11-Lowell-d1\Track08.flac
+c8cbd16181d74e0d235a35588c40e915  bd2000-11-11-Lowell-d1\Track09.flac
+86a1a133cda704f4944dfb7583839b42  bd2000-11-11-Lowell-d1\Track10.flac
+e4e39ecd3e816939948969f589617730  bd2000-11-11-Lowell-d1\Track11.flac
+d763fe282c7db08d39a89d06b685a33f  bd2000-11-11-Lowell-d1\Track12.flac
+b38a36ee89941b5c9dbdaacdff1c665a  bd2000-11-11-Lowell-d2\bd2000-11-11-Lowell-d2.md5
+2115afe3e5b7e4364a127ed89e275b7c  bd2000-11-11-Lowell-d2\Track01.flac
+c01183c721e977ece7e3c3ff21ba5e00  bd2000-11-11-Lowell-d2\Track02.flac
+3c26f710f24b89e1a972ac5de74a1f25  bd2000-11-11-Lowell-d2\Track03.flac
+a43989f8e6c76fe5206c680c6a419646  bd2000-11-11-Lowell-d2\Track04.flac
+f1973f4e029180ac93e31dcba60e43b5  bd2000-11-11-Lowell-d2\Track05.flac
+0c486f1eacae3de668df85b19e0f3d56  bd2000-11-11-Lowell-d2\Track06.flac
+2567df015cdf1c19760aabd4f3c29056  bd2000-11-11-Lowell-d2\Track07.flac
+34308163fc581120e0c33a587cc09deb  bd2000-11-11-NTE.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-11-NTE.flacf\bd2000-11-11-Lowell-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:bfafcaad5a94a5cbba753c598c3ac66d
+Track02.flac:7c13b885dd2a471f6c93bc514d07cc94
+Track03.flac:78bc9354d990de0561806160b4781f76
+Track04.flac:0fb420595538adbee5cf56fb6875a288
+Track05.flac:c6c17a046f3ad588b1074d1612218f4d
+Track06.flac:f4c8c7945980d85dcada5205ec3bd9b0
+Track07.flac:a7effc52bb62b987dfa764f867c96678
+Track08.flac:857ce0be2b9a3301ae1d2ae55bc503b9
+Track09.flac:9b81ab350d95d023b990327f404e3019
+Track10.flac:21153a0df6bbbf6452b81603e3df6459
+Track11.flac:d64381770e80861a068f3da2cabecb13
+Track12.flac:269bdc8b08bf5e2b041dafad8a9e6b4f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-11-NTE.flacf\bd2000-11-11-Lowell-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:5bd90e44d61c6e954dddeed17738cd37
+Track02.flac:fc6c25b6bf22d5f7c9b7dd25dba73ba6
+Track03.flac:2b42a2ba16740a1a6fe3caa13469b290
+Track04.flac:158aac8e649acae04dc30233079d7fa4
+Track05.flac:8d6db2e39d807c57acbaf3dd70d60bdf
+Track06.flac:9371fc0b68b8ac1019d99a16574dd2a9
+Track07.flac:213529d9bfe2f8c487a7ec1a3c8a02ed
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-11-11-NTE.flacf\bd2000-11-11-Lowell-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:22.27       35696348 B   ---   --   ---xx   flac  0.5761  Track01.flac
+     5:51.25       61975244 B   ---   --   ---xx   flac  0.5259  Track02.flac
+     7:41.11       81346316 B   ---   --   ---xx   flac  0.4881  Track03.flac
+     6:13.13       65827820 B   ---   --   ---xx   flac  0.4641  Track04.flac
+     7:57.27       84206348 B   ---   --   ---xx   flac  0.5810  Track05.flac
+     3:01.53       32053100 B   ---   --   ---xx   flac  0.4852  Track06.flac
+     2:59.34       31655612 B   ---   --   ---xx   flac  0.5573  Track07.flac
+     4:23.68       46553180 B   ---   --   ---xx   flac  0.5466  Track08.flac
+     8:24.40       88999724 B   ---   --   ---xx   flac  0.5809  Track09.flac
+     6:11.50       65562044 B   ---   --   ---xx   flac  0.4335  Track10.flac
+     4:46.03       50457500 B   ---   --   ---xx   flac  0.5992  Track11.flac
+     6:41.12       70764668 B   ---   --   ---xx   flac  0.5876  Track12.flac
+    67:33.63      715097904 B                            0.5355  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-11-11-NTE.flacf\bd2000-11-11-Lowell-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:11.54       65571452 B   ---   --   ---xx   flac  0.5685  Track01.flac
+     6:46.05       71630204 B   ---   --   ---xx   flac  0.5713  Track02.flac
+     3:47.18       40085180 B   ---   --   ---xx   flac  0.4422  Track03.flac
+     4:40.56       49523756 B   ---   --   ---xx   flac  0.5722  Track04.flac
+     6:42.03       70919900 B   ---   --   ---xx   flac  0.5051  Track05.flac
+     5:20.67       56605628 B   ---   --   ---xx   flac  0.5920  Track06.flac
+     5:36.28       59336300 B   ---   --   ---xx   flac  0.5085  Track07.flac
+    39:05.06      413672420 B                            0.5409  (7 files)
+=================== 
+=================== 
+=================== 

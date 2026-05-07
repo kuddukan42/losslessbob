@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== md5 for: bd88-06-07-f.flacf
+===================
+===================
+===================
+bbef74fd7fd3f414d8693ac14370a41c *bd - Concord - 07 - 06 - 88.ffp
+0f01e56b0761cf8a05cbf02148c9c0ec *bd_concord_070688.log
+ef65005410a74b3ec85d189c7dbe18a9 *bd_concord_070688.md5
+86e8d6041fc8745ff64d6426a934a891 *inf.txt
+df2aedd137e8d50e06211e6249c7a8b0 *lossless bob note.txt
+1a555672ede4c1ee5f76701ab88c8ab0 *Track01.flac
+27267435259004019f6602e64527ed45 *Track02.flac
+f4d47912ed55c2e62f4048e43f491c3b *Track03.flac
+a76b21c2b4d532bef68f97cfdc7b2486 *Track04.flac
+c2a3dd93bb04e6d203f4feff58870345 *Track05.flac
+a4fa6337709ec2766f3a74c195c17d11 *Track06.flac
+b14da80cb04432af36c52c0b4363abf0 *Track07.flac
+8a6be3938a64ad5d9d368b164e54a2f6 *Track08.flac
+fa3b42baf0af34c4492837654262b456 *Track09.flac
+f19484aead689f3fcf49454fa0d96f3e *Track10.flac
+2d959885e8f0a4a3b9065281b3bb2a67 *Track11.flac
+5d55a96f3eb07788711edd7eeb80854e *Track12.flac
+350501b323a43c95b97097d86c7ba1cb *Track13.flac
+===================
+===================
+===================
+=== ffp for: bd88-06-07-f.flacf
+===================
+===================
+===================
+Track01.flac:4c8d182f9eca32ef2764aac998022a5f
+Track02.flac:235bbaad186616b654521d585725a47a
+Track03.flac:2d808d90b43ac3a49ffb35faae0f95c8
+Track04.flac:afd2967a8b7ae2f074a52ffcd45f75c6
+Track05.flac:91580a9a004eef2c147801fcd084bbe5
+Track06.flac:dc0377c5fbb97674b1639d8463d40e36
+Track07.flac:60ea0584660be43e478f808e77f0eeba
+Track08.flac:a4f5e364a2b49ee53ca6d961786da167
+Track09.flac:75192336c13570cc22f358b4bea3f7c7
+Track10.flac:eb844cac5658093fd2dd60d32ba3b4c2
+Track11.flac:8555fbc301d522e3bb65f0df512e304c
+Track12.flac:1427ad16a1922ff8d80ec1a94833af7f
+Track13.flac:a98f88b6fb4c1e1ec3aa25387be4ea46
+===================
+===================
+===================
+=== shntool len for: bd88-06-07-f.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.04       42698252 B   ---   --   ---xx   flac  0.6832  Track01.flac
+     5:18.44       56198732 B   ---   --   ---xx   flac  0.7052  Track02.flac
+     5:06.65       54131324 B   ---   --   ---xx   flac  0.7043  Track03.flac
+     5:43.61       60648716 B   ---   --   ---xx   flac  0.6625  Track04.flac
+     6:00.20       63551084 B   ---   --   ---xx   flac  0.7161  Track05.flac
+     5:42.49       60444092 B   ---   --   ---xx   flac  0.6903  Track06.flac
+     4:36.70       48851084 B   ---   --   ---xx   flac  0.6719  Track07.flac
+     4:46.71       50617436 B   ---   --   ---xx   flac  0.6514  Track08.flac
+     3:52.03       40931900 B   ---   --   ---xx   flac  0.6416  Track09.flac
+     4:46.38       50539820 B   ---   --   ---xx   flac  0.6676  Track10.flac
+     5:04.42       53724428 B   ---   --   ---xx   flac  0.6484  Track11.flac
+     8:07.66       86062076 B   ---   --   ---xx   flac  0.6735  Track12.flac
+     5:54.15       62480924 B   ---   --   ---xx   flac  0.6355  Track13.flac
+    69:03.23      730879868 B                            0.6740  (13 files)
+===================
+===================
+===================

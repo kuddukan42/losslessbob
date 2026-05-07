@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-17-c.flacf 
+=================== 
+=================== 
+=================== 
+ccced51ea99ee0039c0da5962d0022b3  Bob Dylan - Paestum 17-07-2006 (wav).md5
+2b1ea1aad7e1936ddc46ea8b97c96857  Cd 1\01. Intro.flac
+1a4968ff4cf76659b9861c5dd068d770  Cd 1\02. Maggie's Farm.flac
+eae99dec6a4382b2a5610bec1614cb37  Cd 1\03. The Times They Are A-Changin_.flac
+074351a61d6c07bd327ab4187ee56688  Cd 1\04. Tweedle Dee & Tweedle Dum.flac
+6c7b7c7aa48868f443c92ffd501c3019  Cd 1\05. Mr. Tambourine Man.flac
+6deeb631ec3d81ed115f7e9376c3b075  Cd 1\06. It's Alright, Ma (I'm Only Bleeding).flac
+89148de22f6aac03038894924dc62b28  Cd 1\07. Just Like A Women.flac
+4538d5aa61d033d99b220e4644e66dfd  Cd 1\08. Stuck Inside Of Mobile With The Memphis Blues Again.flac
+ae9de90afe4ab7595eea30266867a2f7  Cd 1\09. Desolation Row.flac
+672461ba5436ccc92bdb8b5a515adc85  Cd 2\01. Highway 61 Revisited.flac
+902a7a2c274fd29ae511bb89c3cb0897  Cd 2\02. Every Grain Of Sand.flac
+d991f2d128ed24fa394928d9a358a124  Cd 2\03. Watching The River Flow.flac
+620046d95239efeb77f8b18e2911431b  Cd 2\04. Girl From The North Country.flac
+50caa869961f87190806040aa9c86adb  Cd 2\05. Summer Days.flac
+6a2e6b821008de4683e45765958aaa0d  Cd 2\06. Like A Rolling Stone.flac
+1fd19d498efb34f4baa59efbdbb44bc5  Cd 2\07. All Along The Watchtower.flac
+5f51909642f01bc845788f263e697862  info.txt
+615b2ac5f695ac55fe19279995b90b94  Paestum17july2006B.jpg
+5b818a94cfb4d8c17d249bce1a3cc5bc  Paestum17july2006F.jpg
+c73d9d1e7b2faec42bd97690fd2602a2  PAESTUM_2006.jpg
+2699ff8f792b57d746cca363294b0794  PAESTUM_2006_B.jpg
+7645d9878e03db925e93227a658a8f41  PAESTUM_2006B_Lewis.jpg
+b027224587c9a7db0ea3830dc74b7910  PAESTUM_2006F_Lewis.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-17-c.flacf\Cd 1 
+=================== 
+=================== 
+=================== 
+01. Intro.flac:df902ec23c3e9dab61ed158cf25d00bd
+02. Maggie's Farm.flac:ca7623e5004d7bb4abe1c71d0b9841db
+03. The Times They Are A-Changin_.flac:ea520768efa431e45f762d23e24dc23b
+04. Tweedle Dee & Tweedle Dum.flac:54a4f5db3b2d4c9684c3d71b374e78fc
+05. Mr. Tambourine Man.flac:bf73b1f554260787f4496666da20c83b
+06. It's Alright, Ma (I'm Only Bleeding).flac:165d6b9231230b6c36286ee33924c665
+07. Just Like A Women.flac:6e50af96e0ebd8adcccc3cebf7e773b9
+08. Stuck Inside Of Mobile With The Memphis Blues Again.flac:9a25d3737984cda8fa21946e62e7b966
+09. Desolation Row.flac:6dfc147798c73dd40f9ea8dbe5bf5882
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-17-c.flacf\Cd 2 
+=================== 
+=================== 
+=================== 
+01. Highway 61 Revisited.flac:e799d2815585588dc2ce759862732863
+02. Every Grain Of Sand.flac:c1bfb0b3ae606e72906cff70c0e86d46
+03. Watching The River Flow.flac:e634646ff2d012aac649707b481504ea
+04. Girl From The North Country.flac:879b315f71a7c5df5aae26c5388e27ab
+05. Summer Days.flac:83f6de8e4f55b0a613bf177f867da73d
+06. Like A Rolling Stone.flac:fe43bd09ee9ecf039025b3aa3fa87fb0
+07. All Along The Watchtower.flac:56e28f38de8e9cf2f94275b109e29d3b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-17-c.flacf\Cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:46.26       29343788 B   -b-   --   ---xx   flac  0.3575  01. Intro.flac
+     6:21.06       67223596 B   -b-   --   ---xx   flac  0.4598  02. Maggie's Farm.flac
+     7:02.23       74493996 B   -b-   --   ---xx   flac  0.4667  03. The Times They Are A-Changin_.flac
+     4:47.50       50745388 B   -b-   --   ---xx   flac  0.4542  04. Tweedle Dee & Tweedle Dum.flac
+     6:38.34       70287404 B   -b-   --   ---xx   flac  0.4657  05. Mr. Tambourine Man.flac
+     7:37.32       80691244 B   -b-   --   ---xx   flac  0.4770  06. It's Alright, Ma (I'm Only Bleeding).flac
+     9:05.62       96284716 B   -b-   --   ---xx   flac  0.4453  07. Just Like A Women.flac
+     7:46.54       82329644 B   -b-   --   ---xx   flac  0.4821  08. Stuck Inside Of Mobile With The Memphis Blues Again.flac
+    11:52.66      125751340 B   -b-   --   ---xx   flac  0.4316  09. Desolation Row.flac
+    63:58.54      677151116 B                            0.4538  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-17-c.flacf\Cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:20.34       67113004 B   -b-   --   ---xx   flac  0.5010  01. Highway 61 Revisited.flac
+     7:49.69       82894892 B   -b-   --   ---xx   flac  0.4124  02. Every Grain Of Sand.flac
+     6:01.14       63713324 B   -b-   --   ---xx   flac  0.4991  03. Watching The River Flow.flac
+     6:04.45       64315436 B   -b-   --   ---xx   flac  0.3653  04. Girl From The North Country.flac
+     9:28.68      100356140 B   -b-   --   ---xx   flac  0.4410  05. Summer Days.flac
+     7:54.69       83775532 B   -b-   --   ---xx   flac  0.4906  06. Like A Rolling Stone.flac
+     5:16.70       55906348 B   -b-   --   ---xx   flac  0.5020  07. All Along The Watchtower.flac
+    48:56.70      518074676 B                            0.4565  (7 files)
+=================== 
+=================== 
+=================== 

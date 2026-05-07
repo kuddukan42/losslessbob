@@ -1,0 +1,64 @@
+Bob Dylan
+Reno Hilton Pavilion
+Reno, Nevada
+March 18, 2005
+
+Source: soomlos
+15th row center
+AKG 391's > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > CD-R
+EAC > CD Wave (tracking) > FLAC frontend
+
+Disc 1:
+01. Introduction [00:22]
+02. Folsom Prison Blues [04:21]
+03. Drifter's Escape [04:38]
+04. Just Like A Woman [06:45]
+05. Tweedle Dee & Tweedle Dum [05:36]
+06. If Dogs Run Free [05:03]
+07. Stuck Inside Of Mobile With The Memphis Blues Again [07:04]
+08. Love Sick [05:36]
+09. Highway 61 Revisited [06:23]
+10. Most Likely You Go Your Way (And I'll Go Mine) [07:28]
+11. Mississippi [06:25]
+Total time: [59:46]
+
+Disc 2:
+01. Honest With Me [06:57]
+02. Make You Feel My Love [05:11]
+03. Summer Days [12:21]
+     (encore)
+04. A-11 [03:33]
+05. Band Introduction [00:32]
+06. All Along The Watchtower [06:25]
+Total time: [35:02]
+
+Band Members:
+Bob Dylan - vocals, piano, harp
+Donnie Herron - guitar, pedal steel
+Denny Freeman - guitar
+Elana Fremerman - violin
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+FLAC fingerprint
+bd2005-03-18d1t01.flac:42c024666e3c72727162417e21612206
+bd2005-03-18d1t02.flac:13e8d35da68a74caa5bf2087777da6c0
+bd2005-03-18d1t03.flac:6b4e55d53d896c2c35bbbed65ba99da8
+bd2005-03-18d1t04.flac:84047594aafc7742e3b4f646c9d5fec5
+bd2005-03-18d1t05.flac:60f384b012dc14ed624ff516b73a9bea
+bd2005-03-18d1t06.flac:bc794147f794e50c8ecc23f58fb6e997
+bd2005-03-18d1t07.flac:155fc7af9c7b9ecae11f4a309ee6e5f7
+bd2005-03-18d1t08.flac:ca76821bb0d3105070d83053a38f2dea
+bd2005-03-18d1t09.flac:2596a85e2dd1ab575a5bffa3618c59fd
+bd2005-03-18d1t10.flac:65308291f3348e690160401e6bda40b0
+bd2005-03-18d1t11.flac:1dcf5c2a7ad4500e371a67d51b678441
+bd2005-03-18d2t01.flac:738d1f1361fdcdd7ceabc49030e32ba7
+bd2005-03-18d2t02.flac:c7bf93ae788a07ce0eeb4acdf6483821
+bd2005-03-18d2t03.flac:c8af09feb247875aeb81cc2f787a750c
+bd2005-03-18d2t04.flac:97d90a122ad59a55264e361abd5a466a
+bd2005-03-18d2t05.flac:a64909f679ba9775a7f9b859aab42e06
+bd2005-03-18d2t06.flac:cb5fb92283a54f95c0ba51d4884f04f5
+
+

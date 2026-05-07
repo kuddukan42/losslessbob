@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== ffp.txt
+===================
+===================
+===================
+disc 1
+
+
+c338bdff03032e77ef20d0e268ebfac8 *01 Track01.flac
+d7827d735531c021a1762743525d595a *02 Track02.flac
+bde1f19669b09648373c999619ff2562 *03 Track03.flac
+592ee0052852f868d67d0765f6813b7d *04 Track04.flac
+5099fa9ce58c8710ee8a8ecaef754a64 *05 Track05.flac
+aecd588f77372a96ae31966d1660c88e *06 Track06.flac
+075e35947f8c0ad652c20a6a42ff8885 *07 Track07.flac
+32ace17bd59d083c23b2564a63d3881f *08 Track08.flac
+65e856a5faba0df36607c745e1bf8990 *09 Track09.flac
+
+
+
+
+
+
+
+
+
+
+disc 2
+2ea5d0f69ab6a3988e97195518669213 *01 Track01.flac
+645951d032c27586b8ed371b3256c1f0 *02 Track02.flac
+0e6693a98c3fb8d839b4e277c8654509 *03 Track03.flac
+04369a0b01d16f197a4edd11ed49744d *04 Track04.flac
+39766a13caaf431c5e74bb2af055b0bf *05 Track05.flac
+8ce7898597361838579fef142cbac067 *06 Track06.flac
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Fort Myers, Florida
+September 27, 1995
+Lee Civic Center
+
+--------------------------------------------------------------------------------
+
+Crash On The Levee (Down In The Flood) 
+Tonight I'll Be Staying Here With You 
+All Along The Watchtower 
+Just Like A Woman 
+It Takes A Lot To Laugh, It Takes A Train To Cry 
+Watching The River Flow 
+Tangled Up In Blue (acoustic) 
+Masters Of War (acoustic) 
+Don't Think Twice, It's All Right (acoustic) 
+God Knows 
+She Belongs To Me 
+Obviously Five Believers 
+(encore)
+
+
+Highway 61 Revisited 
+It Ain't Me, Babe (acoustic) 
+Rainy Day Women #12 & 35 
+
+
+--------------------------------------------------------------------------------
+===================
+===================
+===================
+=== disc 1.md5
+===================
+===================
+===================
+c338bdff03032e77ef20d0e268ebfac8 *01 Track01.flac
+d7827d735531c021a1762743525d595a *02 Track02.flac
+bde1f19669b09648373c999619ff2562 *03 Track03.flac
+592ee0052852f868d67d0765f6813b7d *04 Track04.flac
+5099fa9ce58c8710ee8a8ecaef754a64 *05 Track05.flac
+aecd588f77372a96ae31966d1660c88e *06 Track06.flac
+075e35947f8c0ad652c20a6a42ff8885 *07 Track07.flac
+32ace17bd59d083c23b2564a63d3881f *08 Track08.flac
+65e856a5faba0df36607c745e1bf8990 *09 Track09.flac
+===================
+===================
+===================
+=== disc 2.md5
+===================
+===================
+===================
+2ea5d0f69ab6a3988e97195518669213 *01 Track01.flac
+645951d032c27586b8ed371b3256c1f0 *02 Track02.flac
+0e6693a98c3fb8d839b4e277c8654509 *03 Track03.flac
+04369a0b01d16f197a4edd11ed49744d *04 Track04.flac
+39766a13caaf431c5e74bb2af055b0bf *05 Track05.flac
+8ce7898597361838579fef142cbac067 *06 Track06.flac
+===================
+===================
+===================

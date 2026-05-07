@@ -1,0 +1,99 @@
+===================
+===================
+===================
+=== fpt.txt
+===================
+===================
+===================
+3c9286c7c84a746fbfd271331d4e6cf3 *01 Track01.flac
+f5a5dd1f9eb4b5b7f7f322c141541b9f *02 Track02.flac
+c9a61ba7dbff8208dde3c7b45e9dd39a *03 Track03.flac
+6a0ac3040c1e32cc31d2cd75f3b8befe *04 Track04.flac
+cd317b084833c8dc3b9260365e8c41be *05 Track05.flac
+3c466df366fb747a5329106ae61de3ea *06 Track06.flac
+382841146b1227c1309d8f3ced5a93a3 *07 Track07.flac
+86f68346539f8ef2da2a9b7eabf3efe4 *08 Track08.flac
+8107ac195fd765bafa266a93f2ef534a *09 Track09.flac
+897cb78836e4d1e0c3abefea60b809fe *10 Track10.flac
+e263ed6b60f1239bec783ee961317b28 *11 Track11.flac
+
+
+3ae1b23f309aa20c2e90d894ef507979 *01 Track01.flac
+79a222e0fbb9544d5f55f61a8d4578ba *02 Track02.flac
+12933b00f7012119a16fe8054d42e064 *03 Track03.flac
+44b49b14380d69dee8230a142c371451 *04 Track04.flac
+cb2c37ce4399cc2a2aa676a59c66ecfc *05 Track05.flac
+ba7dd33f3a47716428496a45a346b28d *06 Track06.flac
+73344696289acbe1f82b7341acf30732 *07 Track07.flac
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Amsterdam, The Netherlands
+Heineken Music Hall
+November 10, 2003
+  
+  Down Along The Cove (Bob on piano) 
+It's All Over Now, Baby Blue 
+(Bob on piano and harp, Larry on pedal steel, Freddy on electric guitar, Tony on electric bass) 
+Cry A While (Bob on piano, Larry on slide guitar) 
+Desolation Row 
+(Bob on piano and harp, Larry on acoustic guitar, Freddy on electric guitar, Tony on electric bass) 
+It's Alright, Ma (I'm Only Bleeding) 
+(Bob on piano and harp, Larry on cittern, Freddy on electric guitar, Tony on electric bass) 
+Girl Of The North Country (acoustic) 
+(Bob on piano and harp, Larry on acoustic guitar, Freddy on electric guitar, Tony on standup bass) 
+Things Have Changed (Bob on piano) 
+Highway 61 Revisited (Bob on piano, Freddy on slide guitar) 
+Bye And Bye (Bob on piano, Tony on standup bass) 
+Tweedle Dee & Tweedle Dum (Bob on piano) 
+Love Minus Zero/No Limit 
+(Bob on piano and harp, Larry on pedal steel, Freddy on acoustic guitar, Tony on electric bass) 
+Honest With Me (Bob on piano, Larry on slide guitar) 
+Every Grain Of Sand (Bob on piano and harp, Larry on pedal steel) 
+Summer Days (Bob on piano, Tony on standup bass) 
+(encore) 
+
+Cat's In The Well (Bob on piano) 
+Like A Rolling Stone (Bob on piano) 
+All Along The Watchtower (Bob on piano and harp) 
+
+ 
+===================
+===================
+===================
+=== disc 1.md5
+===================
+===================
+===================
+3c9286c7c84a746fbfd271331d4e6cf3 *01 Track01.flac
+f5a5dd1f9eb4b5b7f7f322c141541b9f *02 Track02.flac
+c9a61ba7dbff8208dde3c7b45e9dd39a *03 Track03.flac
+6a0ac3040c1e32cc31d2cd75f3b8befe *04 Track04.flac
+cd317b084833c8dc3b9260365e8c41be *05 Track05.flac
+3c466df366fb747a5329106ae61de3ea *06 Track06.flac
+382841146b1227c1309d8f3ced5a93a3 *07 Track07.flac
+86f68346539f8ef2da2a9b7eabf3efe4 *08 Track08.flac
+8107ac195fd765bafa266a93f2ef534a *09 Track09.flac
+897cb78836e4d1e0c3abefea60b809fe *10 Track10.flac
+e263ed6b60f1239bec783ee961317b28 *11 Track11.flac
+===================
+===================
+===================
+=== disc 2.md5
+===================
+===================
+===================
+3ae1b23f309aa20c2e90d894ef507979 *01 Track01.flac
+79a222e0fbb9544d5f55f61a8d4578ba *02 Track02.flac
+12933b00f7012119a16fe8054d42e064 *03 Track03.flac
+44b49b14380d69dee8230a142c371451 *04 Track04.flac
+cb2c37ce4399cc2a2aa676a59c66ecfc *05 Track05.flac
+ba7dd33f3a47716428496a45a346b28d *06 Track06.flac
+73344696289acbe1f82b7341acf30732 *07 Track07.flac
+===================
+===================
+===================

@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-13-LTD.flacf 
+=================== 
+=================== 
+=================== 
+3b075a002a821110e9fe40f9d8113f20  01 - Track01.flac
+cb3285caf876a9885d28990bda723705  02 - Track02.flac
+cb74007ce4183ed10a16eec5510b0068  03 - Track03.flac
+029e47f6448facfd4e9c42fc26c0e5f2  04 - Track04.flac
+a596827a1d09b31cc747db5d33af7fe6  05 - Track05.flac
+31995ed240daf7eba76599f961f51cb4  06 - Track06.flac
+326bb116c4a666bfd511ed16b42769cf  07 - Track07.flac
+cb51d27fda6f504db3ee783498b1d28e  08 - Track08.flac
+8fcce531b2b31e5b5a5776c7e61a275d  09 - Track09.flac
+fdfdc653c8fde894f78e1bfaaed66a52  10 - Track10.flac
+a494f4d0a8413a080d67ae85d3a44ecd  11 - Track11.flac
+a3a771204a5f214d1f29d6ec52413838  12 - Track12.flac
+aa4289a08ea0d770baab690553e4894b  13 - Track13.flac
+b44dfa05c74844a9a13a96ed7d75af35  14 - Track14.flac
+0877480b339f8d09c58d0aef12b62930  1987-09-13-Torino.md5
+bd1cda67d4d26b5380aa65b5ad2a122e  1987-09-13-Torino.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-13-LTD.flacf 
+=================== 
+=================== 
+=================== 
+01 - Track01.flac:276714cc310f4f13df7f4af1b267d9e4
+02 - Track02.flac:d4ee5af5fda9a55781594f1e6f9f2a7a
+03 - Track03.flac:19e799c48aca040f3f5196e3677b7f5f
+04 - Track04.flac:914094b9c514a275b6ac5511b32b9ee9
+05 - Track05.flac:e3872ee7e9b35c3e0c052248e8196376
+06 - Track06.flac:866fecf6e59177615dbcbc0752d474d9
+07 - Track07.flac:e977b082110b0e54b1dce6b51e65bc32
+08 - Track08.flac:bda1ddc462980e0291a7a9b3966715f2
+09 - Track09.flac:2e9464c7e731c713d920b037f57269d7
+10 - Track10.flac:78c7aadde6c17998b15eaeb151ea4e40
+11 - Track11.flac:601d668e264eea62bbe6859ebfec58de
+12 - Track12.flac:bd6ea61edbdf43a004a65fbb52cad055
+13 - Track13.flac:04be27649aecea5d277f37c4edf49ea3
+14 - Track14.flac:2446657c920327dfbb2d973f1a221435
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-13-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.02       57687548 B   ---   --   ---xx   flac  0.6954  01 - Track01.flac
+     4:09.35       44005964 B   ---   --   ---xx   flac  0.7041  02 - Track02.flac
+     5:12.43       55137980 B   ---   --   ---xx   flac  0.6790  03 - Track03.flac
+     5:29.25       58094444 B   ---   --   ---xx   flac  0.7106  04 - Track04.flac
+     4:42.58       49881260 B   ---   --   ---xx   flac  0.6896  05 - Track05.flac
+     4:49.51       51099596 B   ---   --   ---xx   flac  0.6443  06 - Track06.flac
+     5:05.23       53856140 B   ---   --   ---xx   flac  0.6854  07 - Track07.flac
+     2:46.61       29425916 B   ---   --   ---xx   flac  0.7083  08 - Track08.flac
+     4:13.42       44728028 B   ---   --   ---xx   flac  0.6899  09 - Track09.flac
+     4:06.31       43467356 B   ---   --   ---xx   flac  0.7195  10 - Track10.flac
+     5:41.48       60265340 B   ---   --   ---xx   flac  0.6940  11 - Track11.flac
+     8:09.01       86261996 B   ---   --   ---xx   flac  0.6696  12 - Track12.flac
+     5:15.05       55577804 B   ---   --   ---xx   flac  0.6636  13 - Track13.flac
+     6:04.21       64259036 B   ---   --   ---xx   flac  0.7094  14 - Track14.flac
+    71:12.71      753748408 B                            0.6887  (14 files)
+=================== 
+=================== 
+=================== 

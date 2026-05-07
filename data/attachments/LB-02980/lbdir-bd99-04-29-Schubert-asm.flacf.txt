@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-29-Schubert-asm.flacf 
+=================== 
+=================== 
+=================== 
+e4ce186b61e1c4fa4c603ea780978203  Art & Info\1999-04-29 Graz Concert Info.doc
+1f06e1945dbb602521d79dfe6e5adeeb  Art & Info\1999-04-29 Graz Rec Info.doc
+41aa1fbc18ce5c28e67f5ee2e7ec7b0a  Art & Info\1999-04-29-1_f1.JPG
+8e05156ff9eb7044c9e4776fcc1c708b  Art & Info\1999-04-29-1_f2.JPG
+60bc475a2055a562106a14b152596f54  Art & Info\1999-04-29-1_r1.JPG
+db3a5c3a596c468df186859dbc18cadd  Art & Info\1999-04-29-1_r2.JPG
+dc26b4f8c5c526411edb6df62c20a5dc  Art & Info\EAC d1.log
+8f0a6e8e68e1660da23fc29c8468df69  Art & Info\EAC d2.log
+3255d93a9c42f16a802f850c72ecac21  Art & Info\FINGERPRINT D1.txt
+9cec7508d54ae1b84bb113cc719135af  Art & Info\FINGERPRINT D2.txt
+a62bee74155c0ca793c6ceb603fb199b  bd1999.04.29 Eishalle, Graz (Schubert asm).txt
+2337cbbee43c21a6621f7a7f86deef50  bd99-04-29-Schubert-asm-LB-2980.txt
+cffa5a41fc19f790be90328f6f566541  CD1\101 Friend Of The Devil.flac
+ac69299d927a2cf18be7b57c85b9e25f  CD1\102 The Lonesome Death Of Hattie Carroll.flac
+05547728599b87f5d8cef31063fd4a58  CD1\103 Masters Of War.flac
+174e1392213d98a67de0de95e7fc8821  CD1\104 One Too Many Mornings.flac
+9373b9da3bbc7d53e657160fe7b5c566  CD1\105 Desolation Row.flac
+2dfe742bc77383ba7cefc81bc3536c08  CD1\106 Tangled Up In Blue.flac
+304797e78837667865838a2b508ec70c  CD1\107 Girl From The North Country.flac
+f10e930cc9a22d824699d8ddb0d4a6cc  CD2\201 Can't Wait.flac
+6776753cab4eeed22096069c9c966835  CD2\202 Not Dark Yet.flac
+903c6bb1632afdcc17c7d5130f8c17ac  CD2\203 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+c03b15281b5b0779d3952eb68a7e883e  CD2\204 Make You Feel My Love.flac
+e31f8350e8cd38f6700e1ee190d4c136  CD2\205 Highway 61 Revisited.flac
+ff3bd8861b909d29a426534edc235aed  CD2\206 Love Sick.flac
+1e61a4fce8d73428d6dd2ab659adcef1  CD2\207 Maggie's Farm.flac
+13c37bfde95dcd17e9af73aaa3bc6e75  CD2\208 Don't Think Twice, It's All Right.flac
+57e59ad82c46ab2df5251cecc43e1cf7  CD2\209 Not Fade Away.flac
+e799f542e85291c58b3236e17adff758  CD2\210 Like A Rolling Stone.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-29-Schubert-asm.flacf\CD1 
+=================== 
+=================== 
+=================== 
+101 Friend Of The Devil.flac:fa8b967207eb2d1cf644405c7bab0102
+102 The Lonesome Death Of Hattie Carroll.flac:4c4b8cb95fc1ee625a894b31b32901b7
+103 Masters Of War.flac:28706868bb5e55a44d83666d3159a5de
+104 One Too Many Mornings.flac:569220737204f5ca72573e23e62f9419
+105 Desolation Row.flac:fb89bad60b65c110d54ac94d6ad22fa2
+106 Tangled Up In Blue.flac:a22bc91783998771251185a006b386a4
+107 Girl From The North Country.flac:627b2c8db4941a38078fd034d7fba998
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-29-Schubert-asm.flacf\CD2 
+=================== 
+=================== 
+=================== 
+201 Can't Wait.flac:2345a19548c2134200f5bad6677fdd06
+202 Not Dark Yet.flac:d349d6e74c40b4cd46a79a5e85845347
+203 Stuck Inside Of Mobile With The Memphis Blues Again.flac:72220b54f2a4ce3693ab18676c118f8d
+204 Make You Feel My Love.flac:125207fa83abf0ba8e17f3cb62809583
+205 Highway 61 Revisited.flac:34d8537cfc98d04b81fc03694813035a
+206 Love Sick.flac:c65cf21ad9683cb218c2cd6460e7c24d
+207 Maggie's Farm.flac:7c729e89907d63c8036a5a282155df29
+208 Don't Think Twice, It's All Right.flac:6b1a7d6f24bd53fec51bf27d13d66f50
+209 Not Fade Away.flac:39a3de4859a57963dd48811f086fd096
+210 Like A Rolling Stone.flac:cc9535b4cffc72ce94c70acbd58e7b3c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-29-Schubert-asm.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:05.37       64473068 B   ---   --   ---xx   flac  0.5750  101 Friend Of The Devil.flac
+     6:55.42       73304828 B   ---   --   ---xx   flac  0.5664  102 The Lonesome Death Of Hattie Carroll.flac
+     5:25.36       57414716 B   ---   --   ---xx   flac  0.5547  103 Masters Of War.flac
+     5:45.65       61010924 B   ---   --   ---xx   flac  0.5483  104 One Too Many Mornings.flac
+     9:11.17       97236428 B   ---   --   ---xx   flac  0.5690  105 Desolation Row.flac
+     8:05.57       85688108 B   ---   --   ---xx   flac  0.6025  106 Tangled Up In Blue.flac
+     6:20.63       67180220 B   ---   --   ---xx   flac  0.5203  107 Girl From The North Country.flac
+    47:50.17      506308292 B                            0.5645  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-29-Schubert-asm.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:58.51       84439196 B   ---   --   ---xx   flac  0.5807  201 Can't Wait.flac
+     6:19.38       66945020 B   ---   --   ---xx   flac  0.5042  202 Not Dark Yet.flac
+     7:45.11       82051916 B   ---   --   ---xx   flac  0.6305  203 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     4:42.66       49900076 B   ---   --   ---xx   flac  0.5776  204 Make You Feel My Love.flac
+     6:42.67       71070428 B   ---   --   ---xx   flac  0.6581  205 Highway 61 Revisited.flac
+     6:08.53       65039900 B   ---   --   ---xx   flac  0.5433  206 Love Sick.flac
+     6:42.51       71032796 B   ---   --   ---xx   flac  0.6174  207 Maggie's Farm.flac
+     7:24.53       78446300 B   ---   --   ---xx   flac  0.5249  208 Don't Think Twice, It's All Right.flac
+     4:35.30       48580604 B   ---   --   ---xx   flac  0.6129  209 Not Fade Away.flac
+     7:08.15       75534524 B   ---   --   ---xx   flac  0.6435  210 Like A Rolling Stone.flac
+    65:28.60      693040760 B                            0.5900  (10 files)
+=================== 
+=================== 
+=================== 

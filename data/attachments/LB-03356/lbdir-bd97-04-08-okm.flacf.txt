@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-08-okm.flacf 
+=================== 
+=================== 
+=================== 
+7e2383c56af781552fb9bbbc166941d6  bd97-04-08-okm-LB-3356.txt
+72d9920f2c80a5a8140d4d2d5c8f6a66  bd970408_d1t01.flac
+dcdfbfa9957034f0a8cda9b74b588712  bd970408_d1t02.flac
+d8eb5568196a04090390d9b8f9184ff2  bd970408_d1t03.flac
+9c237b1e92e3d47ad446bd681baca55c  bd970408_d1t04.flac
+648d6b0aa0bacb4dc88d35c9d622a7bf  bd970408_d1t05.flac
+23188773d9c1ca14b201152479385033  bd970408_d1t06.flac
+1776e439e870328d695133dd58891c2a  bd970408_d1t07.flac
+d103fd4795fd6ea3725c1c64e5f5ea37  bd970408_d1t08.flac
+6cf1d11cc62786056237d66b51d9e517  bd970408_d1t09.flac
+dec9a4b4db762e22f3e10c74dce7653f  bd970408_d2t01.flac
+deb4788bad5530450fa731de475b35b0  bd970408_d2t02.flac
+00f2272390db458e55b3db6b226a34c9  bd970408_d2t03.flac
+600f033199c0b6d29b44787133cba845  bd970408_d2t04.flac
+faeb3f6a93c2b61eb255b6b51f140466  bd970408_d2t05.flac
+6e1d030f6f7790292d161cf6c857ad35  bd970408_d2t06.flac
+00bb6a209bf2579116c0ec2ad2321145  bd970408_ffp.txt
+15f42b9c2de6b081c650130d2d7bf525  bd970408_info.txt
+2ba31d9a6f664bc172125c6cd83c1821  Dylan 970408.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-08-okm.flacf 
+=================== 
+=================== 
+=================== 
+bd970408_d1t01.flac:1556033414d51c66553be7b55df6fcee
+bd970408_d1t02.flac:abba6f89f2e1f989708751b0e753d8c3
+bd970408_d1t03.flac:7377d97829ee678ee1463070a06cc800
+bd970408_d1t04.flac:a5bee886071a8f86862a4d0a57b82d32
+bd970408_d1t05.flac:7acee20a374913f05c760e47507b2187
+bd970408_d1t06.flac:a9089437f936d9bd1d2c958df8065cc4
+bd970408_d1t07.flac:6d22314279a8e3e6307b52e88d607a2c
+bd970408_d1t08.flac:ed8550750c8ded453c8f1389ebe1b323
+bd970408_d1t09.flac:b0df6c0e30e3b7709fca45221c8dfe9b
+bd970408_d2t01.flac:8423a4a1499abd73ef1429d5bfa9585c
+bd970408_d2t02.flac:0ed5f11f166de61c3ece64f6aea68529
+bd970408_d2t03.flac:908dab64621152b91445c13d7b579326
+bd970408_d2t04.flac:fec49d095a05562ab3f5ac970d9cbf14
+bd970408_d2t05.flac:679b5dad949e72734c88c03082037aa7
+bd970408_d2t06.flac:e448e7e0224bfc880e72664687b10d5c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-08-okm.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.72       55382588 B   ---   --   ---xx   flac  0.5321  bd970408_d1t01.flac
+     4:45.41       50370476 B   ---   --   ---xx   flac  0.5522  bd970408_d1t02.flac
+     6:10.11       65293916 B   ---   --   ---xx   flac  0.5882  bd970408_d1t03.flac
+     8:04.04       85387052 B   ---   --   ---xx   flac  0.5025  bd970408_d1t04.flac
+     6:31.14       69005372 B   ---   --   ---xx   flac  0.5436  bd970408_d1t05.flac
+     8:14.00       87141644 B   ---   --   ---xx   flac  0.5721  bd970408_d1t06.flac
+     5:51.33       61994060 B   ---   --   ---xx   flac  0.5391  bd970408_d1t07.flac
+     7:45.50       82143644 B   ---   --   ---xx   flac  0.5692  bd970408_d1t08.flac
+     7:33.12       79937468 B   ---   --   ---xx   flac  0.4808  bd970408_d1t09.flac
+     9:15.26       97963196 B   ---   --   ---xx   flac  0.5516  bd970408_d2t01.flac
+     6:44.13       71296220 B   ---   --   ---xx   flac  0.5439  bd970408_d2t02.flac
+     9:11.61       97339916 B   ---   --   ---xx   flac  0.5744  bd970408_d2t03.flac
+    10:11.07      107796908 B   ---   --   ---xx   flac  0.5479  bd970408_d2t04.flac
+     9:48.16      103760876 B   ---   --   ---xx   flac  0.5530  bd970408_d2t05.flac
+     8:40.16       91765676 B   ---   --   ---xx   flac  0.5854  bd970408_d2t06.flac
+   114:00.01     1206579012 B                            0.5499  (15 files)
+=================== 
+=================== 
+=================== 

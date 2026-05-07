@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-14a.flacf 
+=================== 
+=================== 
+=================== 
+60cad5ffe0ea3b0c3fd04fc172243eaa  CD101.flac
+7a24ccf8822255a6a8f7b6ff46e09be5  CD102.flac
+7c062e2939b3b8af9435634352bedeeb  CD103.flac
+1616a86429c6b4725bac429b8d1f14a0  CD104.flac
+db3844abca492100e09565b9f3c46e2e  CD105.flac
+2720ec260948a9c7871fa4e1c2cc82a1  CD106.flac
+da55026e60c3ea5c97758e86a00f7e76  CD107.flac
+1549555fc848427e3b528b9f5b1116d7  CD108.flac
+26fd23db3caaa18f3e3fa17a4e6f7db5  CD109.flac
+4a787d73e2735df914036399904df5a4  CD110.flac
+b79f7fbdb0a0a8198fd37f3a7ebed8aa  CD111.flac
+f2113253532861a46a67d227ad730e71  CD201.flac
+8d7c836ab3bee7693992836255cc4b2d  CD202.flac
+f13284fc52173596ab994574b9ef53ee  CD203.flac
+8888b4dad66600ad172c5c679bbd480f  CD204.flac
+27b80c3cb2d6c6582623c81cabd2f2a0  CD205.flac
+8bf552761b566e4ba47b24b21b83bc72  CD206.flac
+cc8dd46f1915e88c0c796e39c79f19ff  CD207.flac
+ebdcf25760df77717bb1e3771ab2cd77  CD208.flac
+061f255c946e1b65a3ef505df9397ee2  CD209.flac
+b1b99e9cf69c3fdb977bfc15b8ceeca4  Dylan10-14-2001.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-14a.flacf 
+=================== 
+=================== 
+=================== 
+CD101.flac:8d78d1e7d7ba711491dd86192c763e79
+CD102.flac:7d92f91ba69808de128e8fadc28374c2
+CD103.flac:0d0b2be84d97e0001a6a8eefe75c6dae
+CD104.flac:fda5ce07a833592df7f1be5bea196daf
+CD105.flac:2cf719a58159498ffb8066e8b5561d85
+CD106.flac:2ee88c78327901ebccedb6dc5cae650a
+CD107.flac:6eb6547f104ec882dfda106920befc3b
+CD108.flac:7d508536e94725c6f433554246a5941d
+CD109.flac:987991dd928d06b54a0a6e758b831d48
+CD110.flac:01cf04f4e7d5a2e7eb2a77203e3e0976
+CD111.flac:c4c066d675115f03f2113a8b072f36e9
+CD201.flac:59aab69dcfeac559b0650b863618e993
+CD202.flac:60eeca66631164c18d6e1132c308330a
+CD203.flac:9103498cb380a4259209d8fbe8bfd7ad
+CD204.flac:58f3584a17d2e526163ef7bf3b3f094e
+CD205.flac:2d067dd85f365aef7842b833df5f7c30
+CD206.flac:f9f9ec52fb297084a4add108ec705d7a
+CD207.flac:6ee3b26a4452c5613b4391c6530f34f4
+CD208.flac:612d2fa2c8491eb5d96212d80e6e8681
+CD209.flac:6d56183407abb1d885fa2b24a9e209bf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-14a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:29.59        5254412 B   ---   --   ---xx   flac  0.5439  CD101.flac
+     2:50.40       30082124 B   ---   --   ---xx   flac  0.5894  CD102.flac
+    15:36.51      165230396 B   ---   --   ---xx   flac  0.5479  CD103.flac
+     3:40.51       38927996 B   ---   --   ---xx   flac  0.5275  CD104.flac
+     4:37.16       48900476 B   ---   --   ---xx   flac  0.5421  CD105.flac
+     7:53.26       83498396 B   ---   --   ---xx   flac  0.5481  CD106.flac
+     7:58.45       84425084 B   ---   --   ---xx   flac  0.5832  CD107.flac
+     5:18.02       56099948 B   ---   --   ---xx   flac  0.4694  CD108.flac
+     5:10.41       54780476 B   ---   --   ---xx   flac  0.5245  CD109.flac
+     6:40.45       70665884 B   ---   --   ---xx   flac  0.4572  CD110.flac
+     9:33.06      101091356 B   ---   --   ---xx   flac  0.5222  CD111.flac
+     5:58.03       63158300 B   ---   --   ---xx   flac  0.5467  CD201.flac
+     7:36.33       80516060 B   ---   --   ---xx   flac  0.3343  CD202.flac
+     5:03.28       53515100 B   ---   --   ---xx   flac  0.5756  CD203.flac
+     9:39.63      102283820 B   ---   --   ---xx   flac  0.5660  CD204.flac
+     5:58.28       63217100 B   ---   --   ---xx   flac  0.5241  CD205.flac
+     7:37.72       80784188 B   ---   --   ---xx   flac  0.5637  CD206.flac
+     6:59.38       74001020 B   ---   --   ---xx   flac  0.5211  CD207.flac
+     6:59.08       73930460 B   ---   --   ---xx   flac  0.5518  CD208.flac
+     5:50.41       61836476 B   ---   --   ---xx   flac  0.4875  CD209.flac
+   131:32.21     1392199072 B                            0.5255  (20 files)
+=================== 
+=================== 
+=================== 

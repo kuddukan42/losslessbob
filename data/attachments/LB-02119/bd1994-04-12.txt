@@ -1,0 +1,76 @@
+Bob Dylan
+Coronado Theatre
+Rockford, IL
+4/12/94
+
+DAUD > ? > Cass/1 > Hhb 830 > EAC > Soundforge 6.0 > cdwav > FLAC
+
+Taper: Unknown
+Transfer, editing, seeding: Rev. Mike
+
+d1t01 //intro
+d1t02 Jokerman
+d1t03 Lay Lady Lay
+d1t04 All Along the Watchtower
+d1t05 Positively 4th St.
+d1t06 Tangled up in Blue
+d1t07 Watching the River Flow//
+d2t01 Mama, You've Been on my Mind (acoustic)
+d2t02 Gates of Eden (acoustic)
+d2t03 Don't Think Twice, It's all Right
+d2t04 Series of Dreams
+d2t05 I and I
+d2t06 It Takes a lot to Laugh, It Takes a Train to Cry
+d2t07 announcement and band intros
+d2t08 Maggie's Farm//
+
+missing encore
+What Good am I?
+It ain't Me Babe
+
+Notes:
+- Intro came in progress, I applied a fade in.
+- The mix is intitially not too great but by Lay Lady Lay settles into a very warm audience
+recording.
+- The unfortunate cuts in both Watching the River Flow and Maggie's Farm were faded out.
+- Crowd before Mama, You've Been... was faded in.
+
+Tale of the Tape:
+This analog came from the estate of Guy Gimbrone (RIP) of Roscoe, IL.  This tape was not 
+labelled as first gen. but I am calling it so for a few reasons.  First of all, there is  
+very little hiss to the recording.  Secondly, the way that Watching the River Flow was allowed
+to cut and the fact that side B came in with crowd right away leads me to believe that the 
+taper just ran this straight from his DAT and and didn't bother to try and cut the tape in 
+such a way as to get a complete show.  Thirdly, I remember Guy saying that he sat right by the
+taper, and they talked about the rig being run (Guy was a taper himself) and the taper 
+promised to send Guy a copy, so I know it's direct from the taper himself.  It seems that the
+taper did not bother to put the encores on a seperate tape as this tape was not labelled as "1"
+or anything, so until a complete copy emerges, this is all we have.
+I remember Guy telling me about the person you will hear prior to Series of Dreams (which I 
+believe is it's last known performance as of 10/24/04), and I think that may be Guy you hear
+chuckling as the person freaks out.
+This was also the show from which Bob donated $20,000 to Page School in Rockford to help them
+rebuild their playground, Bob mentions this before the band intros.  Apparently BOb read about
+the lack of funds in the paper and decided unbeknownst to anyone to donate the money.  The 
+check was received by Federal Express a few days after the performance.
+
+This seed dedicated to the memory of Guy Gimbrone, I miss you meatball.
+
+seed prepared the week of 10/18/04 - 10/24/04.
+ 
+
+bd1994-04-12d1t01.flac:e9c3c3ea6a8106cc0074b06ef2b9df3f
+bd1994-04-12d1t02.flac:16169ca5c59f76416e5583bf5c6de01b
+bd1994-04-12d1t03.flac:4aec1be09416d1b8be19e21bbb55b404
+bd1994-04-12d1t04.flac:552b083d66682f247283cea35155b5c7
+bd1994-04-12d1t05.flac:c233de097d1209e77b7e591572335e16
+bd1994-04-12d1t06.flac:d070ed913d4165b065f4bc00d8696aa6
+bd1994-04-12d1t07.flac:3461045025fc8ace062b2a8d74bfa06d
+bd1994-04-12d2t01.flac:43846ddaf23ba36b1a7ebe890c845742
+bd1994-04-12d2t02.flac:7de2a20c8eed12350ddd70c0820edf6a
+bd1994-04-12d2t03.flac:a2aa54e6796d7dc553ee5fb219fb88a3
+bd1994-04-12d2t04.flac:772eb66fdba8ebe9ad4bc3b7fa4bf007
+bd1994-04-12d2t05.flac:8d69be20e8e7fa325fdc8f9803495c2a
+bd1994-04-12d2t06.flac:fb8bd7cb88c7da65235612ae061c2e9e
+bd1994-04-12d2t07.flac:a12b53d25ef669602bd6f0aae4023554
+bd1994-04-12d2t08.flac:9dd692799f227517899366e88bbf261d

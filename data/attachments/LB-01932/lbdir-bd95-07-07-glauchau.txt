@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-07-glauchau 
+=================== 
+=================== 
+=================== 
+907736b20ee4efa62447b044b980c0b8  bd1995-07-07 Glauchau (off master).shnf.md5
+63ce4ac0169205d8ebaad0ae6ab815b1  bd1995-07-07 Glauchau (off master).shnf.txt
+2741d00c24e2cac7de8791dd6aa8aae0  bd1995-07-07d1t01.shn
+d3c288fe75b25a5a48e0aae28907b773  bd1995-07-07d1t02.shn
+61910ace516b60fcd73718c64bf02001  bd1995-07-07d1t03.shn
+92f3aa2d685279e70b55ca5570f5485e  bd1995-07-07d1t04.shn
+0d306fef4521fc584cbc458d2f056b5a  bd1995-07-07d1t05.shn
+8ca6984822e0f064133ad1191575bc36  bd1995-07-07d1t06.shn
+4a7b6986788159a6ba59d9c5c3b3ad8f  bd1995-07-07d1t07.shn
+1f46d886df144cd37d7cc0ca27d64e51  bd1995-07-07d1t08.shn
+a907fd21b50534b3fc8668591b080548  bd1995-07-07d2t01.shn
+17798f2686785cc20fc5c0f90add1669  bd1995-07-07d2t02.shn
+67f08140e29065ec28984e635cbef418  bd1995-07-07d2t03.shn
+336f15fe75f64135b197634236f94592  bd1995-07-07d2t04.shn
+6f7cfcfc7d1dba0e7cce16c8a6598a8b  bd1995-07-07d2t05.shn
+1453d5e6611ac26566fbf44f535efc04  bd1995-07-07d2t06.shn
+848a2938e5dc4e62f7bd3c6c35bfdf3a  bd1995-07-07d2t07.shn
+1fcfeb198eab2bbee0190b2f78bce0dc  bd95-07-07.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-07-07-glauchau 
+=================== 
+=================== 
+=================== 
+10ec8692110742d9a8fbb99a3435e2c6  [shntool]  bd1995-07-07d1t01.wav
+20edde4f0e33bf96586d7f75bb3aeda9  [shntool]  bd1995-07-07d1t02.wav
+be46bb912929eee09f298cdda0eeb38a  [shntool]  bd1995-07-07d1t03.wav
+452fc2c8f18dc84ee5536d461ca479c7  [shntool]  bd1995-07-07d1t04.wav
+3d3759cc6831044bc98591b93c6bc831  [shntool]  bd1995-07-07d1t05.wav
+4ea8ef46571166429879728897ee1dcc  [shntool]  bd1995-07-07d1t06.wav
+a7384d32228e793cf213ba17cd08d628  [shntool]  bd1995-07-07d1t07.wav
+7ae2724f463c627a01bac3d2ac23100f  [shntool]  bd1995-07-07d1t08.wav
+4bb084fe66162b1378ace85739e0d97f  [shntool]  bd1995-07-07d2t01.wav
+0ddd850f4b01d87c67f97c38b5ade318  [shntool]  bd1995-07-07d2t02.wav
+1ccdfe8e44260f227fbd7d0cb90ecab6  [shntool]  bd1995-07-07d2t03.wav
+7c41e3de24ecb83c10941f6dea6450d7  [shntool]  bd1995-07-07d2t04.wav
+c94dff6f80854dd7b0bfb505247e22d2  [shntool]  bd1995-07-07d2t05.wav
+b6734807650066af9d5f66f146bd1b5d  [shntool]  bd1995-07-07d2t06.wav
+197e99d42a9d6457efa394484e9d66e9  [shntool]  bd1995-07-07d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-07-glauchau 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:48.59       50942012 B   ---   --   -----    wav  1.0000  bd1995-07-07d1t01.wav
+     6:00.45       63609884 B   ---   --   -----    wav  1.0000  bd1995-07-07d1t02.wav
+     6:51.12       72528668 B   ---   --   -----    wav  1.0000  bd1995-07-07d1t03.wav
+    11:54.57      126083708 B   ---   --   -----    wav  1.0000  bd1995-07-07d1t04.wav
+     1:31.37       16139468 B   ---   --   -----    wav  1.0000  bd1995-07-07d1t05.wav
+     6:38.22       70258988 B   ---   --   -----    wav  1.0000  bd1995-07-07d1t06.wav
+    11:48.21      124940636 B   ---   --   -----    wav  1.0000  bd1995-07-07d1t07.wav
+     5:56.28       62864300 B   ---   --   -----    wav  1.0000  bd1995-07-07d1t08.wav
+     8:35.35       90928364 B   ---   --   -----    wav  1.0000  bd1995-07-07d2t01.wav
+     9:54.22      104833388 B   ---   --   -----    wav  1.0000  bd1995-07-07d2t02.wav
+     7:31.59       79695212 B   ---   --   -----    wav  1.0000  bd1995-07-07d2t03.wav
+     6:38.42       70306028 B   ---   --   -----    wav  1.0000  bd1995-07-07d2t04.wav
+     8:44.38       92523020 B   ---   --   -----    wav  1.0000  bd1995-07-07d2t05.wav
+     9:30.62      100693868 B   ---   --   -----    wav  1.0000  bd1995-07-07d2t06.wav
+     5:55.26       62683196 B   ---   --   -----    wav  1.0000  bd1995-07-07d2t07.wav
+   112:20.40     1189030740 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

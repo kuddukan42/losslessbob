@@ -1,0 +1,10 @@
+Bob Dylan, 5/22/95, The Warfield Theater, San Francisco, California, 2CDR
+
+LB-4043, (71min+42min), Lineage: Trade CDRs > EAC (no errors) > hdd > FA &SA check (full spectrum, not lossy) >flac, (level 8, align on sector boundaries) > torrent, very good sound, just a little muddy, down bass and up treble. Improves a bit during acoustic set, and Disc 2.; bittorrent download 09/06; excellent sound [A]
+
+light square wav static starting d1t9 7:17 trhough end of track; big static d2t1 0:00
+
+Disc One: 9 Tracks, 70:39, 1. Crash On The Levee (Down In The Flood), 2. Man In The Long Black Coat, 3. All Along The Watchtower, 4. Most Likely You Go Your Way (And I'll Go Mine), 5. Tears Of Rage (Bob Dylan & Richard Manuel), 6. Tombstone Blues, 7. Mr. Tambourine Man, 8. Desolation Row, 9. It's All Over Now, Baby Blue, Disc Two: 5 Tracks, 41:25, 1. Seeing The Real You At Last, 2. She Belongs To Me (w/ Band Intros), 3. Obviously Five Believers, 4. Lenny Bruce, 5. My Back Pages
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

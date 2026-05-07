@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd06-05-05-Z-Man-Dolphinsmile.flacf
+===================
+===================
+===================
+0c9b349d428f38b9e1735edd9e4b32d2 *01 Intro.flac
+5ecf8dd0930f132d390977803afff531 *02 Most Likely You'll Go.flac
+a6e91ec0c5ec8ab74512db891888238a *03 Tamborine Man.flac
+6088ad95204112e12d7d76628c4e2831 *04 Lonesome Day Blues.flac
+9b625f6073b103aad5e915c4db53e08c *05 Posvitevly Fourth Street.flac
+2b7f497b4dadf2ff2dcdb076fa718f25 *06 Its Alright Ma.flac
+23dbc6a3a0b0da2589645db2367d9a8d *07 Make You  Feel My Love.flac
+5bd961a7e8cf65def5965c80a3d86fba *08 I'll Be Your Baby Tonight.flac
+92fe0e88f1d96669e3c6ce918490b76d *09 Cold Irons Bound.flac
+3f6ccab0485133539fb559c4c6e52a50 *10 Don't Think Twice.flac
+2d0e8a3cfc021bf498c6a784ffcd8b4c *11 Highway 61.flac
+b4fb34df73fa4f0840bed023b5c32bcb *12 Girl Of The North Country.flac
+9b09209d73e5ce3de2101de7f0f47a0b *13 Summer Days.flac
+9c97115d95a3970002b0a5a0a79427f7 *14 Like A Rolling Stones.flac
+6a588f6d07318855fe9ca4bec2a3656a *15 Band Intros.flac
+c067a328b878f61288f274c2a3cf2c79 *16 All Along The Watchtower.flac
+c0241bbfadc72dc57552c7a971e4ee70 *17 Outro.flac
+993a0b194cdb4aa0a721194c58e551f9 *Bob Dylan Chastain Park Amphitheater Atlanta 05-05-2006.ffp
+a940579cb9122a000a7a6c0cd0de3032 *Bob Dylan Chastain Park Amphitheater Atlanta 05-05-2006.md5
+993a0b194cdb4aa0a721194c58e551f9 *Bob Dylan Chastain Park Amphitheater Atlanta 05-05-2006.txt
+52a63a8d5c2900e643939d76e4404d1e *info.txt
+===================
+===================
+===================
+=== ffp for: bd06-05-05-Z-Man-Dolphinsmile.flacf
+===================
+===================
+===================
+01 Intro.flac:b174efa6834eafe208e727faf90a82ea
+02 Most Likely You'll Go.flac:d4dc9bb698cd2370b6693697c6d46688
+03 Tamborine Man.flac:d4b47a6b0e85968f72186ed403dbd496
+04 Lonesome Day Blues.flac:562401f67290b98c59f3ace38697834c
+05 Posvitevly Fourth Street.flac:4aee0653bf906a61e9380f16c31353c6
+06 Its Alright Ma.flac:3123dacda72fedf64ed5a63ae557e09f
+07 Make You  Feel My Love.flac:6cc0c1bfbd5496c98d6fd1b1c039485b
+08 I'll Be Your Baby Tonight.flac:758f42cbe62be8537811bb6ae3c135e3
+09 Cold Irons Bound.flac:7613c23dd5d78d82181a3387edc76e60
+10 Don't Think Twice.flac:554b85fc2c0e3153b78484b2616d646c
+11 Highway 61.flac:3d590aeb2e1f96cb8aefffe9b171df64
+12 Girl Of The North Country.flac:988d47e1ecb152086795a7b14b3c5b95
+13 Summer Days.flac:7623ee6e28fdf97eee33c20035fb9549
+14 Like A Rolling Stones.flac:ef125ec855d17f458bfa5414653ad8bb
+15 Band Intros.flac:a38255c1d4160245c3d3a5277f156ae8
+16 All Along The Watchtower.flac:c6929832dbf67fa330cd82f2fa94b0fb
+17 Outro.flac:7e950567145e39f0a2139b42a269fa84
+===================
+===================
+===================
+=== shntool len for: bd06-05-05-Z-Man-Dolphinsmile.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.14       13792172 B   ---   --   ---xx   flac  0.4125  01 Intro.flac
+     6:56.16       73420076 B   ---   --   ---xx   flac  0.5013  02 Most Likely You'll Go.flac
+     7:30.67       79537628 B   ---   --   ---xx   flac  0.4633  03 Tamborine Man.flac
+     6:36.59       69993212 B   ---   --   ---xx   flac  0.4983  04 Lonesome Day Blues.flac
+     7:33.09       79930412 B   ---   --   ---xx   flac  0.4838  05 Posvitevly Fourth Street.flac
+     7:19.51       77559596 B   ---   --   ---xx   flac  0.5175  06 Its Alright Ma.flac
+     5:30.71       58379036 B   ---   --   ---xx   flac  0.4474  07 Make You  Feel My Love.flac
+     6:17.13       66533420 B   ---   --   ---xx   flac  0.4899  08 I'll Be Your Baby Tonight.flac
+     7:08.45       75605084 B   ---   --   ---xx   flac  0.5025  09 Cold Irons Bound.flac
+     6:26.41       68186876 B   ---   --   ---xx   flac  0.4795  10 Don't Think Twice.flac
+     7:24.65       78474524 B   ---   --   ---xx   flac  0.5358  11 Highway 61.flac
+     5:52.39       62184572 B   ---   --   ---xx   flac  0.4402  12 Girl Of The North Country.flac
+     9:15.58       98038460 B   ---   --   ---xx   flac  0.4993  13 Summer Days.flac
+     6:47.43       71895980 B   ---   --   ---xx   flac  0.5421  14 Like A Rolling Stones.flac
+     0:29.40        5209724 B   ---   --   ---xx   flac  0.4792  15 Band Intros.flac
+     5:10.32       54759308 B   ---   --   ---xx   flac  0.5534  16 All Along The Watchtower.flac
+     1:14.20       13100684 B   ---   --   ---xx   flac  0.3967  17 Outro.flac
+    98:53.08     1046600764 B                            0.4947  (17 files)
+===================
+===================
+===================

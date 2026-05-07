@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-13-Okayama.flacf 
+=================== 
+=================== 
+=================== 
+dc93905303b351949aab1677a1293747  Bob Dylan_Okayama_Liberated Boot.txt
+78b11d7b3e75f9176110157f2ddf5431  CD1\Track01.flac
+dff715c40e7cf7af2479b30edd2ec20d  CD1\Track02.flac
+62a10bb33aa19e7b5b27ee1850a04cd3  CD1\Track03.flac
+85fba924c660c9fd19ded9c3b16a0426  CD1\Track04.flac
+2d6a3a49c0f503d41afc6e0b86b6b02e  CD1\Track05.flac
+bc3e5c537088cd0e9f80297ba994f058  CD1\Track06.flac
+aef34948100e62514eecb19dcdcaf22c  CD1\Track07.flac
+e3e545c41c5d8f44b98b7dd0dc52e000  CD1\Track08.flac
+6770ddfcd22558c1247e30636e05778c  CD1\Track09.flac
+a74bbfa753271ad9ab5f8d8cbc9908ba  CD1\Track10.flac
+c2f7b59902d6e861582868b9a0b7dca5  CD2\CD2.md5
+e5ed77cac0df88291d9d0f66c06f6701  CD2\Track01.flac
+302af8e7cf836e77b73beb993dcc09a4  CD2\Track02.flac
+0f910e4023fc38d1ec792f4f0b589dc4  CD2\Track03.flac
+936e7a0fa69c331a4d6564aa3736b69d  CD2\Track04.flac
+643aa0b1c92e194e85b2cab47530fd87  CD2\Track05.flac
+349ef434c02b3181561271d57d0444b9  CD2\Track06.flac
+eb1dea7ec4c502a29504a349ac668a36  CD2\Track07.flac
+a37140fd696723a0b71e8aa0db1e25e5  CD2\Track08.flac
+d80734a9f5e0f7171af79edbe22391e5  CD2\Track09.flac
+9d4a1d8acb006888d018f9a32588cab9  CD2\Track10.flac
+508777163f038a282942fec32c2d3509  Okayama1997-B.jpg
+51f2ee1849580b2bc6618a29151999aa  Okayama1997-F.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-13-Okayama.flacf\CD1 
+=================== 
+=================== 
+=================== 
+Track01.flac:47ddd3f76d533fa47a4935a57faf35ad
+Track02.flac:c1b5a3de2dad121a5bd5f6296a35a259
+Track03.flac:a33505b075799f652fefaa798cf01ab1
+Track04.flac:e832f260f86a394bc8b63a773e6241c9
+Track05.flac:b6f4ae7b2948d364f1e3cfab333ad1db
+Track06.flac:812031556e463ee456c04f00478b0af8
+Track07.flac:16aaf40a58dfd2e628a21e662fa75371
+Track08.flac:c77f67574699c133788f643c9807c6f2
+Track09.flac:a382db1e99ee9745bfc8e8ac77f76325
+Track10.flac:67e4da23f34d569b13327fd152b2b273
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-13-Okayama.flacf\CD2 
+=================== 
+=================== 
+=================== 
+Track01.flac:d85cd9e17bb1bce9aa930d690634e7dd
+Track02.flac:0d6618b4edd40932c9e7af8451cfeb7e
+Track03.flac:8a09605bfed3e942cf0bd73cc12584b0
+Track04.flac:6c8ffda84ec573467666fd97b7e00956
+Track05.flac:131e896694bac24b310fcf36a489717a
+Track06.flac:0bf1bd105549780ec2aa8ab3c0f917ba
+Track07.flac:e015ac4c9ad3f7ebb60af54d24dd37fa
+Track08.flac:9acecef93f91e3209131e3ee61e56cde
+Track09.flac:eaf53a5faa1ff362beca54352068e002
+Track10.flac:5bdb9d0114ac65925dc30b47ebf30848
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-13-Okayama.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.00       52214444 B   ---   --   ---xx   flac  0.5034  Track01.flac
+     5:31.13       58419020 B   ---   --   ---xx   flac  0.4940  Track02.flac
+     7:05.74       75144092 B   ---   --   ---xx   flac  0.5318  Track03.flac
+     6:05.08       64404860 B   ---   --   ---xx   flac  0.4527  Track04.flac
+     7:02.69       74603132 B   ---   --   ---xx   flac  0.5052  Track05.flac
+     7:27.05       78862604 B   ---   --   ---xx   flac  0.5257  Track06.flac
+     6:33.15       69360524 B   ---   --   ---xx   flac  0.4819  Track07.flac
+     7:19.12       77467868 B   ---   --   ---xx   flac  0.4273  Track08.flac
+     6:34.53       69626300 B   ---   --   ---xx   flac  0.4046  Track09.flac
+     6:28.42       68542028 B   ---   --   ---xx   flac  0.4805  Track10.flac
+    65:03.66      688644872 B                            0.4807  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-13-Okayama.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.42       76303628 B   ---   --   ---xx   flac  0.4596  Track01.flac
+     8:06.57       85864508 B   ---   --   ---xx   flac  0.5133  Track02.flac
+     9:07.21       96540236 B   ---   --   ---xx   flac  0.5493  Track03.flac
+     9:31.37      100811468 B   ---   --   ---xx   flac  0.5373  Track04.flac
+     6:34.11       69527516 B   ---   --   ---xx   flac  0.5707  Track05.flac
+     7:21.00       77792444 B   ---   --   ---xx   flac  0.4800  Track06.flac
+     5:47.23       61264940 B   ---   --   ---xx   flac  0.4527  Track07.flac
+     8:27.62       89580668 B   ---   --   ---xx   flac  0.5008  Track08.flac
+     6:10.61       65411516 B   ---   --   ---xx   flac  0.5336  Track09.flac
+     4:42.49       49860092 B   ---   --   ---xx   flac  0.4538  Track10.flac
+    73:01.63      772957016 B                            0.5091  (10 files)
+=================== 
+=================== 
+=================== 

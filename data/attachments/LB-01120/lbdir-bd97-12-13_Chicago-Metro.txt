@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-13_Chicago-Metro 
+=================== 
+=================== 
+=================== 
+a5d5d58f991601aaeeb7c038e5c64c48  bd97-12-13.txt
+d5904b46088e84797a4040d7b41e4c49  bd_97-12-13_cd1.shnf\bd_97-12-13_cd1_Track 1.shn
+d5b8063f4952cfa7450576dbf5ae828a  bd_97-12-13_cd1.shnf\bd_97-12-13_cd1_Track 2.shn
+6f79354b645421bce587b27ad69e4ab3  bd_97-12-13_cd1.shnf\bd_97-12-13_cd1_Track 3.shn
+d9c3da5e2439ac7f99023b3ab20e23b4  bd_97-12-13_cd1.shnf\bd_97-12-13_cd1_Track 4.shn
+442a4e12b14af5dba59c7b82de79b484  bd_97-12-13_cd1.shnf\bd_97-12-13_cd1_Track 5.shn
+b5d736078223adaa4f23bddad7944cae  bd_97-12-13_cd1.shnf\bd_97-12-13_cd1_Track 6.shn
+27bb717c2ab4e157414d13c114d38c4c  bd_97-12-13_cd1.shnf\bd_97-12-13_cd1_Track 7.shn
+03615d4f36ea2370198e8d576ee6c732  bd_97-12-13_cd1.shnf\bd_97-12-13_cd1_shn.md5
+ca99dc6bf73c9c8e78c47ea6020a295f  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_Track 1.shn
+e9370f4a166eb14c899d0154ccca899e  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_Track 2.shn
+fc8e4feecfed5385f609d9c72db11213  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_Track 3.shn
+88271497ba85f7115b4679bc063e03ce  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_Track 4.shn
+961b6bbb463f8fe27140e67c4e949dbd  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_Track 5.shn
+2258032eb07bed0368055e16e2e11537  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_Track 6.shn
+3358fc7af3c64db656bbc2f2bde9780c  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_Track 7.shn
+fd59230ef92cf304c01b38be4c8f36e7  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_Track 8.shn
+66014467952fb3a5a430e2bd15dc2d87  bd_97-12-13_cd2.shnf\bd_97-12-13_cd2_shn.md5
+039c9bc6be252691b87c77705e151927  readme.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-12-13_Chicago-Metro\bd_97-12-13_cd1.shnf 
+=================== 
+=================== 
+=================== 
+27cae425c8f3cb7635649ec9e032e29f  [shntool]  bd_97-12-13_cd1_Track_1.wav
+0bf6c32d34c4113dc3870b3692e9d31b  [shntool]  bd_97-12-13_cd1_Track_2.wav
+bdde0139cec3068991513e3386062e2d  [shntool]  bd_97-12-13_cd1_Track_3.wav
+f79a97d71e49ee90eef3e0ecb878fba9  [shntool]  bd_97-12-13_cd1_Track_4.wav
+53a38e0f9aa4862c93f524c2f5bf7427  [shntool]  bd_97-12-13_cd1_Track_5.wav
+2db9a2bb195450c304d529170061b821  [shntool]  bd_97-12-13_cd1_Track_6.wav
+594a94535d5135fea3dd067e0918d005  [shntool]  bd_97-12-13_cd1_Track_7.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-12-13_Chicago-Metro\bd_97-12-13_cd2.shnf 
+=================== 
+=================== 
+=================== 
+e21b6eb42eb08d5e92619f277192f40c  [shntool]  bd_97-12-13_cd2_Track_1.wav
+012f6c75e9ea601e56c0b0386bc37892  [shntool]  bd_97-12-13_cd2_Track_2.wav
+a8fab75b6650a743b84f796531845412  [shntool]  bd_97-12-13_cd2_Track_3.wav
+a35258c4606b5866a9acb5501ddd4136  [shntool]  bd_97-12-13_cd2_Track_4.wav
+5dd6c26a4ac1616a1753932badb023a0  [shntool]  bd_97-12-13_cd2_Track_5.wav
+886a09eda7eeccadcabfd400c914764c  [shntool]  bd_97-12-13_cd2_Track_6.wav
+77d1517f5275bbab3f129cf673d47169  [shntool]  bd_97-12-13_cd2_Track_7.wav
+ed6c3fbe0695016b41af6d586116a19e  [shntool]  bd_97-12-13_cd2_Track_8.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-13_Chicago-Metro\bd_97-12-13_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:03.28       64099182 B   ---   -e   ---xx    shn  0.6187  bd_97-12-13_cd1_Track 1.shn
+     5:28.37       57946350 B   ---   -e   ---xx    shn  0.5895  bd_97-12-13_cd1_Track 2.shn
+     7:09.31       75748638 B   ---   -e   ---xx    shn  0.6079  bd_97-12-13_cd1_Track 3.shn
+     6:36.53       69979182 B   ---   -e   ---xx    shn  0.5269  bd_97-12-13_cd1_Track 4.shn
+     6:06.63       64710702 B   ---   -e   ---xx    shn  0.6081  bd_97-12-13_cd1_Track 5.shn
+     7:27.73       79022622 B   ---   -e   ---xx    shn  0.6146  bd_97-12-13_cd1_Track 6.shn
+    13:02.37      138031950 B   ---   -e   ---xx    shn  0.4570  bd_97-12-13_cd1_Track 7.shn
+    51:55.22      549538626 B                            0.5600  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-13_Chicago-Metro\bd_97-12-13_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:16.06       98092638 B   ---   -e   ---xx    shn  0.5957  bd_97-12-13_cd2_Track 1.shn
+     9:53.66      104760558 B   ---   -e   ---xx    shn  0.5732  bd_97-12-13_cd2_Track 2.shn
+     6:56.44       73486014 B   ---   -e   ---xx    shn  0.5394  bd_97-12-13_cd2_Track 3.shn
+     6:28.40       68537406 B   ---   -e   ---xx    shn  0.5902  bd_97-12-13_cd2_Track 4.shn
+     9:48.29      103791534 B   ---   -e   ---xx    shn  0.5931  bd_97-12-13_cd2_Track 5.shn
+     8:54.39       94289454 B   ---   -e   ---xx    shn  0.5071  bd_97-12-13_cd2_Track 6.shn
+     5:34.40       59011806 B   ---   -e   ---xx    shn  0.5261  bd_97-12-13_cd2_Track 7.shn
+     4:53.58       51821742 B   ---   -e   ---xx    shn  0.5854  bd_97-12-13_cd2_Track 8.shn
+    61:46.22      653791152 B                            0.5649  (8 files)
+=================== 
+=================== 
+=================== 

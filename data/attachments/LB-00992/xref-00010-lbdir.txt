@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-13-sb-b.flacf 
+=================== 
+=================== 
+=================== 
+20a710e5e2fd467565cb39b28a61857e  13 June 1988.txt
+ccc679788b9dbe8a898930d45498b453  Bob Dylan-1988.06.13 Salt Lake City,Utah,Park West, Park City [SB].md5
+4024feda409e054ea5b65b2cb3202158  Leave No Stone Unturned [CD1]\BD 1988-06-13_101.flac
+c0ea7f39cc3df83a658796536accb8d9  Leave No Stone Unturned [CD1]\BD 1988-06-13_102.flac
+97aed4a0a98bfd6c0c163d04c8dad174  Leave No Stone Unturned [CD1]\BD 1988-06-13_103.flac
+a1310f14f66b8f2740584829d7eeb84e  Leave No Stone Unturned [CD1]\BD 1988-06-13_104.flac
+73d318dfc1a7ef2671be5f92217835ef  Leave No Stone Unturned [CD1]\BD 1988-06-13_105.flac
+485a61eaf3da5140199f8ef50597fa6b  Leave No Stone Unturned [CD1]\BD 1988-06-13_106.flac
+98916fb2e82fb48a61aa8cbdef6a9842  Leave No Stone Unturned [CD1]\BD 1988-06-13_107.flac
+b3893365d0682ff87aeb91010594a2f9  Leave No Stone Unturned [CD1]\BD 1988-06-13_108.flac
+484f12ef8de6903e3b0372eaa414d962  Leave No Stone Unturned [CD1]\BD 1988-06-13_109.flac
+21b706c031013826b295bf5a0a6773f9  Leave No Stone Unturned [CD1]\Leave No Stone Unturned [CD1].LOG
+52bf8c043b560de8a009d616d4975a14  Leave No Stone Unturned [CD2]\BD 1988-06-13_201.flac
+6349e31eb73d8f90f3e5ab82cdcfce20  Leave No Stone Unturned [CD2]\BD 1988-06-13_202.flac
+214ff5ce653c0768dbbc68071111616b  Leave No Stone Unturned [CD2]\BD 1988-06-13_203.flac
+a14b56578ff3e38e80225622fa66faeb  Leave No Stone Unturned [CD2]\BD 1988-06-13_204.flac
+e27206fbc06ab1592e1a167e4430369c  Leave No Stone Unturned [CD2]\BD 1988-06-13_205.flac
+742a67eeb305ff4de3c86b2f8e3bb968  Leave No Stone Unturned [CD2]\BD 1988-06-13_206.flac
+966e885e8dab782e6185f62820bcaf3d  Leave No Stone Unturned [CD2]\BD 1988-06-13_207.flac
+761fe033c4cae4d2c2b31661376a9030  Leave No Stone Unturned [CD2]\BD 1988-06-13_208.flac
+efaab964437f9b6145bcbe16336e862c  Leave No Stone Unturned [CD2]\BD 1988-06-13_209.flac
+d0b56a81eedf9f2ce971a7144b5c6597  Leave No Stone Unturned [CD2]\BD 1988-06-13_210.flac
+b2c810618c3219bf3d2cff67fbce7dfe  Leave No Stone Unturned [CD2]\BD 1988-06-13_211.flac
+6ff1f8a13dc740308b3e0e27b291fe3c  Leave No Stone Unturned [CD2]\BD 1988-06-13_212.flac
+19b45f0af7ea29127e3ccc2f4b57b8b0  Leave No Stone Unturned [CD2]\BD 1988-06-13_213.flac
+ff6d1c6753b49f4e449c754ec639caa9  Leave No Stone Unturned [CD2]\BD 1988-06-13_214.flac
+42b00f9d4e46d9b5c92e172e293930e4  Leave No Stone Unturned [CD2]\Leave No Stone Unturned [CD2].LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-13-sb-b.flacf\Leave No Stone Unturned [CD1] 
+=================== 
+=================== 
+=================== 
+BD 1988-06-13_101.flac:7385d8d7d2df3cc26ffbad83d807cb89
+BD 1988-06-13_102.flac:d659ccafb9a4eee69eb33ea412b88760
+BD 1988-06-13_103.flac:2e338113b042c86d3c670f957ac13df0
+BD 1988-06-13_104.flac:fa4cbc8574b9e1e7042c75b64cb2ccab
+BD 1988-06-13_105.flac:a8db56be44d477dc840dd89b139e9853
+BD 1988-06-13_106.flac:2e4a63ad10a1a5a394539da530298cee
+BD 1988-06-13_107.flac:b1e98eac9ee5b3613f660b30d7a921a5
+BD 1988-06-13_108.flac:705d020d7d811cbfd1eb79676b3f5b1f
+BD 1988-06-13_109.flac:2152de3d74685ad6d92959ff90a2f40d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-13-sb-b.flacf\Leave No Stone Unturned [CD2] 
+=================== 
+=================== 
+=================== 
+BD 1988-06-13_201.flac:326667be2a272f20d922d32a4fc7408f
+BD 1988-06-13_202.flac:498953d310fb33b1af82de5497308e32
+BD 1988-06-13_203.flac:bb9a24529fb39fc172d482dc53d9ffc0
+BD 1988-06-13_204.flac:04eb5f7fe9670d3891ce7591af083d7a
+BD 1988-06-13_205.flac:b5f60b3cc6ad0fef08190d3ff3a6394d
+BD 1988-06-13_206.flac:34fb746a9a47a35b27399d8d64263691
+BD 1988-06-13_207.flac:31492f6575946af57b588c568222adf1
+BD 1988-06-13_208.flac:db8748b449a370a39d23596cb74f6da5
+BD 1988-06-13_209.flac:442f7a9edceec48e4f77cedf4c0c31c0
+BD 1988-06-13_210.flac:2af6c9f91eb00fe531a4fb3f886ab474
+BD 1988-06-13_211.flac:ac47cb2eca4bc8ed4bef7c19a0734f58
+BD 1988-06-13_212.flac:37d6e7f0662114dd9deb7815de64c6df
+BD 1988-06-13_213.flac:ef26013f4816d925e0264075de29aafc
+BD 1988-06-13_214.flac:c36f77ca9038e1af8ef262ef75eaa603
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-13-sb-b.flacf\Leave No Stone Unturned [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.33       36592460 B   ---   --   ---xx   flac  0.6395  BD 1988-06-13_101.flac
+     5:09.31       54580556 B   ---   --   ---xx   flac  0.6423  BD 1988-06-13_102.flac
+     6:44.13       71296220 B   ---   --   ---xx   flac  0.6658  BD 1988-06-13_103.flac
+     4:30.52       47750348 B   ---   --   ---xx   flac  0.6597  BD 1988-06-13_104.flac
+     6:51.62       72646268 B   ---   --   ---xx   flac  0.6386  BD 1988-06-13_105.flac
+     5:53.61       62412716 B   ---   --   ---xx   flac  0.6660  BD 1988-06-13_106.flac
+     5:10.01       54686396 B   ---   --   ---xx   flac  0.6388  BD 1988-06-13_107.flac
+     7:16.68       77070380 B   ---   --   ---xx   flac  0.6624  BD 1988-06-13_108.flac
+     5:42.04       60338252 B   ---   --   ---xx   flac  0.6411  BD 1988-06-13_109.flac
+    50:46.25      537373596 B                            0.6514  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-13-sb-b.flacf\Leave No Stone Unturned [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.41       59719676 B   ---   --   ---xx   flac  0.6716  BD 1988-06-13_201.flac
+     6:22.19       67429532 B   ---   --   ---xx   flac  0.6683  BD 1988-06-13_202.flac
+     5:21.50       56742044 B   ---   --   ---xx   flac  0.6542  BD 1988-06-13_203.flac
+     6:52.74       72850892 B   ---   --   ---xx   flac  0.6838  BD 1988-06-13_204.flac
+     4:46.02       50455148 B   ---   --   ---xx   flac  0.6445  BD 1988-06-13_205.flac
+     7:14.04       76567052 B   ---   --   ---xx   flac  0.6600  BD 1988-06-13_206.flac
+     5:56.58       62934860 B   ---   --   ---xx   flac  0.6561  BD 1988-06-13_207.flac
+     4:29.49       47566892 B   ---   --   ---xx   flac  0.6792  BD 1988-06-13_208.flac
+     4:18.15       45546524 B   ---   --   ---xx   flac  0.6788  BD 1988-06-13_209.flac
+     4:13.67       44786828 B   ---   --   ---xx   flac  0.6456  BD 1988-06-13_210.flac
+     4:41.54       49695452 B   ---   --   ---xx   flac  0.6820  BD 1988-06-13_211.flac
+     4:08.57       43881308 B   ---   --   ---xx   flac  0.6650  BD 1988-06-13_212.flac
+     5:39.44       59903132 B   ---   --   ---xx   flac  0.6769  BD 1988-06-13_213.flac
+     4:27.73       47270540 B   ---   --   ---xx   flac  0.5912  BD 1988-06-13_214.flac
+    74:12.07      785349880 B                            0.6623  (14 files)
+=================== 
+=================== 
+=================== 

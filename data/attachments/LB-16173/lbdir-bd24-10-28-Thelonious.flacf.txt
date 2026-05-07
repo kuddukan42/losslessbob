@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd24-10-28-Thelonious.flacf
+===================
+===================
+===================
+76c1d3e91fa1acc99ea2ad198605cc19 *bd2024-10-28 - Esch-sur-Alzette.ffp
+66eb21eec8517572ebd0e5859243554e *bd2024-10-28 - Esch-sur-Alzette.md5
+4e3bd8868fa54803194c2d3daede6413 *bd2024-10-28_info.txt
+d0571d29191b911917959a75e53123a6 *bd2024-10-28_t01_All Along The Watchtower.flac
+156c9bf6fa7ce4c0c382a7d2142d2342 *bd2024-10-28_t02_It Ain't Me, Babe.flac
+89b20861b2d63a0232bb5bcf3a5db4cc *bd2024-10-28_t03_I Contain Multitudes.flac
+14aae38dfbe632f70f62a22b42676f5d *bd2024-10-28_t04_False Prophet.flac
+036d89a0e9c3f9af766c428d6691a137 *bd2024-10-28_t05_When I Paint My Masterpiece.flac
+0dc0bf1adfb5ddbaeb78f3dcd0c609ec *bd2024-10-28_t06_Black Rider.flac
+71384878b36be63ad61e9b2ed67d8016 *bd2024-10-28_t07_My Own Version Of You.flac
+5c4b2d13eb5f72f1a202b7a8c7fc8bf8 *bd2024-10-28_t08_To Be Alone With You.flac
+a9fd67df6343df5b730c3456808ef27c *bd2024-10-28_t09_Crossing The Rubicon.flac
+2786bfa45c4534142e92d9df4a12677f *bd2024-10-28_t10_Desolation Row.flac
+281b56fe7000ef897ab7edcefadae5a2 *bd2024-10-28_t11_Key West (Philosopher Pirate).flac
+494b5d8884fbdd7eef7119df248a7cc0 *bd2024-10-28_t12_It's All Over Now, Baby Blue.flac
+545b92a1263953a2b00a104c4a7ea699 *bd2024-10-28_t13_I've Made Up My Mind To Give Myself To You.flac
+43c73734bbb7edd8b2a13dead095f436 *bd2024-10-28_t14_Watching The River Flow.flac
+c3db8edff9e136059701d44d0738505c *bd2024-10-28_t15_Mother Of Muses.flac
+37d19b023bd7e08a58b9a71681929616 *bd2024-10-28_t16_Goodbye Jimmy Reed.flac
+ca2cf604a24a3e9946f56e03d55a26e6 *bd2024-10-28_t17_Every Grain Of Sand.flac
+===================
+===================
+===================
+=== ffp for: bd24-10-28-Thelonious.flacf
+===================
+===================
+===================
+bd2024-10-28_t01_All Along The Watchtower.flac:88a91ff2a99aa7246b0bd9aac2318977
+bd2024-10-28_t02_It Ain't Me, Babe.flac:c9869abe3e35f022ebf170193ad7b72c
+bd2024-10-28_t03_I Contain Multitudes.flac:ac591ae268df5140d073808979fb6ea6
+bd2024-10-28_t04_False Prophet.flac:a7837fb268fceb062b6a202ebbc98467
+bd2024-10-28_t05_When I Paint My Masterpiece.flac:4378cc28ab2db626e7e59cf31b55130d
+bd2024-10-28_t06_Black Rider.flac:cf0c06488d56497bac0a424ef7c708eb
+bd2024-10-28_t07_My Own Version Of You.flac:b7fb00cea8daeb036026b45614f077e9
+bd2024-10-28_t08_To Be Alone With You.flac:d53b459b218b960fa1ed3c2f3aea3d9d
+bd2024-10-28_t09_Crossing The Rubicon.flac:cec696632adb70e68ca95090e10478cf
+bd2024-10-28_t10_Desolation Row.flac:d117ca3f218498965ce76d5c2ee544b9
+bd2024-10-28_t11_Key West (Philosopher Pirate).flac:aa431a2442429d1a3b4bc2bd8615cfc3
+bd2024-10-28_t12_It's All Over Now, Baby Blue.flac:b7d7189d70296ae36e0cc8ebaa4e4b2c
+bd2024-10-28_t13_I've Made Up My Mind To Give Myself To You.flac:6f0f7f45d33f35972044b98907742a15
+bd2024-10-28_t14_Watching The River Flow.flac:1b3d943ff6cbecf36c49e8803344d7fb
+bd2024-10-28_t15_Mother Of Muses.flac:0b3b181d5d364e6eaccabcd634eda77e
+bd2024-10-28_t16_Goodbye Jimmy Reed.flac:94615c5eddc6951e674a7d75a122f074
+bd2024-10-28_t17_Every Grain Of Sand.flac:737e8aae5402c110f0fd837d9e4c283a
+===================
+===================
+===================
+=== shntool len for: bd24-10-28-Thelonious.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:14.47       66084188 B   ---   --   ---xx   flac  0.5435  bd2024-10-28_t01_All Along The Watchtower.flac
+     7:38.31       80864156 B   ---   --   ---xx   flac  0.5805  bd2024-10-28_t02_It Ain't Me, Babe.flac
+     5:52.60       62233964 B   ---   --   ---xx   flac  0.5188  bd2024-10-28_t03_I Contain Multitudes.flac
+     6:53.22       72904988 B   ---   --   ---xx   flac  0.5418  bd2024-10-28_t04_False Prophet.flac
+     4:43.13       49951820 B   ---   --   ---xx   flac  0.5078  bd2024-10-28_t05_When I Paint My Masterpiece.flac
+     4:51.05       51344204 B   ---   --   ---xx   flac  0.4711  bd2024-10-28_t06_Black Rider.flac
+     7:55.55       83919404 B   ---   --   ---xx   flac  0.5110  bd2024-10-28_t07_My Own Version Of You.flac
+     4:34.70       48498284 B   ---   --   ---xx   flac  0.5585  bd2024-10-28_t08_To Be Alone With You.flac
+     7:33.68       80069180 B   ---   --   ---xx   flac  0.5148  bd2024-10-28_t09_Crossing The Rubicon.flac
+     7:30.30       79450604 B   ---   --   ---xx   flac  0.5347  bd2024-10-28_t10_Desolation Row.flac
+    11:18.61      119742716 B   ---   --   ---xx   flac  0.4908  bd2024-10-28_t11_Key West (Philosopher Pirate).flac
+     5:52.72       62262188 B   ---   --   ---xx   flac  0.5696  bd2024-10-28_t12_It's All Over Now, Baby Blue.flac
+     7:01.51       74384396 B   ---   --   ---xx   flac  0.4459  bd2024-10-28_t13_I've Made Up My Mind To Give Myself To You.flac
+     6:55.06       73220156 B   ---   --   ---xx   flac  0.5981  bd2024-10-28_t14_Watching The River Flow.flac
+     5:38.58       59759660 B   ---   --   ---xx   flac  0.4267  bd2024-10-28_t15_Mother Of Muses.flac
+     8:15.50       87435644 B   ---   --   ---xx   flac  0.5649  bd2024-10-28_t16_Goodbye Jimmy Reed.flac
+     7:47.06       82392952 B   -b-   --   ---xx   flac  0.4715  bd2024-10-28_t17_Every Grain Of Sand.flac
+   116:38.30     1234518504 B                            0.5207  (17 files)
+===================
+===================
+===================

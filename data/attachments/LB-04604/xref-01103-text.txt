@@ -1,0 +1,120 @@
+===================
+===================
+===================
+=== Bob Dylan 2004-07-10 Motril  (SCHUBERT REC + ASM).ffp
+===================
+===================
+===================
+101 Announcement.flac:72f527c0f1af6ce303805d923d9c34ab
+102 Maggie's Farm.flac:9769142210808683b303c8f44f925719
+102 Tell Me That It Isn't True.flac:fc2b0f455b0d1057f7be88c00f0af865
+103 Cry A While.flac:6318bc38c3029e33f51430162d705eb5
+104 Girl Of The North Country.flac:188df003c2ef28ef65dec9cbda44bb64
+105 It's Alright, Ma (I'm Only Bleeding).flac:ffd0bc34872d27cf65acdc67eed61477
+106 Tweedle Dee & Tweedle Dum.flac:86324712a2462e4047d6af2abdc4307a
+107 Positively 4th Street.flac:44b4514c8ff59ba44416b844a5bc91f8
+108 Highway 61 Revisited.flac:e9b10c13c13fce87d8d307c5aa37c00e
+109 Just Like Tom Thumb's Blues.flac:28aee6c8c39b96e95dfbcadf6296a6a6
+201 A Hard Rain's A-Gonna Fall.flac:68aa38c216209bf71f72c24632c0fa9b
+202 If Dogs Run Free.flac:46c2f366ab3c22027035918b23c09469
+203 Honest With Me.flac:96c2fb598719d0a95c22ffadd1fa9b14
+204 Not Dark Yet.flac:d6d7a6fda5491e305ab31dde1fb346e3
+205 Summer Days.flac:435f3dcad4fcb11f6548d81a12a07f4c
+206 Mr. Tambourine Man.flac:3c165e86fd8e9c4df1eb8d2251f577da
+207 Like A Rolling Stone.flac:263a4e32800a60d61086252632d39b3d
+208 All Along The Watchtower.flac:cee2cd8fe3ac401930fc14b1d601d3ec
+===================
+===================
+===================
+=== Bob Dylan 2004-07-10 Motril  (SCHUBERT REC + ASM).md5
+===================
+===================
+===================
+95693ee3c7669e2006d54aab46b59ef6 *101 Announcement.flac
+a3a11eb008ee535413077c6870e76d79 *102 Maggie's Farm.flac
+3ac248ba6838b08d4f294ca1438ebb85 *102 Tell Me That It Isn't True.flac
+b576a60a43671f27133de9a9d3c0642e *103 Cry A While.flac
+ab01e6108e2a6fefdff9a57a4b53901a *104 Girl Of The North Country.flac
+e0d392096a59b95e98769b89483accfe *105 It's Alright, Ma (I'm Only Bleeding).flac
+6dff5e365c6a7a0d81bfb984c97ef4cf *106 Tweedle Dee & Tweedle Dum.flac
+ab863c5be6469af5c139fd00af79291b *107 Positively 4th Street.flac
+d74b2eaef59bd8af4180b717b8c18fef *108 Highway 61 Revisited.flac
+87a8e1a7bfd25540689babfae69ad232 *109 Just Like Tom Thumb's Blues.flac
+fade7baff42324e404c14e803379df1d *201 A Hard Rain's A-Gonna Fall.flac
+58be7c2f17483ce2c46c00c089c6c33b *202 If Dogs Run Free.flac
+52ab0a3793c4ff86cc2d86bfbaabc672 *203 Honest With Me.flac
+14f6c0f4cb7ce3f0b05d89a2cbf2f61b *204 Not Dark Yet.flac
+a86011b26712cb84547b5e5c58d1ff2c *205 Summer Days.flac
+8d85a0ceafb78d17e21561a6bb7c5469 *206 Mr. Tambourine Man.flac
+645f9498de0bd29f16b4762574fa087d *207 Like A Rolling Stone.flac
+e6da011780cbf5973b65a94e43f3e5c0 *208 All Along The Watchtower.flac
+d7af51228ef124a76c3eba384e5bcf30 *Bob Dylan 2004-07-10 Motril  (SCHUBERT REC + ASM).txt
+===================
+===================
+===================
+=== Bob Dylan 2004-07-10 Motril  (SCHUBERT REC + ASM).txt
+===================
+===================
+===================
+Bob Dylan
+=========
+
+Estadio Municipal Escribano Castilla
+Motril, Spain
+10 July 2004
+
+Recorded by: Schubert (+ additional soundmastering)
+
+Lineage: 
+Neumann SKM140 -> Neumann BS48i-2 -> Sony TDC-D100
+>WaveLab 6.01 > dBpower AMP Music Converter > MD5summer
+
+1. Maggie's Farm
+2. Tell Me That It Isn't True
+3. Cry A While
+4. Girl From The North Country
+5. It's Alright, Ma (I'm Only Bleeding)
+6. Tweedle Dee & Tweedle Dum
+7. Positively 4th Street
+8. Highway 61 Revisited
+9. Just Like Tom Thumb's Blues
+
+
+10. A Hard Rain's A-Gonna Fall
+11. If Dogs Run Free
+12. Honest With Me
+13. Not Dark Yet
+14. Summer Days
+15. Mr. Tambourine Man
+16. Like A Rolling Stone
+17. All Along The Watchtower
+
+Concert # 1643 of The Never-Ending Tour. 
+Concert # 16 of the 2004 Europe Summer Tour. 
+2004 concert # 55.
+Concert # 22 with the 18th Never-Ending 
+
+Tour Band: 
+Bob Dylan (vocal & piano), 
+Stu Kimball (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion).
+
+4, 5, 10, 15 acoustic with the band.
+2, 4, 7, 9, 11, 15 Bob Dylan (harmonica).
+2 Larry Campbell (pedal steel guitar).
+3, 12 Larry Campbell (slide guitar).
+5, 10 Larry Campbell (cittern).
+
+Notes.
+LB-numbers for this concert: LB-1962, LB-1965, LB-2069, LB-2089, LB-2370, LB-2557, LB-4427, LB-4604,
+LB-5524.
+
+First Bob Dylan concert in Motril, Spain.
+7 new songs (41%) compared to previous concert. No new songs for this tour.
+
+Stereo audience recording, 115 minutes.
+Session info updated 9 February 2010.
+===================
+===================
+===================

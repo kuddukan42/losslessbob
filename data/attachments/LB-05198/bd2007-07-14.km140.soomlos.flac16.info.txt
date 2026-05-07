@@ -1,0 +1,65 @@
+Bob Dylan
+Plain Dealer Pavilion
+Cleveland, Ohio
+July 14, 2007
+ 
+Disc 1:
+01. introduction [01:09] 
+02. Cat's In The Well [03:56] 
+03. Don't Think Twice, It's All Right [05:48]
+04. Watching The River Flow [04:58]
+05. It's Alright, Ma (I'm Only Bleeding)[07:10]
+06. To Ramona [05:10]
+07. The Levee's Gonna Break [06:58] 
+08. My Back Pages [07:02]
+09. Honest With Me [07:45]
+10. Spirit On The Water [07:09]
+11. Things Have Changed [06:47]
+12. When The Deal Goes Down [06:14]
+Total time: [70:15]
+
+Disc 2:
+01. Stuck Inside Of Mobile With The Memphis Blues Again [08:08]
+02. Nettie Moore [08:01]
+03. Highway 61 Revisited [09:10]
+    (encore) 
+04. Thunder On The Mountain [05:47]
+05. band introduction [00:43]
+06. Blowin' In The Wind [06:31]
+Total time: [38:25]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-07-14d1t01.flac:e0c64a40e5711fb17de81a972852be00
+bd2007-07-14d1t02.flac:ddca933dc660098e937ee869eb28be6a
+bd2007-07-14d1t03.flac:175280624b3a8d9867bc63dc8b8b0282
+bd2007-07-14d1t04.flac:c99cb9eea6014892df88a0d9a3aed426
+bd2007-07-14d1t05.flac:a4b4f838c75e0c7262612db3fad28da0
+bd2007-07-14d1t06.flac:81a47f65b7eebccf4c0b9452e4e628af
+bd2007-07-14d1t07.flac:79371411a0d01b10a8c7eff846ba0029
+bd2007-07-14d1t08.flac:2fbd2671a3f99273d531005e6ba95479
+bd2007-07-14d1t09.flac:8133d8b6137a53c3d77d9736ca3c7177
+bd2007-07-14d1t10.flac:97b6083af3fe83e450f471a06e0f4882
+bd2007-07-14d1t11.flac:f1576d197c6310ed1454090752d7711f
+bd2007-07-14d1t12.flac:99b29ed81ad905e211e8de026e0b6a83
+bd2007-07-14d2t01.flac:3eab847b659a615fae2ade2767cca555
+bd2007-07-14d2t02.flac:5d29b3dd494e3b32e63bd153bc1f1aa1
+bd2007-07-14d2t03.flac:d3d61d76d3f71627815def0920b9a33b
+bd2007-07-14d2t04.flac:9f4eb041ddb0cd4c25576e1c7cf91891
+bd2007-07-14d2t05.flac:df6c714c4ea38f23f8c227fa6ce163bc
+bd2007-07-14d2t06.flac:2cfc3f18dd486c0e2ba557ce8ae60b37
+
+
+ 
+

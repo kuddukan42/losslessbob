@@ -1,0 +1,113 @@
+===================
+===================
+===================
+=== 18 February 2003.txt
+===================
+===================
+===================
+
+BOB DYLAN
+
+Entertainment Centre
+Newcastle, New South Wales, Australia
+18 February 2003
+
+
+Disk 1
+1. Tweedle Dee & Tweedle Dum
+2. I'll Be Your Baby Tonight
+3. Highway 61 Revisited
+4. It's All Over Now, Baby Blue
+5. Things Have Changed
+6. The Wicked Messenger
+7. Boots Of Spanish Leather
+8. Masters Of War
+9. Mama, You Been On My Mind
+10. It's Alright, Ma (I'm Only Bleeding)
+11. Mr. Tambourine Man
+
+Disk 2
+12. Honest With Me
+13. Moonlight
+14. Summer Days
+15. Blowin' In The Wind
+16. All Along The Watchtower
+
+Concert # 1497 of The Never-Ending Tour. 
+Concert # 7 of the 2003 Tour Down Under. 
+2003 concert # 7.
+Concert # 7 with the 15th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & guitar), 
+Bill Burnette (guitar), 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion)
+
+7-11, 15 acoustic with the band.
+1-5, 10-14 Bob Dylan (piano).
+2, 6, 10 Bob Dylan (harmonica).
+2, 4 Larry Campbell (pedal steel guitar).
+10 Larry Campbell (cittern).
+12 Larry Campbell (slide guitar).
+
+Notes.
+LB-number for this concert: LB-0927.
+
+7 new songs (43%) compared to previous concert. 3 new songs for this tour.
+Stereo audience recording, 105 minutes.
+Session info updated 6 June 2009.
+
+
+
+===================
+===================
+===================
+=== 2003-02-18 Newcastle (Australia).ffp
+===================
+===================
+===================
+101 - Tweedle Dee & Tweedle Dum.flac:9f6a8db58e853add7b643824df6fad5b
+102 - I'll Be Your Baby Tonight.flac:3c1dbfb877a63f56cd072402f24cd7db
+103 - Highway 61 Revisited.flac:9e40fecc5affef74d1d4a39414928027
+104 - It's All Over Now, Baby Blue.flac:f5bcddc2950272c378e43e0800533662
+105 - Things Have Changed.flac:1de8ce3c8443755d16dbad49604bab2d
+106 - The Wicked Messenger.flac:ed83f8fee0b3f9737a06021e7cef41da
+107 - Boots Of Spanish Leather.flac:4ba067ee2c70f1fe11802505d223a94d
+108 - Masters Of War.flac:683626bfbea0a0f973ecbe1d3b25784e
+109 - Mama, You Been On My Mind.flac:06bca6d1f90a1c47fa76055a14ed3fa9
+110 - It's Alright, Ma (I'm Only Bleeding).flac:23ed8f51fa30d4fc56cf6efc532a3419
+111 - Mr. Tambourine Man.flac:0906d9265b1327e82804177a0093adcb
+201 - Honest With Me.flac:5b6801945a5f54b27bb4f800e0e32190
+202 - Moonlight.flac:4e8afb36b520a6a9aed4efc8124e9e2c
+203 - Summer Days.flac:0a56830c19dea3a6db2fc59a249d8f6e
+204 - Blowin' In The Wind.flac:26ed96430128643455f2cb8f0c9f5d2f
+205 - All Along The Watchtower.flac:b8c8c23d0642de3ffabad2a4454bcbb3
+===================
+===================
+===================
+=== 2003-02-18 Newcastle (Australia).md5
+===================
+===================
+===================
+3b8618ded9f0bef6b15bd988c6fac973 *101 - Tweedle Dee & Tweedle Dum.flac
+44c1e2d223358e6ecf3f4ac012e6b268 *102 - I'll Be Your Baby Tonight.flac
+f0912b98bd28058b954e6e152ae454ed *103 - Highway 61 Revisited.flac
+e3e089a79994a171a4a7c3118bf635ba *104 - It's All Over Now, Baby Blue.flac
+3bf45e5f1190e95f5e52b3dbefb46865 *105 - Things Have Changed.flac
+582cc48dea19636fa26309550517a98e *106 - The Wicked Messenger.flac
+0426e5067c35d9d5a6bc9385eb66f87e *107 - Boots Of Spanish Leather.flac
+a6f588c14d654994757f1df547339c8e *108 - Masters Of War.flac
+173a93f286ca798472d9cf4dc76c9d1b *109 - Mama, You Been On My Mind.flac
+74755fb71f0aba3e04c8da6c3b7435bf *110 - It's Alright, Ma (I'm Only Bleeding).flac
+5be9da14b398a4979c95b824ca4a2f97 *111 - Mr. Tambourine Man.flac
+ba00f01f0662fda9ac7fb0b3abdc6d73 *18 February 2003.txt
+527d16e28584468fb03e9f737671fbf4 *2003-02-18 Newcastle (Australia) Entertainment Center (D1).log
+854e125539f57140ed15923af1663cb0 *201 - Honest With Me.flac
+bca6e60aff4a17a1203dcb826ead1dce *202 - Moonlight.flac
+0ce0947a1bf1da514c40a9f97b388bf9 *203 - Summer Days.flac
+758fb9762f55f1596ef4398cb543f9d8 *204 - Blowin' In The Wind.flac
+749678e3372b55fca1c2138ce60a3174 *205 - All Along The Watchtower.flac
+===================
+===================
+===================

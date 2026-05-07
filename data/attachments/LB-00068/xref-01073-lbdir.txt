@@ -1,0 +1,108 @@
+===================
+===================
+===================
+=== md5 for: bd02-05-09-cc-c.flacf
+===================
+===================
+===================
+52ed70f7549b90ef884f1a16f1518fa0 *101 Intro.flac
+0bf9fd4b4ebcc67b15db79a84d83751b *102 Maggie's Farm.flac
+c22654876d991dc86559b709c2f3697a *103 Senor (Tales Of Yankee Power).flac
+c8113b8e6f302756a32a73026312e753 *104 It's Alright, Ma (I'm Only Bleeding).flac
+45fcae51940bcd9f4a9850282a0cc8f0 *105 One Too Many Mornings.flac
+5ad843cd54778b54861fc2061e15e807 *106 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+ec27b29625c1743a2a444555a8404881 *107 Moonlight.flac
+974da57fa45c02f2303e781c57219eb3 *108 I Don't Believe You.flac
+5a95bdc5945edb726dc812c9135def30 *109 Lonesome Day Blues.flac
+ff7c4f82f0e667746b9c77caa9078906 *110 Masters Of War.flac
+6dd5be4715aebc65917ba0c8fa97b1ba *111 Visions Of Johanna.flac
+3673eadd040282b0fc3125a2f2442cec *112 Don't Think Twice, It's All Right.flac
+57756f4f7bb3ad6df7255b0639af73eb *113 Blind Willie McTell.flac
+0cca5be6bfb1e8a8206c8c42484e50b4 *201 Summer Days.flac
+ab499713c19014caf7e34b3fd817648c *202 Drifter's Escape.flac
+98d17936b71cebfb68b15a1cc8647f27 *203 Rainy Day Women Nos 12 and 35.flac
+921dbf00c47672790596793008db8b3e *204 Things Have Changed.flac
+f935c491f59c7d5ce3d3925ee8595533 *205 Like A Rolling Stone.flac
+1f20a23868120751ecbe641036b10b5a *206 Forever Young.flac
+ce5968fb7116c1d896a1fc640d2b8d01 *207 Honest With Me.flac
+d3412ffcc40e7c2c5442e95e00c7a10d *208 Blowin' In The Wind.flac
+deefb59a2c678e9aac428a9dd5233c0a *209 All Along The Watchtower.flac
+6b1ea7bda9a949461b0ba26e96bd873b *210 Outro.flac
+cf3d72a587355d70fce3ded5a67c5087 *Bob Dylan - 2002-05-09 Manchester [Crystal Cat CC 641-642].txt
+9866090a1cfca13bb2890fa145c61eb4 *CatManchester1_8.jpg
+85f332a00983db28bcca3326d8c8770b *CatManchester2_3.jpg
+30896af191f5fab3137758d6e0cd02ec *CatManchester4_5.jpg
+0e1787582894a72107a9f9c29e12f8a8 *CatManchester6_7.jpg
+991f256ab949316923fa99947158e60e *CatManchesterB.jpg
+66bd78a78400efe58d1eaf48aa9af407 *CatManchesterBI.jpg
+9d775d61404ac4b60acb1f94b7b13ee3 *cover.jpg
+c5e83aa5c83890329210e8c3053bd81d *DigiFlawFinder-bd02-05-09-cc-c.flacf.wavf.html
+826b5fa7b0c35db5c0048de3c6375626 *lbdir-bd02-05-09-cc-c.flacf.txt
+e7dbfe4fcb4fb6d1490b3a48a857c340 *manchester 2002-cd01.tif
+d2c4db9639ca9c4a08c74fbac7c645d7 *manchester 2002-cd02.tif
+0ba9b8b077f34d011dbe5bf4892a3cfe *Torrent downloaded from Demonoid.me.txt
+===================
+===================
+===================
+=== ffp for: bd02-05-09-cc-c.flacf
+===================
+===================
+===================
+101 Intro.flac:e8f2096f21041ffd04a30a5066093b8d
+102 Maggie's Farm.flac:a8a6f84c13e784cf526d3a13affe692f
+103 Senor (Tales Of Yankee Power).flac:115192d63ec8f74bdf22999b5c7f786a
+104 It's Alright, Ma (I'm Only Bleeding).flac:b81fe315cc02c7ce60cd3cbaab94f363
+105 One Too Many Mornings.flac:4d00eb743dd5803b2ace34ef23f18668
+106 Stuck Inside Of Mobile With The Memphis Blues Again.flac:33831699717031d8ce194f532b097993
+107 Moonlight.flac:2a7e98c729745294ef084ba062a8e3d4
+108 I Don't Believe You.flac:b773f107686f3d8cfd507d898fe263f0
+109 Lonesome Day Blues.flac:95fad3f01831424f812b7f729b5774b6
+110 Masters Of War.flac:f6afea6b35fb13e5bb4aed3ff9e654af
+111 Visions Of Johanna.flac:374ea445dea00c3dc37ee2b72e0a56b0
+112 Don't Think Twice, It's All Right.flac:fea126155fb51d9dd64e2bfb972f422c
+113 Blind Willie McTell.flac:dfdeb970a8e8e2c8e19c280ec2c675e7
+201 Summer Days.flac:e7d6f3a528c564882a1f2d71d714d8ed
+202 Drifter's Escape.flac:1d64b0a06affa613ee5a3779cee5daee
+203 Rainy Day Women Nos 12 and 35.flac:4567c6a19a13d54248489896bc444ac1
+204 Things Have Changed.flac:35e9c3feeb656f1ac902bb903f041097
+205 Like A Rolling Stone.flac:30ec3171650e5e9e5f501cc704936ab9
+206 Forever Young.flac:39ed16b21d1cfbebff88f9b065c3b5a1
+207 Honest With Me.flac:f9b287c4482f91a2b769ba614b6f3fa4
+208 Blowin' In The Wind.flac:ccf7625ddcd647e1f31dd7719cf47fcc
+209 All Along The Watchtower.flac:b224323b9341cbb051e2420e68081299
+210 Outro.flac:b4ce50da59a5291c7fd1415cb05e66a2
+===================
+===================
+===================
+=== shntool len for: bd02-05-09-cc-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:06.22       11694188 B   ---   --   ---xx   flac  0.6014  101 Intro.flac
+     3:31.53       37345100 B   ---   --   ---xx   flac  0.7274  102 Maggie's Farm.flac
+     4:54.56       51993356 B   ---   --   ---xx   flac  0.6712  103 Senor (Tales Of Yankee Power).flac
+     6:44.53       71390300 B   ---   --   ---xx   flac  0.6681  104 It's Alright, Ma (I'm Only Bleeding).flac
+     6:21.29       67276652 B   ---   --   ---xx   flac  0.6313  105 One Too Many Mornings.flac
+     7:52.69       83423132 B   ---   --   ---xx   flac  0.6896  106 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     5:04.13       53656220 B   ---   --   ---xx   flac  0.6023  107 Moonlight.flac
+     6:19.05       66867404 B   ---   --   ---xx   flac  0.6639  108 I Don't Believe You.flac
+     7:26.00       78674444 B   ---   --   ---xx   flac  0.7027  109 Lonesome Day Blues.flac
+     5:09.66       54662876 B   ---   --   ---xx   flac  0.6197  110 Masters Of War.flac
+     9:10.22       97071788 B   ---   --   ---xx   flac  0.6434  111 Visions Of Johanna.flac
+     7:14.43       76658780 B   ---   --   ---xx   flac  0.6256  112 Don't Think Twice, It's All Right.flac
+     6:55.18       73248380 B   ---   --   ---xx   flac  0.6560  113 Blind Willie McTell.flac
+     8:06.24       85786892 B   ---   --   ---xx   flac  0.6760  201 Summer Days.flac
+     5:41.52       60274748 B   ---   --   ---xx   flac  0.7135  202 Drifter's Escape.flac
+    10:29.00      110955644 B   ---   --   ---xx   flac  0.6771  203 Rainy Day Women Nos 12 and 35.flac
+     6:08.00       64915244 B   ---   --   ---xx   flac  0.6806  204 Things Have Changed.flac
+     8:39.00       91551644 B   ---   --   ---xx   flac  0.6756  205 Like A Rolling Stone.flac
+     6:25.00       67914044 B   ---   --   ---xx   flac  0.6297  206 Forever Young.flac
+     7:09.00       75675644 B   ---   --   ---xx   flac  0.6845  207 Honest With Me.flac
+     7:24.00       78321644 B   ---   --   ---xx   flac  0.6182  208 Blowin' In The Wind.flac
+     7:09.74       75849692 B   ---   --   ---xx   flac  0.6569  209 All Along The Watchtower.flac
+     0:10.00        1764044 B   ---   --   ---xx   flac  0.3398  210 Outro.flac
+   145:12.74     1536971860 B                            0.6615  (23 files)
+===================
+===================
+===================

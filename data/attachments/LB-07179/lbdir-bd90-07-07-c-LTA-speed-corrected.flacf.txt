@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-07-07-c-LTA-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+899b538acf8eddcaa232caaba6996040  1990-07-07-Torhout-ticket.jpg
+0f662374c567b95e798c8f5fbbf566b9  1990-07-07-Torhout.nfo
+2790e3708d253a05a25fccf300c10535  1990-07-07-Torhout.txt
+a7648a1f281025cccfa03229768efbdc  1990-07_torhout-werchter-poster.jpg
+f99919344e7e1fb67e02125705646de9  bd1990-07-07d1t01.flac
+0c457b7ed610f733cea92c63ce9e8d33  bd1990-07-07d1t02.flac
+c809fdec75fbede387f0e53f508b5018  bd1990-07-07d1t03.flac
+97c1ff8be70ca78bab9c20040cc27968  bd1990-07-07d1t04.flac
+689b986864159b96174418a8ea29afc5  bd1990-07-07d1t05.flac
+dfd1a47c3bea58df5f148ed621402a85  bd1990-07-07d1t06.flac
+14d9c91908036f79f46e53c9ad1f79e7  bd1990-07-07d1t07.flac
+48625a15fb154351dd542f62519aa8e1  bd1990-07-07d1t08.flac
+adf25c4ba0dfe577ca44347cf6629857  bd1990-07-07d1t09.flac
+83ba6ab5ca24a45001be847de971f75f  bd1990-07-07d1t10.flac
+9d3e5a7180eb3d74070a57f35bf6bbd7  bd1990-07-07d1t11.flac
+d04a19d406c9fbc0dbe29518dcee8ea4  bd1990-07-07d1t12.flac
+ae07612d81399372458cd29d362dab07  bd1990-07-07d1t13.flac
+ce449b92d7f1a254c14dea87a8223fae  bd1990-07-07d1t14.flac
+c4bf3191f6018263149ffbc841d11b9c  bd1990-07-07d1t15.flac
+246b841b924e299a39e817f67ff8713b  fingerprint.ffp
+6db44cf363fd3ee7c6e2eec3d84070fa  LB-7168-Too-Fast.zip
+65c186917507601db959d9b47aa19895  md5sum.md5
+6add58ed8f02b48f41a045cb166708f2  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-07-07-c-LTA-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+bd1990-07-07d1t01.flac:c2a8fccc52cd0d69acbc1d48c824ee65
+bd1990-07-07d1t02.flac:8aac06dafb271d511eb698427dc1ee8f
+bd1990-07-07d1t03.flac:609cbe4b40cd195531048fde9ba838f6
+bd1990-07-07d1t04.flac:2ec24ea58882b36ee2af6fa48910da2e
+bd1990-07-07d1t05.flac:88098662dac4e1ecba9fd3e8117eb328
+bd1990-07-07d1t06.flac:abe8de5ec81d755bca1915e0b0122ccb
+bd1990-07-07d1t07.flac:ccd8c10b753f5294f8385237bf4b1bb6
+bd1990-07-07d1t08.flac:e14daeefbb9f81129b0a0d2666d0d4d3
+bd1990-07-07d1t09.flac:3e41813a54f4cace59033fd625436f1a
+bd1990-07-07d1t10.flac:221105e27e6513082fc2782700e8cd00
+bd1990-07-07d1t11.flac:726c10b178c11b0932d489099c83c9ab
+bd1990-07-07d1t12.flac:5d9111cd5f72a8f32a6c168c819bdb72
+bd1990-07-07d1t13.flac:8784d506d5902323b142c7e09a9a9772
+bd1990-07-07d1t14.flac:ffc0ba0564992fd59ef72eb4fc411f2a
+bd1990-07-07d1t15.flac:3128fe37223ae10dd22c6ebd20d25e71
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-07-07-c-LTA-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.48       33981740 B   ---   --   ---xx   flac  0.5392  bd1990-07-07d1t01.flac
+     5:14.68       55549580 B   ---   --   ---xx   flac  0.5156  bd1990-07-07d1t02.flac
+     4:48.22       50854988 B   ---   --   ---xx   flac  0.5205  bd1990-07-07d1t03.flac
+     4:36.09       48707612 B   ---   --   ---xx   flac  0.5435  bd1990-07-07d1t04.flac
+     4:30.48       47740940 B   ---   --   ---xx   flac  0.5643  bd1990-07-07d1t05.flac
+     5:03.06       53463356 B   ---   --   ---xx   flac  0.5579  bd1990-07-07d1t06.flac
+     5:49.64       61714172 B   ---   --   ---xx   flac  0.6118  bd1990-07-07d1t07.flac
+     4:04.59       43180412 B   ---   --   ---xx   flac  0.5712  bd1990-07-07d1t08.flac
+     5:04.21       53675036 B   ---   --   ---xx   flac  0.6046  bd1990-07-07d1t09.flac
+     3:57.20       41853884 B   ---   --   ---xx   flac  0.5949  bd1990-07-07d1t10.flac
+     4:55.09       52059212 B   ---   --   ---xx   flac  0.5654  bd1990-07-07d1t11.flac
+     3:51.38       40837820 B   ---   --   ---xx   flac  0.5801  bd1990-07-07d1t12.flac
+     6:01.27       63743948 B   ---   --   ---xx   flac  0.6266  bd1990-07-07d1t13.flac
+     4:10.48       44212940 B   ---   --   ---xx   flac  0.6271  bd1990-07-07d1t14.flac
+     4:41.19       49613132 B   ---   --   ---xx   flac  0.5472  bd1990-07-07d1t15.flac
+    70:01.56      741188772 B                            0.5726  (15 files)
+=================== 
+=================== 
+=================== 

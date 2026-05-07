@@ -1,0 +1,20 @@
+316a10a0ddb3a15a50259269c82e4254  2003-08-02 - Joliet (LB-1206).ffp
+5537878f62cc574fcb98b9fa54f32038  CD1 Dylans set\01 Silvio.flac
+c032bdc9aa9f7009a7a9b3c03e4ab716  CD1 Dylans set\02 If you see her, say hello.flac
+dfabd03346dc17091e7503b10da83300  CD1 Dylans set\03 Tweedle Dee & Tweedle Dum.flac
+e895fd9adc71592ae08e638c4b6fc083  CD1 Dylans set\04 Joey.flac
+f7e4fe33afb5815775630d6f9bb5b328  CD1 Dylans set\05 Highway 61 revisited.flac
+bf7c39867320e37a535c46bee32f7444  CD1 Dylans set\06 Don't think twice, it's all right.flac
+4473fbff8b9822cff0a5898a8996ec8d  CD1 Dylans set\07 Cold irons bound.flac
+ba23e0458086f7120ec8649db13b50bb  CD1 Dylans set\08 A hard rain's a-gonna fall.flac
+0486f0f22b73cf6462a0a4a95fd4b4cb  CD1 Dylans set\09 Honest with me.flac
+479463722de636ed593ef83ed24a73fe  CD1 Dylans set\10 Summer days.flac
+b12382b4a44e4663811a42d679b907ae  CD1 Dylans set\11 All along the watchtower.flac
+b4de14450d8ec212c7db6edb26b54ab1  CD2 The Dead set\01 Intrumental jam.flac
+dcc6413d781c181e7f6f70debaa05966  CD2 The Dead set\02 Let the good times roll.flac
+c272d339315aae321aca86f153d7ee6c  CD2 The Dead set\03 Try just a little bit harder.flac
+e501d494d7e695e51b43719036061173  CD2 The Dead set\04 Just be still.flac
+dbac306c613f47de41130bd74bfb1bb0  CD2 The Dead set\05 Goin' down the road feelin' bad.flac
+a09cce22424623d727a137dad0d253a9  CD2 The Dead set\06 Senor (Tales of Yankee Power).flac
+6a2a1d65553674b0b4f3b8c9fd1723d9  CD2 The Dead set\07 Around and around.flac
+4802d64ea31d0b2a57332f33dea3389d  info.txt

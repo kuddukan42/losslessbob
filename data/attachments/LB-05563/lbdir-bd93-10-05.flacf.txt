@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-10-05.flacf 
+=================== 
+=================== 
+=================== 
+02d8711a1f5d8112fced14746e8e4b5d  Bob Dylan 1993-10-05 San Bernadino.txt
+c2517d1b1f46ff5f3ad2c1b0b0369103  D1\01 Track01.flac
+ab6e633b516af0061c00fd39aef28b22  D1\02 Track02.flac
+cef525767b1a5d1ae7f96b1503b6a993  D1\03 Track03.flac
+9dfe88be6a4476732bdeb074a0ee5f17  D1\04 Track04.flac
+bc422501e10323c5e99d379b5706ec24  D1\05 Track05.flac
+a668fcff69fe39df95b3956ef6a42cf9  D1\06 Track06.flac
+16c4d34def58cbec10b885b05a50d313  D1\07 Track07.flac
+703934fa9a9f81fc004a42bfa37fe173  D1\08 Track08.flac
+9580a1756bbf7ca112dc50badbf3e6a6  D1\09 Track09.flac
+fda45246f196f0c20a5a5e51a05aad23  D2\01 Track01.flac
+3b0974411f569a15754a12c87f1fd92f  D2\02 Track02.flac
+23daa1efc91fcab6efabd16e1243a367  D2\03 Track03.flac
+3cce51d53d63aaf59a014afb89fe37aa  D2\04 Track04.flac
+20d5f2fc1ca2c8fb70bf6977714c1bfe  fingerprintD1.ffp
+7f469e6ab23dc0c1177de8b46f8c837d  fingerprintD2.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-10-05.flacf\D2 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:f19d8fa9fef883f32082f2ec07ca5f32
+02 Track02.flac:74e87e2155828aa79d9a302551c6a008
+03 Track03.flac:b85aa5efeb2d905156d7a082254ecb1a
+04 Track04.flac:1002b8e72ff481e72b3e466ecfe37cdc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-10-05.flacf\D1 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:e2a503fd69044cdd0851f37bfee89faf
+02 Track02.flac:b579dcb55b98dccfb19730c73cc95619
+03 Track03.flac:7a83d939dca63e32212f5afe41fb473c
+04 Track04.flac:faf72dd2330bafa1e2f82432189eca26
+05 Track05.flac:bd5475b49ecafcd58549730484dc082a
+06 Track06.flac:afe25d21debaaedc2f3f09afdc95b1da
+07 Track07.flac:d2d3ef92de0b63cc107fa94168040f84
+08 Track08.flac:88baec9198fbf5885998207efa5b7e4b
+09 Track09.flac:5c71f5651a82351853b0c46eceec408d
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-10-05.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:31.57       90274508 B   ---   --   ---xx   flac  0.5739  01 Track01.flac
+     9:43.00      102841244 B   ---   --   ---xx   flac  0.5546  02 Track02.flac
+     8:41.07       91920908 B   ---   --   ---xx   flac  0.5006  03 Track03.flac
+    10:30.12      111160268 B   ---   --   ---xx   flac  0.4902  04 Track04.flac
+    37:26.01      396196928 B                            0.5284  (4 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-10-05.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.31       41174156 B   ---   --   ---xx   flac  0.5352  01 Track01.flac
+     9:26.45       99948284 B   ---   --   ---xx   flac  0.5652  02 Track02.flac
+     6:13.69       65959532 B   ---   --   ---xx   flac  0.5859  03 Track03.flac
+     7:20.18       77658380 B   ---   --   ---xx   flac  0.5387  04 Track04.flac
+     5:18.65       56248124 B   ---   --   ---xx   flac  0.5106  05 Track05.flac
+     6:55.51       73325996 B   ---   --   ---xx   flac  0.5414  06 Track06.flac
+     6:41.62       70882268 B   ---   --   ---xx   flac  0.4835  07 Track07.flac
+    11:34.42      122520428 B   ---   --   ---xx   flac  0.5106  08 Track08.flac
+     9:39.27      102199148 B   ---   --   ---xx   flac  0.5067  09 Track09.flac
+    67:04.35      709916316 B                            0.5297  (9 files)
+=================== 
+=================== 
+=================== 

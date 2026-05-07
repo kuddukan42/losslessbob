@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-20-inc-sonic.flacf 
+=================== 
+=================== 
+=================== 
+6097b0f5ac42fec0ec211be9ddda610e  Bob Dylan 1997-12-20 Los Angeles, Ca Flac16FFP.ffp
+8b31c4b54d9cffa8908f0c850a75cc90  Dylan 1997-12-20 Los Angeles.txt
+4b8a9313e84d03c0a3effa2d4dd484bc  Dylan1997-12-20d1t01.flac
+afad2167b04b2443a401be7e6d1fa6f0  Dylan1997-12-20d1t02.flac
+0856b3b76d97d2699ce2244b62d2ef7f  Dylan1997-12-20d1t03.flac
+f6857a6e66d9a1927babeda5eca8d2a4  Dylan1997-12-20d1t04.flac
+04beff98bc711eb8593306be49ee5cef  Dylan1997-12-20d1t06.flac
+7280aeed709b7df4d5631d067b22ed57  Dylan1997-12-20d1t07.flac
+30926a3fdbfaa4896abecd94f0909c33  Dylan1997-12-20d1t08.flac
+b01d9cfaf7ebfd98ea2de76dd5e5e673  Dylan1997-12-20d1t09.flac
+152773b58c91f43d66730411e700e9d2  Dylan1997-12-20d1t10.flac
+420c65d545c761ca6b39ae433a5c5f47  Dylan1997-12-20d1t11.flac
+6b0df25040a764516a6c2dd4e727201d  Dylan1997-12-20d1t12.flac
+7813f9175af109c0c6dc47301270ede3  Dylan1997-12-20d2t01.flac
+56f3a8f52844e5d8861047ce1401eddf  Dylan1997-12-20d2t02.flac
+7b7d5dce7aa10dee529e408b10629569  Dylan1997-12-20d2t03.flac
+542d464684e19adb858631da56818e07  Dylan1997-12-20d2t04.flac
+dec6e45f5c657792c53de4a8c9a0a752  Willie1997-12-20d2t05.flac
+2115caee102995d776380d4ae45f79b0  Willie1997-12-20d2t06.flac
+80ebf0e896424fa3635907d2bfbda343  Willie1997-12-20d2t07.flac
+58ab3832a4c225530e933af4e1ea3133  Willie1997-12-20d2t08.flac
+a6fd0a7e6303f1ca7059dc78b1b1df05  Willie1997-12-20d2t09.flac
+5a5be6ef0aad9af8aca00d23397a0aa0  Willie1997-12-20d2t10.flac
+a1fdb0bae20f78652b4e7b85f2b0ba74  Willie1997-12-20d2t11.flac
+0762575a5b8295ac5894fa5205fbffec  Willie1997-12-20d2t12.flac
+4ff0880ab810496783271c239e5eb75c  Willie1997-12-20d2t13.flac
+3df788c0189f495baf9a7ac3cd23441c  Willie1997-12-20d2t14.flac
+24d73976b2b14af321c6ef0cd9d1a601  Willie1997-12-20d2t15.flac
+cd606f7415cc430f1c254d14acf110fb  Willie1997-12-20d2t16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-20-inc-sonic.flacf 
+=================== 
+=================== 
+=================== 
+Dylan1997-12-20d1t01.flac:340a5fd7faa4edae4fe8a9ddc0275097
+Dylan1997-12-20d1t02.flac:915d387b721e96c7f3db05e580947a44
+Dylan1997-12-20d1t03.flac:9e3439883daa0f687bf077a026d8e1e4
+Dylan1997-12-20d1t04.flac:03d082d70acc07fa9028e49ac427b733
+Dylan1997-12-20d1t06.flac:f161a36281516bba8c82d2c52aec33fc
+Dylan1997-12-20d1t07.flac:36afd900e8054dad18e0de42e889347a
+Dylan1997-12-20d1t08.flac:22607a7f17efd8789a8be1813d190a63
+Dylan1997-12-20d1t09.flac:40c5b42a655a8d756d7c27afbba96bf4
+Dylan1997-12-20d1t10.flac:6539a812fcf7b01b0f5c4e6bd1bb3455
+Dylan1997-12-20d1t11.flac:9dd676984593a81c1108eb7607abfcbf
+Dylan1997-12-20d1t12.flac:bf1103f021f6a736517aab7074569a21
+Dylan1997-12-20d2t01.flac:4cf45fe3e8d862a7d7bb1076c6bc772d
+Dylan1997-12-20d2t02.flac:aed421c3fb5d6cd388f41ce38e7cbd86
+Dylan1997-12-20d2t03.flac:04b20d878652ded379a489e36de22374
+Dylan1997-12-20d2t04.flac:eb5de4215c51781feb5c245144747a8b
+Willie1997-12-20d2t05.flac:d9d98e9d5ee6af0cc42c1048d63b2849
+Willie1997-12-20d2t06.flac:d681608047b23ff1231f26eb6f09c63c
+Willie1997-12-20d2t07.flac:7b8f09b82175e4613739bbc75f0b3049
+Willie1997-12-20d2t08.flac:17dadcb596922734b683d78ac67e3a53
+Willie1997-12-20d2t09.flac:a04908f322fb9275d37eaa1afe74ba8f
+Willie1997-12-20d2t10.flac:1ccfcd7a9f7ed0175c664bb25a329c80
+Willie1997-12-20d2t11.flac:bbb69fa9033659c7203e85974063f4df
+Willie1997-12-20d2t12.flac:603d8217f4a3cb4d460f3ffd4e57f92c
+Willie1997-12-20d2t13.flac:6befa0690ea2f72ad048cd5887fca0d3
+Willie1997-12-20d2t14.flac:b862461e3a363433b4ab82341d47f75b
+Willie1997-12-20d2t15.flac:5519ea635519942ec00e19420450cce2
+Willie1997-12-20d2t16.flac:a1b0abbcd990c52e6f3b1917795e943b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-20-inc-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:00.23       74142140 B   ---   --   ---xx   flac  0.5229  Dylan1997-12-20d1t01.flac
+     5:30.36       58296716 B   ---   --   ---xx   flac  0.5402  Dylan1997-12-20d1t02.flac
+     6:33.59       69464012 B   ---   --   ---xx   flac  0.5687  Dylan1997-12-20d1t03.flac
+     5:12.56       55168556 B   ---   --   ---xx   flac  0.5400  Dylan1997-12-20d1t04.flac
+     7:02.31       74513756 B   ---   --   ---xx   flac  0.5978  Dylan1997-12-20d1t06.flac
+     5:02.63       53421020 B   ---   --   ---xx   flac  0.4657  Dylan1997-12-20d1t07.flac
+     6:52.57       72810908 B   ---   --   ---xx   flac  0.5040  Dylan1997-12-20d1t08.flac
+     8:14.47       87252188 B   ---   --   ---xx   flac  0.5769  Dylan1997-12-20d1t09.flac
+     7:24.63       78469820 B   ---   --   ---xx   flac  0.5087  Dylan1997-12-20d1t10.flac
+     6:32.35       69231164 B   ---   --   ---xx   flac  0.5252  Dylan1997-12-20d1t11.flac
+     7:35.29       80330252 B   ---   --   ---xx   flac  0.5384  Dylan1997-12-20d1t12.flac
+     8:16.74       87668492 B   ---   --   ---xx   flac  0.5521  Dylan1997-12-20d2t01.flac
+     6:11.61       65587916 B   ---   --   ---xx   flac  0.4999  Dylan1997-12-20d2t02.flac
+     5:38.18       59665580 B   ---   --   ---xx   flac  0.4810  Dylan1997-12-20d2t03.flac
+     5:43.58       60641660 B   ---   --   ---xx   flac  0.5522  Dylan1997-12-20d2t04.flac
+     3:15.59       34536812 B   ---   --   ---xx   flac  0.3983  Willie1997-12-20d2t05.flac
+     3:50.32       40647308 B   ---   --   ---xx   flac  0.4184  Willie1997-12-20d2t06.flac
+     1:37.32       17186108 B   ---   --   ---xx   flac  0.4245  Willie1997-12-20d2t07.flac
+     6:06.02       64567148 B   ---   --   ---xx   flac  0.3616  Willie1997-12-20d2t08.flac
+     2:34.07       27182108 B   ---   --   ---xx   flac  0.3859  Willie1997-12-20d2t09.flac
+     4:29.69       47613932 B   ---   --   ---xx   flac  0.3613  Willie1997-12-20d2t10.flac
+     2:16.23       24044540 B   ---   --   ---xx   flac  0.4321  Willie1997-12-20d2t11.flac
+     3:45.61       39833516 B   ---   --   ---xx   flac  0.3527  Willie1997-12-20d2t12.flac
+     5:00.04       52929452 B   ---   --   ---xx   flac  0.4184  Willie1997-12-20d2t13.flac
+     2:45.60       29247164 B   ---   --   ---xx   flac  0.3446  Willie1997-12-20d2t14.flac
+     2:43.25       28812044 B   ---   --   ---xx   flac  0.3905  Willie1997-12-20d2t15.flac
+     3:48.37       40306268 B   ---   --   ---xx   flac  0.4325  Willie1997-12-20d2t16.flac
+   141:06.71     1493570580 B                            0.4910  (27 files)
+=================== 
+=================== 
+=================== 

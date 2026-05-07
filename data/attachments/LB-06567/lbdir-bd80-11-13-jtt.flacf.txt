@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-13-jtt.flacf 
+=================== 
+=================== 
+=================== 
+04146579f4052b6067cd3a34dc9c817a  Disc One\Disc01Track01 Dylan Warfield_13.11.80.flac
+558972065c023d9f17baa050316a08e6  Disc One\Disc01Track02 Dylan Warfield_13.11.80.flac
+d14049cd0f7bbc13d3aa6a153cd4bab4  Disc One\Disc01Track03 Dylan Warfield_13.11.80.flac
+1f68cbcc1b6fc8b5650f753c4098e557  Disc One\Disc01Track04 Dylan Warfield_13.11.80.flac
+8e71e8bf7210e7d223ed869bf1c6fd1f  Disc One\Disc01Track05 Dylan Warfield_13.11.80.flac
+6d17361ce21643521a2547892bd887df  Disc One\Disc01Track06 Dylan Warfield_13.11.80.flac
+0b02620d8576f6e6c752f8c380911c4f  Disc One\Disc01Track07 Dylan Warfield_13.11.80.flac
+71c69d244f6081d440120ebd0d4dab79  Disc One\Disc01Track08 Dylan Warfield_13.11.80.flac
+487650df457c7ca2e10a757ec746f2d0  Disc One\Disc01Track09 Dylan Warfield_13.11.80.flac
+de388804f97126cdb9cce64d0e7232d5  Disc One\Disc01Track10 Dylan Warfield_13.11.80.flac
+9153b3d2b2b60d31208e5bd3cf59ff41  Disc One\Disc01Track11 Dylan Warfield_13.11.80.flac
+cc5598508b640d84ce4f177c421cf181  Disc Two\Disc02Track01 Dylan Warfield_13.11.80.flac
+e722ce122f83d4fdd73568ceb2bad49c  Disc Two\Disc02Track02 Dylan Warfield_13.11.80.flac
+b5919a2ad0704ca834338bc503d3a76a  Disc Two\Disc02Track03 Dylan Warfield_13.11.80.flac
+d73bc069cbe9b163b34d8e32da07e855  Disc Two\Disc02Track04 Dylan Warfield_13.11.80.flac
+d4945d9adeb7a86afcbe33b7db229de5  Disc Two\Disc02Track05 Dylan Warfield_13.11.80.flac
+2ec167d65357ce936478b781d1cf8f47  Disc Two\Disc02Track06 Dylan Warfield_13.11.80.flac
+9807291f805ea220d44d54123b727f26  Disc Two\Disc02Track07 Dylan Warfield_13.11.80.flac
+597e6f13fa3b8987d8390f0c7443289b  Disc Two\Disc02Track08 Dylan Warfield_13.11.80.flac
+44449834498bca76500a62dd33d79d30  Disc Two\Disc02Track09 Dylan Warfield_13.11.80.flac
+6fd88b1b74b71929cf03367e99b29a8c  Dylan - Fox Warfield November 13th 1980.md5
+492faa7b6c81aebc1ca981a6e386ab26  Dylan - Fox Warfield November 13th 1980.txt
+a93ed129666e08bbacbf9418a1ad0c5c  Dylan - Fox Warfield November 13th 1980_Info.txt
+1f65bdc1e2a5b8f71774f330da3e9b60  Fox Warfield - 13.11.1980 - F.jpg
+756cf6cbbd921051c1ec3b389c3e0e15  Fox Warfield - 13.11.1980 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-13-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Dylan Warfield_13.11.80.flac:23d895c003b4efc6753054b22a12c8db
+Disc01Track02 Dylan Warfield_13.11.80.flac:eb1317d002d79bd0156657d001b79441
+Disc01Track03 Dylan Warfield_13.11.80.flac:7801039fda9120c7392ddf58ce0d14f6
+Disc01Track04 Dylan Warfield_13.11.80.flac:e9a446935c627d520c9261dbac399fcd
+Disc01Track05 Dylan Warfield_13.11.80.flac:0ae645b7056b37582dd8ec4f5240c235
+Disc01Track06 Dylan Warfield_13.11.80.flac:d2aef7a3a951cd855d7b0d3834217ac4
+Disc01Track07 Dylan Warfield_13.11.80.flac:7417734383192dfe8e930acb6f146291
+Disc01Track08 Dylan Warfield_13.11.80.flac:3d539cbc9ad231c59e6485bdd47dde4d
+Disc01Track09 Dylan Warfield_13.11.80.flac:ba162203c1908259ba08ae167ee2de62
+Disc01Track10 Dylan Warfield_13.11.80.flac:a9c064bc84bffe52f4f44abdde64767c
+Disc01Track11 Dylan Warfield_13.11.80.flac:1db534d91ea60d046c4c8f6376eeb53e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-13-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Dylan Warfield_13.11.80.flac:1641792aee3780c537373ba580790a04
+Disc02Track02 Dylan Warfield_13.11.80.flac:151b5bb83e55b5be0affc7118befe015
+Disc02Track03 Dylan Warfield_13.11.80.flac:343a41b78fb95254bd61093a79defd88
+Disc02Track04 Dylan Warfield_13.11.80.flac:014933706c01996755bcc584588b19e8
+Disc02Track05 Dylan Warfield_13.11.80.flac:777aef980f1a00196b1cd2abec49dbd9
+Disc02Track06 Dylan Warfield_13.11.80.flac:d7bc417d67dd9d2a1228a3efa654a81f
+Disc02Track07 Dylan Warfield_13.11.80.flac:64f7f69e5bb6e06014b9730bc23c231c
+Disc02Track08 Dylan Warfield_13.11.80.flac:c9d1293f56341a28c95623fc17282f6e
+Disc02Track09 Dylan Warfield_13.11.80.flac:02d0850431ad2f69379c1e0fd9592dc8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-13-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.70       52379084 B   ---   --   ---xx   flac  0.5938  Disc01Track01 Dylan Warfield_13.11.80.flac
+     4:39.21       49265036 B   ---   --   ---xx   flac  0.5982  Disc01Track02 Dylan Warfield_13.11.80.flac
+     5:14.09       55410812 B   ---   --   ---xx   flac  0.5927  Disc01Track03 Dylan Warfield_13.11.80.flac
+     6:27.45       68372684 B   ---   --   ---xx   flac  0.5874  Disc01Track04 Dylan Warfield_13.11.80.flac
+     4:45.31       50346956 B   ---   --   ---xx   flac  0.5928  Disc01Track05 Dylan Warfield_13.11.80.flac
+     4:26.49       47037692 B   ---   --   ---xx   flac  0.5974  Disc01Track06 Dylan Warfield_13.11.80.flac
+     4:35.36       48594716 B   ---   --   ---xx   flac  0.5828  Disc01Track07 Dylan Warfield_13.11.80.flac
+     5:23.73       57148940 B   ---   --   ---xx   flac  0.6079  Disc01Track08 Dylan Warfield_13.11.80.flac
+     3:10.72       33685388 B   ---   --   ---xx   flac  0.5906  Disc01Track09 Dylan Warfield_13.11.80.flac
+     5:29.12       58063868 B   ---   --   ---xx   flac  0.5900  Disc01Track10 Dylan Warfield_13.11.80.flac
+     6:40.32       70635308 B   ---   --   ---xx   flac  0.6014  Disc01Track11 Dylan Warfield_13.11.80.flac
+    55:50.00      590940484 B                            0.5943  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-13-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:38.47       49149788 B   ---   --   ---xx   flac  0.6032  Disc02Track01 Dylan Warfield_13.11.80.flac
+     5:19.45       56377484 B   ---   --   ---xx   flac  0.5886  Disc02Track02 Dylan Warfield_13.11.80.flac
+     6:18.30       66749804 B   ---   --   ---xx   flac  0.5861  Disc02Track03 Dylan Warfield_13.11.80.flac
+     4:04.27       43105148 B   ---   --   ---xx   flac  0.5811  Disc02Track04 Dylan Warfield_13.11.80.flac
+     4:35.13       48540620 B   ---   --   ---xx   flac  0.5805  Disc02Track05 Dylan Warfield_13.11.80.flac
+     5:32.73       58736540 B   ---   --   ---xx   flac  0.6062  Disc02Track06 Dylan Warfield_13.11.80.flac
+     4:04.62       43187468 B   ---   --   ---xx   flac  0.6214  Disc02Track07 Dylan Warfield_13.11.80.flac
+     4:13.01       44631596 B   ---   --   ---xx   flac  0.6031  Disc02Track08 Dylan Warfield_13.11.80.flac
+     4:49.18       51021980 B   ---   --   ---xx   flac  0.6022  Disc02Track09 Dylan Warfield_13.11.80.flac
+    43:36.16      461500428 B                            0.5965  (9 files)
+=================== 
+=================== 
+=================== 

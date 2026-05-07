@@ -1,0 +1,123 @@
+===================
+===================
+===================
+=== Bob Dylan 1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (Olav ASM).ffp
+===================
+===================
+===================
+01 The times they are a-changin'.flac:ac1d89447f3dea7c8503c543ba50e268
+02 Highway 61 revisited.flac:41a6f1d1bfbcbb202ca1e55be2af19ee
+03 Ballad of a thin man.flac:e2be35f91b54e9189e38b3b653333ea0
+04 Shot of love.flac:f1bcb36ffb83519bc94557b3bdae8ebd
+05 Queen Jane approximately.flac:9f0467b1644cb5d43c51c4a715996afe
+06 Dead man, dead man.flac:cc50124b54b7ebae33d37ea88b6f2a98
+07 I shall be released.flac:1b34e2bcc12542dee31b26441e08bc78
+08 Clean cut kid.flac:5f50e47677539ba1bda27a8c613c0169
+09 I want you.flac:b828a3129c3a8f8545d67456d6f1debc
+10 John Brown.flac:6d0c79c1ac67a63890d8419e73983b11
+11 Watching the river flow.flac:4b8f4d6413e618a0a1bd12638ef4e6a2
+12 Slow train.flac:ac05ec2117043fff3a9f8dd6d8e9c04b
+13 Chimes of freedom.flac:63b31d16307bb70b6bc904ac695fd8ea
+14 Gotta serve somebody.flac:577def6cd4df3b7c800dfb2a469982c2
+===================
+===================
+===================
+=== Bob Dylan 1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (Olav ASM).txt
+===================
+===================
+===================
+01 The times they are a-changin'.flac:ac1d89447f3dea7c8503c543ba50e268
+02 Highway 61 revisited.flac:41a6f1d1bfbcbb202ca1e55be2af19ee
+03 Ballad of a thin man.flac:e2be35f91b54e9189e38b3b653333ea0
+04 Shot of love.flac:f1bcb36ffb83519bc94557b3bdae8ebd
+05 Queen Jane approximately.flac:9f0467b1644cb5d43c51c4a715996afe
+06 Dead man, dead man.flac:cc50124b54b7ebae33d37ea88b6f2a98
+07 I shall be released.flac:1b34e2bcc12542dee31b26441e08bc78
+08 Clean cut kid.flac:5f50e47677539ba1bda27a8c613c0169
+09 I want you.flac:b828a3129c3a8f8545d67456d6f1debc
+10 John Brown.flac:6d0c79c1ac67a63890d8419e73983b11
+11 Watching the river flow.flac:4b8f4d6413e618a0a1bd12638ef4e6a2
+12 Slow train.flac:ac05ec2117043fff3a9f8dd6d8e9c04b
+13 Chimes of freedom.flac:63b31d16307bb70b6bc904ac695fd8ea
+14 Gotta serve somebody.flac:577def6cd4df3b7c800dfb2a469982c2
+===================
+===================
+===================
+=== Bob Dylan 1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands.txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Sportpaleis Ahoy
+Rotterdam, The Netherlands
+September 19, 1987
+
+Taper: no info
+
+Olav ASM:
+Lineage: FLAC DVD-R > WAV > CoolEdit (checked > nothing) > T-RackS 2.0 (volume boost 3.5dB; no eq) > FLAC frontend (sector alignment) > DIME
+
+CD1:
+01. The Times They Are A-Changin'
+02. Highway 61 Revisited
+03. Ballad Of A Thin Man
+04. Shot Of Love
+05. Queen Jane Approximately
+06. Dead Man, Dead Man
+07. I Shall Be Released
+08. Clean Cut Kid
+09. I Want You
+10. John Brown
+11. Watching The River Flow
+12. Slow Train
+13. Chimes Of Freedom
+14. Gotta Serve Somebody
+
+Concert #9 of 1987 Temples In Flames Tour
+Concert #69 with Tom Petty & The Heartbreakers
+1987 concert #15
+
+Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers.
+Tom Petty (guitar)
+Mike Campbell (guitar)
+Benmont Tench (keyboards)
+Howie Epstein (bass)
+Stan Lynch (drums)
+The Queens Of Rhythm: Carolyn Dennis, Queen Esther Marrow, Madelyn Quebec (backing vocals)
+
+9 Bob Dylan (harmonica)
+13 Roger McGuinn (guitar & shared vocal)
+14 Roger McGuinn (guitar)
+
+BOOTLEGS:
+Live Silver Shadow T-179
+On A Night Like This Watchtower 009/010 2CD T-529
+Over Europe Archive Series LP
+Soldier Sons TMQ LP
+
+11 new songs (78%) compared to previous concert. 1 new song for this tour
+
+Stereo audience recording, 60 minutes
+Audience video recording, 60 minutes
+
+Bob Dylan 1987-09-19 Sportpaleis Ahoy, Rotterdam, The Netherlands (Olav ASM).ffp:
+01 The times they are a-changin'.flac:ac1d89447f3dea7c8503c543ba50e268
+02 Highway 61 revisited.flac:41a6f1d1bfbcbb202ca1e55be2af19ee
+03 Ballad of a thin man.flac:e2be35f91b54e9189e38b3b653333ea0
+04 Shot of love.flac:f1bcb36ffb83519bc94557b3bdae8ebd
+05 Queen Jane approximately.flac:9f0467b1644cb5d43c51c4a715996afe
+06 Dead man, dead man.flac:cc50124b54b7ebae33d37ea88b6f2a98
+07 I shall be released.flac:1b34e2bcc12542dee31b26441e08bc78
+08 Clean cut kid.flac:5f50e47677539ba1bda27a8c613c0169
+09 I want you.flac:b828a3129c3a8f8545d67456d6f1debc
+10 John Brown.flac:6d0c79c1ac67a63890d8419e73983b11
+11 Watching the river flow.flac:4b8f4d6413e618a0a1bd12638ef4e6a2
+12 Slow train.flac:ac05ec2117043fff3a9f8dd6d8e9c04b
+13 Chimes of freedom.flac:63b31d16307bb70b6bc904ac695fd8ea
+14 Gotta serve somebody.flac:577def6cd4df3b7c800dfb2a469982c2
+
+* * * Enjoy your Bobby Hobby * * *
+===================
+===================
+===================

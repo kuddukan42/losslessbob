@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-13-jj.flacf 
+=================== 
+=================== 
+=================== 
+02eec512e5d09ea6c7bc9d5677a294d1  [BRTGT]bd-le cannet-2006-07-13-j.j.rec.flacf.md5
+9cbe6d964b5060ffae6f411e60ae619c  bd-le cannet-2006-07-13-j.j.rec.d1\bd-le cannet-2006-07-13.d1fingerprints.txt
+bf947c99be60b355c9e3c60cc5b476a0  bd-le cannet-2006-07-13-j.j.rec.d1\d1t01-intro-maggie's farm.flac
+d14f02ad47d80217c2064d893b2822f2  bd-le cannet-2006-07-13-j.j.rec.d1\d1t02-the times they're a-changin'.flac
+f82e55187a789096adebf3c7eb2205b7  bd-le cannet-2006-07-13-j.j.rec.d1\d1t03-tweedle dee & tweedle dum.flac
+dfc9b5f668b4be7fd203f72570ce445b  bd-le cannet-2006-07-13-j.j.rec.d1\d1t04-mr tambourine man.flac
+e545e8b293ba28e773e1170dc51e45c6  bd-le cannet-2006-07-13-j.j.rec.d1\d1t05-it's alright ma.flac
+a59ce35defdd84f0f4404af8c14f1579  bd-le cannet-2006-07-13-j.j.rec.d1\d1t06-every grain of sand.flac
+bb391427bde28d469aaa85675c0dd76f  bd-le cannet-2006-07-13-j.j.rec.d1\d1t07-stuck inside of mobile.flac
+a677a3a267ef5fe3d7544be0144c4f1f  bd-le cannet-2006-07-13-j.j.rec.d1\d1t08-blind willie mctell.flac
+ef1c167df546b2c9a403b7455ef1876e  bd-le cannet-2006-07-13-j.j.rec.d1\d1t09-most likely you go your way.flac
+9a515be6f2daac55909440f3dd50e944  bd-le cannet-2006-07-13-j.j.rec.d2\bd-le cannet-2006-07-13.d2fingerprints.txt
+f9699645089946af5b8804a6342d2c82  bd-le cannet-2006-07-13-j.j.rec.d2\d2t01-just like a woman.flac
+ad26f285a3ce5b5868fe1349e231c152  bd-le cannet-2006-07-13-j.j.rec.d2\d2t02-honest with me.flac
+2e9090694deeadb4d48dc458e4f450fd  bd-le cannet-2006-07-13-j.j.rec.d2\d2t03-girl of the north country.flac
+a6b222f510e314b7e170af2d4b18b9e8  bd-le cannet-2006-07-13-j.j.rec.d2\d2t04-highway 61 revisited.flac
+139c6b213b469d80e13dc8d281baaa36  bd-le cannet-2006-07-13-j.j.rec.d2\d2t05-like a rolling stone.flac
+73d415f1782aa49dd707603d2e81100d  bd-le cannet-2006-07-13-j.j.rec.d2\d2t06-all along the watchtower.flac
+d2de6dc54b7721975f85d0c8fa302e9f  bd-le cannet-2006-07-13.textfile.txt
+e14b5eb3bced401319588594f13f497f  bd-le-cannet-2006-back.jpg
+d305a8cc04783081170d94c808455d44  bd-le-cannet-2006-front.jpg
+3e1d90ef048cc0b5c08bcb9f5b4abe3e  bd-le-cannet-2006-inside.jpg
+ff72db22b940577f30238342a13673cf  bd06-07-13-jj-LB-3965.txt
+3f6ba860c983fb7cf571b2a71a176408  bonus trakcs by L\My soul, have mercy on me.flac
+fe6540c6fd5f303339b34d8c96fc442a  bonus trakcs by L\Where the Blue Moon Lays.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-13-jj.flacf\bd-le cannet-2006-07-13-j.j.rec.d1 
+=================== 
+=================== 
+=================== 
+d1t01-intro-maggie's farm.flac:a7e2368128ac950349163a9017d717a1
+d1t02-the times they're a-changin'.flac:99cf6a4f39f55d09def5e69ad9f8cd83
+d1t03-tweedle dee & tweedle dum.flac:cba482c4b981f72230ae76d78e41b6ff
+d1t04-mr tambourine man.flac:54dc2d0d7af572ccfbe1c510c508cd71
+d1t05-it's alright ma.flac:0c26af4cfac3718863b28c4f6ae04fb1
+d1t06-every grain of sand.flac:ceffb8d1b378fdef98b4a4e7a5bd62f2
+d1t07-stuck inside of mobile.flac:398cf2d51165ece70c3e7f70d338f335
+d1t08-blind willie mctell.flac:f9b5d79043033f86db6f57c089e873a3
+d1t09-most likely you go your way.flac:50ada8a4858c9499d3e80c31be41dfbf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-13-jj.flacf\bd-le cannet-2006-07-13-j.j.rec.d2 
+=================== 
+=================== 
+=================== 
+d2t01-just like a woman.flac:b90b5d7a1ecf6ae287d04ee575d1f622
+d2t02-honest with me.flac:33f93b3d45953620d13842302daa5071
+d2t03-girl of the north country.flac:cc8b961a70387f0873459006c64a1787
+d2t04-highway 61 revisited.flac:7654fac3c83e6b726fe53205d33ef7cd
+d2t05-like a rolling stone.flac:52de5aa02863de310fb421a6ff8df7e4
+d2t06-all along the watchtower.flac:e9516f0b0dfc9a1b5a816b8f4238d056
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-13-jj.flacf\bonus trakcs by L 
+=================== 
+=================== 
+=================== 
+My soul, have mercy on me.flac:2645c0e42200fb0cea90bf1b6ec463bc
+Where the Blue Moon Lays.flac:d811d0d2a765dfa84c976ef15c4c740f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-13-jj.flacf\bd-le cannet-2006-07-13-j.j.rec.d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:32.24       58621292 B   ---   --   ---xx   flac  0.5609  d1t01-intro-maggie's farm.flac
+     7:15.51       76853996 B   ---   --   ---xx   flac  0.5353  d1t02-the times they're a-changin'.flac
+     5:40.43       60077180 B   ---   --   ---xx   flac  0.5427  d1t03-tweedle dee & tweedle dum.flac
+     7:15.43       76835180 B   ---   --   ---xx   flac  0.5397  d1t04-mr tambourine man.flac
+     7:30.71       79547036 B   ---   --   ---xx   flac  0.5626  d1t05-it's alright ma.flac
+     8:15.41       87414476 B   ---   --   ---xx   flac  0.4902  d1t06-every grain of sand.flac
+     8:35.40       90940124 B   ---   --   ---xx   flac  0.5681  d1t07-stuck inside of mobile.flac
+     6:55.60       73347164 B   ---   --   ---xx   flac  0.5536  d1t08-blind willie mctell.flac
+     6:45.36       71526716 B   ---   --   ---xx   flac  0.5476  d1t09-most likely you go your way.flac
+    63:47.34      675163164 B                            0.5438  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-13-jj.flacf\bd-le cannet-2006-07-13-j.j.rec.d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:35.42      101528828 B   ---   --   ---xx   flac  0.5207  d2t01-just like a woman.flac
+     6:35.70       69842684 B   ---   --   ---xx   flac  0.5698  d2t02-honest with me.flac
+     5:50.52       61862348 B   ---   --   ---xx   flac  0.4468  d2t03-girl of the north country.flac
+     9:35.52      101552348 B   ---   --   ---xx   flac  0.5125  d2t04-highway 61 revisited.flac
+     6:45.42       71540828 B   ---   --   ---xx   flac  0.5790  d2t05-like a rolling stone.flac
+     8:01.27       84911948 B   ---   --   ---xx   flac  0.5116  d2t06-all along the watchtower.flac
+    46:24.60      491238984 B                            0.5236  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-13-jj.flacf\bonus trakcs by L 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:32.46       69257036 B   ---   --   ---xx   flac  0.6705  My soul, have mercy on me.flac
+     6:52.09       72698012 B   ---   --   ---xx   flac  0.6126  Where the Blue Moon Lays.flac
+    13:24.55      141955048 B                            0.6409  (2 files)
+=================== 
+=================== 
+=================== 

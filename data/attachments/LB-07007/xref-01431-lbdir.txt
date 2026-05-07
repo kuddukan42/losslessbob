@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd99-09-18-c.flacf
+===================
+===================
+===================
+3699cb222cca3cc2e8d13779381782ba *CD1\01 I am the man, Thomas.flac
+592a36aae90240790f71ea59af3f1891 *CD1\02 Mr. Tambourine Man.flac
+f4df10bd5579038ff91a390e6e6a25c8 *CD1\03 It's alright, ma (I'm only bleeding).flac
+fa5dd16f987ddd60f2c63eb1cb5641de *CD1\04 Boots of Spanish leather.flac
+42b88d3e8f4f9940ceca1dcf51878361 *CD1\05 Tangled up in blue.flac
+c5363499668545135871c1604c720410 *CD1\06 All along the watchtower.flac
+b2f77a1428396b71aaf428800ada8e7b *CD1\07 Just like a woman.flac
+bbd702420fe8d8d5b9838831d226981c *CD1\08 Silvio.flac
+c41dd546c1c78c253b5a9655729a3d43 *CD1\09 Not dark yet.flac
+4e8a613c35ed6ae3dfa051524881bae4 *CD1\10 Highway 61 revisited.flac
+6dec7d5486c97f950471a775cc09e923 *CD2\01 Like a rolling stone.flac
+be0819adc6244209ee7218f885e47c0d *CD2\02 Blowin' in the wind.flac
+d31fad745276ef2beca169eb266b47d0 *CD2\03 The boxer [duet w Paul Simon].flac
+7afa1ab59ac50df4f793da49ded37e3b *CD2\04 That'll be the day [duet w Paul Simon].flac
+2a6fa69cfa4c6bdba48e0d796301e5cd *CD2\05 The wanderer [duet w Paul Simon].flac
+e32d0cbac3b67215d2e0c6502c4bebd5 *CD2\06 Knockin' on heaven's door [duet w Paul Simon].flac
+e58e1949abd8656f4e4de38a9c8ad5dc *Info\1999-09-18 Starplex Amphitheatre, Dallas, Texas, USA.doc
+8fb97bf72c65ecebe0056827a211ee52 *Info\fingerprint.ffp.txt
+00ec5e4703709f292b7008afb2c31bb4 *Info\md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd99-09-18-c.flacf
+===================
+===================
+===================
+CD1\01 I am the man, Thomas.flac:0decff3039879c8ce613069d880dcc93
+CD1\02 Mr. Tambourine Man.flac:3495df47b8402b0a25880c785f59c7e2
+CD1\03 It's alright, ma (I'm only bleeding).flac:64f543e9c6dc6d254dd7a21a688f19cd
+CD1\04 Boots of Spanish leather.flac:ad5a38c99fa49563efa656d51c0664c8
+CD1\05 Tangled up in blue.flac:4724f6363ca9afc9304c72f2e50e7b1c
+CD1\06 All along the watchtower.flac:2758fdb73c49d72f787195818436932b
+CD1\07 Just like a woman.flac:ba9b553388c59a87aaf3f640f481cdca
+CD1\08 Silvio.flac:33ac776fc980534c10b132fa3d197352
+CD1\09 Not dark yet.flac:b48a9cb745c6135f90827c01e33a12df
+CD1\10 Highway 61 revisited.flac:343ea06b846afb2be48cca8bdf2ca070
+CD2\01 Like a rolling stone.flac:6fa2b2099eba4069bd3263319bd917d5
+CD2\02 Blowin' in the wind.flac:cff61cbc32c3e6486f6e6360de225ae5
+CD2\03 The boxer [duet w Paul Simon].flac:f68ae043f58ae535d8df9887af331119
+CD2\04 That'll be the day [duet w Paul Simon].flac:1b71466d2ad9db9694421751105d4b5f
+CD2\05 The wanderer [duet w Paul Simon].flac:59aec964ef5471513b567affe8f1d92d
+CD2\06 Knockin' on heaven's door [duet w Paul Simon].flac:6c3addff8b3a0bb02a6399174e07c063
+===================
+===================
+===================
+=== shntool len for: bd99-09-18-c.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:35.34       27422012 B   ---   --   ---xx   flac  0.6034  01 I am the man, Thomas.flac
+     6:24.23       67791740 B   ---   --   ---xx   flac  0.5974  02 Mr. Tambourine Man.flac
+     7:29.66       79358876 B   ---   --   ---xx   flac  0.5813  03 It's alright, ma (I'm only bleeding).flac
+     6:12.73       65792540 B   ---   --   ---xx   flac  0.5011  04 Boots of Spanish leather.flac
+     8:07.10       85930364 B   ---   --   ---xx   flac  0.6373  05 Tangled up in blue.flac
+     4:19.15       45722924 B   ---   --   ---xx   flac  0.6058  06 All along the watchtower.flac
+     6:52.27       72740348 B   ---   --   ---xx   flac  0.5490  07 Just like a woman.flac
+     6:08.04       64924652 B   ---   --   ---xx   flac  0.6139  08 Silvio.flac
+     6:46.24       71674892 B   ---   --   ---xx   flac  0.4746  09 Not dark yet.flac
+     6:11.50       65562044 B   ---   --   ---xx   flac  0.6276  10 Highway 61 revisited.flac
+    61:07.26      646920392 B                            0.5774  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd99-09-18-c.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.25       76263644 B   ---   --   ---xx   flac  0.6672  01 Like a rolling stone.flac
+     5:37.44       59550332 B   ---   --   ---xx   flac  0.5616  02 Blowin' in the wind.flac
+     5:40.00       59976044 B   ---   --   ---xx   flac  0.5299  03 The boxer [duet w Paul Simon].flac
+     2:22.31       25121756 B   ---   --   ---xx   flac  0.6104  04 That'll be the day [duet w Paul Simon].flac
+     2:07.28       22468700 B   ---   --   ---xx   flac  0.5902  05 The wanderer [duet w Paul Simon].flac
+     5:25.71       57497036 B   ---   --   ---xx   flac  0.5954  06 Knockin' on heaven's door [duet w Paul Simon].flac
+    28:25.49      300877512 B                            0.5947  (6 files)
+===================
+===================
+===================

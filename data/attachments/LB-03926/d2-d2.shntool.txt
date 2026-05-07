@@ -1,0 +1,9 @@
+    length     expanded size   cdr  WAVE problems filename
+     5:50.36       61824716    ---   --   ---xx   bd2000-11-04d2t01.flac
+     7:25.44       78601532    ---   --   ---xx   bd2000-11-04d2t02.flac
+     3:53.47       41211788    ---   --   ---xx   bd2000-11-04d2t03.flac
+     4:48.38       50892620    ---   --   ---xx   bd2000-11-04d2t04.flac
+     6:16.73       66498140    ---   --   ---xx   bd2000-11-04d2t05.flac
+     5:03.52       53571548    ---   --   ---xx   bd2000-11-04d2t06.flac
+     5:32.63       58713020    ---   --   ---xx   bd2000-11-04d2t07.flac
+    38:51.53      411313364 B                     (totals for 7 files, 0.6456 overall compression ratio)

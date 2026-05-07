@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+b2a7cc62c08d6f0d59422a0366f8a47b  1997-02-16-Nagoya.md5
+336580055ef635cd1b15342c390d713e  1997-02-16-Nagoya.txt
+ef0bcc363862271affb60b899f2b3490  bd97-02-16-bach-LB-4413.txt
+64a4aad3d0702a87eadeee0833fd3ae4  Titel 101.flac
+9ec939a048d0db404b6d2065cff4ea9d  Titel 102.flac
+bae2250dc3969f2155981cb93464f936  Titel 103.flac
+c5905471896ac14d2f3a5664ddce88b1  Titel 104.flac
+d0f235b0a94475e99f8869cfae97d303  Titel 105.flac
+3f63d859fcae01b6071afdbb407244a4  Titel 106.flac
+b66be77e0b5319206b55601d4ce8ffa0  Titel 107.flac
+ed429b96fe6a129b575530253e17a21e  Titel 108.flac
+1b2bef88cb39680162d8235a814487cf  Titel 109.flac
+16c631d7d9f23b1ebcf7b8ad6a891da2  Titel 201.flac
+2d3ce449f12bf230e7a5f3e42df8e57c  Titel 202.flac
+b63f78e6b91a1d2312377f9cb5ab3e7c  Titel 203.flac
+767faa89258b81d781012b3de5130fdb  Titel 204.flac
+b6bffac4adc91e04fe283dbaebbf8d05  Titel 205.flac
+76fcc00fe11ce8fe1a7c9fff8d7f6cfe  Titel 206.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+Titel 101.flac:c114093b7712d3bbfee54c4c46f24626
+Titel 102.flac:f4482bb10fb121953c495ea5d9caea0a
+Titel 103.flac:da6d30da825d696e47fd95e584fb7bdb
+Titel 104.flac:020f0848ca42ad64f773e40697d40550
+Titel 105.flac:e7b4080fc056357bbcb745099d1e858c
+Titel 106.flac:07d70154344804bfca04a982c88eb9c3
+Titel 107.flac:499dd7ec5994d5e12e13fe308d3d1772
+Titel 108.flac:510901dbf5baffc425fbe4930921c15d
+Titel 109.flac:3d780b71406dd7f07cdc6cfb32987458
+Titel 201.flac:a1326c4b7e08d9ce1e92c5786ac3bc66
+Titel 202.flac:763d743ca1e40e1789693e8df0bfd8d9
+Titel 203.flac:1cb84c50c383cfe8b82a543b41ac0b7a
+Titel 204.flac:e493730d5f17b528c363a20848f1361f
+Titel 205.flac:7c379f6e8cbb46be49fe5ef274ffa600
+Titel 206.flac:9acceebeb724e9b7894f3769caa33643
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:51.63       51480620 B   ---   --   ---xx   flac  0.5003  Titel 101.flac
+     6:47.70       71959484 B   ---   --   ---xx   flac  0.4010  Titel 102.flac
+     6:33.13       69355820 B   ---   --   ---xx   flac  0.5143  Titel 103.flac
+     7:12.30       76275404 B   ---   --   ---xx   flac  0.4598  Titel 104.flac
+     6:01.67       63838028 B   ---   --   ---xx   flac  0.4566  Titel 105.flac
+     7:35.60       80403164 B   ---   --   ---xx   flac  0.5217  Titel 106.flac
+     7:16.17       76950428 B   ---   --   ---xx   flac  0.4543  Titel 107.flac
+     7:34.02       80090348 B   ---   --   ---xx   flac  0.4295  Titel 108.flac
+     8:02.47       85135388 B   ---   --   ---xx   flac  0.4222  Titel 109.flac
+     6:04.32       64284908 B   ---   --   ---xx   flac  0.4797  Titel 201.flac
+     8:46.44       92889932 B   ---   --   ---xx   flac  0.4180  Titel 202.flac
+     9:04.56       96093356 B   ---   --   ---xx   flac  0.4846  Titel 203.flac
+     9:33.36      101161916 B   ---   --   ---xx   flac  0.5208  Titel 204.flac
+     9:39.15      102170924 B   ---   --   ---xx   flac  0.4765  Titel 205.flac
+     7:52.49       83376092 B   ---   --   ---xx   flac  0.5447  Titel 206.flac
+   112:57.01     1195465812 B                            0.4724  (15 files)
+=================== 
+=================== 
+=================== 

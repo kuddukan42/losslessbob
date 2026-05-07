@@ -1,0 +1,348 @@
+===================
+===================
+===================
+=== bd1981-07-08_Stockholm.txt
+===================
+===================
+===================
+Bob Dylan
+Johanneshovs Isstadion
+Stockholm, Sweden
+July 08, 1981
+
+CDR trade. Unknow lineage. Spectral file included.
+Excellent quality !! complete with Gospel openers.
+AWESOME Set!!
+
+Disc 1
+ 1. [Dennis-King-Havis-Quebec] Come On In This House
+ 2. [Dennis-King-Havis-Quebec] It's Gonna Rain
+ 3. [Dennis-King-Havis-Quebec] Show Me The Way
+ 4. She Belongs To Me
+ 5. The Times They Are A-Changin'
+ 6. Gotta Serve Somebody
+ 7. I Believe In You
+ 8. Like A Rolling Stone
+ 9. Till I Get It Right
+10. Man Gave Names To All The Animals
+11. Maggie's Farm
+12. Simple Twist Of Fate
+13. Dead Man, Dead Man
+14. Girl Of The North Country
+15. Ballad Of A Thin Man
+16. Slow Train
+17. [Carolyn Dennis] Walk Around Heaven All Day
+
+Disc 2
+ 1. Let's Begin
+ 2. Lenny Bruce
+ 3. All Along The Watchtower
+ 4. What Can I Do For You?
+ 5. Solid Rock
+ 6. Mr. Tambourine Man
+ 7. Just Like A Woman
+ 8. Watered Down Love
+ 9. When You Gonna Wake Up
+10. In The Garden
+11. Blowin' In The Wind
+12. It's All Over Now, Baby Blue
+13. Knockin' On Heaven's Door
+
+
+
+Olof Bjorner:
+
+Concert # 11 of The Europe Summer Tour 1981. 1981 concert #15.
+
+	Bob Dylan (vocal & guitar), 
+	Fred Tackett (guitar), 
+	Steve Ripley (guitar), 
+	Willie Smith (keyboards), 
+	Tim Drummond (bass), 
+	Jim Keltner (drums), 
+	Clydie King, Carolyn Dennis, Regina Havis, Madelyn Quebec (background vocals).
+
+1, 2, 25 Bob Dylan solo (vocal & guitar).
+6 Regina Havis (vocal).
+14 Bob Dylan & Clydie King (shared vocal).
+
+Notes;
+ This show was recorded by Dylans crew.
+ The artist Bob Dylan saw on Swedish television was Mikael Wiehe.
+
+BobTalk
+
+- Thank you. I wanna introduce to you right now Regina McCreary. A young lady she been singing with me for awhile [man in the audience. LAY LADY LAY] "Lay Lady Lay" Oh! Ha-Ha! Yeah, I will play it, if you'll sing it. OK, this is Regina McCreary, she's from Nashville, Tennessee, where it's hot and humid, and she's gonna sing a song called [girl in the audience. WE LIKE YOU] Gonna Keep On Falling In Love, Jesus likes us too!, Until I Get It Right. And she's about to do that any time now.
+
+- Thank you. I wanna introduce another young lady singer. She's been singing with me now for about five years. Every place I go she sings with me. This is Carolyn Dennis. She's gonna sing a song called Walking Around Heaven All Day Carolyn Dennis.
+
+- Thank you, we gonna say goodnight now. I hope we played something that you came to hear. If we played something that you came to hear applaud. Ha-ha. And if we didn't play something you came to hear, applaud. I guess we played enough On the left, you met this young lady earlier, you'll probably see her again many times, Carolyn Dennis. Standing next to her is Madelyn Quebec. On the keyboards tonight, a young man I'm sure you'll hear a lot more from, Mr. William Smith. From Nashville, Tennessee, Regina McCreary. On one guitar, the brown one, Fred Tackett. On the other guitar, Steve Ripley. From, from Dallas, Texas, Clydie King. From Tulsa, Oklahoma, on the drums, Jim Keltner. On the bass guitar, Tim Drummond. I wanna thank you for inviting us to come. I hope youll invite us back. Goodnight! (at the end of In The Garden)
+
+- All right, thank you! I saw, I saw somebody on television last night play this song. I'm gonna try to do it as good as he did it.(before It's All Over Now, Baby Blue)
+
+7 new songs (26%) compared to previous concert. 2 new songs for this tour.
+
+Stereo audience recording, 115 minutes.
+
+Session info updated 1 September 2003.
+
+[TOP]
+===================
+===================
+===================
+=== Bob Dylan1981-07-08 Stockholm, Sweden [LB-02721](fixed).md5
+===================
+===================
+===================
+3374c8841d5c9e597f2329d8d15ece9c *bd1981-07-08d1t01.shn
+b2407830dc222f86a061818ebce1ed82 *bd1981-07-08d1t02-padded.shn
+038db268206ed1c8a0cb7c127d55ad5a *bd1981-07-08d1t03-padded.shn
+55a1553772f1cc8f8a554bd18560ab51 *bd1981-07-08d1t04-padded.shn
+3fb9b378a0988bd956b2001fb519045d *bd1981-07-08d1t05.shn
+fc1e1393c4340172c02c80f9de6b42f4 *bd1981-07-08d1t06.shn
+69d0b46d315c0a970ff63eaa6fde4d7a *bd1981-07-08d1t07.shn
+933ddea59a5128932b32f6d30b04bf6e *bd1981-07-08d1t08.shn
+9ae238f9d594418b8a88aeff9b2b0c5c *bd1981-07-08d1t09.shn
+5e9d19c4ce515d9ad37c0a3ad48cd3a5 *bd1981-07-08d1t10-padded.shn
+6c25824bd449bbd0ad5c7384ad2f69f3 *bd1981-07-08d1t11-padded.shn
+31217e1909d2542ff8edda0c0729325c *bd1981-07-08d1t12.shn
+b7c95596b11a081143cd7d71c20cebf6 *bd1981-07-08d1t13.shn
+0b276577f868b6f1ff73f3cda93a76b4 *bd1981-07-08d1t14-padded.shn
+8dfe67df93fffad785c20ba2e96a84fe *bd1981-07-08d1t15-padded.shn
+e26327a33f57a312b3d1b0309d89171f *bd1981-07-08d1t16-padded.shn
+b1a9c6e0d367c10060842e93b9c0737c *bd1981-07-08d1t17-padded.shn
+8b15ea4453d0c0d0e73c18104e4a5eab *bd1981-07-08d2t01.shn
+c3962448cd8b4ef9a350cb02866ba076 *bd1981-07-08d2t02-padded-stripped.shn
+df635e09327217fb759dea3ed68b3166 *bd1981-07-08d2t03-padded-stripped.shn
+653d9188f7664b904aff4e982d48ec18 *bd1981-07-08d2t04-padded-stripped.shn
+1083c5dcfc84ebd31485c6bee573bd58 *bd1981-07-08d2t05-padded-stripped.shn
+fa158c07c99270d6b65b66f28e2e2e60 *bd1981-07-08d2t06-padded.shn
+51f2e83060d55a2319880260e75a680a *bd1981-07-08d2t07-padded.shn
+dd01b67c45de23393d00f3411c72d137 *bd1981-07-08d2t08.shn
+21bf9f3b9a1765e271b9bb5b7acc3f91 *bd1981-07-08d2t09.shn
+2ea7035b9f231064479ddd663c45935c *bd1981-07-08d2t10.shn
+72ba984d98b436cb47961a0164848a44 *bd1981-07-08d2t11.shn
+ff688add37e82a5bd267d9f458547c51 *bd1981-07-08d2t12.shn
+997c5af5b45934c8306f3960f9e5bbe6 *bd1981-07-08d2t13.shn
+===================
+===================
+===================
+=== shntool_len_fixed.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.21       43267436 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t01.wav
+     4:03.64       43015772 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t02-padded.wav
+     3:05.37       32721068 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t03-padded.wav
+     4:25.31       46818956 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t04-padded.wav
+     4:28.05       47287004 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t05.wav
+     4:22.74       46390892 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t06.wav
+     5:07.70       54319484 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t07.wav
+     6:10.14       65300972 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t08.wav
+     4:04.23       43095740 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t09.wav
+     4:54.57       51995708 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t10-padded.wav
+     3:58.65       42136124 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t11-padded.wav
+     5:07.12       54183068 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t12.wav
+     4:38.55       49168604 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t13.wav
+     5:05.13       53832620 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t14-padded.wav
+     3:17.13       34781420 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t15-padded.wav
+     5:07.03       54161900 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t16-padded.wav
+     4:32.13       48011420 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t17-padded.wav
+     3:14.05       34233404 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t01.wav
+     4:27.25       47157644 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t02-padded-stripped.wav
+     2:58.53       31523900 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t03-padded-stripped.wav
+     5:46.20       61081484 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t04-padded-stripped.wav
+     4:14.67       44963228 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t05-padded-stripped.wav
+     5:43.10       60528764 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t06-padded.wav
+     4:41.62       49714268 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t07-padded.wav
+     4:17.48       45447740 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t08.wav
+     4:52.68       51668780 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t09.wav
+     9:13.23       97603340 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t10.wav
+     7:58.02       84323948 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t11.wav
+     5:39.58       59936060 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t12.wav
+     5:49.49       61678892 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t13.wav
+   145:32.10     1540349640 B                            1.0000  (30 files)
+===================
+===================
+===================
+=== shntool_len_original.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.21       43267436 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t01.wav
+     4:03.64       43015084 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t02.wav
+     3:05.37       32720140 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t03.wav
+     4:25.31       46818220 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t04.wav
+     4:28.05       47287004 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t05.wav
+     4:22.74       46390892 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t06.wav
+     5:07.70       54319484 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t07.wav
+     6:10.14       65300972 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t08.wav
+     4:04.23       43095740 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t09.wav
+     4:54.57       51994860 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t10.wav
+     3:58.64       42134620 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t11.wav
+     5:07.12       54183068 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t12.wav
+     4:38.55       49168604 B   ---   --   -----    wav  1.0000  bd1981-07-08d1t13.wav
+     5:05.13       53832012 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t14.wav
+     3:17.12       34779676 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t15.wav
+     5:07.02       54159596 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t16.wav
+     4:32.12       48009340 B   -b-   --   -----    wav  1.0000  bd1981-07-08d1t17.wav
+     3:14.05       34233404 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t01.wav
+     4:27.24       47156402 B   -b-   h-   -----    wav  1.0000  bd1981-07-08d2t02.wav
+     2:58.53       31522862 B   -b-   h-   -----    wav  1.0000  bd1981-07-08d2t03.wav
+     5:46.19       61079598 B   -b-   h-   -----    wav  1.0000  bd1981-07-08d2t04.wav
+     4:14.67       44962558 B   -b-   h-   -----    wav  1.0000  bd1981-07-08d2t05.wav
+     5:43.09       60527208 B   -b-   --   -----    wav  1.0000  bd1981-07-08d2t06.wav
+     4:41.62       49713612 B   -b-   --   -----    wav  1.0000  bd1981-07-08d2t07.wav
+     4:17.48       45447740 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t08.wav
+     4:52.68       51668780 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t09.wav
+     9:13.23       97603340 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t10.wav
+     7:58.02       84323948 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t11.wav
+     5:39.58       59936060 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t12.wav
+     5:49.49       61678892 B   ---   --   -----    wav  1.0000  bd1981-07-08d2t13.wav
+   145:32.02     1540331152 B                            1.0000  (30 files)
+===================
+===================
+===================
+=== updated setlist.txt
+===================
+===================
+===================
+This is the complete concert including tracks devoted to Dennis, King, Havis, & Quebec.  
+
+These were the original SHNs for LB-02721 but the file set seems to have started out with errors:
+
+The show was filled with SBEs and several tracks had problems with their headers (ref. shntool_len_original.txt).  Everything was fixed (ref. shntool_len_fixed.txt).  A new md5 was created for the new SHN file set.  
+
+Otherwise, I didn't touch the audio or do any editing.  Nothing was commercially released.  
+
+Bob Dylan
+Johanneshovs Isstadion
+Stockholm, Sweden
+July 8, 1981
+
+Source:  "CDR trade. Unknow(n) lineage. Spectral file included. Excellent quality !! complete with Gospel openers."
+
+LB-02721 with corrected files.  (It is likely losslessbob will issue a correction or amendment to this LB number later on.)  
+
+CD 1 (Dennis-King-Havis-Quebec):
+01. Come On In This House
+02. It's Gonna Rain
+03. Show Me The Way
+
+(Bob Dylan):
+04. She Belongs To Me
+05. The Times They Are A-Changin'
+06. Gotta Serve Somebody
+07. I Believe In You
+08. Like A Rolling Stone
+
+(Regina McCrary):
+09. Till I Get It Right
+
+(Bob Dylan):
+10. Man Gave Names To All The Animals
+11. Maggie's Farm
+12. Simple Twist Of Fate
+13. Dead Man, Dead Man
+14. Girl Of The North Country
+15. Ballad Of A Thin Man
+16. Slow Train
+
+(Carolyn Dennis):
+17. Walk Around Heaven All Day
+
+CD 2 (Bob Dylan):
+01. Let's Begin**
+02. Lenny Bruce
+03. All Along The Watchtower
+04. What Can I Do For You?
+05. Solid Rock
+06. Mr. Tambourine Man
+07. Just Like A Woman
+08. Watered Down Love
+09. When You Gonna Wake Up
+10. In The Garden
+11. Blowin' In The Wind
+12. It's All Over Now, Baby Blue
+13. Knockin' On Heaven's Door
+
+Total time = 145:32
+
+Personnel:
+Bob Dylan - vocals & guitar
+Fred Tackett - guitar
+Steve Ripley - guitar
+Willie Smith - keyboards
+Tim Drummond - bass
+Jim Keltner - drums
+Clydie King, Carolyn Dennis, Regina McCrary, Madelyn Quebec - background vocals
+**Bob Dylan & Clyde King - shared vocals 
+
+original:
+3374c8841d5c9e597f2329d8d15ece9c *bd1981-07-08d1t01.shn
+12fca946fd1495776525c82996df4d1f *bd1981-07-08d1t02.shn
+6bb18c9fb6084b141ead1b863147aca3 *bd1981-07-08d1t03.shn
+941c91690d13636c5a78cc080cf0d32b *bd1981-07-08d1t04.shn
+3fb9b378a0988bd956b2001fb519045d *bd1981-07-08d1t05.shn
+fc1e1393c4340172c02c80f9de6b42f4 *bd1981-07-08d1t06.shn
+69d0b46d315c0a970ff63eaa6fde4d7a *bd1981-07-08d1t07.shn
+933ddea59a5128932b32f6d30b04bf6e *bd1981-07-08d1t08.shn
+9ae238f9d594418b8a88aeff9b2b0c5c *bd1981-07-08d1t09.shn
+58b1eb7234013c713bb9ad2592af7b61 *bd1981-07-08d1t10.shn
+40c4d273822f0ee5dc61ccdf1512d735 *bd1981-07-08d1t11.shn
+31217e1909d2542ff8edda0c0729325c *bd1981-07-08d1t12.shn
+b7c95596b11a081143cd7d71c20cebf6 *bd1981-07-08d1t13.shn
+ea36a012fa22f14edd84f755b49f6e2c *bd1981-07-08d1t14.shn
+2a046c9f3eb175eef073af6d9ead96ef *bd1981-07-08d1t15.shn
+6baa6e9e67228f09331354bb219b64ab *bd1981-07-08d1t16.shn
+72043e8063d87b9a0c203d8bc5ca6aa3 *bd1981-07-08d1t17.shn
+8b15ea4453d0c0d0e73c18104e4a5eab *bd1981-07-08d2t01.shn
+1b5983462cad3d386f6368b6c965e00e *bd1981-07-08d2t02.shn
+834fef92a1933f779c85c8f878d3a5b0 *bd1981-07-08d2t03.shn
+8d92665249b33e51c452eac4fa32a9b3 *bd1981-07-08d2t04.shn
+c38aafd1e30d9fd5dac450f7577da37f *bd1981-07-08d2t05.shn
+90b1526cbdacbebdfbee2c14758d9e49 *bd1981-07-08d2t06.shn
+4fc71af211224ef5653cb5931595dd21 *bd1981-07-08d2t07.shn
+dd01b67c45de23393d00f3411c72d137 *bd1981-07-08d2t08.shn
+21bf9f3b9a1765e271b9bb5b7acc3f91 *bd1981-07-08d2t09.shn
+2ea7035b9f231064479ddd663c45935c *bd1981-07-08d2t10.shn
+72ba984d98b436cb47961a0164848a44 *bd1981-07-08d2t11.shn
+ff688add37e82a5bd267d9f458547c51 *bd1981-07-08d2t12.shn
+997c5af5b45934c8306f3960f9e5bbe6 *bd1981-07-08d2t13.shn
+
+fixed:
+3374c8841d5c9e597f2329d8d15ece9c *bd1981-07-08d1t01.shn
+b2407830dc222f86a061818ebce1ed82 *bd1981-07-08d1t02-padded.shn
+038db268206ed1c8a0cb7c127d55ad5a *bd1981-07-08d1t03-padded.shn
+55a1553772f1cc8f8a554bd18560ab51 *bd1981-07-08d1t04-padded.shn
+3fb9b378a0988bd956b2001fb519045d *bd1981-07-08d1t05.shn
+fc1e1393c4340172c02c80f9de6b42f4 *bd1981-07-08d1t06.shn
+69d0b46d315c0a970ff63eaa6fde4d7a *bd1981-07-08d1t07.shn
+933ddea59a5128932b32f6d30b04bf6e *bd1981-07-08d1t08.shn
+9ae238f9d594418b8a88aeff9b2b0c5c *bd1981-07-08d1t09.shn
+5e9d19c4ce515d9ad37c0a3ad48cd3a5 *bd1981-07-08d1t10-padded.shn
+6c25824bd449bbd0ad5c7384ad2f69f3 *bd1981-07-08d1t11-padded.shn
+31217e1909d2542ff8edda0c0729325c *bd1981-07-08d1t12.shn
+b7c95596b11a081143cd7d71c20cebf6 *bd1981-07-08d1t13.shn
+0b276577f868b6f1ff73f3cda93a76b4 *bd1981-07-08d1t14-padded.shn
+8dfe67df93fffad785c20ba2e96a84fe *bd1981-07-08d1t15-padded.shn
+e26327a33f57a312b3d1b0309d89171f *bd1981-07-08d1t16-padded.shn
+b1a9c6e0d367c10060842e93b9c0737c *bd1981-07-08d1t17-padded.shn
+8b15ea4453d0c0d0e73c18104e4a5eab *bd1981-07-08d2t01.shn
+c3962448cd8b4ef9a350cb02866ba076 *bd1981-07-08d2t02-padded-stripped.shn
+df635e09327217fb759dea3ed68b3166 *bd1981-07-08d2t03-padded-stripped.shn
+653d9188f7664b904aff4e982d48ec18 *bd1981-07-08d2t04-padded-stripped.shn
+1083c5dcfc84ebd31485c6bee573bd58 *bd1981-07-08d2t05-padded-stripped.shn
+fa158c07c99270d6b65b66f28e2e2e60 *bd1981-07-08d2t06-padded.shn
+51f2e83060d55a2319880260e75a680a *bd1981-07-08d2t07-padded.shn
+dd01b67c45de23393d00f3411c72d137 *bd1981-07-08d2t08.shn
+21bf9f3b9a1765e271b9bb5b7acc3f91 *bd1981-07-08d2t09.shn
+2ea7035b9f231064479ddd663c45935c *bd1981-07-08d2t10.shn
+72ba984d98b436cb47961a0164848a44 *bd1981-07-08d2t11.shn
+ff688add37e82a5bd267d9f458547c51 *bd1981-07-08d2t12.shn
+997c5af5b45934c8306f3960f9e5bbe6 *bd1981-07-08d2t13.shn
+===================
+===================
+===================

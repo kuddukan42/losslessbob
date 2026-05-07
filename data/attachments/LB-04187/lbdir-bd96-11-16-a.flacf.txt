@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-16-a.flacf 
+=================== 
+=================== 
+=================== 
+2eec20504339f8687f5839d68bd7d1d1  bd96-11-16-a-LB-4187.txt
+883398f919bf658509df688feff90040  Bob Dylan 16 nov 1996 Davenport.txt
+fb5e1f48f46724fa7f4e2b771beee2d8  CD1\01 Crash on the Levee (down in the flood).shn
+f0489b2fac6d384bbebf54d9dc83166f  CD1\02 I want you.shn
+f492ae1633e8bac5cd0ef520331c4523  CD1\03 All along the watchtower.shn
+3dd4dd3934041f9635e23509f6b79f8e  CD1\04 Shelter from the storm.shn
+71b4ed9cc663aafb9218856efc55112b  CD1\05 I'll be your baby tonight.shn
+241c295aea434c77bacde6f835f8c249  CD1\06 Silvio.shn
+953db6d52cdf55c4c87469013c4b6dd4  CD1\07 Tangled up in blue.shn
+ff91c03f52f938892c46d66b4034f516  CD1\08 It's all over now, baby blue.shn
+9ad1817b8e045b3b85aa069f27188e05  CD1\1996-11-16 Davenport, Iowa d1.md5
+f457657e4978c6c5d44111df416c5e84  CD2\09 Friend of the Devil.shn
+8c8d06ecb1909650bd141c20ec769e2b  CD2\10 Cat's in the well.shn
+c0b660db9ec5850b639580923fc16cfd  CD2\11 Never gonna be the same again.shn
+78d8386b56468c8370f6c7773e71c1af  CD2\12 Highway 61 revisited.shn
+64368e9b7214b52242e47944d92c84ad  CD2\13 Like a rolling stone.shn
+639ba60dbfd34f50ab76198fd25edf0f  CD2\14 One too many mornings.shn
+7d08c64d95ca2f8bb7c71045340cbc87  CD2\15 Rainy day women # 12 & 35.shn
+8735d0cb10dcb44aa3271e5c9dffd57c  CD2\1996-11-16 Davenport, Iowa d2.md5
+11d3fa40a664702a728d181759f82e27  Davenport161196.Jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-11-16-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+b2eafd1c4dc2f0ced346f0c6daaa1ca5  [shntool]  01_Crash_on_the_Levee__down_in_the_flood_.wav
+64711c563ece9703673654c847f6369e  [shntool]  02_I_want_you.wav
+844ff3a966832be996ad0cda1769e86f  [shntool]  03_All_along_the_watchtower.wav
+2165f1a63e9a37fe994633c92c248bd5  [shntool]  04_Shelter_from_the_storm.wav
+fef2d7c51f049d7f92608e661e6ee274  [shntool]  05_I_ll_be_your_baby_tonight.wav
+4b61814ae1a422c6d4f5d3c563e18bc5  [shntool]  06_Silvio.wav
+331c23e1874918dab3a8ad1db3630b78  [shntool]  07_Tangled_up_in_blue.wav
+acfb28fd8ba15e8cf0d06465c87f7ad2  [shntool]  08_It_s_all_over_now,_baby_blue.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-11-16-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+a73e5bb69a43bf3517d8078cf9dece0b  [shntool]  09_Friend_of_the_Devil.wav
+e8a5d0c99944b2981ab76b8a5b903950  [shntool]  10_Cat_s_in_the_well.wav
+572e649abec677ece5a12a10791576b4  [shntool]  11_Never_gonna_be_the_same_again.wav
+f9e204eae3adfbaef8e5217372b7b971  [shntool]  12_Highway_61_revisited.wav
+f0fe111e0b038869a770d811979071dc  [shntool]  13_Like_a_rolling_stone.wav
+fed4010263d1ccaf8ba1080bfb32924e  [shntool]  14_One_too_many_mornings.wav
+f88fcc98a7d605e557e07cec2ca2b630  [shntool]  15_Rainy_day_women___12___35.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-16-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.51       48453596 B   ---   --   -----    wav  1.0000  01_Crash_on_the_Levee__down_in_the_flood_.wav
+     5:37.67       59604428 B   ---   --   -----    wav  1.0000  02_I_want_you.wav
+     6:27.70       68431484 B   ---   --   -----    wav  1.0000  03_All_along_the_watchtower.wav
+     9:54.50      104899244 B   ---   --   -----    wav  1.0000  04_Shelter_from_the_storm.wav
+     7:15.08       76752860 B   ---   --   -----    wav  1.0000  05_I_ll_be_your_baby_tonight.wav
+     7:36.67       80596028 B   ---   --   -----    wav  1.0000  06_Silvio.wav
+     9:18.52       98553548 B   ---   --   -----    wav  1.0000  07_Tangled_up_in_blue.wav
+     8:34.34       90749612 B   ---   --   -----    wav  1.0000  08_It_s_all_over_now,_baby_blue.wav
+    59:20.24      628040800 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-16-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:09.39       86351372 B   ---   --   -----    wav  1.0000  09_Friend_of_the_Devil.wav
+     8:06.50       85848044 B   ---   --   -----    wav  1.0000  10_Cat_s_in_the_well.wav
+     5:57.14       63007772 B   ---   --   -----    wav  1.0000  11_Never_gonna_be_the_same_again.wav
+     8:53.31       94094156 B   ---   --   -----    wav  1.0000  12_Highway_61_revisited.wav
+     9:08.62       96813068 B   ---   --   -----    wav  1.0000  13_Like_a_rolling_stone.wav
+     8:02.12       85053068 B   ---   --   -----    wav  1.0000  14_One_too_many_mornings.wav
+     4:13.52       44751548 B   ---   --   -----    wav  1.0000  15_Rainy_day_women___12___35.wav
+    52:31.35      555919028 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 

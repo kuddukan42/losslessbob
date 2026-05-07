@@ -1,0 +1,26 @@
+dd61d80e96f8842dbab37df301a4cca0  00 intro.flac
+226158300048fc75637c8a83f0deb199  01 Watching The River Flow.flac
+2e8b596e201f359180f1486082f957dc  02 Don't Think Twice, It's All Right.flac
+8a0e9319399600f745a8d1afff09777a  03 Til I Fell In Love With You.flac
+5dc22ac77dcc3f5c04e91959cc59288f  04 Spirit On The Water.flac
+a5d8c6b326d7475e5fb8f900f075f4d4  05 Rollin And Tumblin.flac
+42bb5945ea62a4bf02cf19a3df10a5b5  06 Workingman's Blues no 2.flac
+0141456cfc25f07986bcb127362a1d18  07 Tweedle Dee and Tweedle Dum.flac
+1a80dfcb8babb30692eaf2696d03cff0  08 Ballad Of A Thin Man.flac
+80ec40c7405389db36afe4f41bd78b84  09 Highway 61 Revisited.flac
+05918cb0fa85d50dbbcfcda73080deb3  10 Nettie Moore.flac
+19dfb35d84aa467c939d71aa88051546  11 Thunder On The Mountain.flac
+0c1687760c3ffaab3f0c6829ab5e60f9  12 Like A Rolling Stone.flac
+ab52bf5e1846a4ef01f2b19fd41d6c4e  13 Jolene.flac
+7941a69a0a42f59b03d8c5f6f8b110c0  14 band introduction.flac
+15d52a498a465b76949b19c5be71bcd7  15 All Along The Watchtower.flac
+457b7947102eaba8d4d66543c9441631  BD2009-08-05 16-bit44kHz.ffp
+23b06e4c39ab135a79f65087d8f22789  BD2009-08-05.txt
+816460024f7dabe15de8d4e2deacca3e  images\0bob-dylan-marquee.jpg
+be1d2328c6c84dc447bbc4be88ee805c  images\1LARS.jpg
+3f948ded4943bd11bda6e2abece389d5  images\2jolene.jpg
+9c3efdec1c4b5c542d5d0af8b457ac1f  images\band1.jpg
+87f88b8e39ad24dcd1b400b46fbadfdb  images\band2.jpg
+bf323d87857d146c755156c00e6306e7  images\band3.jpg
+b1691d8938d4c2be753bef23a17da85b  images\band4.jpg
+16154688c05befba56adaedbab35a619  images\readme.txt

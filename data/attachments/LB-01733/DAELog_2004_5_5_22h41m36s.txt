@@ -1,0 +1,40 @@
+PlexTools Professional V2.06        Digital Audio Extraction
+Copyright (C) 1999-2003 Plextor SA/NV
+05 May 2004
+---------------------------------------------------------------
+
+
+Software information
+--------------------
+Windows XP V5.01.2600 Service Pack 1
+ASPI Manager: wnaspi32.dll version 4.60 (1021) (not used by PlexTools Professional)
+Description : ASPI for Win32 (95/NT) DLL (Adaptec)
+
+Source
+------
+ID:0 PLEXTOR  CD-R   PREMIUM   V1.03 (#098893), Read Speed: 18-40X CAV
+Disc Type    : AudioCD , 1 sessions, 8 Tracks, 62:23.66
+Taiyo Yuden (type 1), 79:59:72
+
+Digital Audio Extraction Error Information log
+----------------------------------------------
+
+Start of extraction
+Extracting track 1    (J:\Hank Williams Mothers Best Transcriptions\Bob Dylan Orange Peel 4_9_04\Disk1\OrangePeel_Disk2_Track01.wav - 08:36)
+    Elapsed time: 00:29
+Extracting track 2    (J:\Hank Williams Mothers Best Transcriptions\Bob Dylan Orange Peel 4_9_04\Disk1\OrangePeel_Disk2_Track02.wav - 05:40)
+    Elapsed time: 00:14
+Extracting track 3    (J:\Hank Williams Mothers Best Transcriptions\Bob Dylan Orange Peel 4_9_04\Disk1\OrangePeel_Disk2_Track03.wav - 07:18)
+    Elapsed time: 00:17
+Extracting track 4    (J:\Hank Williams Mothers Best Transcriptions\Bob Dylan Orange Peel 4_9_04\Disk1\OrangePeel_Disk2_Track04.wav - 06:27)
+    Elapsed time: 00:13
+Extracting track 5    (J:\Hank Williams Mothers Best Transcriptions\Bob Dylan Orange Peel 4_9_04\Disk1\OrangePeel_Disk2_Track05.wav - 12:50)
+    Elapsed time: 00:24
+Extracting track 6    (J:\Hank Williams Mothers Best Transcriptions\Bob Dylan Orange Peel 4_9_04\Disk1\OrangePeel_Disk2_Track06.wav - 05:52)
+    Elapsed time: 00:10
+Extracting track 7    (J:\Hank Williams Mothers Best Transcriptions\Bob Dylan Orange Peel 4_9_04\Disk1\OrangePeel_Disk2_Track07.wav - 07:37)
+    Elapsed time: 00:12
+Extracting track 8    (J:\Hank Williams Mothers Best Transcriptions\Bob Dylan Orange Peel 4_9_04\Disk1\OrangePeel_Disk2_Track08.wav - 08:00)
+    Elapsed time: 00:12
+8 track(s) successfully extracted
+Total Elapsed Time : 02:16

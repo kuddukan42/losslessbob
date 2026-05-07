@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-21.flacf 
+=================== 
+=================== 
+=================== 
+2cb4e75f452c435b4a1d8b9d0d02927d  bd81-10-21-LB-3081.txt
+e7e3694bed4aea894afce9a4bad2beaa  bd81-10-21.flacf.md5
+da21f7a4ddeb1d7392437b0b7864af86  bd81-10-21d1t01.flac
+de17c903d59ab92f87cb2e2a67804976  bd81-10-21d1t02.flac
+eb8c0e8c6f6b3f30326644d135d009bf  bd81-10-21d1t03.flac
+935fc39055ce818067d6538b40b890c7  bd81-10-21d1t04.flac
+abe10d480fc623e2bd00bda5b22b4e74  bd81-10-21d1t05.flac
+252075a89afc2b02e943acf764477ee2  bd81-10-21d1t06.flac
+a9d1ff1b0cc1b5715be18fd957881732  bd81-10-21d1t07.flac
+fff8b5760aa74a6765385a553436deb4  bd81-10-21d1t08.flac
+c0e0541614a983b6a1c80b3e9329f0a2  bd81-10-21d1t09.flac
+10b1374131acebd8fbb92ae7a87760c5  bd81-10-21d1t10.flac
+2d7eb7de87bb29ed8549a0bb17028cbd  bd81-10-21d1t11.flac
+849e0a3122043dfae00c794c997d7abd  bd81-10-21d1t12.flac
+52cb9d81a0eccae7230e4aeb71100e1e  bd81-10-21d1t13.flac
+fc7d37a8a038266fef5f42d7664b43bc  bd81-10-21d1t14.flac
+182612e58ce31237f89a0cbfde974fd5  bd81-10-21d2t01.flac
+d9d5d21b0f6b1a0347fe87a3dcc87463  bd81-10-21d2t02.flac
+095478f199b73c92096c0e147c8bde49  bd81-10-21d2t03.flac
+5ddf9fea8d93141d20c904eb9eac828b  bd81-10-21d2t04.flac
+9602b48e6edce5cf93fe3c985221d537  bd81-10-21d2t05.flac
+17d91db5be0fb0f10c6eecd06791cbd4  bd81-10-21d2t06.flac
+184583b33a5ecf7f5e16eeb696bbc4a8  bd81-10-21d2t07.flac
+60e1a230a72aeea556f8dbc1df4514dc  bd81-10-21d2t08.flac
+8818dad13981aa0b6b8109ef35ba0b38  bd81-10-21d2t09.flac
+7bac9aa6acf72a9dfd7eba7d4bd9d7de  bd81-10-21d2t10.flac
+74bcdc605385d71201f0f94863c3fe01  bd81-10-21d2t11.flac
+3813238e562620ea9d8659f659bd8501  bd81-10-21d2t12.flac
+5f10315a89d8666d9632c37d61183145  bd81-10-21d2t13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-21.flacf 
+=================== 
+=================== 
+=================== 
+bd81-10-21d1t01.flac:92b26ac733818d39b8f3d8826a19eab2
+bd81-10-21d1t02.flac:d288d813c93d9fe171e72423cc84f9b9
+bd81-10-21d1t03.flac:b545c34348a6247074b590f439891662
+bd81-10-21d1t04.flac:8fa518db9f9b4af0b07cb326391da18e
+bd81-10-21d1t05.flac:1be4f90666fcff5463e1f97c7bdcc4d2
+bd81-10-21d1t06.flac:ed2078c5eb85a4b1f9938c3d8060c813
+bd81-10-21d1t07.flac:667368862b680f27d5b1102ca5878017
+bd81-10-21d1t08.flac:ca3f0af7bca3d91ddd7b68dca92e9ecf
+bd81-10-21d1t09.flac:8c0f85248d7e9f98bb7668ab8d000893
+bd81-10-21d1t10.flac:5a3b7e30b6f93c33beb88d1ba7abcdf3
+bd81-10-21d1t11.flac:08cc6de889cbe480025651a3540ee91a
+bd81-10-21d1t12.flac:cbf9cc16d8693dd3aeca5865bd0c971a
+bd81-10-21d1t13.flac:8f7bd72b89c1e3e75815963867995a60
+bd81-10-21d1t14.flac:e90303679fe2838efbc5eb2bb484cb72
+bd81-10-21d2t01.flac:43b7b5b3a85c5ce8ec57bd90f27a1c14
+bd81-10-21d2t02.flac:967690009e18075d512a2b291edc0598
+bd81-10-21d2t03.flac:f9fe4df9daeebd5dd39ad82a44830a2d
+bd81-10-21d2t04.flac:c4cfd85cbe5e522cbd96cf256141d9b9
+bd81-10-21d2t05.flac:0161aa427599b69e0107e0e711b354c1
+bd81-10-21d2t06.flac:134aae0650a108a71f51617e7ca24142
+bd81-10-21d2t07.flac:97d7ecf62d9baaf5cbfe520fd8aa9a16
+bd81-10-21d2t08.flac:6f3bd18710876c5e14e1bdedf7f3d3d9
+bd81-10-21d2t09.flac:95c015d0abaaab564f1d80fbc0ad4a68
+bd81-10-21d2t10.flac:d12697d93a79414b621a0e38e57472ab
+bd81-10-21d2t11.flac:037349a94048bd6cd25675ccc849996b
+bd81-10-21d2t12.flac:c31461655b007dd1959d464de4ec6faa
+bd81-10-21d2t13.flac:431fed0e6a4382a274e98f8d3236279b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-21.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.15       36902924 B   ---   --   ---xx   flac  0.5788  bd81-10-21d1t01.flac
+     4:56.74       52388492 B   ---   --   ---xx   flac  0.4747  bd81-10-21d1t02.flac
+     7:05.46       75078236 B   ---   --   ---xx   flac  0.5661  bd81-10-21d1t03.flac
+     4:27.43       47199980 B   ---   --   ---xx   flac  0.5119  bd81-10-21d1t04.flac
+     4:49.51       51099596 B   ---   --   ---xx   flac  0.5361  bd81-10-21d1t05.flac
+     4:41.62       49714268 B   ---   --   ---xx   flac  0.6013  bd81-10-21d1t06.flac
+     5:12.14       55069772 B   ---   --   ---xx   flac  0.4917  bd81-10-21d1t07.flac
+     3:43.60       39478364 B   ---   --   ---xx   flac  0.5428  bd81-10-21d1t08.flac
+     3:36.61       38245916 B   ---   --   ---xx   flac  0.5216  bd81-10-21d1t09.flac
+     4:27.24       47155292 B   ---   --   ---xx   flac  0.5697  bd81-10-21d1t10.flac
+     5:02.20       53319884 B   ---   --   ---xx   flac  0.5879  bd81-10-21d1t11.flac
+     3:23.72       35978588 B   ---   --   ---xx   flac  0.6101  bd81-10-21d1t12.flac
+     6:36.21       69903836 B   ---   --   ---xx   flac  0.5496  bd81-10-21d1t13.flac
+     7:14.46       76665836 B   ---   --   ---xx   flac  0.6130  bd81-10-21d1t14.flac
+     5:02.71       53439836 B   ---   --   ---xx   flac  0.6086  bd81-10-21d2t01.flac
+     4:59.52       52865948 B   ---   --   ---xx   flac  0.6448  bd81-10-21d2t02.flac
+     4:36.56       48818156 B   ---   --   ---xx   flac  0.6122  bd81-10-21d2t03.flac
+     6:38.20       70254284 B   ---   --   ---xx   flac  0.6334  bd81-10-21d2t04.flac
+     4:46.01       50452796 B   ---   --   ---xx   flac  0.6012  bd81-10-21d2t05.flac
+     5:07.48       54267740 B   ---   --   ---xx   flac  0.6304  bd81-10-21d2t06.flac
+     4:34.40       48427724 B   ---   --   ---xx   flac  0.6258  bd81-10-21d2t07.flac
+     5:11.01       54862796 B   ---   --   ---xx   flac  0.6058  bd81-10-21d2t08.flac
+     5:27.13       57713420 B   ---   --   ---xx   flac  0.6298  bd81-10-21d2t09.flac
+     7:13.47       76491788 B   ---   --   ---xx   flac  0.6164  bd81-10-21d2t10.flac
+     5:24.63       57301820 B   ---   --   ---xx   flac  0.6528  bd81-10-21d2t11.flac
+     6:28.39       68534972 B   ---   --   ---xx   flac  0.6255  bd81-10-21d2t12.flac
+     5:40.08       59994860 B   ---   --   ---xx   flac  0.6714  bd81-10-21d2t13.flac
+   139:59.18     1481627124 B                            0.5921  (27 files)
+=================== 
+=================== 
+=================== 

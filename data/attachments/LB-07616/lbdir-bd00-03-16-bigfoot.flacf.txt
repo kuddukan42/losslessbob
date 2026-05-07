@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-16-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+3b997da8aebcef65e8edbf47f12d343c  BobDylan2000-03-16.ffp
+ccf39ef04f80de0cde8addb7b59d4ceb  BobDylan2000-03-16.txt
+bc9d17a3e4e1b69c9e2bbd107bb22013  Dylan2000-03-16d1tr01.flac
+ffdd8d7a755e826985e67d3517c5dfea  Dylan2000-03-16d1tr02.flac
+dea9a5fa0ef9c81c63018c251a044fd6  Dylan2000-03-16d1tr03.flac
+4394ffa653833e41855277833a4a23b7  Dylan2000-03-16d1tr04.flac
+d84649852b38c53dacc716738a1a58a7  Dylan2000-03-16d1tr05.flac
+3107199fa16d35d8884260c765f4ce69  Dylan2000-03-16d1tr06.flac
+c5e86f84dc49ba9dfb58ec938b35e128  Dylan2000-03-16d1tr07.flac
+939c16b8b773d208871cab649403e53d  Dylan2000-03-16d1tr08.flac
+ec2b80b9a5e01667ccb41c0517e16bc1  Dylan2000-03-16d1tr09.flac
+11998875a05247a93d4c5ae2c52170b5  Dylan2000-03-16d1tr10.flac
+79f5088522eb2077f7c551544dbcd8ae  Dylan2000-03-16d2tr01.flac
+c7e3f1b29294ddc33d6a48f827a2793a  Dylan2000-03-16d2tr02.flac
+880416f5365d000b23f72aaf03674c7b  Dylan2000-03-16d2tr03.flac
+05fc6a01604b0828470324bcbd4baae0  Dylan2000-03-16d2tr04.flac
+303793f39994dadf504281f501dee4d3  Dylan2000-03-16d2tr05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-16-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+Dylan2000-03-16d1tr01.flac:2b6ae01dac78571d5822260a0e9968e3
+Dylan2000-03-16d1tr02.flac:f451d29c8497fa081d0b72827ed8151c
+Dylan2000-03-16d1tr03.flac:435e316f38ce01c4b0bc1259d8f71ed7
+Dylan2000-03-16d1tr04.flac:30730fde36ac96524ec4acef83156463
+Dylan2000-03-16d1tr05.flac:e2c8270b08c8f29430d94e4c6f0a9a94
+Dylan2000-03-16d1tr06.flac:aad2eef926da0ca241d4b210ccafa40a
+Dylan2000-03-16d1tr07.flac:17a8241e9a94d124a373eb0a819cdd1b
+Dylan2000-03-16d1tr08.flac:9e9d9af0e4c15e64e428b51e8c5363ee
+Dylan2000-03-16d1tr09.flac:17bc9d68b64099f9f07ab30096e849cc
+Dylan2000-03-16d1tr10.flac:30bb5f77399c22f0b9ce04bca7126bea
+Dylan2000-03-16d2tr01.flac:e5cc7ba70fb7648d78af5490aebc0c4d
+Dylan2000-03-16d2tr02.flac:3d5fdbca2e2f4c432b72a2a336867543
+Dylan2000-03-16d2tr03.flac:7afd2848639266c8f5fc1152eea8ddc4
+Dylan2000-03-16d2tr04.flac:11a5c3a8fa0b4e46442bf9944edd0ee4
+Dylan2000-03-16d2tr05.flac:58ae94f2167b427048ec86d22ea59e5e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-16-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:35.11       27367916 B   ---   --   ---xx   flac  0.5649  Dylan2000-03-16d1tr01.flac
+     4:22.07       46233308 B   ---   --   ---xx   flac  0.4254  Dylan2000-03-16d1tr02.flac
+     7:34.39       80177372 B   ---   --   ---xx   flac  0.4872  Dylan2000-03-16d1tr03.flac
+     5:08.30       54401804 B   ---   --   ---xx   flac  0.4333  Dylan2000-03-16d1tr04.flac
+     7:15.32       76809308 B   ---   --   ---xx   flac  0.5871  Dylan2000-03-16d1tr05.flac
+     3:48.68       40379180 B   ---   --   ---xx   flac  0.4535  Dylan2000-03-16d1tr06.flac
+     3:32.24       37453292 B   ---   --   ---xx   flac  0.5101  Dylan2000-03-16d1tr07.flac
+    11:38.48      123240140 B   ---   --   ---xx   flac  0.4779  Dylan2000-03-16d1tr08.flac
+     7:16.02       76915148 B   ---   --   ---xx   flac  0.5850  Dylan2000-03-16d1tr09.flac
+     5:53.54       62396252 B   ---   --   ---xx   flac  0.4651  Dylan2000-03-16d1tr10.flac
+     6:46.29       71686652 B   ---   --   ---xx   flac  0.2801  Dylan2000-03-16d2tr01.flac
+     6:04.19       64254332 B   ---   --   ---xx   flac  0.2443  Dylan2000-03-16d2tr02.flac
+     6:11.71       65611436 B   ---   --   ---xx   flac  0.5671  Dylan2000-03-16d2tr03.flac
+     7:00.08       74106860 B   ---   --   ---xx   flac  0.3961  Dylan2000-03-16d2tr04.flac
+     4:10.68       44259980 B   ---   --   ---xx   flac  0.2960  Dylan2000-03-16d2tr05.flac
+    89:18.60      945292980 B                            0.4534  (15 files)
+=================== 
+=================== 
+=================== 

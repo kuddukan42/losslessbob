@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd85-09-19.flacf 
+=================== 
+=================== 
+=================== 
+da41909f32b2af6a254b7bcfc245a03d  bd85-09-19-LB-4826.txt
+1b2c6d12c2c79f499177c589ab19d066  disc 1 eac.LOG
+d146f5eff77cc63dc6c317b8d00970cf  Dylan1985-09-19.md5
+50ace430a86317e61985cf79a1d375bc  Dylan1985-09-19.txt
+98b5d1d96df345f1191816752db52673  lbdir-bd85-09-19.flacf.md5
+ad23193d35df72987af5883d82afa5cd  Track01.flac
+eea826f9301e793ad9dc79d8ec0761b6  Track02.flac
+58f7f66f6fb5b9ebf3dd96386e4dc3d2  Track03.flac
+51d9173ac6917d8efdbc70670ee4d241  Track04.flac
+701c3a29b0c92d5c93b6f7550355155a  Track05.flac
+28983b287c4a29ef0b79d825b72c86a2  Track06.flac
+6080baa541dbc1a16c21f36c627ec919  Track07.flac
+d71c182bb3f985a02c28ba4d50ea0b06  Track08.flac
+54779bcea169cad1f0c435c3bd0fde5f  Track09.flac
+54f7f2c181cd9da97237fe3e44e71a29  Track10.flac
+4179d527f5678aaad57616e406f94bfb  Track11.flac
+bc8bd2aaa4aa1f5b6c59155b40f1b0c6  Track12.flac
+9467c7b60c92c9de61ca300c9477522e  Track13.flac
+27e4f02b8bdb3a0736e29b315cc721bb  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd85-09-19.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:8738d5c45a569399004c8bf382fba34a
+Track02.flac:3511b421a36dd624f35fe2521606ef58
+Track03.flac:fa75a62327bece124cdbc59c0af08919
+Track04.flac:010719f0fa77d2b1e1cf7065edb30cb5
+Track05.flac:8feeb33cd6b65e5f07ab4317db8276bf
+Track06.flac:ace8c135751d73c06379293d7c8abbb3
+Track07.flac:bb2a5611aff889284a49bd08e2b1f197
+Track08.flac:a6215f7d6f94fcffaa4c951828c9b8f2
+Track09.flac:6b09a676f6c7ae24c845692132388445
+Track10.flac:a2048c9e0ef1bed969ccc5ce947b33fa
+Track11.flac:499d060bc1ae2df0d44034e7d9775498
+Track12.flac:79acad5369549cf1b81e77acdb07f47e
+Track13.flac:0244c5e97515a82572e218606ee06ccd
+Track14.flac:f878ba13d37f01d6e3be2716c99dc439
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd85-09-19.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:21.17        3744428 B   ---   --   ---xx   flac  0.3141  Track01.flac
+     0:24.06        4247756 B   ---   --   ---xx   flac  0.4079  Track02.flac
+     1:41.10       17839964 B   ---   --   ---xx   flac  0.3793  Track03.flac
+     3:38.08       38474060 B   ---   --   ---xx   flac  0.3547  Track04.flac
+     3:59.30       42230204 B   ---   --   ---xx   flac  0.3629  Track05.flac
+     3:35.07       37942508 B   ---   --   ---xx   flac  0.3820  Track06.flac
+     4:07.34       43650812 B   ---   --   ---xx   flac  0.3727  Track07.flac
+     5:10.23       54738140 B   ---   --   ---xx   flac  0.3740  Track08.flac
+     0:39.38        6969020 B   ---   --   ---xx   flac  0.3578  Track09.flac
+     6:42.09       70934012 B   ---   --   ---xx   flac  0.3541  Track10.flac
+     3:52.05       40936604 B   ---   --   ---xx   flac  0.3160  Track11.flac
+     4:03.21       42914636 B   ---   --   ---xx   flac  0.3949  Track12.flac
+     4:53.15       51720524 B   ---   --   ---xx   flac  0.3885  Track13.flac
+     2:54.02       30698348 B   ---   --   ---xx   flac  0.3655  Track14.flac
+    46:01.00      487041016 B                            0.3669  (14 files)
+=================== 
+=================== 
+=================== 

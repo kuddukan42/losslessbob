@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-09-17-inside-the-coliseum.flacf 
+=================== 
+=================== 
+=================== 
+9bf1893b47e6450845e365576c6d8df9  bd78-09-17-inside-the-coliseum-d1t01.flac
+9b56a165ef29f49f039e878e954ed208  bd78-09-17-inside-the-coliseum-d1t02.flac
+55ba3b460f4d4687d11db6955593c53b  bd78-09-17-inside-the-coliseum-d1t03.flac
+826c46ec64bf8c52d83e63d6d7e158ce  bd78-09-17-inside-the-coliseum-d1t04.flac
+ae5ae5b46c708905f4feb9671d5e75f6  bd78-09-17-inside-the-coliseum-d1t05.flac
+2ea308a5568e96e51a6b479889ce436a  bd78-09-17-inside-the-coliseum-d1t06.flac
+7e71b4ead0adbf94e2cd91c0e3b3a356  bd78-09-17-inside-the-coliseum-d1t07.flac
+f35b0acce4f6d2fad8facca277dc747e  bd78-09-17-inside-the-coliseum-d1t08.flac
+ecc2aae6e724f1eddd9d9a847494d82b  bd78-09-17-inside-the-coliseum-d1t09.flac
+7fe62b8cc05a82a7b098ffb034802f7f  bd78-09-17-inside-the-coliseum-d1t10.flac
+6e28d5c6793b5d2c2650c082d7ea0256  bd78-09-17-inside-the-coliseum-d1t11.flac
+f8c36693303fb30d8bb9d1d717ebea65  bd78-09-17-inside-the-coliseum-d1t12.flac
+63b54e360ce2085f1ef0bcaef2732ef5  bd78-09-17-inside-the-coliseum-d2t01.flac
+8091ca6173d35ae96e83ecbaf674e652  bd78-09-17-inside-the-coliseum-d2t02.flac
+b1d63d781193d047f7b4b8de99b49da7  bd78-09-17-inside-the-coliseum-d2t03.flac
+57065b55c0e7cd339a09a868957f65a4  bd78-09-17-inside-the-coliseum-d2t04.flac
+dc780d741d9415595b986ea53d4cb5b6  bd78-09-17-inside-the-coliseum-d2t05.flac
+11916f28676855ac7b222d5d307196c9  bd78-09-17-inside-the-coliseum-d2t06.flac
+b2b468a05a4d925d6523d56892d45f3e  bd78-09-17-inside-the-coliseum-d2t07.flac
+f42132e23220cdebcc11468e91e64751  bd78-09-17-inside-the-coliseum-d2t08.flac
+23dc2e6fd7bda4baa1432d230ee848fb  bd78-09-17-inside-the-coliseum-d2t09.flac
+099234ac4ed83589bf35de0f64cf3e78  bd78-09-17-inside-the-coliseum-d2t10.flac
+4f1c2c6773107878cf84c7cb7ee1592d  bd78-09-17-inside-the-coliseum-d2t11.flac
+a0107dd8bfdb06c2f9ad20aa7acb943d  bd78-09-17-inside-the-coliseum-d2t12.flac
+dea1e91e13092ef3970ead3201377a0f  bd78-09-17-inside-the-coliseum-d2t13.flac
+506e0822e675a071ddebf45b9a5b048a  bd78-09-17-inside-the-coliseum-d2t14.flac
+21f9000c03a9b32250de01859263ae0e  bd78-09-17-inside-the-coliseum.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-09-17-inside-the-coliseum.flacf 
+=================== 
+=================== 
+=================== 
+bd78-09-17-inside-the-coliseum-d1t01.flac:b931ab24426fe3567ab42ac6c59765a2
+bd78-09-17-inside-the-coliseum-d1t02.flac:58603c4644fffd391cdb39cf98b3176f
+bd78-09-17-inside-the-coliseum-d1t03.flac:b42db553ee53b5b7fb893f436c6880e9
+bd78-09-17-inside-the-coliseum-d1t04.flac:8b774fae494c8da2d4cbf7c13210f093
+bd78-09-17-inside-the-coliseum-d1t05.flac:d22afeb6e9e8c6174fc6b3a64b1b4fb6
+bd78-09-17-inside-the-coliseum-d1t06.flac:772ddf96108313aea018a920b4d781ba
+bd78-09-17-inside-the-coliseum-d1t07.flac:7318f1e4b7d03cc99fcd896ccc70d8d8
+bd78-09-17-inside-the-coliseum-d1t08.flac:51fc722fcecfdc94b6692fe8663711e4
+bd78-09-17-inside-the-coliseum-d1t09.flac:9ad844d64380cc7b4be6a807493868e3
+bd78-09-17-inside-the-coliseum-d1t10.flac:9542d74190beaff53c465d8822b4e92b
+bd78-09-17-inside-the-coliseum-d1t11.flac:ff347b12a79cc61e1a273dfdcebdbd5c
+bd78-09-17-inside-the-coliseum-d1t12.flac:decb821655df9966c5d9d11baf6f3be8
+bd78-09-17-inside-the-coliseum-d2t01.flac:c74f7943ca991f2947c7a8d1b92ad5fb
+bd78-09-17-inside-the-coliseum-d2t02.flac:fa584ded11282b68e39c0f46991f4787
+bd78-09-17-inside-the-coliseum-d2t03.flac:f9b7d172380a438b4d3135897ba16f9c
+bd78-09-17-inside-the-coliseum-d2t04.flac:5a4ea66308e665ad7895a9578e858925
+bd78-09-17-inside-the-coliseum-d2t05.flac:6201853f02a2a427462068c77c1cb170
+bd78-09-17-inside-the-coliseum-d2t06.flac:339d111bd472469f28f35e8ab0d4729a
+bd78-09-17-inside-the-coliseum-d2t07.flac:253f4e59b5a87e8ba675590c15103a62
+bd78-09-17-inside-the-coliseum-d2t08.flac:1e3f8dd9651c21fc1edee0b8757e3e44
+bd78-09-17-inside-the-coliseum-d2t09.flac:bb9005d2b593b35a78b3f76e5a6e6041
+bd78-09-17-inside-the-coliseum-d2t10.flac:bebf7b4d6799511faefafe9897c05882
+bd78-09-17-inside-the-coliseum-d2t11.flac:1c20689f2b1ba14050a41e5f93fbcde7
+bd78-09-17-inside-the-coliseum-d2t12.flac:fa95f33ddb59ebdb3f3e7780ff155a75
+bd78-09-17-inside-the-coliseum-d2t13.flac:4b26c757c16a8894aaf348be89c4190d
+bd78-09-17-inside-the-coliseum-d2t14.flac:31753e21764ba393c0c323137095c744
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-09-17-inside-the-coliseum.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:04.17       21913628 B   ---   --   ---xx   flac  0.6468  bd78-09-17-inside-the-coliseum-d1t01.flac
+     3:22.55       35762204 B   ---   --   ---xx   flac  0.6481  bd78-09-17-inside-the-coliseum-d1t02.flac
+     4:20.03       45871100 B   ---   --   ---xx   flac  0.6678  bd78-09-17-inside-the-coliseum-d1t03.flac
+     5:02.55       53402204 B   ---   --   ---xx   flac  0.7000  bd78-09-17-inside-the-coliseum-d1t04.flac
+     3:40.40       38902124 B   ---   --   ---xx   flac  0.6910  bd78-09-17-inside-the-coliseum-d1t05.flac
+     7:14.30       76628204 B   ---   --   ---xx   flac  0.6644  bd78-09-17-inside-the-coliseum-d1t06.flac
+     4:41.02       49573148 B   ---   --   ---xx   flac  0.6902  bd78-09-17-inside-the-coliseum-d1t07.flac
+     4:43.45       50027084 B   ---   --   ---xx   flac  0.6864  bd78-09-17-inside-the-coliseum-d1t08.flac
+     4:30.40       47722124 B   ---   --   ---xx   flac  0.6791  bd78-09-17-inside-the-coliseum-d1t09.flac
+     6:47.60       71935964 B   ---   --   ---xx   flac  0.7093  bd78-09-17-inside-the-coliseum-d1t10.flac
+     4:39.28       49281500 B   ---   --   ---xx   flac  0.6571  bd78-09-17-inside-the-coliseum-d1t11.flac
+    10:34.55      111967004 B   ---   --   ---xx   flac  0.6656  bd78-09-17-inside-the-coliseum-d1t12.flac
+     5:24.40       57247724 B   ---   --   ---xx   flac  0.6552  bd78-09-17-inside-the-coliseum-d2t01.flac
+     6:19.42       66954428 B   ---   --   ---xx   flac  0.6281  bd78-09-17-inside-the-coliseum-d2t02.flac
+     3:03.40       32375324 B   ---   --   ---xx   flac  0.6647  bd78-09-17-inside-the-coliseum-d2t03.flac
+     4:29.58       47588060 B   ---   --   ---xx   flac  0.6642  bd78-09-17-inside-the-coliseum-d2t04.flac
+     4:40.30       49462604 B   ---   --   ---xx   flac  0.6539  bd78-09-17-inside-the-coliseum-d2t05.flac
+     3:21.72       35625788 B   ---   --   ---xx   flac  0.6530  bd78-09-17-inside-the-coliseum-d2t06.flac
+     8:21.45       88482284 B   ---   --   ---xx   flac  0.6634  bd78-09-17-inside-the-coliseum-d2t07.flac
+     6:01.28       63746300 B   ---   --   ---xx   flac  0.6404  bd78-09-17-inside-the-coliseum-d2t08.flac
+     3:52.22       40976588 B   ---   --   ---xx   flac  0.6382  bd78-09-17-inside-the-coliseum-d2t09.flac
+     3:55.40       41548124 B   ---   --   ---xx   flac  0.7019  bd78-09-17-inside-the-coliseum-d2t10.flac
+     5:03.60       53590364 B   ---   --   ---xx   flac  0.6445  bd78-09-17-inside-the-coliseum-d2t11.flac
+     6:54.10       73053164 B   ---   --   ---xx   flac  0.6571  bd78-09-17-inside-the-coliseum-d2t12.flac
+     5:57.33       63052460 B   ---   --   ---xx   flac  0.6723  bd78-09-17-inside-the-coliseum-d2t13.flac
+     6:48.07       71987708 B   ---   --   ---xx   flac  0.6941  bd78-09-17-inside-the-coliseum-d2t14.flac
+   135:55.57     1438677208 B                            0.6673  (26 files)
+=================== 
+=================== 
+=================== 

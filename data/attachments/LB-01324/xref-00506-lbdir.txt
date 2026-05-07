@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-06-d.flacf 
+=================== 
+=================== 
+=================== 
+856f0430517e0927d573426ab0ad825c  bd2003-11-06d1t01.flac
+4c77615dcd28e159ababee878a0edfc8  bd2003-11-06d1t02.flac
+958c2385386fd3883bdd0e62921fd45d  bd2003-11-06d1t03.flac
+d6244ca3278f4b5e4269325dd54ea869  bd2003-11-06d1t04.flac
+b9c9e135e6127f18a8775e1f14be1c0b  bd2003-11-06d1t05.flac
+78f8c07f4e0b28954118eae201d2df2e  bd2003-11-06d1t06.flac
+91c5eb3c89b5d6aa39ac8316447e7db4  bd2003-11-06d1t07.flac
+c7d3584e93ca83ff4b7bd028fb6b0806  bd2003-11-06d1t08.flac
+9cb6c718c083b9aaaa2903c6e4685cf4  bd2003-11-06d1t09.flac
+9039c214dd50256f730410ca2f0ae16d  bd2003-11-06d1t10.flac
+3e7a26cfc4fa7e444623340d9a815d3e  bd2003-11-06d2t01.flac
+e0503e1dd37c745399e64d651744b166  bd2003-11-06d2t02.flac
+e63fe7dc03484cea3ef1b9846808bd0f  bd2003-11-06d2t03.flac
+b538845126ff68ca6e50c7b1e22f3ae4  bd2003-11-06d2t04.flac
+6a0b9466f9a26cfe3c335281f66b941c  bd2003-11-06d2t05.flac
+65ab578b9760dffc615685d724ef4dd0  bd2003-11-06d2t06.flac
+8487d94482b2e2544345f34ddd980d3e  bd2003-11-06d2t07.flac
+d1dd7cf68eece5f8f7e348d6e0739733  bd2003-11-06d2t08.flac
+17dfb6e74f21ddf7838df49c1e8c6c48  Bob Dylan 2003.11.06 Frankfurt,Germany [watchtower rem].md5
+faeef071792e550be15f05a2d6d5dd31  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-06-d.flacf 
+=================== 
+=================== 
+=================== 
+bd2003-11-06d1t01.flac:d537ec4913c2b3ee32f018173f2817f1
+bd2003-11-06d1t02.flac:88ed0d5dff20c5984f82a7b12fad48cc
+bd2003-11-06d1t03.flac:24287036f5ebf4f4a6277815c3d035fc
+bd2003-11-06d1t04.flac:7a9294ab1f2171c46cdef87f269faed4
+bd2003-11-06d1t05.flac:d99fc7204a67cd2a40ac606425c78013
+bd2003-11-06d1t06.flac:42e4a825898fe3468b88312de3357b8b
+bd2003-11-06d1t07.flac:66cce5ae1d87a0fd13825d8810777383
+bd2003-11-06d1t08.flac:d18d20e095ed1173acef0e14f92c9ffe
+bd2003-11-06d1t09.flac:ec9164b9d7fbc9cb5334b1d11b89e7cc
+bd2003-11-06d1t10.flac:9d8f9be62bf815eb04d493e8a7a90102
+bd2003-11-06d2t01.flac:1d8247662d4bebf16dc5243402a46912
+bd2003-11-06d2t02.flac:a2476df9cf82aacf252b130599705c39
+bd2003-11-06d2t03.flac:78fff44a32704175dc14f9b71318a515
+bd2003-11-06d2t04.flac:c1e7266df7bcc2dc71dae2c870893f70
+bd2003-11-06d2t05.flac:947664e701df348718de38fb706df58e
+bd2003-11-06d2t06.flac:db6f0e09572eef238b2f6af8e85761f5
+bd2003-11-06d2t07.flac:7dd7bdb11ce369387c145ed596d09696
+bd2003-11-06d2t08.flac:f8af16606f985853d9ea1c948e82d85d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-06-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:33.26       16466352 B   -b-   --   ---xx   flac  0.5043  bd2003-11-06d1t01.flac
+     6:11.49       65559692 B   ---   --   ---xx   flac  0.5902  bd2003-11-06d1t02.flac
+     6:26.25       68149244 B   ---   --   ---xx   flac  0.5295  bd2003-11-06d1t03.flac
+     5:59.25       63386444 B   ---   --   ---xx   flac  0.5895  bd2003-11-06d1t04.flac
+     6:07.10       64762364 B   ---   --   ---xx   flac  0.4917  bd2003-11-06d1t05.flac
+     7:55.61       83933516 B   ---   --   ---xx   flac  0.5630  bd2003-11-06d1t06.flac
+     7:08.50       75616844 B   ---   --   ---xx   flac  0.4969  bd2003-11-06d1t07.flac
+     6:45.38       71531420 B   ---   --   ---xx   flac  0.5674  bd2003-11-06d1t08.flac
+     4:58.34       52647212 B   ---   --   ---xx   flac  0.4373  bd2003-11-06d1t09.flac
+     5:44.34       60761656 B   -b-   --   ---xx   flac  0.5346  bd2003-11-06d1t10.flac
+     6:36.28       69920256 B   -b-   --   ---xx   flac  0.5935  bd2003-11-06d2t01.flac
+     7:39.46       81075836 B   ---   --   ---xx   flac  0.5007  bd2003-11-06d2t02.flac
+     7:04.59       74932412 B   ---   --   ---xx   flac  0.5760  bd2003-11-06d2t03.flac
+     6:57.58       73695260 B   ---   --   ---xx   flac  0.5214  bd2003-11-06d2t04.flac
+    12:29.46      132231836 B   ---   --   ---xx   flac  0.5608  bd2003-11-06d2t05.flac
+     4:09.02       43928348 B   ---   --   ---xx   flac  0.5950  bd2003-11-06d2t06.flac
+     7:12.20       76251884 B   ---   --   ---xx   flac  0.5927  bd2003-11-06d2t07.flac
+     5:48.05       61399004 B   ---   --   ---xx   flac  0.5795  bd2003-11-06d2t08.flac
+   116:48.16     1236249580 B                            0.5484  (18 files)
+=================== 
+=================== 
+=================== 

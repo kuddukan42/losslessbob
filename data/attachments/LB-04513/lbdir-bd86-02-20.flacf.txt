@@ -1,0 +1,123 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-02-20.flacf 
+=================== 
+=================== 
+=================== 
+c20344981cd67c53dee818fc1a82c860  bd1986-02-20.md5
+7838a28e4c44eddb101af55da4029562  bd1986-02-20_info.txt
+2c0894b5475d5524a60f7c12d99adf69  bd1986-02-20d1.ffp
+79123b4593e83d84c8e68977d16725bf  bd1986-02-20d1.LOG
+20f96d10ce1eee45907ef02353dbc1e1  bd1986-02-20d1t01.flac
+5ac695711f57916886f60ee952ec2834  bd1986-02-20d1t02.flac
+bfd2d4a7402a0c0fb3529cc34f3e4e35  bd1986-02-20d1t03.flac
+12b0bc304973ab465680abe81fb69178  bd1986-02-20d1t04.flac
+c6d680ebe077054788b3100e2e5e621b  bd1986-02-20d1t05.flac
+2cab0d4e75641281850447114f33cd8c  bd1986-02-20d1t06.flac
+a42a735353fb8d1039f568cb48054b54  bd1986-02-20d1t07.flac
+9f2cee5ff0e5757995e315246e0cf536  bd1986-02-20d1t08.flac
+2dcf817766d9b9eca17cb63d0939cfa5  bd1986-02-20d1t09.flac
+ce1e584167ce01928a939801b793b21e  bd1986-02-20d1t10.flac
+b59d50cd8c719d36459bca88525434e7  bd1986-02-20d1t11.flac
+fada28cb3288c5b2d49e5bb3fde7fa5a  bd1986-02-20d1t12.flac
+238778f509e80780779be3dae67d8bc4  bd1986-02-20d1t13.flac
+530931f0c153e38ffb164b842e7498be  bd1986-02-20d1t14.flac
+1e098e051290b588456626a751c5b647  bd1986-02-20d1t15.flac
+f1bccd0f8ecd1406a52c32972b47661d  bd1986-02-20d2.ffp
+16f52afaf16c577f4cf19835e107b49b  bd1986-02-20d2.LOG
+11c6b8e3a7cc9b7a46040eaa9992e73b  bd1986-02-20d2t01.flac
+2b89fd942bffa6f6ea4a3675ffb0eff9  bd1986-02-20d2t02.flac
+f7ff348ffec5a0896d2545d04e64afdd  bd1986-02-20d2t03.flac
+27302c60b429c875302e3e08f30e4253  bd1986-02-20d2t04.flac
+e0e585bf7d887fde67f05fb697041503  bd1986-02-20d2t05.flac
+31429d02888e558b6dab2fdc8b7718af  bd1986-02-20d2t06.flac
+e54b1895d0ff3919c1fc64d20806b45e  bd1986-02-20d2t07.flac
+da6face635584cfc30d23105755c401a  bd1986-02-20d2t08.flac
+0cb7c64b1f2bbf0c47f8fd48b8df5cde  bd1986-02-20d2t09.flac
+b3c836f2ba4a8bc2f015010c098b4a15  bd1986-02-20d2t10.flac
+4dd1c739dec3c6aac47120254ef2cce2  bd1986-02-20d2t11.flac
+20b8eb899702603ba522dab706e6db4d  bd1986-02-20d2t12.flac
+9525a8c6ec5c4caa9fd01ad06fc74563  bd1986-02-20d2t13.flac
+44a0fe414d849dd0a0a0a2eea62afd90  bd1986-02-20d2t14.flac
+3b8cedbd3f2fb0b6a4c762a32037a583  bd1986-02-20d2t15.flac
+ccb6c170a8ecf5589b3f49a101345f2e  bd86-02-20-LB-4513.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-20.flacf 
+=================== 
+=================== 
+=================== 
+bd1986-02-20d1t01.flac:926ec9004b7404d54f484be645782885
+bd1986-02-20d1t02.flac:1ca132be9d7e03aaee99b51b7003734a
+bd1986-02-20d1t03.flac:8cbd8823c88825c7d059ae8b098a3b73
+bd1986-02-20d1t04.flac:d835017e4378225c8ab32663b1f4dca8
+bd1986-02-20d1t05.flac:9d4fbe5e62cfbf8d588bff9cbefa9adc
+bd1986-02-20d1t06.flac:bbc82c4c9daa8100c48229ec8bacb66d
+bd1986-02-20d1t07.flac:a6a781b26f7e17f1f0bf3ae62c39bc1f
+bd1986-02-20d1t08.flac:4ff47f360bbf7263c64b4b4d2353438f
+bd1986-02-20d1t09.flac:0b51694bb56c9df37b1f19983f2dfa57
+bd1986-02-20d1t10.flac:90bf9f7358521460436564f0f72226c7
+bd1986-02-20d1t11.flac:53f980981e954f99af0b0ea505ff9617
+bd1986-02-20d1t12.flac:8b5d20c24abf223b128ac2c7e0b35d22
+bd1986-02-20d1t13.flac:bde0d1f2df40afb6c17ba5f75371dc59
+bd1986-02-20d1t14.flac:7507254aa779b3944c2277a5ba7f64d2
+bd1986-02-20d1t15.flac:200d8940e64f74da1f3b15e01678736a
+bd1986-02-20d2t01.flac:fea051b9760f64780f4f84bf847d6346
+bd1986-02-20d2t02.flac:d1d24c88845211ae4ec856660fc7125b
+bd1986-02-20d2t03.flac:5250be7f3554b0904b9303ffa4dfeab9
+bd1986-02-20d2t04.flac:cbc4893fbba90305bf648ed2c4dcec10
+bd1986-02-20d2t05.flac:d27e0c1bfa3c001c3a3540a81ffa5cb2
+bd1986-02-20d2t06.flac:ec18a88410cc1a36cf0615870e099fed
+bd1986-02-20d2t07.flac:071adb7e5ec4d7c9163c04a0454aa1e0
+bd1986-02-20d2t08.flac:ab96a26e062a782bc724a86b1276dded
+bd1986-02-20d2t09.flac:4f9153f7303c8b615f492287d9422b0f
+bd1986-02-20d2t10.flac:d001d1de4affd4fe5f7767a836ef1294
+bd1986-02-20d2t11.flac:defdb3533353dbbde3471092d19b3764
+bd1986-02-20d2t12.flac:b5faa7323efacfb8382b4cc0f9e149d8
+bd1986-02-20d2t13.flac:2591862ad33a549507b28858bba12645
+bd1986-02-20d2t14.flac:e6e26f712ea30524fbcb6b0f58d6f8f1
+bd1986-02-20d2t15.flac:c62b0f840c3cd0cb0398146f429050f9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-20.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.06       64929356 B   ---   --   ---xx   flac  0.6841  bd1986-02-20d1t01.flac
+     5:07.37       54241868 B   ---   --   ---xx   flac  0.6540  bd1986-02-20d1t02.flac
+     3:32.35       37479164 B   ---   --   ---xx   flac  0.6352  bd1986-02-20d1t03.flac
+     4:28.27       47338748 B   ---   --   ---xx   flac  0.6142  bd1986-02-20d1t04.flac
+     3:21.49       35571692 B   ---   --   ---xx   flac  0.6348  bd1986-02-20d1t05.flac
+     3:17.54       34877852 B   ---   --   ---xx   flac  0.6046  bd1986-02-20d1t06.flac
+     5:33.44       58844732 B   ---   --   ---xx   flac  0.6181  bd1986-02-20d1t07.flac
+     5:16.29       55810652 B   ---   --   ---xx   flac  0.6266  bd1986-02-20d1t08.flac
+     4:25.21       46795436 B   ---   --   ---xx   flac  0.6244  bd1986-02-20d1t09.flac
+     5:35.22       59145788 B   ---   --   ---xx   flac  0.6172  bd1986-02-20d1t10.flac
+     5:21.06       56638556 B   ---   --   ---xx   flac  0.6073  bd1986-02-20d1t11.flac
+     7:52.11       83286716 B   ---   --   ---xx   flac  0.6167  bd1986-02-20d1t12.flac
+     4:08.45       43853084 B   ---   --   ---xx   flac  0.6317  bd1986-02-20d1t13.flac
+     5:04.11       53651516 B   ---   --   ---xx   flac  0.6548  bd1986-02-20d1t14.flac
+     2:37.70       27859484 B   ---   --   ---xx   flac  0.6599  bd1986-02-20d1t15.flac
+     7:10.25       75910844 B   ---   --   ---xx   flac  0.6328  bd1986-02-20d2t01.flac
+     5:24.06       57167756 B   ---   --   ---xx   flac  0.6530  bd1986-02-20d2t02.flac
+     3:55.44       41557532 B   ---   --   ---xx   flac  0.6278  bd1986-02-20d2t03.flac
+     5:39.01       59801996 B   ---   --   ---xx   flac  0.6127  bd1986-02-20d2t04.flac
+     4:11.40       44370524 B   ---   --   ---xx   flac  0.6479  bd1986-02-20d2t05.flac
+     5:26.05       57518204 B   ---   --   ---xx   flac  0.6285  bd1986-02-20d2t06.flac
+     3:55.15       41489324 B   ---   --   ---xx   flac  0.6260  bd1986-02-20d2t07.flac
+     5:27.02       57687548 B   ---   --   ---xx   flac  0.6433  bd1986-02-20d2t08.flac
+     4:49.46       51087836 B   ---   --   ---xx   flac  0.6256  bd1986-02-20d2t09.flac
+     4:40.59       49530812 B   ---   --   ---xx   flac  0.6292  bd1986-02-20d2t10.flac
+     7:05.63       75118220 B   ---   --   ---xx   flac  0.6454  bd1986-02-20d2t11.flac
+     7:45.20       82073084 B   ---   --   ---xx   flac  0.5683  bd1986-02-20d2t12.flac
+     4:55.50       52155644 B   ---   --   ---xx   flac  0.5989  bd1986-02-20d2t13.flac
+     3:06.30       32881004 B   ---   --   ---xx   flac  0.6106  bd1986-02-20d2t14.flac
+     6:20.01       67034396 B   ---   --   ---xx   flac  0.5985  bd1986-02-20d2t15.flac
+   151:42.49     1605709368 B                            0.6267  (30 files)
+=================== 
+=================== 
+=================== 

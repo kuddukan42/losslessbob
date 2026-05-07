@@ -1,0 +1,171 @@
+===================
+===================
+===================
+=== md5 for: bd95-07-08-german-summer-tour-1995-vol1-2.flacf
+===================
+===================
+===================
+458cba02178c5a5444ba556b29a0684a *Artwork CD 1\back.jpg
+e088cc3ca8504ee468d6efed6d96e396 *Artwork CD 1\front.jpg
+e1603caaec4313dc7a41272c43cb40ac *Artwork CD 1\inside.jpg
+e08a1816b78fded9a6bf57b85dc868fd *Artwork CD 2\back.jpg
+1360dbaa56d9974b7aec014e795775ff *Artwork CD 2\front.jpg
+4c5f884850520b5a33d058914c5334dd *Artwork CD 2\inside.jpg
+bb5a8a2da13f7dcf8f1e361dfbd0a3df *Bob Dylan Germany 1995.txt
+0ef8c9cca65796246b413cd482dcb631 *Bob Dylan Germany Summer Tour 1995 Vol. 1 + 2.ffp
+cce956a3668fe8cba4858e60b556b016 *Ticket stub Munich\Munich 1995 001.jpg
+0471e5335dd8b3d9dbc88f16c073e706 *Vol. 1 CD 1\01 Track01.flac
+31b487c7e37b25e4d4886651a74bf342 *Vol. 1 CD 1\02 Track02.flac
+404296e5da767bf2229ac317e971cb07 *Vol. 1 CD 1\03 Track03.flac
+282872675c9e35e0edff96917ca3fe0d *Vol. 1 CD 1\04 Track04.flac
+2943683a97ec5600b45a4cf265fd02ed *Vol. 1 CD 1\05 Track05.flac
+55afc0781d9ea163ba7fac16e90c076d *Vol. 1 CD 1\06 Track06.flac
+f878dc8a2e875e3f95a640b403b5ca98 *Vol. 1 CD 1\07 Track07.flac
+bda7c735a50f139e57b6c6bdb6c9aabf *Vol. 1 CD 1\08 Track08.flac
+93af3a664a4a84119806785b0c9d3cd3 *Vol. 1 CD 1\09 Track09.flac
+fc9c8c5a46df0074adbfa6ed279416a3 *Vol. 1 CD 1\10 Track10.flac
+59c3b7fe03922eaad4d3118b98d1165f *Vol. 1 CD 1\Unbekannter Künstler - Unbekannter Titel.log
+fb5eb31f52cb216d79b72a57a6d9b22f *Vol. 1 CD 2\01 Track01.flac
+c515762963ab0f422b9fef3072d9ccca *Vol. 1 CD 2\02 Track02.flac
+2f2920b4eb426c35dd21f4c9c960d37a *Vol. 1 CD 2\03 Track03.flac
+1b3bd4cb6a1448e3238c1a59d3d2824c *Vol. 1 CD 2\04 Track04.flac
+cbabe035057673319858bcf692d310f5 *Vol. 1 CD 2\05 Track05.flac
+0f9adb331d6f013991725dce2dfb9fe0 *Vol. 1 CD 2\06 Track06.flac
+ba1584d9aa122f9013150faf3fd7bcbd *Vol. 1 CD 2\07 Track07.flac
+5e3a1128f150a6b5b0f75b1d07460b15 *Vol. 1 CD 2\08 Track08.flac
+ab02f29e6f604cab7c670655c6e576e4 *Vol. 1 CD 2\Unbekannter Künstler - Unbekannter Titel.log
+c544336c89e25d05ba5032a13afae401 *Vol. 2 CD 1\01 Track01.flac
+eade367b625359d67b726b3815d4b379 *Vol. 2 CD 1\02 Track02.flac
+8fe34125767980e0c815ffd65610d0a5 *Vol. 2 CD 1\03 Track03.flac
+c970330b99a896e81e2faeaf2fed9032 *Vol. 2 CD 1\04 Track04.flac
+d91a2845566af135ffdeb5d4c8eaca54 *Vol. 2 CD 1\05 Track05.flac
+4f16909c909e086b4c6dc10bb82c5cb9 *Vol. 2 CD 1\06 Track06.flac
+04cb2fe7cc52256336861a8a701e1afe *Vol. 2 CD 1\07 Track07.flac
+e7ca1e413fc6a086fcf9d045091ec1e7 *Vol. 2 CD 1\08 Track08.flac
+ce8406f051b7b90e78251c29b868b60a *Vol. 2 CD 1\Unbekannter Künstler - Unbekannter Titel.log
+d087d0e218dc7d0b88e3d979d96d5710 *Vol. 2 CD 2\01 Track01.flac
+eb20564baf99a5f28a23722aced7fb8f *Vol. 2 CD 2\02 Track02.flac
+49a1c6f5db30f1444752b82b5d51e862 *Vol. 2 CD 2\03 Track03.flac
+a3441de2a2072fb9fb4240d50f7cdc69 *Vol. 2 CD 2\04 Track04.flac
+c19571298c875f22940da3845daf03ea *Vol. 2 CD 2\05 Track05.flac
+b2160e7b30d29c8837d2e7977a09bc2e *Vol. 2 CD 2\06 Track06.flac
+e74a331609379d8e76601aa7b75f23b7 *Vol. 2 CD 2\07 Track07.flac
+bfd347c10cea8738955121962a6ede6e *Vol. 2 CD 2\08 Track08.flac
+be3f1cfe66dfeb654b607e6a79d884cb *Vol. 2 CD 2\09 Track09.flac
+b63646e7d2c5bba736eb41c906c2c1b3 *Vol. 2 CD 2\Unbekannter Künstler - Unbekannter Titel.log
+===================
+===================
+===================
+=== ffp for: bd95-07-08-german-summer-tour-1995-vol1-2.flacf
+===================
+===================
+===================
+Vol. 1 CD 1\01 Track01.flac:14e295b5563fb18abb6e54452b69c15f
+Vol. 1 CD 1\02 Track02.flac:ba19b02906571a0873d17be93eda48df
+Vol. 1 CD 1\03 Track03.flac:b78eaef2e65dcc113a940cfb6cfd8545
+Vol. 1 CD 1\04 Track04.flac:64480f5719dc87604d773450c10e54e3
+Vol. 1 CD 1\05 Track05.flac:28301b810706b9acd409935998cae208
+Vol. 1 CD 1\06 Track06.flac:626c8e82938e861e6babc1a38442df7e
+Vol. 1 CD 1\07 Track07.flac:f986b0c6adfc602b37e1e0bff3a7c32f
+Vol. 1 CD 1\08 Track08.flac:5e1fdc207fe0f6f05fab515782597414
+Vol. 1 CD 1\09 Track09.flac:c73dbc361f01c6aa8af250c3d3de4bbf
+Vol. 1 CD 1\10 Track10.flac:96bd27f3686d3a639f42aec0fdae0cad
+Vol. 1 CD 2\01 Track01.flac:53896ea02e88e4ead5c44690db42f043
+Vol. 1 CD 2\02 Track02.flac:f89b2205dbcb6479c760b688a657d81e
+Vol. 1 CD 2\03 Track03.flac:7685a399f4e005c1df3e31880782d515
+Vol. 1 CD 2\04 Track04.flac:3ebe960ab99d3ad7d95c3a050b5f5f46
+Vol. 1 CD 2\05 Track05.flac:5aa66d1068bbcbcd539df92ca471ecb9
+Vol. 1 CD 2\06 Track06.flac:9269b6a81755cb5ca637cfa08573e44f
+Vol. 1 CD 2\07 Track07.flac:f2ac99f06db9444e8176e7cefb7657cf
+Vol. 1 CD 2\08 Track08.flac:42b87ae132efac02d475776cb8ab5733
+Vol. 2 CD 1\01 Track01.flac:21887453b3aa1b75ec345a7c1d8cfd70
+Vol. 2 CD 1\02 Track02.flac:4f36a0f24acc5dca4bbb1e2a3d75c862
+Vol. 2 CD 1\03 Track03.flac:b33a975761abefb8fba6c769fd83f159
+Vol. 2 CD 1\04 Track04.flac:413dd82832d6b08704cd8821fd966bd6
+Vol. 2 CD 1\05 Track05.flac:492c166a3adeb7582755c593172cdf6c
+Vol. 2 CD 1\06 Track06.flac:9f73afecb0f75cfcaef8ed4a9ff6df54
+Vol. 2 CD 1\07 Track07.flac:b22957c5903ba0da92da6d7dd81e14eb
+Vol. 2 CD 1\08 Track08.flac:4b478b2bd868857709f65e77f14926c8
+Vol. 2 CD 2\01 Track01.flac:ec206906ea4e281fdf3bb8a685ff2d19
+Vol. 2 CD 2\02 Track02.flac:878ff19213f6b1c41872a8e36b825d2c
+Vol. 2 CD 2\03 Track03.flac:817fb1825c7b1b81b0118fbc919401d5
+Vol. 2 CD 2\04 Track04.flac:6cf045b4eac4529c7342cb060d1668a5
+Vol. 2 CD 2\05 Track05.flac:e9898a78816fef13e28b8973bc0d70c6
+Vol. 2 CD 2\06 Track06.flac:202d3a13df83055d8ec3f6c3de3a0093
+Vol. 2 CD 2\07 Track07.flac:65d1abe3d6875e13657e90153c2beeaf
+Vol. 2 CD 2\08 Track08.flac:092a46783c89e743f4cd661f82fee679
+Vol. 2 CD 2\09 Track09.flac:5331d9d0e65781fbd47454cffaa1901a
+===================
+===================
+===================
+=== shntool len for: bd95-07-08-german-summer-tour-1995-vol1-2.flacf\Vol. 1 CD 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.55       58165004 B   ---   --   ---xx   flac  0.6443  01 Track01.flac
+     9:10.30       97090604 B   ---   --   ---xx   flac  0.6093  02 Track02.flac
+     6:33.30       69395804 B   ---   --   ---xx   flac  0.6673  03 Track03.flac
+     7:34.20       80132684 B   ---   --   ---xx   flac  0.6437  04 Track04.flac
+     7:04.25       74852444 B   ---   --   ---xx   flac  0.6603  05 Track05.flac
+     7:33.22       79960988 B   ---   --   ---xx   flac  0.6620  06 Track06.flac
+     8:07.25       85965644 B   ---   --   ---xx   flac  0.5783  07 Track07.flac
+     9:13.25       97608044 B   ---   --   ---xx   flac  0.5969  08 Track08.flac
+     7:06.00       75146444 B   ---   --   ---xx   flac  0.6286  09 Track09.flac
+     7:09.48       75788540 B   ---   --   ---xx   flac  0.6664  10 Track10.flac
+    75:01.55      794106200 B                            0.6329  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd95-07-08-german-summer-tour-1995-vol1-2.flacf\Vol. 1 CD 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    11:03.00      116953244 B   ---   --   ---xx   flac  0.6367  01 Track01.flac
+     9:00.05       95267804 B   ---   --   ---xx   flac  0.7077  02 Track02.flac
+     9:17.45       98360684 B   ---   --   ---xx   flac  0.6835  03 Track03.flac
+     9:41.65      102641324 B   ---   --   ---xx   flac  0.6491  04 Track04.flac
+     7:43.05       81685004 B   ---   --   ---xx   flac  0.6846  05 Track05.flac
+     6:38.55       70336604 B   ---   --   ---xx   flac  0.6997  06 Track06.flac
+     6:39.37       70470668 B   ---   --   ---xx   flac  0.6312  07 Track07.flac
+     6:04.38       64299020 B   ---   --   ---xx   flac  0.6958  08 Track08.flac
+    66:08.25      700014352 B                            0.6715  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd95-07-08-german-summer-tour-1995-vol1-2.flacf\Vol. 2 CD 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:02.25       85083644 B   ---   --   ---xx   flac  0.6516  01 Track01.flac
+     7:06.70       75311084 B   ---   --   ---xx   flac  0.5928  02 Track02.flac
+     7:34.50       80203244 B   ---   --   ---xx   flac  0.6226  03 Track03.flac
+     7:36.20       80485484 B   ---   --   ---xx   flac  0.6514  04 Track04.flac
+    10:39.25      112778444 B   ---   --   ---xx   flac  0.6341  05 Track05.flac
+     8:25.55       89211404 B   ---   --   ---xx   flac  0.5520  06 Track06.flac
+     8:07.27       85970348 B   ---   --   ---xx   flac  0.5166  07 Track07.flac
+    10:12.28      108022700 B   ---   --   ---xx   flac  0.5874  08 Track08.flac
+    67:45.00      717066352 B                            0.6012  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd95-07-08-german-summer-tour-1995-vol1-2.flacf\Vol. 2 CD 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:13.60       97690364 B   ---   --   ---xx   flac  0.6309  01 Track01.flac
+     8:35.02       90850748 B   ---   --   ---xx   flac  0.6613  02 Track02.flac
+    10:46.38      114043820 B   ---   --   ---xx   flac  0.6151  03 Track03.flac
+    10:13.72      108302588 B   ---   --   ---xx   flac  0.5992  04 Track04.flac
+     6:48.73       72142940 B   ---   --   ---xx   flac  0.6865  05 Track05.flac
+     7:13.32       76456508 B   ---   --   ---xx   flac  0.6327  06 Track06.flac
+     8:00.25       84730844 B   ---   --   ---xx   flac  0.6810  07 Track07.flac
+     7:38.20       80838284 B   ---   --   ---xx   flac  0.7182  08 Track08.flac
+     6:31.43       69073580 B   ---   --   ---xx   flac  0.6380  09 Track09.flac
+    75:01.65      794129676 B                            0.6479  (9 files)
+===================
+===================
+===================

@@ -1,0 +1,55 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-heroblues-all.shnf 
+=================== 
+=================== 
+=================== 
+4e5ff7b7b19195fe142b8e178d5d34fc  bd-heroblues-all.md5
+1dd7e76b6543a378ec383b097d8756ba  bd-heroblues-all.txt
+0aa56e15adea9d6c7bd728b9a51d2991  bd-heroblues-allt01.shn
+19e158765ce12ebddd4e6158d7160e3a  bd-heroblues-allt02.shn
+232e4c6e925d8dbb95bfeac9275321f4  bd-heroblues-allt03.shn
+f6ef64028fa3408395fe705cb3652317  bd-heroblues-allt04.shn
+b44758fc9f46a32e9e3430b5c29c2ab4  bd-heroblues-allt05.shn
+9eacf58b737d58b4a3b28fa5833e4708  bd-heroblues-allt06.shn
+c0e4436a6321730d2726492f6b173339  bd-heroblues-allt07.shn
+fdf076944468ba0eff8cd38d943417a1  bd-heroblues-allt08.shn
+67d62d4a307b38fb78df711bd9ec9d6b  bd-heroblues-allt09.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-heroblues-all.shnf 
+=================== 
+=================== 
+=================== 
+0c9065cf3c6ce28d31767ed41e08907a  [shntool]  bd-heroblues-allt01.wav
+e614c77af151835894ec23b0c4b1b51f  [shntool]  bd-heroblues-allt02.wav
+60a7ce1b14c0801cb456cdb57a667cfd  [shntool]  bd-heroblues-allt03.wav
+922b1de17a4d66652725a7646db8e962  [shntool]  bd-heroblues-allt04.wav
+6e4d0349b3a59a0964f49cb51be2b98c  [shntool]  bd-heroblues-allt05.wav
+a796caa055d3356195e5b181dbb97d3d  [shntool]  bd-heroblues-allt06.wav
+327d9a4ad2d49b39ceecd7f0e6a34cc9  [shntool]  bd-heroblues-allt07.wav
+37d12a17bd626d9007e6e5c26d27a029  [shntool]  bd-heroblues-allt08.wav
+7fea3f750b8f8bfad00c2c20625668c2  [shntool]  bd-heroblues-allt09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-heroblues-all.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:16.47       34684988 B   ---   --   ---xx    shn  0.5750  bd-heroblues-allt01.shn
+     3:00.32       31827308 B   ---   --   ---xx    shn  0.6292  bd-heroblues-allt02.shn
+     3:12.08       33887660 B   ---   --   ---xx    shn  0.5992  bd-heroblues-allt03.shn
+     2:51.68       30324380 B   ---   --   ---xx    shn  0.5087  bd-heroblues-allt04.shn
+     1:38.25       17346044 B   ---   --   ---xx    shn  0.5317  bd-heroblues-allt05.shn
+     1:29.50       15817244 B   ---   --   ---xx    shn  0.5216  bd-heroblues-allt06.shn
+     3:45.25       39748844 B   ---   --   ---xx    shn  0.6815  bd-heroblues-allt07.shn
+     3:38.71       38622236 B   ---   --   ---xx    shn  0.6423  bd-heroblues-allt08.shn
+     2:28.11       26133116 B   ---   --   ---xx    shn  0.6005  bd-heroblues-allt09.shn
+    25:21.37      268391820 B                            0.5990  (9 files)
+=================== 
+=================== 
+=================== 

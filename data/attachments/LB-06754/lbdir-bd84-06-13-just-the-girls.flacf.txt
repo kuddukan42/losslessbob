@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-13-just-the-girls.flacf 
+=================== 
+=================== 
+=================== 
+29d54ba80844f183c0028b60639e5fc3  bd84-06-13-just-the-girls-d1t01.flac
+7090848fcaafa8359069c1373cac3b43  bd84-06-13-just-the-girls-d1t02.flac
+e0bc2f0f58c4719edeaff99da63eb032  bd84-06-13-just-the-girls-d1t03.flac
+587ec4661b1fe427037536497684d95a  bd84-06-13-just-the-girls-d1t04.flac
+fa393a9089437ce14138181a098280de  bd84-06-13-just-the-girls-d1t05.flac
+cebf8a9261cc6a1ecae0ef9f30c7d8b1  bd84-06-13-just-the-girls-d1t06.flac
+779414f2758ea2a5b978986035fa3477  bd84-06-13-just-the-girls-d1t07.flac
+43c3c16197576ca163b463de6de1f4e6  bd84-06-13-just-the-girls-d1t08.flac
+7fe66017d19906236a78b4d8f4ab40b0  bd84-06-13-just-the-girls-d1t09.flac
+19562bba00e9b3271928f39853e95169  bd84-06-13-just-the-girls-d1t10.flac
+eedb7911701295c9a014ae158fb30bad  bd84-06-13-just-the-girls-d2t01.flac
+85304cd645033417c41360445bd001ad  bd84-06-13-just-the-girls-d2t02.flac
+72df4c22de011cbc79680dc541183fce  bd84-06-13-just-the-girls-d2t03.flac
+f4353698996bdd1949484f266f99eaad  bd84-06-13-just-the-girls-d2t04.flac
+370c04340ef3f7334f8c51e62601107d  bd84-06-13-just-the-girls-d2t05.flac
+56720a87d6d197d19da11fe19ffc533b  bd84-06-13-just-the-girls-d2t06.flac
+111111985ae42b7f280270f4470660f4  bd84-06-13-just-the-girls-d2t07.flac
+b334e66603fa3a1aa5b790191b6e30ed  bd84-06-13-just-the-girls-d2t08.flac
+a0a06acd012768a504be3f771ce55c65  bd84-06-13-just-the-girls-d2t09.flac
+84deb07901e099a8d66e02429fb97755  bd84-06-13-just-the-girls-d2t10.flac
+d8d7e40d9ddfa42f257b8f757ee08945  bd84-06-13-just-the-girls-d2t11.flac
+45a2fbdbbd4f5462afdbf4ab0d168b70  bd84-06-13-just-the-girls.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-13-just-the-girls.flacf 
+=================== 
+=================== 
+=================== 
+bd84-06-13-just-the-girls-d1t01.flac:d6f9ce7f1eb84e05cef13b1cdca6e0f7
+bd84-06-13-just-the-girls-d1t02.flac:d063e15e1b4214970f2a8cc4364b3efa
+bd84-06-13-just-the-girls-d1t03.flac:2ccea46b7a90e8b745190938d3d4da76
+bd84-06-13-just-the-girls-d1t04.flac:04517f6fa913388307e776752de13f13
+bd84-06-13-just-the-girls-d1t05.flac:7983638fd2c8295716d5cc8b08e18269
+bd84-06-13-just-the-girls-d1t06.flac:9a63edd41c071403616b8127e2573f32
+bd84-06-13-just-the-girls-d1t07.flac:f90fead664bfe5d583a3b5328d373191
+bd84-06-13-just-the-girls-d1t08.flac:d8a57cbcb6a84acaabdc7ade6c7de7e8
+bd84-06-13-just-the-girls-d1t09.flac:9fe64d86dc15fc1dbdaf2f06be35c935
+bd84-06-13-just-the-girls-d1t10.flac:ba745d3ed7d885fef9aedb0d1b044fc7
+bd84-06-13-just-the-girls-d2t01.flac:bcdc4f2c3099276f77fa746a3d81cdd1
+bd84-06-13-just-the-girls-d2t02.flac:d339962a7779ac8830ecebf8192d05d8
+bd84-06-13-just-the-girls-d2t03.flac:866254be15d81fdee3bf7177a5436d93
+bd84-06-13-just-the-girls-d2t04.flac:80b4013eeeebcdb0ed8042600c21c992
+bd84-06-13-just-the-girls-d2t05.flac:6a965f5d324874fa82655672a7a09754
+bd84-06-13-just-the-girls-d2t06.flac:bbc0e1da89920fab86099504640b92f5
+bd84-06-13-just-the-girls-d2t07.flac:7f9e071cf906624ed112944402adbd85
+bd84-06-13-just-the-girls-d2t08.flac:efd57535814a551581b4802d1a8a999a
+bd84-06-13-just-the-girls-d2t09.flac:c5952e8d0f050d1ce49c5ab1873fe317
+bd84-06-13-just-the-girls-d2t10.flac:3c962feb79517580720300f5ef5bce77
+bd84-06-13-just-the-girls-d2t11.flac:7457fab9a011176cacb3d816a9fca53a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-13-just-the-girls.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.58       53938460 B   ---   --   ---xx   flac  0.5886  bd84-06-13-just-the-girls-d1t01.flac
+     7:25.62       78643868 B   ---   --   ---xx   flac  0.5849  bd84-06-13-just-the-girls-d1t02.flac
+     5:47.00       61210844 B   ---   --   ---xx   flac  0.5801  bd84-06-13-just-the-girls-d1t03.flac
+     6:50.68       72483980 B   ---   --   ---xx   flac  0.5798  bd84-06-13-just-the-girls-d1t04.flac
+     4:34.14       48366572 B   ---   --   ---xx   flac  0.5939  bd84-06-13-just-the-girls-d1t05.flac
+     7:13.43       76482380 B   ---   --   ---xx   flac  0.5701  bd84-06-13-just-the-girls-d1t06.flac
+     4:24.67       46727228 B   ---   --   ---xx   flac  0.5692  bd84-06-13-just-the-girls-d1t07.flac
+     5:29.41       58132076 B   ---   --   ---xx   flac  0.5659  bd84-06-13-just-the-girls-d1t08.flac
+     7:32.11       79758716 B   ---   --   ---xx   flac  0.5811  bd84-06-13-just-the-girls-d1t09.flac
+     6:38.49       70322492 B   ---   --   ---xx   flac  0.5712  bd84-06-13-just-the-girls-d1t10.flac
+     5:34.56       59049356 B   ---   --   ---xx   flac  0.5825  bd84-06-13-just-the-girls-d2t01.flac
+     6:12.48       65733740 B   ---   --   ---xx   flac  0.5846  bd84-06-13-just-the-girls-d2t02.flac
+     5:13.43       55314380 B   ---   --   ---xx   flac  0.5789  bd84-06-13-just-the-girls-d2t03.flac
+     4:32.53       48105500 B   ---   --   ---xx   flac  0.5832  bd84-06-13-just-the-girls-d2t04.flac
+     5:49.18       61605980 B   ---   --   ---xx   flac  0.5799  bd84-06-13-just-the-girls-d2t05.flac
+     7:16.13       76941020 B   ---   --   ---xx   flac  0.5883  bd84-06-13-just-the-girls-d2t06.flac
+     4:05.16       43255676 B   ---   --   ---xx   flac  0.5731  bd84-06-13-just-the-girls-d2t07.flac
+     5:22.09       56822012 B   ---   --   ---xx   flac  0.5579  bd84-06-13-just-the-girls-d2t08.flac
+     5:24.26       57214796 B   ---   --   ---xx   flac  0.5666  bd84-06-13-just-the-girls-d2t09.flac
+     5:18.30       56165804 B   ---   --   ---xx   flac  0.5878  bd84-06-13-just-the-girls-d2t10.flac
+     5:48.09       61408412 B   ---   --   ---xx   flac  0.5628  bd84-06-13-just-the-girls-d2t11.flac
+   121:39.59     1287683292 B                            0.5778  (21 files)
+=================== 
+=================== 
+=================== 

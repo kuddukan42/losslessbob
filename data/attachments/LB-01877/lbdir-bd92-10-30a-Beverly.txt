@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-10-30a-Beverly 
+=================== 
+=================== 
+=================== 
+9b8fa4cea72c97e45d463c7ecd5750f1  bd92-10-30a.txt
+a55850f09ad68c9db3482e1d0c9cee63  bd921030d1t01.shn
+633fe0afb40606a3a95dd42e38a12ffb  bd921030d1t02.shn
+3913729714bd1e2852e35ca342c3e566  bd921030d1t03.shn
+0675854142a938bb41a7e36fff5baa6c  bd921030d1t04.shn
+4f7ff8eb4052a87a2499b2a039240ac9  bd921030d1t05.shn
+e264fb0582679b8d138416a840295c3c  bd921030d1t06.shn
+03196ec9591cd695d844107a1c2853cf  bd921030d1t07.shn
+09b2b877e2a1dd5892ac3b8d5ac76884  bd921030d1t08.shn
+536447a254232d314b632776bf4b5281  bd921030d1t09.shn
+7e1687b727970f4add9778d4d5374268  bd921030d1t10.shn
+c6d12fcea9f4e27f02dc4cba55b69af4  bd921030d1t11.shn
+988b18fbae909e8919e9ae34e79a2aee  bd921030d2t01.shn
+f8f02d6cf6d2767c00bc3d2727aa745a  bd921030d2t02.shn
+b0734ee41409adcc3ee093ba0dd899b8  bd921030d2t03.shn
+e3371118157e60077e6693aae7f552ac  bd921030d2t04.shn
+239fe32e1be481917882244985496568  bd921030d2t05.shn
+32578ccd3f44107f7bda4df53172b8e7  bd921030d2t06.shn
+5bf03a62d6e147db5440f8406e3fef69  bd921030d2t07.shn
+38470d96e1a772d5759eeb5fcbea2311  Dylan 30 Oct 92.txt
+8ce6f4ec3d2367eecef564f18aba74ee  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-10-30a-Beverly 
+=================== 
+=================== 
+=================== 
+fa6be5529c18cbb7839650026fd2a1a7  [shntool]  bd921030d1t01.wav
+6782abd8566af2835de9171e9dd2c078  [shntool]  bd921030d1t02.wav
+647a6101697124543e05c39ca6063d61  [shntool]  bd921030d1t03.wav
+0dcb5888cb006033e10d66ef029b1eef  [shntool]  bd921030d1t04.wav
+32245fc929afa837cc4cf4dd135ea5f9  [shntool]  bd921030d1t05.wav
+a3b8d01a1d49623b281da9827ce81734  [shntool]  bd921030d1t06.wav
+bea89714a94e5997b450a3dea92825c0  [shntool]  bd921030d1t07.wav
+026e62168a569a4aeaab7a3e59473267  [shntool]  bd921030d1t08.wav
+d1e284a7cc2e1294cf2d3f43cb2c1817  [shntool]  bd921030d1t09.wav
+009f1527e0aa9ff8711e6682e320808e  [shntool]  bd921030d1t10.wav
+7adba67bc6bb08037fbe51c378f4ae91  [shntool]  bd921030d1t11.wav
+ae81e25fefe4d5a3913e45b69a4c7122  [shntool]  bd921030d2t01.wav
+edd77501662b572c53dce1715f206514  [shntool]  bd921030d2t02.wav
+e8d109899e7c8febaec8140a64411603  [shntool]  bd921030d2t03.wav
+fcf4487a61c3420a468046f9796d9822  [shntool]  bd921030d2t04.wav
+77ea04a373ef35a3a11aa4d24eb9f271  [shntool]  bd921030d2t05.wav
+7dbeb4def5715c10ab841bc9c8e94c8c  [shntool]  bd921030d2t06.wav
+f69cd48e6def5fdbae2cb63b2a9269f7  [shntool]  bd921030d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-10-30a-Beverly 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:38.63       49187420 B   ---   --   -----    wav  1.0000  bd921030d1t01.wav
+     7:03.53       74741900 B   ---   --   -----    wav  1.0000  bd921030d1t02.wav
+     6:59.54       74038652 B   ---   --   -----    wav  1.0000  bd921030d1t03.wav
+     8:54.05       94209404 B   ---   --   -----    wav  1.0000  bd921030d1t04.wav
+     7:49.59       82870412 B   ---   --   -----    wav  1.0000  bd921030d1t05.wav
+     6:33.18       69367580 B   ---   --   -----    wav  1.0000  bd921030d1t06.wav
+     6:00.61       63647516 B   ---   --   -----    wav  1.0000  bd921030d1t07.wav
+     3:31.56       37352156 B   ---   --   -----    wav  1.0000  bd921030d1t08.wav
+     4:43.19       49965932 B   ---   --   -----    wav  1.0000  bd921030d1t09.wav
+     6:34.24       69558092 B   ---   --   -----    wav  1.0000  bd921030d1t10.wav
+     7:34.34       80165612 B   ---   --   -----    wav  1.0000  bd921030d1t11.wav
+     5:48.63       61535420 B   ---   --   -----    wav  1.0000  bd921030d2t01.wav
+     6:33.08       69344060 B   ---   --   -----    wav  1.0000  bd921030d2t02.wav
+     8:06.19       85775132 B   ---   --   -----    wav  1.0000  bd921030d2t03.wav
+     9:06.22       96366188 B   ---   --   -----    wav  1.0000  bd921030d2t04.wav
+     5:55.33       62699660 B   ---   --   -----    wav  1.0000  bd921030d2t05.wav
+     6:54.33       73107260 B   ---   --   -----    wav  1.0000  bd921030d2t06.wav
+     6:40.44       70663532 B   ---   --   -----    wav  1.0000  bd921030d2t07.wav
+   119:28.68     1264595928 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

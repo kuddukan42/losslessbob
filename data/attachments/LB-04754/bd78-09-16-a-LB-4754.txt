@@ -1,0 +1,14 @@
+Bob Dylan, 9/16/78, Portland, Maine, Cumberland Civic Center, 2CDR
+
+LB-4754, (77min+59min), version "a"; Trade CD > EAC > FLAC > HD > Hungercity > You, Times and track layouts do not match but some of the same flaws exist here that are reported in LB-3476.; bittorrent download 04/07; same recording as LB-3476 with same analog flaws with addition of this one having end of d1t10 cut but this does not have the digital drop on d1t6 on that one; in comparison this is a not as harsh and tinny with less hiss, not true mono, and about 2 seconds a minute slower on d1t14; abrupt start on d1t16; very good sound [B]
+
+sound level goes down at d1t2  0:20 for 5 seconds; analog drop d1t2 2.34, d1t3 0:25, d1t6 6:53, 6:54, 7:02, 7:03, 7:04, 7:05, digital drop 6:45; d2t10 is start of Forever Young then cuts and repeats in full on d2t11
+
+CD1
+1. My Back Pages, 2. I'm Ready (Willie Dixon), 3. Is Your Love In Vain?, 4. Shelter From The Storm, 5. Love Minus Zero/No Limit, 6. Tangled Up In Blue, 7. Ballad Of A Thin Man, 8. Maggie's Farm, 9. I Don't Believe You (She Acts Like We Never Have Met), 10. Like A Rolling Stone, 11. I Shall Be Released, 12. Going, Going, Gone, 13. I Threw It All Away, 14. It Ain't Me, Babe, 15. Am I Your Stepchild?, 16. One More Cup Of Coffee (Valley Below), 
+
+CD2
+17. Blowin' In The Wind, 18. I Want You, 19. Senor (Tales Of Yankee Power), 20. Masters Of War, 21. Just Like A Woman, 22. Baby Stop Crying, 23. All Along The Watchtower, 24. All I Really Want To Do, 25. It's Alright, Ma (I'm Only Bleeding), 26. Forever Young, 27. Changing Of The Guards
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

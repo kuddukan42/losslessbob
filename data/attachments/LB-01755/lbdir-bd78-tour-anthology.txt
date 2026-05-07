@@ -1,0 +1,418 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-tour-anthology 
+=================== 
+=================== 
+=================== 
+686142553b06e44362382fde544a27b8  1978WorldTourAnthology.txt
+1b053fb30fcd0cb3baff997556f1acb9  Artwork\Back.jpg
+bba94bcf1ce2d2c9fbd2cdd09fa2f71b  Artwork\Front web.jpg
+0a9234c70f373a7992a305a2b55e08ab  Artwork\Front.jpg
+7a3d4b027fd34e7dd89e86f117dbc129  Artwork\Inside1.jpg
+f122d2a5abb3d91eda5977f7d0cf79f4  Artwork\Inside2.jpg
+362622e997d2eddfbe26fea21433b35f  Artwork\Inside3.jpg
+516bf8814de8f12d5a23aaf4ee4a8717  Artwork\Thumbs.db
+12e226aeb92a05bc31aa943bd615b103  Artwork\Tracklist.jpg
+e4671cba6277df94d3a16206785fadca  D1\Track 1.shn
+0a151de21a133c4a804c4eeeba32c50b  D1\Track 10.shn
+2501b048e5e9eb358b8162dcbb2f756b  D1\Track 11.shn
+f66ccd138fbb48cbc81cc1d5ad7be93f  D1\Track 12.shn
+fe0aec4dd44829c29f8d6951c73c905d  D1\Track 13.shn
+5df92cf4c0c3b3eb918368704889d2f3  D1\Track 14.shn
+28bb84067574161f8340191a0e008de3  D1\Track 15.shn
+2c7e2a0c7c848abf3356da14918015b6  D1\Track 16.shn
+6352b940abf5a525809ceaf85d4fd408  D1\Track 2.shn
+708003a9bcd2c4bea1fc447bd6266d85  D1\Track 3.shn
+2695c3963d34e8300700ee654735fcd8  D1\Track 4.shn
+dd66dbb1a99da22c0c91b24427e29ed6  D1\Track 5.shn
+3d96ee21b67d959ad0a8b4d12e4dfbd5  D1\Track 6.shn
+6ae1bd054cf72c8cfbc662d32286663c  D1\Track 7.shn
+4438596ae33a2754c3d123c5865bac60  D1\Track 8.shn
+a0cadc1962dbac5b35d20723f352bf53  D1\Track 9.shn
+ae1294c1096d73115de498514ed11f2c  D1\noname.md5
+33a67816c438087ee1a43a61f7348c1c  D2\Track 1.shn
+5e180a7e39f6afdb2ad3a3bd6d5312f1  D2\Track 10.shn
+8f9aa83f0645c1fc9aec489d843d0c31  D2\Track 11.shn
+4ea7857d459eec602ddc6843731c6933  D2\Track 12.shn
+a5246a2ecb96dd1cca37cdd81c2dd3c5  D2\Track 13.shn
+a66891946aaf553ed519c15545005f4e  D2\Track 14.shn
+ebbe0b92028eeb288f725882c965ff18  D2\Track 15.shn
+3b0836895921e74b9526819e2f6f1080  D2\Track 16.shn
+14477307ff584fed05a72e5ab46351a5  D2\Track 17.shn
+003236533e1a51729528b044f1b419d6  D2\Track 2.shn
+bd8cb19588a505fae0622a2a79ed4da9  D2\Track 3.shn
+13118211c3d5c2348e146e385051c18f  D2\Track 4.shn
+55052a8c6ed4cde04eb3221417893e71  D2\Track 5.shn
+2a0f3ca559e466aa3fcaa5feb486176f  D2\Track 6.shn
+53a71579e82171ecb03d89258cbd3529  D2\Track 7.shn
+ba17c92d4f6e320f85f93257794cd40a  D2\Track 8.shn
+90060049311b76e0ecd99702caf2ba2d  D2\Track 9.shn
+b56c3d9c1369ee73465ffb40cbdcdd44  D2\noname.md5
+5b78e863c8dcc7bf80373524df186522  D3\Track 1.shn
+e141790338c3ba1df787a6ef4824c6a7  D3\Track 10.shn
+81f738c55403c1fd815e780b3f639fc8  D3\Track 11.shn
+01a4fc027df7a8b686433e326351dc6f  D3\Track 12.shn
+ecb1d6da32c350a2b5216b7e6a3e8a77  D3\Track 13.shn
+345c8d6cdc8f5a8fac0821847cd786fc  D3\Track 14.shn
+9b7b00fa61e4f2e9832a4e5c0c4c9876  D3\Track 15.shn
+a94e242fd6110418bd69a1022f0c8f8f  D3\Track 16.shn
+fbd824b358af3630de27363abaa983fb  D3\Track 17.shn
+facca1948b6f3c44823d6279cba0ac61  D3\Track 2.shn
+cc88e1fa1a14e8eb0f2156304732c45c  D3\Track 3.shn
+bd43c68705f408ffa136afa2ca996b45  D3\Track 3_fixed.shn
+43ceaa660cda8b56974c7375cabbba1b  D3\Track 4.shn
+0e10ef23a589f4685235b0e41a6a3c16  D3\Track 5.shn
+396717a3adc76f494a1dcdf53da15729  D3\Track 6.shn
+2b7bed374572c2de0598a8b33853e4cd  D3\Track 7.shn
+059ed63e6e648f930b9c94a30c8fd22b  D3\Track 8.shn
+5e404a3c990bd455c5fe227ddef9992f  D3\Track 9.shn
+960ee6b266311877b5cdeb5067d82365  D3\noname.md5
+fcd7fc378a88cc1f46c709952f0dd438  D4\Track 1.shn
+e5e63f31a9fbc26f2b2bb72751dbe7d1  D4\Track 10.shn
+a52a25d3c610ee11e1f896cc91f8cb02  D4\Track 11.shn
+87faf9c8e6355b3b71cb3890cddc7922  D4\Track 12.shn
+7cf7dc0c5c69024892f6be124c8dd4dc  D4\Track 13.shn
+fb49b716edaacd05d4e015973f28dd1f  D4\Track 14.shn
+127549caaaea569d362e1c8acc8cd0d0  D4\Track 15.shn
+afc1850dd202ac33e4c2c318fa24c682  D4\Track 16.shn
+c6940917e84d09b60343536741150c0b  D4\Track 2.shn
+a8ff265598ca33dea8fb2a27aa7d61bd  D4\Track 3.shn
+0a0a9b721378269f098c459b52389f84  D4\Track 4.shn
+c54667ada435e6809e933fd59dd1df6b  D4\Track 5.shn
+8db258111f6eb7da2328b1d52eaa08f4  D4\Track 6.shn
+5c8cf3fba8aa5e7430cd702c2556c581  D4\Track 7.shn
+a2c866a94c845088d46d027c8c875706  D4\Track 8.shn
+4eefad36f622378dc2fc4cb680009547  D4\Track 9.shn
+21428ba40450662b9d2bbee84d23aa8d  D4\noname.md5
+2b4545f0bbc6c5a5d009b3bbe5c39376  D5\Track 1.shn
+90ef0d5303dd8f78da6f353be6ed73ea  D5\Track 10.shn
+9936da136df0e2a784e55a7a32e73971  D5\Track 11.shn
+877a3405c68e4c371439894fa45d92f2  D5\Track 12.shn
+17ead4a55fc4d670836d8b55df87667c  D5\Track 13.shn
+37d4f5e0b035c638c4b896108143b156  D5\Track 14.shn
+911fd37658833d7b85f5de7c6a79a827  D5\Track 15.shn
+846757f90faf3d34cfb1219ea6a89eb4  D5\Track 2.shn
+eb54b0526dbd279e35bc85966a21d6bd  D5\Track 3.shn
+2c3bb842109782f70bb155ef62f0cacc  D5\Track 4.shn
+66b0ea62643ce02cab180aca90606ac3  D5\Track 5.shn
+84d2a5501b3d8010a547a4c173b9ece8  D5\Track 6.shn
+2fc46aaec2e59654b35f664bf2d8035e  D5\Track 7.shn
+20497c4c4e2d78a86e2c9e2d04fee311  D5\Track 8.shn
+c07989f68d476e7af0d41e63ffc2902d  D5\Track 9.shn
+d5c2aa25023e1e5bc9cbb4183c6e2532  D5\noname.md5
+b774ca42f0328abe5f81d2b88151f209  D6\Track 1.shn
+c1e724cd258f7a1068e4fb85a8b0f679  D6\Track 10.shn
+b27cbaeca46c3e4356f5a1afb498fec9  D6\Track 11.shn
+16abd6dc63cc9c145afec5d53d8158dd  D6\Track 12.shn
+ea885d9bda59136c3953848cfea82961  D6\Track 13.shn
+7f9c8419d1b692e0b148b6f8165765a5  D6\Track 14.shn
+8b7036f3b323a2699acf562036d072d7  D6\Track 15.shn
+09a2068aea6948874b83e90dce36b46a  D6\Track 16.shn
+711b2d69d4062125d4e064634fa23cc4  D6\Track 17.shn
+7fb575606ea7e15a675fc65e8bb94995  D6\Track 2.shn
+bca602db7a1091fb230f1c2b7cd40f2c  D6\Track 3.shn
+be02df2553509541e2eaa633ea56ba69  D6\Track 4.shn
+82ee7e4c78d646e4b4de869619803976  D6\Track 5.shn
+a235938e11b0d98ea3ac2b8ba68aa2d5  D6\Track 6.shn
+5c825a25c919d43500fb579cee39f644  D6\Track 7.shn
+b10c716e4a7417cb1a2a8bcaac7e99e3  D6\Track 8.shn
+da1628b5b1f74fb830a8d3b6bbe4fc2c  D6\Track 9.shn
+0bff9cb594318ae870c43e13aab6a926  D6\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-tour-anthology\D5 
+=================== 
+=================== 
+=================== 
+d393aa554a27475415ea8587e7745e96  [shntool]  Track_1.wav
+caf41ef375c5f67f8d964769371724e2  [shntool]  Track_2.wav
+ccf6addf216269aa47da4d92d273a7f2  [shntool]  Track_3.wav
+3de15d5166bb1ee9c40cf5593d1ca793  [shntool]  Track_4.wav
+75d7065b4cbddf80070a03d34a561b36  [shntool]  Track_5.wav
+52a7beecc056a31ae8b57786696f64de  [shntool]  Track_6.wav
+586c943f1033c53ac9e80acd9f0a9980  [shntool]  Track_7.wav
+c6fe43c7b3f4ffe75c347441168df812  [shntool]  Track_8.wav
+c3563d8776c6c02efcc399335bf9cde4  [shntool]  Track_9.wav
+303bf73784dbe8a936ff4dda0c4449d9  [shntool]  Track_10.wav
+0c471afc0168814aa7f46f80ba6d6088  [shntool]  Track_11.wav
+5bc32b68ca250f5678f6337e3f52b8da  [shntool]  Track_12.wav
+f228470bf960215a4018a0e328333683  [shntool]  Track_13.wav
+be602043bed40052a8e8628789e14446  [shntool]  Track_14.wav
+2b88553746e582b8d5a20807ec392fd1  [shntool]  Track_15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-tour-anthology\D1 
+=================== 
+=================== 
+=================== 
+4b2d86446f5276fc52af52fc84d2ce9e  [shntool]  Track_1.wav
+250c3e40b3e1fe27d7ae258928dff4a1  [shntool]  Track_2.wav
+05a3fbb77e57568dc0e7f5ab36b1bb9d  [shntool]  Track_3.wav
+f61aa9b9fdd31c1bf5c56647e644653f  [shntool]  Track_4.wav
+6888ce8d699d26843a6c6f3ed226f5d2  [shntool]  Track_5.wav
+92c404bc9b9e489ab813a7f90917cfac  [shntool]  Track_6.wav
+93da2f983e97683c16503e41f99cae23  [shntool]  Track_7.wav
+1b9355e10757c3f1e6d6d12045a2786e  [shntool]  Track_8.wav
+62dd877e2fed2e544228ab698f7774ae  [shntool]  Track_9.wav
+55c6a69b906581e257fc7c0ee83cc2e4  [shntool]  Track_10.wav
+366e173b42313c83dc12e50406ea778e  [shntool]  Track_11.wav
+73bdac264c2a2e2e91409548b9a04ed0  [shntool]  Track_12.wav
+8480444e71750d4b7218174042dd177e  [shntool]  Track_13.wav
+0dd76028f11fa44b3ae286db36a06868  [shntool]  Track_14.wav
+df8e19c3477a813b86847b11fe37e82c  [shntool]  Track_15.wav
+f596c645564bb98703f6376d4748c329  [shntool]  Track_16.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-tour-anthology\D6 
+=================== 
+=================== 
+=================== 
+2a002f5627650230671b854ddb011637  [shntool]  Track_1.wav
+f04bb5cb9ab43fc3eaee610ee40a96bf  [shntool]  Track_2.wav
+9c6c8e50e256db54495a87e5ac2c7638  [shntool]  Track_3.wav
+4459002a998957b5e7a76e4f185c8348  [shntool]  Track_4.wav
+9def95d9562205c9f8913618329e637f  [shntool]  Track_5.wav
+d2336e62ea2735467f0a21b7bc908958  [shntool]  Track_6.wav
+defcebd5727141c236a6594c312256c7  [shntool]  Track_7.wav
+239976fbf0ae3087302eecaf34b1fdf2  [shntool]  Track_8.wav
+0f2660ead11f7807d70099fa73296a22  [shntool]  Track_9.wav
+83a6dd1be952e2b8aa81978edf9a0e05  [shntool]  Track_10.wav
+227babb6fdcc10126dde91d073b923c8  [shntool]  Track_11.wav
+7cc3122eeb1c3ca4f73602efdc2da7d0  [shntool]  Track_12.wav
+ace2177604668910ce45cf6d147e8b13  [shntool]  Track_13.wav
+e92189267517c46c0f9b22d78756ee29  [shntool]  Track_14.wav
+fb71c5e4748b17373e9a00ba55d54fb0  [shntool]  Track_15.wav
+2b7f2f266cc45d3e53ecc7a3de831d05  [shntool]  Track_16.wav
+2de0d1df6206f98332b7cceb8e77ab30  [shntool]  Track_17.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-tour-anthology\D4 
+=================== 
+=================== 
+=================== 
+7910894611b780cdae5520caa5cd8bbf  [shntool]  Track_1.wav
+2d62e0a1e3f26c40b0a5d9a7c8ac0666  [shntool]  Track_2.wav
+affebe6e5719ed83170ab21383d662e0  [shntool]  Track_3.wav
+4caf6f2fb8ddd1b21097f1263cc4d879  [shntool]  Track_4.wav
+e74691fecbf0b7cf60fc1e8f368de1f7  [shntool]  Track_5.wav
+cc048050117dcc8b3d0b250b178a4f35  [shntool]  Track_6.wav
+a168195d9f913fb12dd3a2014de8e7ec  [shntool]  Track_7.wav
+cc657b333ccba8999d17cb3f610ba5f9  [shntool]  Track_8.wav
+2dd2a9b609a84015089ce8bc36cf6f6d  [shntool]  Track_9.wav
+619f89f233552344534e021f7145db5f  [shntool]  Track_10.wav
+c18699239cf93f6596e7e0d15cb3a93d  [shntool]  Track_11.wav
+209d2ab85855b20dce3b2a5c06fe73db  [shntool]  Track_12.wav
+957fc5410784cce0cffebb0916fb603b  [shntool]  Track_13.wav
+e4261be0ff2692a10465d9757bb31a9e  [shntool]  Track_14.wav
+da797f28c72067754f909fc2be27c6eb  [shntool]  Track_15.wav
+dab36a2a9b62ffbc759c3cbec3ddad6a  [shntool]  Track_16.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-tour-anthology\D2 
+=================== 
+=================== 
+=================== 
+cc65cc8c1de17832d2074151610f51ee  [shntool]  Track_1.wav
+d3637b70507cf9a0302701406d6a90e0  [shntool]  Track_2.wav
+bd0989174d72fb5a663a9d783447975f  [shntool]  Track_3.wav
+834f4d946f521bad6eae4ff9613f7c51  [shntool]  Track_4.wav
+cf43e5dde7ea0c1b18d71af1159a3517  [shntool]  Track_5.wav
+dfa720b8ddefcd747f4d2165dca26d11  [shntool]  Track_6.wav
+31ca6145235be98233f42fd84ed931b7  [shntool]  Track_7.wav
+a967948795fb0afd4f0328e7f1469550  [shntool]  Track_8.wav
+60920f2564fccf3209b220d0eec8bedf  [shntool]  Track_9.wav
+fb7814a046bd331eda485dc6e42068a7  [shntool]  Track_10.wav
+dee6438889179115c2bd8ca5de7ea946  [shntool]  Track_11.wav
+6a0300f069035823096e64fdd2c6200c  [shntool]  Track_12.wav
+45a27419a0f33d3fd59d3576dedbd409  [shntool]  Track_13.wav
+dcbc984e08c11da13250427c23e3c465  [shntool]  Track_14.wav
+92db454247dd7f48c07b1a94a11d6fcf  [shntool]  Track_15.wav
+f6cd99beef3649982cdf846c68f86407  [shntool]  Track_16.wav
+77ca8b302e3c208a10dda2ad4fd022a9  [shntool]  Track_17.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-tour-anthology\D3 
+=================== 
+=================== 
+=================== 
+d1d39aa3692443d9ce3bfe9859421cc7  [shntool]  Track_1.wav
+c6af176a56dd83c6c9142b7c1f041b3b  [shntool]  Track_2.wav
+687c7f884f88f6e6907449e0a40f9bbf  [shntool]  Track_3.wav
+3529b00ef585c583c686ca88c98c77e3  [shntool]  Track_3_fixed.wav
+a4e20b670fed9efbd33495ced946b9de  [shntool]  Track_4.wav
+db17d40d429f6f148c063f3bc7442485  [shntool]  Track_5.wav
+b8a8f163a279f07a057c53640cf42b14  [shntool]  Track_6.wav
+9b6a65e5b11e1059dc86e81940b51368  [shntool]  Track_7.wav
+4472759ce0493f35a2c3817e596278a7  [shntool]  Track_8.wav
+b735d7f33249bf9b85429593494b4528  [shntool]  Track_9.wav
+f218c0e06f8bca52654fe61e45e695f0  [shntool]  Track_10.wav
+5aac31ec3fbee33fac2697d40c9b8f26  [shntool]  Track_11.wav
+409e306674b868eb275ed67f84d675ea  [shntool]  Track_12.wav
+fa0760b7406a933300d1b891fd75e402  [shntool]  Track_13.wav
+c5d5c147d2a5adefa3eb7cf738526346  [shntool]  Track_14.wav
+7df679c5d9fbcfe56a720692d42283de  [shntool]  Track_15.wav
+fea619508d1a12481886124adc7fd0be  [shntool]  Track_16.wav
+f64d8c1ca207ab8e0ad2128fd1f31082  [shntool]  Track_17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-tour-anthology\D5 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:33.13       27019820 B   ---   --   -----    wav  1.0000  Track_1.wav
+     4:23.72       46562588 B   ---   --   -----    wav  1.0000  Track_10.wav
+     5:42.02       60333548 B   ---   --   -----    wav  1.0000  Track_11.wav
+     6:05.55       64515404 B   ---   --   -----    wav  1.0000  Track_12.wav
+     5:15.26       55627196 B   ---   --   -----    wav  1.0000  Track_13.wav
+     5:00.16       52957676 B   ---   --   -----    wav  1.0000  Track_14.wav
+     5:24.43       57254780 B   ---   --   -----    wav  1.0000  Track_15.wav
+     5:00.18       52962380 B   ---   --   -----    wav  1.0000  Track_2.wav
+     4:08.48       43860140 B   ---   --   -----    wav  1.0000  Track_3.wav
+     4:52.44       51612332 B   ---   --   -----    wav  1.0000  Track_4.wav
+     7:59.34       84575612 B   ---   --   -----    wav  1.0000  Track_5.wav
+     4:32.12       48009068 B   ---   --   -----    wav  1.0000  Track_6.wav
+     5:24.55       57283004 B   ---   --   -----    wav  1.0000  Track_7.wav
+     4:46.08       50469260 B   ---   --   -----    wav  1.0000  Track_8.wav
+     7:01.45       74370284 B   ---   --   -----    wav  1.0000  Track_9.wav
+    78:10.41      827413092 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-tour-anthology\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:44.41       29026076 B   ---   --   -----    wav  1.0000  Track_1.wav
+     6:31.51       69092396 B   ---   --   -----    wav  1.0000  Track_10.wav
+     4:28.54       47402252 B   ---   --   -----    wav  1.0000  Track_11.wav
+     4:58.57       52701308 B   ---   --   -----    wav  1.0000  Track_12.wav
+     3:54.68       41437580 B   ---   --   -----    wav  1.0000  Track_13.wav
+     4:28.08       47294060 B   ---   --   -----    wav  1.0000  Track_14.wav
+     4:34.33       48411260 B   ---   --   -----    wav  1.0000  Track_15.wav
+     5:02.61       53416316 B   ---   --   -----    wav  1.0000  Track_16.wav
+     5:26.63       57654620 B   ---   --   -----    wav  1.0000  Track_2.wav
+     5:25.50       57447644 B   ---   --   -----    wav  1.0000  Track_3.wav
+     4:45.17       50314028 B   ---   --   -----    wav  1.0000  Track_4.wav
+     4:14.46       44913836 B   ---   --   -----    wav  1.0000  Track_5.wav
+     5:09.72       54676988 B   ---   --   -----    wav  1.0000  Track_6.wav
+     4:36.20       48733484 B   ---   --   -----    wav  1.0000  Track_7.wav
+     5:08.39       54422972 B   ---   --   -----    wav  1.0000  Track_8.wav
+     4:29.52       47573948 B   ---   --   -----    wav  1.0000  Track_9.wav
+    76:00.57      804518768 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-tour-anthology\D6 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.63       61182620 B   ---   --   -----    wav  1.0000  Track_1.wav
+     7:18.29       77331452 B   ---   --   -----    wav  1.0000  Track_10.wav
+     5:31.61       58531916 B   ---   --   -----    wav  1.0000  Track_11.wav
+     3:11.25       33751244 B   ---   --   -----    wav  1.0000  Track_12.wav
+     3:10.05       33527804 B   ---   --   -----    wav  1.0000  Track_13.wav
+     5:07.31       54227756 B   ---   --   -----    wav  1.0000  Track_14.wav
+     3:03.47       32391788 B   ---   --   -----    wav  1.0000  Track_15.wav
+     3:18.06       34941356 B   ---   --   -----    wav  1.0000  Track_16.wav
+     3:39.45       38737484 B   ---   --   -----    wav  1.0000  Track_17.wav
+     4:49.47       51090188 B   ---   --   -----    wav  1.0000  Track_2.wav
+     5:51.43       62017580 B   ---   --   -----    wav  1.0000  Track_3.wav
+     4:11.03       44283500 B   ---   --   -----    wav  1.0000  Track_4.wav
+     3:44.29       39581852 B   ---   --   -----    wav  1.0000  Track_5.wav
+     3:18.03       34934300 B   ---   --   -----    wav  1.0000  Track_6.wav
+     6:54.30       73100204 B   ---   --   -----    wav  1.0000  Track_7.wav
+     3:25.22       36213788 B   ---   --   -----    wav  1.0000  Track_8.wav
+     5:53.26       62330396 B   ---   --   -----    wav  1.0000  Track_9.wav
+    78:14.65      828175228 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-tour-anthology\D4 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:57.31       31295756 B   ---   --   -----    wav  1.0000  Track_1.wav
+     5:59.26       63388796 B   ---   --   -----    wav  1.0000  Track_10.wav
+     4:50.45       51261884 B   ---   --   -----    wav  1.0000  Track_11.wav
+     5:10.47       54794588 B   ---   --   -----    wav  1.0000  Track_12.wav
+     4:16.05       45170204 B   ---   --   -----    wav  1.0000  Track_13.wav
+     7:12.51       76324796 B   ---   --   -----    wav  1.0000  Track_14.wav
+     3:56.16       41668076 B   ---   --   -----    wav  1.0000  Track_15.wav
+     3:55.10       41477564 B   ---   --   -----    wav  1.0000  Track_16.wav
+     4:41.39       49660172 B   ---   --   -----    wav  1.0000  Track_2.wav
+     4:19.63       45835820 B   ---   --   -----    wav  1.0000  Track_3.wav
+     5:19.22       56323388 B   ---   --   -----    wav  1.0000  Track_4.wav
+     3:30.19       37088732 B   ---   --   -----    wav  1.0000  Track_5.wav
+     3:45.49       39805292 B   ---   --   -----    wav  1.0000  Track_6.wav
+     5:51.48       62029340 B   ---   --   -----    wav  1.0000  Track_7.wav
+     6:09.59       65230412 B   ---   --   -----    wav  1.0000  Track_8.wav
+     6:30.50       68913644 B   ---   --   -----    wav  1.0000  Track_9.wav
+    78:26.55      830268464 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-tour-anthology\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:25.26       46807196 B   ---   --   -----    wav  1.0000  Track_1.wav
+     5:10.15       54719324 B   ---   --   -----    wav  1.0000  Track_10.wav
+     3:57.39       41898572 B   ---   --   -----    wav  1.0000  Track_11.wav
+     3:07.02       32991548 B   ---   --   -----    wav  1.0000  Track_12.wav
+     2:36.59       27657212 B   ---   --   -----    wav  1.0000  Track_13.wav
+     5:02.43       53373980 B   ---   --   -----    wav  1.0000  Track_14.wav
+     4:08.57       43881308 B   ---   --   -----    wav  1.0000  Track_15.wav
+     3:32.07       37413308 B   ---   --   -----    wav  1.0000  Track_16.wav
+     3:26.44       36441932 B   ---   --   -----    wav  1.0000  Track_17.wav
+     4:24.39       46661372 B   ---   --   -----    wav  1.0000  Track_2.wav
+     5:38.32       59698508 B   ---   --   -----    wav  1.0000  Track_3.wav
+     4:16.07       45174908 B   ---   --   -----    wav  1.0000  Track_4.wav
+     2:32.41       26909276 B   ---   --   -----    wav  1.0000  Track_5.wav
+     3:56.29       41698652 B   ---   --   -----    wav  1.0000  Track_6.wav
+     4:24.34       46649612 B   ---   --   -----    wav  1.0000  Track_7.wav
+     2:57.18       31265180 B   ---   --   -----    wav  1.0000  Track_8.wav
+     3:38.74       38629292 B   ---   --   -----    wav  1.0000  Track_9.wav
+    67:15.41      711871180 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-tour-anthology\D3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:22.37       35719868 B   ---   --   -----    wav  1.0000  Track_1.wav
+     6:39.46       70491836 B   ---   --   -----    wav  1.0000  Track_10.wav
+     4:10.24       44156492 B   ---   --   -----    wav  1.0000  Track_11.wav
+     4:37.09       48884012 B   ---   --   -----    wav  1.0000  Track_12.wav
+     4:54.51       51981596 B   ---   --   -----    wav  1.0000  Track_13.wav
+     5:37.21       59496236 B   ---   --   -----    wav  1.0000  Track_14.wav
+     3:32.01       37399196 B   ---   --   -----    wav  1.0000  Track_15.wav
+     3:04.20       32504684 B   ---   --   -----    wav  1.0000  Track_16.wav
+     4:39.03       49222700 B   ---   --   -----    wav  1.0000  Track_17.wav
+     5:04.67       53783228 B   ---   --   -----    wav  1.0000  Track_2.wav
+     5:10.64       54834572 B   ---   --   -----    wav  1.0000  Track_3.wav
+     5:10.32       54760284 B   -b-   --   -----    wav  1.0000  Track_3_fixed.wav
+     4:20.19       45908732 B   ---   --   -----    wav  1.0000  Track_4.wav
+     4:45.70       50438684 B   ---   --   -----    wav  1.0000  Track_5.wav
+     6:36.65       70007324 B   ---   --   -----    wav  1.0000  Track_6.wav
+     4:25.44       46849532 B   ---   --   -----    wav  1.0000  Track_7.wav
+     4:44.12       50125868 B   ---   --   -----    wav  1.0000  Track_8.wav
+     4:12.22       44504588 B   ---   --   -----    wav  1.0000  Track_9.wav
+    85:08.07      901069432 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

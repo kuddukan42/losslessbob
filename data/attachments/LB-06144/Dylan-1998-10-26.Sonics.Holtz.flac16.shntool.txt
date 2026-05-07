@@ -1,0 +1,18 @@
+    length     expanded size   cdr  WAVE problems filename
+     3:55.13       41484620    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t01.flac
+     5:14.72       55558988    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t02.flac
+     6:34.21       69551036    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t03.flac
+     7:31.58       79692860    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t04.flac
+     6:01.37       63767468    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t05.flac
+     6:14.44       66077132    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t06.flac
+     5:45.39       60949772    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t07.flac
+    10:21.63      109692620    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t08.flac
+     8:33.47       90603788    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t09.flac
+     5:48.37       61474268    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t10.flac
+     0:48.09        8488412    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d1t11.flac
+     8:06.24       85786892    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d2t01.flac
+     5:15.18       55608380    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d2t02.flac
+     5:28.53       57983900    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d2t03.flac
+     7:26.64       78824972    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d2t04.flac
+     8:01.44       84951932    ---   --   ---xx   Dylan 1998-10-26.Sonics.Holtz.d2t05.flac
+   101:08.43     1070497040 B                     (totals for 16 files, 0.6004 overall compression ratio)

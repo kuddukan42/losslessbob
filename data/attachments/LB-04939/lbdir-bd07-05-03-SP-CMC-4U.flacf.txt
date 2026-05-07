@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-05-03-SP-CMC-4U.flacf 
+=================== 
+=================== 
+=================== 
+184b49d883ac9043f8b6235f2eca6ea7  bd2007-05-03_SP-CMC-4U.ffp
+c6e876020466783cf88647eae75b9d5f  bd2007-05-03_SP-CMC-4U.md5
+3df32898089f4df0798f04e645bc789b  bd2007-05-03_SP-CMC-4U.txt
+0241e7ca32e3b7e8eda55868a81342e6  bd2007-05-03t01.flac
+bbe6293a521f44763bd6720bac6c9abe  bd2007-05-03t02.flac
+721e45b7f429a88d7c42cce3a7ea1058  bd2007-05-03t03.flac
+d600115a0dfd9b1b5eac5eb55bfcaba0  bd2007-05-03t04.flac
+2c79f8d31f3c8103664c6ecb0d4c37af  bd2007-05-03t05.flac
+d28f8f2020e1a764d53874172f88236c  bd2007-05-03t06.flac
+fea11ddefadb654b929fdc76e323a716  bd2007-05-03t07.flac
+b97af9532cf5ef92230d1f72db036047  bd2007-05-03t08.flac
+ae1b986ee5a3de9543f5f0e0604bb1d2  bd2007-05-03t09.flac
+06ef7cf29ce7c71e9047c2fc68104e62  bd2007-05-03t10.flac
+5b65e717c209eb163230f53232f43b96  bd2007-05-03t11.flac
+3335c10f711e756a2d90b6d4a507136f  bd2007-05-03t12.flac
+cb018649d1e52929faeb6756259cde7f  bd2007-05-03t13.flac
+d6ac4220346cf601dc073ea38a1f5d55  bd2007-05-03t14.flac
+59c8bdb4ea85b774e22b9c1fdc8a9677  bd2007-05-03t15.flac
+fb14e6a6cfe78624dce864c77f9fdad0  bd2007-05-03t16.flac
+1f0667b6a6f85e47eac5d12c7254d6e0  bd2007-05-03t17.flac
+9538d61d60c82c6462affa191611a52a  bd2007-05-03t18.flac
+3a3950188864491b71df1f1fb0b7c1aa  bd2007-05-03t19.flac
+70592f8c6f8173492e198c02d32ae87b  bd2007-05-03t20.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-05-03-SP-CMC-4U.flacf 
+=================== 
+=================== 
+=================== 
+bd2007-05-03t01.flac:306b8f7bc775c322783113d7a4159353
+bd2007-05-03t02.flac:0379f330f2b37498bb79e854e1aa403e
+bd2007-05-03t03.flac:4d5e74beee9a397fc3c813541b9f51d3
+bd2007-05-03t04.flac:2d25e663677319d09ba9722bba5e8e3c
+bd2007-05-03t05.flac:a7fa911bfa6d898b308d8625eadda686
+bd2007-05-03t06.flac:694691eb686403ec73b4d62aa54be474
+bd2007-05-03t07.flac:ecd390737c86e837eb97ec398523e2ee
+bd2007-05-03t08.flac:b848d11806442f52357fd8a6ab0d4c82
+bd2007-05-03t09.flac:ca1f47c8770cc4006aa2e50db5364066
+bd2007-05-03t10.flac:95af6b60f54bc2a9d282b0e474802eb4
+bd2007-05-03t11.flac:fa175bb21b2ab3f667860dfd9f6b0f18
+bd2007-05-03t12.flac:8903bdcac6b8a1005baa6614f0904e32
+bd2007-05-03t13.flac:8baf686feccd2eeb61bfc994dd88ce66
+bd2007-05-03t14.flac:f35389b22cddde99f478a3485c6ebc2c
+bd2007-05-03t15.flac:ca4bc4b893bc39b49adee0e33df5d8c5
+bd2007-05-03t16.flac:b087419d25799ebbf92dc5a8cd05a3f2
+bd2007-05-03t17.flac:a4ba985af96d371e7a3d76a1eee2fd59
+bd2007-05-03t18.flac:dd98181ca2e1a982155938a81eddcd55
+bd2007-05-03t19.flac:622251404965e14a41909d7e4b7fc9b5
+bd2007-05-03t20.flac:bd9a6b2d870a439367771d9356339b95
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-05-03-SP-CMC-4U.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:59.56       10539356 B   ---   --   ---xx   flac  0.5522  bd2007-05-03t01.flac
+     5:56.42       62897228 B   ---   --   ---xx   flac  0.5811  bd2007-05-03t02.flac
+     6:48.18       72013580 B   ---   --   ---xx   flac  0.5297  bd2007-05-03t03.flac
+     7:31.69       79718732 B   ---   --   ---xx   flac  0.5554  bd2007-05-03t04.flac
+     7:28.67       79184828 B   ---   --   ---xx   flac  0.5885  bd2007-05-03t05.flac
+     6:54.41       73126076 B   ---   --   ---xx   flac  0.5398  bd2007-05-03t06.flac
+    10:34.17      111877628 B   ---   --   ---xx   flac  0.5038  bd2007-05-03t07.flac
+     6:56.59       73521212 B   ---   --   ---xx   flac  0.5722  bd2007-05-03t08.flac
+     6:30.55       68925404 B   ---   --   ---xx   flac  0.4323  bd2007-05-03t09.flac
+     6:41.54       70863452 B   ---   --   ---xx   flac  0.5584  bd2007-05-03t10.flac
+     7:44.07       81866108 B   ---   --   ---xx   flac  0.5244  bd2007-05-03t11.flac
+     6:47.57       71928908 B   ---   --   ---xx   flac  0.4624  bd2007-05-03t12.flac
+     7:10.66       76007276 B   ---   --   ---xx   flac  0.5418  bd2007-05-03t13.flac
+     7:32.11       79758716 B   ---   --   ---xx   flac  0.4526  bd2007-05-03t14.flac
+     6:14.62       66119468 B   ---   --   ---xx   flac  0.5836  bd2007-05-03t15.flac
+     5:27.47       57793388 B   ---   --   ---xx   flac  0.5698  bd2007-05-03t16.flac
+     3:59.58       42296060 B   ---   --   ---xx   flac  0.5473  bd2007-05-03t17.flac
+     6:27.22       68318588 B   ---   --   ---xx   flac  0.6080  bd2007-05-03t18.flac
+     0:51.71        9163436 B   ---   --   ---xx   flac  0.5645  bd2007-05-03t19.flac
+     4:56.36       52299484 B   -b-   --   ---xx   flac  0.5850  bd2007-05-03t20.flac
+   123:36.15     1308218928 B                            0.5382  (20 files)
+=================== 
+=================== 
+=================== 

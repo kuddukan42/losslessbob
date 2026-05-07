@@ -1,0 +1,35 @@
+Bob Dylan
+Oakland Coliseum
+Oakland, California
+4 December 1988
+An all acoustic evening of music to benefit The Bridge School
+
+Musicians: Bob Dylan (vocal, guitar) and G.E. Smith (guitar).
+Source: sbd (mixed source)
+Lineage: sbd > ? > cd-r > EAC secure mode > CoolEdit Pro > CD Wave Editor > FLAC Frontend > .flac level 6
+Taped by: ?
+Transfered by: ?
+Sound quality: 1st sbd source A+
+	        2nd sbd source B	
+Notes: t04 5:30 > t05 2:21 are missing from the 1st sbd source, and were mixed in from a 2nd source which circulates on the "Blown 	Out On The Trail" boot.
+Bootleg Title: n/a
+File Size: 190 megs .flac
+
+Setlist:
+
+1. San Francisco Bay Blues (Jesse Fuller)
+2. Pretty Boy Floyd (Woody Guthrie)
+3. With God On Our Side
+4. Girl From The North Country
+5. Gates Of Eden
+6. Forever Young
+
+.flac fingerprints
+
+bd1988-12-06t01.flac:37b735a9bfdee57cecf00a5430e0b2da
+bd1988-12-06t02.flac:c9497f7e660c739e18840808dd2f8986
+bd1988-12-06t03.flac:4db4db798684d899d1a8501e86e8dec1
+bd1988-12-06t04.flac:d856a7197d9f0d2f017dbdfb0853cb82
+bd1988-12-06t05.flac:b78b5d0c07a2390f6eb7026f52f64bbb
+bd1988-12-06t06.flac:d043f1cfe24af03f4cb4c32ab168543e
+

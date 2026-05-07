@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-03-csb.shnf 
+=================== 
+=================== 
+=================== 
+a10f49105e825d66ad3bc8fd8fcc8bf5  bd04-03-03-csb.txt
+fc9501acc3ab6922b52d940909503c91  D-207.shn
+c9e0b0be5686e244b7c267796a81ca61  D-208.shn
+f51563fad83bd60e6e5673c594b48540  D1-01.shn
+956859a4658c6a7af96535e5d2483c4f  D1-02.shn
+77b8f53654264646e38886d2b86c2f88  D1-03.shn
+e4a334d450cd2c44d98a27901cdab165  D1-04.shn
+7c92d09add511ed9109c144ecd6de851  D1-05.shn
+32a35f473a9956d0df78dd29575ff03f  D1-06.shn
+080ed065475e783924d65eec497ebf90  D1-07.shn
+174cdd450e51ebac8f8c62dc8a476528  D1-08.shn
+97e61b4597d76914e744e9279e02cc9d  D1-09.shn
+873cc7ea97bfd66d2a9dbda4ab5d8039  D2-01.shn
+9c6aa6896dd355d653cd1138467b77e6  D2-02.shn
+0d7e36c94002dc7292e5a573473dca68  D2-03.shn
+70cb4de7068b12a3f8bae9f6164b20ae  D2-04.shn
+ce7e0ad15e2f907f201600c1956bf55a  D2-05.shn
+e07158ddaecfb786c6850bdbc068ccc4  D2-06.shn
+8a09f2d0e0834c73447c1344c3750545  Dylan2004-03-03.md5
+b8307a86957e6a7bdccccca70508af5d  dylan2004-03-03.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-03-csb.shnf 
+=================== 
+=================== 
+=================== 
+85b008bd56d581b31b2f4ee02da2cb0a  [shntool]  D-207.wav
+1252ba264a513fc0a7c521f45a04e179  [shntool]  D-208.wav
+084559afda95195bdbbd333ab0b4515c  [shntool]  D1-01.wav
+69dc9e2291a6511b2e805c75bd3ffee2  [shntool]  D1-02.wav
+7e758d1f7475ba349b28e5185757e1b5  [shntool]  D1-03.wav
+9b8658eaeab1064d58f3486e94466296  [shntool]  D1-04.wav
+338f4de1d810841e03fcbb3c4dac261e  [shntool]  D1-05.wav
+9a539b16dd60308e38b001860de6ea4b  [shntool]  D1-06.wav
+1f3545503c5846e5a3ff533575d61c14  [shntool]  D1-07.wav
+74dedcd0254e76a0e5267b10168815b4  [shntool]  D1-08.wav
+120cca61011221c3e80506fc20d270df  [shntool]  D1-09.wav
+185a59d884bfef816278b8f5e4fd0824  [shntool]  D2-01.wav
+c22aa8143bebf7ae6961c3284f2cebb3  [shntool]  D2-02.wav
+882e1ed6193820ad79d5151c9e517a3f  [shntool]  D2-03.wav
+25b69e3446adb2e3fdaa16ff1e7f58aa  [shntool]  D2-04.wav
+9970105e2cd1e8d8f85c08db96b9004e  [shntool]  D2-05.wav
+e19746b5788a4b62952cc1ff32f93b35  [shntool]  D2-06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-03-csb.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:35.36       80346716 B   ---   --   -----    wav  1.0000  D-207.wav
+     5:28.45       57965084 B   ---   --   -----    wav  1.0000  D-208.wav
+     5:22.64       56951372 B   ---   --   -----    wav  1.0000  D1-01.wav
+     5:17.53       56043500 B   ---   --   -----    wav  1.0000  D1-02.wav
+     5:31.00       58388444 B   ---   --   -----    wav  1.0000  D1-03.wav
+     7:01.22       74316188 B   ---   --   -----    wav  1.0000  D1-04.wav
+     6:48.40       72065324 B   ---   --   -----    wav  1.0000  D1-05.wav
+     6:25.01       67916396 B   ---   --   -----    wav  1.0000  D1-06.wav
+     5:15.42       55664828 B   ---   --   -----    wav  1.0000  D1-07.wav
+     6:01.15       63715724 B   ---   --   -----    wav  1.0000  D1-08.wav
+     4:39.62       49361468 B   ---   --   -----    wav  1.0000  D1-09.wav
+     5:42.09       60350012 B   ---   --   -----    wav  1.0000  D2-01.wav
+     8:00.39       84763772 B   ---   --   -----    wav  1.0000  D2-02.wav
+     6:50.32       72399308 B   ---   --   -----    wav  1.0000  D2-03.wav
+     4:47.49       50742092 B   ---   --   -----    wav  1.0000  D2-04.wav
+     7:04.55       74923004 B   ---   --   -----    wav  1.0000  D2-05.wav
+     4:33.55       48286604 B   ---   --   -----    wav  1.0000  D2-06.wav
+   102:26.19     1084199836 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

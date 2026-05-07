@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-19a-master.shnf 
+=================== 
+=================== 
+=================== 
+e7344b027965873caeb4cb0970f68106  bd88-09-19a.txt
+7fcd0deb211ed8dd68a88683bb6a6c07  d1\01.shn
+dc1f9db0fa825bedf9dc31918b02a7a0  d1\02.shn
+9fcd3444d251ca58dd42d169c1672235  d1\03.shn
+5aebd6df1576c55b11784d5dae38ee32  d1\04.shn
+7f2bf5adbc98723f248986d95c211aed  d1\05.shn
+b15a6457d051a2ecbeaa63eca8e1c2b1  d1\06.shn
+23acb567a4e6b36f51d54d1d3d9632a2  d1\07.shn
+2133ae0979923566707f4ab5eadcb041  d1\08.shn
+4bad00dbff365618260905e6df065b6f  d1\09.shn
+503dfe538609fde58298ba2b76e57bdc  d1\noname.md5
+28caa31a24d4f6092aa5f74c618c3b9f  d2\01.shn
+63b53b28a372a814fd59967a53734b26  d2\02.shn
+cac9b87cd4ba010badca1f52ffb59f90  d2\03.shn
+c46f56bce8a78afb9db69b38d97ee753  d2\04.shn
+44109b4d2bef72116a02a32ca61c2644  d2\05.shn
+b31a1ef73badcdd8dfe5f9a95b199b64  d2\06.shn
+0134ec4d5c5f391845dd015df70b1f11  d2\07.shn
+d31d14dea1a3d62049287894ba56d6e3  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-09-19a-master.shnf\d1 
+=================== 
+=================== 
+=================== 
+9af72ab50cc6b3c9b77d9bdb9e3b1869  [shntool]  01.wav
+6df50be40aee8f0fd6ac9dbf607122de  [shntool]  02.wav
+af85b334a91d8604da491fba0e0b1f4a  [shntool]  03.wav
+fbec5da9f6376332e6dfcb2a1ed7ebb1  [shntool]  04.wav
+b1c4a92744f9e49e7bc3cdb28109d4d5  [shntool]  05.wav
+30a85e27955ebb1198f735fd556fd2a5  [shntool]  06.wav
+9aff32fe24579e9c68f76d92cc9c22bf  [shntool]  07.wav
+73f32555ed08ca0086800216d41d5171  [shntool]  08.wav
+a91f22019b1437f1e286df5728882665  [shntool]  09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-09-19a-master.shnf\d2 
+=================== 
+=================== 
+=================== 
+0305c3b15a09cdeab367650ba83ab3fc  [shntool]  01.wav
+101537e790ce1cbb3d8b33167b37354a  [shntool]  02.wav
+d2607ed13dd930f08add2a2d321acfa9  [shntool]  03.wav
+533fe6bfb06e04dd590de162ae718ca8  [shntool]  04.wav
+4f5882c774b1d9721a774d2c7bd1d2c4  [shntool]  05.wav
+24bcf59c8ea0e4bc7d113cbae3709616  [shntool]  06.wav
+97f88e10f2a94505c8310f01f43ed187  [shntool]  07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-19a-master.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.33       36063260 B   ---   --   ---xx    shn  0.5551  01.shn
+     6:18.22       66730988 B   ---   --   ---xx    shn  0.5679  02.shn
+     5:38.46       59731436 B   ---   --   ---xx    shn  0.5732  03.shn
+     5:13.65       55366124 B   ---   --   ---xx    shn  0.5867  04.shn
+     4:54.67       52019228 B   ---   --   ---xx    shn  0.6290  05.shn
+     4:55.43       52139180 B   ---   --   ---xx    shn  0.6323  06.shn
+     5:47.33       61288460 B   ---   --   ---xx    shn  0.5843  07.shn
+     4:14.37       44892668 B   ---   --   ---xx    shn  0.6247  08.shn
+     5:04.61       53769116 B   ---   --   ---xx    shn  0.6429  09.shn
+    45:32.32      482000460 B                            0.5991  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-19a-master.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:51.09       40769612 B   ---   --   ---xx    shn  0.5554  01.shn
+     5:34.29       58985852 B   ---   --   ---xx    shn  0.5572  02.shn
+     6:14.16       66011276 B   ---   --   ---xx    shn  0.5803  03.shn
+     8:19.32       88098908 B   ---   --   ---xx    shn  0.5684  04.shn
+     3:09.41       33436076 B   ---   --   ---xx    shn  0.5833  05.shn
+     4:35.68       48669980 B   ---   --   ---xx    shn  0.6406  06.shn
+     4:56.21       52263836 B   ---   --   ---xx    shn  0.6680  07.shn
+    36:40.66      388235540 B                            0.5911  (7 files)
+=================== 
+=================== 
+=================== 

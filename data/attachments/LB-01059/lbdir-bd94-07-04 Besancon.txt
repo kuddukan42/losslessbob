@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-04 Besancon 
+=================== 
+=================== 
+=================== 
+e0bf706772f147aa7c84bba80bd35945  4_July_1994_Besançon.txt
+5a383fb3f28cb4ecf9e81d2deb1f0a18  bd94-07-04.txt
+86200c11a8fc1f56b8ce80fd3d4c5177  D1\1994-07-04_d1t02.shn
+b895f2294b53d2cf53258ab8d8bfe869  D1\Traccia 01.shn
+8c2973a0b3a8173da9a3c6e1b3090891  D1\Traccia 03.shn
+c9dd213416eaa91236a9e14393f4922c  D1\Traccia 04.shn
+6d8cffa19ed1891511a6680ec0ffab80  D1\Traccia 05.shn
+076bdde6aabad7a4b0de8ac01340d57a  D1\Traccia 06.shn
+434344f9fc2a1c579f243878b14f298f  D1\Traccia 07.shn
+78b22dc1254a42b36e08f787a19a98eb  D1\Traccia 08.shn
+914373c2e02019bfff90c3fc0a5fadf8  D1\Traccia 09.shn
+daa1872f248a477a7effdb2747be9281  D1\noname.md5
+f1a4a6bc312b83f366120dfdced44c99  D2\Traccia 01.shn
+9e4e45f511c6893dd91284c5ceb17f21  D2\Traccia 02.shn
+da6abd810503170df372fe29c601762c  D2\Traccia 03.shn
+5f21d3990c93ac70c4e4c1fdd33cdefc  D2\Traccia 04.shn
+a1932b36dea510b2e35e0a8d573475ca  D2\Traccia 05.shn
+c09bfe9031ab18c4bbbeaf89995d6100  D2\Traccia 06.shn
+bf1858913f0cc5f1f051e94ff5b763de  D2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-07-04 Besancon\D1 
+=================== 
+=================== 
+=================== 
+9967fd4e4054546f812bcd78e44b9b2c  [shntool]  1994-07-04_d1t02.wav
+627e9809a215f8b56e1cfa42f04cc07e  [shntool]  Traccia_01.wav
+33ffe958b5eb3972efac9bb1ebb8c077  [shntool]  Traccia_03.wav
+038be895071cb01905dc32a8020dada8  [shntool]  Traccia_04.wav
+d15e8abee2dd56e6091550d82b009537  [shntool]  Traccia_05.wav
+b508afd1b53121fdba1e5552a040672e  [shntool]  Traccia_06.wav
+31f11da4b002f3405efaa6a2dacb9d39  [shntool]  Traccia_07.wav
+50f9baeb0a8513fc50c27a787e78eaea  [shntool]  Traccia_08.wav
+615fedea4a8c85c6a74581bf9ee5a25a  [shntool]  Traccia_09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-07-04 Besancon\D2 
+=================== 
+=================== 
+=================== 
+a73bc7ea07619b7a712d661eacfe0fe6  [shntool]  Traccia_01.wav
+39e3bbe931c4b2cacc917671caf9b73c  [shntool]  Traccia_02.wav
+356cf3ae43900e1a5f6f11f50707bb07  [shntool]  Traccia_03.wav
+2d8e008c52c937ba20dd865b30970aca  [shntool]  Traccia_04.wav
+541d6d016cadd7841fe4f6c6cca02918  [shntool]  Traccia_05.wav
+27a43161846454880538db2090bd1cd9  [shntool]  Traccia_06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-04 Besancon\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:12.21       65670250 B   ---   h-   ---xx    shn  0.6636  1994-07-04_d1t02.shn
+     8:03.41       85297690 B   ---   h-   ---xx    shn  0.6849  Traccia 01.shn
+     5:35.05       59105818 B   ---   h-   ---xx    shn  0.7030  Traccia 03.shn
+     6:04.51       64329610 B   ---   h-   ---xx    shn  0.6314  Traccia 04.shn
+     9:17.05       98266618 B   ---   h-   ---xx    shn  0.6504  Traccia 05.shn
+     5:57.28       63040714 B   ---   h-   ---xx    shn  0.6867  Traccia 06.shn
+     3:52.65       41077738 B   ---   h-   ---xx    shn  0.5673  Traccia 07.shn
+     5:43.41       60601690 B   ---   h-   ---xx    shn  0.5244  Traccia 08.shn
+     4:44.35       50179978 B   ---   h-   ---xx    shn  0.6191  Traccia 09.shn
+    55:30.67      587570106 B                            0.6425  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-04 Besancon\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.17       62662042 B   ---   h-   ---xx    shn  0.6771  Traccia 01.shn
+     7:47.44       82482346 B   ---   h-   ---xx    shn  0.6713  Traccia 02.shn
+     6:45.39       71533786 B   ---   h-   ---xx    shn  0.6614  Traccia 03.shn
+     5:48.65       61540138 B   ---   h-   ---xx    shn  0.7240  Traccia 04.shn
+     7:59.74       84669706 B   ---   h-   ---xx    shn  0.6310  Traccia 05.shn
+     9:33.08      101096074 B   ---   h-   ---xx    shn  0.5905  Traccia 06.shn
+    43:50.22      463984092 B                            0.6526  (6 files)
+=================== 
+=================== 
+=================== 

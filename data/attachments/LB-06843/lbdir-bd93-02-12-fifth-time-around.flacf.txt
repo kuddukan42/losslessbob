@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-12-fifth-time-around.flacf 
+=================== 
+=================== 
+=================== 
+51cf769bd8b5b31af82eeccea4254644  bd93-02-12-fifth-time-around-d1t01.flac
+5b42f3a60d58500d0d051a55cfa5edb8  bd93-02-12-fifth-time-around-d1t02.flac
+19deabd42c8c7876c63f01e2b7f0bfd2  bd93-02-12-fifth-time-around-d1t03.flac
+150810cff50d5c4e0319e7b16127db5a  bd93-02-12-fifth-time-around-d1t04.flac
+4f5aaebbbc6ca61741ee2e6b1bf17e68  bd93-02-12-fifth-time-around-d1t05.flac
+184700e460a9e0626dafcad4adfeb69b  bd93-02-12-fifth-time-around-d1t06.flac
+b767cea28a9f8bacfe8c5557f0ebf557  bd93-02-12-fifth-time-around-d1t07.flac
+91bf12fdc036041839b23f2b5e1d721a  bd93-02-12-fifth-time-around-d1t08.flac
+e06f62425ed6582060a2da7c44bd455b  bd93-02-12-fifth-time-around-d1t09.flac
+55503ae1c39d1f8ac04d77bcaf9352c4  bd93-02-12-fifth-time-around-d1t10.flac
+d3669958b80652cfe0d246b20ce4bf63  bd93-02-12-fifth-time-around-d2t01.flac
+4ebb963713a11091370a5aff99554ad3  bd93-02-12-fifth-time-around-d2t02.flac
+476ee8d14c1f11b1a8d16519e97c804f  bd93-02-12-fifth-time-around-d2t03.flac
+8149b87b2b842ae524387e5c7209c049  bd93-02-12-fifth-time-around-d2t04.flac
+903b5b97cc05b28f70c8b77ae16e1ee1  bd93-02-12-fifth-time-around-d2t05.flac
+043b94d3c46e480c8b5269982c2708b0  bd93-02-12-fifth-time-around-d2t06.flac
+7c660a9eee39a1b04e59e58c9f306d0d  bd93-02-12-fifth-time-around-d2t07.flac
+3fb74689a8ca95b9575803029c41a5d8  bd93-02-12-fifth-time-around-d2t08.flac
+5e77e1dbacba3fdf68efb7ac583b6d7f  bd93-02-12-fifth-time-around.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-12-fifth-time-around.flacf 
+=================== 
+=================== 
+=================== 
+bd93-02-12-fifth-time-around-d1t01.flac:23b075756885f142d887c370ddfb9653
+bd93-02-12-fifth-time-around-d1t02.flac:9c530ea52ca371659440e9adfc99e7e0
+bd93-02-12-fifth-time-around-d1t03.flac:17f64af4e9aad094e8444abff7dc833e
+bd93-02-12-fifth-time-around-d1t04.flac:0120d1b4f4fb6f9d9dc73605183b41bd
+bd93-02-12-fifth-time-around-d1t05.flac:0cf0e8e89cb93d56330ecfdcd46dc2ed
+bd93-02-12-fifth-time-around-d1t06.flac:dfe950737298d103869514ee55314937
+bd93-02-12-fifth-time-around-d1t07.flac:475b0153aad97f15197ec4b38a7fdee4
+bd93-02-12-fifth-time-around-d1t08.flac:735a8fe58d99f32dddf196da2ec40a69
+bd93-02-12-fifth-time-around-d1t09.flac:33d739476952012471b2b513f141fef6
+bd93-02-12-fifth-time-around-d1t10.flac:9193adc225603f177aca07d9b7f30951
+bd93-02-12-fifth-time-around-d2t01.flac:01f50ba2298dc55cc4fc9824899d0974
+bd93-02-12-fifth-time-around-d2t02.flac:3199568cb44245ab8f7a02a77f53aa50
+bd93-02-12-fifth-time-around-d2t03.flac:dddae5c3fbbd99f5554d61d15024e768
+bd93-02-12-fifth-time-around-d2t04.flac:f75ec694ec4a629091f0e66bc706a32a
+bd93-02-12-fifth-time-around-d2t05.flac:8d83dd3fc7ae71586dc18b28843bfd10
+bd93-02-12-fifth-time-around-d2t06.flac:542ae897f918b84cce13888fbfc39f26
+bd93-02-12-fifth-time-around-d2t07.flac:7cdfa9efd00eb2a6e0adc5c865eca79d
+bd93-02-12-fifth-time-around-d2t08.flac:5e4df6c5bcb0c9a9212494b3d5c1c209
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-12-fifth-time-around.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.68       63311180 B   ---   --   ---xx   flac  0.6176  bd93-02-12-fifth-time-around-d1t01.flac
+     8:32.60       90457964 B   ---   --   ---xx   flac  0.6237  bd93-02-12-fifth-time-around-d1t02.flac
+     7:04.52       74915948 B   ---   --   ---xx   flac  0.6417  bd93-02-12-fifth-time-around-d1t03.flac
+    10:52.20      115059884 B   ---   --   ---xx   flac  0.6430  bd93-02-12-fifth-time-around-d1t04.flac
+     6:53.55       72982604 B   ---   --   ---xx   flac  0.6213  bd93-02-12-fifth-time-around-d1t05.flac
+     9:45.63      103342220 B   ---   --   ---xx   flac  0.6500  bd93-02-12-fifth-time-around-d1t06.flac
+     6:54.37       73116668 B   ---   --   ---xx   flac  0.5988  bd93-02-12-fifth-time-around-d1t07.flac
+     5:03.38       53538620 B   ---   --   ---xx   flac  0.5401  bd93-02-12-fifth-time-around-d1t08.flac
+     6:16.70       66491084 B   ---   --   ---xx   flac  0.5663  bd93-02-12-fifth-time-around-d1t09.flac
+     8:45.30       92680604 B   ---   --   ---xx   flac  0.5939  bd93-02-12-fifth-time-around-d1t10.flac
+     7:45.43       82127180 B   ---   --   ---xx   flac  0.6020  bd93-02-12-fifth-time-around-d2t01.flac
+     6:36.42       69953228 B   ---   --   ---xx   flac  0.6697  bd93-02-12-fifth-time-around-d2t02.flac
+     8:40.18       91770380 B   ---   --   ---xx   flac  0.6618  bd93-02-12-fifth-time-around-d2t03.flac
+    11:00.15      116459324 B   ---   --   ---xx   flac  0.6127  bd93-02-12-fifth-time-around-d2t04.flac
+     8:03.00       85201244 B   ---   --   ---xx   flac  0.6613  bd93-02-12-fifth-time-around-d2t05.flac
+     8:33.67       90650828 B   ---   --   ---xx   flac  0.6026  bd93-02-12-fifth-time-around-d2t06.flac
+     8:19.33       88101260 B   ---   --   ---xx   flac  0.6616  bd93-02-12-fifth-time-around-d2t07.flac
+     8:20.50       88317644 B   ---   --   ---xx   flac  0.5742  bd93-02-12-fifth-time-around-d2t08.flac
+   143:28.11     1518477864 B                            0.6216  (18 files)
+=================== 
+=================== 
+=================== 

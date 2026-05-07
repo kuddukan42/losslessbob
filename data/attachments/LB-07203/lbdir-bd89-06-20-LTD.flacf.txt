@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-20-LTD.flacf 
+=================== 
+=================== 
+=================== 
+ac36a285e46a2a63a64655b1ce99e075  1989-06-20 Rome.md5
+924d565917d14e6a610df1560fa70b80  Rome CD-11989-03.flac
+c6bf66ac66b419d4a33b69812101b104  Rome CD1-1989-01.flac
+220286f7b9b35aa2d1eaf50e5ab42ca4  Rome CD1-1989-02.flac
+0905ed35cef78e4a1235f0305db480b9  Rome CD1-1989-04.flac
+d01f9ff5e0f8b6887890ffc6b9d69f87  Rome CD1-1989-05.flac
+75bd34ea5f140eb975308970609a15b4  Rome CD1-1989-06.flac
+64ea59bbb4095bd2b43a4671fbf1e904  Rome CD1-1989-07.flac
+51f0e66865a84cacf69790caa36687b5  Rome CD1-1989-08.flac
+815fa115e573153cfb079bd43fcad2fb  Rome CD1-1989-09.flac
+bd0a8f07c0e2d0ca8e595baef921d922  Rome CD1-1989-10.flac
+87d0672a3f706da261127ae6e64be7fb  Rome CD2-1989-11.flac
+52d186460443ffb278cd8160a4e695c8  Rome CD2-1989-12.flac
+39064e369079c4ce333484b5e05c9f5f  Rome CD2-1989-13.flac
+b2e5d8933c944e1eeaa723ffee1d27af  Rome CD2-1989-14.flac
+bbaaad4db71d3158a02868cddae0ec5e  Rome CD2-1989-15.flac
+605b512310652364e6c006a442d117db  Rome CD2-1989-16.flac
+fbbe3d409fe15b056af7213259bf03a4  Rome-1989-06-20.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-20-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Rome CD1-1989-01.flac:5585677a734b41323048a51512004ca0
+Rome CD1-1989-02.flac:cab8ac9da33ab2b1f947fbda0e624e97
+Rome CD-11989-03.flac:bd38ba6502501702db9f8db45ce13799
+Rome CD1-1989-04.flac:753979a8a3f0ad4ef3058e537259a2af
+Rome CD1-1989-05.flac:8b4e3b84a493ec67f6ce6e7ab273eb69
+Rome CD1-1989-06.flac:4d06b24d20492f897c9ca6a1a124221f
+Rome CD1-1989-07.flac:4e02246c4bd4ba1e655069fa96e763ab
+Rome CD1-1989-08.flac:1bd2bfe3a39dd5ea0ad6e67b6d442163
+Rome CD1-1989-09.flac:8412dd032fcefe3ecf6b6be0ab842fb2
+Rome CD1-1989-10.flac:255c3fd275dae6e29cbce124754a4f45
+Rome CD2-1989-11.flac:1466e6b459fd44e22f83a17809b2289d
+Rome CD2-1989-12.flac:8fc1ad793cc832116bdbee5de3274b89
+Rome CD2-1989-13.flac:0f9ac9a4711b3702c46eaa2b4c606e8b
+Rome CD2-1989-14.flac:08edba79efc57fe46ed6a354d9756d93
+Rome CD2-1989-15.flac:accc1319f656a5c2989b5ea961641293
+Rome CD2-1989-16.flac:943abcda4c52f53a8ebe8f3c169f1054
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-20-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:01.12       63709828 B   -b-   --   ---xx   flac  0.6192  Rome CD-11989-03.flac
+     6:03.52       64155912 B   -b-   --   ---xx   flac  0.5921  Rome CD1-1989-01.flac
+     3:49.10       40418244 B   -b-   --   ---xx   flac  0.5951  Rome CD1-1989-02.flac
+     6:57.11       73583816 B   -b-   --   ---xx   flac  0.6064  Rome CD1-1989-04.flac
+     4:57.24       52447468 B   -b-   --   ---xx   flac  0.6154  Rome CD1-1989-05.flac
+     3:52.57       41059800 B   -b-   --   ---xx   flac  0.6189  Rome CD1-1989-06.flac
+     4:28.17       47314996 B   -b-   --   ---xx   flac  0.6052  Rome CD1-1989-07.flac
+     5:21.63       56771724 B   -b-   --   ---xx   flac  0.5825  Rome CD1-1989-08.flac
+     6:14.48       66086856 B   -b-   --   ---xx   flac  0.5791  Rome CD1-1989-09.flac
+     5:29.45       58141300 B   -b-   --   ---xx   flac  0.6165  Rome CD1-1989-10.flac
+     4:59.45       52848440 B   -b-   --   ---xx   flac  0.6425  Rome CD2-1989-11.flac
+     2:36.33       27597092 B   -b-   --   ---xx   flac  0.6721  Rome CD2-1989-12.flac
+     7:48.15       82590700 B   -b-   --   ---xx   flac  0.6381  Rome CD2-1989-13.flac
+     6:50.22       72375884 B   -b-   --   ---xx   flac  0.5555  Rome CD2-1989-14.flac
+     6:12.22       65672096 B   -b-   --   ---xx   flac  0.6144  Rome CD2-1989-15.flac
+     5:27.62       57828040 B   -b-   --   ---xx   flac  0.6225  Rome CD2-1989-16.flac
+    87:10.13      922602196 B                            0.6085  (16 files)
+=================== 
+=================== 
+=================== 

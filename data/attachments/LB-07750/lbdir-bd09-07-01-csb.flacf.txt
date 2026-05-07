@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-07-01-csb.flacf 
+=================== 
+=================== 
+=================== 
+2fcce821012dc563f21dc0837b137da6  Bob Dylan - 2009-07-01 01 Cat's In The Well.flac
+ea407c9e209369162bdfd35cadbe68d5  Bob Dylan - 2009-07-01 02 It Ain't Me, Babe.flac
+adc99beb341d125cd86f2a88537ce001  Bob Dylan - 2009-07-01 03 I'll Be Your Baby Tonight.flac
+cdd927b1d0baec18578c2dce6de2238f  Bob Dylan - 2009-07-01 04 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+e11b8351104bbdd87610f325a8b644da  Bob Dylan - 2009-07-01 05 Blind Willie McTell.flac
+46ad2b2107137a39b67a717341b293ac  Bob Dylan - 2009-07-01 06 Desolation Row.flac
+c8b384c1f62c2c1c4147c8eba2a93425  Bob Dylan - 2009-07-01 07 Honest With Me.flac
+1b5f54987157c23338d15cb404ff8a07  Bob Dylan - 2009-07-01 08 Po' Boy.flac
+9e3ce90777889c25857db98b8eb717ee  Bob Dylan - 2009-07-01 09 Highway 61 Revisited.flac
+7a3166989f05fcbf84dc7ef532ade5e5  Bob Dylan - 2009-07-01 10 Forgetful Heart.flac
+201707460cf5bf51c6d7269321bb5e1d  Bob Dylan - 2009-07-01 11 I Don't Believe You (She Acts Like We Never Have Met).flac
+06f80ef62dd3f5aa923ab649630c9afb  Bob Dylan - 2009-07-01 12 Love Sick.flac
+549342202ab1554d23663075cf01ad14  Bob Dylan - 2009-07-01 13 Summer Days.flac
+e0abea7d75c0c291ed491a281d7318f3  Bob Dylan - 2009-07-01 14 Like A Rolling Stone.flac
+7576dc5d35506f8db55af258ca11e7de  Bob Dylan - 2009-07-01 15 Jolene.flac
+eb1a09b211f36966aa229d546f5a7395  Bob Dylan - 2009-07-01 16 All Along The Watchtower.flac
+4d8cdf012effb436d26d907571ecffe4  Bob Dylan - 2009-07-01.ffp.txt
+30f5e1f54970a0406d3eb9cd94ad3aa8  Bob Dylan - 2009-07-01.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-07-01-csb.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan - 2009-07-01 01 Cat's In The Well.flac:afb081e1b29a098bc0af484009b18455
+Bob Dylan - 2009-07-01 02 It Ain't Me, Babe.flac:79254309f9776823142da83eba06cba0
+Bob Dylan - 2009-07-01 03 I'll Be Your Baby Tonight.flac:31897ee647335a9d58a77dfc4224a3f8
+Bob Dylan - 2009-07-01 04 Stuck Inside Of Mobile With The Memphis Blues Again.flac:572fc39747207a16332c3bb52780a14b
+Bob Dylan - 2009-07-01 05 Blind Willie McTell.flac:1abfe4e594e3423dbd5497fc063b62fc
+Bob Dylan - 2009-07-01 06 Desolation Row.flac:951cf65f4eb4624939f5df48678b3787
+Bob Dylan - 2009-07-01 07 Honest With Me.flac:ed229ccbd17b7e5bccd218c0e841f699
+Bob Dylan - 2009-07-01 08 Po' Boy.flac:33b15ab151dc46a5093f07ccf64cd918
+Bob Dylan - 2009-07-01 09 Highway 61 Revisited.flac:80798500a05e7fecadbb44df925e2d87
+Bob Dylan - 2009-07-01 10 Forgetful Heart.flac:02b669376c4bfa2729bdf80a95e58132
+Bob Dylan - 2009-07-01 11 I Don't Believe You (She Acts Like We Never Have Met).flac:71bff1e0d10283d82bb2a20bc22d7663
+Bob Dylan - 2009-07-01 12 Love Sick.flac:2ae3652e8801733a19c36b31ce7d3575
+Bob Dylan - 2009-07-01 13 Summer Days.flac:dc73166725bbab41e56605cc03f507e5
+Bob Dylan - 2009-07-01 14 Like A Rolling Stone.flac:084552aab9aba48b93b9673166a79b95
+Bob Dylan - 2009-07-01 15 Jolene.flac:685839d75920e474ae23b36f832ac0f5
+Bob Dylan - 2009-07-01 16 All Along The Watchtower.flac:5eec30ade67ae87784c2f7dd1e009b02
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-07-01-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.71       54674636 B   ---   --   ---xx   flac  0.4196  Bob Dylan - 2009-07-01 01 Cat's In The Well.flac
+     5:55.67       62779628 B   ---   --   ---xx   flac  0.3971  Bob Dylan - 2009-07-01 02 It Ain't Me, Babe.flac
+     5:15.58       55702460 B   ---   --   ---xx   flac  0.3793  Bob Dylan - 2009-07-01 03 I'll Be Your Baby Tonight.flac
+     7:15.43       76835180 B   ---   --   ---xx   flac  0.4019  Bob Dylan - 2009-07-01 04 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     5:55.32       62697308 B   ---   --   ---xx   flac  0.3968  Bob Dylan - 2009-07-01 05 Blind Willie McTell.flac
+    11:26.08      121029260 B   ---   --   ---xx   flac  0.3892  Bob Dylan - 2009-07-01 06 Desolation Row.flac
+     6:44.41       71362076 B   ---   --   ---xx   flac  0.3984  Bob Dylan - 2009-07-01 07 Honest With Me.flac
+     5:23.27       57040748 B   ---   --   ---xx   flac  0.3559  Bob Dylan - 2009-07-01 08 Po' Boy.flac
+     6:16.71       66493436 B   ---   --   ---xx   flac  0.4065  Bob Dylan - 2009-07-01 09 Highway 61 Revisited.flac
+     4:36.56       48818156 B   ---   --   ---xx   flac  0.3284  Bob Dylan - 2009-07-01 10 Forgetful Heart.flac
+     5:56.42       62897228 B   ---   --   ---xx   flac  0.3887  Bob Dylan - 2009-07-01 11 I Don't Believe You (She Acts Like We Never Have Met).flac
+     5:52.47       62203388 B   ---   --   ---xx   flac  0.3873  Bob Dylan - 2009-07-01 12 Love Sick.flac
+     9:18.12       98459468 B   ---   --   ---xx   flac  0.4606  Bob Dylan - 2009-07-01 13 Summer Days.flac
+     9:47.36      103631516 B   ---   --   ---xx   flac  0.5072  Bob Dylan - 2009-07-01 14 Like A Rolling Stone.flac
+     4:26.15       46957724 B   ---   --   ---xx   flac  0.5230  Bob Dylan - 2009-07-01 15 Jolene.flac
+     6:04.66       64364876 B   ---   --   ---xx   flac  0.5155  Bob Dylan - 2009-07-01 16 All Along The Watchtower.flac
+   105:26.17     1115947088 B                            0.4192  (16 files)
+=================== 
+=================== 
+=================== 

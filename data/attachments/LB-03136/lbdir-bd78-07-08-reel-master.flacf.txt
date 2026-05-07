@@ -1,0 +1,156 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-08-reel-master.flacf 
+=================== 
+=================== 
+=================== 
+f0a9ce08a80b797b735084a634b401c0  1\Track  1.flac
+8bd3b47a69ded5e5edac96424970c242  1\Track  2.flac
+05da0842986587808cfb9806d547a903  1\Track  3.flac
+2abebe2c935e9f3bc818418192ebd29c  1\Track  4.flac
+d09bab1e3bfa2130e31280d55bc5cbd8  1\Track  5.flac
+06cb48d22b1ebc7f28d3b5679b3ceb01  1\Track  6.flac
+ea27ddb953689d0df8811394e3e602f6  1\Track  7.flac
+a8fd0c6197e36bb36777cbb64aba5b5a  1\Track  8.flac
+3862b0383e64ed5a79460168b128ae00  1\Track  9.flac
+f0a1304fc8d5344dc2d11b747bf4c3b5  1\Track 10.flac
+b8a9c96ee1b410f8dc67006a79204398  1\Track 11.flac
+74f1abed547d4c950d415e4186acf2eb  1\Track 12.flac
+dc2bfe99e5ea22d7cf0a142d2a070d07  1\Track 13.flac
+095ef9282c819257747c0cbfe881ace8  1\flac.txt
+ccef28fadda4c187cbbfc26b6d2e08ea  2\Track  1.flac
+6893bb1b2d211a9940427bac13535407  2\Track  2.flac
+fdee9cd51b10ab3aad10cd8a634c07bb  2\Track  3.flac
+4966b6e153778778f23a8adac8442583  2\Track  4.flac
+a26f66374b70e5e697de34e41c423b9b  2\Track  5.flac
+ab76992589b7540411cfbb1ed69b8083  2\Track  6.flac
+0a13c82926428338ee18a8398ec7f39d  2\Track  7.flac
+4c985c750a0f0cf80da70d40a12bf2af  2\Track  8.flac
+db9cee4ad182ef5d55bd106baa01ff86  2\Track  9.flac
+1e3b1ab0fba3b2547add5337098613de  2\Track 10.flac
+209bd7b143487826be52e2050630a6df  2\Track 11.flac
+e9c41f3e6ffdc3f437c8ff6d5b1bf14c  2\Track 12.flac
+c60b1a25dbd3a5c55d1eff7be1cedaf6  2\Track 13.flac
+190eb8f13f86b2fa487554c9f13766ac  2\flac.txt
+d5fe2083181b0dade9347dd0305f7bea  3\Track  1.flac
+0e63997906e495db3c748d177323a013  3\Track  2.flac
+78fea4bb6cafb84f8e049d32d4a779e3  3\Track  3.flac
+dc982ebab7c5eb37cdb7b880bd251c3c  3\Track  4.flac
+abd51e55aa4722f2bb224252944699e6  3\Track  5.flac
+fc7d38ca1fd6ce6f1fc1d62bfab8d02c  3\flac.txt
+691365dea331af666d5f720039ba04cf  bd78-07-08-reel-master-LB-3136.txt
+695d0450f8e37a5aa690b19f96f4cfda  set_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-08-reel-master.flacf\1 
+=================== 
+=================== 
+=================== 
+Track  1.flac:cab80ed561be93ea2371e27d93e2e9dc
+Track  2.flac:f4b2bd7773ef1d813c66dd321759ef43
+Track  3.flac:fc8ceba501bb04537960dfbd85071387
+Track  4.flac:8ab250316ae172928d37fea20f31a30a
+Track  5.flac:be6acda2529e0edb04e6894d1db2d2f8
+Track  6.flac:4bd1e41a63df1fedef1bae9b0fedce22
+Track  7.flac:ea7226139af87e8e19512316c4b85c8d
+Track  8.flac:76540ef07d48d00ce03990b1e5d0f35f
+Track  9.flac:8cfe26bd5f468bdc623d3e3967408497
+Track 10.flac:ca26f02a1c412d5aa1c6d8abc918fcc9
+Track 11.flac:f6e465e5ab394be3e168c7ad6c037a08
+Track 12.flac:48fbd5bb60f11fbe4fad61b884d3ea4c
+Track 13.flac:a84d6169bbbda7bd0501bc59eab563ba
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-08-reel-master.flacf\2 
+=================== 
+=================== 
+=================== 
+Track  1.flac:fc76ef3a1847857c91c35d60d9df6a30
+Track  2.flac:6f6be66a201ad6bf1ce20b7ad8b39e3b
+Track  3.flac:493f11d90904e660e2aa064b7ad6008d
+Track  4.flac:cea945348a7dd2d43d5014a18c65bd73
+Track  5.flac:2630921cd8bf36ce58d81508df192012
+Track  6.flac:a4f74bfb10fce5310648529268b0b394
+Track  7.flac:8e62ea0bced0117d36ab1fd193bb88b9
+Track  8.flac:a5b3ff7876779ac1b2f4687c2bb96f7f
+Track  9.flac:1d82926187ece029f044c3d7fce4e2b9
+Track 10.flac:bd7fc49e31e635317103db8df6bd93bd
+Track 11.flac:464cd460533b61659ae91c86e0f560f5
+Track 12.flac:b15c265c799976e55e243e6d80cb2967
+Track 13.flac:a962a27e1cf5516ebbf3d517d26abed3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-08-reel-master.flacf\3 
+=================== 
+=================== 
+=================== 
+Track  1.flac:18a6273e500f5008903ab16c7f31ee6f
+Track  2.flac:0667e824e0b0ea4632f086bcdbfdf0ae
+Track  3.flac:c72efc70112c057ad4051b0e60346943
+Track  4.flac:559e658524609d428f4445b88361ab7f
+Track  5.flac:6d1862a042f2c7f5cbc638cd732b6fa1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-08-reel-master.flacf\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.30       42053804 B   ---   --   ---xx   flac  0.4604  Track  1.flac
+     2:21.33       24950060 B   ---   --   ---xx   flac  0.4991  Track  2.flac
+     5:24.15       57188924 B   ---   --   ---xx   flac  0.5049  Track  3.flac
+     4:59.44       52847132 B   ---   --   ---xx   flac  0.5033  Track  4.flac
+     4:46.12       50478668 B   ---   --   ---xx   flac  0.5041  Track  5.flac
+     3:40.03       38815100 B   ---   --   ---xx   flac  0.4884  Track  6.flac
+     6:54.25       73088444 B   ---   --   ---xx   flac  0.4781  Track  7.flac
+     4:35.31       48582956 B   ---   --   ---xx   flac  0.5003  Track  8.flac
+     4:42.51       49864796 B   ---   --   ---xx   flac  0.5237  Track  9.flac
+     4:21.08       46059260 B   ---   --   ---xx   flac  0.4810  Track 10.flac
+     7:17.72       77256188 B   ---   --   ---xx   flac  0.5257  Track 11.flac
+     4:28.24       47331692 B   ---   --   ---xx   flac  0.4875  Track 12.flac
+     5:18.29       56163452 B   ---   --   ---xx   flac  0.4490  Track 13.flac
+    62:48.02      664680476 B                            0.4937  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-08-reel-master.flacf\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:27.07       15363308 B   ---   --   ---xx   flac  0.5570  Track  1.flac
+     4:08.00       43747244 B   ---   --   ---xx   flac  0.6369  Track  2.flac
+     6:59.14       73944572 B   ---   --   ---xx   flac  0.5556  Track  3.flac
+     3:35.40       38020124 B   ---   --   ---xx   flac  0.6226  Track  4.flac
+     3:22.18       35675180 B   ---   --   ---xx   flac  0.6303  Track  5.flac
+     4:37.49       48978092 B   ---   --   ---xx   flac  0.5886  Track  6.flac
+     3:13.66       34200476 B   ---   --   ---xx   flac  0.5959  Track  7.flac
+     4:47.24       50683292 B   ---   --   ---xx   flac  0.6309  Track  8.flac
+     4:42.59       49883612 B   ---   --   ---xx   flac  0.6922  Track  9.flac
+     5:24.56       57285356 B   ---   --   ---xx   flac  0.6270  Track 10.flac
+     4:12.15       44488124 B   ---   --   ---xx   flac  0.6065  Track 11.flac
+     4:03.55       42994604 B   ---   --   ---xx   flac  0.6448  Track 12.flac
+     5:41.19       60197132 B   ---   --   ---xx   flac  0.6523  Track 13.flac
+    56:15.47      595461116 B                            0.6201  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-08-reel-master.flacf\3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:21.36       24957116 B   ---   --   ---xx   flac  0.6100  Track  1.flac
+     6:14.55       66103004 B   ---   --   ---xx   flac  0.6754  Track  2.flac
+    10:06.61      107041916 B   ---   --   ---xx   flac  0.6397  Track  3.flac
+     6:11.05       65456204 B   ---   --   ---xx   flac  0.6716  Track  4.flac
+     5:52.04       62102252 B   ---   --   ---xx   flac  0.6032  Track  5.flac
+    30:46.11      325660492 B                            0.6441  (5 files)
+=================== 
+=================== 
+=================== 

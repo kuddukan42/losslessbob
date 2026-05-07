@@ -1,0 +1,29 @@
+48638d69dc5c12c4907549d398f9df5b  Disc One\01 Humming Bird.flac
+8f150aac62ce960dbb8bf29a35b2ff72  Disc One\02 It Ain't Me, Babe.flac
+c3489ed608a86dc1b71661180c48478a  Disc One\03 A Hard Rain's A-Gonna Fall.flac
+17fc577c09724adacaf26cd5c6a5b8c7  Disc One\04 This World Can't Stand Long.flac
+821d39e2e1ae2ccf7b9b7800fd26c577  Disc One\05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+5d914d5bf38d75a374e7c1b334e3ca13  Disc One\06 Just Like A Woman.flac
+a0e6909fbc3e996627a7151883fe9fc2  Disc One\07 Lonesome Day Blues.flac
+b9673e995be818e5f5464647cd649020  Disc One\08 Moonlight.flac
+93ad09ad0b58947cc38ddbfcec4ab0df  Disc One\09 Ballad Of Hollis Brown.flac
+3d94a78bd47cb01c86173cc412333b87  Disc One\10 One Too Many Mornings.flac
+1fdc179b09e9f57a6d2873cc6d582fd1  Disc One\11 Visions Of Johanna.flac
+3d02331eea92dd68fd2ec585a70b251b  Disc One\discone.md5
+042f27df535087017d75acc894646a71  Disc One\fingerprint.ffp
+db9d9f5dd6514f6cf48046fcf51b4e87  Disc Two\01 Summer Days.flac
+334d4d6ab414a8b1b322342fe4894b04  Disc Two\02 Mississippi.flac
+5106a4dc26e8b466bc57820de33a68a8  Disc Two\03 Cold Irons Bound.flac
+8b08eeeee20ff8225280678ea8701b19  Disc Two\04 Rainy Day Women.flac
+e494a1fbbe263b807a81ac8072cc071a  Disc Two\05 Love Sick.flac
+8299083e519ec772862324812286de2e  Disc Two\06 Like A Rolling Stone.flac
+4906b8917e6f6bdb95451959584e658f  Disc Two\07 If Dogs Run Free.flac
+6db199f0015fffabcc1bf767e7cb49f3  Disc Two\08 Honest With Me.flac
+dbce20daf191109ed85e2e072eebc340  Disc Two\09 Blowin' In The Wind.flac
+534504065384c165dc35d430036aa4cc  Disc Two\10 All Along The Watchtower.flac
+3a6511c60e6e90b1cb14b95a44725a56  Disc Two\11 Knockin' On Heaven's Door.flac
+2add94dc9d30d73a50336c118f75b6b6  Disc Two\disctwo.md5
+033f95938639f3e8abf4ec48c87fd8d8  Disc Two\fingerprint.ffp
+98fdff498b306c8347cf929708a45074  dylan_madison_2001.txt
+52abe076f93f610ebdcaf554984ff1c1  Madison2001Back.Jpg
+93f9d6e0aa8d565c9463274b3afd7dd9  Madison2001Front.Jpg

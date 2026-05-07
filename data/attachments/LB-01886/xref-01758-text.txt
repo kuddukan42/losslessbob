@@ -1,0 +1,234 @@
+===================
+===================
+===================
+=== CD1.ffp
+===================
+===================
+===================
+01 Gotta serve somebody.flac:cbe59b4a997111f548ef526ef3ce04e6
+02 I believe in you.flac:d2eee987e2336d8c09abf0de8184141b
+03 When you gonna wake up.flac:48508f823f009c39a4e15d0f5419933c
+04 When he returns.flac:463e2298592bc9fa73ef7406697828d3
+05 Man gave names to all the animals.flac:8484de0e49331659a283c7f6087dcad8
+06 Slow train.flac:31f253d0b1cd2c5f875e26c449a4b5d3
+07 Precious angel.flac:0790c65155a8c1bd327226bfc6ba93fd
+08 Covenant woman.flac:3b86d0bbdedc680178a82205ad8d23dc
+09 Gonna change my way of thinking.flac:371a1d76797e9a8da3433b94e0f145dd
+10 Solid rock.flac:1b29923f95098de4d3aaeaa7f3b5312f
+11 Saving grace.flac:17821db1c170fdc7fc78af45c5260d7b
+===================
+===================
+===================
+=== CD1.txt
+===================
+===================
+===================
+01 Gotta serve somebody.flac:cbe59b4a997111f548ef526ef3ce04e6
+02 I believe in you.flac:d2eee987e2336d8c09abf0de8184141b
+03 When you gonna wake up.flac:48508f823f009c39a4e15d0f5419933c
+04 When he returns.flac:463e2298592bc9fa73ef7406697828d3
+05 Man gave names to all the animals.flac:8484de0e49331659a283c7f6087dcad8
+06 Slow train.flac:31f253d0b1cd2c5f875e26c449a4b5d3
+07 Precious angel.flac:0790c65155a8c1bd327226bfc6ba93fd
+08 Covenant woman.flac:3b86d0bbdedc680178a82205ad8d23dc
+09 Gonna change my way of thinking.flac:371a1d76797e9a8da3433b94e0f145dd
+10 Solid rock.flac:1b29923f95098de4d3aaeaa7f3b5312f
+11 Saving grace.flac:17821db1c170fdc7fc78af45c5260d7b
+===================
+===================
+===================
+=== CD2.ffp
+===================
+===================
+===================
+14 What can I do for you.flac:8100f451e6488cf10c3fce5ed6c21ea9
+15 Saved.flac:9601355bb20f89e040e9ebe51a69619e
+16 In the garden.flac:d66a6536cfa899b31eb426077b8d348a
+17 Blessed be the name.flac:b7730c6bf24db8da3b6a8d974ecf835a
+18 Pressing on.flac:a4d3c3c7097c789b7d1b8794847ed6b9
+===================
+===================
+===================
+=== CD2.TXT
+===================
+===================
+===================
+14 What can I do for you.flac:8100f451e6488cf10c3fce5ed6c21ea9
+15 Saved.flac:9601355bb20f89e040e9ebe51a69619e
+16 In the garden.flac:d66a6536cfa899b31eb426077b8d348a
+17 Blessed be the name.flac:b7730c6bf24db8da3b6a8d974ecf835a
+18 Pressing on.flac:a4d3c3c7097c789b7d1b8794847ed6b9
+===================
+===================
+===================
+=== Bob Dylan 1979-11-09 Fox Warfield Theatre, San Francisco, California, USA [derived from LB-1886].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Fox Warfield Theatre
+San Francisco, California
+November 9, 1979
+
+Derived from LB-1886;
+SHN files converted to FLAC files
+
+Legendary Tapers Series #27
+Offmaster recording of an audience recording>(Feurio) wav> (flac frontend) >flac
+Taped by Legendary Taper E
+
+The sources identified by Watt Alexander in the "Gospel Project" for this date are obviously derived
+from this LTE version (apparently the only ciculating version).
+The recording that I received has some "bonus tracks" appended to the end of the concert.
+I have no information as to the source of these particular tracks, but I have left them in the torrent folder.
+They can of course be omitted in burning if one wishes to just keep the 11-9-79 material.
+
+CD1:
+01. Gotta Serve Somebody
+02. I Believe In You
+03. When You Gonna Wake Up
+04. When He Returns
+05. Man Gave Names To All The Animals
+06. Slow Train
+07. Precious Angel
+08. Covenant Woman
+09. Mona Lisa Young: God Uses Ordinary People ( ? )
+10. Gonna Change My Way Of Thinking
+11. Do Right To Me Baby (Do Unto Others)
+12. Solid Rock
+13. Saving Grace
+
+CD2:
+14. What Can I Do For You?
+15. Saved (Bob Dylan/Tim Drummond)
+16. In The Garden
+17. Blessed Be The Name
+18. Pressing On
+
+Concert # 8 of the First Gospel Tour
+
+Concert # 8 with the First Gospel Band:
+Bob Dylan (vocal & guitar)
+Fred Tackett (guitar)
+Spooner Oldham (keyboards)
+Tim Drummond (bass)
+Terry Young (keyboards)
+Jim Keltner (drums)
+Regina Havis, Helena Springs, Mona Lisa Young (background vocals)
+
+4 Bob Dylan solo (vocal & guitar) with Spooner Oldham (piano)
+13 Bob Dylan (harmonica)
+17 Bob Dylan (piano)
+
+
+BobTalk:
+I'm gonna ask Mona Lisa to sing a song, God Uses Ordinary People. I know it's something you'll want to hear.
+Thank you. Now, seeing as we are living in the last of the end of times. I know everybody agrees with that. All right, shout if you agree with me. [cheers] So this is called, "Hanging On To A Solid Rock because in the end of times we're going to need something very strong to hang on to. Hanging On To A Solid Rock Made Before The Foundation Of This World
+ (.....) playing keyboards is Terry Young. On these keyboards is Spooner Oldham. Playing lead guitar tonight, Fred Tackett. On the drums, Jim Keltner. On bass guitar, that's Tim Drummond. Helena Springs. Regina Havis. Mona Lisa Young. I think that's everybody. (before Blessed Be The Name)
+
+Reference. Watt Alexander: The Gospel Project.
+
+Stereo audience recording, 85 minutes
+
+
+CD1 .ffp:
+01 Gotta serve somebody.flac:cbe59b4a997111f548ef526ef3ce04e6
+02 I believe in you.flac:d2eee987e2336d8c09abf0de8184141b
+03 When you gonna wake up.flac:48508f823f009c39a4e15d0f5419933c
+04 When he returns.flac:463e2298592bc9fa73ef7406697828d3
+05 Man gave names to all the animals.flac:8484de0e49331659a283c7f6087dcad8
+06 Slow train.flac:31f253d0b1cd2c5f875e26c449a4b5d3
+07 Precious angel.flac:0790c65155a8c1bd327226bfc6ba93fd
+08 Covenant woman.flac:3b86d0bbdedc680178a82205ad8d23dc
+09 Gonna change my way of thinking.flac:371a1d76797e9a8da3433b94e0f145dd
+10 Solid rock.flac:1b29923f95098de4d3aaeaa7f3b5312f
+11 Saving grace.flac:17821db1c170fdc7fc78af45c5260d7b
+
+CD2 .ffp:
+14 What can I do for you.flac:8100f451e6488cf10c3fce5ed6c21ea9
+15 Saved.flac:9601355bb20f89e040e9ebe51a69619e
+16 In the garden.flac:d66a6536cfa899b31eb426077b8d348a
+17 Blessed be the name.flac:b7730c6bf24db8da3b6a8d974ecf835a
+18 Pressing on.flac:a4d3c3c7097c789b7d1b8794847ed6b9
+
+* * *  Enjoy your Bobby Hobby  * * *
+===================
+===================
+===================
+=== ORIGINAL bd1979-11-09-LTE master.txt
+===================
+===================
+===================
+Legendary Tapers Series #27
+
+Bob Dylan 
+Fox Warfield, San Francisco
+79-11-09
+Offmaster recording of an audience recording>(Feurio) wav> (flac frontend) >flac
+Taped by Legendary Taper E.
+
+
+The sources identified by Watt Alexander in the "Gospel Project" for this date are obviously derived
+from this LTE version (apparently the only ciculating version). The recording that I received has some
+"bonus tracks" appended to the end of the concert. I have no information as to the source of these particular tracks, 
+but I have left them in the torrent folder. They can of course be omitted in burning if one wishes to just keep 
+the 11-9-79 material.
+
+
+Disk One
+
+Gotta Serve Somebody
+I Believe In You
+When You Gonna Wake Up
+When He Returns
+Man Gave Names To All The Animals
+Slow Train
+Precious Angel
+Covenant Woman
+Gonna Change My Way Of Thinking + Do Right To Me Baby (Do Unto Others) (single track)
+Solid Rock
+Saving Grace
+What Can I Do For You?
+
+
+Disk Two
+Saved
+In The Garden
+Blessed Be The Name
+Pressing On
+
+bonus tracks of unknown origin:
+What Can I do for You?
+In the Garden
+Blessed Be the Name
+Pressing On
+
+
+Disk One
+bd1979-11-09d1t01.flac:cbe59b4a997111f548ef526ef3ce04e6
+bd1979-11-09d1t02.flac:d2eee987e2336d8c09abf0de8184141b
+bd1979-11-09d1t03.flac:48508f823f009c39a4e15d0f5419933c
+bd1979-11-09d1t04.flac:463e2298592bc9fa73ef7406697828d3
+bd1979-11-09d1t05.flac:8484de0e49331659a283c7f6087dcad8
+bd1979-11-09d1t06.flac:31f253d0b1cd2c5f875e26c449a4b5d3
+bd1979-11-09d1t07.flac:0790c65155a8c1bd327226bfc6ba93fd
+bd1979-11-09d1t08.flac:3b86d0bbdedc680178a82205ad8d23dc
+bd1979-11-09d1t09.flac:371a1d76797e9a8da3433b94e0f145dd
+bd1979-11-09d1t10.flac:1b29923f95098de4d3aaeaa7f3b5312f
+bd1979-11-09d1t11.flac:17821db1c170fdc7fc78af45c5260d7b
+bd1079-11-09d1t12.flac:e565cac2657f9d8752544d436384fe61
+
+
+Disk Two
+bd1979-11-09d2t01.flac:9601355bb20f89e040e9ebe51a69619e
+bd1979-11-09d2t02.flac:3f385caab49e6edd60b3237827c0b2e6
+bd1979-11-09d2t03.flac:34cd3da3c343f77ff791c88216c52646
+bd1979-11-09d2t04.flac:b12eeba6e9af24a5831e7b412514b785
+bd1979-11-09d2t05.flac:8100f451e6488cf10c3fce5ed6c21ea9
+bd1979-11-09d2t06.flac:d66a6536cfa899b31eb426077b8d348a
+bd1979-11-09d2t07.flac:b7730c6bf24db8da3b6a8d974ecf835a
+bd1979-11-09d2t08.flac:7c91a378100471ff7d9dc599926243fa
+===================
+===================
+===================

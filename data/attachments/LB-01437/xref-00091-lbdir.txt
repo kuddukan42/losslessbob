@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-19-SCHUBERT-REC-ASM-e.flacf 
+=================== 
+=================== 
+=================== 
+aedb8ac861ff984914a2cd94f8624057  101 Duncan And Brady.flac
+66fb74c6b488691553dadb13a6fe4466  102 The Times They Are A-Changin'.flac
+8c10bed56251a7257b22030c5cf5fae0  103 It's Alright, Ma (I'm Only Bleeding).flac
+a7af0dabb6f806b273087108ebc5f5e3  104 Love Minus ZeroNo Limit.flac
+502b419c26f78d7f8f65f2979637bf0e  105 Tangled Up In Blue.flac
+8c958a8f45da6320f47e62c195f43b97  106 It's All Over Now, Baby Blue.flac
+68a4124d4629c4b55f12ba2dec273313  2000-05-19 Oslo.txt
+0e491661103dfad6f2d171abe24b7b1d  201 Country Pie .flac
+e12537a5c343c4e4ae680a243cdc3752  202 Can't Wait.flac
+3a13aeee755146daab355ab2b99fe5ef  203 All Along The Watchtower.flac
+29a42374b14d80ef64ae3a1d0f68c5b2  204 She Belongs To Me .flac
+4f33640a45e8e4d701f59340cd34c6e6  205 Cold Irons Bound .flac
+ef6f5ed8193573796cdb93efd5beeff5  206 Leopard-Skin Pill-Box Hat .flac
+d1b39ee14993f27d87a50412ece43bb6  207 Love Sick.flac
+a9e0cdc329bd10c182f57f0f7df8b126  208 Like A Rolling Stone.flac
+f7a3bd6a1fd42878fee2798b811d8f1c  209 Forever Young.flac
+6808e8cbfc7ac7ef1fd5debb9a5d388b  210 Not Fade Away.flac
+1a6a676273efcddc43a0b9a35e705cc3  211 Don't Think Twice, It's All Right.flac
+bc735e52f685139ebefd5a69bd32fc75  212 Rainy Day Women #12 & #35.flac
+a3cb1fe46d1d1a58bdd75cd12f363356  213 Blowin' In The Wind.flac
+9cd25b11cf2087e17fd08f29ae3f0bc9  BD 2000-05-19 Oslo.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-19-SCHUBERT-REC-ASM-e.flacf 
+=================== 
+=================== 
+=================== 
+101 duncan and brady.flac:c2d1a9ffc20526de9504b618997057b5
+102 the times they are a-changin'.flac:7c66d0c16eb39e124dfcad3d4053f983
+103 it's alright, ma (i'm only bleeding).flac:4b5e1dbf2b56f7fc0409a1daa2cad7bb
+104 love minus zerono limit.flac:3779ae981bbbe2ab36d4171983fb19ca
+105 tangled up in blue.flac:dd84a5b43a8a1211930402094bebb4e1
+106 it's all over now, baby blue.flac:da385b3f4572c151cec8a35ccd875882
+201 country pie .flac:945bdd245186d15c80806df8757964b8
+202 can't wait.flac:66e6088f05fe3e8c06dab8f408944f1f
+203 all along the watchtower.flac:f1be7a542089f0d42f7ee0a50ea3e1e8
+204 she belongs to me .flac:a5a11e74579a6edc41d5a3fad460a5e0
+205 cold irons bound .flac:2867023c21b020339798a5ddbc44a405
+206 leopard-skin pill-box hat .flac:ac37b6fbb086aecde7eced21db7db09d
+207 love sick.flac:140723e16bc1bb882923b921c698bedf
+208 like a rolling stone.flac:85e863d734654fee7a66b7335177065a
+209 forever young.flac:950b1bbc90d920051267cf6d4dd6074f
+210 not fade away.flac:0909881a731ba3250a5b84ba9cf47449
+211 don't think twice, it's all right.flac:78d07c4186d38bcdc514190107ffc2b9
+212 rainy day women #12 & #35.flac:d1ce21b308b111b3517178ac9c96fa9b
+213 blowin' in the wind.flac:a54e59e6f8fc22e0fbb819666b3ff58e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-19-SCHUBERT-REC-ASM-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:18.64       35077772 B   ---   --   ---xx   flac  0.5330  101 Duncan And Brady.flac
+     6:24.58       67874060 B   ---   --   ---xx   flac  0.4664  102 The Times They Are A-Changin'.flac
+     7:33.01       79911596 B   ---   --   ---xx   flac  0.4762  103 It's Alright, Ma (I'm Only Bleeding).flac
+     6:10.00       65268044 B   ---   --   ---xx   flac  0.4790  104 Love Minus ZeroNo Limit.flac
+     7:35.24       80318492 B   ---   --   ---xx   flac  0.5389  105 Tangled Up In Blue.flac
+     7:23.26       78206396 B   ---   --   ---xx   flac  0.4596  106 It's All Over Now, Baby Blue.flac
+     2:42.06       28590956 B   ---   --   ---xx   flac  0.5330  201 Country Pie .flac
+     4:49.05       50991404 B   ---   --   ---xx   flac  0.4615  202 Can't Wait.flac
+     5:02.63       53421020 B   ---   --   ---xx   flac  0.5704  203 All Along The Watchtower.flac
+     5:53.32       62344508 B   ---   --   ---xx   flac  0.4960  204 She Belongs To Me .flac
+     6:55.03       73213100 B   ---   --   ---xx   flac  0.5352  205 Cold Irons Bound .flac
+     9:23.70       99477884 B   ---   --   ---xx   flac  0.5407  206 Leopard-Skin Pill-Box Hat .flac
+     5:54.64       62596172 B   ---   --   ---xx   flac  0.4873  207 Love Sick.flac
+     7:34.47       80196188 B   ---   --   ---xx   flac  0.5560  208 Like A Rolling Stone.flac
+     6:10.37       65355068 B   ---   --   ---xx   flac  0.4856  209 Forever Young.flac
+     4:20.13       45894620 B   ---   --   ---xx   flac  0.5601  210 Not Fade Away.flac
+     7:10.06       75866156 B   ---   --   ---xx   flac  0.4838  211 Don't Think Twice, It's All Right.flac
+     7:30.39       79471772 B   ---   --   ---xx   flac  0.5549  212 Rainy Day Women #12 & #35.flac
+     5:03.09       53470412 B   ---   --   ---xx   flac  0.4608  213 Blowin' In The Wind.flac
+   116:55.42     1237545620 B                            0.5091  (19 files)
+=================== 
+=================== 
+=================== 

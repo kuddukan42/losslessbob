@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-09-d.flacf 
+=================== 
+=================== 
+=================== 
+8c74258d622574a4c8545c170f86db42  01 Down in the Flood.flac
+971b5e42876c41bb89d2c07d865a512d  02 Tonight, I'll Be Staying Here With You.flac
+04a297e0200668bd7a2dac5030262e06  03 All Along the Watchtower.flac
+13b6adf7feaa2c1fb6a499facf71f00a  04 Positively 4th Street.flac
+ca136521b089c6fabe373ff1561a0f89  05 Pledging My Time.flac
+2d8a3f20d5a5eb4ed22ab1377bdb6a9f  06 Silvio.flac
+d63ecf1c183c960724d84067ebc284f3  07 Tangled Up in Blue.flac
+0e06f3577a1b4c21b7ac2f3b31d38abd  08 To Ramona.flac
+649294d601fd50f06fd2a6d4dd6bc71f  09 John Brown.flac
+9e182a0613c18eff6c396ecd100ece9c  10 Maggie's Farm _.flac
+28abff1acd4d30f00435d9572e3a16a6  11 Lenny Bruce.flac
+2f4cf1a7b9a8d50a31aded216e4bac4a  12 Seeing the Real You At Last.flac
+d2d1348fe1e16d884387e30cea1677ee  13 Alabama Getaway.flac
+c90354ebcb90a39df02c3264b0af2d49  14 One Too Many Mornings.flac
+46e3a088c406b4dd4a87162197d4ae33  15 Rainy Day Women #12 & 35.flac
+d418ed7b46457a3d292b197f2990d583  BOB DYLAN - 1995-12-09 BOSTON MA (AUD from CDRs).ffp
+b5a497dc3e69cd04301eb7f6ec2e9b45  BOB DYLAN - 1995-12-09 BOSTON MA (AUD from CDRs).md5
+56e41dc7778c3d658dc1b85dc1af0b38  BOB DYLAN - 1995-12-09 BOSTON MA (AUD from CDRs).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-09-d.flacf 
+=================== 
+=================== 
+=================== 
+01 Down in the Flood.flac:a09b4bb47da5bfe26e2e2cb15d75b1a4
+02 Tonight, I'll Be Staying Here With You.flac:e4e9d9c55c0669250f894048ead97fd4
+03 All Along the Watchtower.flac:41988e2b08a1405acd13a8de90f41e11
+04 Positively 4th Street.flac:4c88af627ca3fb52605145b35ae6d1f2
+05 Pledging My Time.flac:35b465a30dd57fdda978daea96d87e8d
+06 Silvio.flac:e7e415d3244da3cb629e20f7ef969c16
+07 Tangled Up in Blue.flac:068373ea478b1f9a1f326160c3aab4d1
+08 To Ramona.flac:cb66cf5edd64ba8ddb8f26896f86e0cc
+09 John Brown.flac:7122ad748ec5c78b1f0779ede0637f2a
+10 Maggie's Farm _.flac:8bc1fc9bd4ce6f792d07d288c8d813f0
+11 Lenny Bruce.flac:81f293159d3ae797dc5095026b0f042c
+12 Seeing the Real You At Last.flac:228a599a1288f3ed8d3b9a199c6ab6e7
+13 Alabama Getaway.flac:e64a9b6fe2b64f97d4ea9a4c8f000fd2
+14 One Too Many Mornings.flac:5696d3e5b876b93ebfaf812a05f8ccc5
+15 Rainy Day Women #12 & 35.flac:50fa87714cb31892921400edabe21191
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-09-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.09       53999612 B   ---   --   ---xx   flac  0.6114  01 Down in the Flood.flac
+     5:27.30       57753404 B   ---   --   ---xx   flac  0.5484  02 Tonight, I'll Be Staying Here With You.flac
+     6:48.00       71971244 B   ---   --   ---xx   flac  0.5893  03 All Along the Watchtower.flac
+     8:21.33       88454060 B   ---   --   ---xx   flac  0.5469  04 Positively 4th Street.flac
+     6:00.18       63546380 B   ---   --   ---xx   flac  0.5698  05 Pledging My Time.flac
+     8:19.45       88129484 B   ---   --   ---xx   flac  0.5873  06 Silvio.flac
+    10:06.18      106940780 B   ---   --   ---xx   flac  0.5271  07 Tangled Up in Blue.flac
+     6:15.66       66305276 B   ---   --   ---xx   flac  0.4867  08 To Ramona.flac
+     7:05.27       75032956 B   -b-   --   ---xx   flac  0.4965  09 John Brown.flac
+     7:07.48       75435740 B   ---   --   ---xx   flac  0.6089  10 Maggie's Farm _.flac
+    10:57.55      116024204 B   ---   --   ---xx   flac  0.5232  11 Lenny Bruce.flac
+     9:07.19       96535532 B   ---   --   ---xx   flac  0.5490  12 Seeing the Real You At Last.flac
+     6:48.21       72020636 B   ---   --   ---xx   flac  0.5820  13 Alabama Getaway.flac
+     9:24.64       99640172 B   ---   --   ---xx   flac  0.4748  14 One Too Many Mornings.flac
+     5:25.47       57441744 B   -b-   --   ---xx   flac  0.5762  15 Rainy Day Women #12 & 35.flac
+   112:21.50     1189231224 B                            0.5476  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-01-d.flacf 
+=================== 
+=================== 
+=================== 
+2d9d1c2539fef5b0a5172e2af5190f73  1992-04-01 Palais Theatre, Melbourne D1\01 Track01.flac
+be91932e54589676b19856a0d427db1a  1992-04-01 Palais Theatre, Melbourne D1\02 Track02.flac
+678e2ca8544319b6659e5119a892e4d7  1992-04-01 Palais Theatre, Melbourne D1\03 Track03.flac
+e498acc2c33a18ee7a6d12fe27201083  1992-04-01 Palais Theatre, Melbourne D1\04 Track04.flac
+ece011a2a52b57c2c0720b68e0d1c27b  1992-04-01 Palais Theatre, Melbourne D1\05 Track05.flac
+5854d961c301f842271e8d19006d8971  1992-04-01 Palais Theatre, Melbourne D1\06 Track06.flac
+e18c00f6c19d60894da0ede9f4f0b84b  1992-04-01 Palais Theatre, Melbourne D1\07 Track07.flac
+384283cd48499ff0eadbd9b312e6d4c3  1992-04-01 Palais Theatre, Melbourne D1\08 Track08.flac
+e9855be35b3f5f2d5cda23277f537fb6  1992-04-01 Palais Theatre, Melbourne D1\09 Track09.flac
+3bbab06e491e2341ba64ef036e52b5d1  1992-04-01 Palais Theatre, Melbourne D1\10 Track10.flac
+e40833fdf13cfe59c81900324c97777c  1992-04-01 Palais Theatre, Melbourne D2\01 Track01.flac
+12b49404a1ae41cfa9a43fac02050c3f  1992-04-01 Palais Theatre, Melbourne D2\02 Track02.flac
+24e9033509367f73913184e189d6060b  1992-04-01 Palais Theatre, Melbourne D2\03 Track03.flac
+ad80df925bf4a355196187a3e64220ab  1992-04-01 Palais Theatre, Melbourne D2\04 Track04.flac
+503f1cafe6df030b0b8ed2ca235e6a24  1992-04-01 Palais Theatre, Melbourne D2\05 Track05.flac
+02d2d0f68258b77a1698cb0bbc760b04  1992-04-01 Palais Theatre, Melbourne D2\06 Track06.flac
+e91d7834759e9611620d6c8b845866f4  1992-04-01 Palais Theatre, Melbourne D2\07 Track07.flac
+e065d188480435474398400dba26fc6f  1992-04-01 Palais Theatre, Melbourne D2\08 Track08.flac
+0068fe1490744b405c044456a9d6651f  1992.04.01 Palais Theatre, Melbourne, Victoria, Australia.md5
+ef350f5c08ae852aa3a63e8c03db1eee  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-01-d.flacf\1992-04-01 palais theatre, melbourne d1 
+=================== 
+=================== 
+=================== 
+01 track01.flac:d583d100f04887fe62d914e4969b7326
+02 track02.flac:4f2de6ff4398cf796176157c5ec8d230
+03 track03.flac:9a1876164097b667e2d334c3581b0aec
+04 track04.flac:f281fcff96425e7971f549629421aaaa
+05 track05.flac:ec8ec51be96d5fc576cdff2c6ffa8eaa
+06 track06.flac:d24c6dfe416371b6fc1ffbedf7ba7534
+07 track07.flac:127898ba39088f37b5293e762a6b1b22
+08 track08.flac:57755a08dcc73c9035ef5743b1b2848a
+09 track09.flac:4cb8a1cb6fcfd6a8073d18eb23e0a8b5
+10 track10.flac:bde3c9a7571c15b7eb2d18311bdfb200
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-01-d.flacf\1992-04-01 palais theatre, melbourne d2 
+=================== 
+=================== 
+=================== 
+01 track01.flac:d23eeaa303837de54862ba2aa486378c
+02 track02.flac:19478d5150872897db0a506a0768a39f
+03 track03.flac:0ce51953386ece5df4245cdc43b49db0
+04 track04.flac:752e60ae8f9d0983efdb8669075bad8b
+05 track05.flac:ffb37408b8f8cab1d41ce628e7909896
+06 track06.flac:9caeba65899cd28ab2c4b95a03808779
+07 track07.flac:0607d22f3c6282b9e530ae3c458ccfd0
+08 track08.flac:1e87635e77a8057a39f51cb0ef35ff80
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-01-d.flacf\1992-04-01 palais theatre, melbourne d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:23.16       46430876 B   ---   --   ---xx   flac  0.6987  01 Track01.flac
+     4:26.45       47028284 B   ---   --   ---xx   flac  0.6939  02 Track02.flac
+     3:11.03       33699500 B   ---   --   ---xx   flac  0.7198  03 Track03.flac
+     5:04.61       53769116 B   ---   --   ---xx   flac  0.7055  04 Track04.flac
+     7:58.65       84472124 B   ---   --   ---xx   flac  0.7042  05 Track05.flac
+     4:13.65       44782124 B   ---   --   ---xx   flac  0.6918  06 Track06.flac
+     5:48.72       61556588 B   ---   --   ---xx   flac  0.6920  07 Track07.flac
+     3:18.51       35047196 B   ---   --   ---xx   flac  0.7305  08 Track08.flac
+     3:42.18       39203180 B   ---   --   ---xx   flac  0.7164  09 Track09.flac
+     6:02.61       64000316 B   ---   --   ---xx   flac  0.7202  10 Track10.flac
+    48:11.07      509989304 B                            0.7061  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-01-d.flacf\1992-04-01 palais theatre, melbourne d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.56       52346156 B   ---   --   ---xx   flac  0.7162  01 Track01.flac
+     3:43.39       39428972 B   ---   --   ---xx   flac  0.6782  02 Track02.flac
+     7:33.59       80048012 B   ---   --   ---xx   flac  0.7000  03 Track03.flac
+     7:15.36       76818716 B   ---   --   ---xx   flac  0.7074  04 Track04.flac
+     5:01.34       53176412 B   ---   --   ---xx   flac  0.6752  05 Track05.flac
+     5:42.71       60495836 B   ---   --   ---xx   flac  0.6755  06 Track06.flac
+     5:30.69       58374332 B   ---   --   ---xx   flac  0.6850  07 Track07.flac
+     3:56.12       41658668 B   ---   --   ---xx   flac  0.7000  08 Track08.flac
+    43:41.01      462347104 B                            0.6933  (8 files)
+=================== 
+=================== 
+=================== 

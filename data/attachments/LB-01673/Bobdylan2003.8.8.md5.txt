@@ -1,0 +1,15 @@
+bfb78ce10b039cb3bb4f4c8fb06aef22 *BobDylan2003.8.8t1.shn
+d8faeec5084bcb1726a686536c9cf7c8 *BobDylan2003.8.8t2.shn
+92b427e4afead52c728b057673ddaaec *BobDylan2003.8.8t3.shn
+32ddf464ad0592e3ae591a6411383a1d *BobDylan2003.8.8t4.shn
+2726c66fbe05ead8b3de1967e204e18f *BobDylan2003.8.8t5.shn
+83926ca5b9f31937f121c7b44dda2b75 *BobDylan2003.8.8t6.shn
+639ab835d07a2871a360387f1de48c33 *BobDylan2003.8.8t7.shn
+2eb450797bc819884fee4281306ecf2e *BobDylan2003.8.8t8.shn
+2bbbc29edc04bf11b55ede09c50314aa *BobDylan2003.8.8t9.shn
+8ba5c0ff237b4a339f8e46e4159f0b37 *BobDylan2003.8.8t10.shn
+8b06b75d6565dc293b2cfad515bc0793 *BobDylan2003.8.8t11.shn
+3072a4be733d90ace63951b0a3a4211f *RobertHuntert2003.8.8t1.shn
+8dcedf5c8eae6b6d5ecb596d5724575b *RobertHuntert2003.8.8t2.shn
+cc6464739dfc589e436054d2693b6115 *RobertHuntert2003.8.8t3.shn
+d7b24a2eb3c1dd9e2e1e0523c9165c9c *RobertHuntert2003.8.8t4.shn

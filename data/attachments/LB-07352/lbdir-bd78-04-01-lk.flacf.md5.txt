@@ -1,0 +1,34 @@
+8bb00ce4be91cf1b0d019f02bf32944a  1978 Leg 1 Disc 5.md5
+f0ec41ea19e0731b54cb0aa436c8c95c  Bob Dylan Sydney 1978.txt
+f4364298ca1f41b46867c11c48d526a9  Disk 1\Disk 1.md5
+d6521799ee94cec5e6394af64ff1b1d7  Disk 1\Sydney 1 Apr 78 - 101.flac
+7123e3f5669dc84121b4bc8d8d7638c8  Disk 1\Sydney 1 Apr 78 - 102.flac
+50d08b52c0ab0e9d2fffe34cc5f4c209  Disk 1\Sydney 1 Apr 78 - 103.flac
+b420bef9c5af6fba0353331088663133  Disk 1\Sydney 1 Apr 78 - 104.flac
+ce3d4186bd7c36eea978352027575910  Disk 1\Sydney 1 Apr 78 - 105.flac
+7b584ac681b487c52933c8bbb1ac3f76  Disk 1\Sydney 1 Apr 78 - 106.flac
+5b89834c17b793630658c50476ff4fe3  Disk 1\Sydney 1 Apr 78 - 107.flac
+8d5e79d573782d2d45eb4e8f90c6dc89  Disk 1\Sydney 1 Apr 78 - 108.flac
+e41870169d056b56f8220c9e95b4ac20  Disk 1\Sydney 1 Apr 78 - 109.flac
+e27fe786016b94de3ccbf2d451dca0ae  Disk 1\Sydney 1 Apr 78 - 110.flac
+b680ed238607aa0e441ede4c4d9affaa  Disk 1\Sydney 1 Apr 78 - 111.flac
+d79a6dd3cbd120ae24f251ef74db9445  Disk 1\Sydney 1 Apr 78 - 112.flac
+eeca7bcac7265c1dd7ad2f556d066f1a  Disk 1\Sydney 1 Apr 78 - 113.flac
+62704263590cc9257e5fc8ad4d059d8b  Disk 1\Sydney 1 Apr 78 - 114.flac
+40fe4d92257209bde2ffc24746e5830e  Disk 1\Sydney 1 Apr 78 - 115.flac
+c9e134016d8bb14c334cad7112a12378  Disk 2\Sydney 1 Apr 78 - 201.flac
+1d2b3bd2706447c02ecef63f69ee454c  Disk 2\Sydney 1 Apr 78 - 202.flac
+89f2721b2963d50775991e8e31810def  Disk 2\Sydney 1 Apr 78 - 203.flac
+08107826f21648d7fecfc52ba7c847ea  Disk 2\Sydney 1 Apr 78 - 204.flac
+3fb688a48cec9f4fa020754c405491b4  Disk 2\Sydney 1 Apr 78 - 205.flac
+2e29febd917d4c7c57609333393feeb3  Disk 2\Sydney 1 Apr 78 - 206.flac
+3fdad3f7f4041fdfeab918c5e87d6678  Disk 2\Sydney 1 Apr 78 - 207.flac
+937f5b1fa32121cd687a1e010b23c0eb  Disk 2\Sydney 1 Apr 78 - 208.flac
+bed176a429e0e23a0505d73d7e0a5450  Disk 2\Sydney 1 Apr 78 - 209.flac
+92f539e84efb493cf8c82fd77e57e52f  Disk 2\Sydney 1 Apr 78 - 210.flac
+d1549e44514e4e46140804d1e3811325  Disk 2\Sydney 1 Apr 78 - 211.flac
+375229fd5b3542735dfc1a475c811b7f  Disk 2\Sydney 1 Apr 78 - 212.flac
+a97015e2a18b03f6cd7a2d9f8a7cc0cc  Disk 2\Sydney 1 Apr 78 - 213.flac
+1d5105856e3393a21179d01f0985f6da  Disk 2\Sydney 1 Apr 78 - 214.flac
+6833a2681b3164e5f098c9c0a1f8cee1  Disk 2\Sydney 1 Apr 78 - 215.flac
+a66495c234eaf759156e6dc349c32b36  Disk 2\Sydney 1 Apr 78 - 216.flac

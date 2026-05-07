@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-08-29-MA.flacf 
+=================== 
+=================== 
+=================== 
+18d670fcf618220aaf1e9ac6e02e661c  bd06-08-29-MA-LB-3992.txt
+78cce01ab37135434f4cfd500ad35efa  bob dylan 8-29-06 d101.flac
+c3eb3f49e8d202e4f138abbdba4748b3  bob dylan 8-29-06 d102.flac
+70ebec967aef4d056189cf3449cf02e0  bob dylan 8-29-06 d103.flac
+d595fa323a105a93fc12128d119f2ec4  bob dylan 8-29-06 d104.flac
+ecc2d63d038da20b261ffae65261128d  bob dylan 8-29-06 d105.flac
+6b980b69fe96eb6f42be28197698afd2  bob dylan 8-29-06 d106.flac
+bd8228e17befaf070ae7ce88ad4cdaea  bob dylan 8-29-06 d107.flac
+09c5d8cf4c70227c0c3b477088321a55  bob dylan 8-29-06 d108.flac
+96a6b7e9a49bb0509d5053f17d5816c2  bob dylan 8-29-06 d109.flac
+a0ca0cca3c3173097440dbbf40b832c1  bob dylan 8-29-06 d201.flac
+64bb5268eece34fbec86d160dcabeede  bob dylan 8-29-06 d202.flac
+6dec4a3344f9d7792355c966c93ecba6  bob dylan 8-29-06 d203.flac
+737e6b37ca9ffde1a00c1c8fa54ed916  bob dylan 8-29-06 d204.flac
+8d5b4ab24663a44f77b18d8b91a6fefe  bob dylan 8-29-06 d205.flac
+cbab8a51971b7067caf73ca28a44beba  bob dylan 8-29-06 d206.flac
+93b51e1b23a5dc0021ac1d52a2b72ec8  bob dylan 8-29-06 d207.flac
+574b4030a3686086510d1afbef9f6614  bob dylan 8-29-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-08-29-MA.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 8-29-06 d101.flac:5db28778242c837219d9a43dff82ce3a
+bob dylan 8-29-06 d102.flac:e08d5b925834a6c6b235e7fb8c6d4f3a
+bob dylan 8-29-06 d103.flac:9f40c3c475f3a9157a29e79eea9249d7
+bob dylan 8-29-06 d104.flac:cb0d6f0cd50227103b5bf28cb822597e
+bob dylan 8-29-06 d105.flac:8b6ccd995274ab9193d12ab1e425032a
+bob dylan 8-29-06 d106.flac:089241641d3a0aded6061bf619f9f5b3
+bob dylan 8-29-06 d107.flac:ac3e4b2ba457ceb113d70dd1cedc5bbe
+bob dylan 8-29-06 d108.flac:5aad758bc59ea3c427aaa6ada1fe727b
+bob dylan 8-29-06 d109.flac:f087575bb90db4466602dde1fa1f79c6
+bob dylan 8-29-06 d201.flac:cbe044d5e3536e3099366639e3c888c7
+bob dylan 8-29-06 d202.flac:784d44b21d195ac1249d7416d0b31c26
+bob dylan 8-29-06 d203.flac:9865951b76f93a82a642d68144db87e9
+bob dylan 8-29-06 d204.flac:7b94104f3d577a52966f62188f48dbcd
+bob dylan 8-29-06 d205.flac:cda1267d58ec0e6680d4b3e0c22342c5
+bob dylan 8-29-06 d206.flac:7d97fa7ad1ac717d83c34aa7e527dff8
+bob dylan 8-29-06 d207.flac:cee1942abd400182a152b98635005fb7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-08-29-MA.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:49.14       19260572 B   ---   --   ---xx   flac  0.3481  bob dylan 8-29-06 d101.flac
+     4:21.30       46111004 B   ---   --   ---xx   flac  0.5155  bob dylan 8-29-06 d102.flac
+     5:47.72       61380188 B   ---   --   ---xx   flac  0.4883  bob dylan 8-29-06 d103.flac
+     5:32.22       58616588 B   ---   --   ---xx   flac  0.4635  bob dylan 8-29-06 d104.flac
+     4:20.10       45887564 B   ---   --   ---xx   flac  0.4686  bob dylan 8-29-06 d105.flac
+     6:34.34       69581612 B   ---   --   ---xx   flac  0.4615  bob dylan 8-29-06 d106.flac
+     6:08.37       65002268 B   ---   --   ---xx   flac  0.4940  bob dylan 8-29-06 d107.flac
+     6:23.57       67695308 B   ---   --   ---xx   flac  0.4410  bob dylan 8-29-06 d108.flac
+     7:49.32       82806908 B   ---   --   ---xx   flac  0.5038  bob dylan 8-29-06 d109.flac
+     7:29.48       79316540 B   ---   --   ---xx   flac  0.4298  bob dylan 8-29-06 d201.flac
+     4:08.57       43881308 B   ---   --   ---xx   flac  0.5283  bob dylan 8-29-06 d202.flac
+     7:30.43       79481180 B   ---   --   ---xx   flac  0.5087  bob dylan 8-29-06 d203.flac
+     6:29.66       68774876 B   ---   --   ---xx   flac  0.5017  bob dylan 8-29-06 d204.flac
+     2:05.39       22141772 B   ---   --   ---xx   flac  0.3693  bob dylan 8-29-06 d205.flac
+     6:35.04       69687452 B   ---   --   ---xx   flac  0.5215  bob dylan 8-29-06 d206.flac
+     7:10.39       75943772 B   ---   --   ---xx   flac  0.5248  bob dylan 8-29-06 d207.flac
+    90:17.04      955568912 B                            0.4829  (16 files)
+=================== 
+=================== 
+=================== 

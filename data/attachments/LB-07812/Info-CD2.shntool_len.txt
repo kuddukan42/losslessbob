@@ -1,0 +1,11 @@
+CD #2: shntool 3.0.4
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.00       72676844 B   ---   --   ---xx   flac  0.7728  12 Summer days.flac
+     4:48.00       50803244 B   ---   --   ---xx   flac  0.7030  13 Make you feel my love.flac
+     5:22.00       56800844 B   ---   --   ---xx   flac  0.7956  14 Drifter's escape.flac
+     7:17.00       77086844 B   ---   --   ---xx   flac  0.7671  15 Rainy day women # 12 & 35.flac
+     7:51.00       83084444 B   ---   --   ---xx   flac  0.7707  16 Like a rolling stone.flac
+     6:59.00       73911644 B   ---   --   ---xx   flac  0.7828  17 Honest with me.flac
+     7:20.00       77616044 B   ---   --   ---xx   flac  0.7553  18 Blowin' in the wind.flac
+     5:55.74       62796092 B   ---   --   ---xx   flac  0.7870  19 All along the watchtower.flac
+    52:24.74      554776000 B                            0.7681  (8 files)

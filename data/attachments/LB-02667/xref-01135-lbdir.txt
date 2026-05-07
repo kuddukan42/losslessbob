@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd05-04-30-f.flacf
+===================
+===================
+===================
+a5d2e93963ed485cb60a78994a37a377 *bd2005-04-30.ffp
+14982bba01d338529c17a890dad7b30f *CD 1\01 - Columbia Recording Artist - 050430-NYC-D1.flac
+f1abfc45679ee26bdab1093d7ad52a3f *CD 1\02 - Maggie's Farm - 050430-NYC-D1.flac
+71b1543cb22adcb182ae17ffd6bcf8cd *CD 1\03 - To Ramona - 050430-NYC-D1.flac
+e3becd275d170ece1afdca33f26f416d *CD 1\04 - Cry A While - 050430-NYC-D1.flac
+c44216fd0ec87996dceb2101635b597c *CD 1\05 - Bye And Bye - 050430-NYC-D1.flac
+33146bb6d78c483af2ac75da73b7e5f2 *CD 1\06 - Ballad Of Hollis Brown - 050430-NYC-D1.flac
+17e99bf6d956db6b38bd68fadd07db01 *CD 1\07 - If You See Her, Say Hello - 050430-NYC-D1.flac
+11819c23adb1b7f6943427aa774e3162 *CD 1\08 - Lenny Bruce - 050430-NYC-D1.flac
+2d09198cadd1f36bdee45e6c513f0834 *CD 1\09 - Honest With Me - 050430-NYC-D1.flac
+d3d64965e84813d16ba11c8dfbc86cfb *CD 1\10 - The Lonesome Death Of Hattie Carroll - 050430-NYC-D1.flac
+18507c82bf28af04ef054651e91d5556 *CD 1\11 - High Water (For Charlie Patton) - 050430-NYC-D1.flac
+f730c9a64863b5da90f8561209d86796 *CD 1\12 - I Shall Be Released - 050430-NYC-D1.flac
+68f173e095bdb3a5e5b9ba8f729598d8 *CD 1\13 - Highway 61 Revisited - 050430-NYC-D1.flac
+fee8fca5d83f338ba2cb668f3a27b3b5 *CD 2\01 - Po' Boy - 050430-NYC-D2.flac
+bde2605d2710a70935cb8f8febd7be33 *CD 2\02 - Band Introductions - 050430-NYC-D2.flac
+1b2c77b0837cca685bd27bd30487b297 *CD 2\03 - All Along The Watchtower - 050430-NYC-D2.flac
+fa890a6563a61ed54d1edb8a776c15fb *Setlist.txt
+a254db963227c5350b57e326c6392162 *shntool_len.txt
+===================
+===================
+===================
+=== ffp for: bd05-04-30-f.flacf
+===================
+===================
+===================
+CD 1\01 - Columbia Recording Artist - 050430-NYC-D1.flac:d32fb748dfaca5c34ad47058262ebd94
+CD 1\02 - Maggie's Farm - 050430-NYC-D1.flac:ec7f713ce95aaada6765acefd0d89e74
+CD 1\03 - To Ramona - 050430-NYC-D1.flac:6c84de481cf202f63de93e88679d573c
+CD 1\04 - Cry A While - 050430-NYC-D1.flac:99f4e23622917a111c5e9939071fc75d
+CD 1\05 - Bye And Bye - 050430-NYC-D1.flac:a324ff837ed1794f641db14c1090334b
+CD 1\06 - Ballad Of Hollis Brown - 050430-NYC-D1.flac:76228a3e319a42965ff35cbd4eb096fb
+CD 1\07 - If You See Her, Say Hello - 050430-NYC-D1.flac:8bcbcc28dc674a08e2a02b63b773ca0b
+CD 1\08 - Lenny Bruce - 050430-NYC-D1.flac:d6851142a6e99a45e35e9d9f7b41f79d
+CD 1\09 - Honest With Me - 050430-NYC-D1.flac:0f4cf1363bb29b76e1bea93fb762889b
+CD 1\10 - The Lonesome Death Of Hattie Carroll - 050430-NYC-D1.flac:d7302903cb07b27262d561c730d47d70
+CD 1\11 - High Water (For Charlie Patton) - 050430-NYC-D1.flac:93ece2e54e70490e57f04f098bb0a283
+CD 1\12 - I Shall Be Released - 050430-NYC-D1.flac:bab96c5ee374bb738a26499b74b59693
+CD 1\13 - Highway 61 Revisited - 050430-NYC-D1.flac:1d17f17248cf6874553f27d482dc070d
+CD 2\01 - Po' Boy - 050430-NYC-D2.flac:1ff83781f3cf3b87a1f644fbef2724a1
+CD 2\02 - Band Introductions - 050430-NYC-D2.flac:fc870ce175c96fb964c397d7fea29f07
+CD 2\03 - All Along The Watchtower - 050430-NYC-D2.flac:85e0c0dc9f03c79f6f48c2f7f2b969a2
+===================
+===================
+===================
+=== shntool len for: bd05-04-30-f.flacf\CD 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.28        4475900 B   ---   --   ---xx   flac  0.4376  01 - Columbia Recording Artist - 050430-NYC-D1.flac
+     5:12.52       55159148 B   ---   --   ---xx   flac  0.5667  02 - Maggie's Farm - 050430-NYC-D1.flac
+     6:38.07       70223708 B   ---   --   ---xx   flac  0.4419  03 - To Ramona - 050430-NYC-D1.flac
+     5:29.33       58113260 B   ---   --   ---xx   flac  0.5425  04 - Cry A While - 050430-NYC-D1.flac
+     6:29.06       68633756 B   ---   --   ---xx   flac  0.4290  05 - Bye And Bye - 050430-NYC-D1.flac
+     5:21.26       56685596 B   ---   --   ---xx   flac  0.4604  06 - Ballad Of Hollis Brown - 050430-NYC-D1.flac
+     6:29.62       68765468 B   ---   --   ---xx   flac  0.5198  07 - If You See Her, Say Hello - 050430-NYC-D1.flac
+     6:38.36       70291916 B   ---   --   ---xx   flac  0.4915  08 - Lenny Bruce - 050430-NYC-D1.flac
+     6:39.66       70538876 B   ---   --   ---xx   flac  0.5508  09 - Honest With Me - 050430-NYC-D1.flac
+     5:48.62       61533068 B   ---   --   ---xx   flac  0.4249  10 - The Lonesome Death Of Hattie Carroll - 050430-NYC-D1.flac
+     7:21.37       77879468 B   ---   --   ---xx   flac  0.5505  11 - High Water (For Charlie Patton) - 050430-NYC-D1.flac
+     7:02.71       74607836 B   ---   --   ---xx   flac  0.4578  12 - I Shall Be Released - 050430-NYC-D1.flac
+     6:21.34       67288412 B   ---   --   ---xx   flac  0.5605  13 - Highway 61 Revisited - 050430-NYC-D1.flac
+    75:58.70      804196412 B                            0.4991  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd05-04-30-f.flacf\CD 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:17.67       56076428 B   ---   --   ---xx   flac  0.4300  01 - Po' Boy - 050430-NYC-D2.flac
+     0:25.50        4527644 B   ---   --   ---xx   flac  0.4581  02 - Band Introductions - 050430-NYC-D2.flac
+     5:30.46       58320236 B   ---   --   ---xx   flac  0.5413  03 - All Along The Watchtower - 050430-NYC-D2.flac
+    11:14.13      118924308 B                            0.4857  (3 files)
+===================
+===================
+===================

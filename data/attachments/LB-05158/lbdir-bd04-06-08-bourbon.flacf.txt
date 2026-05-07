@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-08-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+cfc2ce086f2bc44f3f5056d27ef25cf2  BD2004-06-08.md5
+15cff1c8d330ffdeb98cdaeb5bf7b114  BD2004-06-08.txt
+31c6d54cc3c5b75a7ebb91dfaf2ec8e4  BD2004-06-08t01.flac
+65ea919a09604e4ae019c8e4ac188b5f  BD2004-06-08t02.flac
+28f75a5e9b6256c8bd43ee9cb81c8d2f  BD2004-06-08t03.flac
+86185c0522f6a6b548b05b631845fbc2  BD2004-06-08t04.flac
+adbfcbb2eca19be270f54fb6f0c703ba  BD2004-06-08t05.flac
+9519e94143b027b1ea5c08bc90610660  BD2004-06-08t06.flac
+c86ab2184d546c8a42dba1aac46d74ad  BD2004-06-08t07.flac
+cdcf7f1ed3a667af18b17aa08d1a5179  BD2004-06-08t08.flac
+77cbe593b828ca998eadc969c17ba153  BD2004-06-08t09.flac
+c996b4a78c2fd35d501bb27c8155a4ea  BD2004-06-08t10.flac
+5fc8a58f3e249e7e94bcf9eb9f8e67d6  BD2004-06-08t11.flac
+8f0a1323599fca7227eec66e2ec4261e  BD2004-06-08t12.flac
+d431a54aecc3df498af985dedbec73b7  BD2004-06-08t13.flac
+d49e2853f974b587f1fe3408ceb9b3ff  BD2004-06-08t14.flac
+5128924c724344e42419361b5b7c189b  BD2004-06-08t15.flac
+100e0a1f60c942c4a47ba19caed322c8  BD2004-06-08t16.flac
+19877473ec9e2d0af1ec2d2975869e86  BD2004-06-08t17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-08-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+BD2004-06-08t01.flac:37f389e4a6a4b2262230738ae0482d22
+BD2004-06-08t02.flac:da332c6f29542a5c2adc9a5a18f5fd79
+BD2004-06-08t03.flac:0c588e86bbdc25a9992a6c3cbf383740
+BD2004-06-08t04.flac:1d9b0e74588e29d035c97fb43098e41b
+BD2004-06-08t05.flac:2d9e95617fb62d26ccdae804f0aa1233
+BD2004-06-08t06.flac:4afbc3738809bfdb40d0a2500da6f48a
+BD2004-06-08t07.flac:c99937a3fdf4dbe06fec1f099c8e100f
+BD2004-06-08t08.flac:78219faa79c97c3c374409590fc29753
+BD2004-06-08t09.flac:cae25ae035c1d20a30dc8ba67c4bd939
+BD2004-06-08t10.flac:c6569d5e44192749155d1d69f6f95060
+BD2004-06-08t11.flac:6ad4cc39f110d7a42dc6cc46146a1f40
+BD2004-06-08t12.flac:a89fa87bcb97a83f8b186bdcd5443650
+BD2004-06-08t13.flac:0eef9db4559a39d110d47b03400603d4
+BD2004-06-08t14.flac:09306b40f9390cda553956a21964efb7
+BD2004-06-08t15.flac:4a3ea2f8ba2c4179be193cc5b9d851cc
+BD2004-06-08t16.flac:1ebb4bda993865f5107da63042ff856a
+BD2004-06-08t17.flac:5dbe398748712989852eca5bd40a0f1b
+=================== 
+=================== 
+=================== 
+=== shntool for: bd04-06-08-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.21       53322236 B   ---   --   ---xx   flac  0.5817  BD2004-06-08t01.flac
+     5:36.48       59383340 B   ---   --   ---xx   flac  0.5434  BD2004-06-08t02.flac
+     6:36.47       69964988 B   ---   --   ---xx   flac  0.5879  BD2004-06-08t03.flac
+     5:00.26       52981196 B   ---   --   ---xx   flac  0.5641  BD2004-06-08t04.flac
+     7:12.67       76362428 B   ---   --   ---xx   flac  0.5727  BD2004-06-08t05.flac
+     6:01.26       63741596 B   ---   --   ---xx   flac  0.5199  BD2004-06-08t06.flac
+     5:38.66       59778476 B   ---   --   ---xx   flac  0.5783  BD2004-06-08t07.flac
+     5:58.24       63207692 B   ---   --   ---xx   flac  0.5554  BD2004-06-08t08.flac
+     6:22.60       67525964 B   ---   --   ---xx   flac  0.6338  BD2004-06-08t09.flac
+     6:03.26       64094396 B   ---   --   ---xx   flac  0.5315  BD2004-06-08t10.flac
+     5:23.27       57040748 B   ---   --   ---xx   flac  0.4966  BD2004-06-08t11.flac
+     6:48.04       71980652 B   ---   --   ---xx   flac  0.6191  BD2004-06-08t12.flac
+     5:00.01       52922396 B   ---   --   ---xx   flac  0.5559  BD2004-06-08t13.flac
+    13:03.04      138130652 B   ---   --   ---xx   flac  0.5676  BD2004-06-08t14.flac
+     4:25.66       46901276 B   ---   --   ---xx   flac  0.6134  BD2004-06-08t15.flac
+     6:28.39       68534972 B   ---   --   ---xx   flac  0.6048  BD2004-06-08t16.flac
+     6:30.05       68807804 B   ---   --   ---xx   flac  0.5843  BD2004-06-08t17.flac
+   107:12.32     1134680812 B                            0.5718  (17 files)
+=================== 
+=================== 
+=================== 

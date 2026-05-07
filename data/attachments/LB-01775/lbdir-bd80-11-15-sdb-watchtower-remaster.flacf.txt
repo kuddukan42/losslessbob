@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-15-sdb-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+3bfc7f83542279564de9521cee391dab  1980-11-15sbd_d1t01.flac
+1cca4445a924a7f929eb7a0a93ed5c7d  1980-11-15sbd_d1t02.flac
+41b2d9b1543ad2357b5581f46fd9679f  1980-11-15sbd_d1t03.flac
+0c2947023d3bc98f2fb30d22bcecca0a  1980-11-15sbd_d1t04.flac
+078b52bd4353810419460b8c4c7aa340  1980-11-15sbd_d1t05.flac
+cdd6bec8c4fcbeec16e69dc13a6efbcc  1980-11-15sbd_d1t06.flac
+625b27732f6039a980b3b5d055f14b67  1980-11-15sbd_d1t07.flac
+b30403c903c5082f2087d18e30fcb131  1980-11-15sbd_d1t08.flac
+38a1e58d9de3a4e71379a56c3932cf4b  1980-11-15sbd_d1t09.flac
+e5303c2cfb3f6c78f65b37fd88f1e335  1980-11-15sbd_d1t10.flac
+1f7c87cb7516f7d21d9ffd1771f77c6c  1980-11-15sbd_d1t11.flac
+8d2865406df894aa8fc1de64e8d438e7  1980-11-15sbd_d1t12.flac
+7e4f96b6642aaf9348b9875189bbd0ac  1980-11-15sbd_d1t13.flac
+0e60130fa226158654a4bd15deb6c22d  1980-11-15sbd_d1t14.flac
+7c7375f98de2ac64b490ba2f5cd3119c  1980-11-15sbd_d1t15.flac
+56bb4d92a686c236f0a8020e31688dce  1980-11-15sbd_d2t01.flac
+121eab63cc074ff1f5b82c8bdc98352b  1980-11-15sbd_d2t02.flac
+4417dc111d2fabd6c94712614ff168bf  1980-11-15sbd_d2t03.flac
+ce931f9cea58bc7984c8d332ff9463c3  1980-11-15sbd_d2t04.flac
+ce720a408adb03f4e6a5569766429792  1980-11-15sbd_d2t05.flac
+9e80b2a7cca7870568d3de47ab7cc3a2  bd80-11-15-sdb-watchtower-remaster.txt
+9f02eb2d4049974a3890f1f58110b21d  fox80bk.jpg
+b6f0a38a171f52b73cdc7c383987c50c  fox80ft.jpg
+b122eb0a30ce75cb347f769707153588  readme.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-15-sdb-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+1980-11-15sbd_d1t01.flac:d7ba88b4cce191060dbac4ad4a29354c
+1980-11-15sbd_d1t02.flac:e94fe500736166e59ab46e6a286f2553
+1980-11-15sbd_d1t03.flac:2bd5e942aa4eddf7b668512115a4fcde
+1980-11-15sbd_d1t04.flac:ba0d812c4a8eb54ad8bcd545d2c93461
+1980-11-15sbd_d1t05.flac:cad52f29babc09109b51265c00d88511
+1980-11-15sbd_d1t06.flac:fdcc42cd25c1120e41a90db93cd9722a
+1980-11-15sbd_d1t07.flac:0636c673cce35932d4b55e544cbeba2c
+1980-11-15sbd_d1t08.flac:3164eef29e35d9ae2c1c7ddf05ab8894
+1980-11-15sbd_d1t09.flac:2eb295101915d12df830b0fc38beae90
+1980-11-15sbd_d1t10.flac:b608ad80301bacbbbe70be22f20e2e8f
+1980-11-15sbd_d1t11.flac:07d2b199c332d23dd2274c18847a7dd6
+1980-11-15sbd_d1t12.flac:6a53018e8d30d48451727bca57a958ed
+1980-11-15sbd_d1t13.flac:fefad58280341016f860ea4448691790
+1980-11-15sbd_d1t14.flac:b637b0a5b35e1c8581d0935faa30f30b
+1980-11-15sbd_d1t15.flac:5961f0ef99f81ed75bde105f24c4f90f
+1980-11-15sbd_d2t01.flac:aababed1108d1ce93d4c98c57415228a
+1980-11-15sbd_d2t02.flac:8ed1785ba53ae87f0e73612057ec9c07
+1980-11-15sbd_d2t03.flac:664b3c8f381d3f786899a49c8d3feedc
+1980-11-15sbd_d2t04.flac:88793cb6976755dfd34140b683e71389
+1980-11-15sbd_d2t05.flac:09d211dda425ee4bd5150ba1c281eb5e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-15-sdb-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:31.40       58482524 B   ---   --   ---xx   flac  0.5937  1980-11-15sbd_d1t01.flac
+     4:44.28       50163500 B   ---   --   ---xx   flac  0.5596  1980-11-15sbd_d1t02.flac
+     7:32.73       79904540 B   ---   --   ---xx   flac  0.5830  1980-11-15sbd_d1t03.flac
+     5:33.34       58821212 B   ---   --   ---xx   flac  0.5405  1980-11-15sbd_d1t04.flac
+     4:19.03       45694700 B   ---   --   ---xx   flac  0.5226  1980-11-15sbd_d1t05.flac
+     3:08.72       33332588 B   ---   --   ---xx   flac  0.5903  1980-11-15sbd_d1t06.flac
+     5:17.69       56081132 B   ---   --   ---xx   flac  0.4889  1980-11-15sbd_d1t07.flac
+     5:06.05       53990204 B   ---   --   ---xx   flac  0.5744  1980-11-15sbd_d1t08.flac
+     3:17.43       34851980 B   ---   --   ---xx   flac  0.4756  1980-11-15sbd_d1t09.flac
+     4:25.70       46910684 B   ---   --   ---xx   flac  0.5064  1980-11-15sbd_d1t10.flac
+     3:48.06       40233356 B   ---   --   ---xx   flac  0.4714  1980-11-15sbd_d1t11.flac
+     5:52.33       62170460 B   ---   --   ---xx   flac  0.4654  1980-11-15sbd_d1t12.flac
+     4:07.46       43679036 B   ---   --   ---xx   flac  0.5397  1980-11-15sbd_d1t13.flac
+     4:15.36       45066716 B   ---   --   ---xx   flac  0.4895  1980-11-15sbd_d1t14.flac
+     5:54.53       62570300 B   ---   --   ---xx   flac  0.6061  1980-11-15sbd_d1t15.flac
+     4:50.42       51254828 B   ---   --   ---xx   flac  0.6138  1980-11-15sbd_d2t01.flac
+     5:57.36       63059516 B   ---   --   ---xx   flac  0.6028  1980-11-15sbd_d2t02.flac
+     4:09.18       43965980 B   ---   --   ---xx   flac  0.6160  1980-11-15sbd_d2t03.flac
+     2:56.22       31098188 B   ---   --   ---xx   flac  0.5657  1980-11-15sbd_d2t04.flac
+     3:36.29       38170652 B   ---   --   ---xx   flac  0.5316  1980-11-15sbd_d2t05.flac
+    94:26.08      999502096 B                            0.5497  (20 files)
+=================== 
+=================== 
+=================== 

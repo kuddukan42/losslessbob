@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-18-CaptainAcidRemaster-v2.flacf 
+=================== 
+=================== 
+=================== 
+3f6b920c1f166962424ce1474ec31992  Bob Dylan - Wallingford 18-8-97 Back.jpg
+25d18cc59500548212f1d6c8edc71da4  Bob Dylan - Wallingford 18-8-97 Front.jpg
+2c5cd065c51bd9bddc0ba548c4c2c361  Bob Dylan 1997.08.18 Wallingford [dat master](Different Source)_CaptainAcidRemaster.md5
+5a5fcd59b42f4173ecf499396ffe7fbf  d1Track01.flac
+0a41f38f72d6c14559f7c18c78db731f  d1Track02.flac
+84968e05b6619f5c02adb2f76c6cca8d  d1Track03.flac
+5be00bade243f42a41870a09b5157619  d1Track04.flac
+b5d409277d54b0d3b9b671db38d0f71b  d1Track05.flac
+28f1a3d69305734fc99f36c0b054a42c  d1Track06.flac
+a66abae724f5c86cdaff211ca078998c  d1Track07.flac
+49124094444883e24b55092753bb9f4d  d1Track08.flac
+86b4bc1e954454161acdf56cd27d9869  d2Track01.flac
+8ef8ada34cdc276f1b90db4d08ab810c  d2Track02.flac
+d8f6366ff44f80d69ed6167751655db9  d2Track03.flac
+1367d80f006408deb89bdeb7b77acc9a  d2Track04.flac
+f2457f7c01e8d734398d7c7bc4bd330c  d2Track05.flac
+8fc9a0492c388d7167981dce522f09b5  d2Track06.flac
+a1e82b0497b83f2b2b215a17787ba1a3  flac checksum.txt
+a1e82b0497b83f2b2b215a17787ba1a3  flac.ffp
+9d8ce87f5b91a96a93185c8fcdb1754b  original info\bd97-08-18-datmaster.txt
+e148bc61962c30ca30e56161b03371f4  original info\wave files.md5
+095fa0988f4418cb38aae7f2d3b46d39  Wallingford remaster_different source.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-18-CaptainAcidRemaster-v2.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:71a00b199ccb001903b8c95172793321
+d1Track02.flac:15aff1b4737ff272a534beb2f2e1b23d
+d1Track03.flac:83ed1d2cd9177f68248083c34ebf8ca7
+d1Track04.flac:7b69f0864fa99c128766c9b2ddf3b823
+d1Track05.flac:04ce1e9a0820ebdffd5a9f1f62a782b8
+d1Track06.flac:9cae21ea39f223d2b771205de0fa6322
+d1Track07.flac:9c0979557c2581dc110bca0e12b1d49d
+d1Track08.flac:01556e71c568a95b2e13257f10978449
+d2Track01.flac:56415478c404d4a10395632143b6ce94
+d2Track02.flac:85509c532806d082cb1dc7a43e98b851
+d2Track03.flac:f7c2da7502242bd7bdced1bc1853518f
+d2Track04.flac:dab424a02a7b7dcdb4422b7a4544ddd7
+d2Track05.flac:0f3c15536177c1912986fec8af5f7105
+d2Track06.flac:3543739478790018692143265f3a9f94
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-18-CaptainAcidRemaster-v2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.70       51849880 B   -b-   --   ---xx   flac  0.6189  d1Track01.flac
+     5:03.71       53616232 B   -b-   --   ---xx   flac  0.5775  d1Track02.flac
+     5:48.27       61450744 B   -b-   --   ---xx   flac  0.5824  d1Track03.flac
+     4:52.50       51626440 B   -b-   --   ---xx   flac  0.6020  d1Track04.flac
+     6:29.67       68777224 B   -b-   --   ---xx   flac  0.6123  d1Track05.flac
+     8:08.50       86200840 B   -b-   --   ---xx   flac  0.5116  d1Track06.flac
+     9:05.20       96185080 B   -b-   --   ---xx   flac  0.6176  d1Track07.flac
+     5:39.51       59919592 B   -b-   --   ---xx   flac  0.4877  d1Track08.flac
+     5:34.40       59011720 B   -b-   --   ---xx   flac  0.5428  d2Track01.flac
+     7:44.48       81962536 B   -b-   --   ---xx   flac  0.5704  d2Track02.flac
+     8:40.36       91812712 B   -b-   --   ---xx   flac  0.6064  d2Track03.flac
+     8:56.71       94717432 B   -b-   --   ---xx   flac  0.5836  d2Track04.flac
+     5:35.69       59256328 B   -b-   --   ---xx   flac  0.5366  d2Track05.flac
+     7:46.01       82204800 B   -b-   --   ---xx   flac  0.6005  d2Track06.flac
+    94:20.71      998591560 B                            0.5765  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-03-31-hg-stjohn.flacf 
+=================== 
+=================== 
+=================== 
+15d7d2ffb33224a215fd965077cf7cc5  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 01)-fixed.flac
+95363c7782fad27bda41e85c7d7d8481  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 02).flac
+7ace4cd9fe5aedaf0318a9e0d389d841  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 03).flac
+731cc1aabbabf8255592aa769ce271fe  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 04).flac
+3d9dc48325307e22cfc9618237263e7c  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 05).flac
+f433b6e1e81753f20b5fa3fde5b08a87  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 06).flac
+7bf1928f0da297e27bb6845677a8b131  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 07)-fixed.flac
+60f09fea1dd0ddfa7a5ad17fb7f00934  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 08)-fixed.flac
+30cbc624d4afe6f34a0c3813c8ecb299  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 09)-fixed.flac
+ecdedcd05dbe6e3837c83f3710789792  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 01)-fixed.flac
+56c9ad1f6b6f3a9f56c009f2b715c831  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 02).flac
+b9db1af913b05dd278b22c7e58a0a937  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 03).flac
+b7414d7134be16a832555b562c20d1ac  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 04).flac
+0ac67777d9c5ccb4465bef11b54f5c89  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 05).flac
+e228153d2fd6340523a5c029860d3ce9  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 06).flac
+01b33c92012f1c297d263042bf4140ef  bd97-03-31-hg.txt
+a0b59a88a45647651bb86fbc864ef027  info.txt
+d41d8cd98f00b204e9800998ecf8427e  md5 file created by aaadbell.txt
+144a65aa555b5a98dd99322e863d509a  noname.md5
+60e1022064d326e411d1b06f9b40ef9a  README.txt
+086c77bdacf0a1909e28d397edfb22ca  shntool-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-03-31-hg-stjohn.flacf 
+=================== 
+=================== 
+=================== 
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 01)-fixed.flac:80bcd866a973cdb711d6138099a78390
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 02).flac:8638f197a3f094f74eeda55c14559766
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 03).flac:46e129658316dd508c008636380041a0
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 04).flac:0430eb62957a0966157ba507914a9524
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 05).flac:413e8bba50e173e4dc3c12f60a25e980
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 06).flac:7155068997ed5f30f95b5af27c32a688
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 07)-fixed.flac:91abe76425619cf722676db269a81a5d
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 08)-fixed.flac:4795fc79ad4137ff7a517397a290b02e
+bd-1997-03-31stjohn-HG-FLAC-d1 (Track 09)-fixed.flac:9bea6eeec612d0522dbc198b41bd16cb
+bd-1997-03-31stjohn-HG-FLAC-d2 (Track 01)-fixed.flac:6df75be4cb9cb039101285ffb7a3ca3c
+bd-1997-03-31stjohn-HG-FLAC-d2 (Track 02).flac:cf7d41e6b32da9d8c7fff022267a11cc
+bd-1997-03-31stjohn-HG-FLAC-d2 (Track 03).flac:dda181fb0a929ef07d66e3d8a710e0aa
+bd-1997-03-31stjohn-HG-FLAC-d2 (Track 04).flac:ec4eba30e090fe6b82ee0d000c80ca03
+bd-1997-03-31stjohn-HG-FLAC-d2 (Track 05).flac:bf0cb41598143b11d2180ecada8c0876
+bd-1997-03-31stjohn-HG-FLAC-d2 (Track 06).flac:803d4ee5c9c3ec4456afab019359ffab
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-03-31-hg-stjohn.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:45.32       50349308 B   ---   --   ---xx   flac  0.6038  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 01)-fixed.flac
+     5:44.40       60775724 B   ---   --   ---xx   flac  0.5798  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 02).flac
+     6:34.21       69551036 B   ---   --   ---xx   flac  0.6265  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 03).flac
+     6:46.07       71634908 B   ---   --   ---xx   flac  0.6072  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 04).flac
+     7:02.25       74499644 B   ---   --   ---xx   flac  0.6034  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 05).flac
+     8:05.68       85713980 B   ---   --   ---xx   flac  0.6646  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 06).flac
+     5:29.22       58087388 B   ---   --   ---xx   flac  0.5598  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 07)-fixed.flac
+     9:06.16       96352076 B   ---   --   ---xx   flac  0.5503  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 08)-fixed.flac
+     6:58.30       73805804 B   ---   --   ---xx   flac  0.5394  bd-1997-03-31stjohn-HG-FLAC-d1 (Track 09)-fixed.flac
+     7:38.49       80906492 B   ---   --   ---xx   flac  0.5983  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 01)-fixed.flac
+     7:36.03       80445500 B   ---   --   ---xx   flac  0.5544  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 02).flac
+     8:36.66       91177676 B   ---   --   ---xx   flac  0.6673  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 03).flac
+    10:14.35      108391964 B   ---   --   ---xx   flac  0.6360  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 04).flac
+    10:34.72      112006988 B   ---   --   ---xx   flac  0.5784  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 05).flac
+     6:21.03       67215500 B   ---   --   ---xx   flac  0.6720  bd-1997-03-31stjohn-HG-FLAC-d2 (Track 06).flac
+   111:34.39     1180913988 B                            0.6035  (15 files)
+=================== 
+=================== 
+=================== 

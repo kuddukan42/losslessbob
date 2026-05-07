@@ -1,0 +1,141 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-2020-Vision-a.flacf 
+=================== 
+=================== 
+=================== 
+420077fd9e7eeca88c9284ce7632772a  2-01b.jpg
+3e3f38149e4f2754c17ccf5a989f6f1c  2-01cd.jpg
+837e88a88a76021e24418821265b36f2  2-01f.jpg
+5f69482d677858749b6fb15d27e46c02  2-01i.jpg
+9ea2dca4362abbaebfc66a7d51e3810e  2-01ib.jpg
+5b99352659525a317aa2fd37e07aace5  2-01l.jpg
+a810f67318b04106f069b111b2bdcd94  Bob Dylan 20-20 Vision (Red Sky) .txt
+3027c4c5be5aefd0a1b37f73d5c70b99  Bob Dylan 20-20 Vision (Red Sky) USA '89 & '91.md5
+188770c8833558180d9507a88148f88e  disc one\Bob Dylan_20_20 Vision (Disc 1)_01_And It Stoned Me.flac
+bdbb06460225d5f435acfe8d6a9cc50b  disc one\Bob Dylan_20_20 Vision (Disc 1)_02_Tomorrow Is A Long Time.flac
+e2132a6929c0cdae7e8c4a0af6bed9a9  disc one\Bob Dylan_20_20 Vision (Disc 1)_03_Tears Of Rage.flac
+f364c7920d079eb85610e03ae3cd015e  disc one\Bob Dylan_20_20 Vision (Disc 1)_04_I'm In The Mood For Love.flac
+579f4cd2798b8af35dbf0010632d67c2  disc one\Bob Dylan_20_20 Vision (Disc 1)_05_Early Morning Rain.flac
+9978bac807b8f02ad701e3a159a7d4df  disc one\Bob Dylan_20_20 Vision (Disc 1)_06_In The Pines.flac
+fe469ce7a9668d2114f5c2409c8ec965  disc one\Bob Dylan_20_20 Vision (Disc 1)_07_The Harder They Come.flac
+9861ba1279b656ac3a8981f61a0b1c7a  disc one\Bob Dylan_20_20 Vision (Disc 1)_08_I Want You.flac
+8fce8661318149d049fde06a516399fc  disc one\Bob Dylan_20_20 Vision (Disc 1)_09_Baby Let Me Follow You Down.flac
+6be35c2b4f3b5c4b60c96e82f2aa4bb7  disc one\Bob Dylan_20_20 Vision (Disc 1)_10_Queen Jane Approximately.flac
+4ac761b1812cd30d5691563c11345960  disc one\Bob Dylan_20_20 Vision (Disc 1)_11_Rank Strangers To Me.flac
+59f59daee50e166a044195fba2966e95  disc one\Bob Dylan_20_20 Vision (Disc 1)_12_You Don't Know Me.flac
+06866c41eaefdbe595154a7a233a7741  disc one\Bob Dylan_20_20 Vision (Disc 1)_13_When Did You Leave Heaven_.flac
+640564df7cb583e2b97fd4b7e0565964  disc one\Bob Dylan_20_20 Vision (Disc 1)_14_Prett Peggy-O.flac
+c05de010569e177b03487d6fa042555c  disc one\Bob Dylan_20_20 Vision (Disc 1)_15_A Legend In My Time.flac
+123e317b51fb3c80bf60b5fd9d53d8cc  disc one\Bob Dylan_20_20 Vision (Disc 1)_16_Visions Of Johanna.flac
+a05e5bd4f2bf8d1d0ddf42bf68d71873  disc two\Bob Dylan_20_20 Vision (CD 2)_01_Homeward Bound (Live) [6 Jul 91, Nashua, NH].flac
+c4aface0470871eb682338c98dabf1b6  disc two\Bob Dylan_20_20 Vision (CD 2)_02_The Lakes Of Ponchartrain (Live) [6 Jul 91, Nashua, NH].flac
+ee772f5a4501c4fe4752bbbec49dbe1d  disc two\Bob Dylan_20_20 Vision (CD 2)_03_On The Trail Of The Buffalo (Live) [25 Oct 91, Austin, TX].flac
+531231dc347408d9c7329f7284cd0f44  disc two\Bob Dylan_20_20 Vision (CD 2)_04_It's All Over Now, Baby Blue (Live) [25 Oct 91, Austin, TX].flac
+dae8f8dead796bc8967e3402806ef31e  disc two\Bob Dylan_20_20 Vision (CD 2)_05_20_20 Vision (Live) [25 Oct 91, Austin, TX].flac
+2f7bc30eb7a8c96126317ee8f1d65139  disc two\Bob Dylan_20_20 Vision (CD 2)_06_Friend Of The Devil (Live) [25 Oct 91, Austin, TX].flac
+8c5a52b6eade3e53f7e7345b74cd4c22  disc two\Bob Dylan_20_20 Vision (CD 2)_07_Confidential To Me (Live) [9 Nov 91, Dayton.flac
+7d4db9d5910ab498e17337a4e4442f97  disc two\Bob Dylan_20_20 Vision (CD 2)_08_When I Paint My Masterpiece (Live) [9 Nov 91, Dayton, OH].flac
+0e898fd30ac3738d13c5946a435c1468  disc two\Bob Dylan_20_20 Vision (CD 2)_09_Boots Of Spanish Leather (Live) [9 Nov 91, Dayton, OH].flac
+46ea38ee9fcf0aae4f3747fb434f923e  disc two\Bob Dylan_20_20 Vision (CD 2)_10_The Lonesome Death Of Hattie Carroll (Live) [9 Nov 91, Dayton, OH].flac
+4128f9910fb2784054036b1501d3ef8c  disc two\Bob Dylan_20_20 Vision (CD 2)_11_One Too Many Mornings (Live) [9 Nov 91, Dayton, OH].flac
+aeba01a56ac83f1f1acde491f5d32b9f  disc two\Bob Dylan_20_20 Vision (CD 2)_12_Roving Gambler (Live) [6 Nov 91, South Bend, IN].flac
+5f874b51f8618b6e9219e42c8fb6bcb6  disc two\Bob Dylan_20_20 Vision (CD 2)_13_One Irish Rover (Live) [2 Nov 91, Ames, IA].flac
+bb27d335dd6d38047352c77c5a9d6431  disc two\Bob Dylan_20_20 Vision (CD 2)_14_Simple Twist Of Fate (Live) [2 Nov 91, Ames, IA].flac
+70b6c6fd060c06b51890f9b371b71bb8  fp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-2020-Vision-a.flacf\disc one 
+=================== 
+=================== 
+=================== 
+bob dylan_20_20 vision (disc 1)_01_and it stoned me.flac:c074d213c109be127863f14ca0f97a99
+bob dylan_20_20 vision (disc 1)_02_tomorrow is a long time.flac:6aebb8ab05081eedf21a2b889f5bab1f
+bob dylan_20_20 vision (disc 1)_03_tears of rage.flac:82d9b600a799ce642e086a730dfcb815
+bob dylan_20_20 vision (disc 1)_04_i'm in the mood for love.flac:bf11996fd230a3e2d7e99e4f58d20580
+bob dylan_20_20 vision (disc 1)_05_early morning rain.flac:531d043515b5370cb82633734731deeb
+bob dylan_20_20 vision (disc 1)_06_in the pines.flac:eeee0c11797f89c0c1b978b1381961bd
+bob dylan_20_20 vision (disc 1)_07_the harder they come.flac:e6dba46a7e4c3bbfdcd96e8899c5e8f7
+bob dylan_20_20 vision (disc 1)_08_i want you.flac:bb315c8f66e7cfcbd1a56e441db0d8e9
+bob dylan_20_20 vision (disc 1)_09_baby let me follow you down.flac:d1a443679c26133413ea2dc30b771162
+bob dylan_20_20 vision (disc 1)_10_queen jane approximately.flac:4fb96d63f05adbb797cff9abe8eec4d4
+bob dylan_20_20 vision (disc 1)_11_rank strangers to me.flac:210905d84c28aa33ea348c7662a9b8df
+bob dylan_20_20 vision (disc 1)_12_you don't know me.flac:20bc655f9872fdce3ae9cef7f4eb3885
+bob dylan_20_20 vision (disc 1)_13_when did you leave heaven_.flac:50cc7e8bfa4318ab33e207f7ada59215
+bob dylan_20_20 vision (disc 1)_14_prett peggy-o.flac:939f8b2b208375f0e77ef6f8648060f7
+bob dylan_20_20 vision (disc 1)_15_a legend in my time.flac:8a316306965ffe701eb043326edb01d2
+bob dylan_20_20 vision (disc 1)_16_visions of johanna.flac:8c8537310cd837a829477bc7383d4716
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-2020-Vision-a.flacf\disc two 
+=================== 
+=================== 
+=================== 
+bob dylan_20_20 vision (cd 2)_01_homeward bound (live) [6 jul 91, nashua, nh].flac:1587f0c04b7d89aa49476cb9fd8a96f9
+bob dylan_20_20 vision (cd 2)_02_the lakes of ponchartrain (live) [6 jul 91, nashua, nh].flac:ec4318b4286f3fda20e1cb78f54a7e28
+bob dylan_20_20 vision (cd 2)_03_on the trail of the buffalo (live) [25 oct 91, austin, tx].flac:0c55c041083511faf5d129b421a18f48
+bob dylan_20_20 vision (cd 2)_04_it's all over now, baby blue (live) [25 oct 91, austin, tx].flac:33a66b6abe4b242f3b42332c3ad83e72
+bob dylan_20_20 vision (cd 2)_05_20_20 vision (live) [25 oct 91, austin, tx].flac:b629d5ca98fd767dada97026da83cdcd
+bob dylan_20_20 vision (cd 2)_06_friend of the devil (live) [25 oct 91, austin, tx].flac:358baf8d8000e60e99390512bb632eff
+bob dylan_20_20 vision (cd 2)_07_confidential to me (live) [9 nov 91, dayton.flac:206ccef15b70827f28b0a322db3d8671
+bob dylan_20_20 vision (cd 2)_08_when i paint my masterpiece (live) [9 nov 91, dayton, oh].flac:3d1e2dfa3361e8f54346dde682edf699
+bob dylan_20_20 vision (cd 2)_09_boots of spanish leather (live) [9 nov 91, dayton, oh].flac:09ab6e92c05005ca818ed2a8304f2d3a
+bob dylan_20_20 vision (cd 2)_10_the lonesome death of hattie carroll (live) [9 nov 91, dayton, oh].flac:543f68dc4819072306b4cbe6e135addf
+bob dylan_20_20 vision (cd 2)_11_one too many mornings (live) [9 nov 91, dayton, oh].flac:f6012b22693c496668deed70db5b7791
+bob dylan_20_20 vision (cd 2)_12_roving gambler (live) [6 nov 91, south bend, in].flac:26fe69629206d8d42a4cd86042e22601
+bob dylan_20_20 vision (cd 2)_13_one irish rover (live) [2 nov 91, ames, ia].flac:b51c19b9b19b5a080f43341398d8f6f9
+bob dylan_20_20 vision (cd 2)_14_simple twist of fate (live) [2 nov 91, ames, ia].flac:88aeb533dbc8dd8d4abc57c415d80c58
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-2020-Vision-a.flacf\disc one 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.26       52451996 B   ---   --   ---xx   flac  0.6830  Bob Dylan_20_20 Vision (Disc 1)_01_And It Stoned Me.flac
+     4:25.74       46920092 B   ---   --   ---xx   flac  0.6678  Bob Dylan_20_20 Vision (Disc 1)_02_Tomorrow Is A Long Time.flac
+     6:23.55       67690604 B   ---   --   ---xx   flac  0.6642  Bob Dylan_20_20 Vision (Disc 1)_03_Tears Of Rage.flac
+     5:02.74       53446892 B   ---   --   ---xx   flac  0.6440  Bob Dylan_20_20 Vision (Disc 1)_04_I'm In The Mood For Love.flac
+     3:59.15       42194924 B   ---   --   ---xx   flac  0.7147  Bob Dylan_20_20 Vision (Disc 1)_05_Early Morning Rain.flac
+     3:20.42       35378828 B   ---   --   ---xx   flac  0.6567  Bob Dylan_20_20 Vision (Disc 1)_06_In The Pines.flac
+     5:25.27       57393548 B   ---   --   ---xx   flac  0.6577  Bob Dylan_20_20 Vision (Disc 1)_07_The Harder They Come.flac
+     5:16.59       55881212 B   ---   --   ---xx   flac  0.6540  Bob Dylan_20_20 Vision (Disc 1)_08_I Want You.flac
+     3:08.68       33323180 B   ---   --   ---xx   flac  0.6150  Bob Dylan_20_20 Vision (Disc 1)_09_Baby Let Me Follow You Down.flac
+     7:58.09       84340412 B   ---   --   ---xx   flac  0.6878  Bob Dylan_20_20 Vision (Disc 1)_10_Queen Jane Approximately.flac
+     4:15.02       44986748 B   ---   --   ---xx   flac  0.6834  Bob Dylan_20_20 Vision (Disc 1)_11_Rank Strangers To Me.flac
+     4:23.04       46402652 B   ---   --   ---xx   flac  0.7203  Bob Dylan_20_20 Vision (Disc 1)_12_You Don't Know Me.flac
+     5:48.33       61464860 B   ---   --   ---xx   flac  0.6331  Bob Dylan_20_20 Vision (Disc 1)_13_When Did You Leave Heaven_.flac
+     5:51.57       62050508 B   ---   --   ---xx   flac  0.6580  Bob Dylan_20_20 Vision (Disc 1)_14_Prett Peggy-O.flac
+     4:07.04       43580252 B   ---   --   ---xx   flac  0.6516  Bob Dylan_20_20 Vision (Disc 1)_15_A Legend In My Time.flac
+     3:56.57       41764508 B   ---   --   ---xx   flac  0.6441  Bob Dylan_20_20 Vision (Disc 1)_16_Visions Of Johanna.flac
+    78:21.06      829271216 B                            0.6656  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-2020-Vision-a.flacf\disc two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.55       43171004 B   ---   --   ---xx   flac  0.7201  Bob Dylan_20_20 Vision (CD 2)_01_Homeward Bound (Live) [6 Jul 91, Nashua, NH].flac
+     4:23.53       46517900 B   ---   --   ---xx   flac  0.6824  Bob Dylan_20_20 Vision (CD 2)_02_The Lakes Of Ponchartrain (Live) [6 Jul 91, Nashua, NH].flac
+     5:58.30       63221804 B   ---   --   ---xx   flac  0.6934  Bob Dylan_20_20 Vision (CD 2)_03_On The Trail Of The Buffalo (Live) [25 Oct 91, Austin, TX].flac
+     6:50.12       72352268 B   ---   --   ---xx   flac  0.6967  Bob Dylan_20_20 Vision (CD 2)_04_It's All Over Now, Baby Blue (Live) [25 Oct 91, Austin, TX].flac
+     3:15.69       34560332 B   ---   --   ---xx   flac  0.6786  Bob Dylan_20_20 Vision (CD 2)_05_20_20 Vision (Live) [25 Oct 91, Austin, TX].flac
+     4:37.14       48895772 B   ---   --   ---xx   flac  0.6792  Bob Dylan_20_20 Vision (CD 2)_06_Friend Of The Devil (Live) [25 Oct 91, Austin, TX].flac
+     3:40.29       38876252 B   ---   --   ---xx   flac  0.6233  Bob Dylan_20_20 Vision (CD 2)_07_Confidential To Me (Live) [9 Nov 91, Dayton.flac
+     7:21.57       77926508 B   ---   --   ---xx   flac  0.6423  Bob Dylan_20_20 Vision (CD 2)_08_When I Paint My Masterpiece (Live) [9 Nov 91, Dayton, OH].flac
+     5:00.07       52936508 B   ---   --   ---xx   flac  0.6231  Bob Dylan_20_20 Vision (CD 2)_09_Boots Of Spanish Leather (Live) [9 Nov 91, Dayton, OH].flac
+     7:43.27       81736748 B   ---   --   ---xx   flac  0.6318  Bob Dylan_20_20 Vision (CD 2)_10_The Lonesome Death Of Hattie Carroll (Live) [9 Nov 91, Dayton, OH].flac
+     6:15.13       66180620 B   ---   --   ---xx   flac  0.6120  Bob Dylan_20_20 Vision (CD 2)_11_One Too Many Mornings (Live) [9 Nov 91, Dayton, OH].flac
+     4:17.49       45450092 B   ---   --   ---xx   flac  0.5999  Bob Dylan_20_20 Vision (CD 2)_12_Roving Gambler (Live) [6 Nov 91, South Bend, IN].flac
+     3:52.70       41089484 B   ---   --   ---xx   flac  0.6081  Bob Dylan_20_20 Vision (CD 2)_13_One Irish Rover (Live) [2 Nov 91, Ames, IA].flac
+     7:32.13       79763420 B   ---   --   ---xx   flac  0.6339  Bob Dylan_20_20 Vision (CD 2)_14_Simple Twist Of Fate (Live) [2 Nov 91, Ames, IA].flac
+    74:53.48      792678712 B                            0.6509  (14 files)
+=================== 
+=================== 
+=================== 

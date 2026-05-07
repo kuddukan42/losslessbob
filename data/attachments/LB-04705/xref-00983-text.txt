@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== (Bob Dylan) (I've been having some hard travelling too).md5
+===================
+===================
+===================
+76baec6222d3db61aa2992895265f4c1 *1988-07-14 I've been having some hard travelling too.txt
+86f34600ec288ae6f0d8a1b415962ec8 *1988-07-14 SSB bck.jpg
+06fd9f9da9bd26927b31a99a196f4b04 *1988-07-14 SSB Fr..jpg
+181249d5a22f6cfd0bb4101ebf10603d *1988-07-14 SSB inner.jpg
+2bbf969daab9deb34369076837f5496b *I've been having some hard travelling too [CD1]\BD 1988-07-14_101.flac
+028e2c66d0a1714ce3a9cd04bc7ac0fc *I've been having some hard travelling too [CD1]\BD 1988-07-14_102.flac
+a67706780244aa0c10c280974bf6b276 *I've been having some hard travelling too [CD1]\BD 1988-07-14_103.flac
+a59b61c292a00231a88a4e74ba1c2c2d *I've been having some hard travelling too [CD1]\BD 1988-07-14_104.flac
+76a2a1aea9d5813248b11f56d4a2744b *I've been having some hard travelling too [CD1]\BD 1988-07-14_105.flac
+f0dd60cf4b067701c266f8ffc75c38ac *I've been having some hard travelling too [CD1]\BD 1988-07-14_106.flac
+5aca68bdc280c792e1fcbde27156440b *I've been having some hard travelling too [CD1]\BD 1988-07-14_107.flac
+22586553c29f8447bc7ebe417d779dcc *I've been having some hard travelling too [CD1]\BD 1988-07-14_108.flac
+3c7328ac40d4a3f3b9eb1a51a495a82d *I've been having some hard travelling too [CD2]\BD 1988-07-14_201.flac
+c1ef6d8ab794d155820dd64eef04d931 *I've been having some hard travelling too [CD2]\BD 1988-07-14_202.flac
+2c3360931f9ea067e650c1ee75b0e5be *I've been having some hard travelling too [CD2]\BD 1988-07-14_203.flac
+f433e6da209fba9459d014c98335b95d *I've been having some hard travelling too [CD2]\BD 1988-07-14_204.flac
+75cccc4e5c9deeb2d149411aef9ae69a *I've been having some hard travelling too [CD2]\BD 1988-07-14_205.flac
+37da0278571488b9df06421ba957a66d *I've been having some hard travelling too [CD2]\BD 1988-07-14_206.flac
+===================
+===================
+===================
+=== 1988-07-14 I've been having some hard travelling too.txt
+===================
+===================
+===================
+
+*I've been having some hard travelling too*
+
+B O B   D Y L A N
+
+LIVE at
+
+Poplar Creek Music Theater
+Hoffman Estates
+Chicago, Illinois
+14 July 1988
+
+ A Southside Butcher Production
+
+
+1. Subterranean Homesick Blues
+2. Absolutely Sweet Marie
+3. Ballad Of A Thin Man
+4. It's All Over Now, Baby Blue
+5. In The Garden
+6. Highway 61 Revisited
+7. Song To Woody
+8. A Hard Rain's A-Gonna Fall
+9. To Ramona
+10. Watching The River Flow
+11. Silvio (Bob Dylan & Robert Hunter)
+12. Like A Rolling Stone
+
+13. It Ain't Me, Babe
+14. Maggie's Farm
+
+Concert # 24 of The Never-Ending Tour. Concert # 24 of the Interstate 88 Tour, part 1: Summer Tour of North America.
+Concert # 24 with the first Never-Ending Tour Band: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Kenny Aaronson
+(bass), Christopher Parker (drums).
+7-9 and 13 Bob Dylan (vocal & guitar), G.E. Smith (guitar).
+6 G. E. Smith (electric slide guitar).
+1, 11 G. E. Smith (backup vocal).
+Note. First Never-Ending Tour performance of Song To Woody, in honour of the birthday of Woody Guthrie.
+8 new songs (57%) compared to previous concert. 1 new song for this tour.
+Stereo audience recording, 75 minutes.
+
+***************************************************
+I recieved the original Audio CD-Rs from the 
+"southside butcher" long time ago. 
+Maybe in 2002 or 2003
+Ripped  with EAC (secure mode)
+First converted the tracks to "shn", 
+reencoded now to wav with TLH.
+Flac Frontend 1.7.1 => Flac in 2012
+MD5 and ffp with TLH
+enjoy
+-ebbbi-
+===================
+===================
+===================

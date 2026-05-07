@@ -1,0 +1,42 @@
+BD 1990-08-12 Edmonton
+by request
+
+data dvd trade
+
+i just convert the SHN to FLAC files (xACT)
+
+incl txt file
+fingerprints
+
+------------------------------------------------------
+Edmonton, AB, Canada
+Jubilee Auditorium
+12-Aug-90
+Never-Ending Tour Concert #211
+
+1.	Maggie's Farm			[4.45]
+2.	Shelter From The Storm		[3.31]
+3.	Stuck Inside of Mobile With the Memphis Blues Again	[6.01]
+4.	Nowhere Man			[2.30]
+5.	Masters of War			[4.18]
+6.	Gotta Serve Somebody		[4.53]
+7.	Ballad Of Hollis Brown		[5.14]
+8.	The Water Is Wide		[5.00]
+9.	Gates of Eden			[5.09]
+10.	Don't Think Twice, It's All Right	[5.35]
+11.	Everything Is Broken		[3.38]
+12.	Political World			[3.17]
+13.	It Takes A Lot To Laugh, It Takes A Train To Cry	[5.02]
+14.	In the Garden			[4.39]
+15.	Like A Rolling Stone		[6.31]
+16.	Blowin' in the Wind		[4.30]
+
+
+1  ?? 16.	Blowin' in the Wind	[4.49]
+1  17.	All Along the Watchtower	[4.16]
+
+
+
+01 Track01.flac:c5def33d5fc5c25d2b86812ac4013ab002 Track02.flac:693ded279c3383dfdfb0c2a57b0b69ab03 Track03.flac:6cf54f2ab0a82d5df2214380d92b1ce504 Track04.flac:597a1ade7a7423a05b65c6019ea041a905 Track05.flac:d8abcf6129e848f06e9d3dce35af557406 Track06.flac:511f4ca563cacec58a506bb0b031806007 Track07.flac:04e5c5cd12007c5223767bbd510ba52008 Track08.flac:7a4ee799077a692840257b68552f0ed309 Track09.flac:d94e7b8590290e37bd0fd40a58db8c3f10 Track10.flac:fa5fd12b38e031a5277eb3076d435dcc11 Track11.flac:66ed87d4e288798cccbb72a099f8510612 Track12.flac:92b85ae1adebe30b1d82d6dabb54e51913 Track13.flac:6ab2d8566ff0bade97631c30fa1b4b1f14 Track14.flac:782dce29fb1958715dfac0480af219ba15 Track15.flac:90ae552e040e4ef73ece165cbfe006ac16 Track16.flac:d4185f2a1c8d3927446bcbb7f8788901
+
+01 Track01.flac:999975e98337e9e0b90b43414f0ec61b02 Track02.flac:8177e0be83435265e4d6acf842dee511

@@ -1,0 +1,14 @@
+Bob Dylan, 11/10/95, Las Vegas, Nevada, The Joint, Hard Rock Hotel, 2CDR
+
+LB-4523, (56min+49min), Audience recording (Full spectrum) > Unknown transfer > CDR (x) > EAC (Secure/Offset) > FLAC (Level 8) > Data DVD > HD > CEP > TLH > HungerCity, CEDAR-type f/p d1t01@0:01 "he will now" (male). Original tracksplit between d1t01-t02 was re-done w/ CEP., Excellent sound, A-.; bittorrent download 02/07; excellent sound [A-]; limiting with clipping on loud songs as -6db
+
+has double discontinuities just after track boundaries so possibly a misplaced segment and heard as  pop d1t4 0:00; digipop d1t8 5:14, 6:30, 6:32, 6:43, 6:46, 6:49, 6:55, 6:56, 6:59, 7:01 ,7:07, 7:21,7:31, 7:40, 7:47, 7:53, 7:55, 7:56, plus more on this track
+
+CD1
+55:55, 1. Real Real Gone, 2. Lay Lady Lay, 3. All Along The Watchtower, 4. Just Like A Woman, 5. Watching The River Flow, 6. Silvio, 7. Mr. Tambourine Man, 8. John Brown, 
+
+CD2
+48:34, 9. Don't Think Twice, It's All Right, 10. Maggie's Farm, 11. Ballad Of A Thin Man, 12. Obviously Five Believers, 13. Alabama Getaway, 14. One Too Many Mornings, 15. Rainy Day Women # 12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-02-14-travitz-c.flacf 
+=================== 
+=================== 
+=================== 
+99a4ca31a0f2a83b2dee69f68c5503cf  Artwork and info\1998-02-14 cleveland.jpg
+736c48a19bdf10a48e56a692649ec61a  Artwork and info\bd1998-02-14.txt
+e6d27205279117a9d276d9483db83e6b  Artwork and info\FLAC CD1.md5
+de274916fa288878c2376ec107ad0ea9  Artwork and info\FLAC CD2.md5
+ca86d234c77665a75d7f162aba382515  CD1\01 Absolutely sweet Marie.flac
+e6932a63b109e0811bd6c051e26198ca  CD1\02 Señor (Tales of Yankee Power).flac
+dc1e81c3356a4447ed9cdc503a86ec9b  CD1\03 Can't wait.flac
+767adb349f5f1cfcf7847da0d5de6f54  CD1\04 Simple twist of fate.flac
+08bf73c67fe3f62274b7b5b10e2cdcce  CD1\05 Silvio.flac
+3c8754febacb2c801cfe19cddfcb3a22  CD1\06 Cocaine blues.flac
+325ab859a96e32bfebc85349436ae27d  CD1\07 Masters of war.flac
+e443e9cec3ae09ade92245256d795166  CD1\08 Tangled up in blue.flac
+637b2c51da3ba868480899a0749760dc  CD1\09 Million miles.flac
+0228e3cd0cd05ab21a5108fb36aa1725  CD1\10 Queen Jane approximately.flac
+8779b82cdb7ca9242992f339f98e3e78  CD1\11 Highway 61 revisited.flac
+b7a7ca17001a33339d873335c096a1ac  CD1\12 'Til I fell in love with you.flac
+a146ad6455f27de0ba87c36e839a6545  CD2\13 Don't think twice, it's all right.flac
+dbf640e47b3b06bb12a89d87e9362124  CD2\14 Love sick.flac
+17528dea8733bdbf72b487d66b82867a  CD2\15 Rainy day women # 12 & 35.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-02-14-travitz-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Absolutely sweet Marie.flac:6cb9afca5d069871a1d4771eec0944ea
+03 Can't wait.flac:9e0a387caa7024b54ef9c26d7334a631
+04 Simple twist of fate.flac:26314f1fb1da412b2723bc6998bc0320
+05 Silvio.flac:f7fd9bc7d07263730228cf7582634698
+06 Cocaine blues.flac:17abb6f891aa4588af5c519b0e27e0e1
+07 Masters of war.flac:78e8b437ae16678041882c6b61768425
+08 Tangled up in blue.flac:5beafbcf1c82da95e5edf5a65db03b8b
+09 Million miles.flac:285da560104cda8bcb1142d104a89cdb
+10 Queen Jane approximately.flac:4ef6bb25770f875e2773a29d9b47b54f
+11 Highway 61 revisited.flac:195745f2beaa372864e5397685d4ea8f
+12 'Til I fell in love with you.flac:a087bbfee7ad1f363717e54a5aa40be2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-02-14-travitz-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+13 Don't think twice, it's all right.flac:470babd3895f900325cd7b353682ea62
+14 Love sick.flac:2fd126a82f5fe5deaf55b7dea27dfb79
+15 Rainy day women # 12 & 35.flac:ea0715ffc64a0f561f66214cfd1ff713
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-14-travitz-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.32       44528108 B   ---   --   ---xx   flac  0.5961  01 Absolutely sweet Marie.flac
+     4:54.54       51988652 B   ---   --   ---xx   flac  0.5910  02 Señor (Tales of Yankee Power).flac
+     5:58.61       63294716 B   ---   --   ---xx   flac  0.5870  03 Can't wait.flac
+     7:28.01       79029596 B   ---   --   ---xx   flac  0.5306  04 Simple twist of fate.flac
+     6:40.01       70562396 B   ---   --   ---xx   flac  0.5984  05 Silvio.flac
+     4:08.44       43850732 B   ---   --   ---xx   flac  0.5019  06 Cocaine blues.flac
+     4:41.61       49711916 B   ---   --   ---xx   flac  0.4991  07 Masters of war.flac
+     7:14.25       76616444 B   ---   --   ---xx   flac  0.5946  08 Tangled up in blue.flac
+     6:27.11       68292716 B   ---   --   ---xx   flac  0.5697  09 Million miles.flac
+     7:42.53       81621500 B   ---   --   ---xx   flac  0.5361  10 Queen Jane approximately.flac
+     8:05.15       85589324 B   ---   --   ---xx   flac  0.5749  11 Highway 61 revisited.flac
+     6:33.61       69468716 B   ---   --   ---xx   flac  0.5804  12 'Til I fell in love with you.flac
+    74:07.44      784554816 B                            0.5648  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-14-travitz-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:59.38       74001020 B   ---   --   ---xx   flac  0.5352  13 Don't think twice, it's all right.flac
+     5:19.15       56306924 B   ---   --   ---xx   flac  0.5292  14 Love sick.flac
+     5:37.34       59526812 B   ---   --   ---xx   flac  0.5978  15 Rainy day women # 12 & 35.flac
+    17:56.12      189834756 B                            0.5531  (3 files)
+=================== 
+=================== 
+=================== 

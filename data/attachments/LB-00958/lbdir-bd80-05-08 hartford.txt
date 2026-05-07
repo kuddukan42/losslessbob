@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-05-08 hartford 
+=================== 
+=================== 
+=================== 
+18e4378da9f9fe7ba9a1380f09cfd37c  bd80-05-08.txt
+032fce468bcb77ccc4af90fbd91086f7  bd80-05-08d1t01.shn
+521e8873eb4e0fc0c98d98aa13d6ec95  bd80-05-08d1t02.shn
+8c54d47436d2527eee5982704933e92a  bd80-05-08d1t03.shn
+5e6afc47881acad87386070e7cb3f001  bd80-05-08d1t04.shn
+abd7d0ede7cc06fd7e4bbe1fea91c600  bd80-05-08d1t05.shn
+b8f58b9c144b751d28c005431ad239fb  bd80-05-08d1t06.shn
+191669b6c13f8e281d75b721907e6ac9  bd80-05-08d1t07.shn
+356d43a07d5cb00a0dc4271c13910759  bd80-05-08d1t08.shn
+19e364fc39ef9c060e179519982e7487  bd80-05-08d1t09.shn
+14d62856d4559a97979b8c630c21ef77  bd80-05-08d2t01.shn
+c7277730fa941b858acdc17f4c2dd10b  bd80-05-08d2t02.shn
+ee3f9b03bf8039d1465467a9be9ecedb  bd80-05-08d2t03.shn
+70d666968dc95d51257bf06ffae7a5b2  bd80-05-08d2t04.shn
+4a94e68120d06d4c04cb733349f7d490  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-05-08 hartford 
+=================== 
+=================== 
+=================== 
+a37bc83b86f22dfb1dc32ac53a9ee881  [shntool]  bd80-05-08d1t01.wav
+ba909bda81f04e8ffe00957b24345f8e  [shntool]  bd80-05-08d1t02.wav
+f920f0ef631d82208f1381a08bfc49e2  [shntool]  bd80-05-08d1t03.wav
+e337ab9851667e0e195bd3c44775f86a  [shntool]  bd80-05-08d1t04.wav
+c8ba20ec880b0d6e112e0e41329fa269  [shntool]  bd80-05-08d1t05.wav
+32d64c9a1e00433ec7831e7b5b14989c  [shntool]  bd80-05-08d1t06.wav
+caa03ae3fc07e66d9ecf4a17e5c926c0  [shntool]  bd80-05-08d1t07.wav
+f51063d7cf6336ec2c055a08552cc6f9  [shntool]  bd80-05-08d1t08.wav
+0a4a5eb89b9d0d598a98ec9993d8ccf3  [shntool]  bd80-05-08d1t09.wav
+81f0e384b15022187f25f0b535ac583d  [shntool]  bd80-05-08d2t01.wav
+3b18c5cb18841bb57090072ebfd487ed  [shntool]  bd80-05-08d2t02.wav
+73bbb33895ce36552bfa6a9e5dd5669d  [shntool]  bd80-05-08d2t03.wav
+0cca1e4f12c59d00b7fffb328646fb7b  [shntool]  bd80-05-08d2t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-05-08 hartford 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.21       72726236 B   ---   --   -----    wav  1.0000  bd80-05-08d1t01.wav
+     5:07.05       54166604 B   ---   --   -----    wav  1.0000  bd80-05-08d1t02.wav
+     6:50.40       72418124 B   ---   --   -----    wav  1.0000  bd80-05-08d1t03.wav
+     4:18.55       45640604 B   ---   --   -----    wav  1.0000  bd80-05-08d1t04.wav
+     6:05.41       64482476 B   ---   --   -----    wav  1.0000  bd80-05-08d1t05.wav
+     5:31.51       58508396 B   ---   --   -----    wav  1.0000  bd80-05-08d1t06.wav
+     6:03.73       64204940 B   ---   --   -----    wav  1.0000  bd80-05-08d1t07.wav
+     6:41.16       70774076 B   ---   --   -----    wav  1.0000  bd80-05-08d1t08.wav
+     4:52.22       51560588 B   ---   --   -----    wav  1.0000  bd80-05-08d1t09.wav
+     7:18.16       77300876 B   ---   --   -----    wav  1.0000  bd80-05-08d2t01.wav
+     4:47.33       50704460 B   ---   --   -----    wav  1.0000  bd80-05-08d2t02.wav
+     4:49.25       51038444 B   ---   --   -----    wav  1.0000  bd80-05-08d2t03.wav
+     6:46.71       71785436 B   ---   --   -----    wav  1.0000  bd80-05-08d2t04.wav
+    76:05.19      805311260 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

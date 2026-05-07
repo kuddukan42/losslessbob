@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-23-d.flacf 
+=================== 
+=================== 
+=================== 
+ba20d41b76d0fbda58766cbfb3f1c816  2003-08-23 Oakes Garden Theater, Nigara Falls, Ontario, Canada [TMR].md5
+fd27171b2d8f6da3895da9a5f90461a3  CD1\01 Tombstone blues.shn
+9f72233db617ca590041b7107219f5f0  CD1\02 Lay lady lay.shn
+d8ec0ecaf7760f43003a064f9f06481e  CD1\03 Tweedle Dee and Tweedle Dum.shn
+a1372cfc8b8700350eabe8e277642197  CD1\04 Make you feel my love.shn
+d12f0e3ce29a4060d616e55dc15846e3  CD1\05 Dignity.shn
+26124a397d08f98585a98c460932087e  CD1\06 Highway 61 revisited.shn
+0617926e032e828b57a6fa84cbad8321  CD1\07 Shooting star.shn
+cd65df44c7d58ecb32507f97ca62e2ad  CD1\08 Most likely you go your way (and I'll go mine).shn
+46e73d7bb8f2bd6de9f19aaf7b855136  CD1\09 Cry a while.shn
+26d64a904dcf5cfe36eceb1f9d4341ef  CD1\CD1.shntool_len.txt
+f08c60cad69ad0cd4ee5cb0ccb4971ec  CD1\md5_CD1.md5
+f08c60cad69ad0cd4ee5cb0ccb4971ec  CD1\md5_CD1.txt
+196b2497c9e1625dee4f55a12924218f  CD2\01 Mr. Tambourine Man.shn
+392704cc12220ec286190a8708e95eeb  CD2\02 High water (for Charley Patton).shn
+7bc0c2e47b8b97e14d91facb76d89fa9  CD2\03 Honest with me.shn
+0c29b4310d2c01eb666f181ed046fa02  CD2\04 Forever young.shn
+a68992e3085bea442b15986bae25459c  CD2\05 Summer days.shn
+91af89084ebbf63bb0743f4adcff4326  CD2\06 Like a rolling stone.shn
+780dfa5c6db05742b2ffcbd91a5a5eda  CD2\07 All along the watchtower.shn
+015038bccfbc23fb9b2b9d3c9826df8b  CD2\CD2.shntool_len.txt
+e7fd3a978b035a830fbe49cf1f9def1a  CD2\md5_CD2.md5
+e7fd3a978b035a830fbe49cf1f9def1a  CD2\md5_CD2.txt
+ce220f1f58f7f138689e66153ba1a919  Info\2003-08-23 Oakes Garden Theatre, Niagara Falls, Ontario, Canada.txt
+77646995c1b9fb1fabaf19ffa2498d62  Info\bd2003-08-23niagaraTMR.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-23-d.flacf\cd1 
+=================== 
+=================== 
+=================== 
+363736284534198419d7a69946d575f3  [shntool]  01_tombstone_blues.wav
+c9e44e8b2d4bf517586cc9257fafd7cb  [shntool]  02_lay_lady_lay.wav
+561ef01481f27fde9f91a96c0ca12af1  [shntool]  03_tweedle_dee_and_tweedle_dum.wav
+b6e4ac85b69a8877b66e70a9375c1b99  [shntool]  04_make_you_feel_my_love.wav
+3d715fe64e6edb6c742a1743e848d6ba  [shntool]  05_dignity.wav
+9b5d76c4401099c9b8d962f89c21782f  [shntool]  06_highway_61_revisited.wav
+6f2814a39b47fb2c4419f6545d12f8fc  [shntool]  07_shooting_star.wav
+758bfb4dd9e2c8fc236d39ea36dbf7d6  [shntool]  08_most_likely_you_go_your_way_(and_i'll_go_mine).wav
+67189bd88bd6027ca67b4e855d63e7ce  [shntool]  09_cry_a_while.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-23-d.flacf\cd2 
+=================== 
+=================== 
+=================== 
+4059a8c9c0d4b97f844e5d695e39ec6a  [shntool]  01_mr._tambourine_man.wav
+01e81f1120f7f6f07cfbf6c8c411e054  [shntool]  02_high_water_(for_charley_patton).wav
+f08d12605b5f587bdd0dc90ce84b5287  [shntool]  03_honest_with_me.wav
+39ebaba9f6c31e6b5cc6817d474d12d7  [shntool]  04_forever_young.wav
+da38e08e09f7a51aab8de0b4729d476e  [shntool]  05_summer_days.wav
+fcc9f5953fb3f46ccf0f8f1a7ac161ab  [shntool]  06_like_a_rolling_stone.wav
+39bdefc24155c5c66c9dbafd226d479a  [shntool]  07_all_along_the_watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-23-d.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:55.00       73206044 B   ---   --   ---xx    shn  0.6052  01 Tombstone blues.shn
+     4:46.00       50450444 B   ---   --   ---xx    shn  0.5974  02 Lay lady lay.shn
+     5:22.00       56800844 B   ---   --   ---xx    shn  0.5795  03 Tweedle Dee and Tweedle Dum.shn
+     5:21.00       56624444 B   ---   --   ---xx    shn  0.5832  04 Make you feel my love.shn
+     5:49.00       61563644 B   ---   --   ---xx    shn  0.6447  05 Dignity.shn
+     7:06.00       75146444 B   ---   --   ---xx    shn  0.6409  06 Highway 61 revisited.shn
+     5:19.00       56271644 B   ---   --   ---xx    shn  0.5807  07 Shooting star.shn
+     8:23.00       88729244 B   ---   --   ---xx    shn  0.6272  08 Most likely you go your way (and I'll go mine).shn
+     5:39.24       59856092 B   ---   --   ---xx    shn  0.6177  09 Cry a while.shn
+    54:40.24      578648844 B                            0.6110  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-23-d.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:28.00       79027244 B   ---   --   ---xx    shn  0.6027  01 Mr. Tambourine Man.shn
+     7:05.00       74970044 B   ---   --   ---xx    shn  0.6252  02 High water (for Charley Patton).shn
+     6:47.00       71794844 B   ---   --   ---xx    shn  0.6450  03 Honest with me.shn
+     7:32.00       79732844 B   ---   --   ---xx    shn  0.5813  04 Forever young.shn
+    11:23.00      120481244 B   ---   --   ---xx    shn  0.5961  05 Summer days.shn
+     7:44.00       81849644 B   ---   --   ---xx    shn  0.6356  06 Like a rolling stone.shn
+     7:23.64       78295772 B   ---   --   ---xx    shn  0.5963  07 All along the watchtower.shn
+    55:22.64      586151636 B                            0.6102  (7 files)
+=================== 
+=================== 
+=================== 

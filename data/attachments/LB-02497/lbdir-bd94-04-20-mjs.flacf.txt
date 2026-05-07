@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-04-20-mjs.flacf 
+=================== 
+=================== 
+=================== 
+612e1a40229cb1116e418d45263b7ae0  101 bd19940420d1t01.flac
+b7dc0cbfc4399d340dd70916194cb290  102 bd19940420d1t02.flac
+f9c5bdebc666ce8e3bb276fe21ee8a3a  103 bd19940420d1t03.flac
+189462c510d99f62b5e029216747a7c3  104 bd19940420d1t04.flac
+6510491470e26640d2b32df34a6b22b1  105 bd19940420d1t05.flac
+76e8705a255e1918abbd75cca972a8d0  106 bd19940420d1t06.flac
+a6ef524d38e8689440f2bb53cd74ec83  107 bd19940420d1t07.flac
+b02e0fd06d06a1ec91db227ebb8f1e58  108 bd19940420d1t08.flac
+95df25ab849fcd64908670cde65922c9  109 bd19940420d1t09.flac
+005554862fa8bee93b6eac029c591c82  1994-04-20 Champain (MJS Master).txt
+8c54412e3a33eb99e1471da84e623271  1994-04-20 Champain Info.txt
+afb0909f081b192acde00b93213b67ba  201 bd19940420d2t01.flac
+8c19bce29540c95da59034d882a6bbe5  202 bd19940420d2t02.flac
+359fe062073249c8c783dd92b952dda5  203 bd19940420d2t03.flac
+703ba238534823b16ed63523f9f3f9ce  204 bd19940420d2t04.flac
+a5b02a733c3b7ac5a9d3931a732c846c  205 bd19940420d2t05.flac
+c596659959d8e67408d2bddce221daed  bd19940420.md5
+9013fb2bde0a5da8845e465d1b38c399  bd94-04-20-mjs.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-04-20-mjs.flacf 
+=================== 
+=================== 
+=================== 
+101 bd19940420d1t01.flac:fdca025684aea9e1f08db135e799ab17
+102 bd19940420d1t02.flac:7b78a3deafefa1c05754a1d073899b42
+103 bd19940420d1t03.flac:95e06dff6bb09ae0b31416d055b92d5a
+104 bd19940420d1t04.flac:4d962f9d9015ada3737f8fe045e503e9
+105 bd19940420d1t05.flac:363c35d227608c168012cdecd7974c1a
+106 bd19940420d1t06.flac:1213d94fdf7c0fbb03f462e09a7d0840
+107 bd19940420d1t07.flac:c1a6958a705ae1206adf3b6fd1cf4a1c
+108 bd19940420d1t08.flac:3c79134e66fe6a78cf6a9b876cb29a19
+109 bd19940420d1t09.flac:3eb6ab0a6e020ef1c8ffda6e94f92b35
+201 bd19940420d2t01.flac:939c6fb699172b6c5de4753433a6f76f
+202 bd19940420d2t02.flac:2188dc50ea7fb2aa70f8c362998a2ca1
+203 bd19940420d2t03.flac:8f14d3e28dbf6519c35c219fdd40a338
+204 bd19940420d2t04.flac:8ae447df3e4136927fbcedcbf0cbfc8c
+205 bd19940420d2t05.flac:3294ed29eecd36f81c7d0c69f6b49d67
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-04-20-mjs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:00.10       84695564 B   ---   --   ---xx   flac  0.5971  101 bd19940420d1t01.flac
+     6:41.18       70778780 B   ---   --   ---xx   flac  0.5824  102 bd19940420d1t02.flac
+     6:07.42       64837628 B   ---   --   ---xx   flac  0.6187  103 bd19940420d1t03.flac
+     8:35.56       90977756 B   ---   --   ---xx   flac  0.5702  104 bd19940420d1t04.flac
+    10:11.36      107865116 B   ---   --   ---xx   flac  0.5736  105 bd19940420d1t05.flac
+     6:47.01       71797196 B   ---   --   ---xx   flac  0.5318  106 bd19940420d1t06.flac
+     4:43.27       49984748 B   ---   --   ---xx   flac  0.4866  107 bd19940420d1t07.flac
+     4:34.53       48458300 B   ---   --   ---xx   flac  0.4863  108 bd19940420d1t08.flac
+     7:23.07       78161708 B   ---   --   ---xx   flac  0.5522  109 bd19940420d1t09.flac
+     5:54.31       62518556 B   ---   --   ---xx   flac  0.5589  201 bd19940420d2t01.flac
+     6:53.56       72984956 B   ---   --   ---xx   flac  0.5667  202 bd19940420d2t02.flac
+     8:45.27       92673548 B   ---   --   ---xx   flac  0.5791  203 bd19940420d2t03.flac
+     7:24.16       78359276 B   ---   --   ---xx   flac  0.5540  204 bd19940420d2t04.flac
+     8:43.51       92377196 B   ---   --   ---xx   flac  0.4892  205 bd19940420d2t05.flac
+   100:45.56     1066470328 B                            0.5565  (14 files)
+=================== 
+=================== 
+=================== 

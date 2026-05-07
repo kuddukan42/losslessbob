@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-15-off-DAT-clone-d.flacf 
+=================== 
+=================== 
+=================== 
+80a2c63dcc81cb3909f1a023f7552e56  CD1\01 Leopard-skin pill-box hat.flac
+d1d020d602259f9de3c245a559923ebd  CD1\02 You ain't goin' nowhere.flac
+49362a5b8a9aba015faf9aa097325897  CD1\03 Cold irons bound.flac
+a35e6e30202d4df60e9cc3c077cc779f  CD1\04 Just like a woman.flac
+b38ec951954df0f3b4551528c9d92fe6  CD1\05 Silvio.flac
+2fdaa358cf58741741fd56347eb506a7  CD1\06 Desolation Row.flac
+7e7b111ba1006c4d8cdaa4902708bc35  CD1\07 The times they are a-changin'.flac
+1d9fccb4f2749c8580353c20a2817e85  CD1\08 Tangled up in blue.flac
+e9858bb59cafc38e43f8117a478f36a9  CD2\09 Can't wait.flac
+300d111df3ba834ee5d7b81602b553eb  CD2\10 Make you feel my love.flac
+3bf741a216ceba63cb56f7f1e000f3c1  CD2\11 Highway 61 revisited.flac
+1959c9f82f78a423943f8b12ec6df152  CD2\12 It ain't me, babe.flac
+81b77e677b52a4f58431385a34315cf0  CD2\13 Love sick.flac
+d4144f336bc2b186b76932aaa645abf9  CD2\14 Rainy day women # 12 & 35.flac
+117cb0a82f199190c0cc8c8926e3b017  Info\bd1998-06-15 info.txt
+c812edf40b308f0fddbb09f5766393de  Info\FLAC CD1.md5
+ee15edfb56e8e3fcc350a466a7e77060  Info\FLAC CD2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-15-off-DAT-clone-d.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Leopard-skin pill-box hat.flac:06b49f6bcb1039cc6661da84387a7e67
+02 You ain't goin' nowhere.flac:d4516afa1aee24aaa57eda4ea1440b26
+03 Cold irons bound.flac:f9bf989a562c36135176d6843e6b59f8
+04 Just like a woman.flac:9916bd52afa9578a679277a37215df92
+05 Silvio.flac:1e5af8f24c8bce11cba3c24ea87db3b3
+06 Desolation Row.flac:06e90dccc6a6fe9f58868ec543c3b545
+07 The times they are a-changin'.flac:8e897ff4513df52bd7d7abef415d1354
+08 Tangled up in blue.flac:00e01488b74568c39c3d5e65f7a979dc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-15-off-DAT-clone-d.flacf\CD2 
+=================== 
+=================== 
+=================== 
+09 Can't wait.flac:206615763414dd6677df59511a1fcb58
+10 Make you feel my love.flac:a90528a75b2bf3cf2064cb589b0ce5a8
+11 Highway 61 revisited.flac:747cd2504ba61c67d948d8e973afd7e7
+12 It ain't me, babe.flac:63c4d9b5e18e57b858663cc59d9e6066
+13 Love sick.flac:6b0f52cc1fb2ec73798947edd0a3931a
+14 Rainy day women # 12 & 35.flac:16debe7287030060aae3fcff29cc577c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-15-off-DAT-clone-d.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.58       55173260 B   ---   --   ---xx   flac  0.6439  01 Leopard-skin pill-box hat.flac
+     4:40.08       49410860 B   ---   --   ---xx   flac  0.6416  02 You ain't goin' nowhere.flac
+     7:02.11       74466716 B   ---   --   ---xx   flac  0.6401  03 Cold irons bound.flac
+     5:50.26       61801196 B   ---   --   ---xx   flac  0.6110  04 Just like a woman.flac
+     6:52.22       72728588 B   ---   --   ---xx   flac  0.6811  05 Silvio.flac
+     9:47.40      103640924 B   ---   --   ---xx   flac  0.6066  06 Desolation Row.flac
+     5:53.32       62344508 B   ---   --   ---xx   flac  0.6015  07 The times they are a-changin'.flac
+     8:17.15       87706124 B   ---   --   ---xx   flac  0.6688  08 Tangled up in blue.flac
+    53:35.62      567272176 B                            0.6367  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-15-off-DAT-clone-d.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:04.64       64360172 B   ---   --   ---xx   flac  0.6594  09 Can't wait.flac
+     4:24.54       46696652 B   ---   --   ---xx   flac  0.5440  10 Make you feel my love.flac
+     9:19.38       98697020 B   ---   --   ---xx   flac  0.6461  11 Highway 61 revisited.flac
+     6:30.34       68876012 B   ---   --   ---xx   flac  0.5819  12 It ain't me, babe.flac
+     5:24.46       57261836 B   ---   --   ---xx   flac  0.6110  13 Love sick.flac
+     5:57.41       63071276 B   ---   --   ---xx   flac  0.6760  14 Rainy day women # 12 & 35.flac
+    37:41.52      398962968 B                            0.6249  (6 files)
+=================== 
+=================== 
+=================== 

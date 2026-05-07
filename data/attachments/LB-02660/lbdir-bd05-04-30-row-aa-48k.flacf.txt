@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-30-row-aa-48k.flacf 
+=================== 
+=================== 
+=================== 
+34f931690a0ac243e620099eba4a0a17  050430_info.txt
+d7ff01f22afaa0397ea0b5e5151a27db  bd05-04-30-row-aa-48k-LB-2660.txt
+6f5ee38f790e23a2f354705ca0e4559e  D1\01 - Columbia Recording Artist - 050430-Beacon-D1.flac
+ca552672af300346aa64b00cf4915a48  D1\02 - Maggie's Farm - 050430-Beacon-D1.flac
+ba8732c656e49f1b41f6a507b401138d  D1\03 - To Ramona - 050430-Beacon-D1.flac
+70c7378fab98715627f857b857fd131a  D1\04 - Cry A While - 050430-Beacon-D1.flac
+ba7a094ea4bd86cef73c6978f7f3681b  D1\05 - Bye And Bye - 050430-Beacon-D1.flac
+280de48c8aec4d0e37a9a37e91ebd5fb  D1\050430-Beacon-D1.txt
+eeea63157a039b960e87ffa243e021d2  D1\050430-Beacon-D1_EAC.TXT
+3fee67f90d42967a5a0d1a0a04830638  D1\050430_Disc1.md5
+cbcb8f8fccc24b218febda136444b0d5  D1\06 - Ballad Of Hollis Brown - 050430-Beacon-D1.flac
+bce395904b15e9a5a30329fe10961b99  D1\07 - If You See Her, Say Hello - 050430-Beacon-D1.flac
+251acb2f10f7510a478ab44d8d4f0d9e  D1\08 - Lenny Bruce - 050430-Beacon-D1.flac
+535dd43a3dfea5b5c2d096718ebf15d2  D1\09 - Honest With Me - 050430-Beacon-D1.flac
+977f04e1778b8cfcf0d06f62d8a2ab65  D1\10 - The Lonesome Death Of Hattie Carroll - 050430-Beacon-D.flac
+b75d76ea3ec1618fe0c402e735afa8f2  D1\11 - High Water (For Charley Patton) - 050430-Beacon-D1.flac
+c08917c765be41c4e0d4253487637533  D1\12 - I Shall Be Released - 050430-Beacon-D1.flac
+36d18767089a233e85272792820fc2a8  D2\01 - Highway 61 Revisited - 050430-Beacon-D2.flac
+8c8e572165f1e192f66955e72817e677  D2\02 - Po' Boy - 050430-Beacon-D2.flac
+dd2f9abda4639ed5b8b666a2c01161ff  D2\03 - Band Intros - 050430-Beacon-D2.flac
+f58eed5a807ebd118dcc5f77be4c4c74  D2\04 - All Along The Watchtower - 050430-Beacon-D2.flac
+d905125a5ec11af347129531afd4aba6  D2\050430-Beacon-D2.txt
+6987ea7e44b2da6d70aba83b0c23b2ce  D2\050430-Beacon-D2_EAC.TXT
+59460b9eb1ecb9d5996a51bc4f474462  D2\050430_Disk2.md5
+c6fa2b1e1fed6c31ffb64b71382240fa  reviews.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-30-row-aa-48k.flacf\D1 
+=================== 
+=================== 
+=================== 
+01 - Columbia Recording Artist - 050430-Beacon-D1.flac:69e6dc306abfa26d2c3fad09c64d9789
+02 - Maggie's Farm - 050430-Beacon-D1.flac:8f17d00f332376de97ad36d62d15353b
+03 - To Ramona - 050430-Beacon-D1.flac:498e167bad4bae5f5d505b8a4713cd8c
+04 - Cry A While - 050430-Beacon-D1.flac:b637b20ed25331d44f1fc878acdf0deb
+05 - Bye And Bye - 050430-Beacon-D1.flac:fa604ef1016a11070c67009e2b2f03eb
+06 - Ballad Of Hollis Brown - 050430-Beacon-D1.flac:5003af0379a85f8960807d1eae318f0a
+07 - If You See Her, Say Hello - 050430-Beacon-D1.flac:13e46ef8c9aeb12bd5e71e65039ebd73
+08 - Lenny Bruce - 050430-Beacon-D1.flac:246dcce209dcb7b8676cf00a41fe9e5c
+09 - Honest With Me - 050430-Beacon-D1.flac:cd9d3ab604a4b0c765ea524939b74fb9
+10 - The Lonesome Death Of Hattie Carroll - 050430-Beacon-D.flac:f1f8a627a97d6a943d355c96e52d681e
+11 - High Water (For Charley Patton) - 050430-Beacon-D1.flac:9f9146c3bc8329cabb02863763c6300c
+12 - I Shall Be Released - 050430-Beacon-D1.flac:ca0c57b8b9c26292f73573425ac0971d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-30-row-aa-48k.flacf\D2 
+=================== 
+=================== 
+=================== 
+01 - Highway 61 Revisited - 050430-Beacon-D2.flac:67a7e78df78a8680d72b91b8d2e4b397
+02 - Po' Boy - 050430-Beacon-D2.flac:84d0afe07970a7b946d5066e16938de2
+03 - Band Intros - 050430-Beacon-D2.flac:03e4fde7f4283502e8f83795ee41139d
+04 - All Along The Watchtower - 050430-Beacon-D2.flac:1cb9f6e1eb7e4f8370f67aa1186c26f1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-30-row-aa-48k.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.67        5449628 B   ---   --   ---xx   flac  0.3989  01 - Columbia Recording Artist - 050430-Beacon-D1.flac
+     5:43.74       60679292 B   ---   --   ---xx   flac  0.5339  02 - Maggie's Farm - 050430-Beacon-D1.flac
+     7:18.67       77420828 B   ---   --   ---xx   flac  0.4065  03 - To Ramona - 050430-Beacon-D1.flac
+     6:07.40       64832924 B   ---   --   ---xx   flac  0.5073  04 - Cry A While - 050430-Beacon-D1.flac
+     7:02.74       74614892 B   ---   --   ---xx   flac  0.3959  05 - Bye And Bye - 050430-Beacon-D1.flac
+     5:55.44       62725532 B   ---   --   ---xx   flac  0.4247  06 - Ballad Of Hollis Brown - 050430-Beacon-D1.flac
+     7:06.42       75245228 B   ---   --   ---xx   flac  0.4853  07 - If You See Her, Say Hello - 050430-Beacon-D1.flac
+     7:13.37       76468268 B   ---   --   ---xx   flac  0.4578  08 - Lenny Bruce - 050430-Beacon-D1.flac
+     7:12.42       76303628 B   ---   --   ---xx   flac  0.5207  09 - Honest With Me - 050430-Beacon-D1.flac
+     6:29.43       68720780 B   ---   --   ---xx   flac  0.3878  10 - The Lonesome Death Of Hattie Carroll - 050430-Beacon-D.flac
+     8:15.01       87320396 B   ---   --   ---xx   flac  0.5124  11 - High Water (For Charley Patton) - 050430-Beacon-D1.flac
+     7:19.54       77566652 B   ---   --   ---xx   flac  0.4275  12 - I Shall Be Released - 050430-Beacon-D1.flac
+    76:16.60      807348048 B                            0.4594  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-30-row-aa-48k.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:09.38       75765020 B   ---   --   ---xx   flac  0.5221  01 - Highway 61 Revisited - 050430-Beacon-D2.flac
+     5:44.47       60792188 B   ---   --   ---xx   flac  0.3948  02 - Po' Boy - 050430-Beacon-D2.flac
+     0:33.65        5974124 B   ---   --   ---xx   flac  0.4247  03 - Band Intros - 050430-Beacon-D2.flac
+     6:09.06       65105756 B   ---   --   ---xx   flac  0.5057  04 - All Along The Watchtower - 050430-Beacon-D2.flac
+    19:37.06      207637088 B                            0.4769  (4 files)
+=================== 
+=================== 
+=================== 

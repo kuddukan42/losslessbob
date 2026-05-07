@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-21-alt-a.flacf 
+=================== 
+=================== 
+=================== 
+546276817046fca6e0b2ca8c62d954af  06 04 21 d1 t01.flac
+e69539d4f4005739f37262ab67500f60  06 04 21 d1 t02.flac
+467a4e647c4464bbbc6c8ac38e50223b  06 04 21 d1 t03.flac
+1637330257a029258ac778a85f2b0e8a  06 04 21 d1 t04.flac
+b5eac2c83900a7077db44043a64c2f23  06 04 21 d1 t05.flac
+6e876a249be06cfc4bd638f819b8c74c  06 04 21 d1 t06.flac
+018c279f8b15ff1adf9342246d9bc7bd  06 04 21 d1 t07.flac
+db4105623cd37460f0a12774c65eafdc  06 04 21 d1 t08.flac
+594ce0dfb23c92efa3b24ac81d6a6041  06 04 21 d1 t09.flac
+19a25e7df0f01ae423f0a52c396c37d7  06 04 21 d1 t10.flac
+5e98db6a8d712f8cf24408bd05a0f018  06 04 21 d1 t11.flac
+5cf24427c27792325658f8645f6ace4b  06 04 21 d1 t12.flac
+12ef4e9390ddfa650ffdfeffc13170c9  06 04 21 d2 t01.flac
+49d269d7d2f157f1a0eb90dca4df16cf  06 04 21 d2 t02.flac
+b633cf4c69c089aed3a60b419f11e8d2  bd06 04 21 alt.md5
+a21ea8ea3dcbfef641670eb1e4633ec0  bd06-04-21-alt-a-LB-3850.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-21-alt-a.flacf 
+=================== 
+=================== 
+=================== 
+06 04 21 d1 t01.flac:f027bd2caf99ce2191559e524bdacdf7
+06 04 21 d1 t02.flac:3fa629ef27f54545181579a5d907802c
+06 04 21 d1 t03.flac:97b37217b04f66c988ad4586b3b698ba
+06 04 21 d1 t04.flac:abb0b774617d39c4dbbc95af0a5ef849
+06 04 21 d1 t05.flac:4696d73cd7dee959d9086a9bb61e9a51
+06 04 21 d1 t06.flac:7a7d3ee1ba9848bc1caaf1cfa6dc7411
+06 04 21 d1 t07.flac:132c8a8475928b7813c1a649162b1a5b
+06 04 21 d1 t08.flac:ffb2c2b79311fa102823887b3a0512bc
+06 04 21 d1 t09.flac:86c09cd152dabbc6b91be1fb20d6b92a
+06 04 21 d1 t10.flac:c9e7256bddb15d04720fd80c9d238211
+06 04 21 d1 t11.flac:1cf5c3e210cc0dfbc103868bd83a8f6a
+06 04 21 d1 t12.flac:dc43904087f2dcd04774a65ca0e77704
+06 04 21 d2 t01.flac:f42e1203cb17baeaa5bec257a343603a
+06 04 21 d2 t02.flac:fdf570e6de89f6f2efcb044b3ce20ce5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-21-alt-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.53       76329500 B   ---   --   ---xx   flac  0.4555  06 04 21 d1 t01.flac
+     6:59.43       74012780 B   ---   --   ---xx   flac  0.4303  06 04 21 d1 t02.flac
+     7:20.05       77627804 B   ---   --   ---xx   flac  0.4381  06 04 21 d1 t03.flac
+     6:56.35       73464764 B   ---   --   ---xx   flac  0.4600  06 04 21 d1 t04.flac
+     6:38.42       70306028 B   ---   --   ---xx   flac  0.4555  06 04 21 d1 t05.flac
+     5:29.05       58047404 B   ---   --   ---xx   flac  0.4433  06 04 21 d1 t06.flac
+     6:11.65       65597324 B   ---   --   ---xx   flac  0.4778  06 04 21 d1 t07.flac
+     6:25.14       67946972 B   ---   --   ---xx   flac  0.3921  06 04 21 d1 t08.flac
+     6:56.47       73492988 B   ---   --   ---xx   flac  0.4742  06 04 21 d1 t09.flac
+     6:42.48       71025740 B   ---   --   ---xx   flac  0.4612  06 04 21 d1 t10.flac
+     6:54.02       73034348 B   ---   --   ---xx   flac  0.4434  06 04 21 d1 t11.flac
+     5:32.19       58609532 B   ---   --   ---xx   flac  0.4930  06 04 21 d1 t12.flac
+     7:19.18       77481980 B   ---   --   ---xx   flac  0.4729  06 04 21 d2 t01.flac
+     7:16.55       77039804 B   ---   --   ---xx   flac  0.4696  06 04 21 d2 t02.flac
+    93:55.01      994016968 B                            0.4546  (14 files)
+=================== 
+=================== 
+=================== 

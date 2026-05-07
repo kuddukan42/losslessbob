@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== bd2007-10-17 Louisville, KY (SP-CMC-4U).txt
+===================
+===================
+===================
+Bob Dylan
+Louisville, Kentucky
+Freedom Hall
+October 17, 2007
+
+
+Audience recording
+SP-CMC-4U > SP-SPSB-8 (bass roll-off @ 95 Hz) > M-Audio MicroTrack 24/96 (44100 16bit) > Cool Edit > CD Wave
+taper: romeo
+
+
+Disc One [68:05]
+101. Intro 
+102. Leopard-Skin Pill-Box Hat 
+103. Don't Think Twice, It's All Right
+104. Watching The River Flow 
+105. Love Sick 
+106. Rollin' And Tumblin'
+107. Spirit On The Water 
+108. High Water (For Charlie Patton)
+109. Workingman's Blues #2
+110. Things Have Changed 
+111. The Lonesome Death Of Hattie Carroll
+112. Highway 61 Revisited 
+
+Disc two [38:40]
+201. Ain't Talkin' 
+202. Summer Days 
+203. Masters Of War
+204. (encore)
+205. Thunder On The Mountain
+206. Band Intros
+207. Like A Rolling Stone (Bob on electric keyboard, Donnie on pedal steel)
+  	 
+
+Band Members
+Bob Dylan - electric guitar, keyboard, harp
+Tony Garnier - bass
+George Recile - drums
+Stu Kimball - rhythm guitar
+Denny Freeman - lead guitar
+Donnie Herron - violin, viola, banjo, electric mandolin, pedal steel, lap steel
+===================
+===================
+===================
+=== Dylan - Louisville - 2007-10-17.md5
+===================
+===================
+===================
+f0fb2672981a9548546092eee8229857 *101. Intro.flac
+51065038d5d7dd367d803bf69977b700 *102. Leopard-Skin Pill-Box Hat.flac
+f00c433684df4109195c8f68d1c58fc2 *103. Don't Think Twice, It's All Right.flac
+ebc09bdf9347ca7708cb7318c0de9696 *104. Watching The River Flow.flac
+e067eee2c4c2ec2237efbc4d002c2883 *105. Love Sick.flac
+47bb175416e208c8b68710b40ec9ec15 *106. Rollin' And Tumblin'.flac
+2038e3c04acc4877039fa33d2d3bfa25 *107. Spirit On The Water.flac
+8e98e85333a3a75f7f04062ecdb67ad6 *108. High Water (For Charlie Patton).flac
+9f4c65a1d34938d28bd5683b13b37d82 *109. Workingman's Blues #2.flac
+15d1d14087179392e3733118d96c7e20 *110. Things Have Changed.flac
+db105770a4e10612850f841714339cc6 *111. The Lonesome Death Of Hattie Carroll.flac
+77236b423c8cceb9d2bf2b7a9bd86fe9 *112. Highway 61 Revisited.flac
+917f95ff0caccb2f7cd732bf1fb7eb11 *201. Ain't Talkin'.flac
+c7f0c258e6375f363d0bec5f042b28ab *202. Summer Days.flac
+a527b2aa8e12665a3708bd05f958cac7 *203. Masters Of War.flac
+431d5b689d1b8f2b97edfcf7f63e73f5 *204. (encore).flac
+6a8e26063ae36c4a83f6b03109129a63 *205. Thunder On The Mountain.flac
+11addf59597e019eba4798488844e7df *206. Band Intros.flac
+7431fe5116535f5d321a5a284bc478b8 *207. Like A Rolling Stone (Bob on electric keyboard, Donnie on pedal steel).flac
+cd84b4278cd6f6c9e37e3f8d8de094a0 *bd2007-10-17 Louisville, KY (SP-CMC-4U).txt
+===================
+===================
+===================

@@ -1,0 +1,27 @@
+10-24-1995
+MINNEAPOLIS, MINNESOTA
+TARGET CENTER
+
+CDR (clean, thanks Chad) > EAC V0.95pb4 > WAV > MKW 0.97b1 > SHN (seek tables appended)
+
+d2t4 8:06-7 gap edit, resulting in slightly belated start to band intros
+
+1 	DRIFTER'S ESCAPE
+2 	IF YOU SEE HER, SAY HELLO
+3 	ALL ALONG THE WATCHTOWER
+4 	JUST LIKE A WOMAN
+5 	WATCHING THE RIVER FLOW
+6 	SILVIO
+7 	MR. TAMBOURINE MAN @
+
+8 	MASTERS OF WAR @
+9 	DON'T THINK TWICE, IT'S ALRIGHT @
+10 	GOD KNOWS
+11 	I'LL REMEMBER YOU
+12 	HIGHWAY 61 REVISITED
+13 	ALABAMA GETAWAY
+14 	THE TIMES THEY ARE A-CHANGIN' @
+15 	RAINY DAY WOMEN #12&35
+
+Please use QuickPar to recover damaged or missing segments:
+http://www.quickpar.org.uk/index.htm

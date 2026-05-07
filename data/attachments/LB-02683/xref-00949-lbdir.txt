@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-07-01-d.flacf 
+=================== 
+=================== 
+=================== 
+3be85e898dc876f388d78cbb1fae99a7  d1\fingerprint.ffp.txt
+9371c53b2b4895db76589f01d5a35ab7  d1\md5sum.md5
+dc218bdf86b2d029151f38a9d6c33836  d1\Piste  1.flac
+c78912d7afe84a27bba07b1fcf390416  d1\Piste  2.flac
+a6c5f314d2eb58b4581695d68822bb6c  d1\Piste  3.flac
+4d792b15e3c2ca9b328fb5ee0a4eedc2  d1\Piste  4.flac
+96fa0062055451cb83dee0b927de53c2  d1\Piste  5.flac
+e1ab6a85980c6fca2359da11099879a6  d1\Piste  6.flac
+e6c6a851fc6353c98040c85aa004000a  d1\Piste  7.flac
+e93d3629f3cd0ee23d5c1d1fb56593eb  d1\Piste  8.flac
+bfa0c2b19be9942049f991a911ef4ee5  d1\Piste  9.flac
+ddf9d5159bfb77be49724a8dd4e2af61  d1\Piste 10.flac
+131d74b9f19f0d93693164b04b9733f8  d1\Piste 11.flac
+788001059bcce53e83b786146f114003  d2\fingerprint.ffp.txt
+d384aded67458a22c618f38248751db0  d2\md5sum.md5
+efca1a74f43610e924c5ffbb7cf59c4d  d2\Piste  1.flac
+ed016c04b4a43003f3a503e0cc02501b  d2\Piste  2.flac
+8e9431a8dce310d125130df25f12333c  d2\Piste  3.flac
+94120d6f077950a5744115f1e940f6b3  d2\Piste  4.flac
+16612f4a40b9e46ab564ae4625608260  d2\Piste  5.flac
+5307a5793b2eec3926d268fd546a0e1f  d2\Piste  6.flac
+556d31723d7a68bab7f43b6d0d19cb6c  d2\Piste  7.flac
+2d5dc406230cb50aefecedc613207c46  fingerprint.ffp
+966e07333a60ec07ea33e05abb14f601  infos.txt
+afa01a245fb8ff0c04870da25664b54e  shntool len.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-07-01-d.flacf\d1 
+=================== 
+=================== 
+=================== 
+Piste  1.flac:54e6b5c5788afcb5512c239d5a2896a1
+Piste  2.flac:df546d04f62f82fc4cff03040bc8d5cb
+Piste  3.flac:f4e69179f4b27c6d5b670b9566bf7650
+Piste  4.flac:5492e6ff4a0716164910396df3b5eaf1
+Piste  5.flac:65f6eb9109592e776f8d91a87e0e44f4
+Piste  6.flac:69e0b751f298396bda4e1b21354b7de8
+Piste  7.flac:7bd939fb51fb018c0542d01d58b45351
+Piste  8.flac:a93876ff003eb23c772ab3d8e769b3cc
+Piste  9.flac:3af891b3f8d07e65b3b34e979208b4ac
+Piste 10.flac:2cfe21599359926bad02f3673539521d
+Piste 11.flac:7e58d98fb25a57616a624f200584867e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-07-01-d.flacf\d2 
+=================== 
+=================== 
+=================== 
+Piste  1.flac:1506c83f9ec56264d9b9fa0a97a67ca2
+Piste  2.flac:199d49cbb0731fa9351a7fc126e6ba27
+Piste  3.flac:c0ddb675b57c883606940de4f03b2ef2
+Piste  4.flac:388a3a57466e8fb1e8a55ade0b6bc2e5
+Piste  5.flac:aa003487c3d48fc7baaedca5ddb6ef6d
+Piste  6.flac:919a6ea09fed84dcba2bfde909a136cd
+Piste  7.flac:75c2efa3147846cd5cb739fc3cf08288
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-07-01-d.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:20.45       35385884 B   ---   --   ---xx   flac  0.6624  Piste  1.flac
+     6:59.23       73965740 B   ---   --   ---xx   flac  0.6280  Piste  2.flac
+     4:24.00       46569644 B   ---   --   ---xx   flac  0.6528  Piste  3.flac
+     8:03.38       85290620 B   ---   --   ---xx   flac  0.6303  Piste  4.flac
+     5:50.00       61740044 B   ---   --   ---xx   flac  0.6717  Piste  5.flac
+     7:16.00       76910444 B   ---   --   ---xx   flac  0.6391  Piste  6.flac
+     7:32.00       79732844 B   ---   --   ---xx   flac  0.6722  Piste  7.flac
+     3:15.00       34397092 B   -b-   --   ---xx   flac  0.5866  Piste  8.flac
+     4:24.73       46741952 B   -b-   --   ---xx   flac  0.5517  Piste  9.flac
+    11:22.45      120410684 B   ---   --   ---xx   flac  0.6163  Piste 10.flac
+     9:06.30       96385004 B   ---   --   ---xx   flac  0.6070  Piste 11.flac
+    71:34.29      757529952 B                            0.6296  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-07-01-d.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.08       43766060 B   ---   --   ---xx   flac  0.6554  Piste  1.flac
+     5:54.00       62445644 B   ---   --   ---xx   flac  0.6325  Piste  2.flac
+     6:59.53       74036300 B   ---   --   ---xx   flac  0.6145  Piste  3.flac
+     6:54.38       73119020 B   ---   --   ---xx   flac  0.6559  Piste  4.flac
+     5:16.38       55831820 B   ---   --   ---xx   flac  0.6724  Piste  5.flac
+     7:44.15       81884924 B   ---   --   ---xx   flac  0.6459  Piste  6.flac
+     6:06.68       64722380 B   ---   --   ---xx   flac  0.5867  Piste  7.flac
+    43:03.70      455806148 B                            0.6363  (7 files)
+=================== 
+=================== 
+=================== 

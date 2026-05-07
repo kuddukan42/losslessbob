@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-05-17.flacf 
+=================== 
+=================== 
+=================== 
+b48719924f21dd088d520a1a2cc07803  bd96-05-17.txt
+6b15dcef57b901c0aadb246e4f1ade24  Dylan96-5-17.txt
+bf775fee8a341c4d4a3ad28baa75c8ed  dylan96-5-17d1t1.flac
+867a58d0e0c158237528a0963a20d219  dylan96-5-17d1t10.flac
+b3fe8adcd7213a72f64395918436d539  dylan96-5-17d1t2.flac
+f86a58dd8b6baf7d82c07b2ee77e69b5  dylan96-5-17d1t3.flac
+ff8d41be17db7258d307e06fd6dda591  dylan96-5-17d1t4.flac
+e123b3b33dd68a237d22b03188b3eed5  dylan96-5-17d1t5.flac
+d240445f3ed051cb66486297622580e1  dylan96-5-17d1t6.flac
+2241418353cb981ef08db80b3c20f95f  dylan96-5-17d1t7.flac
+206ee052064a6813bca68616b0841f05  dylan96-5-17d1t8.flac
+dfdb9e3bd297351aa33757609061b2a8  dylan96-5-17d1t9.flac
+6865d923a5691c532a07944e787e4e50  dylan96-5-17d2t1.flac
+2a6e5f7a29d61f283053f55a8b5eb176  dylan96-5-17d2t2.flac
+2225a3a5e5d6e219d3f75895a62e8a65  dylan96-5-17d2t3.flac
+604d5e1b9409e8ebecc9be656a4150b4  dylan96-5-17d2t4.flac
+5bba72e275467dc9c55a54dd06c8fb85  dylan96-5-17d2t5.flac
+e00c46851a740f59fe3dac018c0fad75  dylan96-5-17d2t6.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-17.flacf 
+=================== 
+=================== 
+=================== 
+dylan96-5-17d1t1.flac:6e006efe7c7f6f409e86062dea08ced7
+dylan96-5-17d1t10.flac:99dddf65d640be5d5bde9135ba817d5f
+dylan96-5-17d1t2.flac:f41920a0662a56e1548927d1c4f07354
+dylan96-5-17d1t3.flac:01dfae7e78e9100b8d0796d5677a6f3e
+dylan96-5-17d1t4.flac:89dbc6f7a69e0b3291e1a956ea36bdc9
+dylan96-5-17d1t5.flac:7284840dd72c1e26628e2968a606bf89
+dylan96-5-17d1t6.flac:0dc65ac5df80de160685570125260ba7
+dylan96-5-17d1t7.flac:6c83a3175cca42001659022788321496
+dylan96-5-17d1t8.flac:3b450d12211ab88d2fc00370adc298e8
+dylan96-5-17d1t9.flac:fda14b1f22f1f07489c7e51e8200d61b
+dylan96-5-17d2t1.flac:96d4799a1c146027b4d1a7a21ae66672
+dylan96-5-17d2t2.flac:e9d999337892a08d4399bc113d8b999d
+dylan96-5-17d2t3.flac:c2dc7487c9fe309eba9201d3a40da73b
+dylan96-5-17d2t4.flac:1463b08f19b0e9a4b9f32e5665420a97
+dylan96-5-17d2t5.flac:5caf374867d3979482a31207f10f940b
+dylan96-5-17d2t6.flac:d0d390695016f7fee8e5a4a15b85305a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-17.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:07.03        1241900 B   ---   --   ---xx   flac  0.5377  dylan96-5-17d1t1.flac
+     7:36.31       80511356 B   ---   --   ---xx   flac  0.6132  dylan96-5-17d1t10.flac
+     4:24.74       46743692 B   ---   --   ---xx   flac  0.6904  dylan96-5-17d1t2.flac
+     6:27.03       68273900 B   ---   --   ---xx   flac  0.6417  dylan96-5-17d1t3.flac
+     6:35.44       69781532 B   ---   --   ---xx   flac  0.6716  dylan96-5-17d1t4.flac
+     7:41.59       81459212 B   ---   --   ---xx   flac  0.6349  dylan96-5-17d1t5.flac
+     6:00.53       63628700 B   ---   --   ---xx   flac  0.6249  dylan96-5-17d1t6.flac
+     7:30.10       79403564 B   ---   --   ---xx   flac  0.6785  dylan96-5-17d1t7.flac
+    11:49.58      125204060 B   ---   --   ---xx   flac  0.6395  dylan96-5-17d1t8.flac
+     8:07.64       86057372 B   ---   --   ---xx   flac  0.5806  dylan96-5-17d1t9.flac
+     7:39.70       81132284 B   ---   --   ---xx   flac  0.6503  dylan96-5-17d2t1.flac
+     7:33.47       80019788 B   ---   --   ---xx   flac  0.5720  dylan96-5-17d2t2.flac
+     8:42.72       92250188 B   ---   --   ---xx   flac  0.6648  dylan96-5-17d2t3.flac
+     9:10.08       97038860 B   ---   --   ---xx   flac  0.6704  dylan96-5-17d2t4.flac
+    11:17.13      119453420 B   ---   --   ---xx   flac  0.6357  dylan96-5-17d2t5.flac
+     5:26.46       57614636 B   ---   --   ---xx   flac  0.6823  dylan96-5-17d2t6.flac
+   116:11.55     1229814464 B                            0.6412  (16 files)
+=================== 
+=================== 
+=================== 

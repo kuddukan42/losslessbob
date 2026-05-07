@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-20b.flacf 
+=================== 
+=================== 
+=================== 
+6f6d0fe3edee19cb13f9307a44d39f97  disc 1\Track01.flac
+f74b47d224127dde224ddab00a36981d  disc 1\Track02.flac
+b6f1098d6897c26966e6122dbab1bbfd  disc 1\Track03.flac
+49cfd44343fc1bcc05e3ff4210c04d6c  disc 1\Track04.flac
+d7056e0ffa10e128df8a10e3e9cf5209  disc 1\Track05.flac
+a12b7f4110ae11d8fbc4fa4ff8d002f4  disc 1\Track06.flac
+198b8b5aad8c1dc781820dd67a3af964  disc 1\Track07.flac
+d908e3aabbb6f02f24173c0129e56b0c  disc 1\Track08.flac
+38f224ed3c68ff61879e4aa7d36d7341  disc 2\Track01.flac
+1f174d6202e32e9a557e9195b593dbbf  disc 2\Track02.flac
+504fc87f5232b7487477cb3e468f91dd  disc 2\Track03.flac
+f1e76d4ce067af9fce0e41b464658cf3  disc 2\Track04.flac
+6a14f1638c0c31515af2049f7b373fb3  disc 2\Track05.flac
+4b20b60e2b05fc400b102cb16de3b848  disc 2\Track06.flac
+4c36224375accbf9e54ee5e79683fe01  disc 2\Track07.flac
+81866d050ac11ef36b2795f438c91dfb  disc 2\Track08.flac
+57a6bcb35888462960c3ccfaf4aba7ec  dylan-crash-on-the-levee-06-20-00.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-20b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:c177797d3b5b1aa877bf14595fad5d91
+Track02.flac:abfe8b83cbbc5c507662dc343207de8c
+Track03.flac:902c322a44dcc43598cdac5ac166e75a
+Track04.flac:8ad89d57f2e00a81ae3cea6dd769aaaf
+Track05.flac:7ba0f40691aaa3d9450f258c0a10efff
+Track06.flac:3daf25755fa637a0cddf3fc9e5e9f97e
+Track07.flac:c62a75f2ef2443f1ee0888f603ab23ab
+Track08.flac:afb21e4dc64c7e9fb5948b85718c385f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-20b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:84aac41d546189cffadefe0c2892781d
+Track02.flac:897490d4febdab52bf9bad419fb6ab89
+Track03.flac:d53d9507fe655fb9e6a230c4836dd199
+Track04.flac:48ef783cb21ca07420fed658dbaca124
+Track05.flac:1386446a84b33c0125c40631558e27a8
+Track06.flac:1c05a9abd483169dcd71cbe2493fab03
+Track07.flac:41ce4337309cfeb01f8c7323ce06e715
+Track08.flac:5abc56622a054ff03f53772f32767e3b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-20b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.10       41124764 B   ---   --   ---xx   flac  0.6764  Track01.flac
+     4:33.47       48267788 B   ---   --   ---xx   flac  0.6196  Track02.flac
+     7:29.41       79300076 B   ---   --   ---xx   flac  0.6552  Track03.flac
+     4:22.22       46268588 B   ---   --   ---xx   flac  0.6395  Track04.flac
+     7:58.39       84410972 B   ---   --   ---xx   flac  0.7157  Track05.flac
+     6:12.20       65667884 B   ---   --   ---xx   flac  0.6471  Track06.flac
+     2:53.66       30672476 B   ---   --   ---xx   flac  0.6867  Track07.flac
+     6:33.02       69329948 B   ---   --   ---xx   flac  0.6511  Track08.flac
+    43:56.22      465042496 B                            0.6631  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-20b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.47       54265388 B   ---   --   ---xx   flac  0.7010  Track01.flac
+     5:46.72       61203788 B   ---   --   ---xx   flac  0.6469  Track02.flac
+     4:36.63       48834620 B   ---   --   ---xx   flac  0.7154  Track03.flac
+     5:46.46       61142636 B   ---   --   ---xx   flac  0.7241  Track04.flac
+     5:56.50       62916044 B   ---   --   ---xx   flac  0.6921  Track05.flac
+     7:23.18       78187580 B   ---   --   ---xx   flac  0.7024  Track06.flac
+     7:51.07       83100908 B   ---   --   ---xx   flac  0.6623  Track07.flac
+     7:09.42       75774428 B   ---   --   ---xx   flac  0.7010  Track08.flac
+    49:38.45      525425392 B                            0.6917  (8 files)
+=================== 
+=================== 
+=================== 

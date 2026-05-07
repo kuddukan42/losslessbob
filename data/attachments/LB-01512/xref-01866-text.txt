@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== Bob Dylan 1992-10-25 Providence, RI (IA045, source for LB-1512).md5
+===================
+===================
+===================
+d4ad1d88d9b8814fbe780b0e9dde8c2f *CD1\01 I Can't Be Satisfied.flac
+dd3d09485b56e4af221fd76d42bb4620 *CD1\02 Dear Landlord.flac
+99b47106aba403f984dc1bc84e918a61 *CD1\03 All Along The Watchtower.flac
+a1ac2934741bf08b573352ae6ad75e20 *CD1\04 Simple Twist Of Fate.flac
+fa156f1ed66dfab7e6701f096448b00b *CD1\05 It Takes A Lot To Laugh.flac
+a2b902351366a9d6c68423699602d26c *CD1\06 Under The Red Sky.flac
+7d49338151abbf7763d0a3cd318b1c38 *CD1\07 Silvio.flac
+90ca59ec65fa390e85ae8f7d76fa95ff *CD1\08 Mama, You Been On My Mind.flac
+b5e266699e7abbaa0304ecf2aba04647 *CD1\09 Boots Of Spanish Leather.flac
+ff1fecb9cc189dcc8c1157cc3e881b2a *CD1\10 Gates Of Eden.flac
+5553b0e5def1ef451281d22869bf626b *CD1\11 Don't Think Twice, It's Alright.flac
+e8c67adba8d1b9406e70fcec9a24633d *CD1\Bob Dylan - Providence, Rhode Island, Oct. 25, 1992, CD1.log
+f3d545311c4b9faacd0fb3efc7a5fc86 *CD2\01 Unbelievable.flac
+a26234cb0031a475ef6b4edd463a2777 *CD2\02 Man In The Long Black Coat.flac
+1851564d7e46e7e08fbe17af0c741d1f *CD2\03 The Times They Are A-Changin'.flac
+bcfe3223b73f7055bde5682c69bbe603 *CD2\04 Maggie's Farm.flac
+f589fc6cef21d6a97c07a4625335d18d *CD2\05 Applause.flac
+ed28183caf6e2c03c50f6fcb4680ce74 *CD2\06 Ballad Of A Thin Man.flac
+ef54c3a5519b4f3f11ffb5f16020e99b *CD2\07 Everything Is Broken.flac
+303aa5db93dc50fd2a8a05704d9fd89b *CD2\08 It Ain't Me, Babe.flac
+57ad490ae554d49a3afe09f23b286b15 *CD2\Bob Dylan - Providence, Rhode Island, Oct. 25, 1992, CD2.log
+8dad4d60abf6cfeb44c3423a01a1b6b9 *Bob Dylan 1992-10-25 Providence, RI (IA045, source for LB-1512).txt
+===================
+===================
+===================
+=== Bob Dylan 1992-10-25 Providence, RI (IA045, source for LB-1512).txt
+===================
+===================
+===================
+Bob Dylan
+Performing Arts Center
+Providence, Rhode Island
+1992-10-25
+
+Improved Air Remasters 045
+
+First circulated 2002-12-22
+This is original source for LB-1512. 
+This is a copy of original audio CDs made by Remasterman of IAR 2017-04-24 and transferred to .flac.
+
+CD1:
+01 I Can't Be Satisfied
+02 Dear Landlord
+03 All Along The Watchtower
+04 Simple Twist Of Fate
+05 It Takes A Lot To Laugh
+06 Under The Red Sky
+07 Silvio
+08 Mama, You Been On My Mind
+09 Boots Of Spanish Leather
+10 Gates Of Eden
+11 Don't Think Twice, It's Alright
+
+CD2:
+01 Unbelievable
+02 Man In The Long Black Coat
+03 The Times They Are A-Changin'
+04 Maggie's Farm
+05 Applause
+06 Ballad Of A Thin Man
+07 Everything Is Broken
+08 It Ain't Me, Babe
+
+Concert # 443 of The Never-Ending Tour.
+Concert # 7 of the 1992 US Fall Tour.
+1992 concert # 79.
+ 
+Concert # 12 with the 8th Never-Ending Tour band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Ian Wallace (drums)
+Winston Watson (drums & percussion).
+===================
+===================
+===================

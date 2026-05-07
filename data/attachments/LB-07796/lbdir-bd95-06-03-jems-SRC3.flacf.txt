@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-03-jems-SRC3.flacf 
+=================== 
+=================== 
+=================== 
+7e7628df1448cae8a8fb7af5223bffe6  01 - Crash On The Levee (Down In The Flood).flac
+baadb3dc8f0b448902f6874fd37165bb  02 - If Not For You.flac
+cc86f12f37fd2fd84c9abe7277c2ef77  03 - All Along The Watchtower.flac
+8b04c4be76f99da84678e949d2b1b30a  04 - Simple Twist Of Fate.flac
+cd198e7d3ebd25b808546ab358a21642  05 - Silvio.flac
+192fe4cb38eb520cf74f1aacb6e3a3cd  06 - It Takes A Lot To Laugh It Takes A Train To Cry.flac
+63ea4e6624e1c413aa4f706cb38a4e05  07 - Mr. Tambourine Man .flac
+577a44aaf074a997685c2144e3c225e8  08 - Gates Of Eden .flac
+b5327f653bedb9183e6ce2e05a3df5f3  09 - It's All Over Now Baby Blue .flac
+d1fb4e1d93ddd6fa41285853cad12754  10 - Seeing The Real You At Last .flac
+c665165fdd309713bbe0545192514cbc  11 - Never Gonna Be The Same Again.flac
+cd803865c7e1b740bae0f29f308e8e65  12 - Ballad Of A Thin Man .flac
+a5b7c734a959e98fcdde143a7bc5dad9  13 - Like A Rolling Stone.flac
+52d2dab7b64df3ae8cfbd6db9d7cd1f4  14 - The Times They Are A-Changin'.flac
+17d8b6da0f1e9e1dcc43ff0d4a0ae941  15 - Rainy Day Women No 12 and 35.flac
+ca30ff0abeb2047f51684466b0e54c2f  Bob Dylan1995-06-03 Seattle SRC3.md5
+ea781942ee8ad6f5df724036dce40112  ffp.txt
+7cd288aaed230ab8fb373e7524f65109  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-03-jems-SRC3.flacf 
+=================== 
+=================== 
+=================== 
+01 - Crash On The Levee (Down In The Flood).flac:b7a384584fe56a3ea1b154a149a02bce
+02 - If Not For You.flac:8e65794d7d482749eaae4d9c4517489c
+03 - All Along The Watchtower.flac:77d1cc82886b7fd9a099b807c14057a2
+04 - Simple Twist Of Fate.flac:51f50473978ec4d690716b3cfecd6ab5
+05 - Silvio.flac:b7a4352ff8cdc1588f2fc200a6ddc848
+06 - It Takes A Lot To Laugh It Takes A Train To Cry.flac:da7bc21d07ff5bea6ddd745ede480e98
+07 - Mr. Tambourine Man .flac:00d57282633caf8f68304e5e467828ff
+08 - Gates Of Eden .flac:e43876139b7e1220a1284282da23a9fe
+09 - It's All Over Now Baby Blue .flac:69733b28c18e18348b0baec306219076
+10 - Seeing The Real You At Last .flac:ca36c798f5a468ce706c0c072cc0d526
+11 - Never Gonna Be The Same Again.flac:cd54e6319f1efc29daea2832331ba92a
+12 - Ballad Of A Thin Man .flac:5e184c9b69adce2c84c82673017d60f8
+13 - Like A Rolling Stone.flac:88dcbad53cd1dab2b2b31e9985761db7
+14 - The Times They Are A-Changin'.flac:f62741599d31501bccb9ea4fd90d4d3a
+15 - Rainy Day Women No 12 and 35.flac:3a4aa91d3c99df494bb94315d731dd9c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-06-03-jems-SRC3.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.09       54881612 B   ---   --   ---xx   flac  0.6628  01 - Crash On The Levee (Down In The Flood).flac
+     4:49.44       51083132 B   ---   --   ---xx   flac  0.6068  02 - If Not For You.flac
+     6:38.61       70350716 B   ---   --   ---xx   flac  0.6670  03 - All Along The Watchtower.flac
+     8:04.15       85412924 B   ---   --   ---xx   flac  0.5852  04 - Simple Twist Of Fate.flac
+     5:26.45       57612284 B   ---   --   ---xx   flac  0.6840  05 - Silvio.flac
+     7:32.30       79803404 B   ---   --   ---xx   flac  0.6231  06 - It Takes A Lot To Laugh It Takes A Train To Cry.flac
+     7:52.22       83312588 B   ---   --   ---xx   flac  0.4831  07 - Mr. Tambourine Man .flac
+     6:17.64       66653372 B   ---   --   ---xx   flac  0.5272  08 - Gates Of Eden .flac
+     7:36.74       80612492 B   ---   --   ---xx   flac  0.4899  09 - It's All Over Now Baby Blue .flac
+     6:05.74       64560092 B   ---   --   ---xx   flac  0.6525  10 - Seeing The Real You At Last .flac
+     8:14.28       87207500 B   ---   --   ---xx   flac  0.5754  11 - Never Gonna Be The Same Again.flac
+    11:10.45      118293884 B   ---   --   ---xx   flac  0.6297  12 - Ballad Of A Thin Man .flac
+     8:08.63       86231420 B   ---   --   ---xx   flac  0.6160  13 - Like A Rolling Stone.flac
+    10:09.01      107429996 B   ---   --   ---xx   flac  0.5829  14 - The Times They Are A-Changin'.flac
+     6:23.55       67690604 B   ---   --   ---xx   flac  0.6275  15 - Rainy Day Women No 12 and 35.flac
+   109:42.30     1161136020 B                            0.5971  (15 files)
+=================== 
+=================== 
+=================== 

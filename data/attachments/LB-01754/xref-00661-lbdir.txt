@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-05-04-IAR025.flacf 
+=================== 
+=================== 
+=================== 
+bc7ebfc9463a620a39584d6517c140e4  CD1\01 Drifter's Escape.flac
+5305012b8bbfade6e59dec9f9ac99af1  CD1\02 The Man In Me.flac
+06ba96f6f71acf65ce5d8c116e91cbf8  CD1\03 All Along The Watchtower.flac
+320a071762e9a19e7454b9874e362f29  CD1\04 I Don't Believe You.flac
+b153d663be6dd67063515ffa6a322440  CD1\05 Watching The River Flow.flac
+f99181a309dba0f5af70d16b2f3b1381  CD1\06 Silvio.flac
+efa75bdf1820904b2d52676e4713c7f4  CD1\07 Mr. Tambourine Man.flac
+8613d5f5fbe94d3b1143b607240c0187  CD1\08 Master's Of War.flac
+93ec958b6999aaaff36569fac4294372  CD1\09 Mama You've Been On My Mind.flac
+2ef7bb75674d8ed06f5f6cb4d824f84c  CD1\CD1.md5
+8daa0db71716289b32e8ec1ad38d3e09  CD2\01 Seein' The Real You At Last.flac
+f43d344ae68784058dd7979476492739  CD2\02 This Wheel's On Fire.flac
+7ac3079d2474203027880cbd6db25271  CD2\03 Maggie's Farm.flac
+d39bb199d2df678fde2f905741aaca26  CD2\04 Alabama Getaway.flac
+3be32cbfcf4b249b934786469c669db0  CD2\05 Times They Are A-Changin.flac
+5c649845810bf9c901003d42f41b3fa9  CD2\06 Rainy Day Women #12 & 35.flac
+ecc911392b39fee9cdf45984240a5121  CD2\CD2.md5
+f1383042c59480db62eae8cd09d834b1  IAR 025 - 1996-05-04 Strawberry Fields.txt
+cf04ff56393d983d167b5b18be80a362  IAR 025 - Richmond, May 4, 1996.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-04-IAR025.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Drifter's Escape.flac:19f2facad4003630ebb8cb2d16985268
+02 The Man In Me.flac:f9873983e98a4e59d893079119b6f183
+03 All Along The Watchtower.flac:5584699ba428a77a428fc2be0e9987b9
+04 I Don't Believe You.flac:6b875b05e650641d77dd263be8f4f999
+05 Watching The River Flow.flac:9ac4493ac207353ad03b1d77102adb79
+06 Silvio.flac:7c815b8eecbfa167fbc606d2d07fc0ad
+07 Mr. Tambourine Man.flac:f2e4ec3cbd8f028a22e4140aebaa741d
+08 Master's Of War.flac:e6dcdf942bac1c659a5fde974c5456ce
+09 Mama You've Been On My Mind.flac:a2c1db9d31bbebd3bff7f9ce72777198
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-04-IAR025.flacf\CD2 
+=================== 
+=================== 
+=================== 
+01 Seein' The Real You At Last.flac:a36d42ed48f0c05a3c8f7cb4eb1db931
+02 This Wheel's On Fire.flac:564c3d5f14f8b938c76bba1b1e7cabe1
+03 Maggie's Farm.flac:4de2012f35d2ff9a6edb8a450a170bd0
+04 Alabama Getaway.flac:fe5a1b79d828327a0eadd546518e056e
+05 Times They Are A-Changin.flac:22f66f8875746302bcf152da34999250
+06 Rainy Day Women #12 & 35.flac:5c3a6407ef6503dcdd09c7f2b508a549
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-04-IAR025.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.27       46985948 B   ---   --   ---xx   flac  0.6059  01 Drifter's Escape.flac
+     5:24.61       57297116 B   ---   --   ---xx   flac  0.5661  02 The Man In Me.flac
+     6:06.50       64680044 B   ---   --   ---xx   flac  0.6175  03 All Along The Watchtower.flac
+     7:36.55       80567804 B   ---   --   ---xx   flac  0.5863  04 I Don't Believe You.flac
+     5:27.20       57729884 B   ---   --   ---xx   flac  0.5680  05 Watching The River Flow.flac
+     6:44.65       71418524 B   ---   --   ---xx   flac  0.6015  06 Silvio.flac
+     9:05.20       96185084 B   ---   --   ---xx   flac  0.5714  07 Mr. Tambourine Man.flac
+     5:35.44       59197532 B   ---   --   ---xx   flac  0.5548  08 Master's Of War.flac
+     6:04.14       64242572 B   ---   --   ---xx   flac  0.5650  09 Mama You've Been On My Mind.flac
+    56:31.56      598304508 B                            0.5815  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-04-IAR025.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:36.34       80518412 B   ---   --   ---xx   flac  0.6070  01 Seein' The Real You At Last.flac
+     6:46.35       71700764 B   ---   --   ---xx   flac  0.5853  02 This Wheel's On Fire.flac
+     8:20.33       88277660 B   ---   --   ---xx   flac  0.6227  03 Maggie's Farm.flac
+     5:57.61       63118316 B   ---   --   ---xx   flac  0.6175  04 Alabama Getaway.flac
+    12:07.15      128278124 B   ---   --   ---xx   flac  0.6096  05 Times They Are A-Changin.flac
+     4:43.53       50045900 B   ---   --   ---xx   flac  0.6004  06 Rainy Day Women #12 & 35.flac
+    45:32.06      481939176 B                            0.6080  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,91 @@
+===================
+===================
+===================
+=== md5 for: bd97-11-07-b.flacf
+===================
+===================
+===================
+ef36444df8e8c5eeccaf64afb2da1711 *Bob Dylan  Columbus  7 nov 1997.txt
+01895f22a4b97556be33616bdbc36dd9 *Bob Dylan 1997-11-07 Columbus OH.md5
+72d442fa82fb0ca4f80cc0bee85b1d63 *columbus_071197.jpg
+c386befae9b397277809f9c40c2c0243 *disc one\01 Maggie's Farm.shn
+2fb3858106f93a4348a5a347236e2137 *disc one\02 Be Not A Stranger.shn
+1b80106e89138897727d08877e677feb *disc one\03 Cold Iron's Bound.shn
+8fa7393be090516cabb354e3c5cd0344 *disc one\04 Under Red Sky.shn
+110b63ec574402d4d821b5c34114a866 *disc one\05 Can't Wait.shn
+f4f5ed5fba4f01a7d842e7255469b3fd *disc one\06 Silvio.shn
+493efaef467c313c2b6e951d86460304 *disc one\07 Roving Gambler.shn
+3b2d5068dd617662ceaab7eaa73207cd *disc one\08 Tangled Up In Blue.shn
+62e0d4a3a8150b1eba76aca85156176a *disc one\09 To Ramona.shn
+f8cb83067cc3efbf10f2e0d6915519c2 *disc one\10 Til I Fell In  Love With You.shn
+d46ce756ef205307b11194ca314a6865 *disc one\11 This Wheel's On Fire.shn
+8f063581e361c65bbc70df0da66a460b *disc one\md5sumD1.md5
+66f42b81fce1f71b714b842bd961cf24 *disc two\12 Leopard-Skin Pill-Box Hat .shn
+8fd600292d8fd9f65fe78d92139ba4a7 *disc two\13 crowd noise .shn
+fe00c81deabd3e908405b5c72c386cc5 *disc two\14 Like A Rolling SAtone.shn
+3399678f696941eb566375665725aef2 *disc two\15 It Ain't Me Babe.shn
+21b93117d80aa233842abf2e5eb08fbe *disc two\16 Love Sick.shn
+4f560f02b6fa164b4b7600a496da0851 *disc two\17 Alabama Getaway.shn
+b4900f2dd8ac1839ebc0b3e0f81a0240 *disc two\md5sumD2.md5
+===================
+===================
+===================
+=== shntool md5/hash for: bd97-11-07-b.flacf
+===================
+===================
+===================
+8aefe036d94a663c32165a2f85a71a52  [shntool]  disc one\01 Maggie's Farm.shn
+c70057c2d8dae49b610ee8bd8b8d7c79  [shntool]  disc one\02 Be Not A Stranger.shn
+3397f5a21b2d8d8b7f406379948b4edc  [shntool]  disc one\03 Cold Iron's Bound.shn
+0b8041d3d4ae60fcc7a6a24e715f05ab  [shntool]  disc one\04 Under Red Sky.shn
+ec3851aabfd0a3fe05633e8167100431  [shntool]  disc one\05 Can't Wait.shn
+79a2000bfadbecbe2dc71fba142a597c  [shntool]  disc one\06 Silvio.shn
+6d8bb40439b84e2747f996cd8e593966  [shntool]  disc one\07 Roving Gambler.shn
+b9591190d08ec00cd4431ea4986a9f60  [shntool]  disc one\08 Tangled Up In Blue.shn
+8a47541e5a074b5a6f9921af447e8aa6  [shntool]  disc one\09 To Ramona.shn
+6b7ad203b800efa1c4acfbb540485dde  [shntool]  disc one\10 Til I Fell In  Love With You.shn
+c7aea1e8812b0d9bd0a537e6cf09127f  [shntool]  disc one\11 This Wheel's On Fire.shn
+8425f4baaa04782acde80702cfb8eecb  [shntool]  disc two\12 Leopard-Skin Pill-Box Hat .shn
+a519be273a3c9f8a0ab0479e6048bb9f  [shntool]  disc two\13 crowd noise .shn
+107e6e4fa139ba3a562edc97c653a6c2  [shntool]  disc two\14 Like A Rolling SAtone.shn
+ba8ed27544bdc3ad5193edac3a89dac8  [shntool]  disc two\15 It Ain't Me Babe.shn
+edb79315daea4dc8c06c9e38aaa813ee  [shntool]  disc two\16 Love Sick.shn
+be1755e550af60c6697702ae5cb9017d  [shntool]  disc two\17 Alabama Getaway.shn
+===================
+===================
+===================
+=== shntool len for: bd97-11-07-b.flacf\disc one
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:47.26       61271996 B   ---   --   ---xx    shn  0.6835  01 Maggie's Farm.shn
+     3:06.36       32895116 B   ---   --   ---xx    shn  0.6753  02 Be Not A Stranger.shn
+     7:18.57       77397308 B   ---   --   ---xx    shn  0.6367  03 Cold Iron's Bound.shn
+     5:32.17       58604828 B   ---   --   ---xx    shn  0.6716  04 Under Red Sky.shn
+     6:12.27       65684348 B   ---   --   ---xx    shn  0.6597  05 Can't Wait.shn
+     7:32.08       79751660 B   ---   --   ---xx    shn  0.6858  06 Silvio.shn
+     4:01.21       42561836 B   ---   --   ---xx    shn  0.6669  07 Roving Gambler.shn
+     8:39.56       91683356 B   ---   --   ---xx    shn  0.7016  08 Tangled Up In Blue.shn
+     6:05.51       64505996 B   ---   --   ---xx    shn  0.6655  09 To Ramona.shn
+     5:53.30       62339804 B   ---   --   ---xx    shn  0.6576  10 Til I Fell In  Love With You.shn
+     6:59.52       74033948 B   ---   --   ---xx    shn  0.6646  11 This Wheel's On Fire.shn
+    67:09.06      710730196 B                            0.6706  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd97-11-07-b.flacf\disc two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.17       77126828 B   ---   --   ---xx    shn  0.6744  12 Leopard-Skin Pill-Box Hat .shn
+     1:40.00       17640044 B   ---   --   ---xx    shn  0.6095  13 crowd noise .shn
+     8:52.00       93844844 B   ---   --   ---xx    shn  0.6440  14 Like A Rolling SAtone.shn
+     7:57.00       84142844 B   ---   --   ---xx    shn  0.5561  15 It Ain't Me Babe.shn
+     6:29.00       68619644 B   ---   --   ---xx    shn  0.5218  16 Love Sick.shn
+     6:40.74       70734092 B   ---   --   ---xx    shn  0.6891  17 Alabama Getaway.shn
+    38:56.16      412108296 B                            0.6176  (6 files)
+===================
+===================
+===================

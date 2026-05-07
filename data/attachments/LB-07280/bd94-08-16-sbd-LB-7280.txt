@@ -1,0 +1,8 @@
+Bob Dylan, 8/16/94, Lewiston, NY, 2CDR
+
+LB-7280, (65min+35min), SBD > ? > Cassette >, DAT > CD >, Exact Audio Copy 0.95 >, FLAC 2007-12-16, LTA fixed:, Amadeus II 3.8.7 >, d1t1 00:29,1:17 level drops; 3:16, 4:05 glitches;, 3:20, 7:11, 7:12 etc numerous clicks, d1t7 4:31 glitch, d1t9 0:36, 4:31, 4:33 clicks;, disc 1/disc 2 continuity restored, d2t4-d2t5 continuity restored, balance corrected (-0.84db on right channel)>, ClickRepair 2.2.1 >, deClick and deCrackle >, bias Peak Pro 5.2.1 >, DC offset removed >, xACT 1.64 >, FLAC (lvl 6) 0.6210 (14 files), FLAC tags, ffp, md5, st5, 2009-03-13, d1t7 @ 3:15 harmonica overload, d1t9 @ 5:06 harmonica holder noise; bittorrent download 03/09; has tv band on d1t4 to end; in comparison to bootleg LB-6872 that is harsher with more hiss and flaws and this is more muffled; (did not listen to all of this)
+
+CD 1, 01 //Jokerman 07:11, 02 If Not for You 08:20, 03 All along the Watchtower 05:42, 04 I Don't Believe You 08:44, 05 Tangled up in Blue 09:19, 06 I'll Be Your Baby Tonight 06:41, 07 Mama, You Been on My Mind 05:30, 08 Masters of War 05:34, 09 The Lonesome Death of Hattie Carroll 07:29, 64:34, CD 2, 01 God Knows 06:17, 02 Man in the Long Black Coat 06:59, 03 Maggie's Farm - Band Introduction 07:37, (encore), 04 Ballad of a Thin Man 07:00, 05 Girl from the North Country 06:35, 34:29, 2CD 99:03
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

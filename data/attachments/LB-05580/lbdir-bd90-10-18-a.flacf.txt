@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-10-18-a.flacf 
+=================== 
+=================== 
+=================== 
+ddf6808f4e3434a4bb115a7e26e184ac  artwork & info\bd1990-10-18-jf.d1t04.sa_fa.JPG
+5acec24cb43c967a987d9dfcf94efb29  artwork & info\bd1990-10-18-JF.lbp51.txt
+15ca28c34048d1db1c0f09a5f79bd3da  artwork & info\Bob Dylan 18 Oct 1990, New York.txt
+9badf5bf8d4cd0c4e293edcad83e5538  artwork & info\newyork_181090_B.jpg
+39e824d8699d60a4a0223573791ed62e  artwork & info\newyork_181090_F.jpg
+f496bde1259f1ffd02d129cd987744a9  artwork & info\The Beacon, NYC Oct 18, 1990_B.jpg
+8b07e0d5fde0d120bbf56a6ee4427f94  artwork & info\The Beacon, NYC Oct 18, 1990_F.jpg
+6de10f88e5e831ff3accfc4e81617a14  CD1\CD1.flac.md5
+ee0e867dd240418a42b15b202f46ce59  CD1\CD1.wav.md5
+5bf60022c1f72a6a3a56465c1571b2a8  CD1\d1.ffp.txt
+fd638685e4d619c7fa4b86b1a6ccb475  CD1\d1.flac-encoding-log-file.txt
+7beac6d75775c142435d5cbdd7d1759c  CD1\Track01.flac
+d8fe87f6100df3ca3d5c03f33bb263f2  CD1\Track02.flac
+402ded24a4bc9fb3425b21d2907bd416  CD1\Track03.flac
+603598e62f195dd3648788f9d535c0d6  CD1\Track04.flac
+73c12afaee0c412e33311cad09d98209  CD1\Track05.flac
+fc042e35d4dcb23058a80ea1c981e70b  CD1\Track06.flac
+e64e1ab90525920d1fdcd938ec1b48d3  CD1\Track07.flac
+361825427a7f17f49f26c915d218cb5a  CD1\Track08.flac
+2f683b39e56d689af6fc18ee1f35f49e  CD1\Track09.flac
+03b465a4dbcbab4e255a7f2371eaff22  CD1\Track10.flac
+fe5565301e579ad480affe82c55b79bb  CD2\CD2.flac.md5
+766b5e22e6347956d904fc3cb0a55394  CD2\CD2.wav.md5
+a151a3ed8b6c5ae94fa4a21b580ff7a0  CD2\d2.ffp.txt
+837d69996422f5aefe0e45742be1d75b  CD2\d2.flac-encoding-log-file.txt
+b9e28f14ab2e31d2113285d63206e64c  CD2\Track01.flac
+1f33928a8a54be85ed2d8e5202524c9e  CD2\Track02.flac
+54dc5d7c5a7ea66bf13fc66eab164951  CD2\Track03.flac
+e1a529f292df4408665e02e4e2e33872  CD2\Track04.flac
+91a60ecc180f57b72bcaee443c4f2cec  CD2\Track05.flac
+5963cd13cfd0a0185a91deb0cd535fc1  CD2\Track06.flac
+a9c8122966641fe6e1f78dbd51663382  CD2\Track07.flac
+b1864b097e4ea2439b47f36f8e88e9cd  CD2\Track08.flac
+dc661bca8d48843ab35119b8906f7cc7  CD2\Track09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-10-18-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+Track01.flac:fde54493caf4f1f269a3ec728a7a0b59
+Track02.flac:8cea290d31529f0abb2778b79914e6fc
+Track03.flac:8e6c7195a7ecb428d1e1f06fbaa2a496
+Track04.flac:9a16e5341187202910bdcfe1c42cfc51
+Track05.flac:fb53e9986377f2809a84cb7fddab938e
+Track06.flac:bbad427465d12b070d75c3ae4bcdd8a5
+Track07.flac:aaa69ee37f7c9830c3753bbdfe39b093
+Track08.flac:db16ba33bf0a148df0103715b7136887
+Track09.flac:3fed82e020c8729a5a90215a5f07b195
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-10-18-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+Track01.flac:6a16b98c9093ea5d4d6d1e573062dfc0
+Track02.flac:84c91d151abfa42beff207588744b1a1
+Track03.flac:3bc938cd3697c47ef81f681e9272c189
+Track04.flac:15aad825e6ee9abaa79c8faa22a9bbe3
+Track05.flac:7bb4ff4052cac803d220f3a67158950a
+Track06.flac:2025ed8511dd4a076720a99e30ffa685
+Track07.flac:6c29b46e3eb32136bfe391b862276aef
+Track08.flac:a6c7853b67afdd421bc29b433a781748
+Track09.flac:55f90a8687ad0b2dac0f5d084a002d70
+Track10.flac:c779fb6062cafc71f970051dec430845
+=================== 
+=================== 
+=================== 
+=== shntool for: bd90-10-18-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.61       55003916 B   ---   --   ---xx   flac  0.6046  Track01.flac
+     5:37.08       59465660 B   ---   --   ---xx   flac  0.6064  Track02.flac
+     2:46.34       29362412 B   ---   --   ---xx   flac  0.6840  Track03.flac
+     3:30.44       37147532 B   ---   --   ---xx   flac  0.6411  Track04.flac
+     3:01.07       31944908 B   ---   --   ---xx   flac  0.6944  Track05.flac
+     4:39.10       49239164 B   ---   --   ---xx   flac  0.6369  Track06.flac
+     6:23.72       67730588 B   ---   --   ---xx   flac  0.7015  Track07.flac
+     6:20.62       67177868 B   ---   --   ---xx   flac  0.6211  Track08.flac
+     4:45.64       50424572 B   ---   --   ---xx   flac  0.6983  Track09.flac
+    42:16.62      447496620 B                            0.6508  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd90-10-18-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.44        7159532 B   ---   --   ---xx   flac  0.6311  Track01.flac
+     0:56.49        9993692 B   ---   --   ---xx   flac  0.6694  Track02.flac
+     3:29.21       36917036 B   ---   --   ---xx   flac  0.7016  Track03.flac
+     4:06.19       43439132 B   ---   --   ---xx   flac  0.6553  Track04.flac
+     5:40.47       60086588 B   ---   --   ---xx   flac  0.6648  Track05.flac
+     5:23.65       57130124 B   ---   --   ---xx   flac  0.6723  Track06.flac
+     4:43.25       49980044 B   ---   --   ---xx   flac  0.7013  Track07.flac
+     8:16.42       87593228 B   ---   --   ---xx   flac  0.6693  Track08.flac
+     5:57.61       63118316 B   ---   --   ---xx   flac  0.6302  Track09.flac
+     4:22.68       46376780 B   ---   --   ---xx   flac  0.5900  Track10.flac
+    43:37.66      461794472 B                            0.6599  (10 files)
+=================== 
+=================== 
+=================== 

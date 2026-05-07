@@ -1,0 +1,53 @@
+===================
+===================
+===================
+=== bd1999-06-26_Las Vegas.md5
+===================
+===================
+===================
+c458547bf00e4182fda8c8bf9adf9d8d     *bd1999-06-26_d1t1.shn
+cbbe7581d493c452a1590502603f3384  *bd1999-06-26_d1t2.shn
+70f0932e3be835e5c5824356483bd7a6  *bd1999-06-26_d1t3.shn
+a7ed02e25e2d0ca1c2f02c3c357fa175   *bd1999-06-26_d1t4.shn
+8f2447a896f5070bba1bd3b42d278b9f    *bd1999-06-26_d1t5.shn
+1cf39682b013963f25786171175236c9   *bd1999-06-26_d1t6.shn
+63fd3cd0f0d93ff36780767d63351622     *bd1999-06-26_d2t1.shn
+cc96618e1ffd39d805e5b03c6b489e17   *bd1999-06-26_d2t2.shn
+a7c7dce9d09281624f7a021a7007f865   *bd1999-06-26_d2t3.shn
+b45e5f31786f70883cc8460a933b80c5   *bd1999-06-26_d2t4.shn
+9506117824ae379d703dc01f0973d4d8  *bd1999-06-26_d2t5.shn
+4f239806970644dad496f87ee11d75cb   *bd1999-06-26_d2t6.shn
+957fa63be60700db8172ebba345d70f3   *bd1999-06-26_d2t7.shn
+===================
+===================
+===================
+=== bd1999-06-26_Las Vegas.txt
+===================
+===================
+===================
+Bob Dylan 
+26 June 1999
+MGM Grand
+Las Vegas, Nevada
+
+*Complete Dylan set only (no Simon or duets) 
+
+DISC ONE 
+1. Hallelujah, I'm Ready To Go (acoustic)
+2. Mr. Tambourine Man (acoustic)
+3. Masters Of War (acoustic) 
+4. Don't Think Twice, It's All Right(acoustic)
+5. Tangled Up In Blue (acoustic)
+6. All Along The Watchtower
+
+DISC TWO 
+1. Just Like A Woman
+2. Stuck Inside Of Mobile With The Memphis Blues Again
+3. Not Dark Yet
+4. Highway 61 Revisited
+5. Like A Rolling Stone
+6. It Ain't Me, Babe (acoustic) 
+7. Not Fade Away 
+===================
+===================
+===================

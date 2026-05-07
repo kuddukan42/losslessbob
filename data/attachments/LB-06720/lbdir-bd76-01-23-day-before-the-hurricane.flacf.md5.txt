@@ -1,0 +1,17 @@
+064c1bf9eed296dbd7d09489443ab74c  bd76-01-23-day-before-the-hurricane-LB-6720.txt
+994b35cb3dfb5fcbe767281b4c059136  bd76-01-23-day-before-the-hurricane-t01.flac
+8f68bfc520ae5e440ccb95e1e7644964  bd76-01-23-day-before-the-hurricane-t02.flac
+e9ff3c4c65975f4eb09b474caf349a4a  bd76-01-23-day-before-the-hurricane-t03.flac
+2858bcdb46652b9cf3ab602acdf5b03f  bd76-01-23-day-before-the-hurricane-t04.flac
+8f9bcb8301c34f8bf4b01174126a6135  bd76-01-23-day-before-the-hurricane-t05.flac
+4736c104483864f34f48e4c50315f0fb  bd76-01-23-day-before-the-hurricane-t06.flac
+9af9ce067639a398f265f604e86325cd  bd76-01-23-day-before-the-hurricane-t07.flac
+0464623116293aba0e0301bf88750f51  bd76-01-23-day-before-the-hurricane-t08.flac
+6ff7faa0b826ab07983cad50c3abccd7  bd76-01-23-day-before-the-hurricane-t09.flac
+33afa4ca0f58b7470a55432cbad6876d  bd76-01-23-day-before-the-hurricane-t10.flac
+ea4c3791a0bf16c40cd1fcc16629dcf4  bd76-01-23-day-before-the-hurricane-t11.flac
+38c653cfd988aa42a4990dc1716adab2  bd76-01-23-day-before-the-hurricane-t12.flac
+d9abe27869dd5c4e1bb3d199ff5fafa8  bd76-01-23-day-before-the-hurricane-t13.flac
+b575ae28de42841b652e87a9b37c070c  bd76-01-23-day-before-the-hurricane-t14.flac
+4aabf6739ff6f87da63b9b247f39dd2a  bd76-01-23-day-before-the-hurricane-t15.flac
+ff9bf8457c74a129100c411b740b8428  bd76-01-23-day-before-the-hurricane.flacf.md5

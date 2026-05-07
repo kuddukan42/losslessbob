@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-04-spartanburg-HG 
+=================== 
+=================== 
+=================== 
+410b7aed98db82780ab016a37a3843e2  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 01).flac
+9b24360c07b6af45292028f41e671294  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 02).flac
+905fd954a7363da5143293d8eb3587ec  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 03).flac
+7ae44a6c6dfef111459ced3d3eb6c516  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 04).flac
+05c6b854b0ca0749795c51ff0036f0e4  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 05).flac
+1d38ea16a102116b469f2078cae7f006  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 06).flac
+b81efa6e1537f0f15016906632846a3c  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 07).flac
+3908059384169e4acf9709aa837d3f7e  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 08).flac
+a677c0f1eab3f2ad1724a0701a4025ab  bd-1996-11-04 spartanburg HG d1\bd-19996-11-04-spartanburg-HG-d1 (Track 09).flac
+c058b47af86d72a5ebc985fb842821e1  bd-1996-11-04 spartanburg HG d2\bd-19996-11-04-spartanburg-HG-d2 (Track 01).flac
+1c15e716df69268692c55385a5e5e13d  bd-1996-11-04 spartanburg HG d2\bd-19996-11-04-spartanburg-HG-d2 (Track 02).flac
+030625d9256d9f4f1cb6a6c0a656337c  bd-1996-11-04 spartanburg HG d2\bd-19996-11-04-spartanburg-HG-d2 (Track 03).flac
+2fd970d39ea62fef4a6435f5f3ca78ff  bd-1996-11-04 spartanburg HG d2\bd-19996-11-04-spartanburg-HG-d2 (Track 04).flac
+6be732519fe8c4ce6a1a1a62e1b7607e  bd-1996-11-04 spartanburg HG d2\bd-19996-11-04-spartanburg-HG-d2 (Track 05).flac
+a0f012a220e5d1fcc2b14697f8f36c9b  bd-1996-11-04 spartanburg HG d2\bd-19996-11-04-spartanburg-HG-d2 (Track 06).flac
+6c96eebb3e4e803482ba0047d8cb0447  bd-1996-11-04-spartanburg-HG-AUD.txt
+524cd541a70597aad7ca22ab58f5ae8f  bd96-11-04-HG.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-04-spartanburg-HG\bd-1996-11-04 spartanburg HG d1 
+=================== 
+=================== 
+=================== 
+bd-19996-11-04-spartanburg-HG-d1 (Track 01).flac:f1c0bc52aa0b650f20340325e5a9027c
+bd-19996-11-04-spartanburg-HG-d1 (Track 02).flac:7b3af0d555d337612325bfb9b43ba885
+bd-19996-11-04-spartanburg-HG-d1 (Track 03).flac:de57914b7c94d0c7a8b8c86c18318ebe
+bd-19996-11-04-spartanburg-HG-d1 (Track 04).flac:815e430c64783b01abe758166bee2812
+bd-19996-11-04-spartanburg-HG-d1 (Track 05).flac:c22ae93a8ef61a83de11ea6148dee33e
+bd-19996-11-04-spartanburg-HG-d1 (Track 06).flac:640261603f230e334ca5b2f25789863f
+bd-19996-11-04-spartanburg-HG-d1 (Track 07).flac:5621eb8fe212dbec02e0b2ba3cd6b831
+bd-19996-11-04-spartanburg-HG-d1 (Track 08).flac:b036d163c1c437814dd8978eb20c63c3
+bd-19996-11-04-spartanburg-HG-d1 (Track 09).flac:2d55c5264d795aed373b6bc07272bb7b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-04-spartanburg-HG\bd-1996-11-04 spartanburg HG d2 
+=================== 
+=================== 
+=================== 
+bd-19996-11-04-spartanburg-HG-d2 (Track 01).flac:482152351c2cff619f31c353b1522357
+bd-19996-11-04-spartanburg-HG-d2 (Track 02).flac:8ec16d33bbeb0dc242f650c379437996
+bd-19996-11-04-spartanburg-HG-d2 (Track 03).flac:e41611e01c7324ac42db6c6a5399d1ab
+bd-19996-11-04-spartanburg-HG-d2 (Track 04).flac:a7493f6406178cb2060fc915e21f8a4e
+bd-19996-11-04-spartanburg-HG-d2 (Track 05).flac:af8c5c1e0bfa802c23d4cbdd8dd1db20
+bd-19996-11-04-spartanburg-HG-d2 (Track 06).flac:b834b8cbb7c6a5a6aacadd0facef553c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-04-spartanburg-HG\bd-1996-11-04 spartanburg HG d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:35.07       48526292 B   -b-   --   ---xx   flac  0.6927  bd-19996-11-04-spartanburg-HG-d1 (Track 01).flac
+     8:03.23       85255340 B   ---   --   ---xx   flac  0.5772  bd-19996-11-04-spartanburg-HG-d1 (Track 02).flac
+     7:09.55       75805004 B   ---   --   ---xx   flac  0.6858  bd-19996-11-04-spartanburg-HG-d1 (Track 03).flac
+     9:25.36       99750716 B   ---   --   ---xx   flac  0.6535  bd-19996-11-04-spartanburg-HG-d1 (Track 04).flac
+     7:54.08       83632460 B   ---   --   ---xx   flac  0.6632  bd-19996-11-04-spartanburg-HG-d1 (Track 05).flac
+     8:50.49       93607292 B   ---   --   ---xx   flac  0.6763  bd-19996-11-04-spartanburg-HG-d1 (Track 06).flac
+     8:15.70       87482684 B   ---   --   ---xx   flac  0.7108  bd-19996-11-04-spartanburg-HG-d1 (Track 07).flac
+     6:33.30       69395804 B   ---   --   ---xx   flac  0.6528  bd-19996-11-04-spartanburg-HG-d1 (Track 08).flac
+     8:08.54       86210232 B   -b-   --   ---xx   flac  0.6781  bd-19996-11-04-spartanburg-HG-d1 (Track 09).flac
+    68:56.32      729665824 B                            0.6643  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-04-spartanburg-HG\bd-1996-11-04 spartanburg HG d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.52       77914900 B   -b-   --   ---xx   flac  0.6489  bd-19996-11-04-spartanburg-HG-d2 (Track 01).flac
+     8:36.64       91172972 B   ---   --   ---xx   flac  0.6583  bd-19996-11-04-spartanburg-HG-d2 (Track 02).flac
+     9:39.08      102154460 B   ---   --   ---xx   flac  0.6968  bd-19996-11-04-spartanburg-HG-d2 (Track 03).flac
+    10:48.58      114443660 B   ---   --   ---xx   flac  0.6718  bd-19996-11-04-spartanburg-HG-d2 (Track 04).flac
+    10:57.34      115974812 B   ---   --   ---xx   flac  0.6820  bd-19996-11-04-spartanburg-HG-d2 (Track 05).flac
+     8:10.49       86551292 B   ---   --   ---xx   flac  0.6744  bd-19996-11-04-spartanburg-HG-d2 (Track 06).flac
+    55:34.40      588212096 B                            0.6734  (6 files)
+=================== 
+=================== 
+=================== 

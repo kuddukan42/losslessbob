@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-06-at853.flacf 
+=================== 
+=================== 
+=================== 
+552327e49f7e1c527668db528ef5d663  bd seattle2001 d101.flac
+df9bebb7aa4d93c7a37f946bc22fbe2d  bd seattle2001 d102.flac
+59b3551aa343885724cb9cb04f2fca4f  bd seattle2001 d103.flac
+99519fccd3a47f1edab70ff63dc0a77e  bd seattle2001 d104.flac
+f908509a5e53f6c01b9506b0aa45374b  bd seattle2001 d105.flac
+fba62527148cc2d494e838cf92385e44  bd seattle2001 d106.flac
+c0c5bf65f2665dc3fabe47cbcfdab41e  bd seattle2001 d107.flac
+04998127980a3bc9d674afd5331a32fe  bd seattle2001 d108.flac
+c6376e9883b0d6dac8818d3e4d9e7bf1  bd seattle2001 d109.flac
+d951cca0724161be0b624aa33c21bb09  bd seattle2001 d110.flac
+be433cb59419acf38ddefd5ec7cbb350  bd seattle2001 d111.flac
+f7fce2abc00b0c5fa47aa01e01cb8690  bd seattle2001 d112.flac
+2d9c5646d71d5603a53e0f3cdcb7123f  bd seattle2001 d113.flac
+5b0b56202e009bb6916003369f267bcf  bd seattle2001 d114.flac
+b7435527154812a36d6931a689eaabf8  bd seattle2001 d201.flac
+6d22a15405f7853211cf21f4f5e34669  bd seattle2001 d202.flac
+66247fb80afabd7e151706ca7b4d6b75  bd seattle2001 d203.flac
+3739539223c020a8f6a7867e16a2a6d5  bd seattle2001 d204.flac
+e90d393623c78c7b6f97f4fdbf6b2a40  bd seattle2001 d205.flac
+2598d9ab275608ca91c87a43c46f7432  bd seattle2001 d206.flac
+254d30d6e2c54ac1a6236bf69fa1a1a4  bd seattle2001 d207.flac
+11084a160641d4e4fd7fd9086be7fd3b  bd01-10-06-at853-LB-2755.txt
+da6c7f126ff7711541964ffd750c8df7  dylan 100601 seattle.txt
+3a26d7c7adc9aebf7a22926131857150  dylan seattle 01.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-06-at853.flacf 
+=================== 
+=================== 
+=================== 
+bd seattle2001 d101.flac:3e2a9e4e1d0e801a577a2cc75af16c03
+bd seattle2001 d102.flac:9dc8739845c24b9b0ca835e2716b5d45
+bd seattle2001 d103.flac:0052d786295dbefe361bd2fc3f4281cb
+bd seattle2001 d104.flac:af9891afcef2c814e32c83ef79103a10
+bd seattle2001 d105.flac:35ee40952fe998c5b25d90882eb54953
+bd seattle2001 d106.flac:5f16c54bc03e0c38272e6a2c986010c4
+bd seattle2001 d107.flac:0dc7fde54ea0ca7a3520fd63c3a12e93
+bd seattle2001 d108.flac:2515e7f9b4003b4cb29c81e3ad164bb6
+bd seattle2001 d109.flac:28f9f3eb7a136c863913f531dec156f6
+bd seattle2001 d110.flac:ac617d6a5048430eb2ccf463980a9712
+bd seattle2001 d111.flac:4e393f1aee076a12ebd30cec00b4d3b6
+bd seattle2001 d112.flac:c3850f8bac34196042eff28c1e055cdd
+bd seattle2001 d113.flac:174720b0c72136b313755b451ff3dd40
+bd seattle2001 d114.flac:557bae7dfe52130bb711b44ce537ff76
+bd seattle2001 d201.flac:5522c1f7a6fb9b1d1722808855e4c589
+bd seattle2001 d202.flac:7ffd50902ea978eef76a55a048bbe79f
+bd seattle2001 d203.flac:c2c218a6d9ecf0cc01a1d6dc8a473735
+bd seattle2001 d204.flac:cc7536132f17e073869b754370b111b4
+bd seattle2001 d205.flac:fcb0d454a81af3464bbf572dad7840a1
+bd seattle2001 d206.flac:c946ae4d482b587091b22772ae1c84fb
+bd seattle2001 d207.flac:59f70446a1c17fa034fe1defbe85de5b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-06-at853.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:27.68       15506780 B   ---   --   ---xx   flac  0.4600  bd seattle2001 d101.flac
+     2:56.36       31131116 B   ---   --   ---xx   flac  0.6160  bd seattle2001 d102.flac
+     5:49.72       61732988 B   ---   --   ---xx   flac  0.5837  bd seattle2001 d103.flac
+     7:27.60       78991964 B   ---   --   ---xx   flac  0.5442  bd seattle2001 d104.flac
+     3:14.53       34346300 B   ---   --   ---xx   flac  0.5286  bd seattle2001 d105.flac
+     5:10.57       54818108 B   ---   --   ---xx   flac  0.5634  bd seattle2001 d106.flac
+     5:28.64       58009772 B   ---   --   ---xx   flac  0.5615  bd seattle2001 d107.flac
+     7:38.06       80805356 B   ---   --   ---xx   flac  0.6196  bd seattle2001 d108.flac
+     4:55.48       52150940 B   ---   --   ---xx   flac  0.4792  bd seattle2001 d109.flac
+     5:18.19       56139932 B   ---   --   ---xx   flac  0.5439  bd seattle2001 d110.flac
+     6:02.10       63880364 B   ---   --   ---xx   flac  0.4586  bd seattle2001 d111.flac
+     9:47.24      103603292 B   ---   --   ---xx   flac  0.5483  bd seattle2001 d112.flac
+     3:29.48       36980540 B   ---   --   ---xx   flac  0.5730  bd seattle2001 d113.flac
+     7:11.67       76186028 B   ---   --   ---xx   flac  0.4009  bd seattle2001 d114.flac
+     5:21.73       56796140 B   ---   --   ---xx   flac  0.6316  bd seattle2001 d201.flac
+     6:43.63       71237420 B   ---   --   ---xx   flac  0.6386  bd seattle2001 d202.flac
+     6:04.12       64237868 B   ---   --   ---xx   flac  0.5706  bd seattle2001 d203.flac
+     8:14.54       87268652 B   ---   --   ---xx   flac  0.6340  bd seattle2001 d204.flac
+     6:29.42       68718428 B   ---   --   ---xx   flac  0.5587  bd seattle2001 d205.flac
+     6:40.65       70712924 B   ---   --   ---xx   flac  0.6535  bd seattle2001 d206.flac
+     7:49.12       82759868 B   ---   --   ---xx   flac  0.5342  bd seattle2001 d207.flac
+   123:23.53     1306014780 B                            0.5609  (21 files)
+=================== 
+=================== 
+=================== 

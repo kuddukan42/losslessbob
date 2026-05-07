@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-03-30-thb.flacf 
+=================== 
+=================== 
+=================== 
+200cb766a4297baf37431f313aa6f417  bd07-03-30-thb-LB-4646.txt
+ca943fff82094d57b7480bccfa82c8e1  bd2007-03-30d1t01.flac
+39df68bf3a2b02510d5458a06a1aad11  bd2007-03-30d1t02.flac
+0c59c6587f5fcac5d0a90c6cd59202cc  bd2007-03-30d1t03.flac
+0f5879fc3c3b74cf95b1babcdd7389c9  bd2007-03-30d1t04.flac
+36e6fd24278ff1bed8291b45eb268623  bd2007-03-30d1t05.flac
+2c803431bfe9a3ec3c505187550eb733  bd2007-03-30d1t06.flac
+65cc4ef4f672e0b9bfd9f9e05b98d420  bd2007-03-30d1t07.flac
+668b1d1244246de537f40fec57596ff5  bd2007-03-30d1t08.flac
+23ac78f7f70b21b8bba55dfa709aa652  bd2007-03-30d1t09.flac
+e6b6cd2449240ff3a771e28ffbe51fe0  bd2007-03-30d1t10.flac
+76d5e628db64eec8328ab1821744aa8e  bd2007-03-30d1t11.flac
+4f9eef17d75635ab9b24de6adbdffb77  bd2007-03-30d2t01.flac
+57c49efc8fef68955a8bfaf037078b3e  bd2007-03-30d2t02.flac
+1d4d4e5e3271f2260785ff64292199e6  bd2007-03-30d2t03.flac
+01196aab2e06468f99e959d3ba8b560a  bd2007-03-30d2t04.flac
+69a83f8ca4a9fb9d495cfb8125d75790  bd2007-03-30d2t05.flac
+05c9e9eb3ff2888c495c107845172968  bd2007-03-30d2t06.flac
+6770284a9c29206e74a504a6be07ecd6  bd2007-03-30fingerprint.txt
+4bc89fc57bd129f5b59de792c9a0c0a1  bd2007-03-30info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-03-30-thb.flacf 
+=================== 
+=================== 
+=================== 
+bd2007-03-30d1t01.flac:5e16a5f89c4d9ccb8fcc8e667afdfc25
+bd2007-03-30d1t02.flac:327421c27092d18e7fc802c28b46a01a
+bd2007-03-30d1t03.flac:1485dc1e4612b2dc3f7d475724135815
+bd2007-03-30d1t04.flac:eb59483e488082038146cf3c46492ce8
+bd2007-03-30d1t05.flac:02aba5fb0dd6869933f3db2786e6a5b4
+bd2007-03-30d1t06.flac:78a6829c0fe888b85b36b4e333265b70
+bd2007-03-30d1t07.flac:d6df52e3bd30aa345039ec9a9bab41a0
+bd2007-03-30d1t08.flac:30298a075dafdd1961cfd6e9e090bbab
+bd2007-03-30d1t09.flac:84b1372274b792597a37b52d01a8c19f
+bd2007-03-30d1t10.flac:4599d0bd902b8362bc0628d9fadeb903
+bd2007-03-30d1t11.flac:9533625bf9aba6accd3c6d4109274248
+bd2007-03-30d2t01.flac:742bd29d662f5003dfb154d51542fbbc
+bd2007-03-30d2t02.flac:08171e5e686c10af249073c374d15c57
+bd2007-03-30d2t03.flac:917973b867beaa3221d7b601beba59e5
+bd2007-03-30d2t04.flac:02d0de3f6a84cae0f54a8e4d26ba1cb5
+bd2007-03-30d2t05.flac:67b92e6d214538110e9c82ce28b06687
+bd2007-03-30d2t06.flac:5ba93595c60a0eaa326d3b471b80f2ac
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-03-30-thb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.05        6362204 B   ---   --   ---xx   flac  0.5499  bd2007-03-30d1t01.flac
+     4:51.68       51492380 B   ---   --   ---xx   flac  0.6477  bd2007-03-30d1t02.flac
+     6:14.30       66044204 B   ---   --   ---xx   flac  0.5694  bd2007-03-30d1t03.flac
+     6:19.70       67020284 B   ---   --   ---xx   flac  0.6454  bd2007-03-30d1t04.flac
+     7:19.37       77526668 B   ---   --   ---xx   flac  0.6274  bd2007-03-30d1t05.flac
+     5:31.19       58433132 B   ---   --   ---xx   flac  0.5057  bd2007-03-30d1t06.flac
+     4:51.67       51490028 B   ---   --   ---xx   flac  0.6621  bd2007-03-30d1t07.flac
+     7:12.52       76327148 B   ---   --   ---xx   flac  0.5448  bd2007-03-30d1t08.flac
+     6:10.63       65416220 B   ---   --   ---xx   flac  0.6261  bd2007-03-30d1t09.flac
+     6:43.31       71162756 B   -b-   --   ---xx   flac  0.6034  bd2007-03-30d1t10.flac
+     6:10.16       65305428 B   -b-   --   ---xx   flac  0.6568  bd2007-03-30d1t11.flac
+     8:28.55       89740604 B   ---   --   ---xx   flac  0.5860  bd2007-03-30d2t01.flac
+     8:17.15       87706124 B   ---   --   ---xx   flac  0.5169  bd2007-03-30d2t02.flac
+     6:04.45       64315484 B   ---   --   ---xx   flac  0.6463  bd2007-03-30d2t03.flac
+     7:31.44       79659932 B   ---   --   ---xx   flac  0.6332  bd2007-03-30d2t04.flac
+     6:39.35       70465964 B   ---   --   ---xx   flac  0.6660  bd2007-03-30d2t05.flac
+     5:21.62       56769168 B   -b-   --   ---xx   flac  0.6580  bd2007-03-30d2t06.flac
+   104:25.39     1105237728 B                            0.6086  (17 files)
+=================== 
+=================== 
+=================== 

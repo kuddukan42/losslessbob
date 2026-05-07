@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd89-08-16-P-Dolphinsmile.flac1648
+===================
+===================
+===================
+6740e524f9b256bafbbd2c81a2c9a4cb *01 Trouble.flac
+81f238786c9aa319dda0af8727299ada *02 Trail Of The Buffalo.flac
+27b2a9378534d1a70f56a8cf1f267800 *03 Queen Jane.flac
+366eb784dd22a5b9a1eb84ee2e1bd80a *04  Just Like A Woman.flac
+2b54f9d364f33088c2caa781becf2508 *05 Youre A Big Girl Now.flac
+bf3cf2576a0091273e7c606dbd397cd9 *06 Highway 61 Revisited.flac
+f89d22fa1cf15644ac0f69bd59941fa9 *07 Love Minus Zero.flac
+88b402121560489c8fbd34f648485fd5 *08 Gates Of Eden.flac
+e68a9f340da45c5d684d32b2f0c27680 *09 Lakes Of The Ponchatrain.flac
+731de41b5ae71db0c2a0b9e974b171ed *10 Girl from the North Country.flac
+6d99dad41760303a4009383f82b68316 *11 Silvio.flac
+c3891ffea6e4efbb0ef242d9d2404962 *12 One Irish Rover.flac
+3b256e5d5ab739b44c8f268cb3791454 *13 Like A Rolling Stone.flac
+f35547415a64df001fbdfeb05a81d6d2 *14 It Aint Me Babe.flac
+5d81671c243dadf627545691ecb68ad2 *15 All Along The Watchtower.flac
+08ed7c13c76bdcbec5e36c060730228b *Bob Dylan Chastain Park Atlanta 1989-08-16 Dolphinsmile Archive.ffp
+ef4977a7206fdb2e45a9b228bb115ead *Bob Dylan Chastain Park Atlanta 1989-08-16 Dolphinsmile Archive.md5
+08ed7c13c76bdcbec5e36c060730228b *Bob Dylan Chastain Park Atlanta 1989-08-16 Dolphinsmile Archive.txt
+c2ef1ede44c95644cad126f8dca443a4 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-08-16-P-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Trouble.flac:1469a38ea360bda11bba9cc7abc7bfa5
+02 Trail Of The Buffalo.flac:01eba6f6c0ed68aacae86350c629b822
+03 Queen Jane.flac:7f867cb0dd8cd51c3ff6aa984109cc52
+04  Just Like A Woman.flac:6fd580708dd38f805961c47007a7dae2
+05 Youre A Big Girl Now.flac:7c4c8153e6df9b62c1d49483992a91f3
+06 Highway 61 Revisited.flac:8ad8fa26e9b3e03f2090883c250c240c
+07 Love Minus Zero.flac:40bc5f89e25fcfc3be0029af75162381
+08 Gates Of Eden.flac:8f5c5c7252a80aadb6df941741e13541
+09 Lakes Of The Ponchatrain.flac:06f8249e0e1518d38ee0663623ec9afb
+10 Girl from the North Country.flac:a6ea362858d4ab8d9949a5e8a75a6db7
+11 Silvio.flac:05a946a04ae0625f3ffa0fa6017d9a2e
+12 One Irish Rover.flac:6c2b8d50311dc7aae9dacc11164fb0cc
+13 Like A Rolling Stone.flac:4215426374563b5d6d31b566ea79dd38
+14 It Aint Me Babe.flac:04497aff054351b7317d704dcfb2419f
+15 All Along The Watchtower.flac:002739b9b53b4e95ba088e7c85534cf8
+===================
+===================
+===================
+=== shntool len for: bd89-08-16-P-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:12.549      71529536 B   cxx   --   ---xx   flac  0.6082  01 Trouble.flac
+     5:17.310      60923592 B   cxx   --   ---xx   flac  0.6103  02 Trail Of The Buffalo.flac
+    11:01.003     126912652 B   cxx   --   ---xx   flac  0.6104  03 Queen Jane.flac
+     7:44.883      89257596 B   cxx   --   ---xx   flac  0.6112  04  Just Like A Woman.flac
+     5:19.551      61353924 B   cxx   --   ---xx   flac  0.6036  05 Youre A Big Girl Now.flac
+     4:17.803      49498144 B   cxx   --   ---xx   flac  0.6525  06 Highway 61 Revisited.flac
+     5:24.218      62249928 B   cxx   --   ---xx   flac  0.5749  07 Love Minus Zero.flac
+     5:25.043      62408268 B   cxx   --   ---xx   flac  0.5757  08 Gates Of Eden.flac
+     5:09.071      59341668 B   cxx   --   ---xx   flac  0.5579  09 Lakes Of The Ponchatrain.flac
+     5:38.730      65036184 B   cxx   --   ---xx   flac  0.5661  10 Girl from the North Country.flac
+     5:38.050      64905732 B   cxx   --   ---xx   flac  0.6167  11 Silvio.flac
+     3:26.103      39571880 B   cxx   --   ---xx   flac  0.5664  12 One Irish Rover.flac
+     6:49.931      78706772 B   cxx   --   ---xx   flac  0.6622  13 Like A Rolling Stone.flac
+     6:22.510      73442000 B   cxx   --   ---xx   flac  0.5705  14 It Aint Me Babe.flac
+     4:20.897      50092320 B   cxx   --   ---xx   flac  0.6235  15 All Along The Watchtower.flac
+    88:07.654    1015230196 B                            0.6022  (15 files)
+===================
+===================
+===================

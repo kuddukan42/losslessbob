@@ -1,0 +1,14 @@
+Bob Dylan, 3/11/95, Prague, Czech Republic, 2CDR
+
+LB-2926, (44min+50min), Norway Remaster; SOURCE: "off master" (aud) recording, LINEAGE: CDR > EAC > WAV > MKW > SHN, SOUND: excellent!, SIZE: 521 MiB, Additional Sound Master (ASM) using T-RackS 2.0, 1. Equalizer band ON: Gain Control: boosted level of corresponding band by +3.3dB, 2. Tube-Comp ON: Input Drive: set at -1.6dB, 3. Multiband-Limiter ON: Compressor Input Drive: increased to +0.2dB, OUTPUT STAGE:, Output Stage Pre-Level: notched up +0.4dB, Global Master Fader: -0.2dB, ALL TRACKS MASTERED AT THESE LEVELS by Norway Remaster (by yours truly); bittorrent download 07/05; not a lot above 17k; same recording as previous with boosted levels in remastering; excellent sound [A]; background talking d2t6
+
+same flaws as source bittorrent
+
+CD1
+01. Crash On The Levee (Down In The Flood), 02. If Not For You, 03. All Along The Watchtower, 04. Just Like A Woman, 05. Tangled Up In Blue, 06. Watching The River Flow, 07. Mr. Tambourine Man, 
+
+CD2
+08. Boots Of Spanish Leather, 09. It's All Over Now, Baby Blue, 10. Man In The Long Black Coat, 11. God Knows, 12. Maggie's Farm, 13. (encore), 14. Shelter From The Storm, 15. It Ain't Me, Babe
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

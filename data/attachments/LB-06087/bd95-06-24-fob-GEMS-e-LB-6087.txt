@@ -1,0 +1,12 @@
+Bob Dylan, 6/24/95, Washington, DC, 2CDR
+
+LB-6087, (54min+49min), version "e"; Opener for Grateful Dead, June 24th and 25th 1995, FOB Digital Audience Recording, Lineage: DAT Master, Recording Equipment: Schoeps CMC54 -> Sonosax Mic Preamp -> HHB PortaDAT, Recording Location: FOB DFC, Recorded By: Adam Gross, Transfer: DAT Master > TASCAM DA-20 (SPDIF out) -> LynxTWO-B Audio Reference, Interface (SPDIF in) -> Wavelab 6.0 by Todd Evans December 15, 2007, Editing and Mastering: Jamie Waddell on the GEMS Edit Station., Weiss Saracon for 16 BIT, 44.1kHz SRC and POWR-3 Dither, Encoding by Dazed64. Tracked in CDwave, FLAC'd Flac Frontend level 8, Tag & Rename for FLAC Meta-Tagging, Art: Gyro & Toaster, A **GEMS** Production www.shnflac.net; bittorrent download 05/08; same as LB-6031 except better transfer so does not have the hundreds of discontinuities on that one; this still has the noise fuzz spectral band above 19k; cdr splits not specified; (did not listen to all of this)
+
+CD1
+Saturday June 24, 1995, Set 1, Drifter's Escape, Pledging My Time, All Along the Watchtower, Positively 4th Street, Silvio, Set 2, Tangled Up In Blue, Girl from the North Country, Don't Think Twice its All Right, 
+
+CD2
+Set 3, God Knows, Joey, Knockin' on Heavens Door, Encore, Highway 61 Revisited, Sunday June 25, 1995, Encore, It Takes A Lot To Laugh It Takes A Train To Cry*, Rainy Day Women # 12 & 35*, *with Jerry Garcia on guitar, last time Garcia and Dylan play together
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

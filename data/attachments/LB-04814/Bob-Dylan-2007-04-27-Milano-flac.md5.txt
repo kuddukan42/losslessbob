@@ -1,0 +1,42 @@
+; Using hkSFV on 05.01.2007 at 17:54:09
+; http://www.big-o-software.com
+;
+;/----
+;         2407 17:29.51 2007-05-01 Bob Dylan 2007-04-27 Milano flac.txt
+;     26573559 00:13.48 2007-05-01 Disc1_Track01.flac
+;     31725910 00:15.12 2007-05-01 Disc1_Track02.flac
+;     41579410 00:16.50 2007-05-01 Disc1_Track03.flac
+;     43417266 00:18.20 2007-05-01 Disc1_Track04.flac
+;     29080862 00:19.58 2007-05-01 Disc1_Track05.flac
+;     37625464 00:20.50 2007-05-01 Disc1_Track06.flac
+;     34073173 00:21.38 2007-05-01 Disc1_Track07.flac
+;     48707538 00:43.24 2007-05-01 Disc1_Track08.flac
+;     51849436 00:44.56 2007-05-01 Disc2_Track01.flac
+;     34810802 00:11.58 2007-05-01 Disc2_Track02.flac
+;     26556647 00:12.52 2007-05-01 Disc2_Track03.flac
+;     36231011 00:13.42 2007-05-01 Disc2_Track04.flac
+;     31062531 00:14.44 2007-05-01 Disc2_Track05.flac
+;     27911776 00:15.16 2007-05-01 Disc2_Track06.flac
+;     51122608 00:16.32 2007-05-01 Disc2_Track07.flac
+;     40905592 00:17.14 2007-05-01 Disc2_Track08.flac
+;     38773232 00:17.54 2007-05-01 Disc2_Track09.flac
+;\----
+;
+2396bad52d2b44476dc8e9a47854de40 *Bob Dylan 2007-04-27 Milano flac.txt
+19243e20c9c01933d0d1f2a6ffb24485 *Disc1_Track01.flac
+f0b8ce908a528df9c56df062f9f08a9f *Disc1_Track02.flac
+1b21ce879370de8ff8d77f229868c1a3 *Disc1_Track03.flac
+58bc9be93feefbdb168bd14c0cb9ef92 *Disc1_Track04.flac
+df2de0440c09858b0d12b33176dca8bd *Disc1_Track05.flac
+a93d7f2929d054e87f8b25c01dc9faf9 *Disc1_Track06.flac
+915fbe0ca0a9c23505617b0308dad5d8 *Disc1_Track07.flac
+3d86f41b21010aaa2e66944a54aff534 *Disc1_Track08.flac
+d9ca4b1da2ea626f20aa687e06ac0636 *Disc2_Track01.flac
+5b3f7a1525ff7b3355e3d6f1a38fe429 *Disc2_Track02.flac
+8a467de772dcb8a4f2a4bc98270f5b22 *Disc2_Track03.flac
+f0a3ccf5425509ebe863f31d90fd3c5e *Disc2_Track04.flac
+5d528ecbb143259dd4d523fad3edd487 *Disc2_Track05.flac
+1ebf6fd9f7f33eff332d4634a2341362 *Disc2_Track06.flac
+7508c8aeca5e7ffc86953fcd4cb09831 *Disc2_Track07.flac
+83b8764369b3a955f2e7e5f6e0ee79be *Disc2_Track08.flac
+486d1debc3a051d708065e687d3c9b6f *Disc2_Track09.flac

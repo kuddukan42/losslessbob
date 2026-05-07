@@ -1,0 +1,140 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-06-22-Mjk5510.flacf 
+=================== 
+=================== 
+=================== 
+bf2029bba705a99f636e2a3db45a10de  bd86-06-22-Mjk5510-LB-4603.txt
+67e0528041d5f2df2a76c43321b3082f  Bob Dylan With Tom Petty.txt
+8c98a62181f7cca8e7a529538f43fc8b  disc one\01 Unknown Track.flac
+8181bcb4fcf2310f126875369ee15a7a  disc one\02 Unknown Track.flac
+32cdbb3ad4717db0eb2f187196c3ab63  disc one\03 Unknown Track.flac
+fa863fdefc287412a7b8ce7521186006  disc one\04 Unknown Track.flac
+acf8c419a36ad0b4945038dfd131c8b1  disc one\05 Unknown Track.flac
+89b2816ac6d86253e666b122604dd93b  disc one\06 Unknown Track.flac
+927c57f61775bd1945d888302dab6cb1  disc one\07 Unknown Track.flac
+2f505682179a1bf1c651f157709deb53  disc one\08 Unknown Track.flac
+2b681a2dc49c089910b5635d44c9d774  disc one\09 Unknown Track.flac
+b46a221fc6067e5bb9146167f818dc6d  disc one\10 Unknown Track.flac
+30a0d671897d367daeb3d0bc39ac26f3  disc one\11 Unknown Track.flac
+f3a1d2dd0629e065bb409b1e055a4c95  disc one\12 Unknown Track.flac
+9bcc503f093ef83c19394aac23331b4f  disc one\13 Unknown Track.flac
+ef755da2557f629750aebad5e4ce5715  disc one\14 Unknown Track.flac
+b2418a77ed35e2c5202a39aa8f598a4d  disc one\15 Unknown Track.flac
+377ad69c495a89f2022bb720c76a39af  disc one\16 Unknown Track.flac
+5fd7413a6fae02c96609a1e1615b351f  disc one\17 Unknown Track.flac
+686f4ec97c91e8375f3e93612529079a  disc two\01 Unknown Track.flac
+7a631f3a400bd21e60e52ed2d4924723  disc two\02 Unknown Track.flac
+ac7474ba51c4671865a0005cb2f1f04d  disc two\03 Unknown Track.flac
+2a4e1335e77e550b2861b677e8e18468  disc two\04 Unknown Track.flac
+03e9c3084ac1c11b1b4ae3cf172d70ad  disc two\05 Unknown Track.flac
+cbe7b30b6bcdba52e577a6707e63ea9c  disc two\06 Unknown Track.flac
+fe4434f4ebeab9ce34988690c600b228  disc two\07 Unknown Track.flac
+e1ebebcd4c1a7b8deb5d495ac9f9436a  disc two\08 Unknown Track.flac
+a4ddd1347e54c04ca8ae4fb8a1b6ce03  disc two\09 Unknown Track.flac
+3f2d8e37d9ccdf60d4b13e0398851138  disc two\10 Unknown Track.flac
+c6f85779c72aca4fb39f4d9ca325d0db  disc two\11 Unknown Track.flac
+607ceb43ecbfe88f22c97dd456361694  disc two\12 Unknown Track.flac
+5f9d088eef99085f25b2bb6ae97b571a  disc two\13 Unknown Track.flac
+1cca640ba22d0e11fe7abbc69f56e3bc  disc two\14 Unknown Track.flac
+1c9e19cdec6b37418d75d05dc1f08212  disc two\15 Unknown Track.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-06-22-Mjk5510.flacf\disc two 
+=================== 
+=================== 
+=================== 
+01 Unknown Track.flac:58c35c98d6086ab2e8730354d038daec
+02 Unknown Track.flac:9fe37cc5afb61b5d0d3995d3fcbb5cb6
+03 Unknown Track.flac:2ce0c4aee6a3243b8d712449a7667e55
+04 Unknown Track.flac:ad5f93b926349b466026616767f77822
+05 Unknown Track.flac:cd26c41f82a3f35b33e640bf4bfbefad
+06 Unknown Track.flac:4886bf3e6b2a52c2dd6c933998118fe3
+07 Unknown Track.flac:2ffc9e1044f6af4759ef33c13531303b
+08 Unknown Track.flac:074d28631e56f747c3f16b907ad0cb90
+09 Unknown Track.flac:0d5736ce5d5d35a02a02a6545d2aab20
+10 Unknown Track.flac:32ea7a1d46dfb602b2e1f759f0462385
+11 Unknown Track.flac:b135659c798ea754fe1556a0d98a1ea2
+12 Unknown Track.flac:1058ece311ef9537caa939ca51e43512
+13 Unknown Track.flac:2a9bade6da0fe9423522b6a8abd721cc
+14 Unknown Track.flac:1bfb8bd3a3c4e06d7fb79f6245de996c
+15 Unknown Track.flac:2fc69699bd770d752bc5cfed3f9d2d0f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-06-22-Mjk5510.flacf\disc one 
+=================== 
+=================== 
+=================== 
+01 Unknown Track.flac:53b306a911801978125b40b22c0b7d80
+02 Unknown Track.flac:ef6a7faf8cd916fca7251d2230f82bc1
+03 Unknown Track.flac:c2cfa32e483d13f53abb53065a89d469
+04 Unknown Track.flac:e97845f1bfd8f9a257cdca50ff606995
+05 Unknown Track.flac:3aff2ccb764fab12d41612db4e681cc3
+06 Unknown Track.flac:a40e783c129e9d7b4eb4fc7925dbc46e
+07 Unknown Track.flac:fd37de9510e2630708ec01f1cb6a5f2f
+08 Unknown Track.flac:45dd061efac5e6cc68c1156f60a8e7e7
+09 Unknown Track.flac:e1de7b66acdca1e4a6cb49db493918ce
+10 Unknown Track.flac:72bbe0b2b963c036ea5759b1304b7b29
+11 Unknown Track.flac:1213cecaa095b5c6edaaa57709ca8cc3
+12 Unknown Track.flac:db06cf20ae8de487af6263203ed7db00
+13 Unknown Track.flac:91ec1fcc77c42628c053fde9e48eea9b
+14 Unknown Track.flac:b67493408dc50c8f5b42b2f788a92162
+15 Unknown Track.flac:b329c37d7d6ed2b3f5ec70683957657e
+16 Unknown Track.flac:3759cf600c25ab918512bf02c109957c
+17 Unknown Track.flac:6a091275858ba80d2f4bb90ad070eca2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-06-22-Mjk5510.flacf\disc two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:48.69       40381532 B   ---   --   ---xx   flac  0.5572  01 Unknown Track.flac
+     3:40.51       38927996 B   ---   --   ---xx   flac  0.5688  02 Unknown Track.flac
+     3:11.35       33774764 B   ---   --   ---xx   flac  0.6048  03 Unknown Track.flac
+     8:12.54       86915852 B   ---   --   ---xx   flac  0.5205  04 Unknown Track.flac
+     3:08.29       33231452 B   ---   --   ---xx   flac  0.6125  05 Unknown Track.flac
+     5:24.66       57308876 B   ---   --   ---xx   flac  0.5875  06 Unknown Track.flac
+     3:05.73       32805740 B   ---   --   ---xx   flac  0.5976  07 Unknown Track.flac
+     4:13.50       44746844 B   ---   --   ---xx   flac  0.5824  08 Unknown Track.flac
+     4:16.42       45257228 B   ---   --   ---xx   flac  0.5518  09 Unknown Track.flac
+     4:51.22       51384188 B   ---   --   ---xx   flac  0.5775  10 Unknown Track.flac
+     6:19.26       66916796 B   ---   --   ---xx   flac  0.5891  11 Unknown Track.flac
+     9:49.61      104043116 B   ---   --   ---xx   flac  0.5874  12 Unknown Track.flac
+     4:31.52       47926748 B   ---   --   ---xx   flac  0.5817  13 Unknown Track.flac
+     2:39.16       28085276 B   ---   --   ---xx   flac  0.5983  14 Unknown Track.flac
+     6:57.23       73612940 B   ---   --   ---xx   flac  0.5861  15 Unknown Track.flac
+    74:11.69      785319348 B                            0.5768  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-06-22-Mjk5510.flacf\disc one 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.20       46969484 B   ---   --   ---xx   flac  0.5737  01 Unknown Track.flac
+     4:01.68       42672380 B   ---   --   ---xx   flac  0.5696  02 Unknown Track.flac
+     2:37.70       27859484 B   ---   --   ---xx   flac  0.5837  03 Unknown Track.flac
+     4:25.32       46821308 B   ---   --   ---xx   flac  0.5656  04 Unknown Track.flac
+     5:30.23       58266140 B   ---   --   ---xx   flac  0.5859  05 Unknown Track.flac
+     3:28.38       36780620 B   ---   --   ---xx   flac  0.5534  06 Unknown Track.flac
+     4:14.18       44847980 B   ---   --   ---xx   flac  0.5780  07 Unknown Track.flac
+     5:23.29       57045452 B   ---   --   ---xx   flac  0.5789  08 Unknown Track.flac
+     4:28.28       47341100 B   ---   --   ---xx   flac  0.5662  09 Unknown Track.flac
+     5:27.32       57758108 B   ---   --   ---xx   flac  0.5449  10 Unknown Track.flac
+     6:42.73       71084540 B   ---   --   ---xx   flac  0.5373  11 Unknown Track.flac
+     3:53.63       41249420 B   ---   --   ---xx   flac  0.5725  12 Unknown Track.flac
+     2:59.64       31726172 B   ---   --   ---xx   flac  0.5603  13 Unknown Track.flac
+     5:21.46       56732636 B   ---   --   ---xx   flac  0.5532  14 Unknown Track.flac
+     3:44.36       39598316 B   ---   --   ---xx   flac  0.5717  15 Unknown Track.flac
+     3:45.73       39861740 B   ---   --   ---xx   flac  0.5983  16 Unknown Track.flac
+     4:56.71       52381436 B   ---   --   ---xx   flac  0.5636  17 Unknown Track.flac
+    75:29.34      798996316 B                            0.5666  (17 files)
+=================== 
+=================== 
+=================== 

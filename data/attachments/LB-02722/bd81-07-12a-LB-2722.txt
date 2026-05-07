@@ -1,0 +1,12 @@
+Bob Dylan, 7/12/81, Copenhagen, Denmark, Brondby-Hallen, 2CDR
+
+LB-2722, (76min+62min), version "a"; SOURCE : "off (CB) master" recording, LINEAGE : cdr shn>mkw wave>Sonic Foundry edit>shntool>mkw shn>me>you, NOTES : excellent sound; bittorrent download 04/05; very similar to previous version except tracked differently and flaw on d2t1 0:08 is different; d1t1 and d2t1 have same md5 signature and get exact eac match up to flaw on d1t2; this does not have the extra Knockin on Heavens door on previous version; (did not listen to all of this one)
+
+analog drop d1t2 0:08 in crowd
+
+DISC ONE [1:15:19], 1 Come On In This House, 2 It's Gonna Rain Again, 3 Show Me The Way Lord, 4 Saved By The Grace Of Your Love (Willie Smith/David Palmer), 5 Blowin' In The Wind, 6 Gotta Serve Somebody, 7 I Believe In You, 8 Like A Rolling Stone, 9 Till I Get It Right (Red Lane/Larry Henley), 10 Man Gave Names To All The Animals (slight blip at edit), 11 Maggie's Farm, 12 Simple Twist Of Fate, 13 Girl Of The North Country, 14 Ballad Of A Thin Man, 15 Dead Man, Dead Man, 16 Walk Around Heaven All Day (Rev James Cleveland/Cassietta George), 17 Let's Begin (Jim Webb), 18 Lenny Bruce, 
+
+DISC TWO [1:01:24], 1 Mr. Tambourine Man, 2 Solid Rock, 3 Just Like A Woman, 4 Watered-Down Love, 5 Forever Young, 6 All Along The Watchtower, 7 Jesus Is The One, 8 In The Garden, 9 band Intro, Garden Outro, audience to encore, 10 Blowin' In The Wind, 11 It Ain't Me, Babe, 12 Knockin' On Heaven's Door
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

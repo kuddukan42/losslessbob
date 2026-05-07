@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-11-10-b.flacf 
+=================== 
+=================== 
+=================== 
+3cb15d63a40854ca42b5687ff5e6a448  BOB DYLAN 1994-11-10 Jackson, Tennessee, Oman Arena.ffp
+7d98373bf56ab25048f727fadd78b67f  disc 1\01.flac
+df1e9a4b35a046043ae9b1092f867dc9  disc 1\02.flac
+b7ce9faf969f99bb28a0a27886455cac  disc 1\03.flac
+5ae95e03a4ebc93f3bf149d7fa12b9f1  disc 1\04.flac
+e02a1f8864d0e8fb5b7feba9776f1e39  disc 1\05.flac
+36258bc7179d92bc8b9636ab8f21a1ef  disc 1\06.flac
+90d2f89acf3ca916c75b20628437cfd1  disc 1\07.flac
+40b5526795dbdd9c23de2ca6d95edb23  disc 1\08.flac
+e4c5e2072df76276b5955daea91936bc  disc 1\09.flac
+543dde5a94d07ddee2a14ba4be197a62  disc 2\01.flac
+0a8679496764d457c9b372d78809c042  disc 2\02.flac
+56e0931933890a15ae1bc38913ebc726  disc 2\03.flac
+6d9295a85b11ae845059c35b7ccb2155  disc 2\04.flac
+71073367700776294a7c1461563135c9  disc 2\05.flac
+8d2c013873ae1d84791a9740d70e9e82  disc 2\06.flac
+b2b371fdef2b5dfd85ab0f4fd06afbe6  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-11-10-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+01.flac:282d1dcef42cd89eb2c70073a34edc54
+02.flac:273d183d7b89edb5466b4ee9cdd17e56
+03.flac:4185ee2d52a01926ca3becc4c745913f
+04.flac:2fbc9ed46459729955b84d5b9e13e51d
+05.flac:43652185e8d74057758cccb30de250b1
+06.flac:4851b874235d4060395afe1d500f9a2e
+07.flac:f9f50c7bd29cc65dbf15dbe857249829
+08.flac:2acdbfc65dbf7bb5d0df48b0ee913d8d
+09.flac:5ef9bb5296632d421289eaf80fc15284
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-11-10-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+01.flac:1012eb567969e13e0ae60ed54c717196
+02.flac:749b623f8c08c09c02223374cce3ecdd
+03.flac:f6505c18bfc92ceab4fff77c8e0f1c80
+04.flac:f91a619e8236c271afdd931b9874068b
+05.flac:275eab5ae734ac4ae67a196b8f8e672f
+06.flac:188134b3f93a71826576dc3a694313db
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-11-10-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:07.25       85964652 B   -b-   --   ---xx   flac  0.5805  01.flac
+     7:11.08       76047260 B   ---   --   ---xx   flac  0.5761  02.flac
+     5:14.55       55519004 B   ---   --   ---xx   flac  0.6068  03.flac
+     8:07.68       86066780 B   ---   --   ---xx   flac  0.5821  04.flac
+     9:10.24       97076492 B   ---   --   ---xx   flac  0.5616  05.flac
+     6:11.37       65531468 B   ---   --   ---xx   flac  0.5044  06.flac
+     5:48.30       61457804 B   ---   --   ---xx   flac  0.4514  07.flac
+     5:21.39       56716172 B   ---   --   ---xx   flac  0.4344  08.flac
+     8:01.44       84951932 B   ---   --   ---xx   flac  0.4897  09.flac
+    63:14.30      669331564 B                            0.5364  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-11-10-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:22.41       88649276 B   ---   --   ---xx   flac  0.5746  01.flac
+     9:28.05      100207004 B   ---   --   ---xx   flac  0.5167  02.flac
+     9:54.07      104798108 B   ---   --   ---xx   flac  0.6024  03.flac
+     8:15.70       87482684 B   ---   --   ---xx   flac  0.5697  04.flac
+    10:08.12      107279468 B   ---   --   ---xx   flac  0.4922  05.flac
+     6:43.66       71244476 B   ---   --   ---xx   flac  0.5452  06.flac
+    52:52.51      559661016 B                            0.5491  (6 files)
+=================== 
+=================== 
+=================== 

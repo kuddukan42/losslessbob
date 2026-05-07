@@ -1,0 +1,10 @@
+b4ee1ac99053f7fe09cbb1e6052e23e6 *bd87-07-endst01.shn
+eaecb3e4038cb564a21efdbfc5ba8377 *bd87-07-endst02.shn
+193797c6aa15099439dcd931dfac2b54 *bd87-07-endst03.shn
+ceb23f70f3af20f0ca2be584a33a0ae1 *bd87-07-endst04.shn
+548c8fcd7b1030ff112103cfbe8196b7 *bd87-07-endst05.shn
+ceb171d1340506abd5d44ed19d2d83b1 *bd87-07-endst06.shn
+a873ee485eb7d481a91277fd002a4b00 *bd87-07-endst07.shn
+ddc67703904f1e0096ef9564d36abee4 *bd87-07-endst08.shn
+53daee31394f1c2a203374b83a6f0d42 *bd87-07-endst09.shn
+cdac709aea49ffaea20fd2acfa42e99a *bd87-07-endst10.shn

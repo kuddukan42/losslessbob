@@ -1,0 +1,35 @@
+bff74af259322687fb8925995efbde09  Artwork & Info\2002-11-11 Madison Square Garden front 800.jpg
+7e6e048816af8273ede24a3dfc403315  Artwork & Info\2002-11-11 Madison Square Garden front inside.jpg
+546d35bd2c7b586f92776096ae375f40  Artwork & Info\2002-11-11 Madison Square Garden front.jpg
+9793b63511ffba9569b49942639a2a6c  Artwork & Info\2002-11-11 Madison Square Garden rear inside 800.jpg
+2aa1c7bbb800fdcd0c7280c77729c6eb  Artwork & Info\2002-11-11 Madison Square Garden rear inside.jpg
+1abf5185ed9b1c4e18b35657b45a65a1  Artwork & Info\2002-11-11 Madison Square Garden rear.jpg
+aaf4c1d26e7b6ad7de0451049c5ed59a  Artwork & Info\2002-11-11 Madison Square Garden, New York City, New York.txt
+3f3a780b4d60d16150ddcadb58cf2d50  Artwork & Info\EAC log disc 1.LOG
+0b2689c4a64ece73516375386199aeb1  Artwork & Info\EAC log disc 2.LOG
+08a127d477f332dfc8a15cef8a4044f4  CD1\00 Announcement.flac
+37effffe48320cd0f7c4669693860682  CD1\01 Tweedle Dee and Tweedle Dum.flac
+3ab9e592b7b8963b65335f7f3ddd9bbb  CD1\02 Yea! Heavy and a bottle of bread.flac
+76a1d5312aafbeaea85d733760455488  CD1\03 Tombstone blues.flac
+7ac7adeb898f162d8f8947fbf9dc7dbf  CD1\04 The end of the innocence.flac
+c6bc01e791db6a5d6c25bf872d3ead23  CD1\05 Things have changed.flac
+a58386c116d1e75d5390bfc623be43d1  CD1\06 Brown sugar.flac
+70561d0ce5c5f7e15993b9f4c5d2c9ce  CD1\07 Masters of war.flac
+a52a8b67fc5d43573fc582cd27627f86  CD1\08 It's alright, ma (I'm only bleeding).flac
+b29c0ae83d058362680f0bbc2b74606a  CD1\09 Just like a woman.flac
+515edaa7037c79eabdbdb8c904471eb4  CD1\10 Drifter's escape.flac
+f0a941e82923e814cad2ad6190be0d32  CD1\11 Shelter from the storm.flac
+ef9df88cc97b134a09d3bd4636bbe209  CD1\12 Old man.flac
+99d71d0c2508006ef53065b5be28736b  CD1\FLAC CD1.md5
+9b6b0c11eb57cd353cca7a1203512861  CD2\13 Honest with me.flac
+79edfaded669ed68a378717df19dd14c  CD2\14 The lonesome death of Hattie Carroll.flac
+ea64ff4d3c4dc09a0a3312a9d8fd3e23  CD2\15 High water (for Charley Patton).flac
+69c7fd4332e3ba8692af540d4affcd37  CD2\16 Mutineer.flac
+679663c3b6182ceb87a9c26e6e9280ae  CD2\17 Bye and bye.flac
+f99303f3af5c54401a0d4888d2d33984  CD2\18 Summer days.flac
+e096e05d7312b25695ec9cc6a5500ac3  CD2\19 Knockin' on heaven's door.flac
+d40acbf7ac9a632a62f89c17875584d7  CD2\20 All along the watchtower.flac
+afa46fef2ef1f63baf05d3398606f0a9  CD2\21 Ballad of a thin man [bonus track].flac
+3ec4b0e3bd239b309a281bd1c88a90ff  CD2\22 Boots of Spanish leather [bonus track].flac
+acb1bd1ea6eff752c82c6b8f97f72ca4  CD2\23 My back pages [bonus track].flac
+6f2199d436592cf0ca7264a094503e46  CD2\FLAC CD2.md5

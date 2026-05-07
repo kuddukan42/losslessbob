@@ -1,0 +1,137 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Meadow Village Pavilion
+Big Sky, Montana
+
+16 July 2003
+
+1.Maggie's Far
+2.Tonight I'll Be Staying Here With You
+3.Tweedle Dee & Tweedle Dum
+4.Just Like A Woman
+5.Things Have Changed
+6.Watching The River Flow
+7.It's Alright, Ma (I'm Only Bleeding)
+8.It Ain't Me, Babe
+9.Dignity
+10.Drifter's Escape
+11.Make You Feel My Love
+12.Honest With Me
+13.Bye And Bye
+14.Summer Days
+
+15.Like A Rolling Stone
+16.All Along The Watchtower
+
+Concert # 1528 of The Never-Ending Tour. Concert # 4 of the 2003 US Summer Tour. 2003 concert # 38.
+
+Concert # 27 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+
+7, 8 acoustic with the band.
+
+4, 6, 10, 11, 16 Bob Dylan (harmonica).
+
+2, 4  Larry Campbell (pedal steel guitar).
+
+6, 12 Larry Campbell (slide guitar).
+
+7, 8 Larry Campbell (cittern).
+
+Notes.
+
+LB-number for this concert: LB-1114, LB-1118, LB-1142, LB-1380.
+
+First concert in Big Sky, Montana.
+
+7 new songs (43%) compared to previous concert. 3 new songs for this tour.
+
+Stereo audience recording, 105 minutes.
+
+Session info updated 3 June 2009. 
+
+www.bjorner.com
+
+CDr < XLD < flac < Dime
+apa05
+===================
+===================
+===================
+=== notes.txt
+===================
+===================
+===================
+CEDAR Notes:
+
+CEDAR #1
+
+FINGERPRINT
+Near the beginning of "Just Like a Woman," a woman asks, "Are you writing down the setlist?" Also, about halfway into the same song, a man on the right says, "I've had better days..." and a conversation continues through the rest of the song.
+
+COMMENTS
+Quite nice sounding show, but with constant crowd chatter, some of it obtrusive.
+===================
+===================
+===================
+=== shntool.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     0:37.33        6604460 B   ---   --   ---xx  01 Bob Dylan - Intro.flac     4:44.57       50231708 B   ---   --   ---xx  02 Bob Dylan - Maggie's Farm.flac     4:13.60       44770364 B   ---   --   ---xx  03 Bob Dylan - Tonight I'll Be Staying Here With You.flac     5:10.24       54740492 B   ---   --   ---xx  04 Bob Dylan - Tweedle Dee & Tweedle Dum.flac     7:29.48       79316540 B   ---   --   ---xx  05 Bob Dylan - Just Like A Woman.flac     6:25.15       67949324 B   ---   --   ---xx  06 Bob Dylan - Things Have Changed.flac     5:21.36       56709116 B   ---   --   ---xx  07 Bob Dylan - Watching The River Flow.flac     7:24.18       78363980 B   ---   --   ---xx  08 Bob Dylan - It's Alright, Ma (I'm Only Bleeding).flac     6:57.72       73728188 B   ---   --   ---xx  09 Bob Dylan - It Ain't Me, Babe.flac     5:38.30       59693804 B   ---   --   ---xx  01 Bob Dylan - Dignity.flac     4:42.72       49914188 B   ---   --   ---xx  02 Bob Dylan - Drifter's Escape.flac     4:57.00       52390844 B   ---   --   ---xx  03 Bob Dylan - Make You Feel My Love.flac     6:34.42       69600428 B   ---   --   ---xx  04 Bob Dylan - Honest With Me.flac     5:59.21       63377036 B   ---   --   ---xx  05 Bob Dylan - Bye And Bye.flac     8:20.57       88334108 B   ---   --   ---xx  06 Bob Dylan - Summer Days.flac     3:27.00       36514844 B   ---   --   ---xx  07 Bob Dylan - Cheering.flac     7:02.21       74490236 B   ---   --   ---xx  08 Bob Dylan - Like A Rolling Stone.flac     6:39.45       70489484 B   ---   --   ---xx  09 Bob Dylan - All Along The Watchtower.flac   101:46.51     1077219144 B                            0.5056  (18 files)
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - Intro.flac:c6f53d68d104bf0c1aa1d7234117429d02 Bob Dylan - Maggie's Farm.flac:0e118cdfb08aa43e7e94595bc11e272603 Bob Dylan - Tonight I'll Be Staying Here With You.flac:a50b30bcee75eeeece7474ec6f44c51a04 Bob Dylan - Tweedle Dee & Tweedle Dum.flac:a29e3d33904a62ea84e77acfdccc10a305 Bob Dylan - Just Like A Woman.flac:06c84a3a67d95f2b285b4b05856d024906 Bob Dylan - Things Have Changed.flac:78247510e31ace9227b5c386008e3b7607 Bob Dylan - Watching The River Flow.flac:0e45b2f562a2f5e653d5436acbeb161208 Bob Dylan - It's Alright, Ma (I'm Only Bleeding).flac:1486407245e2a635745d6d2a702a297e09 Bob Dylan - It Ain't Me, Babe.flac:b531d6bf216ad5a1b43bfb99b565dbae
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+1bc2e4e53030eb060905a9a1b9eb82ec *01 Bob Dylan - Intro.flac
+121b4181fe30989bd886464e1e3f7522 *02 Bob Dylan - Maggie's Farm.flac
+634eb42651d37590686dac00c0381dc2 *03 Bob Dylan - Tonight I'll Be Staying Here With You.flac
+910e1578532b368de13f932c484c9a59 *04 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
+0a5532a6a67a6b264c2e6065f26bda3f *05 Bob Dylan - Just Like A Woman.flac
+520d73bacf3ac38e9cbf72af17733391 *06 Bob Dylan - Things Have Changed.flac
+326615ef0df8391231774ce9fb6f528d *07 Bob Dylan - Watching The River Flow.flac
+73bbd6f9e7a77231e66f79d229d8f36e *08 Bob Dylan - It's Alright, Ma (I'm Only Bleeding).flac
+c59e958f3129d56cbe10d3815facbbe4 *09 Bob Dylan - It Ain't Me, Babe.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - Dignity.flac:af0136630eb25b3f8c72c84050c5b91802 Bob Dylan - Drifter's Escape.flac:cf1d6cd6ec0f8f767d70f4918e628f6903 Bob Dylan - Make You Feel My Love.flac:253b6e1e3cc1d9808f00c9ec38211ddc04 Bob Dylan - Honest With Me.flac:90372fb8b9920a67659b7d48bf62a7bf05 Bob Dylan - Bye And Bye.flac:95a99abf580788276452a1e249dd05ee06 Bob Dylan - Summer Days.flac:c27e54a7752bc322871693a5a2818aae07 Bob Dylan - Cheering.flac:c86cd814925a9c3864259265e55f036508 Bob Dylan - Like A Rolling Stone.flac:5615cc662a5cada5312b6f28b83fbc5a09 Bob Dylan - All Along The Watchtower.flac:d1e9629589eb62b3bb452252cfa932ed
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+28edcd4e9f4a74e19db3074ecc616f35 *01 Bob Dylan - Dignity.flac
+81d49a3c4198361450abb8c7dd6c5a1f *02 Bob Dylan - Drifter's Escape.flac
+93839da378abc50d9c1a27206d669f22 *03 Bob Dylan - Make You Feel My Love.flac
+a135276feaa93ef04b668d721f8b991f *04 Bob Dylan - Honest With Me.flac
+7f7700bff34671908e24eace07d92702 *05 Bob Dylan - Bye And Bye.flac
+56868f1a4e901db1169c144261aeaa87 *06 Bob Dylan - Summer Days.flac
+3bc6bd9937de44c18dbc4c09a991adf5 *07 Bob Dylan - Cheering.flac
+d9056a64eed177aa10dc58bee9b0103b *08 Bob Dylan - Like A Rolling Stone.flac
+df516901926b78efa25a644852f6dace *09 Bob Dylan - All Along The Watchtower.flac
+
+===================
+===================
+===================

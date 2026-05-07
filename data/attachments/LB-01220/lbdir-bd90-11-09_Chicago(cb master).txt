@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-11-09_Chicago(cb master) 
+=================== 
+=================== 
+=================== 
+b0559e1592a8e65e6cdad383e144234a  bd90-11-09.txt
+ed1132cad84ec23fec1aa39a634bff4e  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 01.shn
+5ae23aeb3f86cbc76632a85ae1dfc044  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 10.shn
+da8f5fb59338d1362d1b3a2fb36d3b55  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 11.shn
+f5a40b4bdd883725849646b472e3c565  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 12.shn
+167029131333791b571a819140ee235c  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 13.shn
+29c88afc8fcf958529731e82c3cb35f9  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 14.shn
+a8861eaa8c21d88265ae0687d15af1bd  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 15.shn
+ce08a8c482baf9179ecedd26790bbb58  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 16.shn
+5d831983d3ead9bad0b7b1d9161f77fc  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 2.shn
+a4dc198f37b8eaa818b808de64a86e14  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 3.shn
+8775b5d629755c9afc02cafb9fef559c  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 4.shn
+7f4c9b37b75e720db395f77b8c154fc7  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 5.shn
+a12af16e485cb35645928f35ef03626e  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 6.shn
+8e63e99384383ce00bc887bab2efddeb  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 7.shn
+390f6fe35c1ec80de2ccc7ce48aab47c  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 8.shn
+dbbf063a7a781fb452782ddcb1a91407  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_Track 9.shn
+31a74681e7e040c40c6570ceadca471d  bd_90-11-09_cd1.shnf\bd_90-11-09_cd1_shn.md5
+5221137807b7fc292c7f3bfa3846ce77  bd_90-11-09_cd2.shnf\bd_90-11-09_cd2_Track 1.shn
+5215674886ed6477921781fdd28d85f1  bd_90-11-09_cd2.shnf\bd_90-11-09_cd2_Track 2.shn
+af4b903f74de6e3343079cbc6bd7247a  bd_90-11-09_cd2.shnf\bd_90-11-09_cd2_Track 3.shn
+fa92c8fb8037099943fdc7ee84495c65  bd_90-11-09_cd2.shnf\bd_90-11-09_cd2_Track 4.shn
+de06733c426e3a5cb4aa107bf6b59adf  bd_90-11-09_cd2.shnf\bd_90-11-09_cd2_Track 5.shn
+a908290bb77fded0c5ae867571f8d826  bd_90-11-09_cd2.shnf\bd_90-11-09_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-11-09_Chicago(cb master)\bd_90-11-09_cd1.shnf 
+=================== 
+=================== 
+=================== 
+83ea620e9b631dff657030a505f0e9ce  [shntool]  bd_90-11-09_cd1_Track_01.wav
+64434ffc15d157f5a1aace0284146b66  [shntool]  bd_90-11-09_cd1_Track_2.wav
+9b10410b8b4d5f1a89ce4f422e8037e3  [shntool]  bd_90-11-09_cd1_Track_3.wav
+90b36726d700088efc4abfb38670a841  [shntool]  bd_90-11-09_cd1_Track_4.wav
+3813c40a6605d35b5567dcead9eddee7  [shntool]  bd_90-11-09_cd1_Track_5.wav
+9240c26aa3e4e728b1596dad1610d0f9  [shntool]  bd_90-11-09_cd1_Track_6.wav
+03e378b1c1c09301371e62e89f4235ae  [shntool]  bd_90-11-09_cd1_Track_7.wav
+8d5b9018ce75cfb5e0664335c351c569  [shntool]  bd_90-11-09_cd1_Track_8.wav
+3ab1eb87f23398576142dcef33456c72  [shntool]  bd_90-11-09_cd1_Track_9.wav
+ebb77af8531b40d76b610f998b6112bd  [shntool]  bd_90-11-09_cd1_Track_10.wav
+15e4f6fe49fc5f44b18546fcb7e71673  [shntool]  bd_90-11-09_cd1_Track_11.wav
+cac991730bf7f24dc5b69afa5e9aa302  [shntool]  bd_90-11-09_cd1_Track_12.wav
+3cbfbc4e504891dda34a3135ab0339ed  [shntool]  bd_90-11-09_cd1_Track_13.wav
+a556c2435d4110acb6d481fb86ebcc99  [shntool]  bd_90-11-09_cd1_Track_14.wav
+562ec9fe44a6feb4f5aae2fb51f854eb  [shntool]  bd_90-11-09_cd1_Track_15.wav
+90fc0ab846291d6baa136627797e4d4b  [shntool]  bd_90-11-09_cd1_Track_16.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-11-09_Chicago(cb master)\bd_90-11-09_cd2.shnf 
+=================== 
+=================== 
+=================== 
+8e5d384fa94e44b41cd938c48e889414  [shntool]  bd_90-11-09_cd2_Track_1.wav
+9c43c2d2cc77b0db7c2db5632d111e65  [shntool]  bd_90-11-09_cd2_Track_2.wav
+a6de0ba08d5598f645cf184dc8b5546d  [shntool]  bd_90-11-09_cd2_Track_3.wav
+d95fd0a6091c652fc5bb26061254ccae  [shntool]  bd_90-11-09_cd2_Track_4.wav
+91243419f95e826192b77d20a8220705  [shntool]  bd_90-11-09_cd2_Track_5.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-09_Chicago(cb master)\bd_90-11-09_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:19.53       14060382 B   ---   -e   ---xx    shn  0.5699  bd_90-11-09_cd1_Track 01.shn
+     5:32.27       58628430 B   ---   -e   ---xx    shn  0.6082  bd_90-11-09_cd1_Track 10.shn
+     4:47.00       50626926 B   ---   -e   ---xx    shn  0.5959  bd_90-11-09_cd1_Track 11.shn
+     5:45.27       60921630 B   ---   -e   ---xx    shn  0.5693  bd_90-11-09_cd1_Track 12.shn
+     2:24.26       25462878 B   ---   -e   ---xx    shn  0.6659  bd_90-11-09_cd1_Track 13.shn
+     6:13.61       65940798 B   ---   -e   ---xx    shn  0.6699  bd_90-11-09_cd1_Track 14.shn
+     3:20.39       35371854 B   ---   -e   ---xx    shn  0.6837  bd_90-11-09_cd1_Track 15.shn
+     3:43.29       39405534 B   ---   -e   ---xx    shn  0.5888  bd_90-11-09_cd1_Track 16.shn
+     4:56.38       52303902 B   ---   -e   ---xx    shn  0.6854  bd_90-11-09_cd1_Track 2.shn
+     4:41.36       49653198 B   ---   -e   ---xx    shn  0.6302  bd_90-11-09_cd1_Track 3.shn
+     4:21.46       46148718 B   ---   -e   ---xx    shn  0.6892  bd_90-11-09_cd1_Track 4.shn
+     4:18.29       45579534 B   ---   -e   ---xx    shn  0.6646  bd_90-11-09_cd1_Track 5.shn
+     4:02.21       42738318 B   ---   -e   ---xx    shn  0.6677  bd_90-11-09_cd1_Track 6.shn
+     3:54.19       41322414 B   ---   -e   ---xx    shn  0.6219  bd_90-11-09_cd1_Track 7.shn
+     5:43.40       60599406 B   ---   -e   ---xx    shn  0.6697  bd_90-11-09_cd1_Track 8.shn
+     2:58.43       31500462 B   ---   -e   ---xx    shn  0.5959  bd_90-11-09_cd1_Track 9.shn
+    68:03.09      720264384 B                            0.6385  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-09_Chicago(cb master)\bd_90-11-09_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.73       36686622 B   ---   -e   ---xx    shn  0.6810  bd_90-11-09_cd2_Track 1.shn
+     5:36.61       59413998 B   ---   -e   ---xx    shn  0.6159  bd_90-11-09_cd2_Track 2.shn
+     6:34.04       69511134 B   ---   -e   ---xx    shn  0.6696  bd_90-11-09_cd2_Track 3.shn
+     6:02.24       63913374 B   ---   -e   ---xx    shn  0.6013  bd_90-11-09_cd2_Track 4.shn
+     5:24.17       57193710 B   ---   -e   ---xx    shn  0.6386  bd_90-11-09_cd2_Track 5.shn
+    27:05.29      286718838 B                            0.6385  (5 files)
+=================== 
+=================== 
+=================== 

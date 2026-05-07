@@ -1,0 +1,66 @@
+===================
+===================
+===================
+=== md5 for: bd96-06-15-Dolphinsmile.flac1648
+===================
+===================
+===================
+efb373a7423643f9313610b9c98e4eb4 *01 New Minglewood Blues.flac
+61f31b674d052d063e218d3522831088 *02 Pretty Peggy O.flac
+b04f47f06b5b301ba27dcde5eaeb8cb6 *03 All Along The Watchtower.flac
+4216ded767aa629fcfecc1227d140b5b *04 Positively Fourth Street.flac
+878ed57a99ffecd04746e57558434b88 *05 Silvio.flac
+c1ae7467393162a0e476f6aa238b33ab *06 Tamborine Man.flac
+c9977ce8eff60ab78d45d761fe09b57d *07 Masters Of War.flac
+ca4752884b704e1cc153acdf325863f8 *08 Dont Think Twice.flac
+8b9e49c2f041068a0db8f2b1f5104ed9 *09 Friend Of The Devil.flac
+0451ebab7aceb7c0b61e59139cd1a604 *10 Highway 61.flac
+a6c9f6bd751ac20082d78067ff95bed0 *11 Girl From The North Country.flac
+c7428c1ea5112050ea2f522974fddcdb *12 RDW.flac
+e79ef2b46950bf49f522eb01e8eb74fb *Bob Dylan Aarhus Festival at Tangkrugen DK 1996-06-15 Dolphinsmile Archive.ffp
+1425c383bda612d9fd9e5c7ed7555e7a *Bob Dylan Aarhus Festival at Tangkrugen DK 1996-06-15 Dolphinsmile Archive.md5
+e79ef2b46950bf49f522eb01e8eb74fb *Bob Dylan Aarhus Festival at Tangkrugen DK 1996-06-15 Dolphinsmile Archive.txt
+b2bdb4d9e4872316d2715ad0f1836785 *info.txt
+===================
+===================
+===================
+=== ffp for: bd96-06-15-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 New Minglewood Blues.flac:84ffb5f6ecd1902244c864fd4f6f1484
+02 Pretty Peggy O.flac:145634b37c113b530afcae14e3a5d412
+03 All Along The Watchtower.flac:ea1b79dcdb28c78674d4bbc1724030b0
+04 Positively Fourth Street.flac:0f2d846dfe48174c9676aeb2b169f233
+05 Silvio.flac:db3ac8dc58afe70440019d9d5eca95ac
+06 Tamborine Man.flac:fe94fe7fbb91278cd641ba554b91c611
+07 Masters Of War.flac:3f2b6c2232528986209a83508d8ab539
+08 Dont Think Twice.flac:0a5a46257b227b5e6769a766aad50837
+09 Friend Of The Devil.flac:3c8f50c7652621f1139f258edec4ebe0
+10 Highway 61.flac:94fd8451edfb4d33c711a96b0ed6d281
+11 Girl From The North Country.flac:372313adaaabdd38e3469d5d7b253cdc
+12 RDW.flac:c74dc657e8be5655c80b71c69d569df0
+===================
+===================
+===================
+=== shntool len for: bd96-06-15-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:28.995      63167032 B   cxx   --   ---xx   flac  0.5759  01 New Minglewood Blues.flac
+     7:10.232      82604664 B   cxx   --   ---xx   flac  0.5409  02 Pretty Peggy O.flac
+     6:12.777      71573208 B   cxx   --   ---xx   flac  0.5931  03 All Along The Watchtower.flac
+    10:30.551     121065848 B   cxx   --   ---xx   flac  0.5700  04 Positively Fourth Street.flac
+     6:55.480      79772284 B   cxx   --   ---xx   flac  0.6039  05 Silvio.flac
+     8:51.409     102030596 B   cxx   --   ---xx   flac  0.5453  06 Tamborine Man.flac
+     6:28.536      74599020 B   cxx   --   ---xx   flac  0.5373  07 Masters Of War.flac
+     6:29.998      74879644 B   cxx   --   ---xx   flac  0.6099  08 Dont Think Twice.flac
+     7:31.210      86632420 B   cxx   --   ---xx   flac  0.5835  09 Friend Of The Devil.flac
+     9:54.369     114118952 B   cxx   --   ---xx   flac  0.6196  10 Highway 61.flac
+     9:52.635     113785980 B   cxx   --   ---xx   flac  0.5583  11 Girl From The North Country.flac
+     4:50.487      55773636 B   cxx   --   ---xx   flac  0.5528  12 RDW.flac
+    90:16.681    1040003284 B                            0.5747  (12 files)
+===================
+===================
+===================

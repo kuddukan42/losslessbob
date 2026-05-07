@@ -1,0 +1,21 @@
+8d1f5e6a2cddc153802e276fece75ade  Bob Dylan 2001-04-25 d1\Track01.flac
+84b7e727fd5621965a041df26ef3371e  Bob Dylan 2001-04-25 d1\Track02.flac
+0845e28e71b84d46ba81eba3bceecce2  Bob Dylan 2001-04-25 d1\Track03.flac
+c617309e4979184de99825bc624d541a  Bob Dylan 2001-04-25 d1\Track04.flac
+8afd70c379efeca2d0868d52770ec659  Bob Dylan 2001-04-25 d1\Track05.flac
+705e63e0eaafc0c623014cbb0f0ab067  Bob Dylan 2001-04-25 d1\Track06.flac
+a5b960df212a299e1d1fd92db8433b6c  Bob Dylan 2001-04-25 d1\Track07.flac
+1a683a4b519110866bb018af912d580e  Bob Dylan 2001-04-25 d1\Track08.flac
+1816d6bfab631863cbf0554bef313b2b  Bob Dylan 2001-04-25 d1\Track09.flac
+e372965201931c1e61a53f037958c779  Bob Dylan 2001-04-25 d1\Track10.flac
+95ca605a6a0279b7dbd0390a80b4bcd5  Bob Dylan 2001-04-25 d1\Track11.flac
+1a32d4763099d94a44f34cd429f33fe5  Bob Dylan 2001-04-25 d2\Track01.flac
+b6c650640f15e307c167070746362af5  Bob Dylan 2001-04-25 d2\Track02.flac
+da3be47c3a4d532b2e25dab10cd4dde8  Bob Dylan 2001-04-25 d2\Track03.flac
+057874e3df582f961fb2922b27168e6e  Bob Dylan 2001-04-25 d2\Track04.flac
+4556247c97c69946298f6f70b8389a16  Bob Dylan 2001-04-25 d2\Track05.flac
+e198f6d91d776b4b4586ae1f70c149e9  Bob Dylan 2001-04-25 d2\Track06.flac
+cbb1552a4d1f96edf6130101ad07616c  Bob Dylan 2001-04-25 d2\Track07.flac
+c5d2e53fae91a12cf8212e9b137e26fa  Bob Dylan 2001-04-25 d2\Track08.flac
+60a4f0c9689a55490ad5c204d6d1aa72  Bob Dylan 2001-04-25 Southeast Missouri State University, Cape Girardeau.md5
+506dad60dc65fc2882ed78b9c7f3e917  info.txt

@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-10-22a_Kingston.aud.flacf 
+=================== 
+=================== 
+=================== 
+ca9793ee8f500cc5dfe183c3b579f3cb  bd89-10-22_Kingston.aud.flacf.md5
+6673827a8f790c4164dfa882bf8fc996  bd89-10-22_Kingston.aud.flacf.txt
+c7aacc2b03322fe5ecee4473c0e10460  bd89-10-22a.txt
+53d5e84d742839c62ecd5e02b1ca2005  bd89-10-22d1t01.flac
+32a1c53977f304bea49eef38c49023ec  bd89-10-22d1t02.flac
+ee3717d448f40fdadb830a75c2781205  bd89-10-22d1t03.flac
+3a321279ecb27f2e1ddb96a3c4dd1875  bd89-10-22d1t04.flac
+1f4046cc64c7ebf652c0fb1c1e95a47f  bd89-10-22d1t05.flac
+2c5f36ad84647ffe3108faea615d1297  bd89-10-22d1t06.flac
+3d6ef8192b64fb845a6e1c3ed6701910  bd89-10-22d1t07.flac
+79f33222d60a1a7aeff0377ef5c6df2f  bd89-10-22d1t08.flac
+f4068f3cd4bde7f892195a75020c1174  bd89-10-22d2t01.flac
+0d96946e00ceb9fb1e39b7aa21584566  bd89-10-22d2t02.flac
+f1db0d5051a0e0f6fb9a8aeba979b3e5  bd89-10-22d2t03.flac
+66e3423e253418406dec6a4453824665  bd89-10-22d2t04.flac
+f716ee043415ed39825c2d9ee9392ba0  bd89-10-22d2t05.flac
+a0d9768fcdb8bdde9b1401da053dea6b  bd89-10-22d2t06.flac
+2d695fd2ae7e89a697fdb4fcb1575dfb  bd89-10-22d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-10-22a_Kingston.aud.flacf 
+=================== 
+=================== 
+=================== 
+bd89-10-22d1t01.flac:eb5b951fc433e58c088b615a401840f4
+bd89-10-22d1t02.flac:d5167e6b34329253f7968434f70ccf81
+bd89-10-22d1t03.flac:0b5ac560421edb1a33156a353968a6c0
+bd89-10-22d1t04.flac:81e0858fe54d62c4339c7caf46c43fb3
+bd89-10-22d1t05.flac:9fd9b12c6fc1b3ba55274d239a5d065d
+bd89-10-22d1t06.flac:ee4e2553885c6b9d4913a8088027c6da
+bd89-10-22d1t07.flac:87d9b224e4bae2648eb8df803007d07d
+bd89-10-22d1t08.flac:32eac555a8b92c5121dca4c2b5c7796d
+bd89-10-22d2t01.flac:cb7adc9d9bd22b789cab8065731cd323
+bd89-10-22d2t02.flac:d78f8f534ea7f43112ec2426b1dff69c
+bd89-10-22d2t03.flac:f633cda027f42cb70888705b7aa13e50
+bd89-10-22d2t04.flac:838d2a17643ce798f9c9da6864e7f251
+bd89-10-22d2t05.flac:1fed7605c57d5e1d7ee23bf9398cf67b
+bd89-10-22d2t06.flac:536d909640e6018e97f6b73bbb5c8c28
+bd89-10-22d2t07.flac:2b06dc3b05ebda9f33a8a4685adaf311
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-10-22a_Kingston.aud.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.24       44509292 B   ---   --   ---xx   flac  0.6382  bd89-10-22d1t01.flac
+     4:16.23       45212540 B   ---   --   ---xx   flac  0.6053  bd89-10-22d1t02.flac
+     5:37.14       59479772 B   ---   --   ---xx   flac  0.6283  bd89-10-22d1t03.flac
+     4:53.40       51779324 B   ---   --   ---xx   flac  0.6209  bd89-10-22d1t04.flac
+     6:12.58       65757260 B   ---   --   ---xx   flac  0.6325  bd89-10-22d1t05.flac
+     6:34.46       69609836 B   ---   --   ---xx   flac  0.6642  bd89-10-22d1t06.flac
+     8:27.45       89540684 B   ---   --   ---xx   flac  0.5823  bd89-10-22d1t07.flac
+     7:21.01       77794796 B   ---   --   ---xx   flac  0.5878  bd89-10-22d1t08.flac
+     7:05.41       75066476 B   ---   --   ---xx   flac  0.5837  bd89-10-22d2t01.flac
+     6:03.62       64179068 B   ---   --   ---xx   flac  0.5998  bd89-10-22d2t02.flac
+     4:04.31       43114556 B   ---   --   ---xx   flac  0.6351  bd89-10-22d2t03.flac
+     4:07.15       43606124 B   ---   --   ---xx   flac  0.6193  bd89-10-22d2t04.flac
+     6:30.17       68836028 B   ---   --   ---xx   flac  0.6518  bd89-10-22d2t05.flac
+     5:28.56       57990956 B   ---   --   ---xx   flac  0.6044  bd89-10-22d2t06.flac
+     5:00.56       53051756 B   ---   --   ---xx   flac  0.6518  bd89-10-22d2t07.flac
+    85:56.04      909528468 B                            0.6181  (15 files)
+=================== 
+=================== 
+=================== 

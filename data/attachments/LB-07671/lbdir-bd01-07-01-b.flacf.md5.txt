@@ -1,0 +1,22 @@
+acbf8d22d5dcbeb80e709d57d0d1019d  Bob Dylan 2001-07-01 d1\Track01.flac
+4f578b1d372bd3978476464f43ef5dab  Bob Dylan 2001-07-01 d1\Track02.flac
+23c85ba3ae4b304ab834a1a469f781b2  Bob Dylan 2001-07-01 d1\Track03.flac
+8bf0ee85fc9cce656c45e671fc8a1448  Bob Dylan 2001-07-01 d1\Track04.flac
+fb39a68cc65f153ae58b6a5d3419c334  Bob Dylan 2001-07-01 d1\Track05.flac
+4cc8962e530fcde18434f6f972c8b678  Bob Dylan 2001-07-01 d1\Track06.flac
+da882d4c5ec13c6cf2f96f61ba4a87c7  Bob Dylan 2001-07-01 d1\Track07.flac
+727e672aa24d612167feeca46fbb5ccf  Bob Dylan 2001-07-01 d1\Track08.flac
+1584a844fab46c7a09b7e0254308b0f4  Bob Dylan 2001-07-01 d1\Track09.flac
+b14fe37d4927568d045a68725bc22a01  Bob Dylan 2001-07-01 d1\Track10.flac
+7d5e61027aff28fcbd0af9d51dfd1002  Bob Dylan 2001-07-01 d1\Track11.flac
+d9fd9c36d70badda5d51d0cdf9c80bbe  Bob Dylan 2001-07-01 d2\Track01.flac
+3873fb2d6c62da159c97ca5182f2a5ea  Bob Dylan 2001-07-01 d2\Track02.flac
+53032385240f9702f8a59ed9458838cd  Bob Dylan 2001-07-01 d2\Track03.flac
+09b63e9e70029f3b88bf6d226c62f0a4  Bob Dylan 2001-07-01 d2\Track04.flac
+1958bc76b87eba85791757bd0c2992d9  Bob Dylan 2001-07-01 d2\Track05.flac
+75ceb526be924413ed313c119126cc67  Bob Dylan 2001-07-01 d2\Track06.flac
+bbd4707486380f1196e5e12b434b8368  Bob Dylan 2001-07-01 d2\Track07.flac
+7b52e4a9ba6df97b901b8474aa5ee584  Bob Dylan 2001-07-01 d2\Track08.flac
+2126037270e78c4c098825cf0e85bdca  Bob Dylan 2001-07-01 d2\Track09.flac
+219982cb7c337933198015257c1b42b6  Bob Dylan-2001-07-01 Sofiero, Helsingborg, Sweden   [LB-4040 derived].md5
+2662d98d6f2f6f098157025d4d38e8bd  info.txt

@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-16-Neumann-Km184.flacf 
+=================== 
+=================== 
+=================== 
+1cc8bf3cf3dbb76f3ecdad7038179ece  dylan2000-06-16.txt
+385259973808ed97447fceafa74ee7a0  dylan2000-06-16d1t01.flac
+9afd2270afcfaaade90387b8840d82b7  dylan2000-06-16d1t02.flac
+606ed84f87a180d6ebf23ca8f64dda50  dylan2000-06-16d1t03.flac
+c3a16226f702f98d752beab77bf23b49  dylan2000-06-16d1t04.flac
+5456b8dd2899ba367c45f078b24d18ac  dylan2000-06-16d1t05.flac
+b4174c8013d2c779f263eaf9709c1d64  dylan2000-06-16d1t06.flac
+76883fdd493d83862fc6be198f8acbba  dylan2000-06-16d1t07.flac
+84adb32b48b1ecb2072bcd081d6ecbeb  dylan2000-06-16d1t08.flac
+ce0c5d95ee87afb3e5d8ec3550b2d59e  dylan2000-06-16d2t01.flac
+53f5e52505213feb6c2610043e6bb129  dylan2000-06-16d2t02.flac
+d36706f6baefb480a625774a7dae6dcf  dylan2000-06-16d2t03.flac
+54a8f330f68a8d0d40835059a06a3be0  dylan2000-06-16d2t04.flac
+9cc5afab40763625e7d6bb3572769ed0  dylan2000-06-16d2t05.flac
+dc595dd19ba1f2e8a29085c54999ea96  dylan2000-06-16d2t06.flac
+ff27cbc9843861e15b2c0d8c330f03e9  dylan2000-06-16d2t07.flac
+52812ac9fb74093d9f13227fdbbf209f  dylan2000-06-16d2t08.flac
+9f488a8985cfce2ebd1ea30800354289  dylan2000-06-16d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-16-Neumann-Km184.flacf 
+=================== 
+=================== 
+=================== 
+dylan2000-06-16d1t01.flac:527dc10d9dfd7a1f233b9b205d4e9818
+dylan2000-06-16d1t02.flac:b47b365380220eec52c67ab9c1dcdfd0
+dylan2000-06-16d1t03.flac:11182f8ff30e999165a7c4f0ea58fec9
+dylan2000-06-16d1t04.flac:d377f94dbd52ad2ded4d3f58a60ac445
+dylan2000-06-16d1t05.flac:ed7efb32490462298ae93d524c8e7a0c
+dylan2000-06-16d1t06.flac:a1d3c577da6bda78d8a3574403d63e2b
+dylan2000-06-16d1t07.flac:7b4170450540438b68015e0d74074e48
+dylan2000-06-16d1t08.flac:3861e6fcbc1e524c8755f327faab3745
+dylan2000-06-16d2t01.flac:7d7e8ebf8ecc2e07f8f66a98323c5918
+dylan2000-06-16d2t02.flac:bb178e151d078f919af4044df23a114f
+dylan2000-06-16d2t03.flac:d9b8a96606f2bf6306d37ebb3756543b
+dylan2000-06-16d2t04.flac:6e2c4ad18cd88f23f9b200f035f50724
+dylan2000-06-16d2t05.flac:1cc473af6493d416d0a8d643f710f33b
+dylan2000-06-16d2t06.flac:05b163c8438c40c845454ebec3236664
+dylan2000-06-16d2t07.flac:b2541f1b9467c6e937fa2a9015ce848e
+dylan2000-06-16d2t08.flac:92008c9101a8ee330b8edcd6a5fa30f7
+dylan2000-06-16d2t09.flac:d0da66337cc086c94f212b452eff4c27
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-16-Neumann-Km184.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:31.40       26730524 B   ---   --   ---xx   flac  0.6347  dylan2000-06-16d1t01.flac
+     3:17.26       34811996 B   ---   --   ---xx   flac  0.6056  dylan2000-06-16d1t02.flac
+     5:00.30       52990604 B   ---   --   ---xx   flac  0.5752  dylan2000-06-16d1t03.flac
+     7:13.57       76515308 B   ---   --   ---xx   flac  0.6632  dylan2000-06-16d1t04.flac
+     4:45.04       50283452 B   ---   --   ---xx   flac  0.5966  dylan2000-06-16d1t05.flac
+     4:55.35       52120364 B   ---   --   ---xx   flac  0.5934  dylan2000-06-16d1t06.flac
+     2:58.06       31413356 B   ---   --   ---xx   flac  0.6354  dylan2000-06-16d1t07.flac
+     5:39.71       59966636 B   ---   --   ---xx   flac  0.6314  dylan2000-06-16d1t08.flac
+     7:51.37       83171468 B   ---   --   ---xx   flac  0.6591  dylan2000-06-16d2t01.flac
+     5:01.43       53197580 B   ---   --   ---xx   flac  0.6192  dylan2000-06-16d2t02.flac
+     4:18.27       45574748 B   ---   --   ---xx   flac  0.6798  dylan2000-06-16d2t03.flac
+     0:26.03        4593500 B   ---   --   ---xx   flac  0.5877  dylan2000-06-16d2t04.flac
+     5:57.63       63123020 B   ---   --   ---xx   flac  0.6568  dylan2000-06-16d2t05.flac
+     6:10.19       65312732 B   ---   --   ---xx   flac  0.6425  dylan2000-06-16d2t06.flac
+     7:08.12       75527468 B   ---   --   ---xx   flac  0.6338  dylan2000-06-16d2t07.flac
+     8:30.49       90079292 B   ---   --   ---xx   flac  0.5285  dylan2000-06-16d2t08.flac
+     6:40.31       70632956 B   ---   --   ---xx   flac  0.6321  dylan2000-06-16d2t09.flac
+    88:26.28      936045004 B                            0.6228  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96 11 12 dubuque 
+=================== 
+=================== 
+=================== 
+7d847c047a5ed1d3ae2d7612f5408db9  bd96 11 12 d1 t01.shn
+49d391c2943d48079e6c29319d9941c4  bd96 11 12 d1 t02.shn
+8f82123ac29e06f10cd7d4660ce74bcc  bd96 11 12 d1 t03.shn
+6b358bc702ee53c0d42a03b7883c57ea  bd96 11 12 d1 t04.shn
+50d5f2b375df471ec4d9504a2752c3cd  bd96 11 12 d1 t05.shn
+64c2fcefa9b7552898cc34c339915a1d  bd96 11 12 d1 t06.shn
+91ac4e604b0063e739536f3d7936a80c  bd96 11 12 d1 t07.shn
+2e89dcd6343749502108fb836b727d08  bd96 11 12 d2 t01.shn
+5a70b34db209b003b4f2135a86af3920  bd96 11 12 d2 t02.shn
+f0ed4b0be3921afa87f811124c5f8707  bd96 11 12 d2 t03.shn
+48d5c4540c25ca6f82f60144bec0f4e1  bd96 11 12 d2 t04.shn
+9c22c109c31ae3f40f9b9c335445faf2  bd96 11 12 d2 t05.shn
+624fdd3343d951eb041dca99720a897e  bd96 11 12 d2 t06.shn
+d2e6a2b61d91349892f8fe5093971eed  bd96 11 12 d2 t07.shn
+37509bc2bd66af6cc3088c7bdbd55640  bd96 11 12 d2 t08.shn
+8a4670ecbb472dcb7559b607f01b7a0f  bd96 11 12.md5
+a28a90957ccd8cf63a65d789e7597814  bd96-11-12.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96 11 12 dubuque 
+=================== 
+=================== 
+=================== 
+8c794362d85c1d8912b61115d706ec23  [shntool]  bd96_11_12_d1_t01.wav
+5ebccd3990f9a32105f14aa3c3656275  [shntool]  bd96_11_12_d1_t02.wav
+5a54ad03e0b2fd123876b158534f40db  [shntool]  bd96_11_12_d1_t03.wav
+5a6035abaea7303c9e1d9189ea2e387a  [shntool]  bd96_11_12_d1_t04.wav
+01a93358810a3995c148dbda8210db61  [shntool]  bd96_11_12_d1_t05.wav
+a5268e9706d714f7f8dc6ee48820a088  [shntool]  bd96_11_12_d1_t06.wav
+d900fdc95284dfdb258c0d62bc7abeea  [shntool]  bd96_11_12_d1_t07.wav
+1a8b661495495c5ad52a1c734525b55d  [shntool]  bd96_11_12_d2_t01.wav
+c42f6626fd49097f045691a760ef6783  [shntool]  bd96_11_12_d2_t02.wav
+ac87bc4cc573fee2624a7872ea760490  [shntool]  bd96_11_12_d2_t03.wav
+fdff7287f3e5fc5296452018ce3fba13  [shntool]  bd96_11_12_d2_t04.wav
+60bc52f236bb67acf178ab2f0e860623  [shntool]  bd96_11_12_d2_t05.wav
+f3021637fbfdc6110247569b3a79b89d  [shntool]  bd96_11_12_d2_t06.wav
+a0564e2eec8f16446011c904dda48e74  [shntool]  bd96_11_12_d2_t07.wav
+b685b74e216d62522a936797d20ddc2c  [shntool]  bd96_11_12_d2_t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96 11 12 dubuque 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:59.01       84497996 B   ---   --   ---xx    shn  0.5953  bd96 11 12 d1 t01.shn
+    10:36.58      112326860 B   ---   --   ---xx    shn  0.5948  bd96 11 12 d1 t02.shn
+     6:38.15       70242524 B   ---   --   ---xx    shn  0.5726  bd96 11 12 d1 t03.shn
+     7:57.11       84168716 B   ---   --   ---xx    shn  0.6450  bd96 11 12 d1 t04.shn
+    12:14.40      129571724 B   ---   --   ---xx    shn  0.5966  bd96 11 12 d1 t05.shn
+    11:36.24      122830892 B   ---   --   ---xx    shn  0.5908  bd96 11 12 d1 t06.shn
+     8:25.23       89136140 B   ---   --   ---xx    shn  0.5508  bd96 11 12 d1 t07.shn
+     4:56.08       52233260 B   ---   --   ---xx    shn  0.6009  bd96 11 12 d2 t01.shn
+     6:01.57       63814508 B   ---   --   ---xx    shn  0.5781  bd96 11 12 d2 t02.shn
+     9:58.47      105597788 B   ---   --   ---xx    shn  0.6057  bd96 11 12 d2 t03.shn
+     6:03.22       64084988 B   ---   --   ---xx    shn  0.5886  bd96 11 12 d2 t04.shn
+     9:33.46      101185436 B   ---   --   ---xx    shn  0.6055  bd96 11 12 d2 t05.shn
+     7:53.45       83543084 B   ---   --   ---xx    shn  0.6364  bd96 11 12 d2 t06.shn
+     9:25.42       99764828 B   ---   --   ---xx    shn  0.6259  bd96 11 12 d2 t07.shn
+     5:57.26       63035996 B   ---   --   ---xx    shn  0.5694  bd96 11 12 d2 t08.shn
+   125:17.15     1326034740 B                            0.5983  (15 files)
+=================== 
+=================== 
+=================== 

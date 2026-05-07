@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-01-26-jtt.flacf 
+=================== 
+=================== 
+=================== 
+64225c8f19dc8f69ce118dc935815b11  Disc One\Disc01Track01 Omaha 26.01.80.flac
+9be769139d5ba12a31a0d6cc60f3b827  Disc One\Disc01Track02 Omaha 26.01.80.flac
+48c158f5e98a193812764f011ade3340  Disc One\Disc01Track03 Omaha 26.01.80.flac
+355c806e7d3e5fc794df3a5c136f5b6b  Disc One\Disc01Track04 Omaha 26.01.80.flac
+d9e0c281db77aa46caa165dfe25de729  Disc One\Disc01Track05 Omaha 26.01.80.flac
+4dafbba76b07108136c8e93a49808fdf  Disc One\Disc01Track06 Omaha 26.01.80.flac
+362ce7c236892324e1acf863e4632f09  Disc One\Disc01Track07 Omaha 26.01.80.flac
+f9b50af2ed5aee73b28ce586abc81fa2  Disc One\Disc01Track08 Omaha 26.01.80.flac
+445367c774cf0305135df337562fe5b7  Disc Two\Disc02Track01 Omaha 26.01.80.flac
+c2cf0a8fd6720399bcfe9f6137265f0d  Disc Two\Disc02Track02 Omaha 26.01.80.flac
+b0b4b69629275597fc7a25b1db333403  Disc Two\Disc02Track03 Omaha 26.01.80.flac
+2a533bf9280e6ee81abb2e7854d2dfde  Disc Two\Disc02Track04 Omaha 26.01.80.flac
+9a82f9093a1774c1c24bb5a099e81251  Disc Two\Disc02Track05 Omaha 26.01.80.flac
+3e7c7425b9b7b05192191a127b47556d  Disc Two\Disc02Track06 Omaha 26.01.80.flac
+f9c93ec348d6402339efe8e17ab5e5cc  Disc Two\Disc02Track07 Omaha 26.01.80.flac
+7e36abd66130d393b1373c6bf841994e  Disc Two\Disc02Track08 Omaha 26.01.80.flac
+8751d23ec49bb8707e02ae6de438f0c4  Disc Two\Disc02Track09 Omaha 26.01.80.flac
+d4c9a97227c09e4ddbceff3663c17e62  Dylan - Omaha January 26th 1980.md5
+3fe701f32e7bd508584ffa0d65fcf3d6  Dylan - Omaha January 26th 1980.txt
+277bd2cc10f5ef01433253bed07259d9  Dylan - Omaha January 26th 1980_Info.txt
+4daebdc1ffe1a2b9982833b5609ba9b4  Omaha, Nebraska 26.01.1980 - F.jpg
+c75d5f597c1e9b0c1d63a53a5e95d359  Omaha, Nebraska 26.01.1980 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-01-26-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Omaha 26.01.80.flac:633bf8ac8094957a253bbd3e04d4ac62
+Disc01Track02 Omaha 26.01.80.flac:22832f5ab1ee1ada07d970c8cd88edc8
+Disc01Track03 Omaha 26.01.80.flac:a4a96492eee5dc55b7ec0dc2e00bfd8a
+Disc01Track04 Omaha 26.01.80.flac:e44ab61e2b1fbf8d17f7085e25826452
+Disc01Track05 Omaha 26.01.80.flac:24abac8303c003f8a900624a86347e5a
+Disc01Track06 Omaha 26.01.80.flac:0cf6adf8c8a628cf27ca748a83d54d6f
+Disc01Track07 Omaha 26.01.80.flac:3cd6119b2e7dd59e6880b310463baa39
+Disc01Track08 Omaha 26.01.80.flac:78a40b88bd4b874c905ee39b3a09e8ca
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-01-26-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Omaha 26.01.80.flac:951a091bba15a80687a44d8bad89c792
+Disc02Track02 Omaha 26.01.80.flac:f2b0dc30f43cb6b4ba0c6c1194a764b1
+Disc02Track03 Omaha 26.01.80.flac:27d9ed2d98451ef5f14c37e2828db10a
+Disc02Track04 Omaha 26.01.80.flac:0c890a112efba5bb73f3fd00cd8edaa1
+Disc02Track05 Omaha 26.01.80.flac:d911a39e7358e7001067a15d7302252b
+Disc02Track06 Omaha 26.01.80.flac:cd73a1837e2ed4ead5970b7b846c294d
+Disc02Track07 Omaha 26.01.80.flac:f72548fde4090c4c9318cc87e9ee8c2d
+Disc02Track08 Omaha 26.01.80.flac:bf4f1130e4dfb6a2ca42e6573dfe7312
+Disc02Track09 Omaha 26.01.80.flac:b74e37408a2e081b35422eb4e7cfd6d3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-01-26-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.24       73791692 B   ---   --   ---xx   flac  0.4813  Disc01Track01 Omaha 26.01.80.flac
+     4:34.49       48448892 B   ---   --   ---xx   flac  0.4798  Disc01Track02 Omaha 26.01.80.flac
+     5:28.38       57948620 B   ---   --   ---xx   flac  0.4854  Disc01Track03 Omaha 26.01.80.flac
+     4:38.00       49039244 B   ---   --   ---xx   flac  0.4755  Disc01Track04 Omaha 26.01.80.flac
+     5:24.67       57311228 B   ---   --   ---xx   flac  0.4793  Disc01Track05 Omaha 26.01.80.flac
+     5:52.22       62144588 B   ---   --   ---xx   flac  0.4855  Disc01Track06 Omaha 26.01.80.flac
+     6:20.46       67140236 B   ---   --   ---xx   flac  0.4887  Disc01Track07 Omaha 26.01.80.flac
+     5:52.09       62114012 B   ---   --   ---xx   flac  0.4768  Disc01Track08 Omaha 26.01.80.flac
+    45:09.30      477938512 B                            0.4818  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-01-26-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.24       48037292 B   ---   --   ---xx   flac  0.4937  Disc02Track01 Omaha 26.01.80.flac
+     4:51.13       51363020 B   ---   --   ---xx   flac  0.4901  Disc02Track02 Omaha 26.01.80.flac
+     4:15.53       45106700 B   ---   --   ---xx   flac  0.4965  Disc02Track03 Omaha 26.01.80.flac
+     4:17.55       45464204 B   ---   --   ---xx   flac  0.4841  Disc02Track04 Omaha 26.01.80.flac
+     4:33.33       48234860 B   ---   --   ---xx   flac  0.4979  Disc02Track05 Omaha 26.01.80.flac
+     6:15.25       66208844 B   ---   --   ---xx   flac  0.4885  Disc02Track06 Omaha 26.01.80.flac
+     7:40.37       81231068 B   ---   --   ---xx   flac  0.4875  Disc02Track07 Omaha 26.01.80.flac
+     3:31.50       37338044 B   ---   --   ---xx   flac  0.4985  Disc02Track08 Omaha 26.01.80.flac
+     5:21.70       56789084 B   ---   --   ---xx   flac  0.4805  Disc02Track09 Omaha 26.01.80.flac
+    45:19.60      479773116 B                            0.4901  (9 files)
+=================== 
+=================== 
+=================== 

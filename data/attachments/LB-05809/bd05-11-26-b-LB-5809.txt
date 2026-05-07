@@ -1,0 +1,12 @@
+Bob Dylan, 11/26/05, Dublin, Ireland, The Point Theatre, 2CDR
+
+LB-5809, (50min+70min), version "b"; (2 CD - 49.32 & 69.33), Source : taper unknown, Audio CDs in trade 2006>Edited with Audacity> FLAC frontend w/ dbPowerAmp, stewART remaster 2008, I was going to just upload the original as I received it, but there was such an obvious imbalance in volume between the two channels, and there were so many roughly cut track transitions, that I have made some slight adjustments as noted below., Notes -, The right channel is slightly clipped and was obviously recorded at a higher level than left - I have rebalanced the channels as noted, but not otherwise altered the recording apart from recutting the track transitions., All tracks -, Lowered volume on Right channel by exactly 2 db, Raised volume on Left channel by approx 1.50 db, Recut all track transitions, 109 - recording cuts after song, 201 - recording cuts in on instrumental intro, Added 2 encore tracks 207 & 210.; bittorrent download 02/08; nothing above 16k except lego parapets; clipping on d1t7 especially on  right channel contrained to -3db while left is full; in comparison to LB-3371 this has a hollower harhser sound; (did not listen to all of this)
+
+CD1
+(49.32), 01. intro, 02. Maggie's Farm, 03. Tell Me That It Isn't True (Bob on harp - center stage), 04. Watching the River Flow, 05. Lay, Lady, Lay, 06. Most Likely You Go Your Way (And I'll Go Mine), 07. I Dreamed I Saw St. Augustine, 08. Cold Irons Bound, 09. Shelter from the Storm, 
+
+CD2
+(69.33), 01. Floater (Too Much to Ask) (cuts in on intro at start), 02. Highway 61 Revisited, 03. Ballad of Hollis Brown, 04. Stuck Inside of Mobile with the Memphis Blues Again, 05. The Lonesome Death of Hattie Carroll, 06. Summer Days, 07. 1st encore, 08. Like a Rolling Stone & band intros, 09. All Along the Watchtower, 10. 2nd encore, 11. Forever Young
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

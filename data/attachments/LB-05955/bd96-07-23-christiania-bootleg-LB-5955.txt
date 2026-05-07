@@ -1,0 +1,8 @@
+Bob Dylan, 7/23/96, Copenhagen, Denmark,, 2CDR
+
+LB-5955, BOOTLEG: Christiania (part1); cd > ultraplex > eac > wav > flac (lbdir corrected 03/09 in response to comment, thanks)
+
+drop/cut between cdrs;  near end of d2t4
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

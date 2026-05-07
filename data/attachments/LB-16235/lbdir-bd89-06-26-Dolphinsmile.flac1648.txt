@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd89-06-26-Dolphinsmile.flac1648
+===================
+===================
+===================
+868bf4caa435d20f9e3bdf6fd3549613 *01 Most Likely You ll Go.flac
+032c7f0300a8664a5a34eb0678f39a60 *02 Tears of Rage.flac
+3fe820e7aad96202cabd64188526de12 *03 Masters Of War.flac
+51caf6f61cc19279b5a410c08005471d *04 Simple Twist Of Fate.flac
+32a8d0b534bff506e7d1197c199a018b *05 Shelter From The Storm.flac
+3d64a3300804cbc9b5712c41ef15c10f *06 Highway 61.flac
+ce4fb72f118d5d2c14a07d1b2e4efb5a *07 To Ramona.flac
+30adab8a5f72930b8ecf3d9d25261270 *08 Blowin In The Wind.flac
+0ea2cd18aeb39ae51523c389f8dd9044 *09 Tamborine Man.flac
+80e1532ddc999ded2ff38eacc9175fd1 *10 Two Soldiers.flac
+a39db66d494357234ce6256a3a6768d3 *11 Knockin On Heavens Door.flac
+f785ac5fe7e87e4f9ddf2ecac1b278d4 *12 Silvio.flac
+b56de8e340da00d5673117ecb0c999a2 *13 In The Garden.flac
+fe8305c9e0a12856767745a1dc8d6b15 *14 Like A Rolling Stone.flac
+c0306bc4cca72ffbc8764e5b76503bbb *15 Girl From The North Country.flac
+5897823de393e9cfaf3cff72e59f376c *16 All Along The Watchtower.flac
+64a199a3000d1b3ecdd10058785ba937 *Bob Dylan Patras Festival Patras Greece 1989-06-26 Dolphinsmile Archive.ffp
+3f2ddba3c5ba56fbbf30734707aa910d *Bob Dylan Patras Festival Patras Greece 1989-06-26 Dolphinsmile Archive.md5
+64a199a3000d1b3ecdd10058785ba937 *Bob Dylan Patras Festival Patras Greece 1989-06-26 Dolphinsmile Archive.txt
+d241f78e3ff082be32b256208c7141e0 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-06-26-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Most Likely You ll Go.flac:8ac521f861b49b7b2e07a33497b23aa1
+02 Tears of Rage.flac:45a739b614e8ae1136782ef6aa4bfd7d
+03 Masters Of War.flac:e6b54d66a7dd083e0ff8273b9f9c651c
+04 Simple Twist Of Fate.flac:d1101c7bdf3b50a5147e51e7a5e597cc
+05 Shelter From The Storm.flac:24513e6ed4a38093527db3ea51ee0c20
+06 Highway 61.flac:22d30970af8d6ccb08961effe67aa5ff
+07 To Ramona.flac:791c5533a17f305680cc9c9ca8c64e50
+08 Blowin In The Wind.flac:96e734a4f46f4b69a11a2357ed3396c5
+09 Tamborine Man.flac:ed26d85a572884ae2d6404477bd0c61c
+10 Two Soldiers.flac:c42b07989940049babe565594dc55398
+11 Knockin On Heavens Door.flac:aa4ea08fd87cf53bfcda61f5c9c231ad
+12 Silvio.flac:593ffbfb7e109a00a9ddc58d22f5f610
+13 In The Garden.flac:efceeb0b619d8e3e088da3f3a0680f5d
+14 Like A Rolling Stone.flac:205c0fee772a4f3182a1c918ec502e68
+15 Girl From The North Country.flac:eb6a7ad1ef091d3a53169f2b7fc21e5c
+16 All Along The Watchtower.flac:2845dde8c2b058612218a1e2cc31ede5
+===================
+===================
+===================
+=== shntool len for: bd89-06-26-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:11.984      71420992 B   cxx   --   ---xx   flac  0.6422  01 Most Likely You ll Go.flac
+     6:40.082      76815840 B   cxx   --   ---xx   flac  0.6597  02 Tears of Rage.flac
+     4:34.812      52764028 B   cxx   --   ---xx   flac  0.6733  03 Masters Of War.flac
+     6:01.123      69335632 B   cxx   --   ---xx   flac  0.6534  04 Simple Twist Of Fate.flac
+     4:44.262      54578268 B   cxx   --   ---xx   flac  0.6641  05 Shelter From The Storm.flac
+     4:14.308      48827092 B   cxx   --   ---xx   flac  0.6676  06 Highway 61.flac
+     5:28.010      62977884 B   cxx   --   ---xx   flac  0.6374  07 To Ramona.flac
+     5:24.161      62238880 B   cxx   --   ---xx   flac  0.6423  08 Blowin In The Wind.flac
+     8:00.801      92313864 B   cxx   --   ---xx   flac  0.6336  09 Tamborine Man.flac
+     4:07.556      47530836 B   cxx   --   ---xx   flac  0.6399  10 Two Soldiers.flac
+     4:56.842      56993684 B   cxx   --   ---xx   flac  0.6723  11 Knockin On Heavens Door.flac
+     4:26.961      51256540 B   cxx   --   ---xx   flac  0.6683  12 Silvio.flac
+     5:09.153      59357372 B   cxx   --   ---xx   flac  0.6560  13 In The Garden.flac
+     5:48.457      66903720 B   cxx   --   ---xx   flac  0.6843  14 Like A Rolling Stone.flac
+     6:39.384      76681744 B   cxx   --   ---xx   flac  0.6328  15 Girl From The North Country.flac
+     4:36.876      53160164 B   cxx   --   ---xx   flac  0.6503  16 All Along The Watchtower.flac
+    87:04.770    1003156540 B                            0.6536  (16 files)
+===================
+===================
+===================

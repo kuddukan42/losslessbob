@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-19-stuck-inside-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+1286d2db638690826ed7bff62514336f  bd1988-10-19.ffp.txt
+482427bc5bf7c47e02dc2ce8f362963b  bd1988-10-19.flacs.md5
+232c43064050a1d228293642fc6d638d  bd1988-10-19.info.txt
+59e3a2163b63b2d660b090eb4bc02106  bd1988-10-19.shntool_disclength.txt
+a13448f26b41efde4e18258438ed6316  bd1988-10-19.waves.md5
+8aac74c1d0e21acbe03d5b517ab15775  bd1988-10-19d1t01.flac
+938eca42173fcd51b5acc6332ac5bd4e  bd1988-10-19d1t02.flac
+8bba891d5810c3340002b2606e3dce49  bd1988-10-19d1t03.flac
+20c464ac055bc9d4e67579f7711b330f  bd1988-10-19d1t04.flac
+78ab39ffa7c6253c0fa93c43fc7dc3fe  bd1988-10-19d1t05.flac
+b0ec399f6b54950a70d822b738fa444c  bd1988-10-19d1t06.flac
+8fe41b79b8350ef15575abc947cde7c2  bd1988-10-19d1t07.flac
+cd9851707bb8655dbf2389128ee17414  bd1988-10-19d1t08.flac
+0161febb7f4a8b044f105683cab7fa17  bd1988-10-19d1t09.flac
+5f552100105d08313d4f2ae35b22d746  bd1988-10-19d2t01.flac
+3c1682d1a9a416a7d28e66e87d26b5b3  bd1988-10-19d2t02.flac
+a240ca6ec5224dcfb387b52ae707cc6a  bd1988-10-19d2t03.flac
+d30f5f7090487fa211e8c357e79e9b65  bd1988-10-19d2t04.flac
+c9eb45d5d2f4f23a04a670682c100ea0  bd1988-10-19d2t05.flac
+493d113dd0b37dedcf507b10b5195a9f  bd1988-10-19d2t06.flac
+1401afeaa7e83935ca4c22e791093ee5  bd1988-10-19d2t07.flac
+8849f167329c4491e740b76b6c77d801  bd1988-10-19d2t08.flac
+a379b181c25e4a43a18dbf92ce71c311  bd1988-10-19d2t09.flac
+6dc0a987f0e3f5d3f522998c9d72b851  bd1988-10-19d2t10.filler.flac
+a81b51843efd14ec04c7a4684b63f35b  bd1988-10-19d2t11.filler.flac
+58745a2f387af38b95b5686d5f58d919  bd88-10-19-stuck-inside-speed-corrected-LB-3243.txt
+a6f8563cf52988862c15779c92086ec3  bobdylan1988-10-19-original.info.file.txt
+22e963b2202316698a183a654b760779  bobdylan1988-10-19_back.bmp
+92c4531d3646c7b7be5c312caae6869e  bobdylan1988-10-19_back.jpg
+ab281af633d328c70e40e1e0e5a45458  bobdylan1988-10-19_back_inside.bmp
+6552cf0cbfe8770e28c39926f7a2e515  bobdylan1988-10-19_back_inside.jpg
+a4faf843359dfabc5cd8fb2d7ff1dbba  bobdylan1988-10-19_front.bmp
+40bebd62b38434018ea42e8aeca496ed  bobdylan1988-10-19_front.jpg
+0689a36f6fef88c71f125a759e4cba93  bobdylan1988-10-19_front_inside.bmp
+3009c47b75e8548405c789eca4a66ac7  bobdylan1988-10-19_front_inside.jpg
+5d3dab4ee1eff0da0fa42915d0dbf965  bobdylan1988-10-19_scans.md5
+f825803d78a549c9cfc759a09fcedcf1  foobar2000_wav2flac_bitcompare.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-19-stuck-inside-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+bd1988-10-19d1t01.flac:aee2a816f9978f04cd6d54f0d572c28c
+bd1988-10-19d1t02.flac:4409b3d7ac947819da7d309b72c03c98
+bd1988-10-19d1t03.flac:d47891b6d23e5f3b15eac355880aca53
+bd1988-10-19d1t04.flac:9a05e2e710ab2b3dfdd7801392ade6fd
+bd1988-10-19d1t05.flac:b5d3af5ac04808e2e257ae0af0be11a7
+bd1988-10-19d1t06.flac:b7c8181b575016a1d6d8bde189f5776f
+bd1988-10-19d1t07.flac:3d55c29b7eae346304628bdab526d900
+bd1988-10-19d1t08.flac:4f5a8bdfa46bcbba44f7b1bb41f2504e
+bd1988-10-19d1t09.flac:5bcf58082f23130d43190dbf0bb9d426
+bd1988-10-19d2t01.flac:89464b70650eda522b8f0c9cc8162d37
+bd1988-10-19d2t02.flac:d2d369e0f666f0726742f5a958380b28
+bd1988-10-19d2t03.flac:7c2067aa7d924da19c42db6b89fbf5f1
+bd1988-10-19d2t04.flac:1d91e965f4e938448cb7baa38076c393
+bd1988-10-19d2t05.flac:b98477d843729e299a50a1c930f7b142
+bd1988-10-19d2t06.flac:a91bdb0cc8019c53cb80d1af9173bbe5
+bd1988-10-19d2t07.flac:80434ab20cd94c077969854ea6d3406e
+bd1988-10-19d2t08.flac:4fa6cbe71d183551f4421d36c5cabc7c
+bd1988-10-19d2t09.flac:2a8150b415059b677d442c929c1e70f6
+bd1988-10-19d2t10.filler.flac:dac46db430f5cc18f8f0ea5afe077d12
+bd1988-10-19d2t11.filler.flac:9493d5cb8d89ed93168e41430d673226
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-19-stuck-inside-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.56       41232956 B   ---   --   ---xx   flac  0.5640  bd1988-10-19d1t01.flac
+     4:15.19       45026732 B   ---   --   ---xx   flac  0.5640  bd1988-10-19d1t02.flac
+     5:45.22       60909788 B   ---   --   ---xx   flac  0.5679  bd1988-10-19d1t03.flac
+     6:45.16       71479676 B   ---   --   ---xx   flac  0.5934  bd1988-10-19d1t04.flac
+     6:03.21       64082636 B   ---   --   ---xx   flac  0.5605  bd1988-10-19d1t05.flac
+     5:57.35       63057164 B   ---   --   ---xx   flac  0.6133  bd1988-10-19d1t06.flac
+     4:23.32       46468508 B   ---   --   ---xx   flac  0.5833  bd1988-10-19d1t07.flac
+     7:46.64       82352972 B   ---   --   ---xx   flac  0.4956  bd1988-10-19d1t08.flac
+     5:23.49       57092492 B   ---   --   ---xx   flac  0.4928  bd1988-10-19d1t09.flac
+     4:32.01       47983196 B   ---   --   ---xx   flac  0.4783  bd1988-10-19d2t01.flac
+     4:26.04       46931852 B   ---   --   ---xx   flac  0.4954  bd1988-10-19d2t02.flac
+     3:51.68       40908380 B   ---   --   ---xx   flac  0.6037  bd1988-10-19d2t03.flac
+     5:21.42       56723228 B   ---   --   ---xx   flac  0.5906  bd1988-10-19d2t04.flac
+     6:46.29       71686652 B   ---   --   ---xx   flac  0.6136  bd1988-10-19d2t05.flac
+     4:14.48       44918540 B   ---   --   ---xx   flac  0.4991  bd1988-10-19d2t06.flac
+     5:25.41       57426476 B   ---   --   ---xx   flac  0.5246  bd1988-10-19d2t07.flac
+     5:12.42       55135628 B   ---   --   ---xx   flac  0.6016  bd1988-10-19d2t08.flac
+     5:02.57       53406908 B   ---   --   ---xx   flac  0.6135  bd1988-10-19d2t09.flac
+     5:37.09       59468012 B   ---   --   ---xx   flac  0.5590  bd1988-10-19d2t10.filler.flac
+     4:43.57       50055308 B   ---   --   ---xx   flac  0.6749  bd1988-10-19d2t11.filler.flac
+   105:28.37     1116347104 B                            0.5645  (20 files)
+=================== 
+=================== 
+=================== 

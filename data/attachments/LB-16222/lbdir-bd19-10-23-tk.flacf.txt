@@ -1,0 +1,91 @@
+===================
+===================
+===================
+=== md5 for: bd19-10-23-tk.flacf
+===================
+===================
+===================
+d997a3f99007b5302aadb9dfa59e462c *01. intro.flac
+c336e0ab4b33d97841439c04b4762626 *02. Beyond Here Lies Nothin'.flac
+0212f8d03ae8ec2f8521b0e8f3688639 *03. It's All Over Now, Baby Blue.flac
+87ba284dcf6673cd6e56e209f75f17bf *04. Highway 61 Revisited.flac
+fe3eaf70555ee9a25c7b29f57a14903b *05. Simple Twist Of Fate.flac
+ea69266ee7c7ddef7d7c7f330cc85848 *06. Can't Wait.flac
+80bf26ec95b6671df0d82a5889cae570 *07. When I Paint My Masterpiece.flac
+a0d6f794e994dc24ca5d0877aa138d6b *08. Honest With Me.flac
+856cd22252ceb55924d429e7b70c78a5 *09. Tryin' To Get To Heaven.flac
+39c6e8c5f8a70c841321661caaf4dca5 *10. Make You Feel My Love.flac
+08d5465122d3615ba9f5b6fd52ae9dca *11. Pay In Blood.flac
+0e9a6cc04e4a08d64bffdd9068c35d5c *12. Lenny Bruce.flac
+55a587f5981ea01004ae74c2115633f0 *13. Early Roman Kings.flac
+89ce4b49521b64dd6d595ad25265b99b *14. Girl From the North Country.flac
+4f0ee87ccf98ec5f7d8685412fea314b *15. Not Dark Yet.flac
+4d50829a51e5e22c2d6b2631cbd9191d *16. Thunder On The Mountain.flac
+ff268e6fe335f5c5c315fcdb8db2a035 *17. Soon After Midnight.flac
+aaeca2c635396bbceab399cc33c9272d *18. Gotta Serve Somebody.flac
+e8fa9e5aceab8f2fd410b718d754a0c2 *19. audience.flac
+819750b5e7c9369ed922d85a82b850b3 *20. Ballad of a Thin Man.flac
+9a7ec9d0df06fec94d00802c16687ea4 *2019-10-23 Ames TK.md5
+29728ac1a377bbe7c310c0082780862c *21. It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+559f0a58908ddccdda78c411c6cef056 *bd2019-10-23-info.txt
+===================
+===================
+===================
+=== ffp for: bd19-10-23-tk.flacf
+===================
+===================
+===================
+01. intro.flac:32f7c0cb5967c42c01c2df37792ca338
+02. Beyond Here Lies Nothin'.flac:662ebcd6bb178fa54d4d4446b101d047
+03. It's All Over Now, Baby Blue.flac:8ba2fb1edbcb71924abc59ef27ce5cde
+04. Highway 61 Revisited.flac:5bc5efd326775005b9a39ae5b5728709
+05. Simple Twist Of Fate.flac:dc5f557664973038356a0bf7bd440c5d
+06. Can't Wait.flac:f770f5b142db2c8c93c80815853987e7
+07. When I Paint My Masterpiece.flac:80960e2f6c5ee1feb2df697748a8116f
+08. Honest With Me.flac:04c2ab9fac87b4d9f199443294334316
+09. Tryin' To Get To Heaven.flac:8c1405e2f71e923a9973425e2e5e697f
+10. Make You Feel My Love.flac:c35b331c9fe5721e42be87570afa0910
+11. Pay In Blood.flac:5346a4133cb7cb01a781943a70169339
+12. Lenny Bruce.flac:0ef13c6d42bb8b0bd478573fdd716dd5
+13. Early Roman Kings.flac:444727232e6abbcbd57efab334d3ff96
+14. Girl From the North Country.flac:45e8ba411ff76cb1f9acaae13ab7deb4
+15. Not Dark Yet.flac:d853b714ef711262e594339934b5dd80
+16. Thunder On The Mountain.flac:23a85264d53d090aa7489147109dd63a
+17. Soon After Midnight.flac:77ad71c65cbe2faa58aeb4f711352951
+18. Gotta Serve Somebody.flac:92c1c8c07f983185a947619a38a9e4d8
+19. audience.flac:19af63e1a2015ccd2d54191afedd5fd1
+20. Ballad of a Thin Man.flac:714d844a05184cf5bbe2bb4f3962d832
+21. It Takes A Lot To Laugh, It Takes A Train To Cry.flac:a000bf239a7fd944d1ea096a56361cdb
+===================
+===================
+===================
+=== shntool len for: bd19-10-23-tk.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.52       10706772 B   -b-   --   ---xx   flac  0.6098  01. intro.flac
+     4:10.35       44182844 B   -b-   --   ---xx   flac  0.6151  02. Beyond Here Lies Nothin'.flac
+     4:49.36       51064496 B   -b-   --   ---xx   flac  0.6157  03. It's All Over Now, Baby Blue.flac
+     4:32.32       48056452 B   -b-   --   ---xx   flac  0.6794  04. Highway 61 Revisited.flac
+     6:12.13       65652164 B   -b-   --   ---xx   flac  0.6105  05. Simple Twist Of Fate.flac
+     4:31.28       47870668 B   -b-   --   ---xx   flac  0.6325  06. Can't Wait.flac
+     6:56.53       73507972 B   -b-   --   ---xx   flac  0.5549  07. When I Paint My Masterpiece.flac
+     5:19.67       56428344 B   -b-   --   ---xx   flac  0.6538  08. Honest With Me.flac
+     4:43.63       50068460 B   -b-   --   ---xx   flac  0.5794  09. Tryin' To Get To Heaven.flac
+     4:31.05       47816316 B   -b-   --   ---xx   flac  0.5880  10. Make You Feel My Love.flac
+     4:56.21       52264244 B   -b-   --   ---xx   flac  0.6185  11. Pay In Blood.flac
+     5:35.71       59261100 B   -b-   --   ---xx   flac  0.5068  12. Lenny Bruce.flac
+     5:48.40       61480804 B   -b-   --   ---xx   flac  0.6059  13. Early Roman Kings.flac
+     3:30.59       37182280 B   -b-   --   ---xx   flac  0.4918  14. Girl From the North Country.flac
+     4:35.47       48620216 B   -b-   --   ---xx   flac  0.5434  15. Not Dark Yet.flac
+     7:30.17       79419564 B   -b-   --   ---xx   flac  0.6777  16. Thunder On The Mountain.flac
+     3:58.54       42111100 B   -b-   --   ---xx   flac  0.5784  17. Soon After Midnight.flac
+     4:50.15       51192384 B   -b-   --   ---xx   flac  0.6559  18. Gotta Serve Somebody.flac
+     2:09.34       22835880 B   -b-   --   ---xx   flac  0.6204  19. audience.flac
+     6:27.59       68405824 B   -b-   --   ---xx   flac  0.6208  20. Ballad of a Thin Man.flac
+     5:30.72       58380432 B   -b-   --   ---xx   flac  0.6365  21. It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+   101:42.49     1076508316 B                            0.6064  (21 files)
+===================
+===================
+===================

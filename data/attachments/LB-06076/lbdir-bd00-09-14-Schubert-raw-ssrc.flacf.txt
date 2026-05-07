@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-09-14-Schubert-raw-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+e6439302fdfa944744fe53b39bc8321e  bd-20000914-Dublin.ffp
+cd8d50337cf869cc7dd5baa0cbdb7296  bd-20000914-Dublin.md5
+7c55113b2318a23f889c58056ecab542  bd2000-09-14-d1t01.flac
+e7b38753787c57d2a91485933788f0a9  bd2000-09-14-d1t02.flac
+2eef682e9dc3ba6b88d62952eedb388b  bd2000-09-14-d1t03.flac
+393d0fc42d252180898c9f9abd40dfed  bd2000-09-14-d1t04.flac
+0c53dcb5b84df66462c18061d99bdfe8  bd2000-09-14-d1t05.flac
+9d3082ecbe26beca1f4c30a06d21e58f  bd2000-09-14-d1t06.flac
+da1b0df834332a434c19fe7145b74451  bd2000-09-14-d1t07.flac
+b1880368a5afb070d509984852fb38a9  bd2000-09-14-d1t08.flac
+ec479ab04024ddcd11193fc6304bd27b  bd2000-09-14-d1t09.flac
+7154211fd845eb05dbd27ea006a50401  bd2000-09-14-d1t10.flac
+a0c38831b977490dff6958490551e9bd  bd2000-09-14-d1t11.flac
+3a6c9de394f9995e7d21a3707b5f4aaf  bd2000-09-14-d1t12.flac
+4b9cfd5795d87695f137071783332bbf  bd2000-09-14-d1t13.flac
+691c3edfc5133402c186fc8bcb406756  bd2000-09-14-d1t14.flac
+111ca5a6bb75a255649d81f27e955715  bd2000-09-14-d2t01.flac
+c3c22edca9a374798adf4db2c019c4e6  bd2000-09-14-d2t02.flac
+437b8b8f2b14226315ce31bc22587e08  bd2000-09-14-d2t03.flac
+91d0065a575e3e520a5d11ccaa29b021  bd2000-09-14-d2t04.flac
+fcf8155666fb64b209f532661f9064d9  bd2000-09-14-d2t05.flac
+a946f16c30d7b26feb3464b888e9e988  bd2000-09-14-d2t06.flac
+22d463b4564d7d8202ca7a2812a4eb99  bd2000-09-14-d2t07.flac
+ee6c383c2f6ec341cc3ec20dff33ef67  bd2000-09-14-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-09-14-Schubert-raw-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+bd2000-09-14-d1t01.flac:20df5809cfdc07138ff20be010bfba7e
+bd2000-09-14-d1t02.flac:c6c5fbd5c23dc281b8e5cdc3639e01b2
+bd2000-09-14-d1t03.flac:6ec6ca9a263c8e3e2e70c4dc60d4668b
+bd2000-09-14-d1t04.flac:186b274fdf5d80d55dd629153f16b385
+bd2000-09-14-d1t05.flac:92740a9bdd7764f7c37da270a57d7851
+bd2000-09-14-d1t06.flac:c409ca26c1906448716d4cf848452e4b
+bd2000-09-14-d1t07.flac:311a055a5c9b8431273030cfc37325bc
+bd2000-09-14-d1t08.flac:8e46ff5fc8a54089eccd026265900b4b
+bd2000-09-14-d1t09.flac:f34c3adfa76bb3cf355795f6fd7591eb
+bd2000-09-14-d1t10.flac:37b36fb6bc2a361285d138be1d9878f0
+bd2000-09-14-d1t11.flac:3d95c15532893eb5ed2645ab5d0717b6
+bd2000-09-14-d1t12.flac:56e681d73c97501f7d0f67c4bafa7b3e
+bd2000-09-14-d1t13.flac:0a87977a84c77d62369bb037b99bab3a
+bd2000-09-14-d1t14.flac:a8d7963d56a34350222cccd6f407df65
+bd2000-09-14-d2t01.flac:56dde90ba469692722a2be5d8a35e9d7
+bd2000-09-14-d2t02.flac:558ef40c0d5559ce93bc656430e7f846
+bd2000-09-14-d2t03.flac:079cc275bd6019d46a415d32249100f7
+bd2000-09-14-d2t04.flac:945df21358ebfb3c34b73f5bb8e7def0
+bd2000-09-14-d2t05.flac:f870aec62b9c4d7dacfdef39c1ee422a
+bd2000-09-14-d2t06.flac:f9b7cc29b400dc43d638271c9a018c70
+bd2000-09-14-d2t07.flac:af1d191d92502989d6c8bcfdeb817100
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-14-Schubert-raw-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:27.41        4859276 B   ---   --   ---xx   flac  0.4903  bd2000-09-14-d1t01.flac
+     2:15.29       23882252 B   ---   --   ---xx   flac  0.4812  bd2000-09-14-d1t02.flac
+     3:40.71       38975036 B   ---   --   ---xx   flac  0.3928  bd2000-09-14-d1t03.flac
+     8:02.04       85034252 B   ---   --   ---xx   flac  0.4308  bd2000-09-14-d1t04.flac
+     7:02.21       74490236 B   ---   --   ---xx   flac  0.4251  bd2000-09-14-d1t05.flac
+     7:24.36       78406316 B   ---   --   ---xx   flac  0.4985  bd2000-09-14-d1t06.flac
+     3:26.16       36376076 B   ---   --   ---xx   flac  0.3957  bd2000-09-14-d1t07.flac
+     2:47.17       29498828 B   ---   --   ---xx   flac  0.4674  bd2000-09-14-d1t08.flac
+     6:19.53       66980300 B   ---   --   ---xx   flac  0.3410  bd2000-09-14-d1t09.flac
+     6:15.28       66215900 B   ---   --   ---xx   flac  0.4755  bd2000-09-14-d1t10.flac
+     7:28.24       79083692 B   ---   --   ---xx   flac  0.4091  bd2000-09-14-d1t11.flac
+     3:43.26       39398396 B   ---   --   ---xx   flac  0.5424  bd2000-09-14-d1t12.flac
+     0:39.42        6978428 B   ---   --   ---xx   flac  0.4053  bd2000-09-14-d1t13.flac
+     8:30.66       90119276 B   ---   --   ---xx   flac  0.4716  bd2000-09-14-d1t14.flac
+     5:52.64       62243372 B   ---   --   ---xx   flac  0.4100  bd2000-09-14-d2t01.flac
+     7:31.60       79697564 B   ---   --   ---xx   flac  0.5051  bd2000-09-14-d2t02.flac
+     6:29.53       68744300 B   ---   --   ---xx   flac  0.4388  bd2000-09-14-d2t03.flac
+     5:29.59       58174412 B   ---   --   ---xx   flac  0.5211  bd2000-09-14-d2t04.flac
+     7:33.48       80022140 B   ---   --   ---xx   flac  0.4276  bd2000-09-14-d2t05.flac
+     5:33.09       58762412 B   ---   --   ---xx   flac  0.4888  bd2000-09-14-d2t06.flac
+     6:25.55       68043404 B   ---   --   ---xx   flac  0.4502  bd2000-09-14-d2t07.flac
+   112:59.72     1195985868 B                            0.4498  (21 files)
+=================== 
+=================== 
+=================== 

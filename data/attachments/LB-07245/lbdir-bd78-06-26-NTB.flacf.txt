@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-26-NTB.flacf 
+=================== 
+=================== 
+=================== 
+a29cd0e4eb53a8cf564beba121b3078a  bd-19780626-Dortmund.ffp
+1e95550410cbaa31d200dd34c6849eb2  bd-19780626-Dortmund.md5
+7c04c4c89cb14515dc71ef2076cb5f97  bd1978-06-26-d1t01.flac
+329a8e10b05c261017d74ca871e8218c  bd1978-06-26-d1t02.flac
+cf0cb6c2ea038ba38d0a304b7cbbaf75  bd1978-06-26-d1t03.flac
+482f005717e6ff4955eea5abb90ac763  bd1978-06-26-d1t04.flac
+0df031280f43ad50c4caba2ab30ce97b  bd1978-06-26-d1t05.flac
+d9b8359181a72ab22ffed075606a0943  bd1978-06-26-d1t06.flac
+2b14c851216b83f8789345a10dc533b2  bd1978-06-26-d1t07.flac
+2b01cc801bd139e6df56b4934d58c8eb  bd1978-06-26-d1t08.flac
+cf7dc848f220de48362d5ba271cae19e  bd1978-06-26-d1t09.flac
+d6283df8b56b1990670d148bf7823054  bd1978-06-26-d1t10.flac
+1a9fd29e2f85a6bf8fbc2023c0827c5a  bd1978-06-26-d1t11.flac
+6c0ac6bc7731a50a6156ef348e7d7583  bd1978-06-26-d1t12.flac
+f113ab13ff334090ffa5ae65ace39f77  bd1978-06-26-d1t13.flac
+d957c4d25ebad34edf384d3e373229c4  bd1978-06-26-d2t01.flac
+29a95d627dbc0f9f861addd79b9647b3  bd1978-06-26-d2t02.flac
+0b47100311a73fe44d1f6624db16f07a  bd1978-06-26-d2t03.flac
+4c0ddcb475fa10ae25074c57e7304dc7  bd1978-06-26-d2t04.flac
+16c46954068397604cc3203cdc7fef9f  bd1978-06-26-d2t05.flac
+bf98daa154870c284845932050bcaab3  bd1978-06-26-d2t06.flac
+12e91442940d9f7c2beb7b611534a02d  bd1978-06-26-d2t07.flac
+ee150be32e0f42d15415a652f7f6430f  bd1978-06-26-d2t08.flac
+54ccca6cb01658ee4bcb9183b54b829b  bd1978-06-26-d2t09.flac
+023ade9aa6007042c192ec1b252f2629  bd1978-06-26-d2t10.flac
+f7d1d0d32008d22292042b5e64e31527  bd1978-06-26-d2t11.flac
+dece5f4af6b9ecd5480b840ca5c9ccf1  bd1978-06-26-d2t12.flac
+fc4360aaa9f83a1a0b0e3ff2efa6d8df  bd1978-06-26-d2t13.flac
+385fdb3475da5f2a346a698b6603785d  bd1978-06-26-d2t14.flac
+0f547fa9540f9dc6f5b8cbcdbc96879b  bd1978-06-26-d2t15.flac
+0ce5cf936dc0d107b0f4efbaedfafeba  bd1978-06-26-d2t16.flac
+a74fbbdbc9316b1c8ed19c072d2e1469  bd1978-06-26-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-26-NTB.flacf 
+=================== 
+=================== 
+=================== 
+bd1978-06-26-d1t01.flac:c2938eac824acc79c235a87c59e80dbf
+bd1978-06-26-d1t02.flac:8d5dbb71af97b6749aff895ab8fec332
+bd1978-06-26-d1t03.flac:bee73f12f604e3a15aa9d61a6556e3dd
+bd1978-06-26-d1t04.flac:e90dbb3971464101f8f63fae9c4ef792
+bd1978-06-26-d1t05.flac:171f76091be83161a4245d423a1e8358
+bd1978-06-26-d1t06.flac:bbd42cdbfed34344f2591aecdff249af
+bd1978-06-26-d1t07.flac:d2e00cf010f06ddabdaaca5e6923eb75
+bd1978-06-26-d1t08.flac:b728d1e22e9802aebe29417fc02db4b6
+bd1978-06-26-d1t09.flac:3452e59ba523d6c8d68b78bc264c0112
+bd1978-06-26-d1t10.flac:30596ab6c9a2f30c5535ad34dd718b4c
+bd1978-06-26-d1t11.flac:d2a5fd491159bf65582d69aca5675ad5
+bd1978-06-26-d1t12.flac:8713a4dc203112d7ac82fbf44a339f09
+bd1978-06-26-d1t13.flac:987d50eeb4aeeebfc130d114b8b55288
+bd1978-06-26-d2t01.flac:f60a2c62ed7cf02884f1c36f2ee664df
+bd1978-06-26-d2t02.flac:060fed2cd807b051449eb0f85c05c485
+bd1978-06-26-d2t03.flac:3eeb3454486dadb5046df81e942094e8
+bd1978-06-26-d2t04.flac:a326415762d8baa98e6d683ccf295792
+bd1978-06-26-d2t05.flac:0736cfbf2d1a959e33a544dff1ccf313
+bd1978-06-26-d2t06.flac:92087c66274f0da1544467b0ac4d619d
+bd1978-06-26-d2t07.flac:48feeceb7d1967b9e342ce2b2a7e2b8b
+bd1978-06-26-d2t08.flac:bc25cc29a5b5e3b85c4548cff7d752aa
+bd1978-06-26-d2t09.flac:ce3f3a4aeb536cef7623ab54b2d6e994
+bd1978-06-26-d2t10.flac:9b200d7e9ab8a467b07e1669ea8e423a
+bd1978-06-26-d2t11.flac:11aac28e4acd2a5ea20cb0cf7fa38c7a
+bd1978-06-26-d2t12.flac:021724dec4498a05d336299122a45390
+bd1978-06-26-d2t13.flac:db1c81d4e5a26e401424f9e18ac2819a
+bd1978-06-26-d2t14.flac:d6da92a360cfd5b431daffd7a6e20496
+bd1978-06-26-d2t15.flac:35904406f785918b338aebe4c2e5bde6
+bd1978-06-26-d2t16.flac:1797fe5495af5300c74bed1c2b581b18
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-26-NTB.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.55       47051804 B   ---   --   ---xx   flac  0.4708  bd1978-06-26-d1t01.flac
+     2:42.59       28715612 B   ---   --   ---xx   flac  0.4445  bd1978-06-26-d1t02.flac
+     5:20.18       56490380 B   ---   --   ---xx   flac  0.4579  bd1978-06-26-d1t03.flac
+     5:04.10       53649164 B   ---   --   ---xx   flac  0.4694  bd1978-06-26-d1t04.flac
+     4:45.57       50408108 B   ---   --   ---xx   flac  0.4661  bd1978-06-26-d1t05.flac
+     3:23.23       35863340 B   ---   --   ---xx   flac  0.4795  bd1978-06-26-d1t06.flac
+     7:13.15       76416524 B   ---   --   ---xx   flac  0.4421  bd1978-06-26-d1t07.flac
+     4:48.06       50817356 B   ---   --   ---xx   flac  0.4628  bd1978-06-26-d1t08.flac
+     4:57.58       52527260 B   ---   --   ---xx   flac  0.4715  bd1978-06-26-d1t09.flac
+     4:19.00       45687644 B   ---   --   ---xx   flac  0.4490  bd1978-06-26-d1t10.flac
+     6:30.29       68864252 B   ---   --   ---xx   flac  0.4862  bd1978-06-26-d1t11.flac
+     4:06.39       43486172 B   ---   --   ---xx   flac  0.4545  bd1978-06-26-d1t12.flac
+     4:46.71       50617436 B   ---   --   ---xx   flac  0.4604  bd1978-06-26-d1t13.flac
+     1:06.26       11703596 B   ---   --   ---xx   flac  0.4469  bd1978-06-26-d2t01.flac
+     3:47.55       40172204 B   ---   --   ---xx   flac  0.4765  bd1978-06-26-d2t02.flac
+     4:58.37       52654268 B   ---   --   ---xx   flac  0.4602  bd1978-06-26-d2t03.flac
+     3:31.31       37293356 B   ---   --   ---xx   flac  0.4654  bd1978-06-26-d2t04.flac
+     4:59.18       52785980 B   ---   --   ---xx   flac  0.4579  bd1978-06-26-d2t05.flac
+     4:02.67       42846428 B   ---   --   ---xx   flac  0.4465  bd1978-06-26-d2t06.flac
+     4:55.41       52134476 B   ---   --   ---xx   flac  0.4634  bd1978-06-26-d2t07.flac
+     4:20.17       45904028 B   ---   --   ---xx   flac  0.4880  bd1978-06-26-d2t08.flac
+     5:21.04       56633852 B   ---   --   ---xx   flac  0.4557  bd1978-06-26-d2t09.flac
+     5:18.32       56170508 B   ---   --   ---xx   flac  0.4557  bd1978-06-26-d2t10.flac
+     3:59.61       42303116 B   ---   --   ---xx   flac  0.4822  bd1978-06-26-d2t11.flac
+     3:11.04       33701852 B   ---   --   ---xx   flac  0.4744  bd1978-06-26-d2t12.flac
+     9:11.27       97259948 B   ---   --   ---xx   flac  0.4471  bd1978-06-26-d2t13.flac
+     6:28.19       68487932 B   ---   --   ---xx   flac  0.4615  bd1978-06-26-d2t14.flac
+     3:31.38       37309820 B   ---   --   ---xx   flac  0.4610  bd1978-06-26-d2t15.flac
+     5:12.13       55067420 B   ---   --   ---xx   flac  0.4607  bd1978-06-26-d2t16.flac
+   136:20.30     1443023836 B                            0.4623  (29 files)
+=================== 
+=================== 
+=================== 

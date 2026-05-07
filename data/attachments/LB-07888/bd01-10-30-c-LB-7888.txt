@@ -1,0 +1,10 @@
+Bob Dylan, 10/30/01, Green Bay, WI, 2CDR
+
+LB-7888, (73min+58min), version "c"; Rip from audio Cd., CDR > EAC > .wav > FLAC Frontend > FLAC, the last track has 2 songs., Quality: Very Good; bittorrent download 08/09; this is a close eac match on d1t1 to LB-569; this has less discontinuities in the music but has discontinuities between tracks not on that one; (did not listen to all of this)
+
+drop d2t8 6:32, 6:33, cut 6;34 as shifts 2nd song on track; drop/cut between cdrs; discontinuities between tracks
+
+Disc 1, 1) Humming Bird, 2) Song To Woody, 3) It's Alright, Ma, 4) Searching For A Soldier's Grave, 5) 'Til I Fell In Love With You, 6) I Want You, 7) Cry A While, 8) Moonlight, 9) Don't Think Twice, It's All Right, 10) Fourth Time Around, 11) Masters Of War, 12) Summer Days, 13) Mississippi, Disc 2, 1) The Wicked Messenger, 2) Highway 61 Revisited, 3) Things Have Changed, 4) Like A Rolling Stone, 5) If Dogs Run Free, 6) Honest With Me, 7) Blowing In The Wind, 8) All Along The Watchtower / Knocking On Heaven's Door
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

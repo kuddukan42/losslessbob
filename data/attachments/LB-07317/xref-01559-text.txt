@@ -1,0 +1,139 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Western Springs Stadium
+Auckland, New Zealand
+9 March 1978
+
+1.A Hard Rain's A-Gonna Fall
+2.Love Her With A Feeling (Tampa Red)
+3.Mr. Tambourine Man
+4.I Threw It All Away
+5.Shelter From The Storm
+6.Love Minus Zero/No Limit
+7.Girl From The North Country
+8.Ballad Of A Thin Man
+9.Maggie's Farm
+10.The Man In Me
+11.Like A Rolling Stone
+12.I Shall Be Released
+13.Going, Going, Gone
+14.One Of Us Must Know (Sooner Or Later)
+15.You're A Big Girl Now
+16.One More Cup Of Coffee (Valley Below)
+17.Blowin' In The Wind
+18.I Want You
+19.Don't Think Twice, It's All Right
+20.Just Like A Woman
+21.Oh, Sister (Bob DylanJacques Levy/Bob Dylan)
+22.Tomorrow Is A Long Time
+23.All Along The Watchtower
+24.I Dont Believe You (She Acts Like We Never Have Met)
+25.All I Really Want To Do
+26.Simple Twist Of Fate
+27.It's Alright, Ma (I'm Only Bleeding)
+28.Forever Young
+
+29.The Times They Are A-Changin'
+
+Concert # 12 of the 1978 Far East Tour. 1978 concert # 12.
+
+Concert # 12 with the Far East Band 1978: Bob Dylan (vocal & guitar), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Rob Stoner (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Debbie Dye (background vocals).
+
+1 instrumental without Bob Dylan.
+
+6, 20, 26 Bob Dylan (harmonica).
+
+BobTalk
+Thank you. Wanna say hello to the Highway 61 Motorcycle Club. (after Mr. Tambourine Man)
+Thank you. Here's a song I wrote a few years back, about a couple of friends of mine who disintegrated. <inaudible> back in the States of course. (before Simple Twist Of Fate)
+Thank you. You're awfully kind and wonderful tonight. We have to introduce to some of these people. On the horns tonight, the tenor saxophone, flugelhorn, lots of different types of horns, Mr. Steve Douglas. Standing right next to him is a young man who gave up the profession of being a preacher to play in this band, playing the mandolin. He's a young man but he's full of talent. We're trying to show him around the world, Mr. David Mansfield. Standing next to him is a man who gave up the profession of being a racing car driver, from Bogot, Colombia, on rhythm guitar Steve Soles. Playing the keyboards tonight, Alan Pasqua. Bass guitar, Rob Stoner. On the drums a young man who's playing in just about every group. You've probably seen him many times before, Mr. Ian Wallace. On background vocals tonight we have three young ladies. On the left is my next door neighbor, Helena Springs. On the right is a young woman with a great future ahead of her. She's going back after this tour to take over the Mormon Tabernacle choir, Miss Debbie Dye. And in the middle, this is my childhood sweetheart, I've been wanting to sing with her for years and years, Jo Ann Harris. On the conga drums, Bobbye Hall. Lead guitar, Billy Cross. Thank you very much we're gonna play this song. It's called It's Alright Ma, I'm Only Bleeding.
+Thank you very much. Youve been a very pleasant, kind audience tonight. We're gonna hit the road, we have to be in Bangkok to play, tomorrow, 6:30 breakfast show! (before Forever Young)
+
+3 new songs (10%) compared to previous concert. No new songs for this tour.
+
+Stereo audience recording, 130 minutes.
+
+Session info updated 31 March 2003.
+
+http://www.bjorner.com
+
+CDR trade > XLD > flac 
+apa05
+
+===================
+===================
+===================
+=== shntool len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     4:39.31       49288556 B   ---   --   ---xx  01 Bob Dylan - Hard Rain.flac     2:47.14       29491772 B   ---   --   ---xx  02 Bob Dylan - Love Her With A Feeling.flac     5:24.53       57278300 B   ---   --   ---xx  03 Bob Dylan - Mr Tambourine Man.flac     5:23.02       56981948 B   ---   --   ---xx  04 Bob Dylan - I Threw It All Away.flac     4:47.24       50683292 B   ---   --   ---xx  05 Bob Dylan - Shelter From The Storm.flac     3:36.57       38236508 B   ---   --   ---xx  06 Bob Dylan - Love Minus Zero.flac     5:34.28       58983500 B   ---   --   ---xx  07 Bob Dylan - Girl From The North Country.flac     4:58.50       52684844 B   ---   --   ---xx  08 Bob Dylan - Ballad Of A Thin Man.flac     5:10.00       54684044 B   ---   --   ---xx  09 Bob Dylan - Maggie's Farm.flac     3:51.55       40877804 B   ---   --   ---xx  10 Bob Dylan - The Man In Me.flac     6:12.57       65754908 B   ---   --   ---xx  11 Bob Dylan - Like A Rolling Stone.flac     4:58.24       52623692 B   ---   --   ---xx  12 Bob Dylan - I Shall Be Released.flac     4:32.31       48053756 B   ---   --   ---xx  13 Bob Dylan - Going Going Gone.flac     4:47.21       50676236 B   ---   --   ---xx  14 Bob Dylan - One Of Us Must Know (Sooner Or Later).flac     5:15.06       55580156 B   ---   --   ---xx  15 Bob Dylan - You're A Big Girl Now.flac     3:37.65       38431724 B   ---   --   ---xx  01 Bob Dylan - One More Cup Of Coffee.flac     5:53.22       62320988 B   ---   --   ---xx  02 Bob Dylan - Blowin' In The Wind.flac     2:53.48       30630140 B   ---   --   ---xx  03 Bob Dylan - I Want You.flac     5:10.38       54773420 B   ---   --   ---xx  04 Bob Dylan - Don't Think Twice, It's Alright.flac     5:11.10       54883964 B   ---   --   ---xx  05 Bob Dylan - Just Like A Woman.flac     4:07.49       43686092 B   ---   --   ---xx  06 Bob Dylan - Oh Sister.flac     4:21.17       46080428 B   ---   --   ---xx  07 Bob Dylan - Tomorrow Is A Long Time.flac     3:48.55       40348604 B   ---   --   ---xx  08 Bob Dylan - All Along The Watchtower.flac     4:07.27       43634348 B   ---   --   ---xx  09 Bob Dylan - I Don't Believe You.flac     3:54.28       41343500 B   ---   --   ---xx  10 Bob Dylan - All I Really Want To Do.flac     8:11.19       86657132 B   ---   --   ---xx  11 Bob Dylan - Simple Twist Of Fate.flac     8:14.53       87266300 B   ---   --   ---xx  12 Bob Dylan - It's Alright Ma.flac     7:09.36       75760316 B   ---   --   ---xx  13 Bob Dylan - Forever Young.flac     5:04.48       53738540 B   ---   --   ---xx  14 Bob Dylan - The Times They Are A-Changin'.flac   143:44.68     1521434812 B                            0.4915  (29 files)
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - Hard Rain.flac:f8bdbf4e66cb132e62b9ea2470c3a32b02 Bob Dylan - Love Her With A Feeling.flac:93a27c23674130465bcdc06cb4a5706c03 Bob Dylan - Mr Tambourine Man.flac:1bb0ebeffdc4ae645c1729852610419c04 Bob Dylan - I Threw It All Away.flac:f65dd294068b6f5c6a9eb3c21948af1305 Bob Dylan - Shelter From The Storm.flac:6641b6866592f16ce3cdd022ef16a87c06 Bob Dylan - Love Minus Zero.flac:0a0c44f5f3f275fdaa9ca7bc0dcf158307 Bob Dylan - Girl From The North Country.flac:e0cd57d3653f4d17d7e3e1a6b34f660908 Bob Dylan - Ballad Of A Thin Man.flac:e956d340e9eab6335d5a84f4573d690909 Bob Dylan - Maggie's Farm.flac:8c0644e3ba303dd246e8945c4c6e5ad810 Bob Dylan - The Man In Me.flac:40fe2ffd099201425bcce5df691cb5bd11 Bob Dylan - Like A Rolling Stone.flac:4dd684ee467d7fe16efc6aa567ca943e12 Bob Dylan - I Shall Be Released.flac:d0b15665d983cd363ef51e967331b16813 Bob Dylan - Going Going Gone.flac:7be0d9a8d2dd4949e42fef571d67b59414 Bob Dylan - One Of Us Must Know (Sooner Or Later).flac:a805eddcf1f82ab1349346ffa8c871e015 Bob Dylan - You're A Big Girl Now.flac:ee0dba4be042c66890db7aa907df6f71
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+7d36eeb2c7f1dc5711f11f74f473bb9f *01 Bob Dylan - Hard Rain.flac
+9971fd14af49d65ebcb46238f342eeca *02 Bob Dylan - Love Her With A Feeling.flac
+ea7f49438a82e23e12378573b4f1f0fa *03 Bob Dylan - Mr Tambourine Man.flac
+8cbd19b265f351d7114447d7aefb35fc *04 Bob Dylan - I Threw It All Away.flac
+e4ba24a240ad8ec8f59ffe65c4fc6154 *05 Bob Dylan - Shelter From The Storm.flac
+ae68a9511d47571dff1f999229b2dfb1 *06 Bob Dylan - Love Minus Zero.flac
+f3442679663c2ba5cebbf3eacbeeeae0 *07 Bob Dylan - Girl From The North Country.flac
+81d2dfb7cfc417e2611e686676c8d2ba *08 Bob Dylan - Ballad Of A Thin Man.flac
+cdde9ece115721f9ddc4223d580df816 *09 Bob Dylan - Maggie's Farm.flac
+0b459f24ae431cb060a2faec50c2725b *10 Bob Dylan - The Man In Me.flac
+34b8efef56856f4f0d142485d345cc58 *11 Bob Dylan - Like A Rolling Stone.flac
+81449d11b1ab98ec718d18cd96d2e609 *12 Bob Dylan - I Shall Be Released.flac
+28775f30451e6ed1f0081e43799eb42b *13 Bob Dylan - Going Going Gone.flac
+b96f982f176aef3cabec38117623835b *14 Bob Dylan - One Of Us Must Know (Sooner Or Later).flac
+6e5d8db6114cacc287b49971169fb2f6 *15 Bob Dylan - You're A Big Girl Now.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - One More Cup Of Coffee.flac:c0f6bc86175873438219db61155ef73e02 Bob Dylan - Blowin' In The Wind.flac:bb61daf9eab48ec15769138258edcf8c03 Bob Dylan - I Want You.flac:391d8fbf1462b9690327506a09bd776704 Bob Dylan - Don't Think Twice, It's Alright.flac:7690e12bbc6c8b652f10c23f523fc51a05 Bob Dylan - Just Like A Woman.flac:3b92cc320ebef2c70a60be6cd481720906 Bob Dylan - Oh Sister.flac:5bfd30fd8fd73f24bfea23b046e85fc307 Bob Dylan - Tomorrow Is A Long Time.flac:36ccb0f30ed04991eb01fe28bcc15ba008 Bob Dylan - All Along The Watchtower.flac:50e1b0c18affba3a6140188b217a34da09 Bob Dylan - I Don't Believe You.flac:a679d428a650a134d078e6d911bcbd7b10 Bob Dylan - All I Really Want To Do.flac:281428e11a3836bd8b1d218cc875abe811 Bob Dylan - Simple Twist Of Fate.flac:328a31bc2cdef28c3e8fe4ebf7482c3f12 Bob Dylan - It's Alright Ma.flac:21aff52b5b0b51322a654bfa7a98086813 Bob Dylan - Forever Young.flac:3ad92170f68afc702c2b36931b7feeed14 Bob Dylan - The Times They Are A-Changin'.flac:94722ba42ddcdc2a4afcddee19965eee
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+e2691fa6e990b33fab5b65d39c81a306 *01 Bob Dylan - One More Cup Of Coffee.flac
+158237bc12d77f5c892e003b3b9553a8 *02 Bob Dylan - Blowin' In The Wind.flac
+1c5faaa3d82f584cef112e64074a3510 *03 Bob Dylan - I Want You.flac
+bc1bf308a274459540170ab042f72099 *04 Bob Dylan - Don't Think Twice, It's Alright.flac
+718216f20500c363e01d122125e44ad9 *05 Bob Dylan - Just Like A Woman.flac
+1f3ab8c56838ed73e891cfb881889e6e *06 Bob Dylan - Oh Sister.flac
+67d9b849c10cd8aea66ff014c2b93968 *07 Bob Dylan - Tomorrow Is A Long Time.flac
+5e3fbde5e0336d78c751eb2eea3bd17e *08 Bob Dylan - All Along The Watchtower.flac
+8307f55e4ea3926d99f659a7ee6be400 *09 Bob Dylan - I Don't Believe You.flac
+b90a6ac5198387118d4761c8732ed926 *10 Bob Dylan - All I Really Want To Do.flac
+570d34b958189429405855783819420b *11 Bob Dylan - Simple Twist Of Fate.flac
+221bc2d3f7e6269c52dbe86acb293a37 *12 Bob Dylan - It's Alright Ma.flac
+53eefe751292f967f78bced7302f2757 *13 Bob Dylan - Forever Young.flac
+7d03bed3b474df1b0974b94aab33fb6b *14 Bob Dylan - The Times They Are A-Changin'.flac
+
+===================
+===================
+===================

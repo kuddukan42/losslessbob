@@ -1,0 +1,15 @@
+b033ee18ca2936710e1c268899295f86 *note.txt.txt
+1e212a48df2e98a9c537913633fcd538 *Track00 Sold American.flac
+c079b2d26687bb40c5c0ce71b936989c *Track01.flac
+7275b17b0eb9edb4ee7f13e49a01bd2b *Track02.flac
+06439d8a49708de07460e195b007ee6a *Track03.flac
+0fe3198dec2586ae3bc4edc86b807304 *Track04.flac
+ea0ccc423cf76223d53b147aca69266c *Track05.flac
+6f082ccb0b2b4cff09f27df3f87d5fe9 *Track06.flac
+c3e41beab92b977acee39ec8e64d4a30 *Track07.flac
+78145c719c87d759ac888d09638a4fe8 *Track08.flac
+d554f0d5c387d073e0e4f5e9f7bb6b28 *Track09.flac
+cbc62854401360589efac76fd9910159 *Track10.flac
+05a443fe6a49a7fda2706a78f7a403cb *Track11.flac
+ad3578ee943e5a2cc9bf256ee61eec79 *Track12.flac
+e4d3a5c6314cf48eb750f25f4e9eff47 *Track13.flac

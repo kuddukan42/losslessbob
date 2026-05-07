@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd62-07-02-hh.flacf 
+=================== 
+=================== 
+=================== 
+84a13ddd71bd68d319f91ac9c184de8f  01Track01.flac
+727c998a0c9a1b1b96651299d0623abf  02Track02.flac
+4de27e0e8d4aafd19e042c58add63d5a  03Track03.flac
+8d87bc4b2a83aa3640df7ec04d3bc438  04Track04.flac
+253e8624a58dc8488570b226d7e262a4  05Track05.flac
+442ae46a681a4cee0b5d0c7f62888788  06Track06.flac
+45f1622e3f7f5934d79bf395816f9798  07Track07.flac
+08effcb7232b47df35bf021cdc9c50e6  08Track08.flac
+3ee6134fc4399ed0e4d9a2f4dd960385  09Track09.flac
+1a3d9134d9e7406009f8b44622b67ec0  10Track10.flac
+dcbf4b62d2895e7afd13195c5c29d883  11Track11.flac
+d542e19866fd742faf05e3a048592f9c  12Track12.flac
+b4f755a2ed88078614e65007168a854b  13Track13.flac
+7902ad783abf13b47b497010b1f7ec43  Bob Dylan Finjan-Canadian Party Tape 1962 d.ffp
+205f329ca5f27d6272200138841726f8  Bob Dylan Finjan-Canadian Party Tape 1962.md5
+03c144e6c20f827abd5ba615ed777c04  Bob Dylan.doc
+f870a7c60d2dad344d9a52b311bd4fa5  Covers Finjan Tape 1962\back 600 dpi.jpg
+5992c39947bc21f05a7b0756821069e7  Covers Finjan Tape 1962\content.txt
+4639f97de33ad7098a162cf20401b992  Covers Finjan Tape 1962\disc 600 dpi.jpg
+cae51403fb1df801d57a3db0f4590f6b  Covers Finjan Tape 1962\fromt 600 dpi.jpg
+35cf1f5a73ffae0ab5f16b3ae6a90857  Covers Finjan Tape 1962\inside 600 dpi.jpg
+c347d69b388abbabaf2f894c4200465c  Torrent downloaded from Demonoid.com.txt
+423724b813256fa37dab310d2c8aa135  Unknown Artist - Unknown Title.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-07-02-hh.flacf 
+=================== 
+=================== 
+=================== 
+01Track01.flac:5f00df10851cf97aef5df1fd03c897f9
+02Track02.flac:eadf900023fb9159a65f9eba3cb5f453
+03Track03.flac:5f0650df361a50d9aac502b417b75f9b
+04Track04.flac:1894ceaaca3001eeb90644538f6dbe2e
+05Track05.flac:ed0439197baf1a5d37426c1953be6cdb
+06Track06.flac:86ff770aefcdab2168df1274982f771c
+07Track07.flac:589e5c14e6b68c9134a644865d56e27d
+08Track08.flac:180d81deac72be16c8896ab196348da9
+09Track09.flac:6a5878db3aaf8140917a95e56c2862b4
+10Track10.flac:a4acbd6a3c3da940057ef99e40922f6d
+11Track11.flac:f791aef6c247f44999ef2c9c759dc0bc
+12Track12.flac:68ba8a8118c71cd2fa0ed115de134d0f
+13Track13.flac:4c287a10860b7529ed915e8ba0d1de80
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd62-07-02-hh.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:03.70       64197884 B   ---   --   ---xx   flac  0.5244  01Track01.flac
+     3:56.48       41743340 B   ---   --   ---xx   flac  0.5206  02Track02.flac
+     6:59.18       73953980 B   ---   --   ---xx   flac  0.5600  03Track03.flac
+     5:33.59       58880012 B   ---   --   ---xx   flac  0.5528  04Track04.flac
+     6:23.04       67570652 B   ---   --   ---xx   flac  0.5048  05Track05.flac
+     5:32.42       58663628 B   ---   --   ---xx   flac  0.5291  06Track06.flac
+     5:12.53       55161500 B   ---   --   ---xx   flac  0.5416  07Track07.flac
+     5:41.23       60206540 B   ---   --   ---xx   flac  0.5506  08Track08.flac
+     4:56.15       52249724 B   ---   --   ---xx   flac  0.5311  09Track09.flac
+     3:29.52       36989948 B   ---   --   ---xx   flac  0.5457  10Track10.flac
+     1:23.37       14728268 B   ---   --   ---xx   flac  0.5640  11Track11.flac
+     0:59.72       10576988 B   ---   --   ---xx   flac  0.5556  12Track12.flac
+     0:41.04        7241852 B   ---   --   ---xx   flac  0.5339  13Track13.flac
+    56:53.47      602164316 B                            0.5373  (13 files)
+=================== 
+=================== 
+=================== 

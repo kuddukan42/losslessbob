@@ -1,0 +1,12 @@
+Bob Dylan, 7/12/92, Juan-Les-Pins, 2CDR
+
+LB-2768, (55min+57min), off "sm" master; source: Sennheiser Mics > Sony TC-D5M > Master TDK-SA > CD-A(2) > EAC > WAV > FLACFrontend > FLAC; excellent sound [A]; reported to be a big upgrade over bootleg "Lucky Not To Be Destoyed" which in comparison has a lot of hiss and is harsh
+
+CD1
+1 Hey Joe 2 I Want You 3 Maggie's Farm 4 Simple Twist Of Fate 5 Just Like Tom Thumb's Blues 6 I'll Be Your Baby Tonight 7 Stuck Inside Of Mobile With The Memphis Blues Again 8 To Ramona (acoustic) 9 It Ain't Me, Babe (acoustic), 
+
+CD2
+1 Desolation Row (acoustic w band) 2 Don't Think Twice, It's All Right (acoustic w band) 3 Highway 61 Revisited 4 Joey 5 The Times They Are A- Changin' (acoustic w band) 6 Like A Rolling Stone 7 Just Like A Woman 8 All Along The Watchtower 9 Blowin' In The Wind (acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

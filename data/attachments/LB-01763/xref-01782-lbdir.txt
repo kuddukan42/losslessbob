@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== md5 for: bd04-03-17-c.flacf
+===================
+===================
+===================
+ce3c4df00cd715e14702f4b51f7eab71 *CD1\01 The wicked messenger.flac
+bd71f56514ce13c2ed5acef72b863c58 *CD1\02 It's all over now baby blue.flac
+e1c1b96afce3a7e623c55169c1c4af38 *CD1\03 Tweedle Dee and Tweedle Dum.flac
+861872a850c17b202a484f440a6875ad *CD1\04 Under the red sky.flac
+50cd484f21986a43e4a0d8195952dbfa *CD1\05 It's alright ma (I'm only bleeding).flac
+62962d9de279315770e72e3b9bf0288a *CD1\06 Down along the cove.flac
+68a337e097fe1bcab8899e3a2e40f4eb *CD1\07 Moonlight.flac
+ad19882fbd4bff6db7626ef94756d4c1 *CD1\08 High water (for Charley Patton).flac
+b7185d7b9f073af5bae6b717476d2bc3 *CD1\09 Girl of the North Country.flac
+33138f21dcbb3a8e5d3f58863f48c545 *CD1\CD1.ffp
+33138f21dcbb3a8e5d3f58863f48c545 *CD1\CD1.txt
+006b92937289d65033366847cad80258 *CD2\10 Highway 61 revisited.flac
+98b52d4b57364cf84f4bc004bc3f68b9 *CD2\11 Man in the long black coat.flac
+942337a1f354a79f807fb156b698efa7 *CD2\12 Honest with me.flac
+33fc229fe7be7f25c3ab9d9efb6fbf85 *CD2\13 Every grain of sand.flac
+11a12d202d7a6d978aff33bfefda61e8 *CD2\14 Summer days.flac
+e17eaef70ed522b115b09e25c4fc0ffa *CD2\15 Cat's in the well.flac
+f82c58b554086909178384d27710321f *CD2\16 Like a rolling stone.flac
+459baf3d7c1af417e027d861fe8dc9f3 *CD2\17 (band intro).flac
+1022cf2b8c167d0ea0228e97037cc3d1 *CD2\17 All along the watchtower.flac
+50752d1548d92f389213bcf3a1748f46 *CD2\18 Ball and biscuit.flac
+57d60650059922c755e6d2925b3e9c42 *CD2\CD2.ffp
+57d60650059922c755e6d2925b3e9c42 *CD2\CD2.txt
+16cf53ccbae6fc51f5063d592605a50c *Info\Bob Dylan 2004-03-17 State Theatre, Detroit, Michigan  [d. from LB-1763 Travelin' Man Records].txt
+89c2c64932a5b8c9a26261913356ff25 *Info\Detroit Third 2004 TMR source.txt
+===================
+===================
+===================
+=== ffp for: bd04-03-17-c.flacf
+===================
+===================
+===================
+CD1\01 The wicked messenger.flac:f36a9f0fa00104ced9e9fa278e6f82d5
+CD1\02 It's all over now baby blue.flac:85584151524b218906790fe708b247f6
+CD1\03 Tweedle Dee and Tweedle Dum.flac:141f6cc3f1560940d42d36d781915d8c
+CD1\04 Under the red sky.flac:29254b810e086e78967744ab779aaacd
+CD1\05 It's alright ma (I'm only bleeding).flac:a278722feebf9278fe4b9fb766b56407
+CD1\06 Down along the cove.flac:c1550cc5f8296f93d37426fd9c7f585d
+CD1\07 Moonlight.flac:647fe63a4f6b962e98ee872ad2be3acf
+CD1\08 High water (for Charley Patton).flac:55dd14427040cb404618240381e37641
+CD1\09 Girl of the North Country.flac:d71b5d215ec73e39e622116c8fbc8ade
+CD2\10 Highway 61 revisited.flac:42d376515f68bc6dd48ead5fb4971924
+CD2\11 Man in the long black coat.flac:eab7073ed11026f9395457cac4d2cd3c
+CD2\12 Honest with me.flac:e5206b938fd666035d9a3db48f821528
+CD2\13 Every grain of sand.flac:4108c9b0fbe02338b628563de089a24f
+CD2\14 Summer days.flac:8d5249ddd0054a15c222fa1fd9d2a7ce
+CD2\15 Cat's in the well.flac:26952fd2af0ec233465a7577cb130726
+CD2\16 Like a rolling stone.flac:9939d3c92e056bb0c3233c2cc5fdb5ee
+CD2\17 (band intro).flac:8b7c966ac462bec2e7d5985999c9d214
+CD2\17 All along the watchtower.flac:8522c817814341d6734a36a2c085a895
+CD2\18 Ball and biscuit.flac:268e44ecef6643ab4c77e683d63e81ef
+===================
+===================
+===================
+=== shntool len for: bd04-03-17-c.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:45.00       50274044 B   ---   --   ---xx   flac  0.5378  01 The wicked messenger.flac
+     5:11.00       54860444 B   ---   --   ---xx   flac  0.5251  02 It's all over now baby blue.flac
+     5:14.00       55389644 B   ---   --   ---xx   flac  0.5045  03 Tweedle Dee and Tweedle Dum.flac
+     5:38.00       59623244 B   ---   --   ---xx   flac  0.5042  04 Under the red sky.flac
+     7:48.00       82555244 B   ---   --   ---xx   flac  0.5511  05 It's alright ma (I'm only bleeding).flac
+     5:49.00       61563644 B   ---   --   ---xx   flac  0.5575  06 Down along the cove.flac
+     6:20.00       67032044 B   ---   --   ---xx   flac  0.4766  07 Moonlight.flac
+     7:44.00       81849644 B   ---   --   ---xx   flac  0.5500  08 High water (for Charley Patton).flac
+     5:27.51       57802796 B   ---   --   ---xx   flac  0.4418  09 Girl of the North Country.flac
+    53:56.51      570950748 B                            0.5187  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd04-03-17-c.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:10.00       75852044 B   ---   --   ---xx   flac  0.5709  10 Highway 61 revisited.flac
+     5:58.00       63151244 B   ---   --   ---xx   flac  0.5067  11 Man in the long black coat.flac
+     6:52.00       72676844 B   ---   --   ---xx   flac  0.5549  12 Honest with me.flac
+     8:10.00       86436044 B   ---   --   ---xx   flac  0.4704  13 Every grain of sand.flac
+    10:14.00      108309644 B   ---   --   ---xx   flac  0.5214  14 Summer days.flac
+     4:59.00       52743644 B   ---   --   ---xx   flac  0.5644  15 Cat's in the well.flac
+     6:26.00       68090444 B   ---   --   ---xx   flac  0.5677  16 Like a rolling stone.flac
+     0:54.00        9525644 B   ---   --   ---xx   flac  0.5165  17 (band intro).flac
+     6:52.00       72676844 B   ---   --   ---xx   flac  0.5390  17 All along the watchtower.flac
+    10:20.29      109436252 B   ---   --   ---xx   flac  0.5225  18 Ball and biscuit.flac
+    67:55.29      718898648 B                            0.5320  (10 files)
+===================
+===================
+===================

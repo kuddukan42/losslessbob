@@ -1,0 +1,8 @@
+Bob Dylan, 11/2/98, Syracuse, NY, Onondaga County War Memoria, 2CDR
+
+LB-4103, (71min+31min), Recording: 7th Row Center: Schoeps mk4 > Sony TCD-D3, Transfer: Sony PCM-R500 > Audio Magic Presto II >, Delta dIO 2496 > Samplitude 2496 > CDWav >, Single WAV > SHN (mkwACT) by edlhubermj18@mail.uww.edu, SHN > WAV > CDWav > SHN by Dan Krass (gser@jadetech.com) (flac version also adds steps of  shn > wav > plexwriter > cdr > ultraplex > eac > wav > flac); same recording as LB-4104 with this one having higher levels and since there is not clipping on loud part of d1t1 some compression must have been used in the process; this has more crowd at begin of d1t1 and does not have the flaws noted on that one; excellent sound [A]; this one has more crowd time before d1t1 while LB-4104 has more crowd time between d1 and d2 while this one fades out between disks and that one drops
+
+Disc 1, ========, Electric:, 01 Gotta Serve Somebody, 02 Million Miles, 03 Stuck Inside Of Mobile, 04 Make You Feel My Love, 05 Can't Wait, Acoustic:, 06 Mama, You Been On My Mind (Bob Dylan on harp), 07 A Hard Rain's A-Gonna Fall, 08 Tangled Up In Blue (Bob Dylan on harp), 09 Don't Think Twice, It's All Right, Electric:, 10 Born In Time, 11 Highway 61 Revisited, Disc 2, ========, 01 Love Sick, 02 Rainy Day Women #12 & 35, 03 Blowin' In The Wind (acoustic), 04 'Til I Fell In Love With You, 05 It Ain't Me, Babe (acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

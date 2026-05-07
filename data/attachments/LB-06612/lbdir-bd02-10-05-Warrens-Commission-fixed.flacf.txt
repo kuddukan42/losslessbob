@@ -1,0 +1,136 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-05-Warrens-Commission-fixed.flacf 
+=================== 
+=================== 
+=================== 
+97419a8d078c107a80d6a5ba11ad8c53  bd-WarrensCommission.d1t14.sa_fa.JPG
+be5718dd2ad9ee7aac77fc5d5389e532  bd2002-10-05-WarrensCommission.d2t05.fixed.sa_fa.JPG
+cb02a2d0ae80f298c6f18946ae35a2b4  bd2002-10-05-WarrensCommission.d2t05.fixed.sview.JPG
+c6da0d2854adc50437bcbe82e8ef85be  bd2002-10-05-WarrensCommission.d2t05.gap.sview.JPG
+310cffdf3794fd552d59f850df242867  bd2002-10-05-WarrensCommission.fixed.flac.md5
+c27059d74a4ed0dc21a6c2c7bbd0217d  d1\d1.ffp.txt
+7f135b6f84c563c645d13845783362c2  d1\d1.flac.md5
+121882be346cad4891ec66e63ce87eea  d1\Track01.fix.flac
+8624a86d52a957639a740c5050eb3b50  d1\Track02.fix.flac
+36aa6c912921f3cd1fe43449760ddb7a  d1\Track03.fix.flac
+62dcff0c680fed3d1268b2769e39403a  d1\Track04.fix.flac
+f92158fd32e2a8ec0a6dd6ffeebedb4d  d1\Track05.fix.flac
+136dc3e38bc05c904e660bea60b155a2  d1\Track06.fix.flac
+edfae29e2787cd9b59b3d6a3a07f450d  d1\Track07.fix.flac
+865711816d82b2252f368c48eeb4ff15  d1\Track08.fix.flac
+544eda437f887b0ab9e664ac7e732028  d1\Track09.fix.flac
+021f0d61471bd10ae5bbc40236b316b6  d1\Track10.fix.flac
+143fac09f3b9fb3431defe287b5634f7  d1\Track11.fix.flac
+5688fb62cd84af982c70c65948683086  d1\Track12.fix.flac
+ed829c73ad42e73a6e3e26591bff2942  d1\Track13.fix.flac
+5c82ba6590372b56d05cf40b7ed67e68  d1\Track14.fix.flac
+ff29e7ec0732a7229e44453ba25af75b  d2\d2.ffp.txt
+8406241d46125981aba84826de70b118  d2\d2.flac.md5
+ada6a391ded346befec4f1891d5166d9  d2\Track01.fix.flac
+9a53578f59b12265b741da1133e65921  d2\Track02.fix.flac
+7e8e1ec5c4a79530f74d32403b51e6ff  d2\Track03.fix.flac
+c263fc13a618fa2b838065108aeebdd6  d2\Track04.fix.flac
+c04a6ce09530fa53ebb9bb1f1da441fb  d2\Track05.fix.flac
+a9ff9d5dd41a62cfcfd669b94224cc1f  d2\Track06.fix.flac
+900409a012262e74a5ffaa664c13e8c6  d2\Track07.fix.flac
+f2f57b759062bddb309a4bfc80bb74cb  d2\Track08.fix.flac
+9bba03b6c897f1ae4dd5623029eb477f  d2\Track09.fix.flac
+241a831df9959e5c2116a9b2452b18c7  d2\Track10.fix.flac
+59dc03390032d8930c991e66dbf68a1d  d2\Track11.fix.flac
+c6678609c0ecf01d2d7d7d326685d402  d2\Track12.fix.flac
+c348ad921961b9337ff0ee2e6465d8b5  d2\Track13.fix.flac
+c4524f10b777bc23844c6864d8502360  d2\Track14.fix.flac
+dc4830ab6b956e1594e1c0900e0b2cc4  WarrensCommission.fixed.nfo.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-05-Warrens-Commission-fixed.flacf\d2 
+=================== 
+=================== 
+=================== 
+Track01.fix.flac:4eaaaa7a2d41522f21af7960fcf7fb0c
+Track02.fix.flac:415fb7d0d9c3148012fbdf0632f3766d
+Track03.fix.flac:3f19c2f8dd66c80ebaa366bfb6031188
+Track04.fix.flac:2e0e98d8972765223c2160cc80bd787a
+Track05.fix.flac:197ea00fb75f109924604782afbfb408
+Track06.fix.flac:109b579bc2dd2e2e7cf1ee0d1ef4696c
+Track07.fix.flac:e24f4fa48442591637993bcd231a1ce5
+Track08.fix.flac:67b82f1afd0fecf843ddb3869bf6a730
+Track09.fix.flac:7df0966cafbcf5b72f308f3b35661150
+Track10.fix.flac:d5e902933652b6b9f9c17ddbd92ad31f
+Track11.fix.flac:91a3b4f4b293fca0aa2d7dd034d644bc
+Track12.fix.flac:09222f77123fc4d827dac6b8a42c9ab5
+Track13.fix.flac:8a838c3d455f8c6e56e7aaf8857f656e
+Track14.fix.flac:00c50c0a30ecfec88d69dbc59ccfc965
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-05-Warrens-Commission-fixed.flacf\d1 
+=================== 
+=================== 
+=================== 
+Track01.fix.flac:ed56a9a573db544cb3300d40ec632172
+Track02.fix.flac:96e1bd835b52d944c89c5aa148330d17
+Track03.fix.flac:234d50b36a1200dabbaa90df7e80a0ad
+Track04.fix.flac:942b230c0699043ce95214954df7e286
+Track05.fix.flac:6bb9cde7deac24f92479804468eaee48
+Track06.fix.flac:19f17f4fb91e66e703d3f63df939cca3
+Track07.fix.flac:134c49d2874b1d97515e7c53e0796005
+Track08.fix.flac:4b80c798e98a71a10c9ca14a4a903129
+Track09.fix.flac:fa82bc9d5574ca18399dc29587d6d438
+Track10.fix.flac:f81065589071479f4ee5a5ccf756fc75
+Track11.fix.flac:5a06636d44abdf1f78ce08128d39ccf2
+Track12.fix.flac:0593d496cbbaec4f1a3e4487aed05642
+Track13.fix.flac:4adee08a3e8a0c8ba416c6980e1fc815
+Track14.fix.flac:df8270f19bc6a3170e6850e1e0edd53e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-05-Warrens-Commission-fixed.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:30.35       79462364 B   ---   --   ---xx   flac  0.5797  Track01.fix.flac
+     3:06.59       32949212 B   ---   --   ---xx   flac  0.4579  Track02.fix.flac
+     4:34.07       48350108 B   ---   --   ---xx   flac  0.4412  Track03.fix.flac
+     7:20.12       77644268 B   ---   --   ---xx   flac  0.5846  Track04.fix.flac
+     7:05.18       75012380 B   ---   --   ---xx   flac  0.5728  Track05.fix.flac
+     6:10.45       65373884 B   ---   --   ---xx   flac  0.5213  Track06.fix.flac
+     6:57.53       73683500 B   ---   --   ---xx   flac  0.6022  Track07.fix.flac
+     4:03.54       42992252 B   ---   --   ---xx   flac  0.5661  Track08.fix.flac
+     4:55.41       52134476 B   ---   --   ---xx   flac  0.4959  Track09.fix.flac
+     5:20.68       56607980 B   ---   --   ---xx   flac  0.5315  Track10.fix.flac
+     3:45.46       39798236 B   ---   --   ---xx   flac  0.5788  Track11.fix.flac
+     3:39.22       38683388 B   ---   --   ---xx   flac  0.4999  Track12.fix.flac
+     5:09.36       54592316 B   ---   --   ---xx   flac  0.4793  Track13.fix.flac
+     6:55.64       73356572 B   ---   --   ---xx   flac  0.4830  Track14.fix.flac
+    76:35.35      810640936 B                            0.5348  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-05-Warrens-Commission-fixed.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.27       52101548 B   ---   --   ---xx   flac  0.6000  Track01.fix.flac
+     6:29.06       68633756 B   ---   --   ---xx   flac  0.5325  Track02.fix.flac
+     5:38.34       59703212 B   ---   --   ---xx   flac  0.5861  Track03.fix.flac
+     3:55.13       41484620 B   ---   --   ---xx   flac  0.5331  Track04.fix.flac
+     5:10.03       54691100 B   ---   --   ---xx   flac  0.6035  Track05.fix.flac
+     4:13.56       44760956 B   ---   --   ---xx   flac  0.5935  Track06.fix.flac
+     6:45.45       71547884 B   ---   --   ---xx   flac  0.4976  Track07.fix.flac
+     7:18.65       77416124 B   ---   --   ---xx   flac  0.5240  Track08.fix.flac
+     8:46.54       92913452 B   ---   --   ---xx   flac  0.5054  Track09.fix.flac
+     3:29.41       36964076 B   ---   --   ---xx   flac  0.6037  Track10.fix.flac
+     3:36.59       38241212 B   ---   --   ---xx   flac  0.5416  Track11.fix.flac
+     5:42.55       60458204 B   ---   --   ---xx   flac  0.5131  Track12.fix.flac
+     6:54.12       73057868 B   ---   --   ---xx   flac  0.5724  Track13.fix.flac
+     6:36.47       69964988 B   ---   --   ---xx   flac  0.5437  Track14.fix.flac
+    79:32.67      841939000 B                            0.5482  (14 files)
+=================== 
+=================== 
+=================== 

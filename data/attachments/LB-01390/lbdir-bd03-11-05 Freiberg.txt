@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-05 Freiberg 
+=================== 
+=================== 
+=================== 
+665b6f03b876a5478e2d2ff3d04beecc  bd03-11-05.txt
+82b5cbbe54051528194939ff03e768b6  Disc_one\Track 1.shn
+ef06f73030878b3e11de98ec5d137e4f  Disc_one\Track 10.shn
+36e2e87d2b2c476106c0db251a355077  Disc_one\Track 11.shn
+c65da8e23a3bf3fd78d38c5cfd4d0761  Disc_one\Track 12.shn
+ce8271ac3a08e046ca98d4d34a6eb504  Disc_one\Track 2.shn
+03b34c93717517d5575c64302752e26f  Disc_one\Track 3.shn
+5a6719deba594aadc51850defcdb60f6  Disc_one\Track 4.shn
+de65f956bed0e3ff5242bae259f8caf4  Disc_one\Track 5.shn
+10841c55c49fff269611382bbfeb231f  Disc_one\Track 6.shn
+5d624ac52c772352662c8a6dc62ece08  Disc_one\Track 7.shn
+36b27d992ca5746de22946ed6ca30385  Disc_one\Track 8.shn
+bf9543881f8241b7260e4f9e95344961  Disc_one\Track 9.shn
+2a2a2282c457006169f72013e1ad291a  Disc_one\noname.md5
+744d59295d5ce6e34ce26a6efbc2ee6f  Disc_two\Track 1.shn
+9e7afd37e712b8be27ca8cc5a47e0e26  Disc_two\Track 2.shn
+09a931f1eabda26e802dc7027298c8f9  Disc_two\Track 3.shn
+ffe080c704df5d2dd9a1b8bd170bbb26  Disc_two\Track 4.shn
+00342c66fe267fdf964c10d55fb42232  Disc_two\Track 5.shn
+3ed8be854c56a4702c345dc864d27c97  Disc_two\Track 6.shn
+ab325e6ad2da29001da552bc349f9d6b  Disc_two\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-05 Freiberg\Disc_two 
+=================== 
+=================== 
+=================== 
+9f95ccbadcaf37205ab4b256b30b9309  [shntool]  Track_1.wav
+293d728bc2eacd1ae4f93f275ca0b1fb  [shntool]  Track_2.wav
+eb8fd08c11a66ca0dfcbf5c896ef9ed4  [shntool]  Track_3.wav
+0739be3c13b5c456d9c0c4708d478c30  [shntool]  Track_4.wav
+52f8fc3f02ae5d924c2ad499acc8e2b3  [shntool]  Track_5.wav
+d512ead1baf4097975685a4ce8557831  [shntool]  Track_6.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-05 Freiberg\Disc_one 
+=================== 
+=================== 
+=================== 
+77ce164da7dee5351790da05761397bd  [shntool]  Track_1.wav
+ff480fb055ef42c35a51a625e38e18e4  [shntool]  Track_2.wav
+52ca5b8e48cf42854815e69a4adf4230  [shntool]  Track_3.wav
+91902b1d78c69fd31bbc92af90d7763d  [shntool]  Track_4.wav
+3866638947bd80c5c9689de5612e89a6  [shntool]  Track_5.wav
+3a60aeb44cfb412541821091581c8209  [shntool]  Track_6.wav
+b74fa4a8fb935b0531d61a9512e13c00  [shntool]  Track_7.wav
+da70c8ec21913cc0ed3d422a8dfb6525  [shntool]  Track_8.wav
+ca84d25acca21ef8806493b704adf3af  [shntool]  Track_9.wav
+109309220cf9ced8a9dcf8708f6149c6  [shntool]  Track_10.wav
+3c3a715f0f87de07927093476e0545e6  [shntool]  Track_11.wav
+604933f7af23c5a79653ca568dfe6e22  [shntool]  Track_12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-05 Freiberg\Disc_two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:27.61       78994316 B   ---   --   -----    wav  1.0000  Track_1.wav
+     6:08.71       65082236 B   ---   --   -----    wav  1.0000  Track_2.wav
+    11:57.68      126638780 B   ---   --   -----    wav  1.0000  Track_3.wav
+     4:43.27       49984748 B   ---   --   -----    wav  1.0000  Track_4.wav
+     7:59.31       84568556 B   ---   --   -----    wav  1.0000  Track_5.wav
+     8:03.12       85229468 B   ---   --   -----    wav  1.0000  Track_6.wav
+    46:20.45      490498104 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-05 Freiberg\Disc_one 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:48.34        8547212 B   ---   --   -----    wav  1.0000  Track_1.wav
+     7:35.40       80356124 B   ---   --   -----    wav  1.0000  Track_10.wav
+     8:06.30       85801004 B   ---   --   -----    wav  1.0000  Track_11.wav
+     6:45.74       71616092 B   ---   --   -----    wav  1.0000  Track_12.wav
+     5:56.34       62878412 B   ---   --   -----    wav  1.0000  Track_2.wav
+     5:48.51       61507196 B   ---   --   -----    wav  1.0000  Track_3.wav
+     5:22.14       56833772 B   ---   --   -----    wav  1.0000  Track_4.wav
+     8:06.48       85843340 B   ---   --   -----    wav  1.0000  Track_5.wav
+     7:48.12       82583468 B   ---   --   -----    wav  1.0000  Track_6.wav
+     5:01.62       53242268 B   ---   --   -----    wav  1.0000  Track_7.wav
+     5:50.38       61829420 B   ---   --   -----    wav  1.0000  Track_8.wav
+     6:33.39       69416972 B   ---   --   -----    wav  1.0000  Track_9.wav
+    73:44.26      780455280 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

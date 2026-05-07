@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-18 
+=================== 
+=================== 
+=================== 
+582d2485554446514a45a633c456b6fb  bd99-11-18.txt
+f60d5cffc769b943d68df0600c1c9e18  dylan1999-11-18.md5
+e2e51dfec970818b61d914d78a7d4488  dylan1999-11-18d1t01.shn
+0277419a9c7bccbb250da058a10ed2f9  dylan1999-11-18d1t02.shn
+b1a445216363e1e91b03d11471f0b830  dylan1999-11-18d1t03.shn
+abaaecedc9fbe153ea60f7c4ac63a289  dylan1999-11-18d1t04.shn
+42253ae74649fb1888e49141efcdf89b  dylan1999-11-18d1t05.shn
+ce16480b66d36a26ccbfbace80117da1  dylan1999-11-18d1t06.shn
+8d5c36331affa736039199de3284c482  dylan1999-11-18d1t07.shn
+d64ee7eb1c8e8563aa0ad8e7dbc1f54d  dylan1999-11-18d1t08.shn
+83acb5f5da1b5dbacb300de4cc8a8a2d  dylan1999-11-18d2t01.shn
+dec79555a976fe1934213ca46d3af418  dylan1999-11-18d2t02.shn
+d7e2d42bbbee34e31b7e7953a414c052  dylan1999-11-18d2t03.shn
+49fedef3fd18e98307058be06b4642ff  dylan1999-11-18d2t04.shn
+6b0a3944ca10678a719f7545b4927d16  dylan1999-11-18d2t05.shn
+22f9b735e6637fcf8c5335b575b556f4  dylan1999-11-18d2t06.shn
+88f0053d045e5337fed2ba665d94722a  dylan1999-11-18d2t07.shn
+dd0360c5ead42f152c2a5c7d3ab8da0c  dylan1999-11-18d2t08.shn
+115d1e288bcb805b7d09a7541bf71b57  dylan1999-11-18d2t09.shn
+cc1b9d12e719194f49e46e547039eb60  dylan1999-11-18d2t10.shn
+23816b3cff78a77c922ec3cd89c6f647  dylan99-11-18.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-11-18 
+=================== 
+=================== 
+=================== 
+0b8afc90a7f771fe82e02c5442145b9a  [shntool]  dylan1999-11-18d1t01.wav
+62af973ac4857842f323e55e48f2fa5c  [shntool]  dylan1999-11-18d1t02.wav
+e2ccb1c4d11dfc7e4317f5cb30e69f47  [shntool]  dylan1999-11-18d1t03.wav
+30181049a83f2d315b81172cf568715d  [shntool]  dylan1999-11-18d1t04.wav
+3ba91a560dbf54320ee2b9855b488641  [shntool]  dylan1999-11-18d1t05.wav
+61526c519cfed77aa3489c80ece66be1  [shntool]  dylan1999-11-18d1t06.wav
+ffb6272801333390a09f4ce6541e99a9  [shntool]  dylan1999-11-18d1t07.wav
+f3199f72f1e3a0c3a302322edc605c42  [shntool]  dylan1999-11-18d1t08.wav
+7bcff8d9bdcdbdcba204cbd688495938  [shntool]  dylan1999-11-18d2t01.wav
+817c5160985c230387cd9e5b28a846f2  [shntool]  dylan1999-11-18d2t02.wav
+db0806db36092b9fbf60eb054fe8b35d  [shntool]  dylan1999-11-18d2t03.wav
+5f5df23c81f2b21399eb97b461205aeb  [shntool]  dylan1999-11-18d2t04.wav
+f65de0abc5643a45f4c8c4f618b47f03  [shntool]  dylan1999-11-18d2t05.wav
+a9fcfceeaca6c928a76c34b657a0c17f  [shntool]  dylan1999-11-18d2t06.wav
+3fc2a0d23216be4b4bb0c849cfe8f048  [shntool]  dylan1999-11-18d2t07.wav
+1c169a3efe198c8733c8144ae297db10  [shntool]  dylan1999-11-18d2t08.wav
+abc1099a0607355f948bc42738e0049a  [shntool]  dylan1999-11-18d2t09.wav
+0faf0d874a2c2c0860392aebd6e17f0a  [shntool]  dylan1999-11-18d2t10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-18 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:47.17       29498828 B   ---   --   -----    wav  1.0000  dylan1999-11-18d1t01.wav
+     7:49.24       82788092 B   ---   --   -----    wav  1.0000  dylan1999-11-18d1t02.wav
+     7:54.40       83707724 B   ---   --   -----    wav  1.0000  dylan1999-11-18d1t03.wav
+     7:15.06       76748156 B   ---   --   -----    wav  1.0000  dylan1999-11-18d1t04.wav
+     9:37.15      101818124 B   ---   --   -----    wav  1.0000  dylan1999-11-18d1t05.wav
+     5:19.52       56393948 B   ---   --   -----    wav  1.0000  dylan1999-11-18d1t06.wav
+     5:47.09       61232012 B   ---   --   -----    wav  1.0000  dylan1999-11-18d1t07.wav
+     6:31.46       69080636 B   ---   --   -----    wav  1.0000  dylan1999-11-18d1t08.wav
+    11:06.55      117611804 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t01.wav
+     0:37.39        6618572 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t02.wav
+     8:36.02       91027148 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t03.wav
+     5:55.23       62676140 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t04.wav
+     7:59.72       84664988 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t05.wav
+     8:34.24       90726092 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t06.wav
+     4:27.69       47261132 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t07.wav
+     6:55.50       73323644 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t08.wav
+     6:13.33       65874860 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t09.wav
+     6:11.39       65536172 B   ---   --   -----    wav  1.0000  dylan1999-11-18d2t10.wav
+   119:40.15     1266588072 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

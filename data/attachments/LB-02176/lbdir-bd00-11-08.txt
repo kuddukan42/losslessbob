@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-08 
+=================== 
+=================== 
+=================== 
+936208042986331d3849b4287ddd4786  01 Duncan and Brady.shn
+3ed0e453e123a1b42ca3420498a3bcd5  02 The times they are a-changin'.shn
+c1e3de01ea3c404ae1116ef94b757757  03 Desolation Row.shn
+285971732ed856ba448828303a91973e  04 Fourth time around.shn
+155ddabb3d49a881a87d16176301a9fb  05 Tangled up in blue.shn
+c93d021dd64251c3637346e38ea25dde  06 Searching for a soldier's grave.shn
+efdbf59b285ddd93c48d9ae3b9e8176c  07 Country Pie.shn
+1a9f615fea54cf1f98cc2764af194f32  08 Shelter from the storm.shn
+983698af9dc34fa1f8c874af4afbb600  09 Watching the river flow.shn
+db2c6e59d96382bc765813e8ad5a7a2d  10 Tombstone blues.shn
+71bdd9117288699006158891d87c84a8  11 Tryin' to get to heaven.shn
+1e830bec4dedaab1c5745d06032f138d  12 The wicked messenger.shn
+a105daf6e108b9b5ceb7154082ac9a69  13 Leopard-skin pill-box hat.shn
+0e0cde96902e4dc15599f3acd6354e7a  14 Things have changed.shn
+f1789904ce2d3a56da23a4cd9e309209  15 Like a rolling stone.shn
+df8e4a5b7cb6fd336c3d95a4aac0eed3  16 If dogs run free.shn
+79df9c752bbbe6d5a89663f57331b263  17 All along the watchtower.shn
+e16546e9711b45bb8734bcea721dd137  18 I shall be released.shn
+983949e951bac1db041fd0869c318a69  19 Highway 61 revisited.shn
+17dfecab87aab7cc5ed4bf5963780f95  20 Blowin' in the wind.shn
+0d4af69b3db2110c33ce99333b0a1e77  2000-11-08 Bethlehem, Pennsylvania.md5
+d27826e320ca43838414c542de8cc90e  2000-11-08 Stabler Arena, Lehigh University, Bethlehem, Penn.doc
+6ccecc6b000e14420a41d640d1e2399a  bd00-11-08.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-11-08 
+=================== 
+=================== 
+=================== 
+582eba764c41278f65356e8935581d7e  [shntool]  01_Duncan_and_Brady.wav
+b405c19aa055c166b88d5c8612c8c6a6  [shntool]  02_The_times_they_are_a-changin_.wav
+e017e89cad959bf686230c214224aadf  [shntool]  03_Desolation_Row.wav
+c021b6933f4969e538a7fe341d609343  [shntool]  04_Fourth_time_around.wav
+ee3fec587e7637c915754b19e093c0a0  [shntool]  05_Tangled_up_in_blue.wav
+b96105076ca7b800d6cedbd54aa5d672  [shntool]  06_Searching_for_a_soldier_s_grave.wav
+271ebabae8cd539980b20b030743f1df  [shntool]  07_Country_Pie.wav
+b1cfcfb1c7c6636b14e2237ac9af9b77  [shntool]  08_Shelter_from_the_storm.wav
+334bb7085b6270362657d22fb95c5999  [shntool]  09_Watching_the_river_flow.wav
+281dc549fc5506cc652bbc3d03fec9c5  [shntool]  10_Tombstone_blues.wav
+f3a8b0732bce2f36e2622c5b46cf354e  [shntool]  11_Tryin__to_get_to_heaven.wav
+13774dce6cade1f13d5c37d11e769bed  [shntool]  12_The_wicked_messenger.wav
+88bd47cad48300f2e165f9096c4a1395  [shntool]  13_Leopard-skin_pill-box_hat.wav
+50040910c3b319d5709675740f349f0c  [shntool]  14_Things_have_changed.wav
+9474a379917ce438b571ad3dbe6b3dd3  [shntool]  15_Like_a_rolling_stone.wav
+967a0f31b88a0c35cbe2d5fe0081a653  [shntool]  16_If_dogs_run_free.wav
+4b3481c1ddfc7886c916f0020164de0c  [shntool]  17_All_along_the_watchtower.wav
+e6b55a5c50c52b1e49947185ad31b088  [shntool]  18_I_shall_be_released.wav
+9e1be9d27e994cdbe6e99087b2340ebe  [shntool]  19_Highway_61_revisited.wav
+e882f426648ad07229ec5f5e10cd148b  [shntool]  20_Blowin__in_the_wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-08 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:20.54       35407052 B   ---   --   -----    wav  1.0000  01_Duncan_and_Brady.wav
+     5:00.47       53030588 B   ---   --   -----    wav  1.0000  02_The_times_they_are_a-changin_.wav
+     8:28.22       89662988 B   ---   --   -----    wav  1.0000  03_Desolation_Row.wav
+     3:47.18       40085180 B   ---   --   -----    wav  1.0000  04_Fourth_time_around.wav
+     7:44.13       81880220 B   ---   --   -----    wav  1.0000  05_Tangled_up_in_blue.wav
+     3:08.68       33323180 B   ---   --   -----    wav  1.0000  06_Searching_for_a_soldier_s_grave.wav
+     3:06.07       32826908 B   ---   --   -----    wav  1.0000  07_Country_Pie.wav
+     5:17.58       56055260 B   ---   --   -----    wav  1.0000  08_Shelter_from_the_storm.wav
+     5:08.40       54425324 B   ---   --   -----    wav  1.0000  09_Watching_the_river_flow.wav
+     5:36.70       59435084 B   ---   --   -----    wav  1.0000  10_Tombstone_blues.wav
+     5:28.25       57918044 B   ---   --   -----    wav  1.0000  11_Tryin__to_get_to_heaven.wav
+     5:02.22       53324588 B   ---   --   -----    wav  1.0000  12_The_wicked_messenger.wav
+     5:47.00       61210844 B   ---   --   -----    wav  1.0000  13_Leopard-skin_pill-box_hat.wav
+     6:02.41       63953276 B   ---   --   -----    wav  1.0000  14_Things_have_changed.wav
+     7:06.20       75193484 B   ---   --   -----    wav  1.0000  15_Like_a_rolling_stone.wav
+     3:45.16       39727676 B   ---   --   -----    wav  1.0000  16_If_dogs_run_free.wav
+     4:25.29       46814252 B   ---   --   -----    wav  1.0000  17_All_along_the_watchtower.wav
+     5:29.71       58202636 B   ---   --   -----    wav  1.0000  18_I_shall_be_released.wav
+     5:48.51       61507196 B   ---   --   -----    wav  1.0000  19_Highway_61_revisited.wav
+     4:58.51       52687196 B   ---   --   -----    wav  1.0000  20_Blowin__in_the_wind.wav
+   104:33.48     1106670976 B                            1.0000  (20 files)
+=================== 
+=================== 
+=================== 

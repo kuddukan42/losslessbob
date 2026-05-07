@@ -1,0 +1,32 @@
+1b92a4dfcaf8d2eed0aebf5867ec7c20  D1\bd78-10-17 Chicago 101.flac
+d25bd73e9e310eef6e26e4eba650a4b3  D1\bd78-10-17 Chicago 102.flac
+01a2a58bea73b9c44f579e8cb59f0bcc  D1\bd78-10-17 Chicago 103.flac
+d6d9402e6693102271df4db123477b0a  D1\bd78-10-17 Chicago 104.flac
+4b23e366d1da22a33fcbe4dfc547281d  D1\bd78-10-17 Chicago 105.flac
+73e6ccbdb3e6fe5fba7f4d3544247df0  D1\bd78-10-17 Chicago 106.flac
+8b1ee2ee1e64acb141b0a992ee8144d0  D1\bd78-10-17 Chicago 107.flac
+d3f32c2a71f1749b53b2517ac74fe2ed  D1\bd78-10-17 Chicago 108.flac
+bf59029ee220146d854db02bef29439f  D1\bd78-10-17 Chicago 109.flac
+432bfdf115d843644e043a72457fb1ce  D1\bd78-10-17 Chicago 110.flac
+3a770ed094a9aa73501e9ec1b01f6672  D1\bd78-10-17 Chicago 111.flac
+bb9e452b99d304b69142e680e2f51cae  D1\bd78-10-17 Chicago 112.flac
+695664fa48ff90b24e70a559f3baeb4e  D1\bd78-10-17 Chicago 113.flac
+a8c2bd7cc150b39f01ed966cefbf4ae9  D1\bd78-10-17 Chicago 114.flac
+1e2f661ea6ce3efb63b46e85461a14a1  D1\bd78-10-17 Chicago 115.flac
+f2284a0a6a8c703244d07b11090118e1  D1\D1.md5
+17718c3f4f03e3191d37142106558cb6  D2\bd78-10-17 Chicago 201.flac
+111c4368d1ac9b0edeb7f939cbf04ce3  D2\bd78-10-17 Chicago 202.flac
+6c048c3eb11b36d6aed7209a16cf3066  D2\bd78-10-17 Chicago 203.flac
+7eeefbe1892ea4e974dae64eb0c1b681  D2\bd78-10-17 Chicago 204.flac
+04dccabceaeb8b9ed7c5285bfeb442fa  D2\bd78-10-17 Chicago 205.flac
+7937e1ec782fffbc5d9c5b1c815cb7dd  D2\bd78-10-17 Chicago 206.flac
+c9ce5f01677001ad342a967b0d3fd5d6  D2\bd78-10-17 Chicago 207.flac
+d63dff0bf6ba13179003f49adb96c50f  D2\bd78-10-17 Chicago 208.flac
+08abd8f011bed078cbe4ab34ae58ebd9  D2\bd78-10-17 Chicago 209.flac
+463893122e05a7d106da3a49b357daaf  D2\bd78-10-17 Chicago 210.flac
+dddfc31f3f5608200735953cbf62b3db  D2\bd78-10-17 Chicago 211.flac
+4545854ffb532bb727e5e88001ddf5ad  D2\bd78-10-17 Chicago 212.flac
+0ab909a568001b54edcfd6123529ffc2  D2\bd78-10-17 Chicago 213.flac
+eebdcfa1fcaa7a4c39f8daebe9e5e170  D2\D2.md5
+8c3c629ef2d0fe888a5f7a35d48014ce  info.txt
+872513e546c4bbc6887097f57cb6795a  LK 1978 Leg 3 DVD 4.md5

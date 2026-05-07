@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-10-c.flacf 
+=================== 
+=================== 
+=================== 
+9177bdcb8b5f12f1aa6b152f01aeee89  d1\01-Wait for the Light to Shine.flac
+38a00bce64e8534fb1d089a9a2637cb6  d1\02-Song to Woody.flac
+c02b6d4e116bba88b6ba55d450f7bd7c  d1\03-Desolation Row.flac
+cdfc53a066e19e981256230d45e0add9  d1\04-Searching for a Soldier's Grave.flac
+e1517508c19216081c69a5bf87e70c99  d1\05-Things Have Changed.flac
+2d51dd176f3e3136440c60afaf9a2bc8  d1\06-Summer Days.flac
+d267a5af48ba77b2eb94e6c3360d4114  d1\07-I Want You.flac
+9b3f56642ca966a62bd4387a5fe1713c  d1\08-Cry a While.flac
+09e8702cbf07d6be64e376f8397d399a  d1\09-Masters of War.flac
+ed2fe8f6176fb06eb25a55a80e5a08eb  d1\10-Boots of Spanish Leather.flac
+fd1065fa867581faebf9da9cd4a35508  d1\11-Don't Think Twice, It's Alright.flac
+52e231357d66b9c9def529ad7e98856c  d1\12-Highway 61 Revisited.flac
+359e16819a31b24cb94afa4c500306c6  d2\01-Sugar Baby.flac
+b3a7ffc73d6f3b91b2354e9caf752223  d2\02-The Wicked Messenger.flac
+0c9947b35c81c15ecd0283d4f058b6a5  d2\03-Leopard-Skin Pill-box Hat.flac
+6648810c3f7ff228e50c084853f44b8a  d2\04-Love Sick.flac
+1974f02f8504e102caf0ed1f960c20a8  d2\05-Like a Rolling Stone.flac
+b30374ea3ee77e04e91015ea6870554e  d2\06-If Dogs Run Free.flac
+d759c2f11f7ed02e9f4e9e09e63eae9f  d2\07-Honest with Me.flac
+cc8f3c78b72d2a7d9d7287d5bfe45fc1  d2\08-Blowin' in the Wind.flac
+3682bf60cefd0f97bfa6b5b2eccde787  eacd1.log
+433b647cd0155b3e64382858244a75fc  eacd2.log
+d239130d88b59fab10ecde0baffeb027  fingerprint.txt
+fab87fd700d4f159416b7300ed0e6821  flac.md5
+d7ef2d4f0103a2799df75ac8dabb32ae  info.txt
+1aae330171acf0fcdd814b101fd2f06f  wav.md5
+307d1b89439c3545282fb79256de2c7e  wav.shntool_len.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-10-c.flacf\d1 
+=================== 
+=================== 
+=================== 
+01-wait for the light to shine.flac:09a3c2efdbf166d3ed4e87009711e3b8
+02-song to woody.flac:ef2a44f22bda9f0ee86966e6d694c32c
+03-desolation row.flac:56828986d4efda70392d7296b96bbd38
+04-searching for a soldier's grave.flac:17d245d86c8378ce321f5ec9686cdae3
+05-things have changed.flac:f19af5adfdc8e7294b5945c19d1f3783
+06-summer days.flac:6e19f5890f6b4d8484736f8d48e0b0d6
+07-i want you.flac:01e1b0199c548221bbece628bbfd45c6
+08-cry a while.flac:8657da416c2e6f006930c67ae165eb5c
+09-masters of war.flac:d950894bcfa0b79522ffeffafbc02153
+10-boots of spanish leather.flac:bca2278eb872e361e197dc03bb713d15
+11-don't think twice, it's alright.flac:65401742e25170b357ae435e97cb4cb1
+12-highway 61 revisited.flac:7f95c8dabd76068f111842ecdc542abe
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-10-c.flacf\d2 
+=================== 
+=================== 
+=================== 
+01-sugar baby.flac:7bf217a3ae85d27bbaf941334f6de0c6
+02-the wicked messenger.flac:7e1c9f4496f175dfa4c11f7f7a00a714
+03-leopard-skin pill-box hat.flac:a25a0d9abb7f65770dbc0627decb1db5
+04-love sick.flac:f5b531aca4c4709c54e69e2afbd8f2c9
+05-like a rolling stone.flac:d461262468acbba440efe58a3aaee64a
+06-if dogs run free.flac:9a19844df1acad793d92716e3ebbd93d
+07-honest with me.flac:2d5ca55ef74b36f4c7d61060871962a8
+08-blowin' in the wind.flac:d3c0401227f7f3c24b4c963921225a00
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-10-c.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:33.69       37735532 B   ---   --   ---xx   flac  0.5739  01-Wait for the Light to Shine.flac
+     3:56.42       41729228 B   ---   --   ---xx   flac  0.4319  02-Song to Woody.flac
+     8:37.50       91316444 B   ---   --   ---xx   flac  0.5317  03-Desolation Row.flac
+     3:13.25       34104044 B   ---   --   ---xx   flac  0.5024  04-Searching for a Soldier's Grave.flac
+     6:33.09       69346412 B   ---   --   ---xx   flac  0.5509  05-Things Have Changed.flac
+     5:49.44       61667132 B   ---   --   ---xx   flac  0.5860  06-Summer Days.flac
+     6:48.73       72142940 B   ---   --   ---xx   flac  0.5218  07-I Want You.flac
+     5:33.61       58884716 B   ---   --   ---xx   flac  0.5298  08-Cry a While.flac
+     5:25.19       57374732 B   ---   --   ---xx   flac  0.4874  09-Masters of War.flac
+     6:36.67       70012028 B   ---   --   ---xx   flac  0.3722  10-Boots of Spanish Leather.flac
+     6:35.11       69703916 B   ---   --   ---xx   flac  0.4663  11-Don't Think Twice, It's Alright.flac
+     6:35.62       69823868 B   ---   --   ---xx   flac  0.5111  12-Highway 61 Revisited.flac
+    69:20.07      733840992 B                            0.5052  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-10-c.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:31.21       79605836 B   ---   --   ---xx   flac  0.3462  01-Sugar Baby.flac
+     5:41.50       60270044 B   ---   --   ---xx   flac  0.5889  02-The Wicked Messenger.flac
+     8:24.07       88922108 B   ---   --   ---xx   flac  0.5408  03-Leopard-Skin Pill-box Hat.flac
+     5:57.04       62984252 B   ---   --   ---xx   flac  0.4986  04-Love Sick.flac
+     8:00.34       84752012 B   ---   --   ---xx   flac  0.5674  05-Like a Rolling Stone.flac
+     4:29.40       47545724 B   ---   --   ---xx   flac  0.4046  06-If Dogs Run Free.flac
+     6:53.11       72879116 B   ---   --   ---xx   flac  0.5950  07-Honest with Me.flac
+     5:49.40       61657724 B   ---   --   ---xx   flac  0.5043  08-Blowin' in the Wind.flac
+    52:46.57      558616816 B                            0.5090  (8 files)
+=================== 
+=================== 
+=================== 

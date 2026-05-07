@@ -1,0 +1,55 @@
+BOB DYLAN
+
+Date : June 18, 1999
+Venue : Concord Pavilion
+City : Concord, CA.
+
+Source:
+"Hide" recording
+
+Equipment:
+COS-11PTs > CPS161(Pre amp) > TCD-D8 (16bit/44.1kHz) 
+
+Lineage:
+DAT master > DTC-ZE700 > RPD-500 > CD-Rs 
+> PC(WAV) > Adobe Audition(edit) > TLH > FLAC (level 6) 
+
+Disc1:
+Friend Of The Devil 
+The Times They Are A-Changin' 
+Masters Of War 
+Don't Think Twice, It's All Right 
+Tangled Up In Blue 
+All Along The Watchtower 
+Lay, Lady, Lay 
+Stuck Inside Of Mobile 
+Not Dark Yet 
+Highway 61 Revisited 
+
+Disc2:
+Like A Rolling Stone 
+It AIn't Me, Babe 
+The Sound Of Silence 
+ (Duet with Paul Simon) 
+I Walk The Line / Blue Moon Of Kentucky 
+ (Medley with Paul Simon)
+Knockin' On Heaven's Door 
+ (Duet with Paul Simon) Love Sick 
+
+
+Fingerprints:
+bd-6-18-99-d1001.flac:c6dd004635b70925913345639d189e68
+bd-6-18-99-d1002.flac:4d4562907597b9b70cc1889ca5d7dbc7
+bd-6-18-99-d1003.flac:6e8bf09ea8508b508add3a17f5f96455
+bd-6-18-99-d1004.flac:659fa1671535b7061ad70728de3385b8
+bd-6-18-99-d1005.flac:ae782838ec0c925de07fcf82e1a6e692
+bd-6-18-99-d1006.flac:adde187ead1f87248ea982707f428129
+bd-6-18-99-d1007.flac:7f0c612427f33623e2efaefe280b0a4d
+bd-6-18-99-d1008.flac:1ab66fafba775fd03fa69645655b5b16
+bd-6-18-99-d1009.flac:96dc3428478c213f068fc819f2054ea2
+bd-6-18-99-d1010.flac:81cfad72060b4ffc902c358001ed6d7c
+bd-6-18-99-d2001.flac:4972c7bb108d83584b894e9d633387d4
+bd-6-18-99-d2002.flac:68f6a2470856dd087ce11b4c58bc49f2
+bd-6-18-99-d2003.flac:c83036ffd13fd275f2563f39c0048125
+bd-6-18-99-d2004.flac:e9b45128326298e6ed944d7b653cfa1b
+bd-6-18-99-d2005.flac:a993e20b2477632bae707588741660a8

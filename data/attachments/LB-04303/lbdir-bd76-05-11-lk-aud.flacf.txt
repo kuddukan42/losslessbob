@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-11-lk-aud.flacf 
+=================== 
+=================== 
+=================== 
+40eb97ad163aa8debe3fba2a2ea5d883  bd76-05-11-lk-aud-LB-4303.txt
+ebcd0167f0c0b8456f3a5edc80063878  Notes.txt
+5227e58186ad59375a74401157f5c4b8  San Antonio 11 May 76 (aud).md5
+4380a32309244d20334356604d584794  Track00 Spanish Is.flac
+33a886d9892b575f654de6a75f2a7cf8  Track01.flac
+7b508f0b6ac860f33042cd3156a928b9  Track02.flac
+ab358fd911c1cbd5e887d484bd805a2c  Track03.flac
+cdd15510e4a24fd565cf2557bbde0465  Track04.flac
+0cb5941d49848f2a6e74c013d16d477c  Track05.flac
+26e415642838109bda98a0d279721abe  Track06.flac
+d9d9e7805cf8c8dd1b49fa519304c0d8  Track07.flac
+a3dadfe4600b55dc47f3dfce363f3f19  Track08.flac
+f4c89b10294a1c0df288eed4662329ff  Track09.flac
+8fad92938650e100497829c1e22cf6e2  Track10.flac
+f82505095eca7936037d36c1bb0ed416  Track11.flac
+642410cf7349d3c71644f4979625dfaf  Track12.flac
+7dc4911504f925de9953d28930235fd1  Track13.flac
+3c572e071d0bbc7a6df38c763a4cde63  Track14.flac
+3deab3db1d641dbbd6bb589ac9abd4ef  Track15.flac
+c79d3c7fb59d96749f99bb25bc884c57  Track16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-11-lk-aud.flacf 
+=================== 
+=================== 
+=================== 
+Track00 Spanish Is.flac:7f38e8e61a41d8054ae016cb69696b14
+Track01.flac:0dd579307b2513f085c91f2c707ffa23
+Track02.flac:d4cdbf3f0e69ddd3bf4568b796657697
+Track03.flac:385c356abeede67b08e697384674f11e
+Track04.flac:6da50c64c5dbfa5ecfee365205b8f790
+Track05.flac:372e9a44801e3ec585a3fe665b30932b
+Track06.flac:ae1f4c5119cda1937a6e5aead82b9749
+Track07.flac:9abc29382abb9b1fa6e7aedc45290821
+Track08.flac:5d4439e6dfccf1720bb40d8884800af1
+Track09.flac:1897f6d4beeef647283920f1b2524c8d
+Track10.flac:6df3f5148cff946df5e69dd652fec632
+Track11.flac:16877b1fbcfdd7e8aa222db0852ac47a
+Track12.flac:a2ead5ded1fe7ff1d41d06e84c80a03e
+Track13.flac:73cc23298248dcbee455a102c5c268f5
+Track14.flac:b1cf64ec56ccd40e0c6ccd12140333b1
+Track15.flac:d738b13d8d48098909ebfc7776d44ea4
+Track16.flac:041087e892d5bfd312b646e20bf87608
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-11-lk-aud.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:59.08       52762460 B   ---   --   ---xx   flac  0.4628  Track00 Spanish Is.flac
+     5:03.50       53566844 B   ---   --   ---xx   flac  0.5201  Track01.flac
+     3:20.30       35350604 B   ---   --   ---xx   flac  0.5126  Track02.flac
+     2:25.38       25667420 B   ---   --   ---xx   flac  0.5089  Track03.flac
+     3:51.02       40753148 B   ---   --   ---xx   flac  0.5030  Track04.flac
+     4:18.13       45541820 B   ---   --   ---xx   flac  0.5289  Track05.flac
+     5:10.27       54747548 B   ---   --   ---xx   flac  0.5271  Track06.flac
+     4:52.23       51562940 B   ---   --   ---xx   flac  0.5261  Track07.flac
+     3:59.07       42176108 B   ---   --   ---xx   flac  0.5159  Track08.flac
+     6:30.37       68883068 B   ---   --   ---xx   flac  0.4851  Track09.flac
+     3:17.22       34802588 B   ---   --   ---xx   flac  0.5086  Track10.flac
+     4:20.72       46033388 B   ---   --   ---xx   flac  0.5142  Track11.flac
+     3:58.14       42016172 B   ---   --   ---xx   flac  0.5169  Track12.flac
+     5:06.17       54018428 B   ---   --   ---xx   flac  0.5086  Track13.flac
+    10:31.18      111350780 B   ---   --   ---xx   flac  0.5146  Track14.flac
+     3:40.65       38960924 B   ---   --   ---xx   flac  0.5125  Track15.flac
+     6:28.05       68455004 B   ---   --   ---xx   flac  0.5166  Track16.flac
+    81:52.73      866649244 B                            0.5105  (17 files)
+=================== 
+=================== 
+=================== 

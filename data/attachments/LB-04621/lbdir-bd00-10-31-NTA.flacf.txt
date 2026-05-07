@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-10-31-NTA.flacf 
+=================== 
+=================== 
+=================== 
+fd9b9a8bd3d909a742e56260f4d0b796  bd00-10-31-NTA-LB-4621.txt
+bd15cc83657fab82457e17e5d2e8c8c0  bd2000-10-31-Evanston-NTA-d1\Track01.flac
+6c0a262d2086ae250382993cc0e613f6  bd2000-10-31-Evanston-NTA-d1\Track02.flac
+b465900b865f73fc37c0c44243517072  bd2000-10-31-Evanston-NTA-d1\Track03.flac
+1f021dabbf9617861bbfdfab3130e358  bd2000-10-31-Evanston-NTA-d1\Track04.flac
+ab9ae7ceec7095902a4159b079b1a91d  bd2000-10-31-Evanston-NTA-d1\Track05.flac
+225f2a40d860ef9290a1a08ad079c97c  bd2000-10-31-Evanston-NTA-d1\Track06.flac
+168f8399cd150951582ec3b380c69412  bd2000-10-31-Evanston-NTA-d1\Track07.flac
+533cc89bb545a51849bccfc46ea16091  bd2000-10-31-Evanston-NTA-d1\Track08.flac
+50546a4133f3b565c8c3a7eea40e380c  bd2000-10-31-Evanston-NTA-d1\Track09.flac
+b2d1e4e5559b74f85d5f6021c10e23b3  bd2000-10-31-Evanston-NTA-d1\Track10.flac
+cd857a1549a54cf0f25c0c805c11ad77  bd2000-10-31-Evanston-NTA-d1\Track11.flac
+2d3e915342a7760ae0cd252ab4fd58b2  bd2000-10-31-Evanston-NTA-d1\bd2000-10-31-Evanston-NTA-d1.md5
+6f2985939972d01037259ac36f290584  bd2000-10-31-Evanston-NTA-d2\Track01.flac
+faa76387875ec11955a1f20d5fc29ce0  bd2000-10-31-Evanston-NTA-d2\Track02.flac
+6684b2d0ba1751979f432f1c522fb89c  bd2000-10-31-Evanston-NTA-d2\Track03.flac
+90afdf91fa051d817619768fa244714e  bd2000-10-31-Evanston-NTA-d2\Track04.flac
+cc47b8b67699b4fe505bbe90e910b6c0  bd2000-10-31-Evanston-NTA-d2\Track05.flac
+a42b7b9812c0affe880542afe28e5137  bd2000-10-31-Evanston-NTA-d2\Track06.flac
+2cbf6c001e26b5d58d43877a13487420  bd2000-10-31-Evanston-NTA-d2\Track07.flac
+d9ece4abda2eb08447f222553233d3d5  bd2000-10-31-Evanston-NTA-d2\Track08.flac
+182d15157e1e2b4e890964178dd9849e  bd2000-10-31-Evanston-NTA-d2\bd2000-10-31-Evanston-NTA-d2.md5
+8600a77cf75429992d78e0d611a11f4b  bd2000-10-31-NTA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-10-31-NTA.flacf\bd2000-10-31-Evanston-NTA-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:c48c14540126ae2422765b47d8b9e16b
+Track02.flac:fd54c0441b7e2f1f3f8a8e82ee7d4a56
+Track03.flac:d8abecb2a6f702b462d7a994912a39e7
+Track04.flac:24f8f1fdbafbb154657910dfe7355814
+Track05.flac:3351995b7dd58b283e9a2a3a4394fdd6
+Track06.flac:cfa214e73c17554b6dcdabd7606618e4
+Track07.flac:35a04fb2b1545967ac6db326fb27c349
+Track08.flac:b23e793ce03e28a269a526cce94fc0b4
+Track09.flac:46c158efbbef36c9c6a87693b6415fdc
+Track10.flac:805d7cb7bc6aeae25ce968426b680f2d
+Track11.flac:83fef8a4a3afc9aed5d81b3f5475edad
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-10-31-NTA.flacf\bd2000-10-31-Evanston-NTA-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:0b660c2b147ebf8b184f41e8e6b5b61f
+Track02.flac:1d6da592d50790bbff0c7dda378760ec
+Track03.flac:acc255c1920fbc856bb62afbb1cd2124
+Track04.flac:b25717d043913cf0b958a1d09bbf9165
+Track05.flac:57ce2627ea4d5af9b1ff7d8b98939264
+Track06.flac:07b77c01f8247338301c1f0cdbb73dcc
+Track07.flac:050b6b8646b1491825ba2324ed05c78f
+Track08.flac:7659ae16e0325713a5717bda61fa2668
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-10-31-NTA.flacf\bd2000-10-31-Evanston-NTA-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.39       34842572 B   ---   --   ---xx   flac  0.6266  Track01.flac
+     5:20.33       56525660 B   ---   --   ---xx   flac  0.5404  Track02.flac
+     9:21.73       99132140 B   ---   --   ---xx   flac  0.5933  Track03.flac
+     6:12.31       65693756 B   ---   --   ---xx   flac  0.4634  Track04.flac
+     7:56.05       83978204 B   ---   --   ---xx   flac  0.6230  Track05.flac
+     3:10.33       33593660 B   ---   --   ---xx   flac  0.4082  Track06.flac
+     3:11.57       33826508 B   ---   --   ---xx   flac  0.5853  Track07.flac
+     5:06.66       54133676 B   ---   --   ---xx   flac  0.4693  Track08.flac
+     6:42.28       70978700 B   ---   --   ---xx   flac  0.6314  Track09.flac
+     6:31.38       69061820 B   ---   --   ---xx   flac  0.4777  Track10.flac
+     4:40.27       49455548 B   ---   --   ---xx   flac  0.6476  Track11.flac
+    61:31.55      651222244 B                            0.5570  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-10-31-NTA.flacf\bd2000-10-31-Evanston-NTA-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.33       76282460 B   ---   --   ---xx   flac  0.6203  Track01.flac
+     6:03.16       64070876 B   ---   --   ---xx   flac  0.6166  Track02.flac
+     7:00.49       74203292 B   ---   --   ---xx   flac  0.6366  Track03.flac
+     4:00.49       42451292 B   ---   --   ---xx   flac  0.4760  Track04.flac
+     4:56.20       52261484 B   ---   --   ---xx   flac  0.6385  Track05.flac
+     5:40.46       60084236 B   ---   --   ---xx   flac  0.5763  Track06.flac
+     5:26.25       57565244 B   ---   --   ---xx   flac  0.6334  Track07.flac
+     5:50.02       61744748 B   ---   --   ---xx   flac  0.5513  Track08.flac
+    46:10.15      488663632 B                            0.5991  (8 files)
+=================== 
+=================== 
+=================== 

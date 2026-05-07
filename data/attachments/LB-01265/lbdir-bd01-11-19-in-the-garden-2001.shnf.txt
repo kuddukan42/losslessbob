@@ -1,0 +1,174 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-11-19-in-the-garden-2001.shnf 
+=================== 
+=================== 
+=================== 
+5c2c1f1c09468267edfe73bf256ef70c  1\Track01.shn
+93a0297cd9c04282cc88df4c3fb3a75f  1\Track02.shn
+bda6ee5bcf3d5a253e1444544bb3124b  1\Track03.shn
+9577bb9518ecc0a02195712c86b9a03e  1\Track04.shn
+ce25a98edd5cbdd587588cb9ee386b03  1\Track05.shn
+1011fd1c77db068abb008ccbeaeab382  1\Track06.shn
+118946e880eecbcfadaa1216e4430500  1\Track07.shn
+7e6d7e1d95879a9a1401ceae484d77c8  1\Track08.shn
+e382069823f6704dc59f6193ba1e65e6  1\Track09.shn
+313d6de942de638d541b923dd491bcbb  1\Track10.shn
+47c1c4e7787c1843c9c3e76bc24151e1  1\Track11.shn
+dbcaab653e62894f3a9cf62e1e1008a0  1\noname.md5
+dd7e67cc3d0b8b959559475cc89746e4  2\Track01.shn
+46d710b9e373ca5b9b0cdb1d28bffc10  2\Track02.shn
+f73f9cb39fcbf2cec0e3fe284fd817c4  2\Track03.shn
+36cb431abb2f2cd36fc6af54ecb955aa  2\Track04.shn
+504e779949b8778632bfe0f2a019338b  2\Track05.shn
+984101d6d59e25cbfdd1f630891ba100  2\Track06.shn
+1c7485e02ae84e201f63dc8b86cfeb18  2\Track07.shn
+09cb82eca1a3e7c50a638d14a05ac107  2\Track08.shn
+8a35440b98c0783eb39165552803b493  2\Track09.shn
+310d9fcc1b5e95fc576fc5c761ffaec8  2\Track10.shn
+78946905fcfc9dc0daa7355d16421e19  2\Track11.shn
+a2d55fb4f51a2d9d8e2ded7d477bea86  2\noname.md5
+7bbfe5859491fbb9b0b2e9b62fd6293d  3\Track 01.shn
+ab46e2d59824f389b825e0e8256ca542  3\Track 02.shn
+0b77b28f13ef78ef58a4bd11fb6d5de5  3\Track 03.shn
+97a75b7e9803c0d1d6c83b5a79c2b11f  3\Track 04.shn
+5b2de996a8c766ccaa0b96d57528d7f3  3\Track 05.shn
+b4e3f298c67eb38d8f4ea2986f1aef25  3\Track 06.shn
+fd273a3b560e16a36862c2280d5ffeda  3\Track 07.shn
+b1ab35b489ded43ac9ead164dd4b40b7  3\Track 08.shn
+8856a8243931f54d4cf55d53a6de31a3  3\Track 09.shn
+4fbb6890109a9fd5af441c630816c5e5  3\Track 10.shn
+cf221ee7d85e6faa3f0da7dd0b69ce71  3\Track 11.shn
+3ba4707efcd23fed0c997353e42d6c8b  3\Track 12.shn
+c01bce59353241faf8edae11e304d577  3\Track 13.shn
+e4cb61d09d1b2b7f5bed525036b86bff  3\Track 14 .shn
+f04565e11a261b87f10515d941561dc5  3\noname.md5
+8e62dfdad3eb795d2e4ad5846ecd3a03  bd01-11-19-in-the-garden-2001.txt
+8bd64f7a30dffdefe6906626a5bf1684  Seite01.jpg
+a0ea65806680c3f90a56c1356bc6ab59  Seite02.jpg
+54e837266863935baa96bba2b2b940e7  Seite03.jpg
+45c21cbfbb42668c5278c4b010a9dd9e  Seite04.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-11-19-in-the-garden-2001.shnf\3 
+=================== 
+=================== 
+=================== 
+0fb27e6229ede834253f2040cc05437f  [shntool]  Track_01.wav
+ba422eebe23724c96dd81a2327cb1e0b  [shntool]  Track_02.wav
+995dc01bf6dbc01c7bf2976f4b47b824  [shntool]  Track_03.wav
+11f766121612105f226e74bb72f26cee  [shntool]  Track_04.wav
+b3f66ebe56e2f64d929f942fd0bd2bee  [shntool]  Track_05.wav
+da6374e2500d14735e9e14996e93fcf7  [shntool]  Track_06.wav
+81f2a8e71137afe94d140a18ffd73a5d  [shntool]  Track_07.wav
+7fe1d7b7d8cebbd0765fdbe0e16cb484  [shntool]  Track_08.wav
+786d7b9d34deb651e4b94242bb7a5edf  [shntool]  Track_09.wav
+2535658ae21a09695e6528879f361502  [shntool]  Track_10.wav
+ad771a685b3db55ec2300b7784848889  [shntool]  Track_11.wav
+5b061f60d2388b7ca16e8ef922a41167  [shntool]  Track_12.wav
+887173b532f5e4fd7991cb8c5e06a1cc  [shntool]  Track_13.wav
+c18e6ccd60fdd76fad78bbbc1693269c  [shntool]  Track_14_.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-11-19-in-the-garden-2001.shnf\2 
+=================== 
+=================== 
+=================== 
+1aeb7fd8108b93f6d82a762550cc1c00  [shntool]  Track01.wav
+eafb48dec1fd2435a964567bc07685eb  [shntool]  Track02.wav
+20c255701a18de15ef70486dd80da523  [shntool]  Track03.wav
+ac0cf54dfd11348f2418da86db9fd832  [shntool]  Track04.wav
+a67cb0cea62e24af6428474b1a155582  [shntool]  Track05.wav
+345bb630b3978fbc89d162a6b5319a5b  [shntool]  Track06.wav
+61c99ec719c8121dca8878c367132a21  [shntool]  Track07.wav
+e4dac2d070b34d0432d5a16fee4dfe1a  [shntool]  Track08.wav
+e59488f21267223a675e846bf1c579cf  [shntool]  Track09.wav
+9b6222b6c11d2cdc1c15818fa3a7111f  [shntool]  Track10.wav
+f005bf98581add3e92268b5631556028  [shntool]  Track11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-11-19-in-the-garden-2001.shnf\1 
+=================== 
+=================== 
+=================== 
+126de3a363a49cded1c8bd386d3381f5  [shntool]  Track01.wav
+b843f2e601ba8d8dda8d2b1c051e286f  [shntool]  Track02.wav
+f015a74f391825445d219b07ac7c3dc1  [shntool]  Track03.wav
+df5a02f7f8102e0e49db369012a33cb7  [shntool]  Track04.wav
+69da839ee89c6037ae38b587faf26bf7  [shntool]  Track05.wav
+9e95effe7b45df63a543dc90f8e5531f  [shntool]  Track06.wav
+6ea7465e996c97c97a42ef92ba84dc16  [shntool]  Track07.wav
+339f0cf1611e46da1d23d1f04002bd57  [shntool]  Track08.wav
+d9ad1f6d6e8b28ba9cd85f39eda36c0f  [shntool]  Track09.wav
+652eed653c2d3dd7a2351642a6846d6c  [shntool]  Track10.wav
+fc9637268be64cf4455379feffaf9457  [shntool]  Track11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-19-in-the-garden-2001.shnf\3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.62       43892688 B   -b-   --   ---xx    shn  0.7278  Track 01.shn
+     4:13.67       44786828 B   ---   --   ---xx    shn  0.6854  Track 02.shn
+     6:06.03       64569500 B   ---   --   ---xx    shn  0.7703  Track 03.shn
+     8:03.05       85213004 B   ---   --   ---xx    shn  0.7226  Track 04.shn
+     6:17.37       66589868 B   ---   --   ---xx    shn  0.6810  Track 05.shn
+     5:52.18       62135180 B   ---   --   ---xx    shn  0.7648  Track 06.shn
+     4:44.34       50177612 B   ---   --   ---xx    shn  0.6381  Track 07.shn
+     6:29.60       68761728 B   -b-   --   ---xx    shn  0.6925  Track 08.shn
+     5:44.06       60696168 B   -b-   --   ---xx    shn  0.7328  Track 09.shn
+     5:18.03       56102300 B   ---   --   ---xx    shn  0.6551  Track 10.shn
+     5:13.40       55307324 B   ---   --   ---xx    shn  0.7459  Track 11.shn
+     5:36.30       59342032 B   -b-   --   ---xx    shn  0.7036  Track 12.shn
+     4:44.05       50108300 B   -b-   --   ---xx    shn  0.6612  Track 13.shn
+     5:44.40       60775912 B   -b-   --   ---xx    shn  0.7200  Track 14 .shn
+    78:16.35      828458444 B                            0.7092  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-19-in-the-garden-2001.shnf\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:26.72       68259788 B   ---   --   ---xx    shn  0.5850  Track01.shn
+     6:07.45       64844684 B   ---   --   ---xx    shn  0.7025  Track02.shn
+     7:37.03       80621900 B   ---   --   ---xx    shn  0.5148  Track03.shn
+     5:38.00       59623244 B   ---   --   ---xx    shn  0.7204  Track04.shn
+     8:32.10       90340364 B   ---   --   ---xx    shn  0.6920  Track05.shn
+     6:08.62       65061068 B   ---   --   ---xx    shn  0.7176  Track06.shn
+     7:43.55       81802604 B   ---   --   ---xx    shn  0.7385  Track07.shn
+     7:00.38       74177420 B   ---   --   ---xx    shn  0.6634  Track08.shn
+     7:07.25       75381644 B   ---   --   ---xx    shn  0.7487  Track09.shn
+     5:39.72       59968988 B   ---   --   ---xx    shn  0.6114  Track10.shn
+     5:20.68       56607980 B   ---   --   ---xx    shn  0.7210  Track11.shn
+    73:23.00      776689684 B                            0.6730  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-19-in-the-garden-2001.shnf\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:52.20       30387884 B   ---   --   ---xx    shn  0.7416  Track01.shn
+     9:13.60       97690364 B   ---   --   ---xx    shn  0.6207  Track02.shn
+     9:15.40       97996124 B   ---   --   ---xx    shn  0.6758  Track03.shn
+     3:08.27       33226748 B   ---   --   ---xx    shn  0.6392  Track04.shn
+     5:07.25       54213644 B   ---   --   ---xx    shn  0.6482  Track05.shn
+     8:32.10       90340364 B   ---   --   ---xx    shn  0.6704  Track06.shn
+     7:19.48       77552540 B   ---   --   ---xx    shn  0.6769  Track07.shn
+     6:46.52       71740748 B   ---   --   ---xx    shn  0.7121  Track08.shn
+     6:01.30       63751004 B   ---   --   ---xx    shn  0.6740  Track09.shn
+     7:44.23       81903740 B   ---   --   ---xx    shn  0.5882  Track10.shn
+     7:54.22       83665388 B   ---   --   ---xx    shn  0.7126  Track11.shn
+    73:55.57      782468548 B                            0.6654  (11 files)
+=================== 
+=================== 
+=================== 

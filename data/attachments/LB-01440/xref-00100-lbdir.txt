@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-27-SCHUBERT-REC-ASM-d.fkacf 
+=================== 
+=================== 
+=================== 
+2fc0cc0399fce8957a2e2189fa754042  101 Announcement.flac
+40420ff9fae24585f275a73646d15371  102 Duncan And Brady.flac
+509d16d43cc9d026db75ff5e38c977aa  103 Mr. Tambourine Man.flac
+23c9efdd61c2cf3dc8cc58d861ca35e2  104 Masters Of War.flac
+edf61f04a37a003ee716751e7eb11828  105 Boots Of Spanish Leather.flac
+8c6d20cf3b3030ba96090854e68621d9  106 Tangled Up In Blue.flac
+95203ac0d441a94d69aa0342b14c67ac  107 To Ramona.flac
+68012bc0915b9b84c93c968ee5bc0464  108 Country Pie.flac
+52a7a3652a1edb95fb3bd67c74a08ab5  109 Positively 4th Street .flac
+96889545aedfbec80ad087103e118f61  110 Stuck Inside Of Mobile With The Memphis Blues Again .flac
+52e3649a0a2bfb93a8593fedfd35c72c  111 Can't Wait.flac
+c472758232278f5b8ee8013838dc13d5  2000-05-27 Modena.txt
+2495dbebf9500f8057ebcc691c366e22  201 Drifter's Escape.flac
+c1c24a7360468e8d552e6550e612b8ba  202 Leopard-Skin Pill-Box Hat.flac
+74ee3ea9a89b680636c21af6a8042fea  203 Love Sick.flac
+82b70d2c72e921a3541cf68c5949369d  204 Like A Rolling Stone .flac
+901b91273483df5060b90af5ced3bae2  205 Don't Think Twice, It's All Right.flac
+f8831a43e1d7023abed6cd8a9e1bc2d3  206 Gotta Serve Somebody.flac
+6d703ae2ed75168f23345217ffaca58c  207 Forever Young.flac
+a0d63e289a13f18381042a016c28ba85  208 Rainy Day Women #12 & #35.flac
+e8a677f7b4b3dfc010fc5885739ed50d  209 Blowin' In The Wind.flac
+3a44ac34580c43ea477437c73794e1d1  BD 2000-05-27 Modena.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-27-SCHUBERT-REC-ASM-d.fkacf 
+=================== 
+=================== 
+=================== 
+101 announcement.flac:6e0d41ba22719cad3b909bd1cd36ff85
+102 duncan and brady.flac:2b55d3d92c45228ec074e11db52e16da
+103 mr. tambourine man.flac:ea99a89bb7a04bda5a07ab48e8b275c4
+104 masters of war.flac:eeb7976b5442af1096b4df762690ef34
+105 boots of spanish leather.flac:4a41bff9da4b1334434a9fa3dd9e8f18
+106 tangled up in blue.flac:82a421c7c34e9582396c237b46231316
+107 to ramona.flac:c73dc375398451873330d29ddb14133d
+108 country pie.flac:813cd68ad2225585d272ece596a01e32
+109 positively 4th street .flac:0fc3dafbac308f0586af7ba191d19aaf
+110 stuck inside of mobile with the memphis blues again .flac:e819edefebaa21a12fead74daa92fe9f
+111 can't wait.flac:769d1acb7dc4eb7d019dee35eab5ca42
+201 drifter's escape.flac:92918d41f3a950c86c5224c98c15858e
+202 leopard-skin pill-box hat.flac:0a9d86c4ae389ac47d5cfd958325f43a
+203 love sick.flac:a8ee9dbb586aa5c62ef2d9b6527a7e50
+204 like a rolling stone .flac:b00ab773a7c5688fc5eda9de44399122
+205 don't think twice, it's all right.flac:58fb389a0732da76c1873b54658661d6
+206 gotta serve somebody.flac:acf40a6243103bcec5bc226792871b74
+207 forever young.flac:4dd96b6abb7f849e0f99922aa46da05c
+208 rainy day women #12 & #35.flac:7e8cf250182fce5084481b2dd867165c
+209 blowin' in the wind.flac:70cbb7134d5cbd5cc3d919bff670e3f2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-27-SCHUBERT-REC-ASM-d.fkacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:09.69        1749932 B   ---   --   ---xx   flac  0.4992  101 Announcement.flac
+     3:11.20       33739484 B   ---   --   ---xx   flac  0.5693  102 Duncan And Brady.flac
+     6:42.14       70945772 B   ---   --   ---xx   flac  0.4994  103 Mr. Tambourine Man.flac
+     5:15.68       55725980 B   ---   --   ---xx   flac  0.5003  104 Masters Of War.flac
+     6:35.21       69727436 B   ---   --   ---xx   flac  0.4023  105 Boots Of Spanish Leather.flac
+     8:17.45       87776684 B   ---   --   ---xx   flac  0.5785  106 Tangled Up In Blue.flac
+     6:38.09       70228412 B   ---   --   ---xx   flac  0.4586  107 To Ramona.flac
+     2:44.39       29021372 B   ---   --   ---xx   flac  0.5444  108 Country Pie.flac
+     6:20.23       67086140 B   ---   --   ---xx   flac  0.5046  109 Positively 4th Street .flac
+     8:06.14       85763372 B   ---   --   ---xx   flac  0.5694  110 Stuck Inside Of Mobile With The Memphis Blues Again .flac
+     5:13.40       55307324 B   ---   --   ---xx   flac  0.4662  111 Can't Wait.flac
+     5:15.58       55702460 B   ---   --   ---xx   flac  0.5706  201 Drifter's Escape.flac
+     8:38.67       91532828 B   ---   --   ---xx   flac  0.5345  202 Leopard-Skin Pill-Box Hat.flac
+     5:52.58       62229260 B   ---   --   ---xx   flac  0.4913  203 Love Sick.flac
+     7:28.06       79041356 B   ---   --   ---xx   flac  0.5727  204 Like A Rolling Stone .flac
+     6:23.21       67610636 B   ---   --   ---xx   flac  0.4428  205 Don't Think Twice, It's All Right.flac
+     4:31.64       47954972 B   ---   --   ---xx   flac  0.5521  206 Gotta Serve Somebody.flac
+     6:57.50       73676444 B   ---   --   ---xx   flac  0.5149  207 Forever Young.flac
+     6:12.62       65766668 B   ---   --   ---xx   flac  0.5632  208 Rainy Day Women #12 & #35.flac
+     6:16.46       66434636 B   ---   --   ---xx   flac  0.4783  209 Blowin' In The Wind.flac
+   116:52.44     1237021168 B                            0.5161  (20 files)
+=================== 
+=================== 
+=================== 

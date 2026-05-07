@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-25.flacf 
+=================== 
+=================== 
+=================== 
+232e5617b40f4f4a635a23e31d01890f  bd94-10-25-LB-3633.txt
+0237264688e4602a83b45e6c9c9412ad  fingerprint.ffp.txt
+bfd45f3ba73cf3400bd2530c587826df  FLAC\D1T01.flac
+22e7d93f6ddbd1865c0d6cddbfcbbba5  FLAC\D1T02.flac
+6648efecbe5f34a80f1e48a5d135564c  FLAC\D1T03.flac
+0bb34080db5dbb98ff51a4fe88663d48  FLAC\D1T04.flac
+fc5a49b9bd19afe3195b7ee72feae2e1  FLAC\D1T05.flac
+0bbdb215a83f3e95fb4b623a947c1397  FLAC\D1T06.flac
+c61908f327d43f058d14327503c6ca30  FLAC\D1T07.flac
+115eeb7bd5f66a9e914be72ee4cd1bc6  FLAC\D1T08.flac
+2a440310d6f4dc42e52c8096ae1b8882  FLAC\D1T09.flac
+703e6469e3526df6c1212d6cabb1ce4f  FLAC\D2T01.flac
+dcf48856dbc1e1aa1838378c9250d34c  FLAC\D2T02.flac
+e9eaf889919c6a38d20f36a513d8d073  FLAC\D2T03.flac
+0bc8266cafa08fe5d3b77ad7f148505a  FLAC\D2T04.flac
+faa7e09188480b0f4638139abfa79a3a  FLAC\D2T05.flac
+4369af63260c52685a2dae0a44af146a  Wilkes Barre 25 oct 1994.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-25.flacf\FLAC 
+=================== 
+=================== 
+=================== 
+D1T01.flac:7d9afd8b28d373245bc3c9aee7436ff3
+D1T02.flac:830dd5aac43e35f812331fbad502ea6c
+D1T03.flac:e4b801d2f1da60176700eedcc234c6bf
+D1T04.flac:c80d9aed6fc59253f6ca5a9c996e12d2
+D1T05.flac:f151feab4d5af96ca41f46cc99a50af4
+D1T06.flac:3523928328cfcb76fa8db725e84283ca
+D1T07.flac:7fec200a32fdcf232c45c22e4e3217dd
+D1T08.flac:b0db29b00f06b297606d95da535dedde
+D1T09.flac:a198fde0cc69fa4c65889fea9c214ca5
+D2T01.flac:2a153be1c27305f0908b37b55848cc16
+D2T02.flac:8b7ab0094e3205577ad4897fb12af09e
+D2T03.flac:087808cccf977f948b9a3b78d52de221
+D2T04.flac:ffd005f60506f5648f2c4568508ec967
+D2T05.flac:15939e0b09be567f4519501ccc3de814
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-10-25.flacf\FLAC 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:19.04       88033052 B   ---   --   ---xx   flac  0.5887  D1T01.flac
+     7:07.51       75442796 B   ---   --   ---xx   flac  0.5955  D1T02.flac
+     5:31.01       58390796 B   ---   --   ---xx   flac  0.6286  D1T03.flac
+    10:06.17      106938428 B   ---   --   ---xx   flac  0.5440  D1T04.flac
+     9:32.00      100900844 B   ---   --   ---xx   flac  0.6045  D1T05.flac
+     7:03.15       74652524 B   ---   --   ---xx   flac  0.5681  D1T06.flac
+     5:54.11       62471516 B   ---   --   ---xx   flac  0.4743  D1T07.flac
+     8:15.71       87485036 B   ---   --   ---xx   flac  0.4638  D1T08.flac
+     7:18.11       77289116 B   ---   --   ---xx   flac  0.5476  D1T09.flac
+     6:43.00       71089244 B   ---   --   ---xx   flac  0.6474  D2T01.flac
+     8:10.02       86440748 B   ---   --   ---xx   flac  0.5868  D2T02.flac
+     8:16.55       87623804 B   ---   --   ---xx   flac  0.6380  D2T03.flac
+     6:45.55       71571404 B   ---   --   ---xx   flac  0.6290  D2T04.flac
+     6:40.14       70592972 B   ---   --   ---xx   flac  0.5239  D2T05.flac
+   105:43.07     1118922280 B                            0.5740  (14 files)
+=================== 
+=================== 
+=================== 

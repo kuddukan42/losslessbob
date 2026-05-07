@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-03-31-Schubert-b.flacf 
+=================== 
+=================== 
+=================== 
+76df755d3a64928e5815e03afe2c34be  1998-03-31 Cameo Theater, Miami Beach, Florida, USA [Schubert].md5
+4b464860f130c0c9f4d03d5d92357f68  CD1\01 To be alone with you.flac
+f4361d297544d5812363ab1af713e084  CD1\02 Senor (Tales of Yankee Power).flac
+6a8652accc77ab7f8a3e5546ff4dd683  CD1\03 Can't wait.flac
+1f46bade1d6c869fde7d1d4bc0cc1a2e  CD1\04 You're a big girl now.flac
+7d9e620de5adf7e82706b366140f49cf  CD1\05 Silvio.flac
+369bd95fc11c756536be2479805e3dc1  CD1\06 Cocaine blues.flac
+3a183a9d5e872663bd3df5117faeb8da  CD1\07 One too many mornings.flac
+4f92ba95361778f4cbbbdb0c3731382b  CD1\08 Tangled up in blue.flac
+2b8528f226f2416dc056f2fffc08bbd1  CD1\FLAC CD1.md5
+dff7c3d16af48d2dfd575e597502225f  CD2\09 Million miles.flac
+61f3704630479206aadd56722600a39d  CD2\10 Jokerman.flac
+82e0e1be28675fee2b38c581a05a0639  CD2\11 Stuck inside of Mobile with the Memphis blues again.flac
+716035e8ff96f6b5acb6adb0baad3575  CD2\12 'Til I fell in love with you.flac
+79a939e2d16f51d1037c1e587ebaa1a0  CD2\13 It ain't me, babe.flac
+c17f667741d930f5a6ee3e04a08206d5  CD2\14 Love sick.flac
+fe4c63a55bae19417dde98aa27387f8b  CD2\15 Rainy day women # 12 & 35.flac
+8f1a706943d07abef8d6d76c9e870efa  CD2\FLAC CD2.md5
+67d0d6b9ccf9af1b20779af464a3d7da  Info\1998-03-31 Cameo Theater, Miami Beach, Florida, USA [Schubert].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-03-31-Schubert-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 To be alone with you.flac:169ea6bb69469eeedfa788e5cc91fe8d
+02 Senor (Tales of Yankee Power).flac:22543676d9bfe4a8eb7b6684e8caee39
+03 Can't wait.flac:27bb210567857a45bf6bc1ffbc1c5636
+04 You're a big girl now.flac:74b07e5790d8a4d8b04f1244904ce674
+05 Silvio.flac:40f6d79729923f1d92e9ad4c65cc248f
+06 Cocaine blues.flac:98ca33bc1d7f04920220a0924b0ed2b5
+07 One too many mornings.flac:901654f279f6ae8e6809240a21a18ef8
+08 Tangled up in blue.flac:d9e075d89728bda40a5a9733c4e9de7f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-03-31-Schubert-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+09 Million miles.flac:1e11a4d992b78afefcd7b09ee9d125bc
+10 Jokerman.flac:762f8dd747312791e0be5875eae34e19
+11 Stuck inside of Mobile with the Memphis blues again.flac:1a04ca92c694f5ffa6f9cc03a39008a4
+12 'Til I fell in love with you.flac:b40287aaae69ac4e30b0bc3145ae5609
+13 It ain't me, babe.flac:76f92e97731e3b0f5d14ef4c9b8aab23
+14 Love sick.flac:ca2cee68617d9dc9f94238a0f6953a30
+15 Rainy day women # 12 & 35.flac:2f1d8c66df54e40cb0afa666957e45f7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-03-31-Schubert-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:55.72       41623388 B   ---   --   ---xx   flac  0.5731  01 To be alone with you.flac
+     4:52.29       51577052 B   ---   --   ---xx   flac  0.5612  02 Senor (Tales of Yankee Power).flac
+     6:00.52       63626348 B   ---   --   ---xx   flac  0.5733  03 Can't wait.flac
+     5:44.37       60768668 B   ---   --   ---xx   flac  0.5543  04 You're a big girl now.flac
+     6:40.40       70654124 B   ---   --   ---xx   flac  0.5897  05 Silvio.flac
+     4:37.48       48975740 B   ---   --   ---xx   flac  0.5539  06 Cocaine blues.flac
+     5:44.32       60756908 B   ---   --   ---xx   flac  0.5509  07 One too many mornings.flac
+     7:26.23       78728540 B   ---   --   ---xx   flac  0.5957  08 Tangled up in blue.flac
+    45:02.33      476710768 B                            0.5708  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-03-31-Schubert-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.19       66194732 B   ---   --   ---xx   flac  0.5624  09 Million miles.flac
+     5:23.55       57106604 B   ---   --   ---xx   flac  0.5653  10 Jokerman.flac
+     7:21.55       77921804 B   ---   --   ---xx   flac  0.5841  11 Stuck inside of Mobile with the Memphis blues again.flac
+     5:38.50       59740844 B   ---   --   ---xx   flac  0.5764  12 'Til I fell in love with you.flac
+     7:36.05       80450204 B   ---   --   ---xx   flac  0.5729  13 It ain't me, babe.flac
+     5:36.65       59423324 B   ---   --   ---xx   flac  0.5627  14 Love sick.flac
+     4:13.20       44676284 B   ---   --   ---xx   flac  0.6035  15 Rainy day women # 12 & 35.flac
+    42:05.44      445513796 B                            0.5745  (7 files)
+=================== 
+=================== 
+=================== 

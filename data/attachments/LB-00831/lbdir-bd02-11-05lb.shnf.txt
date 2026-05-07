@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-05lb.shnf 
+=================== 
+=================== 
+=================== 
+a4786701170ff6d3d462b09b26544fb6  bd02-11-05lb.md5
+d0faca393863ced033d41899b67b3fed  bd02-11-05lb.txt
+550d5ee84d5ef32c67ca93a961bbd440  bd02-11-05ld1t01.shn
+cab80757bdd9a7a7ad410fafc1ef20d2  bd02-11-05ld1t02.shn
+cc75eaec6e9f36fcac56333bcd8fd9e1  bd02-11-05ld1t03.shn
+5e4656d0e5104f67af73be8d88159a9c  bd02-11-05ld1t04.shn
+46176bf4b9c5d5bfbfb96a1a90dfe93d  bd02-11-05ld1t05.shn
+33a31ca248d8e97304f8cf2f13b08ddc  bd02-11-05ld1t06.shn
+e6a65ede1ee4cfd075b2275b874c2e23  bd02-11-05ld1t07.shn
+cf3f1e77339d296536513e730ddecbd9  bd02-11-05ld1t08.shn
+1710e7a8823eb54b194fcafe81b88b7d  bd02-11-05ld1t09.shn
+3c70171da3ba7794376d1c6f354bb1c4  bd02-11-05ld1t10.shn
+d92e4522aa8cbfb3373a520eba40d3fc  bd02-11-05ld1t11.shn
+d2008f70b918b6a2f3add4e1ab0115cd  bd02-11-05ld2t01.shn
+4258f621d0ba6082b68246a226e9af49  bd02-11-05ld2t02.shn
+f9c0409a814a8cc5fbc3609887d07f07  bd02-11-05ld2t03.shn
+c41a20d946c0682dae0e2ab140243baa  bd02-11-05ld2t04.shn
+4976dfdf658638b0d89d23ce12768003  bd02-11-05ld2t05.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-05lb.shnf 
+=================== 
+=================== 
+=================== 
+aa34f8e9fa1bde95ebd687d6a872989e  [shntool]  bd02-11-05ld1t01.wav
+740527fe83dad941a2fddac5796c0336  [shntool]  bd02-11-05ld1t02.wav
+41b3224b13f24cea1a26fc1efbeeea2d  [shntool]  bd02-11-05ld1t03.wav
+783f4b80f21afba983cda08c5cee3cc3  [shntool]  bd02-11-05ld1t04.wav
+b9b26adf6d55871b9ee60928bcb44441  [shntool]  bd02-11-05ld1t05.wav
+92d16f642a9dc679870b233b249f4efe  [shntool]  bd02-11-05ld1t06.wav
+f768d08b86329384df4c01240f6c8d0d  [shntool]  bd02-11-05ld1t07.wav
+012bedf5b54f119e03eea9ff711d17c6  [shntool]  bd02-11-05ld1t08.wav
+5fb7ad91154846894cf77fb3076cf24d  [shntool]  bd02-11-05ld1t09.wav
+2350462009179fb628b4b9ee7efb8b48  [shntool]  bd02-11-05ld1t10.wav
+8d517ead86bcbf055300a16915224dda  [shntool]  bd02-11-05ld1t11.wav
+6671446d483c4c546be8c4d15483b10b  [shntool]  bd02-11-05ld2t01.wav
+b6f29fd45554acbb00ebeba45375dc22  [shntool]  bd02-11-05ld2t02.wav
+a03959e109044f096d8c5461a38c01b7  [shntool]  bd02-11-05ld2t03.wav
+c62fd6d4d5b5d51382ee7d7cae0e1ded  [shntool]  bd02-11-05ld2t04.wav
+314e3a590c1b53b069329d8114bd1067  [shntool]  bd02-11-05ld2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-05lb.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.53       63628700 B   ---   --   ---xx    shn  0.6099  bd02-11-05ld1t01.shn
+     6:13.14       65830172 B   ---   --   ---xx    shn  0.5672  bd02-11-05ld1t02.shn
+     6:51.63       72648620 B   ---   --   ---xx    shn  0.6593  bd02-11-05ld1t03.shn
+     4:52.14       51541772 B   ---   --   ---xx    shn  0.6216  bd02-11-05ld1t04.shn
+     6:25.72       68083388 B   ---   --   ---xx    shn  0.6457  bd02-11-05ld1t05.shn
+     4:21.42       46139228 B   ---   --   ---xx    shn  0.7051  bd02-11-05ld1t06.shn
+     7:37.62       80760668 B   ---   --   ---xx    shn  0.6263  bd02-11-05ld1t07.shn
+     6:40.51       70679996 B   ---   --   ---xx    shn  0.7376  bd02-11-05ld1t08.shn
+     7:33.41       80005676 B   ---   --   ---xx    shn  0.6617  bd02-11-05ld1t09.shn
+     8:03.26       85262396 B   ---   --   ---xx    shn  0.6270  bd02-11-05ld1t10.shn
+     4:09.30       43994204 B   ---   --   ---xx    shn  0.7170  bd02-11-05ld1t11.shn
+     7:08.02       75503948 B   ---   --   ---xx    shn  0.6979  bd02-11-05ld2t01.shn
+     6:58.40       73829324 B   ---   --   ---xx    shn  0.5399  bd02-11-05ld2t02.shn
+    12:36.61      133501916 B   ---   --   ---xx    shn  0.7060  bd02-11-05ld2t03.shn
+     5:23.38       57066620 B   ---   --   ---xx    shn  0.6419  bd02-11-05ld2t04.shn
+     6:32.20       69195884 B   ---   --   ---xx    shn  0.7275  bd02-11-05ld2t05.shn
+   107:29.29     1137672512 B                            0.6566  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,122 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-13-cc-cvr.flacf 
+=================== 
+=================== 
+=================== 
+f506400d9024879d333efcfe47649526  bd04-11-13-cc-cvr-LB-2824.txt
+2467abf67254c369289605102dabdf00  CC Rochester 2004 flac -cvr cd1.md5
+d201b75537f8303c2d35acaa4f3fba15  CC Rochester 2004 flac -cvr cd1_Result.txt
+7d65e91186153267ca5ed5558c501781  CC Rochester 2004 flac -cvr cd2.md5
+2e7d2c797cecb816cf84e5560d58b18a  CC Rochester 2004 flac -cvr cd2_Result.txt
+67728674a3e4e17f3a6ed79eed6fede5  CC-Rochester 2004 b-in.jpg
+b50134dee33c8c672cc466e30ee8587f  CC-Rochester 2004 b-out.jpg
+5d3f7ac324ba297b659d16db1b122dd9  CC-Rochester 2004 CD1.jpg
+448ff03870862bd6b7dcb22b186da72e  CC-Rochester 2004 CD2.jpg
+b705be359332ef070d9ccd1d56596f52  CC-Rochester 2004-1.jpg
+e982184af0bd60023f7e63e90c1046c3  CC-Rochester 2004-2.jpg
+7204b1d928a7f33fa3ba683103ecf45e  CC-Rochester 2004-3.jpg
+225840c23a49c708124e058f88575f70  CC-Rochester 2004-4.jpg
+4ae27984953307fd20fd3d67bcc28e93  cvr-bd_2004-11-13 - 101.flac
+7a7e416bdd365f9805514b5a587575bb  cvr-bd_2004-11-13 - 102.flac
+6f2691a2e451d7811fd402102609f294  cvr-bd_2004-11-13 - 103.flac
+83fb22ca89e1352e6414225656df8cd0  cvr-bd_2004-11-13 - 104.flac
+efb149af6e1ca358cc0dcb9d830affdb  cvr-bd_2004-11-13 - 105.flac
+34069927be07c7deed38184a999a170f  cvr-bd_2004-11-13 - 106.flac
+ed56cfd167be98e64d6606fcc9a41862  cvr-bd_2004-11-13 - 107.flac
+bdfe2cc7363ec817837e8ba3a49cb359  cvr-bd_2004-11-13 - 108.flac
+c783c68f600576e03769028a7998bbd7  cvr-bd_2004-11-13 - 109.flac
+e5055b4482a9c953e3ef4d239c53e705  cvr-bd_2004-11-13 - 110.flac
+a1665d71c2c1fec8a6508cbd74ffba4e  cvr-bd_2004-11-13 - 111.flac
+12292176eea41d489b295b7ade48d5ec  cvr-bd_2004-11-13 - 112.flac
+259945665ee6613279195ba9b0415ddb  cvr-bd_2004-11-13 - 113.flac
+fbcfe50674679ec7acc84de0626bad03  cvr-bd_2004-11-13 - 201.flac
+b0be46a0f13b018f953507ec361b9f72  cvr-bd_2004-11-13 - 202.flac
+69d4bc655fb19a0614cd21d71072d815  cvr-bd_2004-11-13 - 203.flac
+8a54be2d2f2a62c802c8e210d6dfc1e8  cvr-bd_2004-11-13 - 204.flac
+10dcf6cef566d0b75881eea197fa0d71  cvr-bd_2004-11-13 - 205.flac
+86169462e59ff800ab53f31cbfe88362  cvr-bd_2004-11-13 - 206.flac
+878204bfd31a0a07faca3cadf2dfb077  cvr-bd_2004-11-13 - 207.flac
+252e6f200fc50e2303093acb2f63e769  cvr-bd_2004-11-13 - 208.flac
+8c1180c64424d1031922fffd1c588666  cvr-bd_2004-11-13 - 209.flac
+68a56695649306df64b7e7d818cb53e8  cvr-bd_2004-11-13 - 210.flac
+6987428d35fffbfa35ddec38880095cf  cvr-bd_2004-11-13 - 211.flac
+887c21b6e9623bbc6106bd6cc372b1f4  cvr-bd_2004-11-13 - 212.flac
+090731cc40643c1572102614eeb868f6  cvr-bd_2004-11-13 - 213.flac
+d2c50c9fa656614278f7fca27bb528e7  cvr-bd_2004-11-13 - 214.flac
+c9b95aa3289a84d44f00959f82772998  fingerprint cd 1.txt
+68d709751b1cc300c60ce1d36c77e885  fingerprint cd 2.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-11-13-cc-cvr.flacf 
+=================== 
+=================== 
+=================== 
+cvr-bd_2004-11-13 - 101.flac:bdfd31ffd187dc774ff815201e02cd7c
+cvr-bd_2004-11-13 - 102.flac:000e1e8d0db519b48f2db06db0ab398b
+cvr-bd_2004-11-13 - 103.flac:533cc53e1e387039cc7b63abaf154dfd
+cvr-bd_2004-11-13 - 104.flac:833f2db724542be8a0377ade2970888c
+cvr-bd_2004-11-13 - 105.flac:b963a8e60fb9b1acb3bfbe7d7e1a330a
+cvr-bd_2004-11-13 - 106.flac:cc3035f047d13ba78c084fac93396432
+cvr-bd_2004-11-13 - 107.flac:5493ea5e92f73825254ac82cdf55ba1a
+cvr-bd_2004-11-13 - 108.flac:fa528c2ead372a09e1500a322e8079d9
+cvr-bd_2004-11-13 - 109.flac:fcadef808e84ebffd4d7ed8d46e36fc6
+cvr-bd_2004-11-13 - 110.flac:15ffe7d5150c04b6c046f055f39bd062
+cvr-bd_2004-11-13 - 111.flac:27e0dace9839f7c9dd7a57dd2f306685
+cvr-bd_2004-11-13 - 112.flac:7d5af3328a198b0b46ae85c37d48f5f5
+cvr-bd_2004-11-13 - 113.flac:3b5ef086fe267ca368c056c04665d93d
+cvr-bd_2004-11-13 - 201.flac:8eda340007520c6f7b68aa89553c3b4f
+cvr-bd_2004-11-13 - 202.flac:9e08778ed4e54ee5daf3ab80506317d7
+cvr-bd_2004-11-13 - 203.flac:dea7a6d8129a471cf7867548b79b5b60
+cvr-bd_2004-11-13 - 204.flac:aacfa7edb71dd2ec512e865b2c90bea9
+cvr-bd_2004-11-13 - 205.flac:d2c440d3aa34ed37637ad7e7b1c40c34
+cvr-bd_2004-11-13 - 206.flac:da4e6060c7681823a5c68adb40126134
+cvr-bd_2004-11-13 - 207.flac:afa3befb874b8edf557068765cc19f30
+cvr-bd_2004-11-13 - 208.flac:8899464dcdaeec5ba1a070bc30b4a12e
+cvr-bd_2004-11-13 - 209.flac:727574bc5a4719bbda62c9349b8c4fd1
+cvr-bd_2004-11-13 - 210.flac:44d14ae8bb67974ce1814cc3895ab2a7
+cvr-bd_2004-11-13 - 211.flac:f117aaa029c5e8f31ab930d79b5dae87
+cvr-bd_2004-11-13 - 212.flac:3cbd812c7a3e25d1273b370bb90e9c9d
+cvr-bd_2004-11-13 - 213.flac:1af2d1254fae86048b4ffc1c1c8333d8
+cvr-bd_2004-11-13 - 214.flac:46d7ae0668eff0c4e875b6dac84ea5cd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-13-cc-cvr.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.22        5343788 B   ---   --   ---xx   flac  0.6293  cvr-bd_2004-11-13 - 101.flac
+     5:22.31       56873756 B   ---   --   ---xx   flac  0.6954  cvr-bd_2004-11-13 - 102.flac
+     5:48.03       61394300 B   ---   --   ---xx   flac  0.6534  cvr-bd_2004-11-13 - 103.flac
+     6:32.56       69280556 B   ---   --   ---xx   flac  0.6825  cvr-bd_2004-11-13 - 104.flac
+     7:57.74       84316892 B   ---   --   ---xx   flac  0.6340  cvr-bd_2004-11-13 - 105.flac
+     6:24.08       67756460 B   ---   --   ---xx   flac  0.6904  cvr-bd_2004-11-13 - 106.flac
+     5:41.70       60317084 B   ---   --   ---xx   flac  0.6244  cvr-bd_2004-11-13 - 107.flac
+     5:21.66       56779676 B   ---   --   ---xx   flac  0.6344  cvr-bd_2004-11-13 - 108.flac
+     6:43.10       71112764 B   ---   --   ---xx   flac  0.6754  cvr-bd_2004-11-13 - 109.flac
+     5:54.74       62619692 B   ---   --   ---xx   flac  0.6130  cvr-bd_2004-11-13 - 110.flac
+     6:56.07       73398908 B   ---   --   ---xx   flac  0.6915  cvr-bd_2004-11-13 - 111.flac
+     5:33.04       58750652 B   ---   --   ---xx   flac  0.6376  cvr-bd_2004-11-13 - 112.flac
+     7:03.71       74784236 B   ---   --   ---xx   flac  0.6750  cvr-bd_2004-11-13 - 113.flac
+     7:59.26       84556796 B   ---   --   ---xx   flac  0.6107  cvr-bd_2004-11-13 - 201.flac
+     9:56.33      105212060 B   ---   --   ---xx   flac  0.6412  cvr-bd_2004-11-13 - 202.flac
+     7:32.01       79735196 B   ---   --   ---xx   flac  0.6561  cvr-bd_2004-11-13 - 203.flac
+     5:48.53       61511900 B   ---   --   ---xx   flac  0.6479  cvr-bd_2004-11-13 - 204.flac
+     2:03.47       21807788 B   ---   --   ---xx   flac  0.6293  cvr-bd_2004-11-13 - 205.flac
+     3:37.41       38375276 B   ---   --   ---xx   flac  0.6828  cvr-bd_2004-11-13 - 206.flac
+     3:21.50       35574044 B   ---   --   ---xx   flac  0.6906  cvr-bd_2004-11-13 - 207.flac
+     2:01.25       21403244 B   ---   --   ---xx   flac  0.6829  cvr-bd_2004-11-13 - 208.flac
+     4:43.00       49921244 B   ---   --   ---xx   flac  0.6643  cvr-bd_2004-11-13 - 209.flac
+     5:09.00       54507644 B   ---   --   ---xx   flac  0.6761  cvr-bd_2004-11-13 - 210.flac
+     4:17.06       45348956 B   ---   --   ---xx   flac  0.6470  cvr-bd_2004-11-13 - 211.flac
+     5:53.02       62273948 B   ---   --   ---xx   flac  0.6372  cvr-bd_2004-11-13 - 212.flac
+     6:12.09       65642012 B   ---   --   ---xx   flac  0.6939  cvr-bd_2004-11-13 - 213.flac
+     6:49.28       72213500 B   ---   --   ---xx   flac  0.7133  cvr-bd_2004-11-13 - 214.flac
+   151:14.67     1600812372 B                            0.6595  (27 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-10-01.flacf 
+=================== 
+=================== 
+=================== 
+7de6b1141d5536785861d5ccd09d3d24  bd93-10-01-LB-3631.txt
+5a97ed85b9ec2a582b53eaee59f3b8a9  Bob Dylan Costa Mesa 1 oct 1993.txt
+02168bd2e20373adb67ad2451c628fe2  d1\01 - Traccia Audio.shn
+057fdac61def38fef64dea2d3e93d69f  d1\02 - Traccia Audio.shn
+210f9a891763bb8fb5b5d3db9cbb4bbd  d1\03 - Traccia Audio.shn
+ab68df16a425799f29e2ebcd22a9db1d  d1\04 - Traccia Audio.shn
+d1242c69a9adebaeac23475b1b7c9a7d  d1\05 - Traccia Audio.shn
+e30a6d8839f609768576eafdd2e62ee7  d1\06 - Traccia Audio.shn
+704d3187d637e357e4e6bb6e93cf6944  d1\07 - Traccia Audio.shn
+47adb973eff1016cea0ea68c74f468a1  d1\08 - Traccia Audio.shn
+6357c1817054eba082e522137ecf4c2b  d1\09 - Traccia Audio.shn
+9f83a8d1e38412e2a407a0175b92b1b6  d2\01 - Traccia Audio.shn
+c7fd3a7f83157497c84953b76f6ad7d0  d2\02 - Traccia Audio.shn
+f86912d9125a5c7d9cd7571b8bfc18f9  d2\03 - Traccia Audio.shn
+df9ccc442641570be3402ae7eab4ef6b  d2\04 - Traccia Audio.shn
+2d88e5b1c70898d75ef280c69092f838  nonameD1.md5
+a7cf196c72392a34b2b91365e55778f7  nonameD2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-10-01.flacf\d1 
+=================== 
+=================== 
+=================== 
+e789c7a086dd253feb1e73340074047a  [shntool]  01_-_Traccia_Audio.wav
+2ee90eee7187a30dac1de9c95943b6a1  [shntool]  02_-_Traccia_Audio.wav
+058656571dac805de0922148715d4a05  [shntool]  03_-_Traccia_Audio.wav
+a204484f374eb5a44935b4cf8515d614  [shntool]  04_-_Traccia_Audio.wav
+a4b0c351aac2c9814693517e3fc0b81b  [shntool]  05_-_Traccia_Audio.wav
+db3126bf27434615da91bc3d36a6e17b  [shntool]  06_-_Traccia_Audio.wav
+104c6cad7dd21299173c9f4669382fb8  [shntool]  07_-_Traccia_Audio.wav
+0cb0537ded8f14104594e585293a91ef  [shntool]  08_-_Traccia_Audio.wav
+05596c7cffb830cc5922f25697bef737  [shntool]  09_-_Traccia_Audio.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-10-01.flacf\d2 
+=================== 
+=================== 
+=================== 
+d55a0d44faa0756523b1e9e0d7223392  [shntool]  01_-_Traccia_Audio.wav
+2720404698793ef0d5d8797b4e98d106  [shntool]  02_-_Traccia_Audio.wav
+44068e80f1ece0c8ad72671f98c67548  [shntool]  03_-_Traccia_Audio.wav
+68eb6c50818affa4caa8d21d8c0de423  [shntool]  04_-_Traccia_Audio.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-10-01.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.65       44429324 B   ---   --   -----    wav  1.0000  01_-_Traccia_Audio.wav
+     8:30.38       90053420 B   ---   --   -----    wav  1.0000  02_-_Traccia_Audio.wav
+     5:28.32       57934508 B   ---   --   -----    wav  1.0000  03_-_Traccia_Audio.wav
+     8:24.13       88936220 B   ---   --   -----    wav  1.0000  04_-_Traccia_Audio.wav
+    11:28.53      121487900 B   ---   --   -----    wav  1.0000  05_-_Traccia_Audio.wav
+     6:39.73       70555340 B   ---   --   -----    wav  1.0000  06_-_Traccia_Audio.wav
+     6:02.62       64002668 B   ---   --   -----    wav  1.0000  07_-_Traccia_Audio.wav
+     8:42.39       92172572 B   ---   --   -----    wav  1.0000  08_-_Traccia_Audio.wav
+     8:25.12       89110268 B   ---   --   -----    wav  1.0000  09_-_Traccia_Audio.wav
+    67:54.12      718682220 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-10-01.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:37.69       80777132 B   ---   --   -----    wav  1.0000  01_-_Traccia_Audio.wav
+     8:35.20       90893084 B   ---   --   -----    wav  1.0000  02_-_Traccia_Audio.wav
+     8:29.69       89949932 B   ---   --   -----    wav  1.0000  03_-_Traccia_Audio.wav
+    10:04.40      106639724 B   ---   --   -----    wav  1.0000  04_-_Traccia_Audio.wav
+    34:47.48      368259872 B                            1.0000  (4 files)
+=================== 
+=================== 
+=================== 

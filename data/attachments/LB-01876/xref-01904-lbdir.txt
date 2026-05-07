@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-18-c.flacf
+===================
+===================
+===================
+dded5d87e0c72793a374a733681436b0 *01 Friend of the devil.flac
+ace86aac0ca19f8ea41372f87f4b435a *02 Fourth time around.flac
+86333049335806af8b5fa47bde2ccfcc *03 Masters of war.flac
+6683101e3af0cd7f633df258614482b9 *04 Visions of Johanna.flac
+505198be38fe4644a72be194e7e7d103 *05 Mr. Tambourine Man.flac
+18ad322a07fef67753bffe15eb272002 *06 Tangled up in blue.flac
+50e905be72602c08cea535ed4f21dd85 *07 The lonesome death of Hattie Carroll.flac
+9ab0d9681b55560b339b81feb923ef5c *08 I don't believe you (she acts like we never have met).flac
+d6b929c3b8877f14dfffcaf9f1ce7dc5 *09 It takes a lot to laugh, it takes a trian to cry.flac
+1d91d6c93cb45a9970645037eb449b80 *10 Can't wait.flac
+62055f32df469f3b39cd4060c2759c27 *11 Make you feel my love.flac
+51de8822bea463e5463857b4a0055d19 *12 Highway 61 revisited.flac
+8a1244b79c17cf812805dae67cf192ca *13 Love sick.flac
+3c0fb9e7f0c7397e839abf517ac94cf0 *14 Rainy day women # 12 & 35.flac
+949113028152890fd824aece731eeb0a *15 Blowin' in the wind.flac
+a84618a0982cb9737cf2594df55dc7ee *16 Maggie's farm.flac
+37537f1b2dbd3bbac9d4c620115dc944 *1999-04-18 Palacio Municipal de Deportes, Granada, Spain info.txt
+709850007aef22f84bf369ed952a69f9 *Bob Dylan 1999-04-18.st5
+709850007aef22f84bf369ed952a69f9 *Bob Dylan 1999-04-18.txt
+===================
+===================
+===================
+=== ffp for: bd99-04-18-c.flacf
+===================
+===================
+===================
+01 Friend of the devil.flac:165c549b420d0bd5e3ff1400a756f255
+02 Fourth time around.flac:ff5e9e802f4b8aa67c04dcc3b9920a49
+03 Masters of war.flac:d3b7263909de5e3915c00845baf98b3c
+04 Visions of Johanna.flac:e498f4d8ae1db23764370c1778d78f5a
+05 Mr. Tambourine Man.flac:9b9410cb102e0dd97e16ad750423713e
+06 Tangled up in blue.flac:d90dc44564f70f35f4f3a141be68a868
+07 The lonesome death of Hattie Carroll.flac:269fc655fcee6b63a311f550237f46ee
+08 I don't believe you (she acts like we never have met).flac:54e8576846f386e8b228b6013a0dd6c1
+09 It takes a lot to laugh, it takes a trian to cry.flac:350dc658bedf2e0ae43b89eebe54917a
+10 Can't wait.flac:065ac50cc90a1ce8afbd12fc501cb343
+11 Make you feel my love.flac:237ccb2aa682c26cabe3d9fc71db160d
+12 Highway 61 revisited.flac:b8fed7dc0fba22f5036f173aebdf9012
+13 Love sick.flac:939a7834617ba1d49f70ea37708a58dd
+14 Rainy day women # 12 & 35.flac:21fa95be2337a298918522d8b6d8a9cc
+15 Blowin' in the wind.flac:827e69a43bb71c4b17159d9a7be213eb
+16 Maggie's farm.flac:952cb901a389ea73c768be54f2da34ac
+===================
+===================
+===================
+=== shntool len for: bd99-04-18-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:16.33       66404060 B   ---   --   ---xx   flac  0.6232  01 Friend of the devil.flac
+     3:25.27       36225548 B   ---   --   ---xx   flac  0.5579  02 Fourth time around.flac
+     5:59.12       63355868 B   ---   --   ---xx   flac  0.6072  03 Masters of war.flac
+     8:00.70       84836684 B   ---   --   ---xx   flac  0.5769  04 Visions of Johanna.flac
+     7:21.34       77872412 B   ---   --   ---xx   flac  0.6216  05 Mr. Tambourine Man.flac
+     7:32.66       79888076 B   ---   --   ---xx   flac  0.6706  06 Tangled up in blue.flac
+     6:21.55       67337804 B   ---   --   ---xx   flac  0.5396  07 The lonesome death of Hattie Carroll.flac
+     5:55.20       62669084 B   ---   --   ---xx   flac  0.6467  08 I don't believe you (she acts like we never have met).flac
+     7:04.48       74906540 B   ---   --   ---xx   flac  0.6245  09 It takes a lot to laugh, it takes a trian to cry.flac
+     6:42.48       71025740 B   ---   --   ---xx   flac  0.6606  10 Can't wait.flac
+     4:27.42       47197628 B   ---   --   ---xx   flac  0.5304  11 Make you feel my love.flac
+     7:56.15       84001724 B   ---   --   ---xx   flac  0.6646  12 Highway 61 revisited.flac
+     5:35.01       59096396 B   ---   --   ---xx   flac  0.6151  13 Love sick.flac
+     4:47.07       50643308 B   ---   --   ---xx   flac  0.6901  14 Rainy day women # 12 & 35.flac
+     6:06.45       64668284 B   ---   --   ---xx   flac  0.5887  15 Blowin' in the wind.flac
+     7:36.57       80572508 B   ---   --   ---xx   flac  0.6750  16 Maggie's farm.flac
+   101:09.55     1070701664 B                            0.6222  (16 files)
+===================
+===================
+===================

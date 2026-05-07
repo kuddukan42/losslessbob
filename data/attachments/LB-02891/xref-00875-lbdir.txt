@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-02-jtt.flacf 
+=================== 
+=================== 
+=================== 
+ef31ecef29b80651fc97e276cc5503fd  Bob Dylan - East Orange 1961_01.flac
+905c83938d0b103fd396ff289b0fbfb6  Bob Dylan - East Orange 1961_02.flac
+87abf1d8cf4fcde97c98e5a23173bd8f  Bob Dylan - East Orange 1961_03.flac
+1a11e8b619a94382b35b6b49cfce4db2  Bob Dylan - East Orange 1961_04.flac
+213424c0f20bf9c9d8e3fc4484d4a06c  Bob Dylan - East Orange 1961_05.flac
+e8e281271c0959748efe83cba2f6b1bf  Bob Dylan - East Orange 1961_06.flac
+f2cb83a05532552d6ac4e56734d4302a  Bob Dylan - East Orange 1961_07.flac
+41755af85f2293f18fabaacc2aa7ca1c  Bob Dylan - East Orange 1961_08.flac
+657dda6ba911fe2244d068699c01aeef  Bob Dylan - East Orange 1961_09.flac
+a9c82680d3b49f327b0940c833b2eb6b  Bob Dylan - East Orange 1961_10.flac
+ae10363a5b18974ffd575c35ae66fa10  BOB DYLAN - The East Orange Tape 1961.ffp
+03ed89858abdd7a74f15ffc89be657c3  BOB DYLAN - The East Orange Tape 1961.md5
+ee05ef9ab6555d3e10688496431cfd73  BOB DYLAN - The East Orange Tape 1961.txt
+ebfce3f1c8399e33168a63a53de9c07d  BOB DYLAN - The East Orange Tape 1961_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-02-jtt.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan - East Orange 1961_01.flac:c0d12df67406e70b23f4e89a0b3ed6ac
+Bob Dylan - East Orange 1961_02.flac:4edb99253d0064c86281228e0b555b26
+Bob Dylan - East Orange 1961_03.flac:f544566226b254f88259ff7b2d80b96b
+Bob Dylan - East Orange 1961_04.flac:acf0bc567947bb318086d7378fccd6b7
+Bob Dylan - East Orange 1961_05.flac:0da400fd752b116222453c4c4df52a9c
+Bob Dylan - East Orange 1961_06.flac:57289411b9c7b6053c5ed2ebcb8cbcdf
+Bob Dylan - East Orange 1961_07.flac:ee58c89c264b898b25681f26188f657f
+Bob Dylan - East Orange 1961_08.flac:1866f92546125f0ed7ff3d2f2c78b69e
+Bob Dylan - East Orange 1961_09.flac:5dfc03962064e2a2c84dd3b5989c25ce
+Bob Dylan - East Orange 1961_10.flac:81642a0fd325bd336f1143076d186bdd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-02-jtt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:48.50       19168844 B   ---   --   ---xx   flac  0.2334  Bob Dylan - East Orange 1961_01.flac
+     2:54.39       30785372 B   ---   --   ---xx   flac  0.2140  Bob Dylan - East Orange 1961_02.flac
+     4:41.23       49622540 B   ---   --   ---xx   flac  0.2039  Bob Dylan - East Orange 1961_03.flac
+     5:52.43       62193980 B   ---   --   ---xx   flac  0.2047  Bob Dylan - East Orange 1961_04.flac
+     5:53.73       62440940 B   ---   --   ---xx   flac  0.2238  Bob Dylan - East Orange 1961_05.flac
+     1:05.50       11583644 B   ---   --   ---xx   flac  0.2134  Bob Dylan - East Orange 1961_06.flac
+     0:05.50         999644 B   ---   --   ---xx   flac  0.2071  Bob Dylan - East Orange 1961_07.flac
+     0:31.49        5583692 B   ---   --   ---xx   flac  0.2043  Bob Dylan - East Orange 1961_08.flac
+     0:29.46        5223836 B   ---   --   ---xx   flac  0.1946  Bob Dylan - East Orange 1961_09.flac
+     2:37.48       27807740 B   ---   --   ---xx   flac  0.2051  Bob Dylan - East Orange 1961_10.flac
+    26:01.21      275410232 B                            0.2121  (10 files)
+=================== 
+=================== 
+=================== 

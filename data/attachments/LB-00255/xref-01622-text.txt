@@ -1,0 +1,114 @@
+===================
+===================
+===================
+=== bd - Concord - 07 - 06 - 88.ffp
+===================
+===================
+===================
+Track01.flac:4c8d182f9eca32ef2764aac998022a5f
+Track02.flac:235bbaad186616b654521d585725a47a
+Track03.flac:2d808d90b43ac3a49ffb35faae0f95c8
+Track04.flac:afd2967a8b7ae2f074a52ffcd45f75c6
+Track05.flac:91580a9a004eef2c147801fcd084bbe5
+Track06.flac:dc0377c5fbb97674b1639d8463d40e36
+Track07.flac:60ea0584660be43e478f808e77f0eeba
+Track08.flac:a4f5e364a2b49ee53ca6d961786da167
+Track09.flac:75192336c13570cc22f358b4bea3f7c7
+Track10.flac:eb844cac5658093fd2dd60d32ba3b4c2
+Track11.flac:8555fbc301d522e3bb65f0df512e304c
+Track12.flac:1427ad16a1922ff8d80ec1a94833af7f
+Track13.flac:a98f88b6fb4c1e1ec3aa25387be4ea46
+===================
+===================
+===================
+=== bd_concord_070688.md5
+===================
+===================
+===================
+0f01e56b0761cf8a05cbf02148c9c0ec *bd_concord_070688.log
+cd8743591bbf06462fe955a8a38533cc *inf.txt
+1a555672ede4c1ee5f76701ab88c8ab0 *Track01.flac
+27267435259004019f6602e64527ed45 *Track02.flac
+f4d47912ed55c2e62f4048e43f491c3b *Track03.flac
+a76b21c2b4d532bef68f97cfdc7b2486 *Track04.flac
+c2a3dd93bb04e6d203f4feff58870345 *Track05.flac
+a4fa6337709ec2766f3a74c195c17d11 *Track06.flac
+b14da80cb04432af36c52c0b4363abf0 *Track07.flac
+8a6be3938a64ad5d9d368b164e54a2f6 *Track08.flac
+fa3b42baf0af34c4492837654262b456 *Track09.flac
+f19484aead689f3fcf49454fa0d96f3e *Track10.flac
+2d959885e8f0a4a3b9065281b3bb2a67 *Track11.flac
+5d55a96f3eb07788711edd7eeb80854e *Track12.flac
+350501b323a43c95b97097d86c7ba1cb *Track13.flac
+===================
+===================
+===================
+=== inf.txt
+===================
+===================
+===================
+Bob Dylan The first Never Ending Tour(net) show.
+
+Date: 7 June 1988.
+Venue: Concord Pavilion.
+Place: Concord, California. USA.
+Features a guest appearance by Neil Young.
+Considering the date of this performance,this is outstanding quality.
+
+
+Set list:
+
+1) Subterranean Homesick Blues.
+2) Absolutely Sweet Marie.
+3) Masters of War.
+4) You're a big Girl Now.
+5) Gotta Serve Somebody.
+6) In the Garden.
+7) Man of Constant Sorrow(acoustic).
+8) Lakes of Pontchartrain(acoustic).
+9) Boots of Spanish Leather(acoustic).
+10) Driftin too Far From Shore.
+11) Gates of Eden.
+12) Like a Rolling Stone.
+13) Maggie's Farm. 
+
+
+cdr>eac>flac frontend
+
+
+
+
+
+
+===================
+===================
+===================
+=== lossless bob note.txt
+===================
+===================
+===================
+digital master,
+
+
+--------------------------------------------------------------------------------
+very good to excellent sound, a little tinny, cut at begin of t9, in comparison LB-0252, this is same audience recording based on same clapping wavs at end of t9 and same fingerprint mentioned at end of t5; in comparison this does not have the hiss on that one, seems clearer, but also tinnier and although that is harsh this is much harsher, some will think it better 
+
+(the same recording except with a little higher levels, inverted, tracks cut a little different and spectral view slightly diffferent, but could not tell sound difference was bittorrented 3/06 described as "cdr>eac>flac frontend; Considering the date of this performance, this is outstanding quality.");
+
+
+(a bittorrent from 07/07 was a close eac match on d1t1 described as "SBD>??>CDR>EAC>FLAC LEVEL 5")
+
+
+--------------------------------------------------------------------------------
+static t1 0:44; drop/cut end of t9
+--------------------------------------------------------------------------------
+1 Subterranean Homesick Blues 2 Absolutely Sweet Marie 3 Masters Of War 4 You're A Big Girl Now 5 Gotta Serve Somebody 6 In The Garden 7 Man Of Constant Sorrow (acoustic) 8 Lakes Of Pontchartrain (acoustic) 9 Boots Of Spanish Leather (acoustic) 10 Driftin' Too Far From Shore 11 Gates Of Eden 12 Like A Rolling Stone 13 Maggie's Farm 
+--------------------------------------------------------------------------------
+Comment# 73, 2/24/09 7:31:58 AM, mixedup 
+LB-255 and LB-252 are sourced from the same tape, LTD Sennheiser MKE-2002 > Sony WM 6 fingerprint d1t5 @5:54 "Fuck you!" on both tapes. LB-252 is longer 69:49, doesn't have the beginning of Boots of Spanish Leather cut (04:06), and has a natural sound LB-255 is shorter 68:43, has the beginning of Boots of Spanish Leather cut (04:02), and has a tinny saturated sound 
+
+
+
+===================
+===================
+===================

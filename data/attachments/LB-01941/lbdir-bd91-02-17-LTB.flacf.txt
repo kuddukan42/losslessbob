@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-02-17-LTB.flacf 
+=================== 
+=================== 
+=================== 
+0bd5a3885bcb046c34c7f24055abf167  bd-91-02-17-LTB.txt
+e070930eaf5d3def9e42ae061a8736dc  bd-91-2-17-d1 (Track 01).flac
+223bfea0a5684688c358d87fd1a567c9  bd-91-2-17-d1 (Track 02).flac
+028a466789ce32b17773fdfb2ac4df00  bd-91-2-17-d1 (Track 03).flac
+231b8e77a4ae00c8b6772d14f12a2e39  bd-91-2-17-d1 (Track 04).flac
+c9d31f92f2b5fc95ac1469846e789d48  bd-91-2-17-d1 (Track 05).flac
+20daa4b3e304965cc26aee8c8a044a40  bd-91-2-17-d1 (Track 06).flac
+a3ed041d2567c3970c84bd4c456427e3  bd-91-2-17-d1 (Track 07).flac
+d72e643ea82d639b8b208f0bafe2845b  bd-91-2-17-d1 (Track 08).flac
+e59f6f3e3d7ae8f66897f54f8cdce1dc  bd-91-2-17-d1 (Track 09).flac
+06894be9469cc5e9bd5cbee2af2d6651  bd-91-2-17-d1 (Track 10).flac
+0a4e7e3c5a5cf16dbff378dcd6243242  bd-91-2-17-d2 (Track 01).flac
+30d4cdb567d77cac9ca9de49d2573358  bd-91-2-17-d2 (Track 02).flac
+b117e668eff961a8f3ce731abf7bfbaa  bd-91-2-17-d2 (Track 03).flac
+07841a0aa5c8107b9270c7bfcaf3823f  bd-91-2-17-d2 (Track 04).flac
+13630568e83473298abad17eb8eefdff  bd-91-2-17-d2 (Track 05).flac
+8a1f4325c838023ec184383a92279ad3  bd-91-2-17-d2 (Track 06).flac
+96c940be12aba94a3618bf4fe9bb4d00  bd-91-2-17-d2 (Track 07).flac
+e203c142aea77b91b2396158b63b7197  bd-91-2-17-d2 (Track 08).flac
+54bfcb8f78dbf4f265db2a04ec0b8908  bd-91-2-17-d2 (Track 09).flac
+d8eadad44b00be63a1ba538d925367a0  bd91-02-17-LTB.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-02-17-LTB.flacf 
+=================== 
+=================== 
+=================== 
+bd-91-2-17-d1 (Track 01).flac:0c0cc69acd3e117ff780155c7af9b0dc
+bd-91-2-17-d1 (Track 02).flac:891d39cabebf6140d2d037c64f02aeaa
+bd-91-2-17-d1 (Track 03).flac:a14d54a6de6c838672f13ad1d5ad2d03
+bd-91-2-17-d1 (Track 04).flac:10a6cb8ab8a48b01a06760d2347d611b
+bd-91-2-17-d1 (Track 05).flac:968f88629c8baa19f33ecf49723b45c1
+bd-91-2-17-d1 (Track 06).flac:1311529a3fa33bcb2873957885f52ff1
+bd-91-2-17-d1 (Track 07).flac:9f0037f6eeebbc7422616672a83abc8d
+bd-91-2-17-d1 (Track 08).flac:e9a904c8688a69dfc61bf3c021ddec97
+bd-91-2-17-d1 (Track 09).flac:a1580ac7ad561db5c6e757358efe77d0
+bd-91-2-17-d1 (Track 10).flac:82a3fb5921ae3d571091b596909ab1a9
+bd-91-2-17-d2 (Track 01).flac:3b94e0ac74ff6fa7af5bbd8f1d790315
+bd-91-2-17-d2 (Track 02).flac:5ac8b3bece4f6d28c4ed70bc26711b0f
+bd-91-2-17-d2 (Track 03).flac:fb4430bf0d7fb02ec2981de330255fa6
+bd-91-2-17-d2 (Track 04).flac:4477c7e8c8b3206efc7a7fde33ac86ba
+bd-91-2-17-d2 (Track 05).flac:4b3b942f96a312a6f239994aedef0f40
+bd-91-2-17-d2 (Track 06).flac:e380d977d4c6a846d2cebe617791956d
+bd-91-2-17-d2 (Track 07).flac:df0637efc29615b5d68af5d6f770ee29
+bd-91-2-17-d2 (Track 08).flac:d5cf41fd7639bf81b5b214ee320a4f99
+bd-91-2-17-d2 (Track 09).flac:0c0a533ad1ad5e6cc3f6ee659184e111
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-17-LTB.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.19       47319932 B   ---   --   ---xx   flac  0.5588  bd-91-2-17-d1 (Track 01).flac
+     4:10.40       44194124 B   ---   --   ---xx   flac  0.5610  bd-91-2-17-d1 (Track 02).flac
+     4:10.41       44196476 B   ---   --   ---xx   flac  0.5967  bd-91-2-17-d1 (Track 03).flac
+     5:08.43       54432380 B   ---   --   ---xx   flac  0.5725  bd-91-2-17-d1 (Track 04).flac
+     4:39.37       49302668 B   ---   --   ---xx   flac  0.6004  bd-91-2-17-d1 (Track 05).flac
+     2:57.41       31319276 B   ---   --   ---xx   flac  0.6028  bd-91-2-17-d1 (Track 06).flac
+     4:08.06       43761356 B   ---   --   ---xx   flac  0.5595  bd-91-2-17-d1 (Track 07).flac
+     3:53.39       41192972 B   ---   --   ---xx   flac  0.5774  bd-91-2-17-d1 (Track 08).flac
+     5:51.67       62074028 B   ---   --   ---xx   flac  0.5725  bd-91-2-17-d1 (Track 09).flac
+     3:03.51       32401196 B   ---   --   ---xx   flac  0.5668  bd-91-2-17-d1 (Track 10).flac
+     3:47.02       40047548 B   ---   --   ---xx   flac  0.6229  bd-91-2-17-d2 (Track 01).flac
+     4:44.04       50107052 B   ---   --   ---xx   flac  0.6175  bd-91-2-17-d2 (Track 02).flac
+     4:12.16       44490476 B   ---   --   ---xx   flac  0.6187  bd-91-2-17-d2 (Track 03).flac
+     4:35.59       48648812 B   ---   --   ---xx   flac  0.5891  bd-91-2-17-d2 (Track 04).flac
+     3:25.73       36333740 B   ---   --   ---xx   flac  0.5279  bd-91-2-17-d2 (Track 05).flac
+     4:08.59       43886012 B   ---   --   ---xx   flac  0.5843  bd-91-2-17-d2 (Track 06).flac
+     6:02.02       63861548 B   ---   --   ---xx   flac  0.6303  bd-91-2-17-d2 (Track 07).flac
+     4:57.25       52449644 B   ---   --   ---xx   flac  0.5808  bd-91-2-17-d2 (Track 08).flac
+     5:05.08       53820860 B   ---   --   ---xx   flac  0.6151  bd-91-2-17-d2 (Track 09).flac
+    83:30.32      883840100 B                            0.5885  (19 files)
+=================== 
+=================== 
+=================== 

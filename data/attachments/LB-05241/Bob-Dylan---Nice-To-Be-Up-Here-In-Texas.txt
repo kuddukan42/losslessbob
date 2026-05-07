@@ -1,0 +1,72 @@
+This version here doesn't match any of the two LB nubers of that show. It consists of at least two different sources. The first one, containing at least d1t01-d1t08 seems to be from the same recording as the two LB numbers as it also hast the cut and muddy start of d1t01.
+There are source-changes between d1t08 and d2t01 and between d2t01 and d2t02 there's a fade-out between d2t02 and d2t03 because there was the disc-change on my original version. There could be some more source changes as there are some changes in the hiss level from time to time, that could be caused by movements or changes by the taper too though.
+The recoring of the second part is a different one than the generally circulating (for example used for the bootleg "20/20 Vision"), as the "whatever you fucking feel like"-yell during the start of 20/20 Vision is almost unhearable on this version here (the two tapers probably stood close to each other. You can hear quiet some crowd-fingerprints from the other version on this version too, if you listen very carefully and know where they are).
+I removed some tape-hiss, cleared up the sound, removed some crackles and normalized the recording to 90%.
+
+lineage:
+CDR-trade -> WavePurityProfessional -> wav-convertion and remastering -> NeroBurningROM -> track-separation -> FLACFronted -> *.flac
+
+
+25 October, 1991
+Austin, TX,
+City Coliseum
+
+Disc 1:
+1.  New Morning
+2.  Lay Lady Lay
+3.  All Along The Watchtower
+4.  What Good Am I?
+5.  Pancho And Lefty (T. van Zandt)
+6.  Gotta Serve Somebody
+7.  Simple Twist Of Fate
+8.  I'll Be Your Baby Tonight
+
+Disc 2:
+1.  Trail Of The Buffalo (Trad. arr. W. Guthrie)
+2.  It's All Over Now, Baby Blue
+3.  20/20 Vision (M. Estes/J. Allison)
+4.  Mr. Tambourine Man
+5.  Everything Is Broken
+6.  I'll Remember You
+7.  Friend Of The Devil (J. Garcia/R. Hunter/J. Dawson)
+8.  Maggie's Farm
+— encore -
+9.  Man In The Long Black Coat
+10.  Ballad Of A Thin Man
+
+Concert # 345 of The Never-Ending Tour.  Second concert of the 1991 US Fall Tour. 1991 concert # 82.
+Concert # 61 with the 5th Never-Ending Tour band: Bob Dylan (vocal & guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+
+d2t01  Bob Dylan (acoustic guitar & vocal), John Jackson (acoustic guitar).
+d2t02-04 acoustic with the band.
+d1t02, 04, 06, 07, d2t03-04, 06, 09  Bob Dylan harmonica.
+d2t04  Jimmy Dale (acoustic guitar).
+d2t05  Charlie Sexton (guitar).
+d2t08  Jimmy Dale (guitar).
+
+BobTalk:
+
+Thanks everybody!  Nice to be up here in Texas. Last time here nobody knew me as a honorary Texan. For sure. Anyway, anybody here know about Townes van Zandt? This one here is one of his best songs he taught me. Let me see if we can do it the way he taught me.
+
+Thanks everybody! All right!! A music journalist was asking me just before the show, he was saying "what...", ... he was telling me that, he was telling me, he doesn't play music, but he would like to, he says: a great performer never repeats himself, very important not to repeat yourself ... everyday ... It's a hard thing not to do though. (before I'll Be Your Baby Tonight).
+
+Thank you everybody! That's my confessional song for the evening! (after 20/20 Vision).
+
+Thanks everybody! That's my pro animal song. (after Trail Of The Buffalo).
+
+Let's Give Jimmy Dale a big hand! ???? over here ???? And a guest guitar player, Charlie Sexton gonna play on the next song. (before Everything Is Broken).
+
+Thanks everybody! Y'all be careful now! (after Maggie's Farm).
+
+
+
+The fall '91 tour contains lots of very good performances, especially, but not limited to, this show. It's often underrated due to the not-so-well liked performances earlier in the year.
+This show here doesn't only have a absolutely stunning setlist, but also stands out because of it's absolutely great performances.
+It contains the only ever played version of 20/20 Vision and in my opinion the very best ever version of Trail Of The Buffalo.
+
+Enjoy!
+
+
+
+reference:
+Björner, Olof, STILL ON THE ROAD, http://www.bjorner.com/DSN12640%20-%201991%20US%20Fall%20Tour.htm#DSN12650

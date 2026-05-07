@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-10-milehigh-jaz.flac16 
+=================== 
+=================== 
+=================== 
+31bd6a6d70cd49b6c6e87c796869acb9  01Maggies Farm.flac
+3325bcc774d9fc19a5617fd982933a86  02She Belongs To Me.flac
+a4a760e32fffb4f648b5b02acb6b12a3  03Lonesome Day Blues.flac
+bf1aa318c96c56ad65ba416ce2373b6c  04Queen Jane Approximately.flac
+8fcb711193ee26cc208be8b710e9fce2  05Till I Fell In Love With You.flac
+f4b1e30b0e3d6c011d3463bedf6a1a81  06Its Alright Ma I'm Only Bleeding.flac
+fc470e02506650e2e9a0eb12bf7a4bac  07Make You Feel My Love.flac
+6917cc02ff94f5bfae418581a733e48d  08Highway 61 Revisited.flac
+2f13d456fe55b8879855925461f921fd  09Just Like A Woman.flac
+2f510003f5c3da6a61b512aa0f637912  10Honest With Me.flac
+8ed19845383ebb19d40c799afe463f5b  11Girl Of The North Country.flac
+55fd7905a57990d63060c3aa9f205e93  12High Water.flac
+104492b7cdfbe2e8f6d816aab215d7eb  13Like A Rolling Stone.flac
+f2a3bc2e513e7305912fbd031c96c288  14All Along The Watchtower.flac
+366cc32abfecc2e4bad941680ac623ec  bd06-04-10-milehigh-jaz-LB-4580.txt
+c03dacf3a319964c0a5ec12e4fcaa4ff  Dylan 2006-04-10.aud.DSM-6s.sbe ok.flac16.txt
+32cb3cefb7f29ef483ca0297448b266a  Dylan 2006-04-10.aud.DSM-6s.sbe_ok.flac16.txt
+6d66f5aff5206ea25e90e3aefea7bc91  Dylan 2006-04-10.aud.DSM-6s.sbe_ok.flac16.txt.md5
+f14983b14ce3db4535936cb8a6ff86d0  Dylan 2006-04-10.aud.DSM-6s.sbe_ok.flac16.txt.shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-10-milehigh-jaz.flac16 
+=================== 
+=================== 
+=================== 
+01Maggies Farm.flac:205df1cb2b913036e018e81604a703d2
+02She Belongs To Me.flac:7222f00ba44717ebd95d1e4562545f07
+03Lonesome Day Blues.flac:ee9298c36b5faf3d6a20e1336e01ae12
+04Queen Jane Approximately.flac:035a1ca1dc51384a14a2ba57e8783423
+05Till I Fell In Love With You.flac:f9e55bc95556849d95cd2506d907f3f6
+06Its Alright Ma I'm Only Bleeding.flac:b38c4b587113ca15780c74dc2ad7446b
+07Make You Feel My Love.flac:2b31f494af3e7a730c59bee0a3c76bbd
+08Highway 61 Revisited.flac:627f59dbc1844f49ef42270b03b82e5f
+09Just Like A Woman.flac:3b94293cf25d1c8ee5b0307b45e15d5e
+10Honest With Me.flac:b57ec461be509f9c0c7186bf64106ff1
+11Girl Of The North Country.flac:6098ad59c4865e16e5d220d048ad02dc
+12High Water.flac:2ff6b0b8cf31ae36541943d040f21f80
+13Like A Rolling Stone.flac:5605d6ff3a38b6b425a28968f70fb50c
+14All Along The Watchtower.flac:6937be56fa654c30c2f57d123d676401
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-10-milehigh-jaz.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.29       53870252 B   ---   --   ---xx   flac  0.6443  01Maggies Farm.flac
+     5:44.50       60799244 B   ---   --   ---xx   flac  0.6111  02She Belongs To Me.flac
+     7:23.10       78168764 B   ---   --   ---xx   flac  0.6246  03Lonesome Day Blues.flac
+     8:18.58       87983660 B   ---   --   ---xx   flac  0.5716  04Queen Jane Approximately.flac
+     6:54.42       73128428 B   ---   --   ---xx   flac  0.5864  05Till I Fell In Love With You.flac
+     7:26.49       78789692 B   ---   --   ---xx   flac  0.6099  06Its Alright Ma I'm Only Bleeding.flac
+     5:39.01       59801996 B   ---   --   ---xx   flac  0.5447  07Make You Feel My Love.flac
+     6:39.23       70437740 B   ---   --   ---xx   flac  0.6379  08Highway 61 Revisited.flac
+     8:06.32       85805708 B   ---   --   ---xx   flac  0.5778  09Just Like A Woman.flac
+     6:53.38       72942620 B   ---   --   ---xx   flac  0.6319  10Honest With Me.flac
+     5:55.44       62725532 B   ---   --   ---xx   flac  0.5173  11Girl Of The North Country.flac
+     7:05.50       75087644 B   ---   --   ---xx   flac  0.5540  12High Water.flac
+    10:20.15      109403324 B   ---   --   ---xx   flac  0.5432  13Like A Rolling Stone.flac
+     5:04.38       53715020 B   ---   --   ---xx   flac  0.5672  14All Along The Watchtower.flac
+    96:37.29     1022659624 B                            0.5858  (14 files)
+=================== 
+=================== 
+=================== 

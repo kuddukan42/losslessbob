@@ -1,0 +1,50 @@
+Bob Dylan 
+Keaney Gym
+University Of Rhode Island
+South Kingston, RI  
+22 October 1989
+
+CD1
+1.	Trouble 
+2.	Man In The Long Black Coat  
+3.	John Brown   
+4.	You're A Big Girl Now  
+5.	Just Like A Woman  
+6.	Stuck Inside Of Mobile With The Memphis Blues Again  
+7.	A Hard Rain's A-Gonna Fall  
+8.	The Lonesome Death Of Hattie Carroll  
+9.	It Ain't Me Babe  
+
+CD2
+1.	Shelter From The Storm  
+2.	Everything Is Broken  
+3.	I Shall Be Released  
+4.	Like A Rolling Stone  
+5.	E: Most Of The Time  
+6.	Maggie's Farm  
+
+
+Taped by Kevin Hall  
+
+
+Sony WM-D6C Professional Walkman recorder
+2 Beyer M-700 microphones
+Maxell metal cassettes
+
+
+Mastered and FLAC'ed by Carl Morstadt (dantalion8@yahoo.com)
+	
+Master Cassette -> 
+Sony K707ES cassette deck -> 
+M-Audio Firewire Audiophile 2496 -> 
+CDWAV 24-bit/96-KHz wav files ->
+Goldwave (normalizing and crossfades) ->
+CD Wave (track breaks) 
+
+dBpowerAMP Audio Converter (24-bit/96-KHz wav files converted to 
+  16-bit/44.1 KHz wav files) ->
+FLAC Front End (with sector boundary alignment)
+
+No EQ'ing.
+
+A 24-bit/96-KHz flac24 version of this recording is also available.

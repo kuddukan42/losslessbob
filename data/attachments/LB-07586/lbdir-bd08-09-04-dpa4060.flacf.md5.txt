@@ -1,0 +1,20 @@
+360c9af305baf513a3eefeb5445e9e82  Bob Dylan sep 4 2008 flac.md5
+1d7da08397d1bca40bda22ec5c7936f7  d2 Track No01.flac
+272567586b90d8be7d2ac7352561c094  d2 Track No02.flac
+329c96b737d8707a5bbe487d5ac3d047  d2 Track No03.flac
+03fa973d7982c8f0ecffed85f01d3262  d2 Track No04.flac
+2f473fe1184f388bfd0e25a4551fc310  d2 Track No06.flac
+48f683ab0667077f801abc850fe997c3  d2 Track No07.flac
+8240f0d3e01f985f04e432060bea0beb  d2Track No05.flac
+bcdfd091c7c25b1b768502c73bd6210f  fingerprints.txt
+18191eac35dee6699e1225ad306fda1a  info.txt
+ee7c3b527fe47b0ebf28b7ac16d74907  Track No01.flac
+1d78139bfb49177c9c2bad721dae8106  Track No02.flac
+f3d9310d53049a8ccd9cf711dc4efffc  Track No03.flac
+b1a40ea3ff97d9303508452333806c39  Track No04.flac
+1f97e10b1adc7e9793f0517f50254f58  Track No05.flac
+d815bcb89d6759befbc0513c401401ec  Track No06.flac
+c3c3e75d9a54429bfc8ac3d62f4ccecd  Track No07.flac
+954e8d77e1337fda514213bd050518a6  Track No08.flac
+e1a55d2db1e42003c9eb7c336eabd81d  Track No09.flac
+76856adc5c339744c43387d9d5f958f4  Track No10.flac

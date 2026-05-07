@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd91-11-16-cassette.flacf
+===================
+===================
+===================
+0c1732435ff8e9a48b156d829025d19a *01 Maggie's Farm.flac
+4640aa507e9935f82596fe121cabfbe9 *02 Confidential.flac
+c6a5167a93abe499f7a2a5fe01e3e12f *03 All Along The Watchtower - my new haven 1991 cassette.flac
+1e28c4947d937396a1487140b08f118d *04 Shelter From The Storm.flac
+91c17cca7282fcf04512b79a33af7748 *05 I Don't Believe You (She Acts Like We Never Have Met).flac
+3f04703418b386bb7e2c850caedb114d *06 Gotta Serve Somebody.flac
+56ab33b075f5fc999cc847e7ee7fd862 *07 Simple Twist Of Fate.flac
+cb656d229dbdc6f8bbc1ae3125a1e197 *08 Watching The River Flow.flac
+4677cfa19d146078e8fae12b0ee62a9c *09 Trail Of The Buffalo.flac
+1dd0ce62a06d28a7931beb5f5c24af9f *10 Desolation Row.flac
+c673a1d9fa78727c172e0d5b742c647e *11 The Lonesome Death Of Hattie Carroll.flac
+e614ac04854ef2a9b171266388849964 *12 It Ain't Me, Babe.flac
+b575b793daa681e8af23a68c85399df1 *13 Everything Is Broken.flac
+cc5aa60cdcfc45aee690e5c393d40e66 *14 You Don't Know Me.flac
+071ab2b291588e51c56dd8237b674c0d *15 Friend Of The Devil.flac
+c127eb276e1610a672183edfd8e4cc86 *16 Rainy Day Women # 12 & 35.flac
+fdbcfdf99e6e800b9f7bbe18fc55a7fa *17 Man In The Long Black Coat.flac
+f912cd9feac24243c49742a5f01fba48 *18 Highway 61 Revisited.flac
+2ead92525e1513d15b0bf5a01c7af287 *1991-11-16 New Haven (2024 cassette transfer).ffp
+0fe1d7aee909dc702dcff82a16dda7f5 *1991-11-16 New Haven (2024 cassette transfer).md5
+8e9c8225c00e963cf3d7a31983b24847 *BD1991-11-16 New Haven, CT (2024 cassette transfer).txt
+===================
+===================
+===================
+=== ffp for: bd91-11-16-cassette.flacf
+===================
+===================
+===================
+01 Maggie's Farm.flac:7b8de6ab25ff198d3a6d74b1d4325758
+02 Confidential.flac:1be455ccfa743807ee690e4b5f4023c6
+03 All Along The Watchtower - my new haven 1991 cassette.flac:1f577125f5b3a9d7279d9af675f4dbf2
+04 Shelter From The Storm.flac:de4a517216822c556adcb2a6874c32fe
+05 I Don't Believe You (She Acts Like We Never Have Met).flac:c9501f096f62533de041029328d6547c
+06 Gotta Serve Somebody.flac:dc10f3195279be3b4735c8a22828cf07
+07 Simple Twist Of Fate.flac:045fcf6b0b90cafc691fd0a2eaae9111
+08 Watching The River Flow.flac:d73273650d0492779a221c0b4bc6c0ea
+09 Trail Of The Buffalo.flac:47685ec7657d1a2155011ca6f73145b7
+10 Desolation Row.flac:5e7018dac04173dda7b64f5e19881490
+11 The Lonesome Death Of Hattie Carroll.flac:1e3321c70abdd46a4bc55f40103e5bcc
+12 It Ain't Me, Babe.flac:e56ff10ba3079d88ca73d6bef1f8322c
+13 Everything Is Broken.flac:cc62287fd8eafab9b53aa2cd2998bc8e
+14 You Don't Know Me.flac:183d6466a5d3bac079f5a847445a775f
+15 Friend Of The Devil.flac:317097fc7296be734d9e1a490107b780
+16 Rainy Day Women # 12 & 35.flac:101a8669b01118da1ce2da9cc6e766e7
+17 Man In The Long Black Coat.flac:fa22fe7b6a2e5aa7f933477b3fa80e24
+18 Highway 61 Revisited.flac:dbc38a85d26d9683135d240d9296f9f6
+===================
+===================
+===================
+=== shntool len for: bd91-11-16-cassette.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:59.01       52745052 B   -b-   --   ---xx   flac  0.6633  01 Maggie's Farm.flac
+     3:53.17       41140456 B   -b-   --   ---xx   flac  0.6588  02 Confidential.flac
+     3:55.07       41469400 B   -b-   --   ---xx   flac  0.6775  03 All Along The Watchtower - my new haven 1991 cassette.flac
+     6:50.21       72373904 B   -b-   --   ---xx   flac  0.6786  04 Shelter From The Storm.flac
+     6:04.41       64305604 B   -b-   --   ---xx   flac  0.6628  05 I Don't Believe You (She Acts Like We Never Have Met).flac
+     5:36.42       59368284 B   -b-   --   ---xx   flac  0.6752  06 Gotta Serve Somebody.flac
+     7:31.18       79599252 B   -b-   --   ---xx   flac  0.6312  07 Simple Twist Of Fate.flac
+     5:57.03       62980956 B   -b-   --   ---xx   flac  0.6741  08 Watching The River Flow.flac
+     4:58.24       52624632 B   -b-   --   ---xx   flac  0.5891  09 Trail Of The Buffalo.flac
+     6:01.74       63854020 B   -b-   --   ---xx   flac  0.6345  10 Desolation Row.flac
+     6:07.21       64787292 B   -b-   --   ---xx   flac  0.6365  11 The Lonesome Death Of Hattie Carroll.flac
+     5:16.57       55876036 B   -b-   --   ---xx   flac  0.6123  12 It Ain't Me, Babe.flac
+     3:24.09       36006340 B   -b-   --   ---xx   flac  0.6702  13 Everything Is Broken.flac
+     4:05.06       43231684 B   -b-   --   ---xx   flac  0.6277  14 You Don't Know Me.flac
+     4:14.48       44917596 B   -b-   --   ---xx   flac  0.6858  15 Friend Of The Devil.flac
+     6:10.00       65268984 B   -b-   --   ---xx   flac  0.6976  16 Rainy Day Women # 12 & 35.flac
+     5:40.49       60090820 B   -b-   --   ---xx   flac  0.6537  17 Man In The Long Black Coat.flac
+     6:03.15       64068124 B   -b-   --   ---xx   flac  0.6854  18 Highway 61 Revisited.flac
+    96:49.00     1024708436 B                            0.6563  (18 files)
+===================
+===================
+===================

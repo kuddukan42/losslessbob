@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-12-08-lk-alt-inc.flacf 
+=================== 
+=================== 
+=================== 
+c6533c5ab6c0f63f229a9e904772ea88  D1\D1.md5
+91907b667df57523c6e297e50e3d579b  D1\Tucson 8dec79 101.flac
+a6050d161b607bac9e3007381c8f5246  D1\Tucson 8dec79 102.flac
+38a6502a2b4c55b96a09605808e3d2c1  D1\Tucson 8dec79 103.flac
+824a4b3e89d4fed4f1c4ef9c1cf42c1f  D1\Tucson 8dec79 104.flac
+a16d808963ca89d3ec35e9ad185df9c6  D1\Tucson 8dec79 105.flac
+940f611277934556b94d9bd943695992  D1\Tucson 8dec79 106.flac
+00df90c59472e9370e54b95502a5f5e9  D1\Tucson 8dec79 107.flac
+ad74908e2e25d3401c2073ad71675e59  D1\Tucson 8dec79 108.flac
+97f97306ab81d000ccb3cb8abaeae662  D2\D2.md5
+5313c0bafe98e92ba823a5a13d93a242  D2\Tucson 8dec79 201.flac
+0a0f0ee1562bf22a53d6805da75b0937  D2\Tucson 8dec79 202.flac
+45906b9fc40379e66a290f862fba6c6b  D2\Tucson 8dec79 203.flac
+303ed6a19183188af6829f7b7794d108  D2\Tucson 8dec79 204.flac
+b1e9f8fcb2c8ed062fa163a01ac3dae1  D2\Tucson 8dec79 205.flac
+5682f7291531a823bc27575643cb31df  D2\Tucson 8dec79 206.flac
+7c808ad2124a9419aee7ac7bf764645c  D2\Tucson 8dec79 207.flac
+5b74ea2c8bb9350d8c4a21cc6fd4817f  D2\Tucson 8dec79 208.flac
+64739a6e912d0cb55b05cc9dfa12fd73  D2\Tucson 8dec79 209.flac
+b596312626742ca6177dbaf732c15a65  info.txt
+642e5791e9b927abbf1f92da9ffcd44e  LK 1979 DVD 6.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-12-08-lk-alt-inc.flacf\D1 
+=================== 
+=================== 
+=================== 
+Tucson 8dec79 101.flac:0c0cc9a01d0f3fe7b1b7d61dad8801e2
+Tucson 8dec79 102.flac:61c86f1fc55a000c7f9104fdaad02bc8
+Tucson 8dec79 103.flac:020c33be5f62e60c7dc1ce611fb789b3
+Tucson 8dec79 104.flac:c9ac7a1e3c5e4bd74f7515cc74844fb2
+Tucson 8dec79 105.flac:5de30c0a29baac84bbd04a674995c6ad
+Tucson 8dec79 106.flac:cb4487709c7fc7a76f45338372a19bae
+Tucson 8dec79 107.flac:f1cc52a99cb9c9ed58684330d00856e7
+Tucson 8dec79 108.flac:b6db14a5a0b7d7735e81f425d32abb5d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-12-08-lk-alt-inc.flacf\D2 
+=================== 
+=================== 
+=================== 
+Tucson 8dec79 201.flac:caf6dafbe1d776c19fe345f59b82e43e
+Tucson 8dec79 202.flac:8fbf7e9ad3656c267573ba7865a7030a
+Tucson 8dec79 203.flac:6206c8a393b04a449904d220db63da71
+Tucson 8dec79 204.flac:759dac743ea0350a1ae0bbfd2ccddbd7
+Tucson 8dec79 205.flac:433379a48432460f525e0e25202d3005
+Tucson 8dec79 206.flac:813f3c4116b8748cc1a9bcbd95c0dc98
+Tucson 8dec79 207.flac:e9de897aa4728fb91b4447b69bb8c975
+Tucson 8dec79 208.flac:800266d4e0d7087df5d2006c4c578aab
+Tucson 8dec79 209.flac:d58c2ac516738b4cb6cc66867abe2d6c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-12-08-lk-alt-inc.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:38.65       70360124 B   ---   --   ---xx   flac  0.5401  Tucson 8dec79 101.flac
+     5:06.33       54056060 B   ---   --   ---xx   flac  0.5254  Tucson 8dec79 102.flac
+     5:53.40       62363324 B   ---   --   ---xx   flac  0.5438  Tucson 8dec79 103.flac
+     5:01.04       53105852 B   ---   --   ---xx   flac  0.5148  Tucson 8dec79 104.flac
+     5:32.43       58665980 B   ---   --   ---xx   flac  0.5242  Tucson 8dec79 105.flac
+     5:55.56       62753756 B   ---   --   ---xx   flac  0.5382  Tucson 8dec79 106.flac
+     6:53.22       72904988 B   ---   --   ---xx   flac  0.5477  Tucson 8dec79 107.flac
+     6:04.12       64237868 B   ---   --   ---xx   flac  0.5084  Tucson 8dec79 108.flac
+    47:05.50      498447952 B                            0.5312  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-12-08-lk-alt-inc.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:26.34       36418412 B   ---   --   ---xx   flac  0.5285  Tucson 8dec79 201.flac
+     4:59.33       52821260 B   ---   --   ---xx   flac  0.5376  Tucson 8dec79 202.flac
+     5:02.62       53418668 B   ---   --   ---xx   flac  0.5185  Tucson 8dec79 203.flac
+     4:38.66       49194476 B   ---   --   ---xx   flac  0.5273  Tucson 8dec79 204.flac
+     4:37.09       48884012 B   ---   --   ---xx   flac  0.5019  Tucson 8dec79 205.flac
+     4:50.64       51306572 B   ---   --   ---xx   flac  0.5240  Tucson 8dec79 206.flac
+     6:29.04       68629052 B   ---   --   ---xx   flac  0.5135  Tucson 8dec79 207.flac
+     6:42.09       70934012 B   ---   --   ---xx   flac  0.4995  Tucson 8dec79 208.flac
+     5:15.28       55631900 B   ---   --   ---xx   flac  0.5258  Tucson 8dec79 209.flac
+    46:02.09      487238364 B                            0.5185  (9 files)
+=================== 
+=================== 
+=================== 

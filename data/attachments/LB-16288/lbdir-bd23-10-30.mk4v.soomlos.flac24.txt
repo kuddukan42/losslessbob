@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd23-10-30.mk4v.soomlos.flac24
+===================
+===================
+===================
+9b6b0b0f9da93504d1b22c3845931470 *bd2023-10-30-soomlos-t01.flac
+d9d811c22f78a76f060cfedf66b28672 *bd2023-10-30-soomlos-t02.flac
+7b1edf8c9fb783a47e6b1a820adca59e *bd2023-10-30-soomlos-t03.flac
+3f009e8fcc90aef416d31907ee147806 *bd2023-10-30-soomlos-t04.flac
+9c35866cbe759606a11be8de106f4a1a *bd2023-10-30-soomlos-t05.flac
+9445906850cc91ae51d85158a398f6ac *bd2023-10-30-soomlos-t06.flac
+158acacd2de4d5bc65740c1610533743 *bd2023-10-30-soomlos-t07.flac
+f258e54c10fa1b9c2e815d58e71aba2c *bd2023-10-30-soomlos-t08.flac
+0c8b6cd1eeb6cde1029b219e9efafd75 *bd2023-10-30-soomlos-t09.flac
+116ba2727ffd8a9fb80e1d94a9401a94 *bd2023-10-30-soomlos-t10.flac
+21308d21686b53c9c9d26026a76ca438 *bd2023-10-30-soomlos-t11.flac
+2241984fcf960c195afb9b5dae1e4674 *bd2023-10-30-soomlos-t12.flac
+f328382852448a26811d6e70559d8269 *bd2023-10-30-soomlos-t13.flac
+2a876a6ea21cafe1a6c20d882c35cdc4 *bd2023-10-30-soomlos-t14.flac
+049f9ce5d21069344c40310e8bbb1182 *bd2023-10-30-soomlos-t15.flac
+07af69564ba3e8c3ec6fff41f85d4ec1 *bd2023-10-30-soomlos-t16.flac
+1e39a2142b7dd9ece53d5ce44284094e *bd2023-10-30-soomlos-t17.flac
+f48d1593066f33e7e46c494efef53d43 *bd2023-10-30.mk4v.soomlos.flac24.ffp
+af400ef18fadb70cf7b2efa40ea379ff *bd2023-10-30.mk4v.soomlos.flac24.info.txt
+f6e10780fb5d16baa4f05248139d1838 *bd2023-10-30.mk4v.soomlos.flac24.md5
+===================
+===================
+===================
+=== ffp for: bd23-10-30.mk4v.soomlos.flac24
+===================
+===================
+===================
+bd2023-10-30-soomlos-t01.flac:dd625e0a9a037574523f17397b86787c
+bd2023-10-30-soomlos-t02.flac:282b54e47178b7fda1aebb220814a3e7
+bd2023-10-30-soomlos-t03.flac:5dbae21be347b8fc530c569e34c1f2f8
+bd2023-10-30-soomlos-t04.flac:ddd5957103d5f908b3b2ddb4ff3cebec
+bd2023-10-30-soomlos-t05.flac:59bee6973e8a1c87184aa616b31c7989
+bd2023-10-30-soomlos-t06.flac:cbd71010b35d87542db892980b322d2b
+bd2023-10-30-soomlos-t07.flac:896213b00e02a228225f5e2a334376e6
+bd2023-10-30-soomlos-t08.flac:6a8454553e19df49757b199dd3b58279
+bd2023-10-30-soomlos-t09.flac:2970987dba2127ab71cfa4964b9d53a1
+bd2023-10-30-soomlos-t10.flac:72de58b933c980c1e3bbda54202f5171
+bd2023-10-30-soomlos-t11.flac:aeab8fb1347e806a907c306b56afd636
+bd2023-10-30-soomlos-t12.flac:7067309dd8c2e1884c6899e3be62542e
+bd2023-10-30-soomlos-t13.flac:a8e793aee09dd46496a9cef2d6cc4e01
+bd2023-10-30-soomlos-t14.flac:76d3d78962b106715418e7cbfe4079f9
+bd2023-10-30-soomlos-t15.flac:ed66f2377a9b2e5b1fdc15b3f27d7984
+bd2023-10-30-soomlos-t16.flac:9ca0b712437c4c3d35dcbcc84b2ab12e
+bd2023-10-30-soomlos-t17.flac:a6f28ad35f35ef850a0287243f487711
+===================
+===================
+===================
+=== shntool len for: bd23-10-30.mk4v.soomlos.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:47.333      82752044 B   cxx   --   ---xx   flac  0.6845  bd2023-10-30-soomlos-t01.flac
+     3:35.093      61946924 B   cxx   --   ---xx   flac  0.6644  bd2023-10-30-soomlos-t02.flac
+     5:31.920      95593004 B   cxx   --   ---xx   flac  0.6491  bd2023-10-30-soomlos-t03.flac
+     7:20.880     126973484 B   cxx   --   ---xx   flac  0.6656  bd2023-10-30-soomlos-t04.flac
+     6:03.133     104582444 B   cxx   --   ---xx   flac  0.6451  bd2023-10-30-soomlos-t05.flac
+     5:04.493      87694124 B   cxx   --   ---xx   flac  0.6037  bd2023-10-30-soomlos-t06.flac
+     7:06.600     122860844 B   cxx   --   ---xx   flac  0.6674  bd2023-10-30-soomlos-t07.flac
+     4:34.280      78992684 B   cxx   --   ---xx   flac  0.6587  bd2023-10-30-soomlos-t08.flac
+     8:28.627     146484524 B   cxx   --   ---xx   flac  0.6177  bd2023-10-30-soomlos-t09.flac
+     4:52.013      84099884 B   cxx   --   ---xx   flac  0.6710  bd2023-10-30-soomlos-t10.flac
+    10:11.680     176163884 B   cxx   --   ---xx   flac  0.6058  bd2023-10-30-soomlos-t11.flac
+     5:03.773      87486764 B   cxx   --   ---xx   flac  0.6550  bd2023-10-30-soomlos-t12.flac
+     6:23.253     110377004 B   cxx   --   ---xx   flac  0.6177  bd2023-10-30-soomlos-t13.flac
+     6:03.427     104666924 B   cxx   --   ---xx   flac  0.7005  bd2023-10-30-soomlos-t14.flac
+     6:51.813     118602284 B   cxx   --   ---xx   flac  0.6015  bd2023-10-30-soomlos-t15.flac
+     6:20.867     109689644 B   cxx   --   ---xx   flac  0.6831  bd2023-10-30-soomlos-t16.flac
+     8:19.813     143946284 B   cxx   --   ---xx   flac  0.6323  bd2023-10-30-soomlos-t17.flac
+   106:39.000    1842912748 B                            0.6449  (17 files)
+===================
+===================
+===================

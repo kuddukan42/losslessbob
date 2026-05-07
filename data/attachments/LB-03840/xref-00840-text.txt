@@ -1,0 +1,112 @@
+===================
+===================
+===================
+=== 1995-05-15 Palm Desert.ffp
+===================
+===================
+===================
+File 'Bob Dylan 15 may 1995 Palm Desert.txt' does not appear to be a flac file.
+File 'Palmdesert_150595.Jpg' does not appear to be a flac file.
+15.5.95 d1\01 Titel 01.flac:d9cbc67584b673c2210759eb0f6d6018
+15.5.95 d1\02 Titel 02.flac:a5bfe0c34465f1c4fb6c5e9a05709c02
+15.5.95 d1\03 Titel 03.flac:3904e4864b0ff6d0786fea73d3b7d1ea
+15.5.95 d1\04 Titel 04.flac:d37a61133120b6eea9953bd3b0b873ab
+15.5.95 d1\05 Titel 05.flac:7c14b8abe02b97d0736f3d3722394869
+15.5.95 d1\06 Titel 06.flac:b1da26f415bb60b8921314516005486a
+15.5.95 d1\07 Titel 07.flac:1bffca2c79a45c5e9cc5929ddbdbeeba
+15.5.95 d1\08 Titel 08.flac:fe5066953611316d4315de5c5d9c3e27
+15.5.95 d1\09 Titel 09.flac:96514533c9bb8e36e378cf56477a42aa
+File '15.5.95 d1\15.5.95 d1.md5' does not appear to be a flac file.
+15.5.95 d2\01 Titel 01.flac:8570fc86cadefc9aff93cb9ea33906fb
+15.5.95 d2\02 Titel 02.flac:a0b9f13a9cbdef155505026b2828eea8
+15.5.95 d2\03 Titel 03.flac:64bcba77fb1ba9d7b5539e64a5a9cd69
+15.5.95 d2\04 Titel 04.flac:a01ec3e41e03bc75df3bcb8708a69223
+15.5.95 d2\05 Titel 05.flac:ef7b441a321bf085421238fa3b945cd1
+File '15.5.95 d2\15.5.95 d2.md5' does not appear to be a flac file.
+
+There were errors.
+===================
+===================
+===================
+=== 1995-05-15 Palm Desert.md5
+===================
+===================
+===================
+28cf68ca6859c584e3c18334b5fc67ce *Bob Dylan 15 may 1995 Palm Desert.txt
+c456bfa357bcbf91d9014863e49d8f2b *Palmdesert_150595.Jpg
+92c3970d4cfb198bb9b6ccfc04996cf7 *15.5.95 d1\01 Titel 01.flac
+65945b55d52b5409c2364235fcf5ddc5 *15.5.95 d1\02 Titel 02.flac
+ee7b24150ba94c185569f1c58319c994 *15.5.95 d1\03 Titel 03.flac
+3bf4ec997c8e52cd22658207d3d658c0 *15.5.95 d1\04 Titel 04.flac
+ea03c5694501a5b8097d0a4c15f7ad6a *15.5.95 d1\05 Titel 05.flac
+1f306e1fd44463a70d0525cc56fe2585 *15.5.95 d1\06 Titel 06.flac
+405493c744dacade6ff50b8484f930ce *15.5.95 d1\07 Titel 07.flac
+74d0cbb163fa92e249690aac9dee66d4 *15.5.95 d1\08 Titel 08.flac
+ecf45b80e4e9d5cbafd0eda521f7bbb3 *15.5.95 d1\09 Titel 09.flac
+385e0149ef4caf4d39fc5405a3ab8d54 *15.5.95 d1\15.5.95 d1.md5
+03f781abccd30947574f252fbf90f69e *15.5.95 d2\01 Titel 01.flac
+e904c95fa50bb036fdee98bc1f689362 *15.5.95 d2\02 Titel 02.flac
+24bed7fcfafe11988a94710ed9a6f7d3 *15.5.95 d2\03 Titel 03.flac
+30e56bd7301ebb199352217af2461421 *15.5.95 d2\04 Titel 04.flac
+da2bafb2b41c8790a498779eeb373ec4 *15.5.95 d2\05 Titel 05.flac
+48c96d736f2ec3f2813fe491804422a3 *15.5.95 d2\15.5.95 d2.md5
+===================
+===================
+===================
+=== Bob Dylan 15 may 1995 Palm Desert.txt
+===================
+===================
+===================
+Bob Dylan 15 may 1995 Palm Desert
+
+flac trade (THX Iceland) (FLAC) > azareus > torrent > DaD
+
+incl
+txt file
+fingerprints
+artwork
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+McCallum Theatre
+Palm Desert, California
+15 May 1995
+
+Audience recording.
+Taper/lineage unknown.
+
+DISC ONE --- 56:57
+1. Crash On The Levee (Down In The Flood) 5:10.
+2. Lay Lady Lay 4:48
+3. All Along The Watchtower 5:37
+4. Just Like A Woman 6:32
+5. Ill Be Your Baby Tonight 6:51
+6. Seeing The Real You At Last 6:04
+7. Mr. Tambourine Man 6:52
+8. Masters Of War 6:12
+9. Its All Over Now, Baby Blue 8:51
+
+DISC TWO --- 36:17
+1. God Knows 6:19.
+2. Never Gonna Be The Same Again 6:55
+3. Obviously Five Believers 6:45
+4. Like A Rolling Stone 7:59
+5. The Times They Are A-Changin' 8:19
+
+Complete concert
+
+Concert # 670 of The Never-Ending Tour. 
+
+Bob Dylan (vocal & guitar), 
+Bucky Baxter (pedal steel guitar & electric slide guitar), 
+John Jackson (guitar), 
+Tony Garnier (bass), 
+Winston Watson (drums & percussion).
+
+79, 14 acoustic with the band.
+1, 2, 7, 8, 14 Bob Dylan harmonica.
+
+Notes.
+* Live debut of Obviously Five Believers.
+===================
+===================
+===================

@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-06eve-a.flacf 
+=================== 
+=================== 
+=================== 
+063a2e1268f4ef48f00baeea3c0a938a  bd75-11-06et01.flac
+be785c0f5485c8871dc9f1e069490fe3  bd75-11-06et02.flac
+0f22091448a4a5330e9d6b440a2140a4  bd75-11-06et03.flac
+26a8e56b520d867479e6c68a70b62370  bd75-11-06et04.flac
+e7e90b0c0c2ce496df4782cd718b0b24  bd75-11-06et05.flac
+b9fab827073b984a434786963c3ce01e  bd75-11-06et06.flac
+e8e8d133c4b31db247062f32d7b9d67a  bd75-11-06et07.flac
+75d3043ff6f434a097f5f1a66a7e1c2c  bd75-11-06et08.flac
+cfc168dd2d14449bc740b5a720259075  bd75-11-06et09.flac
+671fefde8fb6fbfc0d21c24be52b08a2  bd75-11-06et10.flac
+2d878a706e331688c270d85c96a95e89  bd75-11-06et11.flac
+cf819062f59999e331a165fea4a778ff  bd75-11-06et12.flac
+0515994130ccda8c42c391e2250b136d  bd75-11-06et13.flac
+d521491d75a8fd2878884be1313211e4  bd75-11-06et14.flac
+f5bcf1e60f4a6448d969dec629b08a56  bd75-11-06eve-a.txt
+fbe6d4776275e9681f675aad8946d3c2  bd75-11-06eve.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-06eve-a.flacf 
+=================== 
+=================== 
+=================== 
+bd75-11-06et01.flac:105579b1fc9d996924a1c72562d45483
+bd75-11-06et02.flac:d2550ba019d97eb803d0c63bd88a49d3
+bd75-11-06et03.flac:6006f5321ed24023bc0b09f29c97ba9a
+bd75-11-06et04.flac:7559b6a8cba6e4ca877d930440419c3b
+bd75-11-06et05.flac:fcb3d5bb0f371279a3317cbac5e8ab1b
+bd75-11-06et06.flac:3fc734f1a5a13ecbfb1b17dfbde2af6f
+bd75-11-06et07.flac:385f7d6ebda44d6ff265b9c403ab7531
+bd75-11-06et08.flac:562f58a2b8dc6cbf6771cb6b7e06478e
+bd75-11-06et09.flac:31a9126a7a8ba66dd66fe34d8d6d67a1
+bd75-11-06et10.flac:a9d903e41ac45a5a1a4daa256384901d
+bd75-11-06et11.flac:dd51d3c8c460932a4dc9b8afec853e78
+bd75-11-06et12.flac:f2d7a263b33d375ac103d37d2540f3dd
+bd75-11-06et13.flac:e56f07c29829d4fcb8406cecf7bdc200
+bd75-11-06et14.flac:1a0b4c91f82c5df87e1d89619941fb80
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-06eve-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.47       46327388 B   ---   --   ---xx   flac  0.6240  bd75-11-06et01.flac
+     5:48.49       61502492 B   ---   --   ---xx   flac  0.6197  bd75-11-06et02.flac
+     5:54.65       62598524 B   ---   --   ---xx   flac  0.6200  bd75-11-06et03.flac
+     0:58.36       10315916 B   ---   --   ---xx   flac  0.5917  bd75-11-06et04.flac
+     3:34.50       37867244 B   ---   --   ---xx   flac  0.5857  bd75-11-06et05.flac
+     3:10.53       33640700 B   ---   --   ---xx   flac  0.5926  bd75-11-06et06.flac
+     2:38.57       28005308 B   ---   --   ---xx   flac  0.5855  bd75-11-06et07.flac
+     4:27.68       47258780 B   ---   --   ---xx   flac  0.5896  bd75-11-06et08.flac
+     7:24.56       78453356 B   ---   --   ---xx   flac  0.6068  bd75-11-06et09.flac
+     3:57.59       41945612 B   ---   --   ---xx   flac  0.6023  bd75-11-06et10.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.5711  bd75-11-06et11.flac
+     4:39.02       49220348 B   ---   --   ---xx   flac  0.5804  bd75-11-06et12.flac
+     3:55.03       41461100 B   ---   --   ---xx   flac  0.5807  bd75-11-06et13.flac
+     4:41.64       49718972 B   ---   --   ---xx   flac  0.6071  bd75-11-06et14.flac
+    60:32.09      640706584 B                            0.5992  (14 files)
+=================== 
+=================== 
+=================== 

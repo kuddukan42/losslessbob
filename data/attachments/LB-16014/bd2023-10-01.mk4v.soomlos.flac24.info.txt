@@ -1,0 +1,58 @@
+Bob Dylan
+The Midland Theatre
+Kansas City, Missouri
+October 1, 2023
+
+01. Kansas City
+02. Watching The River Flow
+03. I Contain Multitudes
+04. False Prophet
+05. When I Paint My Masterpiece
+06. Black Rider
+07. My Own Version Of You
+08. I'll Be Your Baby Tonight
+09. Crossing The Rubicon
+10. To Be Alone With You
+11. Key West (Philosopher Pirate)
+12. Gotta Serve Somebody
+13. I've Made Up My Mind To Give Myself To You
+14. Not Fade Away 
+15. Mother Of Muses
+16. Goodbye Jimmy Reed
+17. Every Grain Of Sand 	 
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Jerry Pentecost - drums
+Doug Lancio - guitar
+Bob Britt - guitar
+Donnie Herron - steel guitar, mandolin, violin
+Tony Garnier - bass
+
+Comment
+Kansas City (song by Jerry Leiber, Mike Stoller)
+Last time played 1986-07-24 Bonner Springs, Kansas - Sandstone Amphitheater
+
+Recorded by: soomlos
+schoeps mk4v > nbob actives > sound devices mixpre-3 (24/48)
+sound devices mixpre-3 > usb > pc > poly wav (24/48)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24/48)
+
+ffp
+bd2023-10-01-soomlos-t01.flac:55ce4eaa93ac4c14aa8e4dc75bae941c
+bd2023-10-01-soomlos-t02.flac:c590b32b2f90c2d3219862899bea2c5d
+bd2023-10-01-soomlos-t03.flac:cfb16851ec646c521652b5759bfa861f
+bd2023-10-01-soomlos-t04.flac:b2da57e2d41cadd852a482688249a03b
+bd2023-10-01-soomlos-t05.flac:9b834f1eafb302bdc4d536b1acb8ddee
+bd2023-10-01-soomlos-t06.flac:bedad446b24d6390d5000368d050ea2b
+bd2023-10-01-soomlos-t07.flac:75cf10a4a0b5cce0f65881fb3ebb82c9
+bd2023-10-01-soomlos-t08.flac:747f207861be19c268e1fde01c7daf78
+bd2023-10-01-soomlos-t09.flac:dadafcb5ab06c530b93067437ab117d4
+bd2023-10-01-soomlos-t10.flac:a24233baeacb0d173e5652225e837fe9
+bd2023-10-01-soomlos-t11.flac:de6deabef2ffea946d60ecccda93c7b0
+bd2023-10-01-soomlos-t12.flac:a65b33af38f8cc54e810270565be2ac2
+bd2023-10-01-soomlos-t13.flac:dd501e9681cf79e7d7cb5dbba947bf0f
+bd2023-10-01-soomlos-t14.flac:4a95760bcfdc5ec67e84a0533459ffcf
+bd2023-10-01-soomlos-t15.flac:6d25768b768e3af82f8b093fe8621873
+bd2023-10-01-soomlos-t16.flac:03a12bffb93a3f961349a4221ed4b759
+bd2023-10-01-soomlos-t17.flac:8dd11f465b7dd1c58e713f45c67383dc

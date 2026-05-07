@@ -1,0 +1,123 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-19-Bobby-Bourbon.flacf 
+=================== 
+=================== 
+=================== 
+e198f3dd369852dd7b6eac7efa0e8952  bd99-11-19-Bobby-Bourbon-LB-4158.txt
+3a6d2351c99ed5fed57fff318c9553a9  Early Show\bd1999-11-19E.txt
+6252cb5aa1ba9fd1c23578aea3602b0e  Early Show\bd1999-11-19E01.flac
+9e800c3a7ed7a099a3993dc82bace6c7  Early Show\bd1999-11-19E02.flac
+8181d706ec6d6be0fcf56a9f1e17dd30  Early Show\bd1999-11-19E03.flac
+bb3dbf80f169fa219b854baeeb8161ac  Early Show\bd1999-11-19E04.flac
+ea160a220d74c323d5953161c7ea1cb5  Early Show\bd1999-11-19E05.flac
+4b4a14b767974c10911a77acda5d19e3  Early Show\bd1999-11-19E06.flac
+8f2edff2fe30cc09dc09476e4b543504  Early Show\bd1999-11-19E07.flac
+a5239157d417cfd43ba7e87abdf4ffe6  Early Show\bd1999-11-19E08.flac
+1aaf6d5fddc92fbdab10ac668f4149d8  Early Show\bd1999-11-19E09.flac
+3af477e1392d3766a4fd4e21b38275e2  Early Show\bd1999-11-19E10.flac
+dbe480d1e8945f617fe36a4953359336  Early Show\bd1999-11-19E11.flac
+e288514b601600b542b00bced59f4145  Early Show\bd1999-11-19E12.flac
+e230413f34af4f8765c5de05879e5952  Early Show\bd1999-11-19E13.flac
+ef4b9b20c38e5fd2d3ff9470c7b65c23  Late Show\bd1999-11-19L.txt
+0a45dc1add45866b1535d5b7c3063fd6  Late Show\bd1999-11-19L01.flac
+9db9e8843547e4289d2d9841dc5d65e0  Late Show\bd1999-11-19L02.flac
+4541ac1d409a22e24e0c1ba73ffe0f75  Late Show\bd1999-11-19L03.flac
+51c7753daef8ae28619336023602de5b  Late Show\bd1999-11-19L04.flac
+0949ca3876c69f288c20599207e6433e  Late Show\bd1999-11-19L05.flac
+52e17b5bd79a553c6d4ecde5c3f32edf  Late Show\bd1999-11-19L06.flac
+8788e7d95c95776eb083b445565ca1e0  Late Show\bd1999-11-19L07.flac
+a557471d6f5908e4320b870723f2a4b1  Late Show\bd1999-11-19L08.flac
+60d61f7fb6179d933f5383d36caee3aa  Late Show\bd1999-11-19L09.flac
+9855d1d1c3a0a1ca44342dd1bf570550  Late Show\bd1999-11-19L10.flac
+d929bf4e17c28ae4aeaf9b5d6d5e3855  Late Show\bd1999-11-19L11.flac
+675fdbe061f962711a9a6e250ea8e8fe  Late Show\bd1999-11-19L12.flac
+5bd1c776565c0f97b41f5c4b3cce77b4  Late Show\bd1999-11-19L13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-19-Bobby-Bourbon.flacf\Early Show 
+=================== 
+=================== 
+=================== 
+bd1999-11-19E01.flac:8db35e04bae8996e1846463409221a5f
+bd1999-11-19E02.flac:cb0118ce82ae88226dcedf234b486692
+bd1999-11-19E03.flac:e7f39c5e9d863a1e7b7672f237731dd4
+bd1999-11-19E04.flac:4c53cc43d44a538ade35d569a9270fb2
+bd1999-11-19E05.flac:6fa26662b313ca74071ece615297f5b8
+bd1999-11-19E06.flac:7a28b4ef58e13d4399aa3a73a2d4839b
+bd1999-11-19E07.flac:0f04a6b8e00d195594cd636120ce2062
+bd1999-11-19E08.flac:8ae63d2a0dd18fafc269e2b641b33b4a
+bd1999-11-19E09.flac:0980eefef398bc46e005c8d53e18430e
+bd1999-11-19E10.flac:8b834c95ab0c24ecfc0be7be3232967b
+bd1999-11-19E11.flac:ac0c374899ee477f078660dbd2f52c61
+bd1999-11-19E12.flac:5cfdef3e9eec506d3b20104e90264642
+bd1999-11-19E13.flac:0208f2adc0d6d5ea4766ab4860265b76
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-19-Bobby-Bourbon.flacf\Late Show 
+=================== 
+=================== 
+=================== 
+bd1999-11-19L01.flac:dcb30040130d9ced2bd13659da2cdc4e
+bd1999-11-19L02.flac:4b9527b98cc337becb02aa4d9e0c2fb3
+bd1999-11-19L03.flac:fd5ca339260e6ade84bc31b51b8aa892
+bd1999-11-19L04.flac:29a1bb190ba4975ec03f3a0798fbcb01
+bd1999-11-19L05.flac:3d9c8d6c6f4e70e4f6f8053cb39f3b37
+bd1999-11-19L06.flac:6385688f0a4ae882b83557bdde6ac27b
+bd1999-11-19L07.flac:0a2b761e3d4555ee75dbea2f0afdf86a
+bd1999-11-19L08.flac:576c2fcd9a547c0b7248e6cb51ad5dc0
+bd1999-11-19L09.flac:3aa8f8f55a154a5d159dde47ebf02cc1
+bd1999-11-19L10.flac:ddbadeeeeca134e4d56205cac32fdb58
+bd1999-11-19L11.flac:5bbff7dd1d5cd2ffb8026031cc606a88
+bd1999-11-19L12.flac:f86f796668050ded2808e71a43473791
+bd1999-11-19L13.flac:69965bada0022425d65e955df329432c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-19-Bobby-Bourbon.flacf\Early Show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:14.53       44930300 B   ---   --   ---xx   flac  0.5425  bd1999-11-19E01.flac
+     6:13.24       65853692 B   ---   --   ---xx   flac  0.5530  bd1999-11-19E02.flac
+     3:17.18       34793180 B   ---   --   ---xx   flac  0.5542  bd1999-11-19E03.flac
+     7:51.17       83124428 B   ---   --   ---xx   flac  0.5649  bd1999-11-19E04.flac
+     5:12.73       55208540 B   ---   --   ---xx   flac  0.5392  bd1999-11-19E05.flac
+     7:43.05       81685004 B   ---   --   ---xx   flac  0.5528  bd1999-11-19E06.flac
+     5:19.03       56278700 B   ---   --   ---xx   flac  0.5025  bd1999-11-19E07.flac
+     6:07.27       64802348 B   ---   --   ---xx   flac  0.5632  bd1999-11-19E08.flac
+     5:58.06       63165356 B   ---   --   ---xx   flac  0.5201  bd1999-11-19E09.flac
+     6:04.63       64357820 B   ---   --   ---xx   flac  0.5868  bd1999-11-19E10.flac
+    10:41.59      113211212 B   ---   --   ---xx   flac  0.6263  bd1999-11-19E11.flac
+     6:37.66       70186076 B   ---   --   ---xx   flac  0.5381  bd1999-11-19E12.flac
+     3:24.39       36077372 B   ---   --   ---xx   flac  0.5970  bd1999-11-19E13.flac
+    78:46.03      833674028 B                            0.5608  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-19-Bobby-Bourbon.flacf\Late Show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:48.35       40301564 B   ---   --   ---xx   flac  0.6240  bd1999-11-19L01.flac
+     5:31.66       58543676 B   ---   --   ---xx   flac  0.5469  bd1999-11-19L02.flac
+     8:44.06       92447756 B   ---   --   ---xx   flac  0.6141  bd1999-11-19L03.flac
+     3:52.62       41070668 B   ---   --   ---xx   flac  0.5723  bd1999-11-19L04.flac
+    10:08.06      107265356 B   ---   --   ---xx   flac  0.5935  bd1999-11-19L05.flac
+     6:53.53       72977900 B   ---   --   ---xx   flac  0.6567  bd1999-11-19L06.flac
+     5:39.08       59818460 B   ---   --   ---xx   flac  0.6011  bd1999-11-19L07.flac
+     6:20.39       67123772 B   ---   --   ---xx   flac  0.6204  bd1999-11-19L08.flac
+     4:40.15       49427324 B   ---   --   ---xx   flac  0.4997  bd1999-11-19L09.flac
+     5:51.38       62005820 B   ---   --   ---xx   flac  0.6437  bd1999-11-19L10.flac
+     5:45.53       60982700 B   ---   --   ---xx   flac  0.5769  bd1999-11-19L11.flac
+     8:36.03       91029500 B   ---   --   ---xx   flac  0.6719  bd1999-11-19L12.flac
+     4:01.55       42641804 B   ---   --   ---xx   flac  0.6605  bd1999-11-19L13.flac
+    79:53.64      845636300 B                            0.6099  (13 files)
+=================== 
+=================== 
+=================== 

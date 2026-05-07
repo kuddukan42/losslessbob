@@ -1,0 +1,165 @@
+===================
+===================
+===================
+=== Bob Dylan RTR Toronto December 2nd 1975.md5
+===================
+===================
+===================
+f4733dbf321552a963c0562bd1bb2638 *1975 12 02 Toronto RTR Disc1\01 Good Love Is Hard To Find.wav
+f4d8a3c629859036a7c1066f5de9e1ad *1975 12 02 Toronto RTR Disc1\02 Sleazy.wav
+b955568035f0e805b15a06c68956a847 *1975 12 02 Toronto RTR Disc1\03 Werewolves Of London.wav
+ca61cb81476eeaa39a94d1f46d0991ff *1975 12 02 Toronto RTR Disc1\04 Laissez Faire.wav
+e8c9b0f5aa9aca5c936a0217e0be273d *1975 12 02 Toronto RTR Disc1\05 Catfish.wav
+f70eaecc70aa55ff78eba2151cbf36ba *1975 12 02 Toronto RTR Disc1\06 Is There Life On Mars.wav
+322b90c0a1a648c89232a351b222b3da *1975 12 02 Toronto RTR Disc1\07 Alabama Dark.wav
+19871f4dc0412dc0f288935a8e7b31dd *1975 12 02 Toronto RTR Disc1\08 New Sun Rising.wav
+e7328244967488b8ae1ae1e068c37edc *1975 12 02 Toronto RTR Disc1\09 Cindy.wav
+a86812a4689e821a8f612644547d6a0d *1975 12 02 Toronto RTR Disc1\10 Mercedes Benz.wav
+3e5e654181856e521f88095a78a8051f *1975 12 02 Toronto RTR Disc1\11 Forty Days.wav
+48e3080b80c4b7031ad20af2d66e8847 *1975 12 02 Toronto RTR Disc1\12 Who Do You Love.wav
+484852cb78361698264482d41ebd60b1 *1975 12 02 Toronto RTR Disc1\13 Woman Of Heart And Mind.wav
+0290c0847d7aaaa261a72ca88ca45780 *1975 12 02 Toronto RTR Disc1\14 Coyote.wav
+216c3cea93924fe99ddf4d5baed87479 *1975 12 02 Toronto RTR Disc2\01 Edith And The Kingpin.wav
+c3ad0597861d6ebd2ee097378dc9c4fc *1975 12 02 Toronto RTR Disc2\02 Don't Interrupt The Sorrow.wav
+001b8b85dac52f48066db81ad284ab6b *1975 12 02 Toronto RTR Disc2\03 Ramblin Jack.wav
+ecee359f10a2e3c3747e99d243d53e22 *1975 12 02 Toronto RTR Disc2\04 San Francisco Bay Blues.wav
+65dfa619e9b827ba14a2ae0d05558856 *1975 12 02 Toronto RTR Disc2\05 Talkin' Fisherman Blues.wav
+8832cd2583497e12338372546be7c9e5 *1975 12 02 Toronto RTR Disc2\06 Salt Park West Virginia.wav
+22906f0b7b01c824c2022858a18fd24c *1975 12 02 Toronto RTR Disc2\07 I'm A Rich And Rambling Boy.wav
+3fc4a7178105f72792ef2f683baac883 *1975 12 02 Toronto RTR Disc2\08 When I Paint My Masterpiece.wav
+b3b79de3b1a8895d996bb303574b5394 *1975 12 02 Toronto RTR Disc2\09 It Ain't Me, Babe.wav
+1f3d6c8067b3eeb5e218237f18519f26 *1975 12 02 Toronto RTR Disc2\10 Lonesome Death Of Hattie Carroll.wav
+ae3df9ff6b9c09dbd2e42e5d78d6cee3 *1975 12 02 Toronto RTR Disc2\11 A Hard Rain's A-Gonna Fall.wav
+38dd5f95f33f553cf62fb9bbb5962fc8 *1975 12 02 Toronto RTR Disc2\12 Romance In Durango.wav
+e31032e296237c91b550e40a9f10281c *1975 12 02 Toronto RTR Disc2\13 Isis.wav
+0b5f80fd63a8f055adb990f58e238401 *1975 12 02 Toronto RTR Disc3\01 Blowin' In The Wind.wav
+93a1f770ad1f37848f82ea0ff2acd94d *1975 12 02 Toronto RTR Disc3\02 Wild Mountain Thyme.wav
+7a143368e7e2ce042d83008168f3747a *1975 12 02 Toronto RTR Disc3\03 Mama You Been On My Mind.wav
+a61a21b704f6d83ed2f31c611aa100a0 *1975 12 02 Toronto RTR Disc3\04 Dark As A Dungeon.wav
+f0a6d2737d6b492deb5f25112fa49926 *1975 12 02 Toronto RTR Disc3\05 I Shall Be Released.wav
+74050b664a0e15e345936f155efaf799 *1975 12 02 Toronto RTR Disc3\06 Diamonds And Rust.wav
+774403183cfabef9b1ff0019b4e646e4 *1975 12 02 Toronto RTR Disc3\07 Sweet Chariot.wav
+ffc2a59671cd1117c58bd7873fafc3b9 *1975 12 02 Toronto RTR Disc3\08 Pastures Of Plenty.wav
+a8b9b3e3dcf336a6afff1bfc88183b70 *1975 12 02 Toronto RTR Disc3\09 Suzanne.wav
+df6d0a1d4e08ab805c5a9fe981bfdfaf *1975 12 02 Toronto RTR Disc3\10 Help Me Make It Through The Night.wav
+9d303f89cbab1863671425e8d151ace8 *1975 12 02 Toronto RTR Disc3\11 Please Come To Boston.wav
+f7005b1627a9eabe60ca738040fe62f7 *1975 12 02 Toronto RTR Disc3\12 The Night They Drove Old Dixie Do.wav
+4a266743b115c0593bfd3a534af82b82 *1975 12 02 Toronto RTR Disc3\13 Eight Miles High.wav
+bd7c6031819e6e25aa9951c58f80f767 *1975 12 02 Toronto RTR Disc3\14 Chestnut Mare.wav
+eb9b8a1796ea2e1317cd93f4dc2ace76 *1975 12 02 Toronto RTR Disc4\01 Race Among The Ruins.wav
+35d058964962b1b6bbd5331b9177ae30 *1975 12 02 Toronto RTR Disc4\02 Cherokee Bend.wav
+52e16b11b0eb14a05c80d825a90d4372 *1975 12 02 Toronto RTR Disc4\03 High And Dry.wav
+c9ef8c05607d0343df3b50473c715483 *1975 12 02 Toronto RTR Disc4\04 Sundown.wav
+28b325e3edea20fde0e5419e5c0b900f *1975 12 02 Toronto RTR Disc4\05 Mr. Tambourine Man.wav
+2f77c678ce5609604dc67be509dd12be *1975 12 02 Toronto RTR Disc4\06 Tangled Up In Blue.wav
+128b253e91e8360ff8c95240e127bfe9 *1975 12 02 Toronto RTR Disc4\07 Oh Sister.wav
+5fc1708e5f6a9d94658cd55ff3412fc4 *1975 12 02 Toronto RTR Disc4\08 Hurricane.wav
+e143d28dd6ec9057d6b00103bfa8c68f *1975 12 02 Toronto RTR Disc4\09 One More Cup Of Coffee (Valley Be.wav
+cf06fe300058fb59ee04758e2872230f *1975 12 02 Toronto RTR Disc4\10 Sara.wav
+1ff9cbeb000db73540efc761cd442e02 *1975 12 02 Toronto RTR Disc4\11 Just Like A Woman.wav
+54e453cd59512bb2db009ecaeff9bca1 *1975 12 02 Toronto RTR Disc4\12 Knockin' On Heaven's Door.wav
+eeb760eced550ba2341157d4e92959de *1975 12 02 Toronto RTR Disc4\13 This Land Is Your Land.wav
+3db60e7d064ab543b34e55026d0f3e2b *Artwork\CompleteRTR12-02-75(SA)-B.jpg
+d217f68ee1e47c29128b50f2427b19d7 *Artwork\CompleteRTR12-02-75(SA)-F.jpg
+80e2e3fac23f9bc40e1a93f4f80683f8 *Artwork\CompleteRTR12-02-75Vol1(SA)-B.jpg
+633cc4fadd8df836842f1a549bc3f50d *Artwork\CompleteRTR12-02-75Vol1(SA)-F.jpg
+f82300985afa96f287dec184ddd82f42 *Artwork\CompleteRTR12-02-75Vol2(SA)-B.jpg
+749497ac124a6d4e23f34ad5f153e50a *Artwork\CompleteRTR12-02-75Vol2(SA)-F.jpg
+ab78dfbc249d87b55c7c7ec307d47e3f *Info.txt
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+Bob Dylan (Rolling Thunder Revue - Complete)
+Toronto, Canada 
+December 2nd 1975  
+
+I received this in a trade
+
+CDrs>WAV>FLAC8>You
+
+I am fairly certain that I received this from a dylantree trade.
+
+December 1st 1975 was seeded by j0kerman back on November 5th 2008. http://www.dimeadozen.org/torrents-details.php?id=221540. From the info notes on that seed "NOTE: This remastered version originally circulated via dylantree from monicasdude".
+
+Therefore there is a strong possibility that the same applies to this show. Anyhow, thanks to whoever it was that made the copy that I have.
+
+More information at http://www.bjorner.com/DSN02910%201975%20Rolling%20Thunder%20Revue.htm#DSN03190
+
+
+Disc One
+
+1.  Good Love Is Hard To Find (Bob Neuwirth)				3:47
+2.  Sleazy  (Bob Neuwirth)						3:29
+3.  Werewolves Of London (T-bone J. Henry Burnett)			6:31
+4.  Laissez Faire (Steven Soles)					4:42
+5.  Catfish (Rob Stoner)						4:37
+6.  Is There Life On Mars (Mick Ronson)					5:32
+7.  Alabama Dark (Bob Neuwirth & Ronee Blakley)				3:57
+8.  New Sun Rising (Ronee Blakley)					4:12
+9.  Cindy (Bob Neuwirth)						3:53
+10. Mercedes Benz (Bob Neuwirth)					3:34
+11. Forty Days (Ronnie Hawkins)						5:54
+12. Who Do You Love (Ronnie Hawkins)					12:54
+13. Woman Of Heart And Mind (Joni Mitchell)				2:54
+14. Coyote (Joni Mitchell)						4:31
+
+Disc Two
+
+1.  Edith And The Kingpin (Joni Mitchell)				4:20
+2.  Don't Interrupt The Sorrow (Joni Mitchell)				5:18
+3.  Ramblin Jack (Bob Neuwirth)						2:55
+4.  San Francisco Bay Blues (Ramblin’ Jack Elliott)			3:06
+5.  Talkin' Fisherman Blues (Ramblin’ Jack Elliott)			5:22
+6.  Salt Park West Virginia (Ramblin’ Jack Elliott)			3:13
+7.  I'm A Rich And Rambling Boy (Ramblin’ Jack Elliott)			3:58
+8.  When I Paint My Masterpiece						4:30
+9.  It Ain't Me, Babe							5:33
+10. Lonesome Death Of Hattie Carroll					5:28
+11. A Hard Rain's A-Gonna Fall						6:05
+12. Romance In Durango							6:18
+13. Isis								5:43
+
+Disc Three
+
+1.  Blowin' In The Wind							2:14
+2.  Wild Mountain Thyme							4:48
+3.  Mama You Been On My Mind						3:21
+4.  Dark As A Dungeon							4:13
+5.  I Shall Be Released							4:28
+6.  Diamonds And Rust (Joan Baez)					5:21
+7.  Sweet Chariot (Joan Baez)						3:44
+8.  Pastures Of Plenty (Joan Baez)					3:41
+9.  Suzanne (Joan Baez)							5:01
+10. Help Me Make It Through The Night (Joan Baez)			3:15
+11. Please Come To Boston (Joan Baez)					5:58
+12. The Night They Drove Old Dixie Down (Joan Baez & Roger McGuinn)	3:43
+13. Eight Miles High (Roger McGuinn)					4:03
+14. Chestnut Mare (Roger McGuinn)					5:06
+
+Disc Four
+
+1.  Race Among The Ruins (Gordon Lightfoot)				4:31
+2.  Cherokee Bend (Gordon Lightfoot)					4:56
+3.  High And Dry (Gordon Lightfoot)					2:47
+4.  Sundown (Gordon Lightfoot)						3:34
+5.  Mr. Tambourine Man							6:40
+6.  Tangled Up In Blue							6:50
+7.  Oh Sister								5:19
+8.  Hurricane								8:32
+9.  One More Cup Of Coffee (Valley Below)				4:25
+10. Sara								4:48
+11. Just Like A Woman							5:00
+12. Knockin' On Heaven's Door						4:26
+13. This Land Is Your Land						3:59
+
+
+
+
+Enjoy !!
+===================
+===================
+===================

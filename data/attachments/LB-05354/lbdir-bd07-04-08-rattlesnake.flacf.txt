@@ -1,0 +1,142 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-08-rattlesnake.flacf 
+=================== 
+=================== 
+=================== 
+10b12d92f5f4b93b26fb43f42a03b070  bd2007-04-08-09-amsterdam-rattlesnake.txt
+c4eddb513644b8af3fb8ef0f630d5d26  bd2007-04-amsterdam-rs-d1t01.flac
+4fdeef57303517faa6213fdb5b83b542  bd2007-04-amsterdam-rs-d1t02.flac
+1266a151495e6956e1e5191104d4685f  bd2007-04-amsterdam-rs-d1t03.flac
+10b0a242034a35ad1fa7e4314c220142  bd2007-04-amsterdam-rs-d1t04.flac
+611e2af5bec5bcad776f4daefd24f315  bd2007-04-amsterdam-rs-d1t05.flac
+660c354c192007898ea329d18c7268f9  bd2007-04-amsterdam-rs-d1t06.flac
+46ace5cecb5434a8512bd14283d471fc  bd2007-04-amsterdam-rs-d1t07.flac
+ab84239d1f127759eba72568c89f2743  bd2007-04-amsterdam-rs-d1t08.flac
+77dbf43684e16293776aeebcebbd3097  bd2007-04-amsterdam-rs-d1t09.flac
+abf9c036d1a696b6f38a157ef55df90d  bd2007-04-amsterdam-rs-d1t10.flac
+69f8ac51695a09ab5c11ffa0bb3227cb  bd2007-04-amsterdam-rs-d1t11.flac
+ba13dd70ad15fa0e76175047a205954b  bd2007-04-amsterdam-rs-d1t12.flac
+5e54342c34ffe72357c5223b12b248e5  bd2007-04-amsterdam-rs-d1t13.flac
+3c7b34c1355d0ab032d7befc86809d71  bd2007-04-amsterdam-rs-d2t01.flac
+53670f4ae4a3a2b9d04014e3c6a72eeb  bd2007-04-amsterdam-rs-d2t02.flac
+a391a5c9bfe963c6b2e1b8855247d20e  bd2007-04-amsterdam-rs-d2t03.flac
+99fd021509230f3727ffa7e3c346b10a  bd2007-04-amsterdam-rs-d2t04.flac
+1b9d7a84cbd3abf5675bdf6ff142e1ad  bd2007-04-amsterdam-rs-d2t05.flac
+af4516f7dad3c13bb1b7a6f69d705e03  bd2007-04-amsterdam-rs-d2t06.flac
+9386cb103c6f6a185be9ee23a8bd87e3  bd2007-04-amsterdam-rs-d2t07.flac
+938bc8ae70a1c998f30abcf60ee69de7  bd2007-04-amsterdam-rs-d2t08.flac
+1d16dddfc72719f55c14293cc025cda9  bd2007-04-amsterdam-rs-d2t09.flac
+4d51518c353a623633b1dddcbf518e68  bd2007-04-amsterdam-rs-d2t10.flac
+bd86f8d03511325060e47d42c7560d6c  bd2007-04-amsterdam-rs-d2t11.flac
+f2fd248d069ed3b17ad5513b1bcd741d  bd2007-04-amsterdam-rs-d2t12.flac
+c7340a57dc655d1653994d4899f088e0  bd2007-04-amsterdam-rs-d3t01.flac
+f309274fde35789528caf3fd3c067fbc  bd2007-04-amsterdam-rs-d3t02.flac
+c3be2d7e9ea922db0d7973033ee4623a  bd2007-04-amsterdam-rs-d3t03.flac
+aed0ef9645bb22cb30a076ae9c0a3f87  bd2007-04-amsterdam-rs-d3t04.flac
+bfc1c14579a6195e7792323ba4e48b2c  bd2007-04-amsterdam-rs-d3t05.flac
+9b967d83d49ebc0581cfbc425a55f081  bd2007-04-amsterdam-rs-d3t06.flac
+0c03668e0d8a05bd0025aac116829ca5  bd2007-04-amsterdam-rs-d3t07.flac
+181d9813595a872baaa1bb12aefeaacf  bd2007-04-amsterdam-rs-d3t08.flac
+e00679375dc2770520b97c6f42aa56cf  bd2007-04-amsterdam-rs-d3t09.flac
+2304ecde00bdc0403b8785fefede2e84  bd2007-04-amsterdam-rs-d3t10.flac
+bce4fffc76fedf99b1701aa7e862cd65  bd2007-04-amsterdam-rs-d3t11.flac
+80b8d569128317dce4a80bd8eb472c56  booklet1.jpg
+09fdbdd6a0f0109ac5da3d3f94ba31c1  booklet2.jpg
+2c1ed0149f0caac08fdcf83a3676e26b  booklet3.jpg
+5b84cc1f11aa429755e1c0ddd728cd81  booklet4.jpg
+d2b13b6776dd1c55d0271467d5639d07  Discs.jpg
+ee4551f288b18c87222bffc3088d9b7a  Trayinfrontback.jpg
+211a209060f61587518e90599314151b  Trayoutfrontback.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-08-rattlesnake.flacf 
+=================== 
+=================== 
+=================== 
+bd2007-04-amsterdam-rs-d1t01.flac:dfc12003bf35ef8810d09c91f6b24213
+bd2007-04-amsterdam-rs-d1t02.flac:fc0243b9d1f4e3e41f26b5407a53ec26
+bd2007-04-amsterdam-rs-d1t03.flac:d551dd9bbbc95531746e7959dce2930c
+bd2007-04-amsterdam-rs-d1t04.flac:a2c1af0e72ef0856f178e1646e17a081
+bd2007-04-amsterdam-rs-d1t05.flac:5564a606f6fdf6ae77fa299f29756628
+bd2007-04-amsterdam-rs-d1t06.flac:2f5ac0addd7409001ec0479a2fd3cd31
+bd2007-04-amsterdam-rs-d1t07.flac:f087da2deb5599720ef32ac958969c5b
+bd2007-04-amsterdam-rs-d1t08.flac:7c4326133a9ea7b5e4ba1f7e82fa15a1
+bd2007-04-amsterdam-rs-d1t09.flac:1b51bdeb830f8ee61d0d4a7523bb23dc
+bd2007-04-amsterdam-rs-d1t10.flac:84cc6027b3bfe71451d0d5c5dffa75e8
+bd2007-04-amsterdam-rs-d1t11.flac:c9c8e48cb113fae7c8f1229598f37083
+bd2007-04-amsterdam-rs-d1t12.flac:2c5a25a78b13bc3ac9b7d85b00d9ad8a
+bd2007-04-amsterdam-rs-d1t13.flac:3c6f24e6e4ac721d347b29b1576d54bd
+bd2007-04-amsterdam-rs-d2t01.flac:5e03a1bd7fe19500af4ad98b22ccfc85
+bd2007-04-amsterdam-rs-d2t02.flac:12a6270277b887187122f9b8b3924e73
+bd2007-04-amsterdam-rs-d2t03.flac:50e211c2b425dd3e5d9e6813e6f9b41a
+bd2007-04-amsterdam-rs-d2t04.flac:5779127196ea32df4889e78379cda148
+bd2007-04-amsterdam-rs-d2t05.flac:fa9b65203db3d7d52f1cdd9ae63aa42f
+bd2007-04-amsterdam-rs-d2t06.flac:96ec8f23c758c1bdae76f43438e9f161
+bd2007-04-amsterdam-rs-d2t07.flac:b498c88f994694ce89cf29dde3d91c09
+bd2007-04-amsterdam-rs-d2t08.flac:6f22a5db4106eaaed465c4ec18c22dd2
+bd2007-04-amsterdam-rs-d2t09.flac:5c2bb629e9868995e3b92221d9d69228
+bd2007-04-amsterdam-rs-d2t10.flac:60822fdb9500f5bda8af0b9513f79158
+bd2007-04-amsterdam-rs-d2t11.flac:1b28e499fbf735a46d1e11fae91e1cc1
+bd2007-04-amsterdam-rs-d2t12.flac:017fb68c76f6e8d887b82019f517d453
+bd2007-04-amsterdam-rs-d3t01.flac:e869ce4a860176ada5c3ef0c509ab88c
+bd2007-04-amsterdam-rs-d3t02.flac:493d0dc0950f1f57faa31161613a1951
+bd2007-04-amsterdam-rs-d3t03.flac:add00ae9f0a432649c01e62768da4029
+bd2007-04-amsterdam-rs-d3t04.flac:5042954e3ce0c275df32613a92746260
+bd2007-04-amsterdam-rs-d3t05.flac:157c275d44b256af897da47a909a7f70
+bd2007-04-amsterdam-rs-d3t06.flac:edb2353982556b070aef57eff5ba0c36
+bd2007-04-amsterdam-rs-d3t07.flac:c5c4a907eec93ce46bf4952b760fa8bf
+bd2007-04-amsterdam-rs-d3t08.flac:51a3ee97104c5de1788aaf535f54455b
+bd2007-04-amsterdam-rs-d3t09.flac:1bc322e2f26fb582e8ca5dd3750b7b95
+bd2007-04-amsterdam-rs-d3t10.flac:46a1dafcb66f2656ff5d444eadb1a9a3
+bd2007-04-amsterdam-rs-d3t11.flac:ed22facc946263d6b6db51f55b8820fe
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-04-08-rattlesnake.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.74       10228892 B   ---   --   ---xx   flac  0.5213  bd2007-04-amsterdam-rs-d1t01.flac
+     3:58.38       42072620 B   ---   --   ---xx   flac  0.6754  bd2007-04-amsterdam-rs-d1t02.flac
+     6:17.71       66669836 B   ---   --   ---xx   flac  0.6576  bd2007-04-amsterdam-rs-d1t03.flac
+     6:38.72       70376588 B   ---   --   ---xx   flac  0.6670  bd2007-04-amsterdam-rs-d1t04.flac
+     7:22.41       78065276 B   ---   --   ---xx   flac  0.6917  bd2007-04-amsterdam-rs-d1t05.flac
+     6:35.27       69741548 B   ---   --   ---xx   flac  0.5418  bd2007-04-amsterdam-rs-d1t06.flac
+     5:37.06       59460956 B   ---   --   ---xx   flac  0.6896  bd2007-04-amsterdam-rs-d1t07.flac
+     6:01.44       63783932 B   ---   --   ---xx   flac  0.6106  bd2007-04-amsterdam-rs-d1t08.flac
+     6:29.07       68636108 B   ---   --   ---xx   flac  0.6806  bd2007-04-amsterdam-rs-d1t09.flac
+     7:21.29       77860652 B   ---   --   ---xx   flac  0.6275  bd2007-04-amsterdam-rs-d1t10.flac
+     6:01.58       63816860 B   ---   --   ---xx   flac  0.6868  bd2007-04-amsterdam-rs-d1t11.flac
+     7:08.50       75616844 B   ---   --   ---xx   flac  0.5581  bd2007-04-amsterdam-rs-d1t12.flac
+     6:56.64       73532972 B   ---   --   ---xx   flac  0.6688  bd2007-04-amsterdam-rs-d1t13.flac
+     8:05.07       85570508 B   ---   --   ---xx   flac  0.5306  bd2007-04-amsterdam-rs-d2t01.flac
+     6:18.43       66780380 B   ---   --   ---xx   flac  0.6929  bd2007-04-amsterdam-rs-d2t02.flac
+    10:32.67      111642428 B   ---   --   ---xx   flac  0.6473  bd2007-04-amsterdam-rs-d2t03.flac
+     6:19.10       66879164 B   ---   --   ---xx   flac  0.6971  bd2007-04-amsterdam-rs-d2t04.flac
+     6:24.65       67890524 B   ---   --   ---xx   flac  0.6450  bd2007-04-amsterdam-rs-d2t05.flac
+     0:57.37       10141868 B   ---   --   ---xx   flac  0.5844  bd2007-04-amsterdam-rs-d2t06.flac
+     4:34.17       48373628 B   ---   --   ---xx   flac  0.7197  bd2007-04-amsterdam-rs-d2t07.flac
+     6:07.05       64750604 B   ---   --   ---xx   flac  0.6450  bd2007-04-amsterdam-rs-d2t08.flac
+     5:28.55       57988604 B   ---   --   ---xx   flac  0.6960  bd2007-04-amsterdam-rs-d2t09.flac
+     7:35.36       80346716 B   ---   --   ---xx   flac  0.7124  bd2007-04-amsterdam-rs-d2t10.flac
+     7:01.11       74290316 B   ---   --   ---xx   flac  0.5913  bd2007-04-amsterdam-rs-d2t11.flac
+     6:39.08       70402460 B   ---   --   ---xx   flac  0.6749  bd2007-04-amsterdam-rs-d2t12.flac
+     6:41.05       70748204 B   ---   --   ---xx   flac  0.6157  bd2007-04-amsterdam-rs-d3t01.flac
+     6:25.48       68026940 B   ---   --   ---xx   flac  0.7162  bd2007-04-amsterdam-rs-d3t02.flac
+     9:16.57       98212508 B   ---   --   ---xx   flac  0.5977  bd2007-04-amsterdam-rs-d3t03.flac
+     5:40.74       60150092 B   ---   --   ---xx   flac  0.7162  bd2007-04-amsterdam-rs-d3t04.flac
+     6:06.73       64734140 B   ---   --   ---xx   flac  0.5632  bd2007-04-amsterdam-rs-d3t05.flac
+     6:57.69       73721132 B   ---   --   ---xx   flac  0.6932  bd2007-04-amsterdam-rs-d3t06.flac
+     8:29.14       89820572 B   ---   --   ---xx   flac  0.6375  bd2007-04-amsterdam-rs-d3t07.flac
+     5:36.30       59341004 B   ---   --   ---xx   flac  0.7299  bd2007-04-amsterdam-rs-d3t08.flac
+    10:45.01      113780396 B   ---   --   ---xx   flac  0.6603  bd2007-04-amsterdam-rs-d3t09.flac
+     6:15.23       66204140 B   ---   --   ---xx   flac  0.7400  bd2007-04-amsterdam-rs-d3t10.flac
+     5:54.53       62570300 B   ---   --   ---xx   flac  0.6912  bd2007-04-amsterdam-rs-d3t11.flac
+   231:41.39     2452229712 B                            0.6535  (36 files)
+=================== 
+=================== 
+=================== 

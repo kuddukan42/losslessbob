@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-08-16-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+8f9afbb8625746d4950b5a5e3ba18dff  Bob Dylan Harveys, 08-16-2009 Schoeps Version.md5
+89c582d5e52eafeed1da344504a71a33  bobdylan.2009-08-16.schoeps.flac16.txt.txt
+993f37901b332d2f37ce39dc3f5db629  D1T01 Ballad Of A Thin Man.flac
+cb16f369d11b3dff35e93452c8f6e85a  D1T02 Lay Lady Lay.flac
+04dc7fab4170e34f7cf3155f9d895195  D1T03 Beyond Here Lies Nothin.flac
+52818a548b4c96061fc88036447e08bf  D1T04 I Don't Believe You.flac
+bb1e96c7f6a41722cadbf9616c83edae  D1T05 The Levee's Gonna Break.flac
+ddf464efe76f6e943858648c9d9199f1  D1T06 Visions Of Joanna.flac
+3746a64c51a892042689b49d240d807a  D1T07 Tweedle Dee & Tweedle Dum.flac
+de576a1b9136d28131375af6ba597620  D1T08 When The Deal Goes Down.flac
+e19999421ec2af07f571bf9d61542096  D1T09 Highway 61 Revisited.flac
+352052c9c46eb14716c8671840ebe677  D1T10 Not Dark Yet.flac
+95a0c76467435928950249ccccac6827  D1T11 Summer Days.flac
+eca88eae498985379dc2ccc9c0f8164a  D2T01 Like A Rolling Stone.flac
+495f59c6dde18e09749e581aa251d80a  D2T02 Heartbreak Hotel.flac
+c3b8a86aaa036f294dfca41a063b75aa  D2T03 Band Intro.flac
+711debec70b154a05ad7e4a2167b5e9b  D2T04 All Along The Watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-08-16-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+D1T01 Ballad Of A Thin Man.flac:4c82ce461cd79d58b1d842a12c75ae94
+D1T02 Lay Lady Lay.flac:cf5c5c308f540a00e9546f43d4b6ef84
+D1T03 Beyond Here Lies Nothin.flac:5a77fa7b4eea7d300f01cee9bd182e66
+D1T04 I Don't Believe You.flac:8cd113e707d6a6b2fa8a4dcc4c99d369
+D1T05 The Levee's Gonna Break.flac:0a82ccf56cdf575ca2fe8d45939a00b4
+D1T06 Visions Of Joanna.flac:99235e48c953efd450bcb02b94638593
+D1T07 Tweedle Dee & Tweedle Dum.flac:c50754805579144117008dd0e5e4d1c6
+D1T08 When The Deal Goes Down.flac:c6f5e33fc874c491ee4ea295f8b9c92e
+D1T09 Highway 61 Revisited.flac:88cf34f1d01b54a3bc8f39dca5f2cb1b
+D1T10 Not Dark Yet.flac:3864a3b237030b9b7161852db1699893
+D1T11 Summer Days.flac:92438f32db58800904e5769b0436aa94
+D2T01 Like A Rolling Stone.flac:ddd2efe4015e3a9eae331784fa2c952c
+D2T02 Heartbreak Hotel.flac:e8619565b04e63e261b68b7f78b91f07
+D2T03 Band Intro.flac:f3900dded48a8eef9c919df9d6e31441
+D2T04 All Along The Watchtower.flac:f3809e4bf6f6fa453ca6cb9f0b13fc41
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-08-16-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.51       63271468 B   -b-   --   ---xx   flac  0.5403  D1T01 Ballad Of A Thin Man.flac
+     5:15.25       55624844 B   ---   --   ---xx   flac  0.5229  D1T02 Lay Lady Lay.flac
+     4:24.52       46691948 B   ---   --   ---xx   flac  0.4877  D1T03 Beyond Here Lies Nothin.flac
+     6:38.25       70266044 B   ---   --   ---xx   flac  0.5165  D1T04 I Don't Believe You.flac
+     8:06.46       85838636 B   ---   --   ---xx   flac  0.5369  D1T05 The Levee's Gonna Break.flac
+     8:05.25       85612844 B   ---   --   ---xx   flac  0.4316  D1T06 Visions Of Joanna.flac
+     5:13.48       55326140 B   ---   --   ---xx   flac  0.4867  D1T07 Tweedle Dee & Tweedle Dum.flac
+     5:57.63       63123020 B   ---   --   ---xx   flac  0.3853  D1T08 When The Deal Goes Down.flac
+     7:16.23       76964540 B   ---   --   ---xx   flac  0.5463  D1T09 Highway 61 Revisited.flac
+     5:36.69       59432732 B   ---   --   ---xx   flac  0.4718  D1T10 Not Dark Yet.flac
+     8:18.64       87997772 B   ---   --   ---xx   flac  0.4383  D1T11 Summer Days.flac
+     6:50.44       72427532 B   ---   --   ---xx   flac  0.5367  D2T01 Like A Rolling Stone.flac
+     2:29.37       26370668 B   ---   --   ---xx   flac  0.4947  D2T02 Heartbreak Hotel.flac
+     0:47.73        8462540 B   ---   --   ---xx   flac  0.4447  D2T03 Band Intro.flac
+     4:45.72       50443756 B   -b-   --   ---xx   flac  0.5448  D2T04 All Along The Watchtower.flac
+    85:46.42      907854484 B                            0.4940  (15 files)
+=================== 
+=================== 
+=================== 

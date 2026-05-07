@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-31-olav-asm.flacf 
+=================== 
+=================== 
+=================== 
+7445a1821e636642d6484acc1750fea5  bd95-03-31-olav-asm-LB-3538.txt
+014ea879cd20caf9846c5f3a20de47bb  CD1\Track01.flac
+8d838f23c83d6065dc8a3e3839d56f48  CD1\Track02.flac
+1a0b3f1eafe528291146f7f8f81849c4  CD1\Track03.flac
+faf81d09f716bfa266d9c8b36666f2c7  CD1\Track04.flac
+417eb8ab2a5e6e53a883438840bd0cfd  CD1\Track05.flac
+02d99b92d39ec24c78e250e15fca368b  CD1\Track06.flac
+46b2210ff764eb533b717a9f82ab00a1  CD1\Track07.flac
+477263eed905d150e586f9b7337e18a4  CD1\Track08.flac
+ed9e79e0b4f4fcd79778014c3d264791  CD2\Track09.flac
+5a1893757a59a2d964507d2f985b467a  CD2\Track10.flac
+d07f0ee3e29e810d06c85a6849085f53  CD2\Track11.flac
+ea7c94018cab09270a3cb6fe88426c77  CD2\Track12.flac
+e8beeec9293205a829210c5ae6f87169  CD2\Track13.flac
+14c17791115d66119c89e43f195700c8  CD2\Track14.flac
+c8b126b45b955257d6713cbce132472e  CD2\Track15.flac
+f4a8ef659952f90f0a379dae5074dae9  CD2\Track16.flac
+9717bda054ce66eec772b0efc692f6d1  Info\1995-03-31 Brixton Academy, London, England.txt
+63e77213a0c565d5fed0e1683400f064  Info\bd-05-03-31-offmaster.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-31-olav-asm.flacf\CD1 
+=================== 
+=================== 
+=================== 
+Track01.flac:19149e3a677a49ca18f6deee7f17a7ba
+Track02.flac:61a673c2f5ccac2ca5796b5869968dca
+Track03.flac:0a1b4a5bc7ce437fc983fa732b5535bc
+Track04.flac:0e27182baba321436e966fab59d13d80
+Track05.flac:98609b30f4107772cb59053d4e38233c
+Track06.flac:ad3846838872985962fca34a2eba08df
+Track07.flac:287da04d8f9facedd0902fc7beda6c84
+Track08.flac:c5debf3f57ec22b0176a0ab8fc200aa4
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-31-olav-asm.flacf\CD2 
+=================== 
+=================== 
+=================== 
+Track09.flac:676ed6487b6a8f14f8bde01e86998aa8
+Track10.flac:25195872e482c2b5e61e8e777fe6b830
+Track11.flac:2c7288ef206dc2ad06f5081e2bfcaa29
+Track12.flac:bb20e98dc6f95e8570af70c2437d9239
+Track13.flac:88bcc122ce3adde5da99ce373d611a6e
+Track14.flac:9c4ac44d00d5ef3c2b85c8e5537d4586
+Track15.flac:5267b152c31ee4597d340773f7fefebc
+Track16.flac:d204ff4926ddcec2a66279c284515f8b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-31-olav-asm.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.41       55309676 B   ---   --   ---xx   flac  0.7438  Track01.flac
+     5:15.28       55631900 B   ---   --   ---xx   flac  0.7023  Track02.flac
+     6:03.71       64200236 B   ---   --   ---xx   flac  0.7401  Track03.flac
+     6:28.36       68527916 B   ---   --   ---xx   flac  0.6939  Track04.flac
+     7:55.72       83959388 B   ---   --   ---xx   flac  0.7425  Track05.flac
+     6:42.39       71004572 B   ---   --   ---xx   flac  0.6559  Track06.flac
+     6:45.62       71587868 B   ---   --   ---xx   flac  0.5648  Track07.flac
+     6:40.73       70731740 B   ---   --   ---xx   flac  0.5775  Track08.flac
+    51:06.47      540953296 B                            0.6756  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-31-olav-asm.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:01.37       84935468 B   ---   --   ---xx   flac  0.5713  Track09.flac
+     6:35.71       69845036 B   ---   --   ---xx   flac  0.7507  Track10.flac
+     8:20.34       88280012 B   ---   --   ---xx   flac  0.7071  Track11.flac
+     9:55.74      105132092 B   ---   --   ---xx   flac  0.7280  Track12.flac
+     7:40.34       81224012 B   ---   --   ---xx   flac  0.7113  Track13.flac
+     7:25.58       78634460 B   ---   --   ---xx   flac  0.6519  Track14.flac
+     4:36.07       48702908 B   ---   --   ---xx   flac  0.7305  Track15.flac
+     4:21.01       46042796 B   ---   --   ---xx   flac  0.7444  Track16.flac
+    56:57.16      602796784 B                            0.6948  (8 files)
+=================== 
+=================== 
+=================== 

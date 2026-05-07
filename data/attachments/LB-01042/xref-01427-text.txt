@@ -1,0 +1,88 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Track 01.flac:fb2e89ac8ba99ee0bd30b85bd8e8056102 Track 02.flac:db93f30fd07183c3e782d9482641470a03 Track 03.flac:6ca69b66af9e21b7a7771fd95936d3cc04 Track 04.flac:bc3f6e86a7ee8863fb68e522da845d3d05 Track 05.flac:0bdfea3ee97a3bafcb1b7180d2509e5606 Track 06.flac:ffda2b1ac63e6a881cb61d0f1c4b450607 Track 07.flac:9d31319a4d6849a68a8674ff418af4d408 Track 08.flac:3fca15c11fc9739d6058af2f50807de509 Track 09.flac:eb89720f1aa60703a2a9689de365dd6310 Track 10.flac:3f42a74d491a551e30815801a824842611 Track 11.flac:6ac7f7be7ee5b6c4630def53e839d88112 Track 12.flac:b9c1b88d12b2c1989efb1522dadae60713 Track 13.flac:be1bdd238d42e130349b76dd2c17ba2e
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Downtown Stage
+Corner of Lamar Street & Capitol Street
+Jackson, Mississippi
+17 May 2003
+
+2003 Jubilee! Jam
+
+1.Maggie's Farm
+2.Tonight I'll Be Staying Here With You
+3.Tweedle Dee & Tweedle Dum
+4.Don't Think Twice, It's All Right
+5.Drifter's Escape
+6.Floater (Too Much To Ask)
+7.Highway 61 Revisited
+8.Make You Feel My Love
+9.Honest With Me
+10.Summer Days
+
+11.Like A Rolling Stone
+12.All Along The Watchtower
+
+Concert # 1523 of The Never-Ending Tour. Concert # 22 of the 2003 US Spring Tour. 2003 concert # 33.
+
+Concert # 22 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+
+2  Larry Campbell (pedal steel guitar).
+
+2, 4 Bob Dylan (harmonica).
+
+4 acoustic with band.
+
+6 Freddie Koella (violin).
+
+9 Larry Campbell (slide guitar).
+
+www.bjorner.com
+
+CDr trade < XLD < flac < dime
+apa05 
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+ead7e06da1385fe375d4fcec2f47a310 *01 Track 01.flac
+1b394fb67139ce79e740ad1394d170f9 *02 Track 02.flac
+52676d7ff0c41315f7180b9178646fd9 *03 Track 03.flac
+15028cf13ebed3424dc1aef4312f67c3 *04 Track 04.flac
+65bc0e9ba83566f1e08ad65d825e5347 *05 Track 05.flac
+81543fd4866dca91b8d91da28d18ff0d *06 Track 06.flac
+33ae0efe44eb8f15aa2c391939313311 *07 Track 07.flac
+82d430123576b1543f7911c1bb0aa52a *08 Track 08.flac
+5cc24185560204adc131f619274db2ce *09 Track 09.flac
+e3da3ced4c9186ececab2ad871004803 *10 Track 10.flac
+a35c8df73aa474062c568dac3bc754df *11 Track 11.flac
+a9140da25a0f8aea538c907309fdc846 *12 Track 12.flac
+7f860cd214c00ce4efd766ac1502c056 *13 Track 13.flac
+
+===================
+===================
+===================
+=== shntool.txt
+===================
+===================
+===================
+Downtown Stage
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     1:13.68       13037180 B   ---   --   ---xx  01 Bob Dylan - Introduction.flac     5:53.72       62438588 B   ---   --   ---xx  02 Bob Dylan - Maggie's Farm.flac     5:38.53       59747900 B   ---   --   ---xx  03 Bob Dylan - I Don't Believe You.flac     5:29.10       58059164 B   ---   --   ---xx  04 Bob Dylan - Tweedle Dee & Tweedle Dum.flac     7:21.49       77907692 B   ---   --   ---xx  05 Bob Dylan - Think Twice, It's All Right Don't.flac     6:28.25       68502044 B   ---   --   ---xx  06 Bob Dylan - Things Have Changed.flac     6:33.31       69398156 B   ---   --   ---xx  07 Bob Dylan - Highway 61 Revisited.flac     6:41.48       70849340 B   ---   --   ---xx  08 Bob Dylan - It Ain't Me Babe.flac     4:47.07       50643308 B   ---   --   ---xx  09 Bob Dylan - Drifter's Escape.flac     6:44.08       71284460 B   ---   --   ---xx  10 Bob Dylan - Desolation Row.flac     7:43.26       81734396 B   ---   --   ---xx  11 Bob Dylan - Positively 4th Street.flac     5:20.12       56476268 B   ---   --   ---xx  12 Bob Dylan - Watching The River Flow.flac     6:56.58       73518860 B   ---   --   ---xx  01 Bob Dylan - 1 Honest With Me.flac     7:02.05       74452604 B   ---   --   ---xx  02 Bob Dylan - 2 Bye And Bye.flac     7:14.71       76724636 B   ---   --   ---xx  03 Bob Dylan - 3 Summer Days.flac     6:50.64       72474572 B   ---   --   ---xx  04 Bob Dylan - 4 (encore), Like A Rolling Stone.flac     6:08.40       65009324 B   ---   --   ---xx  05 Bob Dylan - 5 All Along The Watchtower.flac   104:08.47     1102258492 B                            0.5445  (17 files)
+===================
+===================
+===================

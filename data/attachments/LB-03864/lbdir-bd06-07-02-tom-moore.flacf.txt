@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-02-tom-moore.flacf 
+=================== 
+=================== 
+=================== 
+4aee06b35a151a0334aa93068649977b  bd06-07-02-tom-moore-LB-3864.txt
+f98f9e1f36d12dd8bc604b994941f534  CD 1\dylan_2006_07_02_cd1_1.flac
+df9ca4c71fcdc4c2857524a7862e0855  CD 1\dylan_2006_07_02_cd1_2.flac
+947e2531271e16f9d6ca5daf86bd2c29  CD 1\dylan_2006_07_02_cd1_3.flac
+1b1d52ddcb7abc2324ceacf15a9e15aa  CD 1\dylan_2006_07_02_cd1_4.flac
+c4cc4c6f5022c337bc8799a811092f1c  CD 1\dylan_2006_07_02_cd1_5.flac
+e706f745f6466329fff080a6a51cc401  CD 1\dylan_2006_07_02_cd1_6.flac
+6679a46e0e76d55e2d839610c2ffcde3  CD 1\dylan_2006_07_02_cd1_7.flac
+bb26f58960b30510059bec6f88cb2de2  CD 1\dylan_2006_07_02_cd1_8.flac
+45469ce72dab169314944f862a1ac6e3  CD 1\dylan_2006_07_02_cd1_9.flac
+16db2973d1681925a9dd5df1786b3a3a  CD 2\dylan_2006_07_02_cd2_1.flac
+cf4428aa34d3ccafa8c47d02a05b21ef  CD 2\dylan_2006_07_02_cd2_2.flac
+ff7e6de8b24a4aec13c82aacabd9991a  CD 2\dylan_2006_07_02_cd2_3.flac
+8d7863f0c299d195709e6a8b2019c1e4  CD 2\dylan_2006_07_02_cd2_4.flac
+b6bb56dbfe450415addea2b751f80f1f  CD 2\dylan_2006_07_02_cd2_5.flac
+2871b5b51995468aadf53c70c98e46c5  CD 2\dylan_2006_07_02_cd2_6.flac
+fa0df442ccf98443103ab554fad73f3d  CD 2\dylan_2006_07_02_cd2_7.flac
+af9025fb85e3e6ed48b7a8a461302e25  CD 2\dylan_2006_07_02_cd2_8.flac
+359729021f685c04584263f2978fbd0a  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-02-tom-moore.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+dylan_2006_07_02_cd1_1.flac:79b336e0eca5a9e10fdaac11f766cefd
+dylan_2006_07_02_cd1_2.flac:d2481b8dd8b7753493c73e0a15fa7b7e
+dylan_2006_07_02_cd1_3.flac:861f29f92d164ff185bef0e09734af96
+dylan_2006_07_02_cd1_4.flac:5ca5d55b1463ce4b035b4d65bf3dc734
+dylan_2006_07_02_cd1_5.flac:8aac319f88930b88bde9779137b41417
+dylan_2006_07_02_cd1_6.flac:69e3d6e01b2ef3207573d5494d0c45ca
+dylan_2006_07_02_cd1_7.flac:70c84c4ca9193019365e80aaf42c2576
+dylan_2006_07_02_cd1_8.flac:9201facbc9346eb8c39046d79e9598a7
+dylan_2006_07_02_cd1_9.flac:63e488939a57cc155700cb409b05eeb6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-02-tom-moore.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+dylan_2006_07_02_cd2_1.flac:30d511dbcc545a022819407c86d67a4e
+dylan_2006_07_02_cd2_2.flac:6cf2a1eb51bf092279aa4ff1248bc6ec
+dylan_2006_07_02_cd2_3.flac:8e563e897f14a58ed874292c336e11f4
+dylan_2006_07_02_cd2_4.flac:132a6b4d0fab25472deafb7baa5487b4
+dylan_2006_07_02_cd2_5.flac:33c9d20c1eb43487b63e408aa073a1d8
+dylan_2006_07_02_cd2_6.flac:64006e4447c97dd5aa2534139da2a6ca
+dylan_2006_07_02_cd2_7.flac:f0cf6e620573311de62b47b86cf35bbb
+dylan_2006_07_02_cd2_8.flac:1e56f613a44e074ae1db47a810bee7a0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-02-tom-moore.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:29.74        5289692 B   ---   --   ---xx   flac  0.6031  dylan_2006_07_02_cd1_1.flac
+     5:39.23       59853740 B   ---   --   ---xx   flac  0.6471  dylan_2006_07_02_cd1_2.flac
+     7:22.58       78105260 B   ---   --   ---xx   flac  0.6141  dylan_2006_07_02_cd1_3.flac
+     6:23.27       67624748 B   ---   --   ---xx   flac  0.6485  dylan_2006_07_02_cd1_4.flac
+     5:53.23       62323340 B   ---   --   ---xx   flac  0.5954  dylan_2006_07_02_cd1_5.flac
+     8:42.22       92132588 B   ---   --   ---xx   flac  0.6315  dylan_2006_07_02_cd1_6.flac
+     8:45.44       92713532 B   ---   --   ---xx   flac  0.5221  dylan_2006_07_02_cd1_7.flac
+     5:56.48       62911340 B   ---   --   ---xx   flac  0.5954  dylan_2006_07_02_cd1_8.flac
+     6:40.27       70623548 B   ---   --   ---xx   flac  0.6602  dylan_2006_07_02_cd1_9.flac
+    55:53.46      591577788 B                            0.6111  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-02-tom-moore.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:27.43       89535980 B   ---   --   ---xx   flac  0.5404  dylan_2006_07_02_cd2_1.flac
+     7:34.74       80259692 B   ---   --   ---xx   flac  0.6461  dylan_2006_07_02_cd2_2.flac
+     5:21.70       56789084 B   ---   --   ---xx   flac  0.6321  dylan_2006_07_02_cd2_3.flac
+     6:34.57       69635708 B   ---   --   ---xx   flac  0.5498  dylan_2006_07_02_cd2_4.flac
+     7:23.25       78204044 B   ---   --   ---xx   flac  0.6492  dylan_2006_07_02_cd2_5.flac
+     6:49.48       72260540 B   ---   --   ---xx   flac  0.6737  dylan_2006_07_02_cd2_6.flac
+     1:03.67       11270828 B   ---   --   ---xx   flac  0.5940  dylan_2006_07_02_cd2_7.flac
+     5:48.46       61495436 B   ---   --   ---xx   flac  0.6128  dylan_2006_07_02_cd2_8.flac
+    49:04.55      519451312 B                            0.6127  (8 files)
+=================== 
+=================== 
+=================== 

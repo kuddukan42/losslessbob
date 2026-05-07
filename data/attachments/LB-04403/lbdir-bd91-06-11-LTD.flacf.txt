@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-11-LTD.flacf 
+=================== 
+=================== 
+=================== 
+b82710a16a80d25cd958c0d2e413965b  bd1991-06-11-Belgrad-LTD info.txt
+f25736cac7bdece471e3f5f62e674e23  bd1991-06-11-Belgrad-LTD-d1\01 Audio Track.flac
+8b20e605fb0d29ff9f257206e1ec5a57  bd1991-06-11-Belgrad-LTD-d1\02 Audio Track.flac
+7a4b298111f63ce9d04f6746c5a864c5  bd1991-06-11-Belgrad-LTD-d1\03 Audio Track.flac
+a30e9660ea9054b8bf6b3f09e742fbbe  bd1991-06-11-Belgrad-LTD-d1\04 Audio Track.flac
+a1a446724bbf6f5bb606180692aa7df4  bd1991-06-11-Belgrad-LTD-d1\05 Audio Track.flac
+dc4d764db2bfa91d8a961d254b1ec61a  bd1991-06-11-Belgrad-LTD-d1\06 Audio Track.flac
+52e9e0405416090d7bcaefc1f4d68663  bd1991-06-11-Belgrad-LTD-d1\07 Audio Track.flac
+94900b44378ec467a4d02b37e203bcda  bd1991-06-11-Belgrad-LTD-d1\08 Audio Track.flac
+3273d0954508c2799c944e7cea767460  bd1991-06-11-Belgrad-LTD-d1\09 Audio Track.flac
+b1be6820f89ba4caf09c8fb825d90d05  bd1991-06-11-Belgrad-LTD-d1\10 Audio Track.flac
+0f66b33336011859c7d38e4be45b7a0d  bd1991-06-11-Belgrad-LTD-d1\11 Audio Track.flac
+686ade96ee954adabc46bd60f4947502  bd1991-06-11-Belgrad-LTD-d1\12 Audio Track.flac
+acac34f113837e77ec419378a33050e8  bd1991-06-11-Belgrad-LTD-d1\13 Audio Track.flac
+060cddb0b677e5a6a81771ff13c51402  bd1991-06-11-Belgrad-LTD-d1\14 Audio Track.flac
+d78106f893aef0edb14802bcb3cd9161  bd1991-06-11-Belgrad-LTD-d1\bd1991-06-11-Belgrad-LTD-d1.md5
+1ee91a6f2625eb90aa1d58175da88116  bd1991-06-11-Belgrad-LTD-d2\01 Audio Track.flac
+83ef5d210fbe59862c1730ac796c2346  bd1991-06-11-Belgrad-LTD-d2\02 Audio Track.flac
+bf9df574d1c30906178e05b4d6251922  bd1991-06-11-Belgrad-LTD-d2\03 Audio Track.flac
+f461ee0a904179156ef8fd3f46a7dc47  bd1991-06-11-Belgrad-LTD-d2\04 Audio Track.flac
+60b7fa141b81b70564dfd3f33b07e755  bd1991-06-11-Belgrad-LTD-d2\05 Audio Track.flac
+b246f13b3dbb7153e043573dad9d99c5  bd1991-06-11-Belgrad-LTD-d2\bd1991-06-11-Belgrad-LTD-d2.md5
+167fc818608878833ccde67d5051123b  bd91-06-11-LTD-LB-4403.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-11-LTD.flacf\bd1991-06-11-Belgrad-LTD-d2 
+=================== 
+=================== 
+=================== 
+01 Audio Track.flac:abf9b5c47487bddf75037a6fab717665
+02 Audio Track.flac:6dffd850efd99676a9143121379a4a2b
+03 Audio Track.flac:03284c6e136ab917ce550056ae078ef5
+04 Audio Track.flac:5fac2fab86dfc1f4afdd539c4ebc1b05
+05 Audio Track.flac:f9486e4bec1950c8927685c0842f5f27
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-11-LTD.flacf\bd1991-06-11-Belgrad-LTD-d1 
+=================== 
+=================== 
+=================== 
+01 Audio Track.flac:142f15e902b4cb268912c837785f8e62
+02 Audio Track.flac:795b308254757273874704f1f96b97e6
+03 Audio Track.flac:2022a72701dac30de1eb2354d96e1ebf
+04 Audio Track.flac:cf757e6c8ad6a6b9b529317bc08a880f
+05 Audio Track.flac:f252df191e9253d442e841cffee00bc7
+06 Audio Track.flac:c1245fe83f356c5c384d39082a171f87
+07 Audio Track.flac:81bae86976df97f7c7202103fd641684
+08 Audio Track.flac:9e5736ae9cca2ee335635d1a4c5866ca
+09 Audio Track.flac:7fe33a43655c00c5767a125bf9359bf5
+10 Audio Track.flac:dbfb830c90efa7c213c89c6a6dc176a9
+11 Audio Track.flac:8e03d1f109caf2e31b8c4578a420437c
+12 Audio Track.flac:0350782c3d2334c6d49b7c86947ddf4a
+13 Audio Track.flac:f2b1161457bab2174d244f46d1bc879f
+14 Audio Track.flac:3ccc31b7d7b50bafa0d4ed22c19f4257
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-11-LTD.flacf\bd1991-06-11-Belgrad-LTD-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:48.43       40320380 B   ---   --   ---xx   flac  0.5260  01 Audio Track.flac
+     4:24.44       46673132 B   ---   --   ---xx   flac  0.5346  02 Audio Track.flac
+     6:01.20       63727484 B   ---   --   ---xx   flac  0.5837  03 Audio Track.flac
+     4:11.06       44290556 B   ---   --   ---xx   flac  0.5203  04 Audio Track.flac
+     4:41.54       49695452 B   ---   --   ---xx   flac  0.5965  05 Audio Track.flac
+    23:07.17      244707004 B                            0.5560  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-11-LTD.flacf\bd1991-06-11-Belgrad-LTD-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:07.66       33142076 B   ---   --   ---xx   flac  0.4995  01 Audio Track.flac
+     4:44.58       50234060 B   ---   --   ---xx   flac  0.5527  02 Audio Track.flac
+     3:20.61       35423516 B   ---   --   ---xx   flac  0.5499  03 Audio Track.flac
+     4:47.65       50779724 B   ---   --   ---xx   flac  0.5469  04 Audio Track.flac
+     7:00.59       74226812 B   ---   --   ---xx   flac  0.5515  05 Audio Track.flac
+     2:53.15       30552524 B   ---   --   ---xx   flac  0.5641  06 Audio Track.flac
+     5:43.55       60634604 B   ---   --   ---xx   flac  0.5192  07 Audio Track.flac
+     4:12.50       44570444 B   ---   --   ---xx   flac  0.5163  08 Audio Track.flac
+     5:25.25       57388844 B   ---   --   ---xx   flac  0.5435  09 Audio Track.flac
+     3:57.00       41806844 B   ---   --   ---xx   flac  0.4917  10 Audio Track.flac
+     5:26.68       57666380 B   ---   --   ---xx   flac  0.5129  11 Audio Track.flac
+     4:26.45       47028284 B   ---   --   ---xx   flac  0.5875  12 Audio Track.flac
+     5:15.05       55577804 B   ---   --   ---xx   flac  0.5575  13 Audio Track.flac
+     5:13.44       55316732 B   ---   --   ---xx   flac  0.5150  14 Audio Track.flac
+    65:36.16      694348648 B                            0.5367  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== md5 for: bd00-11-01-dpa4061-dolphinsmile.flac1648
+===================
+===================
+===================
+382b059fb3a9a3dba046ad0f7dd8e97a *01.flac
+97502c8002147d7b666d28915654d403 *02.flac
+8a2eb875e78f8302347f01c3e3fa21de *03.flac
+aa7e06457abbdc23aaf0ea38a23c749c *04.flac
+6dbf7aa126a23c9d715695d0dfeced4a *05.flac
+fe01cdba2a485445f04d04456814cfce *06.flac
+df8c3aec54ddc8b5d7b68b9aa7eefe03 *07.flac
+4acd2fd3d3a9c2c5516ef84078d085f3 *08.flac
+d1e3b060f1042e256436a14d7dfbcab1 *09.flac
+0a1c493fafd03a803b79908f181871fa *10.flac
+e7b1632ae8804e340d266bd7e2769380 *11.flac
+75e0fd7285c44fbdbab2ae8b75e59e29 *12.flac
+3f913409dd324c7fd8ff1ccfd4703c61 *13.flac
+3dec3a763c0e4e7dbc251a6430fae215 *14.flac
+7048dd1a6655a968d7c3e775eeb574a8 *15.flac
+b6fc90736fa22f62c590cfaf03bd0ff3 *16.flac
+99de957e5001f38cd4a1ce253116086d *17.flac
+efa98e1c0b0b6e9fd69a094466eb0a09 *18.flac
+a969d9712a9d76f461645b4f21be1d02 *19.flac
+006a8b1d7bca81264f6d57545f6aadb8 *20.flac
+c2178aa99874ee58bd09c17d8ed3a5f3 *Bob Dylan IU Auditorium Indiana University Bloomington IN 11-1-2000.ffp
+f73d4dbd014944790a56712fbe8b6753 *Bob Dylan IU Auditorium Indiana University Bloomington IN 11-1-2000.md5
+c2178aa99874ee58bd09c17d8ed3a5f3 *ffp.txt
+23b9c6fba3d85f8b5f68b56b99a741a0 *info.txt
+===================
+===================
+===================
+=== ffp for: bd00-11-01-dpa4061-dolphinsmile.flac1648
+===================
+===================
+===================
+01.flac:fa00f4e2784c5434c0b4c6803c7eb462
+02.flac:ff12853f35075cf5bc073ffdb4f7f846
+03.flac:9aba4f90eaf768676802590ad1758693
+04.flac:4ac67028203ea32ba8e05c2a0c52f414
+05.flac:00d4bbe6ed41330caaea5b780f0ec755
+06.flac:cb08df68f1c6278709b9753eefda9034
+07.flac:3068149c6b1e52f9cadf8d0908e11c42
+08.flac:5903ff374661475f1d3ae3739b74302f
+09.flac:fe410f30cc0d0a7728caf93faf8f1739
+10.flac:008056708bb146faf1a2af650f3f6308
+11.flac:c627fe2adf9af7e8ad8039dc410be79c
+12.flac:7a235523878da3a45d351920415ce8e1
+13.flac:a11bf20047a240fd9cd8e30b26b1fc2c
+14.flac:9a75e36282e9e93013bfbdec994a7130
+15.flac:6ba1325948aec188394075ad389cf908
+16.flac:bcfc888548050617086ff08f3cd8d4b0
+17.flac:9021b0837d730f6c7201de5b40284ffb
+18.flac:26f62596056149c3fb292686c1c95aa6
+19.flac:977b3a743742d8438ed4522babaa4c04
+20.flac:2999167a10846d8e4c12a9de8892a0a6
+===================
+===================
+===================
+=== shntool len for: bd00-11-01-dpa4061-dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.389      37898732 B   cxx   --   ---xx   flac  0.6587  01.flac
+     5:08.464      59225084 B   cxx   --   ---xx   flac  0.5621  02.flac
+     7:50.949      90422264 B   cxx   --   ---xx   flac  0.5809  03.flac
+     6:06.636      70394220 B   cxx   --   ---xx   flac  0.5506  04.flac
+     7:38.917      88112076 B   cxx   --   ---xx   flac  0.6651  05.flac
+     3:21.715      38729236 B   cxx   --   ---xx   flac  0.5480  06.flac
+     2:57.799      34137480 B   cxx   --   ---xx   flac  0.6302  07.flac
+     5:25.551      62505884 B   cxx   --   ---xx   flac  0.5096  08.flac
+     6:31.347      75138692 B   cxx   --   ---xx   flac  0.6551  09.flac
+     5:33.970      64122308 B   cxx   --   ---xx   flac  0.5887  10.flac
+     6:39.352      76675640 B   cxx   --   ---xx   flac  0.6290  11.flac
+     4:41.577      54062912 B   cxx   --   ---xx   flac  0.6426  12.flac
+     5:52.593      67697988 B   cxx   --   ---xx   flac  0.6508  13.flac
+     6:45.800      77913720 B   cxx   --   ---xx   flac  0.6449  14.flac
+     4:16.743      49294604 B   cxx   --   ---xx   flac  0.5148  15.flac
+     4:42.286      54199000 B   cxx   --   ---xx   flac  0.6579  16.flac
+     3:43.703      42951104 B   cxx   --   ---xx   flac  0.5560  17.flac
+     4:38.901      53549088 B   cxx   --   ---xx   flac  0.6113  18.flac
+     5:53.697      67909828 B   cxx   --   ---xx   flac  0.6577  19.flac
+     6:02.449      69590300 B   cxx   --   ---xx   flac  0.5791  20.flac
+   107:09.840    1234530160 B                            0.6072  (20 files)
+===================
+===================
+===================

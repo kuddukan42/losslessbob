@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-15-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+eacd1f5c0e19b8926d31f0d94b77c509  BD2002-11-15.md5
+7a0a57da9bbb5234045445a3975e27c6  BD2002-11-15.txt
+2cfd5a3a38d213112b8e6f7075eece07  BD2002-11-15t01.flac
+81b0774e9066448472bd05c124a6b404  BD2002-11-15t02.flac
+c8b1291243b6fad60d2653f7f99516aa  BD2002-11-15t03.flac
+b6926aeb693494d8cb46125c52b26ca3  BD2002-11-15t04.flac
+43ac13ee7d6b41a9cde908c6c70bdd5e  BD2002-11-15t05.flac
+c8b74dfb813cc30362fb0b556218deba  BD2002-11-15t06.flac
+6f8e6b1d4d642ed304fa097d5dc790dd  BD2002-11-15t07.flac
+a5a17524ee89807fba4ee50e81bd6280  BD2002-11-15t08.flac
+c590801e57d4f10f0b7afdb905872db2  BD2002-11-15t09.flac
+fa662299489d593e071d507739828052  BD2002-11-15t10.flac
+9075378be4ad912b6ca4cfecd8993d4f  BD2002-11-15t11.flac
+453b43ad56c0bb747222f70b7be87aec  BD2002-11-15t12.flac
+65534587087da9b595bec2a95542e86b  BD2002-11-15t13.flac
+b8a92b74ad8fd9f6179cd7fd3aa9d196  BD2002-11-15t14.flac
+b91bd7433adbb7b09bd08591488ba2ac  BD2002-11-15t15.flac
+aa222e4fa05b7d4cce0e0fadbe9226a2  BD2002-11-15t16.flac
+a95a6ba7ea3bc01ab6054b3ee80b9fb5  BD2002-11-15t17.flac
+9ffc25c198024ac659b4fafb289e4967  BD2002-11-15t18.flac
+56cf60b29b9190b8c58d2825f64f2b8f  BD2002-11-15t19.flac
+ddccdc67d98b307c14b5c298cf7baeff  BD2002-11-15t20.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-15-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+BD2002-11-15t01.flac:1eaf18d6979fd1ec92b9deef73b30bee
+BD2002-11-15t02.flac:1af74cd0ae281e9a5390fa530c3b4239
+BD2002-11-15t03.flac:a41bbcff27706cfb70404e9472cad4b9
+BD2002-11-15t04.flac:44bc73f2eea1e3f2fff4ef550d7e7ab5
+BD2002-11-15t05.flac:a802946650478354a27f1c462e25c8e8
+BD2002-11-15t06.flac:45f0760f965205357b8a022415c9e173
+BD2002-11-15t07.flac:553d03ec6e98fcdf4b7d814dbaca3237
+BD2002-11-15t08.flac:ea727a86a4c800667bf1886711edbd6f
+BD2002-11-15t09.flac:993db50dcc3db5a4dc6c14b30827fcfd
+BD2002-11-15t10.flac:08a5fc916b1c387cd38db6762d5cc125
+BD2002-11-15t11.flac:9d1596c491e5707666525426c3ae4501
+BD2002-11-15t12.flac:7fb8f09423d712367343beed00d8bb3c
+BD2002-11-15t13.flac:75b6071a2b6b2b680455454dd66d14cc
+BD2002-11-15t14.flac:6e386f14f6228d079e9fae2d0c5a2a3a
+BD2002-11-15t15.flac:a23cfa11d7690e1db56a933791394d1d
+BD2002-11-15t16.flac:8b92535873912f14e4b01ad396a18fa8
+BD2002-11-15t17.flac:becdbb445fd25721f9dfc3ddd733bdd7
+BD2002-11-15t18.flac:65d963a1da54ade5425d093840e63eb1
+BD2002-11-15t19.flac:f2b1b89975d72d4cbce843f7cfa4bc75
+BD2002-11-15t20.flac:e0cf3c9594fbc22625fefaa7772ccd90
+=================== 
+=================== 
+=================== 
+=== shntool for: bd02-11-15-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:57.13       73589420 B   ---   --   ---xx   flac  0.5958  BD2002-11-15t01.flac
+     3:45.26       39751196 B   ---   --   ---xx   flac  0.5729  BD2002-11-15t02.flac
+     6:53.07       72869708 B   ---   --   ---xx   flac  0.5843  BD2002-11-15t03.flac
+     5:12.54       55163852 B   ---   --   ---xx   flac  0.5355  BD2002-11-15t04.flac
+     6:55.52       73328348 B   ---   --   ---xx   flac  0.5680  BD2002-11-15t05.flac
+     4:12.03       44459900 B   ---   --   ---xx   flac  0.6256  BD2002-11-15t06.flac
+     9:06.50       96432044 B   ---   --   ---xx   flac  0.5687  BD2002-11-15t07.flac
+     7:46.07       82218908 B   ---   --   ---xx   flac  0.5826  BD2002-11-15t08.flac
+     6:09.70       65256284 B   ---   --   ---xx   flac  0.5741  BD2002-11-15t09.flac
+     6:40.16       70597676 B   ---   --   ---xx   flac  0.6080  BD2002-11-15t10.flac
+     4:57.27       52454348 B   ---   --   ---xx   flac  0.5176  BD2002-11-15t11.flac
+     7:29.12       79231868 B   ---   --   ---xx   flac  0.5291  BD2002-11-15t12.flac
+     7:03.56       74748956 B   ---   --   ---xx   flac  0.6240  BD2002-11-15t13.flac
+     7:08.01       75501596 B   ---   --   ---xx   flac  0.5570  BD2002-11-15t14.flac
+     8:20.64       88350572 B   ---   --   ---xx   flac  0.5867  BD2002-11-15t15.flac
+     3:18.06       34941356 B   ---   --   ---xx   flac  0.4843  BD2002-11-15t16.flac
+     5:20.67       56605628 B   ---   --   ---xx   flac  0.4548  BD2002-11-15t17.flac
+    10:50.64      114810572 B   ---   --   ---xx   flac  0.5951  BD2002-11-15t18.flac
+     7:17.00       77086844 B   ---   --   ---xx   flac  0.5406  BD2002-11-15t19.flac
+     6:30.02       68800748 B   ---   --   ---xx   flac  0.6169  BD2002-11-15t20.flac
+   131:54.72     1396199824 B                            0.5702  (20 files)
+=================== 
+=================== 
+=================== 

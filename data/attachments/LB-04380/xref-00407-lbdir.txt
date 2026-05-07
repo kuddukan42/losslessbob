@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-10-late-g.flacf 
+=================== 
+=================== 
+=================== 
+e4da0acd98ecfdfd95f250c6edd3d71d  bd2000-03-10 Anaheim, Ca-Late.md5.txt
+e7dd626603c363bc14ba9355ac22e195  d1t01.shn
+8d35e4c03572b1b3297b3a7c2cd78692  d1t02.shn
+a89740c3e5533a7c8954fd79d5a20489  d1t03.shn
+f214d8fb273d2f506b9ae2000cf98c3e  d1t04.shn
+a9eae9de55064cb492e547b8632c5ae4  d1t05.shn
+b88b4a4ba61f8f6f6d346367303592a0  d1t06.shn
+aba11c1aa218a82ce5cf7db3b13e0778  d1t07.shn
+ec4e80e6bd60be7b130c72ff43d19ce2  d1t08.shn
+66e1a5dbebb42ef2582c1382e3acd693  d1t09.shn
+ccf95543277822bedf16bdd2190a3e8e  d1t10.shn
+ef9d4b7abe4f78c22fc62c11c9cacd49  d1t11.shn
+6272ee6ba0fa050c161fecb14f9a9356  d2t01.shn
+d787496c311de357f183155bf1c070c1  d2t02.shn
+41859acec7d580aa6e7ca2bc4a8bd53a  d2t03.shn
+0d94f42c64a56c5cad3356ee3d1124c4  d2t04.shn
+6a130ef93eaa61fc98619ed099b8f0ff  noname.md5
+e143548f3b1449d5843e20b01a142c90  setlist info.rtf
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-03-10-late-g.flacf 
+=================== 
+=================== 
+=================== 
+4767df32998855c03548234584696a79  [shntool]  d1t01.wav
+55ef065859ab71df1c4537c60fbfd5dd  [shntool]  d1t02.wav
+724b4046f74bdf601ede582a78de2a64  [shntool]  d1t03.wav
+51f6357b3f985ecd139922901c06a6db  [shntool]  d1t04.wav
+bb1bfcd4129d7fa612389f89c43992aa  [shntool]  d1t05.wav
+e8549c94c763ef0e9bc1e38181d14a45  [shntool]  d1t06.wav
+15e39849286529c04f7e2816369f9097  [shntool]  d1t07.wav
+bbcb024b37e7364a2f9189c6e6426c50  [shntool]  d1t08.wav
+edd6690e6eadba644438b07478cf6003  [shntool]  d1t09.wav
+7445d1b48f5d9c3ea3438e23e303bcda  [shntool]  d1t10.wav
+cf6efe3586bf555c92da5eac7c4b7eb3  [shntool]  d1t11.wav
+ff3eb79dfbb33378ae44eb9afc2b91ad  [shntool]  d2t01.wav
+064d3ee220aaf215021f12a5f37fea40  [shntool]  d2t02.wav
+3ba19fabe0c276fc50b0714caa9b0150  [shntool]  d2t03.wav
+c6a00f94bf5391df898d2dd98b4d0bd9  [shntool]  d2t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-10-late-g.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:36.23       27572540 B   ---   --   ---xx    shn  0.5803  d1t01.shn
+     5:36.41       59366876 B   ---   --   ---xx    shn  0.5233  d1t02.shn
+     8:32.27       90380348 B   ---   --   ---xx    shn  0.5053  d1t03.shn
+     5:13.73       55384940 B   ---   --   ---xx    shn  0.5066  d1t04.shn
+     3:50.37       40659068 B   ---   --   ---xx    shn  0.4856  d1t05.shn
+     5:17.45       56024684 B   ---   --   ---xx    shn  0.5815  d1t06.shn
+     2:25.55       25707404 B   ---   --   ---xx    shn  0.6123  d1t07.shn
+     3:51.65       40901324 B   ---   --   ---xx    shn  0.5579  d1t08.shn
+     5:43.41       60601676 B   ---   --   ---xx    shn  0.5931  d1t09.shn
+     6:20.13       67062620 B   ---   --   ---xx    shn  0.4578  d1t10.shn
+     6:12.42       65719628 B   ---   --   ---xx    shn  0.6325  d1t11.shn
+     6:30.00       68796044 B   ---   --   ---xx    shn  0.6092  d2t01.shn
+     4:27.08       47117660 B   ---   --   ---xx    shn  0.6447  d2t02.shn
+     7:46.19       82247132 B   ---   --   ---xx    shn  0.5002  d2t03.shn
+     5:25.49       57445292 B   ---   --   ---xx    shn  0.6373  d2t04.shn
+    79:50.13      844987236 B                            0.5561  (15 files)
+=================== 
+=================== 
+=================== 

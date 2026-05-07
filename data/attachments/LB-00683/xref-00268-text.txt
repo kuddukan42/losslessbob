@@ -1,0 +1,95 @@
+===================
+===================
+===================
+=== bd_1980-11-11_fox_warfield.txt
+===================
+===================
+===================
+Bob Dylan
+1980-11-11
+Fox Warfield Theatre
+San Francisco, CA
+
+Hi friends!
+Here is an exellent tape from the Warfield residency. This show is without the gospel songs that started the show.
+Enjoy!
+
+Lineage>cdr in trade>EAC>Flac>Dime
+
+CD1
+01 Gotta Serve Somebody
+02 I Believe In You
+03 Like A Rolling Stone
+04 Gospel - 'Til I Get It Right 
+05 Man Gave Names To All The Animals
+06 Simple Twist Of Fate
+07 Ain't Gonna Go To Hell For Anybody
+08 Girl From The North Country
+09 Slow Train
+
+CD2
+01 Gospel - Walkin' Around Heaven All Day
+02 Abraham Martin And John
+03 Let's Keep It Between Us
+04 Covenant Woman
+05 Solid Rock
+06 Just Like A Woman
+07 Senor
+08 When You Gonna Wake Up?
+09 In The Garden
+10 Blowin' In The Wind
+11 City Of Gold
+12 It's All Over Now Baby Blue
+
+I'm pretty sure this is a copy of LB-683.
+Here are the original notes:
+
+Master Audience
+
+2CDR (48min+57min); excellent sound, upgrade, has several spots of noise in background at beginning of first few songs which sounds like mics getting adjusted, sounds like it most likely is also from the Jeff Friedman master source; compared with one labled as from the Jeff Friedman source, this one has a little lower levels with more dynamic range, is not as harsh, has more clarity, brightness, warmth, and has less hiss; (this is same version as my dat except has girls songs).
+===================
+===================
+===================
+=== cd1.md5
+===================
+===================
+===================
+2c13f277345f51f877fc70a0221e9a20 *Track09.flac
+c78a583f6c5318c5154ca81e60934a3a *Track01.flac
+e71e08d404e7b9c799eb71e79c43ecf4 *Track02.flac
+1242b54271e62d62e8d7b5079994ac8b *Track03.flac
+d7cbdeb363e4da7f556f6bb200dcb96a *Track04.flac
+bcc056aed16be80e528adeab5bf3d86a *Track05.flac
+72188b9abd802ddf6df2c133adc71761 *Track06.flac
+7ada5cb44c567aabb90502a241202624 *Track07.flac
+a3d8bbee1388c66778d9b9cdb930259b *Track08.flac
+===================
+===================
+===================
+=== cd2.md5
+===================
+===================
+===================
+9363023468acebdf42ddf181ba4edaf9 *Track12.flac
+ba83c74d121c0100f592429bbcb64fd6 *Track01.flac
+2a85b98a19dfbc69ecc388ba60fc474e *Track02.flac
+eca1e2851d7f981f8016d01935717d50 *Track03.flac
+a16f5bc52b2e2dc6d39b975f7950e674 *Track04.flac
+f5c9fd7d8cc1753ee9fb823b5f41e95f *Track05.flac
+1e2b66070aaac0225f655176e1ca7065 *Track06.flac
+2a57cfaa3c9b3d79751ebd14c131d113 *Track07.flac
+991889419f5fc4fd899b58c5ca57c61e *Track08.flac
+15e7a1527159b00c5c754a35621195b1 *Track09.flac
+acca082eb8f0aab273a240a8cb734881 *Track10.flac
+bf490d14905cb95bc7b06e32095492a0 *Track11.flac
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+Track01.flac:5a6589870b182cf90918f04e9a750248Track02.flac:9fd9d2c4eba2d2da11d6bd88c105093bTrack03.flac:ea90259845c50ef27d818b0aba670042Track04.flac:a1673530b803ac2f6ca71a28ddebbd88Track05.flac:d4931ad0b0c8e18ccb548c496c983e13Track06.flac:d1afba3f554fdeb42d79fb7633bd7dd0Track07.flac:b48ed58773fc611fd13b17e27ed80ba1Track08.flac:77f2c8aac070458c268000cb5d3b729cTrack09.flac:816442f00cdd3133baf3abe77a7361c9Track01.flac:a8a4654396aa90331d0473e8ba3ceef3Track02.flac:1b51fa3acdc82d6f58818c02b106f3ddTrack03.flac:f9bbd6dffcfe89c46a9c025fdd40eabcTrack04.flac:2ae56d69c546cde2200c8a93cf1e7246Track05.flac:03c6e64ad29b4937af508091272ba2e7Track06.flac:3dfd8eecb1bde311828490eca19feaf5Track07.flac:3bf223ed717bedc4b013d85796e0f7cdTrack08.flac:f3a2794356ea6d4be1c8e4fc1b1e87c5Track09.flac:37f888e9d5744a166c883057aceeafe0Track10.flac:3051487fc0f96e3f017575df6bdcb61fTrack11.flac:47dc7f35c9eb34fe3120c2cbf3aaf1bfTrack12.flac:c011cd7917ac0b6dabeadf08cbea8f5f
+===================
+===================
+===================

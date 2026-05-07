@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-14-hg-innsbruck.flacf 
+=================== 
+=================== 
+=================== 
+1560f70ace33f3f9ad7a41f51ded0d00  bd-91-06-14-Innsbruck-HG-d1 (Track 01)-fixed.flac
+e0726fe7e0492ffa5c598d580ebdb355  bd-91-06-14-Innsbruck-HG-d1 (Track 02).flac
+d8ddaca326e99cdfbe193148db10a47e  bd-91-06-14-Innsbruck-HG-d1 (Track 03).flac
+efabb60eca8df5cc63883d057c891d10  bd-91-06-14-Innsbruck-HG-d1 (Track 04).flac
+d4ff1bcfd69b95b1d062c3cf37c049ac  bd-91-06-14-Innsbruck-HG-d1 (Track 05).flac
+58f4a5f1b2747bf861d6f12cf08b58bd  bd-91-06-14-Innsbruck-HG-d1 (Track 06).flac
+4bc4aa32183742502979eef9d3660a98  bd-91-06-14-Innsbruck-HG-d1 (Track 07).flac
+3175bdd6921da487f581ebb5a1d8f4d2  bd-91-06-14-Innsbruck-HG-d1 (Track 08).flac
+fcb6b26a277a5954bc6020202534a91c  bd-91-06-14-Innsbruck-HG-d1 (Track 09).flac
+f5cb9646e0c04404fe83dba48eec0bd1  bd-91-06-14-Innsbruck-HG-d2 (Track 01)-fixed.flac
+fab1915d29693eb7c287f0aa0057a746  bd-91-06-14-Innsbruck-HG-d2 (Track 02).flac
+3ceeaa4776ae28ecb6776f60f7daec6f  bd-91-06-14-Innsbruck-HG-d2 (Track 03).flac
+2f473c061cf6977b26d8458ad3796702  bd-91-06-14-Innsbruck-HG-d2 (Track 04).flac
+d234cc307351365b04dcba5b33bc04b7  bd-91-06-14-Innsbruck-HG-d2 (Track 05).flac
+a657127ebdc629f76ee724f1690fe783  bd-91-06-14-Innsbruck-HG-d2 (Track 06).flac
+03e20205b0d982356754c98f085d6e12  bd-91-06-14-Innsbruck-HG-d2 (Track 07).flac
+fe2bc93e5b7368cda03d48eaa572f264  bd-91-06-14-Innsbruck-HG-d2 (Track 08).flac
+1b10fb68448ee6fa6056d26dec8c5c42  bd91-06-14-hg.txt
+d41d8cd98f00b204e9800998ecf8427e  md5 file created by aaadbell.txt
+147a411013ee7435b624e75688ee24b4  noname.md5
+dbd5098445b9f9ca7da19da7c5e105f3  shntool-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-14-hg-innsbruck.flacf 
+=================== 
+=================== 
+=================== 
+bd-91-06-14-Innsbruck-HG-d1 (Track 01)-fixed.flac:7073f7b7f1fff3fbacc33feddb8e6697
+bd-91-06-14-Innsbruck-HG-d1 (Track 02).flac:b424703ec38791fc7425abc943fc9a9e
+bd-91-06-14-Innsbruck-HG-d1 (Track 03).flac:d8c1429e0de52e691316b9826e4019a4
+bd-91-06-14-Innsbruck-HG-d1 (Track 04).flac:d0bb8a8f5a246e7a208b2bcd3e0b4b58
+bd-91-06-14-Innsbruck-HG-d1 (Track 05).flac:274fa47e7bc2a2826b4874800b483d27
+bd-91-06-14-Innsbruck-HG-d1 (Track 06).flac:b0ffd2e22dc1a00c78a99febfc41eaeb
+bd-91-06-14-Innsbruck-HG-d1 (Track 07).flac:cd84f08051b3466d1c1a61aa6b0801cf
+bd-91-06-14-Innsbruck-HG-d1 (Track 08).flac:1f83385cfc0315d885cc33a1a8681afa
+bd-91-06-14-Innsbruck-HG-d1 (Track 09).flac:618eb7f09e52729c5cec11468a46784b
+bd-91-06-14-Innsbruck-HG-d2 (Track 01)-fixed.flac:f1da1a83707fbde46fcce7c42aad8e5f
+bd-91-06-14-Innsbruck-HG-d2 (Track 02).flac:153fb4c9f3658058e1dddd66558d1b95
+bd-91-06-14-Innsbruck-HG-d2 (Track 03).flac:3e8dd0cc90d63e68ab8ab0d627793820
+bd-91-06-14-Innsbruck-HG-d2 (Track 04).flac:c99abd8dd00a222fcfa45cda367bd3a2
+bd-91-06-14-Innsbruck-HG-d2 (Track 05).flac:ec0d729e4d2391d1a1c626ff11c429a9
+bd-91-06-14-Innsbruck-HG-d2 (Track 06).flac:a68811fd29afb5dda7d7b9b4f42d2497
+bd-91-06-14-Innsbruck-HG-d2 (Track 07).flac:badcf292d43c2bcf74b087a4283cc716
+bd-91-06-14-Innsbruck-HG-d2 (Track 08).flac:ac119166661cb2df298d7ec48fc89dd7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-14-hg-innsbruck.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:21.15       46075724 B   ---   --   ---xx   flac  0.5941  bd-91-06-14-Innsbruck-HG-d1 (Track 01)-fixed.flac
+     5:19.74       56445692 B   ---   --   ---xx   flac  0.6234  bd-91-06-14-Innsbruck-HG-d1 (Track 02).flac
+     4:47.67       50784428 B   ---   --   ---xx   flac  0.6339  bd-91-06-14-Innsbruck-HG-d1 (Track 03).flac
+     6:21.45       67314284 B   ---   --   ---xx   flac  0.5970  bd-91-06-14-Innsbruck-HG-d1 (Track 04).flac
+     6:41.15       70771724 B   ---   --   ---xx   flac  0.6157  bd-91-06-14-Innsbruck-HG-d1 (Track 05).flac
+     5:04.50       53743244 B   ---   --   ---xx   flac  0.5956  bd-91-06-14-Innsbruck-HG-d1 (Track 06).flac
+     6:18.02       66683948 B   ---   --   ---xx   flac  0.6070  bd-91-06-14-Innsbruck-HG-d1 (Track 07).flac
+     5:08.65       54484124 B   ---   --   ---xx   flac  0.5926  bd-91-06-14-Innsbruck-HG-d1 (Track 08).flac
+     7:00.68       74247980 B   ---   --   ---xx   flac  0.5960  bd-91-06-14-Innsbruck-HG-d1 (Track 09).flac
+     6:42.66       71068076 B   ---   --   ---xx   flac  0.5743  bd-91-06-14-Innsbruck-HG-d2 (Track 01)-fixed.flac
+     5:13.52       55335548 B   ---   --   ---xx   flac  0.6008  bd-91-06-14-Innsbruck-HG-d2 (Track 02).flac
+     4:23.65       46546124 B   ---   --   ---xx   flac  0.5844  bd-91-06-14-Innsbruck-HG-d2 (Track 03).flac
+     5:21.16       56662076 B   ---   --   ---xx   flac  0.6336  bd-91-06-14-Innsbruck-HG-d2 (Track 04).flac
+     4:10.41       44196476 B   ---   --   ---xx   flac  0.6125  bd-91-06-14-Innsbruck-HG-d2 (Track 05).flac
+     7:06.20       75193484 B   ---   --   ---xx   flac  0.6381  bd-91-06-14-Innsbruck-HG-d2 (Track 06).flac
+     5:12.12       55065068 B   ---   --   ---xx   flac  0.6005  bd-91-06-14-Innsbruck-HG-d2 (Track 07).flac
+     5:42.19       60373496 B   -b-   --   ---xx   flac  0.6602  bd-91-06-14-Innsbruck-HG-d2 (Track 08).flac
+    94:57.17     1004991496 B                            0.6096  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-15-bach.flacf 
+=================== 
+=================== 
+=================== 
+188ab3436ba1cc9b2195ecd0436716f2  1994-07-15-Vienna.md5
+c6b09842b40c322b1fbeadf79fc84b58  1994-07-15-Vienna.txt
+4961b7a9eee004cfe4dd4ff2fd5b4fff  Track101.flac
+4f1e19dfda4b40308567dc1b8bed54d0  Track102.flac
+887efa38189471868ebc0cb839db402f  Track103.flac
+fd2c3291825dc5d6aefe49ef488ca765  Track104.flac
+bc1321f20448e05ec0969ff2f8a68d5c  Track105.flac
+44afea847c593be6eaec152d8149f179  Track106.flac
+6c545c5d03f0511698bcf4438a37d66b  Track107.flac
+c93193615e7f81f31845210a603f7536  Track108.flac
+cf0c625e5fc92499b13b0cb43cf27207  Track109.flac
+d5ec342470645ab2d5f99e9475647499  Track110.flac
+a9e55ddcbdc7ac4d56835b1b75113c39  Track111.flac
+b7f0d8fa7c6b6d387a72d2ba71195234  Track201.flac
+0dd4dcc13f518756295d43cceee8efe0  Track202.flac
+1188260c72cca96ffe885b7bf5f599d1  Track203.flac
+fd4f0dc53f12640d1ade6d47234dae74  Track204.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-15-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:eef1554844c2bd4dd49aedffdd914581
+Track102.flac:8c9ea6a29155f7640387f0e9d09bc89a
+Track103.flac:5a1afbdd3edf87389452d9369e25a2e6
+Track104.flac:5b034595f52ab04d83ec2ca02f53a7e9
+Track105.flac:8d29954473321f94769f82345c19f8d4
+Track106.flac:a4cfa2464dae301e72cff61f6f68f0bf
+Track107.flac:1fc1d20a41cc2b5087750f34c4fd674d
+Track108.flac:8fb744961cccafbe6e970c0096ac65d9
+Track109.flac:6710b400a8f810d42771168f1d02926b
+Track110.flac:419c8783a24839a5cfa829f4219f7c6d
+Track111.flac:52f975416f8491e3cba4a287b0f9470f
+Track201.flac:ef442eb2e57a196079bd31c0204d8e9e
+Track202.flac:da43cbf6e551ff19de8495f70063f56b
+Track203.flac:99e993d3e05868f123e3f026f036b651
+Track204.flac:afcda67607dd780ff85d91fd55cd57a7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-15-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:14.12        2497868 B   ---   --   ---xx   flac  0.6470  Track101.flac
+     7:37.65       80767724 B   ---   --   ---xx   flac  0.6942  Track102.flac
+     6:30.66       68951276 B   ---   --   ---xx   flac  0.6847  Track103.flac
+     5:34.73       59089340 B   ---   --   ---xx   flac  0.7212  Track104.flac
+     9:22.09       99158012 B   ---   --   ---xx   flac  0.6733  Track105.flac
+     9:30.42      100646828 B   ---   --   ---xx   flac  0.6881  Track106.flac
+     5:53.17       62309228 B   ---   --   ---xx   flac  0.6453  Track107.flac
+     4:54.33       51939260 B   ---   --   ---xx   flac  0.5811  Track108.flac
+     5:59.15       63362924 B   ---   --   ---xx   flac  0.5301  Track109.flac
+     7:00.73       74259740 B   ---   --   ---xx   flac  0.5262  Track110.flac
+     6:18.12       66707468 B   ---   --   ---xx   flac  0.7140  Track111.flac
+     7:11.16       76066076 B   ---   --   ---xx   flac  0.6899  Track201.flac
+     9:59.50      105781244 B   ---   --   ---xx   flac  0.7414  Track202.flac
+     9:16.63       98226620 B   ---   --   ---xx   flac  0.7048  Track203.flac
+    10:17.48      108951740 B   ---   --   ---xx   flac  0.6138  Track204.flac
+   105:41.69     1118715348 B                            0.6626  (15 files)
+=================== 
+=================== 
+=================== 

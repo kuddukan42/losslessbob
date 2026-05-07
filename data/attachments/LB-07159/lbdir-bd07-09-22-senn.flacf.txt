@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-09-22-senn.flacf 
+=================== 
+=================== 
+=================== 
+ae5b6291bae80f0f56ab0a155d843123  bd07-09-22-senn-LB-7159.txt
+97e22607838facc597d750f0c2dded61  bd2007-09-22.pdf
+31a3692fa82cab40233c301f3c04218f  cd 1\various - Track 01.flac
+58ca47a2457e143d6ce26e426b78cc0b  cd 1\various - Track 02.flac
+b9263f875fdf40cebfd697df9be411a2  cd 1\various - Track 03.flac
+a676ad448aa96d9862d7a55bc68a6342  cd 1\various - Track 04.flac
+568493e91e831937fc8c9f4947c58a43  cd 1\various - Track 05.flac
+ab0a6d6d0ccccc7193a27d17512235b9  cd 1\various - Track 06.flac
+dd94034e235f708e103afa6affbf4e69  cd 1\various - Track 07.flac
+7dcc609af7b7e084d40e03dc462eaa4f  cd 1\various - Track 08.flac
+1831d16d4bd256aa87730dca7856db75  cd 1\various - Track 09.flac
+4a72e6f9bd9be62c64943b5b47851f5d  cd 1\various - Track 10.flac
+3f0f1ff6573b8fa112dcedb0f7f7f415  cd 1\various - Track 11.flac
+8ade5f1b3cfee1ac849c24dcf2eaf94a  cd 2\Various - Track 01.flac
+f85d4a46d8f0d09ae0b774ec40e77fac  cd 2\Various - Track 02.flac
+8c8908c9ea2653eb938704022443cab6  cd 2\Various - Track 03.flac
+b69ec891de6ad45d431c39d72539b8c7  cd 2\Various - Track 04.flac
+5e95b8a1a409aa2aa62ae7f2add265ff  cd 2\Various - Track 05.flac
+67218f4dba50bd3b1206c14c2f96cdb9  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-09-22-senn.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+Various - Track 01.flac:a20d6e6b94bb579ec6fb747ccf5ce441
+Various - Track 02.flac:eabc1121ba205e43b609c87cd199aad7
+Various - Track 03.flac:dd6c9da1724021e9534037629da698f9
+Various - Track 04.flac:9d7aca2b33cc4f1d78fd664f246aa6a2
+Various - Track 05.flac:367014586883b51cd3c2b57f000b12d8
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-09-22-senn.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+various - Track 01.flac:7abb8a02d0ab2f6a39898f217099079e
+various - Track 02.flac:6b44f17ca579f7bf4c27335260d2be11
+various - Track 03.flac:22f1c7094a0b1a5045e173399cf7e4ae
+various - Track 04.flac:3e8f13cfa401b420b489db0bd5dba673
+various - Track 05.flac:d4454a37be4787f09d3e6b6598057c38
+various - Track 06.flac:c10f25e1672ebded944dd5edcc520fd6
+various - Track 07.flac:07ad47e377119c516754a47e2d4849f9
+various - Track 08.flac:dd55451c40d7cfc0f6d5f58717cd1d8e
+various - Track 09.flac:52ee239b3d46f858346ee7f7e68f50a6
+various - Track 10.flac:e5ee93bb832f2275732327cc416396c5
+various - Track 11.flac:e67a867173ca6c88bbcd7a4508fa25f5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-09-22-senn.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:25.57       89215336 B   -b-   --   ---xx   flac  0.4363  Various - Track 01.flac
+     6:40.53       70684700 B   ---   --   ---xx   flac  0.5537  Various - Track 02.flac
+     5:18.70       56259884 B   ---   --   ---xx   flac  0.5069  Various - Track 03.flac
+     6:21.53       67333100 B   ---   --   ---xx   flac  0.5730  Various - Track 04.flac
+     5:31.30       58459000 B   -b-   --   ---xx   flac  0.5530  Various - Track 05.flac
+    32:18.38      341952020 B                            0.5190  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-09-22-senn.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:59.72       52913724 B   -b-   --   ---xx   flac  0.5436  various - Track 01.flac
+     5:57.72       63144188 B   ---   --   ---xx   flac  0.4975  various - Track 02.flac
+     4:21.49       46155692 B   ---   --   ---xx   flac  0.5395  various - Track 03.flac
+     6:24.45       67843484 B   ---   --   ---xx   flac  0.5186  various - Track 04.flac
+     6:17.72       66672188 B   ---   --   ---xx   flac  0.5567  various - Track 05.flac
+     6:48.70       72135884 B   ---   --   ---xx   flac  0.4650  various - Track 06.flac
+     5:44.70       60846284 B   ---   --   ---xx   flac  0.4941  various - Track 07.flac
+     7:26.72       78843788 B   ---   --   ---xx   flac  0.5488  various - Track 08.flac
+     6:47.06       71808956 B   ---   --   ---xx   flac  0.5856  various - Track 09.flac
+     7:11.20       76075484 B   ---   --   ---xx   flac  0.5115  various - Track 10.flac
+     6:05.48       64498940 B   ---   --   ---xx   flac  0.5639  various - Track 11.flac
+    68:06.71      720938612 B                            0.5293  (11 files)
+=================== 
+=================== 
+=================== 

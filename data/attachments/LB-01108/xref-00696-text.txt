@@ -1,0 +1,71 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+
+Darien Center, New York
+Darien Lakes PAC
+August 8 2003
+ 
+  	
+intro
+ Maggie's Farm (Bob on piano)
+ Love Minus Zero/No Limit (Bob on piano and harp, Larry on pedal steel)
+ Tweedle Dee & Tweedle Dum (Bob on piano)
+ Mr. Tamborine Man (acoustic)(Bob on piano and harp)
+ Highway 61 Revisited (Bob on piano and harp, Bob Weir on electric guitar)
+ This Wheel's On Fire (Bob on piano and harp)
+ Cold Irons Bound (Bob on piano)
+ Positively 4th Street (Bob on piano and harp, Bob Weir on electric guitar)
+ Honest With Me (Bob on piano, Larry on slide guitar, Bob Weir on electric guitar)
+band into
+ Summer Days (Bob on piano, Tony on standup bass,
+      Tommy Morrongiello on electric guitar, Bob Weir on electric guitar)
+
+      (encore)
+ Rainy Day Women #12 & 35 (Bob on piano and harp, Bob Weir on electric guitar)
+  
+with the Dead
+
+ Tangled Up In Blue (Bob on piano)
+ It Takes A Lot To Laugh, It Takes A Train To Cry (Bob on electric guitar)
+ West LA Fadeaway (Bob on piano)
+ Alabama Getaway (Bob on electric guitar) 
+===================
+===================
+===================
+=== 1.ffp
+===================
+===================
+===================
+Track01.flac:5eb1dda89b17d47f3557d90d1f804bfc
+Track02.flac:a07e9cbf88de13f0f33712bf7f3ad45e
+Track03.flac:4b9815f898b019e102f8cd46d57ead00
+Track04.flac:30f2151b91958b63d25771adf6eb7219
+Track05.flac:b07dd1b2d23ead0a14be6f21e176dba4
+Track06.flac:f0e35db01feaa042267c0e693adf9ba9
+Track07.flac:e9f76c6047542cf3647d8fb87378d0ba
+Track08.flac:cd7a26b38d5f70b506d36f40b129dfe3
+Track09.flac:1aa3aa7ca61fb10a65dc7a10d26b128d
+Track10.flac:4dd012f90cd7264288ff59f91a08c48c
+Track11.flac:68600912cd70e35314e8c3630c67920a
+Track12.flac:238d267d555f1af1edfa2338ca8f516a
+===================
+===================
+===================
+=== 2.ffp
+===================
+===================
+===================
+Track01.flac:f36fb10c15563b97a788c05c27102505
+Track02.flac:03fdaa1d9bd5b65e866b1c8ca4e919d2
+Track03.flac:629d95d48ab639daf568519f9a630279
+Track04.flac:aa9cd5aff2c7010a59f91189cb0ff245
+Track05.flac:68f7a7054d0a9a61eebddef62d237e02
+===================
+===================
+===================

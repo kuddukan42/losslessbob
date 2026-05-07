@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-First-Infidels-OTs 
+=================== 
+=================== 
+=================== 
+5b6fcb05ad7a754e0bf37a98e67bd9ae  01 Jokerman (alt take).shn
+e737d0c28a39274633e406a37013bde9  01 Jokerman (alt take).skt
+65c458f36671af9c1b46eebf4767cfb4  02 License to Kill (diff mix).shn
+d6b8911a502910894fed96803e5610de  02 License to Kill (diff mix).skt
+78aa8e8c28a0ba4c9de9350d9004b232  03 Man of Peace (diff mix).shn
+f6ad0c7c30f01f8bb32e48a51d1cd964  03 Man of Peace (diff mix).skt
+061b6993532d83b782442706bf63b74a  04 Neigbourhood Bully (diff mix).shn
+cfe0141d2ae52b48e87ac2341b1599ba  04 Neigbourhood Bully (diff mix).skt
+c69d159dc5f5140bf85723f8fe256b03  05 Don't Fall Apart on me Tonight (alt take).shn
+536d0512585da6b64c602a50015201e4  05 Don't Fall Apart on me Tonight (alt take).skt
+61f3ed5375dbd0f1529605ceaf390abe  06 Blind Willie McTell (electric).shn
+978e91bba6ddb8b83142fb903159a677  06 Blind Willie McTell (electric).skt
+0af711083c982d904da7c7f4c18db399  07 Sweetheart Like You (alt take).shn
+3da1082d76bcb55265ce73cbbaa2b345  07 Sweetheart Like You (alt take).skt
+cee6eefac41ec53471f62d824841a1d8  08 I and I (not overdubbed).shn
+fa1ae178a48e1c91fb92d62d5deda858  08 I and I (not overdubbed).skt
+dd77e82c811cdeba69849866ce107e59  09 Foot of Pride (cut).shn
+c1c49d8e8a3d2ac8f05b2da4a7b60c8e  09 Foot of Pride (cut).skt
+eef6e02a4e121bc3af54ea60fa55957f  bd-First-Infidels-OTs.txt
+a5d94d6d9ba6ca1c08e299997cb324e5  Early Infidels Tapes front.jpg
+0545681405b73b2b484b9a3028a04dba  Infidels Back.jpg
+25205c6d6c2639d73754d3fe78132bb6  Infidels tapes.txt
+78455cd85659887ab36463035800e9eb  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-First-Infidels-OTs 
+=================== 
+=================== 
+=================== 
+623a10193a5ad55ee665ebacd82f875c  [shntool]  01_Jokerman__alt_take_.wav
+06a52323e79508a7d51cc3674a6baa06  [shntool]  02_License_to_Kill__diff_mix_.wav
+391a2b70631c0506c90260aa8ec768e1  [shntool]  03_Man_of_Peace__diff_mix_.wav
+d6f64f7fe8aff921cb2b92fe36b8cc30  [shntool]  04_Neigbourhood_Bully__diff_mix_.wav
+aa7c5c7b3dc95828d9cf6b10a40bf22f  [shntool]  05_Don_t_Fall_Apart_on_me_Tonight__alt_take_.wav
+4a169ed3c28c5feb007432c444bb10cc  [shntool]  06_Blind_Willie_McTell__electric_.wav
+cb2487317da64769a42d6e549e53e6d2  [shntool]  07_Sweetheart_Like_You__alt_take_.wav
+e1e6c547c4b07edcb18554f50c6e32e0  [shntool]  08_I_and_I__not_overdubbed_.wav
+bcc88b016d9463d351b3a160e1b08b71  [shntool]  09_Foot_of_Pride__cut_.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-First-Infidels-OTs 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:32.33       69226460 B   ---   --   -----    wav  1.0000  01_Jokerman__alt_take_.wav
+     3:50.03       40579100 B   ---   --   -----    wav  1.0000  02_License_to_Kill__diff_mix_.wav
+     6:41.35       70818764 B   ---   --   -----    wav  1.0000  03_Man_of_Peace__diff_mix_.wav
+     4:44.14       50130572 B   ---   --   -----    wav  1.0000  04_Neigbourhood_Bully__diff_mix_.wav
+     5:56.26       62859596 B   ---   --   -----    wav  1.0000  05_Don_t_Fall_Apart_on_me_Tonight__alt_take_.wav
+     4:53.15       51720524 B   ---   --   -----    wav  1.0000  06_Blind_Willie_McTell__electric_.wav
+     4:12.46       44561036 B   ---   --   -----    wav  1.0000  07_Sweetheart_Like_You__alt_take_.wav
+     4:59.22       52795388 B   ---   --   -----    wav  1.0000  08_I_and_I__not_overdubbed_.wav
+     3:57.38       41896220 B   ---   --   -----    wav  1.0000  09_Foot_of_Pride__cut_.wav
+    45:47.07      484587660 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

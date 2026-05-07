@@ -1,0 +1,19 @@
+4535328f8e0c8eb83509b47a25956724  Disc One\BD_06.09.1989_Disc01Track01.flac
+9bd1c6869e380f6d27ad1718f5a9177e  Disc One\BD_06.09.1989_Disc01Track02.flac
+260cbc678de13f48f659e8c2a792ce41  Disc One\BD_06.09.1989_Disc01Track03.flac
+3e6ddd09fb2591c7b7cfd1b4ad3b7b42  Disc One\BD_06.09.1989_Disc01Track04.flac
+bdc788f720f3bf6a0f5ddbc47534c5d4  Disc One\BD_06.09.1989_Disc01Track05.flac
+24b95d48055e66f4d34d89e91f902509  Disc One\BD_06.09.1989_Disc01Track06.flac
+23c1619ab0a9f66f6253dc6f987cc0d0  Disc One\BD_06.09.1989_Disc01Track07.flac
+4c711e9e78fae3bdeb7f003aa2b6ab7a  Disc One\BD_06.09.1989_Disc01Track08.flac
+238461eda6bbdada74bcb721f1c4fd5b  Disc One\BD_06.09.1989_Disc01Track09.flac
+dbb02ae92c2dc7e47eb2076c34d0581c  Disc Two\BD_06.09.1989_Disc02Track01.flac
+5aa6c7aace4581629f7dcadafccdfcc5  Disc Two\BD_06.09.1989_Disc02Track02.flac
+b12ff02cb2933ea82df778c09790521a  Disc Two\BD_06.09.1989_Disc02Track03.flac
+94ec5197fc6475279a6711694872c73c  Disc Two\BD_06.09.1989_Disc02Track04.flac
+ea26d4dd2307c48f41a2c50ae4e6e7b7  Disc Two\BD_06.09.1989_Disc02Track05.flac
+9448749d96ef683e9f519dbecff83103  Disc Two\BD_06.09.1989_Disc02Track06.flac
+d28f1f9e8208ce7be05dda76294b781a  Disc Two\BD_06.09.1989_Disc02Track07.flac
+dc5c2263ead8e47ed27cf5e0cbeb4aaa  Info.txt
+909c89db403bdab9785ac4b4baca3250  San Diego, CA 06.09.1989 - F.jpg
+a02132609a1ffb854dcce7f6f4ccfd92  San Diego, CA 06.09.1989 - R.jpg

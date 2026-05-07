@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-10-jtt-gs.flacf 
+=================== 
+=================== 
+=================== 
+cf8b775ebe3b4706fef7d2f34c59b804  Birmingham, England 10.10.87 GS - F.jpg
+8a930db2a4004b1ef41121308f6796b4  Birmingham, England 10.10.87 GS - R.jpg
+f34a06cfd091d49bed735d7e6803351b  Dylan - Birmingham Oct. 10th 1987 GS.md5
+a8cdf31c648cf1c231c69ebda9d2ec67  Dylan_Birm. Oct. 10th 1987 GS_Track01.flac
+058aa694fc29b99a2381f910273d31c1  Dylan_Birm. Oct. 10th 1987 GS_Track02.flac
+cbbe993889e708d01782ae9ad3623418  Dylan_Birm. Oct. 10th 1987 GS_Track03.flac
+ac913393c3a39104dba728585d5bea7b  Dylan_Birm. Oct. 10th 1987 GS_Track04.flac
+69d9eeb110486c3e15cfb57e04152f25  Dylan_Birm. Oct. 10th 1987 GS_Track05.flac
+9657ca8dc99a5278f7050c1914250c3c  Dylan_Birm. Oct. 10th 1987 GS_Track06.flac
+b38f58d620951d3a1f3d07d726fdce23  Dylan_Birm. Oct. 10th 1987 GS_Track07.flac
+3b8723498adc22ce3fda2475121ecf60  Dylan_Birm. Oct. 10th 1987 GS_Track08.flac
+3d8d67e89b27f89bf680ff023eccc59a  Dylan_Birm. Oct. 10th 1987 GS_Track09.flac
+49bd5351bf55bd8eac9d663364f53e74  Dylan_Birm. Oct. 10th 1987 GS_Track10.flac
+525f2137bfa7ea80fb529f0a1fb09ea4  Dylan_Birm. Oct. 10th 1987 GS_Track11.flac
+6e2e0d38e78ff11cd26b43b90fdbbef6  Dylan_Birm. Oct. 10th 1987 GS_Track12.flac
+a36755a5719397aa17ef5e1e904c6179  Dylan_Birm. Oct. 10th 1987 GS_Track13.flac
+4f10b070072a5be6b3fd6c4aa3c240de  Dylan_Birm. Oct. 10th 1987 GS_Track14.flac
+6d7de8bea5ef22787ed49d2d105b11da  Dylan_Birmingham Oct. 10th 1987_GS_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-10-jtt-gs.flacf 
+=================== 
+=================== 
+=================== 
+Dylan_Birm. Oct. 10th 1987 GS_Track01.flac:a543dda8a062851bcd73b671f700088b
+Dylan_Birm. Oct. 10th 1987 GS_Track02.flac:bd646f73fa55cb8947008b0128439525
+Dylan_Birm. Oct. 10th 1987 GS_Track03.flac:40c2e89db127ab9d444a51b5bbba0174
+Dylan_Birm. Oct. 10th 1987 GS_Track04.flac:327e82c8e96fac38a8ad04d115d7332d
+Dylan_Birm. Oct. 10th 1987 GS_Track05.flac:3ba40561266a0ecfa34d1520a860dc23
+Dylan_Birm. Oct. 10th 1987 GS_Track06.flac:2836fa93af279d31a32f5196129ab6d6
+Dylan_Birm. Oct. 10th 1987 GS_Track07.flac:aa222db98091f81440f507289415d871
+Dylan_Birm. Oct. 10th 1987 GS_Track08.flac:b13558e692cc657181edd8cfd0312d95
+Dylan_Birm. Oct. 10th 1987 GS_Track09.flac:cdb4123d2c4c67a99687669bf6cd8e16
+Dylan_Birm. Oct. 10th 1987 GS_Track10.flac:157f1ce83aa83d13bb364ffb4d99d173
+Dylan_Birm. Oct. 10th 1987 GS_Track11.flac:23d28a082dade87528a5fc3d25272779
+Dylan_Birm. Oct. 10th 1987 GS_Track12.flac:3b1547ce0265287dc3a8dde712dd3103
+Dylan_Birm. Oct. 10th 1987 GS_Track13.flac:a150ff2152a9055cef7d2f75bfc788e7
+Dylan_Birm. Oct. 10th 1987 GS_Track14.flac:b7e1c547dbf6545b7143df01f57a0c89
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-10-10-jtt-gs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:44.64       39664172 B   ---   --   ---xx   flac  0.5326  Dylan_Birm. Oct. 10th 1987 GS_Track01.flac
+     5:42.13       60359420 B   ---   --   ---xx   flac  0.5375  Dylan_Birm. Oct. 10th 1987 GS_Track02.flac
+     4:25.27       46809548 B   ---   --   ---xx   flac  0.5408  Dylan_Birm. Oct. 10th 1987 GS_Track03.flac
+     4:53.51       51805196 B   ---   --   ---xx   flac  0.5285  Dylan_Birm. Oct. 10th 1987 GS_Track04.flac
+     3:23.58       35945660 B   ---   --   ---xx   flac  0.5298  Dylan_Birm. Oct. 10th 1987 GS_Track05.flac
+     3:59.34       42239612 B   ---   --   ---xx   flac  0.5292  Dylan_Birm. Oct. 10th 1987 GS_Track06.flac
+     5:20.32       56523308 B   ---   --   ---xx   flac  0.5095  Dylan_Birm. Oct. 10th 1987 GS_Track07.flac
+     4:12.20       44499884 B   ---   --   ---xx   flac  0.5418  Dylan_Birm. Oct. 10th 1987 GS_Track08.flac
+     4:05.50       43335644 B   ---   --   ---xx   flac  0.5252  Dylan_Birm. Oct. 10th 1987 GS_Track09.flac
+     4:53.45       51791084 B   ---   --   ---xx   flac  0.5059  Dylan_Birm. Oct. 10th 1987 GS_Track10.flac
+     5:22.22       56852588 B   ---   --   ---xx   flac  0.5383  Dylan_Birm. Oct. 10th 1987 GS_Track11.flac
+     8:06.37       85817468 B   ---   --   ---xx   flac  0.5274  Dylan_Birm. Oct. 10th 1987 GS_Track12.flac
+     3:53.03       41108300 B   ---   --   ---xx   flac  0.5417  Dylan_Birm. Oct. 10th 1987 GS_Track13.flac
+     6:50.34       72404012 B   ---   --   ---xx   flac  0.5331  Dylan_Birm. Oct. 10th 1987 GS_Track14.flac
+    68:53.40      729155896 B                            0.5297  (14 files)
+=================== 
+=================== 
+=================== 

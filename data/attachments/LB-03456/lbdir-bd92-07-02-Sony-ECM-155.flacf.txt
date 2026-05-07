@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-07-02-Sony-ECM-155.flacf 
+=================== 
+=================== 
+=================== 
+fa4a254b1752f07b396d4de139416087  01 - Dylan Belfort 92 - Ansage_Hazy Shade Of Winter.flac
+39763895acbee091bdbf61060508e564  02 - Dylan Belfort 92 - You_re A Big Girl Now.flac
+3ba5771f7ab555e846aec3294dc379f3  03 - Dylan Belfort 92 - All Along The Watchtower.flac
+5855979a6a60f2b291b4aa08ad4925d5  04 - Dylan Belfort 92 - Simple Twist Of Fate.flac
+e074eb0b32411397445355e3144fd318  05 - Dylan Belfort 92 - I And I.flac
+8f2f67013532465eaa5d84fb18bc13b9  06 - Dylan Belfort 92 - Tangled Up In Blue.flac
+8ecbd3da9227c49589074c947a39d5aa  07 - Dylan Belfort 92 - It Ain_t Me Babe.flac
+b4579699822f2c75e9109b336f3adb0b  08 - Dylan Belfort 92 - Little Moses.flac
+ce9529f7f15840dd96b5753f5e2f1f10  09 - Dylan Belfort 92 - Gates of Eden.flac
+d35229953d5228682647920c8bb2779f  10 - Dylan Belfort 92 - Mr. Tambourine Man.flac
+28db2ae0a0f4d28572ea4556c9ffaa88  11 - Dylan Belfort 92 - Like A Rolling Stone.flac
+7d0d3ee500cba94cc22a721558d30d11  12 - Dylan Belfort 92 - Rainy Day Women Nr 12_35.flac
+03ff2dbf2927bbc521c8724a3dd0d690  13 - Dylan Belfort 92 - Blowin In The Wind.flac
+6672a783aba0f77b70db1e3a96738b9c  bd92-07-02-Sony-ECM-155-LB-3456.txt
+594a476a99031b0fd0ad634cec05ebbb  Bob Dylan Belfort 02.07.1990 Aud.md5
+05d34016fd6f8cbbe839fe4f174c9a05  Bob Dylan Belfort 02.07.1990 Aud.txt
+5d6950403cca925357381d3b5fee95d9  corrrect.md5
+f17ed0784445c04ed638229c953443d9  Dylan Belfort 1992 Aud.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-07-02-Sony-ECM-155.flacf 
+=================== 
+=================== 
+=================== 
+01 - Dylan Belfort 92 - Ansage_Hazy Shade Of Winter.flac:c78d95b2be3e385ddcf5c35a4179eadc
+02 - Dylan Belfort 92 - You_re A Big Girl Now.flac:5613facecbfb63c77dab92b8f0ad05bf
+03 - Dylan Belfort 92 - All Along The Watchtower.flac:77a93b2c770f4992eb3f27a05d2bc25c
+04 - Dylan Belfort 92 - Simple Twist Of Fate.flac:49a0899613a5b4c1404d00089a7984ef
+05 - Dylan Belfort 92 - I And I.flac:696285151cefd38598c36c4b49154d7d
+06 - Dylan Belfort 92 - Tangled Up In Blue.flac:9e703d2950ea04106283222cb278348a
+07 - Dylan Belfort 92 - It Ain_t Me Babe.flac:897d92b6f730fd86a44bb5776168fd77
+08 - Dylan Belfort 92 - Little Moses.flac:0471e2cde7f45df02aa34b648d4f3fee
+09 - Dylan Belfort 92 - Gates of Eden.flac:607a0c56d99937421c111d398cb0312d
+10 - Dylan Belfort 92 - Mr. Tambourine Man.flac:f78adaecc82566672ad03a02ae1c09ab
+11 - Dylan Belfort 92 - Like A Rolling Stone.flac:ad947b6f21d38e5b652447dfd25257e1
+12 - Dylan Belfort 92 - Rainy Day Women Nr 12_35.flac:1e4fe6d39fbef516d045cbf3f3802ac8
+13 - Dylan Belfort 92 - Blowin In The Wind.flac:c6ba84c998f3b8ff8e6a3741723bdf90
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-07-02-Sony-ECM-155.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.32       42058508 B   ---   --   ---xx   flac  0.5893  01 - Dylan Belfort 92 - Ansage_Hazy Shade Of Winter.flac
+     7:50.54       83035052 B   ---   --   ---xx   flac  0.5804  02 - Dylan Belfort 92 - You_re A Big Girl Now.flac
+     4:22.05       46228604 B   ---   --   ---xx   flac  0.6069  03 - Dylan Belfort 92 - All Along The Watchtower.flac
+     9:11.65       97349324 B   ---   --   ---xx   flac  0.5688  04 - Dylan Belfort 92 - Simple Twist Of Fate.flac
+     8:19.37       88110668 B   ---   --   ---xx   flac  0.5964  05 - Dylan Belfort 92 - I And I.flac
+     8:10.61       86579516 B   ---   --   ---xx   flac  0.6187  06 - Dylan Belfort 92 - Tangled Up In Blue.flac
+     4:57.71       52557836 B   ---   --   ---xx   flac  0.5402  07 - Dylan Belfort 92 - It Ain_t Me Babe.flac
+     3:52.49       41040092 B   ---   --   ---xx   flac  0.5101  08 - Dylan Belfort 92 - Little Moses.flac
+     6:59.65       74064524 B   ---   --   ---xx   flac  0.5624  09 - Dylan Belfort 92 - Gates of Eden.flac
+     7:37.29       80683052 B   ---   --   ---xx   flac  0.5761  10 - Dylan Belfort 92 - Mr. Tambourine Man.flac
+     6:52.08       72695660 B   ---   --   ---xx   flac  0.6155  11 - Dylan Belfort 92 - Like A Rolling Stone.flac
+     5:44.19       60726332 B   ---   --   ---xx   flac  0.6041  12 - Dylan Belfort 92 - Rainy Day Women Nr 12_35.flac
+     3:08.52       33285548 B   ---   --   ---xx   flac  0.5578  13 - Dylan Belfort 92 - Blowin In The Wind.flac
+    81:06.22      858414716 B                            0.5825  (13 files)
+=================== 
+=================== 
+=================== 

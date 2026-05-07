@@ -1,0 +1,49 @@
+Bob Dylan
+El Rey Theatre
+Los Angeles,Ca
+December 18, 1997
+
+source   : marcsounds > sony tcd-d3
+taper    : markp
+
+disc one
+Intro
+Maggie's Farm
+I Want You
+Cold Irons Bound
+Born In Time
+Can't Wait
+Silvio, 
+Stone Walls And Steel Bars
+Mr. Tambourine Man
+Tangled Up In Blue 
+It Takes A Lot To Laugh It Takes A Train To Cry
+Blind Willie McTell
+Till I Fell In Love With You
+Crowd
+
+disc two
+Like A Rolling Stone
+It Ain't Me Babe
+Love Sick
+Rainy Day Women No. 12 & 35
+
+
+Track01.flac:2fb235c44c585c5c3d436c764565b60c
+Track02.flac:e92335ba6afdb55770a35b14c24d1400
+Track03.flac:99a3674122f77014b2291c8463a8b56a
+Track04.flac:634e23e92857113ca642f5ac39046d59
+Track05.flac:b894099a1ad2882e840d3bca1a023267
+Track06.flac:35531836ac8f0a6248f745fdc294fb22
+Track07.flac:913362e7b6843688914ca6ec0f472dd1
+Track08.flac:c846e31a84ac0c69f60ef536e060ca58
+Track09.flac:d6360ec5d308e9a17ea7929b5cebaab8
+Track10.flac:5a35787b5912e59716c9c45ae88df33c
+Track11.flac:6d1a14a4afc610a399b9d653f9767e57
+Track12.flac:673cc42fdefa73aa7cf2e32b3b479457
+Track13.flac:8230066614ea1f585bc6e23c7d24c7bf
+Track14.flac:f021ae9d00c16079d232f912618d5e57
+D2 Track01.flac:a80d400c9ffcb2c3c57644cbd289e146
+D2 Track02.flac:0ce3df8239b87d0e94d0b17596136c9f
+D2 Track03.flac:3d9edd8f77e6b3bce93169fcaff5bf42
+D2 Track04.flac:7c0531e58f1d8b9c95fef8cf7e3e56e9

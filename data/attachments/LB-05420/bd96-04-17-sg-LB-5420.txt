@@ -1,0 +1,10 @@
+Bob Dylan, 4/17/96, Burlington, Vermont, Patrick Gymnasium, University Of Vermont, 2CDR
+
+LB-5420, (63min+55min), Taper: SG, Source: low-gen audio disks > (dBpowerAMP set to compression level 6) flac., Note: There are channel problems on d2,but for the most part do not interefere with the songs themselves until, d2 t7, where they are severe and render the song unlistenable. Checking the lists of a couple fine collectors, both note the channel problems in the SG recording. There is one entry for this date in the Losslessbob archive, LB-501., Since there is no mention of channel problems for LB-501, it would appear to be derived from a different master.; bittorrent download 10/07; asymetrical wavs on d1t6 limited on top to -7db while bottom goes to -5db; limiting heard as light static at d1t6 6:4x and begin of d2t7; same recording as LB-501 based on same crowd and clapping at beginning of d1t7; in comparison this is clearer with less hiss as that probably has cassette generation but that has right channel ok on d2 and does not have the asymetric limited wav problem his does; excellent sound [A]
+
+right channel starts dropping out at end of d2t3 while left channel is ok
+
+Disk One, 1 Crash On The Levee (Down In The Flood) 2 Man In The Long Black Coat 3 All Along The Watchtower 4 Positively 4th Street, 5 It Takes A Lot To Laugh, It Takes A Train To Cry 6 Silvio 7 Mr. Tambourine Man (acoustic w band) 8 Boots Of Spanish Leather, (acoustic w band), Disk Two, 1 Don't Think Twice, It's All Right (acoustic w band) 2 Maggie's Farm 3 This Wheel's On Fire, 4 Obviously Five Believers 5 Alabama Getaway 6 I Shall Be Released (acoustic w band)[with Jewel] 7 Rainy Day Women # 12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

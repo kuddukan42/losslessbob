@@ -1,0 +1,23 @@
+364f6a5817e81ec1b69732bbc0212e58  Bob Dylan  Piazza Grande Modena Italy 2000 05 27.md5
+0bd08c7c862e839602928a5fb0d32b47  CD1\01  Duncan And Brady.flac
+299d2423d7e75bd6e990204f960709ac  CD1\02  Mr Tambourine Man.flac
+5084b7df7acb58c565365dc7febfbe00  CD1\03  Masters Of War.flac
+45e2ffdd149c1ec5b665ca17459e826b  CD1\04  Boots Of Spanish Leather.flac
+f21c999f0f0849d38a0339697e2153c0  CD1\05  Tangled Up In Blue.flac
+08deb3a82d600ddce630c0a981b815f2  CD1\06  To Ramona.flac
+0b3560c3ccee741f84557963d3dd992d  CD1\07  Country Pie.flac
+8136efb791df968e1dd069adc0c33826  CD1\08  Positively Fourth Street.flac
+fc768904c687915984b9472dd74ae60f  CD1\09  Stuck Inside Of Mobile With The Memphis Blues Again.flac
+8a351c6e862d209405fe20d4a5c9b716  CD1\10  Can't Wait.flac
+e791cbd85f610ccb8e1f8a41c6259dd6  CD1\11  Drifter's Escape.flac
+bb895e3980f84c764ac69e1511ad6c75  CD1\12  Leopard Skin Pill Box Hat.flac
+3d874172d7957e38eb2dd633d94c7b02  CD1\Fingerprint.txt
+50b5c2f0246be2db73ed647cea48438f  CD2\01  Love Sick.flac
+6f7f49b296a1b58d3521ff4f180b98d0  CD2\02  Like A Rolling Stone.flac
+6c4a0f44116282d33a74fe92731b93e1  CD2\03  Don't Think Twice It's All Right.flac
+d4bb8f5abb3af8e8de387dfb7507c4c7  CD2\04  Gotta Serve Somebody.flac
+6c2a73a2e8f486b8aadd15c8913a2264  CD2\05  Forever Young.flac
+b2124c88de2bd04aeb566a1df382b561  CD2\06  Rainy Day Women No.12 and 35.flac
+f118a2acebcf9a98ddc826342f98837a  CD2\07  Blowin' In The Wind.flac
+18bce6dd0fa47ac2de807a40309d0a8b  CD2\Fingerprint.txt
+194f059b19fc1af40eacc3eeda3daadd  Info.txt

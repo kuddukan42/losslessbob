@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-02.flacf 
+=================== 
+=================== 
+=================== 
+3e63c9a0b5619f78b44d162f859d7a80  bd05-04-02-chicago-d1\bd05-04-02-chicago-d1-fingerprints.txt
+62fd827a9d58f94bebfae163ffa8c272  bd05-04-02-chicago-d1\bd05-04-02-d1-t01.flac
+8c3188d6cf81245182c9680ae5456e82  bd05-04-02-chicago-d1\bd05-04-02-d1-t02.flac
+21bac553035ae5e4db6f9b91eedce3b1  bd05-04-02-chicago-d1\bd05-04-02-d1-t03.flac
+33b5175a54ccc4eaaef90b1bfbf7f30a  bd05-04-02-chicago-d1\bd05-04-02-d1-t04.flac
+243d4ce24d3ccea47243498fa750d445  bd05-04-02-chicago-d1\bd05-04-02-d1-t05.flac
+ad6e67c5103ebac5a677892874fdbc34  bd05-04-02-chicago-d1\bd05-04-02-d1-t06.flac
+fdacc4a9b0ce1b88c27272d3963b66cf  bd05-04-02-chicago-d1\bd05-04-02-d1-t07.flac
+6bc4f6e1c05d82b03fab011790b99a1b  bd05-04-02-chicago-d1\bd05-04-02-d1-t08.flac
+c42abc4dc9d88f94aacc8efda96114dc  bd05-04-02-chicago-d1\bd05-04-02-d1-t09.flac
+dd360c5ea4227c36d1ccd1f58534e4f0  bd05-04-02-chicago-d1\bd05-04-02-d1-t10.flac
+92b1ace1b483b6b4580f003feb5bd6ce  bd05-04-02-chicago-d1\bd05-04-02-d1-t11.flac
+9683395ebe1c03778085b621d948a975  bd05-04-02-chicago-d2\bd05-04-02-chicago-d2-fingerprints.txt
+267503052e0561566fa5145d7a0246e2  bd05-04-02-chicago-d2\bd05-04-02-chicago-d2t01.flac
+c59d8037bd9d90eb609186ab226a29b3  bd05-04-02-chicago-d2\bd05-04-02-chicago-d2t02.flac
+c33704c029087dfde05080fc8fce5d4f  bd05-04-02-chicago-d2\bd05-04-02-chicago-d2t03.flac
+f89e236f13b841a2256a61898ee9e146  bd05-04-02-chicago.txt
+408ca9fcfcc2d575e3b71a3b033daa85  bd05-04-02-LB-2669.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-02.flacf\bd05-04-02-chicago-d2 
+=================== 
+=================== 
+=================== 
+bd05-04-02-chicago-d2t01.flac:d54338d1dc8f07b03a1f741113925716
+bd05-04-02-chicago-d2t02.flac:f7c1678ce528be32596a6f11a360fbf7
+bd05-04-02-chicago-d2t03.flac:506f224b241a341cc99ff94526df9b25
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-02.flacf\bd05-04-02-chicago-d1 
+=================== 
+=================== 
+=================== 
+bd05-04-02-d1-t01.flac:deb083772831983387d2fd83d6b6a782
+bd05-04-02-d1-t02.flac:77a79f675da8ccc8a05d55b68fa3fc23
+bd05-04-02-d1-t03.flac:b82a25bc82512e7f04c3cb1653d3e8ee
+bd05-04-02-d1-t04.flac:84450b04d9e477d3e9826c3d4f4769a0
+bd05-04-02-d1-t05.flac:e7d3664e2c6415910e33b70ef32267dd
+bd05-04-02-d1-t06.flac:a97a739d0935665dbac056a87baae3b9
+bd05-04-02-d1-t07.flac:7337b9a09dd676101be9525933d883ce
+bd05-04-02-d1-t08.flac:2b893c69d701483cf48f9ad800233c00
+bd05-04-02-d1-t09.flac:1696e5515103ff2204121c29520648d0
+bd05-04-02-d1-t10.flac:2e11318c5320bd50ebba12c960307611
+bd05-04-02-d1-t11.flac:67be265633fdcb888e1466530a3ea430
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-02.flacf\bd05-04-02-chicago-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:50.24      104132492 B   ---   --   ---xx   flac  0.5159  bd05-04-02-chicago-d2t01.flac
+     4:25.24       46802492 B   ---   --   ---xx   flac  0.4623  bd05-04-02-chicago-d2t02.flac
+     5:16.51       55862396 B   ---   --   ---xx   flac  0.5285  bd05-04-02-chicago-d2t03.flac
+    19:32.24      206797380 B                            0.5072  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-02.flacf\bd05-04-02-chicago-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.55       62045804 B   ---   --   ---xx   flac  0.5318  bd05-04-02-d1-t01.flac
+     6:32.21       69198236 B   ---   --   ---xx   flac  0.4903  bd05-04-02-d1-t02.flac
+     7:47.38       82468220 B   ---   --   ---xx   flac  0.5248  bd05-04-02-d1-t03.flac
+     7:16.23       76964540 B   ---   --   ---xx   flac  0.5310  bd05-04-02-d1-t04.flac
+    10:33.18      111703580 B   ---   --   ---xx   flac  0.4553  bd05-04-02-d1-t05.flac
+     5:50.32       61815308 B   ---   --   ---xx   flac  0.4784  bd05-04-02-d1-t06.flac
+     7:32.05       79744604 B   ---   --   ---xx   flac  0.3820  bd05-04-02-d1-t07.flac
+     5:45.35       60940364 B   ---   --   ---xx   flac  0.4400  bd05-04-02-d1-t08.flac
+     7:14.05       76569404 B   ---   --   ---xx   flac  0.5332  bd05-04-02-d1-t09.flac
+     5:37.50       59564444 B   ---   --   ---xx   flac  0.4705  bd05-04-02-d1-t10.flac
+     7:01.68       74424380 B   ---   --   ---xx   flac  0.5390  bd05-04-02-d1-t11.flac
+    77:02.50      815438884 B                            0.4878  (11 files)
+=================== 
+=================== 
+=================== 

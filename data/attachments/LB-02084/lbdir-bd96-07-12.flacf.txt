@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-12.flacf 
+=================== 
+=================== 
+=================== 
+e3452021b1b47058c1210e7223b62629  bd - 1996-07-12-magdeburg-d1\1 To Be Alone With You.flac
+2718a0b1a8fd2a4d1d295cc8c191ab3f  bd - 1996-07-12-magdeburg-d1\2 Lay Lady Lay.flac
+9f981863c11a90d8ff22667616ceebd9  bd - 1996-07-12-magdeburg-d1\3 All Along The Watchtower.flac
+4395e483303b83fde67c731760c8b93c  bd - 1996-07-12-magdeburg-d1\4 Positively 4th Street.flac
+558c8572b568d2ce0b07d058e98dc3e5  bd - 1996-07-12-magdeburg-d1\5 It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+cbcd8250b69a433a1a75b6c54b28e9cf  bd - 1996-07-12-magdeburg-d1\6 Silvio.flac
+f8a60ffce2e0602ab8f5ce9a9e53c3f6  bd - 1996-07-12-magdeburg-d1\7 Ballad Of Hollis Brown.flac
+974567271d26c0c1a25251a4d0225302  bd - 1996-07-12-magdeburg-d1\8 Gates Of Eden.flac
+e49cfbb05d28cc69cee389965ef80b23  bd - 1996-07-12-magdeburg-d2\1 Mr. Tambourine Man.flac
+81baf1e2892623c4e441501604fe7983  bd - 1996-07-12-magdeburg-d2\2 Jokerman.flac
+d7de9b34c7caa8005d4740613235f8ad  bd - 1996-07-12-magdeburg-d2\3 Like A Rolling Stone.flac
+ef01337f69560fbd03f285a001e83787  bd - 1996-07-12-magdeburg-d2\4 Absolutely Sweet Marie.flac
+c27a8030eed2b175e89ce6a3db4d9d2a  bd - 1996-07-12-magdeburg-d2\5 The Times They Are A-Changin'.flac
+923363f772515c90e172ff5800b2188e  bd - 1996-07-12-magdeburg-d2\6 Rainy Day Women # 12 & 35.flac
+55146175fa615b8c9961e4603503594f  bd1996-07-12-magdeburg.txt
+dfb4c1a770d84999955075f6871568ec  bd96-07-12.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-12.flacf\bd - 1996-07-12-magdeburg-d2 
+=================== 
+=================== 
+=================== 
+1 Mr. Tambourine Man.flac:1841ebd5cec72cfe35d79152951d3741
+2 Jokerman.flac:8ff0ad50bf46250e4c87f09c7e9a36a8
+3 Like A Rolling Stone.flac:e7c5812639b4f5392c794d646260d06c
+4 Absolutely Sweet Marie.flac:1efd161dbf63c276ca9901798ee9a8cd
+5 The Times They Are A-Changin'.flac:d4ebf5739318e374457325a2d7440f2a
+6 Rainy Day Women # 12 & 35.flac:38779963feca5d60574460b3b06634e0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-12.flacf\bd - 1996-07-12-magdeburg-d1 
+=================== 
+=================== 
+=================== 
+1 To Be Alone With You.flac:ef4215bb942c146a3809ee2862ab7d4b
+2 Lay Lady Lay.flac:cfcbf81abeefbca05bdac41d6e83db16
+3 All Along The Watchtower.flac:4c4bd537d89b7cc0d9c05fedc1660861
+4 Positively 4th Street.flac:cea0ca4294695e8b8a197dd3fe1b643f
+5 It Takes A Lot To Laugh, It Takes A Train To Cry.flac:44b57f1d57bd0aa9faaab19fda5aa226
+6 Silvio.flac:6e5e97a39c26241d2a335889ef6411ee
+7 Ballad Of Hollis Brown.flac:2fab35e2c79c9bb5d0d1f592f04395c6
+8 Gates Of Eden.flac:3d1f50b49753d7c1d3ff24ad5de471dc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-12.flacf\bd - 1996-07-12-magdeburg-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:16.43      108763580 B   ---   --   ---xx   flac  0.5398  1 Mr. Tambourine Man.flac
+     8:34.59       90808412 B   ---   --   ---xx   flac  0.5493  2 Jokerman.flac
+     8:06.24       85786892 B   ---   --   ---xx   flac  0.5651  3 Like A Rolling Stone.flac
+     7:00.66       74243276 B   ---   --   ---xx   flac  0.5670  4 Absolutely Sweet Marie.flac
+    12:20.38      130625420 B   ---   --   ---xx   flac  0.5381  5 The Times They Are A-Changin'.flac
+    10:00.47      105950588 B   ---   --   ---xx   flac  0.5596  6 Rainy Day Women # 12 & 35.flac
+    56:19.52      596178168 B                            0.5514  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-12.flacf\bd - 1996-07-12-magdeburg-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:39.22       49267388 B   ---   --   ---xx   flac  0.5887  1 To Be Alone With You.flac
+     5:07.52       54277148 B   ---   --   ---xx   flac  0.5201  2 Lay Lady Lay.flac
+     6:28.33       68520860 B   ---   --   ---xx   flac  0.5809  3 All Along The Watchtower.flac
+     9:53.69      104767532 B   ---   --   ---xx   flac  0.5030  4 Positively 4th Street.flac
+     8:47.45       93068684 B   ---   --   ---xx   flac  0.5286  5 It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+     7:38.39       80882972 B   ---   --   ---xx   flac  0.5669  6 Silvio.flac
+     5:49.10       61587164 B   ---   --   ---xx   flac  0.4811  7 Ballad Of Hollis Brown.flac
+     7:25.32       78573308 B   ---   --   ---xx   flac  0.5189  8 Gates Of Eden.flac
+    55:50.02      590945056 B                            0.5334  (8 files)
+=================== 
+=================== 
+=================== 

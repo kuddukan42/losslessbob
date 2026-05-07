@@ -1,0 +1,124 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-22-lk.flacf 
+=================== 
+=================== 
+=================== 
+975ea448e47acdcc0508abc3907342ee  D1\bd78-10-22 Dayton 101.flac
+6dc01a600b5d03dd7a389277973c7a56  D1\bd78-10-22 Dayton 102.flac
+d71897b8b0fb115db1fdfc9b38da88ef  D1\bd78-10-22 Dayton 103.flac
+3f19c9a2f469a899c901c04b0e5182e1  D1\bd78-10-22 Dayton 104.flac
+e35178a7c6f588a42aec6602fc8f85d4  D1\bd78-10-22 Dayton 105.flac
+0298213a85e31c42531f032fc867424f  D1\bd78-10-22 Dayton 106.flac
+d5b6e3ad945f022c9caf766b1cd3ad84  D1\bd78-10-22 Dayton 107.flac
+e35823f5c65d3ced79074d3eea4ead5e  D1\bd78-10-22 Dayton 108.flac
+5c32f4c2463e7aea89c39da42ef993b6  D1\bd78-10-22 Dayton 109.flac
+51df16c76a424bbc8c6cdfc4abaca17a  D1\bd78-10-22 Dayton 110.flac
+e0001a988b324456d1e7a65989b4b5f2  D1\bd78-10-22 Dayton 111.flac
+c74de6a1c82b44ea3a87a3ae30b6b85f  D1\bd78-10-22 Dayton 112.flac
+4f36253dab3a995bf5ac2ccaef38b83f  D1\bd78-10-22 Dayton 113.flac
+b5e1b5f7d1e1b633d4d99ceb040a3769  D1\bd78-10-22 Dayton 114.flac
+b6d5ee2a9708afa5c4efd72e1300a2df  D1\D1.md5
+f1be84ab83931d287cfff142074f5c2e  D2\bd78-10-22 Dayton 201.flac
+94ae750dc4befc8cd95170a7d0f5b51f  D2\bd78-10-22 Dayton 202.flac
+a49ddee67154c9c53b5c728f7b99c3a4  D2\bd78-10-22 Dayton 203.flac
+0f676361a35c1939a829522b1846ee85  D2\bd78-10-22 Dayton 204.flac
+c07797e10ad4921d3292a5774a8c1219  D2\bd78-10-22 Dayton 205.flac
+0c9bef9f5b2e314d1d0035fa60056ef0  D2\bd78-10-22 Dayton 206.flac
+509b3fd9303bce3113563e7b70846f9c  D2\bd78-10-22 Dayton 207.flac
+8ce3737599a578e616cb4afc1e816745  D2\bd78-10-22 Dayton 208.flac
+53824d1427fc51f4643796a37b9f9e7f  D2\bd78-10-22 Dayton 209.flac
+d2659595147f03351efdd947c5394a45  D2\bd78-10-22 Dayton 210.flac
+831860c0947dbc980fcca62de790f0e1  D2\bd78-10-22 Dayton 211.flac
+bbf15f5a17589b2a8d2c5ca266758bd6  D2\bd78-10-22 Dayton 212.flac
+4efd371854f471bc8a1ed9c0870c55ef  D2\D2.md5
+efe03e5a1da47094a50c74f05afedf07  info.txt
+ab08b20c90318b7df1b9d3db892586d2  LK 1978 Leg 3 DVD 5.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-22-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+bd78-10-22 Dayton 101.flac:116db292bcdeccfc5a8fe899392fe5ca
+bd78-10-22 Dayton 102.flac:75cc39501ee37e959a50db926e3b57b7
+bd78-10-22 Dayton 103.flac:508af156e53b394389a078db99540bed
+bd78-10-22 Dayton 104.flac:10d396e59625d84b546fc7ed3e9166d6
+bd78-10-22 Dayton 105.flac:c8d6700715277b58a569cb1473c7a5d3
+bd78-10-22 Dayton 106.flac:8b26349e0a0da7454dd486d6519abf81
+bd78-10-22 Dayton 107.flac:eb75c42a82dd62254a53035d76c06f2c
+bd78-10-22 Dayton 108.flac:bcf6b4a0d186f766b29ac366640559ad
+bd78-10-22 Dayton 109.flac:71f1ff912c6611cefe593e3476322341
+bd78-10-22 Dayton 110.flac:76c4ff87ac9423e5776f1a56fa678d79
+bd78-10-22 Dayton 111.flac:fb0b67432e1d070293cfdbdcd667a858
+bd78-10-22 Dayton 112.flac:37dc8b9079a5791b2f478b3072d85dbb
+bd78-10-22 Dayton 113.flac:ba56348c3130b9fd34ba56ae3c1d4603
+bd78-10-22 Dayton 114.flac:3f0bbdeffc2424c1a804bef918ada6a0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-22-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+bd78-10-22 Dayton 201.flac:334f3cb6c314bfe1ca58f3dae4bef84f
+bd78-10-22 Dayton 202.flac:3396ae4ec328fe077b97285b65b4bfe3
+bd78-10-22 Dayton 203.flac:a75df5f441a20ef96516b7ff2d4a4063
+bd78-10-22 Dayton 204.flac:6bfcdcdd9105d30ac735bbb83f33d736
+bd78-10-22 Dayton 205.flac:b2f5c31181fd99018aff564d716bffba
+bd78-10-22 Dayton 206.flac:9dc570cb5cd90a5769ac0a744bda8376
+bd78-10-22 Dayton 207.flac:eaf850bae89e09dcbda2d50adf3330fd
+bd78-10-22 Dayton 208.flac:5db42ecd637f670ce49833b1ce77a59d
+bd78-10-22 Dayton 209.flac:f31d5ab439601d467bc6390caf1df38a
+bd78-10-22 Dayton 210.flac:9e55a16bbd0d7318772da33984561fce
+bd78-10-22 Dayton 211.flac:ae25cc05c0cfbedfd318c194f9579b70
+bd78-10-22 Dayton 212.flac:f9e533db2c051eb95b6bc2bed2acee1d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-22-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:54.18       30735980 B   ---   --   ---xx   flac  0.4426  bd78-10-22 Dayton 101.flac
+     2:26.13       25785020 B   ---   --   ---xx   flac  0.4527  bd78-10-22 Dayton 102.flac
+     5:24.10       57177164 B   ---   --   ---xx   flac  0.4714  bd78-10-22 Dayton 103.flac
+     4:54.18       51903980 B   ---   --   ---xx   flac  0.4656  bd78-10-22 Dayton 104.flac
+     5:04.08       53644460 B   ---   --   ---xx   flac  0.5028  bd78-10-22 Dayton 105.flac
+     8:28.15       89646524 B   ---   --   ---xx   flac  0.4777  bd78-10-22 Dayton 106.flac
+     4:54.36       51946316 B   ---   --   ---xx   flac  0.5205  bd78-10-22 Dayton 107.flac
+     5:56.66       62953676 B   ---   --   ---xx   flac  0.4983  bd78-10-22 Dayton 108.flac
+     4:21.32       46115708 B   ---   --   ---xx   flac  0.4403  bd78-10-22 Dayton 109.flac
+     8:10.09       86457212 B   ---   --   ---xx   flac  0.5037  bd78-10-22 Dayton 110.flac
+     4:55.62       52183868 B   ---   --   ---xx   flac  0.4992  bd78-10-22 Dayton 111.flac
+     6:34.00       69501644 B   ---   --   ---xx   flac  0.5068  bd78-10-22 Dayton 112.flac
+     5:42.71       60495836 B   ---   --   ---xx   flac  0.4942  bd78-10-22 Dayton 113.flac
+     7:20.36       77700716 B   ---   --   ---xx   flac  0.5296  bd78-10-22 Dayton 114.flac
+    77:07.19      816248104 B                            0.4910  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-22-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.39       53011772 B   ---   --   ---xx   flac  0.5199  bd78-10-22 Dayton 201.flac
+     5:12.20       55083884 B   ---   --   ---xx   flac  0.5273  bd78-10-22 Dayton 202.flac
+     5:51.04       61925852 B   ---   --   ---xx   flac  0.3959  bd78-10-22 Dayton 203.flac
+     6:21.47       67318988 B   ---   --   ---xx   flac  0.4688  bd78-10-22 Dayton 204.flac
+     5:13.65       55366124 B   ---   --   ---xx   flac  0.5133  bd78-10-22 Dayton 205.flac
+     5:42.63       60477020 B   ---   --   ---xx   flac  0.5059  bd78-10-22 Dayton 206.flac
+     4:30.14       47660972 B   ---   --   ---xx   flac  0.5303  bd78-10-22 Dayton 207.flac
+     4:19.27       45751148 B   ---   --   ---xx   flac  0.4736  bd78-10-22 Dayton 208.flac
+     3:10.45       33621884 B   ---   --   ---xx   flac  0.4624  bd78-10-22 Dayton 209.flac
+     7:09.33       75753260 B   ---   --   ---xx   flac  0.4976  bd78-10-22 Dayton 210.flac
+     4:48.66       50958476 B   ---   --   ---xx   flac  0.5015  bd78-10-22 Dayton 211.flac
+     8:16.40       87588524 B   ---   --   ---xx   flac  0.4199  bd78-10-22 Dayton 212.flac
+    65:37.13      694517904 B                            0.4812  (12 files)
+=================== 
+=================== 
+=================== 

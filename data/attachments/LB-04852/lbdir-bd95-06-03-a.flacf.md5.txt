@@ -1,0 +1,23 @@
+78b43da228adea71a2a51dca3901a41d  CD1\01 Crash on the Levee (Down in the flood).flac
+6399d0eca15591727c16219da897a83e  CD1\02 If not for you.flac
+18dce3ffe44295acbb4873805de60783  CD1\03 All along the watchtower.flac
+0b222bd5a483e5fbadbbce34b9aa73f3  CD1\04 Simple twist of fate.flac
+683fba1aa29a8f687ac63d0ffea838e5  CD1\05 Silvio.flac
+983cdfdec4e61b52bdc814a59c687b62  CD1\06 It takes a lot to laugh, it takes a train to cry.flac
+34831201b03986d6fc79fc68797c6ae7  CD1\07 Mr. Tambourine Man.flac
+3447706346193b3b27ef4a5639370390  CD1\08 Gates of Eden.flac
+c4b9c114039074033507a65e85124dc7  CD1\09 It's all over now, baby blue.flac
+2bc1b26c8ae66863e704782575979924  CD1\10 Seeing the real you at last.flac
+4ae19ef87ca50472b79b88fff7a2353c  CD1\FLAC CD1.md5
+6c318106ce7723fc7035bc67f73495d0  CD1\WAV CD1.md5
+b669b3957e1e8b530b653764410cb959  CD2\11 Never gonna be the same again.flac
+4621b010a35acec743b73b07048b7b4a  CD2\12 Ballad of a thin man.flac
+e8d498bb9a612f1c2b784192bd75b09f  CD2\13 Like a rolling stone.flac
+b267aac73df119d3b5603c09184125e9  CD2\14 The times they are a-changin'.flac
+e86616ac6a3236bd214c27c9594bb58f  CD2\15 Rainy day women # 12 & 35.flac
+4ee974ec947cefe85161abdc38558f30  CD2\FLAC CD2.md5
+4a40a8cf4f965e98bb3d8b627b0141f5  CD2\WAV CD2.md5
+0785222391ceee01f0e75e5bda876a20  Info\1995-06-03 Paramount Theater, Seattle, Washington.txt
+c738e44239138f0dd6f770c93a285c55  Info\info (from original SHN set).txt
+3f85eb0718f67ddf13fe0ea03dd64b7e  Info\SHN CD1.md5
+1d2e1ae85d6f0be48a4abff510b186ae  Info\SHN CD2.md5

@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-18-madmen-runnin-loose-f.flacf 
+=================== 
+=================== 
+=================== 
+212c4cdeedc2e6639b2b9c441655f866  Disc1\1 Gotta Serve Somebody.flac
+920932e413d39231a294ada265046758  Disc1\10 Do Right To Me Baby.flac
+5da1ca084c7f6349f3d58cb262d1f5a1  Disc1\2 I Believe In You.flac
+ace9ab5a551324f4f535868cedab8392  Disc1\3 When You Gonna Wake Up.flac
+80e608a5d7287b6bdc1cd9b7ef267f48  Disc1\4 When He Returns.flac
+ed29bdaa6ef88cc24bc172b2a81d861d  Disc1\5 Man Gave Names To All The Animals.flac
+b835b72ebfc0384ccd3274bc53f58f01  Disc1\6 Precious Angel.flac
+b4e0b32c351736075f825a71878f1721  Disc1\7 Slow Train.flac
+8bee39702dd5ded247b4bbe45f1595cf  Disc1\8 Covenant Woman.flac
+762669e511ade8a71a52f23867263f03  Disc1\9 Gonna Change My Way Of Thinking.flac
+11cdea37b265c22d441e51fd0e09865f  Disc1\fingerprint.ffp.txt
+5cf68a1592f9cb2f7ae2dbaac2f8d2a6  Disc1\md5sum.md5
+559934e5c9d1136c72e030b70847da1f  Disc2\1 Solid Rock.flac
+c862b0169d86434b1f8319f732ccd12a  Disc2\2 Saving Grace.flac
+fc32d45f4fe044005f94fb3a14effc29  Disc2\3 Saved.flac
+255d86eca5e5f823fdba7d3b93cc985f  Disc2\4 What Can I Do For You_.flac
+8bf6b7c65983467a7677ac95b52ec710  Disc2\5 In The Garden.flac
+cd46c75dba852746a86ca198b1851e38  Disc2\6 Blessed Is The Name.flac
+ba35bd7b75c756a8e3c9f59b9896cfe3  Disc2\7 Pressing On.flac
+73c11aa3420b19c4a9abe7f9f979116b  Disc2\fingerprint.ffp.txt
+b361d75fa3ed9481d3d3677dc41cba2a  Disc2\md5sum.md5
+f94aa8e100d4c41b426cab78a85a11ed  infos.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-18-madmen-runnin-loose-f.flacf\Disc1 
+=================== 
+=================== 
+=================== 
+1 Gotta Serve Somebody.flac:bf5469999368a533585f36a686535ad2
+10 Do Right To Me Baby.flac:8b85181c6c1d67adc32b828f1c534583
+2 I Believe In You.flac:0ef40fdf73c43b8192d5e568e1247634
+3 When You Gonna Wake Up.flac:54e4da280d546ff2cca2767f76235463
+4 When He Returns.flac:8dcfc00ea021bf629fdcda17f3433656
+5 Man Gave Names To All The Animals.flac:cb33161b94f503bab65e699420533cd4
+6 Precious Angel.flac:d5fabfc197a704275afde0d89db69065
+7 Slow Train.flac:282b04eae16d2154029cf079e2cbc40e
+8 Covenant Woman.flac:9d70d0a3abc7c269694a519bb6efa038
+9 Gonna Change My Way Of Thinking.flac:3596df2879ebefa161f15bcd0d83539e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-18-madmen-runnin-loose-f.flacf\Disc2 
+=================== 
+=================== 
+=================== 
+1 Solid Rock.flac:991ee744b654c988af2510f998af2b82
+2 Saving Grace.flac:14185d57dba5e02cca4e3fcea630167d
+3 Saved.flac:8d178644081e0f01209cec564d32d5e2
+4 What Can I Do For You_.flac:3ca5ffa9aebd784455895497ecd12d5d
+5 In The Garden.flac:46eec32fa62b3560086d04df283459b4
+6 Blessed Is The Name.flac:20dc8766e1a42f894cbd43f797b44a6f
+7 Pressing On.flac:701f02d285ed9561b75389c55379d9d0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-18-madmen-runnin-loose-f.flacf\Disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:03.35       74699564 B   ---   --   ---xx   flac  0.4437  1 Gotta Serve Somebody.flac
+     4:48.24       50859692 B   ---   --   ---xx   flac  0.4010  10 Do Right To Me Baby.flac
+     5:07.46       54263036 B   ---   --   ---xx   flac  0.3909  2 I Believe In You.flac
+     6:14.10       65997164 B   ---   --   ---xx   flac  0.4364  3 When You Gonna Wake Up.flac
+     5:22.16       56838476 B   ---   --   ---xx   flac  0.3576  4 When He Returns.flac
+     5:31.60       58529564 B   ---   --   ---xx   flac  0.3937  5 Man Gave Names To All The Animals.flac
+     6:00.36       63588716 B   ---   --   ---xx   flac  0.4207  6 Precious Angel.flac
+     7:17.15       77122124 B   ---   --   ---xx   flac  0.4375  7 Slow Train.flac
+     5:57.05       62986604 B   ---   --   ---xx   flac  0.3761  8 Covenant Woman.flac
+     5:02.56       53404556 B   ---   --   ---xx   flac  0.4440  9 Gonna Change My Way Of Thinking.flac
+    58:25.03      618289496 B                            0.4121  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-18-madmen-runnin-loose-f.flacf\Disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.00       46569644 B   ---   --   ---xx   flac  0.4432  1 Solid Rock.flac
+     4:42.05       49756604 B   ---   --   ---xx   flac  0.3924  2 Saving Grace.flac
+     5:29.66       58190876 B   ---   --   ---xx   flac  0.4427  3 Saved.flac
+     5:54.61       62589116 B   ---   --   ---xx   flac  0.3932  4 What Can I Do For You_.flac
+     8:38.26       91436396 B   ---   --   ---xx   flac  0.4045  5 In The Garden.flac
+     5:38.70       59787884 B   ---   --   ---xx   flac  0.4377  6 Blessed Is The Name.flac
+     7:02.14       74473772 B   ---   --   ---xx   flac  0.4060  7 Pressing On.flac
+    41:50.17      442804292 B                            0.4154  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,28 @@
+6b70a8cd6ba5ef7254feee973b85b9a9  Artwork\s-104b.jpg
+7bedab8af6b266d10a8d223e11009dfa  Artwork\s-104cd.jpg
+3bf7a3680a9736a5048607f87bd53346  Artwork\s-104cd2.jpg
+1cedbf5be2193a10cfd056b9bddbc525  Artwork\s-104f.jpg
+35134a799a45b9b05dde3d005ecc0872  Artwork\s-104ib.jpg
+0c936cc30f96d45cb3eed558014ae4b2  Artwork\s-104l.jpg
+02ee8773d570efe57f71855f73b6e6ba  bd-Spirits of the Ryman (TMR).txt
+404f7d0d6c7c19467e33cb1c8a83186b  bd-Spirits of the Ryman-d1\bd-Spirits of the Ryman-d1.md5
+7fb0e7b04849295dcb1a6c2f96d58cb3  bd-Spirits of the Ryman-d1\Track01.flac
+9204ad33c668d560507d5417df3e2d52  bd-Spirits of the Ryman-d1\Track02.flac
+24b2d2602e6a1577582bffe1d9ab92f6  bd-Spirits of the Ryman-d1\Track03.flac
+d0585d85c9bd18ffe920505d682d3093  bd-Spirits of the Ryman-d1\Track04.flac
+a5bba61b2f6c2266ac5f59bb2147d4cc  bd-Spirits of the Ryman-d1\Track05.flac
+e6cae4e0cf282b7e856b934db8293716  bd-Spirits of the Ryman-d1\Track06.flac
+c5cdbc630b14e577bf38b1f0a9a32aee  bd-Spirits of the Ryman-d1\Track07.flac
+5a2c53e115bc689ed9bed01c67bfc8ff  bd-Spirits of the Ryman-d1\Track08.flac
+eef316c76d9cb87eb0496445b0a86887  bd-Spirits of the Ryman-d1\Track09.flac
+504ed52ffbbf58152037512e529d75ff  bd-Spirits of the Ryman-d2\bd-Spirits of the Ryman-d2.md5
+f2b84ca7ce28c9e4f711add27030b4e7  bd-Spirits of the Ryman-d2\Track01.flac
+9e8eb7e813f88a96e90313ca199cffeb  bd-Spirits of the Ryman-d2\Track02.flac
+d008d2a7deb09421b6c8da3e4c50752d  bd-Spirits of the Ryman-d2\Track03.flac
+1834ca6c55652337aabe385ba9abbfdc  bd-Spirits of the Ryman-d2\Track04.flac
+fea6ad5d9fa1547ca4085b7c2398b71d  bd-Spirits of the Ryman-d2\Track05.flac
+c815167a4cf760c3ed88a0a3eb2fd916  bd-Spirits of the Ryman-d2\Track06.flac
+33a78963082711612a25deb9f43da77b  bd-Spirits of the Ryman-d2\Track07.flac
+5f21b4957f7cf03e3529afbb94d19b13  bd-Spirits of the Ryman-d2\Track08.flac
+74e36c521aa46eab35e402cd2e4edb1a  bd-Spirits of the Ryman-d2\Track09.flac
+f782489849b1d3a468a92fdb16869a7d  Bobsboots review.txt

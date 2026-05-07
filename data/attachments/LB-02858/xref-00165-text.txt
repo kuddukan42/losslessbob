@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== bd05-06-03-MA-LB-2858.txt
+===================
+===================
+===================
+Bob Dylan, 6/3/05, Myrtle Beach, South Carolina, Coastal Federal Field, 2CDR
+
+LB-2858, A recording by M&A, MBHO 603a > Lunatech V-3 > Sony-D100 >, Audio CDs from M&A > me > you, (SHNs created with xACT 1.4b24); bittorrent download 06/05
+
+Disc 1 51:08, 1. Intro 0:34, 2. To Be Alone With You 4:54, 3. Tonight I'll Be Staying Here With You 6:05, 4. Cry A While 6:33, 5. Shelter From The Storm 7:45, 6. Cold Irons Bound 5:35, 7. Most Likely You Go Your Way (And I'll Go Mine) 7:10, 8. Love Sick 5:45, 9. Watching The River Flow 6:46, Disc 2 42:37, 1. Make You Feel My Love 5:25, 2. Honest With Me 6:39, 3. Mr. Tambourine Man 8:18, 4. Summer Days 9:03, (1 second pause during edit), 5. Like A Rolling Stone 7:25, 6. All Along The Watchtower 5:44
+
+Please retain this info file and its LB number as a marker for this lossless set and if you spread it please list it in the description to avoid others getting duplicates
+===================
+===================
+===================
+=== Bob Dylan - Myrtle Beach.md5
+===================
+===================
+===================
+4a30561ade90094da4392b803df766ee *MyrtleFlac1\Track01.flac
+be8cbe844d8ba294841ea9265b8baca7 *MyrtleFlac1\Track02.flac
+c574bfb608650601e5f6fecad2c675b5 *MyrtleFlac1\Track03.flac
+4d1ebf3f82dc46516f102b8cba932cdd *MyrtleFlac1\Track04.flac
+cd8507baff3fc9e1fcb719232d67ff02 *MyrtleFlac1\Track05.flac
+252d0de0517334ba4d8b6e5c87b2988f *MyrtleFlac1\Track06.flac
+781b4feb739900ed5bf3fe593465a801 *MyrtleFlac1\Track07.flac
+e563aae669159fb9dbebc1ec4dd94d51 *MyrtleFlac1\Track09.flac
+62533641acfeeea0ddfe9c4da1c97b6a *MyrtleFlac1\Track08.flac
+955f059b8fab208b6fcdd8da9f6c17b9 *Myrtle.txt
+3b8be4d5e5b84805ee5be1cca79ec486 *MyrtleFlac2\Track02.flac
+43164a43fe9df9f35b44a4671a750c80 *MyrtleFlac2\Track03.flac
+f34fccd7d044d4846243c6d7334af5e6 *MyrtleFlac2\Track04.flac
+057756409414dd5c5c0cfb6c5b4b0c0d *MyrtleFlac2\Track05.flac
+83a4795e14e78712dccd8754f0bd1193 *MyrtleFlac2\Track06.flac
+785705a77c8405d9a827bb068b4ce8b4 *MyrtleFlac2\Track01.flac
+7a61d0a52b49b8ea4935d826f86e6c6b *Myrtle Art\Myrtle%20Back.jpg
+7435c7d08b1aa9d5a062b06e22adc0cc *Myrtle Art\MyrtleJune%203rd%202005%20Front.jpg
+===================
+===================
+===================
+=== Myrtle.txt
+===================
+===================
+===================
+
+Bob Dylan
+Myrtle Beach, South Carolina
+Coastal Federal Field
+
+June 3, 2005
+ 
+
+Cds>EAC>wav>flacfrontend>flac.maketorrent>dime
+
+Disc1
+Intro
+To Be Alone With You 
+Tonight I'll Be Staying Here With You 
+Cry A While 
+Shelter From The Storm 
+Cold Irons Bound 
+Most Likely You Go Your Way (And I'll Go Mine) 
+Love Sick 
+Watching The River Flow 
+
+Disc2
+Make You Feel My Love 
+Honest With Me 
+Mr. Tambourine Man 
+Summer Days 
+Like A Rolling Stone 
+All Along The Watchtower 
+
+
+Artwork Included
+===================
+===================
+===================

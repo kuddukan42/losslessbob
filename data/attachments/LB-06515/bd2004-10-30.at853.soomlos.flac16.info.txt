@@ -1,0 +1,61 @@
+Bob Dylan
+Carthage College
+Tarble Athletic and Recreation Center (TARC)
+Kenosha, Wisconsin
+October 30, 2004
+
+Disc 1:
+01. introduction
+02. Maggie's Farm
+03. The Times They Are A-Changin'
+04. Lonesome Day Blues
+05. Every Grain Of Sand
+06. Tweedle Dee & Tweedle Dum
+07. Just Like Tom Thumb's Blues
+08. It's Alright, Ma (I'm Only Bleeding)
+09. Girl Of The North Country
+10. Floater (Too Much To Ask)
+11. Highway 61 Revisited
+12. A Hard Rain's A-Gonna Fall
+
+Disc 2:
+01. Honest With Me
+02. Ballad Of Hollis Brown
+03. Summer Days
+(encore)
+04. Like A Rolling Stone
+05. band introduction
+06. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel, fiddle
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+center ga floor
+at853's > sp-spsb-1 > denecke ad-20 > sony tcd-d8
+sony tcd-d8 > m-audio mt1 > usb > hdd
+sound forge 9.0 > cd wave > flac
+
+ffp
+bd2004-10-30d1t01.flac:6efa2743226f9327e348f6c3c033a86f
+bd2004-10-30d1t02.flac:515e5f6c3d6e19ccf3b947cfea761b71
+bd2004-10-30d1t03.flac:5de7e86e4752a517bb2cb71d53d8faa2
+bd2004-10-30d1t04.flac:7129389dbcb9f89dd0f0a0622b10a8ae
+bd2004-10-30d1t05.flac:edd5fd889bd44d1368e7ceb810e6eee2
+bd2004-10-30d1t06.flac:a9ea76e851a7048f110036a912501a07
+bd2004-10-30d1t07.flac:f0bb51e1deb354c350848b9fbefcdbc4
+bd2004-10-30d1t08.flac:674e17533347d1526db2c0f6b19767cb
+bd2004-10-30d1t09.flac:39f5e437848cdef57329d50ac73c6ef6
+bd2004-10-30d1t10.flac:ad759154f86596046c094c424def4f6a
+bd2004-10-30d1t11.flac:f9d729070d14ba14ef02e1e2a6333ce9
+bd2004-10-30d1t12.flac:eed03732ef3728795a924c292c88918c
+bd2004-10-30d2t01.flac:868012e4d6e895bfa05479288468e6ea
+bd2004-10-30d2t02.flac:4067ba897bb7fb2512930bbcef6e454f
+bd2004-10-30d2t03.flac:f8b706ce856296c51a02d9e3259f4e4a
+bd2004-10-30d2t04.flac:f06a90a924398e94b44557857b0cb834
+bd2004-10-30d2t05.flac:c9e0bb64b7d3b3f1dac12e36c8383088
+bd2004-10-30d2t06.flac:eebe007589cddc9fc82200063e438c2e

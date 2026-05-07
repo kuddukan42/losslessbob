@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-01-c.flacf 
+=================== 
+=================== 
+=================== 
+d85757d29770ca3d48e633408a0106fc  Artwork\1993-07-01 Barcelona Preboard_Schubert-1.png
+c6616aa5853fc9c150435bf6fe0f8b85  Artwork\1993-07-01 Barcelona Preboard_Schubert-2.png
+2d1c0a2cdd7976fd832d9947b56acf36  Artwork\1993-07-01 Barcelona Preboard_Schubert.pdf
+122b192a3b36069e20be785bac25c6ad  Artwork\1993-07-01 Barcelona Schubert_alternate-1.png
+a786e1b8b6d11d59bc58048f35e23da5  Artwork\1993-07-01 Barcelona Schubert_alternate-2.png
+e24b70e74fb93d0e96fa4cd6cb7a9fc9  Artwork\1993-07-01 Barcelona Schubert_alternate.pdf
+c8524193baa9de2f5b5840de86f779ae  Artwork\bd1993-07-01_barcelona_back.jpg
+f562e290d786246a252bfb26c9673ce8  Artwork\bd1993-07-01_barcelona_front.jpg
+dd9a38fe7b7b5db505983d2ccad9ec89  Disc01\101 Hard Times.flac
+ce3444eaeece048d0f0850711af15db9  Disc01\102 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+366ca38045a8d0a5ceb7f184c5285ba0  Disc01\103 All Along The Watchtower.flac
+5f4e0b020fc3240d82b6c6d86e8552aa  Disc01\104 Just Like A Woman.flac
+64083ab18577bafa96643cb9c84f1341  Disc01\105 Tangled Up In Blue.flac
+d6db8258a38c341a12895bf91b9f8014  Disc01\106 The Man In Me.flac
+3f3024cdac115b0aaccbc6e324ce93a3  Disc01\107 Watching The River Flow.flac
+9af3b5487160e79e561a3a2a97c54ed8  Disc01\108 Little Moses.flac
+554832e61f8b68ec155522c7ed31a657  Disc01\109 Tomorrow Night.flac
+5c66d382f4c65c3d77a9823bbdc3858d  Disc01\1993-07-01rtm+asm_d1_flacs.md5
+2db94f8ec8a13ffdd640734f50ee594b  Disc01\1993-07-01rtm+asm_d1_wav.md5
+3a019cc0ee140811c81a55c3f9d5d795  Disc01\1993-07-01_d1.log.LOG
+7546344fd68093f8bd5c61c198ac72e6  Disc02\1993-07-01rtm+asm_d2_flacs.md5
+bac9cc844faf1fec13bbb7da5ae8b46c  Disc02\1993-07-01rtm+asm_d2_wav.md5
+5a7f3f8c0c7ea1d06a80d4c908d437a2  Disc02\1993-07-01_d2.log.LOG
+dee93f75adc6dbdb0280d4a362c6bbc7  Disc02\201 It's All Over Now, Baby Blue.flac
+6b668230dedb225fba09760bccb0e481  Disc02\202 Mr. Tambourine Man.flac
+94e076d6a86fde2bdefdc64a7d38372a  Disc02\203 Cat's In The Well.flac
+817d177471b4175f030b2ec88f55cdd4  Disc02\204 I And I.flac
+179529e3b5cbb69a4dec9303d2dbf46b  Disc02\205 Maggie's Farm.flac
+c7b4bd01670905dec2bf1d0f2eaf2015  Disc02\206 Man In The Long Black Coat.flac
+d4b4eb3bd73e6ab9fb414b1bffcfb89c  Disc02\207 It Ain't Me, Babe.flac
+78a2a3d4f9b94c547f46e9c1ed011f41  El Pueblo Espanol.txt
+0372b011b53ace06afd34ac780d232b1  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-01-c.flacf\disc01 
+=================== 
+=================== 
+=================== 
+101 hard times.flac:acb326e9faa2adc94aa5dc809a4fd015
+102 stuck inside of mobile with the memphis blues again.flac:1ddae7ef19e1eb166a9a0587eef25842
+103 all along the watchtower.flac:10d39e48476b9054191b841075fa31b5
+104 just like a woman.flac:4e6add51027653d374a516a22b491168
+105 tangled up in blue.flac:247c1234c0fe12b3fba379466ef02668
+106 the man in me.flac:945966a2e423b7a98d2ef7ba7a7e8b80
+107 watching the river flow.flac:caf755fcc340106fbb9342bcd8aa46f6
+108 little moses.flac:44016cf347a19bbd286864ca2d0a414c
+109 tomorrow night.flac:aeffccd0a3b754b4f3010f10c1c41243
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-01-c.flacf\disc02 
+=================== 
+=================== 
+=================== 
+201 it's all over now, baby blue.flac:b6d7483ca0602d40322525eaa5f9b1e0
+202 mr. tambourine man.flac:1083285fba3c1c990d79318570fb642c
+203 cat's in the well.flac:13d6ee4955baf053ae56f4669c260816
+204 i and i.flac:c8891767bd22e03b69724c7e59929b55
+205 maggie's farm.flac:e498c5f86697e0f4a85b3ccd2d2a333b
+206 man in the long black coat.flac:a71ba4b9cfb97d8f8474de923acca9c3
+207 it ain't me, babe.flac:c902d30ee1b6f55dc8aedcb06474a8b8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-01-c.flacf\disc01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.73       56443340 B   ---   --   ---xx   flac  0.5506  101 Hard Times.flac
+     9:02.29       95677052 B   ---   --   ---xx   flac  0.6569  102 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     7:49.27       82795148 B   ---   --   ---xx   flac  0.6538  103 All Along The Watchtower.flac
+     7:41.49       81435692 B   ---   --   ---xx   flac  0.6549  104 Just Like A Woman.flac
+    10:40.11      112921916 B   ---   --   ---xx   flac  0.6719  105 Tangled Up In Blue.flac
+     7:06.01       75148796 B   ---   --   ---xx   flac  0.6237  106 The Man In Me.flac
+     7:18.33       77340860 B   ---   --   ---xx   flac  0.5794  107 Watching The River Flow.flac
+     6:17.05       66514604 B   ---   --   ---xx   flac  0.5269  108 Little Moses.flac
+     4:26.46       47030636 B   ---   --   ---xx   flac  0.5284  109 Tomorrow Night.flac
+    65:41.49      695308044 B                            0.6168  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-01-c.flacf\disc02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:59.74      116421692 B   ---   --   ---xx   flac  0.5833  201 It's All Over Now, Baby Blue.flac
+    11:13.31      118790156 B   ---   --   ---xx   flac  0.5610  202 Mr. Tambourine Man.flac
+     7:28.29       79095452 B   ---   --   ---xx   flac  0.6705  203 Cat's In The Well.flac
+     9:31.01      100726796 B   ---   --   ---xx   flac  0.6625  204 I And I.flac
+     9:43.48      102954140 B   ---   --   ---xx   flac  0.6383  205 Maggie's Farm.flac
+     9:59.30      105734204 B   ---   --   ---xx   flac  0.6068  206 Man In The Long Black Coat.flac
+    12:05.26      127951196 B   ---   --   ---xx   flac  0.5491  207 It Ain't Me, Babe.flac
+    71:01.14      751673636 B                            0.6046  (7 files)
+=================== 
+=================== 
+=================== 

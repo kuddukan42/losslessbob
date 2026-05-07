@@ -1,0 +1,14 @@
+Bob Dylan, 3/23/09, Stockholm, Ericsson Globe, 2CDR
+
+LB-7312, (56min+60min), Source: DPA 4061's > Curch Audio ST-9100 Pre-Amp > Edirol R-09 (@ 24/48k) (Line In), Location: Section A7, Row 12, Transfer: Master WAV > Digital Editing > CD Wave Editor V1.96.1 > FLAC v1.2.0a (Level5) >, Tag and Rename v3.5.238.447 RC1, Editing: Volume boost, fades and remastering in Steinberg WaveLab V5.01b, Resampling: .wav @ 24/48 > Steinberg WaveLab v5.01b (dither with Apogee UV22HR to 16/44.1), Recorded, transfered, mastered & seeded on Dime 2009-03-24 by Jofa, This is the 16-bit version of this recording; bittorrent download 03/09; in 3-way comparison this is a little more echoey, Microtrack LB-7309 is a little more boomy and distant, and romeo LB-7310 is upfront vocals but narrow sounding; background talking d1t3; excellent sound [A-]
+
+drop/cut between cdrs
+
+CD1
+:, 01. Intro [00:59.57], 02. Rainy Day Women #12 & 35 [03:59.57], 03. Lay, Lady, Lay [05:17.12], 04. Tangled Up In Blue [08:39.38], 05. Chimes Of Freedom [07:19.54], 06. High Water (For Charley Patton) [05:59.66], 07. Stuck Inside Of Mobile With The [06:37.19], Memphis Blues Again, 08. Love Sick [05:53.42], 09. Desolation Row [11:01.51], 10. Fade Track [00:10.00], Total: [55:56.00], 
+
+CD2
+:, 01. Fade Track [00:10.00], 02. Rollin' And Tumblin' [05:51.27], 03. Make You Feel My Love [04:21.08], 04. Highway 61 Revisited [06:59.13], 05. One More Cup Of Coffee (Valley Below) [04:13.33], 06. Thunder On The Mountain [06:36.42], 07. Like A Rolling Stone [06:35.53], 08. Encore Break [03:46.19], 09. All Along The Watchtower [05:53.40], 10. Spirit On The Water [06:48.42], 11. Blowin' In The Wind [08:08.47], Total: [59:04.24]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,30 @@
+fb25e5dd4cf086f25ca6ad565da9a6fe *disc 1\disc 1 eac.LOG
+924b341c5af080a8c5e4de76bbdbbab1 *disc 1\Track01.flac
+88f3bb7afcf46c72bd3444dafb8b5e2d *disc 1\Track02.flac
+322a2f7389699a293080a016d4b9ae64 *disc 1\Track03.flac
+337e11afc4f645deb39b563650feec5a *disc 1\Track04.flac
+dd72dfbe2f80a86d1c275142a96184a8 *disc 1\Track05.flac
+190838abe64d51e910fa5b700f617335 *disc 1\Track06.flac
+2e40a4ecfc7a16f02265b350a9243319 *disc 1\Track07.flac
+321b62c5b918c32849dc6f0bade2b684 *disc 1\Track08.flac
+a84b5a9b6681fbcec0f977f04c3d1bb5 *disc 1\Track09.flac
+5289c77217e26ee27e8173eaff42e6d6 *disc 1\Track10.flac
+7f2f79e0784118f4e39f79c413aa4306 *disc 1\Track11.flac
+2e02878fc1a23b3a3441061d66357037 *disc 1\Track12.flac
+5e46c3b07f71d0f6f17e158843fb4746 *disc 1\Track13.flac
+c5016c26c4dcfcc914e889f3a95fa53a *disc 1\Track14.flac
+73781d1e34d1c9970e7ae79a28dc4d0c *disc 2\disc 2 eac.LOG
+1f69ba4f1d8e179269bf39138d2861dd *disc 2\Track01.flac
+454a81d9f58fb8aec90eaa63dc1fcf46 *disc 2\Track02.flac
+e89097bcf234e10746eb3c979c08b977 *disc 2\Track03.flac
+615c12fed7dbd1d5b0311b6bdcee2bf0 *disc 2\Track04.flac
+076cd8e1a5ca3fddda463c5c80b39e31 *disc 2\Track05.flac
+dec794900e9c42ef6456e3570acf7afe *disc 2\Track06.flac
+86ae06d9b473e845e25ac63766fcf80b *disc 2\Track07.flac
+f63f13916e3bc5f392f1e2341bc3b118 *disc 2\Track08.flac
+1bed6017ad8ed1f31531e516454aa286 *disc 2\Track09.flac
+515da15cc61f2c0ad86e763d64cfa158 *disc 2\Track10.flac
+cea2b0fa9d35a23a867a9e124d009e3b *disc 2\Track11.flac
+e006941b3959ee9c3eff7018d315d332 *disc 2\Track12.flac
+6725de34ba275225aaf4113ec8dead44 *disc 2\Track13.flac
+58426cc4be4b1065a4deacc087f15143 *dylan1987-01-30.txt

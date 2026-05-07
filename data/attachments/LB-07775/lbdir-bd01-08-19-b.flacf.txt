@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-08-19-b.flacf 
+=================== 
+=================== 
+=================== 
+26649062a991163e6706bbf85ef41e95  Bob Dylan 2001-08-19 Vail, CO, USA.md5
+929769adbb5ea7981e18b6a9dc619604  info.txt
+531a08cfe82c3021d7127ac37e49260d  Track01.flac
+d3cac1f43cc85f3e69e29f03a5ade186  Track02.flac
+04c4c3790a742417e329e6cd84ca473d  Track03.flac
+53c185d1e39ceb501843f456785cf924  Track04.flac
+570daaf3099e83751b54911d3cdf3ecd  Track05.flac
+879df22b269d691b2421e06d3a8b6494  Track06.flac
+33ad470b82c7277ec7e819492e625f7e  Track07.flac
+60f094c5fdbb850c9650e00bfd2e9b82  Track08.flac
+e72fc2f17dd6fd47fc5fd890f7ab767d  Track09.flac
+528479d585db4a40dda1047065ec874f  Track10.flac
+ea2719a27555f6dc9e43c488a31e0936  Track11.flac
+284bdfda78bc93a0c1fc528ead168cd5  Track12.flac
+a8a6900cf13558692d95290c06e170f3  Track13.flac
+2503f192ad0878cd8393e1bc9af71b85  Track14.flac
+384ee8c5bcbcc024aeb00e9b2a8f92e2  Track15.flac
+3125191ef14ddac0ed93072cb58782d2  Track16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-08-19-b.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:5f2e49cb8a0455f6c3c9dcd2bfb3a709
+Track02.flac:77129fa3869430db9b4b50c28c1e3ff4
+Track03.flac:9eecdf64db39f6c59c8616e62dc9cc5f
+Track04.flac:74d527af01ceb1ba77b2445b9a58457c
+Track05.flac:1a5fde313e9e9529f799740c3370f998
+Track06.flac:c51c285416cfe6fa5306cbc07104a13d
+Track07.flac:24fe7e0a74424e5e33c58e20089b2b86
+Track08.flac:8716c9e261221e9572eb4b6083baa7c2
+Track09.flac:21db59283269ff1262c75448bc46d5be
+Track10.flac:9ceb6750b0e426f13e74667f968093bc
+Track11.flac:3cbfe4079ccd70111fb0fb93e60c4b97
+Track12.flac:f077f90b48a6fd0fb625fc76bbb3bed1
+Track13.flac:cf3904a82b873e3d42c637608ebe4518
+Track14.flac:4d1e1ba132b09483d3d88c549c34c0a7
+Track15.flac:1585a9b7bf244d7b8f430ed9b9fdb2e4
+Track16.flac:af14dd520e966ecc2db007b9ffcf7826
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-19-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.41       33965276 B   ---   --   ---xx   flac  0.6128  Track01.flac
+     3:43.66       39492476 B   ---   --   ---xx   flac  0.5522  Track02.flac
+     5:00.10       52943564 B   ---   --   ---xx   flac  0.5805  Track03.flac
+     5:26.63       57654620 B   ---   --   ---xx   flac  0.5405  Track04.flac
+     5:09.73       54679340 B   ---   --   ---xx   flac  0.6039  Track05.flac
+     5:06.06       53992556 B   ---   --   ---xx   flac  0.5608  Track06.flac
+     6:07.57       64872908 B   ---   --   ---xx   flac  0.6095  Track07.flac
+     6:27.55       68396204 B   ---   --   ---xx   flac  0.5617  Track08.flac
+     7:54.03       83620700 B   ---   --   ---xx   flac  0.5242  Track09.flac
+     6:39.06       70397756 B   ---   --   ---xx   flac  0.5703  Track10.flac
+     6:47.02       71799548 B   ---   --   ---xx   flac  0.5893  Track11.flac
+     5:22.74       56974892 B   ---   --   ---xx   flac  0.4873  Track12.flac
+     4:52.41       51605276 B   ---   --   ---xx   flac  0.6171  Track13.flac
+     7:56.12       83994668 B   ---   --   ---xx   flac  0.5975  Track14.flac
+     5:56.41       62894876 B   ---   --   ---xx   flac  0.5335  Track15.flac
+     7:46.69       82364732 B   ---   --   ---xx   flac  0.5907  Track16.flac
+    93:30.19      989649392 B                            0.5700  (16 files)
+=================== 
+=================== 
+=================== 

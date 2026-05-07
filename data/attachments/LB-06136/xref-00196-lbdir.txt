@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-05-05-b.flacf 
+=================== 
+=================== 
+=================== 
+acffa11df6d11c958e919672a65d0249  bd-1994-05-05_fingerprint.txt
+8436a11df522652a206fb579413426c9  Bristol d1\01 Track01.shn
+899763f1056f28ad90b4fb309e5c532e  Bristol d1\02 Track02.shn
+270a1ab6e82a6d1d38e10ac08f6e4a93  Bristol d1\03 Track03.shn
+e982c73d8b9870916f8545bedca9557d  Bristol d1\04 Track04.shn
+7801150b54c98731eac0ad3898a648c8  Bristol d1\05 Track05.shn
+57c982b69b73d5540ec8879f2cc33b60  Bristol d1\06 Track06.shn
+ad3fc11e6a610bba5fc95c5b1b553289  Bristol d1\07 Track07.shn
+5851cd9acaa95103eaeaec2c79d9be62  Bristol d1\08 Track08.shn
+45172a367fdce346e2e0c34a87840f03  Bristol d1\09 Track09.shn
+840063aaf10d52ec438411b254d17d73  Bristol d1\noname.md5
+39cbdc59d0149883583d9ea3e8af5105  Bristol d1.shntool_len.txt
+d88847a005f351f5f1ab30053a346912  Bristol d2\01 Track01.shn
+861b1f1468ad38d389c35de9b9d49a39  Bristol d2\02 Track02.shn
+1ab4007c72942ca1083bc90bf89e1419  Bristol d2\03 Track03.shn
+ba7c2252b7e507ed5f24ec9760cfb2b9  Bristol d2\04 Track04.shn
+b86632676fe2763784e23268c4e5e095  Bristol d2\05 Track05.shn
+b373ad91638dfc208edf582d79fcc74e  Bristol d2\06 Track06.shn
+6aa6d6c0b771a23ea295537caedc8faf  Bristol d2\Bristol d2.shntool_len.txt
+4bd3f7228cc9bd16a2cab7f863177eca  Bristol d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-05-05-b.flacf\bristol d1 
+=================== 
+=================== 
+=================== 
+e2525f3c06445fc28c8c79f362d0af20  [shntool]  01_track01.wav
+91f2533f2b7a449a072ffb0962444358  [shntool]  02_track02.wav
+876d31d0b4d6ff42c719796445d44016  [shntool]  03_track03.wav
+1c687d2f893103088539cabc9cf8e263  [shntool]  04_track04.wav
+57031aa4888812e415e9387a68fb1e95  [shntool]  05_track05.wav
+93cfa4cb2ffc2a22760366d1cf7a4f3f  [shntool]  06_track06.wav
+1d5339632001173eaba1bc4f59dc13be  [shntool]  07_track07.wav
+5a226e96abfd09cbf0c2dac95529a64c  [shntool]  08_track08.wav
+6e340d9ce25f13118b6e5604920dd818  [shntool]  09_track09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-05-05-b.flacf\bristol d2 
+=================== 
+=================== 
+=================== 
+5027366d5e7470cbfaf9b0888d6a47f5  [shntool]  01_track01.wav
+51c455c34a7f34d5956fe57f06607504  [shntool]  02_track02.wav
+a63f614a329bbbb4bbb3f024461df00b  [shntool]  03_track03.wav
+59a9fa86b12b518f3ba60e76d67e3a2d  [shntool]  04_track04.wav
+0dd1183fc1e6fa589d5582db41bee1e4  [shntool]  05_track05.wav
+829d54af9cb9908baa71207fdfb5bb23  [shntool]  06_track06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-05-05-b.flacf\bristol d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:32.67       79890428 B   ---   --   ---xx    shn  0.5988  01 Track01.shn
+     6:05.01       64388396 B   ---   --   ---xx    shn  0.6079  02 Track02.shn
+     5:47.62       61356668 B   ---   --   ---xx    shn  0.6441  03 Track03.shn
+     9:31.09      100745612 B   ---   --   ---xx    shn  0.5968  04 Track04.shn
+     9:18.59       98570012 B   ---   --   ---xx    shn  0.5896  05 Track05.shn
+     6:19.59       66994412 B   ---   --   ---xx    shn  0.6066  06 Track06.shn
+     5:46.28       61100300 B   ---   --   ---xx    shn  0.4884  07 Track07.shn
+     5:14.42       55488428 B   ---   --   ---xx    shn  0.5367  08 Track08.shn
+     8:18.66       88002476 B   ---   --   ---xx    shn  0.4957  09 Track09.shn
+    63:55.18      676536732 B                            0.5744  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-05-05-b.flacf\bristol d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.31       61812956 B   ---   --   ---xx    shn  0.6514  01 Track01.shn
+     7:54.38       83703020 B   ---   --   ---xx    shn  0.6353  02 Track02.shn
+     5:56.70       62963084 B   ---   --   ---xx    shn  0.6355  03 Track03.shn
+     7:23.36       78229916 B   ---   --   ---xx    shn  0.6339  04 Track04.shn
+     7:15.05       76745804 B   ---   --   ---xx    shn  0.6250  05 Track05.shn
+    10:14.74      108483692 B   ---   --   ---xx    shn  0.5585  06 Track06.shn
+    44:35.29      471938472 B                            0.6179  (6 files)
+=================== 
+=================== 
+=================== 

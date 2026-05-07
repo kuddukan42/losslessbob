@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-10-Holy Grail.flacf 
+=================== 
+=================== 
+=================== 
+060c12e6520a5fc74bd6f97908f08e92  bd1996-11-10.flac Mankato Holy Grail.ffp
+d79c93292ba8976f9976d6810bb4afdd  bd1996-11-10.flac Mankato Holy Grail.md5
+dd93e931b8fd65039e69b0edcd0a1c63  bd1996-11-10.info.r9453.txt
+89cd92e49f98349dc35a7716ba40e76c  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 01).flac
+5aabc9f3fb8042e7f840305be6983384  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 02).flac
+6d882d3209e2c0e6d83166e6dd3eff74  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 03).flac
+38ef896354c0aec1499051752efd13cc  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 04).flac
+09ce5a5fda44d6eb914f6a0165c1b30f  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 05).flac
+d5e90e3a395178f4814ba3fe5405dbce  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 06).flac
+e078ce1adcebb3949c166cc4455adad6  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 07).flac
+d7c92cdddcd7c36e14c80f2dcac67fbf  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 08).flac
+c4e98eb1803ba034d2c5485e02de382c  d1\bd-1996-11-10mankato-HG-FLAC-d1 (Track 09).flac
+2b3b36d97eebf48ddc2687b61e376bcc  d1\d1.shntool.txt
+719bbd0b410445c20d6e4a726a66914d  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 01).flac
+d40616ba98fb1fc22fcdc132d9029617  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 02).flac
+0b432c6e69f87244150146cd40f09b0d  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 03).flac
+c668a64420c8f2205257d2d2bc73d028  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 04).flac
+9b533882b4526cf763f2668af1e58909  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 05).flac
+516d8630374bda89c5cb00be3152d6dc  d2\bd-1996-11-10mankato-HG-FLAC-d2 (Track 06).flac
+8e2dc507328ca2c32575dc3c38bfbe1f  d2\d2.shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-10-Holy Grail.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 01).flac:7defbee9287da4de994095978f6d04fe
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 02).flac:0c32983d4840bfc75c67551897230d21
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 03).flac:366374e76d82428f444c478f21c3310b
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 04).flac:990ba43c3a9095cfc952865b46e2bbda
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 05).flac:4d4ee3ceaa73ad3409e88e1dc4488d0a
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 06).flac:164c3f2c593f399e5eef214657fc65ab
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 07).flac:f3fab16b3cd58fc6fae3b31597193085
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 08).flac:4f68be99b86014e8960dd756973535bf
+bd-1996-11-10mankato-HG-FLAC-d1 (Track 09).flac:5323a444b1da24bd5580bd24fc99b724
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-10-Holy Grail.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd-1996-11-10mankato-HG-FLAC-d2 (Track 01).flac:5be608f2a58552f9657a461af0a79e6e
+bd-1996-11-10mankato-HG-FLAC-d2 (Track 02).flac:4f43ff8d322516670ffbfdf589cc0767
+bd-1996-11-10mankato-HG-FLAC-d2 (Track 03).flac:1cc44464f1fca106115617ecbd5d6069
+bd-1996-11-10mankato-HG-FLAC-d2 (Track 04).flac:bc46b12508880497df41f573ad0a1ac4
+bd-1996-11-10mankato-HG-FLAC-d2 (Track 05).flac:eb2eab1fb109fd6f70975cd07c961a95
+bd-1996-11-10mankato-HG-FLAC-d2 (Track 06).flac:63021ec26d21542e99c7aba0a5eb817e
+=================== 
+=================== 
+=================== 
+=== shntool for: bd96-11-10-Holy Grail.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.05       51697460 B   -b-   --   ---xx   flac  0.6967  bd-1996-11-10mankato-HG-FLAC-d1 (Track 01).flac
+     6:02.71       64023836 B   ---   --   ---xx   flac  0.6367  bd-1996-11-10mankato-HG-FLAC-d1 (Track 02).flac
+     6:13.39       65888972 B   ---   --   ---xx   flac  0.7093  bd-1996-11-10mankato-HG-FLAC-d1 (Track 03).flac
+     6:55.44       73309532 B   ---   --   ---xx   flac  0.6698  bd-1996-11-10mankato-HG-FLAC-d1 (Track 04).flac
+     8:26.39       89350172 B   ---   --   ---xx   flac  0.6718  bd-1996-11-10mankato-HG-FLAC-d1 (Track 05).flac
+     8:16.13       87525020 B   ---   --   ---xx   flac  0.7105  bd-1996-11-10mankato-HG-FLAC-d1 (Track 06).flac
+     9:14.66       97880876 B   ---   --   ---xx   flac  0.6950  bd-1996-11-10mankato-HG-FLAC-d1 (Track 07).flac
+     7:30.14       79412972 B   ---   --   ---xx   flac  0.6242  bd-1996-11-10mankato-HG-FLAC-d1 (Track 08).flac
+     6:37.49       70146056 B   -b-   --   ---xx   flac  0.6206  bd-1996-11-10mankato-HG-FLAC-d1 (Track 09).flac
+    64:10.40      679234896 B                            0.6713  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd96-11-10-Holy Grail.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:24.33       78398892 B   -b-   --   ---xx   flac  0.7088  bd-1996-11-10mankato-HG-FLAC-d2 (Track 01).flac
+     6:25.05       67925804 B   ---   --   ---xx   flac  0.6581  bd-1996-11-10mankato-HG-FLAC-d2 (Track 02).flac
+    10:05.71      106889036 B   ---   --   ---xx   flac  0.6895  bd-1996-11-10mankato-HG-FLAC-d2 (Track 03).flac
+    12:11.11      128974316 B   ---   --   ---xx   flac  0.6701  bd-1996-11-10mankato-HG-FLAC-d2 (Track 04).flac
+    10:29.56      111087356 B   ---   --   ---xx   flac  0.6726  bd-1996-11-10mankato-HG-FLAC-d2 (Track 05).flac
+     5:37.46       59555036 B   ---   --   ---xx   flac  0.6997  bd-1996-11-10mankato-HG-FLAC-d2 (Track 06).flac
+    52:13.72      552830440 B                            0.6816  (6 files)
+=================== 
+=================== 
+=================== 

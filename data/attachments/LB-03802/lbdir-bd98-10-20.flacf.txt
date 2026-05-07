@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-10-20.flacf 
+=================== 
+=================== 
+=================== 
+0fa14aa6217bfbdb82b5b986068f543c  bd98-10-20-LB-3802.txt
+bd57fff1f1fe9a0b1b5ccbc33b08d0a0  Bob Dylan 20 oct 1998 Regina.txt
+a8db33b42c040b5a492f72b4d26760ee  fingerprint.ffp.txt
+21d2b79c56d0f25bd9d5718112538e63  FLACS\bd-1998-10-20d01t01.flac
+9436c9f3e3d28a726f7b6c432d6cac2a  FLACS\bd-1998-10-20d01t02.flac
+d086b010d5a375c39ce432c84031fe18  FLACS\bd-1998-10-20d01t03.flac
+4905bdc9676cdd1cf5a5ed8370d73d00  FLACS\bd-1998-10-20d01t04.flac
+bed577b6be2b5e3e99001189ae241402  FLACS\bd-1998-10-20d01t05.flac
+76bd9dcfa127916ea43202e643c4bf3f  FLACS\bd-1998-10-20d01t06.flac
+f80aeb9b4f398d1de8fa6de06d937efe  FLACS\bd-1998-10-20d01t07.flac
+8432f09ac8e568cd9357b0e06556ffcb  FLACS\bd-1998-10-20d01t08.flac
+f9896d7279a957c26281ea440c726385  FLACS\bd-1998-10-20d01t09.flac
+00d9622de54ffd16dfd34f7a505f7cb0  FLACS\bd-1998-10-20d01t10.flac
+9d4854bc92b3375891ba9cf508a18f58  FLACS\bd-1998-10-20d02t01.flac
+3375756afc89c95e921b18654be769cd  FLACS\bd-1998-10-20d02t02.flac
+4b4cfa17f4d8aa5d53b298e60ededd5f  FLACS\bd-1998-10-20d02t03.flac
+863df9fa292c64d73230afb2158db11e  FLACS\bd-1998-10-20d02t04.flac
+d69b55597c62c20db4f97a60c825787a  FLACS\bd-1998-10-20d02t05.flac
+b444a1fae9b09a488c27e808cc5f5569  FLACS\bd-1998-10-20d02t06.flac
+9a28e88bb8f38f6a9c3ff214ecee0bdb  FLACS\bd-1998-10-20d02t07.flac
+37df650bcd5ae99a3d28a366f7a4e3af  FLACS\bd-1998-10-20d02t08.flac
+6b0135bc3d9173e9b925da09f2fd5cc3  FLACS\bd-1998-10-20d02t09.flac
+b332b621919af70d81e6d7791c54df6a  FLACS\bd-1998-10-20d02t10.flac
+cb70156b3c81ac2381eabc0fce8c9c43  regina_201098.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-20.flacf\FLACS 
+=================== 
+=================== 
+=================== 
+bd-1998-10-20d01t01.flac:8ae77a42e2677e8eb4c6e20db9409a6c
+bd-1998-10-20d01t02.flac:f8fcbfe22179f568a245bb235cabc52e
+bd-1998-10-20d01t03.flac:b4ba245e986559b6358c6ee745a67baa
+bd-1998-10-20d01t04.flac:45288637a177cac4b5c1a4c8787a314d
+bd-1998-10-20d01t05.flac:2637ee7cd035ac6d725504290ea4f405
+bd-1998-10-20d01t06.flac:1f75fef9ab4486b1bc615bbcd4c9af0a
+bd-1998-10-20d01t07.flac:d87d26dd8e735d4efc7dfaf76fc4c176
+bd-1998-10-20d01t08.flac:654ba92bbe7be32059a8267e577a1e47
+bd-1998-10-20d01t09.flac:e3f8176fb9d6fb4d408e07fc28729e37
+bd-1998-10-20d01t10.flac:11dd0961445ec8edf8b8fe8d876a0f3c
+bd-1998-10-20d02t01.flac:c7b6fb0fe1f7646fe992591a91cc8cd4
+bd-1998-10-20d02t02.flac:1e967a3da6ddc2af50eb3614af887e48
+bd-1998-10-20d02t03.flac:93a11315f28f57f3476ca328bad50ec4
+bd-1998-10-20d02t04.flac:d638b3853b1358afd8a6fca075f4335f
+bd-1998-10-20d02t05.flac:6b7bad111dc4f4ae82b91300ae18afef
+bd-1998-10-20d02t06.flac:6cd2f0fe3ad8eaecbb317cff944bb59a
+bd-1998-10-20d02t07.flac:b1c7e2694be3ab9ee144196e2f17058e
+bd-1998-10-20d02t08.flac:e34bbecdc0b9cb5854668199b68d38c4
+bd-1998-10-20d02t09.flac:5a350ca4f7895ec494f37ecb13b5d90a
+bd-1998-10-20d02t10.flac:7427e641f721b9125ae45f8c634909c3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-20.flacf\FLACS 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:17.35        3081164 B   ---   --   ---xx   flac  0.2420  bd-1998-10-20d01t01.flac
+     4:40.03       49399100 B   ---   --   ---xx   flac  0.5115  bd-1998-10-20d01t02.flac
+     5:34.73       59089340 B   ---   --   ---xx   flac  0.4406  bd-1998-10-20d01t03.flac
+     6:33.35       69407564 B   ---   --   ---xx   flac  0.4462  bd-1998-10-20d01t04.flac
+     7:08.06       75513356 B   ---   --   ---xx   flac  0.4124  bd-1998-10-20d01t05.flac
+     6:06.23       64616540 B   ---   --   ---xx   flac  0.4262  bd-1998-10-20d01t06.flac
+     6:57.08       73577660 B   ---   --   ---xx   flac  0.4397  bd-1998-10-20d01t07.flac
+     7:23.61       78288716 B   ---   --   ---xx   flac  0.3941  bd-1998-10-20d01t08.flac
+     4:51.69       51494732 B   ---   --   ---xx   flac  0.3912  bd-1998-10-20d01t09.flac
+     0:55.11        9727916 B   ---   --   ---xx   flac  0.4007  bd-1998-10-20d01t10.flac
+     0:14.22        2521388 B   ---   --   ---xx   flac  0.4226  bd-1998-10-20d02t01.flac
+     7:14.30       76628204 B   ---   --   ---xx   flac  0.4634  bd-1998-10-20d02t02.flac
+     8:02.29       85093052 B   ---   --   ---xx   flac  0.3962  bd-1998-10-20d02t03.flac
+     5:57.11       63000716 B   ---   --   ---xx   flac  0.4587  bd-1998-10-20d02t04.flac
+     7:26.43       78775580 B   ---   --   ---xx   flac  0.4588  bd-1998-10-20d02t05.flac
+     5:39.65       59952524 B   ---   --   ---xx   flac  0.4045  bd-1998-10-20d02t06.flac
+     5:03.02       53453948 B   ---   --   ---xx   flac  0.4779  bd-1998-10-20d02t07.flac
+     5:16.12       55770668 B   ---   --   ---xx   flac  0.4190  bd-1998-10-20d02t08.flac
+     7:10.09       75873212 B   ---   --   ---xx   flac  0.4739  bd-1998-10-20d02t09.flac
+     7:17.48       77199740 B   ---   --   ---xx   flac  0.4180  bd-1998-10-20d02t10.flac
+   109:49.70     1162465120 B                            0.4350  (20 files)
+=================== 
+=================== 
+=================== 

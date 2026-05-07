@@ -1,0 +1,10 @@
+Bob Dylan, 2/18/02, Tupelo, Mississippi, BancorpSouth Center, 2CDR
+
+LB-4088, (70min+64min), AUD DAT Master > DAT clone(s) > CD > EAC > WAV > Soundforge 6.0 > CD Wave > FLAC, I did not harm the sound of the recording in any way., This is not the same recording as LB-331., I received this on audio discs shortly after the show., Originally, this had clicks and microgaps at the track marks [plus scattered pops] so I EAC'd, the discs and eliminated those faults via Soundforge. I hope I found them all !; bittorrent download 10/06; not much above 17k; has lego parapets; background talking on d1t3, d1t6, d1t9, d2t2, d2t5, d2t7; in comparison to LB-331 that one sounds hollow and narrow and not as good but does not have as much crowd; excellent sound [A-]
+
+pop d2t6 4:08
+
+CD 1 [69:32.26], 01 I Am The Man, Thomas [03:58.46], 02 Mr. Tambourine Man [06:30.14], 03 It's Alright, Ma (I'm Only Bleeding) [06:49.11], 04 Searching For A Soldier's Grave [03:57.09], 05 Tweedle Dee & Tweedle Dum [05:00.73], 06 Just Like A Woman [08:36.09], 07 Lonesome Day Blues [07:38.15], 08 High Water (For Charley Patton) [06:51.24], 09 Don't Think Twice, It's All Right [06:10.39], 10 Masters Of War [05:04.14], 11 Tangled Up In Blue [08:55.72], CD 2 [63:58.56], 01 Summer Days [05:51.53], 02 Sugar Baby [07:52.17], 03 The Wicked Messenger [05:18.33], 04 Like A Rolling Stone [10:17.63], 05 Love Sick [06:02.53], 06 Honest With Me [06:42.24], 07 Forever Young [08:09.25], 08 All Along The Watchtower [07:13.13], 09 Blowin' In The Wind [06:31.00]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

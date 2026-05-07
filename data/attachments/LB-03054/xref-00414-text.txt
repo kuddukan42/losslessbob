@@ -1,0 +1,97 @@
+===================
+===================
+===================
+=== 1996-04-14 Palace Theater, New Haven, Connecticut, USA.txt
+===================
+===================
+===================
+Palace Theater
+New Haven, Connecticut
+April 14, 1996
+
+01. Crash On The Levee (Down In The Flood) [04:55]
+02. If You See Her, Say Hello [06:03]
+03. All Along The Watchtower [06:26]
+04. Shelter From The Storm [08:36]
+05. Just Like Tom Thumb's Blues [07:31]
+06. Silvio (Bob Dylan & Robert Hunter) [07:39]
+07. Mr. Tambourine Man [08:01]
+08. Masters Of War [04:38]
+09. To Ramona [06:55]
+Total time: [60:48]
+
+10. Maggie's Farm [07:10]
+11. This Wheel's On Fire (Bob Dylan/Rick Danko) [06:42]
+12. Highway 61 Revisited [08:14]
+13. Alabama Getaway (Robert Hunter/Jerry Garcia) [05:15]
+14. It Ain't Me, Babe [10:16]
+15. Rainy Day Women # 12 & 35 [06:57]
+Total time: [44:37]
+
+Concert # 759 of The Never-Ending Tour
+Second concert of the 1996 US and Canada Spring Tour
+Third 1996 concert
+
+Concert # 303 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+7-9, 14 acoustic with the band
+6, 11, 13 John Jackson, Bucky Baxter (backup vocals)
+1, 2, 11, 14 Bob Dylan (harmonica)
+
+8 new songs (53%) compared to previous concert
+8 new songs for this tour
+
+Stereo audience recording, 110 minutes
+===================
+===================
+===================
+=== bd1996.04.14 Palace Theater, New Haven, CT.ffp
+===================
+===================
+===================
+01 Crash on the levee (Down in the flood).flac:e2c848c9fe90a8d6407de924b984bd39
+02 If you see her, say hello.flac:de9723cb2821f76173134ca79a593ff5
+03 All along the watchtower.flac:3598bade3cf3ea8a597318bb4f39003e
+04 Shelter from the storm.flac:67b238040ec5446ba146aecfe0e0b1ab
+05 Just like Tom Thumb's blues.flac:016960a43d3f6f15c844a5abb1e03095
+06 Silvio.flac:6f4afd9d17cfe832ce436fb233771238
+07 Mr. Tambourine man.flac:709ec2f78bbad411fe61f93e4f424179
+08 Masters of war.flac:541cb779d11354bb5d299d539eb48b50
+09 To Ramona.flac:a8224daa7875b4fb9eff9fc1b6859946
+10 Maggie's farm.flac:462c30e45aec721e07319a7e68fcbe33
+11 This wheel's on fire.flac:cc88358ac37b23e3f9b17969d5c365a9
+12 Highway 61 revisited.flac:ad3fb185e803e4888472b6c83050350c
+13 Alabama getaway.flac:7e80e12ec9668bcc56a3a1a960b12a75
+14 It ain't me, babe.flac:555a24372865584b53a9249dca28d57d
+15 Rainy day women #12 & 35.flac:9475556a15afae7ea35eb2231f7b3053
+===================
+===================
+===================
+=== bd1996.04.14 Palace Theater, New Haven, CT.md5
+===================
+===================
+===================
+51a3dd8ef5583c27a01f8787cff865b5 *01 Crash on the levee (Down in the flood).flac
+a200f029b7f98b4b65728e180e69a76c *02 If you see her, say hello.flac
+2e4b2955af71f52253aad062750c33b7 *03 All along the watchtower.flac
+d30def9f08430318328e44b15cb62f59 *04 Shelter from the storm.flac
+612a7a1d3b50684672b34c570e26e8f8 *05 Just like Tom Thumb's blues.flac
+1aae6f43b0c9e4c44031153b0be58937 *06 Silvio.flac
+858e61ae3a723803d9caac4f1018bd41 *07 Mr. Tambourine man.flac
+96871a1b008514f4bae3eb03d38154b0 *08 Masters of war.flac
+5edabc0c177da3c8bee95f2b3933aae7 *09 To Ramona.flac
+1e0730eb739edeb5b0981903162b4cef *10 Maggie's farm.flac
+d9ee3b54bcbcf286994d4e208b88c8f0 *11 This wheel's on fire.flac
+91e6c5c7ea79a7201ae5999ecafc4d13 *12 Highway 61 revisited.flac
+37bfb668e21ec5f9221e33519d627c04 *13 Alabama getaway.flac
+ec1c2915ccffbdc9f99dd13bc604b940 *14 It ain't me, babe.flac
+d97e5a489e7936465d406d4da8ec212d *15 Rainy day women #12 & 35.flac
+c1d9568e8d416327af8a0bbafa8f78d0 *1996-04-14 Palace Theater, New Haven, Connecticut, USA.doc
+===================
+===================
+===================

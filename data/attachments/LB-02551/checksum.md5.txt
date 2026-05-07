@@ -1,0 +1,14 @@
+b6218128d63146bf405d8c1933172f54 *bdVegasD2T1.shn
+85d91fe3f0d709f7a1220420773123be *bdVegasD1T11.shn
+01f6cd17e11d643860a63fec35edc52c *bdVegasD1T5.shn
+0659b9b557baac1eb9a5a76c44d227c7 *bdVegasD2T2.shn
+dc9be6fd00ab7bf6cfa50adf05937120 *bdVegasD1T12.shn
+e45601aa2415f0ed46fe490ecc766355 *bdVegasD1T9.shn
+65c88bd688185c6160a7e4bb0bed49c5 *bdVegasD1T8.shn
+5a8e318b57ff0d41c7a3847a1e333602 *bdVegasD1T10.shn
+ffcce04ae1a2f56fcaadbc387fea176c *bdVegasD1T4.shn
+004dcd8ea28fe6c66463c20c65060d9d *bdVegasD1T2.shn
+854dfb190814c7d8084980c75d91cd57 *bdVegasD1T3.shn
+43875531b347bbf6e4fe785da1182686 *bdVegasD1T7.shn
+3b0998add027b867192fe0b971d6a585 *bdVegasD1T6.shn
+ef8ada6c9edaa1c2501fd10e74e8a58a *bdVegasD1T1.shn

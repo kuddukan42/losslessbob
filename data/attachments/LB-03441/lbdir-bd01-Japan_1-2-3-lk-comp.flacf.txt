@@ -1,0 +1,237 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-Japan_1-2-3-lk-comp.flacf 
+=================== 
+=================== 
+=================== 
+772b79fc08957331d1f010d276c78e70  bd01-Japan_1-2-3-lk-comp-LB-3441.txt
+0155a688b589dba0690f3f92a92f7fdb  bd2001_Japan_1-2-3.txt
+15751b264230ca0f3136f8b54cb7b245  D1\D1.md5
+e118d248d5599a4fae7d3bc8272dd42b  D1\Track01.flac
+edc70799381e09ae55e04e992fd3c12a  D1\Track02.flac
+a4d45cd90400b1951e3e4d51139ea9ab  D1\Track03.flac
+18ffe162341d84787ef98dec417f0bf8  D1\Track04.flac
+42fa44c6019ff12b184669c174005b37  D1\Track05.flac
+6a5ebb71fe5c149c8191dfbab5ca2796  D1\Track06.flac
+4d08f6f14b95119adb8de2dbbf3f0f9f  D1\Track07.flac
+51cfcf2a1a66ab7052b85a89be99ef6f  D1\Track08.flac
+c3114c158ece7010a6f504b5a2f365ab  D1\Track09.flac
+61c75334416f821e8e6c0bbb43c02401  D1\Track10.flac
+ca00ef270f04fad611e625fc2347a674  D1\Track11.flac
+d2cafb6efc089444d5b075302a8f3da0  D1\Track12.flac
+6c781e309d2f9bb3d3301609389b53c4  D1\Track13.flac
+c7fa3a490e67b9622ad1c9a09fac58c8  D1\Track14.flac
+4a2d9e96719948bfea403547df78c271  D1\Track15.flac
+41f5a550fb99e62923cf3d83226b807a  D2\D2.md5
+169bced96a36401ddf9c7d44236a0ac9  D2\Track01.flac
+9f3dd8a442c55e1b3117757c2f612a68  D2\Track02.flac
+9ec08e1681f66e46f95f4bc67d76693e  D2\Track03.flac
+7d7348c22aaef086c50b903e8029de6b  D2\Track04.flac
+9c128cc06864ddaba79540328ac7cf7e  D2\Track05.flac
+c9a85766bcf6697420b0659146efbc4c  D2\Track06.flac
+0da9e2cec5477167003235db3668580d  D2\Track07.flac
+2024f41af3c6356886fd5811c4972146  D2\Track08.flac
+46767a93a2d8e92dc50b087f369a297e  D2\Track09.flac
+55972f24b9bb8c70b5fe3d5d55181dbd  D2\Track10.flac
+2527170aa3904957fa5b55806d3a640a  D2\Track11.flac
+48c88777153916a780c337a9ec3bd673  D3\D3.md5
+ef83916ad09c33c4164980d5148faf3a  D3\Track01.flac
+c2bf8596e319f3c4c77d027f76d8eda3  D3\Track02.flac
+4612077023fc50fcdd1649966ba1cb7f  D3\Track03.flac
+86309ae31c472fcbef4875be622fae49  D3\Track04.flac
+ccd1ec93673c4dc7f68bfdc8f7061f24  D3\Track05.flac
+13b0d40de01b66dc24b6d545c0adc449  D3\Track06.flac
+6c1e9108a913a3ca44f642a92df4bb92  D3\Track07.flac
+6af815128196b385eed0a8849a911f63  D3\Track08.flac
+e051d64e62a27ab468d499f70df4e5c2  D3\Track09.flac
+0456899d5326ef6c8ae43c4183fa4c28  D3\Track10.flac
+e339ed82725b05bdc2a0526b1e570f0c  D3\Track11.flac
+fdb2b066ce6792eda3a9acb73d76042c  D3\Track12.flac
+75d7ac6a9de489fde47dc601edc37063  D3\Track13.flac
+b75a9619ee9d6e14e6c6b3e82b152b01  D3\Track14.flac
+c47f77b4b513b5ab138899d981d9d68b  D4\D4.md5
+50c4499ec5282f965729e5afd373ad4a  D4\Track01.flac
+a4968f8e95d709ae3063403da95fe560  D4\Track02.flac
+d2c9ae760b0c0e119b8af8db4229ed1d  D4\Track03.flac
+899de0ecd1950cebc92dab3539c139ef  D4\Track04.flac
+55cbd2f8eb19cda483f689b6160514a4  D4\Track05.flac
+e6177c20beedc3adc9615364d3535159  D4\Track06.flac
+545fd4ff767f833730b4a7fece64e192  D4\Track07.flac
+baafa46b75140b99388c5f2a7a611f8b  D4\Track08.flac
+2c89cf1d15154c1e93af1d3054b6a6bc  D4\Track09.flac
+f2e6f5626da6e72110efc2705a0a20b9  D4\Track10.flac
+4e5c36dec94d5dfb47535ae79140e55f  D4\Track11.flac
+51cee32abd8a573b124a0f94f98b7827  D4\Track12.flac
+ba72e409ebc77d652fc2b2d5a07fe7d3  Notes.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-Japan_1-2-3-lk-comp.flacf\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:101b57e604f67e8129f0206b86f6f626
+Track02.flac:1bedd865a73b20644e0492bae37a3fc4
+Track03.flac:7406a7711240ba85f8ff5f324048134f
+Track04.flac:dcc0c80a3d725aa1a72a3ea9be1b6801
+Track05.flac:6b619e1cd62e47fd44b801b9b22fc131
+Track06.flac:7cd8c085e465e08c80c8c5474479465c
+Track07.flac:1576f4c8aeda8d62076d48e56c0510b3
+Track08.flac:5da44b6464899742c9c630182c359547
+Track09.flac:8531b58b2a326e857f51d7ebacd071b2
+Track10.flac:bea62f47dfbebcd157d1bf20d6ec2ab4
+Track11.flac:57eb923d581e814ae0da12452d231b11
+Track12.flac:8d1ecc0067a2e062f2e1d271f64b3914
+Track13.flac:edaeb7b1dbaeb3ac28cbf9838c1a1acb
+Track14.flac:e17f0b1619763ee7179fcef48b06306a
+Track15.flac:f5523f8492464c5790b152519b84814d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-Japan_1-2-3-lk-comp.flacf\D3 
+=================== 
+=================== 
+=================== 
+Track01.flac:4ae1f21c5fb3cabf6910e774cc4a6b86
+Track02.flac:d301b14faa593bc686e3395ef41a398b
+Track03.flac:147fec4533554667ca0e9459815d4d0b
+Track04.flac:fa849d449beae887a0fe8cbacbcb91f0
+Track05.flac:5a5079ff2f0876213bf9995bd505ffda
+Track06.flac:90990a4bff7d89642c2b8189c9abaf06
+Track07.flac:6d5ebe1120cb5c4ddb23961fb9f10db0
+Track08.flac:94ed4e88c68689a054b1b3821b3a91cd
+Track09.flac:0a1568c54e2d828fb289d7a4e50d30c2
+Track10.flac:1d5570bfa863d3a902facd4bb4e08ee0
+Track11.flac:7711c2057dd1637380dd8a71701da31f
+Track12.flac:4d4649e541a83db3c4b5c412cfdd2d38
+Track13.flac:5e22c1b822652a8b3663bdc78a112291
+Track14.flac:dd070e035cab6b3d3c3873f6b21085da
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-Japan_1-2-3-lk-comp.flacf\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:1039edbae6f6414b3325adee4d08a63c
+Track02.flac:c5542874f38ff2c4f8959e20b765c16b
+Track03.flac:de2f733faee1a1019ef102e5d1c1e41f
+Track04.flac:1cc196169f4b2e90a77e5b8f246d64f3
+Track05.flac:44ab6e036508daf8a7afa1821287848c
+Track06.flac:552045b37c126872fbec6f0dcd2b58c6
+Track07.flac:8f21e578c335f81ce5c65470218298da
+Track08.flac:10782a0562cfb5d33cc179b3d1e34e5a
+Track09.flac:47187c416ae3e916267843f55bf1e1bf
+Track10.flac:b9d2f44ffac1bcffa3e1452fe494d0f5
+Track11.flac:85b2af403781ff0a3d574c6c01f566bb
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-Japan_1-2-3-lk-comp.flacf\D4 
+=================== 
+=================== 
+=================== 
+Track01.flac:144bc05510f7f24394c3ec00827ce638
+Track02.flac:633943c8a1cfd4eeb90e064c7c32ef92
+Track03.flac:bedb88065d8e9b858d80b4b010d7e402
+Track04.flac:1c8d78de8fc1ab6329075b7011ba5bbc
+Track05.flac:dc121932a1989505eb09c4f5b7282329
+Track06.flac:6fadefeeec5adebd89d56cc7b5e9d76c
+Track07.flac:779d4101e3983d636bc16de3e028195e
+Track08.flac:edd6a2774f45e6b15e5ea9d6a047562d
+Track09.flac:56bd680f9c927bafca43d9c719235265
+Track10.flac:aa5cfca29bbbbbc25a221afcb00bcce8
+Track11.flac:1733d58af885a5b72002678452491893
+Track12.flac:68ee1ddff7744404f659c5f5cc95777e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-Japan_1-2-3-lk-comp.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.59       46002812 B   ---   --   ---xx   flac  0.5067  Track01.flac
+     2:45.63       29254220 B   ---   --   ---xx   flac  0.5137  Track02.flac
+     2:43.45       28859084 B   ---   --   ---xx   flac  0.5341  Track03.flac
+     4:07.48       43683740 B   ---   --   ---xx   flac  0.3936  Track04.flac
+     6:26.04       68099852 B   ---   --   ---xx   flac  0.4679  Track05.flac
+     6:10.38       65357420 B   ---   --   ---xx   flac  0.5743  Track06.flac
+     6:40.66       70715276 B   ---   --   ---xx   flac  0.5591  Track07.flac
+     5:21.20       56671484 B   ---   --   ---xx   flac  0.6182  Track08.flac
+     5:26.73       57678140 B   ---   --   ---xx   flac  0.5451  Track09.flac
+     6:29.16       68657276 B   ---   --   ---xx   flac  0.5070  Track10.flac
+     5:10.70       54848684 B   ---   --   ---xx   flac  0.5338  Track11.flac
+     6:55.34       73286012 B   ---   --   ---xx   flac  0.5696  Track12.flac
+     4:35.12       48538268 B   ---   --   ---xx   flac  0.6043  Track13.flac
+     4:49.52       51101948 B   ---   --   ---xx   flac  0.4818  Track14.flac
+     4:37.09       48884012 B   ---   --   ---xx   flac  0.5152  Track15.flac
+    76:41.09      811638228 B                            0.5314  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-Japan_1-2-3-lk-comp.flacf\D3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:50.01       29990396 B   ---   --   ---xx   flac  0.5482  Track01.flac
+     8:19.74       88197692 B   ---   --   ---xx   flac  0.5122  Track02.flac
+     5:54.69       62607932 B   ---   --   ---xx   flac  0.5169  Track03.flac
+     6:44.06       71279756 B   ---   --   ---xx   flac  0.5568  Track04.flac
+     3:47.02       40047548 B   ---   --   ---xx   flac  0.5738  Track05.flac
+     4:10.22       44151788 B   ---   --   ---xx   flac  0.4743  Track06.flac
+     5:47.67       61368428 B   ---   --   ---xx   flac  0.4219  Track07.flac
+     7:07.21       75372236 B   ---   --   ---xx   flac  0.4585  Track08.flac
+     5:49.15       61598924 B   ---   --   ---xx   flac  0.4383  Track09.flac
+     4:21.10       46063964 B   ---   --   ---xx   flac  0.3828  Track10.flac
+     7:24.67       78479228 B   ---   --   ---xx   flac  0.4906  Track11.flac
+     6:29.73       68791340 B   ---   --   ---xx   flac  0.5517  Track12.flac
+     4:18.52       45633548 B   ---   --   ---xx   flac  0.5964  Track13.flac
+     4:28.16       47312876 B   ---   --   ---xx   flac  0.5804  Track14.flac
+    77:33.45      820895656 B                            0.5041  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-Japan_1-2-3-lk-comp.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:08.65       86236124 B   ---   --   ---xx   flac  0.5039  Track01.flac
+     7:05.23       75024140 B   ---   --   ---xx   flac  0.5108  Track02.flac
+     6:38.71       70374236 B   ---   --   ---xx   flac  0.5356  Track03.flac
+     8:23.02       88733948 B   ---   --   ---xx   flac  0.5678  Track04.flac
+     3:52.57       41058908 B   ---   --   ---xx   flac  0.5371  Track05.flac
+     5:09.26       54568796 B   ---   --   ---xx   flac  0.5390  Track06.flac
+     5:11.08       54879260 B   ---   --   ---xx   flac  0.5617  Track07.flac
+     5:45.13       60888620 B   ---   --   ---xx   flac  0.5505  Track08.flac
+     6:25.02       67918748 B   ---   --   ---xx   flac  0.5188  Track09.flac
+     9:26.35       99924764 B   ---   --   ---xx   flac  0.6006  Track10.flac
+     6:02.11       63882716 B   ---   --   ---xx   flac  0.6019  Track11.flac
+    72:08.13      763490260 B                            0.5493  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-Japan_1-2-3-lk-comp.flacf\D4 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.52       77209148 B   ---   --   ---xx   flac  0.5115  Track01.flac
+     5:53.25       62328044 B   ---   --   ---xx   flac  0.5095  Track02.flac
+     7:49.56       82863356 B   ---   --   ---xx   flac  0.4728  Track03.flac
+     6:47.60       71935964 B   ---   --   ---xx   flac  0.5379  Track04.flac
+     6:05.56       64517756 B   ---   --   ---xx   flac  0.4536  Track05.flac
+     5:33.73       58912940 B   ---   --   ---xx   flac  0.5176  Track06.flac
+     5:26.15       57541724 B   ---   --   ---xx   flac  0.5769  Track07.flac
+     6:23.35       67643564 B   ---   --   ---xx   flac  0.5454  Track08.flac
+     4:37.26       48923996 B   ---   --   ---xx   flac  0.6202  Track09.flac
+     8:53.37       94108268 B   ---   --   ---xx   flac  0.4283  Track10.flac
+     5:27.38       57772220 B   ---   --   ---xx   flac  0.5070  Track11.flac
+     6:16.20       66373484 B   ---   --   ---xx   flac  0.5535  Track12.flac
+    76:32.43      810130464 B                            0.5131  (12 files)
+=================== 
+=================== 
+=================== 

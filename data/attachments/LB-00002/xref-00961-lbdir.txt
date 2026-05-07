@@ -1,0 +1,107 @@
+===================
+===================
+===================
+=== md5 for: bd00-07-28-b.flacf
+===================
+===================
+===================
+800822852f99415e1a0cb29b860263a1 *dylan-1\Track01.flac
+dc915ee43e0a6f554aad23567bf7087d *dylan-1\Track02.flac
+ab52a8723aff909d258d9f6014665761 *dylan-1\Track03.flac
+ee1ebe7f1cc52f70d560f988b07e441c *dylan-1\Track04.flac
+5e6ff6e8c5f4d11077cab60bec9a6f39 *dylan-1\Track05.flac
+7a2d6266611b4dc951a4b6dfc7e9aa52 *dylan-1\Track06.flac
+2863941aa9dd9b6153db2c9561368d71 *dylan-1\Track07.flac
+e4eca63122ef68359e09487cc15de605 *dylan-1\Track08.flac
+c49894fb8571640680e277a443886ec8 *dylan-1\Track09.flac
+e049d7920052a9230b3348ac19c05b4e *dylan-1\Track10.flac
+e7911bfcac06f1a7cca53de90a4b99e2 *dylan-1\Track11.flac
+d9b6cb61efc1fe576c6722ff91db89f9 *dylan-1\Track12.flac
+20f1fa945716462d2ae78276b5405244 *dylan-2\Track01.flac
+bd48bff9103457f5c73521f2be491c20 *dylan-2\Track02.flac
+0bccb01b0f2674cf936e2155568d7b5d *dylan-2\Track03.flac
+d995c5671286f088ee4c6876583b55ba *dylan-2\Track04.flac
+742b8c1c3424128a05131b606cd8f862 *dylan-2\Track05.flac
+5ac27a41e53a0c0a43cb051259491077 *dylan-2\Track06.flac
+35be2fc0b19a7b1c925eb0fead3de8c4 *dylan-2\Track07.flac
+2e26fc3e498d0153f92b917b6e6a5e3f *dylan-2\Track08.flac
+d3064609023ae014e88ba23212cb326f *dylan-2\Track09.flac
+1bda951be456816986130981c4e975d0 *dylan-2\Track10.flac
+9df9e3af431e8160976ade0540ed5424 *dylan-2\Track11.flac
+5d9ac76f33db59a539ca53367b79f188 *Fingerprints\Bob Dylan and Phil Lesh.md5
+a9392aca83718ec49a75bc10aa2f0f1d *Textfile.txt
+b424bd2f6bf348220331b7870baaa832 *~uTorrentPartFile_4B667E13.dat
+===================
+===================
+===================
+=== ffp for: bd00-07-28-b.flacf
+===================
+===================
+===================
+dylan-1\Track01.flac:36a687d639ffa3f6fc9c6d3f4f7a2473
+dylan-1\Track02.flac:3b34a96780ca136a7afa964a7ef34f5b
+dylan-1\Track03.flac:c70ce762d24ed06a9aa4ced78aee7cbe
+dylan-1\Track04.flac:dc7dd3eafe45936230a7b23b0d15739a
+dylan-1\Track05.flac:939501286631745ec816faa5a416af6e
+dylan-1\Track06.flac:bac46161f6eb535f9a7fa9be923ff942
+dylan-1\Track07.flac:c4be882fe9667c3e5315532f95b98aad
+dylan-1\Track08.flac:87f4997beb3469d9dfcf05b8998135dd
+dylan-1\Track09.flac:625ae5e23a799b0f1b8a37b21168711b
+dylan-1\Track10.flac:e2d7dad5fd576c5d8b55387140a52acf
+dylan-1\Track11.flac:99088ae4aa63b918dcb2943c926aba76
+dylan-1\Track12.flac:9612ed4c0ef416f6335b2f111d6ce704
+dylan-2\Track01.flac:f32d2adb72c9caf2b506633faadc4061
+dylan-2\Track02.flac:f8479aad9b54e86fe7915eca6c689f89
+dylan-2\Track03.flac:a2157e3693fc13aa8250fdbb885d9eb0
+dylan-2\Track04.flac:012cd514efe1e44f7f439d61eeeaab46
+dylan-2\Track05.flac:92caabe26d91add8031757b09b404dcb
+dylan-2\Track06.flac:3e21a24f1dda70f93075c7198c7187aa
+dylan-2\Track07.flac:0670ff0262869b836be462b1d95356c8
+dylan-2\Track08.flac:508a39de7c93030f7e4113eea32d6ab8
+dylan-2\Track09.flac:670e9fa24e647a3b97e4202e4aa4e640
+dylan-2\Track10.flac:03052f491a77244cdc959c12e6ab9cf9
+dylan-2\Track11.flac:7b1f05e20def43c25727699860d9a45a
+===================
+===================
+===================
+=== shntool len for: bd00-07-28-b.flacf\dylan-1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:14.21       34271036 B   ---   --   ---xx   flac  0.5708  Track01.flac
+     3:54.06       41291756 B   ---   --   ---xx   flac  0.4753  Track02.flac
+     9:31.72      100893788 B   ---   --   ---xx   flac  0.5481  Track03.flac
+     5:31.69       58550732 B   ---   --   ---xx   flac  0.5226  Track04.flac
+     7:53.24       83493692 B   ---   --   ---xx   flac  0.6003  Track05.flac
+     3:14.19       34266332 B   ---   --   ---xx   flac  0.4878  Track06.flac
+     2:37.72       27864188 B   ---   --   ---xx   flac  0.5621  Track07.flac
+     5:00.30       52990604 B   ---   --   ---xx   flac  0.5372  Track08.flac
+     8:24.39       88997372 B   ---   --   ---xx   flac  0.5857  Track09.flac
+     4:55.60       52179164 B   ---   --   ---xx   flac  0.5880  Track10.flac
+     6:39.35       70465964 B   ---   --   ---xx   flac  0.5692  Track11.flac
+     6:15.07       66166508 B   ---   --   ---xx   flac  0.5891  Track12.flac
+    67:13.04      711431136 B                            0.5594  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd00-07-28-b.flacf\dylan-2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:36.05       59282204 B   ---   --   ---xx   flac  0.5584  Track01.flac
+     6:53.38       72942620 B   ---   --   ---xx   flac  0.5758  Track02.flac
+     7:21.22       77844188 B   ---   --   ---xx   flac  0.5252  Track03.flac
+     5:31.17       58428428 B   ---   --   ---xx   flac  0.5953  Track04.flac
+     5:03.02       53453948 B   ---   --   ---xx   flac  0.5116  Track05.flac
+     5:22.04       56810252 B   ---   --   ---xx   flac  0.4907  Track06.flac
+     7:01.46       74372636 B   ---   --   ---xx   flac  0.5274  Track07.flac
+     6:31.02       68977148 B   ---   --   ---xx   flac  0.5567  Track08.flac
+     3:57.17       41846828 B   ---   --   ---xx   flac  0.5099  Track09.flac
+     4:08.40       43841324 B   ---   --   ---xx   flac  0.5743  Track10.flac
+     6:06.28       64628300 B   ---   --   ---xx   flac  0.5045  Track11.flac
+    63:31.71      672427876 B                            0.5394  (11 files)
+===================
+===================
+===================

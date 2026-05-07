@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-02-24-b.flacf 
+=================== 
+=================== 
+=================== 
+8102cf95f577506523e114c70d5c8d57  Bob Dylan 2003.02.24 Wellington,New Zealand.md5
+953cb3718bc5a9e83d2ecb0f550fb1b5  D_1\Track01.flac
+13d53798c8e2a8f27fad32dea3512c24  D_1\Track02.flac
+53011c1359791bb76a6da07ce4d4fee7  D_1\Track03.flac
+9ed6cd88b7fbe82b5507fcdf020b7f2c  D_1\Track04.flac
+cf1055d7486d7e321a588301bdca77e9  D_1\Track05.flac
+42c4773e646357e55eca93547a017b17  D_1\Track06.flac
+87e341dece5ef6b5821bf51f570f87ec  D_1\Track07.flac
+81bbe843e0d71fab49712081886d87f5  D_1\Track08.flac
+b02f5b061f6062dfed7915daba5ad9cb  D_1\Track09.flac
+b8d6dca8716c49c8b8682fa7f6c08c79  D_1\Track10.flac
+42b59ef0120d042402281f6634daf6be  D_1\Track11.flac
+04889e30f157aadeb9a8465c8b493c02  D_2\Track01.flac
+131794e258d9717571d11d0b1ddd8d10  D_2\Track02.flac
+0d6d6302e40fd280b149eed789672748  D_2\Track03.flac
+ca67303eec6ec2a524785065b308d7a3  D_2\Track04.flac
+883774716ac814fb4d5b122ddbbc0940  D_2\Track05.flac
+77fa14844511f6a469b0372615eb7485  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-02-24-b.flacf\d_1 
+=================== 
+=================== 
+=================== 
+track01.flac:07b37ad6701fed9a198d339409d2d64f
+track02.flac:64f2fd8a6bd3b64a0f210b241a9c93a0
+track03.flac:bb79d35a0a5cb2c7d89cd1df19ab7bf9
+track04.flac:3f63abb4ce5c133c7f3ff99a73635a3b
+track05.flac:3e86e91e92955d448fc7f8f64eca61cd
+track06.flac:f9c1f6bb764245b5d76de28ee19ad0c2
+track07.flac:67ec11877c6ddcd21a220cdd449f85c8
+track08.flac:b6ef0509519fbc2ab157331f95883023
+track09.flac:0127074c27b948a69d720bdd7b30b385
+track10.flac:4c4e0ca7843a89183146ab59b4ef3d61
+track11.flac:267e9a5e43e2ca6b158256d0f504e39c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-02-24-b.flacf\d_2 
+=================== 
+=================== 
+=================== 
+track01.flac:9191a0f2701b78b181a9730c49fccdfa
+track02.flac:c48da8dde1e1e741345303a0cf6aae5b
+track03.flac:ce1c00678b1db46193c884516ecbbd96
+track04.flac:d7ed4f0f69e38fcfb0965fc2543aa242
+track05.flac:8b69597110a2920da32c5f91334106bb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-02-24-b.flacf\d_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:30.14       68828972 B   ---   --   ---xx   flac  0.5335  Track01.flac
+     6:19.33       66933260 B   ---   --   ---xx   flac  0.5674  Track02.flac
+     5:20.17       56488028 B   ---   --   ---xx   flac  0.6024  Track03.flac
+     5:28.23       57913340 B   ---   --   ---xx   flac  0.5474  Track04.flac
+     6:52.47       72787388 B   ---   --   ---xx   flac  0.5799  Track05.flac
+     5:01.30       53167004 B   ---   --   ---xx   flac  0.6240  Track06.flac
+     6:10.35       65350364 B   ---   --   ---xx   flac  0.5024  Track07.flac
+     6:38.21       70256636 B   ---   --   ---xx   flac  0.5442  Track08.flac
+     6:42.57       71046908 B   ---   --   ---xx   flac  0.5022  Track09.flac
+     8:25.02       89086748 B   ---   --   ---xx   flac  0.5691  Track10.flac
+     8:07.03       85913900 B   ---   --   ---xx   flac  0.5626  Track11.flac
+    71:35.57      757772548 B                            0.5564  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-02-24-b.flacf\d_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:04.23       74847740 B   ---   --   ---xx   flac  0.6092  Track01.flac
+     7:43.58       81809660 B   ---   --   ---xx   flac  0.4795  Track02.flac
+    11:30.54      121843052 B   ---   --   ---xx   flac  0.5821  Track03.flac
+     6:59.33       73989260 B   ---   --   ---xx   flac  0.6266  Track04.flac
+     7:25.03       78505100 B   ---   --   ---xx   flac  0.6335  Track05.flac
+    40:43.21      430994812 B                            0.5843  (5 files)
+=================== 
+=================== 
+=================== 

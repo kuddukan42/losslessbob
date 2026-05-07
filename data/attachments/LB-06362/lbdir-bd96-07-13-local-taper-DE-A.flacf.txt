@@ -1,0 +1,65 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-13-local-taper-DE-A.flacf 
+=================== 
+=================== 
+=================== 
+1e880657f2e275bbd83b36a17a7d6731  bd-19960713-Hamburg.ffp
+c7a3b44cf030b1d6b09ef9c042e7d05c  bd-19960713-Hamburg.md5
+7ab2ad197427bcdb7372d2e6e8b1961f  bd1996-07-13-d1t01.flac
+8e100eb7b252ee2dfbacd5e972ff3e45  bd1996-07-13-d1t02.flac
+d3cfb7eee651aebe32ddd2d68662aa34  bd1996-07-13-d1t03.flac
+fca2dcd64168ade6b1c29ed60b1cc1d3  bd1996-07-13-d1t04.flac
+f829c94ed9b108967ba496b195e073e9  bd1996-07-13-d1t05.flac
+c3ba2db80be54aaa13f8c60edf75a745  bd1996-07-13-d1t06.flac
+a43dceb774f5d6a2ac6533a8e553f667  bd1996-07-13-d1t07.flac
+a831f2e26097651a4d681ce27dda2c18  bd1996-07-13-d1t08.flac
+8db83834206a4404a5e28dedab422430  bd1996-07-13-d1t09.flac
+f2727cd6a5c28a537dc2e2b0edd3c554  bd1996-07-13-d1t10.flac
+3b9fd563aa775157c4a369dd935bca57  bd1996-07-13-d2t01.flac
+5efabfac194e5b7d5b9fd851c1e408f6  bd1996-07-13-d2t02.flac
+65db4d135bfe68d05e0550e0f563a43f  bd1996-07-13-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-13-local-taper-DE-A.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-07-13-d1t01.flac:0b13a1298b7e73311667e58e652ba046
+bd1996-07-13-d1t02.flac:3de668bc78c6bd84c840f48f82815ba8
+bd1996-07-13-d1t03.flac:a1cf1ab5275f3bee7916ddc860ce59a0
+bd1996-07-13-d1t04.flac:2f336203aa47244ecf939344860b638f
+bd1996-07-13-d1t05.flac:fb002dce4e59b7f75eb81b5e3e369327
+bd1996-07-13-d1t06.flac:0656494be2eb388a717a86b493f61335
+bd1996-07-13-d1t07.flac:176faa42ed1a58fe5c5110231371d602
+bd1996-07-13-d1t08.flac:4cfa953fa1b96a5461ecb71ae1219a2f
+bd1996-07-13-d1t09.flac:604e584b30938a2458bf36aeb23bfc4f
+bd1996-07-13-d1t10.flac:3a82d53a8e85b3b96dae950b57feb139
+bd1996-07-13-d2t01.flac:130b529584d4bb7ea8f550ca643e1280
+bd1996-07-13-d2t02.flac:00c2c9fc537a50d0e5167ba59b8f5e79
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-13-local-taper-DE-A.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:18.36        3259916 B   ---   --   ---xx   flac  0.5084  bd1996-07-13-d1t01.flac
+     4:51.68       51492380 B   ---   --   ---xx   flac  0.5793  bd1996-07-13-d1t02.flac
+     6:12.50       65738444 B   ---   --   ---xx   flac  0.5107  bd1996-07-13-d1t03.flac
+     6:03.70       64197884 B   ---   --   ---xx   flac  0.5566  bd1996-07-13-d1t04.flac
+     6:35.40       69772124 B   ---   --   ---xx   flac  0.5282  bd1996-07-13-d1t05.flac
+     7:52.55       83390204 B   ---   --   ---xx   flac  0.5569  bd1996-07-13-d1t06.flac
+     6:45.29       71510252 B   ---   --   ---xx   flac  0.4863  bd1996-07-13-d1t07.flac
+    11:31.09      121913612 B   ---   --   ---xx   flac  0.5490  bd1996-07-13-d1t08.flac
+     8:22.11       88578716 B   ---   --   ---xx   flac  0.5165  bd1996-07-13-d1t09.flac
+     8:29.73       89959340 B   ---   --   ---xx   flac  0.5205  bd1996-07-13-d1t10.flac
+    12:22.05      130900604 B   ---   --   ---xx   flac  0.5010  bd1996-07-13-d2t01.flac
+     6:59.50       74029244 B   ---   --   ---xx   flac  0.5381  bd1996-07-13-d2t02.flac
+    86:25.46      914742720 B                            0.5289  (12 files)
+=================== 
+=================== 
+=================== 

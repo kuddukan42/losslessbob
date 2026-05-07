@@ -1,0 +1,10 @@
+Bob Dylan, 11/2/97, Columbia, South Carolina, Township Auditorium, 2CDR
+
+LB-3226, (62min+42min), Taper: PW, Source: Audio disks in trade > (feurio) wav > (flacfrontend) flac.; excellent sound [A]
+
+discontinuity pops d1t1 2:15, d1t9 0:18, 2:24, d2t2 1:25; has some small spots of light static starting on d2t2 such as at 2:19 and continuing occasionally
+
+Disk One, 1 Maggie's Farm, 2 Pretty Peggy-O, 3 Cold Irons Bound, 4 Born In Time, 5 Can't Wait, 6 Silvio, 7 Stone Walls And Steel Bars (acoustic w band), 8 Tangled Up In Blue (acoustic w band), 9 Tomorrow Is A Long Time (acoustic w band), 10 Friend Of The Devil (acoustic w band), Disk Two, 1 Make You Feel My Love, 2 'Til I Fell In Love With You, 3 Like A Rolling Stone, 4 My Back Pages (acoustic w band), 5 Love Sick, 6 Rainy Day Women # 12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

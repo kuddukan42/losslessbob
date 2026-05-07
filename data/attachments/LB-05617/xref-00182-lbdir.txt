@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-10-31-i.flacf 
+=================== 
+=================== 
+=================== 
+ea348f71f88f8503bfcb1cad3a0b7319  01 When I Paint My Masterpiece.flac
+ef5d4d62b1f9d21f8c1726239c9aaac7  02 Romance In Durango !.flac
+fb71f67d7cd34515bc22dffd93108f92  03 Isis !.flac
+800dddda5f273c610dc18e7672170b07  04 Never Let Me Go.flac
+265b07ed00282f89883f23b1155c8146  05 Mama, You Been On My Mind.flac
+fc634cb11e91779c48963a232cf16b57  06 Diamonds And Rust.flac
+a27749bceac1249308f0629f6d007c46  07 Oh Happy Day.flac
+aaa04d3d8132eebbb8a401029b0a9f66  08  Please Come To Boston.flac
+5701c1f209e618f6694b5a646e96a232  09 Chestnut Mare.flac
+acc791c610c6e2882bb2f481f9644fad  10 The Night They Drove Old Dixie Down.flac
+c8bc745d20a81b0586ec886206163d1f  11 I Don't Believe You !.flac
+c57fdb5f89d8a00c5ea7cade177dc48c  12 Hurricane !.flac
+80909803a28292173b98418dfe7b9b0f  13 Oh Sister.flac
+f4a611dd6c23d0c27714972486dd047b  14 One More Cup Of Coffee.flac
+9123b6330929d431bd365b7f14e509a6  15 Sara.flac
+0e3aa9b16719d1df8fabbfa1339a4cc1  16 Just Like A Woman.flac
+d6c402bb7def7e6aae3237c0d5af6af4  17 This Land Is Your Land.flac
+61e91950afc4f9bb6a5a3dcb6df0c6b8  Bob Dylan - War Memorial 10.31.1975.ffp
+f6c881d8bf2e33702f5f811a01125026  Bob Dylan War Memorial 1975.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-10-31-i.flacf 
+=================== 
+=================== 
+=================== 
+01 when i paint my masterpiece.flac:cc6dd8a89c98161c9cab42d10dc44a47
+02 romance in durango !.flac:9773c4d08a564723d538d88c8e7c23d0
+03 isis !.flac:eed12490d0421bf5b46144e339af3e28
+04 never let me go.flac:c34d12c45cfd52aba0cbe2ca9e4992ae
+05 mama, you been on my mind.flac:9720ab2d2e6e893e5511ed9b6d3f14f1
+06 diamonds and rust.flac:b53363b5ac96ce1cc0ea1880693596c0
+07 oh happy day.flac:f4fd9218e56a558535221916f7cb617c
+08  please come to boston.flac:c3383b1680642f5c4b9a47cada2457e3
+09 chestnut mare.flac:b44f2bdd128d6ff55b6c03fe5078ed09
+10 the night they drove old dixie down.flac:cf84f42aa3ba01480359a17971147a5b
+11 i don't believe you !.flac:30e309af0553bc6c24ae43b2e5a4c092
+12 hurricane !.flac:4c7d750f693075c4c2676862785a3f20
+13 oh sister.flac:8a820adbd277f428b46cd1614786decd
+14 one more cup of coffee.flac:a05c85ee733d737c39b1b3e453c27fdb
+15 sara.flac:213c05e2437234cba03756581d514e55
+16 just like a woman.flac:6bbffb2b5fda8783327e0800b9692a36
+17 this land is your land.flac:884afcb6cdb1969e13277dd4cea2880f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-10-31-i.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.47       50208812 B   -b-   --   ---xx   flac  0.5688  01 When I Paint My Masterpiece.flac
+     5:12.37       55124012 B   -b-   --   ---xx   flac  0.5611  02 Romance In Durango !.flac
+     6:47.17       71835692 B   -b-   --   ---xx   flac  0.5722  03 Isis !.flac
+     3:57.37       41893932 B   -b-   --   ---xx   flac  0.5733  04 Never Let Me Go.flac
+     3:11.06       33706028 B   -b-   --   ---xx   flac  0.5590  05 Mama, You Been On My Mind.flac
+     4:10.32       44175404 B   -b-   --   ---xx   flac  0.5664  06 Diamonds And Rust.flac
+     3:47.17       40083500 B   -b-   --   ---xx   flac  0.5964  07 Oh Happy Day.flac
+     0:54.32        9601068 B   -b-   --   ---xx   flac  0.5945  08  Please Come To Boston.flac
+     5:36.69       59433004 B   -b-   --   ---xx   flac  0.6163  09 Chestnut Mare.flac
+     4:07.64       43720748 B   -b-   --   ---xx   flac  0.6274  10 The Night They Drove Old Dixie Down.flac
+     3:42.42       39260204 B   -b-   --   ---xx   flac  0.5784  11 I Don't Believe You !.flac
+     8:41.69       92065836 B   -b-   --   ---xx   flac  0.5791  12 Hurricane !.flac
+     4:57.07       52408364 B   -b-   --   ---xx   flac  0.5827  13 Oh Sister.flac
+     3:59.44       42262572 B   -b-   --   ---xx   flac  0.5895  14 One More Cup Of Coffee.flac
+     5:13.13       55242796 B   -b-   --   ---xx   flac  0.5770  15 Sara.flac
+     4:35.07       48525356 B   -b-   --   ---xx   flac  0.6420  16 Just Like A Woman.flac
+     4:25.04       46755884 B   -b-   --   ---xx   flac  0.6399  17 This Land Is Your Land.flac
+    78:04.19      826303212 B                            0.5889  (17 files)
+=================== 
+=================== 
+=================== 

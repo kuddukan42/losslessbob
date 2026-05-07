@@ -1,0 +1,55 @@
+===================
+===================
+===================
+=== bd-95-03-30-brixton-offmaster.txt
+===================
+===================
+===================
+
+NET Taper Series #6
+Bob Dylan
+Brixton
+95-03-30
+Offmaster audience recording.
+Unidentified taper.
+
+Disk One
+Crash On The Levee (Down In The Flood)
+If You See Her, Say Hello
+All Along The Watchtower
+Jokerman
+Every Grain Of Sand
+Positively 4th Street
+Mr. Tambourine Man (acoustic w band)
+Masters Of War (acoustic w band) 
+
+Disk Two
+Love Minus Zero/No Limit (acoustic w band)
+God Knows
+Stuck Inside Of Mobile With The Memphis Blues Again
+I Believe In You
+Like A Rolling Stone
+The Times They Are A-Changin' (acoustic w band)
+I Shall Be Released
+
+Disk One
+Track 01.flac:68d40f4ab9114e7f4cfec5155da12fdf
+Track 02.flac:fbc92869123f4d9ad57a5d3c8e14d2a0
+Track 03.flac:cd476464293ac90b04acc4a5986d782e
+Track 04.flac:f8b0c7fe33ca3b6bd52b0dd81003c4e8
+Track 05.flac:6cd487a8cbd2990d0709e012c004a8d5
+Track 06.flac:409ccc844be3964c6497acf2587bbe96
+Track 07.flac:640d7d287b3f1042af4e34cfdc937f91
+Track 08.flac:afe27e634f2ffce2ab7ed1314a3d70ca
+
+Disk Two
+Track 01.flac:398d97d41ab134d7af2087b9e12123fe
+Track 02.flac:c00a2fa0c2b0e186b34df173982773f4
+Track 03.flac:4e8c9038b92560959f5226de66296ca0
+Track 04.flac:cb5b7a292098aeefd436674a64312d1d
+Track 05.flac:4cadea76e53b9bd3510a2769750bb86f
+Track 06.flac:e1678b3526057ad37984ae0c2b5ef80c
+Track 07.flac:152f0a8e06c81ee477949e82d3aedc1b
+===================
+===================
+===================

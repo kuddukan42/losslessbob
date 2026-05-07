@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-21-SB.flacf 
+=================== 
+=================== 
+=================== 
+02bbf334c23388cd63fc74567db39a10  21 June 1988.txt
+5877f97e339e7a0795d9b3717cbf9cb5  bd88-06-21-SB-LB-4688.txt
+7170530b1bc1cefad1fd485951e2cff9  Like A Corkscrew To My Heart [CD1]\BD 1988-06-21_101.flac
+3b50d860c30ef371c5c5996321a892d7  Like A Corkscrew To My Heart [CD1]\BD 1988-06-21_102.flac
+4299de3f7cc8e04f2d5f450e3e1df329  Like A Corkscrew To My Heart [CD1]\BD 1988-06-21_103.flac
+77f08570f1f84431df194517bc700b92  Like A Corkscrew To My Heart [CD1]\BD 1988-06-21_104.flac
+0608df51db8e52382e10481766cd00cf  Like A Corkscrew To My Heart [CD1]\BD 1988-06-21_105.flac
+5c4d41055a62ac1e133bd4452515ca14  Like A Corkscrew To My Heart [CD1]\BD 1988-06-21_106.flac
+5d200e1b0c50e887dfc223db39ad35d3  Like A Corkscrew To My Heart [CD1]\BD 1988-06-21_107.flac
+ca9e7153735c7e7b0c6c8482690ae2cc  Like A Corkscrew To My Heart [CD1]\BD 1988-06-21_108.flac
+68f767383248f23ad52f1b335ed6551b  Like A Corkscrew To My Heart [CD1]\Like A Corkscrew To My Heart [CD1].LOG
+b2ef4d595d92d30e1cd54aeadf94ca89  Like A Corkscrew To My Heart [CD1]\Like A Corkscrew To My Heart [CD1].md5
+b02b2f69a782c28daa0aad5d64df4c0d  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_201.flac
+a61aaddd6f6f3a9918e60821b6489e9b  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_202.flac
+8edef388c5aaedc08b91e6caa53e6489  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_203.flac
+127635df3cf3f27f1a5ad09901c2821c  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_204.flac
+600fe2b34c9c946f5d4c0c46e8ae4737  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_205.flac
+aba4e536c8eda4314a655afdff828c1a  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_206.flac
+9446694c524179b1bdd8894b77f8cf65  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_207.flac
+5d25109d9ba51d7e87ed06844445961d  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_208.flac
+ac1872e1cbb87cbcf5b93dcc4c6f22e5  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_209.flac
+1bcae971c4e84c5164d8c26cabb86cef  Like A Corkscrew To My Heart [CD2]\BD 1988-06-21_210.flac
+d95c12cc5b9c562a3f4991269a67dfba  Like A Corkscrew To My Heart [CD2]\Like A Corkscrew To My Heart [CD2].md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-21-SB.flacf\Like A Corkscrew To My Heart [CD1] 
+=================== 
+=================== 
+=================== 
+BD 1988-06-21_101.flac:16b3026ec0c0e089d8be5c94b55a2e68
+BD 1988-06-21_102.flac:272e9c986dac1b78f6d33de79e56fd4f
+BD 1988-06-21_103.flac:9e7b3ca806952d927ea11a590af769d8
+BD 1988-06-21_104.flac:268428ffed7105e9d6af4b61b32319df
+BD 1988-06-21_105.flac:e34a59331f3eedee923ede4809684fb7
+BD 1988-06-21_106.flac:d637730c0b0911a6167089ecbb9e46d7
+BD 1988-06-21_107.flac:bf1e3e016d043d4702dee276e5c2b8b2
+BD 1988-06-21_108.flac:aec939a014a9172a1ddf7fa7f48f1aea
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-21-SB.flacf\Like A Corkscrew To My Heart [CD2] 
+=================== 
+=================== 
+=================== 
+BD 1988-06-21_201.flac:30a4ab26d62f5b73cde98d72e388b84f
+BD 1988-06-21_202.flac:e373dcab644259502b7e81bb79c6b9ca
+BD 1988-06-21_203.flac:c331032188f1bf32c9552c9e7e410cab
+BD 1988-06-21_204.flac:8fbf9fa4cca5ccc51b4f48c572667733
+BD 1988-06-21_205.flac:235aeb16208ef89b41a30e66c4be6d2a
+BD 1988-06-21_206.flac:712eb83aeca603754f93ea76a9fe1cfa
+BD 1988-06-21_207.flac:eaa9fcdef1254b304450f220d2fd9337
+BD 1988-06-21_208.flac:7139e4eb7e5c53aa7ce0e8028ab0db7c
+BD 1988-06-21_209.flac:e8fb703f0ed1efe36cde8cedf884f2d0
+BD 1988-06-21_210.flac:b4c2e6c4be93f3cfbc3f2430cb73b3f9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-21-SB.flacf\Like A Corkscrew To My Heart [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:55.35       41536364 B   ---   --   ---xx   flac  0.6777  BD 1988-06-21_101.flac
+     6:02.44       63960332 B   ---   --   ---xx   flac  0.6735  BD 1988-06-21_102.flac
+     5:15.20       55613084 B   ---   --   ---xx   flac  0.7123  BD 1988-06-21_103.flac
+     5:43.09       60526412 B   ---   --   ---xx   flac  0.6839  BD 1988-06-21_104.flac
+     6:30.08       68814860 B   ---   --   ---xx   flac  0.7100  BD 1988-06-21_105.flac
+     4:26.20       46969484 B   ---   --   ---xx   flac  0.7049  BD 1988-06-21_106.flac
+     4:26.45       47028284 B   ---   --   ---xx   flac  0.7076  BD 1988-06-21_107.flac
+     8:21.21       88425836 B   ---   --   ---xx   flac  0.6909  BD 1988-06-21_108.flac
+    44:40.52      472874656 B                            0.6949  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-21-SB.flacf\Like A Corkscrew To My Heart [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.31       53874956 B   ---   --   ---xx   flac  0.6782  BD 1988-06-21_201.flac
+     4:00.06       42350156 B   ---   --   ---xx   flac  0.6927  BD 1988-06-21_202.flac
+     4:08.08       43766060 B   ---   --   ---xx   flac  0.6722  BD 1988-06-21_203.flac
+     6:34.31       69574556 B   ---   --   ---xx   flac  0.6952  BD 1988-06-21_204.flac
+     4:16.15       45193724 B   ---   --   ---xx   flac  0.6892  BD 1988-06-21_205.flac
+     5:18.10       56118764 B   ---   --   ---xx   flac  0.6662  BD 1988-06-21_206.flac
+     4:57.18       52433180 B   ---   --   ---xx   flac  0.7262  BD 1988-06-21_207.flac
+     5:36.70       59435084 B   ---   --   ---xx   flac  0.5865  BD 1988-06-21_208.flac
+     4:59.19       52788332 B   ---   --   ---xx   flac  0.6650  BD 1988-06-21_209.flac
+     4:07.12       43599068 B   ---   --   ---xx   flac  0.6378  BD 1988-06-21_210.flac
+    49:02.70      519133880 B                            0.6704  (10 files)
+=================== 
+=================== 
+=================== 

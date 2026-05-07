@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-10-29-c.flacf 
+=================== 
+=================== 
+=================== 
+f28a17acb9f920745d7bb37f34cfa811  Bob Dylan 1997.10.29  Athens,Georgia,Classic Center, Exibithion Hall.ffp
+6288d7bb023397fcf08828986e12d459  disc1\01.flac
+b9bbb8e8b283261e577a3c3341e31524  disc1\02.flac
+55a7f5a6b4e1a0f298b4f7c104d136c4  disc1\03.flac
+06da8870204a3ce12e04776897fd376d  disc1\04.flac
+a5dc65d2d5a75423085d1543f96e6464  disc1\05.flac
+640cbad1e848de8d85856de9b1d12af6  disc1\06.flac
+ff42a7aeb6146c4d15539889dd0d6843  disc2\01.flac
+d8812c66c1c55be49171b92daf7648aa  disc2\02.flac
+e312876746c39996250cb4c810ef494d  disc2\03.flac
+4058ad6e8cb8575e104f46b5e1f48515  disc2\04.flac
+0f1e08289d8e2ccc9c89f99271b15068  disc2\05.flac
+7cc5fb59570b4051e89280561cd1b505  disc2\06.flac
+c3e6930e01f3f97ee02b89e24d5d21ab  disc2\07.flac
+e3d32bd5c4ad6c1bd389d770abb80f91  disc2\08.flac
+68b59c594804fcd2da05fba73c5dbffa  disc2\09.flac
+ac69fb1166ec8c303d1c76c67c33a7d2  disc2\10.flac
+f7ca52f01f1d70a1ce8951a17718e8a9  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-29-c.flacf\disc1 
+=================== 
+=================== 
+=================== 
+01.flac:ed77efb16ca7367ce405c17463469685
+02.flac:d77aedc31546f5fc787474e932df9034
+03.flac:1b1f2fd005801ee3149813ceb7d2dc13
+04.flac:536a40068b79eb0e77862225282cf6cb
+05.flac:d0e5f0616c334d51fe3a143b98f8d380
+06.flac:eb62ca19b931f0c48461cb9b42da8d97
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-29-c.flacf\disc2 
+=================== 
+=================== 
+=================== 
+01.flac:5467b4c8a5ec5dcf712777a71c749056
+02.flac:43210656dbb3e418164bb56460dcbe44
+03.flac:fe38fa35d4ba237ea96ff9bf05ada404
+04.flac:a4d614d2c2638077a1fdcae111c41302
+05.flac:7840808bafcda93350cd70169d995bd7
+06.flac:10c4f45f844f0a830c93cb84642d08e3
+07.flac:8e68a6798ebac970bdb388c58bb458f9
+08.flac:0b099a3970698cc0821a23d8d499684f
+09.flac:c2107becd59f77fdb1f9941297af5b74
+10.flac:3ec7f2e123b5153f54ede5eae3180318
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-10-29-c.flacf\disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:33.74       58915916 B   -b-   --   ---xx   flac  0.7535  01.flac
+     5:35.36       59177948 B   -b-   --   ---xx   flac  0.7316  02.flac
+     6:39.62       70530620 B   -b-   --   ---xx   flac  0.7525  03.flac
+     6:29.66       68774012 B   -b-   --   ---xx   flac  0.7367  04.flac
+     6:16.30       66396524 B   -b-   --   ---xx   flac  0.7569  05.flac
+     7:24.62       78467804 B   -b-   --   ---xx   flac  0.7816  06.flac
+    38:00.30      402262824 B                            0.7533  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-10-29-c.flacf\disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:51.01       40750940 B   -b-   --   ---xx   flac  0.7211  01.flac
+     7:44.43       81951260 B   -b-   --   ---xx   flac  0.7888  02.flac
+     7:37.33       80693612 B   -b-   --   ---xx   flac  0.7491  03.flac
+     6:20.54       67159628 B   -b-   --   ---xx   flac  0.6983  04.flac
+     6:54.63       73176956 B   -b-   --   ---xx   flac  0.6897  05.flac
+     8:27.72       89603372 B   -b-   --   ---xx   flac  0.7857  06.flac
+     9:25.59       99804620 B   -b-   --   ---xx   flac  0.7562  07.flac
+     7:34.01       80088428 B   -b-   --   ---xx   flac  0.7216  08.flac
+     5:29.46       58143740 B   -b-   --   ---xx   flac  0.6853  09.flac
+     5:22.64       56950556 B   -b-   --   ---xx   flac  0.7973  10.flac
+    68:48.61      728323112 B                            0.7425  (10 files)
+=================== 
+=================== 
+=================== 

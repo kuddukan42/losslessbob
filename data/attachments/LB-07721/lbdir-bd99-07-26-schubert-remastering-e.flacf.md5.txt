@@ -1,0 +1,25 @@
+1c37da0f7a7721aa91598c2b1cddcb22  101 Anouncement.flac
+0765fdc24a358a0f1293b89d601c00bb  102 Oh Babe, It Ain't No Lie.flac
+d8c3e15522e88efbf006abeda1966ce8  103 The Times They Are A-Changin'.flac
+c3e647bec171df29b9f589c3ed7f76d7  104 Boots Of Spanish Leather .flac
+35ed5c8fefea1dd5a19c4e1dfc075d14  105 John Brown.flac
+0076bf3fb512dc29d7243c842d00ea51  106 Visions Of Johanna.flac
+9b513a8954ed799189436350d29c55da  107 Seeing The Real You At Last.flac
+9b08056e16a8c89312c469ae4e6005f8  108 Ballad Of A Thin Man.flac
+c2931328458cdcaf3fbfe8c3debab5ba  109 Most Likely You Go Your Way (And I'll Go Mine) .flac
+fdcb15ea5171eba48c268ee1c9fef52f  110 Every Grain Of Sand .flac
+f24eccd9b429c48f4c04bb02c10ef768  111 Tombstone Blues.flac
+35c8a5e0c433a99e0f827a0ea35a3148  1999-07-26 Schubert Art\1999-07-26-1b_f.jpg
+4739a793dfae8c46c35282c095fb1a72  1999-07-26 Schubert Art\1999-07-26-1b_r1.jpg
+4c10fae34e58abd4a7baedc1a03e427c  1999-07-26 Schubert Art\1999-07-26-1b_r2.jpg
+607b18188516c871717dfff0555a3d1c  1999-07-26 TRAMPS (ASM by Schubert).txt
+a3f67da03fd0acbdf78ca4a47e2edd2e  1999-07-26 TRAMPS.md5
+ec0d8d1f689aca96f054d62ac0d21dd4  201 Not Dark yet .flac
+924a201b832bd6715c6f24f123d76d35  202 Highway 61 Revisited .flac
+91965a8f433ffe258c1f2a0e22f4317b  203 Love Sick .flac
+1c97c24a31b5a0751bd73e03ad787853  204 Like A Rolling Stone .flac
+7febdc5d63fe90211ad7454181b4d72f  205 It Ain't Me, Babe .flac
+bee37666e29c33b7f062e6b787ca82f9  206 Not Fade Away .flac
+b09f74304d533ce46595b681589e28ce  207 Blowin' In The Wind.flac
+9030e322c5aaf9d3978fc80320c61013  208 Alabama Getaway.flac
+8a79f9c4602c2f56cef87a36de0c6f6e  209 I Shall Be Released.flac

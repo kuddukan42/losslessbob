@@ -1,0 +1,22 @@
+f137af0725ecbb3d982b4b1d3ddc4479 *01 Intro.shn
+b304cceb64bb989dc019b4ea2a48dd63 *01 Intro.skt
+d6afc0bff848ec51ca7a163ce2f55c0f *02 Hallelujah, I'm Ready To Go.skt
+ebf7877352bc22c184a7462223b68648 *03 The Times They Are A-Changin'.shn
+79e446ea8c7decfe0bc6473189f2f301 *03 The Times They Are A-Changin'.skt
+b16be79eb8e009922b593cc5e21cd504 *04 Desolation Row.shn
+ec7b19f98d71c0f4886fa74066b2a125 *04 Desolation Row.skt
+d886f7304e1b98a33d64e6787d07054d *05 Boots of Spanish Leather.shn
+aac7ee0a7b5e8e734e52eb68465fc020 *05 Boots of Spanish Leather.skt
+4cb1066bf0fd357a7b08dcbe0100a8e7 *06 Tangled Up In Blue.shn
+5658539dfa61b27b23c323d9b56f9e41 *06 Tangled Up In Blue.skt
+7078ef1e4f1e5f33b3da3c0259f0556f *07 Searching For A Soldier's Grave.shn
+d688acca023ce96eb11a85de37cf1423 *07 Searching For A Soldier's Grave.skt
+a53cc1ad1c809f4420fdeada28d0bcf7 *08 Country Pie.shn
+df05be6f26bcc425e3dae5a299e26a89 *08 Country Pie.skt
+10051984589ee4d5c840f2c0e952e6f4 *09 Under the Red Sky.shn
+9fe4ef523df43db24a667c04da15f1d6 *09 Under the Red Sky.skt
+7522d5958aa97c0ea41450ad248faded *10 All Along the Watchtower.skt
+c20aefd05fdac6fef5d3f1a193ddd80b *02 Hallelujah, I'm Ready To Go.shn
+03532e939dcbb4cdbb056a819311bc5d *11 Not Dark Yet.shn
+607b291ce4db02d9aaeb6c966ba61f10 *11 Not Dark Yet.skt
+d59cc6b6a6d9af53eb27cbfe5932ac9a *10 All Along the Watchtower.shn

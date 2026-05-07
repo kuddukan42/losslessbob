@@ -1,0 +1,62 @@
+Bob Dylan
+Spektrum
+Oslo, Norway
+March 30, 2007
+
+source: soomlos
+13th row in front of stage left pa
+km140 > v3 > mt24/96 (24/48)
+audacity > r8brain > cd wave > flac
+
+Disc 1:
+01. introduction [00:36]
+02. Cat's In The Well [04:49]
+03. Don't Think Twice, It's All Right [06:12]
+04. Watching The River Flow [06:20]
+05. It's Alright, Ma (I'm Only Bleeding) [07:19]
+06. When The Deal Goes Down [05:25]
+07. Highway 61 Revisited [05:01]
+08. Spirit On The Water [07:05]
+09. Things Have Changed [06:17]
+10. A Hard Rain's A-Gonna Fall [06:42]
+11. Rollin' And Tumblin' [06:06]
+12. Tangled Up In Blue [08:32]
+Total time: [70:32]
+
+Disc 2:
+01. Nettie Moore [08:16]
+02. Summer Days [06:05]
+03. Like A Rolling Stone [09:26] 
+     (encore) 
+04. Thunder On The Mountain [05:59]
+05. band introduction [00:56]
+06. All Along The Watchtower [06:38]
+Total time: [37:24]
+
+Band Members
+Bob Dylan - guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - mandolin, violin, steel guitar
+Stu Kimball - guitar
+George Recile - drums 
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2007-03-30d1t01.flac:87c00ae76c970ba7db6912820dffe444
+bd2007-03-30d1t02.flac:0e80a20d77c154291a1f8459a448bb7c
+bd2007-03-30d1t03.flac:ef78e127a2ef6fb1098595eb482d67fc
+bd2007-03-30d1t04.flac:1fde2cd44e468bd677dc0b0f528385bb
+bd2007-03-30d1t05.flac:462cf207a60022730c91c81a27e92f04
+bd2007-03-30d1t06.flac:5d206845a15b328994e2af7651781f94
+bd2007-03-30d1t07.flac:08c19b4c50ab88ed7bf4db723ccd232c
+bd2007-03-30d1t08.flac:cdacd8f39d3aa34d1431d1d98fd20670
+bd2007-03-30d1t09.flac:9a85bffd1e37bb0fadbb577156b52afc
+bd2007-03-30d1t10.flac:bb4b96c25b616e30fefd38b931770542
+bd2007-03-30d1t11.flac:24303f04189d61f10510bffd634ab423
+bd2007-03-30d1t12.flac:548f8ea6e6c4fcb5b8b5354c2cf880dd
+bd2007-03-30d2t01.flac:3c0a4aa19a62ff5b04ac690529cf91ac
+bd2007-03-30d2t02.flac:4833184530ea3c79d7c110935399b6af
+bd2007-03-30d2t03.flac:83554db8968d6005edba8ae4348f142b
+bd2007-03-30d2t04.flac:86e28c472874861deff95a8d69ccc0cc
+bd2007-03-30d2t05.flac:ffd14194d3763025f4619f12f5b19a7b
+bd2007-03-30d2t06.flac:946609aaa33baec528e0852a09ef41f5

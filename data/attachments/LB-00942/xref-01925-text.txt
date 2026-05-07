@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 
+Montana State University
+Brick Breeden Field House
+Bozeman, Montana, USA
+March 24, 2000 
+
+I'm filling in a few more gaps from the great run of Bob Dylan 2000 shows that have recently been posted.
+
+After digging around a bit, and clouds of dust, I found a box of old trades. 
+
+The source of all of these is.... Trade CDR > Wav > Flac > You
+
+
+Disc one
+========
+
+Hallelujah, I'm Ready To Go (acoustic)  
+Mr. Tambourine Man (acoustic)  
+It's Alright, Ma (I'm Only Bleeding) (acoustic) 
+Girl Of The North Country (acoustic) 
+Tangled Up In Blue (acoustic) 
+Rock Of Ages (acoustic) 
+Country Pie  
+All Along The Watchtower  
+Just Like A Woman  
+
+
+Disc two 
+========
+
+Stuck Inside Of Mobile With The Memphis Blues Again  
+Not Dark Yet 
+Highway 61 Revisited 
+
+encore: 
+
+Love Sick  
+Like A Rolling Stone 
+It Ain't Me, Babe (acoustic) (with harp) 
+Not Fade Away  (with Ray Benson on guitar)  
+Blowin' In The Wind  (acoustic) 
+Rainy Day Women #12 & #35 
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+1f8acbeb88141cbde5020f0d45d36a2f *info.txt
+88bd8df04749a7b64e158d863dfe7fa8 *CD1\1-01 Halleluiah.flac
+aa8ee8e181d9c5f446d31de332615d15 *CD1\1-02 Mr. Tambourine Man.flac
+be6e7c94cec8243d75729b458ad899dc *CD1\1-03 It's Alright, Ma (I'm Only Blee.flac
+3a7aef5ccdad01b3533ddc5b8252ab49 *CD1\1-04 Girl From The North Country.flac
+20f385f6a08395594142299e74f5a03d *CD1\1-05 Tangled Up In Blue.flac
+8b139718d16c0df51d7fdc2f46f4b5e5 *CD1\1-06 Rock Of Ages.flac
+6e0584d95b9d688e63a84c36a0b39616 *CD1\1-07 Country Pie.flac
+fb38b5c53ff82d28299256d2a08f6cbc *CD1\1-08 All Along The Watchtower.flac
+169f4fbe40cb7aeb3de0c130e0e7f008 *CD1\1-09 Just Like A Woman.flac
+08c2b966a4c93e179f07334aad864b82 *CD2\01 Track 01.flac
+4207a901fc634eb693de6a21a1041bf1 *CD2\02 Track 02.flac
+22c8d7624cef838d75338f8e8f502645 *CD2\03 Track 03.flac
+b482746eeca8f72f85f8168691813d63 *CD2\04 Track 04.flac
+263e8a9fd25db68d3ea95f8cd3263dde *CD2\05 Track 05.flac
+a906b090b53ca95fada788e79dbc23db *CD2\06 Track 06.flac
+66fe84d4d6fa5f4961793456a72ce745 *CD2\07 Track 07.flac
+e6298ca414dd81b941ea761f82787dfd *CD2\08 Track 08.flac
+9524a0739d0aae68072d59bb65da53c0 *CD2\09 Track 09.flac
+98951566de14a12f1d2d041a53246d33 *CD2\10 Track 10.flac
+===================
+===================
+===================

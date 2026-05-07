@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-31-Bobby-Bourbon.flacf 
+=================== 
+=================== 
+=================== 
+e68dd64cc2cd4a106e4714ff3c7050f7  bd1998-01-31t01.flac
+8f145b0c929c4d8b05283f660bf4f6b7  bd1998-01-31t02.flac
+e64d735da225fcb7e76b738e1fd0b215  bd1998-01-31t03.flac
+48df267287906c3db9458d9a6ba59d93  bd1998-01-31t04.flac
+109bfdb277a3a5a64f88bbfce5604a49  bd1998-01-31t05.flac
+fc473c9014c1c1b425ab76f72a3449b7  bd1998-01-31t06.flac
+dd70fe1612853779260dfc9ec26c2c5e  bd1998-01-31t07.flac
+da931cab0366ad30aa95025849e544e1  bd1998-01-31t08.flac
+9a6a73985189bfeb1fdfb1c08d955f61  bd1998-01-31t09.flac
+54ce0ee0731c04f7d1dc1c015e7f24b2  bd1998-01-31t10.flac
+a5fef430b48fca5bbe40e3066b72b559  bd1998-01-31t11.flac
+c8aeb6cde2f2b4cfd256cbfd0747ae97  bd1998-01-31t12.flac
+00e6406f0b9d9d92af2d13893a0a6d2c  bd1998-01-31t13.flac
+06a7e01a1baa69015f1c3a3937e1ab32  bd1998-01-31t14.flac
+44a86459f9fe5bfdb81877e109fc4443  bd1998-01-31t15.flac
+84b35b2c3b566e6fc48a0ea8d1c93b53  bd1998-01-31t16.flac
+b3d2fa504158d9a9c85192ccff7b77fd  bd1998-1-31.txt
+713bbec75ef32cca446faea52d616c5b  bd98-01-31-Bobby-Bourbon-LB-4157.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-31-Bobby-Bourbon.flacf 
+=================== 
+=================== 
+=================== 
+bd1998-01-31t01.flac:e959ca5d4683ee89979ce4abe1c1a782
+bd1998-01-31t02.flac:303b695f775c51a4964e3af51ce2289e
+bd1998-01-31t03.flac:4a3e9b2dbded26477e762ed34e99c6c0
+bd1998-01-31t04.flac:32e1fc7812baea181fce563180796406
+bd1998-01-31t05.flac:e1961c6a0a2d7760440f0cc339e5ae8a
+bd1998-01-31t06.flac:318a7bde0ade790cd95641ef2838fd3d
+bd1998-01-31t07.flac:3b60dba8e19a3c6efec8fa5b29b43e1f
+bd1998-01-31t08.flac:64cdb369ed1eb4aa65cc8a6c6002a973
+bd1998-01-31t09.flac:e790f7e953371001049dd5ec026843e7
+bd1998-01-31t10.flac:78f449627633e105a87a0fc7589ed683
+bd1998-01-31t11.flac:37616d260bb2176c6eaa0168b45bfe0b
+bd1998-01-31t12.flac:ff3c120b409baa4fe95e28fc238644ae
+bd1998-01-31t13.flac:f3ea6e55066cf8d5b2903142e0ec622e
+bd1998-01-31t14.flac:af41c68e4742f5a7284c17a6d85b3b6c
+bd1998-01-31t15.flac:d5ad1b8bbfc8c0c4e7679b86ad97d523
+bd1998-01-31t16.flac:69249545bbf7e06344e2a732e49e3d7e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-31-Bobby-Bourbon.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:19.37       45774668 B   ---   --   ---xx   flac  0.6397  bd1998-01-31t01.flac
+     5:30.18       58254380 B   ---   --   ---xx   flac  0.6059  bd1998-01-31t02.flac
+     5:59.52       63449948 B   ---   --   ---xx   flac  0.6230  bd1998-01-31t03.flac
+     5:55.54       62749052 B   ---   --   ---xx   flac  0.6068  bd1998-01-31t04.flac
+     6:50.32       72399308 B   ---   --   ---xx   flac  0.6540  bd1998-01-31t05.flac
+     4:21.48       46153340 B   ---   --   ---xx   flac  0.5365  bd1998-01-31t06.flac
+     5:14.01       55391996 B   ---   --   ---xx   flac  0.5451  bd1998-01-31t07.flac
+     7:36.17       80478428 B   ---   --   ---xx   flac  0.6536  bd1998-01-31t08.flac
+     6:21.04       67217852 B   ---   --   ---xx   flac  0.6129  bd1998-01-31t09.flac
+     6:09.68       65251580 B   ---   --   ---xx   flac  0.6225  bd1998-01-31t10.flac
+     8:26.29       89326652 B   ---   --   ---xx   flac  0.6346  bd1998-01-31t11.flac
+     5:57.54       63101852 B   ---   --   ---xx   flac  0.6421  bd1998-01-31t12.flac
+     1:08.53       12119900 B   ---   --   ---xx   flac  0.5172  bd1998-01-31t13.flac
+     8:22.55       88682204 B   ---   --   ---xx   flac  0.5586  bd1998-01-31t14.flac
+     5:52.13       62123420 B   ---   --   ---xx   flac  0.5770  bd1998-01-31t15.flac
+     5:17.14       55951772 B   ---   --   ---xx   flac  0.6302  bd1998-01-31t16.flac
+    93:23.24      988426352 B                            0.6101  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,96 @@
+===================
+===================
+===================
+=== 1992_04_05_Melbourne-MK.md5
+===================
+===================
+===================
+639ca8c3a2a64bcbc76b5926c83939a3 *1992_04_05_Melbourne_back_Ken.jpg
+ef2683e39fee1770c259b56be39f4cbb *1992_04_05_Melbourne_freq.JPG
+214dc7c261c1f7d5a249546bb8276c5d *1992_04_05_Melbourne_front_Ken.jpg
+659bbcd467decbff304e1244a80041ef *1992_04_05_Melbourne_info.txt
+6524fb83a0463d243e91a5cba54cfb2c *Disc 1\01 All Along The Watchtower.flac
+22e96a40fd92e6d3b9d7095de154110a *Disc 1\02 What Good Am I.flac
+bb94dbb16c1102bcae475608302efd41 *Disc 1\03 I Don't Believe You.flac
+a172370fc0fd6c6b388724b2669f4831 *Disc 1\04 Just Like A Woman.flac
+e29e1206d4bf5d4b38c32425153f1092 *Disc 1\05 Tangled Up In Blue.flac
+d22df3aedd66e41040f902bf77497283 *Disc 1\06 It Takes A Lot To Laugh It Takes A Train To Cry.flac
+7b0b5953e4bd8fd84b1141c446912086 *Disc 1\07 Maggie's Farm.flac
+c29f7a326cdd671f460aa32106df599b *Disc 1\08 Love Minus Zero - No Limit.flac
+0fdf64bb2c5f7a877e2745a1d77fa43d *Disc 1\09 Little Moses.flac
+61b0465add964e38451860deae0633a1 *Disc 1\10 Female Rambling Sailor.flac
+0331cc3954c0ed8f2d3bcb3ea341302d *Disc 2\1 Desolation Row.flac
+4a03c27b42b5344010ab7dad0e6c70bc *Disc 2\2 Cat's In The Well.flac
+991613d63ec094b8f82f3e03b34b30e4 *Disc 2\3 Idiot Wind.flac
+02798c9d7c2e743d3bdbe50e7b99b62f *Disc 2\4 The Times They Are A-Changin'.flac
+b5041c105fa73965b086bab75090fa87 *Disc 2\5 Highway 61 Revisited.flac
+ff2bb486193d31b6a2be5f1106ecbaa6 *Disc 2\6 Absolutely Sweet Marie.flac
+8f9df8425cbf097d207ae2ba6b811e98 *Disc 2\7 Rainy Day Women # 12 & 35.flac
+acb790dab8e5a46e8649625c58387b99 *Disc 2\8 Blowin' In The Wind.flac
+===================
+===================
+===================
+=== 1992_04_05_Melbourne_info.txt
+===================
+===================
+===================
+Bob Dylan
+April 5, 1992 - Melbourne, Australia
+
+Disc 1
+1. All Along The Watchtower
+2. What Good Am I?
+3. I Don't Believe You
+4. Just Like A Woman
+5. Tangled Up In Blue
+6. It Takes A Lot To Laugh,
+    It Takes A Train To Cry
+7. Maggie's Farm
+8. Love Minus Zero / No Limit
+9. Little Moses
+10. Female Rambling Sailor
+
+Disc 2
+1. Desolation Row
+2. Cat's In The Well
+3. Idiot Wind 
+4. The Times They Are A-Changin' @
+5. Highway 61 Revisited
+6. Absolutely Sweet Marie
+7. Rainy Day Women # 12 & 35
+8. Blowin' In The Wind @
+
+From MK master tape
+
+from Olaf:
+There is strong evidence that Bob Dylan almost started crying during the last two lines of the "Einstein verse" in Desolation Row. Members in the front row in the audience report that they saw tears pouring out of his eyes and that he stepped back and spoke briefly with Jackson and Garnier and then retreated to the back of the stage while the band went into a lengthy instrumental. He then came back and finished the song. Desolation Row was not played until April 14, when the same thing happened again!
+
+Disc 1\01 All Along The Watchtower.flac:585795b7fc23f378fda80a496d781489
+Disc 1\02 What Good Am I.flac:3e25c43357f688bb0f4ab8516a4a7115
+Disc 1\03 I Don't Believe You.flac:f758287a5b0abe3bd555b3d75a30c962
+Disc 1\04 Just Like A Woman.flac:ad01cc9a9e6d0879bf69a9378fc593ea
+Disc 1\05 Tangled Up In Blue.flac:636d9b33305dbb0347345a57d2f9eb31
+Disc 1\06 It Takes A Lot To Laugh It Takes A Train To Cry.flac:e07db487fd52b05e70e457a5d4fb2406
+Disc 1\07 Maggie's Farm.flac:38a7209ad171a028f54204e8087f6e6c
+Disc 1\08 Love Minus Zero - No Limit.flac:19d32206a3438cc29f9ef07fe243922a
+Disc 1\09 Little Moses.flac:b1c43f9f706628fc0e603491e06f8789
+Disc 1\10 Female Rambling Sailor.flac:4705a3e7748d4f19cf14a73b909e8abb
+Disc 2\1 Desolation Row.flac:2aad2df30458e211969df6d492650a42
+Disc 2\2 Cat's In The Well.flac:f2952cfc37a4fcae559099d5d46da4bd
+Disc 2\3 Idiot Wind.flac:49252b4a83cf8d8962ea8d252020631c
+Disc 2\4 The Times They Are A-Changin'.flac:6e7bb5964c9c43693f2436c8dbed5653
+Disc 2\5 Highway 61 Revisited.flac:a2f5b02123e40b02ee5da6ce7de84f32
+Disc 2\6 Absolutely Sweet Marie.flac:19619b80f0f08ee3bf0f5566a0f969aa
+Disc 2\7 Rainy Day Women # 12 & 35.flac:ff3da43ba3dc85c4e42de2d0f221f255
+Disc 2\8 Blowin' In The Wind.flac:86c5c013508fedd2b4620fb86614b0f6
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 All Along The Watchtower.flac:585795b7fc23f378fda80a496d78148902 What Good Am I.flac:3e25c43357f688bb0f4ab8516a4a711503 I Don't Believe You.flac:f758287a5b0abe3bd555b3d75a30c96204 Just Like A Woman.flac:ad01cc9a9e6d0879bf69a9378fc593ea05 Tangled Up In Blue.flac:636d9b33305dbb0347345a57d2f9eb3106 It Takes A Lot To Laugh It Takes A Train To Cry.flac:e07db487fd52b05e70e457a5d4fb240607 Maggie's Farm.flac:38a7209ad171a028f54204e8087f6e6c08 Love Minus Zero - No Limit.flac:19d32206a3438cc29f9ef07fe243922a09 Little Moses.flac:b1c43f9f706628fc0e603491e06f878910 Female Rambling Sailor.flac:4705a3e7748d4f19cf14a73b909e8abb1 Desolation Row.flac:2aad2df30458e211969df6d492650a422 Cat's In The Well.flac:f2952cfc37a4fcae559099d5d46da4bd3 Idiot Wind.flac:49252b4a83cf8d8962ea8d252020631c4 The Times They Are A-Changin'.flac:6e7bb5964c9c43693f2436c8dbed56535 Highway 61 Revisited.flac:a2f5b02123e40b02ee5da6ce7de84f326 Absolutely Sweet Marie.flac:19619b80f0f08ee3bf0f5566a0f969aa7 Rainy Day Women # 12 & 35.flac:ff3da43ba3dc85c4e42de2d0f221f2558 Blowin' In The Wind.flac:86c5c013508fedd2b4620fb86614b0f6
+===================
+===================
+===================

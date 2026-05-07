@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-10-30.shnf 
+=================== 
+=================== 
+=================== 
+0ef4a3e6311481ee76862f212b4df4ec  1-01 - I Can't Be Satisfied (92-10-30 Beverly, MA).shn
+48add76a109338ec4fcf0c4ab3e4e34e  1-02 - Dear Landlord (92-10-30 Beverly, MA).shn
+869a90b6fc6fe9dda42a7815f83a2695  1-03 - All Along The Watchtower (92-10-30 Beverly, MA).shn
+0e5826913624506f9d212657036713a9  1-04 - Positively 4th Street (92-10-30 Beverly, MA).shn
+be00c61c956932d42c0b1b5e82c5259f  1-05 - Shelter From The Storm (92-10-30 Beverly, MA).shn
+e85dc4755243dbbf00af31e3c00c7bee  1-06 - She Belongs To Me (92-10-30 Beverly, MA).shn
+92cc5db5c0777e15655886231f4059f0  1-07 - Silvio (92-10-30 Beverly, MA).shn
+5d735d630cd7852ba2bc5d4d72d066ce  1-08 - Mama, You Been On My Mind (92-10-30 Beverly, MA).shn
+324502db4560c5500d4dc9b1833a86b3  1-09 - Boots Of Spanish Leather (92-10-30 Beverly, MA).shn
+6017563154124043e236f9ba8dcf4a08  2-01 - Mr. Tambourine Man (92-10-30 Beverly, MA).shn
+31bb55ccdbc7806ff4cd9b6b86a36154  2-02 - Don't Think Twice (92-10-30 Beverly, MA).shn
+e3a5537bb4f1609e47d390406a69e669  2-03 - Unbelievable (92-10-30 Beverly, MA).shn
+bb519f150b825f3bbff5c8bc266d2069  2-04 - When I Paint My Masterpiece (92-10-30 Beverly, MA).shn
+c8f39ae6e3d5a37fc3ec4986cc4caaf6  2-05 - Times They Are A-Changin' (92-10-30 Beverly, MA).shn
+9704453231a977699a99d7ead3e8ec53  2-06 - Maggie's Farm (92-10-30 Beverly, MA).shn
+f9bb5392fe02970300bec0db7db48f52  2-07 - What Good Am I (92-10-30 Beverly, MA).shn
+d31bf73fcd43d8842b443c017015758b  2-08 - Highway 61 Revisited (92-10-30 Beverly, MA).shn
+a589cfc6d2c60cc4d22b3c6db19b292d  2-09 - It Ain't Me, Babe (92-10-30 Beverly, MA).shn
+3b037da4e5ee18c69288e17c0b12a828  92-10-30_Beverly, MA-D1.md5
+2870b115c76e86bdc1e7bf8db842d80c  92-10-30_Beverly, MA-D2.md5
+6c767492ffa1ea7f9d933ab69c62e26c  92-10-30_Beverly, Ma.rtf
+53e387409a3fdd38d8b26084da10a201  bs92-10-30.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-10-30.shnf 
+=================== 
+=================== 
+=================== 
+202bcd331b5c1799225e3621df8e582c  [shntool]  1-01_-_I_Can't_Be_Satisfied_(92-10-30_Beverly,_MA).wav
+23a813748a507f6a7dbaa0bfadd98763  [shntool]  1-02_-_Dear_Landlord_(92-10-30_Beverly,_MA).wav
+12e5b5917617aa3663bc661a7cec1f93  [shntool]  1-03_-_All_Along_The_Watchtower_(92-10-30_Beverly,_MA).wav
+0fe751c15b38b903cbc7cfd9b9799906  [shntool]  1-04_-_Positively_4th_Street_(92-10-30_Beverly,_MA).wav
+daefb25b8a1be5831272616bb0ca4351  [shntool]  1-05_-_Shelter_From_The_Storm_(92-10-30_Beverly,_MA).wav
+e918c7d2b0e0928f551be7f17004c997  [shntool]  1-06_-_She_Belongs_To_Me_(92-10-30_Beverly,_MA).wav
+53f806941fd472e35e60333d385d55ef  [shntool]  1-07_-_Silvio_(92-10-30_Beverly,_MA).wav
+3e0969422a2cb5fa316a48fa21249019  [shntool]  1-08_-_Mama,_You_Been_On_My_Mind_(92-10-30_Beverly,_MA).wav
+c2ea630aaa8c301105ec817df4498aaf  [shntool]  1-09_-_Boots_Of_Spanish_Leather_(92-10-30_Beverly,_MA).wav
+14d7ed6fa9a54d365e218afe99b7b1b6  [shntool]  2-01_-_Mr._Tambourine_Man_(92-10-30_Beverly,_MA).wav
+7ed36e9faa9147c4fec88d9ab7c9df4f  [shntool]  2-02_-_Don't_Think_Twice_(92-10-30_Beverly,_MA).wav
+41074c18e0bf733685cd24f508e2db93  [shntool]  2-03_-_Unbelievable_(92-10-30_Beverly,_MA).wav
+cb4738548f7a470115cf572be85b869b  [shntool]  2-04_-_When_I_Paint_My_Masterpiece_(92-10-30_Beverly,_MA).wav
+3b0966e90889e53b8dcf6c7c9873467d  [shntool]  2-05_-_Times_They_Are_A-Changin'_(92-10-30_Beverly,_MA).wav
+0654a3158eea0dedd3a6c7d601638379  [shntool]  2-06_-_Maggie's_Farm_(92-10-30_Beverly,_MA).wav
+7cd780354f25548a7154c644ed937ef2  [shntool]  2-07_-_What_Good_Am_I_(92-10-30_Beverly,_MA).wav
+4bf74b31162cd2bb33aec6d2a3687be2  [shntool]  2-08_-_Highway_61_Revisited_(92-10-30_Beverly,_MA).wav
+ac715e0fcb84de872c731f226c234405  [shntool]  2-09_-_It_Ain't_Me,_Babe_(92-10-30_Beverly,_MA).wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-10-30.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.10       46240364 B   ---   --   ---xx    shn  0.6276  1-01 - I Can't Be Satisfied (92-10-30 Beverly, MA).shn
+     7:03.45       74723084 B   ---   --   ---xx    shn  0.6021  1-02 - Dear Landlord (92-10-30 Beverly, MA).shn
+     6:55.49       73321292 B   ---   --   ---xx    shn  0.6332  1-03 - All Along The Watchtower (92-10-30 Beverly, MA).shn
+     8:53.65       94174124 B   ---   --   ---xx    shn  0.5999  1-04 - Positively 4th Street (92-10-30 Beverly, MA).shn
+     7:49.45       82837484 B   ---   --   ---xx    shn  0.6250  1-05 - Shelter From The Storm (92-10-30 Beverly, MA).shn
+     6:26.64       68240972 B   ---   --   ---xx    shn  0.5041  1-06 - She Belongs To Me (92-10-30 Beverly, MA).shn
+     5:34.27       58981148 B   ---   --   ---xx    shn  0.6367  1-07 - Silvio (92-10-30 Beverly, MA).shn
+     3:56.66       41785676 B   ---   --   ---xx    shn  0.4758  1-08 - Mama, You Been On My Mind (92-10-30 Beverly, MA).shn
+     4:54.38       51951020 B   ---   --   ---xx    shn  0.4665  1-09 - Boots Of Spanish Leather (92-10-30 Beverly, MA).shn
+     6:17.11       66528716 B   ---   --   ---xx    shn  0.5167  2-01 - Mr. Tambourine Man (92-10-30 Beverly, MA).shn
+     7:50.46       83016236 B   ---   --   ---xx    shn  0.5351  2-02 - Don't Think Twice (92-10-30 Beverly, MA).shn
+     5:29.47       58146188 B   ---   --   ---xx    shn  0.5957  2-03 - Unbelievable (92-10-30 Beverly, MA).shn
+     6:18.35       66761564 B   ---   --   ---xx    shn  0.5997  2-04 - When I Paint My Masterpiece (92-10-30 Beverly, MA).shn
+     8:07.62       86052668 B   ---   --   ---xx    shn  0.5149  2-05 - Times They Are A-Changin' (92-10-30 Beverly, MA).shn
+     7:43.39       81764972 B   ---   --   ---xx    shn  0.6110  2-06 - Maggie's Farm (92-10-30 Beverly, MA).shn
+     7:25.41       78594476 B   ---   --   ---xx    shn  0.5264  2-07 - What Good Am I (92-10-30 Beverly, MA).shn
+     6:25.30       67984604 B   ---   --   ---xx    shn  0.6835  2-08 - Highway 61 Revisited (92-10-30 Beverly, MA).shn
+     6:35.26       69739196 B   ---   --   ---xx    shn  0.5026  2-09 - It Ain't Me, Babe (92-10-30 Beverly, MA).shn
+   118:10.71     1250843784 B                            0.5720  (18 files)
+=================== 
+=================== 
+=================== 

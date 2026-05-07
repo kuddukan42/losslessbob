@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== 1979-11-20-Santa-Monica-LB-7858.txt
+===================
+===================
+===================
+Bob Dylan
+Santa Monica Civic Auditorium
+Santa Monica, CA
+1979-11-20
+ 
+Let Me Ride (McCoy/Dennis)
+It's Gonna Rain Again (C Johnson)
+Do Lord, Remember Me (Trad)
+Look Up And Live By Faith (Reverend Roberts Lawrence Curtis)
+Freedom At The Wall ( ? )
+This Train Is Bound For Glory (This Train)(Bill Broonzy)
+Gotta Serve Somebody
+I Believe In You
+When You Gonna Wake Up ?
+When He Returns
+Man Gave Names To All The Animals
+Precious Angel
+Slow Train
+Covenant Woman
+I love Him So  (?)
+Gonna Change My Way Of Thinking
+Do Right To Me Baby (Do Unto Others)
+Solid Rock
+Saving Grace
+Saved (Dylan/Drummond)
+What Can I Do For You ?
+In The Garden
+          *
+Blessed Be The Name (unknown)
+Pressing On
+
+ 136:00 mins
+
+LB-1832
+
+There are speed issues in Covenant Woman
+
+Taken from John Green collection and transferred from his
+TDK-SA cassettes (labelled off master btw) using Magix audio cleaning Lab 17 deluxe
+
+
+
+===================
+===================
+===================
+=== bd79-11-20 Santa Monica master.md5
+===================
+===================
+===================
+e87c92641f6b4c35a0287a95fd7c9a0f *1979-11-20-Santa-Monica-LB-7858.txt
+f743db72dad30168a19aec1fa8f099b6 *bd79-11-20d1tr01.flac
+93d23ac791dc0e9879cd83a9f6980d78 *bd79-11-20d1tr02.flac
+41368ccabd29b226f4cbd0eea318e75b *bd79-11-20d1tr03.flac
+54adf4ff5dd08fb1728f0d4569da9f52 *bd79-11-20d1tr04.flac
+05fc039bb108aabc126756661f916545 *bd79-11-20d1tr05.flac
+fed7de14d4f1e223286abdaab70307c4 *bd79-11-20d1tr06.flac
+e153c88c04e319b0752d95191f99b8b5 *bd79-11-20d1tr07.flac
+416722e61824fc1d6eded15daae9609e *bd79-11-20d1tr08.flac
+e088f4f0c6520b21e94d22703b3f1f9e *bd79-11-20d1tr09.flac
+fa236771b0d85c30c5a28dc20be7e84f *bd79-11-20d1tr10.flac
+cad80f5064be34ae5e42017cdb311be9 *bd79-11-20d1tr11.flac
+058c79205b10278143f9f48b02d14316 *bd79-11-20d1tr12.flac
+39b33db057d16ede329ad644ee51b59e *bd79-11-20d1tr13.flac
+47b03978e03e5e3c77095d51894ab681 *bd79-11-20d1tr14.flac
+07390a3846d0f19bed8f354d7f52ec6d *bd79-11-20d2tr01.flac
+503cac6563d1c3a419aea1af09656a96 *bd79-11-20d2tr02.flac
+f1d4c0562bdfe953200cce05fce8f385 *bd79-11-20d2tr03.flac
+67fbcfce43817ea4ef2c3ddda2b308d1 *bd79-11-20d2tr04.flac
+55e6c716c7e23b1646fd5491c5e91daa *bd79-11-20d2tr05.flac
+e770b2257fb26925413df6509558b6c3 *bd79-11-20d2tr06.flac
+24a241d170fcd1094be7927a34d1c013 *bd79-11-20d2tr07.flac
+fe7a51efe1a7a58b100e99057b4d7042 *bd79-11-20d2tr08.flac
+fceee5fb3c0ab7e4cb3b255ef5c4e989 *bd79-11-20d2tr09.flac
+5b0e8ec85b31be427f26eecd29edc4a9 *bd79-11-20d2tr10.flac
+82152e8a9f07ff6a820b93bad0fd6a22 *bd79-11-20d2tr11.flac
+===================
+===================
+===================

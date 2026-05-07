@@ -1,0 +1,71 @@
+===================
+===================
+===================
+=== all.md5
+===================
+===================
+===================
+1640db01cb4a49db2b4bbb3e7177aab4 *Gain1 01.flac
+dd619c8efdc52dee490d4eb7497b2c1e *Gain1 02.flac
+6d1011e47f8b47488a89b0b0c6b82d1d *Gain1 03.flac
+b11b30aec5f5e13dd39ec13299319715 *Gain1 04.flac
+4d97e44d195ca2f29b37584417be2154 *Gain1 05.flac
+9e4480677dfc962d04696e9162427105 *Gain1 06.flac
+3d3c9f2073cda9ef6bbf6d5f1be82050 *Gain1 07.flac
+2fa48de3a87b1ceb2cc8afd12ae1580d *Gain1 08.flac
+73d2ff060895af1e7b4c06fb2fd8789f *Gain1 09.flac
+1b59b96db9031fca92b9c8bbe9bbead2 *Gain1 10.flac
+7540a687b2f71a2a8c925d1d6f4408bf *Gain1 11.flac
+d99524b5dbad9b5a16c77bd1fffaf347 *Gain1 12.flac
+8ff5dcb9cebe1c8d50dc4901ef1358a2 *Gain1 13.flac
+6b3eb28f5fb5c4046afde7ab3f4b3942 *Gain1 14.flac
+c5daa3a20d1dc9b458cacfca42ec0ca8 *Gain1 15.flac
+4af9959352a50fef9f9c1acd8566c08c *Gain1 16.flac
+46e40060e4d2e165bc52c22cf7a11f11 *Gain2 01.flac
+8e112b25adea46fa3d81b57b9e2fae62 *Gain2 02.flac
+b5ba499c46576731af88a4d490616abd *Gain2 03.flac
+d9bb8ce74a552aeed0afe80eb3a975ec *Gain2 04.flac
+59f704befcd9358937f896024d2f71de *Gain2 05.flac
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+25Apr1976
+Gainsville, Univ of Florida field
+
+A wailing show and the band is extra-tight. This audience recording is below average. Collected in 1976 by Bob Heyer. EQ added. 
+Same transfer as LB 3593 (March 2006), without the alternate source Guam recording.
+
+Enjoy,
+/Lowgen
+-------------------------------
+1 Mr. Tambourine Man
+2 Simple Twist Of Fate
+3 Vincent van Gogh
+4 I'll Be Your Baby Tonight
+5 Maggie's Farm
+6 One Too Many Mornings
+7 Isis
+8 Blowin' In The Wind
+9 Dink's Song
+10 Railroad Boy
+11 I Pity The Poor Immigrant
+12 Shelter From The Storm
+13 I Threw It All Away
+14 Just Like Tom Thumb's Blues
+15 One More Cup Of Coffee (Valley Below)
+16 Going, Going, Gone, 
+
+  CD2
+1 Mozambique
+2 Lay Lady Lay
+3 Idiot Wind
+4 Knockin' On Heaven's Door
+5 Gotta Travel On
+===================
+===================
+===================

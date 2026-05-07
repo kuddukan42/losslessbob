@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-11-02-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+f283edab90267359fc90f8c69f154d78  bd06-11-02-SP-CMC-8-LB-4307.txt
+4a3c320aeaca5bf5227faea03d5ea113  Dylan110206 d1 t1.flac
+d95798863f8a1a51fb54fb9bf02d1b80  Dylan110206 d1 t10.flac
+dc3e27ad684267641c23ed5655f42a01  Dylan110206 d1 t2.flac
+d7f72f7b74b83a1dc18e15c1b96b1535  Dylan110206 d1 t3.flac
+ac8a1edcedc3d121d4e6ac0b277ce291  Dylan110206 d1 t4.flac
+981c4f9f7e8bd5c809291adb4602bcae  Dylan110206 d1 t5.flac
+e7a0b33cb99b1646c7a14cb34dbaaa8f  Dylan110206 d1 t6.flac
+a444b95ba489836944c7b5db9d831d54  Dylan110206 d1 t7.flac
+e13ef42729b34b12e2644bbeb09fc732  Dylan110206 d1 t8.flac
+c25c2ddb974d04760cf240f27813e98e  Dylan110206 d1 t9.flac
+f85b0dc2514cc058e40a06c5503cfff3  Dylan110206 d2 t1.flac
+5e9d7ad82994d141d4fe40a5787d5b00  Dylan110206 d2 t2.flac
+8caf05140ab497a8ce843454a54f8bb9  Dylan110206 d2 t3.flac
+43f1b7f378a0ac2e8c3dd1d07a223445  Dylan110206 d2 t4.flac
+f23e13215a143a975f0bec51426e32e1  Dylan110206 d2 t5.flac
+dd4e646feaa0b440f1e0bdb7fa928b49  Dylan110206 d2 t6.flac
+33c4b26cef2448618ce7fe4cae6c2717  Dylan110206 d2 t7.flac
+2bfe3175b1d525779346f3a77416aa5d  Dylan110206 d2 t8.flac
+81dadfb5c176395ee6d95e4fd6dd2718  Dylan110206.md5
+496c6c55ef2bb0e80cce3e7cfb32491f  Dylan110206.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-11-02-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+Dylan110206 d1 t1.flac:226fc8fef9932ebec784745f88dcdded
+Dylan110206 d1 t10.flac:b413736c398d9348c2114b6751b5959b
+Dylan110206 d1 t2.flac:8ad47a0a68fb763e1cb0ce730780c063
+Dylan110206 d1 t3.flac:933c9f37c1932754ea42cde7c939ac62
+Dylan110206 d1 t4.flac:80b8573db3a8df8bf98b9a751267f2cd
+Dylan110206 d1 t5.flac:6f9439ffc0cf4a1d83cba6897f33a5b8
+Dylan110206 d1 t6.flac:898faf5eeecae1d26ed0db8907d2a295
+Dylan110206 d1 t7.flac:596d81720f9ca5662e4396c4425bd67e
+Dylan110206 d1 t8.flac:19593977599d3578e68ea5ce3e63bf7a
+Dylan110206 d1 t9.flac:fe1bb89bb753e18a02446a3d02ea6fe8
+Dylan110206 d2 t1.flac:fd5c34787d7a0d5e6b43f657efdf1b97
+Dylan110206 d2 t2.flac:31d7221ab730e056fed178fa9661d66a
+Dylan110206 d2 t3.flac:606dd923915a4b615be31adebb7b846f
+Dylan110206 d2 t4.flac:ac21bb26e3537e379e9779149e4f856c
+Dylan110206 d2 t5.flac:e7ddd01be042b0a81fabbc88ff6421c9
+Dylan110206 d2 t6.flac:74204e70f784b99242751bcedb480577
+Dylan110206 d2 t7.flac:22da93105066ff85a13744b7fba0194e
+Dylan110206 d2 t8.flac:8f60da36e32d30a9ac4ee08c02f9ed04
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-11-02-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:56.22        9930188 B   ---   --   ---xx   flac  0.4879  Dylan110206 d1 t1.flac
+     6:51.68       72660380 B   ---   --   ---xx   flac  0.5735  Dylan110206 d1 t10.flac
+     3:54.60       41418764 B   ---   --   ---xx   flac  0.6202  Dylan110206 d1 t2.flac
+     5:53.61       62412716 B   ---   --   ---xx   flac  0.5826  Dylan110206 d1 t3.flac
+     9:10.43       97121180 B   ---   --   ---xx   flac  0.6121  Dylan110206 d1 t4.flac
+     6:51.47       72610988 B   ---   --   ---xx   flac  0.5270  Dylan110206 d1 t5.flac
+     6:49.33       72225260 B   ---   --   ---xx   flac  0.6068  Dylan110206 d1 t6.flac
+     6:54.27       73093148 B   ---   --   ---xx   flac  0.5648  Dylan110206 d1 t7.flac
+     6:35.48       69790940 B   ---   --   ---xx   flac  0.5702  Dylan110206 d1 t8.flac
+     7:58.00       84319244 B   ---   --   ---xx   flac  0.5183  Dylan110206 d1 t9.flac
+     8:11.48       86725340 B   ---   --   ---xx   flac  0.5869  Dylan110206 d2 t1.flac
+     6:05.74       64560092 B   ---   --   ---xx   flac  0.6188  Dylan110206 d2 t2.flac
+     7:18.59       77402012 B   ---   --   ---xx   flac  0.4707  Dylan110206 d2 t3.flac
+     9:53.67      104762828 B   ---   --   ---xx   flac  0.5741  Dylan110206 d2 t4.flac
+     5:22.47       56911388 B   ---   --   ---xx   flac  0.6093  Dylan110206 d2 t5.flac
+     6:38.04       70216652 B   ---   --   ---xx   flac  0.6006  Dylan110206 d2 t6.flac
+     0:38.42        6802028 B   ---   --   ---xx   flac  0.5104  Dylan110206 d2 t7.flac
+     5:50.17       61781068 B   -b-   --   ---xx   flac  0.5831  Dylan110206 d2 t8.flac
+   111:56.17     1184744216 B                            0.5728  (18 files)
+=================== 
+=================== 
+=================== 

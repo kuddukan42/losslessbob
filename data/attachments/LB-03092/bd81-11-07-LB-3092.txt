@@ -1,0 +1,47 @@
+Bob Dylan, 
+7 November 1981 
+University Of Michigan, 
+Ann Arbor, Mich., 
+Hill Auditorium, 2CDR
+
+Fixed LB-3092, (68min+59min), good to very good sound [B-]
+
+LB-3092 > Fixing of very minor index clicks between most tracks Wave Repair 4.9.2./re-tracking D2Watered-Down Love/Shot Of Love/Just Like A Woman into separate tracks, No ASM > flac lvl 8 verify
+
+
+CD1
+
+1 Gotta Serve Somebody 
+2 I Believe In You 
+3 Like A Rolling Stone 
+4 I Want You 
+5 Man Gave Names To All The Animals 
+6 Maggie's Farm 
+7 Girl From The NorthCountry 
+8 Ballad Of A Thin Man 
+9 Heart Of Mine 
+10 Simple Twist Of Fate 
+11 AllAlong The Watchtower 
+12 I'll Be Your Baby Tonight
+13 Forever Young 
+14 Gamblin'Man 
+15 The Times They Are A-Changin' 
+16 A Hard Rain's A-Gonna Fall 
+
+
+CD2
+
+1 Watered-Down Love 
+2 Shot Of Love 
+3 Just Like A Woman 
+4 Solid Rock 
+5 Masters Of War 
+6 When You Gonna Wake Up 
+7 InThe Garden 
+8 Blowin' In The Wind 
+9 It's Alright, Ma (I'm Only Bleeding)(acoustic) 
+10 It Ain't Me, Babe (acoustic) 
+11 Knockin' On Heaven's Door
+
+Please retain this info file as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

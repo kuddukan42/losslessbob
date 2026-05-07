@@ -1,0 +1,119 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-29-old-toad-remaster.flacf 
+=================== 
+=================== 
+=================== 
+9f3e2844ef43fc4664a0d1a28e453f01  abd-bln29678d1-t01.flac
+db2e8ba08dba5554f30b517f22575f30  abd-bln29678d1-t02.flac
+36f02c0918242426dc0a5417d676af44  abd-bln29678d1-t03.flac
+ef4af8cac88708f44c5be865377b7fec  abd-bln29678d1-t04.flac
+9e46df61f5b6a18212e2c2b19ed12b38  abd-bln29678d1-t05.flac
+0fc76fe5be72c57ce9d487ee66e57317  abd-bln29678d1-t06.flac
+fa66890669638bcb34bd525b5d484881  abd-bln29678d1-t07.flac
+98e2b651fb9b027445ca3b1ebf83d462  abd-bln29678d1-t08.flac
+bed1ac321185254f8c47fa0eaa988937  abd-bln29678d1-t09.flac
+79fb09651cca8ce037eb984cd9b9ff8d  abd-bln29678d1-t10.flac
+d13fcf755d98ddb52bed7e9f23c108cb  abd-bln29678d1-t11.flac
+243a4f908e2a5b5f411c05a26cfcecaf  abd-bln29678d1-t12.flac
+18aeecedbcf154be97686cb51a43ca4a  abd-bln29678d1-t13.flac
+c6caeb51f9f3c2a6eefed41d14fab439  abd-bln29678d1-t14.flac
+a8b10561486d2bc9428d5611c36c9a10  abd-bln29678d1-t15.flac
+4e519465982febb717a3948223555fc3  abd-bln29678d2-t01.flac
+752bce770ba97dc79d9a838ca8031716  abd-bln29678d2-t02.flac
+565fa44273ef9c23e15051d1577cd2c0  abd-bln29678d2-t03.flac
+da022616d350808e13d0a88bd137cc3b  abd-bln29678d2-t04.flac
+78d0c4e248af592fc137ee1be9315bd7  abd-bln29678d2-t05.flac
+be6547d8dbfaaada2a51c5adabb80a7e  abd-bln29678d2-t06.flac
+28cd948c59c1aaaea2eceadd9d5c73c4  abd-bln29678d2-t07.flac
+f5a29afe6876118a56f04a4ab2f63c5d  abd-bln29678d2-t08.flac
+06d08d765bfdce70edfdfc2f6cc413b6  abd-bln29678d2-t09.flac
+5e57857dffead4f100706978f753d578  abd-bln29678d2-t10.flac
+59ffb542c1172805f48758d48d06c181  abd-bln29678d2-t11.flac
+8ac26429e28e1830e55c7fa13e5c8293  abd-bln29678d2-t12.flac
+13c9b36b5e7232c8c6ea7bd05c0f3153  abd-bln29678d2-t13.flac
+3fdc9cf2a0e1c6f05db3d42f3e8b70f1  abd-bln29678d2-t14.flac
+4c93b9769e919341962348cba18d4ced  all_along_the_watchtower_back.jpg
+638460434fe29203820f1f41d6d45225  all_along_the_watchtower_front.jpg
+a529255a08a8f1378330517b2554cea1  bd-bln-780629-setlist.txt
+62bc19bb6deea88c6e075be69480b423  bd78-06-29-old-toad-remaster-LB-2962.txt
+9669b06eab15e4d55aed06204a0dbbbe  bob_dylan_78-06-29_west_berlin_old_toad_remaster.txt
+34f5687398e31b64ed895d81e4e3ceeb  lineage.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-29-old-toad-remaster.flacf 
+=================== 
+=================== 
+=================== 
+abd-bln29678d1-t01.flac:4941100b9893a11d1a43b9dd702a71cc
+abd-bln29678d1-t02.flac:85e9e582b734dedbb910491936fc0ef3
+abd-bln29678d1-t03.flac:2b535f11b02549243b9e6c3100245e68
+abd-bln29678d1-t04.flac:e6a471a553ff5bef79bae51fb23d7ff7
+abd-bln29678d1-t05.flac:df83e0ea0808183bdaf37df30647c607
+abd-bln29678d1-t06.flac:5f73b281d87908e66b4dea4250f5d02d
+abd-bln29678d1-t07.flac:d06442f42d4cb27e1c40f3526df239fd
+abd-bln29678d1-t08.flac:e67d84f3a263ef380f4269693f391063
+abd-bln29678d1-t09.flac:b058211a042b4485ace40089947e3800
+abd-bln29678d1-t10.flac:dfb6636c31dacbd5cbb1dee3a69cef7f
+abd-bln29678d1-t11.flac:30ea813ef74252039807f4f235e0672b
+abd-bln29678d1-t12.flac:ece434c8d3d63c095e3aec6ce2e10937
+abd-bln29678d1-t13.flac:7df2ec15cf4e2c5036d86cc42d2de0c6
+abd-bln29678d1-t14.flac:8620c7e39372b8af7641561780537a21
+abd-bln29678d1-t15.flac:46f2765b13e5b9e1f8c72c85da1f86fc
+abd-bln29678d2-t01.flac:55c4b2d77ce8d5154da49296faf3ad62
+abd-bln29678d2-t02.flac:84088f619f2ca079603f7e525beb525b
+abd-bln29678d2-t03.flac:d502935c1459f748e99e8d095887dabc
+abd-bln29678d2-t04.flac:6ce4b67f38b1aeeee45a92d53f476483
+abd-bln29678d2-t05.flac:e25e3043328885499d1ad5ee3db654ea
+abd-bln29678d2-t06.flac:59e252bc694a5fae69077e45f6fc8647
+abd-bln29678d2-t07.flac:522be85ab9826fb2813a2c24b3f85460
+abd-bln29678d2-t08.flac:be71fe59a6d91e55f5645d0e194d37af
+abd-bln29678d2-t09.flac:4b93d1ccbd6d2e1b368ee7c6cbb317c6
+abd-bln29678d2-t10.flac:11ace7c3a4a3e62034f632270b3f0877
+abd-bln29678d2-t11.flac:008cbcef6aed283827fc281167ac1d55
+abd-bln29678d2-t12.flac:362a72875ebe713e618e9ca0f03f56a2
+abd-bln29678d2-t13.flac:5d04844ae9aebd4407416169bfd1f8fa
+abd-bln29678d2-t14.flac:2f12762b1b56bc1ee2e3a13f50e6b323
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-29-old-toad-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.04       47284652 B   ---   --   ---xx   flac  0.5714  abd-bln29678d1-t01.flac
+     2:30.68       26619980 B   ---   --   ---xx   flac  0.6017  abd-bln29678d1-t02.flac
+     5:25.39       57421772 B   ---   --   ---xx   flac  0.6016  abd-bln29678d1-t03.flac
+     5:10.51       54803996 B   ---   --   ---xx   flac  0.5942  abd-bln29678d1-t04.flac
+     5:07.29       54223052 B   ---   --   ---xx   flac  0.5871  abd-bln29678d1-t05.flac
+     4:33.00       48157244 B   ---   --   ---xx   flac  0.5815  abd-bln29678d1-t06.flac
+     7:01.36       74349116 B   ---   --   ---xx   flac  0.5168  abd-bln29678d1-t07.flac
+     4:43.58       50057660 B   ---   --   ---xx   flac  0.5434  abd-bln29678d1-t08.flac
+     4:55.39       52129772 B   ---   --   ---xx   flac  0.6023  abd-bln29678d1-t09.flac
+     4:31.06       47818556 B   ---   --   ---xx   flac  0.5386  abd-bln29678d1-t10.flac
+     6:51.22       72552188 B   ---   --   ---xx   flac  0.6181  abd-bln29678d1-t11.flac
+     4:07.02       43575548 B   ---   --   ---xx   flac  0.5395  abd-bln29678d1-t12.flac
+     5:21.24       56680892 B   ---   --   ---xx   flac  0.5413  abd-bln29678d1-t13.flac
+     2:01.13       21375020 B   ---   --   ---xx   flac  0.4934  abd-bln29678d1-t14.flac
+     3:44.09       39534812 B   ---   --   ---xx   flac  0.6115  abd-bln29678d1-t15.flac
+     5:16.55       55871804 B   ---   --   ---xx   flac  0.5208  abd-bln29678d2-t01.flac
+     3:28.68       36851180 B   ---   --   ---xx   flac  0.5561  abd-bln29678d2-t02.flac
+     4:59.42       52842428 B   ---   --   ---xx   flac  0.5285  abd-bln29678d2-t03.flac
+     3:06.41       32906876 B   ---   --   ---xx   flac  0.4990  abd-bln29678d2-t04.flac
+     4:47.70       50791484 B   ---   --   ---xx   flac  0.5269  abd-bln29678d2-t05.flac
+     4:22.33       46294460 B   ---   --   ---xx   flac  0.5747  abd-bln29678d2-t06.flac
+     5:40.51       60095996 B   ---   --   ---xx   flac  0.5295  abd-bln29678d2-t07.flac
+     5:00.74       53094092 B   ---   --   ---xx   flac  0.5424  abd-bln29678d2-t08.flac
+     4:01.05       42524204 B   ---   --   ---xx   flac  0.5732  abd-bln29678d2-t09.flac
+     4:46.08       50469260 B   ---   --   ---xx   flac  0.5366  abd-bln29678d2-t10.flac
+     6:13.49       65912492 B   ---   --   ---xx   flac  0.5620  abd-bln29678d2-t11.flac
+     6:08.23       64969340 B   ---   --   ---xx   flac  0.5377  abd-bln29678d2-t12.flac
+     3:28.47       36801788 B   ---   --   ---xx   flac  0.5470  abd-bln29678d2-t13.flac
+     5:16.67       55900028 B   ---   --   ---xx   flac  0.5347  abd-bln29678d2-t14.flac
+   137:10.58     1451909692 B                            0.5564  (29 files)
+=================== 
+=================== 
+=================== 

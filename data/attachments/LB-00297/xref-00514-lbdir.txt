@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-08-12-a.flacf 
+=================== 
+=================== 
+=================== 
+e2ff7de5cb022417f882e96e5ee11e08  bd1991-08-12 Montevideo.ffp
+e09062b5f0de96174c3ccc26fe153add  bd1991-08-12 Montevideo_WAV.md5
+b5412bde2c9a4a43030caa439836a91f  bd91-08-12.txt
+b7daadd54f8a607b7c759ae9ff0032e2  bd91-08-12t01.flac
+11bd213634bd5b431555341fc3fff603  bd91-08-12t02.flac
+3f4f76a423f9fdb1e55d94e24e342445  bd91-08-12t03.flac
+cc5beb76dcf0ff8eb45fc5bc8c39a420  bd91-08-12t04.flac
+9383e40f565e7f48b070b545c015a3dd  bd91-08-12t05.flac
+2323ccc478c138cb2d69e589ff1af0b9  bd91-08-12t06.flac
+cf0e6865a88a8617f0e0c7ab0a35c838  bd91-08-12t07.flac
+779e4d0afcd0099e18e3ed671096470a  bd91-08-12t08.flac
+be78544664ebb7d92b34eb44982ba037  bd91-08-12t09.flac
+860737ca4bd9fab2b51d7e09c39964b2  bd91-08-12t10.flac
+8d502fcd2d393665739cc043c9eb70d4  bd91-08-12t11.flac
+cd4c9b674c8a2fdd4b66926d6756b181  bd91-08-12t12.flac
+75feded0339bd9404dcbfa3f1bd50484  bd91-08-12t13.flac
+2ec818c9b25d26cdb48c537ba1c20d26  bd91-08-12t14.flac
+1c5be843484f5166abb53035ee1678bb  eac.LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-08-12-a.flacf 
+=================== 
+=================== 
+=================== 
+bd91-08-12t01.flac:dac50b8600e3516836468ec2045e0a70
+bd91-08-12t02.flac:b0085f1d8a0425a3f19d99a11bc9c55e
+bd91-08-12t03.flac:9d423fd7d87b17f4fb787fe0ffeba85a
+bd91-08-12t04.flac:d94013a92cb30304701781a415b9c3fe
+bd91-08-12t05.flac:89cef67f8ff610bb4af430fd75e60965
+bd91-08-12t06.flac:93315e6e6b8330047801cd04fac48c5f
+bd91-08-12t07.flac:ce6039e7b82b3d1dac0c542fd9be23c8
+bd91-08-12t08.flac:9703d9cba31e7059b2037e4f0f51ce17
+bd91-08-12t09.flac:08b4c8e2028299770535aa358e192f19
+bd91-08-12t10.flac:9c4f93e2bef79f1f0bb63aa0831a6eab
+bd91-08-12t11.flac:6cd82a23a6933094f7c686a458532bf7
+bd91-08-12t12.flac:67269a502564329d38b8f9d37d9ca838
+bd91-08-12t13.flac:2015b0cf3a5f611812f32c2d21b17b2c
+bd91-08-12t14.flac:3e1addb3511d1d0c1512347829308446
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-08-12-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:46.12        8142668 B   ---   --   ---xx   flac  0.4792  bd91-08-12t01.flac
+     3:49.40       40489724 B   ---   --   ---xx   flac  0.5487  bd91-08-12t02.flac
+     4:29.67       47609228 B   ---   --   ---xx   flac  0.5575  bd91-08-12t03.flac
+     7:11.09       76049612 B   ---   --   ---xx   flac  0.5487  bd91-08-12t04.flac
+     2:53.56       30648956 B   ---   --   ---xx   flac  0.5552  bd91-08-12t05.flac
+     3:16.52       34696748 B   ---   --   ---xx   flac  0.5038  bd91-08-12t06.flac
+     0:25.57        4544108 B   ---   --   ---xx   flac  0.4350  bd91-08-12t07.flac
+     5:13.17       55253228 B   ---   --   ---xx   flac  0.5015  bd91-08-12t08.flac
+     5:34.01       58919996 B   ---   --   ---xx   flac  0.5301  bd91-08-12t09.flac
+     3:38.62       38601068 B   ---   --   ---xx   flac  0.5358  bd91-08-12t10.flac
+     5:49.39       61655372 B   ---   --   ---xx   flac  0.5303  bd91-08-12t11.flac
+     7:01.68       74424380 B   ---   --   ---xx   flac  0.5427  bd91-08-12t12.flac
+     4:38.73       49210940 B   ---   --   ---xx   flac  0.5200  bd91-08-12t13.flac
+    14:18.55      151480604 B   ---   --   ---xx   flac  0.4979  bd91-08-12t14.flac
+    69:08.08      731726632 B                            0.5256  (14 files)
+=================== 
+=================== 
+=================== 

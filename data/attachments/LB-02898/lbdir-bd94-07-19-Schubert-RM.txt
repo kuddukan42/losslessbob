@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-19-Schubert-RM 
+=================== 
+=================== 
+=================== 
+86fb7737984a547f635171133b836bca  bd1994-07-19 Warsaw_Schubert RM.md5
+e9cb414090f9aa74187bca394f37e42a  bd1994-07-19 Warsaw_Schubert RM.txt
+f9fc553da4a6a4c61c4c0fa115460e74  bd1994-07-19_Schubert RMd1t01.shn
+eddcd2656e4e4450e89ce533a0e60179  bd1994-07-19_Schubert RMd1t02.shn
+897f635e6a64217a3241cd4929412780  bd1994-07-19_Schubert RMd1t03.shn
+0ab0f385f841d367afa7d0a191491001  bd1994-07-19_Schubert RMd1t04.shn
+c4b3f5fae5db61ccb803d1b05f11438b  bd1994-07-19_Schubert RMd1t05.shn
+483ab4390fc472db77927b79ed32316e  bd1994-07-19_Schubert RMd1t06.shn
+2373ca55d22bc124f6e273ebc7e77ae4  bd1994-07-19_Schubert RMd1t07.shn
+6e9b7d487826fab354b5aca95d24bab3  bd1994-07-19_Schubert RMd1t08.shn
+cd7e9cfa99b479a3adfdb772fc27014c  bd1994-07-19_Schubert RMd1t09.shn
+1a5f23414624c81148ce64ee84b7494c  bd1994-07-19_Schubert RMd1t10.shn
+18532e3d34ef41717a585b79f9bf0b96  bd1994-07-19_Schubert RMd2t01.shn
+7304215101d8153eab9b285621242b4a  bd1994-07-19_Schubert RMd2t02.shn
+645c1d280d89f8bad91278d9019ce336  bd1994-07-19_Schubert RMd2t03.shn
+49ec9ccbc8f623a2b0fc25c3459bba8c  bd1994-07-19_Schubert RMd2t04.shn
+1e56ae2b0687cb5c2401c9214b7434cb  bd1994-07-19_Schubert RMd2t05.shn
+a2b00cc84f29c4596b08475736ecf223  bd1994-07-19_Schubert RMd2t06.shn
+f74238afd923377c60b6bfa3c202afee  bd94-07-19-Schubert-RM-LB-2898.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-07-19-Schubert-RM 
+=================== 
+=================== 
+=================== 
+3436d57aeb3818f5dd49199c2b5f68ab  [shntool]  bd1994-07-19_Schubert_RMd1t01.wav
+a510e39b338124c23a118446fd0ac18c  [shntool]  bd1994-07-19_Schubert_RMd1t02.wav
+9f98bbf0d4370a599b0eeba0dd90585e  [shntool]  bd1994-07-19_Schubert_RMd1t03.wav
+64bab59fed3ef779bd1cb54b97f7de22  [shntool]  bd1994-07-19_Schubert_RMd1t04.wav
+b4e83da8b223930c6a7deed13899551f  [shntool]  bd1994-07-19_Schubert_RMd1t05.wav
+7f3bf2a55a14760c96d4109e54237c9d  [shntool]  bd1994-07-19_Schubert_RMd1t06.wav
+1b86acc4c5c411494010ad445cbdfc2f  [shntool]  bd1994-07-19_Schubert_RMd1t07.wav
+1a4c0a014d247896dbb7c96355c5a6f1  [shntool]  bd1994-07-19_Schubert_RMd1t08.wav
+6e9c9bfc431c6aa072d0f4d52fb6432c  [shntool]  bd1994-07-19_Schubert_RMd1t09.wav
+6692649fe0158d3540140fabbdefccbf  [shntool]  bd1994-07-19_Schubert_RMd1t10.wav
+0fd1145378811c4ab7bb3ded321eb587  [shntool]  bd1994-07-19_Schubert_RMd2t01.wav
+1a1aa1971cb6a3ec360d7c9583802e7b  [shntool]  bd1994-07-19_Schubert_RMd2t02.wav
+7b9a637b2eae242051bb8cfdedb77dce  [shntool]  bd1994-07-19_Schubert_RMd2t03.wav
+45cb05d48a0f7ea6560d935ca9fe4d66  [shntool]  bd1994-07-19_Schubert_RMd2t04.wav
+a18f091c7d63ce8e4e5ee6702921aad5  [shntool]  bd1994-07-19_Schubert_RMd2t05.wav
+bf1527eeaccd7829550f1f5be23b2470  [shntool]  bd1994-07-19_Schubert_RMd2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-19-Schubert-RM 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:13.27        2356748 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t01.wav
+     7:43.48       81786140 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t02.wav
+     6:27.65       68419724 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t03.wav
+     5:36.02       59275148 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t04.wav
+     7:00.41       74184476 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t05.wav
+     9:56.68      105294380 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t06.wav
+     6:42.56       71044556 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t07.wav
+     4:46.12       50478668 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t08.wav
+     5:51.57       62050508 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t09.wav
+     5:27.44       57786332 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd1t10.wav
+     6:15.63       66298220 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd2t01.wav
+     8:24.29       88973852 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd2t02.wav
+     7:32.24       79789292 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd2t03.wav
+     7:29.04       79213052 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd2t04.wav
+     8:38.11       91401116 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd2t05.wav
+     4:23.61       46536716 B   ---   --   -----    wav  1.0000  bd1994-07-19_Schubert_RMd2t06.wav
+   102:30.12     1084888928 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

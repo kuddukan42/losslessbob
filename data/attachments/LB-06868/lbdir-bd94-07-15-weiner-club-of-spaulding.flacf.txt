@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-15-weiner-club-of-spaulding.flacf 
+=================== 
+=================== 
+=================== 
+054d997055223baad05b248053039f5d  bd94-07-15-weiner-club-of-spaulding-d1t01.flac
+8d149d9f26e0e23b3f7e14448d233b74  bd94-07-15-weiner-club-of-spaulding-d1t02.flac
+af2f13b759776f3c7d44ed50275d4aa9  bd94-07-15-weiner-club-of-spaulding-d1t03.flac
+be01e74927ecba767dda1fe72d54252e  bd94-07-15-weiner-club-of-spaulding-d1t04.flac
+2c52e0c4f2b5907ec82e9aa8650b3c4c  bd94-07-15-weiner-club-of-spaulding-d1t05.flac
+e97b9c0e2a722dd98c79046cf392bbcb  bd94-07-15-weiner-club-of-spaulding-d1t06.flac
+26ef543bf47e5ea8d258a267d3e02562  bd94-07-15-weiner-club-of-spaulding-d1t07.flac
+551ad4506b959433abbef9962c26ec01  bd94-07-15-weiner-club-of-spaulding-d1t08.flac
+63ba43b05987a3da93fe6a9dd0977259  bd94-07-15-weiner-club-of-spaulding-d1t09.flac
+b937b0b5c1b57079377b0bbaf2e9f575  bd94-07-15-weiner-club-of-spaulding-d1t10.flac
+dff63a1c0e5f2d9279451fbb404337a9  bd94-07-15-weiner-club-of-spaulding-d2t01.flac
+8a33c20677cfe15e4fda75c10c561e1c  bd94-07-15-weiner-club-of-spaulding-d2t02.flac
+a492bf8200e2c8c8418f6e0a1ed63501  bd94-07-15-weiner-club-of-spaulding-d2t03.flac
+95d07de71889f018ba6c13f823fdfbf8  bd94-07-15-weiner-club-of-spaulding-d2t04.flac
+955e76b4b14c0c6fbabbecaf387e75b2  bd94-07-15-weiner-club-of-spaulding-d2t05.flac
+543986ff3b95257d7b4f4ee847c521cc  bd94-07-15-weiner-club-of-spaulding-d2t06.flac
+3a226ccab1793a455642c374ce7d505c  bd94-07-15-weiner-club-of-spaulding-d2t07.flac
+77d1d8c9a8ecbd0cadc290ba26783675  bd94-07-15-weiner-club-of-spaulding-d2t08.flac
+f96a3ff96c671c5125d634950b3cce8b  bd94-07-15-weiner-club-of-spaulding-d2t09.flac
+5230306c6162e07b2ddcbf8b076e68d4  bd94-07-15-weiner-club-of-spaulding.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-15-weiner-club-of-spaulding.flacf 
+=================== 
+=================== 
+=================== 
+bd94-07-15-weiner-club-of-spaulding-d1t01.flac:0f11f783c27d3311cbf11f68bc2c79e0
+bd94-07-15-weiner-club-of-spaulding-d1t02.flac:1191cfa0de83b7e3f987cc52d6314479
+bd94-07-15-weiner-club-of-spaulding-d1t03.flac:2be86c0665559c1571b4ccd37b980581
+bd94-07-15-weiner-club-of-spaulding-d1t04.flac:9c1dfd3ef81402188e1b0188f2fc6496
+bd94-07-15-weiner-club-of-spaulding-d1t05.flac:f0ed32745bb67570e430c8fa0fdb06f9
+bd94-07-15-weiner-club-of-spaulding-d1t06.flac:23346a97b36434c8bb1369724bbc6752
+bd94-07-15-weiner-club-of-spaulding-d1t07.flac:1afb62503218bf1100febd2fdd84cafe
+bd94-07-15-weiner-club-of-spaulding-d1t08.flac:25aec260320c794a57ab3b86b9792f53
+bd94-07-15-weiner-club-of-spaulding-d1t09.flac:9e190a4ad6146829b92b7e7a7f532a23
+bd94-07-15-weiner-club-of-spaulding-d1t10.flac:5fd34e8de13d7d14f2cb118263a85e72
+bd94-07-15-weiner-club-of-spaulding-d2t01.flac:1357a7f3a565939aaace78d3025625e0
+bd94-07-15-weiner-club-of-spaulding-d2t02.flac:c4757f9c57ef3f86884a0c28bb885b51
+bd94-07-15-weiner-club-of-spaulding-d2t03.flac:1a5ed5c4afbc74b1fd74e1d45e617c66
+bd94-07-15-weiner-club-of-spaulding-d2t04.flac:aca73917c197f46f5152f672f41641de
+bd94-07-15-weiner-club-of-spaulding-d2t05.flac:ea5b2a1aa01b11a926946f5de62477ba
+bd94-07-15-weiner-club-of-spaulding-d2t06.flac:0f98b10161c07d6911cd57adb5004c4f
+bd94-07-15-weiner-club-of-spaulding-d2t07.flac:f77712eec01eab5ba839d8ee77c437f2
+bd94-07-15-weiner-club-of-spaulding-d2t08.flac:f086ae0357c2f1ecf473f42d4c80382c
+bd94-07-15-weiner-club-of-spaulding-d2t09.flac:3a50978d8ceee8f3751bef617c3248e5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-15-weiner-club-of-spaulding.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:01.00       84848444 B   ---   --   ---xx   flac  0.6667  bd94-07-15-weiner-club-of-spaulding-d1t01.flac
+     6:43.15       71124524 B   ---   --   ---xx   flac  0.6456  bd94-07-15-weiner-club-of-spaulding-d1t02.flac
+     5:44.17       60721628 B   ---   --   ---xx   flac  0.6666  bd94-07-15-weiner-club-of-spaulding-d1t03.flac
+     9:38.53      102083900 B   ---   --   ---xx   flac  0.6394  bd94-07-15-weiner-club-of-spaulding-d1t04.flac
+     9:48.72      103892588 B   ---   --   ---xx   flac  0.6497  bd94-07-15-weiner-club-of-spaulding-d1t05.flac
+     6:02.43       63957980 B   ---   --   ---xx   flac  0.6181  bd94-07-15-weiner-club-of-spaulding-d1t06.flac
+     5:07.50       54272444 B   ---   --   ---xx   flac  0.5235  bd94-07-15-weiner-club-of-spaulding-d1t07.flac
+     6:03.50       64150844 B   ---   --   ---xx   flac  0.4992  bd94-07-15-weiner-club-of-spaulding-d1t08.flac
+     7:13.50       76498844 B   ---   --   ---xx   flac  0.5020  bd94-07-15-weiner-club-of-spaulding-d1t09.flac
+     6:34.25       69560444 B   ---   --   ---xx   flac  0.5914  bd94-07-15-weiner-club-of-spaulding-d1t10.flac
+     7:25.62       78643868 B   ---   --   ---xx   flac  0.5689  bd94-07-15-weiner-club-of-spaulding-d2t01.flac
+     9:09.00       96843644 B   ---   --   ---xx   flac  0.5983  bd94-07-15-weiner-club-of-spaulding-d2t02.flac
+     9:36.25      101665244 B   ---   --   ---xx   flac  0.6392  bd94-07-15-weiner-club-of-spaulding-d2t03.flac
+    10:09.55      107557004 B   ---   --   ---xx   flac  0.5617  bd94-07-15-weiner-club-of-spaulding-d2t04.flac
+     6:05.53       64510700 B   ---   --   ---xx   flac  0.6459  bd94-07-15-weiner-club-of-spaulding-d2t05.flac
+     6:15.42       66248828 B   ---   --   ---xx   flac  0.6317  bd94-07-15-weiner-club-of-spaulding-d2t06.flac
+     6:41.20       70783484 B   ---   --   ---xx   flac  0.6159  bd94-07-15-weiner-club-of-spaulding-d2t07.flac
+     6:49.55       72277004 B   ---   --   ---xx   flac  0.6585  bd94-07-15-weiner-club-of-spaulding-d2t08.flac
+     6:53.63       73001420 B   ---   --   ---xx   flac  0.5668  bd94-07-15-weiner-club-of-spaulding-d2t09.flac
+   140:05.00     1482642836 B                            0.6066  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,88 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+Track01.flac:d1abab13e6c87e1f936699f87fbe794aTrack02.flac:66a32f9c7d90efe390be5b49c49ca81eTrack03.flac:5d0a07a64af5f437693dbec808ae03cbTrack04.flac:85062ada8bd76b43cda022d08be49d14Track05.flac:98ea52e501da6473f3d9d803c747f4a5Track06.flac:c8b1f8e6f8d9b88dafc0ac0f5895c2e2Track07.flac:208229124fc88592cb5155ea822a85f0Track08.flac:ea32ecf91105461bf59f108f1b6d3bdbTrack01.flac:c3e218151d2c7331573d4352ef49e9f3Track02.flac:c5feb4d3f9a65459ec0ad05b77624652Track03.flac:46eb13e75105b4dd0d68e79fea83f1dfTrack04.flac:aa4ac2866838f7f63abab3bbba873421Track05.flac:ca9cbd99429a96e5fb8df5c64166176cTrack06.flac:aa4e9575959d99891e36e93beb7d83d6Track07.flac:1c8c6a38006c92cbb8952d68c1052bcbTrack08.flac:135c23177c8d1846f5bc1988302ca634
+===================
+===================
+===================
+=== Infos.txt
+===================
+===================
+===================
+Landmark Theater
+Syracuse, New York
+ 
+5 May 1980
+ 
+ 
+1.Gotta Serve Somebody
+2.I Believe In You
+3.When You Gonna Wake Up
+4.Ain't Gonna Go To Hell For Anybody
+5.Cover Down, Break Through
+6.Precious Angel
+7.Man Gave Names To All The Animals
+8.Slow Train
+Gwen Evans:
+Lord Don't Move That Mountain (Mahalia Jackson)
+Clydie King:
+Calgary (?) 
+9.Do Right To Me Baby (Do Unto Others)
+10.Solid Rock
+11.Saving Grace
+12.Saved (Bob Dylan/Tim Drummond)
+13.What Can I Do For You?
+14.In The Garden
+15.Are You Ready?
+16.Pressing On
+ 
+Concert # 16 of the Third Gospel Tour. Gospel concert # 66. 1980 concert # 40.
+Concert # 16 with the Third Gospel Band: Bob Dylan (vocal & guitar), Fred Tackett (guitar), Spooner Oldham (keyboards), Tim Drummond (bass), Terry Young (keyboards), Jim Keltner (drums), Clydie King, Gwen Evans, Mary Elizabeth Bridges, Regina Havis, Mona Lisa Young (background vocals).
+ 
+13 Bob Dylan (harmonica).
+16 Bob Dylan (piano).
+ 
+Stereo audience recording, 90 minutes.
+ 
+Session info updated 24 February 2009.
+
+http://www.bjorner.com/
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+2b3b1df8f3a90733d61f874c1b19d98a *Track01.flac
+e57e7eadb4d6a571b4fcf164af6b9d74 *Track02.flac
+d1a01201ed2a0ddcc2dfcfc6bf9ad077 *Track03.flac
+ee94dbb6fa46d368dc48a939c6d3fe51 *Track04.flac
+dff50e84dbe67466cc850fa9277f4c0f *Track05.flac
+1ff0ad2290a06be22eb054b7309da0a5 *Track06.flac
+06bbf38417f010a67ac2c98633ca2a93 *Track07.flac
+a0f7a15a83e0bf5613aaafe0dfe76d02 *Track08.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+5c72fe8c8b5e66140ae4ca3eaf8f720a *Track01.flac
+ac5fd4ba35df61443782e04f99c80227 *Track02.flac
+bc945e6315aa0680636a4a4b3860c79f *Track03.flac
+daaffcdafac48cc47bdca8f2ecd18690 *Track04.flac
+00a2b1058ea04e74736772f6be3ea3e9 *Track05.flac
+e1a331bed063c8a6e792a5ac935b6344 *Track06.flac
+942757dbf84df69430341779d0f3870f *Track07.flac
+5c8cd842ab318f0093958bde4bb2fdf1 *Track08.flac
+
+===================
+===================
+===================

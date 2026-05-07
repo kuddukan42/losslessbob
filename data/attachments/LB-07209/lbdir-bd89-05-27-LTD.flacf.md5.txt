@@ -1,0 +1,17 @@
+c051a6a2e1d4441c2e665b85d658deab  1989-05-27 Andrarum.md5
+4e6598136b542773f7760f40624eb5c7  Andrarum 1989.txt
+8a5eee154443cbdc0b3d15b7dc48a5a4  Andrarum CD1-1989-01.flac
+21d12bf2b049e5b3eb5fe59e13824730  Andrarum CD1-1989-02.flac
+2f616c8c0a985a5fbe4cd61b20da11df  Andrarum CD1-1989-03.flac
+2edae95f6815147af802bd46b9c39bd9  Andrarum CD1-1989-04.flac
+5530be917a13094852fbe50535780bb0  Andrarum CD1-1989-05.flac
+fe9ea948341eca429db2fb465c37ddf3  Andrarum CD1-1989-06.flac
+f405b05421e637bcc09d1e3add8686f7  Andrarum CD1-1989-07.flac
+0c309e592a2363680d7bf6835432e8fe  Andrarum CD1-1989-08.flac
+4bfa6f7b7fa4f2529973f3d7494d9893  Andrarum CD1-1989-09.flac
+09e4e8c6135e47d79981ff1ec2c4d278  Andrarum CD1-1989-10.flac
+4c4d281ec987ba02903154ba2692df7a  Andrarum CD2-1989-11.flac
+4146795f4a60c07088a73f2bd2c2edd9  Andrarum CD2-1989-12.flac
+fc63b2d98fcd6884d6ff452c523a16f4  Andrarum CD2-1989-13.flac
+f0e00c046dd1f7c6a83d0f28d5f7e4cb  Andrarum CD2-1989-14.flac
+32c6123464f03c17d856c6e3d2963fac  Andrarum CD2-1989-15.flac

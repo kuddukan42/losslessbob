@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-06-16-Condor-corrected.flacf 
+=================== 
+=================== 
+=================== 
+9314ee1dc204f5662aa23c045a154cfc  bd2008-06-16 info.txt
+fdfc38cc1d726bce0df3450e38797b69  bd2008-06-16.md5
+1bca409c0873ff9bcb4ad108a9d53be6  bd2008-06-16d1t01.flac
+f241dbecda4a0d753109845e1e2b3463  bd2008-06-16d1t02.flac
+ca1a5e4a8878bc2bdb76039766f10f0c  bd2008-06-16d1t03.flac
+f391288b63753272e48481091667366d  bd2008-06-16d1t04.flac
+00ed84cc46fea87207b6d1eedb9ae93a  bd2008-06-16d1t05.flac
+f9f2b3c1da3f32d87a34e5bb9d2c32aa  bd2008-06-16d1t06.flac
+41e88c2f148c8ed5b0316aeaa43fb106  bd2008-06-16d1t07.flac
+1f1e0b162814c37025c386314e9673e0  bd2008-06-16d1t08.flac
+6ab56b30907b91dba83889c502a4e71c  bd2008-06-16d1t09.flac
+4b76159373154b76a576f4f88e4dd875  bd2008-06-16d1t10.flac
+72af54663a150acf038862a48e6f28da  bd2008-06-16d2t01.flac
+4f2004bfa0ae7dc5c650147926384f88  bd2008-06-16d2t02.flac
+58530b663cddbb6faff849099289858e  bd2008-06-16d2t03.flac
+39c1d2366eaa524608ed73cc2d6befc7  bd2008-06-16d2t04.flac
+6b2e7d891fbce1dc1f5fff1551a492b9  bd2008-06-16d2t05.flac
+95b332f562642341281652d4ddad3b7f  bd2008-06-16d2t06.flac
+1a87e48acbb8c56c5d8f92b8676b83d2  bd2008-06-16d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-16-Condor-corrected.flacf 
+=================== 
+=================== 
+=================== 
+bd2008-06-16d1t01.flac:067adcdf3a33aaa6c0f45fee5c3b6d4a
+bd2008-06-16d1t02.flac:d4546d8f1580459f59c08532da9b5788
+bd2008-06-16d1t03.flac:6f17314a78a14a094c26587eca79b05e
+bd2008-06-16d1t04.flac:3bc30ab0b9653fa8aa5718ffef62edae
+bd2008-06-16d1t05.flac:aab6b576a3cbc33577b07160beb0aee9
+bd2008-06-16d1t06.flac:bff77909e4306a959a109ad521b4bab5
+bd2008-06-16d1t07.flac:a2653be84160b8c7fe1c44c2a399b09f
+bd2008-06-16d1t08.flac:a73e4d4d9161d3fe431a5d8c71384933
+bd2008-06-16d1t09.flac:89d571fad211ae7b9a285327bfd9bef6
+bd2008-06-16d1t10.flac:0e9d20a776ab99c2c1c57f6834c25dde
+bd2008-06-16d2t01.flac:3b1a91377533ab862e805714eb905805
+bd2008-06-16d2t02.flac:d3bd45122dcf0511ea2697081c9fb2c0
+bd2008-06-16d2t03.flac:6f0bf69bb8f68c36f71e444be4c5f5f3
+bd2008-06-16d2t04.flac:235b757733a7cffd9b72ee797eac0bd3
+bd2008-06-16d2t05.flac:9f5ceec786033fc2a3615526cc35452a
+bd2008-06-16d2t06.flac:ef4543b9cd62a6a0a3e8c6b90650e9e7
+bd2008-06-16d2t07.flac:89a7fcbcbb5b7d41b1e357a4dcebaded
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-16-Condor-corrected.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.70       61904684 B   ---   --   ---xx   flac  0.5605  bd2008-06-16d1t01.flac
+     6:29.48       68732540 B   ---   --   ---xx   flac  0.5831  bd2008-06-16d1t02.flac
+     6:39.58       70520060 B   ---   --   ---xx   flac  0.5865  bd2008-06-16d1t03.flac
+     6:57.15       73594124 B   ---   --   ---xx   flac  0.5929  bd2008-06-16d1t04.flac
+     5:15.08       55584860 B   ---   --   ---xx   flac  0.4799  bd2008-06-16d1t05.flac
+     6:34.51       69621596 B   ---   --   ---xx   flac  0.5789  bd2008-06-16d1t06.flac
+     6:39.21       70433036 B   ---   --   ---xx   flac  0.5669  bd2008-06-16d1t07.flac
+     5:59.61       63471116 B   ---   --   ---xx   flac  0.5978  bd2008-06-16d1t08.flac
+     6:42.30       70983404 B   ---   --   ---xx   flac  0.4439  bd2008-06-16d1t09.flac
+     6:44.27       71329148 B   ---   --   ---xx   flac  0.5888  bd2008-06-16d1t10.flac
+     7:52.57       83394908 B   ---   --   ---xx   flac  0.5320  bd2008-06-16d2t01.flac
+     6:11.27       65507948 B   ---   --   ---xx   flac  0.6031  bd2008-06-16d2t02.flac
+     5:42.15       60364124 B   ---   --   ---xx   flac  0.4616  bd2008-06-16d2t03.flac
+     6:31.40       69066524 B   ---   --   ---xx   flac  0.5683  bd2008-06-16d2t04.flac
+    11:15.12      119098268 B   ---   --   ---xx   flac  0.4879  bd2008-06-16d2t05.flac
+     7:03.22       74668988 B   ---   --   ---xx   flac  0.6215  bd2008-06-16d2t06.flac
+     8:16.52       87616748 B   ---   --   ---xx   flac  0.5674  bd2008-06-16d2t07.flac
+   116:46.14     1235892076 B                            0.5529  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,100 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Ketchum Park & Ride Lot
+Ketchum, Idaho
+21 July 2003
+ 
+1.Tombstone Blues
+2.Tell Me That It Isn't True
+3.Tweedle Dee & Tweedle Dum
+4.It's All Over Now, Baby Blue
+5.Things Have Changed
+6.Highway 61 Revisited
+7.Visions Of Johanna
+8.Drifter's Escape
+9.Blind Willie McTell
+10.Stuck Inside Of Mobile With The Memphis Blues Again
+11.Love Sick
+12.Honest With Me
+13.Bye And Bye
+14.Summer Days 
+
+15.Like A Rolling Stone
+16.All Along The Watchtower
+  
+Concert # 1531 of The Never-Ending Tour. Concert # 7 of the 2003 US Summer Tour. 2003 concert # 41.
+ 
+Concert # 30 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+ 
+4, 7 acoustic with the band.
+2, 7, 8, 16 Bob Dylan (harmonica).
+2, 4  Larry Campbell (pedal steel guitar).
+9 Larry Campbell (cittern).
+12 Larry Campbell (slide guitar).
+ 
+Notes.
+LB-number for this concert: LB-1131, LB-1189, LB-1372, LB-1391.
+First concert in Ketchum, Idaho.
+.
+9 new songs (56%) compared to previous concert. 3 new songs for this tour.
+ 
+Stereo audience recording, 110 minutes.
+ 
+Session info updated 3 June 2009.
+ 
+www.bjorner.com
+
+CDr < XLD < flac < Dime
+apa05
+===================
+===================
+===================
+=== Notes.txt
+===================
+===================
+===================
+CEDAR Notes:
+
+CEDAR #1
+FINGERPRINT
+At 4:42 of "Tombstone Blues" (25 seconds before the end of the song), a male voice can be heard to say, "Howard bought an acoustic."
+
+COMMENTS:
+Quite a good recording, with clear vocals and well balanced instruments (including the piano). Lacking in crispness. Occasional chatter on quiet numbers. There are reports of a pop at 1:42 of "Memphis Blues Again" and of fuzz from d1t10 1:41 through to the end of the disc on some copies: these are not on the master.
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - 101-Tombstone Blues.flac:f2493fc0efe539661ae1eb76cfd0c39102 Bob Dylan - 102-Tell Me That It Isn't True.flac:ed46912020c31485bf5b1ec68af9d78603 Bob Dylan - 103-Tweedle Dee & Tweedle Dum.flac:0940d911be2eb7acbde8ab589883db1004 Bob Dylan - 104-It's All Over Now, Baby Blue.flac:829a30d9a12bd9b2d279a1a4833f012f05 Bob Dylan - 105-Things Have Changed.flac:3668fc87185dd1a2d71e231cb8327e4606 Bob Dylan - 106-Highway 61 Revisited.flac:2315649f959f21c8b2b3daf72cbbc2b707 Bob Dylan - 107-Visions Of Johanna.flac:6120ac9786b6a8b5b4930dc77de44dc008 Bob Dylan - 108-Drifter's Escape.flac:a2da6a48933f66f619d70fab7f0803fd09 Bob Dylan - 109-Blind Willie McTell.flac:488e27190f30ab656398da888157d89b10 Bob Dylan - 110-Memphis Blues Again.flac:aeaabc469050490ecdc3f8eddf8d59cf11 Bob Dylan - 111-Love Sick.flac:4fee0fda32175f2bb014381f543d6df1
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - 201-Honest With Me.flac:bccc5b7537242af9dd23ac5805f2f2f902 Bob Dylan - 202-Bye And Bye.flac:f45e4d96273e2bb3f64f5b6d849cd99203 Bob Dylan - 203-Summer Days.flac:d46241f410ef7c7994412f962c12200d04 Bob Dylan - 204-Like A Rolling Stone.flac:fb9f34350c687bb73591284c46996da905 Bob Dylan - 205-All Along The Watchtower.flac:85b67fa664c9462e55bc7c2b0d941bb0
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+7c2f322821528e28a6b6351c116ab839 *01 Bob Dylan - 201-Honest With Me.flac
+1eb0b4e6ae599df651c42994a61e44a4 *02 Bob Dylan - 202-Bye And Bye.flac
+69bc3ce1faa0d786248fa4946c22279e *03 Bob Dylan - 203-Summer Days.flac
+ff2161fcf8fa741ca6ffb0d84531edbc *04 Bob Dylan - 204-Like A Rolling Stone.flac
+85c78172dff445ff12f3eeed12a68639 *05 Bob Dylan - 205-All Along The Watchtower.flac
+
+===================
+===================
+===================

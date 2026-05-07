@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd2002-10-08 Sacramento.shnf 
+=================== 
+=================== 
+=================== 
+1cdd36cd59fcb498d65d7190e4e7015b  bd02-10-08.txt
+2c6b5a24943b8a93375e02025a4221f8  d1\01.shn
+0797adfe2ddab45980ec29b53b686ccc  d1\02.shn
+d19484e7279199a2d2d65feed4f11c8f  d1\03.shn
+af92b05e72e89023d96190dea42a34db  d1\04.shn
+a333b675bf45d24844896d90cfe16af6  d1\05.shn
+3aac93cbf739846d9a5b89bdb5ac3afd  d1\06.shn
+50dca854c092f45ad2c87ca8b6d577d8  d1\07.shn
+b2a7a289af250d297287c164a92bc9f8  d1\08.shn
+9751399c290b8461ae6a6c246fcc09d3  d1\09.shn
+02d2f5a096b1ccdd480451972ff9f5e7  d1\10.shn
+18a6d4c2b83d97df7122cbcd11f54641  d1\11.shn
+426668989befe2a70938c982cf650823  d1\12.shn
+531126e4b071c35ed6c64c4e163a5ad6  d1\13.shn
+10333f2203328bfcb6c642f71eb47045  d1\noname.md5
+8e3b21f7fc39b47af6e68c944e2f6304  d2\01.shn
+bd709b422d4ccf0f5d4e196421a5de19  d2\02.shn
+aebc4de0c3f79a81ff48267b7889361c  d2\03.shn
+c38503861a23445ecd66cb4ee5df6977  d2\04.shn
+071a5d485c4bd06d40c334d11dcedb34  d2\05.shn
+474b3cef3399e879877f7eb0bfa3aa68  d2\06.shn
+f2b214bbb2b361d989ebd617ab959d25  d2\07.shn
+7d9b7543b60f45f832edaa64d5a64e67  d2\08.shn
+9b3d851643f8f9afb2d91411e779fc5c  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd2002-10-08 Sacramento.shnf\d1 
+=================== 
+=================== 
+=================== 
+914154fe36a21147f6ed5632b5448cd1  [shntool]  01.wav
+c565a91626afe146256cdeabacf9c53c  [shntool]  02.wav
+0dc55ca6646d94d4f9c215ff2a2f1d1f  [shntool]  03.wav
+3a74ad5f59fe02c98b9c7ed5f283eb2b  [shntool]  04.wav
+32d4d4e5afb429f49d7e38e7b12db73d  [shntool]  05.wav
+439ccac4fd1cc2aee585b30bbd13a0e3  [shntool]  06.wav
+a361a5b6dcfcd1ac03b348f4fc863180  [shntool]  07.wav
+dffcf0a08c65bdf9ab4d8e7fe6bcea05  [shntool]  08.wav
+7e07ad0c67bd9ec1382524f52008332a  [shntool]  09.wav
+c1809631abf7771f85cb657bebdc7fb1  [shntool]  10.wav
+f80d5c9ae4edae12a7ed8e7c1b40523f  [shntool]  11.wav
+4c61b084a57e658f2a73b40658d19843  [shntool]  12.wav
+96ed35a8587eec9345a5b560d075673b  [shntool]  13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd2002-10-08 Sacramento.shnf\d2 
+=================== 
+=================== 
+=================== 
+b9c6a4ab07045fd5fbbaaf9d75aecd32  [shntool]  01.wav
+2b9d2c741606bfce88b73407ad6e0ad6  [shntool]  02.wav
+48a003eede4e879b9c603711875defcb  [shntool]  03.wav
+d124462bb45adf86b37c114c6bb9ad00  [shntool]  04.wav
+bcf284379dca12888eb8a65b10c3d4b3  [shntool]  05.wav
+11ce27d13c40e2c23808f746a57633f5  [shntool]  06.wav
+bb28c7096a5cd063b43b5a43c7492e6a  [shntool]  07.wav
+f27d905bd998dfe81f1fa36d38719223  [shntool]  08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd2002-10-08 Sacramento.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.19       65841932 B   ---   --   ---xx    shn  0.5230  01.shn
+     5:00.15       52955324 B   ---   --   ---xx    shn  0.4430  02.shn
+     5:04.13       53656220 B   ---   --   ---xx    shn  0.4827  03.shn
+     5:29.33       58113260 B   ---   --   ---xx    shn  0.4734  04.shn
+     5:40.46       60084236 B   ---   --   ---xx    shn  0.4560  05.shn
+     4:08.08       43766060 B   ---   --   ---xx    shn  0.5864  06.shn
+     5:32.28       58630700 B   ---   --   ---xx    shn  0.4433  07.shn
+     7:30.00       79380044 B   ---   --   ---xx    shn  0.4862  08.shn
+     7:06.28       75212300 B   ---   --   ---xx    shn  0.3584  09.shn
+     6:28.68       68603180 B   ---   --   ---xx    shn  0.5138  10.shn
+     8:23.60       88870364 B   ---   --   ---xx    shn  0.4323  11.shn
+     3:52.65       41077724 B   ---   --   ---xx    shn  0.5023  12.shn
+     6:58.24       73791692 B   ---   --   ---xx    shn  0.5284  13.shn
+    77:28.32      819983036 B                            0.4747  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd2002-10-08 Sacramento.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.25       59505644 B   ---   --   ---xx    shn  0.3980  01.shn
+     6:40.69       70722332 B   ---   --   ---xx    shn  0.5248  02.shn
+     3:36.20       38149484 B   ---   --   ---xx    shn  0.3666  03.shn
+     5:11.04       54869852 B   ---   --   ---xx    shn  0.3851  04.shn
+    11:00.16      116461676 B   ---   --   ---xx    shn  0.5328  05.shn
+     6:53.37       72940268 B   ---   --   ---xx    shn  0.5547  06.shn
+     6:31.20       69019484 B   ---   --   ---xx    shn  0.4744  07.shn
+     7:08.19       75543932 B   ---   --   ---xx    shn  0.5649  08.shn
+    52:38.60      557212672 B                            0.4915  (8 files)
+=================== 
+=================== 
+=================== 

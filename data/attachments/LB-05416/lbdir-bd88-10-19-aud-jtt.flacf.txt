@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-19-aud-jtt.flacf 
+=================== 
+=================== 
+=================== 
+a4b99a5b8041484aab55256ead7a8869  bd88-10-19-aud-jtt-LB-5416.txt
+b39d92f7fbdb54dcf80460ebe8f3bc28  Disc One\Dylan - Radio City 19.10.1988_Disc01Track01.flac
+dabe6c135647e94d71cbc4eaef25fe3e  Disc One\Dylan - Radio City 19.10.1988_Disc01Track02.flac
+29588ab69bb249d2dfacf1334beabdfd  Disc One\Dylan - Radio City 19.10.1988_Disc01Track03.flac
+607f90a66596f0866e932bc81734d6c7  Disc One\Dylan - Radio City 19.10.1988_Disc01Track04.flac
+c9ba88a23c8e7a4cd22839c66f349e2e  Disc One\Dylan - Radio City 19.10.1988_Disc01Track05.flac
+58df12dbe75953ac90f8c5c54f663e5a  Disc One\Dylan - Radio City 19.10.1988_Disc01Track06.flac
+360e2780559ed5d62a80afa276e93c10  Disc One\Dylan - Radio City 19.10.1988_Disc01Track07.flac
+7d6d54ce77f60254d4bf407886147965  Disc One\Dylan - Radio City 19.10.1988_Disc01Track08.flac
+69c66089651f4d1d881159bb93aa7568  Disc One\Dylan - Radio City 19.10.1988_Disc01Track09.flac
+f72dc149d86ec2dd33bedc4127ca635c  Disc One\Dylan - Radio City 19.10.1988_Disc01Track10.flac
+72279dc3bbd7c90c04e87fe9c41c31f2  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track01.flac
+45c0de3c19f3b58ceb2ccc3735ff8385  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track02.flac
+675319abdba64ddfd7ffbe06834a352b  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track03.flac
+61275c926bbb98a95a9879223a129ed9  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track04.flac
+20c26484ba71dec3dbb02e1abec5bbb3  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track05.flac
+031c3c38619acaedf96ccb7f758f47f3  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track06.flac
+8ac4ecb6a83180cd847760f887cf162b  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track07.flac
+94daf873e74eb706a3b92f1482a953e8  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track08.flac
+7003a85db70e95d31ae714f468f1d406  Disc Two\Dylan - Radio City 19.10.1988_Disc02Track09.flac
+8ef737290eb88118d167518920f3a249  Dylan - Radio City Music Hall 19.10.1988 AUD.md5
+30f148d841f82a9030b7ad0fec1cb477  lbdir-bd88-10-19-aud-jtt.flacf.md5
+ef596756b90fdfccaf1adc42b0bc26c8  lbdir-bd88-10-19-aud-jtt.flacf.txt
+79df8de89bde5cf3c8599e183634ef85  Radio City Music Hall  19.10.1988 AUD Info.txt
+5503acfc040869871e21fae9c4826c0e  Radio City Music Hall - 19.10.1988 AUD - F.jpg
+c0998eb2b2279b4708c65ff09735ca6d  Radio City Music Hall - 19.10.1988 AUD - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-19-aud-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - Radio City 19.10.1988_Disc01Track01.flac:0d6f1ce2d2e636c30bb87956c760a34e
+Dylan - Radio City 19.10.1988_Disc01Track02.flac:2653c80af78dc9aa86f2d6999aaf79b3
+Dylan - Radio City 19.10.1988_Disc01Track03.flac:ab4bbaaac9a32066a2cb8720a51240f2
+Dylan - Radio City 19.10.1988_Disc01Track04.flac:7ab28a29eba51b5069c4c59e722e82e0
+Dylan - Radio City 19.10.1988_Disc01Track05.flac:eed4ef6de2a5c815b77f953ccc7fee2b
+Dylan - Radio City 19.10.1988_Disc01Track06.flac:1224ebb8ae8d823b11d498fbb7ff88df
+Dylan - Radio City 19.10.1988_Disc01Track07.flac:79c59e98468051cc731381aeee9b2455
+Dylan - Radio City 19.10.1988_Disc01Track08.flac:da2c8f36640c5af4515b2f2e9dcacbdc
+Dylan - Radio City 19.10.1988_Disc01Track09.flac:e65a8e293b05dd3238b6041a62d2f9d8
+Dylan - Radio City 19.10.1988_Disc01Track10.flac:383d1d3ed082b5295734dd5461181c21
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-19-aud-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - Radio City 19.10.1988_Disc02Track01.flac:832fd7081db3387ef3d0010e1e0c655c
+Dylan - Radio City 19.10.1988_Disc02Track02.flac:dc3dbb4e9cb3710cf18c010f18373c5a
+Dylan - Radio City 19.10.1988_Disc02Track03.flac:1fb8c5e08aca8ac8e4c22ef2ef6e356e
+Dylan - Radio City 19.10.1988_Disc02Track04.flac:dc47c09771955d18012ac61d7d8bbc8e
+Dylan - Radio City 19.10.1988_Disc02Track05.flac:c094349dff4959230795727ce9998613
+Dylan - Radio City 19.10.1988_Disc02Track06.flac:eb952902c981fac8a8c49bd8d8431627
+Dylan - Radio City 19.10.1988_Disc02Track07.flac:04dec1b3fb4e4d60bc8c6be2db2a3dd2
+Dylan - Radio City 19.10.1988_Disc02Track08.flac:aaebae0b5e2c4265bd1ed0789449c29b
+Dylan - Radio City 19.10.1988_Disc02Track09.flac:aefe7401444cdff0a7d2664ef1b2a31e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-19-aud-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.63       39485484 B   -b-   --   ---xx   flac  0.5205  Dylan - Radio City 19.10.1988_Disc01Track01.flac
+     4:17.00       45334572 B   -b-   --   ---xx   flac  0.5179  Dylan - Radio City 19.10.1988_Disc01Track02.flac
+     5:48.50       61505580 B   -b-   --   ---xx   flac  0.5158  Dylan - Radio City 19.10.1988_Disc01Track03.flac
+     6:46.40       71712812 B   -b-   --   ---xx   flac  0.5337  Dylan - Radio City 19.10.1988_Disc01Track04.flac
+     6:10.51       65388588 B   -b-   --   ---xx   flac  0.5168  Dylan - Radio City 19.10.1988_Disc01Track05.flac
+     6:14.02       65978412 B   -b-   --   ---xx   flac  0.5466  Dylan - Radio City 19.10.1988_Disc01Track06.flac
+     4:28.67       47431724 B   -b-   --   ---xx   flac  0.5482  Dylan - Radio City 19.10.1988_Disc01Track07.flac
+     7:12.06       76218412 B   -b-   --   ---xx   flac  0.5108  Dylan - Radio City 19.10.1988_Disc01Track08.flac
+     7:18.22       77316140 B   -b-   --   ---xx   flac  0.5152  Dylan - Radio City 19.10.1988_Disc01Track09.flac
+     4:32.03       47987892 B   -b-   --   ---xx   flac  0.4939  Dylan - Radio City 19.10.1988_Disc01Track10.flac
+    56:32.04      598359616 B                            0.5220  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-19-aud-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.21       46972972 B   -b-   --   ---xx   flac  0.4862  Dylan - Radio City 19.10.1988_Disc02Track01.flac
+     3:52.43       41025580 B   -b-   --   ---xx   flac  0.5339  Dylan - Radio City 19.10.1988_Disc02Track02.flac
+     5:24.11       57180204 B   -b-   --   ---xx   flac  0.5218  Dylan - Radio City 19.10.1988_Disc02Track03.flac
+     7:03.61       74760236 B   -b-   --   ---xx   flac  0.5343  Dylan - Radio City 19.10.1988_Disc02Track04.flac
+     4:09.70       44089388 B   -b-   --   ---xx   flac  0.4798  Dylan - Radio City 19.10.1988_Disc02Track05.flac
+     5:25.55       57458732 B   -b-   --   ---xx   flac  0.4672  Dylan - Radio City 19.10.1988_Disc02Track06.flac
+     5:17.21       55967788 B   -b-   --   ---xx   flac  0.4996  Dylan - Radio City 19.10.1988_Disc02Track07.flac
+     4:20.05       45875244 B   -b-   --   ---xx   flac  0.5075  Dylan - Radio City 19.10.1988_Disc02Track08.flac
+     5:08.62       54476844 B   -b-   --   ---xx   flac  0.5133  Dylan - Radio City 19.10.1988_Disc02Track09.flac
+    45:08.49      477806988 B                            0.5059  (9 files)
+=================== 
+=================== 
+=================== 

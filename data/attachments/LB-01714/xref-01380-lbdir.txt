@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd98-08-30-a.flacf
+===================
+===================
+===================
+92fbb366e75091d5e939277defdc19e7 *Bob Dylan1998-08-30.ffp
+3da9f9ed787f40f4daf37c7dc8010e8e *d1T01-fixed.flac
+93046daa65318a4af1a2bc6969d56a04 *d1T02-fixed.flac
+3731d2e5d74f0ec8d53e301b9d298f66 *d1T03-fixed.flac
+bc96ef8c63af2dc12ba0484da2022c5f *d1T04-fixed.flac
+87b6c3b0c846756fe87c699432991b9a *d1T05-fixed.flac
+9cd405366ea41cdf2d6a9bb1a35f6c3e *d1T06-fixed.flac
+69116eb5cc3669b32c949f8438c682e7 *d1T07-fixed.flac
+c24acb35508f41bcfc5f563f9d295e24 *d1T08-fixed.flac
+10acabe1271044628cdb9e513ed8ba08 *d1T09-fixed.flac
+c04ba558b27a95e3dec19e1b2aec73d3 *d1T10-fixed.flac
+91e7df4bd0e0be2d7bf61ce7009fd142 *d1T11-fixed.flac
+315c6b933878655b09342f2b60be784f *d1T12-fixed.flac
+ce437ae4d3ecc9cd9049d92f3217ec83 *d2T01-fixed.flac
+664971b47901fbca576fbd63f78236d2 *d2T02-fixed.flac
+b56bcf5ee9eec307ff5a0af8aeb54393 *d2T03-fixed.flac
+6c2d23e59b7235f88a24f117c680e770 *d2T04-fixed.flac
+2f0200b53cfda0d7da5518d35f9c0b80 *d2T05-fixed.flac
+b68ceb8ac09246ff30b59b34ad54f869 *d2T06-fixed.flac
+9008e57d16546fdac7069158d00551b0 *frequency and spectral views.bmp
+bdcab8c0ab0c3a5e67e28e45c39625f2 *shntool_len_fixed.txt
+00dc6736674fbb54adfdabbd38c5acfa *shntool_len_unfixed.txt
+f3317c867398986ac217dd95fab5b8b1 *Townsville 98.txt
+===================
+===================
+===================
+=== ffp for: bd98-08-30-a.flacf
+===================
+===================
+===================
+d1T01-fixed.flac:edb730f21aa7a1baee13c0c9c133a86e
+d1T02-fixed.flac:84ca711ae67398571fa74fa5454bcb00
+d1T03-fixed.flac:cf157af52c3d4bae058870c6f1e19932
+d1T04-fixed.flac:96f860d95aae747a8a9fd3d59536af43
+d1T05-fixed.flac:f20ae1be9474b5448ada68d8930e049d
+d1T06-fixed.flac:87c602e9c236d240306d133d2b71978a
+d1T07-fixed.flac:60c2b66498b1b09e724e753052edbf7a
+d1T08-fixed.flac:6c5a5cf12b28bb9a4106a9ed85a635a0
+d1T09-fixed.flac:8057fdd1cf57b1a6575691b5d191587b
+d1T10-fixed.flac:33c0e3f64b827faa20c8201f2a1338ce
+d1T11-fixed.flac:464ec51f0b4b311d24b2d06392839256
+d1T12-fixed.flac:fbaccc71d38475ac5fc1b6cb7a03722d
+d2T01-fixed.flac:37aae13203a78f43560a47ea3ab56c8c
+d2T02-fixed.flac:1f5145bbc0f301472ebc472ddfdeb221
+d2T03-fixed.flac:e18d419070eaeb39d9898232a4435bd2
+d2T04-fixed.flac:f832dc770d1e43b5839e24ce6d0d6b21
+d2T05-fixed.flac:b4256a66b2c7ab67d959fec0811f6a6c
+d2T06-fixed.flac:412c47c779be3b888de95aeb6aa44b59
+===================
+===================
+===================
+=== shntool len for: bd98-08-30-a.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.74       62796092 B   ---   --   ---xx   flac  0.4099  d1T01-fixed.flac
+     4:40.41       49488476 B   ---   --   ---xx   flac  0.3879  d1T02-fixed.flac
+     2:31.47       26746988 B   ---   --   ---xx   flac  0.3985  d1T03-fixed.flac
+     7:38.40       80885324 B   ---   --   ---xx   flac  0.3806  d1T04-fixed.flac
+     6:39.30       70454204 B   ---   --   ---xx   flac  0.3952  d1T05-fixed.flac
+     5:51.70       62081084 B   ---   --   ---xx   flac  0.3890  d1T06-fixed.flac
+     5:13.71       55380236 B   ---   --   ---xx   flac  0.3916  d1T07-fixed.flac
+     5:05.49       53917292 B   ---   --   ---xx   flac  0.3980  d1T08-fixed.flac
+    10:05.64      106872572 B   ---   --   ---xx   flac  0.4134  d1T09-fixed.flac
+     6:55.39       73297772 B   ---   --   ---xx   flac  0.4123  d1T10-fixed.flac
+     6:28.61       68586716 B   ---   --   ---xx   flac  0.4076  d1T11-fixed.flac
+     7:27.59       78989612 B   ---   --   ---xx   flac  0.4159  d1T12-fixed.flac
+     5:06.68       54138380 B   ---   --   ---xx   flac  0.3969  d2T01-fixed.flac
+     6:14.25       66032444 B   ---   --   ---xx   flac  0.3962  d2T02-fixed.flac
+     6:09.70       65256284 B   ---   --   ---xx   flac  0.3880  d2T03-fixed.flac
+     6:01.67       63838028 B   ---   --   ---xx   flac  0.3898  d2T04-fixed.flac
+     6:23.22       67612988 B   ---   --   ---xx   flac  0.3963  d2T05-fixed.flac
+     7:29.61       79347116 B   ---   --   ---xx   flac  0.3909  d2T06-fixed.flac
+   112:01.58     1185721608 B                            0.3984  (18 files)
+===================
+===================
+===================

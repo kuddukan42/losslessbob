@@ -1,0 +1,8 @@
+Bob Dylan, 6/26/78, Dortmund, West Germany, Westfalenhalle, 2CDR
+
+LB-2842, (63min+74min), version "a"; Source/Lineage: aud>?>CD-Rs>me>you, notes:, dtt01 removed 4 micro dig-gaps in first few seconds, d1t01 [0:04.7] mild digi-fuzz, d1t02 & t03 partly broadcast by WDR and NDR, West Germany, 27 June 1978, d1t03 & t04 partly mono TV broadcast, d1t09>t10 edit; a few seconds missing from start of t10, d2t07 [1:54.6] micro sound drop both channels, d2t09>t10 edit; bittorrent download 06/05; background talking d1t1, d2t3, d2t7; same recordng as previous version with very similar sound
+
+disc 1, 1. A Hard Rain's A-Gonna Fall, 2. She's Love Crazy, 3. Baby Stop Crying, 4. Mr. Tambourine Man, 5. Shelter From The Storm, 6. Love Minus Zero/No Limit, 7. Tangled Up In Blue, 8. Ballad Of A Thin Man, 9. Maggie's Farm, 10. I Don't Believe You (She Acts Like We Never Have Met), 11. Like A Rolling Stone, 12. I Shall Be Released, 13. Going, Going, Gone, disc 2, 1. Rainy Day Women # 12 & 35, 2. One Of Us Must Know (Sooner Or Later), 3. You're A Big Girl Now, 4. One More Cup Of Coffee (Valley Below), 5. Blowin' In The Wind, 6. I Want You, 7. Senor (Tales Of Yankee Power), 8. Masters Of War, 9. Just Like A Woman, 10. Don't Think Twice, It's All Right, 11. All Along The Watchtower, 12. All I Really Want To Do, 13. It's Alright, Ma (I'm Only Bleeding), 14. Forever Young, 15. I'll Be Your Baby Tonight, 16. The Times They Are A-Changin'
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

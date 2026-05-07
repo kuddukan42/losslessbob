@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-09fw_Holmdel, NJ 
+=================== 
+=================== 
+=================== 
+41df9a80cb3ff935c07667decba2a321  bd03-08-09fw.txt
+5a860f5eff8776c2a3f8edf9e8cc87c5  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 01.shn
+bca51745a01d89b52fa6d8643a925a84  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 10.shn
+f5ec165d774324036d45286c7cb1742b  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 2.shn
+b6c3dff49b585179337c9b77ab7add86  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 3.shn
+f10454fdfdf2e9c0fd52907722909bf5  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 4.shn
+9f25c05734b3d966f130944a835f7e2b  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 5.shn
+6046b72062c48c3cb049708a97704c81  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 6.shn
+c565844cbee4023c171dcb730ecd66b4  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 7.shn
+b8823b8981fb3a56e49c79a2775b9360  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 8.shn
+4da93dd0b3d42ea93d4503006db79eaf  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_Track 9.shn
+100015ea476cd0d1f9840dcb64ae41aa  bd_03-08-09_cd1.shnf\bd_03-08-09_cd1_shn.md5
+4ab9eba615f59ce5d3008c64dcc631d2  bd_03-08-09_cd2.shnf\bd_03-08-09_cd2_Track 1.shn
+0fc960ce8c380c89129d353237f3f36c  bd_03-08-09_cd2.shnf\bd_03-08-09_cd2_Track 2.shn
+c6cf20ca7dc63ce93be54245b617891b  bd_03-08-09_cd2.shnf\bd_03-08-09_cd2_Track 3.shn
+eae20d5527140e803c4e0e796e7bd5e6  bd_03-08-09_cd2.shnf\bd_03-08-09_cd2_Track 4.shn
+4a8cd78b5c71bc05460dc5b96dba351a  bd_03-08-09_cd2.shnf\bd_03-08-09_cd2_Track 5.shn
+69ab6c029b738a0fb662eb430e89db5e  bd_03-08-09_cd2.shnf\bd_03-08-09_cd2_Track 6.shn
+c6ce02a0823132b8a92c2c21abb2ec42  bd_03-08-09_cd2.shnf\bd_03-08-09_cd2_shn.md5
+b8968e539596eff249f78996057ec015  text.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-09fw_Holmdel, NJ\bd_03-08-09_cd1.shnf 
+=================== 
+=================== 
+=================== 
+6b8fd63f08ac742a251e5ae0f663b80b  [shntool]  bd_03-08-09_cd1_Track_01.wav
+904988db51cca5050e7a96599bc17b2c  [shntool]  bd_03-08-09_cd1_Track_2.wav
+a61d296a27a5aa9085f0b7b40b969123  [shntool]  bd_03-08-09_cd1_Track_3.wav
+e407832c32e1a55df3972b1435be79c6  [shntool]  bd_03-08-09_cd1_Track_4.wav
+b8308f9977b9b4ee4aa9c01c3c3254e9  [shntool]  bd_03-08-09_cd1_Track_5.wav
+d87216d1419b8df66b903efc08124702  [shntool]  bd_03-08-09_cd1_Track_6.wav
+98b1b817b7dabda443caf19333ec3cb3  [shntool]  bd_03-08-09_cd1_Track_7.wav
+ffa34edb37cd258f6744f4deb37e3c39  [shntool]  bd_03-08-09_cd1_Track_8.wav
+48e78fb26e42ff7a9e68d8e9895c17fe  [shntool]  bd_03-08-09_cd1_Track_9.wav
+94233e459c322e5a4836c035412e79eb  [shntool]  bd_03-08-09_cd1_Track_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-09fw_Holmdel, NJ\bd_03-08-09_cd2.shnf 
+=================== 
+=================== 
+=================== 
+d5a7165301af93046b8564f314e161ba  [shntool]  bd_03-08-09_cd2_Track_1.wav
+fb8b9f2ab3e286066540d5b392d445b8  [shntool]  bd_03-08-09_cd2_Track_2.wav
+46a9d87b3aae03d6ce377aa3e8d72883  [shntool]  bd_03-08-09_cd2_Track_3.wav
+145261c3e96e46e6ea0b90ba091f5f25  [shntool]  bd_03-08-09_cd2_Track_4.wav
+81563eb67b534da15aea3d506436203d  [shntool]  bd_03-08-09_cd2_Track_5.wav
+7083b9bc480639a758cedef801d4cb4a  [shntool]  bd_03-08-09_cd2_Track_6.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-09fw_Holmdel, NJ\bd_03-08-09_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.14        6912654 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_01.wav
+     7:12.56       76336638 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_10.wav
+     6:12.43       65722062 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_2.wav
+     6:02.15       63892206 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_3.wav
+     5:30.70       58376766 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_4.wav
+     9:00.41       95352558 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_5.wav
+     6:41.74       70910574 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_6.wav
+     7:46.36       82287198 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_7.wav
+     6:29.31       68692638 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_8.wav
+     5:07.32       54230190 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd1_Track_9.wav
+    60:43.37      642713484 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-09fw_Holmdel, NJ\bd_03-08-09_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:03.29       64101534 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd2_Track_1.wav
+     6:25.71       68081118 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd2_Track_2.wav
+     0:55.57        9836190 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd2_Track_3.wav
+    10:20.66      109523358 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd2_Track_4.wav
+     5:11.14       54893454 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd2_Track_5.wav
+     6:35.00       69678126 B   ---   -e   -----    wav  1.0000  bd_03-08-09_cd2_Track_6.wav
+    35:32.12      376113780 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

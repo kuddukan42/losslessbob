@@ -1,0 +1,75 @@
+GRATEFUL DEAD
+Oakland-Alameda Stadium
+Oakland CA
+07-24-1987
+Third Set (with Bob Dylan)
+
+s3t01 The Times They Are A-Changin'
+s3t02 Man of Peace
+s3t03 Maggie's Farm
+s3t04 I'll Be Your Baby Tonight
+s3t05 I Want You
+s3t06 Highway 61 Revisted
+s3t07 It's All Over Now Baby Blue
+s3t08 Stuck Inside of Mobile with the Memphis Blues Again
+s3t09 Ballad of a Thin Man
+s3t10 Shelter from the Storm
+s3t11 Slow Train
+s3t12 Knockin' on Heaven's Door
+s3t13 Touch of Grey
+s3t14 All Along the Watchtower
+
+Source: AUD > ? > Cassette, liberated from ebay.
+
+Transfer: Maxell XLIIS-90 > Nakamichi CR-5 (Dolby out) > Edirol FA-66 > Wavelab 2448 > CD-Wave (24-bit) > TLH > FLAC 2448 tagged, Andrew F. 04/2024
+
+Note: This does not match the current AUD sources.
+
+094f7f8cb332680293bd69297aae863e *gd1987-07-24s3t01.flac
+f79a953b48a0a37b32c8f5053cd0b5dd *gd1987-07-24s3t02.flac
+bc239a24d4d5245ade8051d83caf065a *gd1987-07-24s3t03.flac
+c78d390c933f743c391db5a490b3b11d *gd1987-07-24s3t04.flac
+e0da5568978a517c3e51470ef144ac7c *gd1987-07-24s3t05.flac
+e8bf3cac75d28419e2e8458e9f37efd0 *gd1987-07-24s3t06.flac
+bbe8cb27db62b6805064d3e25eafdb49 *gd1987-07-24s3t07.flac
+db987619a35f39272e283b4c24191c5f *gd1987-07-24s3t08.flac
+da97f2e95b63c280db027545c0437cdb *gd1987-07-24s3t09.flac
+c5971147dd9eff74b50dc6b9c46e7aa1 *gd1987-07-24s3t10.flac
+1ea945f25ec3c3b785e339719e21b1ed *gd1987-07-24s3t11.flac
+22d09890011dff9cc0b71a5158aa7323 *gd1987-07-24s3t12.flac
+6737053fbd4cd448cc03076318d52227 *gd1987-07-24s3t13.flac
+53e4f8a9cd9b671f5b6e5240e81f193d *gd1987-07-24s3t14.flac
+
+gd1987-07-24s3t01.flac:5e2cc2e744b86527e19ef4d337901e45
+gd1987-07-24s3t02.flac:d42a684e598aeecc6958b8cee75fe309
+gd1987-07-24s3t03.flac:a4d2e3d6dbbe6bd381edcc9cd5c7fbc6
+gd1987-07-24s3t04.flac:990006dbb2f2c913d98fd04a11c67ed5
+gd1987-07-24s3t05.flac:48c4b37c228be30b744f91e2d2a2ddf9
+gd1987-07-24s3t06.flac:c05e08350ebf03740b707ac793603825
+gd1987-07-24s3t07.flac:bcf06633c9e9bdc37304e7aacd9e579f
+gd1987-07-24s3t08.flac:16bf851797106724512bffc83099b9e0
+gd1987-07-24s3t09.flac:c8da12dd50373e5f2d0a09ddb3f10820
+gd1987-07-24s3t10.flac:31d746322e3d18af5bca5d018bc1d6b2
+gd1987-07-24s3t11.flac:440fbe2ac1f337a25f8c3b6022b44207
+gd1987-07-24s3t12.flac:16d15598bc401e9ce531262e69f9f87a
+gd1987-07-24s3t13.flac:14b743103aa21dc891c71e0c0aa8c781
+gd1987-07-24s3t14.flac:87f15ac0257378d349dd116b1b67c50d
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.333      95136044 B   cxx   --   ---xx   flac  0.7678  gd1987-07-24s3t01.flac
+     4:53.720      84591404 B   cxx   --   ---xx   flac  0.7616  gd1987-07-24s3t02.flac
+     5:18.160      91630124 B   cxx   --   ---xx   flac  0.7671  gd1987-07-24s3t03.flac
+     5:01.680      86883884 B   cxx   --   ---xx   flac  0.7432  gd1987-07-24s3t04.flac
+     4:53.333      84480044 B   cxx   --   ---xx   flac  0.7577  gd1987-07-24s3t05.flac
+     4:40.693      80839724 B   cxx   --   ---xx   flac  0.7687  gd1987-07-24s3t06.flac
+     6:14.213     107773484 B   cxx   --   ---xx   flac  0.7596  gd1987-07-24s3t07.flac
+     6:13.133     107462444 B   cxx   --   ---xx   flac  0.7701  gd1987-07-24s3t08.flac
+     6:06.173     105457964 B   cxx   --   ---xx   flac  0.7621  gd1987-07-24s3t09.flac
+     6:19.627     109332524 B   cxx   --   ---xx   flac  0.7491  gd1987-07-24s3t10.flac
+     5:03.320      87356204 B   cxx   --   ---xx   flac  0.7622  gd1987-07-24s3t11.flac
+     9:21.440     161694764 B   cxx   --   ---xx   flac  0.7548  gd1987-07-24s3t12.flac
+     6:50.960     118356524 B   cxx   --   ---xx   flac  0.7680  gd1987-07-24s3t13.flac
+     6:27.706     111659510 B   cxx   --   ---xx   flac  0.7736  gd1987-07-24s3t14.flac
+    82:54.493    1432654642 B                            0.7617  (14 files)
+
+No errors occured.

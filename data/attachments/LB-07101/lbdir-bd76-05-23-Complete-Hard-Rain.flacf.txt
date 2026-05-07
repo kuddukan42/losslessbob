@@ -1,0 +1,119 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-23-Complete-Hard-Rain.flacf 
+=================== 
+=================== 
+=================== 
+8c8a16602d3764404faf6adc5e834705  Artwork\bdylan-comhard.jpg
+9a26edbd3dd5d8da0838cafdc8c768e5  Artwork\bdylan-comhard1.jpg
+e520beb5b4cc05308519889d84613019  bd-Complete Hard Rain-d1\bd-Complete Hard Rain-d1.md5
+b20d1f891f9c6d884386f0e135583661  bd-Complete Hard Rain-d1\Track01.flac
+95f67d0326b76a9bb2239a1143118d32  bd-Complete Hard Rain-d1\Track02.flac
+d1d35543eb01a129920613df08331a2f  bd-Complete Hard Rain-d1\Track03.flac
+e1e567e0923e1a678275aba1b1ebdab9  bd-Complete Hard Rain-d1\Track04.flac
+51e08cf0f3bf91dfc0691d27da1acc1b  bd-Complete Hard Rain-d1\Track05.flac
+d65ab291495e65129cb0130b4f595e51  bd-Complete Hard Rain-d1\Track06.flac
+dfd6eb8cb8d34b94c68e01fedad9458c  bd-Complete Hard Rain-d1\Track07.flac
+f7a817f34add537d3c017a78778bef48  bd-Complete Hard Rain-d1\Track08.flac
+e6aee1a8d0010a2b1dca93f55f314063  bd-Complete Hard Rain-d1\Track09.flac
+06ba36447a676f82fa538d910aed8455  bd-Complete Hard Rain-d1\Track10.flac
+5f90fba49635a7f8a9a62915c2b9d99f  bd-Complete Hard Rain-d1\Track11.flac
+02dc51e5b6f0e248482c19a20d3b64f0  bd-Complete Hard Rain-d1\Track12.flac
+e25d29dd5f9c4f54ec86b14452008aaf  bd-Complete Hard Rain-d1\Track13.flac
+6834637418374355d8e86d2b9154665a  bd-Complete Hard Rain-d1\Track14.flac
+3b743ae4dd1e021bf12d5bd89ab0d844  bd-Complete Hard Rain-d2\bd-Complete Hard Rain-d2.md5
+d56b692679c93003638bc35a1140d34e  bd-Complete Hard Rain-d2\Track01.flac
+78508deb85a02e91a8be78dbb46eba32  bd-Complete Hard Rain-d2\Track02.flac
+edd89f80b146f1114ad348ac6d02ec5c  bd-Complete Hard Rain-d2\Track03.flac
+7ea88bacd2a2a7c4da1ba5de4bb8ecfd  bd-Complete Hard Rain-d2\Track04.flac
+00b46f8412b2c9658003f36f6f7dfd99  bd-Complete Hard Rain-d2\Track05.flac
+369b69985e83063c131c8622314f2950  bd-Complete Hard Rain-d2\Track06.flac
+9416e12afe7b3cc8e7acef3f3017ade7  bd-Complete Hard Rain-d2\Track07.flac
+d8b72469fea52e732ddc28b5ebc2c4c8  bd-Complete Hard Rain-d2\Track08.flac
+f68665652209402285c92d030638b0bc  bd-Complete Hard Rain-d2\Track09.flac
+983b30562e68ab03702af7e229e4c82a  bd-Complete Hard Rain-d2\Track10.flac
+c7e1c5cb6c25799205c35d13d3292679  bd-Complete Hard Rain.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-23-Complete-Hard-Rain.flacf\bd-Complete Hard Rain-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:dcbc38d3039afabf49e9ecff397ebd8f
+Track02.flac:4eabcd2c36bec9cd76597363ce7ce7d9
+Track03.flac:322eeead61ade0d2a39ef0eb35e92549
+Track04.flac:bd4fffc063754ff07759f37cae0df9b0
+Track05.flac:87ea0e3ef79e14b7fed748ff75364a8f
+Track06.flac:71f479e9e912ce5f605484f7058c7d9b
+Track07.flac:ee7ddd3f44b5bb6dce2cfd483128eade
+Track08.flac:311d8ec523cff01ad1963a3e1a366428
+Track09.flac:cc1cea332d78fbf02a22d19d70efa643
+Track10.flac:b749b3be1909c7f929c468da5a08adb0
+Track11.flac:b8db397d5d3707160f3b5404d7512289
+Track12.flac:8785c7c8cec5a5307445ec3e59dfb9af
+Track13.flac:9e11716a0bfa0ea01645a634d9413726
+Track14.flac:b6938f7111d9e3567326e948b9486698
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-23-Complete-Hard-Rain.flacf\bd-Complete Hard Rain-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:f5520aa6f85397178ea54cc990980d7f
+Track02.flac:4badc24798eee7720a6ccd1c9084d7a5
+Track03.flac:60d446249009bef8bc064b687247dff7
+Track04.flac:1057b0e5cc83ffa1101d4877cd84a0b0
+Track05.flac:35998016f3b85ed395e5a1a9b6df6f9a
+Track06.flac:61d48926b7818abd1bba6712efa53588
+Track07.flac:9a0b5d6b45691f11ad91de643924ac1b
+Track08.flac:fc52903f3c4a7d66c98ae94b72c3dcc1
+Track09.flac:3a5360e47ebd1c6a264cbbe76c74cbc4
+Track10.flac:0791fd03014cf04614d1152455fd4b8b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-23-Complete-Hard-Rain.flacf\bd-Complete Hard Rain-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.19       65841932 B   ---   --   ---xx   flac  0.5077  Track01.flac
+     3:42.68       39320780 B   ---   --   ---xx   flac  0.5116  Track02.flac
+     3:31.55       37349804 B   ---   --   ---xx   flac  0.5224  Track03.flac
+     5:49.28       61629500 B   ---   --   ---xx   flac  0.5414  Track04.flac
+     3:58.21       42032636 B   ---   --   ---xx   flac  0.5336  Track05.flac
+     3:54.43       41378780 B   ---   --   ---xx   flac  0.5263  Track06.flac
+     6:50.39       72415772 B   ---   --   ---xx   flac  0.5445  Track07.flac
+     3:34.02       37754348 B   ---   --   ---xx   flac  0.5385  Track08.flac
+     2:51.18       30206780 B   ---   --   ---xx   flac  0.5466  Track09.flac
+     4:01.09       42533612 B   ---   --   ---xx   flac  0.5070  Track10.flac
+     4:29.43       47552780 B   ---   --   ---xx   flac  0.5173  Track11.flac
+     6:08.39       65006972 B   ---   --   ---xx   flac  0.3014  Track12.flac
+     5:18.56       56226956 B   ---   --   ---xx   flac  0.2927  Track13.flac
+     4:42.11       49770716 B   ---   --   ---xx   flac  0.3001  Track14.flac
+    65:06.01      689021368 B                            0.4703  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-23-Complete-Hard-Rain.flacf\bd-Complete Hard Rain-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:14.45      108415484 B   ---   --   ---xx   flac  0.5664  Track01.flac
+     7:12.11       76230716 B   ---   --   ---xx   flac  0.3226  Track02.flac
+     3:15.55       34527404 B   ---   --   ---xx   flac  0.5990  Track03.flac
+     5:01.47       53206988 B   ---   --   ---xx   flac  0.5364  Track04.flac
+     7:50.30       82978604 B   ---   --   ---xx   flac  0.4969  Track05.flac
+     5:24.05       57165404 B   ---   --   ---xx   flac  0.5450  Track06.flac
+     9:54.41      104878076 B   ---   --   ---xx   flac  0.5527  Track07.flac
+     4:25.17       46786028 B   ---   --   ---xx   flac  0.5514  Track08.flac
+     4:40.58       49528460 B   ---   --   ---xx   flac  0.5586  Track09.flac
+     7:55.36       83874716 B   ---   --   ---xx   flac  0.5828  Track10.flac
+    65:54.45      697591880 B                            0.5274  (10 files)
+=================== 
+=================== 
+=================== 

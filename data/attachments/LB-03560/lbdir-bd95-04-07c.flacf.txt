@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-04-07c.flacf 
+=================== 
+=================== 
+=================== 
+c5088bf55de2b18b8ebbe932da973c09  bd95-04-07c-LB-3560.txt
+bffd5ed4639fbae4e253b8cb676d37a3  Bob Dylan Edinburgh 7 april 1995.Jpg
+ebdc4c535dec4566f7731da13698ff51  Bob Dylan Edinburgh 7 april 1995.txt
+00316b58604ec0d9187d5b03fd34434f  D1\Track 01.flac
+3f8c4291bbbd0597720ba41e2cb79dbc  D1\Track 02.flac
+5e85e26629e092a62ea0160b7aae7783  D1\Track 03.flac
+6b616ae4996c158cf35b4b8065d6a3d3  D1\Track 04.flac
+ca1b02d3bb7742a10832645b3420a112  D1\Track 05.flac
+f6ef5439ad070ee42b63894118e6016e  D1\Track 06.flac
+7e5462b5c1257299d3ae5fb36ca2dff6  D1\Track 07.flac
+3627c435acd97d38c187d9486b7aaae7  D2\Track 01.flac
+530d2e011dace8955590eed6953ac847  D2\Track 02.flac
+6457016506b839e08fb02c91c7a95174  D2\Track 03.flac
+373ded033b2dbd25c4b1bcad2fd5c2e1  D2\Track 04.flac
+61f9773af09580cc3923546c22b6631a  D2\Track 05.flac
+417b7d0047054369e30efb8bbbf7574b  D2\Track 06.flac
+95bf3542250357dc865891173eaaca01  D2\Track 07.flac
+a38918358e812593986c018b53a27c6f  fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-04-07c.flacf\D1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:857d62391c6e201f0f67c91e6bbbe9ae
+Track 02.flac:44cc2917207ef51581471d9cfb4333fb
+Track 03.flac:a549a4e7b790d5118c786ac3d4f1baa0
+Track 04.flac:f4237c348c43f92088bf8a048abdfb30
+Track 05.flac:ddd1b792cd029302ea4bde7325deb416
+Track 06.flac:99110cd96b06d2a4485dc694faebb622
+Track 07.flac:bee8bc5f8f811b7d98205a36641ee890
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-04-07c.flacf\D2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:55ecf6e52db25b4a85829ed4fe5fec7e
+Track 02.flac:6ed3c0294385167949d4d55fa3de3dd4
+Track 03.flac:c540def16401b49094cb84a239e8c6a2
+Track 04.flac:aa5a574466f4f1951a28280a71f8c107
+Track 05.flac:9cb80e7fbbf857583166b473a681cdaf
+Track 06.flac:ea6ea5fb528dedfa7e427bb5411cd10e
+Track 07.flac:aec86c126e53172c0b91cc12b7127572
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-04-07c.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.58       53585660 B   ---   --   ---xx   flac  0.5054  Track 01.flac
+     6:34.40       69595724 B   ---   --   ---xx   flac  0.4569  Track 02.flac
+     6:01.53       63805100 B   ---   --   ---xx   flac  0.4960  Track 03.flac
+     5:27.38       57772220 B   ---   --   ---xx   flac  0.4297  Track 04.flac
+     8:00.49       84787292 B   ---   --   ---xx   flac  0.4891  Track 05.flac
+     7:37.06       80628956 B   ---   --   ---xx   flac  0.4567  Track 06.flac
+     7:05.26       75031196 B   ---   --   ---xx   flac  0.3655  Track 07.flac
+    45:50.45      485206148 B                            0.4556  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-04-07c.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:06.38       96403820 B   ---   --   ---xx   flac  0.3776  Track 01.flac
+     6:08.45       65021084 B   ---   --   ---xx   flac  0.3836  Track 02.flac
+     6:12.39       65712572 B   ---   --   ---xx   flac  0.5204  Track 03.flac
+     8:07.68       86066780 B   ---   --   ---xx   flac  0.4579  Track 04.flac
+     7:21.68       77952380 B   ---   --   ---xx   flac  0.5124  Track 05.flac
+     9:12.04       97382252 B   ---   --   ---xx   flac  0.5018  Track 06.flac
+     8:25.58       89218460 B   ---   --   ---xx   flac  0.4605  Track 07.flac
+    54:35.20      577757348 B                            0.4584  (7 files)
+=================== 
+=================== 
+=================== 

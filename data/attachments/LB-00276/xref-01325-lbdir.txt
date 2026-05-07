@@ -1,0 +1,63 @@
+===================
+===================
+===================
+=== md5 for: bd86-07-24-d.flacf
+===================
+===================
+===================
+fd3d4c834210586dc2c22aead397d310 *bd86-07-24tr01.flac
+1f8f6a483220949aeb0364715afa1841 *bd86-07-24tr02.flac
+b0c853caf13f92b0dd3f2ca3b3df85f3 *bd86-07-24tr03.flac
+ec90c46d69437a55af3bce7d15a1723d *bd86-07-24tr04.flac
+d4fd9885c07dae1c8174584fee057c08 *bd86-07-24tr05.flac
+2cfa8f22d66dbbf685aa9e79b5ab1a9f *bd86-07-24tr06.flac
+49ad1c3474f01e2e7ff41c61a4711510 *bd86-07-24tr07.flac
+7d8b7618eef6745e5cb51f6a20c3a2ee *bd86-07-24tr08.flac
+1e49c6559df0574fdb2ba2001622b177 *bd86-07-24tr09.flac
+910eaa82120ffdbe57b9c2d8d6ce279b *bd86-07-24tr10.flac
+3589ddb2faeaddbc7cd6e29903c21298 *bd86-07-24tr11.flac
+31f0e402febd52ede625afbbc56ba4b8 *bd86-07-24tr12.flac
+a812fb49ac30affdfa7894b1aa7574b8 *Info 1986-07-24  sbd.txt
+===================
+===================
+===================
+=== ffp for: bd86-07-24-d.flacf
+===================
+===================
+===================
+bd86-07-24tr01.flac:8366c99c074616d59b7c62445293a527
+bd86-07-24tr02.flac:014538e23a84cee350015dcd8ca171bc
+bd86-07-24tr03.flac:3d946cecb49c8e305970a0fe7f42cffb
+bd86-07-24tr04.flac:ba1861bc322e4cfb3381b2bb5de8d418
+bd86-07-24tr05.flac:ecff323ee2d1d97dc7998728b8bf4c65
+bd86-07-24tr06.flac:dc78bf33328cad5eeec9eacacd261b7a
+bd86-07-24tr07.flac:c48fb56e702a09cc1a1a38a5333f2681
+bd86-07-24tr08.flac:8409227f637435b7c91b5b4abd7d88af
+bd86-07-24tr09.flac:469f2e890fa1dd4931fcc3a61f82fc72
+bd86-07-24tr10.flac:7096d14dc5d264a9491b724bb45849ba
+bd86-07-24tr11.flac:40ecd44114afc88b64a700bf04e4113e
+bd86-07-24tr12.flac:a4afb287088e9cea40247451bb3716a1
+===================
+===================
+===================
+=== shntool len for: bd86-07-24-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:11.31       65517356 B   ---   --   ---xx   flac  0.6210  bd86-07-24tr01.flac
+     5:13.54       55340252 B   ---   --   ---xx   flac  0.6332  bd86-07-24tr02.flac
+     4:14.62       44951468 B   ---   --   ---xx   flac  0.6168  bd86-07-24tr03.flac
+     5:10.69       54846332 B   ---   --   ---xx   flac  0.6209  bd86-07-24tr04.flac
+     6:01.15       63715724 B   ---   --   ---xx   flac  0.6012  bd86-07-24tr05.flac
+     5:55.32       62697308 B   ---   --   ---xx   flac  0.6370  bd86-07-24tr06.flac
+     5:15.39       55657772 B   ---   --   ---xx   flac  0.5952  bd86-07-24tr07.flac
+     7:41.14       81353372 B   ---   --   ---xx   flac  0.6148  bd86-07-24tr08.flac
+     6:52.36       72761516 B   ---   --   ---xx   flac  0.6382  bd86-07-24tr09.flac
+     5:05.30       53872604 B   ---   --   ---xx   flac  0.6063  bd86-07-24tr10.flac
+     4:20.63       46012220 B   ---   --   ---xx   flac  0.6203  bd86-07-24tr11.flac
+     6:55.21       73255436 B   ---   --   ---xx   flac  0.6336  bd86-07-24tr12.flac
+    68:58.16      729981360 B                            0.6205  (12 files)
+===================
+===================
+===================

@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd99-02-12-g.flacf
+===================
+===================
+===================
+019cfc5fdf5f5f2b8e9e4207c6cd5b9d *01 Gotta serve somebody.flac
+db56d6ab143ed7c3c79e1c7a0c2c3d3d *02 Million miles.flac
+bd0656dc7f07877ddb9c7be15bd1f6e2 *03 Maggie's farm.flac
+3e74d137ce3a1a3805e5176f6516fb04 *04 Shelter from the storm.flac
+3757e7557f8740f0acdad7fa7e023e7b *05 Cold irons bound.flac
+c0d87fc32764ccc7095323486e0c21d4 *06 Silvio.flac
+2bd1c4ec4f9a62519ac2090e57f69421 *07 Rank strangers to me.flac
+ec564c7c26b21dcda13f536e326b53f9 *08 It's all over now, baby blue.flac
+d88bc72122d02c2e68d8282a8610bfa7 *09 Tangled up in blue.flac
+44c101c9c0a16bc0d387a514bc34fae7 *10 My back pages.flac
+01adcfa6b772952a4c861a5c4ff876b8 *11 'Til I fell in love with you.flac
+7dad4352634a8467b8d5b5400ece89bb *12 Positively 4th Street.flac
+d86b8981489414c7b75a82142fdb2da2 *13 Highway 61 revisited.flac
+0831d2dbf81ec5e91bbd035518d696c9 *14 Love sick.flac
+4a2401b778978a8b7aa0fc738bf6a2be *15 Leopard-skin pill-box hat.flac
+43a3ee0ac28a9ed4bd82d125bec04588 *16 Blowin' in the wind.flac
+b53c2968e99761e23f096b3a8ce492c3 *17 Not fade away.flac
+149ecdc2c134dff1903f365c12199a42 *1999-02-12 S.I.U. Arena, Southern Illinois University, Carbondale, Illinois.txt
+a12cce99c40e9e84bad81e4843b1010e *Bob Dylan 1999-02-12 SIU Arena, Southern Illinois University, Carbondale, Illinois [m. likely LB-7147].md5
+a12cce99c40e9e84bad81e4843b1010e *Bob Dylan 1999-02-12 SIU Arena, Southern Illinois University, Carbondale, Illinois [m. likely LB-7147].txt
+34144ea34252e608d27fcf6b6021b57a *lbdir-bd99-02-12-g.flacf.txt
+===================
+===================
+===================
+=== ffp for: bd99-02-12-g.flacf
+===================
+===================
+===================
+01 Gotta serve somebody.flac:933270c121ed6321d3e732766b5242fd
+02 Million miles.flac:4fb65b33f679eb08169fcb63cbd9789b
+03 Maggie's farm.flac:3ad39a0a5247ae9c1cf76690498d8f38
+04 Shelter from the storm.flac:9f32a7eae4c2cd2696e49c195b9a4d05
+05 Cold irons bound.flac:0624ea8b99509b4d3cfb82752a49c3d7
+06 Silvio.flac:e4bee7331b729865f074f6f118e2a4c2
+07 Rank strangers to me.flac:d03935caf4ab052a60188da2069b5f1f
+08 It's all over now, baby blue.flac:5fff9b4a7e01c1b811005b8ab8deac47
+09 Tangled up in blue.flac:83a64bf7dfa09a04830aa8acb3e9319a
+10 My back pages.flac:d772d2f025be51c0ef258135bc26cf60
+11 'Til I fell in love with you.flac:9ba6fe15e5feaf8793ca695db4d6a5e7
+12 Positively 4th Street.flac:93f29f72b06be9890f62129f2eac4513
+13 Highway 61 revisited.flac:1bb295ed03e7b1eb06dac76fb31ad736
+14 Love sick.flac:11aeb11b26523a4dc2e745654251d148
+15 Leopard-skin pill-box hat.flac:4ae9b80401746e779c01cc9e2ccf3cc0
+16 Blowin' in the wind.flac:ed06269942dca1ad30aaae03d1a48a81
+17 Not fade away.flac:742d6a4f54e0674e4e6fa971ee257118
+===================
+===================
+===================
+=== shntool len for: bd99-02-12-g.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.64       52012172 B   ---   --   ---xx   flac  0.5730  01 Gotta serve somebody.flac
+     4:41.22       49620188 B   ---   --   ---xx   flac  0.5382  02 Million miles.flac
+     6:34.36       69586316 B   ---   --   ---xx   flac  0.5384  03 Maggie's farm.flac
+     5:24.45       57259484 B   ---   --   ---xx   flac  0.4569  04 Shelter from the storm.flac
+     6:21.08       67227260 B   ---   --   ---xx   flac  0.5117  05 Cold irons bound.flac
+     5:28.63       58007420 B   ---   --   ---xx   flac  0.5736  06 Silvio.flac
+     4:28.08       47294060 B   ---   --   ---xx   flac  0.4156  07 Rank strangers to me.flac
+     7:08.29       75567452 B   ---   --   ---xx   flac  0.4281  08 It's all over now, baby blue.flac
+     8:34.37       90756668 B   ---   --   ---xx   flac  0.5473  09 Tangled up in blue.flac
+     7:21.49       77907692 B   ---   --   ---xx   flac  0.4409  10 My back pages.flac
+     6:13.12       65825468 B   ---   --   ---xx   flac  0.5106  11 'Til I fell in love with you.flac
+     7:49.44       82835132 B   ---   --   ---xx   flac  0.4538  12 Positively 4th Street.flac
+     9:05.00       96138044 B   ---   --   ---xx   flac  0.5188  13 Highway 61 revisited.flac
+     5:22.03       56807900 B   ---   --   ---xx   flac  0.4642  14 Love sick.flac
+     6:07.39       64830572 B   ---   --   ---xx   flac  0.5276  15 Leopard-skin pill-box hat.flac
+     5:16.59       55881212 B   ---   --   ---xx   flac  0.4154  16 Blowin' in the wind.flac
+     5:06.02       53983148 B   ---   --   ---xx   flac  0.5236  17 Not fade away.flac
+   105:57.70     1121540188 B                            0.4966  (17 files)
+===================
+===================
+===================

@@ -1,0 +1,33 @@
+01 Instrumental.flac:6bdb5ed249fe17786688b048644e289e
+02 Maggie's Farm.flac:e14864edae8ee7d02746c6ad666b4fda
+03 All Along The Watchtower.flac:f7d7ce74c517cf605c574882a03d38fe
+04 Just Like A Woman.flac:954ac489a279531bb34e0d44e5c1c820
+05 Just Like A Woman.flac:8b9dbc48544d3a0b610454ff2e8be1d4
+06 When You Gonna Wake Up.flac:edd83b5fdcaf667c0c3ce2e66e9ff6ba
+07 When You Gonna Wake Up.flac:5aee8f3b9e6cb637fc71935feb71a7d9
+08 Shelter From The Storm.flac:773f18c413b47d0e600facc6523572ee
+09 Watered-Down Love.flac:115a896f56c04ca7b7ea9bf97ba3d981
+10 Masters Of War.flac:f33d79daafaabaf7928f53ded9195281
+11 Masters Of War.flac:8b2efac6624c3fc1145b0b65a8fe7e68
+12 Jokerman.flac:282f81d617d730335f9df09f68320c5d
+13 Simple Twist Of Fate.flac:6935c81a85e03facdcf1e4f795a6bd1c
+14 Simple Twist Of Fate.flac:adb7378267337d823b929e5484282a7f
+15 Man Of Peace.flac:2c61b6e879a8bc577d28cdf130b057bf
+16 Man Of Peace.flac:c23e45c3b3613c776d4b06fb5c23ddfe
+17 I And I.flac:9229bece62f716e4ef29a0e96a955a51
+18 It's All Over Now, Baby Blue.flac:ad2190cf779bd8f9b180b5561e79dc9b
+19 Ballad Of A Thin Man.flac:9d47bc1c7149fccd157716c95827591a
+20 Heart Of Mine.flac:fbd579dbbbaa6535550661226abcbb97
+21 Highway 61 Revisited.flac:587d520a66e2b8132d7e4f770f20214c
+22 Around And Around.flac:81f6c6ccc52e26725db98033890e25bc
+23 Leopard-Skin Pill-Box Hat.flac:0f276ca8fbb4c6e940b19779004933e7
+24 Unidentified Instrumental.flac:a3a388bd88aa9442b417f5c72fa68212
+25 It's All Over Now, Baby Blue.flac:f4015d47377923318fb7e986a0fa228b
+26 Almost Done.flac:9fe857d9e876b69f26ed9e99924b5fbc
+27 Always On My Mind.flac:a69412fec02882d965e0d8988acf723c
+28 Always On My Mind.flac:f36a7e24ffa979eb5b659e0faddec414
+29 Always On My Mind.flac:65fa7c0c8c4c1ca1f2c72d40ce3052d7
+30 Every Grain Of Sand.flac:9663eb77e5290f1518e14a39a0ba74e3
+31 Every Grain Of Sand.flac:861bd1eff912f9756c350e688af7ff33
+32 Every Grain Of Sand.flac:9eaa2d9ffbe6386ada5c44a0089c1df6
+33 Girl From The North Country.flac:7038a7f101c948a5f161561182c68fd9

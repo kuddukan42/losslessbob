@@ -1,0 +1,32 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-10-Billy-Jame-Interview.flacf 
+=================== 
+=================== 
+=================== 
+a6a9c54f00fb71a2ae9e51783b08d52d  1961-10-00 Billy James Interview.txt
+a8bd08cb33a271cfdd8a2455b588dc41  1961-10-00 Billy James Interviewffp.txt
+c6b44aa56fe694b9dc0abad79b90486a  bd-1961-10t1 Billy James Interview.flac
+b7f31c84b88157b972348c98a2627c13  bd61-10-Billy-Jame-Interview-LB-4564.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-10-Billy-Jame-Interview.flacf 
+=================== 
+=================== 
+=================== 
+bd-1961-10t1 Billy James Interview.flac:20e3985c4c4f1e02fe0016328d84780a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-10-Billy-Jame-Interview.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:33.06       48171356 B   ---   --   ---xx   flac  0.3984  bd-1961-10t1 Billy James Interview.flac
+     4:33.06       48171356 B                            0.3984  (1 file)
+=================== 
+=================== 
+=================== 

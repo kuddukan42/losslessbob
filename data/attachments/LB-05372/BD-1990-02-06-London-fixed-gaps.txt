@@ -1,0 +1,67 @@
+Bob Dylan
+1990-02-06
+Hammersmith Odeon
+London,  
+UK
+
+cdtrade > xACT > FLAC > Azareus > Torrent > Dime>HD>Flac frontend>wav>switched D2t1&2 due to mislabelling >EAC Wav Processing/Wav Joiner2.0.0/Wav Repair 4.9.2 fixing gaps between tracks, tracking on SB's, No ASM > Flac frontend lvl8, sector align, verify.
+
+Same as noted on LB-5236: nothing above 16k but does not have lego parapetes; very harsh; lots of clipping gives scratchy sound on d1t1 and clipping continues.; different recording than HG LB-1848 based on different crowd at end of d1t1
+
+Please note there are still edits between/around d2t1-3. 
+
+
+London, England, UK
+Hammersmith Odeon
+06-Feb-90
+Never-Ending Tour Concert #183
+1. Most Likely You Go Your Way (And I'll Go Mine)
+2. I Don't Believe You (She Acts Like We Never Have Met)
+3. Ballad Of Hollis Brown
+4. Masters of War
+5. Stuck Inside of Mobile With the Memphis Blues Again
+6. Political World
+7. Rainy Day Women # 12 & 35
+8. What Was It You Wanted?
+9. Blowin' in the Wind
+10. It's All Over Now, Baby Blue
+
+01. A Hard Rain's A-Gonna Fall
+02. Song To Woody
+03. Knockin' On Heaven's Door
+04. Everything Is Broken
+05. Tight Connection to My Heart (Has Anybody Seen My Love)
+06. Man in the Long Black Coat
+07. I Shall Be Released
+08. Like A Rolling Stone
+09. Dark As A Dungeon
+10. Highway 61 Revisited
+
+
+
+Origianl txt file
+-----copy/past----------
+London, England, UK
+Hammersmith Odeon
+06-Feb-90
+Never-Ending Tour Concert #183
+1.	Most Likely You Go Your Way (And I'll Go Mine)
+2.	I Don't Believe You (She Acts Like We Never Have Met)
+3.	Ballad Of Hollis Brown
+4.	Masters of War
+5.	Stuck Inside of Mobile With the Memphis Blues Again
+6.	Political World
+7.	Rainy Day Women # 12 & 35
+8.	What Was It You Wanted?
+9.	Blowin' in the Wind
+10.	It's All Over Now, Baby Blue
+11.	A Hard Rain's A-Gonna Fall
+12.	Song To Woody
+13.	Knockin' On Heaven's Door
+14.	Everything Is Broken
+15.	Tight Connection to My Heart (Has Anybody Seen My Love)
+16.	Man in the Long Black Coat
+17.	I Shall Be Released
+18.	Like A Rolling Stone
+19.	Dark As A Dungeon
+20.	Highway 61 Revisited

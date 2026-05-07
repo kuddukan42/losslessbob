@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-07-26.flacf 
+=================== 
+=================== 
+=================== 
+3d0979e19aae99e66c97cddaf1ef0e48  01.flac
+0a6695f88b8ad1d3f3d624670f690d98  02.flac
+0f94b4c28dc2ced49e65b85cc064da0f  03.flac
+66da9c1f5a7e1e5fb915808a4d2ec097  04.flac
+b6b384f9869da5436669d7383286088d  05.flac
+5b2415bccee8428f8117bc117759a6f8  06.flac
+d2c62730044df380440a2ff3ac0ceeca  07.flac
+9c2c78254bdea5574ab725c69df75062  08.flac
+2df71f9c6c69ac031a2826e16e06e9d3  09.flac
+ce927dca23a4d7ab110a038887253526  10.flac
+9bcbfdc05e5613790635e5e1e05eb086  11.flac
+434a17d03593796d8cba1bbdaa16dd2d  12.flac
+1453e48a7479f851b33a4a813ea4072b  13.flac
+871c99e8985e324b0693faf6a47e8fa6  14.flac
+73daec7f8ef6dc3b4bcbb24df8962166  15.flac
+18cf9c5b02056d2a7a182c3c8ac4988f  16.flac
+3580341a58fbda4c0695a6ab237b600f  17.flac
+aa4e33dd1f25d6a92316bf9e15225f18  BOB DYLAN Costa Mesa July 26 2007.md5
+09a875309d10b24f285b1594a113286b  fingerprint.txt
+03a50d81ff15eb0c1e47739d1dd1131d  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-07-26.flacf 
+=================== 
+=================== 
+=================== 
+01.flac:008255be6c7e410a0e7e86f648cbb600
+02.flac:0d054be025950791cf138b9a46ed1d7f
+03.flac:60326c73dcdd3427530ab984a60f3c58
+04.flac:27fc7d8221ef573d3bb6679275f199c9
+05.flac:bd526d9b046354bb37b452cdbb9e510c
+06.flac:670ea222894db37a19f8655ac450b437
+07.flac:d4fce9def6a6656ff633e8620e76e1be
+08.flac:a75ab4d184ffced86b765fe2d7462dab
+09.flac:02e330254ea705f8a775b4ddd3add091
+10.flac:0d96adc3bafd6b670e458bd152c4573f
+11.flac:a7165a5a92ec224c53bb13ec8ef4794e
+12.flac:d3ebea9c7e0a73f0bd7cca03841d2887
+13.flac:c9f2bfc7493bc2383f1db338c584f166
+14.flac:47ca934a66c147b2d2ecc8dc1f510cea
+15.flac:487ce7a659104c21aaa9abc2c51945c7
+16.flac:4c76d974ee0f8327a911f0a1e0a4b1e3
+17.flac:f734c24b61a36bed2e05e6593c92eef1
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-07-26.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:34.37       16668668 B   ---   --   ---xx   flac  0.3830  01.flac
+     4:25.10       46769564 B   ---   --   ---xx   flac  0.5108  02.flac
+     5:00.17       52960028 B   ---   --   ---xx   flac  0.4584  03.flac
+     4:06.45       43500284 B   ---   --   ---xx   flac  0.4685  04.flac
+     7:02.10       74464364 B   ---   --   ---xx   flac  0.4568  05.flac
+     6:59.29       73979852 B   ---   --   ---xx   flac  0.4343  06.flac
+     6:45.52       71564348 B   ---   --   ---xx   flac  0.4916  07.flac
+     6:38.55       70336604 B   ---   --   ---xx   flac  0.4096  08.flac
+     7:53.38       83526620 B   ---   --   ---xx   flac  0.4300  09.flac
+     7:21.34       77872412 B   ---   --   ---xx   flac  0.4735  10.flac
+     6:42.67       71070428 B   ---   --   ---xx   flac  0.4292  11.flac
+     5:48.22       61438988 B   ---   --   ---xx   flac  0.5444  12.flac
+     7:55.03       83797100 B   ---   --   ---xx   flac  0.4092  13.flac
+     6:15.73       66321740 B   ---   --   ---xx   flac  0.5350  14.flac
+     8:58.02       94907948 B   ---   --   ---xx   flac  0.4821  15.flac
+     6:07.41       64835276 B   ---   --   ---xx   flac  0.5557  16.flac
+     8:38.17       91415228 B   ---   --   ---xx   flac  0.4990  17.flac
+   108:13.27     1145429452 B                            0.4705  (17 files)
+=================== 
+=================== 
+=================== 

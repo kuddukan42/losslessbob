@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-03 
+=================== 
+=================== 
+=================== 
+e485557f8f58c1acfc163c566d00fa70  bd96-07-03.txt
+2a628c48d6f36b840ad385f2089c0777  dylan1996-07-03.txt
+acf98d65693116b0f861eca4e7c8d3ca  dylan1996-07-03d1.md5
+34f35ea676edd16c625bc2f0f1825a9d  dylan1996-07-03d1t01.shn
+5d66d139ae29637406a1940ec3acb845  dylan1996-07-03d1t02.shn
+7da4365fc78de5aefc1b57a86c335a17  dylan1996-07-03d1t03.shn
+b3e9b9031cefc1656d936f62c35d5db5  dylan1996-07-03d1t04.shn
+f05cb320ade71a52b32427a30b9a8413  dylan1996-07-03d1t05.shn
+abaa4d145e6fdc84482dd4269cc56d0b  dylan1996-07-03d1t06.shn
+8ae28242512d53efe9438cdee36e99e4  dylan1996-07-03d1t07.shn
+fdeee62b61ed5be4a1db0ab8699224c0  dylan1996-07-03d1t08.shn
+4c881d2c962be047c9a4cc08d1e44e11  dylan1996-07-03d1t09.shn
+9467b817724cd557308025f2a2ca201d  dylan1996-07-03d2.md5
+7855852562be01cff8640c49c3ded200  dylan1996-07-03d2t01.shn
+c7181a304597b3f38763604c4a5ecf8e  dylan1996-07-03d2t02.shn
+44c0b7002cee2db88f4507885cf8989a  dylan1996-07-03d2t03.shn
+90603672af33cbf36501c46ae06dd233  dylan1996-07-03d2t04.shn
+c22366cf590e8d2f27a86dfab936d0ec  dylan1996-07-03d2t05.shn
+1c5d45cf15d14e38fed852add161f8fa  dylan1996-07-03d2t06.shn
+07d865ab08c2c41d5342f44144dc4643  dylan1996-07-03d2t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-07-03 
+=================== 
+=================== 
+=================== 
+80463e6391d395d255c97281023e76dd  [shntool]  dylan1996-07-03d1t01.wav
+508d81085c346d0e3966dcbc1fcebfbb  [shntool]  dylan1996-07-03d1t02.wav
+99dd99429acfa88b56b820f3182c469e  [shntool]  dylan1996-07-03d1t03.wav
+8950e0d09692536e48eafdda16078408  [shntool]  dylan1996-07-03d1t04.wav
+6ef1e21800367d6664395462f17ca826  [shntool]  dylan1996-07-03d1t05.wav
+2b6248282bb3a170fd06a741a3def2c9  [shntool]  dylan1996-07-03d1t06.wav
+341d7a6551dcc89c14a687303941b385  [shntool]  dylan1996-07-03d1t07.wav
+fa98fd5a0cb62071b2bf051235b8aeb7  [shntool]  dylan1996-07-03d1t08.wav
+b7b634475633d04866a98956cde787f3  [shntool]  dylan1996-07-03d1t09.wav
+d2d0a321e5563a4f33a9af0e2ec7308b  [shntool]  dylan1996-07-03d2t01.wav
+5b8638fbb70fe5cfc6681cf9d19af765  [shntool]  dylan1996-07-03d2t02.wav
+41234380ee760af6225c795ed6f08748  [shntool]  dylan1996-07-03d2t03.wav
+ee2aa7dc27446f916435d43657dcd37f  [shntool]  dylan1996-07-03d2t04.wav
+0fe227fbd3e185003c291368ec68c5b9  [shntool]  dylan1996-07-03d2t05.wav
+35bb7876938fbe9765ca33ec23113336  [shntool]  dylan1996-07-03d2t06.wav
+affa6b81345e8a044920cf65bed114fe  [shntool]  dylan1996-07-03d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-03 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:32.17        5684828 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t01.wav
+     4:39.59       49354412 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t02.wav
+     6:11.54       65571452 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t03.wav
+     7:09.66       75830876 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t04.wav
+     6:30.03       68803100 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t05.wav
+     6:01.04       63689852 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t06.wav
+     7:08.22       75550988 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t07.wav
+     9:59.11      105689516 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t08.wav
+     6:28.28       68509100 B   ---   --   -----    wav  1.0000  dylan1996-07-03d1t09.wav
+     8:31.40       90234524 B   ---   --   -----    wav  1.0000  dylan1996-07-03d2t01.wav
+     6:32.12       69177068 B   ---   --   -----    wav  1.0000  dylan1996-07-03d2t02.wav
+     5:45.47       60968588 B   ---   --   -----    wav  1.0000  dylan1996-07-03d2t03.wav
+     6:27.13       68297420 B   ---   --   -----    wav  1.0000  dylan1996-07-03d2t04.wav
+     7:25.10       78521564 B   ---   --   -----    wav  1.0000  dylan1996-07-03d2t05.wav
+     9:56.24      105190892 B   ---   --   -----    wav  1.0000  dylan1996-07-03d2t06.wav
+     6:46.18       71660780 B   ---   --   -----    wav  1.0000  dylan1996-07-03d2t07.wav
+   106:04.53     1122734960 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

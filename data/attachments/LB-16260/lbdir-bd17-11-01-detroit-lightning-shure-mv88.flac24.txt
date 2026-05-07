@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== md5 for: bd17-11-01-detroit-lightning-shure-mv88.flac24
+===================
+===================
+===================
+2213b3ef8db146537a39a84c03986111 *01 Intro.flac
+5ede03c3cf2044ad5996efcf4236342a *02 Things Have Changed.flac
+41bc4bc5944203cd7b790bb20ae458bf *03 It Ain't Me, Babe.flac
+0226d4cbe4bec1338f66f900516cc9eb *04 Highway 61 Revisited.flac
+277b2ab38ab7b90940af576548a29a6b *05 Why Try To Change Me Now.flac
+39209fb6e12a28e03797ccb7054128b7 *06 Summer Days.flac
+0c319e8b76da3318b61746bf4727bc69 *07 Melancholy Mood.flac
+3ebbb68b0feb2ba87c4855a79f922041 *08 Honest With Me.flac
+a9b85a8c14d0f17b4fe398bc86194b71 *09 Tryin' To Get To Heaven.flac
+71910242153fef3229f6c372023c1c40 *10 Once Upon A Time.flac
+bd8b5f5630619bd5c76695b724d2b78b *11 Pay In Blood.flac
+88b044e5c503a1e840ea9be500048fb9 *12 Tangled Up In Blue.flac
+2f41e871b8ae644d03c67e5594bf9cb3 *13 The September Of My Years.flac
+55c1e4444d38bba35482eba666572f7f *14 Early Roman Kings.flac
+24c2a77db66c8e89936e075ee32df024 *15 Soon After Midnight.flac
+ee917f01733369a0d9f24124f92e406a *16 Desolation Row (incomplete).flac
+cfede68c55ef807eec20a0cad37852b4 *2017-11-01 Detroit, MI.md5
+05ce933090f120e829961144ab90b02f *fingerprint.ffp
+e832b8ac29210e74b607092669fb19b8 *info.txt
+===================
+===================
+===================
+=== ffp for: bd17-11-01-detroit-lightning-shure-mv88.flac24
+===================
+===================
+===================
+01 Intro.flac:545dc2a4d8ae08803188ab40315b37e3
+02 Things Have Changed.flac:68d061f4337466039ef3b4022c9410cd
+03 It Ain't Me, Babe.flac:87d185f1ddb50438ddd645e14b233399
+04 Highway 61 Revisited.flac:9bbf95eff145f068dd03e7291cd92a34
+05 Why Try To Change Me Now.flac:9909315a0e3970e5f6de19714037ae5f
+06 Summer Days.flac:8e5611d2fde21d6eeda0281ea7c38f65
+07 Melancholy Mood.flac:fba7199919b7a85267783c1679b5aebf
+08 Honest With Me.flac:85e2e5a39200e07caa94c0a6dc6dd120
+09 Tryin' To Get To Heaven.flac:177d2a7f22f2bae2775d908fa70bd772
+10 Once Upon A Time.flac:efbf2cdcd2f5339f2cffd538e1ae9692
+11 Pay In Blood.flac:8e6ea79e6607cd40c9fa00eb4c427434
+12 Tangled Up In Blue.flac:a04c7c7b5ddbba8b4aeace0b8e58fdf5
+13 The September Of My Years.flac:a27cc1d8adb2b8044b5a4dcaf4d3c015
+14 Early Roman Kings.flac:8911ed3ca74d0176af2f8dd455b0a044
+15 Soon After Midnight.flac:d68d30ff15621e5bd7447831c785ce00
+16 Desolation Row (incomplete).flac:13eb813076d559109bd5e85a662cc643
+===================
+===================
+===================
+=== shntool len for: bd17-11-01-detroit-lightning-shure-mv88.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:43.480      29802284 B   cxx   --   ---xx   flac  0.6268  01 Intro.flac
+     4:50.107      83550764 B   cxx   --   ---xx   flac  0.6403  02 Things Have Changed.flac
+     4:04.787      70498604 B   cxx   --   ---xx   flac  0.6333  03 It Ain't Me, Babe.flac
+     4:43.773      81726764 B   cxx   --   ---xx   flac  0.6614  04 Highway 61 Revisited.flac
+     3:46.760      65306924 B   cxx   --   ---xx   flac  0.6071  05 Why Try To Change Me Now.flac
+     6:49.227     117857324 B   cxx   --   ---xx   flac  0.6795  06 Summer Days.flac
+     3:17.693      56935724 B   cxx   --   ---xx   flac  0.5829  07 Melancholy Mood.flac
+     4:02.253      69769004 B   cxx   --   ---xx   flac  0.6441  08 Honest With Me.flac
+     4:19.613      74768684 B   cxx   --   ---xx   flac  0.6164  09 Tryin' To Get To Heaven.flac
+     4:04.613      70448684 B   cxx   --   ---xx   flac  0.5767  10 Once Upon A Time.flac
+     4:34.280      78992684 B   cxx   --   ---xx   flac  0.6395  11 Pay In Blood.flac
+     5:37.653      97244204 B   cxx   --   ---xx   flac  0.6130  12 Tangled Up In Blue.flac
+     3:38.973      63064364 B   cxx   --   ---xx   flac  0.5795  13 The September Of My Years.flac
+     6:07.493     105838124 B   cxx   --   ---xx   flac  0.6418  14 Early Roman Kings.flac
+     3:59.653      69020204 B   cxx   --   ---xx   flac  0.6289  15 Soon After Midnight.flac
+     2:34.246      44423012 B   cxx   --   ---xx   flac  0.6161  16 Desolation Row (incomplete).flac
+    68:14.606    1179247352 B                            0.6282  (16 files)
+===================
+===================
+===================

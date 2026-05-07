@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd94-10-23-HG.flacf
+===================
+===================
+===================
+fdfbddf20d6451e0c007b236390f5ac4 *bd-1994-10-23-Syracuse-HG.md5
+c89307d7f62db0e82fe3bcde56f5c141 *bd-1994-10-23-Syracuse-HG.txt
+0049c237003821afea600beae9a762a7 *Disc1\bd-1994-10-23-HG-d1t01.flac
+47a959196f754587fd6a7797f32f9748 *Disc1\bd-1994-10-23-HG-d1t02.flac
+8c2894dae8404e3b2408c1fdfae42655 *Disc1\bd-1994-10-23-HG-d1t03.flac
+2c302021f404c96114a207b074643039 *Disc1\bd-1994-10-23-HG-d1t04.flac
+daa23cf8880842f6af30e4673c27432b *Disc1\bd-1994-10-23-HG-d1t05.flac
+0b9326e6e9dba9972ed8a123329dfb5e *Disc1\bd-1994-10-23-HG-d1t06.flac
+a05947182611f21fbc119549c21f79fe *Disc1\bd-1994-10-23-HG-d1t07.flac
+e2488f65de005ce703f083f53256cf37 *Disc1\bd-1994-10-23-HG-d1t08.flac
+7432cfd129e59f4a4c5ad03aebc980e3 *Disc1\bd-1994-10-23-HG-d1t09.flac
+211e7bc81517bf9b7fb54922dbc8803a *Disc2\bd-1994-10-23-HG-d2t01.flac
+8a5f1a6718ada13a3b4913fea6f6ce55 *Disc2\bd-1994-10-23-HG-d2t02.flac
+149c6c9bfb1494a2a8eb453924544c82 *Disc2\bd-1994-10-23-HG-d2t03.flac
+f3c14d16b9b15aebeddb9fb0e8324ac7 *Disc2\bd-1994-10-23-HG-d2t04.flac
+3330d16dd59e3a8c6b1a09b18147c1d6 *Disc2\bd-1994-10-23-HG-d2t05.flac
+09f8f32648aceb4c01ab89745be792b2 *Syr10-23-94(HG)-B.JPG
+4e550abdc458d2b3bace53c01d7f3b08 *Syr10-23-94(HG)-F.JPG
+===================
+===================
+===================
+=== ffp for: bd94-10-23-HG.flacf
+===================
+===================
+===================
+Disc1\bd-1994-10-23-HG-d1t01.flac:6fa379a675965d5e173969d8be19cfd0
+Disc1\bd-1994-10-23-HG-d1t02.flac:1197685a43ff2721996460f960437b87
+Disc1\bd-1994-10-23-HG-d1t03.flac:9675c52f4a4ad553c62ad282f18b620d
+Disc1\bd-1994-10-23-HG-d1t04.flac:a01783ade195b9b5f33ed6ed04d2a3cb
+Disc1\bd-1994-10-23-HG-d1t05.flac:e8b2bd185795e5c0ed8b7046549fdfe3
+Disc1\bd-1994-10-23-HG-d1t06.flac:72b71fe365651141e08c0826dae24490
+Disc1\bd-1994-10-23-HG-d1t07.flac:ad5046735fd8c4fbbd4605460f7fb3d8
+Disc1\bd-1994-10-23-HG-d1t08.flac:a910d09820fb463b96ad81ad1ab6acc8
+Disc1\bd-1994-10-23-HG-d1t09.flac:6da0edbce250e12b71aaa8fdc6898c25
+Disc2\bd-1994-10-23-HG-d2t01.flac:94adbf786ab1fdcb6a306ddf9f3d7eca
+Disc2\bd-1994-10-23-HG-d2t02.flac:fadb6285a22fca0e0d64409b63ecebb2
+Disc2\bd-1994-10-23-HG-d2t03.flac:93f1706920b871a6f8048b68028f97c9
+Disc2\bd-1994-10-23-HG-d2t04.flac:32ad5c2636ccd7b994d10e595433e372
+Disc2\bd-1994-10-23-HG-d2t05.flac:319c09572a3f2397cd5cbd1ba17e43d0
+===================
+===================
+===================
+=== shntool len for: bd94-10-23-HG.flacf\Disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:51.13       83115020 B   ---   --   ---xx   flac  0.6080  bd-1994-10-23-HG-d1t01.flac
+     6:20.42       67130828 B   ---   --   ---xx   flac  0.6317  bd-1994-10-23-HG-d1t02.flac
+     5:41.73       60324140 B   ---   --   ---xx   flac  0.6200  bd-1994-10-23-HG-d1t03.flac
+     8:42.11       92106716 B   ---   --   ---xx   flac  0.6032  bd-1994-10-23-HG-d1t04.flac
+     8:52.72       94014188 B   ---   --   ---xx   flac  0.6012  bd-1994-10-23-HG-d1t05.flac
+     8:23.03       88736300 B   ---   --   ---xx   flac  0.5504  bd-1994-10-23-HG-d1t06.flac
+     6:02.48       63969740 B   ---   --   ---xx   flac  0.5624  bd-1994-10-23-HG-d1t07.flac
+     5:51.70       62081084 B   ---   --   ---xx   flac  0.5744  bd-1994-10-23-HG-d1t08.flac
+     5:37.01       59449196 B   ---   --   ---xx   flac  0.5755  bd-1994-10-23-HG-d1t09.flac
+    63:23.33      670927212 B                            0.5919  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd94-10-23-HG.flacf\Disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:39.65       70536524 B   ---   --   ---xx   flac  0.6232  bd-1994-10-23-HG-d2t01.flac
+    10:06.01      106900796 B   ---   --   ---xx   flac  0.6277  bd-1994-10-23-HG-d2t02.flac
+     8:50.55       93621404 B   ---   --   ---xx   flac  0.6455  bd-1994-10-23-HG-d2t03.flac
+     8:03.72       85370588 B   ---   --   ---xx   flac  0.6070  bd-1994-10-23-HG-d2t04.flac
+     7:54.30       83684204 B   ---   --   ---xx   flac  0.5567  bd-1994-10-23-HG-d2t05.flac
+    41:34.73      440113516 B                            0.6132  (5 files)
+===================
+===================
+===================

@@ -1,0 +1,22 @@
+; Using hkSFV on 02.05.2004 at 03:10:56
+; http://www.big-o-software.com
+;
+;/----
+;     29932990 02:31.28 2004-02-05 2-01-Make You Feel My Love.flac
+;      3795887 02:31.40 2004-02-05 2-02-just got out of rehab.flac
+;     60207456 02:33.10 2004-02-05 2-03-'Til I Fell In Love With You.flac
+;     36597307 02:34.02 2004-02-05 2-04-Love Sick.flac
+;     38989128 02:34.54 2004-02-05 2-05-Rainy Day Women.flac
+;     31285691 02:35.38 2004-02-05 2-06-Blowin' In The Wind.flac
+;     64359438 02:36.52 2004-02-05 2-07-Like A Rolling Stone.flac
+;     44946597 02:37.46 2004-02-05 2-08-Forever Young.flac
+;\----
+;
+beb2e6d1bf131a8a1e59cc3036822005 *2-01-Make You Feel My Love.flac
+83f3f2c5521440794944ad113dca1b35 *2-02-just got out of rehab.flac
+f14c80ffe955f93ece2112869c8cadbd *2-03-'Til I Fell In Love With You.flac
+377be97786ec02074eb8e92c1dd2cf59 *2-04-Love Sick.flac
+887a0b62f74207c2a004909a2786cfc1 *2-05-Rainy Day Women.flac
+5f7db7abd8a2c3b7636d7a93482c679d *2-06-Blowin' In The Wind.flac
+5f7164c80a6d68ff9749dc90dcdb6d4f *2-07-Like A Rolling Stone.flac
+1a65c4732688e550ebeee3a0aac5293e *2-08-Forever Young.flac

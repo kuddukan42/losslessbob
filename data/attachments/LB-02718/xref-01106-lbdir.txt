@@ -1,0 +1,60 @@
+===================
+===================
+===================
+=== md5 for: bd64-11-25-b.flacf
+===================
+===================
+===================
+1c5433f9a3e327877693dcd3cc0c96c0 *01 - The Times They Are A-Changin'.flac
+b2b60ce167513a31308564ff27e7ea1c *02 - Talkin' John Birch Paranoid Blues.flac
+399fbc158924fd3514127379f8e47351 *03 - To Ramona.flac
+ef904592ec19a3125ba44a631c746da3 *04 - Gates Of Eden.flac
+b1559aa8c1ecb27ddc31fa9f9eefef46 *05 - If You Gotta Go, Go Now.flac
+6fcaaae363d69669812f11a169c144c8 *06 - It's Alright, Ma (I'm Only Bleeding).flac
+a2899549341df3113aaa885816dbe471 *07 - Mr Tambourine Man.flac
+1eb44cce585e3f8c6938caffd47eed4d *08 - A Hard Rain's A-Gonna Fall.flac
+038a140b5434a042cc1946d043b84ffa *09 - Talkin' World War III Blues.flac
+ef31bb7944ced8b3847cb81e199e1361 *10 - Don't Think Twice, It's All Right.flac
+f679d23fc2f32fd403cf7574f3ce4d81 *Bob Dylan - San Jose, California - November 25, 1964.ffp
+dcf7303deb239b07124ccc69cbc850e4 *Bob Dylan - San Jose, California - November 25, 1964.md5
+d282cb53998fab6fb3497322e60a06c2 *Bob Dylan - San Jose, California - November 25, 1964.txt
+4af9d41def48a9c17da45fe846ac25b4 *EAC extraction log.log
+===================
+===================
+===================
+=== ffp for: bd64-11-25-b.flacf
+===================
+===================
+===================
+01 - The Times They Are A-Changin'.flac:f0c6e9ac711e425eb95dafc52a788dab
+02 - Talkin' John Birch Paranoid Blues.flac:c5f2b32c0d793ece72aec291f3d86cba
+03 - To Ramona.flac:12436450c10d943ff4f41bf46f29d444
+04 - Gates Of Eden.flac:eb25150e3f6e9a7077f8fbdf16e43953
+05 - If You Gotta Go, Go Now.flac:6fa9300af780149d7421562bea227458
+06 - It's Alright, Ma (I'm Only Bleeding).flac:62963b6f4bf921193c9aaedcba669b98
+07 - Mr Tambourine Man.flac:406fceb6875ba65be02ffefbc10eb862
+08 - A Hard Rain's A-Gonna Fall.flac:25c2991bc8b9bbf6ba5a1f81beebf84c
+09 - Talkin' World War III Blues.flac:1db375f548a36451b7a2fe87a339d9c1
+10 - Don't Think Twice, It's All Right.flac:82d8b5be60d1fe135f7c4bb5fd2daf67
+===================
+===================
+===================
+=== shntool len for: bd64-11-25-b.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:54.02       41282348 B   ---   --   ---xx   flac  0.4402  01 - The Times They Are A-Changin'.flac
+     3:40.09       38829212 B   ---   --   ---xx   flac  0.4332  02 - Talkin' John Birch Paranoid Blues.flac
+     5:21.10       56647964 B   ---   --   ---xx   flac  0.4097  03 - To Ramona.flac
+     8:02.68       85184780 B   ---   --   ---xx   flac  0.3988  04 - Gates Of Eden.flac
+     3:29.72       37036988 B   ---   --   ---xx   flac  0.4221  05 - If You Gotta Go, Go Now.flac
+     8:06.70       85895084 B   ---   --   ---xx   flac  0.3896  06 - It's Alright, Ma (I'm Only Bleeding).flac
+     6:13.46       65905436 B   ---   --   ---xx   flac  0.4015  07 - Mr Tambourine Man.flac
+     6:14.61       66117116 B   ---   --   ---xx   flac  0.3795  08 - A Hard Rain's A-Gonna Fall.flac
+     4:53.20       51732284 B   ---   --   ---xx   flac  0.4425  09 - Talkin' World War III Blues.flac
+     4:25.73       46917740 B   ---   --   ---xx   flac  0.4417  10 - Don't Think Twice, It's All Right.flac
+    54:22.56      575548952 B                            0.4108  (10 files)
+===================
+===================
+===================

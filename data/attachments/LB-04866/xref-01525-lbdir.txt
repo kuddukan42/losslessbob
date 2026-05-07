@@ -1,0 +1,73 @@
+===================
+===================
+===================
+=== md5 for: bd95-07-10-e.flacf
+===================
+===================
+===================
+ab59d8b4d205dcdafe3d5fde6d147246 *bd1995-07-10-Stuttgart.md5
+13273a3065a656354d020e302eb1ff33 *bd1995-07-10-Stuttgart01.flac
+b48d6a13cc3574b475220a81b631b601 *bd1995-07-10-Stuttgart02.flac
+d9b195d7b5794cf224ccb1447c4bc07f *bd1995-07-10-Stuttgart03.flac
+d5a30d59dc00c0f7e21d07bed827e733 *bd1995-07-10-Stuttgart04.flac
+7aa4b71c347fdeabbf87833332770a41 *bd1995-07-10-Stuttgart05.flac
+608a08bcc4572912ebe7b5846a4c4726 *bd1995-07-10-Stuttgart06.flac
+dd1e9c149d3db4ec7f42b4425ff7fcc2 *bd1995-07-10-Stuttgart07.flac
+6fda26dc8d56ac11c03b4f5fa386fa04 *bd1995-07-10-Stuttgart08.flac
+1cf9b7c350ed27c980eecae903470a5d *bd1995-07-10-Stuttgart09.flac
+dd40727b7054759da757ad51e79c2263 *bd1995-07-10-Stuttgart10.flac
+6b4c7fc876eb6f1bfb87f04d7d983fea *bd1995-07-10-Stuttgart11.flac
+1440f1fdfd5bfce84054f86b313f1347 *bd1995-07-10-Stuttgart12.flac
+a70b6b86bd8927fcf59f47e204c10470 *bd1995-07-10-Stuttgart13.flac
+b5bbf85282660942e302eba566da14d7 *bd1995-07-10-Stuttgart14.flac
+bccc3cc66a150e3e4b45daf3b478d9f5 *bd1995-07-10-Stuttgart15.flac
+8bb94e1f329958854f6031494beda210 *Note.txt
+===================
+===================
+===================
+=== ffp for: bd95-07-10-e.flacf
+===================
+===================
+===================
+bd1995-07-10-Stuttgart01.flac:666bff9996a62612d1ce1ab979013676
+bd1995-07-10-Stuttgart02.flac:725d35a5a09f2af49d34caf833b4dbeb
+bd1995-07-10-Stuttgart03.flac:cddbebfd7f4d816cc6c515ccc21b4743
+bd1995-07-10-Stuttgart04.flac:1bd361e9e01008894bdcf15f11adbc45
+bd1995-07-10-Stuttgart05.flac:0f2b9b0ed1f1ce50283b87d9b7e3afad
+bd1995-07-10-Stuttgart06.flac:9a40b9ba6d0f7c69200e30e82c4a2b56
+bd1995-07-10-Stuttgart07.flac:63cf2c8d1714ef173ceea3e8300d4024
+bd1995-07-10-Stuttgart08.flac:790da4b4ad6eae58d7fc464c14c35413
+bd1995-07-10-Stuttgart09.flac:7e4bf7f1f82a33c96dcaf3602800c93e
+bd1995-07-10-Stuttgart10.flac:480a1795a962d18f94fc3ae66906d1b9
+bd1995-07-10-Stuttgart11.flac:76c83d7e9543872abba597019510e84f
+bd1995-07-10-Stuttgart12.flac:481606ae9f807c159ecbba3c42436641
+bd1995-07-10-Stuttgart13.flac:e4cfc56c45d047994439fb124a6b0687
+bd1995-07-10-Stuttgart14.flac:46104422af0dd92579cc45c186bf4f2d
+bd1995-07-10-Stuttgart15.flac:2e003858f53aceb452c706a99c4f51a4
+===================
+===================
+===================
+=== shntool len for: bd95-07-10-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:20.05       77627804 B   ---   --   ---xx   flac  0.5922  bd1995-07-10-Stuttgart01.flac
+     6:48.39       72062972 B   ---   --   ---xx   flac  0.5406  bd1995-07-10-Stuttgart02.flac
+     6:24.26       67798796 B   ---   --   ---xx   flac  0.5714  bd1995-07-10-Stuttgart03.flac
+     7:18.60       77404364 B   ---   --   ---xx   flac  0.5108  bd1995-07-10-Stuttgart04.flac
+     8:16.64       87644972 B   ---   --   ---xx   flac  0.5355  bd1995-07-10-Stuttgart05.flac
+     7:43.63       81821420 B   ---   --   ---xx   flac  0.5737  bd1995-07-10-Stuttgart06.flac
+     6:47.71       71961836 B   ---   --   ---xx   flac  0.4918  bd1995-07-10-Stuttgart07.flac
+     6:02.40       63950924 B   ---   --   ---xx   flac  0.4856  bd1995-07-10-Stuttgart08.flac
+     8:06.23       85784540 B   ---   --   ---xx   flac  0.4595  bd1995-07-10-Stuttgart09.flac
+     7:45.14       82058972 B   ---   --   ---xx   flac  0.5468  bd1995-07-10-Stuttgart10.flac
+     9:58.13      105517820 B   ---   --   ---xx   flac  0.5036  bd1995-07-10-Stuttgart11.flac
+    11:28.24      121419692 B   ---   --   ---xx   flac  0.5673  bd1995-07-10-Stuttgart12.flac
+     8:52.60       93985964 B   ---   --   ---xx   flac  0.5423  bd1995-07-10-Stuttgart13.flac
+    10:01.74      106190492 B   ---   --   ---xx   flac  0.4979  bd1995-07-10-Stuttgart14.flac
+     5:59.56       63460368 B   -b-   --   ---xx   flac  0.5669  bd1995-07-10-Stuttgart15.flac
+   118:55.32     1258690936 B                            0.5320  (15 files)
+===================
+===================
+===================

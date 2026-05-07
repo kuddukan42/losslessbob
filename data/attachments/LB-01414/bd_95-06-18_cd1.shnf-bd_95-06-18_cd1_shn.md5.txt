@@ -1,0 +1,5 @@
+4e07e84e7e5d5cc29395484633307d4a *bd_95-06-18_cd1_Track 1.shn
+a3b99618d5c2e134faa30f1b55e6c1bc *bd_95-06-18_cd1_Track 2.shn
+97dc14ade0b0da19f6f02cb03452aae6 *bd_95-06-18_cd1_Track 3.shn
+ea2730dcd6711687c317065f693d4ea8 *bd_95-06-18_cd1_Track 4.shn
+e304db98ba26a471b6118e76c47d1972 *bd_95-06-18_cd1_Track 5.shn

@@ -1,0 +1,91 @@
+===================
+===================
+===================
+=== md5 for: bd02-10-17-c.flacf
+===================
+===================
+===================
+ab8b28a931e75e2a3e282f6a403f5338 *dylan la 101702.md5
+9d4b027e02c4bca4eb11b322f4f5f071 *dylan101702 disc101.flac
+a17fb6e301ae5ed3e74cc5ff05eca6a2 *dylan101702 disc102.flac
+3db12fd2470f8443fae2e8cbbc5de8d5 *dylan101702 disc103.flac
+835669128ad91c4c207d3518c01a0b4c *dylan101702 disc104.flac
+797af846c929c1aff58931bcde7ee33d *dylan101702 disc105.flac
+f597a74d36c102e4c95c48f41e83e033 *dylan101702 disc106.flac
+67f38edf9638af88daad30892407d6d5 *dylan101702 disc107.flac
+f339d20da9ebf30ef05f50a68d9837d5 *dylan101702 disc108.flac
+bb87dc9d24ea58daef19fdb62155c2fd *dylan101702 disc109.flac
+27403a48b3206ea74e28d90c4e266653 *dylan101702 disc110.flac
+a0c0f11ec32ac7522a8e23ccb37d1cc1 *dylan101702 disc111.flac
+1f18a2a433162e7a51ca993efe8dc0e3 *dylan101702 disc112.flac
+b64fce434558adc605ae9513e66712ed *dylan101702 disc113.flac
+98a507a58d9317ac69b3caea3a21ca56 *dylan101702 disc114.flac
+09a4657e7254b601e685bf0dfe005bb3 *dylan101702 disc201.flac
+d0f3471906e3aa9385239436ca2fdd28 *dylan101702 disc202.flac
+db7abb6433514d9bcf7f9fe6b9e38a3f *dylan101702 disc203.flac
+ebc7bc2bb0c7e7f6d118776885de0cd0 *dylan101702 disc204.flac
+0b7da100eaa3991ba16c7f99dc9a0b08 *dylan101702 disc205.flac
+db7023b8cf2a88f23d2a1619aa9351e2 *dylan101702 disc206.flac
+a622d10d667d2e2526f884cd02a92998 *dylan101702 disc207.flac
+1b2d870c21272c8584cca251e5e69599 *dylan101702.txt
+===================
+===================
+===================
+=== ffp for: bd02-10-17-c.flacf
+===================
+===================
+===================
+dylan101702 disc101.flac:c1fde271f4773df3b024f67f7ae93656
+dylan101702 disc102.flac:cab368e5ca062cddf0412c655144f71a
+dylan101702 disc103.flac:500440e0baf42f1f34ad3026d4dbb312
+dylan101702 disc104.flac:529d8b33616b402a91041a95108de413
+dylan101702 disc105.flac:70b1ebc110a34c27814628850cdf3f8c
+dylan101702 disc106.flac:3d29cd055ed9a1fdb9818e1a5aa282bd
+dylan101702 disc107.flac:aa1d2ead15bfe382a8bbfc9b49868afe
+dylan101702 disc108.flac:517895ad2403b5ffc957521c77d41862
+dylan101702 disc109.flac:c3b98bf9193712777cf47ae273b67128
+dylan101702 disc110.flac:5b2f2092cdb2377b87a69f7e64b18f79
+dylan101702 disc111.flac:b00255cbf4b170cdd0a2eb49f77302c7
+dylan101702 disc112.flac:98d4b5e39820d96c0ab1fa92950263e1
+dylan101702 disc113.flac:222170007011b52e58e9c4cd5340cf8e
+dylan101702 disc114.flac:e5bec156005706c7b7a9619bcbd175eb
+dylan101702 disc201.flac:27483b412f2a87dcbf6451a6d3e5bef8
+dylan101702 disc202.flac:d46dd136761fd0b711f32d605a1b0b3f
+dylan101702 disc203.flac:c2dc802ef32323ada2e8c06bfcd39791
+dylan101702 disc204.flac:d7c401b3fdb2b16416340da691d27ec7
+dylan101702 disc205.flac:333cc54dc362ed6f2d9d209c0607fb45
+dylan101702 disc206.flac:a692f9a81d1b33ecd50d8c94479dada5
+dylan101702 disc207.flac:5cad2657e689996d4dbb31ab0df7c55a
+===================
+===================
+===================
+=== shntool len for: bd02-10-17-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.63        9850220 B   ---   --   ---xx   flac  0.5069  dylan101702 disc101.flac
+     4:58.34       52647212 B   ---   --   ---xx   flac  0.5842  dylan101702 disc102.flac
+     4:24.22       46621388 B   ---   --   ---xx   flac  0.4830  dylan101702 disc103.flac
+     6:23.02       67565948 B   ---   --   ---xx   flac  0.5779  dylan101702 disc104.flac
+     4:07.27       43634348 B   ---   --   ---xx   flac  0.5262  dylan101702 disc105.flac
+     6:47.15       71830124 B   ---   --   ---xx   flac  0.5441  dylan101702 disc106.flac
+     4:14.47       44916188 B   ---   --   ---xx   flac  0.6186  dylan101702 disc107.flac
+     5:14.71       55556636 B   ---   --   ---xx   flac  0.5610  dylan101702 disc108.flac
+     7:05.20       75017084 B   ---   --   ---xx   flac  0.5533  dylan101702 disc109.flac
+     8:03.38       85290620 B   ---   --   ---xx   flac  0.5645  dylan101702 disc110.flac
+     3:03.25       32340044 B   ---   --   ---xx   flac  0.5960  dylan101702 disc111.flac
+     8:03.08       85220060 B   ---   --   ---xx   flac  0.5009  dylan101702 disc112.flac
+     4:18.07       45527708 B   ---   --   ---xx   flac  0.5624  dylan101702 disc113.flac
+     6:32.08       69167660 B   ---   --   ---xx   flac  0.6251  dylan101702 disc114.flac
+     7:12.01       76207196 B   ---   --   ---xx   flac  0.5266  dylan101702 disc201.flac
+     7:24.00       78321644 B   ---   --   ---xx   flac  0.5645  dylan101702 disc202.flac
+     3:31.72       37389788 B   ---   --   ---xx   flac  0.5112  dylan101702 disc203.flac
+     6:49.09       72168812 B   ---   --   ---xx   flac  0.5191  dylan101702 disc204.flac
+    13:18.28      140833100 B   ---   --   ---xx   flac  0.5763  dylan101702 disc205.flac
+     7:21.38       77881820 B   ---   --   ---xx   flac  0.5423  dylan101702 disc206.flac
+     8:05.70       85718684 B   ---   --   ---xx   flac  0.5914  dylan101702 disc207.flac
+   127:54.05     1353706284 B                            0.5568  (21 files)
+===================
+===================
+===================

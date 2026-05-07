@@ -1,0 +1,157 @@
+===================
+===================
+===================
+=== BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).txt
+===================
+===================
+===================
+BOB DYLAN
+London Arena
+Docklands
+London UK
+11th May 2002
+
+
+Good quality audience recording from silver CDs ' London First 2002' (Crystal Cat 645-46) > TLH flac 8
+
+
+CD1
+1. Intro
+2. I am the Man, thomas
+3. The Times They are A'Changin'
+4. It's Alright Ma (I'm Only Bleedin')
+5. It's all Over Now, baby Blue
+6. Soliod Rock
+7. Floater
+8. Subterranean Homesick Blues
+9. Lonesome Day Blues
+10. Mr Tambourine Man
+11. Visions of johanna
+12. Don't Think twice, It's alright
+
+Cd2
+1. Blind willie McTell
+2. Summer Days
+3. Cold irons Bound
+4. Leopard-Skin Pill-Box Hat
+5. Like a Rolling stone
+6. Honest With Me
+7. Blowin' in the wind
+8. All Along the Watchtower
+
+
+
+Bob Dylan - vocal, guitar, hramonica
+Charlie Sexton - guitar, vocal
+Larry Campbell - guitar, vocal, mandolin, pedal steel, electric slide guitar, cittern
+Tony Garnier - bass
+Jim Keltner - drums, percussion
+
+
+CD1 MD5
+5799e907bbea122b4de815674b30527a *01 Intro.flac
+61cbbff6d657954dff7a442c42ac6e0f *02 I Am the Man, Thomas.flac
+466b08db1e0f105641de58a94444a3f1 *03 The Times They Are A-Changin'.flac
+1d6c5d9f8841ade7bca2166c91cc47cf *04 It's Alright Ma.flac
+dc0c79ad05a494ee2031761b81459564 *05 It's All Over Now, Baby Blue.flac
+90b12004ed094e118e835d571cd28bf6 *06 Solid Rock.flac
+46874cf5182f9646ea085a432142c23e *07 Floater (Too Much to Ask).flac
+9e142e80edf0f959842edca56a4981bf *08 Subterranean Homesick Blues.flac
+fbf9e40bc247d7341ab2562772972b38 *09 Lonesome Day Blues.flac
+3881301de9f6c3c96a35dee0925e18bc *10 Mr Tambourine Man.flac
+8d749e9d1ebf1c031fe721ef12c5705d *11 Visions of Johanna.flac
+801e85e9f9652d0367c6fd41cd0e8174 *12 Don't Think Twice, It's Alright.flac
+8b5fde40807970667b78e958732bc357 *BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).ffp
+
+No errors occured.
+
+Create checksum file log saved to file.
+
+
+CD2 MD5
+4f4053ca343a29dd908ac662513587fd *01 Blind Willie McTell.flac
+bdd14d355622ba7066fb4a2f9f8391db *02 Summer Days.flac
+d9f8129ee194214263fdec104486e988 *03 Cold Irons Bound.flac
+a5a4ab7d9c1ada1acab150a2f003ce5d *04 Leopard-Skin Pill-Box Hat.flac
+d0c314c20802b52ae9e8df5856a71c5d *05 Like a Rolling Stone.flac
+378894728232234e46eabdd02c80b12a *06 Honest With Me.flac
+f3edb61c365bfd3e4d14d59aa53f903d *07 Blowin' in the Wind.flac
+29c4a70dac2603282994335c97221b5a *08 All Along the Watchtower.flac
+f3796d0fc69207c39d265b2e1865daf5 *BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).ffp
+
+No errors occured.
+
+Create checksum file log saved to file.
+===================
+===================
+===================
+=== BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).ffp
+===================
+===================
+===================
+01 Intro.flac:b8dfe6c865cd2ea5161bb920d2023e3c
+02 I Am the Man, Thomas.flac:8ba5ebc220afb2e74f0b549e3c569bdb
+03 The Times They Are A-Changin'.flac:d5cbce96f74a213b2a85a9e14ffef733
+04 It's Alright Ma.flac:df7e02d152c73d3be3573f622eea5799
+05 It's All Over Now, Baby Blue.flac:e641384b3da52bc7b3917551cbe03c26
+06 Solid Rock.flac:858e7b58dc2a8d60e27f9f678633e11c
+07 Floater (Too Much to Ask).flac:a873c2709127d3fdef121baece211521
+08 Subterranean Homesick Blues.flac:43fa4fd63306065fb4fe55978a57225b
+09 Lonesome Day Blues.flac:ebfcff8a4ed91721c67665a43adbaebc
+10 Mr Tambourine Man.flac:07c6c61bc23f6ee810f72ffd54813e8d
+11 Visions of Johanna.flac:d5557e519e69f4b16e80c2d35070597d
+12 Don't Think Twice, It's Alright.flac:c4125c0467d99654b1c8b955728315c9
+===================
+===================
+===================
+=== BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).md5
+===================
+===================
+===================
+5799e907bbea122b4de815674b30527a *01 Intro.flac
+61cbbff6d657954dff7a442c42ac6e0f *02 I Am the Man, Thomas.flac
+466b08db1e0f105641de58a94444a3f1 *03 The Times They Are A-Changin'.flac
+1d6c5d9f8841ade7bca2166c91cc47cf *04 It's Alright Ma.flac
+dc0c79ad05a494ee2031761b81459564 *05 It's All Over Now, Baby Blue.flac
+90b12004ed094e118e835d571cd28bf6 *06 Solid Rock.flac
+46874cf5182f9646ea085a432142c23e *07 Floater (Too Much to Ask).flac
+9e142e80edf0f959842edca56a4981bf *08 Subterranean Homesick Blues.flac
+fbf9e40bc247d7341ab2562772972b38 *09 Lonesome Day Blues.flac
+3881301de9f6c3c96a35dee0925e18bc *10 Mr Tambourine Man.flac
+8d749e9d1ebf1c031fe721ef12c5705d *11 Visions of Johanna.flac
+801e85e9f9652d0367c6fd41cd0e8174 *12 Don't Think Twice, It's Alright.flac
+8b5fde40807970667b78e958732bc357 *BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).ffp
+===================
+===================
+===================
+=== BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).ffp
+===================
+===================
+===================
+01 Blind Willie McTell.flac:52c0473ee819e30cca9d14a0d0120073
+02 Summer Days.flac:4d656c087d6a65ed4f97e1c9a9334cf7
+03 Cold Irons Bound.flac:3015ec74192d686106b12c424adbb811
+04 Leopard-Skin Pill-Box Hat.flac:fd7f6e49f9a9e21aa9ee8b375938805d
+05 Like a Rolling Stone.flac:8e867463d91de344380c460c3d80519f
+06 Honest With Me.flac:3a78e086eb3dd44673a5e0540c1d9d40
+07 Blowin' in the Wind.flac:90c3a6e5d48a341d26bd8a30513b23ca
+08 All Along the Watchtower.flac:9b0238f181a90641ddff61a4cc7d5a65
+===================
+===================
+===================
+=== BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).md5
+===================
+===================
+===================
+4f4053ca343a29dd908ac662513587fd *01 Blind Willie McTell.flac
+bdd14d355622ba7066fb4a2f9f8391db *02 Summer Days.flac
+d9f8129ee194214263fdec104486e988 *03 Cold Irons Bound.flac
+a5a4ab7d9c1ada1acab150a2f003ce5d *04 Leopard-Skin Pill-Box Hat.flac
+d0c314c20802b52ae9e8df5856a71c5d *05 Like a Rolling Stone.flac
+378894728232234e46eabdd02c80b12a *06 Honest With Me.flac
+f3edb61c365bfd3e4d14d59aa53f903d *07 Blowin' in the Wind.flac
+29c4a70dac2603282994335c97221b5a *08 All Along the Watchtower.flac
+f3796d0fc69207c39d265b2e1865daf5 *BOB DYLAN - 2002-05-11 LONDON UK (AUD from silver CDs).ffp
+===================
+===================
+===================

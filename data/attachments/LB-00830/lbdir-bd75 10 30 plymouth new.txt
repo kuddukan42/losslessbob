@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75 10 30 plymouth new 
+=================== 
+=================== 
+=================== 
+eec5866cbae1e581608ab6f6f3f5311c  75 10 30 d1 t01.shn
+9c5061d3e6b6c3c2ce13f69ac5d76921  75 10 30 d1 t02.shn
+bdd2b217169745064731653abeaa8160  75 10 30 d1 t03.shn
+597f60956911ef7c2e20a47f790840f2  75 10 30 d1 t04.shn
+c968c74e65bb8d3d7b7b09da85c77ed0  75 10 30 d1 t05.shn
+9f530f817006cee44cb3aa3ba0a7283f  75 10 30 d1 t06.shn
+64ad41849f52a3c581548e3eabd4d9b0  75 10 30 d1 t07.shn
+35a71e5bd03ed6f792cd28e39f291d00  75 10 30 d1 t08.shn
+2035a37a9d46b23b92ece3d8330be53f  75 10 30 d1 t09.shn
+c88d8c99474815662dacf6e03754a9fb  75 10 30 d2 t01.shn
+4cefec0fef996b43ff463bf1b74087c5  75 10 30 d2 t02.shn
+d992cb9f8c5184f8062b9d417d6bf45e  75 10 30 d2 t03.shn
+7665d9d14da7527f8841948002e6e579  75 10 30 d2 t04.shn
+cc3949a43eb41001930b63e58181e2fd  75 10 30 d2 t05.shn
+a4923f6c6914371345e0073804b9d529  75 10 30 d2 t06.shn
+b5a5811107dd07dabe76548c4f866a4b  75 10 30 d2 t07.shn
+e16e5bb7131812b186520ae122f31bf4  75 10 30 d2 t08.shn
+04828102b910a61e0edb1c6c3fe14d62  75 10 30 d2 t09.shn
+3133ce998618a61cdc80b1ca68e4b89f  75 10 30 d2 t10.shn
+62f6426de0f05c78bb0b708fa8f09c55  75 10 30 d2 t11.shn
+e9ed8c03e8bf21c83ad6ceb3e86e551d  75 10 30.md5
+06f4449d26bcbb919ac9f7a410064a57  bd75-10-30.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd75 10 30 plymouth new 
+=================== 
+=================== 
+=================== 
+433fdbed11efc9dfa44a0defee964f5e  [shntool]  75_10_30_d1_t01.wav
+b356c73c6e691c1a26c0180ca31f155a  [shntool]  75_10_30_d1_t02.wav
+6f1f603e5be6722a1556f71e58d8a348  [shntool]  75_10_30_d1_t03.wav
+bf2a490345657fe4b9ccc26bb1b88f2e  [shntool]  75_10_30_d1_t04.wav
+e089062e4ed71025b0f22131c6bee4ae  [shntool]  75_10_30_d1_t05.wav
+3a2e1defedcd1f7c03ea8f7672207864  [shntool]  75_10_30_d1_t06.wav
+09c560ce544e3a0d4ef78076fc6f6158  [shntool]  75_10_30_d1_t07.wav
+4c6f52a9324fc8b4c11c84031ab8802c  [shntool]  75_10_30_d1_t08.wav
+3be0a725cdc3613a3d55837d8e9ecdb4  [shntool]  75_10_30_d1_t09.wav
+9e8ff16f3e20195fb48aced8bc5997c2  [shntool]  75_10_30_d2_t01.wav
+5bb9d8a25ef29b9f35f6a114d7858210  [shntool]  75_10_30_d2_t02.wav
+0a2d51b15b2a2efab472ebee129f8d7c  [shntool]  75_10_30_d2_t03.wav
+7de7c3d22f38c532a1ed9033d826a52e  [shntool]  75_10_30_d2_t04.wav
+43ef6c0cc7010719e843b18100d45683  [shntool]  75_10_30_d2_t05.wav
+1338d9aca4eb70df51b660e480484636  [shntool]  75_10_30_d2_t06.wav
+a0efff11860cf032028a8ce3154b26d5  [shntool]  75_10_30_d2_t07.wav
+6173ba56115cfaa23988f69d8e484b57  [shntool]  75_10_30_d2_t08.wav
+5820f323c8f299848febf4bc39ce2b28  [shntool]  75_10_30_d2_t09.wav
+a53976ac098154b385dcdc3f60e78580  [shntool]  75_10_30_d2_t10.wav
+ec6a859428e6c4bf7d7d7b179e47db6f  [shntool]  75_10_30_d2_t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75 10 30 plymouth new 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.74       42686492 B   ---   --   ---xx    shn  0.5916  75 10 30 d1 t01.shn
+     5:56.42       62897228 B   ---   --   ---xx    shn  0.6459  75 10 30 d1 t02.shn
+     5:26.45       57612284 B   ---   --   ---xx    shn  0.6424  75 10 30 d1 t03.shn
+     5:08.62       54477068 B   ---   --   ---xx    shn  0.5967  75 10 30 d1 t04.shn
+     6:19.73       67027340 B   ---   --   ---xx    shn  0.6098  75 10 30 d1 t05.shn
+     3:27.32       36590108 B   ---   --   ---xx    shn  0.6613  75 10 30 d1 t06.shn
+     4:01.49       42627692 B   ---   --   ---xx    shn  0.6223  75 10 30 d1 t07.shn
+     6:28.37       68530268 B   ---   --   ---xx    shn  0.6247  75 10 30 d1 t08.shn
+     4:25.56       46877756 B   ---   --   ---xx    shn  0.6166  75 10 30 d1 t09.shn
+     4:55.73       52209740 B   ---   --   ---xx    shn  0.6137  75 10 30 d2 t01.shn
+     3:37.70       38443484 B   ---   --   ---xx    shn  0.6103  75 10 30 d2 t02.shn
+     3:45.52       39812348 B   ---   --   ---xx    shn  0.5699  75 10 30 d2 t03.shn
+     2:43.03       28760300 B   ---   --   ---xx    shn  0.6003  75 10 30 d2 t04.shn
+     3:44.02       39518348 B   ---   --   ---xx    shn  0.6081  75 10 30 d2 t05.shn
+     4:18.72       45680588 B   ---   --   ---xx    shn  0.5827  75 10 30 d2 t06.shn
+     6:03.17       64073228 B   ---   --   ---xx    shn  0.5879  75 10 30 d2 t07.shn
+     3:55.54       41581052 B   ---   --   ---xx    shn  0.5960  75 10 30 d2 t08.shn
+     7:13.49       76496492 B   ---   --   ---xx    shn  0.5850  75 10 30 d2 t09.shn
+     4:24.12       46597868 B   ---   --   ---xx    shn  0.5879  75 10 30 d2 t10.shn
+     0:38.56        6834956 B   ---   --   ---xx    shn  0.5504  75 10 30 d2 t11.shn
+    90:38.30      959334640 B                            0.6079  (20 files)
+=================== 
+=================== 
+=================== 

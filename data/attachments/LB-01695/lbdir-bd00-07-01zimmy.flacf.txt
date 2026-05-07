@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-01zimmy.flacf 
+=================== 
+=================== 
+=================== 
+189f826c46f7ba3b320e880bc7f1ce7c  bd00-07-01zimmy.txt
+b0faab1b5f8742b22b5aaa5872d3f14f  bd010700.txt
+8f91e650384d4b2be4e05f5637bd83a6  D1\D1.md5
+0c338cda14d763129ad3b2c5e8fc4d6f  D1\bd010700T01.flac
+eef791aecc6e761d27543569c0092848  D1\bd010700T02.flac
+cb6f4617a5f1feeb621526e7df266c1e  D1\bd010700T03.flac
+1ca09a083ff4ea32c36a155f4b4e4bb3  D1\bd010700T04.flac
+2f8abfff9c86cfbe9d44dccbbc377745  D1\bd010700T05.flac
+dde14028692f72df5860ab830977cd3e  D1\bd010700T06.flac
+c0673529aab68f8024aa6932ee584463  D1\bd010700T07.flac
+c531807ee2e2330c42c322a2f54c9394  D1\bd010700T08.flac
+efebff8f1a1f1d9fc8741eead9d9a759  D1\bd010700T09.flac
+f2c702e01a6fa4a8e05c3f9b030dcc81  D1\bd010700T10.flac
+a8d7fd631680b484c7b429f4bf296c60  D1\bd010700T11.flac
+6ec3541b59a87f6eb8c2dbb3f35d2e45  D1\bd010700T12.flac
+116203ffa5d8e871b9da56914849b5f7  D2\D2.md5
+bd9c377dfaa31f5db53b7d0fec9de55b  D2\bd2000-01-07_D201.flac
+60d7e57abf826cf6fd763886a615f510  D2\bd2000-01-07_D202.flac
+5826296b3fa81492673f9b09d11a3117  D2\bd2000-01-07_D203.flac
+37993d990229b05f3fa4c8e639f31b73  D2\bd2000-01-07_D204.flac
+74172dc5ca9f8af6ad4a9921e5742c52  FlacPrints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-01zimmy.flacf\D1 
+=================== 
+=================== 
+=================== 
+bd010700T01.flac:785c769fb8d6151c88ca24f23acb4c86
+bd010700T02.flac:7c5dedfd401de3682e9e059ba9ad15ba
+bd010700T03.flac:3765a64c6ecc262adaad2e7f11627b3c
+bd010700T04.flac:f8d5afee7d42d1d259d32289af794d3c
+bd010700T05.flac:4110a30a4c91a1b06c835e23c6e32829
+bd010700T06.flac:998bfc225e48706613fd83d1addbf01b
+bd010700T07.flac:a2e5ba81dced7750c99410640f7e2140
+bd010700T08.flac:ca2b13906af713c6793c036cfca17e83
+bd010700T09.flac:48cd763adb4e4c202a4c1c275b81ace8
+bd010700T10.flac:a5a55a6a7d45b2464fd6b2ed920d5629
+bd010700T11.flac:f44d2dc64eb6b6096d92ea002d74d56f
+bd010700T12.flac:bcb7b1fe850c1a1c7e5f50ca98fd8d3e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-01zimmy.flacf\D2 
+=================== 
+=================== 
+=================== 
+bd2000-01-07_D201.flac:e4c8b431c9b885a30cce67b937baa586
+bd2000-01-07_D202.flac:f9fb63e348c9636756736237f6f9430f
+bd2000-01-07_D203.flac:ba58b00e7b1894e24daa48267b4ed93d
+bd2000-01-07_D204.flac:aa6c747ef3a153fa2e26bf5c2e6b3719
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-01zimmy.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:36.24       27574892 B   ---   --   ---xx   flac  0.6499  bd010700T01.flac
+     3:33.61       37716716 B   ---   --   ---xx   flac  0.5706  bd010700T02.flac
+    10:02.47      106303388 B   ---   --   ---xx   flac  0.5543  bd010700T03.flac
+     6:48.67       72128828 B   ---   --   ---xx   flac  0.5162  bd010700T04.flac
+     8:29.44       89891132 B   ---   --   ---xx   flac  0.6344  bd010700T05.flac
+     8:00.33       84749660 B   ---   --   ---xx   flac  0.5638  bd010700T06.flac
+     2:52.34       30420812 B   ---   --   ---xx   flac  0.6171  bd010700T07.flac
+     7:08.69       75661532 B   ---   --   ---xx   flac  0.5690  bd010700T08.flac
+     5:50.43       61841180 B   ---   --   ---xx   flac  0.6137  bd010700T09.flac
+     8:40.57       91862108 B   ---   --   ---xx   flac  0.5431  bd010700T10.flac
+     4:57.21       52440236 B   ---   --   ---xx   flac  0.6183  bd010700T11.flac
+     6:32.13       69179420 B   ---   --   ---xx   flac  0.6150  bd010700T12.flac
+    75:33.63      799769904 B                            0.5815  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-01zimmy.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.42       61662428 B   ---   --   ---xx   flac  0.5986  bd2000-01-07_D201.flac
+     7:08.30       75569804 B   ---   --   ---xx   flac  0.6111  bd2000-01-07_D202.flac
+     6:50.25       72382844 B   ---   --   ---xx   flac  0.5482  bd2000-01-07_D203.flac
+     5:27.20       57729884 B   ---   --   ---xx   flac  0.6231  bd2000-01-07_D204.flac
+    25:15.42      267344960 B                            0.5938  (4 files)
+=================== 
+=================== 
+=================== 

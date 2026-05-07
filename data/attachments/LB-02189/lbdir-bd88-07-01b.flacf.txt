@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-01b.flacf 
+=================== 
+=================== 
+=================== 
+87d9caf973fdd09ebda1f4ba8994bd54  bd1988-7-1WantaghFLAC.md5
+35449a17ec848dad8de02af9e44538f9  bd88-07-01b.txt
+9364bfb04376c222fb56973945ccc892  Bob Dylan - Wantagh 1 July 1988.txt
+006f29f92220ac3d5b6f2370aeec00c1  Track- 101.flac
+26d9cf7a48edf84d7edd785c447482f0  Track- 102.flac
+70e0625c26fdfefded2e5630102ca78e  Track- 103.flac
+a131b190cf2bb42dd69e33b5bf1b7248  Track- 104.flac
+07e06d5928b5c0f32772f0210054de51  Track- 105.flac
+12c06a652983d112056643d1c71af18d  Track- 106.flac
+9706b10f0c63812b5872287d12272d7a  Track- 107.flac
+361b5e3f71230c3e869b15d33b7e5cdb  Track- 108.flac
+b57f7e733ea023a0ce16c10a39daad28  Track- 201.flac
+5f7929f394d4c5c4b1eed4c318e1fd76  Track- 202.flac
+044624e8968142554bbca1ab69930907  Track- 203.flac
+837efed48f08abfe86abd2e6a1bbccbb  Track- 204.flac
+5f301543454eaee958f6054ce35a7015  Track- 205.flac
+f34a70d8dbd4ee84c62bedafcf4cb42f  Track- 206.flac
+13f970203b7588213dea7128f7e25207  Track- 207.flac
+11556b76433d79dbbe254440286b39b2  Track- 208.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-01b.flacf 
+=================== 
+=================== 
+=================== 
+Track- 101.flac:5712cf6e88bf6ef7130f2d9c622d1d9b
+Track- 102.flac:d64749a1d96aa5a01f82c88d82ec29be
+Track- 103.flac:46a6036a429d865e91e94ce9ef35768e
+Track- 104.flac:0bd44140ba8ab4e629c00dc6a3709d5c
+Track- 105.flac:e12809973713f36a3841d7de0f8e3f65
+Track- 106.flac:10e22569b38a567401f3edc49501743f
+Track- 107.flac:8a8a13f46d9291ecea22c46a8bd3287b
+Track- 108.flac:e18650ecc3f0c35af066fda8f41fb9c2
+Track- 201.flac:40b62f3f4ac341ca69e7ceba0e633934
+Track- 202.flac:ef05fab30ca55ff890aad466b1ef3e89
+Track- 203.flac:e0c31d4cf0eb6437722beff95c8cd600
+Track- 204.flac:2c56ea572554d80f129542acd98613ca
+Track- 205.flac:ccc709acd332ea312ac5c90396cdb77f
+Track- 206.flac:550cdf1198e625806badaf7632b93c21
+Track- 207.flac:76e4fcfa5112305de1401c63ac34f0bc
+Track- 208.flac:bc430ea567546371ae419aa749b1820c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-01b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.22       45210188 B   ---   --   ---xx   flac  0.6646  Track- 101.flac
+     6:02.01       63859196 B   ---   --   ---xx   flac  0.6444  Track- 102.flac
+     4:38.53       49163900 B   ---   --   ---xx   flac  0.6842  Track- 103.flac
+     5:01.62       53242268 B   ---   --   ---xx   flac  0.6856  Track- 104.flac
+     5:23.06       56991356 B   ---   --   ---xx   flac  0.6805  Track- 105.flac
+     5:48.61       61530716 B   ---   --   ---xx   flac  0.6901  Track- 106.flac
+     3:25.21       36211436 B   ---   --   ---xx   flac  0.6655  Track- 107.flac
+     5:18.36       56179916 B   ---   --   ---xx   flac  0.6773  Track- 108.flac
+     5:22.43       56901980 B   ---   --   ---xx   flac  0.6657  Track- 201.flac
+     4:57.32       52466108 B   ---   --   ---xx   flac  0.6467  Track- 202.flac
+     4:35.04       48519452 B   ---   --   ---xx   flac  0.6949  Track- 203.flac
+     5:36.09       59291612 B   ---   --   ---xx   flac  0.6882  Track- 204.flac
+     6:21.20       67255484 B   ---   --   ---xx   flac  0.7172  Track- 205.flac
+     7:14.49       76672892 B   ---   --   ---xx   flac  0.6339  Track- 206.flac
+     5:11.27       54923948 B   ---   --   ---xx   flac  0.6909  Track- 207.flac
+     5:00.05       52931804 B   ---   --   ---xx   flac  0.7055  Track- 208.flac
+    84:13.01      891352256 B                            0.6767  (16 files)
+=================== 
+=================== 
+=================== 

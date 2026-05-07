@@ -1,0 +1,14 @@
+ffbefe54e1e2933e2d178a22aef76313 *tuscon 9dec79 1 01.flac
+df1654aa9b92203fb606f92d79050c0a *tuscon 9dec79 1 02.flac
+6810c9b75adaff7f06b53b41ec5f660d *tuscon 9dec79 1 03.flac
+a5c61d692ae80fba7ca74c1ff2735b3e *tuscon 9dec79 1 04.flac
+4a69f06d24dff5277a7d9ecda478f032 *tuscon 9dec79 1 05.flac
+e9299d92e429d449c54d5958db46e520 *tuscon 9dec79 1 06.flac
+d3045c2fb1a17e2daf554aa9b0261f76 *tuscon 9dec79 1 07.flac
+688724bba20c26c1069633a6ae5299b9 *tuscon 9dec79 1 08.flac
+0a6a6c06eb0938bb4477331e943ab8f3 *tuscon 9dec79 1 09.flac
+262c4536555f7cf8fb0fddecde09b8a6 *tuscon 9dec79 1 10.flac
+f28b70b15acdbf1d883f88a364d51727 *tuscon 9dec79 1 11.flac
+e524e5cfa9d78591e2c7ff77d514177f *tuscon 9dec79 1 12.flac
+4667df7cb8eb7a2918c87ce2e849bf8c *tuscon 9dec79 1 13.flac
+159d93fbebe3fac5cac9ff7694f8857b *tuscon 9dec79 1 14.flac

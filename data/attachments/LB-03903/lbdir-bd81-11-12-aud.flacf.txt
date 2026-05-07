@@ -1,0 +1,127 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-12-aud.flacf 
+=================== 
+=================== 
+=================== 
+16a4a2f8ef885b0786ba18b5f30d4a20  bd81-11-12-aud-LB-3903.txt
+ea0d9729e68da9a20b89c865701645cd  Houston 12 Nov 81 disk 1\Houston 12 Nov 81 disk 1.md5
+3b87a718274e0e40594eeb20bce9df2e  Houston 12 Nov 81 disk 1\d1 01 GottaServe.flac
+6de41adec26d28a9ba2abad03f23a8d5  Houston 12 Nov 81 disk 1\d1 02 IBelieveIY.flac
+474d7546ffe212f768ffd7a755a950b5  Houston 12 Nov 81 disk 1\d1 03 LRS.flac
+953bd4f20ca4b4426c90e27926810d30  Houston 12 Nov 81 disk 1\d1 04 HattieC.flac
+55d14d7f2d483c3ddd32cc887a401b20  Houston 12 Nov 81 disk 1\d1 05 Animals.flac
+9c17dda3e57bfde7218a30db079c2fb5  Houston 12 Nov 81 disk 1\d1 06 Maggie.flac
+00fcf312ddd3f33b922b643da994836b  Houston 12 Nov 81 disk 1\d1 07 GirlNC.flac
+514fcc7efef0042568c59ef8de6dfb57  Houston 12 Nov 81 disk 1\d1 08 Thin Man.flac
+5af4273d6822da6dabe9ec1a407910d2  Houston 12 Nov 81 disk 1\d1 09 SimpleTwist.flac
+a53fe68527ee314a0fd8e4117f343d23  Houston 12 Nov 81 disk 1\d1 10 HeartofMine.flac
+a9a057753e51061692ba196850c2497f  Houston 12 Nov 81 disk 1\d1 11 Watchtower.flac
+17f82d0b6f841d76f27efb52fed8e263  Houston 12 Nov 81 disk 1\d1 12 BabyTonight.flac
+4574d8510d89ed073bcfdf2efb0b07b7  Houston 12 Nov 81 disk 1\d1 13 Forever Young.flac
+e17232d6b93fdfa52f3fd4224fe8a4fb  Houston 12 Nov 81 disk 1\d1 14 Gamblin Man.flac
+8378a10168634a087bb33a23c18209b3  Houston 12 Nov 81 disk 2\Houston 12 Nov 81 disk 2.md5
+3942a87b5541c6a12b7dc5cca975273b  Houston 12 Nov 81 disk 2\d2 01 Times.flac
+4c3bf1741a6202d0fe3832db431bb983  Houston 12 Nov 81 disk 2\d2 02 Hard Rain.flac
+6753014e50fb6487d4c87bb70eadcaa7  Houston 12 Nov 81 disk 2\d2 03 WateredDown.flac
+50af7499fa13bb0e55d05ab256a49992  Houston 12 Nov 81 disk 2\d2 04 ShotLove.flac
+eb32f48dc28efb72cbaa4a998e74772c  Houston 12 Nov 81 disk 2\d2 05 JLAW.flac
+fbf531de1adae50dbe55def612f37e49  Houston 12 Nov 81 disk 2\d2 06 SolidRock.flac
+f14620d585b7e9eecbe4ef2e722820bb  Houston 12 Nov 81 disk 2\d2 07 MastersofWar.flac
+93d17b74674da50b287df99de5b955a9  Houston 12 Nov 81 disk 2\d2 08 WakeUp.flac
+1504f842af277b7e9db586e5d5b79f39  Houston 12 Nov 81 disk 2\d2 09 Garden.flac
+e2284ae3d696369804eec4e8cd69c45d  Houston 12 Nov 81 disk 2\d2 10 Blowin.flac
+a37c8aeb192c4a359cb806bef9b39a6e  Houston 12 Nov 81 disk 2\d2 11 ItsAlrightMa.flac
+f8b5bc6a0a5b09d595b244c56d54b3b0  Houston 12 Nov 81 disk 2\d2 12 IAMB.flac
+de5b27192622d98505a293afc7cd38ff  Houston 12 Nov 81 disk 2\d2 13 Knocking.flac
+7505d4495384546ac00f88ee3896070a  note.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-12-aud.flacf\Houston 12 Nov 81 disk 1 
+=================== 
+=================== 
+=================== 
+d1 01 GottaServe.flac:a470b95fc9923a6ac40ea068b35c3240
+d1 02 IBelieveIY.flac:b8789bc57b1808ca30d43b873562dbaa
+d1 03 LRS.flac:3fd69284564db725b74dbb3dbe7db8bf
+d1 04 HattieC.flac:05ced920ea61a3b3554eda53de388301
+d1 05 Animals.flac:b7424956c9bd35070b2ac99e682ecf5c
+d1 06 Maggie.flac:1b6ba317fa43e892cf67b29882d95a9e
+d1 07 GirlNC.flac:3953cf66a3893af35f713c3b35bd818b
+d1 08 Thin Man.flac:8518fb8afd86301c19552847b586b55c
+d1 09 SimpleTwist.flac:df8b4b4151ff68ed4697d1b7241205d3
+d1 10 HeartofMine.flac:5952ecc40129361d5472b009db2c49f7
+d1 11 Watchtower.flac:bd76ac630f748b449a4895e1fc5c0bbc
+d1 12 BabyTonight.flac:07562656f35bc0864fb4695baa4a23a4
+d1 13 Forever Young.flac:4a17fb87556e53d9b68ec94784639fae
+d1 14 Gamblin Man.flac:59459c5fd92ba51c3c79cfd1df5a418b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-12-aud.flacf\Houston 12 Nov 81 disk 2 
+=================== 
+=================== 
+=================== 
+d2 01 Times.flac:7f5db1e2277385770a9a5fc905cdc7d0
+d2 02 Hard Rain.flac:bab528b98c8af16dd1ad7e910d2b1bf3
+d2 03 WateredDown.flac:b9bcc0545e35b64f3d91a0654a64c0ef
+d2 04 ShotLove.flac:d9b16ca59bb62ece31967540ac10ba18
+d2 05 JLAW.flac:227e91bedfc2df73fe89c4beba548f5a
+d2 06 SolidRock.flac:caf0df11c0fccd0bc277fe241c39fc9f
+d2 07 MastersofWar.flac:302525da388ce4726f906451e027571b
+d2 08 WakeUp.flac:48ffedea37f747849a3ed9cf9935cc33
+d2 09 Garden.flac:826e4f4f151f388b78df2d7eccffbddf
+d2 10 Blowin.flac:2814a2651cf7e04dfd9a7154db4acd25
+d2 11 ItsAlrightMa.flac:90b64938ca97fed146cba85632ee7cf5
+d2 12 IAMB.flac:1dc59165758b057c061c1d5a6bf205a8
+d2 13 Knocking.flac:3ace00f2e8645f7f8318a83e62dc7374
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-12-aud.flacf\Houston 12 Nov 81 disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:51.28       40814300 B   ---   --   ---xx   flac  0.6761  d1 01 GottaServe.flac
+     4:27.09       47120012 B   ---   --   ---xx   flac  0.6625  d1 02 IBelieveIY.flac
+     5:26.04       57515852 B   ---   --   ---xx   flac  0.6920  d1 03 LRS.flac
+     5:11.43       54961580 B   ---   --   ---xx   flac  0.6846  d1 04 HattieC.flac
+     5:06.18       54020780 B   ---   --   ---xx   flac  0.6616  d1 05 Animals.flac
+     3:28.03       36698300 B   ---   --   ---xx   flac  0.6723  d1 06 Maggie.flac
+     3:31.19       37265132 B   ---   --   ---xx   flac  0.6769  d1 07 GirlNC.flac
+     3:43.60       39478364 B   ---   --   ---xx   flac  0.6706  d1 08 Thin Man.flac
+     4:31.06       47818556 B   ---   --   ---xx   flac  0.6651  d1 09 SimpleTwist.flac
+     2:31.68       26796380 B   ---   --   ---xx   flac  0.6599  d1 10 HeartofMine.flac
+     2:31.12       26664668 B   ---   --   ---xx   flac  0.6667  d1 11 Watchtower.flac
+     2:16.06       24004556 B   ---   --   ---xx   flac  0.6700  d1 12 BabyTonight.flac
+     4:24.18       46611980 B   ---   --   ---xx   flac  0.6682  d1 13 Forever Young.flac
+     3:30.25       37102844 B   ---   --   ---xx   flac  0.6612  d1 14 Gamblin Man.flac
+    54:30.19      576873304 B                            0.6715  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-12-aud.flacf\Houston 12 Nov 81 disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:36.18       59312780 B   ---   --   ---xx   flac  0.6789  d2 01 Times.flac
+     6:04.67       64367228 B   ---   --   ---xx   flac  0.6484  d2 02 Hard Rain.flac
+     4:43.35       50003564 B   ---   --   ---xx   flac  0.6508  d2 03 WateredDown.flac
+     4:39.52       49337948 B   ---   --   ---xx   flac  0.6544  d2 04 ShotLove.flac
+     4:21.21       46089836 B   ---   --   ---xx   flac  0.6466  d2 05 JLAW.flac
+     4:09.74       44097692 B   ---   --   ---xx   flac  0.6340  d2 06 SolidRock.flac
+     2:49.44       29915132 B   ---   --   ---xx   flac  0.6591  d2 07 MastersofWar.flac
+     4:59.32       52818908 B   ---   --   ---xx   flac  0.6528  d2 08 WakeUp.flac
+     7:51.73       83256140 B   ---   --   ---xx   flac  0.6510  d2 09 Garden.flac
+     5:10.51       54803996 B   ---   --   ---xx   flac  0.6632  d2 10 Blowin.flac
+     6:01.17       63720428 B   ---   --   ---xx   flac  0.6675  d2 11 ItsAlrightMa.flac
+     7:08.28       75565100 B   ---   --   ---xx   flac  0.6761  d2 12 IAMB.flac
+     5:05.47       53912588 B   ---   --   ---xx   flac  0.6556  d2 13 Knocking.flac
+    68:42.34      727201340 B                            0.6577  (13 files)
+=================== 
+=================== 
+=================== 

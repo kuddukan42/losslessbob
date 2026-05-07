@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-13-a.flacf 
+=================== 
+=================== 
+=================== 
+71333a7158437e6e3f0209026137041f  2000-11-13 Central Maine Civic Center, Lewiston, Maine, USA [uT].md5
+a67aa408a68051b7ec987461fdd272af  CD1\01 Duncan and Brady.flac
+f4a1e188cb8ffbbbfcd3b0d598eae27c  CD1\02 To Ramona.flac
+34092dbab2f58dc7d5c534504e4dfb59  CD1\03 It's alright, ma (I'm only bleeding).flac
+278d135d62605e38613c7b563ec74930  CD1\04 Love minus zero - no limit.flac
+b10db5816ac0db30810462e5bb1ebc28  CD1\05 Tangled up in blue.flac
+25aeda5e1a94504fb6e1c5076d4cd872  CD1\06 Searching for a soldier's grave.flac
+28c83e24005ee1a4aeb9fd8b0621aaba  CD1\07 Country Pie.flac
+93aa7f4cb708397319ea36af775fca31  CD1\08 God knows.flac
+7fcd23fc8b8624cda34bca114f51f40f  CD1\09 Positively 4th Street.flac
+d2c61d9522bd14a6fec0be3266220cf6  CD1\10 Tombstone blues.flac
+6473d9abaa8327bad45e85c47ba4a79f  CD1\11 Tryin' to get to heaven.flac
+858b8ed1ebdda6a5f4b6a5565931121c  CD2\12 Cold irons bound.flac
+a1a6606a8da55b2e9fca520ed79229d6  CD2\13 Cat's in the well.flac
+3491c6c70bf4df05fb273a29888ad974  CD2\14 (audience wait).flac
+a603734cb0600acc9399198d119036a8  CD2\14 Things have changed.flac
+0bf84ff20ad942f4ccc1046ef35e5f35  CD2\15 Like a rolling stone.flac
+013b38dc746771a3f02d9ec5052a42f4  CD2\16 If dogs run free.flac
+4b55357c2d394449764cdf986a5b8f78  CD2\17 Love sick.flac
+35417a701711fba378e4a25ec635b7c9  CD2\18 Girl from the North Country.flac
+b0751c59c12e66d4ca75b0c2e11b20f5  CD2\19 Highway 61 revisited.flac
+16ca85215b94fda48a8215af796b69e7  CD2\20 Blowin' in the wind.flac
+49e723690abc74479c0e658b3d6cb6bf  Info\EAC d1.LOG
+db26f9be561e63bde4ced7b7a70aed8f  Info\EAC d2.LOG
+d42edddc6612df6760e4815ee8168bff  Info\info.txt
+2f4ff4144dc03073b98530fa5d9cdfad  ~uTorrentPartFile_2D3B01CA.dat
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-13-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Duncan and Brady.flac:2fcb7837536bc03c253b41b04f7d405b
+02 To Ramona.flac:ad420f7b9514995152e4cfb41ef92ed6
+03 It's alright, ma (I'm only bleeding).flac:d6b60f0d0563770c9b3fe228901d3b24
+04 Love minus zero - no limit.flac:fec5a6a75177d81d175b83ea631a4909
+05 Tangled up in blue.flac:d2c675bbc8f748046734b7889f5e429b
+06 Searching for a soldier's grave.flac:ccb245a8e5cffbec936e047288047031
+07 Country Pie.flac:784edcf4dfb4309067f2df7361f2ba5b
+08 God knows.flac:7fb400f1f5b35f446e23aa5a9e07ed4b
+09 Positively 4th Street.flac:26b56da118351cbd8d5d83cd83070790
+10 Tombstone blues.flac:1f63eb12b75ebd46b380103cc2674298
+11 Tryin' to get to heaven.flac:ed349c159216ab08b3056435a42ae3da
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-13-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+12 Cold irons bound.flac:94e44893df099bbc857a5dff0db4231a
+13 Cat's in the well.flac:48c3409c192d0381530d202cc1bfb527
+14 (audience wait).flac:b8c24701396d924118fcfdbd7101ee90
+14 Things have changed.flac:614c811806f93560c0ddb9390d364c19
+15 Like a rolling stone.flac:74167064f30b3052ed0113695815284d
+16 If dogs run free.flac:f8d59cc39de9263f5d61edea03dd3eb7
+17 Love sick.flac:23e2c5266ef47fb25dadea7060613c41
+18 Girl from the North Country.flac:d14317365bbcfa5f4a34d5e5dfb4c3ae
+19 Highway 61 revisited.flac:6cd581184f2a589197a812643818844a
+20 Blowin' in the wind.flac:025f3e50216ad4dbc9e6f5313b38f2aa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-13-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:30.00       37044044 B   ---   --   ---xx   flac  0.6484  01 Duncan and Brady.flac
+     5:17.00       55918844 B   ---   --   ---xx   flac  0.5861  02 To Ramona.flac
+     7:56.00       83966444 B   ---   --   ---xx   flac  0.5772  03 It's alright, ma (I'm only bleeding).flac
+     6:05.00       64386044 B   ---   --   ---xx   flac  0.5980  04 Love minus zero - no limit.flac
+     9:07.00       96490844 B   ---   --   ---xx   flac  0.6453  05 Tangled up in blue.flac
+     3:24.00       35985644 B   ---   --   ---xx   flac  0.5620  06 Searching for a soldier's grave.flac
+     3:17.00       34750844 B   ---   --   ---xx   flac  0.6197  07 Country Pie.flac
+     4:39.00       49215644 B   ---   --   ---xx   flac  0.6049  08 God knows.flac
+     6:48.00       71971244 B   ---   --   ---xx   flac  0.6049  09 Positively 4th Street.flac
+     6:46.00       71618444 B   ---   --   ---xx   flac  0.6207  10 Tombstone blues.flac
+     5:15.70       55730684 B   ---   --   ---xx   flac  0.5415  11 Tryin' to get to heaven.flac
+    62:04.70      657078724 B                            0.6023  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-13-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:03.00       74617244 B   ---   --   ---xx   flac  0.6048  12 Cold irons bound.flac
+     5:05.00       53802044 B   ---   --   ---xx   flac  0.6414  13 Cat's in the well.flac
+     3:37.00       38278844 B   ---   --   ---xx   flac  0.6032  14 (audience wait).flac
+     6:11.00       65444444 B   ---   --   ---xx   flac  0.6306  14 Things have changed.flac
+     7:43.00       81673244 B   ---   --   ---xx   flac  0.6344  15 Like a rolling stone.flac
+     4:00.00       42336044 B   ---   --   ---xx   flac  0.5271  16 If dogs run free.flac
+     5:36.00       59270444 B   ---   --   ---xx   flac  0.5814  17 Love sick.flac
+     6:43.00       71089244 B   ---   --   ---xx   flac  0.5111  18 Girl from the North Country.flac
+     5:40.00       59976044 B   ---   --   ---xx   flac  0.6341  19 Highway 61 revisited.flac
+     5:42.70       60493484 B   ---   --   ---xx   flac  0.5978  20 Blowin' in the wind.flac
+    57:20.70      606981080 B                            0.5982  (10 files)
+=================== 
+=================== 
+=================== 

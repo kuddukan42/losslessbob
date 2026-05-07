@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-09.flacf 
+=================== 
+=================== 
+=================== 
+16710abccaf7b0beb35ede0662d9bd9a  bd - 1996-07-09-salzburg-d1\1 Leopard-Skin Pill-Box Hat.flac
+e4db0e6c44e7581da1c0cf5f48586624  bd - 1996-07-09-salzburg-d1\2 I Want You.flac
+1e8d7c900b6f4f158d1679930bef8d85  bd - 1996-07-09-salzburg-d1\3 All Along The Watchtower.flac
+b92412ef72716e1ca0cfce31d2ba8edf  bd - 1996-07-09-salzburg-d1\4 Simple Twist Of Fate.flac
+68f00ceb415dca96a7844fd2e51912f4  bd - 1996-07-09-salzburg-d1\5 I Don't Believe You (She Acts Like We Never Have Met).flac
+a2dde81f44ef3485061821de4707dabe  bd - 1996-07-09-salzburg-d1\6 Silvio.flac
+ed897d0c719b5dc2287225333586d852  bd - 1996-07-09-salzburg-d1\7 Boots Of Spanish Leather.flac
+2a6f1e478c90b71a8876d49f89c7b1cc  bd - 1996-07-09-salzburg-d2\1 John Brown.flac
+db6b85a0e1b076049ce50e6219001df4  bd - 1996-07-09-salzburg-d2\2 The Lonesome Death Of Hattie Carroll.flac
+2b424a0ad9be208a02328add38d145ea  bd - 1996-07-09-salzburg-d2\3 Tombstone Blues.flac
+7fe9c14e1f0569085a5774bef2514dd6  bd - 1996-07-09-salzburg-d2\4 This Wheel's On Fire.flac
+87c5aa9f352c5fc3c3ba2b034845c857  bd - 1996-07-09-salzburg-d2\5 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+e58ce65b7c4bd77d7a4118fa70cc1286  bd - 1996-07-09-salzburg-d2\6 Girl Of The North Country.flac
+293eb1039e0ef3c475b04e2ad06fc059  bd - 1996-07-09-salzburg-d2\7 Rainy Day Women # 12 & 35.flac
+2f681ba1e8c20c5c3a66128b7e18fdd9  bd1996-07-09-d1-fingerprints.txt
+8948b4e2f708e4e496bdf2195583bde7  bd1996-7-09-salzburg-d2-fingerprints.txt
+e3ae3b37ed67eb728e9418a585b78f17  bd96-07-09.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-09.flacf\bd - 1996-07-09-salzburg-d2 
+=================== 
+=================== 
+=================== 
+1 John Brown.flac:f4b4f8691a749be87e9ad7a609cb0457
+2 The Lonesome Death Of Hattie Carroll.flac:aa5e4994d9b12978b915f9f5994abbe6
+3 Tombstone Blues.flac:a1e18a205f5c33b814c2ded23482595d
+4 This Wheel's On Fire.flac:c22dab9ce460e0df29777eb8d6ef7dd2
+5 Stuck Inside Of Mobile With The Memphis Blues Again.flac:911d537257ce958485561006ab38e177
+6 Girl Of The North Country.flac:cfd6245e0ded6e54584a6b006f274246
+7 Rainy Day Women # 12 & 35.flac:ee761efc9a913d34ddd36f4159b374d1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-09.flacf\bd - 1996-07-09-salzburg-d1 
+=================== 
+=================== 
+=================== 
+1 Leopard-Skin Pill-Box Hat.flac:2de9d0ac507de673658dc22672aea215
+2 I Want You.flac:b3db562e658795af1553978df8f5ce7d
+3 All Along The Watchtower.flac:8609083d7efe390e6760a4a7e42fca65
+4 Simple Twist Of Fate.flac:556f52fa2f689debf18e6c1ffec52f6d
+5 I Don't Believe You (She Acts Like We Never Have Met).flac:75a99cd4bcc54008d91da95c868ba53b
+6 Silvio.flac:4d6c6ccca597c65e0563b96a0b440700
+7 Boots Of Spanish Leather.flac:09d254c8dc113d3e8a4dc5e7ea317bef
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-09.flacf\bd - 1996-07-09-salzburg-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:39.58       81104060 B   ---   --   ---xx   flac  0.4419  1 John Brown.flac
+     7:23.73       78316940 B   ---   --   ---xx   flac  0.4237  2 The Lonesome Death Of Hattie Carroll.flac
+     7:24.56       78453356 B   ---   --   ---xx   flac  0.5300  3 Tombstone Blues.flac
+     7:06.00       75146444 B   ---   --   ---xx   flac  0.4828  4 This Wheel's On Fire.flac
+    10:34.45      111943484 B   ---   --   ---xx   flac  0.4989  5 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+    10:27.49      110718092 B   ---   --   ---xx   flac  0.4381  6 Girl Of The North Country.flac
+     9:05.39       96229772 B   ---   --   ---xx   flac  0.5266  7 Rainy Day Women # 12 & 35.flac
+    59:42.20      631912148 B                            0.4778  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-09.flacf\bd - 1996-07-09-salzburg-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:41.02       60157148 B   ---   --   ---xx   flac  0.5556  1 Leopard-Skin Pill-Box Hat.flac
+     6:04.74       64383692 B   ---   --   ---xx   flac  0.4759  2 I Want You.flac
+     6:39.60       70524764 B   ---   --   ---xx   flac  0.5424  3 All Along The Watchtower.flac
+     7:53.41       83533676 B   ---   --   ---xx   flac  0.4459  4 Simple Twist Of Fate.flac
+     8:14.03       87148700 B   ---   --   ---xx   flac  0.4741  5 I Don't Believe You (She Acts Like We Never Have Met).flac
+     7:45.19       82070732 B   ---   --   ---xx   flac  0.5244  6 Silvio.flac
+    11:58.38      126744620 B   ---   --   ---xx   flac  0.4315  7 Boots Of Spanish Leather.flac
+    54:17.12      574563332 B                            0.4849  (7 files)
+=================== 
+=================== 
+=================== 

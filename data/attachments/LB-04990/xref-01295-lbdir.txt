@@ -1,0 +1,95 @@
+===================
+===================
+===================
+=== md5 for: bd92-09-13-b.flacf
+===================
+===================
+===================
+e77576d0219c5a7000b468d897690ae1 *disc1\01 - Traccia Audio.flac
+1fb2ff59071cc3fefb6cd74cbb0fc1e7 *disc1\02 - Traccia Audio.flac
+3704ad3fac389c31720e8c4b80495199 *disc1\03 - Traccia Audio.flac
+d7871b842a35c9607d688df495610251 *disc1\04 - Traccia Audio.flac
+93cfa17fbc2802367373440b9e6ede5f *disc1\05 - Traccia Audio.flac
+d4450fc78ac1f79f2c96d960a9c3caec *disc1\06 - Traccia Audio.flac
+7743c1d71ba3a186030a41f9ee49e47b *disc1\07 - Traccia Audio.flac
+a137215489d3266b1b4c193444d1ae1d *disc1\08 - Traccia Audio.flac
+46186effd8a66eabba93d9657a434745 *disc1\09 - Traccia Audio.flac
+7aa3a93e3068b29c9e0cc7998cb25bd3 *disc1\10 - Traccia Audio.flac
+92998e0def166470fd4c58fb701e56d4 *disc1\11 - Traccia Audio.flac
+046c83010907e17525b4a98f9825e126 *disc1\fingerprint.ffp.txt
+e0e9653d17700a97842590ff5b4aa381 *disc1\md5sum.md5
+97df304aec10a83d00f4b791f8aa518f *disc2\01 - Traccia Audio.flac
+5c1d1a68bba9d2ac6c1710e83077a161 *disc2\02 - Traccia Audio.flac
+04bd53d809c56a1e99b0962890c92f3d *disc2\03 - Traccia Audio.flac
+d88541453ba3877dad788278899a44e3 *disc2\04 - Traccia Audio.flac
+fa24a128ed3969095f500c8e786fd50d *disc2\05 - Traccia Audio.flac
+e9310b45ba04437d3de845b766cf65e1 *disc2\06 - Traccia Audio.flac
+10838c08e235eb14c28a82c46c551f69 *disc2\07 - Traccia Audio.flac
+e2912f601ead36e866f6717e6aad562b *disc2\fingerprint.ffp.txt
+ceb25176045f65e00a154d52d6808cc4 *disc2\shntoolmd5sum.st5
+fca6a9ce59cfb7fa5666210b6895c01a *infos.txt
+cc7e6d3e3ed39debc6d2ca6ec24dacff *lbdir-bd92-09-13-b.flacf.txt
+===================
+===================
+===================
+=== ffp for: bd92-09-13-b.flacf
+===================
+===================
+===================
+disc1\01 - Traccia Audio.flac:84409796e96e3957e82a3ff79bfd9190
+disc1\02 - Traccia Audio.flac:7d9d0912031255479296e9a5c0671b76
+disc1\03 - Traccia Audio.flac:f7ca9b6e886297de3dabd81a820df1d4
+disc1\04 - Traccia Audio.flac:84f276bdbf9a9a0b0731edf4f4929cec
+disc1\05 - Traccia Audio.flac:14ea93e094e4b4eaf1888c253a58b842
+disc1\06 - Traccia Audio.flac:9e738010ad330917144beb0ba5d68141
+disc1\07 - Traccia Audio.flac:68fab23d5ede382de9545bddc4db59cf
+disc1\08 - Traccia Audio.flac:8349cf169c41b30763a13011e13b40ba
+disc1\09 - Traccia Audio.flac:998da143cbe1464647c0555d35c73511
+disc1\10 - Traccia Audio.flac:257581459469c41222e79279a2040cef
+disc1\11 - Traccia Audio.flac:da76874f184ef178ad4edf1fbac620cf
+disc2\01 - Traccia Audio.flac:c00b970e759220da2ccbcfb3b357a130
+disc2\02 - Traccia Audio.flac:1ca5c62db01419d1bbf4f1ecb8aaf4cf
+disc2\03 - Traccia Audio.flac:f405c5f712a12492a8ebc3220785d3ed
+disc2\04 - Traccia Audio.flac:3729004cfd0a641feb0084f521765140
+disc2\05 - Traccia Audio.flac:61b9d6725d2d36bc38665a9d86e82d90
+disc2\06 - Traccia Audio.flac:df90e1b3f0438bf840fe5bf37feb4e75
+disc2\07 - Traccia Audio.flac:2d8410e60a3271248057fbcc569469d4
+===================
+===================
+===================
+=== shntool len for: bd92-09-13-b.flacf\disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.09       52941212 B   ---   --   ---xx   flac  0.6257  01 - Traccia Audio.flac
+     6:18.12       66707468 B   ---   --   ---xx   flac  0.6420  02 - Traccia Audio.flac
+     5:54.52       62567948 B   ---   --   ---xx   flac  0.6227  03 - Traccia Audio.flac
+     5:21.64       56774972 B   ---   --   ---xx   flac  0.5793  04 - Traccia Audio.flac
+     8:59.31       95152556 B   ---   --   ---xx   flac  0.5934  05 - Traccia Audio.flac
+     5:06.27       54041948 B   ---   --   ---xx   flac  0.5572  06 - Traccia Audio.flac
+     4:56.70       52379084 B   ---   --   ---xx   flac  0.6450  07 - Traccia Audio.flac
+     4:16.12       45186668 B   ---   --   ---xx   flac  0.5277  08 - Traccia Audio.flac
+     5:16.00       55742444 B   ---   --   ---xx   flac  0.5267  09 - Traccia Audio.flac
+     6:00.09       63525212 B   ---   --   ---xx   flac  0.5364  10 - Traccia Audio.flac
+     7:38.29       80859452 B   ---   --   ---xx   flac  0.5300  11 - Traccia Audio.flac
+    64:48.15      685878964 B                            0.5807  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd92-09-13-b.flacf\disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.12       63532268 B   ---   --   ---xx   flac  0.6157  01 - Traccia Audio.flac
+     9:00.45       95361884 B   ---   --   ---xx   flac  0.5892  02 - Traccia Audio.flac
+     8:25.68       89241980 B   ---   --   ---xx   flac  0.5935  03 - Traccia Audio.flac
+     8:05.64       85704572 B   ---   --   ---xx   flac  0.6080  04 - Traccia Audio.flac
+     8:00.52       84794348 B   ---   --   ---xx   flac  0.5823  05 - Traccia Audio.flac
+     6:18.36       66763916 B   ---   --   ---xx   flac  0.6339  06 - Traccia Audio.flac
+     5:00.69       53082332 B   ---   --   ---xx   flac  0.5081  07 - Traccia Audio.flac
+    50:52.46      538481300 B                            0.5925  (7 files)
+===================
+===================
+===================

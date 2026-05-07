@@ -1,0 +1,10 @@
+Bob Dylan, 10/21/90, Richmond Mosque, Richmond, Virginia, 2CDR
+
+LB-3968, (45min+38min), Lineage: trade cdrs > eac > flac; bittorrent download 08/06; very good to excellent sound [B+]
+
+occasional mic like static d1t8 2:2x to 3:0x and then more like this and gets worse in d2t1, d2t6 1:13; some noise in transition from d1 to d2
+
+Disc One, 1. Dixie (Daniel Decatur Emmett), 2. Subterranean Homesick Blues, 3. I'll Remember You, 4. Ballad Of A Thin Man, 5. Gotta Serve Somebody, 6. Masters Of War, 7. Joey, 8. Don't Think Twice, It's All Right, 9. Gates Of Eden, 10. Desolation Row, Disc Two, 11. It Ain't Me, Babe, 12. Wiggle Wiggle, 13. Shooting Star, 14. All Along The Watchtower, 15. I Believe In You, 16. Like A Rolling Stone, 17. The Times They Are A-Changin', 18. Highway 61 Revisited
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

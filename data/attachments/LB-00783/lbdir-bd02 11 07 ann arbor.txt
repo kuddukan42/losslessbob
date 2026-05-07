@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02 11 07 ann arbor 
+=================== 
+=================== 
+=================== 
+79b0bd1f8c449f3ec643cc4c0bdfc036  02 11 07 d1 t01.shn
+df88014d23e4536a37adb5cde0713540  02 11 07 d1 t02.shn
+ed1e1e5eea7a5a9ddcc3e3e5484484db  02 11 07 d1 t03.shn
+920042adbf39a038006b8686364f722f  02 11 07 d1 t04.shn
+f296affc24d7d5771307d5293d374ac5  02 11 07 d1 t05.shn
+5e79e57bd5247f8656293c8d0ded9f8a  02 11 07 d1 t06.shn
+945b7aab3b252407d19623019b1d9c57  02 11 07 d1 t07.shn
+725c58dce22f0ba60d91c376bc976ce0  02 11 07 d1 t08.shn
+3d9cfcbd556f01976192b2a4be5bc5e4  02 11 07 d1 t09.shn
+0cdfd9d5fc4770db216b115245efd364  02 11 07 d1 t10.shn
+9a79cbb775db40d16ef03c7020e3a04f  02 11 07 d1 t11.shn
+678c1789b7d54c3b86e2ae12de10f78c  02 11 07 d1 t12.shn
+c6b2417009a76f9c0ae9c0a5809ca401  02 11 07 d2 t01.shn
+7b327f95defa86e4b41101bd88f46bd8  02 11 07 d2 t02.shn
+177a8c913458acfff17a7a3c1dfe4709  02 11 07 d2 t03.shn
+85a894ab79c5d3c7cfa47ca0789bb6c5  02 11 07 d2 t04.shn
+7676f26d6bc6966407520cc0594c67ed  02 11 07 d2 t05.shn
+e00d0c2daefdbb9585bad59af44efc62  02 11 07 d2 t06.shn
+d754fd9491694af6f88e91e9fd6e5f7c  02 11 07 d2 t07.shn
+1cac0737740b36c47cb607f5572d1f24  02 11 07 d2 t08.shn
+713ab1028c18f069d869352c49eb4367  02 11 07.md5
+5d9f5125acef9cf1191b8b63aa33dab5  bd02-11-07.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02 11 07 ann arbor 
+=================== 
+=================== 
+=================== 
+eb8470f09436e82ace102d67a92d2e0d  [shntool]  02_11_07_d1_t01.wav
+13c0083b1c7040042457b06423242767  [shntool]  02_11_07_d1_t02.wav
+5155a5d1b05379f5d5e117c2a409857c  [shntool]  02_11_07_d1_t03.wav
+d63f7135efeec8af26038e4a77c520c3  [shntool]  02_11_07_d1_t04.wav
+c81ff379dfeba7bf6083480a75be4f10  [shntool]  02_11_07_d1_t05.wav
+16848f5062f4b3f8c289f3e2fa3f6ac8  [shntool]  02_11_07_d1_t06.wav
+48e0cd52feedfb2317e79316f3ad298f  [shntool]  02_11_07_d1_t07.wav
+d099d7efee5463de003ebd6ec215e4df  [shntool]  02_11_07_d1_t08.wav
+d538f377f50a96c4b44dddbf0db4ed81  [shntool]  02_11_07_d1_t09.wav
+5e2c7f23b353e2956335ae08c36ba9d4  [shntool]  02_11_07_d1_t10.wav
+5f5af927fdba7d92972b0bb1bcdc97fd  [shntool]  02_11_07_d1_t11.wav
+acf080d87b99466f09656e589ddaf068  [shntool]  02_11_07_d1_t12.wav
+e22575eea77780aa299ea1f98d995efa  [shntool]  02_11_07_d2_t01.wav
+3cec491f31d807e29fcfc856038acc49  [shntool]  02_11_07_d2_t02.wav
+2dc054253a92597be5e149664bc78b52  [shntool]  02_11_07_d2_t03.wav
+4bdfd4b2ec279c1413039922d912e534  [shntool]  02_11_07_d2_t04.wav
+256ad7145d436ad94e28eaa36d9c2828  [shntool]  02_11_07_d2_t05.wav
+e9b566b803fec574e427893ea9517db9  [shntool]  02_11_07_d2_t06.wav
+6b4255b50a4a61da84ff57d364d4886b  [shntool]  02_11_07_d2_t07.wav
+73f607ab2c47a26ec1b9b8398bc515c1  [shntool]  02_11_07_d2_t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02 11 07 ann arbor 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:51.07       72516908 B   ---   --   ---xx    shn  0.5331  02 11 07 d1 t01.shn
+     4:56.03       52221500 B   ---   --   ---xx    shn  0.5105  02 11 07 d1 t02.shn
+     7:14.13       76588220 B   ---   --   ---xx    shn  0.5695  02 11 07 d1 t03.shn
+     4:40.31       49464956 B   ---   --   ---xx    shn  0.5517  02 11 07 d1 t04.shn
+     7:10.48       75964940 B   ---   --   ---xx    shn  0.5809  02 11 07 d1 t05.shn
+     4:16.26       45219596 B   ---   --   ---xx    shn  0.6327  02 11 07 d1 t06.shn
+     6:13.65       65950124 B   ---   --   ---xx    shn  0.4874  02 11 07 d1 t07.shn
+     7:46.45       82308284 B   ---   --   ---xx    shn  0.5806  02 11 07 d1 t08.shn
+     8:41.38       91993820 B   ---   --   ---xx    shn  0.5007  02 11 07 d1 t09.shn
+     6:43.51       71209196 B   ---   --   ---xx    shn  0.6306  02 11 07 d1 t10.shn
+     6:15.01       66152396 B   ---   --   ---xx    shn  0.5491  02 11 07 d1 t11.shn
+     4:22.01       46219196 B   ---   --   ---xx    shn  0.5713  02 11 07 d1 t12.shn
+     7:01.34       74344412 B   ---   --   ---xx    shn  0.6052  02 11 07 d2 t01.shn
+     6:53.14       72886172 B   ---   --   ---xx    shn  0.4844  02 11 07 d2 t02.shn
+     8:07.62       86052668 B   ---   --   ---xx    shn  0.5768  02 11 07 d2 t03.shn
+     3:37.56       38410556 B   ---   --   ---xx    shn  0.4522  02 11 07 d2 t04.shn
+     6:50.56       72455756 B   ---   --   ---xx    shn  0.4473  02 11 07 d2 t05.shn
+    12:00.50      127125644 B   ---   --   ---xx    shn  0.6020  02 11 07 d2 t06.shn
+     6:12.41       65717276 B   ---   --   ---xx    shn  0.5725  02 11 07 d2 t07.shn
+     8:44.25       92492444 B   ---   --   ---xx    shn  0.6007  02 11 07 d2 t08.shn
+   134:39.67     1425294064 B                            0.5557  (20 files)
+=================== 
+=================== 
+=================== 

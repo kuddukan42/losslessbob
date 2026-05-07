@@ -1,0 +1,364 @@
+Below is information from shntool on the FLAC files in this directory.
+
+First is the output of  shntool len  in column form.
+In the table, a - means OK; an x means not applicable or not determined.
+Other letters indicate potential problems.
+
+    length     expanded size   cdr  WAVE problems filename
+     6:40.06       70574156    ---   --   ---xx   Bob Dylan - Track 01.flac
+     4:59.70       52908284    ---   --   ---xx   Bob Dylan - Track 02.flac
+     5:24.54       57280652    ---   --   ---xx   Bob Dylan - Track 03.flac
+     7:42.54       81623852    ---   --   ---xx   Bob Dylan - Track 04.flac
+     7:11.33       76106060    ---   --   ---xx   Bob Dylan - Track 05.flac
+     7:09.46       75783836    ---   --   ---xx   Bob Dylan - Track 06.flac
+     6:07.03       64745900    ---   --   ---xx   Bob Dylan - Track 07.flac
+     5:51.25       61975244    ---   --   ---xx   Bob Dylan - Track 08.flac
+     6:34.04       69511052    ---   --   ---xx   Bob Dylan - Track 09.flac
+     6:39.26       70444796    ---   --   ---xx   Bob Dylan - Track 10.flac
+    64:20.21      680953832 B                     (totals for 10 files, 0.6326 overall compression ratio)
+
+A b in the CDR column indicates an SBE (sector boundary error)
+An h in the WAVE column indicates a non-canonical header
+An e in the WAVE column indicates extra RIFF chunks
+A c in the CDR column indicates audio is not CD quality
+
+An s in the CDR column indicates audio is too short to burn
+A 3 in the problems column indicates the file contains an ID3v2 tag
+An a in the problems column indicates the audio data is not block-aligned
+An i in the problems column indicates an inconsistent header
+A t in the problems column indicates possible truncation
+A j in the problems column indicates junk may be appended to file
+
+*******************************************************************************
+*******************************************************************************
+Next is the output of  shntool info  (long form), one file at a time.
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 01.flac
+handled by:                   flac format module
+length:                       6:40.06
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    70574112 bytes
+chunk size:                   70574148 bytes
+total size (chunk size + 8):  70574156 bytes
+actual file size:             46442110
+file is compressed:           yes
+compression ratio:            0.6581
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 02.flac
+handled by:                   flac format module
+length:                       4:59.70
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    52908240 bytes
+chunk size:                   52908276 bytes
+total size (chunk size + 8):  52908284 bytes
+actual file size:             32924313
+file is compressed:           yes
+compression ratio:            0.6223
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 03.flac
+handled by:                   flac format module
+length:                       5:24.54
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    57280608 bytes
+chunk size:                   57280644 bytes
+total size (chunk size + 8):  57280652 bytes
+actual file size:             36677708
+file is compressed:           yes
+compression ratio:            0.6403
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 04.flac
+handled by:                   flac format module
+length:                       7:42.54
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    81623808 bytes
+chunk size:                   81623844 bytes
+total size (chunk size + 8):  81623852 bytes
+actual file size:             51964824
+file is compressed:           yes
+compression ratio:            0.6366
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 05.flac
+handled by:                   flac format module
+length:                       7:11.33
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    76106016 bytes
+chunk size:                   76106052 bytes
+total size (chunk size + 8):  76106060 bytes
+actual file size:             47775162
+file is compressed:           yes
+compression ratio:            0.6277
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 06.flac
+handled by:                   flac format module
+length:                       7:09.46
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    75783792 bytes
+chunk size:                   75783828 bytes
+total size (chunk size + 8):  75783836 bytes
+actual file size:             47281961
+file is compressed:           yes
+compression ratio:            0.6239
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 07.flac
+handled by:                   flac format module
+length:                       6:07.03
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    64745856 bytes
+chunk size:                   64745892 bytes
+total size (chunk size + 8):  64745900 bytes
+actual file size:             41174134
+file is compressed:           yes
+compression ratio:            0.6359
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 08.flac
+handled by:                   flac format module
+length:                       5:51.25
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    61975200 bytes
+chunk size:                   61975236 bytes
+total size (chunk size + 8):  61975244 bytes
+actual file size:             39934387
+file is compressed:           yes
+compression ratio:            0.6444
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 09.flac
+handled by:                   flac format module
+length:                       6:34.04
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    69511008 bytes
+chunk size:                   69511044 bytes
+total size (chunk size + 8):  69511052 bytes
+actual file size:             41118642
+file is compressed:           yes
+compression ratio:            0.5915
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    Bob Dylan - Track 10.flac
+handled by:                   flac format module
+length:                       6:39.26
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    70444752 bytes
+chunk size:                   70444788 bytes
+total size (chunk size + 8):  70444796 bytes
+actual file size:             45498017
+file is compressed:           yes
+compression ratio:            0.6459
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a

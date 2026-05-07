@@ -1,0 +1,74 @@
+Bob Dylan and his band
+Louisville, Kentucky
+Louisville Slugger Field
+June 29, 2005
+
+AUDIENCE recording by M&A
+
+MBHO 603a > Lunatech V-3 > Sony-D100 > Audio CDs from M&A
+(wav encoded to shn with xACT 1.4b24)
+
+**some crowd noise, in a stadium full of joyful fans but recording has a rich sound
+
+Disc 1  51:12
+1.      Intro  0:35
+2.	Tombstone Blues  6:07
+3.	She Belongs To Me  6:32
+4.	Tweedle Dee & Tweedle Dum  5:33
+5.	Just Like A Woman  8:03
+6.	High Water (For Charley Patton)  6:55
+7.	Absolutely Sweet Marie  6:01
+8.	Man In The Long Black Coat  4:52
+9.	Honest With Me  6:33
+
+Disc 2  41:53
+1.	My Back Pages  8:03
+2.	Cold Irons Bound  5:34
+3.	Mr. Tambourine Man  7:09
+4.	Highway 61 Revisited  8:16
+(encore - one second pause at edit)
+5.	Don't Think Twice, It's All Right  7:47
+6.	All Along The Watchtower  5:03
+ 	 
+Band Members
+Bob Dylan - keyboard, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - electric mandolin, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+shn.md5
+9cb33f537fff0a615be25be3d1a4c782 *bd2005-06-29d1t01.shn
+89ec7743f9075b51e99cc989144c9110 *bd2005-06-29d1t02.shn
+b397b4ff5f1e44b5d5c4a189afd5335b *bd2005-06-29d1t03.shn
+cbf722bfd179fddddfc24824da7992d5 *bd2005-06-29d1t04.shn
+5aeb7a8392800989d524182cb925b1ae *bd2005-06-29d1t05.shn
+dffd99ebfebf32806164086a1d219bba *bd2005-06-29d1t06.shn
+50c2f71bb5fa821b572f31ca1b1aa824 *bd2005-06-29d1t07.shn
+4b0d27d9b2d2934fae882444fd930547 *bd2005-06-29d1t08.shn
+7f6a308bedf1e57d403c3d432bc05670 *bd2005-06-29d1t09.shn
+2b1a46f8ac72f51ac26dfb6990698500 *bd2005-06-29d2t01.shn
+9f22f50744021d4baf43b15b78525ba6 *bd2005-06-29d2t02.shn
+62f41fadc66118d9cae4386b2684da17 *bd2005-06-29d2t03.shn
+d09d7e63fb805a43a19e7860bb090fcc *bd2005-06-29d2t04.shn
+5e6e0a188e2fc1cb119fccc7e945288c *bd2005-06-29d2t05.shn
+5a9f6da61ffa06559f571150e239485f *bd2005-06-29d2t06.shn
+
+
+wav.md5
+be2aef22e9895a862f6ecf5554b2c558 *bd2005-06-29d1t01.wav
+5732e464d538feb805705c6f878fa817 *bd2005-06-29d1t02.wav
+c9fac473276928c7dcf5d238afad6b9a *bd2005-06-29d1t03.wav
+fbe44ab2140fb9f584ef264c74da85f8 *bd2005-06-29d1t04.wav
+0435d108e594d1acb4db8de86e8c2ef3 *bd2005-06-29d1t05.wav
+e1506d5e724e6bb66b3cd8360827ed78 *bd2005-06-29d1t06.wav
+20c86238d67ab0dbd1ead9ee54a18bfd *bd2005-06-29d1t07.wav
+845ab90d3c20b32bdd54b71b93a5ca95 *bd2005-06-29d1t08.wav
+f2fc1aee2269ec5738cc59c4be5b3487 *bd2005-06-29d1t09.wav
+3c396522936f08392d597979f773d384 *bd2005-06-29d2t01.wav
+615b4891e38358c59c41e8ae89831ffd *bd2005-06-29d2t02.wav
+0fdb67de533594252a9e3f5f5b41f340 *bd2005-06-29d2t03.wav
+e1a138493bd90d6662e6f026928d939f *bd2005-06-29d2t04.wav
+97dea25599f9dc30d969fe52cf22ca65 *bd2005-06-29d2t05.wav
+1b528fe6f786a82c2f33d1b613d2f665 *bd2005-06-29d2t06.wav

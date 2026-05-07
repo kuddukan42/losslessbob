@@ -1,0 +1,32 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-13-Knockin-On-Heavens-Door.flacf 
+=================== 
+=================== 
+=================== 
+c8f7106da4d4422d7ab55f00966dedee  bd02-10-13-Knockin-On-Heavens-Door-LB-3520.txt
+88effc97aa0df31bafa916cfc6851b28  Bob Dylan - Knockin On Heavens Door (Live In South Lake Tahoe 10-13-02).flac
+8c30b3e631af11f072a6102361bafacd  Fingerprint.txt
+8f890facc7456017a6325fb820458abb  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-13-Knockin-On-Heavens-Door.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Knockin On Heavens Door (Live In South Lake Tahoe 10-13-02).flac:06eae03801ba5ba4a991f6ae1dfa9bd3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-13-Knockin-On-Heavens-Door.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.23       71319596 B   -b-   --   ---xx   flac  0.5306  Bob Dylan - Knockin On Heavens Door (Live In South Lake Tahoe 10-13-02).flac
+     6:44.23       71319596 B                            0.5306  (1 file)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,164 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-26-MudPlex-a.flacf 
+=================== 
+=================== 
+=================== 
+7f79f861fc1cadc191184a77ce045e4c  D1\MedPlex Disk One fingerprint.ffp.txt
+cb548d779ca96552c06cd016f464ee6c  D1\MudPlex D1.LOG
+b5fd19217afaf5cccd0a65089d9b6095  D1\Track01.flac
+0337d71b6fb3275a9aedeec673abb66e  D1\Track02.flac
+c73f8b726e379856a098bb48a1c0fdc0  D1\Track03.flac
+7fb71a16b672010d09b14989191c78cb  D1\Track04.flac
+1852025759fda982db680eb008f7fe90  D1\Track05.flac
+f9ea2d9e90d75148a7ac553ba390b8fe  D1\Track06.flac
+3585329401bd57da290a12715ec78ed4  D1\Track07.flac
+8c903126568e2fef4caf73c7e237e4e2  D1\Track08.flac
+9338a2c24d44a77813a355be1aee3c27  D1\Track09.flac
+5208c33b68271a9c3d06ae42b9089583  D1\Track10.flac
+74a3fa4d7468d2130724581656fb7f77  D1\Track11.flac
+a40c244bef4d1ddd386f6cf8ac3fa4d1  D1\Track12.flac
+063eb4804dfac4f4818d5b50a78bf58b  D2\MedPlex Disk Two fingerprint.ffp.txt
+62c42d5fea76bdaf77fd288d89494356  D2\MudPlex D2.LOG
+c651d61a9a6691b2deb6514b0752016e  D2\Track01.flac
+02504897e7969e3ef78223d4c1fb9ec1  D2\Track02.flac
+5b4cbc2b48f43c169a8b57c8dcd150d4  D2\Track03.flac
+015bc01bd7dd7fc6164946ecce6af7be  D2\Track04.flac
+6715b9d56c5984230cfc8b947e0635ca  D2\Track05.flac
+b90abc585f49b42f3490571ecdf5a791  D2\Track06.flac
+68ddf5d1d7af6de10b68e9e3f0bb9eab  D2\Track07.flac
+cd64e0c542891a5b10bdf8509518b919  D2\Track08.flac
+21d4e75c8d22095fb890e0c5cf15ba80  D2\Track09.flac
+29e4f2f851402c42baab1ada167d1206  D2\Track10.flac
+5e528f5141893246c7d1be2312ffa90a  D3\MedPlex Disk Three fingerprint.ffp.txt
+f72f3b3233dac96af9d093142a14ee56  D3\MudPlex D3.LOG
+bd02a0bb64f6afc342b6243c72165970  D3\Track01.flac
+e873a6d95dd7dcb632cc69aeee8d2572  D3\Track02.flac
+2f404f957b6ecd017894511448e4614f  D3\Track03.flac
+7fc7286c862151d50fd31f417ce88a04  D3\Track04.flac
+a7a06b612aca1eea5256658451bbee2f  D3\Track05.flac
+dfb78171ea355d5c780b3c9c7c5cefcd  D3\Track06.flac
+270dd7d02b6db44debf6a5f523810f12  D3\Track07.flac
+cb353518eab98ef75cb1e1969d7c32fe  D3\Track08.flac
+b5e7d2f03d88bea840420d318681f2d0  D3\Track09.flac
+96f01c81f5bbad0d672b10d514ca93c2  D3\Track10.flac
+19bc8d879f633b028abf0e900f6fd617  m-45b.jpg
+6d1458e2f04fa4c0111cb86f44b49393  m-45cd.jpg
+5adc4a85cebdb028eb712eacfb1aa47a  m-45f.jpg
+9cea57aac9d00406b47b38a25c51fa87  MudPlex.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-26-MudPlex-a.flacf\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:8d6825c07ec93e28e24de66845c61e6e
+Track02.flac:f3b2274a872647c8eace9a49cdb31c51
+Track03.flac:9223bfca7b3da7f85a37972eacc2a36f
+Track04.flac:8a107a0158d5aa09aa7f72557c1530c3
+Track05.flac:e86df2be7cf28e91f623ee7fde364ad6
+Track06.flac:3d1e19fd3c80d33c0656363f019233f0
+Track07.flac:6053d2c88470874f078112e5d31928ca
+Track08.flac:a4a5ed04c2d922adb03be6d99c23ae0b
+Track09.flac:0a9731d73a415fedf2ea5d97294cc927
+Track10.flac:13bb0bfdd91f7ddaf1074a262bff34ff
+Track11.flac:53688c4d61928e411101cb7332c691e7
+Track12.flac:4111a83b9ab2810cf7e90d700d93fc9b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-26-MudPlex-a.flacf\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:24e3280d2765897d32452282376f7bf9
+Track02.flac:c71d982ea06a705bcf2dd4cfbe4b18cf
+Track03.flac:fd7006a7698f64bacd6bb7c97e75c9f4
+Track04.flac:bb1bebb69b883d9be9847e24715692b3
+Track05.flac:2168fab5015323fb801eaad53d47b085
+Track06.flac:8d2f05dd2d1188b6a587fc31b51ca1f5
+Track07.flac:2a5da19671107c2364872e875fd71dff
+Track08.flac:0d9d1f64eca32bce1519fa227b4247e3
+Track09.flac:b8dda9cc161cb9d361532d6a55841267
+Track10.flac:4d5ec67a3d93152c8fbfb27077e3a1f3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-26-MudPlex-a.flacf\D3 
+=================== 
+=================== 
+=================== 
+Track01.flac:54ea7f9985662f37fbe1a84ed5176e24
+Track02.flac:c0d10363f84b67dbb248f68b5b1b0c80
+Track03.flac:806c3f695b8ec4a11b6b4da972e328c6
+Track04.flac:3adb72790e85f6ddb09b40b637eb4e0c
+Track05.flac:085715b72dd6c463c030f3ce9a7a7331
+Track06.flac:c3de827c6f4f9c54781cc3b88f1772d1
+Track07.flac:695102e884b2e9f29aeba8450ac9ceea
+Track08.flac:4d79a4f15be850087f9ee0a3e99671d9
+Track09.flac:72f25938e49b03bf8f1e6cc885defb25
+Track10.flac:1935c1f09dad2306c5eb0835f319e5b6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-26-MudPlex-a.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:51.12       40776668 B   ---   --   ---xx   flac  0.6582  Track01.flac
+     4:36.10       48709964 B   ---   --   ---xx   flac  0.6637  Track02.flac
+     4:27.28       47164700 B   ---   --   ---xx   flac  0.6552  Track03.flac
+     4:43.72       50090588 B   ---   --   ---xx   flac  0.6448  Track04.flac
+     4:32.26       48041996 B   ---   --   ---xx   flac  0.6811  Track05.flac
+     6:55.18       73248380 B   ---   --   ---xx   flac  0.6788  Track06.flac
+     4:34.51       48453596 B   ---   --   ---xx   flac  0.6435  Track07.flac
+     8:41.30       91975004 B   ---   --   ---xx   flac  0.6478  Track08.flac
+     5:36.26       59331596 B   ---   --   ---xx   flac  0.5920  Track09.flac
+     5:15.46       55674236 B   ---   --   ---xx   flac  0.6555  Track10.flac
+     4:29.68       47611580 B   ---   --   ---xx   flac  0.6587  Track11.flac
+     4:04.55       43171004 B   ---   --   ---xx   flac  0.6765  Track12.flac
+    61:48.67      654249312 B                            0.6538  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-26-MudPlex-a.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:57.65       63127724 B   ---   --   ---xx   flac  0.6582  Track01.flac
+     6:30.47       68906588 B   ---   --   ---xx   flac  0.6758  Track02.flac
+     4:45.38       50363420 B   ---   --   ---xx   flac  0.6289  Track03.flac
+    10:43.57      113559308 B   ---   --   ---xx   flac  0.6776  Track04.flac
+     3:58.45       42089084 B   ---   --   ---xx   flac  0.5994  Track05.flac
+     4:22.19       46261532 B   ---   --   ---xx   flac  0.6237  Track06.flac
+     4:11.04       44285852 B   ---   --   ---xx   flac  0.6091  Track07.flac
+     6:25.42       68012828 B   ---   --   ---xx   flac  0.5844  Track08.flac
+     4:36.14       48719372 B   ---   --   ---xx   flac  0.6188  Track09.flac
+     6:34.64       69652172 B   ---   --   ---xx   flac  0.6233  Track10.flac
+    58:06.20      614977880 B                            0.6360  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-26-MudPlex-a.flacf\D3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:50.41       40668476 B   ---   --   ---xx   flac  0.5687  Track01.flac
+     9:16.05       98090204 B   ---   --   ---xx   flac  0.6030  Track02.flac
+     5:05.25       53860844 B   ---   --   ---xx   flac  0.5315  Track03.flac
+     5:25.66       57485276 B   ---   --   ---xx   flac  0.5983  Track04.flac
+     4:44.41       50194076 B   ---   --   ---xx   flac  0.6229  Track05.flac
+     4:12.19       44497532 B   ---   --   ---xx   flac  0.6403  Track06.flac
+     6:41.32       70811708 B   ---   --   ---xx   flac  0.6342  Track07.flac
+     4:03.07       42881708 B   ---   --   ---xx   flac  0.6397  Track08.flac
+     3:35.38       38015420 B   ---   --   ---xx   flac  0.6485  Track09.flac
+     4:55.35       52120364 B   ---   --   ---xx   flac  0.6461  Track10.flac
+    51:50.09      548625608 B                            0.6119  (10 files)
+=================== 
+=================== 
+=================== 

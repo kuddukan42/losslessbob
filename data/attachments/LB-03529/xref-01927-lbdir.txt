@@ -1,0 +1,97 @@
+===================
+===================
+===================
+=== md5 for: bd00-11-01-b.flacf
+===================
+===================
+===================
+26eab846bfa6e8afb15e008dd353dcd7 *CD1\01 Duncan And Brady.flac
+1534fe2cdb01ab062475f67c4898415e *CD1\02 To Ramona.flac
+f0ba9a5c51f46449f2810d9062015712 *CD1\03 It's All Right, Ma (I'm Only Blee.flac
+668eb16cbe36e377233fb44428c52801 *CD1\04 The Lonesome Death Of Hattie Carr.flac
+1ffeb2d3408dd2db1d31654efba74f9e *CD1\05 Tangled Up In Blue.flac
+e408378b643cc8cbd99c4181ba2dc455 *CD1\06 Searching For A Soldier's Grave.flac
+66240bed2e1b0608a1d8ecd01740f61e *CD1\07 Country Pie.flac
+a68b95308e021a803a9bb3c61cf97d05 *CD1\08 Tryin' To Get To Heaven.flac
+b35aa8cb931544d14f9527ba34c3ef6a *CD1\09 Maggie's Farm.flac
+17450b004988efefb196ca70749d0908 *CD1\10 I Threw It All Away.flac
+32d0f861cc55e84e864749f46c6a7aa5 *CD1\11 Cold Irons Bound.flac
+b19ccd10479cef44e0344584129f9b7e *CD1\12 Leopard-Skin Pill-Box Hat.flac
+06539c851d3659aa5e8fa201217f179a *CD2\01 Things Have Changed.flac
+98ff31f2626a94a968049cc21a338c96 *CD2\02 Like A Rolling Stone.flac
+8f711d469133cd57fb5878f4991cd3f3 *CD2\03 If Dogs Run Free.flac
+6f65a9bea2b81af9f17c737e814c7201 *CD2\04 All Along The Watchtower.flac
+279e3a7d0146831e0bcb50f7be8dfbf5 *CD2\05 Blue Bonnet Girl.flac
+9125bf2b076128649c124ed3d95d1466 *CD2\06 I Shall Be Released.flac
+9aefc4d67e7a2af4453f3307633feaf4 *CD2\07 Highway 61 Revisited.flac
+1f71683ac966ff1f20574f8620c63b81 *CD2\08 Blowin' In The Wind.flac
+f4d15ecdbe4abaf8e10981bd80acecfe *info.txt
+6fcb0d328e5e3bc3994d5ab17543bf5a *md5.md5
+===================
+===================
+===================
+=== ffp for: bd00-11-01-b.flacf
+===================
+===================
+===================
+CD1\01 Duncan And Brady.flac:f4343639d30c73e0ce36a58bdff57ec8
+CD1\02 To Ramona.flac:bef09b5932b014045a59c955d43ff83f
+CD1\03 It's All Right, Ma (I'm Only Blee.flac:c7fe4448b32a0a59036555a343048d17
+CD1\04 The Lonesome Death Of Hattie Carr.flac:6a27f035ce2feb44eabfaf4ca73c4dd3
+CD1\05 Tangled Up In Blue.flac:02e6af303b8f769cde7db264c568263e
+CD1\06 Searching For A Soldier's Grave.flac:1fdd315b14b262a72fd69388ef6cd991
+CD1\07 Country Pie.flac:69082635f7fdce39a05bc56236436a45
+CD1\08 Tryin' To Get To Heaven.flac:072f6d949a099e4ba1faedbcfab5a8ba
+CD1\09 Maggie's Farm.flac:c456fc55724e69a7b98d8ebdd34ceee5
+CD1\10 I Threw It All Away.flac:c573ce83b29a69fdae4a9b723fba73dc
+CD1\11 Cold Irons Bound.flac:7f52910b23508f181d2e9ca8a438aa5b
+CD1\12 Leopard-Skin Pill-Box Hat.flac:fa8e36f5f068d31f27b3b440eb5a81d4
+CD2\01 Things Have Changed.flac:3f026d74d188fdefcdf3939831a239f1
+CD2\02 Like A Rolling Stone.flac:dad603f04561f6d985065f824ffbf0e4
+CD2\03 If Dogs Run Free.flac:6efeca4e81193724722b5b62053e568a
+CD2\04 All Along The Watchtower.flac:bbc1234f537a54387cc7bad3863b26d3
+CD2\05 Blue Bonnet Girl.flac:6e3d7d65581c436385e74c20a00ad221
+CD2\06 I Shall Be Released.flac:be91789b3ac55d807c9d49633f6871b4
+CD2\07 Highway 61 Revisited.flac:3d4ef179b2de6456b67d69d895990269
+CD2\08 Blowin' In The Wind.flac:dd7afa59f2a283e44ee824a02b273599
+===================
+===================
+===================
+=== shntool len for: bd00-11-01-b.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:23.62       35955068 B   ---   --   ---xx   flac  0.6924  01 Duncan And Brady.flac
+     5:07.43       54255980 B   ---   --   ---xx   flac  0.5934  02 To Ramona.flac
+     7:50.73       83079740 B   ---   --   ---xx   flac  0.6163  03 It's All Right, Ma (I'm Only Blee.flac
+     6:05.34       64466012 B   ---   --   ---xx   flac  0.5837  04 The Lonesome Death Of Hattie Carr.flac
+     7:40.04       81153452 B   ---   --   ---xx   flac  0.7027  05 Tangled Up In Blue.flac
+     3:31.47       37330988 B   ---   --   ---xx   flac  0.5695  06 Searching For A Soldier's Grave.flac
+     2:54.19       30738332 B   ---   --   ---xx   flac  0.6730  07 Country Pie.flac
+     5:19.43       56372780 B   ---   --   ---xx   flac  0.5407  08 Tryin' To Get To Heaven.flac
+     6:37.52       70153148 B   ---   --   ---xx   flac  0.6849  09 Maggie's Farm.flac
+     5:25.67       57487628 B   ---   --   ---xx   flac  0.6279  10 I Threw It All Away.flac
+     6:35.19       69722732 B   ---   --   ---xx   flac  0.6635  11 Cold Irons Bound.flac
+     4:41.12       49596668 B   ---   --   ---xx   flac  0.6750  12 Leopard-Skin Pill-Box Hat.flac
+    65:13.25      690312528 B                            0.6363  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd00-11-01-b.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:02.21       63906236 B   ---   --   ---xx   flac  0.6823  01 Things Have Changed.flac
+     6:56.33       73460060 B   ---   --   ---xx   flac  0.6745  02 Like A Rolling Stone.flac
+     4:13.19       44673932 B   ---   --   ---xx   flac  0.5401  03 If Dogs Run Free.flac
+     4:37.18       48905180 B   ---   --   ---xx   flac  0.6941  04 All Along The Watchtower.flac
+     3:36.53       38227100 B   ---   --   ---xx   flac  0.5958  05 Blue Bonnet Girl.flac
+     4:50.25       51214844 B   ---   --   ---xx   flac  0.6364  06 I Shall Be Released.flac
+     5:56.59       62937212 B   ---   --   ---xx   flac  0.6914  07 Highway 61 Revisited.flac
+     5:42.69       60491132 B   ---   --   ---xx   flac  0.6182  08 Blowin' In The Wind.flac
+    41:55.72      443815696 B                            0.6478  (8 files)
+===================
+===================
+===================

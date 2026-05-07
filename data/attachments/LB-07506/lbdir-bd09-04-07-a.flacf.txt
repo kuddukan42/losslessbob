@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-07-a.flacf 
+=================== 
+=================== 
+=================== 
+a40f190d9e26ed4007c607264761ecac  101 Cats In The Well.flac
+d53ca28eaa24991826be02af08dfec0c  102 The Times They Are A-Changin`.flac
+7306c90521695a679585e4de39151853  103 I`ll Be Your Baby Tonight.flac
+11f72d89e9caf6b62f7d3b879a3e0bf4  104 Stuck Inside Of Mobile.flac
+b22a387656f7fb0bba8ffc2bbe7d85a0  105 John Bown.flac
+83470c1c8f6d7104f565ff077283f618  106 Rollin And Tumblin.flac
+a8d802fb0a570d4315931e5096c62d6d  107 Chimes Of Freedom.flac
+8d01735be1dbd8ad5511df53aca48701  108 Tweedle Dee And Tweedle Dum.flac
+b130ea55f2073431030b307335468d9b  109 Masters Of War.flac
+a413d47400284e753ab6f2b25e4ed88f  201 Honest With Me.flac
+92f3662c79aa5782252bf3fc7db813ed  202 Beyond The Horizon.flac
+aa433d5a58ecfcf4b9e9de0e1797d26e  203 Highway 61 Revisited.flac
+374e4c7ef87a8941759217a8e1191c8d  204 Po  Boy.flac
+8ce8662b84b1b8dd71ac082d2d0ebc66  205 Thunder On The Mountain.flac
+26164ac774d6f6596a8e70847addbc24  206 Like A Rolling Stone.flac
+a21cb71a50daf1f3b3e297e359e9aec1  207 All Along The Watchtower.flac
+389572ac30c38629dd2fb99b4b41b4ea  208 Spirit On The Water.flac
+eabddc2d911fa48088c0a1eaa478045f  209 Blowin In The Wind.flac
+1907352f7698e1da239ddc1b6a6c084f  Bob Dylan Paris 7th April 2009.md5
+a11f5badc09c53f38c7e71ea814d6108  disc 1.log
+dc2e07afe7acdedaa8d81a4d15766e74  disc 2.log
+271629c6062ce75e3386aff6082db54c  ffp.txt
+ed2ae836aea63a1e87d97b05cfdb920b  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-07-a.flacf 
+=================== 
+=================== 
+=================== 
+101 Cats In The Well.flac:0eb75ec4c7218e567c20dd01c7d31005
+102 The Times They Are A-Changin`.flac:5b7be455f5af06ad68d1175263766bd5
+103 I`ll Be Your Baby Tonight.flac:d5c4ee097bb45231e15cf0b33ca30896
+104 Stuck Inside Of Mobile.flac:c91c91c6ca943eb41f59d0fa9463a226
+105 John Bown.flac:ad85eba59f143e60d9dd4271bbba8d36
+106 Rollin And Tumblin.flac:948e2f8aafbec0810263c28fa3f7c8fa
+107 Chimes Of Freedom.flac:d659160d682d6a5c92967d8b2eabeff1
+108 Tweedle Dee And Tweedle Dum.flac:9135c0014b9ce50b7a84a96ec90fe756
+109 Masters Of War.flac:56472e17054fc407e2dc68fd39f632dc
+201 Honest With Me.flac:37f6c84be26cea569211df80707d0d67
+202 Beyond The Horizon.flac:ba7c9a5a50cc67bcc3a5b43e9e12b8a4
+203 Highway 61 Revisited.flac:eb16c3de74a8fe990ddeebad08e5f746
+204 Po  Boy.flac:51d034c74b3a1739b5893cd9c60e6107
+205 Thunder On The Mountain.flac:5464e05d5f8be2469c08dda7251159f2
+206 Like A Rolling Stone.flac:4bbb7c76465a543c64990307a714f483
+207 All Along The Watchtower.flac:b075a4228a38709a633ceab7972fe9b4
+208 Spirit On The Water.flac:3e20921d9b77b335db269113c48e1300
+209 Blowin In The Wind.flac:1c56ac42c5125b00aed0d58ce79c2b14
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-07-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.59       49530812 B   ---   --   ---xx   flac  0.5516  101 Cats In The Well.flac
+     5:15.41       55662476 B   ---   --   ---xx   flac  0.5598  102 The Times They Are A-Changin`.flac
+     5:10.63       54832220 B   ---   --   ---xx   flac  0.5600  103 I`ll Be Your Baby Tonight.flac
+     5:50.40       61834124 B   ---   --   ---xx   flac  0.5678  104 Stuck Inside Of Mobile.flac
+     5:47.14       61243772 B   ---   --   ---xx   flac  0.5462  105 John Bown.flac
+     6:56.04       73391852 B   ---   --   ---xx   flac  0.5483  106 Rollin And Tumblin.flac
+     7:01.30       74335004 B   ---   --   ---xx   flac  0.5624  107 Chimes Of Freedom.flac
+     4:50.39       51247772 B   ---   --   ---xx   flac  0.5132  108 Tweedle Dee And Tweedle Dum.flac
+     5:27.30       57753404 B   ---   --   ---xx   flac  0.5466  109 Masters Of War.flac
+     7:00.43       74189180 B   ---   --   ---xx   flac  0.5330  201 Honest With Me.flac
+     6:06.02       64567148 B   ---   --   ---xx   flac  0.5145  202 Beyond The Horizon.flac
+     7:14.64       76708172 B   ---   --   ---xx   flac  0.5469  203 Highway 61 Revisited.flac
+     4:15.70       45146684 B   ---   --   ---xx   flac  0.5057  204 Po  Boy.flac
+     6:39.43       70484780 B   ---   --   ---xx   flac  0.5524  205 Thunder On The Mountain.flac
+     9:40.36      102396716 B   ---   --   ---xx   flac  0.5090  206 Like A Rolling Stone.flac
+     5:06.46       54086636 B   ---   --   ---xx   flac  0.5322  207 All Along The Watchtower.flac
+     6:50.61       72467516 B   ---   --   ---xx   flac  0.5324  208 Spirit On The Water.flac
+     7:55.43       83891180 B   ---   --   ---xx   flac  0.5233  209 Blowin In The Wind.flac
+   111:50.53     1183769448 B                            0.5386  (18 files)
+=================== 
+=================== 
+=================== 

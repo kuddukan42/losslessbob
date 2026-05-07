@@ -1,0 +1,138 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-09-at-the-globe-arena.flacf 
+=================== 
+=================== 
+=================== 
+7edb100d84f492e08e1b806f8e153efe  bd98-06-09-at-the-globe-arena-d1t01.flac
+5cba70780e24a1482f538e7bb71c951e  bd98-06-09-at-the-globe-arena-d1t02.flac
+97f0eac93531a4537eff5e79b120650d  bd98-06-09-at-the-globe-arena-d1t03.flac
+e26f79735c27bda35c2723ff243ac4a7  bd98-06-09-at-the-globe-arena-d1t04.flac
+ec6f7862a5e8d2f0ffcc7f2ae03c2ebe  bd98-06-09-at-the-globe-arena-d1t05.flac
+1b932054bad31feb9a9d2078218b8b6b  bd98-06-09-at-the-globe-arena-d1t06.flac
+b81c2fe7f2a6a48911fd6bff7938f528  bd98-06-09-at-the-globe-arena-d1t07.flac
+b04b8b0fdac7f95d3f1ae4570093b5f3  bd98-06-09-at-the-globe-arena-d1t08.flac
+e2868f15d8f0f0ad1d853e81a5a5da4c  bd98-06-09-at-the-globe-arena-d1t09.flac
+bbf1a90613e71c6c981876f9fb196bb5  bd98-06-09-at-the-globe-arena-d1t10.flac
+8c58c0d6f429cbb50a0d14cbe2540d5c  bd98-06-09-at-the-globe-arena-d1t11.flac
+0a5d3c600e00d09e2388b24e68663abe  bd98-06-09-at-the-globe-arena-d1t12.flac
+77e4fb43e7f704c4d926e58a39ba554e  bd98-06-09-at-the-globe-arena-d2t01.flac
+7002063c29e93060f10cfcfc350781a8  bd98-06-09-at-the-globe-arena-d2t02.flac
+dbbe636f33a63a53fdfd25715b7b1eb7  bd98-06-09-at-the-globe-arena-d2t03.flac
+9ec3265df2cafdc9f432702529b6525c  bd98-06-09-at-the-globe-arena-d2t04.flac
+dd5cd8086aaa30b24506831eef4d1de2  bd98-06-09-at-the-globe-arena-d2t05.flac
+624dd7c9f4bfc80f573116ec598bfcf1  bd98-06-09-at-the-globe-arena-d2t06.flac
+1c24dc553a901b77f8511358fc539419  bd98-06-09-at-the-globe-arena-d2t07.flac
+d9df8abe142db081290ce69f3acf8979  bd98-06-09-at-the-globe-arena-d2t08.flac
+b1b7815eb7a69527b8ae8eba0a370cee  bd98-06-09-at-the-globe-arena-d2t09.flac
+d42e97011ee43a253bedc3273a95ca79  bd98-06-09-at-the-globe-arena-d2t10.flac
+04ff156b866a7fe305a14254bda41021  bd98-06-09-at-the-globe-arena-d2t11.flac
+5922c2e11a941113954ad188b4087cb6  bd98-06-09-at-the-globe-arena-d2t12.flac
+2e35f5b83565a29edf958e37d29d6a7e  bd98-06-09-at-the-globe-arena-d3t01.flac
+85f620b165bc6065286971908bf0bd70  bd98-06-09-at-the-globe-arena-d3t02.flac
+7c18a407e26d219f0e60975c33379f12  bd98-06-09-at-the-globe-arena-d3t03.flac
+2a3cd415a0ebc58111a965a0d4c3d4c8  bd98-06-09-at-the-globe-arena-d3t04.flac
+9c13da68f58efe845d5117813b76e40b  bd98-06-09-at-the-globe-arena-d3t05.flac
+3bd2df25c8e3e6be39235b7294966452  bd98-06-09-at-the-globe-arena-d3t06.flac
+02a5a57d77bc7cd03f76499527869d24  bd98-06-09-at-the-globe-arena-d3t07.flac
+a1aaa99b9a8fdd8493d663f740a8c33f  bd98-06-09-at-the-globe-arena-d3t08.flac
+c34c4315a81582b2c745449645e5eeeb  bd98-06-09-at-the-globe-arena-d3t09.flac
+e46164bdaeffae9e296f94d10514560e  bd98-06-09-at-the-globe-arena-d3t10.flac
+7affdd3442cce0a3fc2d641dcc5e4282  bd98-06-09-at-the-globe-arena-d3t11.flac
+0f0ac0812818775bba05ca074fdb646e  bd98-06-09-at-the-globe-arena-d3t12.flac
+85abb75d6f3c90a1d7bedeaf591621fe  bd98-06-09-at-the-globe-arena-d3t13.flac
+68a87392c07533248bc645029d3f9f03  bd98-06-09-at-the-globe-arena.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-09-at-the-globe-arena.flacf 
+=================== 
+=================== 
+=================== 
+bd98-06-09-at-the-globe-arena-d1t01.flac:25266025a0de1a3f4a1134937958bba8
+bd98-06-09-at-the-globe-arena-d1t02.flac:b8e9fa3979a65c8c5d244c882b36e776
+bd98-06-09-at-the-globe-arena-d1t03.flac:7278879d807eb3dde5ffb12755c65da2
+bd98-06-09-at-the-globe-arena-d1t04.flac:5614158d6c02dc21c451136390f780bc
+bd98-06-09-at-the-globe-arena-d1t05.flac:f4c2d2aa0e57f8bcce602e41fb6d6b17
+bd98-06-09-at-the-globe-arena-d1t06.flac:83d65ec0a1b954b10fa1061ce607bee9
+bd98-06-09-at-the-globe-arena-d1t07.flac:ab553f36659b71dabb7c62614404c49e
+bd98-06-09-at-the-globe-arena-d1t08.flac:aaa4e49a2d750544557c090146907bdb
+bd98-06-09-at-the-globe-arena-d1t09.flac:21eff1beb54c372c5477c8ce48456037
+bd98-06-09-at-the-globe-arena-d1t10.flac:15da56fe334a39ae957affbdeecfb0d5
+bd98-06-09-at-the-globe-arena-d1t11.flac:c83e09613111df9ec208dfec5e3f34ee
+bd98-06-09-at-the-globe-arena-d1t12.flac:13ebf51c74760bd9189f113cca67d214
+bd98-06-09-at-the-globe-arena-d2t01.flac:291bcf367d741ab281308bf92f6b79df
+bd98-06-09-at-the-globe-arena-d2t02.flac:c1d2ac2289adcb71cfeb860acbc36d83
+bd98-06-09-at-the-globe-arena-d2t03.flac:efacaf35e9deb4cf2cd327b3502c7ed9
+bd98-06-09-at-the-globe-arena-d2t04.flac:7058b29057297225aadb69fe01b5516b
+bd98-06-09-at-the-globe-arena-d2t05.flac:d9d66473127206ff1f906d6e0b35f6e6
+bd98-06-09-at-the-globe-arena-d2t06.flac:13915c28c5f235ee10c7d7058346e577
+bd98-06-09-at-the-globe-arena-d2t07.flac:45e013064a96e230315df4e20b5c0ffb
+bd98-06-09-at-the-globe-arena-d2t08.flac:62bce5d8d71b55b4c4cbe42610ab7b65
+bd98-06-09-at-the-globe-arena-d2t09.flac:e6ecff30d0b2901e6f39e38c6a06df1a
+bd98-06-09-at-the-globe-arena-d2t10.flac:f90d2b408c1dfee06167c0e94f2b6985
+bd98-06-09-at-the-globe-arena-d2t11.flac:4ba9b8e950ee9f8a64c4ad7f6ae477cb
+bd98-06-09-at-the-globe-arena-d2t12.flac:024d0f765fe9041c413eb313d7a117b9
+bd98-06-09-at-the-globe-arena-d3t01.flac:3dd23d1f966777e37baf4a7285a2c1b8
+bd98-06-09-at-the-globe-arena-d3t02.flac:a083f4bd99d0662d6aea7ae723df3ecc
+bd98-06-09-at-the-globe-arena-d3t03.flac:706c1f0cf2dd47a598cd016c26e5fbe1
+bd98-06-09-at-the-globe-arena-d3t04.flac:bfdaadde1c5c0f106980ad018b71078e
+bd98-06-09-at-the-globe-arena-d3t05.flac:622a83059e2fa9e65b5e47ab41245376
+bd98-06-09-at-the-globe-arena-d3t06.flac:4864b626d93b044daaf48cc0d69190cf
+bd98-06-09-at-the-globe-arena-d3t07.flac:46947cecc53f53a3a4e45b93ead4c800
+bd98-06-09-at-the-globe-arena-d3t08.flac:65c7bfc05d5f4d7cea1a5ad38b2c0877
+bd98-06-09-at-the-globe-arena-d3t09.flac:3ead01cc5e94e181287b8443ba2c4edf
+bd98-06-09-at-the-globe-arena-d3t10.flac:cd9539c5ea32bc7e8fff3512e003fba5
+bd98-06-09-at-the-globe-arena-d3t11.flac:6ed64d7a6d10db5f4b77c8d2d9b75b1b
+bd98-06-09-at-the-globe-arena-d3t12.flac:c17bbbf6db3592291fd1a061876aecb1
+bd98-06-09-at-the-globe-arena-d3t13.flac:eb703de7cc3a94ba596e63cd3cffd29d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-09-at-the-globe-arena.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:49.42        8742428 B   ---   --   ---xx   flac  0.5775  bd98-06-09-at-the-globe-arena-d1t01.flac
+     5:37.02       59451548 B   ---   --   ---xx   flac  0.6715  bd98-06-09-at-the-globe-arena-d1t02.flac
+     5:29.57       58169708 B   ---   --   ---xx   flac  0.6799  bd98-06-09-at-the-globe-arena-d1t03.flac
+     6:46.59       71757212 B   ---   --   ---xx   flac  0.6829  bd98-06-09-at-the-globe-arena-d1t04.flac
+     5:56.32       62873708 B   ---   --   ---xx   flac  0.6564  bd98-06-09-at-the-globe-arena-d1t05.flac
+     7:01.11       74290316 B   ---   --   ---xx   flac  0.7187  bd98-06-09-at-the-globe-arena-d1t06.flac
+     9:29.44      100475132 B   ---   --   ---xx   flac  0.6893  bd98-06-09-at-the-globe-arena-d1t07.flac
+     7:36.27       80501948 B   ---   --   ---xx   flac  0.6918  bd98-06-09-at-the-globe-arena-d1t08.flac
+     7:36.71       80605436 B   ---   --   ---xx   flac  0.7475  bd98-06-09-at-the-globe-arena-d1t09.flac
+     4:52.67       51666428 B   ---   --   ---xx   flac  0.6253  bd98-06-09-at-the-globe-arena-d1t10.flac
+     6:09.44       65195132 B   ---   --   ---xx   flac  0.6920  bd98-06-09-at-the-globe-arena-d1t11.flac
+     8:31.63       90288620 B   ---   --   ---xx   flac  0.6962  bd98-06-09-at-the-globe-arena-d1t12.flac
+     6:49.40       72241724 B   ---   --   ---xx   flac  0.7049  bd98-06-09-at-the-globe-arena-d2t01.flac
+     5:26.02       57511148 B   ---   --   ---xx   flac  0.6682  bd98-06-09-at-the-globe-arena-d2t02.flac
+     6:09.69       65253932 B   ---   --   ---xx   flac  0.7099  bd98-06-09-at-the-globe-arena-d2t03.flac
+     6:34.07       69518108 B   ---   --   ---xx   flac  0.6577  bd98-06-09-at-the-globe-arena-d2t04.flac
+     5:18.46       56203436 B   ---   --   ---xx   flac  0.6313  bd98-06-09-at-the-globe-arena-d2t05.flac
+     8:22.28       88618700 B   ---   --   ---xx   flac  0.6235  bd98-06-09-at-the-globe-arena-d2t06.flac
+     4:15.41       45078476 B   ---   --   ---xx   flac  0.6353  bd98-06-09-at-the-globe-arena-d2t07.flac
+     8:22.38       88642220 B   ---   --   ---xx   flac  0.6183  bd98-06-09-at-the-globe-arena-d2t08.flac
+     7:22.04       77978252 B   ---   --   ---xx   flac  0.6479  bd98-06-09-at-the-globe-arena-d2t09.flac
+     4:04.00       43041644 B   ---   --   ---xx   flac  0.6864  bd98-06-09-at-the-globe-arena-d2t10.flac
+     6:16.15       66361724 B   ---   --   ---xx   flac  0.6611  bd98-06-09-at-the-globe-arena-d2t11.flac
+     9:24.57       99623708 B   ---   --   ---xx   flac  0.6584  bd98-06-09-at-the-globe-arena-d2t12.flac
+     5:48.57       61521308 B   ---   --   ---xx   flac  0.6625  bd98-06-09-at-the-globe-arena-d3t01.flac
+     6:44.25       71324444 B   ---   --   ---xx   flac  0.6720  bd98-06-09-at-the-globe-arena-d3t02.flac
+     5:38.47       59733788 B   ---   --   ---xx   flac  0.7022  bd98-06-09-at-the-globe-arena-d3t03.flac
+     6:12.08       65639660 B   ---   --   ---xx   flac  0.6856  bd98-06-09-at-the-globe-arena-d3t04.flac
+     5:00.27       52983548 B   ---   --   ---xx   flac  0.7034  bd98-06-09-at-the-globe-arena-d3t05.flac
+     6:26.28       68156300 B   ---   --   ---xx   flac  0.6846  bd98-06-09-at-the-globe-arena-d3t06.flac
+     8:21.43       88477580 B   ---   --   ---xx   flac  0.6820  bd98-06-09-at-the-globe-arena-d3t07.flac
+     3:53.06       41115356 B   ---   --   ---xx   flac  0.6694  bd98-06-09-at-the-globe-arena-d3t08.flac
+     4:30.15       47663324 B   ---   --   ---xx   flac  0.6746  bd98-06-09-at-the-globe-arena-d3t09.flac
+     4:30.70       47792684 B   ---   --   ---xx   flac  0.6645  bd98-06-09-at-the-globe-arena-d3t10.flac
+     8:27.34       89514812 B   ---   --   ---xx   flac  0.6528  bd98-06-09-at-the-globe-arena-d3t11.flac
+     6:24.33       67815260 B   ---   --   ---xx   flac  0.6791  bd98-06-09-at-the-globe-arena-d3t12.flac
+     5:33.07       58757708 B   ---   --   ---xx   flac  0.6357  bd98-06-09-at-the-globe-arena-d3t13.flac
+   231:54.66     2454586460 B                            0.6730  (37 files)
+=================== 
+=================== 
+=================== 

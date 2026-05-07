@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-05-11-a.flacf 
+=================== 
+=================== 
+=================== 
+ba3dcced49ce275e2682a5ae85e874da  bd-1991-05-11 Danbury, CT.txt
+3d1175615e1a4db97c052b4ffd7ab25d  bd-1991-05-11-Track01.flac
+bf52001ec077d2a34f31f26daf68ddbe  bd-1991-05-11-Track02.flac
+49d8f58f8d4799033729abcd84bebe40  bd-1991-05-11-Track03.flac
+7e7e3292199f970cc07ea46f01166acd  bd-1991-05-11-Track04.flac
+227e6fe2e235be2c2cfd296c5c8be8d1  bd-1991-05-11-Track05.flac
+934916b3c4dbb056c23c4042d5911092  bd-1991-05-11-Track06.flac
+c4884525ccb100747c3eed00d37fb6f5  bd-1991-05-11-Track07.flac
+a80df5b35d5c77f62867bec0fc8e2084  bd-1991-05-11-Track08.flac
+e595c99795e4830ceccaa32ffba22af5  bd-1991-05-11-Track09.flac
+e75e26fb107821fa87b0dd177fc186bc  bd-1991-05-11-Track10.flac
+0de19d5dc6ca917bd1310cdf9ce5aba3  bd-1991-05-11-Track11.flac
+b31b573c9a1c0ba8ced64be067663796  bd-1991-05-11-Track12.flac
+cdbf436d860a245a0fe382166a05920d  bd-1991-05-11-Track13.flac
+d095af9a20ae66329e995733ed3c4f6c  bd-1991-05-11-Track14.flac
+6ae2d20fd87393019491272dbcf18291  bd-1991-05-11-Track15.flac
+0aa21bcbcfce81173dd0f98dc636f2dc  bd-1991-05-11-Track16.flac
+ce78c81f89c7dad1193079e60d7575e8  bd-1991-05-11-Track17.flac
+a2d290c339ccb09a3aa08e3e723b6328  Torrent File FLAC.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-05-11-a.flacf 
+=================== 
+=================== 
+=================== 
+bd-1991-05-11-Track01.flac:88a3cf6fb60d3a4242afd43a65bf5d55
+bd-1991-05-11-Track02.flac:f47d11a732050b2c44c4d606c0b8affa
+bd-1991-05-11-Track03.flac:f330dee56b9a1bf8c6ff7fba982ce77d
+bd-1991-05-11-Track04.flac:3a4b9881833e7e3187d8a589d00a785c
+bd-1991-05-11-Track05.flac:67ec14f56b4d23b90322bb65734f28d5
+bd-1991-05-11-Track06.flac:9bc886e716fb349da46bdcc57017762f
+bd-1991-05-11-Track07.flac:45473758173114658aefdc4f62ebd248
+bd-1991-05-11-Track08.flac:ec1db604da2144e0e472e7eeb352864f
+bd-1991-05-11-Track09.flac:987b12b4f3ed30f4a0ce576098de5862
+bd-1991-05-11-Track10.flac:c6fcf877a60bee4b201527da018a23cc
+bd-1991-05-11-Track11.flac:69bf6a1b4a83a3a4210023f4f10684fc
+bd-1991-05-11-Track12.flac:ee8529098045e3aa440162c919e91ad3
+bd-1991-05-11-Track13.flac:54dcc5b190515e8987afb075753f1070
+bd-1991-05-11-Track14.flac:7578118317ef113155a88cf5dd2bae8c
+bd-1991-05-11-Track15.flac:97cb63b406c0662063c08a49829ef682
+bd-1991-05-11-Track16.flac:5d9c0775b5046b66439a39faed23df93
+bd-1991-05-11-Track17.flac:111181fa0365c81891a6c26f73404051
+=================== 
+=================== 
+=================== 
+=== shntool for: bd91-05-11-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:11.44       12627932 B   ---   --   ---xx   flac  0.5550  bd-1991-05-11-Track01.flac
+     2:22.00       25048844 B   ---   --   ---xx   flac  0.5859  bd-1991-05-11-Track02.flac
+     3:51.00       40748444 B   ---   --   ---xx   flac  0.5833  bd-1991-05-11-Track03.flac
+     3:15.00       34398044 B   ---   --   ---xx   flac  0.5867  bd-1991-05-11-Track04.flac
+     3:27.00       36514844 B   ---   --   ---xx   flac  0.5856  bd-1991-05-11-Track05.flac
+     5:44.00       60681644 B   ---   --   ---xx   flac  0.6020  bd-1991-05-11-Track06.flac
+     3:10.00       33516044 B   ---   --   ---xx   flac  0.6141  bd-1991-05-11-Track07.flac
+     3:53.00       41101244 B   ---   --   ---xx   flac  0.6150  bd-1991-05-11-Track08.flac
+     4:19.00       45687644 B   ---   --   ---xx   flac  0.6172  bd-1991-05-11-Track09.flac
+     4:20.00       45864044 B   ---   --   ---xx   flac  0.5927  bd-1991-05-11-Track10.flac
+     5:36.00       59270444 B   ---   --   ---xx   flac  0.5985  bd-1991-05-11-Track11.flac
+     4:08.00       43747244 B   ---   --   ---xx   flac  0.6103  bd-1991-05-11-Track12.flac
+     4:16.56       45290156 B   ---   --   ---xx   flac  0.5852  bd-1991-05-11-Track13.flac
+     3:30.19       37088732 B   ---   --   ---xx   flac  0.6158  bd-1991-05-11-Track14.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.5721  bd-1991-05-11-Track15.flac
+     3:28.00       36691244 B   ---   --   ---xx   flac  0.5904  bd-1991-05-11-Track16.flac
+     6:06.57       64696508 B   ---   --   ---xx   flac  0.5926  bd-1991-05-11-Track17.flac
+    67:35.26      715363900 B                            0.5959  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,61 @@
+Kongresový sál, Palác kultury
+Prague, Czech Republic
+March 11, 1995
+
+Off master
+Taper: no info
+
+Olav remaster:
+1st step: Lineage pre-work:
+FLAC DVD-R > WAV > CoolEdit2000 (checking all files: finding that all tracks were just fine, except for Mr. Tambourine Man, d1t7, having long serious/harsh diginoise in several places throughout. Remark: these can be very hard to remove without destroying underlying audio and after cautiously removing/smoothing those parts, regrettably there is ONE spot left where this is quite audible. Sorry that I’m not skilled enough to fix that!)
+
+For your convenience I have added samples of Tambourine Man, named (BEFORE) and (AFTER) in order for you to judge for yourself.
+
+2nd step: T-RackS v2.0 (fixed by boosting the left channel 2.8dB (a 2.7dB boost would be perfect but T-RackS wouldn’t allow that)
+
+3rd step: originally, overall volume level on all tracks was too low; a much needed boost of 5.5dB was implemented. Overall output level is not boosted.
+
+4th step; back to CoolEdit: As with the Brixton 03/29/1995 set, originally, all tracks on this one also were chopped up in the wrong places, resulting in long applause parts at the start of some of the songs; So I took the liberty of taking all the now T-Racks (re)mastered tracks from both CDs and loaded these into CoolEdit, each CD as ONE long track and chopped them into, i.m.o., more correctly spots so that the songs starts with the beginning of the song > FLAC frontend (sector alignment) > FLACs > DIME
+
+
+00. Announcement
+01. Crash On The Levee (Down In The Flood)
+02. If Not For You
+03. All Along The Watchtower
+04. Just Like A Woman
+05. Tangled Up In Blue
+06. Watching The River Flow
+07. Mr. Tambourine Man
+
+08. Boots Of Spanish Leather
+09. It’s All Over Now, Baby Blue
+10. Man In The Long Black Coat
+11. God Knows
+12. Maggie's Farm
+13. (encore)
+14. Shelter From The Storm
+15. It Ain't Me, Babe
+
+
+Concert # 641 of The Never-Ending Tour
+First concert of the 1995 European Spring Tour
+First concert in 1995
+
+Concert # 185 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+7–9, 14 acoustic with the band
+1–5, 7–11, 13, 14 Bob Dylan harmonica
+
+BobTalk:
+I was sitting here last night, got the flu. Listen, you got a good place to recover from the flu! <someone in the audience yells something> Oh, could you say that again. OK, this is an old one, my apology song here (coughs). (before Watching The River Flow)
+
+You can play that! I’m not playing it anyway. Go ahead! (to a woman who had entered the stage and tried to pick up one of Dylan’s guitars during It Ain’t Me, Babe)
+
+Stereo audience recording, 95 minutes
+
+* * * Enjoy your Bobby Hobby * * *

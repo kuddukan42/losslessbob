@@ -1,0 +1,16 @@
+02d8711a1f5d8112fced14746e8e4b5d  Bob Dylan 1993-10-05 San Bernadino.txt
+c2517d1b1f46ff5f3ad2c1b0b0369103  D1\01 Track01.flac
+ab6e633b516af0061c00fd39aef28b22  D1\02 Track02.flac
+cef525767b1a5d1ae7f96b1503b6a993  D1\03 Track03.flac
+9dfe88be6a4476732bdeb074a0ee5f17  D1\04 Track04.flac
+bc422501e10323c5e99d379b5706ec24  D1\05 Track05.flac
+a668fcff69fe39df95b3956ef6a42cf9  D1\06 Track06.flac
+16c4d34def58cbec10b885b05a50d313  D1\07 Track07.flac
+703934fa9a9f81fc004a42bfa37fe173  D1\08 Track08.flac
+9580a1756bbf7ca112dc50badbf3e6a6  D1\09 Track09.flac
+fda45246f196f0c20a5a5e51a05aad23  D2\01 Track01.flac
+3b0974411f569a15754a12c87f1fd92f  D2\02 Track02.flac
+23daa1efc91fcab6efabd16e1243a367  D2\03 Track03.flac
+3cce51d53d63aaf59a014afb89fe37aa  D2\04 Track04.flac
+20d5f2fc1ca2c8fb70bf6977714c1bfe  fingerprintD1.ffp
+7f469e6ab23dc0c1177de8b46f8c837d  fingerprintD2.ffp

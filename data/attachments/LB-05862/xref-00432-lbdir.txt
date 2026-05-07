@@ -1,0 +1,61 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-11-pa-lk.flacf 
+=================== 
+=================== 
+=================== 
+e85fd244bc0300f490103d894f195456  New Orleans 11 Nov 81 (PA).md5
+5ebfb3d79aba78eeb6236469afac2115  note.txt
+aa5750ec7c3f976de228fc716cffbf38  Track01.flac
+2306e403b535f97b058df6649c9fd68b  Track02.flac
+16c2f7d609b797f6ae0d3f306c589a02  Track03.flac
+056e37a3c933e02dcdf061ba036b8145  Track04.flac
+dc2d42422df7b43ebc5c4214144e0594  Track05.flac
+462000078b143b4f82ffe863a9d32319  Track06.flac
+d6c8830725e9686deede4b67a12c532b  Track07.flac
+56bdb36d0598dbe9daef311f43005e05  Track08.flac
+6c4234dc471f267ffa34a72e8abbc4de  Track09 In the garden.flac
+2747f154bd05293696c20bc0323cc03b  Track10 When you gonna wake up.flac
+2b55823494241caa1c5afde946ed2d57  Track11 It's all in the game [cut-in].flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-11-pa-lk.flacf 
+=================== 
+=================== 
+=================== 
+track01.flac:833cfb5fda08b154dc5960ef2b2bb230
+track02.flac:b714bc8e9a4a841f8c0466587f16d537
+track03.flac:d3d96e9a317bd65546eb25c460e04943
+track04.flac:491533476bf727df61f27c97affff28c
+track05.flac:8e7b544623954650903560f9b52de103
+track06.flac:855e1a62e68553a43ee0f3e606194633
+track07.flac:0bef389aa15e464f8feadec3561907b7
+track08.flac:4ec82bc034c21d3d0d629f2bd5a89d56
+track09 in the garden.flac:1829aaff4e30b4003266ce55e882e8a2
+track10 when you gonna wake up.flac:60d4ce26499819163e6c84322f795fbb
+track11 it's all in the game [cut-in].flac:7fe73797bab7c55ebe12afad799b9935
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-11-pa-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.66       66305276 B   ---   --   ---xx   flac  0.7009  Track01.flac
+     3:26.68       36498380 B   ---   --   ---xx   flac  0.6972  Track02.flac
+     3:23.56       35940956 B   ---   --   ---xx   flac  0.6851  Track03.flac
+     4:47.45       50732684 B   ---   --   ---xx   flac  0.6695  Track04.flac
+     3:22.36       35717516 B   ---   --   ---xx   flac  0.6643  Track05.flac
+     3:45.34       39770012 B   ---   --   ---xx   flac  0.6679  Track06.flac
+     3:58.01       41985596 B   ---   --   ---xx   flac  0.6570  Track07.flac
+     1:31.60       16193564 B   ---   --   ---xx   flac  0.7368  Track08.flac
+     6:18.25       66738044 B   ---   --   ---xx   flac  0.7313  Track09 In the garden.flac
+     4:41.67       49726028 B   ---   --   ---xx   flac  0.7273  Track10 When you gonna wake up.flac
+     1:28.68       15683180 B   ---   --   ---xx   flac  0.7242  Track11 It's all in the game [cut-in].flac
+    43:01.01      455291236 B                            0.6955  (11 files)
+=================== 
+=================== 
+=================== 

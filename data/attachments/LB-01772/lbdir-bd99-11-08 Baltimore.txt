@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-08 Baltimore 
+=================== 
+=================== 
+=================== 
+553a590ee61028acc98e9b14bf907230  bd99-11-08.txt
+fdaa6611e30815c3ba7adf672e4f322e  Disk 1\01. I Am The Man Thomas.shn
+9d66182880b695a7792529732607dd99  Disk 1\02. Mr Tambourine Man.shn
+ff7abc8c1bc93a48b7a9de19af79b7b8  Disk 1\03. Visions Of Johanna.shn
+5531327fffe22a9b518db92d29495bc5  Disk 1\04. Ring Them Bells.shn
+b34a7df239adf8c5222fbaaa2b7e060d  Disk 1\05. Tangled Up In Blue.shn
+2a2b1f4ea8d04ad475d254e1b73eddfd  Disk 1\06. Big River.shn
+c6fe9be479be235c52bb5949a82478df  Disk 1\noname.md5
+8cfce10550c87f559eff2301a846ab66  Disk 2\01. Joey.shn
+0fc2777466754dc4f3ff06e3f2b0941e  Disk 2\02. Down Along The Cove.shn
+87be98d9f6c9de96716c73743161fa2d  Disk 2\03. Man In The Long Black Coat.shn
+1d6e762412b1d726f5adbb18029ecd69  Disk 2\04. Tombstone Blues.shn
+99721d37d68d3bf9986238211adff21d  Disk 2\05. Like A Rolling Stone.shn
+e57359c8d0250d0bdce1f0fe6e0de10a  Disk 2\06. Love Sick.shn
+f3c0241c920248de0b1070e893fc6dea  Disk 2\07. Rainly Day Women # 12 & 35.shn
+57d8569c2698e9d7f0f2eba767cffc69  Disk 2\08. Friend Of The Devil.shn
+0d30a400f1c5d939d28171f5d8ec5935  Disk 2\09. Not Fade Away.shn
+44e1fe818db6a0b4434993b020cada3c  Disk 2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-11-08 Baltimore\Disk 1 
+=================== 
+=================== 
+=================== 
+dd1a09f0f85d3227a20dcae7520a06cc  [shntool]  01._I_Am_The_Man_Thomas.wav
+d0465ad2f82291668537e5b228e2d22e  [shntool]  02._Mr_Tambourine_Man.wav
+a1f18bc117a05c0c0b80239664aff164  [shntool]  03._Visions_Of_Johanna.wav
+083db53a72fab4306148422c09b82f4d  [shntool]  04._Ring_Them_Bells.wav
+a02242778d81976506ed318fff2ac97f  [shntool]  05._Tangled_Up_In_Blue.wav
+5ac29e5652281519235273bc6011e021  [shntool]  06._Big_River.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-11-08 Baltimore\Disk 2 
+=================== 
+=================== 
+=================== 
+0d4882b4e298db15155fab5b3e806417  [shntool]  01._Joey.wav
+b6ca195fa65420cc8ad2c4db872343f7  [shntool]  02._Down_Along_The_Cove.wav
+202c7961f0f9d75323f8aa53ef4d2e1e  [shntool]  03._Man_In_The_Long_Black_Coat.wav
+081852f05c2f8d5bde387bafefc72886  [shntool]  04._Tombstone_Blues.wav
+1b9e30f5cdc8b11f1e53136725c3cc1d  [shntool]  05._Like_A_Rolling_Stone.wav
+fe846f87911485f5778ff211501628d3  [shntool]  06._Love_Sick.wav
+31e5c5a883853ab90a83c544732a415e  [shntool]  07._Rainly_Day_Women___12___35.wav
+24344318e611576e3adaa3a2b644ba0e  [shntool]  08._Friend_Of_The_Devil.wav
+bf2dd1c7f6a6305bb6a5c222aa582296  [shntool]  09._Not_Fade_Away.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-08 Baltimore\Disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:42.37       28663868 B   ---   --   -----    wav  1.0000  01._I_Am_The_Man_Thomas.wav
+     7:13.71       76548236 B   ---   --   -----    wav  1.0000  02._Mr_Tambourine_Man.wav
+     8:06.00       85730444 B   ---   --   -----    wav  1.0000  03._Visions_Of_Johanna.wav
+     5:09.63       54655820 B   ---   --   -----    wav  1.0000  04._Ring_Them_Bells.wav
+     9:45.01      103196396 B   ---   --   -----    wav  1.0000  05._Tangled_Up_In_Blue.wav
+     3:58.60       42124364 B   ---   --   -----    wav  1.0000  06._Big_River.wav
+    36:56.07      390919128 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-08 Baltimore\Disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:52.67       83418428 B   ---   --   -----    wav  1.0000  01._Joey.wav
+     4:49.10       51003164 B   ---   --   -----    wav  1.0000  02._Down_Along_The_Cove.wav
+     6:30.25       68854844 B   ---   --   -----    wav  1.0000  03._Man_In_The_Long_Black_Coat.wav
+     6:12.56       65752556 B   ---   --   -----    wav  1.0000  04._Tombstone_Blues.wav
+     9:19.20       98654684 B   ---   --   -----    wav  1.0000  05._Like_A_Rolling_Stone.wav
+     6:20.25       67090844 B   ---   --   -----    wav  1.0000  06._Love_Sick.wav
+     5:39.30       59870204 B   ---   --   -----    wav  1.0000  07._Rainly_Day_Women___12___35.wav
+     7:26.61       78817916 B   ---   --   -----    wav  1.0000  08._Friend_Of_The_Devil.wav
+     4:03.39       42956972 B   ---   --   -----    wav  1.0000  09._Not_Fade_Away.wav
+    58:14.33      616419612 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

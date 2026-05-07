@@ -1,0 +1,92 @@
+Bob Dylan
+Tom Petty & The Heartbreakers
+Lawler Events Center
+Reno, NV
+June 11, 1986
+
+source : aiwa cm-30 > aiwa hf-s1
+transfer from master cassettes 
+taper  : little guy
+transfer : markp
+
+Disc One:
+01 crowd/tuning > intro
+02 So Long, Good Luck And Goodbye
+03 Positively 4th Street
+04 Clean-Cut Kid
+05 Emotionally Yours
+06 Trust Yourself
+07 We Had It All
+08 Masters Of War 
+09 Dylan introduces Petty & the Heartbreakers
+10 Straight Into Darkness
+11 Can't Get Her Out
+12 The Waiting
+13 Breakdown
+14 To Ramona
+15 A Hard Rain's A-Gonna Fall
+16 Song To Woody
+17 I Forgot More Than You'll Ever Know
+18 Just Like A Woman
+
+Disc Two:
+01 Let The Good Times Roll
+02 When The Night Comes Falling From The Sky
+03 //Lonesome Town
+04 Ballad Of A Thin Man
+05 Dylan introduces Petty & the Heartbreakers
+06 So You Want to Be a Rock 'N' Roll Star
+07 I Need To Know
+08 Bye Bye Johnny
+09 Refugee
+10 Rainy Day Women #12 & 35
+11 Seeing The Real You At Last
+12 Across The Borderline
+
+Disc Three:
+01 I And I
+02 Band Introductions
+03 Like A Rolling Stone
+04 In The Garden
+05 Band Of The Hand
+06 Uranium Rock
+07 Knockin' On Heaven's Door
+
+
+D1 Track01.flac:68109f28a8faeb05f2084406c4c94a9f
+D1 Track02.flac:acc9f0e0a4d43041c4040d05a8c1ba00
+D1 Track03.flac:b52631e10bb1f644e86f126e32cfeab2
+D1 Track04.flac:25cd7816c9823b04fcafd87e9b6e4e7a
+D1 Track05.flac:eedc520455c255e104460b7ee61747e7
+D1 Track06.flac:06eb7e77ab568b80febd304cda34a2c4
+D1 Track07.flac:37c7f47bf04a7657994cd6d707faa6fc
+D1 Track08.flac:db60460e169735d8738163e852b53054
+D1 Track09.flac:d2048867dc366d422641f5389b5ce7f0
+D1 Track10.flac:1a065a9b780fc6935e991ac6ab867265
+D1 Track11.flac:74f104856612b03602926383665fe10d
+D1 Track12.flac:dbbf8f1bb3c868fe2445ad75135aa5e9
+D1 Track13.flac:c8c2d5fe14bf99a4a35b843469b7e26c
+D1 Track14.flac:a0178d944ab7575b93ec89c7fe60c298
+D1 Track15.flac:f1fdf3883b36fca0d6851c74eb24cc5a
+D1 Track16.flac:8a841ec493b2867257703508bb3c42be
+D1 Track17.flac:681f68197520b1105beb894ac506a083
+D1 Track18.flac:b6009404025b243b8871edc9a6758518
+D2 Track01.flac:db962f48f9f4d3c8994fe843830dbcde
+D2 Track02.flac:a86c262f1ba70fb8c11d21f5c31054d9
+D2 Track03.flac:decd7f3fcfa4eb86a8d6faacf87c27ce
+D2 Track04.flac:96092aac242cb28dfabb9f3a3fec7242
+D2 Track05.flac:091e0b8b44f42e84078b09cd553678ae
+D2 Track06.flac:dc95253047e660ee3e732f65e1868fae
+D2 Track07.flac:7561a2435a79681715bdb42b430dcb9e
+D2 Track08.flac:4c71897a1a45d805a829c66f7ba5757a
+D2 Track09.flac:fe440e19f4a079d68e2368358cc4a86d
+D2 Track10.flac:91f14a41248f1308900a3bde04ea8b26
+D2 Track11.flac:21f8dcec261ee2f028954908603ae513
+D2 Track12.flac:392aeebc3d1a8a16faf2788e624f9f4d
+D3 Track01.flac:791fc3020c87b2e9ddb52f885e12640e
+D3 Track02.flac:9cd26bfe4f7fb905462ff277ce0ccd57
+D3 Track03.flac:2f79921135d7ecde1c26b9ec2bed638e
+D3 Track04.flac:914852541ba9063defc3d501dff00a17
+D3 Track05.flac:5cfdd36ac985f109bbbd6018a4dc597a
+D3 Track06.flac:9403c3999e734643fe73ecf35dd1c959
+D3 Track07.flac:e5978b6165de8046fe100974e1c9ef68

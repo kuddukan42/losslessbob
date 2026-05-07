@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-hard-to-find.flacf 
+=================== 
+=================== 
+=================== 
+be009ff700b3691bdc1e7a8222773ee3  bd63-hard-to-find-t01.flac
+e81eef0fe4cbc47d4930386724234be5  bd63-hard-to-find-t02.flac
+a51866a172bbcba49d020690cc02df1e  bd63-hard-to-find-t03.flac
+d13171aa7a7e108a4fc64f5067c2e6d5  bd63-hard-to-find-t04.flac
+946cc2ac2668b78d17f7e650049d7c6f  bd63-hard-to-find-t05.flac
+980f4e9dc55a10dae834e5a0842fb3e5  bd63-hard-to-find-t06.flac
+6a00cb5de5f0d11a8d2a0f5ec32f0e2b  bd63-hard-to-find-t07.flac
+3203844acc76ac2a53de29821447e548  bd63-hard-to-find-t08.flac
+f6dd863ee94ef2ec8fda148d5a5f5ff6  bd63-hard-to-find-t09.flac
+70efd7e4a20a1b98335e84a638687422  bd63-hard-to-find-t10.flac
+a08d1b2aa7a01beb9f3cafc860e017db  bd63-hard-to-find-t11.flac
+25aaf72a6076144915710ee883ca925f  bd63-hard-to-find-t12.flac
+ce914a925630102a22c03e5c4ab14373  bd63-hard-to-find-t13.flac
+987b260a2a11d16873286ad600767203  bd63-hard-to-find-t14.flac
+43660c70cc103a3f310f9c637214c5f5  bd63-hard-to-find-t15.flac
+4d4099c86453b10e152e9b13613f42db  bd63-hard-to-find-t16.flac
+1735d24758f479198d5b51d40109e9f2  bd63-hard-to-find-t17.flac
+68cffc8ac9c9835cf48adaa46a0250ba  bd63-hard-to-find-t18.flac
+8c112e3b95393047de456e21b70faf31  bd63-hard-to-find-t19.flac
+9c67cf619e8ae7248d061e49ef432670  bd63-hard-to-find-t20.flac
+179542a50f09e7598b8faf7b8cfab908  bd63-hard-to-find-t21.flac
+0bc6c56e345a8733f56874c32364c599  bd63-hard-to-find.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-hard-to-find.flacf 
+=================== 
+=================== 
+=================== 
+bd63-hard-to-find-t01.flac:1b8c5bfd33524afe17823f5521e6fbc4
+bd63-hard-to-find-t02.flac:df3180f40036d3776cb6a18485ba5518
+bd63-hard-to-find-t03.flac:c78440879a2d5646275e3bef519d09d5
+bd63-hard-to-find-t04.flac:fffe3d55ffa59a9de0975f1c467012d3
+bd63-hard-to-find-t05.flac:4a48836201f843a3c72a95995f9f3676
+bd63-hard-to-find-t06.flac:bfc953d3df5c9dcbe73d9a3d667c727c
+bd63-hard-to-find-t07.flac:060fd62c41dda0de2ec58dd68f256662
+bd63-hard-to-find-t08.flac:a1aa2d8111532d97d4260437f909c26a
+bd63-hard-to-find-t09.flac:c4004113bfa72cad635d0f27b3d6d2d2
+bd63-hard-to-find-t10.flac:e27614eebd0deeb35dfd513e920abae8
+bd63-hard-to-find-t11.flac:a361890e5806521cf463c92dac6d64cc
+bd63-hard-to-find-t12.flac:af2db7057bdc33c35a271e0ba2b16757
+bd63-hard-to-find-t13.flac:9d8d898e54ac1e0b27879cdd3630d2ce
+bd63-hard-to-find-t14.flac:5317f9f348d6bc281779585a0cb9ca9b
+bd63-hard-to-find-t15.flac:8f63f2521664931c5cc010fa3da44f3a
+bd63-hard-to-find-t16.flac:6f9d2220b9a33163ceedcdc65e31404c
+bd63-hard-to-find-t17.flac:d06875b2ee528df83337f146b14a097b
+bd63-hard-to-find-t18.flac:1411670e5d3be72379593b339d6e84cb
+bd63-hard-to-find-t19.flac:63cd84267a0e58d3c1a5458d9bca1aac
+bd63-hard-to-find-t20.flac:7855f0204c80fb16ea10885ade108f04
+bd63-hard-to-find-t21.flac:0fc2a978d87c4a340b89422dd6e0ba1a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-hard-to-find.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.20       34797884 B   ---   --   ---xx   flac  0.6151  bd63-hard-to-find-t01.flac
+     2:40.60       28365164 B   ---   --   ---xx   flac  0.5971  bd63-hard-to-find-t02.flac
+     3:11.65       33845324 B   ---   --   ---xx   flac  0.5389  bd63-hard-to-find-t03.flac
+     4:25.17       46786028 B   ---   --   ---xx   flac  0.6290  bd63-hard-to-find-t04.flac
+     5:23.10       57000764 B   ---   --   ---xx   flac  0.6207  bd63-hard-to-find-t05.flac
+     4:34.63       48481820 B   ---   --   ---xx   flac  0.5965  bd63-hard-to-find-t06.flac
+     2:56.65       31199324 B   ---   --   ---xx   flac  0.5501  bd63-hard-to-find-t07.flac
+     3:33.57       37707308 B   ---   --   ---xx   flac  0.6586  bd63-hard-to-find-t08.flac
+     2:48.65       29788124 B   ---   --   ---xx   flac  0.6889  bd63-hard-to-find-t09.flac
+     7:24.13       78352220 B   ---   --   ---xx   flac  0.6308  bd63-hard-to-find-t10.flac
+     3:40.35       38890364 B   ---   --   ---xx   flac  0.6320  bd63-hard-to-find-t11.flac
+     3:26.35       36420764 B   ---   --   ---xx   flac  0.6599  bd63-hard-to-find-t12.flac
+     4:33.67       48314828 B   ---   --   ---xx   flac  0.6582  bd63-hard-to-find-t13.flac
+     6:22.55       67514204 B   ---   --   ---xx   flac  0.6344  bd63-hard-to-find-t14.flac
+     3:10.13       33546620 B   ---   --   ---xx   flac  0.6570  bd63-hard-to-find-t15.flac
+     3:17.27       34814348 B   ---   --   ---xx   flac  0.6028  bd63-hard-to-find-t16.flac
+     3:06.58       32946860 B   ---   --   ---xx   flac  0.5196  bd63-hard-to-find-t17.flac
+     3:10.55       33645404 B   ---   --   ---xx   flac  0.6178  bd63-hard-to-find-t18.flac
+     2:30.00       26460044 B   ---   --   ---xx   flac  0.5955  bd63-hard-to-find-t19.flac
+     3:32.02       37401548 B   ---   --   ---xx   flac  0.5345  bd63-hard-to-find-t20.flac
+     2:52.23       30394940 B   ---   --   ---xx   flac  0.4280  bd63-hard-to-find-t21.flac
+    79:59.55      846673884 B                            0.6085  (21 files)
+=================== 
+=================== 
+=================== 

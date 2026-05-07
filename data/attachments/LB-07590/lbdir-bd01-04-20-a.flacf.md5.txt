@@ -1,0 +1,22 @@
+5dfa07324ee608c1207b4a81eb8b9a32  Bob Dylan 2001-04-20 d1\Track01.flac
+8b30d952cd43a89c903417d552516b19  Bob Dylan 2001-04-20 d1\Track02.flac
+3f80a6b9874000b3543ce929e917399d  Bob Dylan 2001-04-20 d1\Track03.flac
+5f6a2cb0304fefc0d51b89f7f84eca99  Bob Dylan 2001-04-20 d1\Track04.flac
+63f3f78ab35ad4f186bacdcf3f4e8637  Bob Dylan 2001-04-20 d1\Track05.flac
+a73965e69ec07d30001ec6517144d071  Bob Dylan 2001-04-20 d1\Track06.flac
+0c13d6d7cee53cab9c481b6d4a35c688  Bob Dylan 2001-04-20 d1\Track07.flac
+c70cf45eea0f88fb66f12f0110e2b6ce  Bob Dylan 2001-04-20 d1\Track08.flac
+82089720671a46db94c142a8527e7c9c  Bob Dylan 2001-04-20 d1\Track09.flac
+d6a0195a2423de2af25465859b7af235  Bob Dylan 2001-04-20 d1\Track10.flac
+1c0586733b72bb9786b34647353e9d85  Bob Dylan 2001-04-20 d1\Track11.flac
+608ccf93606d0abf99a3f3365dfe55f7  Bob Dylan 2001-04-20 d1\Track12.flac
+30a892cb74c8934910df9e790568922e  Bob Dylan 2001-04-20 d2\Track01.flac
+7dc96cb8a51592ef9948de2f6b8b72d5  Bob Dylan 2001-04-20 d2\Track02.flac
+95e83086b6c2ba2c07067360e2f85710  Bob Dylan 2001-04-20 d2\Track03.flac
+8228018ad83a8908f1a26de4621bd2d7  Bob Dylan 2001-04-20 d2\Track04.flac
+9441c9f73eea0de5d89040b36438ef34  Bob Dylan 2001-04-20 d2\Track05.flac
+0b3a225cdc20bb0f8386c58c67137ea4  Bob Dylan 2001-04-20 d2\Track06.flac
+a5aa344d24395306d89002683cea80e1  Bob Dylan 2001-04-20 d2\Track07.flac
+8b330803710cb3c8e360f5346b9948bc  Bob Dylan 2001-04-20 d2\Track08.flac
+8948aa05f3e2983ee6c8ef06d5037175  Bob Dylan 2001-04-20 Kearney, NE, USA.md5
+36c3eca45430f6f3627e71d5cd741593  info.txt

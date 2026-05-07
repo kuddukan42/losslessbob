@@ -1,0 +1,15 @@
+01 Jokerman.flac:f2c593588417c65e8f38a9b5ab9fcd33
+02 Lay Lady Lay.flac:5442dc0460d942bc5a382f511a734da2
+03 All Along The Watchtower.flac:f9c75f3af28d8afe5f028c02b6b2e1db
+04 Positively Fourth Street.flac:622a511df9e7c905bfc2ace5cbfd03dd
+05 Tangled Up in Blue.flac:206ac66ab2d657d5863394f3e54b949a
+06 Under The Red Sky.flac:78add44176a7ecb851c6ab932eabe892
+07 Mama You Been On My Mind.flac:7ac46a552ff83502ac8d6f9cddc850df
+08 Masters Of War.flac:ab951d29180266adf3f6d3137857f688
+09 To Ramona.flac:d1340931c19c67c119530bf934dd4522
+10 God Knows.flac:49bbe57281c431ec92f8d89fe33afc1c
+11 In The Garden.flac:9431f9c74a00aede5a226e31ebae5f41
+12 She Belongs To Me.flac:7377ed96ea9384104debdb8ef5e86c72
+13 Maggies Farm.flac:9e007dea5d465de72b41aa3b854b217d
+14 Ballad Of A Thin Man.flac:a5784595724dab57de44dae274bc2d6c
+15 It Aint Me Babe.flac:be6cce9af2c54425c33bfca066ea208d

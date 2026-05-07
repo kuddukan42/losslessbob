@@ -1,0 +1,44 @@
+Bob Dylan
+Appalachian State University
+Holmes Center
+Boone, North Carolina
+April 7, 2004
+  
+Disc 1:
+01. introduction [01:13]
+02. The Wicked Messenger [04:27]
+03. She Belongs To Me [05:22]
+04. It's Alright, Ma (I'm Only Bleeding) [07:52]
+05. Girl Of The North Country [05:42]
+06. Watching The River Flow [06:42]
+07. Joey [08:39]
+08. Highway 61 Revisited [07:04]
+09. Tears Of Rage [07:06]
+10. Stuck Inside Of Mobile With The Memphis Blues Again [07:16]
+11. Every Grain Of Sand [06:32] 
+12. High Water (For Charley Patton) [06:50]
+Total time: [74:52]
+
+Disc 2:
+01. Honest With Me [06:51]
+02. Ballad Of Hollis Brown [05:10]
+03. Summer Days [11:11]
+    (encore) 
+04. Cat's In The Well [05:02]
+05. Like A Rolling Stone [06:30]
+06. band introduction [00:53]
+07. All Along The Watchtower [05:56]
+Total time: [41:38]
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel
+Freddy Koella - guitar, slide guitar
+George Recile - drums
+Tony Garnier - bass 
+
+source: soomlos
+fob center ga floor
+at853's > denecke ad-20 > sony tcd-d8
+sony tcd-d8 > m-audio mt1 > usb > harddrive
+audacity > cd wave > flac

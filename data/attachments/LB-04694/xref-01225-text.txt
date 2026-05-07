@@ -1,0 +1,132 @@
+===================
+===================
+===================
+=== (BobDylan) 1988-06-15 A WANDERER BY TRADE.ffp
+===================
+===================
+===================
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_101.flac:16fa51e07f2de69653c72dc61f6273d8
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_102.flac:a4d44e561b89bbfd3979f10463092950
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_103.flac:0edfdc1273b008b1342515e723f151fd
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_104.flac:6500fc73262edc9ab458a3576f03986e
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_105.flac:0e6240d55aba02bfa610cf65d6e22fca
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_106.flac:403508d309fce795a826f939a0797295
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_107.flac:75f779045d5ff9220e7bdd11a7687839
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_108.flac:673d8dfc1c8de5a60527e20a0a375db7
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_109.flac:9981cbe1b866aaee1d085cf03f9dca4b
+A WANDERER BY TRADE [CD1]\BD 1988-06-15_110.flac:e01942719d7e3463b69cc6f57dfcdbe3
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_201.flac:85ca0d8f62f64df65997e4ffb2c6290e
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_202.flac:0e252b79ee6e256a9e7b30ab84f75857
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_203.flac:500cf72f90e91efc68b9d3436090a272
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_204.flac:cf0664cfdc29c1d5fdb37b0e35359a5b
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_205.flac:bab172755647587f2dfac3246efab7ba
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_206.flac:6e01ed1d95f49632de508773396ba793
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_207.flac:8219a0e62569061134f362cce6753496
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_208.flac:a727760cc6f9c371e5a560861f8cf2f9
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_209.flac:65b1373b90c5dbaf2702190089749921
+A WANDERER BY TRADE [CD2]\BD 1988-06-15_210.flac:3a977f12d72a2c187222988974f879db
+===================
+===================
+===================
+=== (BobDylan) 1988-06-15 A WANDERER BY TRADE.md5
+===================
+===================
+===================
+7500068cf8ffb143ca2dfc6cabf7cb60 *1988-06-15 A WANDERER BY TRADE.txt
+29a9cf8259a4324a1dac9c0a00526f2f *A WANDERER BY TRADE [CD1]\A WANDERER BY TRADE [CD1].ffp
+17f803062c8277a84d3b602bd75e640b *A WANDERER BY TRADE [CD1]\BD 1988-06-15_101.flac
+e476b1f6b40ba937f6516695172988a5 *A WANDERER BY TRADE [CD1]\BD 1988-06-15_102.flac
+7dfe4f61e2816ec9b50b24f3566e00b3 *A WANDERER BY TRADE [CD1]\BD 1988-06-15_103.flac
+a8f903ef7cc6d894dbec12546c9f2ee9 *A WANDERER BY TRADE [CD1]\BD 1988-06-15_104.flac
+c65ba34284109cfb56d53a5b7dce8fba *A WANDERER BY TRADE [CD1]\BD 1988-06-15_105.flac
+38dd48e6ddec3734fa30332ada09f4a8 *A WANDERER BY TRADE [CD1]\BD 1988-06-15_106.flac
+2db16761ba60bd927ed242563f584773 *A WANDERER BY TRADE [CD1]\BD 1988-06-15_107.flac
+17eae052ac7d960f4c7a1bcbb4187f3b *A WANDERER BY TRADE [CD1]\BD 1988-06-15_108.flac
+87c95385773473e6f32b6132678717ef *A WANDERER BY TRADE [CD1]\BD 1988-06-15_109.flac
+62e89e9c3887f5ece1190427f5aff10e *A WANDERER BY TRADE [CD1]\BD 1988-06-15_110.flac
+dca739a914be0aa5993487a782c5a396 *A WANDERER BY TRADE [CD2]\A WANDERER BY TRADE [CD2].ffp
+58a96e0ae53333c229763a6a81c9ab3b *A WANDERER BY TRADE [CD2]\BD 1988-06-15_201.flac
+51ebae36de4fce7006eb15ea762d58b6 *A WANDERER BY TRADE [CD2]\BD 1988-06-15_202.flac
+3018e2edbb268c348f0a51a2241e684b *A WANDERER BY TRADE [CD2]\BD 1988-06-15_203.flac
+7f4c26789b071b28ce898c626f580469 *A WANDERER BY TRADE [CD2]\BD 1988-06-15_204.flac
+3fae1863bd367b6578e635800692368d *A WANDERER BY TRADE [CD2]\BD 1988-06-15_205.flac
+fc2ada0aadf94719e9c510a330a9845f *A WANDERER BY TRADE [CD2]\BD 1988-06-15_206.flac
+73a27e6ac851cee0b205cfabc8f8393d *A WANDERER BY TRADE [CD2]\BD 1988-06-15_207.flac
+7f564dc4701d03cf3775b387f501dd81 *A WANDERER BY TRADE [CD2]\BD 1988-06-15_208.flac
+2154575b9becd8ebc109511983839847 *A WANDERER BY TRADE [CD2]\BD 1988-06-15_209.flac
+a95c93b122ed598209c518ba1b651370 *A WANDERER BY TRADE [CD2]\BD 1988-06-15_210.flac
+===================
+===================
+===================
+=== 1988-06-15 A WANDERER BY TRADE.txt
+===================
+===================
+===================
+Bob Dylan
+
+Fiddler's Green Amphitheatre
+Denver, Colorado
+15 June 1988
+
+* A WANDERER BY TRADE *
+A Southside Butcher Production
+
+CD 1
+1. Subterranean Homesick Blues
+2. One More Cup Of Coffee (Valley Below)
+3. It's All Over Now, Baby Blue
+4. Stuck Inside Of Mobile With The Memphis Blues Again
+5. You're A Big Girl Now
+6. Ballad Of A Thin Man
+7. Mama, You Been On My Mind
+8. Eileen Aroon (trad., arr. Clancy Brothers and Tommy Makem)
+9. Don't Think Twice, It's All Right
+10. Just Like A Woman
+
+CD 2
+
+11. Seeing The Real You At Last
+12. Simple Twist Of Fate
+13. Like A Rolling Stone
+14. A Hard Rain's A-Gonna Fall
+15. Maggie's Farm
+
++ Bonustracks
+
+#16 Tangled Up In Blue 18/06/1988
+#17 It Aint Me Babe  18/06/1988
+#18 Gotta Serve Somebody  18/06/1988
+#19 Tommorrow Is A Long Time 26/06/1988
+#20 Shelter From The Storm  26/06/1988
+
+Concert # 6 of The Never-Ending Tour. Concert # 6 of the Interstate 88 Tour, part 1: Summer Tour of North America.
+Concert # 6 with the first Never-Ending Tour Band: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Kenny Aaronson
+(bass), Christopher Parker (drums).
+7-9 and 14 Bob Dylan (vocal & guitar), G.E. Smith (guitar).
+Notes.
+2 first performance since 1978.
+7 first performance since 1975.
+8 live debut.
+BobTalk:
+Everything's OK? Yeah... I guess so. (after Stuck Inside Of Mobile With The Memphis Blues Again)
+9 new songs (60%) compared to previous concert. 5 new songs for this tour.
+Stereo audience recording, 85 minutes.
+
+***************************************************
+I recieved the original Audio CD-Rs from the 
+"southside butcher" long time ago. 
+Maybe in 2002 or 2003
+Ripped  with EAC (secure mode)
+First converted the tracks to "shn", 
+reencoded now to wav with TLH.
+Flac Frontend 1.7.1 => Flac in 2012
+MD5 and ffp with TLH
+enjoy
+-ebbbi-
+
+
+
+
+===================
+===================
+===================

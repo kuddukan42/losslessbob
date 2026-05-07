@@ -1,0 +1,128 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-22-cc.flacf 
+=================== 
+=================== 
+=================== 
+9a427e61745e41beec8791698f1a3d29  bd05-11-22-cc-LB-3827.txt
+828db00246fc86bd32ef385373ab3b64  bd05-11-22-cc.doc
+30fd01c86184b6e4c363cfae0f974990  bd05-11-22-cc.txt
+7157fca4fa5dff19248854e189ca29be  cd 1\01 - Intro.flac
+a235f777e4de7e798d53f947ae5a0489  cd 1\02 - Rumble.flac
+381e145e63e839fb60aedae4b0cdd8cb  cd 1\03 - Maggie_s farm.flac
+44af4c1ca4e33a09fa62d15111e1950d  cd 1\04 - Love Minus Zero_No Limit.flac
+38dc16c5a2ad3bc8255ade1484ce7c0b  cd 1\05 - Lonesome Day Blues.flac
+dc73cd575de49b6e44c8c4984141245d  cd 1\06 - Positively 4th Street.flac
+aeba898b8a640bad9bac342cbefa9c64  cd 1\07 - Most Likely You Go Your Way.flac
+b990875f32f029729d91d65c1635615b  cd 1\08 - Cold Irons Bound.flac
+ecc8735f0c215b196d9892dfe66103a5  cd 1\09 - Girl of the North Country.flac
+02085e16d836a582ae2eb73b342d0c26  cd 1\10 - I Don_t Believe You.flac
+e6923ce5324aec99eaf5e540a25e7056  cd 1\11 - John Brown.flac
+a01e7bac35b108c8c42ad6d0768d0dc4  cd 1\12 - Stuck Inside of Mobile With th.flac
+7060964e6ea8cf9a577df30c3c1a5df5  cd 1\13 - Mississippi.flac
+d9d4d56966d0cae69cd627abb120001b  cd 1\14 - Highway 61 Revisted.flac
+7a7b4cd7e26bdf08830dacd88563e296  cd 1\cd 1.md5
+fafdfbc86afda56947ffda6652169557  cd 2\01 - Waiting For You.flac
+6a7a3bc8d582f81270dda7ead8dedc8d  cd 2\02 - Summer Days.flac
+377484a0dba36f8b0129bb275363a5a1  cd 2\03 - Like a Rolling Stone.flac
+5eb15a377d1f9bb23526dc412537a481  cd 2\04 - All Along the Wattchtower.flac
+edbea77abbf03e368c89cfa7a3ef73fa  cd 2\05 - Po Boy.flac
+0b36cfd1c8038f30480d9478a4d0ebc8  cd 2\06 - I_ll Remember You.flac
+f5971e45857ff3126a54ee18bd9b8a2f  cd 2\07 - Tombstone Blues.flac
+f25c06f4afdbbae908ba3d56e24e25f2  cd 2\08 - You Win Again w_Willie  Nelson.flac
+c43ce2e78d09d3da45c47423cbec3033  cd 2\09 - Trying To Get To Heaven.flac
+2dd943b4bcebabf416ed19215deb1a97  cd 2\10 - I Shall be Released.flac
+f6b8b9f440ddd0dd9e6f7fb571d6d03f  cd 2\11 - I Want You.flac
+ca5d8ec242a00ffa1e69dc180ced5a55  cd 2\12 - One Too Many Mornings.flac
+7d413bbbcc4fa1ac2faf134b515b6151  cd 2\13 - Down In the Flood.flac
+f9ad12b6657b9283fa3a6c87479867c0  cd 2\cd 2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-22-cc.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+01 - Intro.flac:d238d9d1d99903811c1a017bece7c380
+02 - Rumble.flac:f68593c11996ae3c94518c4fb81e4184
+03 - Maggie_s farm.flac:7466fc6266e2c767a3aa242c8ab7b466
+04 - Love Minus Zero_No Limit.flac:a75ca279d98a06be8f672646f86dd7b2
+05 - Lonesome Day Blues.flac:9ca401b064516a218bd4d0ecde3b6545
+06 - Positively 4th Street.flac:292f658a18064cff032cc63eb48e4196
+07 - Most Likely You Go Your Way.flac:42c313b81643f2334ee1ad676c840686
+08 - Cold Irons Bound.flac:3a990d49f222aaa26e5b838a3f65d7e3
+09 - Girl of the North Country.flac:1e77477333d17c2ac8814f2256b390ef
+10 - I Don_t Believe You.flac:682ee3be8cf637def640926b49972ece
+11 - John Brown.flac:5af5f28bdde4e645dcc851b484f3e4a5
+12 - Stuck Inside of Mobile With th.flac:14fc461d1eddcb589a49b93eb627515e
+13 - Mississippi.flac:d4a09d335a34182b993312bfd2d5342d
+14 - Highway 61 Revisted.flac:1ee86a2b557e7a1023af362ac849b566
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-22-cc.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+01 - Waiting For You.flac:930055190780a7deab04b59a04ce46b9
+02 - Summer Days.flac:0a8d4cb0e93d293e29176e88eae2572f
+03 - Like a Rolling Stone.flac:e2b66ba543823eeac06a4af40cc99149
+04 - All Along the Wattchtower.flac:a012152c87ff19b2d7dd230fd139db0e
+05 - Po Boy.flac:c3581e559645e75da5a8eaa8a23e6c03
+06 - I_ll Remember You.flac:8ca6c0393ded52e37b236ef1be8f6052
+07 - Tombstone Blues.flac:1235bb75b6e63a34f044aed9fb1da770
+08 - You Win Again w_Willie  Nelson.flac:208124b93f9053d325b1a4dab67b8b11
+09 - Trying To Get To Heaven.flac:813b51c46d68d334431f73abe8055270
+10 - I Shall be Released.flac:c58e9617d1f819f45684254a8ed30431
+11 - I Want You.flac:9844054487c03b1b2b8c343e6cf3950a
+12 - One Too Many Mornings.flac:e3878f3262ff235403b201d5b84fd882
+13 - Down In the Flood.flac:793351d57eba6a46d960e77cd2e3b0a1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-22-cc.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:09.66       12326876 B   ---   --   ---xx   flac  0.6245  01 - Intro.flac
+     0:36.69        6512732 B   ---   --   ---xx   flac  0.7069  02 - Rumble.flac
+     4:45.56       50405756 B   ---   --   ---xx   flac  0.7208  03 - Maggie_s farm.flac
+     4:51.44       51435932 B   ---   --   ---xx   flac  0.6679  04 - Love Minus Zero_No Limit.flac
+     7:01.49       74379692 B   ---   --   ---xx   flac  0.7205  05 - Lonesome Day Blues.flac
+     6:16.47       66436988 B   ---   --   ---xx   flac  0.6729  06 - Positively 4th Street.flac
+     7:01.65       74417324 B   ---   --   ---xx   flac  0.7245  07 - Most Likely You Go Your Way.flac
+     5:46.28       61100300 B   ---   --   ---xx   flac  0.6977  08 - Cold Irons Bound.flac
+     5:51.63       62064620 B   ---   --   ---xx   flac  0.6549  09 - Girl of the North Country.flac
+     5:57.18       63017180 B   ---   --   ---xx   flac  0.6978  10 - I Don_t Believe You.flac
+     5:58.39       63242972 B   ---   --   ---xx   flac  0.6565  11 - John Brown.flac
+     8:07.24       85963292 B   ---   --   ---xx   flac  0.7072  12 - Stuck Inside of Mobile With th.flac
+     5:20.54       56575052 B   ---   --   ---xx   flac  0.6732  13 - Mississippi.flac
+     7:58.68       84479180 B   ---   --   ---xx   flac  0.7103  14 - Highway 61 Revisted.flac
+    76:45.15      812357896 B                            0.6929  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-22-cc.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:59.29       52811852 B   ---   --   ---xx   flac  0.6468  01 - Waiting For You.flac
+    10:23.42      109996028 B   ---   --   ---xx   flac  0.6789  02 - Summer Days.flac
+     7:21.72       77961788 B   ---   --   ---xx   flac  0.7045  03 - Like a Rolling Stone.flac
+     7:21.69       77954732 B   ---   --   ---xx   flac  0.6935  04 - All Along the Wattchtower.flac
+     5:19.62       56417468 B   ---   --   ---xx   flac  0.6255  05 - Po Boy.flac
+     7:00.70       74252684 B   ---   --   ---xx   flac  0.6550  06 - I_ll Remember You.flac
+     6:20.37       67119068 B   ---   --   ---xx   flac  0.6946  07 - Tombstone Blues.flac
+     3:50.53       40696700 B   ---   --   ---xx   flac  0.6137  08 - You Win Again w_Willie  Nelson.flac
+     5:37.03       59453900 B   ---   --   ---xx   flac  0.6237  09 - Trying To Get To Heaven.flac
+     5:30.41       58308476 B   ---   --   ---xx   flac  0.6323  10 - I Shall be Released.flac
+     4:39.11       49241516 B   ---   --   ---xx   flac  0.6826  11 - I Want You.flac
+     5:15.39       55657772 B   ---   --   ---xx   flac  0.6841  12 - One Too Many Mornings.flac
+     5:46.46       61142636 B   ---   --   ---xx   flac  0.7664  13 - Down In the Flood.flac
+    79:27.49      841014620 B                            0.6728  (13 files)
+=================== 
+=================== 
+=================== 

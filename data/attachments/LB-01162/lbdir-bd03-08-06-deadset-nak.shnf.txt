@@ -1,0 +1,37 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-06-deadset-nak.shnf 
+=================== 
+=================== 
+=================== 
+f4cd7983c5669ee7afda911cb3285c83  bd03-08-06-deadset-nak.md5
+cebfd40ee9c8a51825cf4cca7fe1e1dd  bd03-08-06-deadset-nak.txt
+027bd1f9af88452cd812265a67062434  bd03-08-06deadset-nak-t01.shn
+8aa2c0a98d7ff5a19cfbfb352a0a6fe1  bd03-08-06deadset-nak-t02.shn
+d71713c5a1c60bd62811c4ad1c14f4b1  bd03-08-06deadset-nak-t03.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-06-deadset-nak.shnf 
+=================== 
+=================== 
+=================== 
+32d210e79390acb97182707234b560e3  [shntool]  bd03-08-06deadset-nak-t01.wav
+ef58a7b48924c34f84037604135a3c29  [shntool]  bd03-08-06deadset-nak-t02.wav
+41a8f9cdf94066460e9f57ebc96d0e7c  [shntool]  bd03-08-06deadset-nak-t03.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-06-deadset-nak.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.29       76626000 B   ---   -e   -----    wav  1.0000  bd03-08-06deadset-nak-t01.wav
+     6:22.21       67434472 B   ---   -e   -----    wav  1.0000  bd03-08-06deadset-nak-t02.wav
+     6:24.20       67784884 B   ---   -e   -----    wav  1.0000  bd03-08-06deadset-nak-t03.wav
+    20:00.70      211845356 B                            1.0000  (3 files)
+=================== 
+=================== 
+=================== 

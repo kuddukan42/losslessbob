@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== Bob Dylan 2004-03-06_Chicago Riv Theatre.txt
+===================
+===================
+===================
+Chicago, Illinois
+Riviera Theatre
+March 6, 2004
+
+BW version (shure r184b super cardiod mics > pre-amp > sony tcd-d8 dat)
+DAT > shn > shntool fixed 
+excellent sound
+
+The first track contained the Intro and Songs 1-3. I took the liberty of cutting
+them into separate tracks. The geneology from there is as such: shn (mkw)> wave > 
+edit Sound Forge 6.0 >shntool > fixed > shn (mkw)
+
+  
+Disc One
+1 Intro
+2 Drifter's Escape     
+3 It's All Over Now, Baby Blue 
+4 Cry A While 
+5 The Lonesome Death of Hattie Carroll 
+6 Things Have Changed 
+7 Tell Me That it Isn't True 
+8 Down Along the Cove 
+9 It Ain't Me, Babe 
+10 Tweedle Dee & Tweedle Dum 
+11 Girl of the North Country
+12 Most Likely You Go Your Way and I'll Go Mine
+
+Disc Two
+13 Honest With Me 
+14 Every Grain of Sand 
+15 Summer Days
+16 Cat's in the Well
+17 Like a Rolling Stone 
+18 Crowd Noise
+19 All Along the Watchtower 
+
+ 
+
+Band Members
+Bob Dylan - piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel
+Freddy Koella - guitar, violin
+Tony Garnier - bass
+George Recile - drums
+Richie Hayward - drums
+ 
+
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+5b5b6befe58e245d42ea236240a40f4c *d2_T19.shn
+676ea378af205b6b47ef793fcbb8bcfc *d1_T01.shn
+66dd0d53729b92c867a10537e9447caf *d1_T02.shn
+bda8521d529b5dbf8cf7992050eae63f *d1_T03.shn
+9773b31003bf492bb6372f6306f7233a *d1_T04.shn
+9950f7d5ef3b8df9c479974b73032826 *d1_T05.shn
+926b842e576cdb45ae42d5440b6feb76 *d1_T06.shn
+486d55dd769eed8fd2d32a858cc5ec0d *d1_T07.shn
+1f8fd2df4ab9e55fdc5a17f86ed2c3d0 *d1_T08.shn
+e3ba4ca7e86642cfdcc9ff150398bee9 *d1_T09.shn
+f97c269c2102fea4d0635a90835382c9 *d1_T10.shn
+1779d292ba89464a10bbaf5b91ecb2a1 *d1_T11.shn
+27bf9f61f57858effcef9d297c534ce8 *d1_T12.shn
+f2b1575c025329fcd25fb514b9562548 *d2_T13.shn
+39844e2187019efa0466ae3d1d26f84c *d2_T14.shn
+2872ab7f4fb57d52d394aea8bfa1955c *d2_T15.shn
+73a173a5b6ef219f5886b578a67ce50e *d2_T16.shn
+95a04831a226e13b9fd4d328e3132245 *d2_T17.shn
+79cacf152cab298aa9b397f038ae3736 *d2_T18.shn
+===================
+===================
+===================

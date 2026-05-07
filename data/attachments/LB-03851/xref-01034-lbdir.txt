@@ -1,0 +1,108 @@
+===================
+===================
+===================
+=== md5 for: bd03-07-c.flacf
+===================
+===================
+===================
+2214196efeeb890d1cf6e2a1bf19fd88 *01) D&D 07-29 - Alabama.flac
+a2d92ee5c7e92860c5728e0c85833348 *02) D&D 07-29 - BabyBlue.flac
+c4a7c327160a7d175953c504bad15570 *03) D&D 07-29 - WestLA.flac
+f1f76f64813ae8f0dc55595dd0afc682 *04) Dead 07-30 - Blackbird(Weir).flac
+fcffa56e1eaf57005c0634d2cd08a78f *05) D&D 07-30 - Devil.flac
+daaf17e460376fcbde4a6c5c488d54a9 *06) D&D 07-30 - GottaServe.flac
+dba67f137ad134328a01c8b1b5be2e38 *07) D&D 07-30 - RollingStone.flac
+646de4066097ec0461911c923dc3bef5 *08) D&D 07-31 - Big River.flac
+52035de43183672bfe261a8537c103f7 *09) D&D 07-31 - West LA.flac
+83532b9fea9d7c1de49053dbdc710959 *10) D&D 07-31 - Alabama.flac
+8092a95463ba1a5e896245e3941a81d5 *11) D&D 08-02 - GoingDown.flac
+6062c3134a737a00a42e01b9570e3c46 *12) D&D 08-02 - Senor.flac
+ca679498fbc2cc7c130e5cc7cab0976f *13) D&D 08-02 - Around&Around-.flac
+814203b5b74815a80ca9ec806440e22e *14) D&D 08-03 - BigRiver.flac
+bb1ca1c32d627eeb2c44d370855f45f4 *15) D&D 08-03 - DesolatioRow.flac
+41fc4acd7bcdfb27e089efd74b8cb4d1 *16) D&D 08-03 - JBGoode.flac
+ab73eecdd5ff3bc2a537a35968f0baac *17) D&D 08-05 - Schoolgirl.flac
+199c4cf5a2fe9291db04aa2ac25c52e8 *18) D&D 08-05 - ThinMan.flac
+4d463ac277ef9beb3ec5265ecd7a9a53 *19) D&D 08-05 - OhBoy.flac
+41b0b83f9fa6a288a831c8b052c22a73 *20) D&D 08-06 - BigBossMan.flac
+32449e1f31402c5d7e620f3f8549115c *21) D&D 08-06 - Subterranean.flac
+6b831d4ebbb6f5c8f9b14e809c5c5170 *22) D&D 08-06 - YouWinAgain.flac
+d6f9463288ebbaa596bb9ec105605d3a *23) D&D 08-08 - Tangled.flac
+df8db9977baaaca82b24b9b8d08b6b8c *24) D&D 08-08 - AlotToLaugh.flac
+9c4bee7dffe6f5c5881f4cf02fd4e5b7 *25) D&D 08-08 - WestLA.flac
+80f1b000e66ef4ec24e514f5a637dd63 *26) D&D 08-08 - Alabama.flac
+3c5312748f9be4aa8f2a85b5e97f9d13 *BD Sitting in with The Dead during their Summer Getaway 2003 Tour.rtf
+ff22ebde0fa5fd0a3e93df53d7b0740c *BD Sitting in with The Dead during their Summer Getaway 2003 Tour.txt
+d02e26f802591042a444850a2f6d6c41 *DYLAN&DEAD 2003 complete.ffp
+de4635f0a441bb27f30f6ca1e9e26151 *DYLAN&DEAD 2003 complete.md5
+===================
+===================
+===================
+=== ffp for: bd03-07-c.flacf
+===================
+===================
+===================
+01) D&D 07-29 - Alabama.flac:e33a7305848939b382e24ec960e7471f
+02) D&D 07-29 - BabyBlue.flac:29936f4598e455c4d59e85616786f53d
+03) D&D 07-29 - WestLA.flac:474a09cf9904ce80b1cffd0ab4b18258
+04) Dead 07-30 - Blackbird(Weir).flac:be6881ea7786edf4e935937dd6746b2e
+05) D&D 07-30 - Devil.flac:37d5a528b70537b1b46db08d118bb7ce
+06) D&D 07-30 - GottaServe.flac:d995df1908b39907a0709eea0c811703
+07) D&D 07-30 - RollingStone.flac:4a51e08f4d19574112d4d25af0d31dda
+08) D&D 07-31 - Big River.flac:3419cb5ecf6c87a6b24b034d37fc0ccd
+09) D&D 07-31 - West LA.flac:b7523c1f081819e1c129867064c72044
+10) D&D 07-31 - Alabama.flac:854df4f09cae34418df3110329de8012
+11) D&D 08-02 - GoingDown.flac:3e4675949b2e5a424ecbeb63a8dbd264
+12) D&D 08-02 - Senor.flac:0c20f6896907a16022e72fcdf5e6aeb8
+13) D&D 08-02 - Around&Around-.flac:ef76a4efdaf7eb7a9d09a789fe0182f5
+14) D&D 08-03 - BigRiver.flac:348af45fdda7aec848f0d4798d858065
+15) D&D 08-03 - DesolatioRow.flac:b9f82b23d66ffa0a045ad2a06b8d3519
+16) D&D 08-03 - JBGoode.flac:239b1fb52e1ac984cc4bf9b5362598fc
+17) D&D 08-05 - Schoolgirl.flac:cdd6a6eea80bd334a998ab25e3b36842
+18) D&D 08-05 - ThinMan.flac:b6e0a5ccd0e66e103ffbd5f7cfb3896f
+19) D&D 08-05 - OhBoy.flac:7d6090c36b57cb713f1040031d644e26
+20) D&D 08-06 - BigBossMan.flac:5012a40c5da4a12bf02b7f03c009b209
+21) D&D 08-06 - Subterranean.flac:ee72815b83e6c3613c6ac3e48b42b434
+22) D&D 08-06 - YouWinAgain.flac:f7e265d39659dc0fa231d53c76e9c6a0
+23) D&D 08-08 - Tangled.flac:8768931e00aecdd89205850d10e42c49
+24) D&D 08-08 - AlotToLaugh.flac:0242085ef17a275b7ad8d340dc2f4daa
+25) D&D 08-08 - WestLA.flac:5dddf08e39f158811939fb7be8ee7c89
+26) D&D 08-08 - Alabama.flac:185f6eedd9e14d81d8f7b5c52dabfd9a
+===================
+===================
+===================
+=== shntool len for: bd03-07-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.49       54093692 B   ---   --   ---xx   flac  0.5602  01) D&D 07-29 - Alabama.flac
+     6:39.12       70411868 B   ---   --   ---xx   flac  0.5301  02) D&D 07-29 - BabyBlue.flac
+     8:12.34       86868812 B   ---   --   ---xx   flac  0.5273  03) D&D 07-29 - WestLA.flac
+     3:16.48       34687340 B   ---   --   ---xx   flac  0.5496  04) Dead 07-30 - Blackbird(Weir).flac
+     6:26.11       68116316 B   ---   --   ---xx   flac  0.5728  05) D&D 07-30 - Devil.flac
+     7:36.13       80469020 B   ---   --   ---xx   flac  0.5454  06) D&D 07-30 - GottaServe.flac
+     8:04.59       85516412 B   ---   --   ---xx   flac  0.5640  07) D&D 07-30 - RollingStone.flac
+     5:56.58       62934860 B   ---   --   ---xx   flac  0.5703  08) D&D 07-31 - Big River.flac
+     8:31.62       90286268 B   ---   --   ---xx   flac  0.5316  09) D&D 07-31 - West LA.flac
+     5:04.45       53731484 B   ---   --   ---xx   flac  0.5720  10) D&D 07-31 - Alabama.flac
+     7:42.11       81522716 B   ---   --   ---xx   flac  0.5036  11) D&D 08-02 - GoingDown.flac
+     7:43.64       81823772 B   ---   --   ---xx   flac  0.4766  12) D&D 08-02 - Senor.flac
+     7:16.44       77013932 B   ---   --   ---xx   flac  0.5000  13) D&D 08-02 - Around&Around-.flac
+     6:04.26       64270796 B   ---   --   ---xx   flac  0.5310  14) D&D 08-03 - BigRiver.flac
+     9:47.66      103702076 B   ---   --   ---xx   flac  0.5424  15) D&D 08-03 - DesolatioRow.flac
+     5:07.59       54293612 B   ---   --   ---xx   flac  0.5462  16) D&D 08-03 - JBGoode.flac
+     6:32.59       69287612 B   ---   --   ---xx   flac  0.5632  17) D&D 08-05 - Schoolgirl.flac
+     7:23.02       78149948 B   ---   --   ---xx   flac  0.5882  18) D&D 08-05 - ThinMan.flac
+     4:27.33       47176460 B   ---   --   ---xx   flac  0.5645  19) D&D 08-05 - OhBoy.flac
+     6:35.34       69758012 B   ---   --   ---xx   flac  0.5760  20) D&D 08-06 - BigBossMan.flac
+     6:23.35       67643564 B   ---   --   ---xx   flac  0.5618  21) D&D 08-06 - Subterranean.flac
+     6:21.41       67304876 B   ---   --   ---xx   flac  0.5254  22) D&D 08-06 - YouWinAgain.flac
+     8:59.04       95089052 B   ---   --   ---xx   flac  0.5387  23) D&D 08-08 - Tangled.flac
+     7:13.14       76414172 B   ---   --   ---xx   flac  0.5214  24) D&D 08-08 - AlotToLaugh.flac
+     9:36.47      101716988 B   ---   --   ---xx   flac  0.5412  25) D&D 08-08 - WestLA.flac
+     7:55.70       83954684 B   ---   --   ---xx   flac  0.5333  26) D&D 08-08 - Alabama.flac
+   180:06.25     1906238344 B                            0.5418  (26 files)
+===================
+===================
+===================

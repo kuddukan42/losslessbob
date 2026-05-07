@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd67-genuine-basement-tapes-vol5.flacf 
+=================== 
+=================== 
+=================== 
+2238b32e5f6df5dd8a7168f5c7b7fd6d  bd67-genuine-basement-tapes-vol5t01.flac
+7e83c6c42c2966edb8f94eba756af1f0  bd67-genuine-basement-tapes-vol5t02.flac
+c6366ce0205e1d3e95100b6c60d950c8  bd67-genuine-basement-tapes-vol5t03.flac
+db239258a333d0a96752f76289e0b8eb  bd67-genuine-basement-tapes-vol5t04.flac
+583c55d8acb760b2f760536158700fc0  bd67-genuine-basement-tapes-vol5t05.flac
+9b5b1b3e16ab4d454e39ea3e747a2969  bd67-genuine-basement-tapes-vol5t06.flac
+9f7f01d036cbb4012f906cf8e3c3ad65  bd67-genuine-basement-tapes-vol5t07.flac
+0381e14a997f0e8f62406d3b0553e39d  bd67-genuine-basement-tapes-vol5t08.flac
+f6dc10a26f78ba967b07cc9a3e9da56e  bd67-genuine-basement-tapes-vol5t09.flac
+8267fb1b780b8daf56e097bc3f0256a6  bd67-genuine-basement-tapes-vol5t10.flac
+e9b4ca440d641fa217541de5578a2395  bd67-genuine-basement-tapes-vol5t11.flac
+2432df0e18317de367d5271dccb169ca  bd67-genuine-basement-tapes-vol5t12.flac
+e79116d24be3fde8650000aa7c821c40  bd67-genuine-basement-tapes-vol5t13.flac
+f008003fbe3446236cd3ede67d8e0bc0  bd67-genuine-basement-tapes-vol5t14.flac
+e3badbfd9fd62cb5e984dbe522c3e4c1  bd67-genuine-basement-tapes-vol5t15.flac
+be12f682a963ec8ffe72318a34536cc9  bd67-genuine-basement-tapes-vol5t16.flac
+3bf724db72c2b36312432ad53baddb70  bd67-genuine-basement-tapes-vol5t17.flac
+7771d348c01bf21f1ddf5132cc637d1b  bd67-genuine-basement-tapes-vol5t18.flac
+90969c53bb415c2a0a1db1a0fed36386  bd67-genuine-basement-tapes-vol5t19.flac
+f7f5ebadb642122e86c7de5d1b2ea0a1  bd67-genuine-basement-tapes-vol5t20.flac
+a56dc1e2370b74b67aa672afb9b4da2e  bd67-genuine-basement-tapes-vol5t21.flac
+3a8039a2aff9f9d654945470f1f14cff  bd67-genuine-basement-tapes-vol5t22.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-genuine-basement-tapes-vol5.flacf 
+=================== 
+=================== 
+=================== 
+bd67-genuine-basement-tapes-vol5t01.flac:1da37ce6efcd232e2dda45baac4b497e
+bd67-genuine-basement-tapes-vol5t02.flac:79b824ea71e43cc51204ad6d2beddc6d
+bd67-genuine-basement-tapes-vol5t03.flac:8d1729c8999c1385525ffc110c7a0e10
+bd67-genuine-basement-tapes-vol5t04.flac:348ab0e41a3c369b22a0fd97fc515144
+bd67-genuine-basement-tapes-vol5t05.flac:5126ef1c477b31f237ce4df4582e2da8
+bd67-genuine-basement-tapes-vol5t06.flac:1fe080111cba808ab0e16680f89a8551
+bd67-genuine-basement-tapes-vol5t07.flac:a983f97e61c8349578d617098d80b155
+bd67-genuine-basement-tapes-vol5t08.flac:9cc3eda504fb2f4a347d60b08100298b
+bd67-genuine-basement-tapes-vol5t09.flac:d6b4197f39974d80c24fb04d03a65d97
+bd67-genuine-basement-tapes-vol5t10.flac:8ffeb5190aafb558f8ca8b78b628e38a
+bd67-genuine-basement-tapes-vol5t11.flac:7f440d156b01c8ee669bf15c2131a27c
+bd67-genuine-basement-tapes-vol5t12.flac:1c37131a83bd50fdd76157011aeafa24
+bd67-genuine-basement-tapes-vol5t13.flac:f969228b06e09f67cedb510a192e780c
+bd67-genuine-basement-tapes-vol5t14.flac:3e5ef03d1ac09806e2faed05975ed048
+bd67-genuine-basement-tapes-vol5t15.flac:660f271c9db904cc69ffad5ff122292b
+bd67-genuine-basement-tapes-vol5t16.flac:dd2ba78b4d19aa9251145617eaef844c
+bd67-genuine-basement-tapes-vol5t17.flac:11f237ffa38e9f2d490cbdc572f5f0d7
+bd67-genuine-basement-tapes-vol5t18.flac:4ae9e93ac4fccd5b8ed66cdfb70da946
+bd67-genuine-basement-tapes-vol5t19.flac:c897bf97d80959b532cf266ea36cda9d
+bd67-genuine-basement-tapes-vol5t20.flac:b50ea34289cf34140564dd4a8d0cf065
+bd67-genuine-basement-tapes-vol5t21.flac:17d4873eb674bcda22012bdebd2451be
+bd67-genuine-basement-tapes-vol5t22.flac:3f2d06c44b7f792904c6eb13b727d509
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-genuine-basement-tapes-vol5.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:40.50       38925644 B   ---   --   ---xx   flac  0.5027  bd67-genuine-basement-tapes-vol5t01.flac
+     5:23.65       57130124 B   ---   --   ---xx   flac  0.5099  bd67-genuine-basement-tapes-vol5t02.flac
+     2:45.12       29134268 B   ---   --   ---xx   flac  0.5244  bd67-genuine-basement-tapes-vol5t03.flac
+     3:14.15       34256924 B   ---   --   ---xx   flac  0.4490  bd67-genuine-basement-tapes-vol5t04.flac
+     2:39.63       28195820 B   ---   --   ---xx   flac  0.4773  bd67-genuine-basement-tapes-vol5t05.flac
+     3:02.02       32109548 B   ---   --   ---xx   flac  0.4746  bd67-genuine-basement-tapes-vol5t06.flac
+     3:20.00       35280044 B   ---   --   ---xx   flac  0.4912  bd67-genuine-basement-tapes-vol5t07.flac
+     3:13.25       34104044 B   ---   --   ---xx   flac  0.5144  bd67-genuine-basement-tapes-vol5t08.flac
+     2:43.23       28807340 B   ---   --   ---xx   flac  0.5091  bd67-genuine-basement-tapes-vol5t09.flac
+     3:11.52       33814748 B   ---   --   ---xx   flac  0.5009  bd67-genuine-basement-tapes-vol5t10.flac
+     0:45.50        8055644 B   ---   --   ---xx   flac  0.5157  bd67-genuine-basement-tapes-vol5t11.flac
+     3:17.63       34899020 B   ---   --   ---xx   flac  0.4902  bd67-genuine-basement-tapes-vol5t12.flac
+     3:50.70       40736684 B   ---   --   ---xx   flac  0.5079  bd67-genuine-basement-tapes-vol5t13.flac
+     2:48.52       29757548 B   ---   --   ---xx   flac  0.4929  bd67-genuine-basement-tapes-vol5t14.flac
+     2:19.48       24632540 B   ---   --   ---xx   flac  0.5278  bd67-genuine-basement-tapes-vol5t15.flac
+     2:50.35       30070364 B   ---   --   ---xx   flac  0.5185  bd67-genuine-basement-tapes-vol5t16.flac
+     4:49.50       51097244 B   ---   --   ---xx   flac  0.5268  bd67-genuine-basement-tapes-vol5t17.flac
+     1:05.15       11501324 B   ---   --   ---xx   flac  0.4845  bd67-genuine-basement-tapes-vol5t18.flac
+     2:03.30       21767804 B   ---   --   ---xx   flac  0.5548  bd67-genuine-basement-tapes-vol5t19.flac
+     3:01.25       31987244 B   ---   --   ---xx   flac  0.5020  bd67-genuine-basement-tapes-vol5t20.flac
+     5:45.15       60893324 B   ---   --   ---xx   flac  0.5216  bd67-genuine-basement-tapes-vol5t21.flac
+     0:58.37       10318268 B   ---   --   ---xx   flac  0.5280  bd67-genuine-basement-tapes-vol5t22.flac
+    66:50.47      707475512 B                            0.5054  (22 files)
+=================== 
+=================== 
+=================== 

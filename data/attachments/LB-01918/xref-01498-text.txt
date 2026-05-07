@@ -1,0 +1,109 @@
+===================
+===================
+===================
+=== bd1995-04-11-Dublin-offmaster.txt
+===================
+===================
+===================
+NET Tapers Series #10
+Bob Dylan
+1995-04-11
+Dublin
+Offmaster audience recording. audio cdr > (Feurio) >  wav > (flac frontend) > flac.
+Taper unidentified.
+
+Excellent recording. Some glitches prior to the introduction, but this is entirely
+extraneous to the concert.
+
+Disk One
+Crash On The Levee (Down In The Flood)
+Where Teardrops Fall
+All Along The Watchtower
+Just Like A Woman
+Tombstone Blues
+Ring Them Bells
+Mr. Tambourine Man (acoustic w band)
+Boots Of Spanish Leather (acoustic w band)
+Love Minus Zero/No Limit (acoustic w band)
+
+Disk Two
+Highway 61 Revisited
+In The Garden 
+Ballad Of A Thin Man
+Like A Rolling Stone
+The Times They Are A- Changin' (acoustic w band)
+audience ???
+Real Real Gone
+I Shall Be Released
+Rainy Day Women # 12 & 35
+
+Information from Olof:
+	
+The Point Depot	
+Dublin, Ireland
+11 April 1995
+ 
+1.  Crash On The Levee (Down In The Flood)
+2.  Where Teardrops Fall
+3.  All Along The Watchtower
+4.  Just Like A Woman
+5.  Tombstone Blues
+6.  Ring Them Bells
+7.  Mr. Tambourine Man
+8.  Boots Of Spanish Leather
+9.  Love Minus Zero/No Limit
+10.  Highway 61 Revisited
+11.  In The Garden
+12.  Ballad Of A Thin Man
+13.  Like A Rolling Stone
+14.  The Times They Are A-Changin'
+15.  Real Real Gone (Van Morrison)
+16.  I Shall Be Released
+17.  Rainy Day Women # 12 & 35
+
+Concert # 666 of The Never-Ending Tour. Concert # 26 of the 1995 European Spring Tour. 
+Concert # 26 in 1995.
+Concert # 210 with the 9th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter
+(pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), 
+Winston Watson (drums & percussion).
+
+79, 14  acoustic with the band.
+
+1, 2, 7, 8, 14, 15  Bob Dylan harmonica.
+
+1013, 15-17  Carole King (piano).
+
+13, 17   Carole King (shared vocal).
+
+15  Van Morrison (shared vocal, harmonica & guitar).
+
+16  Elvis Costello (shared vocal & guitar), Van Morrison (shared vocal).
+
+17  Elvis Costello (backup vocal & guitar), Van Morrison  (harmonica).
+
+7 new songs (41%) compared to previous concert. 1 new song for this tour.
+
+Disk One
+Track 01.flac:da26dce877cd66c1bb96c3360aade5cc
+Track 02.flac:326c8390515030cced0fd77743a7cda5
+Track 03.flac:e88346aa0c74975e1575d1c57ae0c14d
+Track 04.flac:c0fe2742bed4176b4f0b9d50bda92ecc
+Track 05.flac:63e885bf30f30448dfac6253fcf97892
+Track 06.flac:72491aeef70e5db85448303768176db9
+Track 07.flac:21a1e19cb9db3398f251919b43be3d3d
+Track 08.flac:0198785b46ecbb84b83af90a4bbd0dad
+Track 09.flac:e1e044a6d2254063b0e69e845a2d8493
+
+Disk Two
+Track 01.flac:9123e6ea7a823e0cb32ab20f3e0733a7
+Track 02.flac:8aea65cd65afb61f985f31978c584634
+Track 03.flac:82e137313dc43e5fbd4b275f946445a4
+Track 04.flac:8dcb39849b3cab965fc71d032e7a8bf4
+Track 05.flac:d6789de8aa057f04783d47b71dff9344
+Track 06.flac:9a6a2f6fa0f91fa7e65ffebb878802ec
+Track 07.flac:366bed63f4ef8aa552b2138da59c308d
+Track 08.flac:b0f8e6ca6a38b6e30ce28dd1fc49e326
+Track 09.flac:0834d5c7e9c263d9c8a6ef644cf39cf9
+===================
+===================
+===================

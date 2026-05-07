@@ -1,0 +1,8 @@
+Bob Dylan, 2/8/90, London, England, Hammersmith Odeon, 2CDR
+
+LB-5871, (60min+51min), jtt version "b"; "Transfer from Master Tape", Audience Recording by JTT, LB-4119, Source: Sony ECM-909>Sony D6 (Maxell UD 11 C120) Dolby B>, Sony D6 (Playback) Dolby B>Soundforge 8 (Fades, Track Marks)>, FLAC Level 6 Align On Sector Boundaries, Mastered and Artwork by JTT, December 2006; bittorrent download 02/08; this is a sort of close eac match on d1t8 to LB-4119 with differences occuring near track boundaries; mis-identifies itself as LB-LB-4119; (did not listen to all of this)
+
+Disc One, 01 Absolutely Sweet Marie, 02 Man In A Long Black Coat, 03 Positively 4th Street, 04 Ballad Of A Thin Man, 05 Pledging My Time, 06 I Want You, 07 Political World, 08 You Angel You, 09 All Along The Watchtower, 10 Boots Of Spanish Leather, 11 To Ramona, 12 She Belongs To Me, 13 Mr. Tambourine Man, Disc Two, 01 Disease Of Conceit, 02 I'll Remember You, 03 Where Teardrops Fall, 04 Seeing The Real You At Last, 05 Every Grain Of Sand, 06 Rainy Day Women # 12 & 35, 07 Like A Rolling Stone, 08 It Ain't Me Babe, 09 Hang Me, Oh Hang Me, 10 Highway 61 Revisited
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

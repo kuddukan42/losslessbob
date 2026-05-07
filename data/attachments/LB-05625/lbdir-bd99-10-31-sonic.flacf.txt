@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-10-31-sonic.flacf 
+=================== 
+=================== 
+=================== 
+c05412a4284a3b9f6afc41a7da0e6919  bd1999-10-31 alt2.md5
+e5827cf2245def3075ad8bd32f7abd6f  bd1999-10-31 alt2_d1t01.flac
+bdaf91fce8418a1909753657e4e4d67e  bd1999-10-31 alt2_d1t02.flac
+5a4c91d21cd5fd038485bb9c617f7071  bd1999-10-31 alt2_d1t03.flac
+1c25f0e1e778e8b25b07219936510be8  bd1999-10-31 alt2_d1t04.flac
+328ce9c783ff59f7a531a195b5d38883  bd1999-10-31 alt2_d1t05.flac
+4dfbb85864ace4c7154db859c6da73d7  bd1999-10-31 alt2_d1t06.flac
+69920e30140bbc4ca2a46097aceb8dfa  bd1999-10-31 alt2_d1t07.flac
+183dc3fb0fd7d44b7f9585597ec57d62  bd1999-10-31 alt2_d1t08.flac
+f190bd9b56eaa8ca6770010c7ff56129  bd1999-10-31 alt2_d1t09.flac
+aadfa265d5e87a45477f318ca126ff9e  bd1999-10-31 alt2_d1t10.flac
+3b8fd1b1b6ad7a7347aa0d2d2db4ccb9  bd1999-10-31 alt2_d2t01.flac
+5f5bd82b929630e9e114f05649f6925c  bd1999-10-31 alt2_d2t02.flac
+033ffeece07736fe0ee3fe1352ba26d8  bd1999-10-31 alt2_d2t03.flac
+265a303e2051ae7a446976d97213619f  bd1999-10-31 alt2_d2t04.flac
+5bb1560b394354b8876b12947a96b073  bd1999-10-31 alt2_ffp.txt
+fec36e0eb1f7ec74d00abcddfe6dbb61  bd1999-10-31 alt2_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-10-31-sonic.flacf 
+=================== 
+=================== 
+=================== 
+bd1999-10-31 alt2_d1t01.flac:85d1116c63a75b7e7d54cef9371dc346
+bd1999-10-31 alt2_d1t02.flac:ef276459542b207773d77bc3cfa714a4
+bd1999-10-31 alt2_d1t03.flac:e5e524effef2905e17b0438baf3f4323
+bd1999-10-31 alt2_d1t04.flac:7974d146a43e04fe5a4e1f825bce8e06
+bd1999-10-31 alt2_d1t05.flac:0fbb7c7315c8583040bf88b20e86215c
+bd1999-10-31 alt2_d1t06.flac:2564cd4ba2dc51682e8dc787a41bb090
+bd1999-10-31 alt2_d1t07.flac:103014ef56a42cff0fb42047544a3473
+bd1999-10-31 alt2_d1t08.flac:6de58cd48d17e5e33d0d2447c4a3dcba
+bd1999-10-31 alt2_d1t09.flac:56bc37830cc54f7a655f7bc37ce113c4
+bd1999-10-31 alt2_d1t10.flac:a981a8582ca965d66c63bfd8049d6606
+bd1999-10-31 alt2_d2t01.flac:82b6bf23c9b0c30f5f65f8bd509e9f12
+bd1999-10-31 alt2_d2t02.flac:c3ead12dce5b486c29e2fe4fd1e51d43
+bd1999-10-31 alt2_d2t03.flac:d7ef532874a14bbebbe67a67f0913cf7
+bd1999-10-31 alt2_d2t04.flac:cbde5ee8314390abd988b0bbf2c134dd
+=================== 
+=================== 
+=================== 
+=== shntool for: bd99-10-31-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:41.57       28534508 B   ---   --   ---xx   flac  0.5476  bd1999-10-31 alt2_d1t01.flac
+     5:54.03       62452700 B   ---   --   ---xx   flac  0.5252  bd1999-10-31 alt2_d1t02.flac
+     7:26.52       78796748 B   ---   --   ---xx   flac  0.5025  bd1999-10-31 alt2_d1t03.flac
+     6:19.62       67001468 B   ---   --   ---xx   flac  0.4833  bd1999-10-31 alt2_d1t04.flac
+     7:57.08       84161660 B   ---   --   ---xx   flac  0.5620  bd1999-10-31 alt2_d1t05.flac
+     3:59.07       42176108 B   ---   --   ---xx   flac  0.5477  bd1999-10-31 alt2_d1t06.flac
+     8:33.67       90650828 B   ---   --   ---xx   flac  0.4394  bd1999-10-31 alt2_d1t07.flac
+     7:19.61       77583116 B   ---   --   ---xx   flac  0.5261  bd1999-10-31 alt2_d1t08.flac
+     6:49.22       72199388 B   ---   --   ---xx   flac  0.3991  bd1999-10-31 alt2_d1t09.flac
+     9:07.50       96608444 B   ---   --   ---xx   flac  0.5336  bd1999-10-31 alt2_d1t10.flac
+     6:16.22       66378188 B   ---   --   ---xx   flac  0.4423  bd1999-10-31 alt2_d2t01.flac
+     8:16.63       87642620 B   ---   --   ---xx   flac  0.5053  bd1999-10-31 alt2_d2t02.flac
+     7:31.05       79568204 B   ---   --   ---xx   flac  0.4353  bd1999-10-31 alt2_d2t03.flac
+     6:00.15       63539324 B   ---   --   ---xx   flac  0.5090  bd1999-10-31 alt2_d2t04.flac
+    94:13.44      997293304 B                            0.4938  (14 files)
+=================== 
+=================== 
+=================== 

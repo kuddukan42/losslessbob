@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-07-03.shnf 
+=================== 
+=================== 
+=================== 
+3bf114b2ae0ab46b8b7ba218e7deb585  101-Most Likely You Go Your Way.shn
+5005620899bafac88b792bec1bd2d6d2  102-Ballad Of A Thin Man.shn
+29393f339cfa282db7554d10c76544f6  103-Memphis Blues Again.shn
+60a29a58e9568424ce18cdfb6dd384f0  104-I Believe In You.shn
+116c5da58488da9bf4d18a142c75f5b0  105-Masters Of War.shn
+168c6dece7b01781034f9d73132bb51e  106-Gotta Serve Somebody.shn
+d6c2791ff61ddd39a8c6a27400b68437  107-It's Alright, Ma.shn
+2bf57c73798cea2695f3ee5011445c10  108-It's All Over Now, Baby Blue.shn
+1075fe708e0b4183b7222f65ea71f8da  109-Desolation Row.shn
+8e396bac628ac6a35bd0b60cf1fa4998  110-Hattie Carroll.shn
+60ae68966b7a04e9b6822a2a966be7ef  111-It Ain't Me, Babe.shn
+c3ca4719e24b2f8dfb1db56943a7d6cc  112-Everything Is Broken.shn
+26ca20fb0333d66479a26ac809845123  113-No More One More Time.shn
+8e9765a25ab6f976fa74a249c74a6d58  114-Political World.shn
+ae7e35573789063945d75a0a670ff80a  1990-07-03 Hamburg (D1).md5
+24dd13a3eaa1fe15e77c0eb2163af701  1990-07-03 Hamburg (D2).md5
+636e2c3e1b8e718f1ae6327baa507a7a  1990-07-03 Hamburg Support.zip
+04cf4fc2bdf74578b62af8ebcc2723ca  1990-07-03 Hamburg.txt
+1a388d8ca739bf5aead16180e523b8b5  201-Old Rock & Roller.shn
+159d79610d3136fe36858a3f037f4d78  202-All Along The Watchtower.shn
+13d583148351f7701d8029cb23732c51  203-I Shall Be Released.shn
+7e2cb1fc9359f4b51cdca19b54009554  204-Like A Rolling Stone.shn
+dad78794afc3e62070dbe1069894e6e4  205-Blowin' In The Wind.shn
+71d604823a68ee6a8f2369c7b80c4fe3  206-Highway 61 Revisited.shn
+75c4c8ad961de5c1958d9a0cad39dbf0  bd90-07-03.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-07-03.shnf 
+=================== 
+=================== 
+=================== 
+8cc19c27a0b11cda260329acbcd9a938  [shntool]  101-Most_Likely_You_Go_Your_Way.wav
+afc8eea6aa2b2641f75d0a02dbf02037  [shntool]  102-Ballad_Of_A_Thin_Man.wav
+0c9ed23c57dfa010f07fd599c02c237d  [shntool]  103-Memphis_Blues_Again.wav
+2d5fc62111ea1a14e686585c9f237a7e  [shntool]  104-I_Believe_In_You.wav
+dc5a2ea13198459300b9dd34646e6fd0  [shntool]  105-Masters_Of_War.wav
+c42b19201c51ed0cc85ff68309a073ec  [shntool]  106-Gotta_Serve_Somebody.wav
+d9c23fda395077221d2d03c1d1023f5d  [shntool]  107-It's_Alright,_Ma.wav
+4ae48a278c90b75ffdf63e507d9bc200  [shntool]  108-It's_All_Over_Now,_Baby_Blue.wav
+8714e6eb75069efe586871149ec8ab97  [shntool]  109-Desolation_Row.wav
+c6b1de77252fcd1acced0ee275518a9e  [shntool]  110-Hattie_Carroll.wav
+345eb55bf747031133dd8e783b8f3ca8  [shntool]  111-It_Ain't_Me,_Babe.wav
+53a6e501a79f8dca470123c2dec5b5e6  [shntool]  112-Everything_Is_Broken.wav
+8714068c32330d2f05ca7a4f4f3752e4  [shntool]  113-No_More_One_More_Time.wav
+323900e130b89853186cd53633c4efce  [shntool]  114-Political_World.wav
+7dc7f655d597a431bf58bae3fd4267b3  [shntool]  201-Old_Rock___Roller.wav
+a916dc39192c553a46f5cef199fe4cf3  [shntool]  202-All_Along_The_Watchtower.wav
+b1e1a5ca02d25f25898488e2589fd5f2  [shntool]  203-I_Shall_Be_Released.wav
+3dcf03a71cceb7f1bd56d2150fa55cd5  [shntool]  204-Like_A_Rolling_Stone.wav
+7680c1292395a8943daaf0928085aeca  [shntool]  205-Blowin'_In_The_Wind.wav
+84a92338f27a6fd1388dbb438cb9849a  [shntool]  206-Highway_61_Revisited.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-07-03.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.05       51873404 B   ---   --   ---xx    shn  0.5951  101-Most Likely You Go Your Way.shn
+     4:47.40       50720924 B   ---   --   ---xx    shn  0.6045  102-Ballad Of A Thin Man.shn
+     6:42.41       71009276 B   ---   --   ---xx    shn  0.5625  103-Memphis Blues Again.shn
+     4:52.15       51544124 B   ---   --   ---xx    shn  0.5121  104-I Believe In You.shn
+     4:42.19       49789532 B   ---   --   ---xx    shn  0.5665  105-Masters Of War.shn
+     4:55.41       52134476 B   ---   --   ---xx    shn  0.5567  106-Gotta Serve Somebody.shn
+     5:28.36       57943916 B   ---   --   ---xx    shn  0.5072  107-It's Alright, Ma.shn
+     5:51.23       61970540 B   ---   --   ---xx    shn  0.5153  108-It's All Over Now, Baby Blue.shn
+     6:00.72       63673388 B   ---   --   ---xx    shn  0.6199  109-Desolation Row.shn
+     6:27.28       68332700 B   ---   --   ---xx    shn  0.5519  110-Hattie Carroll.shn
+     5:44.47       60792188 B   ---   --   ---xx    shn  0.5065  111-It Ain't Me, Babe.shn
+     3:28.16       36728876 B   ---   --   ---xx    shn  0.5781  112-Everything Is Broken.shn
+     4:23.32       46468508 B   ---   --   ---xx    shn  0.5351  113-No More One More Time.shn
+     3:55.65       41606924 B   ---   --   ---xx    shn  0.5304  114-Political World.shn
+     4:13.46       44737436 B   ---   --   ---xx    shn  0.4988  201-Old Rock & Roller.shn
+     2:46.68       29442380 B   ---   --   ---xx    shn  0.5492  202-All Along The Watchtower.shn
+     3:38.04       38464652 B   ---   --   ---xx    shn  0.5418  203-I Shall Be Released.shn
+     6:21.31       67281356 B   ---   --   ---xx    shn  0.5739  204-Like A Rolling Stone.shn
+     4:03.07       42881708 B   ---   --   ---xx    shn  0.6355  205-Blowin' In The Wind.shn
+     4:48.71       50970236 B   ---   --   ---xx    shn  0.6275  206-Highway 61 Revisited.shn
+    98:06.32     1038366544 B                            0.5583  (20 files)
+=================== 
+=================== 
+=================== 

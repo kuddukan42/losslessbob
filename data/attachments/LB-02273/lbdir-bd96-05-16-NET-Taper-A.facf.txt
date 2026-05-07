@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-05-16-NET-Taper-A.facf 
+=================== 
+=================== 
+=================== 
+c0a4df99fa0cb5bfa943380654d36c55  1996 An American Spring v.1.txt
+70cb4c36d219bbd29e9e996807e4833d  bd - 1996-05-16-d1\Verschiedene - Datentraeger Nr. 1_ Titel 1.flac
+2f09fa968fd51982469e4684fe245818  bd - 1996-05-16-d1\Verschiedene - Datentraeger Nr. 1_ Titel 2.flac
+61d8bd062b5e4512e4d14d524ef557d8  bd - 1996-05-16-d1\Verschiedene - Datentraeger Nr. 1_ Titel 3.flac
+b1f6df2cbfa8ec22a038800b6566a4c8  bd - 1996-05-16-d1\Verschiedene - Datentraeger Nr. 1_ Titel 4.flac
+567b3d471120a563f5ba490162b857e2  bd - 1996-05-16-d1\Verschiedene - Datentraeger Nr. 1_ Titel 5.flac
+ab2ed8f4efe6570598648a8d40d22357  bd - 1996-05-16-d1\Verschiedene - Datentraeger Nr. 1_ Titel 6.flac
+beca32400ef4f65e11e1e40b93dd94e5  bd - 1996-05-16-d1\Verschiedene - Datentraeger Nr. 1_ Titel 7.flac
+95be2ff8b353502425412fcf6711efef  bd - 1996-05-16-d1\Verschiedene - Datentraeger Nr. 1_ Titel 8.flac
+bdc77280e3e1f75302c1b314b65b5321  bd - 1996-05-16-d1\bd1996-05-16-d1-fingerprints.txt
+f243668969dba2bc156e835fecb23ab6  bd - 1996-05-16-d2\Verschiedene - Datentraeger Nr. 1_ Titel 1.flac
+b9181da1a5642d2c05cc09b0697d38c4  bd - 1996-05-16-d2\Verschiedene - Datentraeger Nr. 1_ Titel 2.flac
+c59e63afb7dda304f4cdc9fc68d1caf5  bd - 1996-05-16-d2\Verschiedene - Datentraeger Nr. 1_ Titel 3.flac
+13927a4b1825776bb7a4e567de86ee88  bd - 1996-05-16-d2\Verschiedene - Datentraeger Nr. 1_ Titel 4.flac
+4abb993437f274f561e640fd90d11a99  bd - 1996-05-16-d2\Verschiedene - Datentraeger Nr. 1_ Titel 5.flac
+e2c55e73606bdfd1913442a992c24b2d  bd - 1996-05-16-d2\Verschiedene - Datentraeger Nr. 1_ Titel 6.flac
+c389477f6daf3b332a6e8361f2fe7893  bd - 1996-05-16-d2\Verschiedene - Datentraeger Nr. 1_ Titel 7.flac
+ef55356612986bc300bd58dcc49611a8  bd - 1996-05-16-d2\bd1996-05-16-d2-fingerprints.txt
+dd92973009e479247c8f3bbbf945ef47  bd1996-05-16.txt
+89ace75874e3ee0d31774b6047d6028d  bd96-05-16-NET-Taper-A.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-16-NET-Taper-A.facf\bd - 1996-05-16-d1 
+=================== 
+=================== 
+=================== 
+Verschiedene - Datentraeger Nr. 1_ Titel 1.flac:0f7a16394baeda07847b6ea277205799
+Verschiedene - Datentraeger Nr. 1_ Titel 2.flac:e943801fe1ce86457e7cf7d28f5026ef
+Verschiedene - Datentraeger Nr. 1_ Titel 3.flac:25b364a2e1b80591341e25e660699df2
+Verschiedene - Datentraeger Nr. 1_ Titel 4.flac:17693ed6f1d6dc2e29e580b8b7ee7a96
+Verschiedene - Datentraeger Nr. 1_ Titel 5.flac:5695c0792efe844f78a57c2dddc2a329
+Verschiedene - Datentraeger Nr. 1_ Titel 6.flac:f6415b084f35f359303b9da4b5fdb72c
+Verschiedene - Datentraeger Nr. 1_ Titel 7.flac:abab95b932e20b3ed55111b5359075b7
+Verschiedene - Datentraeger Nr. 1_ Titel 8.flac:498948e1f4c49a59e8b8b9c2ca245c80
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-16-NET-Taper-A.facf\bd - 1996-05-16-d2 
+=================== 
+=================== 
+=================== 
+Verschiedene - Datentraeger Nr. 1_ Titel 1.flac:eaa249c04b9468c512fab6f21efa85f4
+Verschiedene - Datentraeger Nr. 1_ Titel 2.flac:fe11d21cfbf21dd42a6d6313b32579ca
+Verschiedene - Datentraeger Nr. 1_ Titel 3.flac:72adfa684872248fb859129e78ccfd98
+Verschiedene - Datentraeger Nr. 1_ Titel 4.flac:693f4f23a893d57818ad558bb246afcc
+Verschiedene - Datentraeger Nr. 1_ Titel 5.flac:3ea6dc70853ea31d6eb92714d17be879
+Verschiedene - Datentraeger Nr. 1_ Titel 6.flac:adcf26b64943d5abbef59d2485c66442
+Verschiedene - Datentraeger Nr. 1_ Titel 7.flac:7e33605e7d47dba196e9a86395a0d7fa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-16-NET-Taper-A.facf\bd - 1996-05-16-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    12:46.49      135237692 B   ---   --   ---xx   flac  0.5055  Verschiedene - Datentraeger Nr. 1_ Titel 1.flac
+     0:05.20         929084 B   ---   --   ---xx   flac  0.5731  Verschiedene - Datentraeger Nr. 1_ Titel 2.flac
+     5:48.63       61535420 B   ---   --   ---xx   flac  0.5523  Verschiedene - Datentraeger Nr. 1_ Titel 3.flac
+     7:48.18       82597580 B   ---   --   ---xx   flac  0.4857  Verschiedene - Datentraeger Nr. 1_ Titel 4.flac
+     6:02.15       63892124 B   ---   --   ---xx   flac  0.4871  Verschiedene - Datentraeger Nr. 1_ Titel 5.flac
+     7:24.30       78392204 B   ---   --   ---xx   flac  0.5181  Verschiedene - Datentraeger Nr. 1_ Titel 6.flac
+    10:43.46      113533436 B   ---   --   ---xx   flac  0.4725  Verschiedene - Datentraeger Nr. 1_ Titel 7.flac
+     8:54.56       94329356 B   ---   --   ---xx   flac  0.4336  Verschiedene - Datentraeger Nr. 1_ Titel 8.flac
+    59:33.72      630446896 B                            0.4906  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-16-NET-Taper-A.facf\bd - 1996-05-16-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    55:48.53      590711900 B   ---   --   ---xx   flac  0.4889  Verschiedene - Datentraeger Nr. 1_ Titel 1.flac
+     0:04.27         769148 B   ---   --   ---xx   flac  0.5456  Verschiedene - Datentraeger Nr. 1_ Titel 2.flac
+     0:04.28         771500 B   ---   --   ---xx   flac  0.5575  Verschiedene - Datentraeger Nr. 1_ Titel 3.flac
+     0:04.68         865580 B   ---   --   ---xx   flac  0.5209  Verschiedene - Datentraeger Nr. 1_ Titel 4.flac
+     0:04.45         811484 B   ---   --   ---xx   flac  0.5257  Verschiedene - Datentraeger Nr. 1_ Titel 5.flac
+     0:04.40         799724 B   ---   --   ---xx   flac  0.5382  Verschiedene - Datentraeger Nr. 1_ Titel 6.flac
+     3:50.29       40640252 B   ---   --   ---xx   flac  0.5278  Verschiedene - Datentraeger Nr. 1_ Titel 7.flac
+    60:01.65      635369588 B                            0.4917  (7 files)
+=================== 
+=================== 
+=================== 

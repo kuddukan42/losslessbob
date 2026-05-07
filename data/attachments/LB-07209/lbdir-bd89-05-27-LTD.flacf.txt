@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-05-27-LTD.flacf 
+=================== 
+=================== 
+=================== 
+c051a6a2e1d4441c2e665b85d658deab  1989-05-27 Andrarum.md5
+4e6598136b542773f7760f40624eb5c7  Andrarum 1989.txt
+8a5eee154443cbdc0b3d15b7dc48a5a4  Andrarum CD1-1989-01.flac
+21d12bf2b049e5b3eb5fe59e13824730  Andrarum CD1-1989-02.flac
+2f616c8c0a985a5fbe4cd61b20da11df  Andrarum CD1-1989-03.flac
+2edae95f6815147af802bd46b9c39bd9  Andrarum CD1-1989-04.flac
+5530be917a13094852fbe50535780bb0  Andrarum CD1-1989-05.flac
+fe9ea948341eca429db2fb465c37ddf3  Andrarum CD1-1989-06.flac
+f405b05421e637bcc09d1e3add8686f7  Andrarum CD1-1989-07.flac
+0c309e592a2363680d7bf6835432e8fe  Andrarum CD1-1989-08.flac
+4bfa6f7b7fa4f2529973f3d7494d9893  Andrarum CD1-1989-09.flac
+09e4e8c6135e47d79981ff1ec2c4d278  Andrarum CD1-1989-10.flac
+4c4d281ec987ba02903154ba2692df7a  Andrarum CD2-1989-11.flac
+4146795f4a60c07088a73f2bd2c2edd9  Andrarum CD2-1989-12.flac
+fc63b2d98fcd6884d6ff452c523a16f4  Andrarum CD2-1989-13.flac
+f0e00c046dd1f7c6a83d0f28d5f7e4cb  Andrarum CD2-1989-14.flac
+32c6123464f03c17d856c6e3d2963fac  Andrarum CD2-1989-15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-05-27-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Andrarum CD1-1989-01.flac:34222b490ef67b319ab8239c3bd928fc
+Andrarum CD1-1989-02.flac:6bb98ce365af5910f1986188937448e7
+Andrarum CD1-1989-03.flac:77cbb47b430c7c00441a4d729d09c1bc
+Andrarum CD1-1989-04.flac:b8d51540ba197ffec64b8fdc32cd9a2e
+Andrarum CD1-1989-05.flac:1eb6f4cca884e59c077882e2e89ba280
+Andrarum CD1-1989-06.flac:9d07a457285bbf04e3cec86144431536
+Andrarum CD1-1989-07.flac:81c8682e791e21aae47edfd6253a4504
+Andrarum CD1-1989-08.flac:88308a0ef1483703ed558a13d4245d2b
+Andrarum CD1-1989-09.flac:8208e76ac0a36b556354bf1889f77dfd
+Andrarum CD1-1989-10.flac:a2c8fa6e812726997fb648f06e7d2e1d
+Andrarum CD2-1989-11.flac:3205cd1093ec22fc5f74261121ebc6d8
+Andrarum CD2-1989-12.flac:f5bc41d90a0a159d2a0bd03ca6d89788
+Andrarum CD2-1989-13.flac:b02dcbd1078bcbf57165d98b255fda34
+Andrarum CD2-1989-14.flac:6bccd0aa2acdba0728ee5e61f7797aab
+Andrarum CD2-1989-15.flac:85bf84ec7e5891056b774496cd04ff37
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-05-27-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.72       43917020 B   -b-   --   ---xx   flac  0.5845  Andrarum CD1-1989-01.flac
+     4:04.65       43194108 B   -b-   --   ---xx   flac  0.5673  Andrarum CD1-1989-02.flac
+     5:04.22       53676348 B   -b-   --   ---xx   flac  0.5766  Andrarum CD1-1989-03.flac
+     6:08.62       65062232 B   -b-   --   ---xx   flac  0.5885  Andrarum CD1-1989-04.flac
+     4:56.07       52230524 B   -b-   --   ---xx   flac  0.5672  Andrarum CD1-1989-05.flac
+     4:42.58       49881052 B   -b-   --   ---xx   flac  0.5767  Andrarum CD1-1989-06.flac
+     4:07.70       43736292 B   -b-   --   ---xx   flac  0.6140  Andrarum CD1-1989-07.flac
+     4:17.12       45362848 B   -b-   --   ---xx   flac  0.6428  Andrarum CD1-1989-08.flac
+     4:27.66       47253436 B   -b-   --   ---xx   flac  0.5694  Andrarum CD1-1989-09.flac
+     3:25.34       36243124 B   -b-   --   ---xx   flac  0.5973  Andrarum CD1-1989-10.flac
+     4:19.54       45814668 B   -b-   --   ---xx   flac  0.6088  Andrarum CD2-1989-11.flac
+     6:52.67       72833548 B   -b-   --   ---xx   flac  0.6265  Andrarum CD2-1989-12.flac
+     4:13.43       44730300 B   -b-   --   ---xx   flac  0.5821  Andrarum CD2-1989-13.flac
+     4:48.31       50875060 B   -b-   --   ---xx   flac  0.6152  Andrarum CD2-1989-14.flac
+     9:17.26       98316240 B   -b-   --   ---xx   flac  0.5813  Andrarum CD2-1989-15.flac
+    74:56.13      793126800 B                            0.5931  (15 files)
+=================== 
+=================== 
+=================== 

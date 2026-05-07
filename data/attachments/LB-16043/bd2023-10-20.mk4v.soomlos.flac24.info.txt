@@ -1,0 +1,59 @@
+Bob Dylan
+Andrew J. Brady Music Center
+Cincinnati, Ohio
+October 20, 2023
+
+01. Watching The River Flow
+02. Most Likely You Go Your Way (And I'll Go Mine)
+03. I Contain Multitudes
+04. False Prophet
+05. When I Paint My Masterpiece
+06. Black Rider
+07. My Own Version Of You
+08. I'll Be Your Baby Tonight
+09. Crossing The Rubicon
+10. To Be Alone With You
+11. Key West (Philosopher Pirate)
+12. Gotta Serve Somebody
+13. I've Made Up My Mind To Give Myself To You
+14. That Old Black Magic
+15. South Of Cincinnati 
+16. Mother Of Muses
+17. Goodbye Jimmy Reed
+18. Every Grain Of Sand 	 
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Doug Lancio - guitar
+Bob Britt - guitar
+Donnie Herron - steel guitar, mandolin, violin
+Jerry Pentecost - drums
+Tony Garnier - bass
+
+Comment
+First known live performance of South Of Cincinnati (song by Dwight Yoakam)
+
+Recorded by: soomlos
+schoeps mk4v > nbob actives > sound devices mixpre-3 (24/48)
+sound devices mixpre-3 > usb > pc > poly wav (24/48)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24/48)
+
+ffp
+bd2023-10-20-soomlos-t01.flac:82560e31bb6d1002327b84a08e15b4a6
+bd2023-10-20-soomlos-t02.flac:53f8afed81372a289e5924fa5744dca7
+bd2023-10-20-soomlos-t03.flac:3a2d65a7b0f54f3d48d7835fb7052be3
+bd2023-10-20-soomlos-t04.flac:dc6a35249a9e946ad229c83aa97c8e48
+bd2023-10-20-soomlos-t05.flac:8e3bac7e8cc428776ed9a9b4cc139151
+bd2023-10-20-soomlos-t06.flac:3a54b226401cbecc936629d70dba11f1
+bd2023-10-20-soomlos-t07.flac:f9eeaeefcae7784245bb0e428b1f23c2
+bd2023-10-20-soomlos-t08.flac:0756bc92d365fdca2dbdefab23ddd96e
+bd2023-10-20-soomlos-t09.flac:860eeee2d89a6dbc6aeada777f9b7f77
+bd2023-10-20-soomlos-t10.flac:c2b76dfa7242d07c37baf32cbe0d185e
+bd2023-10-20-soomlos-t11.flac:dc223049dcc8d1d16e047481b6774551
+bd2023-10-20-soomlos-t12.flac:04b1230d500e4b051d91ec3ce05b2751
+bd2023-10-20-soomlos-t13.flac:8bb4bc5ebcb08f9c55783335948bbc85
+bd2023-10-20-soomlos-t14.flac:dee377927fe6cad4c6e60316df55ba92
+bd2023-10-20-soomlos-t15.flac:b1d8c86b9b8ace6f4bf7bae78c153601
+bd2023-10-20-soomlos-t16.flac:a94223cac25b0b19ffe756ded668440e
+bd2023-10-20-soomlos-t17.flac:0a9fd17781a52a667996425f3a7cadce
+bd2023-10-20-soomlos-t18.flac:58bb8ced9b672eeb800e431cf6392b78

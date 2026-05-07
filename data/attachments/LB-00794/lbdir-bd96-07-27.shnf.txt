@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-27.shnf 
+=================== 
+=================== 
+=================== 
+5b5df4d3948179f5ea6315977254a11a  1-01 - To Be Alone With You (96-07-27 Stockholm, Sweden).shn
+cca944135068a7b768c05b52e7526084  1-02 - Shake Sugaree (96-07-27 Stockholm, Sweden).shn
+68c0e39cddf33ff544ce22ffe89b0a03  1-03 - All Along The Watchtower (96-07-27 Stockholm, Sweden).shn
+3d5517aecb725383686c5fd60271a970  1-04 - Tears Of Rage (96-07-27 Stockholm, Sweden).shn
+aff67067f73de8987f09479936fde1dd  1-05 - It Takes A Lot To Laugh (96-07-27 Stockholm, Sweden).shn
+f4f2bf43d80b7f8a574395fab7113cde  1-06 - Silvio (96-07-27 Stockholm, Sweden).shn
+de9187fd9a946547f7a9e9254104355c  1-07 - Mr. Tambourine Man (96-07-27 Stockholm, Sweden).shn
+b5bed683361c058922aedd3acaddce50  1-08 - Tangled Up In Blue (96-07-27 Stockholm, Sweden).shn
+a540a2c8465af014666bf7482c7dbcea  2-01 - Hard Rain's A-Gonna Fall (96-07-27 Stockholm, Sweden).shn
+0ca575183f4a8f68c3f58d64543bb99d  2-02 - Tombstone Blues (96-07-27 Stockholm, Sweden).shn
+71c3c89ac936e211c8536a887b8e702d  2-03 - I'll Remember You (96-07-27 Stockholm, Sweden).shn
+efa42239796676db7f61a2773cea78e6  2-04 - Maggie's Farm (96-07-27 Stockholm, Sweden).shn
+da40ae8adaeddee25c6c5da001ad06db  2-05 - It Ain't Me, Babe (96-07-27 Stockholm, Sweden).shn
+ef942b30ad8121af6cf63d2b6d7cef66  2-06 - Rainy Day Women (96-07-27 Stockholm, Sweden).shn
+c76c6cf504bd9f706be2bae8bfcdaa8d  2-07 - This Wheel's On Fire (96-07-09 Salzburg, Austria).shn
+622f8994761be37126984459cf5d5153  2-08 - Stuck Inside Of Mobile (96-07-09 Salzburg, Austria).shn
+6974bdb8bd53aa5a7393c2de03cb6657  96-07-27_Stockholm, Sweden-D1.md5
+28097445c8056bbb17c1309db668ae87  96-07-27_Stockholm, Sweden-D2.md5
+04cc10fc7987da9c7b62912db513bcf8  96-07-27_Stockholm, Sweden.txt
+9ec31957816df866b3fdc2ad82edd442  bd96-07-27.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-07-27.shnf 
+=================== 
+=================== 
+=================== 
+8fdccb0a507da73fe1270d82529c3a0b  [shntool]  1-01_-_To_Be_Alone_With_You_(96-07-27_Stockholm,_Sweden).wav
+f0d6f7727a63628f22012a09ce93c2c8  [shntool]  1-02_-_Shake_Sugaree_(96-07-27_Stockholm,_Sweden).wav
+5c4681c6e1ee0e05bbe9639a38b0650c  [shntool]  1-03_-_All_Along_The_Watchtower_(96-07-27_Stockholm,_Sweden).wav
+f4680077e78f5441f6ac66e6559b9ba4  [shntool]  1-04_-_Tears_Of_Rage_(96-07-27_Stockholm,_Sweden).wav
+0369096a9413aada7889eec79a356693  [shntool]  1-05_-_It_Takes_A_Lot_To_Laugh_(96-07-27_Stockholm,_Sweden).wav
+79934869c5157fde6dc370d6047e6ebb  [shntool]  1-06_-_Silvio_(96-07-27_Stockholm,_Sweden).wav
+36ca7c798870be799e01064f08cc0bd7  [shntool]  1-07_-_Mr._Tambourine_Man_(96-07-27_Stockholm,_Sweden).wav
+c23026f6d4a1908324c801e2db4652a4  [shntool]  1-08_-_Tangled_Up_In_Blue_(96-07-27_Stockholm,_Sweden).wav
+03e6fca76f43f94f192eec6279587534  [shntool]  2-01_-_Hard_Rain's_A-Gonna_Fall_(96-07-27_Stockholm,_Sweden).wav
+67c48806b35c9d2cc48611616dd4be4b  [shntool]  2-02_-_Tombstone_Blues_(96-07-27_Stockholm,_Sweden).wav
+e4be7a89f79c16aecce18c335f501f65  [shntool]  2-03_-_I'll_Remember_You_(96-07-27_Stockholm,_Sweden).wav
+076f5ea7936401a1b93d0c38fa86450e  [shntool]  2-04_-_Maggie's_Farm_(96-07-27_Stockholm,_Sweden).wav
+86ec2964783d0dd6d543ffaecef79c62  [shntool]  2-05_-_It_Ain't_Me,_Babe_(96-07-27_Stockholm,_Sweden).wav
+52b0abf703018744edb3bad9f19186e3  [shntool]  2-06_-_Rainy_Day_Women_(96-07-27_Stockholm,_Sweden).wav
+01b4ea9bb250ebeae6ec98ab5e9fe817  [shntool]  2-07_-_This_Wheel's_On_Fire_(96-07-09_Salzburg,_Austria).wav
+46651c8b3acffea9ef046393c3acb630  [shntool]  2-08_-_Stuck_Inside_Of_Mobile_(96-07-09_Salzburg,_Austria).wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-27.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:50.62       51301868 B   ---   --   ---xx    shn  0.7066  1-01 - To Be Alone With You (96-07-27 Stockholm, Sweden).shn
+     6:31.27       69035948 B   ---   --   ---xx    shn  0.6094  1-02 - Shake Sugaree (96-07-27 Stockholm, Sweden).shn
+     7:13.02       76385948 B   ---   --   ---xx    shn  0.6894  1-03 - All Along The Watchtower (96-07-27 Stockholm, Sweden).shn
+     9:41.23      102542540 B   ---   --   ---xx    shn  0.6639  1-04 - Tears Of Rage (96-07-27 Stockholm, Sweden).shn
+     7:48.57       82689308 B   ---   --   ---xx    shn  0.7069  1-05 - It Takes A Lot To Laugh (96-07-27 Stockholm, Sweden).shn
+     8:05.11       85580476 B   -b-   --   ---xx    shn  0.7359  1-06 - Silvio (96-07-27 Stockholm, Sweden).shn
+    11:38.15      123162724 B   -b-   --   ---xx    shn  0.5885  1-07 - Mr. Tambourine Man (96-07-27 Stockholm, Sweden).shn
+    12:12.46      129233036 B   ---   --   ---xx    shn  0.6250  1-08 - Tangled Up In Blue (96-07-27 Stockholm, Sweden).shn
+    10:30.45      111237884 B   ---   --   ---xx    shn  0.5343  2-01 - Hard Rain's A-Gonna Fall (96-07-27 Stockholm, Sweden).shn
+     8:40.12       91756552 B   -b-   --   ---xx    shn  0.5821  2-02 - Tombstone Blues (96-07-27 Stockholm, Sweden).shn
+     6:48.39       72063448 B   -b-   --   ---xx    shn  0.5522  2-03 - I'll Remember You (96-07-27 Stockholm, Sweden).shn
+     9:30.19      100593720 B   -b-   --   ---xx    shn  0.6086  2-04 - Maggie's Farm (96-07-27 Stockholm, Sweden).shn
+    12:21.60      130852668 B   -b-   --   ---xx    shn  0.6447  2-05 - It Ain't Me, Babe (96-07-27 Stockholm, Sweden).shn
+     7:33.65       80062260 B   -b-   --   ---xx    shn  0.6804  2-06 - Rainy Day Women (96-07-27 Stockholm, Sweden).shn
+     6:37.54       70157852 B   ---   --   ---xx    shn  0.6363  2-07 - This Wheel's On Fire (96-07-09 Salzburg, Austria).shn
+    10:00.54      105967052 B   ---   --   ---xx    shn  0.5093  2-08 - Stuck Inside Of Mobile (96-07-09 Salzburg, Austria).shn
+   140:04.67     1482623284 B                            0.6239  (16 files)
+=================== 
+=================== 
+=================== 

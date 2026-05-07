@@ -1,0 +1,65 @@
+===================
+===================
+===================
+=== md5 for: bd93-09-02-b.flacf
+===================
+===================
+===================
+c1c9f55cbf96d1be733416d5a9a13ace *Bob Dylan 2 sept 1993  Toronto.txt
+e237179e518b3367d406f948ebb6a52b *fingerprint.ffp.txt
+e5615f572de4bdb90f24e290cb3f0301 *md5sum.md5
+41fe4dfb46ac6715cf7aff7eec44c181 *tracks\BD19930902D1T01.flac
+36adf81f5b17731b80bd5be9a3fed09a *tracks\BD19930902D1T02.flac
+15d7ef92e428e9fb82f0522457a0901b *tracks\BD19930902D1T03.flac
+9b5525c46a8e5bf069c390e7ffe98cb2 *tracks\BD19930902D1T04.flac
+6ac890171fb00ab6b15266c02f4f1c27 *tracks\BD19930902D1T05.flac
+12db9c6394c9d2e2d62440c0b19e1ade *tracks\BD19930902D1T06.flac
+b74afea5d56d23c1a87bf9b5edfd2e77 *tracks\BD19930902D2T01.flac
+ccc57aa8dabbc5fe857ca42d3ba16364 *tracks\BD19930902D2T02.flac
+b9335176114dac597cd2cfb59ad6107d *tracks\BD19930902D2T03.flac
+554b56ae99048b7a5e5c5fdd31c770eb *tracks\BD19930902D2T04.flac
+bfc990cdef8e448664699c8144a02111 *tracks\BD19930902D2T05.flac
+ee3b6914ab44aa6a61ebf9032ffa20bc *tracks\BD19930902D2T06.flac
+===================
+===================
+===================
+=== ffp for: bd93-09-02-b.flacf
+===================
+===================
+===================
+tracks\BD19930902D1T01.flac:1c053a29f1f1f0efb8abe3a6d1b3215f
+tracks\BD19930902D1T02.flac:e3d1316bc763f0b1b4f67c9bc3446654
+tracks\BD19930902D1T03.flac:2e5383adddc90fad367b28ab1ac27d85
+tracks\BD19930902D1T04.flac:b06178af87b2fc5dcee5c66f8f584b2b
+tracks\BD19930902D1T05.flac:6e705a50b07763fa001e51109c262d01
+tracks\BD19930902D1T06.flac:4f81a958b274547d873c1fac51ed6d32
+tracks\BD19930902D2T01.flac:1d98ae9a7291f59c94ad85418ca47076
+tracks\BD19930902D2T02.flac:e216bd47ae204ad2e3f655a8ccf5e76a
+tracks\BD19930902D2T03.flac:cd2fdffccddb0441d7d2726b775bcff8
+tracks\BD19930902D2T04.flac:d74bdba308cfc59aa099740bc2b58ad1
+tracks\BD19930902D2T05.flac:705d29b7d065f003c4ad73202f1ff11d
+tracks\BD19930902D2T06.flac:8b93ca1543b078e77d26359b8a65352b
+===================
+===================
+===================
+=== shntool len for: bd93-09-02-b.flacf\tracks
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:57.44       41910332 B   ---   --   ---xx   flac  0.5262  BD19930902D1T01.flac
+     7:54.19       83658332 B   ---   --   ---xx   flac  0.5587  BD19930902D1T02.flac
+     6:17.10       66526364 B   ---   --   ---xx   flac  0.5719  BD19930902D1T03.flac
+     7:37.12       80643068 B   ---   --   ---xx   flac  0.5307  BD19930902D1T04.flac
+     9:45.47      103304588 B   ---   --   ---xx   flac  0.5774  BD19930902D1T05.flac
+     6:24.72       67906988 B   ---   --   ---xx   flac  0.4817  BD19930902D1T06.flac
+     6:07.15       64774124 B   ---   --   ---xx   flac  0.4047  BD19930902D2T01.flac
+     8:37.27       91262348 B   ---   --   ---xx   flac  0.4707  BD19930902D2T02.flac
+     9:22.23       99190940 B   ---   --   ---xx   flac  0.4671  BD19930902D2T03.flac
+     9:02.56       95740556 B   ---   --   ---xx   flac  0.5907  BD19930902D2T04.flac
+     6:36.35       69936764 B   ---   --   ---xx   flac  0.5728  BD19930902D2T05.flac
+     4:22.20       46263884 B   ---   --   ---xx   flac  0.5838  BD19930902D2T06.flac
+    86:05.05      911118288 B                            0.5281  (12 files)
+===================
+===================
+===================

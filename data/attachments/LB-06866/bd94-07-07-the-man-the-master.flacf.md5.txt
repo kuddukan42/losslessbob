@@ -1,0 +1,14 @@
+12ce8e59b40d55ee16c9965cd25e016b *bd94-07-07-the-man-the-master-d1t01.flac
+814e43253892a82b4f649e26a20fef21 *bd94-07-07-the-man-the-master-d1t02.flac
+0e82f6ad4d7b289ba5987e8d521001ca *bd94-07-07-the-man-the-master-d1t03.flac
+cddfe341d1e22058eb4108c40a757d0f *bd94-07-07-the-man-the-master-d1t04.flac
+0aba6b9ba0be49b625f0640cd231240f *bd94-07-07-the-man-the-master-d1t05.flac
+decb5b46dd75d88f63d3258bfe514e0d *bd94-07-07-the-man-the-master-d1t06.flac
+4a81b259fbb4caf601ce03cf66db3b02 *bd94-07-07-the-man-the-master-d1t07.flac
+f851e14dbccfed499157639882426e96 *bd94-07-07-the-man-the-master-d1t08.flac
+d5e5befbc265e09b1fc7140bf9effcaf *bd94-07-07-the-man-the-master-d2t01.flac
+0789f6b8283252417ea29e9943497e04 *bd94-07-07-the-man-the-master-d2t02.flac
+04bca4c68fc563e3f51b05fe1bb5ce9b *bd94-07-07-the-man-the-master-d2t03.flac
+a0d873a0596fc0617b6880c607aa4726 *bd94-07-07-the-man-the-master-d2t04.flac
+9299082acf4d5317549a6ee6a3af6203 *bd94-07-07-the-man-the-master-d2t05.flac
+ecaac256028b139dcc65253ab8b49ee4 *bd94-07-07-the-man-the-master-d2t06.flac

@@ -1,0 +1,117 @@
+===================
+===================
+===================
+=== md5 for: bd81-06-28-JTT-Clean-Up.flacf
+===================
+===================
+===================
+e0588a82d3a94ea2b303ba6f53b1eead *BOB DYLAN - Earls Court June 28th 1981 (JTT Clean Up).md5
+e0588a82d3a94ea2b303ba6f53b1eead *BOB DYLAN - Earls Court June 28th 1981 (JTT Clean Up).txt
+e2673a3c4417a4d38a5751529bd94034 *BOB DYLAN - Earls Court June 28th 1981 (JTT Clean Up)_Info.txt
+8da1f04cf70381575595e2295ce5a8f5 *Disc One\Disc One.ffp
+fc1aa3c7598aa65b42e3a47f5c0a6641 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 01.flac
+2744b42a40ac56cc4ec6f88a28abe22d *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 02.flac
+9b00d0bcdb325d59e5e366e7aacac00d *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 03.flac
+da37c94146d7ff7a29970d81e60abc14 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 04.flac
+4136af5389860d813631cb79789ac603 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 05.flac
+5317e4502ad0d824d14c54a8e186fe1f *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 06.flac
+07eaef5eff02df968aafa4a85ab907f3 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 07.flac
+974775b16cd8106823bcdd2cf7954831 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 08.flac
+3f5f06cb0e49531d441e712df2e91001 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 09.flac
+f5aa9ffaf20ecb9011695b30ac55319d *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 10.flac
+60c53598a49e6094a0499f403372f9f0 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 11.flac
+88c6bf34bcdfa5d63b8722b56a92e715 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 12.flac
+5b82e8fb44e7ac67963a0e65e875ff09 *Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 13.flac
+393eddbe4da053271f8e98cd18b7bcce *Disc Two\Disc Two.ffp
+c7ce00575dfe2bd33827bd68676d2d4e *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 01.flac
+824db64e14da4eaee2dd6692bdfcdbbd *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 02.flac
+72577d93a303406e0e79403f333e6078 *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 03.flac
+b85dcf2a7b8043bfbf2aecbd357e224e *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 04.flac
+73675dfc43e6e609c3ff83d032e2c397 *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 05.flac
+b7fd929d64a6c251e7f473c7b15d52ee *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 06.flac
+213ee377d6ec7a73c799598f8db9461c *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 07.flac
+b9fb296a0250ba735fb5375b0d63858e *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 08.flac
+9541f6ff4b4417fa3ba792d8cc7be580 *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 09.flac
+9f6b78546b209841117324a3557b228e *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 10.flac
+b664ea54bdfcc475117448c061a3eeb8 *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 11.flac
+c6af137286c5c1f05b370f87faa6d40f *Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 12.flac
+c35f0d894e7638091da8625ac232f4fe *Earls Court 28.06.1981 - F.jpeg
+7394f4ce050566e1c4367651126c6a50 *Earls Court 28.06.1981 - R.jpeg
+===================
+===================
+===================
+=== ffp for: bd81-06-28-JTT-Clean-Up.flacf
+===================
+===================
+===================
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 01.flac:0d5ca33ab690349c713df45636cc920c
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 02.flac:f124aaea45eb4f090dd17649f36a2da2
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 03.flac:7f50b417042848579e12954e75a882e6
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 04.flac:3e4578d507e7198470014720180d105d
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 05.flac:40e6f7f8a979e20491357e2682bc3942
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 06.flac:e5b3b2b2c791d8e910e085e99398bdf6
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 07.flac:711501492f5de0e54cae7d2eee86e627
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 08.flac:c65e243ca14b1de2b40c141cccadfeb5
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 09.flac:349ba3a20b1d4cf467c36118a1bd4fe5
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 10.flac:7fa3088f4f9fc94695e8f87df47a395e
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 11.flac:d7c226523f57cd981d9ef5214542c803
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 12.flac:a309d760856d6fc5d4461fcf73d7a3b1
+Disc One\Dylan - Earls Court June 28th 1981_Disc 01 Track 13.flac:7fd032300b939f200faa3a2ce06801ba
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 01.flac:cdd63d57083c16b887100de32e26e635
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 02.flac:e531f77243d30233ba87a626e6130833
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 03.flac:46ae39f1320c439cbd6cdd45e68d4d35
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 04.flac:7cc6f5002d0d39a692a595e52a5786be
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 05.flac:61530ca979fdd25c4b2fe4097c5fbb58
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 06.flac:f103799cd7aaa5515f23cc42235b0f13
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 07.flac:7f931d23e6936201299e257f1de7c649
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 08.flac:0264dfc71e453a7bc5356c35b6a6c98d
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 09.flac:6bd8ea97285b8e511bd2bbba28cf31a3
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 10.flac:aa1fdee27147d2bdf25c69e339f415a7
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 11.flac:726ebbe29ed8ae69b18dbd8e233b13d6
+Disc Two\Dylan - Earls Court June 28th 1981_Disc 02 Track 12.flac:ccdd2c4e37a807ba99a73f4fe1e06380
+===================
+===================
+===================
+=== shntool len for: bd81-06-28-JTT-Clean-Up.flacf\Disc One
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.57       50231708 B   ---   --   ---xx   flac  0.6735  Dylan - Earls Court June 28th 1981_Disc 01 Track 01.flac
+     4:53.24       51741692 B   ---   --   ---xx   flac  0.6401  Dylan - Earls Court June 28th 1981_Disc 01 Track 02.flac
+     6:23.32       67636508 B   ---   --   ---xx   flac  0.6684  Dylan - Earls Court June 28th 1981_Disc 01 Track 03.flac
+     3:27.44       36618332 B   ---   --   ---xx   flac  0.6137  Dylan - Earls Court June 28th 1981_Disc 01 Track 04.flac
+     4:48.55       50932604 B   ---   --   ---xx   flac  0.6436  Dylan - Earls Court June 28th 1981_Disc 01 Track 05.flac
+     4:01.16       42550076 B   ---   --   ---xx   flac  0.6745  Dylan - Earls Court June 28th 1981_Disc 01 Track 06.flac
+     5:51.10       61939964 B   ---   --   ---xx   flac  0.6323  Dylan - Earls Court June 28th 1981_Disc 01 Track 07.flac
+     4:49.29       51047852 B   ---   --   ---xx   flac  0.6704  Dylan - Earls Court June 28th 1981_Disc 01 Track 08.flac
+     3:19.37       35190668 B   ---   --   ---xx   flac  0.6376  Dylan - Earls Court June 28th 1981_Disc 01 Track 09.flac
+     5:16.07       55758908 B   ---   --   ---xx   flac  0.6214  Dylan - Earls Court June 28th 1981_Disc 01 Track 10.flac
+     4:48.11       50829116 B   ---   --   ---xx   flac  0.6593  Dylan - Earls Court June 28th 1981_Disc 01 Track 11.flac
+     4:41.27       49631948 B   ---   --   ---xx   flac  0.6036  Dylan - Earls Court June 28th 1981_Disc 01 Track 12.flac
+     3:27.10       36538364 B   ---   --   ---xx   flac  0.6268  Dylan - Earls Court June 28th 1981_Disc 01 Track 13.flac
+    60:31.59      640647740 B                            0.6446  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd81-06-28-JTT-Clean-Up.flacf\Disc Two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:59.61       31719116 B   ---   --   ---xx   flac  0.6478  Dylan - Earls Court June 28th 1981_Disc 02 Track 01.flac
+     3:40.00       38808044 B   ---   --   ---xx   flac  0.6256  Dylan - Earls Court June 28th 1981_Disc 02 Track 02.flac
+     5:07.70       54319484 B   ---   --   ---xx   flac  0.6606  Dylan - Earls Court June 28th 1981_Disc 02 Track 03.flac
+     4:32.73       48152540 B   ---   --   ---xx   flac  0.6659  Dylan - Earls Court June 28th 1981_Disc 02 Track 04.flac
+     4:02.51       42808796 B   ---   --   ---xx   flac  0.6237  Dylan - Earls Court June 28th 1981_Disc 02 Track 05.flac
+     4:25.12       46774268 B   ---   --   ---xx   flac  0.6529  Dylan - Earls Court June 28th 1981_Disc 02 Track 06.flac
+     4:00.35       42418364 B   ---   --   ---xx   flac  0.6294  Dylan - Earls Court June 28th 1981_Disc 02 Track 07.flac
+     4:39.42       49314428 B   ---   --   ---xx   flac  0.6633  Dylan - Earls Court June 28th 1981_Disc 02 Track 08.flac
+     9:41.57      102622508 B   ---   --   ---xx   flac  0.6369  Dylan - Earls Court June 28th 1981_Disc 02 Track 09.flac
+     4:58.25       52626044 B   ---   --   ---xx   flac  0.6646  Dylan - Earls Court June 28th 1981_Disc 02 Track 10.flac
+     5:49.57       61697708 B   ---   --   ---xx   flac  0.6822  Dylan - Earls Court June 28th 1981_Disc 02 Track 11.flac
+     4:44.05       50109404 B   ---   --   ---xx   flac  0.6508  Dylan - Earls Court June 28th 1981_Disc 02 Track 12.flac
+    58:42.38      621370704 B                            0.6509  (12 files)
+===================
+===================
+===================

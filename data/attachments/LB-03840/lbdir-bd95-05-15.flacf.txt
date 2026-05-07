@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-15.flacf 
+=================== 
+=================== 
+=================== 
+35b3232babaad8d6cb805aec18a37064  bd95-05-15-LB-3840.txt
+28cf68ca6859c584e3c18334b5fc67ce  Bob Dylan 15 may 1995 Palm Desert.txt
+92c3970d4cfb198bb9b6ccfc04996cf7  D1\1 Crash On The Levee (Down In The Flood).flac
+65945b55d52b5409c2364235fcf5ddc5  D1\2 Lay Lady Lay.flac
+ee7b24150ba94c185569f1c58319c994  D1\3 All Along The Watchtower.flac
+3bf4ec997c8e52cd22658207d3d658c0  D1\4 Just Like A Woman.flac
+ea03c5694501a5b8097d0a4c15f7ad6a  D1\5 I_ll Be Your Baby Tonight.flac
+1f306e1fd44463a70d0525cc56fe2585  D1\6 Seeing The Real You At Last.flac
+405493c744dacade6ff50b8484f930ce  D1\7 Mr Tambourine Man.flac
+74d0cbb163fa92e249690aac9dee66d4  D1\8 Masters Of War.flac
+ecf45b80e4e9d5cbafd0eda521f7bbb3  D1\9 It_s All Over Now, Baby Blue.flac
+03f781abccd30947574f252fbf90f69e  D2\1 God Knows.flac
+e904c95fa50bb036fdee98bc1f689362  D2\2 Never Gonna Be The Same Again.flac
+24bed7fcfafe11988a94710ed9a6f7d3  D2\3 Obviously Five Believers.flac
+30e56bd7301ebb199352217af2461421  D2\4 Like A Rolling Stone.flac
+da2bafb2b41c8790a498779eeb373ec4  D2\5 The Times They Are A_Changin.flac
+7ae9531b5d23c66218ab77ff592f5e9e  fingerprintD1.txt
+625ea17392a585cecbb65c5bdc3d6b34  fingerprintD2.txt
+c456bfa357bcbf91d9014863e49d8f2b  Palmdesert_150595.Jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-15.flacf\D1 
+=================== 
+=================== 
+=================== 
+1 Crash On The Levee (Down In The Flood).flac:d9cbc67584b673c2210759eb0f6d6018
+2 Lay Lady Lay.flac:a5bfe0c34465f1c4fb6c5e9a05709c02
+3 All Along The Watchtower.flac:3904e4864b0ff6d0786fea73d3b7d1ea
+4 Just Like A Woman.flac:d37a61133120b6eea9953bd3b0b873ab
+5 I_ll Be Your Baby Tonight.flac:7c14b8abe02b97d0736f3d3722394869
+6 Seeing The Real You At Last.flac:b1da26f415bb60b8921314516005486a
+7 Mr Tambourine Man.flac:1bffca2c79a45c5e9cc5929ddbdbeeba
+8 Masters Of War.flac:fe5066953611316d4315de5c5d9c3e27
+9 It_s All Over Now, Baby Blue.flac:96514533c9bb8e36e378cf56477a42aa
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-15.flacf\D2 
+=================== 
+=================== 
+=================== 
+1 God Knows.flac:8570fc86cadefc9aff93cb9ea33906fb
+2 Never Gonna Be The Same Again.flac:a0b9f13a9cbdef155505026b2828eea8
+3 Obviously Five Believers.flac:64bcba77fb1ba9d7b5539e64a5a9cd69
+4 Like A Rolling Stone.flac:a01ec3e41e03bc75df3bcb8708a69223
+5 The Times They Are A_Changin.flac:ef7b441a321bf085421238fa3b945cd1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-15.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.00       54684044 B   ---   --   ---xx   flac  0.6273  1 Crash On The Levee (Down In The Flood).flac
+     4:48.00       50803244 B   ---   --   ---xx   flac  0.5638  2 Lay Lady Lay.flac
+     5:37.00       59446844 B   ---   --   ---xx   flac  0.6179  3 All Along The Watchtower.flac
+     6:32.00       69148844 B   ---   --   ---xx   flac  0.5642  4 Just Like A Woman.flac
+     6:51.00       72500444 B   ---   --   ---xx   flac  0.6058  5 I_ll Be Your Baby Tonight.flac
+     6:04.00       64209644 B   ---   --   ---xx   flac  0.6143  6 Seeing The Real You At Last.flac
+     6:52.00       72676844 B   ---   --   ---xx   flac  0.4356  7 Mr Tambourine Man.flac
+     6:12.00       65620844 B   ---   --   ---xx   flac  0.4970  8 Masters Of War.flac
+     8:51.00       93668444 B   ---   --   ---xx   flac  0.4560  9 It_s All Over Now, Baby Blue.flac
+    56:57.00      602759196 B                            0.5459  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-15.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.00       66855644 B   ---   --   ---xx   flac  0.5973  1 God Knows.flac
+     6:55.00       73206044 B   ---   --   ---xx   flac  0.5558  2 Never Gonna Be The Same Again.flac
+     6:45.00       71442044 B   ---   --   ---xx   flac  0.6075  3 Obviously Five Believers.flac
+     7:59.00       84495644 B   ---   --   ---xx   flac  0.6025  4 Like A Rolling Stone.flac
+     8:19.00       88023644 B   ---   --   ---xx   flac  0.5323  5 The Times They Are A_Changin.flac
+    36:17.00      384023020 B                            0.5776  (5 files)
+=================== 
+=================== 
+=================== 

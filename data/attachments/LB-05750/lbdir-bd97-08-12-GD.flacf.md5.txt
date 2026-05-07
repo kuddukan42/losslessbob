@@ -1,0 +1,17 @@
+a95268c596dc246ad3a866ff1e086d95  bd97-08-12-d1-scranton-GD\bd97-08-12-d1-scranton-GD.md5
+ea43a80ddeccee4fcb3f7b194b08fad9  bd97-08-12-d1-scranton-GD\Track01.flac
+3492e9cefa072fa05a2b252c7ec3f570  bd97-08-12-d1-scranton-GD\Track02.flac
+39e63410674931fed82c7a7850a4dceb  bd97-08-12-d1-scranton-GD\Track03.flac
+625eb3fe4ad2d451bcb9da32f04c10ba  bd97-08-12-d1-scranton-GD\Track04.flac
+b96cb2c63a0f84847f7021ef1b39d16e  bd97-08-12-d1-scranton-GD\Track05.flac
+021c2d9fde6a716ca3463b26ef3aa0e9  bd97-08-12-d1-scranton-GD\Track06.flac
+b88727fa17535043a9e720a226136328  bd97-08-12-d1-scranton-GD\Track07.flac
+ea1feb1c3db68a9196658a2d496fe624  bd97-08-12-d1-scranton-GD\Track08.flac
+74360cbc035e9147987e58045d2bae8e  bd97-08-12-d2-Scranton\bd97-08-12-d2-Scranton.md5
+e57bc7dc56e3dd3b573397b3dbad1c81  bd97-08-12-d2-Scranton\Track01.flac
+389825111d2b03f5f7725759fea59c23  bd97-08-12-d2-Scranton\Track02.flac
+0c3ed050633a638bffe70a37695fa552  bd97-08-12-d2-Scranton\Track03.flac
+c98020275b424847a7d877e030506391  bd97-08-12-d2-Scranton\Track04.flac
+7ca515761d3dcd3b6df53f9efbe61843  bd97-08-12-d2-Scranton\Track05.flac
+9c5d188bc95a35916f98e5567db74390  bd97-08-12-d2-Scranton\Track06.flac
+a4e8e8ccf95d47be0acb537a1f70077f  bd97-08-12-Scranton-GD.txt

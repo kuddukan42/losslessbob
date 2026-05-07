@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-06-Rolling-Stone-Sessions.flacf 
+=================== 
+=================== 
+=================== 
+bd0dc999b68350c2b69524572d30bfbd  bd1965-06-15 Columbia Recording Studio\bd1965-06-15 Columbia Recording Studio.md5
+1cd565aee65b64eeb9b5ad8ad116de6a  bd1965-06-15 Columbia Recording Studio\bd1965-06-15 Columbia Recording Studio.txt
+98e09937725c8dd66af6f2c03e58840c  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t01.flac
+d073a79bd010aeaf47f2fed0bcfbf77e  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t02.flac
+342fa79c31d1417e6ed1cba2ac28a244  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t03.flac
+8a90c2752a5e04c0a61b4b9578913682  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t04.flac
+23a79b6440bb83cd6d9d12f297c6a328  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t05.flac
+545e333b97f6871fe2061cbd07bd2a8c  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t06.flac
+f200d9682bed8b58f5cabfbc34a57e33  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t07.flac
+390a9d0b8ff85b3eae45c3ff8e2945cf  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t08.flac
+94560ed6aac5d59582c8208f8a916bfd  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t09.flac
+5a36e1c916d3e362150277596046872c  bd1965-06-15 Columbia Recording Studio\bd1965-06-15t10.flac
+4ec6e5a17afa83b5347a740bc36bad21  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 Columbia Recording Studio.md5
+af0f2d09cf2b3b6b6cd6e47900d630d7  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 Columbia Recording Studio.txt
+94438db9d2e7ebf6d91bebc54ec7759e  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t01.flac
+bdb8e12c9831591b1a7d44110762b359  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t02.flac
+55cfea746c44ed7f571e170bab2330ee  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t03.flac
+c6dd1932661b46fb93f491181dd9a382  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t04.flac
+50eec968a11232329c333b991c3606b4  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t05.flac
+07c42620335764f38be80a012aa90b20  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t06.flac
+fef66dd50db0fb4aa085fd703cbbaeaa  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t07.flac
+3cb29528d816dbe33860197926db17f6  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t08.flac
+75b4561b1fd33fc2b69b37e7df054be6  bd1965-06-16 Columbia Recording Studio\bd1965-06-16 t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-06-Rolling-Stone-Sessions.flacf\bd1965-06-15 Columbia Recording Studio 
+=================== 
+=================== 
+=================== 
+bd1965-06-15t01.flac:723d9fd1d09ebcbfd966e3aedda1c03f
+bd1965-06-15t02.flac:f39c3cd7842d30b331888fb20bd402dd
+bd1965-06-15t03.flac:e0dfedd096d4e8f312d9da961c6c7b74
+bd1965-06-15t04.flac:ce432e85b35aae9861a567b7cad4037b
+bd1965-06-15t05.flac:308ba71eb30231393a292cc3d4b3244d
+bd1965-06-15t06.flac:f1f7aa598212855244e42f8627de7ff8
+bd1965-06-15t07.flac:d291f373e2bb88051652b7f2d4a3a323
+bd1965-06-15t08.flac:c6c086268c323a71e8373353a27b8f38
+bd1965-06-15t09.flac:1de8562486332afa3fd9dc2ba73189d6
+bd1965-06-15t10.flac:e52331c6378f608c1ba90bc27974e079
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-06-Rolling-Stone-Sessions.flacf\bd1965-06-16 Columbia Recording Studio 
+=================== 
+=================== 
+=================== 
+bd1965-06-16 t01.flac:378c707500154d99489f732706d6519a
+bd1965-06-16 t02.flac:4e8cfcc0f6fee6f63acfbe8cb10dd85a
+bd1965-06-16 t03.flac:6ce491e55d258314bc41b013a609a54a
+bd1965-06-16 t04.flac:138b0cdc2d1a1aeb4d0e7bb71f81800d
+bd1965-06-16 t05.flac:b4ea66dfb34f1dda0a1089995cd126e5
+bd1965-06-16 t06.flac:e3795151d3356327a42dd75809ebaf68
+bd1965-06-16 t07.flac:7d269c6f34e827c80227fd072dd830fe
+bd1965-06-16 t08.flac:5d90eb488b288a6a01f521b68da6b1aa
+bd1965-06-16 t09.flac:bc1ef601322858ba79618e0c5941bcc5
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-06-Rolling-Stone-Sessions.flacf\bd1965-06-15 Columbia Recording Studio 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.37        6613868 B   ---   --   ---xx   flac  0.5403  bd1965-06-15t01.flac
+     3:34.62       37895468 B   ---   --   ---xx   flac  0.6426  bd1965-06-15t02.flac
+     4:57.45       52496684 B   ---   --   ---xx   flac  0.5642  bd1965-06-15t03.flac
+     3:21.55       35585804 B   ---   --   ---xx   flac  0.6247  bd1965-06-15t04.flac
+     3:52.64       41075372 B   ---   --   ---xx   flac  0.5763  bd1965-06-15t05.flac
+     1:08.26       12056396 B   ---   --   ---xx   flac  0.5830  bd1965-06-15t06.flac
+     1:38.35       17369564 B   ---   --   ---xx   flac  0.5947  bd1965-06-15t07.flac
+     2:01.18       21386780 B   ---   --   ---xx   flac  0.5750  bd1965-06-15t08.flac
+     3:33.26       37634396 B   ---   --   ---xx   flac  0.6646  bd1965-06-15t09.flac
+     4:07.72       43740188 B   ---   --   ---xx   flac  0.5003  bd1965-06-15t10.flac
+    28:53.65      305854520 B                            0.5885  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-06-Rolling-Stone-Sessions.flacf\bd1965-06-16 Columbia Recording Studio 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:25.56       25709756 B   ---   --   ---xx   flac  0.5580  bd1965-06-16 t01.flac
+     0:33.59        5960012 B   ---   --   ---xx   flac  0.4691  bd1965-06-16 t02.flac
+     6:33.63       69473420 B   ---   --   ---xx   flac  0.6623  bd1965-06-16 t03.flac
+     1:24.27       14881148 B   ---   --   ---xx   flac  0.5683  bd1965-06-16 t04.flac
+     0:31.44        5571932 B   ---   --   ---xx   flac  0.4676  bd1965-06-16 t05.flac
+     1:45.09       18543212 B   ---   --   ---xx   flac  0.4850  bd1965-06-16 t06.flac
+     0:25.50        4527644 B   ---   --   ---xx   flac  0.4115  bd1965-06-16 t07.flac
+     1:45.54       18649052 B   ---   --   ---xx   flac  0.5003  bd1965-06-16 t08.flac
+     1:11.17       12564428 B   ---   --   ---xx   flac  0.6372  bd1965-06-16 t09.flac
+    16:37.04      175880604 B                            0.5822  (9 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-07-03-jt_Montreux 
+=================== 
+=================== 
+=================== 
+6d843671c122d21e363e3a75631e01df  bd98-07-03.txt
+d89f8fc16d27e7b76689a55abd8c226b  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_Track 1.shn
+8a4547be4c60f53987273c89b55fc348  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_Track 2.shn
+ce01ffe0cbc0f50d0fa6df6445eae8ea  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_Track 3.shn
+b79189edbe70c01fa350e6c02f0f8fd9  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_Track 4.shn
+a2b4f5a405b79b08901ab1252a2cbb4e  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_Track 5.shn
+9edbd67b81e5b5a3eb772ec813f5e9d3  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_Track 6.shn
+af2567eac66a89d03fe0bfcff668decf  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_Track 7.shn
+9e30b4b992688737affb69c49b2689a8  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_Track 8.shn
+9a15ee1edc8f282b1636d086779e3f54  bd_98-07-03_cd1.shnf\bd_98-07-03_cd1_shn.md5
+59741da7fd52589bc1066d05d2a0ec57  bd_98-07-03_cd2.shnf\bd_98-07-03_cd2_Track 1.shn
+9900b2720c3c7e71ed88611e1a1fb5da  bd_98-07-03_cd2.shnf\bd_98-07-03_cd2_Track 2.shn
+e073967ac9a77f13e7b32a6f38a06b32  bd_98-07-03_cd2.shnf\bd_98-07-03_cd2_Track 3.shn
+8c92062b51c6335bc0b5cf3bb81a3203  bd_98-07-03_cd2.shnf\bd_98-07-03_cd2_Track 4.shn
+e18b2f6eed096c26eb016a76b77a014a  bd_98-07-03_cd2.shnf\bd_98-07-03_cd2_Track 5.shn
+ed7ef5b7beedb571578114f0e8c959b0  bd_98-07-03_cd2.shnf\bd_98-07-03_cd2_Track 6.shn
+8cf671c423fdda49e355f3dd67a6b6f5  bd_98-07-03_cd2.shnf\bd_98-07-03_cd2_Track 7.shn
+06d68262bf42e34bf7dff615a6ce3ef6  bd_98-07-03_cd2.shnf\bd_98-07-03_cd2_shn.md5
+fd42348a5ff06370c68aec95086dee91  readme.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-07-03-jt_Montreux\bd_98-07-03_cd1.shnf 
+=================== 
+=================== 
+=================== 
+fd7aeab012b5feaf2542c3057782e6e6  [shntool]  bd_98-07-03_cd1_Track_1.wav
+b97edf2510f59f3202f2ad56494901e5  [shntool]  bd_98-07-03_cd1_Track_2.wav
+7729cd8d2c6963bf16f2dd923e0ea5e0  [shntool]  bd_98-07-03_cd1_Track_3.wav
+2aa7f9b673129d7a31ff4ba02482dcf6  [shntool]  bd_98-07-03_cd1_Track_4.wav
+6498ba87a90a036b9dcb28763e752855  [shntool]  bd_98-07-03_cd1_Track_5.wav
+faa6f695589d42e6ad858e39c0975192  [shntool]  bd_98-07-03_cd1_Track_6.wav
+07bf83104729af77e9b131df94057fb6  [shntool]  bd_98-07-03_cd1_Track_7.wav
+f0a193a927c596e00f25b790996dbb1e  [shntool]  bd_98-07-03_cd1_Track_8.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-07-03-jt_Montreux\bd_98-07-03_cd2.shnf 
+=================== 
+=================== 
+=================== 
+52395ae222e7f91564d47d55259f9ff7  [shntool]  bd_98-07-03_cd2_Track_1.wav
+d812aefe0fce310e6a14b29000840479  [shntool]  bd_98-07-03_cd2_Track_2.wav
+1754b5787d7da9e89864300f812c2395  [shntool]  bd_98-07-03_cd2_Track_3.wav
+938d15ca818853ef3e53cb3752108d15  [shntool]  bd_98-07-03_cd2_Track_4.wav
+517695214924c2d8118b67c8c1ff39a7  [shntool]  bd_98-07-03_cd2_Track_5.wav
+59d2aa3d8340ddefde869d3bb9468b10  [shntool]  bd_98-07-03_cd2_Track_6.wav
+ecdb1000bc82d2312ad4cf3810898227  [shntool]  bd_98-07-03_cd2_Track_7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-03-jt_Montreux\bd_98-07-03_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.53       45635982 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd1_Track_1.wav
+     3:58.28       42049182 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd1_Track_2.wav
+     6:29.52       68742030 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd1_Track_3.wav
+     5:43.60       60646446 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd1_Track_4.wav
+     6:50.60       72465246 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd1_Track_5.wav
+     6:34.38       69591102 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd1_Track_6.wav
+     6:05.31       64459038 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd1_Track_7.wav
+     6:56.51       73502478 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd1_Track_8.wav
+    46:57.73      497091504 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-03-jt_Montreux\bd_98-07-03_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:07.32       96566190 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd2_Track_1.wav
+     9:49.37      103986750 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd2_Track_2.wav
+     1:03.65       11266206 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd2_Track_3.wav
+     5:57.35       63057246 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd2_Track_4.wav
+     5:18.61       56238798 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd2_Track_5.wav
+     4:26.01       46924878 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd2_Track_6.wav
+     5:59.68       63487662 B   ---   -e   -----    wav  1.0000  bd_98-07-03_cd2_Track_7.wav
+    41:42.74      441527730 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 

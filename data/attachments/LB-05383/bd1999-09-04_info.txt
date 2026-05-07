@@ -1,0 +1,54 @@
+Bob Dylan
+September 4, 1999 
+Troy G. Chastain Park Amphitheater
+Atlanta, Georgia
+
+AUD DAT clone(s) [unknown equipment] > WAV > Soundforge 6.0 > CD Wave > CD > EAC > WAV > Soundforge 6.0 >FLAC
+
+CD 1  [41:04.39]
+
+01 The Boxer (w/ Paul Simon)  [05:32.01]
+02 That'll Be The Day (w/ Paul Simon)  [02:32.39]
+03 The Wanderer (w/ Paul Simon)  [02:06.68]
+04 Knockin' On Heaven's Door (w/ Paul Simon)  [05:27.54]  %
+       -------------------------------
+05 I Am The Man, Thomas  [02:40.68]
+06 Mr.Tambourine Man  [06:52.08]
+07 Desolation Row  [08:01.49]
+08 It's All Over Now, Baby Blue  [07:50.52]
+09 Tangled Up In Blue  %  [08:31.11]
+
+
+CD 2  [48:22.66]
+
+01 All Along The Watchtower  [04:03.29]
+02 Lay, Lady, Lay  [05:00.35]
+03 Stuck Inside Of Mobile With The Memphis Blues Again  [08:44.16]
+04 Not Dark Yet  [07:29.16]
+05 Highway 61 Revisited  [05:50.01]  %	
+06 Like A Rolling Stone  [07:52.26]  %		
+07 Blowin' In The Wind  [05:36.46]  %		
+08 Not Fade Away  [03:46.47]
+
+
+
+Bob Dylan - vocal, guitar, harmonica
+Larry Campbell - guitar, pedal steel, mandolin
+Tony Garnier - bass 
+David Kemper - drums 
+Charlie Sexton - guitar
+
+d1t01-t04: Bob Dylan with Paul Simon and his Band
+[Mark Stewart, Vincent Nguini, Chris Botti, Jay Ashby, Andy Stitzer, Tony Cedras, Alain Mallet, Bakhithi Kumalo, Jamie Haddad, Steve Shehan, Steve Gadd]
+
+I did not harm the sound of the recording in any way. No LB number as yet.
+This is a fairly new transfer from my DAT clone. Microphone noise d2t02 @0:43, somewhat repaired.
+% indicates a break on my DAT, not sure which of those are already on the master tape.
+
+
+Please retain this info file as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+further info:
+http://www.bjorner.com/DSN21010.htm#_Toc473348540
+http://www.bjorner.com/DSN21010.htm#_Toc473348543

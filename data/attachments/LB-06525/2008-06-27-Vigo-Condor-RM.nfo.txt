@@ -1,0 +1,91 @@
+Bob Dylan
+Pabell—n 3
+Instituto Ferial de Vigo (IFEVI)
+Vigo
+2008-06-27
+CD 1
+
+01 Introduction 00:42
+02 Leopard-Skin Pill-Box Hat 04:50
+03 Lay, Lady, Lay 05:06
+04 Lonesome Day Blues 07:23
+05 Girl from the North Country 05:42
+06 The Levee's Gonna Break 06:46
+07 Stuck Inside of Mobile with the Memphis Blues Again 07:31
+08 Moonlight 04:45
+09 It's Alright, Ma (I'm only Bleeding) 07:09
+10 Spirit on the Water 07:15
+11 Things Have Changed 07:12
+64:26
+
+CD 2
+
+01 Handy Dandy 04:49
+02 Highway 61 Revisited 06:37
+03 Beyond the Horizon 05:53
+04 Summer Days 06:49
+05 Ain't Talkin' 08:15
+06 -audience- 03:47
+
+   (encore)
+07 Thunder on the Mountain 06:31
+08 Band Introduction 00:51
+08 Like a Rolling Stone 06:59
+50:36
+
+2CD 115:02
+
+NB:
+"Mr. Tony Garnier has problems of back and the 
+presence of a doctor has been needed."
+Tony Garnier sat in a high chair.
+
+Taper: Condor
+Soundman OKM II R Rockversion >
+Sony TCD-D100 Recording DAT Walkman (48kHz/16) >
+Master DAT >
+TASCAM DA-40 Digital Audio Tape Recorder >
+Steinberg WaveLab 6.01 >
+ssrc >
+dBpower AMP Music Converter 1.2.4 >
+FLAC 0.6145 (17 files) >
+MD5summer >
+µTorrent 1.7.7.0/13 >
+Dime 2008-08-03 by Insarah
+HungerCity 2008-08-04 by ShaReeF
+
+Dime 2008-08-03 Artwork by stew711
+TangledUpInTorrents 2008-09-23 Lewis & stewART artwork (back) modified by SM
+
+LB-6325 (58min+59min) "Condor" [A]
+in 3-way comparison lbp51 LB-6230 is warmest 
+but more muffled, then soomlos LB-6294 
+and then this which seems to have too much high end
+drop d1t3 2:17;
+drop d2t6 5:46 to 5:52 missing
+
+***SM remaster 2008-09-23***
+TangledUpInTorrents 2008-09-23 by mixedup
+
+SM
+xACT 1.62 >
+FLAC to AIFF >
+ClickRepair 2.2.1 >
+d2t1 click 2:12 fixed,
+d2t3 click 2:13 fixed >
+Amadeus II 3.8.7 >
+retracked (intro, aud, band intro),
+drop d1t3 2:17 patched,
+drop d2t5 5:46 to 5:52 
+(missing [The sufferin' is unending]) patched with LB-6294,
+disc 1/disc 2 00'17"761 overlap fixed, transition restored,
+CD split moved to Handy Dandy >
+xACT 1.62 >
+FLAC (lvl 4) 0.6263 (20 files), FLAC tags,
+md5, ffp, st5
+2008-09-23
+
+Pabell—n 3 
+Instituto Ferial de Vigo
+Avda. do Aeroporto, 772
+Cotogrande 36318 Vigo, Galicia, Espa–a

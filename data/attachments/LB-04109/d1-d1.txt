@@ -1,0 +1,24 @@
+bd2000-04-01d1t01.flac:  successfully decoded to 'bd2000-04-01d1t01.wav'
+bd2000-04-01d1t02.flac:  successfully decoded to 'bd2000-04-01d1t02.wav'
+bd2000-04-01d1t03.flac:  successfully decoded to 'bd2000-04-01d1t03.wav'
+bd2000-04-01d1t04.flac:  successfully decoded to 'bd2000-04-01d1t04.wav'
+bd2000-04-01d1t05.flac:  successfully decoded to 'bd2000-04-01d1t05.wav'
+bd2000-04-01d1t06.flac:  successfully decoded to 'bd2000-04-01d1t06.wav'
+bd2000-04-01d1t07.flac:  successfully decoded to 'bd2000-04-01d1t07.wav'
+bd2000-04-01d1t08.flac:  successfully decoded to 'bd2000-04-01d1t08.wav'
+bd2000-04-01d1t09.flac:  successfully decoded to 'bd2000-04-01d1t09.wav'
+
+No errors occured.
+
+
+bd2000-04-01d1t01.wav:  track looks like CDDA with probability 100%
+bd2000-04-01d1t02.wav:  track looks like CDDA with probability 100%
+bd2000-04-01d1t03.wav:  track looks like CDDA with probability 99%
+bd2000-04-01d1t04.wav:  track looks like CDDA with probability 100%
+bd2000-04-01d1t05.wav:  track looks like CDDA with probability 100%
+bd2000-04-01d1t06.wav:  track looks like CDDA with probability 100%
+bd2000-04-01d1t07.wav:  track looks like CDDA with probability 100%
+bd2000-04-01d1t08.wav:  track looks like CDDA with probability 100%
+bd2000-04-01d1t09.wav:  track looks like CDDA with probability 100%
+
+No errors occured.

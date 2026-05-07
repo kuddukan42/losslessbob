@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-02-17 
+=================== 
+=================== 
+=================== 
+0974ea0ad8729e3fdb3467bd4c2eec87  bd98-02-17.txt
+f69c827bb97c9c1fd4da69fb1ca09d24  d1Track01.shn
+e0b0b40d4506e9dc773c90a8fdf3e341  d1Track02.shn
+1d5babf004f8f342db6e662cad89a187  d1Track03.shn
+feff2acc5283c2c05acdaf782c427ac5  d1Track04.shn
+bed8627ce25fa0894fc04261d1602770  d1Track05.shn
+6b5fd8efc91e7dae7009625a75920b80  d1Track06.shn
+d7d7c291df94112a4722336dbb8cd54b  d1Track07.shn
+36db2b06b79c064d788f666c007d54a6  d1Track08.shn
+6e73c68cf06c64d774efe40ad2776ee7  d2Track01.shn
+d69233f3c402d8731716b4a068da356b  d2Track02.shn
+94bef3b4768ba2fa64be30a550bf2a64  d2Track03.shn
+ec034bb10a11c78ae59a553d7189d70a  d2Track04.shn
+99cb495ce75c719e40f7d201369551d9  d2Track05.shn
+8511e134274e5493ad2d2cce8521a0c8  d2Track06.shn
+972d3813be57c906b6a35b334ede9570  d2Track07.shn
+a3ee17a24fb1055ce278f07f7267a5f6  dylan st louis 98.md5
+f87ec7eef4b57a72a44a23689656d85d  dylanstlouis98.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-02-17 
+=================== 
+=================== 
+=================== 
+fd54134d2291dc3d33d9e72810f6c16b  [shntool]  d1Track01.wav
+c1db38b0bbd9b6a338dbf36d5658beef  [shntool]  d1Track02.wav
+906c31ed8b68910b8892cbed245a507d  [shntool]  d1Track03.wav
+428849874171d5b35568620e1feac49d  [shntool]  d1Track04.wav
+40d38dee0998998e2e6bb033dde98634  [shntool]  d1Track05.wav
+d57c67cf9fbaff51414008751ed02476  [shntool]  d1Track06.wav
+a5d1349e615c8e50d679d3ce7460e372  [shntool]  d1Track07.wav
+6f23c0691a1383e16536c0799afb6445  [shntool]  d1Track08.wav
+ab8a267d73a4ae3464295c3e534de66c  [shntool]  d2Track01.wav
+ea53f6dcb96e4b76c846a4c279534929  [shntool]  d2Track02.wav
+f5ba983df7e05c8b792c44c38af9450e  [shntool]  d2Track03.wav
+b5d093d2e54463af08183495d7818f84  [shntool]  d2Track04.wav
+52d5758900fe1f0f4ce1e9db8e717460  [shntool]  d2Track05.wav
+92283314af75dc2e6f3b67a275f907a9  [shntool]  d2Track06.wav
+6cd81ef1197078566057dd066a6e42a6  [shntool]  d2Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-17 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.03       48869902 B   ---   h-   -----    wav  1.0000  d1Track01.wav
+     6:03.58       64169662 B   ---   h-   -----    wav  1.0000  d1Track02.wav
+     5:57.40       63068926 B   ---   h-   -----    wav  1.0000  d1Track03.wav
+     5:42.35       60411166 B   ---   h-   -----    wav  1.0000  d1Track04.wav
+     6:47.61       71938318 B   ---   h-   -----    wav  1.0000  d1Track05.wav
+     4:14.23       44859742 B   ---   h-   -----    wav  1.0000  d1Track06.wav
+     4:33.40       48251326 B   ---   h-   -----    wav  1.0000  d1Track07.wav
+     7:50.25       82966846 B   ---   h-   -----    wav  1.0000  d1Track08.wav
+     6:20.18       67074382 B   ---   h-   -----    wav  1.0000  d2Track01.wav
+     5:47.69       61373134 B   ---   h-   -----    wav  1.0000  d2Track02.wav
+     7:21.14       77825374 B   ---   h-   -----    wav  1.0000  d2Track03.wav
+     7:39.61       81111118 B   ---   h-   -----    wav  1.0000  d2Track04.wav
+     7:52.36       83345518 B   ---   h-   -----    wav  1.0000  d2Track05.wav
+     5:52.49       62208094 B   ---   h-   -----    wav  1.0000  d2Track06.wav
+     4:46.48       50563342 B   ---   h-   -----    wav  1.0000  d2Track07.wav
+    91:27.55      968036850 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-11-05-ghost-of-Todd-F.flacf 
+=================== 
+=================== 
+=================== 
+48a46c6cb8603c298e768e4a2edcc2a4  Dylan2008-11-05-flac16.ffp
+fd02e80fb6204cc5b71df8c240e45b9e  Dylan2008-11-05-flac16.md5
+900f0ad1e71cea5b7201b6e40810264a  Dylan2008-11-05-info.txt
+983fdbe028d77b949974a4748540efa9  Dylan2008-11-05d1t01.flac
+6e09e3f3ea982eb733a2a8f0f2c2bcc2  Dylan2008-11-05d1t02.flac
+0867646cfc846a1ecccb1537d225d4c4  Dylan2008-11-05d1t03.flac
+e3c3ab3a23c3217002ab4403b36c87c5  Dylan2008-11-05d1t04.flac
+75a0e6864a77b0a4fddd312caddef168  Dylan2008-11-05d1t05.flac
+91051d465a5f9e508b5cc08eef893b7a  Dylan2008-11-05d1t06.flac
+c6c22598dab0fe1d7d6f6d9ecb19f376  Dylan2008-11-05d1t07.flac
+acf0e05a5e1f0f0f9118b6402fd5ee1d  Dylan2008-11-05d1t08.flac
+cd612a57f5c64102eee3f340cdad8b60  Dylan2008-11-05d1t09.flac
+08d30cd71243036ec664bfe5f4860493  Dylan2008-11-05d1t10.flac
+c70ab7702b6aeb9db335ac0dc00c6f22  Dylan2008-11-05d1t11.flac
+21aa49bc462ec5d10a644f41e0a21888  Dylan2008-11-05d2t01.flac
+ba2c454cd5cf23f7f2ed29ab74dd5d6d  Dylan2008-11-05d2t02.flac
+896196c82fab428f72bb047c55b61299  Dylan2008-11-05d2t03.flac
+31bf9bf750181e45c05e08e04eba41c9  Dylan2008-11-05d2t04.flac
+797d228e992dc658b808a87687c9bbc4  Dylan2008-11-05d2t05.flac
+1c5573af5171d699cdd0f345e469aad3  Dylan2008-11-05d2t06.flac
+66a2d3e5c7efffe33a5263c3577ca4e5  Dylan2008-11-05d2t07.flac
+c6453a1bcb824cd0647474a1aa89971b  Dylan2008-11-05d2t08.flac
+d499c1fe9ef7247a9a36d9dbd8454a8b  Dylan2008-11-05d2t09.flac
+4f108123dcd4de0ec7c2ca43c2e1eec9  images\P1340848-25pct.jpg
+c0cff33aa2dc745087502dc918bab470  images\P1340853-25pct.jpg
+961cc0ee7a8e154d9f88bfda6bc19400  images\P1340861-cr-25pct.jpg
+0fb7e37c4da3390cf47c0c55415d4ce4  images\P1340922-cr-25pct.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-11-05-ghost-of-Todd-F.flacf 
+=================== 
+=================== 
+=================== 
+Dylan2008-11-05d1t01.flac:c2d5a6effaf943cce5bb5a78c6fdded6
+Dylan2008-11-05d1t02.flac:41e098e7835a4cd7d469e795581f08a0
+Dylan2008-11-05d1t03.flac:e1455b7478895e161527bec5ff5641d5
+Dylan2008-11-05d1t04.flac:f4626cf0d265b8e99814f62deeff4262
+Dylan2008-11-05d1t05.flac:60a618830ed73b712d07477cc4f2bdf4
+Dylan2008-11-05d1t06.flac:a275f10c31e9330f4d3bdb09bee9387c
+Dylan2008-11-05d1t07.flac:8d63b15c730444b023377855484606c1
+Dylan2008-11-05d1t08.flac:1a2f0c0d688c29b13e827405e87a1300
+Dylan2008-11-05d1t09.flac:44c88e69f9908a9739309525a1b8c075
+Dylan2008-11-05d1t10.flac:ee8f46a14c79a05903ea93ec24a69034
+Dylan2008-11-05d1t11.flac:cd7d8a0e7259d400851cc98b451615fe
+Dylan2008-11-05d2t01.flac:2e1a39651fe9ecfc7652ef347e179c77
+Dylan2008-11-05d2t02.flac:46264f3f83911f816af38d1a5983d4aa
+Dylan2008-11-05d2t03.flac:6c504840306f0ede509d8ac85b85d095
+Dylan2008-11-05d2t04.flac:f99657304c756f190b7da6ed583fc26d
+Dylan2008-11-05d2t05.flac:562b89c58cbaa2e35fd6fd3256ffb632
+Dylan2008-11-05d2t06.flac:5c4f7a8873620eda3e4fc0d7d3832d83
+Dylan2008-11-05d2t07.flac:377db1538a5a86e4f35328314a22a7c4
+Dylan2008-11-05d2t08.flac:6d6861dc9d9a5c1b4fbb250cd66a1645
+Dylan2008-11-05d2t09.flac:a347a2c3d5172785dfb354f01d938301
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-11-05-ghost-of-Todd-F.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:59.18       10449980 B   ---   --   ---xx   flac  0.4838  Dylan2008-11-05d1t01.flac
+     3:08.71       33330236 B   ---   --   ---xx   flac  0.5186  Dylan2008-11-05d1t02.flac
+     4:35.40       48604124 B   ---   --   ---xx   flac  0.5518  Dylan2008-11-05d1t03.flac
+     6:08.35       64997564 B   ---   --   ---xx   flac  0.5165  Dylan2008-11-05d1t04.flac
+     7:33.62       80055068 B   ---   --   ---xx   flac  0.5331  Dylan2008-11-05d1t05.flac
+     6:51.01       72502796 B   ---   --   ---xx   flac  0.4796  Dylan2008-11-05d1t06.flac
+     5:46.68       61194380 B   ---   --   ---xx   flac  0.5232  Dylan2008-11-05d1t07.flac
+     6:16.44       66429932 B   ---   --   ---xx   flac  0.5181  Dylan2008-11-05d1t08.flac
+     4:56.28       52280300 B   ---   --   ---xx   flac  0.5019  Dylan2008-11-05d1t09.flac
+     5:45.66       61013276 B   ---   --   ---xx   flac  0.5128  Dylan2008-11-05d1t10.flac
+     5:56.27       62861948 B   ---   --   ---xx   flac  0.5562  Dylan2008-11-05d1t11.flac
+     7:27.59       78989612 B   ---   --   ---xx   flac  0.5183  Dylan2008-11-05d2t01.flac
+     6:46.01       71620796 B   ---   --   ---xx   flac  0.5450  Dylan2008-11-05d2t02.flac
+     6:26.06       68104556 B   ---   --   ---xx   flac  0.4622  Dylan2008-11-05d2t03.flac
+     6:43.26       71150396 B   ---   --   ---xx   flac  0.5594  Dylan2008-11-05d2t04.flac
+     7:05.13       75000620 B   ---   --   ---xx   flac  0.5470  Dylan2008-11-05d2t05.flac
+     3:52.49       41040092 B   ---   --   ---xx   flac  0.5063  Dylan2008-11-05d2t06.flac
+     4:37.16       48900476 B   ---   --   ---xx   flac  0.5478  Dylan2008-11-05d2t07.flac
+     6:56.15       73417724 B   ---   --   ---xx   flac  0.5277  Dylan2008-11-05d2t08.flac
+     1:40.44       17743532 B   ---   --   ---xx   flac  0.5035  Dylan2008-11-05d2t09.flac
+   109:34.14     1159687408 B                            0.5231  (20 files)
+=================== 
+=================== 
+=================== 

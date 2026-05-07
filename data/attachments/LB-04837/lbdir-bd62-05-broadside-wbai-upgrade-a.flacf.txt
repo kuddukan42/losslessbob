@@ -1,0 +1,40 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd62-05-broadside-wbai-upgrade-a.flacf 
+=================== 
+=================== 
+=================== 
+609ad8e77f169d56de0f7a0b0804e590  01.flac
+f20ba7d28191a6be062ab809a5d10299  02.flac
+dba724ce6cff59e90157791a73755b37  03.flac
+f050faae8035271b89da393663e7e71f  04.flac
+1ffcc8f0116ab9ae4aa318b5ed2c88dc  6205broadside_wbai_UPGRADE.ffp
+673a13f07cde0f0fcf3fea46aa9cd59d  6205broadside_wbai_UPGRADE.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-05-broadside-wbai-upgrade-a.flacf 
+=================== 
+=================== 
+=================== 
+01.flac:998788952b7134b9861e1534d42c4bb2
+02.flac:45829669334580bec7679da78cf8f246
+03.flac:ea7d2f5835c28f83946cdc67f5bb35d7
+04.flac:b12b9c1a15140101561e445b9910f306
+=================== 
+=================== 
+=================== 
+=== shntool for: bd62-05-broadside-wbai-upgrade-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:28.45      110885084 B   ---   --   ---xx   flac  0.2558  01.flac
+    26:52.29      284425052 B   ---   --   ---xx   flac  0.2607  02.flac
+    13:01.26      137829596 B   ---   --   ---xx   flac  0.2594  03.flac
+     2:37.03       27701900 B   ---   --   ---xx   flac  0.2641  04.flac
+    52:59.28      560841632 B                            0.2596  (4 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== md5 for: bd01-04-18-b.flacf
+===================
+===================
+===================
+f0c0e4a446df16b6885cadbef17f2ee0 *BOB DYLAN - 2001-04-18 Coors Events Center, Boulder, CO.ffp
+fb460d2a4c8b09eb9f14b0f717b6fb4f *BOB DYLAN - 2001-04-18 Coors Events Center, Boulder, CO.md5
+5bcb17bffc6eef097a40267808b2852d *BOB DYLAN - 2001-04-18 Coors Events Center, Boulder, CO_info.txt
+2d5583356d0f78800169d2a440ba11f2 *Disc One\01 Roving Gambler.flac
+1a4a964040f7f1806a8f250784e577fe *Disc One\02 To Ramona.flac
+09b9c0010eb690f0c4f4332c8f648471 *Disc One\03 Desolation Row.flac
+a5d452f05275b90d5cd29d7f2951a2b6 *Disc One\04 To Be Alone With You.flac
+fcc572001fd70d955eddc43008652fa5 *Disc One\05 Tears Of Rage.flac
+05e618efd69669c863e1cfca584fc537 *Disc One\06 Things Have Changed.flac
+f9f7cb3845cfe90fff65487940d90a71 *Disc One\07 Don't Think Twice, It's All Right.flac
+fdbba5ae46fa9b7b9bb755bb4dee1d4d *Disc One\08 Masters Of War.flac
+989e3541b63488f2cc3b87b72cca5147 *Disc One\09 Tangled Up In Blue.flac
+4ba8fe04f4c909ed19a8a2103d0719ef *Disc One\10 Standing In The Doorway.flac
+72fce0f684c15246e56a0093f2a04aa6 *Disc One\11 Drifter's Escape.flac
+848a1017613abb830be97abfdfb9a85b *Disc One\12 Leopard Skin Pill Box Hat.flac
+569cd434ca985dff98cd6e436c56bb81 *Disc Two\01 Love Sick.flac
+ca36f68e6940f25e8ad08c1aae0242c8 *Disc Two\02 Like A Rolling Stone.flac
+e768cec6c4dae168f756174a8dda798d *Disc Two\03 If Dogs Run Free.flac
+bc14ef0bbdd645afc11cbdecda96153c *Disc Two\04 All Along The Watchtower.flac
+530cf6b996907f2f0088807a0b797418 *Disc Two\05 Girl Of The North Country.flac
+9b528e8dcde01999c29b8cbbe1871dce *Disc Two\06 Highway 61 Revisited.flac
+d206ddfcd7dad25bb3e31de81fdeb782 *Disc Two\07 Blowin' In The Wind.flac
+3056abdf598640303ead83d51f9a4e8e *Disc Two\08 Rainy Day Women #12 & 35.flac
+===================
+===================
+===================
+=== ffp for: bd01-04-18-b.flacf
+===================
+===================
+===================
+Disc One\01 Roving Gambler.flac:a8389807d4a77eed6c2fc4451cd26201
+Disc One\02 To Ramona.flac:6ecfb75c671c0240d6144c45668e54ba
+Disc One\03 Desolation Row.flac:acad12ba76cba93bb37e11f5f925eda4
+Disc One\04 To Be Alone With You.flac:850081197c25c53da58bd155ab62c30f
+Disc One\05 Tears Of Rage.flac:662fdceb5949a21acd298eec8038b41d
+Disc One\06 Things Have Changed.flac:7522758d41fffab8bc25fb033de6b16a
+Disc One\07 Don't Think Twice, It's All Right.flac:e5005bc884d61e6b113ac8d928b90c6f
+Disc One\08 Masters Of War.flac:dd10a359c2ef3ffc0e275b0098f6d69e
+Disc One\09 Tangled Up In Blue.flac:345ac93d5f33100aa6b3d176ef024db3
+Disc One\10 Standing In The Doorway.flac:5894776737123a72d45c160679a679ab
+Disc One\11 Drifter's Escape.flac:1d94d35bca2dbafae4bcebfbe27882a5
+Disc One\12 Leopard Skin Pill Box Hat.flac:019c7052d63df234026e48b45b5a3a5b
+Disc Two\01 Love Sick.flac:aac8534bfa0d03190169e46d5ddcfae8
+Disc Two\02 Like A Rolling Stone.flac:f84e1db71ff826c691d5ff99b6ad8eac
+Disc Two\03 If Dogs Run Free.flac:3f26e970a6d66a06a283e8abb5bcea25
+Disc Two\04 All Along The Watchtower.flac:187d40582dc029a9d74e41d5a866af12
+Disc Two\05 Girl Of The North Country.flac:1dfd6ab290cc4398417a8c7685a98f3e
+Disc Two\06 Highway 61 Revisited.flac:82baf7c3ae50b90d9fe73f02430be2b1
+Disc Two\07 Blowin' In The Wind.flac:9ea739d91babc79637c891042fc23987
+Disc Two\08 Rainy Day Women #12 & 35.flac:f7a83412ddf117d86f77d755362f58bf
+===================
+===================
+===================
+=== shntool len for: bd01-04-18-b.flacf\Disc One
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:40.18       38850380 B   ---   --   ---xx   flac  0.5810  01 Roving Gambler.flac
+     5:23.00       56977244 B   ---   --   ---xx   flac  0.5829  02 To Ramona.flac
+     9:03.13       95815820 B   ---   --   ---xx   flac  0.5780  03 Desolation Row.flac
+     4:41.16       49606076 B   ---   --   ---xx   flac  0.5833  04 To Be Alone With You.flac
+     8:36.25       91081244 B   ---   --   ---xx   flac  0.5654  05 Tears Of Rage.flac
+     6:13.57       65931308 B   ---   --   ---xx   flac  0.5824  06 Things Have Changed.flac
+     6:11.01       65446796 B   ---   --   ---xx   flac  0.5598  07 Don't Think Twice, It's All Right.flac
+     5:37.41       59543276 B   ---   --   ---xx   flac  0.5553  08 Masters Of War.flac
+    10:08.00      107251244 B   ---   --   ---xx   flac  0.6104  09 Tangled Up In Blue.flac
+     7:42.48       81609740 B   ---   --   ---xx   flac  0.4971  10 Standing In The Doorway.flac
+     4:11.05       44288204 B   ---   --   ---xx   flac  0.5522  11 Drifter's Escape.flac
+     6:58.14       73768172 B   ---   --   ---xx   flac  0.5365  12 Leopard Skin Pill Box Hat.flac
+    78:26.13      830169504 B                            0.5659  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd01-04-18-b.flacf\Disc Two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.08       62817260 B   ---   --   ---xx   flac  0.5108  01 Love Sick.flac
+     8:06.22       85782188 B   ---   --   ---xx   flac  0.5360  02 Like A Rolling Stone.flac
+     3:57.40       41900924 B   ---   --   ---xx   flac  0.5283  03 If Dogs Run Free.flac
+     4:33.02       48161948 B   ---   --   ---xx   flac  0.5338  04 All Along The Watchtower.flac
+     6:59.46       74019836 B   ---   --   ---xx   flac  0.5023  05 Girl Of The North Country.flac
+     5:40.59       60114812 B   ---   --   ---xx   flac  0.5442  06 Highway 61 Revisited.flac
+     5:02.09       53294012 B   ---   --   ---xx   flac  0.5405  07 Blowin' In The Wind.flac
+     5:11.62       55006268 B   ---   --   ---xx   flac  0.5230  08 Rainy Day Women #12 & 35.flac
+    45:27.23      481097248 B                            0.5267  (8 files)
+===================
+===================
+===================

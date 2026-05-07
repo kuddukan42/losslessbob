@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-10-29-dactylus.flacf 
+=================== 
+=================== 
+=================== 
+ba84988c13c7366dce7065c8874cbabf  bd06-10-29-dactylus-LB-4249.txt
+d9c60be268acf4008e33f4bc32af601b  Bob Dylan2006-10-29.md5
+abf89f213218c351d210551d7dfc5e01  Bob Dylan2006-10-29.txt
+67f303f9b51eb5e520e220352a9c5d31  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1.ffp
+5102656d576e93081bc8bbcb9923b125  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t01.flac
+4f5eff23b2a3de2e9e523b1b5fda27a2  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t02.flac
+6a0acffeafd346898cf3a075faf7caa3  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t03.flac
+b07d50f2730fd30653b0ce2abc3c2554  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t04.flac
+8d83dbd47017ed2a3ecdecc10830db9b  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t05.flac
+8969d3a4e0bb0dd7cccc216f3b9addf5  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t06.flac
+73c1cf3bd94d80b29bccb3937ec064aa  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t07.flac
+58874e06e52e4f720080bd1a756b58d7  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t08.flac
+38fc0af143b03c28877dd48283ec527c  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t09.flac
+0728a2dc62b1ded16791d65010dd65ca  Bob Dylan2006-10-29d1\Bob Dylan2006-10-29d1t10.flac
+3b6590ed8ac05d28d89291df9ab8626a  Bob Dylan2006-10-29d2\Bob Dylan2006-10-29d2.ffp
+f650fec118176eb11035be715e99485e  Bob Dylan2006-10-29d2\Bob Dylan2006-10-29d2t01.flac
+838aebd6daa0b43d6ee41c91a04c778b  Bob Dylan2006-10-29d2\Bob Dylan2006-10-29d2t02.flac
+91ea996baf37272a45e322a41bbcac6f  Bob Dylan2006-10-29d2\Bob Dylan2006-10-29d2t03.flac
+4e64327a3f3f57ac8f65774ee135afe9  Bob Dylan2006-10-29d2\Bob Dylan2006-10-29d2t04.flac
+e0649cb75f0aa76499fa1091f821f87d  Bob Dylan2006-10-29d2\Bob Dylan2006-10-29d2t05.flac
+71fbacaee52df70f44d14c568a342a57  Bob Dylan2006-10-29d2\Bob Dylan2006-10-29d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-29-dactylus.flacf\Bob Dylan2006-10-29d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan2006-10-29d1t01.flac:0b39425a8f556a97974ba9b2f79b4665
+Bob Dylan2006-10-29d1t02.flac:a99cb7f7675a1a354d3a8894661002bf
+Bob Dylan2006-10-29d1t03.flac:7e1f7b484a041056d542d64ca74a5965
+Bob Dylan2006-10-29d1t04.flac:9e85401f80e9b6d33c141f15fa032680
+Bob Dylan2006-10-29d1t05.flac:dc45d3fbfb47655926c203de1a260740
+Bob Dylan2006-10-29d1t06.flac:792fb84371c423f60cb2925d98ae1900
+Bob Dylan2006-10-29d1t07.flac:d770bac3d6cb7a82910ec7e32faa013b
+Bob Dylan2006-10-29d1t08.flac:91fbab2f84ec92df96217fe4d83259ea
+Bob Dylan2006-10-29d1t09.flac:c66eca1f24b3a9913fdd47cb52753624
+Bob Dylan2006-10-29d1t10.flac:942f4eb6eb39b22a64a887f0d5dc2c2c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-29-dactylus.flacf\Bob Dylan2006-10-29d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan2006-10-29d2t01.flac:518d5171a045b8f5102f3856dfd852cf
+Bob Dylan2006-10-29d2t02.flac:a87a88cc0862c86ee8e9f85ca8045c1e
+Bob Dylan2006-10-29d2t03.flac:537a4f69820a962db873ad22249568a1
+Bob Dylan2006-10-29d2t04.flac:99ab0a1101bea821972e002b254174d6
+Bob Dylan2006-10-29d2t05.flac:1c80ac1a7b5714a43e5d99cc896fee15
+Bob Dylan2006-10-29d2t06.flac:0e87d3ee6e4cd44baa9268d432cdb73b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-10-29-dactylus.flacf\Bob Dylan2006-10-29d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.00       62092844 B   ---   --   ---xx   flac  0.4952  Bob Dylan2006-10-29d1t01.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.4930  Bob Dylan2006-10-29d1t02.flac
+     5:31.00       58388444 B   ---   --   ---xx   flac  0.4728  Bob Dylan2006-10-29d1t03.flac
+     5:50.00       61740044 B   ---   --   ---xx   flac  0.4170  Bob Dylan2006-10-29d1t04.flac
+     8:15.00       87318044 B   ---   --   ---xx   flac  0.4941  Bob Dylan2006-10-29d1t05.flac
+     7:51.00       83084444 B   ---   --   ---xx   flac  0.4446  Bob Dylan2006-10-29d1t06.flac
+     6:54.00       73029644 B   ---   --   ---xx   flac  0.4914  Bob Dylan2006-10-29d1t07.flac
+     5:28.00       57859244 B   ---   --   ---xx   flac  0.4630  Bob Dylan2006-10-29d1t08.flac
+     7:02.00       74440844 B   ---   --   ---xx   flac  0.5135  Bob Dylan2006-10-29d1t09.flac
+     6:23.00       67561244 B   ---   --   ---xx   flac  0.4369  Bob Dylan2006-10-29d1t10.flac
+    64:03.00      677905640 B                            0.4727  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-10-29-dactylus.flacf\Bob Dylan2006-10-29d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.00       54860444 B   ---   --   ---xx   flac  0.5257  Bob Dylan2006-10-29d2t01.flac
+     7:40.00       81144044 B   ---   --   ---xx   flac  0.4056  Bob Dylan2006-10-29d2t02.flac
+     6:16.00       66326444 B   ---   --   ---xx   flac  0.5226  Bob Dylan2006-10-29d2t03.flac
+     8:14.00       87141644 B   ---   --   ---xx   flac  0.4993  Bob Dylan2006-10-29d2t04.flac
+     6:13.00       65797244 B   ---   --   ---xx   flac  0.5190  Bob Dylan2006-10-29d2t05.flac
+     5:53.00       62269244 B   ---   --   ---xx   flac  0.5114  Bob Dylan2006-10-29d2t06.flac
+    39:27.00      417539064 B                            0.4932  (6 files)
+=================== 
+=================== 
+=================== 

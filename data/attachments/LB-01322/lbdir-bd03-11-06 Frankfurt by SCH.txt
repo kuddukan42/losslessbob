@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-06 Frankfurt by SCH 
+=================== 
+=================== 
+=================== 
+d6d21f2aecebe9400a64a9c005281646  bd03-11-06.txt
+9273c0de4e786c7332d23c697037dbd8  disk 1\01_ANNOUNCEMENT.shn
+356d38073cb676773bab6356bcc651ae  disk 1\02_DOWN_ALONG_THE_COVE.shn
+36210a1ff6564205b7f4fd2dc04e697d  disk 1\03_IT_S_ALL_OVER_NOW__BABY_.shn
+ab49a3ee05706fd931bde67e5de997e4  disk 1\04_CRY_A_WHILE.shn
+41bd26c16b52a32166821d756795a7b8  disk 1\05_LOVE_MINUS_ZERO_NO_LIMIT.shn
+1881456bc6923bfdadd3f7b33a0a0111  disk 1\06_IT_S_ALRIGHT__MA__I_M_ON.shn
+30e177f0104bcb4481a3eb2fa4540148  disk 1\07_SIMPLE_TWIST_OF_FATE.shn
+476c31b93e04b6767ed6b27cb356838a  disk 1\08_THINGS_HAVE_CHANGED.shn
+7e589f1983ccae3fb79a009f735884cc  disk 1\09_MOONLIGHT.shn
+294ac5d0e44f1a22ce2a1991f447ea47  disk 1\10_MAN_IN_THE_LONG_BLACK_CO.shn
+1276896ad9c02071c23b597c6b22a731  disk 1\2003_11_06__FRANKFURT.RTF
+12ccb5e797da85a0d4b9f8363b8bcc0f  disk 1\noname.md5
+c12eb9cd35c88b212d8b090affce2670  disk 2\01_HIGHWAY_61_REVISITED.shn
+19c9e91bb9edeb55f9f127927f14a961  disk 2\02_EVERY_GRAIN_OF_SAND.shn
+b584d0d17335ae971957f0d88fba26a0  disk 2\03_HONEST_WITH_ME.shn
+da99d7993158246644690b713ae1339e  disk 2\04_MR_TAMBOURINE_MAN.shn
+2fe6506c0c7825d02b7af5e638425afa  disk 2\05_SUMMER_DAYS.shn
+fafc829865b8007e853550bc5b158e6e  disk 2\06_CAT_S_IN_THE_WELL.shn
+8ec33d3f83be077ecd49cc300547246d  disk 2\07_LIKE_A_ROLLING_STONE.shn
+06a22efe2337d3f6d2c80570d8bd030f  disk 2\08_ALL_ALONG_THE_WATCHTOWER.shn
+69b0083cd75b6e1d09a1c8a616f5b138  disk 2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-06 Frankfurt by SCH\disk 1 
+=================== 
+=================== 
+=================== 
+38783af5e345e7569b7df18a5d448cc6  [shntool]  01_ANNOUNCEMENT.wav
+2c607576932c89639926f486a3392649  [shntool]  02_DOWN_ALONG_THE_COVE.wav
+bacead9ec61f57b49faebd4b8bad7da9  [shntool]  03_IT_S_ALL_OVER_NOW__BABY_.wav
+b9001e05552911244bc6a75798cc75ac  [shntool]  04_CRY_A_WHILE.wav
+ef575985abec66b9de22c62ec7d1ea3d  [shntool]  05_LOVE_MINUS_ZERO_NO_LIMIT.wav
+11927418e0952d34c1b06975c1251c6e  [shntool]  06_IT_S_ALRIGHT__MA__I_M_ON.wav
+fbce9afaf130ace31b51f2e0cdbbc9e8  [shntool]  07_SIMPLE_TWIST_OF_FATE.wav
+54840f131ab6e6d88773aac75cac1c4e  [shntool]  08_THINGS_HAVE_CHANGED.wav
+bc7e72380367f87b81731968ffa55ce1  [shntool]  09_MOONLIGHT.wav
+f472e64e310c6bad924212d8f19b8203  [shntool]  10_MAN_IN_THE_LONG_BLACK_CO.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-06 Frankfurt by SCH\disk 2 
+=================== 
+=================== 
+=================== 
+2d1fb90983f939dfd73b2270bdf1d134  [shntool]  01_HIGHWAY_61_REVISITED.wav
+6249d790ead6262f7f08cd406af5531d  [shntool]  02_EVERY_GRAIN_OF_SAND.wav
+db694416a7d2a40940fe1382dde1c204  [shntool]  03_HONEST_WITH_ME.wav
+d9ba8d66b90ee893c45c3e3dda71a2b9  [shntool]  04_MR_TAMBOURINE_MAN.wav
+f71eb5e273ca273508a8ceb7a2ec52db  [shntool]  05_SUMMER_DAYS.wav
+3245201861364a5ffae4eb3a0ec9565d  [shntool]  06_CAT_S_IN_THE_WELL.wav
+05b9acb31a1f06632a490d5bb83410a9  [shntool]  07_LIKE_A_ROLLING_STONE.wav
+522cdb5b4946d0b57b0616fb83a7c640  [shntool]  08_ALL_ALONG_THE_WATCHTOWER.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-06 Frankfurt by SCH\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:33.70       16569884 B   ---   --   ---xx    shn  0.5572  01_ANNOUNCEMENT.shn
+     6:11.49       65559692 B   ---   --   ---xx    shn  0.6600  02_DOWN_ALONG_THE_COVE.shn
+     6:26.25       68149244 B   ---   --   ---xx    shn  0.5956  03_IT_S_ALL_OVER_NOW__BABY_.shn
+     5:59.25       63386444 B   ---   --   ---xx    shn  0.6600  04_CRY_A_WHILE.shn
+     6:07.10       64762364 B   ---   --   ---xx    shn  0.5552  05_LOVE_MINUS_ZERO_NO_LIMIT.shn
+     7:55.61       83933516 B   ---   --   ---xx    shn  0.6350  06_IT_S_ALRIGHT__MA__I_M_ON.shn
+     7:08.50       75616844 B   ---   --   ---xx    shn  0.5494  07_SIMPLE_TWIST_OF_FATE.shn
+     6:45.38       71531420 B   ---   --   ---xx    shn  0.6350  08_THINGS_HAVE_CHANGED.shn
+     4:58.34       52647212 B   ---   --   ---xx    shn  0.4858  09_MOONLIGHT.shn
+     5:44.40       60775724 B   ---   --   ---xx    shn  0.5993  10_MAN_IN_THE_LONG_BLACK_CO.shn
+    58:51.27      622932344 B                            0.5990  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-06 Frankfurt by SCH\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.68       70018432 B   ---   h-   ---xx    shn  0.6598  01_HIGHWAY_61_REVISITED.shn
+     7:39.46       81079888 B   ---   h-   ---xx    shn  0.5617  02_EVERY_GRAIN_OF_SAND.shn
+     7:04.59       74936464 B   ---   h-   ---xx    shn  0.6398  03_HONEST_WITH_ME.shn
+     6:57.58       73699312 B   ---   h-   ---xx    shn  0.5826  04_MR_TAMBOURINE_MAN.shn
+    12:29.46      132235888 B   ---   h-   ---xx    shn  0.6210  05_SUMMER_DAYS.shn
+     4:09.02       43932400 B   ---   h-   ---xx    shn  0.6652  06_CAT_S_IN_THE_WELL.shn
+     7:12.20       76255936 B   ---   h-   ---xx    shn  0.6628  07_LIKE_A_ROLLING_STONE.shn
+     8:03.20       85252336 B   ---   h-   ---xx    shn  0.6180  08_ALL_ALONG_THE_WATCHTOWER.shn
+    60:13.19      637410656 B                            0.6231  (8 files)
+=================== 
+=================== 
+=================== 

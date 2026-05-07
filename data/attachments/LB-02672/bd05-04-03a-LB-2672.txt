@@ -1,0 +1,12 @@
+Bob Dylan, 4/3/05, Chicago, 2CDR
+
+LB-2672, (63min+30min), version "a"; (Lowgen) audio disks > (Feurio) > wav > (flacfrontend) > flac.; this is a different recording than the previous version; it is very similar quality to previous version but maybe a little more echoey but very close in quality (this version came with d2t1 containing 2 songs which was then split into 2 tracks and files renamed); excellent sound [A]
+
+camera like noise d2t1 1:48
+
+Disk One, 1 Drifter's Escape, 2 Se, or (Tales Of Yankee Power), 3 God Knows, 4 The Times They Are A-Changin', 5 Cry A While, 6 Don't Think Twice, It's All Right, 7 Highway 61 Revisited, 8 Shooting Star, 9 You Ain't Goin' Nowhere, 10 Tryin' To Get To Heaven, 
+
+Disk Two, 1 Honest With Me, 2 A Hard Rain's A-Gonna Fall, 3 I Shall Be Released, 4 All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

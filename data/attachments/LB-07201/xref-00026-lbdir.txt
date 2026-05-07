@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-12-03-Classic-Interviews-Vol1-3.flacf 
+=================== 
+=================== 
+=================== 
+4f81e27aeff721d45f631f0fb59d7144  Bob Dylan The Classic Interviews Vol 3\Bob Dylan - The classic interviews vol 3 - 01 - Track 1.flac
+f56c1273d5f52b37ec216ca5475a2074  Bob Dylan The Classic Interviews Vol 3\Bob Dylan - The classic interviews vol 3 - 02 - Track 2.flac
+f69d456e856b006fa0ec1c7f77da44a9  Bob Dylan The Classic Interviews Vol 3\Bob Dylan - The classic interviews vol 3 - 03 - Track 3.flac
+12a008d21562dd3ff05f7932531e20b6  Bob Dylan The Classic Interviews Vol 3\Bob Dylan - The classic interviews vol 3 - 04 - Track 4.flac
+de9cbd77422e40e78fadc594122cb344  Bob Dylan The Classic Interviews Vol 3\Bob Dylan - The classic interviews vol 3 - 05 - Track 5.flac
+f2520beb7a91a1a2ed9c95b21d5295d6  Bob Dylan The Classic Interviews Vol 3\Bob Dylan - The classic interviews vol 3 - 06 - Track 6.flac
+86338c55b84b127470704b6f32ce13f6  Bob Dylan The Classic Interviews Vol 3\Bob Dylan - The classic interviews vol 3 - 07 - Track 7.flac
+033c5125a602afe4f2510780d55a41ea  Bob Dylan The Classic Interviews Vol 3\Bob Dylan The Classic Interviews Vol 3.md5
+023882a587dcc66de666a084679d90fb  Bob Dylan The Classic Inteviews Vol 1\Bob Dylan - classic interviws vil 1 - 01 - Track 1.flac
+0ed75c02dd1489e79cab8dc450792d0f  Bob Dylan The Classic Inteviews Vol 1\Bob Dylan - classic interviws vil 1 - 02 - Track 2.flac
+415845ce0afa237185dbf4440dd912fb  Bob Dylan The Classic Inteviews Vol 1\Bob Dylan - classic interviws vil 1 - 03 - Track 3.flac
+9c9bfb7f53352d7b0176302697b6ae94  Bob Dylan The Classic Inteviews Vol 1\Bob Dylan The Classic Inteviews Vol 1.md5
+d0190c751ad44e810fb89af5ef37ad3a  Bob Dylan The Classic Inteviews Vol 2\Bob Dylan - The classic interviews vol 2 - 01 - Track 1.flac
+3cf5328fc9a21f9731c78d57bd8c2e05  Bob Dylan The Classic Inteviews Vol 2\Bob Dylan - The classic interviews vol 2 - 02 - Track 2.flac
+8790aa19b3ef047a89313f2bde866498  Bob Dylan The Classic Inteviews Vol 2\Bob Dylan - The classic interviews vol 2 - 03 - Track 3.flac
+d2e328d888ce4a7556fdb1ba52b1a381  Bob Dylan The Classic Inteviews Vol 2\Bob Dylan - The classic interviews vol 2 - 04 - Track 4.flac
+c9bd5d3bce7706404588e6dfb321ccef  Bob Dylan The Classic Inteviews Vol 2\Bob Dylan The Classic Inteviews Vol 2.md5
+7a9523de9a0f7f0c053549b5af4b0123  Scannen0001.jpg
+e916200e6baa2784de4cf53e19f8b939  Scannen0002.jpg
+71586172cad42e08d246535af6ab82e7  Scannen0003.jpg
+1650a25c4d9a52151e34a0b01dab95f8  The Classic Interviews.doc
+06583c3799445816832df66c07aaea6b  The Classic Interviews.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-12-03-Classic-Interviews-Vol1-3.flacf\Bob Dylan The Classic Interviews Vol 3 
+=================== 
+=================== 
+=================== 
+Bob Dylan - The classic interviews vol 3 - 01 - Track 1.flac:29bde89afe09151357d334852f8f97aa
+Bob Dylan - The classic interviews vol 3 - 02 - Track 2.flac:9a1a926c9edbffee612abef237d1089b
+Bob Dylan - The classic interviews vol 3 - 03 - Track 3.flac:270db887cd5aa52489193cef0941c93a
+Bob Dylan - The classic interviews vol 3 - 04 - Track 4.flac:933a5404a326c04eeb61dd993532f6c5
+Bob Dylan - The classic interviews vol 3 - 05 - Track 5.flac:9ed125ea9805bf3868410662ce1aba99
+Bob Dylan - The classic interviews vol 3 - 06 - Track 6.flac:553e4c274116f3416d63eb4cbd41b4c6
+Bob Dylan - The classic interviews vol 3 - 07 - Track 7.flac:4240f9f4618f7da28f4d493a44723b3a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-12-03-Classic-Interviews-Vol1-3.flacf\Bob Dylan The Classic Inteviews Vol 1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - classic interviws vil 1 - 01 - Track 1.flac:db8e325291d72de763ccb7a015421561
+Bob Dylan - classic interviws vil 1 - 02 - Track 2.flac:1f0e7f80dcab8021e49c7aae5ea47983
+Bob Dylan - classic interviws vil 1 - 03 - Track 3.flac:4de94a013dd7d7b7a4c8c60dc59e5cac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-12-03-Classic-Interviews-Vol1-3.flacf\Bob Dylan The Classic Inteviews Vol 2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - The classic interviews vol 2 - 01 - Track 1.flac:8c0b23f9d5494c82628407a88a44fac6
+Bob Dylan - The classic interviews vol 2 - 02 - Track 2.flac:d19f1c8ff20f121ebf32fbf31ae934da
+Bob Dylan - The classic interviews vol 2 - 03 - Track 3.flac:7e80e542f3960bda168c57e99491890e
+Bob Dylan - The classic interviews vol 2 - 04 - Track 4.flac:968c647f91b17ed98e0cb9b747dd99f7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-12-03-Classic-Interviews-Vol1-3.flacf\Bob Dylan The Classic Interviews Vol 3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:04.36       11374316 B   ---   --   ---xx   flac  0.4845  Bob Dylan - The classic interviews vol 3 - 01 - Track 1.flac
+     7:45.33       82103660 B   ---   --   ---xx   flac  0.4598  Bob Dylan - The classic interviews vol 3 - 02 - Track 2.flac
+    15:45.33      166775660 B   ---   --   ---xx   flac  0.3232  Bob Dylan - The classic interviews vol 3 - 03 - Track 3.flac
+    13:36.71      144109436 B   ---   --   ---xx   flac  0.2969  Bob Dylan - The classic interviews vol 3 - 04 - Track 4.flac
+     5:14.24       55446092 B   ---   --   ---xx   flac  0.3111  Bob Dylan - The classic interviews vol 3 - 05 - Track 5.flac
+     6:10.05       65279804 B   ---   --   ---xx   flac  0.3212  Bob Dylan - The classic interviews vol 3 - 06 - Track 6.flac
+    14:22.44      152160332 B   ---   --   ---xx   flac  0.3348  Bob Dylan - The classic interviews vol 3 - 07 - Track 7.flac
+    63:59.21      677249300 B                            0.3383  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-12-03-Classic-Interviews-Vol1-3.flacf\Bob Dylan The Classic Inteviews Vol 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    37:23.50      395782844 B   ---   --   ---xx   flac  0.5108  Bob Dylan - classic interviws vil 1 - 01 - Track 1.flac
+    29:37.42      313561628 B   ---   --   ---xx   flac  0.4860  Bob Dylan - classic interviws vil 1 - 02 - Track 2.flac
+    11:19.64      119926172 B   ---   --   ---xx   flac  0.3780  Bob Dylan - classic interviws vil 1 - 03 - Track 3.flac
+    78:21.06      829270644 B                            0.4823  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-12-03-Classic-Interviews-Vol1-3.flacf\Bob Dylan The Classic Inteviews Vol 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    12:02.00      127360844 B   ---   --   ---xx   flac  0.4653  Bob Dylan - The classic interviews vol 2 - 01 - Track 1.flac
+    11:59.38      126921020 B   ---   --   ---xx   flac  0.4717  Bob Dylan - The classic interviews vol 2 - 02 - Track 2.flac
+    11:58.31      126728156 B   ---   --   ---xx   flac  0.4699  Bob Dylan - The classic interviews vol 2 - 03 - Track 3.flac
+    13:31.17      143100428 B   ---   --   ---xx   flac  0.4635  Bob Dylan - The classic interviews vol 2 - 04 - Track 4.flac
+    49:31.11      524110448 B                            0.4675  (4 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,144 @@
+===================
+===================
+===================
+=== 2004-02-28 Cain's Ballroom, Tulsa, Oklahoma, USA [derived f. possibly LB-1631 unidentified taper].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Cain's Ballroom
+Tulsa, Oklahoma
+February 28, 2004
+
+Derived from (possibly) LB-1631 (B+), unidentified taper
+Source Lineage: no info
+
+NOTES from LosslessBob: originally bittorrented with "Saving Grace" - d1t13 cut so that it's only 2:28 seconds;
+supposedly has small gaps present just after the begin of each track but did not notice them on playback
+
+01. Drifter's Escape
+02. Tell Me That It Isn't True
+03. Cry A While
+04. The Lonesome Death Of Hattie Carroll
+05. It's Alright, Ma (I'm Only Bleeding)
+06. Girl From The North Country
+07. Things Have Changed
+08. Highway 61 Revisited
+09. Make You Feel My Love
+10. Tweedle Dee & Tweedle Dum
+11. Every Grain Of Sand
+12. Honest With Me
+13. Saving Grace
+14. Summer Days
+15. Cat's In The Well
+16. Like A Rolling Stone
+17. All Along The Watchtower
+
+Concert # 1589 of The Never-Ending Tour
+First concert of the 2004 US Spring Tour
+First 2004 concert
+
+First concert with the 17th Never-Ending Tour Band
+Bob Dylan (vocal & piano)
+Freddie Koella (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+George Recile & Richie Hayward (drums & percussion)
+
+4-6 acoustic with the band
+1, 6, 9, 13 Bob Dylan (harmonica)
+2-14 Richie Hayward (drums & percussion)
+2, 13 Larry Campbell (pedal steel guitar)
+5 Larry Campbell (cittern)
+8 Freddie Koella (slide guitar)
+12 Larry Campbell (slide guitar)
+
+NOTES:
+LB-numbers for this concert: LB-1631, LB-1644, LB-6132
+
+Stereo audience recording, 105 minutes
+
+.ffp:
+01 Drifter's Escape.flac:0737a76456d436eec9f9e84ed399f585
+02 Tell Me That It Isn't True.flac:a0b6c1203b4124dae969b6333d7866fd
+03 Cry A While.flac:f902aac08f025e77dd7742aea903a92e
+04 The Lonesome Death Of Hattie Carroll.flac:35256bc21c1cc6b8959c9b1b279f550f
+05 It's Alright, Ma (I'm Only Bleeding).flac:c785dd4ae191b383d63116c0b63fefea
+06 Girl From The North Country.flac:1e999d7f98e8b8ffec9256afde8b878b
+07 Things Have Changed.flac:70dafddade714203558f1d96b5960cc2
+08 Highway 61 Revisited.flac:a30cf1a7abf9c637cc037cf7647d4f09
+09 Make You Feel My Love.flac:636315a3b9a6774c65425e95aca03702
+10 Tweedle Dee & Tweedle Dum.flac:5500a8ff4777fa132575ff95c1185f23
+11 Every Grain Of Sand.flac:5c66f9a2f96a66e5e0f22f7f2c7c6e57
+12 Honest With Me.flac:790b769803ca4be989c182a8a1077767
+13 Saving Grace.flac:853b270146dce0bbc369bf23d9e99932
+14 Summer Days.flac:a697f1339519c36fa952ae5b74550832
+15 Cat's In The Well.flac:866804069adffdcb01e12ccda8ed534a
+16 Like A Rolling Stone.flac:7357620790277b611ebbc723bbe56a84
+17 All Along The Watchtower.flac:ad908ca025a0981b6e7807549a5b20bd
+===================
+===================
+===================
+=== 2004-02-28 Cain's Ballroom, Tulsa, Oklahoma, USA [possibly LB-1631 unidentified taper].ffp
+===================
+===================
+===================
+01 Drifter's Escape.flac:0737a76456d436eec9f9e84ed399f585
+02 Tell Me That It Isn't True.flac:a0b6c1203b4124dae969b6333d7866fd
+03 Cry A While.flac:f902aac08f025e77dd7742aea903a92e
+04 The Lonesome Death Of Hattie Carroll.flac:35256bc21c1cc6b8959c9b1b279f550f
+05 It's Alright, Ma (I'm Only Bleeding).flac:c785dd4ae191b383d63116c0b63fefea
+06 Girl From The North Country.flac:1e999d7f98e8b8ffec9256afde8b878b
+07 Things Have Changed.flac:70dafddade714203558f1d96b5960cc2
+08 Highway 61 Revisited.flac:a30cf1a7abf9c637cc037cf7647d4f09
+09 Make You Feel My Love.flac:636315a3b9a6774c65425e95aca03702
+10 Tweedle Dee & Tweedle Dum.flac:5500a8ff4777fa132575ff95c1185f23
+11 Every Grain Of Sand.flac:5c66f9a2f96a66e5e0f22f7f2c7c6e57
+12 Honest With Me.flac:790b769803ca4be989c182a8a1077767
+13 Saving Grace.flac:853b270146dce0bbc369bf23d9e99932
+14 Summer Days.flac:a697f1339519c36fa952ae5b74550832
+15 Cat's In The Well.flac:866804069adffdcb01e12ccda8ed534a
+16 Like A Rolling Stone.flac:7357620790277b611ebbc723bbe56a84
+17 All Along The Watchtower.flac:ad908ca025a0981b6e7807549a5b20bd
+===================
+===================
+===================
+=== ORIGINAL bd2004-02-28abmsd.txt
+===================
+===================
+===================
+Cain's Ballroom
+Tulsa, Oklahoma
+28 February 2004
+ 
+DISC ONE --- 76:11.74
+01. [5:35.31] Drifter's Escape
+02. [3:52.31] Tell Me That It Isn't True
+03. [5:56.47] Cry A While
+04. [6:01.10] The Lonesome Death Of Hattie Carroll
+05. [8:15.68] It's Alright, Ma (I'm Only Bleeding)
+06. [5:27.18] Girl From The North Country
+07. [7:19.24] Things Have Changed
+08. [6:05.32] Highway 61 Revisited
+09. [4:58.62] Make You Feel My Love
+10. [5:40.13] Tweedle Dee & Tweedle Dum
+11. [7:31.11] Every Grain Of Sand
+12. [6:59.53] Honest With Me
+13. [2:28.49] Saving Grace
+
+DISC TWO --- 23:59.00
+01. [6:18.41] Summer Days
+02. [3:55.01] Cat's In The Well
+03. [7:03.45] Like A Rolling Stone
+04. [6:41.63] All Along The Watchtower
+
+
+
+Concert # 1589 of The Never-Ending Tour. First concert of the 2004 US Spring Tour. First 2004 concert. 
+
+First concert with the 17th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Receli & Richie Hayward (drums & percussion).
+
+===================
+===================
+===================

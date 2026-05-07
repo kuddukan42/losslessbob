@@ -1,0 +1,68 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-14-k.flacf
+===================
+===================
+===================
+683c235193ec4730be97d35f6e0f235b *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\101 Crash On The Levee (Down In The Flood).flac
+b884e74b90b7237358f6be518766eaf8 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\102 If You See Her, Say Hello.flac
+57b10f467277cd782b72a5f68012903d *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\103 All Along The Watchtower.flac
+66e120cc0ddb8bbd44fe4cb3dae1433e *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\104 Just Like A Woman.flac
+4602a553358759740be04cc7b76ef348 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\105 Unbelievable.flac
+d0caf39ab53abd3e272918e700871567 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\106 I'll Be Your Baby Tonight.flac
+1861b196a78fa49a8867679554a5d8d5 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\107 Mr. Tambourine Man.flac
+987fda452aa7d8369ab67c87ea956f9f *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\201 Masters Of War.flac
+15a5f99baf26722d1e7db13cc8a9a225 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\202 Boots Of Spanish Leather.flac
+3429195a787e1553edc8da67eca01dd7 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\203 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+71a447b200b97199b6430ab846c136d3 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\204 Man In The Long Black Coat.flac
+9a4f296e8bbbcf555292addaf329f824 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\205 Maggie's Farm.flac
+cc6c196d1bf4458933f296abebe815ba *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\206 Like A Rolling Stone.flac
+a2aa15bff78859fd51e445090cedfcac *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995.md5
+20d7dcb92cfe871a75412779f992156b *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\DylanFurth1995.txt
+82fede7539668808ed208561096d2243 *Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\DylanFyrth95.jpg
+===================
+===================
+===================
+=== ffp for: bd95-03-14-k.flacf
+===================
+===================
+===================
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\101 Crash On The Levee (Down In The Flood).flac:d1060ce1a5507e6be325aee67dbb3d2a
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\102 If You See Her, Say Hello.flac:77ce536a815e2394b20af9888ae33139
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\103 All Along The Watchtower.flac:3526a59593301375cf785a8a82eaa9fc
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\104 Just Like A Woman.flac:c655e4f03ea82fa221b8f6b7c2352362
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\105 Unbelievable.flac:b6ceff81702a97ea99320166e8373e27
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\106 I'll Be Your Baby Tonight.flac:27f98cde7dcb59450f9611d7bde3c434
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\107 Mr. Tambourine Man.flac:e6bb0bf82c152dbb2150381565e60547
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\201 Masters Of War.flac:b8dc646ca43f7a0cdfbd67e0e0bb5ab5
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\202 Boots Of Spanish Leather.flac:cf54d37101d8f771034b340a153c9cdd
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\203 Stuck Inside Of Mobile With The Memphis Blues Again.flac:7f97ce470fd22b46237ae030786eb4ac
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\204 Man In The Long Black Coat.flac:69eb3d8c8388bdc6e491728b13435604
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\205 Maggie's Farm.flac:1d034e0f6c9707ffcec8f1c1b21ebc97
+Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995\206 Like A Rolling Stone.flac:90014ad4e9a4006e238154abab2024b9
+===================
+===================
+===================
+=== shntool len for: bd95-03-14-k.flacf\Bob Dylan 1995-03-14 Stadthalle Fürth Germany-Fürth 1995
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.33       54585260 B   ---   --   ---xx   flac  0.6935  101 Crash On The Levee (Down In The Flood).flac
+     6:04.39       64301372 B   ---   --   ---xx   flac  0.6336  102 If You See Her, Say Hello.flac
+     6:31.01       68974796 B   ---   --   ---xx   flac  0.6494  103 All Along The Watchtower.flac
+     6:54.21       73079036 B   ---   --   ---xx   flac  0.5696  104 Just Like A Woman.flac
+     7:00.74       74262092 B   ---   --   ---xx   flac  0.5773  105 Unbelievable.flac
+     8:17.25       87729644 B   ---   --   ---xx   flac  0.6168  106 I'll Be Your Baby Tonight.flac
+     7:06.34       75226412 B   ---   --   ---xx   flac  0.4856  107 Mr. Tambourine Man.flac
+     6:02.27       63920348 B   ---   --   ---xx   flac  0.5302  201 Masters Of War.flac
+     8:07.62       86052668 B   ---   --   ---xx   flac  0.4819  202 Boots Of Spanish Leather.flac
+    11:27.48      121299740 B   ---   --   ---xx   flac  0.6272  203 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     7:45.60       82167164 B   ---   --   ---xx   flac  0.5279  204 Man In The Long Black Coat.flac
+     8:44.09       92454812 B   ---   --   ---xx   flac  0.6803  205 Maggie's Farm.flac
+    11:05.46      117414236 B   ---   --   ---xx   flac  0.5824  206 Like A Rolling Stone.flac
+   100:17.29     1061467580 B                            0.5884  (13 files)
+===================
+===================
+===================

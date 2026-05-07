@@ -1,0 +1,12 @@
+Bob Dylan, 3/18/95, Groningen, Holland, Martinihal, 2CDR
+
+LB-3496, (46min+43min), Taper: no info, Olav ASM (volume-boost only), Lineage: FLAC DVD-R > WAV > (CoolEdit inspecting; nothing found) > T-RackS 2.0 (5.0dB volume boost) > FLAC frontend (sector alignment) > DIME; bittorrent download 01/06; same recording as LB-1702 based on same clapping at end of d1t2; this has higher levels; (did not listen to all of this)
+
+CD1
+01. Crash On The Levee (Down In The Flood), 02. If You See Her, Say Hello, 03. All Along The Watchtower, 04. Just Like A Woman, 05. Tangled Up In Blue, 06. It Takes A Lot To Laugh, It Takes A Train To Cry, 07. Mr. Tambourine Man, 
+
+CD1
+08. Masters Of War, 09. The Lonesome Death Of Hattie Carroll, 10. Jokerman, 11. She Belongs To Me, 12. Maggie's Farm, 13. (encore), 14. Like A Rolling Stone
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

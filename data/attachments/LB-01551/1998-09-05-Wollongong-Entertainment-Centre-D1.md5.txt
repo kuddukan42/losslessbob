@@ -1,0 +1,26 @@
+; Using hkSFV on 02.05.2004 at 03:08:23
+; http://www.big-o-software.com
+;
+;/----
+;     36697210 02:17.14 2004-02-05 1-01-Leopard-Skin Pill-Box Hat.flac
+;     38729310 02:18.12 2004-02-05 1-02-I Threw It All Away.flac
+;     49129398 02:19.16 2004-02-05 1-03-Cold Irons Bound.flac
+;     51776795 02:20.22 2004-02-05 1-04-Every Grain Of Sand.flac
+;     41993375 02:21.12 2004-02-05 1-05-Can't Wait.flac
+;     27126537 02:21.46 2004-02-05 1-06-Silvio.flac
+;     31142843 02:22.26 2004-02-05 1-07-Roving Gambler.flac
+;     35202643 02:23.20 2004-02-05 1-08-One Too Many Mornings.flac
+;     57308627 02:24.32 2004-02-05 1-09-Tangled Up In Blue.flac
+;     42557442 02:25.36 2004-02-05 1-10-The Lonesome Of Hattie Carroll.flac
+;\----
+;
+67c3bb5064b485ec1d560365fa708b6e *1-01-Leopard-Skin Pill-Box Hat.flac
+933506ecea04a87e51d76df7e2dabcf3 *1-02-I Threw It All Away.flac
+381ee1b818f1f8e4a5c43e2f8b5b32bb *1-03-Cold Irons Bound.flac
+0e086b7e10ce37f283e697c98ebef051 *1-04-Every Grain Of Sand.flac
+6db92d959255f5ad9db855d1a175c576 *1-05-Can't Wait.flac
+88bab1120d3212b57c4f582d5b119193 *1-06-Silvio.flac
+64722de679288b970b536c14f9f469b3 *1-07-Roving Gambler.flac
+38ac4e2db453b1e90326ce6ad00c6abb *1-08-One Too Many Mornings.flac
+689a319e98f100878ce3dbc128dde755 *1-09-Tangled Up In Blue.flac
+f757a62f0f7f1471be13c79b69c7b217 *1-10-The Lonesome Of Hattie Carroll.flac

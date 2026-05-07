@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-08-29-jtt.flacf 
+=================== 
+=================== 
+=================== 
+2159abfa486aeb8f33467d9c4943e13f  bd88-08-29-jtt-LB-5423.txt
+58036c0d8b006f9e9ea92a1d6434e64e  Dylan - Toronto August 29th 1988 Info.txt
+96cb2ca7c7281875da11f15660c86c50  Dylan - Toronto August 29th 1988.md5
+0e4dff73efd6cbe58480047a1216f0da  Dylan - Toronto August 29th 1988_Track01.flac
+86be32554bde521fb84d335460b184aa  Dylan - Toronto August 29th 1988_Track02.flac
+51c2d519ea1e6989952477fe8d4bdb8f  Dylan - Toronto August 29th 1988_Track03.flac
+751d2b9e22fdcd9deadbc070afee6e3e  Dylan - Toronto August 29th 1988_Track04.flac
+bd76cb6f3369aa7e3dccede9125ba150  Dylan - Toronto August 29th 1988_Track05.flac
+788ee136ab21ed33256730197329ca4b  Dylan - Toronto August 29th 1988_Track06.flac
+52c8011bf989c1824f73cef41ac60aa3  Dylan - Toronto August 29th 1988_Track07.flac
+ddca6f29afd0912a9b9f3eebf3ed7bdf  Dylan - Toronto August 29th 1988_Track08.flac
+4a6e1d3f5747ff5fdeb551b18a69ddcc  Dylan - Toronto August 29th 1988_Track09.flac
+a248dced183596e771464f7dda646e53  Dylan - Toronto August 29th 1988_Track10.flac
+dd31523aa82af616a0e6c7cdebd964d7  Dylan - Toronto August 29th 1988_Track11.flac
+bf20097cfa287c5c65c6dc12d731260f  Dylan - Toronto August 29th 1988_Track12.flac
+d2866c7be550d29808d6b712b264032d  Dylan - Toronto August 29th 1988_Track13.flac
+0e665c7ed699ad8cdbc11e04588aff38  Dylan - Toronto August 29th 1988_Track14.flac
+b6138445d79e8d50bb45a2818875cc33  Dylan - Toronto August 29th 1988_Track15.flac
+be7eda11a4814dc994f0b517336d130f  Dylan - Toronto August 29th 1988_Track16.flac
+2423a0c9be7abcff41b52ea6aa998f08  lbdir-bd88-08-29-jtt.flacf.md5
+9b01b221c39d262f3d5fcf5b66c4b45e  lbdir-bd88-08-29-jtt.flacf.txt
+853126221637c0e8e257bbb0bcb35c57  Toronto, Ontario 29.08.1088 - F.jpg
+8317b7ab111b963cd66655b07bca2c73  Toronto, Ontario 29.08.1088 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-08-29-jtt.flacf 
+=================== 
+=================== 
+=================== 
+Dylan - Toronto August 29th 1988_Track01.flac:b5bb029eba40627e327cf48826e295b8
+Dylan - Toronto August 29th 1988_Track02.flac:fd3f885625f89faef805b75c70370b31
+Dylan - Toronto August 29th 1988_Track03.flac:d7955bd9264ccfd511459a498d96e7a0
+Dylan - Toronto August 29th 1988_Track04.flac:705335f36a79822dfefdc6dcd2b43782
+Dylan - Toronto August 29th 1988_Track05.flac:42b485ddb2c04bbe13141c6e925d93c9
+Dylan - Toronto August 29th 1988_Track06.flac:0978e476c26a4e48222a4127d9b13621
+Dylan - Toronto August 29th 1988_Track07.flac:5ec9d6dd977f125fa7af79317e4fb8d3
+Dylan - Toronto August 29th 1988_Track08.flac:58a56c4ab45939d364fba9f3e5cb42bb
+Dylan - Toronto August 29th 1988_Track09.flac:1f34fa7be766bc15294f2704afd18478
+Dylan - Toronto August 29th 1988_Track10.flac:4c682035414b5ef6f4246966caf71bac
+Dylan - Toronto August 29th 1988_Track11.flac:c6a0f518c365dd7133bf557ee8aaef55
+Dylan - Toronto August 29th 1988_Track12.flac:5a856c7487f6551c42463028300ecf85
+Dylan - Toronto August 29th 1988_Track13.flac:de7e105a6afa3348d63a4adfe06bb8ca
+Dylan - Toronto August 29th 1988_Track14.flac:e2053e29b2b281232e0822bf0cf6737b
+Dylan - Toronto August 29th 1988_Track15.flac:29d45d15ff1901cccde206fcd7a744a4
+Dylan - Toronto August 29th 1988_Track16.flac:959ce3a6d99d78dfd79959f492dbaa59
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-08-29-jtt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:37.11       38304716 B   ---   --   ---xx   flac  0.4810  Dylan - Toronto August 29th 1988_Track01.flac
+     4:30.28       47693900 B   ---   --   ---xx   flac  0.4804  Dylan - Toronto August 29th 1988_Track02.flac
+     4:56.42       52313228 B   ---   --   ---xx   flac  0.4781  Dylan - Toronto August 29th 1988_Track03.flac
+     6:18.16       66716876 B   ---   --   ---xx   flac  0.4592  Dylan - Toronto August 29th 1988_Track04.flac
+     5:32.52       58687148 B   ---   --   ---xx   flac  0.4596  Dylan - Toronto August 29th 1988_Track05.flac
+     4:15.52       45104348 B   ---   --   ---xx   flac  0.4728  Dylan - Toronto August 29th 1988_Track06.flac
+     5:09.64       54658172 B   ---   --   ---xx   flac  0.4233  Dylan - Toronto August 29th 1988_Track07.flac
+     4:45.10       50297564 B   ---   --   ---xx   flac  0.4342  Dylan - Toronto August 29th 1988_Track08.flac
+     4:11.39       44368172 B   ---   --   ---xx   flac  0.4148  Dylan - Toronto August 29th 1988_Track09.flac
+     4:33.68       48317180 B   ---   --   ---xx   flac  0.4204  Dylan - Toronto August 29th 1988_Track10.flac
+     4:16.40       45252524 B   ---   --   ---xx   flac  0.4899  Dylan - Toronto August 29th 1988_Track11.flac
+     3:39.50       38749244 B   ---   --   ---xx   flac  0.4995  Dylan - Toronto August 29th 1988_Track12.flac
+     5:59.68       63487580 B   ---   --   ---xx   flac  0.5015  Dylan - Toronto August 29th 1988_Track13.flac
+     5:23.72       57146588 B   ---   --   ---xx   flac  0.4562  Dylan - Toronto August 29th 1988_Track14.flac
+     4:03.33       42942860 B   ---   --   ---xx   flac  0.5083  Dylan - Toronto August 29th 1988_Track15.flac
+     4:11.40       44370524 B   ---   --   ---xx   flac  0.4995  Dylan - Toronto August 29th 1988_Track16.flac
+    75:26.10      798410624 B                            0.4664  (16 files)
+=================== 
+=================== 
+=================== 

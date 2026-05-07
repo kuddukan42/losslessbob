@@ -1,0 +1,53 @@
+Bob Dylan
+Moody Theater
+Austin, Texas
+
+6th April, 2024
+
+Recording by nightly moth
+
+1. intro.
+2. Watching The River Flow 
+3. Most Likely You Go Your Way (and I'll Go Mine)
+4. I Contain Multitudes
+5. False Prophet
+6. When I Paint My Masterpiece 
+7. Black Rider
+8. I'll Be Your Baby Tonight 
+9. My Own Version of You
+10. Crossing the Rubicon 
+11. To Be Alone with You
+12. Key West (Philosopher Pirate)
+13. Gotta Serve Somebody
+14. Walking By Myself (Song by Jimmie Rogers)
+15. I've Made Up My Mind to Give Myself to You
+16. Big River (Song by Johnny Cash)
+17. Mother of Muses
+18. Goodbye Jimmy Reed 
+19. Every Grain of Sand
+___
+
+Band Members
+Bob Dylan — piano, harmonica
+Tony Garnier — electric and standup bass
+Jerry Pentecost — drums
+Donnie Herron — violin, pedal steel, lap steel
+Bob Britt — guitar
+Doug Lancio — guitar
+Jimmie Vaughan (guest guitar player on 8-11, 13-14, 16, 18-19. Replaced Doug Lancio on stage)
+https://www.boblinks.com/040624s.html
+___
+
+A nightly moth recording, 108 minutes
+Using Tascam DR-07X with internal mics.
+Recorded from the front row rail, left of centre. 
+Wav file split into tracks, converted to flac files using 'CD Wave Editor'. No other alterations to the recording. 
+___
+
+nm
+https://www.youtube.com/c/nightlymoth
+
+___
+
+subtr83 remaster: CUETools > Cakewalk for processing>foobar [to split back to tracks]>TLH [checksums]
+

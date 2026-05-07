@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-06-01-SM-remaster.flacf 
+=================== 
+=================== 
+=================== 
+a4a9c6cffd14e477880be850b9bc5f0f  1965-06-01-BBC.nfo
+442367fb5bd44fcf946d6a1ed252328c  1965-06-01-BBC.txt
+5a169569fd4bab5421bd6d9c104ebfa7  BBC 1965 artwork\Artwork (1965 Revisited - Great Dane GDR 9419_ 1-14)\196505&6f.jpg
+0b5a248e999979bf4f28c8273c3192ad  BBC 1965 artwork\Artwork (1965 Revisited - Great Dane GDR 9419_ 1-14)\1965b.JPG
+995f4938a80cce428096493195a7c51b  BBC 1965 artwork\Artwork (1965 Revisited - Great Dane GDR 9419_ 1-14)\1965b05&6.jpg
+177d678309faae062a063cffcd087d52  BBC 1965 artwork\Artwork (1965 Revisited - Great Dane GDR 9419_ 1-14)\1965bb.JPG
+c2ae21acf104b7316f7b856dfba60738  BBC 1965 artwork\Artwork (1965 Revisited - Great Dane GDR 9419_ 1-14)\1965bf.JPG
+01afe0e916393450ddf2cc2147dca7c7  BBC 1965 artwork\Artwork (1965 Revisited - Great Dane GDR 9419_ 1-14)\1965cd05.jpg
+a2fdd0bc2bf1cac4e9e962b5dfd9eed1  BBC 1965 artwork\Artwork (1965 Revisited - Great Dane GDR 9419_ 1-14)\1965f.JPG
+47baf3e04d2357e35a8a8b9d41ab5925  BBC 1965 artwork\Artwork (At The Beeb - MainStream MSBR-039)\a-31cd.JPG
+475f190a84ff9e0805de17c2643e8505  BBC 1965 artwork\Artwork (At The Beeb - MainStream MSBR-039)\AtTheBeeb-B.jpg
+e841902c8b91858961b5db0038ec1460  BBC 1965 artwork\Artwork (At The Beeb - MainStream MSBR-039)\AtTheBeeb-F.jpg
+8851380f89eb3c6c409ff60eafc36bcc  BBC 1965 artwork\Artwork (BBC '65 - Wallflower NMP65)_\bt-w003b.jpg
+e33662882fc254437e33dd15b2366f51  BBC 1965 artwork\Artwork (BBC '65 - Wallflower NMP65)_\bt-w003f.jpg
+ddbc2af2e613cbaadf90818d115d6ac6  BBC 1965 artwork\Artwork (BBC '65 - Wallflower NMP65)_\bt-w003lp1.jpg
+b74a63c77e72682e60db8ae6f7d1c46e  BBC 1965 artwork\Artwork (BBC Broadcast TMQ  BD 534)_\bt-b010bhq.JPG
+823eadc3b8faf929fda68740aa4ba498  BBC 1965 artwork\Artwork (BBC Broadcast TMQ  BD 534)_\bt-b010fhq.JPG
+b8408173141841125310f9b3274707a3  BBC 1965 artwork\Artwork (BBC Broadcast TMQ  BD 534)_\bt-b010lp.jpg
+b3e0efe417c483bb02c4dc2c05bde55a  BBC 1965 artwork\Artwork (BBC In Concert - Black Dog 005)\DYLAN 65 BBC1.jpg
+ed1eeba217c27963a08ec866fb33ccc2  BBC 1965 artwork\Artwork (BBC In Concert - Black Dog 005)\DYLAN 65 BBC2.jpg
+23628e649a79689ccbb7642a175fc969  BBC 1965 artwork\Artwork (BBC In Concert - Black Dog 005)\DYLAN 65 BBC3.jpg
+1c0860f214aa59a7341066671c4ac82d  BBC 1965 artwork\Artwork (BBC In Concert - Black Dog 005)\DYLAN 65 BBC4.jpg
+58fe502c0eb435e29c48740a6cca656f  BBC 1965 artwork\Artwork (The Circus Is in Town - Scorpio 92-BD-SC-4004 )\c-13cd.JPG
+21341ac0d2243c451ae89dc9d5eb769c  BBC 1965 artwork\Artwork (The Circus Is in Town - Scorpio 92-BD-SC-4004 )\c-13i.JPG
+b08686509a82d65649bfa84e6e0d959c  BBC 1965 artwork\Artwork (The Circus Is in Town - Scorpio 92-BD-SC-4004 )\DylanCircusIsInTownBack.jpg
+e1e6688015948855e08fd4306730d96d  BBC 1965 artwork\Artwork (The Circus Is in Town - Scorpio 92-BD-SC-4004 )\DylanCircusIsInTownFront.jpg
+209d0cfda5c6ae135002b4046017aacc  BBC-TV_Centre-Pre-TC8.jpg
+ac19c0cfa6fdcd777cab2e42a10bf349  BBC1965-Watchtower-Freebie.jpg
+2e2b09a5fca95ab4c6eb373aababbb0a  bd1965-06-01d1t01.flac
+8ac838c4321b3ef2b4bb66f465b4c321  bd1965-06-01d1t02.flac
+34ef7f6ebfd618d76560c7a302e19fd6  bd1965-06-01d1t03.flac
+8a50c1947aa2127ec84061d72f5b5b0e  bd1965-06-01d1t04.flac
+4d5ff95c580ae7dd6a508d348176e7b5  bd1965-06-01d1t05.flac
+9fbfe28b594058013e6cfdf4f108744d  bd1965-06-01d1t06.flac
+84b7a8f11287bea77d13449ce815905b  bd1965-06-01d1t07.flac
+9a6d27c82f1e7f971e0040c9e1607a06  bd1965-06-01d1t08.flac
+f633db4ba66b2459c6a1aa30cff43036  bd1965-06-01d1t09.flac
+3d35eef711735079a3d80df7f0ca85db  bd1965-06-01d1t10.flac
+96b54d3cb46523b9404fbde7495eb701  bd1965-06-01d1t11.flac
+c72942e5a80749e11e20398303241d1d  bd1965-06-01d1t12.flac
+f22f1f2a547cea017e9ad61b1951253d  fingerprint.ffp
+5135204d1d6740f022cdd9fcac3f666e  md5sum.md5
+24dbcd09aadc9065fcfadcc8684be729  originals.zip
+ca5b7d1ecb946829da855bf2e7b772db  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-06-01-SM-remaster.flacf 
+=================== 
+=================== 
+=================== 
+bd1965-06-01d1t01.flac:af1135cc86e08d5a2593021a616b1474
+bd1965-06-01d1t02.flac:102290a760e5e6659adcf61de65261d4
+bd1965-06-01d1t03.flac:a05a70eff8011722ff0e46ead130a44e
+bd1965-06-01d1t04.flac:b32d4b694f57220b5e3f8729a9ef96cb
+bd1965-06-01d1t05.flac:5b00329e0e11ff078cf3f5c2f1da4815
+bd1965-06-01d1t06.flac:755ca3fba44dc685f422e6e0739a10cb
+bd1965-06-01d1t07.flac:9220405f2fd3e47ef6d7728c16354623
+bd1965-06-01d1t08.flac:04ae8daae51ce493959a1fe6687f3df0
+bd1965-06-01d1t09.flac:94fb37dd9c05dbe4c6e6013faa680024
+bd1965-06-01d1t10.flac:801838e9df41f3f3a046414b7c36e1e6
+bd1965-06-01d1t11.flac:ab0173bc6dbe0c1a014a939bc465d86b
+bd1965-06-01d1t12.flac:20127149ed96f89ae247a0cf9afc65bb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-06-01-SM-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.12       52419068 B   ---   --   ---xx   flac  0.4544  bd1965-06-01d1t01.flac
+     5:49.51       61683596 B   ---   --   ---xx   flac  0.4981  bd1965-06-01d1t02.flac
+     6:42.61       71056316 B   ---   --   ---xx   flac  0.4619  bd1965-06-01d1t03.flac
+     2:35.17       27382028 B   ---   --   ---xx   flac  0.5013  bd1965-06-01d1t04.flac
+     6:13.60       65938364 B   ---   --   ---xx   flac  0.4688  bd1965-06-01d1t05.flac
+     4:03.07       42881708 B   ---   --   ---xx   flac  0.5021  bd1965-06-01d1t06.flac
+     4:00.24       42392492 B   ---   --   ---xx   flac  0.4735  bd1965-06-01d1t07.flac
+     4:13.04       44638652 B   ---   --   ---xx   flac  0.4492  bd1965-06-01d1t08.flac
+     6:41.04       70745852 B   ---   --   ---xx   flac  0.4396  bd1965-06-01d1t09.flac
+     9:01.33       95510060 B   ---   --   ---xx   flac  0.4452  bd1965-06-01d1t10.flac
+     4:45.15       50309324 B   ---   --   ---xx   flac  0.4575  bd1965-06-01d1t11.flac
+     5:08.07       54347708 B   ---   --   ---xx   flac  0.4672  bd1965-06-01d1t12.flac
+    64:10.70      679305168 B                            0.4647  (12 files)
+=================== 
+=================== 
+=================== 

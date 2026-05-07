@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-11-cc.flacf 
+=================== 
+=================== 
+=================== 
+c65e97d2c00ccfa5088398a4664aeaf9  101-Intro.flac
+e4344eb79a52647a17e35f4910626dbb  102-Maggie's Farm.flac
+2a360699894b034ed758661472cd6a45  103-Mr. Tambourine Man.flac
+9041672e85ba2913e80dc57ec04f1868  104-Man In The Long Black Coat.flac
+e521b81fe26204080a7e17d15bbf37a7  105-The Levee's Gonna Break.flac
+36ef5a7a2cb1434b0ae40e5f6524d08c  106-When The Deal Goes Down.flac
+b9d580c4b0b852ec1acfd9fbcbd1a660  107-Things Have Changed.flac
+ea53a517c53259976920014b4f1a9fa0  108-The Lonesome Death Of Hattie Carroll.flac
+f92cf2ddd9660906199a84db4f85ef9f  109-Tough Mama.flac
+f09c568c08a83546ac5b19530a00a0b9  110-Workingman's Blues #2.flac
+68e940f009207d5b8ab815af47928cf1  111-It's Alright, Ma (I'm Only Bleeding).flac
+640584a24ebc9a2f99d7d589cd4d13e7  112-Just Like A Woman.flac
+c003dd265bd85591b8ec0ac33f6fe33b  201-Highway 61 Revisited.flac
+cfb629f711864acf3d376d13a0136830  202-Nettie Moore.flac
+47cb7df35aae1df744bd82b9603e0eb4  203-Thunder On The Mountain.flac
+4cc16bcb253877369d1add82318b6357  204-Like A Rolling Stone.flac
+25997ab36ed794d6f536ba36fafa29d5  205-All Along The Watchtower.flac
+1050b5a9f5bf98360acdb20e9df34f47  206-Spirit On The Water.flac
+11c59a2f385d489db46085e366754cf4  207-Blowin' In The Wind.flac
+62ab7ce71b7c1ee3b22e88fd6c423da0  208-Dignity.flac
+54533c11ad37f3a71a5d9500b28a0ded  209-Can't Wait.flac
+c81f01247271cfdf7e5a4a21dc7f2e20  210-Simple Twist Of Fate.flac
+900e765eea180994074fdece5a58fff4  211-The Wicked Messenger.flac
+9d7302c3202d1830958ab368e3c70962  212-My Back Pages.flac
+3a07cdd8adae494bf6beb2c8f5c251c6  213-Return To Me.flac
+749e0990783e69a954b7ee5b7fd3220d  Amsterdam Second Evening Back.jpg
+1e3eb8af23a430b2f138b846d964e135  Amsterdam Second Evening Disc 01 flac.md5
+9c441c861eaeea9571bd34d397a44d81  Amsterdam Second Evening Disc 01 waw.md5
+6ce2bf5fe3ad2b724b79b6c789d52ab9  Amsterdam Second Evening Disc 01.jpg
+6f81cb0c789a51b749cd3726069eef4f  Amsterdam Second Evening Disc 01.log
+ea63056c96443f1eef29a021b45b289e  Amsterdam Second Evening Disc 02 flac.md5
+827857690012e6ee0dc204a0e4551423  Amsterdam Second Evening Disc 02 waw.md5
+ea59a1143b0f651d7957c58218e97651  Amsterdam Second Evening Disc 02.jpg
+e929a007f6d987c297a06476ecc3748d  Amsterdam Second Evening Disc 02.log
+21c3779710a51a837137932888fe38ff  Amsterdam Second Evening Front.jpg
+f0c8fdffa23094b1cc539de6956a4ca9  Amsterdam Second Evening.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-11-cc.flacf 
+=================== 
+=================== 
+=================== 
+101-Intro.flac:72029723624c3c2046754ba6ab73aa80
+102-Maggie's Farm.flac:69044c97ceff04ec6db77ec94d319a96
+103-Mr. Tambourine Man.flac:dd951ebf941431c5d341839ca1c16f14
+104-Man In The Long Black Coat.flac:ce11ba68e80ff67f282bdf76b149c105
+105-The Levee's Gonna Break.flac:47064683793c4adb07e9ca644f4f3f62
+106-When The Deal Goes Down.flac:ad8768dedafab653a821aecefb2985b1
+107-Things Have Changed.flac:0fe350c61d66bd473adaf9676d7edc16
+108-The Lonesome Death Of Hattie Carroll.flac:ac118beaf235ab6093116083004fe9ee
+109-Tough Mama.flac:6d2cde97ba7caef0e51b4535316eed99
+110-Workingman's Blues #2.flac:47f84ef7da00b67569d4500fad52403b
+111-It's Alright, Ma (I'm Only Bleeding).flac:8a3dd257a5059b0d516491baa2d8804e
+112-Just Like A Woman.flac:3940179ae02ac8116451dccd7e3d7fa8
+201-Highway 61 Revisited.flac:2c843280b193143e345162eb63406425
+202-Nettie Moore.flac:ab485178c5d40c535592e08002a94751
+203-Thunder On The Mountain.flac:e37f009c1cebe9c5c786beab2182eef8
+204-Like A Rolling Stone.flac:ff4c414d8917aaa0b2edd606e4a1edfe
+205-All Along The Watchtower.flac:242de424ddefd1865d5ffaf66065a48f
+206-Spirit On The Water.flac:971a4efb4947e4ff9fdb21c05da74e3e
+207-Blowin' In The Wind.flac:fcd93dbe747f055d59cb02f5af234ce6
+208-Dignity.flac:db29dbcc419fa6b2fda1616867e922b6
+209-Can't Wait.flac:dc82cab08d3bdc57b7985968ae5c8e95
+210-Simple Twist Of Fate.flac:f7a68efd1b5541673f5aa4b26d47f5bc
+211-The Wicked Messenger.flac:e35fe4b8a359318de8925605a5116801
+212-My Back Pages.flac:48a16e448ad546b5380d46b508d933bf
+213-Return To Me.flac:324912980ea28ab991595ddd5ef96089
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-11-cc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.19        8335532 B   ---   --   ---xx   flac  0.5826  101-Intro.flac
+     4:18.54       45638252 B   ---   --   ---xx   flac  0.6696  102-Maggie's Farm.flac
+     5:49.26       61624796 B   ---   --   ---xx   flac  0.6278  103-Mr. Tambourine Man.flac
+     5:05.44       53905532 B   ---   --   ---xx   flac  0.6064  104-Man In The Long Black Coat.flac
+     6:58.46       73843436 B   ---   --   ---xx   flac  0.6530  105-The Levee's Gonna Break.flac
+     5:52.28       62158700 B   ---   --   ---xx   flac  0.5711  106-When The Deal Goes Down.flac
+     6:27.26       68327996 B   ---   --   ---xx   flac  0.6489  107-Things Have Changed.flac
+     6:10.15       65303324 B   ---   --   ---xx   flac  0.5849  108-The Lonesome Death Of Hattie Carroll.flac
+     5:16.52       55864748 B   ---   --   ---xx   flac  0.6422  109-Tough Mama.flac
+     6:56.73       73554140 B   ---   --   ---xx   flac  0.6147  110-Workingman's Blues #2.flac
+     7:49.67       82889228 B   ---   --   ---xx   flac  0.6369  111-It's Alright, Ma (I'm Only Bleeding).flac
+     6:05.08       64404860 B   ---   --   ---xx   flac  0.6217  112-Just Like A Woman.flac
+     7:11.03       76035500 B   ---   --   ---xx   flac  0.6570  201-Highway 61 Revisited.flac
+     8:40.53       91852700 B   ---   --   ---xx   flac  0.5937  202-Nettie Moore.flac
+     6:17.07       66519308 B   ---   --   ---xx   flac  0.6749  203-Thunder On The Mountain.flac
+     8:40.53       91852700 B   ---   --   ---xx   flac  0.6434  204-Like A Rolling Stone.flac
+     4:55.29       52106252 B   ---   --   ---xx   flac  0.6531  205-All Along The Watchtower.flac
+     7:36.70       80603084 B   ---   --   ---xx   flac  0.6075  206-Spirit On The Water.flac
+     6:00.24       63560492 B   ---   --   ---xx   flac  0.6242  207-Blowin' In The Wind.flac
+     4:50.52       51278348 B   ---   --   ---xx   flac  0.6453  208-Dignity.flac
+     5:15.33       55643660 B   ---   --   ---xx   flac  0.6234  209-Can't Wait.flac
+     7:44.24       81906092 B   ---   --   ---xx   flac  0.6171  210-Simple Twist Of Fate.flac
+     3:24.66       36140876 B   ---   --   ---xx   flac  0.6893  211-The Wicked Messenger.flac
+     6:12.19       65665532 B   ---   --   ---xx   flac  0.6830  212-My Back Pages.flac
+     2:37.71       27861836 B   ---   --   ---xx   flac  0.5795  213-Return To Me.flac
+   147:05.62     1556876924 B                            0.6310  (25 files)
+=================== 
+=================== 
+=================== 

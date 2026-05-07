@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-10-01-NETI.flacf 
+=================== 
+=================== 
+=================== 
+d6179b6815ca8a99b8cbed785adc566a  bd-971001-Bournemouth.ffp
+cd4d6dffd67a14ca89eef9f4f697594a  info.txt
+caad9787c6a2b95a9b4592d359a89581  track101.flac
+533bdaa081f8fa82dee3d7e803b25fa6  track102.flac
+89aa88dce62943fdd3aba3a9127bbd0f  track103.flac
+23209b3e71e659e08af35872820e1ee8  track104.flac
+b5ef2f05dc4c9f8b9afeb85e917d0871  track105.flac
+1849ff102bb124f98b3f64ae7b313f26  track106.flac
+63462f914945f43f6420929dfa4df7ab  track107.flac
+981cc5c52f16a5943fc16a76230171aa  track108.flac
+c08ce9b577d3a17c875da5cb880a536c  track109.flac
+0af50f912bdedd5f74b8e65dbbe93b2b  track110.flac
+b153415b1a57b6834b4ca812a5ff2dfd  track111.flac
+90a60b2c79e4f75ad830bd9ae55cf7ec  track112.flac
+43da634faefa84fa8428a8513b89e132  track113.flac
+162b310f2b585455b804cce5e30fdd42  track201.flac
+de1bb2b74eb4adbd7f4729c740bea89d  track202.flac
+528d848f1e7621ca4f9a8d1637970db5  track203.flac
+f55178923d901210e177d7f8e3e7fe32  track204.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-01-NETI.flacf 
+=================== 
+=================== 
+=================== 
+track101.flac:766b0a9e918dae2ab4da03d95ff7c407
+track102.flac:53da6d70184a65969adbe11d36004863
+track103.flac:8eba6f5d887c31a66dde20557d4d161a
+track104.flac:603be163129a121be3263b52c9ac7d6d
+track105.flac:f0d38793b9fb8422b08f8c9f4add18cc
+track106.flac:653f7663d1de5d48d9e873199702b004
+track107.flac:3541d4bc546d132e11204944df3ce4ee
+track108.flac:58232def6a3f6f2ed5966aca9a318607
+track109.flac:16878aad676d99616d65df08b899c8e7
+track110.flac:412cdcfdc7f768e63d6489cdc5d8357d
+track111.flac:a88b2a8aad0577846e05402be8b1ad4f
+track112.flac:073e5b27bc1e0f583782d47a8b75f4fb
+track113.flac:102337d3c06e43d0ca62949e2388d90c
+track201.flac:fa67b8c6a285e65b30074c39c5612bf7
+track202.flac:73c42013f0b558bb5dc3f3e19095ede7
+track203.flac:6901f8bfca134114590e290302429135
+track204.flac:f06b1bf6c6b01361e89832a15e213d8a
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-10-01-NETI.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:17.17        3038828 B   ---   --   ---xx   flac  0.4227  track101.flac
+     4:41.47       49678988 B   ---   --   ---xx   flac  0.5785  track102.flac
+     5:54.36       62530316 B   ---   --   ---xx   flac  0.5409  track103.flac
+     5:13.48       55326140 B   ---   --   ---xx   flac  0.5821  track104.flac
+     4:41.13       49599020 B   ---   --   ---xx   flac  0.5668  track105.flac
+     6:55.15       73241324 B   ---   --   ---xx   flac  0.5909  track106.flac
+     4:47.73       50798540 B   ---   --   ---xx   flac  0.4463  track107.flac
+     7:41.23       81374540 B   ---   --   ---xx   flac  0.5624  track108.flac
+     5:52.18       62135180 B   ---   --   ---xx   flac  0.5082  track109.flac
+     8:09.12       86287868 B   ---   --   ---xx   flac  0.5801  track110.flac
+     5:56.55       62927804 B   ---   --   ---xx   flac  0.5188  track111.flac
+     0:24.35        4315964 B   ---   --   ---xx   flac  0.4702  track112.flac
+     7:26.41       78770876 B   ---   --   ---xx   flac  0.5870  track113.flac
+    10:42.27      113312348 B   ---   --   ---xx   flac  0.5638  track201.flac
+     7:44.10       81873164 B   ---   --   ---xx   flac  0.5146  track202.flac
+     5:23.00       56977244 B   ---   --   ---xx   flac  0.5033  track203.flac
+     4:13.25       44688044 B   ---   --   ---xx   flac  0.6370  track204.flac
+    96:04.45     1016876188 B                            0.5523  (17 files)
+=================== 
+=================== 
+=================== 

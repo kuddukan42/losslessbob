@@ -1,0 +1,59 @@
+Bob Dylan
+Mississippi Coliseum
+Jackson, Mississippi
+April 29, 2006
+
+Source:
+11th row center
+neumann km140's > sound devices mp-2 > sony sbm-1(todd-mod) > sony d8
+sony d8 > tascam cd-rw700 > eac > cool edit > cd wave > flac
+
+CD 1: 
+01. Introduction [01:11]
+02. Maggie's Farm [05:33]
+03. She Belongs To Me [05:48]
+04. Tweedle Dee & Tweedle Dum [05:50]
+05. Positively 4th Street [06:25]
+06. 'Til I Fell In Love With You [07:15]
+07. It's Alright, Ma (I'm Only Bleeding) [07:27]
+08. Just Like A Woman [07:59]
+09. Highway 61 Revisited [06:45]
+10. Desolation Row [11:54]
+Total time: [66:15]
+
+CD 2:
+01. Cold Irons Bound [07:15]
+02. Don't Think Twice, It's All Right [07:13]
+03. Summer Days [10:04]
+     (encore)
+04. Like A Rolling Stone [06:32]
+05. Band Introduction [00:37]
+14. All Along The Watchtower [06:30]
+Total time: [38:16]
+
+Band Members:
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, electric mandolin, pedal steel, lap steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass 
+
+flac fingerprint
+bd2006-04-29d1t01.flac:304a13ccd3de9f1680c3d593f3fb59a6
+bd2006-04-29d1t02.flac:9b3c792a53502408da0550d2acc261ec
+bd2006-04-29d1t03.flac:6fdaac23a96a09274705692ec3356670
+bd2006-04-29d1t04.flac:2bbfdfe9f320b9fe8e285382596a43c0
+bd2006-04-29d1t05.flac:89d61aef34202aa9979a4c2847f12179
+bd2006-04-29d1t06.flac:7176580bbf661c67d6c2bea6c550ca55
+bd2006-04-29d1t07.flac:5051133b335426f4fbc2c23a8063dab7
+bd2006-04-29d1t08.flac:9b7950bbd4310bb324075309bb196740
+bd2006-04-29d1t09.flac:484af3a82a2f8766451abb4daa29997c
+bd2006-04-29d1t10.flac:e43633e3d1ca3418689e1a51f1119670
+bd2006-04-29d2t01.flac:8ab6ec9b879f85a0ee5dc946390265ee
+bd2006-04-29d2t02.flac:703c7a027aa770613da9e29ef95b9020
+bd2006-04-29d2t03.flac:10aade265991c4196b6e769bf3a64726
+bd2006-04-29d2t04.flac:0298a788a19033ee4f4c159a328bc27e
+bd2006-04-29d2t05.flac:f789d1e7b62e5a40037eadc296e89403
+bd2006-04-29d2t06.flac:70ada19c234090e6986ec3c984810c82
+

@@ -1,0 +1,97 @@
+===================
+===================
+===================
+=== md5 for: bd02-04-28-zimmy21-LB-5434.flacf
+===================
+===================
+===================
+f9939358101e3f248d707497b40f0c3b *bd02-04-28-zimmy21-LB-5434.flacf_mychecksums.txt
+e28e7390eed634a6615b351848c69706 *bd02-04-28-zimmy21-LB-5434.txt
+235eb98bb9b6db05ac9a3acf0c7092de *Bob Dylan - Brussels 28 april 2002.md5
+bf4d0e9ca2fa2d9fed1b91f597bd3d51 *bob dylan brussels 2002.txt
+a73bbcde4b3b83f8201c66b0c4b6b851 *d1Track01.flac
+73594d5785c39a0c114f43c973fe3b76 *d1Track02.flac
+508777cfa5d47cd4420b2db8539f5af9 *d1Track03.flac
+2ab4115cffe05b56c4ca27e015b77571 *d1Track04.flac
+98c8aeccc9cb9bbfa5fd8bb536c97c57 *d1Track05.flac
+51b45e431674fdf18e12b0a77e43fa69 *d1Track06.flac
+bbc6bcd3ddc349de8379bb6b2d4592d1 *d1Track07.flac
+3c3eb6a861f203cc7cf8f63dc0fba279 *d1Track08.flac
+a8c89f644c46d555014975753bbe11e4 *d1Track09.flac
+9d2c11f2815fa00cdec650c87172dd85 *d1Track10.flac
+78ecce17ca509753baaa47d18933ab9b *d1Track11.flac
+2001073bb1bebe53fd0632f421b1e478 *d1Track12.flac
+58d0f0114e9513e5cdbf0e8c99ecb71e *d2Track01.flac
+3a53f82f7c141449f1994827627cc545 *d2Track02.flac
+6ba984cb7caaa939127789cddbffc3ea *d2Track03.flac
+014371eb4cd1913cd955b033fbb35b22 *d2Track04.flac
+d4c97d17c630940d54688e404e08b764 *d2Track05.flac
+9c198c60b5f65953511eed8cf93a2927 *d2Track06.flac
+d824755fb4c78b66e9f00c0a167bc864 *d2Track07.flac
+61fadead17f5f411939dad5407e50174 *d2Track08.flac
+eaebd97a44eeb08031d883c50019646c *d2Track09.flac
+4f72e789d49225b322248c5b19774ad1 *DigiFlawFinder-bd02-04-28-zimmy21-LB-5434.flacf.wavf.html
+baf70b1c5d526e031cf2989d6ef1e8e0 *lbdir-bd02-04-28-zimmy21-LB-5434.flacf.txt
+d4e5d89a98f9f3dab46ec8b889ef3a55 *lbdir-bd02-04-28-zimmy21.flacf.md5
+9a81c21e96cdf8df7e46ebf3a403b600 *lbdir-bd02-04-28-zimmy21.flacf.txt
+===================
+===================
+===================
+=== ffp for: bd02-04-28-zimmy21-LB-5434.flacf
+===================
+===================
+===================
+d1Track01.flac:e0dc830d730817b3038179221f34f3e4
+d1Track02.flac:fce688bf32d0f7d3a60c41bdbff6fa2b
+d1Track03.flac:5766fff6fdab4333cc8c0960e04bf125
+d1Track04.flac:b633a00111e17c2c51ef5fdd1e45932c
+d1Track05.flac:81aca97af0e7aeae55ae100ba1baaf89
+d1Track06.flac:5dbc23d4df95068db3712d3f84c4ab2d
+d1Track07.flac:073f32370908df855397db50861fe863
+d1Track08.flac:91894163a67369c4f10c3f502dd3381e
+d1Track09.flac:aab1dcc0bc0adfbb0d872219688fe54c
+d1Track10.flac:f8190624756bf4e05024678dd875f34e
+d1Track11.flac:dc5c03995cff28cbc3141f91054f2ba8
+d1Track12.flac:2af0cfb556daadcc63dde4eb58a10a8e
+d2Track01.flac:504889f6deff7c4e700191c813fe4c60
+d2Track02.flac:174a3cd605258b9b97e0b8531df475a8
+d2Track03.flac:81a7669163cbddc934a6578208cfa05b
+d2Track04.flac:c3e7c45b5e8a205060a420b2e5f47f45
+d2Track05.flac:1f4b7b5601e074160fc906a285dbe9ab
+d2Track06.flac:35c311a583a0acc7a37c36c6538167b4
+d2Track07.flac:0ff02e2624555ddd9e6c5504f5b750d6
+d2Track08.flac:672d6276df55fb04da93c0ba717b1229
+d2Track09.flac:286099440e99d4f1ab3a033e7a538aeb
+===================
+===================
+===================
+=== shntool len for: bd02-04-28-zimmy21-LB-5434.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:13.53       34169900 B   ---   --   ---xx   flac  0.6035  d1Track01.flac
+     6:17.09       66524012 B   ---   --   ---xx   flac  0.5980  d1Track02.flac
+     6:34.39       69593372 B   ---   --   ---xx   flac  0.5721  d1Track03.flac
+     8:46.52       92908748 B   ---   --   ---xx   flac  0.4667  d1Track04.flac
+     6:10.20       65315084 B   ---   --   ---xx   flac  0.5034  d1Track05.flac
+     5:45.62       61003868 B   ---   --   ---xx   flac  0.5816  d1Track06.flac
+     5:58.52       63273548 B   ---   --   ---xx   flac  0.5919  d1Track07.flac
+     5:06.69       54140732 B   ---   --   ---xx   flac  0.4688  d1Track08.flac
+     6:05.29       64454252 B   ---   --   ---xx   flac  0.4942  d1Track09.flac
+     9:05.15       96173324 B   ---   --   ---xx   flac  0.5190  d1Track10.flac
+     5:30.40       58306124 B   ---   --   ---xx   flac  0.5554  d1Track11.flac
+     7:49.20       82778684 B   ---   --   ---xx   flac  0.5788  d1Track12.flac
+     5:53.09       62290412 B   ---   --   ---xx   flac  0.5245  d2Track01.flac
+     5:46.48       61147340 B   ---   --   ---xx   flac  0.5865  d2Track02.flac
+    10:40.17      112936028 B   ---   --   ---xx   flac  0.5725  d2Track03.flac
+     6:15.23       66204140 B   ---   --   ---xx   flac  0.5392  d2Track04.flac
+     8:30.16       90001676 B   ---   --   ---xx   flac  0.5870  d2Track05.flac
+     6:23.36       67645916 B   ---   --   ---xx   flac  0.5686  d2Track06.flac
+     7:16.63       77058620 B   ---   --   ---xx   flac  0.6173  d2Track07.flac
+     7:46.37       82289468 B   ---   --   ---xx   flac  0.5603  d2Track08.flac
+     6:23.44       67664732 B   ---   --   ---xx   flac  0.5941  d2Track09.flac
+   141:20.03     1495879980 B                            0.5555  (21 files)
+===================
+===================
+===================

@@ -1,0 +1,130 @@
+===================
+===================
+===================
+=== CD1.md5
+===================
+===================
+===================
+d5eb775547b34c44b80bbedb50b4c3d5 *01 Crash on the levee (down in the flood).flac
+3ab56ba83474255fb8c10bff62cd5daf *02 If not for you.flac
+3736c6be6c6b107de5e73029b64d5016 *03 All along the watchtower.flac
+ac0cd0d7ef772f2c844d2c7147504bcb *04 Just like a woman.flac
+d616cb72087eeb615a091d6864de3aa0 *05 Tangled up in blue.flac
+8df08b94ef97f302120c1bddf34d2c99 *06 Queen Jane approximately.flac
+c7bea993ee3cc005f473a65feb622172 *07 Mr. Tambourine Man.flac
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+d5eb775547b34c44b80bbedb50b4c3d5 *01 Crash on the levee (down in the flood).flac
+3ab56ba83474255fb8c10bff62cd5daf *02 If not for you.flac
+3736c6be6c6b107de5e73029b64d5016 *03 All along the watchtower.flac
+ac0cd0d7ef772f2c844d2c7147504bcb *04 Just like a woman.flac
+d616cb72087eeb615a091d6864de3aa0 *05 Tangled up in blue.flac
+8df08b94ef97f302120c1bddf34d2c99 *06 Queen Jane approximately.flac
+c7bea993ee3cc005f473a65feb622172 *07 Mr. Tambourine Man.flac
+===================
+===================
+===================
+=== CD2.md5
+===================
+===================
+===================
+a927e0ac1b1a087823616629dc56f51e *08 Boots of Spanish leather.flac
+1507a58792a82b903663b8553b3c95fb *09 Don't Think Twice, It's All Right.flac
+a2e0fb6bc8072f0ef07c8457ff5c4fde *10 Dignity.flac
+ccd92101e50f10f562bfd7832f5c6238 *11 I and I.flac
+a1f75cf5be7be734d3abab17dd858ae1 *12 Maggie's farm.flac
+df2c975638e5ebd7f914cc71ce4eb257 *13 Like a rolling stone.flac
+2042e46afde7df29f62ebf4b368d091d *14 It ain't me, babe.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+a927e0ac1b1a087823616629dc56f51e *08 Boots of Spanish leather.flac
+a2e0fb6bc8072f0ef07c8457ff5c4fde *10 Dignity.flac
+ccd92101e50f10f562bfd7832f5c6238 *11 I and I.flac
+a1f75cf5be7be734d3abab17dd858ae1 *12 Maggie's farm.flac
+df2c975638e5ebd7f914cc71ce4eb257 *13 Like a rolling stone.flac
+2042e46afde7df29f62ebf4b368d091d *14 It ain't me, babe.flac
+===================
+===================
+===================
+=== Bob Dylan 1995-03-23 Vorst Nationaal (Forest National), Brussels, Belgium [unidentified taper + Olav ASM].txt
+===================
+===================
+===================
+Bob Dylan
+
+Vorst National (Forest National)
+Brussels, Belgium
+March 23, 1995
+
+Additional Sound Master (ASM) by yours truly
+Lineage: Audio CD > FLAC > You
+
+CD1:
+01 Crash On The Levee (Down In The Flood)
+02 If Not For You
+03 All Along The Watchtower
+04 Just Like A Woman
+05 Tangled Up In Blue
+06 Queen Jane Approximately 
+07 Mr. Tambourine Man
+
+CD2:
+08 Boots Of Spanish Leather
+09 Don't Think Twice, Its All Right
+10 Dignity 
+11 I And I
+12 Maggie's Farm
+13 Like A Rolling Stone
+14 It Ain't Me, Babe
+
+Concert # 651 of The Never-Ending Tour
+Concert # 11 of the 1995 European Spring Tour
+Concert # 11 in 1995
+
+Concert # 195 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+79, 14 acoustic with the band
+1, 2, 4, 7, 14 Bob Dylan harmonica
+
+4 new songs (28%) compared to previous concert
+2 new songs for this tour
+
+Stereo audience recording, 90 minutes
+
+CD1 .md5:
+d5eb775547b34c44b80bbedb50b4c3d5 *01 Crash on the levee (down in the flood).flac
+3ab56ba83474255fb8c10bff62cd5daf *02 If not for you.flac
+3736c6be6c6b107de5e73029b64d5016 *03 All along the watchtower.flac
+ac0cd0d7ef772f2c844d2c7147504bcb *04 Just like a woman.flac
+d616cb72087eeb615a091d6864de3aa0 *05 Tangled up in blue.flac
+8df08b94ef97f302120c1bddf34d2c99 *06 Queen Jane approximately.flac
+c7bea993ee3cc005f473a65feb622172 *07 Mr. Tambourine Man.flac
+
+CD2 .md5:
+a927e0ac1b1a087823616629dc56f51e *08 Boots of Spanish leather.flac
+1507a58792a82b903663b8553b3c95fb *09 Don't Think Twice, It's All Right.flac
+a2e0fb6bc8072f0ef07c8457ff5c4fde *10 Dignity.flac
+ccd92101e50f10f562bfd7832f5c6238 *11 I and I.flac
+a1f75cf5be7be734d3abab17dd858ae1 *12 Maggie's farm.flac
+df2c975638e5ebd7f914cc71ce4eb257 *13 Like a rolling stone.flac
+2042e46afde7df29f62ebf4b368d091d *14 It ain't me, babe.flac
+
+* * * Enjoy your Bobby Hobby * * *
+===================
+===================
+===================

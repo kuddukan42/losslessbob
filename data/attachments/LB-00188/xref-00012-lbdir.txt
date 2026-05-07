@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-22-d.flacf 
+=================== 
+=================== 
+=================== 
+7a59be648884fecf68051e38a61d729e  Bob Dylan-1988.06.22  Cincinnati, Ohio.md5
+fd3215c3ae3e73f2b0ac1d1e217d0f25  info.txt
+d329541eca19ee3bd2754a9754622f81  Track01.flac
+2964fe4001c16aef92a9cfe23e8bc536  Track02.flac
+b8c0ebb4602172524fbe0b9a9be9d4af  Track03.flac
+c673ff16ad570188571d2fb9aa634bf9  Track04.flac
+79e69ab855c212360edc5eac74ebc04e  Track05.flac
+169036b493627a0f757b6c0df17fbac8  Track06.flac
+545d4b9cdf71c199913a46e566befca4  Track07.flac
+f478b6635b43b41336972b39b34ad77e  Track08.flac
+970af4ac4cca3a1785c766a034e71bd8  Track09.flac
+1d0c41812f55fb96ba39836ffb228b80  Track10.flac
+8ef6139c0a33561638716cbf75040a75  Track11.flac
+c31653ee95394991c03b8be4ecc79f14  Track12.flac
+09e2f5c491e0fbba318567b53c6ebadd  Track13.flac
+13f71ea2bc4ff11b1bb57bf880567bf4  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-22-d.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:467e1acaff1aefb61495b3be5a824566
+Track02.flac:5d75ad0a107bf64f7c8f403ef405f8fa
+Track03.flac:b32e6007d9f7fdbcfb8f19901752e87e
+Track04.flac:95b95022051ce94cea27957c4cac2270
+Track05.flac:10be7742067c7cc66b2a3bda0e1bdc98
+Track06.flac:70dc9b65f48f1520a79af88d7a17c096
+Track07.flac:437e92b7db0064bd339ed77d9e821829
+Track08.flac:3eee0bbeb86831f1d7b3c6b2a9118a89
+Track09.flac:07097650f67139e2c2b8249f1360f003
+Track10.flac:45807a19623ceefa1d264fba0ee68aaa
+Track11.flac:1273420cecd530d39cf842bb228a803e
+Track12.flac:7dec5a641765d9cf79d6298e8385f678
+Track13.flac:e86d0e158e40410d3c96f8a91ebe5c5b
+Track14.flac:7b41c580c794387b5e49d18d014e669f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-22-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.58       46706060 B   ---   --   ---xx   flac  0.6414  Track01.flac
+     5:24.43       57254780 B   ---   --   ---xx   flac  0.6497  Track02.flac
+     2:54.57       30827708 B   ---   --   ---xx   flac  0.6712  Track03.flac
+     4:40.48       49504940 B   ---   --   ---xx   flac  0.6640  Track04.flac
+     3:29.19       36912332 B   ---   --   ---xx   flac  0.6525  Track05.flac
+     3:24.18       36027980 B   ---   --   ---xx   flac  0.6842  Track06.flac
+     4:27.67       47256428 B   ---   --   ---xx   flac  0.6166  Track07.flac
+     5:47.16       61248476 B   ---   --   ---xx   flac  0.6310  Track08.flac
+     4:54.56       51993356 B   ---   --   ---xx   flac  0.5745  Track09.flac
+     5:08.65       54484124 B   ---   --   ---xx   flac  0.6344  Track10.flac
+     5:00.55       53049404 B   ---   --   ---xx   flac  0.6090  Track11.flac
+     7:09.26       75736796 B   ---   --   ---xx   flac  0.6620  Track12.flac
+     7:58.20       84366284 B   ---   --   ---xx   flac  0.6240  Track13.flac
+     9:23.08       99332060 B   ---   --   ---xx   flac  0.6292  Track14.flac
+    74:08.31      784700728 B                            0.6362  (14 files)
+=================== 
+=================== 
+=================== 

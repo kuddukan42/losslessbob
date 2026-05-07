@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-03-I-get-my-sweet-reward.flac 
+=================== 
+=================== 
+=================== 
+0347d86273fdfe5dab815ec426ff5a09  disc1\bd2003-11-03d1t01.flac
+7616d2b7a43885911dcecea1873c4417  disc1\bd2003-11-03d1t02.flac
+f1784d206c5df7a510a76de3d9a9629b  disc1\bd2003-11-03d1t03.flac
+8edd1afa5b225f1fe71c331875627695  disc1\bd2003-11-03d1t04.flac
+8ff983e0e00f47bc184d97296cf9b9e4  disc1\bd2003-11-03d1t05.flac
+74bf1944ff2b12266b08a0b6510c6608  disc1\bd2003-11-03d1t06.flac
+c7b0e9c4478b89ea72d6a8d6172c8035  disc1\bd2003-11-03d1t07.flac
+bf07f268664a16c5bd17f8053e63aa18  disc1\bd2003-11-03d1t08.flac
+bd61f36d2e40617078bd67a050eb1cde  disc1\bd2003-11-03d1t09.flac
+4c3b6aec14b2227bafa7b2b4a13cf9f2  disc1\bd2003-11-03d1t10.flac
+8083b3cd7efd9b43078076b935044853  disc1\bd2003-11-03d1t11.flac
+a049d998f73c3cb40909d25520769480  disc1\bd2003-11-03d1t12.flac
+62438033765789b8cad6371f02eeaa0c  disc1\bd2003-11-03d1t13.flac
+f7f92ef0a05484b6828f33ae6f136549  disc1\ffp1.txt
+09e8ffd50d1db0eb05b4bcc6a8a5ff2e  disc2\bd2003-11-03d2t01.flac
+cc46222495220edd08ab71f7d7b0f5e5  disc2\bd2003-11-03d2t02.flac
+d1c12097cfaad3cc4e0cb9964094ae09  disc2\bd2003-11-03d2t03.flac
+301fe7f09b929b0e12a3a6f69ea67818  disc2\bd2003-11-03d2t04.flac
+8a195ac51b316297d7b2e9e9a7e77786  disc2\bd2003-11-03d2t05.flac
+67e89784b7670ca025e877967d284117  disc2\bd2003-11-03d2t06.flac
+82e7333f7277d28da57f62881d9c74da  disc2\bd2003-11-03d2t07.flac
+a4cd7e4123a60f3c170dc146137d34e2  disc2\bd2003-11-03d2t08.flac
+6ef1d79f32e278463b1b392669087bd8  disc2\bd2003-11-03d2t09.flac
+b83f216edd419e9ea150a2818ea07ca2  disc2\bd2003-11-03d2t10.flac
+7f9faa69f069976d568b2036d9e49880  disc2\bd2003-11-03d2t11.flac
+2c9d97e14babf3442f3858a89b28e19d  disc2\ffp2.txt
+f604244febd56dac9a04eec46c84674d  Zurich (i Get My Sweet Reward).doc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-03-I-get-my-sweet-reward.flac\disc1 
+=================== 
+=================== 
+=================== 
+bd2003-11-03d1t01.flac:ee843905f884e82c222cdc7c71948845
+bd2003-11-03d1t02.flac:2593d0a0e77ed1618de1a7024fa69399
+bd2003-11-03d1t03.flac:f9ee9cbf942138093b1d9759ad4149a1
+bd2003-11-03d1t04.flac:0e40c5ea60c522b32cc65a82e840104b
+bd2003-11-03d1t05.flac:af2b89dd0430ff6dc15b0f5e9c9e1d0c
+bd2003-11-03d1t06.flac:d9033f72090730987001ba422ce10145
+bd2003-11-03d1t07.flac:d4ee61cd31a9f4b1348e7a012499e303
+bd2003-11-03d1t08.flac:8ecd8c131d77d532ea7d54917d52d9fc
+bd2003-11-03d1t09.flac:5345fa76fda2bfd40a3f1509129d3905
+bd2003-11-03d1t10.flac:5a9baecf4b389e990e9df0fca713f192
+bd2003-11-03d1t11.flac:44771ea5d358613da146377bb8c1c307
+bd2003-11-03d1t12.flac:af98301b9b4e6df7d752e5877405c282
+bd2003-11-03d1t13.flac:89a43b5555e9cbe1b71ac0c2a98af53a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-03-I-get-my-sweet-reward.flac\disc2 
+=================== 
+=================== 
+=================== 
+bd2003-11-03d2t01.flac:675e121f7b9c054ba58480fd2b63180d
+bd2003-11-03d2t02.flac:8b8e5a6ccec830b2d87e26af059c3817
+bd2003-11-03d2t03.flac:b83c07be09fef7760f1dcd9b4754dad3
+bd2003-11-03d2t04.flac:b982bb094d9a6438d7d87dbdc167816f
+bd2003-11-03d2t05.flac:86a4f02446868d9a0fe097b41f650b62
+bd2003-11-03d2t06.flac:adceaee0cb2f0bf0a9ed934ab7b1a28d
+bd2003-11-03d2t07.flac:7c562908e9c90fe7242cb68a6bf3bef8
+bd2003-11-03d2t08.flac:c6b6e06dc83113ebf9e943a1b04ac6f2
+bd2003-11-03d2t09.flac:1373fb2135fb52555dc29406091e07b8
+bd2003-11-03d2t10.flac:1d6228c83d46d2fe49219df0bc9dbd5a
+bd2003-11-03d2t11.flac:68d3b67bfe906866fbb7346fd28fe482
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-03-I-get-my-sweet-reward.flac\disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:48.04       19060652 B   ---   --   ---xx   flac  0.4655  bd2003-11-03d1t01.flac
+     4:15.41       45078476 B   ---   --   ---xx   flac  0.6265  bd2003-11-03d1t02.flac
+     6:04.11       64235516 B   ---   --   ---xx   flac  0.5746  bd2003-11-03d1t03.flac
+     6:14.41       66070076 B   ---   --   ---xx   flac  0.6227  bd2003-11-03d1t04.flac
+     8:01.51       84968396 B   ---   --   ---xx   flac  0.6026  bd2003-11-03d1t05.flac
+     7:45.44       82129532 B   ---   --   ---xx   flac  0.6191  bd2003-11-03d1t06.flac
+     5:23.74       57151292 B   ---   --   ---xx   flac  0.5608  bd2003-11-03d1t07.flac
+     6:10.06       65282156 B   ---   --   ---xx   flac  0.6367  bd2003-11-03d1t08.flac
+     7:30.57       79514108 B   ---   --   ---xx   flac  0.6230  bd2003-11-03d1t09.flac
+     5:15.08       55584860 B   ---   --   ---xx   flac  0.5642  bd2003-11-03d1t10.flac
+     6:34.55       69631004 B   ---   --   ---xx   flac  0.6425  bd2003-11-03d1t11.flac
+     5:56.43       62899580 B   ---   --   ---xx   flac  0.5298  bd2003-11-03d1t12.flac
+     7:12.67       76362428 B   ---   --   ---xx   flac  0.6432  bd2003-11-03d1t13.flac
+    78:13.52      827968076 B                            0.6026  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-03-I-get-my-sweet-reward.flac\disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:51.18       83126780 B   ---   --   ---xx   flac  0.5454  bd2003-11-03d2t01.flac
+    11:27.34      121266812 B   ---   --   ---xx   flac  0.5675  bd2003-11-03d2t02.flac
+     5:45.41       60954476 B   ---   --   ---xx   flac  0.6633  bd2003-11-03d2t03.flac
+     6:41.13       70767020 B   ---   --   ---xx   flac  0.6474  bd2003-11-03d2t04.flac
+     0:53.39        9440972 B   ---   --   ---xx   flac  0.5281  bd2003-11-03d2t05.flac
+     7:27.70       79015484 B   ---   --   ---xx   flac  0.6088  bd2003-11-03d2t06.flac
+     6:16.00       66326444 B   ---   --   ---xx   flac  0.6374  bd2003-11-03d2t07.flac
+     5:20.04       56457452 B   ---   --   ---xx   flac  0.6031  bd2003-11-03d2t08.flac
+     5:19.17       56311628 B   ---   --   ---xx   flac  0.5852  bd2003-11-03d2t09.flac
+     5:53.55       62398604 B   ---   --   ---xx   flac  0.5469  bd2003-11-03d2t10.flac
+     6:09.40       65185724 B   ---   --   ---xx   flac  0.5525  bd2003-11-03d2t11.flac
+    69:05.31      731251396 B                            0.5920  (11 files)
+=================== 
+=================== 
+=================== 

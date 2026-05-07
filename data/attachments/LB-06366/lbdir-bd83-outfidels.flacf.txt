@@ -1,0 +1,68 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd83-outfidels.flacf 
+=================== 
+=================== 
+=================== 
+cd11650a5bee15b8b9ec3fae7fb8360c  bd83-outfidels-t01.flac
+3aefd9458caf32455cc05b8e991c7eff  bd83-outfidels-t02.flac
+faa092afaf596a39c8ae0c410ffeca3a  bd83-outfidels-t03.flac
+84360b561d4542618e20b58d9e27435e  bd83-outfidels-t04.flac
+c29837438f671d0bc48bf038b8fcce80  bd83-outfidels-t05.flac
+e2d07ab3c919f4cfeac4025443c852ec  bd83-outfidels-t06.flac
+b5f58055af9581f485539ab1a2b0cd9a  bd83-outfidels-t07.flac
+d095bac931cf14538a060682fc32d65a  bd83-outfidels-t08.flac
+6ec458b28a7371ea09fc454949fbdf9e  bd83-outfidels-t09.flac
+521f6fbfdfce464c441b9e3819123bcf  bd83-outfidels-t10.flac
+182bcffe6589b818b69b1bac34b32de0  bd83-outfidels-t11.flac
+5e49c0bcb7490044ae19358576e1979b  bd83-outfidels-t12.flac
+81f9afc3c32d0727dc0fc72c8174da4f  bd83-outfidels-t13.flac
+79a4bd24431cd3ba5adb0aa2dadcc449  bd83-outfidels-t14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd83-outfidels.flacf 
+=================== 
+=================== 
+=================== 
+bd83-outfidels-t01.flac:003a71f410d747dcf95c5bbeb354f972
+bd83-outfidels-t02.flac:07460f8ba1a71d9efc78563d7806c690
+bd83-outfidels-t03.flac:98c6ec84c2ea96a06e2109cb6a57743f
+bd83-outfidels-t04.flac:70698d06b5b30251be534b519f9a182b
+bd83-outfidels-t05.flac:db2793142484433680d94c1d95819743
+bd83-outfidels-t06.flac:d5d886310dbbb386fa08bceb727945dc
+bd83-outfidels-t07.flac:0acce77dd8cc59ecba4d89ffe2cd1637
+bd83-outfidels-t08.flac:e043205634b87b4bc80aead85f29f7ca
+bd83-outfidels-t09.flac:31b183d2e66d7443f70da1d4c3dc0bf9
+bd83-outfidels-t10.flac:17894822378243f5d70c9a0345683f5d
+bd83-outfidels-t11.flac:2c0400aebd9e14bf187f4e0b9ca31bb3
+bd83-outfidels-t12.flac:3e515b38db5d1a2667c072fa2ed56da3
+bd83-outfidels-t13.flac:3baea5da64d380e6c35fc4cea63b91d0
+bd83-outfidels-t14.flac:12d4a01d2a81195e0639885cc9ff07fb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd83-outfidels.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.37       65178668 B   ---   --   ---xx   flac  0.6519  bd83-outfidels-t01.flac
+     5:36.15       59305724 B   ---   --   ---xx   flac  0.6595  bd83-outfidels-t02.flac
+     4:43.48       50034140 B   ---   --   ---xx   flac  0.5528  bd83-outfidels-t03.flac
+     6:52.37       72763868 B   ---   --   ---xx   flac  0.4665  bd83-outfidels-t04.flac
+     4:40.50       49509644 B   ---   --   ---xx   flac  0.5041  bd83-outfidels-t05.flac
+     5:15.58       55702460 B   ---   --   ---xx   flac  0.4526  bd83-outfidels-t06.flac
+     6:04.37       64296668 B   ---   --   ---xx   flac  0.4797  bd83-outfidels-t07.flac
+     4:11.45       44382284 B   ---   --   ---xx   flac  0.4818  bd83-outfidels-t08.flac
+     5:03.68       53609180 B   ---   --   ---xx   flac  0.4726  bd83-outfidels-t09.flac
+     5:11.37       54947468 B   ---   --   ---xx   flac  0.4841  bd83-outfidels-t10.flac
+     6:53.23       72907340 B   ---   --   ---xx   flac  0.4484  bd83-outfidels-t11.flac
+     4:31.02       47809148 B   ---   --   ---xx   flac  0.5219  bd83-outfidels-t12.flac
+     4:51.05       51344204 B   ---   --   ---xx   flac  0.5322  bd83-outfidels-t13.flac
+     3:48.58       40355660 B   ---   --   ---xx   flac  0.5563  bd83-outfidels-t14.flac
+    73:53.70      782146456 B                            0.5178  (14 files)
+=================== 
+=================== 
+=================== 

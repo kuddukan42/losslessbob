@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-08-03 Newport 
+=================== 
+=================== 
+=================== 
+99b3ff48a3d6563efd6d222d97084dc6  bd02-08-03.txt
+6c7998cfd5fbb456d68d4406777e6224  Newport, RI. 8-3-02 disc # 1\Track01.shn
+62c6f8a5b0a74e227546c5308e978fa2  Newport, RI. 8-3-02 disc # 1\Track02.shn
+bb8065fa0b0ef8625f3626818cb798e4  Newport, RI. 8-3-02 disc # 1\Track03.shn
+b851b1777421b66c1d2834e176be954e  Newport, RI. 8-3-02 disc # 1\Track04.shn
+2c75253345c6aef2619ed32ef4e226c2  Newport, RI. 8-3-02 disc # 1\Track05.shn
+fdaffcbacf9229a271950d6d98ebac9d  Newport, RI. 8-3-02 disc # 1\Track06.shn
+083a071400d16fcc5627652ad6511f29  Newport, RI. 8-3-02 disc # 1\Track07.shn
+96ebe4a6b85c87f5c3eb2ef995f8c739  Newport, RI. 8-3-02 disc # 1\Track08.shn
+761bca407524352c26f59a7557a34d48  Newport, RI. 8-3-02 disc # 1\Track09.shn
+5179b3911b5f084bee21cec34401fbef  Newport, RI. 8-3-02 disc # 1\Track10.shn
+5aa281f7d97b9c4ba3ecb1675187a7ba  Newport, RI. 8-3-02 disc # 1\Track11.shn
+4e7b6452367d4924bc610ce546f756ba  Newport, RI. 8-3-02 disc # 1\Track12.shn
+ff36bd7607773c8e56a0fd0796e3084e  Newport, RI. 8-3-02 disc # 1\noname.md5
+ef9984640953d45c29a9bfebd185d52d  Newport, RI. 8-3-02 disc # 2\Track01.shn
+7ffa9775563fcc197cbd6010b02498ca  Newport, RI. 8-3-02 disc # 2\Track02.shn
+b540e234882cf27f6ad722dfecd059ee  Newport, RI. 8-3-02 disc # 2\Track03.shn
+ff65fbfd6bc56ccc90d912b9dedeb117  Newport, RI. 8-3-02 disc # 2\Track04.shn
+468cc8b949f68d74fd3f47735ab25b36  Newport, RI. 8-3-02 disc # 2\Track05.shn
+155060ef7237be74d32129ab714a79d3  Newport, RI. 8-3-02 disc # 2\Track06.shn
+da22bd6fcc6562fa9db38e4aec0d858d  Newport, RI. 8-3-02 disc # 2\Track07.shn
+375679e55e1896c1068347ba10484e9d  Newport, RI. 8-3-02 disc # 2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-08-03 Newport\Newport, RI. 8-3-02 disc # 2 
+=================== 
+=================== 
+=================== 
+f5f5291af06fb2e6b1ef2124399f3bda  [shntool]  Track01.wav
+bb8caa6b78e8de85600bb3b873cb693c  [shntool]  Track02.wav
+079bf2ff5ace138856fcff9f65f7b6fb  [shntool]  Track03.wav
+e085d9cc82d717da5fb173c1bc3e7b0e  [shntool]  Track04.wav
+5eb4cc5fe5ae652ceb37d3b1f508c557  [shntool]  Track05.wav
+71bb31d86c0092627ec5bdfcd6bbc78b  [shntool]  Track06.wav
+9d8744cf1a3b1b2baf79a5b7f0b85a94  [shntool]  Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-08-03 Newport\Newport, RI. 8-3-02 disc # 1 
+=================== 
+=================== 
+=================== 
+0d40136fd096417732342d3a9bc3f7db  [shntool]  Track01.wav
+bb4bbca73e4ee576dd450d6aeacf58e8  [shntool]  Track02.wav
+3a570ba2ded456cb7ac4cdc589048bf5  [shntool]  Track03.wav
+32b3a2c98c52b9d831d4483b41bfd13d  [shntool]  Track04.wav
+d24d2689b0e24ab34253504e0f92ceca  [shntool]  Track05.wav
+274ad0a1259e5d1aebbed1be8cb78171  [shntool]  Track06.wav
+0e418e860a24836cd30beee415a89020  [shntool]  Track07.wav
+9ff64838173294806b0e5b8d31b2f293  [shntool]  Track08.wav
+e27f0e04513bb9725fdbf5570514149b  [shntool]  Track09.wav
+a00ad3523e47c1269f4e9693e341cb60  [shntool]  Track10.wav
+2d12032fde74e20019cf94d93497ed9b  [shntool]  Track11.wav
+9835a3442fb50eb0e4695bd0808f18d8  [shntool]  Track12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-03 Newport\Newport, RI. 8-3-02 disc # 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.25       55801244 B   ---   --   -----    wav  1.0000  Track01.wav
+     4:58.50       52684844 B   ---   --   -----    wav  1.0000  Track02.wav
+     8:26.12       89286668 B   ---   --   -----    wav  1.0000  Track03.wav
+     4:12.64       44603372 B   ---   --   -----    wav  1.0000  Track04.wav
+     7:43.43       81774380 B   ---   --   -----    wav  1.0000  Track05.wav
+     5:12.54       55163852 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:23.48       57090140 B   ---   --   -----    wav  1.0000  Track07.wav
+    41:13.71      436404500 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-03 Newport\Newport, RI. 8-3-02 disc # 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.47       47385788 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:52.14       62125772 B   ---   --   -----    wav  1.0000  Track02.wav
+    10:02.38      106282220 B   ---   --   -----    wav  1.0000  Track03.wav
+     5:37.07       59463308 B   ---   --   -----    wav  1.0000  Track04.wav
+     4:38.72       49208588 B   ---   --   -----    wav  1.0000  Track05.wav
+     8:01.39       84940172 B   ---   --   -----    wav  1.0000  Track06.wav
+     4:32.41       48077276 B   ---   --   -----    wav  1.0000  Track07.wav
+     5:32.68       58724780 B   ---   --   -----    wav  1.0000  Track08.wav
+     6:00.07       63520508 B   ---   --   -----    wav  1.0000  Track09.wav
+     7:52.17       83300828 B   ---   --   -----    wav  1.0000  Track10.wav
+     6:46.61       71761916 B   ---   --   -----    wav  1.0000  Track11.wav
+     6:09.56       65223356 B   ---   --   -----    wav  1.0000  Track12.wav
+    75:35.17      800014512 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

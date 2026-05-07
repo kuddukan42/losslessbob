@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-08a.flacf 
+=================== 
+=================== 
+=================== 
+3ca6296d3cdd970a9ad8fac9f309f478  bd93-02-08a-LB-3189.txt
+0542b6ee89a20d496cc747c843b15563  Bob Dylan 2.8.93.txt
+16532c19a4980f030fb24603bdb18734  Disc 1\01-Maggies Farm.flac
+326effc7f0ac02117030feaae279f5fa  Disc 1\02-Pretty Peggy O.flac
+9868f3abf72bca58be5eec75531718a0  Disc 1\03-All Along The Watchtower.flac
+475f16e39c8e5ce1b332158dd99a0943  Disc 1\04-Tangled Up In Blue.flac
+ae4fbcbd0f537c0e1060d200ece34bd7  Disc 1\05-Under A Red Sky.flac
+dd52d9f075affcc8d436f54f49f55900  Disc 1\06-Stuck Inside Of Moblie.flac
+2675e82a02c9aac5d278622d351fe11a  Disc 1\07-She Belongs To Me.flac
+48fb8ceff8062fe41c4b7cbfcde2c13c  Disc 1\08-Tomorrow Night.flac
+3ea1ee0fcee05b3b5694c49c8381ecad  Disc 1\09-Jim Jones.flac
+b84887644496859b26ddcc58d7654407  Disc 1\10-Mr. Tambourine Man.flac
+81aadfaf80fc41de0cbdea1384ca216f  Disc 1\11-Don't think Twice It's Allright.flac
+947bb75fe2c6067bbd535379c643a461  Disc 1\Flac Fingerprint .txt
+1f3739cc228a8df78e97f63fe274fc4a  Disc 2\01-Cat's In The Well.flac
+cdc20476890363c6bf4f59b5b58b8ced  Disc 2\02-I And I.flac
+b7ee049264022e41e328b43bdb19d076  Disc 2\03-Simple Twist Of Fate.flac
+be7056d441c9a345c5f109dc9933aeeb  Disc 2\04-Highway 61.flac
+2c4618827893dd8b26e698fc11f103eb  Disc 2\05-Ballad Of A Thin Man.flac
+2831004a56d23ccc3bc61359b62aec33  Disc 2\06-Everything Is Broken.flac
+9383fb756b82f553ca5d8d555b3c1762  Disc 2\07-It Ain't Me Babe.flac
+8a79c0b75b628176ce7c63e57f881879  Disc 2\08-Don't Think Twice.flac
+ffd128e7b94a481cff304a0eafd516cf  Disc 2\Flac Fingerprint.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-08a.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+01-Cat's In The Well.flac:6a8648a206cb92844e1742ad0733cfbe
+02-I And I.flac:97b89fea7866a3448f1f8194c3f13003
+03-Simple Twist Of Fate.flac:a926f5bad8b92cc86470fa7dd964624d
+04-Highway 61.flac:dcfcb12ded6b5ccae976d4751b160c20
+05-Ballad Of A Thin Man.flac:390fd045dc3cff41979d6cc63e808c34
+06-Everything Is Broken.flac:e59a9fb34fc908460dd7b3a278328590
+07-It Ain't Me Babe.flac:027aa0cf80401e475b5f8c7733700a55
+08-Don't Think Twice.flac:6666643d5fe00a71d797ef53c0fba9b1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-08a.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+01-Maggies Farm.flac:3f85c61cfe60f4b999de41dc4aa24b8b
+02-Pretty Peggy O.flac:daa290bc5edd8ada79d0a8567418b9a3
+03-All Along The Watchtower.flac:a193008acb943cc907fbf08315c00198
+04-Tangled Up In Blue.flac:d2641dcd4b71d4ccf5f656a034896577
+05-Under A Red Sky.flac:eb942cfcf6ab1465fd3ca42c51c37e70
+06-Stuck Inside Of Moblie.flac:26051d7aa8b2178705617e5400c7f364
+07-She Belongs To Me.flac:42b97aae58175dde4700453d36482c82
+08-Tomorrow Night.flac:a7c2381e44373f7f400db3224865ebc0
+09-Jim Jones.flac:553e44927987c86562bd1dc308006672
+10-Mr. Tambourine Man.flac:cd734457199cfde36ad60216834f5e5a
+11-Don't think Twice It's Allright.flac:7d0dcd14ac8c5cb78de4b7a7848111c1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-08a.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:24.43       57254780 B   ---   --   ---xx   flac  0.5586  01-Cat's In The Well.flac
+     8:39.36       91636316 B   ---   --   ---xx   flac  0.5379  02-I And I.flac
+     8:26.35       89340764 B   ---   --   ---xx   flac  0.5153  03-Simple Twist Of Fate.flac
+     8:47.01       92965196 B   ---   --   ---xx   flac  0.5847  04-Highway 61.flac
+     7:50.43       83009180 B   ---   --   ---xx   flac  0.5491  05-Ballad Of A Thin Man.flac
+     6:33.40       69419324 B   ---   --   ---xx   flac  0.5730  06-Everything Is Broken.flac
+     7:10.04       75861452 B   ---   --   ---xx   flac  0.5298  07-It Ain't Me Babe.flac
+     6:31.14       69005372 B   ---   --   ---xx   flac  0.5006  08-Don't Think Twice.flac
+    59:22.66      628492384 B                            0.5438  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-08a.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.06       62106956 B   ---   --   ---xx   flac  0.6091  01-Maggies Farm.flac
+     7:21.36       77877116 B   ---   --   ---xx   flac  0.5884  02-Pretty Peggy O.flac
+     5:40.24       60032492 B   ---   --   ---xx   flac  0.5929  03-All Along The Watchtower.flac
+    11:31.13      121923020 B   ---   --   ---xx   flac  0.6027  04-Tangled Up In Blue.flac
+     5:31.62       58534268 B   ---   --   ---xx   flac  0.5982  05-Under A Red Sky.flac
+     7:10.65       76004924 B   ---   --   ---xx   flac  0.5462  06-Stuck Inside Of Moblie.flac
+     5:18.65       56248124 B   ---   --   ---xx   flac  0.5133  07-She Belongs To Me.flac
+     4:45.53       50398700 B   ---   --   ---xx   flac  0.4940  08-Tomorrow Night.flac
+     6:19.68       67015580 B   ---   --   ---xx   flac  0.4880  09-Jim Jones.flac
+     7:26.48       78787340 B   ---   --   ---xx   flac  0.5072  10-Mr. Tambourine Man.flac
+     6:30.02       68800748 B   ---   --   ---xx   flac  0.5289  11-Don't think Twice It's Allright.flac
+    73:28.67      777729268 B                            0.5556  (11 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-13a 
+=================== 
+=================== 
+=================== 
+3144fdbbcf941892d2a71d3ea31d2209  bd95-05-13a.txt
+a96c6fe7768ee76fb75bb688776cfe62  dylan-1995-05-13-d1-SHN.md5
+3c7f5ff71f033213605b698dda8123e9  dylan-1995-05-13-d1-WAV.md5
+51b956a26337a7f1cfcea295ac155c10  dylan-1995-05-13-d1.cue
+f21e1d426689706f11998a8350fc4078  dylan-1995-05-13-d1.log
+8d0f9d8d62e5391d55f1c4993d11abe4  dylan-1995-05-13-d1t01.shn
+c8e403573b50ec1b56e6d8699dce48d8  dylan-1995-05-13-d1t02.shn
+bd315901c7ce23e401241b1a75efe02c  dylan-1995-05-13-d1t03.shn
+df09ec77606348404f19fd39517e06d4  dylan-1995-05-13-d1t04.shn
+7b01491521932e0aa5ebd9e59a2a1a70  dylan-1995-05-13-d1t05.shn
+7edc179f76e23005592513e6fdad48ea  dylan-1995-05-13-d1t06.shn
+f40e7f9c11af1d50e2e5f078eb2aaaf2  dylan-1995-05-13-d1t07.shn
+fef1bf802feaa8cf46065b00f8ee3e64  dylan-1995-05-13-d2-SHN.md5
+2acce59e6cec2ecdbe2c1bde5353ce6a  dylan-1995-05-13-d2-WAV.md5
+d31440806eda4b3cb2565f5b87eaac7b  dylan-1995-05-13-d2.cue
+fa15fd62a181a7b23b725a546840d626  dylan-1995-05-13-d2.log
+4c37f8e3cdb9597ea29158129bb069c3  dylan-1995-05-13-d2t01.shn
+2cf852a77fb39a3d0cb8babfdbd634ff  dylan-1995-05-13-d2t02.shn
+8f2566413ad5b0a6cc86025a65ea0c11  dylan-1995-05-13-d2t03.shn
+34f974dc72d39cdaa7bb53d757ae4cc8  dylan-1995-05-13-d2t04.shn
+a35e066d3135b09d34e514a9a7c2aea9  dylan-1995-05-13-d2t05.shn
+4ff3b9f20d1215c90fd42b7f5fbd564a  dylan-1995-05-13-d2t06.shn
+4e311229b9b45bc8de2f8c98472d910c  dylan-1995-05-13-d2t07.shn
+f293d9f5e91a24b6d51a635f0b41bc4d  dylan-1995-05-13-INFO.txt
+de333a2435f8a637e45b36c3535ad62c  dylan-1995-05-13-README.txt
+7517851543a91dd44f9179c4afa0cfd4  setlist1995-05-13.gif
+70698aec5b25ae127249813c33373aa5  ticket1995_05_13.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-05-13a 
+=================== 
+=================== 
+=================== 
+6d056d1fbe8e5898f3eacde984d6fdc6  [shntool]  dylan-1995-05-13-d1t01.wav
+f6ba649d4a00b2b1d7935738be68a498  [shntool]  dylan-1995-05-13-d1t02.wav
+6ff555b602ceb2a405ca9cbcc4b95b18  [shntool]  dylan-1995-05-13-d1t03.wav
+8aa1aa2d366736455b43193d95528712  [shntool]  dylan-1995-05-13-d1t04.wav
+19b7a5bbd50f1c3438b722ee9b240c31  [shntool]  dylan-1995-05-13-d1t05.wav
+2f6e54313f3ef5c066b39d779bde5966  [shntool]  dylan-1995-05-13-d1t06.wav
+7e225b2cebf3fdf228d8b10fbb06dc5a  [shntool]  dylan-1995-05-13-d1t07.wav
+a38a5252597f5ce4b235efebbfb6de30  [shntool]  dylan-1995-05-13-d2t01.wav
+f811a3f44a4b1a95d6d5b6514116d752  [shntool]  dylan-1995-05-13-d2t02.wav
+0d05b850671307f428151be3de24f195  [shntool]  dylan-1995-05-13-d2t03.wav
+3e644ead8339d00646f8f1a87f0ed669  [shntool]  dylan-1995-05-13-d2t04.wav
+4d22bb5b3e576ac796bee0d7f59623c9  [shntool]  dylan-1995-05-13-d2t05.wav
+165e67e5edebc1af1baf0ece9827a5f5  [shntool]  dylan-1995-05-13-d2t06.wav
+3264591652c2db2e6bd0114ca826ae6c  [shntool]  dylan-1995-05-13-d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-13a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.61       53592716 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d1t01.wav
+     5:10.70       54848684 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d1t02.wav
+     5:45.16       60895676 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d1t03.wav
+     6:31.20       69019484 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d1t04.wav
+     6:41.23       70790540 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d1t05.wav
+     7:59.35       84577964 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d1t06.wav
+     7:18.34       77343212 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d1t07.wav
+     6:08.60       65056364 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d2t01.wav
+     6:20.32       67107308 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d2t02.wav
+     5:51.58       62052860 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d2t03.wav
+     7:33.08       79928060 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d2t04.wav
+     8:26.57       89392508 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d2t05.wav
+     8:25.08       89100860 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d2t06.wav
+     9:25.57       99800108 B   ---   --   -----    wav  1.0000  dylan-1995-05-13-d2t07.wav
+    96:42.14     1023506344 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

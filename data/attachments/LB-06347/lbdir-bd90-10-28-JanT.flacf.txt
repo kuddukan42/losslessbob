@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-10-28-JanT.flacf 
+=================== 
+=================== 
+=================== 
+7597e45fd33207a1b27c391f2ebfcd76  BD 1990-10-28 Athens.txt
+637e7ea95e7458f2dd2804ffa704c09a  d1\01 - Traccia Audio.shn
+b0e7748d4bb1a32f9b7d98d7dc4e8b79  d1\02 - Traccia Audio.shn
+44b964ee04d85df767052cdeec9b68f0  d1\03 - Traccia Audio.shn
+9d60e211edbd528adf0a9b31a19816af  d1\04 - Traccia Audio.shn
+6e99aed57a45c468e37906e9e8ed2b92  d1\05 - Traccia Audio.shn
+c5cecb393caa7a761b16c78aa806d22b  d1\06 - Traccia Audio.shn
+ff6a3ff645f12b2bbbd459c7aafc7abe  d1\07 - Traccia Audio.shn
+66e610897d4414b7765c1e73471c436e  d1\08 - Traccia Audio.shn
+75ec9bef0c323bf0f16d84d202fdea9c  d1\09 - Traccia Audio.shn
+90bdd682f751b155e176bd3aafd3dccb  d1\10 - Traccia Audio.shn
+8318761bef3993817e52281606d2a164  d1\noname.md5
+4fa04281c0bd352919d6d7c0dc858308  d2\01 - Traccia Audio.shn
+64cef5ef33cf9fc4eed87f1dc8ed0608  d2\02 - Traccia Audio.shn
+3f6e3d157c4e66ebd809318345b29697  d2\03 - Traccia Audio.shn
+d11b7b1bda52a357b192d38c20b4f203  d2\04 - Traccia Audio.shn
+403e674bf039c7c8e4d73a26012ec352  d2\05 - Traccia Audio.shn
+a733605cc3fe3868020f93e681fd630f  d2\06 - Traccia Audio.shn
+3072b1ac50c8ff69f4bae7501e6a5095  d2\07 - Traccia Audio.shn
+9a904db9dc61e2d47954eac028d410c7  d2\08 - Traccia Audio.shn
+6b84991d7f43061f99352df3e49d5a51  d2\09 - Traccia Audio.shn
+f8c77b3ec5f4a01eda6cf2e27e9b6a15  d2\10 - Traccia Audio.shn
+f2e9d52cb3a07970285a335b54801744  d2\noname.md5
+cbae8230a882908a4d3b7e544e028e4e  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-10-28-JanT.flacf\d2 
+=================== 
+=================== 
+=================== 
+baa5927fd6cbd98833435f7de146b942  [shntool]  01_-_Traccia_Audio.wav
+d744d1840212adef82f5cf737709469b  [shntool]  02_-_Traccia_Audio.wav
+8cae199bff23b392006cd98fa492ebfe  [shntool]  03_-_Traccia_Audio.wav
+a756d1938c207e4342f9647b46c689a8  [shntool]  04_-_Traccia_Audio.wav
+1ced659115b04bff932fda4aa1ad2d27  [shntool]  05_-_Traccia_Audio.wav
+28f406e46d5e1bffd491f0f65a3fa771  [shntool]  06_-_Traccia_Audio.wav
+30c112550126fb62f8962a97981198c3  [shntool]  07_-_Traccia_Audio.wav
+9202da9babea9e557da34d7a5348c4e5  [shntool]  08_-_Traccia_Audio.wav
+3cd353a4369f3041d8b194dd3c9c8253  [shntool]  09_-_Traccia_Audio.wav
+d84b42f44e5a7961200ddba65b76262b  [shntool]  10_-_Traccia_Audio.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-10-28-JanT.flacf\d1 
+=================== 
+=================== 
+=================== 
+de4e7c830b450936c304fb33994d96ba  [shntool]  01_-_Traccia_Audio.wav
+9150238fce20daef8cfe3ae94a970680  [shntool]  02_-_Traccia_Audio.wav
+63938357b86117591c69bde391def3be  [shntool]  03_-_Traccia_Audio.wav
+f8588914128cd8b6da4eb8e5b373f795  [shntool]  04_-_Traccia_Audio.wav
+f713b0d3f52cbe58ab5e18e58e834d72  [shntool]  05_-_Traccia_Audio.wav
+2f2f35ed0fbeeb9e589ec8fa6c3eae73  [shntool]  06_-_Traccia_Audio.wav
+7025afd3ddd33fe427a63d003715671c  [shntool]  07_-_Traccia_Audio.wav
+8f6af120515524d6e4ff7ce2217eaf4f  [shntool]  08_-_Traccia_Audio.wav
+15902b4c8691401ab9aaa92af474b4ea  [shntool]  09_-_Traccia_Audio.wav
+1dc961090ca5759ac6938ee551fcf468  [shntool]  10_-_Traccia_Audio.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-10-28-JanT.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:09.32       75750908 B   ---   --   ---xx    shn  0.5830  02 - Traccia Audio.shn
+     3:32.11       37422716 B   ---   --   ---xx    shn  0.5898  03 - Traccia Audio.shn
+     5:28.16       57896876 B   ---   --   ---xx    shn  0.5693  04 - Traccia Audio.shn
+     4:52.25       51567644 B   ---   --   ---xx    shn  0.5888  06 - Traccia Audio.shn
+     4:17.69       45497132 B   ---   --   ---xx    shn  0.5726  07 - Traccia Audio.shn
+     6:06.30       64633004 B   ---   --   ---xx    shn  0.6044  08 - Traccia Audio.shn
+     4:36.25       48745244 B   ---   --   ---xx    shn  0.5538  09 - Traccia Audio.shn
+     4:55.66       52193276 B   ---   --   ---xx    shn  0.6373  10 - Traccia Audio.shn
+    40:58.49      433706800 B                            0.5878  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-10-28-JanT.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.15       13794524 B   ---   --   ---xx    shn  0.5979  01 - Traccia Audio.shn
+     4:01.10       42535964 B   ---   --   ---xx    shn  0.6624  02 - Traccia Audio.shn
+     4:10.52       44222348 B   ---   --   ---xx    shn  0.6524  03 - Traccia Audio.shn
+     4:57.08       52409660 B   ---   --   ---xx    shn  0.6678  04 - Traccia Audio.shn
+     4:51.45       51438284 B   ---   --   ---xx    shn  0.6616  05 - Traccia Audio.shn
+     6:12.09       65642012 B   ---   --   ---xx    shn  0.6306  06 - Traccia Audio.shn
+     4:02.38       42778220 B   ---   --   ---xx    shn  0.6822  07 - Traccia Audio.shn
+     4:00.70       42500684 B   ---   --   ---xx    shn  0.6409  08 - Traccia Audio.shn
+     4:42.16       49782476 B   ---   --   ---xx    shn  0.6356  09 - Traccia Audio.shn
+     6:33.59       69464012 B   ---   --   ---xx    shn  0.6419  10 - Traccia Audio.shn
+    44:50.22      474568184 B                            0.6498  (10 files)
+=================== 
+=================== 
+=================== 

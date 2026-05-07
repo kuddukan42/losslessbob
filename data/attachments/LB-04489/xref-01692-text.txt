@@ -1,0 +1,99 @@
+===================
+===================
+===================
+=== bd-1996-04-19-Portland-HG.md5
+===================
+===================
+===================
+c9ead3cea5141564dc8a6f56e7b3f2a3 *Disc1\bd-1996-04-19-HG-d1t01.flac
+ce0b70af672f550e62922b5a981b2b2e *Disc1\bd-1996-04-19-HG-d1t02.flac
+a53ed0e5bd376f29bc8bd00b360301af *Disc1\bd-1996-04-19-HG-d1t03.flac
+79102bdea1bf9d6bbd11f74a1c1d704c *Disc1\bd-1996-04-19-HG-d1t04.flac
+a8c406e8c8bb6575782ce6fd1d6cbd2d *Disc1\bd-1996-04-19-HG-d1t05.flac
+c49bce1ec126b8f1182c000621ce0de2 *Disc1\bd-1996-04-19-HG-d1t06.flac
+d37c30e686a938a63e56200cfbe320fb *Disc1\bd-1996-04-19-HG-d1t07.flac
+59677ca56679c7ade2db6edd96a4565a *Disc1\bd-1996-04-19-HG-d1t08.flac
+c2df3bb96659d74f775ea5ad59e0c930 *Disc1\bd-1996-04-19-HG-d1t09.flac
+cd4bb96197123efb3f3831ed4dc73cc1 *Disc2\bd-1996-04-19-HG-d2t01.flac
+7be612c0817e313aefb4b2622553d954 *Disc2\bd-1996-04-19-HG-d2t02.flac
+0942b64df9645b2eb423f40da2aebb4a *Disc2\bd-1996-04-19-HG-d2t03.flac
+e106e4e4df7e78e12db75b144e3b37fd *Disc2\bd-1996-04-19-HG-d2t04.flac
+50c31d6971d43a2dfad3288e621124fa *Disc2\bd-1996-04-19-HG-d2t05.flac
+252dc15da7ce8a1752c4cb3b36e324c8 *Disc2\bd-1996-04-19-HG-d2t06.flac
+abfb061d35a2e03d581e1173ef7df252 *Port04-19-96(HG)-B.JPG
+97e8df88956a7295db64f16bacd0ed85 *Port04-19-96(HG)-F.JPG
+===================
+===================
+===================
+=== bd-1996-04-19-Portland-HG.txt
+===================
+===================
+===================
+Bob Dylan
+State Theater
+Portland, Maine
+April 19, 1996
+
+Holy Grail Series: Everything's Been Returned Which Was Owed
+
+Sound Quality: Excellent
+
+
+This set is based on the same recording as LB-4489 but is in flac format as opposed to the shn version.
+
+
+Disk 1
+
+01 Drifter's Escape
+02 Tonight I'll Be Staying Here With You
+03 All Along The Watchtower
+04 You're A Big Girl Now
+05 This Wheel's On Fire
+06 Silvio
+07 Tangled Up In Blue (Acoustic W Band)
+08 Visions Of Johanna (Acoustic W Band)
+09 John Brown (Acoustic W Band)
+
+Disc 2
+
+01 Stuck Inside Of Mobile With The Memphis Blues Again
+02 Simple Twist Of Fate
+03 Seven Days
+04 Alabama Getaway
+05 Forever Young (Acoustic W Band)
+06 Rainy Day Women # 12 & 35
+
+
+============================
+============================
+============================
+=== md5 for bd-1996-04-19-Portland-HG
+============================
+============================
+============================
+
+
+c9ead3cea5141564dc8a6f56e7b3f2a3 *Disc1/bd-1996-04-19-HG-d1t01.flac
+ce0b70af672f550e62922b5a981b2b2e *Disc1/bd-1996-04-19-HG-d1t02.flac
+a53ed0e5bd376f29bc8bd00b360301af *Disc1/bd-1996-04-19-HG-d1t03.flac
+79102bdea1bf9d6bbd11f74a1c1d704c *Disc1/bd-1996-04-19-HG-d1t04.flac
+a8c406e8c8bb6575782ce6fd1d6cbd2d *Disc1/bd-1996-04-19-HG-d1t05.flac
+c49bce1ec126b8f1182c000621ce0de2 *Disc1/bd-1996-04-19-HG-d1t06.flac
+d37c30e686a938a63e56200cfbe320fb *Disc1/bd-1996-04-19-HG-d1t07.flac
+59677ca56679c7ade2db6edd96a4565a *Disc1/bd-1996-04-19-HG-d1t08.flac
+c2df3bb96659d74f775ea5ad59e0c930 *Disc1/bd-1996-04-19-HG-d1t09.flac
+cd4bb96197123efb3f3831ed4dc73cc1 *Disc2/bd-1996-04-19-HG-d2t01.flac
+7be612c0817e313aefb4b2622553d954 *Disc2/bd-1996-04-19-HG-d2t02.flac
+0942b64df9645b2eb423f40da2aebb4a *Disc2/bd-1996-04-19-HG-d2t03.flac
+e106e4e4df7e78e12db75b144e3b37fd *Disc2/bd-1996-04-19-HG-d2t04.flac
+50c31d6971d43a2dfad3288e621124fa *Disc2/bd-1996-04-19-HG-d2t05.flac
+252dc15da7ce8a1752c4cb3b36e324c8 *Disc2/bd-1996-04-19-HG-d2t06.flac
+abfb061d35a2e03d581e1173ef7df252 *Port04-19-96(HG)-B.JPG
+97e8df88956a7295db64f16bacd0ed85 *Port04-19-96(HG)-F.JPG
+
+
+
+
+===================
+===================
+===================

@@ -1,0 +1,105 @@
+Grateful Dead - July 12, 1987
+Giants Stadium - East Rutherford, NJ
+
+Recording Info:
+Sets 1 & 2: SBD -> PCM -> Dat -> CD
+Set 3: (FOB) Schoeps -> PCM -> Dat -> CD
+
+Transfer Info:
+CD -> Samplitude Professional v9.02 -> FLAC
+(3 Discs audio / 2 Discs FLAC)
+
+All Transfers and Mastering By Charlie Miller
+charliemiller87@earthlink.net
+April 14, 2007
+
+Notes:
+-- Set 3 with Bob Dylan
+-- Encores on end of Set 2 to keep each set on one disc
+-- I did the Dat -> CD transfers back in 2000
+-- The SBD is an UltraMatrix with a lot of AUD
+
+Set 1:
+d1t01 - Hell In A Bucket
+d1t02 - West L.A. Fadeaway
+d1t03 - Greatest Story Ever Told
+d1t04 - Loser
+d1t05 - Tons Of Steel
+d1t06 - Take A Step Back
+d1t07 - Ramble On Rose
+d1t08 - When I Paint My Masterpiece
+d1t09 - When Push Comes To Shove
+d1t10 - The Promised Land ->
+d1t11 - Bertha
+
+Set 2:
+d2t01 - Take A Step Back
+d2t02 - Morning Dew ->
+d2t03 - Playing In The Band ->
+d2t04 - Drums ->
+d2t05 - Space ->
+d2t06 - The Other One ->
+d2t07 - Stella Blue ->
+d2t08 - Throwing Stones ->
+d2t09 - Not Fade Away
+
+Set 3:
+d3t01 - Tuning
+d3t02 - Slow Train
+d3t03 - Stuck Inside Of Mobile With The Memphis Blues Again
+d3t04 - Tomorrow Is A Long Time
+d3t05 - Highway 61 Revisited
+d3t06 - It's All Over Now, Baby Blue
+d3t07 - Ballad Of A Thin Man
+d3t08 - John Brown
+d3t09 - The Wicked Messenger
+d3t10 - Queen Jane Approximately
+d3t11 - Chimes Of Freedom
+d3t12 - Joey
+d3t13 - All Along The Watchtower
+d3t14 - The Times They Are A-Changin'
+
+Encore:
+d2t10 - Touch Of Grey ->
+d2t11 - Knockin' On Heaven's Door
+
+
+SHNTOOL OUTPUT:
+    length     expanded size   cdr  WAVE problems filename
+     6:01.43       63781580    ---   --   -----   gd87-07-12d1t01.wav
+     8:55.21       94423436    ---   --   -----   gd87-07-12d1t02.wav
+     4:23.31       46466156    ---   --   -----   gd87-07-12d1t03.wav
+     7:50.59       83046812    ---   --   -----   gd87-07-12d1t04.wav
+     6:07.42       64837628    ---   --   -----   gd87-07-12d1t05.wav
+     0:50.72        8989388    ---   --   -----   gd87-07-12d1t06.wav
+     8:08.18       86125580    ---   --   -----   gd87-07-12d1t07.wav
+     5:16.58       55878860    ---   --   -----   gd87-07-12d1t08.wav
+     5:35.31       59166956    ---   --   -----   gd87-07-12d1t09.wav
+     3:54.72       41446988    ---   --   -----   gd87-07-12d1t10.wav
+     7:10.35       75934364    ---   --   -----   gd87-07-12d1t11.wav
+     1:05.58       11602460    ---   --   -----   gd87-07-12d2t01.wav
+     9:16.16       98116076    ---   --   -----   gd87-07-12d2t02.wav
+     9:11.29       97264652    ---   --   -----   gd87-07-12d2t03.wav
+     7:28.36       79111916    ---   --   -----   gd87-07-12d2t04.wav
+     3:09.68       33499580    ---   --   -----   gd87-07-12d2t05.wav
+     6:22.41       67481276    ---   --   -----   gd87-07-12d2t06.wav
+     7:36.33       80516060    ---   --   -----   gd87-07-12d2t07.wav
+     9:14.38       97815020    ---   --   -----   gd87-07-12d2t08.wav
+     7:10.44       75955532    ---   --   -----   gd87-07-12d2t09.wav
+     6:28.44       68546732    ---   --   -----   gd87-07-12d2t10.wav
+     6:19.31       66928556    ---   --   -----   gd87-07-12d2t11.wav
+     0:44.23        7815740    ---   --   -----   gd87-07-12d3t01.wav
+     4:15.69       45144332    ---   --   -----   gd87-07-12d3t02.wav
+     6:44.57       71399708    ---   --   -----   gd87-07-12d3t03.wav
+     5:24.59       57292412    ---   --   -----   gd87-07-12d3t04.wav
+     5:29.24       58092092    ---   --   -----   gd87-07-12d3t05.wav
+     6:11.64       65594972    ---   --   -----   gd87-07-12d3t06.wav
+     5:16.40       55836524    ---   --   -----   gd87-07-12d3t07.wav
+     6:14.09       65994812    ---   --   -----   gd87-07-12d3t08.wav
+     3:38.02       38459948    ---   --   -----   gd87-07-12d3t09.wav
+     4:57.02       52395548    ---   --   -----   gd87-07-12d3t10.wav
+     8:00.20       84719084    ---   --   -----   gd87-07-12d3t11.wav
+     9:34.36      101338316    ---   --   -----   gd87-07-12d3t12.wav
+     5:09.49       54622892    ---   --   -----   gd87-07-12d3t13.wav
+     4:36.43       48787580    ---   --   -----   gd87-07-12d3t14.wav
+   213:56.67     2264429568 B                     (totals for 36 files)

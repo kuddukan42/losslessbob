@@ -1,0 +1,128 @@
+===================
+===================
+===================
+=== IAR 045 - Providence, Oct. 25, 1992.md5
+===================
+===================
+===================
+c0a0914244632928128445b2914c2898 *CD1\01 I Can't Be Satisfied.flac
+1496a1d886f2b8d90bc30ba99f4ebac6 *CD1\02 Dear Landlord.flac
+edc18b5d1469d85dba1eb356181da1ed *CD1\03 All Along The Watchtower.flac
+efaf791c8584f24ac64d7d28a2be38da *CD1\04 Simple Twist Of Fate.flac
+2d142b6c0e05b02554f8a52c38bd3768 *CD1\05 It Takes A Lot To Laugh.flac
+f88075933691b98e16fec92c6123da7b *CD1\06 Under The Red Sky.flac
+6ec467059e8d3093abb784361f40b98f *CD1\07 Silvio.flac
+c8984a3a6fd40f94d1d7438dee11e93a *CD1\08 Mama, You Been On My Mind.flac
+20893af7effc2b00f6410f839aa31f24 *CD1\09 Boots Of Spanish Leather.flac
+dc2167dd864b93f5bd9632fe49a34aa7 *CD1\10 Gates Of Eden.flac
+f4d0adc815e282b9f8b274e220189f66 *CD1\11 Don't Think Twice, It's Alright.flac
+52b8f079914b05e8928f01571da560cb *CD1\bd 1992-10-25 CD1 SHN.md5
+4760906709636ce0ef8282ea347fe148 *CD1\Providence, Rhode Island, Oct. 25, 1992, CD1.log
+019a1b472711daa0e04e26e05ed87f7b *CD2\01 Unbelievable.flac
+d6894f0327382d92be059e3607fd2f7b *CD2\02 Man In The Long Black Coat.flac
+aacc857c8d599987a9540b810198a823 *CD2\03 The Times They Are A-Changin'.flac
+9e352999a8bc6e20cb6bacb8395b9b6c *CD2\04 Maggie's Farm.flac
+19c53682cbebd37bb0bcf44f59033d1e *CD2\05 Applause.flac
+d030a2b67681841815af6e43186fa5a6 *CD2\06 Ballad Of A Thin Man.flac
+0c762f7ceac56dc14d6f969c3443a62d *CD2\07 Everything Is Broken.flac
+89342aece2f5425462c565c356f18dc5 *CD2\08 It Ain't Me, Babe.flac
+38ba573dc8db080d37da139080980e82 *CD2\bd 1992-10-25 CD 2SHN.md5
+1bf5b1b198eb522fd0adb2ae58c12a4d *CD2\Providence, Rhode Island, Oct. 25, 1992, CD2.log
+f76331e2ae211d2f6ae8688ce8a5a760 *IAR 045 - Providence, Oct. 25, 1992.txt
+===================
+===================
+===================
+=== IAR 045 - Providence, Oct. 25, 1992.txt
+===================
+===================
+===================
+Improved Air Catalog Number: IA45
+TITLE: untitled (2cd)
+
+IAR 045
+Providence, Rhode Island, 
+Oct. 25, 1992
+SOURCE/COMMENTS: audience "Some songs are missing from start of concert."         
+CIRCULATION DATE: December 12, 2002
+
+CD 1
+01 I Can't Be Satisfied
+02 Dear Landlord
+03 All Along The Watchtower
+04 Simple Twist Of Fate
+05 It Takes A Lot To Laugh
+06 Under The Red Sky
+07 Silvio
+08 Mama, You Been On My Mind
+09 Boots Of Spanish Leather
+10 Gates Of Eden
+11 Don't Think Twice, It's Alright
+
+CD 2
+01 Unbelievable
+02 Man In The Long Black Coat
+03 The Times They Are A-Changin'
+04 Maggie's Farm
+05 Applause
+06 Ballad Of A Thin Man
+07 Everything Is Broken
+08 It Ain't Me, Babe
+
+****************************************
+
+Improved Air Remasters
+
+Some history cribbed directly from the creator of this fine series: 
+The fan who began Improved Air Remasters did so for the simple reason 
+of wanting to hear more natural-sounding recordings.  
+His process, and he works alone, of remastering includes restoration 
+and light or hard tweaking of the original source, among other things. 
+Obviously each new project is a different case. 
+For ease of trading he regrets not foot printing his sets early on, 
+but may list out the cd times one day. 
+He is currently working on an ambitious and exciting project, 
+namely remastering the entire USA/Canada Spring 1997 Tour.     
+NOTE: all information below (with one or two slight edits) 
+comes from the sole owner and operator of Improved Air Remasters, 
+so consider this accurate and up to date as of July 2003. 
+If I receive additional updates I 
+will certainly put them here. 
+This date format goes DD/MM/YY.
+
+******************************************
+===================
+===================
+===================
+=== bd 1992-10-25 CD1 SHN.md5
+===================
+===================
+===================
+d03619199f0519624b45e15450fa40fe *01 I Can't Be Satisfied.shn
+619cb6bca874552a5fc12d65fa516241 *02 Dear Landlord.shn
+91502233d5e36e48f906c888dd875b23 *03 All Along The Watchtower.shn
+1dbc0b300bdd2238b03aa6059f988abd *04 Simple Twist Of Fate.shn
+6db83071bc46f33033461584f83374df *05 It Takes A Lot To Laugh.shn
+a6f60a3b853275897919e2ff513dc2ad *06 Under The Red Sky.shn
+a5051f408b16ddc2a0f83a799d5c8242 *07 Silvio.shn
+d8b2b08394623a32ec6d43a842951165 *08 Mama, You Been On My Mind.shn
+66361956a5b1ddf9e594d7bd2b702465 *09 Boots Of Spanish Leather.shn
+2974e66ea7f19b81d6c50ac80bd12a4c *10 Gates Of Eden.shn
+d67a44feefc5b85353a8988aa1cf6393 *11 Don't Think Twice, It's Alright.shn
+===================
+===================
+===================
+=== bd 1992-10-25 CD 2SHN.md5
+===================
+===================
+===================
+7d408ef60f156d8c4cb302e17ba112bb *01 Unbelievable.shn
+47cde23a5dc752628a4f625779ef4ab8 *02 Man In The Long Black Coat.shn
+ff60164e58bc1e1852c090ef1fbeaa57 *03 The Times They Are A-Changin'.shn
+f92ffe51b5c3e1f975afb01f07c92ac6 *04 Maggie's Farm.shn
+9b725a5a9414dbef3cc2abc29f92cf32 *05 Applause.shn
+bb53fa0adb40362977a952ae908ff360 *06 Ballad Of A Thin Man.shn
+8d30ed7db0bf881ca5630dbbec273078 *07 Everything Is Broken.shn
+478bcf30de913a7ae461c277e89f3783 *08 It Ain't Me, Babe.shn
+===================
+===================
+===================

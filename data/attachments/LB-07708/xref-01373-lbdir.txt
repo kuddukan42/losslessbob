@@ -1,0 +1,108 @@
+===================
+===================
+===================
+=== md5 for: bd01-07-18-d.flacf
+===================
+===================
+===================
+ba6bea6d2c7bded20d79e7006901ce69 *BD 2001-07-18 schubert.txt
+dac857adb8e92fc61db6ffae343e2e59 *Bob Dylan 18.07.2001 Bad Reichenhall (Schubert).md5
+db8e6cfdb999fcbf6ad6fd8259f24f4d *CD1\BD_20010718_D1T01.shn
+eb1b32b7a47551cd8404833d15dc890e *CD1\BD_20010718_D1T02.shn
+afbf3db09757d22baf2c7282798e085d *CD1\BD_20010718_D1T03.shn
+d024d8b7260a4403f8a3edbfd9863d23 *CD1\BD_20010718_D1T04.shn
+9f02f9f781e655e3382e566e48680167 *CD1\BD_20010718_D1T05.shn
+e5beaf6321fe39764b7f0ec98053f52a *CD1\BD_20010718_D1T06.shn
+449f42c1a972058833d66bdd6996d6c1 *CD1\BD_20010718_D1T07.shn
+92cb70f813b3ef6943e435893999df91 *CD1\BD_20010718_D1T08.shn
+c59c5d67aa2be6d64da88eada2fdd4a5 *CD1\BD_20010718_D1T09.shn
+e8cf09327226436a7db7d2e81d1ec99f *CD1\BD_20010718_D1T10.shn
+0c832ddbafc6809e168cfc824f56d6bf *CD1\BD_20010718_D1_EAC.log
+223f699dced9e0ad37408c2cf493e34a *CD1\BD_20010718_D1_SHN.md5
+df4200ab0167337401a5daa912397aa6 *CD1\BD_20010718_D1_WAV.md5
+c2ccec4a0bb27de6aa3def2fc5cbaf76 *CD2\BD_20010718_D2T01.shn
+3f959c7638a0fa99da79cc51edd43d4c *CD2\BD_20010718_D2T02.shn
+440f7fe9fbbc1c91da8d1429f16775a5 *CD2\BD_20010718_D2T03.shn
+3270f1007186e3a398b839f9f6643e7f *CD2\BD_20010718_D2T04.shn
+f55ec0c65fb4080316a35dc3075f3eaa *CD2\BD_20010718_D2T05.shn
+995e2242a0e92492325e86422eb294b3 *CD2\BD_20010718_D2T06.shn
+6fe0ff0b59e9bbc325eb6b546ef3109c *CD2\BD_20010718_D2T07.shn
+d944691c5d692d9b96df7779f42f869d *CD2\BD_20010718_D2T08.shn
+ffa346f2b1bb6b3ec1da4d3f72d0e69b *CD2\BD_20010718_D2T09.shn
+789ea96519cfb16dbf1d921787a6929c *CD2\BD_20010718_D2T10.shn
+f14503e4f5bc4f19fab77e63526136ee *CD2\BD_20010718_D2T11.shn
+674124da87906a2d1fac19dd20f15456 *CD2\BD_20010718_D2_EAC.log
+63e79ee33203698643a694eac1435b7b *CD2\BD_20010718_D2_SHN.md5
+71c02f153e9974e8bba8843caecaf1bc *CD2\BD_20010718_D2_WAV.md5
+cafbed3a0e2d016ff4b6e31e3e9118f3 *inlays\booklet_aussen-links+rechts.tif
+fb0d5461ef60a95aee80bcb5fb970b2a *inlays\Inlay_aussen+seitentitel_1.tif
+===================
+===================
+===================
+=== shntool md5/hash for: bd01-07-18-d.flacf
+===================
+===================
+===================
+c7e08fc8bcaedbf0993513a5091ea980  [shntool]  CD1\BD_20010718_D1T01.shn
+0bde9992d50c8f64866308aa23b35482  [shntool]  CD1\BD_20010718_D1T02.shn
+7476c9bd0066e4af5d464db324fcbf9a  [shntool]  CD1\BD_20010718_D1T03.shn
+b82581846c5877d8682aa47918c7e1ca  [shntool]  CD1\BD_20010718_D1T04.shn
+fc3cc96c93289b7767a35c8c3190b50f  [shntool]  CD1\BD_20010718_D1T05.shn
+63fe88eeb288c61834f0d04e4f9526c0  [shntool]  CD1\BD_20010718_D1T06.shn
+2ce11dc7aa21f65ac7e513c7eeee0279  [shntool]  CD1\BD_20010718_D1T07.shn
+0e0b756119bb66bd672fd57ce3d035f1  [shntool]  CD1\BD_20010718_D1T08.shn
+6e22a35f4f46dabf5981ede54044ef7c  [shntool]  CD1\BD_20010718_D1T09.shn
+ac8ac40cd01d87911037b4db817a0981  [shntool]  CD1\BD_20010718_D1T10.shn
+7a2498185318639374bdceeddf23d05e  [shntool]  CD2\BD_20010718_D2T01.shn
+bfa8717ca957d7c5f6379322c95b2422  [shntool]  CD2\BD_20010718_D2T02.shn
+bbe78ecfa08ae0d8330561ead6d7f018  [shntool]  CD2\BD_20010718_D2T03.shn
+686d756ea4fec813940b4e41992dee53  [shntool]  CD2\BD_20010718_D2T04.shn
+c2c1bf74a1b4ca822a05627a892d5b81  [shntool]  CD2\BD_20010718_D2T05.shn
+39a2725b85981ade606dd5d9c9408cff  [shntool]  CD2\BD_20010718_D2T06.shn
+d5bfefdb597bc57fa816e0b2f582bd9f  [shntool]  CD2\BD_20010718_D2T07.shn
+5b116f42fed9478c1b5edb747f7f9480  [shntool]  CD2\BD_20010718_D2T08.shn
+a9c077725638cd3c75818ae298b308aa  [shntool]  CD2\BD_20010718_D2T09.shn
+3cd816b25eed030890fa75e629369ae2  [shntool]  CD2\BD_20010718_D2T10.shn
+a9efd7897ea650557ebd0df46cc8f21b  [shntool]  CD2\BD_20010718_D2T11.shn
+===================
+===================
+===================
+=== shntool len for: bd01-07-18-d.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:27.48        4875740 B   ---   --   ---xx    shn  0.6166  BD_20010718_D1T01.shn
+     2:58.60       31540364 B   ---   --   ---xx    shn  0.6842  BD_20010718_D1T02.shn
+     5:12.67       55194428 B   ---   --   ---xx    shn  0.6572  BD_20010718_D1T03.shn
+     8:43.38       92346620 B   ---   --   ---xx    shn  0.6514  BD_20010718_D1T04.shn
+     6:43.23       71143340 B   ---   --   ---xx    shn  0.6515  BD_20010718_D1T05.shn
+     6:14.13       66004220 B   ---   --   ---xx    shn  0.5874  BD_20010718_D1T06.shn
+     7:36.12       80466668 B   ---   --   ---xx    shn  0.6421  BD_20010718_D1T07.shn
+     7:02.63       74589020 B   ---   --   ---xx    shn  0.5808  BD_20010718_D1T08.shn
+     9:36.32      101681708 B   ---   --   ---xx    shn  0.5960  BD_20010718_D1T09.shn
+     6:56.62       73528268 B   ---   --   ---xx    shn  0.5795  BD_20010718_D1T10.shn
+    61:32.43      651370376 B                            0.6207  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd01-07-18-d.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.14       61596572 B   ---   --   ---xx    shn  0.6298  BD_20010718_D2T01.shn
+     5:47.34       61290812 B   ---   --   ---xx    shn  0.5289  BD_20010718_D2T02.shn
+     4:46.11       50476316 B   ---   --   ---xx    shn  0.7015  BD_20010718_D2T03.shn
+    10:19.20      109238684 B   ---   --   ---xx    shn  0.6319  BD_20010718_D2T04.shn
+     6:12.17       65660828 B   ---   --   ---xx    shn  0.6741  BD_20010718_D2T05.shn
+     7:03.23       74671340 B   ---   --   ---xx    shn  0.6650  BD_20010718_D2T06.shn
+     4:33.71       48324236 B   ---   --   ---xx    shn  0.5399  BD_20010718_D2T07.shn
+     5:10.72       54853388 B   ---   --   ---xx    shn  0.6753  BD_20010718_D2T08.shn
+     5:33.41       58837676 B   ---   --   ---xx    shn  0.6273  BD_20010718_D2T09.shn
+     5:37.24       59503292 B   ---   --   ---xx    shn  0.6824  BD_20010718_D2T10.shn
+     6:09.20       65138684 B   ---   --   ---xx    shn  0.6262  BD_20010718_D2T11.shn
+    67:02.47      709591828 B                            0.6356  (11 files)
+===================
+===================
+===================

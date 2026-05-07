@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-31-brixton-blues.flacf 
+=================== 
+=================== 
+=================== 
+0a0941a5575bf89618509b81fb61b9d7  bd93-03-31-brixton-blues-d1t02.flac
+11ab427a5415aca9dadc3e28d68a79eb  bd95-03-31-brixton-blues-d1t01.flac
+c70b76a011fb65e618150c36ece5b50d  bd95-03-31-brixton-blues-d1t03.flac
+b7e39bcde7e04f62c6861750f13db929  bd95-03-31-brixton-blues-d1t04.flac
+ac4d72aca2f0290c6d770fb0bd8f9cb8  bd95-03-31-brixton-blues-d1t05.flac
+771460beb0fdc10f9383c2b392c9ec6c  bd95-03-31-brixton-blues-d1t06.flac
+99cb037669e693ef5b22f3df8b4175c9  bd95-03-31-brixton-blues-d1t07.flac
+14f7700b2d366b0ca85b0663665a0aa9  bd95-03-31-brixton-blues-d1t08.flac
+937bf425b92db957e9c9ebd714648041  bd95-03-31-brixton-blues-d1t09.flac
+e7338cf7e92344ca6a5cad08b3c049f2  bd95-03-31-brixton-blues-d2t01.flac
+f7791d7f6f513747d0ec4ba6748d0d06  bd95-03-31-brixton-blues-d2t02.flac
+af14dd3331d2c50d52f7e5f9b3a907b3  bd95-03-31-brixton-blues-d2t03.flac
+50e4c5038ffbe130a2e5e0ec2c608490  bd95-03-31-brixton-blues-d2t04.flac
+30c9a709ad0398a7233e3d1e649d856c  bd95-03-31-brixton-blues-d2t05.flac
+a8a3946422bebc716dead65acb3dc5e7  bd95-03-31-brixton-blues-d2t06.flac
+b066a2097e3ad4a34638d35f02be423b  bd95-03-31-brixton-blues-d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-31-brixton-blues.flacf 
+=================== 
+=================== 
+=================== 
+bd93-03-31-brixton-blues-d1t02.flac:66e003943e1fc49c3f533cea5a488c04
+bd95-03-31-brixton-blues-d1t01.flac:9453442f3a1523af21d2d244f74e27e5
+bd95-03-31-brixton-blues-d1t03.flac:e42929ae1315287cebe9c3135188772c
+bd95-03-31-brixton-blues-d1t04.flac:d3a39a9522e5cfc88b510e2df89346de
+bd95-03-31-brixton-blues-d1t05.flac:11f8e2ee63a409865aafadf2b68d1c63
+bd95-03-31-brixton-blues-d1t06.flac:44747e0297ad07af6b9e560c769ac6ed
+bd95-03-31-brixton-blues-d1t07.flac:dc2d178c794991382c2f3d98b30ce183
+bd95-03-31-brixton-blues-d1t08.flac:93c0e33c7653531b5fff6d78a59e6b16
+bd95-03-31-brixton-blues-d1t09.flac:09c1c805b8055992a78641300e98ee80
+bd95-03-31-brixton-blues-d2t01.flac:0ea12a7bb5159ca20f09d44db2caa25a
+bd95-03-31-brixton-blues-d2t02.flac:a94137c29b6523791c1deb1775afde0e
+bd95-03-31-brixton-blues-d2t03.flac:ec58efada4deb61fe735ef7677182409
+bd95-03-31-brixton-blues-d2t04.flac:4c41d325c5902d3539d91e88b0aed023
+bd95-03-31-brixton-blues-d2t05.flac:285de964e1e0b9deb237a4947e2b65ad
+bd95-03-31-brixton-blues-d2t06.flac:ce97333d58852e8766c65a01e2b6585a
+bd95-03-31-brixton-blues-d2t07.flac:01ce8e887239ce7362d584f4c0bd971b
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-03-31-brixton-blues.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.62       56241068 B   ---   --   ---xx   flac  0.6317  bd93-03-31-brixton-blues-d1t02.flac
+     5:10.13       54714620 B   ---   --   ---xx   flac  0.6467  bd95-03-31-brixton-blues-d1t01.flac
+     6:11.63       65592620 B   ---   --   ---xx   flac  0.6559  bd95-03-31-brixton-blues-d1t03.flac
+     6:23.00       67561244 B   ---   --   ---xx   flac  0.6312  bd95-03-31-brixton-blues-d1t04.flac
+     8:01.62       84994268 B   ---   --   ---xx   flac  0.6672  bd95-03-31-brixton-blues-d1t05.flac
+     6:37.63       70179020 B   ---   --   ---xx   flac  0.6023  bd95-03-31-brixton-blues-d1t06.flac
+     6:48.62       72117068 B   ---   --   ---xx   flac  0.5345  bd95-03-31-brixton-blues-d1t07.flac
+     6:34.38       69591020 B   ---   --   ---xx   flac  0.5468  bd95-03-31-brixton-blues-d1t08.flac
+     7:48.12       82583468 B   ---   --   ---xx   flac  0.5217  bd95-03-31-brixton-blues-d1t09.flac
+     6:45.50       71559644 B   ---   --   ---xx   flac  0.6627  bd95-03-31-brixton-blues-d2t01.flac
+     8:31.13       90171020 B   ---   --   ---xx   flac  0.6315  bd95-03-31-brixton-blues-d2t02.flac
+     9:52.62      104574668 B   ---   --   ---xx   flac  0.6524  bd95-03-31-brixton-blues-d2t03.flac
+     7:51.25       83143244 B   ---   --   ---xx   flac  0.6422  bd95-03-31-brixton-blues-d2t04.flac
+     8:17.50       87788444 B   ---   --   ---xx   flac  0.6115  bd95-03-31-brixton-blues-d2t05.flac
+     5:35.50       59211644 B   ---   --   ---xx   flac  0.6589  bd95-03-31-brixton-blues-d2t06.flac
+     4:19.50       45805244 B   ---   --   ---xx   flac  0.6657  bd95-03-31-brixton-blues-d2t07.flac
+   110:09.00     1165828304 B                            0.6214  (16 files)
+=================== 
+=================== 
+=================== 

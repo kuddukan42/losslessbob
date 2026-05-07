@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-14.shnf 
+=================== 
+=================== 
+=================== 
+7dd436af5b7d8120350798616c5393a8  1-01 - Subterranean Homesick Blues (88-07-14 Chicago, IL).shn
+e00e25adfd11fe91cf392074e2cde18d  1-02 - Absolutely Sweet Marie (88-07-14 Chicago, IL).shn
+2a79f43e14359ad6951774f0020f71ce  1-03 - Ballad Of A Thin Man (88-07-14 Chicago, IL).shn
+2cd95e87b681cd3316737fe36e62a0ab  1-04 - It's All Over Now, Baby Blue (88-07-14 Chicago, IL).shn
+65430707c98b7c708ee2f64aecc3baf6  1-05 - In The Garden (88-07-14 Chicago, IL).shn
+b4d29c7d6d4376fa1a992876485f15ca  1-06 - Highway 61 Revisited (88-07-14 Chicago, IL).shn
+25bc3e1cadc26b64eb6864396fe38b4d  1-07 - Song To Woody (88-07-14 Chicago, IL).shn
+f7820023b0d3bf68894d7278cce08492  1-08 - Hard Rain's A-Gonna Fall (88-07-14 Chicago, IL).shn
+a6f054a8b000b7a3fa436f4a2cf03dce  2-01 - To Ramona (88-07-14 Chicago, IL).shn
+6b6049bdbeea0f4fe8411d79a5a279cf  2-02 - Watching The River Flow (88-07-14 Chicago, IL).shn
+0ef16618b9f39d54b260c5483e204ae8  2-03 - Silvio (88-07-14 Chicago, IL).shn
+ceb7521254846ce902c75280d9eb95f4  2-04 - Like A Rolling Stone (88-07-14 Chicago, IL).shn
+8bfb683f57cae83e8a8b6a49c76460cb  2-05 - It Ain't Me, Babe (88-07-14 Chicago, IL).shn
+17886545beabc947941297f6cef66674  2-06 - Maggie's Farm (88-07-14 Chicago, IL).shn
+1cd9841574ad15fef0537c1fea126572  88-07-14_Chicago, IL-D1.md5
+3742ae1542ecba1fbcd87ead95604adb  88-07-14_Chicago, IL-D2.md5
+27e6cbff9e98fbc876a2411e474c91e7  88-07-14_Chicago, IL.rtf
+bc6a73baf113bab118dd1b6488fd63b0  bd88-07-14.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-07-14.shnf 
+=================== 
+=================== 
+=================== 
+a382b7e95d6b65a534b0f083690def61  [shntool]  1-01_-_Subterranean_Homesick_Blues_(88-07-14_Chicago,_IL).wav
+684c5e0ffed4d051501a5d009be2eef5  [shntool]  1-02_-_Absolutely_Sweet_Marie_(88-07-14_Chicago,_IL).wav
+3e865ebd7160b3097a6ab80370594dfb  [shntool]  1-03_-_Ballad_Of_A_Thin_Man_(88-07-14_Chicago,_IL).wav
+4ca9cf689830f718907d1153f4e29a16  [shntool]  1-04_-_It's_All_Over_Now,_Baby_Blue_(88-07-14_Chicago,_IL).wav
+0b0fb44baa6610dafa2ca19843254122  [shntool]  1-05_-_In_The_Garden_(88-07-14_Chicago,_IL).wav
+04d07d057021e84d9376e8823ad270df  [shntool]  1-06_-_Highway_61_Revisited_(88-07-14_Chicago,_IL).wav
+e334fc17bd5d46c78cc281badfc136b8  [shntool]  1-07_-_Song_To_Woody_(88-07-14_Chicago,_IL).wav
+822113b7e440378e218d7cafc812fbd7  [shntool]  1-08_-_Hard_Rain's_A-Gonna_Fall_(88-07-14_Chicago,_IL).wav
+02611b3c8ab887e6146c4d90e9b95c86  [shntool]  2-01_-_To_Ramona_(88-07-14_Chicago,_IL).wav
+90a04c1e70f70b068e358998deb449db  [shntool]  2-02_-_Watching_The_River_Flow_(88-07-14_Chicago,_IL).wav
+c4d70733e01786f112664e6530e472e8  [shntool]  2-03_-_Silvio_(88-07-14_Chicago,_IL).wav
+1a6f4d794c0f390283849d79d204b3fe  [shntool]  2-04_-_Like_A_Rolling_Stone_(88-07-14_Chicago,_IL).wav
+92765a3509869848598ef50a09290ce5  [shntool]  2-05_-_It_Ain't_Me,_Babe_(88-07-14_Chicago,_IL).wav
+ccaec1e183824da744331b8f87fcdcee  [shntool]  2-06_-_Maggie's_Farm_(88-07-14_Chicago,_IL).wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-14.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:45.43       39791180 B   ---   --   ---xx    shn  0.6916  1-01 - Subterranean Homesick Blues (88-07-14 Chicago, IL).shn
+     4:26.03       46929500 B   ---   --   ---xx    shn  0.6886  1-02 - Absolutely Sweet Marie (88-07-14 Chicago, IL).shn
+     5:21.41       56720876 B   ---   --   ---xx    shn  0.6712  1-03 - Ballad Of A Thin Man (88-07-14 Chicago, IL).shn
+     5:54.66       62600876 B   ---   --   ---xx    shn  0.6683  1-04 - It's All Over Now, Baby Blue (88-07-14 Chicago, IL).shn
+     5:53.14       62302172 B   ---   --   ---xx    shn  0.6979  1-05 - In The Garden (88-07-14 Chicago, IL).shn
+     4:38.05       49051004 B   ---   --   ---xx    shn  0.7156  1-06 - Highway 61 Revisited (88-07-14 Chicago, IL).shn
+     4:29.52       47573948 B   ---   --   ---xx    shn  0.6231  1-07 - Song To Woody (88-07-14 Chicago, IL).shn
+     9:23.09       99334412 B   ---   --   ---xx    shn  0.6582  1-08 - Hard Rain's A-Gonna Fall (88-07-14 Chicago, IL).shn
+     5:01.33       53174060 B   ---   --   ---xx    shn  0.6175  2-01 - To Ramona (88-07-14 Chicago, IL).shn
+     4:00.68       42495980 B   ---   --   ---xx    shn  0.6942  2-02 - Watching The River Flow (88-07-14 Chicago, IL).shn
+     3:52.22       40976588 B   ---   --   ---xx    shn  0.7163  2-03 - Silvio (88-07-14 Chicago, IL).shn
+     6:09.52       65213948 B   ---   --   ---xx    shn  0.7195  2-04 - Like A Rolling Stone (88-07-14 Chicago, IL).shn
+     7:27.49       78966092 B   ---   --   ---xx    shn  0.6498  2-05 - It Ain't Me, Babe (88-07-14 Chicago, IL).shn
+     5:40.47       60086588 B   ---   --   ---xx    shn  0.7005  2-06 - Maggie's Farm (88-07-14 Chicago, IL).shn
+    76:04.54      805217224 B                            0.6773  (14 files)
+=================== 
+=================== 
+=================== 

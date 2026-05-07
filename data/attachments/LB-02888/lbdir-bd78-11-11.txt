@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-11-11 
+=================== 
+=================== 
+=================== 
+d5d8be6fe41ba1572797c74e569d248d  bd1978-11-11_Vancouver.md5
+c2d43d1207e927cd9809d9b4c7deade6  bd1978-11-11_Vancouver.txt
+fee63fbe31e9a5c7459cec4eee7fea68  bd1978-11-11d1t01.shn
+8144465aaeed54720faf0f2576ec6dc2  bd1978-11-11d1t02.shn
+5474db11b19b3de8471a9baa60fa911b  bd1978-11-11d1t03.shn
+0b299643f594f3daf601073809b11fef  bd1978-11-11d1t04.shn
+45368cd679cb3f66ab3141f4fa78805e  bd1978-11-11d1t05.shn
+ff0a758727eae0d98f1c9da561b04fee  bd1978-11-11d1t06.shn
+21f490cd806aa192db8b1df5d58df8a0  bd1978-11-11d1t07.shn
+17ce212c5216aacab5d2efa699d7a299  bd1978-11-11d1t08.shn
+3c563d1e53bddce43b70833bd01e3242  bd1978-11-11d1t09.shn
+0eb0d9227bb3a848bcf94d3703ef1daf  bd1978-11-11d1t10.shn
+3fd91a96fc8a224fb7cb71dae279b005  bd1978-11-11d2t01.shn
+f0f593628e2a0892f5c9deb1c5c72fcb  bd1978-11-11d2t02.shn
+0e47bccfb0d893f6b74a0734d05f07ae  bd1978-11-11d2t03.shn
+831f37ac67b47c16a8db73c7c0b04e20  bd1978-11-11d2t04.shn
+92f11feb4ec692d61408f80810e50097  bd1978-11-11d2t05.shn
+c7f205d2574be6c4d0bd3fb51610af57  bd1978-11-11d2t06.shn
+5a5b643d3a07c199e1901b25eb34a0bf  bd1978-11-11d2t07.shn
+c017de05f6f963e67f7d799ddf88b09b  bd1978-11-11d2t08.shn
+5ecf2b08a3ab1e05e9c871a95fb71fc7  bd1978-11-11d2t09.shn
+b81e3ae77692ffd1ab27a8f88fdd2915  bd1978-11-11d2t10.shn
+ce1b9713f4cfbbb4f8a1ea9f0281a1a7  bd1978-11-11d2t11.shn
+5c98f7827068eafe793bc9f7166fb7a5  bd1978-11-11d2t12.shn
+c353336d7829ae474bf8727cafa8334e  bd1978-11-11d2t13.shn
+bc27a35cb2e37577733f65cdd19bb328  bd1978-11-11d2t14.shn
+d3e373e5475362f00459930a361eb26b  bd1978-11-11d2t15.shn
+eed41086edb59f9afb98d7ae594bde7d  bd1978-11-11d2t16.shn
+13ae8b9c444e883c1e9a65547a6279ad  bd1978-11-11d3t01.shn
+32984e89ebe7e0ee34836e9f88fbb253  bd78-11-11-LB-2888.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-11-11 
+=================== 
+=================== 
+=================== 
+2946144bb7d5fa0ea69c13be553d206c  [shntool]  bd1978-11-11d1t01.wav
+28979f1660a54b6ed62c8646347a2dab  [shntool]  bd1978-11-11d1t02.wav
+be5dc854e815b221bafb778415a8c5bf  [shntool]  bd1978-11-11d1t03.wav
+1e418a57a3b1825380852471fa5e4f2b  [shntool]  bd1978-11-11d1t04.wav
+ef8e7ef0e522ee804bf2a0fccecd7913  [shntool]  bd1978-11-11d1t05.wav
+dc983d6d932a1e7a5c694091a8f9ee04  [shntool]  bd1978-11-11d1t06.wav
+c14349e09805540a0eed4e21e69cbeef  [shntool]  bd1978-11-11d1t07.wav
+f85b6e787481d951c0545d6cbeb3c434  [shntool]  bd1978-11-11d1t08.wav
+60683bf7e510400935f7907c3ba76885  [shntool]  bd1978-11-11d1t09.wav
+9abbf2efdcdf24f852c904d13945d87d  [shntool]  bd1978-11-11d1t10.wav
+46543bc3456628f5462f9ba633321868  [shntool]  bd1978-11-11d2t01.wav
+4d70b0119d0a286910a7d9a29dc57cc5  [shntool]  bd1978-11-11d2t02.wav
+3074b119bbe9c9fee14365a090c50fda  [shntool]  bd1978-11-11d2t03.wav
+ec288b66cb1566027b6e91df98441aa7  [shntool]  bd1978-11-11d2t04.wav
+ef79871858a34ec3a19eedbeb7ff6b25  [shntool]  bd1978-11-11d2t05.wav
+e650d59d65e57c6b6e6e7bada59dac95  [shntool]  bd1978-11-11d2t06.wav
+4d20d287aa50e715bedb4bed388a9c63  [shntool]  bd1978-11-11d2t07.wav
+cada3aa3bf6df2b57af54209aa7c35fb  [shntool]  bd1978-11-11d2t08.wav
+5d7acf324875c9f87de1b85e71aad584  [shntool]  bd1978-11-11d2t09.wav
+4f57349c23972c754d86731eaa0fc55a  [shntool]  bd1978-11-11d2t10.wav
+77723c09a8b2b505d2b2f9801de997b1  [shntool]  bd1978-11-11d2t11.wav
+dec3740287c23675d2d3247d1c048d49  [shntool]  bd1978-11-11d2t12.wav
+2d6a94f62eadb4a3acf4d8281903c06e  [shntool]  bd1978-11-11d2t13.wav
+49b58d3744773829ae5a2e3f3bbc3acc  [shntool]  bd1978-11-11d2t14.wav
+4ffab7d60c57d2fb85e68d482d28b0c4  [shntool]  bd1978-11-11d2t15.wav
+ef4cd2f38c6c9124cb5690e1262827e3  [shntool]  bd1978-11-11d2t16.wav
+7fac5c96a0cb271e3fcb93c1cfc3b912  [shntool]  bd1978-11-11d3t01.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-11 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:07.44       33090332 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t01.wav
+     2:22.17       25088828 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t02.wav
+     5:18.17       56135228 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t03.wav
+     3:52.26       40985996 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t04.wav
+     4:42.44       49848332 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t05.wav
+     7:33.40       80003324 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t06.wav
+     4:25.12       46774268 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t07.wav
+     5:12.32       55112108 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t08.wav
+     4:34.66       48488876 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t09.wav
+     4:53.29       51753452 B   ---   --   -----    wav  1.0000  bd1978-11-11d1t10.wav
+     4:30.30       47698604 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t01.wav
+     5:34.41       59014076 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t02.wav
+     3:16.23       34628540 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t03.wav
+     4:46.39       50542172 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t04.wav
+     5:31.46       58496636 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t05.wav
+     3:40.67       38965628 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t06.wav
+     4:41.58       49704860 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t07.wav
+     7:07.59       75461612 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t08.wav
+     4:34.65       48486524 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t09.wav
+     3:41.60       39125564 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t10.wav
+     4:29.57       47585708 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t11.wav
+     5:40.36       60060716 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t12.wav
+     3:53.51       41221196 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t13.wav
+     3:08.08       33182060 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t14.wav
+     7:36.38       80527820 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t15.wav
+     6:17.12       66531068 B   ---   --   -----    wav  1.0000  bd1978-11-11d2t16.wav
+     7:06.44       75249932 B   ---   --   -----    wav  1.0000  bd1978-11-11d3t01.wav
+   131:41.11     1393763460 B                            1.0000  (27 files)
+=================== 
+=================== 
+=================== 

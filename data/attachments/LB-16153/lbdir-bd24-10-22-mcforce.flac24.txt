@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd24-10-22-mcforce.flac24
+===================
+===================
+===================
+ef501daf4619e9471b4e74a7fe59eb24 *bd_2024-10-22_saarbruecken GER 24-96 FLAC.md5
+cbd00047b29630206d98b940ad5e58dc *bd_2024-10-22_saarbruecken GER 24-96 WAV.md5
+0a3d64eeb01ea1b5d53279042fd7f807 *bd_2024-10-22_saarbruecken_t01.flac
+11cc48fabedf6194335909c96f860b8d *bd_2024-10-22_saarbruecken_t02.flac
+233c41364a235250e19af83d36d140ef *bd_2024-10-22_saarbruecken_t03.flac
+b1502eea931cc2dd71ecd984b2ead0a0 *bd_2024-10-22_saarbruecken_t04.flac
+4c301ef81e1e53add87a88a6d83d0f21 *bd_2024-10-22_saarbruecken_t05.flac
+9b47975d6b2042c9bc648fa270299bab *bd_2024-10-22_saarbruecken_t06.flac
+5c11cf52f738962b37e368cb4f934c99 *bd_2024-10-22_saarbruecken_t07.flac
+0c95f68638a2942dd02633ef493ccdbe *bd_2024-10-22_saarbruecken_t08.flac
+ba4d35a676f34a8ed3c81a06fa3b2132 *bd_2024-10-22_saarbruecken_t09.flac
+8677dd63cb60d9267645301fb76b95ed *bd_2024-10-22_saarbruecken_t10.flac
+5ded1db8edb4a53c85b7f32a1738c86f *bd_2024-10-22_saarbruecken_t11.flac
+a14e57b052295c8b2744cc4a62c88629 *bd_2024-10-22_saarbruecken_t12.flac
+61028882536f0bb65d9fbbc950092ee1 *bd_2024-10-22_saarbruecken_t13.flac
+cb293b3dea073f31ca057173430c39d1 *bd_2024-10-22_saarbruecken_t14.flac
+825eff0de32b769126d488452c466be8 *bd_2024-10-22_saarbruecken_t15.flac
+f96a62ce2d5fa9b9c8990956753a0636 *bd_2024-10-22_saarbruecken_t16.flac
+ed7c9b051c9fdcd0930ee0b0e295e4eb *bd_2024-10-22_saarbruecken_t17.flac
+bc735f0b8eff9fb18449b6ab8f484c3d *bd_2024-10-22_sb 24-96.txt
+===================
+===================
+===================
+=== ffp for: bd24-10-22-mcforce.flac24
+===================
+===================
+===================
+bd_2024-10-22_saarbruecken_t01.flac:87be8971e763e9edd3b4553d76e1aa0a
+bd_2024-10-22_saarbruecken_t02.flac:9d7dddda5cd6644492a7a1d118b06515
+bd_2024-10-22_saarbruecken_t03.flac:4b8845ceba5e2073063daa4fc457e57b
+bd_2024-10-22_saarbruecken_t04.flac:43917dc715cda4f1a0d4c914fc16d77f
+bd_2024-10-22_saarbruecken_t05.flac:772248f43306218418ed40fe28cbb98a
+bd_2024-10-22_saarbruecken_t06.flac:de2410a06368df1f6fc2f6c7f3d2a48d
+bd_2024-10-22_saarbruecken_t07.flac:ceab9e9875339ac2c633449e835a8d70
+bd_2024-10-22_saarbruecken_t08.flac:05390eb3b22e57bf1b43697ff2964d1d
+bd_2024-10-22_saarbruecken_t09.flac:abcd4e07dab0804abb3bf8f1d887b62f
+bd_2024-10-22_saarbruecken_t10.flac:ec8379fa144569b5365f0ada3e7e617d
+bd_2024-10-22_saarbruecken_t11.flac:b1d11db4633a65482462eb76b8c008ec
+bd_2024-10-22_saarbruecken_t12.flac:6a297cf2cd56b4b4cb2a2147c626f572
+bd_2024-10-22_saarbruecken_t13.flac:173f50aea1734b246cb66da9d555a8ef
+bd_2024-10-22_saarbruecken_t14.flac:9c4afdad044107f8ef90c1d92dffd5b5
+bd_2024-10-22_saarbruecken_t15.flac:106b7a773d81181ea0040ee2c827faa5
+bd_2024-10-22_saarbruecken_t16.flac:6b375c9a288ba459116dea8336a0637b
+bd_2024-10-22_saarbruecken_t17.flac:0a0f0c161820a78054f8b5b85f504c3e
+===================
+===================
+===================
+=== shntool len for: bd24-10-22-mcforce.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.067     188390444 B   cxx   --   ---xx   flac  0.6080  bd_2024-10-22_saarbruecken_t01.flac
+     6:12.400     214502444 B   cxx   --   ---xx   flac  0.6308  bd_2024-10-22_saarbruecken_t02.flac
+     5:42.720     197406764 B   cxx   --   ---xx   flac  0.6031  bd_2024-10-22_saarbruecken_t03.flac
+     6:56.720     240030764 B   cxx   --   ---xx   flac  0.6199  bd_2024-10-22_saarbruecken_t04.flac
+     5:32.747     191662124 B   cxx   --   ---xx   flac  0.5973  bd_2024-10-22_saarbruecken_t05.flac
+     5:20.147     184404524 B   cxx   --   ---xx   flac  0.5898  bd_2024-10-22_saarbruecken_t06.flac
+     7:48.947     270113324 B   cxx   --   ---xx   flac  0.6007  bd_2024-10-22_saarbruecken_t07.flac
+     4:34.613     158177324 B   cxx   --   ---xx   flac  0.6144  bd_2024-10-22_saarbruecken_t08.flac
+     7:46.453     268677164 B   cxx   --   ---xx   flac  0.6075  bd_2024-10-22_saarbruecken_t09.flac
+     6:54.947     239009324 B   cxx   --   ---xx   flac  0.5959  bd_2024-10-22_saarbruecken_t10.flac
+    11:01.027     380751404 B   cxx   --   ---xx   flac  0.5913  bd_2024-10-22_saarbruecken_t11.flac
+     5:10.960     179113004 B   cxx   --   ---xx   flac  0.6288  bd_2024-10-22_saarbruecken_t12.flac
+     6:59.533     241651244 B   cxx   --   ---xx   flac  0.5838  bd_2024-10-22_saarbruecken_t13.flac
+     5:13.547     180602924 B   cxx   --   ---xx   flac  0.6443  bd_2024-10-22_saarbruecken_t14.flac
+     5:51.507     202467884 B   cxx   --   ---xx   flac  0.5778  bd_2024-10-22_saarbruecken_t15.flac
+     7:04.960     244777004 B   cxx   --   ---xx   flac  0.6202  bd_2024-10-22_saarbruecken_t16.flac
+     7:52.052     271902272 B   cxx   --   ---xx   flac  0.5832  bd_2024-10-22_saarbruecken_t17.flac
+   111:30.346    3853639936 B                            0.6043  (17 files)
+===================
+===================
+===================

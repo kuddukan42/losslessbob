@@ -1,0 +1,61 @@
+Bob Dylan
+University Of Wisconsin Oshkosh
+Kolf Arena
+Oshkosh, Wisconsin
+November 2, 2004
+
+Disc 1:
+01. introduction
+02. Absolutely Sweet Marie
+03. It's All Over Now, Baby Blue
+04. Lonesome Day Blues
+05. Positively 4th Street
+06. It's Alright, Ma (I'm Only Bleeding)
+07. Tweedle Dee & Tweedle Dum
+08. Girl Of The North Country
+09. Cold Irons Bound
+10. Ring Them Bells
+11. Highway 61 Revisited
+12. This Wheel's On Fire
+
+Disc 2:
+01. Honest With Me
+02. Masters Of War
+03. Summer Days
+(encore)
+04. Like A Rolling Stone
+05. band introduction
+06. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+center ga floor
+at853's > sp-spsb-1 > denecke ad-20 > sony tcd-d8
+sony tcd-d8 > m-audio mt1 > usb > hdd
+sony sound forge 9.0 > cd wave > flac
+
+ffp
+bd2004-11-02d1t01.flac:89235d831f892473e3dff473ea3f5a46
+bd2004-11-02d1t02.flac:a3db648273389fe778b3f679857d1336
+bd2004-11-02d1t03.flac:36c3eacc066f8f21b298bd545008f3e6
+bd2004-11-02d1t04.flac:357e6fa93cc45b898cf8efac646363aa
+bd2004-11-02d1t05.flac:a6326b22b6df73d20e688feec97bfd90
+bd2004-11-02d1t06.flac:3921be574052750f797dafdaf4065171
+bd2004-11-02d1t07.flac:d86c96371844a35fd87911370c68c7c8
+bd2004-11-02d1t08.flac:18a7ed2b9c774db3c1cd459f48b5f776
+bd2004-11-02d1t09.flac:5eb73d03a029bee859348d5cfe9a98eb
+bd2004-11-02d1t10.flac:dd0aef686a0507a45a8446767661e793
+bd2004-11-02d1t11.flac:bd05fb130bd645ca06b648e3e3997f64
+bd2004-11-02d1t12.flac:0ead0870997c141f51d13843a0e0c956
+bd2004-11-02d2t01.flac:ef99ea4dd12e117d6796d91654d6b32a
+bd2004-11-02d2t02.flac:4c86db9937f70f8fcdb59adb3353270a
+bd2004-11-02d2t03.flac:71a66d3f2467aab41e76e31b1a107c81
+bd2004-11-02d2t04.flac:9d69e79fbe1acc014931a4263daa4c61
+bd2004-11-02d2t05.flac:c74bfdb24c0d756824413d2bb20abffc
+bd2004-11-02d2t06.flac:bb191651a99b001001b37720b5d02bbd

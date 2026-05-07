@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-08-okmIIr.flac16 
+=================== 
+=================== 
+=================== 
+79ef26e1d0cbad0647a64eb1f5abd09f  bd00-05-08-okmIIr-LB-4825.txt
+c453c20f68c04c7a8e9fb9c088b141e0  dylan2000-05-08.okmIIr.d1t01.flac
+be834347232d7afff1413cdc13641efb  dylan2000-05-08.okmIIr.d1t02.flac
+c915fc4d699302f580612be7a470e90f  dylan2000-05-08.okmIIr.d1t03.flac
+3b0e2f1413efefb4823bf68bcbee6693  dylan2000-05-08.okmIIr.d1t04.flac
+20fa31712dfbfde7c4be4950709b4abc  dylan2000-05-08.okmIIr.d1t05.flac
+005530fcf8f6459e174b6d2b0ec930e8  dylan2000-05-08.okmIIr.d1t06.flac
+d8e9cd67523f21e5fb14b1310af5db3a  dylan2000-05-08.okmIIr.d1t07.flac
+dc674c29f89e38e1752916a543ff0617  dylan2000-05-08.okmIIr.d1t08.flac
+bbcf05601e971d4e0861155b2490d80a  dylan2000-05-08.okmIIr.d1t09.flac
+04e7c1c5ef8a40fc1b408ca8b0c00674  dylan2000-05-08.okmIIr.d1t10.flac
+78fa081c58945d55740ec78010437189  dylan2000-05-08.okmIIr.d1t11.flac
+8cbd1098cb02c9fe8d1c987216702d75  dylan2000-05-08.okmIIr.d1t12.flac
+bf8baab273bc8df6c5ab6e213e0acbd7  dylan2000-05-08.okmIIr.d1t13.flac
+7584aa6d3ea11d0bf7fea1dad3de8e15  dylan2000-05-08.okmIIr.d1t14.flac
+5a7162f39f3436192776fb1ca455512e  dylan2000-05-08.okmIIr.d2t01.flac
+4b3697d3e2015d168320e95e9be761fb  dylan2000-05-08.okmIIr.d2t02.flac
+6b8d3d91c6f6c51aa85d0e85404f1fe3  dylan2000-05-08.okmIIr.d2t03.flac
+fc6ba355b33795e2e0577f3dfbc83e95  dylan2000-05-08.okmIIr.d2t04.flac
+6de8a2a7996c055b401d66bd8455e8ed  dylan2000-05-08.okmIIr.d2t05.flac
+519375f1afa3187861a4cc8457f0f1ae  dylan2000-05-08.okmIIr.d2t06.flac
+950a0ed575f9858a97397e923d01f283  dylan2000-05-08.okmIIr.d2t07.flac
+8cc4969926d11a508eadc6dae1f238f0  dylan2000-05-08okmIIr.ffp
+23469363bd3fb2534f36641588cc71e7  dylan2000-05-08okmIIr.md5
+d42da8635a38451b090242574af4b171  dylan2000-05-08okmIIr.txt
+8a59b8646b3a4af4e0398612b899cf2d  lbdir-bd00-05-08-okmIIr.flac16.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-08-okmIIr.flac16 
+=================== 
+=================== 
+=================== 
+dylan2000-05-08.okmIIr.d1t01.flac:7d6f43eda7da967704ca50a3322277eb
+dylan2000-05-08.okmIIr.d1t02.flac:34e169b1f294294c1185f56350425b12
+dylan2000-05-08.okmIIr.d1t03.flac:624b5583099475d7daf2d0c088be00f3
+dylan2000-05-08.okmIIr.d1t04.flac:fca62b4c4dfb2778ca52f7ae3bc01dbb
+dylan2000-05-08.okmIIr.d1t05.flac:0296d8024a16bef56e97944073df62fc
+dylan2000-05-08.okmIIr.d1t06.flac:16e60eedeb09b9d83ea3ada702eed9a0
+dylan2000-05-08.okmIIr.d1t07.flac:8d5444c0c1a07df12b4d1a6f0ea7985c
+dylan2000-05-08.okmIIr.d1t08.flac:bc890668700e74858bafe39284f80d9a
+dylan2000-05-08.okmIIr.d1t09.flac:faa7c4795e0c2f3b4e49a2dee45b0be1
+dylan2000-05-08.okmIIr.d1t10.flac:26da64a0543de48d679db5e6e88e7998
+dylan2000-05-08.okmIIr.d1t11.flac:e6a99a440f20c823f1aaf54eee783fea
+dylan2000-05-08.okmIIr.d1t12.flac:7206f22a0db3ffd74d5ddb0d710d779a
+dylan2000-05-08.okmIIr.d1t13.flac:aeb8b5a29a02abad8c3dd9f887e3a710
+dylan2000-05-08.okmIIr.d1t14.flac:0d6032c506d93b161023a17f1a2d36af
+dylan2000-05-08.okmIIr.d2t01.flac:69ca0bc695d4cd8666d93faf78f402af
+dylan2000-05-08.okmIIr.d2t02.flac:8d559b4ed67913a0c5abce0d30226ab9
+dylan2000-05-08.okmIIr.d2t03.flac:89bf7e97cf8e74f9ac9e9587a6b3bd7c
+dylan2000-05-08.okmIIr.d2t04.flac:d02779aa274933a9e81b93adf938f0cb
+dylan2000-05-08.okmIIr.d2t05.flac:9dcd4671d6df7eb10b6ebf0bcc7ae029
+dylan2000-05-08.okmIIr.d2t06.flac:c6d03a3d67abe655e79f6db95bfe675f
+dylan2000-05-08.okmIIr.d2t07.flac:1e9ac30db37bd7084f90fc060e334fc5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-08-okmIIr.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.31       39410156 B   ---   --   3--xx   flac  0.6409  dylan2000-05-08.okmIIr.d1t01.flac
+     6:21.72       67377788 B   ---   --   3--xx   flac  0.5868  dylan2000-05-08.okmIIr.d1t02.flac
+     9:07.44       96594332 B   ---   --   3--xx   flac  0.6036  dylan2000-05-08.okmIIr.d1t03.flac
+     6:05.65       64538924 B   ---   --   3--xx   flac  0.4802  dylan2000-05-08.okmIIr.d1t04.flac
+     9:14.49       97840892 B   ---   --   3--xx   flac  0.6774  dylan2000-05-08.okmIIr.d1t05.flac
+     7:09.42       75774428 B   ---   --   3--xx   flac  0.4984  dylan2000-05-08.okmIIr.d1t06.flac
+     3:08.57       33297308 B   ---   --   3--xx   flac  0.5815  dylan2000-05-08.okmIIr.d1t07.flac
+     5:07.07       54171308 B   ---   --   3--xx   flac  0.4979  dylan2000-05-08.okmIIr.d1t08.flac
+     6:13.51       65917196 B   ---   --   3--xx   flac  0.5967  dylan2000-05-08.okmIIr.d1t09.flac
+     5:39.06       59813756 B   ---   --   3--xx   flac  0.5491  dylan2000-05-08.okmIIr.d1t10.flac
+     6:55.40       73300124 B   ---   --   3--xx   flac  0.4473  dylan2000-05-08.okmIIr.d1t11.flac
+     5:53.28       62335100 B   ---   --   3--xx   flac  0.6184  dylan2000-05-08.okmIIr.d1t12.flac
+     2:58.58       31535660 B   ---   --   3--xx   flac  0.5532  dylan2000-05-08.okmIIr.d1t13.flac
+     0:08.00        1411244 B   ---   --   3--xx   flac  0.4296  dylan2000-05-08.okmIIr.d1t14.flac
+     0:08.00        1411244 B   ---   --   3--xx   flac  0.4717  dylan2000-05-08.okmIIr.d2t01.flac
+     6:03.16       64070876 B   ---   --   3--xx   flac  0.5252  dylan2000-05-08.okmIIr.d2t02.flac
+     8:03.20       85248284 B   ---   --   3--xx   flac  0.6360  dylan2000-05-08.okmIIr.d2t03.flac
+     8:26.61       89401916 B   ---   --   3--xx   flac  0.4879  dylan2000-05-08.okmIIr.d2t04.flac
+     4:04.59       43180412 B   ---   --   3--xx   flac  0.6308  dylan2000-05-08.okmIIr.d2t05.flac
+     6:43.39       71180972 B   ---   --   3--xx   flac  0.5283  dylan2000-05-08.okmIIr.d2t06.flac
+     7:28.72       79196588 B   ---   --   3--xx   flac  0.6191  dylan2000-05-08.okmIIr.d2t07.flac
+   118:45.67     1257008508 B                            0.5665  (21 files)
+=================== 
+=================== 
+=================== 

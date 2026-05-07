@@ -1,0 +1,106 @@
+===================
+===================
+===================
+=== bd 15 Aug 2001..txt
+===================
+===================
+===================
+Bob Dylan and his great band 
+15 August 2001	 
+Oklahoma City, Oklahoma	   
+Zoo Amphitheater	   
+
+------------------	
+lineage:  trade cdrs > eac > flacs > upload
+comments: i guess its LosslessBob LB-578 since there's only one listed there.
+thanks to John L for the trade.  we almost went to this show, but being Aug in the midwestern usa, wife rightly feared that it would be too darn hot!  so we went for Wichita the following day at an inside venue with a/c.  
+to my recollection, a review in the local paper (or at boblinks) said that the heat in OKC wasn't all that bad.  Reviewer said a thunder storm blew up during the show and that the song Hard Rain seemed appropriate. 
+We did catch a Dylan show at the OKC zoo amphi in Aug 2010 - between the heat and the cigarette smoke it just about killed me!
+anyway, thanks to the artists, traders and sharers! enjoy!
+------------------------
+  
+1. 	Humming Bird (Johnnie Wright, Jim Anglin & Jack Anglin)	   
+2.	My Back Pages	   
+3.	It's Alright, Ma (I'm Only Bleeding)	   
+4.	Gotta Serve Somebody	   
+5.	You're A Big Girl Now	   
+6.	Maggie's Farm	   
+7.	Ballad Of Hollis Brown	   
+8.	A Hard Rain's A-Gonna Fall	   
+9.	Don't Think Twice, It's All Right	   
+10.	'Til I Fell In Love With You	   
+11.	I Want You	   
+12.	Watching The River Flow	   
+13.	The Wicked Messenger	   
+14.	Leopard-Skin Pill-Box Hat	   
+		   
+15.	Country Pie	   
+16.	Like A Rolling Stone	   
+17.	Knockin' On Heaven's Door	   
+18.	All Along The Watchtower	   
+19.	Blowin' In The Wind	
+ 
+Concert # 1340 of The Never-Ending Tour. Concert # 5 of the 2001 US Summer Tour. 2001 concert # 63. 
+Concert # 245 with the 12th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Charlie Sexton (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), David Kemper (drums & percussion).
+13, 79, 17, 19 acoustic with the band.
+2, 13 Bob Dylan (harmonica).
+1, 17, 19 Larry Campbell & Charlie Sexton (backup vocals).
+Notes
+LB-number for this concert: LB-0578.
+
+13 new songs (68%) compared to previous concert. 7 new songs for this tour.
+Stereo audience recording, 125 minutes. 
+-----------
+a review from boblinks
+Wichita 16 Aug
+
+Review by John Jameson
+
+... having attended the oklahoma city bob show wednesday night, and having a great time, since i live equidistant between okc and wichita, i figured what the heck, i'll go ahead and drive up to wichita and see bob again thursday night.
+
+it turned out to be a good decision because the show was radically different and just as enjoyable as wednesday's.  okc was at the zoo amphitheatre, which is an outdoor venue selling beer with lots of smoking. a fun place to see a show.  the crowd at okc seemed much younger than wichita, probably because the venue is known as a great place to go in the summer for entertainment. bob looked resplendant in okc in his black suit and string tie, with those great white and black boots.  i love the way he stands with his left leg forward and bent. lots of leg action with the music.  he wears his guitar up high and with the suit had a little bit of a buddy holly look about him.
+
+in wichita bob was wearing a what looked like a silver-grey silk suit and looked great.  by fashioning a little sign requesting a floor ticket i had been able to quickly score a 10th row center aisle ticket from a nice college couple from kansas univ, about three hours away. absolutely  a great seat, and with my little binocs could enjoy all of bob's facial expressions. they really are entertaining to watch.  when he first came on i went up the aisle to about 5 feet from bob and enjoyed his opening number. that was great until the kinda cranky security guy cleared the aisle. he kept it clear all the way to the encore. hey, this is rock and roll,  ease up a little.  the whole venue in wichita was a little of a shock compared to okc. it was in a strange little auditorium, about 5000 seats, full except for the top balcony. they kept bright lights on until the show began, and it kinda reminded me of a school assembly. (more like a sock-hop c4trd)
+
+bob started a little slow but warmed up and seemed to be enjoying himself.  i enjoyed "everything is broken", "visions of johanna" and "masters of war" especially. his great acoustic "DTT its alright" from the night before was not repeated and that showed me that each show does have its own charm and appeal. same with "maggie's farm" from weds. the "TOOM" songs were great tonight also. during "ls pillbox hat" band introductions, bob  introduced  the drummer as "the original wichita lineman".  the encore sounded particularly good, and "BITW" WAS a good closer tonight.  
+
+all in all, a nice show.  since i was thinking about a trip to vegas...  why not next weekend to see  bob's show at the hard rock hotel on friday the 24th?  i'll have to seriously consider it.  
+
+john jameson
+
+
+===================
+===================
+===================
+=== BD 2001-08-15 OKC.md5
+===================
+===================
+===================
+# MD5 checksums generated by MD5summer (http://www.md5summer.org)
+# Generated 3/9/2014 5:34:51 AM
+
+fe7eb60956e95ca068a16f8a685e01c8 *flac 1/01 Track01.flac
+e789e6cdb694a6a8bb0d6bd1ca56ec35 *flac 1/02 Track02.flac
+a705a27288d24767723bbe2fedea7765 *flac 1/03 Track03.flac
+c6a47b313af5c2ec41a094a6bc41ca90 *flac 1/04 Track04.flac
+0b36022d8d9686acd34241df665c9903 *flac 1/05 Track05.flac
+18ae51014f8ee5539109264d4fa0c59c *flac 1/06 Track06.flac
+6338d9e0b6704facd521188ebaa22ff6 *flac 1/07 Track07.flac
+1ad1fa4506d19d54487b8468d3bc06b8 *flac 1/08 Track08.flac
+4b52b01b2ff87efb7576162cb81a4d23 *flac 1/09 Track09.flac
+9deb0e51841557839545c07ac3d307f6 *flac 1/10 Track10.flac
+8b65b7d935f5ed9a2daebd8c7a0b46c2 *flac 1/11 Track11.flac
+fb2f4b8bfbe57c37769c7fc9722065a0 *flac 1/12 Track12.flac
+fc84b2cfe49aa2e0d17fc806b10770b0 *flac 1/13 Track13.flac
+54bb2f09c9cfa7233b7a1a65e87a8128 *flac 1/Unknown Artist - Unknown Title.log
+e5130264acf062e4f2edd47ae27a58b4 *flac 2/01 Track01.flac
+ae2112b929eea15cd103878007ad3a04 *flac 2/02 Track02.flac
+63e71fa079043ba56883a698ef9ad499 *flac 2/03 Track03.flac
+67bc7d6d3ae079a6bbb55ced9e60ca51 *flac 2/04 Track04.flac
+3e2174e90279a7199c71b9ef6c726ab5 *flac 2/05 Track05.flac
+e57b3c0e06d01c5c9736b41633ce5534 *flac 2/06 Track06.flac
+27dffca837e555b58aa020b84083d44c *flac 2/Unknown Artist - Unknown Title.log
+2801224c61ef68cebef097af4f8451cf *bd 15 Aug 2001..txt
+===================
+===================
+===================

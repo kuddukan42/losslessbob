@@ -1,0 +1,12 @@
+Bob Dylan, 1/21/74, Atlanta, Georgia, Omni, 2CDR
+
+LB-2666, (63min+60min), from lk aud set; Master / Low gen tape(s) > CD > EAC > CoolEdit2000 EQ-HR on some tracks > Flac, The full show is compiled from different incomplete tapes.; very similar to previous reported master except different spectral view with this one not having a lot above 16k and bands set not much above 11k however this one is slightly clearer and less harsh than previous making it better; seems to have all the same flaws; good sound [C+]
+
+d1t12 drop/cuts 1:4x, d2t5 4:07, d2t8 0:4x, discontinuity pops d2t1 0:08, d2t2 0:48, plus lots more continuing through cdr
+
+1. Most Likely You Go Your Way (And I'll Go Mine), 2. Lay Lady Lay, 3. Just Like Tom Thumb's Blues, 4. Leopard-Skin Pill-Box Hat, 5. It Ain't Me Babe, 6. Ballad Of A Thin Man, 7. Stage Fright (the Band), 8. The Night they Drove Old Dixie Down (the Band), 9. King Harvest (has surely come)(the Band), 10. When you Awake (the Band), 11. I shall be Released (the Band), 12. Up on Cripple Creek (the Band), 13. All Along The Watchtower, 14. Ballad Of Hollis Brown, 15. Knockin' On Heaven's Door, 
+
+< disk2 >, 16. The Times They Are A-Changin', (solo), 17. Don't Think Twice, It's All Right, (solo), 18. Gates Of Eden - (solo), 19. Just Like A Woman, (solo), 20. It's Alright Ma (I'm Only Bleeding), (solo), 21. Rag Mama Rag (the Band), 22. The Shape I'm in (the Band), 23. This Wheel's on Fire (the Band), 24. The Weight (the Band), 25. Forever Young, 26. Something There Is About You, 27. Like A Rolling Stone, 28. Most Likely You Go Your Way (And I'll Go Mine)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-25a.shnf 
+=================== 
+=================== 
+=================== 
+196f271d52a66c21d6d008501df014dd  bd81-10-25a-LB-3084.txt
+f04c81297309ba52a3b2626389df355e  bd81-10-25a.shnf.md5
+f23e88273d1f87c0c17423d435f3ad55  bd81-10-25a.shnf.txt
+4c4a14f0a894842e6249b85673ad610c  bd81-10-25a_d1tTrack01.shn
+aaca94b02653de9689f8b3555652a69d  bd81-10-25a_d1tTrack02.shn
+18b2079429a1bf7fcd89787bd1ed7d71  bd81-10-25a_d1tTrack03.shn
+aa79bc653cb6376dcd4e4b8a488fbea7  bd81-10-25a_d1tTrack04.shn
+5a64e3991436f60bc882f960f90f8654  bd81-10-25a_d1tTrack05.shn
+ebf9d5edf305c51c6988ad7fe7d733c9  bd81-10-25a_d1tTrack06.shn
+e7704b76044d4a841b1a645e1757d2a9  bd81-10-25a_d1tTrack07.shn
+2843d16d71a9fec8ee2f3edbf6162420  bd81-10-25a_d1tTrack08.shn
+dd63eae8aaa7478be0e265eab9b8ce57  bd81-10-25a_d1tTrack09.shn
+4e2cf6389c208c0d69a07bcf89cbb31a  bd81-10-25a_d1tTrack10.shn
+1cf19f8c8bb65179162f457af9e854dc  bd81-10-25a_d1tTrack11.shn
+68103cdfa233ce621334007603065cb4  bd81-10-25a_d1tTrack12.shn
+e3b55e31eee64492e5e31c20dce8a6af  bd81-10-25a_d1tTrack13.shn
+530d8de90e40b5e67792a05f108667c4  bd81-10-25a_d1tTrack14.shn
+8102fa71687bea353770b9d2e1cad9d6  bd81-10-25a_d1tTrack15.shn
+985d99606b8d1ab01e9b6716311c061d  bd81-10-25a_d2tTrack01.shn
+e1e213202af99dc0a6a1fd42e1e10d3a  bd81-10-25a_d2tTrack02.shn
+91d8114ab0fe05dfd8b9a55a7a860527  bd81-10-25a_d2tTrack03.shn
+c51bb90ace88609653a6ddb92ac2e4fc  bd81-10-25a_d2tTrack04.shn
+fe3e25c5410bbf3ee550accd7494b641  bd81-10-25a_d2tTrack05.shn
+68cff83044a0bbb4256a3944a66301ae  bd81-10-25a_d2tTrack06.shn
+17f5dbfc984798823f8d8106c9bd8ce1  bd81-10-25a_d2tTrack07.shn
+0bd61a52e9ed9c8b98af1de7de7c452e  bd81-10-25a_d2tTrack08.shn
+49204f7c2be953b119795fa64c483496  bd81-10-25a_d2tTrack09.shn
+7529731e37fc339495c7f30bd6289652  bd81-10-25a_d2tTrack10.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd81-10-25a.shnf 
+=================== 
+=================== 
+=================== 
+439331f160a48466f10feafdd0042918  [shntool]  bd81-10-25a_d1tTrack01.wav
+4c28876b70037636bfe460f3f0618df3  [shntool]  bd81-10-25a_d1tTrack02.wav
+dad40325a9c2e1138c7468d11c0056a9  [shntool]  bd81-10-25a_d1tTrack03.wav
+b3c92a88f0e7198f60fd6f86ee1d6bd2  [shntool]  bd81-10-25a_d1tTrack04.wav
+cf193b7920180df04999c148b3163113  [shntool]  bd81-10-25a_d1tTrack05.wav
+0f9e0d419ce65141cb0ce87e7ac9c838  [shntool]  bd81-10-25a_d1tTrack06.wav
+e2260709b1a95bbf06cef3d9e20d55e3  [shntool]  bd81-10-25a_d1tTrack07.wav
+2c03a7405c2d4148b21a51b10de35918  [shntool]  bd81-10-25a_d1tTrack08.wav
+0d8ff44e7829460849c3b07e0bb9e881  [shntool]  bd81-10-25a_d1tTrack09.wav
+2d7269e321a8f4626f615f943faf40a3  [shntool]  bd81-10-25a_d1tTrack10.wav
+a34ee632035ed4342153c17bf0214d9d  [shntool]  bd81-10-25a_d1tTrack11.wav
+70667142c49c5dd43b85e21296e8d8d9  [shntool]  bd81-10-25a_d1tTrack12.wav
+521b1ce80aed26765b2ca8f9ea31896d  [shntool]  bd81-10-25a_d1tTrack13.wav
+65594eeb572e0865271412f80cf58e25  [shntool]  bd81-10-25a_d1tTrack14.wav
+bea31fe6bae7e2eb617160bf0e374986  [shntool]  bd81-10-25a_d1tTrack15.wav
+3d935d47492bec646e6b8997a134f8f1  [shntool]  bd81-10-25a_d2tTrack01.wav
+877eba9a935ed0c157262d3b3baed8fe  [shntool]  bd81-10-25a_d2tTrack02.wav
+c0125e903fe5583cde17515a1e2a2086  [shntool]  bd81-10-25a_d2tTrack03.wav
+53594fe3e82d1628cd54d328462445ef  [shntool]  bd81-10-25a_d2tTrack04.wav
+e9ebd2fad19d51548526eef81fc00379  [shntool]  bd81-10-25a_d2tTrack05.wav
+ee293ca2d390e553abc996f9e4a0c87e  [shntool]  bd81-10-25a_d2tTrack06.wav
+d752af5f5dc35ca1b90b83c9ec1128b6  [shntool]  bd81-10-25a_d2tTrack07.wav
+67695243f2fa2c4cf7367ffd4adb638f  [shntool]  bd81-10-25a_d2tTrack08.wav
+7f2aee42a9aa75669043e1df0ca57145  [shntool]  bd81-10-25a_d2tTrack09.wav
+9b958a9c9b4964f7113942d72aa9f9c6  [shntool]  bd81-10-25a_d2tTrack10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-25a.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:25.70       36326684 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack01.wav
+     4:33.00       48157244 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack02.wav
+     6:43.36       71173916 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack03.wav
+     3:13.20       34092284 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack04.wav
+     5:32.47       58675388 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack05.wav
+     4:02.26       42749996 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack06.wav
+     4:14.52       44927948 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack07.wav
+     3:14.62       34367468 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack08.wav
+     4:35.06       48524156 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack09.wav
+     2:32.43       26913980 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack10.wav
+     2:43.42       28852028 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack11.wav
+     3:11.46       33800636 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack12.wav
+     5:40.62       60121868 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack13.wav
+     6:00.48       63616940 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack14.wav
+     4:51.48       51445340 B   ---   --   -----    wav  1.0000  bd81-10-25a_d1tTrack15.wav
+     3:30.04       37053452 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack01.wav
+     5:00.52       53042348 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack02.wav
+     5:03.37       53536268 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack03.wav
+     4:23.20       46440284 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack04.wav
+     4:27.23       47152940 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack05.wav
+     6:54.24       73086092 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack06.wav
+     4:57.65       52543724 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack07.wav
+     4:47.57       50760908 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack08.wav
+     0:40.12        7084268 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack09.wav
+     4:34.60       48474764 B   ---   --   -----    wav  1.0000  bd81-10-25a_d2tTrack10.wav
+   108:55.62     1152920924 B                            1.0000  (25 files)
+=================== 
+=================== 
+=================== 

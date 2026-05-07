@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-15_master 
+=================== 
+=================== 
+=================== 
+76addb4cb2711b47367a93dd480a1982  bd79-11-15.txt
+cee403571d28dbe99fd60617cdd4ef77  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 01.shn
+5eac85fd78ff9dea25daddb94ba6095d  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 02.shn
+0768063b308f465aa329e983e9ed3853  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 03.shn
+33ca4ed6caedb9ebeb7c7b43c63f7636  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 04.shn
+837ed6f43bc808ecc133869f2db4299a  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 05.shn
+7e4a364b1937c6de6cf74c4edddd15d5  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 06.shn
+b2ef282893bbb0cef27b99690f5b5364  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 07.shn
+03f8676a7d3df78d27d24ed788e80aab  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 08.shn
+6fd453c8272ee02fb0a3df34c39e5347  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 09.shn
+2b836190140cf1ca91c487245c7cea93  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 10.shn
+83ef3874baf38eafa1d445abf75240f3  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 11.shn
+30807626804315b31f1dd28ee2b8dd0b  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 12.shn
+5c296b33701cd40840dbc3239cdee458  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_Track 13.shn
+78fab6171cebbf4f30e40631609980b1  bd_79-11-15_cd1.shnf\bd_79-11-15_cd1_shn.md5
+fc3361d2a90ea34c6780c6f0b1b2214d  bd_79-11-15_cd2.shnf\bd_79-11-15_cd2_Track 1.shn
+6190b50dd1e7c409514311c2607b5688  bd_79-11-15_cd2.shnf\bd_79-11-15_cd2_Track 2.shn
+c67ef104e535bc7cee3b73bdeabe3061  bd_79-11-15_cd2.shnf\bd_79-11-15_cd2_Track 3.shn
+c6b5aff6efc121d8894d0af2aa476816  bd_79-11-15_cd2.shnf\bd_79-11-15_cd2_Track 4.shn
+991dcb9aaa5bbff252c5b2f9f86fb1a4  bd_79-11-15_cd2.shnf\bd_79-11-15_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd79-11-15_master\bd_79-11-15_cd1.shnf 
+=================== 
+=================== 
+=================== 
+fbba3e41512651343687cee8ab42ca3e  [shntool]  bd_79-11-15_cd1_Track_01.wav
+d293553e005078c16e3fe36aa0c622b0  [shntool]  bd_79-11-15_cd1_Track_02.wav
+5cf3ca12106971d204d368108823bc21  [shntool]  bd_79-11-15_cd1_Track_03.wav
+84f071f613f1c0b227d947aa43fc7d67  [shntool]  bd_79-11-15_cd1_Track_04.wav
+5b3b0ca82f3477f2fa378cdc7c9d4c51  [shntool]  bd_79-11-15_cd1_Track_05.wav
+af515c71613aff4776d71bd8d26c06fe  [shntool]  bd_79-11-15_cd1_Track_06.wav
+49cb85851ad07922e1d1ac61e2b9e7d7  [shntool]  bd_79-11-15_cd1_Track_07.wav
+8ad1438d29c8487ada7850f27ac60741  [shntool]  bd_79-11-15_cd1_Track_08.wav
+893b5845a2d3b13f8c2d6af22845f9c8  [shntool]  bd_79-11-15_cd1_Track_09.wav
+b8c9b77d0ab826a7fdd5c6cf74da1b01  [shntool]  bd_79-11-15_cd1_Track_10.wav
+54d9efa19dffa485e6909b25693fb83b  [shntool]  bd_79-11-15_cd1_Track_11.wav
+e9b205d20a4d5a6f9394c2d193090c7d  [shntool]  bd_79-11-15_cd1_Track_12.wav
+009dd0d430b57d1f6412ca4ad9ec5783  [shntool]  bd_79-11-15_cd1_Track_13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd79-11-15_master\bd_79-11-15_cd2.shnf 
+=================== 
+=================== 
+=================== 
+f52cb153dba21574de6071d2759a579b  [shntool]  bd_79-11-15_cd2_Track_1.wav
+48e7be302bdd74296cfce28f9830f5a2  [shntool]  bd_79-11-15_cd2_Track_2.wav
+f6456f080cb0801721f096b6b489dfd8  [shntool]  bd_79-11-15_cd2_Track_3.wav
+18f71ac38d21028b0f6daff681eaad38  [shntool]  bd_79-11-15_cd2_Track_4.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-15_master\bd_79-11-15_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:46.61       71761998 B   ---   -e   ---xx    shn  0.6864  bd_79-11-15_cd1_Track 01.shn
+     5:20.21       56497518 B   ---   -e   ---xx    shn  0.6331  bd_79-11-15_cd1_Track 02.shn
+     5:58.38       63240702 B   ---   -e   ---xx    shn  0.6717  bd_79-11-15_cd1_Track 03.shn
+     5:13.67       55370910 B   ---   -e   ---xx    shn  0.6418  bd_79-11-15_cd1_Track 04.shn
+     5:26.60       57647646 B   ---   -e   ---xx    shn  0.6750  bd_79-11-15_cd1_Track 05.shn
+     6:02.48       63969822 B   ---   -e   ---xx    shn  0.7070  bd_79-11-15_cd1_Track 06.shn
+     6:21.31       67281438 B   ---   -e   ---xx    shn  0.6975  bd_79-11-15_cd1_Track 07.shn
+     6:16.66       66481758 B   ---   -e   ---xx    shn  0.6606  bd_79-11-15_cd1_Track 08.shn
+     4:58.23       52621422 B   ---   -e   ---xx    shn  0.6788  bd_79-11-15_cd1_Track 09.shn
+     4:47.58       50763342 B   ---   -e   ---xx    shn  0.6857  bd_79-11-15_cd1_Track 10.shn
+     4:31.00       47804526 B   ---   -e   ---xx    shn  0.7475  bd_79-11-15_cd1_Track 11.shn
+     4:24.66       46724958 B   ---   -e   ---xx    shn  0.6272  bd_79-11-15_cd1_Track 12.shn
+     4:11.34       44356494 B   ---   -e   ---xx    shn  0.7181  bd_79-11-15_cd1_Track 13.shn
+    70:20.48      744522534 B                            0.6789  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-15_master\bd_79-11-15_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.44       56375214 B   ---   -e   ---xx    shn  0.6979  bd_79-11-15_cd2_Track 1.shn
+     7:50.46       83016318 B   ---   -e   ---xx    shn  0.6633  bd_79-11-15_cd2_Track 2.shn
+     4:26.49       47037774 B   ---   -e   ---xx    shn  0.7202  bd_79-11-15_cd2_Track 3.shn
+     6:45.66       71597358 B   ---   -e   ---xx    shn  0.6498  bd_79-11-15_cd2_Track 4.shn
+    24:22.55      258026664 B                            0.6775  (4 files)
+=================== 
+=================== 
+=================== 

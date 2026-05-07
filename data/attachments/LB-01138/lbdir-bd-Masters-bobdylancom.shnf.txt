@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-Masters-bobdylancom.shnf 
+=================== 
+=================== 
+=================== 
+a4a149ecfe7fc0854bdfb52874a30e08  bd-Masters-bobdylancom.txt
+2a5efdc8f7ce4fcf7ef3cc8a52ea2f73  Bob_Dylan_Masters.md5
+86da86de0e253c0cb629178524930fe4  Bob_Dylan_Masters_d1t01.shn
+cf8a806bcda6de4f028cb1babf1e38cf  Bob_Dylan_Masters_d1t02.shn
+deb5bda875a4b2ca3bd75d16f7fdec72  Bob_Dylan_Masters_d1t03.shn
+bf3a3091ee7bfe1fe5372c9b6db09913  Bob_Dylan_Masters_d1t04.shn
+afc55c0724a93b5122c0d71e5fee05fd  Bob_Dylan_Masters_d1t05.shn
+984643697d094973633de48d1ddc204c  Bob_Dylan_Masters_d1t06.shn
+ea26bf5d06d953bd89a84211cdab3d53  Bob_Dylan_Masters_d1t07.shn
+ee12d609ad16bfd8caff518540740fe0  Bob_Dylan_Masters_d1t08.shn
+cedfe30d3a9ed2e35c280be05b3bd2d6  Bob_Dylan_Masters_d1t09.shn
+981267a6156832a60c10cee7903e8fc3  Bob_Dylan_Masters_d1t10.shn
+c674513f0f0b52f1e154a5f4fd7e05a3  Bob_Dylan_Masters_d1t11.shn
+a39223063a0691c74127725027c667a1  Bob_Dylan_Masters_d1t12.shn
+af263b6c73d95c4137bf9743d1064d39  Bob_Dylan_Masters_d1t13.shn
+a831d5c03dfc3262f8fd325525465b42  BobDylan.Com~Masters_back.jpg
+faaf5547b0be95a821eb496fb15aa120  BobDylan.Com~Masters_front.jpg
+47e6521183420e508927294beb761b66  BobDylanMasters.com_info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Masters-bobdylancom.shnf 
+=================== 
+=================== 
+=================== 
+b145102ac820ec9304ec1283e3c71203  [shntool]  Bob_Dylan_Masters_d1t01.wav
+d8e7dc9b7a7ba994677c9c501b78ea79  [shntool]  Bob_Dylan_Masters_d1t02.wav
+ba3759189b63574243148387935036e8  [shntool]  Bob_Dylan_Masters_d1t03.wav
+e5946506216cffc14f3d8c3df19a5281  [shntool]  Bob_Dylan_Masters_d1t04.wav
+4c8ac46b58d34cc6c88581fec8001ffa  [shntool]  Bob_Dylan_Masters_d1t05.wav
+0cf9340298604fbf2d8253a654e51db5  [shntool]  Bob_Dylan_Masters_d1t06.wav
+355ca7a19bfd331a973fe1c662c318a4  [shntool]  Bob_Dylan_Masters_d1t07.wav
+f0d394cbcc7724292f5dcc98b8d01a42  [shntool]  Bob_Dylan_Masters_d1t08.wav
+e4c9643286a31b198cb0266e16c4bf20  [shntool]  Bob_Dylan_Masters_d1t09.wav
+e33013e095966bae65097e5b0f0c5ccb  [shntool]  Bob_Dylan_Masters_d1t10.wav
+327e845425ddd7a30ae654479d77a0a5  [shntool]  Bob_Dylan_Masters_d1t11.wav
+c655fd50b0e60eced7a21b41e433bbbb  [shntool]  Bob_Dylan_Masters_d1t12.wav
+a712cb53c82d5e0667c8685c42b8a420  [shntool]  Bob_Dylan_Masters_d1t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Masters-bobdylancom.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:38.57       38589308 B   ---   --   ---xx    shn  0.6404  Bob_Dylan_Masters_d1t01.shn
+     5:05.26       53863196 B   ---   --   ---xx    shn  0.5616  Bob_Dylan_Masters_d1t02.shn
+     4:52.62       51654668 B   ---   --   ---xx    shn  0.6162  Bob_Dylan_Masters_d1t03.shn
+     5:08.21       54380636 B   ---   --   ---xx    shn  0.5617  Bob_Dylan_Masters_d1t04.shn
+     6:06.74       64736492 B   ---   --   ---xx    shn  0.5255  Bob_Dylan_Masters_d1t05.shn
+     8:11.14       86645372 B   ---   --   ---xx    shn  0.5284  Bob_Dylan_Masters_d1t06.shn
+     6:03.66       64188476 B   ---   --   ---xx    shn  0.5653  Bob_Dylan_Masters_d1t07.shn
+     5:05.72       53971388 B   ---   --   ---xx    shn  0.5933  Bob_Dylan_Masters_d1t08.shn
+     4:11.15       44311724 B   ---   --   ---xx    shn  0.4898  Bob_Dylan_Masters_d1t09.shn
+     7:50.59       83046812 B   ---   --   ---xx    shn  0.5687  Bob_Dylan_Masters_d1t10.shn
+     5:24.56       57285356 B   ---   --   ---xx    shn  0.5604  Bob_Dylan_Masters_d1t11.shn
+     4:28.35       47357564 B   ---   --   ---xx    shn  0.6301  Bob_Dylan_Masters_d1t12.shn
+     6:26.51       68210396 B   ---   --   ---xx    shn  0.6257  Bob_Dylan_Masters_d1t13.shn
+    72:35.08      768241388 B                            0.5714  (13 files)
+=================== 
+=================== 
+=================== 

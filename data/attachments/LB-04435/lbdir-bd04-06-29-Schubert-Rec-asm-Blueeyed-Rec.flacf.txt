@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-29-Schubert-Rec-asm-Blueeyed-Rec.flacf 
+=================== 
+=================== 
+=================== 
+e11b5ab60f31f6630d77cfaf35d9295b  101 Intro.flac
+cec0b87cdf001a7c1bae0b52027f2d70  102 Rainy Day Women .flac
+183abde75a8bfa4fdacb1da5530ee764  103 The Times They Are A-Changin'.flac
+898f54865c1069b1bb85f6d88834f826  104 Lonesome Day lBlues.flac
+ccd74377ee4f73ae9e0d9fb80d94e944  105 Under The Red Sky.flac
+a9757a532d285d066dfd28c1ba51b724  106 It's Alright Ma.flac
+e26d56914909d6f48686c2a73501b97a  107 Love Minus Zero.flac
+983c67e7ecdc06d0f463a5367bcc8bc4  108 Tweedle Dee & Tweedle Dum.flac
+9de02aaed37806ec51d29d72931a56d2  109 This Wheel's On Fire.flac
+b57147e6141e20055f045a8b73fcfee1  110 Floater.flac
+1b0caa1291c89f64c73ed8b98430cfc9  2004-06-29 Bonn.txt
+7f3b06da582a06f50867daa74340be91  201 I Don't Believe You.flac
+9f1ec4895aaa6fa027228016d5efb62d  202 Masters Of War .flac
+ce26db2dc5ef4cae00f6671c777725d0  203 Honest With Me.flac
+fbdf08b8cb6d76f1164016358d9074fd  204 It Ain't Me. Babe.flac
+8c5d6d50171acf7ab29eeafc805e61b4  205 Summer Days.flac
+a1c16bfe16bfd770d96294a74692eed8  206 Aplause.flac
+edd3431f4092586534a3b07be7a44dad  207 Don't Think Twice.flac
+861f6ea4509f0f8d284df4da552222d6  208 Like A Rolling Stone.flac
+4087e9f6885485a49248482701e7691d  209 All Along The Watchtower.flac
+caa9f5a1bf9c0e267bf004b704d4961b  BD 2004-06-29 Bonn Schubert Rec. asm by Blueeyed Rec.md5
+db89dccb0b22c925a317c67a1fa00b1c  bd04-06-29-Schubert-Rec-asm-Blueeyed-Rec-LB-4435.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-29-Schubert-Rec-asm-Blueeyed-Rec.flacf 
+=================== 
+=================== 
+=================== 
+101 Intro.flac:ff5237aacc801f9accbf5cf718bda875
+102 Rainy Day Women .flac:c678eddc8bf09bb06114d8866ec97d77
+103 The Times They Are A-Changin'.flac:9418c00f8430182757ff9371a7966960
+104 Lonesome Day lBlues.flac:8a2d76a143203c0e7a1d540e3a74e065
+105 Under The Red Sky.flac:abef8b97f63afac47f16bae32e03feaa
+106 It's Alright Ma.flac:471829e1adf47078be06523b3f3a4a26
+107 Love Minus Zero.flac:b41da8ca390204a7dd70f351440ea9a8
+108 Tweedle Dee & Tweedle Dum.flac:cb50b9c58e3f97482e8a1cb772b55224
+109 This Wheel's On Fire.flac:a1c4c23bfe7b25843cc49bdb7a63bcd2
+110 Floater.flac:3d27e6ebc3bf592e8941c83ec59d20c3
+201 I Don't Believe You.flac:ea4d11f21e73cb01a7de29d671604c32
+202 Masters Of War .flac:307bab07ae422af77787be3234da5265
+203 Honest With Me.flac:8a3e0dcb8c7abd3e2e073589a10c5cbc
+204 It Ain't Me. Babe.flac:15f05144c36d0f27fbf13218567838a4
+205 Summer Days.flac:4698bbd918213fe4cd5057ddcc90502b
+206 Aplause.flac:fc9f51de1c1a139b2ef6a51d25ecbb4b
+207 Don't Think Twice.flac:18afb7e111cff021b4b0aad26d302e8f
+208 Like A Rolling Stone.flac:98ea722ea3368dafc9aa24b405a8bd97
+209 All Along The Watchtower.flac:ebbf40e13882e0e369476cd9e0380985
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-29-Schubert-Rec-asm-Blueeyed-Rec.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:30.46       15985248 B   -b-   --   ---xx   flac  0.5405  101 Intro.flac
+     3:38.34       38535212 B   ---   --   ---xx   flac  0.6033  102 Rainy Day Women .flac
+     6:38.69       70369532 B   ---   --   ---xx   flac  0.5865  103 The Times They Are A-Changin'.flac
+     6:32.10       69172364 B   ---   --   ---xx   flac  0.6137  104 Lonesome Day lBlues.flac
+     5:20.12       56476268 B   ---   --   ---xx   flac  0.5793  105 Under The Red Sky.flac
+     7:29.74       79377692 B   ---   --   ---xx   flac  0.5977  106 It's Alright Ma.flac
+     6:36.43       69955580 B   ---   --   ---xx   flac  0.5581  107 Love Minus Zero.flac
+     5:49.13       61594220 B   ---   --   ---xx   flac  0.5704  108 Tweedle Dee & Tweedle Dum.flac
+     6:51.52       72622748 B   ---   --   ---xx   flac  0.5889  109 This Wheel's On Fire.flac
+     6:38.35       70289564 B   ---   --   ---xx   flac  0.5332  110 Floater.flac
+     7:01.53       74389056 B   -b-   --   ---xx   flac  0.5807  201 I Don't Believe You.flac
+     5:21.20       56671484 B   ---   --   ---xx   flac  0.5632  202 Masters Of War .flac
+     7:22.60       78109964 B   ---   --   ---xx   flac  0.6132  203 Honest With Me.flac
+     5:58.08       63170060 B   ---   --   ---xx   flac  0.5603  204 It Ain't Me. Babe.flac
+     7:04.52       74915948 B   ---   --   ---xx   flac  0.5987  205 Summer Days.flac
+     3:06.06       32824556 B   ---   --   ---xx   flac  0.6000  206 Aplause.flac
+     6:15.25       66208844 B   ---   --   ---xx   flac  0.5389  207 Don't Think Twice.flac
+     7:49.59       82870412 B   ---   --   ---xx   flac  0.6057  208 Like A Rolling Stone.flac
+     7:04.62       74939468 B   ---   --   ---xx   flac  0.5901  209 All Along The Watchtower.flac
+   114:10.58     1208478220 B                            0.5819  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-07-10-ironchef.flacf 
+=================== 
+=================== 
+=================== 
+e5f3b027d08e2016d177a434bed42f37  Bob Dylan - July 10, 2009.txt
+0f1cefdabe7f4c09c7d074366ff92f02  BobDylan - July 10, 2009.ffp
+60f5cefd804a6faed5ffee15109c265f  BobDylan7-10-09d1t01.flac
+f72e7ec4ba9eceabf83f7686ae344076  BobDylan7-10-09d1t02.flac
+25b1fe044fc5ec413dcd7a7111daf147  BobDylan7-10-09d1t03.flac
+a8e3b8b2ae405d2922d5aafeb0c3e09c  BobDylan7-10-09d1t04.flac
+f1e7274a1090eecb61754eedd4702056  BobDylan7-10-09d1t05.flac
+1a478412f013191179db1b5d555bc566  BobDylan7-10-09d1t06.flac
+d0b5a9d460e3048f258bb7c4bd706ab4  BobDylan7-10-09d1t07.flac
+4e775ad6915c575e9ff8c9363425e26c  BobDylan7-10-09d1t08.flac
+f774edfcb07f6ca1d964d0ca03c4c2db  BobDylan7-10-09d2t01.flac
+dbfffffa5a73f596000dda7bdd83fce5  BobDylan7-10-09d2t02.flac
+6f8149669094b1a87fddcbae06268ae8  BobDylan7-10-09d2t03.flac
+29dc5f348d988ffb1c41ce583bec3021  BobDylan7-10-09d2t04.flac
+33b9a1a96093b3c4ad89fd24869b1c6a  BobDylan7-10-09d2t05.flac
+de4338a2c71911a10631ec553c2d52eb  BobDylan7-10-09d2t06.flac
+a2f1f8b9f129b2b0187d8932d271fe7a  BobDylan7-10-09d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-07-10-ironchef.flacf 
+=================== 
+=================== 
+=================== 
+BobDylan7-10-09d1t01.flac:8ff438aa950d3acc6de66fc3d1ee0481
+BobDylan7-10-09d1t02.flac:5f75ec060a7ffa0eef11252b049a148d
+BobDylan7-10-09d1t03.flac:a18073094119413e0a1462a9bd2bcc81
+BobDylan7-10-09d1t04.flac:54bbbc05de842d483a43c501e9d782d3
+BobDylan7-10-09d1t05.flac:ceed308da8a7ae37b916649277e5ca80
+BobDylan7-10-09d1t06.flac:fff0cdb6ce51c263adad7f260b492829
+BobDylan7-10-09d1t07.flac:98ea46ac120af6b2b4ecf8f3cfee9aa7
+BobDylan7-10-09d1t08.flac:4a2c588fb4981c928eee361b17ca85b3
+BobDylan7-10-09d2t01.flac:50330a137cfa181ddf854c4091c628b7
+BobDylan7-10-09d2t02.flac:b56a8f54d75358497610bc8550befcff
+BobDylan7-10-09d2t03.flac:182ae67a5c446846377d493bb6019a63
+BobDylan7-10-09d2t04.flac:2309c0d15e39b4b8f4bb0e0e44b84405
+BobDylan7-10-09d2t05.flac:42e3d05f2f71f2354de5d41dd677f2c1
+BobDylan7-10-09d2t06.flac:e1b77220243601e95ab64ce1665e2803
+BobDylan7-10-09d2t07.flac:cb69579ae59b117dc1e7679a02bf1209
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-07-10-ironchef.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.12       48891068 B   ---   --   ---xx   flac  0.4193  BobDylan7-10-09d1t01.flac
+     5:16.43       55843580 B   ---   --   ---xx   flac  0.4384  BobDylan7-10-09d1t02.flac
+     7:48.26       82616396 B   ---   --   ---xx   flac  0.4562  BobDylan7-10-09d1t03.flac
+     5:59.54       63454652 B   ---   --   ---xx   flac  0.4391  BobDylan7-10-09d1t04.flac
+     7:08.48       75612140 B   ---   --   ---xx   flac  0.4773  BobDylan7-10-09d1t05.flac
+     5:55.20       62669084 B   ---   --   ---xx   flac  0.3849  BobDylan7-10-09d1t06.flac
+     6:54.24       73086092 B   ---   --   ---xx   flac  0.5034  BobDylan7-10-09d1t07.flac
+     5:00.71       53087788 B   -b-   --   ---xx   flac  0.4548  BobDylan7-10-09d1t08.flac
+     7:40.26       81205196 B   ---   --   ---xx   flac  0.5101  BobDylan7-10-09d2t01.flac
+     6:16.24       66382892 B   ---   --   ---xx   flac  0.4803  BobDylan7-10-09d2t02.flac
+     7:29.13       79234220 B   ---   --   ---xx   flac  0.4940  BobDylan7-10-09d2t03.flac
+     6:29.64       68770172 B   ---   --   ---xx   flac  0.5122  BobDylan7-10-09d2t04.flac
+     3:59.47       42270188 B   ---   --   ---xx   flac  0.3769  BobDylan7-10-09d2t05.flac
+     5:07.56       54286556 B   ---   --   ---xx   flac  0.4860  BobDylan7-10-09d2t06.flac
+     5:13.54       55340324 B   -b-   --   ---xx   flac  0.5054  BobDylan7-10-09d2t07.flac
+    90:57.57      962750348 B                            0.4670  (15 files)
+=================== 
+=================== 
+=================== 

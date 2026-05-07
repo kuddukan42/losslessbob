@@ -1,0 +1,56 @@
+Bob Dylan
+Gorge Amphitheatre
+George, Washington
+August 10, 2024
+
+01. Rainy Day Women #12 & 35 
+02. Shooting Star
+03. Love Sick 
+04. Little Queenie 
+05. Mr. Blue
+06. Early Roman Kings
+07. A Hard Rain's A-Gonna Fall 
+08. Under The Red Sky 
+09. Things Have Changed
+10. Stella Blue 
+11. Six Days On The Road 
+12. Can't Wait 
+13. I'll Be Your Baby Tonight
+14. Simple Twist Of Fate
+15. Soon After Midnight
+16. Ballad Of A Thin Man
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Doug Lancio - guitar
+Bob Britt - guitar
+Jim Keltner - drums
+Tony Garnier - bass
+Lukas Nelson - guitar (tracks 06, 13, 14, 15, 16)
+
+Comment
+OUTLAW MUSIC FESTIVAL 2024 TOUR
+Brittney Spencer, Billy Strings, John Mellencamp, Bob Dylan, Willie Nelson & Family
+
+Recorded by: soomlos
+schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3 (24-bit / 48000 Hz)
+sound devices mixpre-3 > usb > pc > poly wav (24-bit / 48000 Hz)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24-bit / 48000 Hz)
+
+ffp
+bd2024-08-10-soomlos-t01.flac:74a6c4a3b6b78dc9d287d80eecaa881a
+bd2024-08-10-soomlos-t02.flac:6347a51823ef9d22bb8454248fb036f0
+bd2024-08-10-soomlos-t03.flac:48837d09be59190d565e06b498ce75f9
+bd2024-08-10-soomlos-t04.flac:4f576a0df3164577e4367009f3b220df
+bd2024-08-10-soomlos-t05.flac:a0cbe73d458f383888af54a409efa63f
+bd2024-08-10-soomlos-t06.flac:4f951de209cf0439197e4852f46a12c7
+bd2024-08-10-soomlos-t07.flac:fe82f20fb3426f8136ea36d0e2518eaf
+bd2024-08-10-soomlos-t08.flac:a44a2782cbc2137c5270e489deb5e53b
+bd2024-08-10-soomlos-t09.flac:3adfa28c0690d893e91d6a1e66749983
+bd2024-08-10-soomlos-t10.flac:a052252f816f2e9865f8d74053c2bec8
+bd2024-08-10-soomlos-t11.flac:dc6234cef28328a79056f616f57dae3a
+bd2024-08-10-soomlos-t12.flac:2e6e568e49bc28602ff688f64742099a
+bd2024-08-10-soomlos-t13.flac:5ba4be1ee0e440a6a1b5e5dd9c7533a1
+bd2024-08-10-soomlos-t14.flac:923cf2d51ec2f23515c00cb2c35971fb
+bd2024-08-10-soomlos-t15.flac:61d0f8fc5a3c4f8e31c9e895818b0bd2
+bd2024-08-10-soomlos-t16.flac:25ef5959a0fc70254425d03eebd46aa7

@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-08-19-rm.flacf 
+=================== 
+=================== 
+=================== 
+cd2497e156efda43584301c727317b26  bd1991-08-19-rm-d1t01.flac
+a2bf457c15d17e5bffe63f1db4ff1912  bd1991-08-19-rm-d1t02.flac
+19b37e2b08f3b277f36b723fad41a2db  bd1991-08-19-rm-d1t03.flac
+05086f21c1d966d8d64c94fd61221fcb  bd1991-08-19-rm-d1t04.flac
+916ea1fa325143c1eccb509dbf5358bd  bd1991-08-19-rm-d1t05.flac
+6560f0ef091b1079e9cba439498a7f64  bd1991-08-19-rm-d1t06.flac
+8ceadc9674a3cc43575f6181456e0a3e  bd1991-08-19-rm-d1t07.flac
+40345cffc841bc7993972c4b106f588e  bd1991-08-19-rm-d1t08.flac
+7ef2b3352013356d858561fa00d4fb5d  bd1991-08-19-rm-d1t09.flac
+f378944a030d0109a156b48e7eaa2431  bd1991-08-19-rm-d1t10.flac
+e4baae4df512a158064f807b2b9a9dc8  bd1991-08-19-rm-d1t11.flac
+5c40b4dd4e34a5942c0eb17b70a50232  bd1991-08-19-rm-d1t12.flac
+70afaf3746cbd7b79fcd85841d3bbba4  bd1991-08-19-rm-d2t01.flac
+5dd785bb4c55c6e0bcf24c26ffaf7dcc  bd1991-08-19-rm-d2t02.flac
+a62403922d59a5715388de30b5d51991  bd1991-08-19-rm-d2t03.flac
+f69f0510b314001e1b8a9cd19670c9af  bd1991-08-19-rm-d2t04.flac
+250b5bebffb30f1687b54d656a9585c1  bd1991-08-19-rm-d2t05.flac
+1d14e58a59a8ce14900b51b1bf7f8d4a  bd1991-08-19-rm-d2t06.flac
+a781f64eb994e17362b85f958fc014f9  bd1991-08-19-rm-info.txt
+0e26b7fed002e39eca983320fc56d470  bd1991-08-19.rm.sbeok.flac16.ffp
+8f5984b2d96617c5e8cdce5ad722a234  bd1991-08-19.rm.sbeok.flac16.md5
+10883e163ad470c41159b4ba9bfc3328  bd91-08-19-rm-LB-3731.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-08-19-rm.flacf 
+=================== 
+=================== 
+=================== 
+bd1991-08-19-rm-d1t01.flac:19c8d93a769a1ae92e61999a30bcba06
+bd1991-08-19-rm-d1t02.flac:7083122a467765624994b6b862207034
+bd1991-08-19-rm-d1t03.flac:0f33ad70db1f8ff39162a84bba5df4ea
+bd1991-08-19-rm-d1t04.flac:2fd1a1507490d05b754bd73fad1c372a
+bd1991-08-19-rm-d1t05.flac:3e864ea1f8019556613d0a8bd6090d23
+bd1991-08-19-rm-d1t06.flac:42caaef97a0f682184906ea0a8c4eec5
+bd1991-08-19-rm-d1t07.flac:539cf8b90dce0c9f879fbe309a2a47cc
+bd1991-08-19-rm-d1t08.flac:b45f92c61a68d7a7aa2e3910d4a8fb8c
+bd1991-08-19-rm-d1t09.flac:68f9fc79665c17a240ee5637446e145b
+bd1991-08-19-rm-d1t10.flac:4c7d4adcf35b47a74bc13dfd699352fc
+bd1991-08-19-rm-d1t11.flac:cb3880c0cbeacc7dac79cc7a2fdb6ff6
+bd1991-08-19-rm-d1t12.flac:cf1bf94a9bd4ffcb239887517c80bd48
+bd1991-08-19-rm-d2t01.flac:b536652272bf36e159d537ea9446ffb8
+bd1991-08-19-rm-d2t02.flac:c78bdafdb6d629bce710efac47de0b11
+bd1991-08-19-rm-d2t03.flac:ba6426a157d02cd8e259ebda737b2615
+bd1991-08-19-rm-d2t04.flac:f2d4859b9cfa58db1e4e010832987bb4
+bd1991-08-19-rm-d2t05.flac:e807162432c6d40770ffef8a5ea2eb16
+bd1991-08-19-rm-d2t06.flac:0e6d43b35343352c165390a8268ed810
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-08-19-rm.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.48       59559740 B   ---   --   ---xx   flac  0.5734  bd1991-08-19-rm-d1t01.flac
+     4:44.46       50205836 B   ---   --   ---xx   flac  0.5904  bd1991-08-19-rm-d1t02.flac
+     3:44.47       39624188 B   ---   --   ---xx   flac  0.5990  bd1991-08-19-rm-d1t03.flac
+     4:35.64       48660572 B   ---   --   ---xx   flac  0.5839  bd1991-08-19-rm-d1t04.flac
+     6:07.35       64821164 B   ---   --   ---xx   flac  0.5792  bd1991-08-19-rm-d1t05.flac
+     3:00.40       31846124 B   ---   --   ---xx   flac  0.6072  bd1991-08-19-rm-d1t06.flac
+     4:05.11       43243916 B   ---   --   ---xx   flac  0.6047  bd1991-08-19-rm-d1t07.flac
+     4:07.67       43728428 B   ---   --   ---xx   flac  0.6111  bd1991-08-19-rm-d1t08.flac
+     6:29.05       68631404 B   ---   --   ---xx   flac  0.5902  bd1991-08-19-rm-d1t09.flac
+     3:09.64       33490172 B   ---   --   ---xx   flac  0.5864  bd1991-08-19-rm-d1t10.flac
+     5:55.73       62793740 B   ---   --   ---xx   flac  0.6085  bd1991-08-19-rm-d1t11.flac
+     4:59.16       52781276 B   ---   --   ---xx   flac  0.5950  bd1991-08-19-rm-d1t12.flac
+     4:15.54       45109052 B   ---   --   ---xx   flac  0.6084  bd1991-08-19-rm-d2t01.flac
+     3:49.27       40459148 B   ---   --   ---xx   flac  0.6357  bd1991-08-19-rm-d2t02.flac
+     4:41.19       49613132 B   ---   --   ---xx   flac  0.5985  bd1991-08-19-rm-d2t03.flac
+     7:20.08       77634860 B   ---   --   ---xx   flac  0.6039  bd1991-08-19-rm-d2t04.flac
+     4:07.71       43737836 B   ---   --   ---xx   flac  0.5449  bd1991-08-19-rm-d2t05.flac
+     6:01.06       63694556 B   ---   --   ---xx   flac  0.5846  bd1991-08-19-rm-d2t06.flac
+    86:53.26      919635144 B                            0.5940  (18 files)
+=================== 
+=================== 
+=================== 

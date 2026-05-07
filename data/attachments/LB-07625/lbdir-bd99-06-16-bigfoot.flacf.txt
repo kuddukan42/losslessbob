@@ -1,0 +1,133 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-16-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+0d9c1942dfab90e5be1f18612fa9ea82  DylanSimon1999-06-16.ffp
+f65cb043d43c5a7c6664a5ce0c9b3268  DylanSimon1999-06-16.txt
+9b6330b26140fd176c569fb25ddbe57b  DylanSimon1999-06-16d1tr01.flac
+b2b53c83b89198289a167152f4a82a06  DylanSimon1999-06-16d1tr02.flac
+ce996c139820e23fb0310b2ff0d16a9c  DylanSimon1999-06-16d1tr03.flac
+9fe0f33792c7621219cae8a388cfc26e  DylanSimon1999-06-16d1tr04.flac
+254d8f47788c755d4df64d63ec16663c  DylanSimon1999-06-16d1tr05.flac
+9b47fd8562fa188538e23d0e5f08e5b1  DylanSimon1999-06-16d1tr06.flac
+8b47e18df2aaf8125e6837a3e62d0e6c  DylanSimon1999-06-16d1tr07.flac
+64adac4e8ed38e0446fe25d864eb63fa  DylanSimon1999-06-16d1tr08.flac
+f282dddaaed217a36c90a4b20db2faa7  DylanSimon1999-06-16d1tr09.flac
+ff58f2401b77a34c3a807671de324a5c  DylanSimon1999-06-16d1tr10.flac
+230e2312d0c9156e8f517b009edd9cbf  DylanSimon1999-06-16d1tr11.flac
+2a840410d6d39afa6e97946c686a2177  DylanSimon1999-06-16d1tr12.flac
+3d5c96fc2f24cd75eb53583e81022ebd  DylanSimon1999-06-16d1tr13.flac
+85624e44e8427caaaebca6db85cb6013  DylanSimon1999-06-16d1tr14.flac
+89600f0d5ff9e8f3fa53a5122abb37eb  DylanSimon1999-06-16d2tr01.flac
+e3ad4233e47e64f7986053d278cb4838  DylanSimon1999-06-16d2tr02.flac
+39a4d52eb4a53d158db5373475afa8d4  DylanSimon1999-06-16d2tr03.flac
+42d9b91df026aa393a527876bb45a57c  DylanSimon1999-06-16d2tr04.flac
+26492c64e7b72f74aacf10c5c02339e0  DylanSimon1999-06-16d2tr05.flac
+9cbd283cad8db1b7f82a9b2b16f4be95  DylanSimon1999-06-16d2tr06.flac
+c6bc8b5c657d76e8bd4e026ed8cdde32  DylanSimon1999-06-16d2tr07.flac
+43bec268dd9c317a444c00a4aebc49ae  DylanSimon1999-06-16d2tr08.flac
+20880f00c2e958ca52f219b218bf0d11  DylanSimon1999-06-16d2tr09.flac
+0fae02c28bc1e0ec327065c0d62a76ba  DylanSimon1999-06-16d2tr10.flac
+a77045d2cae933319e93e18338d3a3c9  DylanSimon1999-06-16d2tr11.flac
+c10318ab18560f51231ee8a08a4cb089  DylanSimon1999-06-16d2tr12.flac
+af0d6e3ab9710c0f2dae17c1662db7f7  DylanSimon1999-06-16d2tr13.flac
+49cfe954970ec463c435f2d607c7323c  DylanSimon1999-06-16d3tr01.flac
+a4043103b7bbfa2d4baf490c82dd2349  DylanSimon1999-06-16d3tr02.flac
+e5ad5661682b2ecb4d4ae3a7d943a70e  DylanSimon1999-06-16d3tr03.flac
+ee3ffce27f9b1c5121f86f777a7362e7  DylanSimon1999-06-16d3tr04.flac
+9bfaff49ebe2aaaa781fe651bd71517e  DylanSimon1999-06-16d3tr05.flac
+66cefeb1729adbae7b615248c5bbc5ee  DylanSimon1999-06-16d3tr06.flac
+60e1e4a6f8acefcd21769fba4469397f  DylanSimon1999-06-16d3tr07.flac
+ee56f001a8b419cbaa4fdd50cf83fd97  DylanSimon1999-06-16d3tr08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-16-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+DylanSimon1999-06-16d1tr01.flac:6de5eab0334d901270f54fc8fd55ad19
+DylanSimon1999-06-16d1tr02.flac:cfc81952e450952384bfd507ec6e3ae6
+DylanSimon1999-06-16d1tr03.flac:a874d61259574f7c91417192ba18b048
+DylanSimon1999-06-16d1tr04.flac:0de63ab19d372fb12fcd599f44aa2366
+DylanSimon1999-06-16d1tr05.flac:1439b67c7ae45f6091e4755a9f79ed74
+DylanSimon1999-06-16d1tr06.flac:5232031c6d423a7b96ce0e0f453516eb
+DylanSimon1999-06-16d1tr07.flac:67bbcdcf4e5a20feb8aff9823b28da37
+DylanSimon1999-06-16d1tr08.flac:0058f52d0001d67e5fa0e33986237f2b
+DylanSimon1999-06-16d1tr09.flac:005a2ee2a34c23bdd7932756f23b75e8
+DylanSimon1999-06-16d1tr10.flac:9c8347778db188ca7e8c6b5c0b67c5c3
+DylanSimon1999-06-16d1tr11.flac:94795d5ebf6c6779ce4e4a20ca82e7d3
+DylanSimon1999-06-16d1tr12.flac:db6bfc2f68cc7fb6a84eee88e6811956
+DylanSimon1999-06-16d1tr13.flac:3bf82ecaab047e9a73dc2b02612ade69
+DylanSimon1999-06-16d1tr14.flac:fdfd88d71e436711465c68cc46ad9ef8
+DylanSimon1999-06-16d2tr01.flac:fad4e908d5bdf9a9612b1f82995df40f
+DylanSimon1999-06-16d2tr02.flac:d7cb9a0f76873f2ae267b37f7251eba4
+DylanSimon1999-06-16d2tr03.flac:de2d0f0fa503371197f1b3f7db4d95e7
+DylanSimon1999-06-16d2tr04.flac:bc68ef71b6ebd9030943e657d24caeeb
+DylanSimon1999-06-16d2tr05.flac:c482f6508e5ade3ae07ba01e0a551d57
+DylanSimon1999-06-16d2tr06.flac:4b3a6d0fb0feffc3acdcdbbbb71f5c24
+DylanSimon1999-06-16d2tr07.flac:4bda1086a93db85b6b15443feafb7e20
+DylanSimon1999-06-16d2tr08.flac:0652b445a0cc486705e1f1613347e97c
+DylanSimon1999-06-16d2tr09.flac:33da8214dbd7e831c58a003da95a7ba4
+DylanSimon1999-06-16d2tr10.flac:04637bc78ac9afeca3f01e875b0d30e2
+DylanSimon1999-06-16d2tr11.flac:341d0f53793ea213c65dad76a37e8c25
+DylanSimon1999-06-16d2tr12.flac:ba455d60c8804e93820480fb1c03fc34
+DylanSimon1999-06-16d2tr13.flac:6c2b6c2887c84ca0a018b8c98a247fc4
+DylanSimon1999-06-16d3tr01.flac:0f09056fc3967c47f77210820525de4e
+DylanSimon1999-06-16d3tr02.flac:8f8923149b61504f05864f647babcf6b
+DylanSimon1999-06-16d3tr03.flac:74855c5bb473567a87e51c61a110c773
+DylanSimon1999-06-16d3tr04.flac:967d4f42a29f8b8627b32a50d255a271
+DylanSimon1999-06-16d3tr05.flac:5d8832cf177c1358de39105aae522336
+DylanSimon1999-06-16d3tr06.flac:ef9142d8c9e5412e256363ce781cc4f6
+DylanSimon1999-06-16d3tr07.flac:779c390c601f0b6e1c1eef3da659e440
+DylanSimon1999-06-16d3tr08.flac:ccbf5598f7685440bf03e22a23778d6e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-16-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.06       50464556 B   ---   --   ---xx   flac  0.4856  DylanSimon1999-06-16d1tr01.flac
+     3:15.39       34489772 B   ---   --   ---xx   flac  0.5490  DylanSimon1999-06-16d1tr02.flac
+     5:08.19       54375932 B   ---   --   ---xx   flac  0.6545  DylanSimon1999-06-16d1tr03.flac
+     1:44.72       18514988 B   ---   --   ---xx   flac  0.5925  DylanSimon1999-06-16d1tr04.flac
+     6:42.40       71006924 B   ---   --   ---xx   flac  0.5238  DylanSimon1999-06-16d1tr05.flac
+     5:40.08       59994860 B   ---   --   ---xx   flac  0.5229  DylanSimon1999-06-16d1tr06.flac
+     4:14.61       44949116 B   ---   --   ---xx   flac  0.6078  DylanSimon1999-06-16d1tr07.flac
+     3:20.20       35327084 B   ---   --   ---xx   flac  0.6436  DylanSimon1999-06-16d1tr08.flac
+     5:51.59       62055212 B   ---   --   ---xx   flac  0.4874  DylanSimon1999-06-16d1tr09.flac
+     5:36.18       59312780 B   ---   --   ---xx   flac  0.6045  DylanSimon1999-06-16d1tr10.flac
+     6:27.07       68283308 B   ---   --   ---xx   flac  0.5750  DylanSimon1999-06-16d1tr11.flac
+     5:00.14       52952972 B   ---   --   ---xx   flac  0.4920  DylanSimon1999-06-16d1tr12.flac
+     6:46.12       71646668 B   ---   --   ---xx   flac  0.6041  DylanSimon1999-06-16d1tr13.flac
+     6:03.58       64169660 B   ---   --   ---xx   flac  0.6466  DylanSimon1999-06-16d1tr14.flac
+     4:57.20       52437884 B   ---   --   ---xx   flac  0.5891  DylanSimon1999-06-16d2tr01.flac
+     4:13.47       44739788 B   ---   --   ---xx   flac  0.5234  DylanSimon1999-06-16d2tr02.flac
+     0:35.33        6251660 B   ---   --   ---xx   flac  0.5120  DylanSimon1999-06-16d2tr03.flac
+     6:47.44       71898332 B   ---   --   ---xx   flac  0.5018  DylanSimon1999-06-16d2tr04.flac
+     1:54.35       20191964 B   ---   --   ---xx   flac  0.5833  DylanSimon1999-06-16d2tr05.flac
+     1:42.11       18018716 B   ---   --   ---xx   flac  0.6113  DylanSimon1999-06-16d2tr06.flac
+     4:56.27       52277948 B   ---   --   ---xx   flac  0.5973  DylanSimon1999-06-16d2tr07.flac
+     4:38.60       49180364 B   ---   --   ---xx   flac  0.5759  DylanSimon1999-06-16d2tr08.flac
+     7:10.40       75946124 B   ---   --   ---xx   flac  0.5711  DylanSimon1999-06-16d2tr09.flac
+     6:59.52       74033948 B   ---   --   ---xx   flac  0.5857  DylanSimon1999-06-16d2tr10.flac
+     5:07.66       54310076 B   ---   --   ---xx   flac  0.5773  DylanSimon1999-06-16d2tr11.flac
+     7:57.14       84175772 B   ---   --   ---xx   flac  0.6282  DylanSimon1999-06-16d2tr12.flac
+     4:40.58       49528460 B   ---   --   ---xx   flac  0.6357  DylanSimon1999-06-16d2tr13.flac
+     7:39.53       81092300 B   ---   --   ---xx   flac  0.5728  DylanSimon1999-06-16d3tr01.flac
+     7:06.36       75231116 B   ---   --   ---xx   flac  0.6411  DylanSimon1999-06-16d3tr02.flac
+     6:35.48       69790940 B   ---   --   ---xx   flac  0.4818  DylanSimon1999-06-16d3tr03.flac
+     7:52.54       83387852 B   ---   --   ---xx   flac  0.6194  DylanSimon1999-06-16d3tr04.flac
+     5:50.15       61775324 B   ---   --   ---xx   flac  0.5681  DylanSimon1999-06-16d3tr05.flac
+     8:41.10       91927964 B   ---   --   ---xx   flac  0.6213  DylanSimon1999-06-16d3tr06.flac
+     9:49.63      104047820 B   ---   --   ---xx   flac  0.4946  DylanSimon1999-06-16d3tr07.flac
+    19:04.64      201952172 B   ---   --   ---xx   flac  0.4345  DylanSimon1999-06-16d3tr08.flac
+   205:00.08     2169740356 B                            0.5598  (35 files)
+=================== 
+=================== 
+=================== 

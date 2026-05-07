@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-13-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+ac46d85b478cb575c762a10ba76a0a96  BD1999-11-13.txt
+889da2f0d03cef7a323db26b9bfa1780  bd99-11-13-schoeps-LB-4260.txt
+8684db495fdd4568d13ddd82f82ee588  Meadowlands 1999-11-13 I\BD1999-11-13d1t01.flac
+30097871962cd71611952841ed5351a0  Meadowlands 1999-11-13 I\BD1999-11-13d1t02.flac
+4fe50cac98c2fc0fad35e3d982e38f9c  Meadowlands 1999-11-13 I\BD1999-11-13d1t03.flac
+b259de7d9a9155df023d390a00be5d47  Meadowlands 1999-11-13 I\BD1999-11-13d1t04.flac
+5cda2392809f52fd23e2e54af8833912  Meadowlands 1999-11-13 I\BD1999-11-13d1t05.flac
+11124364d5c901e78a0e01bbcf458d2b  Meadowlands 1999-11-13 I\BD1999-11-13d1t06.flac
+f4c861cdad2715f4000ef4cf3b6e03eb  Meadowlands 1999-11-13 I\BD1999-11-13d1t07.flac
+ee2644dab31877a2d2b9d88eb90b4999  Meadowlands 1999-11-13 I\BD1999-11-13d1t08.flac
+8bc8fc46fc3521c1f3f9c37d8df94d2b  Meadowlands 1999-11-13 I\BD1999-11-13d1t09.flac
+1a895ad4b803ec224bab0ee411a22655  Meadowlands 1999-11-13 I\BD1999-11-13d1t10.flac
+04b1f1f8f5c5d5c32634cc76505e0265  Meadowlands 1999-11-13 I\text.txt
+a1eee339c0f6ef0585769d49240db4d0  Meadowlands 1999-11-13 II\BD1999-11-13d2t01.flac
+fc7308c048e200ab4835ea7919c596f8  Meadowlands 1999-11-13 II\BD1999-11-13d2t02.flac
+edf5720b02e2896d6e9016194d52536c  Meadowlands 1999-11-13 II\BD1999-11-13d2t03.flac
+009cee2d910c24c1f6513a14a230a57b  Meadowlands 1999-11-13 II\BD1999-11-13d2t04.flac
+3d38d56b3aec8882abac9ef1562d52f3  Meadowlands 1999-11-13 II\BD1999-11-13d2t05.flac
+dcf23b08ae302f316f5047f5549c3466  Meadowlands 1999-11-13 II\BD1999-11-13d2t06.flac
+ec2036fc45257fca04eed4d2f794479f  Meadowlands 1999-11-13 II\BD1999-11-13d2t07.flac
+40157b14b13d05f31682c331861efb06  Meadowlands 1999-11-13 II\BD1999-11-13d2t08.flac
+514528baec8a07f98d660efb50c9ebb8  Meadowlands 1999-11-13 II\text.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-13-schoeps.flacf\Meadowlands 1999-11-13 I 
+=================== 
+=================== 
+=================== 
+BD1999-11-13d1t01.flac:1e57d351525f82dac2e446b921b49320
+BD1999-11-13d1t02.flac:9548140e2d1d61e4627d7a18d633c93c
+BD1999-11-13d1t03.flac:1d933978c4bd65637cbe9c7cac11b7fe
+BD1999-11-13d1t04.flac:3b0e3a36a42669d2b0ea78512382bdfc
+BD1999-11-13d1t05.flac:dc1b7ac13002c28aceae240c336da481
+BD1999-11-13d1t06.flac:43008d65d3f88c31430d29ff53a1cb8a
+BD1999-11-13d1t07.flac:f8bd42a8f264cf763920da22708ba12c
+BD1999-11-13d1t08.flac:553ec77e6e07d29ef8d37d00ca166f4f
+BD1999-11-13d1t09.flac:06cd08c740cb7581369c0dd65202b1a1
+BD1999-11-13d1t10.flac:beed4cff75c12b2141d95ede5e9c1cc4
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-13-schoeps.flacf\Meadowlands 1999-11-13 II 
+=================== 
+=================== 
+=================== 
+BD1999-11-13d2t01.flac:8192adba4c39c53a04d4a4fe24fc23fe
+BD1999-11-13d2t02.flac:936ef5ba4da4f66ac702ebdc54a59834
+BD1999-11-13d2t03.flac:cc666a03bb8acc48d155e4fdc410860a
+BD1999-11-13d2t04.flac:e89cde7f3aadf71b92897632b0037c51
+BD1999-11-13d2t05.flac:d24ab298125c678a20d3170c31da71ef
+BD1999-11-13d2t06.flac:220bb71d0570c55badf38a009d5a6156
+BD1999-11-13d2t07.flac:d5601b56a26a2de35b00490c3980f40e
+BD1999-11-13d2t08.flac:8dab7bdd89fe64e5ee43481077494d29
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-13-schoeps.flacf\Meadowlands 1999-11-13 I 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:11.09       33713612 B   ---   --   ---xx   flac  0.5663  BD1999-11-13d1t01.flac
+     5:45.21       60907436 B   ---   --   ---xx   flac  0.4755  BD1999-11-13d1t02.flac
+     8:26.44       89361932 B   ---   --   ---xx   flac  0.5540  BD1999-11-13d1t03.flac
+     5:12.25       55095644 B   ---   --   ---xx   flac  0.5288  BD1999-11-13d1t04.flac
+    10:06.12      106926668 B   ---   --   ---xx   flac  0.5907  BD1999-11-13d1t05.flac
+     8:56.27       94613948 B   ---   --   ---xx   flac  0.5211  BD1999-11-13d1t06.flac
+     4:44.63       50245820 B   ---   --   ---xx   flac  0.6227  BD1999-11-13d1t07.flac
+     7:01.39       74356172 B   ---   --   ---xx   flac  0.5552  BD1999-11-13d1t08.flac
+     6:30.14       68828972 B   ---   --   ---xx   flac  0.6151  BD1999-11-13d1t09.flac
+     7:52.67       83418428 B   ---   --   ---xx   flac  0.6094  BD1999-11-13d1t10.flac
+    67:47.21      717468632 B                            0.5643  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-13-schoeps.flacf\Meadowlands 1999-11-13 II 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:16.41       77006876 B   ---   --   ---xx   flac  0.4453  BD1999-11-13d2t01.flac
+     7:32.45       79838684 B   ---   --   ---xx   flac  0.6191  BD1999-11-13d2t02.flac
+     8:04.26       85438796 B   ---   --   ---xx   flac  0.6385  BD1999-11-13d2t03.flac
+    10:16.24      108718892 B   ---   --   ---xx   flac  0.4984  BD1999-11-13d2t04.flac
+     5:04.54       53752652 B   ---   --   ---xx   flac  0.6325  BD1999-11-13d2t05.flac
+     8:55.39       94465772 B   ---   --   ---xx   flac  0.6116  BD1999-11-13d2t06.flac
+     5:52.51       62212796 B   ---   --   ---xx   flac  0.5121  BD1999-11-13d2t07.flac
+     4:21.20       46087484 B   ---   --   ---xx   flac  0.6369  BD1999-11-13d2t08.flac
+    57:24.00      607521952 B                            0.5686  (8 files)
+=================== 
+=================== 
+=================== 

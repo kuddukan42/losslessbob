@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-09-06-Heed-These-Modern-Times.flacf 
+=================== 
+=================== 
+=================== 
+d3e5e33c445d3ebdfb94fac4615c0011  bd-Heed These Modern Times (TMR).txt
+d252e954b008966b6cabcd221fc9d9e4  bd-Heed These Modern Times-d1\bd-Heed These Modern Times-d1.md5
+c06288a9c422b63992001e5d35d9039f  bd-Heed These Modern Times-d1\Track01.flac
+c2f7cf0df7e08c593f9fb73162d9c1a5  bd-Heed These Modern Times-d1\Track02.flac
+151669b511608e6cf3b40e5fd8c71245  bd-Heed These Modern Times-d1\Track03.flac
+1b66391d9cc9a529a708065a46b14708  bd-Heed These Modern Times-d1\Track04.flac
+7d8552b406a82082ffe0c9f2ac5513d5  bd-Heed These Modern Times-d1\Track05.flac
+fb79272597ea09152061cc3dfc404996  bd-Heed These Modern Times-d1\Track06.flac
+6ff08f3ab8dabb6330cf8564707bc08f  bd-Heed These Modern Times-d1\Track07.flac
+32ab835078370a087a6faeb7d4075a93  bd-Heed These Modern Times-d1\Track08.flac
+43634fbd7d17633469be0a64a29627af  bd-Heed These Modern Times-d1\Track09.flac
+40145c5d73b05b7c4e557246d8ebbfdb  bd-Heed These Modern Times-d1\Track10.flac
+f023cbf828562f98c813709ceef43052  bd-Heed These Modern Times-d1\Track11.flac
+70314d26467eba43bd264621036d95b5  bd-Heed These Modern Times-d1\Track12.flac
+e715587d0871354c8e9f185a3ff8fe7a  bd-Heed These Modern Times-d1\Track13.flac
+d6bef7ad6521788461463acc9a280602  bd-Heed These Modern Times-d2\bd-Heed These Modern Times-d2.md5
+41ec69a7334835132001e342a02a1e03  bd-Heed These Modern Times-d2\Track01.flac
+ff09852d3fb33cef23454aef391c8bd8  bd-Heed These Modern Times-d2\Track02.flac
+22c34bcbaab25fd67030f754f6344c51  bd-Heed These Modern Times-d2\Track03.flac
+ff1e629f2fe597e067ed9f8be0eac747  bd-Heed These Modern Times-d2\Track04.flac
+ac03b4e8786ff9892e7d063d875abf70  bd-Heed These Modern Times-d2\Track05.flac
+bdba7805733cb8a5cf56532aba96638e  bd-Heed These Modern Times-d2\Track06.flac
+2a4a93f9851a41a35b77c58b16ada698  bd-Heed These Modern Times-d2\Track07.flac
+4272bcc56509cfe789beef469dd99f27  bd-Heed These Modern Times-d2\Track08.flac
+042775ce7091cf19b1fd05a21aa3c7de  bd-Heed These Modern Times-d2\Track09.flac
+10ed4c663a9b89af87d536f86b3b072d  bd-Heed These Modern Times-d2\Track10.flac
+5500bebc28482ba4204fbc4724e143c3  bobby-heed.jpg
+e47b53cb8c9987d17e9c2d4c0f746343  bobby-heed1.jpg
+357c1899c2b7d22986b92e918a569bab  Review.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-09-06-Heed-These-Modern-Times.flacf\bd-Heed These Modern Times-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:08ecd8af51fbdf7f422bd0c8a6c765f2
+Track02.flac:b3f4f85dafe28cf10f040b0bce0a841f
+Track03.flac:dd8a5cd8313bc84eafb8622eda327bb2
+Track04.flac:b691f6adf20acb73e4c3fbfce6aed1f1
+Track05.flac:f4d842d298637a58f38b514fcf0fd0b1
+Track06.flac:10881f521b4fa4b8993cfc523e6882e9
+Track07.flac:ff46e6549f8244a2985ab8bd889c3d79
+Track08.flac:12519353dcda6f75f3795297b14db965
+Track09.flac:c144d9d4cb6182cc7c1421b41f463056
+Track10.flac:e9c8e7ce5e3c2b3cd212867ff9583a08
+Track11.flac:62cbb5684b716c9e89e8efd42f0b2646
+Track12.flac:e1544320a62f66053a98e19e7fa0dfd6
+Track13.flac:2ff6805f11f825adc0fced992c55ce01
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-09-06-Heed-These-Modern-Times.flacf\bd-Heed These Modern Times-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:7ad4700a1276db28fb79f91004c45fa6
+Track02.flac:96818ced9c58b8189e10561413faa1b1
+Track03.flac:7500500c9c427a7bf1a678771edb07d9
+Track04.flac:db7d314cd84b8644ea0f1056fb888047
+Track05.flac:b571f90865b8d3aa81dbb418ac6cdf0a
+Track06.flac:c73e9c083d9ad5500bfdee330074ff21
+Track07.flac:f66983fb2b08772e76d9a61c4fe8b770
+Track08.flac:e79a17a0b49c69277639fd513488f62a
+Track09.flac:e200aec3498cac3c4e6a1bd6025c7d6d
+Track10.flac:3f5ec0ebf6ebbf13ae36060047d85adc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-09-06-Heed-These-Modern-Times.flacf\bd-Heed These Modern Times-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.74        9346892 B   ---   --   ---xx   flac  0.4247  Track01.flac
+     3:58.27       42046748 B   ---   --   ---xx   flac  0.4901  Track02.flac
+     5:51.13       61947020 B   ---   --   ---xx   flac  0.4757  Track03.flac
+     6:58.40       73829324 B   ---   --   ---xx   flac  0.4904  Track04.flac
+     5:43.72       60674588 B   ---   --   ---xx   flac  0.4849  Track05.flac
+     7:12.12       76233068 B   ---   --   ---xx   flac  0.5097  Track06.flac
+     6:37.25       70089644 B   ---   --   ---xx   flac  0.4194  Track07.flac
+     5:02.11       53298716 B   ---   --   ---xx   flac  0.4330  Track08.flac
+     7:46.58       82338860 B   ---   --   ---xx   flac  0.5162  Track09.flac
+     7:03.60       74758364 B   ---   --   ---xx   flac  0.4913  Track10.flac
+     7:16.50       77028044 B   ---   --   ---xx   flac  0.5385  Track11.flac
+     7:02.05       74452604 B   ---   --   ---xx   flac  0.4841  Track12.flac
+     6:20.07       67048508 B   ---   --   ---xx   flac  0.4965  Track13.flac
+    77:46.04      823092380 B                            0.4873  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-09-06-Heed-These-Modern-Times.flacf\bd-Heed These Modern Times-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:22.64       67535372 B   ---   --   ---xx   flac  0.5328  Track01.flac
+     8:28.68       89771180 B   ---   --   ---xx   flac  0.4282  Track02.flac
+    10:15.18      108528380 B   ---   --   ---xx   flac  0.4608  Track03.flac
+     7:03.41       74713676 B   ---   --   ---xx   flac  0.5185  Track04.flac
+     6:32.32       69224108 B   ---   --   ---xx   flac  0.5851  Track05.flac
+     7:01.28       74330300 B   ---   --   ---xx   flac  0.5283  Track06.flac
+     5:47.49       61326092 B   ---   --   ---xx   flac  0.5716  Track07.flac
+     8:43.62       92403068 B   ---   --   ---xx   flac  0.5579  Track08.flac
+     8:34.38       90759020 B   ---   --   ---xx   flac  0.5148  Track09.flac
+     7:05.24       75026492 B   ---   --   ---xx   flac  0.5715  Track10.flac
+    75:55.49      803617688 B                            0.5216  (10 files)
+=================== 
+=================== 
+=================== 

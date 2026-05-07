@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-01-henwill.flacf 
+=================== 
+=================== 
+=================== 
+897100196efb581f6b41ef36f0b0cc90  00_Checksum.md5
+3689ba99c3698fdc6be396fa1f849aa3  00_Info.txt
+3d2342ced19b132428033013e5300a7f  bd20090401_tr01.flac
+fe3563c462512273f2f1a93980f122cc  bd20090401_tr02.flac
+a84bd5c846611bd50f6de51350b1c01e  bd20090401_tr03.flac
+591eef2ef7b4c02051c80170672aae35  bd20090401_tr04.flac
+1d7f43618d9f98a2c90bed9c29521b83  bd20090401_tr05.flac
+76fa32eda1279bbb5301298c317fca32  bd20090401_tr06.flac
+0f299d7d83950e06aff58252ab482037  bd20090401_tr07.flac
+fd79f174898ebae372454855c75b1627  bd20090401_tr08.flac
+4148c1cb32f491ac9c20b327d96c2c8f  bd20090401_tr09.flac
+68f6926a7884be469405d3e75975399b  bd20090401_tr10.flac
+4a9cfe04b2e11d436ed01dba68734f3f  bd20090401_tr11.flac
+2deec2ee7255f737d581d2063bd1dca3  bd20090401_tr12.flac
+5baf9bf44e16e137b52734f53407d93f  bd20090401_tr13.flac
+dd6aa8f4fe29ae91ad0c49f332dff2fb  bd20090401_tr14.flac
+bfa11dd8ce5521c4ee7491619456610b  bd20090401_tr15.flac
+133aa3d0ab4fefb3c4ae7b0ceae33cc7  bd20090401_tr16.flac
+fa436bdae21976392d7d3425c8949498  bd20090401_tr17.flac
+63a4ae10f98a621c4082319f6ebe9a74  bd20090401_tr18.flac
+f596219837168bece3c61ffbe8914493  bd20090401_tr19.flac
+9a6abe735ace889f2fcbd7547c5b7ada  bd20090401_tr20.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-01-henwill.flacf 
+=================== 
+=================== 
+=================== 
+bd20090401_tr01.flac:0aa14e8e338578f797fc2e43c1c7f3e8
+bd20090401_tr02.flac:10b9ce76892e2cf65999b652ec7776bd
+bd20090401_tr03.flac:2423cdac005942eebecf7ca308aad4dd
+bd20090401_tr04.flac:bed655206e7ffc87355b5fedef1adce6
+bd20090401_tr05.flac:fb9068906b55aed0e28954d7aa850949
+bd20090401_tr06.flac:9c1de8144e5c4063e77284a6190e85ab
+bd20090401_tr07.flac:4b176878585661149a1afa8e6a7df1a7
+bd20090401_tr08.flac:bd7a1bfc8d82099ab805110e00c667b6
+bd20090401_tr09.flac:2ed497b4e34e9c116abeb4f02d494fb1
+bd20090401_tr10.flac:44399364d5004d0a7c3d254408047ee5
+bd20090401_tr11.flac:d3c47d73faa37941a32d24a3312eb3d0
+bd20090401_tr12.flac:0ffdefb1a736661ac12ca08a1d403196
+bd20090401_tr13.flac:bca1df0bda5b18d314ae573142356258
+bd20090401_tr14.flac:b7b51a250095a9ccf0e8034b93647135
+bd20090401_tr15.flac:d0bace58f60578f4366850548e3517bd
+bd20090401_tr16.flac:725c48508f1de1a7254ad5bb73797321
+bd20090401_tr17.flac:bcef5bd77f2fb9e6aac6d12bd648d51c
+bd20090401_tr18.flac:633eefd446c95f029ca9df5f02a9909c
+bd20090401_tr19.flac:3788319f2026c457523de827e868a9d8
+bd20090401_tr20.flac:9067eb9e3bbfd685e3c7c1cbfca00a8b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-01-henwill.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:04.813      12444224 B   cxx   --   ---xx   flac  0.3698  bd20090401_tr01.flac
+     3:16.504      37728888 B   cxx   --   ---xx   flac  0.3918  bd20090401_tr02.flac
+     6:12.794      71576508 B   cxx   --   ---xx   flac  0.3915  bd20090401_tr03.flac
+     4:01.337      46336808 B   cxx   --   ---xx   flac  0.3934  bd20090401_tr04.flac
+     7:40.234      88364968 B   cxx   --   ---xx   flac  0.4074  bd20090401_tr05.flac
+     6:12.505      71521040 B   cxx   --   ---xx   flac  0.3765  bd20090401_tr06.flac
+     6:56.389      79946716 B   cxx   --   ---xx   flac  0.4020  bd20090401_tr07.flac
+     4:58.538      57319372 B   cxx   --   ---xx   flac  0.4009  bd20090401_tr08.flac
+     5:48.675      66945724 B   cxx   --   ---xx   flac  0.3415  bd20090401_tr09.flac
+     6:50.831      78879672 B   cxx   --   ---xx   flac  0.4031  bd20090401_tr10.flac
+     5:45.421      66320888 B   cxx   --   ---xx   flac  0.3909  bd20090401_tr11.flac
+     6:44.929      77746324 B   cxx   --   ---xx   flac  0.4224  bd20090401_tr12.flac
+     7:13.124      83159804 B   cxx   --   ---xx   flac  0.3723  bd20090401_tr13.flac
+     6:22.784      73494660 B   cxx   --   ---xx   flac  0.4167  bd20090401_tr14.flac
+     6:54.323      79550116 B   cxx   --   ---xx   flac  0.4204  bd20090401_tr15.flac
+     6:08.259      70705744 B   cxx   --   ---xx   flac  0.4026  bd20090401_tr16.flac
+     4:50.679      55810460 B   cxx   --   ---xx   flac  0.4135  bd20090401_tr17.flac
+     6:53.661      79422976 B   cxx   --   ---xx   flac  0.3568  bd20090401_tr18.flac
+     0:46.143       8859488 B   cxx   --   ---xx   flac  0.4157  bd20090401_tr19.flac
+     5:06.489      58845916 B   cxx   --   ---xx   flac  0.3795  bd20090401_tr20.flac
+   109:48.434    1264980296 B                            0.3937  (20 files)
+=================== 
+=================== 
+=================== 

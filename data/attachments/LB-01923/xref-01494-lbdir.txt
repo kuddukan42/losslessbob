@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-12-i.flacf
+===================
+===================
+===================
+5082734de95fff34afb6a54c84804804 *95-03-12-offmaster.txt
+d35043fe579a46744da61a5385361f5f *Bob Dylan - bd-95-03-12-d1\Track 01.flac
+6a212cd08b23dda7831b1ec4ba4e1012 *Bob Dylan - bd-95-03-12-d1\Track 02.flac
+3a210491cbe974a99cb843455f6a8c94 *Bob Dylan - bd-95-03-12-d1\Track 03.flac
+cc0ecf63ee3a592d54202fe55b9eda55 *Bob Dylan - bd-95-03-12-d1\Track 04.flac
+585bccce37842908317bbc6c3b7ee17b *Bob Dylan - bd-95-03-12-d1\Track 05.flac
+55a8c9ac73b0423f9d5ab7e7132c9f68 *Bob Dylan - bd-95-03-12-d1\Track 06.flac
+f051c27eed2433d4d088e0d0644ab371 *Bob Dylan - bd-95-03-12-d1\Track 07.flac
+4c449c7b15924b62adcf4252d30720c9 *Bob Dylan - bd-95-03-12-d2\Track 01.flac
+cfa261d2dcfaaed11852e8f856808318 *Bob Dylan - bd-95-03-12-d2\Track 02.flac
+2c8ecc9081af2c5ea058b5d6b4e1baad *Bob Dylan - bd-95-03-12-d2\Track 03.flac
+09e1d9c67c79488b41399ae6f5cf83ba *Bob Dylan - bd-95-03-12-d2\Track 04.flac
+88252d613999388adb70dfb5b4c8aaf4 *Bob Dylan - bd-95-03-12-d2\Track 05.flac
+87a8be0f03ab8c2724ee3e72b78553d5 *Bob Dylan - bd-95-03-12-d2\Track 06.flac
+89d6fc949be5fdf39ccd9f0497ee454a *Bob Dylan - bd-95-03-12-d2\Track 07.flac
+===================
+===================
+===================
+=== ffp for: bd95-03-12-i.flacf
+===================
+===================
+===================
+Bob Dylan - bd-95-03-12-d1\Track 01.flac:161d01560fcafbd1e82e726fb047b2e5
+Bob Dylan - bd-95-03-12-d1\Track 02.flac:ad3972259fa8b4ebe21deff84e5158b8
+Bob Dylan - bd-95-03-12-d1\Track 03.flac:2291bc850fa1f3d422286b2abd6a44ad
+Bob Dylan - bd-95-03-12-d1\Track 04.flac:e290045b60f560a65d6ee82e45a0ec57
+Bob Dylan - bd-95-03-12-d1\Track 05.flac:fbe19d128e2250a6f85a3ec2214bccad
+Bob Dylan - bd-95-03-12-d1\Track 06.flac:3b6cfb39234bb0568c33ea71cd68c011
+Bob Dylan - bd-95-03-12-d1\Track 07.flac:73dbd448095f478e989be69e076b47cc
+Bob Dylan - bd-95-03-12-d2\Track 01.flac:50f9590e1f06a9f26614843695ef5002
+Bob Dylan - bd-95-03-12-d2\Track 02.flac:3c5dc4fd99d5ccb21032606efbc6d094
+Bob Dylan - bd-95-03-12-d2\Track 03.flac:44987ee626617b9708a88ad71fc845fd
+Bob Dylan - bd-95-03-12-d2\Track 04.flac:84e7048d1ff8c5d6f939774900b51b24
+Bob Dylan - bd-95-03-12-d2\Track 05.flac:d9beb05891e7ddd71592b324f751ab4f
+Bob Dylan - bd-95-03-12-d2\Track 06.flac:50b4e0ddc32647bc28e766c2f7091a10
+Bob Dylan - bd-95-03-12-d2\Track 07.flac:51705accd43bfa02ab466e631f64689a
+===================
+===================
+===================
+=== shntool len for: bd95-03-12-i.flacf\Bob Dylan - bd-95-03-12-d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.08       53115260 B   ---   --   ---xx   flac  0.5351  Track 01.flac
+     7:53.60       83578364 B   ---   --   ---xx   flac  0.5178  Track 02.flac
+     5:38.36       59707916 B   ---   --   ---xx   flac  0.5503  Track 03.flac
+     7:50.48       83020940 B   ---   --   ---xx   flac  0.5126  Track 04.flac
+     8:40.39       91819772 B   ---   --   ---xx   flac  0.5033  Track 05.flac
+     5:58.57       63285308 B   ---   --   ---xx   flac  0.5433  Track 06.flac
+     6:59.64       74062172 B   ---   --   ---xx   flac  0.3947  Track 07.flac
+    48:03.12      508589732 B                            0.5052  (7 files)
+===================
+===================
+===================
+=== shntool len for: bd95-03-12-i.flacf\Bob Dylan - bd-95-03-12-d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:27.40      100112924 B   ---   --   ---xx   flac  0.3896  Track 01.flac
+     6:47.30       71865404 B   ---   --   ---xx   flac  0.4221  Track 02.flac
+     7:04.04       74803052 B   ---   --   ---xx   flac  0.5325  Track 03.flac
+     8:13.64       87115772 B   ---   --   ---xx   flac  0.5258  Track 04.flac
+     7:51.04       83093852 B   ---   --   ---xx   flac  0.6538  Track 05.flac
+    11:37.14      122983772 B   ---   --   ---xx   flac  0.5527  Track 06.flac
+     6:25.32       67989308 B   ---   --   ---xx   flac  0.5136  Track 07.flac
+    57:26.38      607964084 B                            0.5135  (7 files)
+===================
+===================
+===================

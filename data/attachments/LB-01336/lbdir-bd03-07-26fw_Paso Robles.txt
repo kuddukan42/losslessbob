@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-26fw_Paso Robles 
+=================== 
+=================== 
+=================== 
+4ca0f8beceddcc2755ddd4032dca4423  bd03-07-26fw.txt
+e6d8ddfda27ad98e27fa164aebc590f5  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 01.shn
+e9f36040ad45b3683a80c8ff5185cc87  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 10.shn
+bf4efdef94482e874cdfcdbb5f31b7fe  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 2.shn
+c6aef6a1debcf9b6533aa131d712365c  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 3.shn
+26fffb2b757845bef5c4696e1b62b365  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 4.shn
+cee42a8ae838d5f527d30bb84b1f7cd8  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 5.shn
+2c1970397972d0c4fd76c6558f77e5db  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 6.shn
+412628dc49d792a8236bdae1f4164f33  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 7.shn
+63548c5b2a4724db1c17d71b2956007d  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 8.shn
+df67dd33906580b23f97844c65934fb1  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_Track 9.shn
+c8e416fbc5d06d59923fce6cef367fa9  bd_03-07-26_cd1.shnf\bd_03-07-26_cd1_shn.md5
+02dc1325c0f75497dc4119d55a14f434  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_Track 1.shn
+97bda57e4d0632898114540b9cfaf784  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_Track 2.shn
+4014f7eb20d9f913d2fd5984ddfb446f  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_Track 3.shn
+177cdeadfd79f7d634f35c538da82f23  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_Track 4.shn
+2aaf256c11300b1ff72d869490de4c93  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_Track 5.shn
+bac280e18c7ecd4072da80683740c30f  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_Track 6.shn
+723e51915bb7c0ea1f3377218c2027ce  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_Track 7.shn
+667af2c9d214a8b2df958b848988e02d  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_Track 8.shn
+84b0841c7defdc1dc29b3d6bee1fd5ff  bd_03-07-26_cd2.shnf\bd_03-07-26_cd2_shn.md5
+b8968e539596eff249f78996057ec015  text.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-26fw_Paso Robles\bd_03-07-26_cd1.shnf 
+=================== 
+=================== 
+=================== 
+b98d58fb87cb6d284801271868623282  [shntool]  bd_03-07-26_cd1_Track_01.wav
+c6a10afb9e0ec7402586e51933a4a6f2  [shntool]  bd_03-07-26_cd1_Track_2.wav
+2a0626521b7c688817fc9849fc0cf2e1  [shntool]  bd_03-07-26_cd1_Track_3.wav
+9330a6bedeeda01ce1ac5ece5f278f94  [shntool]  bd_03-07-26_cd1_Track_4.wav
+e614318bb6073f15d5e65494ad3a138f  [shntool]  bd_03-07-26_cd1_Track_5.wav
+0e8d0b6f2f89e7a8654fc9420c65c411  [shntool]  bd_03-07-26_cd1_Track_6.wav
+7a45e154b618f9174f0689ab1559e73f  [shntool]  bd_03-07-26_cd1_Track_7.wav
+b06d3e8cad82c6f3ce97ac94053b2466  [shntool]  bd_03-07-26_cd1_Track_8.wav
+fae049ae812ad3e95f1db3a672e0d41b  [shntool]  bd_03-07-26_cd1_Track_9.wav
+1d2eab96a546d5fe85d5dc34c392e493  [shntool]  bd_03-07-26_cd1_Track_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-26fw_Paso Robles\bd_03-07-26_cd2.shnf 
+=================== 
+=================== 
+=================== 
+3ed18ffed3d04ebd31a661bc1c1ee5df  [shntool]  bd_03-07-26_cd2_Track_1.wav
+09a4ba6ecc7b0f438d0d37ad6b2e3a9a  [shntool]  bd_03-07-26_cd2_Track_2.wav
+51194c2524bca96526ba204a6a16f991  [shntool]  bd_03-07-26_cd2_Track_3.wav
+a37da1d18fdf2600435d8dde63d89496  [shntool]  bd_03-07-26_cd2_Track_4.wav
+0c1f9d44ebf104d736fe602171480ebf  [shntool]  bd_03-07-26_cd2_Track_5.wav
+10b829ad1503cbdae77d17e7f7ec87d7  [shntool]  bd_03-07-26_cd2_Track_6.wav
+a2c6c04b84a51677e410a97aec0de30e  [shntool]  bd_03-07-26_cd2_Track_7.wav
+865b40d0efe42d112167a1b2f43c00f9  [shntool]  bd_03-07-26_cd2_Track_8.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-26fw_Paso Robles\bd_03-07-26_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:10.12       12376350 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_01.wav
+     6:39.24       70440174 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_10.wav
+     5:37.02       59451630 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_2.wav
+     5:45.19       60902814 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_3.wav
+     5:26.74       57680574 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_4.wav
+     5:35.73       59265822 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_5.wav
+     7:08.61       75642798 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_6.wav
+     6:42.21       70962318 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_7.wav
+     6:48.55       72100686 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_8.wav
+     5:05.32       53877390 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd1_Track_9.wav
+    55:59.73      592700556 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-26fw_Paso Robles\bd_03-07-26_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:10.49       75967374 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd2_Track_1.wav
+     7:38.45       80897166 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd2_Track_2.wav
+     6:53.63       73001502 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd2_Track_3.wav
+     5:43.49       60620574 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd2_Track_4.wav
+     1:00.66       10739358 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd2_Track_5.wav
+    12:51.47      136115070 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd2_Track_6.wav
+     6:47.36       71879598 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd2_Track_7.wav
+     7:01.23       74318622 B   ---   -e   -----    wav  1.0000  bd_03-07-26_cd2_Track_8.wav
+    55:08.03      583539264 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

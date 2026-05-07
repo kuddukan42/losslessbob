@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-02-22-owingsmill 
+=================== 
+=================== 
+=================== 
+5e2ee761f47b74747d0005046b7d549c  bd1991-02-22.info.txt
+73924a186a4e83749dbc3ac6afdfacbe  bd1991-02-22d1.shnfp.txt
+6c2e79241cac5464be01cf8810e8ee86  bd1991-02-22d1.shns.md5
+0c17cf2b2b28403411d0ef7b395e9d82  bd1991-02-22d1.shntoolresults.txt
+3591253aecb4e5a52553c41bed00d22d  bd1991-02-22d1.waves.md5
+b4694f9c8085083b0bc63b98bf04c749  bd1991-02-22d1t01.shn
+2f9762f0e3cdaf36e284af7ff1635ad3  bd1991-02-22d1t02.shn
+e6ed369c1d751ae5801ce61307443764  bd1991-02-22d1t03.shn
+53dbf50c500f44e73c89ec43ef05d345  bd1991-02-22d1t04.shn
+c4ca19adb7d481c666541aa18f72835c  bd1991-02-22d1t05.shn
+929495ae1978f14f68c2d561703322d4  bd1991-02-22d1t06.shn
+d219b01ac8dcd0e5b106097f013159a9  bd1991-02-22d1t07.shn
+a1878bd2475c5e3b64c5db6bd44d3f49  bd1991-02-22d1t08.shn
+ba14422ccaa1c9d8909bdf42cf1afee0  bd1991-02-22d1t09.shn
+74f10c92332344a5870d0deddd19f600  bd1991-02-22d1t10.shn
+9779b46262f5ceac3e9b3d8e21961155  bd1991-02-22d2.shnfp.txt
+b03a17577a3ecf6a1307f5e2cbaf512d  bd1991-02-22d2.shns.md5
+411223be4288935755ea66e07dc7203d  bd1991-02-22d2.shntoolresults.txt
+a21fe05acf22368c8a887701ee214475  bd1991-02-22d2.waves.md5
+876a8f6ae6880fb8432b139401ad1699  bd1991-02-22d2t01.shn
+4448e9f091cf80cb458025757da467d5  bd1991-02-22d2t02.shn
+a41ebf95432eb3388e9b078e1adf29d4  bd1991-02-22d2t03.shn
+952fe0010a71600c4f679f7656b2fb37  bd1991-02-22d2t04.shn
+9a8a159e8acba8827a0fa8f410480e3c  bd1991-02-22d2t05.shn
+edd45b0f96cdf869246e738bd7981ced  bd1991-02-22d2t06.shn
+57cb79d991f690c49f9a3069b9a1348f  bd1991-02-22d2t07.shn
+d8b28801526511c78caa298050f030e3  bd1991-02-22d2t08.shn
+e1d282cc4ba21ffd935487d6e4349401  bd1991-02-22d2t09.shn
+5413286d550edae13745ad3de8d6b3be  bd91-02-22.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-02-22-owingsmill 
+=================== 
+=================== 
+=================== 
+8ce5bdf7ced342ff1ba791883cdc5c4c  [shntool]  bd1991-02-22d1t01.wav
+94f9ab8ee0d6abda9eed18af88ce2f3a  [shntool]  bd1991-02-22d1t02.wav
+864f8d01fa10bcc6b47c8cf2d229dd59  [shntool]  bd1991-02-22d1t03.wav
+4072a9a44ecf460312cc35612a10d442  [shntool]  bd1991-02-22d1t04.wav
+13bc0953be0e92a7b0e3c494aab850d9  [shntool]  bd1991-02-22d1t05.wav
+9756f3f3d932fbd5c233917250716add  [shntool]  bd1991-02-22d1t06.wav
+64df843bd8f246357f12bd762eec8334  [shntool]  bd1991-02-22d1t07.wav
+51e6f4da1e52480a1a1115c01d33e103  [shntool]  bd1991-02-22d1t08.wav
+e0cef89641706a732934617d5ecfb2f1  [shntool]  bd1991-02-22d1t09.wav
+abb0717345d2233b41da829baceef9c1  [shntool]  bd1991-02-22d1t10.wav
+23d75e18083ea2bece70d022c19be906  [shntool]  bd1991-02-22d2t01.wav
+855594e1a0b3b4060afede0278f12a14  [shntool]  bd1991-02-22d2t02.wav
+d9475e8c8cf2cd08e227c3a0d7ddeb42  [shntool]  bd1991-02-22d2t03.wav
+83a2f9422a3834e645a7eb87ad652666  [shntool]  bd1991-02-22d2t04.wav
+a6c3e7f5c86437a6c7c4b84d237f7969  [shntool]  bd1991-02-22d2t05.wav
+2f2144ae3dca21294826bf42d8221b16  [shntool]  bd1991-02-22d2t06.wav
+3d3dc51b8b7e3c582caebebfeafa2ab5  [shntool]  bd1991-02-22d2t07.wav
+eee09d95f369861b3c415a69de25b2d6  [shntool]  bd1991-02-22d2t08.wav
+eecf66cf6c1ad8ebdf7371ede237dc4e  [shntool]  bd1991-02-22d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-22-owingsmill 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:25.20       46793084 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t01.wav
+     4:05.30       43288604 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t02.wav
+     3:30.50       37161644 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t03.wav
+     4:50.00       51156044 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t04.wav
+     6:19.05       66867404 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t05.wav
+     3:12.00       33868844 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t06.wav
+     4:06.20       43441484 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t07.wav
+     4:09.45       44029484 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t08.wav
+     6:20.25       67090844 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t09.wav
+     3:34.02       37754348 B   ---   --   -----    wav  1.0000  bd1991-02-22d1t10.wav
+     3:42.50       39278444 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t01.wav
+     4:23.15       46428524 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t02.wav
+     4:21.20       46087484 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t03.wav
+     3:52.40       41018924 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t04.wav
+     3:04.35       32539964 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t05.wav
+     4:56.05       52226204 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t06.wav
+     6:46.28       71684300 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t07.wav
+     3:58.50       42100844 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t08.wav
+     4:53.43       51786380 B   ---   --   -----    wav  1.0000  bd1991-02-22d2t09.wav
+    84:31.33      894602852 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

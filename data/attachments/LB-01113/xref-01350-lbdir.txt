@@ -1,0 +1,72 @@
+===================
+===================
+===================
+=== md5 for: bd03-07-30-h.shnf
+===================
+===================
+===================
+b43fbec74b715da521f9296bd646bf95 *bd030730.md5
+73a3947e7203bb5ba27a8b98a9d10c8e *bd030730d1t01.shn
+3c9a8a5257dd2e9c55b80a550b0ea476 *bd030730d1t02.shn
+e8de90fc738e352a6381bd8a872fbc5d *bd030730d1t03.shn
+61a30531c401c6765c11a3a7920a8b62 *bd030730d1t04.shn
+483c8286f04725d40d8c2963581e613b *bd030730d1t05.shn
+ab232d6202af677035b6f2df2ad6ee49 *bd030730d1t06.shn
+3069dfa4ad37fb93c9f5019302f72612 *bd030730d1t07.shn
+df6ff5108280c9d068e6631a510bdf23 *bd030730d1t08.shn
+d36922011d98fa9edc09f7b88a81be6b *bd030730d1t09.shn
+2b6194b6dac2fc4213d32c324ced8c17 *bd030730d1t10.shn
+85bbe712fe9ac1dce6d823197c8f3b5c *bd030730d1t11.shn
+10da426427d488f3e5140d7c6f9118c4 *bd030730d2t01.shn
+996f86d1539d96e67666903bb6f76e7f *bd030730d2t02.shn
+d617e537d279b6ec7e4113c46490ba33 *bd030730d2t03.shn
+8c6a0f646925ba735419aca0cbcc41f8 *frequency analysis.bmp
+aba1fa9cfb7e1175bb2b814c1ccb6797 *Setlist.txt
+2258485fb458eadfb6a15d4fbc77cb8c *shntool_len.txt
+===================
+===================
+===================
+=== shntool md5/hash for: bd03-07-30-h.shnf
+===================
+===================
+===================
+9ba9777fbe1d5890d4c314b592eaa994  [shntool]  bd030730d1t01.shn
+9144c2dc8f3285ea73bf65c6b6a97d17  [shntool]  bd030730d1t02.shn
+f80b311bd0a242e8364bb8a73b635c16  [shntool]  bd030730d1t03.shn
+21c856aa0856c3670cef528c4f40a182  [shntool]  bd030730d1t04.shn
+ebe96344180e2566b77bf1b953b0052c  [shntool]  bd030730d1t05.shn
+ada7301a42b7641da28f622e27face49  [shntool]  bd030730d1t06.shn
+d8f8ed8811466b0d17125380cd9cbcf2  [shntool]  bd030730d1t07.shn
+b94a690f2f0973c8f1f8d148f600d953  [shntool]  bd030730d1t08.shn
+8961f4b04bf5f7ef600532e1fbf5145d  [shntool]  bd030730d1t09.shn
+30ef52d9ad9ff25948ce6b0ee953e4da  [shntool]  bd030730d1t10.shn
+fc435ef50315df450b54e9e5a1e2f616  [shntool]  bd030730d1t11.shn
+013e1f9a9f67288854cdd45e86ef8055  [shntool]  bd030730d2t01.shn
+af8fe267c43905314ae0c87f6bd29688  [shntool]  bd030730d2t02.shn
+5ebcc70fe0ccbc204f3d055b631139ed  [shntool]  bd030730d2t03.shn
+===================
+===================
+===================
+=== shntool len for: bd03-07-30-h.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.14       76590572 B   ---   --   ---xx    shn  0.5487  bd030730d1t01.shn
+     5:21.67       56782028 B   ---   --   ---xx    shn  0.5472  bd030730d1t02.shn
+     5:04.63       53773820 B   ---   --   ---xx    shn  0.5231  bd030730d1t03.shn
+     5:35.39       59185772 B   ---   --   ---xx    shn  0.5183  bd030730d1t04.shn
+     6:25.05       67925804 B   ---   --   ---xx    shn  0.5541  bd030730d1t05.shn
+     5:56.04       62807852 B   ---   --   ---xx    shn  0.4717  bd030730d1t06.shn
+     4:22.63       46365020 B   ---   --   ---xx    shn  0.5746  bd030730d1t07.shn
+     8:10.20       86483084 B   ---   --   ---xx    shn  0.5168  bd030730d1t08.shn
+     6:50.64       72474572 B   ---   --   ---xx    shn  0.5452  bd030730d1t09.shn
+     7:32.66       79888076 B   ---   --   ---xx    shn  0.5289  bd030730d1t10.shn
+     8:37.71       91365836 B   ---   --   ---xx    shn  0.4860  bd030730d1t11.shn
+    10:31.29      111376652 B   ---   --   ---xx    shn  0.6003  bd030730d2t01.shn
+     7:24.56       78453356 B   ---   --   ---xx    shn  0.6171  bd030730d2t02.shn
+     7:35.38       80351420 B   ---   --   ---xx    shn  0.6437  bd030730d2t03.shn
+    96:43.74     1023823864 B                            0.5506  (14 files)
+===================
+===================
+===================

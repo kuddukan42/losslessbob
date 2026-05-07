@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-08-13-HOLD 
+=================== 
+=================== 
+=================== 
+4f6fd3fe543e402f646dc14899380578  01 Somebody Touched Me.shn
+5cb3227b1e07948cfda490b5fb869c90  02 My Back Pages.shn
+ab83e36fc14b1b7585a173f4765bde79  03 Tangled Up in Blue.shn
+4a684dbf27df4aa9c56fb17c618dc4a7  04 Don't Think Twice.shn
+ebf07fad2bee00f71841f60f6efdab7c  05 Till I Fell in Love with You.shn
+b181b5a6e14cd87caf3905f9885715a9  06 Most Likely to Go Your Way (And I'll Go Mine).shn
+6a7bacc76da5c54d5fdc20bf6b9957b6  07 Floater (Too Much to Ask) .shn
+069020689cd6b087fe9b058117f7e4ed  08 High Water.shn
+83f543c3b87b9e6279a6f52d7452fd0a  09 Master of War.shn
+5f8da68d6ed2abdfbad27a3a16f3045f  10 Visions of Johanna.shn
+ad194ebd171413b1231819fc08c39cfc  11 I Shall Be Released.shn
+314d978b516479cbda48e00b2dea907b  12 Summer Days.shn
+08c6351d5b4e89b652fe5084646180dc  13 Like a Rolling Stone.shn
+fde6fae79796e1657d96c263e68871dd  14 Cold Irons Bound.shn
+744adcd5c31a4395591d644d3c630c27  15 Rainy Day Women 12 & 35.shn
+0d3b232a3c746179a5b35abc971c8be8  16 Honest With Me.shn
+d1a36d5b5ffbc1288bd5a74cd230e913  17 Blowin in the Wind.shn
+c07f3a7e38489e5fb1b17febcd75ef73  18 All Along the Watchtower.shn
+7374772f18a72b3a97dcfbc066fc31db  bd02-08-13.txt
+386635208675157db4813bbab43ab1a3  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-08-13-HOLD 
+=================== 
+=================== 
+=================== 
+b0fcad26283ce6c6b783989a3b493c64  [shntool]  01_Somebody_Touched_Me.wav
+52b067972868cf2360c5c7008750ed4b  [shntool]  02_My_Back_Pages.wav
+e8e9d89afd9ad4f817713523aed040f2  [shntool]  03_Tangled_Up_in_Blue.wav
+ff609189483e6756bb3bdd595a64294b  [shntool]  04_Don_t_Think_Twice.wav
+fd97ab17d35710a544c0ce965a146b86  [shntool]  05_Till_I_Fell_in_Love_with_You.wav
+b0ac5f39c345d53392961c2528d676c3  [shntool]  06_Most_Likely_to_Go_Your_Way__And_I_ll_Go_Mine_.wav
+748fde99e86e6ebf7755b6303712964f  [shntool]  07_Floater__Too_Much_to_Ask__.wav
+dec0124cc8418da4732701bd92359553  [shntool]  08_High_Water.wav
+b3fc919b875381eddc278165f88bca06  [shntool]  09_Master_of_War.wav
+c566e21e0d93a2f7d660e33d013e3957  [shntool]  10_Visions_of_Johanna.wav
+f093ecc886d1d59d8b306f7bac7d0709  [shntool]  11_I_Shall_Be_Released.wav
+c987a4d02e63a3442d35fbe2643c37dc  [shntool]  12_Summer_Days.wav
+3b5ed3ac777fac45da936918bae3707b  [shntool]  13_Like_a_Rolling_Stone.wav
+b88e2469ba7c5201b0553e65872f5632  [shntool]  14_Cold_Irons_Bound.wav
+cc87666f0c49a3e9dbecb477a0a83ddc  [shntool]  15_Rainy_Day_Women_12___35.wav
+39a2729e487f0594accbe92ba13b30c8  [shntool]  16_Honest_With_Me.wav
+44c09677e19b928a838900cefdd2f336  [shntool]  17_Blowin_in_the_Wind.wav
+c264810c065ef697ae9ca46c0747e94b  [shntool]  18_All_Along_the_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-13-HOLD 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:39.23       38686328 B   -b-   --   -----    wav  1.0000  01_Somebody_Touched_Me.wav
+     6:29.10       68644052 B   -b-   --   -----    wav  1.0000  02_My_Back_Pages.wav
+     9:46.38      103458644 B   -b-   --   -----    wav  1.0000  03_Tangled_Up_in_Blue.wav
+     6:18.57       66814420 B   -b-   --   -----    wav  1.0000  04_Don_t_Think_Twice.wav
+     6:24.27       67800816 B   -b-   --   -----    wav  1.0000  05_Till_I_Fell_in_Love_with_You.wav
+     6:34.01       69504344 B   -b-   --   -----    wav  1.0000  06_Most_Likely_to_Go_Your_Way__And_I_ll_Go_Mine_.wav
+     6:40.72       70729964 B   -b-   --   -----    wav  1.0000  07_Floater__Too_Much_to_Ask__.wav
+     6:41.15       70771724 B   ---   --   -----    wav  1.0000  08_High_Water.wav
+     5:17.28       55985304 B   -b-   --   -----    wav  1.0000  09_Master_of_War.wav
+     9:11.68       97355204 B   -b-   --   -----    wav  1.0000  10_Visions_of_Johanna.wav
+     5:50.22       61790728 B   -b-   --   -----    wav  1.0000  11_I_Shall_Be_Released.wav
+     7:50.33       82986728 B   -b-   --   -----    wav  1.0000  12_Summer_Days.wav
+     7:58.63       84467312 B   -b-   --   -----    wav  1.0000  13_Like_a_Rolling_Stone.wav
+     6:02.00       63856844 B   ---   --   -----    wav  1.0000  14_Cold_Irons_Bound.wav
+     8:30.07       89979360 B   -b-   --   -----    wav  1.0000  15_Rainy_Day_Women_12___35.wav
+     9:36.15      101641144 B   -b-   --   -----    wav  1.0000  16_Honest_With_Me.wav
+     4:59.33       52822008 B   -b-   --   -----    wav  1.0000  17_Blowin_in_the_Wind.wav
+     5:58.20       63199392 B   -b-   --   -----    wav  1.0000  18_All_Along_the_Watchtower.wav
+   123:49.08     1310494316 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

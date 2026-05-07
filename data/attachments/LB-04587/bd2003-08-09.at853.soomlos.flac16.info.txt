@@ -1,0 +1,60 @@
+Bob Dylan
+PNC Bank Arts Center
+Holmdel, New Jersey
+August 9, 2003
+
+source: soomlos
+orch left center, row t
+at853's > denecke ad-20 > sony d8
+sony d8 > microtrack > sound forge 7.0 > cd wave > flac
+
+Disc 1:
+01. introduction [00:47]
+02. Silvio [06:09]
+03. If You See Her, Say Hello [06:00]
+04. Tweedle Dee & Tweedle Dum [05:29]
+05. Joey [08:54]
+06. Highway 61 Revisited [06:46]
+07. It Ain't Me, Babe [07:50]
+08. A Hard Rain's A-Gonna Fall [06:28]
+09. Drifter's Escape [05:08]
+10. Can't Wait [05:50]
+11. Watching The River Flow [05:56]
+Total time: [65:24]
+
+Disc 2: 
+01. Honest With Me [06:48]
+02. band introduction [00:36]
+03. Summer Days [10:19] *
+     (encore)
+04. Rainy Day Women #12 & 35 [05:05] **
+05. All Along The Watchtower [06:37] **
+Total time: [29:28]
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, steel guitar, cittern
+Freddie Koella - guitar
+George Recile - drums
+Tony Garnier - bass
+
+*  Tommy Morrongiello - guitar
+** Mike Campbell - guitar, Benmont Tench - piano, Tom Petty - guitar, vocals
+
+Flac Fingerprint
+bd2003-08-09d1t01.flac:310943b96b01a69886a1955bbe2f1afd
+bd2003-08-09d1t02.flac:a794e0ada9a36f7772ce7cd8910b8697
+bd2003-08-09d1t03.flac:9a5d1b47fc872698a042a72721467d5d
+bd2003-08-09d1t04.flac:f50e2d46c6cc7e79da552a728a6eef53
+bd2003-08-09d1t05.flac:0a1b1a3291f4e581ff3ec2cef0133196
+bd2003-08-09d1t06.flac:3aba0af4c3212add9079382e85d016b9
+bd2003-08-09d1t07.flac:53188506cc94e95682e826f8bd2f4d20
+bd2003-08-09d1t08.flac:073db270365ddb372d4e35339ba85300
+bd2003-08-09d1t09.flac:1aa149156da25159cd195ab10c192e1a
+bd2003-08-09d1t10.flac:1a2c784466bd3e4e428af5b403a15733
+bd2003-08-09d1t11.flac:f9404605396e8b1e8c3dfc3ad98dc04d
+bd2003-08-09d2t01.flac:90150fa6fe8e159c712f2210d93a24e8
+bd2003-08-09d2t02.flac:c0e698106f96dc360f9c54a4bdc9930a
+bd2003-08-09d2t03.flac:658ae8fc3cda2d6589d7ec46056f3fa8
+bd2003-08-09d2t04.flac:e6158b7aafaaf7681cbee7e6b26fd7bb
+bd2003-08-09d2t05.flac:a8e859d80b5e78be895b2b4b49534516

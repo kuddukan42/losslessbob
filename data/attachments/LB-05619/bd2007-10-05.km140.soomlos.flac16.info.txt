@@ -1,0 +1,62 @@
+Bob Dylan
+Verizon Wireless Arena
+Manchester, New Hampshire, USA
+October 5, 2007
+
+Disc 1:
+01. introduction [00:39]
+02. Cat's In The Well [04:36]  
+03. Lay, Lady, Lay [05:34]  
+04. Just Like Tom Thumb's Blues [07:22]  
+05. Positively 4th Street [05:51]  
+06. The Levee's Gonna Break [07:42]  
+07. Spirit On The Water [06:41]  
+08. Honest With Me [06:59]  
+09. Beyond The Horizon [07:11]  
+10. High Water (For Charley Patton) [06:03]  
+11. My Back Pages [06:53]
+Total time: [65:39]
+
+Disc 2:
+01. Highway 61 Revisited [06:30]  
+02. Nettie Moore [08:02]  
+03. Summer Days [06:06]  
+04. Like A Rolling Stone [10:22]  
+    (encore)
+05. Thunder On The Mountain [06:50]  
+06. band intoduction [00:48]
+07. Blowin' In The Wind [06:58]  
+Total time: [45:39]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, viola, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+7th row center
+neumann km140's > m-audio mt24/96 (line-in 24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-10-05d1t01.flac:91d8d9172c8bcae89ee0d3d1291abd16
+bd2007-10-05d1t02.flac:5968548c717467a697df8ed50862afbf
+bd2007-10-05d1t03.flac:8bdd6a03642a33a58045263f031553cf
+bd2007-10-05d1t04.flac:dbea3563df54becbea4c243763ab26c3
+bd2007-10-05d1t05.flac:3a5a818c78a37a3ea4db9b4ceeb13c08
+bd2007-10-05d1t06.flac:167dfe79d8aaa5abafa85f84176f5d42
+bd2007-10-05d1t07.flac:0ef70044cf6edb159ecd934419bf2419
+bd2007-10-05d1t08.flac:7938624dbee741a9efde12c81c10372c
+bd2007-10-05d1t09.flac:5738b0e163bf3827d1b5230604df2d64
+bd2007-10-05d1t10.flac:cf4008a95ddb9dc70c11223d3da0af04
+bd2007-10-05d1t11.flac:fc578af9199fc010cefce14e56b25c89
+bd2007-10-05d2t01.flac:f081dd5430b861d1580d805df7e85b0a
+bd2007-10-05d2t02.flac:97c64eabaaea61ca389ea145d5acf4bf
+bd2007-10-05d2t03.flac:b377492478039d984bfa43f51181a4e0
+bd2007-10-05d2t04.flac:f9b30a6333bbda3310aa104379944737
+bd2007-10-05d2t05.flac:ee0d6ea5023c6e1f26cab76ed0621a02
+bd2007-10-05d2t06.flac:9a9b20f93758dda4efc6ab7942d8c25b
+bd2007-10-05d2t07.flac:7a0d5c80161617518e8fc5eb02bacec7

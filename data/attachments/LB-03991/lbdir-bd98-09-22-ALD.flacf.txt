@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-09-22-ALD.flacf 
+=================== 
+=================== 
+=================== 
+737a113cfac07cfe2e97d80ddcd65758  bd1998-09-22_ALD.ffp
+75b135e660a67a272a949e6bd2981079  bd1998-09-22_ALD.md5
+96f0c3c7740c36e7fd882240dac3ad0a  bd1998-09-22_ALD.txt
+59dbe4ce90babcba349584e614695258  bd1998-09-22_ALD_d1t01.flac
+7fd6449a5da0759348bacd12d7c2bb20  bd1998-09-22_ALD_d1t02.flac
+d4ee035342be308ef3be7602b10b184c  bd1998-09-22_ALD_d1t03.flac
+ddbcc5f495b1eaf9c326b377f6e2b3a2  bd1998-09-22_ALD_d1t04.flac
+c94114547433b1e1b8a2c6fbd4f3d4aa  bd1998-09-22_ALD_d1t05.flac
+82d693178248d84a58d8d3cb3ffd8178  bd1998-09-22_ALD_d1t06.flac
+2017898ceb2eabb8ae68a2bc1f55d479  bd1998-09-22_ALD_d1t07.flac
+293fa0a146f3fda1ac14a9fc055faf9c  bd1998-09-22_ALD_d1t08.flac
+86009f5572660baeaf974320145330d1  bd1998-09-22_ALD_d2t01.flac
+77d4aa821e9224baf088561083f16dc6  bd1998-09-22_ALD_d2t02.flac
+6c8c6a87c88158a276255ca6453add83  bd1998-09-22_ALD_d2t03.flac
+e6df7ea747ec2b42736484f9c6a9cf06  bd1998-09-22_ALD_d2t04.flac
+f1bbe6f5c66456386c9cf7e3af28fb29  bd1998-09-22_ALD_d2t05.flac
+e6092808a47b800372c4559687f73f7b  bd1998-09-22_ALD_d2t06.flac
+c8257a5a0ad86ac12c2e57abe13f5cea  bd1998-09-22_ALD_d2t07.flac
+993148cd5d498ffbd7db1cb0debfd9bf  bd1998-09-22_ALD_d2t08.flac
+8b02a7d5674c9b43ea7348732fdf9990  bd1998-09-22_ALD_d2t09.flac
+78d0fe52f95a935e10d230be5ec1575b  bd98-09-22-ALD-LB-3991.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-09-22-ALD.flacf 
+=================== 
+=================== 
+=================== 
+bd1998-09-22_ALD_d1t01.flac:1f7fac19a68e585defffe0c93c19e7fc
+bd1998-09-22_ALD_d1t02.flac:af36bd56ba95db4408647492ee190b16
+bd1998-09-22_ALD_d1t03.flac:d445136303d9dad6fbed722b7fbc7a2d
+bd1998-09-22_ALD_d1t04.flac:2986ff693f5a5f041043c608622e5e5f
+bd1998-09-22_ALD_d1t05.flac:924c00369de9f25c8f34decf057c5687
+bd1998-09-22_ALD_d1t06.flac:b7294f92b0511e5aa526ed1a7b40070b
+bd1998-09-22_ALD_d1t07.flac:5a82703dcee76c6501462e0880eb65ac
+bd1998-09-22_ALD_d1t08.flac:88d0d8f33e42e827127274a270d26e58
+bd1998-09-22_ALD_d2t01.flac:30484a67efbc5f7b2804dc340d779d83
+bd1998-09-22_ALD_d2t02.flac:18cb7439b2afcc9bb09ec17969f9ff07
+bd1998-09-22_ALD_d2t03.flac:fbcbc75892fe11f0e7ec215f76cb56cf
+bd1998-09-22_ALD_d2t04.flac:4c88fafccafa9b510f8febe089f08a5f
+bd1998-09-22_ALD_d2t05.flac:03106aeebae0db4ba973c2f2f2f96ca8
+bd1998-09-22_ALD_d2t06.flac:1c98ebd9ede2fdbe79580dd43e1e45be
+bd1998-09-22_ALD_d2t07.flac:a7b9fbee218e4eb25319723a32921446
+bd1998-09-22_ALD_d2t08.flac:d23d84c8ae1be585fd5c3ad13be9d3dc
+bd1998-09-22_ALD_d2t09.flac:e2f0b5b8fd7c9ecc903c1024ac49f037
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-09-22-ALD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.66       54662876 B   ---   --   ---xx   flac  0.5993  bd1998-09-22_ALD_d1t01.flac
+     6:24.00       67737644 B   ---   --   ---xx   flac  0.6053  bd1998-09-22_ALD_d1t02.flac
+     4:35.04       48519452 B   ---   --   ---xx   flac  0.5920  bd1998-09-22_ALD_d1t03.flac
+     5:43.14       60538172 B   ---   --   ---xx   flac  0.5973  bd1998-09-22_ALD_d1t04.flac
+     6:35.60       69819164 B   ---   --   ---xx   flac  0.5911  bd1998-09-22_ALD_d1t05.flac
+     5:35.31       59166956 B   ---   --   ---xx   flac  0.5852  bd1998-09-22_ALD_d1t06.flac
+     4:52.44       51612332 B   ---   --   ---xx   flac  0.5781  bd1998-09-22_ALD_d1t07.flac
+     4:54.50       51979244 B   ---   --   ---xx   flac  0.5746  bd1998-09-22_ALD_d1t08.flac
+     8:29.32       89862908 B   ---   --   ---xx   flac  0.6025  bd1998-09-22_ALD_d2t01.flac
+     4:20.27       45927548 B   ---   --   ---xx   flac  0.5865  bd1998-09-22_ALD_d2t02.flac
+     7:16.54       77037452 B   ---   --   ---xx   flac  0.5990  bd1998-09-22_ALD_d2t03.flac
+     5:06.30       54049004 B   ---   --   ---xx   flac  0.5996  bd1998-09-22_ALD_d2t04.flac
+     4:37.12       48891068 B   ---   --   ---xx   flac  0.6056  bd1998-09-22_ALD_d2t05.flac
+     5:33.69       58903532 B   ---   --   ---xx   flac  0.5978  bd1998-09-22_ALD_d2t06.flac
+     5:16.43       55843580 B   ---   --   ---xx   flac  0.5896  bd1998-09-22_ALD_d2t07.flac
+     5:44.21       60731036 B   ---   --   ---xx   flac  0.5920  bd1998-09-22_ALD_d2t08.flac
+     1:42.23       18046940 B   ---   --   ---xx   flac  0.2347  bd1998-09-22_ALD_d2t09.flac
+    91:57.55      973328908 B                            0.5875  (17 files)
+=================== 
+=================== 
+=================== 

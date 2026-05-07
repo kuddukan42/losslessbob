@@ -1,0 +1,66 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 1996-07-13 Hamburg
+request
+
+audio cd trade...no info
+
+audio cd > hd > xACT > flacs > arareus > torrent > hc
+
+artwork from ole's site (with more songs)
+songs not in the list on
+-http://hisbobness.info
+-http://www.bjorner.com
+
+but you get 4 minutes harp on It Ain't Me, Babe <<  ;-)
+
+
+incl
+info txt
+fingerprints
+artwork
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+Hamburg, Germany
+Bahrenfeld-Trabrennbahn
+13-Jul-96
+Never-Ending Tour Concert #804
+
+D1
+1.	Leopard-Skin Pill-Box Hat	[5.12]
+2.	If You See Her, Say Hello	[6.08]
+3.	All Along the Watchtower	[6.38]
+4.	I'll Be Your Baby Tonight	[6.36]
+5.	Silvio				[7.51]
+6.	Ballad Of Hollis Brown		[6.44]
+
+D2
+1.	Tangled Up In Blue		[11.37]
+2.	Like A Rolling Stone		[8.15]
+3.	Maggie's Farm			[6.56]
+4.	It Ain't Me, Babe		[13.45]
+5.	Rainy Day Women #12 & 35	[6.43]
+===================
+===================
+===================
+=== fingerprintD1.ffp
+===================
+===================
+===================
+1 Audiotrack.flac:9f5f50685d4f2675f6be34a3a68eb30c2 Audiotrack.flac:77d10e711c8c7c8049665abb0a3ca78b3 Audiotrack.flac:1415eaabba8ab68599aa5fe94b386ca54 Audiotrack.flac:874698f77321206aa7ec4083616269ff5 Audiotrack.flac:650b24d1585900bf117a4b656c0f33786 Audiotrack.flac:cbc2af23bc1655cac29cec9b3c2b46c4
+===================
+===================
+===================
+=== fingerprintD2.ffp
+===================
+===================
+===================
+1 Audiotrack.flac:3d774ee89d28c5f42d71cd954616704b2 Audiotrack.flac:b0151973ba00ed08afb7dbe673f049b83 Audiotrack.flac:644d377dbca145c7c6f23e6442a0317b4 Audiotrack.flac:0bea24bb20554d026fa126aaa72ae2095 Audiotrack.flac:ede2f7829740f8ebbb6f7afa1e48202c
+===================
+===================
+===================

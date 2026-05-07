@@ -1,0 +1,106 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+AMK Berlin Deutschlandhalle
+West Berlin, West Germany
+29 June 1978
+
+1.A Hard Rain's A-Gonna Fall
+2.She's Love Crazy
+3.Baby Stop Crying
+4.Mr. Tambourine Man
+5.Shelter From The Storm
+6.It's All Over Now, Baby Blue
+7.Tangled Up In Blue
+8.Ballad Of A Thin Man
+9.Maggie's Farm
+10.I Dont Believe You (She Acts Like We Never Have Met)
+11.Like A Rolling Stone
+12.I Shall Be Released
+13.Going, Going, Gone
+14.Rainy Day Women # 12 & 35
+15.One Of Us Must Know (Sooner Or Later)
+16.You're A Big Girl Now
+17.One More Cup Of Coffee (Valley Below)
+18.Blowin' In The Wind
+19.I Want You
+20.Seor (Tales Of Yankee Power)
+21.Masters Of War
+22.Just Like A Woman
+23.Don't Think Twice, It's All Right
+24.All Along The Watchtower
+25.All I Really Want To Do
+26.It's Alright, Ma (I'm Only Bleeding)
+27.Forever Young
+
+28.I'll Be Your Baby Tonight
+29.The Times They Are A-Changin'
+
+Concert # 10 of the 1978 European Tour. 1978 concert # 40.
+
+Concert # 17 with the 1978 World Tour Band: Bob Dylan (vocal & guitar), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Jerry Scheff (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Carolyn Dennis (background vocals).
+
+1, 14 instrumental without Bob Dylan.
+6, 22 Bob Dylan (harmonica).
+
+BobTalk
+
+All right! I wanna introduce the band. On the bass guitar, bass guitar, Jerry Scheff. On the drums, Ian Wallace. On the piano, from Chicago, Alan Pasqua. On the conga drums, from Detroit, Bobbye Hall. From Mobile, Alabama, on the lead guitar, Billy Cross. And from Shreveport, Louisiana, on the rhythm guitar, Steve Soles. From Washington D. C. on the fiddle and the mandolin, David Mansfield. From San Diego on the ..., whatever, Steve Douglas. On the background vocals, from North Carolina, on the left, Carolyn Dennis. On the right, from Cleveland, Ohio, Jo Ann Harris. Right in the middle, from St. Louis, Missouri, Helena Springs. I wrote and recorded this in New York City 1963, It's Alright Ma, I'm Only Bleeding.
+
+2 new songs (6%) compared to previous concert. No new songs for this tour.
+
+Stereo audience recording, 135 minutes.
+
+Session info updated 17 March 2014.
+
+www.bjorner.com
+===================
+===================
+===================
+=== NONAME.MD5
+===================
+===================
+===================
+50e76de203f2d953d45e1ef614a2e996 *Track01.shn
+dfd42c3d7f4eb163422eed2fbcdf7f38 *Track02.shn
+24e29b2892243151a4cb8b8751fc0e6c *Track03.shn
+529ee04dade9a8690bb5de89e0a193c8 *Track04.shn
+641e998004c46ff5bf0efd0b7190433c *Track05.shn
+468b8467f27a39fd65b7e9e69f3d4020 *Track06.shn
+08c87ec68b6d9c96c4200ff3651ba893 *Track07.shn
+3400162bd3430b7171d7f138454fa55a *Track08.shn
+58e4269d8f6ee9b58082bdf968faea75 *Track09.shn
+0036870a5e11028f45232c58597fef15 *Track10.shn
+896b1b715cc114c1f5ec0c415d8acb45 *Track11.shn
+819402599ecc2169b466af5652e69ac7 *Track12.shn
+296225612a4dcffbace141e89901a192 *Track13.shn
+8b9da0981eb877c1cc807ded9f8f47d3 *Track14.shn
+2966f2b07940dd7b0ffd35b2e4196674 *Track15.shn
+===================
+===================
+===================
+=== NONAME.MD5
+===================
+===================
+===================
+bc1e37ff89308a2a9fc1e7cebf3859c1 *Track01.shn
+cf66e43e40595e4541c8912443544379 *Track02.shn
+07e016640f2b2c4553c49bde0b11478e *Track03.shn
+3b4128bcb67aed67d7372ea3b5cd45e1 *Track04.shn
+8274dfec67a75eedcdbfbd96edeb704b *Track05.shn
+a68ac00948c224edeadc922ee83fcb07 *Track06.shn
+d2f499a191dff87f45d8300f65af8fc8 *Track07.shn
+9ae3a36e4ff9bf9b5337d69b3918d06d *Track08.shn
+40fea2e186e1b1569534598dc099f0d7 *Track09.shn
+60fd1a096e5c41aceda6b805a9c5bfce *Track10.shn
+f10303dcb47cce1fb8f73b5f9456760f *Track11.shn
+6b470738211e66078abab05533ffbcc4 *Track12.shn
+cbc44f48a8e2fe9ea23b4caaab4bff1d *Track13.shn
+1e572118dae346844bb5436a50da5ae9 *Track14.shn
+===================
+===================
+===================

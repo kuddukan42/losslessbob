@@ -1,0 +1,126 @@
+===================
+===================
+===================
+=== md5 for: bd74-01-11-e.flacf
+===================
+===================
+===================
+5cc5993c1841dd6afd40f50c1ac478e4 *1\1.ffp
+5cc5993c1841dd6afd40f50c1ac478e4 *1\1.txt
+cbf853d9a035aabbcbdef69529e11ecd *1\bd19740111d1t01.flac
+0013a6042002a5fa2e2ae2ca537c6003 *1\bd19740111d1t02.flac
+4ac049b5e6d1c569fb2c2c34f8b670b4 *1\bd19740111d1t03.flac
+0e6a8cd81c05eed3c0dbd0d7757b7631 *1\bd19740111d1t04.flac
+c4f7e9d6f459e0716a799f01dd9e6017 *1\bd19740111d1t05.flac
+8a55a45d3bc8f0123a49197afabdbc89 *1\bd19740111d1t06.flac
+8b8ac035a611d13d42a4d1a5229bc9e4 *1\bd19740111d1t07.flac
+78155a099852eef304ca36da61ef0879 *1\bd19740111d1t08.flac
+b532c622e7e0bc0756de9c245198ec0a *1\bd19740111d1t09.flac
+6b6574e4a20230eeb770ede626aedee6 *1\bd19740111d1t10.flac
+faeb1bcbb57513405e9821294cc03f5c *1\bd19740111d1t11.flac
+bcf6ed8d30360e4473c7ce61805beed6 *1\bd19740111d1t12.flac
+c6142e6334c6c3876a1a8f5eeacb9400 *1\bd19740111d1t13.flac
+8af08811a3914d738b7ab1fe42e7ad14 *1\bd19740111d1t14.flac
+0f613bef12f2ee13a484187310bc5678 *1\bd19740111d1t15.flac
+69353c5901853f3c9ad46113cf559183 *2\2.ffp
+69353c5901853f3c9ad46113cf559183 *2\2.txt
+c9e7046453fedeaef3f35e88d1b9c2f2 *2\bd19740111d2t01.flac
+e03b9a94e2ab6cc5e0eb9f1c0be0d2aa *2\bd19740111d2t02.flac
+8bdaa071e27e83333da54cfd1bc34b31 *2\bd19740111d2t03.flac
+d18c816287754b57f4966b1f5babbabb *2\bd19740111d2t04.flac
+e5d13eedbcdeb9f4ea2b5999c6226595 *2\bd19740111d2t05.flac
+f2d785da86bf21cc669c6d7204843288 *2\bd19740111d2t06.flac
+1d63f95f5cd53b97bfccf5791a3979e9 *2\bd19740111d2t07.flac
+41c2e2a687a2db55e4ce86befe5ad571 *2\bd19740111d2t08.flac
+b6fdab1205026f6a7d2502914ba7ee13 *2\bd19740111d2t09.flac
+5e18319032cf8990de6085c913885f7f *2\bd19740111d2t10.flac
+bf83bffaa9877bb4449b78ee05adb8bc *2\bd19740111d2t11.flac
+0bfd8854941c0d8f37057e592fe5565a *2\bd19740111d2t12.flac
+971d7db0edeb4f69109ca91e4162e9ba *2\bd19740111d2t13.flac
+9c032a224f127e94acd1fca3070308fd *info.txt
+50df7ee243278c40b8f3722b587f753f *January 11 1974 Montreal Forum  Montreal, Quebec, Canada.md5
+50df7ee243278c40b8f3722b587f753f *January 11 1974 Montreal Forum  Montreal, Quebec, Canada.txt
+===================
+===================
+===================
+=== ffp for: bd74-01-11-e.flacf
+===================
+===================
+===================
+1\bd19740111d1t01.flac:810d88fb81cee6154c282e6bf0d45750
+1\bd19740111d1t02.flac:be3cebff4b6453520c0492299eb458da
+1\bd19740111d1t03.flac:bdd31db6a135fc9e348dddcbccb9a9db
+1\bd19740111d1t04.flac:ede91dfa0ff5581b0f660a08857d5281
+1\bd19740111d1t05.flac:2a39224cfc65200bd41437e1fedf2984
+1\bd19740111d1t06.flac:f4484591df6f4a600a3ed5811167c9d4
+1\bd19740111d1t07.flac:e1348b7647f8e9ee0ceb9911f3fa420e
+1\bd19740111d1t08.flac:e66347e8ea5f351cc7af2a56a024b93d
+1\bd19740111d1t09.flac:93fe2c22a8baac30dd86ad5a83754103
+1\bd19740111d1t10.flac:f68ff1ee641c7300a6cf7b4c2dd68e93
+1\bd19740111d1t11.flac:35167ee71b344eaec0aec5c37d2783d2
+1\bd19740111d1t12.flac:5486808d28679fa5e9925319ffa3bf3b
+1\bd19740111d1t13.flac:478c73520f7eb6f575349a0f6464b940
+1\bd19740111d1t14.flac:6fdffb8d9d48a1ec9e6301fc00fd7dde
+1\bd19740111d1t15.flac:37ef2d1806fe48ad36cee02d34b9483b
+2\bd19740111d2t01.flac:4087d6736a15c66b74e76294515d5478
+2\bd19740111d2t02.flac:b9aa51c6f537f2dc11a5d525e6fb62b4
+2\bd19740111d2t03.flac:3dba69999f59d1fc8c9b90126edc2c99
+2\bd19740111d2t04.flac:07e62c6a418d8662652756c308d37d58
+2\bd19740111d2t05.flac:7c2018a15cff010e84c93186d90b5b41
+2\bd19740111d2t06.flac:51aba265ef714273c08f064db03d3933
+2\bd19740111d2t07.flac:df3c9aff7e2167e2eea23221948ef91b
+2\bd19740111d2t08.flac:ebe3cee88ccfa57eeee8090528300945
+2\bd19740111d2t09.flac:274f76372ad620e19e78150501802014
+2\bd19740111d2t10.flac:a141909b804143f30d75654355fe7950
+2\bd19740111d2t11.flac:da08e4fdca695e657bde226f2fd7e154
+2\bd19740111d2t12.flac:baad1a39dc4d6ac14c4d0e386bbf90bd
+2\bd19740111d2t13.flac:e57191c6b4979a8c376165d9f18ef91c
+===================
+===================
+===================
+=== shntool len for: bd74-01-11-e.flacf\1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.70       46381484 B   ---   --   ---xx   flac  0.6303  bd19740111d1t01.flac
+     3:27.49       36630092 B   ---   --   ---xx   flac  0.6263  bd19740111d1t02.flac
+     5:30.16       58249676 B   ---   --   ---xx   flac  0.6358  bd19740111d1t03.flac
+     6:02.40       63950924 B   ---   --   ---xx   flac  0.6362  bd19740111d1t04.flac
+     4:13.06       44643356 B   ---   --   ---xx   flac  0.6323  bd19740111d1t05.flac
+     4:00.44       42439532 B   ---   --   ---xx   flac  0.6252  bd19740111d1t06.flac
+     5:19.62       56417468 B   ---   --   ---xx   flac  0.5397  bd19740111d1t07.flac
+     4:30.49       47743292 B   ---   --   ---xx   flac  0.5365  bd19740111d1t08.flac
+     3:54.58       41414060 B   ---   --   ---xx   flac  0.5211  bd19740111d1t09.flac
+     4:09.26       43984796 B   ---   --   ---xx   flac  0.5270  bd19740111d1t10.flac
+     3:54.49       41392892 B   ---   --   ---xx   flac  0.5170  bd19740111d1t11.flac
+     4:37.05       48874604 B   ---   --   ---xx   flac  0.5244  bd19740111d1t12.flac
+     3:02.51       32224796 B   ---   --   ---xx   flac  0.6361  bd19740111d1t13.flac
+     4:34.11       48359516 B   ---   --   ---xx   flac  0.6324  bd19740111d1t14.flac
+     3:43.14       39370172 B   ---   --   ---xx   flac  0.6168  bd19740111d1t15.flac
+    65:23.25      692076660 B                            0.5893  (15 files)
+===================
+===================
+===================
+=== shntool len for: bd74-01-11-e.flacf\2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.73       45682940 B   ---   --   ---xx   flac  0.6010  bd19740111d2t01.flac
+     3:17.50       34868444 B   ---   --   ---xx   flac  0.6250  bd19740111d2t02.flac
+     4:30.65       47780924 B   ---   --   ---xx   flac  0.6165  bd19740111d2t03.flac
+     3:22.09       35654012 B   ---   --   ---xx   flac  0.6193  bd19740111d2t04.flac
+     5:02.53       53397500 B   ---   --   ---xx   flac  0.6215  bd19740111d2t05.flac
+     5:35.68       59253980 B   ---   --   ---xx   flac  0.5499  bd19740111d2t06.flac
+     4:07.20       43617884 B   ---   --   ---xx   flac  0.5469  bd19740111d2t07.flac
+     4:32.28       48046700 B   ---   --   ---xx   flac  0.5670  bd19740111d2t08.flac
+     4:47.65       50779724 B   ---   --   ---xx   flac  0.5560  bd19740111d2t09.flac
+     5:34.32       58992908 B   ---   --   ---xx   flac  0.6344  bd19740111d2t10.flac
+     5:25.40       57424124 B   ---   --   ---xx   flac  0.6347  bd19740111d2t11.flac
+     6:46.49       71733692 B   ---   --   ---xx   flac  0.6474  bd19740111d2t12.flac
+     8:17.30       87741404 B   ---   --   ---xx   flac  0.6409  bd19740111d2t13.flac
+    65:39.57      694974236 B                            0.6078  (13 files)
+===================
+===================
+===================

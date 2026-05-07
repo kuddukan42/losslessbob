@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-03-Neumann140.flacf 
+=================== 
+=================== 
+=================== 
+1ba8fe9d2a1927d590f545d219090e73  bd06-04-03-Neumann140-LB-3680.txt
+9d95687e794374a3197de59b1e6fef1e  Dylan2006-04-03_d1t01.flac
+968ecbd299f9604ae85715e30494cd40  Dylan2006-04-03_d1t02.flac
+49f8a7460783c6311b3627f1d7d1bf6c  Dylan2006-04-03_d1t03.flac
+a047207228526a1617983b2d192d7063  Dylan2006-04-03_d1t04.flac
+48a76f48cfc23c397e013089800ef315  Dylan2006-04-03_d1t05.flac
+0f4d811a0ad1803cb3d1548d3a79ac48  Dylan2006-04-03_d1t06.flac
+ec004dcba46e5bb5c65a25fcbd8cde04  Dylan2006-04-03_d1t07.flac
+8d6e92d001425914aead4091a42845cd  Dylan2006-04-03_d1t08.flac
+d2268c3c5d478c7f103fca3e5387ace3  Dylan2006-04-03_d1t09.flac
+1297662b31d3a7b10f02eae514b1d35c  Dylan2006-04-03_d2t01.flac
+9bfa86a10031fe1026a888785ed5fa5c  Dylan2006-04-03_d2t02.flac
+cec4cb45aea85cb391fec75c93e3d61b  Dylan2006-04-03_d2t03.flac
+7a414339b36824ac6a830d0b959bf9de  Dylan2006-04-03_d2t04.flac
+358144507c0b87c29858a97a4cf14323  Dylan2006-04-03_d2t05.flac
+47b87364422bf744e0bb8a93f52b483b  Dylan2006-04-03_d2t06.flac
+55043ec0e94b9cf575f5b746c10a364d  Dylan2006-04-03_d2t07.flac
+3e52287024a4e92ad0dd819da4901239  Dylan2006-04-03_ffp.txt
+56772aebf6718b5f0134712b9d2980dc  Dylan2006-04-03_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-03-Neumann140.flacf 
+=================== 
+=================== 
+=================== 
+Dylan2006-04-03_d1t01.flac:3d5b51b1828e57a03e758528b30342ce
+Dylan2006-04-03_d1t02.flac:61d7fd07f9bc10daea17b239c0a898e6
+Dylan2006-04-03_d1t03.flac:b39e8e24c0134bd0235bf4db4a2052b5
+Dylan2006-04-03_d1t04.flac:27c92910823241dd6e10ab366c23d42a
+Dylan2006-04-03_d1t05.flac:f82a967d3c3c5c9d333932bcbf47e252
+Dylan2006-04-03_d1t06.flac:db4f40c6dfe9bfc9436ea25e9452bb5e
+Dylan2006-04-03_d1t07.flac:a63b024866fcd8eb2b786242cfebdf4d
+Dylan2006-04-03_d1t08.flac:4a7d5142f33876220adfce9d3a3fc21a
+Dylan2006-04-03_d1t09.flac:48d53497bff694631caa52331dad744e
+Dylan2006-04-03_d2t01.flac:7afe1a0eb895e18d6cd6e2d30d0187bd
+Dylan2006-04-03_d2t02.flac:c8411ea27f285c8af6f5f55b36afcf30
+Dylan2006-04-03_d2t03.flac:50ddef178502d2c1b1c52c22635e2447
+Dylan2006-04-03_d2t04.flac:004e92c4576d1a9d1e8d1a9ca5132e27
+Dylan2006-04-03_d2t05.flac:f27c96c0b2cd661992b73218cdbfb64b
+Dylan2006-04-03_d2t06.flac:68527d8fa11ee549c87303f0b3aa18df
+Dylan2006-04-03_d2t07.flac:a8f833ba3ad79e50ad0b486563b7fa48
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-03-Neumann140.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.24       62678492 B   ---   --   ---xx   flac  0.6260  Dylan2006-04-03_d1t01.flac
+     5:50.21       61789436 B   ---   --   ---xx   flac  0.5865  Dylan2006-04-03_d1t02.flac
+     7:55.42       83888828 B   ---   --   ---xx   flac  0.6124  Dylan2006-04-03_d1t03.flac
+     7:57.50       84260444 B   ---   --   ---xx   flac  0.5504  Dylan2006-04-03_d1t04.flac
+     7:03.44       74720732 B   ---   --   ---xx   flac  0.5803  Dylan2006-04-03_d1t05.flac
+     7:48.03       82562300 B   ---   --   ---xx   flac  0.5902  Dylan2006-04-03_d1t06.flac
+     5:09.23       54561740 B   ---   --   ---xx   flac  0.4844  Dylan2006-04-03_d1t07.flac
+     7:00.59       74226812 B   ---   --   ---xx   flac  0.6205  Dylan2006-04-03_d1t08.flac
+     7:54.06       83627756 B   ---   --   ---xx   flac  0.5298  Dylan2006-04-03_d1t09.flac
+     7:12.30       76275404 B   ---   --   ---xx   flac  0.6103  Dylan2006-04-03_d2t01.flac
+     6:11.03       65451500 B   ---   --   ---xx   flac  0.4762  Dylan2006-04-03_d2t02.flac
+     7:08.03       75506300 B   ---   --   ---xx   flac  0.5997  Dylan2006-04-03_d2t03.flac
+     5:37.06       59460956 B   ---   --   ---xx   flac  0.5385  Dylan2006-04-03_d2t04.flac
+     9:37.22      101834588 B   ---   --   ---xx   flac  0.5587  Dylan2006-04-03_d2t05.flac
+     7:04.25       74852444 B   ---   --   ---xx   flac  0.6119  Dylan2006-04-03_d2t06.flac
+     6:23.18       67604604 B   -b-   --   ---xx   flac  0.5852  Dylan2006-04-03_d2t07.flac
+   111:48.04     1183302336 B                            0.5741  (16 files)
+=================== 
+=================== 
+=================== 

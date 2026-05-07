@@ -1,0 +1,245 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-ace-of-clubs.flacf 
+=================== 
+=================== 
+=================== 
+460fa9704515008510148bbfcb32835b  101.flac
+4d022d963ece2b1a030c70b73d9372f3  102.flac
+77fac4686673f9a9292b6de64d8ab508  103.flac
+c5e663f36bc0bde0c6e206da07dcee80  104.flac
+0a0f2d77b6d627ca07d488047c052ef6  105.flac
+31df2cd151958f42846b930411ac12cb  106.flac
+8c82f959b140637164dbc904bfffe179  107.flac
+45001bee88841046ee5fb9a3639a178b  108.flac
+a52dbef9293884185610a076772f8e13  109.flac
+14d699b5fc565439bfe63bb35b68ba46  110.flac
+4ff636d40cd3dc3b1477a797146d3841  111.flac
+56981e5181d666384db79a6625f1cf54  112.flac
+060497cabd966b9fc72e18944d115b83  201.flac
+c81d9d4abdcf6825ac53c072d26fddb2  202.flac
+3c21c5610066923a4193610f33b308aa  203.flac
+aa6490d3bec099daddbe70ad8976966d  204.flac
+b7ce1cfea1076de0df3336745e6a1467  205.flac
+4a3c83925489739d90ead2c30f266193  206.flac
+92d69cc8c6976f100fa8454356734463  207.flac
+8fd771194556c08a372d73a7e5b0c3ea  208.flac
+0ddf19649629b4d07d525667cc7a69fb  209.flac
+cc5be63b24df2320d35edd9cf79462f7  210.flac
+09c145f529404a2377579e01525fc447  211.flac
+a76f00f095263f4d3acb2a955d0b388e  212.flac
+25b7c9ff98c5dfb6f9abe7ba89b9c926  301.flac
+dc8c775723cc5cbbeb56b10ba8660c2a  302.flac
+262be4fea655d6f36e75fcf3cec5fc3e  303.flac
+f973a048ac453fd5afe1d332f6f27666  304.flac
+ab670da1776e567a481c5678475b5b9c  305.flac
+06f136f75121614cb85613fae0851eed  306.flac
+7739bf054aff306eaf6a6a0611da2420  307.flac
+f0fe5192d9191dba0623b3e51791af00  308.flac
+0fba3649596dc2be005a17de82a3736d  309.flac
+5ed9d3ce53f39ca5aa905a9aae5441ae  310.flac
+5fa5c26b5bc50bb147c2128a0d4a778b  311.flac
+a807cc1ca36630d57d2124e4ba0c2778  312.flac
+f01d5996cd56a3238237ad8212e6ca46  313.flac
+6f47559507eb5377ff3253b27f3b1cd3  401.flac
+4ec152850447ebe5e83725dc16838344  402.flac
+a0c20ddbb41803cd319563f565794a07  403.flac
+6306e4dce210a3a90ff2dd75ab13cd6f  404.flac
+62db6ae40f26e5edf51b65ede3b2f273  405.flac
+70b3191bf3025c4d3002a090c393d9f6  406.flac
+70f24a31f26fc80804fbcd552d520cc6  407.flac
+75074dcf722aa878d6027728ca8de64a  408.flac
+fb6730373ed3eb368dbd4792ca1db83a  409.flac
+197a71f8aa4a449c63cbf647d375e7ca  410.flac
+bfff7bac93f9a8b76a4f9946e85e428e  411.flac
+f6dfc0377c807ea69ede8541e66e5e4b  412.flac
+7c0638cd50238385919608e01a2ac132  501.flac
+e2d7e2752b03f223e8afd35ebdc93776  502.flac
+a69ce8d1faecedd54b3b7475839f1132  503.flac
+df258a23e31724a53ad7898b919e314d  504.flac
+c8b7c78427ff8d9687f54ca4ce78fc67  505.flac
+94b40951d7c47ba97957edda3c168231  506.flac
+f5b2ddcfe21e546dd27d4aef63dcad05  507.flac
+1552f20fb843fafd7ecc36a72fab0ed5  508.flac
+16153b0adf832be0e47735cd73c2f4a5  509.flac
+97ac3a2e83904cf5619ddeef2d85553a  510.flac
+e40a4f032111b67bb3b19d60fcd92284  511.flac
+4578ad4c4ccd54a7e4211a9e9fc25a27  512.flac
+7d0b75c7d14fbcb4ed8c5827fb0b9f98  Ace Box back.jpg
+bfc53589a91fe635396fd53d1412811b  Ace Box front.jpg
+53dc9a0950e87c7645925ebcb38a44d7  Artwork.txt
+e0bad44fbf827cc38f7ff4371ecd8660  bd99-ace-of-clubs.txt
+868bb8b2064860e40c95a98365ea93eb  Box Sleeve Back 1.jpg
+7c94163c4171a9ba77073ffd5e5be35f  Box Sleeve Back 2.jpg
+ce38f3242e50c5a0826a468144b4dc41  Box Sleeve Back 3.jpg
+b71518e3e8c6b1578b0e4a7a2194935d  Box Sleeve Back 4.jpg
+6251ad7c2027c3e87a2f21701b1ed7d7  Box Sleeve Back 5.jpg
+625b7827a3f06ea6ed1615a8eaf2378f  Box Sleeve front.jpg
+077bdc876bd3837bff580d2dd61884b5  check1.md5
+35479bf7af15bec6aa1201baf5e6d116  check2.md5
+c79c773125f0882524113d5afc607eb6  check3.md5
+e3bb2543b68d8f42b40df9fe4200cc85  check4.md5
+e2f0956f2d7cd33055ed52f6f064730a  check5.md5
+a1d550e045ef4c06509b759fc7307c56  Disc 1.LOG
+67b0844240ceba15b4aa7f8ed14774a8  Disc 3.LOG
+2444e2c871fc6841068ee7e99764b315  disc2.LOG
+70db1ec3b26ebc85e61b77e7db87f9fe  Disc4.LOG
+36ab4ce275e3e1d188ff9e0f26d95aa5  disc5.LOG
+8bd067aae171c3d7cb56cd52dbb1bc64  DylanAceOfClubs1-2Back.jpg
+395cd38ec0d675257a81117760f7de09  DylanAceOfClubs1-2Front.jpg
+92f01bd8cea625dea15f4b303012f668  DylanAceOfClubs3-4Back.jpg
+a8eb3b8f31048c9239bd4536363f1c5b  DylanAceOfClubs3-4Front.jpg
+dca0ed6e64a411e577387cf35e183857  DylanAceOfClubs5Back.jpg
+3c64daf3bde564fce6c080e02a9b312f  DylanAceOfClubs5Front.jpg
+be0015f0631dadc06c7538845821cc2d  DylanAceOfClubsBack.jpg
+a2c25928803e331b19817752f88ab4b6  DylanAceOfClubsFront.jpg
+158d80226e2d60067216d5ed4197018e  DylanAceOfClubsFrontIn1-2.jpg
+40221806a6d91484d9d12b38755952c0  DylanAceOfClubsFrontIn3-4.jpg
+a2a49f3822ed2a2e5bb3cd1c291de674  DylanAceOfClubsInside.jpg
+0e061008fd54cb17db46bb1dbdf275d2  fingerprint1.txt
+aa16690e6837e6a1c2895d0451fcdcfb  fingerprint2.txt
+1056710fcf73d44022bf6e46acf55adc  fingerprint3.txt
+c19e947666fc09b45c62ac79b5f5f8ca  Fingerprint4.txt
+a5377f6f999177fd828705da44d862d2  fingerprint5.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-ace-of-clubs.flacf 
+=================== 
+=================== 
+=================== 
+101.flac:182bfd42643e2eec412b769bb9ba9173
+102.flac:115110ffb71d7297ba4661b5ca3fc00d
+103.flac:ecdbced99f353bf0990d6d94721407ea
+104.flac:460823ed30da10b05f10179441750602
+105.flac:3f6b8087e1542501a38496b27da5f457
+106.flac:855c6872033c3182653ca8dcd7e3d582
+107.flac:6a13cbe50ae89bb3aab39e020905352c
+108.flac:d8345dc833d3864980fee7a6e22dd7f6
+109.flac:4f2f8777c0e954ab493cd75c24a40aa8
+110.flac:75de9b5e59f09651d4fb7699e4438994
+111.flac:17b6c1e4e2da65c7939add1d3bc30c3a
+112.flac:7ca64c7a08cd356ff65d1c034bd959d7
+201.flac:18797d2dd521e08a4ef17bf7d78672f9
+202.flac:289a0acdad99d465949e8c506e140593
+203.flac:fd0f6a0dd137e12ecd788b34af63c27d
+204.flac:2d2eabeb201675922e1c9020a184273b
+205.flac:35e3d91d8c783d0c7c6c98828255a812
+206.flac:dbbd993dd972c13875a9447483441f53
+207.flac:d25d2c7aa52912c1c1956bdf858d9df4
+208.flac:a84c039a7eca63071239dabe4fc528e4
+209.flac:1d55abd65380d8fe98c872f0087a33a5
+210.flac:0366a1097702fa2af6aafbbf510da847
+211.flac:70a9ef7bd5f02c1ed1c28ada6cddb809
+212.flac:f06fcfb35ec08c01e03a9d0e6fada37e
+301.flac:3d7c500df4df20942ceb9c2403a69366
+302.flac:32e4617a9a751c524e77b6fa0f0a68ab
+303.flac:a47d5f4b5dce5cd8fcdfd1a3432deb50
+304.flac:ab0f69fffa2e33c1507cf052db839ce4
+305.flac:7639cf178117556c5908ce4cdfb5af17
+306.flac:da8e329d02212e9ed7ecee6843940e2a
+307.flac:c313862cdad0be3b4bc06243e2310c9f
+308.flac:c0c135c5dfee1050b658c5ab1bb18f02
+309.flac:2305fc962853c08cf66bb10fdab02b90
+310.flac:c4cd8a3715d3d0ceb0663378cd44e0f7
+311.flac:7e8da3db329333733c032f7afa2afed2
+312.flac:763567a2076e25d6224b0efc3e40a454
+313.flac:3578129075a373cd0b3f8b0c21563fce
+401.flac:33e0c2cc35ea8faeb9c935715570bd21
+402.flac:2f9164fd2f78cad6e20ce801c37035df
+403.flac:db9c58bf7a3d7e6b66cf7ac8876eef95
+404.flac:7e7b1e90e61856cd6d64c54e7ed41593
+405.flac:b806a0784c19c67a54e8438287256b07
+406.flac:f8e6ab0faa7e62fc8a0ba92d8ba36c0c
+407.flac:00212652a867174a248a82cbc115c8df
+408.flac:a1ea0aab5c90e2505e92c29d98f48319
+409.flac:03b1d87def7e73486571a1a612167e0d
+410.flac:89361c52fc56b1a8101c3b6a9868c0a8
+411.flac:f014a8e2f85986a8237477be90fdafd9
+412.flac:992dc43bddac10fa24bb350c5f2966a6
+501.flac:3672efaafb95f429ce0d75aae12fccaa
+502.flac:2cded4ea18f559a0c5f205d6458def47
+503.flac:a1f4881dc5c02a213183c5963d46d480
+504.flac:26512ba3c26fe8f7842d880a740cd064
+505.flac:be1b266bd17ee1af39dfc54473868057
+506.flac:4b39bf7823122ae70bad2745210712c7
+507.flac:f67b37877c0808276c3d5366226f7bd9
+508.flac:2a33404238a523dce6903f67cd3e61bf
+509.flac:a7dbf58977c61a8bd745b8076c493ca8
+510.flac:d27d7df88c214303ecfbada89b3a813c
+511.flac:ea0b5d5f791d8200e2800d0990c6443b
+512.flac:e30632503e4d362a287e5bfbf9de59a2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-ace-of-clubs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:35.56       48641756 B   ---   --   ---xx   flac  0.5242  101.flac
+     6:31.20       69019484 B   ---   --   ---xx   flac  0.5134  102.flac
+     6:49.40       72241724 B   ---   --   ---xx   flac  0.4399  103.flac
+     9:53.35      104687564 B   ---   --   ---xx   flac  0.5026  104.flac
+     5:37.36       59531516 B   ---   --   ---xx   flac  0.5083  105.flac
+     8:17.69       87833132 B   ---   --   ---xx   flac  0.5046  106.flac
+     4:31.15       47839724 B   ---   --   ---xx   flac  0.5436  107.flac
+     6:14.06       65987756 B   ---   --   ---xx   flac  0.4979  108.flac
+     5:56.55       62927804 B   ---   --   ---xx   flac  0.5338  109.flac
+     7:42.71       81663836 B   ---   --   ---xx   flac  0.4180  110.flac
+     6:50.54       72451052 B   ---   --   ---xx   flac  0.5075  111.flac
+     5:55.28       62687900 B   ---   --   ---xx   flac  0.5468  112.flac
+     4:42.37       49831868 B   ---   --   ---xx   flac  0.5788  201.flac
+     4:53.23       51739340 B   ---   --   ---xx   flac  0.5521  202.flac
+     9:56.66      105289676 B   ---   --   ---xx   flac  0.5733  203.flac
+     6:22.55       67514204 B   ---   --   ---xx   flac  0.5692  204.flac
+     8:13.34       87045212 B   ---   --   ---xx   flac  0.6276  205.flac
+     5:54.19       62490332 B   ---   --   ---xx   flac  0.4933  206.flac
+     6:29.13       68650220 B   ---   --   ---xx   flac  0.5977  207.flac
+     6:24.28       67803500 B   ---   --   ---xx   flac  0.5311  208.flac
+     5:59.64       63478172 B   ---   --   ---xx   flac  0.5656  209.flac
+     6:59.00       73911644 B   ---   --   ---xx   flac  0.4991  210.flac
+     7:23.24       78201692 B   ---   --   ---xx   flac  0.5860  211.flac
+     4:54.34       51941612 B   ---   --   ---xx   flac  0.5931  212.flac
+     3:29.57       37001708 B   ---   --   ---xx   flac  0.6332  301.flac
+     6:46.16       71656076 B   ---   --   ---xx   flac  0.6204  302.flac
+     7:53.37       83524268 B   ---   --   ---xx   flac  0.6179  303.flac
+     5:25.50       57447644 B   ---   --   ---xx   flac  0.5772  304.flac
+     7:40.59       81282812 B   ---   --   ---xx   flac  0.6633  305.flac
+     5:53.70       62433884 B   ---   --   ---xx   flac  0.5159  306.flac
+     6:16.09       66347612 B   ---   --   ---xx   flac  0.6679  307.flac
+     4:58.23       52621340 B   ---   --   ---xx   flac  0.5709  308.flac
+     6:35.04       69687452 B   ---   --   ---xx   flac  0.6708  309.flac
+     4:18.00       45511244 B   ---   --   ---xx   flac  0.6539  310.flac
+     7:12.00       76204844 B   ---   --   ---xx   flac  0.5597  311.flac
+     5:53.34       62349212 B   ---   --   ---xx   flac  0.7267  312.flac
+     6:12.72       65790188 B   ---   --   ---xx   flac  0.6225  313.flac
+     3:42.24       39217292 B   ---   --   ---xx   flac  0.5992  401.flac
+     6:36.55       69983804 B   ---   --   ---xx   flac  0.5585  402.flac
+     6:17.48       66615740 B   ---   --   ---xx   flac  0.4879  403.flac
+     7:58.26       84380396 B   ---   --   ---xx   flac  0.5050  404.flac
+     8:34.01       90671996 B   ---   --   ---xx   flac  0.5707  405.flac
+     5:32.54       58691852 B   ---   --   ---xx   flac  0.6426  406.flac
+     6:23.12       67589468 B   ---   --   ---xx   flac  0.6111  407.flac
+     6:29.45       68725484 B   ---   --   ---xx   flac  0.6147  408.flac
+     7:42.23       81550940 B   ---   --   ---xx   flac  0.5325  409.flac
+     5:48.39       61478972 B   ---   --   ---xx   flac  0.6220  410.flac
+     5:59.25       63386444 B   ---   --   ---xx   flac  0.4853  411.flac
+     5:58.73       63322940 B   ---   --   ---xx   flac  0.5942  412.flac
+     6:29.29       68687852 B   ---   --   ---xx   flac  0.4384  501.flac
+     7:36.03       80445500 B   ---   --   ---xx   flac  0.5941  502.flac
+     5:24.32       57228908 B   ---   --   ---xx   flac  0.4810  503.flac
+     4:06.70       43559084 B   ---   --   ---xx   flac  0.6232  504.flac
+     5:43.39       60596972 B   ---   --   ---xx   flac  0.5258  505.flac
+     7:41.51       81440396 B   ---   --   ---xx   flac  0.6154  506.flac
+     9:24.27       99553148 B   ---   --   ---xx   flac  0.5006  507.flac
+     4:10.48       44212940 B   ---   --   ---xx   flac  0.6126  508.flac
+     5:43.12       60533468 B   ---   --   ---xx   flac  0.5161  509.flac
+     4:45.27       50337548 B   ---   --   ---xx   flac  0.6231  510.flac
+     5:46.68       61194380 B   ---   --   ---xx   flac  0.5704  511.flac
+     9:56.00      105134444 B   ---   --   ---xx   flac  0.5554  512.flac
+   389:37.44     4123808972 B                            0.5607  (61 files)
+=================== 
+=================== 
+=================== 

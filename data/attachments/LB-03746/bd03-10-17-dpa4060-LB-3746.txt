@@ -1,0 +1,14 @@
+Bob Dylan, 10/17/03, Hamburg, Germany, Docks, 2CDR
+
+LB-3746, (63min+55min), source: DPA 4060's > DPA MPS6020 p/s > Sony SBM-1 > Sony TCD-D100, (, 4m in front of left P.A.), dat>flac: Sony PCM-R300 > coax cable > DiO2448, > Cool Edit Pro v1.2a (resampling only), > T-Racks 24 v2.0 (mastering) > CDWave v1.6, > FLAC frontend ***alpha*** > flac, genealogy: aud>dat-m>dEdit/dEQ>flac; in comparison to schubert and hv recordings, this one is not as warm which probably happened during the eq phase (reported to be same taper as 10/18/04 LB-2998)
+
+stray claps d1t7 3:27, 3:30
+
+tracklist: -CD1
+- [62:49], 1. (intro), 2. Maggie's Farm, 3. Senor (Tales of Yankee Power), 4. Cry a While, 5. If You See Her, Say Hello, 6. It's Alright, Ma (I'm Only Bleeding), 7. Moonlight, 8. Cold Irons Bound, 9. Most Likely You Go Your Way (And I'll Go Mine), 10. Boots of Spanish Leather, 11. Dignity, -
+
+CD2
+- [54:49], 1. Man in the Long Black Coat, 2. Honest with Me, 3. Love Minus Zero/No Limit, 4. Summer Days, -encore-, 5. Cat's in the Well, 6. Like a Rolling Stone, 7. All along the Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,8 @@
+Bob Dylan, 12/4/88, 
+
+LB-2344, version "d"; see Bridge School Benefit II, complete; in comparison to LB-5928 this has slightly different levels but otherwise similar wav and spectral view and sound with fewer flaws
+
+drop t4 3:42
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

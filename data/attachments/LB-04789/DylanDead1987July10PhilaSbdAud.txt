@@ -1,0 +1,45 @@
+Bob Dylan backed by The Grateful Dead
+July 10, 1987
+John F. Kennedy Stadium
+Philadelphia, Pennsylvania, U.S.A. 
+
+Nothing from this show has been officially released. This is a combination of known lineage soundboard and audience sources spliced together to make a new version that is soundboard except for the "Queen Jane Approximately" false start, the "Touch of Grey" encore and the applause/tuning between each song. Excellent sound quality - check the samples to get an idea for yourself how it sounds.
+
+01 [05:40] Tangled Up In Blue
+02 [05:17] I'll Be Your Baby Tonight [Jerry Garcia on pedal steel guitar]
+03 [04:52] Man Of Peace
+04 [05:21] The Ballad of Frankie Lee and Judas Priest
+05 [06:22] John Brown
+06 [06:07] Simple Twist of Fate
+07 [05:17] Ballad of A Thin Man
+08 [06:52] Stuck Inside of Mobile With The Memphis Blues Again
+09 [05:53] Chimes of Freedom
+10 [01:10] Queen Jane Approximately [false start only - ends after the "That you're tired of yourself and all your creations" line.] [this track from the audience source]
+11 [04:35] Gotta Serve Somebody
+12 [09:46] Joey
+13 [05:39] All Along The Watchtower
+12 [06:31] Touch of Grey [with Bob Dylan on guitar] [this track is from the audience source]
+total - 79:22
+
+Bob Dylan - guitar, vocals
+Jerry Garcia - guitar, vocals
+Bob Weir - guitar, vocals
+Brent Mydland - keyboards, vocals
+Phil Lesh - bass guitar
+Bill Kreutzmann - drums
+Mickey Hart - drums
+
+LINEAGE: 
+Primary source: Soundboard Sony multi-track PCM master > mixdown cassette [recorded on Sony TCD5M] > Sony F1 PCM Beta tape > PCM Beta clone > CD [digital transfer with HHB standalone].
+
+with splices from:
+Secondary source: FOB Sennheiser me80 microphones > audience cassette master > shn files [master recorded by Dr. B. Fried and downloaded from www.archive.org] [note: the audience source was speeded up by approx. 3.7 percent - adjusted with Pro Tools to match speed of soundboard source which was correct].
+
+Combination REMASTER info:
+Audience FLAC files from Archive.org extracted with xACT and soundboard CD received in trade > Macintosh with DigiDesign AudioMedia III soundcard > Pro Tools [speed match, seamless edits, normalization and tracking] > AIFF > xACT (FLAC level 8 files with sector boundaries verified). md5 file created with checkSUM+. No equalization or noise reduction was used in the remastering process.
+
+Notes: The six summer of 1987 Dylan/Dead shows were interesting because it seems that a lot of Bob Dylan fans who were not also Grateful Dead fans thought it to be a low point of Dylan's career while Bob Dylan himself and the Dead band members loved the experience (as did the Deadheads of course). The problem for Dylan's fans was that although the musicians had run through a huge number of songs during the early June rehearsals, nothing was heavily practiced and the Dead members had no clue of the setlists until shortly before each show. None of this bothered Dylan, The Dead or the Deadheads much, but Dylan fans who wanted a slick backing band were disappointed. 
+
+The mastering deck for this tour's soundboard recordings was a Sony digital multitrack wide tape PCM format from which mixed-down preview copies were made on cassettes for Dylan and the Dead members to pick out which songs would be used for the planned album release.
+
+Enjoy & SHARE!

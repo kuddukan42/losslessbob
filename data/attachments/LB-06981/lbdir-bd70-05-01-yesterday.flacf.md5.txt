@@ -1,0 +1,23 @@
+db33925eec312236c4bebd5f8429f616  01 - Ghost Riders In The Sky.flac
+c55d8a1ab78b5ccc4e9ec17687fa9e41  02 - Cupid.flac
+5c8cbb2db1047eb4b720baf254c23358  03 - All I Have To Do Is Dream.flac
+b7fc84465aca34544796182ceaf73dd7  04 - Gates Of Eden.flac
+62416d0d8f870a147c14e32c9bbd8017  05 - I Threw It All Away.flac
+71d8edc5ce289e4b3453b0980bd9b39f  06 - I Don't Believe You.flac
+b5126f8dc0d3539a329fab0b4f1536cb  07 - Matchbox.flac
+57a77796df12152ae8c48a2f60f7ab75  08 - True Love Your Love.flac
+9b666e0c8c5b6a7716d8245638260415  09 - When's My Swamp Gonna Catch Fire.flac
+5d6515e22f1caf8d2f00103e70a2c231  10 - I'm A Goin' Fishin'.flac
+a46e7fc453ac6906837745c6aabbabe4  11 - Honey Just Allow Me One More Chance.flac
+6b4881662308e61876b4b4e6796abd9f  12 - Rainy Day Women #12 & #35.flac
+d83cce8cb2de32170ea13e49f08fe27c  13 - Song To Woody.flac
+9cbe20d1487582eb80c934e1a9dd9954  14 - Mama You Been On My Mind.flac
+c1595b80eb0d415e0401969529087785  15 - Don't Think Twice It's All Right.flac
+53372b1dc58e1b5e8fb66651e4a5bd4c  16 - Yesterday.flac
+33eac1e3ab5cdeda5bae320c55faae36  17 - Just Like Tom Thumb's Blues.flac
+fd8a83f22b470f48019855b5dd1760c8  18 - Da Doo Ron Ron.flac
+6db0609dc8d5a39a5846354497b9f258  19 - One Too Many Mornings.flac
+5624407a6db16f50df2278af34d414dc  20 - One Too Many Mornings.flac
+48de9c913d4f733b3b08462cee6e26ad  Bob%20Dylan%20Yesterday.jpg
+98df5e094229d7e22970242cc766c239  fingerprint.ffp.txt
+51afde7baff15e7e8e8299114f9a1742  info.txt

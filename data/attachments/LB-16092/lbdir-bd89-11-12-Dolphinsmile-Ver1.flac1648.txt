@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd89-11-12-Dolphinsmile-Ver1.flac1648
+===================
+===================
+===================
+073f244f1e76763e84c9628e1c03d0b8 *01 I Want You.flac
+93260df90078ccd09474a5b61aaf6fdf *02 My Back Pages.flac
+1a9150e8824ccaac1a71a0a1992399e5 *03 Positively 4th Street.flac
+270669ec39d316e490258b49576ad15a *04 Man Of Peace.flac
+06ebd9c8377e980698f7aa126db54de8 *05 Youre A Big Girl Now.flac
+32b3c8c0a63567103c3c2a6a98ebfbe1 *06 Masters Of War.flac
+f4cff9e77ce1cf79477523f76e756420 *07 its All Over Now Baby Blue.flac
+536870f123811f23db0bec0942098b20 *08 Hard Rain A Gonna Fall.flac
+7d01af0e9340cdb7e882e9a2c7a950dc *09 Boots Of Spanish Leather.flac
+08e20ae10598f9a02c2700706483c760 *10 Dont Think Twice.flac
+0c6724ef4f4807e17d3cbd6c74a78332 *11 Everything Is Broken.flac
+023008f192e7da78fbddde6ba31bdf5c *12 Tears Of Rage.flac
+35ba960b8f7c1d5083c094e7507a9fe8 *13 Man In Long Black Coat.flac
+6636ee841c1932d6b8b8a2286507b0c9 *14 I Shall Be Released.flac
+45dd1aaf02d58c88b78c0ac9ae43fde4 *15 Like A Rolling Stone.flac
+e71fb84ef3ec13a4420ac82debab5683 *16 Tamborine Man.flac
+e36d074233527a66f5cb6af4f22088c5 *17 All Along The Watchtower.flac
+a485b872cb6d67ad742b9462355c5fe1 *Bob Dylan Sunrise Musical Theater Sunrise FL 1989-11-12 Dolphinsmile Master.ffp
+32c5de105200fed4bd48c91ffe6b5395 *Bob Dylan Sunrise Musical Theater Sunrise FL 1989-11-12 Dolphinsmile Master.md5
+a485b872cb6d67ad742b9462355c5fe1 *Bob Dylan Sunrise Musical Theater Sunrise FL 1989-11-12 Dolphinsmile Master.txt
+1531f10154d87a16a065e3faca3fa7e2 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-11-12-Dolphinsmile-Ver1.flac1648
+===================
+===================
+===================
+01 I Want You.flac:4a76595d4db0a0670d89b548d9519b28
+02 My Back Pages.flac:a3f90f4f5a9723998345f78cefd5a272
+03 Positively 4th Street.flac:277bc673d7e642dadc80198a1bb591e1
+04 Man Of Peace.flac:bd8914a4a425afcda03d3c1d60363d33
+05 Youre A Big Girl Now.flac:7d7153cdfa1658bd0161e5e45b5f834c
+06 Masters Of War.flac:f14efbe66435e4637664a73d4ca9cae8
+07 its All Over Now Baby Blue.flac:2bb194a9d2918056176b8665959e0e75
+08 Hard Rain A Gonna Fall.flac:4942c2ae64590337a6ce2559ecf503c3
+09 Boots Of Spanish Leather.flac:2f26cd5e4f65dae3600b9e8d4027106b
+10 Dont Think Twice.flac:443f2ba60e00e04b12ccfa9ca5e74b56
+11 Everything Is Broken.flac:1cc7464c97c296caa2a020f677066c54
+12 Tears Of Rage.flac:2cdfbb7152b8a7db85a0fcbe4292c1fc
+13 Man In Long Black Coat.flac:a7ebd71c60cb4e609cdfd380291ed203
+14 I Shall Be Released.flac:d38097657ae0ed907cf2d1cdf1cd647e
+15 Like A Rolling Stone.flac:0dc85df9f36eeeafad3bcd97c596b7a2
+16 Tamborine Man.flac:1e7e1540cc63f8722fe552ffafb57491
+17 All Along The Watchtower.flac:792428bfd7c0261c19482d265e7889fa
+===================
+===================
+===================
+=== shntool len for: bd89-11-12-Dolphinsmile-Ver1.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:59.106      57428332 B   cxx   --   ---xx   flac  0.6214  01 I Want You.flac
+     5:40.615      65398200 B   cxx   --   ---xx   flac  0.6227  02 My Back Pages.flac
+     5:57.753      68688568 B   cxx   --   ---xx   flac  0.6157  03 Positively 4th Street.flac
+     5:13.633      60217584 B   cxx   --   ---xx   flac  0.6181  04 Man Of Peace.flac
+     5:09.928      59506128 B   cxx   --   ---xx   flac  0.5825  05 Youre A Big Girl Now.flac
+     4:37.126      53208172 B   cxx   --   ---xx   flac  0.6311  06 Masters Of War.flac
+     6:15.201      72038576 B   cxx   --   ---xx   flac  0.5809  07 its All Over Now Baby Blue.flac
+     8:08.726      93835460 B   cxx   --   ---xx   flac  0.5961  08 Hard Rain A Gonna Fall.flac
+     5:17.761      61010232 B   cxx   --   ---xx   flac  0.5947  09 Boots Of Spanish Leather.flac
+     6:27.534      74406516 B   cxx   --   ---xx   flac  0.6071  10 Dont Think Twice.flac
+     3:58.264      45746652 B   cxx   --   ---xx   flac  0.6348  11 Everything Is Broken.flac
+     5:16.145      60699916 B   cxx   --   ---xx   flac  0.6173  12 Tears Of Rage.flac
+     4:55.856      56804340 B   cxx   --   ---xx   flac  0.5973  13 Man In Long Black Coat.flac
+     4:04.061      46859712 B   cxx   --   ---xx   flac  0.6187  14 I Shall Be Released.flac
+     7:38.774      88084644 B   cxx   --   ---xx   flac  0.6569  15 Like A Rolling Stone.flac
+     6:31.285      75126812 B   cxx   --   ---xx   flac  0.6113  16 Tamborine Man.flac
+     4:55.31       52110360 B   -b-   --   ---xx   flac  0.6560  17 All Along The Watchtower.flac
+    95:07.176    1091170204 B                            0.6148  (17 files)
+===================
+===================
+===================

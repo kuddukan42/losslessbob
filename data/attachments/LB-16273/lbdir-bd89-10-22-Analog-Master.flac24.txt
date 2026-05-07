@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd89-10-22-Analog-Master.flac24
+===================
+===================
+===================
+d8e4c548fa369edef5851eca464c2490 *ffp text.txt
+d8e4c548fa369edef5851eca464c2490 *ffp.ffp
+322df688760a5681de981c4f1ef24f7e *info.txt
+86cbca7817e6d9e7333413201e218335 *st5 text.txt
+86cbca7817e6d9e7333413201e218335 *st5.st5
+0b822b72454e66ba637629a53c072029 *Track_01.flac
+0e353b0aabde263937e3f589701796ae *Track_02.flac
+3756868f00b0891bdbb2a4b8c88f82c9 *Track_03.flac
+1e14bd4f5633d264cf9a616ced0d97f8 *Track_04.flac
+cff561000707ef4cb8fb38209bb64215 *Track_05.flac
+6ee7f8ae656a7bf47c7140dfd51de83a *Track_06.flac
+488d89b378f897c553edb0c9a46a2388 *Track_07.flac
+42eed84fc70b7346294d8f66ceb49cfc *Track_08.flac
+f6eff93b8ce5fd180d9731d75c554476 *Track_09.flac
+eb9a323e8677942260789367f9ed01ca *Track_10.flac
+00790bfe5593996af5529b28d9671b11 *Track_11.flac
+f148aff9873844c0020732bafe0a4992 *Track_12.flac
+f13be44838828be16220896bf5587d42 *Track_13.flac
+0dca412b65e729b9119e4956b4c9a452 *Track_14.flac
+8d0c2c50ca96ef3c7143a9365ee00cc9 *Track_15.flac
+781f5a76dc5e1ca1ad39942b84dea610 *Track_16.flac
+===================
+===================
+===================
+=== ffp for: bd89-10-22-Analog-Master.flac24
+===================
+===================
+===================
+Track_01.flac:dad18fbef27d6aaed04cc5dd807f030b
+Track_02.flac:86d43aa9b5a1a0b345bb8362800552e5
+Track_03.flac:5829d748f38ca4bf05a70d2605ae537f
+Track_04.flac:d1c1641e1910ffc5c6d8e99a9ea5d079
+Track_05.flac:6049786c3e8f9fcad7650afe35819449
+Track_06.flac:6c693a4255ad97a3432e8bfb4dc4255d
+Track_07.flac:027bdbdc18eab30c034b8a573ba45ca8
+Track_08.flac:113a736c56dd47c91aeb0564e2bee39c
+Track_09.flac:009b82f59666eed8d33d271a1364eac2
+Track_10.flac:eb26849b08c64599e9ff6a6343f555d3
+Track_11.flac:62475919b765e10ba2ae79e5bb08ccd3
+Track_12.flac:ff8708f4bcbb035c29e4f9168d34278b
+Track_13.flac:d4c1d2f66d94c4ab3022bf4bda5fc916
+Track_14.flac:2024b4b6dc36fc073d573fbf043655ab
+Track_15.flac:f4e7bf2a6ed2fbae9e4f222d9a3b98ac
+Track_16.flac:527cee5cbfcf43584ffd76677b28fc96
+===================
+===================
+===================
+=== shntool len for: bd89-10-22-Analog-Master.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.680      17671724 B   cxx   --   ---xx   flac  0.6689  Track_01.flac
+     4:02.587     139729964 B   cxx   --   ---xx   flac  0.6903  Track_02.flac
+     4:26.147     153300524 B   cxx   --   ---xx   flac  0.6836  Track_03.flac
+     5:21.907     185418284 B   cxx   --   ---xx   flac  0.6906  Track_04.flac
+     4:59.360     172431404 B   cxx   --   ---xx   flac  0.6871  Track_05.flac
+     6:07.213     211514924 B   cxx   --   ---xx   flac  0.6900  Track_06.flac
+     6:40.040     230423084 B   cxx   --   ---xx   flac  0.7011  Track_07.flac
+     8:16.200     285811244 B   cxx   --   ---xx   flac  0.6779  Track_08.flac
+     7:21.400     254246444 B   cxx   --   ---xx   flac  0.6792  Track_09.flac
+     7:40.880     265466924 B   cxx   --   ---xx   flac  0.6776  Track_10.flac
+     5:26.067     187814444 B   cxx   --   ---xx   flac  0.6843  Track_11.flac
+     4:07.427     142517804 B   cxx   --   ---xx   flac  0.6947  Track_12.flac
+     3:55.253     135505964 B   cxx   --   ---xx   flac  0.6884  Track_13.flac
+     6:41.760     231413804 B   cxx   --   ---xx   flac  0.6950  Track_14.flac
+     5:01.560     173698604 B   cxx   --   ---xx   flac  0.6752  Track_15.flac
+     5:34.067     192422444 B   cxx   --   ---xx   flac  0.6897  Track_16.flac
+    86:12.547    2979387584 B                            0.6864  (16 files)
+===================
+===================
+===================

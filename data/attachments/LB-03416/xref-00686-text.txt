@@ -1,0 +1,134 @@
+===================
+===================
+===================
+=== IAR 044 - San Diego, Nov. 26, 1980.md5
+===================
+===================
+===================
+c69270717e3e74d12c9e2a39e435abe7 *CD1\01 Like A Rolling Stone (cut).flac
+8e110203de486f892f8d1913ff2c05f3 *CD1\02 Regina McCreary Havis , Till I Get It Right.flac
+2dbf7969c123e0d76d5be6e1dfede019 *CD1\03 Man Gave Names To All The Animals.flac
+f05798a72c540c60da1991c9c1dc1ae6 *CD1\04 Simple Twist Of Fate.flac
+132dcce92d573c177d1cda83276413c9 *CD1\05 We Just Disagree.flac
+3518a28d254e8dde8119508c4a36a547 *CD1\06 All Along The Watchtower.flac
+7f17f5d00a035a95c2609f22c004b162 *CD1\07 A Couple More Years.flac
+ccc53b179bda32ce8c76da5f46018982 *CD1\08 Intermission Speech.flac
+885cf0058046f5e4f47cd724e31ab282 *CD1\09 Ain't Gonna Go To Hell.flac
+1d4a8006f055c39047a31f822cd77c5e *CD1\10 Girl From The North Country.flac
+0d317fe45226ba17eefee5191edda435 *CD1\11 Slow Train Coming.flac
+1e2b97e33f43be5efad3fefba0e771bc *CD1\12 Carolyn Dennis , Walk Around Heaven All Day.flac
+0b2dff6edf2153ca55ed31dda51993df *CD1\13 Abraham Martin And John.flac
+ff4d0f2e3c9813ca3bf7ca0948910224 *CD1\14 Rise Again.flac
+4b6dadc2ef16c9fc1558a6e15fdc5817 *CD1\15 Let's Keep It Between Us.flac
+f0b893b9c5bf0f8df70aa9f6d67b3b42 *CD1\16 Intermission Speech #2.flac
+bcfb292b407ae4f57873f010a8311da6 *CD1\17 Mary From The Wild Moor.flac
+be9ac3bf1b44cd4b319cd7906f514755 *CD1\18 Solid Rock.flac
+528820d10bdec570e860f7c38d31eb91 *CD1\19 Just Like A Woman.flac
+dbe729df464f0df74ddc4e1dd4cd51c6 *CD1\20 Senor.flac
+793bca3360aeebb57fb09402e61bb26e *CD1\bd 1980-11-26 CD1 SHN.md5
+f427b83b41e14413afc21869f9c5d22f *CD1\San Diego, Nov. 26, 1980, CD1.log
+38243199a861518c1f8f0fcabd200479 *CD2\01 Groom's Still Waiting At The Altar.flac
+f06aae38bb5d26bd5a9b23720c05013f *CD2\02 What Can I Do For You.flac
+ddbdf1a8cc85d710bc400e90715c358a *CD2\03 When You Gonna Wake Up.flac
+f4adfda43871fa1bc6649b45efc4df7e *CD2\04 In The Garden.flac
+97f6be0d59e51d6dc2b064b3a4a164a1 *CD2\05 Blowin' In The Wind.flac
+f0e00b695a86077bfe4cff630f550ff6 *CD2\06 City Of Gold.flac
+bbd330833d4ca9cdf9615708839b13a3 *CD2\07 It's All Over Now Baby Blue.flac
+15633074cf23f3439c847b5d8f787ae6 *CD2\08 A Hard Rain's A-Gonna Fall.flac
+bfcc20d9ff787274c8b373d7c1c565f6 *CD2\bd 1980-11-26 CD2 SHN.md5
+254f20f47005a3d6bc6a4a1a7c66c97a *CD2\San Diego, Nov. 26, 1980, CD2.log
+2a982c0be05c8fc72144de698b0c8d04 *IAR 044 - San Diego, Nov. 26, 1980.txt
+===================
+===================
+===================
+=== IAR 044 - San Diego, Nov. 26, 1980.txt
+===================
+===================
+===================
+Improved Air Catalog Number: IA44
+TITLE: untitled (2cd)
+DATE: 26.11.80
+VENUE: Golden Hall, San Diego, CA
+SOURCE/COMMENTS: audience 
+"Some songs are missing from start of concert."   
+      
+CIRCULATION DATE: December 12, 2002
+
+CD 1
+
+01 Like A Rolling Stone (cut)
+02 Regina McCreary Havis , Till I Get It Right
+03 Man Gave Names To All The Animals
+04 Simple Twist Of Fate
+05 We Just Disagree
+06 All Along The Watchtower
+07 A Couple More Years
+08 Intermission Speech
+09 Ain't Gonna Go To Hell
+10 Girl From The North Country
+11 Slow Train Coming
+12 Carolyn Dennis , Walk Around Heaven All Day
+13 Abraham Martin And John
+14 Rise Again
+15 Let's Keep It Between Us
+16 Intermission Speech #2
+17 Mary From The Wild Moor
+18 Solid Rock
+19 Just Like A Woman
+20 Senor
+
+CD 2
+
+01 Groom's Still Waiting At The Altar
+02 What Can I Do For You
+03 When You Gonna Wake Up
+04 In The Garden
+05 Blowin' In The Wind
+06 City Of Gold
+07 It's All Over Now Baby Blue
+08 A Hard Rain's A-Gonna Fall
+===================
+===================
+===================
+=== bd 1980-11-26 CD1 SHN.md5
+===================
+===================
+===================
+c1318bc694965d5760d8feae74816e6d *01 Like A Rolling Stone (cut).shn
+49369d76310acef2c2532fb9a2692414 *02 Regina McCreary Havis , Till I Get It Right.shn
+d694f3aa06018e521670c78cb766b1a5 *03 Man Gave Names To All The Animals.shn
+8836f091bf05767d0d006d298cd995e9 *04 Simple Twist Of Fate.shn
+225a80246d3b7816aeac7a381f134141 *05 We Just Disagree.shn
+fb1dd9627efb693db05711f692e6f860 *06 All Along The Watchtower.shn
+e790074c9205dfe7e4b021ff27503884 *07 A Couple More Years.shn
+d314a322c2691e96c5dd10a1cb410be4 *08 Intermission Speech.shn
+d1f49ab48f7ce449c5fe4eafd50e6c58 *09 Ain't Gonna Go To Hell.shn
+0cf3f56dec64f74fbf3e556691c2e757 *10 Girl From The North Country.shn
+f149b3d74df8d85c05448c2445d1838d *11 Slow Train Coming.shn
+dd944e7fc45e52431dbbd878cf5ade77 *12 Carolyn Dennis , Walk Around Heaven All Day.shn
+19df6ea5af01fe23c5a177a7ab0d60de *13 Abraham Martin And John.shn
+4ce85c2054b7f5b4962d5d8e42c7af93 *14 Rise Again.shn
+0d4e7bec9028ccbc19e10bcda8dcb6e2 *15 Let's Keep It Between Us.shn
+3d858327164e2f0795cd0f87c6245e23 *16 Intermission Speech #2.shn
+4b15441cf16211fc10570d1b02a4c111 *17 Mary From The Wild Moor.shn
+d091be57ffc16afd89f7f1b3df3135e0 *18 Solid Rock.shn
+105d456c51e4adb316eb3e814c2a691c *19 Just Like A Woman.shn
+72c2912123cd31b7530048c20cc9e148 *20 Senor.shn
+===================
+===================
+===================
+=== bd 1980-11-26 CD2 SHN.md5
+===================
+===================
+===================
+067798b65e76aa2848fa1585e6baf118 *01 Groom's Still Waiting At The Altar.shn
+e5bc9337c2981fb2d76c6dc398eb1646 *02 What Can I Do For You.shn
+c9b31f2640f224ecb453db0ff0830068 *03 When You Gonna Wake Up.shn
+a4888ae30d5bc3eed1c89eea0f242405 *04 In The Garden.shn
+87a0661b93efd6989e1e1443f7c06d55 *05 Blowin' In The Wind.shn
+131c3fcb67bb9cd2154ef1ecabcc31a8 *06 City Of Gold.shn
+44a97927f0996dcae099050034057013 *07 It's All Over Now Baby Blue.shn
+fdca0dd188219c8b2ec9c8064041f46a *08 A Hard Rain's A-Gonna Fall.shn
+===================
+===================
+===================

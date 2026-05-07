@@ -1,0 +1,61 @@
+Bob Dylan
+University Of California Davis
+The Pavilion
+Davis, California
+October 18, 2004
+
+Disc 1:
+01. introduction
+02. To Be Alone With You
+03. Señor (Tales Of Yankee Power)
+04. Tweedle Dee & Tweedle Dum
+05. Under The Red Sky
+06. It's Alright, Ma (I'm Only Bleeding)
+07. Moonlight
+08. Cold Irons Bound
+09. Just Like Tom Thumb's Blues
+10. Man In The Long Black Coat
+11. Highway 61 Revisited
+12. Saving Grace
+
+Disc 2:
+01. Honest With Me
+02. Don't Think Twice, It's All Right
+03. Summer Days
+(encore)
+04. Like A Rolling Stone
+05. band introduction
+06. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel
+Stu Kimball - guitar
+George Recile - drums 
+Tony Garnier - bass
+
+source: soomlos
+center ga floor
+at853's > sp-spsb-1 > denecke ad-20 > sony tcd-d8 (16bit/44.1kHz)
+sony tcd-d8 > m-audio mt1 > usb > hdd
+audacity > sony sound forge 9.0 > cd wave > flac
+
+ffp
+bd2004-10-18d1t01.flac:30c0c00243dc5cdcb871a19884533e6c
+bd2004-10-18d1t02.flac:b8226125b51419792995f74240ea42c9
+bd2004-10-18d1t03.flac:d6284494653169f1f1d8092fc77e223f
+bd2004-10-18d1t04.flac:65d1532eb60e99a4beef00ba5f92dca4
+bd2004-10-18d1t05.flac:466ea3f08dd1f716a7da077a5015e718
+bd2004-10-18d1t06.flac:1d8d902e5c08357f8cbcf86702dc4419
+bd2004-10-18d1t07.flac:be2b1c8ec6c1be9c13a019465dac9af2
+bd2004-10-18d1t08.flac:702e03b0ba287f7e9226c45dc46b0b33
+bd2004-10-18d1t09.flac:2785caaff46f67ff0dd358c7fb81d931
+bd2004-10-18d1t10.flac:0ff4d894d91815ac0a8d87df4def7e2d
+bd2004-10-18d1t11.flac:ca0f98dd481fa830dc1ff8c28b872d6b
+bd2004-10-18d1t12.flac:458c2736ce338ff1515c04693aada4cd
+bd2004-10-18d2t01.flac:38da4f806fbe64ddc26d0584bdeb2b1a
+bd2004-10-18d2t02.flac:704d49dcb49bf4d69a2ec7dac5544b22
+bd2004-10-18d2t03.flac:be85311a143427a0369b2f2446c6f18f
+bd2004-10-18d2t04.flac:46395c2bae20c0df7bdd2a1ae8deed26
+bd2004-10-18d2t05.flac:cb5465a6e00c83a22bc74f4321074d14
+bd2004-10-18d2t06.flac:77783750c3f11ba45e4ef6d898980b8e

@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-18a 
+=================== 
+=================== 
+=================== 
+915df7b3c144ca9afb140aa371db4e13  bd05-03-18a-LB-2631.txt
+5b1bb7ce4ddd9f42f8066512c77ddcf1  bd2005-03-18.md5
+ae894093272a2908f95d639b1ebeffba  bd2005-03-18_Reno.txt
+180db9070218fd926ff2cd2d495b176f  bd2005-03-18d1t01.shn
+15cd262c8ce40b504042f932eeb9a5b9  bd2005-03-18d1t02.shn
+f7680f887397cfba3793f1ea58a11055  bd2005-03-18d1t03.shn
+6c5e6e84b2e3d5305d75c6fc05859097  bd2005-03-18d1t04.shn
+0c6cbf046b8c106ed412506b57c9fd6e  bd2005-03-18d1t05.shn
+28caa70d5794ea8aa0a279e25596923c  bd2005-03-18d1t06.shn
+92cdbfc3dc8767e22caeeca20407c9d2  bd2005-03-18d1t07.shn
+d37bdb64abfa9289cb94bf99b50858dd  bd2005-03-18d1t08.shn
+6dd4e40003cbef4f977d79d7388df627  bd2005-03-18d1t09.shn
+7c57854d2f0ef9b0e85fe30be2d4d105  bd2005-03-18d1t10.shn
+cd49ab07f34767500cdee276508c8d23  bd2005-03-18d1t11.shn
+2045ebc03fadfed589f2e19da7e6a7d2  bd2005-03-18d2t01.shn
+cf6ea134ebae39069641d2c7be2b5fbc  bd2005-03-18d2t02.shn
+361fa85d4b98c3eab1192e6f86524271  bd2005-03-18d2t03.shn
+522ed1e85e14e93d39a342b90c3b97ef  bd2005-03-18d2t04.shn
+e3324326e6a52a15db0c9d47ace50f9e  bd2005-03-18d2t05.shn
+5a3a1b592f42ba38cf54df4c00727a55  bd2005-03-18d2t06.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-03-18a 
+=================== 
+=================== 
+=================== 
+f6214923325ef7e2c72e438bea646d55  [shntool]  bd2005-03-18d1t01.wav
+eed7123eed5690b7fb2a7bd12d16de17  [shntool]  bd2005-03-18d1t02.wav
+2a42fb49d97628ec0a41d5d503867515  [shntool]  bd2005-03-18d1t03.wav
+cf7ad36ef2ea3eedcb821a51bd8bf872  [shntool]  bd2005-03-18d1t04.wav
+85fc57a8ce606df515faab5a110817a8  [shntool]  bd2005-03-18d1t05.wav
+e995c34740e39bf21ef52be1c068ed4e  [shntool]  bd2005-03-18d1t06.wav
+c4a7e1d5195e13788074db5697bef5c5  [shntool]  bd2005-03-18d1t07.wav
+535a00e07e36f15f1e594056c14d7851  [shntool]  bd2005-03-18d1t08.wav
+0016d34007ff37a7e9c66c334e7a00ee  [shntool]  bd2005-03-18d1t09.wav
+ba243587b9ed43ea0d1f470fc63bf238  [shntool]  bd2005-03-18d1t10.wav
+0c7cb5c3fa3937681d506539cd4107ab  [shntool]  bd2005-03-18d1t11.wav
+130e718e45bb32602999be4804169174  [shntool]  bd2005-03-18d2t01.wav
+1d63e0fe84ee22d495f1d4c6daf1bb91  [shntool]  bd2005-03-18d2t02.wav
+0b2e195da0120f73ccf3a29ac4f50444  [shntool]  bd2005-03-18d2t03.wav
+31914377f2d0a2a95cec5e15b92830b0  [shntool]  bd2005-03-18d2t04.wav
+046983192dad5f5e7185ac4d8f6b425e  [shntool]  bd2005-03-18d2t05.wav
+c3a0fc7cec8f02e5a01a4da134be5217  [shntool]  bd2005-03-18d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-18a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:24.52        4355948 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t01.wav
+     4:21.68       46200380 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t02.wav
+     4:35.22       48561788 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t03.wav
+     6:51.27       72563948 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t04.wav
+     5:29.27       58099148 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t05.wav
+     5:08.06       54345356 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t06.wav
+     6:58.53       73859900 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t07.wav
+     5:26.70       57671084 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t08.wav
+     6:36.59       69993212 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t09.wav
+     7:21.27       77855948 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t10.wav
+     6:34.37       69588668 B   ---   --   -----    wav  1.0000  bd2005-03-18d1t11.wav
+     6:58.24       73791692 B   ---   --   -----    wav  1.0000  bd2005-03-18d2t01.wav
+     5:11.25       54919244 B   ---   --   -----    wav  1.0000  bd2005-03-18d2t02.wav
+    12:22.22      130940588 B   ---   --   -----    wav  1.0000  bd2005-03-18d2t03.wav
+     3:32.25       37455644 B   ---   --   -----    wav  1.0000  bd2005-03-18d2t04.wav
+     0:32.55        5774204 B   ---   --   -----    wav  1.0000  bd2005-03-18d2t05.wav
+     6:00.60       63645164 B   ---   --   -----    wav  1.0000  bd2005-03-18d2t06.wav
+    94:26.59      999621916 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

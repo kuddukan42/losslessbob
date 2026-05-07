@@ -1,0 +1,23 @@
+323d774f784e36c4dbbf53e2dfc85f1a  1992_04_15_Sydney-MK.md5
+403912af405f0804e0401175835d3c3a  1992_04_15_Sydney-MK_info.txt
+c9cc17b9495befa1279be60172f488bf  1992_04_15_Sydney_back.jpg
+8c83e4615386774f4d37c93c67c30285  1992_04_15_Sydney_freq.JPG
+3488ce1849a2edbe3a893782a06f26f4  1992_04_15_Sydney_front.jpg
+ab888f3f64c86c3ac666b128c1730bf8  Disc 1\01 Rainy Day Women # 12 & 35.flac
+f7e52095ffe3777fac63cb9f69a8a6f7  Disc 1\02 Delia.flac
+ded50b7a3af4b3a08f52c472ebb83c76  Disc 1\03 Union Sundown.flac
+5ec2144bd2fe6e91801e8b42db85e61f  Disc 1\04 Just Like A Woman.flac
+f1e35b1a7bfde80c3eeb6afdfb4b174b  Disc 1\05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+3e1d3e90b536d77096e70480d04d98c7  Disc 1\06 I'll Be Your Baby Tonight.flac
+63eb920e71f2173ccc1dcc850d60a077  Disc 1\07 If Not For You.flac
+55e462a935c628424599e1b857fd3ebc  Disc 1\08 Love Minus Zero - No Limit.flac
+9593e560d2e16b515ff2737f6c514c9c  Disc 1\09 Little Moses.flac
+4d777680c3abb3020dfe2e90d4e1e91e  Disc 1\10 It's All Over Now Baby Blue.flac
+977a5a7d6d90c93f6b62c943c66a968b  Disc 2\1 A Hard Rain's A-Gonna Fall.flac
+b15c5cf72ca0e5da9774d2044aba13c5  Disc 2\2 Cat's In The Well.flac
+aa3fdf0723b0378658014cf4dcf79e10  Disc 2\3 Idiot Wind.flac
+c847e32f639e02cc2a1d1fe06f08d3e0  Disc 2\4 The Times They Are A-Changin'.flac
+208eba37f78fa3771d563a579bfc9f35  Disc 2\5 Highway 61 Revisited.flac
+4e18f8fe777d0b46c306b1dc9f5b7995  Disc 2\6 Absolutely Sweet Marie.flac
+3109e10dd86b468ca74470d60374c861  Disc 2\7 Ballad Of A Thin Man.flac
+ebe356c84b6cdc1c311717ff4649a153  Disc 2\8 Blowin' In The Wind.flac

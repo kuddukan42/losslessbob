@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-05-at933.shnf 
+=================== 
+=================== 
+=================== 
+b17d15fc4ea452613e1b11b98119eff2  bd04-03-05-at933.txt
+55fafcd22ce1d19c2e8a1d853cdf5118  dylan2004-03-05.at933.txt
+70fed9a9eb7e13cffc5bc2033decb44f  dylan2004-03-05d1.md5
+3fff61bb81045e3f62107d89fd4770ce  dylan2004-03-05d1t01.shn
+89c405e41df54a46606b093cad57e78a  dylan2004-03-05d1t02.shn
+c4f584c8c63d8dac6fd6c946bcb64469  dylan2004-03-05d1t03.shn
+f0bf520abb37de1c7d85419b9281d3d9  dylan2004-03-05d1t04.shn
+6798e7f4a3bf4a42ad6c396d29962191  dylan2004-03-05d1t05.shn
+f77095f1a42c67147eb2f65b81bd7e07  dylan2004-03-05d1t06.shn
+d33ca18576fc72353e96754fa2272d59  dylan2004-03-05d1t07.shn
+abdc1062adc39112ea1c358ac554c6a8  dylan2004-03-05d1t08.shn
+c8711cc67edbd9b8f2a74493d05dd2b3  dylan2004-03-05d1t09.shn
+bbcab3279f6aed0b1f0ceaec1f412b7b  dylan2004-03-05d1t10.shn
+2051b2892189b0b44dddee77947623f5  dylan2004-03-05d1t11.shn
+63ccd5c638ebd005e8be029bade0afcd  dylan2004-03-05d1t11fadeout.shn
+ce67c732a018604a4237af88628c9925  dylan2004-03-05d2.md5
+22cc8a2a6ceb57e76ec96286ad436d2a  dylan2004-03-05d2t01.shn
+b0048f0caeff70443cb9ed8753cdb0e3  dylan2004-03-05d2t01fadein.shn
+18945e89719497e48f3683ec85ef4241  dylan2004-03-05d2t02.shn
+a2a3d3aa1b65a9088709c397c0ec6d59  dylan2004-03-05d2t03.shn
+82cd86ca9681de65df9a0b405edf5e92  dylan2004-03-05d2t04.shn
+aea7b7f48eb449a23f9805bbcde3862f  dylan2004-03-05d2t05.shn
+e216c9819f31a204a6fade5b68215a1d  dylan2004-03-05d2t06.shn
+11fed91d9492a6a7dc37aea740dbd018  dylan2004-03-05d2t07.shn
+a94124bcbf4cb8886b7c80edb04153b8  dylan2004-03-05d2t08.shn
+6a61a0ec51908e350fc682e0e48ed9be  dylan2004-03-05d2t09.shn
+a648162ac4241fbd11766a0faa79dc6e  dylan2004-03-05fades.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-05-at933.shnf 
+=================== 
+=================== 
+=================== 
+77a0e07abd849c3b73af25f24448efce  [shntool]  dylan2004-03-05d1t01.wav
+bc752e30f1c1c9c1d6299cfcb2a10f94  [shntool]  dylan2004-03-05d1t02.wav
+caa17ae0065c2414101c37e0571578ed  [shntool]  dylan2004-03-05d1t03.wav
+1221f8a037a8e5035dad86c5a881ed61  [shntool]  dylan2004-03-05d1t04.wav
+ea281b23c5063b7b32c262ecb8f846a8  [shntool]  dylan2004-03-05d1t05.wav
+e282bfd03ce010a2166ace9df4fbec91  [shntool]  dylan2004-03-05d1t06.wav
+47a3ae22d33afbb9e1c51356539fe9f8  [shntool]  dylan2004-03-05d1t07.wav
+c88953cbc1cef79c422d5a8ee42ada59  [shntool]  dylan2004-03-05d1t08.wav
+aba9c580eccc5f2f36115715856ad579  [shntool]  dylan2004-03-05d1t09.wav
+c7a9002b8afb7c454ac131541e77fb6e  [shntool]  dylan2004-03-05d1t10.wav
+2d065ec98b879c8e506bc8ba826e016d  [shntool]  dylan2004-03-05d1t11.wav
+7ff7f368b0d0523442b915efaded3d2a  [shntool]  dylan2004-03-05d1t11fadeout.wav
+2fbce68a3a76265a2c844ec9f2be57e0  [shntool]  dylan2004-03-05d2t01.wav
+602b7ad52c9547b902b096961fa4208d  [shntool]  dylan2004-03-05d2t01fadein.wav
+c02ea626760dc528d44a4c4d172f5fc1  [shntool]  dylan2004-03-05d2t02.wav
+7ece60c54002bc2a4671e0a8657800bf  [shntool]  dylan2004-03-05d2t03.wav
+c05ff80c1e314824e3fd1af74667bec6  [shntool]  dylan2004-03-05d2t04.wav
+857bed39b2f11bbab96cc4dd96cb8f99  [shntool]  dylan2004-03-05d2t05.wav
+aab6c54bfb496377d37a43904acf3785  [shntool]  dylan2004-03-05d2t06.wav
+ea7f2ada0b063ad8b850bfa97b690d58  [shntool]  dylan2004-03-05d2t07.wav
+ecfb2395b08514074379d2341cd5316c  [shntool]  dylan2004-03-05d2t08.wav
+0d09a3e9197288e221b0d1da0d7de95d  [shntool]  dylan2004-03-05d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-05-at933.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.18        8333180 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t01.wav
+     4:44.62       50243468 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t02.wav
+     5:02.41       53369276 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t03.wav
+     5:51.01       61918796 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t04.wav
+     6:26.44       68193932 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t05.wav
+     7:53.12       83465468 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t06.wav
+     5:22.12       56829068 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t07.wav
+     7:08.65       75652124 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t08.wav
+     7:16.07       76926908 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t09.wav
+     6:39.35       70465964 B   ---   --   -----    wav  1.0000  dylan2004-03-05d1t10.wav
+     6:28.33       68520868 B   -b-   --   -----    wav  1.0000  dylan2004-03-05d1t11.wav
+     6:28.33       68520868 B   -b-   --   -----    wav  1.0000  dylan2004-03-05d1t11fadeout.wav
+     5:49.30       61634456 B   -b-   --   -----    wav  1.0000  dylan2004-03-05d2t01.wav
+     5:49.30       61634456 B   -b-   --   -----    wav  1.0000  dylan2004-03-05d2t01fadein.wav
+     7:20.00       77616044 B   ---   --   -----    wav  1.0000  dylan2004-03-05d2t02.wav
+     7:21.37       77879468 B   ---   --   -----    wav  1.0000  dylan2004-03-05d2t03.wav
+     8:49.39       93407372 B   ---   --   -----    wav  1.0000  dylan2004-03-05d2t04.wav
+     3:51.52       40870748 B   ---   --   -----    wav  1.0000  dylan2004-03-05d2t05.wav
+     4:13.41       44725676 B   ---   --   -----    wav  1.0000  dylan2004-03-05d2t06.wav
+     6:15.64       66300572 B   ---   --   -----    wav  1.0000  dylan2004-03-05d2t07.wav
+     0:47.51        8410796 B   ---   --   -----    wav  1.0000  dylan2004-03-05d2t08.wav
+     5:30.44       58314700 B   -b-   --   -----    wav  1.0000  dylan2004-03-05d2t09.wav
+   125:58.01     1333234208 B                            1.0000  (22 files)
+=================== 
+=================== 
+=================== 

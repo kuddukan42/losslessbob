@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-05-csb.flacf 
+=================== 
+=================== 
+=================== 
+06a9a2ca2db959e7eee73cf0fae7e8a1  bd97-12-05-csb-d1t01.flac
+810f4dd30adb8f466d1ecd38057b9041  bd97-12-05-csb-d1t02.flac
+c668ca5e983818679c74fb33daa49840  bd97-12-05-csb-d1t03.flac
+0793e3b37f79a69afb95d25ba7d3e362  bd97-12-05-csb-d1t04.flac
+069faec5efc484e2dd864d8ec7956f9b  bd97-12-05-csb-d1t05.flac
+4e4837af4f0fa101c5dc91cc3f893922  bd97-12-05-csb-d1t06.flac
+89dd66ebc27020c7cabf5bf385a5a26e  bd97-12-05-csb-d1t07.flac
+debbd055b700c86eb831cf89a3cc1cb0  bd97-12-05-csb-d1t08.flac
+8c17ad337a0845c6d1a456bbd46e867f  bd97-12-05-csb-d1t09.flac
+6b2ec7d282b5f2bd8ffe487e6a29800c  bd97-12-05-csb-d1t10.flac
+10f95243afa711732d26dccbefb9a85e  bd97-12-05-csb-d1t11.flac
+464bd607a305545f5b9084687f77f3c9  bd97-12-05-csb-d1t12.flac
+1d7ca7cc67aac2da45d79db169abaa46  bd97-12-05-csb-d1t13.flac
+fffd088301b27d59c00401efb8025c69  bd97-12-05-csb-d2t01.flac
+2ec219876fdd0edc28e66d74ff780a32  bd97-12-05-csb-d2t02.flac
+d047bb47ff60b4690d23e20a50a7c0d0  bd97-12-05-csb-d2t03.flac
+b90ce7008488340d301a59671fe82799  bd97-12-05-csb-d2t04.flac
+1ad875d1bf1f833712aedf774d67a054  bd97-12-05-csb-LB-3909.txt
+ce9d6bf7039c8678b928d6df027c9a9c  bd97-12-05-csb.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-05-csb.flacf 
+=================== 
+=================== 
+=================== 
+bd97-12-05-csb-d1t01.flac:e9c63d3f79d19185dcd9a668dda879ba
+bd97-12-05-csb-d1t02.flac:b4b4b4cf5bd5e562e278130f47a81430
+bd97-12-05-csb-d1t03.flac:7c6ec40a46a18af10e71d385ee228822
+bd97-12-05-csb-d1t04.flac:7bb86ebe1886d6f549c062e442c00360
+bd97-12-05-csb-d1t05.flac:bb1ab0e1223456e1f4ef218c9c6c784a
+bd97-12-05-csb-d1t06.flac:7a5fe973927952c0b9170f81c49aee36
+bd97-12-05-csb-d1t07.flac:2b085e24a71883a5538acf8e1e267aba
+bd97-12-05-csb-d1t08.flac:cb6d9bd3e9590887aab6d93a0218f94d
+bd97-12-05-csb-d1t09.flac:851d3a30c204f6b48ed89478aa3e706d
+bd97-12-05-csb-d1t10.flac:20698708cbb29d30a280e7c355e81ca3
+bd97-12-05-csb-d1t11.flac:338455438332af8d5520f09cc74e600b
+bd97-12-05-csb-d1t12.flac:102ec5d8775ffa9d01066ed6a93d8ec2
+bd97-12-05-csb-d1t13.flac:87eef2e351f0e40c4e2f4726af6336e7
+bd97-12-05-csb-d2t01.flac:f77f7d3a7b7fe1c56bd9df9534f5994c
+bd97-12-05-csb-d2t02.flac:67c4217f2ecd62cef2ca394511dfc138
+bd97-12-05-csb-d2t03.flac:f523aae55945bc05aeb39e21b37baa5b
+bd97-12-05-csb-d2t04.flac:af38e89c29bf6e34eb7d36bc25b2d31e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-05-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:03.00       64033244 B   ---   --   ---xx   flac  0.5890  bd97-12-05-csb-d1t01.flac
+     3:57.00       41806844 B   ---   --   ---xx   flac  0.5246  bd97-12-05-csb-d1t02.flac
+     6:54.00       73029644 B   ---   --   ---xx   flac  0.5784  bd97-12-05-csb-d1t03.flac
+     6:04.00       64209644 B   ---   --   ---xx   flac  0.5414  bd97-12-05-csb-d1t04.flac
+     5:54.00       62445644 B   ---   --   ---xx   flac  0.5724  bd97-12-05-csb-d1t05.flac
+     7:13.00       76381244 B   ---   --   ---xx   flac  0.5827  bd97-12-05-csb-d1t06.flac
+     3:42.00       39160844 B   ---   --   ---xx   flac  0.5289  bd97-12-05-csb-d1t07.flac
+     6:10.00       65268044 B   ---   --   ---xx   flac  0.5113  bd97-12-05-csb-d1t08.flac
+     8:01.00       84848444 B   ---   --   ---xx   flac  0.5726  bd97-12-05-csb-d1t09.flac
+     6:02.00       63856844 B   ---   --   ---xx   flac  0.5122  bd97-12-05-csb-d1t10.flac
+     4:46.00       50450444 B   ---   --   ---xx   flac  0.4816  bd97-12-05-csb-d1t11.flac
+     6:00.00       63504044 B   ---   --   ---xx   flac  0.5583  bd97-12-05-csb-d1t12.flac
+     9:06.00       96314444 B   ---   --   ---xx   flac  0.5690  bd97-12-05-csb-d1t13.flac
+     9:43.00      102841244 B   ---   --   ---xx   flac  0.5511  bd97-12-05-csb-d2t01.flac
+     6:44.00       71265644 B   ---   --   ---xx   flac  0.5432  bd97-12-05-csb-d2t02.flac
+     5:24.00       57153644 B   ---   --   ---xx   flac  0.5175  bd97-12-05-csb-d2t03.flac
+     4:59.00       52743644 B   ---   --   ---xx   flac  0.5260  bd97-12-05-csb-d2t04.flac
+   106:42.00     1129313548 B                            0.5486  (17 files)
+=================== 
+=================== 
+=================== 

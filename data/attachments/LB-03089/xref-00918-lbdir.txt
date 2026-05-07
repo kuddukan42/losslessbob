@@ -1,0 +1,139 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-04-jtt.flacf 
+=================== 
+=================== 
+=================== 
+c3a58d681a12b8917c580ee0aa3fb6a1  BOB DYLAN - Cincinnati, Ohio  November 4th 1981.md5
+c3a58d681a12b8917c580ee0aa3fb6a1  BOB DYLAN - Cincinnati, Ohio  November 4th 1981.txt
+268f1d6694a712d96bbcaf0bd2bde73f  BOB DYLAN - Cincinnati, Ohio  November 4th 1981_Info.txt
+590ec7bb877940fd345fc92599fff061  Cincinatti, Ohio 04.11.1981 - F.jpeg
+319c38eca3bb1c0f8d5620fb12d9f86f  Cincinatti, Ohio 04.11.1981 - R.jpeg
+b59409b90f7d211d50a72282c690766f  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 01.flac
+23d19039c1b806db1cf996a4fedb6b2a  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 02.flac
+d6879bb6cdfc0e257a5d546bf58a997d  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 03.flac
+9c4098db4656dd3868a3e53b5ebca1fa  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 04.flac
+20959ec1e0cdae8be246b8d56a302b47  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 05.flac
+14d59fcbd43ce9b2d8ddd2258450907f  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 06.flac
+04adc7621751d29acfb5187685a67244  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 07.flac
+8f2d3443451ce861a0c539298ad05d23  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 08.flac
+37f9e7228a833a03699c7fc84ae8d464  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 09.flac
+714bca429ba5327748495a2860c797ef  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 10.flac
+a1898af4be53d67413393c30dbed2ee3  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 11.flac
+5b698ce8a51fdbee01664410dc22d212  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 12.flac
+b1163681f1268e1c9d93a77f27fc3657  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 13.flac
+b2bc7fc7d400b2fe592c11c02d05e503  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 14.flac
+3f263dc4a67ff31f8bd74f13ba6f4457  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 15.flac
+d0708c92a86af4c82b3f1c86ae1996af  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 16.flac
+aca13fb092875314ceb95ea868a9d3bb  Disc One\Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 17.flac
+67f94bf67db3750aea3f28ee64995df4  Disc One\Disc One.ffp
+5505215500830354965acb9d3f626098  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 01.flac
+ecec6bc48cf5bb0fa855d96e7c9aa437  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 02.flac
+c63e41650a9c87c9e0564562ad25721f  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 03.flac
+987d139b01498af23aed1b49d19ba8eb  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 04.flac
+3dd1220e95e4bdaa12e7dae4c2eaeff0  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 05.flac
+95d3d6ad8720533c50705d10bf12ea11  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 06.flac
+f7592b0ceb366e02cec7e14bad344142  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 07.flac
+24ee01f68fe171e578d2a443aa000625  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 08.flac
+5233dbc6344fbebf7161658d62be9b4b  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 09.flac
+93d8ca00c462d70f9feaad4064f82890  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 10.flac
+4a0f31358a47d70f118495b2a0ef999b  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 11.flac
+ae2d41c5b1e3e8a9b834eab045c1de30  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 12.flac
+e49f8c3969d8116c3374c79871c1f9eb  Disc Two\Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 13.flac
+70fd2ade85f821b49403e8dc929cb65b  Disc Two\Disc Two.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-04-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 01.flac:8c54f17eeff9fca6e8381b89cfc5ca47
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 02.flac:a9ee57a1e0254ddcae8db8976bc54c4e
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 03.flac:5d322b1c1d8ac883cdbfd7ec51fb5668
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 04.flac:846522a1cb986c482b5ce95ef62f3c28
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 05.flac:3fad5b8d6b63069a61ac06a2b91bc6ef
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 06.flac:b087b8b78cb2f996b630fa546499f490
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 07.flac:d1b3a53a0303acdbd8b3ab4a6c9f0814
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 08.flac:976e2fdc4f55630e6c8d5d681a7e3293
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 09.flac:e0235c32ad52eeb1535bab71d03d78f8
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 10.flac:6649523e742f413f57c8a68385ca5bb6
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 11.flac:64feb4c5aef217f71d3513bb930f7584
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 12.flac:6dc1b0c3d4f9d5df6a9a2cfc1a3c4682
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 13.flac:b4b22f2cfd21708d384c7fc013435163
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 14.flac:366a6c0b3b7309a67c6abe6803678978
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 15.flac:0c6401d5b091654291fac6674fa71989
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 16.flac:99aa55b3b8bc3ec72dd3c088fd72b55d
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 17.flac:9c4664eac6807e39529fff0deca68933
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-04-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 01.flac:bc3ad990c6c12f7ea9a750a125e6829a
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 02.flac:58ea861614006f39ea3085a0e56b3501
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 03.flac:e024ed647287e3eecd9a5f3f5682edc7
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 04.flac:f051d406361f4ea28135c11cb97ab1ba
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 05.flac:6b7d0bc4f3d881917356c674c45d16db
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 06.flac:a9a310468963f1c79f9b9c9dfe552005
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 07.flac:644d757b711d8a22bf4d5f9a4578263d
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 08.flac:e3b7f8553f55b5037fa43c205d9115b7
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 09.flac:4fa8558d77ddd42699f57ba89488675d
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 10.flac:bbf377089845903764e2650ec89f17d4
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 11.flac:286f9f125e5f1029f4cbb3f7e7fb0a3d
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 12.flac:42068794f8f4f78505885c165311da06
+Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 13.flac:ac2093d44ca63232c53dc1bbc44bea6d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-04-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:51.41       40844876 B   ---   --   ---xx   flac  0.4008  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 01.flac
+     4:38.41       49135676 B   ---   --   ---xx   flac  0.4014  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 02.flac
+     7:26.28       78740300 B   ---   --   ---xx   flac  0.4072  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 03.flac
+     3:37.33       38356460 B   ---   --   ---xx   flac  0.4071  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 04.flac
+     5:00.07       52936508 B   ---   --   ---xx   flac  0.4014  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 05.flac
+     3:58.24       42039692 B   ---   --   ---xx   flac  0.4104  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 06.flac
+     4:10.52       44222348 B   ---   --   ---xx   flac  0.3961  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 07.flac
+     3:21.69       35618732 B   ---   --   ---xx   flac  0.4104  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 08.flac
+     4:16.40       45252524 B   ---   --   ---xx   flac  0.4060  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 09.flac
+     4:15.45       45087884 B   ---   --   ---xx   flac  0.4046  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 10.flac
+     2:48.50       29752844 B   ---   --   ---xx   flac  0.4291  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 11.flac
+     3:19.38       35193020 B   ---   --   ---xx   flac  0.4241  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 12.flac
+     6:10.59       65406812 B   ---   --   ---xx   flac  0.4254  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 13.flac
+     3:56.28       41696300 B   ---   --   ---xx   flac  0.4219  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 14.flac
+     5:45.04       60867452 B   ---   --   ---xx   flac  0.4248  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 15.flac
+     5:33.05       58753004 B   ---   --   ---xx   flac  0.4292  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 16.flac
+     3:56.08       41649260 B   ---   --   ---xx   flac  0.4315  Bob Dylan Cincinatti Nov. 4th 1981_Disc 01 Track 17.flac
+    76:06.47      805553692 B                            0.4136  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-04-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.62       53771468 B   ---   --   ---xx   flac  0.4316  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 01.flac
+     3:29.26       36928796 B   ---   --   ---xx   flac  0.4239  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 02.flac
+     3:35.15       37961324 B   ---   --   ---xx   flac  0.4380  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 03.flac
+     5:26.43       57607580 B   ---   --   ---xx   flac  0.4450  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 04.flac
+     3:51.48       40861340 B   ---   --   ---xx   flac  0.4511  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 05.flac
+     4:09.57       44057708 B   ---   --   ---xx   flac  0.4344  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 06.flac
+     4:04.27       43105148 B   ---   --   ---xx   flac  0.4484  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 07.flac
+     5:33.26       58802396 B   ---   --   ---xx   flac  0.4725  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 08.flac
+     6:53.72       73022588 B   ---   --   ---xx   flac  0.4456  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 09.flac
+     5:19.10       56295164 B   ---   --   ---xx   flac  0.4250  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 10.flac
+     6:47.14       71827772 B   ---   --   ---xx   flac  0.4224  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 11.flac
+     6:06.17       64602428 B   ---   --   ---xx   flac  0.4264  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 12.flac
+     4:37.27       48926348 B   ---   --   ---xx   flac  0.4379  Bob Dylan Cincinatti Nov. 4th 1981_Disc 02 Track 13.flac
+    64:58.69      687770060 B                            0.4385  (13 files)
+=================== 
+=================== 
+=================== 

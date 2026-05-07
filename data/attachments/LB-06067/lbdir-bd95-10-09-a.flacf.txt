@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-09-a.flacf 
+=================== 
+=================== 
+=================== 
+2b6e50d9002639c2eb613838c431fb7c  Bob Dylan 1995-10-09 Savannah.txt
+53f381d92d94a5791ba298d86d8a753a  D1\1 Drifter's Escape.flac
+e807b680ac230df5090d9d4f05f35e1b  D1\2 The Man In Me.flac
+7dd2c92867d9af1d2999881c7d17fe15  D1\3 All Along the Watchtower.flac
+bb06a4879f3df5aee8b154b5bc042979  D1\4 What Good Am I.flac
+56faa06ec73b36111eb60b318beb791c  D1\5 Most Likely You Go Your Way.flac
+ca22acbc1937d89508e19b40b7038c65  D1\6 Silvio.flac
+f9518e9b30ad9fa3064b646ab5b606d4  D1\7 Mr. Tambourine Man.flac
+a1f30270f60b5f3f936b33235aa6a9ac  D1\8 Masters of War.flac
+ac18f94e4ac1e812326f317c40ad2650  D2\1 Boots of Spanish Leather.flac
+0daa444ed4a62570cb4662feda37fc75  D2\2 Maggie s Farm.flac
+4a1446a8af0dc61e3e08d70686e4a94a  D2\3 License to Kill.flac
+a08ea2ca8fca16209a6970807bf10dbc  D2\4 God Knows.flac
+5e06b85583e46f5a19b3005dbce8ae36  D2\5 Ballad Of A Thin Man.flac
+345d17804d4f69459c67225a20e0dfba  D2\6 My Back Pages.flac
+416e10af25a9185e2dc52c3ac901dbad  D2\7 Rainy Day Women nr12 & 35.flac
+177c89012cd32ea7d6743eb99c346543  fingerprint.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-09-a.flacf\D2 
+=================== 
+=================== 
+=================== 
+1 Boots of Spanish Leather.flac:305a11d934fa9791f0ceff6c0d0efe4a
+2 Maggie s Farm.flac:aa58649a123a0ae06e5980cc538d709e
+3 License to Kill.flac:8b35d6f44da89535afde5bbafda28ed2
+4 God Knows.flac:be9fa58a1b21ce45b5414df8ac23876d
+5 Ballad Of A Thin Man.flac:92e4c2f05d7bbe3c13db779b6bbaa68e
+6 My Back Pages.flac:96837633c36c1723fba145614e787219
+7 Rainy Day Women nr12 & 35.flac:510e4af0ac79045a3a377528f9c47288
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-09-a.flacf\D1 
+=================== 
+=================== 
+=================== 
+1 Drifter's Escape.flac:062b36c6117627c19d308fbc533b968a
+2 The Man In Me.flac:7f0aa3b5acc9bec2db8cc35c79db1e96
+3 All Along the Watchtower.flac:31d6e2a0bd16cee7d2087a00a37402d0
+4 What Good Am I.flac:4caec08bf5b3055f58232378c4a7e088
+5 Most Likely You Go Your Way.flac:4df5d960abe2b98cdb98dd7fc0baaa6b
+6 Silvio.flac:02785b0cf215f0a6e271fc5bb1b859d6
+7 Mr. Tambourine Man.flac:67f094a5cf45a8670a196e8dc0a42ffe
+8 Masters of War.flac:bc6429959f378000f4a2f4bde62a3b0e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-09-a.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:29.09      100392812 B   ---   --   ---xx   flac  0.3646  1 Boots of Spanish Leather.flac
+     5:53.04       62278652 B   ---   --   ---xx   flac  0.5768  2 Maggie s Farm.flac
+     7:17.10       77110364 B   ---   --   ---xx   flac  0.4763  3 License to Kill.flac
+     7:58.13       84349820 B   ---   --   ---xx   flac  0.5023  4 God Knows.flac
+     9:54.40      104875724 B   ---   --   ---xx   flac  0.5006  5 Ballad Of A Thin Man.flac
+     9:54.43      104882780 B   ---   --   ---xx   flac  0.4785  6 My Back Pages.flac
+     4:43.00       49921244 B   ---   --   ---xx   flac  0.5226  7 Rainy Day Women nr12 & 35.flac
+    55:09.44      583811396 B                            0.4803  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-09-a.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:34.65       69654524 B   ---   --   ---xx   flac  0.5576  1 Drifter's Escape.flac
+     6:37.19       70075532 B   ---   --   ---xx   flac  0.5065  2 The Man In Me.flac
+     7:13.05       76393004 B   ---   --   ---xx   flac  0.5404  3 All Along the Watchtower.flac
+     8:50.36       93576716 B   ---   --   ---xx   flac  0.4597  4 What Good Am I.flac
+     8:14.22       87193388 B   ---   --   ---xx   flac  0.5299  5 Most Likely You Go Your Way.flac
+     7:53.58       83573660 B   ---   --   ---xx   flac  0.5452  6 Silvio.flac
+    10:25.12      110278268 B   ---   --   ---xx   flac  0.3978  7 Mr. Tambourine Man.flac
+     6:30.27       68859548 B   ---   --   ---xx   flac  0.3980  8 Masters of War.flac
+    62:19.19      659604640 B                            0.4877  (8 files)
+=================== 
+=================== 
+=================== 

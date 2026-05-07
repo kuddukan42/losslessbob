@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== md5 for: bd02-08-04-Acoustic-Man-In-Augusta.flacf
+===================
+===================
+===================
+e0fff26a7ed3414acc135682551bdf79 *2002-08-04 Augusta poster.jpg
+914158de255b07a73bf1e09de63d6c92 *2002-08-04 Augusta ticket.jpg
+cd61f58b00d18eecec46721e6b4ac2ad *2002-08-04 Augusta.txt
+8ae591bfd65c11d9a9470cc8e2cc13a9 *Art Tambourine Man LB-0087\Acoustic Man In Augusta back.jpg
+89d971bb45ad80dae371ac41105613c8 *Art Tambourine Man LB-0087\Acoustic Man In Augusta cd.jpg
+94245dfb0a965d9d9653bbb531981339 *Art Tambourine Man LB-0087\Acoustic Man In Augusta front.jpg
+49ab294374e0393cc17b6568b4613fa0 *Bob Dylan 2002-08-04 Augusta,ME Acoustic Man In Augusta (TMR 042-043.md5
+9889660c8bb1bf92264e7b84abfe7477 *flacs\01 Humming Bird.flac
+93b0caa7ef2673b792ae7c5856092009 *flacs\02 The Man In Me.flac
+ee39c4560a7063a284e554d1c6a28892 *flacs\03 It's Alright, Ma (I'm Only Bleeding).flac
+71ff5af066c10167a86233dc2c616522 *flacs\04 If You See Her, Say Hello.flac
+4ab5ba13dc47d12da1f58afe9252dd35 *flacs\05 Tombstone Blues.flac
+3558d032668d8575d24c64b322743c33 *flacs\06 Tears of Rage.flac
+060ad536c36e67e53e648068d8d71ebf *flacs\07 Floater (Too Much To Ask).flac
+d17d26bd0041eacd91b34c97a78b8d3a *flacs\08 High Water (For Charley Patton).flac
+5c02ac3ede4e8a922b8f7e0b27af1641 *flacs\09 The Lonesome Death of Hattie Carroll.flac
+ae9f126bf761c6f1f7b3d3965e1ac7cc *flacs\10 Tangled Up In Blue.flac
+4f89e0949f19e4f32cd69b185dae9515 *flacs\11 Knockin' On Heaven's Door.flac
+f3c9980248b875e89c0a1dcb4390a2a0 *flacs\12 Summer Days.flac
+93cf7f8c2db596e5d5acb3803869f935 *flacs\13 Never Gonna Be The Same Again.flac
+bde0d10dc52ebfb9d6dba8e22eff2045 *flacs\14 Cold Irons Bound.flac
+766a27b2aea16a4a7bc9088406705b7f *flacs\15 Rainy Day Women #12 & 35.flac
+6c550501fac05d679c8168b2c68734a0 *flacs\16 Like A Rolling Stone.flac
+f6e98e421e64ec13783e74983df7e8dc *flacs\17 Honest With Me.flac
+427bb30128e33718a35cce70107c5424 *flacs\18 Blowin' In The Wind.flac
+3abfe54cd6b42ed015d9bfb2ee26c7d1 *flacs\19 All Along The Watchtower.flac
+===================
+===================
+===================
+=== ffp for: bd02-08-04-Acoustic-Man-In-Augusta.flacf
+===================
+===================
+===================
+flacs\01 Humming Bird.flac:e2410e6ab84291ba79f51f84d02310ed
+flacs\02 The Man In Me.flac:974b4fd7f23ba338377c8b994941bd83
+flacs\03 It's Alright, Ma (I'm Only Bleeding).flac:283021a6a2e1862a195cde87d8cd418e
+flacs\04 If You See Her, Say Hello.flac:62e938a39d6469befd23a78dc3cb2c18
+flacs\05 Tombstone Blues.flac:886ede1ccd05076d6abede76ddb8f4a7
+flacs\06 Tears of Rage.flac:510b2076de01502ecd772954937677bc
+flacs\07 Floater (Too Much To Ask).flac:0238170bf824d3eca18617c8ab7af3c8
+flacs\08 High Water (For Charley Patton).flac:00fd20fa230fd84717c4ef6b4c69bbd2
+flacs\09 The Lonesome Death of Hattie Carroll.flac:1fe9848e983b538dbaedabe2d12db259
+flacs\10 Tangled Up In Blue.flac:49bee4fa6c1571eeae3e27f21f4ae151
+flacs\11 Knockin' On Heaven's Door.flac:79f8ce883a2d4edc0fcebee6af3d5f75
+flacs\12 Summer Days.flac:c01a3f6d9a4bbe638e38583ae4c53013
+flacs\13 Never Gonna Be The Same Again.flac:62a4cfe4792137ebc0071645e7f44584
+flacs\14 Cold Irons Bound.flac:60ed5ce343a7b1d7e875a619f6a4c515
+flacs\15 Rainy Day Women #12 & 35.flac:658d40dcd6835b20b382966bc232431b
+flacs\16 Like A Rolling Stone.flac:3e0a9875f15fe7a0be6b7d1917759073
+flacs\17 Honest With Me.flac:dd5c3164893702edffe68fc35ed0e13e
+flacs\18 Blowin' In The Wind.flac:3190353d564bace5603eb6820fcf1e13
+flacs\19 All Along The Watchtower.flac:5d61da35567dc6259467bd4852ed40bd
+===================
+===================
+===================
+=== shntool len for: bd02-08-04-Acoustic-Man-In-Augusta.flacf\flacs
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.64       57480236 B   -b-   --   ---xx   flac  0.6452  01 Humming Bird.flac
+     5:01.03       53102636 B   -b-   --   ---xx   flac  0.6792  02 The Man In Me.flac
+     6:55.51       73327148 B   -b-   --   ---xx   flac  0.6674  03 It's Alright, Ma (I'm Only Bleeding).flac
+     5:58.63       63300140 B   -b-   --   ---xx   flac  0.6807  04 If You See Her, Say Hello.flac
+     5:49.70       61728812 B   -b-   --   ---xx   flac  0.6391  05 Tombstone Blues.flac
+     8:20.03       88206380 B   -b-   --   ---xx   flac  0.6289  06 Tears of Rage.flac
+     6:23.63       67709996 B   -b-   --   ---xx   flac  0.6163  07 Floater (Too Much To Ask).flac
+     6:41.71       70903340 B   -b-   --   ---xx   flac  0.6582  08 High Water (For Charley Patton).flac
+     6:32.56       69281324 B   -b-   --   ---xx   flac  0.6216  09 The Lonesome Death of Hattie Carroll.flac
+     7:58.56       84450860 B   -b-   --   ---xx   flac  0.7062  10 Tangled Up In Blue.flac
+     5:45.70       61023788 B   -b-   --   ---xx   flac  0.6315  11 Knockin' On Heaven's Door.flac
+     7:06.71       75313196 B   -b-   --   ---xx   flac  0.6674  12 Summer Days.flac
+     6:07.68       64899116 B   -b-   --   ---xx   flac  0.6010  13 Never Gonna Be The Same Again.flac
+     6:22.05       67396652 B   -b-   --   ---xx   flac  0.6450  14 Cold Irons Bound.flac
+     8:56.71       94717484 B   -b-   --   ---xx   flac  0.6645  15 Rainy Day Women #12 & 35.flac
+     7:54.64       83764268 B   -b-   --   ---xx   flac  0.6569  16 Like A Rolling Stone.flac
+     7:06.73       75317804 B   -b-   --   ---xx   flac  0.6720  17 Honest With Me.flac
+     6:19.58       66991148 B   -b-   --   ---xx   flac  0.6515  18 Blowin' In The Wind.flac
+     5:42.31       60401708 B   -b-   --   ---xx   flac  0.6943  19 All Along The Watchtower.flac
+   126:32.37     1339316036 B                            0.6545  (19 files)
+===================
+===================
+===================

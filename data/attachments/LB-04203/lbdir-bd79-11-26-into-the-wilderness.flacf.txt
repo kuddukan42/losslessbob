@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-26-into-the-wilderness.flacf 
+=================== 
+=================== 
+=================== 
+010b5adeeed46b50d9c9ee5b8d256eb4  bd79-11-26-into-the-wilderness-LB-4203.txt
+d5f7769071b941d71612ac282fd74bfd  Tempe disc 1\Tempe disc 1.md5
+6bb80fdaec9af7d2910c85ac9d4514fd  Tempe disc 1\Track01.flac
+805122441c16b05acc7ecbf50b992355  Tempe disc 1\Track02.flac
+b4b77217e730cccea5620bde0662271a  Tempe disc 1\Track03.flac
+d9df5c0d1941e7dfaf2f8a49cdefd237  Tempe disc 1\Track04.flac
+8dcac020b624168b729203f920babca4  Tempe disc 1\Track05.flac
+6524e518cd755466004626f420dd63d6  Tempe disc 1\Track06.flac
+b751c58d9bdd32c80c6bdebf869d7704  Tempe disc 1\Track07.flac
+8c9d145e7e5fab9e0e113f64ba2537db  Tempe disc 1\Track08.flac
+d21bfab3a618a491e65f8de818d49fb8  Tempe disc 1\Track09.flac
+cb97ceb231417026889516a7d70b7084  Tempe disc 1\Track10.flac
+8470dcbdb6f37478ea4779537ea95af9  Tempe disc 1\Track11.flac
+49de499131ad56e4609ecb40f0c3df5c  Tempe disc 1\Track12.flac
+904b6e60f89950409d0203467fcd966e  Tempe disc 1\tempe.LOG
+ddce32aa4dfd6ff66065753f6e72c75e  Tempe disc 1\tempe2ndnightinfo.txt
+70bc4b2225f231fcf67037db027168ff  Tempe disc 2\Tempe disc 2.md5
+b4491a6cf5dab55ac9b5bf402ece3d76  Tempe disc 2\Track01.flac
+fdab1433e65a26b6727f0314b027de97  Tempe disc 2\Track02.flac
+9fd00a79e18e19c2d342cab58e834fa1  Tempe disc 2\Track03.flac
+a5a65eaebbac9152a04d0dd0cb9359c9  Tempe disc 2\Track04.flac
+fa62f03cb67e0e96102422164995c8ea  Tempe disc 2\Track05.flac
+4ffd37cb334a81aeccfe8724e3d26cac  Tempe disc 2\Track06.flac
+1932226712c9edb23bd90e21d62112df  Tempe disc 2\tempe2.LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-26-into-the-wilderness.flacf\Tempe disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:7c46392c5de96a059b9bcefd2302d4df
+Track02.flac:a0be8d0ce9d95aa54185db964b6a4f04
+Track03.flac:7d204a0c75e024349be36a885883cd9f
+Track04.flac:da18d97bb62a2071c28a531ac3f4183c
+Track05.flac:c3e09e3ebe13dbbdd57f9f0b02e548c6
+Track06.flac:bac2e76677b4d01cf5f2470661c68408
+Track07.flac:c98a12e755c08acd2ec9c5c28e7e02f1
+Track08.flac:eff17e85d200f9d6cdbe899f7e28e1ee
+Track09.flac:2cddc93b70a0e165d31d98f97ebe8c5c
+Track10.flac:5ff0e20fbd5d342eb20d0defffaba526
+Track11.flac:a9c02fcb050b99cee6b05cab9c4c000a
+Track12.flac:90bec51898ef48a0290202af35f3b408
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-26-into-the-wilderness.flacf\Tempe disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:02242b64f2e0afd76a6a9cad26758f84
+Track02.flac:9a84bf5a8de8b47c6f762fc4fa24a06b
+Track03.flac:3c13c9d058b7da7f748356b84833e1c6
+Track04.flac:26086102e466e7c35324e09be6f866e0
+Track05.flac:cfa74dd7a6a39d0b6120cb99cc45f45e
+Track06.flac:7584198fcd576405ad873b3dc67c5c25
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-26-into-the-wilderness.flacf\Tempe disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:13.19       76425932 B   ---   --   ---xx   flac  0.4565  Track01.flac
+     4:54.46       51969836 B   ---   --   ---xx   flac  0.4197  Track02.flac
+     4:32.73       48152540 B   ---   --   ---xx   flac  0.3974  Track03.flac
+     5:37.38       59536220 B   ---   --   ---xx   flac  0.4430  Track04.flac
+     5:23.34       57057212 B   ---   --   ---xx   flac  0.3884  Track05.flac
+     5:38.06       59637356 B   ---   --   ---xx   flac  0.4150  Track06.flac
+     6:04.62       64355468 B   ---   --   ---xx   flac  0.4374  Track07.flac
+     6:32.53       69273500 B   ---   --   ---xx   flac  0.4484  Track08.flac
+     6:04.30       64280204 B   ---   --   ---xx   flac  0.4086  Track09.flac
+     4:26.58       47058860 B   ---   --   ---xx   flac  0.4351  Track10.flac
+     5:03.69       53611532 B   ---   --   ---xx   flac  0.4402  Track11.flac
+     4:22.06       46230956 B   ---   --   ---xx   flac  0.4231  Track12.flac
+    65:54.44      697589616 B                            0.4275  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-26-into-the-wilderness.flacf\Tempe disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.52       54982748 B   ---   --   ---xx   flac  0.4048  Track01.flac
+     4:46.51       50570396 B   ---   --   ---xx   flac  0.4702  Track02.flac
+     4:25.26       46807196 B   ---   --   ---xx   flac  0.4107  Track03.flac
+     4:33.35       48239564 B   ---   --   ---xx   flac  0.4536  Track04.flac
+     5:25.69       57492332 B   ---   --   ---xx   flac  0.4285  Track05.flac
+     7:11.72       76197788 B   ---   --   ---xx   flac  0.4168  Track06.flac
+    31:35.05      334290024 B                            0.4294  (6 files)
+=================== 
+=================== 
+=================== 

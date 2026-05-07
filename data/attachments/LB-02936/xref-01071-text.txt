@@ -1,0 +1,103 @@
+===================
+===================
+===================
+=== flac.ffp
+===================
+===================
+===================
+Disc1\01 Wait For The Light To Shine.flac:2619d8c969b153157bffe356ba953779
+Disc1\02 It Ain't Me, Babe.flac:8f39de9597c81ffc6529834894faf763
+Disc1\03 A Hard Rain's A-Gonna Fall.flac:fcb11ecd42f21e12c08de39d442b0f0f
+Disc1\04 Searching For A Soldier's Grave.flac:021233af79913d86054b371cf58e8314
+Disc1\05 Tweedle Dee & Tweedle Dum.flac:145dd7c68ab996f61ac2f89e1cc0360b
+Disc1\06 Just Like A Woman.flac:0884de91f466f42faf59448460c53e2e
+Disc1\07 Lonesome Day Blues.flac:98b0275ffef4bcf7fd0f9a0df0eddea9
+Disc1\08 High Water.flac:dc9c5890cba1695a630f2105c8175ef9
+Disc1\09 Don't Think Twice.flac:1994986a589034904c9086db98bd81ad
+Disc1\10 John Brown.flac:32e6bf11da4c19298f211d191b585b04
+Disc1\11 Tangled Up In Blue.flac:328cdb92b5fb46837e3730464774a51f
+Disc1\12 Summer Days.flac:51226afa68d34af3636b46d48792fa98
+Disc2\01 Sugar Baby.flac:8c3281af3ba18ca660608af5cdeb151d
+Disc2\02 The Wicked Messenger.flac:88a87ec5367e935a993f2ac8a0964923
+Disc2\03 Rainy Day Women #12 & 35.flac:b45bd2224f0466e6488ee60affd682bf
+Disc2\04 Things Have Changed.flac:c71f1b97f775d1923fc098ff4c590610
+Disc2\05 Like A Rolling Stone.flac:f7ff0ac2ebd0d2018c506f08947adabf
+Disc2\06 Forever Young.flac:9cf3ba78bfc40bf1438c737a81f6cb13
+Disc2\07 Honest With Me.flac:479b2e278132ec5d0606a3fa32691e14
+Disc2\08 Blowin' In The Wind.flac:0db24ba59688c20b8976de5a5b6e6c0f
+Disc2\09 All Along The Watchtower.flac:2582a11453346b995e8a004f008162fa
+Disc2\10 Knockin' On Heaven's Door.flac:de2dd2af633158e033894ddab8e557d7
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+Bob Dylan
+November 24 2001
+Fleet Center  
+Boston, Massachusetts 
+
+****  This recording is not LB-2936 it is derived from it! ****
+
+Taper: Unwanted Man
+Lineage: trade audio cd-r's > eac secure offset > wav > tlh-flac 8
+
+Disk One
+Wait For The Light To Shine (acoustic w band) 
+It Ain't Me, Babe (acoustic w band) 
+A Hard Rain's A-Gonna Fall (acoustic w band) 
+Searching For A Soldier's Grave (acoustic w band) 
+Tweedle Dee & Tweedle Dum 
+Just Like A Woman 
+Lonesome Day Blues 
+High Water (for Charlie Patton) 
+Don't Think Twice, It's All Right (acoustic w band) 
+John Brown (acoustic w band) 
+Tangled Up In Blue (acoustic w band) 
+Summer Days 
+
+Disk Two
+Sugar Baby 
+The Wicked Messenger 
+Rainy Day Women # 12 & 35 
+Things Have Changed 
+Like A Rolling Stone 
+Forever Young (acoustic w band) 
+Honest With Me 
+Blowin' In The Wind (acoustic w band) 
+All Along The Watchtower 
+Knockin' On Heaven's Door (acoustic w band)    
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+c96db42e016ddd0a0e5d5e2d613c7d1d *Disc1\01 Wait For The Light To Shine.flac
+c730bb7053cdb9debfaf8d54edc6a7ed *Disc1\02 It Ain't Me, Babe.flac
+39ce0c17d0c8d238af929701619e5369 *Disc1\03 A Hard Rain's A-Gonna Fall.flac
+228cbe93cd7204d473dcb1493bb58792 *Disc1\04 Searching For A Soldier's Grave.flac
+f46c2729edafe9b81234874da4d62ab7 *Disc1\05 Tweedle Dee & Tweedle Dum.flac
+81578e0e26b03562af910c95e863d8e7 *Disc1\06 Just Like A Woman.flac
+91f47de4408a59338d0ea11c2d18e371 *Disc1\07 Lonesome Day Blues.flac
+ee373c8240f35ae5b638b49658353062 *Disc1\08 High Water.flac
+0ec2b15870770a51778d49c07b16c2b4 *Disc1\09 Don't Think Twice.flac
+d1eb6a23065605603919975bd93ecf84 *Disc1\10 John Brown.flac
+dfdcbf3a11ea7e8f854725a4541f6849 *Disc1\11 Tangled Up In Blue.flac
+e2d4f1754aa7178036534224ffedb666 *Disc1\12 Summer Days.flac
+66b42eee89f78acbecbec1c2aca4beb9 *Disc2\01 Sugar Baby.flac
+d215fb7e41457bb991cb494c3b03a4e8 *Disc2\02 The Wicked Messenger.flac
+5a9c8674b9ffa7832c75801cb36e8986 *Disc2\03 Rainy Day Women #12 & 35.flac
+aba5105c71b4eae105e8ae7388932c0a *Disc2\04 Things Have Changed.flac
+801930f95ff837c2926ae7224a5af3bd *Disc2\05 Like A Rolling Stone.flac
+93a0763f7bebae2077505beef34dc035 *Disc2\06 Forever Young.flac
+2674c5797b1465a4f7399101468ed379 *Disc2\07 Honest With Me.flac
+452f28b7f8eb761e2174be2129b7cdf3 *Disc2\08 Blowin' In The Wind.flac
+dc178578ebeb131f00411a3d0a119f50 *Disc2\09 All Along The Watchtower.flac
+807f043dd6f3bc127990347d4a03db23 *Disc2\10 Knockin' On Heaven's Door.flac
+===================
+===================
+===================

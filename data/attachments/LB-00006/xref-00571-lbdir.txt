@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-17-f.flacf 
+=================== 
+=================== 
+=================== 
+d69cdae896b47412621ff6844e107138  dylan2000-06-17.flac.ffp
+1554ab27b5cf3f36c99dfee6db4d0228  DYLN061700.txt
+15d463d3ee5251222eb40b61237600a4  DYLN061700d1.md5
+72d431def20a698cc2b3e3277053a67b  DYLN061700d1t01.flac
+82e8eede9025d4cb06d3ef947b751992  DYLN061700d1t02.flac
+4268c708a7451eb97bf69e51502c573b  DYLN061700d1t03.flac
+2fdc25087501b68a3e339b1994064e22  DYLN061700d1t04.flac
+58db639ccf57e6dff91f198b1ab05776  DYLN061700d1t05.flac
+0877a803f525191a8131e72826b3a3e8  DYLN061700d1t06.flac
+68923b2dafeb32deb1cf40ad6c3d04f3  DYLN061700d1t07.flac
+7fc97b829b2dfc7853a7ce08de2ab06d  DYLN061700d1t08.flac
+f189f6271c3b616661d46866173eab4f  DYLN061700d1t09.flac
+671d99f42768c31f05e6f82809578d1f  DYLN061700d2.md5
+47ff8c099615c8fd5f80e61e9b1ea00a  DYLN061700d2t01.flac
+c4dadeba5562ccc2a5503eadddc3a312  DYLN061700d2t02.flac
+0e3ca60d88956db3f43a06d8c1db7185  DYLN061700d2t03.flac
+83494f08b839fae8aeb1e4ec07d13e42  DYLN061700d2t04.flac
+6e2c174839d04789494647e14b6ee4a5  DYLN061700d2t05.flac
+3399a76212e935220eaf15fdfd70c770  DYLN061700d2t06.flac
+a111e70ae8a917476cf740ca40b2ef3a  DYLN061700d2t07.flac
+cc1337b18fdc12d88f9e85f49c82af56  DYLN061700d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-17-f.flacf 
+=================== 
+=================== 
+=================== 
+dyln061700d1t01.flac:b0b1b2182da5782ae35b1be8334f9a89
+dyln061700d1t02.flac:bab98a9a3c230258da4e7e67d877c167
+dyln061700d1t03.flac:ce8129cdd01df877f9c6ccc42ba1ba13
+dyln061700d1t04.flac:b9863ebe2a149f6ca82e1bc0d5069b8b
+dyln061700d1t05.flac:a97eb56d04509706b573baa080db9f0e
+dyln061700d1t06.flac:0dd165395baddb4c0f8101fefb1ef93a
+dyln061700d1t07.flac:2be22268577eb144f24fcccdbcf251e9
+dyln061700d1t08.flac:529319aa4f1f226bb876d7ede844036d
+dyln061700d1t09.flac:a46f4a03e02759b89cc181adcd348757
+dyln061700d2t01.flac:5c0aec78a2a6b5ccb3272b02c9288c96
+dyln061700d2t02.flac:f8c9b9a1d96d720833b17d8f1596d69a
+dyln061700d2t03.flac:512bc00df78f5366e55e867d76945de5
+dyln061700d2t04.flac:541e798616ff9da86c7fcb84174a9ffa
+dyln061700d2t05.flac:cbaa1163eb21b341d54a8b0f59cabf53
+dyln061700d2t06.flac:06e35272604dc497d179f6c959212f4b
+dyln061700d2t07.flac:b7762a15209bbd06bb35a97368e97cd6
+dyln061700d2t08.flac:91881b78618949514256db5060bfb6d6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-17-f.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:36.61       27661916 B   ---   --   ---xx   flac  0.6075  DYLN061700d1t01.flac
+     3:47.15       40078124 B   ---   --   ---xx   flac  0.5683  DYLN061700d1t02.flac
+     9:18.58       98567660 B   ---   --   ---xx   flac  0.5893  DYLN061700d1t03.flac
+     7:15.50       76851644 B   ---   --   ---xx   flac  0.5692  DYLN061700d1t04.flac
+     7:47.07       82395308 B   ---   --   ---xx   flac  0.6705  DYLN061700d1t05.flac
+     3:15.21       34447436 B   ---   --   ---xx   flac  0.5434  DYLN061700d1t06.flac
+     2:56.47       31156988 B   ---   --   ---xx   flac  0.5944  DYLN061700d1t07.flac
+     4:45.35       50356364 B   ---   --   ---xx   flac  0.5958  DYLN061700d1t08.flac
+     3:47.14       40075772 B   ---   --   ---xx   flac  0.6487  DYLN061700d1t09.flac
+     5:56.43       62899580 B   ---   --   ---xx   flac  0.5895  DYLN061700d2t01.flac
+     4:51.32       51407708 B   ---   --   ---xx   flac  0.6607  DYLN061700d2t02.flac
+     8:48.23       93193340 B   ---   --   ---xx   flac  0.6178  DYLN061700d2t03.flac
+     6:30.62       68941868 B   ---   --   ---xx   flac  0.6043  DYLN061700d2t04.flac
+     7:10.38       75941420 B   ---   --   ---xx   flac  0.6395  DYLN061700d2t05.flac
+     5:45.54       60985052 B   ---   --   ---xx   flac  0.5793  DYLN061700d2t06.flac
+     4:47.27       50690348 B   ---   --   ---xx   flac  0.6457  DYLN061700d2t07.flac
+     7:04.70       74958284 B   ---   --   ---xx   flac  0.6469  DYLN061700d2t08.flac
+    96:25.57     1020608812 B                            0.6127  (17 files)
+=================== 
+=================== 
+=================== 

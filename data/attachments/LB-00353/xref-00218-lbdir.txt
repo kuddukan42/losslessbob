@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-25-c.flacf 
+=================== 
+=================== 
+=================== 
+a78b69920349101d9dae4a769c1e0140  25sep87_101.shn
+2ebe2839d0b1e957e091b4d8a20660bf  25sep87_102.shn
+fb3c63d1ec61068429f55df96ac60037  25sep87_103.shn
+6f6bc1f70c2ca28f41c9107c3f6eacaa  25sep87_104.shn
+4448f9c56d61726ea8f50f15b5587599  25sep87_105.shn
+e593070a895b61414c44f21d3d65050f  25sep87_106.shn
+4308471563f0c0d14f2dff0b4535daaa  25sep87_107.shn
+35ccfd34e765448709aea1bece07916b  25sep87_108.shn
+dde5fb7c1c41e2ebae71f9a221f53192  25sep87_109.shn
+05173bb9a4863ec9527d20414dff49ae  25sep87_110.shn
+0b06ab89ac8ae91c15e7ffe176e75f4b  25sep87_111.shn
+f4ed70b9f676c0b38cbfdc13cbc34d5a  25sep87_112.shn
+394cddc76aabcc1f9cb161a75e33ba5b  25sep87_113.shn
+317933d0ec1fd98471773944f0b06f01  25sep87_114.shn
+92dc2cd2d6ad6f17808d9d541454dbb6  noname.md5
+74d64f11b0f5953615312e3c5295748d  temples in flames dvd#2.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-09-25-c.flacf 
+=================== 
+=================== 
+=================== 
+d194b782fd6324dfbc88b20fc54a29b4  [shntool]  25sep87_101.wav
+7e8461464e46dad8f1ff6ba646baaa81  [shntool]  25sep87_102.wav
+6ae3927a1c6c980aab816ae19c58cfc2  [shntool]  25sep87_103.wav
+4bb8ae530c019e220eaa2e2f9a0fecbf  [shntool]  25sep87_104.wav
+a2afa836837b7b658a079ad9ffd05d17  [shntool]  25sep87_105.wav
+bea9fe9401beafe8eaeacd498cabbce5  [shntool]  25sep87_106.wav
+7f823beb56f1fd5f07ef7e61538b62f6  [shntool]  25sep87_107.wav
+16a9c0e56ebba3698b9a5fdb07fb6ea3  [shntool]  25sep87_108.wav
+e748cde98c2c48f03b7948cf204e79b2  [shntool]  25sep87_109.wav
+67bd70cce7cdab17412a263648c55136  [shntool]  25sep87_110.wav
+f06a61c48b6e576c3992d213c1364f5d  [shntool]  25sep87_111.wav
+cace25fee3da420c74ad9a136e3ef822  [shntool]  25sep87_112.wav
+59eae0063e8c124c5619ebe9aba66ce9  [shntool]  25sep87_113.wav
+004e622eafb9a494d6eb5f1b4c6fe13a  [shntool]  25sep87_114.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-25-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.68       53256380 B   ---   --   ---xx    shn  0.6615  25sep87_101.shn
+     4:02.42       42787628 B   ---   --   ---xx    shn  0.6655  25sep87_102.shn
+     5:08.32       54406508 B   ---   --   ---xx    shn  0.6487  25sep87_103.shn
+     3:16.66       34729676 B   ---   --   ---xx    shn  0.7078  25sep87_104.shn
+     4:53.70       51849884 B   ---   --   ---xx    shn  0.6182  25sep87_105.shn
+     4:40.08       49410860 B   ---   --   ---xx    shn  0.6683  25sep87_106.shn
+     6:22.31       67457756 B   ---   --   ---xx    shn  0.6257  25sep87_107.shn
+     2:47.48       29571740 B   ---   --   ---xx    shn  0.7018  25sep87_108.shn
+     4:14.31       44878556 B   ---   --   ---xx    shn  0.5801  25sep87_109.shn
+     4:13.33       44706860 B   ---   --   ---xx    shn  0.7296  25sep87_110.shn
+     6:35.08       69696860 B   ---   --   ---xx    shn  0.7003  25sep87_111.shn
+     5:40.16       60013676 B   ---   --   ---xx    shn  0.7116  25sep87_112.shn
+     6:07.30       64809404 B   ---   --   ---xx    shn  0.6598  25sep87_113.shn
+     7:47.04       82388252 B   ---   --   ---xx    shn  0.7248  25sep87_114.shn
+    70:51.37      749964040 B                            0.6724  (14 files)
+=================== 
+=================== 
+=================== 

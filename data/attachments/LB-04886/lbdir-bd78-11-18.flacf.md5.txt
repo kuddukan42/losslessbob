@@ -1,0 +1,30 @@
+0cd7197d8bba59b60afb60c72bc0a47c  disc 1\Track01.flac
+2cc52405988fc81b82cf036e810c9e25  disc 1\Track02.flac
+10886101947f43756c4ddeb9bd96099f  disc 1\Track03.flac
+b28c793306af519e22b4525ea472d5a2  disc 1\Track04.flac
+067a24b1df82bfaca9f801521e9fc34b  disc 1\Track05.flac
+25df3059fc1755a23017ab4aba214dbf  disc 1\Track06.flac
+994b150ee22366527ab0c462239b7765  disc 1\Track07.flac
+ccbd0f93528b9538866dd158a3851a37  disc 1\Track08.flac
+243e6ded8cbc7c2730eb8c3e45826776  disc 1\Track09.flac
+cc0824ea802678c489c3abf4952c277d  disc 1\Track10.flac
+31b1ff706b864578f95f371481369bd3  disc 1\Track11.flac
+ba104e1fe5777aee19b140a93189d78c  disc 1\Track12.flac
+47de3bd4bd882fda0a4e7ad5b6086e7e  disc 1\Track13.flac
+8d025feb2ab49ddbf17e5bcd5c48baaa  disc 1\Track14.flac
+ce37739290e891934a5c703e26118447  disc 2\Track01.flac
+223156f1ac2a45fd0fbf74957e49cd40  disc 2\Track02.flac
+69d2c482bd71b730191da546116e0d4d  disc 2\Track03.flac
+b6a2df50a9695d244ba8f7043425a34c  disc 2\Track04.flac
+c4413723df1aa9dd418cf1c7e31b1b37  disc 2\Track05.flac
+03f52609b70ca3c01dd12c4032092987  disc 2\Track06.flac
+c1ad04f803021f01b66b358b28265242  disc 2\Track07.flac
+ce35b627f44674354c5e1a7b7e847c0b  disc 2\Track08.flac
+c4ef891cf1c9bdb8292cb548cf4e8522  disc 2\Track09.flac
+d6458083894cb73a76392e4f599beff4  disc 2\Track10.flac
+5bbb86f3de4c0a3f97c5d586a109660b  disc 2\Track11.flac
+2c144c98a8c93804ea5ca3c6a9d9ebd6  disc 2\Track12.flac
+024e5944c90f7fbe1bf91d741f2b880a  disc 2\Track13.flac
+eb9706e0771dc6565e228c1648c617ec  disc 2\Track14.flac
+8506f212b7eb378993c9e4396e6b9a81  Dylan1978-11-18.md5
+fb12954293a439fc5e78eee1a1654cf2  Dylan1978-11-18.txt

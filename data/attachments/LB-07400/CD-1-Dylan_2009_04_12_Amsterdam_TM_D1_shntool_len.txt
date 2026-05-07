@@ -1,0 +1,15 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.66        8445996 B   -b-   --   ---xx   flac  0.5892  Dylan_2009_04_12_Amsterdam_TM_D1_01.flac
+     3:50.08       40591404 B   -b-   --   ---xx   flac  0.6241  Dylan_2009_04_12_Amsterdam_TM_D1_02.flac
+     5:20.40       56541228 B   -b-   --   ---xx   flac  0.5465  Dylan_2009_04_12_Amsterdam_TM_D1_03.flac
+     6:51.74       72675372 B   -b-   --   ---xx   flac  0.6018  Dylan_2009_04_12_Amsterdam_TM_D1_04.flac
+     7:27.62       78995500 B   -b-   --   ---xx   flac  0.5544  Dylan_2009_04_12_Amsterdam_TM_D1_05.flac
+     7:26.15       78708780 B   -b-   --   ---xx   flac  0.5990  Dylan_2009_04_12_Amsterdam_TM_D1_06.flac
+     5:23.36       57061420 B   -b-   --   ---xx   flac  0.5008  Dylan_2009_04_12_Amsterdam_TM_D1_07.flac
+     4:35.26       48570412 B   -b-   --   ---xx   flac  0.5579  Dylan_2009_04_12_Amsterdam_TM_D1_08.flac
+     6:01.14       63713324 B   -b-   --   ---xx   flac  0.5075  Dylan_2009_04_12_Amsterdam_TM_D1_09.flac
+    10:00.51      105959468 B   -b-   --   ---xx   flac  0.5608  Dylan_2009_04_12_Amsterdam_TM_D1_10.flac
+     5:28.07       57876524 B   -b-   --   ---xx   flac  0.6149  Dylan_2009_04_12_Amsterdam_TM_D1_11.flac
+     7:08.36       75583532 B   -b-   --   ---xx   flac  0.6269  Dylan_2009_04_12_Amsterdam_TM_D1_12.flac
+     8:02.73       85196844 B   -b-   --   ---xx   flac  0.5363  Dylan_2009_04_12_Amsterdam_TM_D1_13.flac
+    78:24.57      829919804 B                            0.5687  (13 files)

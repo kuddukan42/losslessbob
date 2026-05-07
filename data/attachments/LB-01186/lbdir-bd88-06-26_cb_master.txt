@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-26_cb_master 
+=================== 
+=================== 
+=================== 
+be6b2c87f55f11b1701301a0cff88dc5  bd88-06-26.txt
+dffda5eaa035f66f13110cfa5861b6bf  bd_88-06-26_cd1_shn.md5
+59accb91a7953ef705ac777844338ab9  bd_88-06-26_cd1_Track 01.shn
+e60ab58ff1e3414103faf05283c970c1  bd_88-06-26_cd1_Track 10.shn
+3ee651881aa1a3d6a1835e6ff0160a0f  bd_88-06-26_cd1_Track 11.shn
+0194649157031c913e31ffe3a61d0f93  bd_88-06-26_cd1_Track 12.shn
+4da66431040788e8f287f5e1b474bf04  bd_88-06-26_cd1_Track 13.shn
+618bb0db0c0e89b9faac3d4f00d31c34  bd_88-06-26_cd1_Track 14.shn
+2f530b6a90cdd240615451cea0dfd50c  bd_88-06-26_cd1_Track 15.shn
+064f70e89e32e2280adde5c80d501f2a  bd_88-06-26_cd1_Track 16.shn
+9d176ad0f14e00df6cecaa78ce95e17a  bd_88-06-26_cd1_Track 2.shn
+a205fcd830f076a5d790a40314c91eae  bd_88-06-26_cd1_Track 3.shn
+b6cafa62125cff6ebd80e05f5f10d032  bd_88-06-26_cd1_Track 4.shn
+5292cc2413f1048d1de22e627cb0cb94  bd_88-06-26_cd1_Track 5.shn
+410c9a6ef2885be9dece96d8f9d0c42f  bd_88-06-26_cd1_Track 6.shn
+7558e66911e2e057d04f9667800ec3e1  bd_88-06-26_cd1_Track 7.shn
+a9c168f38f1d46d561f708d9effb5443  bd_88-06-26_cd1_Track 8.shn
+4f891415d418318e99cf2a555febd139  bd_88-06-26_cd1_Track 9.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-06-26_cb_master 
+=================== 
+=================== 
+=================== 
+ec2624efa19b4787b0afb5e15720917f  [shntool]  bd_88-06-26_cd1_Track_01.wav
+7af0d63575fab83641a4e66fb7cb2188  [shntool]  bd_88-06-26_cd1_Track_2.wav
+339d0ab2c2eceeec10d48d51470aaf0f  [shntool]  bd_88-06-26_cd1_Track_3.wav
+ec55771d4d2df68bf3f8812383e3b5a9  [shntool]  bd_88-06-26_cd1_Track_4.wav
+4c14e8251ea911f772ec65919bdd845a  [shntool]  bd_88-06-26_cd1_Track_5.wav
+98e04393421f3bfb90755cebf1c866af  [shntool]  bd_88-06-26_cd1_Track_6.wav
+df53c32dd6f80f50d69b3341e11f801c  [shntool]  bd_88-06-26_cd1_Track_7.wav
+f0847910a4ec3cc201ddcb212d72632e  [shntool]  bd_88-06-26_cd1_Track_8.wav
+a288f0d5250010cf906d596e57d9e3bf  [shntool]  bd_88-06-26_cd1_Track_9.wav
+2af48c7a0d946d3bdd7f80ff711e4b6b  [shntool]  bd_88-06-26_cd1_Track_10.wav
+722b54d17d9898bad7fbfe92e453b68c  [shntool]  bd_88-06-26_cd1_Track_11.wav
+8f83b9f55bfb74486f7570521e407df3  [shntool]  bd_88-06-26_cd1_Track_12.wav
+cb4a7aad814520b414382ffe398c59b6  [shntool]  bd_88-06-26_cd1_Track_13.wav
+e45ed32f3ed933496bff892e037053da  [shntool]  bd_88-06-26_cd1_Track_14.wav
+e1b225b8ac95202de778468445e8b11a  [shntool]  bd_88-06-26_cd1_Track_15.wav
+9e8b8e4c9c087237e60aaca4a964653a  [shntool]  bd_88-06-26_cd1_Track_16.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-26_cb_master 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:52.38       41014302 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_01.wav
+     5:17.37       56005950 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_10.wav
+     3:12.18       33911262 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_11.wav
+     3:44.45       39619566 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_12.wav
+     5:51.49       62031774 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_13.wav
+     4:40.34       49472094 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_14.wav
+     3:56.37       41717550 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_15.wav
+     6:12.03       65627982 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_16.wav
+     3:57.38       41896302 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_2.wav
+     4:40.14       49425054 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_3.wav
+     4:38.54       49166334 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_4.wav
+     4:54.20       51908766 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_5.wav
+     4:27.34       47178894 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_6.wav
+     4:07.51       43690878 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_7.wav
+     3:26.48       36451422 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_8.wav
+     5:05.74       53976174 B   ---   -e   -----    wav  1.0000  bd_88-06-26_cd1_Track_9.wav
+    72:05.69      763094304 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,8 @@
+Bob Dylan, 4/12/09, Amsterdam, The Netherlands, 
+
+LB-7388, **24bit/96kHz**, ---, Lineage:, CA STC11 > Edirol R-09HR (@24/96) > SoundForge 9.0e > Trader's Little Helper 2.4.1 > .flac24, ---, TT: 117:00.00, Last rev. 13Apr09; bittorrent download 04/09; (did not listen to all of this)
+
+01. [00:51.925] (introduction), 02. [03:56.191] Gotta Serve Somebody, 03. [05:14.471] Don't Think Twice, It's All Right, 04. [06:58.251] Most Likely You Go Your Way (And I'll Go Mine), 05. [07:21.346] Million Miles, 06. [07:32.876] Stuck Inside of Mobile with the Memphis Blues Again, 07. [05:11.550] Sugar Baby, 08. [04:45.555] Tweedle Dee & Tweedle Dum, 09. [05:52.977] Beyond the Horizon, 10. [10:02.269] Desolation Row, 11. [05:30.878] Tough Mama, 12. [07:04.967] Highway 61 Revisited, 13. [08:08.132] Ain't Talkin', 14. [07:17.704] Thunder on the Mountain, 15. [10:17.740] Like a Rolling Stone, Encore, 16. [05:04.702] All Along the Watchtower, 17. [08:06.676] Spirit on the Water, 18. [07:41.792] Blowin' in the Wind, Complete concert.
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

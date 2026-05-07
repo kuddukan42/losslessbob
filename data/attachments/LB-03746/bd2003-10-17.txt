@@ -1,0 +1,38 @@
+BOB DYLAN
+Docks - Hamburg, Germany
+October 17, 2003
+
+***DO NOT ENCODE TO MP3!***
+
+source: 	DPA 4060's > DPA MPS6020 p/s > Sony SBM-1 > Sony TCD-D100
+		(~4m in front of left P.A.)
+
+dat>flac: 	Sony PCM-R300 > coax cable > DiO2448 
+		> Cool Edit Pro v1.2a (resampling only) 
+		> T-Racks 24 v2.0 (mastering) > CDWave v1.6 
+		> FLAC frontend ***alpha*** > flac
+
+genealogy: 	aud>dat-m>dEdit/dEQ>flac
+
+tracklist:	-CD1- [62:49]
+		 1. (intro)
+		 2. Maggie's Farm
+		 3. Senor (Tales of Yankee Power)
+		 4. Cry a While
+		 5. If You See Her, Say Hello
+		 6. It's Alright, Ma (I'm Only Bleeding)
+		 7. Moonlight
+		 8. Cold Irons Bound
+		 9. Most Likely You Go Your Way (And I'll Go Mine)
+		10. Boots of Spanish Leather
+		11. Dignity
+
+		-CD2- [54:49]
+		 1. Man in the Long Black Coat
+		 2. Honest with Me
+		 3. Love Minus Zero/No Limit
+		 4. Summer Days
+		-encore-
+		 5. Cat's in the Well
+		 6. Like a Rolling Stone
+		 7. All along the Watchtower

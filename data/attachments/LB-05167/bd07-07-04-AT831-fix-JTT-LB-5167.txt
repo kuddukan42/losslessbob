@@ -1,0 +1,8 @@
+Bob Dylan, 7/4/07, Montreal, Quebec, Festival International de Jazz, Salle Wilfrid-Pelletier, 2CDR
+
+LB-5167, (66min+55min), at831 fixed jtt; Justme Recording, Source: AT831 > SP-SPSB-1 (rolloff @ 107 Hz) > Edirol R-09 @ 44.1 / 16-bit, Location: Mezzanine, row B, Transfer: Edirol R-09 > USB > Adobe Audition 2.0 (Normalized) > CD Wave 1.95.1 > FLAC 5, Retracked and Edit in 'Rainy Day Women #12 & 35' cleaned: JTT July 6th 2007, >Wave>Soundforge 9>FLAC Level 6 Align on Sector Boundaries, Artwork by JTT; bittorrent download 07/07; same as LB-5162 except as indicated; about 7 seconds of music removed on d1t1 to make if flow, has less introduction and some clapping reduced; (did not listen to all of this)
+
+Disc One, 01. Intro, 02. Rainy Day Women #12 & 35, 03. Don't Think Twice, It's All Right, 04. I'll Be Your Baby Tonight, 05. It's Alright, Ma (I'm Only Bleeding), 06. When The Deal Goes Down, 07. Rollin' And Tumblin', 08. Shelter From The Storm, 09. High Water (For Charlie Patton), 10. Spirit On The Water, 11. Tangled Up In Blue, Disc Two, 01. Chimes Of Freedom, 02. Highway 61 Revisited, 03. Nettie Moore, 04. Summer Days, 05. Like A Rolling Stone, 06. Thunder On The Mountain, 07. All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

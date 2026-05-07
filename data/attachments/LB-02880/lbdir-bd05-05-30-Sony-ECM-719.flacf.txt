@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-05-30-Sony-ECM-719.flacf 
+=================== 
+=================== 
+=================== 
+2f4d09f5bfd5179935959f25be7c1180  01- Intro.flac
+83216f1ad3fd06f7320060097191df0a  02- Drifters Escape.flac
+57d671257a230f0b2305ad27194283c1  03- I'll Be Your Baby Tonight.flac
+cf44276a4ae01d906738c0421a0e6cd7  04- It's Alright Ma.flac
+e4e8e5d844aa1433aadd83c0f7b12729  05- Moonlight.flac
+87d7d241da62089889a2af47d0aed34e  06- Most Likely You'll Go Your Way and I'll Go Mine.flac
+acbe9d1fa51a16b33375ae1c0dbaaa21  07- Million Miles.flac
+de4dbac1f3ca59b83ba38d7959262e70  08- Stuck Inside Of Mobile.flac
+1d4c2a459b514748760603bb92e0b782  09- Blind Willie McTell.flac
+9a5daf4ffd8faee4c00ac556c6b90796  10- Highway 61.flac
+9b321de01fbf4f65e2b8bbded0cb6596  11- To Ramona.flac
+7c012f99188df8efe35730ec21272592  12- Things Have Changed.flac
+58f5c48a5ac7ebb9ef58b89a45c08000  13- Summer Days.flac
+e7e19ca4d4303859f1e2697b5213cc6d  14- Crowd Noise.flac
+feff89544257122c3cda44f8dc665d15  15- Rolling Stone.flac
+19f73888032e765bddea9537f4bae300  16- Watchtower.flac
+bfaa5b1d734751e2ee56e5fc5cebb274  bd05-05-30-Sony-ECM-719-LB-2880.txt
+20e5656bce865e766681603ce6835401  Dylan 30 MAY 05.txt
+4e6883f504e3f67ad70c3675264167b7  print.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-05-30-Sony-ECM-719.flacf 
+=================== 
+=================== 
+=================== 
+01- Intro.flac:5a643b06b1902fc1be7129d64aa01cb6
+02- Drifters Escape.flac:3c3c881f8882446deff491b73ce23c5d
+03- I'll Be Your Baby Tonight.flac:ec00bcc231b86ad6fb01b5f87decdc20
+04- It's Alright Ma.flac:be2741e28451bc2dd36b87be6c822457
+05- Moonlight.flac:8e5ada3ced56855ace981c59b3e70908
+06- Most Likely You'll Go Your Way and I'll Go Mine.flac:af5d1ea4ae55623d2198c716edee1625
+07- Million Miles.flac:9a925b1d6f4acbbd334c3194e5b07dbf
+08- Stuck Inside Of Mobile.flac:6b9cd8c788b9788348434ce0c543a95b
+09- Blind Willie McTell.flac:e7a28e137a3816a8277e7b8ada85721f
+10- Highway 61.flac:482fc848a3db2cc6f8b971ef6a15d395
+11- To Ramona.flac:7a82e447c7efbffdd70e312f06ddfe17
+12- Things Have Changed.flac:7f7cd407b3c260519b3d6d88086a6bcd
+13- Summer Days.flac:ed672c3e564bb87e569b749f54723c64
+14- Crowd Noise.flac:7ea581eb1c2ea1a9746a619eff6eae01
+15- Rolling Stone.flac:a63bd028b0b5ed7e445165a35fb3022f
+16- Watchtower.flac:088852b0bb88dac234707577d96e05a6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-05-30-Sony-ECM-719.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.00        7056044 B   ---   --   ---xx   flac  0.5504  01- Intro.flac
+     5:20.00       56448044 B   ---   --   ---xx   flac  0.6202  02- Drifters Escape.flac
+     6:42.00       70912844 B   ---   --   ---xx   flac  0.5596  03- I'll Be Your Baby Tonight.flac
+     7:21.00       77792444 B   ---   --   ---xx   flac  0.5986  04- It's Alright Ma.flac
+     7:08.00       75499244 B   ---   --   ---xx   flac  0.5341  05- Moonlight.flac
+     6:54.00       73029644 B   ---   --   ---xx   flac  0.6052  06- Most Likely You'll Go Your Way and I'll Go Mine.flac
+     7:09.00       75675644 B   ---   --   ---xx   flac  0.5539  07- Million Miles.flac
+     7:55.00       83790044 B   ---   --   ---xx   flac  0.5995  08- Stuck Inside Of Mobile.flac
+     7:02.00       74440844 B   ---   --   ---xx   flac  0.5856  09- Blind Willie McTell.flac
+     8:21.00       88376444 B   ---   --   ---xx   flac  0.6155  10- Highway 61.flac
+     6:28.00       68443244 B   ---   --   ---xx   flac  0.5207  11- To Ramona.flac
+     7:21.00       77792444 B   ---   --   ---xx   flac  0.5795  12- Things Have Changed.flac
+     9:03.00       95785244 B   ---   --   ---xx   flac  0.5873  13- Summer Days.flac
+     4:40.00       49392044 B   ---   --   ---xx   flac  0.5151  14- Crowd Noise.flac
+     7:24.00       78321644 B   ---   --   ---xx   flac  0.5987  15- Rolling Stone.flac
+     8:49.45       93421484 B   ---   --   ---xx   flac  0.5106  16- Watchtower.flac
+   108:17.45     1146177344 B                            0.5730  (16 files)
+=================== 
+=================== 
+=================== 

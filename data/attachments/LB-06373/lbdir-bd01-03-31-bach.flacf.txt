@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-03-31-bach.flacf 
+=================== 
+=================== 
+=================== 
+a52e5ea6461b0fdb9971d248db5503af  2001-03-31-Ballina-Tr.109\2001-03-31-Ballina-Tr.109.md5
+88c22ef223b63d1e95700622b55ad806  2001-03-31-Ballina-Tr.109\tr.109.txt
+9a0fb4e5df36d257df5fcd05ae6798ec  2001-03-31-Ballina-Tr.109\Track109.flac
+15f84365916bd4e49dcd7b5802aa14b3  2001-03-31-Ballina.md5
+32e01f5c99e1370a6a28275b0e35feec  2001-03-31-Ballina.txt
+2698b077e09f3cebbce94fa5cc1f3c5f  Track101.flac
+2c406a5362de981305181ae4e6e63eb0  Track102.flac
+51809461fdcc0cb61f076a4ae2252881  Track103.flac
+918c513c325dca2b8710b9e3c0142272  Track104.flac
+f023ade9c63eaadbef204204c3979ad6  Track105.flac
+1a539c672dd2c54064d7a2dc027da494  Track106.flac
+131ab8be4ec474750a20fbb4005f1ca1  Track107.flac
+e4c5b26c4463d1e1aa2308549976a8e4  Track108.flac
+2bb1dd7f3ecc6f1bf6c6941be5d69b0e  Track110.flac
+4960d602f75f411df5f1fe43fff525ff  Track111.flac
+75bbaf587cca56e0a537489520284c67  Track201.flac
+70e25972de16b73b91dffc4cfbbb590e  Track202.flac
+052e19f6171ec8ee2e6d21bea7521f00  Track203.flac
+9243a6b3a888ad24da2cb74774695096  Track204.flac
+e0cf4b31b44c48fe3d68ec14e7d151df  Track205.flac
+6c17155402224daeb2669bdcb13f795b  Track206.flac
+179f50ad78480bb2802e0790f4d5f822  Track207.flac
+8e5916096d878d81e638df841b13040c  Track208.flac
+e40185104a529fd617d8d753ea71fae8  Track209.flac
+f1defa80858bd6c7f9515a08eec9894e  Track210.flac
+b82d0e2754cb8873cf4ae1c259d4f948  Track211.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-31-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:34e279483b678d2ed5728c08bff8468c
+Track102.flac:1a03a8364684833fc45a628ac6ba6e07
+Track103.flac:bae6e916655695d89d0b95e56f65efb9
+Track104.flac:b15ec184f9b6a741b2acad57b7cc8fe4
+Track105.flac:79b94e634683e832402a00b7f489afc8
+Track106.flac:7a247c0754fccfe95a450594cb138faa
+Track107.flac:3817a18f810ecca045bd8a2ebae0e41e
+Track108.flac:ba91973728eb7892753d89cefec4949d
+Track110.flac:e1e476fd3c998f3beb1317f354986371
+Track111.flac:38f35d28433c44d01df996f249fbc3cf
+Track201.flac:7e367a93c3181e712e678313acbd3fd5
+Track202.flac:a6e7e3e84f85b94f61666f8eca1f279c
+Track203.flac:34a68991d1f1dbe592f5a30114bde8aa
+Track204.flac:9658a51f1047d5a6d84398bee7a7f9ec
+Track205.flac:7d158e69190850c3d245fce5756229b3
+Track206.flac:8ad07f69803acd30b8bcccb35888b905
+Track207.flac:ad894e46f1256645ea74974c6aa305d3
+Track208.flac:d2ea560f3b953271b9ee0eac76c1915a
+Track209.flac:000136f4b73f9781ed3f4bdab571c2d2
+Track210.flac:8667425d0ee536b90a35182794a022f4
+Track211.flac:473a4ee873c30915e74fb22861921006
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-31-bach.flacf\2001-03-31-Ballina-Tr.109 
+=================== 
+=================== 
+=================== 
+Track109.flac:04e3e83cadd75bd750e505468c3f513f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-31-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.16        5329676 B   ---   --   ---xx   flac  0.3615  Track101.flac
+     3:14.14       34254572 B   ---   --   ---xx   flac  0.4872  Track102.flac
+     6:28.14       68476172 B   ---   --   ---xx   flac  0.4245  Track103.flac
+     9:43.01      102843596 B   ---   --   ---xx   flac  0.4264  Track104.flac
+     4:34.41       48430076 B   ---   --   ---xx   flac  0.4714  Track105.flac
+     6:51.59       72639212 B   ---   --   ---xx   flac  0.4458  Track106.flac
+     5:40.09       59997212 B   ---   --   ---xx   flac  0.4749  Track107.flac
+     6:00.35       63586364 B   ---   --   ---xx   flac  0.3312  Track108.flac
+     8:36.24       91078892 B   ---   --   ---xx   flac  0.3582  Track110.flac
+     5:09.19       54552332 B   ---   --   ---xx   flac  0.4662  Track111.flac
+     4:19.72       45856988 B   ---   --   ---xx   flac  0.5165  Track201.flac
+     7:56.08       83985260 B   ---   --   ---xx   flac  0.4537  Track202.flac
+     2:56.70       31211084 B   ---   --   ---xx   flac  0.4868  Track203.flac
+     7:31.67       79714028 B   ---   --   ---xx   flac  0.4832  Track204.flac
+     3:57.52       41929148 B   ---   --   ---xx   flac  0.3599  Track205.flac
+     5:01.05       53108204 B   ---   --   ---xx   flac  0.4818  Track206.flac
+     4:48.21       50852636 B   ---   --   ---xx   flac  0.4436  Track207.flac
+     6:37.34       70110812 B   ---   --   ---xx   flac  0.4937  Track208.flac
+     7:50.33       82985660 B   ---   --   ---xx   flac  0.4223  Track209.flac
+     4:06.31       43467356 B   ---   --   ---xx   flac  0.5373  Track210.flac
+     4:36.10       48709964 B   ---   --   ---xx   flac  0.5000  Track211.flac
+   116:30.35     1233119244 B                            0.4464  (21 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-31-bach.flacf\2001-03-31-Ballina-Tr.109 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.29       53870252 B   ---   --   ---xx   flac  0.4054  Track109.flac
+     5:05.29       53870252 B                            0.4054  (1 file)
+=================== 
+=================== 
+=================== 

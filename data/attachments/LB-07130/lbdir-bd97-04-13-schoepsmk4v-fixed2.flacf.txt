@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-13-schoepsmk4v-fixed2.flacf 
+=================== 
+=================== 
+=================== 
+a9b7cdd67c805eb5d7f4cf1d25f5b806  bd1997-04-13-schoepsmk4v-fixed2.md5
+36b4c6ce61373315adae1852db8456a0  BD1997-04-13.txt
+316f1a62d633aeacd4ce31c66217b019  bd1997-04-13d1t01.flac
+d1a9ecc9493dadcaf45213db57af6eca  bd1997-04-13d1t02.flac
+0d7a8100155570f540f9393b9cb4401c  bd1997-04-13d1t03.flac
+27f56b03be12c86136440f9afbd3b61a  bd1997-04-13d1t04.flac
+12146b062dc09f86fe5ab7d2eaba9e7b  bd1997-04-13d1t05.flac
+aedfbf1f66d8f4f57fe27822e9ca2f1b  bd1997-04-13d1t06.flac
+6575127e52f09fe9708698babde7cd84  bd1997-04-13d1t07.flac
+762c3384b55ed008babbd390750344c1  bd1997-04-13d1t08.flac
+91c186cd8626310cd1cef3f3d512a45d  bd1997-04-13d1t09.flac
+a555f478cd4ca9564a1455faad2051b3  bd1997-04-13d1t10.flac
+58b58c137d192fc5c6987b6da56b97e2  bd1997-04-13d2t01.flac
+f120a3fdfad1e5189c94cf866ad8aa92  bd1997-04-13d2t02.flac
+a8ea30abf43fd909a1a969e9be42f254  bd1997-04-13d2t03.flac
+41c62f44f835dc2a74115c31212bf7ec  bd1997-04-13d2t04.flac
+91561d63c30b7bde1c0bb58429d61052  bd1997-04-13d2t05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-13-schoepsmk4v-fixed2.flacf 
+=================== 
+=================== 
+=================== 
+bd1997-04-13d1t01.flac:5aa24a510cf3222fd59f171a34ebc144
+bd1997-04-13d1t02.flac:5fcefc0235632d9a43038fabb9164153
+bd1997-04-13d1t03.flac:1053f94ae503de509ce731964abf49e8
+bd1997-04-13d1t04.flac:4fcb12b05f6f23f2bc6421efa8cef61b
+bd1997-04-13d1t05.flac:0ff3542bd1fbe33d97162488191b39e5
+bd1997-04-13d1t06.flac:96949c54e95d306f41e3ce94861f3fa4
+bd1997-04-13d1t07.flac:4775a234b0a0554b44e92ccc25babdf6
+bd1997-04-13d1t08.flac:b297ecc6b3bd61242d966c7e4e1773f6
+bd1997-04-13d1t09.flac:890ecb54b7a4bd8339c063660db4cfd9
+bd1997-04-13d1t10.flac:f4170fa6cb5ab465260f6a1168abd33c
+bd1997-04-13d2t01.flac:a5ef09e5d34f87f2c9a0042799f3885c
+bd1997-04-13d2t02.flac:44c2c49c77796ef34d960cfc552d84d1
+bd1997-04-13d2t03.flac:2ae1a131d06236356fb25b256f48291a
+bd1997-04-13d2t04.flac:6940b52debe17ee8c3013e8c9e569baa
+bd1997-04-13d2t05.flac:476b5a56cf0b74b23b28c89a45b13e26
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-13-schoepsmk4v-fixed2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.34       48766412 B   ---   --   ---xx   flac  0.6049  bd1997-04-13d1t01.flac
+     6:12.50       65738444 B   ---   --   ---xx   flac  0.5815  bd1997-04-13d1t02.flac
+     6:51.59       72639212 B   ---   --   ---xx   flac  0.6203  bd1997-04-13d1t03.flac
+     5:09.73       54679340 B   ---   --   ---xx   flac  0.5784  bd1997-04-13d1t04.flac
+     7:06.45       75252284 B   ---   --   ---xx   flac  0.5672  bd1997-04-13d1t05.flac
+     8:36.40       91116524 B   ---   --   ---xx   flac  0.6100  bd1997-04-13d1t06.flac
+     8:00.37       84759068 B   ---   --   ---xx   flac  0.5402  bd1997-04-13d1t07.flac
+     7:28.33       79104860 B   ---   --   ---xx   flac  0.5085  bd1997-04-13d1t08.flac
+     8:53.26       94082396 B   ---   --   ---xx   flac  0.5826  bd1997-04-13d1t09.flac
+     7:22.08       77987660 B   ---   --   ---xx   flac  0.6021  bd1997-04-13d1t10.flac
+     8:03.26       85262396 B   ---   --   ---xx   flac  0.5319  bd1997-04-13d2t01.flac
+    11:04.71      117296636 B   ---   --   ---xx   flac  0.5844  bd1997-04-13d2t02.flac
+    11:11.27      118427948 B   ---   --   ---xx   flac  0.5581  bd1997-04-13d2t03.flac
+    10:59.69      116409932 B   ---   --   ---xx   flac  0.4846  bd1997-04-13d2t04.flac
+     9:18.66       98586476 B   ---   --   ---xx   flac  0.5872  bd1997-04-13d2t05.flac
+   120:56.64     1280109588 B                            0.5662  (15 files)
+=================== 
+=================== 
+=================== 

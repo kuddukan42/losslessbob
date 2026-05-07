@@ -1,0 +1,150 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-08-05-there-is-a-place.flacf 
+=================== 
+=================== 
+=================== 
+4aff6a535ac16bc3f3c06a833ad644a2  bd86-08-05-there-is-a-place-d1t01.flac
+08528b8ce23f9bd646702867cde47de0  bd86-08-05-there-is-a-place-d1t02.flac
+aff78b81393c02f7cc9646c43d8eaf9f  bd86-08-05-there-is-a-place-d1t03.flac
+a17882eae41f2a81f3fa19b33818c710  bd86-08-05-there-is-a-place-d1t04.flac
+6897377538e76e15e73c65c766222a86  bd86-08-05-there-is-a-place-d1t05.flac
+c8ba7d4a110d59a2e32cb450d5da3e01  bd86-08-05-there-is-a-place-d1t06.flac
+1fe441d3ccd1dfe55808e5ff873edf89  bd86-08-05-there-is-a-place-d1t07.flac
+d847783b10a70cac6bfba36d4f9a650a  bd86-08-05-there-is-a-place-d1t08.flac
+dda0462f624ad540004452fec7e43f02  bd86-08-05-there-is-a-place-d1t09.flac
+34d1d6518d6a3f153a44d3043e355a8c  bd86-08-05-there-is-a-place-d1t10.flac
+f30e4fa1d6fcc327807f16d3ff1789f4  bd86-08-05-there-is-a-place-d1t11.flac
+67e9a11dcff07df331c17da66a06d250  bd86-08-05-there-is-a-place-d1t12.flac
+08d7642985fa9439dbaf786e9b3a8af8  bd86-08-05-there-is-a-place-d1t13.flac
+b67d238cf065586efe7c904e5f641ffa  bd86-08-05-there-is-a-place-d1t14.flac
+9bdf1d4a22dc884e4b0becf3e89a6727  bd86-08-05-there-is-a-place-d2t01.flac
+35967e14e38b19bd0272089144715647  bd86-08-05-there-is-a-place-d2t02.flac
+bf99ba3095710dfe2288e33c85508824  bd86-08-05-there-is-a-place-d2t03.flac
+943152d43d93b2c2a843a33c4a725b4a  bd86-08-05-there-is-a-place-d2t04.flac
+a410b72bc608b0fd28f288f88d87e6a4  bd86-08-05-there-is-a-place-d2t05.flac
+d6d458a8ca53133e0deba393b9d514a2  bd86-08-05-there-is-a-place-d2t06.flac
+21469aee9b00a72b27b9b611413910f9  bd86-08-05-there-is-a-place-d2t07.flac
+97a4d99bd0965a2b8d2cf2244522177e  bd86-08-05-there-is-a-place-d2t08.flac
+79e31f6b3887c6604852c70008379da4  bd86-08-05-there-is-a-place-d2t09.flac
+9fd40603914926ed5c52dda7f83a00f9  bd86-08-05-there-is-a-place-d2t10.flac
+107150b97c8b68e76ad13591ab0bdc24  bd86-08-05-there-is-a-place-d2t11.flac
+383cf1cdc8133eca52d9cd93c9573b0f  bd86-08-05-there-is-a-place-d2t12.flac
+95e7007ff9edb6ff8777c6418af9db74  bd86-08-05-there-is-a-place-d2t13.flac
+480fbd664bd0e0a02822c8f595b17b0b  bd86-08-05-there-is-a-place-d2t14.flac
+32e25233a7c032da36c7192e09c74ebd  bd86-08-05-there-is-a-place-d3t01.flac
+b4f15d27ac305b28ce9ed81b6b5efa4f  bd86-08-05-there-is-a-place-d3t02.flac
+3d51d913c800f47db96a0a8fb6e211e1  bd86-08-05-there-is-a-place-d3t03.flac
+cf84ff367114af80682720dfd0847bc5  bd86-08-05-there-is-a-place-d3t04.flac
+09491d8073afc2204a7fe26b7d40385d  bd86-08-05-there-is-a-place-d3t05.flac
+38d7075ed3553256f5a5d0666d534902  bd86-08-05-there-is-a-place-d3t06.flac
+d0367b55a26f4c23d2eea80f6169ac90  bd86-08-05-there-is-a-place-d3t07.flac
+b668738a8561308f29ccd010ec8f5121  bd86-08-05-there-is-a-place-d3t08.flac
+7a586df96420309d94f69abfaac04f98  bd86-08-05-there-is-a-place-d3t09.flac
+f8249bd10751fe696c49bf1d1f7b0848  bd86-08-05-there-is-a-place-d3t10.flac
+41ae456d406f5a3a6919a0d23694a67e  bd86-08-05-there-is-a-place-d3t11.flac
+d8118fa36a68fb8deba88770f875ce14  bd86-08-05-there-is-a-place-d3t12.flac
+1c292a3705683ec7622458cd18ee7f04  bd86-08-05-there-is-a-place-d3t13.flac
+ea26115d1f10d33ffed487fbfb0f02cc  bd86-08-05-there-is-a-place.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-08-05-there-is-a-place.flacf 
+=================== 
+=================== 
+=================== 
+bd86-08-05-there-is-a-place-d1t01.flac:bc67c9606a98ab676b5e8844a80677c5
+bd86-08-05-there-is-a-place-d1t02.flac:c6ec93ceb25933d063a3e84453474ccc
+bd86-08-05-there-is-a-place-d1t03.flac:a699f3e762606aaa8ad07e187675705a
+bd86-08-05-there-is-a-place-d1t04.flac:7c8002e1620c9a1bd78d31d7dffdcef0
+bd86-08-05-there-is-a-place-d1t05.flac:841f5c5c79a94d09782d3058199288c6
+bd86-08-05-there-is-a-place-d1t06.flac:f9d423ccecb3a894c3615d33d41f846e
+bd86-08-05-there-is-a-place-d1t07.flac:233626103e4ee8de8fd1356f8f3c99c8
+bd86-08-05-there-is-a-place-d1t08.flac:e2f2d4b9b1433c204ebe818eae8f9640
+bd86-08-05-there-is-a-place-d1t09.flac:a131f7eb43f0626921247b1bca6a5c2e
+bd86-08-05-there-is-a-place-d1t10.flac:b414188c0d19e06b80d702d8f028b49e
+bd86-08-05-there-is-a-place-d1t11.flac:646087a6ffc14452d57cb596fe6c4d21
+bd86-08-05-there-is-a-place-d1t12.flac:fe4c60c70b4ca83258c464626b7c5558
+bd86-08-05-there-is-a-place-d1t13.flac:b904821435c9f877a253a6f3b079bc7f
+bd86-08-05-there-is-a-place-d1t14.flac:2c30fb6995bf9a569399d6909fcdb866
+bd86-08-05-there-is-a-place-d2t01.flac:e5dafd5199d74a2adaa94e1c8437dc88
+bd86-08-05-there-is-a-place-d2t02.flac:0614ff11b8e569442b6873d49183d4ef
+bd86-08-05-there-is-a-place-d2t03.flac:11f81ef336362aa7377bd4f187d65025
+bd86-08-05-there-is-a-place-d2t04.flac:716bd5d55191a97d1e22603a5409e424
+bd86-08-05-there-is-a-place-d2t05.flac:e59fa4c38c2a146916905bb37cbc7069
+bd86-08-05-there-is-a-place-d2t06.flac:2dacc7e80cb6973671ce1d74009e04b4
+bd86-08-05-there-is-a-place-d2t07.flac:a3b6af75618aac6b5a8b2521ba57242a
+bd86-08-05-there-is-a-place-d2t08.flac:0385dfcb08304d1a42f2cd41b32848e2
+bd86-08-05-there-is-a-place-d2t09.flac:18b2bf27a056f29bdf1ec5c060d697ce
+bd86-08-05-there-is-a-place-d2t10.flac:02147ac48b8630bf58c5e39f0e6f4f5a
+bd86-08-05-there-is-a-place-d2t11.flac:3640d769674aa587c99e2eeda647f33f
+bd86-08-05-there-is-a-place-d2t12.flac:6f135c185deec98ea954a394537fb4fc
+bd86-08-05-there-is-a-place-d2t13.flac:378f0ad1fc1fdc805b61184225533658
+bd86-08-05-there-is-a-place-d2t14.flac:3486f76f1ade1996d4e9cf9f9a7b0e07
+bd86-08-05-there-is-a-place-d3t01.flac:5f33779bfef6fab4a347984c7db50863
+bd86-08-05-there-is-a-place-d3t02.flac:f4852564d4f2e5808ded75b933525a83
+bd86-08-05-there-is-a-place-d3t03.flac:b92f5007d2f9222b237912d3416db26e
+bd86-08-05-there-is-a-place-d3t04.flac:cfc43540dc5f62f95d7d91c9380cbfa9
+bd86-08-05-there-is-a-place-d3t05.flac:1ab1c99c4d3e7fa5da57a03007a78ffe
+bd86-08-05-there-is-a-place-d3t06.flac:2c4de0dae71c532f02691de1aa688aaf
+bd86-08-05-there-is-a-place-d3t07.flac:a21d07f1926a32ab288bf80f64a71350
+bd86-08-05-there-is-a-place-d3t08.flac:5f80b4678a963c90fd024eddf780e8d0
+bd86-08-05-there-is-a-place-d3t09.flac:8ccbbf240d42dd4aad0ec374d026a04b
+bd86-08-05-there-is-a-place-d3t10.flac:606f746b53fff752b2c77e57d66662d1
+bd86-08-05-there-is-a-place-d3t11.flac:d580369a4828956b3cd3a6ba54b78dcd
+bd86-08-05-there-is-a-place-d3t12.flac:6b2bce65e967f8f8e9d300b6d3cffb0d
+bd86-08-05-there-is-a-place-d3t13.flac:cb4be892d6a8a6f2086e8d799b7dd770
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-08-05-there-is-a-place.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.00       35985644 B   ---   --   ---xx   flac  0.6003  bd86-08-05-there-is-a-place-d1t01.flac
+     4:00.45       42441884 B   ---   --   ---xx   flac  0.6151  bd86-08-05-there-is-a-place-d1t02.flac
+     3:05.22       32685788 B   ---   --   ---xx   flac  0.6157  bd86-08-05-there-is-a-place-d1t03.flac
+     4:59.58       52880060 B   ---   --   ---xx   flac  0.5871  bd86-08-05-there-is-a-place-d1t04.flac
+     5:15.72       55735388 B   ---   --   ---xx   flac  0.6230  bd86-08-05-there-is-a-place-d1t05.flac
+     4:38.00       49039244 B   ---   --   ---xx   flac  0.5697  bd86-08-05-there-is-a-place-d1t06.flac
+     4:57.53       52515500 B   ---   --   ---xx   flac  0.6003  bd86-08-05-there-is-a-place-d1t07.flac
+     3:16.07       34590908 B   ---   --   ---xx   flac  0.5827  bd86-08-05-there-is-a-place-d1t08.flac
+     6:01.13       63711020 B   ---   --   ---xx   flac  0.5724  bd86-08-05-there-is-a-place-d1t09.flac
+     5:20.00       56448044 B   ---   --   ---xx   flac  0.5446  bd86-08-05-there-is-a-place-d1t10.flac
+     7:39.67       81125228 B   ---   --   ---xx   flac  0.5315  bd86-08-05-there-is-a-place-d1t11.flac
+     5:20.68       56607980 B   ---   --   ---xx   flac  0.5548  bd86-08-05-there-is-a-place-d1t12.flac
+     3:39.32       38706908 B   ---   --   ---xx   flac  0.5232  bd86-08-05-there-is-a-place-d1t13.flac
+     7:04.25       74852444 B   ---   --   ---xx   flac  0.5488  bd86-08-05-there-is-a-place-d1t14.flac
+     4:33.50       48274844 B   ---   --   ---xx   flac  0.5534  bd86-08-05-there-is-a-place-d2t01.flac
+     4:02.12       42717068 B   ---   --   ---xx   flac  0.6099  bd86-08-05-there-is-a-place-d2t02.flac
+     5:38.63       59771420 B   ---   --   ---xx   flac  0.5562  bd86-08-05-there-is-a-place-d2t03.flac
+     4:24.60       46710764 B   ---   --   ---xx   flac  0.5212  bd86-08-05-there-is-a-place-d2t04.flac
+     5:26.35       57588764 B   ---   --   ---xx   flac  0.5551  bd86-08-05-there-is-a-place-d2t05.flac
+     3:51.37       40835468 B   ---   --   ---xx   flac  0.5617  bd86-08-05-there-is-a-place-d2t06.flac
+     9:17.20       98301884 B   ---   --   ---xx   flac  0.4668  bd86-08-05-there-is-a-place-d2t07.flac
+     5:44.48       60794540 B   ---   --   ---xx   flac  0.5346  bd86-08-05-there-is-a-place-d2t08.flac
+     6:32.60       69289964 B   ---   --   ---xx   flac  0.5062  bd86-08-05-there-is-a-place-d2t09.flac
+     2:20.05       24707804 B   ---   --   ---xx   flac  0.5684  bd86-08-05-there-is-a-place-d2t10.flac
+     4:11.67       44434028 B   ---   --   ---xx   flac  0.5468  bd86-08-05-there-is-a-place-d2t11.flac
+     6:31.28       69038300 B   ---   --   ---xx   flac  0.5687  bd86-08-05-there-is-a-place-d2t12.flac
+     4:44.27       50161148 B   ---   --   ---xx   flac  0.5551  bd86-08-05-there-is-a-place-d2t13.flac
+     5:17.13       55949420 B   ---   --   ---xx   flac  0.5992  bd86-08-05-there-is-a-place-d2t14.flac
+     7:41.35       81402764 B   ---   --   ---xx   flac  0.5786  bd86-08-05-there-is-a-place-d3t01.flac
+     3:54.47       41388188 B   ---   --   ---xx   flac  0.5502  bd86-08-05-there-is-a-place-d3t02.flac
+     3:09.48       33452540 B   ---   --   ---xx   flac  0.5944  bd86-08-05-there-is-a-place-d3t03.flac
+     4:34.72       48502988 B   ---   --   ---xx   flac  0.5624  bd86-08-05-there-is-a-place-d3t04.flac
+     7:35.50       80379644 B   ---   --   ---xx   flac  0.4947  bd86-08-05-there-is-a-place-d3t05.flac
+     5:35.38       59183420 B   ---   --   ---xx   flac  0.5409  bd86-08-05-there-is-a-place-d3t06.flac
+     4:01.35       42594764 B   ---   --   ---xx   flac  0.5619  bd86-08-05-there-is-a-place-d3t07.flac
+     3:50.35       40654364 B   ---   --   ---xx   flac  0.5899  bd86-08-05-there-is-a-place-d3t08.flac
+     3:37.22       38330588 B   ---   --   ---xx   flac  0.5349  bd86-08-05-there-is-a-place-d3t09.flac
+     6:51.08       72519260 B   ---   --   ---xx   flac  0.5011  bd86-08-05-there-is-a-place-d3t10.flac
+     3:46.32       39941708 B   ---   --   ---xx   flac  0.5288  bd86-08-05-there-is-a-place-d3t11.flac
+     4:04.15       43076924 B   ---   --   ---xx   flac  0.5372  bd86-08-05-there-is-a-place-d3t12.flac
+     5:16.13       55773020 B   ---   --   ---xx   flac  0.5275  bd86-08-05-there-is-a-place-d3t13.flac
+   205:19.12     2173101628 B                            0.5528  (41 files)
+=================== 
+=================== 
+=================== 

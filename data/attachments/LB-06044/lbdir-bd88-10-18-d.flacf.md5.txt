@@ -1,0 +1,20 @@
+5adb8a2b6b40493cd2e92dc1d06d4eaf  01a subterranean homesick blues.flac
+76ca0066accede8209bd29db8e4ec032  02 just like a woman.flac
+8195ea4091ecaf6cae2a924f2e72bd0c  03 masters of war.flac
+6aef61d11fd3dee2fc27761299533201  04 shelter from the storm.flac
+432275e4cd7871b7fac049ea09751ede  05 bob dylan s 115th dream.flac
+c9ef7d0334cb1e45c57727c983244ed9  06 memphis blues again.flac
+c71f7eabfd7853c56838dcaa41d857ed  07 gates of eden.flac
+1057dbbc7e6baca9daa6644f0d307e6b  08 with god on our side.flac
+25f429dcdaaf2ae7db51b59181fa05b3  09 gril from the north country.flac
+a82ccec3c64f88241f887d7d607d9345  09X gril from the north country.flac
+2eadadd1a9667f827636ab70e7a1572e  10 I shall be released.flac
+f451205f43873d9cc2a44b7c34ae9157  10X I shall be released.flac
+319ca110596ff6fa57c0f2945826702a  11 silvio.flac
+446ecaa7a1adcb6421642721b4ad3b43  12 like a rolling stone.flac
+cffc81e25b21ef488dcc323b4fdc04b3  13 wagoner s lad.flac
+8e177eb80fa8630dd3d428530a21d9e6  14 to ramona.flac
+d8dfc7dbe060397b1009070cd1932a8c  15 knockin on heaven s door.flac
+afa2eec351348e279fbdb99c7c18f170  16 in the garden.flac
+a061923e370d3738bde5b703b353c5b7  17 all along the watchtower.flac
+ccf13f7ffd7cb0147e6844b120c4dccc  1988 New York.md5

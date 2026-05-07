@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-04-Lake-Compounce.flacf 
+=================== 
+=================== 
+=================== 
+1ffd5203ceec75ecf671cfa6e637e827  bd1988-09-04.ffp.txt
+6ea215ccb524cd037ac0172040fa8c6f  bd1988-09-04.flacs.md5
+1384b235743fbb40c8e42bb6751a3101  bd1988-09-04.info.txt
+97e754def07b1ca98ea799888634bb64  bd1988-09-04.shntool_disclength.txt
+89704de930303376dc0272a408eeb47d  bd1988-09-04.waves.md5
+ef8bb357e1b12c9782570a8a8b329fc2  bd1988-09-04t01.flac
+8b526fa495c222f88dac021bf935d0db  bd1988-09-04t02.flac
+5988a9bc0ee4b283e97e7b18ddda1980  bd1988-09-04t03.flac
+f9b38346bd28c547128fee735d371040  bd1988-09-04t04.flac
+f6746f2920331501c7264cda5afe2726  bd1988-09-04t05.flac
+097b9de8717ed753eff7f346fe8cc571  bd1988-09-04t06.flac
+59994e95a4fa997776cb7cc74584b284  bd1988-09-04t07.flac
+ead09a69a6ebe9442a0937172731fc9e  bd1988-09-04t08.flac
+07a5643cd3f451842c5315cb4e6378d0  bd1988-09-04t09.flac
+06e35551221c4d3eed338db5a840d8b2  bd1988-09-04t10.flac
+0a44b667415d71e5c6ed7f3916ddaa41  bd1988-09-04t11.flac
+13ebcafa126cabaaa5469bc28781decc  bd1988-09-04t12.flac
+fb0aec2063216cdd5469d25e03575cff  bd1988-09-04t13.flac
+740ee45329cff95331e4f302f3f9a7a8  bd1988-09-04t14.flac
+3643ff7099e596043da0c24e740210ef  bd1988-09-04t15.flac
+bab94e2c60a3a569e1e382e970f4fdec  bd1988-09-04t16.flac
+eeda59246a4053d4595d92ccda7447c3  bd88-09-04-Lake-Compounce-LB-3246.txt
+e6289ed13b2a29a3104a81195af4972c  EAC.LOG
+4d5adfa53c69d1060dcfe109a12a833a  foobar2000_wav2 flac_bitcompare.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-04-Lake-Compounce.flacf 
+=================== 
+=================== 
+=================== 
+bd1988-09-04t01.flac:eb4a8041a5f0a5f0fbdbf2521ce96aff
+bd1988-09-04t02.flac:cbcb6f02499645d4ac2408a86e4c82c0
+bd1988-09-04t03.flac:bb7a84cb3952746b6249ecc92d357bf4
+bd1988-09-04t04.flac:73cabefca1d7eb652e04dfb4094ddbb4
+bd1988-09-04t05.flac:15931726b01107ed71a17beae2b83258
+bd1988-09-04t06.flac:c310bd63f8034d319d312d1381e7d6e3
+bd1988-09-04t07.flac:37cfb70225bb921321f3e2ca2f8def14
+bd1988-09-04t08.flac:a287680937adbd961df63684a3436abf
+bd1988-09-04t09.flac:73b5ab2457a873152810d4e44b3cb950
+bd1988-09-04t10.flac:1c258c3aae2f6ed4ebd0b31fafc44189
+bd1988-09-04t11.flac:350db239c7e39a6d399e05f1de229090
+bd1988-09-04t12.flac:9be129a27696772ddf9245bfc964742e
+bd1988-09-04t13.flac:e073b145c094c55a5cd9856469881c63
+bd1988-09-04t14.flac:82558413f9158d145fc9cc6fc08deb35
+bd1988-09-04t15.flac:8a5aa67babb94be6c4bbc431a5f3e2ac
+bd1988-09-04t16.flac:6309dbf3da17de2ce65e1b8733d2fdb3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-04-Lake-Compounce.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:31.42       37319228 B   ---   --   ---xx   flac  0.6942  bd1988-09-04t01.flac
+     3:43.16       39374876 B   ---   --   ---xx   flac  0.6722  bd1988-09-04t02.flac
+     5:05.35       53884364 B   ---   --   ---xx   flac  0.6639  bd1988-09-04t03.flac
+     4:59.32       52818908 B   ---   --   ---xx   flac  0.6554  bd1988-09-04t04.flac
+     2:55.15       30905324 B   ---   --   ---xx   flac  0.6847  bd1988-09-04t05.flac
+     6:28.25       68502044 B   ---   --   ---xx   flac  0.6476  bd1988-09-04t06.flac
+     4:00.56       42467756 B   ---   --   ---xx   flac  0.6761  bd1988-09-04t07.flac
+     4:09.32       43998908 B   ---   --   ---xx   flac  0.6247  bd1988-09-04t08.flac
+     4:33.02       48161948 B   ---   --   ---xx   flac  0.6900  bd1988-09-04t09.flac
+     5:03.43       53550380 B   ---   --   ---xx   flac  0.6661  bd1988-09-04t10.flac
+     4:00.48       42448940 B   ---   --   ---xx   flac  0.6597  bd1988-09-04t11.flac
+     4:27.64       47249372 B   ---   --   ---xx   flac  0.6410  bd1988-09-04t12.flac
+     6:10.68       65427980 B   ---   --   ---xx   flac  0.6765  bd1988-09-04t13.flac
+     5:35.04       59103452 B   ---   --   ---xx   flac  0.5791  bd1988-09-04t14.flac
+     4:43.36       50005916 B   ---   --   ---xx   flac  0.6945  bd1988-09-04t15.flac
+     4:58.13       52597820 B   ---   --   ---xx   flac  0.6824  bd1988-09-04t16.flac
+    74:26.06      787817216 B                            0.6610  (16 files)
+=================== 
+=================== 
+=================== 

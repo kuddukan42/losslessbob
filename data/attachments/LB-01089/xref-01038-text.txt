@@ -1,0 +1,113 @@
+===================
+===================
+===================
+=== 2003-07-13 Casper, Wyoming.txt
+===================
+===================
+===================
+BOB DYLAN
+
+Casper Events Center
+Casper, Wyoming
+13 July 2003
+
+1. Stuck Inside Of Mobile With The Memphis Blues Again
+2. I'll Remember You
+3. Tweedle Dee & Tweedle Dum
+4. It Ain't Me, Babe
+5. Things Have Changed
+6. Watching The River Flow
+7. It's Alright, Ma (I'm Only Bleeding)
+8. Dignity
+9. Under The Red Sky
+
+
+10. The Wicked Messenger
+11. I Believe In You
+12. Honest With Me
+13. Moonlight
+14. Summer Days
+ - 
+15. Like A Rolling Stone
+16. All Along The Watchtower
+
+
+Concert # 1526 of The Never-Ending Tour. 
+Second concert of the 2003 US Summer Tour. 
+2003 concert # 36.
+Concert # 25 with the 16th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & piano), 
+Freddie Koella (guitar), 
+Larry Campbell(guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion).
+
+4, 7 acoustic with the band.
+2, 4, 9, 10, 16 Bob Dylan (harmonica).
+2 Larry Campbell (pedal steel guitar).
+4, 7 Larry Campbell (cittern).
+6, 12 Larry Campbell (slide guitar).
+
+Notes.
+LB-number for this concert: LB-1089, LB-1171, LB-1345, LB-1379, LB-6172.
+
+
+8 new songs (50%) compared to previous concert. 8 new songs for this tour.
+Stereo audience recording, 100 minutes.
+Session info updated 15 September 2010.
+
+===================
+===================
+===================
+=== BD 2003-07-13 Casper, Wyoming.ffp
+===================
+===================
+===================
+(Bob Dylan) 2003-07-13_101.flac:84ccfe23dea202fadd150ed90d35e157
+(Bob Dylan) 2003-07-13_102.flac:b33895a258420ea722c877e14a7d6a1a
+(Bob Dylan) 2003-07-13_103.flac:34b07313a24c19a0dba649e114b84da9
+(Bob Dylan) 2003-07-13_104.flac:1c1d71619e10f9c15669dd761d777ba3
+(Bob Dylan) 2003-07-13_105.flac:2dd10cdf01877995a7c48d3e57f08d30
+(Bob Dylan) 2003-07-13_106.flac:4654d26d6b2c7177ae612abbdd6bdaa8
+(Bob Dylan) 2003-07-13_107.flac:5475a4edafeb5789329ef119450aca94
+(Bob Dylan) 2003-07-13_108.flac:a3926ef08e09c407bef160def0e86fb6
+(Bob Dylan) 2003-07-13_109.flac:1ebf7606ffdf466eeda84b16409f8595
+(Bob Dylan) 2003-07-13_201.flac:a8d194dcb20d5f000cff0943cb027c17
+(Bob Dylan) 2003-07-13_202.flac:2a4bc802e7996ce533ff23936431768a
+(Bob Dylan) 2003-07-13_203.flac:fc9fca5693a0658042a66cc2ee43f979
+(Bob Dylan) 2003-07-13_204.flac:5ae4c09bd0a01b387376724d294cb774
+(Bob Dylan) 2003-07-13_205.flac:5cbceeae9f0be245a66bde706f36bb3b
+(Bob Dylan) 2003-07-13_206.flac:24c36f06d283e9854d66270ddcebc164
+(Bob Dylan) 2003-07-13_207.flac:4dc5485afe7ffbfada3f124defeb6844
+(Bob Dylan) 2003-07-13_208.flac:a8e7b8b495d7a72ba1dd339d96b7d603
+===================
+===================
+===================
+=== BD 2003-07-13 Casper, Wyoming.md5
+===================
+===================
+===================
+92ae50201750045040f529db7ae3aa86 *(Bob Dylan) 2003-07-13_101.flac
+838c0a2b591d042331317b9df8c68ab9 *(Bob Dylan) 2003-07-13_102.flac
+75095de9fb2c0b6d25f8af2aeef02271 *(Bob Dylan) 2003-07-13_103.flac
+06f0a2292c2a201f724107746edd38ee *(Bob Dylan) 2003-07-13_104.flac
+c693a51c43be6998562cd8c7099ae013 *(Bob Dylan) 2003-07-13_105.flac
+3993ad7bb3ed86e2f09d93d3df5781a5 *(Bob Dylan) 2003-07-13_106.flac
+69b38991dfe2d710cc962d3cd6638115 *(Bob Dylan) 2003-07-13_107.flac
+818243f1ff6e11640622e01d54af82e6 *(Bob Dylan) 2003-07-13_108.flac
+98bf061ae7220654c1f762debc8fa077 *(Bob Dylan) 2003-07-13_109.flac
+64eb7a6f6eb185620b298cf5c911b5f3 *(Bob Dylan) 2003-07-13_201.flac
+a5b9d2b65e3015b0031154b208541686 *(Bob Dylan) 2003-07-13_202.flac
+55a29b9733d25f4b46f159f18828c6b4 *(Bob Dylan) 2003-07-13_203.flac
+01e09c565fe93b66c1a026b082bab54e *(Bob Dylan) 2003-07-13_204.flac
+22d674ce74d4d7160ee0158673bafc4f *(Bob Dylan) 2003-07-13_205.flac
+2a502ac8e73502ab452bdee9c202d053 *(Bob Dylan) 2003-07-13_206.flac
+bbd4e92ea62fb1495eb365796cf222d0 *(Bob Dylan) 2003-07-13_207.flac
+42ff21646c356a34d824a90a587e2659 *(Bob Dylan) 2003-07-13_208.flac
+04e78389481c4783bc613e39e0512004 *2003-07-13 Casper, Wyoming 2.log
+79ce11124cb18500d5daa1895b8e4c2f *2003-07-13 Casper, Wyoming.log
+90d788e73218805101d7e65578a34f28 *2003-07-13 Casper, Wyoming.txt
+===================
+===================
+===================

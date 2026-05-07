@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-04-24-asm-Luisbp51.flacf 
+=================== 
+=================== 
+=================== 
+5b3ac1515f2e08e67ff6f12c3a6bb857  bd2001-04-24-columbia.asm.flacf.md5
+c7f248976d6ead3d19a06d88a5be088d  bd2001-04-24-columbia.asm.info.txt
+1383894cc760979fd71d7ad23aa4ed2e  bd2001-04-24-columbia.d1t09.sa_fa.JPG
+a753696e8efe37ee5eeb8dbc0acfdeb7  bd2001-04-24-columbia.d2t08.sa_fa.JPG
+a6b216c89bbfacef17567ad83f55f0f5  cd1\bd2001-04-24-columbia.d1t01.flac
+62417f53d671017707bd4da1b9a5d627  cd1\bd2001-04-24-columbia.d1t02.flac
+4c7488883ed10c9e3139c7d6a2d1c9fc  cd1\bd2001-04-24-columbia.d1t03.flac
+fa8dba7a56e395da7b92a7bd3c08eff2  cd1\bd2001-04-24-columbia.d1t04.flac
+6f577e6229a8bc77adeb449aefbd06e7  cd1\bd2001-04-24-columbia.d1t05.flac
+a3c79adba7a7ecd97eca3cfa4e85acb4  cd1\bd2001-04-24-columbia.d1t06.flac
+bd32c1dc0aabda3dbff9b4db5384b703  cd1\bd2001-04-24-columbia.d1t07.flac
+39c8a73ad08dde1ffa9d6296bce4b5a6  cd1\bd2001-04-24-columbia.d1t08.flac
+37480c1bd29753d6bcea6047610ebbdb  cd1\bd2001-04-24-columbia.d1t09.flac
+e1419415378a5f5a8933d50196bda179  cd1\cd1.ffp.txt
+25a6dac6f7002d78a7191fe25e0de12a  cd1\cd1.flac.md5
+024bbc8f035aa1e35df79fd34ae4af44  cd2\bd2001-04-24-columbia.d2t01.flac
+6c9d93b4836def03a9283ef47f427853  cd2\bd2001-04-24-columbia.d2t02.flac
+f1e867e5cd222ab5d7091df77bebaafb  cd2\bd2001-04-24-columbia.d2t03.flac
+8df1dcb07ef7dfab4d1361c164ac831e  cd2\bd2001-04-24-columbia.d2t04.flac
+b9e47af728197a89d247161cd64a3475  cd2\bd2001-04-24-columbia.d2t05.flac
+b0308e815a145f19dfdd392c3c7a8b7c  cd2\bd2001-04-24-columbia.d2t06.flac
+ab2304056d40952654a8f883babf5050  cd2\bd2001-04-24-columbia.d2t07.flac
+59ae0d16c50da5fc8e5b5447190f9de7  cd2\bd2001-04-24-columbia.d2t08.flac
+4b0c54ca6cdf4302deb026d341616478  cd2\bd2001-04-24-columbia.d2t09.flac
+a4dce72a7b7bf32b6ab3558ed1e7e94a  cd2\bd2001-04-24-columbia.d2t10.flac
+b69ede30517bb9151e5f2ef68d52898e  cd2\cd2.ffp.txt
+33802956e890b8cebb17f7a2d49992bd  cd2\cd2.flac.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-04-24-asm-Luisbp51.flacf\cd1 
+=================== 
+=================== 
+=================== 
+bd2001-04-24-columbia.d1t01.flac:62905816e40706916e8736434b0a1872
+bd2001-04-24-columbia.d1t02.flac:e321433ac37a39f9a698e497739930d7
+bd2001-04-24-columbia.d1t03.flac:9d222a0236548c0db9bddea1016406d1
+bd2001-04-24-columbia.d1t04.flac:2ee56db2e789cb0731a7c1c44310caa7
+bd2001-04-24-columbia.d1t05.flac:30622c619eae4930fb3420e3a2f6b68a
+bd2001-04-24-columbia.d1t06.flac:279119a7c9c6d95127ed8cf44b4b18a5
+bd2001-04-24-columbia.d1t07.flac:3d9440d98bfadd4868abbe92ce8d1f2c
+bd2001-04-24-columbia.d1t08.flac:a8968287ecdb0f5d43050c598be605ab
+bd2001-04-24-columbia.d1t09.flac:7523aee6ec4340b5ad769629258a6178
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-04-24-asm-Luisbp51.flacf\cd2 
+=================== 
+=================== 
+=================== 
+bd2001-04-24-columbia.d2t01.flac:033aa59218dba2c56d00fb540e4f45e6
+bd2001-04-24-columbia.d2t02.flac:99a6479eb7eb641ccc500b28057f5487
+bd2001-04-24-columbia.d2t03.flac:4dfe5eda926ca169a7ec94176c82cd17
+bd2001-04-24-columbia.d2t04.flac:addf5b153baa2c7ff6bb6b293bf6806f
+bd2001-04-24-columbia.d2t05.flac:803a17b7e3cfa6f4d67402b32c4b90d3
+bd2001-04-24-columbia.d2t06.flac:6c6c1598fa2ba8e06cacf2b4362e5994
+bd2001-04-24-columbia.d2t07.flac:35d03cb06eca7586b28289e1c5c44301
+bd2001-04-24-columbia.d2t08.flac:afed129bf9c375ad73fdb9c90d8beea7
+bd2001-04-24-columbia.d2t09.flac:1dda7f9ff62fcb45fb2fb8c83ccc9aaf
+bd2001-04-24-columbia.d2t10.flac:5c3274bfcdf77f2caee66f47edd624d8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-04-24-asm-Luisbp51.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.71       44090636 B   ---   --   ---xx   flac  0.6057  bd2001-04-24-columbia.d1t01.flac
+     5:35.12       59122268 B   ---   --   ---xx   flac  0.6096  bd2001-04-24-columbia.d1t02.flac
+     9:48.33      103800860 B   ---   --   ---xx   flac  0.5961  bd2001-04-24-columbia.d1t03.flac
+     5:20.16       56485676 B   ---   --   ---xx   flac  0.5903  bd2001-04-24-columbia.d1t04.flac
+     4:01.22       42564188 B   ---   --   ---xx   flac  0.5680  bd2001-04-24-columbia.d1t05.flac
+     8:00.00       84672044 B   ---   --   ---xx   flac  0.6176  bd2001-04-24-columbia.d1t06.flac
+     5:41.29       60220652 B   ---   --   ---xx   flac  0.6007  bd2001-04-24-columbia.d1t07.flac
+     6:22.05       67396604 B   ---   --   ---xx   flac  0.5335  bd2001-04-24-columbia.d1t08.flac
+     9:24.67       99647228 B   ---   --   ---xx   flac  0.6339  bd2001-04-24-columbia.d1t09.flac
+    58:23.30      618000156 B                            0.5983  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-04-24-asm-Luisbp51.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:17.43      108939980 B   ---   --   ---xx   flac  0.5989  bd2001-04-24-columbia.d2t01.flac
+     5:10.48       54796940 B   ---   --   ---xx   flac  0.6178  bd2001-04-24-columbia.d2t02.flac
+     7:07.48       75435740 B   ---   --   ---xx   flac  0.6035  bd2001-04-24-columbia.d2t03.flac
+     6:08.20       64962284 B   ---   --   ---xx   flac  0.6045  bd2001-04-24-columbia.d2t04.flac
+     6:49.11       72173516 B   ---   --   ---xx   flac  0.6059  bd2001-04-24-columbia.d2t05.flac
+     4:30.13       47658620 B   ---   --   ---xx   flac  0.5541  bd2001-04-24-columbia.d2t06.flac
+     5:10.59       54822812 B   ---   --   ---xx   flac  0.5963  bd2001-04-24-columbia.d2t07.flac
+     5:09.04       54517052 B   ---   --   ---xx   flac  0.5767  bd2001-04-24-columbia.d2t08.flac
+     6:23.22       67612988 B   ---   --   ---xx   flac  0.5969  bd2001-04-24-columbia.d2t09.flac
+     5:05.63       53950220 B   ---   --   ---xx   flac  0.5827  bd2001-04-24-columbia.d2t10.flac
+    61:52.31      654870152 B                            0.5955  (10 files)
+=================== 
+=================== 
+=================== 

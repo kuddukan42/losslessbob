@@ -1,0 +1,18 @@
+; sfv created by SFV Checker
+;
+"Track01.flac" 499ac0a7
+"Track02.flac" 297c244d
+"Track03.flac" 4ce30586
+"Track04.flac" 1bf42849
+"Track05.flac" 5910ed87
+"Track06.flac" ae80dda5
+"Track07.flac" 8e089867
+"Track08.flac" e074de3e
+"Track09.flac" 2fa11821
+"Track01.flac" bb6048bd
+"Track02.flac" b6f0f315
+"Track03.flac" 8eb4267f
+"Track04.flac" 27d74515
+"Track05.flac" f8de5f14
+;
+; Total 14 File(s)	Combined CRC32 Checksum: a359732f

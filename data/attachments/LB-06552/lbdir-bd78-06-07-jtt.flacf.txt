@@ -1,0 +1,134 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-07-jtt.flacf 
+=================== 
+=================== 
+=================== 
+fe6e3aab06278d8902f90e87fa4f5a43  Disc One\Disc01Track01 Dylan_LA 07.06.78.flac
+401bc4716e1511590f9f68751eea49e8  Disc One\Disc01Track02 Dylan_LA 07.06.78.flac
+7ea8f0d2d2857d20106f07ee26839847  Disc One\Disc01Track03 Dylan_LA 07.06.78.flac
+e44e6e3d275597aeb332306af89a97d6  Disc One\Disc01Track04 Dylan_LA 07.06.78.flac
+f996db94a85363d1f793f1bf3927c1fd  Disc One\Disc01Track05 Dylan_LA 07.06.78.flac
+3046a4345b183906c5005b0778e3b1b7  Disc One\Disc01Track06 Dylan_LA 07.06.78.flac
+2ba71b412a27f3fd37a4652ae3d77265  Disc One\Disc01Track07 Dylan_LA 07.06.78.flac
+de79c0f4b2e6145044b16fbaecf482c6  Disc One\Disc01Track08 Dylan_LA 07.06.78.flac
+9a6dee66e6b07ebf90dfe4fb2271fd34  Disc One\Disc01Track09 Dylan_LA 07.06.78.flac
+0a945f222975688741ef28c497534a22  Disc One\Disc01Track10 Dylan_LA 07.06.78.flac
+bb7d5d9123a502057bc9b1cd96abcd03  Disc One\Disc01Track11 Dylan_LA 07.06.78.flac
+a946e526456c3a078c13b36afca4f862  Disc One\Disc01Track12 Dylan_LA 07.06.78.flac
+aeac0ce5c9bfbeca8719622b1ca80d14  Disc One\Disc01Track13 Dylan_LA 07.06.78.flac
+b84e2e92aa3812962319cdd527452bbf  Disc Two\Disc02Track01 Dylan_LA 07.06.78.flac
+7891737acd42dcb9ff572ce0e3673770  Disc Two\Disc02Track02 Dylan_LA 07.06.78.flac
+4320db2f27f7fe0390ae8fdfcb210d0b  Disc Two\Disc02Track03 Dylan_LA 07.06.78.flac
+12bed509fcb5b3b80f18ec4561d09161  Disc Two\Disc02Track04 Dylan_LA 07.06.78.flac
+5d8fcf35ffcafe71009da38864900ba2  Disc Two\Disc02Track05 Dylan_LA 07.06.78.flac
+9a679c045382a26fb5cbce3b5b42845e  Disc Two\Disc02Track06 Dylan_LA 07.06.78.flac
+744bf6b3b407feaa682783a831da2b7c  Disc Two\Disc02Track07 Dylan_LA 07.06.78.flac
+88ec790c74942362fd2960716e1ed1a8  Disc Two\Disc02Track08 Dylan_LA 07.06.78.flac
+b7f9c776df10abd5f0d65892a103a41e  Disc Two\Disc02Track09 Dylan_LA 07.06.78.flac
+cda7c678248195dc371e07dbe714dce6  Disc Two\Disc02Track10 Dylan_LA 07.06.78.flac
+fd522d3e65ef422d2f5aad423fa3d8c3  Disc Two\Disc02Track11 Dylan_LA 07.06.78.flac
+93cbcca76e1f80580fcb00db367dc237  Disc Two\Disc02Track12 Dylan_LA 07.06.78.flac
+b0c5057c9c06cad11679c14546e9c383  Disc Two\Disc02Track13 Dylan_LA 07.06.78.flac
+a1afd6880030e99d06abed7160829828  Disc Two\Disc02Track14 Dylan_LA 07.06.78.flac
+a4476d3df810e5849e4db332f4f16577  Disc Two\Disc02Track15 Dylan_LA 07.06.78.flac
+f9f6576da66de6535ed628b33a261fc5  Disc Two\Disc02Track16 Dylan_LA 07.06.78.flac
+35b359e08e388c54e1377667b7b31aac  Dylan - Los Angeles  June 7th 1978.md5
+dca18d928fe120eef94e7e9608cf98a5  Dylan - Los Angeles  June 7th 1978.txt
+c4325289f892cda568fd07c03dae92cb  Dylan - Los Angeles  June 7th 1978_Info.txt
+c4f6fb5ce6b16f4cf3dd96615afadfe1  Los Angeles, California 07.06.1978 - F.jpg
+09d10540bba233effea785a6c1042819  Los Angeles, California 07.06.1978 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-07-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Dylan_LA 07.06.78.flac:bbe6936725c020da3a9ecfbb143e1068
+Disc01Track02 Dylan_LA 07.06.78.flac:ba17024dbf141be796ae9ec9c45ac8ce
+Disc01Track03 Dylan_LA 07.06.78.flac:b6be9b0d921c0b8edcfebcfec06ccd5b
+Disc01Track04 Dylan_LA 07.06.78.flac:23edacc6f79193da8377556345948c22
+Disc01Track05 Dylan_LA 07.06.78.flac:ff9bbd7a612ae8cd7fd10ccf8bb21de7
+Disc01Track06 Dylan_LA 07.06.78.flac:6ffe71357f4d9b5cbcd8e3c21bf41b79
+Disc01Track07 Dylan_LA 07.06.78.flac:65d79610fb72b76622c003cbfbcdea03
+Disc01Track08 Dylan_LA 07.06.78.flac:f5468265fa0547e796e95957a997d1c5
+Disc01Track09 Dylan_LA 07.06.78.flac:0a157d701d3ec032a9073d73d1c2b2c3
+Disc01Track10 Dylan_LA 07.06.78.flac:316337655d74382fabb6935879a2cbdf
+Disc01Track11 Dylan_LA 07.06.78.flac:4a5b57756659e60af6990a65b7be4a19
+Disc01Track12 Dylan_LA 07.06.78.flac:9b5a8dc1d6baf76ba829324577988237
+Disc01Track13 Dylan_LA 07.06.78.flac:5e28828e2e373ff23a5cb005d25b1d99
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-07-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Dylan_LA 07.06.78.flac:f4a531df9d6050b571c057a4fe4700e0
+Disc02Track02 Dylan_LA 07.06.78.flac:1c00df1f1adfd5aac1dd25f2bef5221b
+Disc02Track03 Dylan_LA 07.06.78.flac:9186d1bff61e4788188725d230c63c41
+Disc02Track04 Dylan_LA 07.06.78.flac:2058e9c18cfbd1e6d241c4931d8facff
+Disc02Track05 Dylan_LA 07.06.78.flac:d85726c0031779142657f1ef6ed45166
+Disc02Track06 Dylan_LA 07.06.78.flac:f5b2db143f81ed74151663bcf00f1256
+Disc02Track07 Dylan_LA 07.06.78.flac:f81bdec31feba782645e3982992a1ec8
+Disc02Track08 Dylan_LA 07.06.78.flac:d7c40b895ca269e4dfd4db756bb999e5
+Disc02Track09 Dylan_LA 07.06.78.flac:eed3e248aa523a6db109144e145a2d86
+Disc02Track10 Dylan_LA 07.06.78.flac:74a1519478c0fde8e8ef9ff6324d7332
+Disc02Track11 Dylan_LA 07.06.78.flac:0642074cb9358b20c13cd943018842cb
+Disc02Track12 Dylan_LA 07.06.78.flac:816975aaad6be45c50cde9f5b78eb54e
+Disc02Track13 Dylan_LA 07.06.78.flac:19ce617160cb327a540946d19c531428
+Disc02Track14 Dylan_LA 07.06.78.flac:ce3fba45e3842b8801f002dda91fd613
+Disc02Track15 Dylan_LA 07.06.78.flac:5865286ed170f96aad519c99b3f16170
+Disc02Track16 Dylan_LA 07.06.78.flac:187f290389e674b00e3931578597f9b3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-07-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:45.03       39697100 B   ---   --   ---xx   flac  0.5999  Disc01Track01 Dylan_LA 07.06.78.flac
+     2:32.03       26819900 B   ---   --   ---xx   flac  0.6133  Disc01Track02 Dylan_LA 07.06.78.flac
+     5:19.24       56328092 B   ---   --   ---xx   flac  0.6148  Disc01Track03 Dylan_LA 07.06.78.flac
+     4:54.40       51955724 B   ---   --   ---xx   flac  0.6222  Disc01Track04 Dylan_LA 07.06.78.flac
+     4:22.35       46299164 B   ---   --   ---xx   flac  0.6221  Disc01Track05 Dylan_LA 07.06.78.flac
+     3:37.26       38339996 B   ---   --   ---xx   flac  0.6183  Disc01Track06 Dylan_LA 07.06.78.flac
+     6:23.24       67617692 B   ---   --   ---xx   flac  0.6122  Disc01Track07 Dylan_LA 07.06.78.flac
+     4:24.46       46677836 B   ---   --   ---xx   flac  0.6303  Disc01Track08 Dylan_LA 07.06.78.flac
+     4:44.29       50165852 B   ---   --   ---xx   flac  0.6264  Disc01Track09 Dylan_LA 07.06.78.flac
+     4:10.52       44222348 B   ---   --   ---xx   flac  0.6151  Disc01Track10 Dylan_LA 07.06.78.flac
+     6:45.24       71498492 B   ---   --   ---xx   flac  0.6223  Disc01Track11 Dylan_LA 07.06.78.flac
+     4:37.47       48973388 B   ---   --   ---xx   flac  0.6210  Disc01Track12 Dylan_LA 07.06.78.flac
+     4:26.01       46924796 B   ---   --   ---xx   flac  0.6253  Disc01Track13 Dylan_LA 07.06.78.flac
+    60:02.54      635520380 B                            0.6191  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-07-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:28.24       15579692 B   ---   --   ---xx   flac  0.6174  Disc02Track01 Dylan_LA 07.06.78.flac
+     3:47.56       40174556 B   ---   --   ---xx   flac  0.6242  Disc02Track02 Dylan_LA 07.06.78.flac
+     4:40.37       49479068 B   ---   --   ---xx   flac  0.6136  Disc02Track03 Dylan_LA 07.06.78.flac
+     3:28.32       36766508 B   ---   --   ---xx   flac  0.6189  Disc02Track04 Dylan_LA 07.06.78.flac
+     4:48.15       50838524 B   ---   --   ---xx   flac  0.6149  Disc02Track05 Dylan_LA 07.06.78.flac
+     2:40.23       28278140 B   ---   --   ---xx   flac  0.6107  Disc02Track06 Dylan_LA 07.06.78.flac
+     4:54.47       51972188 B   ---   --   ---xx   flac  0.6130  Disc02Track07 Dylan_LA 07.06.78.flac
+     3:58.45       42089084 B   ---   --   ---xx   flac  0.6345  Disc02Track08 Dylan_LA 07.06.78.flac
+     5:29.34       58115612 B   ---   --   ---xx   flac  0.6235  Disc02Track09 Dylan_LA 07.06.78.flac
+     4:38.68       49199180 B   ---   --   ---xx   flac  0.6217  Disc02Track10 Dylan_LA 07.06.78.flac
+     4:37.47       48973388 B   ---   --   ---xx   flac  0.6113  Disc02Track11 Dylan_LA 07.06.78.flac
+     3:34.13       37780220 B   ---   --   ---xx   flac  0.6151  Disc02Track12 Dylan_LA 07.06.78.flac
+     3:57.16       41844476 B   ---   --   ---xx   flac  0.6219  Disc02Track13 Dylan_LA 07.06.78.flac
+     6:30.70       68960684 B   ---   --   ---xx   flac  0.6249  Disc02Track14 Dylan_LA 07.06.78.flac
+     6:48.44       72074732 B   ---   --   ---xx   flac  0.6343  Disc02Track15 Dylan_LA 07.06.78.flac
+     5:28.32       57934508 B   ---   --   ---xx   flac  0.6131  Disc02Track16 Dylan_LA 07.06.78.flac
+    70:52.03      750060560 B                            0.6203  (16 files)
+=================== 
+=================== 
+=================== 

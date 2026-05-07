@@ -1,0 +1,88 @@
+===================
+===================
+===================
+=== bd86-02-25-Sydney.md5
+===================
+===================
+===================
+08b9ca93de9c8256579a4365cae3119f *bd86-02-25d1tr01.flac
+7faf9c75b9303b26677db1d47a134365 *bd86-02-25d1tr02.flac
+6dedf9aa7783e7c6c135daa28ecdb815 *bd86-02-25d1tr03.flac
+a40018b29dc9db72cc7284daed22c352 *bd86-02-25d1tr04.flac
+71b5faafc30839af5e24d81ca7ae5ae6 *bd86-02-25d1tr05.flac
+0ab9d7ce8f73d9e1bf8a70fa54e843ad *bd86-02-25d1tr06.flac
+dd953cb4bd1df02b0662338ab6879f25 *bd86-02-25d1tr07.flac
+dc1565527089d393f24c09c5297f896a *bd86-02-25d1tr08.flac
+e83f8734ed34c29039c4dc8862c11cc5 *bd86-02-25d1tr09.flac
+d75c454d6a2521712d83a170c247d9de *bd86-02-25d1tr10.flac
+2fed4e171bb9e12c2dc1c71108b9ef25 *bd86-02-25d1tr11.flac
+bf7fbb54e2581bfaf12fdf79bed427cd *bd86-02-25d1tr12.flac
+7f354c0e082d6e0f0544eaefebc67f0a *bd86-02-25d1tr13.flac
+1957fcdda45a1d80b64f8014caade267 *bd86-02-25d1tr14.flac
+b5320c12bc3ba178fa1e0dac04179c9f *bd86-02-25d1tr15.flac
+eb6c84a096d32c454d2ce922462f7b44 *bd86-02-25d1tr16.flac
+16daae650e4b4b34e89e3eff30f650c0 *bd86-02-25d1tr17.flac
+5e2b0d55c59b0f6c04ccbff9d6395f81 *bd86-02-25d2tr01.flac
+0adaca77881e92a56bf92304e770d853 *bd86-02-25d2tr02.flac
+4ba045a0253074fb5200afafeb08f4aa *bd86-02-25d2tr03.flac
+eedd1b6db9a9b47797c64dc1eb0b616b *bd86-02-25d2tr04.flac
+278f1b1bd81904ed0e420ee774a4e60b *bd86-02-25d2tr05.flac
+c5604dae04a653a9b9a3c46957cb2b89 *bd86-02-25d2tr06.flac
+b3b3246d0a8e3ace0bbce43f8b013c58 *bd86-02-25d2tr07.flac
+a52798216d0bf935880acdf2dba5c5c8 *bd86-02-25d2tr08.flac
+60f9628743369c45c6d1c48e64b6180a *bd86-02-25d2tr09.flac
+18ff95b7da4008a3fa118bfd76ea13c9 *bd86-02-25d2tr10.flac
+4defec615a0729c3bc7f54124684be3a *bd86-02-25d2tr11.flac
+4900ad4ee992e775ef356b86e15079cb *bd86-02-25d2tr12.flac
+7ae64564c12093332b546dfe85ebae18 *bd86-02-25d2tr13.flac
+6d076e8dabd6b210257a12dbe6b2dfa9 *Iinfo.txt
+===================
+===================
+===================
+=== Iinfo.txt
+===================
+===================
+===================
+Bob Dylan Tom Petty & The Heartbreakers
+Entertainment Center
+Sydney
+New South Wales
+Australia
+
+February 25, 2986
+
+130 mins
+
+1	Justine (Don Harris/Dewey Terry)	Inst.		
+2	Positively 4th Street				
+3	Clean-Cut Kid				
+4	Emotionally Yours			
+5	Trust Yourself				
+6	That Lucky Old Sun (Haven Gillespie/Beasley Smith)				
+7	Masters Of War						
+8	The Times They Are A-Changin'	Solo		 
+9	To Ramona	Solo		
+10	It's Alright, Ma (I'm Only Bleeding)	Solo	
+11	Dark Eyes	Solo		
+12	I Forgot More Than You'll Ever Know (Cecil A Null)				
+13	Just Like A Woman				
+14	I'm Movin' On (Hank Snow)				
+15	Lenny Bruce				
+16	When The Night Comes Falling From The Sky				
+17	Lonesome Town (Baker Knight)				
+18	Ballad Of A Thin Man				
+19	Rainy Day Women Nos. 12 & 35		
+20	Seeing The Real You At Last			
+21	Across The Borderline (Cooder/Hiatt/Dickinson)
+22	I And I			
+23	Like A Rolling Stone			
+24	In The Garden				
+          *					
+25	Blowin' In The Wind			
+26	Uranium Rock (Warren Smith)			
+27	Knockin' On Heaven's Door		
+
+UNKNOWN GENERATION	
+===================
+===================
+===================

@@ -1,0 +1,270 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-London.shnf 
+=================== 
+=================== 
+=================== 
+a323f81340384340290de6e42b4de932  01 - Tonight Ill Be Staying Here With You.shn
+4d1b01d610a35b497c3ef0b5445891d8  02 - Just Like a Woman.shn
+b17a43186fd6d6c8baae212d26a0514d  03 - Most Likely You Go Yopur Way.shn
+f2247d8c0b2390d5ec373d04145aee02  04 - I Dont Believe You.shn
+2629d466d6a5e8acbda3e9a64594fa14  05 - Ballad of Hollis Brown.shn
+9f6f3c526d773a7da2bf7f8047ea5f10  06 - Masters of War.shn
+62b39536a2d53516a882fb0d8e612a7b  07 - Stuck Inside of Mobile.shn
+a5a9d0e2228c1d27a21880527d6316ef  08 - What Was It You Wanted.shn
+75391cbdac56bcbe053d7776192eac56  09 - Blowin' In the Wind.shn
+8ef51e56ca313fd0aceb2231e79f4ea2  10 - Its All Over Now Baby Blue.shn
+74cfecc86a40fdaac56ff7e5f33394e0  11 - Hard Rain.shn
+7c6162613dd50592f3577b36f479939d  12 - Song to Woody.shn
+297716672d5e031c8e50b4e688ace64e  13 - Knockin' On Heavens Door.shn
+495a6a80891b30a8134d1371bed7eba6  14 - Everything is Broken.shn
+522ddd068e0e999b852ded91194a9d3e  15 - Dark as a Dungeon.shn
+ba35467a791399eb7f7ac5d396d710ad  16 - Watching the River Flow.shn
+b02cddec4b186dfbf3ccced8337827c6  BD1990Disc 1.md5
+229ad90d572c9e83d3c52ef4d967ae72  BD1990Disc 2.md5
+8561a274db81a807963f6f0285f787a6  bd90-London-Those-were-the-days.txt
+02b5c36517296896a56e984c02e2e8a4  D1t01 - Absolutely Sweet Marie.shn
+fe1b15755c875179a332169549a68412  D1t02 - Man In the Long Black Coat.shn
+035a2975e39e9eaefc43f47917d991d4  D1t03 - Positively Fourth Street.shn
+84fc80a73db899933df4d24a2208b35c  D1t04 - Ballad of a Thin Man.shn
+b6b3a6fc10593e227725d155c8b0b6b0  D1t05 - Pledging My Time.shn
+9f911ffa15044ace7a8f3e2fec9694df  D1t06 - I Want You.shn
+fbc2bc1a7272e1928d6444be4135b3c9  D1t07 - Political World.shn
+edc435a1bd3f6fbddb70e62029887bd4  D1t08 - You Angel You.shn
+71cb5571fa81e22b30c4210593873cb2  D1t09 - Watchtower.shn
+f311187ceab4511a7d41392d9dd2ad4d  D1t10 - Boots of Spanish Leather.shn
+135305f6a3f10bdc53ac23c5b30be070  D1t11 - To Ramona.shn
+c562edaa02d4609deb84322668e497aa  D1t12 - She Belongs to Me.shn
+cf31f4ef360c34840ea3ed10147531c3  D1t13 - Mr. Tambourine Man.shn
+3c2745859274d7494c9146865ab16dc6  D1t14 - Disease of Conceit.shn
+ab9548a52d81a73ee76a950e7cf84bf9  D1t15 - Ill Remember You.shn
+7181e3993e706b74260a3e30d2228aab  D1t16 - Where Teardrops Fall.shn
+ca91a2499c653d2cf7e4819dd5f02291  D1t17 - Seeing the Real You at Last.shn
+d0c07b49c0b718bdaa18f246b775b85a  D2T01 - Every Grain of Sand.shn
+e13df0b6e8569838cc7435fb6c47b67e  D2T02 - Rainy Day Women.shn
+dba8a12366998c7f53b22d111b7f9dde  D2T03 - Like a Rolling Stone.shn
+6df7ff5fd6c446ed3555c19b0994cd6e  D2T04 - It Aint Me Babe.shn
+73bb7e5d01aa7e3db47f7cb9ed1acbd2  D2T05 - Hang Me O Hang Me.shn
+8f2749ad439c53213b0f23a6526a1d14  D2T06 - Highway 61.shn
+729e43a566833a0370bca408e54af598  D2T07 - To Be Alone With You.shn
+1e27612334656017d8deda846cbfd1ee  D2T08 - Most of the Time.shn
+2ff2b3bb9e85e5686d6a6d806e7c4b0b  D2T09 - Ill Be Your Baby Tonight.shn
+ac0224c79fbf55e3c7e188f3cde6e159  D2T10 - John Brown.shn
+bb35c56780c617572ca6d71d3956e151  D2T11 - The Times They Are A'Changin.shn
+6a0d153fe9ab095bf5978c04ce2adc68  D2T12 - Mama You Been On My MInd.shn
+0e928b44bab06ab37a97304127073a02  D2T13 - Its Alright Ma.shn
+e23423ddd9c04af2227cc106bd32e034  D2T14 - Girl From the North Country.shn
+6836838dc2648b4241a7d41fcfe7873b  D2T15 - Forever Young.shn
+4cb3ed067eb3b6f5cb9757269ba5fe31  D4T01 - Tight Connection To My Heart.shn
+47c32f0a27f580d0d120aa1a700b270e  D4T02 - Dont Think Twice.shn
+ae55666ef1b21bbe46d128de9e9a8455  D4T03 - One Too Many Mornings.shn
+cee66fd9bc291d541f4f3ea63d03861b  D4T04 - Lay Lady Lay.shn
+b5fbdec8c86ad56cde25fa10be9f109c  D4T05 - One More Cup of Coffee.shn
+e3510e2abb622a222b880eaa1e213404  D4T06 - My Back Pages.shn
+fbaf29a9461b60b42b191333003d1c80  D4T07 - I Shall Be Released.shn
+d9fbc47bfad2a6c6b845a5f55bdfe933  D4T08 - Man of Constant Sorrow.shn
+86f0b74056595cbeadb26dbafbdf58b3  D4T09 - What Good Am I-.shn
+33a4bd0ed1171da6adb0d1c0f74b8fa7  D4T10 - Simple Twist of Fate.shn
+1b48fcba21cfbc8afe2bceed0fcd2c3b  D4T11 - Maggie's Farm.shn
+cf11158d0a018f2a3bae76be01b7ce33  D4T12 - Pretty Peggy-O.shn
+6d1132f9157ed6adb47e88ce79b7db18  D4T13 - Youre a Big Girl Now.shn
+012ca9ca00ea755afc76289326ebb409  D4T14 - Leopard Skin Pill-Box Hat.shn
+92d63e508a91f0031282b0a013174e59  D4T15 - Love Minus Zero.shn
+6470c100a16603b6090cc33ebd39a064  D5T01 - Hattie Carroll.shn
+0fd955812964bc47fcff9ebc61f732d4  D5T02 - Gates of Eden.shn
+9e8d38f6bff8b842793bffb937bee844  D5T03 - Queen Jane Approximately.shn
+ddf21c85e9ff63fd47212729f92c4398  D5T04 - It Takes A Lot to Laugh.shn
+0bb24d8b6b64fa6814426d4cbabcb507  D5T05 - In the Garden.shn
+5cdb53b6d3b39d848087075b8e587b90  D5T06 - Subterrean Homesick Blues.shn
+bd2e3f95c3503e26a616e01627369476  D5T07 - Man Gave Names to All the Animals.shn
+d9ff12ef31425ca2b11268a33cdb5e6a  D5T08 - I Believe In You.shn
+9b3556419dbf3c721d37ca55d51e18fc  D5T09 - Shelter From the Storm.shn
+d0c3e310e248987bd439368a888dbe7c  D5T10 - Tears of Rage.shn
+39ac76b5f50f51d56afad469ab6f1f51  D5T11 - Visions of Johanna.shn
+a2a4d15f4fdf9b761da01b8c50072ca3  D5T12 - Lenny Bruce.shn
+d5dc44def520af9f8129ba488935c1ec  D5T13 - Man of Peace.shn
+8b1389ae294d56e19fb5eea96efb5f64  D5T14 - Barbara Allen.shn
+60f88905f9076feb203775fbe0767bef  Dylan 1990 London Booklet 1.jpg
+047c0bd3125984d5d1eefe57eb683a4d  Dylan 1990 London Booklet 2.jpg
+8bc8c562d380bfe0db242428a1b19c50  Dylan 1990 London Booklet 3.jpg
+4924bfd1c9afd4c3061c5647345677df  Dylan 1990 London Booklet 4.jpg
+eaa2b59bbed4c01ffe45a74f5bd178e6  Dylan 1990 London Cover Back.jpg
+a5356756b643713c436dc1f16e741fe3  Dylan 1990 London Front.jpg
+616512cc7a751a64469d53723550614c  Dylan 1990 LondonParis Anthology.nfo
+2e2de0f822d687db1276295ea07f2882  Dylan1990Disc 3.md5
+02c6662d943dac7bb15bd744ecea5642  Dylan1990Disc4.md5
+8b670df74c91edf82e0c410ea90a49d4  Dylan1990Disc5.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-London.shnf 
+=================== 
+=================== 
+=================== 
+bb6f1e1d947277896faf3ce70c91c90c  [shntool]  01_-_Tonight_Ill_Be_Staying_Here_With_You.wav
+2ca954b0a8d1f8c223f72fed6128acb0  [shntool]  02_-_Just_Like_a_Woman.wav
+83f44114ce3e7f2a16bf448d1f7340c3  [shntool]  03_-_Most_Likely_You_Go_Yopur_Way.wav
+1fd67d8253960d23140a067364f9bbff  [shntool]  04_-_I_Dont_Believe_You.wav
+e64c4ce908b471cc7f5a78d86dc6ad0e  [shntool]  05_-_Ballad_of_Hollis_Brown.wav
+179f5b1426ff1908830f4054c7905dfa  [shntool]  06_-_Masters_of_War.wav
+90c7981575202d107a25108351d750e7  [shntool]  07_-_Stuck_Inside_of_Mobile.wav
+9889fd53b0b3180f1aa59bcad1875251  [shntool]  08_-_What_Was_It_You_Wanted.wav
+edc5ac42b3da546207ae4566636615c2  [shntool]  09_-_Blowin__In_the_Wind.wav
+d037084dcc8b42a9ed48af86276d70ff  [shntool]  10_-_Its_All_Over_Now_Baby_Blue.wav
+e80c7a02c5edc53aa94a8b75bc8df0a5  [shntool]  11_-_Hard_Rain.wav
+39491b10ebf12002162cdb5eb308d56b  [shntool]  12_-_Song_to_Woody.wav
+9632f8e3e3b42a43ef73711bd2bab1d4  [shntool]  13_-_Knockin__On_Heavens_Door.wav
+e471542b5f3a1cd22720f502ca9bd438  [shntool]  14_-_Everything_is_Broken.wav
+63b326071c1d33b3aa9444d3cd645e8f  [shntool]  15_-_Dark_as_a_Dungeon.wav
+5b2fdca71f74ccff83b03c1ebbbd2b09  [shntool]  16_-_Watching_the_River_Flow.wav
+84fd202431216d73d58f42043817f458  [shntool]  D1t01_-_Absolutely_Sweet_Marie.wav
+d366bb69f15f6fd7dadc9be648e712d1  [shntool]  D1t02_-_Man_In_the_Long_Black_Coat.wav
+b0bc4624251347d32c0db9ce9e0f5dc7  [shntool]  D1t03_-_Positively_Fourth_Street.wav
+1935eeac7582988ae3f68996a705859e  [shntool]  D1t04_-_Ballad_of_a_Thin_Man.wav
+ceb6b289c545e746a73288786ff0a8da  [shntool]  D1t05_-_Pledging_My_Time.wav
+1d86ef53e433ec26b3eb46cb647d4337  [shntool]  D1t06_-_I_Want_You.wav
+4bcffac7fb09a630ad27aa7d14711551  [shntool]  D1t07_-_Political_World.wav
+6d2ab1a73ed33cc4c6115ca28e7ef4c4  [shntool]  D1t08_-_You_Angel_You.wav
+490d23846777dbc073bfe2def48cd18e  [shntool]  D1t09_-_Watchtower.wav
+20f5d9c31d85f9660fd4fe8ab4dd58b2  [shntool]  D1t10_-_Boots_of_Spanish_Leather.wav
+0e07cbbf640b29c51b19e4c03cfbf179  [shntool]  D1t11_-_To_Ramona.wav
+6aa8d86b41a46f653334ab5b27817ca9  [shntool]  D1t12_-_She_Belongs_to_Me.wav
+5676b22ed4c33d7a5e1fe911e2b5ae5f  [shntool]  D1t13_-_Mr._Tambourine_Man.wav
+149f900f66ca0af5d955218b2f4a45ba  [shntool]  D1t14_-_Disease_of_Conceit.wav
+e5f5b2aae9a02049825bd1d1febe191e  [shntool]  D1t15_-_Ill_Remember_You.wav
+37f2e412d29ed7f466b61ff58030b490  [shntool]  D1t16_-_Where_Teardrops_Fall.wav
+112fde2aa6e233ab01ae0bfb4f1ba8b0  [shntool]  D1t17_-_Seeing_the_Real_You_at_Last.wav
+cbef11dca8a97dc1b3a3169028b4c7a4  [shntool]  D2T01_-_Every_Grain_of_Sand.wav
+8b76d036486a864f59e24aba312f54e0  [shntool]  D2T02_-_Rainy_Day_Women.wav
+d1f03d56b37e69fdcc71bedb341a43ba  [shntool]  D2T03_-_Like_a_Rolling_Stone.wav
+6f88ae6c41a61f39dff42badbe6f1dff  [shntool]  D2T04_-_It_Aint_Me_Babe.wav
+70db4f9850e953eaf033079350af585f  [shntool]  D2T05_-_Hang_Me_O_Hang_Me.wav
+c5dd0931be566e39b8724f6e5a37fd16  [shntool]  D2T06_-_Highway_61.wav
+66b3bfae45036479509ec9d441296b9d  [shntool]  D2T07_-_To_Be_Alone_With_You.wav
+3d283b9bf2cf772c0d1ad8ed2d2a4266  [shntool]  D2T08_-_Most_of_the_Time.wav
+53f919fb6b53129478183f495158462d  [shntool]  D2T09_-_Ill_Be_Your_Baby_Tonight.wav
+3079819c921f5549bb348e6b9270107e  [shntool]  D2T10_-_John_Brown.wav
+64545addc0312cb78bfc57a0686d5c56  [shntool]  D2T11_-_The_Times_They_Are_A_Changin.wav
+e9c9e16842ed0b1628cde27f2cbbf5e5  [shntool]  D2T12_-_Mama_You_Been_On_My_MInd.wav
+e022c13bfea4429fe2575413d225d320  [shntool]  D2T13_-_Its_Alright_Ma.wav
+1b002a52189fce39ac8ceb76241905f8  [shntool]  D2T14_-_Girl_From_the_North_Country.wav
+537aa5a7c368d4ecf8bf64c39b4a95e1  [shntool]  D2T15_-_Forever_Young.wav
+90e6e418023c7263e7d5e30d381d5082  [shntool]  D4T01_-_Tight_Connection_To_My_Heart.wav
+02a4bc0b1357e8c5820ae740babc4724  [shntool]  D4T02_-_Dont_Think_Twice.wav
+e7a31449fabf2fdf12eb9e858b58c80e  [shntool]  D4T03_-_One_Too_Many_Mornings.wav
+c0144d64b3fbbd7aa26084ab83fdbf8d  [shntool]  D4T04_-_Lay_Lady_Lay.wav
+2bb533e91959c3df562dcee03579ffbb  [shntool]  D4T05_-_One_More_Cup_of_Coffee.wav
+985cfb300438865c93b48eb1530da6af  [shntool]  D4T06_-_My_Back_Pages.wav
+3398932a32b85f323b2cc3260e8a5bba  [shntool]  D4T07_-_I_Shall_Be_Released.wav
+9bc05fbecc5c6267ac0c6beb38280cf9  [shntool]  D4T08_-_Man_of_Constant_Sorrow.wav
+7c1db245d49a1adf2505b80d6ff48bbc  [shntool]  D4T09_-_What_Good_Am_I-.wav
+7d7b5988fba7af70cdd4f2f62538d411  [shntool]  D4T10_-_Simple_Twist_of_Fate.wav
+cf947ef078557af1c788ed2c205c7697  [shntool]  D4T11_-_Maggie_s_Farm.wav
+754aa7805a999b93055d513ca853ee36  [shntool]  D4T12_-_Pretty_Peggy-O.wav
+b5fc34f8c57b5c902571dd1fbe121b78  [shntool]  D4T13_-_Youre_a_Big_Girl_Now.wav
+fb435f38918bcbe076a3fb5a631f1621  [shntool]  D4T14_-_Leopard_Skin_Pill-Box_Hat.wav
+923f21853bf0716cfff1e71bd4cc28e9  [shntool]  D4T15_-_Love_Minus_Zero.wav
+fcdd6aa1c33a1772b48f742b36de5424  [shntool]  D5T01_-_Hattie_Carroll.wav
+35b0b4179cb0ee805dfa760d89ba48e5  [shntool]  D5T02_-_Gates_of_Eden.wav
+bb3c5899b22813aacaf087189214e535  [shntool]  D5T03_-_Queen_Jane_Approximately.wav
+dc2508ffbd3e985b2e2cf8fa0e31dcc0  [shntool]  D5T04_-_It_Takes_A_Lot_to_Laugh.wav
+9bbbe3d2d59b7f3d1f6705e48efd9192  [shntool]  D5T05_-_In_the_Garden.wav
+e6cba474a31f97c5e3f92fc10a5ec55d  [shntool]  D5T06_-_Subterrean_Homesick_Blues.wav
+ab83835dade86620e576d5443b938d5d  [shntool]  D5T07_-_Man_Gave_Names_to_All_the_Animals.wav
+1ee192b9cd2c72c0c348a6d9834addae  [shntool]  D5T08_-_I_Believe_In_You.wav
+bbbc83995dd16fff44bcfc9b14b2e61b  [shntool]  D5T09_-_Shelter_From_the_Storm.wav
+36a284fd5a0efa1b252cac5998025a08  [shntool]  D5T10_-_Tears_of_Rage.wav
+a5f45c4ebd9abef79af239f59a0c8844  [shntool]  D5T11_-_Visions_of_Johanna.wav
+60183f6f8b25c596a2bcb6fcb2ee0dd3  [shntool]  D5T12_-_Lenny_Bruce.wav
+021267f1ea104c43b715156e57094c40  [shntool]  D5T13_-_Man_of_Peace.wav
+2a364fc3bc2795c350f9d4228759d919  [shntool]  D5T14_-_Barbara_Allen.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-London.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:10.15       44135324 B   ---   --   -----    wav  1.0000  01_-_Tonight_Ill_Be_Staying_Here_With_You.wav
+     4:44.38       50187020 B   ---   --   -----    wav  1.0000  02_-_Just_Like_a_Woman.wav
+     4:13.37       44716268 B   ---   --   -----    wav  1.0000  03_-_Most_Likely_You_Go_Yopur_Way.wav
+     4:23.56       46524956 B   ---   --   -----    wav  1.0000  04_-_I_Dont_Believe_You.wav
+     5:07.70       54319484 B   ---   --   -----    wav  1.0000  05_-_Ballad_of_Hollis_Brown.wav
+     3:53.00       41101244 B   ---   --   -----    wav  1.0000  06_-_Masters_of_War.wav
+     6:37.72       70200188 B   ---   --   -----    wav  1.0000  07_-_Stuck_Inside_of_Mobile.wav
+     4:34.19       48378332 B   ---   --   -----    wav  1.0000  08_-_What_Was_It_You_Wanted.wav
+     4:18.61       45654716 B   ---   --   -----    wav  1.0000  09_-_Blowin__In_the_Wind.wav
+     5:52.44       62196332 B   ---   --   -----    wav  1.0000  10_-_Its_All_Over_Now_Baby_Blue.wav
+     6:52.27       72740348 B   ---   --   -----    wav  1.0000  11_-_Hard_Rain.wav
+     3:37.66       38434076 B   ---   --   -----    wav  1.0000  12_-_Song_to_Woody.wav
+     4:23.13       46423820 B   ---   --   -----    wav  1.0000  13_-_Knockin__On_Heavens_Door.wav
+     3:16.59       34713212 B   ---   --   -----    wav  1.0000  14_-_Everything_is_Broken.wav
+     3:41.07       39000908 B   ---   --   -----    wav  1.0000  15_-_Dark_as_a_Dungeon.wav
+     4:09.08       43942460 B   ---   --   -----    wav  1.0000  16_-_Watching_the_River_Flow.wav
+     4:19.15       45722924 B   ---   --   -----    wav  1.0000  D1t01_-_Absolutely_Sweet_Marie.wav
+     4:11.56       44408156 B   ---   --   -----    wav  1.0000  D1t02_-_Man_In_the_Long_Black_Coat.wav
+     4:56.55       52343804 B   ---   --   -----    wav  1.0000  D1t03_-_Positively_Fourth_Street.wav
+     6:03.06       64047356 B   ---   --   -----    wav  1.0000  D1t04_-_Ballad_of_a_Thin_Man.wav
+     3:42.00       39160844 B   ---   --   -----    wav  1.0000  D1t05_-_Pledging_My_Time.wav
+     5:29.38       58125020 B   ---   --   -----    wav  1.0000  D1t06_-_I_Want_You.wav
+     3:03.22       32332988 B   ---   --   -----    wav  1.0000  D1t07_-_Political_World.wav
+     3:09.34       33419612 B   ---   --   -----    wav  1.0000  D1t08_-_You_Angel_You.wav
+     2:41.01       28402796 B   ---   --   -----    wav  1.0000  D1t09_-_Watchtower.wav
+     4:46.10       50473964 B   ---   --   -----    wav  1.0000  D1t10_-_Boots_of_Spanish_Leather.wav
+     4:49.29       51047852 B   ---   --   -----    wav  1.0000  D1t11_-_To_Ramona.wav
+     3:43.05       39349004 B   ---   --   -----    wav  1.0000  D1t12_-_She_Belongs_to_Me.wav
+     6:48.43       72072380 B   ---   --   -----    wav  1.0000  D1t13_-_Mr._Tambourine_Man.wav
+     4:04.53       43166300 B   ---   --   -----    wav  1.0000  D1t14_-_Disease_of_Conceit.wav
+     4:54.35       51943964 B   ---   --   -----    wav  1.0000  D1t15_-_Ill_Remember_You.wav
+     3:15.12       34426268 B   ---   --   -----    wav  1.0000  D1t16_-_Where_Teardrops_Fall.wav
+     4:09.44       44027132 B   ---   --   -----    wav  1.0000  D1t17_-_Seeing_the_Real_You_at_Last.wav
+     6:12.54       65747852 B   ---   --   -----    wav  1.0000  D2T01_-_Every_Grain_of_Sand.wav
+     3:05.28       32699900 B   ---   --   -----    wav  1.0000  D2T02_-_Rainy_Day_Women.wav
+     6:30.48       68908940 B   ---   --   -----    wav  1.0000  D2T03_-_Like_a_Rolling_Stone.wav
+     6:18.42       66778028 B   ---   --   -----    wav  1.0000  D2T04_-_It_Aint_Me_Babe.wav
+     4:20.19       45908732 B   ---   --   -----    wav  1.0000  D2T05_-_Hang_Me_O_Hang_Me.wav
+     4:41.11       49594316 B   ---   --   -----    wav  1.0000  D2T06_-_Highway_61.wav
+     3:14.41       34318076 B   ---   --   -----    wav  1.0000  D2T07_-_To_Be_Alone_With_You.wav
+     4:03.09       42886412 B   ---   --   -----    wav  1.0000  D2T08_-_Most_of_the_Time.wav
+     4:13.04       44638652 B   ---   --   -----    wav  1.0000  D2T09_-_Ill_Be_Your_Baby_Tonight.wav
+     5:15.12       55594268 B   ---   --   -----    wav  1.0000  D2T10_-_John_Brown.wav
+     5:11.09       54881612 B   ---   --   -----    wav  1.0000  D2T11_-_The_Times_They_Are_A_Changin.wav
+     3:46.15       39901724 B   ---   --   -----    wav  1.0000  D2T12_-_Mama_You_Been_On_My_MInd.wav
+     5:48.41       61483676 B   ---   --   -----    wav  1.0000  D2T13_-_Its_Alright_Ma.wav
+     5:57.08       62993660 B   ---   --   -----    wav  1.0000  D2T14_-_Girl_From_the_North_Country.wav
+     4:47.40       50720924 B   ---   --   -----    wav  1.0000  D2T15_-_Forever_Young.wav
+     6:05.65       64538924 B   ---   --   -----    wav  1.0000  D4T01_-_Tight_Connection_To_My_Heart.wav
+     6:34.19       69546332 B   ---   --   -----    wav  1.0000  D4T02_-_Dont_Think_Twice.wav
+     5:01.39       53188172 B   ---   --   -----    wav  1.0000  D4T03_-_One_Too_Many_Mornings.wav
+     4:58.31       52640156 B   ---   --   -----    wav  1.0000  D4T04_-_Lay_Lady_Lay.wav
+     4:51.10       51355964 B   ---   --   -----    wav  1.0000  D4T05_-_One_More_Cup_of_Coffee.wav
+     5:39.47       59910188 B   ---   --   -----    wav  1.0000  D4T06_-_My_Back_Pages.wav
+     4:09.45       44029484 B   ---   --   -----    wav  1.0000  D4T07_-_I_Shall_Be_Released.wav
+     3:03.55       32410604 B   ---   --   -----    wav  1.0000  D4T08_-_Man_of_Constant_Sorrow.wav
+     4:50.33       51233660 B   ---   --   -----    wav  1.0000  D4T09_-_What_Good_Am_I-.wav
+     4:40.57       49526108 B   ---   --   -----    wav  1.0000  D4T10_-_Simple_Twist_of_Fate.wav
+     4:18.10       45534764 B   ---   --   -----    wav  1.0000  D4T11_-_Maggie_s_Farm.wav
+     5:32.32       58640108 B   ---   --   -----    wav  1.0000  D4T12_-_Pretty_Peggy-O.wav
+     4:41.13       49599020 B   ---   --   -----    wav  1.0000  D4T13_-_Youre_a_Big_Girl_Now.wav
+     3:38.00       38455244 B   ---   --   -----    wav  1.0000  D4T14_-_Leopard_Skin_Pill-Box_Hat.wav
+     4:06.50       43512044 B   ---   --   -----    wav  1.0000  D4T15_-_Love_Minus_Zero.wav
+     6:41.59       70875212 B   ---   --   -----    wav  1.0000  D5T01_-_Hattie_Carroll.wav
+     4:48.56       50934956 B   ---   --   -----    wav  1.0000  D5T02_-_Gates_of_Eden.wav
+     5:40.74       60150092 B   ---   --   -----    wav  1.0000  D5T03_-_Queen_Jane_Approximately.wav
+     4:06.34       43474412 B   ---   --   -----    wav  1.0000  D5T04_-_It_Takes_A_Lot_to_Laugh.wav
+     4:44.70       50262284 B   ---   --   -----    wav  1.0000  D5T05_-_In_the_Garden.wav
+     3:26.41       36434876 B   ---   --   -----    wav  1.0000  D5T06_-_Subterrean_Homesick_Blues.wav
+     3:39.15       38666924 B   ---   --   -----    wav  1.0000  D5T07_-_Man_Gave_Names_to_All_the_Animals.wav
+     5:11.36       54945116 B   ---   --   -----    wav  1.0000  D5T08_-_I_Believe_In_You.wav
+     5:34.13       58948220 B   ---   --   -----    wav  1.0000  D5T09_-_Shelter_From_the_Storm.wav
+     5:51.32       61991708 B   ---   --   -----    wav  1.0000  D5T10_-_Tears_of_Rage.wav
+     6:50.60       72465164 B   ---   --   -----    wav  1.0000  D5T11_-_Visions_of_Johanna.wav
+     5:11.62       55006268 B   ---   --   -----    wav  1.0000  D5T12_-_Lenny_Bruce.wav
+     3:48.02       40223948 B   ---   --   -----    wav  1.0000  D5T13_-_Man_of_Peace.wav
+     3:39.07       38648108 B   ---   --   -----    wav  1.0000  D5T14_-_Barbara_Allen.wav
+   362:56.23     3841343884 B                            1.0000  (77 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-11-g.flacf 
+=================== 
+=================== 
+=================== 
+84cd6c05e1602fd2de1fc3c107d43413  Bob Dylan 2002.11.11 New York City,New York,New York, Madison Square Garden.md5
+4b265361f16f0371bb4bfc8f00677c7d  Disk 1\Track01.flac
+cf12d0944d6e3e07c3c8fac55e0edf20  Disk 1\Track02.flac
+101803d9d0f76bdd362e96797ae04d5d  Disk 1\Track03.flac
+dd8f5c4264d4de1f2f9a67ff9669b904  Disk 1\Track04.flac
+8529cd47152bb17e484ca3f94be24a3b  Disk 1\Track05.flac
+6aeb39052dc1e48d8296f173745448eb  Disk 1\Track06.flac
+1b3c10c823cbb88ca09b969e13b27823  Disk 1\Track07.flac
+7f65119a675a8886dd87ca9da86a1674  Disk 1\Track08.flac
+7c9dbe7bcbfe3c28959f530ac5e569b2  Disk 1\Track09.flac
+ceef2cc26af490367cde413c3a500915  Disk 1\Track10.flac
+994ab40d400da8d609a04c51df1925ac  Disk 1\Track11.flac
+056583a7e10a865000afd555a83bdae3  Disk 1\Track12.flac
+b0d0c7e8c9d3c8bdeed7948a237237db  Disk 1\Track13.flac
+1f56a44bebd73ba93433f213e106e806  Disk 2\Track01.flac
+707a7c0b9c4e4c5dafea3e7fd9a65b93  Disk 2\Track02.flac
+c1c1437642348a1c760a7024e006508d  Disk 2\Track03.flac
+e5b06f93bdb789fcb4e5a4a2e3bf1e06  Disk 2\Track04.flac
+5b23ae6bd7c9d8d9cd60c1513ef5888b  Disk 2\Track05.flac
+487b3c3a806e7d32211315c53aa8a5fc  Disk 2\Track06.flac
+a9d72d8db957edda8a180f805aa9e26e  Disk 2\Track07.flac
+5fa4bf9f0e4a2c6b12468f9c20f7712f  Disk 2\Track08.flac
+5df252228bfee1807a93bc8fe52e1311  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-11-g.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+track01.flac:5b57ba8b5e40687d9049bd209557ddfb
+track02.flac:e17061c6a0316382496ffb5a8bf8e591
+track03.flac:bf077266489ad496426e11f6950f76bd
+track04.flac:373d15a36daf798e24db781eccc46827
+track05.flac:f24a07f487250f9513baddbf3e71f9b1
+track06.flac:c4c97a908cc955891b79c7dd22463202
+track07.flac:075d34d479f0a8ee1f70d6eb1783ad1b
+track08.flac:26b66ce069f1f762339b7c0572c571e3
+track09.flac:abec91d1592cb1330c20672329c01a21
+track10.flac:5bfc325491c43259f841932161351d9d
+track11.flac:817efac0d3ab791113273f821e6fed91
+track12.flac:61478f6b01cf8af62853e2d4d9ec873a
+track13.flac:b0db09e652f59f925646696d99537dc0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-11-g.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+track01.flac:eb5c05eaeea99567ad94cd8685b10772
+track02.flac:9d7dbda2f54355ffc97e9396be6d7b7b
+track03.flac:3f5c612950aef4e05c5c4058f85c616a
+track04.flac:cbd302737eb48178b3680a0676e8a319
+track05.flac:c93ad594b0f8ac289d60a8a13fdae4b2
+track06.flac:aacde2c4c760b473f30662473de15c19
+track07.flac:f3852af6ba56d01665ba16d44f4d6b7b
+track08.flac:892598b4843accd5e787fa93c50fc808
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-11-g.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.10       10783964 B   ---   --   ---xx   flac  0.5955  Track01.flac
+     4:41.31       49641356 B   ---   --   ---xx   flac  0.6505  Track02.flac
+     4:06.46       43502636 B   ---   --   ---xx   flac  0.6406  Track03.flac
+     6:30.16       68833676 B   ---   --   ---xx   flac  0.6810  Track04.flac
+     4:51.42       51431228 B   ---   --   ---xx   flac  0.6842  Track05.flac
+     6:32.72       69318188 B   ---   --   ---xx   flac  0.6919  Track06.flac
+     4:17.15       45370124 B   ---   --   ---xx   flac  0.7207  Track07.flac
+     5:12.55       55166204 B   ---   --   ---xx   flac  0.6905  Track08.flac
+     8:08.02       86087948 B   ---   --   ---xx   flac  0.7152  Track09.flac
+     7:52.16       83298476 B   ---   --   ---xx   flac  0.7097  Track10.flac
+     6:18.02       66683948 B   ---   --   ---xx   flac  0.7580  Track11.flac
+     6:15.11       66175916 B   ---   --   ---xx   flac  0.7356  Track12.flac
+     4:00.71       42503036 B   ---   --   ---xx   flac  0.7223  Track13.flac
+    69:48.14      738796700 B                            0.7011  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-11-g.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:30.61       79523516 B   ---   --   ---xx   flac  0.7133  Track01.flac
+     6:09.19       65136332 B   ---   --   ---xx   flac  0.6982  Track02.flac
+     7:54.29       83681852 B   ---   --   ---xx   flac  0.7018  Track03.flac
+     3:26.13       36369020 B   ---   --   ---xx   flac  0.6444  Track04.flac
+     6:03.47       64143788 B   ---   --   ---xx   flac  0.6596  Track05.flac
+     9:10.10       97043564 B   ---   --   ---xx   flac  0.7534  Track06.flac
+     6:43.05       71101004 B   ---   --   ---xx   flac  0.7254  Track07.flac
+     6:53.20       72900284 B   ---   --   ---xx   flac  0.7408  Track08.flac
+    53:50.54      569899360 B                            0.7113  (8 files)
+=================== 
+=================== 
+=================== 

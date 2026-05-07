@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-09-bach.flacf 
+=================== 
+=================== 
+=================== 
+64086837c001b65ee0ff056fe27cbf4c  bd06-07-09-bach-LB-3886.txt
+eac671f6ee37fbb5eef170904cc845c8  info.txt
+6f654743a1e5d6eeab98d3836464f60f  Valladolit-06-pt.1(01).flac
+9d61dc63e851c6b1437aabd15cb6fddb  Valladolit-06-pt.1(02).flac
+71c8e68db84e73bbe3fe65c87724f3fb  Valladolit-06-pt.1(03).flac
+e691154899acb8cc93939e958f0a0c3c  Valladolit-06-pt.1(04).flac
+d6e07d520401e85eb42cd434f37e1a7f  Valladolit-06-pt.1(05).flac
+3b45b8638703f849149c4095bbb0cb80  Valladolit-06-pt.1(06).flac
+2e3fb00aa8edab608867161e315c4824  Valladolit-06-pt.1(07).flac
+0b4664a0eb0d080aac6b55b083f832bf  Valladolit-06-pt.1(08).flac
+2d653d1946dabf01281b7040ea295d4d  Valladolit-06-pt.1(09).flac
+b04e61cc8ec63b95e0f1e8b5d0a5ce42  Valladolit-06-pt.1(10).flac
+7c790d1b4c14cdca68acb988190ca1cd  Valladolit-06-pt.2(1).flac
+31940addff173100d76531a6a636d95a  Valladolit-06-pt.2(2).flac
+8ed98cfb2e98f0475f30d7bc25e92bbe  Valladolit-06-pt.2(3).flac
+800aeb091dbc5d70caca688eaedc88ab  Valladolit-06-pt.2(4).flac
+472d9e737fbcbcc74eae9ad90a6a8e60  Valladolit-06-pt.2(5).flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-09-bach.flacf 
+=================== 
+=================== 
+=================== 
+Valladolit-06-pt.1(01).flac:20b7e2090e9dfa4bd3ec75cac0f38afa
+Valladolit-06-pt.1(02).flac:62749294ade4aece66b0ec6ec936ea9c
+Valladolit-06-pt.1(03).flac:675ae90e7f51a375f81e759e845e511d
+Valladolit-06-pt.1(04).flac:448c127d0cb5b3966216cfd1a67bc0ab
+Valladolit-06-pt.1(05).flac:e24e601a9bc2061b89c1dbb3ff46dcc3
+Valladolit-06-pt.1(06).flac:b991eaef45d0db951bf0bd8137c1c22d
+Valladolit-06-pt.1(07).flac:fb130aa42c6d1989ec83fdf36fa6992b
+Valladolit-06-pt.1(08).flac:67e76447dc08a05a03fe61a94ad8bb55
+Valladolit-06-pt.1(09).flac:ed50d49f8a6e589445ca64c7a2c0859a
+Valladolit-06-pt.1(10).flac:e0b106a5a0bf58771e030428bbb08120
+Valladolit-06-pt.2(1).flac:084d7b4fd174016b1673f2bfa63b31b6
+Valladolit-06-pt.2(2).flac:f378235407e1d0c8a1d7ee225e0d1f35
+Valladolit-06-pt.2(3).flac:a80d3c3aaf88452b6bc61a99907a7874
+Valladolit-06-pt.2(4).flac:c2a291c903285714e7f583526f500b2d
+Valladolit-06-pt.2(5).flac:646bb35cc47cd29083ec0b40fdb65632
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-09-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.06       66164156 B   ---   --   ---xx   flac  0.5202  Valladolit-06-pt.1(01).flac
+     6:39.19       70428332 B   ---   --   ---xx   flac  0.4921  Valladolit-06-pt.1(02).flac
+     7:30.01       79382396 B   ---   --   ---xx   flac  0.5418  Valladolit-06-pt.1(03).flac
+     5:28.21       57908636 B   ---   --   ---xx   flac  0.4758  Valladolit-06-pt.1(04).flac
+     7:14.12       76585868 B   ---   --   ---xx   flac  0.5195  Valladolit-06-pt.1(05).flac
+     6:59.44       74015132 B   ---   --   ---xx   flac  0.4714  Valladolit-06-pt.1(06).flac
+     6:32.28       69214700 B   ---   --   ---xx   flac  0.5428  Valladolit-06-pt.1(07).flac
+     5:37.72       59616188 B   ---   --   ---xx   flac  0.5138  Valladolit-06-pt.1(08).flac
+     5:41.04       60161852 B   ---   --   ---xx   flac  0.4817  Valladolit-06-pt.1(09).flac
+     7:15.45       76839884 B   ---   --   ---xx   flac  0.5049  Valladolit-06-pt.1(10).flac
+     6:09.64       65242172 B   ---   --   ---xx   flac  0.5097  Valladolit-06-pt.2(1).flac
+     7:28.52       79149548 B   ---   --   ---xx   flac  0.4801  Valladolit-06-pt.2(2).flac
+    10:07.64      107225372 B   ---   --   ---xx   flac  0.4976  Valladolit-06-pt.2(3).flac
+     7:20.26       77677196 B   ---   --   ---xx   flac  0.5402  Valladolit-06-pt.2(4).flac
+     5:44.40       60775724 B   ---   --   ---xx   flac  0.5418  Valladolit-06-pt.2(5).flac
+   102:04.48     1080387156 B                            0.5089  (15 files)
+=================== 
+=================== 
+=================== 

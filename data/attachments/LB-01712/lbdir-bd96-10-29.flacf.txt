@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-10-29.flacf 
+=================== 
+=================== 
+=================== 
+678b83e1571883afa54c34f9909268e8  Artwork\Oklahoma City 96 front.jpg
+d3cff4fbdf41471001eaff22dcdce105  Artwork\Oklahoma City back.jpg
+062210529d45f2704cb4aacdbac7020f  Artwork\Thumbs.db
+27618864f36a435800af5c2c78b81f41  bd96-10-29.txt
+0cc71b164edd0730d26c0020ea14452f  D1Track01.flac
+0875c4547d8c50cba0b99c5e7628e40e  D1Track02.flac
+2ede9c71c8383d21b8417e96d8d52f44  D1Track03.flac
+acc55904cd4b37b00c998c66303fba8c  D1Track04.flac
+1508d40f2745285909bd0a3f01739b2b  D1Track05.flac
+309b8b47db86d2b218df8f1a5bd8d85e  D1Track06.flac
+ceda88e9a01659c97dc3858db95f3e6a  D1Track07.flac
+cfeffcc3459f09aa76fcd157f38456ab  D1Track08.flac
+99bb38a792734e8983c58895ba90a65e  D1Track09.flac
+1d9fe7fedc8b5859e77515a8eff41ea6  D1Track10.flac
+b609a5688d10a26cdb7938868652cc20  D2Track01.flac
+81240e6a48e77a70219183e6f4328dc6  D2Track02.flac
+424a1fcc0f1889433a15fa0a38504011  D2Track03.flac
+08532486ecb7d08cfc362c66cdf0ced5  D2Track04.flac
+534519d036b9a4fad4a36ff42580791e  D2Track05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-29.flacf 
+=================== 
+=================== 
+=================== 
+D1Track01.flac:94726236750ac8000e755dc15325b373
+D1Track02.flac:b17a58ea9aa25a56e8642e0e2f7a011b
+D1Track03.flac:b12d52d0fa392d2dc7f0c7ae358dbbcc
+D1Track04.flac:74f9f44a947b9942bd309349bfcd8507
+D1Track05.flac:9814a736a53f994766c9510481753359
+D1Track06.flac:b8509cc1ada7d706533ecc977f7cdb07
+D1Track07.flac:33bcd42d227acf78cbaf22e4c699fe8f
+D1Track08.flac:b3f592c354c445c7675f3d36f8024531
+D1Track09.flac:d5e2b453eca9d19c41eaf81fdfc55b00
+D1Track10.flac:1680195598a0afce80eabaea97e2335a
+D2Track01.flac:be6cbeaade70ba7f69f765825d9c811c
+D2Track02.flac:e7ecd38bc6fee548d52920a7e3b317a0
+D2Track03.flac:994ce448d24c5fab336302ad4d55d119
+D2Track04.flac:978111ae97ae3bc278bd3373a0c9262f
+D2Track05.flac:31f8c6f1826327ca689e0d583643c8fd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-29.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:25.10       15017564 B   ---   --   ---xx   flac  0.5673  D1Track01.flac
+     5:50.36       61824716 B   ---   --   ---xx   flac  0.5514  D1Track02.flac
+     6:27.63       68415020 B   ---   --   ---xx   flac  0.5849  D1Track03.flac
+     9:13.72       97718588 B   ---   --   ---xx   flac  0.5660  D1Track04.flac
+     7:59.37       84582668 B   ---   --   ---xx   flac  0.5720  D1Track05.flac
+     7:56.31       84039356 B   ---   --   ---xx   flac  0.6053  D1Track06.flac
+     8:02.24       85081292 B   ---   --   ---xx   flac  0.6000  D1Track07.flac
+     6:41.70       70899968 B   -b-   --   ---xx   flac  0.5533  D1Track08.flac
+     8:50.48       93604940 B   ---   --   ---xx   flac  0.5331  D1Track09.flac
+     8:04.27       85441148 B   ---   --   ---xx   flac  0.5904  D1Track10.flac
+     6:27.11       68292716 B   ---   --   ---xx   flac  0.5368  D2Track01.flac
+     9:27.21      100068236 B   ---   --   ---xx   flac  0.5583  D2Track02.flac
+    10:40.02      112900748 B   ---   --   ---xx   flac  0.5652  D2Track03.flac
+    10:58.54      116198252 B   ---   --   ---xx   flac  0.5552  D2Track04.flac
+     8:52.25       93903644 B   ---   --   ---xx   flac  0.5868  D2Track05.flac
+   116:58.06     1237988856 B                            0.5685  (15 files)
+=================== 
+=================== 
+=================== 

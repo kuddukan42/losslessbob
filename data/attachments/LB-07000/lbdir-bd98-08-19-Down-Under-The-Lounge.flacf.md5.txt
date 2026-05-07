@@ -1,0 +1,32 @@
+5fad108cd283b12d4364a55b0b38ddb2  Disc One\Disc One.ffp
+e9c78cd527afbc7d64db6ada89681de8  Disc One\Dylan - Down Under_Disc01Track01.flac
+bcf7c165d10f0374980c3dc92636cc90  Disc One\Dylan - Down Under_Disc01Track02.flac
+bdf3faf27690b581455b630cad77d563  Disc One\Dylan - Down Under_Disc01Track03.flac
+950d653a4615461ae870dc643f5faa34  Disc One\Dylan - Down Under_Disc01Track04.flac
+3c1f4ba536a543d11d00fcc7ca101a52  Disc One\Dylan - Down Under_Disc01Track05.flac
+7e4b68ead25ab205cdbba1f419fbba13  Disc One\Dylan - Down Under_Disc01Track06.flac
+9023c01c3cb49f22839d848e0c8c8ba5  Disc One\Dylan - Down Under_Disc01Track07.flac
+029cd3fc11edd27f8f12c5431f5db6b2  Disc One\Dylan - Down Under_Disc01Track08.flac
+a40592d5fb5a392da7aacfde17823e83  Disc One\Dylan - Down Under_Disc01Track09.flac
+25b63d86022f62d23eb25b49f9c01737  Disc One\Dylan - Down Under_Disc01Track10.flac
+1fb8075594eec26ba47dbdac74ef01d9  Disc One\Dylan - Down Under_Disc01Track11.flac
+7288e95b13bb443e2d056c91e25e71ff  Disc One\Dylan - Down Under_Disc01Track12.flac
+18ec4e924a27476c53d6eecda8aa04ca  Disc Two\Disc Two.ffp
+557a6fecacffc02a6f2e67ce093f8398  Disc Two\Dylan - Down Under_Disc02Track01.flac
+d77eda40a3c50ecc79972b07c4b1b4a6  Disc Two\Dylan - Down Under_Disc02Track02.flac
+833d00476ab1c8dda7fc2ae494029b62  Disc Two\Dylan - Down Under_Disc02Track03.flac
+9f02286b458a1af517cbbc90164384c8  Disc Two\Dylan - Down Under_Disc02Track04.flac
+620eda0e06e9f4e13e1098164fa8479b  Disc Two\Dylan - Down Under_Disc02Track05.flac
+88f2dc946671887a98da0c2a58de934d  Disc Two\Dylan - Down Under_Disc02Track06.flac
+b510cadc830af65d0e0d28f3e427c483  Disc Two\Dylan - Down Under_Disc02Track07.flac
+df4314faa6ecabd18985651c430b08c2  Disc Two\Dylan - Down Under_Disc02Track08.flac
+f430c61793fcafbc6c88eee79f814964  Disc Two\Dylan - Down Under_Disc02Track09.flac
+54b3a449a25cd07e4ea6dbd90dcb0570  Down Under The Lounge - Booklet_01.jpg
+607c0f96f2cace911a87aa55be627a17  Down Under The Lounge - Booklet_02.jpg
+a8538c18d34e9063743537da3049695f  Down Under The Lounge - Booklet_03.jpg
+7c01589eb95ed132fdea3633f9f55743  Down Under The Lounge - Booklet_04.jpg
+6b2f9b3d14264f34b235a2620c0b87b3  Down Under The Lounge - Liner.jpg
+bf209c3765fe83dfd467a2a8f3a94af9  Down Under The Lounge - Rear.jpg
+9a6b7e150f22fda25c9b67deb7df1ca7  Dylan - Down Under The Lounge.md5
+482d18bcbe0283a8d78d3c21fa19f71f  Dylan - Down Under The Lounge.txt
+9660604ca702eed6caf41b08aef31463  Dylan - Down Under The Lounge_Info.txt

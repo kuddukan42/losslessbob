@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-08-20a 
+=================== 
+=================== 
+=================== 
+2b9e4a24fdb8ca1b20f3676144589389  bd010820a-101Humming Bird.shn
+891164dbbecb37a8277072cd9eaf74cf  bd010820a-102My Back Pages.shn
+ec7a27d439b7f52d98ca7edc199fc13d  bd010820a-103It's Alright, Ma.shn
+943ef7a07ed55837fee6bc175ae9217d  bd010820a-104Searching For A Sold.shn
+4e5f75af350e13a49fee1348fdca757c  bd010820a-105Tough Mama.shn
+4a6f56912e9ba6fc79b0f5aca2d47b56  bd010820a-106It Takes A Lot To Laugh.shn
+eeacf2b246913714cc769ef8b5fd05c7  bd010820a-107This Wheel's On Fire.shn
+9f041831ee76b65b5421d0c25a153a7c  bd010820a-108Stuck Inside Of Mobile.shn
+abfe8cc0a1a703d47ac17f7345c7a059  bd010820a-109Visions Of Johanna.shn
+94d347c23fedcc5b73798b9d1f5354d9  bd010820a-110A Hard Rain's A-Gonna.shn
+e4043c0b5ce8704998293d4553edf71c  bd010820a-111Girl Of The North Cou.shn
+d29002a4bff36a0eae0157a83a43ed6d  bd010820a-201.shn
+d34214f13ed14ac40c15e6d0f0d0d015  bd010820a-202.shn
+b362f515f021ff12a2be50310b260b27  bd010820a-203.shn
+3b16c6b9845b140bd8af7af04044f2bb  bd010820a-204.shn
+28c68b8d3bd72a7a57d0dac4c9d05df3  bd010820a-205.shn
+1f442f8067a92517b15db63cf9307eb4  bd010820a-206.shn
+7d99977dfc3046d2fe9d1db0e1056971  bd010820a-207.shn
+a70e11fa3a19d686d9b3ccb6a6e3cc51  bd010820a-208.shn
+fc4f5c8fd433c64ca760418a2ffad8f3  bd010820a-d1.md5
+95eb71ce94ddfa589dc1987a15902540  bd010820a-d2.md5
+284f3f1ba1841711c2474f59b42e0981  bd010820a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-08-20a 
+=================== 
+=================== 
+=================== 
+d3f049835b32463fa91422522ea8fab7  [shntool]  bd010820a-101Humming_Bird.wav
+3c91a48c8287043e3b2bbb9fcd283ba1  [shntool]  bd010820a-102My_Back_Pages.wav
+6eb568d30188193da6acdcaa7511ce3f  [shntool]  bd010820a-103It's_Alright,_Ma.wav
+07b47fa581062ce2c97a07347851d379  [shntool]  bd010820a-104Searching_For_A_Sold.wav
+71a953e493204a645e4ae8d041f1cb94  [shntool]  bd010820a-105Tough_Mama.wav
+38fd098309ae005b7d4b5ea1218703e1  [shntool]  bd010820a-106It_Takes_A_Lot_To_Laugh.wav
+b2315a5c2c55d6cb2177c9cc2be4a87b  [shntool]  bd010820a-107This_Wheel's_On_Fire.wav
+4b8ad906cb83bd5605435d7ff8bcdae1  [shntool]  bd010820a-108Stuck_Inside_Of_Mobile.wav
+2d5db59a08216936cd5609879ca5a9c8  [shntool]  bd010820a-109Visions_Of_Johanna.wav
+a66b2184a09c965a88dff7dab1c85a10  [shntool]  bd010820a-110A_Hard_Rain's_A-Gonna.wav
+c0de9d3df7ba59634a746c2c32568528  [shntool]  bd010820a-111Girl_Of_The_North_Cou.wav
+3016ccaf15ffa6351c6fcfda1e05e7e5  [shntool]  bd010820a-201.wav
+f545c360faf1506674f2fac68bf747b0  [shntool]  bd010820a-202.wav
+382e30e8ae0ce4dd8ef9e43d2fe6de6e  [shntool]  bd010820a-203.wav
+b8c43d07b655c984038e6091b7e35dd6  [shntool]  bd010820a-204.wav
+ab9a251b42d321b1e3db492170c3328c  [shntool]  bd010820a-205.wav
+f8a318418277dd24e91b6c1976aa91e8  [shntool]  bd010820a-206.wav
+354c0254dd8525b8f05ccf760b1cb0b1  [shntool]  bd010820a-207.wav
+5f18197b4ef0cbc441c0beb5e7fa9ca9  [shntool]  bd010820a-208.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-20a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:55.26       41515196 B   ---   --   ---xx    shn  0.6607  bd010820a-101Humming Bird.shn
+     6:18.23       66733340 B   ---   --   ---xx    shn  0.6505  bd010820a-102My Back Pages.shn
+     8:11.04       86621852 B   ---   --   ---xx    shn  0.6483  bd010820a-103It's Alright, Ma.shn
+     3:41.67       39142028 B   ---   --   ---xx    shn  0.6273  bd010820a-104Searching For A Sold.shn
+     6:03.66       64188476 B   ---   --   ---xx    shn  0.6238  bd010820a-105Tough Mama.shn
+     7:06.10       75169964 B   ---   --   ---xx    shn  0.6173  bd010820a-106It Takes A Lot To Laugh.shn
+     6:55.67       73363628 B   ---   --   ---xx    shn  0.5990  bd010820a-107This Wheel's On Fire.shn
+     9:18.13       98461820 B   ---   --   ---xx    shn  0.6454  bd010820a-108Stuck Inside Of Mobile.shn
+     7:54.45       83719484 B   ---   --   ---xx    shn  0.5770  bd010820a-109Visions Of Johanna.shn
+     9:08.00       96667244 B   ---   --   ---xx    shn  0.5906  bd010820a-110A Hard Rain's A-Gonna.shn
+     6:54.02       73034348 B   ---   --   ---xx    shn  0.4834  bd010820a-111Girl Of The North Cou.shn
+     7:00.70       74252684 B   ---   --   ---xx    shn  0.5647  bd010820a-201.shn
+     5:01.61       53239916 B   ---   --   ---xx    shn  0.5880  bd010820a-202.shn
+     6:23.49       67676492 B   ---   --   ---xx    shn  0.6019  bd010820a-203.shn
+     7:16.32       76985708 B   ---   --   ---xx    shn  0.6164  bd010820a-204.shn
+     6:15.22       66201788 B   ---   --   ---xx    shn  0.5478  bd010820a-205.shn
+     8:35.67       91003628 B   ---   --   ---xx    shn  0.5915  bd010820a-206.shn
+     4:38.49       49154492 B   ---   --   ---xx    shn  0.6005  bd010820a-207.shn
+     5:09.65       54660524 B   ---   --   ---xx    shn  0.6329  bd010820a-208.shn
+   125:49.63     1331792612 B                            0.6021  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-04-03-b.flacf 
+=================== 
+=================== 
+=================== 
+cca7e039dbccd1edf0bb416235a08f84  CD1\01 Intro.shn
+0c3015d7a532adf83b1f8e0180e0acf0  CD1\02 Maggie's farm.shn
+b0ac3681164c586d2b8411b81cedcb5d  CD1\03 The times they are a-changin'.shn
+6042105aca504647b39f2d2bf020791c  CD1\04 Tweedle Dee and Tweedle Dum.shn
+6ad0f3acbe70cc177358c5c4ffd0cfdf  CD1\05 Ring them bells.shn
+6c85498051b65c3e407df99b5667eafd  CD1\06 Down along the cove.shn
+6d8e2912b42497cf5e080d5eb86052d8  CD1\07 Ballad of a thin man.shn
+fb81562cd57ecaacccdede55143c514b  CD1\08 Dignity.shn
+34a63395f5803ba101f6850306c5b1a8  CD1\09 Ballad of Hollis Brown.shn
+2301442121d856b4e8aaad7cf3665858  CD1\10 Highway 61 revisited.shn
+3ff95e17f826ccb91046976019f56687  CD1\11 A hard rain's a-gonna fall.shn
+fb2540c84e11f92dc532a0e0abcdcf92  CD1\12 Bye and bye.shn
+0640ee548b576d1d162206b66d119e73  CD1\2004-04-03 Washington D.C. [Fine Wine] disc 1.md5
+dce696080712cf5620f2434a2018c2a0  CD2\13 Honest with me.shn
+0c386d402d88ae411f5ea5b051c096a9  CD2\14 Standing in the doorway.shn
+1d0ad385743a255beea486442140a4f4  CD2\15 Summer days.shn
+1e694b5bd99c8cb58131aa17f111869c  CD2\16 Cat's in the well.shn
+825821fd43dfab23ed88eddc6a913489  CD2\17 Like a rolling stone.shn
+533dd915827dc09115bb20919743ec0a  CD2\18 (band intro).shn
+f6ceacdf7fe0a0d31fe33583b77f7df7  CD2\19 All along the watchtower.shn
+bf38e7b4bd2e422e0a172fe5e176d581  CD2\20 Rainy day women #12 & 35.shn
+63eecf4bf7e600955b08cd9eb5fd8ead  CD2\2004-04-03 Washington D.C. [Fine Wine] disc 2.md5
+310bc070a37ba42d84b5be875fb05934  Info\bd2004-04-03 bender_fine wine.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-04-03-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+c5f161675fb2fc4958d0edb8e9916795  [shntool]  01_intro.wav
+a732e909c00801871b7272edfe5654bd  [shntool]  02_maggie's_farm.wav
+77051aae0b4f6789c15c37dd8e0117c0  [shntool]  03_the_times_they_are_a-changin'.wav
+54fbd46034a84ab458447727f9ea4d5f  [shntool]  04_tweedle_dee_and_tweedle_dum.wav
+1622c60a95de22913459b6fff0b3073c  [shntool]  05_ring_them_bells.wav
+957ee8658e8ac31a503e5af8ae0e93d8  [shntool]  06_down_along_the_cove.wav
+1ad3ba8e49ad20822a8fdc1b502714fa  [shntool]  07_ballad_of_a_thin_man.wav
+536c0e41e1c1119340c1fcabbdf7f4e6  [shntool]  08_dignity.wav
+b788aa2b6a7f2817e2cdb435efffb2d6  [shntool]  09_ballad_of_hollis_brown.wav
+0d19cdff13858cc9bfbe41b854a6e1a7  [shntool]  10_highway_61_revisited.wav
+2de7b8c9acb99b387c827b207e9c1148  [shntool]  11_a_hard_rain's_a-gonna_fall.wav
+3dfd82cb9adeb4d919362c2876e22382  [shntool]  12_bye_and_bye.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-04-03-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+376261384cea5dd098f53240bb3ca032  [shntool]  13_honest_with_me.wav
+d1a8107c40a4a8253c8fe554d7b98008  [shntool]  14_standing_in_the_doorway.wav
+f6467b5efa52bb424624f743ca69c193  [shntool]  15_summer_days.wav
+dd9d830de7c4e12e811590852b4e4fe0  [shntool]  16_cat's_in_the_well.wav
+f93db15a01f725b8388be50308ea86ea  [shntool]  17_like_a_rolling_stone.wav
+b742d7f217342da94c5d88c9ceaa5130  [shntool]  18_(band_intro).wav
+db652c7b33cc59c03423e19626136ffc  [shntool]  19_all_along_the_watchtower.wav
+13b71704dc9b8e6f2b41747a3c8f8574  [shntool]  20_rainy_day_women_#12___35.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-04-03-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:06.41       11738876 B   ---   --   ---xx    shn  0.5424  01 Intro.shn
+     4:57.74       52564892 B   ---   --   ---xx    shn  0.6448  02 Maggie's farm.shn
+     6:07.53       64863500 B   ---   --   ---xx    shn  0.5861  03 The times they are a-changin'.shn
+     5:28.37       57946268 B   ---   --   ---xx    shn  0.5867  04 Tweedle Dee and Tweedle Dum.shn
+     5:00.26       52981196 B   ---   --   ---xx    shn  0.5439  05 Ring them bells.shn
+     5:55.65       62774924 B   ---   --   ---xx    shn  0.6314  06 Down along the cove.shn
+     6:27.41       68363276 B   ---   --   ---xx    shn  0.6142  07 Ballad of a thin man.shn
+     6:55.12       73234268 B   ---   --   ---xx    shn  0.6372  08 Dignity.shn
+     5:36.57       59404508 B   ---   --   ---xx    shn  0.5617  09 Ballad of Hollis Brown.shn
+     6:08.15       64950524 B   ---   --   ---xx    shn  0.6461  10 Highway 61 revisited.shn
+     6:52.66       72832076 B   ---   --   ---xx    shn  0.6209  11 A hard rain's a-gonna fall.shn
+     6:25.62       68059868 B   ---   --   ---xx    shn  0.4768  12 Bye and bye.shn
+    67:03.24      709714176 B                            0.5952  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-04-03-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.25       76616444 B   ---   --   ---xx    shn  0.6277  13 Honest with me.shn
+     8:03.32       85276508 B   ---   --   ---xx    shn  0.5063  14 Standing in the doorway.shn
+    11:15.44      119173532 B   ---   --   ---xx    shn  0.5854  15 Summer days.shn
+     4:46.09       50471612 B   ---   --   ---xx    shn  0.6427  16 Cat's in the well.shn
+     6:24.01       67739996 B   ---   --   ---xx    shn  0.6364  17 Like a rolling stone.shn
+     1:02.65       11089724 B   ---   --   ---xx    shn  0.5809  18 (band intro).shn
+     8:40.73       91899740 B   ---   --   ---xx    shn  0.5757  19 All along the watchtower.shn
+     6:17.02       66507548 B   ---   --   ---xx    shn  0.6134  20 Rainy day women #12 & 35.shn
+    53:44.26      568775104 B                            0.5920  (8 files)
+=================== 
+=================== 
+=================== 

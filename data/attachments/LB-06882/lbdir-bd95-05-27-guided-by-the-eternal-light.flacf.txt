@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-27-guided-by-the-eternal-light.flacf 
+=================== 
+=================== 
+=================== 
+bfd8d9c67bc14a0fd2269347c895376a  bd95-05-27-guided-by-the-eternal-light-d1.LOG
+de677b096ae3877d2ab1029888b225ab  bd95-05-27-guided-by-the-eternal-light-d1t01.flac
+47339cbe0e0b7d477c19ad6e63a39f59  bd95-05-27-guided-by-the-eternal-light-d1t02.flac
+f2f55a44cff784dffaad89a6c17fd4d9  bd95-05-27-guided-by-the-eternal-light-d1t03.flac
+1fee7e5cb6d6e5eaa740b1c9893127ef  bd95-05-27-guided-by-the-eternal-light-d1t04.flac
+9deb5b97e45bb42b6cfcfaaaa6343b4c  bd95-05-27-guided-by-the-eternal-light-d1t05.flac
+25b146a00e44bdad9b966a683803ce66  bd95-05-27-guided-by-the-eternal-light-d1t06.flac
+eebfaf89ac376267c4f7362c887800cf  bd95-05-27-guided-by-the-eternal-light-d1t07.flac
+796b6951d9a337c33906b4baf4cca72e  bd95-05-27-guided-by-the-eternal-light-d1t08.flac
+ef64c65d2f0949ed15dda629bfe70f04  bd95-05-27-guided-by-the-eternal-light-d1t09.flac
+477dba804bfd6a630a7dc482dfea960b  bd95-05-27-guided-by-the-eternal-light-d1t10.flac
+b71eef69446eb1a94432f49014d12d98  bd95-05-27-guided-by-the-eternal-light-d1t11.flac
+877ca2ebd676546a93a8c69b33a73697  bd95-05-27-guided-by-the-eternal-light-d1t12.flac
+0dad766a1031f0f562ca7c5b708d9169  bd95-05-27-guided-by-the-eternal-light-d2.LOG
+d5e5250587984d2cd8f1b1405551191a  bd95-05-27-guided-by-the-eternal-light-d2t01.flac
+06f7a8fb9ec7fc88d3921742efef0b35  bd95-05-27-guided-by-the-eternal-light-d2t02.flac
+3108501e8ba11a2f3d6a72ee1784b12a  bd95-05-27-guided-by-the-eternal-light-d2t03.flac
+829269d7be423e5ed8e15a9ef0ca3acb  bd95-05-27-guided-by-the-eternal-light-d2t04.flac
+a1ebd14d4170478380b0cccbea818ef1  bd95-05-27-guided-by-the-eternal-light-d2t05.flac
+475641a6ba55d345c3bd72deeec09083  bd95-05-27-guided-by-the-eternal-light-d2t06.flac
+53fae24a5f54a5b607f547077222f7f6  bd95-05-27-guided-by-the-eternal-light-d2t07.flac
+ebbf5f489c687fbadb47b85cba2bf1fe  bd95-05-27-guided-by-the-eternal-light-d2t08.flac
+8fe844f0e5520fa0c0b3be49231222a6  bd95-05-27-guided-by-the-eternal-light-d2t09.flac
+e114a70544e41c5b948ab10fbe4b3144  bd95-05-27-guided-by-the-eternal-light-d2t10.flac
+932c157abf3b41a4499bebd1b6a2ff33  bd95-05-27-guided-by-the-eternal-light-d2t11.flac
+bae1e9deb0018358a4a842bb6f34d475  bd95-05-27-guided-by-the-eternal-light-d2t12.flac
+1f019209b161ea842e93d9e35f511c1f  bd95-05-27-guided-by-the-eternal-light.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-27-guided-by-the-eternal-light.flacf 
+=================== 
+=================== 
+=================== 
+bd95-05-27-guided-by-the-eternal-light-d1t01.flac:1f5dad58229091be9a8b6d9a7f2db653
+bd95-05-27-guided-by-the-eternal-light-d1t02.flac:718997a08156ccdfdaa95507b0713d19
+bd95-05-27-guided-by-the-eternal-light-d1t03.flac:b67f49db32cfba748d093bcf00d047be
+bd95-05-27-guided-by-the-eternal-light-d1t04.flac:a9a0276c97cea3f048a033f32390803d
+bd95-05-27-guided-by-the-eternal-light-d1t05.flac:ae94f266441b1fbecf5729899b549ab3
+bd95-05-27-guided-by-the-eternal-light-d1t06.flac:07fe1e795644b91eb761d384e121e772
+bd95-05-27-guided-by-the-eternal-light-d1t07.flac:ecc5029046e4fb8c1f698dafec24b21a
+bd95-05-27-guided-by-the-eternal-light-d1t08.flac:7587208effb99ad8ae169238e53af35d
+bd95-05-27-guided-by-the-eternal-light-d1t09.flac:a28bd16e2cdfca8c4e017998bc923c57
+bd95-05-27-guided-by-the-eternal-light-d1t10.flac:a240c8b3c978e1287b1ec8250f964156
+bd95-05-27-guided-by-the-eternal-light-d1t11.flac:f684823ee72b8ee4395df738041299f5
+bd95-05-27-guided-by-the-eternal-light-d1t12.flac:eddc59aa4e5c8a71b8f79846433a0985
+bd95-05-27-guided-by-the-eternal-light-d2t01.flac:e0c1259b1383e92d4e9867d496d605ad
+bd95-05-27-guided-by-the-eternal-light-d2t02.flac:9b57ddd2a603ee8085a03d38b4fa1353
+bd95-05-27-guided-by-the-eternal-light-d2t03.flac:e885527186eaf959b5c7384355117096
+bd95-05-27-guided-by-the-eternal-light-d2t04.flac:96bda728459b33ba916387d1eb88d59e
+bd95-05-27-guided-by-the-eternal-light-d2t05.flac:bf0062e741227ad02011c53eb94e8d04
+bd95-05-27-guided-by-the-eternal-light-d2t06.flac:9a12f1a8976e97a88a36fe1db496f0b7
+bd95-05-27-guided-by-the-eternal-light-d2t07.flac:89eaeb2ec64a20adda88ce9c8512785f
+bd95-05-27-guided-by-the-eternal-light-d2t08.flac:b97b8102d15bc8438e89396da86431d7
+bd95-05-27-guided-by-the-eternal-light-d2t09.flac:7b7613840dd735e8aa44c8f6fb3674a2
+bd95-05-27-guided-by-the-eternal-light-d2t10.flac:3a9871407c62c04b5fbd4df0099db108
+bd95-05-27-guided-by-the-eternal-light-d2t11.flac:2563125c9ba2ce0d0da367246699f1f4
+bd95-05-27-guided-by-the-eternal-light-d2t12.flac:955a67a29233aac28a5a51d817210421
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-27-guided-by-the-eternal-light.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.45       53378684 B   ---   --   ---xx   flac  0.6971  bd95-05-27-guided-by-the-eternal-light-d1t01.flac
+     6:41.50       70854044 B   ---   --   ---xx   flac  0.6529  bd95-05-27-guided-by-the-eternal-light-d1t02.flac
+     6:33.55       69454604 B   ---   --   ---xx   flac  0.6770  bd95-05-27-guided-by-the-eternal-light-d1t03.flac
+     8:41.18       91946780 B   ---   --   ---xx   flac  0.6304  bd95-05-27-guided-by-the-eternal-light-d1t04.flac
+     6:53.32       72928508 B   ---   --   ---xx   flac  0.6788  bd95-05-27-guided-by-the-eternal-light-d1t05.flac
+     7:53.18       83479580 B   ---   --   ---xx   flac  0.6762  bd95-05-27-guided-by-the-eternal-light-d1t06.flac
+     7:23.70       78309884 B   ---   --   ---xx   flac  0.5606  bd95-05-27-guided-by-the-eternal-light-d1t07.flac
+     5:32.30       58635404 B   ---   --   ---xx   flac  0.5831  bd95-05-27-guided-by-the-eternal-light-d1t08.flac
+     6:57.37       73645868 B   ---   --   ---xx   flac  0.5894  bd95-05-27-guided-by-the-eternal-light-d1t09.flac
+     0:29.48        5228540 B   ---   --   ---xx   flac  0.5439  bd95-05-27-guided-by-the-eternal-light-d1t10.flac
+     6:04.17       64249628 B   ---   --   ---xx   flac  0.6777  bd95-05-27-guided-by-the-eternal-light-d1t11.flac
+     8:41.68       92064380 B   ---   --   ---xx   flac  0.6225  bd95-05-27-guided-by-the-eternal-light-d1t12.flac
+    10:45.50      113895644 B   ---   --   ---xx   flac  0.6716  bd95-05-27-guided-by-the-eternal-light-d2t01.flac
+     7:50.47       83018588 B   ---   --   ---xx   flac  0.6676  bd95-05-27-guided-by-the-eternal-light-d2t02.flac
+     4:12.53       44577500 B   ---   --   ---xx   flac  0.6509  bd95-05-27-guided-by-the-eternal-light-d2t03.flac
+     6:24.67       67895228 B   ---   --   ---xx   flac  0.6704  bd95-05-27-guided-by-the-eternal-light-d2t04.flac
+     5:33.00       58741244 B   ---   --   ---xx   flac  0.6441  bd95-05-27-guided-by-the-eternal-light-d2t05.flac
+     5:08.73       54502940 B   ---   --   ---xx   flac  0.7066  bd95-05-27-guided-by-the-eternal-light-d2t06.flac
+     5:24.37       57240668 B   ---   --   ---xx   flac  0.5914  bd95-05-27-guided-by-the-eternal-light-d2t07.flac
+     6:12.30       65691404 B   ---   --   ---xx   flac  0.5485  bd95-05-27-guided-by-the-eternal-light-d2t08.flac
+     4:38.40       49133324 B   ---   --   ---xx   flac  0.6977  bd95-05-27-guided-by-the-eternal-light-d2t09.flac
+     8:31.60       90281564 B   ---   --   ---xx   flac  0.6701  bd95-05-27-guided-by-the-eternal-light-d2t10.flac
+     6:32.08       69167660 B   ---   --   ---xx   flac  0.6728  bd95-05-27-guided-by-the-eternal-light-d2t11.flac
+     5:52.47       62203388 B   ---   --   ---xx   flac  0.7138  bd95-05-27-guided-by-the-eternal-light-d2t12.flac
+   154:03.25     1630525056 B                            0.6489  (24 files)
+=================== 
+=================== 
+=================== 

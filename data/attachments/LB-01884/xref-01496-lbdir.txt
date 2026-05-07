@@ -1,0 +1,84 @@
+﻿===================
+===================
+===================
+=== md5 for: bd95-03-31-h.flacf
+===================
+===================
+===================
+30abfdef54670933c4c25c8131c50acd *bd - 95-03-31-d1\1 Crash On The Levee (Down In The Flood).flac
+eee7070e82c60988cf5d45d3a0241dca *bd - 95-03-31-d1\2 Señor (Tales Of Yankee Power).flac
+70eb1ea12f4dce87e1ee853c4ab6c8c9 *bd - 95-03-31-d1\3 All Along The Watchtower.flac
+362fb06e3c424e888589565ce4f870ca *bd - 95-03-31-d1\4 I Don't Believe You.flac
+b6073346df204f5625d32ca45011df95 *bd - 95-03-31-d1\5 Tombstone Blues.flac
+183e932334fef6bb401e22e8f3af8d23 *bd - 95-03-31-d1\6 Shelter From The Storm.flac
+3f8824157952acf457b08fcc596e9f1b *bd - 95-03-31-d1\7 Mr. Tambourine Man.flac
+4aafd96bdf89143c26213a655fdb49f9 *bd - 95-03-31-d1\8 The Lonesome Death Of Hattie Carroll.flac
+adf99dea3276af3bff960ed1ed208de6 *bd - 95-03-31-d2\1 It's All Over Now, Baby Blue.flac
+9b3d537c904e0ca742f88e9c69362de5 *bd - 95-03-31-d2\2 Highway 61 Revisited.flac
+dc1c0a73999a1af8089abf0bb2c52f57 *bd - 95-03-31-d2\3 In The Garden.flac
+f27550609ad44151a0ec3f0f43e06338 *bd - 95-03-31-d2\4 Joey.flac
+c1b23094de2de019ecd7d34d1dfc825d *bd - 95-03-31-d2\5 Like A Rolling Stone.flac
+ab22c30fa6b9c03f544b8f29a14e44dd *bd - 95-03-31-d2\6 My Back Pages.flac
+12e9779544e5117656199e7462ec5182 *bd - 95-03-31-d2\7 I Shall Be Released.flac
+a6bbd5977cf564fa7952514b60c3f435 *bd - 95-03-31-d2\8 Rainy Day Women # 12 & 35.flac
+63e77213a0c565d5fed0e1683400f064 *bd-05-03-31-offmaster.txt
+===================
+===================
+===================
+=== ffp for: bd95-03-31-h.flacf
+===================
+===================
+===================
+bd - 95-03-31-d1\1 Crash On The Levee (Down In The Flood).flac:7e8b6ed21e9597503953a6852f7b6f37
+bd - 95-03-31-d1\2 Señor (Tales Of Yankee Power).flac:772c0d57448dc2be36122a42225b151e
+bd - 95-03-31-d1\3 All Along The Watchtower.flac:14f43e7bbbd2aedb6ab4c927adcd70a4
+bd - 95-03-31-d1\4 I Don't Believe You.flac:32f87bc623f26e1d1143395a7ff4dcd4
+bd - 95-03-31-d1\5 Tombstone Blues.flac:144ae627e7907f12ddc08bad4894ac36
+bd - 95-03-31-d1\6 Shelter From The Storm.flac:a5396b9bfe193d7b070d636e8aeba09d
+bd - 95-03-31-d1\7 Mr. Tambourine Man.flac:afc7758ea45b14dfb4ce0ca7803aded4
+bd - 95-03-31-d1\8 The Lonesome Death Of Hattie Carroll.flac:a2813f5bd388cf885cdca888cae5abe8
+bd - 95-03-31-d2\1 It's All Over Now, Baby Blue.flac:c1d0b66405afb61d10a758098e4618e6
+bd - 95-03-31-d2\2 Highway 61 Revisited.flac:da71ba5368d9b0ac3a73b5da9114aee9
+bd - 95-03-31-d2\3 In The Garden.flac:40193b93ae45730fed8c1ac07b1f9673
+bd - 95-03-31-d2\4 Joey.flac:77e1af704a4be99b41a0c4dd7c83e59c
+bd - 95-03-31-d2\5 Like A Rolling Stone.flac:74573600839fca881cd9f104f0ffac3c
+bd - 95-03-31-d2\6 My Back Pages.flac:aaa74b03bfe46eba979619179214b659
+bd - 95-03-31-d2\7 I Shall Be Released.flac:1b4df6f3ce6811212708029c00bb3da6
+bd - 95-03-31-d2\8 Rainy Day Women # 12 & 35.flac:8839cb23a0ba14770d093539984f43b7
+===================
+===================
+===================
+=== shntool len for: bd95-03-31-h.flacf\bd - 95-03-31-d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.41       55309676 B   ---   --   ---xx   flac  0.7079  1 Crash On The Levee (Down In The Flood).flac
+     5:15.29       55634252 B   ---   --   ---xx   flac  0.6663  2 Señor (Tales Of Yankee Power).flac
+     6:03.71       64200236 B   ---   --   ---xx   flac  0.7041  3 All Along The Watchtower.flac
+     6:28.36       68527916 B   ---   --   ---xx   flac  0.6579  4 I Don't Believe You.flac
+     7:55.72       83959388 B   ---   --   ---xx   flac  0.7067  5 Tombstone Blues.flac
+     6:42.39       71004572 B   ---   --   ---xx   flac  0.6199  6 Shelter From The Storm.flac
+     6:45.62       71587868 B   ---   --   ---xx   flac  0.5288  7 Mr. Tambourine Man.flac
+     6:40.72       70729388 B   ---   --   ---xx   flac  0.5416  8 The Lonesome Death Of Hattie Carroll.flac
+    51:06.47      540953296 B                            0.6397  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd95-03-31-h.flacf\bd - 95-03-31-d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:01.38       84937820 B   ---   --   ---xx   flac  0.5354  1 It's All Over Now, Baby Blue.flac
+     6:35.71       69845036 B   ---   --   ---xx   flac  0.7147  2 Highway 61 Revisited.flac
+     8:20.34       88280012 B   ---   --   ---xx   flac  0.6711  3 In The Garden.flac
+     9:56.03      105141500 B   ---   --   ---xx   flac  0.6922  4 Joey.flac
+     7:40.34       81224012 B   ---   --   ---xx   flac  0.6753  5 Like A Rolling Stone.flac
+     7:25.61       78641516 B   ---   --   ---xx   flac  0.6159  6 My Back Pages.flac
+     4:36.07       48702908 B   ---   --   ---xx   flac  0.6947  7 I Shall Be Released.flac
+     4:21.00       46040444 B   ---   --   ---xx   flac  0.7085  8 Rainy Day Women # 12 & 35.flac
+    56:57.23      602813248 B                            0.6588  (8 files)
+===================
+===================
+===================

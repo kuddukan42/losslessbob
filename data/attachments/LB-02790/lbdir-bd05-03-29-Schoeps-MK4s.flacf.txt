@@ -1,0 +1,136 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-29-Schoeps-MK4s.flacf 
+=================== 
+=================== 
+=================== 
+43cd94d55e801b0d2b3cbd03aaeb3dc8  2005March29d1flac\01 Track01.flac
+243565007a74ea6fc2dd952e285eed8e  2005March29d1flac\02 Track02.flac
+2de9338c3425003b64ee347e889d54cb  2005March29d1flac\03 Track03.flac
+123079a9599ab4739632dca21c78cdcf  2005March29d1flac\04 Track04.flac
+2319e57383580cee63bef98e68504827  2005March29d1flac\05 Track05.flac
+89da4a31f121bf3044c40be343e871a2  2005March29d1flac\06 Track06.flac
+299e2abb084ff6bb7348af4379f44ef6  2005March29d1flac\07 Track07.flac
+b27142a4bddab4f8c0805cd56446a40f  2005March29d1flac\08 Track08.flac
+c47bc572f4efa22500569e66eef44b8a  2005March29d1flac\09 Track09.flac
+3267445ad3f35b2b3372bc62cc93fb35  2005March29d1flac\10 Track10.flac
+eb05f5fcf24dddf76d046f28ace9d297  2005March29d1flac\11 Track11.flac
+17d1368b67c5123f177237a76c3b0c8a  2005March29d1flac\Info.txt
+a6c37f7fe53b4d50419319154d53da5d  2005March29d2flac\01 Track01.flac
+ec7f1d61c26ced3b943093e360841531  2005March29d2flac\02 Track02.flac
+885d381251ea7207bca796c09d4be15c  2005March29d2flac\03 Track03.flac
+a4212435ead43883efc64c15c2d0595e  2005March29d2flac\04 Track04.flac
+14c9c5d6dfa383b36566b123d1f55aad  2005March29d2flac\05 Track05.flac
+f28bbe167d4236d47acc68602f1371cf  2005March29d2flac\06 Track06.flac
+f4d36e896505edce238b3c65958d938b  2005March29d2flac\07 Track07.flac
+4c61722a368997187fb4c179b7b273f9  2005March29d2flac\08 Track08.flac
+2af14cc7a70cbc31d83b225762fc596f  2005March29d2flac\09 Track09.flac
+f997685208cce174cdc6e7278731d435  2005March29d2flac\10 Track10.flac
+d99bfe60fcb47e3ae568025cc05107a4  2005March29d2flac\11 Track11.flac
+ed1a31ad589ef88368a09eae8451f87c  2005March29d2flac\12 Track12.flac
+80eeab5eb10605039789a53ec56d8982  2005March29d2flac\13 Track13.flac
+bd7c0715d7fdfa9d0612956b42ab5c20  2005March29d2flac\14 Track14.flac
+d6c06969d47f526bb131a39c2169b2ad  2005March29d2flac\15 Track15.flac
+4748662398c4334dbd88a1051d336254  2005March29d2flac\16 Track16.flac
+cb75d8ee13be2656b6d4c97bdc83dcea  2005March29d2flac\17 Track17.flac
+bd75936dd36b2565a5a3dd4b507d21d9  2005March29d2flac\18 Track18.flac
+4bf08f8542e56c0814200b0e714455c7  2005March29d2flac\19 Track19.flac
+dc40697ae95bdf44c59743e693fed1b7  2005March29d2flac\Info.txt
+b6749350771e6a396aa4c673310fd71d  bd05-03-29 denver_Schoeps MK4s.txt
+11557ef029c39d4b73f97158962ed8a3  bd05-03-29-Schoeps-MK4s-LB-2790.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-03-29-Schoeps-MK4s.flacf\2005March29d2flac 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:f0ba2d050b8e25122cb7dbb42a327c13
+02 Track02.flac:1545e1f7f420287e25231481a485c2f6
+03 Track03.flac:016fcc0ab1c849930e176ac527a4cdd5
+04 Track04.flac:cc93ee7a67d8a2c4b7ed1706c64e3d69
+05 Track05.flac:ac976db8c3d221ad0d3d3e353be47375
+06 Track06.flac:9dfaa50f2a47b33e9891c1d0ef85d904
+07 Track07.flac:12c2c006ba6188eb0453dd088d252cb8
+08 Track08.flac:5323aa75d3e3c645cb9994a40f4f4ab6
+09 Track09.flac:4190921e1874b369d731bb629f58c377
+10 Track10.flac:5c776324a192bf55415682d42685b0e8
+11 Track11.flac:a07ee0a0abc88517fd71303a4d93360a
+12 Track12.flac:9d73d0d4b907944704b5c26a09c780c1
+13 Track13.flac:1e1863b32aade6c78491b0d9d3a77ded
+14 Track14.flac:b1d64a558485e5279c52c0b8ae1da331
+15 Track15.flac:df89c48540b931bcd62076b317985263
+16 Track16.flac:e98176542394c167952499ccd9b8830a
+17 Track17.flac:61134895f1dca9c3006074550e79c035
+18 Track18.flac:d12c8f2b16e963b0895acc228f4857a9
+19 Track19.flac:05f3154bcae7a0005642d57e7caa05bd
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-03-29-Schoeps-MK4s.flacf\2005March29d1flac 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:108743537510ba5ea979b6728bb8c6d3
+02 Track02.flac:6c031dde2b5dd7f44c8735d7bd8bcfb5
+03 Track03.flac:c58a48ca7a62cd3c10ee2033b2e079d1
+04 Track04.flac:ef59af3b321e1ecc53139a52a4a2ee8c
+05 Track05.flac:4619a31bd5c9700120a31f2fa7e3a593
+06 Track06.flac:e4d4b218898994f84626929a91851136
+07 Track07.flac:94c0b2756445b34e87fbf08d45bb7bd2
+08 Track08.flac:86c2391280a7d232f04635515b3aa447
+09 Track09.flac:672428c303755242f663ce114b42bf18
+10 Track10.flac:3057fac83505d498807ce4a9fb553386
+11 Track11.flac:ab8ffd3682a66fa7a5159d29ebb67818
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-29-Schoeps-MK4s.flacf\2005March29d2flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    11:40.54      123607052 B   ---   --   ---xx   flac  0.5374  01 Track01.flac
+     4:22.62       46362668 B   ---   --   ---xx   flac  0.4957  02 Track02.flac
+     5:45.06       60872156 B   ---   --   ---xx   flac  0.5466  03 Track03.flac
+     3:42.50       39278444 B   ---   --   ---xx   flac  0.5464  04 Track04.flac
+     3:06.27       32873948 B   ---   --   ---xx   flac  0.5376  05 Track05.flac
+     3:16.18       34616780 B   ---   --   ---xx   flac  0.5459  06 Track06.flac
+     3:06.62       32956268 B   ---   --   ---xx   flac  0.4740  07 Track07.flac
+     3:50.08       40590860 B   ---   --   ---xx   flac  0.5352  08 Track08.flac
+     2:15.54       23941052 B   ---   --   ---xx   flac  0.5180  09 Track09.flac
+     3:32.51       37516796 B   ---   --   ---xx   flac  0.4847  10 Track10.flac
+     2:18.45       24449084 B   ---   --   ---xx   flac  0.5546  11 Track11.flac
+     2:44.59       29068412 B   ---   --   ---xx   flac  0.4965  12 Track12.flac
+     3:15.27       34461548 B   ---   --   ---xx   flac  0.4779  13 Track13.flac
+     2:59.01       31577996 B   ---   --   ---xx   flac  0.4040  14 Track14.flac
+     2:13.34       23541212 B   ---   --   ---xx   flac  0.5159  15 Track15.flac
+     2:10.50       23049644 B   ---   --   ---xx   flac  0.5364  16 Track16.flac
+     2:19.26       24580796 B   ---   --   ---xx   flac  0.5046  17 Track17.flac
+     3:33.00       37573244 B   ---   --   ---xx   flac  0.5247  18 Track18.flac
+     2:10.19       22976732 B   ---   --   ---xx   flac  0.5447  19 Track19.flac
+    68:23.53      723894692 B                            0.5180  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-29-Schoeps-MK4s.flacf\2005March29d1flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.45       58317884 B   ---   --   ---xx   flac  0.5904  01 Track01.flac
+     5:00.67       53077628 B   ---   --   ---xx   flac  0.5594  02 Track02.flac
+     6:43.17       71129228 B   ---   --   ---xx   flac  0.5673  03 Track03.flac
+    12:35.31      133254956 B   ---   --   ---xx   flac  0.5410  04 Track04.flac
+     5:39.57       59933708 B   ---   --   ---xx   flac  0.5366  05 Track05.flac
+     5:59.60       63468764 B   ---   --   ---xx   flac  0.5252  06 Track06.flac
+     6:12.43       65721980 B   ---   --   ---xx   flac  0.6089  07 Track07.flac
+     5:38.24       59679692 B   ---   --   ---xx   flac  0.5064  08 Track08.flac
+     5:28.23       57913340 B   ---   --   ---xx   flac  0.5798  09 Track09.flac
+     6:30.65       68948924 B   ---   --   ---xx   flac  0.5762  10 Track10.flac
+     5:49.03       61570700 B   ---   --   ---xx   flac  0.4891  11 Track11.flac
+    71:08.60      753016804 B                            0.5521  (11 files)
+=================== 
+=================== 
+=================== 

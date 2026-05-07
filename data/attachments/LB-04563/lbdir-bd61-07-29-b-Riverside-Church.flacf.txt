@@ -1,0 +1,44 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-07-29-b-Riverside-Church.flacf 
+=================== 
+=================== 
+=================== 
+1de358f8b2001182d16d02a0341c7ace  bd1961-07-29 Riverside Church.txt
+ee47e806b0bd2eee8717dfcef0127418  bd1961-07-29 Riverside Churchffp.txt
+beab2e95b72633ddd6d96734fe8752f9  bd1961-07-29t01.flac
+f1caf9ffde74750c535a94bf98fdca3f  bd1961-07-29t02.flac
+48fbe343703a58c67c00cb967c13f020  bd1961-07-29t03.flac
+73313caf5dab024367e8a64b39e1de74  bd1961-07-29t04.flac
+9fba10e9511546961a94f3cf3639e1c5  bd1961-07-29t05.flac
+6f15412798346d61a70b964d68b37f59  bd61-07-29-b-Riverside-Church-LB-4563.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-07-29-b-Riverside-Church.flacf 
+=================== 
+=================== 
+=================== 
+bd1961-07-29t01.flac:5fb7e52fa8989c8950c03b653c860c15
+bd1961-07-29t02.flac:9c1e075e2892c1a51e798806bd629e09
+bd1961-07-29t03.flac:3652ffa242598a371def3d50de646036
+bd1961-07-29t04.flac:f1215a7fcf5f9d4fae9d65f7ba56da54
+bd1961-07-29t05.flac:a1a50a519d472630835ed61cf92ffa0b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-07-29-b-Riverside-Church.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.14       56833772 B   ---   --   ---xx   flac  0.4917  bd1961-07-29t01.flac
+     4:03.62       43011068 B   ---   --   ---xx   flac  0.4793  bd1961-07-29t02.flac
+     9:06.47       96424988 B   ---   --   ---xx   flac  0.4680  bd1961-07-29t03.flac
+     3:58.74       42157292 B   ---   --   ---xx   flac  0.5384  bd1961-07-29t04.flac
+     3:33.28       37639100 B   ---   --   ---xx   flac  0.5136  bd1961-07-29t05.flac
+    26:05.00      276066220 B                            0.4916  (5 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-24-you-may-call-me-zimmy.flacf 
+=================== 
+=================== 
+=================== 
+5fd92b6850f68556f8eb1860b00c38cb  bd96-06-24-you-may-call-me-zimmy-d1t01.flac
+0d19ec6e78cb3ab61220990076d08540  bd96-06-24-you-may-call-me-zimmy-d1t02.flac
+016f634ddc8880e98f02c0b34084fee2  bd96-06-24-you-may-call-me-zimmy-d1t03.flac
+9f945c9b2ff93c7b60211654156abaf0  bd96-06-24-you-may-call-me-zimmy-d1t04.flac
+c8749fa2a34b04d5186fafaa99751fb7  bd96-06-24-you-may-call-me-zimmy-d1t05.flac
+3070e8bab61213badb80a15b6a0083a5  bd96-06-24-you-may-call-me-zimmy-d1t06.flac
+b92ad47a8f34f76c8d633e1ceba1d59e  bd96-06-24-you-may-call-me-zimmy-d1t07.flac
+4c4dd575bddd556fb7ac01fa27adbac2  bd96-06-24-you-may-call-me-zimmy-d1t08.flac
+1d824def8fcb4eba04f6e1544e33b2d6  bd96-06-24-you-may-call-me-zimmy-d2t01.flac
+93f3352a40c9b47a2eb8ef24054f2bd1  bd96-06-24-you-may-call-me-zimmy-d2t02.flac
+ca9868e4495c3878c6fcce327aa8aa5b  bd96-06-24-you-may-call-me-zimmy-d2t03.flac
+41610e1d679453ff569a3f019920a722  bd96-06-24-you-may-call-me-zimmy-d2t04.flac
+d37a7dbd920a4763892d78c3c3508b40  bd96-06-24-you-may-call-me-zimmy-d2t05.flac
+a444e925a0346cdc205ed52a5dc48d5e  bd96-06-24-you-may-call-me-zimmy-d2t06.flac
+82e3d507af34f6a678e410d081370bfc  bd96-06-24-you-may-call-me-zimmy-d2t07.flac
+f478d3697b250a519042b8cdb16b2e6f  bd96-06-24-you-may-call-me-zimmy.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-06-24-you-may-call-me-zimmy.flacf 
+=================== 
+=================== 
+=================== 
+bd96-06-24-you-may-call-me-zimmy-d1t01.flac:e899f28e4eb72359818ae61c6ce835d1
+bd96-06-24-you-may-call-me-zimmy-d1t02.flac:199a87ee1cfd50fe4347d266b903a67a
+bd96-06-24-you-may-call-me-zimmy-d1t03.flac:5513fb5c11eed23de745a2d5566f365a
+bd96-06-24-you-may-call-me-zimmy-d1t04.flac:95e5db1fa72d23089f085df853c67623
+bd96-06-24-you-may-call-me-zimmy-d1t05.flac:96428ad026901e8f45761a59b145f4c5
+bd96-06-24-you-may-call-me-zimmy-d1t06.flac:d0623439a86eae282611d793cc4e41b4
+bd96-06-24-you-may-call-me-zimmy-d1t07.flac:b611279f103ee470fde9132553769a63
+bd96-06-24-you-may-call-me-zimmy-d1t08.flac:ef6db90668d4ed56ebbd7c1cf8e94799
+bd96-06-24-you-may-call-me-zimmy-d2t01.flac:b07dd1c5ce91f58f7dd03338b4c41252
+bd96-06-24-you-may-call-me-zimmy-d2t02.flac:c755f50926336c92991e11377563acb6
+bd96-06-24-you-may-call-me-zimmy-d2t03.flac:822da7be486acc2f50286b0a1b584f08
+bd96-06-24-you-may-call-me-zimmy-d2t04.flac:d664974715910bb5edb77f16ca63beda
+bd96-06-24-you-may-call-me-zimmy-d2t05.flac:3eed98497e878ba0d832548ae6169431
+bd96-06-24-you-may-call-me-zimmy-d2t06.flac:a1b2cb5e4fa1343c20eabffd660a93b5
+bd96-06-24-you-may-call-me-zimmy-d2t07.flac:0533b4bfb24d99b6a418873790c88de4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-24-you-may-call-me-zimmy.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.72       52560188 B   ---   --   ---xx   flac  0.6208  bd96-06-24-you-may-call-me-zimmy-d1t01.flac
+     4:53.58       51821660 B   ---   --   ---xx   flac  0.5700  bd96-06-24-you-may-call-me-zimmy-d1t02.flac
+     6:13.02       65801948 B   ---   --   ---xx   flac  0.6115  bd96-06-24-you-may-call-me-zimmy-d1t03.flac
+     9:18.03       98438300 B   ---   --   ---xx   flac  0.5610  bd96-06-24-you-may-call-me-zimmy-d1t04.flac
+     7:31.60       79697564 B   ---   --   ---xx   flac  0.5871  bd96-06-24-you-may-call-me-zimmy-d1t05.flac
+     7:28.15       79062524 B   ---   --   ---xx   flac  0.6107  bd96-06-24-you-may-call-me-zimmy-d1t06.flac
+     8:04.02       85382348 B   ---   --   ---xx   flac  0.5001  bd96-06-24-you-may-call-me-zimmy-d1t07.flac
+     6:08.35       64997564 B   ---   --   ---xx   flac  0.5150  bd96-06-24-you-may-call-me-zimmy-d1t08.flac
+     9:21.50       99078044 B   ---   --   ---xx   flac  0.4956  bd96-06-24-you-may-call-me-zimmy-d2t01.flac
+     4:41.72       49737788 B   ---   --   ---xx   flac  0.5958  bd96-06-24-you-may-call-me-zimmy-d2t02.flac
+     6:41.60       70877564 B   ---   --   ---xx   flac  0.5463  bd96-06-24-you-may-call-me-zimmy-d2t03.flac
+     7:26.33       78752060 B   ---   --   ---xx   flac  0.6341  bd96-06-24-you-may-call-me-zimmy-d2t04.flac
+     6:56.15       73417724 B   ---   --   ---xx   flac  0.6330  bd96-06-24-you-may-call-me-zimmy-d2t05.flac
+     8:48.72       93308588 B   ---   --   ---xx   flac  0.5472  bd96-06-24-you-may-call-me-zimmy-d2t06.flac
+     5:44.60       60822764 B   ---   --   ---xx   flac  0.6425  bd96-06-24-you-may-call-me-zimmy-d2t07.flac
+   104:17.09     1103756628 B                            0.5734  (15 files)
+=================== 
+=================== 
+=================== 

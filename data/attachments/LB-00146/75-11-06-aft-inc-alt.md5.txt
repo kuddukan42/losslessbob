@@ -1,0 +1,8 @@
+d1d3bfc022d894ab5a290f6021748643 *75 11 06 aft inc alt t01.shn
+2b9b6e116fd799f766cf20df6c95c3b6 *75 11 06 aft inc alt t02.shn
+8a78ac755cc7f127c204f5ae9f1350e0 *75 11 06 aft inc alt t03.shn
+d3b6f61e55e04910ea818a5c23f75d6d *75 11 06 aft inc alt t04.shn
+57484af7b8a0ce40e12ccde497a55768 *75 11 06 aft inc alt t05.shn
+df26657a667f2c21825ca2376260bea0 *75 11 06 aft inc alt t06.shn
+93b498d2c807c82b45c6d660952199b9 *75 11 06 aft inc alt t07.shn
+659cb525b2674535c883b6e6518e0ab5 *75 11 06 aft inc alt t08.shn

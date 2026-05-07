@@ -1,0 +1,107 @@
+===================
+===================
+===================
+=== md5 for: bd75-12-04-lk-dvd-set.flacf
+===================
+===================
+===================
+1350c8775b62f0d694a79f010582f651 *1975_12_4_MONTREAL.ffp
+a58715f1f00caee8554a9ae6beff1027 *D1\D1.MD5
+087353331557cceada4e50a14d329f05 *D1\TRACK01.FLAC
+0179060c18ddca92b7b7654747999088 *D1\TRACK02.FLAC
+1506857bd9687b8acd6bb99fb730284e *D1\TRACK03.FLAC
+ab348ea972af2bcf34dabe6ebd01c190 *D1\TRACK04.FLAC
+f4863cba28ef126f1c4fd319e2e39928 *D1\TRACK05.FLAC
+57d5106a853a6d0e9d650b85d727e877 *D1\TRACK06.FLAC
+893d26220006872cb1bdae041a047e4f *D1\TRACK07.FLAC
+bf2d6cbc1f540d74740f8a1f17c17f60 *D1\TRACK08.FLAC
+9939d5c36372d6f42e46be467d8919ba *D1\TRACK09.FLAC
+99539bbb5ebaf951b338338574c03dc6 *D1\TRACK10.FLAC
+3e4be4f516cc7cdedbdf089446d0b55f *D1\TRACK11.FLAC
+299139c1b7ac2bfbd7f9ec9b554facba *D1\TRACK12.FLAC
+b8b7490035a532e2afe9b980e02e2c77 *D1\TRACK13.FLAC
+c8333c72cf04050f51002901feac3c01 *D2\D2.MD5
+ca0a3b481b2e7b8412de15a920fb08a5 *D2\TRACK01.FLAC
+6787204c0249408fb277ee2aa2524377 *D2\TRACK02.FLAC
+aa621b1206f196ac68906592e031bd90 *D2\TRACK03.FLAC
+a5dd75a5bd858da3a56e473c16a5a704 *D2\TRACK04.FLAC
+380ee3279ef0dda8089d9e8243fe7ed2 *D2\TRACK05.FLAC
+6edde54366a8cecbf1ecbf55c4d1df4e *D2\TRACK06.FLAC
+b445fa2935619c3d3e4dbb65132dc517 *D2\TRACK07.FLAC
+caa475b2df09cb01c795e1cfc47dcad8 *D2\TRACK08.FLAC
+93add7151421a659ed00f525b9e5c85f *D2\TRACK09.FLAC
+4d0d7f8b260123372fb11b9f4a5bc547 *D2\TRACK10.FLAC
+===================
+===================
+===================
+=== ffp for: bd75-12-04-lk-dvd-set.flacf
+===================
+===================
+===================
+D1\TRACK01.FLAC:1337f4a9d34e13e6e90608d0b9000152
+D1\TRACK02.FLAC:157df0435d4ff6b8435c102068c11f18
+D1\TRACK03.FLAC:9c14fe5f68db572a9025f1ad3913c6ab
+D1\TRACK04.FLAC:df14be4cf71b2ef0e0f441321fdca1a7
+D1\TRACK05.FLAC:4ea74951c7413746086937efec3114fd
+D1\TRACK06.FLAC:fea62739a3c33d018f75a1be769b15be
+D1\TRACK07.FLAC:4d5968eff9d4ded6aa2bbc89f301e0f0
+D1\TRACK08.FLAC:efe9f964c1bf1ea13962ec3b1639a6f9
+D1\TRACK09.FLAC:3c49f23a9fc4c5b132e0d70c916e33cf
+D1\TRACK10.FLAC:1b2c467f607eecd28d2785e72f3ddce0
+D1\TRACK11.FLAC:f7b8f49b1a38ec926be5dfc243e8c686
+D1\TRACK12.FLAC:f40f5402f7e8e648fd9687ce2dd8aeac
+D1\TRACK13.FLAC:ec313ab6794f1a986f6aa60fd09b3f69
+D2\TRACK01.FLAC:3c75fb0d769ddb7b5d622fe78de23d73
+D2\TRACK02.FLAC:1152efd41d25551bb55b951e4b782399
+D2\TRACK03.FLAC:19f88718e80b6f5d589496c0d88b150b
+D2\TRACK04.FLAC:16f05d7c313728d55ff56cf213bec601
+D2\TRACK05.FLAC:a1b8e792076688c1d36eca99c904901f
+D2\TRACK06.FLAC:c34427724c62962fee9ef86a834b1c4f
+D2\TRACK07.FLAC:c4045ce6641a378f8e075a4ee64ad593
+D2\TRACK08.FLAC:0886428b3bd1873b7b80be43c6cec504
+D2\TRACK09.FLAC:279a945eeaa2fd2358803e3b2a3ff995
+D2\TRACK10.FLAC:636c6a2ed98c57cce57adedf6a550ec5
+===================
+===================
+===================
+=== shntool len for: bd75-12-04-lk-dvd-set.flacf\D1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.39       45602972 B   ---   --   ---xx   flac  0.4698  TRACK01.FLAC
+     5:26.14       57539372 B   ---   --   ---xx   flac  0.4802  TRACK02.FLAC
+     5:21.29       56692652 B   ---   --   ---xx   flac  0.4909  TRACK03.FLAC
+     4:04.27       43105148 B   ---   --   ---xx   flac  0.4865  TRACK04.FLAC
+     5:51.64       62066972 B   ---   --   ---xx   flac  0.4915  TRACK05.FLAC
+     5:07.58       54291260 B   ---   --   ---xx   flac  0.4866  TRACK06.FLAC
+     5:47.12       61239068 B   ---   --   ---xx   flac  0.4963  TRACK07.FLAC
+     2:45.60       29247164 B   ---   --   ---xx   flac  0.4733  TRACK08.FLAC
+     3:38.29       38523452 B   ---   --   ---xx   flac  0.4723  TRACK09.FLAC
+     3:26.41       36434876 B   ---   --   ---xx   flac  0.4545  TRACK10.FLAC
+     2:51.60       30305564 B   ---   --   ---xx   flac  0.4458  TRACK11.FLAC
+     3:30.73       37215740 B   ---   --   ---xx   flac  0.4431  TRACK12.FLAC
+     4:32.52       48103148 B   ---   --   ---xx   flac  0.4135  TRACK13.FLAC
+    56:43.33      600367388 B                            0.4725  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd75-12-04-lk-dvd-set.flacf\D2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.03       44989100 B   ---   --   ---xx   flac  0.4221  TRACK01.FLAC
+     3:21.05       35468204 B   ---   --   ---xx   flac  0.4114  TRACK02.FLAC
+     7:18.17       77303228 B   ---   --   ---xx   flac  0.4238  TRACK03.FLAC
+     4:16.73       45330140 B   ---   --   ---xx   flac  0.4381  TRACK04.FLAC
+     8:20.61       88343516 B   ---   --   ---xx   flac  0.4667  TRACK05.FLAC
+     4:39.34       49295612 B   ---   --   ---xx   flac  0.4313  TRACK06.FLAC
+     4:58.67       52724828 B   ---   --   ---xx   flac  0.4212  TRACK07.FLAC
+     4:35.43       48611180 B   ---   --   ---xx   flac  0.4502  TRACK08.FLAC
+     4:05.70       43382684 B   ---   --   ---xx   flac  0.4710  TRACK09.FLAC
+     3:54.08       41296460 B   ---   --   ---xx   flac  0.4664  TRACK10.FLAC
+    49:46.06      526744952 B                            0.4414  (10 files)
+===================
+===================
+===================

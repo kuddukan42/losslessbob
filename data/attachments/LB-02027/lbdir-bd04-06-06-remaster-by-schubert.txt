@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-06-remaster-by-schubert 
+=================== 
+=================== 
+=================== 
+d1217e3d089d92cfd0f6f4fd7a163db0  bd04-06-06-remaster-by-schubert.txt
+60024fc26679c6d5db523f9eca710989  bd_04-06-06_d1.shnf\VERIFY_bd_04-06-06_d1.bat
+ec8e93522ebcfe355ce83f3bd33cb6cb  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 1.shn
+9c1166ff88de11035b8e964600a29401  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 10.shn
+758fcff0c4ade4b3e3eaf0ea3e68e044  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 2.shn
+2bfd4b0040fd100bdeca867496fb7959  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 3.shn
+2485006bc5a5e45883439fb49f1f7f90  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 4.shn
+1847971c569733c249e0b9e7ac67456f  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 5.shn
+2627f4366681b30ade77901d277d2c06  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 6.shn
+ace5298734f0206c8bde6aa8787c9236  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 7.shn
+e3cf47e8a7d760cc45073a35d7335ccb  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 8.shn
+1f85cb1faddd9639a99f20cffe857b23  bd_04-06-06_d1.shnf\bd_04-06-06_d1_Track_ 9.shn
+edffc0fab4392688b570e40fcbaec5f5  bd_04-06-06_d1.shnf\bd_04-06-06_d1_encode_notes.txt
+fe0bf0be93f3425b99e06ad85f972660  bd_04-06-06_d1.shnf\bd_04-06-06_d1_shn.md5
+151aac0ecbb9482680b80e88de822b9b  bd_04-06-06_d2.shnf\VERIFY_bd_04-06-06_d2.bat
+ae8e4d6a52d7af10443a9c5f458a1cad  bd_04-06-06_d2.shnf\bd_04-06-06_d2_Track_ 1.shn
+a075f2b2379a4f6fa48803a0799b50bc  bd_04-06-06_d2.shnf\bd_04-06-06_d2_Track_ 2.shn
+57169600987bb56e67a776dc9df30a23  bd_04-06-06_d2.shnf\bd_04-06-06_d2_Track_ 3.shn
+efaff7e708865fbf9b0e92aad8087ef9  bd_04-06-06_d2.shnf\bd_04-06-06_d2_Track_ 4.shn
+bca0adec57148e5d98a0f5224b1836df  bd_04-06-06_d2.shnf\bd_04-06-06_d2_Track_ 5.shn
+1774140d68de66235268327cfa09fd3e  bd_04-06-06_d2.shnf\bd_04-06-06_d2_Track_ 6.shn
+a7721e1a5c6b7d4e03328a4cd15b9841  bd_04-06-06_d2.shnf\bd_04-06-06_d2_Track_ 7.shn
+da6dc2a1a213e03e06ae2a820b73a26b  bd_04-06-06_d2.shnf\bd_04-06-06_d2_Track_ 8.shn
+4bbc587bdb9a2e1d4393dc9869d6e38e  bd_04-06-06_d2.shnf\bd_04-06-06_d2_encode_notes.txt
+783a28054060e6d9c6bc8c734b9752e1  bd_04-06-06_d2.shnf\bd_04-06-06_d2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-06-06-remaster-by-schubert\bd_04-06-06_d1.shnf 
+=================== 
+=================== 
+=================== 
+8b2c2d7556836fdf0a1b4d488a688f27  [shntool]  bd_04-06-06_d1_Track__1.wav
+47a30a9d0e2369dd5ec33297e16ddd4f  [shntool]  bd_04-06-06_d1_Track__2.wav
+877c0f97b804ebd0c955c0946efe6bb6  [shntool]  bd_04-06-06_d1_Track__3.wav
+52c260b48cc27665301386097d3ec2cb  [shntool]  bd_04-06-06_d1_Track__4.wav
+2af3c6ed20ad03e7ec31f0ff55c5a3e7  [shntool]  bd_04-06-06_d1_Track__5.wav
+c04853913bb572824519a82f366c931e  [shntool]  bd_04-06-06_d1_Track__6.wav
+da79a08b60a442e7698db484f660338c  [shntool]  bd_04-06-06_d1_Track__7.wav
+7524a87094dc32d244d5d467d2f7ff30  [shntool]  bd_04-06-06_d1_Track__8.wav
+04563d6981cca96bba8aa20c1ca9c059  [shntool]  bd_04-06-06_d1_Track__9.wav
+a2544de27719e54f0ea3427a28d2588f  [shntool]  bd_04-06-06_d1_Track__10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-06-06-remaster-by-schubert\bd_04-06-06_d2.shnf 
+=================== 
+=================== 
+=================== 
+64594aa915c7e64e7e15fbf866bf1e7e  [shntool]  bd_04-06-06_d2_Track__1.wav
+35f4864cd5da77a7b04f326d8a0d9e88  [shntool]  bd_04-06-06_d2_Track__2.wav
+f187e9dad1d994db746af4015e81e04a  [shntool]  bd_04-06-06_d2_Track__3.wav
+0de736763a61bcd54ddaa269942a565f  [shntool]  bd_04-06-06_d2_Track__4.wav
+111a80e1b6447a25e52d387e6050dc27  [shntool]  bd_04-06-06_d2_Track__5.wav
+aa5b16c947f7ff2973ca321fb381a2ae  [shntool]  bd_04-06-06_d2_Track__6.wav
+374a4723d3c4336084ff053dc8bd6f03  [shntool]  bd_04-06-06_d2_Track__7.wav
+2641d147fa2d93a0bf16a1ec10bb0876  [shntool]  bd_04-06-06_d2_Track__8.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-06-remaster-by-schubert\bd_04-06-06_d1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:11.10       12547532 B   -b-   --   -----    wav  1.0000  bd_04-06-06_d1_Track__1.wav
+     6:38.01       70208944 B   -b-   --   -----    wav  1.0000  bd_04-06-06_d1_Track__10.wav
+     3:26.04       36347852 B   ---   --   -----    wav  1.0000  bd_04-06-06_d1_Track__2.wav
+     6:34.59       69640412 B   ---   --   -----    wav  1.0000  bd_04-06-06_d1_Track__3.wav
+     6:13.51       65917196 B   ---   --   -----    wav  1.0000  bd_04-06-06_d1_Track__4.wav
+     6:39.58       70520060 B   ---   --   -----    wav  1.0000  bd_04-06-06_d1_Track__5.wav
+     6:52.29       72745052 B   ---   --   -----    wav  1.0000  bd_04-06-06_d1_Track__6.wav
+     5:37.66       59602076 B   ---   --   -----    wav  1.0000  bd_04-06-06_d1_Track__7.wav
+     5:49.51       61683596 B   ---   --   -----    wav  1.0000  bd_04-06-06_d1_Track__8.wav
+     7:06.21       75195836 B   ---   --   -----    wav  1.0000  bd_04-06-06_d1_Track__9.wav
+    56:09.50      594408556 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-06-remaster-by-schubert\bd_04-06-06_d2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:05.06       74983724 B   -b-   --   -----    wav  1.0000  bd_04-06-06_d2_Track__1.wav
+     5:04.34       53705612 B   ---   --   -----    wav  1.0000  bd_04-06-06_d2_Track__2.wav
+     6:44.44       71369132 B   ---   --   -----    wav  1.0000  bd_04-06-06_d2_Track__3.wav
+     5:43.21       60554636 B   ---   --   -----    wav  1.0000  bd_04-06-06_d2_Track__4.wav
+     8:19.21       88073036 B   ---   --   -----    wav  1.0000  bd_04-06-06_d2_Track__5.wav
+     4:40.45       49497884 B   ---   --   -----    wav  1.0000  bd_04-06-06_d2_Track__6.wav
+     7:11.10       76051964 B   ---   --   -----    wav  1.0000  bd_04-06-06_d2_Track__7.wav
+     5:33.33       58818664 B   -b-   --   -----    wav  1.0000  bd_04-06-06_d2_Track__8.wav
+    50:21.64      533054652 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

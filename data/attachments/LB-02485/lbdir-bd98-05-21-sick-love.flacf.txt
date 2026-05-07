@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-05-21-sick-love.flacf 
+=================== 
+=================== 
+=================== 
+eaa3e9a58701d71af5b9ee76960ec19f  bd98-05-21-sick-love.txt
+86a46e17e3700557417de140985ffaf2  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 01).flac
+15afa3dcf59036898a38c4cd3243139d  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 02).flac
+01b16ad1b886c868c4e6bfaaf7c1e680  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 03).flac
+ae28a54e892e246ba034d3878f68e72f  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 04).flac
+a08644084bfef72d9377b529cc149f65  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 05).flac
+6cf1f7e33898598c46a53bacaa747ef8  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 06).flac
+e43722d7a6705fdce59a1e0f4a09a4a0  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 07).flac
+6606149fe9f619092aa2c02d84b46ae3  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 08).flac
+5f44187e829627a9e924023113f3b1ea  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 09).flac
+f0373942332694766db436e08e665f21  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 10).flac
+598d8cdcadbdf8fc909276f0d1b10ba1  dylanmorrison1\Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 11).flac
+9290d7c9372a16095dca889c0bc7a4ce  dylanmorrison1\Bob Dylan - Sick Love.m3u
+f6db2270c67023b348589b221661da08  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 01).flac
+505e5cd19af1597404051b178c0f9a4c  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 02).flac
+5cd5ccdb283ad9e16e7839008847f173  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 03).flac
+01b2c86830a4bdb42042414cf2d30d2a  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 04).flac
+77de07c4c4881a22d18d4f08287da909  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 05).flac
+4d59e9a1bacfd1cc7e8d4c03845aa50e  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 06).flac
+af374f9ff77d988994ef0a95522fa646  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 07).flac
+34aaa43a9d5a9f9afd9a682bfe78f93c  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 08).flac
+976c0ae638f26c5ee5ee5372eb8261c3  dylanmorrison2\Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 09).flac
+e1c5ce3955b87a609b3f5c1728f03571  dylanmorrison2\Sick Love.m3u
+dbc0f86955b1616cb196a65cca463e09  Sick Love May 21 1998 UCLA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-05-21-sick-love.flacf\dylanmorrison1 
+=================== 
+=================== 
+=================== 
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 01).flac:5b2c6e0896aa2dd67f7fde8643c00396
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 02).flac:1d5d4f8d2722d49226a55c906f60b59f
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 03).flac:637b63e6cdee8b7f52da46c8d69bd24a
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 04).flac:415b22b24dc37273d5e3851e714c0d8a
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 05).flac:b301a11e8c9d230cb0b1e11a6ff7738a
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 06).flac:8a68b15e93741df00916596852270b7f
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 07).flac:31af0754a3e75f762e1ffc22b9623657
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 08).flac:ac07b50f68033303dd1ddad45049e9a7
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 09).flac:58a2a5058ef9597fcecc8279d7fff008
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 10).flac:c30f0e7fe5b16087af54eb063be8bf18
+Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 11).flac:85f700361d2c2b175c6d1b914e2a6f03
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-05-21-sick-love.flacf\dylanmorrison2 
+=================== 
+=================== 
+=================== 
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 01).flac:686469c341272df0a7703b8d732edac0
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 02).flac:a8189e77983c7f4da5ac318b7fbb9423
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 03).flac:054111689adec979476be724d017f9fe
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 04).flac:a389d12f35a97b7a5f10f543268cb9f0
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 05).flac:bc640f0830104422478b3443f174b7da
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 06).flac:ce5a71063444045c89ed01cd9743803f
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 07).flac:090a2450a8989bf38bd4f6a411599661
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 08).flac:5d0bbf32a111c7eff63174b541ea4688
+Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 09).flac:3a3441fd96913c7c25a766bebd3af1ed
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-05-21-sick-love.flacf\dylanmorrison1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.72       48855788 B   ---   --   ---xx   flac  0.6532  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 01).flac
+     4:21.32       46115708 B   ---   --   ---xx   flac  0.6389  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 02).flac
+     6:22.28       67450700 B   ---   --   ---xx   flac  0.6556  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 03).flac
+     5:42.57       60462908 B   ---   --   ---xx   flac  0.6271  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 04).flac
+     6:43.53       71213900 B   ---   --   ---xx   flac  0.6630  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 05).flac
+     3:13.33       34122860 B   ---   --   ---xx   flac  0.5967  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 06).flac
+     5:16.53       55867100 B   ---   --   ---xx   flac  0.6017  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 07).flac
+     8:43.54       92384252 B   ---   --   ---xx   flac  0.6695  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 08).flac
+     4:39.66       49370876 B   ---   --   ---xx   flac  0.5795  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 09).flac
+     4:35.18       48552380 B   ---   --   ---xx   flac  0.6801  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 10).flac
+     6:36.17       69894428 B   ---   --   ---xx   flac  0.6358  Bob Dylan & Van Morrison -  Sick Love disk 1 (Track 11).flac
+    60:52.33      644290900 B                            0.6404  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-05-21-sick-love.flacf\dylanmorrison2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.33       56172860 B   ---   --   ---xx   flac  0.6514  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 01).flac
+     3:53.51       41221196 B   ---   --   ---xx   flac  0.6990  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 02).flac
+     5:36.46       59378636 B   ---   --   ---xx   flac  0.6241  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 03).flac
+     3:20.47       35390588 B   ---   --   ---xx   flac  0.6505  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 04).flac
+     5:06.44       54081932 B   ---   --   ---xx   flac  0.5927  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 05).flac
+     4:57.32       52466108 B   ---   --   ---xx   flac  0.5694  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 06).flac
+     7:50.55       83037404 B   ---   --   ---xx   flac  0.5933  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 07).flac
+     4:32.26       48041996 B   ---   --   ---xx   flac  0.5885  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 08).flac
+    13:56.15      147505724 B   ---   --   ---xx   flac  0.5736  Bob Dylan & Van Morrison -  Sick Love disk 2 (Track 09).flac
+    54:32.49      577296444 B                            0.6055  (9 files)
+=================== 
+=================== 
+=================== 

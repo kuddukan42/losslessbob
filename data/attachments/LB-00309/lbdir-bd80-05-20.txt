@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-05-20 
+=================== 
+=================== 
+=================== 
+59c3ffae2a4deb29ffab707a0cdf7c68  052080bk.gif
+ac1c2d57c6849c57d8af37c9bdda346e  052080fr.jpg
+33753f8d34cc30698d6cfa7446148cb8  bd80-05-20.md5
+1c87726f838555beffeb49e51a6437cc  bd80-05-20.txt
+9be7377dc222f4e824d60206d9293be6  bd80-05-20d1t01.shn
+705fa3b75764345086ffe046b9b00970  bd80-05-20d1t02.shn
+ab366a5a83b4facb77d8fb61efab46d2  bd80-05-20d1t03.shn
+592059f8bbd9fe443aa6a198c5ff0e87  bd80-05-20d1t04.shn
+d9aa8bc15c07fa8b9f99e5b089841ca9  bd80-05-20d1t05.shn
+7b009969c1cee03a7fed59ef5610e13c  bd80-05-20d1t06.shn
+25e165ae250c64355976c1af891713bb  bd80-05-20d1t07.shn
+54022cd320e3094f9fb7b32770ad61cd  bd80-05-20d1t08.shn
+422b4063950b25bd8c8b4e1755d0287b  bd80-05-20d1t09.shn
+7025801b6514a15805978b8511ad4747  bd80-05-20d2t01.shn
+76db1760cb0aa5e6e308e84c904763fb  bd80-05-20d2t02.shn
+899f0787a43c6409fe202f35b51e3047  bd80-05-20d2t03.shn
+358a816777feaf0ae9ce70c10e4ebc5f  bd80-05-20d2t04.shn
+98c551112a62393e35b3818d9847c918  bd80-05-20d2t05.shn
+a18f687eaaa302b83872f34661ebfc92  bd80-05-20d2t06.shn
+35616f886fcde1dfbac1cf04f9a9e25c  bd80-05-20d2t07.shn
+fc9960ac94acba1f92f0d94b65a4f723  bd80-05-20d2t08.shn
+3e6ad8e75d3f7dad2a5d8a21d0e7e68e  bd80-05-20d2t09.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-05-20 
+=================== 
+=================== 
+=================== 
+7aab817ddeb10cd69a171709ecb16da4  [shntool]  bd80-05-20d1t01.wav
+af221f24e1ff912b5d178c1e14efb221  [shntool]  bd80-05-20d1t02.wav
+6af56c78d3a7a8aad62c55ff8d87c0a4  [shntool]  bd80-05-20d1t03.wav
+ad71d122841cef78b8bfb2ab63ca7982  [shntool]  bd80-05-20d1t04.wav
+56d322e5dd218d9cb1507fa24c74f51a  [shntool]  bd80-05-20d1t05.wav
+da3965cf8ce03314c0da51d56d6ebf75  [shntool]  bd80-05-20d1t06.wav
+db0358a19431a9fe6ecc3405064e1a1d  [shntool]  bd80-05-20d1t07.wav
+0cbaaf9bf18dfbffab1daaa2bbfb5147  [shntool]  bd80-05-20d1t08.wav
+17ff5d8e3f8b65d10233e69561d47153  [shntool]  bd80-05-20d1t09.wav
+18f3f68f40b00dab9307d1fe1b6c35d5  [shntool]  bd80-05-20d2t01.wav
+7711efd9210eec7a2264241fe68548fc  [shntool]  bd80-05-20d2t02.wav
+5bb9319f6d76ee4c8a4fd39ab8b019ab  [shntool]  bd80-05-20d2t03.wav
+2808300e94dc0c59e5597d0bedaebce3  [shntool]  bd80-05-20d2t04.wav
+7d35539915c4567f7b33a85312477351  [shntool]  bd80-05-20d2t05.wav
+c914bf6693095859217c36efb6a9743c  [shntool]  bd80-05-20d2t06.wav
+62cc2a137db17a0909c96ac9df213928  [shntool]  bd80-05-20d2t07.wav
+83cf28424a23cbee1120894b99277279  [shntool]  bd80-05-20d2t08.wav
+5dfa455545a811005072d88d125a80f7  [shntool]  bd80-05-20d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-05-20 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:52.64       41075372 B   ---   --   ---xx    shn  0.7053  bd80-05-20d1t01.shn
+     7:05.72       75139388 B   ---   --   ---xx    shn  0.6968  bd80-05-20d1t02.shn
+     5:02.39       53364572 B   ---   --   ---xx    shn  0.6813  bd80-05-20d1t03.shn
+     5:57.65       63127724 B   ---   --   ---xx    shn  0.7104  bd80-05-20d1t04.shn
+     0:40.57        7190108 B   ---   --   ---xx    shn  0.6649  bd80-05-20d1t05.shn
+     4:09.19       43968332 B   ---   --   ---xx    shn  0.6916  bd80-05-20d1t06.shn
+     4:41.45       49674284 B   ---   --   ---xx    shn  0.6809  bd80-05-20d1t07.shn
+     6:01.59       63819212 B   ---   --   ---xx    shn  0.6994  bd80-05-20d1t08.shn
+     6:13.13       65827820 B   ---   --   ---xx    shn  0.6785  bd80-05-20d1t09.shn
+     0:37.55        6656204 B   ---   --   ---xx    shn  0.6476  bd80-05-20d2t01.shn
+     6:36.09       69875612 B   ---   --   ---xx    shn  0.6943  bd80-05-20d2t02.shn
+     4:57.74       52564892 B   ---   --   ---xx    shn  0.6844  bd80-05-20d2t03.shn
+     3:59.13       42190220 B   ---   --   ---xx    shn  0.7074  bd80-05-20d2t04.shn
+     4:26.48       47035340 B   ---   --   ---xx    shn  0.6441  bd80-05-20d2t05.shn
+     4:48.11       50829116 B   ---   --   ---xx    shn  0.6752  bd80-05-20d2t06.shn
+     6:43.21       71138636 B   ---   --   ---xx    shn  0.6515  bd80-05-20d2t07.shn
+     4:25.41       46842476 B   ---   --   ---xx    shn  0.6762  bd80-05-20d2t08.shn
+     4:51.49       51447692 B   ---   --   ---xx    shn  0.6618  bd80-05-20d2t09.shn
+    85:12.04      901767000 B                            0.6833  (18 files)
+=================== 
+=================== 
+=================== 

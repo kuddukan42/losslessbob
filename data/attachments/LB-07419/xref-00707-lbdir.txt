@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-11-12-c.flacf 
+=================== 
+=================== 
+=================== 
+86e745a31a778edf78fa9f6d1a8c9d10  01 To be Alone With You.flac
+540b30d50240b257d031ddf5ebf301c7  02 Tears of Rage.flac
+f455459cfb8b3af666605c5cdb674a65  03 All Along the Watchtower.flac
+ba0a52747f0a2f005f38a4989797c160  04 I'll Be Your Baby Tonight.flac
+29b290ae0f595abe019431b505029e17  05 Gotta Serve Somebody.flac
+d0e54781e6609d80f68599d1d46f818f  06 The Man in Me.flac
+f81c05f021e6de8d00859bc15ff2717c  07 Senor.flac
+f612f5f87672eafd0a7736d9da12233d  08 Watching the River Flow.flac
+88561803a3469d4f53aeb953fb06c706  09 It's All Over Now, Baby Blue.flac
+8d41a74a65d2de16383f5edf0f4f2769  10 Gates of Eden.flac
+e029e4f20ad438d0434fa860a8f692b3  11 Mr Tambourine Man.flac
+c8d65f60878a0920a0eab61ce39affc7  12 Boots of Spanish Leather.flac
+3bf7b87fc75e79592763fc671221bdad  13 Dust My Broom.flac
+fa11cc2aa175a8aca445ae3be0668b07  14 Confidential.flac
+8cf205192aa8e4a66ae9378a75946531  15 Maggie's Farm.flac
+0cc6200a24c83a1d1cb4ec3d2d31b111  16 Everything is Broken.flac
+4eb88bd537cd3c79605c2c6c9875ea13  17 Just Like a Woman.flac
+e3007890de895f3f7b04f5a5c2ff6f87  18 Highway 61 Revisited.flac
+66be036173666cc72a994418088c186f  BOB DYLAN - 1991-11-12 DETROIT MI (AUD Xfer from cassette).ffp
+e93a0347816d2a3064d9f3c4784dc7f0  BOB DYLAN - 1991-11-12 DETROIT MI (AUD Xfer from cassette).md5
+eb0ebd9632913decebbc254afd115c27  BOB DYLAN - 1991-11-12 DETROIT MI (AUD Xfer from cassette).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-11-12-c.flacf 
+=================== 
+=================== 
+=================== 
+01 To be Alone With You.flac:c8f0ac54a46d5c13f438fb0ca4ecebc0
+02 Tears of Rage.flac:c75c59cc90f480be1bbfceeac8ed27c3
+03 All Along the Watchtower.flac:dd5e2d33d9d6ca9498fc352c9e5c7f4f
+04 I'll Be Your Baby Tonight.flac:b181dbdfa6303ec665b4cc25aeab3b98
+05 Gotta Serve Somebody.flac:990fc56e8d9c1d5f98869de622088687
+06 The Man in Me.flac:dbcd412e733b46d5a0494e28c222737f
+07 Senor.flac:b7c08579b0717390977229b09644e023
+08 Watching the River Flow.flac:b9d2d02e3aa2262b9791d03f0a733cc9
+09 It's All Over Now, Baby Blue.flac:2c33b91616292a72c0464fb93e5e7c14
+10 Gates of Eden.flac:1946a92cd2ff87c98fc05f45dec98a33
+11 Mr Tambourine Man.flac:0ceac3ff2842faabdad3f8179c89bf69
+12 Boots of Spanish Leather.flac:9afd4bd62660d3bc7a1ac94c99d99600
+13 Dust My Broom.flac:9a245a798d3592a7b1ea114f61d7f62f
+14 Confidential.flac:68cac914ee974283d3b47bab3ebf1717
+15 Maggie's Farm.flac:4f5760240e22b640220b97a5f8d07afe
+16 Everything is Broken.flac:874011004c0412c115c7da16f03b7cd2
+17 Just Like a Woman.flac:2f5dc4bfa9a87ed29dba3764ed7619d1
+18 Highway 61 Revisited.flac:c3fb720acdb68aca10ea2a369930a029
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-11-12-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:19.74       45861692 B   ---   --   ---xx   flac  0.6171  01 To be Alone With You.flac
+     6:30.01       68798396 B   ---   --   ---xx   flac  0.6207  02 Tears of Rage.flac
+     4:33.14       48190172 B   ---   --   ---xx   flac  0.6241  03 All Along the Watchtower.flac
+     4:27.24       47155292 B   ---   --   ---xx   flac  0.6259  04 I'll Be Your Baby Tonight.flac
+     5:43.45       60611084 B   ---   --   ---xx   flac  0.6326  05 Gotta Serve Somebody.flac
+     6:22.44       67488332 B   ---   --   ---xx   flac  0.6202  06 The Man in Me.flac
+     4:11.15       44311724 B   ---   --   ---xx   flac  0.6124  07 Senor.flac
+     4:55.55       52167404 B   ---   --   ---xx   flac  0.6326  08 Watching the River Flow.flac
+     7:00.07       74104588 B   -b-   --   ---xx   flac  0.5910  09 It's All Over Now, Baby Blue.flac
+     4:26.48       47035708 B   -b-   --   ---xx   flac  0.5971  10 Gates of Eden.flac
+     9:14.67       97882780 B   -b-   --   ---xx   flac  0.5943  11 Mr Tambourine Man.flac
+     6:24.02       67742348 B   ---   --   ---xx   flac  0.5915  12 Boots of Spanish Leather.flac
+     5:09.04       54517052 B   ---   --   ---xx   flac  0.6183  13 Dust My Broom.flac
+     4:05.13       43248620 B   ---   --   ---xx   flac  0.6101  14 Confidential.flac
+     6:08.25       64974044 B   ---   --   ---xx   flac  0.6267  15 Maggie's Farm.flac
+     5:40.58       60112460 B   ---   --   ---xx   flac  0.6198  16 Everything is Broken.flac
+     7:53.40       83531324 B   ---   --   ---xx   flac  0.6140  17 Just Like a Woman.flac
+     5:07.73       54326220 B   -b-   --   ---xx   flac  0.6346  18 Highway 61 Revisited.flac
+   102:14.09     1082059240 B                            0.6145  (18 files)
+=================== 
+=================== 
+=================== 

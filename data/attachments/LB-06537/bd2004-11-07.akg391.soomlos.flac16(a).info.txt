@@ -1,0 +1,60 @@
+Bob Dylan
+University Of Pittsburgh
+Petersen Events Center
+Pittsburgh, Pennsylvania
+November 7, 2004
+
+Disc 1:
+01. introduction
+02. Rainy Day Women #12 & 35
+03. Forever Young
+04. God Knows
+05. Bye And Bye
+06. It's Alright, Ma (I'm Only Bleeding)
+07. Lady, Lady, Lay
+08. High Water (For Charley Patton)
+09. Positively 4th Street
+10. Watching The River Flow
+11. Can't Wait
+12. Don't Think Twice, It's All Right
+
+Disc 2:
+01. Honest With Me
+02. Sugar Baby
+03. Summer Days
+04. Like A Rolling Stone
+05. band introduction
+06. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Stu Kimball - guitar
+Larry Campbell - guitar, steel guitar, cittern
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+11th row center
+akg391's > denecke ps-2/ad-20 > sony tcd-d8
+sony tcd-d8 > m-audio mt1 > usb > hdd
+sony sound forge 9.0 > cd wave > flac
+
+ffp
+bd2004-11-07d1t01.flac:f00359cb3e63168e50992ab0cdc0a2ec
+bd2004-11-07d1t02.flac:058a50ca50cbc3be8a276bdd160a6c49
+bd2004-11-07d1t03.flac:0b157ec9a59065cc7a930e2d6847834e
+bd2004-11-07d1t04.flac:72a72f2a1cbb7cf5415485e7fcc5090f
+bd2004-11-07d1t05.flac:f0442ca2cd7e02775410ce2df215f7d2
+bd2004-11-07d1t06.flac:3d0dad98d6de2b2107cd8e2fa38d4886
+bd2004-11-07d1t07.flac:057c08ab16c9491507e4e22c3784d05a
+bd2004-11-07d1t08.flac:050b8ff61a097679815bc333373c74ce
+bd2004-11-07d1t09.flac:7d9dd6caa64a579964b24e4c86ad03c4
+bd2004-11-07d1t10.flac:476ef1fa3561e86b3b05789c9a0f6a6f
+bd2004-11-07d1t11.flac:92f549f11083096f953e7cb9924632da
+bd2004-11-07d1t12.flac:201d22e0c749100002706a4edb7b4fd1
+bd2004-11-07d2t01.flac:690cd546d26f19255d307ceb370d3c6f
+bd2004-11-07d2t02.flac:c05ac73d54ded0642a28a3a9156346a5
+bd2004-11-07d2t03.flac:17898cf8712bb5c2555d4f5f19835ef8
+bd2004-11-07d2t04.flac:cf527d17677066117a064b8d06f82746
+bd2004-11-07d2t05.flac:f8f4d8572a5810f69b3026b372227dba
+bd2004-11-07d2t06.flac:73a13a8264be430ea2a23a42ce26fc6c

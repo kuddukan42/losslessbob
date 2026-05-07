@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-05-Visit-To-Islael-Captain-Acid-Pink-Robert-RM.flacf 
+=================== 
+=================== 
+=================== 
+c66181beca0ba26653b36fae3a16fbb3  BobDylan01TelAviv.txt
+3c760e1ec54c28ae7569f22b1a7638ee  BobDylan01TelAviv87.md5
+6dc6189851ae8aab9651c020df2fb734  CD1\CD1.md5
+cae29480a02a8f47b788bd8c93b7d4e2  CD1\Track01.flac
+ee04e9c2421c12e5aefa6ee69ced39de  CD1\Track02.flac
+555c0c73c468bf6f3e695aa1dd103691  CD1\Track03.flac
+ea2255e507a61be77285e0506606dae6  CD1\Track04.flac
+b07cc0cb735b5cb060afe29ea9c5555a  CD1\Track05.flac
+26110e5a5388f76b0b7d9c0e9bc478ce  CD1\Track06.flac
+4288cea509f672bae5b4614bb5d61628  CD1\Track07.flac
+c1c783f35888b59dfc1d75153d6c050d  CD2\CD2.md5
+feb3e9f62f038f982a5a68af0a0093de  CD2\Track01.flac
+b6e67aad9b8dc46238daf9f6027b307e  CD2\Track02.flac
+9337d6fd3e0991281203935f76d981f2  CD2\Track03.flac
+d5fb08b156dff59a2c9a291b22b0cb48  CD2\Track04.flac
+5a2252f6c185115ed81f932d6912e39e  CD2\Track05.flac
+cc6cf158240a3fb86694a7530949e609  CD2\Track06.flac
+048c9b6e878b0ac1b68c6829060cfa78  CD2\Track07.flac
+ae9b02cca24bd602ba104abed67410f5  CD2\Track08.flac
+ff45209fd3afcfa71749661310459ed9  CD2\Track09.flac
+3fef8887f86408574f0fd8995270d079  CD2\Track10.flac
+516cebe0f3a5ecd0e48a1b0ca467e990  DylanVisitTo.jpg
+b561ec2c20c91ad70f409d2a92593c04  DylanVisitToFront2.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-05-Visit-To-Islael-Captain-Acid-Pink-Robert-RM.flacf\cd1 
+=================== 
+=================== 
+=================== 
+track01.flac:bf238c11ed9ddae92d34758ef16ecf7a
+track02.flac:9cc9a8ba9a47af24072892fbcf6fd72e
+track03.flac:13f6861d45447d12b4cdae80cff91e4a
+track04.flac:6b5834af38ff6e0bbfdb2719e6911563
+track05.flac:8c626635e761d69304d2d3b020a33e7b
+track06.flac:22f85f97bf70a9e535b4cd8b539d7a64
+track07.flac:822d5291111c68bfe6f57ceb0dd1187e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-05-Visit-To-Islael-Captain-Acid-Pink-Robert-RM.flacf\cd2 
+=================== 
+=================== 
+=================== 
+track01.flac:a5d0691b6f785910a6d24b9f208c5ef6
+track02.flac:340a78204dfda06d7c5dc0cebf5a2c96
+track03.flac:7c39b8874a8f422fe2fc329957a2c8df
+track04.flac:1cb335a958f6a7ef1a83c3e8a0337c8e
+track05.flac:e6eda51b2b61e3094347df8e13809484
+track06.flac:e65e72695b72a2f10f4d106a40d79d35
+track07.flac:5118f92fdf1693ab227658be36441615
+track08.flac:c91123a7ffa9172a187c448391c49384
+track09.flac:d18a6d3ee6ef708c89709b44ce537330
+track10.flac:2d0808047daca9d79b27b20cab8b6863
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-05-Visit-To-Islael-Captain-Acid-Pink-Robert-RM.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.53       48811100 B   ---   --   ---xx   flac  0.7463  Track01.flac
+     4:43.00       49921244 B   ---   --   ---xx   flac  0.7416  Track02.flac
+     6:04.05       64221404 B   ---   --   ---xx   flac  0.7222  Track03.flac
+     4:36.65       48839324 B   ---   --   ---xx   flac  0.7443  Track04.flac
+     6:38.55       70336604 B   ---   --   ---xx   flac  0.7341  Track05.flac
+     4:15.52       45104348 B   ---   --   ---xx   flac  0.7211  Track06.flac
+     6:54.73       73201340 B   ---   --   ---xx   flac  0.6628  Track07.flac
+    37:50.03      400435364 B                            0.7213  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-05-Visit-To-Islael-Captain-Acid-Pink-Robert-RM.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:23.20       67608284 B   ---   --   ---xx   flac  0.7338  Track01.flac
+     5:21.25       56683244 B   ---   --   ---xx   flac  0.6965  Track02.flac
+     7:27.57       78984908 B   ---   --   ---xx   flac  0.7007  Track03.flac
+     4:41.28       49634300 B   ---   --   ---xx   flac  0.7073  Track04.flac
+     4:26.37       47009468 B   ---   --   ---xx   flac  0.6896  Track05.flac
+     5:41.55       60281804 B   ---   --   ---xx   flac  0.6821  Track06.flac
+     4:57.33       52468460 B   ---   --   ---xx   flac  0.6944  Track07.flac
+     7:22.05       77980604 B   ---   --   ---xx   flac  0.6860  Track08.flac
+     3:37.20       38325884 B   ---   --   ---xx   flac  0.6870  Track09.flac
+     4:57.17       52430828 B   ---   --   ---xx   flac  0.6420  Track10.flac
+    54:55.72      581407784 B                            0.6932  (10 files)
+=================== 
+=================== 
+=================== 

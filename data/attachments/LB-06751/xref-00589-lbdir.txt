@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd83-04-11-inc-Rough-Cuts-bnc.flacf 
+=================== 
+=================== 
+=================== 
+7e2bcd35c3e7fe227772105aff34fe58  Bob Dylan and Mark Knopfler rough cuts inf.txt
+cdddd6c91c8c5f3d771c085db7682730  bobdylan_roughcuts_all.jpg
+9663a0fd684fb367b79fd438e90e17eb  CD 1\Track01.flac
+b74a4d042656db5c0f0a3f2a31068572  CD 1\Track02.flac
+45262449ccfd2fbdac4f3f30a5bab393  CD 1\Track04.flac
+0c396f9edcb53cfac8115775be6b70eb  CD 1\Track06.flac
+39ef0483ad8023706a1afaabcbbec828  CD 1\Track08.flac
+f1094c28fac38ed5d18fde16e75f3a20  CD 1\Track09.flac
+eda10bcc0c386a77224eddc1eed7c0bc  CD 1\Track10.flac
+e206f023f5decd18ec4dadc6aa4908f8  CD 1\Track11.flac
+5433329589cf5d8c927ad218bf696a41  CD 1\Track12.flac
+86f26ad9a61fa316d9552ffa11f935b8  CD 1\Track13.flac
+c64fa222e2a9f6bca0af5e9b07d97d98  CD 1\Track14.flac
+fcfb259ae4513e3f7f0b879813215aae  CD 1 FLAC.log
+2c3d0905ba01080a852b09172acbf4fa  CD 1.md5
+289d3d8beecefa118431ba7d77d2e1b6  CD 2\Track01.flac
+b3609f0a5e56779f814ff39f93e66f97  CD 2\Track02.flac
+3b112bd3ff1ad9fbaf9ea1304619efe9  CD 2\Track03.flac
+5ea9feddf245fbefe01e73d66f352310  CD 2\Track04.flac
+faf0fee3bf9b7f3bd56b9027e7842f34  CD 2\Track05.flac
+0ec1bced1a36cc5457ee34870a672dea  CD 2\Track06.flac
+ce0363827a645b4a763c9d08894053ab  CD 2\Track07.flac
+c2bc174f9a2668bbb99fb55ff5f5b59e  CD 2\Track09.flac
+d6ef5bf748dd88a52ca887bf0fc1cfe5  CD 2\Track10.flac
+8d19bc8adca2fe8f1881195a27aa8aeb  CD 2\Track11.flac
+18b6690428992809c12de33e248b175b  CD 2 Flac.log
+6dfa5a2bdd9e43ba921a75e746b17e98  CD 2.md5
+303d0341417424613e9d39764033996e  DigiFlawFinder-bd83-04-11-inc-Rough-Cuts-bnc.flacf.wavf.html
+aa6db079477c34c344042840166aaf65  Rough cuts back_a.jpg
+6092d3448383903cf9b5aa0c4203f7f9  Rough cuts front_a.jpg
+f482a5a7b8855fcc15d30efd9d9dd73b  Rough cuts insideback_a.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd83-04-11-inc-Rough-Cuts-bnc.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+track01.flac:67e0ba35d3f5ab21ecceb05275100d93
+track02.flac:456527356a647e554424edeca4da413e
+track04.flac:f71d57e5e63605434fc3a94d5a72b0d2
+track06.flac:c2d1eb1cc98962db9084e45917763113
+track08.flac:4a6519c69e038b570eb290bf9728042c
+track09.flac:53bc7af586bb310427ebfddb11c63899
+track10.flac:b1032054df7df341353b91b4ce93bab2
+track11.flac:06b4e599d24e7f02ff8cb93411f3ca64
+track12.flac:b656f1b6ac2fc274da9c7479ccdc5a60
+track13.flac:745da4d5f779ff6add374639be2f94ed
+track14.flac:bb55e6ccd2528eedccce3cdf0e7a9337
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd83-04-11-inc-Rough-Cuts-bnc.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+track01.flac:001d38bc69d3267d74c8e025d48f0bf0
+track02.flac:3ce7d2a07051e8ce84347a0a529fa019
+track03.flac:dd2e4611969df886c93cc490dc46aa99
+track04.flac:db7f1aac72451d1e1dd9d211c21b66ea
+track05.flac:c5cf659353f2cbb6fea3595d22d5ad48
+track06.flac:ae47f4c7edc7458631d32814c4fcf1a5
+track07.flac:3b5b48b855cb452da61d96b72640766d
+track09.flac:62774d95fdc9018efec3d94ddbf8fe39
+track10.flac:0cfc6598a3bddca9e32b7dc0716e6fc7
+track11.flac:90d300aa6c723478c237b628269364cc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd83-04-11-inc-Rough-Cuts-bnc.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:21.00       46040444 B   ---   --   ---xx   flac  0.5489  Track01.flac
+     5:13.13       55243820 B   ---   --   ---xx   flac  0.5756  Track02.flac
+     4:15.00       44982044 B   ---   --   ---xx   flac  0.5231  Track04.flac
+     4:38.25       49098044 B   ---   --   ---xx   flac  0.5603  Track06.flac
+     5:08.25       54390044 B   ---   --   ---xx   flac  0.6233  Track08.flac
+     4:50.12       51184268 B   ---   --   ---xx   flac  0.5998  Track09.flac
+     6:23.25       67620044 B   ---   --   ---xx   flac  0.5860  Track10.flac
+     3:37.63       38427020 B   ---   --   ---xx   flac  0.5745  Track11.flac
+     6:33.25       69384044 B   ---   --   ---xx   flac  0.6352  Track12.flac
+     5:53.50       62386844 B   ---   --   ---xx   flac  0.5868  Track13.flac
+     9:26.24       99898892 B   ---   --   ---xx   flac  0.6023  Track14.flac
+    60:20.37      638655508 B                            0.5876  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd83-04-11-inc-Rough-Cuts-bnc.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.50       50215244 B   ---   --   ---xx   flac  0.5725  Track01.flac
+     3:57.50       41924444 B   ---   --   ---xx   flac  0.6084  Track02.flac
+     4:16.38       45247820 B   ---   --   ---xx   flac  0.5928  Track03.flac
+     4:39.12       49243868 B   ---   --   ---xx   flac  0.6225  Track04.flac
+     2:50.25       30046844 B   ---   --   ---xx   flac  0.5535  Track05.flac
+     3:16.00       34574444 B   ---   --   ---xx   flac  0.5465  Track06.flac
+     6:49.05       72159404 B   ---   --   ---xx   flac  0.5012  Track07.flac
+     4:15.12       45010268 B   ---   --   ---xx   flac  0.5174  Track09.flac
+     6:43.00       71089244 B   ---   --   ---xx   flac  0.4896  Track10.flac
+    21:25.12      226702268 B   ---   --   ---xx   flac  0.4241  Track11.flac
+    62:56.54      666213848 B                            0.5069  (10 files)
+=================== 
+=================== 
+=================== 

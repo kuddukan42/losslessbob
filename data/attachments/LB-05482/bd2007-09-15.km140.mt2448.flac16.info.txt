@@ -1,0 +1,64 @@
+Bob Dylan
+Stubb's Waller Creek Outdoor Amphitheater
+Austin, Texas
+September 15, 2007
+ 
+Disc 1:
+01. introduction [00:54]
+02. Leopard-Skin Pill-Box Hat [04:59]  
+03. It Ain't Me, Babe [06:02] 
+04. Watching The River Flow [04:24] 
+05. You're A Big Girl Now [06:06]  
+06. The Levee's Gonna Break [07:02]
+07. Spirit On The Water [07:05]  
+08. Cry A While [05:20]  
+09. Tangled Up In Blue [08:21]  
+10. Workingman's Blues #2 [07:13]
+11. Honest With Me [07:01]  
+12. Beyond The Horizon [07:09]  
+Total time: [71:44]
+
+Disc 2:
+01. Most Likely You Go Your Way (And I'll Go Mine) [06:14]
+02. Nettie Moore [07:55]  
+03. Summer Days [06:38]  
+04. Ballad Of A Thin Man [09:16]  
+    (encore) 
+05. Thunder On The Mountain [06:10]  
+06. band introduction [00:39]
+07. All Along The Watchtower [05:41]
+Total time: [42:40] 
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar 
+Donnie Herron - banjo, violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+center ga floor
+neumann km140's > m-audio mt24/96 (line-in 24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-09-15d1t01.flac:d1dad551b22a1c8528ffe4d0a4b3892c
+bd2007-09-15d1t02.flac:0569bf114a5a496370e439f9f831fdfa
+bd2007-09-15d1t03.flac:27d3ef0e488a364501b4b557187cb5b2
+bd2007-09-15d1t04.flac:cef92b26c35a455ef16c4f7e32f17798
+bd2007-09-15d1t05.flac:e67fc6fad553bdf9ff600fb9f3398198
+bd2007-09-15d1t06.flac:638dc3120d3c26ebde82ad15cf516730
+bd2007-09-15d1t07.flac:ff476faf53adfe8a2fe7e51ed51d601f
+bd2007-09-15d1t08.flac:62844ed3dfb968eb1446408acc5d6b85
+bd2007-09-15d1t09.flac:570acd328d7291f7dea50e1d2a4c7ce4
+bd2007-09-15d1t10.flac:f6b16070c92197678ae48883fe7a7e3d
+bd2007-09-15d1t11.flac:844b638be2c033498c89cca3fe70830e
+bd2007-09-15d1t12.flac:edf22650d5c25d5192ef6f1b1409f29f
+bd2007-09-15d2t01.flac:deb42c94da0ad7700b6402228d326c61
+bd2007-09-15d2t02.flac:5874bd32f8c008542be16ecd724384c5
+bd2007-09-15d2t03.flac:1a98a774e67ab8dd774a0ad70df06d49
+bd2007-09-15d2t04.flac:69cd3f92f313bfc1381b57f93e61b848
+bd2007-09-15d2t05.flac:bd30051b67e37aa19e8afa76b6f36d6c
+bd2007-09-15d2t06.flac:30e056eec26d5ceeb3860ba5410f442d
+bd2007-09-15d2t07.flac:a74ce3167804190c19949871ba611094

@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-20.flacf 
+=================== 
+=================== 
+=================== 
+94dba2b78b0be8a7e99f953fb58fabf0  bd - 1995-07-20-cartagena-d1\1 Drifter's Escape.flac
+d900e6a41d383e9ce6ced7033d37852b  bd - 1995-07-20-cartagena-d1\2 I Want You.flac
+e01159e202a2a3fd3204869e7b13828f  bd - 1995-07-20-cartagena-d1\3 All Along The Watchtower.flac
+7b8e725ef4f6d0b15c55db0717d80fab  bd - 1995-07-20-cartagena-d1\4 Shelter From The Storm.flac
+4a1aae92cbd25a6d6db0c1655c6976e0  bd - 1995-07-20-cartagena-d1\5 You're A Big Girl Now.flac
+734f6533849f6102d29587bcf425597c  bd - 1995-07-20-cartagena-d1\6 Silvio.flac
+050ee473b6bec64c4696745451c4b3c4  bd - 1995-07-20-cartagena-d1\7 Tangled Up In Blue.flac
+1ed5609c94ea23730c537b895da565ed  bd - 1995-07-20-cartagena-d1\8 Masters Of War.flac
+9fe487fa7b0b720c534ad53b49ff8cb4  bd - 1995-07-20-cartagena-d2\1 To Ramona.flac
+6c9d578feccde48538fd652927631b1c  bd - 1995-07-20-cartagena-d2\2 God Knows.flac
+80d907302ce44ba4977907f9dc37aabd  bd - 1995-07-20-cartagena-d2\3 License To Kill.flac
+14625152be0923b81cee0c39ef844bbf  bd - 1995-07-20-cartagena-d2\4 Highway 61 Revisited.flac
+80ed107754ddec69c9797ff55f36d7e9  bd - 1995-07-20-cartagena-d2\5 Ballad Of A Thin Man.flac
+930e1904245d6ff56e6b99638d537d38  bd - 1995-07-20-cartagena-d2\6 The Times They Are A-Changin'.flac
+55cecd07debd1fdbfd444eaea81bafa4  bd - 1995-07-20-cartagena-d2\7 Rainy Day Women # 12 & 35.flac
+d75402fc4109de8294100eb47d323928  bd1995-07-20-cartagena.txt
+6d77c34a4a7619572c314d7d729c7fa4  bd95-07-20.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-20.flacf\bd - 1995-07-20-cartagena-d1 
+=================== 
+=================== 
+=================== 
+1 Drifter's Escape.flac:04def290e767fbf5c68d43112754fd07
+2 I Want You.flac:dbe131a335f7a696e04dc265b835dd06
+3 All Along The Watchtower.flac:0d921e9fc74b8791f6bf71ac697e929d
+4 Shelter From The Storm.flac:0be37eb2b38d4beacb77f031ef2ad028
+5 You're A Big Girl Now.flac:d522f815beca6432e0b248d77eba6a28
+6 Silvio.flac:b0f5a86b4eaba02b401981e4dbe12477
+7 Tangled Up In Blue.flac:f51fbdd4783577a0e3772b2976bc4168
+8 Masters Of War.flac:8b9e0b8a24e0b5a9063b041ec4ce3c2f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-20.flacf\bd - 1995-07-20-cartagena-d2 
+=================== 
+=================== 
+=================== 
+1 To Ramona.flac:51236527dace5892f4eae5d5175a57c9
+2 God Knows.flac:559eda256725a2b914af5bb3259c536c
+3 License To Kill.flac:fe60c74a36453f4f4673703e84175a01
+4 Highway 61 Revisited.flac:03a8a66ecc3fe92780d0dcd28b638017
+5 Ballad Of A Thin Man.flac:650952ec44dbdf6219a0abd0919a17d5
+6 The Times They Are A-Changin'.flac:6db72f751516b4b987fc0c81a3e4968a
+7 Rainy Day Women # 12 & 35.flac:ca4fb9e7d8051cbbc1651ef9a6b9f883
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-20.flacf\bd - 1995-07-20-cartagena-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.49       54093692 B   ---   --   ---xx   flac  0.5238  1 Drifter's Escape.flac
+     6:21.37       67295468 B   ---   --   ---xx   flac  0.4548  2 I Want You.flac
+     6:13.42       65896028 B   ---   --   ---xx   flac  0.5209  3 All Along The Watchtower.flac
+     8:54.73       94369340 B   ---   --   ---xx   flac  0.4545  4 Shelter From The Storm.flac
+     5:52.62       62238668 B   ---   --   ---xx   flac  0.4249  5 You're A Big Girl Now.flac
+     7:37.05       80626604 B   ---   --   ---xx   flac  0.5245  6 Silvio.flac
+     9:35.28      101495900 B   ---   --   ---xx   flac  0.4521  7 Tangled Up In Blue.flac
+     5:31.72       58557788 B   ---   --   ---xx   flac  0.4238  8 Masters Of War.flac
+    55:13.68      584573488 B                            0.4715  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-20.flacf\bd - 1995-07-20-cartagena-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.35       71347964 B   ---   --   ---xx   flac  0.3935  1 To Ramona.flac
+     6:16.10       66349964 B   ---   --   ---xx   flac  0.5122  2 God Knows.flac
+     7:10.45       75957884 B   ---   --   ---xx   flac  0.4570  3 License To Kill.flac
+     7:05.14       75002972 B   ---   --   ---xx   flac  0.5335  4 Highway 61 Revisited.flac
+     8:42.57       92214908 B   ---   --   ---xx   flac  0.4877  5 Ballad Of A Thin Man.flac
+    10:45.27      113841548 B   ---   --   ---xx   flac  0.4285  6 The Times They Are A-Changin'.flac
+     7:01.00       74264444 B   ---   --   ---xx   flac  0.4879  7 Rainy Day Women # 12 & 35.flac
+    53:45.38      568979684 B                            0.4689  (7 files)
+=================== 
+=================== 
+=================== 

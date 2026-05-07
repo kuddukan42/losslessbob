@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== md5 for: bd94-07-10-FreddySneak.flacf
+===================
+===================
+===================
+1b6213f87dc5e571c215cc4e616f7772 *01 Jokerman.flac
+dfad4b3fa266f8c7f5eaa846258ce8a6 *02 The Man In Me.flac
+ef62301032d139eed75be6bd008abfb5 *03 All Along The Watchtower.flac
+90359d5851bc139bf9657692e81fb4de *04 I Don't Believe You.flac
+630de03ed144334e7fd3d5496c5f967c *05 Tangled Up In Blue.flac
+f6e52296da023b3ad39cf1c4d6edf417 *06 I'll Be Your BabyTonight.flac
+cd702b41120022cb815ec85f1146b4cd *07 Love Minus Zero No Limit.flac
+3e43884d8fc62246cb7a074ea524aad3 *08 Masters of War.flac
+d5a23f6611307ee4f38cd9455937b00a *09 Boots of Spanish Leather.flac
+7f9cb325d9f6cc85a419ecc87ebf2c3a *10 God Knows.flac
+8e5269a2438ef72b03f6d580f5739351 *11 I Believe In You.flac
+9a5b93f53fb61672bf091d5c7cfe09ea *12 Maggie's Farm.flac
+d844d14c338b34b46e48cabe32db8e7e *13 Rainy Day Woman No 12 and 35.flac
+36c4e337a75ec9f0e5ed5c6555cdb9b2 *14 It Ain't Me Babe.flac
+4e0b619ea9120870d727e8244380b4b6 *Bob Dylan 07-10-94 Tanzbrunnen Cologne Germany.ffp
+9b9498cdb201d8f47866fdb5854a5132 *Bob Dylan_1994-07-10_Tanzbrunnen Cologne Germany.txt
+===================
+===================
+===================
+=== ffp for: bd94-07-10-FreddySneak.flacf
+===================
+===================
+===================
+01 Jokerman.flac:bb5515504f04b720fec7c005df54d75b
+02 The Man In Me.flac:27c00d0112d9e7f120986068b10917a2
+03 All Along The Watchtower.flac:a04033e951bf33ceaa19a8695b8ea8d7
+04 I Don't Believe You.flac:9be63e0bcc4e5e91f5d65f832eee8923
+05 Tangled Up In Blue.flac:692e49558588fbe19d14b3330dbd5156
+06 I'll Be Your BabyTonight.flac:8fa544fb7c15ce17eb84dc129364d948
+07 Love Minus Zero No Limit.flac:4924cb7f9779e935e69082fbc44d3f5f
+08 Masters of War.flac:79b38636d60e7524441b6e1d7443025a
+09 Boots of Spanish Leather.flac:e07b4abc94e616d28cd1a4d5a1b956ba
+10 God Knows.flac:520364c46c7ce8a76200104da70d17c5
+11 I Believe In You.flac:1f8204ee2c95b88b3cf26827da63862f
+12 Maggie's Farm.flac:ea0444497e73d317d1592a18b794b738
+13 Rainy Day Woman No 12 and 35.flac:013e655a79e162f3b6795bb5602ef4f3
+14 It Ain't Me Babe.flac:0a0191df8007393bf844ba7827ec07ae
+===================
+===================
+===================
+=== shntool len for: bd94-07-10-FreddySneak.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:00.09       84693212 B   ---   --   ---xx   flac  0.5916  01 Jokerman.flac
+     5:32.22       58616588 B   ---   --   ---xx   flac  0.5775  02 The Man In Me.flac
+     5:30.69       58374332 B   ---   --   ---xx   flac  0.6210  03 All Along The Watchtower.flac
+     7:15.55       76863404 B   ---   --   ---xx   flac  0.5811  04 I Don't Believe You.flac
+     9:03.52       95907548 B   ---   --   ---xx   flac  0.5928  05 Tangled Up In Blue.flac
+     8:15.70       87482684 B   ---   --   ---xx   flac  0.6050  06 I'll Be Your BabyTonight.flac
+     5:47.52       61333148 B   ---   --   ---xx   flac  0.5146  07 Love Minus Zero No Limit.flac
+     5:51.61       62059916 B   ---   --   ---xx   flac  0.5149  08 Masters of War.flac
+     6:46.24       71674892 B   ---   --   ---xx   flac  0.5629  09 Boots of Spanish Leather.flac
+     5:47.08       61229660 B   ---   --   ---xx   flac  0.6100  10 God Knows.flac
+     7:04.00       74793644 B   ---   --   ---xx   flac  0.5852  11 I Believe In You.flac
+     7:04.48       74906540 B   ---   --   ---xx   flac  0.6277  12 Maggie's Farm.flac
+     5:24.09       57174812 B   ---   --   ---xx   flac  0.6111  13 Rainy Day Woman No 12 and 35.flac
+     8:28.07       89627708 B   ---   --   ---xx   flac  0.5454  14 It Ain't Me Babe.flac
+    95:52.36     1014738088 B                            0.5819  (14 files)
+===================
+===================
+===================

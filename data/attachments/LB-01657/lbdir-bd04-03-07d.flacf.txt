@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-07d.flacf 
+=================== 
+=================== 
+=================== 
+5beb0f3b7b2350c24072f222ea0ce148  bd04-03-07d.txt
+4a6dcdaf44016067f8c93fdf9735531c  bd04-03-07d1t01.flac
+202bb64710ce84acfe283ccb1436cd4c  bd04-03-07d1t02.flac
+a6ff8d470f4e012f18d594b386c8db5c  bd04-03-07d1t03.flac
+ffdfaffde44176c022bc5bd120b8223a  bd04-03-07d1t04.flac
+54d501da4f8abcc444594174035cb8bd  bd04-03-07d1t05.flac
+cb7763a6e5b0bab64d43a90b7a9681d8  bd04-03-07d1t06.flac
+9fb50817b32843020ac73ed0d08f7234  bd04-03-07d1t07.flac
+395778feeed7e508738cd80c8311f05d  bd04-03-07d1t08.flac
+b0cbf8a65b5349721578cfec12e55903  bd04-03-07d1t09.flac
+c7204426f4980edc72497e4a4a1034ea  bd04-03-07d2t01.flac
+1261c30bb79b7789c45f05b616158c78  bd04-03-07d2t02.flac
+de6cd8231243c8980e0738579a7e40a2  bd04-03-07d2t03.flac
+ddf3e4c2185c28c4381b532bfb8913d3  bd04-03-07d2t04.flac
+f5267e0c0a8491fd9dca3201bcaa24e5  bd04-03-07d2t05.flac
+6b268aab9d959c435b36ef6272c2ec4e  bd04-03-07d2t06.flac
+5b7c404513852c2bc61613a405383b47  bd04-03-07d2t07.flac
+5e735b513da1cccda8a06376d4ca91bd  bd04-03-07d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-03-07d.flacf 
+=================== 
+=================== 
+=================== 
+bd04-03-07d1t01.flac:fedfc42fd8dc09a296bee27c25ad8d11
+bd04-03-07d1t02.flac:b8706c274132a818ad7b2fe9eefd7a2a
+bd04-03-07d1t03.flac:dda73e6cf20a3619f74e355af9274e48
+bd04-03-07d1t04.flac:f99947b1116a8bde67670385a218fb5d
+bd04-03-07d1t05.flac:0e65e6de975b8f360065e30edbbba386
+bd04-03-07d1t06.flac:8a846f4c3e4f76b4aeaf31b0415080fb
+bd04-03-07d1t07.flac:6a882a202cfa0770fca2a3160e914a7f
+bd04-03-07d1t08.flac:9541304574047747d21c0100f620de75
+bd04-03-07d1t09.flac:293de174c94e1093a5287e37bb72d2e7
+bd04-03-07d2t01.flac:8a8ec164596bd53f0ebebd320fb95a72
+bd04-03-07d2t02.flac:a846d04f8f5a1ca7bc9b2c0cbfd92f12
+bd04-03-07d2t03.flac:aaeb193fe2ab5c4eaddcbc9da5d57667
+bd04-03-07d2t04.flac:fe2652dd9f75b11b4c3dc6c2cf7d31ad
+bd04-03-07d2t05.flac:97eaeaedb08991c45c4b48552e9fe5b2
+bd04-03-07d2t06.flac:29100b201148ee21faea4ae84969cc54
+bd04-03-07d2t07.flac:0dd52b0f88953560a7686b83f3bd5ff7
+bd04-03-07d2t08.flac:9a64ba795622f4047d338a424613fa4b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-07d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.28       72742700 B   ---   --   ---xx   flac  0.5749  bd04-03-07d1t01.flac
+     4:54.26       51922796 B   ---   --   ---xx   flac  0.5521  bd04-03-07d1t02.flac
+     5:25.61       57473516 B   ---   --   ---xx   flac  0.5206  bd04-03-07d1t03.flac
+     5:43.35       60587564 B   ---   --   ---xx   flac  0.5319  bd04-03-07d1t04.flac
+     7:17.01       77089196 B   ---   --   ---xx   flac  0.5767  bd04-03-07d1t05.flac
+     5:52.48       62205740 B   ---   --   ---xx   flac  0.5165  bd04-03-07d1t06.flac
+     6:32.08       69167660 B   ---   --   ---xx   flac  0.5707  bd04-03-07d1t07.flac
+     5:51.19       61961132 B   ---   --   ---xx   flac  0.4845  bd04-03-07d1t08.flac
+     6:02.09       63878012 B   ---   --   ---xx   flac  0.5999  bd04-03-07d1t09.flac
+     6:44.64       71416172 B   ---   --   ---xx   flac  0.5222  bd04-03-07d2t01.flac
+     6:45.61       71585516 B   ---   --   ---xx   flac  0.4639  bd04-03-07d2t02.flac
+     6:59.07       73928108 B   ---   --   ---xx   flac  0.5708  bd04-03-07d2t03.flac
+     5:00.56       53051756 B   ---   --   ---xx   flac  0.4896  bd04-03-07d2t04.flac
+    10:55.27      115605548 B   ---   --   ---xx   flac  0.5484  bd04-03-07d2t05.flac
+     4:45.37       50361068 B   ---   --   ---xx   flac  0.5681  bd04-03-07d2t06.flac
+     7:25.73       78669740 B   ---   --   ---xx   flac  0.5526  bd04-03-07d2t07.flac
+     6:57.21       73608236 B   ---   --   ---xx   flac  0.5416  bd04-03-07d2t08.flac
+   110:05.56     1165254460 B                            0.5416  (17 files)
+=================== 
+=================== 
+=================== 

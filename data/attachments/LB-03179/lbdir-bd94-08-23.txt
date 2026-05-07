@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-08-23 
+=================== 
+=================== 
+=================== 
+73bb41364594dc0b5380e2074039e622  bd94-08-23-LB-3179.txt
+1bcaef8763b143721187052342909218  bd_louisville_230894.txt
+ae09cf52161020e7dd874aed4f2c284a  d1.md5
+8bd7cfdfbfd7b1292347f5d32da3c189  d1t01.shn
+801a0564805686f3e77171af49c70c6e  d1t02.shn
+7414a7e756cd7d83a04e664e2a4e64b8  d1t03.shn
+e14bce8b2776a81115d46db17f712b02  d1t04.shn
+9ed9386f844f81b0bd8d8b525e9c71bb  d1t05.shn
+51230fb4026f108b2408b652c5af4570  d1t06.shn
+11abef378b2843751eb2fb6376386dda  d1t07.shn
+0c7cd5c98ea3a0daf540a4b5b301a9e5  d1t08.shn
+23a56d766626cdb1492fc2393773cef6  d1t09.shn
+15c06a69e7339dd4ca342571ac1ec6e7  d2.md5
+8cf7a31abab6d2accd89c19a1a3d3ac0  d2t01.shn
+707f19366b3ee2c1ae69dae39722a3ec  d2t02.shn
+369ce8519115c645ec1bf7f703d9ea7b  d2t03.shn
+b2af26bda289455b2b8f8aa51fbd9652  d2t04.shn
+ad1a7a33ded703608a12531233faff10  d2t05.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-08-23 
+=================== 
+=================== 
+=================== 
+ad3cdaade4043ca9be77c344cd5b2757  [shntool]  d1t01.wav
+1a81152af5431237c686ac82ee6a80b4  [shntool]  d1t02.wav
+ce43e66d9b52c1c25fb9ed766fdb521d  [shntool]  d1t03.wav
+a6e9562ccf58c0a603740b1d738a766d  [shntool]  d1t04.wav
+49ce521ebc79d56509e36da40035041d  [shntool]  d1t05.wav
+df5fe3441e11fe06e5f08cd50b623a49  [shntool]  d1t06.wav
+6558bbd041f78deeb0df6a1adab97904  [shntool]  d1t07.wav
+b4866c382d56be2f3fbb450a391d43cb  [shntool]  d1t08.wav
+fc5654ddf47f10ba80e0469a19b8df49  [shntool]  d1t09.wav
+e3c990bc838161cd540e12553202d9ea  [shntool]  d2t01.wav
+2a9e2ecfffb6c0560dd2736982e65ba8  [shntool]  d2t02.wav
+a168e016f0b86fe88b6c9ba44c78ed60  [shntool]  d2t03.wav
+adbf73d2e1c3bf52b0fa784ac5c04be9  [shntool]  d2t04.wav
+e5912323c2518077738043fe28dedb51  [shntool]  d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-08-23 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:42.27       81560348 B   ---   --   -----    wav  1.0000  d1t01.wav
+     6:12.20       65667884 B   ---   --   -----    wav  1.0000  d1t02.wav
+     5:52.15       62128124 B   ---   --   -----    wav  1.0000  d1t03.wav
+    12:08.13      128449820 B   ---   --   -----    wav  1.0000  d1t04.wav
+     9:32.11      100926716 B   ---   --   -----    wav  1.0000  d1t05.wav
+     6:54.46       73137836 B   ---   --   -----    wav  1.0000  d1t06.wav
+     4:34.69       48495932 B   ---   --   -----    wav  1.0000  d1t07.wav
+     6:27.65       68419724 B   ---   --   -----    wav  1.0000  d1t08.wav
+     6:59.32       73986908 B   ---   --   -----    wav  1.0000  d1t09.wav
+     6:12.50       65738444 B   ---   --   -----    wav  1.0000  d2t01.wav
+     7:25.55       78627404 B   ---   --   -----    wav  1.0000  d2t02.wav
+    10:33.67      111818828 B   ---   --   -----    wav  1.0000  d2t03.wav
+     8:46.61       92929916 B   ---   --   -----    wav  1.0000  d2t04.wav
+     8:53.38       94110620 B   ---   --   -----    wav  1.0000  d2t05.wav
+   108:16.44     1145998504 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

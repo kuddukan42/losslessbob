@@ -1,0 +1,121 @@
+===================
+===================
+===================
+=== 2003-07-16 Big Sky, Montana (CB Master).ffp
+===================
+===================
+===================
+D1\01 bd_2003-0716_101.flac:cd2927b43be9204092a738c4184ff04a
+D1\02 bd_2003-0716_102.flac:14281a60d6ad5544927bb33a6229c7d4
+D1\03 bd_2003-0716_103.flac:5193ca1c18cc90a8b78d6571b787f645
+D1\04 bd_2003-0716_104.flac:66c266f6b5543eaa5399602ea45bf344
+D1\05 bd_2003-0716_105.flac:324d15b74c461baa7a480f499ebff75b
+D1\06 bd_2003-0716_106.flac:e559ab2c5e23970c83e520f229e2e02a
+D1\07 bd_2003-0716_107.flac:015a538330fe88399ff62525a7a346e3
+D1\08 bd_2003-0716_108.flac:2293af4c21bc73e97eb24e198a7e911b
+D1\09 bd_2003-0716_109.flac:3637165d4c4152348dbdbfbcda605337
+D1\10 bd_2003-0716_110.flac:9a1291d8e01b68691869245249b58931
+D1\11 bd_2003-0716_111.flac:e96ef8b45a04f545da6c5152158a1078
+D1\12 bd_2003-0716_112.flac:279efbbb0654fae6de4ea6327ddf5073
+D2\01 bd_2003-0716_201.flac:c5baf33ddac4042e6c564ebfb69147d7
+D2\02 bd_2003-0716_202.flac:0ccceaabaf88a9f69df9d3303325f9dc
+D2\03 bd_2003-0716_203.flac:331b87b67873059018d2ef0d29773a64
+D2\04 bd_2003-0716_204.flac:7c7e0fa9afc5969f36dfbbcfdb3aef01
+D2\05 bd_2003-0716_205.flac:02c42da6731c671d6737d76b68edee35
+===================
+===================
+===================
+=== 2003-07-16 Big Sky, Montana (CB Master).md5
+===================
+===================
+===================
+a0fdc8e7c0ccda9b9990756c628aeacf *2003-07-16 Big Sky, Montana (CB Master).ffp
+ddf3323700a8bf07e7da8769fee732e3 *2003-07-16 Big Sky, Montana (CB Master).txt
+0ef7a58bcedf843ea854fae883e4e859 *D1\01 bd_2003-0716_101.flac
+c7aaab869386f14411dd795a0694d4fb *D1\02 bd_2003-0716_102.flac
+9b3e05370bbb307588c242ab93b481c8 *D1\03 bd_2003-0716_103.flac
+0a1d7c45d590a2efdf1cb2c3c0fee21c *D1\04 bd_2003-0716_104.flac
+acc85e7ee6f7a42038aefb8e26583fd6 *D1\05 bd_2003-0716_105.flac
+a9bc47b480b95f737af8d4fb22f0b139 *D1\06 bd_2003-0716_106.flac
+47604fb67841802e02d06d6d7f060574 *D1\07 bd_2003-0716_107.flac
+41458bd4e784e51018021db210516d78 *D1\08 bd_2003-0716_108.flac
+3cf5931304a712bf097015f8602cd31f *D1\09 bd_2003-0716_109.flac
+ec6be10e76c9ff20e1fae7c273b5194c *D1\10 bd_2003-0716_110.flac
+93ca72b59749074a4171a5966eb28c6d *D1\11 bd_2003-0716_111.flac
+68aef5dee3ab17750e41add4369f0610 *D1\12 bd_2003-0716_112.flac
+a9aab019de0f120b11fa539d881c6b60 *D1\2003-07-16 D1 - Bob Dylan.log
+158bb4ec52cd4db39ee17348284c1eb8 *D2\01 bd_2003-0716_201.flac
+a698497c399fdf3b94b17dcc1f84adb3 *D2\02 bd_2003-0716_202.flac
+e6b41a6658f941dbd614ef1d9c08cef8 *D2\03 bd_2003-0716_203.flac
+82bf0a1a99b5db89023fde6b9b4c4beb *D2\04 bd_2003-0716_204.flac
+f3b154044aef43eb4acaae71c87cc1f3 *D2\05 bd_2003-0716_205.flac
+1fb088a546d3908d86e073708ad1cedd *D2\2003-07-16 D2 - Bob Dylan.log
+===================
+===================
+===================
+=== 2003-07-16 Big Sky, Montana (CB Master).txt
+===================
+===================
+===================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I recieved this shows in 2003 on CD-Rs from a very good friend.
+
+Line:
+Trade CD-Rs -> EAC (secure mode) => 
+Traders Little Helper => FLAC Level 8
+=> you!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+BOB DYLAN
+
+Meadow Village Pavilion
+Big Sky, Montana
+16 July 2003
+
+Intro
+Maggie's Farm
+Tonight I'll Be Staying Here With You
+Tweedle Dee & Tweedle Dum
+Just Like A Woman
+Things Have Changed
+Watching The River Flow
+It's Alright, Ma (I'm Only Bleeding)
+It Ain't Me, Babe
+Dignity
+Drifter's Escape
+Make You Feel My Love
+
+
+Honest With Me
+Bye And Bye
+Summer Day
+Like A Rolling Stone
+All Along The Watchtower
+
+
+Concert # 1528 of The Never-Ending Tour. 
+Concert # 4 of the 2003 US Summer Tour. 2003 concert # 38.
+Concert # 27 with the 16th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & piano),
+Freddie Koella (guitar), 
+Larry Campbell
+(guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion).
+
+7, 8 acoustic with the band.
+4, 6, 10, 11, 16 Bob Dylan (harmonica).
+2, 4 Larry Campbell (pedal steel guitar).
+6, 12 Larry Campbell (slide guitar).
+7, 8 Larry Campbell (cittern).
+
+Notes.
+LB-number for this concert: LB-1114, LB-1118, LB-1142, LB-1380.
+First concert in Big Sky, Montana.
+7 new songs (43%) compared to previous concert. 3 new songs for this tour.
+Stereo audience recording, 105 minutes.
+Session info updated 3 June 2009.
+===================
+===================
+===================

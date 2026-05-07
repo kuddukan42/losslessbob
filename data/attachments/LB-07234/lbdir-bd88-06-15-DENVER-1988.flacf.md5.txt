@@ -1,0 +1,17 @@
+43bde42f361051e92242d78e0fdf6ce7  Bob Dylan - DENVER 1988.md5
+71f55b791abe613d9ba1223c0f7594a0  Disc one\Track01.flac
+abda7533d0f87d95b603503dafb59868  Disc one\Track02.flac
+feb34a1450cb0309857caf61853ca722  Disc one\Track03.flac
+bbfd3ad229a01787536823042f434ac3  Disc one\Track04.flac
+6b2f2a3e3c2295bcb0758a47b141e02d  Disc one\Track05.flac
+ebb90eae699115eb12d8fc5b5d69673b  Disc one\Track06.flac
+09a6dcb254e53f7c89490cda35f76612  Disc one\Track07.flac
+f1f5bd1eab25ca3f00510540eaf25346  Disc one\Track08.flac
+494d07782854b7386b410ffdc5b19ad9  Disc one\Track09.flac
+8d8c5de412cb9dc0b9b5f819a87b1d7b  Disc two\Track01.flac
+fc6e405aa741f8f9eb26f7c9736fa9b6  Disc two\Track02.flac
+12c5ab2865f48784f377e63e612b6fef  Disc two\Track03.flac
+66ed50bc4da1efff44661739f6951287  Disc two\Track04.flac
+c0302ed56274a1e82e5f5f1dc8bb35fd  Disc two\Track05.flac
+c77e32461f80ccc6dc44be2f72481042  Disc two\Track06.flac
+58fc4ad8ac36a1e9feba5882abd9adbc  info.txt

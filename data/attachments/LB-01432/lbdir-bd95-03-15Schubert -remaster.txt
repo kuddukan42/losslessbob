@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-15Schubert -remaster 
+=================== 
+=================== 
+=================== 
+772c8651438762a7670cb681068e4185  1995_03_15_ASCHAFFENBURG_CD1\NONAME.MD5
+6e3132d11a9e7cde59573f8332456dc0  1995_03_15_ASCHAFFENBURG_CD1\TRACK01.SHN
+3239d44423020389d39e70b3629c9916  1995_03_15_ASCHAFFENBURG_CD1\TRACK02.SHN
+fc0466bbd55392dbe3720bfd86dc5e93  1995_03_15_ASCHAFFENBURG_CD1\TRACK03.SHN
+e81c77ed8d13d9307b4fa58a37680d42  1995_03_15_ASCHAFFENBURG_CD1\TRACK04.SHN
+4b878a35c9e9d7d4e0f08f0ba249e6d8  1995_03_15_ASCHAFFENBURG_CD1\TRACK05.SHN
+653ab52b5f87c80766f644951fdd2abd  1995_03_15_ASCHAFFENBURG_CD1\TRACK06.SHN
+c5fa0c4b6dfd807b1b5ccc44e8a3c25e  1995_03_15_ASCHAFFENBURG_CD1\TRACK07.SHN
+ef5a1f07c01026644dbaa3426c493c3b  1995_03_15_ASCHAFFENBURG_CD2\NONAME.MD5
+4f283edddd446f296d329831b58b029a  1995_03_15_ASCHAFFENBURG_CD2\TRACK01.SHN
+da3b01e13327ca2766a6215c6e0431cc  1995_03_15_ASCHAFFENBURG_CD2\TRACK02.SHN
+fcf70d7f8ae9fb404d45e6b3a6a2154a  1995_03_15_ASCHAFFENBURG_CD2\TRACK03.SHN
+8fecd7fbb3058dd605d5b8892c3e8043  1995_03_15_ASCHAFFENBURG_CD2\TRACK04.SHN
+c2f7b8c298d39dc6f84784008692f312  1995_03_15_ASCHAFFENBURG_CD2\TRACK05.SHN
+a1d91b306b329c2334f3d82f8ec568aa  1995_03_15_ASCHAFFENBURG_CD2\TRACK06.SHN
+72007560b1fd2965671e6cd6e6ba2be6  1995_03_15_ASCHAFFENBURG_CD2\TRACK07.SHN
+ad64ad9f23db261746f6394786e4fa59  1995_AB\95_03_15.JPG
+987e93a7acc23f7daa263750b66a3298  1995_AB\95_03_15R.JPG
+a6ff0c4aae3db029143dc8f76065f5ce  bd95-03-15Schubert -remaster.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-03-15Schubert -remaster\1995_03_15_ASCHAFFENBURG_CD1 
+=================== 
+=================== 
+=================== 
+9b229bc0cf78d5337d115cc50c24426c  [shntool]  TRACK01.wav
+b2b93431086c0c8d28d693cc712cb023  [shntool]  TRACK02.wav
+4dcee909983a2555b148da7378e81d89  [shntool]  TRACK03.wav
+50c2f60e261006119d23a7f31ba4a757  [shntool]  TRACK04.wav
+50a01e0e41d5b9b779a853ea11914e64  [shntool]  TRACK05.wav
+56d3de74211befdc40b77ab0fac1f00e  [shntool]  TRACK06.wav
+34a4ab56d8504bb1526c0c3f56411cd5  [shntool]  TRACK07.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-03-15Schubert -remaster\1995_03_15_ASCHAFFENBURG_CD2 
+=================== 
+=================== 
+=================== 
+33a5cecdcbed06834bc08e29240f16d0  [shntool]  TRACK01.wav
+79500550aedb5ac88a06858f3e68241d  [shntool]  TRACK02.wav
+bf35327474005e645adfd3468fbd1a10  [shntool]  TRACK03.wav
+7653a2716abe1c718eda59dd7dc49973  [shntool]  TRACK04.wav
+792fa5f7e3f8c94ab5ba99ddb7f45520  [shntool]  TRACK05.wav
+762aa02d5c81b29475d12900ae426179  [shntool]  TRACK06.wav
+4e07161ed0409eb7a1dd7f74cc40c1fd  [shntool]  TRACK07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-15Schubert -remaster\1995_03_15_ASCHAFFENBURG_CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.63        7204220 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     4:59.11       52769516 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     5:27.03       57689900 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     5:43.49       60620492 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     5:51.35       61998764 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     7:32.40       79826924 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     6:02.17       63896828 B   ---   --   -----    wav  1.0000  TRACK07.wav
+    36:16.68      384006644 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-15Schubert -remaster\1995_03_15_ASCHAFFENBURG_CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.50       72794444 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     5:11.60       55001564 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     8:01.71       85015436 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     9:12.18       97415180 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     6:20.18       67074380 B   ---   --   -----    wav  1.0000  TRACK05.wav
+    11:47.72      124884188 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     7:16.49       77025692 B   ---   --   -----    wav  1.0000  TRACK07.wav
+    54:43.38      579210884 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 

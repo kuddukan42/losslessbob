@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-08-Schubert-ASM.flacf
+===================
+===================
+===================
+3fa069b709ecb2ff7378f41fb7dc5f56 *101 Anouncement.flac
+5f8bed514f86ad0b3a5493a606ff0669 *102 You're Gonna Quit Me.flac
+a135752536f01416d907c6938f155542 *103 Mr. Tambourine Man.flac
+4921218004a3be9f70ed5979ac77aa6f *104 Mama, You Been On My Mind.flac
+e71df07a260aee1a6e5494b063931a38 *105 Masters Of War.flac
+8dd6a4c0bdd265a0c34b95b7cbd26a81 *106 4th Time Around.flac
+386d2df97b940dab96e4741ee3898098 *107 Tangled Up In Blue.flac
+8872302cea4435db25550abdfc5e0fe0 *1999-04-07 & 08 in Portugal (Schubert ASM  Lisboa & Oporto).txt
+d4dc5b1e61394126880058bb04e24100 *1999-04-08 Oporto.md5
+b9cfbac0876549f51fe480539f306c06 *201 Watching The River Flow .flac
+0ed4de48d38dd8c2d973b21c05afb1eb *202 Just Like A Woman .flac
+21f301a641121f2b36e6f412e282b07c *203 Tough Mama.flac
+fcde6ee3ea4a3f6b37b630b4aa71ab76 *204 Simple Twist Of Fate.flac
+653d4d06d78e9b043bbda2c29219ce76 *205 Stuck Inside Of Mobile With The Memphis Blues Again .flac
+1a39c4368e9360be9b86979215038a92 *206 Make You Feel My Love.flac
+18c2708820f8c92185b15d032dc1d384 *207 Highway 61 Revisited .flac
+8a1ccccae45329f93e52b1360f507d63 *208 Love Sick.flac
+96bb6c3913c9533888c6616021663221 *209 Leopard-Skin Pill-Box Hat.flac
+85d95e08c8ad0f499a1ba249ba03e664 *210 Don't Think Twice, It's All Right.flac
+03333e7395624ec2f862bb8211b83e8e *211 Like A Rolling Stone.flac
+e7342a91d93f3a6ad870c38829a9c4e2 *BD 1999-04-07 & 08 in Portugal (Schubert ASM  Lisboa & Oporto).ffp
+be24866b2ef5e28d6c04f87beb92ea47 *BD 1999-04-07 & 08 in Portugal (Schubert ASM  Lisboa & Oporto).md5
+5a3de79be002137449a0163a488f6b7a *OPORTO99_1.JPG
+030b03f6a46f39f2fe5d343e390cdd49 *OPORTO99_2.JPG
+62586c258ead4fb01b6a5540e7f5f615 *OPORTO99_3.JPG
+===================
+===================
+===================
+=== ffp for: bd99-04-08-Schubert-ASM.flacf
+===================
+===================
+===================
+101 Anouncement.flac:a6adc11257386e6ce41119efa2d8e96e
+102 You're Gonna Quit Me.flac:97eef647b583a9b4b6315dbf1fbad50a
+103 Mr. Tambourine Man.flac:830036c7dfa49c82e5ae883fdfe9dbf8
+104 Mama, You Been On My Mind.flac:0bdd521d66ccbd2f026303857fc53204
+105 Masters Of War.flac:56f18761505efe6cb9f6aa4842601cc4
+106 4th Time Around.flac:d66da60d2507d3df3a6fe3ec4241542a
+107 Tangled Up In Blue.flac:f6db94fdfeaca992e342eb071bed8980
+201 Watching The River Flow .flac:c08dcddfb0c98f9b0e18a07ed00441ae
+202 Just Like A Woman .flac:653169892d144c2605ad617d46a0a975
+203 Tough Mama.flac:b32685d9d7c6a366f30f80b9f827207b
+204 Simple Twist Of Fate.flac:e81156d0425c57a4819f6c90df178200
+205 Stuck Inside Of Mobile With The Memphis Blues Again .flac:a585108e8a2a7e4cc18f6bf74c9b82a9
+206 Make You Feel My Love.flac:b4f5ed7e376839902a9e8004000c9781
+207 Highway 61 Revisited .flac:39a6a1a10cb1ee92896aa3d0090ca6bb
+208 Love Sick.flac:23c746059bd27035a1e599dac9ffd956
+209 Leopard-Skin Pill-Box Hat.flac:d51cbb82760eb2ecd14292faed85e988
+210 Don't Think Twice, It's All Right.flac:9fdc7539d881ee3669949dc733e4357c
+211 Like A Rolling Stone.flac:e9b1b462b7d6d34e3e44b2e1357a0933
+===================
+===================
+===================
+=== shntool len for: bd99-04-08-Schubert-ASM.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:23.45       14747084 B   ---   --   ---xx   flac  0.4393  101 Anouncement.flac
+     3:24.45       36091484 B   ---   --   ---xx   flac  0.5742  102 You're Gonna Quit Me.flac
+     6:10.16       65305676 B   ---   --   ---xx   flac  0.5796  103 Mr. Tambourine Man.flac
+     4:35.50       48627644 B   ---   --   ---xx   flac  0.5383  104 Mama, You Been On My Mind.flac
+     5:44.27       60745148 B   ---   --   ---xx   flac  0.5556  105 Masters Of War.flac
+     3:58.23       42037340 B   ---   --   ---xx   flac  0.5226  106 4th Time Around.flac
+     8:24.18       88947980 B   ---   --   ---xx   flac  0.6166  107 Tangled Up In Blue.flac
+     5:14.55       55519004 B   ---   --   ---xx   flac  0.5917  201 Watching The River Flow .flac
+     7:23.25       78204044 B   ---   --   ---xx   flac  0.5802  202 Just Like A Woman .flac
+     5:46.22       61086188 B   ---   --   ---xx   flac  0.5866  203 Tough Mama.flac
+     7:52.20       83307884 B   ---   --   ---xx   flac  0.5421  204 Simple Twist Of Fate.flac
+     7:47.63       82527020 B   ---   --   ---xx   flac  0.6188  205 Stuck Inside Of Mobile With The Memphis Blues Again .flac
+     4:44.61       50241116 B   ---   --   ---xx   flac  0.5305  206 Make You Feel My Love.flac
+     7:19.07       77456108 B   ---   --   ---xx   flac  0.6520  207 Highway 61 Revisited .flac
+     5:50.45       61845884 B   ---   --   ---xx   flac  0.5861  208 Love Sick.flac
+     5:35.26       59155196 B   ---   --   ---xx   flac  0.6441  209 Leopard-Skin Pill-Box Hat.flac
+     6:41.36       70821116 B   ---   --   ---xx   flac  0.5606  210 Don't Think Twice, It's All Right.flac
+     9:16.35       98160764 B   ---   --   ---xx   flac  0.6261  211 Like A Rolling Stone.flac
+   107:13.19     1134826680 B                            0.5858  (18 files)
+===================
+===================
+===================

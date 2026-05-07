@@ -1,0 +1,634 @@
+Below is information from shntool on the FLAC files in this directory.
+
+First is the output of  shntool len  in column form.
+In the table, a - means OK; an x means not applicable or not determined. 
+Other letters indicate potential problems.
+
+A b in the CDR column indicates an SBE (sector boundary error)
+An h in the WAVE column indicates a non-canonical header
+An e in the WAVE column indicates extra RIFF chunks
+A c in the CDR column indicates audio is not CD quality
+
+An s in the CDR column indicates audio is too short to burn
+A 3 in the problems column indicates the file contains an ID3v2 tag
+An a in the problems column indicates the audio data is not block-aligned
+An i in the problems column indicates an inconsistent header
+
+    length     expanded size   cdr  WAVE problems filename
+     2:40.58       28360460    ---   --   ---xx   bd-1991-06-12-d1 (Track 01).flac
+     5:27.04       57692252    ---   --   ---xx   bd-1991-06-12-d1 (Track 02).flac
+     3:36.42       38201228    ---   --   ---xx   bd-1991-06-12-d1 (Track 03).flac
+     5:33.38       58830620    ---   --   ---xx   bd-1991-06-12-d1 (Track 04).flac
+     5:27.28       57748700    ---   --   ---xx   bd-1991-06-12-d1 (Track 05).flac
+     5:42.08       60347660    ---   --   ---xx   bd-1991-06-12-d1 (Track 06).flac
+     3:18.58       35063660    ---   --   ---xx   bd-1991-06-12-d1 (Track 07).flac
+     5:25.37       57417068    ---   --   ---xx   bd-1991-06-12-d1 (Track 08).flac
+     5:51.04       61925852    ---   --   ---xx   bd-1991-06-12-d1 (Track 09).flac
+     6:57.06       73572956    ---   --   ---xx   bd-1991-06-12-d1 (Track 10).flac
+     6:50.21       72373436    ---   --   ---xx   bd-1991-06-12-d1 (Track 11).flac
+     3:52.56       41056556    ---   --   ---xx   bd-1991-06-12-d2 (Track 01).flac
+     4:34.39       48425372    ---   --   ---xx   bd-1991-06-12-d2 (Track 02).flac
+     4:57.28       52456700    ---   --   ---xx   bd-1991-06-12-d2 (Track 03).flac
+     8:31.56       90272156    ---   --   ---xx   bd-1991-06-12-d2 (Track 04).flac
+     6:20.05       67043804    ---   --   ---xx   bd-1991-06-12-d2 (Track 05).flac
+     8:27.00       89434844    ---   --   ---xx   bd-1991-06-12-d2 (Track 06).flac
+     5:38.22       59674988    ---   --   ---xx   bd-1991-06-12-d2 (Track 07).flac
+    99:11.60     1049898312 B                     (totals for 18 files, 0.6213 overall compression ratio)
+
+*******************************************************************************
+*******************************************************************************
+Next is the output of  shntool info  (long form), one file at a time.
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 01).flac
+handled by:                   flac format module
+length:                       2:40.58
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    28360416 bytes
+chunk size:                   28360452 bytes
+total size (chunk size + 8):  28360460 bytes
+actual file size:             17711107
+file is compressed:           yes
+compression ratio:            0.6245
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 02).flac
+handled by:                   flac format module
+length:                       5:27.04
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    57692208 bytes
+chunk size:                   57692244 bytes
+total size (chunk size + 8):  57692252 bytes
+actual file size:             36110021
+file is compressed:           yes
+compression ratio:            0.6259
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 03).flac
+handled by:                   flac format module
+length:                       3:36.42
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    38201184 bytes
+chunk size:                   38201220 bytes
+total size (chunk size + 8):  38201228 bytes
+actual file size:             24381531
+file is compressed:           yes
+compression ratio:            0.6382
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 04).flac
+handled by:                   flac format module
+length:                       5:33.38
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    58830576 bytes
+chunk size:                   58830612 bytes
+total size (chunk size + 8):  58830620 bytes
+actual file size:             36908883
+file is compressed:           yes
+compression ratio:            0.6274
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 05).flac
+handled by:                   flac format module
+length:                       5:27.28
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    57748656 bytes
+chunk size:                   57748692 bytes
+total size (chunk size + 8):  57748700 bytes
+actual file size:             36357904
+file is compressed:           yes
+compression ratio:            0.6296
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 06).flac
+handled by:                   flac format module
+length:                       5:42.08
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    60347616 bytes
+chunk size:                   60347652 bytes
+total size (chunk size + 8):  60347660 bytes
+actual file size:             36747962
+file is compressed:           yes
+compression ratio:            0.6089
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 07).flac
+handled by:                   flac format module
+length:                       3:18.58
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    35063616 bytes
+chunk size:                   35063652 bytes
+total size (chunk size + 8):  35063660 bytes
+actual file size:             19465076
+file is compressed:           yes
+compression ratio:            0.5551
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 08).flac
+handled by:                   flac format module
+length:                       5:25.37
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    57417024 bytes
+chunk size:                   57417060 bytes
+total size (chunk size + 8):  57417068 bytes
+actual file size:             36430454
+file is compressed:           yes
+compression ratio:            0.6345
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 09).flac
+handled by:                   flac format module
+length:                       5:51.04
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    61925808 bytes
+chunk size:                   61925844 bytes
+total size (chunk size + 8):  61925852 bytes
+actual file size:             36196196
+file is compressed:           yes
+compression ratio:            0.5845
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 10).flac
+handled by:                   flac format module
+length:                       6:57.06
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    73572912 bytes
+chunk size:                   73572948 bytes
+total size (chunk size + 8):  73572956 bytes
+actual file size:             45845077
+file is compressed:           yes
+compression ratio:            0.6231
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d1 (Track 11).flac
+handled by:                   flac format module
+length:                       6:50.21
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    72373392 bytes
+chunk size:                   72373428 bytes
+total size (chunk size + 8):  72373436 bytes
+actual file size:             44875422
+file is compressed:           yes
+compression ratio:            0.6201
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d2 (Track 01).flac
+handled by:                   flac format module
+length:                       3:52.56
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    41056512 bytes
+chunk size:                   41056548 bytes
+total size (chunk size + 8):  41056556 bytes
+actual file size:             26460717
+file is compressed:           yes
+compression ratio:            0.6445
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d2 (Track 02).flac
+handled by:                   flac format module
+length:                       4:34.39
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    48425328 bytes
+chunk size:                   48425364 bytes
+total size (chunk size + 8):  48425372 bytes
+actual file size:             29396703
+file is compressed:           yes
+compression ratio:            0.6071
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d2 (Track 03).flac
+handled by:                   flac format module
+length:                       4:57.28
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    52456656 bytes
+chunk size:                   52456692 bytes
+total size (chunk size + 8):  52456700 bytes
+actual file size:             34196493
+file is compressed:           yes
+compression ratio:            0.6519
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d2 (Track 04).flac
+handled by:                   flac format module
+length:                       8:31.56
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    90272112 bytes
+chunk size:                   90272148 bytes
+total size (chunk size + 8):  90272156 bytes
+actual file size:             53184126
+file is compressed:           yes
+compression ratio:            0.5892
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d2 (Track 05).flac
+handled by:                   flac format module
+length:                       6:20.05
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    67043760 bytes
+chunk size:                   67043796 bytes
+total size (chunk size + 8):  67043804 bytes
+actual file size:             43884214
+file is compressed:           yes
+compression ratio:            0.6546
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d2 (Track 06).flac
+handled by:                   flac format module
+length:                       8:27.00
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    89434800 bytes
+chunk size:                   89434836 bytes
+total size (chunk size + 8):  89434844 bytes
+actual file size:             54460458
+file is compressed:           yes
+compression ratio:            0.6089
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-1991-06-12-d2 (Track 07).flac
+handled by:                   flac format module
+length:                       5:38.22
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    59674944 bytes
+chunk size:                   59674980 bytes
+total size (chunk size + 8):  59674988 bytes
+actual file size:             39697251
+file is compressed:           yes
+compression ratio:            0.6652
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a

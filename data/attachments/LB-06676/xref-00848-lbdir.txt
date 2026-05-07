@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-02-26-a.flacf 
+=================== 
+=================== 
+=================== 
+c29a7e69e4fcd714d444b358320c6af2  01- Bob Dylan- 2-26-66- She Belongs to Me.flac
+c3ecd2dd3bff4fa8582e572e11c0b8d2  02- Bob Dylan- 2-26-66- 4th Time Around.flac
+a6ed68646f7462153257d80f2cbedb66  03- Bob Dylan- 2-26-66- Visions of Johanna.flac
+e3b92b50262c9adca9fc3fd61c35778f  04- Bob Dylan- 2-26-66- It's All Over Now, Baby Blue.flac
+0e20d96b16a8c9df426524a1e2b34177  05- Bob Dylan- 2-26-66- Desolation Row.flac
+1da8335ce8a1716a62d295930c92e83e  06- Bob Dylan- 2-26-66- Love Minus Zero-No Limit.flac
+1701fea46ae0020ca09682557b5dee26  07- Bob Dylan- 2-26-66- Mr. Tambourine Man.flac
+51d0cbc733c5c40d80a32e35559d96ad  08- Bob Dylan- 2-26-66- Tell Me, Momma.flac
+b398baee8069bae4ae685ce2e0235811  09- Bob Dylan- 2-26-66- I Don't Believe You (She Acts Like We Never Have Met).flac
+92f9f41b49b2ff44a6835d0415a9f330  10- Bob Dylan- 2-26-66- Baby, Let Me Follow You Down.flac
+3ad093c2fd63ae225c66bdc414b588ce  11- Bob Dylan- 2-26-66- Just Like Tom Thumb's Blues.flac
+6c74aff54d56e4cf91081ad8f28b6f4e  12- Bob Dylan- 2-26-66- Leopard-Skin Pill-Box Hat.flac
+b7f9cc82335161ceaf7054d5c1eef12f  13- Bob Dylan- 2-26-66- One Too Many Mornings (Incomplete).flac
+db4db52e8277ff04afda172f8901419c  Bob Dylan-2-26-66.txt
+0ba9b8b077f34d011dbe5bf4892a3cfe  Torrent downloaded from Demonoid.me.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-02-26-a.flacf 
+=================== 
+=================== 
+=================== 
+01- Bob Dylan- 2-26-66- She Belongs to Me.flac:474399eb6d388fef92761d977c67c742
+02- Bob Dylan- 2-26-66- 4th Time Around.flac:12e8880e09ff23ba35ddd9a4376f0a1b
+03- Bob Dylan- 2-26-66- Visions of Johanna.flac:9c95e4f6878c7b9eac8b9bbac0440201
+04- Bob Dylan- 2-26-66- It's All Over Now, Baby Blue.flac:f27298c3416591260843e605c1de8f43
+05- Bob Dylan- 2-26-66- Desolation Row.flac:e9f293a7216bec31a2286810397e8ed1
+06- Bob Dylan- 2-26-66- Love Minus Zero-No Limit.flac:6422523a2310b0b99913094483704b56
+07- Bob Dylan- 2-26-66- Mr. Tambourine Man.flac:b645ec332fca6a0bf42847351a8b1ce3
+08- Bob Dylan- 2-26-66- Tell Me, Momma.flac:cc798c5c0e8617ff1263da0ec3114e00
+09- Bob Dylan- 2-26-66- I Don't Believe You (She Acts Like We Never Have Met).flac:7782ef67edd3ed0274646f28ff7262b7
+10- Bob Dylan- 2-26-66- Baby, Let Me Follow You Down.flac:b53f54bd0095fb5a3c648acc91a2a8cf
+11- Bob Dylan- 2-26-66- Just Like Tom Thumb's Blues.flac:3bc2fb8b3421fe1b0478f5203ce853f0
+12- Bob Dylan- 2-26-66- Leopard-Skin Pill-Box Hat.flac:4f86739c9d12728a7884768ebd8645e2
+13- Bob Dylan- 2-26-66- One Too Many Mornings (Incomplete).flac:a7e66a5290f17f41027812579ea507bb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-02-26-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:59.27       31639148 B   ---   --   ---xx   flac  0.2265  01- Bob Dylan- 2-26-66- She Belongs to Me.flac
+     3:56.21       41679836 B   ---   --   ---xx   flac  0.2201  02- Bob Dylan- 2-26-66- 4th Time Around.flac
+     6:58.61       73878716 B   ---   --   ---xx   flac  0.2065  03- Bob Dylan- 2-26-66- Visions of Johanna.flac
+     4:55.13       52068620 B   ---   --   ---xx   flac  0.2152  04- Bob Dylan- 2-26-66- It's All Over Now, Baby Blue.flac
+     9:52.33      104506460 B   ---   --   ---xx   flac  0.2096  05- Bob Dylan- 2-26-66- Desolation Row.flac
+     3:46.69       40028732 B   ---   --   ---xx   flac  0.2166  06- Bob Dylan- 2-26-66- Love Minus Zero-No Limit.flac
+     7:03.57       74751308 B   ---   --   ---xx   flac  0.2188  07- Bob Dylan- 2-26-66- Mr. Tambourine Man.flac
+     3:49.30       40466204 B   ---   --   ---xx   flac  0.2403  08- Bob Dylan- 2-26-66- Tell Me, Momma.flac
+     5:29.15       58070924 B   ---   --   ---xx   flac  0.2329  09- Bob Dylan- 2-26-66- I Don't Believe You (She Acts Like We Never Have Met).flac
+     3:43.64       39487772 B   ---   --   ---xx   flac  0.2257  10- Bob Dylan- 2-26-66- Baby, Let Me Follow You Down.flac
+     6:19.62       67001468 B   ---   --   ---xx   flac  0.2255  11- Bob Dylan- 2-26-66- Just Like Tom Thumb's Blues.flac
+     3:57.60       41947964 B   ---   --   ---xx   flac  0.2333  12- Bob Dylan- 2-26-66- Leopard-Skin Pill-Box Hat.flac
+     1:16.06       13420556 B   ---   --   ---xx   flac  0.2219  13- Bob Dylan- 2-26-66- One Too Many Mornings (Incomplete).flac
+    64:08.68      678947708 B                            0.2206  (13 files)
+=================== 
+=================== 
+=================== 

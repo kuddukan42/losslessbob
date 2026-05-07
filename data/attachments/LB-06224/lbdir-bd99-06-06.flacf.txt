@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-06.flacf 
+=================== 
+=================== 
+=================== 
+4a7e9d0c8eeae6aede75fe54250d53be  Baby Blue Fix, 6June99\Baby Blue Fix, 6June99.md5
+5b7cdece4c50a9b6fa6cffff10573b9d  Baby Blue Fix, 6June99\Baby Blue, 6 June 99, t10.flac
+2e10b694329b8f8f3b78741cec924424  Baby Blue Fix, 6June99\torrent-info.txt
+b136c83ce7f0c0bddec737d143541ee0  Bob Dylan, Paul Simon, 6 June 99.md5
+d33048c6c3edd266bc68249d98de15df  Colorado Springs, 6 June 99.txt
+b637f9590d1c5f26299f278211b77035  d2t03, 'Sound of Silence'.flac
+f4f6a42ce786efac979cdf64c9c47a07  d2t04, 'I Walk the Line'.flac
+0bee8fc0f03e415d8832a88987cd462f  d2t05, 'Blue Moon of Kentucky'.flac
+2573d629d85d75c80f6cd0b4203b22c4  d2t06, 'Forever Young'.flac
+21773a343b710ba514cbb4a20ad65dc1  d2t07, 'O, Babe, It Ain't No Lie'.flac
+24b919130a86e364d07e639ea40ed76d  d2t08, 'Mr. Tambourine Man'.flac
+fbbd84197cb5bfbfe2a6055889891575  d2t09, 'Masters of War'.flac
+3b492f592b0cb4324546a6c927719c75  d2t10, 'It's All Over Now, Baby Blue'.flac
+b9157e6808890b8c7481f2b6dd7f410d  d3t01, 'All Along the Watchtower'.flac
+21a1a44c65bcd8ab7704611ebce37c3b  d3t02, 'Just Like a Woman'.flac
+aeffc9d027e19716dc673e576659d503  d3t03, 'Stuck Inside of Mobile'.flac
+29e572cebc5e4ed63a26644473c3e341  d3t04, 'Not Dark Yet'.flac
+6052e34eb27103fb7107526dab9bdee8  d3t05, 'Hwy 61 Revisited'.flac
+515a8d68bb00b3e0697f3b4b14d878cb  d3t06, 'Love Sick'.flac
+b4ccbe90c0193a5adf0087718e914779  d3t07, 'Like a Rolling Stone'.flac
+c1eb52a4e7c73415bcd42683c3f05dff  d3t08, 'Don't Think Twice'.flac
+685b874ba117aeeac6b2b0a1b91862bd  d3t09, 'Not Fade Away'.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-06.flacf\Baby Blue Fix, 6June99 
+=================== 
+=================== 
+=================== 
+Baby Blue, 6 June 99, t10.flac:06cc14cd1bca30dd59fc19f4c8d3af4a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-06.flacf\ 
+=================== 
+=================== 
+=================== 
+d2t03, 'Sound of Silence'.flac:1e8601ded7540e090d20f8947857af0d
+d2t04, 'I Walk the Line'.flac:18534729cfebb800259baad202367a58
+d2t05, 'Blue Moon of Kentucky'.flac:ce4c1bf27d15f1a38b9e4eb24cf52d86
+d2t06, 'Forever Young'.flac:a912aa59088ce11a9039cca92f10da14
+d2t07, 'O, Babe, It Ain't No Lie'.flac:32f79e0eef1cd5b4953665a6fd997c42
+d2t08, 'Mr. Tambourine Man'.flac:dc894f77f19147bc2ae59afcf82bf8bf
+d2t09, 'Masters of War'.flac:eb668fd87c0d6091df9a2780fefc9bb2
+d2t10, 'It's All Over Now, Baby Blue'.flac:b00fd62bf8a08c89d6f866e2d4888225
+d3t01, 'All Along the Watchtower'.flac:a3143c8c50fe4c76519ed41db2e40238
+d3t02, 'Just Like a Woman'.flac:1a9d2556e5d337a1cda01cf16c99fc68
+d3t03, 'Stuck Inside of Mobile'.flac:6ac7831e59e6fbe3daeefb6fb1d5b8b0
+d3t04, 'Not Dark Yet'.flac:82c00b6606c57c11d0123586051c6b7d
+d3t05, 'Hwy 61 Revisited'.flac:86027628965775fa44195fd342bb974e
+d3t06, 'Love Sick'.flac:bc3187cde78d87f56aebd7669571ddd0
+d3t07, 'Like a Rolling Stone'.flac:72f09d7445b7d701dab803003e316969
+d3t08, 'Don't Think Twice'.flac:6f2755b3d441013a9bc897afc25f8646
+d3t09, 'Not Fade Away'.flac:a32206fe7617edbdffcd0764d9a6fe1e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-06.flacf\Baby Blue Fix, 6June99 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.60       72994364 B   ---   --   ---xx   flac  0.6169  Baby Blue, 6 June 99, t10.flac
+     6:53.60       72994364 B                            0.6169  (1 file)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-06.flacf\ 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:43.28       81739100 B   ---   --   ---xx   flac  0.6021  d2t03, 'Sound of Silence'.flac
+     2:12.55       23414204 B   ---   --   ---xx   flac  0.6150  d2t04, 'I Walk the Line'.flac
+     1:55.42       20384828 B   ---   --   ---xx   flac  0.6216  d2t05, 'Blue Moon of Kentucky'.flac
+     4:43.34       50001212 B   ---   --   ---xx   flac  0.6072  d2t06, 'Forever Young'.flac
+     4:21.16       46078076 B   ---   --   ---xx   flac  0.6376  d2t07, 'O, Babe, It Ain't No Lie'.flac
+     6:35.36       69762716 B   ---   --   ---xx   flac  0.6483  d2t08, 'Mr. Tambourine Man'.flac
+     5:16.04       55751852 B   ---   --   ---xx   flac  0.6244  d2t09, 'Masters of War'.flac
+     7:58.62       84465068 B   ---   --   ---xx   flac  0.6584  d2t10, 'It's All Over Now, Baby Blue'.flac
+     4:49.35       51061964 B   ---   --   ---xx   flac  0.6663  d3t01, 'All Along the Watchtower'.flac
+     5:44.14       60714572 B   ---   --   ---xx   flac  0.6342  d3t02, 'Just Like a Woman'.flac
+     7:12.03       76211900 B   ---   --   ---xx   flac  0.6606  d3t03, 'Stuck Inside of Mobile'.flac
+     6:20.56       67163756 B   ---   --   ---xx   flac  0.5789  d3t04, 'Not Dark Yet'.flac
+     5:46.55       61163804 B   ---   --   ---xx   flac  0.6720  d3t05, 'Hwy 61 Revisited'.flac
+     6:00.67       63661628 B   ---   --   ---xx   flac  0.6183  d3t06, 'Love Sick'.flac
+     7:23.39       78236972 B   ---   --   ---xx   flac  0.6457  d3t07, 'Like a Rolling Stone'.flac
+     6:58.36       73819916 B   ---   --   ---xx   flac  0.6087  d3t08, 'Don't Think Twice'.flac
+     3:42.47       39271388 B   ---   --   ---xx   flac  0.6013  d3t09, 'Not Fade Away'.flac
+    94:45.29     1002902956 B                            0.6311  (17 files)
+=================== 
+=================== 
+=================== 

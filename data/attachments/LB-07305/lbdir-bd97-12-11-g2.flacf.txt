@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-11-g2.flacf 
+=================== 
+=================== 
+=================== 
+ff24e0bfccc9da75993c0e87a7672f9e  bob dylan.info.txt
+4a408b0f12d517b0fb7ee0e65e192981  d1\d1.01.flac
+205b7c96f769a5e51ad0de92ee53252b  d1\d1.02.flac
+ccd369470890c447af3d189383ce3814  d1\d1.03.flac
+e17d8a0fadac765144688aac20d6e5dd  d1\d1.04.flac
+84cc7660637fb5d275ef2e9c1309defa  d1\d1.05.flac
+ad17005faf1dde9154b397d38f7918b1  d1\d1.06.flac
+886dd3d60b1ce6dbf7437a698ae3b1f2  d1\d1.07.flac
+fd36709f753f5ab69a66c32bd2337ca3  d1\d1.08.flac
+ba45d229a6f04c5e9886751c9154b536  d1\d1.ffp
+dc2440df8c69bd029dfedca447aaf2eb  d1\d1.md5
+52d4a2de63cec4a6b60edd8a13d828c3  d2\d2.01.flac
+b2d1c37a160d5653bfb9dfa26964285f  d2\d2.02.flac
+6f6dab87f80f4ac43ee99c1575e746f8  d2\d2.03.flac
+d3c68e830646ebf792cad0a82508426b  d2\d2.04.flac
+62e8f47f7296af13f695dd266610fbce  d2\d2.05.flac
+cb7e4f04352037e6b9778ca608b13efb  d2\d2.06.flac
+b30a6dc1b5083a8da8dadcd39ecbbe71  d2\d2.07.flac
+897cb61797764f3d841f50222348ba14  d2\d2.08.flac
+c43ddf608b36277c4d86d330e5cc86e4  d2\d2.ffp
+4d06def3f14db9898cdd03547ba5d958  d2\d2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-11-g2.flacf\d1 
+=================== 
+=================== 
+=================== 
+d1.01.flac:88b112f1e317150708b356016a50f06d
+d1.02.flac:758c7a915566015b864ac00743dc6c05
+d1.03.flac:bd62a5856dd878e09300083efe8aba4d
+d1.04.flac:3c4478bfbd72fa9437af57d8f5492a9d
+d1.05.flac:7725f0f7e0f04e6f0c54ca8d36c33d32
+d1.06.flac:b981d30293438748ce13e33b189193cb
+d1.07.flac:0243bb22c15b6b3f5fce47cb252379ce
+d1.08.flac:e4f280905a8ed046e52156dd93263e04
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-11-g2.flacf\d2 
+=================== 
+=================== 
+=================== 
+d2.01.flac:0f922cc038b259dd01c0f300dd7dad1a
+d2.02.flac:6c5ae70a3a7e9e0f0cf4020e3e65c9c0
+d2.03.flac:d8fccd5784cc4dde60bc10cd45c34762
+d2.04.flac:19fe9ebf637c2659caa4997b55cfb59b
+d2.05.flac:ca56d04234db301a75043c3404c6f235
+d2.06.flac:9590f43c64ef29d277212a561a8d45fa
+d2.07.flac:7e7b321c0e693b7fbac69ab107f34454
+d2.08.flac:99572a3c5c7cb56cd5c28b7ddd7c032e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-11-g2.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.59       61526012 B   ---   --   ---xx   flac  0.6059  d1.01.flac
+     5:13.20       55260284 B   ---   --   ---xx   flac  0.5737  d1.02.flac
+     6:50.07       72340508 B   ---   --   ---xx   flac  0.6196  d1.03.flac
+     6:08.20       64962284 B   ---   --   ---xx   flac  0.5960  d1.04.flac
+     6:12.73       65792540 B   ---   --   ---xx   flac  0.6167  d1.05.flac
+     7:00.56       74219756 B   ---   --   ---xx   flac  0.6325  d1.06.flac
+     3:39.62       38777468 B   ---   --   ---xx   flac  0.5791  d1.07.flac
+     8:04.27       85441148 B   ---   --   ---xx   flac  0.5437  d1.08.flac
+    48:58.24      518320000 B                            0.5961  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-11-g2.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:32.71       90483836 B   ---   --   ---xx   flac  0.6276  d2.01.flac
+     7:30.28       79445900 B   ---   --   ---xx   flac  0.5871  d2.02.flac
+     6:36.15       69889724 B   ---   --   ---xx   flac  0.5801  d2.03.flac
+     6:48.02       71975948 B   ---   --   ---xx   flac  0.5861  d2.04.flac
+     6:07.70       64903484 B   ---   --   ---xx   flac  0.6079  d2.05.flac
+     6:59.02       73916348 B   ---   --   ---xx   flac  0.5518  d2.06.flac
+     5:29.49       58150892 B   ---   --   ---xx   flac  0.5422  d2.07.flac
+     5:12.73       55208540 B   ---   --   ---xx   flac  0.6135  d2.08.flac
+    53:17.10      563974672 B                            0.5883  (8 files)
+=================== 
+=================== 
+=================== 

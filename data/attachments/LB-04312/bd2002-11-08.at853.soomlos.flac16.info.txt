@@ -1,0 +1,69 @@
+Bob Dylan
+Duquesne University
+AJ Palumbo Center
+Pittsburgh, Pennsylvania
+November 8, 2002
+
+source: soomlos
+fob, center, ga floor
+audio technica 853's > denecke ad-20 > sony d8
+sony d8 > m-audio microtrack > audacity > cd wave > flac
+
+Disc 1:
+01. introduction [00:55]  
+02. Tweedle Dee & Tweedle Dum [04:45]
+03. I'll Be Your Baby Tonight [05:50]
+04. Tombstone Blues [06:15]
+05. Accidentally Like A Martyr [04:27]
+06. Things Have Changed [07:17]
+07. Brown Sugar [04:19]
+08. It Ain't Me, Babe [07:52]
+09. It's Alright, Ma (I'm Only Bleeding) [07:57]
+10. To Ramona [06:18]
+11. Cold Irons Bound [06:17]
+12. Shelter From The Storm [06:36]
+13. Old Man [03:56]
+Total time: [72:51]
+
+Disc 2:
+01. Honest With Me [07:14]
+02. Masters Of War [05:47]
+03. High Water (For Charley Patton) [07:43]
+04. Mutineer [03:36]
+05. Bye And Bye [05:47]
+06. band introduction [01:02]
+07. Summer Days [12:21]
+08. Blowin' In The Wind [05:21]
+09. All Along The Watchtower [07:12]
+Total time: [56:08] 
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Charlie Sexton - guitar
+Larry Campbell - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2002-11-08d1t01.flac:478312436a21ce2b83b6e1289e70ba78
+bd2002-11-08d1t02.flac:505b94dfa2b6f22e12d8a6b5e23df918
+bd2002-11-08d1t03.flac:39a53d53e4e5d468c01cc7c3da135fdd
+bd2002-11-08d1t04.flac:aa82b639cb53eb62ce62192a246f3a6e
+bd2002-11-08d1t05.flac:825a3b264067335f0e814bc6dabf6ac9
+bd2002-11-08d1t06.flac:73d0141d78c2c03e3d9c97bc28e6b0c4
+bd2002-11-08d1t07.flac:c442509e9adc892b566de5160321742e
+bd2002-11-08d1t08.flac:d192bd40f587acae1452cef31bfbae26
+bd2002-11-08d1t09.flac:9b8acde478b484b48b8d5c9bcbcd6e3f
+bd2002-11-08d1t10.flac:b6cb2421bf430b6e63bf9fd09438f48e
+bd2002-11-08d1t11.flac:5cc386a0a71b92594ca58446f47e494c
+bd2002-11-08d1t12.flac:541e02c08974aa9568827bd5a3a39d8e
+bd2002-11-08d1t13.flac:2cdd8c7aa5d72990f246edab9beb1975
+bd2002-11-08d2t01.flac:eb0bad4a3634d63ed4b8611b0aa10978
+bd2002-11-08d2t02.flac:383bf7a1a9692aecb37a1a5cdd9d9baa
+bd2002-11-08d2t03.flac:345c8a592b4340df7fe5fb8343f20e00
+bd2002-11-08d2t04.flac:5c567df754e0c8826a49a4f61d74ae8b
+bd2002-11-08d2t05.flac:4825aac1526f8e7841ddd49b6661776d
+bd2002-11-08d2t06.flac:aaa48a0b54810d88787044c1fbbb6c15
+bd2002-11-08d2t07.flac:7b00f5a2ad2d77c88950a159a45baeab
+bd2002-11-08d2t08.flac:f00f7a492f1564d1ce03db169120e616
+bd2002-11-08d2t09.flac:e1dd9ea6d6e147abd2b2a2383acd60c8

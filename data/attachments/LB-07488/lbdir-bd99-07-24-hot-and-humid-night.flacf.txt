@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-24-hot-and-humid-night.flacf 
+=================== 
+=================== 
+=================== 
+997a58ca7308a1291e3127c908c7fdd6  CD1\01 Friend of the Devil.flac
+a97b4380a501c8e45fc588658c7e08e9  CD1\02 My back pages.flac
+4d20cc04965b068b6e07b58aec7a53cb  CD1\03 Masters of war.flac
+e66171fae9035e03705dbc0b2d4e51d6  CD1\04 Tomorrow is a long time.flac
+45a433d16a12714ae6e61225a9157803  CD1\05 Tangled up in blue.flac
+ee59b8a2ba2527bf599dd9496f0e0136  CD1\06 All along the watchtower.flac
+a7d4f7c52573123d791c03557f651412  CD1\07 Just like a woman.flac
+46d80d666e1708283d94434089b7a4e4  CD1\08 Silvio.flac
+e94287bc980d5ef57449eca001a05728  CD1\09 Not dark yet.flac
+e1f596e6e227cce38df6c6a1bc95b0c8  CD1\10 Highway 61 revisited.flac
+b76d584185b1ad3600d9ca7e768c0223  CD1\11 (audience wait).flac
+f1cea62edff3cab5be12ebc41a32955f  CD1\FLAC CD1.md5
+7bdbfbf44ecdd29196d0795025ece624  CD2\11 Like a rolling stone.flac
+047088acd73769da486efa9e065e8e4f  CD2\12 Blowin' in the wind.flac
+3cb40261225ddcb7be942d986af600c8  CD2\13 The sound of silence [w Paul Simon].flac
+583d6f211be3c7892b15483c220f2ddc  CD2\14 I walk the line & Blue moon of Kentucky [w Paul Simon].flac
+6c823f4026ee3aa4ef6f534fa8f5ba63  CD2\15 Knockin' on Heaven's door [w Paul Simon].flac
+08ad8ac43d86160c21bcf0bc89174c5c  CD2\FLAC CD2.md5
+8ba57b61ecedbec1b71a41b0f702a215  DigiFlawFinder-bd99-07-24-hot-and-humid-night.flacf.wavf.html
+059d6bea727f92900243213c696cea51  Info\1999-07-24 Meadows Music Theater, Hartford, Connecticut, USA [ut].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-24-hot-and-humid-night.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Friend of the Devil.flac:3f0bb10436957137134ffaba530839e7
+02 My back pages.flac:9435df474fa7fbdde8343110e05b694a
+03 Masters of war.flac:aa4b632d858a60da7041d3cecc9a5293
+04 Tomorrow is a long time.flac:4961eddad691219efdae4fe5eace47ad
+05 Tangled up in blue.flac:6d2dc4aa778c0661efb465a0d7b349ef
+06 All along the watchtower.flac:9d884a1041c6f8b7b6b0e73e29d93b10
+07 Just like a woman.flac:d3b231b5fa1bbc1a17cb7268121ba5ce
+08 Silvio.flac:b8ac6aa758163f8c68026314e134f4aa
+09 Not dark yet.flac:7599cc770c68fc166e06206409496735
+10 Highway 61 revisited.flac:5581186352779603b5d72506f287aaf2
+11 (audience wait).flac:18c96f96dc6a515d64e88ac8c314cdda
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-24-hot-and-humid-night.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11 Like a rolling stone.flac:05b315d674e1263be2f85a651e8f62ec
+12 Blowin' in the wind.flac:8360b8be8cff755467d9cc16bfac68c3
+13 The sound of silence [w Paul Simon].flac:3a5db742445300dc6634e1f629c7786c
+14 I walk the line & Blue moon of Kentucky [w Paul Simon].flac:12795e88342350a5adab515c097fca69
+15 Knockin' on Heaven's door [w Paul Simon].flac:cb0bde884a688a8977f555554539b97d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-24-hot-and-humid-night.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.39       59538572 B   ---   --   ---xx   flac  0.5627  01 Friend of the Devil.flac
+     6:16.13       66357020 B   ---   --   ---xx   flac  0.5767  02 My back pages.flac
+     5:23.39       57068972 B   ---   --   ---xx   flac  0.5378  03 Masters of war.flac
+     5:34.44       59021132 B   ---   --   ---xx   flac  0.4959  04 Tomorrow is a long time.flac
+     7:32.21       79782236 B   ---   --   ---xx   flac  0.5949  05 Tangled up in blue.flac
+     3:59.70       42324284 B   ---   --   ---xx   flac  0.5805  06 All along the watchtower.flac
+     6:35.36       69762716 B   ---   --   ---xx   flac  0.5335  07 Just like a woman.flac
+     5:43.41       60601676 B   ---   --   ---xx   flac  0.5871  08 Silvio.flac
+     6:12.26       65681996 B   ---   --   ---xx   flac  0.4592  09 Not dark yet.flac
+     6:38.13       70237820 B   ---   --   ---xx   flac  0.6105  10 Highway 61 revisited.flac
+     1:53.24       19989692 B   ---   --   ---xx   flac  0.4607  11 (audience wait).flac
+    61:26.66      650366116 B                            0.5517  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-24-hot-and-humid-night.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.72       77256188 B   ---   --   ---xx   flac  0.5969  11 Like a rolling stone.flac
+     5:10.44       54787532 B   ---   --   ---xx   flac  0.5119  12 Blowin' in the wind.flac
+     7:38.44       80894732 B   ---   --   ---xx   flac  0.4754  13 The sound of silence [w Paul Simon].flac
+     3:41.31       39057356 B   ---   --   ---xx   flac  0.5518  14 I walk the line & Blue moon of Kentucky [w Paul Simon].flac
+     5:51.21       61965836 B   ---   --   ---xx   flac  0.5515  15 Knockin' on Heaven's door [w Paul Simon].flac
+    29:39.62      313961644 B                            0.5362  (5 files)
+=================== 
+=================== 
+=================== 

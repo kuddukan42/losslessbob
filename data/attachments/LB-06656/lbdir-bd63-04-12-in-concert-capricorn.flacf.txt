@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-04-12-in-concert-capricorn.flacf 
+=================== 
+=================== 
+=================== 
+e9b6c49559e23d6cfb5e01d57070d006  bd63-04-12-in-concert-capricorn-t01.flac
+50473c5c355253061e5d309895713c23  bd63-04-12-in-concert-capricorn-t02.flac
+0a46465b6c24c0ab5020552c3250ca55  bd63-04-12-in-concert-capricorn-t03.flac
+1115f105c40344e0eef3dff1ebec18d3  bd63-04-12-in-concert-capricorn-t04.flac
+6c1b2a3d6723423f66469356490eed68  bd63-04-12-in-concert-capricorn-t05.flac
+22900694380db97096a9e2151a94d707  bd63-04-12-in-concert-capricorn-t06.flac
+8eb5dfcbea2b16d5c7eee2031dcc3c06  bd63-04-12-in-concert-capricorn-t07.flac
+023a464f3a2ba7c9d5089a6dabfe672e  bd63-04-12-in-concert-capricorn-t08.flac
+adb22001c69bb37172d2a55a50e82e7a  bd63-04-12-in-concert-capricorn-t09.flac
+1bf3e2e45de944322fb58ce03e2fcf09  bd63-04-12-in-concert-capricorn-t10.flac
+ab4b318701adce8068ad9b82a007638e  bd63-04-12-in-concert-capricorn-t11.flac
+f4809fb6e885196d8905ded75ac06587  bd63-04-12-in-concert-capricorn-t12.flac
+90ddc9f9a3d025f9ef71b38f91171679  bd63-04-12-in-concert-capricorn-t13.flac
+7bf0468ae88fa358b88fb8047a83607d  bd63-04-12-in-concert-capricorn-t14.flac
+9be970ceb6669ffa5fad8169cd0a64bd  bd63-04-12-in-concert-capricorn-t15.flac
+5d2e3b23e150de4fe2f83436c59081b2  bd63-04-12-in-concert-capricorn-t16.flac
+dce042e5257483876f9e553eb4a2eb91  bd63-04-12-in-concert-capricorn.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-04-12-in-concert-capricorn.flacf 
+=================== 
+=================== 
+=================== 
+bd63-04-12-in-concert-capricorn-t01.flac:3a60923e5126b67dd0406cbea2cfbffe
+bd63-04-12-in-concert-capricorn-t02.flac:bda83fb15a06d3b569ff742124407439
+bd63-04-12-in-concert-capricorn-t03.flac:54b6f431e72a91e3b825b59e3c64f198
+bd63-04-12-in-concert-capricorn-t04.flac:2ecef1c97c7100eca2cf94ccfd865485
+bd63-04-12-in-concert-capricorn-t05.flac:3138c8c748834140358bd2b32afaafb0
+bd63-04-12-in-concert-capricorn-t06.flac:66cd924ab45ec5eb59c68ad2946969de
+bd63-04-12-in-concert-capricorn-t07.flac:4a7f40bced34359d9312aa17677e0807
+bd63-04-12-in-concert-capricorn-t08.flac:8ee061557e337fc8b5cf739620b6c3c8
+bd63-04-12-in-concert-capricorn-t09.flac:d61da7dbe088f0789b7a6007b282a199
+bd63-04-12-in-concert-capricorn-t10.flac:cfbf701201c21dea4cb502a0677f785f
+bd63-04-12-in-concert-capricorn-t11.flac:c5b82a4d1b54f484950f70bed303b729
+bd63-04-12-in-concert-capricorn-t12.flac:f5c79e1e446674d521c64d39375c5ef4
+bd63-04-12-in-concert-capricorn-t13.flac:e5c933a259adf4c84e7d113226f78aba
+bd63-04-12-in-concert-capricorn-t14.flac:5e0009e89094e60c479fcfdcd01f0c33
+bd63-04-12-in-concert-capricorn-t15.flac:2e0b8691e77fc142ce25ec5eeb9322cc
+bd63-04-12-in-concert-capricorn-t16.flac:fb90491f9dbdc17834b0b0f1b7c33e1d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-04-12-in-concert-capricorn.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:04.47       21984188 B   ---   --   ---xx   flac  0.4736  bd63-04-12-in-concert-capricorn-t01.flac
+     4:38.55       49168604 B   ---   --   ---xx   flac  0.3881  bd63-04-12-in-concert-capricorn-t02.flac
+     2:58.35       31481564 B   ---   --   ---xx   flac  0.3551  bd63-04-12-in-concert-capricorn-t03.flac
+     3:10.70       33680684 B   ---   --   ---xx   flac  0.4144  bd63-04-12-in-concert-capricorn-t04.flac
+     4:45.70       50438684 B   ---   --   ---xx   flac  0.3818  bd63-04-12-in-concert-capricorn-t05.flac
+     5:44.55       60811004 B   ---   --   ---xx   flac  0.4051  bd63-04-12-in-concert-capricorn-t06.flac
+     2:51.68       30324380 B   ---   --   ---xx   flac  0.4107  bd63-04-12-in-concert-capricorn-t07.flac
+     3:51.32       40823708 B   ---   --   ---xx   flac  0.3657  bd63-04-12-in-concert-capricorn-t08.flac
+     6:04.30       64280204 B   ---   --   ---xx   flac  0.3634  bd63-04-12-in-concert-capricorn-t09.flac
+     5:16.68       55902380 B   ---   --   ---xx   flac  0.5080  bd63-04-12-in-concert-capricorn-t10.flac
+     5:10.47       54794588 B   ---   --   ---xx   flac  0.4612  bd63-04-12-in-concert-capricorn-t11.flac
+     2:24.40       25495724 B   ---   --   ---xx   flac  0.3993  bd63-04-12-in-concert-capricorn-t12.flac
+     5:00.05       52931804 B   ---   --   ---xx   flac  0.4502  bd63-04-12-in-concert-capricorn-t13.flac
+     3:33.28       37639100 B   ---   --   ---xx   flac  0.4821  bd63-04-12-in-concert-capricorn-t14.flac
+     9:11.42       97295228 B   ---   --   ---xx   flac  0.4200  bd63-04-12-in-concert-capricorn-t15.flac
+     4:03.38       42954620 B   ---   --   ---xx   flac  0.3610  bd63-04-12-in-concert-capricorn-t16.flac
+    70:51.55      750006464 B                            0.4153  (16 files)
+=================== 
+=================== 
+=================== 

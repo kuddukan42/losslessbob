@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-06schubert 
+=================== 
+=================== 
+=================== 
+564927acc90acae0b56e524dc3bf6be6  bd00-05-06schubert.txt
+7a34eadbbcc05ddee3076851789cd529  disk 1\Track 01.shn
+bf5ac11c2d9911fb6f8e4185ca579523  disk 1\Track 02.shn
+15a3e71f272cd144a7ba049db2611acf  disk 1\Track 03.shn
+d0d69d2a12e63931d7a5cc16d46053f1  disk 1\Track 04.shn
+caa474fa59e27f49e86f3930b3463c07  disk 1\Track 05.shn
+5c7d4652b0295693e936ea56bd3d0880  disk 1\Track 06.shn
+f7b911c0bae42ee59e47f074ef0e1d29  disk 1\Track 07.shn
+b5395ff7f0076855820a8ca8292e8a00  disk 1\Track 08.shn
+d62e07c8a4c32054600286ffd65ccefd  disk 1\Track 09.shn
+9cea7a3b9d20d57cc60d23997270bd9f  disk 1\noname.md5
+6d5953aee7554744625b1def1a7af449  disk 2\Track 01.shn
+dd76e35f4bd719786bad008cc21da03c  disk 2\Track 02.shn
+50e5c5e3826f1710a6e15280e79c701e  disk 2\Track 03.shn
+7ece570596e0a427364bd567c3e172ec  disk 2\Track 04.shn
+0efa0f7cfe9f7c9ac0f9ba22ead0a3fa  disk 2\Track 05.shn
+e8f6093f067b82309c501bab7850e02b  disk 2\Track 06.shn
+a73dd1c7ede3b7f00061446bf8e7286e  disk 2\Track 07.shn
+5eacb950aebba40aa9bd8e1bf4c7d511  disk 2\Track 08.shn
+554810fbdd3e2da8ddacda30dfa9b1c3  disk 2\Track 09.shn
+0af7ce7e9aac2637e8c4058fa8f4c3f3  disk 2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-06schubert\disk 1 
+=================== 
+=================== 
+=================== 
+7fdc580f8b331791e8ee604b79d59106  [shntool]  Track_01.wav
+4927094015be82ae4c60a631a7bb75e2  [shntool]  Track_02.wav
+44ebcdc2691c9bacbee52e719cf91797  [shntool]  Track_03.wav
+ab2be332bd496a1ce4e7af3613791361  [shntool]  Track_04.wav
+9e05fc1ee0fca26a95a4f4f844938db7  [shntool]  Track_05.wav
+1440ce884235a3289556dca82c5bc3db  [shntool]  Track_06.wav
+1a2c3f3273ba7e0af591b892fad35498  [shntool]  Track_07.wav
+21d40e4432f7528e25844d44361c3003  [shntool]  Track_08.wav
+bfba1dc58c682d335a65fa2755e60379  [shntool]  Track_09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-06schubert\disk 2 
+=================== 
+=================== 
+=================== 
+8a2d6abcea52d019c7837ee5b5931344  [shntool]  Track_01.wav
+1e636333a577b751cfcf3f825c92228c  [shntool]  Track_02.wav
+ffafe5ca6d8985161d0bb826cc6b3bb8  [shntool]  Track_03.wav
+90566ee0f1866dde0043d85f0d3bc4bb  [shntool]  Track_04.wav
+27bee7bbe0afd01ae160330428ed3e96  [shntool]  Track_05.wav
+0f1ef37ab634d224903aeeda05df3d6b  [shntool]  Track_06.wav
+de7f85c8783e18d8c69b817a031dad7a  [shntool]  Track_07.wav
+911ba4d1f2e0f8871e67df98bdd9acf8  [shntool]  Track_08.wav
+8baa494f46fdfd561140babb41b79f2f  [shntool]  Track_09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-06schubert\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.25       45217356 B   -b-   --   -----    wav  1.0000  Track_01.wav
+     6:02.06       63870956 B   ---   --   -----    wav  1.0000  Track_02.wav
+     8:00.49       84787292 B   ---   --   -----    wav  1.0000  Track_03.wav
+     5:12.29       55105052 B   ---   --   -----    wav  1.0000  Track_04.wav
+     7:20.07       77632508 B   ---   --   -----    wav  1.0000  Track_05.wav
+     6:54.20       73076684 B   ---   --   -----    wav  1.0000  Track_06.wav
+     3:14.31       34294556 B   ---   --   -----    wav  1.0000  Track_07.wav
+     5:05.47       53912588 B   ---   --   -----    wav  1.0000  Track_08.wav
+     7:02.43       74541980 B   ---   --   -----    wav  1.0000  Track_09.wav
+    53:08.32      562438972 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-06schubert\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:54.55       62574176 B   -b-   --   -----    wav  1.0000  Track_01.wav
+     6:59.67       74069228 B   ---   --   -----    wav  1.0000  Track_02.wav
+     7:47.40       82472924 B   ---   --   -----    wav  1.0000  Track_03.wav
+     5:57.14       63007772 B   ---   --   -----    wav  1.0000  Track_04.wav
+     7:20.18       77658380 B   ---   --   -----    wav  1.0000  Track_05.wav
+     6:27.33       68344460 B   ---   --   -----    wav  1.0000  Track_06.wav
+     4:32.27       48044348 B   ---   --   -----    wav  1.0000  Track_07.wav
+     6:46.02       71623148 B   ---   --   -----    wav  1.0000  Track_08.wav
+     6:31.72       69141788 B   ---   --   -----    wav  1.0000  Track_09.wav
+    58:17.28      616936224 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

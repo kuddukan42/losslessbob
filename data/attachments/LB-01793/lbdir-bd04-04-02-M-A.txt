@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-04-02-M-A 
+=================== 
+=================== 
+=================== 
+f3d45c389a5bd4a2947f62ee4b40bce8  2004-04-02_Washington 930_by M&A.txt
+f0adc732bad6cea0e46731b77e33f50c  bd04-04-02-M-A.txt
+477c9b434f6efb6abe4bc1cfbc24014b  d1Track01.shn
+42788865176ed94f52ade6b7d4eb1bd1  d1Track02.shn
+aae64949c4cbc64219842ee964aae8a3  d1Track03.shn
+e06bce27b35f0520172226056139b474  d1Track04.shn
+5db0f6909931213948d6bd21bc223e74  d1Track05.shn
+7f5d14672d46bc71bc8b2e78a3ac1a47  d1Track06.shn
+a8a6303af1dc4f6eb1f70c6f53ec8685  d1Track07.shn
+82bce92c317e826af811ca1c81e3be5a  d1Track08.shn
+1d3f06a90b882d3d98ced18bda3b4180  d1Track09.shn
+6859f5617055826a7bcf9137afba16e3  d1Track10.shn
+f9bfa0d6a93bc3035a4a4c36407cab67  d2Track01.shn
+a750243c3d9142c4669d08f57e701b08  d2Track02.shn
+4028e692561ff988c392088dc728986a  d2Track03.shn
+e496ea9466a23333dde24fcf7a2d8df5  d2Track04.shn
+a6174f49a7106c372a354b87359cee50  d2Track05.shn
+44dd65d817d9a94a1f8f0c44c92dc708  d2Track06.shn
+35d5ebfa9f041f30bf603e2e0e04a7a9  d2Track07.shn
+3d193a15de6cfd2cc88ca559b773c4d0  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-04-02-M-A 
+=================== 
+=================== 
+=================== 
+b0919f03a978ff10b08412278010c281  [shntool]  d1Track01.wav
+e9079d7ce3381abfffab4e3407828d1c  [shntool]  d1Track02.wav
+e4961b5900ecfc6a518229b003a11315  [shntool]  d1Track03.wav
+d398d0586d9f328b77d2756cbb637da7  [shntool]  d1Track04.wav
+a7aafc0e302ca0a9a09c5598d1cb26d4  [shntool]  d1Track05.wav
+b6812e74dea1af6c2149b32d37ff1f70  [shntool]  d1Track06.wav
+870da99597f5b563275fbdaded9e7918  [shntool]  d1Track07.wav
+f31a5920b4c9ddde2ff66494e996cfb8  [shntool]  d1Track08.wav
+a7e45f052b2b5049a9283041f5405c35  [shntool]  d1Track09.wav
+6fb2357f7f9fa6da60d4e8be7ce9beca  [shntool]  d1Track10.wav
+94737db5fadd3746ff3460344e66d0cc  [shntool]  d2Track01.wav
+3ffe3cab368a48eb3380f147d8157454  [shntool]  d2Track02.wav
+746ef8ab60fa96e5a792bed0fd6a2ded  [shntool]  d2Track03.wav
+4e76da0da97df3423ec4f6d735b05991  [shntool]  d2Track04.wav
+ecb73ff7c44a96cbcf70f2f4d320a6b9  [shntool]  d2Track05.wav
+885e1efc8013920dfa998539f79d3d16  [shntool]  d2Track06.wav
+adecadf573cbc555574fb138d2fe78a9  [shntool]  d2Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-04-02-M-A 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:51.34        9076412 B   ---   --   -----    wav  1.0000  d1Track01.wav
+     4:48.57       50937308 B   ---   --   -----    wav  1.0000  d1Track02.wav
+     5:14.09       55410812 B   ---   --   -----    wav  1.0000  d1Track03.wav
+     5:30.49       58327292 B   ---   --   -----    wav  1.0000  d1Track04.wav
+     7:12.61       76348316 B   ---   --   -----    wav  1.0000  d1Track05.wav
+     7:38.13       80821820 B   ---   --   -----    wav  1.0000  d1Track06.wav
+     7:47.49       82494092 B   ---   --   -----    wav  1.0000  d1Track07.wav
+     6:20.40       67126124 B   ---   --   -----    wav  1.0000  d1Track08.wav
+     6:11.53       65569100 B   ---   --   -----    wav  1.0000  d1Track09.wav
+     5:51.21       61965836 B   ---   --   -----    wav  1.0000  d1Track10.wav
+     8:41.69       92066732 B   ---   --   -----    wav  1.0000  d2Track01.wav
+     5:56.23       62852540 B   ---   --   -----    wav  1.0000  d2Track02.wav
+     6:54.60       73170764 B   ---   --   -----    wav  1.0000  d2Track03.wav
+    13:40.30      144718604 B   ---   --   -----    wav  1.0000  d2Track04.wav
+     5:23.30       57047804 B   ---   --   -----    wav  1.0000  d2Track05.wav
+     6:35.25       69736844 B   ---   --   -----    wav  1.0000  d2Track06.wav
+     8:20.27       88263548 B   ---   --   -----    wav  1.0000  d2Track07.wav
+   112:59.50     1195933948 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

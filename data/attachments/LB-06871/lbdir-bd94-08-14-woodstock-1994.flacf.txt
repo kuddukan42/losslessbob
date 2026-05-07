@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-08-14-woodstock-1994.flacf 
+=================== 
+=================== 
+=================== 
+f7e87d1542ae3380638c99f27573b46c  bd94-08-14-woodstock-1994-d1t01.flac
+d3c45e0240c1a62f3bbbeec2f76f7aba  bd94-08-14-woodstock-1994-d1t02.flac
+0867f580485115546f2baab8955f9073  bd94-08-14-woodstock-1994-d1t03.flac
+cbdd9b76fc016f001fea10b6a2655356  bd94-08-14-woodstock-1994-d1t04.flac
+4f7e4fdc73cf599a08f45ffb89179441  bd94-08-14-woodstock-1994-d1t05.flac
+5edd1d9fb780aaa136ca14ab13443970  bd94-08-14-woodstock-1994-d1t06.flac
+f7c21295784a814c36bd4335e5de0a0c  bd94-08-14-woodstock-1994-d1t07.flac
+6917dea8935d9c9fa8f2a67ce1ec0cc0  bd94-08-14-woodstock-1994-d1t08.flac
+f55e8a1720abcf832ae0692e1972b804  bd94-08-14-woodstock-1994-d2t01.flac
+0fce20a0b23ba4547e13a57f3de996e4  bd94-08-14-woodstock-1994-d2t02.flac
+7e1388ec862d6b029a1247d4648d1344  bd94-08-14-woodstock-1994-d2t03.flac
+92e6840b6e448a8281a445bfcff4a6d2  bd94-08-14-woodstock-1994-d2t04.flac
+a58cb3342b2807ca016de838583190d7  bd94-08-14-woodstock-1994-d2t05.flac
+92bde220cb43ceefb9507253974de209  bd94-08-14-woodstock-1994-d2t06.flac
+1b4914541ac7d52a8d3f379a3a72db23  bd94-08-14-woodstock-1994-d2t07.flac
+15df9a88aeee65071366035c5c4cdb19  bd94-08-14-woodstock-1994.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-08-14-woodstock-1994.flacf 
+=================== 
+=================== 
+=================== 
+bd94-08-14-woodstock-1994-d1t01.flac:ba244826f3ffc769c1953b20ae5a29dc
+bd94-08-14-woodstock-1994-d1t02.flac:8e11c69aaa9f3bea4b99f3e8b38107d1
+bd94-08-14-woodstock-1994-d1t03.flac:329cd9f42559e31ab71361000ff9f5c7
+bd94-08-14-woodstock-1994-d1t04.flac:55990969459d4345095662b4e4be4f4e
+bd94-08-14-woodstock-1994-d1t05.flac:4a2e389578cdaf9a7fc84e0f6890ca28
+bd94-08-14-woodstock-1994-d1t06.flac:a17882a5b8a3681a6e51261693cd5d53
+bd94-08-14-woodstock-1994-d1t07.flac:3d330ca323fc8c6d63777b464f1be4d8
+bd94-08-14-woodstock-1994-d1t08.flac:0ce7b57be5a19bd009d4dff140b1a6f9
+bd94-08-14-woodstock-1994-d2t01.flac:e5d64007a8b7b131299ba9bb81d6e316
+bd94-08-14-woodstock-1994-d2t02.flac:2a40899e1121b31838e416fd70d4584f
+bd94-08-14-woodstock-1994-d2t03.flac:6b477084999a2a54017be12e36fb153d
+bd94-08-14-woodstock-1994-d2t04.flac:77161a6dcca901431fd4c56ccd82ddfb
+bd94-08-14-woodstock-1994-d2t05.flac:2d9e3812ddf6955055b12207602b1d0f
+bd94-08-14-woodstock-1994-d2t06.flac:5651a314e1baf64b88d0565879868846
+bd94-08-14-woodstock-1994-d2t07.flac:8c5537eca7dafd93fb6929b47ff43645
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-08-14-woodstock-1994.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:41.12       81348668 B   ---   --   ---xx   flac  0.5620  bd94-08-14-woodstock-1994-d1t01.flac
+     7:29.08       79222460 B   ---   --   ---xx   flac  0.5585  bd94-08-14-woodstock-1994-d1t02.flac
+     5:36.22       59322188 B   ---   --   ---xx   flac  0.5736  bd94-08-14-woodstock-1994-d1t03.flac
+     7:33.48       80022140 B   ---   --   ---xx   flac  0.5592  bd94-08-14-woodstock-1994-d1t04.flac
+     6:00.05       63515804 B   ---   --   ---xx   flac  0.5236  bd94-08-14-woodstock-1994-d1t05.flac
+     5:14.37       55476668 B   ---   --   ---xx   flac  0.4977  bd94-08-14-woodstock-1994-d1t06.flac
+     8:00.40       84766124 B   ---   --   ---xx   flac  0.4746  bd94-08-14-woodstock-1994-d1t07.flac
+     5:15.40       55660124 B   ---   --   ---xx   flac  0.5717  bd94-08-14-woodstock-1994-d1t08.flac
+     6:34.62       69647468 B   ---   --   ---xx   flac  0.5568  bd94-08-14-woodstock-1994-d2t01.flac
+     7:07.45       75428684 B   ---   --   ---xx   flac  0.5729  bd94-08-14-woodstock-1994-d2t02.flac
+     5:49.38       61653020 B   ---   --   ---xx   flac  0.5664  bd94-08-14-woodstock-1994-d2t03.flac
+     9:10.25       97078844 B   ---   --   ---xx   flac  0.4524  bd94-08-14-woodstock-1994-d2t04.flac
+     9:40.00      102312044 B   ---   --   ---xx   flac  0.5656  bd94-08-14-woodstock-1994-d2t05.flac
+    10:48.05      114319004 B   ---   --   ---xx   flac  0.5658  bd94-08-14-woodstock-1994-d2t06.flac
+     6:37.47       70141388 B   ---   --   ---xx   flac  0.5700  bd94-08-14-woodstock-1994-d2t07.flac
+   108:38.59     1149914628 B                            0.5435  (15 files)
+=================== 
+=================== 
+=================== 

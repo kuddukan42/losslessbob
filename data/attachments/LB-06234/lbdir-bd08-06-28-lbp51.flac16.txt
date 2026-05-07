@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-06-28-lbp51.flac16 
+=================== 
+=================== 
+=================== 
+af8a95bd93aecf3a10616fb768c52201  bd2008-06-27-hoyosdelespino.lbp51.ffp.txt
+82ebb11e555d2677ae585ba42399fd90  bd2008-06-27-hoyosdelespino.lbp51.txt
+3de8be5985c7456914c80c519b46c565  bd2008-06-28-d2t01.sa_fa.JPG
+1f17ec1004801abe69a273d732cfb2c7  bd2008-06-28-hoyosdelespino.lbp51.flac16.md5
+b662ffa9894fa0035a5f1e2872fc3b8e  bd2008-06-28.d1t01.flac
+8a01e3a8a54630b0f80ed33440dd6458  bd2008-06-28.d1t02.flac
+98a7bc980002779a4e63b8a17a56aca8  bd2008-06-28.d1t03.flac
+3ac9ee480c0f1bbb0cc0af47c38e50c4  bd2008-06-28.d1t04.flac
+895378ec1feff2502f575e00b03d890d  bd2008-06-28.d1t05.flac
+51e53e4be7643b37886ef0f943c1a021  bd2008-06-28.d1t06.flac
+96f03be0f72b12b969b747a045cc302f  bd2008-06-28.d1t07.flac
+312163644937f48be53cfbb3173cfbdd  bd2008-06-28.d1t08.flac
+a5563357a6f179e74cc142bfead77286  bd2008-06-28.d1t09.flac
+fd4d8019c39914ec7e8bcf7b40dca0c9  bd2008-06-28.d1t10.flac
+ab63fa7fc50a5466df9c0a10a40b54ab  bd2008-06-28.d2t01.flac
+5f504ba92414c101b6760ee59942eab6  bd2008-06-28.d2t02.flac
+9ddba6d3c2b042d79664cd5ae46e116d  bd2008-06-28.d2t03.flac
+d4fe15071fed7777b5e37d7edbc00dc5  bd2008-06-28.d2t04.flac
+27c87f2be59bb5ce3fe367b486686c51  bd2008-06-28.d2t05.flac
+9ffda5180cdcf34c8797f2dd09e2495b  bd2008-06-28.d2t06.flac
+9b4ec71c89e90f1d6a93797d6418b459  bd2008-06-28.d2t07.flac
+03bbe61f35e980d3912d1ac3f3ae6458  bd2008-06-28.d2t08.flac
+ef00c41cba1e6146222a15105de8ed15  bd2008-06-28.d2t09.flac
+ad883d80ab6f060ad2a461479a23b891  bd2008-06-28.d2t10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-28-lbp51.flac16 
+=================== 
+=================== 
+=================== 
+bd2008-06-28.d1t01.flac:a799765bce91fd51dc42807b91714f84
+bd2008-06-28.d1t02.flac:39bb5dc30cb3cf392a64d6c0dce6ed5f
+bd2008-06-28.d1t03.flac:9af801f1937a5682c286412b0f41a6d6
+bd2008-06-28.d1t04.flac:5e2387ddd33682b2f1a8b00d7df78431
+bd2008-06-28.d1t05.flac:666979742e600fed012bc4ef3ef0243f
+bd2008-06-28.d1t06.flac:6b8c189e7d7f6d5ca8618df8220ab8d4
+bd2008-06-28.d1t07.flac:44b98d080ccdc2944dcd4576e88216bf
+bd2008-06-28.d1t08.flac:d2e6285621a54e63b950bca41d67f2e4
+bd2008-06-28.d1t09.flac:8fe277d1e68aa7f3df8416098d2e4ae8
+bd2008-06-28.d1t10.flac:4c53f364b9ce1f5c51e098a26e5cc5ad
+bd2008-06-28.d2t01.flac:4fb2e4be5d4e7ed27e80594716ecf1f6
+bd2008-06-28.d2t02.flac:a295da65adf1a4ef6cf249fcfe70da98
+bd2008-06-28.d2t03.flac:8781017ed08f27d5faf74abca8a6ba90
+bd2008-06-28.d2t04.flac:92b6d647e59109909a13c4b9b1d2449b
+bd2008-06-28.d2t05.flac:d596d075099380e18b1340e804236b08
+bd2008-06-28.d2t06.flac:7401008ea7b6ced788bab3e43ec4ad03
+bd2008-06-28.d2t07.flac:57acbaef06815b32e7ab317bbf4b62c9
+bd2008-06-28.d2t08.flac:e35f442f903cc1caa102e70e20d919ce
+bd2008-06-28.d2t09.flac:da31fcd46ce414a9b27e638303da6d53
+bd2008-06-28.d2t10.flac:5dcd668be7754362d97f612d59aaaeb8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-28-lbp51.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:29.30       15770204 B   ---   --   ---xx   flac  0.4372  bd2008-06-28.d1t01.flac
+     4:49.71       51146636 B   ---   --   ---xx   flac  0.5257  bd2008-06-28.d1t02.flac
+     5:17.59       56057612 B   ---   --   ---xx   flac  0.4730  bd2008-06-28.d1t03.flac
+     6:12.57       65754908 B   ---   --   ---xx   flac  0.4971  bd2008-06-28.d1t04.flac
+     4:55.39       52129772 B   ---   --   ---xx   flac  0.4498  bd2008-06-28.d1t05.flac
+     5:04.36       53710316 B   ---   --   ---xx   flac  0.4953  bd2008-06-28.d1t06.flac
+     7:37.04       80624252 B   ---   --   ---xx   flac  0.5126  bd2008-06-28.d1t07.flac
+     6:12.73       65792540 B   ---   --   ---xx   flac  0.3946  bd2008-06-28.d1t08.flac
+     7:10.34       75932012 B   ---   --   ---xx   flac  0.5173  bd2008-06-28.d1t09.flac
+     6:08.44       65018732 B   ---   --   ---xx   flac  0.3846  bd2008-06-28.d1t10.flac
+     8:32.42       90415628 B   ---   --   ---xx   flac  0.4825  bd2008-06-28.d2t01.flac
+     6:51.40       72594524 B   ---   --   ---xx   flac  0.4315  bd2008-06-28.d2t02.flac
+     6:07.04       64748252 B   ---   --   ---xx   flac  0.5243  bd2008-06-28.d2t03.flac
+     7:07.74       75496892 B   ---   --   ---xx   flac  0.4507  bd2008-06-28.d2t04.flac
+     6:30.25       68854844 B   ---   --   ---xx   flac  0.4905  bd2008-06-28.d2t05.flac
+     8:36.62       91168268 B   ---   --   ---xx   flac  0.4298  bd2008-06-28.d2t06.flac
+     3:04.43       32558780 B   ---   --   ---xx   flac  0.3660  bd2008-06-28.d2t07.flac
+     8:06.47       85840988 B   ---   --   ---xx   flac  0.5210  bd2008-06-28.d2t08.flac
+     0:44.54        7888652 B   ---   --   ---xx   flac  0.4293  bd2008-06-28.d2t09.flac
+     9:02.31       95681756 B   ---   --   ---xx   flac  0.5088  bd2008-06-28.d2t10.flac
+   119:43.44     1267185568 B                            0.4729  (20 files)
+=================== 
+=================== 
+=================== 

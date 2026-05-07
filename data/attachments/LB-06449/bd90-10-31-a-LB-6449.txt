@@ -1,0 +1,8 @@
+Bob Dylan, 10/31/90, Charlotte, North Carolina, 2CDR
+
+LB-6449, (52min+41min), version "a"; Bright clear recording. This seems to me to be a different and better recording than the CB, recording registered as LB-1193., Lineage: AUD recording with unknown equipment > Master Cassette > transfer by Capt. Cook, to CD [master > Sony cassette deck > Audio Source AS EQ-100 > EQ > Pioneer stand alone, burner > cdr] > 1st generation cdr from Capt. Cook to me > EAC (no errors) > FA (not lossy) >, FLAC (level 6, align on sector boundaries), Two minor dropouts during announcement on D1T1 at 0:12 & 0:16; tape flip at end of D1T10.; bittorrent download 08/08 same recording as LB-1193 based on same clapping wavs at end of d1t10 except channels swapped and inverted; that one has a fuller warmer sound and this has more hiss and sounds like it has an extra cassette generation in it; (did not listen to all of this)
+
+Disc One, 51:14, 1. Announcement > Dixie, 2. Tangled Up In Blue, 3. I'll Be Your Baby Tonight, 4. My Back Pages, 5. What Was It You Wanted?, 6. Seeing The Real You At Last, 7. Gotta Serve Somebody, 8. A Hard Rain's A-Gonna Fall, 9. Two Soldiers, 10. Desolation Row, 11. Boots Of Spanish Leather, Disc Two, 40:04, 1. Joey, 2. Wiggle Wiggle, 3. T.V. Talkin' Song, 4. Rainy Day Women # 12 & 35, 5. I Shall Be Released, 6. Like A Rolling Stone, ---, 7. The Times They Are A-Changin', 8. Masters Of War
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

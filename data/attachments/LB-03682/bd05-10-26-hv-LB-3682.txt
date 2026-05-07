@@ -1,0 +1,8 @@
+Bob Dylan, 10/26/05, Hannover, Germany, AWD Hall, 2CDR
+
+LB-3682, (62min+39min), Taper: HV, Lineage: Audio disks from taper > (feurio) wav > (flacfrontend) flac; this is a very close eac match to LB-3324 ; (did not listen to all of this)
+
+Disk One, intro, Maggie's Farm, Tell Me That It Isn't True (Bob on harp), I'll Be Your Baby Tonight, Lay, Lady, Lay, High Water (For Charley Patton) (Donnie on banjo), Positively 4th Street (Bob on harp, Stu on acoustic guitar), Most Likely You Go Your Way (And I'll Go Mine), Man In The Long Black Coat (Bob on harp), Highway 61 Revisited, Never Gonna Be The Same Again, (Bob on harp, Donnie on violin, Tony on standup bass), Disk Two, Tweedle Dee & Tweedle Dum, You Ain't Goin' Nowhere (Bob on harp), Visions Of Johanna (acoustic) (Stu on acoustic guitar, Tony on, standup bass), Summer Days (Tony on standup bass), (encore), Don't Think Twice, It's All Right (acoustic), (Bob on harp, Stu on acoustic guitar, Tony on standup bass), All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

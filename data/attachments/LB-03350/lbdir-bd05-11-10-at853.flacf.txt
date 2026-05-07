@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-10-at853.flacf 
+=================== 
+=================== 
+=================== 
+03b51eb43890fac91d4b1da2d68d8c9e  bd05-11-10-at853-LB-3350.txt
+e70fd581793eafc4e28311f6dba23371  bd2005-11-10_Bologna.md5
+65704cc4436558064094d92e689a7cdc  bd2005-11-10_Bologna.txt
+c13511b98cf5be4afc7a18b0d10db464  bd2005-11-10_flac.ffp
+2bfee04e732bdefeda470123fa7e4233  bd2005-11-10d1t01.flac
+b25e0577aae320d4d4d3d34942f5608a  bd2005-11-10d1t02.flac
+d62c292a13f37b4398105e2dff019dfc  bd2005-11-10d1t03.flac
+3df8492c922d853b1b23d95749b15fe7  bd2005-11-10d1t04.flac
+543051045219c5dca284cb6d143933c4  bd2005-11-10d1t05.flac
+11ea5e52dcf63e835fdc5f3e61db6e15  bd2005-11-10d1t06.flac
+021b8b6582a4382ce3ef5a07a2427d23  bd2005-11-10d1t07.flac
+d5a7cba77e7e3483f307246388eec673  bd2005-11-10d1t08.flac
+323531f665a726452f2d88a1c62a3848  bd2005-11-10d1t09.flac
+491dc0347b30da2ec7c97d21fed47d17  bd2005-11-10d1t10.flac
+b6ade09ba282954857262ea955906100  bd2005-11-10d2t01.flac
+5849eb54df16142b972efb7f9642a4c0  bd2005-11-10d2t02.flac
+2e8025c29a25ccc94f4cd5277f526258  bd2005-11-10d2t03.flac
+224c9bc32149a04e217bfb0ed0f39e44  bd2005-11-10d2t04.flac
+cd153d026ed1f225da68e9b173bc884d  bd2005-11-10d2t05.flac
+395ddc42f9046f67f5a269aa88ecaa25  bd2005-11-10d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-10-at853.flacf 
+=================== 
+=================== 
+=================== 
+bd2005-11-10d1t01.flac:768eaed46fc725b12e8031f95d766035
+bd2005-11-10d1t02.flac:84e25abc3f8b3d85d2d577ba6d9dc064
+bd2005-11-10d1t03.flac:8a15558a43d2f78107a08bafbc5318f9
+bd2005-11-10d1t04.flac:e1d7649559f21cd4c01cc9eed0c1923b
+bd2005-11-10d1t05.flac:ea23f2b7a7d4b01fef3b7a55eb024aa9
+bd2005-11-10d1t06.flac:a73dedd9ae3c209d8cc3f4752b418edb
+bd2005-11-10d1t07.flac:ee288b8fd3a33efa17f249d2b1e885fb
+bd2005-11-10d1t08.flac:573b5b4dbc1faf7028d46e69836fb0fa
+bd2005-11-10d1t09.flac:d2f5eb047291acac76ed3d21698e9509
+bd2005-11-10d1t10.flac:fbfc6f59464e5b2375cde9d6142db65d
+bd2005-11-10d2t01.flac:3813b41ac1694af0e246a498e56a9c6e
+bd2005-11-10d2t02.flac:b45cd33ddbeb686f6f22a7f21eeb33f8
+bd2005-11-10d2t03.flac:0ce1b66d6766ef19a90acf9ea76b5f02
+bd2005-11-10d2t04.flac:64b3be2f9b870efb333dadeb5e436953
+bd2005-11-10d2t05.flac:994b43d33dc407c66fd4a5ee036b41f4
+bd2005-11-10d2t06.flac:65336a87d73e82d18cd7c3e023548e51
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-10-at853.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.05       65103404 B   ---   --   ---xx   flac  0.5977  bd2005-11-10d1t01.flac
+     6:02.14       63889772 B   ---   --   ---xx   flac  0.5433  bd2005-11-10d1t02.flac
+     7:32.23       79786940 B   ---   --   ---xx   flac  0.5853  bd2005-11-10d1t03.flac
+     4:23.72       46562588 B   ---   --   ---xx   flac  0.4825  bd2005-11-10d1t04.flac
+     8:09.24       86316092 B   ---   --   ---xx   flac  0.5844  bd2005-11-10d1t05.flac
+     5:58.39       63242972 B   ---   --   ---xx   flac  0.4640  bd2005-11-10d1t06.flac
+     5:55.31       62694956 B   ---   --   ---xx   flac  0.5872  bd2005-11-10d1t07.flac
+     4:12.12       44481068 B   ---   --   ---xx   flac  0.5174  bd2005-11-10d1t08.flac
+     7:54.47       83724188 B   ---   --   ---xx   flac  0.6225  bd2005-11-10d1t09.flac
+     7:18.71       77430236 B   ---   --   ---xx   flac  0.4455  bd2005-11-10d1t10.flac
+     6:04.17       64249628 B   ---   --   ---xx   flac  0.5479  bd2005-11-10d2t01.flac
+     7:55.35       83872364 B   ---   --   ---xx   flac  0.5928  bd2005-11-10d2t02.flac
+     7:13.43       76482380 B   ---   --   ---xx   flac  0.5474  bd2005-11-10d2t03.flac
+    10:48.52      114429548 B   ---   --   ---xx   flac  0.5621  bd2005-11-10d2t04.flac
+     7:31.34       79636412 B   ---   --   ---xx   flac  0.6162  bd2005-11-10d2t05.flac
+     8:51.01       93670796 B   ---   --   ---xx   flac  0.5507  bd2005-11-10d2t06.flac
+   112:00.70     1185573344 B                            0.5574  (16 files)
+=================== 
+=================== 
+=================== 

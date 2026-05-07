@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-19a 
+=================== 
+=================== 
+=================== 
+7a7186ae0a7f8f568784252ae0bb99dd  bd00-11-19a.txt
+208b395eb2a0d3eb6e5234ae2fb5bf85  D1.T01.Oh Babe It Aint No Lie.flac
+07dbed26bd265e5ad22d8fbcb069b346  D1.T02.Mr. Tambourine Man.flac
+0139e414cdedfd5d3b3a119ceca5a790  D1.T03.Desolation Row.flac
+ed8c5d78df1c63c7cb225b7b830effe8  D1.T04.One Too Many Mornings.flac
+7da5149b5f7037722b87cbe046daa42d  D1.T05.Tangled Up In Blue.flac
+415ffdb0e343f82eb6bbe9e4eba00050  D1.T06.Searching For a Soldiers Grave.flac
+63d7c292952aadc3e58129faa338fe67  D1.T07.Country Pie.flac
+bb067dc62000cf5744d05150806a85a8  D1.T08.Blind Willie McTell.flac
+0c78f8e71b692e38831daf97c3bbfd16  D1.T09.Seeing The Real You At Last.flac
+bb2f75cd5365ca3e32f57bf443a1351b  D1.T10.Tryin' To Get To Heaven.flac
+fe0cf13d8faa63f30de0f2dc6078ec6b  D1.T11.The Wicked Messenger.flac
+9022b98d734faaa234d2740114e16436  D1.T12.Cat's In The Well.flac
+5feb04065cd686b11eda8e72489831cf  D2.T01.Things Have Changed.flac
+f8c0bfed7ed68bba5b48a32cd51403e7  D2.T02.Like a Rolling Stone.flac
+835925ef8d037aab3824d7f124a80fb9  D2.T03.If Dogs Run Free.flac
+c0169e41b4e40aa3150669ecd3ac2e58  D2.T04.All Along The Watchtower.flac
+c3ee9de2aa1e6d868d89d958f630f032  D2.T05.Don't Think Twice It's Alright.flac
+c6e07e9acd5141da6af5016b62448e7d  D2.T06.Highway 61 Revisited.flac
+d068172749a5a410930151b4040f0705  D2.T07.Blowin' In The Wind.flac
+a9dec71096b5ea1149200f210f4f4e9f  D2.T08. Rainy Day Women #12&35.flac
+92193beed7a2b2e9385eb4352750c5e3  info.flac.txt
+ed41e2f99188775f96bdf0eb57359b62  info.txt
+c19f374ce3dce4d024e5249b5ed6d217  towback.jpg
+f97954877187592a26d0c46c912a0387  towfront.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-19a 
+=================== 
+=================== 
+=================== 
+D1.T01.Oh Babe It Aint No Lie.flac:f6dacdcca69a010f77d29d16158ed542
+D1.T02.Mr. Tambourine Man.flac:46dc31f1a3ecc62d109bea81df836268
+D1.T03.Desolation Row.flac:f5de1ef512f82fa379add88c208ea061
+D1.T04.One Too Many Mornings.flac:30ff5f60c9c52e1655907180b606fec7
+D1.T05.Tangled Up In Blue.flac:64579c4e1d6d268fbee50f25518ad922
+D1.T06.Searching For a Soldiers Grave.flac:f575c7f56b6d54d7870c99900cd0608d
+D1.T07.Country Pie.flac:3c9a0253cf31f0e5e308913cec651af5
+D1.T08.Blind Willie McTell.flac:da54881711131fac9537f396a6b75284
+D1.T09.Seeing The Real You At Last.flac:a513671e1e245f3b88a697591cab655d
+D1.T10.Tryin' To Get To Heaven.flac:1de1d925767e4ea5ef154b76588f4780
+D1.T11.The Wicked Messenger.flac:cd72ceda723691c06224ee0e65679948
+D1.T12.Cat's In The Well.flac:83f1c6668a8a6e8d5cb511115b961b3e
+D2.T01.Things Have Changed.flac:6d192bed99b229c39fe9600e6484cd53
+D2.T02.Like a Rolling Stone.flac:1089d6a68cc9c78b17e9a7bafbf4c0e9
+D2.T03.If Dogs Run Free.flac:3bcc540022a974c73b4a10b5cfa52484
+D2.T04.All Along The Watchtower.flac:9bc01ad85e06d5b4786001ed2608d48c
+D2.T05.Don't Think Twice It's Alright.flac:447de3e9f9aea382211951c2377fab33
+D2.T06.Highway 61 Revisited.flac:af0353f836df51c2dfee81aadbdb0d4f
+D2.T07.Blowin' In The Wind.flac:40a5278e1ef169a036f935713d2536be
+D2.T08. Rainy Day Women #12&35.flac:5fcf75e7b87a4cbf83b8d1f792a92430
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-19a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:20.60       35421164 B   ---   --   ---xx   flac  0.5531  D1.T01.Oh Babe It Aint No Lie.flac
+     5:41.00       60152444 B   ---   --   ---xx   flac  0.5483  D1.T02.Mr. Tambourine Man.flac
+     9:36.00      101606444 B   ---   --   ---xx   flac  0.5363  D1.T03.Desolation Row.flac
+     4:54.74       52035692 B   ---   --   ---xx   flac  0.4798  D1.T04.One Too Many Mornings.flac
+     9:16.01       98080796 B   ---   --   ---xx   flac  0.5682  D1.T05.Tangled Up In Blue.flac
+     3:20.00       35280044 B   ---   --   ---xx   flac  0.4760  D1.T06.Searching For a Soldiers Grave.flac
+     3:10.74       33690092 B   ---   --   ---xx   flac  0.5424  D1.T07.Country Pie.flac
+     6:03.01       64035596 B   ---   --   ---xx   flac  0.5294  D1.T08.Blind Willie McTell.flac
+     5:46.00       61034444 B   ---   --   ---xx   flac  0.5947  D1.T09.Seeing The Real You At Last.flac
+     5:10.00       54684044 B   ---   --   ---xx   flac  0.4443  D1.T10.Tryin' To Get To Heaven.flac
+     5:13.00       55213244 B   ---   --   ---xx   flac  0.6085  D1.T11.The Wicked Messenger.flac
+     5:29.00       58035644 B   ---   --   ---xx   flac  0.5946  D1.T12.Cat's In The Well.flac
+     5:49.63       61711820 B   ---   --   ---xx   flac  0.5626  D2.T01.Things Have Changed.flac
+     7:50.00       82908044 B   ---   --   ---xx   flac  0.5999  D2.T02.Like a Rolling Stone.flac
+     4:15.00       44982044 B   ---   --   ---xx   flac  0.4499  D2.T03.If Dogs Run Free.flac
+     4:43.00       49921244 B   ---   --   ---xx   flac  0.5677  D2.T04.All Along The Watchtower.flac
+     6:29.01       68621996 B   ---   --   ---xx   flac  0.5045  D2.T05.Don't Think Twice It's Alright.flac
+     5:53.73       62440940 B   ---   --   ---xx   flac  0.6025  D2.T06.Highway 61 Revisited.flac
+     7:30.02       79384748 B   ---   --   ---xx   flac  0.5383  D2.T07.Blowin' In The Wind.flac
+     6:01.74       63854492 B   ---   --   ---xx   flac  0.5990  D2.T08. Rainy Day Women #12&35.flac
+   115:33.48     1223094976 B                            0.5492  (20 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd93-07-17-preboard-jtt.flacf
+===================
+===================
+===================
+138ee2fd21759e6515c23568200633a9 *BOB DYLAN - Bern, Switzerland July 17th 1993 (JTT)_Info.txt
+e2498fd72fb8dfb65b1efb827d1f3f3a *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track01.flac
+0072d76102e402d84b6534a60bf3f011 *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track02.flac
+029610edb1e015dc6ad8d00c925c041e *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track03.flac
+e64a1e1a37aa95763de0a498d7eecd02 *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track04.flac
+3404426ad9596b215cba161eddab3cb1 *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track05.flac
+1cc63e6da89766b25c431be1d57cbffa *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track06.flac
+b043f8c97a4c5431b9831fab0839b2f7 *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track07.flac
+b45182caf6171e5b51216ea39cdda218 *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track08.flac
+7a6233e49532e93d414293a5c792bd46 *Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track09.flac
+27dea611ab204c6295dcdd35061f6bfc *Disc One\Disc One.ffp
+6f9c985f354556b611ef4a94f030472f *Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track01.flac
+f2897577572e404df83396fe9d2f12cd *Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track02.flac
+42a4d096a8dcb087c358d32282809588 *Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track03.flac
+eabe9bd10fa3c3b7fbc92ccb9234b18f *Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track04.flac
+6257f5712cbcdb027d39fab5dbf08151 *Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track05.flac
+81b6cd48bf886500f8019fe5684178b9 *Disc Two\Disc Two.ffp
+===================
+===================
+===================
+=== ffp for: bd93-07-17-preboard-jtt.flacf
+===================
+===================
+===================
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track01.flac:74f7cf4f82826fb285e5115e78ffe3f2
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track02.flac:abb9c97253dba2b71b93683b9454e369
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track03.flac:4969e366fb9e895e25db1c4221b3c0b0
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track04.flac:d0f1dab08f522494a673ea2ea21b8bc0
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track05.flac:31aa5d113adb5bd965104a7b9b532733
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track06.flac:81c27f64589ea47a881c41ce4bb70a7b
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track07.flac:2fc7236eb49cb7ff987d7e31589bc6c4
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track08.flac:875f57cb8990e43125920b983dff1510
+Disc One\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track09.flac:2f505996e27f5f4fa781a8666d6c4f9f
+Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track01.flac:aa8de521c6a8352b225682885c4c877d
+Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track02.flac:3648945b0b384a964e1f704914915e4b
+Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track03.flac:42e41d4918bc8fcf3c5790c6533b66ba
+Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track04.flac:3a2e8384bfa84432fdb238a1356764bf
+Disc Two\BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track05.flac:43bff474640f89fce9be498e0f7e3d40
+===================
+===================
+===================
+=== shntool len for: bd93-07-17-preboard-jtt.flacf\Disc One
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:18.50        3292844 B   ---   --   ---xx   flac  0.3735  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track01.flac
+     5:16.33       55820060 B   ---   --   ---xx   flac  0.4620  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track02.flac
+     8:29.29       89855852 B   ---   --   ---xx   flac  0.5106  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track03.flac
+     7:07.04       75332252 B   ---   --   ---xx   flac  0.4969  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track04.flac
+     8:26.57       89392508 B   ---   --   ---xx   flac  0.4977  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track05.flac
+    11:48.32      124966508 B   ---   --   ---xx   flac  0.5140  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track06.flac
+     6:02.02       63861548 B   ---   --   ---xx   flac  0.4001  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track07.flac
+     8:47.13       92993420 B   ---   --   ---xx   flac  0.4375  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track08.flac
+     7:42.54       81623852 B   ---   --   ---xx   flac  0.4769  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc01 Track09.flac
+    63:58.49      677138844 B                            0.4788  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd93-07-17-preboard-jtt.flacf\Disc Two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:36.20       80485484 B   ---   --   ---xx   flac  0.5130  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track01.flac
+     8:31.08       90159260 B   ---   --   ---xx   flac  0.5042  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track02.flac
+     8:50.26       93553196 B   ---   --   ---xx   flac  0.4863  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track03.flac
+     8:34.74       90843692 B   ---   --   ---xx   flac  0.4783  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track04.flac
+    11:40.32      123555308 B   ---   --   ---xx   flac  0.4266  BOB DYLAN - Bern, Switzerland July 17th 1993_Disc02 Track05.flac
+    45:13.10      478596940 B                            0.4772  (5 files)
+===================
+===================
+===================

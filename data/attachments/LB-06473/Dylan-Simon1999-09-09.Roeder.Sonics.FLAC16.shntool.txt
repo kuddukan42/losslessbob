@@ -1,0 +1,36 @@
+    length     expanded size   cdr  WAVE problems filename
+     2:40.43       28325180    ---   --   ---xx   Dylan-Simon1999-09-09d1t01.flac
+     6:23.58       67697660    ---   --   ---xx   Dylan-Simon1999-09-09d1t02.flac
+     7:32.13       79763420    ---   --   ---xx   Dylan-Simon1999-09-09d1t03.flac
+     5:10.34       54764012    ---   --   ---xx   Dylan-Simon1999-09-09d1t04.flac
+     8:55.21       94423436    ---   --   ---xx   Dylan-Simon1999-09-09d1t05.flac
+     4:10.38       44189420    ---   --   ---xx   Dylan-Simon1999-09-09d1t06.flac
+     4:34.33       48411260    ---   --   ---xx   Dylan-Simon1999-09-09d1t07.flac
+     7:27.14       78883772    ---   --   ---xx   Dylan-Simon1999-09-09d1t08.flac
+     6:32.71       69315836    ---   --   ---xx   Dylan-Simon1999-09-09d1t09.flac
+     6:12.25       65679644    ---   --   ---xx   Dylan-Simon1999-09-09d1t10.flac
+     7:37.70       80779484    ---   --   ---xx   Dylan-Simon1999-09-09d1t11.flac
+     8:07.47       86017388    ---   --   ---xx   Dylan-Simon1999-09-09d2t01.flac
+     5:40.16       60013676    ---   --   ---xx   Dylan-Simon1999-09-09d2t02.flac
+     2:13.50       23578844    ---   --   ---xx   Dylan-Simon1999-09-09d2t03.flac
+     2:09.74       22929692    ---   --   ---xx   Dylan-Simon1999-09-09d2t04.flac
+     6:05.23       64440140    ---   --   ---xx   Dylan-Simon1999-09-09d2t05.flac
+     4:24.73       46741340    ---   --   ---xx   Dylan-Simon1999-09-09d2t06.flac
+     3:26.43       36439580    ---   --   ---xx   Dylan-Simon1999-09-09d2t07.flac
+     6:11.08       65463260    ---   --   ---xx   Dylan-Simon1999-09-09d2t08.flac
+     5:58.11       63177116    ---   --   ---xx   Dylan-Simon1999-09-09d2t09.flac
+     5:22.22       56852588    ---   --   ---xx   Dylan-Simon1999-09-09d2t10.flac
+     0:06.73        1230140    ---   --   ---xx   Dylan-Simon1999-09-09d2t11.flac
+     4:03.18       42907580    ---   --   ---xx   Dylan-Simon1999-09-09d3t01.flac
+     2:51.57       30298508    ---   --   ---xx   Dylan-Simon1999-09-09d3t02.flac
+     5:56.49       62913692    ---   --   ---xx   Dylan-Simon1999-09-09d3t03.flac
+     5:44.65       60834524    ---   --   ---xx   Dylan-Simon1999-09-09d3t04.flac
+     6:14.41       66070076    ---   --   ---xx   Dylan-Simon1999-09-09d3t05.flac
+     4:50.42       51254828    ---   --   ---xx   Dylan-Simon1999-09-09d3t06.flac
+     7:26.21       78723836    ---   --   ---xx   Dylan-Simon1999-09-09d3t07.flac
+     6:00.34       63584012    ---   --   ---xx   Dylan-Simon1999-09-09d3t08.flac
+     4:33.41       48253676    ---   --   ---xx   Dylan-Simon1999-09-09d3t09.flac
+     5:33.05       58753004    ---   --   ---xx   Dylan-Simon1999-09-09d3t10.flac
+     5:19.40       56365724    ---   --   ---xx   Dylan-Simon1999-09-09d3t11.flac
+     5:54.54       62572652    ---   --   ---xx   Dylan-Simon1999-09-09d3t12.flac
+   181:33.52     1921649000 B                     (totals for 34 files, 0.5576 overall compression ratio)

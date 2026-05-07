@@ -1,0 +1,8 @@
+Bob Dylan, 1/25/80, Omaha, Nebraska, Orpheum Theater, 2CDR
+
+LB-5175, (42min+55min), version "b"; Unknown Audience>CDR>EAC>FLAC LEVEL 5; bittorrent download 07/07; same recording as LB-911; this has lower levels on d2t2; that one has this ones right channel for both channels; otherwise similar wav except for the volume difference and tracking; this ones left channel wav is asymetric with top limited to -10db and bottom going to -8db on d1t1; (did not listen to all of this)
+
+CD 1 41:16, Gotta Serve Somebody, I Believe In You, When You Gonna Wake Up, When He Returns, Man Gave Names To All The Animals, Precious Angel, Slow Train, CD 2 54:30, Covenant Woman, Put Your Hand In The Hand Of The Man From Galilee (Gene MacLellan), Gonna Change My Way Of Thinking, Do Right To Me Baby (Do Unto Others), Solid Rock, Saving Grace, What Can I Do For You?, Saved (Bob Dylan/Tim Drummond), In The Garden, Band Intros, Blessed Be The Name, Pressing On
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

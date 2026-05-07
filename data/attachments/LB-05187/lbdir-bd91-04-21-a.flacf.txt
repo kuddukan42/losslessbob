@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-04-21-a.flacf 
+=================== 
+=================== 
+=================== 
+61b997c903c2bbe3bbb1a62faf1d0fb3  01. New Morning.flac
+cf01650804f16bd90deaa9a79a8737e3  02. Lay Lady Lay.flac
+7398309f07d15bf1faecb3128bf519c4  03. All Along The Watchtower.flac
+146dd5a689b9492af0120dc8fc126d3e  04. The Man In Me.flac
+d49d4e5dbf357e8cdb9fefbea2b9cc79  05. Stuck Inside Of Mobile Again With The Memphis Blues Again.flac
+a4153b7192577074ac6dfd110fe0d796  06. Wiggle Wiggle.flac
+41b819efd76027d205fd7b6388bfd6e6  07. Mr. Tambourine Man.flac
+c85d99d85f23da8f3d4831e41eb4657f  08. One Too Many Mornings.flac
+76cbad51e21c486dca2ac604d642b8fb  09. Don't Think Twice It's Alright.flac
+abed1f702c50d684e7e2567a38058356  10. Bob Dylans Dream.flac
+280ffef85f3da9d78067dd0df7684e4b  11. Everything Is Broken.flac
+366936faa39a01f36f664295677f5d04  12. Man In The Long Black Coat.flac
+cb3fd268a210b536bb0514038801c1e0  13. Seeing The Real You At Last.flac
+35f3466a1ebaa316c985609286954829  14. Under The Red Sky.flac
+f364933a6dd62aaa500ddd4147e682bf  15. I Shall Be Released.flac
+309cd75cfbcb586b25fd581ea5422d76  16. Like A Rolling Stone.flac
+9778e21e256e1cbb3ccd28005b61a7cc  bd1991-04-21.txt
+fd2fba8c18b1e7cb6c7d4a377a7c7eb8  bd1991-04-21disc.jpg
+2fce05006af003bb91ca269c65939d31  bd1991-04-21front.jpg
+1f67c1fd3d0a3fa0e1bc46a8c2d3d6f0  bd1991-04-21greenville.md5
+369373b92e2bf56c50a0da23f7c645e1  bd1991-04-21insert.jpg
+3919326fad04fd53d5af56241fb9849b  bd1991-04-21tray.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-04-21-a.flacf 
+=================== 
+=================== 
+=================== 
+01. New Morning.flac:5ae885cfb78832fd2d4e71ec23eb034b
+02. Lay Lady Lay.flac:57d3f4a4008c235f409f161c869e7bb6
+03. All Along The Watchtower.flac:8da6069b40483f635c2b397198794ac3
+04. The Man In Me.flac:e149c7a36d6bc0d1a9a1809f67a7ccf3
+05. Stuck Inside Of Mobile Again With The Memphis Blues Again.flac:bc82642749c56c92a347b17e80262176
+06. Wiggle Wiggle.flac:a4666cc9776135317ea90afe11023530
+07. Mr. Tambourine Man.flac:46ec68410f5d92ae4a1478cc66e6f09e
+08. One Too Many Mornings.flac:735e45acc5aafaa15c074f7aa1adaa1a
+09. Don't Think Twice It's Alright.flac:c9d770b9d971f456df13c489d33de81d
+10. Bob Dylans Dream.flac:9f72690344c88e9a4f6578d98d1e1394
+11. Everything Is Broken.flac:b6e9e2059128297baa6a760309e2189a
+12. Man In The Long Black Coat.flac:4f0646e91dd258aca28d3916b8f424fb
+13. Seeing The Real You At Last.flac:870f2991ff96215d14de3bca68f60ee6
+14. Under The Red Sky.flac:56a9719bcda7124169dec70fa0f31700
+15. I Shall Be Released.flac:7829680dea42c92eb705e88f2eb15623
+16. Like A Rolling Stone.flac:16bc1d27bf7c977edab91584190e3b4c
+=================== 
+=================== 
+=================== 
+=== shntool for: bd91-04-21-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:38.01       49041044 B   -b-   --   ---xx   flac  0.6860  01. New Morning.flac
+     4:26.13       46954052 B   -b-   --   ---xx   flac  0.6887  02. Lay Lady Lay.flac
+     3:27.02       36519996 B   -b-   --   ---xx   flac  0.7037  03. All Along The Watchtower.flac
+     4:55.57       52171440 B   -b-   --   ---xx   flac  0.6968  04. The Man In Me.flac
+     5:54.68       62605500 B   -b-   --   ---xx   flac  0.7038  05. Stuck Inside Of Mobile Again With The Memphis Blues Again.flac
+     2:45.47       29215976 B   -b-   --   ---xx   flac  0.7074  06. Wiggle Wiggle.flac
+     6:04.72       64379376 B   -b-   --   ---xx   flac  0.6621  07. Mr. Tambourine Man.flac
+     4:24.41       46664936 B   -b-   --   ---xx   flac  0.6444  08. One Too Many Mornings.flac
+     6:20.16       67068596 B   -b-   --   ---xx   flac  0.6865  09. Don't Think Twice It's Alright.flac
+     3:39.42       38730464 B   -b-   --   ---xx   flac  0.6839  10. Bob Dylans Dream.flac
+     4:04.04       43050676 B   -b-   --   ---xx   flac  0.7029  11. Everything Is Broken.flac
+     5:23.28       57042196 B   -b-   --   ---xx   flac  0.6857  12. Man In The Long Black Coat.flac
+     4:36.12       48715232 B   -b-   --   ---xx   flac  0.7086  13. Seeing The Real You At Last.flac
+     5:05.05       53813368 B   -b-   --   ---xx   flac  0.6911  14. Under The Red Sky.flac
+     3:44.59       39651980 B   -b-   --   ---xx   flac  0.6895  15. I Shall Be Released.flac
+     6:50.60       72465376 B   -b-   --   ---xx   flac  0.7088  16. Like A Rolling Stone.flac
+    76:21.00      808090208 B                            0.6902  (16 files)
+=================== 
+=================== 
+=================== 

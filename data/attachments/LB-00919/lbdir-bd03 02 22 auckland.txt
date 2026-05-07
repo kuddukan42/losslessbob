@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03 02 22 auckland 
+=================== 
+=================== 
+=================== 
+58876283beff75d459fa009645713908  bd03-02-22.txt
+f8767decb3bf239076d99ee7c1c1457b  noname.md5
+4a346ac799e42488df88b6a83b1879db  t01.shn
+2106e81d0ef0fc513a69153c4ab166de  t02.shn
+b9bb6247efd354752f11e13442c0b04d  t03.shn
+204980fea282e2484c5df713cda130ef  t04.shn
+90828a2067f86f823094f70c84256f1e  t05.shn
+f5be84b5ebc939393415c4188b83a2dd  t06.shn
+d577d3022bf1ea1684144712079f92fd  t07.shn
+82131ec520c2748614beb4e92c3da5d9  t08.shn
+948a1d3a19cbeb7acc1b24e89ec1285c  t09.shn
+5ac8c6ac1bbe01267821789b2d7243a2  t10.shn
+f8f962f122c883e5d59265fb9083379d  t11.shn
+2d54b22f00536100a940b166f22271f8  t12.shn
+104baa650e2ebe974198b55635793060  t13.shn
+46caffe047148fbd22c982e5ddc02882  t14.shn
+dc9853b69e7fa961e1f9e980826e228b  t15.shn
+433e50c7daa22b132ea612e77febfa58  t16.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03 02 22 auckland 
+=================== 
+=================== 
+=================== 
+128e2d69663694db0b2a6ca73247475d  [shntool]  t01.wav
+4105b44dacf84991027c2f32491b563b  [shntool]  t02.wav
+6f0c5be1db1e89b139e543aaa8c4bbed  [shntool]  t03.wav
+e5a40eaff8c75bf9c03ce8ac90c5f956  [shntool]  t04.wav
+7a8f4b1f5c4340f147f856af59e68e37  [shntool]  t05.wav
+95d7f2a4d5331c02bd60e1d55f6d0e2a  [shntool]  t06.wav
+b37dd8a9e38beaa2b80482992239f83b  [shntool]  t07.wav
+c2036e0ea32877edfa7e23233c76b7ff  [shntool]  t08.wav
+5cdbf2471e8d2ccff784c76ee470f33a  [shntool]  t09.wav
+9b9871fdd15e58471d3bccdaf5baafd4  [shntool]  t10.wav
+2024161f980616bf28d4a7fcbf6c367e  [shntool]  t11.wav
+59c4b5d5f59dda0bd8dabf23e75e65ae  [shntool]  t12.wav
+d44b360f645f2c8ffae04ad1355f4597  [shntool]  t13.wav
+f8515d1c026d915ad38eed037cdadd5c  [shntool]  t14.wav
+baa00c7b07ed6d551e77889828d7fe3e  [shntool]  t15.wav
+24aebe7af6e709a859cc31a96924f165  [shntool]  t16.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03 02 22 auckland 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.70       63315484 B   -b-   --   ---xx    shn  0.5316  t01.shn
+     6:26.41       68185900 B   -b-   --   ---xx    shn  0.5527  t02.shn
+     5:38.70       59788632 B   -b-   --   ---xx    shn  0.6143  t03.shn
+     4:53.18       51727244 B   -b-   --   ---xx    shn  0.5794  t04.shn
+     7:25.43       78598512 B   -b-   --   ---xx    shn  0.5911  t05.shn
+     5:56.06       62811644 B   -b-   --   ---xx    shn  0.6015  t06.shn
+     7:53.13       83468936 B   -b-   --   ---xx    shn  0.4988  t07.shn
+     6:23.51       67682064 B   -b-   --   ---xx    shn  0.5555  t08.shn
+     5:08.09       54352580 B   -b-   --   ---xx    shn  0.5614  t09.shn
+     8:44.09       92455976 B   -b-   --   ---xx    shn  0.6183  t10.shn
+     8:36.62       91168308 B   -b-   --   ---xx    shn  0.5575  t11.shn
+     7:02.48       74554508 B   -b-   --   ---xx    shn  0.6190  t12.shn
+     5:34.26       58979060 B   -b-   --   ---xx    shn  0.4674  t13.shn
+    10:32.15      111520236 B   -b-   --   ---xx    shn  0.5857  t14.shn
+     6:29.09       68640972 B   -b-   --   ---xx    shn  0.5748  t15.shn
+     6:02.58       63993408 B   -b-   --   ---xx    shn  0.6298  t16.shn
+   108:46.24     1151243464 B                            0.5723  (16 files)
+=================== 
+=================== 
+=================== 

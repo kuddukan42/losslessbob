@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-08b.flacf 
+=================== 
+=================== 
+=================== 
+c16e815f68f672096d649677ed4655d8  bd1996-07-08 Passariano info.txt
+ddb6eecd33d922a16686cecad49444c0  bd1996-07-08.md5
+5f76803c87d7e4462a265068c300bcb2  bd1996-07-08d1t01.flac
+24045b3ade1136857aaa4fc060246c93  bd1996-07-08d1t02.flac
+f1116e3f2b73e8565cd19e39e9f0df77  bd1996-07-08d1t03.flac
+80d95e6ea38236b7fbbb6b129b25c9a9  bd1996-07-08d1t04.flac
+c8ec5a2c58a147d2d18e36dcb5d8c418  bd1996-07-08d1t05.flac
+075e8a7bb7286ce450636ed81bd57bd4  bd1996-07-08d1t06.flac
+f528b2fa4bf312e680c94afe84a8c049  bd1996-07-08d1t07.flac
+6ecd299954734bffd3ef7a4eaf096608  bd1996-07-08d1t08.flac
+e04a6bf564554d810453194aebb2585b  bd1996-07-08d1t09.flac
+c76d5529c7e96cddd12ed187d4047792  bd1996-07-08d2t01.flac
+1ddced16c52b3a99ebdd5251f3909e33  bd1996-07-08d2t02.flac
+c7b3a1ffbf27d5f06af9e2207d2aeb07  bd1996-07-08d2t03.flac
+7971e68ed2761a01e768d2b684656cf9  bd1996-07-08d2t04.flac
+1e7ac3efa0d9c1a9af648a6c9b14e406  bd1996-07-08d2t05.flac
+93ef764ca3f24b2cdbfc0109eb13678b  bd1996-07-08d2t06.flac
+f1ed9d1f6dd606cf800a65c951e1f7b4  bd96-07-08b-LB-3489.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-08b.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-07-08d1t01.flac:99f859b452405e38a7638449384c18d7
+bd1996-07-08d1t02.flac:dc61dc8e1718f2c85f4592462840e720
+bd1996-07-08d1t03.flac:6fb0824c18085ed133bfd1e38de675ae
+bd1996-07-08d1t04.flac:59bb14bff9fc7f434f1965a6ead9d7d7
+bd1996-07-08d1t05.flac:fceb520dbf573885177d11c15cc1bd3c
+bd1996-07-08d1t06.flac:5335e5a0551f19843fa477dabd700be6
+bd1996-07-08d1t07.flac:f402ca7e9c6d73b52bd49b70eb79d4ad
+bd1996-07-08d1t08.flac:d3ba7696cddf5e7416c3a8a5f288d276
+bd1996-07-08d1t09.flac:4c763401b6303772ba14b7dee3aea7d4
+bd1996-07-08d2t01.flac:62adf12c80bfe67532512575aff1e6ab
+bd1996-07-08d2t02.flac:32dd426f69bbbc01b77d1f780a4ba27f
+bd1996-07-08d2t03.flac:dddbb13295e5205f509898fd272854b0
+bd1996-07-08d2t04.flac:5846f0405eb53bd339d034582698ae46
+bd1996-07-08d2t05.flac:555fa82dc58ff3e88bdc519d67bf1d18
+bd1996-07-08d2t06.flac:841f897aa0ce94c5acaf0dbbdcfd8854
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-08b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.43       54785180 B   ---   --   ---xx   flac  0.5516  bd1996-07-08d1t01.flac
+     6:00.44       63607532 B   ---   --   ---xx   flac  0.5000  bd1996-07-08d1t02.flac
+     7:31.02       79561148 B   ---   --   ---xx   flac  0.5440  bd1996-07-08d1t03.flac
+     5:42.64       60479372 B   ---   --   ---xx   flac  0.4442  bd1996-07-08d1t04.flac
+     7:47.45       82484684 B   ---   --   ---xx   flac  0.5234  bd1996-07-08d1t05.flac
+     8:09.12       86287868 B   ---   --   ---xx   flac  0.5326  bd1996-07-08d1t06.flac
+     9:34.06      101267756 B   ---   --   ---xx   flac  0.4558  bd1996-07-08d1t07.flac
+     5:49.29       61631852 B   ---   --   ---xx   flac  0.4180  bd1996-07-08d1t08.flac
+     6:54.21       73079036 B   ---   --   ---xx   flac  0.4762  bd1996-07-08d1t09.flac
+     8:10.64       86586572 B   ---   --   ---xx   flac  0.5017  bd1996-07-08d2t01.flac
+     6:51.72       72669788 B   ---   --   ---xx   flac  0.4783  bd1996-07-08d2t02.flac
+     9:40.28      102377900 B   ---   --   ---xx   flac  0.5569  bd1996-07-08d2t03.flac
+     9:28.23      100249340 B   ---   --   ---xx   flac  0.5510  bd1996-07-08d2t04.flac
+     8:27.45       89540684 B   ---   --   ---xx   flac  0.5285  bd1996-07-08d2t05.flac
+     6:02.65       64009724 B   ---   --   ---xx   flac  0.5947  bd1996-07-08d2t06.flac
+   111:21.38     1178618436 B                            0.5123  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-10-late-g.flacf 
+=================== 
+=================== 
+=================== 
+6f0d8002853a4567849785f617976aad  CD1\01 I am the man, Thomas.flac
+6c94432ab481c0018af2345450be2c57  CD1\02 My back pages.flac
+a86f3ea296fcc4665d76d052e5efc61f  CD1\03 Desolation Row.flac
+34a1f4d0e9ca127e792bf2ea57d3d2ab  CD1\04 Mama, you been on my mind.flac
+3a4dd3b1a73a20d5185e4a958705e803  CD1\05 This world can't stand long.flac
+892825763518e1107f6550eb792eef49  CD1\06 Dignity.flac
+bbed56aa197654b2263285c7d130d07d  CD1\07 Country Pie.flac
+26e3c7d7e2d2c99d3ae0127ce78db77c  CD1\08 We better talk this over.flac
+056f0f481c15d4f1e4748433bc08e347  CD1\09 Things have changed.flac
+8307168e3e68ffd71fa051be7c8690df  CD1\10 Not dark yet.flac
+bd5365a51f7928a3134a2cbac0a23325  CD1\11 Highway 61 revisited.flac
+cebf7a92142242d1c2f56076aaccdd9e  CD1\FLAC CD1.md5
+04dab0df44147b73c73ad019545995d2  CD2\12 Ballad of a thin man.flac
+aa28946871ae31517eb9c8fe96f8016a  CD2\13 Not fade away.flac
+de44981639259852d34bf0f833421bb6  CD2\14 It ain't me, babe.flac
+98fcb38620b3a6f3b6e26e19d24bf093  CD2\15 Leopard-skin pill-box hat.flac
+7fe4045db5a4e63fddc014b8a998bd21  CD2\FLAC CD2.md5
+d1a67feef3336e2b2fee9a0ac79ae2b9  Info\2000-03-10 Sun Theatre, Anaheim, California. USA (2nd show) [uT].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-10-late-g.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 i am the man, thomas.flac:4767df32998855c03548234584696a79
+02 my back pages.flac:55ef065859ab71df1c4537c60fbfd5dd
+03 desolation row.flac:724b4046f74bdf601ede582a78de2a64
+04 mama, you been on my mind.flac:51f6357b3f985ecd139922901c06a6db
+05 this world can't stand long.flac:bb1bfcd4129d7fa612389f89c43992aa
+06 dignity.flac:e8549c94c763ef0e9bc1e38181d14a45
+07 country pie.flac:15e39849286529c04f7e2816369f9097
+08 we better talk this over.flac:bbcb024b37e7364a2f9189c6e6426c50
+09 things have changed.flac:edd6690e6eadba644438b07478cf6003
+10 not dark yet.flac:7445d1b48f5d9c3ea3438e23e303bcda
+11 highway 61 revisited.flac:cf6efe3586bf555c92da5eac7c4b7eb3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-10-late-g.flacf\cd2 
+=================== 
+=================== 
+=================== 
+12 ballad of a thin man.flac:ff3eb79dfbb33378ae44eb9afc2b91ad
+13 not fade away.flac:064d3ee220aaf215021f12a5f37fea40
+14 it ain't me, babe.flac:3ba19fabe0c276fc50b0714caa9b0150
+15 leopard-skin pill-box hat.flac:c6a00f94bf5391df898d2dd98b4d0bd9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-10-late-g.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:36.23       27572540 B   ---   --   ---xx   flac  0.5435  01 I am the man, Thomas.flac
+     5:36.41       59366876 B   ---   --   ---xx   flac  0.4902  02 My back pages.flac
+     8:32.27       90380348 B   ---   --   ---xx   flac  0.4763  03 Desolation Row.flac
+     5:13.73       55384940 B   ---   --   ---xx   flac  0.4732  04 Mama, you been on my mind.flac
+     3:50.37       40659068 B   ---   --   ---xx   flac  0.4526  05 This world can't stand long.flac
+     5:17.45       56024684 B   ---   --   ---xx   flac  0.5522  06 Dignity.flac
+     2:25.55       25707404 B   ---   --   ---xx   flac  0.5815  07 Country Pie.flac
+     3:51.65       40901324 B   ---   --   ---xx   flac  0.5286  08 We better talk this over.flac
+     5:43.41       60601676 B   ---   --   ---xx   flac  0.5633  09 Things have changed.flac
+     6:20.13       67062620 B   ---   --   ---xx   flac  0.4379  10 Not dark yet.flac
+     6:12.42       65719628 B   ---   --   ---xx   flac  0.5965  11 Highway 61 revisited.flac
+    55:41.12      589381108 B                            0.5123  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-10-late-g.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:30.00       68796044 B   ---   --   ---xx   flac  0.5783  12 Ballad of a thin man.flac
+     4:27.08       47117660 B   ---   --   ---xx   flac  0.6157  13 Not fade away.flac
+     7:46.19       82247132 B   ---   --   ---xx   flac  0.4797  14 It ain't me, babe.flac
+     5:25.49       57445292 B   ---   --   ---xx   flac  0.6050  15 Leopard-skin pill-box hat.flac
+    24:09.01      255606128 B                            0.5594  (4 files)
+=================== 
+=================== 
+=================== 

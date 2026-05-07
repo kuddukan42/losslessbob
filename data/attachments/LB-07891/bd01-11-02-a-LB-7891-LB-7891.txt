@@ -1,0 +1,12 @@
+Bob Dylan, 11/2/01, Terre Haute, IN, 2CDR
+
+LB-7891, (74min+72min), version "a"; Rip from audio CD, Playing this concert before the upload I did not listen the digi-pop on track 3 disk 1 and I did not found the gap at the end of track 1 disk 1, described for other circulating recording., CDR > EAC > .wav > FLAC Frontend > FLAC, Quality: Very Good
+---------------------------------------------------
+bittorrent download 08/09; this is a close eac match on d1t1 to LB-506 with different digital flaws; (did not listen to all of this)
+---------------------------------------------------
+drop/cut between cdrs; discontinutiies between tracks
+---------------------------------------------------
+Disc 1, 1) Hummingbird, 2) Girl of the North Country, 3) Desolation Row, 4) Rank Strangers to Me, 5) Maggie's Farm, 6) Floater, 7) Cry A While, 8) Tears of Rage, 9) Mama You've Been on my Mind, 10) John Brown, 11) Tangled Up in Blue, Disc 2, 1) Summer Days, 2) Mississippi, 3) Drifters Escape, 4) Leopard-Skin Pill-Box Hat, 5) Things Have Changed, 6) Like a Rolling Stone, 7) Forever Young, 8) Honest With Me, 9) Blowing In the Wind, 10) All Along the Watchtower
+---------------------------------------------------
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

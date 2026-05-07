@@ -1,0 +1,134 @@
+===================
+===================
+===================
+=== Bob Dylan 1999-02-13 Redbird Arena, Illinois State University, Normal, Illinois, USA [m. likely LB-4797].md5
+===================
+===================
+===================
+53bc06464ec39e00a23e8bf7506d171c *01 Gotta serve somebody.flac
+07027fda6993e50180e2f02b09f7021e *02 Million miles.flac
+3db9d19fd0dddf6bd1773e75a6b98eb7 *03 Watching the river flow.flac
+05a85da1a7d39e307e3c024802567779 *04 She belongs to me.flac
+935c82bd6fc1492d38a45d4a38a17628 *05 Silvio.flac
+a95ab0a3bd7b7263c63f2b8baca3e562 *06 Cocaine blues.flac
+73696fb63c99811755810b227741a298 *07 Masters of war.flac
+199011de7656502bba4b025a84648cdc *08 Love minus zero - no limit.flac
+fbc6a7bc972f7adba37b9201932d7941 *09 Tangled up in blue.flac
+8c54fa46c9ae62ed18c26d028d37f007 *10 Make you feel my love.flac
+60e06ad94a5d5a04b9008859e10270ac *11 Ballad of a thin man.flac
+29fe2bf02eb4da381d0ab2dc5ca95134 *12 Highway 61 revisited.flac
+d6229ccd4a16b572d4e8e824b2315962 *13 Love sick.flac
+efb3ee7fbe532af704ecec916763969c *14 Rainy day women # 12 & 35.flac
+d6367862c46cebfea6d03344b99d3ca4 *15 Blowin' in the wind.flac
+0ee819dfe5abc76ae0cea7906cef0f6c *16 Not fade away.flac
+0dc43a0340901bbe13b5d8a7bd02c936 *17 My back pages [filler].flac
+4728d4a57f80f23b7590157135d1bedd *18 'Til I fell in love with you [filler].flac
+625df253f174e877df4154606b1a7d0e *19 Positively 4th Street [filler].flac
+e446aaf5d360934c522ec38fc7fc0b45 *20 Highway 61 revisited [filler].flac
+5a8622b3c9b8ae0278023d51fa6e9725 *21 Love sick [filler].flac
+fd33ef8e8f885bfabebe9b904d4e97d1 *22 Leopard-skin pill-box hat [filler].flac
+d993d0e6a401dea246afde9c8c9626a0 *23 Blowin' in the wind [filler].flac
+3b18a96bfb338c75c03b7b9d534335ce *24 Not fade away [filler].flac
+0a39189f1bd0fb0f113dfbac2c605d0d *Bob Dylan 1999-02-13 Redbird Arena, Illinois State University, Normal, Illinois, USA.txt
+===================
+===================
+===================
+=== Bob Dylan 1999-02-13 Redbird Arena, Illinois State University, Normal, Illinois, USA.txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Redbird Arena
+Illinois State University
+Normal, Illinois
+February 13, 1999
+
+There was no info file accompanying this recording!
+
+Taper: unidentified
+Rating: B
+Derived (most likely) from LB-4797, based on http://jokerman.org.uk/lb/detail/LB-04797.html: "lots of drops d1t7 2:52 to 3:33, d1t12 2:20; drops between tracks"
+
+Songs are named
+
+01 Gotta Serve Somebody
+02 Million Miles
+03 Watching The River Flow
+04 She Belongs To Me
+05 Silvio (Bob Dylan & Robert Hunter)
+06 Cocaine Blues (trad.)
+07 Masters Of War
+08 Love Minus Zero - No Limit
+09 Tangled Up In Blue
+10 Make You Feel My Love
+11 Ballad Of A Thin Man
+12 Highway 61 Revisited
+-
+13 Love Sick
+14 Rainy Day Women # 12 & 35
+15 Blowin' In The Wind
+16 Not Fade Away (Norman Petty/Charles Hardin)
+
+Fillers: (date(s) unknown):
+17 My back pages
+18 'Til I fell in love with you
+19 Positively 4th Street
+20 Highway 61 revisited
+21 Love sick
+22 Leopard-skin pill-box hat
+23 Blowin' in the wind
+24 Not fade away
+
+Concert # 1060 of The Never-Ending Tour
+Concert # 14 of the 1999 US Winter Tour
+1999 concert # 14
+
+Concert # 207 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+69, 15 acoustic with the band
+1, 5, 6, 15, 16 Bucky Baxter and Larry Campbell backup vocal
+11, 14 Four-piece horn section from the Brian Setzer Orchestra
+11, 12, 14, 16 Brian Setzer (electric guitar)
+
+BobTalk:
+People told me Id never get close to Normal. But they were wrong! (before Silvio)
+
+8 new songs (50%) compared to previous concert
+1 new song for this tour
+
+Stereo audience recording, 95 minutes
+
+53bc06464ec39e00a23e8bf7506d171c *01 Gotta serve somebody.flac
+07027fda6993e50180e2f02b09f7021e *02 Million miles.flac
+3db9d19fd0dddf6bd1773e75a6b98eb7 *03 Watching the river flow.flac
+05a85da1a7d39e307e3c024802567779 *04 She belongs to me.flac
+935c82bd6fc1492d38a45d4a38a17628 *05 Silvio.flac
+a95ab0a3bd7b7263c63f2b8baca3e562 *06 Cocaine blues.flac
+73696fb63c99811755810b227741a298 *07 Masters of war.flac
+199011de7656502bba4b025a84648cdc *08 Love minus zero - no limit.flac
+fbc6a7bc972f7adba37b9201932d7941 *09 Tangled up in blue.flac
+8c54fa46c9ae62ed18c26d028d37f007 *10 Make you feel my love.flac
+60e06ad94a5d5a04b9008859e10270ac *11 Ballad of a thin man.flac
+29fe2bf02eb4da381d0ab2dc5ca95134 *12 Highway 61 revisited.flac
+d6229ccd4a16b572d4e8e824b2315962 *13 Love sick.flac
+efb3ee7fbe532af704ecec916763969c *14 Rainy day women # 12 & 35.flac
+d6367862c46cebfea6d03344b99d3ca4 *15 Blowin' in the wind.flac
+0ee819dfe5abc76ae0cea7906cef0f6c *16 Not fade away.flac
+0dc43a0340901bbe13b5d8a7bd02c936 *17 My back pages [filler].flac
+4728d4a57f80f23b7590157135d1bedd *18 'Til I fell in love with you [filler].flac
+625df253f174e877df4154606b1a7d0e *19 Positively 4th Street [filler].flac
+a594e584de4b869f853c4fbbc3f89a64 *1999-02-13 Redbird Arena, Illinois State University, Normal, Illinois, USA.txt
+e446aaf5d360934c522ec38fc7fc0b45 *20 Highway 61 revisited [filler].flac
+5a8622b3c9b8ae0278023d51fa6e9725 *21 Love sick [filler].flac
+fd33ef8e8f885bfabebe9b904d4e97d1 *22 Leopard-skin pill-box hat [filler].flac
+d993d0e6a401dea246afde9c8c9626a0 *23 Blowin' in the wind [filler].flac
+3b18a96bfb338c75c03b7b9d534335ce *24 Not fade away [filler].flac
+===================
+===================
+===================

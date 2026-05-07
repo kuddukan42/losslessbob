@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-18-LTD.flacf 
+=================== 
+=================== 
+=================== 
+8f22ae4ce1eb1f23679d77aa6dcccd1e  bd-19971218-LosAngeles.ffp
+d24362e87c40bce8b2446c58222fb5d9  bd-19971218-LosAngeles.md5
+cce1f81de2e7b8ca1b102ba4aef667fe  bd1997-12-18-d1t01.flac
+11703012d9dbfbfe687c4ba79c421e52  bd1997-12-18-d1t02.flac
+80532469031e0a17cf95f7e1063fde69  bd1997-12-18-d1t03.flac
+aa1ab33cb545247457c92bfffcd05a96  bd1997-12-18-d1t04.flac
+775f32928d5f453b6776a23c897502e8  bd1997-12-18-d1t05.flac
+4e2e9380b3aae7d19c524079149dd0f8  bd1997-12-18-d1t06.flac
+76865f790bf217343b26f3d8d0fe2ad3  bd1997-12-18-d1t07.flac
+06737460917aab44b79286195bd09bd2  bd1997-12-18-d1t08.flac
+b6b9cebe1be9b9511212d10f90ae7169  bd1997-12-18-d1t09.flac
+1a9346176b84042061a89500f14f37ac  bd1997-12-18-d1t10.flac
+a3d76a0e0e585e43f3f698b34b4bd9ce  bd1997-12-18-d2t01.flac
+280b68a4387f68a7ab0c0d59a1c66d0a  bd1997-12-18-d2t02.flac
+0f4e7bcd07b2bc921e762c9ea96b47f6  bd1997-12-18-d2t03.flac
+8da58cc61ca6b085b948c14587aa69d3  bd1997-12-18-d2t04.flac
+0015450a7e37692e1ef26848b0f77d4a  bd1997-12-18-d2t05.flac
+b5ddd12f31bfb9687d82e398e2320b68  bd1997-12-18-d2t06.flac
+701620e9196cc150776126e6c31ea6e3  bd1997-12-18-d2t07.flac
+d01f1e13ad348df1cc897d0f83b97b2b  bd1997-12-18-d2t08.flac
+6d36513041e7fd21003a3677567b5406  bd1997-12-18-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-18-LTD.flacf 
+=================== 
+=================== 
+=================== 
+bd1997-12-18-d1t01.flac:6c8ede693c608990dbbe75db9c799ef7
+bd1997-12-18-d1t02.flac:66b1a7789629ed5bdb0f48fec33a4fde
+bd1997-12-18-d1t03.flac:e1244772361ace3470f0b37e4db5fd6a
+bd1997-12-18-d1t04.flac:587d16d6f1730abad92b505dfc4f58f7
+bd1997-12-18-d1t05.flac:bdc7443f56e9acacac9cdafbb656ee9c
+bd1997-12-18-d1t06.flac:1f20ff9d279086ca1cef05680ae11f35
+bd1997-12-18-d1t07.flac:178fcc5e2e7ce6f38990b99a99f71b3c
+bd1997-12-18-d1t08.flac:c2e791d944e4527cc97e85d5085015bc
+bd1997-12-18-d1t09.flac:02d798104fc4e4aa2a025eb47dc100bb
+bd1997-12-18-d1t10.flac:0718843ff842ce3a5969baa1f4858f15
+bd1997-12-18-d2t01.flac:208de398a643ba1c99c2a544856d2fcf
+bd1997-12-18-d2t02.flac:f289e66779c6378819883a72ce12ece7
+bd1997-12-18-d2t03.flac:9bc2a2c6a835ad9089376e0df04a689d
+bd1997-12-18-d2t04.flac:e05eff8184301dd69d23508b6315bb7c
+bd1997-12-18-d2t05.flac:cbfaacfb1ea7668c8fa214e0c4d04e9e
+bd1997-12-18-d2t06.flac:34a9973af0f36010bc90fe7ca7040127
+bd1997-12-18-d2t07.flac:bc248188dc7f356dfb65a1a3418af8a7
+bd1997-12-18-d2t08.flac:5507df8f4b3334be0073cf02fd96f2b7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-18-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:23.70        4221884 B   ---   --   ---xx   flac  0.4137  bd1997-12-18-d1t01.flac
+     5:45.17       60898028 B   ---   --   ---xx   flac  0.5102  bd1997-12-18-d1t02.flac
+     5:05.28       53867900 B   ---   --   ---xx   flac  0.4844  bd1997-12-18-d1t03.flac
+     6:49.35       72229964 B   ---   --   ---xx   flac  0.5007  bd1997-12-18-d1t04.flac
+     5:31.41       58484876 B   ---   --   ---xx   flac  0.4818  bd1997-12-18-d1t05.flac
+     5:43.32       60580508 B   ---   --   ---xx   flac  0.5116  bd1997-12-18-d1t06.flac
+     6:44.26       71326796 B   ---   --   ---xx   flac  0.5455  bd1997-12-18-d1t07.flac
+     3:49.05       40407404 B   ---   --   ---xx   flac  0.4540  bd1997-12-18-d1t08.flac
+     6:11.22       65496188 B   ---   --   ---xx   flac  0.4603  bd1997-12-18-d1t09.flac
+     8:18.62       87993068 B   ---   --   ---xx   flac  0.5172  bd1997-12-18-d1t10.flac
+     5:51.19       61961132 B   ---   --   ---xx   flac  0.5045  bd1997-12-18-d2t01.flac
+     6:24.19       67782332 B   ---   --   ---xx   flac  0.4996  bd1997-12-18-d2t02.flac
+     0:47.46        8399036 B   ---   --   ---xx   flac  0.4110  bd1997-12-18-d2t03.flac
+     7:25.53       78622700 B   ---   --   ---xx   flac  0.5257  bd1997-12-18-d2t04.flac
+    10:40.66      113051276 B   ---   --   ---xx   flac  0.5134  bd1997-12-18-d2t05.flac
+     8:46.09       92807612 B   ---   --   ---xx   flac  0.4308  bd1997-12-18-d2t06.flac
+     5:40.43       60077180 B   ---   --   ---xx   flac  0.4805  bd1997-12-18-d2t07.flac
+     5:45.54       60985052 B   ---   --   ---xx   flac  0.5215  bd1997-12-18-d2t08.flac
+   105:44.47     1119192936 B                            0.4966  (18 files)
+=================== 
+=================== 
+=================== 

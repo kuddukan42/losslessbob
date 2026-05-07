@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-18-I-Walk-The-Line.flacf 
+=================== 
+=================== 
+=================== 
+a3e45632586e9c6b72108f0459424863  back.jpg
+30438cbbc0ab4c6441ce59a2587f8cfa  bd99-06-18-I-Walk-The-Line-LB-4113.txt
+89764cb3418d6aeb604c8c1431ad27c5  Bob Dylan I Walk The Line Concord 1999.txt
+6e01d3f801b07f68a768b73bd98f9b1a  d1\Concord 1999 d1.LOG
+a2884eeaa0a72852fdd22c0c484bab14  d1\D1 Track 01.flac
+f2b25ef002fe48b9a5d192202fb79b8a  d1\D1 Track 02.flac
+fa5e39162cfd4eb05a8e0f2baf42f9c1  d1\D1 Track 03.flac
+c5b4f7e3bab60e81a4d61b7847096652  d1\D1 Track 04.flac
+2c21cd5a028a1296b4e0a35c736ef047  d1\D1 Track 05.flac
+3ee5ccfc153bafc66fbcdb846567ca23  d1\D1 Track 06.flac
+68ddbc792a9c7c03e8f1d5b2a04ceda2  d1\D1 Track 07.flac
+dbfd2468cf3db9524481fc5e4b12d553  d1\D1 Track 08.flac
+3e80a56357045de97c92ce3ce82620e2  d2\Concord 1999 D2.LOG
+3f008190d7917a97b3d52408d34acea8  d2\D2 Track 01.flac
+388b8bd77ae9e29aab604698f0a5dfc0  d2\D2 Track 02.flac
+0da1561417bad67ca4eb33f0f877cf5a  d2\D2 Track 03.flac
+a47a39014306893aeac293bb1ad4426d  d2\D2 Track 04.flac
+3ea9c1ce9a19328b9952b562bc985650  d2\D2 Track 05.flac
+db74544b980d0ba28f6a98c97f4dc3b7  d2\D2 Track 06.flac
+1084eed30123ab3fd4e6c44265d8ed1a  d2\D2 Track 07.flac
+7b3d6a11e68eef28dca86466ea33bfef  Front.jpg
+8cb74f2615d52de4f3b2862616ccee2b  insert.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-18-I-Walk-The-Line.flacf\d1 
+=================== 
+=================== 
+=================== 
+D1 Track 01.flac:2154e48147aad045ff3b714f951e8cfb
+D1 Track 02.flac:504d09b1dbbff8caa8323f16367f2add
+D1 Track 03.flac:351738eb86b62ac0288053d2b57f45fc
+D1 Track 04.flac:74507db1ada5763dc21e8997dbd8e994
+D1 Track 05.flac:872acf82d847399bcfbbeef632700fb8
+D1 Track 06.flac:90f485404bba514dd1f749ecaa986e62
+D1 Track 07.flac:1b6a03f4cf80e58d90747f723a19ec67
+D1 Track 08.flac:68a9794bea877cad767f410d1b2a61d1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-18-I-Walk-The-Line.flacf\d2 
+=================== 
+=================== 
+=================== 
+D2 Track 01.flac:6874325f9a90e44654c23a4a5fd69460
+D2 Track 02.flac:05e1d011d6a187d72108fd882f84e45f
+D2 Track 03.flac:3b2df49fc530b7185ad8b8bc0d550356
+D2 Track 04.flac:b811b4206d5c2b18dbd1de5a31be952f
+D2 Track 05.flac:4cb409485467bdd2bce9ce332b041bb6
+D2 Track 06.flac:fb05c04c541501b69b53ecfe413a8bcc
+D2 Track 07.flac:fd309766d5c1834ea9bde4955daf7473
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-18-I-Walk-The-Line.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:41.13       60183020 B   ---   --   ---xx   flac  0.5357  D1 Track 01.flac
+     7:40.39       81235772 B   ---   --   ---xx   flac  0.5331  D1 Track 02.flac
+     5:46.27       61097948 B   ---   --   ---xx   flac  0.5175  D1 Track 03.flac
+     7:41.43       81421580 B   ---   --   ---xx   flac  0.5501  D1 Track 04.flac
+     7:36.61       80581916 B   ---   --   ---xx   flac  0.5687  D1 Track 05.flac
+     5:04.32       53700908 B   ---   --   ---xx   flac  0.5632  D1 Track 06.flac
+     4:38.50       49156844 B   ---   --   ---xx   flac  0.4935  D1 Track 07.flac
+     8:16.09       87515612 B   ---   --   ---xx   flac  0.5639  D1 Track 08.flac
+    52:25.49      554893600 B                            0.5436  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-18-I-Walk-The-Line.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:39.47       70494188 B   ---   --   ---xx   flac  0.4895  D2 Track 01.flac
+     0:47.15        8326124 B   ---   --   ---xx   flac  0.5728  D2 Track 02.flac
+     8:14.34       87221612 B   ---   --   ---xx   flac  0.5610  D2 Track 03.flac
+    11:09.35      118093964 B   ---   --   ---xx   flac  0.4934  D2 Track 04.flac
+     5:25.00       57330044 B   ---   --   ---xx   flac  0.4930  D2 Track 05.flac
+     3:51.48       40861340 B   ---   --   ---xx   flac  0.5316  D2 Track 06.flac
+     6:07.24       64795292 B   ---   --   ---xx   flac  0.5294  D2 Track 07.flac
+    42:14.53      447122564 B                            0.5161  (7 files)
+=================== 
+=================== 
+=================== 

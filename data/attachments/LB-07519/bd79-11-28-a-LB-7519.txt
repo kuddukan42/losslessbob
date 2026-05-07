@@ -1,0 +1,8 @@
+Bob Dylan, 11/28/79, San Diego, California, 1CDR
+
+LB-7519, (43min), incomplete, net taper A, 1st gen reel -> audio-CD (-> audio-CD ?) -> eac -> Wavelab -> tlh, I did not harm the sound of the recording in any way; bittorrent download 05/09; this is a close eac match on t2 to LB-4130; this has less flaws; (did not listen to all of this)
+
+1 Gotta Serve Somebody, 2 I Believe In You, 3 When You Gonna Wake Up, 4 When He Returns, 5 Man Gave Names To All The Animals, 6 Precious Angel, 7 Slow Train, 8 Covenant Woman
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

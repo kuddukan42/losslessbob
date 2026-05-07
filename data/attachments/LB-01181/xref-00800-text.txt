@@ -1,0 +1,47 @@
+===================
+===================
+===================
+=== bd1990-10-19 New York.ffp
+===================
+===================
+===================
+bd90-10-19d1t01.flac:05e9c83c41e46f2ab32b1015a006df2c
+bd90-10-19d1t02.flac:74ea3c7c833ecf8b8536166d59494755
+bd90-10-19d1t03.flac:0be053ddb4c0a333b4b85f35e8752114
+bd90-10-19d1t04.flac:fda278e93b3d93ff41ee52d5a5b45765
+bd90-10-19d1t05.flac:a14a0bd95ee9996a137c9201083b638d
+bd90-10-19d1t06.flac:95b529a68c4f1969ac288fe045c3f9f5
+bd90-10-19d1t07.flac:d4f7a4d3f5ee79f2f43c951a0e3e245e
+bd90-10-19d1t08.flac:c4e831b202fa335f4a0b7d2abee571f0
+bd90-10-19d1t09.flac:5f6b7cb11929e541fa420f0d94f60c21
+bd90-10-19d1t10.flac:7e6f6a5d4ce329cd84ae5cb109b20245
+bd90-10-19d2t01.flac:1dac6105168cb8ff05309397584f9d28
+bd90-10-19d2t02.flac:e2d1fc3b21720b7fb0fc7f5026aa7d7f
+bd90-10-19d2t03.flac:0fb43152642bbefa1794fa7ac02c6bbc
+bd90-10-19d2t04.flac:3300a723c93a71139bf1f4d62f78dae5
+bd90-10-19d2t05.flac:2ee64b2234ea57ee9cc3fec38d00dc46
+bd90-10-19d2t06.flac:f33e2b5f686528ebc8913c70f1314acc
+bd90-10-19d2t07.flac:cf6ea72a82baa4f45da6cf65574e260f
+bd90-10-19d2t08.flac:e26cab2ad91814306da25e8bd8f2edb9
+bd90-10-19d2t09.flac:a1e4754ecc478d680d566020338174a1
+bd90-10-19d2t10.flac:6d3dfa4858bf9b326ddc440ff85345d6
+===================
+===================
+===================
+=== bd90-10-19.txt
+===================
+===================
+===================
+Bob Dylan, 10/19/90, New York City, 2CDR
+
+(40min+47min), JF master;  very good to excellent sound
+lineage : FTP>CDR>EAC>TLH>>FLAC8
+
+CD1
+1 Dixie (instrumental) 2 To Be Alone With You 3 Joey 4 Silvio 5 Masters Of War 6 Under The Red Sky 7 Wiggle Wiggle 8 Dark As A Dungeon (acoustic w band) 9 She Belongs To Me (acoustic w band) 10 It's Alright, Ma (I'm Only Bleeding) (acoustic w band) 
+
+CD2
+1 Love Minus Zero - No Limit (acoustic w band) 2 T.V. Talkin' Song 3 Shooting Star 4 Tight Connection To My Heart (Has Anybody Seen My Love) 5 Gotta Serve Somebody 6 All Along The Watchtower 7 Like A Rolling Stone 8 It Ain't Me, Babe (acoustic w band) 9 Highway 61 Revisited 10 Maggie's Farm
+===================
+===================
+===================

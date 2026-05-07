@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-06-LTD.flacf 
+=================== 
+=================== 
+=================== 
+047b64b3f89e7a14f42ce77eb1500965  1989-06-06 Glasgow.md5
+c9bc53d838dad0d17fddb0aa9931bb1e  Glasgow 1989-101.flac
+ada2a664407ae56dfbda9df427d06eba  Glasgow 1989-102.flac
+1e9497d724b6fb513e63a8fad7e5150e  Glasgow 1989-103.flac
+8258566e0e1a34d6bf75c772b56b348b  Glasgow 1989-104.flac
+3b178cae294b8a7601214360c06a10c1  Glasgow 1989-105.flac
+cff9130193fb050081a66157e7857896  Glasgow 1989-106.flac
+01c53668fb11bed17751da13e47a3f1e  Glasgow 1989-107.flac
+50965b003838dbb62fbeda8f30f06e03  Glasgow 1989-108.flac
+f661b4678af4e6798723d735b82e9e0e  Glasgow 1989-109.flac
+cb3e9cb8410da070413dfd224a17a9a9  Glasgow 1989-110.flac
+ee6f881562743cee5c24d2415c9afe8a  Glasgow 1989-201.flac
+d2c65da100aa5aa62d733368f251dec2  Glasgow 1989-202.flac
+f302c2d4eeb277a78040876b692d7cbb  Glasgow 1989-203.flac
+4196ed4e09e1c82dcdd571d3dc9e55a6  Glasgow 1989-204.flac
+0ca23d970fc8ce38f2f84e97d6dcf636  Glasgow 1989-205.flac
+997f62e4f34e47de8035b663477398ca  Glasgow-1989-06-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-06-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Glasgow 1989-101.flac:e530a363ed53fa837c11a4bd02d3870e
+Glasgow 1989-102.flac:d21839983e726215a3fb43aad64c5a04
+Glasgow 1989-103.flac:211bcab0d3a75e634470e1f77d70d926
+Glasgow 1989-104.flac:00f5135b2e0e868585cb3af070a20ea3
+Glasgow 1989-105.flac:507fbd783cd68e537279c52fef359ebd
+Glasgow 1989-106.flac:c2cc84a21ef0d33ddb03889fc139331d
+Glasgow 1989-107.flac:93fffc0468731ebf70fe238ab8be1865
+Glasgow 1989-108.flac:a31a8028a931369a6cb3e44c863e174b
+Glasgow 1989-109.flac:a0053bb0589f5a1a711253d03473ebdf
+Glasgow 1989-110.flac:19185b2987c5d91d97cc379e73206c21
+Glasgow 1989-201.flac:24e9cffb8c316ec3f9aa9bb2d176face
+Glasgow 1989-202.flac:3de9d1ec4bdfc28dc3729c6eb8218df2
+Glasgow 1989-203.flac:8daadbb9c6d9ea298839cf8ec6e6afd2
+Glasgow 1989-204.flac:3ced1d54fc46b1ea5c9f350bc2e20ae6
+Glasgow 1989-205.flac:5bc4bb6852249926d38ff501cde7492b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-06-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.72       50266180 B   -b-   --   ---xx   flac  0.5755  Glasgow 1989-101.flac
+     3:18.01       34930728 B   -b-   --   ---xx   flac  0.5905  Glasgow 1989-102.flac
+     5:58.53       63275044 B   -b-   --   ---xx   flac  0.5487  Glasgow 1989-103.flac
+     4:57.30       52461612 B   -b-   --   ---xx   flac  0.6167  Glasgow 1989-104.flac
+     4:33.15       48193576 B   -b-   --   ---xx   flac  0.6134  Glasgow 1989-105.flac
+     3:52.32       41001004 B   -b-   --   ---xx   flac  0.6242  Glasgow 1989-106.flac
+     4:18.15       45547564 B   -b-   --   ---xx   flac  0.5294  Glasgow 1989-107.flac
+     7:16.40       77004840 B   -b-   --   ---xx   flac  0.5741  Glasgow 1989-108.flac
+     6:53.38       72941612 B   -b-   --   ---xx   flac  0.5879  Glasgow 1989-109.flac
+     3:45.11       39714856 B   -b-   --   ---xx   flac  0.6188  Glasgow 1989-110.flac
+     3:56.08       41648172 B   -b-   --   ---xx   flac  0.6039  Glasgow 1989-201.flac
+     7:45.25       82083884 B   -b-   --   ---xx   flac  0.6268  Glasgow 1989-202.flac
+     4:54.60       52002856 B   -b-   --   ---xx   flac  0.6055  Glasgow 1989-203.flac
+     5:09.22       54558760 B   -b-   --   ---xx   flac  0.6234  Glasgow 1989-204.flac
+     6:59.06       73924652 B   -b-   --   ---xx   flac  0.6108  Glasgow 1989-205.flac
+    78:22.52      829555340 B                            0.5965  (15 files)
+=================== 
+=================== 
+=================== 

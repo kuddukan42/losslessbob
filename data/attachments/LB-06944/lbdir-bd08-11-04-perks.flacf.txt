@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-11-04-perks.flacf 
+=================== 
+=================== 
+=================== 
+15596ef1c7ceb5f7e1f1df356affaac9  Bob Dylan 2008-11-04 d01t01.flac
+eeaadeb87f4dbd10f5166de3acfe0fb7  Bob Dylan 2008-11-04 d01t02.flac
+6a40c4a159413254eb84a7d118689eb1  Bob Dylan 2008-11-04 d01t03.flac
+53f092027151cee832db02fb36c80007  Bob Dylan 2008-11-04 d01t04.flac
+c3877d4c4032c7ee2a9e16d56612ac93  Bob Dylan 2008-11-04 d01t05.flac
+51d707a51b784523828917223479f3d0  Bob Dylan 2008-11-04 d01t06.flac
+79ab726667abfa4343a237968ed1bfe7  Bob Dylan 2008-11-04 d01t07.flac
+4b82517f90d201e7fedb01b3cab2232e  Bob Dylan 2008-11-04 d01t08.flac
+8da1fc36cd95862429054a1e5053cafd  Bob Dylan 2008-11-04 d01t09.flac
+bd9392c03e9509ec447629f18fd8a033  Bob Dylan 2008-11-04 d01t10.flac
+7e1da9895bd7908525ea1a32396fa82b  Bob Dylan 2008-11-04 d02t01.flac
+cd71e708682f7a7b08eb1d6549adae3d  Bob Dylan 2008-11-04 d02t02.flac
+5fd1879cb8bc79340f193d2e7ac27c9e  Bob Dylan 2008-11-04 d02t03.flac
+5c050557f0aa4b1121a560778658548e  Bob Dylan 2008-11-04 d02t04.flac
+11ee8a54c5f2330e397b49fa203e9407  Bob Dylan 2008-11-04 d02t05.flac
+6d57fa59880eb7c1bd1d6c8cdfcbe308  Bob Dylan 2008-11-04 d02t06.flac
+fa7cf573b64442c8c830e79b1ed414fe  Bob Dylan 2008-11-04 d02t07.flac
+cd404b929360df6659bfcf97cc348448  Bob Dylan 2008-11-04 ffp.txt
+f3254fd5fed1613a5b54aed438d5edf5  Bob Dylan 2008-11-04.md5
+2cf8f9bfcdbd94ac74b927102f95ad1f  Bob Dylan 2008-11-04.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-11-04-perks.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan 2008-11-04 d01t01.flac:00b09a414d7cc77332bb004f8c94b013
+Bob Dylan 2008-11-04 d01t02.flac:3a63a52477bf1bd4d7e5a68dad6d6a30
+Bob Dylan 2008-11-04 d01t03.flac:4a9435c99c442358f5599f306a168a62
+Bob Dylan 2008-11-04 d01t04.flac:f655451f6de29c8c34d4ea62ca412745
+Bob Dylan 2008-11-04 d01t05.flac:44e9097b171ac0772ad1105e0b6168c3
+Bob Dylan 2008-11-04 d01t06.flac:a98d99a0f6fa0c5fbb4d6cd8a3f7bf9c
+Bob Dylan 2008-11-04 d01t07.flac:d05401972797243f2a4614e0f15cf0a1
+Bob Dylan 2008-11-04 d01t08.flac:305d519843f024dcad9f20012adc7e5a
+Bob Dylan 2008-11-04 d01t09.flac:40740e63904473a64e5433f064c363af
+Bob Dylan 2008-11-04 d01t10.flac:6d9341fb6bde2342b1b41495c15ab650
+Bob Dylan 2008-11-04 d02t01.flac:1e30ab8604459fb7a2944c6304a04a5c
+Bob Dylan 2008-11-04 d02t02.flac:ee468efc5ddc664aa974f3d04231fbf2
+Bob Dylan 2008-11-04 d02t03.flac:dbefe6db8450dacdc620e7fd89cce0ab
+Bob Dylan 2008-11-04 d02t04.flac:b7dbeed62f19251ef06a3d672f4eadfc
+Bob Dylan 2008-11-04 d02t05.flac:f550892424065d14cb5ae6615c82ac84
+Bob Dylan 2008-11-04 d02t06.flac:898fb50fc86bc7b9017cdf524d2fc8be
+Bob Dylan 2008-11-04 d02t07.flac:88bfdcf6761b3c8ec3b0a93e53bf16d8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-11-04-perks.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.50       52332044 B   ---   --   ---xx   flac  0.5811  Bob Dylan 2008-11-04 d01t01.flac
+     5:28.50       57976844 B   ---   --   ---xx   flac  0.5840  Bob Dylan 2008-11-04 d01t02.flac
+     5:34.02       58922348 B   ---   --   ---xx   flac  0.6014  Bob Dylan 2008-11-04 d01t03.flac
+     6:39.25       70442444 B   ---   --   ---xx   flac  0.5784  Bob Dylan 2008-11-04 d01t04.flac
+     8:14.27       87205148 B   ---   --   ---xx   flac  0.5601  Bob Dylan 2008-11-04 d01t05.flac
+     5:46.48       61147340 B   ---   --   ---xx   flac  0.5620  Bob Dylan 2008-11-04 d01t06.flac
+     7:20.47       77726588 B   ---   --   ---xx   flac  0.5935  Bob Dylan 2008-11-04 d01t07.flac
+     5:47.05       61222604 B   ---   --   ---xx   flac  0.5393  Bob Dylan 2008-11-04 d01t08.flac
+     6:32.57       69282908 B   ---   --   ---xx   flac  0.5140  Bob Dylan 2008-11-04 d01t09.flac
+     7:25.03       78505100 B   ---   --   ---xx   flac  0.5969  Bob Dylan 2008-11-04 d01t10.flac
+     4:50.11       51181916 B   ---   --   ---xx   flac  0.5268  Bob Dylan 2008-11-04 d02t01.flac
+     7:32.44       79836332 B   ---   --   ---xx   flac  0.5625  Bob Dylan 2008-11-04 d02t02.flac
+     5:53.31       62342156 B   ---   --   ---xx   flac  0.5551  Bob Dylan 2008-11-04 d02t03.flac
+     6:22.72       67554188 B   ---   --   ---xx   flac  0.5763  Bob Dylan 2008-11-04 d02t04.flac
+    11:36.04      122783852 B   ---   --   ---xx   flac  0.5097  Bob Dylan 2008-11-04 d02t05.flac
+     8:02.13       85055420 B   ---   --   ---xx   flac  0.5757  Bob Dylan 2008-11-04 d02t06.flac
+    10:02.59      106331612 B   ---   --   ---xx   flac  0.5024  Bob Dylan 2008-11-04 d02t07.flac
+   118:05.23     1249848844 B                            0.5566  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,18 @@
+8e9739c3cc72ba18dac11ee45d27f47c *01 Bob Dylan - All Along the Watchtower.flac
+5eb533f90e8728f59fd452fbdfcd49de *02 Bob Dylan - It Ain't Me, Babe.flac
+8d87948d31a08e806721414a551cab9e *03 Bob Dylan - I Contain Multitudes.flac
+b263b53928583308fdc139e5df557cc3 *04 Bob Dylan - False Prophet.flac
+d7d57505a5501e4228576a812575241b *05 Bob Dylan - When I Paint My Masterpiece.flac
+38a74e11f7606463676bbd1632229c1d *06 Bob Dylan - Black Rider.flac
+bc74c2e786554a011df4ff7d9c27c71e *07 Bob Dylan - To Be Alone With You.flac
+57f7145367e94efdaf9c871837380aa5 *08 Bob Dylan - My Own Version of You.flac
+8b8c398c7de95424f0b8870ea8342c08 *09 Bob Dylan - Desolation Row.flac
+31664ff89adc4690b9646d86d3989557 *10 Bob Dylan - Crossing The Rubicon.flac
+9be6e5bd7ed889821dd5f7ad05f2d960 *11 Bob Dylan - Key West (Philosopher Pirate).flac
+0cdc1c040d7b6b03011cbc9a2bb71010 *12 Bob Dylan - It's All Over Now, Baby Blue.flac
+fc82a859413e171b16561c4ba3c74872 *13 Bob Dylan - I've Made Up My Mind To Give Myself To You.flac
+b364da4c22498ce0b0d836c0e363893e *14 Bob Dylan - Mother of Muses.flac
+f92e36613301d6808041059e3774d51d *15 Bob Dylan - Dignity.flac
+399c8362ddbd5bbd5b3b2a911ae99edd *16 Bob Dylan - Goodbye Jimmy Reed.flac
+faaefd8ccdd7919bc8bfdd0e4aa59878 *17 Bob Dylan - Every Grain of Sand.flac
+f86dd9b58ae0986eae386573dbd52cd4 *txt.txt

@@ -1,0 +1,95 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 - Traccia Audio.flac:4e60352621474513a1c5068fbabe012002 - Traccia Audio.flac:636dee0e0a8ee393fbd9d17b92ed7b6e03 - Traccia Audio.flac:80a85c804a1ffc99c47855216cd9aa9604 - Traccia Audio.flac:7846323d6c65d30d81e96f0b2d89252405 - Traccia Audio.flac:2fe23eb863193d05573404f6cb15bc6c06 - Traccia Audio.flac:9081d5550e88d04c9cbeab412e23666307 - Traccia Audio.flac:e66464cffe0a7ddbfe92f9549a83fe5d08 - Traccia Audio.flac:6e870f1af2f67678b551c8dd391f32b109 - Traccia Audio.flac:882a25378abda7361be515092a83dab110 - Traccia Audio.flac:68a2324ebb0d8cc8fdbc50fee16ccc1511 - Traccia Audio.flac:72a00ac5a1688b6a61d2ab2ee799f91512 - Traccia Audio.flac:8aeca414dabc793ada715e7947301bc501 - Traccia Audio.flac:36209a073ca3529e590e9c1b4b4496d202 - Traccia Audio.flac:2864034bc7fa79073d8753a0ed1cf39003 - Traccia Audio.flac:6aacf9a04316cafb376666cc2589977204 - Traccia Audio.flac:bc279c55026ffc3a701ee67c0b01bb8b
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Palace Theater
+Albany, New York
+28 April 1980
+  
+1.Gotta Serve Somebody
+2.I Believe In You
+3.When You Gonna Wake Up
+4.Ain't Gonna Go To Hell For Anybody
+5.Cover Down, Break Through
+6.Precious Angel
+7.Man Gave Names To All The Animals
+8.Slow Train
+ 
+omitted:
+   Mary Elizabeth Bridges:
+   Walk Around Heaven All Day (Rev. James Cleveland/Cassietta George)
+   Gwen Evans:
+   Lord Don't Move That Mountain (Mahalia Jackson)
+ 
+9.Do Right To Me Baby (Do Unto Others)
+10.Solid Rock
+11.Saving Grace
+12.Saved (Bob Dylan/Tim Drummond)
+13.What Can I Do For You?
+14.In The Garden 
+
+15.Are You Ready?
+16.Pressing On
+ 
+ 
+Concert # 10 of the Third Gospel Tour. Gospel concert # 60. 1980 concert # 34.
+Concert # 10 with the Third Gospel Band: Bob Dylan (vocal & guitar), Fred Tackett (guitar), Spooner Oldham (keyboards), Tim Drummond (bass), Terry Young (keyboards), Jim Keltner (drums), Clydie King, Gwen Evans, Mary Elizabeth Bridges, Regina Havis, Mona Lisa Young (background vocals).
+ 
+13 Bob Dylan (harmonica).              16 Bob Dylan (piano).
+ 
+BobTalk
+Thank you. I aint gonna go to hell for anybody. (.). (before Aint Gonna Go To Hell For Anybody)
+Thank you. (..) on a radio station. Anyhow, I dont have time to answer all the questions in a letter (..). Come back after the show and Ill answer some of the questions. (..). Am I aged 42? Something like that. (..). (after Man Gave Names To All The Animals)
+Thank you. You know we live in difficult times right now. (..). (I know you need) something to hang on to, and I hope you got something to hang on to. I hope you got good education to hang on to. I have my lifes experience to hang on to. (..). Cause lifes got a plan too. (..). But Im not gonna tell you any more about it. Im gonna let you find out for yourself. (..). The truth will set you free too. And once you know the truth, the truth, the light and the way, there is only one. There can be but one. (..). But theres only one way. Which kind do you think that is? All right, I hope you all remember the story you heard about Jesus? Well, this is called Solid Rock. Made before the foundation of the world. (..). (before Solid Rock)
+Thank you. On the keyboards tonight, Spooner Oldham. Spooner Oldham, on the keyboards tonight. (..). On the other set of keyboards, Terry Young. On drums, Jimmy Lee Keltner. On bass guitar, Tim Drummond. Lead guitar, Fred Tackett. Ladies and gentlemen, Miss Clydie King. Standing next to her is Gwen Evans. Mary Bridges. Mona Lisa Young. Right. Remember earlier the girl who told you about Jesus? (..). Regina McCreary. (before Are You Ready?)
+ 
+Stereo audience recording, 95 minutes.
+
+www.bjorner.com
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+6031b1431de9901439733f0563cf3236 *01 - Traccia Audio.flac
+b64e55049f3fe7d30a19a143311d9677 *02 - Traccia Audio.flac
+e9f30d78f5e3d2126b61ffbcf3976f3b *03 - Traccia Audio.flac
+15344f09c2357a42b7419aa7e67e506b *04 - Traccia Audio.flac
+80533cfb144c5d0e1ca05615bdb96701 *05 - Traccia Audio.flac
+ade3c9e49c8ddf0a4d226639604b07f4 *06 - Traccia Audio.flac
+9aaea0aeeca328254a480dd0a38ede8c *07 - Traccia Audio.flac
+e444ed11b9399cd8ddbebf46f00ea795 *08 - Traccia Audio.flac
+1dbf69b7bfc78848418a684a5b3d0410 *09 - Traccia Audio.flac
+3f6af212be1f05ee2860ee4d2bb9e035 *10 - Traccia Audio.flac
+accc892422eacafe63ec93c4b64d7f9d *11 - Traccia Audio.flac
+218f12483bfe6b71dfc16a7b8853ab67 *12 - Traccia Audio.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+517bbd881ff9e76f837c9de07c6b6d36 *01 - Traccia Audio.flac
+d22541456e0219b8a9c592c77ab6771e *02 - Traccia Audio.flac
+775cf7e07c8a155ba919545a22969a1d *03 - Traccia Audio.flac
+047af088981f7a1b02be7d5f24bf660b *04 - Traccia Audio.flac
+
+===================
+===================
+===================

@@ -1,0 +1,76 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-26-Gotta-Get-Out-Of-Here.flacf
+===================
+===================
+===================
+c5741353883255c15cfe6737b8404e55 *101 Crash On The Levee (Down In The Flood)..flac
+390c19542b75fe96aba4943be7fd4880 *102 I Want You..flac
+90f3dda77866d898271b53f0f26b9d12 *103 All Along The Watchtower..flac
+8152877ffa3a480228dee5e3f3fc3cac *104 Just Like A Woman..flac
+0b340d98e06048306ba8e303ee68037b *105 Tangled Up In Blue..flac
+e781579b6bc82fc3ad56312c7ff0bc92 *106 Simple Twist Of Fate..flac
+6406d43e655e0a09bed3a0c4a615a9b0 *107 Mr. Tambourine Man..flac
+6df05fabbdd52b9778f58a32f8f671e7 *108 Boots Of Spanish Leather..flac
+3dd72f44721008be2d6693c7de36a4df *201 Mama, You Been On My Mind.flac
+57bf47c986952e1a201c7d3330a98796 *202 Dignity (Thanks LP Mark).flac
+91cd06a2f2032e4f6614e781f4d65ac8 *203 Man In A Long Black Coat.flac
+5b8dbad3b632ae045ef3fa610fd18e47 *204 Maggie's Farm.flac
+5cc6570d50ac16dfa7fd49ef77929e27 *205 Like A Rolling Stone.flac
+4cbe2cb376b43c1ac46c49e309f0148b *206 It Ain't Me Babe.flac
+bf857785701a286f5a6b05a982a95343 *207 I Shall Be Released.flac
+5c4eea5012e58af9bf6b9038d955cca0 *Bob Dylan 1995-03-26 Brighton Centre Brighton UK-Gotta Get Out Of Here.md5
+b62ec227654d616ccf235c3ab2002665 *Brighton Centre.JPG
+78dbb2c7edce3ab8dce47c21940203a9 *DylanGottaGetOutOfHere.txt
+9cec8a93d85d3cf2cf45eb868b38e8f2 *DylanGottaGetOutOfHereBack.jpg
+05a3bf18a42e1cbecdc6f21fa13032b8 *DylanGottaGetOutOfHereFront.jpg
+===================
+===================
+===================
+=== ffp for: bd95-03-26-Gotta-Get-Out-Of-Here.flacf
+===================
+===================
+===================
+101 Crash On The Levee (Down In The Flood)..flac:3255529636a5eb53076e13bae713fc10
+102 I Want You..flac:13cdf9673eea35e5d15fee0e61a1b8e0
+103 All Along The Watchtower..flac:f8a5ee886043ee6824b94deeeae5f2e1
+104 Just Like A Woman..flac:fbd2ea0a3b03d35528135817e5f1acd3
+105 Tangled Up In Blue..flac:11ebfda277859a79b121aaa663b2d078
+106 Simple Twist Of Fate..flac:2fd00b694e8f85a14ec885f0dfb72d49
+107 Mr. Tambourine Man..flac:a19213b3d7483b22c00309f88247d140
+108 Boots Of Spanish Leather..flac:b4cd5b30aa861108a8373adb49562265
+201 Mama, You Been On My Mind.flac:aaa22b580031c6bc9a56ba5f43d5577e
+202 Dignity (Thanks LP Mark).flac:32b58a0723a29fbb33fead223933fab5
+203 Man In A Long Black Coat.flac:a65ecec5ab669692474b75b0c684adc9
+204 Maggie's Farm.flac:5e0c563302870cd4781b348ad32b1b17
+205 Like A Rolling Stone.flac:0ad2511010ec3d02fa1b824f1b45abcd
+206 It Ain't Me Babe.flac:12a997e6ce21a416ac7101e9fb3d5985
+207 I Shall Be Released.flac:99c925534216c10433580895560ac8c1
+===================
+===================
+===================
+=== shntool len for: bd95-03-26-Gotta-Get-Out-Of-Here.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.73       53973740 B   ---   --   ---xx   flac  0.5324  101 Crash On The Levee (Down In The Flood)..flac
+     4:38.66       49194476 B   ---   --   ---xx   flac  0.4673  102 I Want You..flac
+     5:45.28       60923900 B   ---   --   ---xx   flac  0.5171  103 All Along The Watchtower..flac
+     5:26.33       57584060 B   ---   --   ---xx   flac  0.4606  104 Just Like A Woman..flac
+     8:18.05       87859004 B   ---   --   ---xx   flac  0.4804  105 Tangled Up In Blue..flac
+     7:26.37       78761468 B   ---   --   ---xx   flac  0.4545  106 Simple Twist Of Fate..flac
+     6:39.61       70527116 B   ---   --   ---xx   flac  0.3567  107 Mr. Tambourine Man..flac
+     5:55.16       62659676 B   ---   --   ---xx   flac  0.3297  108 Boots Of Spanish Leather..flac
+     4:24.74       46743692 B   ---   --   ---xx   flac  0.4266  201 Mama, You Been On My Mind.flac
+     7:36.60       80579564 B   ---   --   ---xx   flac  0.5162  202 Dignity (Thanks LP Mark).flac
+     7:40.18       81186380 B   ---   --   ---xx   flac  0.4262  203 Man In A Long Black Coat.flac
+     6:10.37       65355068 B   ---   --   ---xx   flac  0.5413  204 Maggie's Farm.flac
+     9:17.74       98428892 B   ---   --   ---xx   flac  0.5014  205 Like A Rolling Stone.flac
+     8:48.47       93249788 B   ---   --   ---xx   flac  0.4330  206 It Ain't Me Babe.flac
+     7:40.34       81224012 B   ---   --   ---xx   flac  0.4957  207 I Shall Be Released.flac
+   100:55.63     1068250836 B                            0.4635  (15 files)
+===================
+===================
+===================

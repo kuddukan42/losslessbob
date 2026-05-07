@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-12-08-lk.flacf 
+=================== 
+=================== 
+=================== 
+2d08e70c142475a887e7a2cbcb05c76c  D1\D1.md5
+0886243cbeefab3876596d9696ee7050  D1\Savannah 8dec78 101.flac
+ddd54742d10abb7a925589cb43a6b900  D1\Savannah 8dec78 102.flac
+0a377a8f4d3d2ab95d0f12ccb677aedd  D1\Savannah 8dec78 103.flac
+0264ab5c95da54cccb1d706f0d075126  D1\Savannah 8dec78 104.flac
+379e011b5f77e1711392fbba85977578  D1\Savannah 8dec78 105.flac
+4e86d3e3558b2d809af3585ad4dd6f56  D1\Savannah 8dec78 106.flac
+b1e954c584eacd6cc9cc76ebe85867ba  D1\Savannah 8dec78 107.flac
+cbab94a9314d8a12eb28e9693860518e  D1\Savannah 8dec78 108.flac
+c28e12735c60191e2eb8a63ac6cad532  D1\Savannah 8dec78 109.flac
+5cbec399899d6f77b1e71d3ef6003e3c  D1\Savannah 8dec78 110.flac
+abc03759b6a37f7e9211d9f28b943f9d  D1\Savannah 8dec78 111.flac
+b873396561a1c3677b785f966f00db9a  D1\Savannah 8dec78 112.flac
+b3a673a102792291093828b90b1149d2  D1\Savannah 8dec78 113.flac
+251dd3fe664d51c1ca1baed3bcfda813  D1\Savannah 8dec78 114.flac
+06d5b46703288c67d0a69ba2e1424ac7  D2\D2.md5
+0213210921524e97a99e3913a8cf9c23  D2\Savannah 8dec78 201.flac
+15feb0768500b2c6c896743aea2405de  D2\Savannah 8dec78 202.flac
+fbae5d0092a3414296205aeb0d16fbc3  D2\Savannah 8dec78 203.flac
+07d018b195e1892abf450d848130bedb  D2\Savannah 8dec78 204.flac
+547c918e5a1f04c17151ff7f5e46e522  D2\Savannah 8dec78 205.flac
+f638372f4cf84bb397fb5b075f87c7f4  D2\Savannah 8dec78 206.flac
+eb8d08e5fa077b474d5707a605561e8a  D2\Savannah 8dec78 207.flac
+a9c00830ad173bb469e71745b9323214  D2\Savannah 8dec78 208.flac
+67010e1343ad5a844c845de1a4d7a77e  D2\Savannah 8dec78 209.flac
+067be620b2c097a2d00225314f95fb42  D2\Savannah 8dec78 210.flac
+81bd781b4c92ad96782c6f7eab151edf  D2\Savannah 8dec78 211.flac
+d7de3c437cee236c7937d4219e204b56  D2\Savannah 8dec78 212.flac
+a1dd324d107374f772072d26e70f829a  D2\Savannah 8dec78 213.flac
+44936022c50f03f84b150523fe29a349  D2\Savannah 8dec78 214.flac
+29e1bbe9fd763fecfe0663d2fd70fef1  info.txt
+8a984a55e516f52967ca04a994f5cabb  LK 1978 Leg 3 DVD 11.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-12-08-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+Savannah 8dec78 101.flac:bf87c88c1bd6ba7f5df8d058797b0dd8
+Savannah 8dec78 102.flac:0cc504a8857aff8a661e1016b60e2df3
+Savannah 8dec78 103.flac:f54f6b730fb7d2c37b633261eef8bd76
+Savannah 8dec78 104.flac:c2feb2ca0d047661f70d1bc206c57764
+Savannah 8dec78 105.flac:8ff6943f599ac8dc0a562b5b95cec066
+Savannah 8dec78 106.flac:18afa70f1edb8735dbf7cede245fc576
+Savannah 8dec78 107.flac:5fc26e381d942e4ce92b876f2619f672
+Savannah 8dec78 108.flac:0f75f5d9db1f13c431920379343752a7
+Savannah 8dec78 109.flac:93fd2c2a436b3419e103287d2dfed91a
+Savannah 8dec78 110.flac:fcb3edc38393f51cc93ef92793278704
+Savannah 8dec78 111.flac:4235f922654c1ad726913ad49a8a6379
+Savannah 8dec78 112.flac:4e9ed4773c4f6b7012f34b734d5a51d0
+Savannah 8dec78 113.flac:20bb1a95f80d1d78ebd26d1392f7960e
+Savannah 8dec78 114.flac:2ff47abfb7334914b4bea7b68f7b9ec3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-12-08-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+Savannah 8dec78 201.flac:9f64acd844dc19001418fc6a608424a9
+Savannah 8dec78 202.flac:2d7b3f236058f2594ba82ba4ca05b774
+Savannah 8dec78 203.flac:479b807b9aa84f0042502470c172551c
+Savannah 8dec78 204.flac:a1501540446fb293d0414a9f17c2a5fb
+Savannah 8dec78 205.flac:e5c978ccf3d20d3f5f26ab998e286467
+Savannah 8dec78 206.flac:c3d3093629b841cb9e3407f4d44660c3
+Savannah 8dec78 207.flac:90c05530dfc17244c9bd499c00521566
+Savannah 8dec78 208.flac:583100d64033c3744de98d1a945b20a6
+Savannah 8dec78 209.flac:bf5c777608284a841d8d5cac887db1b7
+Savannah 8dec78 210.flac:d3f054fac3c320532e1e2f3c1cbf58f1
+Savannah 8dec78 211.flac:d8c27732f2ce5b8e9e2eceeec67dbf09
+Savannah 8dec78 212.flac:0442bf01413107dbe1f29d9c3660829c
+Savannah 8dec78 213.flac:b447a6f4764c9fef794d4991192e2aeb
+Savannah 8dec78 214.flac:3659cee7df138424ffd8c9aed2cf2996
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-12-08-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:20.23       35334140 B   ---   --   ---xx   flac  0.6336  Savannah 8dec78 101.flac
+     2:31.62       26782268 B   ---   --   ---xx   flac  0.6368  Savannah 8dec78 102.flac
+     5:27.70       57847484 B   ---   --   ---xx   flac  0.6275  Savannah 8dec78 103.flac
+     4:01.06       42526556 B   ---   --   ---xx   flac  0.6292  Savannah 8dec78 104.flac
+     3:16.56       34706156 B   ---   --   ---xx   flac  0.6277  Savannah 8dec78 105.flac
+     7:27.21       78900236 B   ---   --   ---xx   flac  0.6155  Savannah 8dec78 106.flac
+     5:41.62       60298268 B   ---   --   ---xx   flac  0.6082  Savannah 8dec78 107.flac
+     5:26.45       57612284 B   ---   --   ---xx   flac  0.5935  Savannah 8dec78 108.flac
+     3:44.20       39560684 B   ---   --   ---xx   flac  0.5860  Savannah 8dec78 109.flac
+     7:13.25       76440044 B   ---   --   ---xx   flac  0.6071  Savannah 8dec78 110.flac
+     4:46.21       50499836 B   ---   --   ---xx   flac  0.5957  Savannah 8dec78 111.flac
+     6:53.36       72937916 B   ---   --   ---xx   flac  0.5963  Savannah 8dec78 112.flac
+     5:18.68       56255180 B   ---   --   ---xx   flac  0.6006  Savannah 8dec78 113.flac
+     3:29.18       36909980 B   ---   --   ---xx   flac  0.6020  Savannah 8dec78 114.flac
+    68:39.08      726611032 B                            0.6095  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-12-08-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.05       57694604 B   ---   --   ---xx   flac  0.5932  Savannah 8dec78 201.flac
+     3:32.45       37502684 B   ---   --   ---xx   flac  0.6037  Savannah 8dec78 202.flac
+     6:44.40       71359724 B   ---   --   ---xx   flac  0.5971  Savannah 8dec78 203.flac
+     4:51.39       51424172 B   ---   --   ---xx   flac  0.5795  Savannah 8dec78 204.flac
+     5:19.41       56368076 B   ---   --   ---xx   flac  0.5726  Savannah 8dec78 205.flac
+     4:51.40       51426524 B   ---   --   ---xx   flac  0.5827  Savannah 8dec78 206.flac
+     4:44.37       50184668 B   ---   --   ---xx   flac  0.5789  Savannah 8dec78 207.flac
+     5:20.59       56586812 B   ---   --   ---xx   flac  0.5435  Savannah 8dec78 208.flac
+     3:28.46       36799436 B   ---   --   ---xx   flac  0.5789  Savannah 8dec78 209.flac
+     4:09.41       44020076 B   ---   --   ---xx   flac  0.5832  Savannah 8dec78 210.flac
+     1:53.69       20095532 B   ---   --   ---xx   flac  0.5937  Savannah 8dec78 211.flac
+     6:02.48       63969740 B   ---   --   ---xx   flac  0.5941  Savannah 8dec78 212.flac
+     5:57.20       63021884 B   ---   --   ---xx   flac  0.5939  Savannah 8dec78 213.flac
+     7:11.64       76178972 B   ---   --   ---xx   flac  0.6412  Savannah 8dec78 214.flac
+    69:35.69      736632904 B                            0.5899  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-14-b.flacf 
+=================== 
+=================== 
+=================== 
+87b5fe68b4ea17908eec65446483e575  Bob Dylan - Fukuoka, Japan - February 14, 1997.ffp
+2b467b76937f1ecac2af4a763e554e00  D-1 extraction log.LOG
+5158c49cde774c9c889c4d359bd065e0  D-2 extraction log.LOG
+18163f50381806cef9d36b57ead0ac74  info file.txt
+19a7f854d083a9062fdb6b1e6dcfc7de  Track 101.flac
+e24ca4f27d6779a87dba5aecff547129  Track 102.flac
+3a581794bb3ccc7112996a2771b3ed59  Track 103.flac
+cb692b89e201364bf4d41c74c3c6cec8  Track 104.flac
+f7c201e7cf7a04c79a80b5b98d6df309  Track 105.flac
+feb2d6f9f1d3a1b1c2aa8ef3b3486d32  Track 106.flac
+e4b1b7ba2660a2de37b4d5861f3d2d3c  Track 107.flac
+f2a3ca5b53cddd18c819dd516cb5a0b3  Track 108.flac
+c5f11b74b3c9d7a85d9b171a410c3540  Track 201.flac
+f278a46afd5e95c9915735112fea081a  Track 202.flac
+1c53eb87722a4f57ebdaed3b76567729  Track 203.flac
+4b1c876d0d464d55ae430d43221065ae  Track 204.flac
+05714f340d7ad4cddd4a0d8de2adacc8  Track 205.flac
+db38f83dbb270fc9dcc1e3bb151df287  Track 206.flac
+f7b2c8597adc677bc53b833918810c5c  Track 207.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-14-b.flacf 
+=================== 
+=================== 
+=================== 
+Track 101.flac:ea1be0c35c6527ae256a58064d0d7dee
+Track 102.flac:796d529303e7c714618ea03b28654eeb
+Track 103.flac:6139f1d03bcc4a546c4d67da6528d657
+Track 104.flac:078685422002e9b1b77ab7b7016018ce
+Track 105.flac:2732df70cfc8232e05ed697f51e75bbe
+Track 106.flac:b95c53e9b3cd5a9f84a7d3f830b8a7c9
+Track 107.flac:b61dfd5a9f98008810395a751238b725
+Track 108.flac:9f5620993c6225c71a7928dbc4bef113
+Track 201.flac:db972765b3539615e141f74893f661a6
+Track 202.flac:c5301f261b2b963ddbb5ab6a6d02e5e0
+Track 203.flac:99e415dfd8c0f1862c887fb8f7171db7
+Track 204.flac:a149c13e6f4d0ee01ca0e7da75765390
+Track 205.flac:0c9aa568365756900cd756dba103fed9
+Track 206.flac:6bdb9121b440e25a3f5d3906ed6d2300
+Track 207.flac:8ac3801926b5dbe5726b5507177c3e45
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-14-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.60       52531964 B   ---   --   ---xx   flac  0.6093  Track 101.flac
+     6:15.24       66206492 B   ---   --   ---xx   flac  0.5685  Track 102.flac
+     6:39.37       70470668 B   ---   --   ---xx   flac  0.6087  Track 103.flac
+     8:39.38       91641020 B   ---   --   ---xx   flac  0.5584  Track 104.flac
+     7:53.07       83453708 B   ---   --   ---xx   flac  0.5734  Track 105.flac
+     7:30.57       79514108 B   ---   --   ---xx   flac  0.6162  Track 106.flac
+     8:11.30       86683004 B   ---   --   ---xx   flac  0.5658  Track 107.flac
+     6:55.30       73276604 B   ---   --   ---xx   flac  0.4958  Track 108.flac
+     6:31.48       69085340 B   ---   --   ---xx   flac  0.5095  Track 201.flac
+     7:22.61       78112316 B   ---   --   ---xx   flac  0.5764  Track 202.flac
+     6:50.59       72462812 B   ---   --   ---xx   flac  0.4441  Track 203.flac
+     6:55.45       73311884 B   ---   --   ---xx   flac  0.6200  Track 204.flac
+    12:20.17      130576028 B   ---   --   ---xx   flac  0.6061  Track 205.flac
+    11:30.07      121732508 B   ---   --   ---xx   flac  0.5805  Track 206.flac
+     9:50.31      104148956 B   ---   --   ---xx   flac  0.6242  Track 207.flac
+   118:24.26     1253207412 B                            0.5734  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-23-aud-a.flac16 
+=================== 
+=================== 
+=================== 
+199202498f96fb760c472fd1f3e9b013  bd1993-02-23.aud.sbeok.flac16 Paris.ffp
+1f912c32a34fcd54112a563ac020205c  bd1993-02-23.aud.sbeok.flac16 Paris.md5
+820e72b824c0c8273f6bea98deeca03b  bd1993-02-23.aud.sbeok.flac16 Paris.st5
+ec8487040c709af3fe7e58257ecd48c2  bd1993-02-23.info.txt
+17ac9f0b38d33015c764f61fc5f98cc0  bd93-02-23-aud-a-LB-4793.txt
+fc9c849ce6e8372fcaaf2cae3b746d00  cd1\bd1993-02-23d1.log
+8bb5b7567ffb6723ac99881aa3b45f43  cd1\bd1993-02-23d1t01.flac
+5a2214762d8c2d87a11cb0b101833299  cd1\bd1993-02-23d1t02.flac
+18f2673d233518f4fdf1674d56d2f528  cd1\bd1993-02-23d1t03.flac
+68918fc884d92f0b32fd2e3681dd229a  cd1\bd1993-02-23d1t04.flac
+f1abac212ec9d901d76ca77aae537be9  cd1\bd1993-02-23d1t05.flac
+a10a3ea0b650202264ba719a1f9a1d7b  cd1\bd1993-02-23d1t06.flac
+6f9b72addfcfa9c10584a445fe65b19f  cd1\bd1993-02-23d1t07.flac
+0044338b7aee616fea055b713f4e0f9c  cd1\bd1993-02-23d1t08.flac
+e6ad038bc7781509263486ea7ac7d6bf  cd1\bd1993-02-23d1t09.flac
+95b72408f3e51c5888fedb58c6bcb658  cd1\cd1.shntool.txt
+daee3472cc6b1a4a4a80b36d37372d60  cd2\bd1993-02-23d2.log
+8f2cab2a416fe6d60ebf992ec62178a6  cd2\bd1993-02-23d2t01.flac
+bc8540b2d8d9793410dd947a045f5d67  cd2\bd1993-02-23d2t02.flac
+0b258e234b0dcbfba469750791a87216  cd2\bd1993-02-23d2t03.flac
+ad8951dc50ec8cc8a4492e7db4d2f5d3  cd2\bd1993-02-23d2t04.flac
+937da36360921746c9e75ad22fdecc10  cd2\bd1993-02-23d2t05.flac
+e45c2452b5b765fbb19b679395d42e38  cd2\bd1993-02-23d2t06.flac
+62da725b820c6b4445dff3bdef4b08bb  cd2\bd1993-02-23d2t07.flac
+dfa203af0ddb7ea2f8bc631b21a1f543  cd2\bd1993-02-23d2t08.flac
+9172834889d2809b5b32a2a64c2c8df1  cd2\bd1993-02-23d2t09.flac
+9e62c7ddeb1d9c80e4c5a1bc2cd60c97  cd2\cd2.shntool.txt
+193c6fc9b69cef720091259b8e89ff2f  d1t03.PNG
+c0bca466088ed8eac9ad0a4dfcb6a6c0  d2t08.PNG
+f22541c3e61efea496d0a619a34508b2  lbdir-bd93-02-23-aud-a.flac16.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-23-aud-a.flac16\cd1 
+=================== 
+=================== 
+=================== 
+bd1993-02-23d1t01.flac:c00d59719a9c224c4f25df6f9262251f
+bd1993-02-23d1t02.flac:093aafa476f079a8437da4c6649a17a7
+bd1993-02-23d1t03.flac:f76796363bfd7656374b13917f9da232
+bd1993-02-23d1t04.flac:da218c2c55c78966b709778cdaf5c0f6
+bd1993-02-23d1t05.flac:7c9077f500d376f47d8638504412044b
+bd1993-02-23d1t06.flac:ed9537a7b30890c893bde5728b62681f
+bd1993-02-23d1t07.flac:dfe3eb8ab21addea8d4769f47b76c021
+bd1993-02-23d1t08.flac:2616f7b0b9e8a34fe6b0964ab79518e5
+bd1993-02-23d1t09.flac:c2ab8e60aa909ac502b3d5d23afa1dc3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-23-aud-a.flac16\cd2 
+=================== 
+=================== 
+=================== 
+bd1993-02-23d2t01.flac:1becd44e4202da79f688ae33d1c7543f
+bd1993-02-23d2t02.flac:89af5512925d3308bc344660b4cd5100
+bd1993-02-23d2t03.flac:80cf9e3f9f0f3a7dbcc29cd70be95639
+bd1993-02-23d2t04.flac:f8f7e34b0769bef3b2b13fc58a61ce7f
+bd1993-02-23d2t05.flac:dab9b37ce2a886f2595f0aba0d43e0f6
+bd1993-02-23d2t06.flac:c192a1a039a10300068cd7ae14458b64
+bd1993-02-23d2t07.flac:bc42f2220de1a1000872bcb9ca3c1ecd
+bd1993-02-23d2t08.flac:ddc0aa0ea4bdc835265f5339c8468a73
+bd1993-02-23d2t09.flac:4fb2fbf5c6c1a1577e48f0e96e302c0b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-23-aud-a.flac16\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.23       53856140 B   ---   --   ---xx   flac  0.6273  bd1993-02-23d1t01.flac
+     5:19.52       56393948 B   ---   --   ---xx   flac  0.6329  bd1993-02-23d1t02.flac
+     6:46.37       71705468 B   ---   --   ---xx   flac  0.6416  bd1993-02-23d1t03.flac
+    11:51.07      125436908 B   ---   --   ---xx   flac  0.6396  bd1993-02-23d1t04.flac
+     9:14.62       97871468 B   ---   --   ---xx   flac  0.6321  bd1993-02-23d1t05.flac
+    10:12.03      107963900 B   ---   --   ---xx   flac  0.6250  bd1993-02-23d1t06.flac
+     6:01.16       63718076 B   ---   --   ---xx   flac  0.5955  bd1993-02-23d1t07.flac
+     4:59.20       52790684 B   ---   --   ---xx   flac  0.5800  bd1993-02-23d1t08.flac
+     6:17.62       66648668 B   ---   --   ---xx   flac  0.5868  bd1993-02-23d1t09.flac
+    65:47.57      696385260 B                            0.6214  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-23-aud-a.flac16\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:51.38       93757820 B   ---   --   ---xx   flac  0.5857  bd1993-02-23d2t01.flac
+     8:01.65       85001324 B   ---   --   ---xx   flac  0.5892  bd1993-02-23d2t02.flac
+     5:37.05       59458604 B   ---   --   ---xx   flac  0.6180  bd1993-02-23d2t03.flac
+     8:25.00       89082044 B   ---   --   ---xx   flac  0.6180  bd1993-02-23d2t04.flac
+     8:28.60       89752364 B   ---   --   ---xx   flac  0.6000  bd1993-02-23d2t05.flac
+     7:41.33       81398060 B   ---   --   ---xx   flac  0.6186  bd1993-02-23d2t06.flac
+     7:12.69       76367132 B   ---   --   ---xx   flac  0.5940  bd1993-02-23d2t07.flac
+     6:57.31       73631756 B   ---   --   ---xx   flac  0.6187  bd1993-02-23d2t08.flac
+     8:16.57       87628508 B   ---   --   ---xx   flac  0.5680  bd1993-02-23d2t09.flac
+    69:32.58      736077612 B                            0.6001  (9 files)
+=================== 
+=================== 
+=================== 

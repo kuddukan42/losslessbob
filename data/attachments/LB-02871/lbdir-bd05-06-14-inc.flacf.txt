@@ -1,0 +1,66 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-06-14-inc.flacf 
+=================== 
+=================== 
+=================== 
+52589f7d09233decc2c7c9de98c2b32f  bd05-06-14-inc-LB-2871.txt
+e834ecf5841d07e80d5f3ad2eb82bb9c  Dylan 061405.txt
+2c1d782dbc8b7ae004cdf41ed5b7849b  dylan061405-01.flac
+43b44c04694e2a3aa8cf28d76465526a  dylan061405-02.flac
+e355391d055f3dbc075b8c5a83c9ee9d  dylan061405-03.flac
+6ec53fca0749444d699df5216cb181f1  dylan061405-04.flac
+d32cd1180f81a9221179a07293538fbe  dylan061405-05.flac
+ccecf9bdf1f7ac6edb92ed4eeb0ae468  dylan061405-06.flac
+22cb4b68992e8cbb238bfeb2f25b8622  dylan061405-07.flac
+e7f8922a4a598a72b4f979badafa3a31  dylan061405-08.flac
+aba3be31bdb5d956c60e177da99b4918  dylan061405-09.flac
+8444cd537979476329eaacf64a00e983  dylan061405-10.flac
+b787f7d8c2e30013ef4388dcb03dd25f  dylan061405-11.flac
+4694c02eb423b7be90aed3a34d814bc2  dylan061405-12.flac
+0b5a8f088417af524848e393db56d207  dylan061405ffp.txt
+a9636e7d9c93f07630b433faeed4f146  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-06-14-inc.flacf 
+=================== 
+=================== 
+=================== 
+dylan061405-01.flac:d1c36d88aa70446286342ce22e0b03de
+dylan061405-02.flac:0fe7dc155d714a8c9c16857038038958
+dylan061405-03.flac:89c1085ccd3085dcee949b916bd4772c
+dylan061405-04.flac:f23ba091c2b4b9389829ae8ddb231feb
+dylan061405-05.flac:573e7ef543bfce9dc146a0d6f5d49624
+dylan061405-06.flac:acc741f5947a2132b6d933fa984317cc
+dylan061405-07.flac:92e466cdb734ec000d0fdf0b8e5bcbf8
+dylan061405-08.flac:8d3796ed582a2258f9fefa0c0bc8b664
+dylan061405-09.flac:2bb03fdf81b022e53eeed49f70171379
+dylan061405-10.flac:c7b80a0016a44d4ad163f8985be14dfd
+dylan061405-11.flac:4551aff7dd6fb3d605274d6ec6a4f181
+dylan061405-12.flac:66ea557a45e0811bc585153c04e715c9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-06-14-inc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.10       55765964 B   ---   --   ---xx   flac  0.5870  dylan061405-01.flac
+     5:07.26       54215996 B   ---   --   ---xx   flac  0.5359  dylan061405-02.flac
+     7:41.16       81358076 B   ---   --   ---xx   flac  0.5943  dylan061405-03.flac
+     5:59.60       63468764 B   ---   --   ---xx   flac  0.5288  dylan061405-04.flac
+     8:04.35       85459964 B   ---   --   ---xx   flac  0.5907  dylan061405-05.flac
+     4:31.05       47816204 B   ---   --   ---xx   flac  0.6011  dylan061405-06.flac
+     5:14.52       55511948 B   ---   --   ---xx   flac  0.5516  dylan061405-07.flac
+     6:44.24       71322092 B   ---   --   ---xx   flac  0.5145  dylan061405-08.flac
+     7:40.74       81318092 B   ---   --   ---xx   flac  0.5184  dylan061405-09.flac
+     7:23.31       78218156 B   ---   --   ---xx   flac  0.5657  dylan061405-10.flac
+     5:50.14       61772972 B   ---   --   ---xx   flac  0.5474  dylan061405-11.flac
+     6:51.35       72583808 B   -b-   --   ---xx   flac  0.6086  dylan061405-12.flac
+    76:25.07      808812036 B                            0.5621  (12 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,121 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-12-01-flaggin-down-the-double-es.flacf 
+=================== 
+=================== 
+=================== 
+3f83d75da6497b1abc9c4d1b3cb354da  bd75-12-01-flaggin-down-d1t01.flac
+0a83ff275fef0f619a7088d4534a78a4  bd75-12-01-flaggin-down-d1t02.flac
+ea85befb748a622b299f3e81c3204df1  bd75-12-01-flaggin-down-d1t03.flac
+686b9b90b0bb944df4c53d34d38c3c37  bd75-12-01-flaggin-down-d1t04.flac
+0a80ba6cdb48b4daaf325b4045de69c0  bd75-12-01-flaggin-down-d1t05.flac
+30edfc5d4cf9676b35c11a921ccc4356  bd75-12-01-flaggin-down-d1t06.flac
+74cc35259fe0cbe4b8ab7db851ae8103  bd75-12-01-flaggin-down-d1t07.flac
+a9b989fb1ec87d0c186a758cf93adfec  bd75-12-01-flaggin-down-d1t08.flac
+16266d96e82dda3d7d45805b4afd9b09  bd75-12-01-flaggin-down-d1t09.flac
+7dbb71a92443b8c6690c66902073adba  bd75-12-01-flaggin-down-d1t10.flac
+a56fe9ea7d4ccf6656fcaaa59bf05d52  bd75-12-01-flaggin-down-d1t11.flac
+cdca439b40e840910d5c2b308142459a  bd75-12-01-flaggin-down-d1t12.flac
+ce3686067138a69e549a74091238c933  bd75-12-01-flaggin-down-d1t13.flac
+72e3436961da5422dee61db05c0128e7  bd75-12-01-flaggin-down-d1t14.flac
+82d3cae3d6129c29364d91861198c553  bd75-12-01-flaggin-down-d1t15.flac
+38ad8663d557c4b231eb75b884009f17  bd75-12-01-flaggin-down-d1t16.flac
+711595b082247287b9fffe362650ae1a  bd75-12-01-flaggin-down-d1t17.flac
+8b5e5617a4c7b16e37044ded365c1768  bd75-12-01-flaggin-down-d2t01.flac
+80684bd5710f8f2727243508ad830f47  bd75-12-01-flaggin-down-d2t02.flac
+255f0d1d37c892785c6a1f9957e57609  bd75-12-01-flaggin-down-d2t03.flac
+ad2c3a8fcb4a4386c7cf5363fd5ddafe  bd75-12-01-flaggin-down-d2t04.flac
+d01b648c8b5e190ce92aa601ba91c9f2  bd75-12-01-flaggin-down-d2t05.flac
+aee2fbe89318208c8d6b752c15c6523e  bd75-12-01-flaggin-down-d2t06.flac
+6696af54584d522624127855dcd56248  bd75-12-01-flaggin-down-d2t07.flac
+17355109f8946fc23a87bd3dfb0d8650  bd75-12-01-flaggin-down-d2t08.flac
+5df6351cc9a49568381c0f05b3f6447e  bd75-12-01-flaggin-down-d2t09.flac
+465fbd4b2e841727ff4b19dc42548e90  bd75-12-01-flaggin-down-d2t10.flac
+767265558099930253788ab0fca83dd1  bd75-12-01-flaggin-down-d2t11.flac
+0ba81c054d984de10b8c65234294b8c0  bd75-12-01-flaggin-down-d2t12.flac
+18dedd8c16e19b41a3b6f3b09216fa3a  bd75-12-01-flaggin-down-d2t13.flac
+b3ad50fd0befc454d040258feda868d5  bd75-12-01-flaggin-down-d2t14.flac
+b8ae993bdc2d1b83599d42b5f8725a2f  bd75-12-01-flaggin-down-the-double-es-LB-6719.txt
+f315efc344f5a1ee5b64d697db8c1e85  bd75-12-01-flaggin-down-the-double-es.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-12-01-flaggin-down-the-double-es.flacf 
+=================== 
+=================== 
+=================== 
+bd75-12-01-flaggin-down-d1t01.flac:93463b1ed2415caac3fb7c26a2215b5a
+bd75-12-01-flaggin-down-d1t02.flac:a36ea7ab20acd8d175f9f5a58229cc99
+bd75-12-01-flaggin-down-d1t03.flac:94d11c6e676d05cb1b447454c3599510
+bd75-12-01-flaggin-down-d1t04.flac:c173a69463d6ec98d831660cb3246544
+bd75-12-01-flaggin-down-d1t05.flac:38b815423f270f07d6ca3aa762ade299
+bd75-12-01-flaggin-down-d1t06.flac:e58e6ff1b5e0c72b3145b7224afcf019
+bd75-12-01-flaggin-down-d1t07.flac:1deb630d832f5f5b4cb7d5dcccd9beca
+bd75-12-01-flaggin-down-d1t08.flac:82b00298fdb9f69e386a629493074bd3
+bd75-12-01-flaggin-down-d1t09.flac:b0d26718f40d95389ced45661be29406
+bd75-12-01-flaggin-down-d1t10.flac:e4e3a1aac55bfc0f9e763e6dc3c3b148
+bd75-12-01-flaggin-down-d1t11.flac:f62c285449e558d3cd1b8f290a883c7e
+bd75-12-01-flaggin-down-d1t12.flac:6ed94ab0231748091f448092d84e6cfd
+bd75-12-01-flaggin-down-d1t13.flac:339444e06d5d2a5bd21903122f5c457c
+bd75-12-01-flaggin-down-d1t14.flac:c6dac7384a7aabee0041a51a70d37653
+bd75-12-01-flaggin-down-d1t15.flac:bad80aff0dda139a393b5ac4f012d76e
+bd75-12-01-flaggin-down-d1t16.flac:66bee82d9fa8d189a986f15526bf44a2
+bd75-12-01-flaggin-down-d1t17.flac:c05398e36ba8da211c1a47a8df8e622c
+bd75-12-01-flaggin-down-d2t01.flac:88f61a2e80d281365f463d155fd21d4b
+bd75-12-01-flaggin-down-d2t02.flac:f5a6949b532b98da41b246f2f57b4a76
+bd75-12-01-flaggin-down-d2t03.flac:077330a9b324b1cf890f7435e7b9a6a7
+bd75-12-01-flaggin-down-d2t04.flac:6f7456e38596977aca13d1921df6120a
+bd75-12-01-flaggin-down-d2t05.flac:81b329c759a909135c70b63ac6bf1897
+bd75-12-01-flaggin-down-d2t06.flac:dba6f23b5a5aca13696af43678929e3d
+bd75-12-01-flaggin-down-d2t07.flac:d9109a93b8decdaea1bb455af3d82953
+bd75-12-01-flaggin-down-d2t08.flac:e8006cc300202775a4de03cd6308add6
+bd75-12-01-flaggin-down-d2t09.flac:38c6e8568591ba90e19dadf6e6f75149
+bd75-12-01-flaggin-down-d2t10.flac:aaeb726ecf805af2e392ed1787ac7b65
+bd75-12-01-flaggin-down-d2t11.flac:b68c2b4bd47f03715385205c4f783355
+bd75-12-01-flaggin-down-d2t12.flac:4cb8d00d41f2a108bb36f67be0193615
+bd75-12-01-flaggin-down-d2t13.flac:13a389e6695060a8ef28dc209f609196
+bd75-12-01-flaggin-down-d2t14.flac:7ca86c779225f932a957233d64dcfee2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-12-01-flaggin-down-the-double-es.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.07       47997308 B   ---   --   ---xx   flac  0.6315  bd75-12-01-flaggin-down-d1t01.flac
+     5:10.65       54836924 B   ---   --   ---xx   flac  0.6457  bd75-12-01-flaggin-down-d1t02.flac
+     5:35.40       59188124 B   ---   --   ---xx   flac  0.6352  bd75-12-01-flaggin-down-d1t03.flac
+     4:08.35       43829564 B   ---   --   ---xx   flac  0.6345  bd75-12-01-flaggin-down-d1t04.flac
+     3:56.00       41630444 B   ---   --   ---xx   flac  0.6345  bd75-12-01-flaggin-down-d1t05.flac
+     5:06.43       54079580 B   ---   --   ---xx   flac  0.6431  bd75-12-01-flaggin-down-d1t06.flac
+     5:51.30       61987004 B   ---   --   ---xx   flac  0.6479  bd75-12-01-flaggin-down-d1t07.flac
+     3:02.02       32109548 B   ---   --   ---xx   flac  0.6212  bd75-12-01-flaggin-down-d1t08.flac
+     3:58.05       41995004 B   ---   --   ---xx   flac  0.6216  bd75-12-01-flaggin-down-d1t09.flac
+     2:53.15       30552524 B   ---   --   ---xx   flac  0.6111  bd75-12-01-flaggin-down-d1t10.flac
+     3:10.13       33546620 B   ---   --   ---xx   flac  0.5953  bd75-12-01-flaggin-down-d1t11.flac
+     5:03.57       53583308 B   ---   --   ---xx   flac  0.6055  bd75-12-01-flaggin-down-d1t12.flac
+     4:18.55       45640604 B   ---   --   ---xx   flac  0.6014  bd75-12-01-flaggin-down-d1t13.flac
+     3:58.58       42119660 B   ---   --   ---xx   flac  0.6040  bd75-12-01-flaggin-down-d1t14.flac
+     5:01.47       53206988 B   ---   --   ---xx   flac  0.5937  bd75-12-01-flaggin-down-d1t15.flac
+     4:41.23       49622540 B   ---   --   ---xx   flac  0.6273  bd75-12-01-flaggin-down-d1t16.flac
+     8:07.57       86040908 B   ---   --   ---xx   flac  0.6283  bd75-12-01-flaggin-down-d1t17.flac
+     4:31.73       47976140 B   ---   --   ---xx   flac  0.5973  bd75-12-01-flaggin-down-d2t01.flac
+     4:43.40       50015324 B   ---   --   ---xx   flac  0.6146  bd75-12-01-flaggin-down-d2t02.flac
+     4:33.10       48180764 B   ---   --   ---xx   flac  0.6257  bd75-12-01-flaggin-down-d2t03.flac
+     4:12.17       44492828 B   ---   --   ---xx   flac  0.6113  bd75-12-01-flaggin-down-d2t04.flac
+     3:31.55       37349804 B   ---   --   ---xx   flac  0.6289  bd75-12-01-flaggin-down-d2t05.flac
+     5:43.63       60653420 B   ---   --   ---xx   flac  0.6025  bd75-12-01-flaggin-down-d2t06.flac
+     2:10.02       22936748 B   ---   --   ---xx   flac  0.5805  bd75-12-01-flaggin-down-d2t07.flac
+     5:04.73       53797340 B   ---   --   ---xx   flac  0.5849  bd75-12-01-flaggin-down-d2t08.flac
+     2:44.62       29075468 B   ---   --   ---xx   flac  0.5997  bd75-12-01-flaggin-down-d2t09.flac
+     6:16.65       66479324 B   ---   --   ---xx   flac  0.5970  bd75-12-01-flaggin-down-d2t10.flac
+     6:38.63       70355420 B   ---   --   ---xx   flac  0.5827  bd75-12-01-flaggin-down-d2t11.flac
+     2:43.07       28769708 B   ---   --   ---xx   flac  0.5964  bd75-12-01-flaggin-down-d2t12.flac
+     5:29.33       58113260 B   ---   --   ---xx   flac  0.5990  bd75-12-01-flaggin-down-d2t13.flac
+     5:34.65       59070524 B   ---   --   ---xx   flac  0.5575  bd75-12-01-flaggin-down-d2t14.flac
+   142:35.55     1509232724 B                            0.6121  (31 files)
+=================== 
+=================== 
+=================== 

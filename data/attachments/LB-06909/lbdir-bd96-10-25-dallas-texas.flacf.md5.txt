@@ -1,0 +1,16 @@
+cf092aa2ba9c6b114a96c978622d95d1  bd96-10-25-dallas-texas-d1t01.flac
+de62853fd66dd45a4c1aeed9a70077da  bd96-10-25-dallas-texas-d1t02.flac
+4a8669e47d63b4d18bd8017afba3c417  bd96-10-25-dallas-texas-d1t03.flac
+526e505b6906231b1c6d5e106d1af2d3  bd96-10-25-dallas-texas-d1t04.flac
+ca6347b193cc7caac948043f379c0ebb  bd96-10-25-dallas-texas-d1t05.flac
+ff549462a9bf60c6daf7bf21bf8ba052  bd96-10-25-dallas-texas-d1t06.flac
+7f815be221bee5f3dd4cc7502e0d1da6  bd96-10-25-dallas-texas-d1t07.flac
+be634cb07528afa0ee3f004b4d6f3630  bd96-10-25-dallas-texas-d1t08.flac
+1ddab62714a42650617bd41eb71143ac  bd96-10-25-dallas-texas-d2t01.flac
+79263d1db361dcd03ba7089ef994cbd3  bd96-10-25-dallas-texas-d2t02.flac
+1bec4818627e02f807fe7340e870ff6f  bd96-10-25-dallas-texas-d2t03.flac
+e3133f33e094158befc1e0dea6e8e1ce  bd96-10-25-dallas-texas-d2t04.flac
+6ec600bbd994813e2fcd6d43ab9f3023  bd96-10-25-dallas-texas-d2t05.flac
+469ad36e51e680c0793c7801fe822401  bd96-10-25-dallas-texas-d2t06.flac
+105792c75c9e313ba8fe34392aabb1f9  bd96-10-25-dallas-texas-d2t07.flac
+27fafa976d6df3552984f9a61b242b8f  bd96-10-25-dallas-texas.flacf.md5

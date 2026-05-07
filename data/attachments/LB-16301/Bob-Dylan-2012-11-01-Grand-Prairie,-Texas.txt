@@ -1,0 +1,31 @@
+Bob Dylan
+Grand Prairie, Texas  Verizon Theatre
+2012-11-01
+
+CD1
+1. Watching The River Flow
+2. Girl Of The North Country  (Mark Knopfler on guitar)
+3. Things Have Changed        (Mark Knopfler on guitar)
+4. Tangled Up In Blue
+5. Tweedle Dee & Tweedle Dum
+6. A Hard Rain's A-Gonna Fall
+7. Dignity
+8. Love Sick
+9. Highway 61 Revisited
+10. Mississippi
+11. Thunder On The Mountain
+
+CD2
+12. Ballad Of A Thin Man
+13. Like A Rolling Stone
+14. All Along The Watchtower
+  	 
+  	(encore)
+15. Blowin' In The Wind
+
+
+Taper:   "Bach"
+Lineage: Neumann AK40  >Neumann MTX 191 A 
+	 >Marantz PMD 661 (44.1kHz-16bit) > 
+	 USB 2.0 >PC >WaveLab 6.10 >tagging 	 
+	 Foobar >TotalCommander (md5) >µTorrent

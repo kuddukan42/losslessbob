@@ -1,0 +1,18 @@
+56e0bfd54983b2558ba042ac98f61591 *1. All Along the Watchtower.flac
+37299a5f410fc4b77cf2bacb56beacaf *10. Desolation Row.flac
+3e9bc07a022edf4fe85ddb15f84ae43d *11. Key West (Philosopher Pirate).flac
+28d018a29360e614548091d8b570cb9e *12. Watching the River Flow.flac
+c7ee369c64a31892370ddb8413aec12c *13. It's All Over Now, Baby Blue.flac
+c11d937e18cec2ae66c6db12d7fb0b41 *14. I've Made Up My Mind to Give Myself to You.flac
+c89dad7f0616cfc6822f01576f7a8d5c *15. Mother of Muses.flac
+8b799e8b8c9a445095b97b35396f72eb *16. Goodbye Jimmy Reed.flac
+a2ef4390418a29aa1bdaf2f9ed5b504c *17. Every Grain of Sand.flac
+9f42ef219569f92b8af1bac52f55a18e *2. It Ain't Me, Babe.flac
+092232486118fb6a10a53a58508eb92e *3. I Contain Multitides .flac
+b554c852142c526116fb1589f2732680 *4. False Prophet.flac
+0b64b0c3ee35672b9897a867bc95304d *5. When I Paint My Masterpiece.flac
+9f9ba9831bca81f6ec7c5b1f4b4d2298 *6. Black Rider.flac
+fd109676caf3b4988dd8fdc9c1ee0e34 *7. My Own Version of You.flac
+eb00eb3ac18858f8ed8dbf5c6ef41dde *8. To Be Alone with You.flac
+ebbdc52a368a9dc0a18f959b782f0380 *9. Crossing the Rubicon.flac
+0b088d13e36215f611a00dd1dd43f99b *notes.txt

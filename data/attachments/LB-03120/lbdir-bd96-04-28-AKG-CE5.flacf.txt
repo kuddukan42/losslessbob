@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-04-28-AKG-CE5.flacf 
+=================== 
+=================== 
+=================== 
+e40cf10f1112353373ad1c0a134b1002  bd96-04-28-AKG-CE5-LB-3120.txt
+eca44af8db2c7789604b481bbcade22e  Bob Dylan 04.28.96.txt
+de5b23f306cdeb6672b30758c28c94be  Disc 1\01-Crash On The Levee (Down In The Flood).flac
+da55d859f34a0ab145c4cdb11d730c68  Disc 1\02-Tonight I'll Be Staying Here With You.flac
+03121f5ee3e3a4150ca769ce3ef988f8  Disc 1\03-All Along The Watchtower.flac
+cd22d95069a2637bdb2b3ff712667149  Disc 1\04-I Don't Believe You.flac
+25843dd009b5b372f079efa7f79439f9  Disc 1\05-It Takes A Lot To Laugh It Takes a Train to Cry.flac
+8c02537a612ddc3c1ce77acb7d13519e  Disc 1\06-Silvio.flac
+7edbe7335d1d914f5208e4077e3236d1  Disc 1\07-Mr. Tambourine Man.flac
+137aebe7eef1643bf74c017385e85635  Disc 1\Flac Fingerprint.txt
+fa844bbd1a97ba064c4c77c9d5f3c945  Disc 2\01-Desolation Row.flac
+36c3e37ddd12a782263791a45946dc99  Disc 2\02-Friend Of The Devil.flac
+2daab005994f8fcf952f80aa037de468  Disc 2\03-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+dd61dd7f42e5857664e98ced29ede0b8  Disc 2\04-What Good Am I.flac
+ec99f63f6edfa72afcedd93be05fa161  Disc 2\05-Intros.flac
+17dbbe5f53e20c45a1cf6780e92d2d3b  Disc 2\06-Seven Days.flac
+9680e514e4f3f431a4b1cf71a8f28a0f  Disc 2\Flac Fingerprint.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-04-28-AKG-CE5.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+01-Crash On The Levee (Down In The Flood).flac:567858a747436d2b62c8d1c8fac1fbc1
+02-Tonight I'll Be Staying Here With You.flac:ef34ee53f55962a4452f58eb234294d4
+03-All Along The Watchtower.flac:db49a9f44421aa53c2e2fefa5460e27a
+04-I Don't Believe You.flac:3071533763b28afcfc1839af469f13a6
+05-It Takes A Lot To Laugh It Takes a Train to Cry.flac:c92b80bde9897610f2e29625ab7dea4b
+06-Silvio.flac:b3c54e5454f287a67342e80e2779aee1
+07-Mr. Tambourine Man.flac:c0f742558c5efdf6e44d140904d089f1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-04-28-AKG-CE5.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+01-Desolation Row.flac:1a54023fc36f12fb122db342ce1fbfc8
+02-Friend Of The Devil.flac:b9a03d61745f60f9743a6f993138ab6d
+03-Stuck Inside Of Mobile With The Memphis Blues Again.flac:91970de83913405c96e788e11e326459
+04-What Good Am I.flac:5fa9696a640bc6c99ad0ff5d491d932e
+05-Intros.flac:fa6718d01e500fb9ca5fb100cb6d8eb4
+06-Seven Days.flac:86893b8a8ed63140a455ed6fc36f80fd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-28-AKG-CE5.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.67       52372028 B   ---   --   ---xx   flac  0.5635  01-Crash On The Levee (Down In The Flood).flac
+     5:39.49       59914892 B   ---   --   ---xx   flac  0.5417  02-Tonight I'll Be Staying Here With You.flac
+     6:21.15       67243724 B   ---   --   ---xx   flac  0.5698  03-All Along The Watchtower.flac
+     7:26.63       78822620 B   ---   --   ---xx   flac  0.5318  04-I Don't Believe You.flac
+     7:17.63       77235020 B   ---   --   ---xx   flac  0.5576  05-It Takes A Lot To Laugh It Takes a Train to Cry.flac
+     7:08.16       75536876 B   ---   --   ---xx   flac  0.5536  06-Silvio.flac
+     7:27.37       78937868 B   ---   --   ---xx   flac  0.5828  07-Mr. Tambourine Man.flac
+    46:18.10      490063028 B                            0.5572  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-28-AKG-CE5.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:02.25       95667644 B   ---   --   ---xx   flac  0.5628  01-Desolation Row.flac
+     8:00.39       84763772 B   ---   --   ---xx   flac  0.5737  02-Friend Of The Devil.flac
+     8:35.43       90947180 B   ---   --   ---xx   flac  0.5727  03-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     4:08.28       43813100 B   ---   --   ---xx   flac  0.5190  04-What Good Am I.flac
+     0:36.28        6416300 B   ---   --   ---xx   flac  0.5667  05-Intros.flac
+     5:56.30       62869004 B   ---   --   ---xx   flac  0.5950  06-Seven Days.flac
+    36:19.43      384477000 B                            0.5679  (6 files)
+=================== 
+=================== 
+=================== 

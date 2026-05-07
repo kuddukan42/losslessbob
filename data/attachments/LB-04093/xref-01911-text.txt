@@ -1,0 +1,114 @@
+===================
+===================
+===================
+=== bd99-04-19.txt
+===================
+===================
+===================
+
+Bob Dylan, Murcia, Spain (1999-04-19)
+Auditorio y Centro de Congresos de Murcia
+Narciso Yepes Hall
+Source: AUD (bach)    Sound: A+
+
+
+Cd 1 
+
+Intro
+Friend Of The Devil (acoustic) 
+Mr. Tambourine Man (acoustic) 
+Masters Of War (acoustic) 
+Tomorrow Is A Long Time (acoustic) 
+The Times They Are A-Changin' (acoustic) 
+Tangled Up In Blue (acoustic) 
+My Back Pages (acoustic) (with harp) 
+Mama, You Been On My Mind (acoustic)
+
+
+Cd 2 
+ 
+Tombstone Blues 
+You're A Big Girl Now (with harp) 
+Highway 61 Revisited 
+encore 
+Love Sick 
+Everything is Broken 
+Don't Think Twice, It's All Right (acoustic) (with harp) 
+Maggie's Farm 
+
+
+
+Another real Dylan gem for you Bob fans. 
+I got this from a Dime upload in about 2007, I think. 
+Discovered a flaw in track split between d1t4 and d1t5.
+
+So I decoded all flacs to wav and, using wave studio, 
+made my own repair of both tracks by cutting the end 
+portion of D1T4 and pasting it to the front of D1T5, 
+to create d1t4-fixed and d1t5-fixed, for my own listening 
+pleasure.
+
+For this offering, I have re-encoded all files to flac8, 
+and I am including the original 2 flawed tracks as well as 
+my fixed versions of those two, in case you want to make 
+your own repair of the two original ones.
+
+Not sure which version of this Bach recording I received, 
+but to my ears it sounds like the superior one with full 
+spectrum sound. Right channel could stand a small level boost.
+
+I am including a sample for your ears to decide.
+
+hleone
+
+
+
+
+
+
+From original uploader:
+
+Back to Spain...for another excellent show of 1999 
+spring tour.
+
+lineage : master dat > Cd > Me > Flac frontend > You
+taper : Bach
+
+Thank you,my friend !
+
+all your thanks go to Bach that has generously given 
+the permission for the upload of this recording.
+
+no artworks
+samples below
+
+Enjoy it !
+===================
+===================
+===================
+=== Dylan (1999-04-19) Murcia (bach) - flac8.ffp
+===================
+===================
+===================
+1-01 Intro.flac:718b32e1891cfd6a2a49b7597370b6ec
+1-02 Friend Of The Devil.flac:0d66f9b62504e1516107038ff385504a
+1-03 Mr. Tambourine Man.flac:3db55d770d42b0a26a6a28dc20e051b3
+1-04 Masters Of War.flac:2e9a03ee38f3a67682814335df4e4bc1
+1-04 Masters Of War-fixed.flac:e4d135b1bfab86ed58062fe227ce93ab
+1-05 Tomorrow Is A Long Time.flac:0e1530e263257495ce2dae61859e821b
+1-05 Tomorrow Is A Long Time-fixed.flac:aff0d017fc5e051f05a117a411835874
+1-06 The Times They Are A-Changin'.flac:53fe00165e2186765312c45a92d5edfa
+1-07 Tangled Up In Blue.flac:69fdd8c76e3f8a2b0e1f2d9fbe2e5972
+1-08 My Back Pages.flac:1cbad21abd6cffc262c62299bf1b0ef3
+1-09 Mama, You Been On My Mind.flac:e3b46fcb15dec37b3a12812372b882b8
+2-01 Tombstone Blues.flac:30d8a38ae9dda24f301fbb65e7cbf99e
+2-02 You're A Big Girl Now.flac:3abf15b8039d0a41e715786bc3059477
+2-03 Highway 61 Revisited.flac:1c746b7ad04a4a7f380c6c122979c8d8
+2-04 encore anticipation.flac:2b1cac21db35c66b5ebef382ff475c39
+2-05 Love Sick.flac:00659529924b0d4bf3e7b140fd811edf
+2-06 Everything is Broken.flac:4b0cc76a2e246df04ffcdaf7b0cc49e9
+2-07 Don't Think Twice.flac:5523207b1aeb1ac7359956c164b42386
+2-08 Maggie's Farm.flac:3b5692fe5ddc610acee663f356e96933
+===================
+===================
+===================

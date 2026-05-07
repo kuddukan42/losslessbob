@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-01-29.flacf 
+=================== 
+=================== 
+=================== 
+f5093a1d04bec510a0826ef3ae984e7a  101 Gotta Serve Somebody.flac
+c6c137af54d62c67a1f883e67b9dbf0d  102 If Not For You.flac
+27ecfef0c9209e6bcd939ac4ec68c330  103 Cold Irons Bound.flac
+53d242d8de82a43037b8420255438181  104 You Ain't Goin' Nowhere.flac
+24177ac0479d7924d7fbf9150021da80  105 Ballad of a Thin Man.flac
+48d4fb241e99c1cb528ae656944ae797  106 Roving Gambler.flac
+b2f4e1dcea27abfb0151ec8dc7031151  107 Love Minus Zero - No limit.flac
+99d5ba3aeb51a5d12b4e85847f40959f  108 Tangled Up in Blue.flac
+585ad500cb8e47ee9074e38712ca453b  109 My Back Pages.flac
+ec77e5146f88bd1e7b412b72220229c4  201 Til I Fell In Love With You.flac
+4a75180430c6d63f6f568cf830f11750  202 You're Too Late.flac
+003dd13deb304b61e16dcb2b1c1b8d81  203 Highway 61 Revisited.flac
+f0551ba72a45498814818603cd0967d7  204 Love Sick.flac
+dd8c32dda9a8d6efe1f721a532c539c3  205 Not Fade Away.flac
+c01b3a65d23417cad8e56c245b638847  206 Blowin' In The Wind.flac
+8c0255e445169a30f0e5974905838867  207 Rainy Day Women # 12 & 35.flac
+0b7781be1a408faad7dddcbf549d2c76  bd99-01-29-LB-3409.txt
+3806a921ea5031bba5d2112a16cfd4d5  Bob Dylan - Daytona 1-29-99.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-01-29.flacf 
+=================== 
+=================== 
+=================== 
+101 Gotta Serve Somebody.flac:d9e707bc1b713f89533f76af7ea8308b
+102 If Not For You.flac:8432e4d43ebb1e5c5ed566d3f9305bf2
+103 Cold Irons Bound.flac:d2c3295b547bab9af69a9ad5a6afec85
+104 You Ain't Goin' Nowhere.flac:e2a6936bb84e069fbcd92551bf95b149
+105 Ballad of a Thin Man.flac:2557df5018b988bf7f3dd687b4c9c67d
+106 Roving Gambler.flac:94dc0d37f3cc42f71832afee650ab187
+107 Love Minus Zero - No limit.flac:3d96780aefb1d7036d405a500155f52e
+108 Tangled Up in Blue.flac:0f387909aa955e99f8398c4f5bf53345
+109 My Back Pages.flac:41d693572c5eb223426485d6ca6b2466
+201 Til I Fell In Love With You.flac:53d7c8d05a81e8a512397e7e20971051
+202 You're Too Late.flac:f7b2000977e9cffe462eb62e7339d29f
+203 Highway 61 Revisited.flac:234a9a746ca2eecf9170303c95b682a7
+204 Love Sick.flac:6a5289d3d1126415266b44021eb4a1f4
+205 Not Fade Away.flac:133d39d2b13831c6cbabf751043db899
+206 Blowin' In The Wind.flac:6a191f877977ba5c47007d4b50e4b0f1
+207 Rainy Day Women # 12 & 35.flac:198f309933d4b26de672a384c8a52872
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-01-29.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:13.04       44638652 B   ---   --   ---xx   flac  0.5660  101 Gotta Serve Somebody.flac
+     4:08.29       43815452 B   ---   --   ---xx   flac  0.5527  102 If Not For You.flac
+     6:10.52       65390348 B   ---   --   ---xx   flac  0.5466  103 Cold Irons Bound.flac
+     4:12.11       44478716 B   ---   --   ---xx   flac  0.5403  104 You Ain't Goin' Nowhere.flac
+     7:46.37       82289468 B   ---   --   ---xx   flac  0.5309  105 Ballad of a Thin Man.flac
+     4:07.59       43709612 B   ---   --   ---xx   flac  0.5179  106 Roving Gambler.flac
+     5:29.67       58193228 B   ---   --   ---xx   flac  0.4977  107 Love Minus Zero - No limit.flac
+     7:15.12       76762268 B   ---   --   ---xx   flac  0.5726  108 Tangled Up in Blue.flac
+     7:01.10       74287964 B   ---   --   ---xx   flac  0.4972  109 My Back Pages.flac
+     4:57.27       52454348 B   ---   --   ---xx   flac  0.5407  201 Til I Fell In Love With You.flac
+     4:03.18       42907580 B   ---   --   ---xx   flac  0.4673  202 You're Too Late.flac
+     5:21.02       56629148 B   ---   --   ---xx   flac  0.5735  203 Highway 61 Revisited.flac
+     5:26.30       57577004 B   ---   --   ---xx   flac  0.5196  204 Love Sick.flac
+     5:00.15       52955324 B   ---   --   ---xx   flac  0.5425  205 Not Fade Away.flac
+     4:32.56       48112556 B   ---   --   ---xx   flac  0.5068  206 Blowin' In The Wind.flac
+     4:49.18       51021980 B   ---   --   ---xx   flac  0.5560  207 Rainy Day Women # 12 & 35.flac
+    84:34.72      895223648 B                            0.5336  (16 files)
+=================== 
+=================== 
+=================== 

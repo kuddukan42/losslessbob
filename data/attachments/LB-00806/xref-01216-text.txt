@@ -1,0 +1,128 @@
+===================
+===================
+===================
+=== bd-880824edm-shn.md5
+===================
+===================
+===================
+0ac6d27bf6fd5f63134e7a3c2b4e3d01 *bd-880824edm-t01.shn
+e1b8d6f8d718deaaee65426386bcfc24 *bd-880824edm-t02.shn
+d84f2b669899b66c6248e902f3959a6a *bd-880824edm-t03.shn
+c85664799bd7b5388d8e25ff312d281c *bd-880824edm-t04.shn
+634016c534fa372a6890719ef4289f4c *bd-880824edm-t05.shn
+6e4277be66b6fda1bc0eb48a67d7bef9 *bd-880824edm-t06.shn
+1cabf3fec1894f8a9426f9fc25795f84 *bd-880824edm-t07.shn
+0641c2097953ce65a8df8d3358212e98 *bd-880824edm-t08.shn
+f3a7fb06f74f5a4f44d931bb6211cf93 *bd-880824edm-t09.shn
+579982ea3c8a6768f7b8e53dc4dc347d *bd-880824edm-t10.shn
+ff8a28f0ed97a3048d580b7e6bf476a5 *bd-880824edm-t11.shn
+40f5d1c354fc26b750c15aa68cbb116a *bd-880824edm-t12.shn
+1538c3c8b0c166484f5719f482858082 *bd-880824edm-t13.shn
+d883e71cd433fcc392361611cae7c468 *bd-880824edm-t14.shn
+30aba7bb35c8f0f764b818a27b9049b6 *bd-880824edm-t15.shn
+870e737dc37daed686e6bf71ef261da8 *bd-880824edm-t16.shn
+===================
+===================
+===================
+=== lineage.txt
+===================
+===================
+===================
+high quality low generation circulating boot > EAC mode 6 > wave files > mkwACt > SHN files
+
+
+originally a 2 disc boot before 80 minute discs were available.
+
+
+
+Enjoy 
+The OldToaD
+December 2003
+===================
+===================
+===================
+=== set list.txt
+===================
+===================
+===================
+Bob Dylan
+
+recorded live at
+Northlands Coliseum
+Edmonton
+Alberta
+Canada
+
+24 August 1988
+
+one disc
+
+1	Subterranean Homesick Blues
+2	Just Like A Woman
+3	All Along The Watchtower
+4	You're A Big Girl Now
+5	Shelter From The Storm
+6	Highway 61 Revisited
+7	To Ramona
+8	Girl From The North Country
+9	Mr. Tambourine Man
+10	Silvio (Bob Dylan & Robert Hunter)
+11	In The Garden
+12	Like A Rolling Stone
+13	It Ain't Me, Babe
+1	4Maggie's Farm
+15	Knockin' On Heaven's Door
+16	She's About A Mover (Doug Sahm)
+
+
+Concert # 45 of The Never-Ending Tour.  Concert # 5 of the Interstate 88 Tour, part 2: Late Summer Tour of North America.
+ 
+Concert # 45 with the first Never-Ending Tour Band: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Kenny Aaronson (bass), Christopher Parker (drums).
+ 
+7-9 and 13 Bob Dylan (vocal & guitar), G.E. Smith (guitar).
+ 
+1,10  G. E. Smith (backup vocal).
+ 
+6  G. E. Smith (electric slide guitar).
+ 
+15  Tracy Chapman (shared vocal).
+ 
+16  Doug Sahm (lead vocal).
+
+===================
+===================
+===================
+=== bd-880824edm-wav.md5
+===================
+===================
+===================
+78d075bc6deb7c4c7e2ab1b3cfefbfaf *bd-880824edm-t01.wav
+2dcdcdac7e36b9d5450fa0461f3c2abc *bd-880824edm-t02.wav
+2391b44e82265f0af3cc3bf9642790c2 *bd-880824edm-t03.wav
+2215edef1f9d8e00aa9979cad8cca9c6 *bd-880824edm-t04.wav
+76969136e48ad421658b0ffcebac6ad5 *bd-880824edm-t05.wav
+039532280daaa70952282bb78cd86510 *bd-880824edm-t06.wav
+9acf105f9af8121ce8c311c7b3524743 *bd-880824edm-t07.wav
+c3c9684202c27959bb5a5b7c33a9ae74 *bd-880824edm-t08.wav
+f98056e97e3dcbba6c15a462855a926c *bd-880824edm-t09.wav
+d5aadf739b395be3f0c9825b30422bd6 *bd-880824edm-t10.wav
+4c7447efde58b7fa79271e54eb67de5c *bd-880824edm-t11.wav
+3dbb3690b097bdaa4afa11226be785a9 *bd-880824edm-t12.wav
+89d86ee2aa3f09dfe9a46032590ca913 *bd-880824edm-t13.wav
+991fefdc029817f8f3b517dd7ccbfe87 *bd-880824edm-t14.wav
+3ed2478e44324ea4962142fc2d128ba5 *bd-880824edm-t15.wav
+c28094cb703a30c758cb3b30b5a1aa36 *bd-880824edm-t16.wav
+===================
+===================
+===================
+=== read me first.txt
+===================
+===================
+===================
+Copy this wave-files-checksums-md5 file into the same directory on your HDD as the wave files produced by decompressing the SHN files, you can then check the integrity of the SHN output.
+
+TheOldToaD
+December 2003
+===================
+===================
+===================

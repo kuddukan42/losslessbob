@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-06-14-Soomlos.flacf 
+=================== 
+=================== 
+=================== 
+c7f1a8a2a63d89528fa0154aa34b9230  bd05-06-14-Soomlos-LB-2918.txt
+568117afd063769139a323013ae42161  bd2005-06-14.txt
+fd7fce2e7dc57ad632b750379d34091a  bd2005-06-14d1flac.md5
+1eaa67c9aa9b5d2b12f170cb2d313a94  bd2005-06-14d1t01.flac
+523e0aaaea467ddef527221021e5451e  bd2005-06-14d1t02.flac
+6db8e41d65cea1a515042be95e35506f  bd2005-06-14d1t03.flac
+93762ed5732d44ab820318d39271c700  bd2005-06-14d1t04.flac
+72cf46e75a3b6a733ed9146cb85df403  bd2005-06-14d1t05.flac
+ecb5d00d974c53e32a49faf44bc73469  bd2005-06-14d1t06.flac
+d8482fe2e8c5442a4dbf62a9a4dd678f  bd2005-06-14d1t07.flac
+af05f0fc7f6731c9493fbf201111ee64  bd2005-06-14d1t08.flac
+46c6ea08f384c5758af841819fa56471  bd2005-06-14d1t09.flac
+66fc607fa8658e7b300c4b616f4eaca8  bd2005-06-14d1t10.flac
+2b7e9ac3fa1e1515593c732bddd321ac  bd2005-06-14d1wav.md5
+4721c147a5aaf311e3dda37717204e1b  bd2005-06-14d2flac.md5
+36d62278888f9fbbc6732bc39d757695  bd2005-06-14d2t01.flac
+fcb7ead77fa6f43a384ac9cc077997b6  bd2005-06-14d2t02.flac
+aa63167b81ef356937a0989ad777effb  bd2005-06-14d2t03.flac
+1cf5ff11028067343c2e488d1054eacd  bd2005-06-14d2t04.flac
+f1b98b1fa620b2a98d5651a8857d9592  bd2005-06-14d2t05.flac
+b3d42334058565da958631ff0b593d64  bd2005-06-14d2wav.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-06-14-Soomlos.flacf 
+=================== 
+=================== 
+=================== 
+bd2005-06-14d1t01.flac:bd4e80620feeebc02932c7de0f5368ba
+bd2005-06-14d1t02.flac:6c79ad4e518aa659375b1dd053767e5d
+bd2005-06-14d1t03.flac:36db79036f351a225dd95606ce170f7e
+bd2005-06-14d1t04.flac:286f6f131ad666a2608e7c5c10760ba2
+bd2005-06-14d1t05.flac:344ae4b73a4f583bff82ceaea570a742
+bd2005-06-14d1t06.flac:9aed7d5f5dd3598186301d4e17007b15
+bd2005-06-14d1t07.flac:6f697121732a5fc5c69dc9f55e8bc8f5
+bd2005-06-14d1t08.flac:33e833a499b7e11e8feaf8d733271b86
+bd2005-06-14d1t09.flac:2f30754121df48617c35fbcea39f2ca9
+bd2005-06-14d1t10.flac:d51b3fd86c0d96de7dcc006008eee9fa
+bd2005-06-14d2t01.flac:49b624ed15e3f9b0ba0c452096fc0dc0
+bd2005-06-14d2t02.flac:6934b911ceb8b7932fe62edff71dc7d5
+bd2005-06-14d2t03.flac:324539f30ce5f866037bcf0d332bf8d8
+bd2005-06-14d2t04.flac:b9b44d848a93886a34f67c30f513d296
+bd2005-06-14d2t05.flac:355c2da19d6e13c3ac6902a16a3da6a2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-06-14-Soomlos.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:34.48        6110540 B   ---   --   ---xx   flac  0.3868  bd2005-06-14d1t01.flac
+     4:38.48       49152140 B   ---   --   ---xx   flac  0.5285  bd2005-06-14d1t02.flac
+     5:14.22       55441388 B   ---   --   ---xx   flac  0.4551  bd2005-06-14d1t03.flac
+     7:42.08       81515660 B   ---   --   ---xx   flac  0.5170  bd2005-06-14d1t04.flac
+     6:14.30       66044204 B   ---   --   ---xx   flac  0.4309  bd2005-06-14d1t05.flac
+     8:16.24       87550892 B   ---   --   ---xx   flac  0.5249  bd2005-06-14d1t06.flac
+     7:53.33       83514860 B   ---   --   ---xx   flac  0.4903  bd2005-06-14d1t07.flac
+     8:35.23       90900140 B   ---   --   ---xx   flac  0.4998  bd2005-06-14d1t08.flac
+     6:05.48       64498940 B   ---   --   ---xx   flac  0.4319  bd2005-06-14d1t09.flac
+     6:42.36       70997516 B   ---   --   ---xx   flac  0.4062  bd2005-06-14d1t10.flac
+     7:35.25       80320844 B   ---   --   ---xx   flac  0.4589  bd2005-06-14d2t01.flac
+    11:31.43      121993580 B   ---   --   ---xx   flac  0.4448  bd2005-06-14d2t02.flac
+     5:12.04       55046252 B   ---   --   ---xx   flac  0.4850  bd2005-06-14d2t03.flac
+     0:38.25        6762044 B   ---   --   ---xx   flac  0.4441  bd2005-06-14d2t04.flac
+     7:00.51       74207996 B   ---   --   ---xx   flac  0.5402  bd2005-06-14d2t05.flac
+    93:55.18      994056996 B                            0.4769  (15 files)
+=================== 
+=================== 
+=================== 

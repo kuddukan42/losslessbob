@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-09-schoepsmk4v-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+447e3612dd9c5e4c808ead58d21f2c57  bd07-04-09-schoepsmk4v-bourbon-LB-4691.txt
+026b7804e5363bda3574529a1eeeb3ae  BD2007-04-09.Schoepsmk4v.txt
+7912a372058645a5227bbc25b3f9b84f  BD2007-04-0901.flac
+531d5b18e010b2498ca04abddae9567f  BD2007-04-0902.flac
+3b166dfe700341c4472dd600fe60ee15  BD2007-04-0903.flac
+d78bd98c96069121f874d005ca90ee5a  BD2007-04-0904.flac
+778f22cc759711c43d3eab5389374369  BD2007-04-0905.flac
+44f0e2ddb1e57c91822846f8e676d688  BD2007-04-0906.flac
+6bb05ab64b0559d1d0e806e61a4da1fa  BD2007-04-0907.flac
+2ade3f299813524fe75e3ef3639d6507  BD2007-04-0908.flac
+5dbaeab078a8456d95c86ae08245489f  BD2007-04-0909.flac
+8d00fe6afd41179ffafa82a17e9438ea  BD2007-04-0910.flac
+c793578dac106a9bec32af650d85da10  BD2007-04-0911.flac
+fef73af5614b1726a3b23299687c9681  BD2007-04-0912.flac
+930da3c497c91ed22bf28e96f5297a8d  BD2007-04-0913.flac
+f84bc726795ad140ec72d56c42c92134  BD2007-04-0914.flac
+c21eb8815073d981ff4076f297453528  BD2007-04-0915.flac
+06eec01062cbddca617b1089459b6b86  BD2007-04-0916.flac
+dfb56f863c6ecf64aedc0b9a2f892dd2  BD2007-04-0917.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-09-schoepsmk4v-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+BD2007-04-0901.flac:9dbc50b25df1c05ca07516ff9a64fbfb
+BD2007-04-0902.flac:13231ebe76f6b223db28659728a7f28b
+BD2007-04-0903.flac:a4b348e3b97399106b5ce1515245444f
+BD2007-04-0904.flac:8146eb53c8306b0e16c4dbc64a3e7e4d
+BD2007-04-0905.flac:9da38aafd2e3c8ee6fec7d79670dfdd6
+BD2007-04-0906.flac:b6884d22cbea97ab25a9e4ee41e8b34a
+BD2007-04-0907.flac:9f98670b0d6ca51b3eeb2953294be68a
+BD2007-04-0908.flac:d8d665991ccc3848a7e136953f10537e
+BD2007-04-0909.flac:4f1a711f9d1af97fb8bedcb2ddffbbde
+BD2007-04-0910.flac:0761b7ee6091cbaab2547fcbdd7285c3
+BD2007-04-0911.flac:cc7f093dd3051986ba072e1e569e5678
+BD2007-04-0912.flac:5eeb066942e2ca024f6850f24cf899d9
+BD2007-04-0913.flac:2e0b4bd7ef185a599cdc4c284cc5d9ab
+BD2007-04-0914.flac:fcba770f62f2c31c176c72594e7d3bb0
+BD2007-04-0915.flac:42d975258b3e892ddaf5c6ace6c646ff
+BD2007-04-0916.flac:93b8da1d54923bda3c9f1ae4bf1b95ee
+BD2007-04-0917.flac:a00b451bc883d888a4fa7c13eaec9825
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-09-schoepsmk4v-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.12       58240268 B   ---   --   ---xx   flac  0.5654  BD2007-04-0901.flac
+     5:57.46       63083036 B   ---   --   ---xx   flac  0.5176  BD2007-04-0902.flac
+     5:36.67       59428028 B   ---   --   ---xx   flac  0.5695  BD2007-04-0903.flac
+     7:19.05       77451404 B   ---   --   ---xx   flac  0.5958  BD2007-04-0904.flac
+     7:14.20       76604684 B   ---   --   ---xx   flac  0.4561  BD2007-04-0905.flac
+     6:42.65       71065724 B   ---   --   ---xx   flac  0.5544  BD2007-04-0906.flac
+     6:37.30       70101404 B   ---   --   ---xx   flac  0.4964  BD2007-04-0907.flac
+     6:29.50       68737244 B   ---   --   ---xx   flac  0.5810  BD2007-04-0908.flac
+     9:19.16       98645276 B   ---   --   ---xx   flac  0.4635  BD2007-04-0909.flac
+     5:36.28       59336300 B   ---   --   ---xx   flac  0.5895  BD2007-04-0910.flac
+     6:11.61       65587916 B   ---   --   ---xx   flac  0.4225  BD2007-04-0911.flac
+     6:54.51       73149596 B   ---   --   ---xx   flac  0.5611  BD2007-04-0912.flac
+     8:33.30       90563804 B   ---   --   ---xx   flac  0.4971  BD2007-04-0913.flac
+     5:47.07       61227308 B   ---   --   ---xx   flac  0.5874  BD2007-04-0914.flac
+    10:21.41      109640876 B   ---   --   ---xx   flac  0.5429  BD2007-04-0915.flac
+     6:36.03       69861500 B   ---   --   ---xx   flac  0.6089  BD2007-04-0916.flac
+     5:51.21       61965836 B   ---   --   ---xx   flac  0.5808  BD2007-04-0917.flac
+   116:39.28     1234690204 B                            0.5371  (17 files)
+=================== 
+=================== 
+=================== 

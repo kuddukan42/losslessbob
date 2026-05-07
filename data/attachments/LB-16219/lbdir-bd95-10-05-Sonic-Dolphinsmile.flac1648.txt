@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd95-10-05-Sonic-Dolphinsmile.flac1648
+===================
+===================
+===================
+889425b157d1f94d78d059de4483c4af *01 Crash On The Levee.flac
+76c5ae283026dd08a9a7333701704958 *02 Tonight Ill Be Staying Here.flac
+093441c0c3a606b8748cb5b820c0d3c0 *03 All Along The Watchtower.flac
+4c91fa8aa47d2e982062051d758255f7 *04 Just Like A Woman.flac
+01a4176b498909d4cf3b83e69d34edef *05 Ill Be Your Baby Tonight.flac
+756277c313493e2698ee946066ea9900 *06 Silvio.flac
+b36b418a745b1aa05499090d52d0c996 *07 Tamborine Man.flac
+2e9e9892acac339fd03875ffa5f1572b *08 Masters Of War.flac
+6346bd48979b48bf2e695cd0bf035166 *09 Dont Think Twice.flac
+8f39288b3ea191e8a300f753c137b658 *10 Seeing The Real You.flac
+365c25c890bb47e9b8a96fdf9826bd5c *11 Shelter From The Storm.flac
+997675e4e1ebb69b7d6720143061f143 *12 Obviously Five Believers.flac
+29613e647ecbfffc16aeafd005b049f6 *13 Ballad Of A Thin Man.flac
+b2821221ca2bdefd0fcaf27e1b950b41 *14 My Back Pages.flac
+78cfa2fb4300cdf8ebf9c29dc88918d1 *15 Rainy Day Women.flac
+a1f5b2c3acc10d61af9a894446a40e88 *Bob Dylan University Of Central Florida Arena Orlando 1995-10-05 Dolphinsmile Archive.ffp
+e149f29150f04f17b0ecfc498a9c707e *Bob Dylan University Of Central Florida Arena Orlando 1995-10-05 Dolphinsmile Archive.md5
+a1f5b2c3acc10d61af9a894446a40e88 *Bob Dylan University Of Central Florida Arena Orlando 1995-10-05 Dolphinsmile Archive.txt
+617dd8cb304d797302dc948195cc4882 *info.txt
+===================
+===================
+===================
+=== ffp for: bd95-10-05-Sonic-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Crash On The Levee.flac:e37a7813924e79ab44917aacba8b3af6
+02 Tonight Ill Be Staying Here.flac:a1fa68659be9392429c04d0b00d85c51
+03 All Along The Watchtower.flac:b1862129ab39cc3ab987aeb38b0b1abe
+04 Just Like A Woman.flac:e7fa12cd8eedcafff91be56ff0e54066
+05 Ill Be Your Baby Tonight.flac:0de1ee7c58e6b71cf3266a15f4fbfcd0
+06 Silvio.flac:87549698314fb18904ade3cd5da2dd45
+07 Tamborine Man.flac:de6c0b7ab3ed181470549dc92be38763
+08 Masters Of War.flac:2a72f4dcc7828d266300edc2affe0e66
+09 Dont Think Twice.flac:219b95948e8cb336f634b73e28cbe099
+10 Seeing The Real You.flac:d41304ef4f3f0e1f286147e1ce026959
+11 Shelter From The Storm.flac:c6372acef6927f3aabaf340853ec222b
+12 Obviously Five Believers.flac:023fc7d85872c522d00a70870f2930af
+13 Ballad Of A Thin Man.flac:95ebe500b6c39a2e5c643760f541a701
+14 My Back Pages.flac:d9f6dd28f96dfe9c10e3c0325f2b87de
+15 Rainy Day Women.flac:88ef825561e26e7fd7ffd3c176505d99
+===================
+===================
+===================
+=== shntool len for: bd95-10-05-Sonic-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:30.496      51935368 B   cxx   --   ---xx   flac  0.5726  01 Crash On The Levee.flac
+     5:43.394      65931640 B   cxx   --   ---xx   flac  0.4982  02 Tonight Ill Be Staying Here.flac
+     7:05.513      81698544 B   cxx   --   ---xx   flac  0.5563  03 All Along The Watchtower.flac
+     6:31.259      75121680 B   cxx   --   ---xx   flac  0.4926  04 Just Like A Woman.flac
+     6:48.226      78379476 B   cxx   --   ---xx   flac  0.5271  05 Ill Be Your Baby Tonight.flac
+     7:18.203      84135068 B   cxx   --   ---xx   flac  0.5448  06 Silvio.flac
+     9:56.632     114553356 B   cxx   --   ---xx   flac  0.4731  07 Tamborine Man.flac
+     6:02.639      69626676 B   cxx   --   ---xx   flac  0.4817  08 Masters Of War.flac
+     8:49.168     101600276 B   cxx   --   ---xx   flac  0.5290  09 Dont Think Twice.flac
+     6:43.788      77527300 B   cxx   --   ---xx   flac  0.5507  10 Seeing The Real You.flac
+     9:19.507     107425352 B   cxx   --   ---xx   flac  0.5277  11 Shelter From The Storm.flac
+     8:14.995      95039016 B   cxx   --   ---xx   flac  0.5519  12 Obviously Five Believers.flac
+     8:49.511     101666172 B   cxx   --   ---xx   flac  0.5145  13 Ballad Of A Thin Man.flac
+     9:35.782     110550136 B   cxx   --   ---xx   flac  0.4984  14 My Back Pages.flac
+     7:51.009      90433824 B   cxx   --   ---xx   flac  0.5551  15 Rainy Day Women.flac
+   113:20.121    1305623884 B                            0.5232  (15 files)
+===================
+===================
+===================

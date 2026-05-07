@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-09-b.flacf 
+=================== 
+=================== 
+=================== 
+06d98ae2b525837003aa40838112c7f9  1997-04-09 Bangor Maine d1\01 Track01.flac
+d4d5506d90aee3cdb632db52cfecf1ab  1997-04-09 Bangor Maine d1\02 Track02.flac
+6bd02c7ca4717e79699f935014ff98a4  1997-04-09 Bangor Maine d1\03 Track03.flac
+4b44fc98251ded82cb06173ec52325dd  1997-04-09 Bangor Maine d1\04 Track04.flac
+ea36882f6ef5065b4ddb11fc156748f2  1997-04-09 Bangor Maine d1\05 Track05.flac
+16f3b4ab25ee4cbb9b18c8fa0596696f  1997-04-09 Bangor Maine d1\06 Track06.flac
+3c1ce9b66c9f7c734ff71eae0f9c87d5  1997-04-09 Bangor Maine d1\07 Track07.flac
+3fbd11eb8e7e860e59f8ac16f0a98bf6  1997-04-09 Bangor Maine d1\08 Track08.flac
+8b91d5e2f52e1f172fc0468c8659950a  1997-04-09 Bangor Maine d1\09 Track09.flac
+6fecc0694a3f16fb5c30c17f3e11c70d  1997-04-09 Bangor Maine d1\10 Track10.flac
+d1fc290244e60d6a4d903a6304b3094b  1997-04-09 Bangor Maine d2\01 Track01.flac
+73351cb9b25dd4c97467de9d2b3c0874  1997-04-09 Bangor Maine d2\02 Track02.flac
+8fa16b7b38b24d80cfd19d0b2a26f21a  1997-04-09 Bangor Maine d2\03 Track03.flac
+e51bf93a615bdcb03d1b1f02de792281  1997-04-09 Bangor Maine d2\04 Track04.flac
+1cc274fe4e933825771d4087922c8cdd  1997-04-09 Bangor Maine d2\05 Track05.flac
+62096aa9c79c5178fe365df086ffb927  Bob Dylan 1997.04.09 Bangor,Maine,Bangor Auditorium.ffp
+b1e4f55af78f683993bf2fd14fc4bb03  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-09-b.flacf\1997-04-09 Bangor Maine d1 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:f9923e2e54c626ab557d0c9e68ad0cfa
+02 Track02.flac:1ac2f6bb5e0ddae161978056d33ea103
+03 Track03.flac:407b7d46cd08197ec35b629d24ff3c72
+04 Track04.flac:77a2d362bc7e514ac7990c041cfcbb49
+05 Track05.flac:39f9e99b28ebb622111ac6c52ec6a601
+06 Track06.flac:239812fa34999e910d85eb4aaefa00e2
+07 Track07.flac:cce165aa6840a07ce162e3334114e04d
+08 Track08.flac:69377d56e3a20f87b014f996f22bdb62
+09 Track09.flac:09a72804f1f1dffc7b260122793f0c00
+10 Track10.flac:d2889bf7c23fc32628c819295f8cb8af
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-09-b.flacf\1997-04-09 Bangor Maine d2 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:2a6b18e0490f88e96eb111214d409e09
+02 Track02.flac:e0990bebb2761a538fcac3446dfd9ae8
+03 Track03.flac:03fb78227e860ebbc7134e170ce3094c
+04 Track04.flac:99a958a3231308e3e9d1973fbe208656
+05 Track05.flac:d0d8f81379ecd10a0474f55eeba2e362
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-09-b.flacf\1997-04-09 Bangor Maine d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.72       49032188 B   ---   --   ---xx   flac  0.5658  01 Track01.flac
+     5:53.72       62438588 B   ---   --   ---xx   flac  0.5455  02 Track02.flac
+     6:32.72       69318188 B   ---   --   ---xx   flac  0.6059  03 Track03.flac
+     9:40.72      102481388 B   ---   --   ---xx   flac  0.5170  04 Track04.flac
+     6:23.72       67730588 B   ---   --   ---xx   flac  0.5598  05 Track05.flac
+     8:14.72       87310988 B   ---   --   ---xx   flac  0.5871  06 Track06.flac
+     7:24.72       78490988 B   ---   --   ---xx   flac  0.5563  07 Track07.flac
+     6:35.72       69847388 B   ---   --   ---xx   flac  0.5184  08 Track08.flac
+     7:58.72       84488588 B   ---   --   ---xx   flac  0.5120  09 Track09.flac
+     6:16.71       66493436 B   ---   --   ---xx   flac  0.5900  10 Track10.flac
+    69:41.44      737632328 B                            0.5536  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-09-b.flacf\1997-04-09 Bangor Maine d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:23.72       67730588 B   ---   --   ---xx   flac  0.5409  01 Track01.flac
+     7:16.72       77079788 B   ---   --   ---xx   flac  0.6016  02 Track02.flac
+     8:29.72       89956988 B   ---   --   ---xx   flac  0.5833  03 Track03.flac
+     5:53.72       62438588 B   ---   --   ---xx   flac  0.4971  04 Track04.flac
+     6:16.71       66493436 B   ---   --   ---xx   flac  0.6194  05 Track05.flac
+    34:21.59      363699388 B                            0.5711  (5 files)
+=================== 
+=================== 
+=================== 

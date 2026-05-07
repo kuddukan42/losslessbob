@@ -1,0 +1,57 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-04-unreleasd-live-album.flacf 
+=================== 
+=================== 
+=================== 
+4845c0d8d5773bd72a57c00b86cb6527  bd87-07-04-unreleasd-live-album-d1t01.flac
+1185ce3088bc97cfb35190a93565ad9c  bd87-07-04-unreleasd-live-album-d1t02.flac
+249b99b8897df3a9ed0d6fc8261ef5cf  bd87-07-04-unreleasd-live-album-d1t03.flac
+52bdd66cd4fa9d0b3029c11cd81c940e  bd87-07-04-unreleasd-live-album-d1t04.flac
+2309064751a66ada969562ba006c19eb  bd87-07-04-unreleasd-live-album-d1t05.flac
+524882031073899f7c46f519410e0dcf  bd87-07-04-unreleasd-live-album-d1t06.flac
+236041f240b1495710490ce1cfe83e58  bd87-07-04-unreleasd-live-album-d1t07.flac
+2b4227e5b7a5a59dc6ea98738902f3ab  bd87-07-04-unreleasd-live-album-d1t08.flac
+298b1be63f655398480ab02ca4e5620c  bd87-07-04-unreleasd-live-album-d1t09.flac
+00d559e129becfa6c74f4f1341f7a2c4  bd87-07-04-unreleasd-live-album-d1t10.flac
+de811766d55176abb4245490ef5b9fd9  bd87-07-04-unreleasd-live-album.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-07-04-unreleasd-live-album.flacf 
+=================== 
+=================== 
+=================== 
+bd87-07-04-unreleasd-live-album-d1t01.flac:d232376cb57c66fd1697859bf5ec87e1
+bd87-07-04-unreleasd-live-album-d1t02.flac:bf63ff03ed83b83dcb6b39558f81f4b4
+bd87-07-04-unreleasd-live-album-d1t03.flac:6281afcb6bed2e7610efd1d395ec1089
+bd87-07-04-unreleasd-live-album-d1t04.flac:50e9f33f59c6eb6a710fdb9ea30a5af0
+bd87-07-04-unreleasd-live-album-d1t05.flac:e11f9da75263ab497b1625de9c47593f
+bd87-07-04-unreleasd-live-album-d1t06.flac:bb67f7ae2a9e56bd35d33534b8a91c7c
+bd87-07-04-unreleasd-live-album-d1t07.flac:27587b874b3df9ad9f6eca9c403759ba
+bd87-07-04-unreleasd-live-album-d1t08.flac:5091b919a9cd47572dab259648dcb466
+bd87-07-04-unreleasd-live-album-d1t09.flac:8b67a49d036a4f9a264e306c8ceeb269
+bd87-07-04-unreleasd-live-album-d1t10.flac:e78927faf845300efda7c58c32e2ebf4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-04-unreleasd-live-album.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:14.70       66138284 B   ---   --   ---xx   flac  0.5594  bd87-07-04-unreleasd-live-album-d1t01.flac
+     5:35.40       59188124 B   ---   --   ---xx   flac  0.5381  bd87-07-04-unreleasd-live-album-d1t02.flac
+     5:34.10       58941164 B   ---   --   ---xx   flac  0.5549  bd87-07-04-unreleasd-live-album-d1t03.flac
+     4:47.05       50638604 B   ---   --   ---xx   flac  0.5510  bd87-07-04-unreleasd-live-album-d1t04.flac
+     5:13.00       55213244 B   ---   --   ---xx   flac  0.5630  bd87-07-04-unreleasd-live-album-d1t05.flac
+     6:57.55       73688204 B   ---   --   ---xx   flac  0.5546  bd87-07-04-unreleasd-live-album-d1t06.flac
+     9:32.15      100936124 B   ---   --   ---xx   flac  0.5866  bd87-07-04-unreleasd-live-album-d1t07.flac
+     3:44.55       39643004 B   ---   --   ---xx   flac  0.5684  bd87-07-04-unreleasd-live-album-d1t08.flac
+     4:58.05       52579004 B   ---   --   ---xx   flac  0.5566  bd87-07-04-unreleasd-live-album-d1t09.flac
+     3:07.20       33033884 B   ---   --   ---xx   flac  0.5827  bd87-07-04-unreleasd-live-album-d1t10.flac
+    55:44.50      589999640 B                            0.5622  (10 files)
+=================== 
+=================== 
+=================== 

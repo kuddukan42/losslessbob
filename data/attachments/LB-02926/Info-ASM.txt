@@ -1,0 +1,12 @@
+Additional Sound Master (ASM)
+Using T-RackS 2.0
+
+1. Equalizer band ON: Gain Control: boosted level of corresponding band by +3.3dB
+2. Tube-Comp ON: Input Drive: set at -1.6dB
+3. Multiband-Limiter ON: Compressor Input Drive: increased to +0.2dB
+
+OUTPUT STAGE:
+Output Stage Pre- Level: notched up +0.4dB
+Global Master Fader: -0.2dB
+
+ALL TRACKS MASTERED AT THESE LEVELS by Norway Remaster (by yours truly)

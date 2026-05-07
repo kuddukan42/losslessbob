@@ -1,0 +1,149 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-16-e.flacf 
+=================== 
+=================== 
+=================== 
+14f7bd1e26ec5c70d58cbda9a3c80f82  1979-11-16 Fox Warfield Theatre, San Francisco, California, USA.md5
+ab48181eaa2f1e4efdd3f23e2e4e67e3  Artwork and info\1979-11-16 c-23b.JPG
+98cef4e6cebde769cc9ec8afce36cb9f  Artwork and info\1979-11-16 c-23cd.JPG
+9e00e8a913d22c6a7e8d3678f7b0a223  Artwork and info\1979-11-16 c-23f.JPG
+3197193bc18525e31e57ad22d9ff8731  Artwork and info\1979-11-16 Fox Warfield Theatre, San Francisco, California, USA back.jpg
+bbc7ed06cb7aa48326f222ac353b8b4b  Artwork and info\1979-11-16 Fox Warfield Theatre, San Francisco, California, USA cover.jpg
+84d076da59e769030246a2105268abc3  Artwork and info\1979-11-16 Fox Warfield Theatre, San Francisco, California, USA.txt
+25c447e05d0e9514e2719847c8e0f48c  CD1\01 Gotta serve somebody.flac
+abb5cc33d8c53bd61d39db00364a9b22  CD1\02 I believe in you.flac
+095f51a2714d0c50b134aca52e6194f5  CD1\03 When you gonna wake up.flac
+bfcefcebfdb5bba9e44c2f619760eda5  CD1\04 When he returns.flac
+9bdfc105d25a37c25d171a3c434c7194  CD1\05 Man gave names to all the animals.flac
+3b3d2947b56563e3321e645ee81d64df  CD1\06 Precious angel.flac
+73507e92e04ce9327c0ca0614f3af3ef  CD1\07 Slow train.flac
+6e713db2ec9f4f174001886a47339941  CD1\08 Covenant woman.flac
+887086577e72823ae50ab0e54e30aa36  CD1\09 Ain't no man righteous, no not one.flac
+93964db5fc24492224109c7036dd91b6  CD1\11 Gonna change my way of thinking.flac
+83f20abe3a7cd3d1f1684bb466e35b89  CD1\12 Do right to me baby (do unto others).flac
+cfba75e14898e896ad861f2b94847d49  CD1\13 Solid rock.flac
+db9c5a31303b65f383a4b596ffa7afb2  CD1\FLAC CD1.md5
+9e04c3596159605565a95fb1fde5e3a8  CD2\14 Saving grace.flac
+6888992ca207fcc3e0e8891988b8d33c  CD2\15 Saved.flac
+e434447d8679f781b2f3df43b1eb176b  CD2\16 What can I do for you.flac
+ea5548fefaba74e0d157b9c0f8667859  CD2\17 In the garden.flac
+f5136d39def36b79adfd654222e53fd3  CD2\18 Blessed be the name.flac
+0fdbd72336d69953235abefd478d8330  CD2\19 Pressing on.flac
+e40dbb2fcfd87353fbc72ab9b1adad63  CD2\FLAC CD2.md5
+dddf8338ad24f95817290312ff878735  CD3 Fillers (unidentified venues)\20 Mr. Tambourine Man.flac
+f382293b33a69bfa7d93b9c6ba8871ff  CD3 Fillers (unidentified venues)\21 The times they are a-changin'.flac
+09e512f2fb1ace50f0212b63ddd72a65  CD3 Fillers (unidentified venues)\22 When I paint my masterpiece.flac
+ab06dfdd7bc5708bbc0b58b4641f7b4b  CD3 Fillers (unidentified venues)\23 Seven days.flac
+03a5cbb63f9a9a9614c88e99164be31c  CD3 Fillers (unidentified venues)\24 Blowin' in the wind [w Joan Baez].flac
+f823d0f645e37edc639c14448867ab5a  CD3 Fillers (unidentified venues)\25 I dreamed I saw St. Augustine.flac
+48f68cbb4a0fd534e45c4868c9f5513d  CD3 Fillers (unidentified venues)\26 Diamonds & Rust [Joan Baez].flac
+394bd517dbe41ae208def1d2034e4346  CD3 Fillers (unidentified venues)\27 Like a rolling stone.flac
+9daaa9cdad57a63d6460c0d69611aa3a  CD3 Fillers (unidentified venues)\28 Isis.flac
+5c1e5df777f7f930a95eacb6a99ef8a9  CD3 Fillers (unidentified venues)\FLAC CD3 Fillers [unidentified venue(s)].md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-16-e.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Gotta serve somebody.flac:b52567bee2b98f32780e1b861729dc0e
+02 I believe in you.flac:ecb743d9633cdefbe2c0dd3b121912c3
+03 When you gonna wake up.flac:524a32e57d7e6382d0af1ed7187ac044
+04 When he returns.flac:0e967add3681fee88c914870345b2ae9
+05 Man gave names to all the animals.flac:167e1dbc03cedd9e943bc130d97e0bff
+06 Precious angel.flac:b53510ff9d42914e850e258261cf1750
+07 Slow train.flac:c92cf6a77d118caa4b997a4c58f5e2ec
+08 Covenant woman.flac:648e395af5011c8290f1853f69780de1
+09 Ain't no man righteous, no not one.flac:317b776d42b07684b442318aa08631a5
+11 Gonna change my way of thinking.flac:859317b706fac143f6152918a4b9a0c3
+12 Do right to me baby (do unto others).flac:91151795433f0f823bb864bd22ab3308
+13 Solid rock.flac:a4ec39a38e3abfb5de10d89bf8507f7a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-16-e.flacf\CD2 
+=================== 
+=================== 
+=================== 
+14 Saving grace.flac:c0d7a95c4a431b5405a708f4e2ff5d44
+15 Saved.flac:1f438bb2c669f09b649499fd3f8818af
+16 What can I do for you.flac:bdc18dd8b0f7aff98cef807b41c63048
+17 In the garden.flac:30fe586be77b612fe827bb7b868668b4
+18 Blessed be the name.flac:ba3056b2ac02358b41fe35aeb0638d2e
+19 Pressing on.flac:85df672713a20d225e2df6f620250143
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-16-e.flacf\CD3 Fillers (unidentified venues) 
+=================== 
+=================== 
+=================== 
+20 Mr. Tambourine Man.flac:ee0625f1133044dbc611f6a511be6cfe
+21 The times they are a-changin'.flac:f25b9b5dbff31a0272b61fdf490fc6d1
+22 When I paint my masterpiece.flac:af58216548b97efa53cfbe6e85ae0d89
+23 Seven days.flac:511a4420ac9806c9222b36ad7a669987
+24 Blowin' in the wind [w Joan Baez].flac:efbee817c58725a942add2eed0d9d6df
+25 I dreamed I saw St. Augustine.flac:8028d4ed10e8ceb41b285eac42fc2f44
+26 Diamonds & Rust [Joan Baez].flac:2ebfc07f5d461f4642646b3ea0bdad18
+27 Like a rolling stone.flac:c5adde0502feec13e2149d374f605a72
+28 Isis.flac:f1d2c9c8e0e940801d20d246e9a620bd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-16-e.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:50.07       72340508 B   ---   --   ---xx   flac  0.6717  01 Gotta serve somebody.flac
+     4:58.31       52640156 B   ---   --   ---xx   flac  0.6112  02 I believe in you.flac
+     5:49.07       61580108 B   ---   --   ---xx   flac  0.6682  03 When you gonna wake up.flac
+     4:56.49       52329692 B   ---   --   ---xx   flac  0.5917  04 When he returns.flac
+     5:27.58       57819260 B   ---   --   ---xx   flac  0.6371  05 Man gave names to all the animals.flac
+     6:31.10       68995964 B   ---   --   ---xx   flac  0.6449  06 Precious angel.flac
+     6:30.01       68798396 B   ---   --   ---xx   flac  0.6614  07 Slow train.flac
+     6:30.09       68817212 B   ---   --   ---xx   flac  0.5888  08 Covenant woman.flac
+     5:00.00       52920044 B   ---   --   ---xx   flac  0.6529  09 Ain't no man righteous, no not one.flac
+     5:08.65       54484124 B   ---   --   ---xx   flac  0.6632  11 Gonna change my way of thinking.flac
+     5:59.58       63464060 B   ---   --   ---xx   flac  0.6130  12 Do right to me baby (do unto others).flac
+     4:39.67       49373228 B   ---   --   ---xx   flac  0.6772  13 Solid rock.flac
+    68:21.62      723562752 B                            0.6403  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-16-e.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:51.44       51435932 B   ---   --   ---xx   flac  0.6041  14 Saving grace.flac
+     4:44.33       50175260 B   ---   --   ---xx   flac  0.6801  15 Saved.flac
+     5:41.05       60164204 B   ---   --   ---xx   flac  0.6333  16 What can I do for you.flac
+     7:51.38       83173820 B   ---   --   ---xx   flac  0.6323  17 In the garden.flac
+     4:46.30       50521004 B   ---   --   ---xx   flac  0.6794  18 Blessed be the name.flac
+     7:27.05       78862604 B   ---   --   ---xx   flac  0.6190  19 Pressing on.flac
+    35:22.05      374332824 B                            0.6386  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-16-e.flacf\CD3 Fillers (unidentified venues) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:50.74       40746092 B   ---   --   ---xx   flac  0.5674  20 Mr. Tambourine Man.flac
+     4:34.64       48484172 B   ---   --   ---xx   flac  0.5792  21 The times they are a-changin'.flac
+     5:26.06       57520556 B   ---   --   ---xx   flac  0.5431  22 When I paint my masterpiece.flac
+     2:50.23       30042140 B   ---   --   ---xx   flac  0.5277  23 Seven days.flac
+     4:19.03       45694700 B   ---   --   ---xx   flac  0.4265  24 Blowin' in the wind [w Joan Baez].flac
+     2:50.64       30138572 B   ---   --   ---xx   flac  0.5772  25 I dreamed I saw St. Augustine.flac
+     4:13.31       44702156 B   ---   --   ---xx   flac  0.5478  26 Diamonds & Rust [Joan Baez].flac
+     7:01.38       74353820 B   ---   --   ---xx   flac  0.5646  27 Like a rolling stone.flac
+     5:45.66       61013276 B   ---   --   ---xx   flac  0.4882  28 Isis.flac
+    40:52.69      432695484 B                            0.5349  (9 files)
+=================== 
+=================== 
+=================== 

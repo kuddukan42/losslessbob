@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-08-summer-tour-1995-vol1.flacf 
+=================== 
+=================== 
+=================== 
+e0ab0f240ed03d368a2a5b4febb5f307  bd95-07-08-summer-tour-1995-vol1-d1t01.flac
+4e34bab8b6655714af4ae29ce20cad87  bd95-07-08-summer-tour-1995-vol1-d1t02.flac
+b867fff16dd53619815712c1d239b81c  bd95-07-08-summer-tour-1995-vol1-d1t03.flac
+3c43b45085f889eab23c20a0cf7eebc5  bd95-07-08-summer-tour-1995-vol1-d1t04.flac
+51fe623841d758c5af5ab56fb4d2e06a  bd95-07-08-summer-tour-1995-vol1-d1t05.flac
+4aa0f6417e5c6549ef7c9471d2076eab  bd95-07-08-summer-tour-1995-vol1-d1t06.flac
+ba40ffdb957c8128f1545c0a433de9dc  bd95-07-08-summer-tour-1995-vol1-d1t07.flac
+c041e417e86780fafad6dd8bbb442bce  bd95-07-08-summer-tour-1995-vol1-d1t08.flac
+650d461b8e52c2553cf03d8e4efd374b  bd95-07-08-summer-tour-1995-vol1-d1t09.flac
+6f8f222d7b8829bcfbdf7dfcf28f04f1  bd95-07-08-summer-tour-1995-vol1-d1t10.flac
+41030046de83b50e90dc5d9bec8d4f73  bd95-07-08-summer-tour-1995-vol1-d2t01.flac
+f73a4614cea03e6030bbf3cc319526be  bd95-07-08-summer-tour-1995-vol1-d2t02.flac
+718a237fc706cce41f2fd431193be7d7  bd95-07-08-summer-tour-1995-vol1-d2t03.flac
+6300d24744c5f786727e8f4b109d022d  bd95-07-08-summer-tour-1995-vol1-d2t04.flac
+cb87e4d5ef2513586970aaaa3291225c  bd95-07-08-summer-tour-1995-vol1-d2t05.flac
+996a77b303d09d5ba969e16df15e8f82  bd95-07-08-summer-tour-1995-vol1-d2t06.flac
+58fd18941cb8a3f66ef74f3857650b2b  bd95-07-08-summer-tour-1995-vol1-d2t07.flac
+0d4c9ec77fecb5f555e9aa0bf80f127a  bd95-07-08-summer-tour-1995-vol1-d2t08.flac
+6dcf9fa5629e3c31cf7551d420d777e3  bd95-07-08-summer-tour-1995-vol1.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-08-summer-tour-1995-vol1.flacf 
+=================== 
+=================== 
+=================== 
+bd95-07-08-summer-tour-1995-vol1-d1t01.flac:14e295b5563fb18abb6e54452b69c15f
+bd95-07-08-summer-tour-1995-vol1-d1t02.flac:ba19b02906571a0873d17be93eda48df
+bd95-07-08-summer-tour-1995-vol1-d1t03.flac:b78eaef2e65dcc113a940cfb6cfd8545
+bd95-07-08-summer-tour-1995-vol1-d1t04.flac:64480f5719dc87604d773450c10e54e3
+bd95-07-08-summer-tour-1995-vol1-d1t05.flac:28301b810706b9acd409935998cae208
+bd95-07-08-summer-tour-1995-vol1-d1t06.flac:626c8e82938e861e6babc1a38442df7e
+bd95-07-08-summer-tour-1995-vol1-d1t07.flac:f986b0c6adfc602b37e1e0bff3a7c32f
+bd95-07-08-summer-tour-1995-vol1-d1t08.flac:5e1fdc207fe0f6f05fab515782597414
+bd95-07-08-summer-tour-1995-vol1-d1t09.flac:c73dbc361f01c6aa8af250c3d3de4bbf
+bd95-07-08-summer-tour-1995-vol1-d1t10.flac:96bd27f3686d3a639f42aec0fdae0cad
+bd95-07-08-summer-tour-1995-vol1-d2t01.flac:53896ea02e88e4ead5c44690db42f043
+bd95-07-08-summer-tour-1995-vol1-d2t02.flac:f89b2205dbcb6479c760b688a657d81e
+bd95-07-08-summer-tour-1995-vol1-d2t03.flac:7685a399f4e005c1df3e31880782d515
+bd95-07-08-summer-tour-1995-vol1-d2t04.flac:3ebe960ab99d3ad7d95c3a050b5f5f46
+bd95-07-08-summer-tour-1995-vol1-d2t05.flac:5aa66d1068bbcbcd539df92ca471ecb9
+bd95-07-08-summer-tour-1995-vol1-d2t06.flac:9269b6a81755cb5ca637cfa08573e44f
+bd95-07-08-summer-tour-1995-vol1-d2t07.flac:681091d44398407eec7510ad74b949f8
+bd95-07-08-summer-tour-1995-vol1-d2t08.flac:65294b97c6bd7669e71e3a18b4127312
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-08-summer-tour-1995-vol1.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.55       58165004 B   ---   --   ---xx   flac  0.6454  bd95-07-08-summer-tour-1995-vol1-d1t01.flac
+     9:10.30       97090604 B   ---   --   ---xx   flac  0.6111  bd95-07-08-summer-tour-1995-vol1-d1t02.flac
+     6:33.30       69395804 B   ---   --   ---xx   flac  0.6689  bd95-07-08-summer-tour-1995-vol1-d1t03.flac
+     7:34.20       80132684 B   ---   --   ---xx   flac  0.6456  bd95-07-08-summer-tour-1995-vol1-d1t04.flac
+     7:04.25       74852444 B   ---   --   ---xx   flac  0.6626  bd95-07-08-summer-tour-1995-vol1-d1t05.flac
+     7:33.22       79960988 B   ---   --   ---xx   flac  0.6639  bd95-07-08-summer-tour-1995-vol1-d1t06.flac
+     8:07.25       85965644 B   ---   --   ---xx   flac  0.5795  bd95-07-08-summer-tour-1995-vol1-d1t07.flac
+     9:13.25       97608044 B   ---   --   ---xx   flac  0.5983  bd95-07-08-summer-tour-1995-vol1-d1t08.flac
+     7:06.00       75146444 B   ---   --   ---xx   flac  0.6300  bd95-07-08-summer-tour-1995-vol1-d1t09.flac
+     7:09.48       75788540 B   ---   --   ---xx   flac  0.6683  bd95-07-08-summer-tour-1995-vol1-d1t10.flac
+    11:03.00      116953244 B   ---   --   ---xx   flac  0.6385  bd95-07-08-summer-tour-1995-vol1-d2t01.flac
+     9:00.05       95267804 B   ---   --   ---xx   flac  0.7094  bd95-07-08-summer-tour-1995-vol1-d2t02.flac
+     9:17.45       98360684 B   ---   --   ---xx   flac  0.6853  bd95-07-08-summer-tour-1995-vol1-d2t03.flac
+     9:41.65      102641324 B   ---   --   ---xx   flac  0.6515  bd95-07-08-summer-tour-1995-vol1-d2t04.flac
+     7:43.05       81685004 B   ---   --   ---xx   flac  0.6861  bd95-07-08-summer-tour-1995-vol1-d2t05.flac
+     6:38.55       70336604 B   ---   --   ---xx   flac  0.7016  bd95-07-08-summer-tour-1995-vol1-d2t06.flac
+     6:39.37       70470668 B   ---   --   ---xx   flac  0.6351  bd95-07-08-summer-tour-1995-vol1-d2t07.flac
+     6:04.38       64299020 B   ---   --   ---xx   flac  0.6972  bd95-07-08-summer-tour-1995-vol1-d2t08.flac
+   141:10.05     1494120552 B                            0.6528  (18 files)
+=================== 
+=================== 
+=================== 

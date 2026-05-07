@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-Les-Kokay-Those-Elusive-Singles.shnf 
+=================== 
+=================== 
+=================== 
+74d4e7ab3adf7cd4265b0da96534bbe5  bd-Les-Kokay-Those-Elusive-Singles.txt
+7e94e39ecc5de7296426fc4d012a6d1b  LK - Those Elusive Singles.md5
+b6ea963f045a0ccc31de3df99b60b47e  LK - Those Elusive Singles.txt
+7f58dfb779ed4033b68423ab686dd785  LK - Those Elusive Singles_t01.shn
+d327ae505b88a710c1fcb9b779e8ce83  LK - Those Elusive Singles_t02.shn
+6f37b5865b9fea2dbb5bd12a98c648e0  LK - Those Elusive Singles_t03.shn
+d8e0180fc2934e7c0238611e2bcb563a  LK - Those Elusive Singles_t04.shn
+28cb60b4b42d57eaeda8d2980d099730  LK - Those Elusive Singles_t05.shn
+1e1663a2d0717dd80727ac0094c5fe03  LK - Those Elusive Singles_t06.shn
+e0620507a0cee2b4b3ac022ac7babb41  LK - Those Elusive Singles_t07.shn
+d55dc0df445ea41563db56ee299a3092  LK - Those Elusive Singles_t08.shn
+a0783411b13db3d0289c596bb00dab8e  LK - Those Elusive Singles_t09.shn
+cfb4a6ea545dbf7ada4b70558d693024  LK - Those Elusive Singles_t10.shn
+06c23b137bc53fa8105a728a1c70c943  LK - Those Elusive Singles_t11.shn
+a9d56a1d157eacfae10c5cfc89698215  LK - Those Elusive Singles_t12.shn
+1caf4c6204d96faf627fe7c8148cafde  LK - Those Elusive Singles_t13.shn
+c348b29a6dacb784270b40509c03f052  LK - Those Elusive Singles_t14.shn
+3e49efa00e4d39ce4f3b8b48cbab5841  LK - Those Elusive Singles_t15.shn
+b8b45588b8df26cc2ff503540081cc5f  LK - Those Elusive Singles_t16.shn
+fc6cbed9f047e54ac3b3c73857b4fe57  LK - Those Elusive Singles_t17.shn
+07f8145f58da7577ce849671a2dbb0e2  LK - Those Elusive Singles_t18.shn
+89171f943dad14e2bebc58d65a429623  LK - Those Elusive Singles_t19.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Les-Kokay-Those-Elusive-Singles.shnf 
+=================== 
+=================== 
+=================== 
+8aae7928e4f315ccdbd96a2f30f8475a  [shntool]  LK_-_Those_Elusive_Singles_t01.wav
+ab92b19a8b380b95a7a37ff1c7e4a472  [shntool]  LK_-_Those_Elusive_Singles_t02.wav
+702774539fac4463494d3de55c824805  [shntool]  LK_-_Those_Elusive_Singles_t03.wav
+eed04cc14de5ef886a6a72cf7ec2e44a  [shntool]  LK_-_Those_Elusive_Singles_t04.wav
+94ce3c9d956c8410e75e503b1ccbb913  [shntool]  LK_-_Those_Elusive_Singles_t05.wav
+bd4f6d712be31f320004db27257ace33  [shntool]  LK_-_Those_Elusive_Singles_t06.wav
+5c2185f131a2e0968a92fb735b717ac9  [shntool]  LK_-_Those_Elusive_Singles_t07.wav
+0b3e5abff41271da49de146749f8f762  [shntool]  LK_-_Those_Elusive_Singles_t08.wav
+7ab4bd3a5b2ad9a4a060e12118740fb0  [shntool]  LK_-_Those_Elusive_Singles_t09.wav
+2c99584b154a11a916183dc84a20f858  [shntool]  LK_-_Those_Elusive_Singles_t10.wav
+897a6e7afed2a4322f27b90520e832ab  [shntool]  LK_-_Those_Elusive_Singles_t11.wav
+e3dc0e423f4db118a8f4ac472791c2db  [shntool]  LK_-_Those_Elusive_Singles_t12.wav
+b630d109d7438ed30bdfe4d32674cba0  [shntool]  LK_-_Those_Elusive_Singles_t13.wav
+aa66f4d40def6df3a1a596e4ae6bb6e9  [shntool]  LK_-_Those_Elusive_Singles_t14.wav
+51bb5d0d888dbe7a021ac8df30389dfd  [shntool]  LK_-_Those_Elusive_Singles_t15.wav
+99d16b8885d9990cb8bb52338fdae187  [shntool]  LK_-_Those_Elusive_Singles_t16.wav
+ff1bb8f022e264c0835e5c410540e799  [shntool]  LK_-_Those_Elusive_Singles_t17.wav
+0205c0e7c1278723b708f1954998367b  [shntool]  LK_-_Those_Elusive_Singles_t18.wav
+67362d3c4edf3839bef772e6365f37fa  [shntool]  LK_-_Those_Elusive_Singles_t19.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Les-Kokay-Those-Elusive-Singles.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:28.74       26281306 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t01.wav
+     2:28.40       26201338 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t02.wav
+     2:28.63       26255434 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t03.wav
+     2:30.72       26629402 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t04.wav
+     2:22.05       25060618 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t05.wav
+     2:14.48       23750554 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t06.wav
+     2:10.59       23070826 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t07.wav
+     2:14.17       23677642 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t08.wav
+     2:38.71       28038250 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t09.wav
+     2:25.17       25618042 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t10.wav
+     2:37.00       27694858 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t11.wav
+     2:31.28       26702314 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t12.wav
+     3:04.34       32537626 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t13.wav
+     2:56.30       31117018 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t14.wav
+     4:07.20       43617898 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t15.wav
+     3:52.07       40941322 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t16.wav
+     0:56.52       10000762 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t17.wav
+     3:33.30       37643818 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t18.wav
+     3:40.58       38944474 B   ---   h-   -----    wav  1.0000  LK_-_Those_Elusive_Singles_t19.wav
+    51:22.50      543783502 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

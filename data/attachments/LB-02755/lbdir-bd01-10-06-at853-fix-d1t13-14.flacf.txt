@@ -1,0 +1,34 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-06-at853-fix-d1t13-14.flacf 
+=================== 
+=================== 
+=================== 
+ecbfb28dc635d98efc3fc38d815c40d4  country pie seattle 01.flac
+d706b7a8a6ad9d4223fe4a4fefac9932  FIX dylan seattle 01.md5
+dbd23313352ef2f3a7c8ac905ec622f4  FIX dylan seattle01.txt
+afcdfbc09260a0b25c73ec1c989857d3  sugar baby seattle 01.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-06-at853-fix-d1t13-14.flacf 
+=================== 
+=================== 
+=================== 
+country pie seattle 01.flac:14d6f0313f2ae6552fecfca04647f4f3
+sugar baby seattle 01.flac:bb1496a9e7a227d5e4696d417bc215ef
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-06-at853-fix-d1t13-14.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.48       36980540 B   ---   --   ---xx   flac  0.5730  country pie seattle 01.flac
+     7:11.67       76186028 B   ---   --   ---xx   flac  0.4007  sugar baby seattle 01.flac
+    10:41.40      113166568 B                            0.4570  (2 files)
+=================== 
+=================== 
+=================== 

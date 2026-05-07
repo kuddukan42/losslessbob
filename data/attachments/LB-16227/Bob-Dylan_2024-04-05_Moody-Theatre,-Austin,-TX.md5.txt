@@ -1,0 +1,42 @@
+e6ea215da2e806c211320fc03b0f8171 *Bob Dylan_2024-04-05_Moody Theatre, Austin, TX.txt
+ca3dac3952d5d85502da1232d321eb68 *Booklet 1.jpg
+0125879920848ee593fdc69650ba4159 *Booklet 2.jpg
+dd669badfe63595915f8709e8b623571 *Booklet 3.jpg
+c96c61c59bf2357d87355b830c0d1046 *Booklet 4.jpg
+a85e6e5b6e84e9bb33bb1dc94a0d8463 *Booklet 5.jpg
+1fd2782519255fcb076e76c89ac0e4cc *Booklet cover.jpg
+7c26acae86662d71b668af4c317f3940 *Box back.jpg
+b1354c542853e5366578c4c8898ba278 *Box front.jpg
+e6cbbfeb5f49cdee6f756ff86eef5b35 *Box spine.jpg
+98dfac7061d3a9e27757aa69185ea0e7 *Card 1 back.jpg
+a043db4cbb09c2c4936c4701aaf39c89 *Card 1 front.jpg
+92fa424901c77dacb5130f72665626a0 *Card 2.jpg
+2411ef50ac904902ebb3e5fd1efb4a76 *Card 3.jpg
+a0e9c6928f7c45c498d6e60e1782ca7f *Card 4.jpg
+8cf2f17a5bf64e65dcdc1f0b944ffa55 *Card 5.jpg
+e631e7af6fe22eef9ce99de005be35a6 *Card 6.jpg
+782de185654e26d831f6c876ee0dc24f *Card 7.jpg
+02cff42dcaac6361f9de540cf139121e *Front cover inner.jpg
+85e2ca3abb09c576494d1320d3497fd3 *Front cover.jpg
+32980cef89c4754ae7fc2679251cc4db *Disc 1\01 Intro.flac
+75d6667345c5b2f158bd84919318e568 *Disc 1\02 Watching The River Flow.flac
+bdabb8d440d366bcb8c99914b770d3b2 *Disc 1\03 Bob Dylan Thanks.flac
+08be7cdd192a0d6269b6566e8251a4de *Disc 1\04 Most Likely You Go Your Way (And I'll Go Mine).flac
+82cec60e2bab0d18a6f4189b6bb7e369 *Disc 1\05 I Contain Multitudes.flac
+c59403a59f4f00f90252c81354969f2b *Disc 1\06 False Prophet.flac
+73c6ffefee5d3c95319679ce831bc452 *Disc 1\07 When I Paint My Masterpiece.flac
+872eb95d17d9586767e26acc8c046d4d *Disc 1\08 Black Rider.flac
+61d9edd0150e32209768a5b0a6b5e402 *Disc 1\09 I'll Be Your Baby Tonight.flac
+7ad419b4c2962ea7b64980d0c37318d8 *Disc 1\10 My Own Version Of You.flac
+ec03390b663ad8047a5badb5110c2164 *Disc 1\11 Crossing The Rubicon.flac
+33a912eb021e7904e7b45c711188b5a4 *Disc 2\01 To Be Alone With You.flac
+76fed35256ae6df342df512e3348d73c *Disc 2\02 Key West (Philosopher Pirate).flac
+67479dbc85a4be49b38b64c65df1fe1a *Disc 2\03 Gotta Serve Somebody.flac
+89bb7cd53175400e7673429099cb37e3 *Disc 2\04 Across The Borderline.flac
+62c17a7a7f6fb7659e11faf017101ccd *Disc 2\05 I've Made Up My Mind To Give Myself To You).flac
+1e2346d6796eeaf18b9068f7f49171d4 *Disc 2\06 Big River.flac
+d8416061e0a1295925da5a18f741dc92 *Disc 2\07 Mother Of Muses.flac
+16b3b3371ca77a045685cec13daf6495 *Disc 2\08 Goodbye Jimmy Reed.flac
+4eb31648d3051c00f35ba5d6b69bc0fc *Disc 2\09 Every Grain Of Sand.flac
+20eb625b14cbd60fb746910d252e5b4c *Disc 2\10 Walking By Myself.flac
+f428d3c2c0fa0d26da00ac25f20cfae7 *Disc 2\11 Roll Over Beethoven.flac

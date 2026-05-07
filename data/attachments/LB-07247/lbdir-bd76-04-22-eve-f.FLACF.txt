@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-04-22-eve-f.FLACF 
+=================== 
+=================== 
+=================== 
+411a64fad0cba0cde3b6fac87438b928  bd76-04-22-eve.md5
+35f23c00225027c2adeda4beb9bcfd03  Clearwater 76 Alternate.txt
+3f6de8f1d0c7752559c40183d44c6911  Track01.flac
+436045f2eb024d261ee56df5cc5075f3  Track02.flac
+362aa0cfafbda24d2329de9f0ff8cd6f  Track03.flac
+6e1ad3bf325d83d0bb92fb34aef9ecf7  Track04.flac
+90fdc52ad7f7d2cdf808fa980a1e18e5  Track05.flac
+b466fd2855eae17915eaa4bb74576817  Track06.flac
+39902efdaa5f2caf74a1b26ff3a3e4ad  Track07.flac
+b79de04f71c298e4359fdcac03f79479  Track08.flac
+1d3ddfa6ec1a1796b4fe2dd9a8d099cd  Track09.flac
+2156e136aab73beca49c5fe2e569d227  Track10.flac
+b4faab816784e972c6c0dd294b7c7738  Track11.flac
+2feb32aa4bd9b6e51ed5b2d364ab2b31  Track12.flac
+48cbe1c06322a941a8ba31c01868d46d  Track13.flac
+a80749481b776303e0d61f1d87ec04c2  Track14.flac
+080e487312ccba406664c90eb0bf6155  Track15.flac
+52ff4624339cb99be1e436d1d6e9edc7  Track16.flac
+265268c4d7b008e8a46487800a670195  Track17.flac
+fce0281b1e50eaedb64c417d49b82d22  Track18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-04-22-eve-f.FLACF 
+=================== 
+=================== 
+=================== 
+Track01.flac:e2ef991a1e35a10d35b239351f6a7b57
+Track02.flac:91011159c38faaadbd2cde065646a06a
+Track03.flac:99349df56fb9b3a03baac70084c7f576
+Track04.flac:a45aa9fbd8f8033f8180feadee6164c4
+Track05.flac:240cc924cd74ad1a50bb1f5d76c8cba5
+Track06.flac:bcd518e66bff831182ba463b619fe913
+Track07.flac:7fe26d63263961c447d2a0a2d6b1361d
+Track08.flac:cdea50875a6e8c203651279c71969e6b
+Track09.flac:2dc5481b3f6338512cb4ed715a956b42
+Track10.flac:12ed54922595eab8fe9589a42632d155
+Track11.flac:e761ec4853f3ef38b918103aa22c933b
+Track12.flac:24521b90a46fbc1e3ea5b4aa8193c1b6
+Track13.flac:cbddaee9f2094c2e9b8c1ce9f994bd3e
+Track14.flac:88fec360a424b0828402ac10bf994b47
+Track15.flac:ab2c8014872df4df7954cf9c2e815f35
+Track16.flac:f2208e109097f2c819977df71fed99e6
+Track17.flac:fe3186e9ea5abe6c989cef91e9fa94a4
+Track18.flac:48950d0ebab55d2d6d871ad43bddfc9d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-04-22-eve-f.FLACF 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:10.13       44130620 B   ---   --   ---xx   flac  0.5152  Track01.flac
+     6:07.07       64755308 B   ---   --   ---xx   flac  0.4794  Track02.flac
+     6:32.07       69165308 B   ---   --   ---xx   flac  0.5395  Track03.flac
+     3:11.61       33835916 B   ---   --   ---xx   flac  0.5231  Track04.flac
+     1:13.60       13018364 B   ---   --   ---xx   flac  0.5007  Track05.flac
+     5:12.27       55100348 B   ---   --   ---xx   flac  0.5206  Track06.flac
+     6:11.08       65463260 B   ---   --   ---xx   flac  0.5278  Track07.flac
+     1:42.27       18056348 B   ---   --   ---xx   flac  0.4859  Track08.flac
+     3:02.74       32278892 B   ---   --   ---xx   flac  0.5079  Track09.flac
+     5:43.40       60599324 B   ---   --   ---xx   flac  0.5209  Track10.flac
+     4:26.59       47061212 B   ---   --   ---xx   flac  0.5235  Track11.flac
+     3:38.09       38476412 B   ---   --   ---xx   flac  0.5055  Track12.flac
+     5:06.07       53994908 B   ---   --   ---xx   flac  0.4928  Track13.flac
+     5:23.31       57050156 B   ---   --   ---xx   flac  0.4982  Track14.flac
+     4:34.11       48359516 B   ---   --   ---xx   flac  0.4891  Track15.flac
+     4:12.38       44542220 B   ---   --   ---xx   flac  0.5141  Track16.flac
+     3:46.06       39880556 B   ---   --   ---xx   flac  0.4908  Track17.flac
+     4:03.08       42884060 B   ---   --   ---xx   flac  0.4673  Track18.flac
+    78:17.43      828652728 B                            0.5075  (18 files)
+=================== 
+=================== 
+=================== 

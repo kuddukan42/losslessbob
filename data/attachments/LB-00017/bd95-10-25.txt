@@ -1,0 +1,44 @@
+Bob Dylan
+25 Oct 95
+Rockford, IL
+Coronado Theater
+
+Recording: (Probably) Sonic Studios DSM Mics > Sony D100
+NOTE: I'll be clarifying the above information ASAP.
+Transfer: Sony TCD-D8 > M. Audio dIO 2448 @ 48k > 
+          Sound Forge 4.5 (48 > 44.1 & Waves L1 Ultramaximizer & minor editing) > 
+          CDWav > SHN (mkwACT)
+          by Dan Krass (gser@jadetech.com)
+
+ Disc 1
+========
+Electric:
+01 Crash On The Levee
+02 Lay Lady Lay (Bucky Baxter on pedal steel)
+03 All Along The Watchtower 
+04 Under The Red Sky (Bucky Baxter on pedal steel)
+05 I'll Be Your Baby Tonight (Bucky Baxter on steel guitar)
+06 Silvio
+Acoustic:
+07 Mr. Tambourine Man (Bob Dylan on harp and Bucky Baxter on mandolin)
+08 Gates Of Eden 
+09 To Ramona
+
+ Disc 2
+========
+Electric:
+01 Jokerman (Bucky Baxter on pedal steel)
+02 Shooting Star (Bucky Baxter on pedal steel)
+03 Obviously Five Believers
+Encore:
+04 West LA Fadeaway (John "JJ" Jackson on backup vocal)
+05 The Times They Are A-Changin' (acoustic - Bob Dylan on harp)
+06 Rainy Day Women #12 & 35 (Bucky Baxter on steel guitar)
+
+The 9th Never-Ending Tour Band:
+Bob Dylan - guitar, vocal, harmonica
+Tony Garnier - stand-up bass, bass guitar
+Bucky Baxter - pedal steel, steel guitar, guitar, dobro, mandolin
+John "JJ" Jackson - guitar
+Winston Watson - drums, percussion
+	

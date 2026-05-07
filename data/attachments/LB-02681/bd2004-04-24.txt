@@ -1,0 +1,97 @@
+The Bob Dylan Show
+Borgata Hotel Casino & Spa
+Event Center
+Atlantic City, New Jersey
+April 24, 2005
+
+**Recording Info**
+20th row - 3 seats right of center
+AKG Blue Lines (ck91>mk90/3-h98>se300b) > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > Cool Edit 96 > CD Wave > FLAC frontend
+Recorded & compiled by:
+soomlos kosaotpw
+
+Disc 1:
+01. Introduction [00:27]
+02. Drifter's Escape [04:37]
+03. Love Minus Zero/No Limit [06:50]
+04. God Knows [05:18]
+05. Ring Them Bells [05:55]
+06. Watching The River Flow [06:36]
+07. Tryin' To Get To Heaven [05:51]
+08. Highway 61 Revisited [06:54]
+09. I Believe In You [05:44]
+10. Tweedle Dee & Tweedle Dum [05:37]
+Total time: [53:49]
+
+Disc 2:
+01. I Dreamed I Saw St. Augustine [05:47]
+02. Ballad of A Thin Man [07:09]
+03. A Hard Rain's A-Gonna Fall [10:17]
+     (encore)
+04. Mississippi [05:31]
+05. Band Introductions [00:23]
+06. All Along The Watchtower [05:31]
+Total time: [34:38]
+
+Band Members:
+Bob Dylan - keyboard, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - electric mandolin, pedal steel
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-04-24d1t01.flac:8964c182f22a0d5a179336efb31a0c98
+bd2005-04-24d1t02.flac:e28def96da8f4dd03e6873acfcc8ed38
+bd2005-04-24d1t03.flac:68a9d5ed151d546b6dab3a8a5f8e6c94
+bd2005-04-24d1t04.flac:6c761541e5556ac94a1d02ba29e90d64
+bd2005-04-24d1t05.flac:5c967d550a0006b8cdea3303c5d4deb0
+bd2005-04-24d1t06.flac:694883375b8f812fb9e09387de27b8e0
+bd2005-04-24d1t07.flac:566d4cd95c4b7f04d7704e0d541112bb
+bd2005-04-24d1t08.flac:9bd8d04d69a023b05bf64b626ab40f22
+bd2005-04-24d1t09.flac:54c2622807f973cca235bd621da6c732
+bd2005-04-24d1t10.flac:3e2f7837e6dbc55cde5fcfbaae837a24
+bd2005-04-24d2t01.flac:0eafa046f0880cf5aee2a3284f5fa972
+bd2005-04-24d2t02.flac:92d91ab2644b83b47bd14183ce07fadb
+bd2005-04-24d2t03.flac:66e30377d6d98f1b9dd0a24615e7cc05
+bd2005-04-24d2t04.flac:8be5b9045d7c0e8ac8f1179413324a7a
+bd2005-04-24d2t05.flac:f82cbd3de48f10a649246c463b46f2d5
+bd2005-04-24d2t06.flac:7664f24933c9b31c4072992784278275
+
+flac md5
+d02c6bea2ba294a9b5213f4b6246661a *bd2005-04-24d1t01.flac
+c14c87657a6333b5717749e68cb7f5aa *bd2005-04-24d1t02.flac
+116ebefa6bd1822902706160f25584c1 *bd2005-04-24d1t03.flac
+4590dc0039c86fa375847745dd83a898 *bd2005-04-24d1t04.flac
+e14f83ce3d641fd258b9478e61ac24c5 *bd2005-04-24d1t05.flac
+bfa9e1b35a1bb0ffb98930753eabff58 *bd2005-04-24d1t06.flac
+158e92e6e0d7193b334b4083aa8d689d *bd2005-04-24d1t07.flac
+1a82a03f5e544f73c602ccc107589a8b *bd2005-04-24d1t08.flac
+0b16f26d586c257bb449a8ba1770fe35 *bd2005-04-24d1t09.flac
+db0c89031c806dc10a161813c95d0708 *bd2005-04-24d1t10.flac
+a31ae3231b3404649fde5965f22bfaf5 *bd2005-04-24d2t01.flac
+07c2e13f34dec4d82c27e75218c036ca *bd2005-04-24d2t02.flac
+b6e2f59eb2e08e9c7a8ebadc31810744 *bd2005-04-24d2t03.flac
+86291d5d50d515d970d082e1119f3dc2 *bd2005-04-24d2t04.flac
+4ab12376663cf6b2b040f9ce165e4d9b *bd2005-04-24d2t05.flac
+54f616b94657f13483599f23e9b5e516 *bd2005-04-24d2t06.flac
+
+wav md5
+67368d0de6ca2a5a0d69a790ace5b41f *bd2005-04-24d1t01.wav
+8c8df1d50fe4b4c9d4ef83cdd669dac6 *bd2005-04-24d1t02.wav
+4cf739d42cbce2ced38e6375bc19f8b4 *bd2005-04-24d1t03.wav
+b054824b5fe506edf380c86915e32ec5 *bd2005-04-24d1t04.wav
+314481f1fa57c403c1ec5e6465bc1858 *bd2005-04-24d1t05.wav
+9bbb7c6e5585356c3f49ad49627dfff4 *bd2005-04-24d1t06.wav
+50be65255a39142b59f9d8dbdacdaba0 *bd2005-04-24d1t07.wav
+43f07f297d5ea3ee4d195898312458e3 *bd2005-04-24d1t08.wav
+f00037290258ce797470b34dff0016cb *bd2005-04-24d1t09.wav
+12849e97ddbfb267ee7c776e9239c954 *bd2005-04-24d1t10.wav
+fb0ae1baaede9cefa4559b5ca7be4528 *bd2005-04-24d2t01.wav
+471ddee6ce9cdde10b6751820419e1d2 *bd2005-04-24d2t02.wav
+2da3fd77bb27cb817ebcb207dc966972 *bd2005-04-24d2t03.wav
+b2f775ae1f0f2f6be7076fd5c05784e0 *bd2005-04-24d2t04.wav
+4d1b379d69f51a6d6e26443ac01440a9 *bd2005-04-24d2t05.wav
+f59f497991528fe8d82407472f75c87c *bd2005-04-24d2t06.wav

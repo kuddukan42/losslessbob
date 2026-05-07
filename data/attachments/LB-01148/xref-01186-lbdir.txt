@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== md5 for: bd03-08-05-akg.19185.shnf
+===================
+===================
+===================
+11c60eea158d7d5d35737ca955f18b74 *dead2003-08-05.txt
+97ad5f1b3cef1b119bf3a7eb3d4707f2 *dead2003-08-05d1shn.md5
+60bfa85644d043131bbb03cbe7147fec *dead2003-08-05d1t01.shn
+47cfcc51271d24c0910f8dfec86b9ad0 *dead2003-08-05d1t02.shn
+723843adf74fa3339068dc40efe1de78 *dead2003-08-05d1t03.shn
+98261d28b2032363a50c18e61bb55885 *dead2003-08-05d1t04.shn
+f04bf614d0db9310123c75992e1f7410 *dead2003-08-05d1t05.shn
+096008da7894514e1703aa1b3b6b36f5 *dead2003-08-05d1t06.shn
+61085bd83a9fe7b8a26251b8857e65b7 *dead2003-08-05d1t07.shn
+28402b7200f07c94e13e741ee3083f6f *dead2003-08-05d1t08.shn
+c0c34ebb34a7b67c02386b8a3308d22a *dead2003-08-05d1t09.shn
+a9ba2df36e5574f20272a229cc93abf5 *dead2003-08-05d1wav.md5
+5c94892d7931cd274a667536214ad587 *dead2003-08-05d2shn.md5
+2475cf40d17cff092b17397cd0ec6d17 *dead2003-08-05d2t01.shn
+fc053fb865afaefc9f8b5f84b85bfe8a *dead2003-08-05d2t02.shn
+79e45f57feff0c91ec75c1684e62f5f1 *dead2003-08-05d2t03.shn
+429094125918339abeb31091d0fb9280 *dead2003-08-05d2t04.shn
+ae65f2b6369a8466762c9609fb538416 *dead2003-08-05d2t05.shn
+e1ed32381660becf7613fa794848910d *dead2003-08-05d2t06.shn
+0e00f9582d62e8f128276de88fd6dcb6 *dead2003-08-05d2wav.md5
+885743d808e091003da309af613b8fbe *dead2003-08-05d3shn.md5
+dad6ab1307208da049380d034b0759c1 *dead2003-08-05d3t01.shn
+1f06c736adb5b646e602edb3c781639f *dead2003-08-05d3t02.shn
+e715a8e375aedf7f59a1643556267512 *dead2003-08-05d3t03.shn
+bdde72e0698ec7b106a451405d952c5d *dead2003-08-05d3t04.shn
+34ec277d6c0b3da7f1275b116d3e5130 *dead2003-08-05d3t05.shn
+35925256c5d87b584542a5a56c9f99be *dead2003-08-05d3t06.shn
+9cea44f817587a5411eeb9931f4ffdfd *dead2003-08-05d3t07.shn
+309373aec5b423fa1d3d7a741adb05d6 *dead2003-08-05d3wav.md5
+d41d8cd98f00b204e9800998ecf8427e *md5_ok
+569e24153670131854528992fb2a8dcf *shntool.txt
+755330ff4aad8909ae09ca872a03b298 *to03-08-05-akg.19185.shnf_mychecksums.txt
+===================
+===================
+===================
+=== shntool md5/hash for: bd03-08-05-akg.19185.shnf
+===================
+===================
+===================
+c5848ca61df066e761b1185a8e66e57d  [shntool]  dead2003-08-05d1t01.shn
+3e1803246c7b5d4f592dc2e69972cabf  [shntool]  dead2003-08-05d1t02.shn
+9fe5c00a8013938a11d7aacd5bfe455c  [shntool]  dead2003-08-05d1t03.shn
+718c8a0014e12d9eb570b71c0340cb45  [shntool]  dead2003-08-05d1t04.shn
+b7212747628d3d3ecf52f6bb182d72dd  [shntool]  dead2003-08-05d1t05.shn
+13c32c4774b450166b7e2bc4ebc199ae  [shntool]  dead2003-08-05d1t06.shn
+1263bcdd7b354e94977dd30fe7da6f35  [shntool]  dead2003-08-05d1t07.shn
+e51d09bda5be02f89b8b6e25a63196f3  [shntool]  dead2003-08-05d1t08.shn
+e3fc3bbe3f0a45235c5164425db78c51  [shntool]  dead2003-08-05d1t09.shn
+9e8eff318c26fdcbc866dfaa87bcd467  [shntool]  dead2003-08-05d2t01.shn
+2ed2810b3707762cea304df62a60bd38  [shntool]  dead2003-08-05d2t02.shn
+82ca1e87bd4ba2edc4fa0785f501644e  [shntool]  dead2003-08-05d2t03.shn
+9579654a5cd76dbd8165e4d334211db7  [shntool]  dead2003-08-05d2t04.shn
+c92e45eb5ed73e2545dcf10cec349463  [shntool]  dead2003-08-05d2t05.shn
+2e55f8f3a29055c7e6ee3ff761afe9e4  [shntool]  dead2003-08-05d2t06.shn
+202e2a3d1052e47dbdb838abc2d105ce  [shntool]  dead2003-08-05d3t01.shn
+a4b8f68980a5f9bd63d864d0fc12d64d  [shntool]  dead2003-08-05d3t02.shn
+0c334a1ee73513a305c911999f02873b  [shntool]  dead2003-08-05d3t03.shn
+8c6985f847a460096acdc03339ba1ae0  [shntool]  dead2003-08-05d3t04.shn
+a33c99574ffc99fe97665b019db94682  [shntool]  dead2003-08-05d3t05.shn
+6f711ac49b81f892d220d566acc8e5cd  [shntool]  dead2003-08-05d3t06.shn
+cce7568eb89016c9680e70c9e18eaac6  [shntool]  dead2003-08-05d3t07.shn
+===================
+===================
+===================
+=== shntool len for: bd03-08-05-akg.19185.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.41       36082076 B   ---   --   ---xx    shn  0.5329  dead2003-08-05d1t01.shn
+    10:09.62      107573468 B   ---   --   ---xx    shn  0.6048  dead2003-08-05d1t02.shn
+     7:49.25       82790444 B   ---   --   ---xx    shn  0.6483  dead2003-08-05d1t03.shn
+     8:23.15       88764524 B   ---   --   ---xx    shn  0.6190  dead2003-08-05d1t04.shn
+     6:35.49       69793292 B   ---   --   ---xx    shn  0.6342  dead2003-08-05d1t05.shn
+     7:23.51       78265196 B   ---   --   ---xx    shn  0.6324  dead2003-08-05d1t06.shn
+     4:28.35       47357564 B   ---   --   ---xx    shn  0.6218  dead2003-08-05d1t07.shn
+     7:53.03       83444300 B   ---   --   ---xx    shn  0.6447  dead2003-08-05d1t08.shn
+    11:47.70      124879484 B   ---   --   ---xx    shn  0.5723  dead2003-08-05d1t09.shn
+    12:11.21      128997836 B   ---   --   ---xx    shn  0.6030  dead2003-08-05d2t01.shn
+     8:24.73       89077340 B   ---   --   ---xx    shn  0.6065  dead2003-08-05d2t02.shn
+    16:54.47      178980188 B   ---   --   ---xx    shn  0.6280  dead2003-08-05d2t03.shn
+    15:21.16      162502076 B   ---   --   ---xx    shn  0.6523  dead2003-08-05d2t04.shn
+     6:14.52       66095948 B   ---   --   ---xx    shn  0.6477  dead2003-08-05d2t05.shn
+    15:30.15      164087324 B   ---   --   ---xx    shn  0.5361  dead2003-08-05d2t06.shn
+     6:25.58       68050460 B   ---   --   ---xx    shn  0.4674  dead2003-08-05d3t01.shn
+     8:39.36       91636316 B   ---   --   ---xx    shn  0.6120  dead2003-08-05d3t02.shn
+    11:59.43      126932780 B   ---   --   ---xx    shn  0.6123  dead2003-08-05d3t03.shn
+     8:25.22       89133788 B   ---   --   ---xx    shn  0.6406  dead2003-08-05d3t04.shn
+    10:00.38      105929420 B   ---   --   ---xx    shn  0.6749  dead2003-08-05d3t05.shn
+     1:19.23       13989740 B   ---   --   ---xx    shn  0.5023  dead2003-08-05d3t06.shn
+     7:25.18       78540380 B   ---   --   ---xx    shn  0.5361  dead2003-08-05d3t07.shn
+   196:47.63     2082903944 B                            0.6077  (22 files)
+===================
+===================
+===================

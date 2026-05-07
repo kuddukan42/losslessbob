@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-23niagaraTMR 
+=================== 
+=================== 
+=================== 
+49f800c43d74398505c731ab3f411e4b  bd-2003-08-23-d1.md5
+56728968f2e237e6ff3cec25bd48e4e9  bd-2003-08-23-d1t01.shn
+20a19b8f5fd068c563789f3f29bbfb8b  bd-2003-08-23-d1t02.shn
+b87c4f813da594fffe2b14b6c057d05a  bd-2003-08-23-d1t03.shn
+efe1177d559bc29772a9625a72f9aae2  bd-2003-08-23-d1t04.shn
+70a5ea811957e2210725764f2486f498  bd-2003-08-23-d1t05.shn
+aef5d65ffd336cf0448dfd9609c51e94  bd-2003-08-23-d1t06.shn
+d37c21bdd9b7052d1c9e24be396f9a9a  bd-2003-08-23-d1t07.shn
+3f9c98a6571f348706276bc5ae1f533e  bd-2003-08-23-d1t08.shn
+f1b34291ca3d1d643e3b729f306729d0  bd-2003-08-23-d1t09.shn
+2daccd635ef03ac63d3f35e4f11582ee  bd-2003-08-23-d2.md5
+0a6285a24b8239609658719499370efa  bd-2003-08-23-d2t01.shn
+a3e8e3c2f63898d07174aa972826149d  bd-2003-08-23-d2t02.shn
+f91bd92c6311851c78af4e46e4b5b108  bd-2003-08-23-d2t03.shn
+d04a8eda78f45d68e51d394ef341e2c0  bd-2003-08-23-d2t04.shn
+cf030d8ca326bd4c7d5649b33d222c78  bd-2003-08-23-d2t05.shn
+6d4d9025c31dbe1e766fadd7ed0c0000  bd-2003-08-23-d2t06.shn
+8a33c5dadf43cb67f9d04d617ff962e3  bd-2003-08-23-d2t07.shn
+30a3e597dc2d8d1d2972987ed51018bd  bd03-08-23TMR.txt
+bab4b46f6070a0cd8a370faccd792332  bd2003-08-23niagaraTMR.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-23niagaraTMR 
+=================== 
+=================== 
+=================== 
+363736284534198419d7a69946d575f3  [shntool]  bd-2003-08-23-d1t01.wav
+c9e44e8b2d4bf517586cc9257fafd7cb  [shntool]  bd-2003-08-23-d1t02.wav
+561ef01481f27fde9f91a96c0ca12af1  [shntool]  bd-2003-08-23-d1t03.wav
+b6e4ac85b69a8877b66e70a9375c1b99  [shntool]  bd-2003-08-23-d1t04.wav
+3d715fe64e6edb6c742a1743e848d6ba  [shntool]  bd-2003-08-23-d1t05.wav
+9b5d76c4401099c9b8d962f89c21782f  [shntool]  bd-2003-08-23-d1t06.wav
+6f2814a39b47fb2c4419f6545d12f8fc  [shntool]  bd-2003-08-23-d1t07.wav
+758bfb4dd9e2c8fc236d39ea36dbf7d6  [shntool]  bd-2003-08-23-d1t08.wav
+67189bd88bd6027ca67b4e855d63e7ce  [shntool]  bd-2003-08-23-d1t09.wav
+4059a8c9c0d4b97f844e5d695e39ec6a  [shntool]  bd-2003-08-23-d2t01.wav
+01e81f1120f7f6f07cfbf6c8c411e054  [shntool]  bd-2003-08-23-d2t02.wav
+f08d12605b5f587bdd0dc90ce84b5287  [shntool]  bd-2003-08-23-d2t03.wav
+39ebaba9f6c31e6b5cc6817d474d12d7  [shntool]  bd-2003-08-23-d2t04.wav
+da38e08e09f7a51aab8de0b4729d476e  [shntool]  bd-2003-08-23-d2t05.wav
+fcc9f5953fb3f46ccf0f8f1a7ac161ab  [shntool]  bd-2003-08-23-d2t06.wav
+39bdefc24155c5c66c9dbafd226d479a  [shntool]  bd-2003-08-23-d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-23niagaraTMR 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:55.00       73206044 B   ---   --   ---xx    shn  0.6060  bd-2003-08-23-d1t01.shn
+     4:46.00       50450444 B   ---   --   ---xx    shn  0.5982  bd-2003-08-23-d1t02.shn
+     5:22.00       56800844 B   ---   --   ---xx    shn  0.5802  bd-2003-08-23-d1t03.shn
+     5:21.00       56624444 B   ---   --   ---xx    shn  0.5840  bd-2003-08-23-d1t04.shn
+     5:49.00       61563644 B   ---   --   ---xx    shn  0.6455  bd-2003-08-23-d1t05.shn
+     7:06.00       75146444 B   ---   --   ---xx    shn  0.6417  bd-2003-08-23-d1t06.shn
+     5:19.00       56271644 B   ---   --   ---xx    shn  0.5815  bd-2003-08-23-d1t07.shn
+     8:23.00       88729244 B   ---   --   ---xx    shn  0.6280  bd-2003-08-23-d1t08.shn
+     5:39.24       59856092 B   ---   --   ---xx    shn  0.6185  bd-2003-08-23-d1t09.shn
+     7:28.00       79027244 B   ---   --   ---xx    shn  0.6035  bd-2003-08-23-d2t01.shn
+     7:05.00       74970044 B   ---   --   ---xx    shn  0.6260  bd-2003-08-23-d2t02.shn
+     6:47.00       71794844 B   ---   --   ---xx    shn  0.6458  bd-2003-08-23-d2t03.shn
+     7:32.00       79732844 B   ---   --   ---xx    shn  0.5821  bd-2003-08-23-d2t04.shn
+    11:23.00      120481244 B   ---   --   ---xx    shn  0.5969  bd-2003-08-23-d2t05.shn
+     7:44.00       81849644 B   ---   --   ---xx    shn  0.6364  bd-2003-08-23-d2t06.shn
+     7:23.64       78295772 B   ---   --   ---xx    shn  0.5970  bd-2003-08-23-d2t07.shn
+   110:03.13     1164800480 B                            0.6114  (16 files)
+=================== 
+=================== 
+=================== 

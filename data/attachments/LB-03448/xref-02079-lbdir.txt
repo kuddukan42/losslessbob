@@ -1,0 +1,120 @@
+===================
+===================
+===================
+=== md5 for: bd78-06-27-f.flacf
+===================
+===================
+===================
+6b18c5b4e58e8c4f82049b48cb147c2e *bd1978-06-27d1log.LOG
+7b9808634ac12b422cd73d0faae81cb0 *bd1978-06-27d1t01-fixed.flac
+346408744cb0a80d578dd7d5d493a0f7 *bd1978-06-27d1t02-fixed.flac
+e53e5e936b5eb172e466e9e8d1243643 *bd1978-06-27d1t03.flac
+72a0b1451a2446f9e3ce2d9c37ac401a *bd1978-06-27d1t04.flac
+d7705fc94decf9c4840f3ac0bb6b2034 *bd1978-06-27d1t05.flac
+02049ff2048fbf749537d09975cbade1 *bd1978-06-27d1t06.flac
+eaa68d956f59b07b0d44f720709abe38 *bd1978-06-27d1t07.flac
+ba0eaf6f41e2cf91cbb304da94cd6944 *bd1978-06-27d1t08.flac
+7b857a9c1c9fcb4923be7c2dfc631a2c *bd1978-06-27d1t09.flac
+a9baf05d813a0afa313ede31a7453fdd *bd1978-06-27d1t10-fixed.flac
+e9d62341b988f2590ec6e6d3b8b167ca *bd1978-06-27d1t11.flac
+4edc3bbe7164795eaae73a909e711212 *bd1978-06-27d1t12.flac
+a4f56ce4d36fa5f794bf435bc95849e2 *bd1978-06-27d1t13.flac
+e132f2e844c3e93b48806a3f393696ba *bd1978-06-27d1t14.flac
+06880e983542cb99305d31a175b42e61 *bd1978-06-27d1t15-fixed.flac
+fb98892abb30efd92b46e4a5c3369543 *bd1978-06-27d1t16-fixed.flac
+6c825cfd8456947be62007c9b9b1eef9 *bd1978-06-27d1t17-fixed.flac
+a09d98bca55dee690d3b96d8c7ae483c *bd1978-06-27d2log.LOG
+5b088d0b7dc3d88da0b2bac4e8a44604 *bd1978-06-27d2t01-fixed.flac
+24e8e572c51a25eafb506d9000292d57 *bd1978-06-27d2t02-fixed.flac
+0c2ec65debf28fd444b430d0b7a5b317 *bd1978-06-27d2t03-fixed.flac
+84a630ba02bfe833455a0dace41ddf27 *bd1978-06-27d2t04-fixed.flac
+7749dbe1e856bd96f25b02c2959bcdb2 *bd1978-06-27d2t05-fixed.flac
+8e521842cca61209d3a05fa19822fec3 *bd1978-06-27d2t06-fixed.flac
+1a86df9023533e2ee268392407c50922 *bd1978-06-27d2t07-fixed.flac
+206bd36251fd4c31a8d2c5c58d47a0ac *bd1978-06-27d2t08-fixed.flac
+ceb8263eb30d2fa6328ef6808ea3354e *bd1978-06-27d2t09-fixed.flac
+7a589143dc0b70433ffa104ed4068e43 *bd1978-06-27d2t10-fixed.flac
+5b91dd5df3d7349c36f4c99a8a47eca4 *bd1978-06-27d2t11-fixed.flac
+f68df8b9c005ee3ce5ca665bad3ade00 *bd1978-06-27d2t12-fixed.flac
+8df89647d86b0960f42a253b56042c49 *bd1978-06-27info.txt
+066e3d7f2c2e0cd9c659e796a495e56c *Bob Dylan1978-06-27 fixed.ffp
+a06e1a6623a4599e925186cd78b36bf3 *frequency and spectral views.bmp
+3aa6db751a2d0e85aecd55d751f1ba59 *shntool_len_fixed.txt
+acd846640d3325fd6d06d3765e47024a *shntool_len_original.txt
+===================
+===================
+===================
+=== ffp for: bd78-06-27-f.flacf
+===================
+===================
+===================
+bd1978-06-27d1t01-fixed.flac:e9fab8dd662073d9d3aff9b1362f0abc
+bd1978-06-27d1t02-fixed.flac:49e0455e5866b2f5422190a145c9ee2c
+bd1978-06-27d1t03.flac:26324c96d061ef44dae5c44de1252589
+bd1978-06-27d1t04.flac:a0de07e04fa8841969dace2dbd0988d7
+bd1978-06-27d1t05.flac:7cc7382bd066c1a5af5b2449ab3f68a0
+bd1978-06-27d1t06.flac:403c2b3438a8d6a17f71bc11690feeb8
+bd1978-06-27d1t07.flac:3030f6b65dd1bd70b209d7b7c3cd55dc
+bd1978-06-27d1t08.flac:e4b5a79832dd9de363c7695982c1b56a
+bd1978-06-27d1t09.flac:447bc589d505e79d73ecb60d0e4e3a88
+bd1978-06-27d1t10-fixed.flac:06d39b149d751f3aaf89b894146ee31a
+bd1978-06-27d1t11.flac:d4a100c6f5d694c39824e8d1cce7bd58
+bd1978-06-27d1t12.flac:014b175272c638799e7c615e8190f9e7
+bd1978-06-27d1t13.flac:90c0f67bcf92d1438d78cc471ddfdc5a
+bd1978-06-27d1t14.flac:bd1d8872b08f927b7175eaa61d9cca08
+bd1978-06-27d1t15-fixed.flac:4a82fae6f4fc0fbe05685ab6befb6710
+bd1978-06-27d1t16-fixed.flac:438d484a4607105e7bb3d1f308ea5569
+bd1978-06-27d1t17-fixed.flac:d3e3673fe2731d10cb3c12f6fb6674a2
+bd1978-06-27d2t01-fixed.flac:6512f25c71a8b078fb0de9beba89e8a2
+bd1978-06-27d2t02-fixed.flac:82b982a5765962100149c2dcf8c09da3
+bd1978-06-27d2t03-fixed.flac:a1f9e4a1239d1b7963b08bc0e99d7ac6
+bd1978-06-27d2t04-fixed.flac:309a09aae9901e288ac450fcdd672a28
+bd1978-06-27d2t05-fixed.flac:df9364609225a969b0408b69afbf05d0
+bd1978-06-27d2t06-fixed.flac:1d0e18c1cf61e81c14481939c2889a6a
+bd1978-06-27d2t07-fixed.flac:65828f4187d0cb5a02c3e62f663cd1d7
+bd1978-06-27d2t08-fixed.flac:e5363710d9da4e4a4648f40a3b53026b
+bd1978-06-27d2t09-fixed.flac:d66b3873b00c782a8615be1e1c8fda5c
+bd1978-06-27d2t10-fixed.flac:26d19cc6633a83f73ccba031bf519b40
+bd1978-06-27d2t11-fixed.flac:9db66b8de7557a18ccc0a5964eef062d
+bd1978-06-27d2t12-fixed.flac:30e21aef4f3463ccb0dec7f7fd2b95d4
+===================
+===================
+===================
+=== shntool len for: bd78-06-27-f.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:37.16       38316476 B   ---   --   ---xx   flac  0.5822  bd1978-06-27d1t01-fixed.flac
+     2:30.07       26476508 B   ---   --   ---xx   flac  0.4180  bd1978-06-27d1t02-fixed.flac
+     5:35.60       59235164 B   ---   --   ---xx   flac  0.4447  bd1978-06-27d1t03.flac
+     5:16.28       55808300 B   ---   --   ---xx   flac  0.4574  bd1978-06-27d1t04.flac
+     5:07.62       54300668 B   ---   --   ---xx   flac  0.4440  bd1978-06-27d1t05.flac
+     3:32.65       37549724 B   ---   --   ---xx   flac  0.4586  bd1978-06-27d1t06.flac
+     7:23.30       78215804 B   ---   --   ---xx   flac  0.4321  bd1978-06-27d1t07.flac
+     4:53.59       51824012 B   ---   --   ---xx   flac  0.4578  bd1978-06-27d1t08.flac
+     4:55.18       52080380 B   ---   --   ---xx   flac  0.4731  bd1978-06-27d1t09.flac
+     4:38.62       49185068 B   ---   --   ---xx   flac  0.4348  bd1978-06-27d1t10-fixed.flac
+     6:49.17       72187628 B   ---   --   ---xx   flac  0.4572  bd1978-06-27d1t11.flac
+     4:50.38       51245420 B   ---   --   ---xx   flac  0.4223  bd1978-06-27d1t12.flac
+     5:21.34       56704412 B   ---   --   ---xx   flac  0.4305  bd1978-06-27d1t13.flac
+     1:06.24       11698892 B   ---   --   ---xx   flac  0.4197  bd1978-06-27d1t14.flac
+     3:58.24       42039692 B   ---   --   ---xx   flac  0.4494  bd1978-06-27d1t15-fixed.flac
+     4:35.36       48594716 B   ---   --   ---xx   flac  0.4017  bd1978-06-27d1t16-fixed.flac
+     3:48.36       40303916 B   ---   --   ---xx   flac  0.4131  bd1978-06-27d1t17-fixed.flac
+     5:12.69       55199132 B   ---   --   ---xx   flac  0.4681  bd1978-06-27d2t01-fixed.flac
+     3:06.47       32920988 B   ---   --   ---xx   flac  0.4470  bd1978-06-27d2t02-fixed.flac
+     4:59.44       52847132 B   ---   --   ---xx   flac  0.5701  bd1978-06-27d2t03-fixed.flac
+     4:54.57       51995708 B   ---   --   ---xx   flac  0.6058  bd1978-06-27d2t04-fixed.flac
+     5:38.42       59722028 B   ---   --   ---xx   flac  0.5792  bd1978-06-27d2t05-fixed.flac
+     3:48.65       40372124 B   ---   --   ---xx   flac  0.5804  bd1978-06-27d2t06-fixed.flac
+     3:39.39       38723372 B   ---   --   ---xx   flac  0.6131  bd1978-06-27d2t07-fixed.flac
+     5:31.17       58428428 B   ---   --   ---xx   flac  0.5754  bd1978-06-27d2t08-fixed.flac
+     5:56.67       62956028 B   ---   --   ---xx   flac  0.5863  bd1978-06-27d2t09-fixed.flac
+     5:59.61       63471116 B   ---   --   ---xx   flac  0.5879  bd1978-06-27d2t10-fixed.flac
+     3:31.23       37274540 B   ---   --   ---xx   flac  0.6064  bd1978-06-27d2t11-fixed.flac
+     5:47.01       61213196 B   ---   --   ---xx   flac  0.6015  bd1978-06-27d2t12-fixed.flac
+   136:08.23     1440890572 B                            0.4999  (29 files)
+===================
+===================
+===================

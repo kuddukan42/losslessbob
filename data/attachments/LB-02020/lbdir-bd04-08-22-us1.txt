@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-22-us1 
+=================== 
+=================== 
+=================== 
+405d996aec564ca4a79e79467b3f6c57  bd04-08-22-us1.txt
+57348aba7b31d9229eac2b57601a0979  bd_2004_08_22_d1SHNs\01 Intro.shn
+104ee4fd5e62a08c59d1344f176a8428  bd_2004_08_22_d1SHNs\02 Rainy Day Women #12 & 35.shn
+36db79aada97b926aede39714bdb955e  bd_2004_08_22_d1SHNs\03 God Knows.shn
+dec59710cfbaab11003fb5cae0afe0e2  bd_2004_08_22_d1SHNs\04 Seeing The Real You At Last.shn
+a472154f4424af07dcac3355103cd066  bd_2004_08_22_d1SHNs\05 I Shall Be Released.shn
+1a1c8429d88a2d66f5097c2f61e86753  bd_2004_08_22_d1SHNs\06 Tweedle Dee and Tweedle Dum.shn
+c11046926e79916bce2e9e8689516c97  bd_2004_08_22_d1SHNs\07 Lay Lady Lay.shn
+c835d00310fdcf444934ac224ecb3a23  bd_2004_08_22_d1SHNs\08 High Water (For Charley Patton).shn
+eda2a9cf1fe0ccf4e6047d27d78c4f7d  bd_2004_08_22_d1SHNs\09 Highway 61 Revisited.shn
+72f55df265c27063f5a013ef355deee6  bd_2004_08_22_d1SHNs\10 Tryin' To Get To Heaven.shn
+e02bc50825c04528bab663ffc45e7bf2  bd_2004_08_22_d1SHNs\11 Honest With Me.shn
+d2f6e5363b62fc71bdf4688808a762e1  bd_2004_08_22_d1SHNs\bd_2004_08_22_d1.md5
+5c124b3d0375ce65f465657dbd53c9ad  bd_2004_08_22_d1SHNs\bd_2004_08_22_d1wav.md5
+934a77e14fc9167649df84f544ed8b4b  bd_2004_08_22_d2SHN\01 Sugar Baby.shn
+214fd7fb6b3c2dbdea256b0cbd764244  bd_2004_08_22_d2SHN\02 Summer Days.shn
+5e6a38c667bd63b4d8b54e1ff59d09ee  bd_2004_08_22_d2SHN\03 Audience Applause.shn
+d54b7715782640203ac871d4ffbd0699  bd_2004_08_22_d2SHN\04 Like A Rolling Stone.shn
+6f132fb85f08abe5f437ab6362557406  bd_2004_08_22_d2SHN\05 Band Intro.shn
+e91ea05456c4135b7a2d45d572a4a2dc  bd_2004_08_22_d2SHN\06 All Along The Watchtower.shn
+18c15379405505d32fa56b8c3a907761  bd_2004_08_22_d2SHN\bd_2004_08_22_d2SHN.md5
+45ee75953c4534fdedb73750d202e000  bd_2004_08_22_d2SHN\bd_2004_08_22_d2wav.md5
+0ac4d3f6f3c972de7abd02fefd9a3c89  South Bend 2004_08_22.rtf
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-22-us1\bd_2004_08_22_d1SHNs 
+=================== 
+=================== 
+=================== 
+851a14e54a61bcc5b7119ea6dbf7192b  [shntool]  01_Intro.wav
+6c5b323d4c1eecc46d7468cc2e6bce41  [shntool]  02_Rainy_Day_Women__12___35.wav
+78b1c2992da1adbddabc14412bd64929  [shntool]  03_God_Knows.wav
+69db21741775f075b154e626e64c673d  [shntool]  04_Seeing_The_Real_You_At_Last.wav
+e522aa7172c42fdc1936299d1c0730e4  [shntool]  05_I_Shall_Be_Released.wav
+686fcf8cf53ddad1ed143d4836df6a53  [shntool]  06_Tweedle_Dee_and_Tweedle_Dum.wav
+9c8801ecd6214f652f4ce0b6a64c2055  [shntool]  07_Lay_Lady_Lay.wav
+b8202c84879a30bc691e54903a45be26  [shntool]  08_High_Water__For_Charley_Patton_.wav
+ec1750baa5439bbdc886e20e7517197a  [shntool]  09_Highway_61_Revisited.wav
+bc6a6f9870e6225731a748f7afbc302a  [shntool]  10_Tryin__To_Get_To_Heaven.wav
+a2b243c037acea93c1ea463067836508  [shntool]  11_Honest_With_Me.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-22-us1\bd_2004_08_22_d2SHN 
+=================== 
+=================== 
+=================== 
+dba582f1028f6f672c4332498b86d82c  [shntool]  01_Sugar_Baby.wav
+0dc925fa58106ed4c037621bb7f4736d  [shntool]  02_Summer_Days.wav
+4aa4bc5ba6ff9e55457b0727ce9aace1  [shntool]  03_Audience_Applause.wav
+1009bc385fe0c58e3184c697aa7a6332  [shntool]  04_Like_A_Rolling_Stone.wav
+f79d1862aa2e041bef0544eac8fbfcda  [shntool]  05_Band_Intro.wav
+f5e2ae94e97f8cdb728fe4dd0931945f  [shntool]  06_All_Along_The_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-22-us1\bd_2004_08_22_d1SHNs 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:03.13       11143820 B   ---   --   -----    wav  1.0000  01_Intro.wav
+     4:24.14       46602572 B   ---   --   -----    wav  1.0000  02_Rainy_Day_Women__12___35.wav
+     4:21.51       46160396 B   ---   --   -----    wav  1.0000  03_God_Knows.wav
+     4:41.57       49702508 B   ---   --   -----    wav  1.0000  04_Seeing_The_Real_You_At_Last.wav
+     6:56.28       73448300 B   ---   --   -----    wav  1.0000  05_I_Shall_Be_Released.wav
+     5:39.34       59879612 B   ---   --   -----    wav  1.0000  06_Tweedle_Dee_and_Tweedle_Dum.wav
+     4:55.01       52040396 B   ---   --   -----    wav  1.0000  07_Lay_Lady_Lay.wav
+     6:26.70       68255084 B   ---   --   -----    wav  1.0000  08_High_Water__For_Charley_Patton_.wav
+     6:33.21       69374636 B   ---   --   -----    wav  1.0000  09_Highway_61_Revisited.wav
+     6:39.43       70484780 B   ---   --   -----    wav  1.0000  10_Tryin__To_Get_To_Heaven.wav
+     6:20.13       67062620 B   ---   --   -----    wav  1.0000  11_Honest_With_Me.wav
+    58:01.45      614154724 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-22-us1\bd_2004_08_22_d2SHN 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:48.25       82614044 B   ---   --   -----    wav  1.0000  01_Sugar_Baby.wav
+     7:04.49       74908892 B   ---   --   -----    wav  1.0000  02_Summer_Days.wav
+     2:33.06       27003356 B   ---   --   -----    wav  1.0000  03_Audience_Applause.wav
+     6:36.45       69960284 B   ---   --   -----    wav  1.0000  04_Like_A_Rolling_Stone.wav
+     0:46.00        8114444 B   ---   --   -----    wav  1.0000  05_Band_Intro.wav
+     5:31.38       58477820 B   ---   --   -----    wav  1.0000  06_All_Along_The_Watchtower.wav
+    30:20.13      321078840 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,51 @@
+Bob Dylan
+20 June 1984
+Roma Palaeur, Rome, Italy
+
+lineage: master > CDDA > EAC > FLAC
+
+seamless for longer than CD media
+
+TT: 126:58.71
+
+01. [5:05.74] Highway 61 Revisited
+02. [7:19.57] Jokerman
+03. [4:09.51] All Along the Watchtower
+04. [6:23.37] Just Like a Woman
+05. [4:07.04] Maggie's Farm
+06. [5:57.15] I And I
+07. [4:27.71] License to Kill
+08. [5:50.16] I've Got To Use My Imagination (Gerry Goffin & Barry Goldberg)
+--- tape flip? (cross-faded) ---
+09. [5:44.33] A Hard Rain's A-Gonna Fall
+10. [6:58.21] Tangled up in Blue
+11. [6:13.29] It's Alright, Ma (I'm Only Bleeding)
+12. [5:45.69] Simple Twist of Fate
+13. [5:51.71] Masters of War
+14. [4:01.64] Ballad of a Thin Man
+15. [3:58.43] When You Gonna Wake Up
+--- tape flip? (edit) ---
+16. [8:06.31] Like a Rolling Stone
+17. [5:55.32] Mr. Tambourine Man
+18. [5:05.71] To Ramona
+19. [5:43.02] It Ain't Me, Babe
+20. [5:29.23] The Times They Are A-Changin'
+21. [3:40.37] Leopard-Skin Pill-Box Hat
+22. [4:25.16] Tombstone Blues
+23. [6:37.29] Blowin' in the Wind
+
+t08 sung by Greg Sutton
+
+
+Notes:
+a) taper reduces recording level between nearly every song causing very unnatural effect.
+b) "Side A" of the original cassette master is marred with some more or less irritating clicks. i tried and fixed the most annoying ones, but overall show reception still suffers, particularly on t04-06. the rest of the show also has some flaws.
+c) whoever did the a>d transfer cross-faded original cassette sides.
+
+
+Bob Dylan - vocals, guitars and harp
+Mick Taylor - guitars
+Ian MacLagan - keyboards
+Greg Sutton - bass
+Colin Allen - drums
+Carlos Santana - guitar (songs 20-23 only).

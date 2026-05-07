@@ -1,0 +1,14 @@
+Bob Dylan, 11/26/80, Golden Hall, San Diego, Ca, 2CDR
+
+LB-3668, (71min+59min), from lk fall 80 set; has strong hiss band except on last two songs; otherwise looks like same recording source throughout but has the obvious patch at d1t3 1:20 where quality improves;; this is same rercording as LB-476 based on similar cuts except this one sounds more muffled on vocals; the majority of this is below 7k except for the hiss band and noise and a little that gets up to 14k while LB-476 goes up to 12k strongly and then a little up to 14k followed by more noise which comes off as more hiss but has more easily heard vocals with more natural sound;; the first 2 and half songs are of quality between LB-3419 and LB-3418 (did not listen to all of this)
+
+analog drop d1t13 4:03
+
+CD1
+1 Gotta Serve Somebody 2 I Believe In You 3 Like A Rolling Stone 4 Right 5 Man GaveNames To All The Animals 6 Simple Twist Of Fate 7 We Just Disagree 8 All AlongThe Watchtower 9 A Couple More Years 10 Ain't Gonna Go To Hell 11 Girl From TheNorth Country 12 Slow Train 13 Walk Around Heaven All Day 14 Abraham, Martin And John 15 Rise Again 16 Let'sKeep It Between Us 
+
+CD2
+1 Mary From The Wild Moor 2 Solid Rock 3 Just Like A Woman 4 Senor (Tales Of Yankee Power) 5 The Groom's Still Waiting At The Altar 6 What Can I Do For You? 7 When You Gonna Wake Up 8 In The Garden 9 Blowin' InThe Wind 10 City Of Gold 11 It's All Over Now, Baby Blue (acoustic) 12 A HardRain's A-Gonna Fall
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

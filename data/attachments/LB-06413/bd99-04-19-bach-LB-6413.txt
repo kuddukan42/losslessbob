@@ -1,0 +1,12 @@
+Bob Dylan, 4/19/99, Murcia, Spain Narciso Yepes Hall, Auditorio y Centro de Congresos, 2CDR
+
+LB-6413, (63min+35min), Taper: "Bach", Lineage: OKM II Rockversion > Sony DAT TCD-D8 (48 kHZ - 16 bit) > TASCAM DA-40 professional > ssrc convert to 44.1 kHz >WaveTerminal > HD > WaveLab 6 >, convert to flac dBpowerAMP > md5summer.; bittorrent download 08/08; same recording as LB-4093 based on same clapping wavs at end of d1t3 and similar wav and spectral view except levels lower and channels swapped; (did not listen to all of this)
+
+CD1
+01. Introduction, 02. Friend Of The Devil, 03. Mr. Tambourine Man, 04. Masters of War, 05. Tomorrow Is A Long Time, 06. The Times They Are A-Changin', 07. Tangled Up In Blue, 08. My Back Pages, 09. Mama, You Been On My Mind, 10. Tombstone Blues, 11. You're A Big Girl Now, 
+
+CD2
+01. Highway 61 Revisited, 02. Love Sick, 03. Everything Is Broken, 04. Don't Think Twice, It's All Right, 05. Maggie's Farm, Enjoy!!
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

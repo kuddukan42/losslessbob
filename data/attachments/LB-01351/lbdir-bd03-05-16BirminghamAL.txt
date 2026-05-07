@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-16BirminghamAL 
+=================== 
+=================== 
+=================== 
+124061cdc853472d8adbc3c6f8b4ee4e  bd03-05-16.txt
+d08b521a7f64fc3d4a02f6c806e4c5a6  bd03-05-16d1.md5
+763bfb4c7b5aee089ddaeab41761a91c  bd03-05-16d1t01.shn
+7f4bc60eb3c04a10e86b677ae368274e  bd03-05-16d1t02.shn
+848325c9f3906b52c38e41646b0b75be  bd03-05-16d1t03.shn
+c0f4ffd104fcc075bcd63f43e48e7d94  bd03-05-16d1t04.shn
+a9f3786059afe9e8f8e9b530d530db7b  bd03-05-16d1t05.shn
+d160746e79f475aab0a92225f18a9792  bd03-05-16d1t06.shn
+d6481f8885b9ed151e41346f783d802f  bd03-05-16d1t07.shn
+574d520b433486631df7f6d026b66c5f  bd03-05-16d1t08.shn
+db2fe99496b0a9595660eb5d483d8e51  bd03-05-16d1t09.shn
+6a919c3d8991d06d0837e59dec0e3083  bd03-05-16d2.md5
+fed24a7780dc1a7df55367128a773678  bd03-05-16d2t01.shn
+267535549db20d809325c2101cffe28e  bd03-05-16d2t02.shn
+3f1f95d249d890ae25d2d0a0dd5d671a  bd03-05-16d2t03.shn
+b91340a8499d384ccb2cc686295f956c  bd03-05-16d2t04.shn
+ca9d96e62fafd49f5efc45bd9d46fc48  bd03-05-16d2t05.shn
+29f3579914c13932ad6619f789199ef0  bd03-05-16d2t06.shn
+6c4ec8b2cfc38d1b4abc2be640e8fed3  bd03-05-16d2t07.shn
+716ac99cea5d0d564e0b3e4024b837a5  birmingham.jpg
+e91c7cccc6f984d52917e3c4dab6261d  tw03-05-16d1t.md5
+30490709035ce63b04d00de4881879ab  tw03-05-16d1t01.shn
+ddf254affe26c12a03ea843d211dd1a3  tw03-05-16d1t02.shn
+a103e5ee5d5e8e167d738607326d0794  tw03-05-16d1t03.shn
+ac982b30e13c0615f33e43f88802e804  tw03-05-16d1t04.shn
+aeaf778734aa2edd2b92cf62dceb92a0  tw03-05-16d1t05.shn
+f5cdcc72ed3dea4c91f5e599422722fc  tw03-05-16d1t06.shn
+388ce1a0199990228b952842b6f8c6a2  tw03-05-16d1t07.shn
+f2f088fd544f4470dffb3ca75eb73cc3  tw03-05-16d1t08.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-05-16BirminghamAL 
+=================== 
+=================== 
+=================== 
+c6cec53c6d50842801c0dcbade15f705  [shntool]  bd03-05-16d1t01.wav
+55336525f41d3e9b550a37dbeb37fc2c  [shntool]  bd03-05-16d1t02.wav
+b785cc6ffff1cebfb53dd66f5754a43b  [shntool]  bd03-05-16d1t03.wav
+ffec07b5ea121251b09ada7bf255eace  [shntool]  bd03-05-16d1t04.wav
+43dfff097f6e638dc50cc7a89e2857c7  [shntool]  bd03-05-16d1t05.wav
+aff72f40fc9cb4d82843115ec641dd30  [shntool]  bd03-05-16d1t06.wav
+1821c7bd3af1247431dc095689db4d66  [shntool]  bd03-05-16d1t07.wav
+c9d1e221269ed8d499a55c9ea7dec890  [shntool]  bd03-05-16d1t08.wav
+b520b3bccb519d74d99c3fc8bb302796  [shntool]  bd03-05-16d1t09.wav
+02e811185b648b0dbba7ac0cba776d0b  [shntool]  bd03-05-16d2t01.wav
+4447f95dee7087393591ba62cef514b5  [shntool]  bd03-05-16d2t02.wav
+a3342e22111ce6a33a6dc3fab3ed9e51  [shntool]  bd03-05-16d2t03.wav
+70b6c9a41b1b89ff32381875636beda0  [shntool]  bd03-05-16d2t04.wav
+600e6ae1ba8709ddcfc6c322e09ae0fa  [shntool]  bd03-05-16d2t05.wav
+8f29d8f6a4d37f5572a40824956d71d3  [shntool]  bd03-05-16d2t06.wav
+ccc9fede8d3e3b9f5e50825f6bb765d7  [shntool]  bd03-05-16d2t07.wav
+eda365cedec70962487fa1e80b48d00a  [shntool]  tw03-05-16d1t01.wav
+8b2f9596d71ae12b9b926868c1b2769d  [shntool]  tw03-05-16d1t02.wav
+ccd3c0a5a77a8c054cd64a333f6ea848  [shntool]  tw03-05-16d1t03.wav
+e77e5d6651175223ac78945953e0669e  [shntool]  tw03-05-16d1t04.wav
+9c865b7987eb45a8256d5feed0b0208d  [shntool]  tw03-05-16d1t05.wav
+32312bb96d0a97e028454e5f9dcf8868  [shntool]  tw03-05-16d1t06.wav
+924425d7908f6ebd14c63f4ffd6e8d7a  [shntool]  tw03-05-16d1t07.wav
+69057385eb5c4170b4b7055429a426bd  [shntool]  tw03-05-16d1t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-16BirminghamAL 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:08.15       12030524 B   ---   --   -----    wav  1.0000  bd03-05-16d1t01.wav
+     5:17.60       56059964 B   ---   --   -----    wav  1.0000  bd03-05-16d1t02.wav
+     4:18.00       45511244 B   ---   --   -----    wav  1.0000  bd03-05-16d1t03.wav
+     5:08.33       54408860 B   ---   --   -----    wav  1.0000  bd03-05-16d1t04.wav
+     8:09.43       86360780 B   ---   --   -----    wav  1.0000  bd03-05-16d1t05.wav
+     6:27.00       68266844 B   ---   --   -----    wav  1.0000  bd03-05-16d1t06.wav
+     4:55.34       52118012 B   ---   --   -----    wav  1.0000  bd03-05-16d1t07.wav
+     5:20.12       56476268 B   ---   --   -----    wav  1.0000  bd03-05-16d1t08.wav
+     6:36.11       69880316 B   ---   --   -----    wav  1.0000  bd03-05-16d1t09.wav
+     6:26.20       68137484 B   ---   --   -----    wav  1.0000  bd03-05-16d2t01.wav
+     4:57.00       52390844 B   ---   --   -----    wav  1.0000  bd03-05-16d2t02.wav
+     6:29.18       68661980 B   ---   --   -----    wav  1.0000  bd03-05-16d2t03.wav
+     0:38.58        6839660 B   ---   --   -----    wav  1.0000  bd03-05-16d2t04.wav
+     6:24.62       67883468 B   ---   --   -----    wav  1.0000  bd03-05-16d2t05.wav
+     6:45.38       71531420 B   ---   --   -----    wav  1.0000  bd03-05-16d2t06.wav
+     5:25.26       57391196 B   ---   --   -----    wav  1.0000  bd03-05-16d2t07.wav
+     6:05.50       64503644 B   ---   --   -----    wav  1.0000  tw03-05-16d1t01.wav
+     4:43.00       49921244 B   ---   --   -----    wav  1.0000  tw03-05-16d1t02.wav
+     3:30.49       37159292 B   ---   --   -----    wav  1.0000  tw03-05-16d1t03.wav
+     5:29.37       58122668 B   ---   --   -----    wav  1.0000  tw03-05-16d1t04.wav
+     4:36.39       48778172 B   ---   --   -----    wav  1.0000  tw03-05-16d1t05.wav
+     4:51.56       51464156 B   ---   --   -----    wav  1.0000  tw03-05-16d1t06.wav
+     5:52.17       62132828 B   ---   --   -----    wav  1.0000  tw03-05-16d1t07.wav
+     4:39.00       49215644 B   ---   --   -----    wav  1.0000  tw03-05-16d1t08.wav
+   124:16.03     1315246512 B                            1.0000  (24 files)
+=================== 
+=================== 
+=================== 

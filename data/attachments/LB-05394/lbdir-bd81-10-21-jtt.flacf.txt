@@ -1,0 +1,127 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-21-jtt.flacf 
+=================== 
+=================== 
+=================== 
+c84b219b66a798813fea3db368f6d05e  Boston - 21.10.1981 - F.jpg
+626264dab01705cb51a722d4f9053925  Boston - 21.10.1981 - R.jpg
+07525e691156bdbe8723541975ceeeea  Disc One\Dylan - October 21st 1981 Disc01Track01.flac
+7736d8e20234579ab381ff7eca3b39c7  Disc One\Dylan - October 21st 1981 Disc01Track02.flac
+9e75adcdf1c2202186fa9af57e666bf5  Disc One\Dylan - October 21st 1981 Disc01Track03.flac
+40edf312ec4cfeda9fe65e56345d4dbc  Disc One\Dylan - October 21st 1981 Disc01Track04.flac
+e71ba46aac42163fe121aec5d1de96c3  Disc One\Dylan - October 21st 1981 Disc01Track05.flac
+58b72cdbe73627f8ba698b0bd2080ff0  Disc One\Dylan - October 21st 1981 Disc01Track06.flac
+d88cb006046b9f3d388db8c539d46b22  Disc One\Dylan - October 21st 1981 Disc01Track07.flac
+6107547b3e3d34852c44e1b7fdf821f5  Disc One\Dylan - October 21st 1981 Disc01Track08.flac
+c1a36e04edbaf66fccf480f8c636cf55  Disc One\Dylan - October 21st 1981 Disc01Track09.flac
+39f09cd5f7a82810cefe6385a9c5b898  Disc One\Dylan - October 21st 1981 Disc01Track10.flac
+23f902efa4d0428423faf6e27d7dda23  Disc One\Dylan - October 21st 1981 Disc01Track11.flac
+a8d5bf8a587e9d032a7965500788612a  Disc One\Dylan - October 21st 1981 Disc01Track12.flac
+cd03624a9941597fcfc78aca550eff90  Disc One\Dylan - October 21st 1981 Disc01Track13.flac
+a9707bd7cd4531c24dac58b7762aabdf  Disc One\Dylan - October 21st 1981 Disc01Track14.flac
+dda376ee997469988476e2afb8ebfe0b  Disc One\Dylan - October 21st 1981 Disc01Track15.flac
+325a7d180e1923cbf14e1b63ee3bebe7  Disc Two\Dylan - October 21st 1981 Disc02Track01.flac
+2d404464dc44e86db654423b94586253  Disc Two\Dylan - October 21st 1981 Disc02Track02.flac
+9a951e25d31e7da16936e95ff1c0640a  Disc Two\Dylan - October 21st 1981 Disc02Track03.flac
+f7bbad13d3b12d27ed22a1572dd431bc  Disc Two\Dylan - October 21st 1981 Disc02Track04.flac
+1700be38a2109083a7c183b6f90a83fe  Disc Two\Dylan - October 21st 1981 Disc02Track05.flac
+d1d10c785b71ea7826f3dc8a227a3ce3  Disc Two\Dylan - October 21st 1981 Disc02Track06.flac
+beb20a8e8eb32c1e786fe6f1793ef590  Disc Two\Dylan - October 21st 1981 Disc02Track07.flac
+e810d19051026383718d099f4f58277d  Disc Two\Dylan - October 21st 1981 Disc02Track08.flac
+a061b1bbd741f860ed257ad8b83d6aa9  Disc Two\Dylan - October 21st 1981 Disc02Track09.flac
+7d54b788c081b81327349cfb7209f58b  Disc Two\Dylan - October 21st 1981 Disc02Track10.flac
+a685f3e72ad2fcd7b644b726a4a05de8  Disc Two\Dylan - October 21st 1981 Disc02Track11.flac
+dd66f33c1fd96c94567aab08ed2dbfdc  Disc Two\Dylan - October 21st 1981 Disc02Track12.flac
+8fa9157fe2d3a2b022966b91375ac916  Dylan - Boston Oct. 21st 1981 Info.txt
+1a7289647aef93f88a9a7f36ee69347d  Dylan - Boston October 21st 1981.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-21-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - October 21st 1981 Disc01Track01.flac:498d8d765bc2b8ab0d0ca658a7df9f2d
+Dylan - October 21st 1981 Disc01Track02.flac:ddd365660ac1ab9959cd5262f2ed9c44
+Dylan - October 21st 1981 Disc01Track03.flac:68587b3cae3d3e52f817697d18df64df
+Dylan - October 21st 1981 Disc01Track04.flac:695b9fd4e18349451e20f0e8e3beb396
+Dylan - October 21st 1981 Disc01Track05.flac:8cf09eefcc744d9ac415545e6230bf95
+Dylan - October 21st 1981 Disc01Track06.flac:bdc54d550989400ec231397d266a5ff4
+Dylan - October 21st 1981 Disc01Track07.flac:a01f350335cfcaf7ab861bc1a9af9bc0
+Dylan - October 21st 1981 Disc01Track08.flac:d6f90527e637b37390265b77be5c64ab
+Dylan - October 21st 1981 Disc01Track09.flac:955a4f052240e4450da3109a55a1cce6
+Dylan - October 21st 1981 Disc01Track10.flac:9e4a59985b91821cb24a1ea2056b33e3
+Dylan - October 21st 1981 Disc01Track11.flac:975c6017708cfa0330466e1406b19b9f
+Dylan - October 21st 1981 Disc01Track12.flac:9663525b2fc941db30b63e064dd6c615
+Dylan - October 21st 1981 Disc01Track13.flac:608557e76aa164a21c34ac6e57c4deeb
+Dylan - October 21st 1981 Disc01Track14.flac:e0d475a31ce54bc5cc53fd2de99cf8cb
+Dylan - October 21st 1981 Disc01Track15.flac:a31b355bb90bc0687fd1b446095ea261
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-21-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - October 21st 1981 Disc02Track01.flac:de077116740c314b434aacc58290f89a
+Dylan - October 21st 1981 Disc02Track02.flac:0716687e767094b4a65090dcb3e6518e
+Dylan - October 21st 1981 Disc02Track03.flac:a5674428c7cacca9d5c95a419a454d90
+Dylan - October 21st 1981 Disc02Track04.flac:7edf7e1ed93752f0e937ddd803f7aabf
+Dylan - October 21st 1981 Disc02Track05.flac:55d250b377624b9594a958ed28574b3e
+Dylan - October 21st 1981 Disc02Track06.flac:5a733d3a2a6c2c1a2fd2df0be0e888ee
+Dylan - October 21st 1981 Disc02Track07.flac:c357c91a7fc09dc4e922d5faad4db0cc
+Dylan - October 21st 1981 Disc02Track08.flac:d7271d8b15910cd812d6c59de0b3ccbf
+Dylan - October 21st 1981 Disc02Track09.flac:d62a75f321c4728707148c301cb33d96
+Dylan - October 21st 1981 Disc02Track10.flac:7b1ff0ddb1a8f1d16c80ff4c210a56e8
+Dylan - October 21st 1981 Disc02Track11.flac:18e1b17ce2f969187a3b2220bf0d81a7
+Dylan - October 21st 1981 Disc02Track12.flac:9c3db044b3a7cb7023dcfa8e1094b47c
+=================== 
+=================== 
+=================== 
+=== shntool for: bd81-10-21-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.31       41173036 B   -b-   --   ---xx   flac  0.6523  Dylan - October 21st 1981 Disc01Track01.flac
+     4:37.53       48988204 B   -b-   --   ---xx   flac  0.6380  Dylan - October 21st 1981 Disc01Track02.flac
+     6:51.06       72515628 B   -b-   --   ---xx   flac  0.6414  Dylan - October 21st 1981 Disc01Track03.flac
+     3:58.32       42057772 B   -b-   --   ---xx   flac  0.6360  Dylan - October 21st 1981 Disc01Track04.flac
+     4:32.45       48087084 B   -b-   --   ---xx   flac  0.6301  Dylan - October 21st 1981 Disc01Track05.flac
+     4:24.53       46694444 B   -b-   --   ---xx   flac  0.6388  Dylan - October 21st 1981 Disc01Track06.flac
+     4:59.33       52822060 B   -b-   --   ---xx   flac  0.6258  Dylan - October 21st 1981 Disc01Track07.flac
+     3:40.09       38830124 B   -b-   --   ---xx   flac  0.6382  Dylan - October 21st 1981 Disc01Track08.flac
+     3:19.66       35258412 B   -b-   --   ---xx   flac  0.6323  Dylan - October 21st 1981 Disc01Track09.flac
+     3:58.73       42156076 B   -b-   --   ---xx   flac  0.6463  Dylan - October 21st 1981 Disc01Track10.flac
+     4:42.20       49791020 B   -b-   --   ---xx   flac  0.6288  Dylan - October 21st 1981 Disc01Track11.flac
+     4:11.67       44433452 B   -b-   --   ---xx   flac  0.6210  Dylan - October 21st 1981 Disc01Track12.flac
+     5:31.64       58540076 B   -b-   --   ---xx   flac  0.6186  Dylan - October 21st 1981 Disc01Track13.flac
+     7:16.05       76922924 B   -b-   --   ---xx   flac  0.6271  Dylan - October 21st 1981 Disc01Track14.flac
+     3:49.38       40484908 B   -b-   --   ---xx   flac  0.6277  Dylan - October 21st 1981 Disc01Track15.flac
+    69:47.71      738755220 B                            0.6330  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd81-10-21-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.12       53477420 B   -b-   --   ---xx   flac  0.6402  Dylan - October 21st 1981 Disc02Track01.flac
+     4:02.45       42795052 B   -b-   --   ---xx   flac  0.6384  Dylan - October 21st 1981 Disc02Track02.flac
+     6:19.10       66879532 B   -b-   --   ---xx   flac  0.6457  Dylan - October 21st 1981 Disc02Track03.flac
+     4:45.44       50378052 B   -b-   --   ---xx   flac  0.6372  Dylan - October 21st 1981 Disc02Track04.flac
+     4:43.56       50053164 B   -b-   --   ---xx   flac  0.6190  Dylan - October 21st 1981 Disc02Track05.flac
+     4:38.69       49201196 B   -b-   --   ---xx   flac  0.6105  Dylan - October 21st 1981 Disc02Track06.flac
+     4:49.10       51003436 B   -b-   --   ---xx   flac  0.6230  Dylan - October 21st 1981 Disc02Track07.flac
+     5:36.24       59326508 B   -b-   --   ---xx   flac  0.6229  Dylan - October 21st 1981 Disc02Track08.flac
+     6:58.46       73842732 B   -b-   --   ---xx   flac  0.6193  Dylan - October 21st 1981 Disc02Track09.flac
+     5:16.40       55836716 B   -b-   --   ---xx   flac  0.6396  Dylan - October 21st 1981 Disc02Track10.flac
+     5:52.43       62193708 B   -b-   --   ---xx   flac  0.6248  Dylan - October 21st 1981 Disc02Track11.flac
+     5:42.34       60407852 B   -b-   --   ---xx   flac  0.6291  Dylan - October 21st 1981 Disc02Track12.flac
+    63:48.58      675395368 B                            0.6291  (12 files)
+=================== 
+=================== 
+=================== 

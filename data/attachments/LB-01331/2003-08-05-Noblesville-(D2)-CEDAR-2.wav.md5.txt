@@ -1,0 +1,24 @@
+; Using hkSFV on 11.17.2003 at 22:37:12
+; http://www.big-o-software.com
+;
+;/----
+;    139685324 22:26.26 2003-11-17 201-Playin In The Band ].wav
+;     82795148 22:27.38 2003-11-17 202-U.S. Blues ].wav
+;     88383500 22:28.56 2003-11-17 203-Stagger Lee.wav
+;     69936764 22:29.58 2003-11-17 204-Good Morning Little Schoolgirl.wav
+;     77893580 22:30.56 2003-11-17 205-Ballad Of A Thin Man.wav
+;     47096492 22:31.30 2003-11-17 206-Oh Boy.wav
+;     84086396 22:32.26 2003-11-17 207-Baba Jingo.wav
+;    125276972 22:33.46 2003-11-17 208-He's Gone ].wav
+;    130449020 22:35.02 2003-11-17 209-Unbroken Chain.wav
+;\----
+;
+399677863daf3bd7cd26b52a9b908ee2 *201-Playin In The Band ].wav
+92526b96bf42c17c26227b7f50d77279 *202-U.S. Blues ].wav
+b43149ab3c9dde9f5e5e6de51ad40f5c *203-Stagger Lee.wav
+8770a43ffa814061bc15453312d4e0e5 *204-Good Morning Little Schoolgirl.wav
+2173fa8ed59404cd926159f69b783df0 *205-Ballad Of A Thin Man.wav
+11d0a4efe02d5d92c1a96aa85f6ba741 *206-Oh Boy.wav
+4e1f17404f1498d5f827c194a0c01c0a *207-Baba Jingo.wav
+9958c6c6554279f6aa9b12265e461f37 *208-He's Gone ].wav
+5fdc3564f581e4093f53fab34ee20a12 *209-Unbroken Chain.wav

@@ -1,0 +1,42 @@
+7f79f861fc1cadc191184a77ce045e4c  D1\MedPlex Disk One fingerprint.ffp.txt
+cb548d779ca96552c06cd016f464ee6c  D1\MudPlex D1.LOG
+b5fd19217afaf5cccd0a65089d9b6095  D1\Track01.flac
+0337d71b6fb3275a9aedeec673abb66e  D1\Track02.flac
+c73f8b726e379856a098bb48a1c0fdc0  D1\Track03.flac
+7fb71a16b672010d09b14989191c78cb  D1\Track04.flac
+1852025759fda982db680eb008f7fe90  D1\Track05.flac
+f9ea2d9e90d75148a7ac553ba390b8fe  D1\Track06.flac
+3585329401bd57da290a12715ec78ed4  D1\Track07.flac
+8c903126568e2fef4caf73c7e237e4e2  D1\Track08.flac
+9338a2c24d44a77813a355be1aee3c27  D1\Track09.flac
+5208c33b68271a9c3d06ae42b9089583  D1\Track10.flac
+74a3fa4d7468d2130724581656fb7f77  D1\Track11.flac
+a40c244bef4d1ddd386f6cf8ac3fa4d1  D1\Track12.flac
+063eb4804dfac4f4818d5b50a78bf58b  D2\MedPlex Disk Two fingerprint.ffp.txt
+62c42d5fea76bdaf77fd288d89494356  D2\MudPlex D2.LOG
+c651d61a9a6691b2deb6514b0752016e  D2\Track01.flac
+02504897e7969e3ef78223d4c1fb9ec1  D2\Track02.flac
+5b4cbc2b48f43c169a8b57c8dcd150d4  D2\Track03.flac
+015bc01bd7dd7fc6164946ecce6af7be  D2\Track04.flac
+6715b9d56c5984230cfc8b947e0635ca  D2\Track05.flac
+b90abc585f49b42f3490571ecdf5a791  D2\Track06.flac
+68ddf5d1d7af6de10b68e9e3f0bb9eab  D2\Track07.flac
+cd64e0c542891a5b10bdf8509518b919  D2\Track08.flac
+21d4e75c8d22095fb890e0c5cf15ba80  D2\Track09.flac
+29e4f2f851402c42baab1ada167d1206  D2\Track10.flac
+5e528f5141893246c7d1be2312ffa90a  D3\MedPlex Disk Three fingerprint.ffp.txt
+f72f3b3233dac96af9d093142a14ee56  D3\MudPlex D3.LOG
+bd02a0bb64f6afc342b6243c72165970  D3\Track01.flac
+e873a6d95dd7dcb632cc69aeee8d2572  D3\Track02.flac
+2f404f957b6ecd017894511448e4614f  D3\Track03.flac
+7fc7286c862151d50fd31f417ce88a04  D3\Track04.flac
+a7a06b612aca1eea5256658451bbee2f  D3\Track05.flac
+dfb78171ea355d5c780b3c9c7c5cefcd  D3\Track06.flac
+270dd7d02b6db44debf6a5f523810f12  D3\Track07.flac
+cb353518eab98ef75cb1e1969d7c32fe  D3\Track08.flac
+b5e7d2f03d88bea840420d318681f2d0  D3\Track09.flac
+96f01c81f5bbad0d672b10d514ca93c2  D3\Track10.flac
+19bc8d879f633b028abf0e900f6fd617  m-45b.jpg
+6d1458e2f04fa4c0111cb86f44b49393  m-45cd.jpg
+5adc4a85cebdb028eb712eacfb1aa47a  m-45f.jpg
+9cea57aac9d00406b47b38a25c51fa87  MudPlex.txt

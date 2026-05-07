@@ -1,0 +1,19 @@
+556d294fbe252d785ea746863afb1225  back.jpg
+9f47bf9bd793f58831f4e27251c2a118  Bob Dylan.txt
+d5fd7c6645d3d00d14a29e4b87bf06ae  ByTheWaterfrontDocks.ffp
+7f932f2a33a07b16fc4d20a79b6b6753  Front.jpg
+aacc42712e4c7af0878829fd62beb16d  Track01.flac
+90701acbf0345ba1b25bd8c6f818e11e  Track02.flac
+54498b5152a1a31730b49ffb2d952ade  Track03.flac
+e8404cdb280d54024dfe74a442906b7c  Track04.flac
+20206e9be95ee1386c4e93a788941674  Track05.flac
+b50cb3a0edbca89537a8402940370075  Track06.flac
+b24e61e4d95c86c189f6264a9108e57f  Track07.flac
+caf019424bb999c2136e9a30b5a24d6c  Track08.flac
+f89546ed197d28e982163c16be0cfbce  Track09.flac
+830136f0e799e5fc4731a6a6e5936b3f  Track10.flac
+4a8e141bef26cc24955dcee91939a945  Track11.flac
+6c4acbcb13c4af697e3045ac7160a195  Track12.flac
+a5cc74b5e9a25f26e0edb7597fc0704b  Track13.flac
+2300705313bd9df8d9b90cc61832d5d7  Track14.flac
+2c281fcaf9bb52c8fda9d77a9da3b3a2  Track15.flac

@@ -1,0 +1,33 @@
+abd0e4aa92ee032ae744898d045cb812  Disc 1\Disc01Track01.flac
+64ff101bd9d3cce6ea1f34ce714c9190  Disc 1\Disc01Track02.flac
+c3042b3aa03d59d63a45e641f147f17d  Disc 1\Disc01Track03.flac
+86050de019fbe879f4214e3adc66a95c  Disc 1\Disc01Track04.flac
+21a3400ffcd8e4ca90b1a4b7142c0691  Disc 1\Disc01Track05.flac
+4f7e68757a188031e5d796eac4438502  Disc 1\Disc01Track06.flac
+49a0fe6047c1221af003d32b89a5603c  Disc 1\Disc01Track07.flac
+cd00f11f09d2d6033b0e5a7eac3cfbc2  Disc 1\Disc01Track08.flac
+3a08fe44bbcb588958eb066bd55c22f5  Disc 1\Disc01Track09.flac
+1ab8684fe6db708918e0b08275f5cbbe  Disc 1\Disc01Track10.flac
+acd490c9171ac65adc18212c1b7db174  Disc 1\Disc01Track11.flac
+129bf942e27deca17683477f8af17697  Disc 1\Disc01Track12.flac
+aabc642415100853d6ab6b18b46ad23c  Disc 1\Disc01Track13.flac
+8b32730424c90efc1b900d8a8eaeb725  Disc 1\Disc01Track14.flac
+6142a90d32fef0ca0552a84d29953a5f  Disc 1\Disc01Track15.flac
+32dc980d1d2c4a7716d8410031f135f4  Disc 2\Disc02Track01.flac
+c88d999daba3a383018d37076df2de61  Disc 2\Disc02Track02.flac
+bdc4f295043d67cc9a9d8b105e0b3442  Disc 2\Disc02Track03.flac
+51b1c5168fd90bbf30998ac9a0a399ca  Disc 2\Disc02Track04.flac
+bb70c20ced8df3881f448aff3c0bc166  Disc 2\Disc02Track05.flac
+f1c23bf88df24284be794de68c15f952  Disc 2\Disc02Track06.flac
+101bea854a26ace0fa18d569d9f591cf  Disc 2\Disc02Track07.flac
+e1f10e1044cd97f28c033079f90151d0  Disc 2\Disc02Track08.flac
+62c752558d1ffd97dd9dfbc9ac6d268f  Disc 2\Disc02Track09.flac
+25172c09f4d8b0fac6801ac6217ea84f  Disc 2\Disc02Track10.flac
+95e5197e7dabe3a593bd75314f3bae9b  Disc 2\Disc02Track11.flac
+24894cd04d7ddad3f157760310c03050  Disc 2\Disc02Track12.flac
+d4904c2f5c5b5a543a69788eaff4a371  Disc 2\Disc02Track13.flac
+749a941ca6056cc4c382bb613f18cdad  Disc 2\Disc02Track14.flac
+8535daa3855cb3028787eca5e17f31d0  Disc 2\Disc02Track15.flac
+601120566ca88fc9bbfe70e17e4c09fb  Info.txt
+667a3eee6650ebf2428d5b38ef35f13c  Paris 08.07.1978 - F.jpg
+5d4cd318350a3cff3b12187bf5628e95  Paris 08.07.1978 - R.jpg

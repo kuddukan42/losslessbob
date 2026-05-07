@@ -1,0 +1,121 @@
+===================
+===================
+===================
+=== 1989-08-22 Sandstone Amphitheater, Bonner Springs.ffp
+===================
+===================
+===================
+CD1\00 Announcement.flac:ec2fca59d6c94b9f70be946d5eb601c6
+CD1\01 Most Likely You Go Your Way (And I'll Go Mine).flac:b0098e44e6b392a9bbadf2da79cdf56d
+CD1\02 The Harder They Come.flac:51f3520e0850ec42944d9d537379e53d
+CD1\03 Ballad Of Hollis Brown.flac:ed600899acffb7f333a990c5f416421a
+CD1\04 Just Like A Woman.flac:d62c71878c00214e54baab7a4691fb5c
+CD1\05 Ballad Of A Thin Man.flac:56127c1c9c413ba9e8890fc7c9a39f03
+CD1\06 Highway 61 Revisited.flac:25525f02c1aa191446a341dc707ea956
+CD1\07 Trail Of The Buffalo.flac:c149d7946128edb1a7e36dae92e0440f
+CD1\08 Don't Think Twice It's Alright.flac:6a059a8d48970e98d0b07d302c087995
+CD1\09 Girl From The North Country.flac:ae29a81499a9f3d028eb738d2fcd4f3c
+CD1\10 Mr. Tambourine Man.flac:807fb0d8bc9c60a7e7b4db9d3caf6cab
+CD2\01 Rank Strangers To Me.flac:1d4ba0a61ee4bb962b0d463b19fb90a9
+CD2\02 Silvio.flac:0b91e1fc277b0099c97aabdbb022667a
+CD2\03 It Takes A Lot To Laugh.flac:67b1b4afaaef29ead85e6768c7eded5d
+CD2\04 Masters Of War.flac:4d019122f8ea529dfa279ce9565bbbd6
+CD2\05 Like A Rolling Stone.flac:5562fd0574c4ac6a3c7336b5fb7c5bbd
+CD2\06 Blowin' In The Wind.flac:a254092fc0cb2f31a2f52d7ed793ab3b
+CD2\07 All Along The Watchtower.flac:b4e62f3be4e271969be4b2ed990ed840
+===================
+===================
+===================
+=== 1989-08-22 Sandstone Amphitheater, Bonner Springs.md5
+===================
+===================
+===================
+2ca03118e33f680d2ca96b891393ca61 *CD1\00 Announcement.flac
+4fa18067a78a10773d2d6105543e6452 *CD1\01 Most Likely You Go Your Way (And I'll Go Mine).flac
+a7c7e96f48b0a6ad0e2d9ed505bb2c60 *CD1\02 The Harder They Come.flac
+fe142abeaf22bed9d16d5f4a626c6843 *CD1\03 Ballad Of Hollis Brown.flac
+082a1b0d42b1317426a4a581914bd380 *CD1\04 Just Like A Woman.flac
+a2179eebf6aabb85f426e7f5e30e322c *CD1\05 Ballad Of A Thin Man.flac
+87787ea0a860a062680fadcc01dbc966 *CD1\06 Highway 61 Revisited.flac
+aaba81861d9abb5bd426a70379752670 *CD1\07 Trail Of The Buffalo.flac
+f3d09fc959c9e62477614afe5f76fa8d *CD1\08 Don't Think Twice It's Alright.flac
+8627d90704f8ed0ca045f7082b62d451 *CD1\09 Girl From The North Country.flac
+ff8b21b7c32abbcb3c8ab46f7aef5c72 *CD1\10 Mr. Tambourine Man.flac
+b7b6ed6b5615718c3b66e2a78ab9859f *CD2\01 Rank Strangers To Me.flac
+0b1fc1cd3694e935e532e6c5a905f543 *CD2\02 Silvio.flac
+71d17c831bdc4ba32b48289aadda9906 *CD2\03 It Takes A Lot To Laugh.flac
+8d4ee0c665d1194fb2479cf7098673e7 *CD2\04 Masters Of War.flac
+fe2eaa4b68efde4e1deb51d5ebd3cc30 *CD2\05 Like A Rolling Stone.flac
+c37e970db1052a5f2ec88e5aa99e2f84 *CD2\06 Blowin' In The Wind.flac
+1c343812482a6598c5f73399f7311bf0 *CD2\07 All Along The Watchtower.flac
+===================
+===================
+===================
+=== additionalinfo.txt
+===================
+===================
+===================
+Not sure where I got this from.  It doesn't have an LB number.  It came bundled with a shn copy of 1989-11-13 Miami and both shows together were given the title The Harder They Fall although as one is encoded in flac and the other in shn it seems highly unlikely that they started life as a unit.
+
+Under the notes on LosslessBob for LB-313 is the following comment
+
+
+(a bittorrent from 02/09 is close eac match on d1t2 with same flaws; described as "Received on trade data DVD, torrented on TangledUpIn Torrents February 11, 2009 by g, r;"; ) tracked with first track broken into 2 tracks and with filenames like "CD1\02 The harder they come.flac")
+
+As the file names are very similar to those noted at LosslessBob and the first track is divided into two this could well derive from LB-313.
+
+Anyway wherever it comes from enjoy :-)
+
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Sandstone Amphitheater
+Bonner Springs, Kansas
+August 22, 1989
+ 
+ 
+1.	Most Likely You Go Your Way (And I'll Go Mine)
+2.	The Harder They Come (Jimmy Cliff)
+3.	Ballad Of Hollis Brown
+4.	Just Like A Woman
+5.	Ballad Of A Thin Man
+6.	Highway 61 Revisited
+7.	Trail Of The Buffalo (trad. arr. Woody Guthrie)
+8.	Don't Think Twice, It's All Right
+9.	Girl From The North Country
+10.	Mr. Tambourine Man
+11.	Rank Strangers To Me (A. Brumley)
+12.	Silvio (Bob Dylan & Robert Hunter)
+13.	It Takes A Lot To Laugh, It Takes A Train To Cry
+14.	Masters Of War
+15.	Like A Rolling Stone
+16.	Blowin' In The Wind
+17.	All Along The Watchtower
+ 
+ 
+Concert # 130 of The Never-Ending Tour
+Concert # 38 of the 1989 USA Fall Tour
+ 
+Concert # 52 with the second Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+G. E. Smith (guitar)
+Tony Garnier (bass)
+Christopher Parker (drums)
+ 
+7-10 and 16 Bob Dylan (vocal, guitar & harmonica), G.E. Smith (guitar)
+11 starts acoustic and ends electric
+4, 7-10, 16 Bob Dylan harmonica
+6 G. E. Smith (electric slide guitar)
+12 G. E. Smith (backup vocal)
+ 
+9 new songs (52%) compared to previous concert
+1 new song for this tour
+ 
+Stereo audience recording, 100 minutes
+===================
+===================
+===================

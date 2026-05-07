@@ -1,0 +1,86 @@
+Dylan & The Dead
+87-07-19
+Autzen Stadium
+Eugene, Oregon
+
+AUD Source (Discs 1 & 2): AUD>CASS>DAT>CD
+SBD Source (Disc 3): SBD>?>CD
+
+Disc One:
+
+First Set
+
+1.  Iko Iko [9:55]
+2.  Feel Like A Stranger [8:05]
+3.  Franklin's Tower [12:29]
+4.  Minglewood Blues [8:32]
+5.  Peggy-O [7:24]
+6.  Addams Family Tease [1:01]
+7.  When I Paint My Masterpiece [4:38]
+8.  West L.A. Fadeaway [8:46]
+9.  Let It Grow [12:49]
+
+Disc Two:
+
+Second Set
+
+1.  Gimme Some Lovin' [5:34] >
+2.  Playing In The Band [6:56] >
+3.  He's Gone [10:40] >
+4.  Spoonfull [7:07] >
+5.  Drumz [6:29] >
+6.  Space [7:11]
+7.  The Wheel [4:34] >
+8.  Truckin' [6:26] >
+9.  Wharf Rat [9:35] >
+10. Turn On Your Lovelight [5:44]
+
+Disc Three:
+
+Dylan & The Dead
+
+1.  Maggies Farm [4:16]
+2.  Dead Man [5:22]
+3.  Watching The River Flow [4:57]
+4.  Simple Twist Of Fate [5:24]
+5.  Frankie Lee & Judas Priest [5:50]
+6.  Stuck Inside Of Mobile (With The Memphis Blues Again) [6:34]
+7.  Heart Of Mine [4:33]
+8.  It's All Over Now, Baby Blue [5:47]
+9.  Rainy Day Women [5:07]
+10. Queen Jane [6:48]
+11. Ballad Of A Thin Man [5:51]
+12. Highway 61 [5:14]
+13. Tangled Up In Blue [7:31]
+
+Encore
+
+    Touch Of Grey (missing)
+    All Along The Watchtower (missing)
+
+
+Notes:
+Audio anomalies do exist.
+
+Tools:
+Dell Inspiron 8200 (Hardware)
+Windows XP Professional 5.1.2600 Build 2600 (OS)
+Exact Audio Copy V0.9 Beta 4 (Secure Mode Extraction)
+Multiquence v2.50 (Crossfading)
+Sound Forge 6.0b (Build 185) (WAV Editing)
+CD Wave Audio Editor 1.7 (Tracking)
+mkw Audio Compression Tool 0.97 Beta 1 (SHN Compression)
+md5summer v1.1.0.24 (MD5 Generation)
+SHNTool 1.01 (Sector Boundary Verification)
+
+
+----------
+
+
+Major domo arigato to Sir Peter Pendragon for the source discs!
+
+Another installment of The Music Never Stopped Project!
+
+Sir Paino - April 2003
+
+USS KITTY HAWK (CV 63)

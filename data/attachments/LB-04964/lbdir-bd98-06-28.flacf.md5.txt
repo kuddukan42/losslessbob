@@ -1,0 +1,14 @@
+9f5dd3e4cc984f65ecdf15261583d155  bd1998-06-28-Pilton Glastonbury.md5
+a167a4b91751b5497ada1e1b389bc947  bd1998-06-28-Pilton Glastonbury.txt
+45ed674e1bb9d8056a75a5aa8ac08653  Track01.flac
+fdbc77b45a5ff4723e867f6a854bf8ff  Track02.flac
+e2cfd190e4adffd7cb34cf0207e5d671  Track03.flac
+5187ff78f6b076131562ef146b062fb1  Track04.flac
+4649ead0339a930e628166d99de9ebff  Track05.flac
+d4e2fb25fb3398125ec576909630cd48  Track06.flac
+d907b0a53803aa715a1538f71d03584e  Track07.flac
+837aa85c57b3e4a00dac31c0aaa12442  Track08.flac
+166179c81f1819de41216b8c1941e606  Track09.flac
+147f6b2b52a1bb693d555c1088ec21f7  Track10.flac
+052ca2e8b6a2a2f383c1b43b35bb13c3  Track11.flac
+3e817d2ffc26e4e21aae5302c4c5e735  Track12.flac

@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-10-17.flacf 
+=================== 
+=================== 
+=================== 
+388148a48bbe6ea742def5fc4c563130  bd1996-10-17 San Luis Obispo, CA.ffp
+c1c2597a915af1340b7eefebe815956d  bd1996-10-17 San Luis Obispo, CA.md5
+67b1cf4dab441351a6479c0ea8739fb7  bd1996-10-17.info.r9453.txt
+6ac5f1b1224cf6d2a9e39ab050022f45  bd1996-10-17d1 San Luis Obispo, CA.shntool.txt
+bd30bca8f8c998ba4b925ca7f0cf83ac  bd1996-10-17d2 San Luis Obispo, CA.shntool.txt
+2f41f780aa483979eab42ef6e96993aa  d1t03.PNG
+dfc71ed42e8a8ee2c458f51ddf0b1316  D1Track01.flac
+2280a6d07aba293370b392adc6ab83f0  D1Track02.flac
+f259f006e0427b2d4ba8c3f9429380d7  D1Track03.flac
+d4487d23231cf82c25506b09bc0e1688  D1Track04.flac
+b15ecad7864be0081842d6aa4e69ccff  D1Track05.flac
+0869a370d520080ad0eef8abe09d2f11  D1Track06.flac
+71739ac3d37ce17e166d2a2890b4b86f  d2t08.PNG
+4615b418be7bfff4be75e3493c012a7e  D2Track01.flac
+1784d0ed689b763e7098e287d47b2e7b  D2Track02.flac
+931a3e0c49da4ae5dda801edbd910c2c  D2Track03.flac
+1baab68b40e71d9ca9cce16f4a9591a4  D2Track04.flac
+ee68f8f24a6bac0efebf7ee61389da79  D2Track05.flac
+a975a617e702ccf913833231aa7a995a  D2Track06.flac
+07f77fb988614ab854ed88a5a6f19b84  D2Track07.flac
+793a000b204d3e812ad187c431f794b7  D2Track08.flac
+68f4fc5c2ea271032cd96869a057f3d4  D2Track09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-17.flacf 
+=================== 
+=================== 
+=================== 
+D1Track01.flac:a279960bcd0d4baaf6d9460a07ee2be1
+D1Track02.flac:4e5a6bb4a0a3aa52550b90ef3f9671b5
+D1Track03.flac:aecfe1c53584569b3fb41e111c2633b5
+D1Track04.flac:b365746044b4105f44a717b0b3ea07c6
+D1Track05.flac:2d956a87de8515817e8c10fcdf9270b0
+D1Track06.flac:74ffcfc2a8acad9ae4937905f42d7471
+D2Track01.flac:ed32221509106ae8aa6f67204d0b4087
+D2Track02.flac:eb0ee8db0e2a2e1414eeb6baedb77cf5
+D2Track03.flac:37ab2631b333287b935627d72cacd49b
+D2Track04.flac:2512642ddc5362bbf03fa787f36a8707
+D2Track05.flac:c6547444d16d2f4a602e283d77cb6b54
+D2Track06.flac:a6bfb7e5a4d8870a66413df67d8f855c
+D2Track07.flac:51beadd20e062981e78dc31ca6ed06b0
+D2Track08.flac:d2cde78790f37c60f11d53c014c285ae
+D2Track09.flac:13829e9d9d22b18350a45223b9de325d
+=================== 
+=================== 
+=================== 
+=== shntool for: bd96-10-17.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.40       55836524 B   ---   --   ---xx   flac  0.5644  D1Track01.flac
+     5:56.41       62894876 B   ---   --   ---xx   flac  0.5569  D1Track02.flac
+     7:11.42       76127228 B   ---   --   ---xx   flac  0.5802  D1Track03.flac
+     8:21.42       88475228 B   ---   --   ---xx   flac  0.5684  D1Track04.flac
+     9:11.25       97255244 B   ---   --   ---xx   flac  0.5673  D1Track05.flac
+     8:24.68       89065580 B   ---   --   ---xx   flac  0.5712  D1Track06.flac
+     7:45.67       82183628 B   ---   --   ---xx   flac  0.5415  D2Track01.flac
+     7:18.29       77331452 B   ---   --   ---xx   flac  0.5295  D2Track02.flac
+     8:49.59       93454412 B   ---   --   ---xx   flac  0.5620  D2Track03.flac
+     8:14.09       87162812 B   ---   --   ---xx   flac  0.5801  D2Track04.flac
+     8:27.48       89547740 B   ---   --   ---xx   flac  0.5064  D2Track05.flac
+     8:20.20       88247084 B   ---   --   ---xx   flac  0.5753  D2Track06.flac
+     7:57.02       84147548 B   ---   --   ---xx   flac  0.5550  D2Track07.flac
+     7:45.67       82183628 B   ---   --   ---xx   flac  0.4980  D2Track08.flac
+     7:24.09       78342812 B   ---   --   ---xx   flac  0.5567  D2Track09.flac
+   116:25.43     1232255796 B                            0.5542  (15 files)
+=================== 
+=================== 
+=================== 

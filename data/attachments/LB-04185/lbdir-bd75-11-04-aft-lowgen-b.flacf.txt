@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-04-aft-lowgen-b.flacf 
+=================== 
+=================== 
+=================== 
+4ea5c0c6af71bb1596b5915f97c90179  BD-751104aft1Track01.flac
+6cb9f47068c8d630751d88a1e6298cc1  BD-751104aft1Track02.flac
+aaee9c38e5281ec72770b84887d6eb87  BD-751104aft1Track03.flac
+adc81387d8e5403fa05c11e194ec1ff1  BD-751104aft1Track04.flac
+82fdfde3b7c7cd4c078c144ec0d4292e  BD-751104aft1Track05.flac
+c3a73be937f985320270147871fa2919  BD-751104aft1Track06.flac
+47456d3b3df6c11fb44c14cb5f6d1ad2  BD-751104aft1Track07.flac
+9e2e835aa8145dd85866be66f638a83c  BD-751104aft1Track08.flac
+98fe600ea7cdbac69724cd30669d6e37  BD-751104aft1Track09.flac
+009aa89279c45a88aa6a1ffc77707b60  BD-751104aft1Track10.flac
+6b294a2e55fb1eef6c41e0dc0940dae2  BD-751104aft1Track11.flac
+8b9fb2093d2d8bef3920c636bd8a8e35  BD-751104aft1Track12.flac
+65511e4f4450a262f37fe57ecdb8e646  BD-751104aft1Track13.flac
+33409348abd1eae470adfd5e6180626d  BD-751104aft1Track14.flac
+570826fe45dedd9aff781cfa78095c85  BD-751104aft2Track01.flac
+48ef3fd0afc8d35bd2f696fa1deeed96  BD-751104aft2Track02.flac
+df1c9d2885e05a1063f1cf324d997ca2  BD-751104aft2Track03.flac
+f628991407b49c92c7ef663712fef491  bd75-11-04-aft-lowgen-b-LB-4185.txt
+20eaa011df1fdb02930c5eb4ec8b506a  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-04-aft-lowgen-b.flacf 
+=================== 
+=================== 
+=================== 
+BD-751104aft1Track01.flac:b2d95b13bd23a75b54e94124ca7479e6
+BD-751104aft1Track02.flac:47d6c012b12d9f09b93ba4e0784357a6
+BD-751104aft1Track03.flac:a06b42ad1d58ea27d91e822c63829a3a
+BD-751104aft1Track04.flac:294f88766a950eef9b00d5d39b2fc9ce
+BD-751104aft1Track05.flac:cac2ba56ddd605930d9ea1a38e56bd82
+BD-751104aft1Track06.flac:cefc6aa9a7641f3abcf895da2197cb51
+BD-751104aft1Track07.flac:fb8f0f7b2cfd5f46a7b364a8c34fe8b4
+BD-751104aft1Track08.flac:0e23be75a968bd63cc0ad8b0a0050377
+BD-751104aft1Track09.flac:76eb346534c030ace1651594ce04a668
+BD-751104aft1Track10.flac:b651ce84cf9ad5f76bfe6edbb3ca6ddb
+BD-751104aft1Track11.flac:b09361c585a64d16fbde84ccb8f87768
+BD-751104aft1Track12.flac:17b61cad95b5fe0e949dc479e64c8523
+BD-751104aft1Track13.flac:b03d14756a3119181ee83c06d371c2de
+BD-751104aft1Track14.flac:a0e6cb08e4eee58ec7e86333514638a3
+BD-751104aft2Track01.flac:d594e3a762b6bb689c5e98a846f3e67e
+BD-751104aft2Track02.flac:dcaefda5fa1e5acfc2681ee767318f7e
+BD-751104aft2Track03.flac:3b57de420fe4474cd8c7adc23a41f28f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-04-aft-lowgen-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.54       52165052 B   ---   --   ---xx   flac  0.4501  BD-751104aft1Track01.flac
+     5:32.30       58635404 B   ---   --   ---xx   flac  0.4456  BD-751104aft1Track02.flac
+     5:25.33       57407660 B   ---   --   ---xx   flac  0.4394  BD-751104aft1Track03.flac
+     6:03.05       64045004 B   ---   --   ---xx   flac  0.4613  BD-751104aft1Track04.flac
+     6:24.74       67911692 B   ---   --   ---xx   flac  0.4548  BD-751104aft1Track05.flac
+     3:12.04       33878252 B   ---   --   ---xx   flac  0.4566  BD-751104aft1Track06.flac
+     4:17.01       45337196 B   ---   --   ---xx   flac  0.4579  BD-751104aft1Track07.flac
+     5:49.16       61601276 B   ---   --   ---xx   flac  0.4559  BD-751104aft1Track08.flac
+     4:56.23       52268540 B   ---   --   ---xx   flac  0.4600  BD-751104aft1Track09.flac
+     6:19.33       66933260 B   ---   --   ---xx   flac  0.4596  BD-751104aft1Track10.flac
+     4:18.16       45548876 B   ---   --   ---xx   flac  0.4751  BD-751104aft1Track11.flac
+     8:34.22       90721388 B   ---   --   ---xx   flac  0.4795  BD-751104aft1Track12.flac
+     3:56.32       41705708 B   ---   --   ---xx   flac  0.4750  BD-751104aft1Track13.flac
+     5:18.13       56125820 B   ---   --   ---xx   flac  0.4661  BD-751104aft1Track14.flac
+     4:00.18       42378380 B   ---   --   ---xx   flac  0.4690  BD-751104aft2Track01.flac
+     5:30.54       58339052 B   ---   --   ---xx   flac  0.4854  BD-751104aft2Track02.flac
+     4:52.67       51666428 B   ---   --   ---xx   flac  0.5039  BD-751104aft2Track03.flac
+    89:26.45      946668988 B                            0.4645  (17 files)
+=================== 
+=================== 
+=================== 

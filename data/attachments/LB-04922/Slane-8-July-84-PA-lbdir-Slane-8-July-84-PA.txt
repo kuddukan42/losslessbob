@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: Slane 8 July 84 PA 
+=================== 
+=================== 
+=================== 
+d7d5271e5f9499f067eabae9c41fb6ab  01 JLAW.flac
+77d5b6ba40a5a1f183b5abffcf985157  02 MaggieF.flac
+5202f44f767e37c7073a284e843aa857  03 I&I.flac
+7915909d218ac4a3c5a32735e7893999  04 License.flac
+6ea1bafb03daca9c2b82756819e3637e  05 HardRain.flac
+9e5500f8101bc74f35e40143a4aa22c9  06 Tangled.flac
+aec6c0c4570b0dcee14038d96112795d  07 Ramona.flac
+6edfa54cd2be306f6bde417bcb999938  08 ItsAlrightMa.flac
+8d8e8fe0c1e3d95e56d7b9a89f2a0b7a  09 Shelter.flac
+9f9341c1e28278634b7956462979b624  10 With God.flac
+2805a3c9af3933d29a491df95fd5ec7d  11 Girl NC (o).flac
+94e6e1ef71ddcc45d5c863a86c650f61  12 BabyBlue (w Van).flac
+e375e88823e86f2d815f02b7da15df50  13 Tupelo (w Van).flac
+78c0d7d2acd9ff2d2ba8a8ea970cd9b4  14 Leopard-skin (w Bono).flac
+3a369473f7fe49d6474c6bc0d3c7c4d1  15 Blowin' (w Bono).flac
+949ae173248af2f5464c57285424f24a  I & I (o).flac
+abb132922c7e858c4f70befa1faf1772  note.txt
+7df08e04987b31b7a60f6f9bfab52db5  Slane 8 July 84 PA.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: Slane 8 July 84 PA 
+=================== 
+=================== 
+=================== 
+01 JLAW.flac:cbe56b2f25ed71b10bc219a7842256db
+02 MaggieF.flac:6f63d34086067aa65c9898a32dc92a1f
+03 I&I.flac:c64e04d0411d38dfeb215be97bb0abca
+04 License.flac:502f6fc4a0acc3183693b77a9079cbda
+05 HardRain.flac:5d2c12c9c63363ebdca0b8a9212c0d41
+06 Tangled.flac:f661ce080b320555fcca5da0ccbad398
+07 Ramona.flac:65cd33d3685f36e6c9800c204bb5f038
+08 ItsAlrightMa.flac:c8343f1b1ca6aae77c32b87cbfe6974c
+09 Shelter.flac:95a4339e7053bcae62efdc06df9675aa
+10 With God.flac:3364e206424afdc24f163d82d8c9118e
+11 Girl NC (o).flac:6e52755da7baa468c12ee5efb97af023
+12 BabyBlue (w Van).flac:b97eb41e8c0baf9e61ceb25bc33d02be
+13 Tupelo (w Van).flac:cd9993bcfb37d9d56217120beef5239b
+14 Leopard-skin (w Bono).flac:43748f76c6fa0e555906fbcf596bae6c
+15 Blowin' (w Bono).flac:0d36c4bd14b8ab5a868c9ab5e8ff13c2
+I & I (o).flac:02003769994132569c71fc8bf48b082a
+=================== 
+=================== 
+=================== 
+=== shntool for: Slane 8 July 84 PA 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:31.32       69047708 B   ---   --   ---xx   flac  0.5933  01 JLAW.flac
+     5:13.47       55323788 B   ---   --   ---xx   flac  0.6022  02 MaggieF.flac
+     6:43.17       71129228 B   ---   --   ---xx   flac  0.5804  03 I&I.flac
+     3:30.43       37145180 B   ---   --   ---xx   flac  0.5980  04 License.flac
+     6:16.08       66345260 B   ---   --   ---xx   flac  0.5827  05 HardRain.flac
+     6:48.70       72135884 B   ---   --   ---xx   flac  0.5795  06 Tangled.flac
+     4:15.40       45076124 B   ---   --   ---xx   flac  0.5808  07 Ramona.flac
+     6:24.37       67824668 B   ---   --   ---xx   flac  0.5806  08 ItsAlrightMa.flac
+     5:20.19       56492732 B   ---   --   ---xx   flac  0.5837  09 Shelter.flac
+     4:36.58       48822860 B   ---   --   ---xx   flac  0.5544  10 With God.flac
+     4:28.37       47362268 B   ---   --   ---xx   flac  0.5844  11 Girl NC (o).flac
+     5:24.38       57243020 B   ---   --   ---xx   flac  0.5878  12 BabyBlue (w Van).flac
+     4:25.45       46851884 B   ---   --   ---xx   flac  0.5857  13 Tupelo (w Van).flac
+     4:57.16       52428476 B   ---   --   ---xx   flac  0.6115  14 Leopard-skin (w Bono).flac
+     5:02.52       53395148 B   ---   --   ---xx   flac  0.5942  15 Blowin' (w Bono).flac
+     6:04.02       64214348 B   ---   --   ---xx   flac  0.6629  I & I (o).flac
+    86:03.36      910838576 B                            0.5917  (16 files)
+=================== 
+=================== 
+=================== 

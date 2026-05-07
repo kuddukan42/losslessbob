@@ -1,0 +1,63 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-08jh 
+=================== 
+=================== 
+=================== 
+fe749dad2e29934b7b801c50e7b6b5de  bd03-08-08jh.txt
+3643d69c480af6a640c6b6f13b4a8fad  Bobdylan2003.8.8.md5
+bfb78ce10b039cb3bb4f4c8fb06aef22  BobDylan2003.8.8t1.shn
+8ba5c0ff237b4a339f8e46e4159f0b37  BobDylan2003.8.8t10.shn
+8b06b75d6565dc293b2cfad515bc0793  BobDylan2003.8.8t11.shn
+d8faeec5084bcb1726a686536c9cf7c8  BobDylan2003.8.8t2.shn
+92b427e4afead52c728b057673ddaaec  BobDylan2003.8.8t3.shn
+32ddf464ad0592e3ae591a6411383a1d  BobDylan2003.8.8t4.shn
+2726c66fbe05ead8b3de1967e204e18f  BobDylan2003.8.8t5.shn
+83926ca5b9f31937f121c7b44dda2b75  BobDylan2003.8.8t6.shn
+639ab835d07a2871a360387f1de48c33  BobDylan2003.8.8t7.shn
+2eb450797bc819884fee4281306ecf2e  BobDylan2003.8.8t8.shn
+2bbbc29edc04bf11b55ede09c50314aa  BobDylan2003.8.8t9.shn
+d51a6e942c7af25efefab3b8e3211a23  Hunter Dylan Setlist and Source 8.8.03.doc
+c465ae1c4fbc83e694235a7592850a8d  Live @ Darien Lake PAC Darien Center NY 8.8.03
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-08jh 
+=================== 
+=================== 
+=================== 
+6e64a38fb95ce7911860d072b5461382  [shntool]  BobDylan2003.8.8t1.wav
+5f14fba1d43899eecb06c69ceac65ed0  [shntool]  BobDylan2003.8.8t2.wav
+b52393061e56373824598a708f3c09ff  [shntool]  BobDylan2003.8.8t3.wav
+ccc7f57850df8da1abdff175dafbabea  [shntool]  BobDylan2003.8.8t4.wav
+5088c18128976ee00e6993c9680f4c3b  [shntool]  BobDylan2003.8.8t5.wav
+4a201d3b40903900ac80c8f237e6e83c  [shntool]  BobDylan2003.8.8t6.wav
+6deddb518584c615cde42e3d51608586  [shntool]  BobDylan2003.8.8t7.wav
+f514558980b045899cd025b43c94946e  [shntool]  BobDylan2003.8.8t8.wav
+4661213f73ee9b68b6dd90a49e5df663  [shntool]  BobDylan2003.8.8t9.wav
+18496c5fa4b840032c1f56aeced368b4  [shntool]  BobDylan2003.8.8t10.wav
+11b5f6f110e0dcd1f7251c7161306926  [shntool]  BobDylan2003.8.8t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-08jh 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.08       62817260 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t1.wav
+     8:41.60       92045564 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t10.wav
+     6:46.06       71632556 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t11.wav
+     6:16.41       66422876 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t2.wav
+     5:41.60       60293564 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t3.wav
+     7:25.55       78627404 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t4.wav
+     7:19.18       77481980 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t5.wav
+     8:02.11       85050716 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t6.wav
+     6:02.11       63882716 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t7.wav
+     8:40.59       91866812 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t8.wav
+     6:27.17       68306828 B   ---   --   -----    wav  1.0000  BobDylan2003.8.8t9.wav
+    77:19.46      818428276 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 

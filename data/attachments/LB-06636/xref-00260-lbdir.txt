@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-10-childs-balloon-lk.flacf 
+=================== 
+=================== 
+=================== 
+9dfb38883b46a0135d4a8926cc0885f6  01 Gotta serve somebody.flac
+6216477ac44d4816a50f4ad47ae2a46d  02 I believe in you.flac
+656d9078910e22b684f990f8517a3de0  03 Like a rolling stone.flac
+d7f71e05fb9585f1d3d071e265daef78  04 I want you.flac
+297e811ea9e19b5f43b37f680f3cfa81  05 Man gave names to all the animals.flac
+5b849f4b2d8251fb84309984b1f2247b  06 Maggie's farm.flac
+dbf4ae01661beb364b5c8f8235deae83  07 Girl of the North Country.flac
+a726a16a4f3ae06dba3990385c733488  08 Ballad of a thin man.flac
+cd596ec4d917e5f8115fe658eb0c9a65  09 Heart of mine.flac
+9cc566818e46dbab322080f2b0a38109  10 Simple twist of fate.flac
+63879ef94a095441b7a8a538c0d08692  11 All along the watchtower.flac
+019b35db2ab868603ecd7e602f9e1a4c  12 I'll be your baby tonight.flac
+ef56335fb4adc9184179f8f9589b58e8  13 Forever young.flac
+379716b98b72b085a5376f0e8dc98333  14 Gamblin' man.flac
+6f25f473a41b71f195bbfccac3e63dea  15 The times they are a-changin'.flac
+0dfb811cd82f951241b958d651c232d4  16 Watered-down love.flac
+17a2fd36c9b4318baa8eebdc430d3919  17 Shot of love.flac
+c959b727bb2190e69917880e2c9114c8  18 Masters of war.flac
+8061db0776f374d6ec3dc7584afd2b89  19 Just like a woman.flac
+d806f45033b0c7a26d6b1fb1190f565c  20 Thief on the cross.flac
+98cd99b6037721bfa9d0620d5c2c2067  21 Dead man, dead man.flac
+15846a88a3c9ad64f9231e4da32dc459  22 In the garden.flac
+956a9353605206e7cd9f898cff3f6a6b  23 Blowin' in the wind.flac
+b7c2b6d7ffb5b974528f11ec8db45158  24 It's alright, ma (I'm only bleeding).flac
+13331d722dc216e6df6fd36825f1da55  25 It ain't me, babe.flac
+3f43512067686c3e68eaf0a290e0829a  26 Knockin' on heaven's door.flac
+f61f6c569479fc249c214188de18d9ce  bd1981-11-10.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-10-childs-balloon-lk.flacf 
+=================== 
+=================== 
+=================== 
+01 gotta serve somebody.flac:394d573c731e44578f46906b93cf4a89
+02 i believe in you.flac:8cd228c0f236340926d5cecabc2956fb
+03 like a rolling stone.flac:c57d1c533aba67acf90f04edef2ce3f1
+04 i want you.flac:fedc06395857e01ddd4f5d3273416549
+05 man gave names to all the animals.flac:6434cdb2efbd06281057c02e5a6c713a
+06 maggie's farm.flac:8c56c874c18bf9470fce7d421286c059
+07 girl of the north country.flac:72140ca1cbbecf693ec2698375c436d0
+08 ballad of a thin man.flac:bc5e87b8ca816c1fe8022c8077eec6f0
+09 heart of mine.flac:3aeedcd38956b4e71d29f8fb57179cfd
+10 simple twist of fate.flac:b3d01ed9b4167d32f854688b9a718026
+11 all along the watchtower.flac:a0841ac03cff0d85ff8b291cac947890
+12 i'll be your baby tonight.flac:4d046b1b59e0e79543ac847ba2660931
+13 forever young.flac:3f54a4d1d3ad154b5f8c480c75b39749
+14 gamblin' man.flac:56e32f293f3117a07f6a3665c21e1fdd
+15 the times they are a-changin'.flac:9da510ef6e63312e637e43a9390cbd8e
+16 watered-down love.flac:4f25b6d83074414cd70f9cf9410ca30b
+17 shot of love.flac:ff2ea2290c70ee704954624fcc40682b
+18 masters of war.flac:cc422f5062756451751098aeed7bcc0a
+19 just like a woman.flac:6a906ecb2fb18fe719b4da18e3740def
+20 thief on the cross.flac:7c145313ecbbcfe0eae96ec7db0ed576
+21 dead man, dead man.flac:1b60fca776e1b85a29fa99c3adc5a470
+22 in the garden.flac:d5c6a0ca327e933318e4ebb59e334ce6
+23 blowin' in the wind.flac:e8dec63c12d636ca4751cec702d9bd14
+24 it's alright, ma (i'm only bleeding).flac:84402b9c303d60bc4bf8687fb6c2a289
+25 it ain't me, babe.flac:878a2351d98a88cde5cbc2a56c7966c5
+26 knockin' on heaven's door.flac:73b746d375913ec5d63edf36ed0122a3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-10-childs-balloon-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:34.46       37857836 B   ---   --   ---xx   flac  0.6012  01 Gotta serve somebody.flac
+     4:34.11       48359516 B   ---   --   ---xx   flac  0.5875  02 I believe in you.flac
+     6:03.22       64084988 B   ---   --   ---xx   flac  0.6142  03 Like a rolling stone.flac
+     3:23.37       35896268 B   ---   --   ---xx   flac  0.6229  04 I want you.flac
+     4:42.31       49817756 B   ---   --   ---xx   flac  0.6059  05 Man gave names to all the animals.flac
+     3:25.40       36256124 B   ---   --   ---xx   flac  0.6193  06 Maggie's farm.flac
+     3:58.04       41992652 B   ---   --   ---xx   flac  0.6227  07 Girl of the North Country.flac
+     3:32.02       37401548 B   ---   --   ---xx   flac  0.6019  08 Ballad of a thin man.flac
+     3:37.57       38412908 B   ---   --   ---xx   flac  0.6082  09 Heart of mine.flac
+     4:30.06       47642156 B   ---   --   ---xx   flac  0.5767  10 Simple twist of fate.flac
+     3:15.21       34447436 B   ---   --   ---xx   flac  0.5785  11 All along the watchtower.flac
+     2:28.74       26281292 B   ---   --   ---xx   flac  0.5778  12 I'll be your baby tonight.flac
+     4:20.36       45948716 B   ---   --   ---xx   flac  0.5868  13 Forever young.flac
+     3:09.65       33492524 B   ---   --   ---xx   flac  0.5640  14 Gamblin' man.flac
+     3:08.39       33254972 B   ---   --   ---xx   flac  0.5350  15 The times they are a-changin'.flac
+     4:08.56       43878956 B   ---   --   ---xx   flac  0.5741  16 Watered-down love.flac
+     4:32.62       48126668 B   ---   --   ---xx   flac  0.5681  17 Shot of love.flac
+     3:04.38       32547020 B   ---   --   ---xx   flac  0.5779  18 Masters of war.flac
+     3:46.09       39887612 B   ---   --   ---xx   flac  0.5669  19 Just like a woman.flac
+     4:03.37       42952268 B   ---   --   ---xx   flac  0.5850  20 Thief on the cross.flac
+     4:10.72       44269388 B   ---   --   ---xx   flac  0.5750  21 Dead man, dead man.flac
+     6:24.13       67768220 B   ---   --   ---xx   flac  0.5640  22 In the garden.flac
+     4:52.23       51562940 B   ---   --   ---xx   flac  0.5798  23 Blowin' in the wind.flac
+     5:41.52       60274748 B   ---   --   ---xx   flac  0.6128  24 It's alright, ma (I'm only bleeding).flac
+     4:50.21       51205436 B   ---   --   ---xx   flac  0.5997  25 It ain't me, babe.flac
+     4:22.17       46256828 B   ---   --   ---xx   flac  0.5966  26 Knockin' on heaven's door.flac
+   107:41.66     1139876776 B                            0.5893  (26 files)
+=================== 
+=================== 
+=================== 

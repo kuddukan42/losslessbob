@@ -1,0 +1,64 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-10-26-complete-as-of-2005.flacf 
+=================== 
+=================== 
+=================== 
+0fc60cf9b6a5e1279424288f99919a4e  bd63-10-26-complete-as-of-2005-LB-3173.txt
+b142ba026ec47c125af36114f8aff7a5  bd63-10-26.flacf.md5
+8c09ba109b20933c143c6ed6b342d6e2  bd63-10-26t01.flac
+e9059e69cebe8df145151b8c7d8241d8  bd63-10-26t02.flac
+cc12e30426c6bf71d88388f6b8634eee  bd63-10-26t03.flac
+2d3f01c98db9b950aee1a7e4861783f8  bd63-10-26t04.flac
+3c745a93e52d200e2c3b31ba7b6edc6e  bd63-10-26t05.flac
+d66cab664fbbc2909daff4691de8ecb7  bd63-10-26t06.flac
+e387ce1ada53582f192a919e78a04d9d  bd63-10-26t07.flac
+7fabe92ca212da56a48792d9679b029a  bd63-10-26t08.flac
+d32a54b9583127dd9254f7b1ad6d80a4  bd63-10-26t09.flac
+9e3256221ed53f5365100d82973fc93e  bd63-10-26t10.flac
+68f3cafb8b0a9e45cebdf58d50e0c8c8  bd63-10-26t11.flac
+d6af2554ebd4bcd79df7773408aae950  bd63-10-26t12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-10-26-complete-as-of-2005.flacf 
+=================== 
+=================== 
+=================== 
+bd63-10-26t01.flac:15783c6409899ca0103ca96fd11c4cf6
+bd63-10-26t02.flac:ac47a5da09a39c8f4be590837525fac5
+bd63-10-26t03.flac:adaa2782cf18f4646b3edea442e14ec3
+bd63-10-26t04.flac:c662867eb71abac557991261148d385b
+bd63-10-26t05.flac:1b29a5fb70d86d4fe73b558a2a5681ff
+bd63-10-26t06.flac:b7553a9466c0835e5a478745b0a04949
+bd63-10-26t07.flac:feae53437034fbfbfe90e038bf6eb137
+bd63-10-26t08.flac:9fc50d0372199ea210aeef0b03d85acd
+bd63-10-26t09.flac:540ba21f6b1e0185fd92bb8b92c15d63
+bd63-10-26t10.flac:b2a9772ba1dbe0b763113a6268b69847
+bd63-10-26t11.flac:5db7c5838a0de5b6d83aff400c7c09f4
+bd63-10-26t12.flac:e77db5c8e6c16a563be1b1bf5b9dfe1c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-10-26-complete-as-of-2005.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.31       43114556 B   ---   --   ---xx   flac  0.6726  bd63-10-26t01.flac
+     6:03.47       64143788 B   ---   --   ---xx   flac  0.6165  bd63-10-26t02.flac
+     3:17.58       34887260 B   ---   --   ---xx   flac  0.6269  bd63-10-26t03.flac
+     5:39.60       59940764 B   ---   --   ---xx   flac  0.5919  bd63-10-26t04.flac
+     4:26.09       46943612 B   ---   --   ---xx   flac  0.6022  bd63-10-26t05.flac
+     5:04.14       53658572 B   ---   --   ---xx   flac  0.5965  bd63-10-26t06.flac
+     9:03.59       95924012 B   ---   --   ---xx   flac  0.3964  bd63-10-26t07.flac
+     4:17.66       45490076 B   ---   --   ---xx   flac  0.5579  bd63-10-26t08.flac
+     4:16.06       45172556 B   ---   --   ---xx   flac  0.5889  bd63-10-26t09.flac
+     7:47.23       82432940 B   ---   --   ---xx   flac  0.6220  bd63-10-26t10.flac
+     6:49.21       72197036 B   ---   --   ---xx   flac  0.6229  bd63-10-26t11.flac
+     3:40.68       38968836 B   -b-   --   ---xx   flac  0.5790  bd63-10-26t12.flac
+    64:31.12      682874008 B                            0.5784  (12 files)
+=================== 
+=================== 
+=================== 

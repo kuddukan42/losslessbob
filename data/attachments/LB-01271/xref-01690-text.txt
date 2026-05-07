@@ -1,0 +1,128 @@
+===================
+===================
+===================
+=== bd-1990-02-08-London-HG.md5
+===================
+===================
+===================
+e43125a39f5083413437dfe4bee46845 *Disc1\bd-1990-02-08-HG-d1t01.flac
+7e71ef36d46d5caa506a286363a677c3 *Disc1\bd-1990-02-08-HG-d1t02.flac
+a1ac3ca12db66a21632eefd3c94703a7 *Disc1\bd-1990-02-08-HG-d1t03.flac
+605fcf07aa269bd3a716833b07807a6d *Disc1\bd-1990-02-08-HG-d1t04.flac
+a088736106c875b123b5b7e39146f200 *Disc1\bd-1990-02-08-HG-d1t05.flac
+c7f6cc2e057caa43b38cbfda37e50dc4 *Disc1\bd-1990-02-08-HG-d1t06.flac
+cc9c47937eae909d5fdbaa8ebddbf91e *Disc1\bd-1990-02-08-HG-d1t07.flac
+b9b6ed56a7a28662e1ca73338e8f9b69 *Disc1\bd-1990-02-08-HG-d1t08.flac
+2ab00dcb2d63765f5a1001d56d1f5271 *Disc1\bd-1990-02-08-HG-d1t09.flac
+b7c51c31ef1950a6cf771cf842609da5 *Disc1\bd-1990-02-08-HG-d1t10.flac
+e83798a9f1cfcd0e89005e6f64159145 *Disc2\bd-1990-02-08-HG-d2t01.flac
+be298b88f5911aa910fc61f462f546f4 *Disc2\bd-1990-02-08-HG-d2t02.flac
+f821f315e7f33572fa0d164ce9e412fc *Disc2\bd-1990-02-08-HG-d2t03.flac
+7085dce487e159b962e170204c210672 *Disc2\bd-1990-02-08-HG-d2t04.flac
+d3c2218683a2aebc2363c5213fa69e86 *Disc2\bd-1990-02-08-HG-d2t05.flac
+7ee63e4221df312fea21e020f574f2db *Disc2\bd-1990-02-08-HG-d2t06.flac
+6a79a2a3a4e12adcba2d487f6eba1f80 *Disc2\bd-1990-02-08-HG-d2t07.flac
+e9da6ec9526d4e902377d3ff83489e7f *Disc2\bd-1990-02-08-HG-d2t08.flac
+a6d63a43a7f06008155e01d74c56a7a4 *Disc2\bd-1990-02-08-HG-d2t09.flac
+7a0e57b2b2f7d9094f4ea23d3806b11c *Disc2\bd-1990-02-08-HG-d2t10.flac
+df50b7fce2ae3aff51f87dc34f7dd7b8 *Disc2\bd-1990-02-08-HG-d2t11.flac
+87339728ed0530f634a69fa2d902623b *Disc2\bd-1990-02-08-HG-d2t12.flac
+9a8b1fa1ae8bf2a0bdf938c9a803d799 *Disc2\bd-1990-02-08-HG-d2t13.flac
+fc6ece574287cf039e1eb6bfaa704570 *Disc2\bd-1990-02-08-HG-d2t14.flac
+526d5008ec68df705757fd62ecc58edb *Disc2\bd-1990-02-08-HG-d2t15.flac
+7fb1fd3ff6024421f255b969d150c150 *Lon02-08-90(HG)-B.JPG
+7ba90d0adbc485ba6c12a31c27f8993c *Lon02-08-90(HG)-F.JPG
+===================
+===================
+===================
+=== bd-1990-02-08-London-HG.txt
+===================
+===================
+===================
+Bob Dylan
+Hammersmith Odeon
+London, England
+February 8, 1990
+
+Holy Grail Series: Over Your Senses You Have No Control
+
+Sound Quality: Excellent
+
+
+This set is based on the same recording as LB-1271 but is in flac format as opposed to the shn version.
+
+
+Disk 1
+
+01 intro
+02 Absolutely Sweet Marie
+03 Man In The Long Black Coat
+04 Positively 4th Street
+05 Ballad Of A Thin Man
+06 Pledging My Time
+07 I Want You
+08 Political World
+09 You Angel You
+10 All Along The Watchtower
+
+Disc 2
+
+01 Boots Of Spanish Leather (Acoustic) 
+02 To Ramona (Acoustic)
+03 She Belongs To Me (Acoustic)
+04 Mr. Tambourine Man (Acoustic)
+05 Disease Of Conceit
+06 You're A Big Girl Now
+07 I'll Remember You
+08 Where Teardrops Fall
+09 Seeing The Real You At Last
+10 Every Grain Of Sand
+11 Rainy Day Women # 12 & 35
+12 Like A Rolling Stone
+13 It Ain't Me, Babe (Acoustic)
+14 I've Been All Around This World
+15 Highway 61 Revisited
+
+
+============================
+============================
+============================
+=== md5 for bd-1990-02-08-London-HG
+============================
+============================
+============================
+
+
+e43125a39f5083413437dfe4bee46845 *Disc1/bd-1990-02-08-HG-d1t01.flac
+7e71ef36d46d5caa506a286363a677c3 *Disc1/bd-1990-02-08-HG-d1t02.flac
+a1ac3ca12db66a21632eefd3c94703a7 *Disc1/bd-1990-02-08-HG-d1t03.flac
+605fcf07aa269bd3a716833b07807a6d *Disc1/bd-1990-02-08-HG-d1t04.flac
+a088736106c875b123b5b7e39146f200 *Disc1/bd-1990-02-08-HG-d1t05.flac
+c7f6cc2e057caa43b38cbfda37e50dc4 *Disc1/bd-1990-02-08-HG-d1t06.flac
+cc9c47937eae909d5fdbaa8ebddbf91e *Disc1/bd-1990-02-08-HG-d1t07.flac
+b9b6ed56a7a28662e1ca73338e8f9b69 *Disc1/bd-1990-02-08-HG-d1t08.flac
+2ab00dcb2d63765f5a1001d56d1f5271 *Disc1/bd-1990-02-08-HG-d1t09.flac
+b7c51c31ef1950a6cf771cf842609da5 *Disc1/bd-1990-02-08-HG-d1t10.flac
+e83798a9f1cfcd0e89005e6f64159145 *Disc2/bd-1990-02-08-HG-d2t01.flac
+be298b88f5911aa910fc61f462f546f4 *Disc2/bd-1990-02-08-HG-d2t02.flac
+f821f315e7f33572fa0d164ce9e412fc *Disc2/bd-1990-02-08-HG-d2t03.flac
+7085dce487e159b962e170204c210672 *Disc2/bd-1990-02-08-HG-d2t04.flac
+d3c2218683a2aebc2363c5213fa69e86 *Disc2/bd-1990-02-08-HG-d2t05.flac
+7ee63e4221df312fea21e020f574f2db *Disc2/bd-1990-02-08-HG-d2t06.flac
+6a79a2a3a4e12adcba2d487f6eba1f80 *Disc2/bd-1990-02-08-HG-d2t07.flac
+e9da6ec9526d4e902377d3ff83489e7f *Disc2/bd-1990-02-08-HG-d2t08.flac
+a6d63a43a7f06008155e01d74c56a7a4 *Disc2/bd-1990-02-08-HG-d2t09.flac
+7a0e57b2b2f7d9094f4ea23d3806b11c *Disc2/bd-1990-02-08-HG-d2t10.flac
+df50b7fce2ae3aff51f87dc34f7dd7b8 *Disc2/bd-1990-02-08-HG-d2t11.flac
+87339728ed0530f634a69fa2d902623b *Disc2/bd-1990-02-08-HG-d2t12.flac
+9a8b1fa1ae8bf2a0bdf938c9a803d799 *Disc2/bd-1990-02-08-HG-d2t13.flac
+fc6ece574287cf039e1eb6bfaa704570 *Disc2/bd-1990-02-08-HG-d2t14.flac
+526d5008ec68df705757fd62ecc58edb *Disc2/bd-1990-02-08-HG-d2t15.flac
+7fb1fd3ff6024421f255b969d150c150 *Lon02-08-90(HG)-B.JPG
+7ba90d0adbc485ba6c12a31c27f8993c *Lon02-08-90(HG)-F.JPG
+
+
+
+===================
+===================
+===================

@@ -1,0 +1,168 @@
+===================
+===================
+===================
+=== (Bob Dylan) 1989-10-31 Right Down To The Bone.ffp
+===================
+===================
+===================
+Right Down To The Bone [CD1]\1989-10-31_101.flac:0e1558eb1a0d0dc203ce012e3670378d
+Right Down To The Bone [CD1]\1989-10-31_102.flac:6a62b1cdf8df92488b40b0224ac6433f
+Right Down To The Bone [CD1]\1989-10-31_103.flac:5783787838c3afcb902e8f5fceedc920
+Right Down To The Bone [CD1]\1989-10-31_104.flac:0f9297c8fdd521c34adbe59d5fb37395
+Right Down To The Bone [CD1]\1989-10-31_105.flac:30cbe1acdf3618c8b8fd5e197a59e815
+Right Down To The Bone [CD1]\1989-10-31_106.flac:32d3275ee97c86adae1b9a2e1f1cc87e
+Right Down To The Bone [CD1]\1989-10-31_107.flac:ece4297903700331ea963ec3a14c815b
+Right Down To The Bone [CD1]\1989-10-31_108.flac:b144ed6575ab67b4f0a988e4f5cd4f09
+Right Down To The Bone [CD2]\1989-10-31_201.flac:c7388f5b1b23b81db580948c85732dab
+Right Down To The Bone [CD2]\1989-10-31_202.flac:b393be2de8e29ede7702dcbb55d77096
+Right Down To The Bone [CD2]\1989-10-31_203.flac:4ddad5fdceb4fb5030c8e3aba0d6675e
+Right Down To The Bone [CD2]\1989-10-31_204.flac:326cea31607df2e17da3ed18fe57f213
+Right Down To The Bone [CD2]\1989-10-31_205.flac:86cca0c7bd6e38f91f26c8659a987658
+Right Down To The Bone [CD2]\1989-10-31_206.flac:f5ba9a0b89d3fe9cf4ab51c169e1d37c
+Right Down To The Bone [CD2]\1989-10-31_207.flac:ada98f82e914d2ef28a94278a767174b
+Right Down To The Bone [CD2]\1989-10-31_208.flac:727671771deef1ad19614db6a0d9c04d
+Right Down To The Bone [CD2]\1989-10-31_209.flac:002aa54f6ddf33e5d4e6161107851d85
+===================
+===================
+===================
+=== (Bob Dylan) 1989-10-31Chicago, Illinois (Right Down To The Bone,SSB).md5
+===================
+===================
+===================
+5f8b19f575161b6cc7778f629ca673a3 *(Bob Dylan) 1989-10-31 Right Down To The Bone.ffp
+05b70f8e188950da3116562fd15181c2 *1989-10-31 Right Down To The Bone.txt
+1bda1438110d0cf9d7bc2a62b8d017f2 *Right Down To The Bone [CD1]\1989-10-31_101.flac
+72fc061923d9191e25e316e96a9ec6f6 *Right Down To The Bone [CD1]\1989-10-31_102.flac
+b593beb719ee9cda420953a946e28bd2 *Right Down To The Bone [CD1]\1989-10-31_103.flac
+fa468e51ad7e6d22f8af13bcf49ef8a6 *Right Down To The Bone [CD1]\1989-10-31_104.flac
+49549de861602e2a9040edae48c9d39b *Right Down To The Bone [CD1]\1989-10-31_105.flac
+26a7b83b04ee34e274cba92cc80e9ddb *Right Down To The Bone [CD1]\1989-10-31_106.flac
+5a9828a6ece62704376a44cb8f0cec75 *Right Down To The Bone [CD1]\1989-10-31_107.flac
+635c6c507015dd86779c1ee3a8361f90 *Right Down To The Bone [CD1]\1989-10-31_108.flac
+2aaf0ba708af034314adf56ab9e75d5f *Right Down To The Bone [CD1]\Right Down To The Bone [CD1].ffp
+9da2b85ddba9f6e09e32904641c2c15c *Right Down To The Bone [CD2]\1989-10-31_201.flac
+b0d9a1f8b5d0fffe6fbc8808c0882d1f *Right Down To The Bone [CD2]\1989-10-31_202.flac
+452e682cbdfd7db97d42bfce33e4fb01 *Right Down To The Bone [CD2]\1989-10-31_203.flac
+585c6a7caf53146fbf7972216a02e388 *Right Down To The Bone [CD2]\1989-10-31_204.flac
+f33bdd0cfa2bfc37b84748924c2433c7 *Right Down To The Bone [CD2]\1989-10-31_205.flac
+2fdcbb377dc388a4f49605af7951f2e4 *Right Down To The Bone [CD2]\1989-10-31_206.flac
+49f29899122d49361f8f607a8e76200e *Right Down To The Bone [CD2]\1989-10-31_207.flac
+3f46c03220cdd56f638e8cc7a06547a5 *Right Down To The Bone [CD2]\1989-10-31_208.flac
+303a909edebaa6c64fa4a3ecd8e7faf1 *Right Down To The Bone [CD2]\1989-10-31_209.flac
+04d598d2b69f7aa6eb80248ef651ce68 *Right Down To The Bone [CD2]\Right Down To The Bone [CD2].ffp
+===================
+===================
+===================
+=== 1989-10-31 Right Down To The Bone.txt
+===================
+===================
+===================
+
+*Right Down To The Bone*
+
+B O B   D Y L A N
+
+LIVE at
+
+Arie Crown Theater
+Chicago, Illinois
+31 October 1989 
+
+A Southside Butcher Production
+
+CD 1
+1. I Want You
+2. Ballad Of A Thin Man
+3. Rainy Day Women # 12 & 35
+4. Simple Twist Of Fate
+5. Ballad Of Hollis Brown
+6. I'll Be Your Baby Tonight
+7. Highway 61 Revisited
+8. Love Minus Zero/No Limit
+
+CD 2
+9. A Hard Rain's A-Gonna Fall
+10. Gates Of Eden
+11. Everything Is Broken
+12. What Good Am I?
+13. Most Of The Time
+14. Man In The Long Black Coat
+15. Like A Rolling Stone
+16. Disease Of Conceit
+17. Maggie's Farm
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Right Down To The Bone [CD1]\1989-10-31_101.flac:0e1558eb1a0d0dc203ce012e3670378d
+Right Down To The Bone [CD1]\1989-10-31_102.flac:6a62b1cdf8df92488b40b0224ac6433f
+Right Down To The Bone [CD1]\1989-10-31_103.flac:5783787838c3afcb902e8f5fceedc920
+Right Down To The Bone [CD1]\1989-10-31_104.flac:0f9297c8fdd521c34adbe59d5fb37395
+Right Down To The Bone [CD1]\1989-10-31_105.flac:30cbe1acdf3618c8b8fd5e197a59e815
+Right Down To The Bone [CD1]\1989-10-31_106.flac:32d3275ee97c86adae1b9a2e1f1cc87e
+Right Down To The Bone [CD1]\1989-10-31_107.flac:ece4297903700331ea963ec3a14c815b
+Right Down To The Bone [CD1]\1989-10-31_108.flac:b144ed6575ab67b4f0a988e4f5cd4f09
+Right Down To The Bone [CD2]\1989-10-31_201.flac:c7388f5b1b23b81db580948c85732dab
+Right Down To The Bone [CD2]\1989-10-31_202.flac:b393be2de8e29ede7702dcbb55d77096
+Right Down To The Bone [CD2]\1989-10-31_203.flac:4ddad5fdceb4fb5030c8e3aba0d6675e
+Right Down To The Bone [CD2]\1989-10-31_204.flac:326cea31607df2e17da3ed18fe57f213
+Right Down To The Bone [CD2]\1989-10-31_205.flac:86cca0c7bd6e38f91f26c8659a987658
+Right Down To The Bone [CD2]\1989-10-31_206.flac:f5ba9a0b89d3fe9cf4ab51c169e1d37c
+Right Down To The Bone [CD2]\1989-10-31_207.flac:ada98f82e914d2ef28a94278a767174b
+Right Down To The Bone [CD2]\1989-10-31_208.flac:727671771deef1ad19614db6a0d9c04d
+Right Down To The Bone [CD2]\1989-10-31_209.flac:002aa54f6ddf33e5d4e6161107851d85
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Olof B.:
+
+Concert # 159 of The Never-Ending Tour. 
+Concert # 16 of the 1989 USA Fall Tour.
+Concert # 81 with the second Never-Ending Tour Band:
+
+Bob Dylan (vocal & guitar), 
+G. E. Smith (guitar), 
+Tony Garnier (bass), 
+Christopher Parker (drums).
+
+8-10 Bob Dylan (vocal & guitar), G.E. Smith (guitar).
+1, 2, 4, 8, 14 Bob Dylan harmonica.
+16 Bob Dylan piano.
+7 G.E. Smith (electric slide guitar).
+8 new songs (47%) compared to previous concert. 
+1 new song for this tour.
+
+Stereo audience recording, 90 minutes.
+Session info updated 5 February 2001.
+
+===================
+===================
+===================
+=== Right Down To The Bone [CD1].ffp
+===================
+===================
+===================
+1989-10-31_101.flac:0e1558eb1a0d0dc203ce012e3670378d
+1989-10-31_102.flac:6a62b1cdf8df92488b40b0224ac6433f
+1989-10-31_103.flac:5783787838c3afcb902e8f5fceedc920
+1989-10-31_104.flac:0f9297c8fdd521c34adbe59d5fb37395
+1989-10-31_105.flac:30cbe1acdf3618c8b8fd5e197a59e815
+1989-10-31_106.flac:32d3275ee97c86adae1b9a2e1f1cc87e
+1989-10-31_107.flac:ece4297903700331ea963ec3a14c815b
+1989-10-31_108.flac:b144ed6575ab67b4f0a988e4f5cd4f09
+===================
+===================
+===================
+=== Right Down To The Bone [CD2].ffp
+===================
+===================
+===================
+1989-10-31_201.flac:c7388f5b1b23b81db580948c85732dab
+1989-10-31_202.flac:b393be2de8e29ede7702dcbb55d77096
+1989-10-31_203.flac:4ddad5fdceb4fb5030c8e3aba0d6675e
+1989-10-31_204.flac:326cea31607df2e17da3ed18fe57f213
+1989-10-31_205.flac:86cca0c7bd6e38f91f26c8659a987658
+1989-10-31_206.flac:f5ba9a0b89d3fe9cf4ab51c169e1d37c
+1989-10-31_207.flac:ada98f82e914d2ef28a94278a767174b
+1989-10-31_208.flac:727671771deef1ad19614db6a0d9c04d
+1989-10-31_209.flac:002aa54f6ddf33e5d4e6161107851d85
+===================
+===================
+===================

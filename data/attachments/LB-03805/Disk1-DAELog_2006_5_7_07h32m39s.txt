@@ -1,0 +1,46 @@
+PlexTools Professional V2.24b        Digital Audio Extraction
+Copyright (C) 1999-2005 Plextor SA/NV
+Sunday, May 07, 2006
+---------------------------------------------------------------
+
+
+Software information
+--------------------
+Windows XP V5.01.2600 Service Pack 2
+ASPI Manager: n/a
+Description : n/a
+
+Source
+------
+ID:1 PLEXTOR  CD-R   PREMIUM   V1.06 (#098893), Read Speed: 10-24X CAV
+Disc Type    : AudioCD , 1 sessions, 11 Tracks, 76:54.12
+Taiyo Yuden (type 1), 79:59:72
+
+Digital Audio Extraction Error Information log
+----------------------------------------------
+
+Start of extraction
+Extracting track 1    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\01.wav - 05:47)
+    Elapsed time: 00:32
+Extracting track 2    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\02.wav - 05:29)
+    Elapsed time: 00:25
+Extracting track 3    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\03.wav - 06:52)
+    Elapsed time: 00:28
+Extracting track 4    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\04.wav - 06:53)
+    Elapsed time: 00:26
+Extracting track 5    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\05.wav - 08:28)
+    Elapsed time: 00:29
+Extracting track 6    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\06.wav - 07:43)
+    Elapsed time: 00:24
+Extracting track 7    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\07.wav - 07:21)
+    Elapsed time: 00:22
+Extracting track 8    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\08.wav - 07:24)
+    Elapsed time: 00:21
+Extracting track 9    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\09.wav - 06:58)
+    Elapsed time: 00:18
+Extracting track 10    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\10.wav - 06:37)
+    Elapsed time: 00:17
+Extracting track 11    (J:\Dylan Davidson 02MAY06\Dylan_Davidson_College_02MAY06\Disk1\11.wav - 07:17)
+    Elapsed time: 00:18
+11 track(s) successfully extracted
+Total Elapsed Time : 04:25

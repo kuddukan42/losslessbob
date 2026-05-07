@@ -1,0 +1,132 @@
+===================
+===================
+===================
+=== md5 for: bd78-03-09-d.flacf
+===================
+===================
+===================
+7d36eeb2c7f1dc5711f11f74f473bb9f *disc1\01 Bob Dylan - Hard Rain.flac
+9971fd14af49d65ebcb46238f342eeca *disc1\02 Bob Dylan - Love Her With A Feeling.flac
+ea7f49438a82e23e12378573b4f1f0fa *disc1\03 Bob Dylan - Mr Tambourine Man.flac
+8cbd19b265f351d7114447d7aefb35fc *disc1\04 Bob Dylan - I Threw It All Away.flac
+e4ba24a240ad8ec8f59ffe65c4fc6154 *disc1\05 Bob Dylan - Shelter From The Storm.flac
+ae68a9511d47571dff1f999229b2dfb1 *disc1\06 Bob Dylan - Love Minus Zero.flac
+f3442679663c2ba5cebbf3eacbeeeae0 *disc1\07 Bob Dylan - Girl From The North Country.flac
+81d2dfb7cfc417e2611e686676c8d2ba *disc1\08 Bob Dylan - Ballad Of A Thin Man.flac
+cdde9ece115721f9ddc4223d580df816 *disc1\09 Bob Dylan - Maggie's Farm.flac
+0b459f24ae431cb060a2faec50c2725b *disc1\10 Bob Dylan - The Man In Me.flac
+34b8efef56856f4f0d142485d345cc58 *disc1\11 Bob Dylan - Like A Rolling Stone.flac
+81449d11b1ab98ec718d18cd96d2e609 *disc1\12 Bob Dylan - I Shall Be Released.flac
+28775f30451e6ed1f0081e43799eb42b *disc1\13 Bob Dylan - Going Going Gone.flac
+b96f982f176aef3cabec38117623835b *disc1\14 Bob Dylan - One Of Us Must Know (Sooner Or Later).flac
+6e5d8db6114cacc287b49971169fb2f6 *disc1\15 Bob Dylan - You're A Big Girl Now.flac
+307a7105239cee780a8da3ed6e5f3283 *disc1\780309 Auckland.log
+85450edcbf27c1233df9e63293d5847f *disc1\fingerprint.ffp.txt
+854a74350c0a34fc833af8e0461ba47c *disc1\md5sum.md5
+e2691fa6e990b33fab5b65d39c81a306 *disc2\01 Bob Dylan - One More Cup Of Coffee.flac
+158237bc12d77f5c892e003b3b9553a8 *disc2\02 Bob Dylan - Blowin' In The Wind.flac
+1c5faaa3d82f584cef112e64074a3510 *disc2\03 Bob Dylan - I Want You.flac
+bc1bf308a274459540170ab042f72099 *disc2\04 Bob Dylan - Don't Think Twice, It's Alright.flac
+718216f20500c363e01d122125e44ad9 *disc2\05 Bob Dylan - Just Like A Woman.flac
+1f3ab8c56838ed73e891cfb881889e6e *disc2\06 Bob Dylan - Oh Sister.flac
+67d9b849c10cd8aea66ff014c2b93968 *disc2\07 Bob Dylan - Tomorrow Is A Long Time.flac
+5e3fbde5e0336d78c751eb2eea3bd17e *disc2\08 Bob Dylan - All Along The Watchtower.flac
+8307f55e4ea3926d99f659a7ee6be400 *disc2\09 Bob Dylan - I Don't Believe You.flac
+b90a6ac5198387118d4761c8732ed926 *disc2\10 Bob Dylan - All I Really Want To Do.flac
+570d34b958189429405855783819420b *disc2\11 Bob Dylan - Simple Twist Of Fate.flac
+221bc2d3f7e6269c52dbe86acb293a37 *disc2\12 Bob Dylan - It's Alright Ma.flac
+53eefe751292f967f78bced7302f2757 *disc2\13 Bob Dylan - Forever Young.flac
+7d03bed3b474df1b0974b94aab33fb6b *disc2\14 Bob Dylan - The Times They Are A-Changin'.flac
+7fea1e8f9e1c0179fb5a54e0de60e96b *disc2\780309 Auckland.log
+a64593a86f9e7efe96e58d679fc39bbf *disc2\fingerprint.ffp.txt
+cfbf5f6db7f7efda863e6edbfc6b3d24 *disc2\md5sum.md5
+1d985ad758483236cdb2e1c2848d3ad4 *extras\78Auckland 1978_03_09_Auckland_Back.Jpg
+0486a4504b75a6573cf7b7a378c427af *extras\78Auckland 1978_03_09_Auckland_Front.Jpg
+0686ccad95d25457bba9f04051da33a8 *infos.txt
+87962d4b20fb7e20ce4ce735a55206ac *shntool len.txt
+===================
+===================
+===================
+=== ffp for: bd78-03-09-d.flacf
+===================
+===================
+===================
+disc1\01 Bob Dylan - Hard Rain.flac:f8bdbf4e66cb132e62b9ea2470c3a32b
+disc1\02 Bob Dylan - Love Her With A Feeling.flac:93a27c23674130465bcdc06cb4a5706c
+disc1\03 Bob Dylan - Mr Tambourine Man.flac:1bb0ebeffdc4ae645c1729852610419c
+disc1\04 Bob Dylan - I Threw It All Away.flac:f65dd294068b6f5c6a9eb3c21948af13
+disc1\05 Bob Dylan - Shelter From The Storm.flac:6641b6866592f16ce3cdd022ef16a87c
+disc1\06 Bob Dylan - Love Minus Zero.flac:0a0c44f5f3f275fdaa9ca7bc0dcf1583
+disc1\07 Bob Dylan - Girl From The North Country.flac:e0cd57d3653f4d17d7e3e1a6b34f6609
+disc1\08 Bob Dylan - Ballad Of A Thin Man.flac:e956d340e9eab6335d5a84f4573d6909
+disc1\09 Bob Dylan - Maggie's Farm.flac:8c0644e3ba303dd246e8945c4c6e5ad8
+disc1\10 Bob Dylan - The Man In Me.flac:40fe2ffd099201425bcce5df691cb5bd
+disc1\11 Bob Dylan - Like A Rolling Stone.flac:4dd684ee467d7fe16efc6aa567ca943e
+disc1\12 Bob Dylan - I Shall Be Released.flac:d0b15665d983cd363ef51e967331b168
+disc1\13 Bob Dylan - Going Going Gone.flac:7be0d9a8d2dd4949e42fef571d67b594
+disc1\14 Bob Dylan - One Of Us Must Know (Sooner Or Later).flac:a805eddcf1f82ab1349346ffa8c871e0
+disc1\15 Bob Dylan - You're A Big Girl Now.flac:ee0dba4be042c66890db7aa907df6f71
+disc2\01 Bob Dylan - One More Cup Of Coffee.flac:c0f6bc86175873438219db61155ef73e
+disc2\02 Bob Dylan - Blowin' In The Wind.flac:bb61daf9eab48ec15769138258edcf8c
+disc2\03 Bob Dylan - I Want You.flac:391d8fbf1462b9690327506a09bd7767
+disc2\04 Bob Dylan - Don't Think Twice, It's Alright.flac:7690e12bbc6c8b652f10c23f523fc51a
+disc2\05 Bob Dylan - Just Like A Woman.flac:3b92cc320ebef2c70a60be6cd4817209
+disc2\06 Bob Dylan - Oh Sister.flac:5bfd30fd8fd73f24bfea23b046e85fc3
+disc2\07 Bob Dylan - Tomorrow Is A Long Time.flac:36ccb0f30ed04991eb01fe28bcc15ba0
+disc2\08 Bob Dylan - All Along The Watchtower.flac:50e1b0c18affba3a6140188b217a34da
+disc2\09 Bob Dylan - I Don't Believe You.flac:a679d428a650a134d078e6d911bcbd7b
+disc2\10 Bob Dylan - All I Really Want To Do.flac:281428e11a3836bd8b1d218cc875abe8
+disc2\11 Bob Dylan - Simple Twist Of Fate.flac:328a31bc2cdef28c3e8fe4ebf7482c3f
+disc2\12 Bob Dylan - It's Alright Ma.flac:21aff52b5b0b51322a654bfa7a980868
+disc2\13 Bob Dylan - Forever Young.flac:3ad92170f68afc702c2b36931b7feeed
+disc2\14 Bob Dylan - The Times They Are A-Changin'.flac:94722ba42ddcdc2a4afcddee19965eee
+===================
+===================
+===================
+=== shntool len for: bd78-03-09-d.flacf\disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:39.31       49288556 B   ---   --   ---xx   flac  0.5263  01 Bob Dylan - Hard Rain.flac
+     2:47.14       29491772 B   ---   --   ---xx   flac  0.4936  02 Bob Dylan - Love Her With A Feeling.flac
+     5:24.53       57278300 B   ---   --   ---xx   flac  0.5474  03 Bob Dylan - Mr Tambourine Man.flac
+     5:23.02       56981948 B   ---   --   ---xx   flac  0.5095  04 Bob Dylan - I Threw It All Away.flac
+     4:47.24       50683292 B   ---   --   ---xx   flac  0.5244  05 Bob Dylan - Shelter From The Storm.flac
+     3:36.57       38236508 B   ---   --   ---xx   flac  0.5371  06 Bob Dylan - Love Minus Zero.flac
+     5:34.28       58983500 B   ---   --   ---xx   flac  0.4514  07 Bob Dylan - Girl From The North Country.flac
+     4:58.50       52684844 B   ---   --   ---xx   flac  0.5325  08 Bob Dylan - Ballad Of A Thin Man.flac
+     5:10.00       54684044 B   ---   --   ---xx   flac  0.5380  09 Bob Dylan - Maggie's Farm.flac
+     3:51.55       40877804 B   ---   --   ---xx   flac  0.5264  10 Bob Dylan - The Man In Me.flac
+     6:12.57       65754908 B   ---   --   ---xx   flac  0.5210  11 Bob Dylan - Like A Rolling Stone.flac
+     4:58.24       52623692 B   ---   --   ---xx   flac  0.5072  12 Bob Dylan - I Shall Be Released.flac
+     4:32.31       48053756 B   ---   --   ---xx   flac  0.5085  13 Bob Dylan - Going Going Gone.flac
+     4:47.21       50676236 B   ---   --   ---xx   flac  0.5016  14 Bob Dylan - One Of Us Must Know (Sooner Or Later).flac
+     5:15.06       55580156 B   ---   --   ---xx   flac  0.4882  15 Bob Dylan - You're A Big Girl Now.flac
+    71:59.03      761879316 B                            0.5139  (15 files)
+===================
+===================
+===================
+=== shntool len for: bd78-03-09-d.flacf\disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:37.65       38431724 B   ---   --   ---xx   flac  0.4753  01 Bob Dylan - One More Cup Of Coffee.flac
+     5:53.22       62320988 B   ---   --   ---xx   flac  0.4517  02 Bob Dylan - Blowin' In The Wind.flac
+     2:53.48       30630140 B   ---   --   ---xx   flac  0.4537  03 Bob Dylan - I Want You.flac
+     5:10.38       54773420 B   ---   --   ---xx   flac  0.5134  04 Bob Dylan - Don't Think Twice, It's Alright.flac
+     5:11.10       54883964 B   ---   --   ---xx   flac  0.4992  05 Bob Dylan - Just Like A Woman.flac
+     4:07.49       43686092 B   ---   --   ---xx   flac  0.4540  06 Bob Dylan - Oh Sister.flac
+     4:21.17       46080428 B   ---   --   ---xx   flac  0.4486  07 Bob Dylan - Tomorrow Is A Long Time.flac
+     3:48.55       40348604 B   ---   --   ---xx   flac  0.5185  08 Bob Dylan - All Along The Watchtower.flac
+     4:07.27       43634348 B   ---   --   ---xx   flac  0.4530  09 Bob Dylan - I Don't Believe You.flac
+     3:54.28       41343500 B   ---   --   ---xx   flac  0.4738  10 Bob Dylan - All I Really Want To Do.flac
+     8:11.19       86657132 B   ---   --   ---xx   flac  0.4074  11 Bob Dylan - Simple Twist Of Fate.flac
+     8:14.53       87266300 B   ---   --   ---xx   flac  0.4467  12 Bob Dylan - It's Alright Ma.flac
+     7:09.36       75760316 B   ---   --   ---xx   flac  0.5048  13 Bob Dylan - Forever Young.flac
+     5:04.48       53738540 B   ---   --   ---xx   flac  0.5026  14 Bob Dylan - The Times They Are A-Changin'.flac
+    71:45.65      759555496 B                            0.4689  (14 files)
+===================
+===================
+===================

@@ -1,0 +1,14 @@
+Bob Dylan, 7/29/00, Columbia, Maryland, Merriweather Post Pavilion, 2CDR
+
+LB-4005, (75min+35min), Audience recording > Unknown transfer > CDR(x) > EAC (Secure/Offset) > WAV > FLAC (Level 8) > DIME, Full spectrum (not a MD recording). CEDAR-type fingerprint d1t12@4:36 "you wanna walk up there and walk back?" (male); d2t04@4:43 "please keep these stored under the seat for me, they can't be in the aisle way" (male). Background talk throughout. Good sound, B+.; bittorrent download 09/06; on most songs on d1 there is nothing above 15k except when it clips or is limited or distorts so not really full spectrum as reported above; on d2 it looks more full spectrum but that above 15k is probably all because of distortion; most of d2is not symetrical wav and seems ot limit at -6db on the bottom while top of was is not limited;;very good sound [B]; the fingerprints are there a little before the times listed but did not notice much other background talking as described above except on d1t6
+
+static d1t3 0:17 for 3 seconds; clips on loud parts of loud songs and get harsher such as d1t12 3:31
+
+CD1
+74:47, 01. Duncan And Brady (acoustic), 02. To Ramona (acoustic) (Larry on mandolin), 03. Desolation Row (acoustic), 04. It's All Over Now, Baby Blue (acoustic) (Larry on pedal steel), 05. Tangled Up In Blue (acoustic), 06. Searching For A Soldier's Grave (acoustic) (Larry on mandolin), 07. Watching The River Flow (Larry on lap steel), 08. Every Grain Of Sand, 09. Maggie's Farm, 10. Dignity, 11. Cold Irons Bound, 12. Leopard-Skin Pill-Box Hat, (encore), 
+
+CD2
+34:10, 13. Things Have Changed, 14. Like A Rolling Stone, 15. It Ain't Me, Babe (acoustic), 16. Highway 61 Revisited, 17. Blowin' In The Wind (acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

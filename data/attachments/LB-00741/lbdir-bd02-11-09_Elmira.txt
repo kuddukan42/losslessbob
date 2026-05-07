@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-09_Elmira 
+=================== 
+=================== 
+=================== 
+a450d34f2958bb25f654c14a9589161b  1___021109_Elmira\021109_101_Intro.shn
+097b922235c92bb7baab2b43bec69328  1___021109_Elmira\021109_102_Tweedle Dee & Tweedle Dum.shn
+bb982be89e3a3d5282bb3623632ac73e  1___021109_Elmira\021109_103_Carrying A Torch.shn
+4767bdbc7ed202d7a79fa8df1f32d479  1___021109_Elmira\021109_104_Tombstone Blues.shn
+d875f10f949ee29b8e511c1a03a3428c  1___021109_Elmira\021109_105_Watching the River Flow.shn
+d157dfc97225dfcf6afe3ac32c2210e9  1___021109_Elmira\021109_106_Things have changed.shn
+2949d2be723be24cff10e2a4a28d1fc5  1___021109_Elmira\021109_107_Brown Sugar.shn
+7c57dee93cded36665401e54a8d4cea3  1___021109_Elmira\021109_108_Positively 4th Street.shn
+f20fa05c677e7db370db3eb8fb8823b4  1___021109_Elmira\021109_109_It's Alright, Ma.shn
+db86d21e9aca137614ff36555097fedf  1___021109_Elmira\021109_110_Just like a woman.shn
+c2cd42f99df2fe59cdae67cbaf067154  1___021109_Elmira\021109_111_Drifters Escape.shn
+263ceed78db408010b5cb7b5c265bd61  1___021109_Elmira\elmira-disc1-fixed.md5
+25f4fb6b6597900465afafc3a95dea49  2___021109_Elmira\021109_201_Shelter.shn
+56d78fd1748aa4909423f92f47652812  2___021109_Elmira\021109_202_Old Man.shn
+056596bdc294420a8aa1f84d4f54c7f7  2___021109_Elmira\021109_203_Honest With Me.shn
+0226ee3c7b789ed4c6a2c33d7d307d30  2___021109_Elmira\021109_204_Don't think twice.shn
+c31bf75ebee12e00776a4c66d1e7fab2  2___021109_Elmira\021109_205_Highwater.shn
+1aa11a945c689b2a879482d4d5e09326  2___021109_Elmira\021109_206_Mutineer.shn
+a25a2692084d6780abef68476e519169  2___021109_Elmira\021109_207a_Floater.shn
+91203114003a0f0cd0dceb152ad7ac1c  2___021109_Elmira\021109_207b_band intro.shn
+462a4d2f266e5b964832a29983818a78  2___021109_Elmira\021109_208_Summer days.shn
+6148e2584fdd3d1ed01e3e8b797378de  2___021109_Elmira\021109_209_Knockin.shn
+68927d61655a012a1980e33f24298a96  2___021109_Elmira\021109_210_Watchtower.shn
+0cbf55c16309b0d2d85ce06481db7b7f  2___021109_Elmira\noname.md5
+17cf43124b4a4818af4730b326218317  bd02-11-09.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-09_Elmira\1___021109_Elmira 
+=================== 
+=================== 
+=================== 
+6b0f4fb5225669c49d585d1c92d89fbb  [shntool]  021109_101_Intro.wav
+3708a35650e43cee58d0817363ae8b3f  [shntool]  021109_102_Tweedle_Dee___Tweedle_Dum.wav
+04376173c8ae243acc58ff972e92b38d  [shntool]  021109_103_Carrying_A_Torch.wav
+cdc842b7eee49cafd82cd60c79d838ed  [shntool]  021109_104_Tombstone_Blues.wav
+3083cf7fb2907fae6b6b6a5fa453aaed  [shntool]  021109_105_Watching_the_River_Flow.wav
+fb752ef41952d840880b3d75af846b9b  [shntool]  021109_106_Things_have_changed.wav
+abf11de3a90973aa341b73aa27244a1f  [shntool]  021109_107_Brown_Sugar.wav
+4f9cee5f9405310bf7632c6117301853  [shntool]  021109_108_Positively_4th_Street.wav
+3dba17819e60cf7134c2602d01b00259  [shntool]  021109_109_It's_Alright,_Ma.wav
+4e285364927920969c945c0a0fdde547  [shntool]  021109_110_Just_like_a_woman.wav
+503e45af6d7742f8d55a4a1e956d2216  [shntool]  021109_111_Drifters_Escape.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-09_Elmira\2___021109_Elmira 
+=================== 
+=================== 
+=================== 
+5044dfdc99d488e675674f83778c5365  [shntool]  021109_201_Shelter.wav
+b96e67716c9b9a1099728f762290fe92  [shntool]  021109_202_Old_Man.wav
+cbdcc98761704caeb4f6693e0e12ab58  [shntool]  021109_203_Honest_With_Me.wav
+96f10591d831cea8bba13d0579b51181  [shntool]  021109_204_Don't_think_twice.wav
+ef927529e36b63ab5b51e445afb27f00  [shntool]  021109_205_Highwater.wav
+5ed9df55f024b47847ef8dac99ea6a04  [shntool]  021109_206_Mutineer.wav
+75ff44e0d69afaa524aea8a85b7d55fa  [shntool]  021109_207a_Floater.wav
+0c834d45a10300fc1a02d8942620b3c0  [shntool]  021109_207b_band_intro.wav
+5f9908217cd2279bd7b84c344980ee5a  [shntool]  021109_208_Summer_days.wav
+0fe4710465e7159d9ca8375f42281c9a  [shntool]  021109_209_Knockin.wav
+09ebc77069c9fc78620a9bcc35ec0af6  [shntool]  021109_210_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-09_Elmira\1___021109_Elmira 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:31.55        5597452 B   -b-   he   ---xx    shn  0.5095  021109_101_Intro.shn
+     4:31.70       47970318 B   -b-   -e   ---xx    shn  0.5473  021109_102_Tweedle Dee & Tweedle Dum.shn
+     5:38.71       59789454 B   -b-   -e   ---xx    shn  0.5098  021109_103_Carrying A Torch.shn
+     6:34.10       69525646 B   -b-   -e   ---xx    shn  0.5811  021109_104_Tombstone Blues.shn
+     5:17.16       55955598 B   -b-   -e   ---xx    shn  0.5592  021109_105_Watching the River Flow.shn
+     7:02.35       74522766 B   -b-   -e   ---xx    shn  0.5542  021109_106_Things have changed.shn
+     4:12.49       44568718 B   -b-   -e   ---xx    shn  0.6285  021109_107_Brown Sugar.shn
+     7:24.13       78351526 B   -b-   -e   ---xx    shn  0.5679  021109_108_Positively 4th Street.shn
+     8:12.06       86802574 B   -b-   -e   ---xx    shn  0.5539  021109_109_It's Alright, Ma.shn
+     7:44.22       81901710 B   -b-   -e   ---xx    shn  0.5462  021109_110_Just like a woman.shn
+     5:14.11       55414926 B   -b-   -e   ---xx    shn  0.6394  021109_111_Drifters Escape.shn
+    62:23.57      660400688 B                            0.5653  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-09_Elmira\2___021109_Elmira 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.38       63594638 B   -b-   -e   ---xx    shn  0.5611  021109_201_Shelter.shn
+     4:11.21       44327054 B   -b-   -e   ---xx    shn  0.5968  021109_202_Old Man.shn
+     6:48.40       72065166 B   -b-   -e   ---xx    shn  0.6142  021109_203_Honest With Me.shn
+     6:56.63       73531534 B   -b-   -e   ---xx    shn  0.4754  021109_204_Don't think twice.shn
+     7:28.51       79147150 B   -b-   -e   ---xx    shn  0.5762  021109_205_Highwater.shn
+     3:33.74       37747854 B   -b-   -e   ---xx    shn  0.4849  021109_206_Mutineer.shn
+     6:43.48       71201934 B   -b-   -e   ---xx    shn  0.4663  021109_207a_Floater.shn
+     0:43.60        7727246 B   -b-   -e   ---xx    shn  0.4793  021109_207b_band intro.shn
+    12:44.00      134768782 B   -b-   -e   ---xx    shn  0.5980  021109_208_Summer days.shn
+     6:07.38       64827534 B   -b-   -e   ---xx    shn  0.5607  021109_209_Knockin.shn
+     7:14.23       76611726 B   -b-   -e   ---xx    shn  0.6146  021109_210_Watchtower.shn
+    68:33.07      725550618 B                            0.5599  (11 files)
+=================== 
+=================== 
+=================== 

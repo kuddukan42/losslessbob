@@ -1,0 +1,42 @@
+===================
+===================
+===================
+=== bd-95-03-14-offmaster.txt
+===================
+===================
+===================
+Bob Dylan
+March 14 1995	
+Stadthalle  Furth, Germany
+Offmaster audience recording. Taper unidentified.
+
+Disk One
+Crash On The Levee (Down In The Flood) / If You See Her, Say Hello / All Along The 
+Watchtower / Just Like A Woman / Unbelievable / I'll Be Your Baby Tonight / Mr. Tambourine 
+Man (acoustic w band) / 
+
+Disk Two
+Masters Of War (acoustic w band) / Boots Of Spanish Leather (acoustic w band) / 
+Stuck Inside Of Mobile With The Memphis Blues Again / Man In The Long Black Coat / 
+Maggie's Farm / Like A Rolling Stone
+
+
+Disk One
+Track 01.flac:cf16309ace1d9d8861d17862d3113fe6
+Track 02.flac:485fc3242675301fcca33654c963fed0
+Track 03.flac:907601fa7f1250ebe9cc5cba7fafdffd
+Track 04.flac:59698e9b2ea328ae07687dd63d0ede9a
+Track 05.flac:1753ad6811e214c458bf30c1fefcfe2f
+Track 06.flac:609793697111d9ac91155f3592bc9f11
+Track 07.flac:6418e6f2a3403bdc52a78de3de80c449
+
+Disk Two
+Track 01.flac:a3d0c06e53b6743c0ccb2b8d7dcb4ed0
+Track 02.flac:d4c60bb990c90d8139013b5fa199fa65
+Track 03.flac:f097b4648a478758b96ef6ce04bf9614
+Track 04.flac:2437dceb7d62e69847994558c4532e60
+Track 05.flac:cbabc06350bb64ea86b4701974fc4b32
+Track 06.flac:616e553bde9cd5ff8181bd556842b925
+===================
+===================
+===================

@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-01-28.flacf 
+=================== 
+=================== 
+=================== 
+7a3b88b00b8aa0b2635c8860a9fe5d2d  CD1\01 Gotta serve somebody.flac
+159181222e607524fddd924411d3a3a5  CD1\02 Senor (Tales of Yankee Power).flac
+4250e80a8e7dd4b561ffc988ec664d99  CD1\03 Silvio.flac
+7f4c336be5c04c73dc9f6bbb5e03ffff  CD1\04 Just like a woman.flac
+b38094efcfbfc4d20679733e0fb92384  CD1\05 Can't wait.flac
+d4657dbcfc07e0b7cb3ef501c77f0b8c  CD1\06 Stone walls and steel bars.flac
+536d523f0dba2ae85b1f3fddd6f11058  CD1\07 Don't think twice, it's all right.flac
+38d81fe8225c540eeeb6cacc139521ef  CD1\08 The times they are a-changin'.flac
+b0977b01a5aa0a8f2af9ef71e8e41ea8  CD1\09 Tangled up in blue.flac
+4026135b9a0a4f32d2bebb01b86c7d1e  CD1\FLAC CD1.md5
+1f3b4540ab3bf482acc8ce6641f699ad  CD2\10 Make you feel my love.flac
+3d1b5f53b0cd9bbadbca223375453971  CD2\11 Highway 61 revisited.flac
+7f7ea9accc5c71ab8571ad481284f9ab  CD2\12 Love sick.flac
+c30b7e7194a031a16637911f09b43988  CD2\13 Leopard-skin pill-box hat.flac
+2ce402df467a23b8e247372b5e5ab446  CD2\14 Blowin' in the wind.flac
+a69b2f3adef57ad65fb7102a556d2005  CD2\15 Not fade away.flac
+548c4aecd0f558193eb3e8ac99fb237f  CD2\FLAC CD2.md5
+a76c507e6a255859a48613ebb47c2fa2  Info\1999-01-28 National Car Rental Center, Sunrise, Fort Lauderdale, Florida, USA [uT].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-01-28.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Gotta serve somebody.flac:e2f060b8d0794011edc7b222e5d7cfe4
+02 Senor (Tales of Yankee Power).flac:7e38c3a586454dc2001247c99d7e1f7b
+03 Silvio.flac:636c159fc986e458c3d2d5c351ecca63
+04 Just like a woman.flac:e8ba518dd3dc9589d8a4df19133e42b4
+05 Can't wait.flac:5681ebc74b889c2dee4a97bc00fced7b
+06 Stone walls and steel bars.flac:eb89d061efea6049de254a29adc668d3
+07 Don't think twice, it's all right.flac:fb4ef7d008cd476fc477f277e449a4c2
+08 The times they are a-changin'.flac:8715d44bd7c514499c920e3ab0fe7479
+09 Tangled up in blue.flac:95b5eb7e79075bf67b11d91d07b3b380
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-01-28.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Make you feel my love.flac:26dcd258b62bedabb6b0ceb94546d2e8
+11 Highway 61 revisited.flac:f9e487713c15409c7e6d04118e8be112
+12 Love sick.flac:8f75f17dd8ed9067951b82a6188c220a
+13 Leopard-skin pill-box hat.flac:67b12523e8156ac958c2817076d43e6e
+14 Blowin' in the wind.flac:e98b7e506a3be67a9685e793b2f539c0
+15 Not fade away.flac:588b0490b0f54352d6cfb153a3bff7f4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-01-28.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:15.54       34525052 B   ---   --   ---xx   flac  0.6190  01 Gotta serve somebody.flac
+     4:49.38       51069020 B   ---   --   ---xx   flac  0.5999  02 Senor (Tales of Yankee Power).flac
+     5:46.43       61135580 B   ---   --   ---xx   flac  0.6087  03 Silvio.flac
+     5:52.46       62201036 B   ---   --   ---xx   flac  0.5836  04 Just like a woman.flac
+     6:28.20       68490284 B   ---   --   ---xx   flac  0.5912  05 Can't wait.flac
+     3:00.27       31815548 B   ---   --   ---xx   flac  0.5269  06 Stone walls and steel bars.flac
+     6:24.12       67765868 B   ---   --   ---xx   flac  0.5610  07 Don't think twice, it's all right.flac
+     5:54.07       62462108 B   ---   --   ---xx   flac  0.5507  08 The times they are a-changin'.flac
+     7:26.49       78789692 B   ---   --   ---xx   flac  0.6191  09 Tangled up in blue.flac
+    48:57.71      518254188 B                            0.5865  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-01-28.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:51.40       51426524 B   ---   --   ---xx   flac  0.4680  10 Make you feel my love.flac
+     5:49.30       61634204 B   ---   --   ---xx   flac  0.5961  11 Highway 61 revisited.flac
+     5:37.63       59595020 B   ---   --   ---xx   flac  0.5165  12 Love sick.flac
+     6:01.44       63783932 B   ---   --   ---xx   flac  0.5639  13 Leopard-skin pill-box hat.flac
+     5:12.52       55159148 B   ---   --   ---xx   flac  0.4912  14 Blowin' in the wind.flac
+     4:51.62       51478268 B   ---   --   ---xx   flac  0.5772  15 Not fade away.flac
+    32:24.66      343077096 B                            0.5374  (6 files)
+=================== 
+=================== 
+=================== 

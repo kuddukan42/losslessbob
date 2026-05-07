@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87 09 23 helsinki master 
+=================== 
+=================== 
+=================== 
+dc7b6a5fda7d572e013145b774f2e92d  87 09 23 t01.shn
+af15e587dcfe87a1a8863754786d74a3  87 09 23 t02.shn
+479839d6946e5c9f912821c3ea0b099d  87 09 23 t03.shn
+c92384981166d1de9ea74389288ea43a  87 09 23 t04.shn
+e057d1bbbe51ae3746f4c2252e27246b  87 09 23 t05.shn
+0a8a04c62cf04d706c7ee071cede2ac7  87 09 23 t06.shn
+b4ce2faf0c7d6a9fea74eec781ae1ab8  87 09 23 t07.shn
+5872313e2eb146feb260769bc1f0f8f6  87 09 23 t08.shn
+e0d40d8b53690504b7e682025cbf9056  87 09 23 t09.shn
+0be46c526f716f3cebfbe79afac41f00  87 09 23 t10.shn
+baadb9cca3ae33d84d0cc176fd923c34  87 09 23 t11.shn
+d27d941df23406b4d053afad43a08989  87 09 23 t12.shn
+62b76d9d957d83308f03984ffc8c91ec  87 09 23 t13.shn
+daa9e6bcc303c196505ab029c73dcc59  87 09 23 t14.shn
+a13c7b814d701a6f5852bb19bbf170c2  87 09 23.md5
+b4667025646d9f5c3f372d8f6f0e080d  bd87-09-23.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87 09 23 helsinki master 
+=================== 
+=================== 
+=================== 
+4a67e9d8d06ad65fb992b21055b39989  [shntool]  87_09_23_t01.wav
+851f7f4dd9cf8179b7c3f4d49f53f673  [shntool]  87_09_23_t02.wav
+e43c7ed9202b95c44696b363e20b598d  [shntool]  87_09_23_t03.wav
+05655fbbb7565249779e1ffcc37b622b  [shntool]  87_09_23_t04.wav
+ea1b200e5487e62ececa252b67e52f3c  [shntool]  87_09_23_t05.wav
+176502f3d22d2f2409bd51931cd0c81e  [shntool]  87_09_23_t06.wav
+dc448c51fe0d7f9dbabffd46250a9215  [shntool]  87_09_23_t07.wav
+2cfcbbc260746384465512225e88467b  [shntool]  87_09_23_t08.wav
+8c9dbef58e9139e787c301e3aadfaf48  [shntool]  87_09_23_t09.wav
+13ace1fb012f4992a3e3a691c82f35da  [shntool]  87_09_23_t10.wav
+82237e962820c40189c14569111f4a83  [shntool]  87_09_23_t11.wav
+51d8a684dbc162db8ed4dcc4dd1bd933  [shntool]  87_09_23_t12.wav
+a03d0035f95c20dff77edab17ed0b08e  [shntool]  87_09_23_t13.wav
+c4ddfda7036e223fd7bd5ca79686af5e  [shntool]  87_09_23_t14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87 09 23 helsinki master 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.67       49549628 B   ---   --   ---xx    shn  0.5672  87 09 23 t01.shn
+     5:10.30       54754604 B   ---   --   ---xx    shn  0.6442  87 09 23 t02.shn
+     2:51.08       30183260 B   ---   --   ---xx    shn  0.6575  87 09 23 t03.shn
+     4:50.06       51170156 B   ---   --   ---xx    shn  0.5136  87 09 23 t04.shn
+     3:41.56       39116156 B   ---   --   ---xx    shn  0.6437  87 09 23 t05.shn
+     3:53.16       41138876 B   ---   --   ---xx    shn  0.6213  87 09 23 t06.shn
+     5:13.03       55220300 B   ---   --   ---xx    shn  0.5773  87 09 23 t07.shn
+     6:52.09       72698012 B   ---   --   ---xx    shn  0.5340  87 09 23 t08.shn
+     3:41.43       39085580 B   ---   --   ---xx    shn  0.6097  87 09 23 t09.shn
+     5:56.43       62899580 B   ---   --   ---xx    shn  0.5535  87 09 23 t10.shn
+     4:20.20       45911084 B   ---   --   ---xx    shn  0.5819  87 09 23 t11.shn
+     5:29.03       58042700 B   ---   --   ---xx    shn  0.6365  87 09 23 t12.shn
+     7:55.74       83964092 B   ---   --   ---xx    shn  0.5719  87 09 23 t13.shn
+     4:04.25       43100444 B   ---   --   ---xx    shn  0.5957  87 09 23 t14.shn
+    68:40.28      726834472 B                            0.5874  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-12-You-Cant-Kill-An-Idea-d.flacf 
+=================== 
+=================== 
+=================== 
+8259696f961bb1aa44740655e1636a56  flac\d1t01-You Gotta Serve Somebody.flac
+767cdbdc19c44b43c1b994fde3c04e0c  flac\d1t02-I Believe In You.flac
+382d7d8ddc77644a0e668f3b0ed4b9ab  flac\d1t03-Like A Rolling Stone.flac
+dded2c53cdb0f26b12566eb0069ed7fb  flac\d1t04-The Lonesome Death Of Hattie Carroll.flac
+02d96e4a073bd0c4cfa2deabd9b208fb  flac\d1t05-Man Gave Names To All Animals.flac
+31657c797cec6e6ba6252650845a1a36  flac\d1t06-Maggie's Farm.flac
+aeec2344cb9ace29428ab058f6559459  flac\d1t07-Girl From The North Country.flac
+6121f782ec11052f4c62425f7c2bbc99  flac\d1t08-Ballad Of A Thin Man.flac
+31cfe7fee0e9c605348a2193d8c74a15  flac\d1t09-Simple Twist Of Fate.flac
+70bf9421ca1158aad1ac40605e27b8eb  flac\d1t10-Heart Of Mine.flac
+216b29717dcfdb8e4a95dfb6f192e948  flac\d1t11-All Along The Watchtower.flac
+58114ab909847ce1792d14c167968eb5  flac\d1t12-I'll Be Your Baby Tonight.flac
+afd858e65670561ebec2929aacdb47f8  flac\d1t13-Forever Young.flac
+851b4c18ddb689e0410926ffdb10fb5f  flac\d2t01-Gamblin' Man.flac
+80a4a36838edabcfc683ddabc662f51c  flac\d2t02-The Times They Are A-Changin'.flac
+8518ef97f6438be51c5dfbf7e79e7908  flac\d2t03-A Hard Rain's A-Gonna Fall.flac
+b63ddf5e620d742cdffd9608071fb3a7  flac\d2t04-Watered-Down Love.flac
+5684c1463e87f0397308274e57452455  flac\d2t05-Shot Of Love.flac
+496cd2227e38e0aa9085547682223380  flac\d2t06-Just Like A Woman.flac
+f93dd0674b6d0c77f72f73b1f0d320ec  flac\d2t07-Solid Rock.flac
+e67d86a4c39fe09d9f6f9268002f810b  flac\d2t08-Masters Of War.flac
+272a115de2ee8a2b0d70d75ff1acc4d2  flac\d2t09-When You Gonna Wake Up.flac
+8e0f7306f6c3cf50a1d5c018dbb10555  flac\d2t10-In The Garden.flac
+ecdae54b1bfcadd4227e8c39b24f2d22  flac\d2t11-Blowin' In The Wind.flac
+2565adc461f5593cad51ee67c8a87ca6  flac\d2t12-It's Alright Ma (I'm Only Bleeding).flac
+8c7c357b0230e1225dc8408283baefd8  flac\d2t13-It Ain't Me Babe.flac
+39c6dd060fa16772a6419e59c78f99bb  flac\d2t14-Knockin' On Heaven's Door.flac
+649248c228a3abbb9ae1c7992c44a795  You Can't Kill An Idea (Disc 1).log
+210e9347a10e1f02a1f17ba59c344f9f  You Can't Kill An Idea (Disc 2).log
+84628fd755a7d2da3f68b7dadd3c7811  You Can't Kill An Idea.md5
+b8ad29bf74e3ee93d31beb2c99593a2f  You Can't Kill An Idea.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-12-You-Cant-Kill-An-Idea-d.flacf\flac 
+=================== 
+=================== 
+=================== 
+d1t01-you gotta serve somebody.flac:a16c4eb091870b917b7e35684aa7e1d2
+d1t02-i believe in you.flac:a1f0e0e1c6a2a0e709949f3bbc59d11d
+d1t03-like a rolling stone.flac:0a1c25e5ed328aedc82c007a86b13913
+d1t04-the lonesome death of hattie carroll.flac:36f42670cd3fbd9c764907e2e4be7ef1
+d1t05-man gave names to all animals.flac:5c7affebb999baf1d2ab485c36b37b15
+d1t06-maggie's farm.flac:df28b1b687b1319dfce4988ceecf8da6
+d1t07-girl from the north country.flac:4f2e7af1bb4885ed8d7b5b49596c9ea4
+d1t08-ballad of a thin man.flac:0f57a5a75fc6111973dd155ba593359a
+d1t09-simple twist of fate.flac:7596eeb4545d3e62d1a9e425723c6688
+d1t10-heart of mine.flac:800cd717499c69b28b2c51150dd369a3
+d1t11-all along the watchtower.flac:e940ee78e648413e275d7a204a66a8a4
+d1t12-i'll be your baby tonight.flac:e409f9903e04bdd5ab0017df5c70f40a
+d1t13-forever young.flac:37855bda1f5a043a468858760095da5f
+d2t01-gamblin' man.flac:b507c8766de7f8c6f4880de789efe9a6
+d2t02-the times they are a-changin'.flac:85dfefc2157e09ad8caf9c834695e5e1
+d2t03-a hard rain's a-gonna fall.flac:655284cdf005e1e128b6199878d36089
+d2t04-watered-down love.flac:01756362a84eca2579c0df40b3421287
+d2t05-shot of love.flac:62d6189a8aac18a87522f804b835a9c8
+d2t06-just like a woman.flac:3ab1496cd482930fc82fd766283c9139
+d2t07-solid rock.flac:92fbbe46ab49f9edd626a0b518591dce
+d2t08-masters of war.flac:cc70857b2a59338e9c52e43514c0aafb
+d2t09-when you gonna wake up.flac:b49e7e1b4844e19095a554b405b8532a
+d2t10-in the garden.flac:f3e5dab0e3a35f2c321c91dc0f10694b
+d2t11-blowin' in the wind.flac:3d62e5eb8fe30b18bc91942151428c76
+d2t12-it's alright ma (i'm only bleeding).flac:0fd07055fc62c6d3553687d51fd47ba6
+d2t13-it ain't me babe.flac:0b54135e46b589ff79afe85c8334bb3b
+d2t14-knockin' on heaven's door.flac:53cfa1b38d1aea41bf9445a35f0b8d7f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-12-You-Cant-Kill-An-Idea-d.flacf\flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.31       42408956 B   ---   --   ---xx   flac  0.5643  d1t01-You Gotta Serve Somebody.flac
+     4:24.18       46611980 B   ---   --   ---xx   flac  0.5501  d1t02-I Believe In You.flac
+     5:31.42       58487228 B   ---   --   ---xx   flac  0.6144  d1t03-Like A Rolling Stone.flac
+     5:12.03       55043900 B   ---   --   ---xx   flac  0.5971  d1t04-The Lonesome Death Of Hattie Carroll.flac
+     5:31.47       58498988 B   ---   --   ---xx   flac  0.5828  d1t05-Man Gave Names To All Animals.flac
+     3:11.07       33708908 B   ---   --   ---xx   flac  0.6497  d1t06-Maggie's Farm.flac
+     3:36.24       38158892 B   ---   --   ---xx   flac  0.6008  d1t07-Girl From The North Country.flac
+     3:47.15       40078124 B   ---   --   ---xx   flac  0.5957  d1t08-Ballad Of A Thin Man.flac
+     4:27.38       47188220 B   ---   --   ---xx   flac  0.5984  d1t09-Simple Twist Of Fate.flac
+     3:05.45       32739884 B   ---   --   ---xx   flac  0.5490  d1t10-Heart Of Mine.flac
+     2:31.65       26789324 B   ---   --   ---xx   flac  0.5605  d1t11-All Along The Watchtower.flac
+     2:18.26       24404396 B   ---   --   ---xx   flac  0.5535  d1t12-I'll Be Your Baby Tonight.flac
+     4:24.67       46727228 B   ---   --   ---xx   flac  0.5275  d1t13-Forever Young.flac
+     3:49.57       40529708 B   ---   --   ---xx   flac  0.5016  d2t01-Gamblin' Man.flac
+     6:03.55       64162604 B   ---   --   ---xx   flac  0.5057  d2t02-The Times They Are A-Changin'.flac
+     6:00.04       63513452 B   ---   --   ---xx   flac  0.5202  d2t03-A Hard Rain's A-Gonna Fall.flac
+     4:17.70       45499484 B   ---   --   ---xx   flac  0.5512  d2t04-Watered-Down Love.flac
+     4:58.48       52680140 B   ---   --   ---xx   flac  0.5677  d2t05-Shot Of Love.flac
+     4:04.46       43149836 B   ---   --   ---xx   flac  0.5440  d2t06-Just Like A Woman.flac
+     4:17.57       45468908 B   ---   --   ---xx   flac  0.5375  d2t07-Solid Rock.flac
+     3:06.66       32965676 B   ---   --   ---xx   flac  0.5532  d2t08-Masters Of War.flac
+     5:04.42       53724428 B   ---   --   ---xx   flac  0.5377  d2t09-When You Gonna Wake Up.flac
+     6:54.00       73029644 B   ---   --   ---xx   flac  0.5138  d2t10-In The Garden.flac
+     5:34.71       59084636 B   ---   --   ---xx   flac  0.5197  d2t11-Blowin' In The Wind.flac
+     5:54.39       62537372 B   ---   --   ---xx   flac  0.5237  d2t12-It's Alright Ma (I'm Only Bleeding).flac
+     6:58.60       73876364 B   ---   --   ---xx   flac  0.5163  d2t13-It Ain't Me Babe.flac
+     4:42.16       49782476 B   ---   --   ---xx   flac  0.5403  d2t14-Knockin' On Heaven's Door.flac
+   123:51.09     1310850756 B                            0.5511  (27 files)
+=================== 
+=================== 
+=================== 

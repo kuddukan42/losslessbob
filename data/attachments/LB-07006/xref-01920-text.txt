@@ -1,0 +1,56 @@
+===================
+===================
+===================
+=== PF_2000-07-14 MN info.txt
+===================
+===================
+===================
+Phil & Friends / Bob Dylan
+July 14th, 2000
+Minneapolis, MN
+Target Center
+
+lineage: SBD > ? > CD > EAC > FLAC
+
+Phil Lesh & Friends (Bob Dylan Band opened)
+lineup: Phil Lesh (b,v), John Molo (p), Robben Ford (g), Paul Barrere (g), Bill Payne (k)
+
+01 Unbroken Chain > Not Fade Away
+02 crowd
+03 Scarlet Begonias
+04 intro > Fat Man In The Bathtub
+05 outro
+
+Bob Dylan & His Band
+lineup: Bob Dylan: (v,g,h), Charlie Sexton (g), Larry Campbell (g), Tony Garnier (b), David Kemper (p)
+
+06 Things Have Changed
+07 Like A Rolling Stone
+08 Girl From North Country
+09 tuning
+
+Enjoy!
+
+Here is a note from the recording of this up at bt.etree.org (http://bt.etree.org/details.php?id=520698) that may help to explain why I came to possess a CD with both partial sets on it. I wonder if the Bob Dylan included here is an encore due to a note I found on db.etree.org, but don't know enough about these shows to know if that would even make sense...
+
+"So just to tell you all the little story behind this show. I moved to Colorado in 99 and one my roomates friends came out to stay with us. He was the lead engineer for the Target Center at the time. He took his DAT to the show and recorded what he could. He said that he is very busy especially with two acts that night. So this why we have what we have from this show. I hope everyone enjoys this little gem. Thanks again Rob for posting this on DaD and for now seeing this on the tree.
+PEace JT"
+===================
+===================
+===================
+=== Phil & Friends 2000-07-14 Minneapolis, MN.md5
+===================
+===================
+===================
+1cb7ae2048174c53caf58904f8cad6e9 *01 Unbroken Chain, Not Fade Away.flac
+21e17e72b5570babd5e3b7a81e5c712a *02 crowd.flac
+d502678eedf135d8fc9cda8919b19d0a *03 Scarlet Begonias.flac
+5db36e953b1657516390bca44212fd92 *04 intro, Fat Man In The Bathtub.flac
+f9eaf8516aff1ef9d70f8b80013ee32a *05 outro.flac
+c0fbd239b7ab8dbd56d39a91b85741c0 *06 Things Have Changed.flac
+a59d795753acd52bdf2cdb288127ab5e *07 Like A Rolling Stone.flac
+7d06c16dd2490777da8b6c95fbd4528b *08 Girl From North Country.flac
+50530bce838ff21d0633f47c88ac0261 *09 tuning.flac
+===================
+===================
+===================

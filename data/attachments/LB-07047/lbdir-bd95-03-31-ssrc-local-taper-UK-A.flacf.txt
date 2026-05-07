@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-31-ssrc-local-taper-UK-A.flacf 
+=================== 
+=================== 
+=================== 
+02a375160c791c97176da031966214b4  bd-19950331-London.ffp
+f6803ac35a03101f2e77f358a35399f0  bd-19950331-London.md5
+bd516dfab7fc70a9adb32a7a3731cc89  bd1995-03-31-d1t01.flac
+c34afae00f86cffd4f387bab3e15ca7c  bd1995-03-31-d1t02.flac
+c1125196627f180aa8d803c0ebbb5e7c  bd1995-03-31-d1t03.flac
+48827c8fb33b77ef4f2ba54c5a40a46b  bd1995-03-31-d1t04.flac
+bbcf52e151b32e99d4499efda85fa57a  bd1995-03-31-d1t05.flac
+0711e04d01fc29be6e5e21d80de18bdb  bd1995-03-31-d1t06.flac
+876ba5006c4f2f85daee5fb9e09cf9bb  bd1995-03-31-d1t07.flac
+037618789efdf5e333baf814f23b5208  bd1995-03-31-d1t08.flac
+38a2183e3e1b3b11bd6a7673c86794f8  bd1995-03-31-d1t09.flac
+866e7ec21c306f8fdd3cfeb172b17066  bd1995-03-31-d1t10.flac
+c4c46ba02900193d68aa1e758377e9fc  bd1995-03-31-d2t01.flac
+a86655f902b85b4c5eacebc5aaf0f5f9  bd1995-03-31-d2t02.flac
+6d622ffe10b393bb95494208ef14da1d  bd1995-03-31-d2t03.flac
+31d530a8146e954c91cf607920cf8837  bd1995-03-31-d2t04.flac
+4cf413c52148cb854070cb32c0bde609  bd1995-03-31-d2t05.flac
+2bb605485570bf3a713283ce9699b6b9  bd1995-03-31-d2t06.flac
+80ac333cf73a33015e8642dd7013e753  bd1995-03-31-d2t07.flac
+81f846802cc7da38ffc405dc65274f87  bd1995-03-31-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-31-ssrc-local-taper-UK-A.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-03-31-d1t01.flac:5126655df3bcc5314615529ab03d825c
+bd1995-03-31-d1t02.flac:be59a2deca122527ab8983a35b0a1285
+bd1995-03-31-d1t03.flac:7b4cff4d8a997acc180c4dbf1666e49f
+bd1995-03-31-d1t04.flac:fb89b3b166c4fe8bebef0f48fc9abce7
+bd1995-03-31-d1t05.flac:13feef842d5d1f0495fec3bde921e1c1
+bd1995-03-31-d1t06.flac:7feac1cc6358b00f557fca59d951bef4
+bd1995-03-31-d1t07.flac:381c8dba6f45b537e70efcfc6dd14a5f
+bd1995-03-31-d1t08.flac:4d1ad930766048729a7a78b820a06158
+bd1995-03-31-d1t09.flac:3e8658ead87c113192867893b60810fc
+bd1995-03-31-d1t10.flac:15bcf8998bce3304318cac0eaac489a8
+bd1995-03-31-d2t01.flac:77088a75b3a12a5842a47cedb3d36cfd
+bd1995-03-31-d2t02.flac:cd9b78b9fbce7d96564aea380786f0ee
+bd1995-03-31-d2t03.flac:9c4b09b59449cd988f03fe540f6d8543
+bd1995-03-31-d2t04.flac:a21b5618c6bcb68f68f175d530b92e6c
+bd1995-03-31-d2t05.flac:0a4a2da192bb5684795234f3ecf7aa6b
+bd1995-03-31-d2t06.flac:da37074157d946e12e3883252f794955
+bd1995-03-31-d2t07.flac:3a66a5cbc3feb58fc3ae24efbe2539ca
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-31-ssrc-local-taper-UK-A.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:12.35        2199164 B   ---   --   ---xx   flac  0.5856  bd1995-03-31-d1t01.flac
+     4:59.58       52880060 B   ---   --   ---xx   flac  0.6308  bd1995-03-31-d1t02.flac
+     5:14.65       55542524 B   ---   --   ---xx   flac  0.5761  bd1995-03-31-d1t03.flac
+     6:12.21       65670236 B   ---   --   ---xx   flac  0.6123  bd1995-03-31-d1t04.flac
+     6:24.26       67798796 B   ---   --   ---xx   flac  0.5729  bd1995-03-31-d1t05.flac
+     7:52.29       83329052 B   ---   --   ---xx   flac  0.6197  bd1995-03-31-d1t06.flac
+     6:39.36       70468316 B   ---   --   ---xx   flac  0.5415  bd1995-03-31-d1t07.flac
+     6:54.52       73151948 B   ---   --   ---xx   flac  0.4534  bd1995-03-31-d1t08.flac
+     6:35.48       69790940 B   ---   --   ---xx   flac  0.4549  bd1995-03-31-d1t09.flac
+     8:01.59       84987212 B   ---   --   ---xx   flac  0.4462  bd1995-03-31-d1t10.flac
+     6:30.66       68951276 B   ---   --   ---xx   flac  0.6344  bd1995-03-31-d2t01.flac
+     8:34.65       90822524 B   ---   --   ---xx   flac  0.5787  bd1995-03-31-d2t02.flac
+     9:45.25      103252844 B   ---   --   ---xx   flac  0.6136  bd1995-03-31-d2t03.flac
+     7:30.60       79521164 B   ---   --   ---xx   flac  0.5872  bd1995-03-31-d2t04.flac
+     7:04.43       74894780 B   ---   --   ---xx   flac  0.5333  bd1995-03-31-d2t05.flac
+     5:11.63       55008620 B   ---   --   ---xx   flac  0.5972  bd1995-03-31-d2t06.flac
+     4:16.06       45172556 B   ---   --   ---xx   flac  0.6322  bd1995-03-31-d2t07.flac
+   108:02.07     1143442012 B                            0.5650  (17 files)
+=================== 
+=================== 
+=================== 

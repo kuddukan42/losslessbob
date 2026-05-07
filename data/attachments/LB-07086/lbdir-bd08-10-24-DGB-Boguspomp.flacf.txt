@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-10-24-DGB-Boguspomp.flacf 
+=================== 
+=================== 
+=================== 
+9800264ca34b173c2520938524ddde3a  2008 10 24 Bob Dylan Vancouver 131.40 MC (DGB - Boguspomp).md5
+8eb32acd612c7941540a58d3c28f7ce9  Bob Dylan 2008 10 24 Vancouver MC DGB - Boguspomp.txt
+a0f3dc16c75975e50331929176a29430  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (01).flac
+f5e540cccc1306d22dc51a1e62de0a71  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (02).flac
+63f8837fbc0d2c52b11bac83368439ad  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (03).flac
+0152096fab156d0ecde5bebedf9386d0  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (04).flac
+937dc4517eebe3488b1df96e512f625a  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (05).flac
+af98eb37bfa62a8bc029093678d8ceea  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (06).flac
+d6bbb33b7a988fd5dd94aa7f9485eea6  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (07).flac
+cd35872fe8b1d04bb53e5355da29cfe2  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (08).flac
+87557abc279699467bc6a523531b67a5  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (09).flac
+1cd2d6c28f1c42c6f29e8808264e5295  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (10).flac
+58d8f733c71bcdc699c459b528b04f53  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (11).flac
+76f3f81b2f935b1cac47fbe066352664  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (12).flac
+550562927feba43b1b942dda2a0d8247  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (13).flac
+9483b3e1fb5b3cf767632837162ca741  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (14).flac
+2b0e26cda6f058403ae6072b87fc51a2  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (15).flac
+5e230fb6d831d8781e7c23185897549c  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (16).flac
+0eb542b03f5f932cc4c566ef22a39824  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (17).flac
+9ae1200b488023d0ce891db872316894  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (18).flac
+a93ea3685053d4509330482ba91a58c1  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (19).flac
+79b244c1981bc0530d611c5ec8eb509d  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (20).flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-10-24-DGB-Boguspomp.flacf 
+=================== 
+=================== 
+=================== 
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (01).flac:5e9916b803edacc6a14f4689275cd6bf
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (02).flac:835cc4223544c65308e73dee6423b8b6
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (03).flac:2df20d5260f40108aa49b0948a77b541
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (04).flac:dde66f3900173971e67192f3c570e162
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (05).flac:43b2c9ce7ab00b9a2fbbf8d77d1ed957
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (06).flac:ba41a0ee4b694622dff3eb0f69333356
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (07).flac:6b28c6243a594607c96968a07cf9c089
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (08).flac:88f32f9d539dd72a6f737057bea17e92
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (09).flac:a3323dc21ec9bf651901192e6f949e1d
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (10).flac:9ccf0f8c126b92d7530cd04c02073922
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (11).flac:a454bd6ec603215a3704db94ea57d23c
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (12).flac:6b0d06674c88b67f6557c784121f1082
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (13).flac:ce096b14d8aa00fb9f97c8667510179f
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (14).flac:22a899d589c5d08a992fcd82a7643af0
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (15).flac:d45c08ee058ce953057d557fa1a2cacd
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (16).flac:d7785e56a5c40b28afc24a36b48c4423
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (17).flac:b75561c966f927ea92155044001719e5
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (18).flac:64290aa8d39c2d4a77f38d7cf390c15c
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (19).flac:010c0a0133c9fa75082b8a4e0d9eef0b
+Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (20).flac:ee19d50ce6496a7705430e8091fed220
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-10-24-DGB-Boguspomp.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.41        7152476 B   ---   --   ---xx   flac  0.5071  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (01).flac
+     5:42.06       60342956 B   ---   --   ---xx   flac  0.6459  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (02).flac
+     5:52.39       62184572 B   ---   --   ---xx   flac  0.6330  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (03).flac
+     6:04.55       64339004 B   ---   --   ---xx   flac  0.6299  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (04).flac
+     6:47.27       71858348 B   ---   --   ---xx   flac  0.5822  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (05).flac
+     7:26.70       78839084 B   ---   --   ---xx   flac  0.6540  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (06).flac
+     8:14.51       87261596 B   ---   --   ---xx   flac  0.6151  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (07).flac
+     5:54.22       62497388 B   ---   --   ---xx   flac  0.6793  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (08).flac
+     6:29.56       68751356 B   ---   --   ---xx   flac  0.6095  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (09).flac
+     7:52.74       83434892 B   ---   --   ---xx   flac  0.6542  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (10).flac
+     7:58.58       84455660 B   ---   --   ---xx   flac  0.6083  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (11).flac
+    10:01.74      106190492 B   ---   --   ---xx   flac  0.6452  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (12).flac
+    11:11.72      118533788 B   ---   --   ---xx   flac  0.6224  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (13).flac
+     7:34.66       80240876 B   ---   --   ---xx   flac  0.6691  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (14).flac
+     8:29.19       89832332 B   ---   --   ---xx   flac  0.5733  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (15).flac
+     7:45.50       82143644 B   ---   --   ---xx   flac  0.6698  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (16).flac
+     3:57.42       41905628 B   ---   --   ---xx   flac  0.5535  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (17).flac
+     6:58.02       73739948 B   ---   --   ---xx   flac  0.6669  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (18).flac
+     0:57.55       10184204 B   ---   --   ---xx   flac  0.5834  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (19).flac
+     5:30.44       58315532 B   ---   --   ---xx   flac  0.6455  Dylan 2008 10 24 Vancouver MC DGB - Boguspomp (20).flac
+   131:32.23     1392203776 B                            0.6309  (20 files)
+=================== 
+=================== 
+=================== 

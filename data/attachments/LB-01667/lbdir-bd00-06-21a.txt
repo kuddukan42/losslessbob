@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-21a 
+=================== 
+=================== 
+=================== 
+9805f6799e31b647fdb2979d3ba307c8  bd00-06-21a.txt
+b33e6ba60432428e2d57543fdabf0325  d1\01 - Audio Track.shn
+28e59962b749588f3e5a2bd7a0c7a7b8  d1\02 - Audio Track.shn
+cb7adc349bbcaad6842d2db5fd3f8f96  d1\03 - Audio Track.shn
+e48c418f5611557318b9d4b36a5c8df2  d1\04 - Audio Track.shn
+6a184f936bcb6f85d6ae0128a8ad801f  d1\05 - Audio Track.shn
+37166ac57e3cf0ba764ecbee6c2723c6  d1\06 - Audio Track.shn
+a2c8ae5003f4e503f180b217874d9497  d1\07 - Audio Track.shn
+ce19dbda715d9bbe01c48292b18b95ee  d1\08 - Audio Track.shn
+4893f7c68fe3a390e415f99c478822f7  d1\09 - Audio Track.shn
+14b75e177116a461c8b0d3681491e42b  d1\10 - Audio Track.shn
+566227792d446021f5d5ba850058962e  d1\11 - Audio Track.shn
+63f9e2307251b021d3eb8d7372417edc  d1\12 - Audio Track.shn
+0d7ea4e5b742db88df7586ac3efc5f3d  d1\noname.md5
+9e8ff5925c18cd5d1ba3dadd8fae229e  d2\01 - Audio Track.shn
+717d2c35e5d45b7f5f7cc27c4cd2decf  d2\02 - Audio Track.shn
+04c7f98d6452b908a1195347371ce1b5  d2\03 - Audio Track.shn
+b6d95045b46e7cd019f565aa3ac8a7f6  d2\04 - Audio Track.shn
+677c24b74f86d6736558436dc937d93e  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-06-21a\d1 
+=================== 
+=================== 
+=================== 
+d36c18ef68e0860acb4dd05150613ab7  [shntool]  01_-_Audio_Track.wav
+7222b36b20eb8c8dac7c3f9e101c1398  [shntool]  02_-_Audio_Track.wav
+7a8583bdb3fed3e68c0657a359772d6f  [shntool]  03_-_Audio_Track.wav
+ebceaf76afb08118c70cd2311d6c52da  [shntool]  04_-_Audio_Track.wav
+97dd41751019769a914ab1314e8511bb  [shntool]  05_-_Audio_Track.wav
+00f8ddbfb78660de58a82813fd80d0b2  [shntool]  06_-_Audio_Track.wav
+f751cd7c5f0af281aae9fd5a02946905  [shntool]  07_-_Audio_Track.wav
+8fb0fad3e731cf73f8b83a1db260796d  [shntool]  08_-_Audio_Track.wav
+2c0759017e4f4b46df2e37bec92122fe  [shntool]  09_-_Audio_Track.wav
+ffb9d6270e4fe9eb876ce39a82916f30  [shntool]  10_-_Audio_Track.wav
+549e68623e5b31fa3943034025ba3a63  [shntool]  11_-_Audio_Track.wav
+e0c26e2bead5230b4013112b59f3787f  [shntool]  12_-_Audio_Track.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-06-21a\d2 
+=================== 
+=================== 
+=================== 
+dc5fd1ef35839bafa3f5591b90398711  [shntool]  01_-_Audio_Track.wav
+510959351cc362fa44280f55df19292b  [shntool]  02_-_Audio_Track.wav
+70da0b805c02b5d9a7701c8774d2d72a  [shntool]  03_-_Audio_Track.wav
+3d01afb59f00b211052edf438841bf6d  [shntool]  04_-_Audio_Track.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-21a\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:52.35       30423164 B   ---   --   -----    wav  1.0000  01_-_Audio_Track.wav
+     3:06.56       32942156 B   ---   --   -----    wav  1.0000  02_-_Audio_Track.wav
+     4:21.71       46207436 B   ---   --   -----    wav  1.0000  03_-_Audio_Track.wav
+     4:44.51       50217596 B   ---   --   -----    wav  1.0000  04_-_Audio_Track.wav
+     7:31.41       79653944 B   -b-   --   -----    wav  1.0000  05_-_Audio_Track.wav
+     5:54.17       62485628 B   ---   --   -----    wav  1.0000  06_-_Audio_Track.wav
+     2:42.43       28677980 B   ---   --   -----    wav  1.0000  07_-_Audio_Track.wav
+     5:14.06       55403756 B   ---   --   -----    wav  1.0000  08_-_Audio_Track.wav
+     7:35.59       80400812 B   ---   --   -----    wav  1.0000  09_-_Audio_Track.wav
+     7:53.69       83599532 B   ---   --   -----    wav  1.0000  10_-_Audio_Track.wav
+     4:16.23       45212540 B   ---   --   -----    wav  1.0000  11_-_Audio_Track.wav
+     5:58.41       63247676 B   ---   --   -----    wav  1.0000  12_-_Audio_Track.wav
+    62:12.62      658472220 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-21a\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.09       62114012 B   ---   --   -----    wav  1.0000  01_-_Audio_Track.wav
+     6:59.37       73998668 B   ---   --   -----    wav  1.0000  02_-_Audio_Track.wav
+     7:53.00       83437244 B   ---   --   -----    wav  1.0000  03_-_Audio_Track.wav
+     5:47.39       61302328 B   -b-   --   -----    wav  1.0000  04_-_Audio_Track.wav
+    26:32.10      280852252 B                            1.0000  (4 files)
+=================== 
+=================== 
+=================== 

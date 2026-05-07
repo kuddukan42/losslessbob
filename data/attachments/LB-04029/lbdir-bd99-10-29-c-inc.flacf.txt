@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-10-29-c-inc.flacf 
+=================== 
+=================== 
+=================== 
+1d8c666949e74ac8fd7d7d078cdd983b  bd99-10-29-c-inc-LB-4029.txt
+4bbaa9633c688d3425472a3cec2180b8  Bob Dylan 29 oct 1999 Oxford.txt
+dcf7d9fb9a5f8f0881b0ba14b89c035f  D1\1 I Am The Man Thomas.flac
+59e358d03a452e5a66b7c2dd76650468  D1\2 Mr Tambourine Man.flac
+e698fe9064cd1b7f28465ec37a181281  D1\3 Masters Of War.flac
+646daf1eb35fa678ccab94786759d73f  D1\4 It's All Over Now Baby Blue.flac
+e0c2678e35bcf25f86ae363d3da65f8c  D1\5 Tangled Up In Blue.flac
+2d9c86491bcd85c5b3b4eae936488b23  D1\6 Watching The River Flow.flac
+9a19189e580ee2d47ba7d7bfcd0f76ae  D2\1 Stuck Inside Of Mobile.flac
+faf893c9568480c9646a3ea0f70dd7f3  D2\2 Not Dark Yet.flac
+54a97b9ae482389b13790c4f19d6e3ab  D2\3 Highway 61 Revisited.flac
+a00f7cbfecaa9f44de4ac40c33d504b5  D2\4 Love Sick.flac
+870bfd3dcda43043aebaa25f699a54c0  D2\5 Like A Rolling Stone.flac
+af66b30f8b7d1847ce25315116d49d08  D2\6 Blowin In The Wind.flac
+cb4088687c03d23d7e1f4f1feafe9e7d  D2\7 Not Fade Away.flac
+86b32d271f3dc4f00b91598c861c4bc9  fingerprint.D2.txt
+eef26f6e4a9f5251051d0029a4e84731  fingerprintD1.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-10-29-c-inc.flacf\D1 
+=================== 
+=================== 
+=================== 
+1 I Am The Man Thomas.flac:e0c63720048356b7699969e8c0542b0c
+2 Mr Tambourine Man.flac:e9b76578c0ff785c33fdb233b046854e
+3 Masters Of War.flac:0c8cfee8cde9397c103afe58ce578104
+4 It's All Over Now Baby Blue.flac:6823f90192a6022a32e5bd0d56676a76
+5 Tangled Up In Blue.flac:dfbdb19bb42df1a9b7a124d7935fd2c2
+6 Watching The River Flow.flac:0e145cf7b9794cfc3baebf8443129134
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-10-29-c-inc.flacf\D2 
+=================== 
+=================== 
+=================== 
+1 Stuck Inside Of Mobile.flac:18e34baac32394a79678ccfbe3401836
+2 Not Dark Yet.flac:afa1841bfaa6ef70a4e32a701efcf9aa
+3 Highway 61 Revisited.flac:1a004a4b6d0afd9b70b02767149464e7
+4 Love Sick.flac:00b47e02303a64e28331e8dba9fcecac
+5 Like A Rolling Stone.flac:e8262b4b87c9c056aac6cbae70766cac
+6 Blowin In The Wind.flac:284cef4a5f211cccdb44709a38367c97
+7 Not Fade Away.flac:0554cfe8bea12021dcdddfb82cd8c510
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-10-29-c-inc.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:09.27       33403148 B   ---   --   ---xx   flac  0.5787  1 I Am The Man Thomas.flac
+     6:14.64       66124172 B   ---   --   ---xx   flac  0.5493  2 Mr Tambourine Man.flac
+     5:47.44       61314332 B   ---   --   ---xx   flac  0.5069  3 Masters Of War.flac
+     7:11.59       76167212 B   ---   --   ---xx   flac  0.5096  4 It's All Over Now Baby Blue.flac
+     9:02.26       95669996 B   ---   --   ---xx   flac  0.5831  5 Tangled Up In Blue.flac
+    11:59.06      126845756 B   ---   --   ---xx   flac  0.4894  6 Watching The River Flow.flac
+    43:25.01      459524616 B                            0.5297  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-10-29-c-inc.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.40       76298924 B   ---   --   ---xx   flac  0.6923  1 Stuck Inside Of Mobile.flac
+     6:47.31       71867756 B   ---   --   ---xx   flac  0.3930  2 Not Dark Yet.flac
+     8:39.12       91579868 B   ---   --   ---xx   flac  0.5387  3 Highway 61 Revisited.flac
+     5:27.23       57736940 B   ---   --   ---xx   flac  0.4669  4 Love Sick.flac
+     7:30.27       79443548 B   ---   --   ---xx   flac  0.5402  5 Like A Rolling Stone.flac
+     8:43.32       92332508 B   ---   --   ---xx   flac  0.4797  6 Blowin In The Wind.flac
+     1:34.13       16612220 B   ---   --   ---xx   flac  0.4712  7 Not Fade Away.flac
+    45:54.28      485871764 B                            0.5195  (7 files)
+=================== 
+=================== 
+=================== 

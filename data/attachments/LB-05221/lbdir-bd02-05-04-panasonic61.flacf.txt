@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-05-04-panasonic61.flacf 
+=================== 
+=================== 
+=================== 
+719a38801e944680e3ff196060eb9f1b  Bob Dylan Brighton Centre 4 May 2002.md5
+45ac1d57ffa76ee89e6b711a68275e4f  d101.flac
+b210210cafdc83d59b7047d5a0a269a6  d102.flac
+e39176d2dcc86634a17568ce38afdb9d  d103.flac
+53b111e12f639ab4fdc3ef486b91ed91  d104.flac
+8f34d4b8cb7454bd7a0974f61f719410  d105.flac
+19bf3b6b869ed3b3c03b32fa875e2f18  d106.flac
+757050159d4272b724ec21a3e0e29ac2  d107.flac
+343f5178ccdb8888f7e8644fee1b523c  d108.flac
+9a956a7006f5fa359b9ff7c18b659a84  d109.flac
+d519c8d9539c70fdfc7c420c988a3d5e  d110.flac
+1fba413d3e7c149f0e1dd9515df81ce2  d111.flac
+8f816fa03443aa8e75309a25ee39a54e  d112.flac
+fe35260aca878f58bfdd1423afb48254  d201.flac
+59228fea0a3d0793ee5a26d2ccf607c8  d202.flac
+cea067813d2b468fd611e2104bcc42b4  d203.flac
+54caac1b4619cd4ab8b4273ffd519fef  d204.flac
+851ff4b606b3023983e574cca7dd9bc8  d205.flac
+027966a098e960784dde38b5014735ec  d206.flac
+d9685b803d18ee55703682d0b1f6048f  d207.flac
+11a76aeae7744d2cdaee96ff39979d75  d208.flac
+2b6813f2433122d45caf6d5210a52c6b  d209.flac
+d195ba7ff105fbc1c203e49f8d1f9998  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-05-04-panasonic61.flacf 
+=================== 
+=================== 
+=================== 
+d101.flac:937aa4a63af81d3159498f510188cd51
+d102.flac:2d75a2659539ed2fd7ed970dde60c831
+d103.flac:3740d94ce87e7dd5faab3d330ebe27a7
+d104.flac:c519f4472b73c9d584d3aa19b1b55257
+d105.flac:cae9c3ef83b51633f168624a7ecbb306
+d106.flac:5310f98ae91c05358d30ff8a848cbfab
+d107.flac:12e8c5c6d819ed7945e8270f545d10f9
+d108.flac:adc5d7a60afd9257ac70b3a99a3daaa8
+d109.flac:53e8b4f20f11bd452871ab5985e9752b
+d110.flac:2ade66c89e29db69fdcaa840017aaf84
+d111.flac:792ef8adadc3d0cfdb2c8fcbd7a689b9
+d112.flac:e8f378e60f721e6397a96889a971ec10
+d201.flac:24719c0c8b6d6da0091648e93078f354
+d202.flac:2e7f7038637a34acc553115a8ba9883f
+d203.flac:55b073266b480c3ac3e7d59868854255
+d204.flac:d80c247f0502363a76ec13786638bac1
+d205.flac:df5b4d1fe1aa333ccf4589e1262d14ed
+d206.flac:c17f7519030c09f47699f4048e680091
+d207.flac:3f1085198704fe8a758c3741b90952ad
+d208.flac:6a36732c1db92489a91c59f971b76410
+d209.flac:3b896345c35cdd09003bad2b79b16764
+=================== 
+=================== 
+=================== 
+=== shntool for: bd02-05-04-panasonic61.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:13.59       34184012 B   ---   --   ---xx   flac  0.6367  d101.flac
+     5:02.40       53366924 B   ---   --   ---xx   flac  0.5798  d102.flac
+     6:34.74       69675692 B   ---   --   ---xx   flac  0.5685  d103.flac
+     5:30.12       58240268 B   ---   --   ---xx   flac  0.5405  d104.flac
+     5:38.18       59665580 B   ---   --   ---xx   flac  0.5301  d105.flac
+     5:21.62       56770268 B   ---   --   ---xx   flac  0.5692  d106.flac
+     4:53.09       51706412 B   ---   --   ---xx   flac  0.6312  d107.flac
+     7:30.61       79523516 B   ---   --   ---xx   flac  0.6541  d108.flac
+     6:47.70       71959484 B   ---   --   ---xx   flac  0.5790  d109.flac
+     5:26.51       57626396 B   ---   --   ---xx   flac  0.5682  d110.flac
+     8:55.26       94435196 B   ---   --   ---xx   flac  0.6205  d111.flac
+     7:20.47       77726588 B   ---   --   ---xx   flac  0.4649  d112.flac
+     7:10.19       75896732 B   ---   --   ---xx   flac  0.6478  d201.flac
+     6:15.01       66152396 B   ---   --   ---xx   flac  0.6173  d202.flac
+     9:05.58       96274460 B   ---   --   ---xx   flac  0.6698  d203.flac
+     5:06.36       54063116 B   ---   --   ---xx   flac  0.6628  d204.flac
+     8:29.57       89921708 B   ---   --   ---xx   flac  0.6632  d205.flac
+     7:00.37       74175068 B   ---   --   ---xx   flac  0.5583  d206.flac
+     7:02.48       74553740 B   ---   --   ---xx   flac  0.6672  d207.flac
+     6:12.28       65686700 B   ---   --   ---xx   flac  0.5693  d208.flac
+     5:14.60       55530764 B   ---   --   ---xx   flac  0.6804  d209.flac
+   133:53.48     1417135020 B                            0.6053  (21 files)
+=================== 
+=================== 
+=================== 

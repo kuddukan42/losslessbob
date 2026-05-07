@@ -1,0 +1,18 @@
+74e28bad481e1ddcd556491b2d404e99  bd-The Air Burns-1998-01-30 (Thinman).txt
+8c7ceb4ed0792fd485030d7a90723ee6  bd-The Air Burns-d1\bd-The Air Burns-d1.md5
+9523855c792443a6229a71a96b87a76f  bd-The Air Burns-d1\Track01.flac
+5193712d0517f8e7962f795fa1fc0e23  bd-The Air Burns-d1\Track02.flac
+fb774d7db4eedafa27aeb72a28018750  bd-The Air Burns-d1\Track03.flac
+682d213d2d4bb5eba19fbb734601aad3  bd-The Air Burns-d1\Track04.flac
+6eebc92190aa3a33d94c7061dbb91c6b  bd-The Air Burns-d1\Track05.flac
+a6f5ad527c69c4a99cddc22a19a3110a  bd-The Air Burns-d1\Track06.flac
+8b230d96731d30b30e5293bf7e014ff0  bd-The Air Burns-d1\Track07.flac
+020c061c25af8c611e5f3f4062ad9307  bd-The Air Burns-d1\Track08.flac
+22385bf491fde0549c65a5939fb53ad3  bd-The Air Burns-d2\bd-The Air Burns-d2.md5
+aebb195998458e7bf7e8f62d5bbea0aa  bd-The Air Burns-d2\Track01.flac
+1dad700ef07f47b899a225ffc301d87a  bd-The Air Burns-d2\Track02.flac
+a9798047809561ec09a2ac3b1b5a5407  bd-The Air Burns-d2\Track03.flac
+cc01468acd5e4fbc2a3d4c21ae763b85  bd-The Air Burns-d2\Track04.flac
+8d0bbee854126f1e1d0038a287ffbd59  bd-The Air Burns-d2\Track05.flac
+4ae75ead3fdc6c98d045815b2db6c1ce  bd-The Air Burns-d2\Track06.flac
+a3d07a467b0ebaaa5a31e7ce80f99e27  bd-The Air Burns-d2\Track07.flac

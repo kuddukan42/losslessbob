@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-11-04-a.flacf 
+=================== 
+=================== 
+=================== 
+1607e631f587a37643be06bc6d4328d5  bd1997-11-04.aud.sbeok.flac16 Knoxville.ffp
+0a8eb06d020da38e4d1896c773ee3073  bd1997-11-04.aud.sbeok.flac16 Knoxville.md5
+7797ee885abf8de82aa3f9c1a1c830cf  bd1997-11-04.aud.sbeok.flac16 Knoxville.st5
+4587fc2d01a6ac3310c727c234de72fb  bd1997-11-04.info.r9453.txt
+a3d069f3898ce1953d5b6caa37e95c01  d1t03.PNG
+bfaab64e540a7e6e2520dc26b37b1a9b  d2t07.PNG
+d7a31303c694566c95c6f177e72b3959  Disc 1\4.11.97 Knoxville.log
+be46fb9277d81eb48bb42dd8655a7aec  Disc 1\bd1997-11-04d1t01.flac
+aa83f0d150ddf6481c13f8edde4f557b  Disc 1\bd1997-11-04d1t02.flac
+0aa6eda8940b9548003206f8a8cbabd7  Disc 1\bd1997-11-04d1t03.flac
+fb5a62a460f0bb25149135059a36d3d3  Disc 1\bd1997-11-04d1t04.flac
+f2327170df6d3985702fa9a16dacdba4  Disc 1\bd1997-11-04d1t05.flac
+bd329d2905d34198ac444d714398cdfb  Disc 1\bd1997-11-04d1t06.flac
+3ff73b454554e3cfd410e8650bbf449f  Disc 1\bd1997-11-04d1t07.flac
+e222c7fcf14898699650edad26cd97b5  Disc 1\bd1997-11-04d1t08.flac
+ba5230c587edd5eaf1c039680ae3ab74  Disc 1\Disc 1.shntool.txt
+72c224a136938dd57490349c3b9bcd5c  Disc 2\4.11.97 Knoxville.log
+f175e4e2bafc22d6864cdd8c34a873c2  Disc 2\bd1997-11-04d2t01.flac
+36667ae300037b37f70cb50c71047879  Disc 2\bd1997-11-04d2t02.flac
+ee3e1e437b50a5687a040b37738980a3  Disc 2\bd1997-11-04d2t03.flac
+bdca4bc1f71b4253dd4d63be90f8faa2  Disc 2\bd1997-11-04d2t04.flac
+be6115c86b8a14eefa44a0cd225db499  Disc 2\bd1997-11-04d2t05.flac
+22cb52744b1fab736da9cfd6ecf53bec  Disc 2\bd1997-11-04d2t06.flac
+c497eb64731a869b328201d744be1404  Disc 2\bd1997-11-04d2t07.flac
+493a7d569296660c0758488c8019569f  Disc 2\bd1997-11-04d2t08.flac
+10b95258be3fab7a8ad3ee69bcc15fcf  Disc 2\Disc 2.shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-11-04-a.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+bd1997-11-04d1t01.flac:ab29f509efe49e5da38bb77eccabf3c4
+bd1997-11-04d1t02.flac:01fc1f1aa92831ce12ecd95e75a648a1
+bd1997-11-04d1t03.flac:a4cb4e2fec8e875168e9459bdb95a1cc
+bd1997-11-04d1t04.flac:0a9b7b960921bec82fb96ecda33af139
+bd1997-11-04d1t05.flac:1f8bf1b234db2a1b15e963416ce6fc25
+bd1997-11-04d1t06.flac:241d8d7e5c1c5c3832f107a1938864d4
+bd1997-11-04d1t07.flac:48c7eec59de93a44786e985e0dc9b977
+bd1997-11-04d1t08.flac:6b7d562a1ef4e170e7de795928269771
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-11-04-a.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+bd1997-11-04d2t01.flac:c1425fab37bc4c8b6b42f9ac8b4e888a
+bd1997-11-04d2t02.flac:c353ae1b2dd331d45faaaa6f58d4546c
+bd1997-11-04d2t03.flac:8e050ad635d9bd7d7a9b378de843d339
+bd1997-11-04d2t04.flac:15325da545dc6c082a43ec4c2fc96bdc
+bd1997-11-04d2t05.flac:79fd60162123657640cb003bf28b653c
+bd1997-11-04d2t06.flac:66d90e76f9d85d4c5d6973f150a730bd
+bd1997-11-04d2t07.flac:cdec3cb90bb0ec4b273750fec79812c9
+bd1997-11-04d2t08.flac:10295c9f1aaa304bb74490c0306d3558
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-11-04-a.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:14.14       66006572 B   ---   --   ---xx   flac  0.5756  bd1997-11-04d1t01.flac
+     4:42.04       49754252 B   ---   --   ---xx   flac  0.5280  bd1997-11-04d1t02.flac
+     6:59.21       73961036 B   ---   --   ---xx   flac  0.5674  bd1997-11-04d1t03.flac
+     7:35.35       80344364 B   ---   --   ---xx   flac  0.5465  bd1997-11-04d1t04.flac
+     6:06.62       64708268 B   ---   --   ---xx   flac  0.5559  bd1997-11-04d1t05.flac
+     7:43.63       81821420 B   ---   --   ---xx   flac  0.6035  bd1997-11-04d1t06.flac
+     4:35.50       48627644 B   ---   --   ---xx   flac  0.4935  bd1997-11-04d1t07.flac
+     7:46.06       82216556 B   ---   --   ---xx   flac  0.5886  bd1997-11-04d1t08.flac
+    51:43.30      547440112 B                            0.5624  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-11-04-a.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:07.53       64863500 B   ---   --   ---xx   flac  0.5485  bd1997-11-04d2t01.flac
+     6:10.46       65376236 B   ---   --   ---xx   flac  0.5595  bd1997-11-04d2t02.flac
+     6:03.49       64148492 B   ---   --   ---xx   flac  0.4932  bd1997-11-04d2t03.flac
+     7:43.19       81717932 B   ---   --   ---xx   flac  0.6083  bd1997-11-04d2t04.flac
+    10:18.73      109186940 B   ---   --   ---xx   flac  0.5764  bd1997-11-04d2t05.flac
+     8:35.43       90947180 B   ---   --   ---xx   flac  0.5347  bd1997-11-04d2t06.flac
+     6:11.46       65552636 B   ---   --   ---xx   flac  0.5191  bd1997-11-04d2t07.flac
+     4:30.29       47696252 B   ---   --   ---xx   flac  0.6248  bd1997-11-04d2t08.flac
+    55:41.58      589489168 B                            0.5579  (8 files)
+=================== 
+=================== 
+=================== 

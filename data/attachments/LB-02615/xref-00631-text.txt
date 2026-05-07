@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== bd1991-06-29 Ringe [AUD].ffp
+===================
+===================
+===================
+bd91-06-29d1t01.flac:f83382ff652a67c87aff34f9ece7be09
+bd91-06-29d1t02.flac:028e7616ace4339ad7ff35edc75b72d1
+bd91-06-29d1t03.flac:b5c825424788c57c05c8157d93fee5fc
+bd91-06-29d1t04.flac:1f8507a8cc9aff901e2cf280b0c279e9
+bd91-06-29d1t05.flac:5a847c94f610a1c324118aecaa517b77
+bd91-06-29d1t06.flac:f42dd19b882c342dbaa3d01bc98b3c63
+bd91-06-29d1t07.flac:42904bba428523b7a3af1d6246ddd85a
+bd91-06-29d1t08.flac:9132d215e81588759f06f0211ab983a7
+bd91-06-29d1t09.flac:e33ebd359672d06d284ae7ea5078e780
+bd91-06-29d1t10.flac:2ae1ebd94cc9289a2c11a6f0b00f24a8
+bd91-06-29d1t11.flac:34a611c5e36aa791979823a538242dbc
+bd91-06-29d2t01.flac:d849d8066703c9b5e1f6e66d1ceddf04
+bd91-06-29d2t02.flac:02350ddb5a1112981d0eaf3317c8007e
+bd91-06-29d2t03.flac:8e618eeefc80e0ede975a4e6179f4a62
+bd91-06-29d2t04.flac:e7af038e791c0cbb5bcd712a82c78c13
+bd91-06-29d2t05.flac:0078149490a08fdf82dfe5758d009283
+bd91-06-29d2t06.flac:d941757ca378dc8bead6aa20e8b97c20
+bd91-06-29d2t07.flac:3e54372d84299ebde5c674c0c666fa89
+===================
+===================
+===================
+=== bd1991-06-29 Ringe [AUD]_WAV.md5
+===================
+===================
+===================
+5ecc615d98beb6233043f1ad740c81ad *bd91-06-29d1t01.wav
+beada465d7d220c94f14efc1f81fc203 *bd91-06-29d1t02.wav
+938469625ace6ec766f0402dddaed5e7 *bd91-06-29d1t03.wav
+a459bc19c0cf755c3d1724093e76509d *bd91-06-29d1t04.wav
+1ec06dd7f5145c10d00c0b671841674d *bd91-06-29d1t05.wav
+dd130acd64f6959094c536bd106f9e5b *bd91-06-29d1t06.wav
+6f1059cb1768b0bd12e5383d9ed18fbf *bd91-06-29d1t07.wav
+dcace66126214274add58e4228503d94 *bd91-06-29d1t08.wav
+6a6af9be07cf22272ea25ff92d157ab9 *bd91-06-29d1t09.wav
+124d1175c2888e509623b0df073fc769 *bd91-06-29d1t10.wav
+a92b7a5dfc4b944feb98ab3e20fcc07c *bd91-06-29d1t11.wav
+5aa10c0894955984bccb5422065a07c5 *bd91-06-29d2t01.wav
+957a8850f12d8b40385bbcaadbdfb102 *bd91-06-29d2t02.wav
+c7ce18cacfbec4da74cfa745b0728c8c *bd91-06-29d2t03.wav
+a8282150795503f2fdf5aa858d8ca0ca *bd91-06-29d2t04.wav
+359d16e2eeb4adfefc1d0f54349ad429 *bd91-06-29d2t05.wav
+f9c3ef41ab8a2a60f5a8949dab2d2816 *bd91-06-29d2t06.wav
+5f9d26e74d7e788f1aa7d6a379129d34 *bd91-06-29d2t07.wav
+===================
+===================
+===================
+=== bd91-06-29aud.txt
+===================
+===================
+===================
+Bob Dylan, 6/29/91, Ringe, Denmark, Midtfyns Festival, 2CDR
+
+(54min+37min), Audience recording, 
+Lineage : CDR > EAC > WAV > SHN > WAV > CDR > EAC > TLH > FLAC 6
+source : cdr copy of LB-2615 (bittorrent downloaded around 2005, i kept original info file)
+
+Disc One, 1 New Morning, 2 Lay, Lady, Lay, 3 All Along The Watchtower, 4 Shelter From The Storm, 5 Gotta Serve Somebody, 6 Wiggle Wiggle, 7 Rainy Day Women Nos. 12 & 35, 8 Positively 4th Street, 9 Barbara Allen (Trad), 10 Bob Dylan's Dream, 11 The Lonesome Death Of Hattie Carroll, 
+
+Disc Two, 1 It Ain't Me, Babe, 2 Man In The Long Black Coat, 3 Everything Is Broken, 4 Lenny Bruce, 5 Highway 61 Revisited, 6 What Good Am I ?, 7 Ballad Of A Thin Man
+
+===================
+===================
+===================
+=== original info file.txt
+===================
+===================
+===================
+Bob Dylan, 6/29/91, Ringe, Denmark, Midtfyns Festival, 2CDR
+
+LB-2615, (54min+37min), Audience recording, CDR > EAC > WAV > SHN; background talking d1t2, d1t3, d1t7, d1t8; d2t1, d2t2, d2t6 and probably more; in comparisom to sbd this one is complete and better sound ; this one makes the sound on the sbd seem weird; sound changes d2t7 2:44 as if patched by another aud or taper shifted mic positions
+
+Disc One, 1 New Morning, 2 Lay, Lady, Lay, 3 All Along The Watchtower, 4 Shelter From The Storm, 5 Gotta Serve Somebody, 6 Wiggle Wiggle, 7 Rainy Day Women Nos. 12 & 35, 8 Positively 4th Street, 9 Barbara Allen (Trad), 10 Bob Dylan's Dream, 11 The Lonesome Death Of Hattie Carroll, 
+
+Disc Two, 1 It Ain't Me, Babe, 2 Man In The Long Black Coat, 3 Everything Is Broken, 4 Lenny Bruce, 5 Highway 61 Revisited, 6 What Good Am I ?, 7 Ballad Of A Thin Man
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates
+===================
+===================
+===================

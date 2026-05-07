@@ -1,0 +1,118 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-10-28-e.flacf 
+=================== 
+=================== 
+=================== 
+6c840019d1d8afc2afca7221f769f0d8  BD 2005-10-28 Rotterdam RATTLESNAKE rec.md5
+0284d641d5d0372fe16c17bf7fc57992  BD R'dam, 28 oct 2005 RATTLESNAKE  REPLACE.txt
+a9206156eb71c753119259c89c74c372  bd05-10-28-rs-LB-3828.txt
+c1243dcd976d1ae23e02adca95399590  D1 (12 tracks)\BD2005-10-28D1T01.flac
+8c182da9258a64df9e36d21cd0fefb7a  D1 (12 tracks)\BD2005-10-28D1T02.flac
+18ab6b8e3df3df85e90fc7930c967c11  D1 (12 tracks)\BD2005-10-28D1T03.flac
+5975d7e787dab2f05bbd75f2a32da1c6  D1 (12 tracks)\BD2005-10-28D1T04.flac
+9cdd30eea1cfc6b62c23624f03ee5061  D1 (12 tracks)\BD2005-10-28D1T05.flac
+38fd4115f04535ce0eaecf3bf0708eb6  D1 (12 tracks)\BD2005-10-28D1T06.flac
+c44a240ffaa098325d05be9eaea6a332  D1 (12 tracks)\BD2005-10-28D1T07.flac
+3cde8e700196f5410ac27179af3e911e  D1 (12 tracks)\BD2005-10-28D1T08.flac
+fab9db027cc4447f0be402c91d4b41cd  D1 (12 tracks)\BD2005-10-28D1T09.flac
+101be658b22b352fbb74d3ff9d8d487b  D1 (12 tracks)\BD2005-10-28D1T10.flac
+dc4c6ff3cec94fcc7c5c15507e8c7f0f  D1 (12 tracks)\BD2005-10-28D1T11.flac
+060154cd39b6e88eee1a2ded9d1a973f  D1 (12 tracks)\BD2005-10-28D1T12.flac
+38f9d4062370adacb9ddf1638e8e943a  D2 (11 tracks)\BD2005-10-28D2T01.flac
+75bf369afaa492513676f2b9389b4856  D2 (11 tracks)\BD2005-10-28D2T02.flac
+1396ea537eb9562e5a0dcaae8cf4a296  D2 (11 tracks)\BD2005-10-28D2T03.flac
+7521da82c239231440304b1626e3b83e  D2 (11 tracks)\BD2005-10-28D2T04.flac
+cd4a43096a9ec68f011a09f08e3e5402  D2 (11 tracks)\BD2005-10-28D2T05.flac
+6b6432f322f273ffd05a6fb714fa00e3  D2 (11 tracks)\BD2005-10-28D2T06.flac
+8dc090a83b05d612634f178e6e3bc134  D2 (11 tracks)\BD2005-10-28D2T07.flac
+f1010e7ef919be45cd21b4fb6f72e66b  D2 (11 tracks)\BD2005-10-28D2T08.flac
+2c967cf44934bebc6b79f15fecfa872f  D2 (11 tracks)\BD2005-10-28D2T09.flac
+3bee26139f0e02da05d168d15e8f931f  D2 (11 tracks)\BD2005-10-28D2T10.flac
+fa4380ea27ccf0100d4911db8db00687  D2 (11 tracks)\BD2005-10-28D2T11.flac
+fa2cc4ce5c6a40e6ad4edcb130e9f82c  fingerprint.ffpD1.txt
+457489c04afad2db7b9225d25ff8f707  fingerprint.ffpD2.txt
+f52e3ba2b03f95c28e86806fcf5cdf24  PointedShoesAndShakespeareHats-back.jpg
+e3cd77b1ec68778e3a25938308be66ff  PointedShoesAndShakespeareHats-front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-10-28-e.flacf\d1 (12 tracks) 
+=================== 
+=================== 
+=================== 
+bd2005-10-28d1t01.flac:9f84572e991cb9a1df169ce389fbfed5
+bd2005-10-28d1t02.flac:6a9a61e00b4023814a6c45468481bb14
+bd2005-10-28d1t03.flac:0c97017ef40cdd9cf2cc67c31475febe
+bd2005-10-28d1t04.flac:277646274f4a90803bb57d4f7adb2458
+bd2005-10-28d1t05.flac:4a0282067bf1bf07fc26107d7d9fe807
+bd2005-10-28d1t06.flac:9d75d19467dcfe2218c6cc5eed3c90f6
+bd2005-10-28d1t07.flac:0c9e37d2746e91a77725de12eff27231
+bd2005-10-28d1t08.flac:20d4a551c0e486827b44dea291104a41
+bd2005-10-28d1t09.flac:d965b1ff1bdd7c086c684d693a273ac0
+bd2005-10-28d1t10.flac:548ba48dbfba66ddd44ce97881bafcf8
+bd2005-10-28d1t11.flac:acf2b4114f0115d334cd8c890d989d82
+bd2005-10-28d1t12.flac:6e41e0707425d47e11e3eece60c88496
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-10-28-e.flacf\d2 (11 tracks) 
+=================== 
+=================== 
+=================== 
+bd2005-10-28d2t01.flac:8f6b24db3028f1da62ae2f09bbc431ea
+bd2005-10-28d2t02.flac:7fedc7c8333d85b27e4f0f4b3c9d7ae9
+bd2005-10-28d2t03.flac:1f042ff802a78663b32d67e31bf8f730
+bd2005-10-28d2t04.flac:6441925f71739a6357cf4de685757f2f
+bd2005-10-28d2t05.flac:bd72671ac14ae069c78ec351e5c3296b
+bd2005-10-28d2t06.flac:f5b34b24e787ad0f1af68982b8afb923
+bd2005-10-28d2t07.flac:e3b320d9b963b1033bf5de12c753b424
+bd2005-10-28d2t08.flac:39c8e527ccfa4c04ce99f759f89929b9
+bd2005-10-28d2t09.flac:432339bdd66c8c7fd98a5f4550c95427
+bd2005-10-28d2t10.flac:2e9c59c415989e6d61c9cb13afa6f4b8
+bd2005-10-28d2t11.flac:50ac65ebe189c907db75133759d3dd96
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-10-28-e.flacf\d1 (12 tracks) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.70        7044284 B   ---   --   ---xx   flac  0.4923  BD2005-10-28D1T01.flac
+     4:46.36       50535116 B   ---   --   ---xx   flac  0.6748  BD2005-10-28D1T02.flac
+     6:00.18       63546380 B   ---   --   ---xx   flac  0.6135  BD2005-10-28D1T03.flac
+     5:36.06       59284556 B   ---   --   ---xx   flac  0.6376  BD2005-10-28D1T04.flac
+     5:43.04       60514652 B   ---   --   ---xx   flac  0.5959  BD2005-10-28D1T05.flac
+     8:53.49       94136492 B   ---   --   ---xx   flac  0.6528  BD2005-10-28D1T06.flac
+     7:05.65       75122924 B   ---   --   ---xx   flac  0.6116  BD2005-10-28D1T07.flac
+     6:51.03       72507500 B   ---   --   ---xx   flac  0.5984  BD2005-10-28D1T08.flac
+     8:06.33       85808060 B   ---   --   ---xx   flac  0.6188  BD2005-10-28D1T09.flac
+     5:59.44       63431132 B   ---   --   ---xx   flac  0.6110  BD2005-10-28D1T10.flac
+     5:57.23       63028940 B   ---   --   ---xx   flac  0.5938  BD2005-10-28D1T11.flac
+     8:12.29       86857052 B   ---   --   ---xx   flac  0.6559  BD2005-10-28D1T12.flac
+    73:52.05      781817088 B                            0.6235  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-10-28-e.flacf\d2 (11 tracks) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.24       73791692 B   ---   --   ---xx   flac  0.6330  BD2005-10-28D2T01.flac
+     7:20.35       77698364 B   ---   --   ---xx   flac  0.5882  BD2005-10-28D2T02.flac
+     7:41.29       81388652 B   ---   --   ---xx   flac  0.6603  BD2005-10-28D2T03.flac
+     7:20.07       77632508 B   ---   --   ---xx   flac  0.6082  BD2005-10-28D2T04.flac
+     5:51.73       62088140 B   ---   --   ---xx   flac  0.6055  BD2005-10-28D2T05.flac
+     5:58.49       63266492 B   ---   --   ---xx   flac  0.6582  BD2005-10-28D2T06.flac
+     5:27.28       57748700 B   ---   --   ---xx   flac  0.7061  BD2005-10-28D2T07.flac
+     6:37.50       70148444 B   ---   --   ---xx   flac  0.6108  BD2005-10-28D2T08.flac
+     8:00.59       84810812 B   ---   --   ---xx   flac  0.6367  BD2005-10-28D2T09.flac
+     6:47.49       71910092 B   ---   --   ---xx   flac  0.7238  BD2005-10-28D2T10.flac
+     4:51.49       51447692 B   ---   --   ---xx   flac  0.6651  BD2005-10-28D2T11.flac
+    72:56.02      771931588 B                            0.6432  (11 files)
+=================== 
+=================== 
+=================== 

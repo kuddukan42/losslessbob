@@ -1,0 +1,55 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-07-30-dylan-on-dylan.flacf 
+=================== 
+=================== 
+=================== 
+d961defc40624d5d1e38cffac4f16cea  bd84-07-30-dylan-on-dylan.txt
+22b38a1c0df1c570c72c7f59928ac23d  bd84-07-30t01.flac
+1045de1779c245fab2c949717d4bc704  bd84-07-30t02.flac
+9e4761bf6dd674b1879077ad62fe4543  bd84-07-30t03.flac
+ed03c464eb38e6a262fa0cd873ee565b  bd84-07-30t04.flac
+2b560fa7441ea725f48058dae428d38c  bd84-07-30t05.flac
+8def9fcfeb7f43bb204f311af92a005b  bd84-07-30t06.flac
+01e5996920851278860ea64b8d158cb1  bd84-07-30t07.flac
+54b31f98653b86a9f512b8f5025c9a26  bd84-07-30t08.flac
+450826a0bf10260ecab25877e02e5898  bd84-07-30t09.flac
+3030361eee0398ebb7d21beede8aa2b7  dylan on dylan.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-07-30-dylan-on-dylan.flacf 
+=================== 
+=================== 
+=================== 
+bd84-07-30t01.flac:56a7b97c4f1ba3740a03ca26c71fc237
+bd84-07-30t02.flac:d1d68a9777edcd3959943b2101800db2
+bd84-07-30t03.flac:743e7e1f5797f78d7e6133372582969f
+bd84-07-30t04.flac:a0ea5c5d1ce43dc37b960f77f47ae4e3
+bd84-07-30t05.flac:dccc8db27b87eb850568285aac28a821
+bd84-07-30t06.flac:ed3dbfceb147e6ec8b5870cfbf83faf5
+bd84-07-30t07.flac:1168ab3d7125ae00726b6b136ec73767
+bd84-07-30t08.flac:5c197d95512551eb5f2f3a4da98d52b5
+bd84-07-30t09.flac:22fa664415bb53b4c6b779965a92fab2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-07-30-dylan-on-dylan.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:28.57      110913308 B   ---   --   ---xx   flac  0.5715  bd84-07-30t01.flac
+     3:35.70       38090684 B   ---   --   ---xx   flac  0.5567  bd84-07-30t02.flac
+     7:18.08       77282060 B   ---   --   ---xx   flac  0.5438  bd84-07-30t03.flac
+     5:23.08       56996060 B   ---   --   ---xx   flac  0.5249  bd84-07-30t04.flac
+     6:36.38       69943820 B   ---   --   ---xx   flac  0.5286  bd84-07-30t05.flac
+     5:55.46       62730236 B   ---   --   ---xx   flac  0.5251  bd84-07-30t06.flac
+     4:20.59       46002812 B   ---   --   ---xx   flac  0.5150  bd84-07-30t07.flac
+     7:29.51       79323596 B   ---   --   ---xx   flac  0.5285  bd84-07-30t08.flac
+     3:51.54       40875452 B   ---   --   ---xx   flac  0.5497  bd84-07-30t09.flac
+    55:00.16      582158028 B                            0.5403  (9 files)
+=================== 
+=================== 
+=================== 

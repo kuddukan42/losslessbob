@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-11-b.flacf 
+=================== 
+=================== 
+=================== 
+2d6e1502f5864b245f66df8aee8de7c0  bd84-06-11-new-d1\Track01.flac
+a3e554708e97393cfef4bb2d588ddd56  bd84-06-11-new-d1\Track02.flac
+43786208dab40648765c8b07eeb408ce  bd84-06-11-new-d1\Track03.flac
+b584177237781e4d00d2ae7a0ed7d77f  bd84-06-11-new-d1\Track04.flac
+284636728a98ba06f029ecda4b62c209  bd84-06-11-new-d1\Track05.flac
+6f6a81910d9d1860fb4a74c8b3192e97  bd84-06-11-new-d1\Track06.flac
+48c9dde74da93306d33e3735a8e7c7f5  bd84-06-11-new-d1\Track07.flac
+8da831ef6c83fe19d9b4b3950bf505c7  bd84-06-11-new-d1\Track08.flac
+1d56c1612f5b93124ca6d1bde5b575ca  bd84-06-11-new-d1\Track09.flac
+c7e2c9ddfc16d85f96ba164cbc9c7037  bd84-06-11-new-d1\Track10.flac
+c08f2d80aa1f6bc3ae2a18520dc33d9d  bd84-06-11-new-d1\Track11.flac
+9bed830449c705cb1dd2acdfb606f7ef  bd84-06-11-new-d1\Track12.flac
+7653cb10bb8715e07e133ce22e628e58  bd84-06-11-new-d1\Track13.flac
+5db64308be2c9c39bf4bfc0de788066d  bd84-06-11-new-d1\Track14.flac
+8f1f1a4ccd0d41987ce31824d471526e  bd84-06-11-new-d1\Track15.flac
+d7510dc16cb513d7500838a992204c49  bd84-06-11-new-d2\Track01.flac
+a2250a140e379668d9991163ffc2dbd7  bd84-06-11-new-d2\Track02.flac
+4831397cc1094fbb3e0f3a29528072c0  bd84-06-11-new-d2\Track03.flac
+4d0e07a52007543fcfa2ce54a3af054f  bd84-06-11-new-d2\Track04.flac
+3c6335336c1ed18285c40a84f355f6c5  bd84-06-11-new-d2\Track05.flac
+70b8c497b7efbba73b1ed833912583cf  bd84-06-11-new-d2\Track06.flac
+8592157af6f96a08ad02e2b098d9d611  bd84-06-11-new-d2\Track07.flac
+87b44d6f9b4126e0daa0941fa6bc180b  bd84-06-11-new-d2\Track08.flac
+b49ced0cab8c2aa17495fe421d66b8b4  bd84-06-11-new.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-11-b.flacf\bd84-06-11-new-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:198a9a7344921595435f394b797a8649
+Track02.flac:e5342048e4a5687eaceed1ae23d51567
+Track03.flac:befa8b4ca3ca3e78276c843121cb588e
+Track04.flac:d6dda1383f9017d6cd799c790691d1af
+Track05.flac:572eb555340422c33c28ea96229cbacf
+Track06.flac:c36deefc8a8502cc68cc45855fa6b8ee
+Track07.flac:57f5fb9ff0fbe3fbc61549e1b0f02479
+Track08.flac:ff3a5701a41d8502d04dcbcc481fa5af
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-11-b.flacf\bd84-06-11-new-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:ffd2ecac3976e969a64478dc16d3bb25
+Track02.flac:61d2a22e399afa15c2945cfcc98caf5f
+Track03.flac:b5c494ea8b900d940783a5a31821c9fa
+Track04.flac:d5e7dda52e41cf12c630179aca8875da
+Track05.flac:8b4c5b18714838469ff06c96287db589
+Track06.flac:d4049c2325bf4d5151243f92ca4da9c7
+Track07.flac:3a1cc7e0bc8ddb44bc5b7707bc680016
+Track08.flac:4a9ea4531db742e8a39f231a1eb8bf95
+Track09.flac:34176ae46701e9d019a2b21ef9628a50
+Track10.flac:0a39a05031ea0b6185ce75e058f568f4
+Track11.flac:c2767b27ece79ff2d1ffed8039049d40
+Track12.flac:98b21071af0c099662a23bff03346605
+Track13.flac:bb4af47974494f0ce6853f4f95a10d40
+Track14.flac:30b4c8f6e23e75797ec6f6e111813b19
+Track15.flac:3eed14a9b85a155cafa2ae20af6d4783
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-06-11-b.flacf\bd84-06-11-new-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:16.12       66354668 B   ---   --   ---xx   flac  0.7105  Track01.flac
+     9:26.41       99938876 B   ---   --   ---xx   flac  0.6411  Track02.flac
+     5:14.30       55460204 B   ---   --   ---xx   flac  0.6413  Track03.flac
+     4:30.15       47663324 B   ---   --   ---xx   flac  0.6696  Track04.flac
+     5:30.29       58280252 B   ---   --   ---xx   flac  0.6928  Track05.flac
+     4:58.22       52618988 B   ---   --   ---xx   flac  0.6719  Track06.flac
+     4:45.70       50438684 B   ---   --   ---xx   flac  0.6843  Track07.flac
+     5:55.46       62730236 B   ---   --   ---xx   flac  0.6867  Track08.flac
+    46:37.40      493485232 B                            0.6728  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-06-11-b.flacf\bd84-06-11-new-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.22       43975388 B   ---   --   ---xx   flac  0.7069  Track01.flac
+     6:06.31       64635356 B   ---   --   ---xx   flac  0.7012  Track02.flac
+     5:00.09       52941212 B   ---   --   ---xx   flac  0.7094  Track03.flac
+     6:09.35       65173964 B   ---   --   ---xx   flac  0.7137  Track04.flac
+     7:46.09       82223612 B   ---   --   ---xx   flac  0.7011  Track05.flac
+     2:38.45       27977084 B   ---   --   ---xx   flac  0.6876  Track06.flac
+     3:57.28       41872700 B   ---   --   ---xx   flac  0.6970  Track07.flac
+     4:23.17       46433228 B   ---   --   ---xx   flac  0.6862  Track08.flac
+     7:24.46       78429836 B   ---   --   ---xx   flac  0.6903  Track09.flac
+     6:32.68       69308780 B   ---   --   ---xx   flac  0.6916  Track10.flac
+     5:44.35       60763964 B   ---   --   ---xx   flac  0.7040  Track11.flac
+     5:30.43       58313180 B   ---   --   ---xx   flac  0.7243  Track12.flac
+     4:13.60       44770364 B   ---   --   ---xx   flac  0.7131  Track13.flac
+     4:57.09       52412012 B   ---   --   ---xx   flac  0.7137  Track14.flac
+     5:14.61       55533116 B   ---   --   ---xx   flac  0.7011  Track15.flac
+    79:48.68      844763796 B                            0.7029  (15 files)
+=================== 
+=================== 
+=================== 

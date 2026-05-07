@@ -1,0 +1,18 @@
+    length     expanded size   cdr  WAVE problems filename
+     4:15.04       44991452    ---   --   ---xx   dylan-1988-06-11-MP-d1t01.flac
+     4:33.54       48284252    ---   --   ---xx   dylan-1988-06-11-MP-d1t02.flac
+     4:18.45       45617084    ---   --   ---xx   dylan-1988-06-11-MP-d1t03.flac
+     7:21.64       77942972    ---   --   ---xx   dylan-1988-06-11-MP-d1t04.flac
+     6:05.21       64435436    ---   --   ---xx   dylan-1988-06-11-MP-d1t05.flac
+     5:04.73       53797340    ---   --   ---xx   dylan-1988-06-11-MP-d1t06.flac
+     4:21.11       46066316    ---   --   ---xx   dylan-1988-06-11-MP-d1t07.flac
+     5:32.27       58628348    ---   --   ---xx   dylan-1988-06-11-MP-d1t08.flac
+     4:33.67       48314828    ---   --   ---xx   dylan-1988-06-11-MP-d2t01.flac
+     5:21.39       56716172    ---   --   ---xx   dylan-1988-06-11-MP-d2t02.flac
+     5:18.58       56231660    ---   --   ---xx   dylan-1988-06-11-MP-d2t03.flac
+     4:29.43       47552780    ---   --   ---xx   dylan-1988-06-11-MP-d2t04.flac
+     5:23.21       57026636    ---   --   ---xx   dylan-1988-06-11-MP-d2t05.flac
+     5:35.08       59112860    ---   --   ---xx   dylan-1988-06-11-MP-d2t06.flac
+     7:13.09       76402412    ---   --   ---xx   dylan-1988-06-11-MP-d2t07.flac
+     5:34.73       59089340    ---   --   ---xx   dylan-1988-06-11-MP-d2t08.flac
+    85:03.17      900209888 B                     (totals for 16 files, 0.6124 overall compression ratio)

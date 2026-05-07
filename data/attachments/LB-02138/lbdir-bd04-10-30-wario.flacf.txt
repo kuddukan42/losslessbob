@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-30-wario.flacf 
+=================== 
+=================== 
+=================== 
+23367879a7646665e74d263d51c73e79  bd04-10-30-wario.txt
+e6c8068380f1ab67ebc4c8985f90fc18  bd041030.md5
+2595ed9429f972e9bf224a52cb2052de  bd041030d1t01.flac
+938ba9b8089a2b93f2d782aa6cbd27e3  bd041030d1t02.flac
+ff1b21d9b6af005b8ebd5ffac3af3841  bd041030d1t03.flac
+595a50209a517ab212520ebce0494e10  bd041030d1t04.flac
+883c61d63aa6de1dd6d2ffa8bfdbf63e  bd041030d1t05.flac
+d6d20b44269896a4b5d27ec80e8688b9  bd041030d1t06.flac
+3fce891b3ea191f4286ce8ad47105780  bd041030d1t07.flac
+1bb3f7565735cf630e5ece301fefeb59  bd041030d1t08.flac
+e51417fa2629f2d8998ce6e5857332a5  bd041030d1t09.flac
+983bb95b09a46cc65f1c464ec67d0388  bd041030d1t10.flac
+f9dda5b9b2be70bab1f01d265c830908  bd041030d1t11.flac
+125ababae919cb8516b165866e9de920  bd041030d1t12.flac
+94edf23ebfbd9c6358e4cd087199dfef  bd041030d2t01.flac
+8f3fb9cb2520d694e7fdd0528071d3db  bd041030d2t02.flac
+26c827e2b49cf569a1b75d0939b99992  bd041030d2t03.flac
+87df853d91c84c43300db7e9158ba56a  bd041030d2t04.flac
+9da38ef91cd112263e2e6758ecbc6652  bd041030d2t05.flac
+b7d7c52c50c395587dd5ef06db23557a  bd041030d2t06.flac
+df971ac076f07a662a68e8bf032174b6  Bob Dylan 10-30-04 Back.jpg
+8aa0f9213d6a71b8eeca82c884f49b6f  Bob Dylan 10-30-04 CD1.jpg
+d983976d4c319cc40c8c9293d2549d69  Bob Dylan 10-30-04 CD2.jpg
+6a657c5dd1565b8ac2ffed937e1c3030  Bob Dylan 10-30-04 Front.jpg
+4ca16eeaa7eb1c389ecf5e20e26b6f55  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-30-wario.flacf 
+=================== 
+=================== 
+=================== 
+bd041030d1t01.flac:070c58e966f9e38d024f6f1a685babe7
+bd041030d1t02.flac:8f27dd111eee2e2678c7b2a2b9b88220
+bd041030d1t03.flac:54d1c245a659860f4f82b278fb2aa33e
+bd041030d1t04.flac:c295160c199923868c8224aead2d78a7
+bd041030d1t05.flac:1d14c9feb0564587fa05fb119cc291bd
+bd041030d1t06.flac:2e1ae669578cb52f5fcaf15eea6c25de
+bd041030d1t07.flac:9816de7192b20711788fbcff98703f7e
+bd041030d1t08.flac:bff68bc8c8b9d07e8720508ec39a54e8
+bd041030d1t09.flac:34c2cb9b3e1f47be73929835417abee5
+bd041030d1t10.flac:fbb3a189c8f3e58a6e7503b30dfd8086
+bd041030d1t11.flac:d751db3fca4a4bf9f214aab581ecb9ea
+bd041030d1t12.flac:0f3bdc9614beac312853da59a86c05ee
+bd041030d2t01.flac:4a6c9de162b17b4a9d852f6cc78b80c0
+bd041030d2t02.flac:3853430a41f617efebedfd3bd1e5a31d
+bd041030d2t03.flac:07bf17043d5dee5e5050d908a5ae290f
+bd041030d2t04.flac:430100591e14bad2a9c51e91f3816808
+bd041030d2t05.flac:0488232b3f4685d63273df365b4fb257
+bd041030d2t06.flac:146dc37440d628641d87f88f5671ab87
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-30-wario.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:12.40       12794924 B   ---   --   ---xx   flac  0.3922  bd041030d1t01.flac
+     4:44.27       50161148 B   ---   --   ---xx   flac  0.6038  bd041030d1t02.flac
+     6:59.41       74008076 B   ---   --   ---xx   flac  0.5604  bd041030d1t03.flac
+     6:14.15       66008924 B   ---   --   ---xx   flac  0.6115  bd041030d1t04.flac
+     7:30.03       79387100 B   ---   --   ---xx   flac  0.5216  bd041030d1t05.flac
+     5:32.13       58595420 B   ---   --   ---xx   flac  0.5543  bd041030d1t06.flac
+     7:00.27       74151548 B   ---   --   ---xx   flac  0.5686  bd041030d1t07.flac
+     7:50.49       83023292 B   ---   --   ---xx   flac  0.5838  bd041030d1t08.flac
+     5:30.39       58303772 B   ---   --   ---xx   flac  0.4554  bd041030d1t09.flac
+     6:29.03       68626700 B   ---   --   ---xx   flac  0.4897  bd041030d1t10.flac
+     6:44.53       71390300 B   ---   --   ---xx   flac  0.6207  bd041030d1t11.flac
+     6:42.18       70955180 B   ---   --   ---xx   flac  0.5807  bd041030d1t12.flac
+     6:42.17       70952828 B   ---   --   ---xx   flac  0.6037  bd041030d2t01.flac
+     5:53.45       62375084 B   ---   --   ---xx   flac  0.4924  bd041030d2t02.flac
+    11:54.67      126107228 B   ---   --   ---xx   flac  0.5529  bd041030d2t03.flac
+     6:43.66       71244476 B   ---   --   ---xx   flac  0.5993  bd041030d2t04.flac
+     0:53.64        9499772 B   ---   --   ---xx   flac  0.5341  bd041030d2t05.flac
+     6:17.60       66643964 B   ---   --   ---xx   flac  0.6040  bd041030d2t06.flac
+   110:56.47     1174229736 B                            0.5609  (18 files)
+=================== 
+=================== 
+=================== 

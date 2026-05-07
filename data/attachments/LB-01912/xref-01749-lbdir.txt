@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd95-04-03-off-master-Olav-ASM.flacf
+===================
+===================
+===================
+52e078158b2efd6ff255330c91217b69 *CD1\00 Announcement.flac
+9a7a73407654a87b98eacb0ccf33f675 *CD1\01 Crash on the levee (down in the flood).flac
+e78b12351e3a9b10f73619f937e9089c *CD1\02 Where teardrops fall.flac
+d5de23662f4b7712e63f1d2c2ff274f3 *CD1\03 All along the watchtower.flac
+e52669e31c06b654cd7f71716e874c5d *CD1\04 What good am I.flac
+e3e69fe8bc9d56a1a466c92514f9d997 *CD1\05 Stuck inside of Mobile with the Memphis blues again.flac
+d70905bfe6964756b2f6a38c136e606a *CD1\06 Man in the long black coat.flac
+e68092b513eeeb9969b649f3defb32ad *CD1\07 Mr. Tambourine Man.flac
+f3647f3e8d6632b764eb648333ac2b59 *CD1\CD1.ffp
+066ff1f560a792f8205c61a855cebe2d *CD2\08 Boots of Spanish leather.flac
+f1020d6e5eb89b2bc76f01b56673ebb1 *CD2\09 Gates of Eden.flac
+599555d66d5a60821021a0d224d7d1ee *CD2\10 Jokerman.flac
+025272708698156c383712e81b1f8164 *CD2\11 Under the red sky.flac
+e6b32fe97b7eaaec29db5e852c348f32 *CD2\12 (band intro).flac
+381034007ae261d15bc5760ddb09661e *CD2\12 Ballad of a thin man.flac
+8f3e72e54a39b7ae906f2ac11d8dbcd4 *CD2\13 Leopard-skin pill-box hat.flac
+373c24765f8c978ffeee693076f6e541 *CD2\14 It ain't me, babe.flac
+499af67f5443acc73b38a1e5a57831c5 *CD2\CD2.ffp
+99bda72a196d846b17bc48b1f07f2ac9 *Info\Bob Dylan 1995-04-03 Labatts Apollo, Manchester, England (off master + Olav ASM).txt
+===================
+===================
+===================
+=== ffp for: bd95-04-03-off-master-Olav-ASM.flacf
+===================
+===================
+===================
+CD1\00 Announcement.flac:010b792ddaf58495a5841f7b8bf90d0f
+CD1\01 Crash on the levee (down in the flood).flac:c20c61aabe213f3608a3c1d395812c86
+CD1\02 Where teardrops fall.flac:ae1956c6a93c52ddbb350d3a2b1f998a
+CD1\03 All along the watchtower.flac:0f1bc30d93a3c5593013c054250b75f2
+CD1\04 What good am I.flac:4951605bd02ef440717b1ebf3d6cd34f
+CD1\05 Stuck inside of Mobile with the Memphis blues again.flac:74feb99f446ce21ea1ae19e0bb0daa55
+CD1\06 Man in the long black coat.flac:a6b3e391690d14af39ba7dda6fadf445
+CD1\07 Mr. Tambourine Man.flac:ffa346a7c989566afe709d9c04653d65
+CD2\08 Boots of Spanish leather.flac:5476f0dfc15a2988c52ad02ecf61228f
+CD2\09 Gates of Eden.flac:43ac53598d30c247efe03d9f20e60028
+CD2\10 Jokerman.flac:7fde8a629bda687e3a80ce5c6ddaf631
+CD2\11 Under the red sky.flac:596d17e1efcd6843c36c25705c00d2cd
+CD2\12 (band intro).flac:15f7b4ed3bfb3c43752eecd395116339
+CD2\12 Ballad of a thin man.flac:e7835cbc9f82e751c1e396fe6722392d
+CD2\13 Leopard-skin pill-box hat.flac:1460720b931acf3619a81d01ec5a9d3f
+CD2\14 It ain't me, babe.flac:3a8be1de930a56758d6fb2f082f5802f
+===================
+===================
+===================
+=== shntool len for: bd95-04-03-off-master-Olav-ASM.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:07.57        1368908 B   ---   --   ---xx   flac  0.6237  00 Announcement.flac
+     5:01.61       53239916 B   ---   --   ---xx   flac  0.7007  01 Crash on the levee (down in the flood).flac
+     3:31.68       37380380 B   ---   --   ---xx   flac  0.6183  02 Where teardrops fall.flac
+     5:51.57       62050508 B   ---   --   ---xx   flac  0.6797  03 All along the watchtower.flac
+     7:29.17       79243628 B   ---   --   ---xx   flac  0.5956  04 What good am I.flac
+     9:43.02      102845948 B   ---   --   ---xx   flac  0.6505  05 Stuck inside of Mobile with the Memphis blues again.flac
+     8:39.64       91702172 B   ---   --   ---xx   flac  0.5577  06 Man in the long black coat.flac
+     6:42.17       70952828 B   ---   --   ---xx   flac  0.5015  07 Mr. Tambourine Man.flac
+    47:07.43      498784288 B                            0.6100  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd95-04-03-off-master-Olav-ASM.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:38.23       80845340 B   ---   --   ---xx   flac  0.4947  08 Boots of Spanish leather.flac
+     8:01.36       84933116 B   ---   --   ---xx   flac  0.5541  09 Gates of Eden.flac
+     8:02.70       85189484 B   ---   --   ---xx   flac  0.6367  10 Jokerman.flac
+     5:26.13       57537020 B   ---   --   ---xx   flac  0.6271  11 Under the red sky.flac
+     0:25.02        4414748 B   ---   --   ---xx   flac  0.6150  12 (band intro).flac
+     8:23.69       88891532 B   ---   --   ---xx   flac  0.6597  12 Ballad of a thin man.flac
+     5:26.05       57518204 B   ---   --   ---xx   flac  0.6803  13 Leopard-skin pill-box hat.flac
+     7:16.00       76910444 B   ---   --   ---xx   flac  0.5527  14 It ain't me, babe.flac
+    50:39.68      536239888 B                            0.5975  (8 files)
+===================
+===================
+===================

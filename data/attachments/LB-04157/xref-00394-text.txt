@@ -1,0 +1,64 @@
+===================
+===================
+===================
+=== bd1998-01-31.txt
+===================
+===================
+===================
+Bob Dylan 
+1998-01-31
+Taj Mahal-Mark G. Etess Arena
+Atlantic City, New Jersey
+
+
+Taped By Bobby Bouron
+Source: Schoeps MK4V's>Sonosax SX-M2>Sony SBM-1>Sony TCD-D100
+
+
+1 Absolutely Sweet Marie 
+2 Tonight I'll Be Staying Here With You 
+3 Can't Wait 
+4 Just Like A Woman 
+5 Silvio 
+6 Cocaine Blues (acoustic) 
+7 Masters Of War (acoustic) 
+8 Tangled Up In Blue (acoustic) 
+9 Million Miles 
+10 This Wheel's On Fire 
+11 Highway 61 Revisited 
+
+12 'Til I Fell In Love With You 
+13 crowd noise
+14 It Ain't Me, Babe (acoustic) 
+15 Love Sick 
+16 Rainy Day Women #12 & 35 
+
+
+File names & tags edited by Chopen, December 2009
+===================
+===================
+===================
+=== Bob Dylan 1998.01.31 Taj Mahal-Mark G. Etess Arena, Atlantic City, NJ (Bobby Bourbon).md5
+===================
+===================
+===================
+b1e5012a005e0181da7cfabc369468e0 *01 Absolutely sweet Marie.flac
+41fb0ce733439a5762314d72b811697c *02 Tonight I'll be staying here with you.flac
+71818ac9a1678455c8850baf9ad007e4 *03 Can't wait.flac
+385376bbfa7bc4da4a3493a28050c541 *04 Just like a woman.flac
+b8cdd85856cc1d834b47c0062d475304 *05 Silvio.flac
+56c8acb20551f1facbb9bbd00e4fd6d1 *06 Cocaine blues.flac
+48d7dd5adf034b43dcd9f5d66cf2e649 *07 Masters of war.flac
+29133309d564df2079ce719f2aedab11 *08 Tangled up in blue.flac
+78729b45272bc13ed48e91ed39312fd0 *09 Million miles.flac
+65901a0ec6907c977f1deaed5260ae2b *10 This wheel's on fire.flac
+6bd836417a6e16bc32f7a680d726d0ac *11 Highway 61 revisited.flac
+8cc9173ce3a4918cdd910569a0851b0f *12 'Til I fell in love with you.flac
+1f0ea6676c4f353340fe277842717eac *13 (Encore).flac
+ef66da49301dd22b780d11180440a4b8 *14 It ain't me, babe.flac
+3661ed909ce43416e438b46c351592e4 *15 Love sick.flac
+e3ae75c9ed64ea99ff4b555bc21e4e53 *16 Rainy day women #12 & 35.flac
+12e588867a029f8bdf1e2de2a077ebc3 *bd1998-01-31.txt
+===================
+===================
+===================

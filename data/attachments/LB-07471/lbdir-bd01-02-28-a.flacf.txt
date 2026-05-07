@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-02-28-a.flacf 
+=================== 
+=================== 
+=================== 
+b79d99a202d9ac7b6d204ad58654da01  Bob Dylan 2001-02-28 Akita, Japan.md5
+104ee2384f3349e7bad04a488d0cfaff  Bob Dylan 2001-02-28 d1\Track01.flac
+b28f59a482b188f93d6441a34be70c7a  Bob Dylan 2001-02-28 d1\Track02.flac
+47681d9292c3b79df935bc296af622c1  Bob Dylan 2001-02-28 d1\Track03.flac
+b40ca6027ceabff5c4acb7c28d805000  Bob Dylan 2001-02-28 d1\Track04.flac
+2c19cbfa6c3b56b3f1238cb7893252eb  Bob Dylan 2001-02-28 d1\Track05.flac
+230cc50b3dcd707cf1d3e1008b3ffd7f  Bob Dylan 2001-02-28 d1\Track06.flac
+27005b7e17ad1aa8ef77ee587aa1fe52  Bob Dylan 2001-02-28 d1\Track07.flac
+88fc30b6ae7aaff2f43c5049e01d7af9  Bob Dylan 2001-02-28 d1\Track08.flac
+7cf703066510ee296b670bc3cee1406e  Bob Dylan 2001-02-28 d1\Track09.flac
+eb86dee5575823b834158ec4700881d1  Bob Dylan 2001-02-28 d1\Track10.flac
+a5bc69b2b74a93a245fdef11c9e1d93b  Bob Dylan 2001-02-28 d1\Track11.flac
+f57d4079e52de0da6876c68fb2c29f15  Bob Dylan 2001-02-28 d1\Track12.flac
+9aa1b088964a4fd9a24d1719666de493  Bob Dylan 2001-02-28 d2\Track01.flac
+9d250399b1ef3d41127efee12189b6ee  Bob Dylan 2001-02-28 d2\Track02.flac
+97d9aa0ce49e6de18b8c31d48e69c02e  Bob Dylan 2001-02-28 d2\Track03.flac
+743e36b8b4359182302e8811d38db49d  Bob Dylan 2001-02-28 d2\Track04.flac
+c289f6f04c7f3ea0d070f3f9e321c382  Bob Dylan 2001-02-28 d2\Track05.flac
+ea32070183a6290ffd42e48b2439794d  Bob Dylan 2001-02-28 d2\Track06.flac
+45257d7a6d9d6425c80ccc4dd9cc6946  Bob Dylan 2001-02-28 d2\Track07.flac
+12817e4d90bca3565423948dba4b37b3  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-02-28-a.flacf\Bob Dylan 2001-02-28 d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:33d1dd95e23db765ed1ec4f8e3b3b07d
+Track02.flac:be59c40092277e57fc3620f3adcfc594
+Track03.flac:0e23d8aec0502851aebbe5e2351f6277
+Track04.flac:f0a96ccce39c19b016aebdc5b55e0704
+Track05.flac:7ad8f0da33dba2eea8013e732845b433
+Track06.flac:6b11fd196becbbcd9e93c3dffe87ad4e
+Track07.flac:b80b76ee0072df6210cccd9247c324cf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-02-28-a.flacf\Bob Dylan 2001-02-28 d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:e37a91910548d4359be30de33812c770
+Track02.flac:2403efe94220595eacfb5cbc76e0ad49
+Track03.flac:4e30909b3c63397de53b6320377cca70
+Track04.flac:ae614a3058686b07edbb2c556fca74f0
+Track05.flac:4e508be37a9d1177b596b536cb59e336
+Track06.flac:873fac4a31ee05edcc77ab71e6e12b4f
+Track07.flac:12a5e56fb15c8484271ff2753434a4bd
+Track08.flac:94e4d5800a3f17f44983bb26f2fcc9f1
+Track09.flac:f5550501697a865207739193161b2074
+Track10.flac:89d2eafab20cd2b6f5ad7787f32eee15
+Track11.flac:9eb2421cc3c0aeff4881142761efd318
+Track12.flac:c68b21a37b7b641bbe82746a53fc8084
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-02-28-a.flacf\Bob Dylan 2001-02-28 d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:39.30       59870204 B   ---   --   ---xx   flac  0.5274  Track01.flac
+     7:34.28       80151500 B   ---   --   ---xx   flac  0.5981  Track02.flac
+     4:05.40       43312124 B   ---   --   ---xx   flac  0.4658  Track03.flac
+     5:00.09       52941212 B   ---   --   ---xx   flac  0.5923  Track04.flac
+     5:46.45       61140284 B   ---   --   ---xx   flac  0.3897  Track05.flac
+     5:41.52       60274748 B   ---   --   ---xx   flac  0.6028  Track06.flac
+     5:31.58       58524860 B   ---   --   ---xx   flac  0.5323  Track07.flac
+    39:19.37      416214932 B                            0.5342  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-02-28-a.flacf\Bob Dylan 2001-02-28 d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.55       35585804 B   ---   --   ---xx   flac  0.5510  Track01.flac
+     5:14.34       55469612 B   ---   --   ---xx   flac  0.5260  Track02.flac
+     8:12.29       86857052 B   ---   --   ---xx   flac  0.5283  Track03.flac
+     4:07.05       43582604 B   ---   --   ---xx   flac  0.4395  Track04.flac
+     7:39.33       81045260 B   ---   --   ---xx   flac  0.5639  Track05.flac
+     4:04.37       43128668 B   ---   --   ---xx   flac  0.4975  Track06.flac
+     3:03.59       32420012 B   ---   --   ---xx   flac  0.5396  Track07.flac
+     3:40.53       38932700 B   ---   --   ---xx   flac  0.5242  Track08.flac
+     4:33.28       48223100 B   ---   --   ---xx   flac  0.6023  Track09.flac
+     4:51.38       51421820 B   ---   --   ---xx   flac  0.4127  Track10.flac
+     6:26.57       68224508 B   ---   --   ---xx   flac  0.5373  Track11.flac
+     5:13.61       55356716 B   ---   --   ---xx   flac  0.5606  Track12.flac
+    60:29.39      640247856 B                            0.5261  (12 files)
+=================== 
+=================== 
+=================== 

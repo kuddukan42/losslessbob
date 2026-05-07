@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-30-fw.shnf 
+=================== 
+=================== 
+=================== 
+cdb8ba6496261f446a6965f7bbe9df76  bd03-07-30-fw-d1t01.shn
+eeb8bd203dcd1ab1f330be5272018ce5  bd03-07-30-fw-d1t02.shn
+4b5a41bcfbeb4ad862c20a726fbedd3b  bd03-07-30-fw-d1t03.shn
+c4d98e50ef34556ced76902560539695  bd03-07-30-fw-d1t04.shn
+c35ca57c8763b33bd2e96a4764ad75c4  bd03-07-30-fw-d1t05.shn
+4370d925abc39fb6ca2ab5b6421398df  bd03-07-30-fw-d1t06.shn
+c3b11f45e54925cc730e4b631cf21cda  bd03-07-30-fw-d1t07.shn
+ccbdad87f9ab1f9ecffc87e80a0d6fcc  bd03-07-30-fw-d1t08.shn
+4653e3c0cede6c43fed5d950b85d2d84  bd03-07-30-fw-d1t09.shn
+849793ca36d1fd69894e998a3e9e65a6  bd03-07-30-fw-d1t10.shn
+ba25effd5edbadb55e12a10ef2c68fe8  bd03-07-30-fw-d1t11.shn
+8bc68cd6c7d0a42871f8b56c58206f4e  bd03-07-30-fw-d1t12.shn
+c4c498917bc06e9d9ddc1c217117f42a  bd03-07-30-fw-d1t13.shn
+4d125b0878bf7a7b2508486e31ba26f7  bd03-07-30-fw-d2t01.shn
+b4d4549c6bd180cf2d28c7926a2e6fab  bd03-07-30-fw-d2t02.shn
+b84a34d684030903ce07fc52e5d250ae  bd03-07-30-fw-d2t03.shn
+55c88916966b6b774c06c3bd66a25b1d  bd03-07-30-fw-d2t04.shn
+8eb3c98400375953cd419a757d7c82be  bd03-07-30-fw-d2t05.shn
+38a5980f84e9e59d8d0611e2189ff600  bd03-07-30-fw-d2t06.shn
+a38e4575eef0a683b543a73453c0cd9a  bd03-07-30-fw-d2t07.shn
+1095dddc81df6369bd132a3f2dc0c605  bd03-07-30-fw-d2t08.shn
+0f739377e41fd2404f06d13f7a92bf0b  bd03-07-30-fw-d2t09.shn
+7afee400a4ba11a15b5ea2da34b0fd6c  bd03-07-30-fw-d2t10.shn
+5dd005b82bcd487c8b76e1c6ec61d260  bd03-07-30-fw-d2t11.shn
+3f909a2128db2bff9f6c07476edbb781  bd03-07-30-fw-d3t01.shn
+1c50e18f95c4870cf1a369648a1f8208  bd03-07-30-fw-d3t02.shn
+6d6837e3c830f658b8a6dadafddb7639  bd03-07-30-fw-d3t03.shn
+7e21f3e4020b9a81481969cf6560df39  bd03-07-30-fw.md5
+7990df3d95bf2a08ac0470f31c8d3ef1  bd03-07-30-fw.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-30-fw.shnf 
+=================== 
+=================== 
+=================== 
+26c3540bdc95c828c8914cb519d0474f  [shntool]  bd03-07-30-fw-d1t01.wav
+5c4d72f293eac5a206b279b609e167ed  [shntool]  bd03-07-30-fw-d1t02.wav
+fc7d20ae431904919c8ef765422ca33d  [shntool]  bd03-07-30-fw-d1t03.wav
+2c30ff190fce75c247c79f3095c3ad41  [shntool]  bd03-07-30-fw-d1t04.wav
+c7d6da79d3b297479eb7514767bbf12d  [shntool]  bd03-07-30-fw-d1t05.wav
+28e6f803f1f6efcbd5c9d0467f88066d  [shntool]  bd03-07-30-fw-d1t06.wav
+4f8e425024dc17db4f980e2803f3f91c  [shntool]  bd03-07-30-fw-d1t07.wav
+70b7add043b24f7b9a233e6c3a92a2f3  [shntool]  bd03-07-30-fw-d1t08.wav
+266e48963578ad46a546b8d97165c491  [shntool]  bd03-07-30-fw-d1t09.wav
+d2f33aa5ad723a3edbfb7042cd5bc7f6  [shntool]  bd03-07-30-fw-d1t10.wav
+68962297d7b3c40ef1cc57b1f04ef907  [shntool]  bd03-07-30-fw-d1t11.wav
+f5631df5423420bbae55841caee66eeb  [shntool]  bd03-07-30-fw-d1t12.wav
+2b30d9e5755bed5956635bcab2c35968  [shntool]  bd03-07-30-fw-d1t13.wav
+5689fd7c4341696f2092c28178695b36  [shntool]  bd03-07-30-fw-d2t01.wav
+f0d217a549b9f127374c76f5fa2fbc8f  [shntool]  bd03-07-30-fw-d2t02.wav
+015ab4758ffd01d7c69469b3d8ea02e4  [shntool]  bd03-07-30-fw-d2t03.wav
+26baedfbc52afd11b713a84bfd377ea2  [shntool]  bd03-07-30-fw-d2t04.wav
+3f0246b18fd894008129a9dbc0ca03f5  [shntool]  bd03-07-30-fw-d2t05.wav
+8d67aeb50bbe75ed63783bd83ea851f9  [shntool]  bd03-07-30-fw-d2t06.wav
+8f1640b26a11e670acfd1ad9a80f4214  [shntool]  bd03-07-30-fw-d2t07.wav
+3f85b4e7b98389a4a53ca1cb7c198249  [shntool]  bd03-07-30-fw-d2t08.wav
+70c510b4be7e64e1a5ec6d1c3394f3ae  [shntool]  bd03-07-30-fw-d2t09.wav
+4150e5dd9cb315496cb47040f8957300  [shntool]  bd03-07-30-fw-d2t10.wav
+aaa202d6e2fa81fb2ddabc0345d0c689  [shntool]  bd03-07-30-fw-d2t11.wav
+e1f21d03c39243caf945d455a08623f3  [shntool]  bd03-07-30-fw-d3t01.wav
+62e0b9ecfd998a779c624de50a2516af  [shntool]  bd03-07-30-fw-d3t02.wav
+b10e04bb85ad768e006f5011fb2c1cd3  [shntool]  bd03-07-30-fw-d3t03.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-30-fw.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:51.35        9078764 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t01.wav
+     6:15.25       66208844 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t02.wav
+     5:13.41       55309676 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t03.wav
+     5:32.69       58727132 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t04.wav
+     5:21.32       56699708 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t05.wav
+     6:29.27       68683148 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t06.wav
+     5:46.35       61116764 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t07.wav
+     4:29.64       47602172 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t08.wav
+     8:04.45       85483484 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t09.wav
+     6:33.41       69421676 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t10.wav
+     0:48.14        8500172 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t11.wav
+    10:08.53      107375900 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t12.wav
+     5:25.58       57466460 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d1t13.wav
+     4:22.48       46329740 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t01.wav
+     7:10.32       75927308 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t02.wav
+     1:58.35       20897564 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t03.wav
+     3:22.07       35649308 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t04.wav
+     5:14.63       55537820 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t05.wav
+     7:13.16       76418876 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t06.wav
+     7:43.31       81746156 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t07.wav
+     8:09.60       86400764 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t08.wav
+     6:26.55       68219804 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t09.wav
+     8:29.52       89909948 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t10.wav
+     2:49.59       29950412 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d2t11.wav
+     7:13.13       76411820 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d3t01.wav
+     8:40.48       91840940 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d3t02.wav
+     8:28.42       89710028 B   ---   --   -----    wav  1.0000  bd03-07-30-fw-d3t03.wav
+   158:24.50     1676624388 B                            1.0000  (27 files)
+=================== 
+=================== 
+=================== 

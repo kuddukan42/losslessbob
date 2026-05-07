@@ -1,0 +1,149 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-02-14eve-pa-coll-upgrade 
+=================== 
+=================== 
+=================== 
+d12b084a1d1b77609f0b2edcbf5ac250  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14-eve-d1.md5
+daee37cee0324bc38f86ef9c3221f947  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t01.shn
+ce64535a99adec9ba82228b7090204ce  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t02.shn
+0ce05993d7cd281f9c41e540184a49dd  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t03.shn
+1260f386125034ccd634fe0d88980580  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t04.shn
+92e4c6f6ad18f8104587013b68289ad9  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t05.shn
+739e87343087e1696de567a5d4ca2505  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t06.shn
+f28a5cc60140448f4c131d9242bca9ac  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t07.shn
+82ccbb4a45950a3b3a076fe5a9fd0f0e  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t08.shn
+8a0f6b79ea4a7b79fc9d912c500d30c4  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t09.shn
+3544dfb544865ac1a54ccf46b75ae20f  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t10.shn
+52073580a7766fede34f1e0809f2cebb  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t11.shn
+fb9188e5fd94a63e3b4b4a1fc524b241  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t12.shn
+2f5262d19c001a793fd40dce870ec915  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t13.shn
+1863d3d7face57a7ccf6d90e11b99b7c  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t14.shn
+669eea69dd3684fd4c016b90e173b31c  1974-02-14-eve Inglewood - Disc 1\dylan-1974-02-14eve-d1t15.shn
+cedf1af397de822e7c42ac4509d0b223  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14-eve-d2.md5
+8b2cb809aea7265d5e8ce7a203d0f854  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t01.shn
+e1cc3807a18aa8b90a4a054c708191d7  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t02.shn
+6a4bdadaeb2f0c45d434a59943a27d5b  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t03.shn
+f910ba5b4c41bd8fec9cd05e032cc1d1  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t04.shn
+92877206b82e6659caf69f7dbc0407ac  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t05.shn
+732afae17e67354d1a67e727ddb874aa  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t06.shn
+b56ae0565bd3ae1f06a64e270a29ea16  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t07.shn
+b61dcb462e4843b329b60d78bdb19b60  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t08.shn
+163366bbcb3cca115d6244cc6f7b3b39  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t09.shn
+b0b046000de0e09d1a059d238ae2380a  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t10.shn
+58627ad6b646f0814d00455d7d36761f  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t11.shn
+4217ba35929bce61267388c5ad728347  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t12.shn
+1ed3331bcac8e23631253d9d3b8418f2  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t13.shn
+05940da309713d2a33ab55bc29a6c224  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t14.shn
+8d4930dcae2e689a682b8ffa57aaf4c7  1974-02-14-eve Inglewood - Disc 2\dylan-1974-02-14eve-d2t15.shn
+cfe050d150097bc8e7759f7d781be0cf  1974-02-14-eve Inglewood - Extras\14febe-b.jpg
+a17e7d70400de8735362ef2438beb0e8  1974-02-14-eve Inglewood - Extras\14febe-f.jpg
+85a9d52b8282d353435ab056aedc1f81  1974-02-14-eve Inglewood - Extras\14febe-i.jpg
+77bc339af9df5f590c2d7332cc977727  1974-02-14-eve Inglewood - Extras\14febe2-b.jpg
+8fd2898e8baf7acbba388fadb0677101  1974-02-14-eve Inglewood - Extras\14febe2-f.jpg
+c5fa1cde64f43ee4dd726300a03b0195  1974-02-14-eve Inglewood - Extras\14febe2-i.jpg
+c5a60680956a347e2ab23bb4c719ec6d  1974-02-14-eve Inglewood - Extras\1974-02-14-eve LA tracklist.html
+e64d4e4ac12dd9580e46a2cdf1ed2862  1974-02-14-eve Inglewood - Extras\README - 1974-02-14-eve LA.txt
+8548df5d97d289e03b1f432dd5328e69  1974-02-14-eve Inglewood - Extras\Thumbs.db
+bfc8f8a8830264c2b9bbc703184602bc  1974-02-14-eve Inglewood - Extras\dylan-1974-02-14eve-d1.cue
+eff9f30f2dc2091099ae7fa5bd435db7  1974-02-14-eve Inglewood - Extras\dylan-1974-02-14eve-d2.cue
+af41ddcc0496efc3b9645ce9708c791e  1974-02-14-eve Inglewood - Extras\inglewood_140274evening.jpg
+18c363a9572bb3e5cab159bcd093e8ad  1974-02-14-eve Inglewood - Extras\tracklist.css
+6a1fe9d6b79fcddf6ad44dc6fe7185b1  bd74-02-14eve-pa-coll-upgrade.txt
+22aa8333d1bbfda454519aa6d197cae1  README_PA_Collection-fixed.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-02-14eve-pa-coll-upgrade\1974-02-14-eve Inglewood - Disc 1 
+=================== 
+=================== 
+=================== 
+53446ac65d4e557c84827b0d13fc9f89  [shntool]  dylan-1974-02-14eve-d1t01.wav
+c7ae504722bb6f6e504b32ddf39511ac  [shntool]  dylan-1974-02-14eve-d1t02.wav
+e1f1ecc7c2bd2ecb85586fd08aca4ab3  [shntool]  dylan-1974-02-14eve-d1t03.wav
+d966ec4ec3daf19ac1d6e20bff3bc33a  [shntool]  dylan-1974-02-14eve-d1t04.wav
+738e9d25f6c1c225a231b6e338a98c34  [shntool]  dylan-1974-02-14eve-d1t05.wav
+293f7a01cd4a1b90da3b89cf14733602  [shntool]  dylan-1974-02-14eve-d1t06.wav
+e0c5f192e814ed4f45eb070083a10f01  [shntool]  dylan-1974-02-14eve-d1t07.wav
+2f219c4a213a91d4e3d6a7d3ac02cf14  [shntool]  dylan-1974-02-14eve-d1t08.wav
+6944cc59ce30b620a0b32c11003d0964  [shntool]  dylan-1974-02-14eve-d1t09.wav
+83b753102fe3e82fd0bec51e6bcc7d6d  [shntool]  dylan-1974-02-14eve-d1t10.wav
+434da029aa721e19a900bc595c32b84a  [shntool]  dylan-1974-02-14eve-d1t11.wav
+c730475ddfc206106af4b73bb23125f7  [shntool]  dylan-1974-02-14eve-d1t12.wav
+b2f1fb85e5c4dead7a89e691f3c0480d  [shntool]  dylan-1974-02-14eve-d1t13.wav
+6ce782efe6efae519d86b06394b0ef8d  [shntool]  dylan-1974-02-14eve-d1t14.wav
+3310694e4ad7ccbb8c81056cb1a7bcaf  [shntool]  dylan-1974-02-14eve-d1t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-02-14eve-pa-coll-upgrade\1974-02-14-eve Inglewood - Disc 2 
+=================== 
+=================== 
+=================== 
+d51835f5d96d84829165a2a58cc7b150  [shntool]  dylan-1974-02-14eve-d2t01.wav
+106c258c8ba0ff18a69c1481be42a4db  [shntool]  dylan-1974-02-14eve-d2t02.wav
+a05ae8071f3e1697a3be94529d0a0e20  [shntool]  dylan-1974-02-14eve-d2t03.wav
+8a02ffbbd13fea042dd2ec9bf76c328f  [shntool]  dylan-1974-02-14eve-d2t04.wav
+7e471c206adc154056336bbb5627d7ac  [shntool]  dylan-1974-02-14eve-d2t05.wav
+ef1bdf1ee60ee9f0acf148ad7bd25171  [shntool]  dylan-1974-02-14eve-d2t06.wav
+fd14455a15e4269b64fff8382b0d9b84  [shntool]  dylan-1974-02-14eve-d2t07.wav
+324fd58e3b3481813eaee6e954ff3f08  [shntool]  dylan-1974-02-14eve-d2t08.wav
+8234fe29d507841eee9c365a3c9766a2  [shntool]  dylan-1974-02-14eve-d2t09.wav
+b51a2037c5bb8181e1f71e052f2ac16d  [shntool]  dylan-1974-02-14eve-d2t10.wav
+76944b80182c7c0f51feb1bbf20af466  [shntool]  dylan-1974-02-14eve-d2t11.wav
+ea85340bee3e323ffcaa2c30bc5f944d  [shntool]  dylan-1974-02-14eve-d2t12.wav
+5a6d32bb03355bb7b590bf59d26374f8  [shntool]  dylan-1974-02-14eve-d2t13.wav
+82dda2ecbce2b2c762e9a3854350c6b8  [shntool]  dylan-1974-02-14eve-d2t14.wav
+0c3b6c57e8f699311f198f85bf33b60d  [shntool]  dylan-1974-02-14eve-d2t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-14eve-pa-coll-upgrade\1974-02-14-eve Inglewood - Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:45.42       39788828 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t01.wav
+     3:19.10       35127164 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t02.wav
+     6:54.08       73048460 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t03.wav
+     3:46.03       39873500 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t04.wav
+     3:32.68       37556780 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t05.wav
+     4:12.61       44596316 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t06.wav
+     5:08.04       54340652 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t07.wav
+     4:46.03       50457500 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t08.wav
+     4:01.61       42655916 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t09.wav
+     3:26.02       36343148 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t10.wav
+     5:53.54       62396252 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t11.wav
+     3:13.25       34104044 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t12.wav
+     5:57.51       63094796 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t13.wav
+     4:52.51       51628796 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t14.wav
+     4:13.20       44676284 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d1t15.wav
+    67:03.13      709688436 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-14eve-pa-coll-upgrade\1974-02-14-eve Inglewood - Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:46.53       29407100 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t01.wav
+     3:35.50       38043644 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t02.wav
+     5:33.63       58889420 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t03.wav
+     4:58.05       52579004 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t04.wav
+     4:03.36       42949916 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t05.wav
+     6:20.50       67149644 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t06.wav
+     4:12.49       44568092 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t07.wav
+     4:57.25       52449644 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t08.wav
+     3:54.53       41402300 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t09.wav
+     5:14.00       55389644 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t10.wav
+     5:20.58       56584460 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t11.wav
+     4:37.34       48942812 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t12.wav
+     6:55.72       73375388 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t13.wav
+     4:02.20       42735884 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t14.wav
+     4:26.57       47056508 B   ---   --   -----    wav  1.0000  dylan-1974-02-14eve-d2t15.wav
+    71:00.25      751523460 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

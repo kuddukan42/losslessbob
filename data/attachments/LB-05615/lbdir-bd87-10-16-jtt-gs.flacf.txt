@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-16-jtt-gs.flacf 
+=================== 
+=================== 
+=================== 
+8d28e5996e8da96eac57887e60d8c695  16th.md5
+8f2101fd300cc1f5f35caf1e3ddd59f9  Dylan - Wembley 1987_Info.txt
+4435f078df812b3a21554de88c6912c0  Dylan - Wembley Arena 1987 GS.md5
+11a5492fb26aab27938551ba4686c99e  Dylan_Oct.16th 1987 GS_Track01.flac
+103b5b4c2d7a061a913e2cddc09db22d  Dylan_Oct.16th 1987 GS_Track02.flac
+368a842b3fd6706045feea61a4ad9c11  Dylan_Oct.16th 1987 GS_Track03.flac
+77bc00f794823b585ece65dc15626a04  Dylan_Oct.16th 1987 GS_Track04.flac
+7746d83c3c9b4b7a51de17da854d850f  Dylan_Oct.16th 1987 GS_Track05.flac
+8d3e30c0031af41f33ca7d2dd9e15da4  Dylan_Oct.16th 1987 GS_Track06.flac
+d73b8263d6f136974238de3996fb7c82  Dylan_Oct.16th 1987 GS_Track07.flac
+02a94d3e36c996acefe6ce81a2c9b320  Dylan_Oct.16th 1987 GS_Track08.flac
+478ee3cd41f6448b154f6da84234168e  Dylan_Oct.16th 1987 GS_Track09.flac
+f2f9f858913ef78edc36bccdbfa069df  Dylan_Oct.16th 1987 GS_Track10.flac
+466820f90aea6a13c262ad1088ddfa2c  Dylan_Oct.16th 1987 GS_Track11.flac
+7f373b3f9c2a68ceb5dcd3e495bc3ebf  Dylan_Oct.16th 1987 GS_Track12.flac
+2db8af779e9255733bd04bdebac5c898  Dylan_Oct.16th 1987 GS_Track13.flac
+998d2eddbefe198adfb563e72903f1ae  Dylan_Oct.16th 1987 GS_Track14.flac
+c43924482d952fff1e0104c87601e61f  Wembley Arena 16.10.1987 GS - F.jpg
+800a04272466c0a538f5b8daddbf94da  Wembley Arena 16.10.1987 GS - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-16-jtt-gs.flacf 
+=================== 
+=================== 
+=================== 
+Dylan_Oct.16th 1987 GS_Track01.flac:828e49f7ec45e45b76f02539f7056210
+Dylan_Oct.16th 1987 GS_Track02.flac:de7fc79d18968c1e7d890be473dfdee2
+Dylan_Oct.16th 1987 GS_Track03.flac:8ee1c395069098f6626ddc0d35b209e9
+Dylan_Oct.16th 1987 GS_Track04.flac:c4ef038c3d70a5ba101865093c4d8235
+Dylan_Oct.16th 1987 GS_Track05.flac:1a46932ad2d346704babea71e964b2b5
+Dylan_Oct.16th 1987 GS_Track06.flac:d47cd0682fb8cba2280e51a1e206a662
+Dylan_Oct.16th 1987 GS_Track07.flac:952660bfe6f9dc5d706d3ad6036a139f
+Dylan_Oct.16th 1987 GS_Track08.flac:2b2dcb98b260adf8a3080dd29c2542ca
+Dylan_Oct.16th 1987 GS_Track09.flac:7fad6f971e2cbb4fb6204f4bf4f43980
+Dylan_Oct.16th 1987 GS_Track10.flac:f0ba1a8129c65dbeab4a42ee8745b57e
+Dylan_Oct.16th 1987 GS_Track11.flac:afcb39947c793653294ef21ce4594966
+Dylan_Oct.16th 1987 GS_Track12.flac:41eaaa1ddc7c1d10d8f1008971f5ceb8
+Dylan_Oct.16th 1987 GS_Track13.flac:28af1397af1593b0cf6819b71a87b3b3
+Dylan_Oct.16th 1987 GS_Track14.flac:fc87c2f84358b0b62bc8d819f9924482
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-10-16-jtt-gs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.45       66255884 B   ---   --   ---xx   flac  0.5200  Dylan_Oct.16th 1987 GS_Track01.flac
+     4:07.18       43613180 B   ---   --   ---xx   flac  0.5223  Dylan_Oct.16th 1987 GS_Track02.flac
+     6:39.50       70501244 B   ---   --   ---xx   flac  0.5184  Dylan_Oct.16th 1987 GS_Track03.flac
+     4:26.22       46974188 B   ---   --   ---xx   flac  0.5264  Dylan_Oct.16th 1987 GS_Track04.flac
+     5:23.51       57097196 B   ---   --   ---xx   flac  0.5130  Dylan_Oct.16th 1987 GS_Track05.flac
+     3:42.06       39174956 B   ---   --   ---xx   flac  0.5146  Dylan_Oct.16th 1987 GS_Track06.flac
+     5:10.65       54836924 B   ---   --   ---xx   flac  0.5308  Dylan_Oct.16th 1987 GS_Track07.flac
+     4:55.06       52052156 B   ---   --   ---xx   flac  0.5144  Dylan_Oct.16th 1987 GS_Track08.flac
+     4:14.02       44810348 B   ---   --   ---xx   flac  0.5234  Dylan_Oct.16th 1987 GS_Track09.flac
+     4:28.18       47317580 B   ---   --   ---xx   flac  0.4991  Dylan_Oct.16th 1987 GS_Track10.flac
+     4:26.07       46938908 B   ---   --   ---xx   flac  0.4835  Dylan_Oct.16th 1987 GS_Track11.flac
+     5:40.23       60030140 B   ---   --   ---xx   flac  0.5249  Dylan_Oct.16th 1987 GS_Track12.flac
+     4:09.08       43942460 B   ---   --   ---xx   flac  0.5129  Dylan_Oct.16th 1987 GS_Track13.flac
+     3:18.03       34934300 B   ---   --   ---xx   flac  0.5294  Dylan_Oct.16th 1987 GS_Track14.flac
+    66:56.24      708479464 B                            0.5168  (14 files)
+=================== 
+=================== 
+=================== 

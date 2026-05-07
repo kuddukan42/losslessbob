@@ -1,0 +1,24 @@
+
+I think your md5 file has an error.  According to it, track 4 fails the md5 check.  However, track 4 decodes to wave, plays, and has the correct shntool fingerprint.
+
+
+
+==========
+I sent the "raw" soundchecks to Ronnie, so the following info will apply to the lineage for the soundchecks up to when any addional sound improving/recutting is carried out before uploading.
+
+Info:
+AUDIO cdr trades > Eac, Secure, no errors > HD > removed gaps + clicks/ticks between tracks + Some other minor clicks/ticks on tracks using Wav Repair 4.8.5 and Wav Joiner 2.0.0. 
+
+There are no skips, stutters etc.- with the exception of the first 40 seconds of the 1980-11-19 soundcheck. There is some heavy edits/skipping, which is very probably attributable to tape speed problems as some tape drag and fluctuations can be heard after removal of light ticks/clicks. Other source available?
+
+All flaws have been located manually. No automatic click removal was used - but "best  
+compatible block" or "spectral replacement" functions. Each click removed was checked aurily for any possible resulting blips/dropouts etc. 
+
+Wavs Re-split with Wav Repair, 200ms safety margin. The purpose of this is to act as a "safety margin" so that CD players which mute their output while moving to a new track will have time to unmute before the music begins; it also caters for older CD players which can be a little inaccurate in positioning to a new track (I'm not sure if this is lost in flacing, but probably not)> Flac frontend, aligned on sector boundaries. 
+
+No other general sound mastering applied. 
+
+* Please note that "Ain't gonna go to Hell" from 22 April 1980 was actually on another audio disc!  According to Olof and Krogsgaard the song was soundchecked only twice that year precisely on 22 April. There is a possible edit on the second take (t24 at :45 sec on pre-cut source) but ambience does not change, just dropout so I think it's quite safe to consider it from the same date.
+
+thanks all
+Charlo

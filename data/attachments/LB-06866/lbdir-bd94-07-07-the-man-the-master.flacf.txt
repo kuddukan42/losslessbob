@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-07-the-man-the-master.flacf 
+=================== 
+=================== 
+=================== 
+12ce8e59b40d55ee16c9965cd25e016b  bd94-07-07-the-man-the-master-d1t01.flac
+814e43253892a82b4f649e26a20fef21  bd94-07-07-the-man-the-master-d1t02.flac
+0e82f6ad4d7b289ba5987e8d521001ca  bd94-07-07-the-man-the-master-d1t03.flac
+cddfe341d1e22058eb4108c40a757d0f  bd94-07-07-the-man-the-master-d1t04.flac
+0aba6b9ba0be49b625f0640cd231240f  bd94-07-07-the-man-the-master-d1t05.flac
+decb5b46dd75d88f63d3258bfe514e0d  bd94-07-07-the-man-the-master-d1t06.flac
+4a81b259fbb4caf601ce03cf66db3b02  bd94-07-07-the-man-the-master-d1t07.flac
+f851e14dbccfed499157639882426e96  bd94-07-07-the-man-the-master-d1t08.flac
+d5e5befbc265e09b1fc7140bf9effcaf  bd94-07-07-the-man-the-master-d2t01.flac
+0789f6b8283252417ea29e9943497e04  bd94-07-07-the-man-the-master-d2t02.flac
+04bca4c68fc563e3f51b05fe1bb5ce9b  bd94-07-07-the-man-the-master-d2t03.flac
+a0d873a0596fc0617b6880c607aa4726  bd94-07-07-the-man-the-master-d2t04.flac
+9299082acf4d5317549a6ee6a3af6203  bd94-07-07-the-man-the-master-d2t05.flac
+ecaac256028b139dcc65253ab8b49ee4  bd94-07-07-the-man-the-master-d2t06.flac
+348622ca4213f53fcd3eb37b032cc89a  bd94-07-07-the-man-the-master.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-07-the-man-the-master.flacf 
+=================== 
+=================== 
+=================== 
+bd94-07-07-the-man-the-master-d1t01.flac:1b8aa0bf9409f3fb6f11a659c7c93b6b
+bd94-07-07-the-man-the-master-d1t02.flac:373ea7b6e006b32724cada1acf817302
+bd94-07-07-the-man-the-master-d1t03.flac:aaff0462299948f9a235d59cd6ee3bbf
+bd94-07-07-the-man-the-master-d1t04.flac:b15a5c6a20b550bcf02c4400bd5f4e63
+bd94-07-07-the-man-the-master-d1t05.flac:f76d4078d0f1db7df6ad6d2351878c39
+bd94-07-07-the-man-the-master-d1t06.flac:37bf933a240e4af1718b2b19703011a6
+bd94-07-07-the-man-the-master-d1t07.flac:9c7c3053c5b6f7a63d9ea7c063393929
+bd94-07-07-the-man-the-master-d1t08.flac:1846b7b144725010c3d8b7049fd1e13f
+bd94-07-07-the-man-the-master-d2t01.flac:81df5af18513d6c33b7e95472519df1d
+bd94-07-07-the-man-the-master-d2t02.flac:33f119946f3fd9b39886183a763f4fcd
+bd94-07-07-the-man-the-master-d2t03.flac:4229d42272719833f8ed8de7738559f9
+bd94-07-07-the-man-the-master-d2t04.flac:bfc38ae6cadd72693843ef836c656e5b
+bd94-07-07-the-man-the-master-d2t05.flac:d2ecb6cd12f65b072239b4aa50fe847b
+bd94-07-07-the-man-the-master-d2t06.flac:6441839329e14ff9aec18bd67f20a039
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-07-the-man-the-master.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:04.18       64251980 B   ---   --   ---xx   flac  0.5378  bd94-07-07-the-man-the-master-d1t01.flac
+     6:14.37       66060668 B   ---   --   ---xx   flac  0.6042  bd94-07-07-the-man-the-master-d1t02.flac
+     8:18.30       87917804 B   ---   --   ---xx   flac  0.5664  bd94-07-07-the-man-the-master-d1t03.flac
+     9:23.63       99461420 B   ---   --   ---xx   flac  0.5651  bd94-07-07-the-man-the-master-d1t04.flac
+     8:48.42       93238028 B   ---   --   ---xx   flac  0.5544  bd94-07-07-the-man-the-master-d1t05.flac
+     6:59.63       74059820 B   ---   --   ---xx   flac  0.4803  bd94-07-07-the-man-the-master-d1t06.flac
+     5:44.02       60686348 B   ---   --   ---xx   flac  0.4609  bd94-07-07-the-man-the-master-d1t07.flac
+     7:37.25       80673644 B   ---   --   ---xx   flac  0.5316  bd94-07-07-the-man-the-master-d1t08.flac
+     6:13.20       65844284 B   ---   --   ---xx   flac  0.6449  bd94-07-07-the-man-the-master-d2t01.flac
+     6:25.12       67942268 B   ---   --   ---xx   flac  0.5939  bd94-07-07-the-man-the-master-d2t02.flac
+     6:08.48       65028140 B   ---   --   ---xx   flac  0.6014  bd94-07-07-the-man-the-master-d2t03.flac
+     7:53.45       83543084 B   ---   --   ---xx   flac  0.6453  bd94-07-07-the-man-the-master-d2t04.flac
+     7:00.47       74198588 B   ---   --   ---xx   flac  0.6176  bd94-07-07-the-man-the-master-d2t05.flac
+     9:01.58       95568860 B   ---   --   ---xx   flac  0.5369  bd94-07-07-the-man-the-master-d2t06.flac
+   101:53.60     1078474936 B                            0.5671  (14 files)
+=================== 
+=================== 
+=================== 

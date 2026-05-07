@@ -1,0 +1,242 @@
+===================
+===================
+===================
+=== 2003-02-26 Wellington, New Zealand.md5
+===================
+===================
+===================
+5942d240cff4329ae2bb2fd363616d87 *2003-02-26 Wellington, New Zealand 2.log
+f29a2cba88fe39a94c5c8a29b529222e *2003-02-26 Wellington, New Zealand.log
+8a8802765f55e9b7fcca33ca63fc539a *2003-02-26 Wellington, New Zealand.txt
+0d30b5f70b02a382c85e4f500155c44e *2003-02-26_101.flac
+3435cfd2600a4728249d07d96743d3fe *2003-02-26_102.flac
+27aee2d1a8eaa4e39c77bb98d0748457 *2003-02-26_103.flac
+d51a4c747a6cc6aa3225458ba9b7a872 *2003-02-26_104.flac
+fd2349f0dcb19859e44a53d722709e78 *2003-02-26_105.flac
+c26ff52f4e22831fc5b5afa972bd2df2 *2003-02-26_106.flac
+2aebec6eeaad28fb8baa5646d305349a *2003-02-26_107.flac
+2db8f1b91196fe14fa295ae065e80533 *2003-02-26_108.flac
+fb8e7814ff9a70e780582ee0c68feaaf *2003-02-26_109.flac
+c2c679c961fc0d4f49b0abbc2b1e9569 *2003-02-26_110.flac
+0432555852a4afe3b089c49a0e942b6a *2003-02-26_201.flac
+0a9c34db8a8547a74cca56b7dc9aeee3 *2003-02-26_202.flac
+e5219265f5ceaea2287859fc62bd24a3 *2003-02-26_203.flac
+fe2c2a4aa0312d021325102053cbe83f *2003-02-26_204.flac
+02b9275fccfe8ebe605fafd105358cbe *2003-02-26_205.flac
+0830565e0c696f9d12e2346710965e8a *2003-02-26_206.flac
+26dc72ddbf08eb11338c83de0c98d709 *2003-02-26_207.flac
+===================
+===================
+===================
+=== 2003-02-26 Wellington, New Zealand.txt
+===================
+===================
+===================
+
+BOB DYLAN
+
+Westpac Trust Entertainment Centre
+Christchurch, New Zealand
+26 February 2003
+
+1. Tweedle Dee & Tweedle Dum
+2. I'll Be Your Baby Tonight
+3. Highway 61 Revisited
+4. Just Like A Woman
+5. Things Have Changed
+6. Cold Irons Bound
+7. Mr. Tambourine Man
+8. Desolation Row
+9. Girl From The North Country
+10. It's Alright, Ma (I'm Only Bleeding)
+11. Tell Me That It Isn't True
+12. Honest With Me
+13. Bye And Bye
+14. Summer Days
+
+15. Blowin' In The Wind
+16. Like A Rolling Stone
+17. All Along The Watchtower
+
+Concert # 1501 of The Never-Ending Tour. 
+Concert # 11 of the 2003 Tour Down Under. 
+2003 concert # 11.
+Concert # 11 with the 15th Never-Ending 
+
+Tour Band: 
+Bob Dylan (vocal & guitar), 
+Bill Burnette (guitar), 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar),
+Tony Garnier (bass), 
+George Recile (drums & percussion)
+
+7-10, 15 acoustic with the band.
+2, 4 Bob Dylan (harmonica).
+2, 4, 11 Larry Campbell (pedal steel guitar).
+10 Larry Campbell (cittern).
+12 Larry Campbell (slide guitar)
+
+Notes.
+LB-numbers for this concert: LB-0918, LB-0929, LB-7070
+===================
+===================
+===================
+=== Bob Dylan Wellington, New Zealand (2003-02-24 & 26).ffp
+===================
+===================
+===================
+2003-02-24 Wellington, New Zealand\2003-02-24_101.flac:cd815f60970719bd040c1b00530c410e
+2003-02-24 Wellington, New Zealand\2003-02-24_102.flac:9974a87078f0c5dc6315ca992d19d38c
+2003-02-24 Wellington, New Zealand\2003-02-24_103.flac:94d23bf470ca0d64d5d1e8f2db5056de
+2003-02-24 Wellington, New Zealand\2003-02-24_104.flac:a275c5b13d3e4d608d17fda71f3017c4
+2003-02-24 Wellington, New Zealand\2003-02-24_105.flac:5e0b3b980fdcfbcd708529f5d8230e59
+2003-02-24 Wellington, New Zealand\2003-02-24_106.flac:cb3fa2364942ed8c940269c9f96a4f6b
+2003-02-24 Wellington, New Zealand\2003-02-24_107.flac:a79714dd7534f937c2c571f2b4e3e02f
+2003-02-24 Wellington, New Zealand\2003-02-24_108.flac:55ebdd3a1dac26923351b68a7b5e4ff4
+2003-02-24 Wellington, New Zealand\2003-02-24_109.flac:936288085c425d2ff5ebc4e182319118
+2003-02-24 Wellington, New Zealand\2003-02-24_110.flac:578b97daa0e3252b6576a47651be5963
+2003-02-24 Wellington, New Zealand\2003-02-24_201.flac:100702cc181abeb5db84b49a898cb7f2
+2003-02-24 Wellington, New Zealand\2003-02-24_202.flac:0b57022724069a8ab6c7b4c338d31d96
+2003-02-24 Wellington, New Zealand\2003-02-24_203.flac:280989c703b3f5a747171b34ed14ca3f
+2003-02-24 Wellington, New Zealand\2003-02-24_204.flac:f79ca1f631aab6398b05d0bd335f2177
+2003-02-24 Wellington, New Zealand\2003-02-24_205.flac:e75e7a1a91b7ccd6619104264b224d96
+2003-02-24 Wellington, New Zealand\2003-02-24_206.flac:c227516752136a78fc4e26f1d33220c1
+2003-02-26 Wellington, New Zealand\2003-02-26_101.flac:97a1795b1ba8d6b28bd06c18331464d4
+2003-02-26 Wellington, New Zealand\2003-02-26_102.flac:85dda89a64f2ed1bfa77a63449a11ed7
+2003-02-26 Wellington, New Zealand\2003-02-26_103.flac:ce09557b9f702edc837608c6bcc6ae65
+2003-02-26 Wellington, New Zealand\2003-02-26_104.flac:5d0c35a4aec99675431b157f4c7f4f3f
+2003-02-26 Wellington, New Zealand\2003-02-26_105.flac:8aad5271cd39299d16adc1050ab901b2
+2003-02-26 Wellington, New Zealand\2003-02-26_106.flac:bbb20f9549189dd6718d16e0c14f85c5
+2003-02-26 Wellington, New Zealand\2003-02-26_107.flac:117e9409dfdd4b7f8575ab9ab6e996ad
+2003-02-26 Wellington, New Zealand\2003-02-26_108.flac:53d5a9ba888ac33dede9de2375de97b9
+2003-02-26 Wellington, New Zealand\2003-02-26_109.flac:7c452cdae828fa68b269a9352ba4a92c
+2003-02-26 Wellington, New Zealand\2003-02-26_110.flac:b834d93b1ce304ac103b8c75b3c093c0
+2003-02-26 Wellington, New Zealand\2003-02-26_201.flac:214c3ff0b2898541d7a79f76109d7359
+2003-02-26 Wellington, New Zealand\2003-02-26_202.flac:94922fdc86f236e4e836a6e42aaf2982
+2003-02-26 Wellington, New Zealand\2003-02-26_203.flac:904c0019ca96411a724dd6ee7a436a8d
+2003-02-26 Wellington, New Zealand\2003-02-26_204.flac:e6aa2227bc29cb5367ce40198f0b9ae7
+2003-02-26 Wellington, New Zealand\2003-02-26_205.flac:88c1c3ba56116121f3b84718439f0904
+2003-02-26 Wellington, New Zealand\2003-02-26_206.flac:a7ad0959aeede1cb01f54273dce4b3fd
+2003-02-26 Wellington, New Zealand\2003-02-26_207.flac:f7326b19b33a57552d0915049fe736e4
+===================
+===================
+===================
+=== Bob Dylan Wellington, New Zealand (2003-02-24 & 26).md5
+===================
+===================
+===================
+c9215d1c5628c448b9996f145101226a *Bob Dylan Wellington, New Zealand (2003-02-24 & 26).ffp
+948be727a0c16a76ac1d27f6184a8fc2 *Wellington, New Zealand.txt
+f04f702d12ce064dddcc3bb6d1c98abb *2003-02-24 Wellington, New Zealand\2003-02-24 Wellington, New Zealand 2.log
+c2a807455c66ec7c61e9446b616ea47a *2003-02-24 Wellington, New Zealand\2003-02-24 Wellington, New Zealand.log
+4059444ddfe5b5985e2260b44ff6e085 *2003-02-24 Wellington, New Zealand\2003-02-24 Wellington, New Zealand.md5
+ea58aa4a7e5ea7c74e60b51475fb849f *2003-02-24 Wellington, New Zealand\2003-02-24 Wellington, New Zealand.txt
+42732a12ba436b4f12b95596332f1c82 *2003-02-24 Wellington, New Zealand\2003-02-24_101.flac
+7529fc9d27f930f6e74aed492a3deab0 *2003-02-24 Wellington, New Zealand\2003-02-24_102.flac
+a8ac6a2fefb79cdebc823a6f94a18a9e *2003-02-24 Wellington, New Zealand\2003-02-24_103.flac
+f4e335eb562edd65494fcfcf4771b4b9 *2003-02-24 Wellington, New Zealand\2003-02-24_104.flac
+fd13083de4d61aed20f0d9a7baa6278d *2003-02-24 Wellington, New Zealand\2003-02-24_105.flac
+2751388834aa7a652b856096dac4419c *2003-02-24 Wellington, New Zealand\2003-02-24_106.flac
+02417a629dadb7f0d17437d48b990b20 *2003-02-24 Wellington, New Zealand\2003-02-24_107.flac
+c851600a09ce5044dfce7cff83bcce29 *2003-02-24 Wellington, New Zealand\2003-02-24_108.flac
+402c6bd1e1a3f50e272909d62b9b6f75 *2003-02-24 Wellington, New Zealand\2003-02-24_109.flac
+15d83686197f86f47d4ce34bfedb6938 *2003-02-24 Wellington, New Zealand\2003-02-24_110.flac
+e3769642ebeab7e70d2ea95b88b51c94 *2003-02-24 Wellington, New Zealand\2003-02-24_201.flac
+5452e6de3d66104d9a532b98a28eb61e *2003-02-24 Wellington, New Zealand\2003-02-24_202.flac
+7ed7f5be86e2f2fe3befb20be4bec790 *2003-02-24 Wellington, New Zealand\2003-02-24_203.flac
+57195f115b1e816baa128bf580d59b4b *2003-02-24 Wellington, New Zealand\2003-02-24_204.flac
+51dfcb696d60224bcfad606f7d0441eb *2003-02-24 Wellington, New Zealand\2003-02-24_205.flac
+285b610572b37b946bd16eb9007add7f *2003-02-24 Wellington, New Zealand\2003-02-24_206.flac
+5942d240cff4329ae2bb2fd363616d87 *2003-02-26 Wellington, New Zealand\2003-02-26 Wellington, New Zealand 2.log
+f29a2cba88fe39a94c5c8a29b529222e *2003-02-26 Wellington, New Zealand\2003-02-26 Wellington, New Zealand.log
+9e433eb903495a96906bbe5122fa4b7b *2003-02-26 Wellington, New Zealand\2003-02-26 Wellington, New Zealand.md5
+8a8802765f55e9b7fcca33ca63fc539a *2003-02-26 Wellington, New Zealand\2003-02-26 Wellington, New Zealand.txt
+0d30b5f70b02a382c85e4f500155c44e *2003-02-26 Wellington, New Zealand\2003-02-26_101.flac
+3435cfd2600a4728249d07d96743d3fe *2003-02-26 Wellington, New Zealand\2003-02-26_102.flac
+27aee2d1a8eaa4e39c77bb98d0748457 *2003-02-26 Wellington, New Zealand\2003-02-26_103.flac
+d51a4c747a6cc6aa3225458ba9b7a872 *2003-02-26 Wellington, New Zealand\2003-02-26_104.flac
+fd2349f0dcb19859e44a53d722709e78 *2003-02-26 Wellington, New Zealand\2003-02-26_105.flac
+c26ff52f4e22831fc5b5afa972bd2df2 *2003-02-26 Wellington, New Zealand\2003-02-26_106.flac
+2aebec6eeaad28fb8baa5646d305349a *2003-02-26 Wellington, New Zealand\2003-02-26_107.flac
+2db8f1b91196fe14fa295ae065e80533 *2003-02-26 Wellington, New Zealand\2003-02-26_108.flac
+fb8e7814ff9a70e780582ee0c68feaaf *2003-02-26 Wellington, New Zealand\2003-02-26_109.flac
+c2c679c961fc0d4f49b0abbc2b1e9569 *2003-02-26 Wellington, New Zealand\2003-02-26_110.flac
+0432555852a4afe3b089c49a0e942b6a *2003-02-26 Wellington, New Zealand\2003-02-26_201.flac
+0a9c34db8a8547a74cca56b7dc9aeee3 *2003-02-26 Wellington, New Zealand\2003-02-26_202.flac
+e5219265f5ceaea2287859fc62bd24a3 *2003-02-26 Wellington, New Zealand\2003-02-26_203.flac
+fe2c2a4aa0312d021325102053cbe83f *2003-02-26 Wellington, New Zealand\2003-02-26_204.flac
+02b9275fccfe8ebe605fafd105358cbe *2003-02-26 Wellington, New Zealand\2003-02-26_205.flac
+0830565e0c696f9d12e2346710965e8a *2003-02-26 Wellington, New Zealand\2003-02-26_206.flac
+26dc72ddbf08eb11338c83de0c98d709 *2003-02-26 Wellington, New Zealand\2003-02-26_207.flac
+===================
+===================
+===================
+=== Wellington, New Zealand.txt
+===================
+===================
+===================
+
+Recieved this shows in 2003 on a trade (CD-Rs) no more information on equipment or the taper.
+-ebbbi-
+
+24 February 2003
+
+Queens Wharf Events Centre Arena
+Wellington, New Zealand
+
+
+1. Tweedle Dee & Tweedle Dum
+2. I'll Be Your Baby Tonight
+3. Highway 61 Revisited
+4. Lay Lady Lay
+5. Things Have Changed
+6. Drifter's Escape
+7. My Back Pages
+8. Desolation Row
+9. Don't Think Twice, It's All Right
+10. It's Alright, Ma (I'm Only Bleeding)
+11. Positively 4th Street
+12. Honest With Me
+13. Floater (Too Much To Ask)
+14. Summer Days
+
+15. Like A Rolling Stone
+16. All Along The Watchtower
+
+
+26 February 2003
+
+Westpac Trust Entertainment Centre
+Christchurch, New Zealand
+
+
+1. Tweedle Dee & Tweedle Dum
+2. I'll Be Your Baby Tonight
+3. Highway 61 Revisited
+4. Just Like A Woman
+5. Things Have Changed
+6. Cold Irons Bound
+7. Mr. Tambourine Man
+8. Desolation Row
+9. Girl From The North Country
+10. It's Alright, Ma (I'm Only Bleeding)
+11. Tell Me That It Isn't True
+12. Honest With Me
+13. Bye And Bye
+14. Summer Days
+
+15. Blowin' In The Wind
+16. Like A Rolling Stone
+17. All Along The Watchtower
+
+The Bob Dylan Tour Band: 
+
+Bob Dylan (vocal & guitar), 
+Bill Burnette (guitar), 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar),
+Tony Garnier (bass), 
+George Recile (drums & percussion)
+
+===================
+===================
+===================

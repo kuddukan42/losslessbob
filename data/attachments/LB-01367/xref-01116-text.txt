@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Amsterdam, The Netherlands
+Heineken Music Hall
+November 11, 2003
+  
+  Maggie's Farm (Bob on piano 
+Seor (Tales Of Yankee Power) (Bob on piano and harp) 
+Tweedle Dee & Tweedle Dum (Bob on piano) 
+Boots Of Spanish Leather (acoustic)
+(Bob on piano and harp, Larry on cittern, Freddy on electric guitar, Tony on standup bass) 
+It's Alright, Ma (I'm Only Bleeding) 
+(Bob on piano, Larry on cittern, Freddy on electric guitar, Tony on electric bass) 
+Don't Think Twice, It's All Right (acoustic) (Bob on piano and harp, Larry on cittern) 
+Cold Irons Bound (Bob on piano and harp) 
+Most Likely You Go Your Way (And I'll Go Mine) (Bob on piano and harp) 
+Tryin' To Get To Heaven (Bob on piano 
+Highway 61 Revisited (Bob on piano, Freddy on slide guitar) 
+Every Grain Of Sand (Bob on piano and harp, Larry on pedal steel) 
+Honest With Me (Bob on piano, Larry on slide guitar) 
+The Lonesome Death Of Hattie Carrol (acoustic)
+(Bob on piano, Freddy on electric guitar) 
+Summer Days (Bob on piano, Tony on standup bass) 
+(encore) 
+
+Down Along The Cove (Bob on piano) 
+Like A Rolling Stone (Bob on piano) 
+All Along The Watchtower (Bob on piano and harp) 
+
+
+ 
+
+Band Members
+Bob Dylan - piano, harp
+Larry Campbell - guitar, slide guitar, pedal steel, cittern
+Freddy Koella - guitar, slide guitar
+Tony Garnier - bass
+George Recile - drums
+ 
+
+
+===================
+===================
+===================
+=== disc 1.ffp
+===================
+===================
+===================
+01 Track01.flac:fec7aa52dea310fa0b1198f18c6b2c34
+02 Track02.flac:07fc7a437f8fa5cbf2a632704aceed1b
+03 Track03.flac:bac16d56cdd2c2eb1d19da7ce6b4506a
+04 Track04.flac:e466057785cb2aba75e244ef9cb65415
+05 Track05.flac:ba466d98cdda2c1ee0f2c8b2068d168f
+06 Track06.flac:9e734ba1bf87f652684a1a321224d969
+07 Track07.flac:15d6b9b47ae4e845a86aa8fd5fa6bad1
+08 Track08.flac:ee0e985ec096a99453945f30fc6e10c7
+09 Track09.flac:995f1324f7b1daf48ddcdd6c851a066c
+10 Track10.flac:877522099a84b791dadb686e7b31dccc
+11 Track11.flac:20156446b1895c9481a12e4b5f98bb78
+===================
+===================
+===================
+=== disc 2.ffp
+===================
+===================
+===================
+01 Track01.flac:a40187e08f5c92ac6b264a3dd4891af5
+02 Track02.flac:9bba85febfe307b3139e3191196376c8
+03 Track03.flac:28d111cd217ab47e56d3fbf881c3fb1a
+04 Track04.flac:b02871f1fc148b11d60207aba0fe8d26
+05 Track05.flac:a022825c171587c322f9754555c55cee
+06 Track06.flac:57554b29101f632cba13104ad5caadfa
+07 Track07.flac:1c2f0c624c081f5a74f3cebde4b73fa5
+===================
+===================
+===================

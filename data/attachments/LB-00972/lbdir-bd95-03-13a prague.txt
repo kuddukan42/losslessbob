@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-13a prague 
+=================== 
+=================== 
+=================== 
+613baf8470cfae6b76daf8dcdb80d38e  bd95-03-13.md5
+8562e990444482d03b14f9fb34c6fb47  bd95-03-13a prague.txt
+36aead026553c7d4187023dec9c7b4b0  bd95-03-13d1t01.shn
+feac4110c95b6ed692c87ad4c825e2e5  bd95-03-13d1t02.shn
+1e13c5a84ae503efc116d19bf85ebece  bd95-03-13d1t03.shn
+a14477db39d440861c8e55baaab43cff  bd95-03-13d1t04.shn
+a905249d5c2623b385c6b1411f6c97cd  bd95-03-13d1t05.shn
+c94b023ff19f2f735bcfd6ead017e7e6  bd95-03-13d1t06.shn
+252aadec0434bc912c4bac31bdee6438  bd95-03-13d1t07.shn
+0252703a2cfe89c3514957b6b5a758c1  bd95-03-13d1t08.shn
+eb7c1bf99a7a0305eb10c0d053fd456e  bd95-03-13d2t01.shn
+c2c869df7f145816318faab4e0cbfa2f  bd95-03-13d2t02.shn
+434b060c6fa1ee9fcb6d8df700ea3124  bd95-03-13d2t03.shn
+162a4bbb9351d7143edc9fa8b52d3476  bd95-03-13d2t04.shn
+15f86e4cd479e27abc306bedbe08cfff  bd95-03-13d2t05.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-03-13a prague 
+=================== 
+=================== 
+=================== 
+1205a327950f70552f9ebcdeb08e0f36  [shntool]  bd95-03-13d1t01.wav
+7d5c5aaadbba04417a2dcb9cfc884c28  [shntool]  bd95-03-13d1t02.wav
+343d13c7d826033cd2dca1ece0658984  [shntool]  bd95-03-13d1t03.wav
+328cf234c48ac522de3f1e1cfe0d7a2c  [shntool]  bd95-03-13d1t04.wav
+5eb6a7fa3bad6b4f01b30ddafd820b35  [shntool]  bd95-03-13d1t05.wav
+6c26e8dd052f37d864e42c77b1ade57c  [shntool]  bd95-03-13d1t06.wav
+3b621f756da68900a09f117dfbfd4628  [shntool]  bd95-03-13d1t07.wav
+87a19b6efcec1849ed57589c5a45201e  [shntool]  bd95-03-13d1t08.wav
+01d511ba6fbbea809bf343fc76f57ee7  [shntool]  bd95-03-13d2t01.wav
+dea667a1c38ff1cdd819d25619752cba  [shntool]  bd95-03-13d2t02.wav
+81cc46d2251fcfb665704a8eac608169  [shntool]  bd95-03-13d2t03.wav
+83fca3b683fa78572aebf62fc6850e72  [shntool]  bd95-03-13d2t04.wav
+10c9022610b8807e8ca376f5244bd390  [shntool]  bd95-03-13d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-13a prague 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.70       54319484 B   ---   --   ---xx    shn  0.6621  bd95-03-13d1t01.shn
+     5:32.35       58647164 B   ---   --   ---xx    shn  0.5747  bd95-03-13d1t02.shn
+     5:49.30       61634204 B   ---   --   ---xx    shn  0.6523  bd95-03-13d1t03.shn
+     7:11.25       76087244 B   ---   --   ---xx    shn  0.5912  bd95-03-13d1t04.shn
+    10:34.00      111837644 B   ---   --   ---xx    shn  0.6110  bd95-03-13d1t05.shn
+     5:45.30       60928604 B   ---   --   ---xx    shn  0.5377  bd95-03-13d1t06.shn
+     7:01.00       74264444 B   ---   --   ---xx    shn  0.5021  bd95-03-13d1t07.shn
+     8:12.50       86906444 B   ---   --   ---xx    shn  0.5823  bd95-03-13d1t08.shn
+     7:23.05       78157004 B   ---   --   ---xx    shn  0.5348  bd95-03-13d2t01.shn
+     5:59.55       63457004 B   ---   --   ---xx    shn  0.6869  bd95-03-13d2t02.shn
+     7:28.09       79048412 B   ---   --   ---xx    shn  0.6152  bd95-03-13d2t03.shn
+     9:55.40      105052124 B   ---   --   ---xx    shn  0.6613  bd95-03-13d2t04.shn
+    10:55.00      115542044 B   ---   --   ---xx    shn  0.5882  bd95-03-13d2t05.shn
+    96:55.49     1025881820 B                            0.5998  (13 files)
+=================== 
+=================== 
+=================== 

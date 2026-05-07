@@ -1,0 +1,22 @@
+c6d34019dc3e6ca34c1cc725d31680fe  Bob Dylan 2001-10-17 d1\Track01.flac
+d9bbe813921ea1b63ecce6941663b93d  Bob Dylan 2001-10-17 d1\Track02.flac
+68de7d411fdd7613a34114eedc06eb22  Bob Dylan 2001-10-17 d1\Track03.flac
+84aa9a903d51d6e445f1674063612b3c  Bob Dylan 2001-10-17 d1\Track04.flac
+6c16013588d4c7f5f4ec2e2c12a269ac  Bob Dylan 2001-10-17 d1\Track05.flac
+5ecd4b2f357453b3e46aba6299b80bf2  Bob Dylan 2001-10-17 d1\Track06.flac
+af56b1cb5fd0e1d43451982ed0350655  Bob Dylan 2001-10-17 d1\Track07.flac
+60cc74480063742511c5add9e864c6cc  Bob Dylan 2001-10-17 d1\Track08.flac
+c7ffc4b7eb9377ba00479a34455af00d  Bob Dylan 2001-10-17 d1\Track09.flac
+960b367364ce3fc19d62f1a309077812  Bob Dylan 2001-10-17 d1\Track10.flac
+7042abe058d3c99e895bc3f4eb8c8e1c  Bob Dylan 2001-10-17 d2\Track01.flac
+8e8338a8c9a28ca0b9d1c9ac7a55c059  Bob Dylan 2001-10-17 d2\Track02.flac
+2cf3a58c7c3126ce2a33a2b1c5b6bb1b  Bob Dylan 2001-10-17 d2\Track03.flac
+e5964330dff4eb0195d264024d2f2940  Bob Dylan 2001-10-17 d2\Track04.flac
+681ea22cbda80a3b75c953d2af95f961  Bob Dylan 2001-10-17 d2\Track05.flac
+514a0d8e25d251405e77a92c62ebd36c  Bob Dylan 2001-10-17 d2\Track06.flac
+f859acad9ec173c87c5de66ae51e90aa  Bob Dylan 2001-10-17 d2\Track07.flac
+cb33339d74acf8c63a18e8e8b8aa4bc7  Bob Dylan 2001-10-17 d2\Track08.flac
+e06d37de587e9d30c49ce98522c7ce7c  Bob Dylan 2001-10-17 d2\Track09.flac
+071aa594738f8a3342ab14f920ed51e5  Bob Dylan 2001-10-17 d2\Track10.flac
+588b99a241d0d5f2bead989df1509cce  Bob Dylan 2001-10-17 La Jolla, California, RIMAC Arena,University of California San Diego.md5
+344aa922ab8b62bf7ed38ff6919b0b63  info.txt

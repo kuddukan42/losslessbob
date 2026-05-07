@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-08-unwanted-man.shnf 
+=================== 
+=================== 
+=================== 
+142613b5b10a4c977881f5f0c20e2b13  bd04-08-08-unwanted-man.txt
+20128448dc6a016d03e20d53ac48b7b7  bd04-08-08.md5
+1719cf6a568eb230519d5d4c0ecd2b8b  bd04-08-08d1t01.shn
+ce2abbbfe67dd35bb67dbb00cfb51b96  bd04-08-08d1t02.shn
+ebeeee2612b2d89f9cf6bfa98622fd5a  bd04-08-08d1t03.shn
+e720fc50cdc5a52ecafcebb3a1bdb053  bd04-08-08d1t04.shn
+0cd60f14e41bd4aea25d6567cd425c47  bd04-08-08d1t05.shn
+bf37c3f2ee4e8952a757b97ffdd7a008  bd04-08-08d1t06.shn
+1606905a7be2ab29657e57184c44bf46  bd04-08-08d1t07.shn
+a14ebb6123ed12a5de2466b706a65def  bd04-08-08d1t08.shn
+ce586c192e457373739df403b165b778  bd04-08-08d1t09.shn
+293842ba7741328349497fdee715ede5  bd04-08-08d1t10.shn
+065a836d40e1fb9673bfd2a8b7c552fe  bd04-08-08d1t11.shn
+454795c61fae67cc792ef6427ba044be  bd04-08-08d1t12.shn
+3cb421f43ecbd4df984301dfd1260a48  bd04-08-08d2t01.shn
+33535d6c5548cc3d92e4f0c9ca3c7ba7  bd04-08-08d2t02.shn
+4363308f9a24be8c9ad75645c7b0fc21  bd04-08-08d2t03.shn
+ca5e59c47ac3e2c931db9ef1d9c06a25  bd04-08-08d2t04.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-08-unwanted-man.shnf 
+=================== 
+=================== 
+=================== 
+bd39fed536a7da7bdf53a16f187474fc  [shntool]  bd04-08-08d1t01.wav
+76c7bb87fd71ed40bababe126275e061  [shntool]  bd04-08-08d1t02.wav
+bc7995d47696b1001a440c17ac8b65fe  [shntool]  bd04-08-08d1t03.wav
+8e57a62fb851e0b5ef2c921e34201e62  [shntool]  bd04-08-08d1t04.wav
+bd51deb3b5fb9866e85e31defc5fe3b9  [shntool]  bd04-08-08d1t05.wav
+227434c7d95c40ef37ac5aaad4a8a109  [shntool]  bd04-08-08d1t06.wav
+200b0fe2446ad3cde44e69b2f9876313  [shntool]  bd04-08-08d1t07.wav
+bf90e3fc66e4e7fdc950a69b79f9578d  [shntool]  bd04-08-08d1t08.wav
+14c1659145792799520fd4a188048a03  [shntool]  bd04-08-08d1t09.wav
+24907f625e99667d38ccf8cf30fbfb08  [shntool]  bd04-08-08d1t10.wav
+2f8ef81b280b68f8c656068da85ed509  [shntool]  bd04-08-08d1t11.wav
+0df3dd68751c863347dcfea8476b05c0  [shntool]  bd04-08-08d1t12.wav
+3fab44b5eb887f6e56f0fc9ac3732b89  [shntool]  bd04-08-08d2t01.wav
+89328b325485a5c5b461c11240dffbb7  [shntool]  bd04-08-08d2t02.wav
+c84223b5e120f45521a76f9005fe4119  [shntool]  bd04-08-08d2t03.wav
+974bb7cf6b27e0af6e3df5263a9d5b14  [shntool]  bd04-08-08d2t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-08-unwanted-man.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:06.01       43396796 B   ---   --   -----    wav  1.0000  bd04-08-08d1t01.wav
+     4:05.36       43302716 B   ---   --   -----    wav  1.0000  bd04-08-08d1t02.wav
+     5:34.70       59082284 B   ---   --   -----    wav  1.0000  bd04-08-08d1t03.wav
+     6:17.10       66526364 B   ---   --   -----    wav  1.0000  bd04-08-08d1t04.wav
+     6:20.03       67039100 B   ---   --   -----    wav  1.0000  bd04-08-08d1t05.wav
+     4:58.71       52734236 B   ---   --   -----    wav  1.0000  bd04-08-08d1t06.wav
+     5:52.35       62175164 B   ---   --   -----    wav  1.0000  bd04-08-08d1t07.wav
+     5:03.51       53569196 B   ---   --   -----    wav  1.0000  bd04-08-08d1t08.wav
+     6:17.46       66611036 B   ---   --   -----    wav  1.0000  bd04-08-08d1t09.wav
+     6:46.30       71689004 B   ---   --   -----    wav  1.0000  bd04-08-08d1t10.wav
+     6:09.44       65195132 B   ---   --   -----    wav  1.0000  bd04-08-08d1t11.wav
+     6:29.55       68749004 B   ---   --   -----    wav  1.0000  bd04-08-08d1t12.wav
+     6:55.33       73283660 B   ---   --   -----    wav  1.0000  bd04-08-08d2t01.wav
+     6:20.58       67168460 B   ---   --   -----    wav  1.0000  bd04-08-08d2t02.wav
+     0:54.28        9591500 B   ---   --   -----    wav  1.0000  bd04-08-08d2t03.wav
+     5:39.72       59968988 B   ---   --   -----    wav  1.0000  bd04-08-08d2t04.wav
+    87:52.43      930082640 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

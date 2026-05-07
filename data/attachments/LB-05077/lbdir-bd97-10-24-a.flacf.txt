@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-10-24-a.flacf 
+=================== 
+=================== 
+=================== 
+a17ea1665d79a76283b1c99ce866d898  disc 1\Track01.flac
+dce6cd9e762433f048fdcecedf05e3ba  disc 1\Track02.flac
+c94a17a7c6c07966155abdffcce6f987  disc 1\Track03.flac
+15baa4f925216db8db2f91caea912125  disc 1\Track04.flac
+6077026518a54c966490874266f9b753  disc 1\Track05.flac
+b6ca502526a838c7e7062f67242dc6b0  disc 1\Track06.flac
+30ddc5fb3086426a398b95c8f52a8da9  disc 1\Track07.flac
+8d03df7a356f0abc707c55fc58750e69  disc 1\Track08.flac
+87a65f9f6d003e006f1a9badb4f000d9  disc 1\Track09.flac
+746271fc0bf16388e70bd3627b0a7fd9  disc 2\Track01.flac
+4e4f42021d6d697ea9ad60bac3ccd4e3  disc 2\Track02.flac
+bd8e8321a6f11639d426e150e1951ff4  disc 2\Track03.flac
+3e2db4bc5a4939f2514609e55749e55a  disc 2\Track04.flac
+5051dfea7abb1d0382c8ccfd879370ed  disc 2\Track05.flac
+5b0e47ab8c9d4455911aa4fba8cf28df  Dylan1997-10-24.md5
+64ba5115e61c674d80c4a5fc21676101  Dylan1997-10-24.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-24-a.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:9e1b7502778b7d262ae74d00d87b056b
+Track02.flac:aa5f03b4206d01f422df67b2d788ca48
+Track03.flac:e255721efa6774f5596cb55c618c0591
+Track04.flac:f4e9ad1e8988d5a105b28e243ff7c8ba
+Track05.flac:d7339a2bbaa793b2a6488f3af5f03602
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-24-a.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:740b8eda34ab90977319fcf8eee21b12
+Track02.flac:5a0959ae428256760cfeceb412f165ef
+Track03.flac:46bfa4d896842120f404405785f3213b
+Track04.flac:3ba130013eb9d4db9c511519a3924c59
+Track05.flac:086eb02d13302d45d7cf39288a68a537
+Track06.flac:00923fd5674d935db3a392394d0ea525
+Track07.flac:ce667b891879b15a42030e9eaff901ad
+Track08.flac:cc7cd1a1493d0042c6950f544dfcb538
+Track09.flac:30522fc7090e13c099eafaef0c7f9604
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-10-24-a.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.46       63612236 B   ---   --   ---xx   flac  0.5839  Track01.flac
+     6:29.12       68647868 B   ---   --   ---xx   flac  0.5518  Track02.flac
+     6:14.59       66112412 B   ---   --   ---xx   flac  0.5836  Track03.flac
+    10:18.73      109186940 B   ---   --   ---xx   flac  0.5062  Track04.flac
+    20:32.57      217458908 B   ---   --   ---xx   flac  0.5016  Track05.flac
+    49:36.22      525018364 B                            0.5294  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-10-24-a.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.62       52183868 B   ---   --   ---xx   flac  0.6308  Track01.flac
+     4:24.66       46724876 B   ---   --   ---xx   flac  0.5981  Track02.flac
+     6:42.33       70990460 B   ---   --   ---xx   flac  0.5607  Track03.flac
+     5:01.51       53216396 B   ---   --   ---xx   flac  0.5661  Track04.flac
+     6:38.24       70263692 B   ---   --   ---xx   flac  0.5748  Track05.flac
+     7:21.10       77815964 B   ---   --   ---xx   flac  0.6053  Track06.flac
+     3:45.69       39852332 B   ---   --   ---xx   flac  0.5501  Track07.flac
+     7:43.07       81689708 B   ---   --   ---xx   flac  0.5939  Track08.flac
+     6:41.70       70901084 B   ---   --   ---xx   flac  0.5226  Track09.flac
+    53:15.17      563638380 B                            0.5780  (9 files)
+=================== 
+=================== 
+=================== 

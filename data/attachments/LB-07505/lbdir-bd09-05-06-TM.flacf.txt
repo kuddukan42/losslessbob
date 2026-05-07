@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-05-06-TM.flacf 
+=================== 
+=================== 
+=================== 
+2f8425d7c2ef23d92b924384e603a8d6  CD 1\Dylan_2009_05_06_Dublin_TM_D1_01.flac
+8a23f1c7d850cd90e36e6f4522b9801d  CD 1\Dylan_2009_05_06_Dublin_TM_D1_02.flac
+074d78b1239101e17a4ddeefbb1163b2  CD 1\Dylan_2009_05_06_Dublin_TM_D1_03.flac
+5464f0200cc764e82b2fd28275998840  CD 1\Dylan_2009_05_06_Dublin_TM_D1_04.flac
+21162aa68e1f94880d14718606bc097d  CD 1\Dylan_2009_05_06_Dublin_TM_D1_05.flac
+c4eb96f5341c11937dc3f9786b222caa  CD 1\Dylan_2009_05_06_Dublin_TM_D1_06.flac
+6b06e87e05009b7ee64fb2611b8d08ce  CD 1\Dylan_2009_05_06_Dublin_TM_D1_07.flac
+0dcb4170eb2ea67a182062382123c2ba  CD 1\Dylan_2009_05_06_Dublin_TM_D1_08.flac
+351452507d2ccb220efc0372dfb8e645  CD 1\Dylan_2009_05_06_Dublin_TM_D1_09.flac
+eea24d62ba3c02b538b6d012db3b512b  CD 1\Dylan_2009_05_06_Dublin_TM_D1_10.flac
+0c70381b9ededa2ec13d6ece40a5086f  CD 1\Dylan_2009_05_06_Dublin_TM_D1_11.flac
+cba441b1f9d355349ff061c2baf51fe8  CD 1\Dylan_2009_05_06_Dublin_TM_D1_12.flac
+3e165b658778d3d585547d9aa9ba74c5  CD 1\Dylan_2009_05_06_Dublin_TM_D1_13.flac
+6a4d179ba3a0cd9b05aafb784cc44956  CD 1\Dylan_2009_05_06_Dublin_TM_D1_shntool_len.txt
+3ee518f1301c93a1f1126a1e3f99ee16  CD 2\Dylan_2009_05_06_Dublin_TM_D2_01.flac
+f26c41a1f398c06c6b80f502fe805665  CD 2\Dylan_2009_05_06_Dublin_TM_D2_02.flac
+1806af7f4653bf737cebce83675cc6bc  CD 2\Dylan_2009_05_06_Dublin_TM_D2_03.flac
+55012ccb47d3f4c9286cecbe668266b9  CD 2\Dylan_2009_05_06_Dublin_TM_D2_04.flac
+8f24ab8f3099fd2df36dca339421e9e8  CD 2\Dylan_2009_05_06_Dublin_TM_D2_05.flac
+5a29fb0fcda4233c461eeaf03bbaaac1  CD 2\Dylan_2009_05_06_Dublin_TM_D2_06.flac
+5f1609b6fe908e6a92d5ed75456be9c5  CD 2\Dylan_2009_05_06_Dublin_TM_D2_shntool_len.txt
+48820060766ce99cfa24977c023eb5ab  Dylan_2009_05_06_Dublin_TM.md5
+2d157eca7e926897d6a89e53f1b35992  Dylan_2009_05_06_Dublin_TM_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-05-06-TM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+Dylan_2009_05_06_Dublin_TM_D1_01.flac:229042ffcab63b37cab0943e2ae2e1c4
+Dylan_2009_05_06_Dublin_TM_D1_02.flac:5af1cf1f9a6a5a88e142c6cce009a2b1
+Dylan_2009_05_06_Dublin_TM_D1_03.flac:f4d07c071c844e2f3c70d9e5760bac98
+Dylan_2009_05_06_Dublin_TM_D1_04.flac:0e74a65ba45240fb40da5ba2f21547f1
+Dylan_2009_05_06_Dublin_TM_D1_05.flac:7449f2fc99be3bbb4387b020e5dcfe9f
+Dylan_2009_05_06_Dublin_TM_D1_06.flac:1091c5efe5fd4d84cf5282d6bb27e2f9
+Dylan_2009_05_06_Dublin_TM_D1_07.flac:3cf42e10cbe7133250feb86fb92e2b67
+Dylan_2009_05_06_Dublin_TM_D1_08.flac:a63141398774a1ce673920471b01c3ae
+Dylan_2009_05_06_Dublin_TM_D1_09.flac:fbc3dec45a28557037475449f943c429
+Dylan_2009_05_06_Dublin_TM_D1_10.flac:ee3e315fa38f1ff1cc24de6df98f29cc
+Dylan_2009_05_06_Dublin_TM_D1_11.flac:1dbd235e09a92b7405836590405012c1
+Dylan_2009_05_06_Dublin_TM_D1_12.flac:4c8d721f23f583ca446aa7d996ee8980
+Dylan_2009_05_06_Dublin_TM_D1_13.flac:7a05972768a382eddc1b17ae23a4c885
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-05-06-TM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+Dylan_2009_05_06_Dublin_TM_D2_01.flac:d796dfe11d6490003b00f9058153d768
+Dylan_2009_05_06_Dublin_TM_D2_02.flac:039a208b27a87b8106897c168ada3970
+Dylan_2009_05_06_Dublin_TM_D2_03.flac:484ff3b8eec209843916aef81f2091cb
+Dylan_2009_05_06_Dublin_TM_D2_04.flac:1ab19ce513ff8bb01d60278f55a2cdb8
+Dylan_2009_05_06_Dublin_TM_D2_05.flac:acfd1ded8feda5ad243b68c34cdce3db
+Dylan_2009_05_06_Dublin_TM_D2_06.flac:aa7eeaa08be2631efeb80d27a6b6aeae
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-05-06-TM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.11        7787068 B   -b-   --   ---xx   flac  0.5404  Dylan_2009_05_06_Dublin_TM_D1_01.flac
+     3:06.55       32939312 B   -b-   --   ---xx   flac  0.5902  Dylan_2009_05_06_Dublin_TM_D1_02.flac
+     4:34.09       48354656 B   -b-   --   ---xx   flac  0.5310  Dylan_2009_05_06_Dublin_TM_D1_03.flac
+     4:46.51       50569516 B   -b-   --   ---xx   flac  0.5673  Dylan_2009_05_06_Dublin_TM_D1_04.flac
+     7:05.61       75113300 B   -b-   --   ---xx   flac  0.5963  Dylan_2009_05_06_Dublin_TM_D1_05.flac
+     6:19.36       66940740 B   -b-   --   ---xx   flac  0.5701  Dylan_2009_05_06_Dublin_TM_D1_06.flac
+    10:08.30      107321620 B   -b-   --   ---xx   flac  0.5694  Dylan_2009_05_06_Dublin_TM_D1_07.flac
+     7:13.28       76446612 B   -b-   --   ---xx   flac  0.5817  Dylan_2009_05_06_Dublin_TM_D1_08.flac
+     5:08.01       54332508 B   -b-   --   ---xx   flac  0.5320  Dylan_2009_05_06_Dublin_TM_D1_09.flac
+     7:01.51       74384396 B   ---   --   ---xx   flac  0.5904  Dylan_2009_05_06_Dublin_TM_D1_10.flac
+     7:34.64       80235708 B   -b-   --   ---xx   flac  0.5652  Dylan_2009_05_06_Dublin_TM_D1_11.flac
+     6:24.29       67806188 B   -b-   --   ---xx   flac  0.5603  Dylan_2009_05_06_Dublin_TM_D1_12.flac
+     8:01.35       84930488 B   -b-   --   ---xx   flac  0.5317  Dylan_2009_05_06_Dublin_TM_D1_13.flac
+    78:09.09      827162112 B                            0.5656  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-05-06-TM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.61       71408464 B   -b-   --   ---xx   flac  0.5913  Dylan_2009_05_06_Dublin_TM_D2_01.flac
+     9:06.41       96410160 B   -b-   --   ---xx   flac  0.5889  Dylan_2009_05_06_Dublin_TM_D2_02.flac
+     5:02.53       53396768 B   -b-   --   ---xx   flac  0.5827  Dylan_2009_05_06_Dublin_TM_D2_03.flac
+     6:06.02       64567284 B   -b-   --   ---xx   flac  0.5653  Dylan_2009_05_06_Dublin_TM_D2_04.flac
+     7:18.18       77306036 B   -b-   --   ---xx   flac  0.5380  Dylan_2009_05_06_Dublin_TM_D2_05.flac
+     6:47.34       71875068 B   -b-   --   ---xx   flac  0.5758  Dylan_2009_05_06_Dublin_TM_D2_06.flac
+    41:05.58      434963780 B                            0.5738  (6 files)
+=================== 
+=================== 
+=================== 

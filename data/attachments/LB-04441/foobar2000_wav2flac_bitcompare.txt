@@ -1,0 +1,94 @@
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t01.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t01.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t02.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t02.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t03.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t03.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t04.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t04.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t05.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t05.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t06.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t06.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t07.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t07.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t08.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t08.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t09.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t09.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t10.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t10.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t11.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t11.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t12.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t12.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t13.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t13.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t14.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t14.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t15.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t15.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t16.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t16.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t17.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t17.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t18.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t18.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t19.flac"
+"F:\burn data disk\bd1975-11-17 Rochester early flac\bd1975-11-17.early.t19.wav"
+No differences in decoded data found.

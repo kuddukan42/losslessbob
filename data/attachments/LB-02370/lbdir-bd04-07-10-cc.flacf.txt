@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-07-10-cc.flacf 
+=================== 
+=================== 
+=================== 
+a87fc21518bd5f3d6c9dc86962bc4298  back.JPG
+c2c19a9754dbb56c9c52b336b652cd18  bd04-07-10-cc.txt
+3b939fdb4b498cfb7bc995480e1768d5  d01-t01-Intro.flac
+cfea004b54b90608fca7f3316d359811  d01-t02-Maggie's Farm.flac
+097ed33539bf0e01d06993bb33ff36f5  d01-t03-Tell Me That It Isn't True.flac
+0aedd336530c6b9bd420903830aa54f2  d01-t04-Cry A While.flac
+6c7efa3f47f194f615b555d4defd3d70  d01-t05-Girl Of The North Country.flac
+801f49da1479fa5b8576f4a411be8afc  d01-t06-It's Alright, Ma (I'm only bleeding).flac
+8ff28819ca33db2269009e32383df286  d01-t07-Tweedle Dee & Tweedle Dum.flac
+a7d02b45b4d77a334f3cc53830de67cc  d01-t08-Positively 4th Street.flac
+9c83362b1f20221b642adb6744f2da5c  d01-t09-Highway 61 Revisited.flac
+fee90c09a7c959e6657b6d8a1cee8f42  d01-t10-Just Like Tom Thumb's Blues.flac
+6f7aeb496ceeb9f7f99e8a90982a0727  d01-t11-A Hard Rain's A-Gonna Fall.flac
+eea783c763983a976db6cd4158c549a1  d01-t12-If Dogs Run Free.flac
+b286b140c24f97698abc39ec8eb9a7d5  d01-t13-Honest With Me.flac
+f856edb8953c58c6f84a753e1789f66c  d02-t01-Not Dark Yet.flac
+8db61776814478bae9b6930d35989434  d02-t02-Summer Days.flac
+14570681b7272f32228881f8119e6583  d02-t03-Mr. Tambourine Man.flac
+42d3b35e5d904895213ea9db94eb7c70  d02-t04-Like A Rolling Stone.flac
+214f6af77439e6d5c9538160c4a9a9eb  d02-t05-All Along The Watchtower.flac
+92a542f21b0a5f6eee41ce10a7c315cf  d02-t06-It Ain't Me Babe (bonus track).flac
+249c6e2e9b9d93f2974b3694f4372516  d02-t07-Get Out Of Denver (bonus track).flac
+d72b8a579ee8f4a68c337a561e29151d  d02-t08-Ball & Biscuit (bonus track with Jack White).flac
+bbd4f74467e7363435e0589daf0fa96b  d02-t09-Hazel (bonus track).flac
+4b28e2b43aff3a2132c86c0d944daaee  d02-t10-God Knows (bonus track).flac
+c23456d9a7be80451f4a473225dfe27f  d02-t11-Joey (bonus track).flac
+d17bd53c29b922f90b8bf2b75fc97bab  d02-t12-Unbelievable (bonus track).flac
+5a45b3ab23c48ce7e861a5d91d2f50f3  d02-t13-Heartland (bonus track with Willie Nelson).flac
+25a8644cf3f045d208c6e08ea54a895d  front.JPG
+0abc35613ab23546cef0a466357f557e  infos.txt
+e591820feb831bf42242f890f04e95f6  inlay.JPG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-10-cc.flacf 
+=================== 
+=================== 
+=================== 
+d01-t01-Intro.flac:b77f4b61a2951ae41bb603815fdca524
+d01-t02-Maggie's Farm.flac:856a42bc8f0efffe8812b4f146be3e75
+d01-t03-Tell Me That It Isn't True.flac:2040957f62d040a9028635bd967e93d7
+d01-t04-Cry A While.flac:59a8db4449e668e76c6011578c4bdd85
+d01-t05-Girl Of The North Country.flac:7674a2abad3ac5a81b5f5973b19cf06d
+d01-t06-It's Alright, Ma (I'm only bleeding).flac:20984a22b7ace3232a2d38782a17241d
+d01-t07-Tweedle Dee & Tweedle Dum.flac:8efb28f6d92b0d151a69260baf1e8061
+d01-t08-Positively 4th Street.flac:f7c48df9d9034f5ce6bf24030474e1f4
+d01-t09-Highway 61 Revisited.flac:4a164155f56590e4e2883b95bcbc2666
+d01-t10-Just Like Tom Thumb's Blues.flac:04523c839f27a9c085aab4bf909af5bb
+d01-t11-A Hard Rain's A-Gonna Fall.flac:b21aaef093110cf67fc15d48c7231cc7
+d01-t12-If Dogs Run Free.flac:309a47bb23e198a884cd9a814a47842a
+d01-t13-Honest With Me.flac:08e7f4442c4c32bae1d2bf5aac9ba5aa
+d02-t01-Not Dark Yet.flac:17708aaf60d8797bed76511b0d90cb26
+d02-t02-Summer Days.flac:1da48564073d2ea62f6712e91ff30ee8
+d02-t03-Mr. Tambourine Man.flac:8a1ce7734b59687463901024e16ac9a1
+d02-t04-Like A Rolling Stone.flac:4844ccda14a45f6b3b87ee9710c33053
+d02-t05-All Along The Watchtower.flac:4a4645b4457599b2cacac75100a212a8
+d02-t06-It Ain't Me Babe (bonus track).flac:986880cdfaba6ea1d9dbca77a8ce9e16
+d02-t07-Get Out Of Denver (bonus track).flac:0983cc107abba80aa3691bb37282ba55
+d02-t08-Ball & Biscuit (bonus track with Jack White).flac:3e89219a7e0199633780553c6347ddda
+d02-t09-Hazel (bonus track).flac:e86eb80872c938420736dd696f1ded6b
+d02-t10-God Knows (bonus track).flac:75067c986408f2fadaca9038e1b49bf3
+d02-t11-Joey (bonus track).flac:7c48be548a1454f7399b358de1ac6558
+d02-t12-Unbelievable (bonus track).flac:c731351abf346b3da5039316ad40bc05
+d02-t13-Heartland (bonus track with Willie Nelson).flac:1b3f141f6db1aaf20af2818dc4ff4a48
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-10-cc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:33.00        5821244 B   ---   --   ---xx   flac  0.6384  d01-t01-Intro.flac
+     5:34.00       58917644 B   ---   --   ---xx   flac  0.7422  d01-t02-Maggie's Farm.flac
+     5:06.00       53978444 B   ---   --   ---xx   flac  0.7014  d01-t03-Tell Me That It Isn't True.flac
+     5:51.00       61916444 B   ---   --   ---xx   flac  0.7238  d01-t04-Cry A While.flac
+     5:55.00       62622044 B   ---   --   ---xx   flac  0.6652  d01-t05-Girl Of The North Country.flac
+     7:16.00       76910444 B   ---   --   ---xx   flac  0.7366  d01-t06-It's Alright, Ma (I'm only bleeding).flac
+     5:53.00       62269244 B   ---   --   ---xx   flac  0.6803  d01-t07-Tweedle Dee & Tweedle Dum.flac
+     7:31.00       79556444 B   ---   --   ---xx   flac  0.7079  d01-t08-Positively 4th Street.flac
+     6:44.00       71265644 B   ---   --   ---xx   flac  0.7459  d01-t09-Highway 61 Revisited.flac
+     6:48.74       72145292 B   ---   --   ---xx   flac  0.7161  d01-t10-Just Like Tom Thumb's Blues.flac
+     6:31.00       68972444 B   ---   --   ---xx   flac  0.7165  d01-t11-A Hard Rain's A-Gonna Fall.flac
+     5:21.00       56624444 B   ---   --   ---xx   flac  0.6892  d01-t12-If Dogs Run Free.flac
+     6:54.61       73173116 B   ---   --   ---xx   flac  0.7362  d01-t13-Honest With Me.flac
+     6:49.00       72147644 B   ---   --   ---xx   flac  0.6022  d02-t01-Not Dark Yet.flac
+     9:05.00       96138044 B   ---   --   ---xx   flac  0.7203  d02-t02-Summer Days.flac
+     6:48.00       71971244 B   ---   --   ---xx   flac  0.7137  d02-t03-Mr. Tambourine Man.flac
+     8:08.00       86083244 B   ---   --   ---xx   flac  0.7206  d02-t04-Like A Rolling Stone.flac
+     6:21.00       67208444 B   ---   --   ---xx   flac  0.6964  d02-t05-All Along The Watchtower.flac
+     6:02.00       63856844 B   ---   --   ---xx   flac  0.6366  d02-t06-It Ain't Me Babe (bonus track).flac
+     3:47.62       40188668 B   ---   --   ---xx   flac  0.7419  d02-t07-Get Out Of Denver (bonus track).flac
+     5:41.00       60152444 B   ---   --   ---xx   flac  0.7192  d02-t08-Ball & Biscuit (bonus track with Jack White).flac
+     5:05.68       53961980 B   ---   --   ---xx   flac  0.6990  d02-t09-Hazel (bonus track).flac
+     3:34.00       37749644 B   ---   --   ---xx   flac  0.6821  d02-t10-God Knows (bonus track).flac
+     8:28.68       89771180 B   ---   --   ---xx   flac  0.6991  d02-t11-Joey (bonus track).flac
+     5:18.61       56238716 B   ---   --   ---xx   flac  0.7218  d02-t12-Unbelievable (bonus track).flac
+     3:58.46       42091436 B   ---   --   ---xx   flac  0.6508  d02-t13-Heartland (bonus track with Willie Nelson).flac
+   155:06.65     1641732424 B                            0.7036  (26 files)
+=================== 
+=================== 
+=================== 

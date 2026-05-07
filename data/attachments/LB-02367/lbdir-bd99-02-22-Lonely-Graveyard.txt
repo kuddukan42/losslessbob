@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-02-22-Lonely-Graveyard 
+=================== 
+=================== 
+=================== 
+04a6cdec209856dc8c92a961a558f244  bd99-02-22-Lonely-Graveyard.txt
+80adae379a7867907de1062a5f99d253  info.md5
+a217557a22309c24ca2ce130bf8eded2  info.txt
+d87ff7873b89dd5aa51bd05f569eca76  Lo  nelyGraveyardd1t01.shn
+8b24bbc98827e5e073982c27b26e5383  Lo  nelyGraveyardd1t02.shn
+3735114f59c28d27f68ed0148f679cf7  Lo  nelyGraveyardd1t03.shn
+d15fbd2c1d10f5bcf5122874736e3525  Lo  nelyGraveyardd1t04.shn
+61d6a80116b7c3186ca1daa11f1a1a47  Lo  nelyGraveyardd1t05.shn
+b2f1a8149f7bd39e9d88bd61b4b8d9ae  Lo  nelyGraveyardd1t06.shn
+48e4186ab2dfa5c7fa17c768a6f97d25  Lo  nelyGraveyardd1t07.shn
+2bb3e1edeaab4706621307601d129c1b  Lo  nelyGraveyardd1t08.shn
+be1fc751571ecf5e46a0f1019a98298d  Lo  nelyGraveyardd1t09.shn
+4fad958261b3689bebabe974de742a18  Lo  nelyGraveyardd1t10.shn
+beb2076c322999520d04334567368ae7  Lo  nelyGraveyardd1t11.shn
+b571cf793621a06adba2c7113fc83024  Lo  nelyGraveyardd1t12.shn
+cf7047bce59af1029d33784ab9a90f8f  Lo  nelyGraveyardd2t01.shn
+e6852f2f5e2439034e4aabc02e520fcd  Lo  nelyGraveyardd2t02.shn
+ef68ea772d81122bce7ed1603d5bd5a8  Lo  nelyGraveyardd2t03.shn
+5e369240f6bdf66566e6c4acc9b0805e  Lo  nelyGraveyardd2t04.shn
+bd4c5241294e36e36c147a52f2779196  Lo  nelyGraveyardd2t05.shn
+b1850210a813b11b708b10322e9a3005  Lo  nelyGraveyardd2t06.shn
+6fbc8a359338e590f70d625e2d352dbf  Lo  nelyGraveyardd2t07.shn
+1667f3bf132a0cb5f237e3baa605c22a  Lo  nelyGraveyardd2t08.shn
+2e36809074b769810ce9a14fe6268f3d  Lo  nelyGraveyardd2t09.shn
+cfd9c148fd04707f7937e93e3081d1b8  Lo  nelyGraveyardd2t10.shn
+867cd0dc67dfe25957c895b7b56a54e6  Lo  nelyGraveyardd2t11.shn
+0e1c3c2a3ceb306a49884c4492df08eb  Lo  nelyGraveyardd2t12.shn
+208722db606c327b9d74ae228a57eaca  Lo  nelyGraveyardd2t13.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-02-22-Lonely-Graveyard 
+=================== 
+=================== 
+=================== 
+a05ec24ec8e0c11dbff41841ea398aab  [shntool]  Lo__nelyGraveyardd1t01.wav
+2207cd959cad41d5a5ce7c37804fc5de  [shntool]  Lo__nelyGraveyardd1t02.wav
+10392e8972c21419a9c8c5246c4a3df0  [shntool]  Lo__nelyGraveyardd1t03.wav
+413079c3a9967726b05486ca0baae748  [shntool]  Lo__nelyGraveyardd1t04.wav
+d4d1714cd54a7bd14d8318be0a5d22aa  [shntool]  Lo__nelyGraveyardd1t05.wav
+7351417daba83a74c0819b464a62451a  [shntool]  Lo__nelyGraveyardd1t06.wav
+4b95aff1281d849a216436ed3729266b  [shntool]  Lo__nelyGraveyardd1t07.wav
+4b3bb948b4db65826db71d7734fafdf9  [shntool]  Lo__nelyGraveyardd1t08.wav
+5bec5608330f3ca2ae3cbff273de4178  [shntool]  Lo__nelyGraveyardd1t09.wav
+d1bdbaf4057541da74518cb24cc59d4a  [shntool]  Lo__nelyGraveyardd1t10.wav
+1b54a291c3eb2d3eb6bd76de598622f1  [shntool]  Lo__nelyGraveyardd1t11.wav
+a500ba1479135fc40fa4c5ec8f6b5596  [shntool]  Lo__nelyGraveyardd1t12.wav
+b3a01dcba8fa0eef7153e13b09b560ac  [shntool]  Lo__nelyGraveyardd2t01.wav
+700f3b13f7ed0166af127bcea8abe09c  [shntool]  Lo__nelyGraveyardd2t02.wav
+9cc25b77804cb55843aa860094134c6b  [shntool]  Lo__nelyGraveyardd2t03.wav
+361053f15b4aec4ea7703f68fadb62ab  [shntool]  Lo__nelyGraveyardd2t04.wav
+9fa563a0d8231065e23f49bbf7b7265d  [shntool]  Lo__nelyGraveyardd2t05.wav
+c52b4ce8a16ddf9a4aaf1c218658d99c  [shntool]  Lo__nelyGraveyardd2t06.wav
+a2f1da6ea2633695b86637d5652b50f9  [shntool]  Lo__nelyGraveyardd2t07.wav
+1cd8dcc85aafdebbc9af136f557dcbbb  [shntool]  Lo__nelyGraveyardd2t08.wav
+05fbb3a75337228b3cc237b2a5368766  [shntool]  Lo__nelyGraveyardd2t09.wav
+4255b5a00a2b5cf47101e5b33d27f77b  [shntool]  Lo__nelyGraveyardd2t10.wav
+3e6594c5f682f53130bed51c4bcb9b1f  [shntool]  Lo__nelyGraveyardd2t11.wav
+6b78a01cc19ead601b3c098ee9849a2a  [shntool]  Lo__nelyGraveyardd2t12.wav
+c7a6197d20d64aebead86d6fc9b24dc1  [shntool]  Lo__nelyGraveyardd2t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-22-Lonely-Graveyard 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:23.37       46480270 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t01.wav
+     5:25.60       57471166 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t02.wav
+     5:51.23       61970542 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t03.wav
+     7:59.37       84582670 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t04.wav
+     5:46.25       61093246 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t05.wav
+     5:54.20       62492686 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t06.wav
+     6:03.53       64157902 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t07.wav
+     8:03.32       85276510 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t08.wav
+     6:24.13       67768222 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t09.wav
+     6:56.40       73476526 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t10.wav
+     6:31.12       69000670 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t11.wav
+     5:59.63       63475822 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd1t12.wav
+     6:17.60       66643966 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t01.wav
+     5:39.10       59823166 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t02.wav
+     6:36.12       69882670 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t03.wav
+     4:05.08       43236862 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t04.wav
+     4:05.15       43253326 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t05.wav
+     4:52.47       51619390 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t06.wav
+     7:00.25       74146846 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t07.wav
+     6:40.00       70560046 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t08.wav
+     7:18.53       77387902 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t09.wav
+     4:29.20       47498686 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t10.wav
+     4:58.20       52614286 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t11.wav
+     7:03.22       74668990 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t12.wav
+     8:30.28       90029902 B   ---   h-   -----    wav  1.0000  Lo__nelyGraveyardd2t13.wav
+   152:55.60     1618612270 B                            1.0000  (25 files)
+=================== 
+=================== 
+=================== 

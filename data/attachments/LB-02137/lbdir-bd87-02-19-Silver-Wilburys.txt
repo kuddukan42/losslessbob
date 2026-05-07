@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-02-19-Silver-Wilburys 
+=================== 
+=================== 
+=================== 
+3d662839ad102be42ae3cc652a76074f  bd87-02-19-Silver-Wilburys.txt
+a19e8dcc5d6e4bd0312de7208ff51f4a  info.txt
+88c9355597e19fb3744fbb59824c67af  The Silver Wilburys - Live! - tr01.shn
+046e694645c7c7512730a50140a95d4d  The Silver Wilburys - Live! - tr02.shn
+e53a418dd76d9709c88966b38bca3f01  The Silver Wilburys - Live! - tr03.shn
+61c65fde01c13c14ac93a9131380b470  The Silver Wilburys - Live! - tr04.shn
+0713fe57640b8870a1e57a8b3d4182ad  The Silver Wilburys - Live! - tr05.shn
+3e1654a8469c0ebdc0865dba176323bd  The Silver Wilburys - Live! - tr06.shn
+a3497e34745265624530cc3ec65738ac  The Silver Wilburys - Live! - tr07.shn
+2c763bbd22392df3229f1e691f4b1215  The Silver Wilburys - Live! - tr08.shn
+921d8f409ba1d03d5e3e602b63987733  The Silver Wilburys - Live! - tr09.shn
+b229d2710923f4a569a3c40af19a2727  The Silver Wilburys - Live! - tr10.shn
+8341c6ba86bd9499aa6ea5ca419f2cad  The Silver Wilburys - Live! - tr11.shn
+153c8a27412a4a623f0006269f93e9df  The Silver Wilburys - Live! - tr12.shn
+33868d4113ed2395a07452a414316f4a  The Silver Wilburys - Live! - tr13.shn
+36e7a99ecff8b1704e39e918fc034d2e  The Silver Wilburys - Live! - tr14.shn
+3feef22761f1494057ccf75d412c81a2  The Silver Wilburys - Live! - tr15.shn
+23526e802c575c0fe6cc6ad6f98495ce  The Silver Wilburys - Live!.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-02-19-Silver-Wilburys 
+=================== 
+=================== 
+=================== 
+c7c82b5e05f7e3f2bdc563ccaf7b22a6  [shntool]  The_Silver_Wilburys_-_Live__-_tr01.wav
+2e52d640c3c97919f679cf5b55c70067  [shntool]  The_Silver_Wilburys_-_Live__-_tr02.wav
+edf03b5ab60d8ddbeaaf75be58f811d1  [shntool]  The_Silver_Wilburys_-_Live__-_tr03.wav
+ba121dd7706c32e262b024ff9fb84c5c  [shntool]  The_Silver_Wilburys_-_Live__-_tr04.wav
+266ef834b363025fbfc2c8f4b95ea2d0  [shntool]  The_Silver_Wilburys_-_Live__-_tr05.wav
+50ba82d2bb341cb26ce1f0c8551f5124  [shntool]  The_Silver_Wilburys_-_Live__-_tr06.wav
+7100743abaf37c7022181188c772cc62  [shntool]  The_Silver_Wilburys_-_Live__-_tr07.wav
+6159a12c6d52f90749cc56b9240574b8  [shntool]  The_Silver_Wilburys_-_Live__-_tr08.wav
+60e07ff61f89be3a9a69bdfc6c3ed47b  [shntool]  The_Silver_Wilburys_-_Live__-_tr09.wav
+fa9ab3f4011d5d64ef64bf9feb44c0cb  [shntool]  The_Silver_Wilburys_-_Live__-_tr10.wav
+3dad94ff7755411f9ed6aa9ba80dd934  [shntool]  The_Silver_Wilburys_-_Live__-_tr11.wav
+5eeb566981acb9a1aa98c1248ab669d0  [shntool]  The_Silver_Wilburys_-_Live__-_tr12.wav
+d445c1270a6e6bde54d8d55d709ee51a  [shntool]  The_Silver_Wilburys_-_Live__-_tr13.wav
+8e0099ee50e0432a7869ebb999f3bf81  [shntool]  The_Silver_Wilburys_-_Live__-_tr14.wav
+f0b117a1be090253b9bc2d4f4b3c0464  [shntool]  The_Silver_Wilburys_-_Live__-_tr15.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-02-19-Silver-Wilburys 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.53       41225900 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr01.wav
+     0:46.05        8126204 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr02.wav
+     6:27.05       68278604 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr03.wav
+     3:55.27       41517548 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr04.wav
+     3:20.43       35381180 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr05.wav
+     3:13.72       34214588 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr06.wav
+     2:50.73       30159740 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr07.wav
+     4:08.22       43798988 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr08.wav
+     4:23.45       46499084 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr09.wav
+     4:33.18       48199580 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr10.wav
+     5:38.60       59764364 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr11.wav
+     3:00.62       31897868 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr12.wav
+     3:49.30       40466204 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr13.wav
+     5:54.43       62546780 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr14.wav
+     3:21.67       35614028 B   ---   --   -----    wav  1.0000  The_Silver_Wilburys_-_Live__-_tr15.wav
+    59:18.25      627690660 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-08-flashing-for-the-refugees.flacf 
+=================== 
+=================== 
+=================== 
+10eaf9ca312473012fd8ea87e4f19ae6  bd87-10-08-flashing-for-the-refugees-d1t01.flac
+e14613882a5ea513f0936ed9e6231604  bd87-10-08-flashing-for-the-refugees-d1t02.flac
+f07a6dd5d305a10477514a8b370f3c42  bd87-10-08-flashing-for-the-refugees-d1t03.flac
+0dc07ad16222c736d696be6dcea794ec  bd87-10-08-flashing-for-the-refugees-d1t04.flac
+a6ddd9e5f4d659e41d4d72d8e55fef7c  bd87-10-08-flashing-for-the-refugees-d1t05.flac
+c3e23c2ed371afd229d8e6991e70ed48  bd87-10-08-flashing-for-the-refugees-d1t06.flac
+dc76225d81e5633a765b0c7ea10bf510  bd87-10-08-flashing-for-the-refugees-d1t07.flac
+00ccea5fa027b2929e79c412ae52492e  bd87-10-08-flashing-for-the-refugees-d1t08.flac
+3527b1fd9a9db2df400c9fa8caedd9e3  bd87-10-08-flashing-for-the-refugees-d1t09.flac
+6c45602447b0ea178f190c9fc7e1d30e  bd87-10-08-flashing-for-the-refugees-d1t10.flac
+5ef1994609c9660113084ce0492cca09  bd87-10-08-flashing-for-the-refugees-d1t11.flac
+b7a253e6ce67368afc9f57211c09e956  bd87-10-08-flashing-for-the-refugees-d1t12.flac
+21aa53cd6b112e222a100de55a9f61fe  bd87-10-08-flashing-for-the-refugees-d1t13.flac
+b064ba28acad9b2b8444f679e7600b28  bd87-10-08-flashing-for-the-refugees-d1t14.flac
+d72d9edebf3a1b5cfdf316f43d73dcfe  bd87-10-08-flashing-for-the-refugees-d1t15.flac
+0caeaedbd889f87d076cadf5cd30df72  bd87-10-08-flashing-for-the-refugees-d1t16.flac
+f11755e65c2d5baafd7faf66c59a43b1  bd87-10-08-flashing-for-the-refugees.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-08-flashing-for-the-refugees.flacf 
+=================== 
+=================== 
+=================== 
+bd87-10-08-flashing-for-the-refugees-d1t01.flac:02808bbfcfa9403496735280857e08bc
+bd87-10-08-flashing-for-the-refugees-d1t02.flac:87eadac1dfdd6ebe60c090b2f1f48fec
+bd87-10-08-flashing-for-the-refugees-d1t03.flac:bda8b422ae1e0af64f70fa5c7945ba16
+bd87-10-08-flashing-for-the-refugees-d1t04.flac:94c44c9cfc88ee8951819f3060951908
+bd87-10-08-flashing-for-the-refugees-d1t05.flac:aae8ba1d992b04800b0c427ed234fa9a
+bd87-10-08-flashing-for-the-refugees-d1t06.flac:d9de46d0eeaa23ad1e7d71a3339fd0ad
+bd87-10-08-flashing-for-the-refugees-d1t07.flac:88ca69b63afabff6cd2d3b8a647b3c92
+bd87-10-08-flashing-for-the-refugees-d1t08.flac:8813e1706a0501081bf75990220c744e
+bd87-10-08-flashing-for-the-refugees-d1t09.flac:ed3522b6e522b47127be1da5d64800d2
+bd87-10-08-flashing-for-the-refugees-d1t10.flac:a6b769a8ed5b2e1d22bdf70f1cd4c4df
+bd87-10-08-flashing-for-the-refugees-d1t11.flac:c73299daab8a6e61494c2b867c822c57
+bd87-10-08-flashing-for-the-refugees-d1t12.flac:ff1d41dfc594d399424c6bbca34d5411
+bd87-10-08-flashing-for-the-refugees-d1t13.flac:0f64585a9792b44073f70f391ee7e9a7
+bd87-10-08-flashing-for-the-refugees-d1t14.flac:6217e3068e5468afae19fc84cebe6153
+bd87-10-08-flashing-for-the-refugees-d1t15.flac:4aeb1b3dafe5c28c521f5ee92ba3e61b
+bd87-10-08-flashing-for-the-refugees-d1t16.flac:1999ce37f6ea01dd13e394efa3354696
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-08-flashing-for-the-refugees.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:36.00       59270444 B   ---   --   ---xx   flac  0.6615  bd87-10-08-flashing-for-the-refugees-d1t01.flac
+     5:03.00       53449244 B   ---   --   ---xx   flac  0.6472  bd87-10-08-flashing-for-the-refugees-d1t02.flac
+     3:51.00       40748444 B   ---   --   ---xx   flac  0.6228  bd87-10-08-flashing-for-the-refugees-d1t03.flac
+     4:27.00       47098844 B   ---   --   ---xx   flac  0.6502  bd87-10-08-flashing-for-the-refugees-d1t04.flac
+     3:45.00       39690044 B   ---   --   ---xx   flac  0.6522  bd87-10-08-flashing-for-the-refugees-d1t05.flac
+     5:12.00       55036844 B   ---   --   ---xx   flac  0.6296  bd87-10-08-flashing-for-the-refugees-d1t06.flac
+     5:25.00       57330044 B   ---   --   ---xx   flac  0.6420  bd87-10-08-flashing-for-the-refugees-d1t07.flac
+     3:51.00       40748444 B   ---   --   ---xx   flac  0.6444  bd87-10-08-flashing-for-the-refugees-d1t08.flac
+     5:40.00       59976044 B   ---   --   ---xx   flac  0.6389  bd87-10-08-flashing-for-the-refugees-d1t09.flac
+     5:32.00       58564844 B   ---   --   ---xx   flac  0.5271  bd87-10-08-flashing-for-the-refugees-d1t10.flac
+     3:03.00       32281244 B   ---   --   ---xx   flac  0.5423  bd87-10-08-flashing-for-the-refugees-d1t11.flac
+     5:39.00       59799644 B   ---   --   ---xx   flac  0.5908  bd87-10-08-flashing-for-the-refugees-d1t12.flac
+     5:17.00       55918844 B   ---   --   ---xx   flac  0.5770  bd87-10-08-flashing-for-the-refugees-d1t13.flac
+     4:08.00       43747244 B   ---   --   ---xx   flac  0.5627  bd87-10-08-flashing-for-the-refugees-d1t14.flac
+     3:30.00       37044044 B   ---   --   ---xx   flac  0.5833  bd87-10-08-flashing-for-the-refugees-d1t15.flac
+     6:04.00       64209644 B   ---   --   ---xx   flac  0.5939  bd87-10-08-flashing-for-the-refugees-d1t16.flac
+    76:03.00      804913904 B                            0.6113  (16 files)
+=================== 
+=================== 
+=================== 

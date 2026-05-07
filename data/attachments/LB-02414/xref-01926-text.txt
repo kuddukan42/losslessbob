@@ -1,0 +1,76 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 
+Mesa Del Sol Amphitheater
+Albuquerque, New Mexico, USA
+July 3, 2000  
+
+I'm filling in a few more gaps from the great run of Bob Dylan 2000 shows that have recently been posted.
+
+After digging around a bit, and clouds of dust, I found a box of old trades. 
+
+The source of all of these is.... Trade CDR > Wav > Flac > You
+
+
+Disc one
+========
+
+Oh Babe, It Ain't No Lie 
+Stone Walls And Steel Bars 
+Masters Of War 
+Love Minus Zero/No Limit 
+Tangled Up In Blue 
+Don't Think Twice, It's All Right 
+Country Pie  
+If Not For You  
+Down In The Flood  
+She Belongs To Me
+
+
+Disc two 
+========
+
+Drifter's Escape 
+Leopard-Skin Pill-Box Hat 
+
+encore: 
+
+Most Likely You Go Your Way (And I'll Go Mine)  
+Like A Rolling Stone 
+Mr. Tambourine Man  
+Highway 61 Revisited 
+Blowin' In The Wind  
+
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+0546e955d12944e650b09177d3d2a89d *info.txt
+e758f657b5f543bb85e5daaa93a976b1 *CD1\1-01 Oh Babe, It Ain't No Lie.flac
+1987d77e24d8dba9cc23c98f1a21a6e7 *CD1\1-02 Stone Walls And Steel Bars.flac
+860fd3cfb01158a36839dcfb10a32249 *CD1\1-03 Masters Of War.flac
+3c1843dfb3cd9f4392688c3bba07b8d0 *CD1\1-04 Love Minus Zero_No Limit.flac
+1752e956e37d883b6e5ec0bf5be92ea1 *CD1\1-05 Tangled Up In Blue.flac
+c862e83d8776ca67b23716f7d964ffd8 *CD1\1-06 Don't Think Twice, It's All Rig.flac
+28dcaab4f04f62ca4c7c068e7f808c11 *CD1\1-07 Country Pie.flac
+0a827ea66c770b27288d7b02350eacde *CD1\1-08 If Not For You.flac
+28cf9ef62eba9e4e352d718187937bb8 *CD1\1-09 Down In The Flood.flac
+d5effa4d311d3a5f3dc1cc2d9d137815 *CD1\1-10 She Belongs To Me.flac
+f005975f2d020256b606bfe043c52e5c *CD2\2-01 Drifter's Escape.flac
+50edd7b35929fbabe5914fe7f6fa2bf2 *CD2\2-02 Leopard Skin Pillbox Hat.flac
+cabf640d44a2775fd52116fae45e30a7 *CD2\2-03 Most Likely You Go Your Way (An.flac
+b4eb841013bd0c270041456aaec3ecbd *CD2\2-04 Like A Rolling Stone.flac
+c3f6515134f9c4990f356f30002486e3 *CD2\2-05 Mr. Tambourine Man.flac
+6e8bab579c7d29f388169d3fb8097430 *CD2\2-06 Highway 61 Revisited.flac
+2ab2e0db27d27250d2f54750eb992c29 *CD2\2-07 Blowin' In The Wind.flac
+===================
+===================
+===================

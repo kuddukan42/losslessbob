@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-30-a.flacf 
+=================== 
+=================== 
+=================== 
+3da44bbf505344f6150869df3c6b72b1  CD1\01 Crash on the Levee (Down in the flood).flac
+a082d80e7b29d4664afdce62035dba50  CD1\02 I'll be your baby tonight.flac
+85a11670ed2710d52d154688c008a726  CD1\03 All along the watchtower.flac
+12e338f6cfb4c0b5a6b438ccef3ad5a2  CD1\04 You're a big girl now.flac
+595e11940e295a866d0dc4607bfef9e4  CD1\05 Just like Tom Thumb's blues.flac
+76808120cc21e0aa5a13adff294092bc  CD1\06 Silvio.flac
+0652c65bcce22ce5792eb152ba415a74  CD1\07 Mr. Tambourine Man.flac
+7ffa3c8fd9e8c19af2290cbf30cda677  CD1\08 Masters of war.flac
+b8a8cf80d8a7c5c46251e1c9efbc9d6f  CD1\09 To Ramona.flac
+18ec5184e6a96b7e02475d81956abca7  CD1\FLAC CD1.md5
+e4ea7e9ca06c7a444691a9efa533f3ec  CD2\10 Seeing the real you at last.flac
+9e586939c875c75d1ebf534c03156d24  CD2\11 In the garden.flac
+64313806e6d116139d2ed0b9cd599e90  CD2\12 Highway 61 revisited.flac
+c6916876e6d498811370867840b406a2  CD2\13 Ballad of a thin man.flac
+5012875bac75688fc3a87e0c47c1d385  CD2\14 The times they are a-changin'.flac
+e16fb79dd9d7cf27709daa250931e368  CD2\FLAC CD2.md5
+d0cbc3c388d41f8e5ee57ae06eeab184  Info\1995-05-30 Hult Center, Eugene, Oregon, USA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-30-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the Levee (Down in the flood).flac:6ee6d384a693eacf161c5c32b0d10cb4
+02 I'll be your baby tonight.flac:aee1dd0770d0ce8b707dcb1aa5e6b4f3
+03 All along the watchtower.flac:62f306737d49a3b5fcbe169100ccc187
+04 You're a big girl now.flac:7feda98a3dde8e877e853302a58a81b5
+05 Just like Tom Thumb's blues.flac:4cf3db14647792c26b81c279996c46f5
+06 Silvio.flac:0cb32b683bd6b3d89b00ed10cf016820
+07 Mr. Tambourine Man.flac:a9dbaea4a894d621a68ba07e1e02058c
+08 Masters of war.flac:e17b3bb0861be8668c0da8418f07d4a6
+09 To Ramona.flac:f8d29a7d0e66d97323b168594d1d3e80
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-30-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Seeing the real you at last.flac:3531e0f4d7c218428aa11cc5ce106bcc
+11 In the garden.flac:258f6df52a26bdafba18eb2494b1e24f
+12 Highway 61 revisited.flac:5d66d206f0e5b020cbdc8a456be5f03c
+13 Ballad of a thin man.flac:3dc1962af6f3476bd57abde21ffdaae2
+14 The times they are a-changin'.flac:513ee915dc497c258b1f63972255c579
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-30-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:10.03       22939100 B   ---   --   ---xx   flac  0.5583  01 Crash on the Levee (Down in the flood).flac
+     5:33.65       58894124 B   ---   --   ---xx   flac  0.5065  02 I'll be your baby tonight.flac
+     6:53.05       72865004 B   ---   --   ---xx   flac  0.5573  03 All along the watchtower.flac
+     6:58.08       73754060 B   ---   --   ---xx   flac  0.4601  04 You're a big girl now.flac
+     8:20.41       88296476 B   ---   --   ---xx   flac  0.5229  05 Just like Tom Thumb's blues.flac
+     5:25.18       57372380 B   ---   --   ---xx   flac  0.5645  06 Silvio.flac
+     7:40.18       81186380 B   ---   --   ---xx   flac  0.3663  07 Mr. Tambourine Man.flac
+     5:40.26       60037196 B   ---   --   ---xx   flac  0.4310  08 Masters of war.flac
+     6:43.21       71138636 B   ---   --   ---xx   flac  0.4161  09 To Ramona.flac
+    55:24.55      586483356 B                            0.4791  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-30-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.33       69932060 B   ---   --   ---xx   flac  0.5361  10 Seeing the real you at last.flac
+     9:47.23      103600940 B   ---   --   ---xx   flac  0.5075  11 In the garden.flac
+     6:24.21       67787036 B   ---   --   ---xx   flac  0.5501  12 Highway 61 revisited.flac
+     9:07.00       96490844 B   ---   --   ---xx   flac  0.5357  13 Ballad of a thin man.flac
+    10:21.59      109683212 B   ---   --   ---xx   flac  0.4805  14 The times they are a-changin'.flac
+    42:16.61      447494092 B                            0.5179  (5 files)
+=================== 
+=================== 
+=================== 

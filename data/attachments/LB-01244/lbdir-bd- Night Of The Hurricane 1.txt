@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd- Night Of The Hurricane 1 
+=================== 
+=================== 
+=================== 
+a787825c563c9e77ce4d8c6bdef8482e  bd-Night-Of-The-Hurricane-1.txt
+9f34156d6e3052a249f3cdd31dda9ca5  cd 1\Track 01.shn
+a2d9058201eaf15c5d0ad466bbd2b669  cd 1\Track 02.shn
+384fe8a214b8a5f1d94969fef55003e5  cd 1\Track 03.shn
+539552e6289d3620bf0fca7f98a17e69  cd 1\Track 04.shn
+8ee981e78097264f0c2dfdec1ce8facf  cd 1\Track 05.shn
+fc6d7e08d615f296767331c370d07cd1  cd 1\Track 06.shn
+23df177b355659c8a93ecdca264a7985  cd 1\Track 07.shn
+d508b5ea92b541196b310d599c821d1e  cd 1\Track 08.shn
+bf4fb7ab58a30e8b5d0fa57b81449c90  cd 1\Track 09.shn
+3861bf06e6d248fdf82980011bf9bc7c  cd 1\Track 10.shn
+2a864cf95b1d6bcaf56c019411ff38a9  cd 1\Track 11.shn
+bb7345be56e7f148ab01f10342be02b9  cd 1\Track 12.shn
+5e3113b573e6b79848ececc087f24b78  cd 1\noname.md5
+dabc7b01f7ce1349f11a5f3e5a57fa65  cd 2\Track 01.shn
+08d650fb7be64c569c325b5b449966ac  cd 2\Track 02.shn
+9087cba8ef2f8a9489ca3fc6f6207ec1  cd 2\Track 03.shn
+b1ab52b0d74c0e36c50fc99ea7373ac7  cd 2\Track 04.shn
+fc3cb28bdfabb5a4132f4cb8bba67ad7  cd 2\Track 05.shn
+c7283175f61c3f135e95d2ecd5e37789  cd 2\Track 06.shn
+48f5bd1fa544bc24980f5d44a105921c  cd 2\Track 07.shn
+1e10bdf06c21ad862647a4b889ee3731  cd 2\Track 08.shn
+de8548d1c689affde67d25a227dd8638  cd 2\Track 09.shn
+5633db5d49566da94167adf06571250a  cd 2\Track 10.shn
+41a6942c1edc3dde6bdf86e953bee5b9  cd 2\noname.md5
+6d81137a1b721ca98770c387909fbd87  NIGHTOFTHEHURRICANE1BACK.jpg
+cf3497d1dd02cc865eacf018516c6651  NIGHTOFTHEHURRICANE1FRONT.jpg
+aeff7c67b48b8d2008614a0e55b583e5  Thumbs.db
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd- Night Of The Hurricane 1\cd 2 
+=================== 
+=================== 
+=================== 
+26acdcc7a85bf6cdc3c49656e5d60545  [shntool]  Track_01.wav
+90bd476dd033b8096df79a7498233d0a  [shntool]  Track_02.wav
+5a254f8eeecbc67441d6f0d15118e3aa  [shntool]  Track_03.wav
+b0d34b1ef1e5f68296509fa8018f48a1  [shntool]  Track_04.wav
+1bd377a5e562d488738a9fe002f14eb4  [shntool]  Track_05.wav
+6c05bb611d1202d1c6d987aaf7e8369d  [shntool]  Track_06.wav
+af4f8edb999f14f51363462d8511ad33  [shntool]  Track_07.wav
+b6ef7792910e11884a898ec78dd1adfb  [shntool]  Track_08.wav
+f60a1ee785646d18c143746e06c6b800  [shntool]  Track_09.wav
+7d6e9139d6a2d300c512a176d51f7043  [shntool]  Track_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd- Night Of The Hurricane 1\cd 1 
+=================== 
+=================== 
+=================== 
+50f709df9ac4ec1c0881561d28ed3572  [shntool]  Track_01.wav
+0a49adddd282d209cadd2af4d11277bf  [shntool]  Track_02.wav
+dc741a0235b1200cb69a3757a51a00e9  [shntool]  Track_03.wav
+5555d3ca32c942a2a2b6ce374075c8ed  [shntool]  Track_04.wav
+28b0b06a149a443d5cf176c0670d41d0  [shntool]  Track_05.wav
+54a408b88542ce1b1726f259a497abe4  [shntool]  Track_06.wav
+3bd1666373b9fbefb4b978e9bb601d05  [shntool]  Track_07.wav
+0b838de9738e3e62d7983f76a5d26227  [shntool]  Track_08.wav
+b29f752b692c58cc0c7162ca901fbec1  [shntool]  Track_09.wav
+55d953c0dec60e91cd3d17f7810fb12e  [shntool]  Track_10.wav
+1aa199700e54eadbca7edd14ba32445b  [shntool]  Track_11.wav
+2b69e7b49db0ab0cabd8bfab98533c29  [shntool]  Track_12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd- Night Of The Hurricane 1\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.36       47888700 B   -b-   --   -----    wav  1.0000  Track_01.wav
+     4:30.73       47799740 B   ---   --   -----    wav  1.0000  Track_02.wav
+     4:36.17       48726428 B   ---   --   -----    wav  1.0000  Track_03.wav
+     4:54.59       52000412 B   ---   --   -----    wav  1.0000  Track_04.wav
+     8:44.68       92593580 B   ---   --   -----    wav  1.0000  Track_05.wav
+     4:34.33       48411260 B   ---   --   -----    wav  1.0000  Track_06.wav
+     5:18.55       56224604 B   ---   --   -----    wav  1.0000  Track_07.wav
+     5:18.66       56250476 B   ---   --   -----    wav  1.0000  Track_08.wav
+     4:16.44       45261932 B   ---   --   -----    wav  1.0000  Track_09.wav
+     4:00.14       42369932 B   -b-   --   -----    wav  1.0000  Track_10.wav
+    50:47.15      537527064 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd- Night Of The Hurricane 1\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.43       43320124 B   -b-   --   -----    wav  1.0000  Track_01.wav
+     5:38.02       59628484 B   -b-   --   -----    wav  1.0000  Track_02.wav
+     5:26.12       57534668 B   ---   --   -----    wav  1.0000  Track_03.wav
+     4:02.30       42759404 B   ---   --   -----    wav  1.0000  Track_04.wav
+     3:51.68       40908380 B   ---   --   -----    wav  1.0000  Track_05.wav
+     6:12.18       65663180 B   ---   --   -----    wav  1.0000  Track_06.wav
+     4:59.36       52828316 B   ---   --   -----    wav  1.0000  Track_07.wav
+     3:36.60       38243564 B   ---   --   -----    wav  1.0000  Track_08.wav
+     3:43.18       39379580 B   ---   --   -----    wav  1.0000  Track_09.wav
+     3:01.20       31975484 B   ---   --   -----    wav  1.0000  Track_10.wav
+     3:15.67       34555628 B   ---   --   -----    wav  1.0000  Track_11.wav
+     3:14.06       34236776 B   -b-   --   -----    wav  1.0000  Track_12.wav
+    51:07.06      541033588 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

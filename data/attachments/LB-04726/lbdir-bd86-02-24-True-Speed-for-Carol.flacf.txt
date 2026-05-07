@@ -1,0 +1,138 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-02-24-True-Speed-for-Carol.flacf 
+=================== 
+=================== 
+=================== 
+a105785deb3127719ed8eae9141c17ea  artwork\true speed.pdf
+35deb3426210c0b418a2b8250b678492  bd86-02-24-True-Speed-for-Carol-LB-4726.txt
+32ccd989f87ad9b0390c00dcd75a7385  disk 1\Track01.flac
+147a2083111dfa73dc9e3f70f893c1f4  disk 1\Track02.flac
+bdbe50c0f65edbaeb772ce26900e4225  disk 1\Track03.flac
+dafa9dfaf184d4e72aee332e343a4e63  disk 1\Track04.flac
+0ef36a4385174f3d80aedc77c77f62a8  disk 1\Track05.flac
+762895d54c41346c5f60f913e636e1cc  disk 1\Track06.flac
+5a9817f32e897d9f77007d37eb46e4f9  disk 1\Track07.flac
+1ff8e077ebed669958cecb239239e2af  disk 1\Track08.flac
+28483d3c80ba67054cae3e1567d8bdc3  disk 1\Track09.flac
+b39b78a1c59f93fb4b6722b89b0af2b3  disk 1\Track10.flac
+ffadc7478876a158f0c0afc9df498af9  disk 1\Track11.flac
+08ae3822d50825449734d256f81518fa  disk 1\Track12.flac
+2a83bd8a4d4a69e95a3530d1c0df7406  disk 1\Track13.flac
+5c75cb20a8d8676bb46d570b8e69189f  disk 1\Track14.flac
+d1f0a1b712e3411e7cf0bf0b8745c647  disk 1\Track15.flac
+a8844235d5dc7033d89d23aa8ef90bb2  disk 1\Track16.flac
+298910cf9eab8a107801fa8549d6160a  disk 1\disk 1.md5
+0efe6335e7672d308d5f94c9fc167dc0  disk 2\Track01.flac
+49f8389d43171c6e43427a4d83d0910b  disk 2\Track02.flac
+a4ff811816926eb0d530d60785628746  disk 2\Track03.flac
+f3f919b2d75ef06af904de2ec17a5dc5  disk 2\Track04.flac
+4d858f24f4e235a9462bddd321cfeaca  disk 2\Track05.flac
+b3914681e40b61aad65df41d070f183e  disk 2\Track06.flac
+62b9fb12da464baa7308b4e75cc0171f  disk 2\Track07.flac
+7863c492b21dd30e02c5ad7a3e33a47b  disk 2\Track08.flac
+83a9d0496d679b25e40c16938af53030  disk 2\Track09.flac
+ba9ceaff47994c327559708790e436d3  disk 2\Track10.flac
+bcb616acc429f098e89e2257d4a2c6e0  disk 2\Track11.flac
+60c1f3bbadc0f50e53807fb23d33843c  disk 2\Track12.flac
+c79fb1c959f3358d7cd8bf2d4bc56ec3  disk 2\Track13.flac
+508ec55a2d3da417ee48cb669d6683c1  disk 2\Track14.flac
+fdf26316cdc06e57c11baed1bbc5019d  disk 2\disk 2.md5
+93f8081a6476f43da947f26929ac1c20  lbdir-bd86-02-24-True-Speed-for-Carol.flacf.md5
+8ee2d4d01f84646aeeb31ef6fdec5470  True Speed for Carol.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-24-True-Speed-for-Carol.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:1f904af84930d32d041995adc48e202e
+Track02.flac:1d1f0a36eda14f6a9a0318522f9c12dd
+Track03.flac:8a1d941c170d34a6e8ab5258341e466a
+Track04.flac:6eaf72952c1519ce22d0ab89e8de5c7d
+Track05.flac:9aa79d1d9a4d1013e7ef60ff24a555e1
+Track06.flac:0368d0ae6fc4b58f13d823ed09242a35
+Track07.flac:901d093ba0540dfb53f15d5d3b998819
+Track08.flac:7888ece21ecd2439a914bc09e281749c
+Track09.flac:95af26be4f53c8e0b6697ca021345dc8
+Track10.flac:54d6d138493437291eab637dc001bd12
+Track11.flac:dabf656b65fcf2c295a8f3774164b337
+Track12.flac:5434d0df7c45e47ca82d7aa9223354cb
+Track13.flac:560409750a1f4a06a59c8d5d1206a6be
+Track14.flac:0621a341408216f295e9f623787a1051
+Track15.flac:a9fecc115e5f48ddd34438852899676d
+Track16.flac:c3eb93bb79744a9427b47651f77d17f2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-24-True-Speed-for-Carol.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:1d58acb788cf622a2c0a6429f049bb86
+Track02.flac:18676d00a9829de55c639de4ffd4a283
+Track03.flac:c6b2a98fbaa325d137681796000c705c
+Track04.flac:624d1f23bc1b4bae13a9a11231dd66fe
+Track05.flac:78b4810ba3842617c246a1e33e3faec5
+Track06.flac:06e0adb9699eff18e5ff59460372d2b4
+Track07.flac:78fd4c7a95152061e44cb5e1901989fd
+Track08.flac:7f33a5064f941593b921cdf747487106
+Track09.flac:d9606d894c505d28facedd2994aa3f65
+Track10.flac:8c9f37b24372909b220dac60a12e510c
+Track11.flac:df2244206d884347d47c09d0e5bde913
+Track12.flac:24941ddcd151faa4092227c3feca427c
+Track13.flac:2826c6da07f1d3cf4ce7708a26c95b8c
+Track14.flac:3e17d003227edd24d6d80024be98bf8f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-24-True-Speed-for-Carol.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:21.17       56664428 B   ---   --   ---xx   flac  0.6774  Track01.flac
+     5:19.01       56273996 B   ---   --   ---xx   flac  0.6806  Track02.flac
+     3:36.01       38104796 B   ---   --   ---xx   flac  0.6864  Track03.flac
+     4:46.73       50622140 B   ---   --   ---xx   flac  0.6574  Track04.flac
+     3:26.61       36481916 B   ---   --   ---xx   flac  0.6739  Track05.flac
+     3:29.66       37022876 B   ---   --   ---xx   flac  0.6382  Track06.flac
+     5:23.10       57000764 B   ---   --   ---xx   flac  0.6681  Track07.flac
+     3:51.10       40771964 B   ---   --   ---xx   flac  0.6797  Track08.flac
+     5:36.30       59341004 B   ---   --   ---xx   flac  0.6780  Track09.flac
+     9:03.06       95799356 B   ---   --   ---xx   flac  0.6337  Track10.flac
+     5:18.54       56222252 B   ---   --   ---xx   flac  0.6096  Track11.flac
+     7:26.11       78700316 B   ---   --   ---xx   flac  0.6471  Track12.flac
+     3:55.64       41604572 B   ---   --   ---xx   flac  0.6646  Track13.flac
+     5:20.00       56448044 B   ---   --   ---xx   flac  0.7034  Track14.flac
+     3:19.26       35164796 B   ---   --   ---xx   flac  0.6934  Track15.flac
+     5:57.34       63054812 B   ---   --   ---xx   flac  0.7111  Track16.flac
+    81:11.14      859278032 B                            0.6667  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-24-True-Speed-for-Carol.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:22.07       67401308 B   ---   --   ---xx   flac  0.7005  Track01.flac
+     5:55.48       62734940 B   ---   --   ---xx   flac  0.6432  Track02.flac
+     4:22.25       46275644 B   ---   --   ---xx   flac  0.7039  Track03.flac
+     3:59.43       42260780 B   ---   --   ---xx   flac  0.6815  Track04.flac
+     6:03.70       64197884 B   ---   --   ---xx   flac  0.6679  Track05.flac
+     3:27.71       36681836 B   ---   --   ---xx   flac  0.6829  Track06.flac
+     4:59.25       52802444 B   ---   --   ---xx   flac  0.6879  Track07.flac
+     5:08.11       54357116 B   ---   --   ---xx   flac  0.6609  Track08.flac
+     6:19.66       67010876 B   ---   --   ---xx   flac  0.6646  Track09.flac
+     7:10.67       76009628 B   ---   --   ---xx   flac  0.6390  Track10.flac
+     6:41.18       70778780 B   ---   --   ---xx   flac  0.6697  Track11.flac
+     4:01.04       42521852 B   ---   --   ---xx   flac  0.7060  Track12.flac
+     3:32.00       37396844 B   ---   --   ---xx   flac  0.7299  Track13.flac
+     8:03.42       85300028 B   ---   --   ---xx   flac  0.7191  Track14.flac
+    76:07.47      805729960 B                            0.6805  (14 files)
+=================== 
+=================== 
+=================== 

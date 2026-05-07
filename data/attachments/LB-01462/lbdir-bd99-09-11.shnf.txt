@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-09-11.shnf 
+=================== 
+=================== 
+=================== 
+d6eea595ac047dec1150072f8b960476  09-11-99 Disc 1 - 01.shn
+fd7049dcdc8334140bc7357aa3bbf8af  09-11-99 Disc 1 - 02.shn
+a789e32dbdf6a638a5bdff9a59a22534  09-11-99 Disc 1 - 03.shn
+d92afeb4378d589945f488d7a89979cd  09-11-99 Disc 1 - 04.shn
+bdcc756b2fcd8d1fa36207bed9436b96  09-11-99 Disc 1 - 05.shn
+b6e95e4c4390cb92984806a88f81c5ec  09-11-99 Disc 1 - 06.shn
+e516e3937f5f6b02fae49d3989fdd9fd  09-11-99 Disc 1 - 07.shn
+6a7b3e2ce8ee74eee678b00f5788a16a  09-11-99 Disc 1 - 08.shn
+8d159f18c4b9fb8aef4596ec93445a8e  09-11-99 Disc 1 - 09.shn
+ab1f9cf0b69f8c6a7174cfe51abf0afa  09-11-99 Disc 1 - 10.shn
+3584e1630f489d117ce5c38103eb5f61  09-11-99 Disc 1 - 11.shn
+5a424487614059b5d0e5e8bc9cf086a2  09-11-99 Disc 1.md5
+18d0c531dd1a90ba7a4986463317b213  09-11-99 Disc 2 - 01.shn
+fc3fb6495451b67768ac7fb3a87096a0  09-11-99 Disc 2 - 02.shn
+4eacfcf6fe9802d4c7454a278c9fcc91  09-11-99 Disc 2 - 03.shn
+0df3f10c5a3e240b14c760cde808d063  09-11-99 Disc 2 - 04.shn
+54b03bb53f71e5cf2e4d61fd32d25ff3  09-11-99 Disc 2 - 05.shn
+41c3ee46a60ba6be130f6d8a2c2d4774  09-11-99 Disc 2 - 06.shn
+65ebf7dbae5053e65260b2cc41bf64d8  09-11-99 Disc 2 - 07.shn
+d950e1a3faa287240b21e0f91d3645c4  09-11-99 Disc 2 - 08.shn
+b911a22c80e4a3a0eb63e68f92cf7ccc  09-11-99 Disc 2 - 09.shn
+21a905d9516ff6de1836a686788191d7  09-11-99 Disc 2 - 10.shn
+ea4fe082a0cd595ef457498c9000b4a3  09-11-99 Disc 2 - 11.shn
+866affc2efeeb6b161ace742d913b331  09-11-99 Disc 2 - 12.shn
+4a36352c7fc2c1d7b0223cd7ee7a1a63  09-11-99 Disc 2 - 13.shn
+e2d674b881b0d3b9619f892a1539f41d  09-11-99 Disc 2.md5
+6a48ff5667255451f2cfdffe31de3bd1  bd99-09-11.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-09-11.shnf 
+=================== 
+=================== 
+=================== 
+d7ca37d2d3fb2603d529fd91a5c2de15  [shntool]  09-11-99_Disc_1_-_01.wav
+8f11a2a70361b613e8e318f5d74c2142  [shntool]  09-11-99_Disc_1_-_02.wav
+86447d55a9c2ff52e8c02bd2ef2d60d8  [shntool]  09-11-99_Disc_1_-_03.wav
+c2cbbe2cbf9b318c6b0ebf17a06e8065  [shntool]  09-11-99_Disc_1_-_04.wav
+748a5c2a2767df9bca74574260fb91c3  [shntool]  09-11-99_Disc_1_-_05.wav
+13439b3ab6fd188cb989fa9a287bec26  [shntool]  09-11-99_Disc_1_-_06.wav
+a92bbdae391be31f84f996585686d5f8  [shntool]  09-11-99_Disc_1_-_07.wav
+126d4bf55153ee1aab2783d2b889a57d  [shntool]  09-11-99_Disc_1_-_08.wav
+68972f06e06f708fcf8880cd760a6a71  [shntool]  09-11-99_Disc_1_-_09.wav
+5235b8cc9d015a612fa2aa7f7f1a9b58  [shntool]  09-11-99_Disc_1_-_10.wav
+489088561955943f8c5524ba62988cb0  [shntool]  09-11-99_Disc_1_-_11.wav
+da891718b411392be626a77504e069f6  [shntool]  09-11-99_Disc_2_-_01.wav
+1d9902c54c5bf3100fe5cfad93091509  [shntool]  09-11-99_Disc_2_-_02.wav
+40e8d6a60512f3da9b586384179a5ad3  [shntool]  09-11-99_Disc_2_-_03.wav
+2560fa4dea0d9796e9e5717ede37e9ec  [shntool]  09-11-99_Disc_2_-_04.wav
+5c36faf3ca87a94338862b08a06ed1f9  [shntool]  09-11-99_Disc_2_-_05.wav
+7c4c1b608abd4d3abbcd751de5afff5b  [shntool]  09-11-99_Disc_2_-_06.wav
+50edf951f23ad9b7669281b72fe2b8cb  [shntool]  09-11-99_Disc_2_-_07.wav
+1dbb912dcd5e01409311e942add447b9  [shntool]  09-11-99_Disc_2_-_08.wav
+457eeb2b4a211ede9d2297082df05345  [shntool]  09-11-99_Disc_2_-_09.wav
+db531aa5cafa9b8519a34badd4969b64  [shntool]  09-11-99_Disc_2_-_10.wav
+3d2915400faba45f1506e1b160533008  [shntool]  09-11-99_Disc_2_-_11.wav
+4c0b44601e98d6f057f2bd531ce08596  [shntool]  09-11-99_Disc_2_-_12.wav
+891331fb4b00e9e4c1221e8d41d17ae5  [shntool]  09-11-99_Disc_2_-_13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-11.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:18.52       24464860 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_01.wav
+     6:25.63       68062216 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_02.wav
+     7:08.50       75616840 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_03.wav
+     6:58.02       73739944 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_04.wav
+     8:26.48       89371336 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_05.wav
+     4:06.57       43528504 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_06.wav
+     6:25.38       68003416 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_07.wav
+     8:52.45       93950680 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_08.wav
+     6:43.15       71124520 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_09.wav
+     6:02.06       63870952 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_10.wav
+     7:38.19       80835516 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_1_-_11.wav
+     5:04.33       53702552 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_01.wav
+     4:09.74       44096636 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_02.wav
+     5:37.33       59523740 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_03.wav
+     1:54.39       20201368 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_04.wav
+     2:23.51       25345192 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_05.wav
+     5:18.73       56266392 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_06.wav
+     5:17.22       55969812 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_07.wav
+     9:03.40       95880200 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_08.wav
+     5:57.33       63052456 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_09.wav
+     4:25.55       46875400 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_10.wav
+     4:03.02       42869260 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_11.wav
+     6:31.23       69026536 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_12.wav
+     7:49.56       82863352 B   -b-   --   -----    wav  1.0000  09-11-99_Disc_2_-_13.wav
+   138:43.27     1468241680 B                            1.0000  (24 files)
+=================== 
+=================== 
+=================== 

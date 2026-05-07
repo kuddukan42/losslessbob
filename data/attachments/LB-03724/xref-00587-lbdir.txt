@@ -1,0 +1,58 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-09-05-b.flacf 
+=================== 
+=================== 
+=================== 
+061c2d59b1490bb200161ca2c05803e6  bd1990-09-05_oklahoma city.md5
+8c58f4a1e6ca090aa1eb0c4a3e60deb3  bd1990-09-05_oklahoma-city.txt
+bdf9e0f8ff85103230352fb60b9e72a1  bd1990-09-05_oklahoma_back.jpg
+0538b443230a5c573d2e9daa109e15ec  bd1990-09-05_oklahoma_front.jpg
+973a53161bf8db83ce4e1824450b1d59  log.log
+34b109992c2193d48d2839a175e0a8cf  Track01.flac
+f4a951243e2d320b7d7fa866fb8ab4f7  Track02.flac
+534cd0e0fa07c484e6d9a1848231c09d  Track03.flac
+d29cd1d78cdd953fa71319913025bcdb  Track04.flac
+0e6ef3c757e75c3ab60be6805dca924e  Track05.flac
+e89387faf26fcd8f7847128ce77ae80f  Track06.flac
+b056fc77c57c67902055fca91f3c79b6  Track07.flac
+43ecc5bb1906f0687f8d65df0e3d353d  Track08.flac
+c636f0fddf919391e4c3a214864c9123  Track09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-09-05-b.flacf 
+=================== 
+=================== 
+=================== 
+track01.flac:4403f36d49ae69ecf599b3182d1316ae
+track02.flac:78181a4abb70c0f384eab007fe7d1fec
+track03.flac:74037120780f0e3d18d34e6ad2b28505
+track04.flac:eb0f3154bc71671460faabf8be9557ee
+track05.flac:3a510e17782c5bface5858f27e69fc6e
+track06.flac:db226a13bd22c08890070dea80671bf7
+track07.flac:5377de8b0d110280322d8a161ea690e1
+track08.flac:4c09d8f468cf3e609d777740bf0e2adc
+track09.flac:79750a4fab3a9924f9605e3223fec249
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-09-05-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.45       10689884 B   ---   --   ---xx   flac  0.5626  Track01.flac
+     3:10.60       33657164 B   ---   --   ---xx   flac  0.5482  Track02.flac
+     4:09.70       44088284 B   ---   --   ---xx   flac  0.5344  Track03.flac
+     5:07.36       54239516 B   ---   --   ---xx   flac  0.5506  Track04.flac
+     4:30.50       47745644 B   ---   --   ---xx   flac  0.5624  Track05.flac
+     5:29.21       58085036 B   ---   --   ---xx   flac  0.5436  Track06.flac
+     5:14.19       55434332 B   ---   --   ---xx   flac  0.5500  Track07.flac
+     4:36.51       48806396 B   ---   --   ---xx   flac  0.5542  Track08.flac
+     6:16.26       66387596 B   ---   --   ---xx   flac  0.5560  Track09.flac
+    39:36.03      419133852 B                            0.5506  (9 files)
+=================== 
+=================== 
+=================== 

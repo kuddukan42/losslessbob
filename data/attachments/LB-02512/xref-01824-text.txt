@@ -1,0 +1,137 @@
+===================
+===================
+===================
+=== 2004-08-27 Warner Park, Madison, Wisconsin, USA [derived f. LB-2512 'Travelin' Man'].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Warner Park
+Madison, Wisconsin
+August 27, 2004
+
+Live debut: First concert performance of 'Heartland'
+
+Derived from LB-2512 (); Travelin' Man Records (Ballpark Master)
+Source: Schoeps mk41 > KCY 250/2I > Sonosax SX-M2-LS/2 > D100
+
+01 Drifter's Escape
+02 The Times They Are A-Changin'
+03 Seeing The Real You At Last
+04 Heartland (Bob Dylan/Willie Nelson)
+05 It's Alright, Ma (I'm Only Bleeding)
+06 If Dogs Run Free
+07 High Water (for Charley Patton)
+08 Mr. Tambourine Man
+09 Love Sick
+10 Honest With Me
+11 Sugar Baby
+12 Summer Days
+13 Like A Rolling Stone
+14 All Along The Watchtower
+
+Concert # 1664 of The Never-Ending Tour
+Concert # 16 of the 2004 US Summer Tour with Willie Nelson
+2004 concert # 76
+
+Concert # 43 with the 18th Never-Ending Tour Band:
+Bob Dylan (vocal & piano)
+Stu Kimball (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar
+Tony Garnier (bass)
+George Receli (drums & percussion)
+
+01, 02 Elana Fremerman (fiddle)
+04 Willie Nelson, (guitar & vocal), Lucas Nelson (guitar), Michael Nelson (percussion)
+12 Tommy "Mad Dog" Morrongiello (guitar)
+02, 05, 08 acoustic with the band
+
+NOTES:
+LB-numbers for this concert: LB-2023 (A), LB-2034 (A), LB-2036 (A), LB-2104 (A), LB-2512 (A)
+
+9 new songs (64%) compared to previous concert
+1 new song for this tour
+
+.ffp:
+01 Drifter's escape.flac:b327c1627d1033c9371e89b425745e22
+02 The times they are a-changin'.flac:cd9bd21722bc1628a29bd246144b8639
+03 Seeing the real you at last.flac:85974e24c0aad41eff44c4a9b1e307c8
+04 Heartland [w Willie Nelson].flac:f041d5a628413967fa76d73e7f3569ef
+05 It's alright, ma (I'm only bleeding).flac:7e1a5bd57130a53fb2a578e498ab11d3
+06 If dogs run free.flac:bd507dc732f240cec60390d0bba41f5f
+07 High water (for Charley Patton).flac:b5233a21f4d9e0d1597aec10dfc82123
+08 Mr. Tambourine Man.flac:f1599990b5e1e8880095aee1ac3296c0
+09 Love sick.flac:9cf2233e88a6984f2836a1a1ccf68120
+10 Honest with me.flac:12a8d209183295097ad5b80ae9a6bc1a
+11 Sugar baby.flac:dc8dc50b46145963c63086a182d91bd0
+12 Summer days.flac:24a28614c3eb030c951136181b11e98f
+13 Like a rolling stone.flac:7b3f041ac3193cf705ce6cf91c985b0f
+14 (band intro).flac:17d0bd18884099a01fa2e4f2a4f72a1e
+14 All along the watchtower.flac:112b57b548b41f6f9abff7722247d6f1
+===================
+===================
+===================
+=== Bob Dylan 2004-08-27 Warner Park, Madison, Wisconsin, USA [derived f. LB-2512 'Travelin' Man'].ffp
+===================
+===================
+===================
+01 Drifter's escape.flac:b327c1627d1033c9371e89b425745e22
+02 The times they are a-changin'.flac:cd9bd21722bc1628a29bd246144b8639
+03 Seeing the real you at last.flac:85974e24c0aad41eff44c4a9b1e307c8
+04 Heartland [w Willie Nelson].flac:f041d5a628413967fa76d73e7f3569ef
+05 It's alright, ma (I'm only bleeding).flac:7e1a5bd57130a53fb2a578e498ab11d3
+06 If dogs run free.flac:bd507dc732f240cec60390d0bba41f5f
+07 High water (for Charley Patton).flac:b5233a21f4d9e0d1597aec10dfc82123
+08 Mr. Tambourine Man.flac:f1599990b5e1e8880095aee1ac3296c0
+09 Love sick.flac:9cf2233e88a6984f2836a1a1ccf68120
+10 Honest with me.flac:12a8d209183295097ad5b80ae9a6bc1a
+11 Sugar baby.flac:dc8dc50b46145963c63086a182d91bd0
+12 Summer days.flac:24a28614c3eb030c951136181b11e98f
+13 Like a rolling stone.flac:7b3f041ac3193cf705ce6cf91c985b0f
+14 (band intro).flac:17d0bd18884099a01fa2e4f2a4f72a1e
+14 All along the watchtower.flac:112b57b548b41f6f9abff7722247d6f1
+===================
+===================
+===================
+=== ORIGINAL Bob Dylan 08-27-2004.txt
+===================
+===================
+===================
+Bob Dylan
+8-27-2004
+Warner Park
+Madison, Wisconsin
+
+Taper:      Travelin' Man Records
+Location:   DFC from stage
+Config:     hat mount
+Source:     Schoeps mk41 > KCY 250/2I > Sonosax SX-M2-LS/2 > D100
+Conversion: D8 > 7-pin Oade optical > PC
+
+Audience recording
+
+cd 1:
+1. Drifter's Escape (Elana Fremerman on violin)
+2. The Times They Are A-Changin' (Elana Fremerman on violin)
+3. Seeing The Real You At Last
+4. Heartland (with Willie and his sons)
+5. It's Alright, Ma (I'm Only Bleeding)
+6. If Dogs Run Free (acoustic)
+7. High Water (For Charley Patton)
+8. Mr. Tambourine Man
+9. Love Sick
+
+cd 2:
+1. Honest With Me
+2. Sugar Baby (acoustic)
+3. Summer Days (Tommy on guitar)
+
+(encore)
+
+4. Like A Rolling Stone
+5. band intros
+6. All Along The Watchtower
+===================
+===================
+===================

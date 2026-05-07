@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-11-12.orlando.shnf 
+=================== 
+=================== 
+=================== 
+8ff141533acb9f1ee0492ee6f76e0850  bd1992-11-12.info.txt
+4491d1243dadbfbdbf48ae06d12539c9  bd1992-11-12.shns.md5
+f067e2e6558f7c61e66cad0b26e1c7e5  bd1992-11-12.shntoolfp.txt
+8a7337be2c105e6a458d1e59e6517dc5  bd1992-11-12.shntoolresults.txt
+4966026902e5989909b651764cca76d6  bd1992-11-12.waves.md5
+10bfb925a36ebe59756e597391bf76cb  bd1992-11-12d1t01.shn
+ab8c4e7211e9d9e7e7f6b6af4a9cb6a7  bd1992-11-12d1t02.shn
+2b7da1c58dd61587fb1f06563d211704  bd1992-11-12d1t03.shn
+ad7cf5271523e69b3d778f5f4d11646e  bd1992-11-12d1t04.shn
+74c442098260579313304e0a516549bf  bd1992-11-12d1t05.shn
+4090cccd8abc431ac69b8738f48c4d7c  bd1992-11-12d1t06.shn
+7022e02c6bc8ce82a169bac028a11827  bd1992-11-12d1t07.shn
+30b7eec4b49d6ca6311a1229a920db01  bd1992-11-12d1t08.shn
+c766bbd2ff8448cbf1df5f06f68073b9  bd1992-11-12d1t09.shn
+946a5193effdeb0432a434d9f8c7d8d8  bd1992-11-12d1t10.shn
+ab4a3c9fbb9602eb2e83c7389b0ca9f6  bd1992-11-12d1t11.shn
+e256377fe1662a23f17f8f12f822d5b0  bd1992-11-12d2t01.shn
+8ea781bd15e2489898964c3254be63d4  bd1992-11-12d2t02.shn
+74eb93c80533cd5478901d602353a55c  bd1992-11-12d2t03.shn
+d064bf31d912abc7622bc1a06b271e3d  bd1992-11-12d2t04.shn
+2e8c53360edce96c606f2a962f27591e  bd1992-11-12d2t05.shn
+b355b6b05fa4dd40f408bcd748cca4e1  bd1992-11-12d2t06.shn
+d366117533b7d15c704b3b053a63c5ed  bd1992-11-12d2t07.shn
+0d98812da9db4f77bd9bbe286675313e  bd92-11-12.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-11-12.orlando.shnf 
+=================== 
+=================== 
+=================== 
+e665bfc1250af38f53a5bb7a89b4bc5e  [shntool]  bd1992-11-12d1t01.wav
+ae688424a8ba35be05ea59d066ad188b  [shntool]  bd1992-11-12d1t02.wav
+b91f95da1e2c043381b99fa5fb6d8209  [shntool]  bd1992-11-12d1t03.wav
+4d92871fb4a574a517561add0be940ba  [shntool]  bd1992-11-12d1t04.wav
+ba1e26d014c821b7818fd9211ecec3bd  [shntool]  bd1992-11-12d1t05.wav
+cd9aa154ab0fcadf9a31442286dd6f7e  [shntool]  bd1992-11-12d1t06.wav
+3508d755e9393b80544e6c5c1811b1b4  [shntool]  bd1992-11-12d1t07.wav
+d916fefc9475dc44f052a3295c2e99db  [shntool]  bd1992-11-12d1t08.wav
+4fb2fe851cf45ec9604f8d2915f6f387  [shntool]  bd1992-11-12d1t09.wav
+d93614563b03f18c19b7597b730410b5  [shntool]  bd1992-11-12d1t10.wav
+d5ab6e9a1075209528ee25d39f86ec87  [shntool]  bd1992-11-12d1t11.wav
+6d863e9d792b27a611ebeedc4a0124b0  [shntool]  bd1992-11-12d2t01.wav
+aae5063b40a2f116c90b26459db641b6  [shntool]  bd1992-11-12d2t02.wav
+7e3a43134c7144e8e3d9b0ce14118cfe  [shntool]  bd1992-11-12d2t03.wav
+7a585102f40a80f91a1699dbb107690e  [shntool]  bd1992-11-12d2t04.wav
+7af03c25ab09459f52434eddb151ba26  [shntool]  bd1992-11-12d2t05.wav
+22406e9aa9f187ac63459f8f6e0804da  [shntool]  bd1992-11-12d2t06.wav
+1d815ac5b2f3fddf351dcf27f0e63a98  [shntool]  bd1992-11-12d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-11-12.orlando.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.28       52103900 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t01.wav
+     6:05.51       64505996 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t02.wav
+     5:16.18       55784780 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t03.wav
+     8:34.47       90780188 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t04.wav
+     8:00.21       84721436 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t05.wav
+     8:58.06       94917356 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t06.wav
+     6:06.38       64651820 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t07.wav
+     3:54.22       41329388 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t08.wav
+     4:42.00       49744844 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t09.wav
+     6:54.23       73083740 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t10.wav
+     6:18.44       66782732 B   ---   --   -----    wav  1.0000  bd1992-11-12d1t11.wav
+     5:44.71       60848636 B   ---   --   -----    wav  1.0000  bd1992-11-12d2t01.wav
+     7:25.50       78615644 B   ---   --   -----    wav  1.0000  bd1992-11-12d2t02.wav
+     7:17.44       77190332 B   ---   --   -----    wav  1.0000  bd1992-11-12d2t03.wav
+     8:22.62       88698668 B   ---   --   -----    wav  1.0000  bd1992-11-12d2t04.wav
+     5:46.74       61208492 B   ---   --   -----    wav  1.0000  bd1992-11-12d2t05.wav
+     9:46.71      103537436 B   ---   --   -----    wav  1.0000  bd1992-11-12d2t06.wav
+     5:47.56       61342556 B   ---   --   -----    wav  1.0000  bd1992-11-12d2t07.wav
+   119:58.51     1269847944 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

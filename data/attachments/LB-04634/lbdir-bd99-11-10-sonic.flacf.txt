@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-10-sonic.flacf 
+=================== 
+=================== 
+=================== 
+b9ee71a1d964eb963f4bca2e152a05f7  bd99-11-10-sonic-d1t01.flac
+2b1de2bca8e4bd57e107080f230d82d9  bd99-11-10-sonic-d1t02.flac
+8ccdd76d64866e6a6a69f9b54b141b42  bd99-11-10-sonic-d1t03.flac
+65faee4936e036c4dd17dca8743b5ef2  bd99-11-10-sonic-d1t04.flac
+fc2a12f765a42e5c925157993caf9cad  bd99-11-10-sonic-d1t05.flac
+326d5e7ee76b811e3a0fc343b017f7d9  bd99-11-10-sonic-d1t06.flac
+7ab87b7c4c40180a82f395d5f09bdf64  bd99-11-10-sonic-d1t07.flac
+48aea86d95712678fa967a203928bed8  bd99-11-10-sonic-d1t08.flac
+00df427bfee1d67f788365dbf2c2edd8  bd99-11-10-sonic-d1t09.flac
+665414723f4f3fdf5e37e1688a5380b9  bd99-11-10-sonic-d1t10.flac
+5657b3a6c40ec42e8ffefcdeec7794c8  bd99-11-10-sonic-d1t11.flac
+41028653f14a725fcde87824779544e9  bd99-11-10-sonic-d2t01.flac
+977a5eeffd695efe2d7e81e4efc0d3ed  bd99-11-10-sonic-d2t02.flac
+0f12c77245dac7f8713924660fc33a10  bd99-11-10-sonic-d2t03.flac
+f84db2164fb52f115f0b72f5b01b5e01  bd99-11-10-sonic-d2t04.flac
+d121645a64b7a0d3028ac6e56be00702  bd99-11-10-sonic-LB-4634.txt
+74d9983a9bda61b23151d31250a2aa5d  bd99-11-10-sonic.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-10-sonic.flacf 
+=================== 
+=================== 
+=================== 
+bd99-11-10-sonic-d1t01.flac:efb1b1fb7204d312bc5e424f092d00c8
+bd99-11-10-sonic-d1t02.flac:cd32fac58a867ae2343bd13f506005f8
+bd99-11-10-sonic-d1t03.flac:73eba05bdc189c31d950c72780c901a1
+bd99-11-10-sonic-d1t04.flac:6c501894691a790641be8e1c54a19e41
+bd99-11-10-sonic-d1t05.flac:0fb5319b5bc6fef6da77bd78328b22a7
+bd99-11-10-sonic-d1t06.flac:f0bb2a6eae57179abf5673e36112d46d
+bd99-11-10-sonic-d1t07.flac:0548320ba960dd5908b551f057c08d2e
+bd99-11-10-sonic-d1t08.flac:3d6c2ae8ef9f872f1a9cb6458a7f63a8
+bd99-11-10-sonic-d1t09.flac:2bdba62b040bb7aac746b21b32fb1dc8
+bd99-11-10-sonic-d1t10.flac:85f1ee47dd13884818f30bfdffdd367b
+bd99-11-10-sonic-d1t11.flac:630a45a4734b40bd785e06d3849e9917
+bd99-11-10-sonic-d2t01.flac:de2a9ac164cc931684b177c372891d22
+bd99-11-10-sonic-d2t02.flac:39ba9f7b2a0b1a175d1bb965a980bc7b
+bd99-11-10-sonic-d2t03.flac:77c6025ba741ed21e8bec3c8a736ae81
+bd99-11-10-sonic-d2t04.flac:5010b9a54cea81f3756b0c9568ec8818
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-10-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:00.00       31752044 B   ---   --   ---xx   flac  0.5607  bd99-11-10-sonic-d1t01.flac
+     7:06.00       75146444 B   ---   --   ---xx   flac  0.5265  bd99-11-10-sonic-d1t02.flac
+     6:30.00       68796044 B   ---   --   ---xx   flac  0.5122  bd99-11-10-sonic-d1t03.flac
+     9:59.00      105663644 B   ---   --   ---xx   flac  0.5783  bd99-11-10-sonic-d1t04.flac
+     5:35.00       59094044 B   ---   --   ---xx   flac  0.4250  bd99-11-10-sonic-d1t05.flac
+     4:28.00       47275244 B   ---   --   ---xx   flac  0.5466  bd99-11-10-sonic-d1t06.flac
+     6:18.00       66679244 B   ---   --   ---xx   flac  0.5639  bd99-11-10-sonic-d1t07.flac
+     7:21.00       77792444 B   ---   --   ---xx   flac  0.5121  bd99-11-10-sonic-d1t08.flac
+     7:19.00       77439644 B   ---   --   ---xx   flac  0.5801  bd99-11-10-sonic-d1t09.flac
+     4:50.00       51156044 B   ---   --   ---xx   flac  0.5099  bd99-11-10-sonic-d1t10.flac
+     9:44.00      103017644 B   ---   --   ---xx   flac  0.5646  bd99-11-10-sonic-d1t11.flac
+     6:10.00       65268044 B   ---   --   ---xx   flac  0.4971  bd99-11-10-sonic-d2t01.flac
+    10:10.00      107604044 B   ---   --   ---xx   flac  0.4818  bd99-11-10-sonic-d2t02.flac
+     6:28.00       68443244 B   ---   --   ---xx   flac  0.5981  bd99-11-10-sonic-d2t03.flac
+     4:07.00       43570844 B   ---   --   ---xx   flac  0.6102  bd99-11-10-sonic-d2t04.flac
+    99:05.00     1048698660 B                            0.5369  (15 files)
+=================== 
+=================== 
+=================== 

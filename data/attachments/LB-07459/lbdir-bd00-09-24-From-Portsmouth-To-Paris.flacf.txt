@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-09-24-From-Portsmouth-To-Paris.flacf 
+=================== 
+=================== 
+=================== 
+86450f6058ff3ca4c413c8651d72f268  24-9-2000.txt
+06ddd147bd2e3c880134c931e27a6226  Bob Dylan-From Portsmouth To Paris September-24-2000fixed.md5
+0748a746baacb1e013edaf1b7d598e90  Bob Dylan-From Portsmouth To Paris September-24-2000fixed.txt
+bf844d876b0024bcb4d00ca45610abc1  cd-1\cd-1.txt
+5155153c40c10ed34261dba47e132734  cd-1\Track01.flac
+961fbb8449251bde6fd4d35aaf04bb24  cd-1\Track02.flac
+c3c7cf1da471b022879729ab1fece525  cd-1\Track03.flac
+92da3a3febd047ac8c7f89cb86aa030d  cd-1\Track04.flac
+2671cecfc8ee2b95bfc2c26b8043fdde  cd-1\Track05.flac
+c128bd099a8998391dbadb653029ddd2  cd-1\Track06.flac
+ad456d1993ea9e60cd08767f0876f7b8  cd-1\Track07.flac
+1258e6d5b0a301153c8f4573af4971c6  cd-1\Track08.flac
+2b9a5c2a1e2e5fb5066fd794e56508e7  cd-1\Track09.flac
+5820d5f20ee944b66b7187e4c41f87b1  cd-1\Track10.flac
+bdd9b4353fa8bed1c04bdf7ab064b217  cd-1\Track11.flac
+19accafa135821c8f1e53ea132428697  cd-1\Track12.flac
+ef0ec25068f6c500c00de9d85d480d34  cd-2\cd-2.txt
+8bd24842cb3bc847ad3b277c474a2201  cd-2\Track01.flac
+d405ceb83ee7282c98c83c07afe682fa  cd-2\Track02.flac
+d584fcbc40df6abe6b67c32ce41b4912  cd-2\Track03.flac
+5a86be4f3d5c04da086f1332544c3cdf  cd-2\Track04.flac
+b883e4552d53b690d9fcdc32d5a50c1d  cd-2\Track05.flac
+f7d2c02e73b06d35c16e229561931bad  cd-2\Track06.flac
+a4e8717fa4d7262fff3495d24c69011f  cd-2\Track07.flac
+83eab503d0e6262664f5d8f2d9f57ca5  cd-2\Track08.flac
+fad668f472ac0890e72a245f72d1dfa6  cd-2\Track09.flac
+d28141e1bdde8121128a4f72813756f7  cd-2\Track10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-09-24-From-Portsmouth-To-Paris.flacf\cd-1 
+=================== 
+=================== 
+=================== 
+Track01.flac:8224f8c8d95299e977f01a905217f442
+Track02.flac:0c3e78a8109340a463427431d355a915
+Track03.flac:cae42867ef4b8edadef995e4e70c06bb
+Track04.flac:a01e7148c2e6a8244fe888dda4f30342
+Track05.flac:8e8541a238749a6ac18ac4435aab105e
+Track06.flac:649f6203e1b09839d37568f67d64ff0e
+Track07.flac:c72eb0bb57a8f13c55a8c861dc390d0a
+Track08.flac:5e9fecf4771eb8541b5c08ccd065165e
+Track09.flac:360704f2085e8781e744807758cdd43d
+Track10.flac:2e176820f7e578eeb49c60914010ca72
+Track11.flac:762d626be5ef669dbd331dedd0de5b04
+Track12.flac:e53ac87dd494d3fb0507caa5dbb8186f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-09-24-From-Portsmouth-To-Paris.flacf\cd-2 
+=================== 
+=================== 
+=================== 
+Track01.flac:e865fa71797c74bfac663d5235df91d2
+Track02.flac:f56bdf5be5266c86139faf9b7a2006bb
+Track03.flac:757c487a1f287afa4ad2f40cb26bfe75
+Track04.flac:fba88a9208947d0fcf70abb9791c723c
+Track05.flac:022a97c28a6ab945469e85900750e2be
+Track06.flac:010903966c66f10388a518fc21a8b3e3
+Track07.flac:09d9c3d0853497ba1dbfc8b13a2840b3
+Track08.flac:58de2bb6ef64c0c60ef65c59714fb258
+Track09.flac:7d4f4e4730b8633cc3ec5782ef0fbc4f
+Track10.flac:9ce77dcd17ae396a59e779a172f5e412
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-24-From-Portsmouth-To-Paris.flacf\cd-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:48.48       29748140 B   ---   --   ---xx   flac  0.6663  Track01.flac
+     5:15.02       55570748 B   ---   --   ---xx   flac  0.6074  Track02.flac
+     8:18.11       87873116 B   ---   --   ---xx   flac  0.6274  Track03.flac
+     4:57.40       52484924 B   ---   --   ---xx   flac  0.5754  Track04.flac
+     8:23.07       88745708 B   ---   --   ---xx   flac  0.6814  Track05.flac
+     3:17.65       34903724 B   ---   --   ---xx   flac  0.6067  Track06.flac
+     3:00.66       31907276 B   ---   --   ---xx   flac  0.6204  Track07.flac
+     4:58.73       52738940 B   ---   --   ---xx   flac  0.5907  Track08.flac
+     5:04.32       53700908 B   ---   --   ---xx   flac  0.6387  Track09.flac
+     4:45.41       50370476 B   ---   --   ---xx   flac  0.6299  Track10.flac
+     4:24.15       46604924 B   ---   --   ---xx   flac  0.6715  Track11.flac
+     5:45.27       60921548 B   ---   --   ---xx   flac  0.6510  Track12.flac
+    60:59.52      645570432 B                            0.6328  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-24-From-Portsmouth-To-Paris.flacf\cd-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.47       59557388 B   ---   --   ---xx   flac  0.5878  Track01.flac
+     7:46.05       82214204 B   ---   --   ---xx   flac  0.6377  Track02.flac
+     3:54.61       41421116 B   ---   --   ---xx   flac  0.5385  Track03.flac
+     5:22.30       56871404 B   ---   --   ---xx   flac  0.6523  Track04.flac
+     5:51.02       61921148 B   ---   --   ---xx   flac  0.6570  Track05.flac
+     6:34.14       69534572 B   ---   --   ---xx   flac  0.6385  Track06.flac
+     5:13.60       55354364 B   ---   --   ---xx   flac  0.6260  Track07.flac
+     6:10.15       65303324 B   ---   --   ---xx   flac  0.5106  Track08.flac
+     4:20.64       46014572 B   ---   --   ---xx   flac  0.3671  Track09.flac
+     4:17.39       45426572 B   ---   --   ---xx   flac  0.5315  Track10.flac
+    55:08.37      583618664 B                            0.5842  (10 files)
+=================== 
+=================== 
+=================== 

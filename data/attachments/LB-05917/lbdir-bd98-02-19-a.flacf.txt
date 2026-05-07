@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-02-19-a.flacf 
+=================== 
+=================== 
+=================== 
+a78f40ea9d80837c198c444da83b50db  BD 1998-02-19 Cincinnati.txt
+6b132eba83ce4e22d3f263e485e44970  D1\1 Absolutely Sweet Marie.flac
+a29ec28e0478dc174b44c3cd68ebc5f1  D1\2 Tonight I'll Be Staying Here With You.flac
+f930ff7f8b0fd464083553e3f1c64c05  D1\3 Can't Wait.flac
+9e09057bee476e562e4f10f52b47dedd  D1\4 Under the Red Sky.flac
+ac02e30a1563745a2f77b9f105864afd  D1\5 Silvio.flac
+2deb84dc7552d42f39bbf1e753ad7c8e  D1\6  Cocaine Blues.flac
+31a5508e6741780469f4a4185db8025d  D1\7 Masters of War.flac
+d7806ee6b9faab13dd36c8eb3ad92472  D1\8 Tangled Up In Blue.flac
+b6c31298be6fc18ceb88299a2240fea8  D2\1 Million Miles.flac
+1840eb8f628d1f654b819036c96ae296  D2\2 Stuck Inside of Mobile With the Memphis Blues Again.flac
+90dc5b98f447f13087530eb94891cc13  D2\3 Til I Fell In Love With You.flac
+98be537215ffbf8a41521fd745584e67  D2\4 Highway 61 Revisited.flac
+034304d36e58b78a1ac87ced52ff4773  D2\5 It Ain't Me, Babe.flac
+22a5ca61af764eaa344768afea75fd40  D2\6 Love Sick.flac
+65d280a638fb8f617ea0d737334f7fe9  D2\7 Rainy Day Women #12 & 35.flac
+6f79a10fa97eb1b7eb2275c6a91a3c8b  fingerprintD1.ffp
+f04228c67b0e4a48b1aa56f5083ccac0  fingerprintD2.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-02-19-a.flacf\D1 
+=================== 
+=================== 
+=================== 
+1 Absolutely Sweet Marie.flac:c9d996984690091b5408ff03989db454
+2 Tonight I'll Be Staying Here With You.flac:07b354e8ce4ecf78082433449b9675e6
+3 Can't Wait.flac:cbac347782f8742c861015d1324143de
+4 Under the Red Sky.flac:371198a806ad1d65c51d5c1b8203d7ff
+5 Silvio.flac:c6bbbf67b8f7022b611dc907f1ce8967
+6  Cocaine Blues.flac:d75cfedfb6c230b1af717bc1cc91debd
+7 Masters of War.flac:fea51595181e0b8b3e3fcb3d63ac3012
+8 Tangled Up In Blue.flac:0d38da1a6ae984be9ebd8d5f4e1155d7
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-02-19-a.flacf\D2 
+=================== 
+=================== 
+=================== 
+1 Million Miles.flac:fe25ff36bc6cb747c41857ad4b7c9234
+2 Stuck Inside of Mobile With the Memphis Blues Again.flac:9f0f63805f59ccfad41326607667c267
+3 Til I Fell In Love With You.flac:2249a0d692312535f4e6309cdc523094
+4 Highway 61 Revisited.flac:cbd480e9264cdb0300d8bcdc8d745987
+5 It Ain't Me, Babe.flac:890c242bf887867b2639f13578b4834e
+6 Love Sick.flac:fc4d14151213beafbaa7c6347ff70973
+7 Rainy Day Women #12 & 35.flac:877b023e33949561c036d000409ae0c5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-19-a.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.66       43020476 B   ---   --   ---xx   flac  0.5681  1 Absolutely Sweet Marie.flac
+     5:56.37       62885468 B   ---   --   ---xx   flac  0.5487  2 Tonight I'll Be Staying Here With You.flac
+     5:59.30       63398204 B   ---   --   ---xx   flac  0.5710  3 Can't Wait.flac
+     5:09.09       54528812 B   ---   --   ---xx   flac  0.5474  4 Under the Red Sky.flac
+     7:06.14       75179372 B   ---   --   ---xx   flac  0.5715  5 Silvio.flac
+     4:14.47       44916188 B   ---   --   ---xx   flac  0.4885  6  Cocaine Blues.flac
+     4:17.31       45407756 B   ---   --   ---xx   flac  0.4856  7 Masters of War.flac
+     7:50.19       82952732 B   ---   --   ---xx   flac  0.5771  8 Tangled Up In Blue.flac
+    44:37.28      472289008 B                            0.5501  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-19-a.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:17.62       66648668 B   ---   --   ---xx   flac  0.5360  1 Million Miles.flac
+     6:44.36       71350316 B   ---   --   ---xx   flac  0.5495  2 Stuck Inside of Mobile With the Memphis Blues Again.flac
+     6:13.73       65968940 B   ---   --   ---xx   flac  0.5553  3 Til I Fell In Love With You.flac
+     7:20.01       77618396 B   ---   --   ---xx   flac  0.5505  4 Highway 61 Revisited.flac
+     7:47.65       82531724 B   ---   --   ---xx   flac  0.4869  5 It Ain't Me, Babe.flac
+     6:00.31       63576956 B   ---   --   ---xx   flac  0.5016  6 Love Sick.flac
+     5:00.49       53035292 B   ---   --   ---xx   flac  0.5723  7 Rainy Day Women #12 & 35.flac
+    45:25.17      480730292 B                            0.5340  (7 files)
+=================== 
+=================== 
+=================== 

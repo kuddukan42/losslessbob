@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-25-lk.flacf 
+=================== 
+=================== 
+=================== 
+0f0e7ac05e0ca7940f54f27f9f9cc40e  01 Gotta serve somebody.flac
+d8202a3135e8f1dbb494e9ba62e0ced2  02 I believe in you.flac
+530e19e8cfa799f46611619435623406  03 Like a rolling stone.flac
+2d0c22f25c5f828ec31c0c2db2350898  04 I want you.flac
+b9312cb81739f7f5dccf3328c55058b8  05 Man gave names to all the animals.flac
+ff70cc9cd76d3c7e02267ce7613ff945  06 Maggie's farm.flac
+052c5d0b07ef2558b0f20d36d4789d2b  07 Girl of the North Country.flac
+bac4bac5e5c51c71c1601e4e83b74bb1  08 Ballad of a thin man.flac
+81ce51d4a8464f7e5c7df85101ef85d1  09 Simple twist of fate.flac
+6b33c82b52ca17b29cf73f858f983dff  10 I'll be your baby tonight.flac
+ff03a1d4ea01809db6b297fef421dc1c  11 All along the watchtower.flac
+d3da9a7342016826ebed0065f88484d9  12 Gamblin' man.flac
+61da140d4d6fab387ea3042ed7b2d4e7  13 The times they are a-changin'.flac
+9336c1145c5db4e6e4ad31356db0920b  14 A hard rain's a-gonna fall.flac
+565b1732df5fd6d4840f2e5b8e5a6627  15 Watered-down love.flac
+ef2a86d7f197d12656897a4f9abd7465  16 Masters of war.flac
+73139eaa4e25c663498c8bd8d9f90874  17 Mr. Tambourine man.flac
+2e8eeaa5e8b433489d04af762c98f8cc  18 Solid rock.flac
+6d8e02f200d911ac91278581bb3431ff  19 Just like a woman.flac
+4993cacd5eaf982012a1e99b5518c4c5  20 When you gonna wake up.flac
+7929f88a45d416d0f4aaba0c31e76b29  21 In the garden.flac
+0fc96fb8c7c49c0c2aff2f636f7a1410  22 Blowin' in the wind.flac
+00790fdee99a786ce02708a42a6bff14  23 It's alright, ma (I'm only bleeding).flac
+8d6c3a18c6b3ad5096e014f9645c72c2  24 Happy birthday.flac
+119bcc3f57551385fce18ea8c912f317  25 Knockin' on heaven's door.flac
+c7d45c2ee40b9305e47c40273871b70d  BD 1981-10-25 Bethlehem.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-25-lk.flacf 
+=================== 
+=================== 
+=================== 
+01 gotta serve somebody.flac:39393cb8004453d1a87f4bd0d9007513
+02 i believe in you.flac:d22408830f1d0f5dd606dcf6e6d51b9b
+03 like a rolling stone.flac:a4fc9ce3ccf6cd35684873e5fa598430
+04 i want you.flac:93472283ee40c8784d4dca0ce284a6e5
+05 man gave names to all the animals.flac:8d3414b94b5a7f3fa7d11d83f70dfc1b
+06 maggie's farm.flac:9b47d9c6d104bba40938d03d1f1ebf17
+07 girl of the north country.flac:3d95f8ec9e718d85673bdb9f10a3a650
+08 ballad of a thin man.flac:ea0171a1fe8bb3027c6c7416fcc06b33
+09 simple twist of fate.flac:fbba4adc1cab60b13678e9108d0ddf88
+10 i'll be your baby tonight.flac:8cc11a95fa3fe8786e22fd537f3d6c28
+11 all along the watchtower.flac:7ee34b8b6bc7baab899f948f557a719c
+12 gamblin' man.flac:529fb4410b5497ce936b2bda9766bfdc
+13 the times they are a-changin'.flac:42b35a689e37cee5b3bb96f857005b42
+14 a hard rain's a-gonna fall.flac:450c0fb255c7d5e2b4f5bb9eebaf5bff
+15 watered-down love.flac:d1da776335c9b4fdb5fea3d5c2d7497e
+16 masters of war.flac:00811e62ed90a9d02c53df08ef9790cf
+17 mr. tambourine man.flac:2a42ac80a65d17d74ea620d7fe6e124a
+18 solid rock.flac:356ed5b92e9cb281217c5009a898425d
+19 just like a woman.flac:492ba15f8c2fecc83f0d74278a3fc80e
+20 when you gonna wake up.flac:32e31cea62a18b76077d6691443fe15f
+21 in the garden.flac:7e3a7b07fadfa2b6a8fb9191a753c61f
+22 blowin' in the wind.flac:4fcfed8c0e9ab81f793d45da6daa4c93
+23 it's alright, ma (i'm only bleeding).flac:1ebeb74e6a1ca6c1a91b2304b80cb368
+24 happy birthday.flac:5aebdc667c3ab295a1a5b8282d6b6508
+25 knockin' on heaven's door.flac:8e41d5d82c8782d5bd8a6bcec7216035
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-25-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:25.67       36319628 B   ---   --   ---xx   flac  0.6275  01 Gotta serve somebody.flac
+     4:32.72       48150188 B   ---   --   ---xx   flac  0.6099  02 I believe in you.flac
+     6:43.33       71166860 B   ---   --   ---xx   flac  0.6306  03 Like a rolling stone.flac
+     3:13.17       34085228 B   ---   --   ---xx   flac  0.6342  04 I want you.flac
+     5:32.44       58668332 B   ---   --   ---xx   flac  0.6032  05 Man gave names to all the animals.flac
+     4:02.23       42742940 B   ---   --   ---xx   flac  0.6237  06 Maggie's farm.flac
+     4:14.49       44920892 B   ---   --   ---xx   flac  0.5673  07 Girl of the North Country.flac
+     3:14.59       34360412 B   ---   --   ---xx   flac  0.6179  08 Ballad of a thin man.flac
+     4:35.03       48517100 B   ---   --   ---xx   flac  0.6114  09 Simple twist of fate.flac
+     2:32.40       26906924 B   ---   --   ---xx   flac  0.6227  10 I'll be your baby tonight.flac
+     2:43.39       28844972 B   ---   --   ---xx   flac  0.6316  11 All along the watchtower.flac
+     3:11.43       33793580 B   ---   --   ---xx   flac  0.6140  12 Gamblin' man.flac
+     5:40.59       60114812 B   ---   --   ---xx   flac  0.5944  13 The times they are a-changin'.flac
+     6:00.45       63609884 B   ---   --   ---xx   flac  0.6157  14 A hard rain's a-gonna fall.flac
+     4:51.43       51433580 B   ---   --   ---xx   flac  0.6117  15 Watered-down love.flac
+     3:30.01       37046396 B   ---   --   ---xx   flac  0.6181  16 Masters of war.flac
+     5:00.49       53035292 B   ---   --   ---xx   flac  0.6149  17 Mr. Tambourine man.flac
+     5:03.34       53529212 B   ---   --   ---xx   flac  0.5836  18 Solid rock.flac
+     4:23.17       46433228 B   ---   --   ---xx   flac  0.5848  19 Just like a woman.flac
+     4:27.20       47145884 B   ---   --   ---xx   flac  0.5956  20 When you gonna wake up.flac
+     6:54.21       73079036 B   ---   --   ---xx   flac  0.6088  21 In the garden.flac
+     4:57.62       52536668 B   ---   --   ---xx   flac  0.6287  22 Blowin' in the wind.flac
+     4:47.54       50753852 B   ---   --   ---xx   flac  0.6271  23 It's alright, ma (I'm only bleeding).flac
+     0:40.09        7077212 B   ---   --   ---xx   flac  0.5993  24 Happy birthday.flac
+     4:34.55       48463004 B   ---   --   ---xx   flac  0.6275  25 Knockin' on heaven's door.flac
+   108:54.58     1152735116 B                            0.6117  (25 files)
+=================== 
+=================== 
+=================== 

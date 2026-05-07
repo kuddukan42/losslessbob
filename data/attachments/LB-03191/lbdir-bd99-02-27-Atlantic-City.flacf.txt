@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-02-27-Atlantic-City.flacf 
+=================== 
+=================== 
+=================== 
+d5e3979a2eb8854a81cd854bda6a23d0  bd99-02-27-Atlantic-City-LB-3191.txt
+43beec34a4266d2f7c933029788d6d85  bdylan-AtlanticCity-d1t01.flac
+f9abe451a930efb3c90a46fec07f14b0  bdylan-AtlanticCity-d1t02.flac
+d9cff079094c128c4655ad3f626f4595  bdylan-AtlanticCity-d1t03.flac
+9dd514b0be634a09cd299edcb834a428  bdylan-AtlanticCity-d1t04.flac
+1e0bebc7cda77a0a3c240e0eae6041ac  bdylan-AtlanticCity-d1t05.flac
+af56aa2c37b521989dbf1ae06a488d82  bdylan-AtlanticCity-d1t06.flac
+3df9bb98bac8fd9d513c2a04a60a639f  bdylan-AtlanticCity-d1t07.flac
+b18cdbf81149994daf6ebe91d0175142  bdylan-AtlanticCity-d1t08.flac
+9bb21783184d07430d886c97bc2307c9  bdylan-AtlanticCity-d1t09.flac
+8f02a1065fc7f469e15e248f26e964ea  bdylan-AtlanticCity-d1t10.flac
+c807d3dfb52f4e47906b4ceeb6c0f103  bdylan-AtlanticCity-d1t11.flac
+a20a05dd916ce02185728322567c3d63  bdylan-AtlanticCity-d1t12.flac
+92ea382c350598d0bb29a39b140200f6  bdylan-AtlanticCity-d1t13.flac
+691f04f4f93150e558ea4df0b738f135  bdylan-AtlanticCity-d2t01.flac
+da35a9c358bd55e6d80ce29d1eeb98f9  bdylan-AtlanticCity-d2t02.flac
+e05d72373a4a45281d108d9ee394fbf2  bdylan-AtlanticCity-d2t03.flac
+79c871290c5996491c020af6e400606a  bdylan-AtlanticCity-d2t04.flac
+0deeb09ed36f42039c67419768feef5d  bdylan-AtlanticCity-d2t05.flac
+eeca3a0770269e0eb87de013beedb2e7  bdylan-AtlanticCity-d2t06.flac
+15af9bbb160b5def638961644aa447fd  bdylan-AtlanticCity-d2t07.flac
+94595865be14670d541fc5aafe04e960  bdylan-AtlanticCity-d2t08.flac
+7b146dd908672f58eae718011f1069fd  bdylan-AtlanticCity-d2t09.flac
+156f0d479105897197627b078e9aa622  bdylan-AtlanticCity-d2t10.flac
+5d4489e49302a94134017985d7b7bc43  bdylan-AtlanticCity-d2t11.flac
+5f0920ff70d361ddac1c25753e0a27a4  bdylan-AtlanticCity-d2t12.flac
+30eb3331388983d44b3f799fafaf5e54  bdylan-AtlanticCity-d2t13.flac
+8e8b3c4e43467983696450f77d7d225e  bdylan-AtlanticCity-d2t14.flac
+36585977039d79f65230674404f1b7c0  bdylan-AtlanticCity.ffp.txt
+f1b842334a477c512f0431ecdb77e36f  bdylan-AtlanticCity.md5
+54091e294d0400ceb81c84554716a134  bdylan-AtlanticCity.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-27-Atlantic-City.flacf 
+=================== 
+=================== 
+=================== 
+bdylan-AtlanticCity-d1t01.flac:cd2035b6a4dfea783b3a431b374605bd
+bdylan-AtlanticCity-d1t02.flac:9e5d36a2bf9beac18a271851abb4f67d
+bdylan-AtlanticCity-d1t03.flac:435f521150f0674aa95503e72147a855
+bdylan-AtlanticCity-d1t04.flac:6522ee5bb5332b947887b693dd642c28
+bdylan-AtlanticCity-d1t05.flac:7e223bcd1192e6a1d5011d1b4cd8a377
+bdylan-AtlanticCity-d1t06.flac:8e2bcfc32cc5488fa86dbe15f7757c2e
+bdylan-AtlanticCity-d1t07.flac:13303ef08189e4872345b27518d58ff4
+bdylan-AtlanticCity-d1t08.flac:319f79e6bd8cba64333c00002b04a227
+bdylan-AtlanticCity-d1t09.flac:b50bfe2f198745985d6f65b76cfa44fd
+bdylan-AtlanticCity-d1t10.flac:6e980d174432829b90b0bc51ebb99b4e
+bdylan-AtlanticCity-d1t11.flac:37931799c326bf229c9c5873913df2c8
+bdylan-AtlanticCity-d1t12.flac:7e2a517b8131e333b0d471fff4dc9297
+bdylan-AtlanticCity-d1t13.flac:37a9ff777111937fa6d21a156f018ad5
+bdylan-AtlanticCity-d2t01.flac:bfce374cb88e73f8d8bcabd269cacddf
+bdylan-AtlanticCity-d2t02.flac:9d72637f840ea014bb0e22deb0fd5ef0
+bdylan-AtlanticCity-d2t03.flac:dee9c577b926c8770c6c3041350a7109
+bdylan-AtlanticCity-d2t04.flac:332695efc4b1b0d4bcc41d1f37ff1e30
+bdylan-AtlanticCity-d2t05.flac:841d920f051334e74d6846bda4ccf12a
+bdylan-AtlanticCity-d2t06.flac:c9b247de9fabac80a149e911ee08b748
+bdylan-AtlanticCity-d2t07.flac:6ebbd4617031a3d054597321fdff334b
+bdylan-AtlanticCity-d2t08.flac:f5bb4f6f2eed7866e4dfaf8ee0b1ee6c
+bdylan-AtlanticCity-d2t09.flac:3592c65e75ebf47d9b0aea38f02d9053
+bdylan-AtlanticCity-d2t10.flac:6e27a4e81e25419a3811323f0e35efcb
+bdylan-AtlanticCity-d2t11.flac:32b78e75345867790dc7daa37e556a02
+bdylan-AtlanticCity-d2t12.flac:1d44b6cb47f2f2b7f2e9ca65815f1a73
+bdylan-AtlanticCity-d2t13.flac:d4bdd0a60ed79cfb387b4035d5ca1727
+bdylan-AtlanticCity-d2t14.flac:f7dc24e26f08524e5107ac5832f906dc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-27-Atlantic-City.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.29       44344652 B   ---   --   ---xx   flac  0.6361  bdylan-AtlanticCity-d1t01.flac
+     4:57.62       52536668 B   ---   --   ---xx   flac  0.5935  bdylan-AtlanticCity-d1t02.flac
+     7:04.01       74795996 B   ---   --   ---xx   flac  0.6617  bdylan-AtlanticCity-d1t03.flac
+     6:08.35       64997564 B   ---   --   ---xx   flac  0.5841  bdylan-AtlanticCity-d1t04.flac
+     5:23.23       57031340 B   ---   --   ---xx   flac  0.6522  bdylan-AtlanticCity-d1t05.flac
+     5:13.00       55213244 B   ---   --   ---xx   flac  0.4862  bdylan-AtlanticCity-d1t06.flac
+     5:31.72       58557788 B   ---   --   ---xx   flac  0.5054  bdylan-AtlanticCity-d1t07.flac
+     8:23.24       88785692 B   ---   --   ---xx   flac  0.6127  bdylan-AtlanticCity-d1t08.flac
+     4:38.19       49083932 B   ---   --   ---xx   flac  0.5180  bdylan-AtlanticCity-d1t09.flac
+     7:19.24       77496092 B   ---   --   ---xx   flac  0.6397  bdylan-AtlanticCity-d1t10.flac
+     5:44.02       60686348 B   ---   --   ---xx   flac  0.5755  bdylan-AtlanticCity-d1t11.flac
+     6:44.43       71366780 B   ---   --   ---xx   flac  0.5879  bdylan-AtlanticCity-d1t12.flac
+     5:06.09       53999612 B   ---   --   ---xx   flac  0.5904  bdylan-AtlanticCity-d1t13.flac
+     3:58.55       42112604 B   ---   --   ---xx   flac  0.6807  bdylan-AtlanticCity-d2t01.flac
+     5:23.50       57094844 B   ---   --   ---xx   flac  0.6270  bdylan-AtlanticCity-d2t02.flac
+     6:45.43       71543180 B   ---   --   ---xx   flac  0.6739  bdylan-AtlanticCity-d2t03.flac
+     6:00.41       63600476 B   ---   --   ---xx   flac  0.6200  bdylan-AtlanticCity-d2t04.flac
+     7:24.36       78406316 B   ---   --   ---xx   flac  0.6625  bdylan-AtlanticCity-d2t05.flac
+     7:55.46       83898236 B   ---   --   ---xx   flac  0.5513  bdylan-AtlanticCity-d2t06.flac
+     5:53.21       62318636 B   ---   --   ---xx   flac  0.5672  bdylan-AtlanticCity-d2t07.flac
+     7:32.69       79895132 B   ---   --   ---xx   flac  0.6796  bdylan-AtlanticCity-d2t08.flac
+     6:10.14       65300972 B   ---   --   ---xx   flac  0.6073  bdylan-AtlanticCity-d2t09.flac
+     0:36.47        6460988 B   ---   --   ---xx   flac  0.5345  bdylan-AtlanticCity-d2t10.flac
+     5:56.65       62951324 B   ---   --   ---xx   flac  0.6885  bdylan-AtlanticCity-d2t11.flac
+     5:19.03       56278700 B   ---   --   ---xx   flac  0.5933  bdylan-AtlanticCity-d2t12.flac
+     5:17.03       55925900 B   ---   --   ---xx   flac  0.5737  bdylan-AtlanticCity-d2t13.flac
+     4:07.18       43613180 B   ---   --   ---xx   flac  0.6614  bdylan-AtlanticCity-d2t14.flac
+   154:47.29     1638296196 B                            0.6100  (27 files)
+=================== 
+=================== 
+=================== 

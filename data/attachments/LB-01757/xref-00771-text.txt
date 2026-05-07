@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== Bob_Dylan-1993-07-13-Cascais.md5
+===================
+===================
+===================
+3a2dadd5de5d31abb2312d4ba986393f  Bob_Dylan-1993-07-13-D101.flac
+86b7e43653cfcfaaa2bfd2dcbb0ee535  Bob_Dylan-1993-07-13-D102.flac
+fd5c49fd5666949c10d0e1e8fcedc911  Bob_Dylan-1993-07-13-D103.flac
+cdd6f3cd3b7e14b5bac31eeb1836fbf7  Bob_Dylan-1993-07-13-D104.flac
+ed2065b73ab8c42edb6591aafd60cd51  Bob_Dylan-1993-07-13-D105.flac
+57dfa9494d66f5ae506d5c41b12dd53d  Bob_Dylan-1993-07-13-D106.flac
+c0a5a70a7edcf5286981531d7c966958  Bob_Dylan-1993-07-13-D107.flac
+0d75850b3cfade83bcecffa0b0ba3088  Bob_Dylan-1993-07-13-D108.flac
+10b7a5ba11c6da15e605049140a394fa  Bob_Dylan-1993-07-13-D109.flac
+e203e93e78a0d17d7967b8291a8a5843  Bob_Dylan-1993-07-13-D201.flac
+ff617b0742794b1e23b337db18e6bbe6  Bob_Dylan-1993-07-13-D202.flac
+62222ed59d50133717dca55bc10cb709  Bob_Dylan-1993-07-13-D203.flac
+466606a8eb224f2b728c1f6e0efde4c5  Bob_Dylan-1993-07-13-D204.flac
+f5ca848bba6028e2170bcac4a2b69514  Bob_Dylan-1993-07-13-D205.flac
+73122648f91eaf564514c6c1ba19e428  Bob_Dylan-1993-07-13-D206.flac
+ce47a0b71c63f3bdec2ca1131e9a6d9d  Bob_Dylan-1993-07-13-D207.flac
+6b87deecdddc3418c524c5d32498d7b0  Bob_Dylan-1993-07-13-D208.flac
+
+===================
+===================
+===================
+=== Bob_Dylan-1993-07-13-Cascais.txt
+===================
+===================
+===================
+BOB DYLAN
+Cascais, Portugal 1993-07-13
+
+D1
+01  Hard Times
+02  Stuck Inside Of Mobile With The Memphis Blues Again
+03  All Along The Watchtower
+04  Just Like A Woman
+05  Tangled Up In Blue
+06  She Belongs To Me
+07  Watching The River Flow
+08  Little Moses
+09  Tomorrow Night
+
+D2
+01  Boots Of Spanish Leather
+02  Mr. Tambourine Man
+03  Cat's In The Well
+04  I And I 
+05  Simple Twist Of Fate 
+06  Maggie's Farm
+07  Man In The Long Black Coat
+08  It Ain't Me, Babe
+
+Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Winston Watson (drums & percussion), Cesar Diaz (electric guitar on D1-05, D1-06, D2-03, D2-04, D2-05, D2-06)
+
+BD plays harmonica on D1-05, D1-09, D2-01, D2-02, D2-08
+BB plays accordion on D1-01, D1-08
+
+3a2dadd5de5d31abb2312d4ba986393f  Bob_Dylan-1993-07-13-D101.flac
+86b7e43653cfcfaaa2bfd2dcbb0ee535  Bob_Dylan-1993-07-13-D102.flac
+fd5c49fd5666949c10d0e1e8fcedc911  Bob_Dylan-1993-07-13-D103.flac
+cdd6f3cd3b7e14b5bac31eeb1836fbf7  Bob_Dylan-1993-07-13-D104.flac
+ed2065b73ab8c42edb6591aafd60cd51  Bob_Dylan-1993-07-13-D105.flac
+57dfa9494d66f5ae506d5c41b12dd53d  Bob_Dylan-1993-07-13-D106.flac
+c0a5a70a7edcf5286981531d7c966958  Bob_Dylan-1993-07-13-D107.flac
+0d75850b3cfade83bcecffa0b0ba3088  Bob_Dylan-1993-07-13-D108.flac
+10b7a5ba11c6da15e605049140a394fa  Bob_Dylan-1993-07-13-D109.flac
+e203e93e78a0d17d7967b8291a8a5843  Bob_Dylan-1993-07-13-D201.flac
+ff617b0742794b1e23b337db18e6bbe6  Bob_Dylan-1993-07-13-D202.flac
+62222ed59d50133717dca55bc10cb709  Bob_Dylan-1993-07-13-D203.flac
+466606a8eb224f2b728c1f6e0efde4c5  Bob_Dylan-1993-07-13-D204.flac
+f5ca848bba6028e2170bcac4a2b69514  Bob_Dylan-1993-07-13-D205.flac
+73122648f91eaf564514c6c1ba19e428  Bob_Dylan-1993-07-13-D206.flac
+ce47a0b71c63f3bdec2ca1131e9a6d9d  Bob_Dylan-1993-07-13-D207.flac
+6b87deecdddc3418c524c5d32498d7b0  Bob_Dylan-1993-07-13-D208.flac
+
+
+Audience recording. Downloaded from a binary newsgroup (shn). SHN -> flac with shntool. Added metadata tags. 
+
+One of my favorite unsung NET concerts (actually the 500th NET show, according to Olof!) from way back. Bob and the band in a jam-band mode, long songs and great lead guitar interplay between Bob, J.J. Jackson, and Cesar Diaz, who features on some of the songs. An exquisite audience recording, full of warmth, especially in the acoustic songs. Listen with good headphones and you'll be transported in time and place to a warm (I presume) Portugal night 18 years ago... The setlist is nothing unusual for the time, but the performances are outstanding: like I said, one of my favorite NET recordings. 
+
+There are some minor digital defects that appear in the original SHNs I acquired from a binary newsgroup a decade or so ago. It's a sort of digital distortion that appears on some loud parts (especially at the beginning of Memphis Blues Again). There's no tape hiss, it's probably a DAT recording. 
+
+This is my first upload, hope all goes well...
+===================
+===================
+===================

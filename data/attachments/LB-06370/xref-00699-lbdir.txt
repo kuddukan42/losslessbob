@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-11-11-Watching-The-River-Flow.flacf 
+=================== 
+=================== 
+=================== 
+c9018acdd10363313c68af53ee90d696  Bob Dylan 1992.11.11 Watching The River Flow.ffp
+df2161bfc61072e72694f022fe1e7c50  d1\01 - Traccia Audio.flac
+8563f40ea5ad3491a62988844b812b71  d1\02 - Traccia Audio.flac
+3da03ed440a10ba154fbf239acd07cfc  d1\03 - Traccia Audio.flac
+0524e688ad79f766a54425f9be698b51  d1\04 - Traccia Audio.flac
+7bf18aae5858c866eb0cb1de25a7282d  d1\05 - Traccia Audio.flac
+089fa043edd268e0358ae85b3e7e2f25  d1\06 - Traccia Audio.flac
+4a133e34fcb7077d1a30c6d13c6f8a8b  d1\07 - Traccia Audio.flac
+a4852c26c5ac7c48c9ca46598ecfd24b  d1\08 - Traccia Audio.flac
+8c50f25b4dde7f0dad67c50c9ae5aac2  d1\09 - Traccia Audio.flac
+33af1def423974b5f56420293c4694af  d2\01 - Traccia Audio.flac
+09ee228a9aa60b548c28d38339bd8ec5  d2\02 - Traccia Audio.flac
+5bd44b929c82ab9768e307b64b28dee7  d2\03 - Traccia Audio.flac
+475d985ca525cce751c557f4875e94db  d2\04 - Traccia Audio.flac
+a7678c5c032444ccab202affa527c08b  d2\05 - Traccia Audio.flac
+1dc0e2f6d1b2d9a37090c5114126c747  d2\06 - Traccia Audio.flac
+7c2d34def4486271385b62d5d25fb82a  d2\07 - Traccia Audio.flac
+e79a44b2e6a7397c590a7912a2f24aee  d2\08 - Traccia Audio.flac
+342780a751c64e852332faa568688691  d2\09 - Traccia Audio.flac
+4e879207e0f5c86d9b8a905855040130  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-11-11-Watching-The-River-Flow.flacf\d1 
+=================== 
+=================== 
+=================== 
+01 - Traccia Audio.flac:df226b06ae07671c6583892845a8dce2
+02 - Traccia Audio.flac:279b7043b4c375b75a86e197382c59b9
+03 - Traccia Audio.flac:3593da96e50db104c72e2a448d6eeb77
+04 - Traccia Audio.flac:d8eb08fd65ba7faa04a7590ddb66139b
+05 - Traccia Audio.flac:2d8d9d106fea7e06751d880d27d1b857
+06 - Traccia Audio.flac:9a63c5ebfed363aad9f397b289b153c9
+07 - Traccia Audio.flac:0d6c5c5ee34a2367cc0bd34fa7ab0838
+08 - Traccia Audio.flac:a504dbe6e72a01fa720ac800cce0bd58
+09 - Traccia Audio.flac:bc0c7e5c43c63016a86847113221164d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-11-11-Watching-The-River-Flow.flacf\d2 
+=================== 
+=================== 
+=================== 
+01 - Traccia Audio.flac:0ecb14c7eb9c9cce5194d2437ae780b1
+02 - Traccia Audio.flac:e4329c786c53c2a6a01520f5a5c7f7ed
+03 - Traccia Audio.flac:d83223df52ed7fe04212ed64b3e2cefd
+04 - Traccia Audio.flac:16832a7475ef679cbaefb2b2e660a6f4
+05 - Traccia Audio.flac:b952378c8705aba937899ff7617ac93c
+06 - Traccia Audio.flac:30d7eb8de91fbedd9845c40efb575e22
+07 - Traccia Audio.flac:da76c47d48ebc4eb213cd67ec2381d08
+08 - Traccia Audio.flac:ec143906df337098c6c723dffa40573d
+09 - Traccia Audio.flac:651440f06db64ce83c69189ed8baab44
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-11-11-Watching-The-River-Flow.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.09       54705212 B   ---   --   ---xx   flac  0.5744  01 - Traccia Audio.flac
+     5:31.00       58388444 B   ---   --   ---xx   flac  0.5302  02 - Traccia Audio.flac
+     5:39.74       59973692 B   ---   --   ---xx   flac  0.5732  03 - Traccia Audio.flac
+     8:20.30       88270604 B   ---   --   ---xx   flac  0.5405  04 - Traccia Audio.flac
+     9:05.46       96246236 B   ---   --   ---xx   flac  0.5582  05 - Traccia Audio.flac
+     5:45.29       60926252 B   ---   --   ---xx   flac  0.5556  06 - Traccia Audio.flac
+     5:50.45       61845884 B   ---   --   ---xx   flac  0.5563  07 - Traccia Audio.flac
+     3:15.10       34421564 B   ---   --   ---xx   flac  0.4666  08 - Traccia Audio.flac
+     4:46.70       50615084 B   ---   --   ---xx   flac  0.5019  09 - Traccia Audio.flac
+    53:25.13      565392972 B                            0.5446  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-11-11-Watching-The-River-Flow.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.19       71310332 B   ---   --   ---xx   flac  0.5619  01 - Traccia Audio.flac
+     6:00.19       63548732 B   ---   --   ---xx   flac  0.4956  02 - Traccia Audio.flac
+     4:35.55       48639404 B   ---   --   ---xx   flac  0.5915  03 - Traccia Audio.flac
+     6:25.00       67914044 B   ---   --   ---xx   flac  0.5515  04 - Traccia Audio.flac
+     6:55.00       73206044 B   ---   --   ---xx   flac  0.5705  05 - Traccia Audio.flac
+     6:18.00       66679244 B   ---   --   ---xx   flac  0.5516  06 - Traccia Audio.flac
+     5:44.22       60733388 B   ---   --   ---xx   flac  0.5201  07 - Traccia Audio.flac
+     7:25.08       78516860 B   ---   --   ---xx   flac  0.5950  08 - Traccia Audio.flac
+     5:28.60       58000364 B   ---   --   ---xx   flac  0.5459  09 - Traccia Audio.flac
+    55:36.33      588548412 B                            0.5544  (9 files)
+=================== 
+=================== 
+=================== 

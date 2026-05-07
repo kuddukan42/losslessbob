@@ -1,0 +1,172 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-Just-Like-Marlon-Brando-b.flacf 
+=================== 
+=================== 
+=================== 
+4947a689e6cfb208efd45e6e459def64  artwork\back.jpg
+99298f7045b97be535e904521ed17327  artwork\front.jpg
+f791b49c9821824c6656a9bad470cced  BD Hollow Horn V2.txt
+68bee84c71bb6269a1121d585d6a1c1a  HHPA 2-1\01 Man On The Street.flac
+6ff4dc0e4db6f956f2c640a8ce5090ca  HHPA 2-1\02 He Was A Friend Of Mine.flac
+9649da64333e9d504ea9bfeb344445ac  HHPA 2-1\03 Talkin' Bear Mountain Massacre.flac
+4cf2fcb6cf062ae46618eb70a96428b8  HHPA 2-1\04 Song To Woody.flac
+28293d13f2f32aa85270439c6fdca452  HHPA 2-1\05 Pretty Polly.flac
+9b0b633238608cf3ded76c8f97128920  HHPA 2-1\06 Riding In My Car.flac
+004c01ae4d4229944cb0d3dbd4a0ff20  HHPA 2-1\07 Pretty Peggy-O.flac
+36113810a6bc5d89ffefb431620251d8  HHPA 2-1\08 In The Pines.flac
+5ef12cc5f8580b8334a44374a0d01d56  HHPA 2-1\09 Gospel Plow.flac
+3a9408e6ae8f9f83e273e7fcb9edd8dd  HHPA 2-1\10 913 Massacre.flac
+7dd9ad509962b2fe13d9ed8736a3e39e  HHPA 2-1\11 Backwater Blues.flac
+b0b5782628bc61d4d57085a66068bbe7  HHPA 2-1\12 Young But Daily Growing.flac
+0af1de972c124095944e38e5665347ad  HHPA 2-1\13 Fixin' To Die.flac
+7f717b2f25275ec15d114db2c020b789  HHPA 2-1\14 Sally Gal.flac
+68ccd7d9658b43c32df809c14992b0c6  HHPA 2-1\15 Highway 51 Blues.flac
+008e9db0af6f81a9c10fb9b86302711b  HHPA 2-1\16 Ballad Of Hollis Brown.flac
+5add9d79c583a18402185b327c33f49a  HHPA 2-1\17 The Story Of East Orange.flac
+21e2d114e671f5a505094365472a311b  HHPA 2-2\01 Candy Man.flac
+88506e2d67a364dce810c2bc273357ee  HHPA 2-2\02 Baby Please Don't Go.flac
+dacd3d0e0be9d0b0c35b06286e4392a8  HHPA 2-2\03 Hard Times In New York.flac
+75b97534f89c9bb853448c1803b25545  HHPA 2-2\04 Stealin'.flac
+5850787826ffdd9dfcb40cce5f728cd9  HHPA 2-2\05 Poor Lazarus.flac
+f2d20d8eb9fa22dc46c0b13581f34034  HHPA 2-2\06 I Ain't Got No Home.flac
+174a506c7e83ee4fea84a8c6619ee3ac  HHPA 2-2\07 It's Hard To Be Blind.flac
+89907f18b4a26cb33e235ee66f3b68a7  HHPA 2-2\08 Dink's Song.flac
+f1b6ed2ca223d7420cb1f53409b7b046  HHPA 2-2\09 Man Of Constant Sorrow.flac
+91ae81cbefcbc7417ab06ae591fc9d00  HHPA 2-2\10 Naomi Wise.flac
+2fe53fbbc2b5396de3f175b4df52a3f4  HHPA 2-2\11 Wade In The Water.flac
+9a77be045f46a6987a1f02627bb23cdf  HHPA 2-2\12 I Was Young When I Left Home.flac
+60e97a18a60203264bb5582fba7ef221  HHPA 2-2\13 In The Evening.flac
+e3a9a1c764afb14dc1f92e59d0078702  HHPA 2-2\14 Baby Let Me Follow You Down.flac
+32560a200410ebf9bdc1f8d23e1faec3  HHPA 2-2\15 Sally Gal.flac
+0d461a5ca5d2b732bc66c2df71eac0b8  HHPA 2-2\16 Gospel Plow.flac
+2f4c62f3894a5551b430aba694e33dcf  HHPA 2-2\17 Long John.flac
+c628fd23c46e537224278da4a212ec7b  HHPA 2-2\18 Cocaine.flac
+c453950ded243aa11cfec70fa164e78c  HHPA 2-2\19 VD Blues.flac
+700fac8d9a7aa16297e77e004d98e760  HHPA 2-2\20 VD Waltz.flac
+78778f5f41cb3950e4e38b6db0079d3a  HHPA 2-2\21 VD City.flac
+38eaa3b9bc8facbd1e7b1fd624e374a6  HHPA 2-2\22 VD Gunner's Blues.flac
+c2f5389c2fdf222152287c7c267ed243  HHPA 2-2\23 See That My Grave Is Kept Clean.flac
+086ea550baa67e2085abfc078272be17  HHPA 2-2\24 Ramblin' Round.flac
+729af3162c287133e4927b45fe1e7603  HHPA 2-2\25 Black Cross.flac
+4d80835f8f7bb7e6d85ee5a43bc614a9  HHPA-2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-Just-Like-Marlon-Brando-b.flacf\hhpa 2-1 
+=================== 
+=================== 
+=================== 
+01 man on the street.flac:a2a3a00c3bb9943f0de810d2f794faa8
+02 he was a friend of mine.flac:8c330b48e3cf7c7c8b96da6207f535b6
+03 talkin' bear mountain massacre.flac:2b65da2a2c808433618064bb07703629
+04 song to woody.flac:6f39c930cd31e69b042b104f6d74369a
+05 pretty polly.flac:103ee8e8f46c43eb292a264e04def8aa
+06 riding in my car.flac:229c45313fd772c1a83b7c64f706bafa
+07 pretty peggy-o.flac:d185aa0a741c9b12633f93abe81552d7
+08 in the pines.flac:25b2d515ec98feab220391962bf22437
+09 gospel plow.flac:527d7fd537bd4ed5bd3990c464294941
+10 913 massacre.flac:95c815b038fe49d1b8af3e19bd632bf9
+11 backwater blues.flac:91a581cd757c6f61c57f67518b7fff82
+12 young but daily growing.flac:25030560cd4653b523d3ac75428d8e1b
+13 fixin' to die.flac:6468ddb4097a44c182198cf0dc78c951
+14 sally gal.flac:e6cf0ae6b792ebd0afc35ac87819eb1f
+15 highway 51 blues.flac:b7709ae31c725f8256fb04c554e80889
+16 ballad of hollis brown.flac:19822778496b111b4418239de29fedfe
+17 the story of east orange.flac:f67dfc77f2f6fbb4c86c81c53eed3125
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-Just-Like-Marlon-Brando-b.flacf\hhpa 2-2 
+=================== 
+=================== 
+=================== 
+01 candy man.flac:29622dc10fde2c4b323799549fdf4baa
+02 baby please don't go.flac:ab3b975030c88d504a0215d934682f32
+03 hard times in new york.flac:b3cfa446bd9b5042adb8c36b81fc7e9d
+04 stealin'.flac:92343c946ca41e502890c6f627b4b032
+05 poor lazarus.flac:99ddf0ce37ae2169a718da1ba4d4b59e
+06 i ain't got no home.flac:d236348562f61acc6b339585ba2a51fe
+07 it's hard to be blind.flac:e7bca6080b95083162bfe818d439ed44
+08 dink's song.flac:4eb18d241b6721b7d7e1ac3cd67cac07
+09 man of constant sorrow.flac:bee8ad9bae0d4e34c1a31811a71e0d6b
+10 naomi wise.flac:a154b04c473464e7cde950285c59eac5
+11 wade in the water.flac:5c5aadc041efc5df9acf6f5663f7c204
+12 i was young when i left home.flac:683bee5ad89f5877a906b992d7518a52
+13 in the evening.flac:6882fc8529d239f1d23300a90c73f8f3
+14 baby let me follow you down.flac:ed4bc21a43a5aac06a8b159c2b4e1116
+15 sally gal.flac:d83cc1ec3f76bd70555ec6416a0c7aed
+16 gospel plow.flac:632c839308b33129f4496580f2f0fb6c
+17 long john.flac:dac68dc52f8c890fc6f2c776337b7011
+18 cocaine.flac:0a0115ebc3accb6efe67dace82a2a052
+19 vd blues.flac:1c7545cb3f8563346aef83696560dac8
+20 vd waltz.flac:024e2ebd9ef8bea5c73610a2a990a951
+21 vd city.flac:709ec6704d8eaf9bfe2f3b7a54a8c4e7
+22 vd gunner's blues.flac:eab264af36d962e94d6e30277c6f9b0f
+23 see that my grave is kept clean.flac:f7b0af2a3f2047a367cb2f7a65971a3d
+24 ramblin' round.flac:fa4e5387f6daf92f806f8442c613875d
+25 black cross.flac:c4d3715dc564a06d6b5ba03fadab598a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-Just-Like-Marlon-Brando-b.flacf\hhpa 2-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:23.54       25352252 B   ---   --   ---xx   flac  0.4749  01 Man On The Street.flac
+     4:33.56       48288956 B   ---   --   ---xx   flac  0.4997  02 He Was A Friend Of Mine.flac
+     6:11.26       65505596 B   ---   --   ---xx   flac  0.4977  03 Talkin' Bear Mountain Massacre.flac
+     3:09.56       33471356 B   ---   --   ---xx   flac  0.4587  04 Song To Woody.flac
+     6:32.48       69261740 B   ---   --   ---xx   flac  0.4945  05 Pretty Polly.flac
+     2:27.56       26062556 B   ---   --   ---xx   flac  0.4977  06 Riding In My Car.flac
+     3:32.56       37528556 B   ---   --   ---xx   flac  0.6167  07 Pretty Peggy-O.flac
+     7:31.07       79572908 B   ---   --   ---xx   flac  0.5619  08 In The Pines.flac
+     4:21.26       46101596 B   ---   --   ---xx   flac  0.5795  09 Gospel Plow.flac
+     6:29.52       68741948 B   ---   --   ---xx   flac  0.5371  10 913 Massacre.flac
+     5:11.18       54902780 B   ---   --   ---xx   flac  0.5922  11 Backwater Blues.flac
+     7:32.18       79775180 B   ---   --   ---xx   flac  0.5059  12 Young But Daily Growing.flac
+     3:43.45       39443084 B   ---   --   ---xx   flac  0.5461  13 Fixin' To Die.flac
+     2:43.56       28884956 B   ---   --   ---xx   flac  0.5892  14 Sally Gal.flac
+     3:45.22       39741788 B   ---   --   ---xx   flac  0.4945  15 Highway 51 Blues.flac
+     5:22.33       56878460 B   ---   --   ---xx   flac  0.4924  16 Ballad Of Hollis Brown.flac
+     1:33.73       16576940 B   ---   --   ---xx   flac  0.5801  17 The Story Of East Orange.flac
+    77:06.27      816090652 B                            0.5288  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-Just-Like-Marlon-Brando-b.flacf\hhpa 2-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:06.54       32937452 B   ---   --   ---xx   flac  0.6567  01 Candy Man.flac
+     4:14.26       44866796 B   ---   --   ---xx   flac  0.6395  02 Baby Please Don't Go.flac
+     2:17.33       24244460 B   ---   --   ---xx   flac  0.6359  03 Hard Times In New York.flac
+     2:14.48       23750540 B   ---   --   ---xx   flac  0.6922  04 Stealin'.flac
+     4:24.33       46647260 B   ---   --   ---xx   flac  0.6204  05 Poor Lazarus.flac
+     2:06.28       22292300 B   ---   --   ---xx   flac  0.6595  06 I Ain't Got No Home.flac
+     3:04.23       32511740 B   ---   --   ---xx   flac  0.6588  07 It's Hard To Be Blind.flac
+     4:51.26       51393596 B   ---   --   ---xx   flac  0.6239  08 Dink's Song.flac
+     3:32.26       37457996 B   ---   --   ---xx   flac  0.6241  09 Man Of Constant Sorrow.flac
+     3:02.26       32165996 B   ---   --   ---xx   flac  0.6440  10 Naomi Wise.flac
+     2:58.52       31521548 B   ---   --   ---xx   flac  0.6847  11 Wade In The Water.flac
+     5:52.71       62259836 B   ---   --   ---xx   flac  0.6418  12 I Was Young When I Left Home.flac
+     3:57.37       41893868 B   ---   --   ---xx   flac  0.6372  13 In The Evening.flac
+     3:07.30       33057404 B   ---   --   ---xx   flac  0.6771  14 Baby Let Me Follow You Down.flac
+     1:33.38       16494620 B   ---   --   ---xx   flac  0.6663  15 Sally Gal.flac
+     1:28.52       15645548 B   ---   --   ---xx   flac  0.6440  16 Gospel Plow.flac
+     6:21.48       67321340 B   ---   --   ---xx   flac  0.6434  17 Long John.flac
+     2:15.63       23962220 B   ---   --   ---xx   flac  0.6234  18 Cocaine.flac
+     1:54.00       20109644 B   ---   --   ---xx   flac  0.6473  19 VD Blues.flac
+     0:49.52        8765948 B   ---   --   ---xx   flac  0.6308  20 VD Waltz.flac
+     1:47.22       18926588 B   ---   --   ---xx   flac  0.6193  21 VD City.flac
+     2:35.45       27447884 B   ---   --   ---xx   flac  0.6388  22 VD Gunner's Blues.flac
+     3:38.03       38462300 B   ---   --   ---xx   flac  0.6240  23 See That My Grave Is Kept Clean.flac
+     4:00.48       42448940 B   ---   --   ---xx   flac  0.6134  24 Ramblin' Round.flac
+     4:18.72       45680588 B   ---   --   ---xx   flac  0.6050  25 Black Cross.flac
+    79:34.56      842266412 B                            0.6397  (25 files)
+=================== 
+=================== 
+=================== 

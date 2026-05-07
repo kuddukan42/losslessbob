@@ -1,0 +1,14 @@
+Bob Dylan, 11/11/99, Augusta, Maine, 2CDR
+
+LB-7903, (58min+58min), version "c"; Source: AUD > CDR > FLAC; bittorrent download 08/09; same recording as LB-1773 with same wav and spectral view and levels but different drops and discontinuity flaws; (did not listen to all of this)
+
+drop.cut between cdrs; has a lot of dicontinuities
+
+CD1
+I Am The Man, Thomas (acoustic) (song by Ralph Stanley and Larry Sparks), Song To Woody (acoustic), It's Alright, Ma (I'm Only Bleeding) (acoustic), It's All Over Now, Baby Blue (acoustic) (Larry on pedal steel), Tangled Up In Blue (acoustic) (with harp), Hootchie Cootchie Man (song by Willie Dixon), Absolutely Sweet Marie (with harp), I Shall Be Released (Larry on pedal steel), Everything Is Broken, 
+
+CD2
+Queen Jane Approximately (Larry on pedal steel), Highway 61 Revisited, (encore), What Good Am I? (Larry on pedal steel), Rainy Day Women #12 & 35, Don't Think Twice, It's All Right (acoustic), Not Fade Away, Blowin' In The Wind (acoustic), Silvio
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

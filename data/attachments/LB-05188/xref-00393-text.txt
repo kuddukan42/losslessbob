@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== BD1998-01-30.txt
+===================
+===================
+===================
+Bob Dylan
+January 30, 1998
+Tilles Center 
+C.W. Post College
+Brookville, New York
+
+
+Schoeps Schoeps MK4V's>Schoeps KC5 Active Cables>Schoeps CMC6's
+>Sonosax SX-M2>Sony SBM-1(@48khz)>Sony TCD-D100
+
+Recorded By Clete & Fed from Row G Center.
+
+DAT CLONE direct from MASTER>Sony TCD-D100>Edirol R-4>Wavelab 5
+(Fades and sample rate conversion to 44.1khz)>CDWAV>FLAC 
+
+
+
+1 Absolutely Sweet Marie 
+2 Pretty Peggy-O 
+3 Can't Wait 
+4 Under The Red Sky 
+5 Silvio 
+6 Cocaine Blues (acoustic) 
+7 Masters Of War (acoustic) 
+8 Tangled Up In Blue (acoustic) 
+9 Million Miles 
+10 Queen Jane Approximately 
+11 'Til I Fell In Love With You 
+
+12 Highway 61 Revisited 
+13 It Ain't Me, Babe (acoustic) 
+14 Love Sick 
+15 Rainy Day Women #12 & 35 
+
+
+
+File names & tags edited by Chopen, December 2009
+===================
+===================
+===================
+=== Bob Dylan 1998.01.30 Tilles Center, C.W. Post College, Brookville, NY (Clete & Fed).md5
+===================
+===================
+===================
+903e1f6c0d419b5cbd4c834a5e43dce0 *01 Absolutely sweet Marie.flac
+2c28ad286a475133c573f5c1c9cfa993 *02 Pretty Peggy-O.flac
+6b4f3f8ff34e85ab99a5e15c1ae4e13e *03 Can't wait.flac
+a50b9e303481cf9c0f45d986431be88a *04 Under the red sky.flac
+47fa43b0d303d6ded1c6f97b2d8111b7 *05 Silvio.flac
+05ab47e1b7164926cff9a65ec185d0e1 *06 Cocaine.flac
+1a27e92eb469bd3e16b9615b59943606 *07 Masters of war.flac
+2b5f2cc4ab32991e5765239513b8b610 *08 Tangled up in blue.flac
+e48b33c7b78a90c0983064e7bb5f715e *09 Million miles.flac
+14b215fde9e64ede192dadb738417b7a *10 Queen Jane approximately.flac
+0713bf31e104d9084b86475b1c0e73f2 *11 'Til I fell in love with you.flac
+e3eac16cd6836c7e2f111e3cccde5287 *12 Highway 61 revisited.flac
+3e54d417fd9622d8b63a5adad29593bc *13 It ain't me, babe.flac
+da1c37623f2861af7a81cdd39f7ace57 *14 Love sick.flac
+29ab2534422fe90e02bcf412d2aff9b9 *15 Rainy day women #12 & 35.flac
+b0d7bccddeb252076357e2d072506c6d *BD1998-01-30.txt
+===================
+===================
+===================

@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd92-04-30-c-Dolphinmile.flac1648
+===================
+===================
+===================
+3b40e6f7b82a87b59b281e440675f644 *01 Rainy Day Women.flac
+e1dd963851bf0682f0d49907bc644450 *02 Black Muddy River.flac
+c6d8470d9b7e05269b0c6d6c53c808bc *03 Drifter Escape.flac
+35cd5550e5d1ec742522627e528b12f6 *04 Just Like A Woman.flac
+9b25ad54395145477babf043e7b3ba3b *05 Tangled Up In Blue.flac
+2cbe9d7101ee600a3631dbe927fa58c0 *06 I Dont Believe You.flac
+eef326c872df77aa2343400bdeb508ce *07 Everything Is Broken.flac
+7d9805fd392a76be84cb281176548555 *08 Love Minus Zero.flac
+8155628f070997bb36d964628adc3c90 *09 Little Moses.flac
+f9bd299dcbe173ee5347e20fef57b39a *10 Lonesome Death Of Hattie Carroll.flac
+792f5a1bb8d59e7ff9f6ac139ba0bae3 *11 Tamborine Man.flac
+9931d4e719d8ea517fb92f105d7d13fa *12 Cats In the Well.flac
+1338a4ed311495cc69515382ce09c59f *13 Idiot Wind.flac
+7cb8b0e89d09cae28cc7a0413e9eb6cb *14 Times Are A Changin.flac
+192ec8b9eae8a8affe9b8cb024c0823e *15 Maggies Farm.flac
+8b4faacaf4a62a4ecdc3b3583882b661 *16 Absolutely Sweet Marie.flac
+89cf057c0d3ff3db1b98790822f45bc8 *17 All Along The Watchtower.flac
+e7ef7edc6b06b8a91ed351da03263fa0 *18 Blowin In the Wind.flac
+36b73cca4ba53406337520c8b34674df *Bob Dylan Hult Center  Eugene OR 1992-04-30 Dolphinmile Archive.ffp
+67324584dbdee0d7a5e048c59256bb29 *Bob Dylan Hult Center  Eugene OR 1992-04-30 Dolphinmile Archive.md5
+36b73cca4ba53406337520c8b34674df *Bob Dylan Hult Center  Eugene OR 1992-04-30 Dolphinmile Archive.txt
+42215b81bf2d9ebbd08a0040b17e3c64 *info.txt
+===================
+===================
+===================
+=== ffp for: bd92-04-30-c-Dolphinmile.flac1648
+===================
+===================
+===================
+01 Rainy Day Women.flac:3c0c891e6e4fc87666be628b62c348bb
+02 Black Muddy River.flac:6912702cb25a09eccd3a12157512eb81
+03 Drifter Escape.flac:62dd1eab46a0b48a43dc5ad5df3cf536
+04 Just Like A Woman.flac:5191e96a0f3f0bf37cd4eb35a3a0bad4
+05 Tangled Up In Blue.flac:e344bf52f86bd61c0c68bb244eb2e4f3
+06 I Dont Believe You.flac:ea7b63003b2cba4f885ec5c8ce71cfe0
+07 Everything Is Broken.flac:bdae2e222f63a945af30e6bd340933f4
+08 Love Minus Zero.flac:8279ce5a23b7387fb3caffdcf584d437
+09 Little Moses.flac:d78c97f33fd5231b4106fdbe23190c7a
+10 Lonesome Death Of Hattie Carroll.flac:f8fe7fbaaf6856e8182c3ff6c90ececd
+11 Tamborine Man.flac:021d8c3e7d3f089de06d682b4fcbef67
+12 Cats In the Well.flac:c411515b6a2421264cf6eae016094aac
+13 Idiot Wind.flac:cc974c2a5351baf21f2f04041924394c
+14 Times Are A Changin.flac:1e440abf2f77c24d9d9180793d37bced
+15 Maggies Farm.flac:2b485f7f22d1fb6268f16300175ece84
+16 Absolutely Sweet Marie.flac:27b15ee70ce0f0b2f38b9dbe652ce844
+17 All Along The Watchtower.flac:a1f3c2d586f02c0631d583ab8e9d7af0
+18 Blowin In the Wind.flac:9e1676e7bbfb6896a185dce1fe880930
+===================
+===================
+===================
+=== shntool len for: bd92-04-30-c-Dolphinmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.891      53163152 B   cxx   --   ---xx   flac  0.6137  01 Rainy Day Women.flac
+     5:01.735      57933084 B   cxx   --   ---xx   flac  0.5336  02 Black Muddy River.flac
+     3:25.745      39503044 B   cxx   --   ---xx   flac  0.5545  03 Drifter Escape.flac
+     5:41.631      65593160 B   cxx   --   ---xx   flac  0.5764  04 Just Like A Woman.flac
+     7:33.701      87110572 B   cxx   --   ---xx   flac  0.5999  05 Tangled Up In Blue.flac
+     5:07.563      59052140 B   cxx   --   ---xx   flac  0.5715  06 I Dont Believe You.flac
+     3:38.626      41976244 B   cxx   --   ---xx   flac  0.5971  07 Everything Is Broken.flac
+     3:43.484      42908996 B   cxx   --   ---xx   flac  0.4742  08 Love Minus Zero.flac
+     4:02.458      46552060 B   cxx   --   ---xx   flac  0.4804  09 Little Moses.flac
+     5:16.349      60738960 B   cxx   --   ---xx   flac  0.4875  10 Lonesome Death Of Hattie Carroll.flac
+     5:59.081      68943524 B   cxx   --   ---xx   flac  0.5309  11 Tamborine Man.flac
+     4:38.804      53530320 B   cxx   --   ---xx   flac  0.5560  12 Cats In the Well.flac
+     9:29.829     109407304 B   cxx   --   ---xx   flac  0.5525  13 Idiot Wind.flac
+     6:37.323      76285972 B   cxx   --   ---xx   flac  0.5369  14 Times Are A Changin.flac
+     5:47.268      66675428 B   cxx   --   ---xx   flac  0.5985  15 Maggies Farm.flac
+     5:38.410      64974708 B   cxx   --   ---xx   flac  0.5956  16 Absolutely Sweet Marie.flac
+     4:21.126      50136268 B   cxx   --   ---xx   flac  0.5614  17 All Along The Watchtower.flac
+     4:14.328      48831048 B   cxx   --   ---xx   flac  0.5118  18 Blowin In the Wind.flac
+    94:54.350    1093315984 B                            0.5544  (18 files)
+===================
+===================
+===================

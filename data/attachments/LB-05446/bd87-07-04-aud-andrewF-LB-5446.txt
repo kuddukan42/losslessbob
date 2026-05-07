@@ -1,0 +1,8 @@
+Bob Dylan, 7/4/87, Foxboro MA, Sullivan Stadium, , 1CDR
+
+LB-5446, (80min), Andrew F; (cd3 only of full grateful dead show); AUD Source: First gen cassettes (MAC > C) from unknown equipment., Transfer: TDK SA-90's > Nakamichi BX-125 (no Dolby) > Audiophile, 2496 > Soundforge > CD-Wave > TLH > FLAC. Transferred by Andrew F., Notes:, - Thanks to Ted Carpenter for providing these tapes., - Break between Disc One and Disc Two is seamless., - ShnID-30370 patch covers tape flip in Space, 5:28 > 5:34., - Start of d3t01 right channel provides both channels, 0:00 > 0:18., - Soundforge used for fades, add patch, levels adjust., - TLH used for SBE-OK, FLAC compression, and checksums.; bittorrent download 10/07; in comparison to LB-2735 this is different recording based on different clapping at end of t4; this has clearer sound; very good to excellent sound [B+]
+
+Disc Three (79:17), 01 The Times they are A-Changin', 02 Man of Peace, 03 I'll Be Your Baby Tonight, 04 John Brown, 05 I Want You, 06 Ballad of a Thin Man, 07 Stuck Inside of Mobile with the Memphis Blues Again, 08 Queen Jane Approximately, 09 Chimes of Freedom, 10 Slow Train Coming, 11 Joey, 12 All Along the Watchtower, -- encore --, 13 Knockin' on Heaven's Door
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

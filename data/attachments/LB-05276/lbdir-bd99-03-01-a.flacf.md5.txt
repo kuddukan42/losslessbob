@@ -1,0 +1,16 @@
+136a8742c21fe2333a2915a26eb458a1  Disk 1\Track01.flac
+9433436b600ec6deb14c7318198dbfda  Disk 1\Track02.flac
+48017323897746428cdfd2e1f675139e  Disk 1\Track03.flac
+33df674e5ea4a658aabe707daa118967  Disk 1\Track04.flac
+a2345e1a8942156854b569bab8038276  Disk 1\Track05.flac
+6d0203964584e9461ed57e948ff0b63d  Disk 1\Track06.flac
+021dd74dfdca05489d6aa2561c94212a  Disk 1\Track07.flac
+ec7defdf6eccfbb3589d32e25949eea5  Disk 1\Track08.flac
+4e0c146e131f5f16f6bf5907715cbb5e  Disk 1\Track09.flac
+c5bf9964edd9ae1cdc1850f06179db8f  Disk 1\Track10.flac
+abbdecae5e781c38de3ad35526455210  Disk 1\Track11.flac
+442214da4e95ad4e9eafa2e55d37f912  Disk 2\Track01.flac
+5e3a4cd89aaa16283840d0113eed4203  Disk 2\Track02.flac
+0a5fb11de86ee02d8382ce7ff847c868  Disk 2\Track03.flac
+dbe9504d471c48872a8e83b1a3e42312  info.txt
+8e2b665e3b5019066f51ab5a87345ee1  sfv.sfv

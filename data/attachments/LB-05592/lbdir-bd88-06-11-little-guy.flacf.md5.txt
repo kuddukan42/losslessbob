@@ -1,0 +1,16 @@
+b241f61f027e440d327de2e4fddcf1f3  Bob Dylan  Shoreline  6.11.88.md5
+9231a46f1003e0885f5c7cf563ebe81e  Bob Dylan  Shoreline  6.11.88.txt
+14eb09eb7880a5b4392fc1a2ddf018bb  Track01.flac
+226a303833e2aefe95edf618e8b96935  Track02.flac
+795561a7ec01e88300dbc6224c2d1e06  Track03.flac
+9b18714dbdac8c36f1e55bc06be8ae39  Track04.flac
+a78dd2dbdbf21fd97298238b36bfab8a  Track05.flac
+a80eb34db14e978f440bbf455e8c3f14  Track06.flac
+1846cddd96fa7801d47fb8dd8892f94e  Track07.flac
+ad43255b092d343a9a2974ef308b805c  Track08.flac
+376fdffb88832b4270f98be7e0a1932b  Track09.flac
+e892e4cfd8ef7c8e80b4967316bc4f1f  Track10.flac
+a25d88eb9282da893d2331790a73eff3  Track11.flac
+bb2b6fbdcf2f5233e3fa5c99fb560899  Track12.flac
+ea67c660585b904b90ed51d07d69ba4f  Track13.flac
+c105a36e4781690cd39494aad7cefae2  Track14.flac

@@ -1,0 +1,51 @@
+Bob Dylan
+Paramount Theatre
+Seattle, Washington
+March 9, 2005
+
+01. To Be Alone With You
+02. I'll Be Your Baby Tonight
+03. Tweedle Dee & Tweedle Dum
+04. Just Like A Woman
+05. It's Alright, Ma (I'm Only Bleeding)
+06. Floater (Too Much To Ask)
+07. Highway 61 Revisited
+08. Make You Feel My Love
+09. Most Likely You Go Your Way (And I'll Go Mine)
+10. Honest With Me
+11. Ballad Of Hollis Brown
+12. Summer Days
+(encore)
+13. Sing Me Back Home
+14. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Donnie Herron - banjo, pedal steel
+Denny Freeman - guitar
+Elana Fremerman - violin
+Stu Kimball - guitar
+George Receli - drums
+Tony Garnier - bass
+
+Source: soomlos
+12th row left center
+akg 391's > denecke ps-2/ad-20 > sony tcd-d8 > dat (44.1kHz)
+sony tcd-d8 > m-audio microtracker > usb > pc > wav (16/44.1)
+sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (16/44.1)
+
+ffp
+bd2005-03-09t01.flac:2db2e8b2b4354f4254717e5ab45c6133
+bd2005-03-09t02.flac:97db36511328d721c11ce244d2ed2a7c
+bd2005-03-09t03.flac:ead95b47090b475ea335ba1b8925ebda
+bd2005-03-09t04.flac:bb3236f7e216ec239451e4f317a734ff
+bd2005-03-09t05.flac:7177dd17604c4f4f2143340c27f9f163
+bd2005-03-09t06.flac:5fe943647391c7f85639cad7d4b5c33b
+bd2005-03-09t07.flac:2bc8165f41c5b59fbcaa75fab3858f5a
+bd2005-03-09t08.flac:830887a41de8071e6b574c11e1bfc43c
+bd2005-03-09t09.flac:30da461c544f6ecc4c4949294e07fb42
+bd2005-03-09t10.flac:a7da4719bfc76a5d5406da8a5070eb37
+bd2005-03-09t11.flac:c4db1e895f3feb742a410de3714558b3
+bd2005-03-09t12.flac:6b54003c981554181fecb9737a34e90d
+bd2005-03-09t13.flac:b9abaf4a7754e246a226a4f07813b4bb
+bd2005-03-09t14.flac:34d6b7eab6e395df2aca6ed0f246c54e

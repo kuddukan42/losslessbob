@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-20-Sony-ECM-155.flacf 
+=================== 
+=================== 
+=================== 
+c8cd198c73a061e433f5da2f30c10a3f  01 - Dylan - Wiesbaden 1993 - Folsom Prison Blues.flac
+bed39acec415238b48677f96a131418e  02 - Dylan - Wiesbaden 1993 - The Man in me.flac
+fe012f880a071da398566e6eebe972fb  03 - Dylan - Wiesbaden 1993 - All along the watchtower.flac
+c04139fbbdc0f56518b7b7280f9458ed  04 - Dylan - Wiesbaden 1993 - Tangled up in blue.flac
+e294f0fa97507c635e578cee57ab80fd  05 - Dylan - Wiesbaden 1993 - Shooting star.flac
+da208cc4c02fb77aaeb188f4b8fc963c  06 - Dylan - Wiesbaden 1993 - Stuck inside of Mobile.flac
+d108ff8edeb19aa252bc734ea9065c7d  07 - Dylan - Wiesbaden 1993 - She belongs to me.flac
+d3ba7b087b068600bfd3575c4c11c8a3  08 - Dylan - Wiesbaden 1993 - Tomorrow night.flac
+9637658ba2a4d955675c567b6eb21554  09 - Dylan - Wiesbaden 1993 - Jim Jones.flac
+5c14afe97305bc6aec5da4f0df5c47a0  10 - Dylan - Wiesbaden 1993 - Mr. Tambourine Man.flac
+9f3d03aee2f7540859d9b146be0cc6c2  11 - Dylan - Wiesbaden 1993 - Don_t think twice,its all right.flac
+46939c3784cd4be4a2b4b833b5c90347  12 - Dylan - Wiesbaden 1993 - Cats in the well.flac
+9d4caf341e2cbccf05ebe3389739adf9  13 - Dylan - Wiesbaden 1993 - I and I.flac
+b406e1e530f851f750701c30c494ccf0  14 - Dylan - Wiesbaden 1993 - The times they are a-changin.flac
+d686bafcf714824f66c222fe335b8251  15 - Dylan - Wiesbaden 1993 - Highway 61 Revisited.flac
+66cf174a426427f3aeadaf9b9bcdde8c  16 - Dylan - Wiesbaden 1993 - I_ll remember you.flac
+b8945340cb50f0fbbd858ce4c7df00cd  17 - Dylan - Wiesbaden 1993 - Everything is broken.flac
+4c9283e6e5828df3c9b450c2fe040dfa  18 - Dylan - Wiesbaden 1993 - Ain_t me, Babe.flac
+840bdd1c0cabf623e22084a5f56c2cbf  bd93-02-20-Sony-ECM-155-LB-3380.txt
+0d62fac7e00432e7f7637b2ad51d03b6  Bob Dylan Wiesbaden 20. Feb. 1993 Aud.md5
+48b826677a203c0073b7e15774254a8a  Dylan Wiesbaden 1993 Aud Cover.jpg
+051cc7b6929c47d6434e77c45d24a813  Dylan Wiesbaden 20.02.1993 Aud.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-20-Sony-ECM-155.flacf 
+=================== 
+=================== 
+=================== 
+01 - Dylan - Wiesbaden 1993 - Folsom Prison Blues.flac:a21f53665a40130cd11c491669d4ba68
+02 - Dylan - Wiesbaden 1993 - The Man in me.flac:f098cf00cd56ebd25780c6917eb248e1
+03 - Dylan - Wiesbaden 1993 - All along the watchtower.flac:1a1e625528dd195de785e33f656600de
+04 - Dylan - Wiesbaden 1993 - Tangled up in blue.flac:9f3726ed2523abad8c9badd129ef990c
+05 - Dylan - Wiesbaden 1993 - Shooting star.flac:18a5775d0ffe178a27eb6a12f6129191
+06 - Dylan - Wiesbaden 1993 - Stuck inside of Mobile.flac:275c84f3cd5ef7152c4719216c6abfff
+07 - Dylan - Wiesbaden 1993 - She belongs to me.flac:c6a53cbd8c7f8d74bf21a156391f9fe4
+08 - Dylan - Wiesbaden 1993 - Tomorrow night.flac:53946aa4132973d18601ec6538349434
+09 - Dylan - Wiesbaden 1993 - Jim Jones.flac:5d0dc925eb5eb4e56d5cc48243fcf7fd
+10 - Dylan - Wiesbaden 1993 - Mr. Tambourine Man.flac:6bd777b7632736d0da7ff0dcc9b957a5
+11 - Dylan - Wiesbaden 1993 - Don_t think twice,its all right.flac:7874e8c62b97c0bac70f5794e9d8ba11
+12 - Dylan - Wiesbaden 1993 - Cats in the well.flac:af04944457d47d7e5073e2404d55a284
+13 - Dylan - Wiesbaden 1993 - I and I.flac:60a33644beba1a75276625fab7f327d9
+14 - Dylan - Wiesbaden 1993 - The times they are a-changin.flac:0f155a47a251ba922f8561f1ff67fc56
+15 - Dylan - Wiesbaden 1993 - Highway 61 Revisited.flac:d181b79e31f702ce8321800698c8be9d
+16 - Dylan - Wiesbaden 1993 - I_ll remember you.flac:4c1d063a5548b6536e3108f52efec740
+17 - Dylan - Wiesbaden 1993 - Everything is broken.flac:853994bfb4fc9eb31ba2329fba39ff46
+18 - Dylan - Wiesbaden 1993 - Ain_t me, Babe.flac:83d03a21c51e300a7e121e37ba205a83
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-20-Sony-ECM-155.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.08       44471660 B   ---   --   ---xx   flac  0.6282  01 - Dylan - Wiesbaden 1993 - Folsom Prison Blues.flac
+     3:45.51       39809996 B   ---   --   ---xx   flac  0.6459  02 - Dylan - Wiesbaden 1993 - The Man in me.flac
+     6:09.59       65230412 B   ---   --   ---xx   flac  0.6672  03 - Dylan - Wiesbaden 1993 - All along the watchtower.flac
+     8:49.60       93456764 B   ---   --   ---xx   flac  0.6736  04 - Dylan - Wiesbaden 1993 - Tangled up in blue.flac
+     6:35.28       69743900 B   ---   --   ---xx   flac  0.6449  05 - Dylan - Wiesbaden 1993 - Shooting star.flac
+     7:49.59       82870412 B   ---   --   ---xx   flac  0.6548  06 - Dylan - Wiesbaden 1993 - Stuck inside of Mobile.flac
+     6:01.27       63743948 B   ---   --   ---xx   flac  0.6210  07 - Dylan - Wiesbaden 1993 - She belongs to me.flac
+     4:48.16       50840876 B   ---   --   ---xx   flac  0.5636  08 - Dylan - Wiesbaden 1993 - Tomorrow night.flac
+     6:14.10       65997164 B   ---   --   ---xx   flac  0.5659  09 - Dylan - Wiesbaden 1993 - Jim Jones.flac
+     8:14.60       87282764 B   ---   --   ---xx   flac  0.5969  10 - Dylan - Wiesbaden 1993 - Mr. Tambourine Man.flac
+     6:52.02       72681548 B   ---   --   ---xx   flac  0.6045  11 - Dylan - Wiesbaden 1993 - Don_t think twice,its all right.flac
+     5:08.06       54345356 B   ---   --   ---xx   flac  0.6628  12 - Dylan - Wiesbaden 1993 - Cats in the well.flac
+     7:16.62       77056268 B   ---   --   ---xx   flac  0.6699  13 - Dylan - Wiesbaden 1993 - I and I.flac
+     7:27.27       78914348 B   ---   --   ---xx   flac  0.5843  14 - Dylan - Wiesbaden 1993 - The times they are a-changin.flac
+     5:58.02       63155948 B   ---   --   ---xx   flac  0.6656  15 - Dylan - Wiesbaden 1993 - Highway 61 Revisited.flac
+     6:59.48       74024540 B   ---   --   ---xx   flac  0.6277  16 - Dylan - Wiesbaden 1993 - I_ll remember you.flac
+     7:18.18       77305580 B   ---   --   ---xx   flac  0.6382  17 - Dylan - Wiesbaden 1993 - Everything is broken.flac
+     8:18.70       88012824 B   -b-   --   ---xx   flac  0.5650  18 - Dylan - Wiesbaden 1993 - Ain_t me, Babe.flac
+   118:00.13     1248944308 B                            0.6264  (18 files)
+=================== 
+=================== 
+=================== 

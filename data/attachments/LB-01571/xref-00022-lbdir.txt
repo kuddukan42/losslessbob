@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-16-c.flacf 
+=================== 
+=================== 
+=================== 
+5aedb14c6c2ad0aebc37b92a43bc1163  CD1\01 Rainy day women # 12 & 35.flac
+988bdc478ce8676f9d49c816054e0da3  CD1\02 Sally Sue Brown.flac
+7fc7bd0cf617147c788198c73625f253  CD1\03 Union sundown.flac
+3da2cc98941f01eba4863782a09eef42  CD1\04 Just like a woman.flac
+87b1e6676b207a0e760f5496a23378c1  CD1\05 Tangled up in blue.flac
+cbf80519759be8c26c097fa2de65ff9d  CD1\06 I'll be your baby tonight.flac
+2eae406195fe665a9cdcc3b3e7af7ad8  CD1\07 Man in the long black coat.flac
+e214d91b16dbfc21b848d9c77843ab7e  CD1\08 Love minus zero - no limit.flac
+8e08b78fec02a80e62e152a4a3042716  CD1\09 Little Moses.flac
+a83f50fcfae5b2d662b339efbb0a0f8e  CD1\10 Girl from The North Country.flac
+5233131a28662ced842762dd316b3cad  CD2\11 Don't think twice, it's all right.flac
+c221407d731fe8fdcb83de4a284d749d  CD2\12 Cat's in the well.flac
+be22065ea862e2159d126613f653febe  CD2\13 Idiot wind.flac
+ef9719c706a1a0b7fe3093cd468f26b3  CD2\14 The times they are a-changin'.flac
+c223ed18e3f7955ebacf1bb20f861f01  CD2\15 Highway 61 revisited.flac
+a4eef1b3240f3e79edea18277a760ceb  CD2\16 Absolutely sweet Marie.flac
+3d123e0313938091cbb58775ed8de6e0  CD2\17 All along the watchtower.flac
+6266f171de26cf70ab89d23d0c6a2a6a  CD2\18 Blowin' in the wind.flac
+aa146640e29eaab8de70fd60194256bf  Info\1992-04-16 State Theatre, Sydney, New South Wales, Australia.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-16-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Rainy day women # 12 & 35.flac:f4cf40cdc004cdb0d64774e16f66efa8
+02 Sally Sue Brown.flac:fa65db2b9a0623bee33939bd6ff7813f
+03 Union sundown.flac:45355434d9c23aaeac1f1e8511b5343e
+04 Just like a woman.flac:1290ba04249330b09403a276a0b9249a
+05 Tangled up in blue.flac:fcac9403512a16b836f8088f6a0e0c57
+06 I'll be your baby tonight.flac:7f0f5785d41304e67590d4d3ff5d704e
+07 Man in the long black coat.flac:2ecc179f218044808f670f964422a649
+08 Love minus zero - no limit.flac:cfa556459d64a5843005d5981d85a78f
+09 Little Moses.flac:14fde0a8b814802b81fdc7d719c55162
+10 Girl from The North Country.flac:d1bc691ee427c0d9ca163dc348149e0e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-16-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11 Don't think twice, it's all right.flac:a61b44b4484194dc6ddb35ead16989b0
+12 Cat's in the well.flac:de7892034227488e0bf1545421e72016
+13 Idiot wind.flac:acdbfca6a038ec871c66626bcace8224
+14 The times they are a-changin'.flac:35ecd4545468cc29be54d590d8dcff73
+15 Highway 61 revisited.flac:4f92e4f406b1228fd3df338ff3f64557
+16 Absolutely sweet Marie.flac:6df1fdcf400ec4781952546390d9a71e
+17 All along the watchtower.flac:555bbe1c84c3a76c465d699ac3985a44
+18 Blowin' in the wind.flac:d7cac8c9d7f1eae5ba47ec4267ad6f68
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-16-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.54       36641852 B   ---   --   ---xx   flac  0.6626  01 Rainy day women # 12 & 35.flac
+     2:38.17       27911228 B   ---   --   ---xx   flac  0.6788  02 Sally Sue Brown.flac
+     3:58.24       42039692 B   ---   --   ---xx   flac  0.6755  03 Union sundown.flac
+     5:41.29       60220652 B   ---   --   ---xx   flac  0.6653  04 Just like a woman.flac
+     9:13.12       97577468 B   ---   --   ---xx   flac  0.6749  05 Tangled up in blue.flac
+     4:08.60       43888364 B   ---   --   ---xx   flac  0.6701  06 I'll be your baby tonight.flac
+     5:22.65       56953724 B   ---   --   ---xx   flac  0.6294  07 Man in the long black coat.flac
+     3:20.37       35367068 B   ---   --   ---xx   flac  0.5879  08 Love minus zero - no limit.flac
+     3:30.67       37201628 B   ---   --   ---xx   flac  0.5701  09 Little Moses.flac
+     4:39.56       49347356 B   ---   --   ---xx   flac  0.5901  10 Girl from The North Country.flac
+    46:01.46      487149032 B                            0.6444  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-16-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.35       65173964 B   ---   --   ---xx   flac  0.5981  11 Don't think twice, it's all right.flac
+     3:39.51       38751596 B   ---   --   ---xx   flac  0.6269  12 Cat's in the well.flac
+     9:02.06       95622956 B   ---   --   ---xx   flac  0.6060  13 Idiot wind.flac
+     5:08.46       54439436 B   ---   --   ---xx   flac  0.5911  14 The times they are a-changin'.flac
+     5:02.42       53371628 B   ---   --   ---xx   flac  0.6334  15 Highway 61 revisited.flac
+     4:17.19       45379532 B   ---   --   ---xx   flac  0.6461  16 Absolutely sweet Marie.flac
+     4:11.46       44384636 B   ---   --   ---xx   flac  0.6384  17 All along the watchtower.flac
+     3:03.43       32382380 B   ---   --   ---xx   flac  0.5448  18 Blowin' in the wind.flac
+    40:34.63      429506128 B                            0.6112  (8 files)
+=================== 
+=================== 
+=================== 

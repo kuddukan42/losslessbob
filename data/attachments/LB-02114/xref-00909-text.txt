@@ -1,0 +1,166 @@
+===================
+===================
+===================
+=== bd Ace Of Clubs 1999 ffp.ffp
+===================
+===================
+===================
+disk1\Track01.flac:1bc942218e7c8af7d6169f5bca28befe
+disk1\Track02.flac:708ebf0865b96aecb440302321ecea0d
+disk1\Track03.flac:a61ca5584cad4b47831064e308052d16
+disk1\Track04.flac:e2de6d319ac2fafea54a5210a1d31c50
+disk1\Track05.flac:cee947073aa34d986ced34f9a4f54b67
+disk1\Track06.flac:ae1aea84f644a229468502296acf1f0c
+disk1\Track07.flac:4eebfcf7c4a5b83088830fddde436f3c
+disk1\Track08.flac:108da91625678662e59c2af55b06b25a
+disk1\Track09.flac:363acb6995fb2c8af7c8a0b8b76429ef
+disk1\Track10.flac:291cc86c7204d3c101e355cbb6cfb14c
+disk1\Track11.flac:e89f8ef1b63477e814da2547e9d30d68
+disk1\Track12.flac:80a28d3360d8a43eef26894afc2424bb
+disk2\Track01.flac:d7382e45f4cdf5c63178c330185b5d94
+disk2\Track02.flac:d202021b9f1784f776e771071db9cfe1
+disk2\Track03.flac:ee1de7909e3cdf2c06158a8bbdc0d4d4
+disk2\Track04.flac:b12cc0f8778b8aaf33f36f810f7598cd
+disk2\Track05.flac:016be25e7f1c5996f75407bbee443843
+disk2\Track06.flac:7621bfec5740d01b964c7a45abe920d7
+disk2\Track07.flac:d26fffa7142e0712fc6b0adb36793941
+disk2\Track08.flac:71fdca88f64201078cb0a9338f113852
+disk2\Track09.flac:c5346794b3862b8ff1c063d083130671
+disk2\Track10.flac:346bbf388b8dc1ec4255fdcbc76935eb
+disk2\Track11.flac:19b22bfee3ada6b6eeeec22dcaae9199
+disk2\Track12.flac:a39d44fba59b8f58436a58e928570270
+disk3\Track01.flac:1c526a7ce0575a37e06d27f5c8fd303a
+disk3\Track02.flac:7734d555a8f44f6d3ddf2be5fe172041
+disk3\Track03.flac:6e754e00da0ea910a083adcab8ca533c
+disk3\Track04.flac:8d591450c24fa3f92b56bbeaad505fb2
+disk3\Track05.flac:49737b7c4984939b0dd512da99996c5e
+disk3\Track06.flac:66bb45cb269c59bd71dd9a17d6ebc033
+disk3\Track07.flac:711a5d82be6e7f23c684a95ba067b498
+disk3\Track08.flac:3ba40e7e8a96517c944fb695b34dfc8a
+disk3\Track09.flac:80d06946670f667dc48ffc67fa0b4da2
+disk3\Track10.flac:aa9e8859032f718842d2b24a4ab4cc77
+disk3\Track11.flac:6039b2a9474a37790d7ca23499f99157
+disk3\Track12.flac:c35d4349e70818c4689ee11d0e3f14df
+disk3\Track13.flac:7f542039d39423f7cac3eec3f459a7e0
+disk4\Track01.flac:a67e85e226d5a9b193c8559a1efc6bb8
+disk4\Track02.flac:e6ebae6a7dd41cdfaa9c8c2045371360
+disk4\Track03.flac:c33424a3073e378121427445aaf09b22
+disk4\Track04.flac:a9ea32ff394044016238718d89d990c2
+disk4\Track05.flac:01c7a6c3058d39bb16ec004b03227dd5
+disk4\Track06.flac:1a54ec7b21b6922f57a7ee5e1dde4c11
+disk4\Track07.flac:559495e6604fde98504e6ee231aa42b5
+disk4\Track08.flac:501f36ce1409a25b06a45fe8d4056174
+disk4\Track09.flac:352a901372589c00009a2f6ae4a0ab74
+disk4\Track10.flac:90c754f39a441b8eb198553398e7640c
+disk4\Track11.flac:465e10bf89e2db84902b79099be688fc
+disk4\Track12.flac:59e325805521b1d2d03dd463c39aa97a
+disk5\Track01.flac:7ee1041ab46c5b6fc5eaa0d382090e4c
+disk5\Track02.flac:972bb0e8457f0ed6e13d1cce1344ebaa
+disk5\Track03.flac:5e5ca50bef5ec6b3526d8186fed994d8
+disk5\Track04.flac:6bfc7fe28b7300afb927749b0327b98e
+disk5\Track05.flac:9f6bec4aa25a477dc7228107ca0cf29f
+disk5\Track06.flac:b908cb6971f80e4145369985f6b19a41
+disk5\Track07.flac:1c75f4ca6a89e87f7fa9c2bb5ef68215
+disk5\Track08.flac:26a1aade4fba957e990cc88dc54acf0b
+disk5\Track09.flac:f84e7b147c3830ec4ccedee56f755ccb
+disk5\Track10.flac:96e80f94421c1aaf6a1e318ae980b527
+disk5\Track11.flac:51a0870cfa143f33504ae2cf945ee9ea
+disk5\Track12.flac:0081994b957460a1ef3938672000c961
+===================
+===================
+===================
+=== bd Ace Of Clubs 1999.md5
+===================
+===================
+===================
+0846ec485eb4f45b3b9069c57d2be3fb *Setlists.txt
+7fb997d3a5da19a10b4edbcf4bea3efe *disk1\Track01.flac
+3ad095710e863168c1277926900904d7 *disk1\Track02.flac
+7db82f47e0985135ad548c2f643bb3a1 *disk1\Track03.flac
+39c37053bbcf63c5890c8a32f54d4e19 *disk1\Track04.flac
+203c8b901e801da228e9bda41f5421c8 *disk1\Track05.flac
+22c7720e08a3ae44d17f4e0184a6a271 *disk1\Track06.flac
+470de793fef4ccbcb432b350eaecb76a *disk1\Track07.flac
+8b4ea58f803899b8d6da84cc65c4d807 *disk1\Track08.flac
+dcb1f9bc713a8cea63435161a2d2f4e2 *disk1\Track09.flac
+8ac0b3634a07b971a3adb25f4e19f04a *disk1\Track10.flac
+5e894af70cf162e4fe14ea986632da33 *disk1\Track11.flac
+a69a9510bc2ec595f21721914a1647ed *disk1\Track12.flac
+3f4e699eb2d6caf550ad957173028779 *disk2\Track01.flac
+c223723e6901197d41d3d1f82e4e9c9d *disk2\Track02.flac
+40f443ae825bf275df04e1822feb361d *disk2\Track03.flac
+f7f54fb298dc83accf67924d364e7783 *disk2\Track04.flac
+3288a89d084aecc13d14c95945dbdb78 *disk2\Track05.flac
+d21fc7013c68593475025d7d48cc33d2 *disk2\Track06.flac
+cedc0ce03467d192e2664bc315c034af *disk2\Track07.flac
+98248ada2b50e5a45c06fbcab87dc50f *disk2\Track08.flac
+552bb0956090eb265dae31d7ad9a8159 *disk2\Track09.flac
+5f240422f9b63da45c62e48b5bee2f35 *disk2\Track10.flac
+efcdb4f1a10ecdbab9e76989c7a2fb6c *disk2\Track11.flac
+cf4c8a0c88b20a8e314d31adde363bb9 *disk2\Track12.flac
+1819efa0510c7b67feb6df50925d2c44 *disk3\Track01.flac
+e2aea05f1e548e842c4a0e6228f4b315 *disk3\Track02.flac
+3958d823e07e732b0f95e8feca0a5875 *disk3\Track03.flac
+2bbdcc722feeceb09d978c9bd973c46e *disk3\Track04.flac
+c024e4d173b9d6eaa88b02916a41f378 *disk3\Track05.flac
+e1fb1f4fcae85efb3dfad34b7b7c9e58 *disk3\Track06.flac
+3f8c51d273e34ab2b34c15f5c126ecda *disk3\Track07.flac
+05c8ea108dca20c1c7f11ad27c5299a9 *disk3\Track08.flac
+cca6e3fa752f4e54db40ac4730287c9b *disk3\Track09.flac
+0f72e6f255a5da3df77b341276959772 *disk3\Track10.flac
+7881c7bfddd4d7fdb57dea66dfe15330 *disk3\Track11.flac
+dad86089294dcb7740d09e1d56e345a5 *disk3\Track12.flac
+7d28b57bd687f0624b22860e2caba4fd *disk3\Track13.flac
+55b626cf350850108b95b19f71e01943 *disk4\Track01.flac
+7d2ca6d7564c55a8ac17837fbefa625a *disk4\Track02.flac
+f67ef5fba2190bad8d9943a1ef0ee24f *disk4\Track03.flac
+ae40ef2786cd8e9c104fe933621d8bb3 *disk4\Track04.flac
+3c5a944f2d994d7321b0919c4de66628 *disk4\Track05.flac
+9e145d52d47b137ea453f0b6614f378d *disk4\Track06.flac
+843f83970e6f3356931b6e2622bb8d04 *disk4\Track07.flac
+19239e4f2876518d97804d0bd7148787 *disk4\Track08.flac
+b13b295f25fcd815deffaad873f74152 *disk4\Track09.flac
+1391151476a08da540a578367517b807 *disk4\Track10.flac
+f128cf07b806b99d76e57434fa2aa0e8 *disk4\Track11.flac
+16a263755a6775c694a3044672a1fab5 *disk4\Track12.flac
+86b08c5cb30aad3dc12588d66d87beb5 *disk5\Track01.flac
+b3992a2f505d35bed6479b6c46e98cbc *disk5\Track02.flac
+00db0f5f4088994f69eeaf98deff9408 *disk5\Track03.flac
+64bda20c83e7532f00d9508f4dd05614 *disk5\Track04.flac
+ff679855425bf7edec47350289400fa9 *disk5\Track05.flac
+484eb2a9d0961db65849db15cafbad3f *disk5\Track06.flac
+34c80e90f3f3682a4c33b5a8e3a571a2 *disk5\Track07.flac
+d3ee01d4051e09ceb44c963f92a1a2e1 *disk5\Track08.flac
+20bb6391703910fb9b9f6ddecd528225 *disk5\Track09.flac
+5214129d33bffca902db6df85d7dabe9 *disk5\Track10.flac
+2c24a49e67b73be60e8081f87b24c7e4 *disk5\Track11.flac
+069bf8d51b48341a5c099dca352bb3b7 *disk5\Track12.flac
+===================
+===================
+===================
+=== Setlists.txt
+===================
+===================
+===================
+Ace of Clubs 
+
+Disk 1 Eugene, Oregon June 14,1999
+Disk 2 Detroit, Michigan July 6, 1999
+Disk 3 Cincinatti, Ohio July 11, 1999
+Disk 4 New York, New York July 26, 1999
+Disk 5 T1-4 Eugene
+       T5-11 New York City
+       T12 New York City July 27, 1999
+Set Lists
+Disk 1 1) Cocaine, 2) My Back Pages 3) Boots of Spanish Leather 4) Hard Rain 5) Love Minus Zero 6) Don't Think Twice 7) Down Along the Cove 8) Blind WIllie McTell 9) Most Likely You Go YOur Way 10) Simple Twist of Fate 11) Can't Wait 12) Highway 61
+
+Disk 2 1) Coacaine 2) Mama You've Been on my Mind 3) Hard Rain 4) Love Minus Zero 5) Tangled Up in Blue 6) Girl From North Country 7) Silvio 8) Man in the Long Black Coat 9) I'll Be Your Baby Tonight 10) Not Dark Yet 11) Tom Thumb Blues 12) Leopard Skin Pill Box Hat
+
+Disk 3 1) Somebody Touched Me 2) My Back Pages 3) Desolation Row 4) To Ramona 5) Tangled Up in Blue 6) Girl From North Country 7) Seeing the Real You at Last 8) Lay Lady Lay 9) Most Likely You'll Go Your Way 10) You Ain't Going Nowhere 11) Highway 61 12) Love Sick
+
+Disk 4 1) Oh Babe, It Ain't No Lie 2) Times They Are a Changin' 3) Boots of Spanish Leather 4) John Brown 5) Visions of Johanna 6) Seeing the Real YOu at Last 7) Ballad of a Thin Man 8) Most Likely You'll Go Your Way 9) Every Grain of Sand 10) Tombstone Blues 11) Not Dark Yet 12) Highway 61
+
+Disk 5 1) Not Dark Yet 2) Likea Rolling Stone 3) Blowing in THe Wind 4) Not Fade Away 5) Love Sick 6) Like a Rolling Stone 7) It Ain't Me Babe 8) Not Fade Away 9) Blowing in the Wind 10) Alabama Getaway 11) I Shall Be Released 12) Highlands
+===================
+===================
+===================

@@ -1,0 +1,7 @@
+8609300e682c93237d6d69bfc6e3ec50 *Track01.flac
+53305f4da0e71b71d266dd37f82aec6a *Track02.flac
+c9c45e327a1c265f61bdc92825ee9e78 *Track03.flac
+0aee3e6cd37ce0c6bf9af3cad4bdd7b2 *Track04.flac
+be04e9a6c811e64e81f3ad0fd81a4cc7 *Track05.flac
+f67f0a8fcb424fba4ec181d894c33df4 *Track06.flac
+53108263fac541be0f45ac6d31d9cecf *Track07.flac

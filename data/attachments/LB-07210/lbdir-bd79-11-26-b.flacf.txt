@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-26-b.flacf 
+=================== 
+=================== 
+=================== 
+f15c3e0e73bfa7b6ab8cca2a102502cf  Artwork\Tempe11-26-79(SA)-B.jpg
+eb10efb1f1a100993694eb8c55c7a75d  Artwork\Tempe11-26-79(SA)-F.jpg
+97fad493b080b6af0d43fedfca05988c  Disc 1of2\01 - Gotta Serve Somebody.flac
+7131fb9ec71b3630d771c8ce94ac5684  Disc 1of2\02 - I Believe In You.flac
+cecfd9dba67fbf6ff285137140ebc113  Disc 1of2\03 - When You Gonna Wake Up.flac
+f701f909187af13f4cfc1ed398f5ebaa  Disc 1of2\04 - When He Returns.flac
+800a40ac8324eee2fd6295a5b6ac72b5  Disc 1of2\05 - Man Gave Names To All The Animals.flac
+17e53fd202ba2d2862fc6ee2bbe89856  Disc 1of2\06 - Precious Angel.flac
+27d5e9e4f399049bc3299731479cda12  Disc 1of2\07 - Slow Train.flac
+2d261708775a7b056dc5227b004dc7b6  Disc 1of2\08 - Covenant Woman.flac
+a3c5cd7488bf653a51fb0a8b818005ec  Disc 1of2\09 - Put Your Hand In The Hand Of The Man From Galilee.flac
+650fc43fe46dcc3200ff10d122bf3b37  Disc 1of2\10 - Gonna Change My Way Of Thinking.flac
+3c4b49c4a63b79c40136e3b281666560  Disc 1of2\11 - Do Right To Me Baby (Do Unto Others).flac
+bd671932f5d0ae8e492df5322c124190  Disc 1of2\1979-11-26 Tempe Disc01.cue
+35af3ca024b551177204b3ee71095061  Disc 1of2\1979-11-26 Tempe Disc01.ffp
+6dbb78d5c12ee2325d18ec166f914360  Disc 1of2\1979-11-26 Tempe Disc01.log
+3a98251caf6f0a49b4803bd0297de8d9  Disc 1of2\1979-11-26 Tempe Disc01.m3u
+0dfb1d790e9a75ae6d7e0dd5dcd90290  Disc 1of2\1979-11-26 Tempe Disc01.md5
+023fab9de365def47df3ec300455cc8e  Disc 1of2\1979-11-26 Tempe Disc01.st5
+3b8dd221f0f4f8a9a027d669e8e73f82  Disc 2of2\01 - Solid Rock.flac
+e8a994afd614cd9b4d0b88fac2bc5392  Disc 2of2\02 - Saving Grace.flac
+0fd1a77a61b0df4e28cc09c502d798ad  Disc 2of2\03 - Saved.flac
+3c30aacb8095aeb5a1d2560dee58e64c  Disc 2of2\04 - What Can I Do For You.flac
+1bdc51ef9c1735c8fd02d2d3999e314c  Disc 2of2\05 - In The Garden.flac
+8c299ff85cf2806371c7bd28edf1b204  Disc 2of2\1979-11-26 Tempe Disc02.cue
+dec3206dc6a26fdda557f3521d5fc6c0  Disc 2of2\1979-11-26 Tempe Disc02.ffp
+4ac88ec9a31bf9b2591f726caf702cfa  Disc 2of2\1979-11-26 Tempe Disc02.log
+e156cd7fa07bde5d4d59cb5e5744b400  Disc 2of2\1979-11-26 Tempe Disc02.m3u
+1dfea692378acee0944ab9815a2ced47  Disc 2of2\1979-11-26 Tempe Disc02.md5
+46e1258a5b0522b7bd667b95ff65401d  Disc 2of2\1979-11-26 Tempe Disc02.st5
+a8126649f61d2b812a4e9c9d8acea32d  Tempe.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-26-b.flacf\Disc 1of2 
+=================== 
+=================== 
+=================== 
+01 - Gotta Serve Somebody.flac:9674ef7dc2052836563f59c3dcb65eb2
+02 - I Believe In You.flac:379d060b70ce708ffcf86beb84bbc66c
+03 - When You Gonna Wake Up.flac:3b34d7c63f01c515be3f03c9cb19e225
+04 - When He Returns.flac:36b6affce43534d56f0a2f0a58cb7d12
+05 - Man Gave Names To All The Animals.flac:f2e3a01e6370b8ab3e107ec0458ac138
+06 - Precious Angel.flac:620379aa2e6a2b276d63533def4d8fd5
+07 - Slow Train.flac:274b3ba93ef09ded93de684f72bcf3aa
+08 - Covenant Woman.flac:82c28f764c0d789b6a02a9f74dcf186b
+09 - Put Your Hand In The Hand Of The Man From Galilee.flac:dd23ae73933302b09e72ff5e6a4b5424
+10 - Gonna Change My Way Of Thinking.flac:6fb52d508a5269158fbce9aa2832c109
+11 - Do Right To Me Baby (Do Unto Others).flac:5028fa8417bffd050065f6b56a75856d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-26-b.flacf\Disc 2of2 
+=================== 
+=================== 
+=================== 
+01 - Solid Rock.flac:20eed15910381b3387d5d72271b98b34
+02 - Saving Grace.flac:8b94d1bd87b6ad502e76a5c1320d73c9
+03 - Saved.flac:0108de84146b94d72417a373d77d69c2
+04 - What Can I Do For You.flac:739b70d3d073e924bc1e16ad8365b141
+05 - In The Garden.flac:235b7e0e75a5d12567aa89a9e4b3e287
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-26-b.flacf\Disc 1of2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.30       73805804 B   ---   --   ---xx   flac  0.4003  01 - Gotta Serve Somebody.flac
+     5:09.33       54585260 B   ---   --   ---xx   flac  0.3671  02 - I Believe In You.flac
+    10:15.00      108486044 B   ---   --   ---xx   flac  0.3710  03 - When You Gonna Wake Up.flac
+     5:13.57       55347308 B   ---   --   ---xx   flac  0.3438  04 - When He Returns.flac
+     5:35.55       59223404 B   ---   --   ---xx   flac  0.3686  05 - Man Gave Names To All The Animals.flac
+     6:05.27       64449548 B   ---   --   ---xx   flac  0.3880  06 - Precious Angel.flac
+     6:28.62       68589068 B   ---   --   ---xx   flac  0.3975  07 - Slow Train.flac
+     6:13.07       65813708 B   ---   --   ---xx   flac  0.3616  08 - Covenant Woman.flac
+     4:34.72       48502988 B   ---   --   ---xx   flac  0.3855  09 - Put Your Hand In The Hand Of The Man From Galilee.flac
+     5:06.33       54056060 B   ---   --   ---xx   flac  0.3810  10 - Gonna Change My Way Of Thinking.flac
+     4:20.08       45882860 B   ---   --   ---xx   flac  0.3697  11 - Do Right To Me Baby (Do Unto Others).flac
+    66:01.09      698742052 B                            0.3764  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-26-b.flacf\Disc 2of2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:47.28      103612700 B   ---   --   ---xx   flac  0.3791  01 - Solid Rock.flac
+     4:37.06       48876956 B   ---   --   ---xx   flac  0.3563  02 - Saving Grace.flac
+     4:18.55       45640604 B   ---   --   ---xx   flac  0.3973  03 - Saved.flac
+     5:34.59       59056412 B   ---   --   ---xx   flac  0.3699  04 - What Can I Do For You.flac
+     7:20.22       77667788 B   ---   --   ---xx   flac  0.3607  05 - In The Garden.flac
+    31:38.20      334854460 B                            0.3723  (5 files)
+=================== 
+=================== 
+=================== 

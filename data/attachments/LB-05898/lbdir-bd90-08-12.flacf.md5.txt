@@ -1,0 +1,21 @@
+08f94d969d04648e7746d8e73526580c  BD 1990-08-12 Edmonton.txt
+c70ec388cb4f1909c4f398142fea8f4e  Disc 1\01 Track01.flac
+1b6d3d602f50fc668ee18b8f2879eafa  Disc 1\02 Track02.flac
+8baa823646c2a3e10779d568ece15c6c  Disc 1\03 Track03.flac
+be7da66c0efac3708dc7465fc21a069b  Disc 1\04 Track04.flac
+75ab258a71bc253869b091bffd4d4313  Disc 1\05 Track05.flac
+f3c30a1be7af6872138b00f1e64c3fe6  Disc 1\06 Track06.flac
+1b523d3203daa9cd36edbdf068bd9214  Disc 1\07 Track07.flac
+b7530ce18cf3d5e883c97510d695366d  Disc 1\08 Track08.flac
+58bccdae568432914b7229a6dd9bbabc  Disc 1\09 Track09.flac
+9475743ddde80660e04d053efe5dfc62  Disc 1\10 Track10.flac
+f3686d934b8787c5e748ad0743613eeb  Disc 1\11 Track11.flac
+f76dba203af6db0fff77203e35f03359  Disc 1\12 Track12.flac
+947e122d7375caa299f677456bccef32  Disc 1\13 Track13.flac
+c0bfa5076f203985480ceb0ff0d5ab2a  Disc 1\14 Track14.flac
+bcfb684005b93b6df4f5297c2ee06595  Disc 1\15 Track15.flac
+0df31e513f61c1a806d21eef2e531723  Disc 1\16 Track16.flac
+d6500610910497b05bbf223902368f53  Disc 2\01 Track01.flac
+a2bc7fa727ce9ad1bdbdd82891dd0ad0  Disc 2\02 Track02.flac
+faca8842585008bec1e6110a3a879fa8  fingerprintD1.ffp
+a7b4677ef7ba4fb54245c4e20e354db4  fingerprintD2.ffp

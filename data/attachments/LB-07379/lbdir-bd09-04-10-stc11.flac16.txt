@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-10-stc11.flac16 
+=================== 
+=================== 
+=================== 
+ce5820f54b78a4467ebef0dbcc51ae44  bd2009-04-10.stc11.sbeok.flac16.md5
+ca1df5bc69bc3c2806e4e32e9c2a3b90  bd2009-04-10info.txt
+178b412d0827c704440207c305f3b320  bd2009-04-10t01 (introduction).flac
+290b6a764f6f0d198edf90dedc6b4982  bd2009-04-10t02 Leopard-Skin Pill-Box Hat.flac
+9becc23c34f23ffbf37eea28832df3af  bd2009-04-10t03 When I Paint My Masterpiece.flac
+07dc8b5b04673b8bdd77602136eba109  bd2009-04-10t04 Watching the River Flow.flac
+1397ab3aa459ca2d6d5083225cf34ca0  bd2009-04-10t05 Boots of Spanish Leather.flac
+c150a8526c61e5d7733417a6657df541  bd2009-04-10t06 Rollin' And Tumblin'.flac
+2c8fdb45fd8c517b988c7a51207d25a3  bd2009-04-10t07 Po' Boy.flac
+839082d16635974a5829d687a70ab188  bd2009-04-10t08 Honest with Me.flac
+0b805631e32dfc8d20286d258fabe3f3  bd2009-04-10t09 Workingman's Blues #2.flac
+18e13e07dcd2bede91a92c9759109e52  bd2009-04-10t10 High Water (For Charley Patton).flac
+1d02c353582ed148ba61eec4ddd2e7e4  bd2009-04-10t11 Love Sick.flac
+3ddf32daac3ef6e57cef5af19dcb11a6  bd2009-04-10t12 Highway 61 Revisited.flac
+03b56e01a6683555e3d146d7a388c6c8  bd2009-04-10t13 Nettie Moore.flac
+7c8d6717097f0f1c54db0bd9a44d8672  bd2009-04-10t14 Summer Days.flac
+f453cca31b1eb22c55d635f6824a2125  bd2009-04-10t15 Like a Rolling Stone.flac
+9b5b81365e0b2dbecc9a9bd0e6459170  bd2009-04-10t16 All Along the Watchtower.flac
+b31d8207fd6fb5edc0cec9a1bdb24a62  bd2009-04-10t17 Spirit on the Water.flac
+699dafac679c40d6708920af146c1809  bd2009-04-10t18 Blowin' in the Wind.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-10-stc11.flac16 
+=================== 
+=================== 
+=================== 
+bd2009-04-10t01 (introduction).flac:18886407d2182decd0fd9c66df350f05
+bd2009-04-10t02 Leopard-Skin Pill-Box Hat.flac:907ef0ae411275f474bb8c0e84d66713
+bd2009-04-10t03 When I Paint My Masterpiece.flac:329de07517e8aa88cd05d9be07e64b94
+bd2009-04-10t04 Watching the River Flow.flac:b4be95edb3f9992598385ab389cb56e7
+bd2009-04-10t05 Boots of Spanish Leather.flac:b7270b48cae7e3f00b6872b870958c83
+bd2009-04-10t06 Rollin' And Tumblin'.flac:522e69c40e81c8828c66f74bfda37761
+bd2009-04-10t07 Po' Boy.flac:26ce956081024e8bb87c5c011cbabd37
+bd2009-04-10t08 Honest with Me.flac:f2207d2a6c67a7676c7089acf21e6ff4
+bd2009-04-10t09 Workingman's Blues #2.flac:4b5ad8be7c948b6a0e58114259803915
+bd2009-04-10t10 High Water (For Charley Patton).flac:6b6b18937d116bdabdf9467b39e79f19
+bd2009-04-10t11 Love Sick.flac:cf62a06f8f3d7132d8b33ad1ba1b9b70
+bd2009-04-10t12 Highway 61 Revisited.flac:31bc0a431a2cc1bbde9f7cb3708ee828
+bd2009-04-10t13 Nettie Moore.flac:6700f9db96154309afd82a39ea511ee0
+bd2009-04-10t14 Summer Days.flac:48fd523000de17d3973e3138d1c8f021
+bd2009-04-10t15 Like a Rolling Stone.flac:79379b1cc4c13ed201b48a7a6f27493c
+bd2009-04-10t16 All Along the Watchtower.flac:ab7c6e416ed79d852bdaa0faa6bb97ee
+bd2009-04-10t17 Spirit on the Water.flac:1b1979b56e592f77e714dda36ed31325
+bd2009-04-10t18 Blowin' in the Wind.flac:008a1db16622772721784a9a24d9aa68
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-10-stc11.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:51.44        9099460 B   -b-   --   ---xx   flac  0.4086  bd2009-04-10t01 (introduction).flac
+     3:38.03       38462896 B   -b-   --   ---xx   flac  0.4506  bd2009-04-10t02 Leopard-Skin Pill-Box Hat.flac
+     5:56.11       62824656 B   -b-   --   ---xx   flac  0.4238  bd2009-04-10t03 When I Paint My Masterpiece.flac
+     5:30.36       58296648 B   -b-   --   ---xx   flac  0.4259  bd2009-04-10t04 Watching the River Flow.flac
+     5:55.74       62797176 B   -b-   --   ---xx   flac  0.3414  bd2009-04-10t05 Boots of Spanish Leather.flac
+     7:19.29       77509000 B   -b-   --   ---xx   flac  0.4357  bd2009-04-10t06 Rollin' And Tumblin'.flac
+     5:11.23       54914576 B   -b-   --   ---xx   flac  0.3411  bd2009-04-10t07 Po' Boy.flac
+     7:20.66       77770896 B   -b-   --   ---xx   flac  0.4347  bd2009-04-10t08 Honest with Me.flac
+     7:03.32       74692572 B   -b-   --   ---xx   flac  0.3791  bd2009-04-10t09 Workingman's Blues #2.flac
+     6:15.68       66309296 B   -b-   --   ---xx   flac  0.3985  bd2009-04-10t10 High Water (For Charley Patton).flac
+     5:52.16       62130368 B   -b-   --   ---xx   flac  0.3829  bd2009-04-10t11 Love Sick.flac
+     7:04.52       74915516 B   -b-   --   ---xx   flac  0.4370  bd2009-04-10t12 Highway 61 Revisited.flac
+     8:28.10       89633684 B   -b-   --   ---xx   flac  0.3342  bd2009-04-10t13 Nettie Moore.flac
+     6:07.55       64867356 B   -b-   --   ---xx   flac  0.4296  bd2009-04-10t14 Summer Days.flac
+    10:35.01      112016440 B   -b-   --   ---xx   flac  0.3889  bd2009-04-10t15 Like a Rolling Stone.flac
+     4:28.35       47356964 B   -b-   --   ---xx   flac  0.4175  bd2009-04-10t16 All Along the Watchtower.flac
+     7:37.51       80733636 B   -b-   --   ---xx   flac  0.3529  bd2009-04-10t17 Spirit on the Water.flac
+     5:42.70       60493620 B   -b-   --   ---xx   flac  0.3834  bd2009-04-10t18 Blowin' in the Wind.flac
+   111:00.00     1174824760 B                            0.3953  (18 files)
+=================== 
+=================== 
+=================== 

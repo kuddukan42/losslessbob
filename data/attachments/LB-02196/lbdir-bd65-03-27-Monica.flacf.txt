@@ -1,0 +1,68 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-03-27-Monica.flacf 
+=================== 
+=================== 
+=================== 
+ce8dccdb04d8cb49dadcc955d0872324  bd65-03-27.txt
+ea9178f68cc2d5eb6a9be5b8a878a40b  Desc.txt
+47fdc972220484b8b6c8e4b50ff28954  M.md5
+46c64c615c439ed381a074211748926a  MTrack01.flac
+05ea8b2ffb2d0735fc2c6ae8a32df234  MTrack02.flac
+7296ff6d0dcd9d82bd073af2b57b5479  MTrack03.flac
+b8c5069ff4fe208b6d3dfad56d2380db  MTrack04.flac
+16f7510150b5427cb01b54a1e7867af4  MTrack05.flac
+02c3429794704b1f340d1aaab62720f0  MTrack06.flac
+bc492818a6481dea79b6b312c5a4a74e  MTrack07.flac
+3795df92f2868d2ec8999d24a397e2d9  MTrack08.flac
+54e1390b40524fdca3645f66ce88c469  MTrack09.flac
+1bb97e5eca581b1f2ddd4d294f929fb5  MTrack10.flac
+2d031305dc3f4681a0cf68ce46d600b2  MTrack11.flac
+21247e7b7cbf6a46d03d0c5dd68404b7  MTrack12.flac
+50cb6d6c25bdcadf854101f217eef08b  MTrack13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-03-27-Monica.flacf 
+=================== 
+=================== 
+=================== 
+MTrack01.flac:0183658c69eea12bee57f4ab94c64930
+MTrack02.flac:49caa878c763c6608a73a12fea34616d
+MTrack03.flac:6b2ad9bcf76502683538bbb406268fd0
+MTrack04.flac:73592536facbc5e57af7e721fd11ecd3
+MTrack05.flac:702b34d39bfc0529cdb253f48bc520b9
+MTrack06.flac:2990687a36af3aed49fc3e19bc38d145
+MTrack07.flac:ddb4df4c9e31e3401484a12f0b38fae3
+MTrack08.flac:6962145a5c4b05a726651d2b74210a49
+MTrack09.flac:205c029f958cdf4ee34a3f9515d60243
+MTrack10.flac:e715b5d0939be847f56dcfe2d93cf236
+MTrack11.flac:13019bb21e04663005aff60daeeede76
+MTrack12.flac:cb7ef9063c7dcadfd22dd493d0990628
+MTrack13.flac:55606dc0485cbcbb120967a3e577d648
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-03-27-Monica.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:48.10       50826764 B   ---   --   ---xx   flac  0.3222  MTrack01.flac
+     7:53.27       83500748 B   ---   --   ---xx   flac  0.3269  MTrack02.flac
+     2:37.09       27716012 B   ---   --   ---xx   flac  0.3410  MTrack03.flac
+     8:24.16       88943276 B   ---   --   ---xx   flac  0.3231  MTrack04.flac
+     4:30.61       47771516 B   ---   --   ---xx   flac  0.3232  MTrack05.flac
+     5:31.66       58543676 B   ---   --   ---xx   flac  0.3236  MTrack06.flac
+     3:37.25       38337644 B   ---   --   ---xx   flac  0.3187  MTrack07.flac
+     1:34.51       16701596 B   ---   --   ---xx   flac  0.3181  MTrack08.flac
+     3:47.58       40179260 B   ---   --   ---xx   flac  0.3148  MTrack09.flac
+     1:16.07       13422908 B   ---   --   ---xx   flac  0.3231  MTrack10.flac
+     0:50.05        8831804 B   ---   --   ---xx   flac  0.3072  MTrack11.flac
+     3:37.46       38387036 B   ---   --   ---xx   flac  0.3290  MTrack12.flac
+     4:49.59       51118412 B   ---   --   ---xx   flac  0.3225  MTrack13.flac
+    53:18.65      564280652 B                            0.3236  (13 files)
+=================== 
+=================== 
+=================== 

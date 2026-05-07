@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-05-17-hg.flacf 
+=================== 
+=================== 
+=================== 
+80796b64cdb8ddf551ce3906803afb89  Artwork and info\1996-05-17 Nautica Stage, Cleveland, Ohio, USA [Holy Grail].txt
+e96300bb8f1414e7fda2ae5ded3beec0  Artwork and info\HG_96_CLEVELAND_BACK.JPG
+82b53f110bc2496e7ca258fc9527e0a9  Artwork and info\HG_96_CLEVELAND_FRONT.JPG
+0a43ff3a91034890220c05ba89d20a11  CD1\00 Announcement.flac
+0eaef5c23e5d4b1a70b80193aba2674b  CD1\01 Drifter's escape.flac
+f1b3d728f09d4d80d1fac663edd9d30b  CD1\02 Senor (Tales of Yankee Power).flac
+a87a8516b250c5476241e3a3f670cfa9  CD1\03 All along the watchtower.flac
+5953dda20f80e8850dca124479f46b39  CD1\04 I don't believe you (she acts like we never have met).flac
+cffb7b4954332644d2c202bcdf851538  CD1\05 Watching the river flow.flac
+bcd733f793db3848a4d24786f2571d97  CD1\06 Silvio.flac
+67d64c6dcadcf194b53b0341deb6cfd1  CD1\07 Tangled up in blue.flac
+af3aa4ee38d3ab764ee289d32aa12921  CD1\08 To Ramona.flac
+0332f0138ac1b87f6d7eac5093508498  CD1\09 Friend of the Devil.flac
+6b8be380eb02a4fa768d5d6103bdbdb8  CD1\FLAC CD1.md5
+a73460a655975ec8d8f070a4f1694a49  CD2\10 Seeing the real you at last.flac
+b4ec7aab7fd6ba9af9fd97d44cc9a3ee  CD2\11 She belongs to me.flac
+8c18a8339cb919a41fadcbd17be422fd  CD2\12 Maggie's farm.flac
+56af91717dea31988f5c5cbdb29c0836  CD2\13 (audience wait).flac
+9fe750347ceb1bce8149c956baedc564  CD2\13 Alabama getaway.flac
+cf3a526d0cb0b8b3bcd6a2f25a676bed  CD2\14 (audience wait).flac
+38030023f0377652ede1dd1e8f340879  CD2\14 My back pages.flac
+e1bc6a91f1487859fbe0c52e66c1ef37  CD2\15 (audience wait).flac
+ee5a5c32c024787d1e54e4a8beef724d  CD2\15 Rainy day women # 12 & 35.flac
+80dc845cadad619063a035966abf7a6a  CD2\FLAC CD2.md5
+89a6fb3f1388fd19bf251d3d89ed5d6b  DigiFlawFinder-bd96-05-17-hg.flacf.wavf.html
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-17-hg.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:002dad8b79e37763e340c56f193df40a
+01 Drifter's escape.flac:2efd1d15c9747c9831a027ddb7b9367f
+02 Senor (Tales of Yankee Power).flac:a5389e0f331a2c48c7c2e2e14dd0b0c0
+03 All along the watchtower.flac:f684b088443a50780cab5e9b61862fd9
+04 I don't believe you (she acts like we never have met).flac:8184bd7e0e6f49d354ad97c665ada2de
+05 Watching the river flow.flac:aadf09cac11399e6b15a3981b3e8df20
+06 Silvio.flac:9115c29e69e304ab9bb84cd17f89032f
+07 Tangled up in blue.flac:82acdb6a9ae132d50ae1a6836ce32a52
+08 To Ramona.flac:ee38a2e3f177427c0194abef32f4253c
+09 Friend of the Devil.flac:fad05ca717713e8cba23fe884328ea43
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-17-hg.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Seeing the real you at last.flac:628d832e6ab6c8f3b3f7a524030f96cf
+11 She belongs to me.flac:e917781e03cddb5fc47223b2a4392771
+12 Maggie's farm.flac:9384918ad740ecad41c1b4f68a36df7b
+13 (audience wait).flac:d5efe77b13ba0dc5ff1bba4a52a23a28
+13 Alabama getaway.flac:01dc70e084f44ddf7d1cf0ef2366076d
+14 (audience wait).flac:fa7305b9c12541f57ca99befcc1b6e62
+14 My back pages.flac:2148f3ec8562c2ae9485a741b536ac4f
+15 (audience wait).flac:872d0583a8e376e75e9f36f2d551bc9d
+15 Rainy day women # 12 & 35.flac:412cd619b9437c52532765bc9f48f512
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-17-hg.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:07.07        1251308 B   ---   --   ---xx   flac  0.4989  00 Announcement.flac
+     4:25.00       46746044 B   ---   --   ---xx   flac  0.6585  01 Drifter's escape.flac
+     6:27.02       68271548 B   ---   --   ---xx   flac  0.6099  02 Senor (Tales of Yankee Power).flac
+     6:35.46       69786236 B   ---   --   ---xx   flac  0.6400  03 All along the watchtower.flac
+     7:41.58       81456860 B   ---   --   ---xx   flac  0.6033  04 I don't believe you (she acts like we never have met).flac
+     6:00.52       63626348 B   ---   --   ---xx   flac  0.5933  05 Watching the river flow.flac
+     7:30.11       79405916 B   ---   --   ---xx   flac  0.6471  06 Silvio.flac
+    11:49.59      125206412 B   ---   --   ---xx   flac  0.6081  07 Tangled up in blue.flac
+     8:00.39       84763772 B   ---   --   ---xx   flac  0.5494  08 To Ramona.flac
+     7:46.14       82235372 B   ---   --   ---xx   flac  0.5776  09 Friend of the Devil.flac
+    66:23.63      702749816 B                            0.6064  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-17-hg.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:39.63       81115820 B   ---   --   ---xx   flac  0.6191  10 Seeing the real you at last.flac
+     7:34.38       80175020 B   ---   --   ---xx   flac  0.5402  11 She belongs to me.flac
+     6:38.18       70249580 B   ---   --   ---xx   flac  0.6697  12 Maggie's farm.flac
+     2:02.08       21539660 B   ---   --   ---xx   flac  0.5181  13 (audience wait).flac
+     6:40.56       70691756 B   ---   --   ---xx   flac  0.6727  13 Alabama getaway.flac
+     2:29.29       26351852 B   ---   --   ---xx   flac  0.5482  14 (audience wait).flac
+     9:16.17       98118428 B   ---   --   ---xx   flac  0.6172  14 My back pages.flac
+     2:00.67       21325628 B   ---   --   ---xx   flac  0.5432  15 (audience wait).flac
+     5:29.09       58056812 B   ---   --   ---xx   flac  0.6460  15 Rainy day women # 12 & 35.flac
+    49:51.05      527624556 B                            0.6129  (9 files)
+=================== 
+=================== 
+=================== 

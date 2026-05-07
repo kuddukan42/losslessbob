@@ -1,0 +1,55 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-05-03-yellow-dog.flacf 
+=================== 
+=================== 
+=================== 
+a7db8b6e7b8704182d0f7a41dd94292a  01. Introduction.flac
+25d7f202bcd27398752da561ae3a95cd  02. Farewell.flac
+d67562c5d179066bc737b3a0fb9a3f4e  03. A Hard Rain's A-Gonna Fall.flac
+b5f3e26a0e4708931235a005ea8c38d4  04. Bob Dylan's Dream.flac
+78acc8721e5e02f2dddc6e13f2771131  05. Boots Of Spanish Leather.flac
+f86c7eb0e5d59f6bb255cd460d28dc9c  06. John Brown.flac
+38ed4d1b271bda14dc322aeccc27be6f  07. Who Killed Davey Moore .flac
+f848a700f2799301534677c3f61780fa  08. Blowin' In The Wind.flac
+a9613fba42880e865f05c214a481b0fa  bd630426_studs_terkel.ffp
+4545134ae2b375aec3fd1d2ef5312ed3  bd630426_studs_terkel.txt
+8149176cc7eda71e782b1da1331d3ff5  s-73b.JPG
+5975a2c1799d53305fbeeb74473fc165  s-73f.JPG
+6861884cac405fc411bc9b2330bc3bc9  s-73ib.JPG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-05-03-yellow-dog.flacf 
+=================== 
+=================== 
+=================== 
+01. Introduction.flac:9600ebb1f4f64825399c5c3118ec5a7f
+02. Farewell.flac:2b6d001be0ec862489bc5274cfa000b5
+03. A Hard Rain's A-Gonna Fall.flac:dcf314a8c0d77cd3f2d5226ed00d066b
+04. Bob Dylan's Dream.flac:1e7f5211048c3dbce5678ac4117b1947
+05. Boots Of Spanish Leather.flac:03cc187b7eddc74df1f7924e87aee47c
+06. John Brown.flac:83a19bf4c324c4fc9d6246bc93766e11
+07. Who Killed Davey Moore .flac:b83c155cb3b3ca9a31181fd260f6f38c
+08. Blowin' In The Wind.flac:7603626c37790d16d592dc1d76bf48e2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-05-03-yellow-dog.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:46.40        8208524 B   ---   --   ---xx   flac  0.2315  01. Introduction.flac
+     8:50.00       93492044 B   ---   --   ---xx   flac  0.2729  02. Farewell.flac
+    18:34.40      196603724 B   ---   --   ---xx   flac  0.2747  03. A Hard Rain's A-Gonna Fall.flac
+     6:31.00       68972444 B   ---   --   ---xx   flac  0.2824  04. Bob Dylan's Dream.flac
+    10:56.05      115730204 B   ---   --   ---xx   flac  0.2759  05. Boots Of Spanish Leather.flac
+    11:16.05      119258204 B   ---   --   ---xx   flac  0.2711  06. John Brown.flac
+     6:00.65       63656924 B   ---   --   ---xx   flac  0.2660  07. Who Killed Davey Moore .flac
+     2:37.55       27824204 B   ---   --   ---xx   flac  0.2772  08. Blowin' In The Wind.flac
+    65:32.60      693746272 B                            0.2736  (8 files)
+=================== 
+=================== 
+=================== 

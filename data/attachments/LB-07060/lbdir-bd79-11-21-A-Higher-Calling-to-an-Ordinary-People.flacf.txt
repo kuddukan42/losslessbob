@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-21-A-Higher-Calling-to-an-Ordinary-People.flacf 
+=================== 
+=================== 
+=================== 
+6a7b2cac4b458ed5fcc5f61955f13c5a  Artwork\h-58b.jpg
+b3545748e340c8d39b3c8d772f660c61  Artwork\h-58cd.jpg
+62343c303eb1bb2e7ef95ac44106885f  Artwork\h-58cd2.jpg
+72450cbbd8a095346efd88706b38abd2  Artwork\h-58f.jpg
+a315b6eaa5a6c0ac550a6dc832283e64  Artwork\h-58ib.jpg
+812d5f9b702b2f624331e1310d1b9261  Artwork\h-58J.jpg
+edd7786f4197cad8ea3a62d6a3b8aafd  Artwork\h-58l.jpg
+f2db9e61eb8bf4bbf9600346976e7ca7  bd-A Higher Calling to an Ordinary People-d1\bd-A Higher Calling to an Ordinary People-d1.md5
+382849e407c39aa209d5e57aa576bd63  bd-A Higher Calling to an Ordinary People-d1\Track01.flac
+f38beb9fd4db070de76dfc5e70aa4211  bd-A Higher Calling to an Ordinary People-d1\Track02.flac
+e3c43e3c3c480506500f1d95708b2a3c  bd-A Higher Calling to an Ordinary People-d1\Track03.flac
+568492c2686e31872d3f1313d12db2e6  bd-A Higher Calling to an Ordinary People-d1\Track04.flac
+d836b8aa5cc7734757db91b1855e22f3  bd-A Higher Calling to an Ordinary People-d1\Track05.flac
+f4f784ebb787276128b3378ddf38ecaa  bd-A Higher Calling to an Ordinary People-d1\Track06.flac
+6e7cc55e7223e6b2cb253cfaa759a53c  bd-A Higher Calling to an Ordinary People-d1\Track07.flac
+26f4ddcfdf4543b838d6a982d2262fd2  bd-A Higher Calling to an Ordinary People-d1\Track08.flac
+b56d77cabe786c5f2003436100a4cc11  bd-A Higher Calling to an Ordinary People-d1\Track09.flac
+9df28c6b70693d6f12b081a531059609  bd-A Higher Calling to an Ordinary People-d2\bd-A Higher Calling to an Ordinary People-d2.md5
+523463c10f54cfb98983e9c66ef35c2d  bd-A Higher Calling to an Ordinary People-d2\Track01.flac
+164bcc058de8e5ff60204848d06979b2  bd-A Higher Calling to an Ordinary People-d2\Track02.flac
+2aaa16dd862105d504b40e689bd36569  bd-A Higher Calling to an Ordinary People-d2\Track03.flac
+9533efe0cfaa9cdb75570dca0e161b8c  bd-A Higher Calling to an Ordinary People-d2\Track04.flac
+8d8fdccc32fc50a09c08c3ec74b24e63  bd-A Higher Calling to an Ordinary People-d2\Track05.flac
+f3bce9b18f9d7a5e4d1f7849127a8809  bd-A Higher Calling to an Ordinary People-d2\Track06.flac
+a147192fdc286e1f4e9ddaf689d26539  bd-A Higher Calling to an Ordinary People-d2\Track07.flac
+8c448d4b43d0b34ba2378167cd4977a8  bd-A Higher Calling to an Ordinary People-d2\Track08.flac
+101e3b4ba627d19610ed636caee92710  bd-A Higher Calling to an Ordinary People.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-21-A-Higher-Calling-to-an-Ordinary-People.flacf\bd-A Higher Calling to an Ordinary People-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:fe33e47254acb528d4c838591c4cc693
+Track02.flac:88c4931cabeef736bfad4fec7d98f5b0
+Track03.flac:e759bbcb5a2ea427fc7e5b5180ae5094
+Track04.flac:b79c6cc13a270a036d4164203f73c0ae
+Track05.flac:53d3130ed7d6c27492b875a6a4bc31d8
+Track06.flac:04dbe4b1a4403d926e3ea357b8753fee
+Track07.flac:06bc1eb57d09228807066864f417e0c0
+Track08.flac:9815bf1d6cc5ea383985fcde996ef5de
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-21-A-Higher-Calling-to-an-Ordinary-People.flacf\bd-A Higher Calling to an Ordinary People-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:3fae6e536200c562a75304674fc934f8
+Track02.flac:8ae629b9abf005246818c3219a071acb
+Track03.flac:2695b5d153937c0057555566e9edc65e
+Track04.flac:5b77b7d17a0e5a80b6df993e974be8f8
+Track05.flac:d2bf3c69e12798dd3bf4ca526cb00596
+Track06.flac:43ac126b23def1e3849577cf9d32ec07
+Track07.flac:4ff924c9c30a79552855cd4353f10a37
+Track08.flac:701772005d87b385ebb9eaec4587e73d
+Track09.flac:f09e167c99777a3750aa331f6dc5c79f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-21-A-Higher-Calling-to-an-Ordinary-People.flacf\bd-A Higher Calling to an Ordinary People-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:42.55       49874204 B   ---   --   ---xx   flac  0.4676  Track01.flac
+     5:05.34       53882012 B   ---   --   ---xx   flac  0.5572  Track02.flac
+     4:54.65       52014524 B   ---   --   ---xx   flac  0.4120  Track03.flac
+     5:02.43       53373980 B   ---   --   ---xx   flac  0.5114  Track04.flac
+     5:39.16       59837276 B   ---   --   ---xx   flac  0.4443  Track05.flac
+     7:02.63       74589020 B   ---   --   ---xx   flac  0.4706  Track06.flac
+     8:14.71       87308636 B   ---   --   ---xx   flac  0.5433  Track07.flac
+     8:12.45       86894684 B   ---   --   ---xx   flac  0.4567  Track08.flac
+    48:55.17      517774336 B                            0.4845  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-21-A-Higher-Calling-to-an-Ordinary-People.flacf\bd-A Higher Calling to an Ordinary People-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.69       73015532 B   ---   --   ---xx   flac  0.6217  Track01.flac
+     5:11.21       54909836 B   ---   --   ---xx   flac  0.5210  Track02.flac
+     6:54.04       73039052 B   ---   --   ---xx   flac  0.6002  Track03.flac
+     5:08.21       54380636 B   ---   --   ---xx   flac  0.4745  Track04.flac
+     5:53.62       62415068 B   ---   --   ---xx   flac  0.5222  Track05.flac
+     5:52.70       62257484 B   ---   --   ---xx   flac  0.5771  Track06.flac
+     7:45.51       82145996 B   ---   --   ---xx   flac  0.5884  Track07.flac
+     5:52.05       62104604 B   ---   --   ---xx   flac  0.4895  Track08.flac
+     8:06.35       85812764 B   ---   --   ---xx   flac  0.4848  Track09.flac
+    57:38.38      610080972 B                            0.5450  (9 files)
+=================== 
+=================== 
+=================== 

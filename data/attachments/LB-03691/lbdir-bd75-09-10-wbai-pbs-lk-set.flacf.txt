@@ -1,0 +1,48 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-09-10-wbai-pbs-lk-set.flacf 
+=================== 
+=================== 
+=================== 
+e48c02c8c5feaf28c86c7a09b973b892  1037_RTR_1975.txt
+688e2407a65a4ace4419d1e4340bcfa6  1975-09-10 Hammond.md5
+4e1e85b40c7543a8d3080539f6922e3c  bd75-09-10-wbai-pbs-lk-set-LB-3691.txt
+dee111e47e43f5ba68541d49f4534280  notes.txt
+2e88bf3af927acb605858c40049aad12  Track01.flac
+d0073eab78fc6e10378f957009e7729c  Track02.flac
+7a0cd45300e13b6845e03be7ae89260b  Track03.flac
+4d8787beb5cc529f81705b322b4ff499  Track04.flac
+c2dcff44c18b2a18f020f7964061e0ef  Track05.flac
+0d414ff29bde9a674cc4366372c989a1  Track06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-09-10-wbai-pbs-lk-set.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:bd304647c41ed4ca9b8c2404c8c52a80
+Track02.flac:01ed6827f5f43237208f00fe2ae8f8c7
+Track03.flac:5d5e49ac1f7c96f1c7a3605520dfb473
+Track04.flac:8887e56518f519dcef3f6b18e95d2491
+Track05.flac:86af67c29675396250e5a6bab927eacb
+Track06.flac:c6aedc12b3d4c4fe4d318b748cee59db
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-09-10-wbai-pbs-lk-set.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:41.60       92045564 B   ---   --   ---xx   flac  0.6360  Track01.flac
+     4:24.65       46722524 B   ---   --   ---xx   flac  0.6214  Track02.flac
+     4:22.35       46299164 B   ---   --   ---xx   flac  0.5964  Track03.flac
+    11:15.27      119133548 B   ---   --   ---xx   flac  0.6358  Track04.flac
+     4:27.19       47143532 B   ---   --   ---xx   flac  0.6272  Track05.flac
+     4:10.47       44210588 B   ---   --   ---xx   flac  0.6202  Track06.flac
+    37:22.28      395554920 B                            0.6268  (6 files)
+=================== 
+=================== 
+=================== 

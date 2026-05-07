@@ -1,0 +1,67 @@
+Bob Dylan and his band
+
+recorded live at the:-
+
+University Of California Santa Barbara
+Events Center (Thunderdome)
+Santa Barbara
+California
+
+21 October 2004
+
+An OldToaD remaster
+
+D1 58:13
+D2 39:59
+
+This was received from a bit torrent download as SHN files, unknown in
+origin. After decoding to wave and burning an audio disc of D1, I discovered 
+that every track was amplitude clipped to some greater or lesser degree. 
+There also appeared to  be very little bass in the sound. For this reason it became 
+a suitable case for attention.
+
+Each track was subjected to clip restoration with an attenuation of -4dB. 
+The bass was then slightly enhanced, and finally each track was increased in 
+amplitude by +2dB. The overall result seems to sound much better.
+
+The tracks were then all examined for any problems.
+
+The Intro has been separated from Drifter's Escape, and now forms D1 T1, all subsequent 
+tracks being renumbered. T1 has had a short fade-in applied, and a click has been removed 
+at 0:19. The sound is a little distant in T2, this makes the vocals slightly echoey. 
+I have removed slight snatches of distortion at 0:49.7, 1:25.4, and 1:19.1
+A slight distortion has been removed at 1:05 of T3. A slight clunk has been removed at 
+1:32.8 of T6. A momentary burst of static has been removed from T7 at approximately 2:37.2
+The track changeovers of T6/T7, T7/T8, and T8/T9 have all been slightly repositioned. 
+A click has been removed from T8 at 1:8.9
+A little distortion at 4:27 and 4:30 has been removed from T9.
+There is a little distortion apparent at 2:35 of T11, this could not be removed. 
+
+D2 was subject to the same initial procedure as D1.
+
+T1 was perfect.
+
+In T2 some distortion was removed at 1:39.5, and the same was attenuated at 2:17.8 as
+best as possible. 
+
+T3, T4, T6, & T7 regretfully were very prone to distortion, slight but frequent.
+It took 3 iterations, so to speak, to clean the tracks to what you will hear now.
+A variety of techniques were employed, including further clip restoration, straight 
+amplitude reduction, and very localised deletion. There is absolutely no point in
+even attempting to list the occurences of attention, the sound will do that for me.
+Most of the distortion has been  removed, attenuated or otherwise dealt with.
+Some distortion inevitably remains, plus some evidence of attention.
+
+A fade-out has been applied to T7.
+
+SHN files > mkwACT > waves remastered in Cool Edit Pro (3 times) > mkwACT > SHN files
+
+The end product is by no means perfect, but as this seems at the present time to be the 
+only version of this show in circulation, I believe it to be a worthwhile project. My thanks
+go to the anonymous taper, as do my hopes that the remastering wins his approval.
+
+Enjoy
+TheOldToaD
+21 - 27 December 2004
+
+

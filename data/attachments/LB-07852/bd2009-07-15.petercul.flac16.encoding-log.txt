@@ -1,0 +1,95 @@
+
+flac 1.1.3, Copyright (C) 2000,2001,2002,2003,2004,2005,2006  Josh Coalson
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+01-Intro.wav: 99% complete, ratio=0,36701-Intro.wav: WARNING: skipping unknown s
+ub-chunk 'LIST'
+01-Intro.wav: WARNING: skipping unknown sub-chunk 'id3 '
+01-Intro.wav: Verify OK, wrote 7682166 bytes, ratio=0,368
+01-Intro.wav: INFO: sector alignment causing 148 samples to be carried over
+02-Rainy Day Women.wav: 100% complete, ratio=0,42102-Rainy Day Women.wav: WARNIN
+G: skipping unknown sub-chunk 'LIST'
+02-Rainy Day Women.wav: WARNING: skipping unknown sub-chunk 'id3 '
+02-Rainy Day Women.wav: Verify OK, wrote 18155646 bytes, ratio=0,421
+02-Rainy Day Women.wav: INFO: sector alignment causing 491 samples to be carried
+ over
+03-Stuck Inside of Mobile.wav: 100% complete, ratio=0,40103-Stuck Inside of Mobi
+le.wav: WARNING: skipping unknown sub-chunk 'LIST'
+03-Stuck Inside of Mobile.wav: WARNING: skipping unknown sub-chunk 'id3 '
+03-Stuck Inside of Mobile.wav: Verify OK, wrote 28161007 bytes, ratio=0,401
+03-Stuck Inside of Mobile.wav: INFO: sector alignment causing 463 samples to be
+carried over
+04-The Levees Gonna Break.wav: 100% complete, ratio=0,39504-The Levees Gonna Bre
+ak.wav: WARNING: skipping unknown sub-chunk 'LIST'
+04-The Levees Gonna Break.wav: WARNING: skipping unknown sub-chunk 'id3 '
+04-The Levees Gonna Break.wav: Verify OK, wrote 32317350 bytes, ratio=0,395
+04-The Levees Gonna Break.wav: INFO: sector alignment causing 430 samples to be
+carried over
+05-Trying To Get To Heaven.wav: 100% complete, ratio=0,35605-Trying To Get To He
+aven.wav: WARNING: skipping unknown sub-chunk 'LIST'
+05-Trying To Get To Heaven.wav: WARNING: skipping unknown sub-chunk 'id3 '
+05-Trying To Get To Heaven.wav: Verify OK, wrote 25160846 bytes, ratio=0,356
+05-Trying To Get To Heaven.wav: INFO: sector alignment causing 324 samples to be
+ carried over
+06-High Water.wav: 100% complete, ratio=0,38906-High Water.wav: WARNING: skippin
+g unknown sub-chunk 'LIST'
+06-High Water.wav: WARNING: skipping unknown sub-chunk 'id3 '
+06-High Water.wav: Verify OK, wrote 24456132 bytes, ratio=0,389
+06-High Water.wav: INFO: sector alignment causing 373 samples to be carried over
+
+07-I Feel A Change Coming On.wav: 100% complete, ratio=0,36607-I Feel A Change C
+oming On.wav: WARNING: skipping unknown sub-chunk 'LIST'
+07-I Feel A Change Coming On.wav: WARNING: skipping unknown sub-chunk 'id3 '
+07-I Feel A Change Coming On.wav: Verify OK, wrote 20655561 bytes, ratio=0,366
+07-I Feel A Change Coming On.wav: INFO: sector alignment causing 532 samples to
+be carried over
+08-Tweedle Dee & Tweedle Dum.wav: 100% complete, ratio=0,38508-Tweedle Dee & Twe
+edle Dum.wav: WARNING: skipping unknown sub-chunk 'LIST'
+08-Tweedle Dee & Tweedle Dum.wav: WARNING: skipping unknown sub-chunk 'id3 '
+08-Tweedle Dee & Tweedle Dum.wav: Verify OK, wrote 20566879 bytes, ratio=0,385
+08-Tweedle Dee & Tweedle Dum.wav: INFO: sector alignment causing 16 samples to b
+e carried over
+09-When The Deal Goes Down.wav: 100% complete, ratio=0,32709-When The Deal Goes
+Down.wav: WARNING: skipping unknown sub-chunk 'LIST'
+09-When The Deal Goes Down.wav: WARNING: skipping unknown sub-chunk 'id3 '
+09-When The Deal Goes Down.wav: Verify OK, wrote 20816603 bytes, ratio=0,327
+09-When The Deal Goes Down.wav: INFO: sector alignment causing 16 samples to be
+carried over
+10-Highway 61.wav: 100% complete, ratio=0,41810-Highway 61.wav: WARNING: skippin
+g unknown sub-chunk 'LIST'
+10-Highway 61.wav: WARNING: skipping unknown sub-chunk 'id3 '
+10-Highway 61.wav: Verify OK, wrote 33470322 bytes, ratio=0,418
+10-Highway 61.wav: INFO: sector alignment causing 237 samples to be carried over
+
+11-Ballad of A Thin Man.wav: 100% complete, ratio=0,40611-Ballad of A Thin Man.w
+av: WARNING: skipping unknown sub-chunk 'LIST'
+11-Ballad of A Thin Man.wav: WARNING: skipping unknown sub-chunk 'id3 '
+11-Ballad of A Thin Man.wav: Verify OK, wrote 28822423 bytes, ratio=0,406
+11-Ballad of A Thin Man.wav: INFO: sector alignment causing 178 samples to be ca
+rried over
+12-Thunder on the Mountain.wav: 100% complete, ratio=0,44812-Thunder on the Moun
+tain.wav: WARNING: skipping unknown sub-chunk 'LIST'
+12-Thunder on the Mountain.wav: WARNING: skipping unknown sub-chunk 'id3 '
+12-Thunder on the Mountain.wav: Verify OK, wrote 30798976 bytes, ratio=0,447
+12-Thunder on the Mountain.wav: INFO: sector alignment causing 101 samples to be
+ carried over
+13-Like a Rolling Stone.wav: 100% complete, ratio=0,45613-Like a Rolling Stone.w
+av: WARNING: skipping unknown sub-chunk 'LIST'
+13-Like a Rolling Stone.wav: WARNING: skipping unknown sub-chunk 'id3 '
+13-Like a Rolling Stone.wav: Verify OK, wrote 35569917 bytes, ratio=0,455
+13-Like a Rolling Stone.wav: INFO: sector alignment causing 252 samples to be ca
+rried over
+14-Jolene.wav: 100% complete, ratio=0,44314-Jolene.wav: WARNING: skipping unknow
+n sub-chunk 'LIST'
+14-Jolene.wav: WARNING: skipping unknown sub-chunk 'id3 '
+14-Jolene.wav: Verify OK, wrote 20448782 bytes, ratio=0,443
+14-Jolene.wav: INFO: sector alignment causing 420 samples to be carried over
+15-Watchtower.wav: 100% complete, ratio=0,46715-Watchtower.wav: WARNING: skippin
+g unknown sub-chunk 'LIST'
+15-Watchtower.wav: WARNING: skipping unknown sub-chunk 'id3 '
+15-Watchtower.wav: Verify OK, wrote 30626447 bytes, ratio=0,467
+15-Watchtower.wav: INFO: sector alignment causing 315 zero samples to be appende
+d
+
+Presione una tecla para continuar . . .

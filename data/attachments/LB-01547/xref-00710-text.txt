@@ -1,0 +1,64 @@
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+e656cc810d54f421fe8fc1c3de28334f *01 Crash on the Levee (down in the flood).flac
+2b197467f03f4325ced792602f277ba5 *02 Lay lady lay.flac
+916292cadfc948d8420e8dc175f48498 *03 All along the watchtower.flac
+ed66b489799bb74834fecadd18dcb7da *04 I don't believe you (she acts like we never have met).flac
+586e9f25d682eb4f2d34fdaaa3347116 *05 Watching the river flow.flac
+1b58ea9c0086b45b4d721c54a58a6aca *06 Silvio.flac
+c3bee5676bd42b445caddbebc66d3ee9 *07 Oh baby it ain't no lie.flac
+b8f7d4918221aff89627cdf14dd8ab28 *08 Mr. Tambourine man.flac
+41e30292438dce78612bc3cb4f0dbc3f *09 Boots of Spanish leather.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+80fc1041f2a84ff76850d3a0673462e4 *10 Stuck inside of Mobile with the Memphis blues again.flac
+8c46caecef550e558d9539807fe17b62 *11 She belongs to me.flac
+b7388437a6704cb1e39bc76b9d6034e5 *12 Ballad of a thin man.flac
+19a6f3d7fa9bb7e8a5ef4c81d3b108c0 *13 Like a rolling stone.flac
+7716b69f1e3f93f5ac9164daee8ad01f *14 One too many mornings.flac
+7dd745a96a10a360256834018c9e54e2 *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================
+=== bd-1997-02-11.txt
+===================
+===================
+===================
+Bob Dylan
+1997-02-11 
+Tokyo, Japan
+
+Holy Grail Recording
+
+
+Disk One
+Crash On The Levee (Down In The Flood)
+Lay Lady Lay
+All Along The Watchtower
+I Don't Believe You
+Watching The River Flow
+Silvio
+Oh Baby It Ain't No Lie (acoustic w band)
+Mr. Tambourine Man (acoustic w band)
+Boots Of Spanish Leather (acoustic w band) 
+
+Disk Two
+Stuck Inside Of Mobile With The Memphis Blues Again 
+She Belongs To Me 
+Ballad Of A Thin Man 
+Like A Rolling Stone 
+One Too Many Mornings (acoustic w band) 
+Rainy Day Women # 12 & 35
+===================
+===================
+===================

@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-07-jtt.flacf 
+=================== 
+=================== 
+=================== 
+72c0f7f80e3bac4843c26996d264e6cd  Disc One\Dylan - February 7th 1990 Disc01Track01.flac
+9f0319326d041dde19da0a26bf1e1c5b  Disc One\Dylan - February 7th 1990 Disc01Track02.flac
+be232471b35a4a760cf20924ad7f5897  Disc One\Dylan - February 7th 1990 Disc01Track03.flac
+839a5d1899057c28889be0d17fd17c7f  Disc One\Dylan - February 7th 1990 Disc01Track04.flac
+e9989c79acb9446a41577dc1d36ee52d  Disc One\Dylan - February 7th 1990 Disc01Track05.flac
+5a2878638b03ebad829118f957bff0a6  Disc One\Dylan - February 7th 1990 Disc01Track06.flac
+90b1f7e1341d4f06089ee4b054403318  Disc One\Dylan - February 7th 1990 Disc01Track07.flac
+3bc7781590cc8eac2380f7e1e76472d9  Disc One\Dylan - February 7th 1990 Disc01Track08.flac
+ffe3dbbf19f5ba7f7fa1629d28ff0a68  Disc One\Dylan - February 7th 1990 Disc01Track09.flac
+a900da110297e38d578970a4444fefd4  Disc One\Dylan - February 7th 1990 Disc01Track10.flac
+05dc5cc27d67c918a807d1a23d999514  Disc One\Dylan - February 7th 1990 Disc01Track11.flac
+8edfc7b782eefb6119ec2d1898bf2a1f  Disc Two\Dylan - February 7th 1990 Disc02Track01.flac
+d83cb0f20b940667f7907915b9e5f9d7  Disc Two\Dylan - February 7th 1990 Disc02Track02.flac
+e87dfab376c8ef73faa924577bf0aced  Disc Two\Dylan - February 7th 1990 Disc02Track03.flac
+06f0d962449b3ca918c7626925f5ae6e  Disc Two\Dylan - February 7th 1990 Disc02Track04.flac
+fd62377a99285c3cbdea5c7b6ce8c6e5  Disc Two\Dylan - February 7th 1990 Disc02Track05.flac
+79116a05586e1dcd4ec4d72a0b5a5409  Disc Two\Dylan - February 7th 1990 Disc02Track06.flac
+cb6345161894dae72d3df7130be09934  Disc Two\Dylan - February 7th 1990 Disc02Track07.flac
+fb89ddcc8e5fe0f1f6107915868bedd5  Disc Two\Dylan - February 7th 1990 Disc02Track08.flac
+3fef47dfc6217383fcac2574e456c5f7  Disc Two\Dylan - February 7th 1990 Disc02Track09.flac
+654fbfc406a24ed166b947421d784d74  Dylan - Hammersmith Feb. 7th 1990 Info.txt
+4afa8dbb6d9b3652798146c15e7e119a  Dylan - Hammersmith February 7th 1990.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-07-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - February 7th 1990 Disc01Track01.flac:ac18a1c5b55571ffec7e8bd6fa82eecf
+Dylan - February 7th 1990 Disc01Track02.flac:27aa35bd90564240b57e2db1cc2e93f0
+Dylan - February 7th 1990 Disc01Track03.flac:b0b3ef6e22c89fdfbe800bc4fa519d39
+Dylan - February 7th 1990 Disc01Track04.flac:c80106dcf5bb94527e68e9eb0b95f8d6
+Dylan - February 7th 1990 Disc01Track05.flac:5b46419064cfce95df01a9213057773f
+Dylan - February 7th 1990 Disc01Track06.flac:5789b57a7d7444e0cfd2cb4d4644b5f3
+Dylan - February 7th 1990 Disc01Track07.flac:bca4ba2d3f41ba89e10d0d665877aeee
+Dylan - February 7th 1990 Disc01Track08.flac:c5825d93083eb7c82bfad8a36b2ed121
+Dylan - February 7th 1990 Disc01Track09.flac:453ac8f8a53f3bace51602295cd4b252
+Dylan - February 7th 1990 Disc01Track10.flac:5bec6b6a3e203ee7ee11b455060808f8
+Dylan - February 7th 1990 Disc01Track11.flac:82779a0bb25ff768ef34ca181172e406
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-07-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - February 7th 1990 Disc02Track01.flac:fa84b9e9b49da3c81399fe05bb765de4
+Dylan - February 7th 1990 Disc02Track02.flac:db0d68e883a0189c89ff26ffc1211078
+Dylan - February 7th 1990 Disc02Track03.flac:90214324d09faa9ccd14de2b4459f3b2
+Dylan - February 7th 1990 Disc02Track04.flac:30fc1d4816452b44f63ab51e58542859
+Dylan - February 7th 1990 Disc02Track05.flac:839efe3ba36cb10719484cbba14eb259
+Dylan - February 7th 1990 Disc02Track06.flac:8af1e28b7574706b200020d0533a647f
+Dylan - February 7th 1990 Disc02Track07.flac:09621220af3a70ab76ca09be4df24207
+Dylan - February 7th 1990 Disc02Track08.flac:85a0aa6ed17c1eec896ea55a0a0ddd38
+Dylan - February 7th 1990 Disc02Track09.flac:de1f6ba5e29aea1911b357aafdeb5cf4
+=================== 
+=================== 
+=================== 
+=== shntool for: bd90-02-07-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:42.40       39254924 B   ---   --   ---xx   flac  0.5437  Dylan - February 7th 1990 Disc01Track01.flac
+     3:59.54       42286652 B   ---   --   ---xx   flac  0.5339  Dylan - February 7th 1990 Disc01Track02.flac
+     3:27.72       36684188 B   ---   --   ---xx   flac  0.5722  Dylan - February 7th 1990 Disc01Track03.flac
+     4:08.62       43893068 B   ---   --   ---xx   flac  0.5446  Dylan - February 7th 1990 Disc01Track04.flac
+     5:07.04       54164252 B   ---   --   ---xx   flac  0.5311  Dylan - February 7th 1990 Disc01Track05.flac
+     3:18.02       34931948 B   ---   --   ---xx   flac  0.5706  Dylan - February 7th 1990 Disc01Track06.flac
+     5:53.65       62422124 B   ---   --   ---xx   flac  0.5573  Dylan - February 7th 1990 Disc01Track07.flac
+     5:07.61       54298316 B   ---   --   ---xx   flac  0.4771  Dylan - February 7th 1990 Disc01Track08.flac
+     3:46.47       39976988 B   ---   --   ---xx   flac  0.4802  Dylan - February 7th 1990 Disc01Track09.flac
+     5:41.32       60227708 B   ---   --   ---xx   flac  0.4577  Dylan - February 7th 1990 Disc01Track10.flac
+     5:43.01       60507596 B   ---   --   ---xx   flac  0.4609  Dylan - February 7th 1990 Disc01Track11.flac
+    49:56.65      528647764 B                            0.5162  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd90-02-07-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.15       50132924 B   ---   --   ---xx   flac  0.5136  Dylan - February 7th 1990 Disc02Track01.flac
+     3:52.43       41025980 B   ---   --   ---xx   flac  0.5316  Dylan - February 7th 1990 Disc02Track02.flac
+     3:30.49       37159292 B   ---   --   ---xx   flac  0.5592  Dylan - February 7th 1990 Disc02Track03.flac
+     4:40.51       49511996 B   ---   --   ---xx   flac  0.5524  Dylan - February 7th 1990 Disc02Track04.flac
+     4:30.35       47710364 B   ---   --   ---xx   flac  0.5429  Dylan - February 7th 1990 Disc02Track05.flac
+     4:15.04       44991452 B   ---   --   ---xx   flac  0.4999  Dylan - February 7th 1990 Disc02Track06.flac
+     6:29.33       68697260 B   ---   --   ---xx   flac  0.5676  Dylan - February 7th 1990 Disc02Track07.flac
+     6:07.61       64882316 B   ---   --   ---xx   flac  0.4782  Dylan - February 7th 1990 Disc02Track08.flac
+     4:48.09       50824412 B   ---   --   ---xx   flac  0.5732  Dylan - February 7th 1990 Disc02Track09.flac
+    42:59.00      454935996 B                            0.5347  (9 files)
+=================== 
+=================== 
+=================== 

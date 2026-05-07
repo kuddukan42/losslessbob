@@ -1,0 +1,18 @@
+2960d203d846e1f6cf79f40cab89119f  Bob Dylan 1995-04-03 Manchester.txt
+766c0ea0a8a3dad61e7b9dfa4385b36e  D1\01 Audiotrack.flac
+3ac144e36b73d4c46458d7375c1be810  D1\02 Audiotrack.flac
+6540fc72b7b2670a1048cacb1c827c90  D1\03 Audiotrack.flac
+fbec90aeb8e3781eadbd7cb566f0cda7  D1\04 Audiotrack.flac
+8e259a56abaa0a0b94cd1ee6fd2505c1  D1\05 Audiotrack.flac
+81a19b55da9909214a76305eb95acfb5  D1\06 Audiotrack.flac
+e39856e814aa69df187877a6549322a3  D1\07 Audiotrack.flac
+4ba2fc0558039f5f219792e231dc855c  D1\08 Audiotrack.flac
+f646b27c1a26fa54c0753f572fed17fc  D1\09 Audiotrack.flac
+4ba8ef62fa043200423b1f0c8f014de7  D1\10 Audiotrack.flac
+5cf1782bdf68deac11eaa4e18dda7127  D1\fingerprint.ffp
+dfe8c57b48d7b208f5ba3158fb425383  D2\01 Audiotrack.flac
+b8f06ddd065a87de69cdbcee03ccd625  D2\02 Audiotrack.flac
+c9a8517b234ee9d21977f693216d7cf2  D2\03 Audiotrack.flac
+4b94704aa37083d0fb15f5cc8649def4  D2\04 Audiotrack.flac
+b8da04e7e1069dc0be9d0c63a2a15857  D2\fingerprint.ffp.txt
+1697dec7c5739cfbca513cfcde7df90e  Manchester_030495.jpg

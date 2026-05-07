@@ -1,0 +1,20 @@
+4780630ca66511ef69f23aba01943da3 *01 Shenandoah.flac
+35910094b86240f0023d586f190230ec *02 Silvio.flac
+931ab5da4385bdff59ae2081e9d0b0b4 *03 Simple Twist Of Fate.flac
+332bf81b328ace158e3ed533b7877db1 *04 What Was It You Wanted.flac
+cca2c8aacd941779b7cd4799716d592d *05 Gotta Serve Somebody.flac
+97d5e2be9e50395798db351a9c5dcef7 *06 Tomorrow Is A Long Time.flac
+1bd4ebcaf86933161cca46593dea5570 *07 Highway 61 Revisited.flac
+873a7d240e7440defb272919b61218ed *08 Hollis Brown.flac
+155ccd69aa6a87cf6954d728712f3442 *09 Gates Of Eden.flac
+a6168c22ea592b78c159cc71af2b7f45 *10 Tamborine Man.flac
+a0f560627f8f6dbc729ae64a9460f68e *11 It Aint Me Babe.flac
+d8cbf76ef35aa4153125cb98a624089d *12 Joey.flac
+fd6f962c35db77d962522d83daf47c82 *13 Wiggle Wiggle.flac
+6fc164368464d821c04831299fc8bee6 *14 I Want You.flac
+82a88eb257fde7c886f841cb556f66c2 *15 TV Talkin Song.flac
+989d17dd2df0ff616bcf8b0d127b3f74 *16 Maggies Farm.flac
+d02d2cc3e599cb1993609a9ec6cac861 *17 I Shall Be Released.flac
+5efb54146b311f775a8dbf22ff6a589f *18 Like A Rolling Stone.flac
+afe94839974c983132a3e0b563873c51 *19 Blowin In The Wind.flac
+8e07fe7073f428e57c5f67bf51a6d6eb *20 All Along The Watchtower.flac

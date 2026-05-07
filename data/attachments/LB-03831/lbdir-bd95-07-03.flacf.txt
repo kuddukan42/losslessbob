@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-03.flacf 
+=================== 
+=================== 
+=================== 
+b15797478def1985a87a944f97847d13  3.7.95 d1.md5
+e43680546ee78162d21869248acb4c00  3.7.95 d2.md5
+e1db742c2dc65b71a44bbe08c5bad95d  bd95-07-03-LB-3831.txt
+66d40c97589c8086e5a023a7d8859dbd  Bob Dylan 3 july 1995 Hannover.txt
+fdc7dd08057cc92b7618570a13b90293  D1\01 Titel 01.flac
+f1ce70b30d2bdc3897566845d3d059b6  D1\02 Titel 02.flac
+1d36a7019814cc247ab6fa1d7598c526  D1\03 Titel 03.flac
+9f891ab0ab84caa93a594ded86dacad6  D1\04 Titel 04.flac
+40ccfdbf101594b7feec2bde8668b4f1  D1\05 Titel 05.flac
+96a1ff12ac476f311cb48ad43bf163b7  D1\06 Titel 06.flac
+3b9a80f7e8b1d6825dc49e0c08f45feb  D1\07 Titel 07.flac
+7a8add7d5d585c0ad52505bc144edf65  D1\08 Titel 08.flac
+299043e1073bfc85577d364f46f15679  D1\09 Titel 09.flac
+3ef465ebaf62432ee166a2d529b21562  D1\10 Titel 10.flac
+fddd4cbb294d08585912a495eb29cc00  D2\01 Titel 01.flac
+983e33f46e6c3b0cadafdd2b76d312b9  D2\02 Titel 02.flac
+349871bed43df2233b2c42a64c2e7152  D2\03 Titel 03.flac
+bfd16988c67548176c873eb25b574a53  D2\04 Titel 04.flac
+3fb981888879161f227b4b2b2f350384  D2\05 Titel 05.flac
+f9d607fbd1e3c7adfd40c7efd6748b8f  Hannover 3  July 1995.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-03.flacf\D1 
+=================== 
+=================== 
+=================== 
+01 Titel 01.flac:8f62d1b41b8f73c8711e2efac36ea75f
+02 Titel 02.flac:38c2f9fcaceb639720f27393315c4ebb
+03 Titel 03.flac:5c18a9d53c8653e8c9bdda34e9922efc
+04 Titel 04.flac:001ece728089b752845e918ccada7fde
+05 Titel 05.flac:61b5064690be432120fb06ec3622ae9b
+06 Titel 06.flac:ecec34abfd2d3ac82e97da494b8dca4b
+07 Titel 07.flac:9d5e062728a440e74ce5a32fee24e2f1
+08 Titel 08.flac:a0cd833afde708ccadf9f7c2debd0b19
+09 Titel 09.flac:a04f38a88260b6c51a70c0cb9b91fce6
+10 Titel 10.flac:cb6d4e23ff868f7bfaa7fc230b15b93f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-03.flacf\D2 
+=================== 
+=================== 
+=================== 
+01 Titel 01.flac:8cb7aa83f9aa317c3ce7401c142a61e7
+02 Titel 02.flac:1b84c7e43caaa426c3cbff90b576003c
+03 Titel 03.flac:fcf3d2cd87ef7e1ed25333bf20306269
+04 Titel 04.flac:64660f9e959ccf3cc72cfbb7c3be9784
+05 Titel 05.flac:12e4ffa28bd72a7a00d19e75a94a69c9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-03.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.60       52355564 B   ---   --   ---xx   flac  0.6184  01 Titel 01.flac
+     5:21.61       56767916 B   ---   --   ---xx   flac  0.5845  02 Titel 02.flac
+     6:39.58       70520060 B   ---   --   ---xx   flac  0.6051  03 Titel 03.flac
+     8:49.11       93341516 B   ---   --   ---xx   flac  0.6075  04 Titel 04.flac
+     8:29.69       89949932 B   ---   --   ---xx   flac  0.6003  05 Titel 05.flac
+     7:05.09       74991212 B   ---   --   ---xx   flac  0.5999  06 Titel 06.flac
+     8:35.14       90878972 B   ---   --   ---xx   flac  0.4406  07 Titel 07.flac
+     7:52.74       83434892 B   ---   --   ---xx   flac  0.4612  08 Titel 08.flac
+     6:56.47       73492988 B   ---   --   ---xx   flac  0.5026  09 Titel 09.flac
+     6:42.27       70976348 B   ---   --   ---xx   flac  0.5862  10 Titel 10.flac
+    71:29.55      756709400 B                            0.5563  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-03.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:23.68       99473180 B   ---   --   ---xx   flac  0.5448  01 Titel 01.flac
+     7:31.02       79561148 B   ---   --   ---xx   flac  0.5403  02 Titel 02.flac
+     8:08.45       86189084 B   ---   --   ---xx   flac  0.5300  03 Titel 03.flac
+    11:22.61      120448316 B   ---   --   ---xx   flac  0.4712  04 Titel 04.flac
+     5:28.32       57934508 B   ---   --   ---xx   flac  0.5623  05 Titel 05.flac
+    41:54.58      443606236 B                            0.5234  (5 files)
+=================== 
+=================== 
+=================== 

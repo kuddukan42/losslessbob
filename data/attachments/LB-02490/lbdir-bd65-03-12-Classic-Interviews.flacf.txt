@@ -1,0 +1,41 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-03-12-Classic-Interviews.flacf 
+=================== 
+=================== 
+=================== 
+df08530733626bef818e3a90d69e3089  classic.txt
+447470f6f1bf6db8b30097f0f3dc5615  ClassicInterviewsBack.JPG
+3bdd9d9ae3490495e4de6b604c5a7941  ClassicInterviewsCD.jpg
+561174432bd4b95c394687d8f9f8ef06  ClassicInterviewsFront.jpg
+1b13004a7a9c6dc7176f5a9a9e0fb3f0  ClassicInterviewsInner.jpg
+acb54af2af08e282bc33e4ef275d8f91  ClassicInterviewsTray.jpg
+ebd389e1621eae5252e4c0c65f1f82a4  Track01.flac
+7571e643dffc63b0a69968fca8c7ea8e  Track02.flac
+5c93c50bde16a8774a370a0cf88755b2  Track03.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-03-12-Classic-Interviews.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:22654fe9ddc0c0654c00fbe330e1e0e5
+Track02.flac:166f1badae371ac30a710753f54f1425
+Track03.flac:87263d0dc9b021a5b3899a21428276aa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-03-12-Classic-Interviews.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    37:18.20      394830284 B   ---   --   ---xx   flac  0.5114  Track01.flac
+    29:32.65      312733724 B   ---   --   ---xx   flac  0.4892  Track02.flac
+    11:15.64      119220572 B   ---   --   ---xx   flac  0.3855  Track03.flac
+    78:06.74      826784580 B                            0.4849  (3 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,23 @@
+84a13ddd71bd68d319f91ac9c184de8f  01Track01.flac
+727c998a0c9a1b1b96651299d0623abf  02Track02.flac
+4de27e0e8d4aafd19e042c58add63d5a  03Track03.flac
+8d87bc4b2a83aa3640df7ec04d3bc438  04Track04.flac
+253e8624a58dc8488570b226d7e262a4  05Track05.flac
+442ae46a681a4cee0b5d0c7f62888788  06Track06.flac
+45f1622e3f7f5934d79bf395816f9798  07Track07.flac
+08effcb7232b47df35bf021cdc9c50e6  08Track08.flac
+3ee6134fc4399ed0e4d9a2f4dd960385  09Track09.flac
+1a3d9134d9e7406009f8b44622b67ec0  10Track10.flac
+dcbf4b62d2895e7afd13195c5c29d883  11Track11.flac
+d542e19866fd742faf05e3a048592f9c  12Track12.flac
+b4f755a2ed88078614e65007168a854b  13Track13.flac
+7902ad783abf13b47b497010b1f7ec43  Bob Dylan Finjan-Canadian Party Tape 1962 d.ffp
+205f329ca5f27d6272200138841726f8  Bob Dylan Finjan-Canadian Party Tape 1962.md5
+03c144e6c20f827abd5ba615ed777c04  Bob Dylan.doc
+f870a7c60d2dad344d9a52b311bd4fa5  Covers Finjan Tape 1962\back 600 dpi.jpg
+5992c39947bc21f05a7b0756821069e7  Covers Finjan Tape 1962\content.txt
+4639f97de33ad7098a162cf20401b992  Covers Finjan Tape 1962\disc 600 dpi.jpg
+cae51403fb1df801d57a3db0f4590f6b  Covers Finjan Tape 1962\fromt 600 dpi.jpg
+35cf1f5a73ffae0ab5f16b3ae6a90857  Covers Finjan Tape 1962\inside 600 dpi.jpg
+c347d69b388abbabaf2f894c4200465c  Torrent downloaded from Demonoid.com.txt
+423724b813256fa37dab310d2c8aa135  Unknown Artist - Unknown Title.log

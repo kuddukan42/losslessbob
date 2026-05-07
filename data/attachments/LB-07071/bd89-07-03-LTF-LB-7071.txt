@@ -1,0 +1,8 @@
+Bob Dylan, 7/3/89, Milwaukee, Wisconsin, 2CDR
+
+LB-7071, (39min+45min), legendary taper F, cut before To Ramona, encore, Sennheiser MKE 2002 -> cassette master -> DAT - clone ->(digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> Wavelab, levels raised -> cdwave, tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 12/08; has heavy tv band on d2t1; same recording as LB-1937 based on same clapping wavs at end of d2t1; has similar wavs and spectral view except levels are lower on this one and seemed raised by track on that one; that has some small discontinuities near the beginning of d2t3 not on this one; (did not listen to all of this)
+
+1 Early Morning Rain (Gordon Lightfoot), 2 Driftin' Too Far From Shore, 3 John Brown, 4 You're A Big Girl Now, 5 I Dreamed I Saw St. Augustine, 6 Highway 61 Revisited, 7 In The Pines (Huddie "Leadbelly" Leadbetter), 8 It's Alright, Ma (I'm Only Bleeding), 1 To Ramona, 2 Just Like Tom Thumb's Blues, 3 Silvio (Bob Dylan & Robert Hunter), 4 When Did You Leave Heaven? (W. Bullock/R. Whiting), 5 Masters Of War, 6 Like A Rolling Stone, 7 Mr. Tambourine Man, 8 Knockin' On Heaven's Door, 9 Maggie's Farm
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

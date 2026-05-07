@@ -1,0 +1,19 @@
+117c8763d6218589dbe941a764133d3a *d1t01 intro.shn
+c6d6b9d1deaff16da683ebdefb638f14 *d1t02 God Knows.shn
+2f6ba7fc916774259c654d9800c3db2d *d1t03 Forever Young.shn
+a052c10e4191180993d335a76bdbb1f9 *d1t04 Lonesome Day Blues.shn
+f2c4ae3d2507ab17cb22f08a64403bf5 *d1t05 Tryin' To Get To Heaven.shn
+acd77980799612c40da246c3c8c3e6fb *d1t06 Tangled Up In Blue.shn
+78507dc5d570c4d7dc234fc0e3e8f323 *d1t07 Tweedle Dee & Tweedle Dum.shn
+7521efc60a48dcbc5c80930de2f3cd4c *d1t08 Blind Willie McTell.shn
+70a16ca18449fd05b4936d2aeb10c254 *d1t09 Highway 61 Revisited.shn
+bf1c6e3534445dce43ebb99d3ef6dcfc *d1t10 I Shall Be Released.shn
+4c2996a448db00162a6c5c91809635de *d1t11 High Water (For Charley Patton.shn
+004d93c36227b701f7f0b9b29198bccf *d1t12 Just Like A Woman.shn
+daea5483abee3aeadc33e88c2e84d161 *d2t01 Honest With Me.shn
+b080c5535a23a7e854c01e26d2d4cdd0 *d2t02 I Believe In You.shn
+c029fbfe0141c07cbcd8149d93eca8c3 *d2t03 Summer Days.shn
+60a3b1bd73cfa70fd474e55f8bfd083d *d2t04 applause.shn
+39fc77645d11a6d0145107e0ad1522e2 *d2t05 Like A Rolling Stone.shn
+eae938867683777bd6ac7b442b95ae28 *d2t06 band intros.shn
+e9867fd570d1c759e933bcd6da59afe5 *d2t07 All Along The Watchtower.shn

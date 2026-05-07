@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-03-24-mk-a.flacf 
+=================== 
+=================== 
+=================== 
+cf3e1640bce2421acfc8486eef7d29be  1\1 Tangled Up In Blue.flac
+4c5d6c80b505b2b5251b784c0c5b2372  1\2 Most Of The Time.flac
+662c9a2e76785758416f6540b20e3294  1\3 All Along The Watchtower.flac
+7fa1ee6ede178ed778f97cdbfb894366  1\4 Just Like A Woman.flac
+07dd2605b8e268285ce6238e290f4f3c  1\5 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+eeccddd62ea0d67239d1b0b511822f08  1\6 She Belongs To Me.flac
+933253547326ac8522836c372997f087  1\7 Maggie's Farm.flac
+4d906c355b1a132ebaf2c7e694990dbe  1\8 Love Minus Zero - No Limit.flac
+69c8af58e9a84013f86a4e35662bdad0  1\9 Little Moses.flac
+dc160e1a01c53aa7ec9be0abb764c4ab  2\1 Female Rambling Sailor.flac
+a0d8c07f3a6a2dc2531a7aa3a5b2907b  2\2 Desolation Row.flac
+df78d6bf5b102bd655b84e3d9fbabde4  2\3 Cat's In The Well.flac
+e00f16edd119b3170d46cf2e309c15e6  2\4 I'll Remember You.flac
+cce0e068a78ce9709c58e5a6c1249483  2\5 The Times They Are A-Changin'.flac
+b86369acddf22fdc8f8f8093f5f98d27  2\6 Highway 61 Revisited.flac
+3877f4024943b27ea229cc0940753827  2\7 Ballad Of A Thin Man.flac
+194cded736937a6fcc5ab5a674d01a67  2\8 To Be Alone With You.flac
+4c61949dbf9c26c401d511673e43ad58  2\9 Blowin' In The Wind.flac
+e7bc33482f2b0f32afb240e2e8b32b78  bd1992-03-24mk.md5
+93ffcefbe35253dad3fe7e22f143e88a  bd1992-03-24mk_back.jpg
+c5494e56702ad6e8a61821a77e061df7  bd1992-03-24mk_freq.JPG
+bc44417d931254370cadb2cbe60ff31d  bd1992-03-24mk_front.jpg
+32e015e301a4f00c3cfde5ba4348386b  bd1992-03-24mk_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-03-24-mk-a.flacf\2 
+=================== 
+=================== 
+=================== 
+1 Female Rambling Sailor.flac:81f4fbbc23731bb1418222bd5f395720
+2 Desolation Row.flac:5f13cc78d6ce6046a4c4a010e3c97b2c
+3 Cat's In The Well.flac:f263c8e2ed1b4dadd8ed6b59eacff97d
+4 I'll Remember You.flac:eb4c591f6e2a289e8b86a180a921c956
+5 The Times They Are A-Changin'.flac:1b121bf6d618f3a5643821afdcfd154d
+6 Highway 61 Revisited.flac:3ab2297f4f7b9f014146af6eb21c2b55
+7 Ballad Of A Thin Man.flac:3681be69b351e89e013e716cd7882298
+8 To Be Alone With You.flac:2cb43a0b76a0584155045e57539e6a5a
+9 Blowin' In The Wind.flac:37d97ee5f1666db6d50a06713214444c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-03-24-mk-a.flacf\1 
+=================== 
+=================== 
+=================== 
+1 Tangled Up In Blue.flac:bd842dbf5bf672589c79234762239ef6
+2 Most Of The Time.flac:178f7030fba8701b95a6068e2633ea39
+3 All Along The Watchtower.flac:2ed14d13026b5cfd02b03c18b053067f
+4 Just Like A Woman.flac:2c31d0ef59af5773c6ad54ef855b53b8
+5 Stuck Inside Of Mobile With The Memphis Blues Again.flac:06c541ebc1c3b02977e3371c2cf193ac
+6 She Belongs To Me.flac:a5b85e8c73450193f43586a848c9c30b
+7 Maggie's Farm.flac:6125e9a3155585039bbe3543813135a6
+8 Love Minus Zero - No Limit.flac:f2b919d996e2a4fd2b5b8b4452527761
+9 Little Moses.flac:710f37984f546d7a5ba2e986130233cb
+=================== 
+=================== 
+=================== 
+=== shntool for: bd92-03-24-mk-a.flacf\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:48.42       40318028 B   ---   --   ---xx   flac  0.6057  1 Female Rambling Sailor.flac
+     7:19.54       77566652 B   ---   --   ---xx   flac  0.6466  2 Desolation Row.flac
+     4:09.52       44045948 B   ---   --   ---xx   flac  0.6975  3 Cat's In The Well.flac
+     4:45.59       50412812 B   ---   --   ---xx   flac  0.6773  4 I'll Remember You.flac
+     6:36.19       69899132 B   ---   --   ---xx   flac  0.6324  5 The Times They Are A-Changin'.flac
+     5:44.53       60806300 B   ---   --   ---xx   flac  0.7217  6 Highway 61 Revisited.flac
+     5:42.11       60354716 B   ---   --   ---xx   flac  0.7024  7 Ballad Of A Thin Man.flac
+     4:06.58       43530860 B   ---   --   ---xx   flac  0.7223  8 To Be Alone With You.flac
+     4:25.10       46769564 B   ---   --   ---xx   flac  0.6123  9 Blowin' In The Wind.flac
+    46:38.58      493704012 B                            0.6684  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd92-03-24-mk-a.flacf\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:20.10       77639564 B   ---   --   ---xx   flac  0.6448  1 Tangled Up In Blue.flac
+     3:32.33       37474460 B   ---   --   ---xx   flac  0.6041  2 Most Of The Time.flac
+     3:48.37       40306268 B   ---   --   ---xx   flac  0.7244  3 All Along The Watchtower.flac
+     5:27.65       57835724 B   ---   --   ---xx   flac  0.7160  4 Just Like A Woman.flac
+     7:37.73       80786540 B   ---   --   ---xx   flac  0.7154  5 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     3:34.69       37911932 B   ---   --   ---xx   flac  0.6216  6 She Belongs To Me.flac
+     5:41.15       60187724 B   ---   --   ---xx   flac  0.6987  7 Maggie's Farm.flac
+     2:55.22       30921788 B   ---   --   ---xx   flac  0.5967  8 Love Minus Zero - No Limit.flac
+     4:12.07       44469308 B   ---   --   ---xx   flac  0.5589  9 Little Moses.flac
+    44:10.31      467533308 B                            0.6631  (9 files)
+=================== 
+=================== 
+=================== 

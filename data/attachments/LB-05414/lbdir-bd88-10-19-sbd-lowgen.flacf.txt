@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-19-sbd-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+76dfc93974fd1587cb138bb75485c6a2  881019aTrack01.flac
+4dc51cefbecbcbc59eb9a56461d2fe74  881019aTrack02.flac
+66b14fe9067d6364b89ad0c492132bf4  881019aTrack03.flac
+52613fc7dc964339e1f45fb42bf6600e  881019aTrack04.flac
+0666585c60278216f9508d82b8585273  881019aTrack05.flac
+963cb790edd67256d9d0bcf1c632c718  881019aTrack06.flac
+9b952dd5798bf0367b776a92d70b5428  881019aTrack07.flac
+0db04028dfb65f77bce04a753015b0d9  881019aTrack08.flac
+d2cbc50dd914bff82261ae924e6b2e35  881019aTrack09.flac
+58fd285044dcdde812f3f5f2ec049a7d  881019aTrack10.flac
+bfa97deab715e6d054ea7eb4f03a8d13  881019aTrack11.flac
+534be89c74295922acbe6d5d9a7df6ae  881019aTrack12.flac
+bfad1f285427d5ce0cdfd605374e3af1  881019aTrack13.flac
+a83fbcfc58fe4d72b09c384bb5f63914  881019aTrack14.flac
+f9f87d3e62afe66affdb06ed2f2b50bc  881019bTrack01.flac
+1ea733616d11e262c8f05c10139f863a  881019bTrack02.flac
+07cdf38392e431987b4ed0418c0c014e  881019bTrack03.flac
+16a8ace238eb15d43e7ba26d8a72c009  881019bTrack04.flac
+b4dd7a976aa8a7e165ee585485d2e7bf  all.md5
+4e2f0a0082e0e586e68071c7b7078886  bd88-10-19-sbd-lowgen-LB-5414.txt
+372af3477d6c0ee218156c464e5684eb  info.txt
+5c842c743eab71e0e61e699e666e5b31  lbdir-bd88-10-19-sbd-lowgen.flacf.md5
+edab8b886de0b782a3e1c98e58add2b1  lbdir-bd88-10-19-sbd-lowgen.flacf.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-19-sbd-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+881019aTrack01.flac:0171f7cf13b3853d4b2faeb2b71e7168
+881019aTrack02.flac:9fd8f55f66c072d1a40862dadfc4f204
+881019aTrack03.flac:ef30ee857bf33808e82e1087c1dde26d
+881019aTrack04.flac:6413ad29c5260ef0bd8547c4fb7531d4
+881019aTrack05.flac:0b5e61a3251fa208763dba3f256c13f4
+881019aTrack06.flac:f1b475a2761799e0d99a35bc27cc0e11
+881019aTrack07.flac:9ec4d0762dfbb207e1b78f805e4d66b3
+881019aTrack08.flac:b33e7a66a932944f707b0e528e366ffe
+881019aTrack09.flac:b5e892a8317ef7fe1a743fc1f78b8bb3
+881019aTrack10.flac:7216c6d70a84687ff32d78af1d50316b
+881019aTrack11.flac:c8a31170bb58c1f7b29f1c5eb7bfb811
+881019aTrack12.flac:ffa81d60288a662edb173bef8ccfbf5b
+881019aTrack13.flac:5901b45d83c98dbfa37c1b282eab2fca
+881019aTrack14.flac:7428e17bb2ae5f9b44bb9e3f51251872
+881019bTrack01.flac:9d633d3dc8d5e9e8ab2b945860f329ed
+881019bTrack02.flac:29d9ce78bc13fecd4cc317d6cf82faab
+881019bTrack03.flac:021ae19948581751903f793d73ad8ebf
+881019bTrack04.flac:ecd2c0ab655f1be08422cd6c1803d012
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-19-sbd-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:41.72       39153788 B   ---   --   ---xx   flac  0.3278  881019aTrack01.flac
+     4:08.46       43855436 B   ---   --   ---xx   flac  0.3244  881019aTrack02.flac
+     5:42.43       60429980 B   ---   --   ---xx   flac  0.3283  881019aTrack03.flac
+     6:48.47       72081788 B   ---   --   ---xx   flac  0.3323  881019aTrack04.flac
+     6:03.74       64207292 B   ---   --   ---xx   flac  0.3183  881019aTrack05.flac
+     5:57.37       63061868 B   ---   --   ---xx   flac  0.3447  881019aTrack06.flac
+     4:37.56       48994556 B   ---   --   ---xx   flac  0.3225  881019aTrack07.flac
+     7:45.42       82124828 B   ---   --   ---xx   flac  0.2931  881019aTrack08.flac
+     6:35.31       69750956 B   ---   --   ---xx   flac  0.3125  881019aTrack09.flac
+     4:25.04       46755452 B   ---   --   ---xx   flac  0.3076  881019aTrack10.flac
+     4:36.68       48846380 B   ---   --   ---xx   flac  0.3099  881019aTrack11.flac
+     3:56.29       41698652 B   ---   --   ---xx   flac  0.3510  881019aTrack12.flac
+     5:20.14       56480972 B   ---   --   ---xx   flac  0.3376  881019aTrack13.flac
+     6:48.54       72098252 B   ---   --   ---xx   flac  0.3527  881019aTrack14.flac
+     4:16.03       45165500 B   ---   --   ---xx   flac  0.3023  881019bTrack01.flac
+     5:27.56       57814556 B   ---   --   ---xx   flac  0.3141  881019bTrack02.flac
+     5:12.63       55185020 B   ---   --   ---xx   flac  0.3415  881019bTrack03.flac
+     1:12.20       12747884 B   ---   --   ---xx   flac  0.3522  881019bTrack04.flac
+    92:38.09      980453160 B                            0.3248  (18 files)
+=================== 
+=================== 
+=================== 

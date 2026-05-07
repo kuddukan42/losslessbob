@@ -1,0 +1,152 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd83-One-More-Layer-Of-Skin-a.flacf 
+=================== 
+=================== 
+=================== 
+dc919bd3ac1694ba9993f88994b864e8  bd-hollow-horn-Vol-6-One-More-Layer-Of-Skin-LB-3311.txt
+1624e7eb28baec6c9acc8ad736ab73e3  Bob Dylan Hollow Horn Volume 6.txt
+6499a0c271711bf638c1623e10023462  HHRA 6-1\01 Tell Me.flac
+5bd4668ec52b927424f842e2fe681daf  HHRA 6-1\02 Someone's Got A Hold Of My Heart.flac
+8e222f8063951e404c7817222b5b0c5b  HHRA 6-1\03 Foot Of Pride.flac
+75b7b7210768df697a524c273de2c883  HHRA 6-1\04 Julius And Ethel.flac
+2a8f280505c02463b5bd746c108e5883  HHRA 6-1\05 This Was My Love.flac
+b70d052b8a4928f7f790d792f27d71ed  HHRA 6-1\06 Angel Flying Too Close To The Ground.flac
+9a9fc0600ca4ae025fe58c7d12b9894c  HHRA 6-1\07 Union Sundown.flac
+678edbb131bbbc90bbf1c52604d57c25  HHRA 6-1\08 Clean Cut Kid.flac
+2e6a2a4d5b29da8f4c2c00d6ae3e1e6d  HHRA 6-1\09 Sweetheart Like You.flac
+281a3f0ff4430689710d80d2e87d1d23  HHRA 6-1\10 Lord Protect My Child.flac
+c396a1bd23cc1f8e7d95f3132782493c  HHRA 6-1\11 Blind Willie McTell (1).flac
+e14cd7ab3b8b3fd095550b8f46683cbb  HHRA 6-1\12 Tell Me (2).flac
+101a77d34530ea882c56523de221ff51  HHRA 6-1\13 Someone's Got A Hold Of My Heart (2).flac
+bf413bb9fd549b1b3441b0d8406f41ff  HHRA 6-1\14 This Was My Love.flac
+1dedd8afd0dddae0990a52b4c1b17545  HHRA 6-1\15 Blind Willie McTell (2).flac
+7d79eaaa4d392a565e8c757276ec2869  HHRA 6-1\16 Dark Groove.flac
+2893874ababaf3449401f831b506136f  HHRA 6-1\17 Don't Fly Until It's Safe.flac
+e24f5c56008efe17424e8d79b1e13611  HHRA 6-2\01 Jokerman.flac
+ee226266a7599c5b1f8097ed98a45b62  HHRA 6-2\02 Sweetheart Like You (1).flac
+b4dce917de9ff21735ded2b660e9a30a  HHRA 6-2\03 License To Kill.flac
+8a5382c75626c7dee24986d3d006ddfc  HHRA 6-2\04 Man Of Peace.flac
+87fea77c8d4b79fa8164b95f2fa23118  HHRA 6-2\05 Union Sundown.flac
+50ad681a4f81433a417078ed2dee4f93  HHRA 6-2\06 I And I.flac
+6b7236336ef37b910c5153afba97eee7  HHRA 6-2\07 Don't Fall Apart On Me Tonight.flac
+7272766d26fbc42ea15efd10ae700b03  HHRA 6-2\08 Death Is Not The End.flac
+67ef73b687d2afbe5a42765cf3f4ec47  HHRA 6-2\09 Angel Flying Too Close To The Ground.flac
+ada55045d26fdedba5f54516be560960  HHRA 6-2\10 Oh Suzannah.flac
+e793932da48520fe6453250e898d41fe  HHRA 6-2\11 Sweetheart Like You (take 1).flac
+dec0899b325df1dd83038387f04975ea  HHRA 6-2\12 Sweetheart Like You (take 2).flac
+ac67e85b07f4488a94a090a746ff9f14  HHRA 6-2\13 Sweetheart Like You (take 3).flac
+dff3e240c5ed054210cf415886418aa4  HHRA 6-2\14 Sweetheart Like You (take 4).flac
+02d6fdb4154a6b14977329330e8ee2db  HHRA 6-2\15 Sweetheart Like You (take 5).flac
+bb79cbb476b23fa324209de145aec258  HHRA 6-2\16 Sweetheart Like You (take 6).flac
+a72fb71f2d91e161759e64342995e3fd  HHRA 6-2\17 Sweetheart Like You (take 7).flac
+53418dba407d9970bddf556a6a7b457a  HHRA 6-2\18 I And I (filler).flac
+76444b6b385029b9b0bd97f9fef8d913  hollow horn_series.txt
+d9aa52b1d5a0d2140565e8619bace3f3  hollow horn_setlist.txt
+7fd5c8507ab3d8b627f6195926600d29  vol 6 - One More Layer Of Skin.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd83-One-More-Layer-Of-Skin-a.flacf\hhra 6-1 
+=================== 
+=================== 
+=================== 
+01 tell me.flac:d211787712fa67282d0995ee2613d23a
+02 someone's got a hold of my heart.flac:e3a1d3e190690de0935ebedd9fa2cb3f
+03 foot of pride.flac:5f24d6d3b6f98dcb9239138d90879d42
+04 julius and ethel.flac:ad2c3e098d3a11cca75821164031b993
+05 this was my love.flac:44e074a00f38359d1c81b0299e4e7f91
+06 angel flying too close to the ground.flac:30f4db5314fb7559fb47a5aca87d8946
+07 union sundown.flac:c7546f0fc0bda4a871ddb31643662f8b
+08 clean cut kid.flac:824275b56d99a0a226f8b26b3d9f01a5
+09 sweetheart like you.flac:2a58590f186ca4659349625bed28afcc
+10 lord protect my child.flac:f7b031c93d66f6637922e394a80b21c1
+11 blind willie mctell (1).flac:da28c4bede4b2d860f7b2453c83ac146
+12 tell me (2).flac:abae52ba8f7162b592dc422a993bb30f
+13 someone's got a hold of my heart (2).flac:43e1a4820851f73be8864b85874553b4
+14 this was my love.flac:e2a967b3d41939336abb73ffe79165f8
+15 blind willie mctell (2).flac:cfd0563af11eba2fd885c0597122d90f
+16 dark groove.flac:c5ad903f5d8519ab8eb27af97b7603f0
+17 don't fly until it's safe.flac:8f1d073e0d120d09632525c37fa2ea1e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd83-One-More-Layer-Of-Skin-a.flacf\hhra 6-2 
+=================== 
+=================== 
+=================== 
+01 jokerman.flac:2bc804d3b16be7e95d2285270684116f
+02 sweetheart like you (1).flac:0d60f2f5638bcfb01f16f9375266ae8a
+03 license to kill.flac:76317fad25999479ae06bba84e22f24f
+04 man of peace.flac:efd615316e24210574f039808b2744a4
+05 union sundown.flac:c32b212848ea88595963224711fe59ed
+06 i and i.flac:1bf525238cecec954683f5d54f7d989f
+07 don't fall apart on me tonight.flac:51cc514266940a7e63cf38b799fa4d3b
+08 death is not the end.flac:a12b1a60c309a53141617edb5ce721d1
+09 angel flying too close to the ground.flac:3fe6379e96e6d3a826fae241fb25f314
+10 oh suzannah.flac:d57cfaf6f6334609b88e9087f119a0ce
+11 sweetheart like you (take 1).flac:1756adc2c59f24bcf117153d1108dade
+12 sweetheart like you (take 2).flac:eb9fb750460ab66333f41334113ba8d8
+13 sweetheart like you (take 3).flac:ee746177f95a7a1cfead169e82cf4421
+14 sweetheart like you (take 4).flac:a28215685d44d6b6f02e12e909b9ed4d
+15 sweetheart like you (take 5).flac:b8ec4de211bb3103c257272f21a4a202
+16 sweetheart like you (take 6).flac:5123a9f5896777541af6021fb6de682f
+17 sweetheart like you (take 7).flac:a33e23efe47a406502f9bc50a970f7f7
+18 i and i (filler).flac:652a4e1a6c55634a9eed175a61e7a93f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd83-One-More-Layer-Of-Skin-a.flacf\hhra 6-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.68       47964380 B   ---   --   ---xx   flac  0.6065  01 Tell Me.flac
+     4:29.63       47599820 B   ---   --   ---xx   flac  0.6474  02 Someone's Got A Hold Of My Heart.flac
+     6:02.17       63896828 B   ---   --   ---xx   flac  0.6185  03 Foot Of Pride.flac
+     4:39.07       49232108 B   ---   --   ---xx   flac  0.6411  04 Julius And Ethel.flac
+     3:44.31       39586556 B   ---   --   ---xx   flac  0.6352  05 This Was My Love.flac
+     4:38.43       49140380 B   ---   --   ---xx   flac  0.6427  06 Angel Flying Too Close To The Ground.flac
+     5:06.28       54044300 B   ---   --   ---xx   flac  0.6569  07 Union Sundown.flac
+     6:48.03       71978300 B   ---   --   ---xx   flac  0.5027  08 Clean Cut Kid.flac
+     4:13.14       44662172 B   ---   --   ---xx   flac  0.6054  09 Sweetheart Like You.flac
+     4:03.01       42867596 B   ---   --   ---xx   flac  0.5534  10 Lord Protect My Child.flac
+     5:51.51       62036396 B   ---   --   ---xx   flac  0.5761  11 Blind Willie McTell (1).flac
+     4:22.73       46388540 B   ---   --   ---xx   flac  0.6322  12 Tell Me (2).flac
+     5:03.48       53562140 B   ---   --   ---xx   flac  0.6169  13 Someone's Got A Hold Of My Heart (2).flac
+     4:08.34       43827212 B   ---   --   ---xx   flac  0.6256  14 This Was My Love.flac
+     4:43.24       49977692 B   ---   --   ---xx   flac  0.6271  15 Blind Willie McTell (2).flac
+     2:47.24       29515292 B   ---   --   ---xx   flac  0.6202  16 Dark Groove.flac
+     3:14.04       34231052 B   ---   --   ---xx   flac  0.6008  17 Don't Fly Until It's Safe.flac
+    78:28.08      830510764 B                            0.6091  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd83-One-More-Layer-Of-Skin-a.flacf\hhra 6-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:20.55       67161404 B   ---   --   ---xx   flac  0.6182  01 Jokerman.flac
+     4:08.43       43848380 B   ---   --   ---xx   flac  0.5345  02 Sweetheart Like You (1).flac
+     3:29.36       36952316 B   ---   --   ---xx   flac  0.6152  03 License To Kill.flac
+     6:34.70       69666284 B   ---   --   ---xx   flac  0.6598  04 Man Of Peace.flac
+     6:33.26       69386396 B   ---   --   ---xx   flac  0.5273  05 Union Sundown.flac
+     4:56.39       52306172 B   ---   --   ---xx   flac  0.5935  06 I And I.flac
+     5:47.11       61236716 B   ---   --   ---xx   flac  0.6213  07 Don't Fall Apart On Me Tonight.flac
+     5:01.25       53155244 B   ---   --   ---xx   flac  0.4894  08 Death Is Not The End.flac
+     3:59.21       42209036 B   ---   --   ---xx   flac  0.5699  09 Angel Flying Too Close To The Ground.flac
+     3:21.28       35522300 B   ---   --   ---xx   flac  0.5075  10 Oh Suzannah.flac
+     3:51.30       40819004 B   ---   --   ---xx   flac  0.5992  11 Sweetheart Like You (take 1).flac
+     2:58.67       31556828 B   ---   --   ---xx   flac  0.5206  12 Sweetheart Like You (take 2).flac
+     3:57.59       41945612 B   ---   --   ---xx   flac  0.5612  13 Sweetheart Like You (take 3).flac
+     3:37.32       38354108 B   ---   --   ---xx   flac  0.5595  14 Sweetheart Like You (take 4).flac
+     4:53.65       51838124 B   ---   --   ---xx   flac  0.5269  15 Sweetheart Like You (take 5).flac
+     3:27.41       36611276 B   ---   --   ---xx   flac  0.5616  16 Sweetheart Like You (take 6).flac
+     1:04.28       11355500 B   ---   --   ---xx   flac  0.5167  17 Sweetheart Like You (take 7).flac
+     5:32.62       58710668 B   ---   --   ---xx   flac  0.6980  18 I And I (filler).flac
+    79:36.63      842635368 B                            0.5792  (18 files)
+=================== 
+=================== 
+=================== 

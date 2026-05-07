@@ -1,0 +1,8 @@
+Bob Dylan, 6/30/92, Dunkerque, France, Cote d'Opale, Kursaal, 2CDR
+
+LB-4526, (65min+49min), version "b"; Lineage: CD'rs received in trade -> EAC -> Flac level 8 -> Maketorrent 7 -> uTorrent->Hungercity, No artwork unfortunately; bittorrent download 02/07 same recording as version "a" LB-764 and IAR LB-1597  based on same clapping at end of d1t9; this is full spectrum where version "a" LB-764 is not; in comparison to  IAR LB-1597 that one seems ot have a narrow band at 15k reduced and otherwise the high end increased a little; in comparison to LB-763 that one is warmer but not as bright on vocals; (did not listen to all of this)
+
+Disc One, 1. Don't Let Your Deal Go Down (trad.), 2. You're A Big Girl Now, 3. Seeing The Real You At Last, 4. Just Like A Woman, 5. Tangled Up In Blue, 6. What Good Am I?, 7. Maggie's Farm, 8. Love Minus Zero/No Limit, 9. The Girl On The Green Briar Shore (trad.), 10. A Hard Rain's A-Gonna Fall, 11. It's All Over Now, Baby Blue, Disc Two:, 1. Everything Is Broken, 2. Idiot Wind, 3. I And I, 4. Highway 61 Revisited, 5. Silvio (Bob Dylan & Robert Hunter), 6. All Along The Watchtower, 7. Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

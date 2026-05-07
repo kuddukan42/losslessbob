@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-11-12-NTA.flacf 
+=================== 
+=================== 
+=================== 
+8dcac40b0f642ddb82653b8f7b65ab10  bd-19941112-NewOrleans.ffp
+e2d9a99dbdfa0331de942cc05e26f588  bd-19941112-NewOrleans.md5.bad
+95cb263e52d3317a40ec4bce7cdff697  bd1994-11-12-d1t01.flac
+0f51becd15052c98c7210d9148f16dcb  bd1994-11-12-d1t02.flac
+ba6c79d88bba0442093e6ff802ed9e68  bd1994-11-12-d1t03.flac
+beed2b386c2ac8abac40ad7621b4906e  bd1994-11-12-d1t04.flac
+f0c9a6680a8e5424f2f47862608ba8b0  bd1994-11-12-d1t05.flac
+9ea3b7ff5b1f09c54b33f291c8059456  bd1994-11-12-d1t06.flac
+716d00f7993060dc33d36fd2c2b96888  bd1994-11-12-d1t07.flac
+81bd967a90c2fd6324a9f21f2af5831c  bd1994-11-12-d1t08.flac
+d5c356a83c57d2529cf287e31f19e0e5  bd1994-11-12-d1t09.flac
+ab26a4ea09b3f6c021692bdd4ed12498  bd1994-11-12-d1t10.flac
+22e7cdad6f74db4937afd4cf62614634  bd1994-11-12-d2t01.flac
+7f4393abf07e783eb3bf9841a9313c96  bd1994-11-12-d2t02.flac
+4285a9d9eb3f1eb349da852420f8ebab  bd1994-11-12-d2t03.flac
+0f71a7bd4a8fcdac0d509421efc92abf  bd1994-11-12-d2t04.flac
+7e2d3e1caeb8e7addc5e7395bd254726  bd1994-11-12-d2t05.flac
+4cd588e85fa3923fb8028c7e15796f7b  bd1994-11-12-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-11-12-NTA.flacf 
+=================== 
+=================== 
+=================== 
+bd1994-11-12-d1t01.flac:d51f381d06c54e8348438208bdfca75b
+bd1994-11-12-d1t02.flac:30acd4f123d9a28582d56adc83ce4c9b
+bd1994-11-12-d1t03.flac:b71dfb5a90df7ababa61e48e8273b20e
+bd1994-11-12-d1t04.flac:959f9be697ad738620e9df14291da52c
+bd1994-11-12-d1t05.flac:94d1e4324e7d49af54929bf7239a4011
+bd1994-11-12-d1t06.flac:702e4259b59e36f40559cc4b9dff4067
+bd1994-11-12-d1t07.flac:4506c8590be98623245df730930cf500
+bd1994-11-12-d1t08.flac:d847a8c27211cb1d3baf0c665b803feb
+bd1994-11-12-d1t09.flac:a6e33217353043f22f0e171ab2faa6b3
+bd1994-11-12-d1t10.flac:a5da4c8f760e27e27cec635677bab235
+bd1994-11-12-d2t01.flac:3a08ba4d3d23c14b9ec2d31aea0fde52
+bd1994-11-12-d2t02.flac:a76ad456c4ff0d2c749a2e18cb4ab23b
+bd1994-11-12-d2t03.flac:8eb2838176889d5f2a37e64c0abefef7
+bd1994-11-12-d2t04.flac:12c40784902b915987a2634d36166a70
+bd1994-11-12-d2t05.flac:503c9d343d2e2ed1c777e8be0023da96
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-11-12-NTA.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.07        7778108 B   ---   --   ---xx   flac  0.3925  bd1994-11-12-d1t01.flac
+     7:27.14       78883772 B   ---   --   ---xx   flac  0.4704  bd1994-11-12-d1t02.flac
+     5:59.02       63332348 B   ---   --   ---xx   flac  0.4696  bd1994-11-12-d1t03.flac
+     6:07.28       64804700 B   ---   --   ---xx   flac  0.4851  bd1994-11-12-d1t04.flac
+     6:58.54       73862252 B   ---   --   ---xx   flac  0.4311  bd1994-11-12-d1t05.flac
+     9:12.51       97492796 B   ---   --   ---xx   flac  0.4640  bd1994-11-12-d1t06.flac
+     5:55.30       62692604 B   ---   --   ---xx   flac  0.4191  bd1994-11-12-d1t07.flac
+     5:58.68       63311180 B   ---   --   ---xx   flac  0.3662  bd1994-11-12-d1t08.flac
+    10:12.39      108048572 B   ---   --   ---xx   flac  0.3698  bd1994-11-12-d1t09.flac
+     4:46.35       50532764 B   ---   --   ---xx   flac  0.4158  bd1994-11-12-d1t10.flac
+     8:08.39       86174972 B   ---   --   ---xx   flac  0.4671  bd1994-11-12-d2t01.flac
+     6:08.40       65009324 B   ---   --   ---xx   flac  0.4676  bd1994-11-12-d2t02.flac
+     9:36.06      101620556 B   ---   --   ---xx   flac  0.4819  bd1994-11-12-d2t03.flac
+     8:38.25       91434044 B   ---   --   ---xx   flac  0.4608  bd1994-11-12-d2t04.flac
+     8:41.15       91939724 B   ---   --   ---xx   flac  0.4020  bd1994-11-12-d2t05.flac
+   104:35.03     1106917716 B                            0.4405  (15 files)
+=================== 
+=================== 
+=================== 

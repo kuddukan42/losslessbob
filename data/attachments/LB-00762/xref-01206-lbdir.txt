@@ -1,0 +1,71 @@
+===================
+===================
+===================
+=== md5 for: bd97-08-08-d.flacf
+===================
+===================
+===================
+2d4c6bd62709c8b8193e04f04d417a40 *d1t1 Absolutely Sweet Marie.flac
+3996eb8794b598523c75b3fbd950a00a *d1t2 If Not For You.flac
+87abee7fcf6ee02eee43aa28842b456e *d1t3 It Takes A Lot To Laugh.flac
+9561e2968132480ef9002b7b9f21094e *d1t4 Tough Mama.flac
+1347aa6b6af8fee5d24a634572c81fdd *d1t5 Silvio.flac
+9c43986daec71ccc1a347ce4faa5af99 *d1t6 It's All Over Now, Baby Blue.flac
+95f10965e91614373a55f58135c8ca92 *d1t7 Masters Of War.flac
+37844950df8b1a88fc5e20ab3e2cea6e *d1t8 Roving Gambler.flac
+f5cd67e878c1dcdece628816a30d4f6c *d2t1 God Knows.flac
+204d38abddd3a76b61aa89f8aaf3752a *d2t2 You're A Big Girl Now.flac
+1c00a82ecbec69db80393afd9142f050 *d2t3 Highway 61 Revisited.flac
+e0f96bee6eb5e1e640e9928d0b384ba7 *d2t4 Like A Rolling Stone .flac
+2393175975338449484ad6147ea43b88 *d2t5 Hattie Carroll .flac
+e80db032d9d0fcb9837e3ed1aeea1e42 *d2t6 RDW 12&35 .flac
+1ce2960e45b2fcf4adb7d32b6e5aede3 *fingerprint.ffp.txt
+a69f0a3da45b0b52d7ff5f43d5fcc120 *info.txt
+bb8b3ca59e70616e6575968ac21a7426 *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd97-08-08-d.flacf
+===================
+===================
+===================
+d1t1 Absolutely Sweet Marie.flac:abd9d9d150ca8ce77bfe0da16948d3d2
+d1t2 If Not For You.flac:47eb99a03e1b1b2559d32fec6d369eb6
+d1t3 It Takes A Lot To Laugh.flac:7661dd0a78f3ca5b87e2532470e3049e
+d1t4 Tough Mama.flac:c657b84f9ceeea43cbcdd9a737a9d1f5
+d1t5 Silvio.flac:1ca006d56e2200a38e5a2a67f4a83a99
+d1t6 It's All Over Now, Baby Blue.flac:d28d12dce1580f093785ff856f5da781
+d1t7 Masters Of War.flac:ec5cc7337e9159264f5665b8ab97b05a
+d1t8 Roving Gambler.flac:d0a5bf756bcb1853d6bab4cbca5ce03e
+d2t1 God Knows.flac:0cb59ec2c366c9d8895d7b6d5a3baee2
+d2t2 You're A Big Girl Now.flac:b5752d43bf1d5653dbb9babb3abd30f2
+d2t3 Highway 61 Revisited.flac:948a09cd969857b93ea69cd06d4c3c7c
+d2t4 Like A Rolling Stone .flac:a9e1ee1e578f726db7bc8bd85a96efec
+d2t5 Hattie Carroll .flac:3d3ba1571f3bf7657f2a0c430c4c7174
+d2t6 RDW 12&35 .flac:a79fc3f0dc193afb5087d4b6c9eb9acf
+===================
+===================
+===================
+=== shntool len for: bd97-08-08-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:26.53       57631100 B   ---   --   ---xx   flac  0.6688  d1t1 Absolutely Sweet Marie.flac
+     4:49.58       51116060 B   ---   --   ---xx   flac  0.6915  d1t2 If Not For You.flac
+     6:05.53       64510700 B   ---   --   ---xx   flac  0.6656  d1t3 It Takes A Lot To Laugh.flac
+     4:51.60       51473564 B   ---   --   ---xx   flac  0.6769  d1t4 Tough Mama.flac
+     7:20.69       77778332 B   ---   --   ---xx   flac  0.6725  d1t5 Silvio.flac
+     9:03.40       95879324 B   ---   --   ---xx   flac  0.6550  d1t6 It's All Over Now, Baby Blue.flac
+     7:17.39       77178572 B   ---   --   ---xx   flac  0.6055  d1t7 Masters Of War.flac
+     4:53.27       51747940 B   -b-   --   ---xx   flac  0.6443  d1t8 Roving Gambler.flac
+     5:29.65       58189460 B   -b-   --   ---xx   flac  0.6580  d2t1 God Knows.flac
+     7:31.00       79556444 B   ---   --   ---xx   flac  0.6531  d2t2 You're A Big Girl Now.flac
+     7:11.44       76131932 B   ---   --   ---xx   flac  0.6820  d2t3 Highway 61 Revisited.flac
+     8:32.29       90385052 B   ---   --   ---xx   flac  0.6993  d2t4 Like A Rolling Stone .flac
+     9:07.64       96641372 B   ---   --   ---xx   flac  0.6253  d2t5 Hattie Carroll .flac
+     5:50.50       61857516 B   -b-   --   ---xx   flac  0.7264  d2t6 RDW 12&35 .flac
+    93:32.51      990077368 B                            0.6642  (14 files)
+===================
+===================
+===================

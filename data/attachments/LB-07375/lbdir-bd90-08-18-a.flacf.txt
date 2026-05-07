@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-08-18-a.flacf 
+=================== 
+=================== 
+=================== 
+9b30c010a0d240c7c2f6dd46289c5f5e  CD1\01 Maggie's farm.flac
+931a5d707bea0e3782f95ed30c3231c2  CD1\02 Shelter from the storm.flac
+c87ef38d799c19eb4af990c17e549024  CD1\03 Sitting on the dock of the bay.flac
+c742ff02c632ebe2eb1523ee704756cb  CD1\04 Stuck inside of Mobile with the Memphis blues again.flac
+483aa7278f9ba4d0e42ac1a04494da7a  CD1\05 Masters of war.flac
+d99f6ce4d7155fe7f765a4f749f6ed0a  CD1\06 Gotta serve somebody.flac
+2b0b76c89a1ef3839ccc3e6ca6bb9785  CD1\07 Man of constant sorrow.flac
+e9bc05d300ee81551af912ba0ae0c363  CD1\08 Gates of Eden.flac
+533b10fc367a0137d7a33a5ebb3319b4  CD1\09 Don't think twice, it's all right.flac
+4d1596dad2eb99c7f5d289fb953a03ae  CD1\FLAC CD1.md5
+118c02d32f8d95d8fc6834cc014337ce  CD2\10 It's alright, ma (I'm only bleeding).flac
+234bc78f1106b7758bce9fd9ad3e88a6  CD2\11 Everything is broken.flac
+c2600808677d99915ba09a7fc80b5b31  CD2\12 I believe in you.flac
+294d5ce2001415e95aa3936c3def9d04  CD2\13 All along the watchtower.flac
+bb44867ce8904f81616f817ae1c57dde  CD2\14 Shooting star.flac
+09625aac92dca1c4c7217020ffba0e61  CD2\15 I shall be released.flac
+1bf73bd024da71ca464cbeee302886b6  CD2\16 Like a rolling stone.flac
+72a8ef08f9ba43dc7f8c7308a6d22525  CD2\17 Blowin' in the wind.flac
+18dde4e49c9e9326263533129740344a  CD2\18 Highway 61 revisited.flac
+a53aee2f31dda66bd69c681bcc46f9ae  CD2\FLAC CD2.md5
+5a2145f623d70e831c2350d80d537fb3  Info\1990-08-18 Champs de Brionne Music Theater, George, Washington.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-08-18-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Maggie's farm.flac:0bd9b2bb2fc3554f9532194b1d567bba
+02 Shelter from the storm.flac:433a7aed07ff8bda659820a50bcdb7be
+03 Sitting on the dock of the bay.flac:21f87391140e1a144ec8287039f2e2eb
+04 Stuck inside of Mobile with the Memphis blues again.flac:c812ce60eac05620a85f9c88683d73c9
+05 Masters of war.flac:a5788a233e351ce879fa09efb34a0922
+06 Gotta serve somebody.flac:8bdc41bc9ff1a927b1d16e32087b37b1
+07 Man of constant sorrow.flac:5af0b76d4dbba2b26755d2e62a59bab4
+08 Gates of Eden.flac:ff397f01ef959ad5cb24325e870574ea
+09 Don't think twice, it's all right.flac:e7c394a6d86ccec0049d0d88aa5e9adb
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-08-18-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 It's alright, ma (I'm only bleeding).flac:1a946ed7ef2e9f164e48c63427aecef0
+11 Everything is broken.flac:673c67b6a9e5da4aa199b0abf0429d3b
+12 I believe in you.flac:dd54500d0623940e8afaeb397c2212b4
+13 All along the watchtower.flac:4a65c43fe2bdcaae4c4c92cc2295de1f
+14 Shooting star.flac:afe9ab19841ad429ce8291ac8177bdda
+15 I shall be released.flac:2da620859a49e17cdec9e1accf402dcb
+16 Like a rolling stone.flac:94acef205bed0939c2948c047b9aa68d
+17 Blowin' in the wind.flac:2a3c98b3d0671cdb4c8348e9e5be013e
+18 Highway 61 revisited.flac:f76798909dd7c55f7019c001bd58bae0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-08-18-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.37       37483868 B   ---   --   ---xx   flac  0.6341  01 Maggie's farm.flac
+     4:21.29       46108652 B   ---   --   ---xx   flac  0.6396  02 Shelter from the storm.flac
+     3:56.42       41729228 B   ---   --   ---xx   flac  0.6428  03 Sitting on the dock of the bay.flac
+     6:25.27       67977548 B   ---   --   ---xx   flac  0.6618  04 Stuck inside of Mobile with the Memphis blues again.flac
+     4:08.33       43824860 B   ---   --   ---xx   flac  0.6641  05 Masters of war.flac
+     4:24.56       46701356 B   ---   --   ---xx   flac  0.6422  06 Gotta serve somebody.flac
+     2:47.44       29562332 B   ---   --   ---xx   flac  0.6215  07 Man of constant sorrow.flac
+     4:05.63       43366220 B   ---   --   ---xx   flac  0.6082  08 Gates of Eden.flac
+     5:03.61       53592716 B   ---   --   ---xx   flac  0.5824  09 Don't think twice, it's all right.flac
+    38:46.17      410346780 B                            0.6339  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-08-18-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:44.48       60794540 B   ---   --   ---xx   flac  0.5973  10 It's alright, ma (I'm only bleeding).flac
+     3:49.38       40485020 B   ---   --   ---xx   flac  0.6472  11 Everything is broken.flac
+     4:24.15       46604924 B   ---   --   ---xx   flac  0.6341  12 I believe in you.flac
+     3:40.41       38904476 B   ---   --   ---xx   flac  0.6757  13 All along the watchtower.flac
+     2:45.30       29176604 B   ---   --   ---xx   flac  0.6333  14 Shooting star.flac
+     4:35.45       48615884 B   ---   --   ---xx   flac  0.6483  15 I shall be released.flac
+     7:13.15       76416524 B   ---   --   ---xx   flac  0.6847  16 Like a rolling stone.flac
+     3:27.68       36674780 B   ---   --   ---xx   flac  0.5897  17 Blowin' in the wind.flac
+     5:17.21       55968236 B   ---   --   ---xx   flac  0.6735  18 Highway 61 revisited.flac
+    40:58.21      433640988 B                            0.6457  (9 files)
+=================== 
+=================== 
+=================== 

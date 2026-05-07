@@ -1,0 +1,15 @@
+a48a756c1c5e14496600db7ee4bba6d8  [shntool]  zimi97-12-01d1t01.shn
+b02e93f7de72526b054d891160c3a88c  [shntool]  zimi97-12-01d1t02.shn
+1a8ee6db7ae49b2154930c0cb6dbfc50  [shntool]  zimi97-12-01d1t03.shn
+42c433d80a9e63a2d3d614be24684398  [shntool]  zimi97-12-01d1t04.shn
+5d9d7250b64711d0f59d44936b47be1f  [shntool]  zimi97-12-01d1t05.shn
+6e42ea25e3504cd0ad36f5f3de6578d7  [shntool]  zimi97-12-01d1t06.shn
+28281e3f276ac41244224f2f4bf72475  [shntool]  zimi97-12-01d1t07.shn
+63f0ac3398cd957ac43a3dc2e932afe3  [shntool]  zimi97-12-01d1t08.shn
+ea763d2d1d64808db7f90544342c6df0  [shntool]  zimi97-12-01d1t09.shn
+a7634ae6e5bd48869c39b881e8e81995  [shntool]  zimi97-12-01d2t01.shn
+3defa452af51ad491b99a8cae6cccc14  [shntool]  zimi97-12-01d2t02.shn
+b6e2ebaed045f76b516845dc90556884  [shntool]  zimi97-12-01d2t03.shn
+246e4e8e0bc7a0b1db662ad9efe96ea6  [shntool]  zimi97-12-01d2t04.shn
+82d3cf4699527c0f0c328afd22f6ddf8  [shntool]  zimi97-12-01d2t05.shn
+ffbcf31cf0936b710d2dcbf9f8f49e89  [shntool]  zimi97-12-01d2t06.shn

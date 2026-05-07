@@ -1,0 +1,45 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-05-05-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+9853b70ff203f4cb1bd54385eb73174f  660505Track01.flac
+6edcc2cc2c62a781e01b91ced4c8c10d  660505Track02.flac
+cf877bb0066f0174346c61b627d01110  660505Track03.flac
+0c82ce4c63d77265de2e2fc10bac24ee  660505Track04.flac
+610c96b79f617fec217bba0b6698e4d9  660505Track05.flac
+416e788448187efb89f8753d6012d6d9  660505Track06.flac
+9f28b27bc9f03b385cf745e68676e2e8  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-05-05-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+660505Track01.flac:38dbd1ad08ea700b617be245c0ee4178
+660505Track02.flac:207803a865ab00f5e53e0f7ebb471078
+660505Track03.flac:eb4daaf5104078ec5063fdd86d5a17d6
+660505Track04.flac:492d5d714189f9cf4fe52ad3503fea2b
+660505Track05.flac:17d485409ac9d10bcf11853a78b77e45
+660505Track06.flac:1bf7e3ac3e53560172b3a280cc337a8f
+=================== 
+=================== 
+=================== 
+=== shntool for: bd66-05-05-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:52.26       83321996 B   ---   --   ---xx   flac  0.5206  660505Track01.flac
+     4:43.29       49989452 B   ---   --   ---xx   flac  0.5439  660505Track02.flac
+     5:19.14       56304572 B   ---   --   ---xx   flac  0.5285  660505Track03.flac
+    11:06.08      117501260 B   ---   --   ---xx   flac  0.5288  660505Track04.flac
+     5:59.16       63365276 B   ---   --   ---xx   flac  0.5330  660505Track05.flac
+     8:20.53       88324700 B   ---   --   ---xx   flac  0.5559  660505Track06.flac
+    43:20.71      458807256 B                            0.5347  (6 files)
+=================== 
+=================== 
+=================== 

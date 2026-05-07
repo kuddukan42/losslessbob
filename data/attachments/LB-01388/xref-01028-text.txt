@@ -1,0 +1,162 @@
+===================
+===================
+===================
+=== 2003-07-26 Paso Robles, California (CB Master).ffp
+===================
+===================
+===================
+bd2003-07-26_101.flac:f89f0e0b02a093183d0bb7f51ba63638
+bd2003-07-26_102.flac:e68d4ad2a109834facd5750448f20998
+bd2003-07-26_103.flac:bdda50e36d30256d6806a8b11eabfb01
+bd2003-07-26_104.flac:aac8f9e6a81b07b48bc8bfc1f383c9e6
+bd2003-07-26_105.flac:d98529ff945339658270814d80a16a09
+bd2003-07-26_106.flac:8dec7ff541fe7e3036ad087c8927af77
+bd2003-07-26_107.flac:b32c04b3ce535c28149f1c7b73765ecb
+bd2003-07-26_108.flac:ff3899706dd84cf26beb3cc4a5da0fec
+bd2003-07-26_109.flac:b0095d6da077f166c390f9015768a281
+bd2003-07-26_110.flac:91dcc87f072a1bbfbc76e239ba6e6ba6
+bd2003-07-26_111.flac:3cb9d683e2ee4731c792bd8a191f60b7
+bd2003-07-26_112.flac:bcbc66e46ec9a59b478b9d2000d50c04
+bd2003-07-26_201.flac:5989bd7e6de791000d2f98bba9262660
+bd2003-07-26_202.flac:b4f6eaf66c64abfc9f6f09ba7c5a97b2
+bd2003-07-26_203.flac:6cf945040e2deb4f35c4fffc9732e086
+bd2003-07-26_204.flac:ba9f5602df47a23fdad6e77a99f04bd8
+===================
+===================
+===================
+=== 2003-07-26 Paso Robles, California.txt
+===================
+===================
+===================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I recieved this shows in 2003 on CD-Rs 
+Line:
+Trade CD-Rs -> EAC (secure mode) => Traders Little 
+Helper =>  FLAC Level 8  => DIME => you!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+BOB DYLAN
+
+Mid-State Fairground
+Paso Robles, California
+26 July 2003
+
+Disc 1
+1. Tombstone Blues
+2. I Don't Believe You (She Acts Like We Never Have Met)
+3. Tweedle Dee & Tweedle Dum
+4. Under The Red Sky
+5. Things Have Changed
+6. Highway 61 Revisited
+7. Positively 4th Street
+8. Drifter's Escape
+9. Watching The River Flow
+10. High Water (for Charlie Patton)
+11. Just Like A Woman
+12. Honest With Me
+
+Disc 2
+13. Bye And Bye
+14. Summer Days
+15. Like A Rolling Stone
+16. All Along The Watchtower
+
+
+Concert # 1535 of The Never-Ending Tour. 
+Concert # 11 of the 2003 US Summer Tour. 
+2003 concert # 45.
+Concert # 34 with the 16th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & piano), 
+Freddie Koella (guitar), 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion)
+.
+2, 4, 7, 8, 9, 11 Bob Dylan (harmonica).
+9, 12 Larry Campbell (slide guitar).
+
+Notes
+LB-number for this concert: LB-1143, LB-1161, LB-1336, LB-1388, LB-1415.
+No acoustic songs at this show!
+8 new songs (50%) compared to previous concert. 
+No new songs for this tour.
+Stereo audience recording, 115 minutes.
+Session info updated 3 June 2009.
+===================
+===================
+===================
+=== 2003-07-26 tracks.txt
+===================
+===================
+===================
+CD: Bob Dylan - 2003-07-26 D1
+
+01. bd2003-07-26_101    [0:06:44.35]
+02. bd2003-07-26_102    [0:05:34.54]
+03. bd2003-07-26_103    [0:05:33.50]
+04. bd2003-07-26_104    [0:05:37.22]
+05. bd2003-07-26_105    [0:07:08.48]
+06. bd2003-07-26_106    [0:06:42.15]
+07. bd2003-07-26_107    [0:06:49.47]
+08. bd2003-07-26_108    [0:05:04.53]
+09. bd2003-07-26_109    [0:06:23.61]
+10. bd2003-07-26_110    [0:07:13.74]
+11. bd2003-07-26_111    [0:07:37.06]
+12. bd2003-07-26_112    [0:06:39.53]
+
+bd2003-07-26_101.flac:f89f0e0b02a093183d0bb7f51ba63638
+bd2003-07-26_102.flac:e68d4ad2a109834facd5750448f20998
+bd2003-07-26_103.flac:bdda50e36d30256d6806a8b11eabfb01
+bd2003-07-26_104.flac:aac8f9e6a81b07b48bc8bfc1f383c9e6
+bd2003-07-26_105.flac:d98529ff945339658270814d80a16a09
+bd2003-07-26_106.flac:8dec7ff541fe7e3036ad087c8927af77
+bd2003-07-26_107.flac:b32c04b3ce535c28149f1c7b73765ecb
+bd2003-07-26_108.flac:ff3899706dd84cf26beb3cc4a5da0fec
+bd2003-07-26_109.flac:b0095d6da077f166c390f9015768a281
+bd2003-07-26_110.flac:91dcc87f072a1bbfbc76e239ba6e6ba6
+bd2003-07-26_111.flac:3cb9d683e2ee4731c792bd8a191f60b7
+bd2003-07-26_112.flac:bcbc66e46ec9a59b478b9d2000d50c04
+
+CD: Bob Dylan - 2003-07-26 D2
+
+01. bd2003-07-26_201    [0:07:03.03]
+02. bd2003-07-26_202    [0:12:56.23]
+03. bd2003-07-26_203    [0:06:45.33]
+04. bd2003-07-26_204    [0:07:48.16]
+
+bd2003-07-26_201.flac:5989bd7e6de791000d2f98bba9262660
+bd2003-07-26_202.flac:b4f6eaf66c64abfc9f6f09ba7c5a97b2
+bd2003-07-26_203.flac:6cf945040e2deb4f35c4fffc9732e086
+bd2003-07-26_204.flac:ba9f5602df47a23fdad6e77a99f04bd8
+===================
+===================
+===================
+=== BD 2003-07-26 Paso Robles, California (CB Master).md5
+===================
+===================
+===================
+b461a135be73c1a95a7ca4d13f33cd25 *2003-07-26 D1 - Bob Dylan.log
+32a8e23c1b02ad5c031368749bdaf418 *2003-07-26 D2 - Bob Dylan.log
+80a948cba685c592331c39163c3806aa *2003-07-26 Paso Robles, California (CB Master).ffp
+a1cba9afb511e7c9878876b89b54a6bd *2003-07-26 Paso Robles, California.txt
+2c90d675f61898694db3ebe025f246d8 *2003-07-26 tracks.txt
+d22e145b341973bd85f33f29a25119bd *bd2003-07-26_101.flac
+87b65170042e4754dec46e30c08ea876 *bd2003-07-26_102.flac
+d517772ff64ffff0970c50d9dc88acbe *bd2003-07-26_103.flac
+0b1564dab68a2da11aeb40cf6a7deb37 *bd2003-07-26_104.flac
+c448b8d79b4a77d06d72b7043f95cee4 *bd2003-07-26_105.flac
+8a11f6662d32a44bb44aae678c2fadc3 *bd2003-07-26_106.flac
+690f3b47b14a8852903c37d13357897d *bd2003-07-26_107.flac
+74ef202c9241150ce0a7be5bc94582b8 *bd2003-07-26_108.flac
+18e94c2e1b7a14b74e7b4fc2b5a86e26 *bd2003-07-26_109.flac
+08f93a5cc8a55d54bce215e1ff0485b9 *bd2003-07-26_110.flac
+0de455462c7f79563743ea7536fdf7e1 *bd2003-07-26_111.flac
+6e7ca37ed62c80b9c3fbc1d0abb2a215 *bd2003-07-26_112.flac
+b12a6994f0d397034599fe0e1ce85ccb *bd2003-07-26_201.flac
+3f1fb5bc0713f5f342d813bdbe9a2b98 *bd2003-07-26_202.flac
+1029d39c4ebecfc89f2790147e7f08ce *bd2003-07-26_203.flac
+ab4cf5646832ccf3f5299e16f67206ba *bd2003-07-26_204.flac
+===================
+===================
+===================

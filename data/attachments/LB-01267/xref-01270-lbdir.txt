@@ -1,0 +1,108 @@
+===================
+===================
+===================
+=== md5 for: bd90-01-29-d.flacf
+===================
+===================
+===================
+dd5d2657927e9da3d6c2a708410e7990 *bd1990-01-29.ffp
+e44eeebdb96bc58d681dc7a001f0aac1 *CD 1\CD 1.shntool_len.txt
+9eaad518cbe8f3db47e02070ebe4514b *CD 1\flac.txt
+1f9a861ea2e6ba0d679683f2ec877d1f *CD 1\Track  1.flac
+c223542773f35a60dde7d74324e1556a *CD 1\Track  2.flac
+388a46b589308e666df39d37fd135a90 *CD 1\Track  3.flac
+3309ffeeb0cefc6e06650dadf5daa316 *CD 1\Track  4.flac
+c02ff720108b7005e354643c77645b9c *CD 1\Track  5.flac
+eb27cace6ccb7cdaaf5a990f35d0f505 *CD 1\Track  6.flac
+faab071216a05360183d708b72b815a8 *CD 1\Track  7.flac
+919359ef0f0dbd62430ed6c3e17065a7 *CD 1\Track  8.flac
+cc32955765c165940cc39a113cf0aba4 *CD 1\Track  9.flac
+fadfb2411e1c51be8b269ad0eff1359f *CD 1\Track 10.flac
+c84d593a54d2bde0a896556d11004af0 *CD 1\Track 11.flac
+a594676e89a0debf699ebf92fd9c7c51 *CD 1\Track 12.flac
+b2e277c3fc4b2b45d1cf485f8ab09392 *CD 1\Track 13.flac
+016db7b1aa1de79bf168d55343f6c817 *CD 2\CD 2.shntool_len.txt
+231d9a70ce01801715eef54d4ca6e94e *CD 2\flac.txt
+fee56eef2ac8d7de1f960e84be50d2da *CD 2\Track  1.flac
+c86f22506bf7b27811b35119dd175def *CD 2\Track  2.flac
+8b12f13690f15805e2fd1ab57da2101a *CD 2\Track  3.flac
+b27332b4f944c0dd38406d3020208305 *CD 2\Track  4.flac
+7310e597375b7b9ef6a171df57658e5d *CD 2\Track  5.flac
+c0c19d2c786379d41c8cc0608f6b7c89 *CD 2\Track  6.flac
+4a906e7cec42c687796e65616cb76a4e *CD 2\Track  7.flac
+19acf145ddfe536698e6743bd8697089 *CD 2\Track  8.flac
+bae105a0a648a1bdee87dead07cebf69 *CD 2\Track  9.flac
+243e381aa9781dc86d06c76bd0492744 *Paris 29-1-1990 (Holy Grail series) LB-1267.md5
+30357d31d49c8e9e10001650a276d2da *set_info.txt
+===================
+===================
+===================
+=== ffp for: bd90-01-29-d.flacf
+===================
+===================
+===================
+CD 1\Track  1.flac:151766e6ce86dfaf3e177bef475d9488
+CD 1\Track  2.flac:cc1a788af46bdd3070938bc76d389e81
+CD 1\Track  3.flac:6e3dca3e5d8d9304286695355766d6c7
+CD 1\Track  4.flac:9ab6fc1290d21d6b22c3aad1643fa39a
+CD 1\Track  5.flac:91f25689174ace9cfd386d21c8c2fe4a
+CD 1\Track  6.flac:3f23eae3dce0e075be57b44ba89abf18
+CD 1\Track  7.flac:bec2d5e1a48b6c77c34a6dcf4cbe1ac8
+CD 1\Track  8.flac:90641212bd191a978b7c74d4374351b7
+CD 1\Track  9.flac:cd8e3b52e570ef84a0ad5cc870888d43
+CD 1\Track 10.flac:966d273f0b0291412a6107bf64f39338
+CD 1\Track 11.flac:1dc5105bfeffb00f6810d9bd93d2a4db
+CD 1\Track 12.flac:18457aab78de87c36e58af97498b0695
+CD 1\Track 13.flac:b13554472e807f364beae628820de037
+CD 2\Track  1.flac:341f57b4f2dea013d8670a4f085a460a
+CD 2\Track  2.flac:145773092f0c418c53cf6a86c1124c37
+CD 2\Track  3.flac:31da102e5012ef9d6ac4a3a5914a6285
+CD 2\Track  4.flac:6f2dec0090394e4c41e8934f13ea4917
+CD 2\Track  5.flac:df9de57303dc8a07bcb0aeb91ed79238
+CD 2\Track  6.flac:bb369b820b8b2519477a79669f45bb7b
+CD 2\Track  7.flac:a4488696fde4d6ad941396e6ccd38943
+CD 2\Track  8.flac:e2ad899cdf5b5fe226e02ed10977582f
+CD 2\Track  9.flac:a29cb170800bfe0b42799cd1202d118e
+===================
+===================
+===================
+=== shntool len for: bd90-01-29-d.flacf\CD 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:50.35        8902364 B   ---   --   ---xx   flac  0.5455  Track  1.flac
+     3:37.71       38445836 B   ---   --   ---xx   flac  0.6557  Track  2.flac
+     4:15.39       45073772 B   ---   --   ---xx   flac  0.6245  Track  3.flac
+     3:03.41       32377676 B   ---   --   ---xx   flac  0.6568  Track  4.flac
+     6:42.32       70988108 B   ---   --   ---xx   flac  0.6446  Track  5.flac
+     4:10.47       44210588 B   ---   --   ---xx   flac  0.6441  Track  6.flac
+     5:19.29       56339852 B   ---   --   ---xx   flac  0.5910  Track  7.flac
+     5:15.02       55570748 B   ---   --   ---xx   flac  0.6113  Track  8.flac
+     6:14.52       66095948 B   ---   --   ---xx   flac  0.5952  Track  9.flac
+     4:06.44       43497932 B   ---   --   ---xx   flac  0.6017  Track 10.flac
+     7:17.50       77204444 B   ---   --   ---xx   flac  0.6081  Track 11.flac
+     5:15.58       55702460 B   ---   --   ---xx   flac  0.5697  Track 12.flac
+     5:38.46       59731436 B   ---   --   ---xx   flac  0.6430  Track 13.flac
+    61:48.21      654141164 B                            0.6170  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd90-01-29-d.flacf\CD 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.28       61453100 B   ---   --   ---xx   flac  0.6551  Track  1.flac
+     3:01.38       32017820 B   ---   --   ---xx   flac  0.6692  Track  2.flac
+     5:17.10       55942364 B   ---   --   ---xx   flac  0.5759  Track  3.flac
+     3:33.00       37573244 B   ---   --   ---xx   flac  0.6314  Track  4.flac
+     3:02.43       32205980 B   ---   --   ---xx   flac  0.6824  Track  5.flac
+     3:49.63       40543820 B   ---   --   ---xx   flac  0.6352  Track  6.flac
+     6:33.26       69386396 B   ---   --   ---xx   flac  0.6840  Track  7.flac
+     6:25.54       68041052 B   ---   --   ---xx   flac  0.6446  Track  8.flac
+     3:43.40       39431324 B   ---   --   ---xx   flac  0.6929  Track  9.flac
+    41:15.02      436595100 B                            0.6505  (9 files)
+===================
+===================
+===================

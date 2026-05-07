@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-10b.flacf 
+=================== 
+=================== 
+=================== 
+6e761f4d71ad911738efb5ee7e87e293  bd99-11-10b-LB-3126.txt
+ce43e0c20013ea80b1d9ae7e745cefb1  dylan1999-11-10.txt
+3730ece8de11e06d9233e1bea0dc266c  dylan1999-11-10ffp.txt
+ff3e9934571f13fe711f2549f80e717e  dylan1999-11-10flac.md5
+0054be594287161524192d0f75adc3a2  dylan1999-11-10wav.md5
+542d12bc58b04751665c9ec53c136538  phil_dylan1999-11-10.txt
+1fb5881d6a6525a0fc5ddf228f8a19aa  phil_dylan1999-11-10flac.md5
+0e6f592e6d8d74025e9fe48d11c7baf3  z_dylan1999-11-10d2t05.flac
+4775bcf73e572890d9bc2e9eeb6a3a0b  z_dylan1999-11-10d2t06.flac
+9567ab04a27b7fea6449fcfca3db90fb  z_dylan1999-11-10d2t07.flac
+057e935e10fca3795f13c3a2b14b2e0f  z_dylan1999-11-10d2t08.flac
+70e6f8fb6e97b5d19a344d7c29777053  z_dylan1999-11-10d2t09.flac
+0118812dc348e91cb777296ffef722d7  z_dylan1999-11-10d3t01.flac
+c08301fda847eee87541c61d1a49ba3e  z_dylan1999-11-10d3t02.flac
+c913694460f5a4df7af46b7ab260489a  z_dylan1999-11-10d3t03.flac
+9196eb6d24104d719126313292cb84a0  z_dylan1999-11-10d3t04.flac
+562495e3d87aa444997ff79143159d22  z_dylan1999-11-10d3t05.flac
+84d78dad439d866dc945d8bb48527e1a  z_dylan1999-11-10d3t06.flac
+b03a465b82ce12d725d26ddd31379133  z_dylan1999-11-10d3t07.flac
+9e22ea2eec7f6b9964a4a9f4c8f05756  z_dylan1999-11-10d3t08.flac
+fe47c6dbfa583a32c5b32494a1a5db9e  z_dylan1999-11-10d3t09.flac
+09ffbce2f08417410424c152cd7c0268  z_dylan1999-11-10d3t10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-10b.flacf 
+=================== 
+=================== 
+=================== 
+z_dylan1999-11-10d2t05.flac:9669ce6181f0523aab784c75977578fd
+z_dylan1999-11-10d2t06.flac:a2e8a6452cc0d6515e9ca00d60c42de2
+z_dylan1999-11-10d2t07.flac:171eb94b6336faa2d5fa336fa043505c
+z_dylan1999-11-10d2t08.flac:c331cce32653042cc4f9c5a18b2468d7
+z_dylan1999-11-10d2t09.flac:4088641b75e1d035178e9e75c945550e
+z_dylan1999-11-10d3t01.flac:e68f3175071a2f118ce5e08ef210c95c
+z_dylan1999-11-10d3t02.flac:995d6b9ca26f6747abc815f0f1b5d760
+z_dylan1999-11-10d3t03.flac:18127c9554d02e470dc8a35a3a903d81
+z_dylan1999-11-10d3t04.flac:00d5a56743ee019c76e64c81b6e432a4
+z_dylan1999-11-10d3t05.flac:5b9cc94cca42fa9db09aa5dc607ae88c
+z_dylan1999-11-10d3t06.flac:ff94ea790f2cbefada2165e865771bce
+z_dylan1999-11-10d3t07.flac:21847b882b3b8c0eb531346eacad18e6
+z_dylan1999-11-10d3t08.flac:723b383f971c2d30dd4643a711798dea
+z_dylan1999-11-10d3t09.flac:fdc80f7d30f9750a30841ba0694c5daf
+z_dylan1999-11-10d3t10.flac:67921bce09305447f17d4f425ac248d7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-10b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:52.60       30481964 B   ---   --   ---xx   flac  0.6379  z_dylan1999-11-10d2t05.flac
+     7:09.53       75800300 B   ---   --   ---xx   flac  0.5805  z_dylan1999-11-10d2t06.flac
+     6:51.52       72622748 B   ---   --   ---xx   flac  0.5506  z_dylan1999-11-10d2t07.flac
+     9:47.41      103643276 B   ---   --   ---xx   flac  0.5932  z_dylan1999-11-10d2t08.flac
+     5:43.63       60653420 B   ---   --   ---xx   flac  0.4200  z_dylan1999-11-10d2t09.flac
+     4:17.36       45419516 B   ---   --   ---xx   flac  0.5581  z_dylan1999-11-10d3t01.flac
+     6:15.57       66284108 B   ---   --   ---xx   flac  0.5641  z_dylan1999-11-10d3t02.flac
+     7:38.69       80953532 B   ---   --   ---xx   flac  0.5040  z_dylan1999-11-10d3t03.flac
+     6:57.06       73572956 B   ---   --   ---xx   flac  0.5890  z_dylan1999-11-10d3t04.flac
+     5:10.03       54691100 B   ---   --   ---xx   flac  0.4902  z_dylan1999-11-10d3t05.flac
+     6:31.51       69092396 B   ---   --   ---xx   flac  0.6043  z_dylan1999-11-10d3t06.flac
+     6:17.58       66639260 B   ---   --   ---xx   flac  0.4896  z_dylan1999-11-10d3t07.flac
+    10:04.74      106719692 B   ---   --   ---xx   flac  0.4873  z_dylan1999-11-10d3t08.flac
+     6:35.48       69790940 B   ---   --   ---xx   flac  0.5736  z_dylan1999-11-10d3t09.flac
+     4:21.06       46054556 B   ---   --   ---xx   flac  0.5645  z_dylan1999-11-10d3t10.flac
+    96:36.02     1022419764 B                            0.5443  (15 files)
+=================== 
+=================== 
+=================== 

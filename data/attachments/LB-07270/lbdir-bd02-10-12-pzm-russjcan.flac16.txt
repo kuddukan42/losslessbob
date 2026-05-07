@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-12-pzm-russjcan.flac16 
+=================== 
+=================== 
+=================== 
+892399443db5154705febb8920a353b9  bd02-10-12-LB-7270.txt
+ee24dd0541018baac435a9d194148159  bd2002-10-12.ffp
+8e238c019f272eb401f6a478a891af8c  bd2002-10-12.pzm.russjcan.flac16.md5
+cc4c212c83954fe1f86571f43e13e9ce  bd2002-10-12.txt
+85e0e81f3207621f71671a348de6c673  bd2002-10-12d1t01.flac
+e8f432fa9768ced9112223a6502dfd0d  bd2002-10-12d1t02.flac
+f55a28cc17e6d132fe4e598ae6689164  bd2002-10-12d1t03.flac
+3aec6b65ceff3bd670d650d04c8e81ac  bd2002-10-12d1t04.flac
+ace135cf50415dab577b5169d27bd59b  bd2002-10-12d1t05.flac
+28e01e7ef9359f2b2de0e143c5264a59  bd2002-10-12d1t06.flac
+c99b8bb90c3921e8074181ed2ac17dc6  bd2002-10-12d1t07.flac
+0a3443560f72dc9062d5b741a15e6fd8  bd2002-10-12d1t08.flac
+47b5bd44687fd38cc4c3e4b6e996ff21  bd2002-10-12d1t09.flac
+afe2a55b187cd47f8e25c28bffd3bba0  bd2002-10-12d1t10.flac
+e725a52e6e8255fd16cc6c6c48589581  bd2002-10-12d1t11.flac
+c8d4260a09d3a99640890b652764d179  bd2002-10-12d1t12.flac
+6b340c5aad48de06646b08a45a517420  bd2002-10-12d1t13.flac
+483da1f06b9bd1af81b8b876ba3c8e4a  bd2002-10-12d2t01.flac
+7183deb8a36929cf1ebf170efda219ea  bd2002-10-12d2t02.flac
+81c75106de65c567e018207520575945  bd2002-10-12d2t03.flac
+0b9e213403315a3c0e8fd48b6eec48f1  bd2002-10-12d2t04.flac
+1155c12ad52c2fa2b45c0f77a43f9e20  bd2002-10-12d2t05.flac
+20ca406bca00aeb4097370e2e539a6f3  bd2002-10-12d2t06.flac
+5cbf442635c4582ce9fff78210ec0975  bd2002-10-12d2t07.flac
+63f17458b716991da5ad36c3f445b667  bd2002-10-12d2t08.flac
+da5208b1c53b13dda3be44682a6196fe  bd2002-10-12d2t09.flac
+5b267204faefd388a925bc720912122c  bd2002-10-12d2t10.flac
+fd110c7f9da2b460d1e5fb580b510574  bd2002-10-12d2t11.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-12-pzm-russjcan.flac16 
+=================== 
+=================== 
+=================== 
+bd2002-10-12d1t01.flac:d33c21d22e40f3f4b36f5271370d68bc
+bd2002-10-12d1t02.flac:595b70d129e00f157d5e1aa5697fae9b
+bd2002-10-12d1t03.flac:eb811457ee6573e5ac26f70f03024501
+bd2002-10-12d1t04.flac:572148659f2a086441cc0c09d6e365a1
+bd2002-10-12d1t05.flac:ce5d976be6e6dbc9645a7fc844b7b2d8
+bd2002-10-12d1t06.flac:198d57b36caf8d5350aebd9be22a3ec9
+bd2002-10-12d1t07.flac:cd074de31276435027235be3225c4699
+bd2002-10-12d1t08.flac:281acef71773dcb34f84795cf08167be
+bd2002-10-12d1t09.flac:d19fe124b26d67db9876911b4b4939d1
+bd2002-10-12d1t10.flac:3a6a3d97491123b10eccf35287a151fe
+bd2002-10-12d1t11.flac:a479fa7482e6dad33e1cb218a57f79a3
+bd2002-10-12d1t12.flac:a499f80de20ab83c1096f0d293e03bac
+bd2002-10-12d1t13.flac:0179edb650622cc41d97fef55e7bf66d
+bd2002-10-12d2t01.flac:1d10b00bc834c8683203b6badcfb6707
+bd2002-10-12d2t02.flac:46288d627da9d7fcb6b8ac7edb1ca10d
+bd2002-10-12d2t03.flac:68aba9f1f3e4c3f51db3831e9a07cc75
+bd2002-10-12d2t04.flac:cc88a95b3cbfb95cd998c841a2b7df15
+bd2002-10-12d2t05.flac:2959e400182b268e6192374f4fd9ff79
+bd2002-10-12d2t06.flac:1d5e94542697468698218d936d124f07
+bd2002-10-12d2t07.flac:65ac410ba556eeb5e17bc74a0f99a290
+bd2002-10-12d2t08.flac:ba09e28ec3c9f2475a3968e3b17456fa
+bd2002-10-12d2t09.flac:9f692990865662e79c899b2e8f1bd742
+bd2002-10-12d2t10.flac:6a7be542971c7932944937a49a658148
+bd2002-10-12d2t11.flac:b89f0f70f40c1f8b3d77aad52941c84b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-12-pzm-russjcan.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.04        6183452 B   ---   --   ---xx   flac  0.6636  bd2002-10-12d1t01.flac
+     5:29.14       58068572 B   ---   --   ---xx   flac  0.6666  bd2002-10-12d1t02.flac
+     5:22.45       56906684 B   ---   --   ---xx   flac  0.6380  bd2002-10-12d1t03.flac
+     7:55.21       83839436 B   ---   --   ---xx   flac  0.6559  bd2002-10-12d1t04.flac
+     4:01.02       42517148 B   ---   --   ---xx   flac  0.6250  bd2002-10-12d1t05.flac
+     8:00.24       84728492 B   ---   --   ---xx   flac  0.6564  bd2002-10-12d1t06.flac
+     4:21.61       46183916 B   ---   --   ---xx   flac  0.6603  bd2002-10-12d1t07.flac
+     6:40.73       70731740 B   ---   --   ---xx   flac  0.6304  bd2002-10-12d1t08.flac
+     7:02.66       74596076 B   ---   --   ---xx   flac  0.6473  bd2002-10-12d1t09.flac
+     6:24.38       67827020 B   ---   --   ---xx   flac  0.6275  bd2002-10-12d1t10.flac
+     5:29.21       58085036 B   ---   --   ---xx   flac  0.6525  bd2002-10-12d1t11.flac
+     6:21.39       67300172 B   ---   --   ---xx   flac  0.6162  bd2002-10-12d1t12.flac
+     4:17.34       45414812 B   ---   --   ---xx   flac  0.6360  bd2002-10-12d1t13.flac
+     7:31.69       79718732 B   ---   --   ---xx   flac  0.6363  bd2002-10-12d2t01.flac
+     7:23.00       78145244 B   ---   --   ---xx   flac  0.6251  bd2002-10-12d2t02.flac
+     6:32.50       69266444 B   ---   --   ---xx   flac  0.6290  bd2002-10-12d2t03.flac
+     0:18.63        3323420 B   ---   --   ---xx   flac  0.5500  bd2002-10-12d2t04.flac
+     3:17.20       34797884 B   ---   --   ---xx   flac  0.5810  bd2002-10-12d2t05.flac
+     5:10.04       54693452 B   ---   --   ---xx   flac  0.5735  bd2002-10-12d2t06.flac
+     8:27.09       89456012 B   ---   --   ---xx   flac  0.6405  bd2002-10-12d2t07.flac
+     0:37.68        6686780 B   ---   --   ---xx   flac  0.5905  bd2002-10-12d2t08.flac
+     7:58.74       84493292 B   ---   --   ---xx   flac  0.6332  bd2002-10-12d2t09.flac
+     7:10.31       75924956 B   ---   --   ---xx   flac  0.6231  bd2002-10-12d2t10.flac
+     6:36.17       69894428 B   ---   --   ---xx   flac  0.6530  bd2002-10-12d2t11.flac
+   133:06.22     1408783200 B                            0.6351  (24 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-16-Olav-ASM.flacf 
+=================== 
+=================== 
+=================== 
+f5ae842c7a49fb43ed83b5f226898a71  bd95-03-16-Olav-ASM-LB-3491.txt
+fb7a59206ee0b1e4e0b0f3b646561fb0  CD1\Track01.flac
+2b5e034c87a81c894138067bac700d43  CD1\Track02.flac
+655af842f1795cd6a703df95e5c9cd28  CD1\Track03.flac
+cac98c28f26fdefadc6de9bec4100bcd  CD1\Track04.flac
+ac8c2a9029899ed18dd71d6d15b5b736  CD1\Track05.flac
+e6a99cc6a937052f06b500252b0654d4  CD1\Track06.flac
+80a741218cc56daf46788a3ae7131ffc  CD1\Track07.flac
+5fe97b490956abced44d14e41871da60  CD1\Track08.flac
+e896fa034e2cb0657394de5463ae4039  CD2\Track09.flac
+eb30da74a3dfb804ce399699f89392ad  CD2\Track10.flac
+757911603ece14509a03de1f148ad6a5  CD2\Track11.flac
+6f4d64d4e5531eeedc356b2ac76e6564  CD2\Track12.flac
+4bef1f99aba1567e2ed8c4d9be8c84f3  CD2\Track13.flac
+1f35b3982e56435239872e2f2b300633  CD2\Track14.flac
+c705763ef39155ce24f152f7b4650768  Info\1995-03-16 Stadthalle, Bielefeld, Germany.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-16-Olav-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+Track01.flac:f449bb0973420d83944bf6741ac93790
+Track02.flac:c951d6ca81a09cae3fca1d154729119f
+Track03.flac:0224dedc9f9b71906ba55e13e9ec8e38
+Track04.flac:36dc95ac68966eb520b6ffcef45c7204
+Track05.flac:adbd147c7d9db96e4ca7e9c999b3094a
+Track06.flac:f887ba63a9b73a051c5c7454878c83f7
+Track07.flac:b4841f1b35bd6e79353c0c0fd190dc46
+Track08.flac:de49114953494322c617d82e83750573
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-16-Olav-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+Track09.flac:c72631d7ac1c42d82ba7e236ea1f2895
+Track10.flac:00f574ab6161329d069b8ea47ee8f112
+Track11.flac:0cb77f49daa7e39fd6f3c4f01f1084af
+Track12.flac:80614dc80ccc75053f15400819618f32
+Track13.flac:c2f2b1b7a1ee1b6223e95f9bdf1e08ec
+Track14.flac:008b36a735dc142be37353117001f37b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-16-Olav-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.42       54782828 B   ---   --   ---xx   flac  0.6602  Track01.flac
+     4:44.25       50156444 B   ---   --   ---xx   flac  0.5713  Track02.flac
+     5:42.51       60448796 B   ---   --   ---xx   flac  0.6513  Track03.flac
+     5:46.30       61105004 B   ---   --   ---xx   flac  0.5655  Track04.flac
+     9:46.02      103375148 B   ---   --   ---xx   flac  0.5930  Track05.flac
+     7:33.67       80066828 B   ---   --   ---xx   flac  0.5922  Track06.flac
+     6:45.57       71576108 B   ---   --   ---xx   flac  0.4495  Track07.flac
+     5:43.29       60573452 B   ---   --   ---xx   flac  0.4665  Track08.flac
+    51:13.03      542084608 B                            0.5680  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-16-Olav-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:38.15       80826524 B   ---   --   ---xx   flac  0.4281  Track09.flac
+     8:03.15       85236524 B   ---   --   ---xx   flac  0.6299  Track10.flac
+     8:05.27       85617548 B   ---   --   ---xx   flac  0.5191  Track11.flac
+     7:53.17       83477228 B   ---   --   ---xx   flac  0.6637  Track12.flac
+     2:35.30       27412604 B   ---   --   ---xx   flac  0.5406  Track13.flac
+     7:39.70       81132284 B   ---   --   ---xx   flac  0.5912  Track14.flac
+    41:55.24      443702712 B                            0.5655  (6 files)
+=================== 
+=================== 
+=================== 

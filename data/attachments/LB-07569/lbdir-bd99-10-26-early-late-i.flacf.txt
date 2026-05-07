@@ -1,0 +1,120 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-10-26-early-late-i.flacf 
+=================== 
+=================== 
+=================== 
+81751b4b1674b0452fe9001488ae3aec  bd99-10-26.chicago_park west.early+late.info.txt
+ac64ed8aefa51a25dd4f774b08c6245d  bd99-10-26.chicago_park west.early+late.md5
+6b15ea2f78d15920cee4091ea15f4edb  early show\Early - 01 -.shn
+5852ea75dc129f4f9fcf2105cebef836  early show\Early - 02 -.shn
+4318df63a3c5b762f7ad894eb63a47d5  early show\Early - 03 -.shn
+46795e7e6ef8cb6decbe2513a2312ad6  early show\Early - 04 -.shn
+dbea38bcf63b51526b1a5acf869034c8  early show\Early - 05 -.shn
+36794d8dccaebdd3bca2f342e60c5926  early show\Early - 06 -.shn
+9f2e2c684f35f9cfe65d6949d56d4b7c  early show\Early - 07 -.shn
+800353b409a1a5774d2eceeb80a8b7de  early show\Early - 08 -.shn
+63e03e21894a4859fd583672617a01f3  early show\Early - 09 -.shn
+e37d0fcb0cd2508abb219816690d8e40  early show\Early - 10 -.shn
+931c0cf40e3b544c6516205b32df6d8a  early show\Early - 11 -.shn
+1aabeee804e35c3b2bb95d4d3eb0fbe4  early show\Early - 12 -.shn
+db1b3be187556a9f3761ff99522c9964  early show\early show.md5
+e90450602819b55e56892b79bd2017e5  late show\Late - 01 -.shn
+c8f3f070b2d8f89e86f0bb2a1c8c8756  late show\Late - 02 -.shn
+843bd2e11a957449b7b4995c53448013  late show\Late - 03 -.shn
+63711b90b711cdc76ab047999f31b33a  late show\Late - 04 -.shn
+6617cc9eea53c7d28890edae227a16b9  late show\Late - 05 -.shn
+5de12fcf683940bbf99fa17a89b15f09  late show\Late - 06 -.shn
+b12b2ab76dbcdea53d4973046dc9f7e2  late show\Late - 07 -.shn
+6c3db00c6a7af29a28ec10909d48b99e  late show\Late - 08 -.shn
+7047fb335d4bfe6c1d1bb30600d6587e  late show\Late - 09 -.shn
+27ca5049aa634d0ccba5af558f9b20f5  late show\Late - 10 -.shn
+ecf02f9472f42ec9d2c9cfd98f1b5947  late show\Late - 11 -.shn
+a1bbefc229d244a66835cadc3861b3d0  late show\Late - 12 -.shn
+5bff5637df27d60ea02d6b0c621a5e6a  late show\Late - 13 -.shn
+191d0efc830e0eab7e7b3080e2785f70  late show\late show.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-10-26-early-late-i.flacf\early show 
+=================== 
+=================== 
+=================== 
+8b423dd14fafc36006a4127d83630e10  [shntool]  Early_-_01_-.wav
+ddc7bec001ed383bb4aecc647a8608ed  [shntool]  Early_-_02_-.wav
+c126eabb90458236177e2dfed3abb000  [shntool]  Early_-_03_-.wav
+29478bdd9d11ad586641d3a0dd8ad423  [shntool]  Early_-_04_-.wav
+5146b1da6461992087c3fa71fba25a65  [shntool]  Early_-_05_-.wav
+7f56783e0037388d611425dd61c0ebf2  [shntool]  Early_-_06_-.wav
+81e0308922765d08d429a3ab7d4291ab  [shntool]  Early_-_07_-.wav
+eafa7393bf8d324b064ecbb6e99cea67  [shntool]  Early_-_08_-.wav
+dedd5d5ace8bd6835097a4ec9e322124  [shntool]  Early_-_09_-.wav
+054cdb5b801b406e5f03e7f4a1fcbe2c  [shntool]  Early_-_10_-.wav
+cfe8afeadad36f812663d482ad3c264f  [shntool]  Early_-_11_-.wav
+c1a42fddbe04f590ce6f1d05ac3d7dba  [shntool]  Early_-_12_-.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-10-26-early-late-i.flacf\late show 
+=================== 
+=================== 
+=================== 
+4d6153decbbcf3df5ea7f0a09c0e8b4c  [shntool]  Late_-_01_-.wav
+54233bc209fc3f216b73b874ae934154  [shntool]  Late_-_02_-.wav
+7ce52003dd1b8bb70bb352c3a74ffce7  [shntool]  Late_-_03_-.wav
+728a087f601e0118ac5cc0d66e3b589e  [shntool]  Late_-_04_-.wav
+db92cf0fa6f1663755e9215e6ff988bb  [shntool]  Late_-_05_-.wav
+0e7c20a7c142f8c54ec99af57f791e92  [shntool]  Late_-_06_-.wav
+3451d8bac24502efd009fc1e4015f306  [shntool]  Late_-_07_-.wav
+85fdd6700b8253fafc00231021a5a760  [shntool]  Late_-_08_-.wav
+c2697e56a08bb142bc00516d726daa03  [shntool]  Late_-_09_-.wav
+50ed48ac3b3a86fc01289a7db81180b0  [shntool]  Late_-_10_-.wav
+0a493f0d4f2ab2e80f781bb99cf1237a  [shntool]  Late_-_11_-.wav
+afc333df7e3c86405a2d6c3cd18237e4  [shntool]  Late_-_12_-.wav
+92042cef0a2ff5fb0ab96d1cc01070d1  [shntool]  Late_-_13_-.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-10-26-early-late-i.flacf\early show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.05       49403804 B   ---   --   ---xx    shn  0.5318  Early - 01 -.shn
+     5:53.68       62429180 B   ---   --   ---xx    shn  0.5254  Early - 02 -.shn
+     7:56.00       83966444 B   ---   --   ---xx    shn  0.5394  Early - 03 -.shn
+     5:43.36       60589916 B   ---   --   ---xx    shn  0.4566  Early - 04 -.shn
+     7:44.55       81979004 B   ---   --   ---xx    shn  0.5323  Early - 05 -.shn
+     3:57.56       41938556 B   ---   --   ---xx    shn  0.5907  Early - 06 -.shn
+     5:03.38       53538620 B   ---   --   ---xx    shn  0.4888  Early - 07 -.shn
+     5:31.11       58414316 B   ---   --   ---xx    shn  0.5531  Early - 08 -.shn
+     6:36.12       69882668 B   ---   --   ---xx    shn  0.4189  Early - 09 -.shn
+     8:49.54       93442652 B   ---   --   ---xx    shn  0.5554  Early - 10 -.shn
+     6:14.21       66023036 B   ---   --   ---xx    shn  0.5049  Early - 11 -.shn
+    68:10.56      721608196 B                            0.5175  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-10-26-early-late-i.flacf\late show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:31.52       26757616 B   -b-   --   ---xx    shn  0.5455  Late - 01 -.shn
+     5:47.72       61380188 B   ---   --   ---xx    shn  0.4968  Late - 02 -.shn
+     0:19.55        3481004 B   ---   --   ---xx    shn  0.4394  Late - 03 -.shn
+     8:47.58       93099260 B   ---   --   ---xx    shn  0.5702  Late - 04 -.shn
+     4:00.72       42505388 B   ---   --   ---xx    shn  0.5559  Late - 05 -.shn
+     8:36.58       91158860 B   ---   --   ---xx    shn  0.6232  Late - 06 -.shn
+     5:22.21       56850236 B   ---   --   ---xx    shn  0.6124  Late - 07 -.shn
+     5:56.48       62911340 B   ---   --   ---xx    shn  0.5485  Late - 08 -.shn
+     5:47.23       61264940 B   ---   --   ---xx    shn  0.5895  Late - 09 -.shn
+     5:02.27       53336348 B   ---   --   ---xx    shn  0.4796  Late - 10 -.shn
+     7:21.25       77851244 B   ---   --   ---xx    shn  0.5988  Late - 11 -.shn
+     7:44.46       81957836 B   ---   --   ---xx    shn  0.6250  Late - 12 -.shn
+     6:40.10       70583936 B   -b-   --   ---xx    shn  0.5435  Late - 13 -.shn
+    73:59.42      783138196 B                            0.5712  (13 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,106 @@
+===================
+===================
+===================
+=== bd1990-06-04 London, ON, Canada (LTG) (no LB number).md5
+===================
+===================
+===================
+0e2785de4c0ef13c389d918581817b96 *bd1990-06-04.txt
+6ebaa123b4609e781f1f035858890b63 *bd1990-06-04-d1\bd1990-06-04-d1.ffp
+6f954099f298ae9b24d8d68586043024 *bd1990-06-04-d1\Track01.flac
+1ca153d5791b4fc6a62ad84cefea3903 *bd1990-06-04-d1\Track02.flac
+247352bffd96952dd128c5278f760cc8 *bd1990-06-04-d1\Track03.flac
+f419d93f25974ad4000f488b2eaca293 *bd1990-06-04-d1\Track04.flac
+a2a5b3f0f278845998b91f803c685a78 *bd1990-06-04-d1\Track05.flac
+39515631b8c5a3ddf57ef9ec903142b3 *bd1990-06-04-d1\Track06.flac
+f7479c0da4554bbedac0623679a014bb *bd1990-06-04-d1\Track07.flac
+ee7aecf43686d6fd97cc393c688d3e6f *bd1990-06-04-d1\Track08.flac
+a0bdb332eae6b7f97bef8f490b7d3914 *bd1990-06-04-d1\Track09.flac
+dd1656e4c6965638b48a287bb02d3d27 *bd1990-06-04-d1\Track10.flac
+4a3150279da74ec9dd566abb58522f29 *bd1990-06-04-d1\Track11.flac
+276b43f07a723d98cc520f134fa7343d *bd1990-06-04-d1\Track12.flac
+4e911c1dce8f5461e6983fd8f869ecea *bd1990-06-04-d2\bd1990-06-04-d2.ffp
+101a8f83b8ca419dfa0efc9d12c2955f *bd1990-06-04-d2\Track01.flac
+8ce54c866b96b26227d318f340f60f89 *bd1990-06-04-d2\Track02.flac
+88250e17bcdea84eb8094120ee39f0ce *bd1990-06-04-d2\Track03.flac
+5b05c62b6f4b650f1a9eb3c0f5ff409f *bd1990-06-04-d2\Track04.flac
+a126a51c048d2e337456548c19c50504 *bd1990-06-04-d2\Track05.flac
+c747fd3f90bd5a8f02a29d659c2aa45f *bd1990-06-04-d2\Track06.flac
+===================
+===================
+===================
+=== bd1990-06-04.txt
+===================
+===================
+===================
+Bob Dylan
+June 4 1990 
+University of Western Ontario 
+London, Ontario, Canada 
+
+
+Taper: Legendary Taper G
+Equipment: Sony D6 Stereo Walkman with Sennehiser MKE2002 Stereo Microphones
+Source: Audio disks (derived from an analog master) > (dBpowerAMP set to compression
+level 6) flac.
+
+Taper notes: "minor mike dropouts in first 30 minutes"
+
+Disk One
+
+Subterranean Homesick Blues 
+I'll Remember You 
+Stuck Inside Of Mobile With The Memphis Blues Again 
+Tears Of Rage 
+Masters Of War 
+Gotta Serve Somebody 
+Ballad Of Hollis Brown (acoustic w band) 
+Gates Of Eden (acoustic w band) 
+Don't Think Twice, It's All Right (acoustic w band) 
+One Too Many Mornings (acoustic w band) 
+Mr. Tambourine Man (acoustic w band) 
+Everything Is Broken 
+
+Disk Two
+
+Simple Twist Of Fate 
+All Along The Watchtower 
+I Shall Be Released 
+Like A Rolling Stone 
+Girl From The North Country (acoustic w band) 
+Highway 61 Revisited
+===================
+===================
+===================
+=== bd1990-06-04-d1.ffp
+===================
+===================
+===================
+Track01.flac:a759a7653bde33e178bfc02360dccd84
+Track02.flac:cc9528209f68cfd297b9e3ab2c8fd77d
+Track03.flac:a78c0eaec2c372b6542a6fbe6418bfe1
+Track04.flac:1fcd668ecfcc71e728c70a72102d33d4
+Track05.flac:d60fb48a687d65e08981cfd432f7a0ba
+Track06.flac:7f6c1fa9ed7004e22df61d60f3ca9c2e
+Track07.flac:1f59354225ca9e25051c00d51bf11e94
+Track08.flac:de668cfd498de60fc531101daf1f5668
+Track09.flac:73c4ea3cb5544d92c960ed58327a196d
+Track10.flac:4b60c07003cbfeea1b351888d1278eb1
+Track11.flac:b1a1e4bea89b39fa1e426e089f2958a9
+Track12.flac:6411e0bfb2adacbc6fc698a040b66a89
+===================
+===================
+===================
+=== bd1990-06-04-d2.ffp
+===================
+===================
+===================
+Track01.flac:a5c805abd3a4d4fd6d9cffc1eb853981
+Track02.flac:5289f7a8c1ce1be12a5cb9d7ea9857c7
+Track03.flac:d8aaa9e870d76837053c41e74eaec469
+Track04.flac:c3e61f1dcade37f97bef58f897825d22
+Track05.flac:252566fa522dbc5db337ea40097a5af6
+Track06.flac:2dc44adb96c17b3e596b6f24c7a152b7
+===================
+===================
+===================

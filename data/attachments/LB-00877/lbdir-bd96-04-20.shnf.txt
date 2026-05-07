@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-04-20.shnf 
+=================== 
+=================== 
+=================== 
+a631e3cbd52012f0a3bc3527d7819b9d  1-01 - Crash On The Levee (96-04-20 Portland, ME).shn
+aeb47e51ab84cfefb400f05fbe319e0e  1-02 - Man In The Long Black Coat (96-04-20 Portland, ME).shn
+2dadc04282b48a4bfeb4b6e131355821  1-03 - All Along The Watchtower (96-04-20 Portland, ME).shn
+c594b1c6d2d37bcae67830c9d048fd2a  1-04 - Positively 4th Street (96-04-20 Portland, ME).shn
+655a7cecd0a2c84e09b1941a3e5b041e  1-05 - Pledging My Time (96-04-20 Portland, ME).shn
+1a650ba87b03967a126201d62a0e3a00  1-06 - Silvio (96-04-20 Portland, ME).shn
+b02e5f0351a8f25fcdfec2decf990ad5  1-07 - Mr. Tambourine Man (96-04-20 Portland, ME).shn
+5506f5e178822248d0ebd679183c99b1  1-08 - Desolation Row (96-04-20 Portland, ME).shn
+128cfdd894ee155aa3cb57ec390fa2e8  1-09 - Friend Of The Devil (96-04-20 Portland, ME).shn
+24fa54e10ed98b4825abc04a495dfb29  2-01 - Maggie's Farm (96-04-20 Portland, ME).shn
+22e718f9de6bd3258ccaec3753b4650b  2-02 - What Good Am I (96-04-20 Portland, ME).shn
+ed465dd833a4c37f2d57e1b208e73d5f  2-03 - Seven Days (96-04-20 Portland, ME).shn
+e76b7cc0b31d3cd32963e90c328071c5  2-04 - Alabama Getaway (96-04-20 Portland, ME).shn
+8f5641e8b808c815e795025a69033ff0  2-05 - Times They Are A-Changin' (96-04-20 Portland, ME).shn
+2733ba954442d40488bf4727d0dc1110  96-04-20_Portland, ME-D1.md5
+994a581b393f343e6a5791840e1fb000  96-04-20_Portland, ME-D2.md5
+57330162fb90afbf77c12429be60b970  96-04-20_Portland, ME.rtf
+c2ff0693fe13a34e4354d44ada38a566  bd96-04-20.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-04-20.shnf 
+=================== 
+=================== 
+=================== 
+2ffc8679ad29f1f426007cb1c042d2be  [shntool]  1-01_-_Crash_On_The_Levee_(96-04-20_Portland,_ME).wav
+349f066d9f7ceee6bf504c649b426218  [shntool]  1-02_-_Man_In_The_Long_Black_Coat_(96-04-20_Portland,_ME).wav
+720c2090d5afd73c5ab2e83857b6022e  [shntool]  1-03_-_All_Along_The_Watchtower_(96-04-20_Portland,_ME).wav
+bd5a092e12f76a7f671890dd9855c620  [shntool]  1-04_-_Positively_4th_Street_(96-04-20_Portland,_ME).wav
+7dca0aa1116336106e48ef711ce08f2a  [shntool]  1-05_-_Pledging_My_Time_(96-04-20_Portland,_ME).wav
+6e75ec815df950e348605229e7df4566  [shntool]  1-06_-_Silvio_(96-04-20_Portland,_ME).wav
+4d915dcabaa205607238af56e4c8cc8a  [shntool]  1-07_-_Mr._Tambourine_Man_(96-04-20_Portland,_ME).wav
+9f2d7c473c47aaf08a4cecf94df50456  [shntool]  1-08_-_Desolation_Row_(96-04-20_Portland,_ME).wav
+a977af3faa0abc393f1de0e420bc1bbf  [shntool]  1-09_-_Friend_Of_The_Devil_(96-04-20_Portland,_ME).wav
+f17bef76ec5aa8fef25b3eafd5ba5a14  [shntool]  2-01_-_Maggie's_Farm_(96-04-20_Portland,_ME).wav
+da91f5c23fdf732e8009f65847b5b78d  [shntool]  2-02_-_What_Good_Am_I_(96-04-20_Portland,_ME).wav
+a698a9550515bb9e718f1dcb786aff1d  [shntool]  2-03_-_Seven_Days_(96-04-20_Portland,_ME).wav
+4fdb234591fbe32f58a798c3130b2342  [shntool]  2-04_-_Alabama_Getaway_(96-04-20_Portland,_ME).wav
+0f9129e00822e848af1dfeeb7d423d60  [shntool]  2-05_-_Times_They_Are_A-Changin'_(96-04-20_Portland,_ME).wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-20.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.01       51863996 B   ---   --   ---xx    shn  0.7362  1-01 - Crash On The Levee (96-04-20 Portland, ME).shn
+     6:46.73       71790140 B   ---   --   ---xx    shn  0.6395  1-02 - Man In The Long Black Coat (96-04-20 Portland, ME).shn
+     7:17.07       77103308 B   ---   --   ---xx    shn  0.7027  1-03 - All Along The Watchtower (96-04-20 Portland, ME).shn
+     8:49.61       93459116 B   ---   --   ---xx    shn  0.6393  1-04 - Positively 4th Street (96-04-20 Portland, ME).shn
+     6:43.67       71246828 B   ---   --   ---xx    shn  0.6568  1-05 - Pledging My Time (96-04-20 Portland, ME).shn
+     7:56.48       84079340 B   ---   --   ---xx    shn  0.6902  1-06 - Silvio (96-04-20 Portland, ME).shn
+     8:13.01       86967596 B   ---   --   ---xx    shn  0.6032  1-07 - Mr. Tambourine Man (96-04-20 Portland, ME).shn
+     9:03.40       95879324 B   ---   --   ---xx    shn  0.5971  1-08 - Desolation Row (96-04-20 Portland, ME).shn
+     7:26.04       78683852 B   ---   --   ---xx    shn  0.6248  1-09 - Friend Of The Devil (96-04-20 Portland, ME).shn
+     7:48.18       82597580 B   ---   --   ---xx    shn  0.7068  2-01 - Maggie's Farm (96-04-20 Portland, ME).shn
+     7:53.15       83472524 B   ---   --   ---xx    shn  0.5909  2-02 - What Good Am I (96-04-20 Portland, ME).shn
+     6:26.62       68236268 B   ---   --   ---xx    shn  0.6896  2-03 - Seven Days (96-04-20 Portland, ME).shn
+     6:41.10       70759964 B   ---   --   ---xx    shn  0.7113  2-04 - Alabama Getaway (96-04-20 Portland, ME).shn
+    10:35.71      112181036 B   ---   --   ---xx    shn  0.6334  2-05 - Times They Are A-Changin' (96-04-20 Portland, ME).shn
+   106:36.28     1128320872 B                            0.6539  (14 files)
+=================== 
+=================== 
+=================== 

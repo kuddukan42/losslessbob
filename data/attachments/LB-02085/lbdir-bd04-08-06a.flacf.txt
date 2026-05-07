@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-06a.flacf 
+=================== 
+=================== 
+=================== 
+42f15f56c13a330995b71de33f6128d2  101 drifters escape.flac
+260dd0cb3bcc63e423aea6b780261dda  102 i`ll be your baby tonight.flac
+6a135acf903ee821539c5df1e6396c9e  103 tweedle dee and tweedle dum.flac
+9a6a202492f10d6d05b7cb62f9bc8f77  104 tonight i`ll be staying here with you.flac
+d07cd2900dde17784f8d77db498c046d  105 seeing the real you at last.flac
+f6110e28ef718f58d3641a67f570843e  106 girl from the north country.flac
+dcc28df2a3359388d5ee64e4eed44661  107 cold irons bound.flac
+393f88db0fffd70200fe1f0178c398a6  108 make you feel my love.flac
+443422a5645ff14dfe8ca2ca2c65c62f  109 i don`t believe you.flac
+e1be3cb4f34727b742efaa18952739da  110 honest with me.flac
+d7917d5c14fc58419bd316331a0bcaf9  111 forever young.flac
+291ab61b623a21732f273325cb2cdf1a  112 summer days.flac
+d7d7bdf783e27f310176a572f3df75bc  201 don`t think twice it`s all right.flac
+c35344ab078849d38935a490ed618a79  202 like a rolling stone.flac
+5890c1e98028bcc36e13e936ddabb658  203 band intro.flac
+7155d24c2849b3b1f0273379d7c4139a  204 all along the watchtower.flac
+81b0012dbd47307f4e5b41142c60eb0b  bd04-08-06a.txt
+0b485ea08d143b1128ea9da868a86c6b  cooperstown 04-08-6.md5
+efa95b3f8842d5e53802e4b3ad19a0bf  ffp.txt
+60a2e271c25b605957f1262e6e4b7bfb  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-08-06a.flacf 
+=================== 
+=================== 
+=================== 
+101 drifters escape.flac:71fb427a4c0a524d99882cc744072636
+102 i`ll be your baby tonight.flac:6d3f6acd6054d11d9110398d513bec87
+103 tweedle dee and tweedle dum.flac:de0ec11f08abb2d62e74dbfe8c7c2505
+104 tonight i`ll be staying here with you.flac:c09a7d6baa6b2f835b70297294f084f4
+105 seeing the real you at last.flac:da5989a5b807957ad29eb126119a47e8
+106 girl from the north country.flac:55cd614bfacc2330c58e8da48e27659f
+107 cold irons bound.flac:f45996585460451240945c339caf54b5
+108 make you feel my love.flac:688df09a1d9774d55c32c4e1962bb731
+109 i don`t believe you.flac:e571e631213a0b7d6b0456a8877ea21d
+110 honest with me.flac:bbddd71fc19303e9a754976a2641b300
+111 forever young.flac:a444c15f976407c45c7fc35bee448f45
+112 summer days.flac:5bc8adf1779484baefc8edc41fa28915
+201 don`t think twice it`s all right.flac:435f2b122129fe4c5dd9e62b81c112ff
+202 like a rolling stone.flac:6a970bebf2a15555ac0752735aa7927f
+203 band intro.flac:47c027e08274d374feb9f0d0f6fadfbb
+204 all along the watchtower.flac:2740f39fe163a31f777ed76244764dc0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-06a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:45.65       50426924 B   ---   --   ---xx   flac  0.5885  101 drifters escape.flac
+     5:26.18       57548780 B   ---   --   ---xx   flac  0.5825  102 i`ll be your baby tonight.flac
+     5:31.36       58473116 B   ---   --   ---xx   flac  0.5506  103 tweedle dee and tweedle dum.flac
+     5:16.15       55777724 B   ---   --   ---xx   flac  0.5685  104 tonight i`ll be staying here with you.flac
+     6:05.14       64418972 B   ---   --   ---xx   flac  0.5927  105 seeing the real you at last.flac
+     5:13.13       55243820 B   ---   --   ---xx   flac  0.5426  106 girl from the north country.flac
+     5:57.48       63087740 B   ---   --   ---xx   flac  0.5608  107 cold irons bound.flac
+     6:06.26       64623596 B   ---   --   ---xx   flac  0.5093  108 make you feel my love.flac
+     6:03.55       64162604 B   ---   --   ---xx   flac  0.5809  109 i don`t believe you.flac
+     6:06.64       64712972 B   ---   --   ---xx   flac  0.5805  110 honest with me.flac
+     6:51.11       72526316 B   ---   --   ---xx   flac  0.5331  111 forever young.flac
+     7:24.31       78394556 B   ---   --   ---xx   flac  0.5628  112 summer days.flac
+     6:26.69       68252732 B   ---   --   ---xx   flac  0.5663  201 don`t think twice it`s all right.flac
+     6:13.02       65801948 B   ---   --   ---xx   flac  0.5878  202 like a rolling stone.flac
+     0:56.07        9894908 B   ---   --   ---xx   flac  0.4898  203 band intro.flac
+     5:35.48       59206940 B   ---   --   ---xx   flac  0.5612  204 all along the watchtower.flac
+    89:59.72      952553648 B                            0.5633  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-08-19-at853-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+22a0d002ee6ef5285a0661069b4e364d  bd02-08-19-at853-soomlos-LB-3845.txt
+ce6c25fef65112fd5b4c0c6833dd5231  bd2002-08-19.at853.soomlos.flac16.info.txt
+ebcea705dc0c279df4e41ad0078f38b0  bd2002-08-19.at853.soomlos.flac16.md5
+a6710033d2c262992e63e60e6754f9c9  bd2002-08-19.at853.soomlos.wav16.md5
+74e37fe6b6c6f7a0037b6b6cdaa0fb39  bd2002-08-19d1t01.flac
+798dad262184ee971fb52c3cb7e711d5  bd2002-08-19d1t02.flac
+b69cc265506b7b837a5e5a2f3cf8cb38  bd2002-08-19d1t03.flac
+858f1741f8e4c915f9c4e46c8d65fe7d  bd2002-08-19d1t04.flac
+ae5ef942c5d8663d8db8b905884838d7  bd2002-08-19d1t05.flac
+32457a26291674b7b16d7650cc4df154  bd2002-08-19d1t06.flac
+fb93fdd744cea37b969189466e307445  bd2002-08-19d1t07.flac
+29544fb6b74a9725584aa26c045f3325  bd2002-08-19d1t08.flac
+b9a99ee5af438140f05b5c6c8e1a7a9e  bd2002-08-19d1t09.flac
+01ca6f9acc1c0dca42e61c24cd771065  bd2002-08-19d1t10.flac
+fdc7a11f33fadada30bc09e6ea8d8b37  bd2002-08-19d1t11.flac
+668919cc519664e2584cae9041de4396  bd2002-08-19d1t12.flac
+a36f9a74475182c5fab469a31eaafd08  bd2002-08-19d2t01.flac
+2df9bb0fe570729ca00ba0cfedbae7e1  bd2002-08-19d2t02.flac
+185249d8ac923023bc09176624a5bffd  bd2002-08-19d2t03.flac
+325511e17264a14f04950a9c81f27530  bd2002-08-19d2t04.flac
+f00dbc712080401dada30bc8bbc78a8c  bd2002-08-19d2t05.flac
+ee506d880bc824a5da478587c885f848  bd2002-08-19d2t06.flac
+a5baa51123b4436d3e1269e6eed34d91  bd2002-08-19d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-19-at853-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+bd2002-08-19d1t01.flac:bfb5dd101cc3de01236a491f44dd35f8
+bd2002-08-19d1t02.flac:6f1013349be441a6e9bf1cc8a5f6d62f
+bd2002-08-19d1t03.flac:ddb11c1cd6dd9b8c25ab1f5cdc231a9d
+bd2002-08-19d1t04.flac:c57fd6aca990c459d97d9c14632636fe
+bd2002-08-19d1t05.flac:83d1897f80b22c093381ac621c2c5376
+bd2002-08-19d1t06.flac:88e80fd13236e0520ca1c63187c8effb
+bd2002-08-19d1t07.flac:f05ea0859137caeadcc3972c176a6463
+bd2002-08-19d1t08.flac:2400cc8a0c8845c350cdebc53052a0f6
+bd2002-08-19d1t09.flac:709a2a30fb065aa15cedd13590fbe1e1
+bd2002-08-19d1t10.flac:8598167b76d5d4829b140389aa3f8e13
+bd2002-08-19d1t11.flac:384a2660c15122d953df9326d28ed34b
+bd2002-08-19d1t12.flac:390ed486cff9379e650c40901a830f97
+bd2002-08-19d2t01.flac:94af871040da9b340d5f6b8ef7cf86d3
+bd2002-08-19d2t02.flac:07de8097934a1d3d1f52cb842537b7b1
+bd2002-08-19d2t03.flac:ac56e2966872a7149dc70e24c4193c86
+bd2002-08-19d2t04.flac:44341eac3fe706b9e78ee5eb8641ebab
+bd2002-08-19d2t05.flac:5a79119651b7a2aecaf725a6a214f6ab
+bd2002-08-19d2t06.flac:f95193e5ccedade5d1ad30f12aa835de
+bd2002-08-19d2t07.flac:3b1d4b13ee8cc1566c29e12b6b76d5ab
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-19-at853-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:58.45       20921084 B   ---   --   ---xx   flac  0.4354  bd2002-08-19d1t01.flac
+     4:19.68       45847580 B   ---   --   ---xx   flac  0.5637  bd2002-08-19d1t02.flac
+     5:13.18       55255580 B   ---   --   ---xx   flac  0.5378  bd2002-08-19d1t03.flac
+     6:58.54       73862252 B   ---   --   ---xx   flac  0.5263  bd2002-08-19d1t04.flac
+     5:54.39       62537372 B   ---   --   ---xx   flac  0.5394  bd2002-08-19d1t05.flac
+     5:28.70       58023884 B   ---   --   ---xx   flac  0.5171  bd2002-08-19d1t06.flac
+     5:21.63       56772620 B   ---   --   ---xx   flac  0.5919  bd2002-08-19d1t07.flac
+     5:06.58       54114860 B   ---   --   ---xx   flac  0.4444  bd2002-08-19d1t08.flac
+     6:58.29       73803452 B   ---   --   ---xx   flac  0.5709  bd2002-08-19d1t09.flac
+     6:59.08       73930460 B   ---   --   ---xx   flac  0.5096  bd2002-08-19d1t10.flac
+     9:07.35       96573164 B   ---   --   ---xx   flac  0.5892  bd2002-08-19d1t11.flac
+     3:18.25       34986044 B   ---   --   ---xx   flac  0.5131  bd2002-08-19d1t12.flac
+     6:42.32       70988108 B   ---   --   ---xx   flac  0.5909  bd2002-08-19d2t01.flac
+     6:17.64       66653372 B   ---   --   ---xx   flac  0.4611  bd2002-08-19d2t02.flac
+     4:18.13       45541820 B   ---   --   ---xx   flac  0.6219  bd2002-08-19d2t03.flac
+    13:02.56      138076556 B   ---   --   ---xx   flac  0.5271  bd2002-08-19d2t04.flac
+     8:02.04       85034252 B   ---   --   ---xx   flac  0.6108  bd2002-08-19d2t05.flac
+     7:04.37       74880668 B   ---   --   ---xx   flac  0.5433  bd2002-08-19d2t06.flac
+     6:17.30       66573404 B   ---   --   ---xx   flac  0.6179  bd2002-08-19d2t07.flac
+   118:30.73     1254376532 B                            0.5478  (19 files)
+=================== 
+=================== 
+=================== 

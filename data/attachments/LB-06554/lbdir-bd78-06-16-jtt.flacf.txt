@@ -1,0 +1,131 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-16-jtt.flacf 
+=================== 
+=================== 
+=================== 
+8496466b6bb0173ddabf55ab0542ea2c  Disc One\Disc 01Track01 Earls Court 16.06.78.flac
+4cb1905dfafb2c0607fc9aa12586617c  Disc One\Disc 01Track02 Earls Court 16.06.78.flac
+e5a9f86339613d10c8680d2db2efc3d3  Disc One\Disc 01Track03 Earls Court 16.06.78.flac
+dcc98625274e0affcfccd76dd1a67440  Disc One\Disc 01Track04 Earls Court 16.06.78.flac
+a05a222e486f17985e2fdde7bb158f0c  Disc One\Disc 01Track05 Earls Court 16.06.78.flac
+b0f92f6ded1c4cc8cc3086566ec1e895  Disc One\Disc 01Track06 Earls Court 16.06.78.flac
+b78b9e3975d1071611f170710376b8ca  Disc One\Disc 01Track07 Earls Court 16.06.78.flac
+95dc77e485a6b0142d59f4c573499fec  Disc One\Disc 01Track08 Earls Court 16.06.78.flac
+e0c6009bf40b00f2107ee4027014042a  Disc One\Disc 01Track09 Earls Court 16.06.78.flac
+d3e7f0ffccdaf84f5d4e521d3a9b834a  Disc One\Disc 01Track10 Earls Court 16.06.78.flac
+3aba6c73ebc8a4630f7ef97dc39d752b  Disc One\Disc 01Track11 Earls Court 16.06.78.flac
+8479b84ecd0e73fc614360a11918905d  Disc One\Disc 01Track12 Earls Court 16.06.78.flac
+9c6c230fe9e2b29fd729cdd568662fa3  Disc One\Disc 01Track13 Earls Court 16.06.78.flac
+ac2221ac10d717b14f827a595398483f  Disc Two\Disc 02Track01 Earls Court 16.06.78.flac
+51eb424bb6757a5e0d625488aebfec34  Disc Two\Disc 02Track02 Earls Court 16.06.78.flac
+7f99fece7b41e46de31b295484b7dbc8  Disc Two\Disc 02Track03 Earls Court 16.06.78.flac
+17e3da254c789801e0618116c0d4b2b7  Disc Two\Disc 02Track04 Earls Court 16.06.78.flac
+63fdc80868a9d34fdb2fca3929946942  Disc Two\Disc 02Track05 Earls Court 16.06.78.flac
+3fc05a5306ff6d46c234425a3ee995ff  Disc Two\Disc 02Track06 Earls Court 16.06.78.flac
+9a399d66b2f6f85d0b849c4b7269a477  Disc Two\Disc 02Track07 Earls Court 16.06.78.flac
+8261a83b1f6f705d04b57861b8510921  Disc Two\Disc 02Track08 Earls Court 16.06.78.flac
+c5737c36fe334dd32d60e60078ddb5ad  Disc Two\Disc 02Track09 Earls Court 16.06.78.flac
+e5a69c87af18d0fc8cb76aa23fc1350f  Disc Two\Disc 02Track10 Earls Court 16.06.78.flac
+92d97e36195fa22d4de6fbdcd8467f56  Disc Two\Disc 02Track11 Earls Court 16.06.78.flac
+5104b12cfefd453117bd9c35db58b740  Disc Two\Disc 02Track12 Earls Court 16.06.78.flac
+a3ef187be11dadc82f804b87cf73c93b  Disc Two\Disc 02Track13 Earls Court 16.06.78.flac
+8871cce60d968364dfd9ed7548428a38  Disc Two\Disc 02Track14 Earls Court 16.06.78.flac
+417d4a58981d94c65b91f82ca80d115b  Disc Two\Disc 02Track15 Earls Court 16.06.78.flac
+568e7b58b74cffbf4463514eeded934b  Dylan - Earls Court  June 16th 1978_Info.txt
+425f501162287a9ccea5749e79edee68  Dylan - Earls Court June 16th 1978.md5
+0167c4094a3bf5a8af511782e89a7cd8  Dylan - Earls Court June 16th 1978.txt
+a7e40e636d3c2e233ed59a8170b1db82  Earls Court, London 16.06.1978 - F.jpg
+e81ca45e7973e7694a4bd97acf3966ad  Earls Court, London 16.06.1978 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-16-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc 01Track01 Earls Court 16.06.78.flac:6e111455e0c6e465c77345139ea72ddf
+Disc 01Track02 Earls Court 16.06.78.flac:c624b6ed06fc38af8f82ba85c2c2bbf5
+Disc 01Track03 Earls Court 16.06.78.flac:6377fae7588fad9d67037ef87a4f225e
+Disc 01Track04 Earls Court 16.06.78.flac:6a91923a8e1e440c2696d0620d1141c3
+Disc 01Track05 Earls Court 16.06.78.flac:b3bc0eb6e795dfe28630cd3011881a08
+Disc 01Track06 Earls Court 16.06.78.flac:b1e21571abe7805b42bdaa22094d75bc
+Disc 01Track07 Earls Court 16.06.78.flac:f1471d30c181017478fc895bf372a17e
+Disc 01Track08 Earls Court 16.06.78.flac:9cdb87663e21a75e8c1af533409c9af4
+Disc 01Track09 Earls Court 16.06.78.flac:89feb0756069664b324ebe6fd1739e94
+Disc 01Track10 Earls Court 16.06.78.flac:fd988046a3510d6e4468d8819d26bdb7
+Disc 01Track11 Earls Court 16.06.78.flac:e459421342ace7bb42ddccc0648ca6c5
+Disc 01Track12 Earls Court 16.06.78.flac:e4ab7029819479a4f05dc51c83a08021
+Disc 01Track13 Earls Court 16.06.78.flac:18ffcfd16bcd5f1e333742f3355ad5d0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-16-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc 02Track01 Earls Court 16.06.78.flac:7d41f655c3e4d35e9ca32c438bacca47
+Disc 02Track02 Earls Court 16.06.78.flac:a2d5ffecdd43627fe6305137d7ea8188
+Disc 02Track03 Earls Court 16.06.78.flac:8f8d0d458a537dd27746dff21ff7a848
+Disc 02Track04 Earls Court 16.06.78.flac:31cfb5cc34574e5ceb1e5f64f1e8af1a
+Disc 02Track05 Earls Court 16.06.78.flac:bdec242a62dfc76d1aeb0d27acbb37ba
+Disc 02Track06 Earls Court 16.06.78.flac:33aa53089f5684a82c1e3ee24803a95a
+Disc 02Track07 Earls Court 16.06.78.flac:ce433dd7b5ce524e3e550e962093ce5b
+Disc 02Track08 Earls Court 16.06.78.flac:d7009494d4636aca6298cb5c26740cff
+Disc 02Track09 Earls Court 16.06.78.flac:0f8faafa432994b6c4443551a3a6f52f
+Disc 02Track10 Earls Court 16.06.78.flac:653ec24c4f21dc1454cc41f3403c2616
+Disc 02Track11 Earls Court 16.06.78.flac:460b311e7a0afa6c908229b8da53e05b
+Disc 02Track12 Earls Court 16.06.78.flac:83632cd983a0f591779a1e3c2365d7be
+Disc 02Track13 Earls Court 16.06.78.flac:bab85b31059fe15c0b6eae69a3b7c1ee
+Disc 02Track14 Earls Court 16.06.78.flac:26fa596b805ddf020134c4a207f18c52
+Disc 02Track15 Earls Court 16.06.78.flac:beb7f873d2d8e0a49b2db0bfd5b95e70
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-16-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:42.05       39172604 B   ---   --   ---xx   flac  0.6022  Disc 01Track01 Earls Court 16.06.78.flac
+     2:30.35       26542364 B   ---   --   ---xx   flac  0.6012  Disc 01Track02 Earls Court 16.06.78.flac
+     5:24.60       57294764 B   ---   --   ---xx   flac  0.6076  Disc 01Track03 Earls Court 16.06.78.flac
+     5:19.03       56278700 B   ---   --   ---xx   flac  0.6118  Disc 01Track04 Earls Court 16.06.78.flac
+     4:47.42       50725628 B   ---   --   ---xx   flac  0.6084  Disc 01Track05 Earls Court 16.06.78.flac
+     3:38.69       38617532 B   ---   --   ---xx   flac  0.6105  Disc 01Track06 Earls Court 16.06.78.flac
+     7:07.04       75332252 B   ---   --   ---xx   flac  0.6030  Disc 01Track07 Earls Court 16.06.78.flac
+     4:39.43       49316780 B   ---   --   ---xx   flac  0.6153  Disc 01Track08 Earls Court 16.06.78.flac
+     5:13.00       55213244 B   ---   --   ---xx   flac  0.6137  Disc 01Track09 Earls Court 16.06.78.flac
+     4:01.72       42681788 B   ---   --   ---xx   flac  0.6046  Disc 01Track10 Earls Court 16.06.78.flac
+     6:53.37       72940268 B   ---   --   ---xx   flac  0.5960  Disc 01Track11 Earls Court 16.06.78.flac
+     4:36.24       48742892 B   ---   --   ---xx   flac  0.5888  Disc 01Track12 Earls Court 16.06.78.flac
+     4:29.41       47548076 B   ---   --   ---xx   flac  0.5848  Disc 01Track13 Earls Court 16.06.78.flac
+    62:23.60      660406892 B                            0.6037  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-16-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:07.32       11894108 B   ---   --   ---xx   flac  0.5913  Disc 02Track01 Earls Court 16.06.78.flac
+     4:01.57       42646508 B   ---   --   ---xx   flac  0.5825  Disc 02Track02 Earls Court 16.06.78.flac
+     5:01.02       53101148 B   ---   --   ---xx   flac  0.5806  Disc 02Track03 Earls Court 16.06.78.flac
+     3:55.34       41534012 B   ---   --   ---xx   flac  0.5827  Disc 02Track04 Earls Court 16.06.78.flac
+     5:15.45       55671884 B   ---   --   ---xx   flac  0.5825  Disc 02Track05 Earls Court 16.06.78.flac
+     3:13.70       34209884 B   ---   --   ---xx   flac  0.5816  Disc 02Track06 Earls Court 16.06.78.flac
+     4:59.61       52887116 B   ---   --   ---xx   flac  0.5833  Disc 02Track07 Earls Court 16.06.78.flac
+     4:08.69       43909532 B   ---   --   ---xx   flac  0.5665  Disc 02Track08 Earls Court 16.06.78.flac
+     5:36.59       59409212 B   ---   --   ---xx   flac  0.5670  Disc 02Track09 Earls Court 16.06.78.flac
+     3:58.73       42154940 B   ---   --   ---xx   flac  0.5630  Disc 02Track10 Earls Court 16.06.78.flac
+     4:01.02       42517148 B   ---   --   ---xx   flac  0.5735  Disc 02Track11 Earls Court 16.06.78.flac
+     5:44.58       60818060 B   ---   --   ---xx   flac  0.5717  Disc 02Track12 Earls Court 16.06.78.flac
+     6:32.17       69188828 B   ---   --   ---xx   flac  0.5746  Disc 02Track13 Earls Court 16.06.78.flac
+     6:23.38       67650620 B   ---   --   ---xx   flac  0.5788  Disc 02Track14 Earls Court 16.06.78.flac
+     4:47.29       50695052 B   ---   --   ---xx   flac  0.5784  Disc 02Track15 Earls Court 16.06.78.flac
+    68:48.46      728288052 B                            0.5764  (15 files)
+=================== 
+=================== 
+=================== 

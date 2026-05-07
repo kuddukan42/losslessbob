@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-05-cb-schubert 
+=================== 
+=================== 
+=================== 
+8f5d31aee9e31890f9dab30b11f8812f  01 101 Rainy Day Women # 12 & 35.shn
+075b78059a6428c6040daab88240b8fd  02 102 Like A Rolling Stone.shn
+df6d304fa236e8c54e8850c61b4c6510  03 103 Maggie's Farm.shn
+32fcb7e9e9be247c8c15b132f1492150  04 104 I'll Be Your Baby Tonight.shn
+58d6cd47f92106e56587a8c3737d486d  05 105 Dead Man, Dead Man.shn
+2bac7ed48606254ec98a59b405202ee3  06 106 The Ballad Of Frankie Lee And Judas Priest.shn
+f7c25a15322a2a5795d4d84d9509502c  07 107 Seeing The Real You At Last.shn
+0cbcf88f342e28c8920b000e07312d8b  08 108 Watching The River Flow.shn
+1d36ccb0b2308bb7539432d918860727  09 109 Simple Twist Of Fate.shn
+a93f0554cdea28af1780e7d3b23eedc3  10 110 Tomorrow Is A Long Time.shn
+8d3729de54415826193b3cd92ffd2eb0  11 111 Ballad Of A Thin Man.shn
+43153cbb311a7e4885698f14a9812f3a  12 112 Shot Of Love.shn
+02aef0efe2bba09bb2e55d2120deabff  13 113 Trust Yourself.shn
+9be579aca8d7bc23329400b13ce259d9  14 114 Blowin' In The Wind.shn
+268baa7ba8b4fe46066b7cd651fff056  bd87-10-05-cb-schubert.txt
+f02cc737ef1462caa6df5766817a4864  Locarno.md5
+0fb7ab8a0dc97d4bf3eaccdf2161c883  Setlist.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-10-05-cb-schubert 
+=================== 
+=================== 
+=================== 
+df918b5ebe4de9f1245c2cbf17bb135e  [shntool]  01_101_Rainy_Day_Women___12___35.wav
+29704efbb8c3c7863c71847a4b563f9c  [shntool]  02_102_Like_A_Rolling_Stone.wav
+e58fbe43b6ed7b2449e2e1cb675f926f  [shntool]  03_103_Maggie_s_Farm.wav
+794b1d63fae6a6ad4bcefe8b483deddc  [shntool]  04_104_I_ll_Be_Your_Baby_Tonight.wav
+2d7d326823042f1d26db16ff41cd3b38  [shntool]  05_105_Dead_Man,_Dead_Man.wav
+4ad4bc7ea426d051caf94334fc517eac  [shntool]  06_106_The_Ballad_Of_Frankie_Lee_And_Judas_Priest.wav
+43bbba0d1cf81f587cad54eb4ba03643  [shntool]  07_107_Seeing_The_Real_You_At_Last.wav
+72671be4407d09701a8d3074c3ff4d93  [shntool]  08_108_Watching_The_River_Flow.wav
+3fe015372bd6976bc4b088fce3956b73  [shntool]  09_109_Simple_Twist_Of_Fate.wav
+dc43c7b24445564e623558804c757c97  [shntool]  10_110_Tomorrow_Is_A_Long_Time.wav
+61c712c66388325415391b8dc4b81450  [shntool]  11_111_Ballad_Of_A_Thin_Man.wav
+4530c74b744edc744c398a0d8e960c64  [shntool]  12_112_Shot_Of_Love.wav
+643d57ce7a39e5ac812681e4aeb27db1  [shntool]  13_113_Trust_Yourself.wav
+662478dc78886fd631e84346744df15f  [shntool]  14_114_Blowin__In_The_Wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-05-cb-schubert 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:33.71       37740236 B   ---   --   -----    wav  1.0000  01_101_Rainy_Day_Women___12___35.wav
+     6:00.21       63553436 B   ---   --   -----    wav  1.0000  02_102_Like_A_Rolling_Stone.wav
+     4:22.74       46390892 B   ---   --   -----    wav  1.0000  03_103_Maggie_s_Farm.wav
+     5:19.63       56419820 B   ---   --   -----    wav  1.0000  04_104_I_ll_Be_Your_Baby_Tonight.wav
+     4:26.18       46964780 B   ---   --   -----    wav  1.0000  05_105_Dead_Man,_Dead_Man.wav
+     5:43.56       60636956 B   ---   --   -----    wav  1.0000  06_106_The_Ballad_Of_Frankie_Lee_And_Judas_Priest.wav
+     4:38.06       49053356 B   ---   --   -----    wav  1.0000  07_107_Seeing_The_Real_You_At_Last.wav
+     3:58.42       42082028 B   ---   --   -----    wav  1.0000  08_108_Watching_The_River_Flow.wav
+     5:34.70       59082284 B   ---   --   -----    wav  1.0000  09_109_Simple_Twist_Of_Fate.wav
+     4:13.10       44652764 B   ---   --   -----    wav  1.0000  10_110_Tomorrow_Is_A_Long_Time.wav
+     5:53.39       62360972 B   ---   --   -----    wav  1.0000  11_111_Ballad_Of_A_Thin_Man.wav
+     7:11.61       76171916 B   ---   --   -----    wav  1.0000  12_112_Shot_Of_Love.wav
+     3:20.74       35454092 B   ---   --   -----    wav  1.0000  13_113_Trust_Yourself.wav
+     5:31.73       58560140 B   ---   --   -----    wav  1.0000  14_114_Blowin__In_The_Wind.wav
+    69:50.03      739123672 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,131 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-09-17-cc.flacf 
+=================== 
+=================== 
+=================== 
+80798961fd2f1e0a2ee3bcb2bfcd5d7d  Artwork and info\2000-09-17 Scottish Exhibition & Conference Centre, Glasgow, Scotland.txt
+13bac409ef4737466491b1cf90f82fc3  Artwork and info\cd-g36.html
+dd64e7f25d44624ce1899169ec4d0ab8  Artwork and info\cd-g36_files\RMgray.JPG
+361789dabdf642c3678a1bce1dc60c9c  Artwork and info\cd-g36_files\butnDL_fb.JPG
+eb68376cbc9495b0194e4a05029a37b3  Artwork and info\cd-g36_files\butnDL_help.JPG
+476348f53ec3cd21fd0b57b91d92cc7f  Artwork and info\cd-g36_files\button_next.JPG
+4565bd7c2ba72bc459279b6067a1b81b  Artwork and info\cd-g36_files\button_prev.JPG
+d8c256eb81f11a3810fa67b31f5fd57f  Artwork and info\cd-g36_files\g-36c.JPG
+aac848afa4c89f3714166fe51dba1ea5  Artwork and info\cd-g36_files\logo96_CD.JPG
+0dfd56630cf8f9f3c60e788a70354d5f  Artwork and info\ffp d1.txt
+caaeb9007f7617ad1066578bddb9e2a5  Artwork and info\ffp d2.txt
+6245afb036f6ad969d4ff749805c26ec  Artwork and info\g-36b.JPG
+9679372ff63db9eaf8c41bbbb8dcf6b5  Artwork and info\g-36f.JPG
+f18f0ce54eda7287fd7cefd12b56ad8e  bd00-09-17-cc-LB-3291.txt
+6b7b76ff855923f6061b80ab93320f7c  CD1\00 Announcement.flac
+805cc95f6223421e54d8730b71c34d62  CD1\01 Somebody touched me.flac
+9e994ad0c1b1d1ce2a0e2e310668a9ff  CD1\02 The times they are a-changin'.flac
+f4f77383339a02013d505cdd04ad8052  CD1\03 It's alright, ma (I'm only bleeding).flac
+94dd6c82b94aef22ca4869ea41fb97d5  CD1\04 It's all over now, baby blue.flac
+296f15053df6aea27e8c76e182387cca  CD1\05 Tangled up in blue.flac
+cb72499f4db81785cf2e620abeeaf16b  CD1\06 This world can't stand long.flac
+7692ed839c2ab9e5232543dcb479e70f  CD1\07 Country Pie.flac
+e3c81ce9d082b72033ea9ee4a6c1fad0  CD1\08 Just like a woman.flac
+43274833d369fe9f589ece0d25b17c5d  CD1\09 Most likely you go your way (and I'll go mine).flac
+a7e82ea9d85a3a304d151516778e572b  CD1\10 Highlands.flac
+9f991cc8d66ba7b420b8ec906a9cd63d  CD1\11 Drifter's escape.flac
+9dae7b0e77e4b44d78438a02e3d68ffe  CD1\12 Rainy day women # 12 & 35.flac
+63fc913f9499de8c4ef714347fcd504b  CD2\13 Things have changed.flac
+46293e83cbd9490e6c58ded6e10520ad  CD2\14 Like a rolling stone.flac
+c4b3711a1d70590494f41fd79f0bf3c7  CD2\15 It ain't me, babe.flac
+298991e052325a213156d2a78d086bcd  CD2\16 Highway 61 revisited.flac
+fff1e5585e472770d1934e8b2a1277bf  CD2\17 Blowin' in the wind.flac
+b919d76f2e995924a55f1a1694613dcc  CD2\18 To be alone with you.flac
+996568b39a76a619c6b56961fcbfa0f1  CD2\19 Forever young.flac
+1761b20e4aed4877c05c4ff627375466  CD2\20 We better talk this over.flac
+d8c458c30c8463ee0ec76e5bea4fc8db  CD2\21 Lay lady lay.flac
+9271f8660213a4e049fc5796c3d24c01  CD2\22 The man in me.flac
+64c02b07363e154d135f25b4de87b506  CD2\23 Dark as a dungeon.flac
+bcafd9b7a838486542a63248433f59d5  CD2\24 Long black veil.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-09-17-cc.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:31a976c7a2a095eb02fd37aed963f5cd
+01 Somebody touched me.flac:111d93c317fa3531a7b16166f463e3a0
+02 The times they are a-changin'.flac:1d0f2694e5f2ecfa473b455f1bb253fe
+03 It's alright, ma (I'm only bleeding).flac:a71444d1b71f4fa9f0b5cb0d31225984
+04 It's all over now, baby blue.flac:f6ca23df09b0c7b2d3a0c02a4bac68a7
+05 Tangled up in blue.flac:e04aa40e177e580fc39da92ecfb44c92
+06 This world can't stand long.flac:58e061cf9641b546f2f219b0d3572025
+07 Country Pie.flac:9b5f3dcbcd38d22f153ebb5aa4fe14ab
+08 Just like a woman.flac:ec110d1350a28e79fa54883f0404ccea
+09 Most likely you go your way (and I'll go mine).flac:4a981094a909e541e4eee1afde93591a
+10 Highlands.flac:f74e31376274e75b6cac5e069259d68f
+11 Drifter's escape.flac:ddf1bac3d241c764d2aebe7ccd5c3c37
+12 Rainy day women # 12 & 35.flac:9fe6a52135bd1f29b528d92fe3a31a11
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-09-17-cc.flacf\CD2 
+=================== 
+=================== 
+=================== 
+13 Things have changed.flac:d518aac374a61291ba16d688a8a4c567
+14 Like a rolling stone.flac:14e754538b23850cd9c93c09c82b382b
+15 It ain't me, babe.flac:a15d4b7d045b42e76860d79e63d683f1
+16 Highway 61 revisited.flac:e4e0e1ed025b5e901e16f2d179231357
+17 Blowin' in the wind.flac:d1213c9439e8f8e34bd97cf515d68780
+18 To be alone with you.flac:4608ad8d9a531898db2dcc2e7a624fbf
+19 Forever young.flac:53f5b1d2ce65bc543f6b9598e1ac7ff5
+20 We better talk this over.flac:0f7432c550d1d46ff9645d41d6db3689
+21 Lay lady lay.flac:7ae5bbfde2dac0d2b924c75ebdfb04c1
+22 The man in me.flac:8626f52b1e63dc4303774515f8aebb13
+23 Dark as a dungeon.flac:68cfe10f89d5fc498c84d2dfa68a319b
+24 Long black veil.flac:9761dfa470fa5e31515e14b47b8cc4c1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-17-cc.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:42.03        7415900 B   ---   --   ---xx   flac  0.6136  00 Announcement.flac
+     2:33.15       27024524 B   ---   --   ---xx   flac  0.6836  01 Somebody touched me.flac
+     6:46.69       71780732 B   ---   --   ---xx   flac  0.6483  02 The times they are a-changin'.flac
+     7:53.63       83585420 B   ---   --   ---xx   flac  0.6308  03 It's alright, ma (I'm only bleeding).flac
+     7:50.00       82908044 B   ---   --   ---xx   flac  0.6363  04 It's all over now, baby blue.flac
+     7:47.21       82428236 B   ---   --   ---xx   flac  0.6549  05 Tangled up in blue.flac
+     4:16.58       45294860 B   ---   --   ---xx   flac  0.6116  06 This world can't stand long.flac
+     2:59.71       31742636 B   ---   --   ---xx   flac  0.6634  07 Country Pie.flac
+     6:41.26       70797596 B   ---   --   ---xx   flac  0.6205  08 Just like a woman.flac
+     6:22.57       67518908 B   ---   --   ---xx   flac  0.6656  09 Most likely you go your way (and I'll go mine).flac
+    10:08.71      107418236 B   ---   --   ---xx   flac  0.6362  10 Highlands.flac
+     4:36.02       48691148 B   ---   --   ---xx   flac  0.6808  11 Drifter's escape.flac
+     9:23.40       99407324 B   ---   --   ---xx   flac  0.6476  12 Rainy day women # 12 & 35.flac
+    78:02.46      826013564 B                            0.6447  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-17-cc.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:57.00       62974844 B   ---   --   ---xx   flac  0.6560  13 Things have changed.flac
+     7:19.17       77479628 B   ---   --   ---xx   flac  0.6426  14 Like a rolling stone.flac
+     6:58.03       73742300 B   ---   --   ---xx   flac  0.6042  15 It ain't me, babe.flac
+     5:15.69       55728332 B   ---   --   ---xx   flac  0.6680  16 Highway 61 revisited.flac
+     5:16.60       55883564 B   ---   --   ---xx   flac  0.6031  17 Blowin' in the wind.flac
+     5:07.72       54324188 B   ---   --   ---xx   flac  0.6530  18 To be alone with you.flac
+     8:38.07       91391708 B   ---   --   ---xx   flac  0.6319  19 Forever young.flac
+     3:57.20       41853884 B   ---   --   ---xx   flac  0.6074  20 We better talk this over.flac
+     4:44.48       50210540 B   ---   --   ---xx   flac  0.5326  21 Lay lady lay.flac
+     4:37.23       48916940 B   ---   --   ---xx   flac  0.6056  22 The man in me.flac
+     4:20.64       46014572 B   ---   --   ---xx   flac  0.5049  23 Dark as a dungeon.flac
+     3:45.30       39760604 B   ---   --   ---xx   flac  0.6196  24 Long black veil.flac
+    65:58.38      698281104 B                            0.6150  (12 files)
+=================== 
+=================== 
+=================== 

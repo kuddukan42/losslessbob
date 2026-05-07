@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd64-11-25a.flacf 
+=================== 
+=================== 
+=================== 
+0f2fa2661c48f920645cfa0b13b09d8e  bd64-11-25a-LB-2867.txt
+5d3a727c662bcc10c2e311cbe9c2afb9  d1t01.flac
+560c34095b9b7b444757c74168f3075e  d1t02.flac
+58fc7d811a2df587244b9a3a42d10ff0  d1t03.flac
+eebcb1626ce46dff9d5e41324a6e6260  d1t04.flac
+31f9898f7cae14627fd19191fa12d82c  d1t05.flac
+7b1bc5c60c706d9e28f3b0aa9ee5ada1  d1t06.flac
+f77dde73c523a3c734ce38ec218ec263  d1t07.flac
+cf045e760cf6021a54e5b851daf1e122  d1t08.flac
+e605198b477ed92e98babbd8a6eb6683  d1t09.flac
+2bf8a4cc99b50d196f9da6b664c66d0e  d1t10.flac
+193f9ae7d64399da4d19ab93bd3f3e7f  d1t11.flac
+b5539ab1f59fb6f2ef0b6f8df0de498f  d2t01.flac
+886c0a6411c838103b8d2ad5b1614c96  d2t02.flac
+a4ab56edbc0a59cc617de491b3206fdf  d2t03.flac
+fb2c94628a236e1c4261fc8ea24510a6  d2t04.flac
+c6927553601756d4f01fca3fdcd19454  d2t05.flac
+d3490002981c9692e47c4efc9d63859e  d2t06.flac
+a0d48eddfe341911438e8872c47e020e  San Fran-Jose '64.txt
+6a59b0e3e03488ce253dfefb80e8c9c4  San Jose, San Francisco 1964.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd64-11-25a.flacf 
+=================== 
+=================== 
+=================== 
+d1t01.flac:76ba68cf3cd9580dc13d9bf55ed658c3
+d1t02.flac:dc2e09fe5933ef63708847f526c86b08
+d1t03.flac:42db0375664202a80a0d8ee6e9d59971
+d1t04.flac:6bdfc342928f4ce1397b25fb39f8d9ad
+d1t05.flac:c1039d40b309e15801d25efcb135d14b
+d1t06.flac:98d09a5a97e51b842649d13b9418ecab
+d1t07.flac:8825d0fb6b930d1f2e926313066d1e4e
+d1t08.flac:d5c6f73494863efe260001c0cdb57df2
+d1t09.flac:3ec3c4a7f13b6915ab7dd5b8c7c88331
+d1t10.flac:9c2a42aee669b62cf5be4e874aa069c4
+d1t11.flac:b9f587a121948a5b9a956225d37d5ddd
+d2t01.flac:8c96b5550467a0c23472c654c8ffaa12
+d2t02.flac:9877fbfc8b79a2f5778df548df8f02b8
+d2t03.flac:50c7a63a16e1be2960aa82fe65e6c9b0
+d2t04.flac:d7ca24c39da3f62641631e31aeae2371
+d2t05.flac:29d77fa882f07fe385185b8302635385
+d2t06.flac:faa46e8c49f67c809b4c67a8750f9868
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd64-11-25a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.71       35623436 B   ---   --   ---xx   flac  0.4533  d1t01.flac
+     4:23.41       46489676 B   ---   --   ---xx   flac  0.4569  d1t02.flac
+     4:51.12       51360668 B   ---   --   ---xx   flac  0.4550  d1t03.flac
+     9:22.72       99306188 B   ---   --   ---xx   flac  0.4526  d1t04.flac
+     3:14.16       34259276 B   ---   --   ---xx   flac  0.4826  d1t05.flac
+     8:48.24       93195692 B   ---   --   ---xx   flac  0.4362  d1t06.flac
+     6:59.43       74012780 B   ---   --   ---xx   flac  0.4686  d1t07.flac
+     6:45.68       71601980 B   ---   --   ---xx   flac  0.4474  d1t08.flac
+     4:53.59       51824012 B   ---   --   ---xx   flac  0.4711  d1t09.flac
+     4:50.05       51167804 B   ---   --   ---xx   flac  0.4342  d1t10.flac
+    13:23.44      141752732 B   ---   --   ---xx   flac  0.3259  d1t11.flac
+     5:40.60       60117164 B   ---   --   ---xx   flac  0.4953  d2t01.flac
+     2:22.42       25147628 B   ---   --   ---xx   flac  0.5026  d2t02.flac
+     7:48.51       82675196 B   ---   --   ---xx   flac  0.5087  d2t03.flac
+     5:07.04       54164252 B   ---   --   ---xx   flac  0.5164  d2t04.flac
+     4:01.25       42571244 B   ---   --   ---xx   flac  0.5137  d2t05.flac
+     3:02.70       32269484 B   ---   --   ---xx   flac  0.5151  d2t06.flac
+    98:58.32     1047539212 B                            0.4519  (17 files)
+=================== 
+=================== 
+=================== 

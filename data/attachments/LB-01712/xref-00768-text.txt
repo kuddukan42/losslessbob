@@ -1,0 +1,127 @@
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+497fea2ec28cc30a8f952c39f25edd9b *01 Crash on the levee (down in the flood).flac
+e7a224980984b2e9b3a9854417516896 *02 Tonight I'll be staying here with you.flac
+4929c052f6974a73f300862b514e6494 *03 All along the watchtower.flac
+aa5ede70bec1cdfc3547c407b8d9c54e *04 Tears of rage.flac
+ea1fd0b9dc8a0e98bf4f590b2eb86fc9 *05 It takes a lot to laugh, it takes a train to cry.flac
+c6f2cf8970c1b51ae818cf8426bee568 *06 Silvio.flac
+7ec177d0cfcbf25fb10416b0b63d997d *07 Mr. Tambourine Man.flac
+c3005c97aa1d3d2dca2ec549c6a3ead2 *08 Masters of war.flac
+bb703d605d1364f609712efc0a46e13a *09 Girl from The North Country.flac
+f2ced4d507dc39a8cfb5feaa62b1c9a4 *10 Seeing the real you at last.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+3037f8c077e8208eccc34339dd8aae74 *11 Born in time.flac
+f3d32335e7e0f9ba41c8424977a74206 *12 Obviously five believers.flac
+18d178f143deea958ecefca6e7e31585 *13 Stuck inside of Mobile with the Memphis blues again.flac
+c5f7ba4f207278ea6427edfd88695536 *14 Knockin' on heaven's door.flac
+a6f83609351e9d6a7e55378dc1c3395e *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================
+=== 1996-10-29 Civic Center Music Hall, Oklahoma City, Oklahoma, USA.md5
+===================
+===================
+===================
+497fea2ec28cc30a8f952c39f25edd9b *CD1\01 Crash on the levee (down in the flood).flac
+e7a224980984b2e9b3a9854417516896 *CD1\02 Tonight I'll be staying here with you.flac
+4929c052f6974a73f300862b514e6494 *CD1\03 All along the watchtower.flac
+aa5ede70bec1cdfc3547c407b8d9c54e *CD1\04 Tears of rage.flac
+ea1fd0b9dc8a0e98bf4f590b2eb86fc9 *CD1\05 It takes a lot to laugh, it takes a train to cry.flac
+c6f2cf8970c1b51ae818cf8426bee568 *CD1\06 Silvio.flac
+7ec177d0cfcbf25fb10416b0b63d997d *CD1\07 Mr. Tambourine Man.flac
+c3005c97aa1d3d2dca2ec549c6a3ead2 *CD1\08 Masters of war.flac
+bb703d605d1364f609712efc0a46e13a *CD1\09 Girl from The North Country.flac
+f2ced4d507dc39a8cfb5feaa62b1c9a4 *CD1\10 Seeing the real you at last.flac
+7af63feec7808083e7c4fb335a0b2691 *CD1\FLAC CD1.md5
+3037f8c077e8208eccc34339dd8aae74 *CD2\11 Born in time.flac
+f3d32335e7e0f9ba41c8424977a74206 *CD2\12 Obviously five believers.flac
+18d178f143deea958ecefca6e7e31585 *CD2\13 Stuck inside of Mobile with the Memphis blues again.flac
+c5f7ba4f207278ea6427edfd88695536 *CD2\14 Knockin' on heaven's door.flac
+a6f83609351e9d6a7e55378dc1c3395e *CD2\15 Rainy day women # 12 & 35.flac
+13426368e2b50f11575ed7c7b04f61b3 *CD2\FLAC CD2.md5
+fe99d906d1e21b71c3f23e5724ed6eab *Info\1996-10-29 Civic Center Music Hall, Oklahoma City, Oklahoma, USA.txt
+===================
+===================
+===================
+=== 1996-10-29 Civic Center Music Hall, Oklahoma City, Oklahoma, USA.txt
+===================
+===================
+===================
+Civic Center Music Hall
+Oklahoma City, Oklahoma
+October 29, 1996
+
+NOTE: Olof lists this as uncirculating: "There is no tape from this show in general circulation". At least, it's been around since late 2004! Come on Olof...
+
+*  This recording is the same as LB-1712; but with a different MD5 checksum!  *
+Based on identical flaws, see LB-notes below
+
+Taper: unidentified
+Lineage: received in a trade as SHNs; now converted to FLAC
+LB Rating: B+
+Frequency analysis: full spectrum
+
+LB-notes: very good to excellent sound; background talking d1t3, d1t4, d1t6
+missing begin of d1t1; noise d1t1 0:24; big analog drop d1t4 1:14; big pop d1t8 0:00, 13sec drop d1t9 7:35; a few lines missing at drop d1t8 4:25
+
+01. Crash On The Levee (Down In The Flood) [01:25]
+02. Tonight I'll Be Staying Here With You [05:50]
+03. All Along The Watchtower [06:27]
+04. Tears Of Rage (Bob Dylan & Richard Manuel) [09:13]
+05. It Takes A Lot To Laugh, It Takes A Train To Cry [07:59]
+06. Silvio (Bob Dylan & Robert Hunter) [07:56]
+07. Mr. Tambourine Man [08:02]
+08. Masters Of War [06:41]
+09. Girl From The North Country [08:50]
+10. Seeing The Real You At Last [08:04]
+Total time [70:32]
+
+11. Born In Time [06:27]
+12. Obviously Five Believers [09:27]
+13. Stuck Inside Of Mobile With The Memphis Blues Again [10:40]
+14. Knockin' On Heaven's Door [10:58]
+15. Rainy Day Women # 12 & 35 [08:25]
+Total time [46:25]
+
+Concert # 823 of The Never-Ending Tour
+Concert # 9 of the 1996 US Fall Tour
+1996 concert # 67
+
+Concert # 9 with the 10th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+7-9, 14 acoustic with the band
+
+10 new songs (66%) compared to previous concert
+5 new songs for this tour
+
+A request...
+
+===================
+===================
+===================
+=== fingerprint.ffp
+===================
+===================
+===================
+01 Crash on the levee (down in the flood).flac:2d6d95f2852e40ffb3b63c38bc4e460e02 Tonight I'll be staying here with you.flac:19fcf124385bada60b994c3667d7399303 All along the watchtower.flac:15b1af3c7de7dbccfa902ab2b679ba5704 Tears of rage.flac:e14aa8a4b6aaa68cde22ae95a5029f5405 It takes a lot to laugh, it takes a train to cry.flac:b0f9fb20ea5002b6519171abc585104506 Silvio.flac:462ed9cca71bebbc7b7d4ae57f5a1e5307 Mr. Tambourine Man.flac:bef656a12fd4760eb6a37916c40f57e508 Masters of war.flac:3278e3e631eee3139542d3c5def6cb2f09 Girl from The North Country.flac:93c534d32de70b3256959e96887b043510 Seeing the real you at last.flac:5609a865c16c65a16ceef7dff8c62703
+11 Born in time.flac:a4f0ec677835424da16b26a79e44765512 Obviously five believers.flac:ae5d27a3052c641b288e6cd87ff6961313 Stuck inside of Mobile with the Memphis blues again.flac:f07ffc5ec0dcbba126cf6390b93cf5e614 Knockin' on heaven's door.flac:f3771a715b5c2045a65af665f4a347cb15 Rainy day women # 12 & 35.flac:f57b06fea3acd23d07fb23291c7da0e3
+===================
+===================
+===================

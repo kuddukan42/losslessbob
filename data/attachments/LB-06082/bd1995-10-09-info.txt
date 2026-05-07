@@ -1,0 +1,43 @@
+Bob Dylan
+The Johnny Mercer Theater
+Civic Center
+Savannah, Georgia
+9 October 1995
+ 
+1   intro
+2 Drifter's Escape
+3 The Man In Me
+4 All Along The Watchtower
+5 What Good Am I?
+6 Most Likely You Go Your Way (And I'll Go Mine)
+7 Silvio (Bob Dylan & Robert Hunter)
+8 Mr. Tambourine Man
+9 Masters Of War
+10 Boots Of Spanish Leather
+
+1 Maggie's Farm
+2 License To Kill
+3   Band introduction
+4 God Knows
+5 Ballad Of A Thin Man
+6 My Back Pages
+7 Rainy Day Women # 12 & 35
+
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+further info www.bjorner.com
+
+legendary taper F
+
+last 2 minutes 32 kHz, so cut in Rainy Day Women # 12 & 35
+some disconnected mic one channel repaired to mono
+
+Sennheiser MKE2002 -> portable DATrecorder - clone -> (digital transfer) m-audio delta audiophile 2496 
+   -> Wavelab -> ssrc -> wavelab -> cdwave for tracking -> tlh
+
+I did not harm the sound of the recording in any way
+

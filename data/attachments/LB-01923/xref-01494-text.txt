@@ -1,0 +1,45 @@
+===================
+===================
+===================
+=== 95-03-12-offmaster.txt
+===================
+===================
+===================
+Bob Dylan
+March 12 1995	
+Palac kultury, Congress Hall  Prague, Czech Republic
+
+Offmaster copy of an audience recording. Unidentified taper.
+
+Disk One
+Crash On The Levee (Down In The Flood) / I Don't Believe You / All Along The Watchtower / 
+Just Like A Woman / Tangled Up In Blue / Watching The River Flow / 
+Mr. Tambourine Man (acoustic w band) / 
+
+Disk Two
+Desolation Row (acoustic w band) / Don't Think Twice, It's All Right (acoustic w band) / 
+Man In The Long Black Coat / God Knows / Maggie's Farm / Ballad Of A Thin Man / 
+It Ain't Me, Babe (acoustic w band)
+
+disk one
+Track 01.flac:161d01560fcafbd1e82e726fb047b2e5
+Track 02.flac:ad3972259fa8b4ebe21deff84e5158b8
+Track 03.flac:2291bc850fa1f3d422286b2abd6a44ad
+Track 04.flac:e290045b60f560a65d6ee82e45a0ec57
+Track 05.flac:fbe19d128e2250a6f85a3ec2214bccad
+Track 06.flac:3b6cfb39234bb0568c33ea71cd68c011
+Track 07.flac:73dbd448095f478e989be69e076b47cc
+
+disk two
+Track 01.flac:50f9590e1f06a9f26614843695ef5002
+Track 02.flac:3c5dc4fd99d5ccb21032606efbc6d094
+Track 03.flac:44987ee626617b9708a88ad71fc845fd
+Track 04.flac:84e7048d1ff8c5d6f939774900b51b24
+Track 05.flac:d9beb05891e7ddd71592b324f751ab4f
+Track 06.flac:50b4e0ddc32647bc28e766c2f7091a10
+Track 07.flac:51705accd43bfa02ab466e631f64689a
+
+
+===================
+===================
+===================

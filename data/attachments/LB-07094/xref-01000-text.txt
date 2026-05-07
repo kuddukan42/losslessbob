@@ -1,0 +1,157 @@
+===================
+===================
+===================
+=== (Bob Dylan) 1990-11-08 Don't Turn A Slow Waltz Into Techno.md5
+===================
+===================
+===================
+d6c21ea7059f6a4a865aebc7e56b56a5 *1990-11-08 Don't Turn A Slow Waltz Into Techno.txt
+549107219802a862cd5737c9d0a54696 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_101.flac
+ed477911395cbb9477090738f2e92b30 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_102.flac
+3a7b06de58b7a64f957353562a6f45e2 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_103.flac
+12320fb3a59f94b915abd0a88c709d29 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_104.flac
+71e96cb271a58b225aadcd5de3de2aa4 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_105.flac
+ea465e71026f1be40309409a1f8b7c6f *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_106.flac
+9e51cb7bc7206e56c87c4a436a27fa06 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_107.flac
+ef1d5fb8a45b34caa3f4f813fa673a5a *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_108.flac
+dfa22d71f73a8309734bfdd8f9d430d7 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_109.flac
+815b7f8cffdf4b248bdcb486fc37e045 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_110.flac
+b14b8b812c59080d67abf2ffad568b4c *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_111.flac
+22a9a55fb3084e19ae5482351d8a29bf *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_112.flac
+8cb7c5c11860b4618bce9f344c2605c3 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_113.flac
+e9fca11c9bc7a615726885ce00320baa *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_114.flac
+3ee8e5b443a63ab6e90df82ac36c301d *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_115.flac
+420f4a71abd6cd73a98fe05290842c28 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_116.flac
+d977cede8d424eb1fb7ae8718200aeb8 *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_117.flac
+74a45e735ab2f46317df262a6004568b *Don't Turn A Slow Waltz Into Techno [CD1)\1990-11-08_118.flac
+bd38b2d85d148499ae3ff9a380c4dbf6 *Don't Turn A Slow Waltz Into Techno [CD1)\Don't Turn A Slow Waltz Into Techno [CD1).md5
+73d73fa033135749a7c0cff8235f0d91 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_201.flac
+e2f6c1639a91fed4ad428a3270e66461 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_202.flac
+a815a66e1c7e7fab0cad724020f3e816 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_203.flac
+f2f04f3750dd0f5b1721daafca8a3585 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_204.flac
+d2118eb5503dcfad9b1e92a002fafeb4 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_205.flac
+6666c0ffd902706f4899cce6b59f9f68 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_206.flac
+efb7710fb27761f8ddf20bd96f0257d4 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_207.flac
+eeb461bee63ebf2861c77b4de83cf4ea *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_208.flac
+38e4f52bcad3e9e25bb9789877534271 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_209.flac
+0fdc5ebd9d78a64256587d940d468cd0 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_210.flac
+f8fb76a0ad155b3cc39d8ef773973c40 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_211.flac
+076a7458143b88f74b9fe4078e9d2411 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_212.flac
+7135078b0ca5494b04a55cc039189eeb *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_213.flac
+5e1095cb99643a817c515f87c4434881 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_214.flac
+2fbbe062e5bea1052520fdac021d1af7 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_215.flac
+7f7486ecf86b9f9be2806c5c815e58f4 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_216.flac
+77db3ad4c58e740cdbd806030372a160 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_217.flac
+9be252195064a6ff5d06ef3070da3f86 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_218.flac
+251442881f2429e583ffe663daafb371 *Don't Turn A Slow Waltz Into Techno [CD2]\1990-11-08_219.flac
+38aab6fe68bbe25f3b7be34fe1620850 *Don't Turn A Slow Waltz Into Techno [CD2]\Don't Turn A Slow Waltz Into Techno [CD2].md5
+===================
+===================
+===================
+=== 1990-11-08 Don't Turn A Slow Waltz Into Techno.txt
+===================
+===================
+===================
+
+Carver Hockey Arena
+Iowa City, Iowa
+8 November 1990
+
+*Don't Turn A Slow Waltz Into Techno* 
+ ( A Southside-Butcher-Production)
+
+1. Marine Hymn (trad.)
+2. Most Likely You Go Your Way (And I'll Go Mine)
+3. Lay Lady Lay
+4. I'll Be Your Baby Tonight
+5. Silvio (Bob Dylan & Robert Hunter)
+6. Simple Twist Of Fate
+7. Gotta Serve Somebody
+8. Desolation Row
+9. One Too Many Mornings
+10. John Brown
+11. Don't Think Twice, It's All Right
+12. Knockin' On Heaven's Door
+13. Everything Is Broken
+14. Joey (Bob Dylan & Jacques Levy)
+15. Under The Red Sky
+16. T.V. Talkin' Song
+17. All Along The Watchtower
+18. I Shall Be Released
+
+CD 2
+1. Like A Rolling Stone
+2. Blowin' In The Wind
+3. Maggie's Farm
+
+BONUS Tracks
+4 What Was It You Wanted [09/11/1990]
+5 My Back Pages [09/11/1990]
+6 Song To Woody [09/11/1990]
+7 Its Alright Ma, Im Only Bleeding [09/11/1990]
+8 Boots Of Spanish Leather [10/11/1990]
+9 The Lonsome Death Of Hattie Carrol [10/11/1990]
+10 Detroit Girl [12/11/1990]
+11 Girl of The North Country [12/11/1990]
+12 Tears Of Rage [12/11/1990]
+13 Gates Of Eden [13/11/1990]
+14 To Ramona [13/11/1990]
+15 Old Mc Donald [14/11/1990]
+16 To Be alone with You [14/11/1990]
+17 Shelter from The Storm [14/11/1990]
+18 Youre a Big Girl Now [14/11/1990]
+19 Love Minus Zero/No Limit [14/11/1990]
+===================
+===================
+===================
+=== Don't Turn A Slow Waltz Into Techno [CD1).md5
+===================
+===================
+===================
+549107219802a862cd5737c9d0a54696 *1990-11-08_101.flac
+ed477911395cbb9477090738f2e92b30 *1990-11-08_102.flac
+3a7b06de58b7a64f957353562a6f45e2 *1990-11-08_103.flac
+12320fb3a59f94b915abd0a88c709d29 *1990-11-08_104.flac
+71e96cb271a58b225aadcd5de3de2aa4 *1990-11-08_105.flac
+ea465e71026f1be40309409a1f8b7c6f *1990-11-08_106.flac
+9e51cb7bc7206e56c87c4a436a27fa06 *1990-11-08_107.flac
+ef1d5fb8a45b34caa3f4f813fa673a5a *1990-11-08_108.flac
+dfa22d71f73a8309734bfdd8f9d430d7 *1990-11-08_109.flac
+815b7f8cffdf4b248bdcb486fc37e045 *1990-11-08_110.flac
+b14b8b812c59080d67abf2ffad568b4c *1990-11-08_111.flac
+22a9a55fb3084e19ae5482351d8a29bf *1990-11-08_112.flac
+8cb7c5c11860b4618bce9f344c2605c3 *1990-11-08_113.flac
+e9fca11c9bc7a615726885ce00320baa *1990-11-08_114.flac
+3ee8e5b443a63ab6e90df82ac36c301d *1990-11-08_115.flac
+420f4a71abd6cd73a98fe05290842c28 *1990-11-08_116.flac
+d977cede8d424eb1fb7ae8718200aeb8 *1990-11-08_117.flac
+74a45e735ab2f46317df262a6004568b *1990-11-08_118.flac
+===================
+===================
+===================
+=== Don't Turn A Slow Waltz Into Techno [CD2].md5
+===================
+===================
+===================
+73d73fa033135749a7c0cff8235f0d91 *1990-11-08_201.flac
+e2f6c1639a91fed4ad428a3270e66461 *1990-11-08_202.flac
+a815a66e1c7e7fab0cad724020f3e816 *1990-11-08_203.flac
+f2f04f3750dd0f5b1721daafca8a3585 *1990-11-08_204.flac
+d2118eb5503dcfad9b1e92a002fafeb4 *1990-11-08_205.flac
+6666c0ffd902706f4899cce6b59f9f68 *1990-11-08_206.flac
+efb7710fb27761f8ddf20bd96f0257d4 *1990-11-08_207.flac
+eeb461bee63ebf2861c77b4de83cf4ea *1990-11-08_208.flac
+38e4f52bcad3e9e25bb9789877534271 *1990-11-08_209.flac
+0fdc5ebd9d78a64256587d940d468cd0 *1990-11-08_210.flac
+f8fb76a0ad155b3cc39d8ef773973c40 *1990-11-08_211.flac
+076a7458143b88f74b9fe4078e9d2411 *1990-11-08_212.flac
+7135078b0ca5494b04a55cc039189eeb *1990-11-08_213.flac
+5e1095cb99643a817c515f87c4434881 *1990-11-08_214.flac
+2fbbe062e5bea1052520fdac021d1af7 *1990-11-08_215.flac
+7f7486ecf86b9f9be2806c5c815e58f4 *1990-11-08_216.flac
+77db3ad4c58e740cdbd806030372a160 *1990-11-08_217.flac
+9be252195064a6ff5d06ef3070da3f86 *1990-11-08_218.flac
+251442881f2429e583ffe663daafb371 *1990-11-08_219.flac
+===================
+===================
+===================

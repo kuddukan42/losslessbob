@@ -1,0 +1,165 @@
+Bob Dylan
+11/10/91
+Murat Temple
+Indianapolis, IN
+
+Project ID - LMPP202
+
+Source: Audience Recording
+Taper: Greg Holtz Lineage: Nakamichi CM-300's with CP-4 Shotgun Caps > D6 > Master Cassette > 
+Nak CD-1  > 24/96 Wave > Wavelab 5 > plugins > r8brain > 16/44.1 Wave > cd wave (track) > TLH > 
+flac lvl 8 
+
+A **GEMS** Production www.shnflac.net
+
+disc 1
+
+d1t01. Maggie's Farm
+d1t02. The Man In Me
+d1t03. All Along The Watchtower
+d1t04. Confidential
+d1t05. Watching The River Flow
+d1t06. Gotta Serve Somebody
+d1t07. Shelter From The Storm
+d1t08. To Be Alone With You
+
+disc 2
+
+d2t01. Desolation Row
+d2t02. Boots Of Spanish Leather
+d2t03. Don't Think Twice It's All Right
+d2t04. It Ain't Me Babe
+d2t05. Senor (Tales Of Yankee Power)
+d2t06. Everything Is Broken
+d2t07. I'll Be Your Baby Tonight
+d2t08. Highway 61 Revisited
+
+Encore
+
+d2t09. Man In The Long Black Coat
+d2t10. Rainy Day Women No. 12 & 35
+
+-------------------------------------------------------
+
+Notes:
+
+- d1t01: There are a few artifacts left at the very beginning of the track where levels ect
+were being situated.  
+
+- d2t01: There are a two small oddities in the first 30 seconds that were attenuated
+but are still audible. 
+
+- d2t09: The tape ran out right in the middle of this track. I've cross faded it to make 
+it a little smoother, but if your singing along, you can't help but notice. 
+
+- A very very nice sounding pull. Bob has an interesting performance and hits a few 
+interesting notes. All in all, this looks to be a very lightly circulated source.
+A worthy listen for sure. All tape flips have been cross faded. EQ and plugins used
+where necessary to spice and flavor. Enjoy. 
+
+- BIG thanks to Greg, aka Garageboy,  for taping this fine show and providing his masters. 
+
+- Transfer and edit by Bgreen
+
+Notes From Greg;
+
+April 2008 Recollection:
+
+This particular recording was recorded from the front opera box, stage right.  I duct-taped 
+a pair of gooseneck bars with the mic holders to the rail, and draped them with a black cloth.  
+The shotguns were pointed directly at the stage right stacks.  
+
+The Murat Temple Theater in Indianapolis is one of those 1920's era ornate theaters with 
+the opera boxes, starry night ceiling, chandeliers, wide staircases, marble bathrooms, 
+plush carpeting and seating...and a full bar....several of them.  
+
+If you get a chance to see a show at the Murat, do it.  It is a beautiful place.  
+There is also a smaller  space in the Temple called the Egyptian Room.  If not enough tickets 
+are sold, they put on  the shows there.  Needless to say, Dylan filled the main theater.  
+Thanks go to BGreen for all the transferring/mastering/seeding, etc.  Hope you like it!
+
+Greg Holtz
+
+md5
+84a55cde6bd3e241ac3a4ac9cb983589 *Dylan1991-11-10.lmpp202.d1t01.flac
+4531d607906cec49d7e1e228e06f77d7 *Dylan1991-11-10.lmpp202.d1t02.flac
+93824f5024399b35993ce20b0f66e6a5 *Dylan1991-11-10.lmpp202.d1t03.flac
+aa1cc5a200670924c37eb9fe137a8f87 *Dylan1991-11-10.lmpp202.d1t04.flac
+2b33698661d561e40c34d32bc4e4ec74 *Dylan1991-11-10.lmpp202.d1t05.flac
+b9a64189ca36d78aae635eed9fc9c60f *Dylan1991-11-10.lmpp202.d1t06.flac
+cdb039ba384d768464aeb011cb2f9bcc *Dylan1991-11-10.lmpp202.d1t07.flac
+45b371e14c56748ec8f2bdd21846792e *Dylan1991-11-10.lmpp202.d1t08.flac
+1301005ed0c30050c9b5bbed969139e0 *Dylan1991-11-10.lmpp202.d1t09.flac
+b68a220bc3fc6731c11d9e83ae82c4dd *Dylan1991-11-10.lmpp202.d2t01.flac
+23cd33a6be779838df5698b75007ea5c *Dylan1991-11-10.lmpp202.d2t02.flac
+12640e43232106f31172c370d51bdaa6 *Dylan1991-11-10.lmpp202.d2t03.flac
+1df9d6881b8471ff4de1bd734ef610b9 *Dylan1991-11-10.lmpp202.d2t04.flac
+b739ad70b4305753b269eab056f77a2e *Dylan1991-11-10.lmpp202.d2t05.flac
+8655630fd1796d8bcdf4a1822286bed9 *Dylan1991-11-10.lmpp202.d2t06.flac
+df68ebafb63af1c26f4ee6cf3617db93 *Dylan1991-11-10.lmpp202.d2t07.flac
+1abda54b8751bdaa9823ed37b4d5e30e *Dylan1991-11-10.lmpp202.d2t08.flac
+a8b93f2a9c7f52bc369734d975c97261 *Dylan1991-11-10.lmpp202.d2t09.flac
+
+ffp
+Dylan1991-11-10.lmpp202.d1t01.flac:2b760c77f6e2f8b87e89b102519c8a26
+Dylan1991-11-10.lmpp202.d1t02.flac:ba6ab377fbeb2c9357e649737c232aac
+Dylan1991-11-10.lmpp202.d1t03.flac:822d54a9feb098c82897cbc30f5b741f
+Dylan1991-11-10.lmpp202.d1t04.flac:f795335d1c73687bcc6cbe448a332b44
+Dylan1991-11-10.lmpp202.d1t05.flac:ada202ace6faa72a65943cbbf223ef38
+Dylan1991-11-10.lmpp202.d1t06.flac:b3c33d5014f2198aba4fb0229147d03b
+Dylan1991-11-10.lmpp202.d1t07.flac:8685abb3ca53f5a5793f404954b17028
+Dylan1991-11-10.lmpp202.d1t08.flac:92eddbc70e70701f814864576de55f1d
+Dylan1991-11-10.lmpp202.d1t09.flac:b5e7788fd9997bedcb66eb47d0de4227
+Dylan1991-11-10.lmpp202.d2t01.flac:881bba768c76c6b0f744bbaf89e272c6
+Dylan1991-11-10.lmpp202.d2t02.flac:0b81c3bd025e23c69874c7e0ebcb1e12
+Dylan1991-11-10.lmpp202.d2t03.flac:433d67ba6cc1d85fc12737d418323eeb
+Dylan1991-11-10.lmpp202.d2t04.flac:57dc1af21f5fdd8acdfad28c169a78aa
+Dylan1991-11-10.lmpp202.d2t05.flac:111e58b1f2bb89442ca27adecb746d6d
+Dylan1991-11-10.lmpp202.d2t06.flac:8e121557b3e2cae6ca5239eeec5ae7b6
+Dylan1991-11-10.lmpp202.d2t07.flac:bfd2afab7d452cf73636b9134c651d2c
+Dylan1991-11-10.lmpp202.d2t08.flac:0d1914bdc02b43a62a8778d925967808
+Dylan1991-11-10.lmpp202.d2t09.flac:e49db929d5c7f0e9717c305906c5b308
+
+st5 
+2b760c77f6e2f8b87e89b102519c8a26  [shntool]  Dylan1991-11-10.lmpp202.d1t01.flac
+ba6ab377fbeb2c9357e649737c232aac  [shntool]  Dylan1991-11-10.lmpp202.d1t02.flac
+822d54a9feb098c82897cbc30f5b741f  [shntool]  Dylan1991-11-10.lmpp202.d1t03.flac
+f795335d1c73687bcc6cbe448a332b44  [shntool]  Dylan1991-11-10.lmpp202.d1t04.flac
+ada202ace6faa72a65943cbbf223ef38  [shntool]  Dylan1991-11-10.lmpp202.d1t05.flac
+b3c33d5014f2198aba4fb0229147d03b  [shntool]  Dylan1991-11-10.lmpp202.d1t06.flac
+8685abb3ca53f5a5793f404954b17028  [shntool]  Dylan1991-11-10.lmpp202.d1t07.flac
+92eddbc70e70701f814864576de55f1d  [shntool]  Dylan1991-11-10.lmpp202.d1t08.flac
+b5e7788fd9997bedcb66eb47d0de4227  [shntool]  Dylan1991-11-10.lmpp202.d1t09.flac
+881bba768c76c6b0f744bbaf89e272c6  [shntool]  Dylan1991-11-10.lmpp202.d2t01.flac
+0b81c3bd025e23c69874c7e0ebcb1e12  [shntool]  Dylan1991-11-10.lmpp202.d2t02.flac
+433d67ba6cc1d85fc12737d418323eeb  [shntool]  Dylan1991-11-10.lmpp202.d2t03.flac
+57dc1af21f5fdd8acdfad28c169a78aa  [shntool]  Dylan1991-11-10.lmpp202.d2t04.flac
+111e58b1f2bb89442ca27adecb746d6d  [shntool]  Dylan1991-11-10.lmpp202.d2t05.flac
+8e121557b3e2cae6ca5239eeec5ae7b6  [shntool]  Dylan1991-11-10.lmpp202.d2t06.flac
+bfd2afab7d452cf73636b9134c651d2c  [shntool]  Dylan1991-11-10.lmpp202.d2t07.flac
+0d1914bdc02b43a62a8778d925967808  [shntool]  Dylan1991-11-10.lmpp202.d2t08.flac
+e49db929d5c7f0e9717c305906c5b308  [shntool]  Dylan1991-11-10.lmpp202.d2t09.flac
+
+shntool
+ length     expanded size   cdr  WAVE problems filename
+     5:35.08       59112860    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t01.flac
+     5:04.71       53792636    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t02.flac
+     4:22.54       46343852    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t03.flac
+     3:43.71       39504236    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t04.flac
+     5:43.53       60629900    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t05.flac
+     5:06.08       53997260    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t06.flac
+     5:17.65       56071724    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t07.flac
+     4:22.54       46343852    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t08.flac
+     8:55.40       94468124    ---   --   ---xx   Dylan1991-11-10.lmpp202.d1t09.flac
+     5:59.40       63421724    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t01.flac
+     5:19.22       56323388    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t02.flac
+     6:27.34       68346812    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t03.flac
+     5:16.03       55749500    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t04.flac
+     3:10.08       33534860    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t05.flac
+     4:38.64       49189772    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t06.flac
+     5:23.56       57108956    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t07.flac
+     7:28.60       79168364    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t08.flac
+     8:25.66       89237276    ---   --   ---xx   Dylan1991-11-10.lmpp202.d2t09.flac
+   100:22.27     1062345096 B                     (totals for 18 files, 0.7033 overall compression ratio)
+
+

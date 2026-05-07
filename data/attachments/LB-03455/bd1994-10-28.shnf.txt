@@ -1,0 +1,37 @@
+1994-10-28 
+Upper Darby, PA
+
+Disc One	[54:10]		
+1	Jokerman 		08:00
+2	If You See Her, Say Hello 		07:16
+3	All Along the Watchtower 		05:55
+4	Simple Twist of Fate 		09:29
+5	Tangled Up in Blue 		09:17
+6	I'll Be Your Baby Tonight 		08:20
+7	Mama, You Been on My Mind 		05:50
+			
+Disc Two	[53:38]		
+1	Gates of Eden 		06:58
+2	Don't Think Twice, It's All Right 		07:33
+3	Highway 61 Revisited 		06:39
+4	I Believe in You 		07:09
+5	Maggie's Farm 		08:00
+6	Ballad of a Thin Man 		08:49
+7	It Ain't Me, Babe		08:25
+
+
+
+317fa9b38553eecc58f65edeed367ef6 *bd1994-10-28d1t01.shn
+61881bb61ca55a98106441ed4e140f1e *bd1994-10-28d1t02.shn
+c23ebe02d912c81eb6fc029686ec4585 *bd1994-10-28d1t03.shn
+d7fefb1a7d056babf7c7755b298c165e *bd1994-10-28d1t04.shn
+eebeb4ab1ac549effb49b0502b3efd36 *bd1994-10-28d1t05.shn
+e181cbcccceca3ddadb2077d187ba5b0 *bd1994-10-28d1t06.shn
+01c2991c927278803b67e06ae66d7d0b *bd1994-10-28d1t07.shn
+0f5ec0c23d9360e7a92c1d442ac4dabf *bd1994-10-28d2t01.shn
+4c9363e7dfa877c8a8ce99dee8381f97 *bd1994-10-28d2t02.shn
+fc5f6e542ce794a12749e6d416afb50d *bd1994-10-28d2t03.shn
+29b4b9364db2b94bbd24b0e60db40cff *bd1994-10-28d2t04.shn
+d68abb6b51a7338f10ed6bd5de0aba89 *bd1994-10-28d2t05.shn
+b68ce2d9decd2b7dbf2ad3f537179d30 *bd1994-10-28d2t06.shn
+d64816c927b839d354d492e766cdebaf *bd1994-10-28d2t07.shn

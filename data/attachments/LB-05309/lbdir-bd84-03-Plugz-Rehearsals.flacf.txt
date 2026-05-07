@@ -1,0 +1,146 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-03-Plugz-Rehearsals.flacf 
+=================== 
+=================== 
+=================== 
+0667e959cd68d81d651eaffaf636d8c0  1984 Plugz Rehearsals.md5
+50149af2b14257cfc50cf204a635f59a  Disc 1\Track01.flac
+ed977323682610aec20d49c5f1a82986  Disc 1\Track02.flac
+b3468424275c24c6be2fe083d614540a  Disc 1\Track03.flac
+d231896c03558c915ab4c6268bc2a41b  Disc 1\Track04.flac
+35e2dfe6891e769d6891c4d6ac001626  Disc 1\Track05.flac
+67dc9f263c89de2764c50fac3afdfba8  Disc 1\Track06.flac
+2c9c837912b0c8a37a46b0e0e77b869f  Disc 1\Track07.flac
+7a0fd765edf088074536a581469cfbb1  Disc 1\Track08.flac
+05bc8e391a606ccd3c51e121942d1a83  Disc 1\Track09.flac
+9b6a13c8cf0991ff26a9de0bb22c7b48  Disc 1\Track10.flac
+56fea0187189020d9ce6ce309b851da4  Disc 1\Track11.flac
+adc4ea38fff7d25e645efee45ca0fd91  Disc 1\Track12.flac
+60261f79f983aeb0e9d5efcccab6748f  Disc 1\Track13.flac
+0be433c76fd4db541983137c54a69399  Disc 1\Track14.flac
+dad7559f37e09256a3d847918b1e232a  Disc 1\Track15.flac
+7f11bc065517224220b2b30c2ca24b04  Disc 1\Track16.flac
+14cd6d44ee5fb13c676be6f94a5cbe16  disc 2\Track01.flac
+150e1e51401d940c5fca5756b843df52  disc 2\Track02.flac
+1cabe4f885f2c4d0181583161b4b1a5f  disc 2\Track03.flac
+2a76dddb400525998d8f4c05057f7347  disc 2\Track04.flac
+f7c8f79ab3c6cfe81337a59a9f0195bd  disc 2\Track05.flac
+f77b2192f7d2448cac6fbf06a5c9054c  disc 2\Track06.flac
+f0a95e9ea75baa2862821546dd11858f  disc 2\Track07.flac
+2d21423aca10c8759f5ebc415069e168  disc 2\Track08.flac
+cc1a909984d7816187a992442d3d7155  disc 2\Track09.flac
+bf0571de1d9edef2b320e42efc2649e4  disc 2\Track10.flac
+c068e39a421c7ca5b1baedc058ff8d49  disc 2\Track11.flac
+fcdea12761011eadb7629b722f65da39  disc 2\Track12.flac
+eea7eacbb9116a11cddc885f52793b1f  disc 2\Track13.flac
+f55250f239ade1d6fa8ae8fec4b304a7  disc 2\Track14.flac
+f229f9bbcebc11e6955c8dd073de747c  disc 2\Track15.flac
+f8863f4b0ca8077b8adcea5617b2f55b  disc 2\Track16.flac
+bf1706982728c1aa61617f9864c62fe6  disc 2\Track17.flac
+f34bf384679404f7bdd0ae7dcb9587f4  disc 2\Track18.flac
+7501a80272af74bd7c8e0c99964885a3  Plugz.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-03-Plugz-Rehearsals.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:e2d52abfda490c4926b4e270fe2297fd
+Track02.flac:80a9a89e910ec9d2da36c456054495e8
+Track03.flac:7f9e2dfb627d4729f8962b7035bd12c9
+Track04.flac:95a3550c1fb63f92d1a2d13d5d2b73db
+Track05.flac:4ee26abacc4bd9f8febdf9c9e669dc47
+Track06.flac:7bc01c9eca370589118eb54317e1b896
+Track07.flac:108ae39d695887d02875f45d8de5d6e3
+Track08.flac:a2e4659ea8761b070871b0fdda98ff90
+Track09.flac:6e8d16ef694b0c312eff97753deeb238
+Track10.flac:652607c660ddc6830608b5d3772952b5
+Track11.flac:97801eb17a2a9f631f85083805e35b5d
+Track12.flac:e0d9099a72813b390d5efb765aa94a1a
+Track13.flac:e1f3c5c5148d58fa4809adb0f637ad30
+Track14.flac:3bf43c3e890c4acd4a1d601d1f82c26d
+Track15.flac:79447b1444054b27df2babe6b0705f69
+Track16.flac:638d529271a310991a054f6f20bb4216
+Track17.flac:054fa6e609bdcda2d5ddf419202c6f80
+Track18.flac:8c78b40185d0d1314b7bfaa757f89920
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-03-Plugz-Rehearsals.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:8828fde7910ed5156a51a880bb56974d
+Track02.flac:0921d9c4cf64f8386c111e263e011e2b
+Track03.flac:b84c0e31761479cc8c646fddb4e8fe4f
+Track04.flac:e6569373f6ce24c2748e9451b10a432b
+Track05.flac:da500b47614e9caaf0a2b7743248d54c
+Track06.flac:6742063ad55f1dcc67eb04a84c73b6ab
+Track07.flac:c1f794d6c3fae8da0b0e7b146678a1eb
+Track08.flac:ae5f4e7bc7e12848c3f086706c8ce433
+Track09.flac:99c554764a3088eeeaf5f70d04fa06ac
+Track10.flac:da268edfd9418fefa49620734fee60a7
+Track11.flac:204e57cb28ad5b8a65e53a949836e3d7
+Track12.flac:8c3d15efcc77085036fa57a27264b304
+Track13.flac:48bb3a85b63cc043e487f4fef20b14fa
+Track14.flac:d7850ea1f6ba63e961af9e2cc1e64d70
+Track15.flac:6afafff7fcd952ce93dea8d84a67fd27
+Track16.flac:63c2f8e3b6eb3741e664ff94c8551171
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-03-Plugz-Rehearsals.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.39       56892572 B   ---   --   ---xx   flac  0.4147  Track01.flac
+     5:23.53       57101900 B   ---   --   ---xx   flac  0.3745  Track02.flac
+     2:34.37       27252668 B   ---   --   ---xx   flac  0.4154  Track03.flac
+     2:38.72       28040588 B   ---   --   ---xx   flac  0.3221  Track04.flac
+     1:39.62       17609468 B   ---   --   ---xx   flac  0.3258  Track05.flac
+     1:08.58       12131660 B   ---   --   ---xx   flac  0.3181  Track06.flac
+     2:08.25       22638044 B   ---   --   ---xx   flac  0.3182  Track07.flac
+     3:05.57       32768108 B   ---   --   ---xx   flac  0.3089  Track08.flac
+     3:36.52       38224748 B   ---   --   ---xx   flac  0.3218  Track09.flac
+     4:01.63       42660620 B   ---   --   ---xx   flac  0.3271  Track10.flac
+     3:55.52       41576348 B   ---   --   ---xx   flac  0.3354  Track11.flac
+     3:33.00       37573244 B   ---   --   ---xx   flac  0.3248  Track12.flac
+     6:42.07       70929308 B   ---   --   ---xx   flac  0.3424  Track13.flac
+     5:39.21       59849036 B   ---   --   ---xx   flac  0.4671  Track14.flac
+     7:00.29       74156252 B   ---   --   ---xx   flac  0.4357  Track15.flac
+     3:47.50       40160444 B   ---   --   ---xx   flac  0.4551  Track16.flac
+     4:36.04       48695852 B   ---   --   ---xx   flac  0.4829  Track17.flac
+     3:12.33       33946460 B   ---   --   ---xx   flac  0.4773  Track18.flac
+    70:07.39      742207320 B                            0.3870  (18 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-03-Plugz-Rehearsals.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.09       48884012 B   ---   --   ---xx   flac  0.4896  Track01.flac
+     7:04.14       74826572 B   ---   --   ---xx   flac  0.3869  Track02.flac
+     1:06.26       11703596 B   ---   --   ---xx   flac  0.3645  Track03.flac
+     0:50.13        8850620 B   ---   --   ---xx   flac  0.3668  Track04.flac
+     4:02.73       42860540 B   ---   --   ---xx   flac  0.3666  Track05.flac
+     3:22.09       35654012 B   ---   --   ---xx   flac  0.3534  Track06.flac
+     3:27.55       36644204 B   ---   --   ---xx   flac  0.3402  Track07.flac
+     9:54.16      104819276 B   ---   --   ---xx   flac  0.3287  Track08.flac
+     2:16.36       24075116 B   ---   --   ---xx   flac  0.3690  Track09.flac
+     2:04.36       21958316 B   ---   --   ---xx   flac  0.3574  Track10.flac
+     3:54.71       41444636 B   ---   --   ---xx   flac  0.3762  Track11.flac
+     5:40.42       60074828 B   ---   --   ---xx   flac  0.3613  Track12.flac
+     2:30.49       26575292 B   ---   --   ---xx   flac  0.3581  Track13.flac
+     1:22.55       14594204 B   ---   --   ---xx   flac  0.3866  Track14.flac
+     4:21.08       46059260 B   ---   --   ---xx   flac  0.3930  Track15.flac
+    10:37.03      112373900 B   ---   --   ---xx   flac  0.3468  Track16.flac
+    67:12.65      711398384 B                            0.3681  (16 files)
+=================== 
+=================== 
+=================== 

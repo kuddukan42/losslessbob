@@ -1,0 +1,59 @@
+Bob Dylan
+Pantages Theatre
+Los Angeles, California
+March 21, 2005
+
+Source:
+17th row center
+AT853's > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > CD Wave > Flac
+
+Disc 1:
+01. Introduction [00:17]
+02. Drifter's Escape [04:40]
+03. The Times They Are A-Changin' [06:33]
+04. Tweedle Dee & Tweedle Dum [05:28]
+05. Just Like A Woman [08:05]
+06. High Water (For Charley Patton) [07:21]
+07. Down Along The Cove [07:01] 
+08. Moonlight [06:50]
+09. Highway 61 Revisited [05:50]
+10. Love Sick [05:53]
+Total time: [58:02]
+
+Disc 2:
+01. Honest With Me [06:57]
+02. Girl Of The North Country [06:33]
+03. Summer Days [10:47]
+     (encore)
+04. Sing Me Back Home [03:59]
+05. Band Introduction [00:21]
+06. All Along The Watchtower [06:21]
+Total time: [35:01]
+
+Band Members:
+Bob Dylan - vocals, piano, harp
+Donnie Herron - banjo, guitar, pedal steel
+Denny Freeman - guitar
+Elana Fremerman - violin
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+FLAC fingerprint
+bd2005-03-21d1t01.flac:c3d278f5dcb4afea636d96d4673e8548
+bd2005-03-21d1t02.flac:bc9f8a9f39766b94560bcadd9a47edf1
+bd2005-03-21d1t03.flac:2c147c7f8a08aae6c0bdf60b15b921d8
+bd2005-03-21d1t04.flac:82fb68b18959b38524cdc932e19bfe29
+bd2005-03-21d1t05.flac:f926290d8c240b95d5dedf1074e075f3
+bd2005-03-21d1t06.flac:746f0469ed274ccd1e192de2d4da6c4e
+bd2005-03-21d1t07.flac:f5fcae77b96cfd93da4654c9546310a3
+bd2005-03-21d1t08.flac:364582e15b7fb02f176c293de1a9f730
+bd2005-03-21d1t09.flac:b2c166389315bdcdefa6b31d919c4b11
+bd2005-03-21d1t10.flac:857506888d02e7d9acdf052f5601b943
+bd2005-03-21d2t01.flac:38b3cc73d660aac7f9e4da230be428bb
+bd2005-03-21d2t02.flac:744c80aa8337c4ed0caa6cabac136597
+bd2005-03-21d2t03.flac:f564c1fd670fe3cdd8384d2f8751cf39
+bd2005-03-21d2t04.flac:170c012c1f185a21a96f2b803137164e
+bd2005-03-21d2t05.flac:49f5ae2a64e80d7c5dd55ab26bc54880
+bd2005-03-21d2t06.flac:00c91ce66f8230228c457b13cf0625f5

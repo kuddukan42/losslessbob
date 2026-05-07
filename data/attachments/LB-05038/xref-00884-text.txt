@@ -1,0 +1,40 @@
+===================
+===================
+===================
+=== bd1994-11-04 Gainesville.ffp
+===================
+===================
+===================
+bd1994-11-04d1t01.flac:48d1a222201127c73d158c9fa0dd3543
+bd1994-11-04d1t02.flac:8603864d194b80922724ce2da678d12e
+bd1994-11-04d1t03.flac:5f2df583a93463c4b78c7f01ef8ec22f
+bd1994-11-04d1t04.flac:c1bdfc22eecd7e54f09878002df9a47e
+bd1994-11-04d1t05.flac:76ea9f32f69cf7632aa334b1d82278db
+bd1994-11-04d1t06.flac:ec4aaff73af6ed48e7a5fc636dc1d9ef
+bd1994-11-04d1t07.flac:6647383493f5799de22d4f8d2a2aa548
+bd1994-11-04d1t08.flac:84cd1c6bf5b06b72fc4fa25d34208f62
+bd1994-11-04d1t09.flac:08e75b9c28ab435956ac07d1e4071f50
+bd1994-11-04d2t01.flac:a2f3c3cb927659293a39fd88797ca898
+bd1994-11-04d2t02.flac:4d1a3e914ef2d1d6f91faef4a51ba159
+bd1994-11-04d2t03.flac:ad34ddae25a190fbb391b0f9d8287dda
+bd1994-11-04d2t04.flac:1b2bef3ee5401a43f911ae1df833b153
+bd1994-11-04d2t05.flac:9411a3887921bfeeea4b5dd5dfa4a964
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan, 11/4/94, Gainesville, Georgia, Georgia Mountain Center, 2CDR
+
+
+CDR Trade>EAC>TLH>FLAC LEVEL 8
+ 
+CD 1, 1 Jokerman, 2 Just Like A Woman, 3 All Along The Watchtower, 4 Simple Twist Of Fate, 5 Tangled Up In Blue, 6 Disease Of Conceit, 7 Mr. Tambourine Man, 8 Masters Of War, 9 Don't Think Twice, It's All Right, 
+CD 2, 1 Stuck Inside Of Mobile With The Memphis Blues Again, 2 I Shall Be Released, 3 Maggie's Farm, 4 Ballad Of A Thin Man, 5 The Times They Are A-Changin'
+
+Bittorrent 09/11
+===================
+===================
+===================

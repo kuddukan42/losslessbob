@@ -1,0 +1,115 @@
+===================
+===================
+===================
+=== md5 for: bd76-05-23-Complete-Hard-Rain-j.flacf
+===================
+===================
+===================
+34a1402e28ce67a4a2c944b597e21ce1 *D1\01 Mr Tambourine Man.flac
+0cdbdc118a0af07b18a6b51ca1c1f83a *D1\02 It Ain't Me, Babe.flac
+10a295fd3edc18f24d078d2474dd0610 *D1\03 Vincent Van Gogh.flac
+89909912d7ae9c66718b5257997f8c59 *D1\04 Maggies Farm.flac
+edf01308d4e7bb5f28dcecb1d40b9ca3 *D1\05 One Too Many Mornings.flac
+870fccce76a030706c6ac0dda6b5ec7e *D1\06 Mozambique.flac
+bd66ed2452ffd9fbdb173b46e2d6a0c0 *D1\07 Isis.flac
+4a56fb6022930865eea6de0eac940f2b *D1\08 Blowin' In The Wind.flac
+11cb17b24e12f17cb92d0e75f658f7bc *D1\09 Railroad Boy.flac
+5f617b74958b4e19cea9e3ae0e73e325 *D1\10 Deportees.flac
+9c0fb04b013ea16ed737bc4e8ca5e9dd *D1\11 I Pity The Poor Immigrant.flac
+9995532098e6f6fde5d32071dbe136d7 *D1\12 Shelter From The Storm.flac
+b02c0fd83fcecd80915da0479b0c9d1c *D1\13 Oh, Sister.flac
+d3b3a284e75fb897f7a6f8bc94893386 *D1\14 I Want You.flac
+3df4c1790404ebeb405e018aa080fa40 *D1\Bob Dylan - Complete Hard Rain - Rolling Thunder Revue 1976 (Disc 1) (Seymour Record SR 010-011).ffp
+0d2c4784175483f40022fcf08bb1a800 *D1\Bob Dylan - Complete Hard Rain - Rolling Thunder Revue 1976 (Disc 1) (Seymour Record SR 010-011).md5
+a87fbf19f9a72ccef3b88bfb4f9d8554 *D1\R-8603725-1464946343-4839.jpeg.jpg
+3e988b5c90decee5024eae567236a861 *D1\tracklisting.txt
+fc5ae084ea63d7910cf479a244d264bf *D2\01 Tangled Up In Blue.flac
+57852f3c51f80244037115126d0f3471 *D2\02 You're A Big Girl Now.flac
+61000eb2469f406ca6ed3a506ed9b8d8 *D2\03 You're Going To Make Me Lonesome When You Go.flac
+c4efa4d4167e2b16b6f3fa1d6395a598 *D2\04 Lay Lady Lay.flac
+14db270b7438098dd9dfdf1995f22cbf *D2\05 Silver Mantis.flac
+5d7c34091ddbaa5e6114c489cfa1473c *D2\06 Going, Going, Gone.flac
+9582d4dac4c85e47f54a07eb2a99b363 *D2\07 Idiot Wind.flac
+8ebd36f766b2ee414102d7e5198500c0 *D2\08 Knockin' On Heavan's Door.flac
+5b4e29d30d64941e5c4f39bab3954601 *D2\09 Gotta Travel On.flac
+e9703e186e41b7407ad4a8cc3e8cb47e *D2\10 A Hard Rain's A-Gonna Fall.flac
+0c8ecac8b79ef048b53da9283dc39e5b *D2\Bob Dylan - Complete Hard Rain - Rolling Thunder Revue 1976 (Disc 2) (Seymour Record SR 010-011).ffp
+d6351bfe7687ba0d47087deb88d2b110 *D2\Bob Dylan - Complete Hard Rain - Rolling Thunder Revue 1976 (Disc 2) (Seymour Record SR 010-011).md5
+a87fbf19f9a72ccef3b88bfb4f9d8554 *D2\R-8603725-1464946343-4839.jpeg.jpg
+5beabbdd1c880a663dffe687b6649085 *D2\tracklisting.txt
+===================
+===================
+===================
+=== ffp for: bd76-05-23-Complete-Hard-Rain-j.flacf
+===================
+===================
+===================
+D1\01 Mr Tambourine Man.flac:a7f1a9a72aa0a528d653ccdcc384a9d8
+D1\02 It Ain't Me, Babe.flac:9c52845de06a1b530dc83ee3c00e535b
+D1\03 Vincent Van Gogh.flac:b39ccb1718293e16c02e5c2793b78007
+D1\04 Maggies Farm.flac:73891e4d10498f3e3c9779135598e963
+D1\05 One Too Many Mornings.flac:0f09f2ebdc970ccb4b171b52890372c3
+D1\06 Mozambique.flac:b02990c5e73e5b8fa99cc1df8e44d4b1
+D1\07 Isis.flac:f0e36244c74d9448aed6ee4dab3ec6ae
+D1\08 Blowin' In The Wind.flac:d116415c565e2266fa7dbab4e8e23bfb
+D1\09 Railroad Boy.flac:f4c8e8ef8c1417ad967b7215e560439a
+D1\10 Deportees.flac:832863c068c9f627475087e3df178b5e
+D1\11 I Pity The Poor Immigrant.flac:3f1fe2daa5ca364315ef35e4fb23d63f
+D1\12 Shelter From The Storm.flac:2165d4da1228079f46188e9d52bf19a4
+D1\13 Oh, Sister.flac:dd36c16175c4b8bb63cd519290f7488d
+D1\14 I Want You.flac:b11c5f5dbcbf4052032c0294e0abd2b9
+D2\01 Tangled Up In Blue.flac:192039350ffe91c43b006541a7d07d79
+D2\02 You're A Big Girl Now.flac:0b8d0268b24ff308e64718b1857b489b
+D2\03 You're Going To Make Me Lonesome When You Go.flac:848ad4312ce47b0aa8b17b5ec3f7d495
+D2\04 Lay Lady Lay.flac:cbe6cf073592a58b2619104511ef9abb
+D2\05 Silver Mantis.flac:036ac8672ab3a65a22d35153b1cc9a46
+D2\06 Going, Going, Gone.flac:92235cb0394ae5fd13ddd2491a9a58bf
+D2\07 Idiot Wind.flac:4097ea2bbbd85f49823cb143bfa4b865
+D2\08 Knockin' On Heavan's Door.flac:83397cf2c8d135de5e49572ca9874e5b
+D2\09 Gotta Travel On.flac:7f6ea78c2112e78e93f3056a3d45f746
+D2\10 A Hard Rain's A-Gonna Fall.flac:ff1be7f3e4ed71d659e9c8c9a4f6b7a8
+===================
+===================
+===================
+=== shntool len for: bd76-05-23-Complete-Hard-Rain-j.flacf\D1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.18       65839580 B   ---   --   ---xx   flac  0.4751  01 Mr Tambourine Man.flac
+     3:42.67       39318428 B   ---   --   ---xx   flac  0.4788  02 It Ain't Me, Babe.flac
+     3:31.54       37347452 B   ---   --   ---xx   flac  0.4899  03 Vincent Van Gogh.flac
+     5:49.27       61627148 B   ---   --   ---xx   flac  0.5103  04 Maggies Farm.flac
+     3:58.20       42030284 B   ---   --   ---xx   flac  0.5047  05 One Too Many Mornings.flac
+     3:54.42       41376428 B   ---   --   ---xx   flac  0.4741  06 Mozambique.flac
+     6:50.38       72413420 B   ---   --   ---xx   flac  0.5075  07 Isis.flac
+     3:34.01       37751996 B   ---   --   ---xx   flac  0.4939  08 Blowin' In The Wind.flac
+     2:51.17       30204428 B   ---   --   ---xx   flac  0.4989  09 Railroad Boy.flac
+     4:01.08       42531260 B   ---   --   ---xx   flac  0.4664  10 Deportees.flac
+     4:29.42       47550428 B   ---   --   ---xx   flac  0.4760  11 I Pity The Poor Immigrant.flac
+     6:08.38       65004620 B   ---   --   ---xx   flac  0.2845  12 Shelter From The Storm.flac
+     5:18.55       56224604 B   ---   --   ---xx   flac  0.2748  13 Oh, Sister.flac
+     4:42.10       49768364 B   ---   --   ---xx   flac  0.2786  14 I Want You.flac
+    65:05.62      688988440 B                            0.4375  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd76-05-23-Complete-Hard-Rain-j.flacf\D2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:14.44      108413132 B   ---   --   ---xx   flac  0.5338  01 Tangled Up In Blue.flac
+     7:12.10       76228364 B   ---   --   ---xx   flac  0.3035  02 You're A Big Girl Now.flac
+     3:15.54       34525052 B   ---   --   ---xx   flac  0.5597  03 You're Going To Make Me Lonesome When You Go.flac
+     5:01.46       53204636 B   ---   --   ---xx   flac  0.5060  04 Lay Lady Lay.flac
+     7:50.29       82976252 B   ---   --   ---xx   flac  0.4688  05 Silver Mantis.flac
+     5:24.04       57163052 B   ---   --   ---xx   flac  0.5115  06 Going, Going, Gone.flac
+     9:54.40      104875724 B   ---   --   ---xx   flac  0.5222  07 Idiot Wind.flac
+     4:25.16       46783676 B   ---   --   ---xx   flac  0.5181  08 Knockin' On Heavan's Door.flac
+     4:40.57       49526108 B   ---   --   ---xx   flac  0.5229  09 Gotta Travel On.flac
+     7:55.35       83872364 B   ---   --   ---xx   flac  0.5178  10 A Hard Rain's A-Gonna Fall.flac
+    65:54.35      697568360 B                            0.4927  (10 files)
+===================
+===================
+===================

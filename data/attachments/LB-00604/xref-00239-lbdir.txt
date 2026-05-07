@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-07-b.flacf 
+=================== 
+=================== 
+=================== 
+985bdad34abf4cad306f948f2415d895  disc 1\07oct87_101.shn
+c38809aa077b8cbe8f8b104ce571160d  disc 1\07oct87_102.shn
+3d19fcfb64a60cdfb804a54c2b20c0f6  disc 1\07oct87_103.shn
+6fd0e789dc6638d3a207c901bb3febfd  disc 1\07oct87_104.shn
+469e51f6176b7838eddf6223fd1d471b  disc 1\07oct87_105.shn
+d28814498f0cf5385ef1340b2a85f284  disc 1\07oct87_106.shn
+a4a87020f86536879160275477d8fbcd  disc 1\07oct87_107.shn
+58f9b15947757a0c2813fd4c4a57ce56  disc 1\07oct87_108.shn
+630d636925f1141ef3c48329a6c6d0ed  disc 1\07oct87_109.shn
+2e758ad4b939119f6b7b0176ac3473b2  disc 1\noname.md5
+dcdae46281800538d9f752d0b23d7e91  disc 2\07oct87_201.shn
+de10acdf44ca9c64958f76ca26fb9906  disc 2\07oct87_202.shn
+023c072cd60f6b7d4aa85a89aa21655e  disc 2\07oct87_203.shn
+b29224f0e8cab71dfbc1d643d79edda5  disc 2\07oct87_204.shn
+4518d0b3e57ca5dde5b598698c1cb8f7  disc 2\07oct87_205.shn
+ffefb0117c4886286b354000d746b1fa  disc 2\07oct87_207.shn
+f7e45e1d87c4b7ea6e8f5151f06de55b  disc 2\07oct87_208.shn
+6c93b51330a4519ea1d03bf39c92ea9a  disc 2\noname.md5
+c575e4e69bc7875ecf79eb4961fff4ae  disc 2\o7oct87_206.shn
+c9ce1536bcd6285a3dd3a4316d5d8086  temples in flames dvd#3.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-10-07-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+c38ded2f8b2673d1391e353e8e0d2e13  [shntool]  07oct87_101.wav
+7b1ebf19cbc1f791f92747ecaa68ca3f  [shntool]  07oct87_102.wav
+81f78221f9dbde930b87d26d443b3090  [shntool]  07oct87_103.wav
+33e4f149f179357621eaffcd0e2d17f0  [shntool]  07oct87_104.wav
+363dbf876d122557207307a01643de0e  [shntool]  07oct87_105.wav
+bfd53aec7275c3ffc53d1fa94831833f  [shntool]  07oct87_106.wav
+6013f38ee72abd7c02f471608d32d061  [shntool]  07oct87_107.wav
+73b6c3c03230fdbae61872db399df952  [shntool]  07oct87_108.wav
+943861b3a95980c6da5f420b64724af2  [shntool]  07oct87_109.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-10-07-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+ef9415ba8a713359257b64aad2d55997  [shntool]  07oct87_201.wav
+23107c24c962d23d74af1e62c6b3dd6c  [shntool]  07oct87_202.wav
+436bfc6b63f55cc9e5a3cfc105e7dc08  [shntool]  07oct87_203.wav
+83c0f669986eb9d7ce7059d4c5bb9bb7  [shntool]  07oct87_204.wav
+f197e0d1203dd3a7ef39b9f33439818d  [shntool]  07oct87_205.wav
+164d6fbd9abb2c011a1ccd3465d76426  [shntool]  07oct87_207.wav
+f26734e1666d6e3b73be1f7401177c41  [shntool]  07oct87_208.wav
+333fc2d5a47402472679cbe5e6c7e1f5  [shntool]  o7oct87_206.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-07-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:23.40        4151324 B   ---   --   ---xx    shn  0.0012  07oct87_101.shn
+     5:46.27       61097948 B   ---   --   ---xx    shn  0.7058  07oct87_102.shn
+     9:02.40       95702924 B   ---   --   ---xx    shn  0.6866  07oct87_103.shn
+     5:00.47       53030588 B   ---   --   ---xx    shn  0.5584  07oct87_104.shn
+     6:23.12       67589468 B   ---   --   ---xx    shn  0.6800  07oct87_105.shn
+     5:55.69       62784332 B   ---   --   ---xx    shn  0.7127  07oct87_106.shn
+    10:03.10      106392764 B   ---   --   ---xx    shn  0.5590  07oct87_107.shn
+     3:47.16       40080476 B   ---   --   ---xx    shn  0.6710  07oct87_108.shn
+     4:15.32       45057308 B   ---   --   ---xx    shn  0.7366  07oct87_109.shn
+    50:37.68      535887132 B                            0.6507  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-07-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.74       58386092 B   ---   --   ---xx    shn  0.6782  07oct87_201.shn
+     6:12.44       65724332 B   ---   --   ---xx    shn  0.7086  07oct87_202.shn
+     4:08.59       43886012 B   ---   --   ---xx    shn  0.7241  07oct87_203.shn
+     6:10.52       65390348 B   ---   --   ---xx    shn  0.6779  07oct87_204.shn
+     4:18.07       45527708 B   ---   --   ---xx    shn  0.7275  07oct87_205.shn
+     5:10.50       54801644 B   ---   --   ---xx    shn  0.6084  07oct87_207.shn
+     5:01.71       53263436 B   ---   --   ---xx    shn  0.6179  07oct87_208.shn
+     3:32.20       37443884 B   ---   --   ---xx    shn  0.6854  o7oct87_206.shn
+    40:06.02      424423456 B                            0.6769  (8 files)
+=================== 
+=================== 
+=================== 

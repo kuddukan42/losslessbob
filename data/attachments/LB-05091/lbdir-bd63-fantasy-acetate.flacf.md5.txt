@@ -1,0 +1,14 @@
+7354ec3dc9d8e8cfc9330795c0aef902  Artwork\dylan.fantasy.acetate.1963-1964.front.jpg
+9bea939a267810596be5ca57f54c3b61  Artwork\dylan.fantasy.acetate.1963-1964.tray.jpg
+18c9e0ffc854f071f60495d0e5991704  Disc\Track01.flac
+64929d15469874174fca09dc6d9a2f02  Disc\Track02.flac
+35d7be20df17cf48c8e0ded1d4241694  Disc\Track03.flac
+00e0f8739292262e4f16510c99785430  Disc\Track04.flac
+79938d4c0b27b07bbdd9755b76ccb882  Disc\Track05.flac
+28c91a7af39b5697c9908ca1fbada95e  Disc\Track06.flac
+756762f3403b269e627067d582026a18  Disc\Track07.flac
+a6f6922958e8ff96605282ea094fe363  Disc\Track08.flac
+efbe0f427518d0f4e57b2b93161d3c99  Disc\Track09.flac
+c91011c811fc7294b7bf050acc65caa6  Disc\Track10.flac
+a7e832b757f12b1842c10efe0ee13dae  dylan.fantasy.acetate.1963-1964.sfv
+518c3e651755e6f532982e5733951274  dylan.fantasy.acetate.1963-1964.txt

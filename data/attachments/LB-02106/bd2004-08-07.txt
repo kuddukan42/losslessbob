@@ -1,0 +1,72 @@
+Bob Dylan
+Yale Field
+West Haven, Connecticut
+August 7, 2004
+------------------------------------------------------------------------------------------------------------
+Source: Soomlos
+------------------------------------------------------------------------------------------------------------
+Disc 1:
+01. Intro                             		[01:06]
+02. Maggie's Farm               		[05:30]
+03. Watching The River Flow 		[05:07]
+04. Tell Me That It Isn't True		[04:52]
+05. Lonesome Day Blues         		[06:32]
+06. Just Like A Woman           		[07:07]
+07. Tweedle Dee & Tweedle Dum		[05:45]
+08. Love Sick                       		[06:42]
+09. Highway 61 Revisited        		[06:22]
+10. Ballad Of Hollis Brown       		[06:03]
+Total time: [55:06]
+
+Disc 2:
+01. Honest With Me               		[07:21]
+02. It Ain't Me, Babe             		[06:26]
+03. Summer Days                   		[10:25]
+04. Mr. Tambourine Man          		[06:29]
+05. Like A Rolling Stone          		[06:39]
+06. Band Intros                    		[00:54]
+07. All Along The Watchtower		[05:44]
+Total time: [43:58]
+------------------------------------------------------------------------------------------------------------
+bd2004-08-07d1.md5
+87d267e46b0a87f78d75adc6088622ba *bd2004-08-07d1t01.shn
+cd44ca141b1b047a287fffdadd44ec0b *bd2004-08-07d1t02.shn
+8ed7614737a8ffb88c7a71acceaa6ee4 *bd2004-08-07d1t03.shn
+e58e79a9affac7f6804b6d7861c27f59 *bd2004-08-07d1t04.shn
+67862f914ef69a5dadb0b50089381686 *bd2004-08-07d1t05.shn
+1bf589704d1b372724c488d958c51070 *bd2004-08-07d1t06.shn
+96a699c06fc91a3ad032f00ec522312f *bd2004-08-07d1t07.shn
+0cc5ce43b6ad11b48d19d5fb607a394d *bd2004-08-07d1t08.shn
+6c203c707f400149fe796f54efcd37bf *bd2004-08-07d1t09.shn
+c6344164585223440ccc30f874026da3 *bd2004-08-07d1t10.shn
+
+bd2004-08-07d2.md5
+e57d2bcc24bc092d0fed4e640916215a *bd2004-08-07d2t01.shn
+bff6bf7523d1ce7b266d8131e4022309 *bd2004-08-07d2t02.shn
+e4556c07c0f326392de9aece60eea51e *bd2004-08-07d2t03.shn
+8492f1ba5d1e9ae16a75d969c98cdbcd *bd2004-08-07d2t04.shn
+eda79dd81271566f6047b654810cbf79 *bd2004-08-07d2t05.shn
+14224d55b8f8549ec76c20f3f28046a1 *bd2004-08-07d2t06.shn
+f462498d8e04a1640788092efa0b82e8 *bd2004-08-07d2t07.shn
+
+bd2004-08-07d1wav.md5
+6e9d4bf419825c5792963de4029a9278 *bd2004-08-07d1t01.wav
+f87f3d0dfcf1e135aa8b885eba3cc791 *bd2004-08-07d1t02.wav
+82beacaa1b407ec006228cf9f3ed5753 *bd2004-08-07d1t03.wav
+5b169eabc7bc4d2b342a8457d783afad *bd2004-08-07d1t04.wav
+7f1557fdde8d4f61b74ce0a77c102605 *bd2004-08-07d1t05.wav
+c85c96564a02398794279f38d4dd0938 *bd2004-08-07d1t06.wav
+0c4c35f997f5392591b7416380257b50 *bd2004-08-07d1t07.wav
+44523a0d839525488b2474204ba0fda6 *bd2004-08-07d1t08.wav
+fadbf0bfa0c369b79c4d6831096c3752 *bd2004-08-07d1t09.wav
+c34b33520cf7f08b99f2a1d520a1c3b8 *bd2004-08-07d1t10.wav
+
+bd2004-08-07d2wav.md5
+8936eb6f46e85b5c74c18066308e9a3e *bd2004-08-07d2t01.wav
+72b755954d2f09bed125cbfbe0f5c941 *bd2004-08-07d2t02.wav
+2d9ed4d73bf7f614c1ca2a095115c9c3 *bd2004-08-07d2t03.wav
+aac7549d33b6a2c40839e84d2fe5978c *bd2004-08-07d2t04.wav
+92d88582dd590ad23765088b783e6742 *bd2004-08-07d2t05.wav
+aa12bdd94b736cc8c6aff96706820fd5 *bd2004-08-07d2t06.wav
+bfbed8cceb143850f97ec2d8109a7ab7 *bd2004-08-07d2t07.wav
+

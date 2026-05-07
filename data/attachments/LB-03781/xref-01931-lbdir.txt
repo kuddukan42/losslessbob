@@ -1,0 +1,74 @@
+===================
+===================
+===================
+=== md5 for: bd93-10-03-b.flacf
+===================
+===================
+===================
+f42ee9da0c72ba0144c3da439a802f4a *Bob Dylan 3 oct 1993 San Diego.txt
+89fba032fc871884cb89bb6b345681ae *d1\01 - Traccia Audio.flac
+7bce8ac0d7096a4ed6d4161dd2d1963b *d1\02 - Traccia Audio.flac
+c331345ee7959cae5b67c5988a497b26 *d1\03 - Traccia Audio.flac
+a2f49b59b860b3eed35a1bb301b45cc6 *d1\04 - Traccia Audio.flac
+f6e6dfb611771b3e104dd10b8cd638e1 *d1\05 - Traccia Audio.flac
+320e98fba59e50e9789f638523d20799 *d1\06 - Traccia Audio.flac
+03efacedb54d21a3c061c446b58ddedf *d2\01 - Traccia Audio.flac
+cdab2dd6361ac172e5ec27c3ec310cad *d2\02 - Traccia Audio.flac
+bf958caeba5248824f725d870384636e *d2\03 - Traccia Audio.flac
+f22e58e5992953cf588afacf3ac8a857 *d2\04 - Traccia Audio.flac
+4042bdae12c10a35ad74f8d8529822ee *d2\05 - Traccia Audio.flac
+815956f9f713610fbf0d6f8e52c3ce56 *d2\06 - Traccia Audio.flac
+11d31156bca04b7c1ee90c2917ab1a24 *md5.md5
+d19427d5e5e59d836c11553056b4aacb *SAN DIEGO, CA 3 Oct. 1993.jpg
+===================
+===================
+===================
+=== ffp for: bd93-10-03-b.flacf
+===================
+===================
+===================
+d1\01 - Traccia Audio.flac:d45255dc9d495224762a0d1286d43904
+d1\02 - Traccia Audio.flac:77537ec6137204a3d10eba15b649ad9d
+d1\03 - Traccia Audio.flac:5a8ed8f18d82ed065b566730b406cf6d
+d1\04 - Traccia Audio.flac:87ec726202ed4e2f32f890ab02711c62
+d1\05 - Traccia Audio.flac:377588eb7093a57a5726988e960426b2
+d1\06 - Traccia Audio.flac:1a6f49ae634df9399324916e3000f0e3
+d2\01 - Traccia Audio.flac:d127618722e0cb2a0b9b87816be41c7a
+d2\02 - Traccia Audio.flac:874ef8f9bdc6775b53e06308d4782092
+d2\03 - Traccia Audio.flac:e5158e6613164a26a7f8aeca8837257b
+d2\04 - Traccia Audio.flac:c805f3cf63c56c15665b61af731c9ad2
+d2\05 - Traccia Audio.flac:054f424ae3595d1ea1b8f4c173bb3458
+d2\06 - Traccia Audio.flac:375fcd91fb23dcfe1fc030a3c6db74c2
+===================
+===================
+===================
+=== shntool len for: bd93-10-03-b.flacf\d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.04       41110652 B   ---   --   ---xx   flac  0.4994  01 - Traccia Audio.flac
+     9:32.56      101032556 B   ---   --   ---xx   flac  0.5462  02 - Traccia Audio.flac
+     5:53.46       62377436 B   ---   --   ---xx   flac  0.5717  03 - Traccia Audio.flac
+    10:01.35      106098764 B   ---   --   ---xx   flac  0.4889  04 - Traccia Audio.flac
+     7:35.17       80302028 B   ---   --   ---xx   flac  0.5340  05 - Traccia Audio.flac
+    12:54.58      136670060 B   ---   --   ---xx   flac  0.5544  06 - Traccia Audio.flac
+    49:50.66      527591496 B                            0.5343  (6 files)
+===================
+===================
+===================
+=== shntool len for: bd93-10-03-b.flacf\d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:54.60       73170764 B   ---   --   ---xx   flac  0.4859  01 - Traccia Audio.flac
+     8:35.53       90970700 B   ---   --   ---xx   flac  0.5057  02 - Traccia Audio.flac
+     9:06.05       96326204 B   ---   --   ---xx   flac  0.4874  03 - Traccia Audio.flac
+    10:06.15      106933724 B   ---   --   ---xx   flac  0.5157  04 - Traccia Audio.flac
+     9:14.64       97876172 B   ---   --   ---xx   flac  0.5810  05 - Traccia Audio.flac
+     8:08.65       86236124 B   ---   --   ---xx   flac  0.5409  06 - Traccia Audio.flac
+    52:06.37      551513688 B                            0.5207  (6 files)
+===================
+===================
+===================

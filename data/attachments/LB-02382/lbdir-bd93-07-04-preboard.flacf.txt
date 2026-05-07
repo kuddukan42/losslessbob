@@ -1,0 +1,68 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-04-preboard.flacf 
+=================== 
+=================== 
+=================== 
+414bba6c7531a912fac132a2d618070b  bd19930704.md5
+7a2339c16c54118e1df8fa97b5d7ef9d  bd19930704d1t01.flac
+09e824e657e618afbc14de3dda88595d  bd19930704d1t02.flac
+e7188a02a23b343eee71eb0543214aa4  bd19930704d1t03.flac
+df646c4ed057a93eb48689236fef6ff1  bd19930704d1t04.flac
+d55c136d9895f84ca516bb475e46b84f  bd19930704d1t05.flac
+c7b5c96cb0d3787805bed096669324f0  bd19930704d1t06.flac
+596bd5c1dacc126632f5a244d31f1bf1  bd19930704d1t07.flac
+2f05bdab6f50c5a1733f8e089f9d18ca  bd19930704d1t08.flac
+9ed12a43aa92fd22d6c6da1f2089a496  bd19930704d1t09.flac
+90b682fa17c9ea8c198407081a7efe1b  bd19930704d1t10.flac
+ce949b51b921bac9a9b3877dfa392bd3  bd19930704d2t01.flac
+259dda57062c1bddb5e4e226a05497a1  bd19930704d2t02.flac
+d06b87ffe3ae981d90e615bd1342dc1a  bd19930704d2t03.flac
+781834178057fc72f04c158205af23d3  bd19930704sbd.txt
+642337338be9578877cf325677909bdb  Infofile.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-04-preboard.flacf 
+=================== 
+=================== 
+=================== 
+bd19930704d1t01.flac:ea0b7bdb4c22306d42bfe8c13b2fd4d2
+bd19930704d1t02.flac:2c0be585f9abcf1ba5386e721b66029a
+bd19930704d1t03.flac:47621abfba54c865f18a7726ef4a137c
+bd19930704d1t04.flac:591c84b99c2bd1756546989e9c48aab7
+bd19930704d1t05.flac:4826b819d68d17b9f053d894578a291c
+bd19930704d1t06.flac:65fdaf539750ec46b17f6613430b5342
+bd19930704d1t07.flac:7eafcc5f2162fdbd7fb29992cba05664
+bd19930704d1t08.flac:6b3df4a92c584dad96c9205880aaafce
+bd19930704d1t09.flac:92a82784015471a124213cdbbbeb946f
+bd19930704d1t10.flac:00220e045d53533e9e55fd937de13006
+bd19930704d2t01.flac:4cd4dc5e0b5a2dfdecfabaccd8d5d21e
+bd19930704d2t02.flac:e13918b44359e6b8c0f8b8eac8678125
+bd19930704d2t03.flac:b0034a40e38fd9b8fbfadcdabfc61674
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-04-preboard.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:44.64       60832172 B   ---   --   ---xx   flac  0.5448  bd19930704d1t01.flac
+     8:39.65       91704524 B   ---   --   ---xx   flac  0.4953  bd19930704d1t02.flac
+     6:17.17       66542828 B   ---   --   ---xx   flac  0.4753  bd19930704d1t03.flac
+     7:45.62       82171868 B   ---   --   ---xx   flac  0.4584  bd19930704d1t04.flac
+    11:10.50      118305644 B   ---   --   ---xx   flac  0.5400  bd19930704d1t05.flac
+     6:00.54       63631052 B   ---   --   ---xx   flac  0.4879  bd19930704d1t06.flac
+     5:51.24       61972892 B   ---   --   ---xx   flac  0.4366  bd19930704d1t07.flac
+     5:19.06       56285756 B   ---   --   ---xx   flac  0.4325  bd19930704d1t08.flac
+     7:38.07       80807708 B   ---   --   ---xx   flac  0.4458  bd19930704d1t09.flac
+     9:28.06      100209356 B   ---   --   ---xx   flac  0.4543  bd19930704d1t10.flac
+     7:03.30       74687804 B   ---   --   ---xx   flac  0.5301  bd19930704d2t01.flac
+     9:27.54      100145852 B   ---   --   ---xx   flac  0.4919  bd19930704d2t02.flac
+    10:27.36      110687516 B   ---   --   ---xx   flac  0.4584  bd19930704d2t03.flac
+   100:54.25     1067984972 B                            0.4825  (13 files)
+=================== 
+=================== 
+=================== 

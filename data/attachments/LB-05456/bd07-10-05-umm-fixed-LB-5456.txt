@@ -1,0 +1,8 @@
+Bob Dylan, 10/5/07, Manchester, New Hampshire, 2CDR
+
+LB-5456, (72min+34min), fixed; Unwanted Man Music, SNHU NIGHT OUT, Uploaded by permission of Unwanted Man Music; bittorrent download 10/07; same info file as LB-5447 but flac fingerprint changes for new d1t9 to fix missing segment and skipping noise d1t9 3:51; new d1t9 fixes the problem; tv band on all tracks but new d1t9; new d1t9 does not fit seemlessly, is slightly different length and does not have the tv band, new d1t9 has different levels and spectral views so does not clip where previous one does and has a less harsh tone; the spectral view on new d1t9 more closely matches that of previous nights UMM LB-5425 suggesting LB-5447 and the rest of the tracks on this one (which are the same) may have gone through the analog input of a cheap soundcard; (did not listen to all of this)
+
+Disc 1, 1. Cat's In The Well, 2. Lay, Lady, Lay, 3. Just Like Tom Thumb's Blues, 4. Positively 4th Street, 5. The Levee's Gonna Break, 6. Spirit On The Water, 7. Honest With Me, 8. Beyond The Horizon, 9. High Water (For Charlie Patton), 10. My Back Pages, 11. Highway 61 Revisited, Disc 2, 1. Nettie Moore, 2. Summer Days, 3. Like A Rolling Stone, 4. Thunder On The Mountain, 5. Introductions, 6. Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

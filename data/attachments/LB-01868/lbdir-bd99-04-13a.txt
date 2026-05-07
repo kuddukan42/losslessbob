@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-13a 
+=================== 
+=================== 
+=================== 
+2806f333f0556f95f08caecc348b4217  bd99-04-13a.txt
+0cba8c6d1f910812fd175175617f1b96  LisbonToBarcelonaInfo.doc
+6b452d7c6b9171c0edee62ebb694aadf  Malaga.jpg
+6eddfae1e1d0f8ae146a80c5a2ed7ad5  noname.md5
+52ebcdce5969df45e3169fd0d907d4f2  San-0413-d1-t01.shn
+3bffc45a5b6034fe515482238f41364d  San-0413-d1-t02.shn
+2f877724bf44bf10050ee85800a85d54  San-0413-d1-t03.shn
+922e06ac6a468d056d24d6a5fae82bfc  San-0413-d1-t04.shn
+22a13681dbdcf7eb43b3f3b10928f283  San-0413-d1-t05.shn
+af490d1cf62b71ef8b73dd93b9c4ed59  San-0413-d1-t06.shn
+3c00cc7c9af6b54a1f0f275479286455  San-0413-d1-t07.shn
+0b70b3a851f81030fcc8953a166c27ad  San-0413-d1-t08.shn
+7f5805537a1cf7907e971d3f5686bc54  San-0413-d1-t09.shn
+508024ff3320abff3c7d8dd5a49b324e  San-0413-d1-t10.shn
+b5522c0e299d223ceabd3481cedde539  San-0413-d2-t01.shn
+dd6a77b057390a435795a0164c4679ca  San-0413-d2-t02.shn
+cb184ec166337410fc46da7e55425e02  San-0413-d2-t03.shn
+a3888684b8ca0e293eacd0f5e8790c32  San-0413-d2-t04.shn
+6c441629167ac16960e4d7ee14cfec1e  San-0413-d2-t05.shn
+27ce08f7324d2be3fa93a528967064a1  San-0413-d2-t06.shn
+ef9c8a8b50c77e9c87bd005eced53a7e  San-0413-d2-t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-04-13a 
+=================== 
+=================== 
+=================== 
+d63f4f6df0cb28dbb8b028accfda446c  [shntool]  San-0413-d1-t01.wav
+e936a7f6eaa007c66242f3c8cd36dccf  [shntool]  San-0413-d1-t02.wav
+46930761736a2fc5cc3886bf02e61cf3  [shntool]  San-0413-d1-t03.wav
+5de9878c98b6218bd280f5ae2bc8904e  [shntool]  San-0413-d1-t04.wav
+0a4c085f3a0d7f5433dab0531d54f2bf  [shntool]  San-0413-d1-t05.wav
+f417df24d5b7742a76e40e12950729b4  [shntool]  San-0413-d1-t06.wav
+b0afc4fd5529cbad99472bc2029f0463  [shntool]  San-0413-d1-t07.wav
+cf192dd154fe82796b3b008bd18af1c6  [shntool]  San-0413-d1-t08.wav
+cfd7423bf0fb146dfbc2679a36e86377  [shntool]  San-0413-d1-t09.wav
+a9932a796ab6cb4b90fcbae6590b6fde  [shntool]  San-0413-d1-t10.wav
+5a37c08f70efcc484caaf4cf05de1a78  [shntool]  San-0413-d2-t01.wav
+b7966e3719b77e1bb1a65d869fe414f1  [shntool]  San-0413-d2-t02.wav
+50d28c2caacb0067e5bf1ba9bb99bb11  [shntool]  San-0413-d2-t03.wav
+b10c28e8a7296ca0c893a0a31e1f959f  [shntool]  San-0413-d2-t04.wav
+4f96e4bdaeaa847a87a7f54b047a6c2c  [shntool]  San-0413-d2-t05.wav
+a931fe077241a55f11d56f7b160b88a7  [shntool]  San-0413-d2-t06.wav
+1a81eab3267969dd3f1a4df6252a7f5e  [shntool]  San-0413-d2-t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-13a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:11.74        2114828 B   -b-   --   -----    wav  1.0000  San-0413-d1-t01.wav
+     6:19.49       66970556 B   -b-   --   -----    wav  1.0000  San-0413-d1-t02.wav
+     3:42.31       39233828 B   -b-   --   -----    wav  1.0000  San-0413-d1-t03.wav
+     6:42.68       71072120 B   -b-   --   -----    wav  1.0000  San-0413-d1-t04.wav
+     4:11.03       44284664 B   -b-   --   -----    wav  1.0000  San-0413-d1-t05.wav
+     8:59.12       95108104 B   -b-   --   -----    wav  1.0000  San-0413-d1-t06.wav
+     6:50.72       72493384 B   -b-   --   -----    wav  1.0000  San-0413-d1-t07.wav
+     6:12.57       65755304 B   -b-   --   -----    wav  1.0000  San-0413-d1-t08.wav
+     4:48.64       50953892 B   -b-   --   -----    wav  1.0000  San-0413-d1-t09.wav
+     7:00.09       74110176 B   -b-   --   -----    wav  1.0000  San-0413-d1-t10.wav
+     6:21.01       67210056 B   -b-   --   -----    wav  1.0000  San-0413-d2-t01.wav
+     6:46.26       71680568 B   -b-   --   -----    wav  1.0000  San-0413-d2-t02.wav
+     8:38.43       91476140 B   -b-   --   -----    wav  1.0000  San-0413-d2-t03.wav
+     5:52.09       62113752 B   -b-   --   -----    wav  1.0000  San-0413-d2-t04.wav
+     4:55.17       52077444 B   -b-   --   -----    wav  1.0000  San-0413-d2-t05.wav
+     4:56.02       52218652 B   -b-   --   -----    wav  1.0000  San-0413-d2-t06.wav
+     4:14.56       44936332 B   -b-   --   -----    wav  1.0000  San-0413-d2-t07.wav
+    96:43.68     1023809800 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

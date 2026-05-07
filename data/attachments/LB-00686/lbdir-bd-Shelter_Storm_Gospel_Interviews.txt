@@ -1,0 +1,271 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-Shelter_Storm_Gospel_Interviews 
+=================== 
+=================== 
+=================== 
+4d613e48cf7081321a92e3963c8ee1c4  Shelter_Storm_Gospel_Interviews.txt
+18490e41d59e2226a5409013ccaee494  ShelterFromTheStorm.txt
+c900eeb765bb81c9fec9ce43956edd47  ShelterFromTheStormBack.jpg
+3f2b0327937b27733a6b95ce37139bb1  ShelterFromTheStormFront.jpg
+53cef1fc20df971b83b3e5d27484870f  ShelterStorm.md5
+22cc5e81ee0b256ee17997ae9c4f9601  ShelterStormT01.shn
+aa73e8205e81bdaef27bdb97dba7aeda  ShelterStormT02.shn
+b44e2c7349e878a3334d0694dc9b8a5e  ShelterStormT03.shn
+a51f977bb221b4507297fb0f0834632f  ShelterStormT04.shn
+057902bc4a3afcd9f297d0983b4212a1  ShelterStormT05.shn
+65a5e11ce7b25a2a17cb5db22bd274a7  ShelterStormT06.shn
+321616249b6c10d5d5d8315da35c7f3b  ShelterStormT07.shn
+7a77b28803f4782379a171614b1137a5  ShelterStormT08.shn
+c8beaf5eff99b3cd5f0b31be9343db4f  ShelterStormT09.shn
+f5688fe004b1b1c9c37bf1742622f1fc  ShelterStormT10.shn
+0adce7ddf327f45382ab85cfb3e81042  ShelterStormT11.shn
+0ebcd597b58d47bb245e27113b9f720c  ShelterStormT12.shn
+4535f1791788e1476b389b2fcd743731  ShelterStormT13.shn
+904a959b0a173ce6606c8d55d7fdc86b  ShelterStormT14.shn
+98941d1fefa09475a09eeffb570708e3  ShelterStormT15.shn
+fb04bab933b8405a13446d660a8b1c3b  ShelterStormT16.shn
+68a05b1e9466e8126416a9a3270eb7a1  ShelterStormT17.shn
+e1d3af6cfc6616c945ebd89766efdc06  ShelterStormT18.shn
+610458a6fc0b049a25354c7bcb5a973d  ShelterStormT19.shn
+81f357d50a8b3177508f2823210ff933  ShelterStormT20.shn
+61722896d048d2136370ef906ba9a054  ShelterStormT21.shn
+713955cf6387178731bb66859c1aeafe  ShelterStormT22.shn
+0a501307a556959679f25382377f0b6e  ShelterStormT23.shn
+dbb4f46818103e236e2de9285f4ba234  ShelterStormT24.shn
+5ccb04c18d9728e3e5060ae660bc3ba2  ShelterStormT25.shn
+f8de7b168c8f4a8866999e65d31622f1  ShelterStormT26.shn
+397b1434e62c5a4e6756a305592471bb  ShelterStormT27.shn
+d994575eb72181b45178703d789ab0dc  ShelterStormT28.shn
+77f1fe2b4eb9db9b9883241630f7c0d2  ShelterStormT29.shn
+2d591488304a226f3e422712f5a34632  ShelterStormT30.shn
+84aad1a6e184aa02c8fd68344e8e0bf8  ShelterStormT31.shn
+3a3a83d418cba1a662a96c2044a314da  ShelterStormT32.shn
+92724c1c849d4a3b8a01fe3e90358a59  ShelterStormT33.shn
+0c408fb61e7877c7bc191f4418c5376f  ShelterStormT34.shn
+d72f857c3b55219683923b018caeb592  ShelterStormT35.shn
+e8420ee42e50f339aa46b65960b628e3  ShelterStormT36.shn
+96344fc5f29a79b75c858d8affdc917a  ShelterStormT37.shn
+9d5ca2fcad42029c26b86987a66fcd5f  ShelterStormT38.shn
+7dc556abd4198f090bd6943187594534  ShelterStormT39.shn
+553b866e3e416cd36c5be68a2f0a0809  ShelterStormT40.shn
+4d9b87b7c62998d1b411b213b5f89b4b  ShelterStormT41.shn
+d75157c3516ebac50804f43226f68add  ShelterStormT42.shn
+d8e639573974257c2bd2b6e3cd0cfc6c  ShelterStormT43.shn
+f91d351f6e3822432d3a24200a2cd282  ShelterStormT44.shn
+fb4c1db8f26cbec52daae32ebc4e37d6  ShelterStormT45.shn
+57a6f27450f06b7cc99aa06c28ea56fa  ShelterStormT46.shn
+3b2b31a8e9805c5c062c760d7139ee36  ShelterStormT47.shn
+411f3bf862d9b6b681f66d997bc8ba6f  ShelterStormT48.shn
+e4bdff52eabea0b498070044ea1d4177  ShelterStormT49.shn
+5b8cada3a1c79139a6aefcbc64387d65  ShelterStormT50.shn
+2ef70fe0803df6fa45936236351ab406  ShelterStormT51.shn
+e268b59f171e3f87b0b61ad07ce3879d  ShelterStormT52.shn
+670296676866922ee2247432a2483972  ShelterStormT53.shn
+6351116c21d438bf395320368ee2f85b  ShelterStormT54.shn
+a1762dff286c0e0cc52e20e7de69baed  ShelterStormT55.shn
+6bda27e39a391df943dcb52dd5ad7113  ShelterStormT56.shn
+a7082b861be11171304b7288ff2c12d8  ShelterStormT57.shn
+d94d3f41ddbc1b36e2b81b960f6fdc52  ShelterStormT58.shn
+83a1b9d24cb6e5d5307ea30d23749c51  ShelterStormT59.shn
+c258139d86bf20b7128d4087f80105ef  ShelterStormT60.shn
+e9157101588dc7c6eafe74a3a30de854  ShelterStormT61.shn
+060d39bb42c9736ddb99921f45857f3f  ShelterStormT62.shn
+a07086b4367b13fe20a0f1d9170e2e80  ShelterStormT63.shn
+04e6d5f9094bdc79fe991d2037746057  ShelterStormT64.shn
+5e0d640ddb54fd384513f59a2af1a2b1  ShelterStormT65.shn
+b379b149e10ea493e2be3d5f414fc22f  ShelterStormT66.shn
+dd667013f9be207548590cd140e2ede3  ShelterStormT67.shn
+dfe465848fa72461d983bb36fec624e2  ShelterStormT68.shn
+bf92ab418efdff11eee317629c037eb4  ShelterStormT69.shn
+8465f84fed05490ebd5a4e627ce8f642  ShelterStormT70.shn
+36daa4aaf5e7ca33a81c005362e239b4  ShelterStormT71.shn
+180f3bb3a86db8237d19497632ef7f40  ShelterStormT72.shn
+9031c7e43be13b7bfe90256ab56ca86d  ShelterStormT73.shn
+d201dfc805615b36337cfde113555b43  ShelterStormT74.shn
+a04fcdbe8b03dfe6b2d61ca8f06a3bb0  ShelterStormT75.shn
+978b1ff5443e6c091d8d191a7a97077f  ShelterStormT76.shn
+ef1f2e52d677f7c77f318130f6364e05  ShelterStormT77.shn
+86d72005329c14de664be880b37adc66  ShelterStormT78.shn
+4d1b16d7605e23aa4bbe83f83569f056  ShelterStormT79.shn
+4a7f4f15d4bbb34faa6312be483680d9  ShelterStormT80.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Shelter_Storm_Gospel_Interviews 
+=================== 
+=================== 
+=================== 
+abddb1438b7880ed92f6bfb5fc5dd216  [shntool]  ShelterStormT01.wav
+6e0c13d1ff8b2c33f8f0b4d9da1ffeb4  [shntool]  ShelterStormT02.wav
+51bf710c413b8f2a44837978dd9254c3  [shntool]  ShelterStormT03.wav
+cfc8694099146e1fd853098c330f2bf3  [shntool]  ShelterStormT04.wav
+4934b859bc73f7c16baf32a6f9743656  [shntool]  ShelterStormT05.wav
+e492c5db6d32fa0629036e7e7e8d42b5  [shntool]  ShelterStormT06.wav
+b589e0942783763be5039f08ff727529  [shntool]  ShelterStormT07.wav
+e2cd1b74da46dffd1f5b0ed9d7e9994b  [shntool]  ShelterStormT08.wav
+86990d42033dc38bcfe1615441b3f6e6  [shntool]  ShelterStormT09.wav
+fc9be0e192cf62ed0db7cf2388650281  [shntool]  ShelterStormT10.wav
+78514466a40e79efa7d7a5800225a066  [shntool]  ShelterStormT11.wav
+b4b8af7298acb1cf24d14633b760576c  [shntool]  ShelterStormT12.wav
+527688d0943d4595690a1517ba507c6b  [shntool]  ShelterStormT13.wav
+2e2cd104aa362a441f72834318d086b4  [shntool]  ShelterStormT14.wav
+fcbfb963f0c535686c6bbf234277d46a  [shntool]  ShelterStormT15.wav
+608a4c49140bd58107da4314b92d9548  [shntool]  ShelterStormT16.wav
+79dad5cb961d7b8a7afb3d370bd2abc1  [shntool]  ShelterStormT17.wav
+d232a062a2188e96dae6f05ef6f51d86  [shntool]  ShelterStormT18.wav
+0923fe70e382df703865af7e623c20f8  [shntool]  ShelterStormT19.wav
+406dbe8f69aa15d68cb50a37ffeabe1c  [shntool]  ShelterStormT20.wav
+d8f32c68a7d09afc2dec3909e139f864  [shntool]  ShelterStormT21.wav
+158be169c413cf532a8be9a18cc2952e  [shntool]  ShelterStormT22.wav
+e8c4164307da3e8d9cb1d12c5935f2f7  [shntool]  ShelterStormT23.wav
+3c6eeb516fbb958713da9a900ac4d4e5  [shntool]  ShelterStormT24.wav
+0c25837329296689e345df246d7e2239  [shntool]  ShelterStormT25.wav
+c775aa5d25fb32d1f86ac939beab39c8  [shntool]  ShelterStormT26.wav
+01bf989f19c6c3ed574a6b2becec1914  [shntool]  ShelterStormT27.wav
+c4f787a0a57d52e76b05ac11945bfc46  [shntool]  ShelterStormT28.wav
+285cf4690dd6cdb9e690ccf183f1849c  [shntool]  ShelterStormT29.wav
+9e11415da39ad2a79e1486ce95086e9d  [shntool]  ShelterStormT30.wav
+ce9013ba161a77004f5cfa3ce4197e98  [shntool]  ShelterStormT31.wav
+1ce9604710b47ec38f3c1d646a0226d1  [shntool]  ShelterStormT32.wav
+7c6e62603da567834d195d4cc294391e  [shntool]  ShelterStormT33.wav
+84f455de9dcc44df779582dc2fc45770  [shntool]  ShelterStormT34.wav
+2130c0a2db03508d368194aa87e67f86  [shntool]  ShelterStormT35.wav
+63b9378e7e81c8f4a476c0e9f6d13944  [shntool]  ShelterStormT36.wav
+1efaee508c2f96d0aa05b758783fb508  [shntool]  ShelterStormT37.wav
+8540eec09d49538f0c764154eaa4dabc  [shntool]  ShelterStormT38.wav
+434a7f9588ccacefcbf1c64bbdd4e3de  [shntool]  ShelterStormT39.wav
+5ef815685b599640c7ff2870cae0f362  [shntool]  ShelterStormT40.wav
+932bf23a5ad6c30266989369153e9d14  [shntool]  ShelterStormT41.wav
+fbeb93415d91f60a6be8050e59ed23af  [shntool]  ShelterStormT42.wav
+3129ba9cf054769ca9dcaee2c43f12f5  [shntool]  ShelterStormT43.wav
+aaf4ad722f36ddc1c0e003ff1ab4e18f  [shntool]  ShelterStormT44.wav
+566d112b74146a02137633ff94f6cad1  [shntool]  ShelterStormT45.wav
+233401dcb1795baf3163c5afa026f426  [shntool]  ShelterStormT46.wav
+d9597367280683621c8359a8f43064d5  [shntool]  ShelterStormT47.wav
+cc7943532a11a5d58e2ffaf2ff02e717  [shntool]  ShelterStormT48.wav
+38639d2bc5b0288e0d09d072c6ef0822  [shntool]  ShelterStormT49.wav
+3d85b86e05361ca30d1420554b55d43c  [shntool]  ShelterStormT50.wav
+005cbc0b93d0dd05dccb1096a78748fe  [shntool]  ShelterStormT51.wav
+04e3900423ea16c3037569e26a77782a  [shntool]  ShelterStormT52.wav
+656a24a9e1af1ea89673b8bbfc6f4088  [shntool]  ShelterStormT53.wav
+129eaf81d73eb97f5a54b98ca6e41bdf  [shntool]  ShelterStormT54.wav
+731cd6f55a7494e8e2ba21c1b4a6f878  [shntool]  ShelterStormT55.wav
+19c3a4f9b43a1b16e26346f67f3b29ba  [shntool]  ShelterStormT56.wav
+4dda43b9470ff11438ad5e3bb445d4e6  [shntool]  ShelterStormT57.wav
+7495d41e6fde870aca2f1bde684953f5  [shntool]  ShelterStormT58.wav
+6c9697e7131da3f6130127c04ae69f4d  [shntool]  ShelterStormT59.wav
+a6c81478ae77d4de02fa14fcef7a80e1  [shntool]  ShelterStormT60.wav
+3ee52bad46387a5f1e2df5ac0bfc4f2f  [shntool]  ShelterStormT61.wav
+540bc1d212b7f0a36edb3207d4696472  [shntool]  ShelterStormT62.wav
+cd1b7a89642cfeb5df57db046eb38d32  [shntool]  ShelterStormT63.wav
+c0dd6ddd2b704ff24730dac365c57163  [shntool]  ShelterStormT64.wav
+89fceaa07542455982be07410d858eba  [shntool]  ShelterStormT65.wav
+e1e8e220f23fd85c1f664164af539064  [shntool]  ShelterStormT66.wav
+fe6a9bea92d7eb9bed63cc5e5c602d6a  [shntool]  ShelterStormT67.wav
+459c5dbfa79ed161342f8537c1e7b0fe  [shntool]  ShelterStormT68.wav
+d7db092dd156f5adb5bc0839046b3778  [shntool]  ShelterStormT69.wav
+650a412c75b808a5ba3161751a1c1fc5  [shntool]  ShelterStormT70.wav
+00fd95527525be965b972d25ace2df94  [shntool]  ShelterStormT71.wav
+450033ad9bdf39b5d2d3ecc9be949259  [shntool]  ShelterStormT72.wav
+b43c20f97801a0e186975605544c02e8  [shntool]  ShelterStormT73.wav
+46e014f699e3e9ce1fc19619d2933d86  [shntool]  ShelterStormT74.wav
+46b3c9990055f1d238e14907025106fd  [shntool]  ShelterStormT75.wav
+c79407e70852fa889cbac54fcc8d89a2  [shntool]  ShelterStormT76.wav
+0cef55e034681bda2a4f336b43222e55  [shntool]  ShelterStormT77.wav
+87abdecf353e2e1a8796db4fac066de5  [shntool]  ShelterStormT78.wav
+16920806cdb636a5ebaa7ba67ccb199e  [shntool]  ShelterStormT79.wav
+8f2ca2158c12f1341f7331b59e63eb46  [shntool]  ShelterStormT80.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Shelter_Storm_Gospel_Interviews 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:59.31       21064556 B   ---   --   -----    wav  1.0000  ShelterStormT01.wav
+     2:06.23       22280540 B   ---   --   -----    wav  1.0000  ShelterStormT02.wav
+     0:32.18        5687180 B   ---   --   -----    wav  1.0000  ShelterStormT03.wav
+     1:26.69       15332732 B   ---   --   -----    wav  1.0000  ShelterStormT04.wav
+     1:10.08       12366860 B   ---   --   -----    wav  1.0000  ShelterStormT05.wav
+     1:00.55       10713404 B   ---   --   -----    wav  1.0000  ShelterStormT06.wav
+     0:30.13        5322620 B   ---   --   -----    wav  1.0000  ShelterStormT07.wav
+     0:59.41       10504076 B   ---   --   -----    wav  1.0000  ShelterStormT08.wav
+     2:05.54       22177052 B   ---   --   -----    wav  1.0000  ShelterStormT09.wav
+     0:51.72        9165788 B   ---   --   -----    wav  1.0000  ShelterStormT10.wav
+     0:13.01        2295596 B   ---   --   -----    wav  1.0000  ShelterStormT11.wav
+     0:41.31        7305356 B   ---   --   -----    wav  1.0000  ShelterStormT12.wav
+     0:20.37        3615068 B   ---   --   -----    wav  1.0000  ShelterStormT13.wav
+     1:45.16       18559676 B   ---   --   -----    wav  1.0000  ShelterStormT14.wav
+     1:17.23       13636940 B   ---   --   -----    wav  1.0000  ShelterStormT15.wav
+     0:08.63        1559420 B   ---   --   -----    wav  1.0000  ShelterStormT16.wav
+     0:33.68        5981180 B   ---   --   -----    wav  1.0000  ShelterStormT17.wav
+     0:49.29        8711852 B   ---   --   -----    wav  1.0000  ShelterStormT18.wav
+     1:59.15       21026924 B   ---   --   -----    wav  1.0000  ShelterStormT19.wav
+     0:15.17        2686028 B   ---   --   -----    wav  1.0000  ShelterStormT20.wav
+     2:26.05       25766204 B   ---   --   -----    wav  1.0000  ShelterStormT21.wav
+     0:59.50       10525244 B   ---   --   -----    wav  1.0000  ShelterStormT22.wav
+     0:18.25        3234044 B   ---   --   -----    wav  1.0000  ShelterStormT23.wav
+     0:34.56        6129356 B   ---   --   -----    wav  1.0000  ShelterStormT24.wav
+     0:36.35        6432764 B   ---   --   -----    wav  1.0000  ShelterStormT25.wav
+     0:18.58        3311660 B   ---   --   -----    wav  1.0000  ShelterStormT26.wav
+     0:06.56        1190156 B   ---   --   -----    wav  1.0000  ShelterStormT27.wav
+     0:17.00        2998844 B   ---   --   -----    wav  1.0000  ShelterStormT28.wav
+     0:30.19        5336732 B   ---   --   -----    wav  1.0000  ShelterStormT29.wav
+     0:19.19        3396332 B   ---   --   -----    wav  1.0000  ShelterStormT30.wav
+     0:19.15        3386924 B   ---   --   -----    wav  1.0000  ShelterStormT31.wav
+     0:33.29        5889452 B   ---   --   -----    wav  1.0000  ShelterStormT32.wav
+     0:23.36        4141916 B   ---   --   -----    wav  1.0000  ShelterStormT33.wav
+     0:23.39        4148972 B   ---   --   -----    wav  1.0000  ShelterStormT34.wav
+     0:53.10        9372764 B   ---   --   -----    wav  1.0000  ShelterStormT35.wav
+     0:59.63       10555820 B   ---   --   -----    wav  1.0000  ShelterStormT36.wav
+     0:23.61        4200716 B   ---   --   -----    wav  1.0000  ShelterStormT37.wav
+     0:31.15        5503724 B   ---   --   -----    wav  1.0000  ShelterStormT38.wav
+     0:36.37        6437468 B   ---   --   -----    wav  1.0000  ShelterStormT39.wav
+     0:18.26        3236396 B   ---   --   -----    wav  1.0000  ShelterStormT40.wav
+     0:40.23        7110140 B   ---   --   -----    wav  1.0000  ShelterStormT41.wav
+     0:20.00        3528044 B   ---   --   -----    wav  1.0000  ShelterStormT42.wav
+     0:25.23        4464140 B   ---   --   -----    wav  1.0000  ShelterStormT43.wav
+     0:47.25        8349644 B   ---   --   -----    wav  1.0000  ShelterStormT44.wav
+     0:56.00        9878444 B   ---   --   -----    wav  1.0000  ShelterStormT45.wav
+     0:24.46        4341836 B   ---   --   -----    wav  1.0000  ShelterStormT46.wav
+     0:25.29        4478252 B   ---   --   -----    wav  1.0000  ShelterStormT47.wav
+     0:32.34        5724812 B   ---   --   -----    wav  1.0000  ShelterStormT48.wav
+     0:29.72        5284988 B   ---   --   -----    wav  1.0000  ShelterStormT49.wav
+     0:11.03        1947500 B   ---   --   -----    wav  1.0000  ShelterStormT50.wav
+     0:26.43        4687580 B   ---   --   -----    wav  1.0000  ShelterStormT51.wav
+     0:39.64        7030172 B   ---   --   -----    wav  1.0000  ShelterStormT52.wav
+     0:28.68        5099180 B   ---   --   -----    wav  1.0000  ShelterStormT53.wav
+     1:02.53       11061500 B   ---   --   -----    wav  1.0000  ShelterStormT54.wav
+     0:39.40        6973724 B   ---   --   -----    wav  1.0000  ShelterStormT55.wav
+     0:19.65        3504524 B   ---   --   -----    wav  1.0000  ShelterStormT56.wav
+     0:28.11        4965116 B   ---   --   -----    wav  1.0000  ShelterStormT57.wav
+     0:53.60        9490364 B   ---   --   -----    wav  1.0000  ShelterStormT58.wav
+     0:52.06        9186956 B   ---   --   -----    wav  1.0000  ShelterStormT59.wav
+     0:51.72        9165788 B   ---   --   -----    wav  1.0000  ShelterStormT60.wav
+     0:24.57        4367708 B   ---   --   -----    wav  1.0000  ShelterStormT61.wav
+     0:46.50        8232044 B   ---   --   -----    wav  1.0000  ShelterStormT62.wav
+     0:20.44        3631532 B   ---   --   -----    wav  1.0000  ShelterStormT63.wav
+     0:29.12        5143868 B   ---   --   -----    wav  1.0000  ShelterStormT64.wav
+     0:37.44        6630332 B   ---   --   -----    wav  1.0000  ShelterStormT65.wav
+     0:30.13        5322620 B   ---   --   -----    wav  1.0000  ShelterStormT66.wav
+     0:25.05        4421804 B   ---   --   -----    wav  1.0000  ShelterStormT67.wav
+     0:24.16        4271276 B   ---   --   -----    wav  1.0000  ShelterStormT68.wav
+     0:38.24        6759692 B   ---   --   -----    wav  1.0000  ShelterStormT69.wav
+     0:46.61        8257916 B   ---   --   -----    wav  1.0000  ShelterStormT70.wav
+     0:17.52        3121148 B   ---   --   -----    wav  1.0000  ShelterStormT71.wav
+     0:35.42        6272828 B   ---   --   -----    wav  1.0000  ShelterStormT72.wav
+     1:12.58       12837260 B   ---   --   -----    wav  1.0000  ShelterStormT73.wav
+     0:39.35        6961964 B   ---   --   -----    wav  1.0000  ShelterStormT74.wav
+     2:08.42       22678028 B   ---   --   -----    wav  1.0000  ShelterStormT75.wav
+     1:03.33       11190860 B   ---   --   -----    wav  1.0000  ShelterStormT76.wav
+     1:36.38       17023820 B   ---   --   -----    wav  1.0000  ShelterStormT77.wav
+     0:16.74        2996492 B   ---   --   -----    wav  1.0000  ShelterStormT78.wav
+     6:14.52       66095948 B   ---   --   -----    wav  1.0000  ShelterStormT79.wav
+     7:00.43       74189180 B   ---   --   -----    wav  1.0000  ShelterStormT80.wav
+    71:02.20      751867360 B                            1.0000  (80 files)
+=================== 
+=================== 
+=================== 

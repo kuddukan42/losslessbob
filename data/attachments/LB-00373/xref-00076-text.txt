@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== bd02-04-07.md5
+===================
+===================
+===================
+9559733ac2bd4ce0ef5184dc38b7dbee *bd02-04-07d1t01.shn
+23a789c6dac34e5efab429b8a7786602 *bd02-04-07d1t02.shn
+be2d6b55c945e73c561807ab38eff15f *bd02-04-07d1t03.shn
+7cfe31a84b6821971cdd11f181276aa4 *bd02-04-07d1t04.shn
+23e295ba9a3529bb00a76a471427a2a4 *bd02-04-07d1t05.shn
+0a0303db25d8fbc12d09bc84ce3346fb *bd02-04-07d1t06.shn
+d3cbebe0ac9ab41092f63a04cc73bb9c *bd02-04-07d1t07.shn
+c693d0a40d7a7cccb07a9177d4da7c39 *bd02-04-07d1t08.shn
+22c344eb8ddef7841dea2de4600450c3 *bd02-04-07d1t09.shn
+8096d9b2408b77a5e075799ddd08ad20 *bd02-04-07d1t10.shn
+968a355597548a165d8502fda56221ca *bd02-04-07d1t11.shn
+faa4abb7aabd71ca520bcd5efa84571d *bd02-04-07d2t01.shn
+1482fd3e6ed433c21b7bee6a9f093a7b *bd02-04-07d2t02.shn
+2ea1d191e5364dd8e761c0ba31002457 *bd02-04-07d2t03.shn
+6f71b5ff6c26cf14627543b13740016b *bd02-04-07d2t04.shn
+76612a53d5f1656d3acbcbf0d01326b0 *bd02-04-07d2t05.shn
+9e695d66e31c10d74c06bc26c2576919 *bd02-04-07d2t06.shn
+7323ea45ae6875d5864675ffe5b200d6 *bd02-04-07d2t07.shn
+34602c0350a4ee956d5c384dcef85c94 *bd02-04-07d2t08.shn
+48e18fad09503c418c6ac805d56c9393 *bd02-04-07d2t09.shn
+f555680f276a71fef9bdb378d9b14d48 *bd02-04-07d2t10.shn
+4d2e704ae883828dc099f66cd4768734 *oslo.Apr7_2002_b.jpg
+1053da9b7d83e4c31b6162325ea9ccea *oslo.Apr7_2002_f.jpg
+73e58448f727147ca42e516a386db481 *osloB.JPG
+507a554418e32605e0245c850aa73442 *osloF.JPG
+===================
+===================
+===================
+=== bd02-04-07.txt
+===================
+===================
+===================
+Bob Dylan, 4/7/02, Spektrum, Oslo, Norway, 2CDR
+
+(74min+69min), excellent sound;
+
+CD1
+1 Wait For The Light To Shine(acoustic) 
+2 The Times They Are A-Changin' (acoustic) 
+3 Desolation Row (acoustic) 
+4 The Lonesome Death Of Hattie Carroll (acoustic) 
+5 Solid Rock 
+6 Floater (Too Much To Ask) 
+7 Positively 4th Street 
+8 Lonesome Day Blues 
+9 Mama, You Been On My Mind (acoustic) 
+10 Visions Of Johanna (acoustic) 
+11 Don't Think Twice, It's All Right (acoustic) 
+
+CD2
+1 Ballad Of A Thin Man 
+2 Summer Days (Tony on standup bass) 
+3 The Wicked Messenger 
+4 Leopard-Skin Pill-Box Hat 
+5 Man Of Constant Sorrow 
+6 Like A Rolling Stone 
+7 Knockin' On Heaven's Door(acoustic) 
+8 Honest With Me 
+9 Blowin' In The Wind (acoustic) 
+10 All Along The Watchtower 
+===================
+===================
+===================

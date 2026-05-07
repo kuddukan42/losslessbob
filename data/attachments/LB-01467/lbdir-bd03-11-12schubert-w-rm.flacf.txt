@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-12schubert-w-rm.flacf 
+=================== 
+=================== 
+=================== 
+1146763609dd44ba9c1e5778bc52a23e  101 Announcement-rm.flac
+709122a0e850e463dc596e8470fb8bd0  102 Maggie's Farm-rm.flac
+a9a94fe39f05c2364c3c8ea47a4d70d1  103 It's All Over Now, Baby Blue-rm.flac
+841c39b74559701b801edcd16d67e3e4  104 Cry A While-rm.flac
+c096c7d1e5a66e69373b50c67836edc0  105 Visions Of Johanna-rm.flac
+2bb72ca2c3f2ae5856902055a585e60b  106 It's Alright, Ma (I'm Only Bleeding)-rm.flac
+882d452de51b10c32aba29ba4761754a  107 Love Minus Zero_No Limit-rm.flac
+51de7d8edf285ab82a8a053166f68d1c  108 Man In The Long Black Coat-rm.flac
+2976a1c87959fc821d72b86309ae4b1d  109 The Wicked Messenger-rm.flac
+20bd5eacd7c47cf81ffc4681ad8914f2  110 Stuck Inside Of Mobile With The Memphis Blues Again-rm.flac
+f74ac8bc4371dd60d579741e0935d091  201 Love Sick-rm.flac
+7004cadc3184cc356c26e878a0222b2f  202 Highway 61 Revisited-rm.flac
+08fc2fa42828ecbaade58943ed66e7af  203 Every Grain Of Sand-rm.flac
+87b8fff4ac107fb013d8791971ca3ace  204 Honest With Me-rm.flac
+685c028fe19f23c9cac2419c1fed4ac5  205 Girl Of The North Country-rm.flac
+578489abf05c3eb50af1bc7af8722fdf  206 Summer Days-rm.flac
+428c363df3d5ff533c5f6c037fd23a7a  207 Cat's In The Well-rm.flac
+1cb0c4565a55b526017e7630f2f6eb4e  208 Like A Rolling Stone-rm.flac
+c09f35b3bf083731f2ca7a6ee9f5b5c1  209 All Along The Watchtower-rm.flac
+5f5b34a3ece0490cf5b3c7bf2c688fb1  bd03-11-12schubert-w-rm.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-12schubert-w-rm.flacf 
+=================== 
+=================== 
+=================== 
+101 Announcement-rm.flac:404210ae3e0599a7a8f9afd52755ed52
+102 Maggie's Farm-rm.flac:32c0a944a54712ec132841a87b7bdf98
+103 It's All Over Now, Baby Blue-rm.flac:889a3d54adcaeec274b3cce339554908
+104 Cry A While-rm.flac:8dcff2801b07da6d0529cd4350d3c25f
+105 Visions Of Johanna-rm.flac:fa3320e5bd1cedab2a2835fa3facb102
+106 It's Alright, Ma (I'm Only Bleeding)-rm.flac:35c6a19624bafc2992697a7fb3db8d77
+107 Love Minus Zero_No Limit-rm.flac:fbdfe7c37c73a210a2f6b6487a929938
+108 Man In The Long Black Coat-rm.flac:356deef697c31c0837a0eedb637dd8e4
+109 The Wicked Messenger-rm.flac:d5da23b83c0233573c9e51c6fa4a4407
+110 Stuck Inside Of Mobile With The Memphis Blues Again-rm.flac:84afa4c3f1a5be9db611560af1225904
+201 Love Sick-rm.flac:8b3f5795a1832af53525918eda47d431
+202 Highway 61 Revisited-rm.flac:9a21571163b0c689a619220b6064b54b
+203 Every Grain Of Sand-rm.flac:c2d0cbfff887e8bfb323f2f1b667437f
+204 Honest With Me-rm.flac:e333db97b13eaaf387b2a2df5d6b225e
+205 Girl Of The North Country-rm.flac:af51892e3197ce759d95098f15e9b29d
+206 Summer Days-rm.flac:791a030bcddd33e6db11beba11b72a64
+207 Cat's In The Well-rm.flac:8d4f7acfb44125305ad3d97537786c1b
+208 Like A Rolling Stone-rm.flac:a788df4b184a2274d3adf9c30f775617
+209 All Along The Watchtower-rm.flac:2fee76a123c6120ffbd1a97ff16bec08
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-12schubert-w-rm.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.27       10823948 B   ---   --   ---xx   flac  0.4974  101 Announcement-rm.flac
+     5:58.38       63240620 B   ---   --   ---xx   flac  0.5867  102 Maggie's Farm-rm.flac
+     6:09.22       65143388 B   ---   --   ---xx   flac  0.5238  103 It's All Over Now, Baby Blue-rm.flac
+     5:52.50       62210444 B   ---   --   ---xx   flac  0.5826  104 Cry A While-rm.flac
+     9:35.07      101446508 B   ---   --   ---xx   flac  0.5227  105 Visions Of Johanna-rm.flac
+     8:10.08       86454860 B   ---   --   ---xx   flac  0.5850  106 It's Alright, Ma (I'm Only Bleeding)-rm.flac
+     5:53.51       62389196 B   ---   --   ---xx   flac  0.4914  107 Love Minus Zero_No Limit-rm.flac
+     5:53.35       62351564 B   ---   --   ---xx   flac  0.5545  108 Man In The Long Black Coat-rm.flac
+     4:44.08       50116460 B   ---   --   ---xx   flac  0.6074  109 The Wicked Messenger-rm.flac
+     8:10.35       86518364 B   ---   --   ---xx   flac  0.5995  110 Stuck Inside Of Mobile With The Memphis Blues Again-rm.flac
+     6:19.02       66860348 B   ---   --   ---xx   flac  0.5433  201 Love Sick-rm.flac
+     6:50.72       72493388 B   ---   --   ---xx   flac  0.6013  202 Highway 61 Revisited-rm.flac
+     8:10.01       86438396 B   ---   --   ---xx   flac  0.5000  203 Every Grain Of Sand-rm.flac
+     7:10.48       75964940 B   ---   --   ---xx   flac  0.6050  204 Honest With Me-rm.flac
+     5:29.33       58113260 B   ---   --   ---xx   flac  0.4476  205 Girl Of The North Country-rm.flac
+    11:05.05      117317804 B   ---   --   ---xx   flac  0.5687  206 Summer Days-rm.flac
+     4:32.30       48051404 B   ---   --   ---xx   flac  0.6089  207 Cat's In The Well-rm.flac
+     7:36.71       80605436 B   ---   --   ---xx   flac  0.6070  208 Like A Rolling Stone-rm.flac
+     8:44.69       92595932 B   ---   --   ---xx   flac  0.5991  209 All Along The Watchtower-rm.flac
+   127:28.12     1349136260 B                            0.5629  (19 files)
+=================== 
+=================== 
+=================== 

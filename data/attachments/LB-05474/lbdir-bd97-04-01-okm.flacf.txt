@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-01-okm.flacf 
+=================== 
+=================== 
+=================== 
+d1a0961496e7b61dfaf5279e12d1a45d  bd1997-04-01.txt
+11717cc7195e7a467157342c37e0ec6b  bd1997-04-01ffp.txt
+e5d4991cae3a5127108c1f1f56708296  d1Track01.flac
+b2929267cca6e5657ff3e92a9b300213  d1Track02.flac
+21c5f61e5fe625502aff1ce1f20d819c  d1Track03.flac
+f14d8aa8bdf9319374b9ef1420926c4e  d1Track04.flac
+0c254f07d98705bab8603d48e88b61f6  d1Track05.flac
+3a7161c259d9b66ef6cadd5938e91511  d1Track06.flac
+8a83bcb66142047c1a957f2428f9f074  d1Track07.flac
+8fdb60057fa2af7e6f3e7c3061ab19d2  d1Track08.flac
+e3421d224c1960fdb9ff742e3a1f6a35  d1Track09.flac
+b77c8aacfb3683cea6c397d2aa3d8f9c  d2Track01.flac
+80b847d407697aa074fb3474efd986e3  d2Track02.flac
+7e472c57f22599a16b8b11d21760678a  d2Track03.flac
+717ba48c27dddc4b92014626e932226a  d2Track04.flac
+c8b49ff09b1e08cc440d35fc53c17f56  d2Track05.flac
+7e2b9c39254e91068c32eb4c2a41e50c  d2Track06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-01-okm.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:bd23664487e2ee7892723b22f54e7b69
+d1Track02.flac:d6b4b8105c98b0c84b629ee04a8b1333
+d1Track03.flac:74f61678575de9f19c6e08096fd9cbc8
+d1Track04.flac:1cc9ce0b90fc8f98112166737b48ac3e
+d1Track05.flac:ee3aaf226b84e8b9f2fc129f184305d8
+d1Track06.flac:8c4d11c47badd9330e99d6fb9721daf7
+d1Track07.flac:c79c5db86e7c3364591e7790eee10e2f
+d1Track08.flac:ae99623c1351c59330fe7026c0bc43e3
+d1Track09.flac:2bfb22b391aa2de5a11de34cadc3dc7e
+d2Track01.flac:7074810de926614e215ad9d58d6dd82f
+d2Track02.flac:08f4eb18a217e3997ae9e5b883f66ea8
+d2Track03.flac:512741b2e0e1274058f7d3f70487993b
+d2Track04.flac:a3f7d9e780b151bf67394dc2e7e5f03f
+d2Track05.flac:ac7912e3a14334d3b8b58a9f095d2d3a
+d2Track06.flac:c94b132f423df4eeeac9e0b39416ecfc
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-04-01-okm.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.74       55210892 B   ---   --   ---xx   flac  0.5653  d1Track01.flac
+     6:03.51       64153196 B   ---   --   ---xx   flac  0.5409  d1Track02.flac
+     6:04.52       64331948 B   ---   --   ---xx   flac  0.5864  d1Track03.flac
+     7:26.33       78752060 B   ---   --   ---xx   flac  0.5300  d1Track04.flac
+     7:16.04       76919852 B   ---   --   ---xx   flac  0.5650  d1Track05.flac
+     8:14.03       87148700 B   ---   --   ---xx   flac  0.6016  d1Track06.flac
+     7:11.55       76157804 B   ---   --   ---xx   flac  0.5497  d1Track07.flac
+     9:32.17      100940828 B   ---   --   ---xx   flac  0.5654  d1Track08.flac
+     6:53.31       72926156 B   ---   --   ---xx   flac  0.5296  d1Track09.flac
+     7:02.42       74539628 B   ---   --   ---xx   flac  0.5177  d2Track01.flac
+     8:27.46       89543036 B   ---   --   ---xx   flac  0.5464  d2Track02.flac
+     8:56.49       94665692 B   ---   --   ---xx   flac  0.5598  d2Track03.flac
+    11:46.51      124658396 B   ---   --   ---xx   flac  0.5431  d2Track04.flac
+    10:22.57      109854908 B   ---   --   ---xx   flac  0.5113  d2Track05.flac
+     9:28.35      100277564 B   ---   --   ---xx   flac  0.5887  d2Track06.flac
+   120:00.00     1270080660 B                            0.5529  (15 files)
+=================== 
+=================== 
+=================== 

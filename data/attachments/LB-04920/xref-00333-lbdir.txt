@@ -1,0 +1,136 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-What Are-You-Trying-To-Say-a.flacf 
+=================== 
+=================== 
+=================== 
+82df7c392dfcb8baba77c598a9c56467  artwork\Hollow Horn Vol.6 back.jpg
+f09d85b43b64f3816b1898f157e789b0  artwork\Hollow Horn Vol.6 front.jpg
+ea8fdec34e77cbed9a690c4c6eadc6f6  HHPA 6-1\01 The Times They Are A-Changin'.flac
+5c87d2f78791a5ed64d0b4446d1a3089  HHPA 6-1\02 To Ramona.flac
+6dd6fb47e2d53b2b80d54c7b5aabf092  HHPA 6-1\03 Gates Of Eden.flac
+4a07064b09e6c9a116c7d6cb805e58f1  HHPA 6-1\04 If You Gotta Go, Go Now.flac
+4171c9a85cae2fd437131c2ba8190f02  HHPA 6-1\05 It's Alright, Ma (I'm Only Bleeding).flac
+2b4882d5c4cd6db012b82e04429f9667  HHPA 6-1\06 Love Minus Zero_No Limit.flac
+b089344ccd3617037d2e2639806c939f  HHPA 6-1\07 Mr Tambourine Man.flac
+935ed8232215e45fe35b562949cb6f65  HHPA 6-1\08 Talkin' World War III Blues.flac
+34c6a91b63c6aefaad15651c15cb2b55  HHPA 6-1\09 Don't Think Twice, It's Alright.flac
+66f235e094bba7d99dea0e9a97992ddb  HHPA 6-1\10 With God On Our Side.flac
+a24a53f430114ee8cd6917f83bf5578b  HHPA 6-1\11 She Belongs To Me.flac
+24ec3a5edfb124dbaf6d72dbfe95e5d0  HHPA 6-1\12 It Ain't Me Babe.flac
+bd21144bd2a996d5e524eb7c7ea3cfe8  HHPA 6-1\13 The Lonesome Death Of Hattie Carroll.flac
+c3492190b650259da7936436417383cd  HHPA 6-1\14 All I Really Wanna Do.flac
+2eda9aed98d060e103b7942223096b36  HHPA 6-1\15 It's All Over Now, Baby Blue.flac
+6d631463688021714e9fbdb633b79e2d  HHPA 6-2\01 She Belongs To Me.flac
+05c48a42836c019d5b77bf34c85ebc88  HHPA 6-2\02 To Ramona.flac
+e1e762fa8540c89680a84d3cc9615f2c  HHPA 6-2\03 Gates Of Eden.flac
+4b2986a79245da44677d004b2a867cb7  HHPA 6-2\04 It's All Over Now, Baby Blue.flac
+caaf125b9ffb10de354f0ed9ff35e296  HHPA 6-2\05 Desolation Row.flac
+340d1034ac2e723a7d1cac51daeb68d5  HHPA 6-2\06 Love Minus Zero_No Limit.flac
+9cd0c24e752965e1df9f13e230af4f4c  HHPA 6-2\07 Mr Tambourine Man.flac
+adfd22b9a6218c041bcb951e3dd7f083  HHPA 6-2\08 I Don't Believe You.flac
+136d56d87b6fdb68702ada10d130872c  HHPA 6-2\09 Tombstone Blues.flac
+95adfacfcd1d29495e02e2dc4b0d6c03  HHPA 6-2\10 Just Like Tom Thumbs Blues.flac
+5b978ac49eaf0931637582d4e05bc2ce  HHPA 6-2\11 From A Buick 6.flac
+27a69554f6ad300bfabf335d675928a0  HHPA 6-2\12 Maggie's Farm.flac
+bb8cf2f6dbb42137b719250e7fff1ba1  HHPA 6-2\13 It Ain't Me Babe.flac
+6cf5d6cba15e852f4dc48f13e5648a31  HHPA 6-2\14 Ballad Of A Thin Man.flac
+6a3604fdcbe9fcc84a85c13a25787e99  HHPA 6-2\15 Like A Rolling Stone.flac
+9af4b335e7757c980f778f5849b15635  HHPA-6.md5
+b371c35036c4f38945b5890aef34f4fb  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-What Are-You-Trying-To-Say-a.flacf\hhpa 6-1 
+=================== 
+=================== 
+=================== 
+01 the times they are a-changin'.flac:9ce571b030afef5a606d9d27b2dc6b7f
+02 to ramona.flac:d887d1fa1476192e86360bd4a99e23a5
+03 gates of eden.flac:703e7b585827b16db69de09999623094
+04 if you gotta go, go now.flac:030e2527d04c2f01e381a0899fe6eead
+05 it's alright, ma (i'm only bleeding).flac:d442c035e06aa18d73acb0830401b170
+06 love minus zero_no limit.flac:b7e900ffe76766847480f5901b3a3c09
+07 mr tambourine man.flac:f71cc9d404b3887e811e30ebc21cf05d
+08 talkin' world war iii blues.flac:c880da48236e7290751502d22919d586
+09 don't think twice, it's alright.flac:1d54ad6f688203d963cfe6c6511566d0
+10 with god on our side.flac:9dfe3f312dde695f2c5759a55ebcd0ff
+11 she belongs to me.flac:536d8bfa1563e92645802d2da54f3f2d
+12 it ain't me babe.flac:0a7d099fd757f96ff1f832fad5354c2d
+13 the lonesome death of hattie carroll.flac:60676a3e4c431852b01e2b026dd8b32f
+14 all i really wanna do.flac:057712e0268affb3e0a3025e9f5a3bf2
+15 it's all over now, baby blue.flac:202716a0c4322d1967918f30b2210b9e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-What Are-You-Trying-To-Say-a.flacf\hhpa 6-2 
+=================== 
+=================== 
+=================== 
+01 she belongs to me.flac:d18b115b37e628a929d1dc50064f1c2f
+02 to ramona.flac:64938dd62a76e66edc8a3a130f8de83b
+03 gates of eden.flac:51e9cac058de961137ed91b78ffee782
+04 it's all over now, baby blue.flac:be6f07f71af8b206006e5c399af46abb
+05 desolation row.flac:dd19d9fb632de7c3c81202a92a38f9f1
+06 love minus zero_no limit.flac:b71d8e9108569beedbe4df098bda5a6d
+07 mr tambourine man.flac:de4769aad167032bbd442e4f30aa5542
+08 i don't believe you.flac:334f4b9389aebabd98da0f515d0c2f76
+09 tombstone blues.flac:626ad7f99fead8d1e1b3d61b4c524b7f
+10 just like tom thumbs blues.flac:fd6bc7c3041803aa2b902952b6606b04
+11 from a buick 6.flac:1defd4f25107c3219f72ac4d526f5422
+12 maggie's farm.flac:0bbb5953e768596e285e081b4368588e
+13 it ain't me babe.flac:b7241e1f8a1c299dee4f895fc8ca9b78
+14 ballad of a thin man.flac:e3f6b3c9cd60a7ba061d21cabe52a5ac
+15 like a rolling stone.flac:2002fd6b17e9fbd54ff37b17948a3743
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-What Are-You-Trying-To-Say-a.flacf\hhpa 6-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.71       34917836 B   ---   --   ---xx   flac  0.5499  01 The Times They Are A-Changin'.flac
+     4:44.03       50104700 B   ---   --   ---xx   flac  0.5336  02 To Ramona.flac
+     6:39.18       70425980 B   ---   --   ---xx   flac  0.5331  03 Gates Of Eden.flac
+     2:39.03       28054700 B   ---   --   ---xx   flac  0.5675  04 If You Gotta Go, Go Now.flac
+     8:17.67       87828428 B   ---   --   ---xx   flac  0.5296  05 It's Alright, Ma (I'm Only Bleeding).flac
+     4:12.45       44558684 B   ---   --   ---xx   flac  0.5442  06 Love Minus Zero_No Limit.flac
+     5:56.18       62840780 B   ---   --   ---xx   flac  0.5613  07 Mr Tambourine Man.flac
+     4:10.03       44107100 B   ---   --   ---xx   flac  0.5603  08 Talkin' World War III Blues.flac
+     3:34.37       37836668 B   ---   --   ---xx   flac  0.5421  09 Don't Think Twice, It's Alright.flac
+     4:56.67       52372028 B   ---   --   ---xx   flac  0.5652  10 With God On Our Side.flac
+     4:08.11       43773116 B   ---   --   ---xx   flac  0.5497  11 She Belongs To Me.flac
+     4:31.56       47936156 B   ---   --   ---xx   flac  0.5642  12 It Ain't Me Babe.flac
+     6:06.56       64694156 B   ---   --   ---xx   flac  0.5640  13 The Lonesome Death Of Hattie Carroll.flac
+     3:30.56       37175756 B   ---   --   ---xx   flac  0.5664  14 All I Really Wanna Do.flac
+     5:06.00       53978444 B   ---   --   ---xx   flac  0.5340  15 It's All Over Now, Baby Blue.flac
+    71:51.61      760604532 B                            0.5492  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-What Are-You-Trying-To-Say-a.flacf\hhpa 6-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.60       42124364 B   ---   --   ---xx   flac  0.5276  01 She Belongs To Me.flac
+     4:49.71       51146636 B   ---   --   ---xx   flac  0.5179  02 To Ramona.flac
+     6:34.60       69642764 B   ---   --   ---xx   flac  0.5283  03 Gates Of Eden.flac
+     4:49.41       51076076 B   ---   --   ---xx   flac  0.5427  04 It's All Over Now, Baby Blue.flac
+    10:12.60      108097964 B   ---   --   ---xx   flac  0.5141  05 Desolation Row.flac
+     3:44.41       39610076 B   ---   --   ---xx   flac  0.5210  06 Love Minus Zero_No Limit.flac
+     5:45.15       60893324 B   ---   --   ---xx   flac  0.5283  07 Mr Tambourine Man.flac
+     4:21.18       46082780 B   ---   --   ---xx   flac  0.5367  08 I Don't Believe You.flac
+     4:43.41       50017676 B   ---   --   ---xx   flac  0.5511  09 Tombstone Blues.flac
+     4:47.63       50775020 B   ---   --   ---xx   flac  0.5422  10 Just Like Tom Thumbs Blues.flac
+     3:12.11       33894716 B   ---   --   ---xx   flac  0.5505  11 From A Buick 6.flac
+     4:25.67       46903628 B   ---   --   ---xx   flac  0.5427  12 Maggie's Farm.flac
+     4:10.41       44196476 B   ---   --   ---xx   flac  0.5544  13 It Ain't Me Babe.flac
+     6:39.15       70418924 B   ---   --   ---xx   flac  0.4468  14 Ballad Of A Thin Man.flac
+     5:34.26       58978796 B   ---   --   ---xx   flac  0.4930  15 Like A Rolling Stone.flac
+    77:50.30      823859220 B                            0.5227  (15 files)
+=================== 
+=================== 
+=================== 

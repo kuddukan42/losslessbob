@@ -1,0 +1,136 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-05-several-dates.flacf 
+=================== 
+=================== 
+=================== 
+c059ac2d7daa007dc0d063efa0aa8e60  bd1965-05-05 Birmingham\bd1965-05-05 Birmingham.md5
+a0907adb0ba7ccd0b385bd22ab110c1c  bd1965-05-05 Birmingham\bd1965-05-05 Birmingham.txt
+053901433f035b75f9078c2828a6e31a  bd1965-05-05 Birmingham\bd1965-05-05t01.flac
+20a999f9fa6c00f6c518befdf6b63923  bd1965-05-05 Birmingham\bd1965-05-05t02.flac
+e439589bd10984c6f67a141eee5eb19e  bd1965-05-06 Newcastle\bd1965-05-06 Newcastle.md5
+3e197603e2295ac36fc225be817e3e3e  bd1965-05-06 Newcastle\bd1965-05-06 Newcastle.txt
+9a23c1443584fbc2e8654a69ba811339  bd1965-05-06 Newcastle\bd1965-05-06t01.flac
+99d915098324b8ff61e1b1f98f74dc31  bd1965-05-06 Newcastle\bd1965-05-06t02.flac
+ffbfa9e3afe39f4a9d205392dfbb4699  bd1965-05-06 Newcastle\bd1965-05-06t03.flac
+a4099a4951bd96f805f5ce5fc59d827b  bd1965-05-06 Newcastle\bd1965-05-06t04.flac
+1f6d1a04cc99a0fec5000d469e1bad9d  bd1965-05-06 Newcastle\bd1965-05-06t05.flac
+4e5976fa08bb5b6094432a05e2b1e052  bd1965-05-07 Manchester\bd1965-05-07 Manchester.md5
+aedfe5287b8f2429db4e3d4d0f1107ce  bd1965-05-07 Manchester\bd1965-05-07 Manchester.txt
+fabaa4cbec289cd83363b5bc2324d849  bd1965-05-07 Manchester\bd1965-05-07t01.flac
+26c9d023be80b1a84f9bf308c2fa92a4  bd1965-05-07 Manchester\bd1965-05-07t02.flac
+92e0a6aa6bf9838427c2f88c17c5834a  bd1965-05-07 Manchester\bd1965-05-07t03.flac
+2c17624639cc49e74f841df0231af71d  bd1965-05-10 Royal Albert Hall\bd1965-05-10 Royal Albert Hall.md5
+08eb31ee86cddfb2ed9559855c147f5d  bd1965-05-10 Royal Albert Hall\bd1965-05-10 Royal Albert Hall.txt
+289b2f6a182adf8fe33ec245b05fdce6  bd1965-05-10 Royal Albert Hall\bd1965-05-10t01.flac
+2bad797fcc40ee8eef193cc37c7d0125  bd1965-05-10 Royal Albert Hall\bd1965-05-10t02.flac
+490ae94e3c3031f919988d64a81b7fba  bd1965-05-10 Royal Albert Hall\bd1965-05-10t03.flac
+11e3861588f7b4c0ced1374074ac6809  bd1965-05-10 Royal Albert Hall\bd1965-05-10t04.flac
+db255abc851a94ccdbe99475d1bf9c17  bd1965-05-10 Royal Albert Hall\bd1965-05-10t05.flac
+a5a1395bacdd8b351d9e993fef3f15c4  bd1965-05-10 Royal Albert Hall\bd1965-05-10t06.flac
+6cd643440ce708e8e6ce161488906308  bd1965-05-10 Royal Albert Hall\bd1965-05-10t07.flac
+786ffeeab05d25ad18bf7ad21d3601a7  bd1965-05-10 Royal Albert Hall\bd1965-05-10t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-05-several-dates.flacf\bd1965-05-05 Birmingham 
+=================== 
+=================== 
+=================== 
+bd1965-05-05t01.flac:425b5a69342cc5069eb3681665843ff3
+bd1965-05-05t02.flac:66fb8de45fef5d9fc967edc9d73f081a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-05-several-dates.flacf\bd1965-05-06 Newcastle 
+=================== 
+=================== 
+=================== 
+bd1965-05-06t01.flac:d53496d214b5a704bde5c2717670682c
+bd1965-05-06t02.flac:6714310314a9028e6e08f5b86673333f
+bd1965-05-06t03.flac:abdafe361d55ebcceea3d2834e7458fc
+bd1965-05-06t04.flac:02a07c86f1ca7d2ef44bc4a16c86bbd7
+bd1965-05-06t05.flac:11e375fe885194795a253854b3578076
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-05-several-dates.flacf\bd1965-05-07 Manchester 
+=================== 
+=================== 
+=================== 
+bd1965-05-07t01.flac:f3724839dc58d91b87473734d0403f98
+bd1965-05-07t02.flac:adcbad39edf7c539358f0fa81cab3404
+bd1965-05-07t03.flac:3a599f62ca0044e870d8df69a20122c5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-05-several-dates.flacf\bd1965-05-10 Royal Albert Hall 
+=================== 
+=================== 
+=================== 
+bd1965-05-10t01.flac:31629dfc46004d1467f4921b41d0d646
+bd1965-05-10t02.flac:ae627972d875649440a8ca9512f50b81
+bd1965-05-10t03.flac:f0ab08e4403093712df6c2bfba34e661
+bd1965-05-10t04.flac:499ea1f0d3cd652ecd8cda120ae1687f
+bd1965-05-10t05.flac:10029eb351736a1f5dec0950da1bfca3
+bd1965-05-10t06.flac:b7057c6ffeee2218df0a1038d81ffd0d
+bd1965-05-10t07.flac:035971f2dcea1b6f4cc0103b5f16a5cb
+bd1965-05-10t08.flac:3f96e784184cd94bf8a1f70180a49dde
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-05-several-dates.flacf\bd1965-05-05 Birmingham 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.21       43090876 B   -b-   --   ---xx   flac  0.5377  bd1965-05-05t01.flac
+     7:32.45       79837728 B   -b-   --   ---xx   flac  0.3565  bd1965-05-05t02.flac
+    11:36.66      122928604 B                            0.4200  (2 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-05-several-dates.flacf\bd1965-05-06 Newcastle 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.11       37422716 B   ---   --   ---xx   flac  0.5039  bd1965-05-06t01.flac
+     4:28.32       47350508 B   ---   --   ---xx   flac  0.5506  bd1965-05-06t02.flac
+     1:10.54       12475052 B   ---   --   ---xx   flac  0.5701  bd1965-05-06t03.flac
+     3:30.22       37095788 B   ---   --   ---xx   flac  0.6268  bd1965-05-06t04.flac
+     3:02.62       32250668 B   ---   --   ---xx   flac  0.6497  bd1965-05-06t05.flac
+    15:44.31      166594732 B                            0.5777  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-05-several-dates.flacf\bd1965-05-07 Manchester 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.67       10212428 B   ---   --   ---xx   flac  0.6156  bd1965-05-07t01.flac
+     1:08.66       12150476 B   ---   --   ---xx   flac  0.6162  bd1965-05-07t02.flac
+     0:14.07        2486108 B   ---   --   ---xx   flac  0.6377  bd1965-05-07t03.flac
+     2:20.65       24849012 B                            0.6181  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-05-several-dates.flacf\bd1965-05-10 Royal Albert Hall 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:20.52       14234348 B   ---   --   ---xx   flac  0.5155  bd1965-05-10t01.flac
+     2:01.26       21405596 B   ---   --   ---xx   flac  0.5347  bd1965-05-10t02.flac
+     1:39.54       17590652 B   ---   --   ---xx   flac  0.5336  bd1965-05-10t03.flac
+     4:03.24       42921692 B   ---   --   ---xx   flac  0.5586  bd1965-05-10t04.flac
+     6:48.74       72145292 B   ---   --   ---xx   flac  0.5641  bd1965-05-10t05.flac
+     7:43.69       81835532 B   ---   --   ---xx   flac  0.5450  bd1965-05-10t06.flac
+     0:37.00        6526844 B   ---   --   ---xx   flac  0.5567  bd1965-05-10t07.flac
+     0:39.39        6971372 B   ---   --   ---xx   flac  0.5617  bd1965-05-10t08.flac
+    24:54.38      263631328 B                            0.5500  (8 files)
+=================== 
+=================== 
+=================== 

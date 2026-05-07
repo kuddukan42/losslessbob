@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-16.flacf 
+=================== 
+=================== 
+=================== 
+d86134c1f7ed577726e98bf17303db7c  bd94-10-16-LB-3595.txt
+d6a9e79018f4f9f16c8eda3fecc977d6  Bob Dylan New Haven 16 oct 1994 FIX.txt
+eadba6c7e1bc4863d9c6264135d536b8  fingerprint.ffp.txt
+177aa49a4dc9b495f48f25a243598d33  New Haven.txt
+6c125ba239a08a57bea2c35b4bab74da  Newhaven_161094.Jpg
+dc56313799f3f52aea7b848b06013b84  TRACKS\D1T01.flac
+ad66700f05fddbcb169a7eb956b0b194  TRACKS\D1T02.flac
+bd4bbb60f51c70df4e344f45dec9f7b4  TRACKS\D1T03.flac
+65e8a3675ba3ee445127ad77e391c376  TRACKS\D1T04.flac
+889250e498e14d51a86ad5587544500c  TRACKS\D1T05.flac
+766c49fc25f48a574bf94bbaedac5944  TRACKS\D2T01.flac
+fcaae75b5011c310c2036c285b681e46  TRACKS\D2T02.flac
+766c49fc25f48a574bf94bbaedac5944  TRACKS\D2T03.flac
+fcaae75b5011c310c2036c285b681e46  TRACKS\D2T04.flac
+38aaa105bb9cd8d440f7b267374109a9  TRACKS\D2T05.flac
+5a5da9d9ef5242b6a9bd4f1d85c18fb9  TRACKS\D2T06.flac
+5b7bd7aa677a282cb9ba12cb47df6bfb  TRACKS\D2T07.flac
+546986152c62d96f44af57484ddbe3b9  TRACKS\D2T08.flac
+528d3e7cec39fb63b69b8d15ba7a2cca  TRACKS\D2T09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-16.flacf\TRACKS 
+=================== 
+=================== 
+=================== 
+D1T01.flac:00000000000000000000000000000000
+D1T02.flac:ae3d2044228ee819128b1e1596ebc33e
+D1T03.flac:d0df28ab2cf25ac25b618564520a4940
+D1T04.flac:dc20e342ce40df56fcebb2b745ea2a01
+D1T05.flac:c23f3c11e72bb69d257b5bb89d32e419
+D2T01.flac:1fbb9efef4ee4529f4a39010f2894021
+D2T02.flac:d5284af7347598c6ed6ec396c3d7f568
+D2T03.flac:1fbb9efef4ee4529f4a39010f2894021
+D2T04.flac:d5284af7347598c6ed6ec396c3d7f568
+D2T05.flac:75e6b6fe86ee96862f7212ac18b773bc
+D2T06.flac:ee9f4a56d8e48a66ca7090a2cf659525
+D2T07.flac:e56ccd71739905851bcd9f3928223a79
+D2T08.flac:cb5244295e7c385ae3029099a4e88207
+D2T09.flac:9055029eea4e7eb817c0842b31743e59
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-10-16.flacf\TRACKS 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:00.00             44 B   --s   --   ---xx   flac  936235.5682  D1T01.flac
+     7:15.50       76851644 B   ---   --   ---xx   flac  0.5255  D1T02.flac
+     6:07.10       64762364 B   ---   --   ---xx   flac  0.5549  D1T03.flac
+     6:19.36       66940316 B   ---   --   ---xx   flac  0.5149  D1T04.flac
+     9:55.25      105016844 B   ---   --   ---xx   flac  0.5240  D1T05.flac
+     6:29.24       68676092 B   ---   --   ---xx   flac  0.4819  D2T01.flac
+     6:34.17       69541628 B   ---   --   ---xx   flac  0.4991  D2T02.flac
+     6:29.24       68676092 B   ---   --   ---xx   flac  0.4819  D2T03.flac
+     6:34.17       69541628 B   ---   --   ---xx   flac  0.4991  D2T04.flac
+     6:12.23       65674940 B   ---   --   ---xx   flac  0.5348  D2T05.flac
+     7:59.08       84514460 B   ---   --   ---xx   flac  0.5339  D2T06.flac
+     9:11.65       97349324 B   ---   --   ---xx   flac  0.5434  D2T07.flac
+     5:50.42       61838828 B   ---   --   ---xx   flac  0.5495  D2T08.flac
+     8:18.36       87931916 B   ---   --   ---xx   flac  0.5038  D2T09.flac
+    93:17.02      987316120 B                            0.5612  (14 files)
+=================== 
+=================== 
+=================== 

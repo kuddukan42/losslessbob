@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== md5 for: bd03-08-20-c.flacf
+===================
+===================
+===================
+7cb69cf49d6aca06b86e0caf9f3d94a2 *disc1\01 Bob Dylan - Maggie's Farm.flac
+7d976237a6918d2799d215a6e60cadd9 *disc1\02 Bob Dylan - Senor.flac
+ee364c1522596118a858312e79a2c53d *disc1\03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
+84c8399173f213ccca9528a09cc506ac *disc1\04 Bob Dylan - Watching The River Flow.flac
+a0f9ad974a84d48068ab1984930732a5 *disc1\05 Bob Dylan - Things Have Changed.flac
+30d497838911c60a80f7d8cd198d1ba9 *disc1\06 Bob Dylan - Highway 61 Revisited.flac
+f89b9554e7cabc63721da7c53e2134d2 *disc1\07 Bob Dylan - This Wheel's On Fire.flac
+eb40600dab528c92bc72c205dc857666 *disc1\08 Bob Dylan - You Ain't Goin' Nowhere.flac
+a7b7e93d5ec528608254a66851cafb62 *disc1\09 Bob Dylan - Just Like A Woman.flac
+5bfccffd63e323e6bcd05c0bdcb3b1a4 *disc1\10 Bob Dylan - Cold Irons Bound.flac
+cbf1ecbf249f21dde5384a9edb773ec0 *disc1\2003.08.20.Ny,1.log
+e9753fb91219a3c2390140a4c443a0bd *disc1\fingerprint.ffp.txt
+4227edb38b80fa0534db3fa7b7fe70e6 *disc1\md5sum.md5
+3f16e4e5f380113828d76752083f6b14 *disc2\01 Bob Dylan - The Lonesome Death Of Hattie Carroll.flac
+c322b7f6f900915aef58fe9cc02bcdf6 *disc2\02 Bob Dylan - Honest With Me.flac
+f081066cc04b3687b516d95d03329277 *disc2\03 Bob Dylan - Mr.Tambourine Man.flac
+94c677d9ff00545b2065a90e987245a0 *disc2\04 Bob Dylan - Summer Days.flac
+88c0e270da06519dc2314c116eb9a117 *disc2\05 Bob Dylan - Like A Rolling Stone.flac
+44702af4c4694853df4b161a9850e1e1 *disc2\06 Bob Dylan - All Along The Watchtower.flac
+c3e2306ba70cbc5774d2a8618ae54034 *disc2\07 Bob Dylan - Rainy Day Women #12&35.flac
+65d17e56023645b9e3648a99c5be4d84 *disc2\2003.08.20.Ny,2.log
+dfcc1a9421819ff0ea2af998b4b25e87 *disc2\fingerprint.ffp.txt
+f3305d609572f45e021918e271dbb37f *disc2\md5sum.md5
+fb516280521a3a0228fb572f5e5e5ae0 *infos.txt
+6064a872cf96e0566360b5f44b456453 *notes.txt
+===================
+===================
+===================
+=== ffp for: bd03-08-20-c.flacf
+===================
+===================
+===================
+disc1\01 Bob Dylan - Maggie's Farm.flac:41dfc9879b870949160511e0d1c2475e
+disc1\02 Bob Dylan - Senor.flac:9ab7189437eec0e1ac9056a262d8b3b1
+disc1\03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac:2ac364187f297ab4a373d335ec5269e5
+disc1\04 Bob Dylan - Watching The River Flow.flac:dcbc2e8309ea31028a629f2f380448cf
+disc1\05 Bob Dylan - Things Have Changed.flac:8f8cdbc9242e03bd5b7bde37b2d7d860
+disc1\06 Bob Dylan - Highway 61 Revisited.flac:a373aca693c52d50373352a51477ddcb
+disc1\07 Bob Dylan - This Wheel's On Fire.flac:ca8451f605a564728d304f02aee9dfa5
+disc1\08 Bob Dylan - You Ain't Goin' Nowhere.flac:429e003806c9cc9e1a2e83c07dfc656e
+disc1\09 Bob Dylan - Just Like A Woman.flac:974a6523e6c5158086e860aaad8752a4
+disc1\10 Bob Dylan - Cold Irons Bound.flac:c446b53cac553a57876b99563967b80e
+disc2\01 Bob Dylan - The Lonesome Death Of Hattie Carroll.flac:e12778012e0ef7ee1429c5f507ace865
+disc2\02 Bob Dylan - Honest With Me.flac:940085d62f20406a2047b6b2590c53ac
+disc2\03 Bob Dylan - Mr.Tambourine Man.flac:522ba78916bc716bae03af5a8bf41c42
+disc2\04 Bob Dylan - Summer Days.flac:d1279053314468ab387da102e33ab647
+disc2\05 Bob Dylan - Like A Rolling Stone.flac:da307f4621eeaf3aab46ee9cfc850870
+disc2\06 Bob Dylan - All Along The Watchtower.flac:d275aa770b3ce05d76b27d3a5e535a21
+disc2\07 Bob Dylan - Rainy Day Women #12&35.flac:b76fc34b0622e43dc115fdf539438429
+===================
+===================
+===================
+=== shntool len for: bd03-08-20-c.flacf\disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.10       63174764 B   ---   --   ---xx   flac  0.6040  01 Bob Dylan - Maggie's Farm.flac
+     5:34.17       58957628 B   ---   --   ---xx   flac  0.5964  02 Bob Dylan - Senor.flac
+     5:26.47       57616988 B   ---   --   ---xx   flac  0.5630  03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
+     5:10.52       54806348 B   ---   --   ---xx   flac  0.5957  04 Bob Dylan - Watching The River Flow.flac
+     6:55.47       73316588 B   ---   --   ---xx   flac  0.5983  05 Bob Dylan - Things Have Changed.flac
+     6:55.01       73208396 B   ---   --   ---xx   flac  0.6240  06 Bob Dylan - Highway 61 Revisited.flac
+     6:55.31       73278956 B   ---   --   ---xx   flac  0.5981  07 Bob Dylan - This Wheel's On Fire.flac
+     5:47.30       61281404 B   ---   --   ---xx   flac  0.5646  08 Bob Dylan - You Ain't Goin' Nowhere.flac
+     7:39.61       81111116 B   ---   --   ---xx   flac  0.6011  09 Bob Dylan - Just Like A Woman.flac
+     5:59.53       63452300 B   ---   --   ---xx   flac  0.6087  10 Bob Dylan - Cold Irons Bound.flac
+    62:22.49      660204488 B                            0.5964  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd03-08-20-c.flacf\disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:42.52       71035148 B   ---   --   ---xx   flac  0.5366  01 Bob Dylan - The Lonesome Death Of Hattie Carroll.flac
+     7:17.72       77256188 B   ---   --   ---xx   flac  0.6326  02 Bob Dylan - Honest With Me.flac
+     7:15.68       76893980 B   ---   --   ---xx   flac  0.5631  03 Bob Dylan - Mr.Tambourine Man.flac
+    10:03.72      106538588 B   ---   --   ---xx   flac  0.6011  04 Bob Dylan - Summer Days.flac
+     6:57.54       73685852 B   ---   --   ---xx   flac  0.6696  05 Bob Dylan - Like A Rolling Stone.flac
+     7:39.39       81059372 B   ---   --   ---xx   flac  0.6152  06 Bob Dylan - All Along The Watchtower.flac
+     6:17.59       66641612 B   ---   --   ---xx   flac  0.6129  07 Bob Dylan - Rainy Day Women #12&35.flac
+    52:15.41      553110740 B                            0.6045  (7 files)
+===================
+===================
+===================

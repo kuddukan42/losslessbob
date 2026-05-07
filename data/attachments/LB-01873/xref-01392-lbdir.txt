@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-17-e.flacf
+===================
+===================
+===================
+===================
+===================
+===================
+=== ffp for: bd99-04-17-e.flacf
+===================
+===================
+===================
+Disc 1\Track01.flac:5e2b3bd77d9f8ea9b9bfd5a8ebfda9ad
+Disc 1\Track02.flac:0b76be7da8dd2ac1fb4109f1bde2ec4d
+Disc 1\Track03.flac:4dfb5e5769d581ea64ab1d35a11e5dcb
+Disc 1\Track04.flac:2dd94f701636b241c5306474270a3ad0
+Disc 1\Track05.flac:f9dd5d4f755e5da95b7c7cc4377508ff
+Disc 1\Track06.flac:cbbbe2f4ad265ff05de68c14916f1571
+Disc 1\Track07.flac:b7e9356d0946bdabd84030459118bc9b
+Disc 1\Track08.flac:775e4ed8b70fcee6c5ffd8a26be0422c
+Disc 1\Track09.flac:2861d37a1efb69f845c8e5ccce69e041
+Disc 2\Track01.flac:f5f57b6fa20c8de77790caccc4d81590
+Disc 2\Track02.flac:14012e3a16fbefa89f359487bf029a00
+Disc 2\Track03.flac:8ee6a16b0a3b2c7ab4f4460cfb06135c
+Disc 2\Track04.flac:f73df86870bc2151d595c83812159d7f
+Disc 2\Track05.flac:47c59fed6a8ed15999ed656ed3bf28e3
+Disc 2\Track06.flac:91775d6d5087ee602708a44163d86144
+Disc 2\Track07.flac:071fe6f2464999978fe33ab9057e4242
+===================
+===================
+===================
+=== shntool len for: bd99-04-17-e.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.30       64985804 B   ---   --   ---xx   flac  0.5690  Track01.flac
+     5:39.25       59858444 B   ---   --   ---xx   flac  0.5485  Track02.flac
+     5:40.32       60051308 B   ---   --   ---xx   flac  0.5544  Track03.flac
+     7:33.28       79975100 B   ---   --   ---xx   flac  0.5941  Track04.flac
+     6:27.68       68426780 B   ---   --   ---xx   flac  0.5745  Track05.flac
+     6:43.51       71209196 B   ---   --   ---xx   flac  0.6363  Track06.flac
+     8:23.17       88769228 B   ---   --   ---xx   flac  0.5414  Track07.flac
+     5:40.05       59987804 B   ---   --   ---xx   flac  0.6614  Track08.flac
+     5:11.05       54872204 B   ---   --   ---xx   flac  0.5630  Track09.flac
+    57:27.36      608135868 B                            0.5819  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd99-04-17-e.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:24.63       89053820 B   ---   --   ---xx   flac  0.6423  Track01.flac
+     5:55.30       62692604 B   ---   --   ---xx   flac  0.5846  Track02.flac
+     7:54.45       83719484 B   ---   --   ---xx   flac  0.6249  Track03.flac
+     5:48.08       61406060 B   ---   --   ---xx   flac  0.5939  Track04.flac
+     5:56.30       62869004 B   ---   --   ---xx   flac  0.6981  Track05.flac
+     5:50.54       61867052 B   ---   --   ---xx   flac  0.5660  Track06.flac
+     4:05.18       43260380 B   ---   --   ---xx   flac  0.6845  Track07.flac
+    43:55.23      464868404 B                            0.6263  (7 files)
+===================
+===================
+===================

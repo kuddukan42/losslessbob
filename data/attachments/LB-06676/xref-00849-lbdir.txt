@@ -1,0 +1,52 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-02-06-a.flacf 
+=================== 
+=================== 
+=================== 
+f24426f65840d60486e5c737cb70fc69  01- Bob Dylan- 2-6-66- She Belongs to Me.flac
+0f7296d035744187f55604025b13e94b  02- Bob Dylan- 2-6-66- To Ramona.flac
+da2132c48d5d37dbd5f61afd110bcc42  03- Bob Dylan- 2-6-66- Visions of Johanna.flac
+c81abb916940afd2b72160283fb70fca  04- Bob Dylan- 2-6-66- Desolation Row (Incomplete).flac
+cf81b6c48491cb731dcfeeb467b84130  05- Bob Dylan- 2-6-66- Love Minus Zero-No Limit.flac
+456e13001d5c9e3fc0e4e1e3dab54c2c  06- Bob Dylan- 2-6-66- Mr. Tambourine Man.flac
+a3457f39e8cc9084ad5cd8cc0ac9d62f  07- Bob Dylan- 2-6-66- Positively Fourth Street.flac
+77edf50469280940472c41066566db2b  08- Bob Dylan- 2-6-66- Like a Rolling Stone.flac
+a00ac54e1c6adbb227cc37db5b96caaf  Bob Dylan-2-6-66.txt
+0ba9b8b077f34d011dbe5bf4892a3cfe  Torrent downloaded from Demonoid.me (3).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-02-06-a.flacf 
+=================== 
+=================== 
+=================== 
+01- Bob Dylan- 2-6-66- She Belongs to Me.flac:04f41df6c98aeab2cf155a7552dec29c
+02- Bob Dylan- 2-6-66- To Ramona.flac:5fd20b6e7f8a9cddc041e0523359c2d3
+03- Bob Dylan- 2-6-66- Visions of Johanna.flac:1719b3a7025bf766827b12a635744779
+04- Bob Dylan- 2-6-66- Desolation Row (Incomplete).flac:1815f1b9f6c2c89e0b9aef9ef34e1a3e
+05- Bob Dylan- 2-6-66- Love Minus Zero-No Limit.flac:05c80f37b83a3040aeca9998ffa13d85
+06- Bob Dylan- 2-6-66- Mr. Tambourine Man.flac:2050b3e48c92d57bdaafa7a9b7cc274e
+07- Bob Dylan- 2-6-66- Positively Fourth Street.flac:cb9f40674236458474eb7469572a2078
+08- Bob Dylan- 2-6-66- Like a Rolling Stone.flac:f5b507ab7c8758f707b8d4e7092b479f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-02-06-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:34.00       37749644 B   ---   --   ---xx   flac  0.2119  01- Bob Dylan- 2-6-66- She Belongs to Me.flac
+     6:22.00       67384844 B   ---   --   ---xx   flac  0.2072  02- Bob Dylan- 2-6-66- To Ramona.flac
+     7:35.70       80426684 B   ---   --   ---xx   flac  0.2057  03- Bob Dylan- 2-6-66- Visions of Johanna.flac
+     2:54.06       30707756 B   ---   --   ---xx   flac  0.2190  04- Bob Dylan- 2-6-66- Desolation Row (Incomplete).flac
+     4:03.52       42987548 B   ---   --   ---xx   flac  0.2100  05- Bob Dylan- 2-6-66- Love Minus Zero-No Limit.flac
+     8:09.60       86400764 B   ---   --   ---xx   flac  0.2102  06- Bob Dylan- 2-6-66- Mr. Tambourine Man.flac
+     4:23.07       46409708 B   ---   --   ---xx   flac  0.2247  07- Bob Dylan- 2-6-66- Positively Fourth Street.flac
+     7:18.21       77312636 B   ---   --   ---xx   flac  0.2260  08- Bob Dylan- 2-6-66- Like a Rolling Stone.flac
+    44:20.66      469379584 B                            0.2137  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-09cedar3.shnf 
+=================== 
+=================== 
+=================== 
+9d8dce5874241ec6f3623449725f46b8  101 - Tweedle Dee & Tweedle Dum.shn
+8c8e43821ee56dfbbb9904d6cf44016c  102 - Carrying The Torch.shn
+351041a322c4b5f4ce268740e415520d  103 - Tombstone Blues.shn
+7e1e8b0728d04749f602497648971d11  104 - Watching The River Flow.shn
+ec6ca738edc8d77eeff1077eee191af2  105 - Things Have Changed.shn
+81018e5316134797a22cb6c596b23768  106 - Brown Sugar.shn
+76bd6806ac8439ac4800a474288fcd43  107 - Positively 4th Street.shn
+b66d2539783d269da4037cc8365a41ae  108 - It's Alright, Ma.shn
+3e4c7a6de2ac8b48f7f040fb03ba85f8  109 - Just Like A Woman.shn
+5ca30473d5b9f3bebdfb9211bc177f80  110 - Drifter's Escape.shn
+24a1f57bc57ab3eef13d61fbe96af882  111 - Shelter From The Storm.shn
+04bdbcdbb91e87371d8c3897d5a8f7f6  112 - Old Man.shn
+6fda0a00b46abf993803c95b1c7a8a65  2002-11-09 Elmira, NY (D1) CEDAR 3.cue
+562810602f74925130a23f491eb9341a  2002-11-09 Elmira, NY (D1) CEDAR 3.log
+7974f4e2409fc1ef848770afaeae498e  2002-11-09 Elmira, NY (D1) CEDAR 3.md5
+72c60b438075034cb6c82e2bbee5b843  2002-11-09 Elmira, NY (D1) CEDAR 3.wav.md5
+666fff86b74d9ba87d2cc13913d14f5f  2002-11-09 Elmira, NY (D2) CEDAR 3.cue
+cc526721201a38352b55e7f45b61e4bd  2002-11-09 Elmira, NY (D2) CEDAR 3.log
+6cb5301cd5f718c912d4abe74e37f95d  2002-11-09 Elmira, NY (D2) CEDAR 3.md5
+c5d4efb912f43b1fe00cffd2c3ae36e5  2002-11-09 Elmira, NY (D2) CEDAR 3.wav.md5
+c3e2b8a8ea661e439ec647228b521f7c  2002-11-09 Elmira_ CoachUSA Center.txt
+06a7fff4849d353b10dfd7de26253969  201 - Honest With Me.shn
+fcd3f74f8040765e4510ff4fdbde2da1  202 - Don't Think Twice, It's All Right.shn
+aa583e4c986cf848f78460e0d19e9e8e  203 - High Water.shn
+d95c14d0eec489e767ba301ba79b0e45  204 - Mutineer.shn
+f62860a95a6706fd809476d4ea09c48d  205 - Floater.shn
+12637fe0ea8c5c1fd05bbb20fc2dd98d  206 - Summer Days.shn
+525a8737ae17674d706ec937c649843b  207 - E - Knockin' On Heaven's Door.shn
+72482be8d285031d67b2a23d3221a659  208 - All Along The Watchtower.shn
+c6612008d8515c50bb981061c1a43ded  bd02-11-09cedar3.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-09cedar3.shnf 
+=================== 
+=================== 
+=================== 
+b6587a33e0523017bbfba389c1177afa  [shntool]  101_-_Tweedle_Dee___Tweedle_Dum.wav
+66e6166ad87a148edec7287e74565db1  [shntool]  102_-_Carrying_The_Torch.wav
+4655d8c87fa6a23ed0e4f5168ebefde7  [shntool]  103_-_Tombstone_Blues.wav
+7c4564ea8ad50e04c784794d993f16ee  [shntool]  104_-_Watching_The_River_Flow.wav
+7f10bd819b3b55a5efb66309b290a455  [shntool]  105_-_Things_Have_Changed.wav
+8d4061114776ff7a3d75278ca4bd9f41  [shntool]  106_-_Brown_Sugar.wav
+9c8f362983822237b5afe3cbfc416a49  [shntool]  107_-_Positively_4th_Street.wav
+92201968d427f3528a23418ec93136b9  [shntool]  108_-_It's_Alright,_Ma.wav
+a4d847caf5913519e45f530abf2b5930  [shntool]  109_-_Just_Like_A_Woman.wav
+8680b2ce8b385be834495d16461b8793  [shntool]  110_-_Drifter's_Escape.wav
+86c2dae7c0a196e1886caafb7a13c153  [shntool]  111_-_Shelter_From_The_Storm.wav
+7b077b6adff1031c57f7ecad35faa86b  [shntool]  112_-_Old_Man.wav
+0b2ef2e9ef239cda8a51588fdd3d3119  [shntool]  201_-_Honest_With_Me.wav
+69dde656760beb197cc6d41a6249ab1b  [shntool]  202_-_Don't_Think_Twice,_It's_All_Right.wav
+a26944feab7f466f975972b568f75295  [shntool]  203_-_High_Water.wav
+42f9708b3057f7c33160a112a91c634a  [shntool]  204_-_Mutineer.wav
+0e9628f10137f2bf925e1002cda107e3  [shntool]  205_-_Floater.wav
+f31529d532d78680630deacd1ac393bb  [shntool]  206_-_Summer_Days.wav
+62edb8406158d307ab5a3866dcf07bff  [shntool]  207_-_E_-_Knockin'_On_Heaven's_Door.wav
+26b94874719f7a04441d65f3e09bc38e  [shntool]  208_-_All_Along_The_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-09cedar3.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.00       53802044 B   ---   --   ---xx    shn  0.6232  101 - Tweedle Dee & Tweedle Dum.shn
+     5:17.00       55918844 B   ---   --   ---xx    shn  0.5954  102 - Carrying The Torch.shn
+     6:57.00       73558844 B   ---   --   ---xx    shn  0.6564  103 - Tombstone Blues.shn
+     5:16.00       55742444 B   ---   --   ---xx    shn  0.6457  104 - Watching The River Flow.shn
+     7:02.00       74440844 B   ---   --   ---xx    shn  0.6358  105 - Things Have Changed.shn
+     4:11.00       44276444 B   ---   --   ---xx    shn  0.7075  106 - Brown Sugar.shn
+     7:25.00       78498044 B   ---   --   ---xx    shn  0.6534  107 - Positively 4th Street.shn
+     7:50.00       82908044 B   ---   --   ---xx    shn  0.6499  108 - It's Alright, Ma.shn
+     7:59.00       84495644 B   ---   --   ---xx    shn  0.6207  109 - Just Like A Woman.shn
+     5:54.00       62445644 B   ---   --   ---xx    shn  0.6949  110 - Drifter's Escape.shn
+     5:46.00       61034444 B   ---   --   ---xx    shn  0.6537  111 - Shelter From The Storm.shn
+     4:19.25       45746444 B   ---   --   ---xx    shn  0.6717  112 - Old Man.shn
+     6:53.00       72853244 B   ---   --   ---xx    shn  0.6947  201 - Honest With Me.shn
+     7:03.00       74617244 B   ---   --   ---xx    shn  0.5601  202 - Don't Think Twice, It's All Right.shn
+     7:31.00       79556444 B   ---   --   ---xx    shn  0.6584  203 - High Water.shn
+     3:34.00       37749644 B   ---   --   ---xx    shn  0.5609  204 - Mutineer.shn
+     7:31.00       79556444 B   ---   --   ---xx    shn  0.5450  205 - Floater.shn
+    12:12.00      129124844 B   ---   --   ---xx    shn  0.6805  206 - Summer Days.shn
+     6:28.00       68443244 B   ---   --   ---xx    shn  0.6404  207 - E - Knockin' On Heaven's Door.shn
+     6:31.58       69108860 B   ---   --   ---xx    shn  0.7067  208 - All Along The Watchtower.shn
+   130:45.08     1383877696 B                            0.6440  (20 files)
+=================== 
+=================== 
+=================== 

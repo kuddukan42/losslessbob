@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-18-d.flacf 
+=================== 
+=================== 
+=================== 
+5adb8a2b6b40493cd2e92dc1d06d4eaf  01a subterranean homesick blues.flac
+76ca0066accede8209bd29db8e4ec032  02 just like a woman.flac
+8195ea4091ecaf6cae2a924f2e72bd0c  03 masters of war.flac
+6aef61d11fd3dee2fc27761299533201  04 shelter from the storm.flac
+432275e4cd7871b7fac049ea09751ede  05 bob dylan s 115th dream.flac
+c9ef7d0334cb1e45c57727c983244ed9  06 memphis blues again.flac
+c71f7eabfd7853c56838dcaa41d857ed  07 gates of eden.flac
+1057dbbc7e6baca9daa6644f0d307e6b  08 with god on our side.flac
+25f429dcdaaf2ae7db51b59181fa05b3  09 gril from the north country.flac
+a82ccec3c64f88241f887d7d607d9345  09X gril from the north country.flac
+2eadadd1a9667f827636ab70e7a1572e  10 I shall be released.flac
+f451205f43873d9cc2a44b7c34ae9157  10X I shall be released.flac
+319ca110596ff6fa57c0f2945826702a  11 silvio.flac
+446ecaa7a1adcb6421642721b4ad3b43  12 like a rolling stone.flac
+cffc81e25b21ef488dcc323b4fdc04b3  13 wagoner s lad.flac
+8e177eb80fa8630dd3d428530a21d9e6  14 to ramona.flac
+d8dfc7dbe060397b1009070cd1932a8c  15 knockin on heaven s door.flac
+afa2eec351348e279fbdb99c7c18f170  16 in the garden.flac
+a061923e370d3738bde5b703b353c5b7  17 all along the watchtower.flac
+ccf13f7ffd7cb0147e6844b120c4dccc  1988 New York.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-18-d.flacf 
+=================== 
+=================== 
+=================== 
+01a subterranean homesick blues.flac:5769dfc11903f408fdfc087f03c9f880
+02 just like a woman.flac:8b71d57befa8ad81077b94c19056f455
+03 masters of war.flac:5a433699bdda85cd1115310589c0bc28
+04 shelter from the storm.flac:61eb9388976dd7370944e8634656829f
+05 bob dylan s 115th dream.flac:c9d69b72aee5dbf14372f36b15c2fede
+06 memphis blues again.flac:e9488664de6332573c1f2e5a28a2a927
+07 gates of eden.flac:eae655cd96007e0c05ccff92f69e2f19
+08 with god on our side.flac:be88ebc61823e5f1cde5769bcc619bd4
+09 gril from the north country.flac:9ffa259d520910fb75652c06657e6ba2
+09X gril from the north country.flac:fcaf6e762c65178d5e1de41a5d734e98
+10 I shall be released.flac:55fd6a1d2c3f36bfe69a3a102897a395
+10X I shall be released.flac:362299f82accdbd57250baef540026fa
+11 silvio.flac:b723aa39dba28f9f6ca3ef91e6fa38e9
+12 like a rolling stone.flac:8e06762b2a207581c24681fb886d87d6
+13 wagoner s lad.flac:c0e9576a3e2adde97abf67ff280c2138
+14 to ramona.flac:d71764b94872593b47a02c53f9bb023f
+15 knockin on heaven s door.flac:8c387e116029954a359356095b88e064
+16 in the garden.flac:8950c8460ba90c258e612772e33197d1
+17 all along the watchtower.flac:3dc80c969eb35f32d697721f06255f41
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-18-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.06       34764640 B   -b-   --   ---xx   flac  0.5879  01a subterranean homesick blues.flac
+     4:42.25       49802560 B   -b-   --   ---xx   flac  0.5442  02 just like a woman.flac
+     4:57.16       52427392 B   -b-   --   ---xx   flac  0.5631  03 masters of war.flac
+     5:09.23       54562200 B   -b-   --   ---xx   flac  0.5778  04 shelter from the storm.flac
+     6:17.69       66665316 B   -b-   --   ---xx   flac  0.5814  05 bob dylan s 115th dream.flac
+     6:40.29       70629316 B   -b-   --   ---xx   flac  0.5720  06 memphis blues again.flac
+     7:08.49       75613408 B   -b-   --   ---xx   flac  0.5208  07 gates of eden.flac
+     6:57.04       73569416 B   -b-   --   ---xx   flac  0.5487  08 with god on our side.flac
+     5:19.45       56376840 B   -b-   --   ---xx   flac  0.5179  09 gril from the north country.flac
+     5:16.34       55822476 B   -b-   --   ---xx   flac  0.5125  09X gril from the north country.flac
+     4:14.02       44810316 B   -b-   --   ---xx   flac  0.5577  10 I shall be released.flac
+     4:39.02       49219540 B   -b-   --   ---xx   flac  0.5503  10X I shall be released.flac
+     3:53.35       41183440 B   -b-   --   ---xx   flac  0.5726  11 silvio.flac
+     7:06.14       75179884 B   -b-   --   ---xx   flac  0.5733  12 like a rolling stone.flac
+     4:36.21       48736076 B   -b-   --   ---xx   flac  0.5180  13 wagoner s lad.flac
+     5:10.13       54714968 B   -b-   --   ---xx   flac  0.5317  14 to ramona.flac
+     4:20.25       45923284 B   -b-   --   ---xx   flac  0.5609  15 knockin on heaven s door.flac
+     5:24.26       57214164 B   -b-   --   ---xx   flac  0.5811  16 in the garden.flac
+     4:39.14       49247648 B   -b-   --   ---xx   flac  0.5733  17 all along the watchtower.flac
+    99:49.01     1056462884 B                            0.5543  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,10 @@
+Bob Dylan, 3/21/01, Melbourne, Australia, Rod Laver Arena, Melbourne Park, 2CDR
+
+LB-3900, (72min+39min), Trade CDR>EAC(Secure)>Flac(Level 8), If you look at the log file for d1 you will see that the CDR had 13 tracks. I used EAC to append t3 to t2 so that To Ramona is now a single track., Starts out a little bit ragged but settles down by the middle of t1. Perhaps a little thin, lacking warmth. Also, overcooked during the louder parts. Taper adjusts/fidgets with mics at the start of d1t10 and again d1t12 and d2t3@1:05. Drop d2t3@0:21 plus 3 or 4 other minor glitches.; bittorrent download 07/06; mic adjustments at begin of d1t1 and does start with harshness and distortion do to clipping as it clips at 0db on top and at -3db on bottom as recording is not symetrically balanced; worst clipping is on d1t1 but the also appears later on louder songs; very good to excellent sound [B+]
+
+drop d2t3 0:21 followed by some mic setup noise 1:0x
+
+Setlist: d1 71:14 1 Duncan And Brady, 2 To Ramona, 3 It's Alright Ma (I'm Only Bleeding), 4 'Til I Fell In Love With You, 5 Blind Willie McTell, 6 Tombstone Blues, 7 Don't Think Twice, 8 Hard Rain's A-Gonna Fall, 9 It Ain't Me Babe, 10 Things Have Changed, 11 Wicked Messenger, 12 Rainy Day Women #12 & 35; d2 38:34 1 Love Sick, 2 Like A Rolling Stone, 3 If Dogs Run Free, 4 All Along The Watchtower, 5 Knockin' On Heaven's Door, 6 Highway 61 Revisited, 7 Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

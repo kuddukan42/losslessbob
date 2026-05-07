@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-16-sonic.flacf 
+=================== 
+=================== 
+=================== 
+80e4e95ff05bda5de6d8d71876e6534f  Bob Dylan 1995-10-16 New Orleans, La Flac16FFP.ffp
+7d868e99f7820667debf6c5862edb3ff  Dylan 1995-10-16 New Orleans.txt
+4a235e76e781a34d75ab3a8ee1dd3bf2  Dylan1995-10-16d1t01.flac
+101b5ab0842d66d32334599cacf01889  Dylan1995-10-16d1t02.flac
+3870fca9fc70c999ddce122def4266ea  Dylan1995-10-16d1t03.flac
+ee23e5e9c7db72ed00b02f6726ed35ec  Dylan1995-10-16d1t04.flac
+a62b98fe5039a740240f8f9f3c48d0c4  Dylan1995-10-16d1t05.flac
+1e378cd79add73995d27e1a87c9f2649  Dylan1995-10-16d1t06.flac
+f9a5f38db7e833a6233d689ce3967338  Dylan1995-10-16d1t07.flac
+ab535ccab91b9aeb01218ed1b7153af9  Dylan1995-10-16d1t08.flac
+f2283accfe2a3442951246803a5f54ef  Dylan1995-10-16d1t09.flac
+d5b6a1ba2ee82eb7f1e588e0542fefd3  Dylan1995-10-16d2t01.flac
+6479ee64fc430e9e9bd0b43f6e2fe8d0  Dylan1995-10-16d2t02.flac
+413279cc0879cf70e63b1e3330bd9b70  Dylan1995-10-16d2t03.flac
+f0f76ce854a654ae81e095c312830aa5  Dylan1995-10-16d2t04.flac
+2668370780628f4ebad3bcf0dddd28cc  Dylan1995-10-16d2t05.flac
+b75e69aee68c23d35b6894747a4f656b  Dylan1995-10-16d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-16-sonic.flacf 
+=================== 
+=================== 
+=================== 
+Dylan1995-10-16d1t01.flac:61c554be6a36528ffd6c880adbb1d433
+Dylan1995-10-16d1t02.flac:03d300187650099b9684b5762468312f
+Dylan1995-10-16d1t03.flac:30110542a42605ed915492f304f4d533
+Dylan1995-10-16d1t04.flac:fa0338b566eeb253776ffd7f50d13d3e
+Dylan1995-10-16d1t05.flac:8e03c83b2f4a6e84f886d634d94f14fa
+Dylan1995-10-16d1t06.flac:e4b303e82ec83e72cb27f026286d06c6
+Dylan1995-10-16d1t07.flac:a63dcc32052e870bdda02c927722c40d
+Dylan1995-10-16d1t08.flac:67ecac98c3c1f49ba06a73b4e3022329
+Dylan1995-10-16d1t09.flac:770350f1501fde04d73ae0654cfa4432
+Dylan1995-10-16d2t01.flac:9e4492cc9ab911ce817d78be5cd136ea
+Dylan1995-10-16d2t02.flac:3ca6e1117bcc68e152f039066feb1e8a
+Dylan1995-10-16d2t03.flac:0c08627edee7090176cb73c710acbd71
+Dylan1995-10-16d2t04.flac:fb2ff98e00fc6b409731c814a0e05f88
+Dylan1995-10-16d2t05.flac:15c6d333e2c0fa48cc218ac307099428
+Dylan1995-10-16d2t06.flac:e54dad086dcb5bb3f779c087c5e8b152
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-16-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.27       61803548 B   ---   --   ---xx   flac  0.5031  Dylan1995-10-16d1t01.flac
+     8:59.16       95117276 B   ---   --   ---xx   flac  0.4499  Dylan1995-10-16d1t02.flac
+     7:30.38       79469420 B   ---   --   ---xx   flac  0.4999  Dylan1995-10-16d1t03.flac
+     8:54.43       94298780 B   ---   --   ---xx   flac  0.4407  Dylan1995-10-16d1t04.flac
+     6:34.36       69586316 B   ---   --   ---xx   flac  0.4351  Dylan1995-10-16d1t05.flac
+     7:51.24       83140892 B   ---   --   ---xx   flac  0.5044  Dylan1995-10-16d1t06.flac
+    10:01.16      106054076 B   ---   --   ---xx   flac  0.3781  Dylan1995-10-16d1t07.flac
+     6:24.46       67845836 B   ---   --   ---xx   flac  0.3678  Dylan1995-10-16d1t08.flac
+     9:16.39       98170172 B   ---   --   ---xx   flac  0.3364  Dylan1995-10-16d1t09.flac
+     7:29.51       79323596 B   ---   --   ---xx   flac  0.5134  Dylan1995-10-16d2t01.flac
+     8:56.45       94656284 B   ---   --   ---xx   flac  0.4377  Dylan1995-10-16d2t02.flac
+     8:13.43       87066380 B   ---   --   ---xx   flac  0.4795  Dylan1995-10-16d2t03.flac
+     5:47.12       61239068 B   ---   --   ---xx   flac  0.4934  Dylan1995-10-16d2t04.flac
+    11:52.61      125740316 B   ---   --   ---xx   flac  0.3948  Dylan1995-10-16d2t05.flac
+     7:42.05       81508604 B   ---   --   ---xx   flac  0.4421  Dylan1995-10-16d2t06.flac
+   121:24.52     1285020564 B                            0.4399  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-28.flacf 
+=================== 
+=================== 
+=================== 
+cb822b331cb886183a452fa1e6f5cb1d  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track01.flac
+1ab4322a92d67775aaaa738f15622c03  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track02.flac
+e0cf4ec599cf7d919a91c35a4e5e4049  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track03.flac
+fe67d0f8f5c4848abc42fdb5b5a19a8d  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track04.flac
+e1080deba3a44f3f7a5e3cf729fa5c16  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track05.flac
+657c9290957623c42a804182e3b47cd4  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track06.flac
+735cce832fd532c95ec77b91acb37eb1  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track07.flac
+df6751df713e584e90566348881e45a5  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track08.flac
+beec42c27aea3015a68cd54d2f1b36a4  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track09.flac
+f98663ab9e07b5a7e446099cbe87aa9d  2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC\Track10.flac
+c87c28790eb5b27e2c0f1baff0066ce2  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track01.flac
+5e6a96af031f674210432819eefda76a  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track02.flac
+5727d1b93de1e0a352f79145b93b11cd  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track03.flac
+174eae299eabf8a4c43076126d39bea4  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track04.flac
+c598cce619ef047c9f2bc905d73f7307  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track05.flac
+8375ee575f271c85f04e180361f8714b  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track06.flac
+a053fa91250f0945de9d8449e7f610ad  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track07.flac
+029921615a6e1486ab7817e321b622f3  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track08.flac
+48a727ea4c703d0e8c06ba7fa55f9901  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track09.flac
+b6a11f2a50df76364f6054f50649bdd1  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track10.flac
+557e4c6d704802b08c030ca6fce95180  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track11.flac
+2cd6a38293aebf6c560f02f2a4e16974  2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC\Track12.flac
+34350b8ddbbbb21e58122c1767af83f9  bd00-05-28.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-28.flacf\2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC 
+=================== 
+=================== 
+=================== 
+Track01.flac:847b0d0cb254db61fc9c2e66da222b77
+Track02.flac:2fd61d14074721be771cdba820cb7734
+Track03.flac:ea508b17455bf4f85d88503d3cdeea9c
+Track04.flac:ce4e12230e1beddb9af22e81f47a7fe3
+Track05.flac:30ba01f9eb9abfceda64e1d5ad0ce81e
+Track06.flac:7f9a03a5c73c385c16f5157d5ae35fb5
+Track07.flac:967887df3de4dbc75f0aa41b5bf5b08a
+Track08.flac:85ba10cc0919efba75fec6007e0731e6
+Track09.flac:bd8dea2f17f1b27e6a33f3ebf2837219
+Track10.flac:6f4573ecd35e367b9be2566aa9245950
+Track11.flac:93debf38bbd684f9f96b12f6e10d044f
+Track12.flac:cf2d3b124e7207c150fe6098b7553317
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-28.flacf\2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC 
+=================== 
+=================== 
+=================== 
+Track01.flac:2f52affb28b8b232c023d555151e6bef
+Track02.flac:f52966fb9de98a8f439d28d239262166
+Track03.flac:2566746f6f540e68cfea07fdd5052184
+Track04.flac:7f300f2faadd59bffe0e8a500b89c5b7
+Track05.flac:c603f797616f83bb94180f4c0a271335
+Track06.flac:2e279539395771d15f44eddee46dd125
+Track07.flac:ddae11c37ed2c677302bc77759dd32f8
+Track08.flac:eaa1efacc04121379d03d6b21a8a0e74
+Track09.flac:a02839949bf6b9ad530dbb74fe6eabd4
+Track10.flac:3ab2a15e3f24f5ae9e79e70166ebee3c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-28.flacf\2000-05-28 - Milan, Italy - off DAT master - Disc 2 - FLAC 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.48       62734940 B   ---   --   ---xx   flac  0.4965  Track01.flac
+     6:07.09       64760012 B   ---   --   ---xx   flac  0.6004  Track02.flac
+     0:41.42        7331228 B   ---   --   ---xx   flac  0.5563  Track03.flac
+     6:34.11       69527516 B   ---   --   ---xx   flac  0.6410  Track04.flac
+     2:55.46       30978236 B   ---   --   ---xx   flac  0.4733  Track05.flac
+     8:15.32       87393308 B   ---   --   ---xx   flac  0.5641  Track06.flac
+     6:41.04       70745852 B   ---   --   ---xx   flac  0.6090  Track07.flac
+     5:56.16       62836076 B   ---   --   ---xx   flac  0.4955  Track08.flac
+     4:04.44       43145132 B   ---   --   ---xx   flac  0.6278  Track09.flac
+     5:51.28       61982300 B   ---   --   ---xx   flac  0.5438  Track10.flac
+     6:28.50       68560844 B   ---   --   ---xx   flac  0.6122  Track11.flac
+     5:12.23       55090940 B   ---   --   ---xx   flac  0.5380  Track12.flac
+    64:43.53      685086384 B                            0.5682  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-28.flacf\2000-05-28 - Milan, Italy - off DAT master - Disc 1 - FLAC 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:19.30        3422204 B   ---   --   ---xx   flac  0.5081  Track01.flac
+     3:52.54       41051852 B   ---   --   ---xx   flac  0.5868  Track02.flac
+     6:26.44       68193932 B   ---   --   ---xx   flac  0.5414  Track03.flac
+    10:24.42      110172428 B   ---   --   ---xx   flac  0.5668  Track04.flac
+     6:51.10       72523964 B   ---   --   ---xx   flac  0.5388  Track05.flac
+     7:15.24       76790492 B   ---   --   ---xx   flac  0.6223  Track06.flac
+     4:59.41       52840076 B   ---   --   ---xx   flac  0.5017  Track07.flac
+     2:56.63       31194620 B   ---   --   ---xx   flac  0.5920  Track08.flac
+     3:54.10       41301164 B   ---   --   ---xx   flac  0.5696  Track09.flac
+     4:59.28       52809500 B   ---   --   ---xx   flac  0.6428  Track10.flac
+    51:59.46      550300232 B                            0.5715  (10 files)
+=================== 
+=================== 
+=================== 

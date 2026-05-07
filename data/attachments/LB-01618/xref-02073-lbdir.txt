@@ -1,0 +1,68 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-16-l.flacf
+===================
+===================
+===================
+64255197c12c38595affc6d678a8ff4b *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\101-Crash On The Levee.flac
+37f8e31daf902e01c49c9e678eea7d78 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\102-If Not For You.flac
+c28fa3901d9332ad728ac047d823c647 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\103-All Along The Watchtower.flac
+878eaa4a5b9cbb2ccbf7c1a307ebc3aa *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\104-Just Like A Woman.flac
+b8759c538cce9a0571e03d48e3cbc240 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\105-Tangled Up In Blue.flac
+8982cf133e372ab5d7d9345443831b1b *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\106-Positively 4th Street.flac
+07548677cc40c64ca8f5f470dd9c93a1 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\107-Mr. Tambourine Man.flac
+c572578e87359d76e6337d5d388adee5 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\108-Masters Of War.flac
+e2dd01dd11879e70ce03b0674cac3059 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\201-Boots Of Spanish Leather.flac
+9c3e425e708a8f73b7bb6556d541faaa *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\202-Dignity.flac
+f4d29eb9b4382cc01a3a973c66dd7039 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\203-Man In The Long Black Coat.flac
+b78cde74ded5bb563e00b57601155499 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\204-Maggies Farm.flac
+19b2ceb6045c476e7853094205e11a9a *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\205-Like A Rolling Stone.flac
+1bd821e945552d537d75bb83089fc279 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995.md5
+54caa06571fdd0e17520ca5bc33eda2b *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\DylanBielefeld1995.txt
+c5b51ad6dedd709828104089e69c6520 *Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\DylanBielefeld95.jpg
+===================
+===================
+===================
+=== ffp for: bd95-03-16-l.flacf
+===================
+===================
+===================
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\101-Crash On The Levee.flac:dabf7430e0beb17a671fa5b914909aed
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\102-If Not For You.flac:cc4c30264c441d646ce414ea007b2ac6
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\103-All Along The Watchtower.flac:38a15ca5c15694ecabe859031e13221c
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\104-Just Like A Woman.flac:3860378719469012ba99206ffd0bc9e0
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\105-Tangled Up In Blue.flac:55780753811175ca9cf119cf71d200d5
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\106-Positively 4th Street.flac:4edda3f0049cb38a55835b79bb94e5a0
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\107-Mr. Tambourine Man.flac:d9c1f203e1a7b1c9110280ad2460d0ff
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\108-Masters Of War.flac:08efd3b7f26961b87ca9364a7bd39abe
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\201-Boots Of Spanish Leather.flac:e87e1d0a03de8a785876aaab501b002e
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\202-Dignity.flac:315e7e308dc255b02acd770e2939e9e1
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\203-Man In The Long Black Coat.flac:adea1b14c2406916a73b5942978d348f
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\204-Maggies Farm.flac:bfeebf995164418d76063b8048e26eb4
+Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995\205-Like A Rolling Stone.flac:fb5807ae24bd60be7c9e55b733cf4e75
+===================
+===================
+===================
+=== shntool len for: bd95-03-16-l.flacf\Bob Dylan 1995-03-16 Stadthalle Bielefeld Germany-Bielefeld 1995
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.43       54785180 B   ---   --   ---xx   flac  0.6091  101-Crash On The Levee.flac
+     4:44.25       50156444 B   ---   --   ---xx   flac  0.5141  102-If Not For You.flac
+     5:42.51       60448796 B   ---   --   ---xx   flac  0.5974  103-All Along The Watchtower.flac
+     5:46.30       61105004 B   ---   --   ---xx   flac  0.5085  104-Just Like A Woman.flac
+     9:46.02      103375148 B   ---   --   ---xx   flac  0.5339  105-Tangled Up In Blue.flac
+     7:33.67       80066828 B   ---   --   ---xx   flac  0.5385  106-Positively 4th Street.flac
+     6:45.57       71576108 B   ---   --   ---xx   flac  0.3968  107-Mr. Tambourine Man.flac
+     5:43.28       60571100 B   ---   --   ---xx   flac  0.4129  108-Masters Of War.flac
+     7:38.16       80828876 B   ---   --   ---xx   flac  0.3755  201-Boots Of Spanish Leather.flac
+     8:03.15       85236524 B   ---   --   ---xx   flac  0.5806  202-Dignity.flac
+     8:05.27       85617548 B   ---   --   ---xx   flac  0.4601  203-Man In The Long Black Coat.flac
+     7:53.17       83477228 B   ---   --   ---xx   flac  0.6136  204-Maggies Farm.flac
+    10:15.24      108542492 B   ---   --   ---xx   flac  0.5254  205-Like A Rolling Stone.flac
+    93:08.27      985787276 B                            0.5128  (13 files)
+===================
+===================
+===================

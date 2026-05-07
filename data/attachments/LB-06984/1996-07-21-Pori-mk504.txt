@@ -1,0 +1,97 @@
+﻿Bob Dylan
+"Pori Jazz 1996"
+Kirjurinluoto
+Pori
+1996-07-21
+
+01 Introduction					00:13
+02 To Be Alone with You			04:17
+03 Shake Sugaree				06:00	Elizabeth Cotten
+04 All along the Watchtower		05:46
+05 Just Like a Woman			06:53
+06 Silvio						07:18	Bob Dylan, Robert C Hunter
+07 Love Minus Zero/No Limit		05:56
+08 Tangled up in Blue			09:45
+09 Mr. Tambourine Man			08:25
+10 Ballad of Hollis Brown		07:20
+11 Ballad of a Thin Man //		07:46
+   [Maggie's Farm] MISSING
+
+   (encore)
+   [It Ain't Me, Babe] MISSING
+69:43
+
+Bob Dylan:				vocal, electric guitar (d1t2-d1t6, d1t11), 
+						acoustic guitar (d1t7-d1t10), 
+						harmonica (d1t8-d1t9)
+
+William 'Bucky' Baxter:	pedal steel guitar (d1t2-d1t3, d1t5-d1t6, d2t1), 
+						harmony vocals (d1t2-d1t3, d1t6), 
+						electric slide guitar (d1t4), mandolin (d1t7-d1t9), 
+						banjo (d1t10)
+
+John 'JJ' Jackson:		electric guitar (d1t2-d1t6, d1t11),
+						harmony vocals (d1t2-d1t3, d1t6), 
+						acoustic guitar (d1t7-d1t10)
+
+Tony Garnier:			bass (d1t2-d1t6, d1t11), 
+						double bass (d1t7-d1t10)
+
+Winston Watson:			drums, percussion (d1t2-d1t6, d1t11), 
+						NO DRUMS (d1t7-d1t10)
+
+Note: end of show missing due to batteries running out
+
+Taper: mk504
+Panasonic RP-VM70E SuperDirectional Microphone >
+Sony 8MM Handycam CCD-F355E (mono audio only - not videotaped) >
+Audio disk (taper) >
+
+LTA >
+Verbatim CD-R (TAO) from taper (artwork included) >
+iMac Intel Core 2 Duo/MATSHITA UJ-85J >
+Max 0.8.1 (cdparanoia) >
+xACT 1.62 (FLAC to AIFF) >
+Amadeus II 3.8.7 >
+left channel 99% (-0.09db),
+d1t1 split (Intro+To Be Alone with You),
+d1t2 @ 0:58, 1:01, 1:02, 3:23 overload (interpolate),
+d1t3 @ 0:12 glitch (interpolate), @ 0:26 [00'00"151] digihole (fixed), @ 0:35 glitch (interpolate),
+d1t8 @ 0:07 digiclick (interpolate), 
+d1t10 @ 6:44 digiclick (interpolate),@ 6:45 click (interpolate+ de-esser) >
+xACT 1.62 >
+FLAC (lvl 4) 0.6443 (11 files), 
+FLAC tags 
+xACT 1.64 >
+md5, st5, ffp
+EQ and NR were *NOT* used
+2008-11-09 >
+TangledUpInTorrents 2008-11-17
+
+note:
+d1t3 was extracted a 2nd time with xACT 1.62, 
+     but the [00'00"151] digihole @ 0:26 was still there.
+speed checked with Tuna Pitch 1.0
+d1t6 distortion 5:56-6:44 couldn't be fixed with VST or iZotope
+EQ and NR were *NOT* used. 
+Level unchanged except -0.09db on left channel
+
+BobTalk:
+
+Thank you everybody.
+(After Shake Sugaree)
+
+Thanks everybody.
+(After All along the Watchtower)
+
+Thanks everybody.
+(After Love Minus Zero/No Limit)
+
+Thanks everybody.
+(After Ballad of Hollis Brown)
+
+"Pori Jazz 1996"
+[31st International Pori Jazz Festival]
+Kirjurinluodontie
+28100 Pori
+Suomi

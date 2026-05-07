@@ -1,0 +1,9 @@
+712fcd3f112cb929beabfbb7e8b36464 *01 Gotta Serve.flac
+53cc90d004dc00403dc26b478af2c85e *02 Believe.flac
+df8bc9517da38281788672e73f90bff6 *03 LRS.flac
+af0081c7dd0b151299f435cffe3ab141 *04 G Right.flac
+bd4fcd2924d2574a387cf98f7bce1b2b *05 Animals.flac
+15f9accd7e715a7881ed44034efe5f4e *06 Ramona.flac
+bcd3858ae13b50df1ac0e62b58cd07df *07 Hell.flac
+f2a962636cb1459e0cc3f5f65b515530 *08 GirlNC.flac
+441ca3a89907073ed6e693a1f9301e9e *09 Slow Train.flac

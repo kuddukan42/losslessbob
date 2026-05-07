@@ -1,0 +1,132 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-25-bob-and-jerry.flacf 
+=================== 
+=================== 
+=================== 
+9f620e6ae3970b571157de99543f7c27  bd95-06-25-bob-and-jerry-d1t01.flac
+911dbf558972a08121a910bf5ea33e72  bd95-06-25-bob-and-jerry-d1t02.flac
+c676057a812035a0e4b13bc8d170f0e4  bd95-06-25-bob-and-jerry-d1t03.flac
+2d2a6d88e3a6f9218663fe9978da4148  bd95-06-25-bob-and-jerry-d1t04.flac
+2e449ba1d4e5a4036681c1148807ff0a  bd95-06-25-bob-and-jerry-d1t05.flac
+cc741ed14ae774dbc1de89c4492860c4  bd95-06-25-bob-and-jerry-d1t06.flac
+2a8b34fc4379b84892d6432ef20829b8  bd95-06-25-bob-and-jerry-d1t07.flac
+05c073820dbff83666f0fe65b13011a2  bd95-06-25-bob-and-jerry-d1t08.flac
+46d5a897c0a048fc93c0b2dd7f40a4f4  bd95-06-25-bob-and-jerry-d1t09.flac
+9ec0179a10d1f574c37292610f540cb1  bd95-06-25-bob-and-jerry-d1t10.flac
+fe022b998a8da6009437ed77798646c1  bd95-06-25-bob-and-jerry-d2t01.flac
+d17edfc4142e506ace9eafde6967fa81  bd95-06-25-bob-and-jerry-d2t02.flac
+b4df118585a85f7779db9d06bcaccf92  bd95-06-25-bob-and-jerry-d2t03.flac
+3e5686dedaaf646109e797df22a94f15  bd95-06-25-bob-and-jerry-d2t04.flac
+135f81f7caf4f41ab7a1a75271ade704  bd95-06-25-bob-and-jerry-d2t05.flac
+69e79f018aa039274feba7a066b4cda7  bd95-06-25-bob-and-jerry-d2t06.flac
+5e7202ca1f87e3be7963aab883df5f57  bd95-06-25-bob-and-jerry-d2t07.flac
+29976cf82fb9b00a7675c18538c14e46  bd95-06-25-bob-and-jerry-d2t08.flac
+1abd80d64e84380a3ec8ee4e1c7b2e11  bd95-06-25-bob-and-jerry-d2t09.flac
+47505f200734674a91288a8eedf5957f  bd95-06-25-bob-and-jerry-d2t10.flac
+57acf7f518c6fb1d49149ed52d74aa6c  bd95-06-25-bob-and-jerry-d2t11.flac
+9ffb146014d5efd67ba943b1ef37b636  bd95-06-25-bob-and-jerry-d3t01.flac
+8ba99e5dd1e122b42d8bfd626b865e74  bd95-06-25-bob-and-jerry-d3t02.flac
+c97947389912d5a33963c4cc2a218f8c  bd95-06-25-bob-and-jerry-d3t03.flac
+b1f7d6f9b5dc6d919b4e65aeb1c246e6  bd95-06-25-bob-and-jerry-d3t04.flac
+ae5bcd4212d5669cb368362d55d100d6  bd95-06-25-bob-and-jerry-d3t05.flac
+23ea125c7a517a94fd1f8b6f2bd508ba  bd95-06-25-bob-and-jerry-d3t06.flac
+ce0ddc389945cd2fdbaaed8f556c7ddb  bd95-06-25-bob-and-jerry-d3t07.flac
+8b25d0ba7a903a386de8b87d9e5ef3d7  bd95-06-25-bob-and-jerry-d3t08.flac
+fc1ec5d366116ab9a6a66cdea14138de  bd95-06-25-bob-and-jerry-d3t09.flac
+967009c19a2d34f23aada6ab11fd365a  bd95-06-25-bob-and-jerry-d3t10.flac
+21731e244d26f03fae05d022b317bcb0  bd95-06-25-bob-and-jerry-d3t11.flac
+828f33f376795773a389e9d88ec4f659  bd95-06-25-bob-and-jerry-d3t12.flac
+2ee45d705794311119ec089227ec2777  bd95-06-25-bob-and-jerry-d3t13.flac
+0af844f414b73598269689dc5d08cfe6  bd95-06-25-bob-and-jerry-d3t14.flac
+9efcd0f2d312883d643d3c71fde94b76  bd95-06-25-bob-and-jerry.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-25-bob-and-jerry.flacf 
+=================== 
+=================== 
+=================== 
+bd95-06-25-bob-and-jerry-d1t01.flac:8d8209e458e76b08d6287e609b59e4af
+bd95-06-25-bob-and-jerry-d1t02.flac:0eefa1d7d88a7c1bf2ef81ad2f7a8ef4
+bd95-06-25-bob-and-jerry-d1t03.flac:7e96ac13dcacc93645a97c724e7de338
+bd95-06-25-bob-and-jerry-d1t04.flac:3fcf6d7a3520ecded9f5cda710bff1bb
+bd95-06-25-bob-and-jerry-d1t05.flac:b820e7fbead7252d6006c525341e181f
+bd95-06-25-bob-and-jerry-d1t06.flac:dbe9a987cfc86cb379349599c85866a6
+bd95-06-25-bob-and-jerry-d1t07.flac:78b086890c360ef2ac03c284a3e98dc5
+bd95-06-25-bob-and-jerry-d1t08.flac:27b873b9c8a4cbf4723d614790b19cba
+bd95-06-25-bob-and-jerry-d1t09.flac:e80db02c66ca4ce7ced897f22d7ee8e9
+bd95-06-25-bob-and-jerry-d1t10.flac:7e8d18ca1e14f7a64e8186a937f9debc
+bd95-06-25-bob-and-jerry-d2t01.flac:36ccf57da86e68e71626d9c8cbe7d387
+bd95-06-25-bob-and-jerry-d2t02.flac:8664319baec327f16ce209b8cf5c5fd3
+bd95-06-25-bob-and-jerry-d2t03.flac:964c432de6a96021dcc424918265f271
+bd95-06-25-bob-and-jerry-d2t04.flac:c5b40d3247bff856e3c77e4067dd8a4c
+bd95-06-25-bob-and-jerry-d2t05.flac:05ff23f2758f6c4ea58957ceda65e0e8
+bd95-06-25-bob-and-jerry-d2t06.flac:f949f18ce6007357b961077bc0bd4db9
+bd95-06-25-bob-and-jerry-d2t07.flac:da2fbe0a2bec67202484d39b3bceda1f
+bd95-06-25-bob-and-jerry-d2t08.flac:7b4bcb82f3823e3ebd0b16ad78536d2e
+bd95-06-25-bob-and-jerry-d2t09.flac:421f4f5e1a2810851b7471cfb56ddea5
+bd95-06-25-bob-and-jerry-d2t10.flac:673f13a0616ab466f4b0b7963e54c0eb
+bd95-06-25-bob-and-jerry-d2t11.flac:4d797b3212f1d725e637056ae1fcf8a4
+bd95-06-25-bob-and-jerry-d3t01.flac:456105e7a536a16228546676f94707a6
+bd95-06-25-bob-and-jerry-d3t02.flac:539f34d6d8676ae3ded0e573a00b0d6a
+bd95-06-25-bob-and-jerry-d3t03.flac:c5ef033b62d1c4b973cd39aec406d81f
+bd95-06-25-bob-and-jerry-d3t04.flac:903929acd9ac9b30c4940ceeb0eb4172
+bd95-06-25-bob-and-jerry-d3t05.flac:1cd40c3b47832b441c19ece727ef2a8e
+bd95-06-25-bob-and-jerry-d3t06.flac:b699853585b3348304f739e7f7d27d80
+bd95-06-25-bob-and-jerry-d3t07.flac:c59036263945922f5765c1ce8643379d
+bd95-06-25-bob-and-jerry-d3t08.flac:e57fe817941c7335f022ea66fd089fb4
+bd95-06-25-bob-and-jerry-d3t09.flac:c2d66e8605158a61547c041d267cb23b
+bd95-06-25-bob-and-jerry-d3t10.flac:b60211e548f8a27a4ed6ddeea9f38375
+bd95-06-25-bob-and-jerry-d3t11.flac:ae9407eec17636645d6f2fe697c60ef3
+bd95-06-25-bob-and-jerry-d3t12.flac:19bb7a0d70695bd49f09882ced8b20dc
+bd95-06-25-bob-and-jerry-d3t13.flac:b6a4a932defabb52d155e1d9ed3374ef
+bd95-06-25-bob-and-jerry-d3t14.flac:f73386423229fa9f18ace2cc0a815869
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-06-25-bob-and-jerry.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:35.10       59117564 B   ---   --   ---xx   flac  0.6229  bd95-06-25-bob-and-jerry-d1t01.flac
+     5:45.70       61022684 B   ---   --   ---xx   flac  0.5736  bd95-06-25-bob-and-jerry-d1t02.flac
+     6:09.45       65197484 B   ---   --   ---xx   flac  0.6159  bd95-06-25-bob-and-jerry-d1t03.flac
+     8:33.45       90599084 B   ---   --   ---xx   flac  0.5675  bd95-06-25-bob-and-jerry-d1t04.flac
+     6:47.30       71865404 B   ---   --   ---xx   flac  0.6075  bd95-06-25-bob-and-jerry-d1t05.flac
+     5:03.65       53602124 B   ---   --   ---xx   flac  0.5551  bd95-06-25-bob-and-jerry-d1t06.flac
+    10:47.33      114208460 B   ---   --   ---xx   flac  0.5503  bd95-06-25-bob-and-jerry-d1t07.flac
+     7:28.10       79050764 B   ---   --   ---xx   flac  0.5054  bd95-06-25-bob-and-jerry-d1t08.flac
+     8:11.57       86746508 B   ---   --   ---xx   flac  0.6197  bd95-06-25-bob-and-jerry-d1t09.flac
+     8:16.65       87647324 B   ---   --   ---xx   flac  0.5525  bd95-06-25-bob-and-jerry-d1t10.flac
+    10:25.18      110292380 B   ---   --   ---xx   flac  0.5700  bd95-06-25-bob-and-jerry-d2t01.flac
+     8:09.32       86334908 B   ---   --   ---xx   flac  0.5964  bd95-06-25-bob-and-jerry-d2t02.flac
+     6:23.15       67596524 B   ---   --   ---xx   flac  0.6120  bd95-06-25-bob-and-jerry-d2t03.flac
+     4:47.48       50739740 B   ---   --   ---xx   flac  0.6059  bd95-06-25-bob-and-jerry-d2t04.flac
+     4:25.50       46863644 B   ---   --   ---xx   flac  0.6009  bd95-06-25-bob-and-jerry-d2t05.flac
+     5:40.32       60051308 B   ---   --   ---xx   flac  0.6215  bd95-06-25-bob-and-jerry-d2t06.flac
+     6:16.00       66326444 B   ---   --   ---xx   flac  0.5872  bd95-06-25-bob-and-jerry-d2t07.flac
+     5:19.43       56372780 B   ---   --   ---xx   flac  0.5996  bd95-06-25-bob-and-jerry-d2t08.flac
+     4:16.25       45217244 B   ---   --   ---xx   flac  0.5963  bd95-06-25-bob-and-jerry-d2t09.flac
+     4:39.12       49243868 B   ---   --   ---xx   flac  0.5721  bd95-06-25-bob-and-jerry-d2t10.flac
+     5:23.15       57012524 B   ---   --   ---xx   flac  0.6060  bd95-06-25-bob-and-jerry-d2t11.flac
+     3:18.23       34981340 B   ---   --   ---xx   flac  0.5581  bd95-06-25-bob-and-jerry-d3t01.flac
+     4:23.65       46546124 B   ---   --   ---xx   flac  0.5976  bd95-06-25-bob-and-jerry-d3t02.flac
+     3:23.45       35915084 B   ---   --   ---xx   flac  0.5931  bd95-06-25-bob-and-jerry-d3t03.flac
+     5:57.02       62979548 B   ---   --   ---xx   flac  0.6010  bd95-06-25-bob-and-jerry-d3t04.flac
+     4:29.25       47510444 B   ---   --   ---xx   flac  0.6254  bd95-06-25-bob-and-jerry-d3t05.flac
+     3:48.65       40372124 B   ---   --   ---xx   flac  0.6072  bd95-06-25-bob-and-jerry-d3t06.flac
+     3:58.73       42154940 B   ---   --   ---xx   flac  0.5891  bd95-06-25-bob-and-jerry-d3t07.flac
+     4:25.40       46840124 B   ---   --   ---xx   flac  0.5797  bd95-06-25-bob-and-jerry-d3t08.flac
+     5:22.02       56805548 B   ---   --   ---xx   flac  0.5958  bd95-06-25-bob-and-jerry-d3t09.flac
+     4:06.18       43436780 B   ---   --   ---xx   flac  0.6061  bd95-06-25-bob-and-jerry-d3t10.flac
+     5:48.45       61493084 B   ---   --   ---xx   flac  0.5829  bd95-06-25-bob-and-jerry-d3t11.flac
+     4:17.60       45475964 B   ---   --   ---xx   flac  0.6089  bd95-06-25-bob-and-jerry-d3t12.flac
+     3:04.60       32598764 B   ---   --   ---xx   flac  0.5670  bd95-06-25-bob-and-jerry-d3t13.flac
+     4:48.37       50890268 B   ---   --   ---xx   flac  0.5938  bd95-06-25-bob-and-jerry-d3t14.flac
+   199:39.05     2113108900 B                            0.5874  (35 files)
+=================== 
+=================== 
+=================== 

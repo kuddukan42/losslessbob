@@ -1,0 +1,12 @@
+Bob Dylan, 7/2/86, Akron, Ohio, Rubber Bowl, University of Akron, 2CDR
+
+LB-4576, (53min+71min), joining Grateful Dead, MotB Release: #0005/16bit, Release Date: February 5th 2007, Ba, Source: Audience FOB Recording, Media: Denon HD8 90 min High Bias Tape, Lineage: AKG C460b pre, s with Ck61uls capsules > Uher CR260AV > MAC, Transfer: Nak DR-1 > Apogee 200 Rosetta > Firewire > Apple G5 > Bias Peak > WAV, Taped by: D. Thompson, Transfer by: A. Egert, Mastering by: M. Hughey, (1) with Bob Dylan, (2) Patch from Beyer source (http://db.etree.org/shn/22381), (3) Without Jerry, (4) Patched from Beyer source (http://db.etree.org/shn/22381), Mastering Notes:, Mastering with Adobe Audition 1.5, low-shelf filter -3 dB/octave below 150 hz, Waves L2 high-res CD Master (thresh. 2.0), rendered to 16-bit using MBIT+
+---------------------------------------------------
+bittorrent download 02/07; very good to excellent sound [B+]
+---------------------------------------------------
+drop/cut between cdrs
+---------------------------------------------------
+Disc 1 - Set I, 01 Alabama Getaway >, 02 Greatest Story Ever Told, 03 They Love Each Other, 04 Little Red Rooster (1), 05 Don't Think Twice, It's Alright (1), 06 It's All Over Now, Baby Blue (1), 07 Candyman (2), 08 Me And My Uncle >, 09 Mexicali Blues >, 10 Don't Ease Me In, 11 Bird Song >, 12 Looks Like Rain >, 13 Deal, Disc 2 - Set II, 01 China Cat Sunflower >, 02 I Know You Rider, 03 Playing In The Band, 04 Desolation Row (3)>, 05 Rhythm Devils> (4), 06 Space >, 07 Truckin' >, 08 Black Peter >, 09 Sugar Magnolia, encore, 10 Box Of Rain
+---------------------------------------------------
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

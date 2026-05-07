@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd_65-08-28_Forest_Hills 
+=================== 
+=================== 
+=================== 
+08bd70bc7dbd2fd2bb68e2b7bf8a2dc1  bd1965-08-28 forest hills .md5
+7abd757c07280a193f216bf7c30b1431  bd1965-08-28t01.shn
+2ff99980dc9dbfaab6b2ce85f62674c4  bd1965-08-28t02.shn
+73bc733923f6927f820c4d19a4817974  bd1965-08-28t03.shn
+e524e3de394b0ccba36ee6e48d6fd76e  bd1965-08-28t04.shn
+f46ea184e4ec4b59e4b94677d210f098  bd1965-08-28t05.shn
+ab2c7f7a55c6caef2b2a1794765c060d  bd1965-08-28t06.shn
+2adcf97f54a05ae4a82c18cc6675896a  bd1965-08-28t07.shn
+3292ebde1e4141d01edc7aaa01c3fba5  bd1965-08-28t08.shn
+38e74220720230eaf1ef264885cb21e6  bd1965-08-28t09.shn
+1663d7ca286365f2139d18238f5c6bec  bd1965-08-28t10.shn
+2ccf48a3edf85dfaaef46d73bcb20501  bd1965-08-28t11.shn
+989caad88eed9b7667d1c2d2034962e6  bd1965-08-28t12.shn
+b2f2e7f81f7ea0b250eebdca4b526619  bd1965-08-28t13.shn
+71aec4e572c6ae01608772415e139561  bd1965-08-28t14.shn
+c0a75fb2142cfbd07af4309084e1d337  bd1965-08-28t15.shn
+e4aab33929d56eee28db9a52786d7b89  bd1965-08-28t16.shn
+aac7749127bff65ba43e31a79b55611a  bd1965-08-28t17.shn
+84b8da45532abc271907d4a48366cfab  bd65-08-28.txt
+0d0368218571fd7fbe741b0e672a38aa  info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd_65-08-28_Forest_Hills 
+=================== 
+=================== 
+=================== 
+598434f118aa96add7e4db1e8625e1b1  [shntool]  bd1965-08-28t01.wav
+3826c4b0e4d7bcc22f79ac5019867ab4  [shntool]  bd1965-08-28t02.wav
+e4e03e06fe0aad1636eec95bec6f67e2  [shntool]  bd1965-08-28t03.wav
+ed247832b09222a7b1f69f5457fb1102  [shntool]  bd1965-08-28t04.wav
+a3533a7a986e706b7bae82b6c06628dc  [shntool]  bd1965-08-28t05.wav
+e89de27db19dc079e28211b3a3eb869f  [shntool]  bd1965-08-28t06.wav
+f8b83c6e1a0d273a7413acc3aecd2935  [shntool]  bd1965-08-28t07.wav
+50969c16e8c9474fbac73c35c2bc9ba2  [shntool]  bd1965-08-28t08.wav
+bb085bacdcfd572cb0eb022e10a796bb  [shntool]  bd1965-08-28t09.wav
+fbb177c5f20a75b80c84dee265f582e6  [shntool]  bd1965-08-28t10.wav
+d03bb8d6e56b1686986872ef9c13baf8  [shntool]  bd1965-08-28t11.wav
+ff1917e54760b77c35abb2a347c5b162  [shntool]  bd1965-08-28t12.wav
+367d09f387048d7d6cd3e30975ee52f2  [shntool]  bd1965-08-28t13.wav
+8b6c004a9d594d7601ecf75e8fd88977  [shntool]  bd1965-08-28t14.wav
+b015eb56737c0ec8ab1afab45f474a21  [shntool]  bd1965-08-28t15.wav
+5b65b0fd0f62f95600c4643369984192  [shntool]  bd1965-08-28t16.wav
+f1546da59e6aed6825ea9cbc67612c18  [shntool]  bd1965-08-28t17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd_65-08-28_Forest_Hills 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.62       48479468 B   ---   --   -----    wav  1.0000  bd1965-08-28t01.wav
+     4:12.49       44568092 B   ---   --   -----    wav  1.0000  bd1965-08-28t02.wav
+     4:41.74       49742492 B   ---   --   -----    wav  1.0000  bd1965-08-28t03.wav
+     6:47.21       71844236 B   ---   --   -----    wav  1.0000  bd1965-08-28t04.wav
+     4:15.23       45036140 B   ---   --   -----    wav  1.0000  bd1965-08-28t05.wav
+    10:11.50      107898044 B   ---   --   -----    wav  1.0000  bd1965-08-28t06.wav
+     5:41.08       60171260 B   ---   --   -----    wav  1.0000  bd1965-08-28t07.wav
+     5:47.29       61279052 B   ---   --   -----    wav  1.0000  bd1965-08-28t08.wav
+     1:15.13       13260620 B   ---   --   -----    wav  1.0000  bd1965-08-28t09.wav
+     5:55.53       62746700 B   ---   --   -----    wav  1.0000  bd1965-08-28t10.wav
+     5:13.00       55213244 B   ---   --   -----    wav  1.0000  bd1965-08-28t11.wav
+     3:38.62       38601068 B   ---   --   -----    wav  1.0000  bd1965-08-28t12.wav
+     5:48.48       61500140 B   ---   --   -----    wav  1.0000  bd1965-08-28t13.wav
+     6:41.26       70797596 B   ---   --   -----    wav  1.0000  bd1965-08-28t14.wav
+     5:51.23       61970540 B   ---   --   -----    wav  1.0000  bd1965-08-28t15.wav
+     6:50.02       72328748 B   ---   --   -----    wav  1.0000  bd1965-08-28t16.wav
+     6:16.46       66434636 B   ---   --   -----    wav  1.0000  bd1965-08-28t17.wav
+    93:42.64      991872076 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

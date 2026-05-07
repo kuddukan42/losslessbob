@@ -1,0 +1,231 @@
+===================
+===================
+===================
+=== bd92-03-18-jl-LB-1037.shnf_mychecksums.txt
+===================
+===================
+===================
+0987930ebc7b044f7eea38fd2e1b394c  bd92-03-18jl.txt
+0635375acda8ee10fc7a3ccc6c623c5b  d1t01.shn
+2759b157c549ee833b9f7aac96482938  d1t02.shn
+19152a9cabcafc1881aeef747f3ff51b  d1t03.shn
+6e58cfbe306baa14baa1b0680afbfb1a  d1t04.shn
+1bbdf8082e72411eec506ee345fbdd39  d1t05.shn
+b3bbdd1eedc7e635bd1599deaa6c40f5  d1t06.shn
+2af175a595ee3a3b29c5e4df72a0c37b  d1t07.shn
+f34150e97cb9968dc3e416177ac38290  d1t08.shn
+1597b9922582c7c33bfdbf2a4fe799c4  d1t09.shn
+785630378c9cdf369ea2ba6dfa87ac9d  d1t10.shn
+da35fbb4bd2e6ba3a93f92971efc020f  d2t01.shn
+9eea9de7c642b01139aa229376a79b4e  d2t02.shn
+f5e2392189a7efa8c0c67f982489661d  d2t03.shn
+7150f7c84fb96528b92c65dfc2fe1709  d2t04.shn
+aadddcaba6ce6d87c371108a4de8a28c  d2t05.shn
+f350ed5ec89c1143c05d3bc32c0c2b19  d2t06.shn
+e529694a8469c6ac0ed319f0777dd56e  d2t07.shn
+6c20207bd58da4f9f1c2e50caedd79f4  d2t08.shn
+c3709c49326905fedaed4a326ec5dbbe  noname.md5
+
+2a82e001017e7c686e4b7c9c555608e2  [shntool]  d1t01.shn
+1a16cc9b387eeec67958c511c94752a0  [shntool]  d1t02.shn
+1899f39986cc993e8dbdb405cbd94fd1  [shntool]  d1t03.shn
+e9c62d9da55f4833950933d9d6ac5761  [shntool]  d1t04.shn
+65a65db508c13d7e1be0cb682fdc20bb  [shntool]  d1t05.shn
+1a28b535e67f91f4426a4eb455bfe34a  [shntool]  d1t06.shn
+71f2db15903e3784f2311b018993bfad  [shntool]  d1t07.shn
+c38bc2138b323b0547fa115b162d93f2  [shntool]  d1t08.shn
+7487d29bc14dca8eb50eccd764f133cb  [shntool]  d1t09.shn
+2d5e36e396297922fa2df895a4818289  [shntool]  d1t10.shn
+ea0862c359610f6e76f5bb453758d765  [shntool]  d2t01.shn
+0573bfd0829c6586d389b7af6b1b9d7d  [shntool]  d2t02.shn
+dec30dc02058ece88e2c756b7eccb9ce  [shntool]  d2t03.shn
+8153bd1dd1d3df12fb85e976a51906df  [shntool]  d2t04.shn
+feccb10c476eddb97bcdcb3897ab3c69  [shntool]  d2t05.shn
+c195f1aecf2237d8ebcf0e15700cf990  [shntool]  d2t06.shn
+181a46bfb0412bde57f650f167037273  [shntool]  d2t07.shn
+4fa8d369f27cc20dcfa59662d020c105  [shntool]  d2t08.shn
+===================
+===================
+===================
+=== bd92-03-18jl.txt
+===================
+===================
+===================
+Bob Dylan, 3/18/92, Perth, 2CDR
+
+(51min+51min), john latanzio recordings, very good sound, slightly prefer krogsgaard recording to this one but close
+
+noises some caused by discontinuities such as d1t6 1:12 & 1:26, and others some which are static or mic noise d1t6 2:18, 2:22, d1t7 1:44, d1t9 0:4, 4:1x-4:2x, d2t2 0:23; begin of d2t1 missing; abrupt end of d2t8
+
+CD1
+1 Maggie's Farm 2 Lay Lady Lay 3 All Along The Watchtower 4 I'll Remember You 5 Watching The River Flow 6 Dolly Dagger 7 Simple Twist Of Fate 8 When I Paint My Masterpiece 9 Mr. Tambourine Man (acoustic) 10 Gates Of Eden (acoustic), 
+
+CD2
+1 The Lonesome Death Of Hattie Carroll (acoustic w band) 2 It Ain't Me, Babe (acoustic w band) 3 Cat's In The Well 4 Little Maggie 5 West L.A. Fadeaway 6 Highway 61 Revisited 7 Ballad Of A Thin Man 8 Rainy Day Women # 12 & 35
+===================
+===================
+===================
+=== Bob Dylan1992-05-18.md5
+===================
+===================
+===================
+f5abb97ab6f44ce4218aa0b9f4d1fad8 *d1t01-fixed.shn
+eefd7d5faf72bf026ebc318f2384b979 *d1t02-fixed.shn
+3e40557680332adefebba36ede7266b9 *d1t03-fixed.shn
+581551dfa301c219bd92a0022fae3ded *d1t04-fixed.shn
+01db2727f44f578d523e5ccbd9a76cb8 *d1t05-fixed.shn
+5b11b6682a54e942e00d34a99b5d6f4c *d1t06-fixed.shn
+47cb47cfb6835a7345c511a618f901b6 *d1t07-fixed.shn
+bbdfc37ad68f951463fde06dceaf13cd *d1t08-fixed.shn
+d1678e044b88196f19858b0aeaed19de *d1t09-fixed.shn
+44c4530228610bd32d9eafab0d086a41 *d1t10-fixed.shn
+cddafb2c723060bf05b323b0cbc8bfca *d2t01-fixed.shn
+7a1039e4eee164ed7bf823d211f29925 *d2t02-fixed.shn
+77eeb05ac2932cc0c7405913e0172f84 *d2t03-fixed.shn
+a80dc7783f21157dea400295fb41b533 *d2t04-fixed.shn
+e84fe26f97f431450b33ded5ca023258 *d2t05-fixed.shn
+b2b7f45bcdf8f2c207bdb6cc57b008d0 *d2t06-fixed.shn
+c25279e38a4d4678e1deda8ac5fb9d01 *d2t07-fixed.shn
+053c148c65aaa0c096a07fafa0e1d6a4 *d2t08-fixed.shn
+===================
+===================
+===================
+=== setlist.txt
+===================
+===================
+===================
+Bob Dylan
+Perth Entertainment Centre
+Perth, Australia
+March 18, 1992 
+
+Source:  "jl recording."
+
+My part:
+
+SHN > TLH (SHN > WAV, fix SBEs, WAV > SHN) > SHN. 
+
+Fixed LB-1037
+
+CD 1:
+01. Maggie's Farm
+02. Lay Lady Lay
+03. All Along The Watchtower
+04. I'll Remember You
+05. Watching The River Flow
+06. Dolly Dagger
+07. Simple Twist Of Fate
+08. When I Paint My Masterpiece
+09. Mr. Tambourine Man
+10. Gates Of Eden
+
+CD 2:
+01. The Lonesome Death Of Hattie Carroll
+02. It Ain't Me, Babe
+03. Cat's In The Well
+04. Little Maggie
+05. West L.A. Fadeaway
+06. Highway 61 Revisited
+07. Ballad Of A Thin Man
+08. Rainy Day Women # 12 & 35 
+
+Total time = 101:05
+
+Original:
+0635375acda8ee10fc7a3ccc6c623c5b *d1t01.shn
+2759b157c549ee833b9f7aac96482938 *d1t02.shn
+19152a9cabcafc1881aeef747f3ff51b *d1t03.shn
+6e58cfbe306baa14baa1b0680afbfb1a *d1t04.shn
+1bbdf8082e72411eec506ee345fbdd39 *d1t05.shn
+b3bbdd1eedc7e635bd1599deaa6c40f5 *d1t06.shn
+2af175a595ee3a3b29c5e4df72a0c37b *d1t07.shn
+f34150e97cb9968dc3e416177ac38290 *d1t08.shn
+1597b9922582c7c33bfdbf2a4fe799c4 *d1t09.shn
+785630378c9cdf369ea2ba6dfa87ac9d *d1t10.shn
+da35fbb4bd2e6ba3a93f92971efc020f *d2t01.shn
+9eea9de7c642b01139aa229376a79b4e *d2t02.shn
+f5e2392189a7efa8c0c67f982489661d *d2t03.shn
+7150f7c84fb96528b92c65dfc2fe1709 *d2t04.shn
+aadddcaba6ce6d87c371108a4de8a28c *d2t05.shn
+f350ed5ec89c1143c05d3bc32c0c2b19 *d2t06.shn
+e529694a8469c6ac0ed319f0777dd56e *d2t07.shn
+6c20207bd58da4f9f1c2e50caedd79f4 *d2t08.shn
+
+Fixed:
+f5abb97ab6f44ce4218aa0b9f4d1fad8 *d1t01-fixed.shn
+eefd7d5faf72bf026ebc318f2384b979 *d1t02-fixed.shn
+3e40557680332adefebba36ede7266b9 *d1t03-fixed.shn
+581551dfa301c219bd92a0022fae3ded *d1t04-fixed.shn
+01db2727f44f578d523e5ccbd9a76cb8 *d1t05-fixed.shn
+5b11b6682a54e942e00d34a99b5d6f4c *d1t06-fixed.shn
+47cb47cfb6835a7345c511a618f901b6 *d1t07-fixed.shn
+bbdfc37ad68f951463fde06dceaf13cd *d1t08-fixed.shn
+d1678e044b88196f19858b0aeaed19de *d1t09-fixed.shn
+44c4530228610bd32d9eafab0d086a41 *d1t10-fixed.shn
+cddafb2c723060bf05b323b0cbc8bfca *d2t01-fixed.shn
+7a1039e4eee164ed7bf823d211f29925 *d2t02-fixed.shn
+77eeb05ac2932cc0c7405913e0172f84 *d2t03-fixed.shn
+a80dc7783f21157dea400295fb41b533 *d2t04-fixed.shn
+e84fe26f97f431450b33ded5ca023258 *d2t05-fixed.shn
+b2b7f45bcdf8f2c207bdb6cc57b008d0 *d2t06-fixed.shn
+c25279e38a4d4678e1deda8ac5fb9d01 *d2t07-fixed.shn
+053c148c65aaa0c096a07fafa0e1d6a4 *d2t08-fixed.shn
+
+
+===================
+===================
+===================
+=== shntool_len_fixed.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:36.16       59308076 B   ---   --   -----    wav  1.0000  d1t01-fixed.wav
+     4:12.43       44553980 B   ---   --   -----    wav  1.0000  d1t02-fixed.wav
+     4:06.59       43533212 B   ---   --   -----    wav  1.0000  d1t03-fixed.wav
+     5:22.72       56970188 B   ---   --   -----    wav  1.0000  d1t04-fixed.wav
+     5:27.70       57847484 B   ---   --   -----    wav  1.0000  d1t05-fixed.wav
+     3:22.68       35792780 B   ---   --   -----    wav  1.0000  d1t06-fixed.wav
+     7:59.36       84580316 B   ---   --   -----    wav  1.0000  d1t07-fixed.wav
+     5:05.44       53905532 B   ---   --   -----    wav  1.0000  d1t08-fixed.wav
+     4:31.69       47966732 B   ---   --   -----    wav  1.0000  d1t09-fixed.wav
+     4:43.68       50081180 B   ---   --   -----    wav  1.0000  d1t10-fixed.wav
+     5:24.60       57294764 B   ---   --   -----    wav  1.0000  d2t01-fixed.wav
+     6:59.05       73923404 B   ---   --   -----    wav  1.0000  d2t02-fixed.wav
+     5:16.65       55895324 B   ---   --   -----    wav  1.0000  d2t03-fixed.wav
+     6:00.01       63506396 B   ---   --   -----    wav  1.0000  d2t04-fixed.wav
+     6:11.28       65510300 B   ---   --   -----    wav  1.0000  d2t05-fixed.wav
+     6:18.13       66709820 B   ---   --   -----    wav  1.0000  d2t06-fixed.wav
+     9:19.67       98765228 B   ---   --   -----    wav  1.0000  d2t07-fixed.wav
+     5:05.04       53811452 B   ---   --   -----    wav  1.0000  d2t08-fixed.wav
+   101:05.38     1069956168 B                            1.0000  (18 files)
+===================
+===================
+===================
+=== shntool_len_original.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:36.17       59310004 B   -b-   --   -----    wav  1.0000  d1t01.wav
+     4:12.43       44553792 B   -b-   --   -----    wav  1.0000  d1t02.wav
+     4:06.59       43532048 B   -b-   --   -----    wav  1.0000  d1t03.wav
+     5:22.72       56971080 B   -b-   --   -----    wav  1.0000  d1t04.wav
+     5:27.70       57847084 B   -b-   --   -----    wav  1.0000  d1t05.wav
+     3:22.68       35791932 B   -b-   --   -----    wav  1.0000  d1t06.wav
+     7:59.37       84581620 B   -b-   --   -----    wav  1.0000  d1t07.wav
+     5:05.43       53904228 B   -b-   --   -----    wav  1.0000  d1t08.wav
+     4:31.69       47967680 B   -b-   --   -----    wav  1.0000  d1t09.wav
+     4:43.68       50081816 B   -b-   --   -----    wav  1.0000  d1t10.wav
+     5:24.60       57294964 B   -b-   --   -----    wav  1.0000  d2t01.wav
+     6:59.05       73922548 B   -b-   --   -----    wav  1.0000  d2t02.wav
+     5:16.65       55895244 B   -b-   --   -----    wav  1.0000  d2t03.wav
+     6:00.01       63507324 B   -b-   --   -----    wav  1.0000  d2t04.wav
+     6:11.27       65508684 B   -b-   --   -----    wav  1.0000  d2t05.wav
+     6:18.13       66710436 B   -b-   --   -----    wav  1.0000  d2t06.wav
+     9:19.67       98764992 B   -b-   --   -----    wav  1.0000  d2t07.wav
+     5:05.03       53809888 B   -b-   --   -----    wav  1.0000  d2t08.wav
+   101:05.38     1069955364 B                            1.0000  (18 files)
+===================
+===================
+===================

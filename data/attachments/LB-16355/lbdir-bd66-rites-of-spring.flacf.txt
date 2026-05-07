@@ -1,0 +1,92 @@
+===================
+===================
+===================
+=== md5 for: bd66-rites-of-spring.flacf
+===================
+===================
+===================
+8ed94b0dd08bff15ae4fa8426c5d3362 *disc1\Desolation Row (05-27-66).flac
+e63210b5d7ff0a615aa6b675a8c7438d *disc1\fingerprint.ffp.txt
+b1c5a1c21e2e678e19e425419cc62d18 *disc1\Fourth Time Around (05-27-66).flac
+c2add2c963e513f5ef745b99cfef16bf *disc1\It's All Over Now, Baby Blue (04-20-66).flac
+f31cc4cd47a3a45de35f1970b111c98b *disc1\Just Like A Woman (05-16-66).flac
+ed759ca6dc74fb3f38aa3fd8e315dfd2 *disc1\md5sum.md5
+15190cbbbc8ec40ee3bab5f20bf75680 *disc1\Monologue on Drug Songs (05-27-66).flac
+c822695408c72777a5e69957d5da679f *disc1\Mr Tambourine Man (05-16-66).flac
+f156bd979a1256c0610f17e73f6ea7b0 *disc1\She Belongs To Me (05-16-66).flac
+b662d97c063ba45a9ae17836fa2ff627 *disc1\Visions Of Johanna (04-20-66).flac
+e9c8800fdb3a87954eb90fa07e8c7355 *disc2\Baby Let Me Follow You Down (05-14-66).flac
+e79281ca1d6588a1d8435158d3ae4759 *disc2\Ballad Of A Thin Man (05-12-66).flac
+9800502a51c439e3ef208d7beddacc67 *disc2\fingerprint.ffp.txt
+50a8bab2c218e090137e4174e611b971 *disc2\I Don't Believe You (05-14-66).flac
+8219bb35d5373a28ace18c0ba9180599 *disc2\Just Like Tom Thumb's Blues (04-20-66).flac
+0e88ab2bcbc50b72cdc46ccfc75b0ec6 *disc2\Leopard-Skin Pill-Box Hat (05-16-66).flac
+0e9b09bb45b23d9534b0c0810b94507b *disc2\Like A Rolling Stone (05-26-66).flac
+851c876f496729daf596dbe1741fbfe3 *disc2\md5sum.md5
+a20e9ed8b0a341c182c7c183188c6dba *disc2\One Too Many Mornings (05-16-66).flac
+a6e0e2983073b5e113b01f636e4d438c *disc2\Tell Me Mama (05-14-66).flac
+67c1f11b32e1b3134dacd1a579c58e85 *Rites of Spring - Art + Notes\RitesOfSpring-Notes.txt
+0d93e8a6a3b648288a5e40e4da3a3812 *Rites of Spring - Art + Notes\RitesOfSpring_V1_Cover.jpg
+8d86c05b3e802224d8b1af9d90156641 *Rites of Spring - Art + Notes\RitesOfSpring_V1_Rear.jpg
+240b037e2a729912a20f3e77cf0bf29a *Rites of Spring - Art + Notes\RitesOfSpring_V2_Cover.jpg
+33d19b096c774e8560c5775278397d43 *Rites of Spring - Art + Notes\RitesOfSpring_V2_Rear.jpg
+===================
+===================
+===================
+=== ffp for: bd66-rites-of-spring.flacf
+===================
+===================
+===================
+disc1\Desolation Row (05-27-66).flac:2481ea8c90a429656ed19afd6083886d
+disc1\Fourth Time Around (05-27-66).flac:a2d6298ef2b2b089a6d77b3b61f1a9ff
+disc1\It's All Over Now, Baby Blue (04-20-66).flac:2038b281870496ace1dc7a74b986fd1e
+disc1\Just Like A Woman (05-16-66).flac:b637ce210209b5a27549c21e9112498b
+disc1\Monologue on Drug Songs (05-27-66).flac:fe5f81b1e3d6a9ef3af667994d7fba98
+disc1\Mr Tambourine Man (05-16-66).flac:31ace900885ace98426c7cae84195090
+disc1\She Belongs To Me (05-16-66).flac:bf5c5a65b1d575bf33a269b1caf9bea9
+disc1\Visions Of Johanna (04-20-66).flac:232bf9c6288375683e7150a56bfddcd8
+disc2\Baby Let Me Follow You Down (05-14-66).flac:c9b28d1ee718e77a78097d447dfb7a25
+disc2\Ballad Of A Thin Man (05-12-66).flac:9e4b1013318cec12d6cc376e5466869f
+disc2\I Don't Believe You (05-14-66).flac:cbf57a425b65179033eee29a4b0969bb
+disc2\Just Like Tom Thumb's Blues (04-20-66).flac:5525065e1b25e6d48d4f1c514dd8b8cb
+disc2\Leopard-Skin Pill-Box Hat (05-16-66).flac:e21b68035d6763b45c181f543fb634cd
+disc2\Like A Rolling Stone (05-26-66).flac:f9423607b3bd920f0358f26eb5f1f949
+disc2\One Too Many Mornings (05-16-66).flac:960f8a1afd2a788be0d11ffddd611b8a
+disc2\Tell Me Mama (05-14-66).flac:f58599f2a0d6b7cf54cbc0a1c0faaa1d
+===================
+===================
+===================
+=== shntool len for: bd66-rites-of-spring.flacf\disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    13:45.24      145586696 B   -b-   --   ---xx   flac  0.5535  Desolation Row (05-27-66).flac
+     5:16.60       55883916 B   -b-   --   ---xx   flac  0.6146  Fourth Time Around (05-27-66).flac
+     6:13.14       65831184 B   -b-   --   ---xx   flac  0.6068  It's All Over Now, Baby Blue (04-20-66).flac
+     6:51.10       72524728 B   -b-   --   ---xx   flac  0.5372  Just Like A Woman (05-16-66).flac
+     1:14.26       13115380 B   -b-   --   ---xx   flac  0.5754  Monologue on Drug Songs (05-27-66).flac
+    10:44.32      113676896 B   -b-   --   ---xx   flac  0.5569  Mr Tambourine Man (05-16-66).flac
+     3:41.31       39057724 B   -b-   --   ---xx   flac  0.5744  She Belongs To Me (05-16-66).flac
+     8:34.45       90774592 B   -b-   --   ---xx   flac  0.5801  Visions Of Johanna (04-20-66).flac
+    56:21.18      596451116 B                            0.5697  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd66-rites-of-spring.flacf\disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:36.19       38147880 B   -b-   --   ---xx   flac  0.6197  Baby Let Me Follow You Down (05-14-66).flac
+     7:16.63       77058620 B   ---   --   ---xx   flac  0.6114  Ballad Of A Thin Man (05-12-66).flac
+     5:13.25       55272044 B   ---   --   ---xx   flac  0.6423  I Don't Believe You (05-14-66).flac
+     6:46.16       71656908 B   -b-   --   ---xx   flac  0.5692  Just Like Tom Thumb's Blues (04-20-66).flac
+     3:23.06       35823812 B   -b-   --   ---xx   flac  0.6300  Leopard-Skin Pill-Box Hat (05-16-66).flac
+    10:52.24      115068272 B   -b-   --   ---xx   flac  0.6278  Like A Rolling Stone (05-26-66).flac
+     4:19.12       45717032 B   -b-   --   ---xx   flac  0.6271  One Too Many Mornings (05-16-66).flac
+     4:07.44       43673592 B   -b-   --   ---xx   flac  0.5732  Tell Me Mama (05-14-66).flac
+    45:34.60      482418160 B                            0.6127  (8 files)
+===================
+===================
+===================

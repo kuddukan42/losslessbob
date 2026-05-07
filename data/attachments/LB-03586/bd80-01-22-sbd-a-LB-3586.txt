@@ -1,0 +1,10 @@
+Bob Dylan, 1/22/80, Denver, CO, Rainbow Music Theater, 1CDR
+
+LB-3586, (42min), version "a"; Soundboard, d2t11 start missing + cut @ 2:29, Complete circulating soundboard recording., Reel > DAT > Aiwa HSD-100 DAT > M-Audio > G4, sm remaster 2006-02-16, Amadeus II 3.8.6 tracked markers aligned, Peak 4 (G4+) 4.02 DC offset removed, declicked, ClickRepair 1.2.5 DeCrackled, Declicked x5, no EQ applied, NB: FLAC, ffp, MD5 created with xACT, my first "FLAC" folder for Roberto & his friends, last time i could only manage SHN's this time FLACS, worked OK!, Anything wrong please email me, smironne@free.fr, Take Care!, Serge; upgrade over LB-1669 as this one is less harsh and has less hiss and fuller better warmer sound; excellent sound [A]
+
+t34 cut at end, t5 cuts at begin and in middle at 2:29, t9 cuts at end
+
+01 When He Returns 04:52, 02 Man Gave Names to All the Animals 05:46, 03 Precious Angel 06:23, 04 Slow Train# 03:35, 05 #Walk around Heaven 03:51, 06 Gonna Change My Way of Thinking 04:41, 07 Do Right to Me Baby (Do unto Others) 05:05, 08 Solid Rock 04:49, 09 Saving Grace 02:50, 41:54
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

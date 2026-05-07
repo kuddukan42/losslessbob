@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-10-17-Schubert-remaster-33 
+=================== 
+=================== 
+=================== 
+52fb0621972c410d88e6fed8efab7133  bd03-10-17-Schubert-remaster.txt
+1f0c6d4792b0c068fcc59aae5fc35b81  bd_2003-10-17_d1\101 Announcement.flac
+0a5f5a1c4a836456c0a5e68301024157  bd_2003-10-17_d1\102 Maggie's Farm.flac
+2627805b3492bef6ea3f1dc053890f71  bd_2003-10-17_d1\103 Señor (Tales Of Yankee Power).flac
+35ad046dd080b70ce95dc3ca0bad338c  bd_2003-10-17_d1\104 Cry A While.flac
+cd627931a2c4715871b7ae5656bbaf98  bd_2003-10-17_d1\105 If You See Her, Say Hello.flac
+2210b44db90005bf75663e06f7a4097c  bd_2003-10-17_d1\106 It's Alright, Ma (I'm Only Bleeding).flac
+402b74582d19ecac60406c05d09bf7f8  bd_2003-10-17_d1\107 Moonlight.flac
+317828909edbeb3d42310ea015a72b4b  bd_2003-10-17_d1\108 Cold Irons Bound.flac
+b9729b1edc065cfff40d74b24c7f6c92  bd_2003-10-17_d1\109 Most Likely You Go Your Way (And I'll Go Mine).flac
+03cae95d2dc15cdc1c75beeec5c65e5c  bd_2003-10-17_d1\110 Boots Of Spanish Leather.flac
+7d6184267047758165a92036494f95ef  bd_2003-10-17_d1\bd20031017_d1_flacs.md5
+17c8022793fb6b9222b76439ea4b584b  bd_2003-10-17_d1\bd20031017_d1_wavs.md5
+87435572d400d66a538d22a42e3b69c2  bd_2003-10-17_d2\201 Dignity.flac
+39e0ce5addc12a404f1b8d58c69781b0  bd_2003-10-17_d2\202 Man In The Long Black Coat.flac
+d33ee8c28df167bea730a0ff9ca300b8  bd_2003-10-17_d2\203 Honest With Me.flac
+1d93ffd2d3fdfcb3a811f66dd1672822  bd_2003-10-17_d2\204 Love Minus Zero_No Limit.flac
+5f62cb8db79318c49c3cc9b87976e4fd  bd_2003-10-17_d2\205 Summer Days.flac
+e2542c7d2c0bd6aa0ea344c3aa2d4c92  bd_2003-10-17_d2\206 Cat's In The Well.flac
+8b4275fab432281a39f42131f227593f  bd_2003-10-17_d2\207 Like A Rolling Stone.flac
+903268f0e79a4105d6ae2e0d50063a36  bd_2003-10-17_d2\208 All Along The Watchtower.flac
+82b1e6d5221602285afe8f4d4324b2db  bd_2003-10-17_d2\bd20031017_d2_flacs.md5
+dc404a56012881f6ee1304f5de069ce4  bd_2003-10-17_d2\bd20031017_d2_wavs.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-10-17-Schubert-remaster-33\bd_2003-10-17_d1 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:1dcbd454fd6e53e8078f64bdfa2dc016
+102 Maggie's Farm.flac:4bebda731f17d1b412567327bec4cb71
+1_103 Se_or (Tales Of Yankee Power).flac:9dc2d38a15d8a707015a923e3de95f07
+104 Cry A While.flac:1a4ee0ae834c7f6e8557102fd2793baa
+105 If You See Her, Say Hello.flac:e627a40012fd31510d30fcdd7b4af9c1
+106 It's Alright, Ma (I'm Only Bleeding).flac:dee36b854283c6e3bdbd13d83dcfad1b
+107 Moonlight.flac:1542b0258cede526a6048e377a9218da
+108 Cold Irons Bound.flac:a3bdff9bf2cc6611db35484b6fcf8ab9
+109 Most Likely You Go Your Way (And I'll Go Mine).flac:b1ef7fb88b8542488b4d3976bb7e431d
+110 Boots Of Spanish Leather.flac:2524e22eaf4320a570b02c386be005ed
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-10-17-Schubert-remaster-33\bd_2003-10-17_d2 
+=================== 
+=================== 
+=================== 
+201 Dignity.flac:5e81270e6693667b9197f23980eead2d
+202 Man In The Long Black Coat.flac:35ba909a2a7b0a7d47a57a68b1811f67
+203 Honest With Me.flac:4e38e56018203850d5b2dd52d212b229
+204 Love Minus Zero_No Limit.flac:e1d8264da1ac6dc254fe693048a10cc1
+205 Summer Days.flac:6e7602c201a5938bedfdab919b66c305
+206 Cat's In The Well.flac:9728155c6b0cb96afa62e29ceadbd6c5
+207 Like A Rolling Stone.flac:5b11a0425418125238e9f2a12f0b3246
+208 All Along The Watchtower.flac:1d0f623c804c761ce644643c8caf622a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-17-Schubert-remaster-33\bd_2003-10-17_d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.45        7867484 B   ---   --   ---xx   flac  0.5653  101 Announcement.flac
+     6:51.40       72594524 B   ---   --   ---xx   flac  0.6304  102 Maggie's Farm.flac
+     6:11.53       65569100 B   ---   --   ---xx   flac  0.5882  103 Señor (Tales Of Yankee Power).flac
+     5:58.32       63226508 B   ---   --   ---xx   flac  0.6246  104 Cry A While.flac
+     6:26.07       68106908 B   ---   --   ---xx   flac  0.6066  105 If You See Her, Say Hello.flac
+     7:28.32       79102508 B   ---   --   ---xx   flac  0.6175  106 It's Alright, Ma (I'm Only Bleeding).flac
+     4:36.59       48825212 B   ---   --   ---xx   flac  0.4921  107 Moonlight.flac
+     6:05.29       64454252 B   ---   --   ---xx   flac  0.6287  108 Cold Irons Bound.flac
+     6:56.63       73530620 B   ---   --   ---xx   flac  0.6116  109 Most Likely You Go Your Way (And I'll Go Mine).flac
+     5:57.22       63026588 B   ---   --   ---xx   flac  0.5582  110 Boots Of Spanish Leather.flac
+    57:17.07      606303704 B                            0.5989  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-17-Schubert-remaster-33\bd_2003-10-17_d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.32       63226508 B   ---   --   ---xx   flac  0.6673  201 Dignity.flac
+     5:49.59       61702412 B   ---   --   ---xx   flac  0.5865  202 Man In The Long Black Coat.flac
+     7:33.33       79986860 B   ---   --   ---xx   flac  0.6520  203 Honest With Me.flac
+     6:36.58       69990860 B   ---   --   ---xx   flac  0.5483  204 Love Minus Zero_No Limit.flac
+    11:56.14      126335372 B   ---   --   ---xx   flac  0.6254  205 Summer Days.flac
+     5:42.42       60427628 B   ---   --   ---xx   flac  0.6459  206 Cat's In The Well.flac
+     7:53.16       83474876 B   ---   --   ---xx   flac  0.6400  207 Like A Rolling Stone.flac
+     9:05.72       96307388 B   ---   --   ---xx   flac  0.6382  208 All Along The Watchtower.flac
+    60:36.26      641451904 B                            0.6264  (8 files)
+=================== 
+=================== 
+=================== 

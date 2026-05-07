@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-20a.shnf 
+=================== 
+=================== 
+=================== 
+d300fbb76b10be521a84786f7a839e47  101 maggies farm.shn
+6729db686540fef306ad04e16ec98c0f  102 senor.shn
+c35211c65d9b63b8915e4b8335517f06  103 tweedle dee and tweedle dum.shn
+ebf1cd89de41b6afc898e9773ea73e67  104 watching the river flow.shn
+75bea28149d8837b5be361d1cdeb55d1  105 things have changed.shn
+59d1db3180f6cd2d40240b89d8e3ada1  106 highway 61 revisited.shn
+950c8308b77ad0712b249c4248574f15  107 this wheels on fire.shn
+f348195f39afe6963fc6a68591422f6a  108 you ain`t goin` nowhere.shn
+09f86afd4c05dfabc84c3ea4b424c7e0  109 just like tom thumbs blues.shn
+265b4dd865a42c9d1b1d0ff733038c59  110 cold irons bound.shn
+88ba6b07f956749fd3ab08727ef94d86  111 the lonesome death of hattie carroll.shn
+306c1c7f9df1bca8a26f4e6d0ae16473  112 honest with me.shn
+4241622f87b24255b595ded7c1f00fd9  201 mr tambourine man.shn
+fbb7cce6144c0d1ef3347c9df847ff9e  202 summer days.shn
+10aa515f687d68f7fc47e4c180230e27  203 like a rolling stone.shn
+51213769d6e73c589a33635cf3ea15c1  204 all along the watchtower.shn
+f448e66c64fff09d3ba45f1b4342b6db  205 rainy day women.shn
+e086725c683bcfae5dd359488cc21301  bd03-08-20a..txt
+418ddc34b41ea96b2e3aa2dae6937ba1  hammerstein ballroom 20th-August-03.md5
+f5396f5a1afcc4d543ba5f82f24ea125  hammerstein ballroom 20th-August-03.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-20a.shnf 
+=================== 
+=================== 
+=================== 
+e9a65f7a7d5b04e84b9bc71cf048d8f2  [shntool]  101_maggies_farm.wav
+bbc97888b7faa1cbd68a7d7757def2f0  [shntool]  102_senor.wav
+06058ab18f58c4274ba30dc9a1ab1381  [shntool]  103_tweedle_dee_and_tweedle_dum.wav
+cb6fe649a31394cd31cf8ad77ab70896  [shntool]  104_watching_the_river_flow.wav
+2e5be611f8579d07c5bf0fe3cecc54d2  [shntool]  105_things_have_changed.wav
+28d1c49194d70f7c78445b4b62d6a995  [shntool]  106_highway_61_revisited.wav
+66bcde4710a7d5412f904ef2e5cf1007  [shntool]  107_this_wheels_on_fire.wav
+146383ecf19fc21dc154e0e480ca96be  [shntool]  108_you_ain`t_goin`_nowhere.wav
+58322108fda78e7e30d4d32274cd66da  [shntool]  109_just_like_tom_thumbs_blues.wav
+18eca9ce7632a535cd1e69c80f26554c  [shntool]  110_cold_irons_bound.wav
+f6f861b25a4d87df6ff689b8eb95c21d  [shntool]  111_the_lonesome_death_of_hattie_carroll.wav
+0c9aac96ef862d34c845b464db19b2df  [shntool]  112_honest_with_me.wav
+a320c8683009bb143045a218111074e4  [shntool]  201_mr_tambourine_man.wav
+b72be355d1db47c613a289370f93a1ac  [shntool]  202_summer_days.wav
+e759f689e3ec70506e58fdaaa039061d  [shntool]  203_like_a_rolling_stone.wav
+758d76f5420cc7099623d0eb5b962693  [shntool]  204_all_along_the_watchtower.wav
+27f8d313edc98078234c3b7668b080d4  [shntool]  205_rainy_day_women.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-20a.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:45.16       71479676 B   ---   --   ---xx    shn  0.5845  101 maggies farm.shn
+     5:37.30       59517404 B   ---   --   ---xx    shn  0.5920  102 senor.shn
+     5:22.67       56958428 B   ---   --   ---xx    shn  0.5429  103 tweedle dee and tweedle dum.shn
+     5:11.37       54947468 B   ---   --   ---xx    shn  0.5798  104 watching the river flow.shn
+     6:55.15       73241324 B   ---   --   ---xx    shn  0.5814  105 things have changed.shn
+     6:55.32       73281308 B   ---   --   ---xx    shn  0.6091  106 highway 61 revisited.shn
+     6:55.35       73288364 B   ---   --   ---xx    shn  0.5832  107 this wheels on fire.shn
+     5:46.55       61163804 B   ---   --   ---xx    shn  0.5452  108 you ain`t goin` nowhere.shn
+     7:55.23       83844140 B   ---   --   ---xx    shn  0.5782  109 just like tom thumbs blues.shn
+     5:54.25       62504444 B   ---   --   ---xx    shn  0.5869  110 cold irons bound.shn
+     6:21.25       67267244 B   ---   --   ---xx    shn  0.5150  111 the lonesome death of hattie carroll.shn
+     7:29.74       79377692 B   ---   --   ---xx    shn  0.5995  112 honest with me.shn
+     7:18.24       77319692 B   ---   --   ---xx    shn  0.5330  201 mr tambourine man.shn
+    10:02.41      106289276 B   ---   --   ---xx    shn  0.5615  202 summer days.shn
+     7:01.01       74266796 B   ---   --   ---xx    shn  0.6535  203 like a rolling stone.shn
+     7:36.48       80551340 B   ---   --   ---xx    shn  0.5825  204 all along the watchtower.shn
+     4:46.13       50481020 B   ---   --   ---xx    shn  0.6271  205 rainy day women.shn
+   113:55.36     1205779420 B                            0.5793  (17 files)
+=================== 
+=================== 
+=================== 

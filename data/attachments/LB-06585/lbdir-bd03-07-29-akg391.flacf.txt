@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-29-akg391.flacf 
+=================== 
+=================== 
+=================== 
+fdbcc4d50f23b1724a4024d95b52a352  disc 1\disc 1.ffp
+360462291a87a715ec0ce3e1ef5b1151  disc 1\Track01.flac
+4a1fbf20a3edfc9efaf6e21fc576a1cc  disc 1\Track02.flac
+bf20c2ebbadab66a65068dc7a5df1fe0  disc 1\Track03.flac
+f38139e5ce5fb770b7ebc520c67d04d6  disc 1\Track04.flac
+416729078bc4984998f0b361c9d47a35  disc 1\Track05.flac
+2a7f44d0ae859ac459824994a24a7350  disc 1\Track06.flac
+b301c71f4e03bc5fd2d358c7fa805c14  disc 1\Track07.flac
+4549634423d145ee68d02a73e83651d2  disc 1\Track08.flac
+725b22988f219a7f8d5fd96fd274ba8d  disc 1\Track09.flac
+27d137f4558111cfad0506dfe6dec065  disc 1\Track10.flac
+33109290d793b09d1ed720b2fe7a7ac2  disc 2\disc 2.ffp
+070d489f2af30edef50a913a5affe7cd  disc 2\Track03.flac
+d5906c1a3d1ccb4c000973760514a97f  disc 2\Track04.flac
+9b43403cf4ed770c97f8f929b0254f0d  disc 2\Track05.flac
+fdd9e1f482a889a8e8871ead5e388f92  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-07-29-akg391.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:c79a199a4dcd230dc2eba25366a28e40
+Track02.flac:000f0c942e336f9322965c8a96fb7fd6
+Track03.flac:b08691dd0e1ca01a2c37283a2ebb37f2
+Track04.flac:131dc6bbc7391625f193dc789640658f
+Track05.flac:85b98a2c3eb07135d17ce61669e86921
+Track06.flac:1b6c65576307507c11d8494e4f16fff5
+Track07.flac:420a961c287758281b1f6bad574cd8e9
+Track08.flac:f598484bacd7d9a551b8b5cdc857b600
+Track09.flac:f71e3e3954613b2e0c390d76c251cfcb
+Track10.flac:5649e43332a0ac06fb815ac8a25f4b1b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-07-29-akg391.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track03.flac:ff7e929146652999fdde927554b02d3c
+Track04.flac:6546183cdd378dc5691a1f6773ef48b3
+Track05.flac:01493f1ea28531ca84fa4bc9f78e0f50
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-29-akg391.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:59.06       63341756 B   ---   --   ---xx   flac  0.5408  Track01.flac
+     6:06.36       64647116 B   ---   --   ---xx   flac  0.4891  Track02.flac
+     5:13.34       55293212 B   ---   --   ---xx   flac  0.5043  Track03.flac
+     8:21.36       88461116 B   ---   --   ---xx   flac  0.5396  Track04.flac
+     6:11.14       65477372 B   ---   --   ---xx   flac  0.5607  Track05.flac
+     9:05.02       96142748 B   ---   --   ---xx   flac  0.4673  Track06.flac
+     4:59.55       52873004 B   ---   --   ---xx   flac  0.5652  Track07.flac
+     7:27.38       78940220 B   ---   --   ---xx   flac  0.4498  Track08.flac
+     7:03.57       74751308 B   ---   --   ---xx   flac  0.5639  Track09.flac
+     8:02.53       85149500 B   ---   --   ---xx   flac  0.5449  Track10.flac
+    68:30.31      725077352 B                            0.5200  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-29-akg391.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.54       57809852 B   ---   --   ---xx   flac  0.5564  Track03.flac
+     6:39.30       70454204 B   ---   --   ---xx   flac  0.5426  Track04.flac
+     8:23.16       88766876 B   ---   --   ---xx   flac  0.5469  Track05.flac
+    20:30.25      217030932 B                            0.5481  (3 files)
+=================== 
+=================== 
+=================== 

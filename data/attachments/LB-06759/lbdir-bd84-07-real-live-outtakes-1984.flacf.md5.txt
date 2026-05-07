@@ -1,0 +1,15 @@
+5dae3a6e36f58a37648c08c431c24e8c  bd84-07-real-live-outtakes-1984-d1t01.flac
+6fd597a113dd0aa52a6d3de6b5071899  bd84-07-real-live-outtakes-1984-d1t02.flac
+97a6c3b3cf3536f6072a6c342ace5e55  bd84-07-real-live-outtakes-1984-d1t03.flac
+684a7aa2051005aa7435bc394c190c8f  bd84-07-real-live-outtakes-1984-d1t04.flac
+0d44c62f933b0c3114960cd94c02dac6  bd84-07-real-live-outtakes-1984-d1t05.flac
+11d91a94a42b0de4c65659cc3a18b36c  bd84-07-real-live-outtakes-1984-d1t06.flac
+f5fa281660f5e791d37b31e7776be7c4  bd84-07-real-live-outtakes-1984-d1t07.flac
+e64b66fc312542c45b1c04407531c376  bd84-07-real-live-outtakes-1984-d1t08.flac
+deb8ba014750ec68505db14946054081  bd84-07-real-live-outtakes-1984-d1t09.flac
+789d8826076cac5c72b22b1bb35e648f  bd84-07-real-live-outtakes-1984-d1t10.flac
+9eca93cfdc8ae96b8cde277f03a3daac  bd84-07-real-live-outtakes-1984-d1t11.flac
+28b1c28a8fd0e7dd0fc3bdc42a7e092b  bd84-07-real-live-outtakes-1984-d1t12.flac
+d08dca18b9d4923704a0ae5063f320d1  bd84-07-real-live-outtakes-1984-d1t13.flac
+2e5253ac7c0ae5e91f55346d20b81948  bd84-07-real-live-outtakes-1984-d1t14.flac
+05d09cc68fc605acef9c1322d360fcfe  bd84-07-real-live-outtakes-1984.flacf.md5

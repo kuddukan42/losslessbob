@@ -1,0 +1,37 @@
+===================
+===================
+===================
+=== md5 for: bd69-08-27.flacf
+===================
+===================
+===================
+080f37e2db2abadc5b0ad4f407c6c53a *1992-07-04 Porta Siberia, Genua, Italy.txt
+9f85120e291c43d1520965996a8cf541 *CD1\CD1.ffp
+9f85120e291c43d1520965996a8cf541 *CD1\CD1.txt
+f3b11f4708548e1b620eb214f4e46fbf *CD2\20 Halland Hotell Interview.flac
+4be346275498067a1b770d8b8a3d9145 *CD2\CD2.ffp
+4be346275498067a1b770d8b8a3d9145 *CD2\CD2.txt
+11be7d84a184d5979ad225bd12313e87 *July 4 1992 Porta Siberia  Genoa, Italy.md5
+11be7d84a184d5979ad225bd12313e87 *July 4 1992 Porta Siberia  Genoa, Italy.txt
+41cb68727b9795c036a865046f1deba6 *~uTorrentPartFile_2B2B7CBE.dat
+===================
+===================
+===================
+=== ffp for: bd69-08-27.flacf
+===================
+===================
+===================
+CD2\20 Halland Hotell Interview.flac:49d2445f922151a78e8c8e7025a1ef5c
+===================
+===================
+===================
+=== shntool len for: bd69-08-27.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:32.01        5647196 B   ---   --   ---xx   flac  0.4029  20 Halland Hotell Interview.flac
+     0:32.01        5647196 B                            0.4029  (1 file)
+===================
+===================
+===================

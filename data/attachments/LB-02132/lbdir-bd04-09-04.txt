@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-09-04 
+=================== 
+=================== 
+=================== 
+da65bb8457b900e64c9753d5cb8679a0  2004-09-04_Kansas City, KS.txt
+ca628b5a2938f893c6aa18f7af465f6c  20040904.md5
+12e22cad769b9ac1c52eb8f7460b723d  20040904.txt
+a44f7a3532b199f5575eafdb73cf87b5  bd04-09-04.txt
+bcfdcf6e0d560b861d723263bff8ed5a  bd20040904_d1t01.shn
+2b309b702679124123c8513e33ad9164  bd20040904_d1t02.shn
+5101030988165f7881f2a369b2637b1e  bd20040904_d1t03.shn
+8a7827f953889fec0d7e7ccb234107c1  bd20040904_d1t04.shn
+94c0f3310113c6a65acfb103a46e8888  bd20040904_d1t05.shn
+4e85cfb2b5e4f351334a92eec98830e7  bd20040904_d1t06.shn
+198d7f4dd4af2d965e7ca63fcf15c7e8  bd20040904_d1t07.shn
+e436d9b43f73f9d6c43caecb049eb24b  bd20040904_d1t08.shn
+f8d228a2717603608ba91fe4b01e7c7b  bd20040904_d1t09.shn
+2ba37c90d53a3cfd5e6f6a980b1ac29e  bd20040904_d1t10.shn
+957cc4ead47d6509fe19c54aeefebf81  bd20040904_d2t01.shn
+85e5ef4cbf46b7b8c2a63d170ba7342b  bd20040904_d2t02.shn
+0da86deab72eb36f82a9eeb4ff74b6c8  bd20040904_d2t03.shn
+4b96bdfd99676c2928d1ae4fbaa57b61  bd20040904_d2t04.shn
+fb57b45a2fa8f2e8589630f199eea65f  bd20040904_d2t05.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-09-04 
+=================== 
+=================== 
+=================== 
+d9abc3abe79dd71416dbc4c2cd5fbaa8  [shntool]  bd20040904_d1t01.wav
+37cbb0441f83c4f62ad5865f5a7a6fef  [shntool]  bd20040904_d1t02.wav
+5f136d65a6f1dddde4ca3febec805c4b  [shntool]  bd20040904_d1t03.wav
+01f991c0c248cce5544dd251c807d267  [shntool]  bd20040904_d1t04.wav
+36fe8d2f166214ea13bb39689572a80e  [shntool]  bd20040904_d1t05.wav
+0bfce25e1e4a6a051b6ff5358e5b44d8  [shntool]  bd20040904_d1t06.wav
+6e4e94073e003c1ea693a2718df2d8a6  [shntool]  bd20040904_d1t07.wav
+a6301edcf98111c51e64c9429a58d4f7  [shntool]  bd20040904_d1t08.wav
+bb1d02eb0972fb7847fc5b1b4dabfd21  [shntool]  bd20040904_d1t09.wav
+ab3659eff4a5565ff12f9ffef1dd682e  [shntool]  bd20040904_d1t10.wav
+6efd4f14464e42b0e3641cc41f97cb21  [shntool]  bd20040904_d2t01.wav
+d7fc5c68dbae94366638c6422f17b931  [shntool]  bd20040904_d2t02.wav
+8a3ee2c7db5030e936430d43ffd3edc3  [shntool]  bd20040904_d2t03.wav
+9be175ca7db6b022d1ac36a0b9ba350d  [shntool]  bd20040904_d2t04.wav
+39b5b40008100ea717cbbe2026122066  [shntool]  bd20040904_d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-09-04 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:39.12       17491868 B   ---   --   -----    wav  1.0000  bd20040904_d1t01.wav
+     4:42.65       49897724 B   ---   --   -----    wav  1.0000  bd20040904_d1t02.wav
+     4:55.03       52045100 B   ---   --   -----    wav  1.0000  bd20040904_d1t03.wav
+     6:54.56       73161356 B   ---   --   -----    wav  1.0000  bd20040904_d1t04.wav
+     5:13.23       55267340 B   ---   --   -----    wav  1.0000  bd20040904_d1t05.wav
+     5:24.29       57221852 B   ---   --   -----    wav  1.0000  bd20040904_d1t06.wav
+     7:53.14       83470172 B   ---   --   -----    wav  1.0000  bd20040904_d1t07.wav
+     7:24.68       78481580 B   ---   --   -----    wav  1.0000  bd20040904_d1t08.wav
+     5:39.56       59931356 B   ---   --   -----    wav  1.0000  bd20040904_d1t09.wav
+     6:39.73       70555340 B   ---   --   -----    wav  1.0000  bd20040904_d1t10.wav
+     6:38.10       70230764 B   ---   --   -----    wav  1.0000  bd20040904_d2t01.wav
+     5:55.26       62683196 B   ---   --   -----    wav  1.0000  bd20040904_d2t02.wav
+    11:20.56      120083756 B   ---   --   -----    wav  1.0000  bd20040904_d2t03.wav
+     7:42.26       81557996 B   ---   --   -----    wav  1.0000  bd20040904_d2t04.wav
+     8:57.29       94795052 B   ---   --   -----    wav  1.0000  bd20040904_d2t05.wav
+    97:01.21     1026874452 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

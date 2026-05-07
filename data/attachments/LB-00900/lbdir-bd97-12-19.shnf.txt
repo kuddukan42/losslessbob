@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-19.shnf 
+=================== 
+=================== 
+=================== 
+2ce91998ad3e60185c25608114b17f64  bd97-12-19.txt
+66674e7975a8356108501275bfcf29cc  CD01Track  1.shn
+735dec72df22cb01b5b9faa760525dc9  CD01Track  2.shn
+69d8a75941fb862cb7e804496a2364d8  CD01Track  3.shn
+0abf2b3957e8853e868d5d6ce9093c6d  CD01Track  4.shn
+110988d12cb26ec65516dcc4cb0c5bf0  CD01Track  5.shn
+458034af6f33bdbb5e85a0402674383e  CD01Track  6.shn
+76aa53ff82dd677f01fec4e821663ff4  CD01Track  7.shn
+769edbe1091276d5fafb42931b181a06  CD01Track  8.shn
+6458f6a0da802432672b57399dac3c45  CD01Track  9.shn
+b0bf055e435d8da08f02414b9c27f4c6  CD01Track 10.shn
+92361726b2208dc74c647149de29c236  CD01Track 11.shn
+0ea235b376019aa061655483aba94be8  CD02Track  1.shn
+72ca2c847361be98ed800948aee38291  CD02Track  2.shn
+358823712d95f5f2de98ed5adc860e4e  CD02Track  3.shn
+b88b7e242f2644df361b3669fb7f35c2  CD02Track  4.shn
+f629b283435fb3de7241f02c4f5c7cdb  CD02Track  5.shn
+c2063d5306a24fe6d73967cb6487aaea  CD02Track  6.shn
+d8384951b9c95dff1aaf1509e55f7668  CD02Track  7.shn
+d4a16af26c2762511f3cbb240e6e1114  CD02Track  8.shn
+aadf6e4407de65ad801810b6f98cfc85  CD02Track  9.shn
+77df77314836d32a26842d1dff9d44ab  CD02Track 10.shn
+594c7d90a315cf9eb37d1d4a72ace42e  CD02Track 11.shn
+be445f3cb8fb1b82122386fb15f1a2c6  EAATYcd1.md5
+c12517896539685f0d971d9793a13702  EAATYcd2.md5
+069113a693800a0e17a1840376640b5c  EvenAfter.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-12-19.shnf 
+=================== 
+=================== 
+=================== 
+4d03fa77a7bb80a592c2218ae7964085  [shntool]  CD01Track_10.wav
+6f2a4005cb5ca536a36395a37711afb0  [shntool]  CD01Track_11.wav
+91d6433fa50456e7ab2d54dd31bbd382  [shntool]  CD01Track__1.wav
+8156f72f957d8bceab3b0f4e1e2bf3a1  [shntool]  CD01Track__2.wav
+d6451f8f18894b8b2bd844e5f9e07ee6  [shntool]  CD01Track__3.wav
+94066980be807831e806467a8059cfb0  [shntool]  CD01Track__4.wav
+8610407b03ee4d97c34beb7578e99563  [shntool]  CD01Track__5.wav
+5e633c0f530c8e98170b6a2acdaad01e  [shntool]  CD01Track__6.wav
+87d36e0e8c4856738ee5d847846aad3b  [shntool]  CD01Track__7.wav
+a21bc490ce62eb0bcad49abe946d664e  [shntool]  CD01Track__8.wav
+b6d137987c42a27ae3306a6a294ca419  [shntool]  CD01Track__9.wav
+503b1ed65761f232d91fba0e27b72e65  [shntool]  CD02Track_10.wav
+79d8ae95750b50ebc4ce6c31571c746e  [shntool]  CD02Track_11.wav
+ba6efa3e0a0d805bc5521ef7d6b70ad3  [shntool]  CD02Track__1.wav
+751a3e622b8c1674d338dabbd3de59ce  [shntool]  CD02Track__2.wav
+3b16569ffcd07c6c56e06a3160b5d333  [shntool]  CD02Track__3.wav
+9806c48df8fbc04773561cbc0a426077  [shntool]  CD02Track__4.wav
+77c87fe2598eb496a8569abfbc877e4e  [shntool]  CD02Track__5.wav
+c6169e19127413f44c0b006f97e33015  [shntool]  CD02Track__6.wav
+319357f43c82cf68d0278d99aec0582e  [shntool]  CD02Track__7.wav
+baaa4275bcb42a3f1b5e1038fb89361e  [shntool]  CD02Track__8.wav
+60db576233548c9f3245e866447cf74c  [shntool]  CD02Track__9.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-19.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.55       61869404 B   ---   --   ---xx    shn  0.7662  CD01Track  1.shn
+     6:08.22       64966988 B   ---   --   ---xx    shn  0.7566  CD01Track  2.shn
+     7:01.50       74382044 B   ---   --   ---xx    shn  0.7704  CD01Track  3.shn
+     5:39.15       59834924 B   ---   --   ---xx    shn  0.7422  CD01Track  4.shn
+     6:02.08       63875660 B   ---   --   ---xx    shn  0.7720  CD01Track  5.shn
+     6:47.60       71935964 B   ---   --   ---xx    shn  0.7934  CD01Track  6.shn
+     4:22.37       46303868 B   ---   --   ---xx    shn  0.7335  CD01Track  7.shn
+     6:09.68       65251580 B   ---   --   ---xx    shn  0.7190  CD01Track  8.shn
+     8:42.17       92120828 B   ---   --   ---xx    shn  0.7625  CD01Track  9.shn
+     4:21.73       46212140 B   ---   --   ---xx    shn  0.7205  CD01Track 10.shn
+     8:35.50       90963644 B   ---   --   ---xx    shn  0.7690  CD01Track 11.shn
+     5:51.00       61916444 B   ---   --   ---xx    shn  0.7822  CD02Track  1.shn
+     6:54.55       73159004 B   ---   --   ---xx    shn  0.8049  CD02Track  2.shn
+     6:23.42       67660028 B   ---   --   ---xx    shn  0.7608  CD02Track  3.shn
+     5:42.55       60458204 B   ---   --   ---xx    shn  0.7144  CD02Track  4.shn
+     4:27.03       47105900 B   ---   --   ---xx    shn  0.7649  CD02Track  5.shn
+     9:41.72      102657788 B   ---   --   ---xx    shn  0.7527  CD02Track  6.shn
+     7:52.70       83425484 B   ---   --   ---xx    shn  0.6623  CD02Track  7.shn
+     5:55.60       62763164 B   ---   --   ---xx    shn  0.7263  CD02Track  8.shn
+     3:58.33       42060860 B   ---   --   ---xx    shn  0.7748  CD02Track  9.shn
+     5:41.25       60211244 B   ---   --   ---xx    shn  0.7302  CD02Track 10.shn
+     6:10.35       65350364 B   ---   --   ---xx    shn  0.7512  CD02Track 11.shn
+   138:22.05     1464485528 B                            0.7517  (22 files)
+=================== 
+=================== 
+=================== 

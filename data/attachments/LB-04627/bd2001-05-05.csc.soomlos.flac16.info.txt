@@ -1,0 +1,56 @@
+Bob Dylan
+Nashville River Stages 2001
+Pontiac Stage - Riverfront Park
+Nashville, Tennessee
+May 5, 2001
+
+source: soomlos
+fob, center, ga standing
+core-sound cardioids > sony d8
+sony d8 > tascam cd-rw700 > cd-r
+eac > sound forge 7.0 > cd wave > flac
+
+Disc 1:
+01. Oh Babe, It Ain't No Lie [03:55]
+02. Mr. Tambourine Man [06:55]
+03. Masters Of War [05:46]
+04. Tangled Up In Blue [09:05]
+05. This World Can't Stand Long [04:10]
+06. Down In The Flood [05:04]
+07. Positively 4th Street [06:56]
+08. Stuck Inside Of Mobile With The Memphis Blues Again [07:52]
+09. Where Teardrops Fall [03:56]
+10. The Wicked Messenger [05:36]
+11. Rainy Day Women #12 & 35 [07:51]
+Total time: [67:14]
+
+Disc 2:
+01. Things Have Changed [06:43]
+02. Like A Rolling Stone [07:37]
+03. Knockin' On Heaven's Door [04:38]
+04. Highway 61 Revisited [06:10]
+Total time: [25:11]
+
+Band Members
+Bob Dylan - vocals, guitar, harp
+Charlie Sexton - guitar, dobro
+David Kemper - drums
+Larry Campbell - guitar, mandolin, steel guitar
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2001-05-05d1t01.flac:f6e62776b832115bc3b6698a545b11bf
+bd2001-05-05d1t02.flac:638b69dfd737299ccce41529eaf464af
+bd2001-05-05d1t03.flac:0c06385c628feb272e0ce6be9afda2ff
+bd2001-05-05d1t04.flac:6040b7c813835ebde949ca4c3a8b846b
+bd2001-05-05d1t05.flac:319fe682c1fc55e8391ea5d98958f4c1
+bd2001-05-05d1t06.flac:559cb87507ddb24f0ef6ebc18c7d8008
+bd2001-05-05d1t07.flac:57b2bea778973b0e9bef041dfa6a89d8
+bd2001-05-05d1t08.flac:1a9f799b1b2a0da30d77e515394c0d71
+bd2001-05-05d1t09.flac:d5fb029359063dd3f0ff8d2df1573662
+bd2001-05-05d1t10.flac:abd792a5fe8ee6d2146baa6922bf0bd0
+bd2001-05-05d1t11.flac:5eb52160ed79e29baad26c9bc9bb31d8
+bd2001-05-05d2t01.flac:bcdfbd463821c443f869255e0df36769
+bd2001-05-05d2t02.flac:9b1e8afc14cc82c5e01d933436794b44
+bd2001-05-05d2t03.flac:8560c94b6131864d929d9333535d4de6
+bd2001-05-05d2t04.flac:3763fd0514c2af1fd8fb99c77696bdc0

@@ -1,0 +1,19 @@
+LIKE A ROLLING STONE
+
+1	Like A Rolling Stone	01	H61 Interactive CD
+2	Like A Rolling Stone	02	H61 Interactive CD
+3	Like A Rolling Stone	03	stereo warmup from 1965 Revisited
+4	Like A Rolling Stone	R1	H61 Interactive CD
+5	Like A Rolling Stone	R2	H61 Interactive CD
+6	Like A Rolling Stone	R6	H61 Interactive CD
+7	Like A Rolling Stone	R6b	H61 Interactive CD
+8	Like A Rolling Stone	R8	H61 Interactive CD
+9	Like A Rolling Stone	R10	H61 Interactive CD
+10	Like A Rolling Stone	R10b	H61 Interactive CD
+11	Like A Rolling Stone		extended ending from H61 Revisited Again
+12	Like A Rolling Stone		mono mix from acetate
+13	Like A Rolling Stone		original mono release
+14	Like A Rolling Stone		Sundazed mono release
+15	Like A Rolling Stone		Stereo DCC release
+16	Like A Rolling Stone		Stereo SACD release
+17	Like A Rolling Stone		vocal removed from original stereo issue

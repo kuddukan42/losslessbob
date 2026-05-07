@@ -1,0 +1,95 @@
+===================
+===================
+===================
+=== md5 for: bd93-07-08-LTD-lbp51-fix.flacf
+===================
+===================
+===================
+e6a45bb4e99fbae483cdd47233b8abc5 *[1] DigiFlawFinder for - bd1993-07-08_Dylan_Paso_Por_Gijon_wavf.mht
+93e744557099c37e976d7ddcda880800 *[2] DigiFlawFinder for - bd1993-07-08_Dylan_Paso_Por_Gijon_wavf.mht
+45e4c72bc760af2e43bd7c531d959881 *artwork\scan0001.jpg
+b970bdf31af052c36c28e7161eaba634 *artwork\scan0002.jpg
+3d3aeed56fa6b4a6c856d63bb195328f *artwork\scan0003.jpg
+eb4ec1bebc0ca4d2f1a31292437c2e07 *artwork\scan0004.jpg
+23358f2f2cff5d5073c2e852ce00f866 *artwork\scan0005.jpg
+83dbb04cf5381d87992a239124b67057 *artwork\scan0006.jpg
+3ce388a88e6f01a8a31eda8f0a9adba2 *artwork\scan0007.jpg
+46bb3b0af3a213deedfea55e697d7c0b *artwork\scan0008.jpg
+f2bd5473aee8363a72cbd4846fba640f *bd1993-07-08-Dylan Paso Por... Gijon.ffp
+e8b470d375d74fc3676b8e153dba6d1e *bd1993-07-08-Dylan Paso Por... Gijon.txt
+3240ca6f9120dd94abd9d2358266b050 *bd1993-07-08.d1Track01.fix.sa_fa.JPG
+72c8d2a916728871cf3f2a7ffb0601fb *bd1993-07-08.d1Track06.fix.sa_fa.JPG
+d4311d350f8c546b9641b9a821ca3fb8 *bd1993-07-08_Dylan Paso Por... Gijon.md5
+388c5debd4f25a94b149a1d409597330 *d1Track01.fix.flac
+efa018d1e0b13037dd999dbc72c3c78b *d1Track02.fix.flac
+58c448432c8f659daf6f6ee09e721b7c *d1Track03.fix.flac
+529eaedd8c0b7f1c5af37ca784fb3823 *d1Track04.fix.flac
+eb275f93bb068c7ef5a5488984f24412 *d1Track05.fix.flac
+b69a760cecf93a902a867da04f9009c0 *d1Track06.fix.flac
+9cea9ee33e35d0f3b9d304512b97635b *d1Track07.fix.flac
+9fefeed079f72e0f3201b8192ef728f8 *d1Track08.fix.flac
+01c117a4cae89ae60ada3426820b537c *d1Track09.fix.flac
+401761c8bc9ecefc2276a51030d9e5a5 *d2Track01.fix.flac
+5b4a890a2952442f9e50b644bd14dab8 *d2Track02.fix.flac
+b2601feb41eb7e89608770777de5bd49 *d2Track03.fix.flac
+ad975deecab543f2167202228944c947 *d2Track04.fix.flac
+db7d2c79683bbd8936a7fae7e524a177 *d2Track05.fix.flac
+af0a525e42de8847ca1c6b506771982e *d2Track06.fix.flac
+ca82ec4048edfca5397b374cd0fd456b *d2Track07.fix.flac
+f50d05acbaa9073b2d05b9905e887d21 *d2Track08.fix.flac
+c3ecefef8ea3a7b250830ab31a397cfa *Dylan Paso Por Gijon d1.log
+af24b1db623f0c5bcfbdc8951d665cb6 *Dylan Paso Por Gijon d2.log
+180994a3881a57714bb9fcd48961f19c *RECTIFYING NOTE.txt
+===================
+===================
+===================
+=== ffp for: bd93-07-08-LTD-lbp51-fix.flacf
+===================
+===================
+===================
+d1Track01.fix.flac:c0fb957bcd3c6ab3f4466cf072887bfc
+d1Track02.fix.flac:9843dd8d8837369a0f44885963e44de7
+d1Track03.fix.flac:5721292e564d78e7b3875063f1955dd4
+d1Track04.fix.flac:b2cd9ba1b94e000842c4a95c56f8a37e
+d1Track05.fix.flac:017ae855bcac76343f71b65c9c4ebe90
+d1Track06.fix.flac:35eafeb3a29cdaac193bbd7ef394a6e8
+d1Track07.fix.flac:620d7a5ee379ab20cd3760ff05aecde0
+d1Track08.fix.flac:1e9f8d0f0c749e3686c26a12ccc638fd
+d1Track09.fix.flac:ea43af854e2d210fc86fbb2d98edcff4
+d2Track01.fix.flac:1a2eb87628775b08f9e0e992a02dc445
+d2Track02.fix.flac:f620d93b231d148602964df50acb31ed
+d2Track03.fix.flac:0ee589789fcd61f465dbe867b3a892e5
+d2Track04.fix.flac:85a454370d9582eeb03b835835903ec5
+d2Track05.fix.flac:536f2623d6a4e1160ddae6050122df4d
+d2Track06.fix.flac:f848a3d93a54d9fa47edcadf95c0bb9b
+d2Track07.fix.flac:75516d056d8b8682d10cf27985eaee12
+d2Track08.fix.flac:dc660334b65c494f6a6b293b071a6e4c
+===================
+===================
+===================
+=== shntool len for: bd93-07-08-LTD-lbp51-fix.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.07       49937708 B   ---   --   ---xx   flac  0.3775  d1Track01.fix.flac
+     9:31.41      100820876 B   ---   --   ---xx   flac  0.4799  d1Track02.fix.flac
+     7:48.07       82571708 B   ---   --   ---xx   flac  0.5035  d1Track03.fix.flac
+     8:47.43       93063980 B   ---   --   ---xx   flac  0.4918  d1Track04.fix.flac
+    12:51.61      136147916 B   ---   --   ---xx   flac  0.5119  d1Track05.fix.flac
+    12:58.74      137413292 B   ---   --   ---xx   flac  0.4621  d1Track06.fix.flac
+     6:13.47       65907788 B   ---   --   ---xx   flac  0.4522  d1Track07.fix.flac
+     6:37.22       70082588 B   ---   --   ---xx   flac  0.3649  d1Track08.fix.flac
+     5:53.30       62339804 B   ---   --   ---xx   flac  0.4062  d1Track09.fix.flac
+    10:56.52      115840748 B   ---   --   ---xx   flac  0.4262  d2Track01.fix.flac
+     8:39.42       91650428 B   ---   --   ---xx   flac  0.3942  d2Track02.fix.flac
+     6:55.08       73224860 B   ---   --   ---xx   flac  0.5204  d2Track03.fix.flac
+    10:12.72      108126188 B   ---   --   ---xx   flac  0.5367  d2Track04.fix.flac
+     9:50.39      104167772 B   ---   --   ---xx   flac  0.4509  d2Track05.fix.flac
+     7:32.03       79739900 B   ---   --   ---xx   flac  0.5312  d2Track06.fix.flac
+    10:06.68      107058380 B   ---   --   ---xx   flac  0.4929  d2Track07.fix.flac
+    11:55.00      126126044 B   ---   --   ---xx   flac  0.4329  d2Track08.fix.flac
+   151:34.16     1604219980 B                            0.4655  (17 files)
+===================
+===================
+===================

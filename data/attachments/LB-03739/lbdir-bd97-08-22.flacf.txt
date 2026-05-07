@@ -1,0 +1,68 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-22.flacf 
+=================== 
+=================== 
+=================== 
+6197a667ad629334ad7952a8c6cac478  bd1997-08-22 d1t01.flac
+7c3854e0268b1c274d9f514072d44fef  bd1997-08-22 d1t02.flac
+ef05e7f16d1af77f110f9ab9f729d841  bd1997-08-22 d1t03.flac
+8d294b997b446f5b898d05de18de61c5  bd1997-08-22 d1t04.flac
+c34d20ad55792cb3e181c7089b36078b  bd1997-08-22 d1t05.flac
+f0804bd5b84f9188a520e892fee13159  bd1997-08-22 d1t06.flac
+77e99fe7d1ec68ade6c20de404cefafc  bd1997-08-22 d1t07.flac
+3c29f631b42dbfb28e26c59c4241ffe6  bd1997-08-22 d1t08.flac
+717776ffec2316fe3d6e80bbedb976c0  bd1997-08-22 d2t01.flac
+d0cd8a13f1cc4bdb5690ad397384cd18  bd1997-08-22 d2t02.flac
+609b76da8a1314d16f526d1c50a2af18  bd1997-08-22 d2t03.flac
+1b11c157c68f02ac4feff4651e830482  bd1997-08-22 d2t04.flac
+b18f9c5a3e9b5c96563a90d59993ecd9  bd1997-08-22 d2t05.flac
+43b8fe1d54df6e3c34b4372a2624b9b9  bd1997-08-22 virginia beach.flacf.md5
+92e5a39fb849e7a3d2669538e33fcdb4  bd1997-08-22 virginia beach.txt
+88e77cd3ecc80e198d807ed1721dac45  bd97-08-22-LB-3739.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-22.flacf 
+=================== 
+=================== 
+=================== 
+bd1997-08-22 d1t01.flac:ab08429c247e777aabd852809d841e99
+bd1997-08-22 d1t02.flac:9fcc247decd92ec2008dd7153b32cf6a
+bd1997-08-22 d1t03.flac:6988e7211d82ba028ebfa1646d7224c5
+bd1997-08-22 d1t04.flac:3d8db9d48ea51b2cc2297cf32b4eae47
+bd1997-08-22 d1t05.flac:2ef2ba5ea28019098aa008405a23ae44
+bd1997-08-22 d1t06.flac:67e348f0716f58d8c6532f114702661a
+bd1997-08-22 d1t07.flac:2f031b3c95609d7b930d3aa9c8835554
+bd1997-08-22 d1t08.flac:e050ffd450e898e7460fe2e88e007201
+bd1997-08-22 d2t01.flac:88a09d7461583b76bb9085aa85ea42cb
+bd1997-08-22 d2t02.flac:cf68e78b3afcd00d4269660fee623292
+bd1997-08-22 d2t03.flac:4720566dc66d2566b56524c9ee7831f2
+bd1997-08-22 d2t04.flac:f4a13cb874d853abbae1835cd2ef5d5c
+bd1997-08-22 d2t05.flac:7f33e96defef9c0948d59d1fccd9e3fb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-22.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.28       54749900 B   ---   --   ---xx   flac  0.5197  bd1997-08-22 d1t01.flac
+     5:34.24       58974092 B   ---   --   ---xx   flac  0.5214  bd1997-08-22 d1t02.flac
+     7:47.66       82534076 B   ---   --   ---xx   flac  0.5300  bd1997-08-22 d1t03.flac
+     4:57.50       52508444 B   ---   --   ---xx   flac  0.5319  bd1997-08-22 d1t04.flac
+     7:23.65       78298124 B   ---   --   ---xx   flac  0.5562  bd1997-08-22 d1t05.flac
+     7:24.67       78479228 B   ---   --   ---xx   flac  0.4932  bd1997-08-22 d1t06.flac
+     8:59.06       95093756 B   ---   --   ---xx   flac  0.5305  bd1997-08-22 d1t07.flac
+     5:39.14       59832572 B   ---   --   ---xx   flac  0.4159  bd1997-08-22 d1t08.flac
+     5:46.67       61192028 B   ---   --   ---xx   flac  0.5066  bd1997-08-22 d2t01.flac
+     6:32.09       69170012 B   ---   --   ---xx   flac  0.4899  bd1997-08-22 d2t02.flac
+     6:08.55       65044604 B   ---   --   ---xx   flac  0.5327  bd1997-08-22 d2t03.flac
+     6:57.33       73636460 B   ---   --   ---xx   flac  0.4845  bd1997-08-22 d2t04.flac
+     6:30.07       68812508 B   ---   --   ---xx   flac  0.5430  bd1997-08-22 d2t05.flac
+    84:52.41      898325804 B                            0.5132  (13 files)
+=================== 
+=================== 
+=================== 

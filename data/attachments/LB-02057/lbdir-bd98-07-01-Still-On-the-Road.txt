@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-07-01-Still-On-the-Road 
+=================== 
+=================== 
+=================== 
+0f65381b3ec46b1a8d4dfbfaac4420a2  bd98-07-01-Still-On-the-Road.txt
+b0e4215c4b4789a9dc1c5b9b8edfe884  bd_98-07-01_cd1.shnf\VERIFY_bd_98-07-01_cd1.bat
+3c8260441884504c836901c747b8d03e  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_0 - Track_ 1.shn
+6af0fcd54fc84ab7d139f544f3ce87af  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_0 - Track_ 2.shn
+2d409183552b42aaaf790d0993255cc8  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_0 - Track_ 3.shn
+b9da5795f3579afc135c58664bac0ca2  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_0 - Track_ 4.shn
+4bedc06565d22ed2400960c73b3bde97  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_0 - Track_ 5.shn
+a9a230b1864ea239a420588df02e9335  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_0 - Track_ 6.shn
+1983e9c2b9643071e94da6a511befd0b  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_0 - Track_ 7.shn
+ca3f5dfb771e006274f495eb0684f3f1  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_0 - Track_ 8.shn
+8291490afdcd7e3c6c6a3381b77ce83d  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_encode_notes.txt
+2b20d3bfa45bc3630888d5756c7d6fa2  bd_98-07-01_cd1.shnf\bd_98-07-01_cd1_shn.md5
+178554e1fc7e56577fe622b1d15941df  bd_98-07-01_cd2.shnf\VERIFY_bd_98-07-01_cd2.bat
+52c55b10f91c7c30a74f5f5129807c3d  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 1.shn
+845bbe90de94e56d079812f05c1e5307  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 2.shn
+d25e13fd401b58e3508427f1adf09aae  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 3.shn
+32820b0b514d48d9e0c1fa766be770d7  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 4.shn
+db12da3114ddf429a23902845acd387e  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 5.shn
+da03dce01ad5f4b4088e31cb6a55208a  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 6.shn
+dae9c1b391a764bd329b45fcc973dc9a  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 7.shn
+e6b1b2502aaeb8f57d9bdf655b3ec636  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 8.shn
+732940528879997a9782ec2c175668c2  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_0 - Track_ 9.shn
+1df73147739301929b4e4d0fb1e42461  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_encode_notes.txt
+b240bc87fdfd559ddfa72a780153b5e9  bd_98-07-01_cd2.shnf\bd_98-07-01_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-07-01-Still-On-the-Road\bd_98-07-01_cd1.shnf 
+=================== 
+=================== 
+=================== 
+2961c1f5c9728b54800b426d88fc797f  [shntool]  bd_98-07-01_cd1_0_-_Track__1.wav
+898854f28ff8e7d0ff68a776b09059ec  [shntool]  bd_98-07-01_cd1_0_-_Track__2.wav
+b24ec70d06afd5fd9f84f939d0f7ba9d  [shntool]  bd_98-07-01_cd1_0_-_Track__3.wav
+b69cab4479715e3faf374d3bdddf8986  [shntool]  bd_98-07-01_cd1_0_-_Track__4.wav
+eedd0e386d1fb556bb2d9cd037a94c98  [shntool]  bd_98-07-01_cd1_0_-_Track__5.wav
+3c791406118f5f6d00859598f6968481  [shntool]  bd_98-07-01_cd1_0_-_Track__6.wav
+91c0bbcca9e977c63af4c6e8ce0837b4  [shntool]  bd_98-07-01_cd1_0_-_Track__7.wav
+82e9b57224d99f06b9c4669ec888769b  [shntool]  bd_98-07-01_cd1_0_-_Track__8.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-07-01-Still-On-the-Road\bd_98-07-01_cd2.shnf 
+=================== 
+=================== 
+=================== 
+46ebecec508a2195d77a30848937558b  [shntool]  bd_98-07-01_cd2_0_-_Track__1.wav
+f3d4037648586c8f15bb47d387f34db1  [shntool]  bd_98-07-01_cd2_0_-_Track__2.wav
+9f61eb1ccaebb80dfd52a624996fa7b4  [shntool]  bd_98-07-01_cd2_0_-_Track__3.wav
+e2231a7a4c625484cb3d78f1bf94cc8e  [shntool]  bd_98-07-01_cd2_0_-_Track__4.wav
+17af3a595ca5007f6215ff553d701085  [shntool]  bd_98-07-01_cd2_0_-_Track__5.wav
+3fdb75d259c89e5db143f84a051591aa  [shntool]  bd_98-07-01_cd2_0_-_Track__6.wav
+2659a0e43fc2440126c78187683e25a3  [shntool]  bd_98-07-01_cd2_0_-_Track__7.wav
+5a02666e5cf56195a5456c6b7262a0bb  [shntool]  bd_98-07-01_cd2_0_-_Track__8.wav
+14356870024acafb8226e2a8eec2560b  [shntool]  bd_98-07-01_cd2_0_-_Track__9.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-01-Still-On-the-Road\bd_98-07-01_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:36.05       59281772 B   -b-   --   -----    wav  1.0000  bd_98-07-01_cd1_0_-_Track__1.wav
+     8:21.16       88414076 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd1_0_-_Track__2.wav
+     6:33.18       69367580 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd1_0_-_Track__3.wav
+     5:41.30       60223004 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd1_0_-_Track__4.wav
+    10:29.37      111042668 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd1_0_-_Track__5.wav
+     6:18.53       66803900 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd1_0_-_Track__6.wav
+     4:03.29       42933452 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd1_0_-_Track__7.wav
+     5:56.20       62845484 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd1_0_-_Track__8.wav
+    52:59.58      560911936 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-01-Still-On-the-Road\bd_98-07-01_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:21.50       46157612 B   -b-   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__1.wav
+     5:21.44       56727932 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__2.wav
+     6:32.02       69153548 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__3.wav
+     6:03.24       64089692 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__4.wav
+     6:56.13       73413020 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__5.wav
+     6:10.53       65392700 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__6.wav
+     9:54.22      104833388 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__7.wav
+     4:26.14       46955372 B   ---   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__8.wav
+    10:20.03      109376028 B   -b-   --   -----    wav  1.0000  bd_98-07-01_cd2_0_-_Track__9.wav
+    60:06.00      636099292 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

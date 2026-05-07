@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-06-26-UMM.flacf 
+=================== 
+=================== 
+=================== 
+85086c57e6e9d9d794e0b138a930ced7  bd2007June26_UMM.ffp
+eb3b0cdc98bdb682fafc6f886ae0a42f  bd2007June26d1t01.flac
+f412ef0aed786067a37f449d555c62e3  bd2007June26d1t02.flac
+32c35f880ffe45b0e098630c69a296f4  bd2007June26d1t03.flac
+39d70d1a0c7246ac84102051a1c4efe0  bd2007June26d1t04.flac
+e35052465453616023f6a36a8abcfdc7  bd2007June26d1t05.flac
+d6926c49c0da9b68cf861e70e2933ab1  bd2007June26d1t06.flac
+0c0fd60c91f1954538f0e58b92ff152c  bd2007June26d1t07.flac
+282ddeb3be5f6faec992d06cf83c26f3  bd2007June26d1t08.flac
+6f6ed8e234ac4c1c75c96324d0ac3feb  bd2007June26d1t09.flac
+a44642426c45f330f1200290d718fa59  bd2007June26d1t10.flac
+ae8c23c5ed95127be81bf4e3ed9dca6d  bd2007June26d1t11.flac
+a564cceeb40c748deed5f93868f96feb  bd2007June26d1t12.flac
+24ad70b9b5d8ae134371ebfd2c77dd9f  bd2007June26d2t01.flac
+3a3963b4a766898b9f4c25a29db7d848  bd2007June26d2t02.flac
+16d265052b953b36dd7da3c6ffbe4974  bd2007June26d2t03.flac
+746b3a78b535eb1a2922131e6399eb18  bd2007June26d2t04.flac
+ad2b2d7db3b3a6dc470100bec841e463  bd2007June26d2t05.flac
+a2daf4b7b9a416889bf3b5b57ad29596  bd2007June26d2t06.flac
+41dc05df8634382871d8fc5b489b7d8f  bd2007June26d2t07.flac
+a105916bdf50ae2e9a76ef58af1e04c1  bd2007June26d2t08.flac
+6ee001bd5316f21b11fc8794e7ee2aee  Setlist.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-06-26-UMM.flacf 
+=================== 
+=================== 
+=================== 
+bd2007June26d1t01.flac:1fdd2a567f9fa1e4d1cee3093e1dc553
+bd2007June26d1t02.flac:e7b2050e530dfe3c633287bcbeb7b59d
+bd2007June26d1t03.flac:5f8075f83a064df00e2cecfaef86b8c2
+bd2007June26d1t04.flac:f4ff79f167139d38d78a77d7d8927a37
+bd2007June26d1t05.flac:f6ad58ee6931db53ae98dd6882b91af6
+bd2007June26d1t06.flac:74b0d16ef0060fd2e29ed2e2456bb07b
+bd2007June26d1t07.flac:20fec8ac117dd49d3aafc5eecbb09921
+bd2007June26d1t08.flac:a4fb197ec78145d1edc8f4101234ca22
+bd2007June26d1t09.flac:ea5ca4724ea8936bb4daf8272b06962f
+bd2007June26d1t10.flac:85b462ab10f2c1c951e41d514a2a3877
+bd2007June26d1t11.flac:5afe3a94711df181b2621c2669c04897
+bd2007June26d1t12.flac:0dbfa9f2ec36966070f7302e029402fb
+bd2007June26d2t01.flac:70581bfd8d1524628061aecc609b932f
+bd2007June26d2t02.flac:5f696a02af81b14e7fee262e26718cd0
+bd2007June26d2t03.flac:f68b79c4dc71ee13e5b8645257afd6f6
+bd2007June26d2t04.flac:59c5f157b6c8083e84318588a5d8e4ee
+bd2007June26d2t05.flac:51f090062c5a783b3596089df624100e
+bd2007June26d2t06.flac:6d8433e955a64cc01c7f13e367baa6c8
+bd2007June26d2t07.flac:5d93a6945d9b5e08480b86074ae2e887
+bd2007June26d2t08.flac:ff152e148fb45e57b3a8d0a84ae155ed
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-06-26-UMM.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.42       47903228 B   ---   --   3--xx   flac  0.5924  bd2007June26d1t01.flac
+     4:56.34       52294412 B   ---   --   3--xx   flac  0.5747  bd2007June26d1t02.flac
+     5:07.26       54215996 B   ---   --   3--xx   flac  0.5943  bd2007June26d1t03.flac
+     7:13.21       76430636 B   ---   --   3--xx   flac  0.6074  bd2007June26d1t04.flac
+     7:55.41       83886476 B   ---   --   3--xx   flac  0.5661  bd2007June26d1t05.flac
+     6:26.63       68238620 B   ---   --   3--xx   flac  0.5907  bd2007June26d1t06.flac
+     7:39.25       81026444 B   ---   --   3--xx   flac  0.5580  bd2007June26d1t07.flac
+     6:25.43       68015180 B   ---   --   3--xx   flac  0.5715  bd2007June26d1t08.flac
+     5:14.02       55394348 B   ---   --   3--xx   flac  0.5757  bd2007June26d1t09.flac
+     7:39.60       81108764 B   ---   --   3--xx   flac  0.5894  bd2007June26d1t10.flac
+    11:32.66      122224076 B   ---   --   3--xx   flac  0.5851  bd2007June26d1t11.flac
+     4:54.17       51901628 B   ---   --   3--xx   flac  0.5698  bd2007June26d1t12.flac
+     6:38.30       70277804 B   ---   --   3--xx   flac  0.5560  bd2007June26d2t01.flac
+     5:02.19       53317532 B   ---   --   3--xx   flac  0.6204  bd2007June26d2t02.flac
+     4:01.51       42632396 B   ---   --   3--xx   flac  0.4732  bd2007June26d2t03.flac
+     6:06.26       64623596 B   ---   --   3--xx   flac  0.6083  bd2007June26d2t04.flac
+     6:43.20       71136284 B   ---   --   3--xx   flac  0.5525  bd2007June26d2t05.flac
+     8:00.15       84707324 B   ---   --   3--xx   flac  0.4162  bd2007June26d2t06.flac
+     3:38.59       38594012 B   ---   --   3--xx   flac  0.5489  bd2007June26d2t07.flac
+     3:02.37       32191868 B   ---   --   3--xx   flac  0.5277  bd2007June26d2t08.flac
+   122:50.22     1300120624 B                            0.5646  (20 files)
+=================== 
+=================== 
+=================== 

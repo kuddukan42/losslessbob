@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd97-02-20-b.flacf
+===================
+===================
+===================
+e3d6c325ee7728ecf48abdd39126bbac *BD 1997-02-20 Sendai Japan.md5
+db93ff213c01feb749fda721c5703a0a *bd1997-02-20 Sendai Japan.txt
+86ef83a58ff65fb1cbe65d9d53df2dcc *disk 1 shn\01 Crash On The Levee.shn
+7d5d0eb4d1f1b666be149408aab30551 *disk 1 shn\02 The Man In Me.shn
+f7323c5888d77578949671661074bf53 *disk 1 shn\03 All Along The Watchtower.shn
+288d58f7323d095de304d16cfaa1e9e3 *disk 1 shn\04 What Good A I.shn
+7e545a74609fbea490b4c0b57b39e6db *disk 1 shn\05 It Takes A Lot To Laugh, It Takes A Train To Cry.shn
+1a041f101365a3bbbbff8d4dba431a47 *disk 1 shn\06 Silvio.shn
+8aecc4bd6dc1c92d2911a399d7862a21 *disk 1 shn\07 Friend Of The Devil.shn
+66b3e97ef58f3cec02c19dde90914655 *disk 1 shn\08 John Brown.shn
+ab528a38a67db272e985dc8ecc32d354 *disk 1 shn\09 Don't Think Twice, It's Alright.shn
+89db0bdcfa4c1f1d2a582b7e662916f1 *disk 1 shn\10 Jokerman.shn
+54d1b8a06662059cbde78d288b7c1709 *disk 2 shn\11 Ballad Of A Thin Man.shn
+4757e3a8c518cab29295edc7114330ce *disk 2 shn\12 Everything Is Broken.shn
+d3ff557b6aa37a09111d5f9ff4a41b06 *disk 2 shn\13 Like A Rolling Stone.shn
+0ae501f41490a471ebe3c90f71e754bd *disk 2 shn\14 It Ain't Me Babe.shn
+4730f1b05ea69471bb29ba43aec3cfc1 *disk 2 shn\15 Rainy Day Women #12 & 35.shn
+===================
+===================
+===================
+=== shntool md5/hash for: bd97-02-20-b.flacf
+===================
+===================
+===================
+48d08c88b528d232dd87e43ca2f2db46  [shntool]  disk 1 shn\01 Crash On The Levee.shn
+3f5997810597a1bb2f0f6dba1cf1d867  [shntool]  disk 1 shn\02 The Man In Me.shn
+92a145e53ddad9b0a6a39bd185e7c371  [shntool]  disk 1 shn\03 All Along The Watchtower.shn
+9bc6e75933dcf24face800eac22caf1f  [shntool]  disk 1 shn\04 What Good A I.shn
+cb6838b0941e452fc9cccf66466ec4d6  [shntool]  disk 1 shn\05 It Takes A Lot To Laugh, It Takes A Train To Cry.shn
+35e93eb238f85c04f25a47c3abc83326  [shntool]  disk 1 shn\06 Silvio.shn
+3d1c01860488a98070d1c50941d8aaf2  [shntool]  disk 1 shn\07 Friend Of The Devil.shn
+698b5db1ba29ca0419c32666560e5fb1  [shntool]  disk 1 shn\08 John Brown.shn
+d6791c7764cded84907054d2bee83435  [shntool]  disk 1 shn\09 Don't Think Twice, It's Alright.shn
+dc8564bcabebdb40314a5defd2eea35b  [shntool]  disk 1 shn\10 Jokerman.shn
+71d1e75853bff02969b603c105e05d25  [shntool]  disk 2 shn\11 Ballad Of A Thin Man.shn
+e5abe8ec8cdbe4e2eb0b8730aa4be14d  [shntool]  disk 2 shn\12 Everything Is Broken.shn
+9c7f0f530b303829d3aa042f11f76873  [shntool]  disk 2 shn\13 Like A Rolling Stone.shn
+0f111e16bf774d1156dbe8786ffd5b38  [shntool]  disk 2 shn\14 It Ain't Me Babe.shn
+94d53030a23b0af3ced37e55c9b48682  [shntool]  disk 2 shn\15 Rainy Day Women #12 & 35.shn
+===================
+===================
+===================
+=== shntool len for: bd97-02-20-b.flacf\disk 1 shn
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.43       54079580 B   ---   --   ---xx    shn  0.6425  01 Crash On The Levee.shn
+     5:46.05       61046204 B   ---   --   ---xx    shn  0.6235  02 The Man In Me.shn
+     6:50.40       72418124 B   ---   --   ---xx    shn  0.6400  03 All Along The Watchtower.shn
+     7:06.35       75228764 B   ---   --   ---xx    shn  0.5377  04 What Good A I.shn
+     8:30.50       90081644 B   ---   --   ---xx    shn  0.6268  05 It Takes A Lot To Laugh, It Takes A Train To Cry.shn
+     7:37.37       80701868 B   ---   --   ---xx    shn  0.7011  06 Silvio.shn
+     7:35.10       80285564 B   ---   --   ---xx    shn  0.6460  07 Friend Of The Devil.shn
+     7:07.48       75435740 B   ---   --   ---xx    shn  0.5846  08 John Brown.shn
+     7:46.05       82214204 B   ---   --   ---xx    shn  0.6326  09 Don't Think Twice, It's Alright.shn
+     9:03.13       95815820 B   ---   --   ---xx    shn  0.6389  10 Jokerman.shn
+    72:29.61      767307512 B                            0.6280  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd97-02-20-b.flacf\disk 2 shn
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:07.07       85923308 B   ---   --   ---xx    shn  0.6346  11 Ballad Of A Thin Man.shn
+     8:00.53       84796700 B   ---   --   ---xx    shn  0.6474  12 Everything Is Broken.shn
+    11:33.40      122339324 B   ---   --   ---xx    shn  0.6481  13 Like A Rolling Stone.shn
+    10:44.70      113766284 B   ---   --   ---xx    shn  0.6229  14 It Ain't Me Babe.shn
+     7:52.42       83359628 B   ---   --   ---xx    shn  0.6564  15 Rainy Day Women #12 & 35.shn
+    46:18.62      490185244 B                            0.6412  (5 files)
+===================
+===================
+===================

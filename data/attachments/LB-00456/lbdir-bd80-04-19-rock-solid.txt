@@ -1,0 +1,52 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-04-19-rock-solid 
+=================== 
+=================== 
+=================== 
+c19363c201b912e16332a4ae39fde6ab  01 - Track01.shn
+3770f1ce7ac55e3761a585045708b9e4  02 - Track02.shn
+e8a57bbeca70aa0da69e77ecfde692f5  03 - Track03.shn
+f3ebca36b2e6e0abf578029e7fbf480f  04 - Track04.shn
+d1a369c6325ac67bcd7a54495ac9ad55  05 - Track05.shn
+52e919869113e50c5ba17fc7e5ba0ba0  06 - Track06.shn
+04549a0c6be721a9573a9bcf5bbc38ef  07 - Track07.shn
+fa752870be97690384a7db674bd4ff76  08 - Track08.shn
+a084fba8595de13bb75c6d2e0818a190  bd-rock-solid.txt
+ac7f0c080114249ce14fdf6ffb2189b1  SHN_CheckSum.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-04-19-rock-solid 
+=================== 
+=================== 
+=================== 
+3bee85c5d2bc1cc3e7f4b80bbe71a290  [shntool]  01_-_Track01.wav
+36dc7e8969214c67a8411c69c2bfaf29  [shntool]  02_-_Track02.wav
+ca04cd7b794f70a415672b541e2abae5  [shntool]  03_-_Track03.wav
+b25638bcf05e1938844155f50c051a1f  [shntool]  04_-_Track04.wav
+21edaa33d56f92b59d4c440dfa27a188  [shntool]  05_-_Track05.wav
+f896a676eee9325483dac7e80602cc30  [shntool]  06_-_Track06.wav
+95893b51da6cca98e6afc57c9af67c19  [shntool]  07_-_Track07.wav
+4c64340bde5a0cb9adbf523aedc6909d  [shntool]  08_-_Track08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-04-19-rock-solid 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:02.28       74506700 B   ---   --   ---xx    shn  0.7799  01 - Track01.shn
+     6:25.36       67998716 B   ---   --   ---xx    shn  0.6876  02 - Track02.shn
+     6:06.72       64731788 B   ---   --   ---xx    shn  0.7703  03 - Track03.shn
+     5:20.12       56476268 B   ---   --   ---xx    shn  0.7842  04 - Track04.shn
+     6:49.51       72267596 B   ---   --   ---xx    shn  0.8067  05 - Track05.shn
+     4:30.44       47731532 B   ---   --   ---xx    shn  0.8127  06 - Track06.shn
+     6:49.38       72237020 B   ---   --   ---xx    shn  0.6305  07 - Track07.shn
+     4:27.20       47145884 B   ---   --   ---xx    shn  0.7205  08 - Track08.shn
+    47:32.01      503095504 B                            0.7466  (8 files)
+=================== 
+=================== 
+=================== 

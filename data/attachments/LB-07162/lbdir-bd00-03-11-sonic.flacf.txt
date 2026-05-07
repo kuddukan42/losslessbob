@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-11-sonic.flacf 
+=================== 
+=================== 
+=================== 
+97b42c6a73afbc0a0199835f37c105dc  Bob Dylan 2000-03-11 San Luis Obispo, Ca Flac16FFP.ffp
+6a6b0dbc76f8f2801fd800304ca118c7  Dylan 2000-03-11 San Luis Obispo.txt
+e2592087ccee89c91cb33718122557bf  Dylan2000-03-11d1t01.flac
+9327c7caa40517fe8428aff850312c11  Dylan2000-03-11d1t02.flac
+319d5c3c4c3320696cdb345cc763e7fb  Dylan2000-03-11d1t03.flac
+7e6966c9e3e165d86c0ad4f3e21a4075  Dylan2000-03-11d1t04.flac
+93c237673837d34ff05205380185b2ce  Dylan2000-03-11d1t05.flac
+4c10887680db69035aeff492bcb1955e  Dylan2000-03-11d1t06.flac
+61a0a3ca5f268c102aa3882ca450aba9  Dylan2000-03-11d1t07.flac
+8673461f96e384f208d6c49cfe1646d2  Dylan2000-03-11d1t08.flac
+28b5093756386498c01a324a88ddaf9a  Dylan2000-03-11d1t09.flac
+b59cfbdb815f72f9c34e7aeb4da81601  Dylan2000-03-11d1t10.flac
+feb6c28b55aa079ca6cb9495ceb28502  Dylan2000-03-11d1t11.flac
+26d0f2fef4025156c8cb94d9f49692a9  Dylan2000-03-11d1t12.flac
+264ef7a438bdac1805b5af525a5eb81a  Dylan2000-03-11d1t13.flac
+221110c64d5405f2e5fa449fed784267  Dylan2000-03-11d1t14.flac
+04e423729238cd663dd6270fbe2c345d  Dylan2000-03-11d2t01.flac
+153f0f1aae827da97d886622c66edf67  Dylan2000-03-11d2t02.flac
+308e3bec16357decf99630735ef50345  Dylan2000-03-11d2t03.flac
+d1efddb9442b8162e570d45da2033900  Dylan2000-03-11d2t04.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-11-sonic.flacf 
+=================== 
+=================== 
+=================== 
+Dylan2000-03-11d1t01.flac:d2ba7a471d3329e36d551d688e931078
+Dylan2000-03-11d1t02.flac:47992df1e9f59e0486559a0327444c69
+Dylan2000-03-11d1t03.flac:c56b139d5403eb7038db272f3b8dea22
+Dylan2000-03-11d1t04.flac:3379660bbc812939b8bccb8bdd29bbaf
+Dylan2000-03-11d1t05.flac:b2859b4df9c0ec06cc03c905dfff5abd
+Dylan2000-03-11d1t06.flac:376b2e05caa9ac91011a4fd5187c97cd
+Dylan2000-03-11d1t07.flac:52094eff474c815f165be3d976b1d45d
+Dylan2000-03-11d1t08.flac:5d89e1a7e72a09d35fdd4ffe26062024
+Dylan2000-03-11d1t09.flac:c8dab1e0a86710fb6e0bbfb606f977b8
+Dylan2000-03-11d1t10.flac:86495a5ed4b25f477e1135efd44031d9
+Dylan2000-03-11d1t11.flac:ea7dc9277e33eb918825401196d9bb42
+Dylan2000-03-11d1t12.flac:aec297ce319ad1457afb04671f5cfd28
+Dylan2000-03-11d1t13.flac:ac274f21ac2d0bc4bb9daeaf4fee5366
+Dylan2000-03-11d1t14.flac:f9d14500ed6a5a2cb91360d63b8fd7a7
+Dylan2000-03-11d2t01.flac:5b61ce557bbf6427109b4d9e634bf801
+Dylan2000-03-11d2t02.flac:71279e1770e95f81de380ea285e9a74a
+Dylan2000-03-11d2t03.flac:36969f46712b6fb3825c9983e8d8304f
+Dylan2000-03-11d2t04.flac:e3f0d9661a84edc3f6f26edf9c24aa06
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-11-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.56       35588156 B   ---   --   ---xx   flac  0.5307  Dylan2000-03-11d1t01.flac
+     3:55.34       41534012 B   ---   --   ---xx   flac  0.4529  Dylan2000-03-11d1t02.flac
+     7:50.60       83049164 B   ---   --   ---xx   flac  0.5140  Dylan2000-03-11d1t03.flac
+     7:00.34       74168012 B   ---   --   ---xx   flac  0.5931  Dylan2000-03-11d1t04.flac
+     4:10.67       44257628 B   ---   --   ---xx   flac  0.4888  Dylan2000-03-11d1t05.flac
+     5:15.58       55702460 B   ---   --   ---xx   flac  0.5680  Dylan2000-03-11d1t06.flac
+     2:30.51       26579996 B   ---   --   ---xx   flac  0.5777  Dylan2000-03-11d1t07.flac
+     4:00.40       42430124 B   ---   --   ---xx   flac  0.5263  Dylan2000-03-11d1t08.flac
+     5:20.33       56525660 B   ---   --   ---xx   flac  0.5942  Dylan2000-03-11d1t09.flac
+     6:25.51       68033996 B   ---   --   ---xx   flac  0.4116  Dylan2000-03-11d1t10.flac
+     0:40.24        7112492 B   ---   --   ---xx   flac  0.4939  Dylan2000-03-11d1t11.flac
+     8:00.69       84834332 B   ---   --   ---xx   flac  0.6117  Dylan2000-03-11d1t12.flac
+     6:30.34       68876012 B   ---   --   ---xx   flac  0.4954  Dylan2000-03-11d1t13.flac
+     8:13.51       87085196 B   ---   --   ---xx   flac  0.5833  Dylan2000-03-11d1t14.flac
+     7:36.27       80501948 B   ---   --   ---xx   flac  0.4627  Dylan2000-03-11d2t01.flac
+     4:20.45       45969884 B   ---   --   ---xx   flac  0.6115  Dylan2000-03-11d2t02.flac
+     1:00.50       10701644 B   ---   --   ---xx   flac  0.4935  Dylan2000-03-11d2t03.flac
+     7:45.42       82124828 B   ---   --   ---xx   flac  0.4990  Dylan2000-03-11d2t04.flac
+    94:01.01      995075544 B                            0.5315  (18 files)
+=================== 
+=================== 
+=================== 

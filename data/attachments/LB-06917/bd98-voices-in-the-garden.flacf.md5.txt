@@ -1,0 +1,10 @@
+19c8137d72c5dafb0e8c266f9f346f28 *bd98-voices-in-the-garden-d1t01.flac
+c46f13623fe6505a777bc8083736c4aa *bd98-voices-in-the-garden-d1t02.flac
+662fcc84708bb93670ec59f4018cd2f3 *bd98-voices-in-the-garden-d1t03.flac
+bc910d296620711da42e6a52a8c65ad9 *bd98-voices-in-the-garden-d1t04.flac
+b95546bb4c81b87a86ebfb66c1542e10 *bd98-voices-in-the-garden-d1t05.flac
+24fe6976ccc4d496c2735b19ca4fb851 *bd98-voices-in-the-garden-d1t06.flac
+d6ab9e6908b65945edb6467005814240 *bd98-voices-in-the-garden-d1t07.flac
+99908993b8bd19c7f462456dc41ad349 *bd98-voices-in-the-garden-d1t08.flac
+2169d9726db1cf24e57a3280ad19adb8 *bd98-voices-in-the-garden-d1t09.flac
+ec5a0fa60ce18c779077a5ea7b0d006a *bd98-voices-in-the-garden-d1t10.flac

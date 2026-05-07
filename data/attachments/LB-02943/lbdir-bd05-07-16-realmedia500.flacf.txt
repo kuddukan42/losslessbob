@@ -1,0 +1,59 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-07-16-realmedia500.flacf 
+=================== 
+=================== 
+=================== 
+1e7d392927f46b86eba4216ac234569e  1.flac
+9019c2955a11f16e2155ec315dcbbe64  10.flac
+de721faf76f3bb681c61ea44ae93f7e1  2.flac
+e44464836edff72d2d4274159f4e781d  3.flac
+f585c7222f2232f3eb1ccb5c588a74e0  4.flac
+9db899e44ddfc6aed0c28c89f851a644  5.flac
+ccd687917800d70785170513882602ea  6.flac
+d6ec7b68406dcfa8a428192cf5f2da5d  7.flac
+344f3d07267cb1215a48026f4d67e270  8.flac
+b661d60305e20dfd282ba0cff4cf8d29  9.flac
+1ca7356ae58d05cf3b68cb306c7d74c4  bd05-07-16-realmedia500-LB-2943.txt
+b7c5bd28a1f6ab785ce65f5b4c58a9f4  Info.txt
+2de6a8dcdf8bdd3f84d57a1ac5a89acf  Spectralanylyse.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-07-16-realmedia500.flacf 
+=================== 
+=================== 
+=================== 
+1.flac:d99ac000118058f756f04c7fc6c10b88
+10.flac:9674a3e32969e61b3e25c1f0dcb53dd5
+2.flac:30f6c80bc9234db8056df78b1d0bc388
+3.flac:dce47eb785f7991cb066624338b90dfb
+4.flac:aaa51d9ae4928aae204f2581ded15560
+5.flac:595e6155eb448f4e5f0d0a3f1115947b
+6.flac:f372bf2a459c01451a25c910ce6475fa
+7.flac:8c37aefdeb65df1040c24ea80c0b9728
+8.flac:dc2c187ff18c4e5124e51589f2473fb9
+9.flac:2d2ee1ea48352dd4dedbec32b7d6cb5f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-07-16-realmedia500.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.67        6508028 B   ---   --   ---xx   flac  0.4303  1.flac
+     4:29.00       47451644 B   ---   --   ---xx   flac  0.5350  10.flac
+     4:37.52       48985148 B   ---   --   ---xx   flac  0.6112  2.flac
+     4:04.28       43107500 B   ---   --   ---xx   flac  0.5487  3.flac
+     5:09.72       54676988 B   ---   --   ---xx   flac  0.5653  4.flac
+     5:18.20       56142284 B   ---   --   ---xx   flac  0.5328  5.flac
+     6:01.36       63765116 B   ---   --   ---xx   flac  0.5710  6.flac
+     6:02.36       63941516 B   ---   --   ---xx   flac  0.5538  7.flac
+     5:54.22       62497388 B   ---   --   ---xx   flac  0.5604  8.flac
+     6:08.05       64927004 B   ---   --   ---xx   flac  0.5330  9.flac
+    48:22.38      512002616 B                            0.5548  (10 files)
+=================== 
+=================== 
+=================== 

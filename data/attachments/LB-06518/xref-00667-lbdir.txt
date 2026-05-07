@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-16-c.flacf 
+=================== 
+=================== 
+=================== 
+d06bb6e24bd3f96a8bc92aeee752cffb  01. Introduction.flac
+248a151822e8dc59c5737769cd1b90c5  02. Absolutely Sweet Marie.flac
+5e3f660ad85262313199d751085aad01  03. Not Dark Yet.flac
+119c15adfecd2835073513ab354bcdf4  04. Cold Irons Bound.flac
+c1556198a1985b6df829c55567992699  05. Simple Twist of Fate.flac
+ec72c88fa22cee4caf87a140740b7afc  06. Silvio.flac
+b38ac0ff4b3f6c7b2f35481e8c969ed5  07. One Too Many Mornings.flac
+e47f6d5c93730fb3a6150f87a5dee55b  08. John Brown.flac
+98ac7f866b58900c3a4fca72021ef22b  09. Tangled Up In Blue.flac
+8ad7186ede8982e374f8825c6868a35a  10. Million Miles.flac
+3579e81dffe3ca47486cc0e07d7ba2c5  11. Just Like A Woman.flac
+effae5aaf4fabd221a91f84b27ceb811  12. Highway 61 Revisited.flac
+fc332ee1a5dff375248063dbe734c427  13. Like A Rolling Stone.flac
+4999c12a3a9156110a4854832c4692bd  14. My Back Pages.flac
+c9e80493c9206d6efd79e1ab3363af7f  15. Love Sick.flac
+ff07f8d130026bc0fe0779cd706499af  16. Rainy Day Women # 12 & 35.flac
+55c33dc33ec3b01c75f3106bf76ac5dc  1998-01-16,New York City,New York,(Estados Unidos).txt
+830d042c241e5774d7dede5ed36e5ecc  Bob Dylan,1998-01-16,New York City,New York,(Estados Unidos).nfo
+a725daed93258c7737646c560a26e6d1  FCMD5-sums.MD5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-16-c.flacf 
+=================== 
+=================== 
+=================== 
+01. Introduction.flac:3e672673b200d671ef20c10f2da167eb
+02. Absolutely Sweet Marie.flac:b730643a3b7d2f9f2c37dcb5d631ddba
+03. Not Dark Yet.flac:7a6f1caecb38f632612014559744b0c2
+04. Cold Irons Bound.flac:1e9ad1004e124983cd0db6b1cc7eb9ec
+05. Simple Twist of Fate.flac:f0a4d7264de1eefee1b2c120e634077f
+06. Silvio.flac:70d313d815f07a3e4502ea93e5b919df
+07. One Too Many Mornings.flac:b898362a0d988df332eb1321b461b731
+08. John Brown.flac:e7e4925e86fab46440da5d36146f25de
+09. Tangled Up In Blue.flac:b944fa835370554f835faa9fa97b13f6
+10. Million Miles.flac:55f6b611369eb54cb03da1033e16d26a
+11. Just Like A Woman.flac:8b3a34fc05a4eabeea73238872ba954e
+12. Highway 61 Revisited.flac:22e2571b521fb341cd56bb2c7bc994da
+13. Like A Rolling Stone.flac:81b582580dd902465484b3d20f4c06af
+14. My Back Pages.flac:6ad50e20682efdd72e2ab307af88f615
+15. Love Sick.flac:f676d4fb319d6dd0642cc8cca773a968
+16. Rainy Day Women # 12 & 35.flac:068094abef3e9d7933a0423c0baccd2f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-16-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:17.37        3085868 B   ---   --   ---xx   flac  0.4182  01. Introduction.flac
+     4:04.64       43192172 B   ---   --   ---xx   flac  0.5576  02. Absolutely Sweet Marie.flac
+     5:42.50       60446444 B   ---   --   ---xx   flac  0.5165  03. Not Dark Yet.flac
+     6:37.58       70167260 B   ---   --   ---xx   flac  0.5497  04. Cold Irons Bound.flac
+     7:09.41       75772076 B   ---   --   ---xx   flac  0.5179  05. Simple Twist of Fate.flac
+     6:50.55       72453404 B   ---   --   ---xx   flac  0.5708  06. Silvio.flac
+     5:36.55       59399804 B   ---   --   ---xx   flac  0.4650  07. One Too Many Mornings.flac
+     6:14.65       66126524 B   ---   --   ---xx   flac  0.4529  08. John Brown.flac
+     8:42.56       92212556 B   ---   --   ---xx   flac  0.5563  09. Tangled Up In Blue.flac
+     6:04.52       64331948 B   ---   --   ---xx   flac  0.5368  10. Million Miles.flac
+     6:10.28       65333900 B   ---   --   ---xx   flac  0.5335  11. Just Like A Woman.flac
+     7:32.28       79798700 B   ---   --   ---xx   flac  0.5777  12. Highway 61 Revisited.flac
+     8:56.67       94708028 B   ---   --   ---xx   flac  0.5669  13. Like A Rolling Stone.flac
+     5:46.40       61128524 B   ---   --   ---xx   flac  0.5323  14. My Back Pages.flac
+     5:43.49       60620492 B   ---   --   ---xx   flac  0.5140  15. Love Sick.flac
+     4:50.43       51257180 B   ---   --   ---xx   flac  0.5871  16. Rainy Day Women # 12 & 35.flac
+    96:22.38     1020034880 B                            0.5369  (16 files)
+=================== 
+=================== 
+=================== 

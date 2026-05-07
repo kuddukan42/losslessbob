@@ -1,0 +1,26 @@
+234bf29fc07d15d0be5880ab33fca47a  00 intro.flac
+674ea0c01d041ac9d0dc076b68031dd9  01 Watching The River Flow.flac
+1d5d52d02e9849e61c815c2fe9a9c1f3  02 Don't Think Twice, It's All Right.flac
+8b92e26c409f6762fc7cde13d9d6c76a  03 Til I Fell In Love With You.flac
+7f9d151c51f356927da47d120e662d0d  04 Spirit On The Water.flac
+699100618b55cb675a6c76db357bafea  05 Rollin And Tumblin.flac
+1ff96eae8a31e264cdf6f12e263e0ef7  06 Workingman's Blues no 2.flac
+cac7d4d6582f0a913c38111723ca880d  07 Tweedle Dee and Tweedle Dum.flac
+2308e850688da51d14bb982e4c05ef86  08 Ballad Of A Thin Man.flac
+b6427f3f20041ebef285a83f10c45871  09 Highway 61 Revisited.flac
+818ea94e5a7a50abb2297db8f062b381  10 Nettie Moore.flac
+ccd5c4ccae74137367bc4c285f78bbf1  11 Thunder On The Mountain.flac
+f88a88f729f2094ccdc810e8173c1124  12 Like A Rolling Stone.flac
+686717aedfa5e5b8bb0c268a385d2fe4  13 Jolene.flac
+5f1f52e16eecb37a3924dcd11d9e68a5  14 band introduction.flac
+66726c43cd13a6156500a8497c173607  15 All Along The Watchtower.flac
+2b4f8756d4625a66abaf2801e1e40c50  BD2009-08-05 Corpus Christi Texas.ffp
+9d0b60e251b978df72849dc43cfc895d  BD2009-08-05.txt
+816460024f7dabe15de8d4e2deacca3e  images\0bob-dylan-marquee.jpg
+be1d2328c6c84dc447bbc4be88ee805c  images\1LARS.jpg
+3f948ded4943bd11bda6e2abece389d5  images\2jolene.jpg
+9c3efdec1c4b5c542d5d0af8b457ac1f  images\band1.jpg
+87f88b8e39ad24dcd1b400b46fbadfdb  images\band2.jpg
+bf323d87857d146c755156c00e6306e7  images\band3.jpg
+b1691d8938d4c2be753bef23a17da85b  images\band4.jpg
+16154688c05befba56adaedbab35a619  images\readme.txt

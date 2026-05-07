@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd99-07-03-h.flacf
+===================
+===================
+===================
+60bcc4672ff4b117d76ef11fda5810c9 *Bob Dylan 1999-07-03 Duluth PART ONE\01 Track01.flac
+53fcf9169fea5849ed845ff736564561 *Bob Dylan 1999-07-03 Duluth PART ONE\02 Track02.flac
+f3a52d77c6ea586558f9604d38eb0d00 *Bob Dylan 1999-07-03 Duluth PART ONE\03 Track03.flac
+d7449b76ede7041bf679c487b37aa0eb *Bob Dylan 1999-07-03 Duluth PART ONE\04 Track04.flac
+562737d9cf1210024ddcf83816742299 *Bob Dylan 1999-07-03 Duluth PART ONE\05 Track05.flac
+6deb61d46e87bec33635393f1be04b48 *Bob Dylan 1999-07-03 Duluth PART ONE\06 Track06.flac
+ceb14e79cc5a5d165862a9ec8cdfa176 *Bob Dylan 1999-07-03 Duluth PART ONE\07 Track07.flac
+f2a12236f97d754b540f16e9b189c7b9 *Bob Dylan 1999-07-03 Duluth PART ONE\08 Track08.flac
+982efbb705072ce76e39acf07beca316 *Bob Dylan 1999-07-03 Duluth PART ONE\09 Track09.flac
+75d6e419b27436faa75a4c5f175f1c5e *Bob Dylan 1999-07-03 Duluth PART ONE\10 Track10.flac
+722910fde47ffa5e89f2f918f9a5caa1 *Bob Dylan 1999-07-03 Duluth PART TWO\01 Track01.flac
+1c69f25c885af947be2d7428aae0d344 *Bob Dylan 1999-07-03 Duluth PART TWO\02 Track02.flac
+8202b50c488f4d87841011b7f385f9c2 *Bob Dylan 1999-07-03 Duluth PART TWO\03 Track03.flac
+8ee6ffccedb1d8e113bdb8f0f1153836 *Bob Dylan 1999-07-03 Duluth PART TWO\04 Track04.flac
+984dec735c12d44922e339438f5bb776 *Bob Dylan 1999-07-03 Duluth PART TWO\05 Track05.flac
+8513ea57f6e3946c3d519a46dbcb9874 *Bob Dylan 1999-07-03 Duluth PART TWO\06 Track06.flac
+ac648035b5809bf088cdf7a7046df029 *Bob Dylan 1999-07-03 Duluth.ffp
+4a7c0e16a8caac7b2f7640ed400df468 *Bob Dylan 1999-07-03 Duluth.txt
+===================
+===================
+===================
+=== ffp for: bd99-07-03-h.flacf
+===================
+===================
+===================
+Bob Dylan 1999-07-03 Duluth PART ONE\01 Track01.flac:dab8c606b435d8cf43a98f23d896ad6f
+Bob Dylan 1999-07-03 Duluth PART ONE\02 Track02.flac:ade4194f89adc28bf93e19f33c4e14e8
+Bob Dylan 1999-07-03 Duluth PART ONE\03 Track03.flac:e979a266dda0984f0e41be136fa082ee
+Bob Dylan 1999-07-03 Duluth PART ONE\04 Track04.flac:2e6bc86da498dec02e33a8bdf9df1c76
+Bob Dylan 1999-07-03 Duluth PART ONE\05 Track05.flac:a76e69e7eeab4ab57decbc6957c5470c
+Bob Dylan 1999-07-03 Duluth PART ONE\06 Track06.flac:579b528bba844e0dc6659b9f13c476da
+Bob Dylan 1999-07-03 Duluth PART ONE\07 Track07.flac:db0df9f1b2ba3bd90283842b148154f0
+Bob Dylan 1999-07-03 Duluth PART ONE\08 Track08.flac:843924cc6ed23d6a9319d34dbb016015
+Bob Dylan 1999-07-03 Duluth PART ONE\09 Track09.flac:12d226612acf2f807f1249f48d0c4a2a
+Bob Dylan 1999-07-03 Duluth PART ONE\10 Track10.flac:01ad9a214caf6854e9f6650e6f3d0528
+Bob Dylan 1999-07-03 Duluth PART TWO\01 Track01.flac:3002104171adb6099dbaf8fd2283bca8
+Bob Dylan 1999-07-03 Duluth PART TWO\02 Track02.flac:0308c6160ca064ec1d450d01401ef26e
+Bob Dylan 1999-07-03 Duluth PART TWO\03 Track03.flac:9f7c603432ec44ddbc52da2096023662
+Bob Dylan 1999-07-03 Duluth PART TWO\04 Track04.flac:4deea892b199bc64f6ae59631ca2c78a
+Bob Dylan 1999-07-03 Duluth PART TWO\05 Track05.flac:aae01694b177d4983160895d2e8e0d57
+Bob Dylan 1999-07-03 Duluth PART TWO\06 Track06.flac:9781454f4379f8cf4bea1a37484de1fa
+===================
+===================
+===================
+=== shntool len for: bd99-07-03-h.flacf\Bob Dylan 1999-07-03 Duluth PART ONE
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.66       45666476 B   ---   --   ---xx   flac  0.5962  01 Track01.flac
+     6:38.49       70322492 B   ---   --   ---xx   flac  0.5548  02 Track02.flac
+     5:12.71       55203836 B   ---   --   ---xx   flac  0.5511  03 Track03.flac
+     7:17.53       77211500 B   ---   --   ---xx   flac  0.5401  04 Track04.flac
+     9:31.60      100865564 B   ---   --   ---xx   flac  0.6027  05 Track05.flac
+     3:57.72       41976188 B   ---   --   ---xx   flac  0.6268  06 Track06.flac
+     5:37.40       59540924 B   ---   --   ---xx   flac  0.5305  07 Track07.flac
+     7:38.70       80955884 B   ---   --   ---xx   flac  0.6051  08 Track08.flac
+     4:16.73       45330140 B   ---   --   ---xx   flac  0.4888  09 Track09.flac
+     7:25.60       78639164 B   ---   --   ---xx   flac  0.5966  10 Track10.flac
+    61:57.14      655712168 B                            0.5721  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd99-07-03-h.flacf\Bob Dylan 1999-07-03 Duluth PART TWO
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:25.47       78608588 B   ---   --   ---xx   flac  0.5925  01 Track01.flac
+     5:52.13       62123420 B   ---   --   ---xx   flac  0.5123  02 Track02.flac
+     4:04.00       43041644 B   ---   --   ---xx   flac  0.6045  03 Track03.flac
+     7:41.09       81341612 B   ---   --   ---xx   flac  0.5341  04 Track04.flac
+     3:34.73       37921340 B   ---   --   ---xx   flac  0.6053  05 Track05.flac
+     5:56.28       62864300 B   ---   --   ---xx   flac  0.6221  06 Track06.flac
+    34:34.20      365900904 B                            0.5737  (6 files)
+===================
+===================
+===================

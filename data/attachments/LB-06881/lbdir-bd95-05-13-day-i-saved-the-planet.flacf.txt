@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-13-day-i-saved-the-planet.flacf 
+=================== 
+=================== 
+=================== 
+404a22116e1c11fd74f365e3061d1eb8  bd95-05-13-day-i-saved-the-planet-d1t01.flac
+32c2e0100bb17309f6084195953b06e0  bd95-05-13-day-i-saved-the-planet-d1t02.flac
+6959141a89be0b8b450db3960e32091b  bd95-05-13-day-i-saved-the-planet-d1t03.flac
+cbb799ff0490538a17b25175e25014dc  bd95-05-13-day-i-saved-the-planet-d1t04.flac
+c02bf8e8c4d9b1b5d776cb838b1ef382  bd95-05-13-day-i-saved-the-planet-d1t05.flac
+30792e12de5e708bb5db4e7a373ee5bf  bd95-05-13-day-i-saved-the-planet-d1t06.flac
+0ee0bce006b7b661c21e6600a15af11e  bd95-05-13-day-i-saved-the-planet-d1t07.flac
+9b7bfbb7009e172f47f835944ec6aee1  bd95-05-13-day-i-saved-the-planet-d1t08.flac
+8ad81cb64d00a09cd9f9363b25746ece  bd95-05-13-day-i-saved-the-planet-d1t09.flac
+00d5bc275e8dd7c4115cd8ae2ba2d4ba  bd95-05-13-day-i-saved-the-planet-d1t10.flac
+78f2cb60e6579124a8537d0384a1a2b3  bd95-05-13-day-i-saved-the-planet-d1t11.flac
+25bb131511f19831b2a736a5e8ff446e  bd95-05-13-day-i-saved-the-planet.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-13-day-i-saved-the-planet.flacf 
+=================== 
+=================== 
+=================== 
+bd95-05-13-day-i-saved-the-planet-d1t01.flac:049d8cb206d7edbb10858723cb3ec978
+bd95-05-13-day-i-saved-the-planet-d1t02.flac:e9c88d995d91a8387bbd0a84c0ef2eb3
+bd95-05-13-day-i-saved-the-planet-d1t03.flac:e79180935249c8cbe20f118bf4f5137f
+bd95-05-13-day-i-saved-the-planet-d1t04.flac:50bb1c4248899fdcb2044f464366543b
+bd95-05-13-day-i-saved-the-planet-d1t05.flac:9f20e6b3ac84d91ad7629c235afd5178
+bd95-05-13-day-i-saved-the-planet-d1t06.flac:2e6fcaff6cb936ff84337e57ef055926
+bd95-05-13-day-i-saved-the-planet-d1t07.flac:d514ba5e2f92362ed73e3166bb1badc7
+bd95-05-13-day-i-saved-the-planet-d1t08.flac:9395bd0ed2254d45e3771ca55196947a
+bd95-05-13-day-i-saved-the-planet-d1t09.flac:8c6ab9377f5bc120265d75c36571f1c3
+bd95-05-13-day-i-saved-the-planet-d1t10.flac:ca32ffe0e4d61b4f0a98a3f79590f7ac
+bd95-05-13-day-i-saved-the-planet-d1t11.flac:ddc83243da3fb6c9addc7837c69be13f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-13-day-i-saved-the-planet.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.07       44469308 B   ---   --   ---xx   flac  0.5977  bd95-05-13-day-i-saved-the-planet-d1t01.flac
+     5:15.18       55608380 B   ---   --   ---xx   flac  0.5893  bd95-05-13-day-i-saved-the-planet-d1t02.flac
+     6:16.32       66401708 B   ---   --   ---xx   flac  0.5613  bd95-05-13-day-i-saved-the-planet-d1t03.flac
+     6:44.48       71378540 B   ---   --   ---xx   flac  0.5911  bd95-05-13-day-i-saved-the-planet-d1t04.flac
+     7:26.05       78686204 B   ---   --   ---xx   flac  0.5918  bd95-05-13-day-i-saved-the-planet-d1t05.flac
+     7:08.60       75640364 B   ---   --   ---xx   flac  0.5468  bd95-05-13-day-i-saved-the-planet-d1t06.flac
+     6:04.45       64315484 B   ---   --   ---xx   flac  0.5451  bd95-05-13-day-i-saved-the-planet-d1t07.flac
+     6:08.67       65072828 B   ---   --   ---xx   flac  0.5686  bd95-05-13-day-i-saved-the-planet-d1t08.flac
+     6:11.33       65522060 B   ---   --   ---xx   flac  0.5872  bd95-05-13-day-i-saved-the-planet-d1t09.flac
+     7:59.47       84606188 B   ---   --   ---xx   flac  0.5788  bd95-05-13-day-i-saved-the-planet-d1t10.flac
+     8:54.33       94275260 B   ---   --   ---xx   flac  0.5648  bd95-05-13-day-i-saved-the-planet-d1t11.flac
+    72:22.20      765976324 B                            0.5737  (11 files)
+=================== 
+=================== 
+=================== 

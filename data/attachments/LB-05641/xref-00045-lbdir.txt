@@ -1,0 +1,63 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-04-19-jtt-f.flacf 
+=================== 
+=================== 
+=================== 
+f99cc3874331c1036d6b7377c7c703f0  Dylan - Melbourne April 19th or 20th 1966 _Info.txt
+ac033b4d41778c021f1c8cf2c0345c75  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track01.flac
+0116a59c36cf4317e437ca8f8e7b6338  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track02.flac
+a68e4c9f9300a075b8d75dfa7d2a704a  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track03.flac
+a1cb1d6ee2dd5e535fd189ca06f5a5c5  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track04.flac
+bae55563b18276443cebbb1b9338a457  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track05.flac
+93de00140c2e0e734ffcd194989ec6c8  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track06.flac
+4f2140e053120841ce203ed7d3fa61a6  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track07.flac
+7f927c769610dc5d2042f48ef7cbfdd3  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track08.flac
+5863a88c8b72e17c22e967ea3d3f0fff  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track09.flac
+379fcc593217a99baef2a958c8c5b18b  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track10.flac
+508ccd1e299590f66fce22e807f6d918  Dylan - Melbourne, Australia April 19th or 20th, 1966  Very Low Generation.ffp
+d8ebff78e92b53017f9022aa6f304d97  Dylan - Melbourne, Australia April 19th or 20th, 1966  Very Low Generation.md5
+46ce10314d9a7de6e246fdb146d0fc73  Dylan - Melbourne, Australia April 19th or 20th, 1966  Very Low Generation.txt
+c877537cebf094c40ac23d01945bc665  Melbourne 1966 - F.jpg
+7f5c335c023377c470d4c5ccfcf17648  Melbourne 1966 - Inlay.jpg
+e0790f3cad917c331563d59889130c04  Melbourne 1966 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-04-19-jtt-f.flacf 
+=================== 
+=================== 
+=================== 
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track01.flac:c619e0fd050f2cfca845c1137f952cf0
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track02.flac:28c45ad16d019404f1cf35f165292a62
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track03.flac:0f3bd67bd8a388aa3b52a5b8c35ef273
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track04.flac:6a70974f339235edc7ff7690b7f17310
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track05.flac:b58d2e4e875bfb84e9a71cd0be9f0e1a
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track06.flac:b7f9a91e89c9224a7614438f06d43b90
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track07.flac:bc74994842e374b26684ef018029868d
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track08.flac:4be7d15edba5bd58066a2ffc9434d015
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track09.flac:bd7ec4742921926bf8d7a02218479f88
+Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track10.flac:3894c3ae8445b72a841289b5979289e3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-04-19-jtt-f.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:04.06       32471756 B   ---   --   ---xx   flac  0.3330  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track01.flac
+     7:07.50       75440444 B   ---   --   ---xx   flac  0.3292  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track02.flac
+     8:53.26       94082396 B   ---   --   ---xx   flac  0.3327  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track03.flac
+     6:39.46       70491836 B   ---   --   ---xx   flac  0.3311  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track04.flac
+    12:27.46      131879036 B   ---   --   ---xx   flac  0.3274  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track05.flac
+     6:33.65       69478124 B   ---   --   ---xx   flac  0.3239  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track06.flac
+     0:33.58        5957660 B   ---   --   ---xx   flac  0.2985  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track07.flac
+     1:41.55       17945804 B   ---   --   ---xx   flac  0.3027  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track08.flac
+     4:18.59       45650012 B   ---   --   ---xx   flac  0.2969  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track09.flac
+     5:52.17       62132828 B   ---   --   ---xx   flac  0.3001  Dylan - Melbourne April 19th or 20th, 1966  Very Low Generation_Track10.flac
+    57:12.53      605529896 B                            0.3226  (10 files)
+=================== 
+=================== 
+=================== 

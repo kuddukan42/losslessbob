@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-08a.flacf 
+=================== 
+=================== 
+=================== 
+54e0f656f0a0d585c1ef2fa09668910e  bd04-08-08a.txt
+839aa43ceeda29590cdb36e6e62fca19  bd2004-08-08_Brockton_FLAC.md5
+d8e2a4c09abdf031f7cef36cc0610ced  bd2004-08-08_Brockton_FLAC.txt
+a2a63465a8776f562e4a231c425d3656  bd2004-08-08_Brockton_FLACfingerprint.txt
+233c76fa9532d1775036e18efa2875ad  bd2004-08-08d1t01-fixed.flac
+00da86c858533110b6f754ead7f9c02b  bd2004-08-08d1t02-fixed.flac
+bbe680a872286cfa4cc18e88af68d78c  bd2004-08-08d1t03-fixed.flac
+6fb57da0927a15782c43d6decb29a07f  bd2004-08-08d1t04-fixed.flac
+89f034800ff579c51e8fc62b5f43e895  bd2004-08-08d1t05-fixed.flac
+23885638e700a2a42bb599c86c6eec45  bd2004-08-08d1t06-fixed.flac
+9b11d8b69560960ef5aa08e6de109f97  bd2004-08-08d1t07-fixed.flac
+b8d4c30dc14649f75aa4c308b5f324a4  bd2004-08-08d1t08-fixed.flac
+63b5d172b3ed8398749dc3574dd50235  bd2004-08-08d1t09-fixed.flac
+c8f1cd85e2757316ecbff97036ee844b  bd2004-08-08d1t10-fixed.flac
+7d172feab1723d54e34803bf218479a7  bd2004-08-08d2t01-fixed.flac
+aaec17710b5e3b4ea29aac42548d13b5  bd2004-08-08d2t02-fixed.flac
+ae55cdbecec7f94787c971b205f0a769  bd2004-08-08d2t03-fixed.flac
+569fc502a33f3649ffadab5e7955f718  bd2004-08-08d2t04-fixed.flac
+9413d3e2c031f4cbb3f03482c9d5a9ee  bd2004-08-08d2t05-fixed.flac
+85e04f0c80f9be1c708dba566cea2681  bd2004-08-08d2t06-fixed.flac
+a01f6e70112ba638e950f227b8767f1e  bd2004-08-08d2t07-fixed.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-08-08a.flacf 
+=================== 
+=================== 
+=================== 
+bd2004-08-08d1t01-fixed.flac:bd79fcce975000a441cb4026059ed86d
+bd2004-08-08d1t02-fixed.flac:fa2af2685e6e4c03a7c7683b1b347308
+bd2004-08-08d1t03-fixed.flac:1c057ee4b09f507114589ada6ec4e47a
+bd2004-08-08d1t04-fixed.flac:bf09afc64e2a2207d225e296cd4c98b8
+bd2004-08-08d1t05-fixed.flac:7b16af85078e70c481457f4bee128754
+bd2004-08-08d1t06-fixed.flac:948ad3afa20c57d4af7263da4999ce2d
+bd2004-08-08d1t07-fixed.flac:b7cd9e7b7969269b836f9fa8ff409411
+bd2004-08-08d1t08-fixed.flac:e8d3164ae9870726b70c9a661fe33fa2
+bd2004-08-08d1t09-fixed.flac:94d0597d499da117fbcddc929912f535
+bd2004-08-08d1t10-fixed.flac:47a0603ed96c3db1e73ebd0a5a783978
+bd2004-08-08d2t01-fixed.flac:74b47563c7986eb236003d914c641734
+bd2004-08-08d2t02-fixed.flac:8406ae95208f9bcb1c31db4b3e76bc05
+bd2004-08-08d2t03-fixed.flac:36350c016570a8f1e1efa13bc877046f
+bd2004-08-08d2t04-fixed.flac:1e9fa1cb1d146fd76994579c4424a972
+bd2004-08-08d2t05-fixed.flac:67a86622ba800c1d84947c5ad781d97e
+bd2004-08-08d2t06-fixed.flac:99ff2bd1712b1576b9c5cb0bf5b7b2ca
+bd2004-08-08d2t07-fixed.flac:476acbb8dbd9bfb50e96d14212e78d07
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-08a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.36       13843916 B   ---   --   ---xx   flac  0.4702  bd2004-08-08d1t01-fixed.flac
+     4:05.53       43342700 B   ---   --   ---xx   flac  0.6335  bd2004-08-08d1t02-fixed.flac
+     4:06.43       43495580 B   ---   --   ---xx   flac  0.6368  bd2004-08-08d1t03-fixed.flac
+     5:35.20       59141084 B   ---   --   ---xx   flac  0.5669  bd2004-08-08d1t04-fixed.flac
+     6:16.48       66439340 B   ---   --   ---xx   flac  0.5532  bd2004-08-08d1t05-fixed.flac
+     6:16.67       66484028 B   ---   --   ---xx   flac  0.6053  bd2004-08-08d1t06-fixed.flac
+     5:01.33       53174060 B   ---   --   ---xx   flac  0.5962  bd2004-08-08d1t07-fixed.flac
+     5:52.50       62210444 B   ---   --   ---xx   flac  0.6400  bd2004-08-08d1t08-fixed.flac
+     5:04.10       53649164 B   ---   --   ---xx   flac  0.5353  bd2004-08-08d1t09-fixed.flac
+     6:19.41       66952076 B   ---   --   ---xx   flac  0.6348  bd2004-08-08d1t10-fixed.flac
+     6:53.05       72865004 B   ---   --   ---xx   flac  0.6205  bd2004-08-08d2t01-fixed.flac
+     6:06.13       64593020 B   ---   --   ---xx   flac  0.5187  bd2004-08-08d2t02-fixed.flac
+     9:12.02       97377548 B   ---   --   ---xx   flac  0.5461  bd2004-08-08d2t03-fixed.flac
+     6:46.41       71714876 B   ---   --   ---xx   flac  0.5819  bd2004-08-08d2t04-fixed.flac
+     6:20.69       67194332 B   ---   --   ---xx   flac  0.6529  bd2004-08-08d2t05-fixed.flac
+     0:53.07        9365708 B   ---   --   ---xx   flac  0.5281  bd2004-08-08d2t06-fixed.flac
+     5:43.47       60615788 B   ---   --   ---xx   flac  0.6193  bd2004-08-08d2t07-fixed.flac
+    91:52.60      972458668 B                            0.5912  (17 files)
+=================== 
+=================== 
+=================== 

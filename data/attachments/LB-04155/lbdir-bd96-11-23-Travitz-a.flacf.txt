@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-23-Travitz-a.flacf 
+=================== 
+=================== 
+=================== 
+1f13ec424eaf730365c836aa97a63ee7  bd1996-11-23d1t01-fixed.flac
+7af2b5f2ecb595374a74cc14c1b819ef  bd1996-11-23d1t02-fixed.flac
+64d97c2297181f442b6dacda232b8f76  bd1996-11-23d1t03-fixed.flac
+76ddf93c7912e57d147c04f43c4cf564  bd1996-11-23d1t04-fixed.flac
+6fcdc411a8baa85f0a9b35594982b281  bd1996-11-23d1t05-fixed.flac
+e3eebb4baa3003de137782ff0c81212c  bd1996-11-23d1t06-fixed.flac
+cd74e36626352a2804f79ab613094699  bd1996-11-23d1t07-fixed.flac
+729cff85a7db17208f0bf8ab24e6bc8f  bd1996-11-23d1t08-fixed.flac
+d9e0fff22194fcc5d2a7717035b0aab2  bd1996-11-23d1t09-fixed.flac
+5a768470b9f8a338498b1a45da87dc59  bd1996-11-23d1t10-fixed.flac
+7d6a738387929820a2e3cee334064da1  bd1996-11-23d1t11-fixed.flac
+27a9c6cc7208dab32972bf120252b327  bd1996-11-23d1t12-fixed.flac
+1e64150fac32772e0b8e085553b93a4c  bd1996-11-23d2t01-fixed.flac
+17edb02b1afb2c5e0753e3b6859f21f5  bd1996-11-23d2t02-fixed.flac
+f74e507739e161a345fdebd9de630675  bd1996-11-23d2t03-fixed.flac
+4fc2eb984556115be161dd36906778b7  bd96-11-23-Travitz-a-LB-4155.txt
+6b1caa9d65fb5902801c64b4e6961b1b  bobdylan1996-11-23.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-23-Travitz-a.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-11-23d1t01-fixed.flac:7dc4e3ccefe12dfd7e65b8349054a227
+bd1996-11-23d1t02-fixed.flac:fe4c6bb028595ef4975b56e1cd53d9f1
+bd1996-11-23d1t03-fixed.flac:54569d29993362d180278030968e6d32
+bd1996-11-23d1t04-fixed.flac:2381e1bc84bbcf22af7a7833308a38b1
+bd1996-11-23d1t05-fixed.flac:60e8585c605fb874f42b14ac94b67c36
+bd1996-11-23d1t06-fixed.flac:b59c863fdf293fcfba3941c75a3bffe2
+bd1996-11-23d1t07-fixed.flac:631128f14cf83507e4841dd0028ec4e6
+bd1996-11-23d1t08-fixed.flac:fa4e9e431d50e0b7545f8f087c78c4a3
+bd1996-11-23d1t09-fixed.flac:88572d3bc054ba169ee134104b91ef59
+bd1996-11-23d1t10-fixed.flac:83b70b8638c5fea479541c1b80f6c098
+bd1996-11-23d1t11-fixed.flac:156728f386e0ebba4109289232026be6
+bd1996-11-23d1t12-fixed.flac:9b678ab1679588568af7edd26365b78a
+bd1996-11-23d2t01-fixed.flac:e85f42d917e3bbabe6de9aaa680cef3c
+bd1996-11-23d2t02-fixed.flac:6368df9c5fa914e1c0dc99b0e47a1872
+bd1996-11-23d2t03-fixed.flac:a17ec3515da544725acce1715cc10dff
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-23-Travitz-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.53       45988700 B   ---   --   ---xx   flac  0.6200  bd1996-11-23d1t01-fixed.flac
+     5:53.54       62396252 B   ---   --   ---xx   flac  0.5944  bd1996-11-23d1t02-fixed.flac
+     6:10.17       65308028 B   ---   --   ---xx   flac  0.6144  bd1996-11-23d1t03-fixed.flac
+     7:25.27       78561548 B   ---   --   ---xx   flac  0.5388  bd1996-11-23d1t04-fixed.flac
+     6:31.44       69075932 B   ---   --   ---xx   flac  0.5816  bd1996-11-23d1t05-fixed.flac
+     7:06.69       75308732 B   ---   --   ---xx   flac  0.6304  bd1996-11-23d1t06-fixed.flac
+     7:33.01       79911596 B   ---   --   ---xx   flac  0.5597  bd1996-11-23d1t07-fixed.flac
+     5:11.40       54954524 B   ---   --   ---xx   flac  0.5298  bd1996-11-23d1t08-fixed.flac
+     6:02.38       63946220 B   ---   --   ---xx   flac  0.5283  bd1996-11-23d1t09-fixed.flac
+     5:43.38       60594620 B   ---   --   ---xx   flac  0.5648  bd1996-11-23d1t10-fixed.flac
+     6:36.63       70002620 B   ---   --   ---xx   flac  0.5674  bd1996-11-23d1t11-fixed.flac
+     9:26.61       99985916 B   ---   --   ---xx   flac  0.5546  bd1996-11-23d1t12-fixed.flac
+    11:21.17      120168428 B   ---   --   ---xx   flac  0.5337  bd1996-11-23d2t01-fixed.flac
+     9:43.30      102911804 B   ---   --   ---xx   flac  0.5605  bd1996-11-23d2t02-fixed.flac
+     8:49.33       93393260 B   ---   --   ---xx   flac  0.5915  bd1996-11-23d2t03-fixed.flac
+   107:56.60     1142508180 B                            0.5687  (15 files)
+=================== 
+=================== 
+=================== 

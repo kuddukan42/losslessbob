@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03 02 24 wellington alt 
+=================== 
+=================== 
+=================== 
+d854d4ddd127c0e89723ca8d68988ad0  bd03-02-24a.txt
+044eb77f64d9737235c8815cbeceb08d  noname.md5
+88793bde865c2f90eba5a089cc3042bb  t01.shn
+b2d472ff39926014af5e7edde6114863  t02.shn
+ddc73d00d4f78baabb8c142b887cec5b  t03.shn
+866b978e7e23733ca612916b65067d9b  t04.shn
+083f889878094cc048c810e59ba68e41  t05.shn
+0a6a3d09b18786cc7ce66fed70c9df96  t06.shn
+e9c1b152542213fea42af59d9dd28bc5  t07.shn
+0a883b81b80834b06b54b73eb5864774  t08.shn
+979287565514702fe8093a85a79768e7  t09.shn
+7a3b41d06891efcdc116f1c81263eaff  t10.shn
+7bdbdbd3da75ad393f459ee44ce17625  t11.shn
+98f67df414ddc7ecae4d417850e007ad  t12.shn
+c95f2871af5a4d246bb1b7d29fdfafc8  t13.shn
+d77fdf7d912ed61cdeb6f897ad8e6e95  t14.shn
+e06aee47d0e422149bd26fae4d6e6e7e  t15.shn
+3393a169904f3777e5a2729c48abb327  t16.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03 02 24 wellington alt 
+=================== 
+=================== 
+=================== 
+1e46030f6f6b18c850f07ebcc5be787a  [shntool]  t01.wav
+f9c42fa9d8560e232de50412ac61fd47  [shntool]  t02.wav
+e0328fdbea8afe9b2230f88aa84149ac  [shntool]  t03.wav
+fc5b062d98da967f31c448f7cdd808fd  [shntool]  t04.wav
+1cacf2225ef22420070a873273490cf2  [shntool]  t05.wav
+c4a785b10cbfcfde6817e9e8b82681a2  [shntool]  t06.wav
+1a536df9998f415a8f8dcc26365d14dd  [shntool]  t07.wav
+4926f1d879a6a9c8afc0c7c8b8a89c52  [shntool]  t08.wav
+2143daa3bbcaba56f83f40b0398afc7e  [shntool]  t09.wav
+bfa4febbbd6aceb4d1f8269d4e61247a  [shntool]  t10.wav
+920c5c4b4cd0384a2a44ff3ee36801b3  [shntool]  t11.wav
+8b48fb7bb736f4af59be81fa5c060717  [shntool]  t12.wav
+ff850c1898bef8ae109002645811b00d  [shntool]  t13.wav
+c3a61cbf18182b00cf81b7b7549aac87  [shntool]  t14.wav
+96838f890012cfb5fef2193c3a6983ea  [shntool]  t15.wav
+020561007ace020bb9539a28e90b98d4  [shntool]  t16.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03 02 24 wellington alt 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.45       65902840 B   -b-   --   ---xx    shn  0.5671  t01.shn
+     6:20.36       67116840 B   -b-   --   ---xx    shn  0.5900  t02.shn
+     5:20.38       56537708 B   -b-   --   ---xx    shn  0.6285  t03.shn
+     5:35.19       59139132 B   -b-   --   ---xx    shn  0.5695  t04.shn
+     6:49.73       72319696 B   -b-   --   ---xx    shn  0.6120  t05.shn
+     5:05.57       53936280 B   -b-   --   ---xx    shn  0.6571  t06.shn
+     6:05.55       64515416 B   -b-   --   ---xx    shn  0.5488  t07.shn
+     6:30.23       68851128 B   -b-   --   ---xx    shn  0.5924  t08.shn
+     6:33.20       69371408 B   -b-   --   ---xx    shn  0.5682  t09.shn
+     8:34.14       90703156 B   -b-   --   ---xx    shn  0.6192  t10.shn
+     8:19.33       88101692 B   -b-   --   ---xx    shn  0.6175  t11.shn
+     6:57.63       73707120 B   -b-   --   ---xx    shn  0.6726  t12.shn
+     7:31.20       79603688 B   -b-   --   ---xx    shn  0.5475  t13.shn
+     7:58.60       84459680 B   -b-   --   ---xx    shn  0.6637  t14.shn
+     7:04.35       74876904 B   -b-   --   ---xx    shn  0.6666  t15.shn
+     8:24.46       89012944 B   -b-   --   ---xx    shn  0.6551  t16.shn
+   109:25.38     1158155632 B                            0.6126  (16 files)
+=================== 
+=================== 
+=================== 

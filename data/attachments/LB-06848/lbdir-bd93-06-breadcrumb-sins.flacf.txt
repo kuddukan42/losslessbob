@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-breadcrumb-sins.flacf 
+=================== 
+=================== 
+=================== 
+ede4c832b6723a5893ea3586ca29ef92  bd93-06-breadcrumb-sins-d1t01.flac
+1ddda4194c8d02aac0f91a44febdb093  bd93-06-breadcrumb-sins-d1t02.flac
+58fc3bb4448540e320eca091319f7dae  bd93-06-breadcrumb-sins-d1t03.flac
+8128e3e7dbdcba975fe3b9404adab0f3  bd93-06-breadcrumb-sins-d1t04.flac
+60e7abdec94367490357f3f10454e247  bd93-06-breadcrumb-sins-d1t05.flac
+6376c847d85761c5c80f8d9f33a00845  bd93-06-breadcrumb-sins-d1t06.flac
+0f93b302f9422024c492b5c41b6eec44  bd93-06-breadcrumb-sins-d1t07.flac
+f94ee1ab7db900818837ab777a28adb2  bd93-06-breadcrumb-sins-d1t08.flac
+5a66a39ec95a64518e1aededeaa786dd  bd93-06-breadcrumb-sins-d1t09.flac
+be52ceca09b2315e02f71a4f3f55bba8  bd93-06-breadcrumb-sins-d1t10.flac
+c8f0f10d7fcc8e7fa3f3ecfabee1c5a4  bd93-06-breadcrumb-sins-d2t01.flac
+52bd9f32df055c1de2f357ed9d5d540b  bd93-06-breadcrumb-sins-d2t02.flac
+569448b59e71bacafd77ad347e7ff148  bd93-06-breadcrumb-sins-d2t03.flac
+aaefdb6d23c5c6654b98dbc8f6d17503  bd93-06-breadcrumb-sins-d2t04.flac
+c83f15ee6296dba19b3695b7fbffd705  bd93-06-breadcrumb-sins-d2t05.flac
+4a5ca4f12c3676ad89f42e410d64a390  bd93-06-breadcrumb-sins-d2t06.flac
+b26df08cc49050a03470e5782ece4a5d  bd93-06-breadcrumb-sins-d2t07.flac
+500c2513fdfb0db8df3f38eca3e1042a  bd93-06-breadcrumb-sins-d2t08.flac
+09e679b95304167fe1b22c47b223cb02  bd93-06-breadcrumb-sins.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-breadcrumb-sins.flacf 
+=================== 
+=================== 
+=================== 
+bd93-06-breadcrumb-sins-d1t01.flac:7dc489e885ec744b9556d8d60e2f9a68
+bd93-06-breadcrumb-sins-d1t02.flac:ef0f052453b4f21e2e3e746630c552e1
+bd93-06-breadcrumb-sins-d1t03.flac:240bc2fe3f903e28f0304aa9fee3aa22
+bd93-06-breadcrumb-sins-d1t04.flac:6e4f5ea65e795fbc3c9220d680404fb9
+bd93-06-breadcrumb-sins-d1t05.flac:98808c42ba965230b7b649933142bc50
+bd93-06-breadcrumb-sins-d1t06.flac:c5587f7d2a6acc1863f9ed9beda11a76
+bd93-06-breadcrumb-sins-d1t07.flac:bfe931e03b471423e0b89588780e11a2
+bd93-06-breadcrumb-sins-d1t08.flac:aaee5976c619490c0343a5d7a8673cd8
+bd93-06-breadcrumb-sins-d1t09.flac:c482ded489e908a29d22ed7be359270e
+bd93-06-breadcrumb-sins-d1t10.flac:ee6078848ab42aa447c315989bb2b9f8
+bd93-06-breadcrumb-sins-d2t01.flac:7bf6ab6a8dca3de7c3602f8882c873a9
+bd93-06-breadcrumb-sins-d2t02.flac:616b7e6bfaaf5015664260a36947cb3c
+bd93-06-breadcrumb-sins-d2t03.flac:595eb08da63e06384d00947010502cfa
+bd93-06-breadcrumb-sins-d2t04.flac:49d3840d32d43538c6db04e7a8287442
+bd93-06-breadcrumb-sins-d2t05.flac:ebf3cb390b6763fe741569d9c8fc8c1b
+bd93-06-breadcrumb-sins-d2t06.flac:801f703ceb2c6c2d1a16c23faff8d809
+bd93-06-breadcrumb-sins-d2t07.flac:ffad2aa71ba9bec01ddfe8f796106baf
+bd93-06-breadcrumb-sins-d2t08.flac:637760a22c0796c52622efd3d56af3ac
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-06-breadcrumb-sins.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.28       58101500 B   ---   --   ---xx   flac  0.5911  bd93-06-breadcrumb-sins-d1t01.flac
+     8:31.25       90199244 B   ---   --   ---xx   flac  0.6286  bd93-06-breadcrumb-sins-d1t02.flac
+    11:38.22      123178988 B   ---   --   ---xx   flac  0.6516  bd93-06-breadcrumb-sins-d1t03.flac
+     7:59.25       84554444 B   ---   --   ---xx   flac  0.6202  bd93-06-breadcrumb-sins-d1t04.flac
+    12:20.10      130559564 B   ---   --   ---xx   flac  0.6030  bd93-06-breadcrumb-sins-d1t05.flac
+     7:19.03       77446700 B   ---   --   ---xx   flac  0.6034  bd93-06-breadcrumb-sins-d1t06.flac
+     6:10.60       65409164 B   ---   --   ---xx   flac  0.5800  bd93-06-breadcrumb-sins-d1t07.flac
+     6:07.72       64908188 B   ---   --   ---xx   flac  0.5330  bd93-06-breadcrumb-sins-d1t08.flac
+     4:24.38       46659020 B   ---   --   ---xx   flac  0.5483  bd93-06-breadcrumb-sins-d1t09.flac
+     6:56.37       73469468 B   ---   --   ---xx   flac  0.5719  bd93-06-breadcrumb-sins-d1t10.flac
+     9:39.30      102206204 B   ---   --   ---xx   flac  0.5667  bd93-06-breadcrumb-sins-d2t01.flac
+     9:00.23       95310140 B   ---   --   ---xx   flac  0.5334  bd93-06-breadcrumb-sins-d2t02.flac
+    10:33.12      111689468 B   ---   --   ---xx   flac  0.5360  bd93-06-breadcrumb-sins-d2t03.flac
+    13:23.23      141703340 B   ---   --   ---xx   flac  0.5605  bd93-06-breadcrumb-sins-d2t04.flac
+     9:53.32      104680508 B   ---   --   ---xx   flac  0.5925  bd93-06-breadcrumb-sins-d2t05.flac
+     5:19.38       56361020 B   ---   --   ---xx   flac  0.5669  bd93-06-breadcrumb-sins-d2t06.flac
+     6:30.52       68918348 B   ---   --   ---xx   flac  0.5891  bd93-06-breadcrumb-sins-d2t07.flac
+    10:44.28      113667500 B   ---   --   ---xx   flac  0.6037  bd93-06-breadcrumb-sins-d2t08.flac
+   152:01.33     1609022808 B                            0.5846  (18 files)
+=================== 
+=================== 
+=================== 

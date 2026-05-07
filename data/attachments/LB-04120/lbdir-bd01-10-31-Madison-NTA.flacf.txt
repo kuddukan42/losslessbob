@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-31-Madison-NTA.flacf 
+=================== 
+=================== 
+=================== 
+66cb5fbe417241e312f8ae8fdab25a41  bd01-10-31-Madison-NTA-LB-4120.txt
+6016aff2ceffe50e0bc6982e3a43f24c  bd2001-10-31-Madison-d1\Track01.flac
+d4f08ab2d6dc9a29220ff16d10fd8818  bd2001-10-31-Madison-d1\Track02.flac
+9eebc373a38830eaef4e85322a247bcc  bd2001-10-31-Madison-d1\Track03.flac
+3ab68756bc0eb06758f2602f5bd907de  bd2001-10-31-Madison-d1\Track04.flac
+f997b4aee0508471fde56d5adf36b49c  bd2001-10-31-Madison-d1\Track05.flac
+6fef345a127a75b338f07fd71bead7f6  bd2001-10-31-Madison-d1\Track06.flac
+28de251f147d938a02c64559ede0fac5  bd2001-10-31-Madison-d1\Track07.flac
+686bdca9eb3f2cf740e08e1485fb0a8f  bd2001-10-31-Madison-d1\Track08.flac
+16fc95a1b0efc2707982c9aa34739fc6  bd2001-10-31-Madison-d1\Track09.flac
+8b16d35fdfc9ffa359350f75c5f4b500  bd2001-10-31-Madison-d1\Track10.flac
+f4a65b451854aa610e66f6d72dbe2c06  bd2001-10-31-Madison-d1\Track11.flac
+eb46ca4cb88e484e5ad0f6ff63907b77  bd2001-10-31-Madison-d1\bd2001-10-31-Madison-d1.md5
+8f69b7f455335c90c749fe2a6a302135  bd2001-10-31-Madison-d2\Track01.flac
+8af2807264e29f3806dad313437c228b  bd2001-10-31-Madison-d2\Track02.flac
+e1b4534ec6a6cc18f781d2b416a6339a  bd2001-10-31-Madison-d2\Track03.flac
+a7c9f50341bbf88a6d7eae6403d0f3ba  bd2001-10-31-Madison-d2\Track04.flac
+88fbc382f51f6481dad87c440a6bf0e5  bd2001-10-31-Madison-d2\Track05.flac
+45426139e47be15923036c4e2790df24  bd2001-10-31-Madison-d2\Track06.flac
+8aa54633027b8fbbb8de3ad0f402db49  bd2001-10-31-Madison-d2\Track07.flac
+47f1b4488c24f55ce7eb44730a3c5a4d  bd2001-10-31-Madison-d2\Track08.flac
+eb6c88d45c93062867d48e25d49e5791  bd2001-10-31-Madison-d2\Track09.flac
+a4140bef3fbf71b4a998ec765051384d  bd2001-10-31-Madison-d2\Track10.flac
+c06a144519e7a7f97e136d63dd2550e6  bd2001-10-31-Madison-d2\Track11.flac
+8bbc19842cf402b9fc76de8f9bae5d2f  bd2001-10-31-Madison-d2\bd2001-10-31-Madison-d2.md5
+b664d2ba31faf0203bf32bfaf2042d56  bd2001-10-31-Madison-NTA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-31-Madison-NTA.flacf\bd2001-10-31-Madison-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:810e06bf4e5ad557fe3967805028507d
+Track02.flac:53ed88dedd6d7f3e98636f18ae6e7d85
+Track03.flac:264a098c6d047625390362d9cca53c6d
+Track04.flac:f278afd647d6ded88c71609676ad9c83
+Track05.flac:2754a741a67f2fff2e19195c1fad0de3
+Track06.flac:7da773c8b32ada878f7cbd593d1e600e
+Track07.flac:202f094177e44238c68d7446ead35378
+Track08.flac:9235bdc40b2d06fc43ac5db468b1779b
+Track09.flac:c545959319b8f41152af1564d6c4609e
+Track10.flac:e63e16bc8697b70b5e3c4e0fcd28c7e8
+Track11.flac:e0c8aae361036535cdac7a753151560b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-31-Madison-NTA.flacf\bd2001-10-31-Madison-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:f467b45130d3c0c8d45aba2bf9e8b892
+Track02.flac:aa087430b94c7facb94e75daf900b035
+Track03.flac:59b0326c679b74db1283654cfe531e6b
+Track04.flac:fa00c0b2ffa42feb685907dbb20e4a23
+Track05.flac:6df1683ad66085ddde22d33adf8b7b72
+Track06.flac:4d6f1e7835f92eaf5acf566bfcc1ccd4
+Track07.flac:d4e8d04abc56d04b6485a8445a8969e9
+Track08.flac:431ffae0f4fd2b8dcc83d0e4332438b4
+Track09.flac:90d6b980b26d30028dc686427d7342f9
+Track10.flac:3ab3bc9293003944e989f5106357b535
+Track11.flac:f8a932450c170406b6af751d72a59989
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-31-Madison-NTA.flacf\bd2001-10-31-Madison-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.62       49537868 B   ---   --   ---xx   flac  0.5561  Track01.flac
+     9:00.63       95404220 B   ---   --   ---xx   flac  0.4623  Track02.flac
+     8:55.31       94446956 B   ---   --   ---xx   flac  0.5206  Track03.flac
+     4:18.04       45520652 B   ---   --   ---xx   flac  0.5062  Track04.flac
+     8:47.41       93059276 B   ---   --   ---xx   flac  0.5920  Track05.flac
+     7:36.64       80588972 B   ---   --   ---xx   flac  0.5350  Track06.flac
+     6:46.35       71700764 B   ---   --   ---xx   flac  0.6028  Track07.flac
+     5:51.40       62010524 B   ---   --   ---xx   flac  0.4129  Track08.flac
+     5:19.40       56365724 B   ---   --   ---xx   flac  0.4216  Track09.flac
+     8:10.60       86577164 B   ---   --   ---xx   flac  0.4459  Track10.flac
+     9:05.40       96232124 B   ---   --   ---xx   flac  0.5206  Track11.flac
+    78:33.30      831444244 B                            0.5092  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-31-Madison-NTA.flacf\bd2001-10-31-Madison-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:23.46       67669436 B   ---   --   ---xx   flac  0.5721  Track01.flac
+     6:10.59       65406812 B   ---   --   ---xx   flac  0.5970  Track02.flac
+     6:06.73       64734140 B   ---   --   ---xx   flac  0.5833  Track03.flac
+    11:09.12      118039868 B   ---   --   ---xx   flac  0.5881  Track04.flac
+     5:35.56       59225756 B   ---   --   ---xx   flac  0.5239  Track05.flac
+     8:07.01       85909196 B   ---   --   ---xx   flac  0.5942  Track06.flac
+     4:12.27       44516348 B   ---   --   ---xx   flac  0.4583  Track07.flac
+     6:53.42       72952028 B   ---   --   ---xx   flac  0.6087  Track08.flac
+     6:08.64       65065772 B   ---   --   ---xx   flac  0.5221  Track09.flac
+     6:37.30       70101404 B   ---   --   ---xx   flac  0.6068  Track10.flac
+     6:27.19       68311532 B   ---   --   ---xx   flac  0.5379  Track11.flac
+    73:52.54      781932292 B                            0.5692  (11 files)
+=================== 
+=================== 
+=================== 

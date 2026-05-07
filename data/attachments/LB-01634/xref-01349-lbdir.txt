@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd04-03-06-d.flacf
+===================
+===================
+===================
+7abc8ccf448d09007a08431e8ec4f260 *Bob Dylan 2004-03-06_Chicago Riv Theatre.txt
+676ea378af205b6b47ef793fcbb8bcfc *d1_T01.shn
+66dd0d53729b92c867a10537e9447caf *d1_T02.shn
+bda8521d529b5dbf8cf7992050eae63f *d1_T03.shn
+9773b31003bf492bb6372f6306f7233a *d1_T04.shn
+9950f7d5ef3b8df9c479974b73032826 *d1_T05.shn
+926b842e576cdb45ae42d5440b6feb76 *d1_T06.shn
+486d55dd769eed8fd2d32a858cc5ec0d *d1_T07.shn
+1f8fd2df4ab9e55fdc5a17f86ed2c3d0 *d1_T08.shn
+e3ba4ca7e86642cfdcc9ff150398bee9 *d1_T09.shn
+f97c269c2102fea4d0635a90835382c9 *d1_T10.shn
+1779d292ba89464a10bbaf5b91ecb2a1 *d1_T11.shn
+27bf9f61f57858effcef9d297c534ce8 *d1_T12.shn
+f2b1575c025329fcd25fb514b9562548 *d2_T13.shn
+39844e2187019efa0466ae3d1d26f84c *d2_T14.shn
+2872ab7f4fb57d52d394aea8bfa1955c *d2_T15.shn
+73a173a5b6ef219f5886b578a67ce50e *d2_T16.shn
+95a04831a226e13b9fd4d328e3132245 *d2_T17.shn
+79cacf152cab298aa9b397f038ae3736 *d2_T18.shn
+5b5b6befe58e245d42ea236240a40f4c *d2_T19.shn
+72cfceef90cd96ab61f7a04235e709cc *noname.md5
+===================
+===================
+===================
+=== shntool md5/hash for: bd04-03-06-d.flacf
+===================
+===================
+===================
+de19e53134ab1e75962d7f6e4571f164  [shntool]  d1_T01.shn
+371086e827ade47e233fa444ad0c5e15  [shntool]  d1_T02.shn
+3dee1b0d023fab4c3d9976c614bd713a  [shntool]  d1_T03.shn
+b2a85038882d9b97aaea2c231039072d  [shntool]  d1_T04.shn
+0f3c50e0f50192882da6ed3fcc2aa756  [shntool]  d1_T05.shn
+206f0b536ce367c2f3db5c3c4f836ffa  [shntool]  d1_T06.shn
+19e5be60a547b7ab10ee4e125196ee6d  [shntool]  d1_T07.shn
+388bed34a974fd69f52ea12a9405b064  [shntool]  d1_T08.shn
+6508be548589c4e162415b86b3eb74de  [shntool]  d1_T09.shn
+e793ea64af1216775c5ee6e667d6baf0  [shntool]  d1_T10.shn
+ce7754ab86742a639833da085bdceccf  [shntool]  d1_T11.shn
+a93e78d3f41edc8530652222caa915d3  [shntool]  d1_T12.shn
+e599d47cfba6c0771d7b763a594f0ef1  [shntool]  d2_T13.shn
+09c2abd871fecb85db1cc98dd8dbff5c  [shntool]  d2_T14.shn
+c0d6ebf37afd6512dfca6076d49bd0eb  [shntool]  d2_T15.shn
+02bb31bb7c665e874f54da6e54b7697e  [shntool]  d2_T16.shn
+a7f642b19bd21dc86c5df1dc69910e36  [shntool]  d2_T17.shn
+72dab84cbe84463ed1c8eef44d6ad5af  [shntool]  d2_T18.shn
+fa98edf6be3214cccf1c69c04ce9b9bc  [shntool]  d2_T19.shn
+===================
+===================
+===================
+=== shntool len for: bd04-03-06-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.05        9713804 B   ---   --   ---xx    shn  0.5604  d1_T01.shn
+     4:45.25       50332844 B   ---   --   ---xx    shn  0.6314  d1_T02.shn
+     4:57.44       52494332 B   ---   --   ---xx    shn  0.5860  d1_T03.shn
+     5:49.47       61674188 B   ---   --   ---xx    shn  0.6306  d1_T04.shn
+     6:19.67       67013228 B   ---   --   ---xx    shn  0.5068  d1_T05.shn
+     7:16.71       77077436 B   ---   --   ---xx    shn  0.6149  d1_T06.shn
+     4:39.69       49377932 B   ---   --   ---xx    shn  0.5763  d1_T07.shn
+     6:23.48       67674140 B   ---   --   ---xx    shn  0.6362  d1_T08.shn
+     6:04.66       64364876 B   ---   --   ---xx    shn  0.5283  d1_T09.shn
+     5:34.05       58929404 B   ---   --   ---xx    shn  0.5955  d1_T10.shn
+     5:13.50       55330844 B   ---   --   ---xx    shn  0.4782  d1_T11.shn
+     6:22.60       67525964 B   ---   --   ---xx    shn  0.6326  d1_T12.shn
+     7:01.40       74358524 B   ---   --   ---xx    shn  0.6452  d2_T13.shn
+     8:00.47       84782588 B   ---   --   ---xx    shn  0.4842  d2_T14.shn
+     7:12.05       76216604 B   ---   --   ---xx    shn  0.5859  d2_T15.shn
+     3:43.10       39360764 B   ---   --   ---xx    shn  0.5040  d2_T16.shn
+    10:19.27      109255148 B   ---   --   ---xx    shn  0.6033  d2_T17.shn
+     0:34.69        6159932 B   ---   --   ---xx    shn  0.5613  d2_T18.shn
+     6:07.23       64792940 B   ---   --   ---xx    shn  0.6027  d2_T19.shn
+   107:22.28     1136435492 B                            0.5807  (19 files)
+===================
+===================
+===================

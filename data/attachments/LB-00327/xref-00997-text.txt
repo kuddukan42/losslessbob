@@ -1,0 +1,165 @@
+===================
+===================
+===================
+=== bd 1989-08-19 Illinois State Fair Grandstand, Springfield, Illinois.ffp
+===================
+===================
+===================
+Track 01.flac:57ef10ece1b43ff22d2f87930ddce24f
+Track 02.flac:4795b0bce2f2d7e51262c98858bb2c1f
+Track 03.flac:886730621dbbd7f9dc8af85ef6ef1622
+Track 04.flac:2f0c01cfdf9406a5202e491503a45c1a
+Track 05.flac:3fa1022c4ecc39c5449fad34ff64cd29
+Track 06.flac:667dfe794c333d0dfa0b7d768f2cb96d
+Track 07.flac:af106c2eea388ef07788fed65a4fc0dc
+Track 08.flac:726770ef5698e538b736f6544642e711
+Track 09.flac:9b055df670afe00865d3a5d879d5164a
+Track 10.flac:fbe2fd156d75caf06ee4ffdd723f5e87
+Track 11.flac:941dd65114d9bdd4f00b236feaac06f5
+Track 12.flac:8c42f84d585642b0aeb8bd42443ff570
+Track 13.flac:5477105302f631700566936ee3793685
+Track 14.flac:aec600568a40f4ecbb65c5a3579af52b
+Track 15.flac:ad933804c22d56cf58187e8f9872f4dc
+Track 16.flac:8a00167b16921404c7b58bdd66e49939
+===================
+===================
+===================
+=== bd 1989-08-19 Illinois State Fair Grandstand, Springfield, Illinois.md5
+===================
+===================
+===================
+4edf0c9539964b2e69bf9ad6af130457 *Track 01.flac
+c49117b0939e9577874f51cc13a60925 *Track 02.flac
+43c49459bb8b49e74a5e666706794f35 *Track 03.flac
+efecb5a4b925966153a8a11e521b320a *Track 04.flac
+e7ad35118dcb5ce2e012d4077a5b7019 *Track 05.flac
+bae2ff2602315132c725902e5eb1065d *Track 06.flac
+a34d30efacf83160010d09a7595041a7 *Track 07.flac
+501e0bfa1f14d35cc33c50a3120ac14a *Track 08.flac
+2055f7c4485da3c12a8c88d11129787c *Track 09.flac
+9cecc9d7026b8b844f37eb978e576f24 *Track 10.flac
+5e15e4659fdce2034b790e74920c578c *Track 11.flac
+84ae79466ac9957d3f7c2bfea6e4e11d *Track 12.flac
+f7f2eb22252ed24f901a82e3e09b02b5 *Track 13.flac
+1d19b042e194ebb5e4575c1bd463ac7a *Track 14.flac
+c6e14fdaf0e7dc190573028f65dce81d *Track 15.flac
+05c484e5441798f770e94b6143475dde *Track 16.flac
+===================
+===================
+===================
+=== bd 1989-08-19 Illinois State Fair Grandstand, Springfield, Illinois.txt
+===================
+===================
+===================
+Bob Dylan
+Illinois State Fair Grandstand
+Springfield, Illinois
+August 19, 1989
+
+Lineage: *** LB-???? *** UploaderNOTES: Track lengths very different from the 2 LBs listed (LB-0327 & LB-1208). Regrettably, my Dylan Dbase is not up to date on those - and I cant compare. SpectralAnalysis: the right channel most likely have been boosted? Taper: not identified Source/Lineage: no information
+
+LosslessBob entry to lineage above: LB-327 xref-00650. a bittorrent from 12/10 is same recording based on same clapping at end of d1t7 and has a lot more hiss with filenames like "CD1\01 Most likely you go your way (and I'll go mine).flac" 
+
+Fix of LB-327 xref-00650: Wave Repair 4.9.3 to fix index clicks and some clicks across [see DFF] > FLAC
+
+
+01. Most Likely You Go Your Way (And I'll Go Mine)
+02. Positively 4th Street 
+03. Queen Jane Approximately
+04. Simple Twist Of Fate
+05. Just Like A Woman 
+06. Highway 61 Revisited 
+07. A Hard Rain's A-Gonna Fall
+
+
+08. One Too Many Mornings 
+09. Don't Think Twice, It's All Right 
+10. Rank Strangers To Me (A. Brumley)
+11. The Harder They Come (Jimmy Cliff) 
+12. Silvio (Bob Dylan & Robert Hunter) 
+13. One Irish Rover (Van Morrison)
+14. I Shall Be Released 
+15. Like A Rolling Stone
+16. Mr. Tambourine Man 
+
+
+original ffp:
+
+01 Most likely you go your way (and I'll go mine).flac:a0a87aaa76df60ec2b4da4e8a022181b
+02 Positively 4th Street.flac:e6d41523cdf67b0f1f5458d094c7ab49
+03 Queen Jane approximately.flac:0db74509c1cacf9309e5fa688f29e81f
+04 Simple twist of fate.flac:2d466b61827bbc5f964240bd97a128c0
+05 Just like a woman.flac:5c75dd1f05db3d6e7c13a5d2ac356fef
+06 Highway 61 revisited.flac:f4168583ae6a56a2599cd54cc27740e8
+07 A hard rain's a-gonna fall.flac:6735e0f5803a87dc8f99e2b3c1fdeaff
+08 One too many mornings.flac:e5eeb5245bce5df26bbe45b270e30514
+09 Don't think twice, it's all right.flac:7b5bb0ef96da3f698366366fac628e04
+10 Rank strangers to me.flac:22a018ddecb2a59243c0ea68395b633f
+11 The harder they come.flac:008fc6a8feebab029089d114ea1d18ac
+12 Silvio.flac:fa3b777dbcde394d5cc99dcd722c362a
+13 One Irish rover.flac:f61c8e9c754116248bd9f3a4e74ac016
+14 I shall be released.flac:fa351c930e89a1903ca7eaa3e83c45e0
+15 Like a rolling stone.flac:7bea932cd2982f4bddf9951e2843fba0
+16 Mr. Tambourine man.flac:00be3cc5f4dafc874e8b2eb2f5c73027
+
+original md5:
+
+2db50b6078714e592a9372452c0bbbb8 *CD1\01 Most likely you go your way (and I'll go mine).flac
+9210e93168093ee2b40386add4af8519 *CD1\02 Positively 4th Street.flac
+e313da89bbddb3d476de7c14cc09fe03 *CD1\03 Queen Jane approximately.flac
+bcac46bcacb8a3b9361518f5edce5bd0 *CD1\04 Simple twist of fate.flac
+3e217911ee8b9be9b31e19f7002e9a2d *CD1\05 Just like a woman.flac
+6d0b63360a4751a1c6278279e7a51c3f *CD1\06 Highway 61 revisited.flac
+9d95bd28f0645397b3de76c3215743de *CD1\07 A hard rain's a-gonna fall.flac
+9407f142359c7f5cda0454b8c90d3c00 *CD2\08 One too many mornings.flac
+b84a1d04e01efbf54cce6ccb070d31db *CD2\09 Don't think twice, it's all right.flac
+94886c953a34fb6c26e9922a078a90f9 *CD2\10 Rank strangers to me.flac
+d8486d80059e2e43ad7e8afafcc917f9 *CD2\11 The harder they come.flac
+cb7622845bb69435f1f39c384b6ab7d6 *CD2\12 Silvio.flac
+4fcf1bda1a7b79650e13750671b04fc1 *CD2\13 One Irish rover.flac
+bf3282b91c91e2d0487de3a5e69de9e6 *CD2\14 I shall be released.flac
+1a8abfecc9ccdcebfd1ffbc27d4da29a *CD2\15 Like a rolling stone.flac
+51d9119d8893ab1c9cb5c5e502a8946a *CD2\16 Mr. Tambourine man.flac
+
+
+new ffp:
+
+Track 01.flac:57ef10ece1b43ff22d2f87930ddce24f
+Track 02.flac:4795b0bce2f2d7e51262c98858bb2c1f
+Track 03.flac:886730621dbbd7f9dc8af85ef6ef1622
+Track 04.flac:2f0c01cfdf9406a5202e491503a45c1a
+Track 05.flac:3fa1022c4ecc39c5449fad34ff64cd29
+Track 06.flac:667dfe794c333d0dfa0b7d768f2cb96d
+Track 07.flac:af106c2eea388ef07788fed65a4fc0dc
+Track 08.flac:726770ef5698e538b736f6544642e711
+Track 09.flac:9b055df670afe00865d3a5d879d5164a
+Track 10.flac:fbe2fd156d75caf06ee4ffdd723f5e87
+Track 11.flac:941dd65114d9bdd4f00b236feaac06f5
+Track 12.flac:8c42f84d585642b0aeb8bd42443ff570
+Track 13.flac:5477105302f631700566936ee3793685
+Track 14.flac:aec600568a40f4ecbb65c5a3579af52b
+Track 15.flac:ad933804c22d56cf58187e8f9872f4dc
+Track 16.flac:8a00167b16921404c7b58bdd66e49939
+
+
+new md5:
+
+4edf0c9539964b2e69bf9ad6af130457 *Track 01.flac
+c49117b0939e9577874f51cc13a60925 *Track 02.flac
+43c49459bb8b49e74a5e666706794f35 *Track 03.flac
+efecb5a4b925966153a8a11e521b320a *Track 04.flac
+e7ad35118dcb5ce2e012d4077a5b7019 *Track 05.flac
+bae2ff2602315132c725902e5eb1065d *Track 06.flac
+a34d30efacf83160010d09a7595041a7 *Track 07.flac
+501e0bfa1f14d35cc33c50a3120ac14a *Track 08.flac
+2055f7c4485da3c12a8c88d11129787c *Track 09.flac
+9cecc9d7026b8b844f37eb978e576f24 *Track 10.flac
+5e15e4659fdce2034b790e74920c578c *Track 11.flac
+84ae79466ac9957d3f7c2bfea6e4e11d *Track 12.flac
+f7f2eb22252ed24f901a82e3e09b02b5 *Track 13.flac
+1d19b042e194ebb5e4575c1bd463ac7a *Track 14.flac
+c6e14fdaf0e7dc190573028f65dce81d *Track 15.flac
+05c484e5441798f770e94b6143475dde *Track 16.flac
+===================
+===================
+===================

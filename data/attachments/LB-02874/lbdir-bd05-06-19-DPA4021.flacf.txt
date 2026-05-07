@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-06-19-DPA4021.flacf 
+=================== 
+=================== 
+=================== 
+1be9cb1a0e8d4a205bb8331245e6f0eb  bd05-06-19-DPA4021-LB-2874.txt
+a8d97d1c11dbd20de4134ce41bd247a2  bd05-06-19.txt
+24fb4b378fe6e1e805b131b493ec3654  bd05-06-19d1t01.flac
+15a29edbf34494949eecd24f0a8f329e  bd05-06-19d1t02.flac
+c3151bfc51546c2f0e346877869e626b  bd05-06-19d1t03.flac
+c220bf79358a0db978a6d361bbd3b6a0  bd05-06-19d1t04.flac
+2aee277f7649df4d2bcfe0fef2bfe6d6  bd05-06-19d1t05.flac
+cd49bc73e5d57123d53a19aa645ef1c7  bd05-06-19d1t06.flac
+11f17419f3f5c67eaf974e1fbe11cf2a  bd05-06-19d1t07.flac
+2288b82be89ce96511dfbd9f02fbc083  bd05-06-19d1t08.flac
+90441c85fbd5a8f837266aee06750932  bd05-06-19d1t09.flac
+d0a1de4145ac1a40cda7b74c981d9221  bd05-06-19d2t01.flac
+865129afa17e432c690c3e752a2abd19  bd05-06-19d2t02.flac
+e6aa541575dd43659561092420b79cca  bd05-06-19d2t03.flac
+835b80f9c73cf8aee78e2a5c52b54570  bd05-06-19d2t04.flac
+9402857cfcdcdfd03910da4fd5d7f40d  bd05-06-19d2t05.flac
+f87d5fae1ef743ce405c16ee99545d06  bd05-06-19d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-06-19-DPA4021.flacf 
+=================== 
+=================== 
+=================== 
+bd05-06-19d1t01.flac:00d794ed4c856870dcbe5d9d2bcb48d9
+bd05-06-19d1t02.flac:676c990877a3666337ecf395b4a508c3
+bd05-06-19d1t03.flac:ddc3666c81cc619b07c3bd96b0e69f36
+bd05-06-19d1t04.flac:20ed9ee2d0c4c9c5415f49f55d3f9410
+bd05-06-19d1t05.flac:e95e7f4239dc40b56e112941f5294b40
+bd05-06-19d1t06.flac:28728a3c87390b8836871d7444c9b4d3
+bd05-06-19d1t07.flac:5740666c6f3bd9dfcb601fdfdb0cfcef
+bd05-06-19d1t08.flac:25bd85a02ad636351143baae2283f0ef
+bd05-06-19d1t09.flac:23980326c9a6792aafff45bc1b965121
+bd05-06-19d2t01.flac:97a56049375107de2dbe677bdca36bca
+bd05-06-19d2t02.flac:7297646064233cbb24c083dae90e1e21
+bd05-06-19d2t03.flac:a35b143a81325b415bfa5d8b9b9fb2ac
+bd05-06-19d2t04.flac:e5a9742bd787fcc8727d126bd0f59708
+bd05-06-19d2t05.flac:a0fcd3e9ac26d3fe1bd7a525783e35de
+bd05-06-19d2t06.flac:c747dce0ffc7082e9389e079b0f949ec
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-06-19-DPA4021.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.57        7013708 B   ---   --   ---xx   flac  0.4070  bd05-06-19d1t01.flac
+     5:36.08       59289260 B   ---   --   ---xx   flac  0.5083  bd05-06-19d1t02.flac
+     7:06.42       75245228 B   ---   --   ---xx   flac  0.4193  bd05-06-19d1t03.flac
+     5:53.13       62299820 B   ---   --   ---xx   flac  0.4812  bd05-06-19d1t04.flac
+     9:15.27       97965548 B   ---   --   ---xx   flac  0.4061  bd05-06-19d1t05.flac
+     8:04.52       85499948 B   ---   --   ---xx   flac  0.4623  bd05-06-19d1t06.flac
+     6:57.01       73561196 B   ---   --   ---xx   flac  0.4019  bd05-06-19d1t07.flac
+     7:54.68       83773580 B   ---   --   ---xx   flac  0.4640  bd05-06-19d1t08.flac
+     5:16.65       55895324 B   ---   --   ---xx   flac  0.3941  bd05-06-19d1t09.flac
+     5:48.48       61500140 B   ---   --   ---xx   flac  0.4234  bd05-06-19d2t01.flac
+     8:00.10       84695564 B   ---   --   ---xx   flac  0.4606  bd05-06-19d2t02.flac
+     5:25.27       57393548 B   ---   --   ---xx   flac  0.4606  bd05-06-19d2t03.flac
+     7:51.45       83190284 B   ---   --   ---xx   flac  0.4795  bd05-06-19d2t04.flac
+     8:25.54       89209052 B   ---   --   ---xx   flac  0.4605  bd05-06-19d2t05.flac
+     5:41.70       60317084 B   ---   --   ---xx   flac  0.5075  bd05-06-19d2t06.flac
+    97:57.62     1036849284 B                            0.4508  (15 files)
+=================== 
+=================== 
+=================== 

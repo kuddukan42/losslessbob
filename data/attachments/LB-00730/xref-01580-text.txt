@@ -1,0 +1,154 @@
+===================
+===================
+===================
+=== bd92-04-02 - Melbourne - MK.md5
+===================
+===================
+===================
+c61cd9f9686ff0a323724a6244fd21e1 *bd92-04-02 - Melbourne - MK.st5
+f83ca33a86e3ded22fa7a5d57e37ce0c *bd92-04-02 - Melbourne - MK.txt
+e61e11756fc7383fb2042261a86fa684 *bd92-04-02d1t01.shn
+dab9de8ce849bab97602b6ce891f533b *bd92-04-02d1t02.shn
+8d2c217c8853ee54bd118e215cfbe49f *bd92-04-02d1t03.shn
+490667c308b7f6bb0b4c61307f249703 *bd92-04-02d1t04.shn
+1a6499be3fe3d037a5f75bbf2ed826b2 *bd92-04-02d1t05.shn
+3841d2039d2b5f7c9cad97d5203be321 *bd92-04-02d1t06.shn
+d5bedc06c887bf9447afc1187fbd81e4 *bd92-04-02d1t07.shn
+a01ebbcd8d5c4eb39610f1d86d2bbc3e *bd92-04-02d1t08.shn
+c458bd15ba42e2585a63eef753c79eaa *bd92-04-02d1t09.shn
+87e1a7b163df72b2230146f8587f4a95 *bd92-04-02d1t10.shn
+bcf5a33327334084c487e2abe58e1057 *bd92-04-02d2t01.shn
+efbc8062037da96fdfeeb25c4cff80b3 *bd92-04-02d2t02.shn
+aec1f493bed953ababc6c4dc1e14372f *bd92-04-02d2t03.shn
+99f06f674fa3b15d32f51054b2a46aee *bd92-04-02d2t04.shn
+9bc2347408ff66b9533fe35b919535c3 *bd92-04-02d2t05.shn
+393c237f03d3304cd9bf09b4917a92db *bd92-04-02d2t06.shn
+694e5194e9cb48bac87641f4e56d78f9 *bd92-04-02d2t07.shn
+7b95806c2b6c1eef4f158af6bd3dd524 *bd92-04-02d2t08.shn
+9362ef059ae7f3b7292b08bc4e03020b *noname.md5
+===================
+===================
+===================
+=== bd92-04-02 - Melbourne - MK.st5
+===================
+===================
+===================
+d0ca5197fcb003ca19c87a5be43612c6  [shntool]  bd92-04-02d1t01.shn
+473284c20077b72fe51a399ae8f1a329  [shntool]  bd92-04-02d1t02.shn
+5907ae76b6d96bf4a42e081b87b58607  [shntool]  bd92-04-02d1t03.shn
+417e18d10e35fadd8525681311096b1b  [shntool]  bd92-04-02d1t04.shn
+70995173975b55fac52acc27b48bc07f  [shntool]  bd92-04-02d1t05.shn
+fa4b04d7e6592bc1a3f5b12257fa7087  [shntool]  bd92-04-02d1t06.shn
+16791f51979732973cf639e50bdbfb6f  [shntool]  bd92-04-02d1t07.shn
+0fbf4ceb96851db1bd24a8cab241972a  [shntool]  bd92-04-02d1t08.shn
+176fac18d4b0e071f8449ff30e208d87  [shntool]  bd92-04-02d1t09.shn
+9a5078c6ef6a8c71c02bd0023f7d9450  [shntool]  bd92-04-02d1t10.shn
+c2580ef9d6c5ffd0c9eb45b5f47c7daa  [shntool]  bd92-04-02d2t01.shn
+fd322736ca3ffe9daaea73092216c4ab  [shntool]  bd92-04-02d2t02.shn
+1ba645009592f8ac351b87ecd7575885  [shntool]  bd92-04-02d2t03.shn
+2dba67bbaa2a8c18dd59c857270ef0f3  [shntool]  bd92-04-02d2t04.shn
+c275c602713b7647791e849912fd1fa4  [shntool]  bd92-04-02d2t05.shn
+fa00044d10baf531c21805c1e23ae365  [shntool]  bd92-04-02d2t06.shn
+6dc5884a981e1ed2d895dfc99ae422d1  [shntool]  bd92-04-02d2t07.shn
+2bbf98b30ad25db3044f291222801665  [shntool]  bd92-04-02d2t08.shn
+===================
+===================
+===================
+=== bd92-04-02 - Melbourne - MK.txt
+===================
+===================
+===================
+#9 - 1992 Australian Tour - MK/LK Series - May 2015
+
+xxxxx
+
+Palais Theatre
+Melbourne, Victoria, Australia
+2 April 1992
+
+1.   All Along The Watchtower
+2.   Tonight I'll Be Staying Here With You
+3.   Everything Is Broken
+4.   Just Like A Woman
+5.   Tangled Up In Blue
+6.   She Belongs To Me
+7.   Maggie's Farm
+8.   Love Minus Zero/No Limit
+9.   Little Moses (Bert A. Williams/Earle C. Jones)
+10.   Trail Of The Buffalo (trad. arr. Woody Guthrie)
+11.   Don't Think Twice, It's All Right
+12.   The Times They Are A-Changin'
+13.   Cat's In The Well
+14.   Idiot Wind
+15.   Highway 61 Revisited
+
+16.   Ballad Of A Thin Man
+17.   Absolutely Sweet Marie
+18.   Blowin' In The Wind
+
+Concert # 373 of The Never-Ending Tour.  Concert # 9 of the 1992 Tour Of Australia. 1992 concert # 9.
+Concert # 9 with the 6th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+8, 9, 18  Bob Dylan (acoustic guitar & vocal).
+10  Bob Dylan (acoustic guitar & vocal) & John Jackson (guitar).
+11, 12 acoustic with the band.
+4, 5, 8, 11, 12, 18  Bob Dylan harmonica.
+5, 12  Bucky Baxter (mandolin).
+11  Bucky Baxter (dobro).
+15  Bucky Baxter (electric slide guitar).
+
+Note. First Idiot Wind since Salt Palace in Salt Lake City, 25 May 1976!!
+
+BobTalk:
+Thank you everybody! This is my farm song for tonight. (before Maggie's Farm).
+Thank you everybody! That's the spiritual side of the show tonight. (after Little Moses).
+
+5 new songs (27%) compared to previous concert. 4 new songs for this tour.
+
+xxxxx
+
+d0ca5197fcb003ca19c87a5be43612c6  [shntool]  bd92-04-02d1t01.shn
+473284c20077b72fe51a399ae8f1a329  [shntool]  bd92-04-02d1t02.shn
+5907ae76b6d96bf4a42e081b87b58607  [shntool]  bd92-04-02d1t03.shn
+417e18d10e35fadd8525681311096b1b  [shntool]  bd92-04-02d1t04.shn
+70995173975b55fac52acc27b48bc07f  [shntool]  bd92-04-02d1t05.shn
+fa4b04d7e6592bc1a3f5b12257fa7087  [shntool]  bd92-04-02d1t06.shn
+16791f51979732973cf639e50bdbfb6f  [shntool]  bd92-04-02d1t07.shn
+0fbf4ceb96851db1bd24a8cab241972a  [shntool]  bd92-04-02d1t08.shn
+176fac18d4b0e071f8449ff30e208d87  [shntool]  bd92-04-02d1t09.shn
+9a5078c6ef6a8c71c02bd0023f7d9450  [shntool]  bd92-04-02d1t10.shn
+c2580ef9d6c5ffd0c9eb45b5f47c7daa  [shntool]  bd92-04-02d2t01.shn
+fd322736ca3ffe9daaea73092216c4ab  [shntool]  bd92-04-02d2t02.shn
+1ba645009592f8ac351b87ecd7575885  [shntool]  bd92-04-02d2t03.shn
+2dba67bbaa2a8c18dd59c857270ef0f3  [shntool]  bd92-04-02d2t04.shn
+c275c602713b7647791e849912fd1fa4  [shntool]  bd92-04-02d2t05.shn
+fa00044d10baf531c21805c1e23ae365  [shntool]  bd92-04-02d2t06.shn
+6dc5884a981e1ed2d895dfc99ae422d1  [shntool]  bd92-04-02d2t07.shn
+2bbf98b30ad25db3044f291222801665  [shntool]  bd92-04-02d2t08.shn
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+dab9de8ce849bab97602b6ce891f533b *d1t02.shn
+e61e11756fc7383fb2042261a86fa684 *d1t01.shn
+8d2c217c8853ee54bd118e215cfbe49f *d1t03.shn
+490667c308b7f6bb0b4c61307f249703 *d1t04.shn
+1a6499be3fe3d037a5f75bbf2ed826b2 *d1t05.shn
+3841d2039d2b5f7c9cad97d5203be321 *d1t06.shn
+d5bedc06c887bf9447afc1187fbd81e4 *d1t07.shn
+a01ebbcd8d5c4eb39610f1d86d2bbc3e *d1t08.shn
+c458bd15ba42e2585a63eef753c79eaa *d1t09.shn
+87e1a7b163df72b2230146f8587f4a95 *d1t10.shn
+bcf5a33327334084c487e2abe58e1057 *d2t01.shn
+efbc8062037da96fdfeeb25c4cff80b3 *d2t02.shn
+aec1f493bed953ababc6c4dc1e14372f *d2t03.shn
+99f06f674fa3b15d32f51054b2a46aee *d2t04.shn
+9bc2347408ff66b9533fe35b919535c3 *d2t05.shn
+393c237f03d3304cd9bf09b4917a92db *d2t06.shn
+694e5194e9cb48bac87641f4e56d78f9 *d2t07.shn
+7b95806c2b6c1eef4f158af6bd3dd524 *d2t08.shn
+===================
+===================
+===================

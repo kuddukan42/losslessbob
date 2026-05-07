@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-29-fixed-Luisbp51.flacf 
+=================== 
+=================== 
+=================== 
+f0a05297178cb5de7f4198438f812f7c  bd2000-07-29-columbia.d1t02.sa_fa.JPG
+d2b5e905ce85ef32ddb655a20273aaad  bd2000-07-29-columbia.fixed.lbp51.flac.md5
+58f292bcdc6da7c4de1d52cb290490ad  bd2000-07-29-columbia.fixed.lbp51.info.txt
+44c4187c400cd957496df0d4d15e9d31  bd2000-07-29-columbia.flac.md5
+71e8c450972b7c5dd357c136d13dd00d  bd2000-07-29-columbia.info.txt
+d295419e6a038ee01bb0e2005dbdd65f  d1\bd2000-07-29d1.LOG
+1e30ec1f4ba97fc9942267aa8f14b7e9  d1\bd2000-07-29d1t01.flac
+0f7db16496da2b88069d2dfa4d43cc89  d1\bd2000-07-29d1t02.flac
+279310af733c2871fe2332b7837a66a3  d1\bd2000-07-29d1t03.flac
+91c783ac0e1a16555297397a3adda5d2  d1\bd2000-07-29d1t04.flac
+edaa0bf67bf8d9dc8b23b36c2482e69b  d1\bd2000-07-29d1t05.flac
+b83601a441ee708ec4fb0b9b00325549  d1\bd2000-07-29d1t06.flac
+c0f04aa5da8cb3003cfdb348db947c91  d1\bd2000-07-29d1t07.flac
+ce4380ace07c55a7e6178110abc29e00  d1\bd2000-07-29d1t08.flac
+5702f1cdcab998c69f00fcba36f4fcaf  d1\bd2000-07-29d1t09.flac
+239742df950d5d29c0af79ddf30fb758  d1\bd2000-07-29d1t10.flac
+0f1e61557f99a20878167a273519cc1b  d1\bd2000-07-29d1t11.flac
+9618405bf8843810cad71709eb15c569  d1\bd2000-07-29d1t12.flac
+f113df42f7b6db18a17bab2b5e7e88b2  d1\d1.ffp.txt
+524113e804b9f13985fe1ec595b37beb  d1\d1.flac.md5
+f940b84447b2a68242f7e8db84c892a2  d1\d1.wav.md5
+48eb125944e8e7de05f520481de3536b  d2\bd2000-07-29d2.LOG
+052b5cb9ca3964b1b0913e0fadaf9a72  d2\bd2000-07-29d2t01.flac
+18465f1b67802160a94d1c73a5318c47  d2\bd2000-07-29d2t02.flac
+ada3c09d826cb61cdb2a38ca0470d154  d2\bd2000-07-29d2t03.flac
+e22cb097cf80ea350a3fcb9bbe19e2db  d2\bd2000-07-29d2t04.flac
+52810f9847739dbf8fdb0079e192b100  d2\bd2000-07-29d2t05.flac
+fa5f614162bf1e37e25c4b1b35d2b2e3  d2\d2.ffp.txt
+06b7d1a671b74e7bd634a9e7c97f3b0d  d2\d2.flac.md5
+2d176a9f6b89aacef0c5f32d3b520622  d2\d2.wav.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-29-fixed-Luisbp51.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd2000-07-29d1t01.flac:40842c8723575c3dd9d480926814a1a6
+bd2000-07-29d1t02.flac:3163998f49c518b43fa53a32efd78499
+bd2000-07-29d1t03.flac:f4a680adbba179c682afdf7ee72f1d94
+bd2000-07-29d1t04.flac:9881e51c1fd592bde0ba1233e80c2c19
+bd2000-07-29d1t05.flac:ae66a17801da567d4aecc2cc20202515
+bd2000-07-29d1t06.flac:aac69b102e0e2133f39b6bccd97a9e74
+bd2000-07-29d1t07.flac:0368963fdfad9772f18f222168ee05ee
+bd2000-07-29d1t08.flac:c6ff64561cb9c33ad06df7ab87c65d65
+bd2000-07-29d1t09.flac:9e2a7140e54cf5e36bf61ee4d87303f1
+bd2000-07-29d1t10.flac:b9a5db9d10525c5ffd606ef7ff54a703
+bd2000-07-29d1t11.flac:ca08e7c5ab6595900398efd19d02debd
+bd2000-07-29d1t12.flac:26f1303e43998f5843c2e4ef0974809a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-29-fixed-Luisbp51.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd2000-07-29d2t01.flac:bab22af2c7f376cc9b877053583284e5
+bd2000-07-29d2t02.flac:68a4a51eeba458d04ae0841e8d7ba488
+bd2000-07-29d2t03.flac:c2eafb7c112f9d0bd143dd1deeffe154
+bd2000-07-29d2t04.flac:6cfbe386ccb7c873c9c6b6c5b8b15f4b
+bd2000-07-29d2t05.flac:7b04a53101e3c6d0940143344514b65c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-29-fixed-Luisbp51.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:16.24       34630892 B   ---   --   ---xx   flac  0.5509  bd2000-07-29d1t01.flac
+     5:44.31       60754556 B   ---   --   ---xx   flac  0.5091  bd2000-07-29d1t02.flac
+     8:43.69       92419532 B   ---   --   ---xx   flac  0.5358  bd2000-07-29d1t03.flac
+     7:35.43       80363180 B   ---   --   ---xx   flac  0.5007  bd2000-07-29d1t04.flac
+     8:43.69       92419532 B   ---   --   ---xx   flac  0.5366  bd2000-07-29d1t05.flac
+     3:35.42       38024828 B   ---   --   ---xx   flac  0.4645  bd2000-07-29d1t06.flac
+     5:08.27       54394748 B   ---   --   ---xx   flac  0.5110  bd2000-07-29d1t07.flac
+     7:01.30       74335004 B   ---   --   ---xx   flac  0.4700  bd2000-07-29d1t08.flac
+     6:44.25       71324444 B   ---   --   ---xx   flac  0.4996  bd2000-07-29d1t09.flac
+     4:30.51       47747996 B   ---   --   ---xx   flac  0.5052  bd2000-07-29d1t10.flac
+     7:13.47       76491788 B   ---   --   ---xx   flac  0.4948  bd2000-07-29d1t11.flac
+     6:22.46       67493036 B   ---   --   ---xx   flac  0.4864  bd2000-07-29d1t12.flac
+    74:40.54      790399536 B                            0.5063  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-29-fixed-Luisbp51.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:47.62       61356668 B   ---   --   ---xx   flac  0.5693  bd2000-07-29d2t01.flac
+     7:26.72       78843788 B   ---   --   ---xx   flac  0.5699  bd2000-07-29d2t02.flac
+     7:23.59       78284012 B   ---   --   ---xx   flac  0.4931  bd2000-07-29d2t03.flac
+     6:21.33       67286060 B   ---   --   ---xx   flac  0.5641  bd2000-07-29d2t04.flac
+     5:01.20       53143484 B   ---   --   ---xx   flac  0.5053  bd2000-07-29d2t05.flac
+    32:01.21      338914012 B                            0.5408  (5 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-07-MP.flacf 
+=================== 
+=================== 
+=================== 
+52183948ec241080e5c24cc24941f368  bd88-06-07-MP.txt
+8111eaa2cb5dbb13d95c07d876801946  dylan-1988-06-07-MP-flac-fingerprint.txt
+21e8f293d35e5741b6e882a6d800dc43  dylan-1988-06-07-MP-FLAC.md5
+771f7fffc9f8951cb9811f3158441af6  dylan-1988-06-07-MP-t01.flac
+48993d1ad0c2505cb134103193f54fa4  dylan-1988-06-07-MP-t02.flac
+12bf9d56a3a0d08a475d905c9e753360  dylan-1988-06-07-MP-t03.flac
+9f41bf4a1ab234f48257e1658c4edfb7  dylan-1988-06-07-MP-t04.flac
+e843dc75b96e8b96ad7308ce6629bfcf  dylan-1988-06-07-MP-t05.flac
+3c4fbaaadbe857a819f876abcd94ccf7  dylan-1988-06-07-MP-t06.flac
+5369ddf0fef77081f2c6b9902e54391c  dylan-1988-06-07-MP-t07.flac
+bf7b53210da53681211915ee4f3e8c2f  dylan-1988-06-07-MP-t08.flac
+30574b42c833fc7eaf0850508b779478  dylan-1988-06-07-MP-t09.flac
+69fa06629c26c6dae3584685050c5d61  dylan-1988-06-07-MP-t10.flac
+bf1e69fd5d49b09c39a54fc851c924ec  dylan-1988-06-07-MP-t11.flac
+0be5f076eb8390b739a71d544c84e2dd  dylan-1988-06-07-MP-t12.flac
+5aa7473cb418c096b8a5736ecb5263f7  dylan-1988-06-07-MP-t13.flac
+8fd1fd27e550aba1453a269cb0cb369f  dylan-1988-06-07-MP.log
+09613d53f783ccbcd38ffacb1bbf3b29  Extras_dylan-1988-06-07-MP\Concord 070688_back.jpg
+ab9f48cb706175a13335f522d848ed27  Extras_dylan-1988-06-07-MP\Concord 070688_front.jpg
+8edd67c871a5610f12ac84eb9b9de48c  Extras_dylan-1988-06-07-MP\Concord761988B.jpg
+1ce360f85b2661f0a79b6c29cb76d40d  Extras_dylan-1988-06-07-MP\Concord761988F.jpg
+43fd9509d05610f62dbd4a4c2803c090  Extras_dylan-1988-06-07-MP\dylan-1988-06-07-MP-WAV.md5
+956fc9922d99d48eab0c4413a6b89f60  Extras_dylan-1988-06-07-MP\dylan-1988-06-07-MP-lts-rename.bat
+a8aba14f7d11e3165d6e54e2c8586361  Extras_dylan-1988-06-07-MP\dylan-1988-06-07-MP-shntool-info.txt
+aeed65559d47d57e7398c453b7587b8a  Extras_dylan-1988-06-07-MP\dylan-1988-06-07-MP-stl-rename.bat
+eedc737ccb3454d4dc7c1a9f5c8be444  Extras_dylan-1988-06-07-MP\dylan-1988-06-07-MP-tracklist.html
+defa7e435ec97672d50a55d3b11acb95  Extras_dylan-1988-06-07-MP\dylan-1988-06-07-MP-whole-image-shntool-fingerprint.txt
+5db1078130082b2af2bd5a9d6005b5ca  Extras_dylan-1988-06-07-MP\dylan-1988-06-07-MP-whole-image.cue
+85b62508a2b5c97ad99a0ae32a7930b8  Extras_dylan-1988-06-07-MP\dylan-1988-06-07-MP.cue
+19f9c8048a2b68d92bb0eb418fa30df3  README-dylan-1988-06-07-MP-Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-07-MP.flacf 
+=================== 
+=================== 
+=================== 
+dylan-1988-06-07-MP-t01.flac:69cf1878a805aeb0eac8764d0fa23ae8
+dylan-1988-06-07-MP-t02.flac:829a0a13dc4d639dd2c41e2325aa9467
+dylan-1988-06-07-MP-t03.flac:643a8bd56879d53dcb911e0a54b118d3
+dylan-1988-06-07-MP-t04.flac:f0eec13b58d705d05058d979eb55a4e2
+dylan-1988-06-07-MP-t05.flac:3991b477e15ba4bfccc16149bc0d791e
+dylan-1988-06-07-MP-t06.flac:43075805d8f043a77b580d3dfb875dab
+dylan-1988-06-07-MP-t07.flac:918bd43486067ba56ab5c1bbe5ca6609
+dylan-1988-06-07-MP-t08.flac:69cbd5a953bc07e20d3eb3d098066c0d
+dylan-1988-06-07-MP-t09.flac:5441492d1f4ea25d9fecf10ea73b049d
+dylan-1988-06-07-MP-t10.flac:cd8b808abbe0dbf15bb8686ad13f53b0
+dylan-1988-06-07-MP-t11.flac:14b3fd3125408896090b0b57d70c458f
+dylan-1988-06-07-MP-t12.flac:d8eff1b4e64f890d7cec2ba23cf65636
+dylan-1988-06-07-MP-t13.flac:26081037bd8fdb10adb9d440543a06c6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-07-MP.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:50.37       40659068 B   ---   --   ---xx   flac  0.6729  dylan-1988-06-07-MP-t01.flac
+     5:20.27       56511548 B   ---   --   ---xx   flac  0.6768  dylan-1988-06-07-MP-t02.flac
+     5:08.71       54498236 B   ---   --   ---xx   flac  0.6897  dylan-1988-06-07-MP-t03.flac
+     5:50.53       61864700 B   ---   --   ---xx   flac  0.6395  dylan-1988-06-07-MP-t04.flac
+     5:56.53       62923100 B   ---   --   ---xx   flac  0.6897  dylan-1988-06-07-MP-t05.flac
+     6:05.26       64447196 B   ---   --   ---xx   flac  0.6530  dylan-1988-06-07-MP-t06.flac
+     4:17.17       45374828 B   ---   --   ---xx   flac  0.6491  dylan-1988-06-07-MP-t07.flac
+     4:45.64       50424572 B   ---   --   ---xx   flac  0.6332  dylan-1988-06-07-MP-t08.flac
+     4:20.02       45868748 B   ---   --   ---xx   flac  0.6414  dylan-1988-06-07-MP-t09.flac
+     4:51.11       51358316 B   ---   --   ---xx   flac  0.6923  dylan-1988-06-07-MP-t10.flac
+     5:14.17       55429628 B   ---   --   ---xx   flac  0.6704  dylan-1988-06-07-MP-t11.flac
+     7:58.00       84319244 B   ---   --   ---xx   flac  0.6949  dylan-1988-06-07-MP-t12.flac
+     5:08.53       54455900 B   ---   --   ---xx   flac  0.7033  dylan-1988-06-07-MP-t13.flac
+    68:47.56      728135084 B                            0.6711  (13 files)
+=================== 
+=================== 
+=================== 

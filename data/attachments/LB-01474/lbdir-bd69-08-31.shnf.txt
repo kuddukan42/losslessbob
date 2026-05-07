@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-08-31.shnf 
+=================== 
+=================== 
+=================== 
+3384183d4edd528adefe2684291efe76  bd69-08-31.txt
+eb946e11e9de8fb31f3eee47d152f1bc  Bob Dylan & The Band Isle Of Wight 8-31-69.txt
+2cb68ead6a09a31b7ae4d1844cd282c5  noname.md5
+a4954a5a6d20972aea618bf6ef05b0a5  Track01.shn
+a71894fb7a2a43640e366215633f68ee  Track02.shn
+d04168f10f6b1e77aef735f3a6384aa5  Track03.shn
+ca2226a66eb19294351cae8b4fbf10da  Track04.shn
+de3fb8d5cdf534fcb15550b51cb8828b  Track05.shn
+ae75e881237feb4ddccd676eb4e68b54  Track06.shn
+4986371287f5de3d5d3ffaa09752e220  Track07.shn
+ed8bbec48cfaeed4e9f2e32b45215379  Track08.shn
+b988b1c5b25322d172fc9a8aa2907379  Track09.shn
+285aeab25fb2c862cf81931d72e82ecc  Track10.shn
+9498f1476115bd3654031a8ed5fa307e  Track11.shn
+2ccd5ecd4637e8e9a81fcd4f628e6bd0  Track12.shn
+1c0f0a0195e5910b837e93f1ed89ac2c  Track13.shn
+b2c3acb353743750b4618bc6a92b93b9  Track14.shn
+d3918196eec90bff4eed2bc9b44b2009  Track15.shn
+e31492b38b514560618e9617de1e6271  Track16.shn
+5697fe36abffcffc1632d441d90160c4  Track17.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd69-08-31.shnf 
+=================== 
+=================== 
+=================== 
+6747a02c8038f50e2d692b3ebd866c52  [shntool]  Track01.wav
+948eafdee903d7f7740cea05e9d22f75  [shntool]  Track02.wav
+783b54a2e8f6ba3bbcf6bccdfad470f3  [shntool]  Track03.wav
+9aa73ea8aacf249199471c12ec942f5e  [shntool]  Track04.wav
+4337d869b92212399a3a4281af8e317a  [shntool]  Track05.wav
+c2a986494d23d091c71f93ff21ce551c  [shntool]  Track06.wav
+03aba13761abe219e9837de3b2957f1c  [shntool]  Track07.wav
+c7f213e047b2322a6c25e4b8a64294e2  [shntool]  Track08.wav
+3fc9a37bc660eb484a5d1b850c9722eb  [shntool]  Track09.wav
+3bb31c606fd52929360d4c3460060ef4  [shntool]  Track10.wav
+2954b4d60c5b1361f7102da0df91d541  [shntool]  Track11.wav
+406eae5584a9e81dbc0b068e396d6526  [shntool]  Track12.wav
+d00d8d8f96159f3f551e3c4c879a8543  [shntool]  Track13.wav
+64b9ad36a15eada5289ba09daace8898  [shntool]  Track14.wav
+5a1bbba62ed9445aeb9bc8a9282912e9  [shntool]  Track15.wav
+499d23912e23f6acfe5a2d58efbe192f  [shntool]  Track16.wav
+7a2cd9a5b4ae1593359c6c13d883630b  [shntool]  Track17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-08-31.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.62       34014668 B   ---   --   -----    wav  1.0000  Track01.wav
+     3:06.58       32946860 B   ---   --   -----    wav  1.0000  Track02.wav
+     3:49.65       40548524 B   ---   --   -----    wav  1.0000  Track03.wav
+     2:34.33       27243260 B   ---   --   -----    wav  1.0000  Track04.wav
+     3:20.52       35402348 B   ---   --   -----    wav  1.0000  Track05.wav
+     2:19.47       24630188 B   ---   --   -----    wav  1.0000  Track06.wav
+     3:01.29       31996652 B   ---   --   -----    wav  1.0000  Track07.wav
+     3:24.21       36035036 B   ---   --   -----    wav  1.0000  Track08.wav
+     3:25.13       36192620 B   ---   --   -----    wav  1.0000  Track09.wav
+     3:37.56       38410556 B   ---   --   -----    wav  1.0000  Track10.wav
+     2:22.24       25105292 B   ---   --   -----    wav  1.0000  Track11.wav
+     3:31.23       37274540 B   ---   --   -----    wav  1.0000  Track12.wav
+     5:20.19       56492732 B   ---   --   -----    wav  1.0000  Track13.wav
+     3:30.09       37065212 B   ---   --   -----    wav  1.0000  Track14.wav
+     3:11.42       33791228 B   ---   --   -----    wav  1.0000  Track15.wav
+     3:39.07       38648108 B   ---   --   -----    wav  1.0000  Track16.wav
+     3:12.55       33998204 B   ---   --   -----    wav  1.0000  Track17.wav
+    56:40.15      599796028 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

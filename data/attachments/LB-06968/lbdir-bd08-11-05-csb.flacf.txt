@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-11-05-csb.flacf 
+=================== 
+=================== 
+=================== 
+142eb5b74f5a034d61fe29944602061b  Bob Dylan - 2008-11-05 01 Wicked Messenger.flac
+a348dd5e94208af1299b56281630efb4  Bob Dylan - 2008-11-05 02 Watching The River Flow.flac
+3e59cbf6fb8ec537c1b45111fe958c8e  Bob Dylan - 2008-11-05 03 Forever Young.flac
+572b9dc98d928ad3f64aca2b79b69749  Bob Dylan - 2008-11-05 04 Rollin' And Tumblin'.flac
+c4c2ee410389beed0c47c9e4f42049b0  Bob Dylan - 2008-11-05 05 Spirit On The Water.flac
+018ddbab895c3db7c4d795fa736a0539  Bob Dylan - 2008-11-05 06 High Water (For Charley Patton).flac
+c76040cc490abd0d1aad42bf290522d2  Bob Dylan - 2008-11-05 07 Just Like A Woman.flac
+5c0068dc394830d43bfc171a249fa77e  Bob Dylan - 2008-11-05 08 Tweedle Dee & Tweedle Dum.flac
+59ff76d65b88f30440d0037602a0d963  Bob Dylan - 2008-11-05 09 Tryin' To Get To Heaven.flac
+99e6b8cf401b4b165c3e3cd824fd5bae  Bob Dylan - 2008-11-05 10 Highway 61 Revisited.flac
+d964e2a6b99a69924ce1374fb1c39114  Bob Dylan - 2008-11-05 11 Chimes Of Freedom.flac
+9309da572407ae1f607cbedfa0995e34  Bob Dylan - 2008-11-05 12 Honest With Me.flac
+e63c2e179943482557eb3d560888e8a8  Bob Dylan - 2008-11-05 13 When The Deal Goes Down.flac
+a151c7e6d667e34ee2cbfe31b45ff137  Bob Dylan - 2008-11-05 14 Thunder On The Mountain.flac
+4642294058dea76c83d17954f76c9317  Bob Dylan - 2008-11-05 15 Like A Rolling Stone.flac
+d5ce99161c44399aa1be848bcc2bfb41  Bob Dylan - 2008-11-05 16 All Along The Watchtower.flac
+a9ad8c057bc885fa13393cd98c0c939e  Bob Dylan - 2008-11-05 17 Blowin' In The Wind.flac
+812274d2fbdcdbd7f77061fe54742fab  Bob Dylan - 2008-11-05 ffp.txt
+b69dea346ef8c32d6a7d06105972b7f6  Bob Dylan - 2008-11-05.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-11-05-csb.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan - 2008-11-05 01 Wicked Messenger.flac:be09a56ddd7e0cb146c015c3675e7cf0
+Bob Dylan - 2008-11-05 02 Watching The River Flow.flac:017104f2c00f9cf72900d6f46c96edce
+Bob Dylan - 2008-11-05 03 Forever Young.flac:53ded755cd5caad89cd4975193ffda0e
+Bob Dylan - 2008-11-05 04 Rollin' And Tumblin'.flac:61274982fe1f88fedfcfc92c83aef070
+Bob Dylan - 2008-11-05 05 Spirit On The Water.flac:772a5d84ac8067f4d48ce9782507a856
+Bob Dylan - 2008-11-05 06 High Water (For Charley Patton).flac:fe2f52c4e6b9c758e68b02a33a7a2eae
+Bob Dylan - 2008-11-05 07 Just Like A Woman.flac:8a9ae9504e53efdd06e6e64c80060e94
+Bob Dylan - 2008-11-05 08 Tweedle Dee & Tweedle Dum.flac:22b9f2476a3f29825fe0c48691e9ce7d
+Bob Dylan - 2008-11-05 09 Tryin' To Get To Heaven.flac:9c31809f8a3ea57ed5be5e622038a35c
+Bob Dylan - 2008-11-05 10 Highway 61 Revisited.flac:e75ad4589ae1072944a175dd6cb0f0cf
+Bob Dylan - 2008-11-05 11 Chimes Of Freedom.flac:707885596159e762a69ee7ee6b6f9d73
+Bob Dylan - 2008-11-05 12 Honest With Me.flac:a82eab323786c905498d334836d05df7
+Bob Dylan - 2008-11-05 13 When The Deal Goes Down.flac:ac1f153225af99cb9dfbcb42617fb1d8
+Bob Dylan - 2008-11-05 14 Thunder On The Mountain.flac:4a5e020ecd8ff3065a8e41c813ddfbad
+Bob Dylan - 2008-11-05 15 Like A Rolling Stone.flac:f7b1a432801a851a5c67e3ce35f45c2f
+Bob Dylan - 2008-11-05 16 All Along The Watchtower.flac:a836d819afcfa2ea0d6926a97bc7e7d5
+Bob Dylan - 2008-11-05 17 Blowin' In The Wind.flac:c996c37dfb65104d29c958a28573f8ef
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-11-05-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.23       45565340 B   ---   --   ---xx   flac  0.4563  Bob Dylan - 2008-11-05 01 Wicked Messenger.flac
+     4:45.16       50311676 B   ---   --   ---xx   flac  0.5218  Bob Dylan - 2008-11-05 02 Watching The River Flow.flac
+     6:14.55       66103004 B   ---   --   ---xx   flac  0.4479  Bob Dylan - 2008-11-05 03 Forever Young.flac
+     7:31.58       79692860 B   ---   --   ---xx   flac  0.5274  Bob Dylan - 2008-11-05 04 Rollin' And Tumblin'.flac
+     6:53.70       73017884 B   ---   --   ---xx   flac  0.4284  Bob Dylan - 2008-11-05 05 Spirit On The Water.flac
+     5:46.05       61046204 B   ---   --   ---xx   flac  0.5077  Bob Dylan - 2008-11-05 06 High Water (For Charley Patton).flac
+     6:24.55       67867004 B   ---   --   ---xx   flac  0.5161  Bob Dylan - 2008-11-05 07 Just Like A Woman.flac
+     4:51.72       51501788 B   ---   --   ---xx   flac  0.4976  Bob Dylan - 2008-11-05 08 Tweedle Dee & Tweedle Dum.flac
+     5:39.39       59891372 B   ---   --   ---xx   flac  0.5107  Bob Dylan - 2008-11-05 09 Tryin' To Get To Heaven.flac
+     6:02.26       63917996 B   ---   --   ---xx   flac  0.5622  Bob Dylan - 2008-11-05 10 Highway 61 Revisited.flac
+     7:20.45       77721884 B   ---   --   ---xx   flac  0.5092  Bob Dylan - 2008-11-05 11 Chimes Of Freedom.flac
+     6:51.59       72639212 B   ---   --   ---xx   flac  0.5421  Bob Dylan - 2008-11-05 12 Honest With Me.flac
+     6:13.64       65947772 B   ---   --   ---xx   flac  0.4533  Bob Dylan - 2008-11-05 13 When The Deal Goes Down.flac
+     6:45.65       71594924 B   ---   --   ---xx   flac  0.5620  Bob Dylan - 2008-11-05 14 Thunder On The Mountain.flac
+    10:56.15      115753724 B   ---   --   ---xx   flac  0.5325  Bob Dylan - 2008-11-05 15 Like A Rolling Stone.flac
+     5:16.67       55900028 B   ---   --   ---xx   flac  0.5474  Bob Dylan - 2008-11-05 16 All Along The Watchtower.flac
+     8:13.49       87079552 B   -b-   --   ---xx   flac  0.5089  Bob Dylan - 2008-11-05 17 Blowin' In The Wind.flac
+   110:07.33     1165552224 B                            0.5094  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-19-madrid-offmaster 
+=================== 
+=================== 
+=================== 
+d3672d129e05eb176bc223e1d0c3be28  bd - 1995-07-19-madrid-d1\Track 01.flac
+d86fb93004c606482661c8953884468e  bd - 1995-07-19-madrid-d1\Track 02.flac
+9cd79106237305ad95e1362f29d3415b  bd - 1995-07-19-madrid-d1\Track 03.flac
+0691930f37d586fc82257f0f9e75c407  bd - 1995-07-19-madrid-d1\Track 04.flac
+66c05195c5542bc3eacd9875abd4a51f  bd - 1995-07-19-madrid-d1\Track 05.flac
+ba472e7adc95b84fa89b159b6f8e2612  bd - 1995-07-19-madrid-d1\Track 06.flac
+2230863a9ab8f82b50b716dfc8abb5d4  bd - 1995-07-19-madrid-d1\Track 07.flac
+817017f4abcc2e8ecb91a6d05f8869c8  bd - 1995-07-19-madrid-d1\Track 08.flac
+c957e12f24e722be8e1dbf2e57190acd  bd - 1995-07-19-madrid-d2\Track 01.flac
+cae5a89631c51f83d1b0b6c7ced3ccc4  bd - 1995-07-19-madrid-d2\Track 02.flac
+4e5781da453a2999037e13cdca7c6cb0  bd - 1995-07-19-madrid-d2\Track 03.flac
+20bcb5fd8dd85b0a073e659baa69530f  bd - 1995-07-19-madrid-d2\Track 04.flac
+b5b70b839ceb3df2f50047a79d0658e4  bd - 1995-07-19-madrid-d2\Track 05.flac
+cc3c308931bab42b575bc21ad4bdf195  bd - 1995-07-19-madrid-d2\Track 06.flac
+52fe6f8da592d991213869a6448eac73  bd - 1995-07-19-madrid-d2\Track 07.flac
+2b89e0e2c15f1728165e66433a9689d4  bd1995-07-19-madrid.txt
+97daa0f3628252b231cec600e267aab6  bd95-07-19.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-19-madrid-offmaster\bd - 1995-07-19-madrid-d2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:40e10670b488d0e9860391f3b6cea493
+Track 02.flac:d36db1372aea9b4fb443f8a0ad15c127
+Track 03.flac:36a49b1a0e335e7a0253b8a5420d4cb2
+Track 04.flac:8454d0604fcdeaa1c9b551a70c6dc218
+Track 05.flac:046748cf863f3d3955eeb214a1245292
+Track 06.flac:c0551fcfd11264b26ee1004687be3c06
+Track 07.flac:8255b189689ff3988c7bca88601eb6f1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-19-madrid-offmaster\bd - 1995-07-19-madrid-d1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:eda5e15935c060179cbc2b3b125a6656
+Track 02.flac:dc8ac6e70281475e1177682d4ba43cae
+Track 03.flac:cd802491854c9b70cee052cea246bae1
+Track 04.flac:a3d3e19a5757ba86e40f2a960d2395ed
+Track 05.flac:9b12ff9095da48d88a38c0106316f2c0
+Track 06.flac:7fa7303dee4688b78ac5c5326a312737
+Track 07.flac:f512fc64b5e210cc694b7cc631f0655a
+Track 08.flac:14c6f64435c21aea0f117823aefa4164
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-19-madrid-offmaster\bd - 1995-07-19-madrid-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:46.26       71679596 B   ---   --   ---xx   flac  0.6967  Track 01.flac
+     7:38.48       80904140 B   ---   --   ---xx   flac  0.7556  Track 02.flac
+     7:59.35       84577964 B   ---   --   ---xx   flac  0.6990  Track 03.flac
+     6:45.27       71505548 B   ---   --   ---xx   flac  0.7519  Track 04.flac
+     9:31.31      100797356 B   ---   --   ---xx   flac  0.7466  Track 05.flac
+     9:04.17       96001628 B   ---   --   ---xx   flac  0.7313  Track 06.flac
+     5:15.06       55580156 B   ---   --   ---xx   flac  0.7543  Track 07.flac
+    53:00.40      561046388 B                            0.7332  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-19-madrid-offmaster\bd - 1995-07-19-madrid-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.59       52000412 B   ---   --   ---xx   flac  0.7051  Track 01.flac
+     5:54.66       62600876 B   ---   --   ---xx   flac  0.7049  Track 02.flac
+     6:08.09       64936412 B   ---   --   ---xx   flac  0.7504  Track 03.flac
+     7:55.61       83933516 B   ---   --   ---xx   flac  0.7003  Track 04.flac
+     6:13.40       65891324 B   ---   --   ---xx   flac  0.6987  Track 05.flac
+     7:04.01       74795996 B   ---   --   ---xx   flac  0.7488  Track 06.flac
+     9:20.73       98955740 B   ---   --   ---xx   flac  0.7335  Track 07.flac
+     8:14.04       87151052 B   ---   --   ---xx   flac  0.6737  Track 08.flac
+    55:46.13      590265328 B                            0.7143  (8 files)
+=================== 
+=================== 
+=================== 

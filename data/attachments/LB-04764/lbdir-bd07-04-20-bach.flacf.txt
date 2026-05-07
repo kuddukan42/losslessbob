@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-20-bach.flacf 
+=================== 
+=================== 
+=================== 
+0942c3cef60561b2decbed70a8ef9b71  2007-04-20-Stuttgart.md5
+53ea08a92ebf5a2d03c0d5d3de0ff188  2007-04-20-Stuttgart.txt
+91ee66c9f4913776562f52b1f0d8f31d  bd07-04-20-bach-LB-4764.txt
+b8f3adde6b25675e9ec9f7648abcc868  lbdir-bd07-04-20-bach.flacf.md5
+a94035fac57220b7f20984fcdeb3673b  Track101-Introduction.flac
+1fb50f3a69dbf74fbe6d67fea0413cc2  Track102-Tweedle Dee & Tweedle Dum.flac
+fd03a8d3ea4bc8ee96f2c91cf85b88c4  Track103-It Ain't Me, Babe.flac
+627d136712a94af4d55fe338db4948ea  Track104-Just Like Tom Thumb's Blues.flac
+bee99f1a7902bad51a80116f0025c3b2  Track105-It's Alright, Ma (I'm Only Bleeding).flac
+bc80d1564c6c071fdecbe15d7d0db85f  Track106-Sugar Baby.flac
+286a3144b00bb3ce7517a380ba2de685  Track107-Highway 61 Revisited.flac
+c61231cbc7de6749f1aafbbe86d3bbc4  Track108-When The Deal Goes Down.flac
+74016e793933e25f9cfe0ef8b22495ff  Track109-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+c17927748d3c1d2324473f65ab9854a5  Track110-John Brown.flac
+1af1059ffedc7c57ac3e186282285aa0  Track111-Rollin' And Tumblin'.flac
+7f18e0345ef9bf7fe66b330355d13632  Track112-Spirit On The Water.flac
+3b4b298129e5a643bc50f9d74f3eff4d  Track201-Tangled Up In Blue.flac
+2402451960c07ed0972633a93362ec10  Track202-Nettie More.flac
+d534cb12aa249de18ef464958856d5fd  Track203-Summer Days.flac
+cf3b260472a1013bf641018f5b1f5f51  Track204-Like A Rolling Stones.flac
+9936fa4c9ef488a83c61c11a6bffd268  Track205-Thunder On The Mountain.flac
+6cf0fb68666bf97f5c0acf661170168c  Track206-All Along The Watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-20-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101-Introduction.flac:5489525cfa88f58926303f87732460d4
+Track102-Tweedle Dee & Tweedle Dum.flac:4edca41e4c6236c58c1842def5e84773
+Track103-It Ain't Me, Babe.flac:c0398d72e838a0f3a5e041bafa54c14f
+Track104-Just Like Tom Thumb's Blues.flac:80e7aef1e3194c984ab2eca7439421e1
+Track105-It's Alright, Ma (I'm Only Bleeding).flac:5c96a1718585d39c6abac42179fa1d40
+Track106-Sugar Baby.flac:810174fbd3196be49977b037dd3c063a
+Track107-Highway 61 Revisited.flac:6407fbea6239ad5efae05420ab25079e
+Track108-When The Deal Goes Down.flac:a2f583345ed86eb1c2b8d60de8a34d6a
+Track109-Stuck Inside Of Mobile With The Memphis Blues Again.flac:4a4a1ad538b967f68fd033b6093710d0
+Track110-John Brown.flac:6143ad4a8bcb2b89e8d2243b4f4076e6
+Track111-Rollin' And Tumblin'.flac:63c5b1a72c9ddc7b0cc3b3049f40e044
+Track112-Spirit On The Water.flac:883cbbfa3dd09d2267fb0ca5ce5b5b88
+Track201-Tangled Up In Blue.flac:0785ca186b51e301f3ea523f1b62a486
+Track202-Nettie More.flac:5af91a4344a7899be9e7e94e87badc3c
+Track203-Summer Days.flac:14245a9a7f07f90da6c93e502ff2faa3
+Track204-Like A Rolling Stones.flac:27c7d1eacff87f6f84608a8b75e81abe
+Track205-Thunder On The Mountain.flac:8107d8a670487fe77fa7e5bb5a5f45c0
+Track206-All Along The Watchtower.flac:013a1e81907cfbd834bc0d0253098418
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-20-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:57.03       20645900 B   ---   --   ---xx   flac  0.3815  Track101-Introduction.flac
+     5:35.58       59230460 B   ---   --   ---xx   flac  0.4473  Track102-Tweedle Dee & Tweedle Dum.flac
+     6:15.00       66150044 B   ---   --   ---xx   flac  0.4734  Track103-It Ain't Me, Babe.flac
+     6:18.59       66818012 B   ---   --   ---xx   flac  0.4887  Track104-Just Like Tom Thumb's Blues.flac
+     7:22.08       77987660 B   ---   --   ---xx   flac  0.5216  Track105-It's Alright, Ma (I'm Only Bleeding).flac
+     7:14.66       76712876 B   ---   --   ---xx   flac  0.3709  Track106-Sugar Baby.flac
+     5:19.67       56429228 B   ---   --   ---xx   flac  0.5227  Track107-Highway 61 Revisited.flac
+     6:24.69       67899932 B   ---   --   ---xx   flac  0.3507  Track108-When The Deal Goes Down.flac
+     8:54.43       94298780 B   ---   --   ---xx   flac  0.5221  Track109-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:18.28       66745100 B   ---   --   ---xx   flac  0.4253  Track110-John Brown.flac
+     6:26.74       68264492 B   ---   --   ---xx   flac  0.5281  Track111-Rollin' And Tumblin'.flac
+     6:56.51       73502396 B   ---   --   ---xx   flac  0.3845  Track112-Spirit On The Water.flac
+     8:28.30       89681804 B   ---   --   ---xx   flac  0.4963  Track201-Tangled Up In Blue.flac
+     7:49.64       82882172 B   ---   --   ---xx   flac  0.3566  Track202-Nettie More.flac
+     5:54.70       62610284 B   ---   --   ---xx   flac  0.5377  Track203-Summer Days.flac
+    10:40.43      112997180 B   ---   --   ---xx   flac  0.4722  Track204-Like A Rolling Stones.flac
+     6:55.23       73260140 B   ---   --   ---xx   flac  0.5501  Track205-Thunder On The Mountain.flac
+     5:18.67       56252828 B   ---   --   ---xx   flac  0.5219  Track206-All Along The Watchtower.flac
+   120:12.73     1272369288 B                            0.4664  (18 files)
+=================== 
+=================== 
+=================== 

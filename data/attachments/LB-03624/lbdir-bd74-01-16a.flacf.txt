@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-16a.flacf 
+=================== 
+=================== 
+=================== 
+ec9eb0cb0b18a12fca1c12fe80a81932  11674.txt
+5ba7385398064d70f9903ec4b48b29b4  bd74-01-16a-LB-3624.txt
+0a34f0f21ced935e6ae0c35768a4e620  Track 01.flac
+0b1ae4b5d20c28ca46b064035d4743a6  Track 02.flac
+77f225232a4c4767960fe951a91d5f70  Track 03.flac
+d1d3c3200fa646cb50ee51a424d6401e  Track 04.flac
+c265dfecf0c1be78fbf9c3ebc9e3192a  Track 05.flac
+283f8512cefffa131d1216e31ad11c3e  Track 06.flac
+16bf29103b2fbe2eab2d5ca2f2e69d18  Track 07.flac
+972477e5c4100ee2841b10e51cb39cef  Track 08.flac
+6f810b2f1f2d9f77d1be1c284aa1a5c8  Track 09.flac
+f2152d39d3b763264dd7fbfc809b2a4c  Track 10.flac
+4dcd4c4e3f0e7279796ce4be27c8e387  Track 11.flac
+7b7b3603851fc9570457c26d119910ac  Track 12.flac
+7d64fb639dd3724569b3bf4c53076c11  Track 13.flac
+433fa785b48937618d44b1a274198c49  Track 14.flac
+d679f3f12d66ab3f4bc331246976a8c0  Track 15.flac
+5faf2602ce037a0d03dcef9467e0e8c3  Track 16.flac
+6702638643ea82e097416504d2c32fba  Track 17.flac
+335269f01cc43fd80b3d26756bbd4ff8  Track 18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-16a.flacf 
+=================== 
+=================== 
+=================== 
+Track 01.flac:7a3b17b85f9d87d4b1c5b391f34ed1d0
+Track 02.flac:7b8c19ce7a1403140855b5be25dabaa8
+Track 03.flac:fca564156f362fe1a1e77bd074710d52
+Track 04.flac:437dffe393bd97e1a71cbcb74770e889
+Track 05.flac:15a04979f3d745274ca6e69baaa6ca36
+Track 06.flac:11eabd23e66cd0ad184422913f2740c3
+Track 07.flac:ac6f1e0f7eb98fe1872211aedd4957a4
+Track 08.flac:4db23601b4bfe4052aa9b8f49f892ec6
+Track 09.flac:74ab6ca8f0bdce2df17ad731075ba6c1
+Track 10.flac:792103e265a4219ae93b1e3290575103
+Track 11.flac:aa8177579e12084be8c08ae5fd52e72f
+Track 12.flac:18f592fd6f27a4e7c083dd8268d8e83b
+Track 13.flac:0f0e8388a389a5d80df8bc351e52fb38
+Track 14.flac:e4d1bf18180acb41208a235ff44cae4c
+Track 15.flac:4ef9c32ded9837142bcb7374e82528e1
+Track 16.flac:55e96dee7df42ccc21a5a88d03971f27
+Track 17.flac:c9faa8ff8db319700aa0046c51d3f823
+Track 18.flac:270ace48d0daf03279a96d6a6f635414
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-16a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:19.30       24590204 B   ---   --   ---xx   flac  0.5028  Track 01.flac
+     2:52.08       30359660 B   ---   --   ---xx   flac  0.5129  Track 02.flac
+     5:38.08       59642060 B   ---   --   ---xx   flac  0.5377  Track 03.flac
+     4:04.17       43081628 B   ---   --   ---xx   flac  0.5378  Track 04.flac
+     3:22.55       35762204 B   ---   --   ---xx   flac  0.5644  Track 05.flac
+     3:05.54       32761052 B   ---   --   ---xx   flac  0.5657  Track 06.flac
+     2:47.27       29522348 B   ---   --   ---xx   flac  0.4418  Track 07.flac
+     3:06.30       32881004 B   ---   --   ---xx   flac  0.5765  Track 08.flac
+     3:41.58       39120860 B   ---   --   ---xx   flac  0.5713  Track 09.flac
+     2:45.74       29280092 B   ---   --   ---xx   flac  0.5661  Track 10.flac
+     3:27.37       36601868 B   ---   --   ---xx   flac  0.5734  Track 11.flac
+     4:16.35       45240764 B   ---   --   ---xx   flac  0.5138  Track 12.flac
+     2:10.46       23040236 B   ---   --   ---xx   flac  0.5415  Track 13.flac
+     5:38.08       59642060 B   ---   --   ---xx   flac  0.5538  Track 14.flac
+     4:53.15       51720524 B   ---   --   ---xx   flac  0.5871  Track 15.flac
+     4:31.33       47882060 B   ---   --   ---xx   flac  0.5904  Track 16.flac
+     5:42.14       60361772 B   ---   --   ---xx   flac  0.6135  Track 17.flac
+     3:30.71       37211036 B   ---   --   ---xx   flac  0.5777  Track 18.flac
+    67:54.20      718701432 B                            0.5562  (18 files)
+=================== 
+=================== 
+=================== 

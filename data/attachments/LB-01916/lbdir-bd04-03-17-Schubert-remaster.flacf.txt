@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-17-Schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+4d6c56e159618ae1fa572de11439a3d0  2004-03-17 schubert.md5
+0a3263115ef1c7a6f12943531e5fea50  2004-03-17_101 Announcement.flac
+7a827c80663c3787748da0ed80bd61cc  2004-03-17_102 The Wicked Messenger.flac
+e17db83ea26223c63770f503c044e202  2004-03-17_103 It's All Over Now, Baby Blue.flac
+68e41b222c4d361ecc7b32b759e9d16d  2004-03-17_104 Tweedle Dee & Tweedle Dum.flac
+aa63dc09e451e6156e9e04fe6994d6ab  2004-03-17_105 Under The Red Sky.flac
+51d182f5d8d58925e3a53955bd11d639  2004-03-17_106 It's Alright, Ma (I'm Only Bleeding).flac
+ef5cfe059d5daec6fce88fb80b99290f  2004-03-17_107 Down Along The Cove.flac
+e8c6e914128596dcc5a34f2709735f9b  2004-03-17_108 Moonlight.flac
+015d35f34b57fd75e7aca287b9c249c2  2004-03-17_109 High Water (For Charley Patton).flac
+0a47c86b6e10514de104047c7fe3fb0a  2004-03-17_110 Girl Of The North Country.flac
+637dd5b74541e202d5aa31cd2a62cae4  2004-03-17_201 Highway 61 Revisited.flac
+737acf8ed0578870e74a447159ab22f0  2004-03-17_202 Man In The Long Black Coat.flac
+7bd4123ba43f001776f701c83611a850  2004-03-17_203 Honest With Me.flac
+f98466b39215177b683fbae0285c2243  2004-03-17_204 Every Grain Of Sand.flac
+ddcdb918c47759270adae93e9b8186ab  2004-03-17_205 Summer Days.flac
+349ea4226c4a390cf3b021c2ceb4d105  2004-03-17_206 Cat's In The Well.flac
+73c6e0696b49f25e98adffd4c8832968  2004-03-17_207 Like A Rolling Stone.flac
+8f01ceb53012699d0bf091a15e20b44b  2004-03-17_208 All Along The Watchtower.flac
+4d252e61148022cc403f2330be0d889d  2004-03-17_209 Ball And Biscuit.flac
+d20c0f868ce26f16ea626bdc5ae962b2  bd04-03-17-Schubert-remaster.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-03-17-Schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+2004-03-17_101 Announcement.flac:1aba32ba1bef6b4359c37cff8bc9401e
+2004-03-17_102 The Wicked Messenger.flac:0ca9c7e6024728e1ec1c55299f614b74
+2004-03-17_103 It's All Over Now, Baby Blue.flac:0a56b918198c415681dac2dfc3d34113
+2004-03-17_104 Tweedle Dee & Tweedle Dum.flac:78f51199543383446e783427241b711e
+2004-03-17_105 Under The Red Sky.flac:a6abe36d357e6f33edd5891fd98768fe
+2004-03-17_106 It's Alright, Ma (I'm Only Bleeding).flac:03b83b20e4b996cc8dd89107fb9b8246
+2004-03-17_107 Down Along The Cove.flac:93bbef680572b8895396e96ce57955fd
+2004-03-17_108 Moonlight.flac:ecf63ee8a289b01e7d505532ba25e792
+2004-03-17_109 High Water (For Charley Patton).flac:de53259302d23ca068380df6f30133a0
+2004-03-17_110 Girl Of The North Country.flac:45e71b403264577dae998f36ce9a4a4e
+2004-03-17_201 Highway 61 Revisited.flac:3ea5954467c024720b41811869037572
+2004-03-17_202 Man In The Long Black Coat.flac:38cd76c04b3930106909d5e49dc4421f
+2004-03-17_203 Honest With Me.flac:be650318747c77a00d40d167a33499d8
+2004-03-17_204 Every Grain Of Sand.flac:614067a00abcd5a4e3951a5ea6a06036
+2004-03-17_205 Summer Days.flac:d67d930ec5de9cce29eb822af13a6504
+2004-03-17_206 Cat's In The Well.flac:2ffe566aac31cc1611f948edd6fe14c6
+2004-03-17_207 Like A Rolling Stone.flac:70d5af42f0d581a4ba1866e50fa362c7
+2004-03-17_208 All Along The Watchtower.flac:1fb18d1ab7d8a5cbb3ea50602cdd586c
+2004-03-17_209 Ball And Biscuit.flac:3e6cf10240925c542319efb8c2b2d7e4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-17-Schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.30        9772604 B   ---   --   ---xx   flac  0.5309  2004-03-17_101 Announcement.flac
+     3:56.60       41771564 B   ---   --   ---xx   flac  0.6309  2004-03-17_102 The Wicked Messenger.flac
+     5:06.66       54133676 B   ---   --   ---xx   flac  0.5993  2004-03-17_103 It's All Over Now, Baby Blue.flac
+     5:10.69       54846332 B   ---   --   ---xx   flac  0.5832  2004-03-17_104 Tweedle Dee & Tweedle Dum.flac
+     5:38.65       59776124 B   ---   --   ---xx   flac  0.5803  2004-03-17_105 Under The Red Sky.flac
+     7:47.10       82402364 B   ---   --   ---xx   flac  0.6251  2004-03-17_106 It's Alright, Ma (I'm Only Bleeding).flac
+     6:04.03       64216700 B   ---   --   ---xx   flac  0.6262  2004-03-17_107 Down Along The Cove.flac
+     6:12.51       65740796 B   ---   --   ---xx   flac  0.5515  2004-03-17_108 Moonlight.flac
+     7:36.69       80600732 B   ---   --   ---xx   flac  0.6263  2004-03-17_109 High Water (For Charley Patton).flac
+     5:26.61       57649916 B   ---   --   ---xx   flac  0.5117  2004-03-17_110 Girl Of The North Country.flac
+     7:17.10       77110364 B   ---   --   ---xx   flac  0.6445  2004-03-17_201 Highway 61 Revisited.flac
+     6:06.31       64635356 B   ---   --   ---xx   flac  0.5743  2004-03-17_202 Man In The Long Black Coat.flac
+     6:45.63       71590220 B   ---   --   ---xx   flac  0.6355  2004-03-17_203 Honest With Me.flac
+     8:17.00       87670844 B   ---   --   ---xx   flac  0.5440  2004-03-17_204 Every Grain Of Sand.flac
+    10:38.48      112656140 B   ---   --   ---xx   flac  0.5995  2004-03-17_205 Summer Days.flac
+     4:16.00       45158444 B   ---   --   ---xx   flac  0.6645  2004-03-17_206 Cat's In The Well.flac
+     7:20.20       77663084 B   ---   --   ---xx   flac  0.6430  2004-03-17_207 Like A Rolling Stone.flac
+     7:38.51       80911196 B   ---   --   ---xx   flac  0.6118  2004-03-17_208 All Along The Watchtower.flac
+     9:35.12      101458268 B   ---   --   ---xx   flac  0.6078  2004-03-17_209 Ball And Biscuit.flac
+   121:51.44     1289764724 B                            0.6026  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-03-09-Hallelujah.flacf 
+=================== 
+=================== 
+=================== 
+f38a1d31e9947f06ea3b503c97439b65  bd01-03-09-Hallelujah-LB-4224.txt
+53458702429c895acdd233c5bed1b9ef  Bob Dylan  March 9 2001 Fukuoka Japan (Hallelujah).txt
+c426e2833286a5a2ac15adffc79baf91  CD1\Track01.flac
+54d635c7dbf3db0efd8cfe2813952917  CD1\Track02.flac
+66d2904cd1f5932cd5663d6c1a205d2d  CD1\Track03.flac
+d9e1ac7617b27b5a269306016f986f76  CD1\Track04.flac
+c0761c8bae421b9b4f8f86f5992293c9  CD1\Track05.flac
+b6186eca13db7bb9490420f35a2d0b5f  CD1\Track06.flac
+386aa028b15c90abcbe9ae875c6629af  CD1\Track07.flac
+dc9261dbdf5b847a8ce5a15ca9e8db7e  CD1\Track08.flac
+59006516cb33089c026f23c020609ce9  CD1\Track09.flac
+552ee7332f017d5906de488a9bed7dcf  CD2\Track01.flac
+c32f4486238b44c44d5783345dfa6df6  CD2\Track02.flac
+c549f7de4237107f43343a610da328df  CD2\Track03.flac
+49013410ba1c3169a9f53313364bcc64  CD2\Track04.flac
+adf221f10db6da33edc0c9109b76d548  CD2\Track05.flac
+c60345a016229b63893e6e9d1134238e  CD2\Track06.flac
+254c7c79800f15f76d7134fb393534b4  CD2\Track07.flac
+e18ec482cb2d6c42f34704bfd1e6d4e9  CD2\Track08.flac
+4f01e6bdce159d36e7b5888c3f937f4f  CD2\Track09.flac
+4ef298e0829bf1633294a55984de27c3  CD2\Track10.flac
+07fd5596c19b6ee2527dff6d3db2ae41  DylanHallelujahBack.jpg
+d85957646b245f6a3033ba80ce48573e  DylanHallelujahFront.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-09-Hallelujah.flacf\CD2 
+=================== 
+=================== 
+=================== 
+Track01.flac:f0cc5d009a8a8019378daa04dd504c81
+Track02.flac:9b2be9e7c61bc313ed90e518a7b0f29b
+Track03.flac:1deafa0e4029cc88e2111d703d9349d3
+Track04.flac:8fb2e45bc3ce04ec9362e0c03448ef5b
+Track05.flac:b43bcbe7ac09180a5801bf953e93d9ed
+Track06.flac:432abe14087abc250d50d25482cc1f46
+Track07.flac:dc82091915de39f29f80dffa18aa8af6
+Track08.flac:18c027b5c5bde63d7ab673ff8ebd6098
+Track09.flac:950a92fe3f8d673cd830c236725e8671
+Track10.flac:b6702a89b114f75ee62c742afb6dff46
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-09-Hallelujah.flacf\CD1 
+=================== 
+=================== 
+=================== 
+Track01.flac:790b137a82d33632059347dcfd87a934
+Track02.flac:ffabc9f2007aac2478dc1a80ed0ee2db
+Track03.flac:587176ee5352544e45ca22a8317c9687
+Track04.flac:ff1b8559142de1f9e4ce02b1fa35b1f8
+Track05.flac:5ef5a837217ae1b4c5c6daf80f4644a7
+Track06.flac:e59f717e5595453a6e735f078859cb8b
+Track07.flac:94bdf26cd1f8c650d7a6753fd493892b
+Track08.flac:15e353f71f311a6d329fdff55cc756f6
+Track09.flac:a36ddcdd2543314a98ab2d61475985b4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-09-Hallelujah.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:23.72       78314588 B   ---   --   ---xx   flac  0.6332  Track01.flac
+     3:56.23       41684540 B   ---   --   ---xx   flac  0.7017  Track02.flac
+     7:55.64       83940572 B   ---   --   ---xx   flac  0.6405  Track03.flac
+     6:10.34       65348012 B   ---   --   ---xx   flac  0.6219  Track04.flac
+     7:08.34       75579212 B   ---   --   ---xx   flac  0.6570  Track05.flac
+     4:18.25       45570044 B   ---   --   ---xx   flac  0.5134  Track06.flac
+     4:42.45       49850684 B   ---   --   ---xx   flac  0.6672  Track07.flac
+     8:54.26       94258796 B   ---   --   ---xx   flac  0.5466  Track08.flac
+     5:30.73       58383740 B   ---   --   ---xx   flac  0.6869  Track09.flac
+     5:42.32       60404108 B   ---   --   ---xx   flac  0.5874  Track10.flac
+    61:43.53      653334296 B                            0.6224  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-09-Hallelujah.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:30.72       37213388 B   ---   --   ---xx   flac  0.6136  Track01.flac
+     5:52.66       62248076 B   ---   --   ---xx   flac  0.6428  Track02.flac
+     9:12.59       97511612 B   ---   --   ---xx   flac  0.6180  Track03.flac
+     5:21.13       56655020 B   ---   --   ---xx   flac  0.6623  Track04.flac
+     6:04.60       64350764 B   ---   --   ---xx   flac  0.6224  Track05.flac
+     7:41.39       81412172 B   ---   --   ---xx   flac  0.6865  Track06.flac
+     5:35.33       59171660 B   ---   --   ---xx   flac  0.5632  Track07.flac
+     5:44.65       60834524 B   ---   --   ---xx   flac  0.5795  Track08.flac
+     6:35.02       69682748 B   ---   --   ---xx   flac  0.5923  Track09.flac
+    55:39.34      589079964 B                            0.6220  (9 files)
+=================== 
+=================== 
+=================== 

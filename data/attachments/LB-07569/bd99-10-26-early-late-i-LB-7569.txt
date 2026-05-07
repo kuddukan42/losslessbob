@@ -1,0 +1,10 @@
+Bob Dylan, 10/26/99, Chicago, IL, Park West, 2CDR
+
+LB-7569, (77min+74min), version "i"; AUDDAT > CD, Encoded by Dan Krass (gser@jadetech.com); bittorrent download 05/09; early show is same recording as LB-3743 with same wav and spectral view and levels; this has more crowd at beginning of d1t1 and 25 more seconds at end of d1t10; late show is same recording as LB-2199 based on same clapping wavs at end of d2t2 with same wav and spectral view except this has lower levels on quieter songs at the beginning but same levels later on; (did not listen to all of this)
+
+very small drop end of d1t1; discontinuity pop d1t12 1:01, big static digi-pop d2t1 0:00
+
+Disc 1 (Early Show), =====================, 01 Oh Babe, It Ain't No Lie (acoustic), 02 The Times They Are A-Changin' (acoustic), 03 Desolation Row (acoustic), 04 Girl From The North Country (acoustic), 05 Don't Think Twice, It's All Right (acoustic) (Bob on harp), 06 All Along The Watchtower, 07 I Want You, 08 Just Like Tom Thumb's Blues, 09 Not Dark Yet, 10 Silvio, Encore:, 11 Love Sick, 12 It Ain't Me Babe (acoustic), Disc 2 (Late Show), ====================, 01 I Am The Man, Thomas (acoustic), 02 To Ramona (acoustic), 03 Audience Chatter, 04 Visions Of Johanna (acoustic), 05 Stone Walls And Steel Bars (acoustic), 06 Tangled Up In Blue (acoustic), 07 Watching The River Flow, 08 Blind Willie McTell, 09 Tombstone Blues, 10 Make You Feel My Love, 11 Everything Is Broken, Encore:, 12 Like A Rolling Stone, 13 Blowin' In The Wind (acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

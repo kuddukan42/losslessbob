@@ -1,0 +1,86 @@
+Bob Dylan
+September 8, 1999
+Antioch, Tennessee
+First American Music Center
+
+
+Disk one:
+Bob played on the following songs during Paul Simon's opening set:
+(d1-1. to d1-4.)
+d1-1.The Boxer (Duet with Paul Simon) (Bob on harp)
+d1-2.I Walk The Line (duet with Paul Simon)
+d1-3.The Wanderer (duet with Paul Simon)
+d1-4.Knockin' On Heaven's Door (Duet with Paul Simon)
+
+d1-5.I Am The Man, Thomas (acoustic) (Marty Stuart on mandolin)
+(song by Ralph Stanley and Larry Sparks)
+d1-6.Mr. Tambourine Man (acoustic) (Bob on harp) (Marty Stuart on mandolin)
+d1-7.It's Alright, Ma (I'm Only Bleeding) (acoustic) (Marty Stuart on mandolin)
+d1-8.It's All Over Now, Baby Blue (acoustic) (Larry on pedal steel) (Marty Stuart on acoustic guitar)
+d1-9.Tangled Up In Blue (acoustic) (Bob on harp) (Marty Stuart on mandolin)
+d1-10.All Along The Watchtower (Larry on pedal steel) (Marty Stuart on electric guitar)
+
+Disk two:
+d2-1.Just Like A Woman (Larry on pedal steel) (Marty Stuart on electric guitar)
+d2-2.Silvio (Marty Stuart on electric guitar)
+d2-3.Not Dark Yet (Marty Stuart on mandolin)
+d2-4.Highway 61 Revisited (Marty Stuart on electric guitar)
+(encore)
+d2-5.Like A Rolling Stone(Marty Stuart on vocals and electric guitar)
+d2-6.Blowin' In The Wind (acoustic) (Marty Stuart on mandolin)
+d2.7Not Fade Away (Marty Stuart on electric guitar) 
+
+Source: Sony TCD-D8 w/ my stealth sony mics (Oade Bros pre-amped)
+
+Transfer: DAT>HD>CDwav>HDwav>flac (level 8)
+
+MD5:
+
+d789383cb6e8e6384ab0de55e788d753 *d1-1.theboxer.flac
+205d89cd6e74e9bc29a16dac10a96f9f *d1-9.tangledupinblue.flac
+9c2bf9fc69e2dc0054ea43acd142a4b9 *d1-8.it'sallovernow,babyblue.flac
+04fdcfd7f77755fc70fb4b4be212a88d *d1-4.knockin'onheaven'sdoor.flac
+a8f4ad5ed9968ae13b154f27affe19de *d1-6.mr.tamborineman.flac
+afd95c5c3c30d9c8e01a1211b0bfe32a *d1-7.it'salright,ma(i'monlybleeding).flac
+2206ec54d7121f19cbadb753528f12bb *d1-10.allalongthewatchtower.flac
+c100e311014764ad9d1a27ec2462ef21 *d1-5.iamtheman,thomas.flac
+5d2e90b6917328d75aec3de537e92fc8 *d1-2.iwalktheline.flac
+19e249a9a8e166440a354b2a7b2171b3 *d1-3.thewanderer.flac
+
+7703422a7d048e3d602a1ce6bcbaa529 *d2-5.likearollingstone.flac
+a083dcce2e67ce5bd483610beb22a08f *d2-4highway61revisited.flac
+a58269efd9c59d75daea3dac8ac490bb *d2-2.silvio.flac
+95c3615bdb1805be3c9cd15139c8413f *d2-7.notfadeaway.flac
+4d45afc747d8f1cf6809ad594369fa07 *d2-6.blowin'inthewind.flac
+beeb85d4484864c8f3ae483b5e073e51 *d2-3.notdarkyet.flac
+385c28f9eafe9fd1d72871240cd828f6 *d2-1.justlikeawoman.flac
+
+FFP:
+
+d1-1.theboxer.flac:db1180c8acf1f51cb640f8248d337f1a
+d1-10.allalongthewatchtower.flac:62098a895e8d227cd894bc2ac1d6e0dd
+d1-2.iwalktheline.flac:5d2021bdd49dfaf20582e4e1ee2ac4aa
+d1-3.thewanderer.flac:afc05b5336c3ee0ae20e6f050bd36c11
+d1-4.knockin'onheaven'sdoor.flac:63c428d9b2d575a2192c24ee84df0b16
+d1-5.iamtheman,thomas.flac:2311300811f4c75cfd4f926eff39d418
+d1-6.mr.tamborineman.flac:509c9c1873e8612ba8e00e8698fa3472
+d1-7.it'salright,ma(i'monlybleeding).flac:d69715ecea3d8e873d97ea7352dac9ec
+d1-8.it'sallovernow,babyblue.flac:e7763eb4215acba707557295660adac5
+d1-9.tangledupinblue.flac:f4bd5ba127fc4027c7317d89458a7d10
+
+d2-1.justlikeawoman.flac:2a7364bb639497078212293a7e5c84a3
+d2-2.silvio.flac:0be3d353555916fdf0e6313f070c8a8f
+d2-3.notdarkyet.flac:94483082b42f82058b412bf98bda6d61
+d2-4highway61revisited.flac:e14c5a1c0944df724a1d6e82252f638e
+d2-5.likearollingstone.flac:ff63a81ef878da856768fdc34c3d6ac3
+d2-6.blowin'inthewind.flac:2856d998c0646f4abc001cdf58566046
+d2-7.notfadeaway.flac:d667ced4d8adcc36a390cd4d0e377e6a
+
+
+
+
+
+
+
+
+

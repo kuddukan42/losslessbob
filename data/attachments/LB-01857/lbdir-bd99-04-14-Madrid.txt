@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-14-Madrid 
+=================== 
+=================== 
+=================== 
+7eca430200b5e7bc7f17f273aa6ec3fd  bd99-04-14.txt
+0cba8c6d1f910812fd175175617f1b96  LisbonToBarcelonaInfo.doc
+354f984cb1aa974e8b3a4067fd7bb6a4  Mad-0414-d1-t01.shn
+98a2bf8ca50ab9d4c90a81d6fd43a035  Mad-0414-d1-t02.shn
+d794674d37b56a86925b183d575e403f  Mad-0414-d1-t03.shn
+31f80d888141477d9f8cb9193fab9240  Mad-0414-d1-t04.shn
+fd9677108ddcdc9da0837a4dc7be253b  Mad-0414-d1-t05.shn
+09fa0225435620f8040fce79fdb62820  Mad-0414-d1-t06.shn
+83e95a5c6ffa676977a8e7ad66b760de  Mad-0414-d1-t07.shn
+ac9a6ff9b1599201299a4e1d2b2abe53  Mad-0414-d1-t08.shn
+4c474a19fab05e2ff26cc4766de0ef99  Mad-0414-d1-t09.shn
+ce1db73f6e9c9bad7980c6f8baa32a66  Mad-0414-d1-t10.shn
+8ef4cc0f3f841b158628571307d98fc3  Mad-0414-d2-t01.shn
+8ca3190aa0a785bc5cbc3efd8f05b9cb  Mad-0414-d2-t02.shn
+e11f6b95f95155fa46871916c2ba4fef  Mad-0414-d2-t03.shn
+de84c31f9f5f1065fe58305edfc78458  Mad-0414-d2-t04.shn
+a13336bbb1e39fc8c7588f3f1489c63b  Mad-0414-d2-t05.shn
+f3c47eb40226900cc2dbc8e6e92291f3  Mad-0414-d2-t06.shn
+17bee17b65446bd5f71aa1efeacf5671  Mad-0414-d2-t07.shn
+6b452d7c6b9171c0edee62ebb694aadf  Malaga.jpg
+8a1b73198413332b414e67892e676d8f  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-04-14-Madrid 
+=================== 
+=================== 
+=================== 
+a5a957fa592ac014401f8ade1a0927a0  [shntool]  Mad-0414-d1-t01.wav
+7575131ae7db228bb59182f488eee21a  [shntool]  Mad-0414-d1-t02.wav
+791e134e2b4e9d04196e7cc60ebebe97  [shntool]  Mad-0414-d1-t03.wav
+73a7848650ae2aa77fd4eb80eda77669  [shntool]  Mad-0414-d1-t04.wav
+347081a960e0d509fc9cac09ea19e084  [shntool]  Mad-0414-d1-t05.wav
+9b9f3ee2b49348a02f796a1e733b3f36  [shntool]  Mad-0414-d1-t06.wav
+9342caf77281c7cda1d30936c6452912  [shntool]  Mad-0414-d1-t07.wav
+2b94d133c194093d91eafebeb07eec3e  [shntool]  Mad-0414-d1-t08.wav
+a532897ffa9e4d9ec0c4e4d29269bd15  [shntool]  Mad-0414-d1-t09.wav
+6574533d27eae10384d3e50f76538a10  [shntool]  Mad-0414-d1-t10.wav
+6e76be11dc8d49a8d34ee4e3f266cf67  [shntool]  Mad-0414-d2-t01.wav
+1adcafa0cac30e1b366b0f874b8c277b  [shntool]  Mad-0414-d2-t02.wav
+a9e934bd976d838fbe9e44723a54b503  [shntool]  Mad-0414-d2-t03.wav
+5528df798a3277b6b7bf6986c83ecb64  [shntool]  Mad-0414-d2-t04.wav
+badf93d68f84c4794aee59846d8f2f54  [shntool]  Mad-0414-d2-t05.wav
+aa291349a4cad1ba592c509d05ad9669  [shntool]  Mad-0414-d2-t06.wav
+fbfd28340df0e3f2d83751267ce96b5b  [shntool]  Mad-0414-d2-t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-14-Madrid 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:42.16        7446832 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t01.wav
+     5:51.71       62082456 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t02.wav
+     3:42.05       39173288 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t03.wav
+     6:01.38       63770888 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t04.wav
+     5:57.21       63025352 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t05.wav
+     8:16.03       87500760 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t06.wav
+     5:46.17       61075092 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t07.wav
+     6:25.67       68071204 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t08.wav
+     4:44.61       50240456 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t09.wav
+     4:53.73       51855960 B   -b-   --   -----    wav  1.0000  Mad-0414-d1-t10.wav
+     6:38.32       70282040 B   -b-   --   -----    wav  1.0000  Mad-0414-d2-t01.wav
+     7:34.36       80170360 B   -b-   --   -----    wav  1.0000  Mad-0414-d2-t02.wav
+     8:31.04       90150204 B   -b-   --   -----    wav  1.0000  Mad-0414-d2-t03.wav
+     5:49.31       61636532 B   -b-   --   -----    wav  1.0000  Mad-0414-d2-t04.wav
+     8:01.22       84900596 B   -b-   --   -----    wav  1.0000  Mad-0414-d2-t05.wav
+     4:55.27       52102124 B   -b-   --   -----    wav  1.0000  Mad-0414-d2-t06.wav
+     4:52.02       51513228 B   -b-   --   -----    wav  1.0000  Mad-0414-d2-t07.wav
+    98:44.01     1044997372 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== bd90-10-28 Athens.ffp
+===================
+===================
+===================
+bd90-10-28d1t01.flac:d501fb20feb0f6292e5a867ad81b9250
+bd90-10-28d1t02.flac:c9f937eaf3b4b62a3f58926ebe5dcbf4
+bd90-10-28d1t03.flac:bed12269076094f739f3eb645637a9c7
+bd90-10-28d1t04.flac:8c3a5a52f160ca49a95e67ea1cf52193
+bd90-10-28d1t05.flac:43048b01d23bc0e2581a8376e5fe29f2
+bd90-10-28d1t06.flac:e752f3355b0c8c0a4270e0c24ae792a3
+bd90-10-28d1t07.flac:3df24aec86efe2ee487c8f52fa678a30
+bd90-10-28d1t08.flac:2682be5f7c5c402a80a1872d94bbf81f
+bd90-10-28d1t09.flac:7663338eb9444f82decce9af1135e8ca
+bd90-10-28d1t10.flac:7779023056631915a0cae65450ef4a10
+bd90-10-28d1t11.flac:9957c8c2f94127e40556248f2b7c5826
+bd90-10-28d2t01.flac:2957d9d7f1d69f9c26f73d73c4857e5d
+bd90-10-28d2t02.flac:6adf228c5f6ae38cecd59a8044994f16
+bd90-10-28d2t03.flac:61a6a2e9054bbe564b1b6841a8fad344
+bd90-10-28d2t04.flac:84e0a5cc925127ba2e3ffa4207521e82
+bd90-10-28d2t05.flac:c1f6b32b87139223136f33686ea79edb
+bd90-10-28d2t06.flac:18e4547b0757e5bd1bd3d1dddd3711df
+bd90-10-28d2t07.flac:d7252dbae7c2274fd50667d7bd863bea
+bd90-10-28d2t08.flac:bb682c9fe3690952c865733c96d39884
+bd90-10-28d2t09.flac:e4817667ac9b50887d36fa7b8158960c
+bd90-10-28d2t10.flac:0147cf270f864f6a238072861875814b
+===================
+===================
+===================
+=== bd90-10-28 Athens_WAV.md5
+===================
+===================
+===================
+ade05b1ab718e68da23835f7ff281c4e *bd90-10-28d1t01.wav
+951aa78422e5829e45cc4c8bc6ca149c *bd90-10-28d1t02.wav
+c3fa808b0ced8154da989582bff8a3e7 *bd90-10-28d1t03.wav
+5ff9814ee8bd52fa4da32697d42ebb06 *bd90-10-28d1t04.wav
+f02ad6d6dd188e19906f068d3d9faab8 *bd90-10-28d1t05.wav
+5713a0e15a6ab64ea2f8342e294b1718 *bd90-10-28d1t06.wav
+d2083ce2e93124644be84d4e4864a3dd *bd90-10-28d1t07.wav
+893895e75e37abe972a7b36dbe2ac753 *bd90-10-28d1t08.wav
+e1999df0605f16cb201f50764e39c4e8 *bd90-10-28d1t09.wav
+4c1313cd1f7117c2a0af2a9706572e07 *bd90-10-28d1t10.wav
+21628ae5b9851e15987dab5f74f26913 *bd90-10-28d1t11.wav
+3fb8f8db1c75551b03291abace54cbb6 *bd90-10-28d2t01.wav
+2d15682b5164982f9cf379fd5c0c40fc *bd90-10-28d2t02.wav
+e9b0f8ced76d022c73e79094add423ac *bd90-10-28d2t03.wav
+fe0e3839643e8632da0f8887b9cd3c35 *bd90-10-28d2t04.wav
+abaddc72211886faadf29aaa89e445ad *bd90-10-28d2t05.wav
+bddbc3df1bd044a74ebf4dcc4435b9b1 *bd90-10-28d2t06.wav
+519313656024c2235f137bf8f3d064c7 *bd90-10-28d2t07.wav
+e4068bfe840268ac5222e0971e002301 *bd90-10-28d2t08.wav
+6d040a3d197a3befb9c19027b2b4fa25 *bd90-10-28d2t09.wav
+7fd58cce75575c88c6059ac62d8cc39c *bd90-10-28d2t10.wav
+===================
+===================
+===================
+=== bd90-10-28.txt
+===================
+===================
+===================
+Bob Dylan, 10/28/90, Athens, GA, 2CDR 
+
+(45min+52min), very good sound, a little hiss; glitches d1t2 2:31, d1t3 0:20, 0:49, 1:09, 1:2x, d1t6 2:11, 2:16, 3:46, 4:42, d1t7 0:1x, 1:08 1:58, dt9 1:05, 1:1x, 1:2x, 2:0x, 2:26, level fluctuations d2t5 5:xx, shakiness d2t9 4:0x
+
+CD1 
+1 Shenandoah 2 Silvio 3 Simple Twist Of Fate 4 What Was It You Wanted 5 Gotta Serve Somebody 6 Tomorrow Is A Long Time 7 Highway 61 Revisited 8 Ballad Of Hollis Brown (acoustic w band) 9 Gates Of Eden (acoustic w band) 10 Mr. Tambourine Man (acoustic w band) 11 short intro to next song probably repeated on cd2t1 
+
+CD2 
+1 It Ain't Me, Babe (acoustic w band) 2 Joey 3 Wiggle Wiggle 4 I Want You 5 T.V. Talkin' Song 6 Maggie's Farm 7 I Shall Be Released 8 Like A Rolling Stone 9 Blowin' In The Wind (acoustic w band) 10 All Along The Watchtower
+
+lineage : cdr trade>EAC>WAV>TLH>FLAC 6
+source :   could be same source as LB-381 with same timings and same flaws, better sound than LB-6347
+===================
+===================
+===================

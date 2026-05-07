@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-04-30.shnf 
+=================== 
+=================== 
+=================== 
+c825526a4e7bba8e7c5c852e73e11d95  101 Leopard Skin Pill Box Hat.shn
+4c72e6f18182f477c135343b16a7e097  102 Tonight I'll Be Staying Here With You.shn
+96bc9c1a9cceb9e27ba4a0e7788ca595  103 All Along The Watchtower.shn
+924a4cdc5f8b132608d986095d1c06d2  104 Shooting Star.shn
+c4a76fb60406b1add5aae1a349f6a3f7  105 Watching The River Flow.shn
+31db977c609e1f6d1176ea517b2add64  106 Silvio.shn
+c1556d572f88de3c4ec95740bafed545  107 Tangled Up In Blue.shn
+052f31e7318365d70052336e33185c09  108 Boots Of Spanish Leather.shn
+084d30c5d61e42ec7ab20666dc4442b1  109 Friend Of The Devil.shn
+ea5dd82e1a84722239d97c21f7999269  201 Seven Days.shn
+83800e291771e74c26a5aeadaffd8254  202 She Belongs To Me.shn
+c7083aed0938bbfd875a4b1b9b6971ca  203 Maggie's Farm.shn
+9e5e9fff3a90b6a90a33d8821686cfdd  204 Alabama Getaway.shn
+54551192d714091801dd13accf1e7d57  205 The Times They Are A Cahngin.shn
+d69c1798097067573698a221948ed752  206 Rainy  Day Women.shn
+8e63ae13d3746b32771bdf5c747cd499  BD96-04-30.md5
+d19a604162739099affa6b03aefd36bd  BD96-04-30.nfo
+456c34c828129f39c4a6a75215f422d4  bd96-04-30.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-04-30.shnf 
+=================== 
+=================== 
+=================== 
+c4703cf28a2c6bbdc42f48cc8366f3e7  [shntool]  101_Leopard_Skin_Pill_Box_Hat.wav
+6fc09cee3fbc050be3cc474b706e1c97  [shntool]  102_Tonight_I'll_Be_Staying_Here_With_You.wav
+e1cd0ed63f6eb85fb061f38b9cf24dc2  [shntool]  103_All_Along_The_Watchtower.wav
+d19b1846a2b17a2b04df8abc2e51d71c  [shntool]  104_Shooting_Star.wav
+450373cc2f7979828747961350154d25  [shntool]  105_Watching_The_River_Flow.wav
+523c8051d5918849f61f672b91399667  [shntool]  106_Silvio.wav
+7a089b37605e099c88bb2bc3bc553fb9  [shntool]  107_Tangled_Up_In_Blue.wav
+d8025ce59f1f3e43001860f9e2f38822  [shntool]  108_Boots_Of_Spanish_Leather.wav
+e5dfc1474b4f1bbb3078887559dde9be  [shntool]  109_Friend_Of_The_Devil.wav
+57511d27a326089df59cb31f1ae64b21  [shntool]  201_Seven_Days.wav
+ed2300fef92b3180437482f9b7b31bad  [shntool]  202_She_Belongs_To_Me.wav
+c17fa2c3c58e1eca8b36739aa4ac9eec  [shntool]  203_Maggie's_Farm.wav
+c9939f32f13562c16d77d89c244783a4  [shntool]  204_Alabama_Getaway.wav
+75ed81b0963dd86c902a4b78b5462c40  [shntool]  205_The_Times_They_Are_A_Cahngin.wav
+76649b25dd8833c14453f5f6053888fb  [shntool]  206_Rainy__Day_Women.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-30.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.43       48434780 B   ---   --   ---xx    shn  0.6955  101 Leopard Skin Pill Box Hat.shn
+     5:24.67       57311228 B   ---   --   ---xx    shn  0.6295  102 Tonight I'll Be Staying Here With You.shn
+     6:01.23       63734540 B   ---   --   ---xx    shn  0.7011  103 All Along The Watchtower.shn
+     5:28.62       58005068 B   ---   --   ---xx    shn  0.5774  104 Shooting Star.shn
+     5:58.06       63165356 B   ---   --   ---xx    shn  0.6136  105 Watching The River Flow.shn
+     7:14.23       76611740 B   ---   --   ---xx    shn  0.6967  106 Silvio.shn
+    10:01.59      106155212 B   ---   --   ---xx    shn  0.6355  107 Tangled Up In Blue.shn
+     9:19.26       98668796 B   ---   --   ---xx    shn  0.5277  108 Boots Of Spanish Leather.shn
+     7:03.05       74629004 B   ---   --   ---xx    shn  0.6024  109 Friend Of The Devil.shn
+     5:53.11       62295116 B   ---   --   ---xx    shn  0.6633  201 Seven Days.shn
+     6:01.34       63760412 B   ---   --   ---xx    shn  0.5354  202 She Belongs To Me.shn
+     6:56.44       73485932 B   ---   --   ---xx    shn  0.6765  203 Maggie's Farm.shn
+     5:23.23       57031340 B   ---   --   ---xx    shn  0.6975  204 Alabama Getaway.shn
+    10:38.34      112623212 B   ---   --   ---xx    shn  0.6543  205 The Times They Are A Cahngin.shn
+     6:58.04       73744652 B   ---   --   ---xx    shn  0.6671  206 Rainy  Day Women.shn
+   102:57.14     1089656388 B                            0.6354  (15 files)
+=================== 
+=================== 
+=================== 

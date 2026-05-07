@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-07-HG 
+=================== 
+=================== 
+=================== 
+5780305715043e04863cedeec56a6fcb  01 - announcement.shn
+b151b0d6638e55069d720f5465116395  02 - Subterranean Homesick Blues.shn
+28a3f7f0fe3c6db42542cf5935b3fa46  03 - Lonesome Town.shn
+77f7ec12ff4c9332fc7ac5d2f69ee8c4  04 - Highway 61 Revisited.shn
+6c000bed9b4c2acb50c06ec259a10600  05 - You´re A Big Girl Now.shn
+ef109da2430f7efe43b798160c83cf6f  06 - John Brown.shn
+0d5c857ceab9613ad7f1a8e0c36c9109  07 - All Along The Watchtower.shn
+b2bd5ac6c75ec7b79a830b56febae930  08 - Barbara Allen.shn
+003fe51f0d70fa397d320185a546fa4a  09 - Girl From The North Country.shn
+73c2312ceb59a8a8708d45ade3d677f4  10 - Mr. Tambourine Man.shn
+4c5d8353cf358c6f4569ee94d3373f93  11 - Silvio.shn
+e50cea05e893b8224e95904c3f4e2236  12 - I Shall Be Released.shn
+9bf0d7596271d0408575971138515868  13 - Like A Rolling Stone.shn
+a194746d1562ab7af0eadc23d87878b5  14 - Blowin´ In The Wind.shn
+1bddfca7b4d7f73979f5b2be52c758d8  15 - One Too Many Mornings.shn
+4244b5e2239985e0158c8b7f53f3027d  16 - Knockin´ On Heaven´s Door.shn
+119b322b32b5bba5191fa8df54ca6028  17 - Congratulations.shn
+f92b0dda7c2c3433e490780296aea10c  18 - Maggie´s Farm.shn
+039f5549ac700d063dfeab05d79caac3  1989-06-07 Birmingham - Congratulations HG.cue
+92c2299bf552f1c538b7b97ae2e9c464  1989-06-07 Birmingham - Congratulations HG.doc
+fdaeff28a441f7bcac813c49215056d4  1989-06-07 Birmingham - Congratulations HG.log
+2ebbad1ee169ac32e27718fdb2da5340  1989-06-07 Birmingham - Congratulations HG.md5
+76a4b141e848284d5a5a84802bbc1069  1989-06-07 Birmingham - Congratulations HG.txt
+91b2b29beac3a8e4661e6bfac7ba63c1  1989-06-07 Birmingham - Congratulations HG.wav.md5
+dbf9116ecd4bcbb220c673067d07b9fd  bd89-06-07-HG.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-06-07-HG 
+=================== 
+=================== 
+=================== 
+be542e301373ac194abaaad4c353c840  [shntool]  01_-_announcement.wav
+ebe85e848fb5af69b5bc6f22cc6ad157  [shntool]  02_-_Subterranean_Homesick_Blues.wav
+22ee026e440976608bff3596145b62e8  [shntool]  03_-_Lonesome_Town.wav
+23d4a664ff67a003b2b97aeba4d545a1  [shntool]  04_-_Highway_61_Revisited.wav
+fd8f4d4cfe0bdf8168a8416b856a83e2  [shntool]  05_-_You_re_A_Big_Girl_Now.wav
+d9de36b57daa9ba3f7874d40bc33635b  [shntool]  06_-_John_Brown.wav
+870c2befb0abf7c95a7caad093cf0e72  [shntool]  07_-_All_Along_The_Watchtower.wav
+94acd26b61b926043a8a398598e2d95b  [shntool]  08_-_Barbara_Allen.wav
+395d9bb862cb20da76c2125dc22fafe5  [shntool]  09_-_Girl_From_The_North_Country.wav
+7deed430e0247461fd62a376e990a5d7  [shntool]  10_-_Mr._Tambourine_Man.wav
+4b3f34d35312b9c26556b3efcde9641e  [shntool]  11_-_Silvio.wav
+b2c8894cfc233ea26a8612d874dbb719  [shntool]  12_-_I_Shall_Be_Released.wav
+79792a9be703727af371cc570110b367  [shntool]  13_-_Like_A_Rolling_Stone.wav
+1e4d9a52e21d85cf6984fd91d3c04bd4  [shntool]  14_-_Blowin__In_The_Wind.wav
+8a8a94b1e6c3d6f377a0f0688febf04e  [shntool]  15_-_One_Too_Many_Mornings.wav
+b75b085292e71ba88a684d2b5b81b8b2  [shntool]  16_-_Knockin__On_Heaven_s_Door.wav
+fb43b013b524e660d92972795ce3ff08  [shntool]  17_-_Congratulations.wav
+64a78a761a6dd7c873b20d2cc3ae784d  [shntool]  18_-_Maggie_s_Farm.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-07-HG 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.52        6649148 B   ---   --   -----    wav  1.0000  01_-_announcement.wav
+     3:24.07       36002108 B   ---   --   -----    wav  1.0000  02_-_Subterranean_Homesick_Blues.wav
+     2:55.53       30994700 B   ---   --   -----    wav  1.0000  03_-_Lonesome_Town.wav
+     4:14.02       44810348 B   ---   --   -----    wav  1.0000  04_-_Highway_61_Revisited.wav
+     5:05.26       53863196 B   ---   --   -----    wav  1.0000  05_-_You_re_A_Big_Girl_Now.wav
+     4:58.10       52590764 B   ---   --   -----    wav  1.0000  06_-_John_Brown.wav
+     4:25.63       46894220 B   ---   --   -----    wav  1.0000  07_-_All_Along_The_Watchtower.wav
+     5:20.69       56610332 B   ---   --   -----    wav  1.0000  08_-_Barbara_Allen.wav
+     5:06.73       54150140 B   ---   --   -----    wav  1.0000  09_-_Girl_From_The_North_Country.wav
+     6:49.63       72295820 B   ---   --   -----    wav  1.0000  10_-_Mr._Tambourine_Man.wav
+     3:24.67       36143228 B   ---   --   -----    wav  1.0000  11_-_Silvio.wav
+     3:58.20       42030284 B   ---   --   -----    wav  1.0000  12_-_I_Shall_Be_Released.wav
+     6:34.45       69607484 B   ---   --   -----    wav  1.0000  13_-_Like_A_Rolling_Stone.wav
+     4:38.72       49208588 B   ---   --   -----    wav  1.0000  14_-_Blowin__In_The_Wind.wav
+     4:23.64       46543772 B   ---   --   -----    wav  1.0000  15_-_One_Too_Many_Mornings.wav
+     4:27.02       47103548 B   ---   --   -----    wav  1.0000  16_-_Knockin__On_Heaven_s_Door.wav
+     3:17.12       34779068 B   ---   --   -----    wav  1.0000  17_-_Congratulations.wav
+     5:42.54       60455852 B   ---   --   -----    wav  1.0000  18_-_Maggie_s_Farm.wav
+    79:26.04      840732600 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

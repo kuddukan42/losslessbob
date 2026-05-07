@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-19-bd-48k.shnf 
+=================== 
+=================== 
+=================== 
+c9b996e5761665ecbd2ac72ce169365c  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 01.shn
+311e7451020486dfe4b4c352f4512fd9  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 02.shn
+573e62f8f3f24482b923afa243a6d67f  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 03.shn
+1d6af1e210a7b8adbac8513d879e20b6  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 04.shn
+ac58efd8a6eb1305a90f6d79574987dd  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 05.shn
+ffa64b6dee9ad9fa6ad937a6fbd6a9ee  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 06.shn
+519143b13b3d613e706a335d4272869a  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 07.shn
+45fe045c2c4afb0603ef81daad91d6ad  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 08.shn
+98c179785203b209dcc4dd9a2ddf1f46  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 09.shn
+b7116b60dc933396d97aa265972526b8  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_Track 10.shn
+2a67efa8291d188e6ad63796738daedb  austin_03-04-19_cd1.shnf\austin_03-04-19_cd1_shn.md5
+89c640e411b460d82549711f11e105c4  austin_03-04-19_cd2.shnf\austin_03-04-19_cd2_Track 01.shn
+24125db1abc7af428f1540296d75a5f2  austin_03-04-19_cd2.shnf\austin_03-04-19_cd2_Track 02.shn
+9d488c147dc3152a7b7f65a0df45cdf1  austin_03-04-19_cd2.shnf\austin_03-04-19_cd2_Track 03.shn
+c0f2fb1650a32104414f187a7169ce2b  austin_03-04-19_cd2.shnf\austin_03-04-19_cd2_Track 04.shn
+334b56cfc022a73d3beac591978f84ca  austin_03-04-19_cd2.shnf\austin_03-04-19_cd2_Track 05.shn
+3f017f9f746e5c075816f24fb80c6eed  austin_03-04-19_cd2.shnf\austin_03-04-19_cd2_Track 06.shn
+4fe8fe36ff71d3bd7955283e787fe9f8  austin_03-04-19_cd2.shnf\austin_03-04-19_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-19-bd-48k.shnf\austin_03-04-19_cd1.shnf 
+=================== 
+=================== 
+=================== 
+dba9fbd5a17e4147908fe02aec66a271  [shntool]  austin_03-04-19_cd1_Track_01.wav
+a977b54f9c5eb496729f8f7739d971ba  [shntool]  austin_03-04-19_cd1_Track_02.wav
+0595a216aab9ff6af4b3907ad3e4312f  [shntool]  austin_03-04-19_cd1_Track_03.wav
+a1da97fefcd3216e45667597c9acc4c9  [shntool]  austin_03-04-19_cd1_Track_04.wav
+2a8d90e9aaddc459d25c064295bc69ed  [shntool]  austin_03-04-19_cd1_Track_05.wav
+6919b89552ef090dcadcc7969f6196fa  [shntool]  austin_03-04-19_cd1_Track_06.wav
+852db8d47cacd17405a2656e5af2fe91  [shntool]  austin_03-04-19_cd1_Track_07.wav
+fa618434f5e8c3880ed82b85b8c81d7d  [shntool]  austin_03-04-19_cd1_Track_08.wav
+c84736062f66af5fa8daec02c6f4fc61  [shntool]  austin_03-04-19_cd1_Track_09.wav
+b131047fec5d691e939dec3e2ea7a676  [shntool]  austin_03-04-19_cd1_Track_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-04-19-bd-48k.shnf\austin_03-04-19_cd2.shnf 
+=================== 
+=================== 
+=================== 
+9b76b060dc0e22f9a033b478f031cba8  [shntool]  austin_03-04-19_cd2_Track_01.wav
+801042ca1aebf98bc824322eef87532c  [shntool]  austin_03-04-19_cd2_Track_02.wav
+55f23ef85119851574688c7866eef90a  [shntool]  austin_03-04-19_cd2_Track_03.wav
+64393c1385884034a9dc092344a8ae6b  [shntool]  austin_03-04-19_cd2_Track_04.wav
+4414fd4adc4ad64053da80d504fc9a59  [shntool]  austin_03-04-19_cd2_Track_05.wav
+6e7c66b725be10d2fd07c32fea7586b4  [shntool]  austin_03-04-19_cd2_Track_06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-19-bd-48k.shnf\austin_03-04-19_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:16.692      72324970 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_01.wav
+     3:28.864      40102202 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_02.wav
+     5:05.715      58697554 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_03.wav
+     4:01.017      46275466 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_04.wav
+     6:32.135      75290114 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_05.wav
+     6:20.357      73028810 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_06.wav
+     5:06.791      58904082 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_07.wav
+     6:55.134      79705946 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_08.wav
+     7:05.430      81682842 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_09.wav
+     5:26.041      62600106 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd1_Track_10.wav
+    56:18.176     648612092 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-19-bd-48k.shnf\austin_03-04-19_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.379      61128938 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd2_Track_01.wav
+     6:46.635      78074114 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd2_Track_02.wav
+     6:13.218      71658098 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd2_Track_03.wav
+     7:02.297      81081330 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd2_Track_04.wav
+     7:33.194      87013466 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd2_Track_05.wav
+     6:52.342      79169870 B   cxx   -e   -----    wav  1.0000  austin_03-04-19_cd2_Track_06.wav
+    39:46.065     458125816 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

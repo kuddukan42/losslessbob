@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-18-PDUB-master.flacf 
+=================== 
+=================== 
+=================== 
+82c64fb8b95ca91d1e66d8a9f193489e  Atlanta, 18-09-1993 (PDUB master).md5
+3ff9ed006d3a54062cfe6a39cabdf5a5  bd1993-09-18.info.txt
+f22dd8b494e8c9dcb058937a5d5652f2  d1\bd1993-09-18d1.LOG
+e85595fde1da40fc93d893611a751b8f  d1\bd1993-09-18d1t01.flac
+2b683f1ebca5e5a1121320a8d698430d  d1\bd1993-09-18d1t02.flac
+acaaddc463e737c880f47dc89ed4342a  d1\bd1993-09-18d1t03.flac
+cf7836b7139370db60eb3c8496896426  d1\bd1993-09-18d1t04.flac
+2bdb076d7015894bad2f36bcbdbc7c30  d1\bd1993-09-18d1t05.flac
+fc2b11678309b93fe5081d15b942dc3a  d1\bd1993-09-18d1t06.flac
+8b4d61ee1168c3a3957620149657f03e  d1\bd1993-09-18d1t07.flac
+515fadbc194b1b63c4d208fb6f276020  d1\bd1993-09-18d1t08.flac
+4cdd57d58b73d51dc148043c1a17e46f  d1\bd1993-09-18d1t09.flac
+06eea8f52e5e882d07aba154349f5f8a  d1\bd1993-09-18d1t10.flac
+4b935e10b1666198c71cf00ac123b1f3  d1\d1.shntool.txt
+cd50556857ddfe7dc7320d3b7ab60138  d1t03.PNG
+dd5dd202a93c1f591bf2feb6b5e69666  d2\bd1993-09-18d2.LOG
+f217ef544b01a47134e2b72378d70f35  d2\bd1993-09-18d2t01.flac
+53e969ebee77c88e3ca2ac2466cad31e  d2\bd1993-09-18d2t02.flac
+ad0731988302b395a1f7b5a4cbe34311  d2\bd1993-09-18d2t03.flac
+1c3eacfc72a8c126067dff4ae57ed879  d2\bd1993-09-18d2t04.flac
+b457414e529508d040975a4c98dca379  d2\d2.shntool.txt
+ac0a4af15c6959d27a2040d7cff8c73f  d2t04.PNG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-18-PDUB-master.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd1993-09-18d1t01.flac:840491033614460832e181e5b3acf259
+bd1993-09-18d1t02.flac:8249ec81ed42c96cc396652ff7463961
+bd1993-09-18d1t03.flac:d141a63fa8f48c644513cdef92b0161b
+bd1993-09-18d1t04.flac:00ef5f7fecff10f390f56711bab08b18
+bd1993-09-18d1t05.flac:97bfaa47a69268939de41d471e711574
+bd1993-09-18d1t06.flac:10d25394fb3215e9f9fb7420ee09b677
+bd1993-09-18d1t07.flac:ca2ff601dd33b5faf92219a04cc0e4be
+bd1993-09-18d1t08.flac:67e2164851069618434d69579b6b21e9
+bd1993-09-18d1t09.flac:8530c978d640180414da1a0cfb6b8fff
+bd1993-09-18d1t10.flac:8aad611475ceeb1d4c60b20834bc1c2b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-18-PDUB-master.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd1993-09-18d2t01.flac:b37353267f055c53a151722940dcb210
+bd1993-09-18d2t02.flac:7b46ca4bdd63816a6a7ed7b72a4646e2
+bd1993-09-18d2t03.flac:1adfd40f643c0b338944b092bcd2e3c8
+bd1993-09-18d2t04.flac:564dfbcfe90378dcbf3ba20ab2e864cc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-18-PDUB-master.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:14.19        2514332 B   ---   --   ---xx   flac  0.2721  bd1993-09-18d1t01.flac
+     3:30.21       37093436 B   ---   --   ---xx   flac  0.5323  bd1993-09-18d1t02.flac
+     7:51.04       83093852 B   ---   --   ---xx   flac  0.5738  bd1993-09-18d1t03.flac
+     5:30.37       58299068 B   ---   --   ---xx   flac  0.5788  bd1993-09-18d1t04.flac
+    11:25.38      120923420 B   ---   --   ---xx   flac  0.5193  bd1993-09-18d1t05.flac
+     5:50.27       61803548 B   ---   --   ---xx   flac  0.5700  bd1993-09-18d1t06.flac
+     7:00.34       74168012 B   ---   --   ---xx   flac  0.5654  bd1993-09-18d1t07.flac
+     6:50.25       72382844 B   ---   --   ---xx   flac  0.5325  bd1993-09-18d1t08.flac
+     7:40.30       81214604 B   ---   --   ---xx   flac  0.5160  bd1993-09-18d1t09.flac
+     8:44.09       92454812 B   ---   --   ---xx   flac  0.5479  bd1993-09-18d1t10.flac
+    64:37.19      683947928 B                            0.5452  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-18-PDUB-master.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:39.48       59912540 B   ---   --   ---xx   flac  0.5888  bd1993-09-18d2t01.flac
+     9:01.60       95573564 B   ---   --   ---xx   flac  0.6251  bd1993-09-18d2t02.flac
+     6:25.23       67968140 B   ---   --   ---xx   flac  0.5608  bd1993-09-18d2t03.flac
+    11:18.41      119695676 B   ---   --   ---xx   flac  0.5409  bd1993-09-18d2t04.flac
+    32:25.22      343149920 B                            0.5767  (4 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,60 @@
+Bob Dylan
+Memorial Coliseum
+Portland, OR
+20 August 1993
+
+audience recording - excellent sound
+
+different recording to LB-4478, considerable upgrade
+
+trade cd-r's > eac > flac 5 > hunger city
+
+Disc 1:
+01. Hard Times
+02. Stuck Inside Of Mobile With The Memphis Blues Again
+03. All Along The Watchtower
+04. Just Like A Woman
+05. Tangled Up In Blue
+06. Emotionally Yours
+07. Silvio
+(Total Time: 57:53)
+
+Disc 2:
+01. Little Moses
+02. Boots Of Spanish Leather 
+03. Don't Think Twice, It's Alright
+04. God Knows
+05. I And I
+06. Maggie's Farm 
+(Total Time: 42:56)
+
+FLAC Fingerprint
+bd1993-08-20d1t01.flac:7984f50b5169ba7c9d1e5919ea0c62c5
+bd1993-08-20d1t02.flac:53f17a81e5b4b15fbd74d36e41e0ec8b
+bd1993-08-20d1t03.flac:a70124c6ddfab23a1426bf02041c783f
+bd1993-08-20d1t04.flac:58ba46af0950151c7c480487a37aef0d
+bd1993-08-20d1t05.flac:8d69fada8c51498e9b9a31b3bffde1e6
+bd1993-08-20d1t06.flac:ee1b075ef7819c3572d2a18a4d2a5e87
+bd1993-08-20d1t07.flac:e2db12fb5e1d5ee81694fa896b117129
+bd1993-08-20-d2t01.flac:9cbc0381ced6455190a46cbae3d5367e
+bd1993-08-20-d2t02.flac:81dcf0ead2df6690f453ee2c2b644f3e
+bd1993-08-20-d2t03.flac:6dee2f65f42271340d57d25c6ca39413
+bd1993-08-20-d2t04.flac:d8b4c4e4ed16eb48ebd579a2ca796810
+bd1993-08-20-d2t05.flac:b0428e7f0971b0c4cb9d23a3e94528be
+bd1993-08-20-d2t06.flac:6be6171a4d2f73554f4c7f3d233c3723
+
+MD5 checksums
+91cb1873553bb6b6578d418d290764ef *bd1993-08-20-d1/bd1993-08-20d1t01.flac
+994aa85ed8703f69f4fe0472f94f67d1 *bd1993-08-20-d1/bd1993-08-20d1t02.flac
+a33c66bf0e43c1f5fb4cf07932bbeb0e *bd1993-08-20-d1/bd1993-08-20d1t03.flac
+f3bd25c6d2c0143db8864b365b4991c9 *bd1993-08-20-d1/bd1993-08-20d1t04.flac
+2ec8c454c6bbfc0cd1f0bf1ca5674502 *bd1993-08-20-d1/bd1993-08-20d1t05.flac
+2abb3ec62bf035f5cac01b22851b3179 *bd1993-08-20-d1/bd1993-08-20d1t06.flac
+a8baac94a9ed1c52ff952f8ee80bd11d *bd1993-08-20-d1/bd1993-08-20d1t07.flac
+11df92758a78d79586197bd01a05d6ae *bd1993-08-20-d2/bd1993-08-20d2t01.flac
+8ea22be2e87141c8b80af03d8a82e385 *bd1993-08-20-d2/bd1993-08-20d2t02.flac
+63d253b6c0d4f87ff71bce5da8709cf1 *bd1993-08-20-d2/bd1993-08-20d2t03.flac
+18dce49927ba1a0035241040b75f3642 *bd1993-08-20-d2/bd1993-08-20d2t04.flac
+b42e7b1acf7f91488663e0cf59ff6df8 *bd1993-08-20-d2/bd1993-08-20d2t05.flac
+16afa079d51ff2789cc3834af2b9d147 *bd1993-08-20-d2/bd1993-08-20d2t06.flac
+

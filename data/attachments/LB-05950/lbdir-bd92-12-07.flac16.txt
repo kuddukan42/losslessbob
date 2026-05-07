@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-12-07.flac16 
+=================== 
+=================== 
+=================== 
+240e1206b043cf2a4ef43b8cea9bddc2  bd92-12-07.txt
+24bb77afd00856c172fe444fce311cdf  bobdylan1992-12-07d1.wav..md5
+d98e6532c32a6df9068cb79aa47efec4  bobdylan1992-12-07d1_log.txt
+acb35f42f55eea1b53140ac32ce6f414  bobdylan1992-12-07d1t01.flac
+9d1fb8d5da711d33c0cf3720b9227954  bobdylan1992-12-07d1t02.flac
+b31527032319dfe55b2b5b16aa4e13a7  bobdylan1992-12-07d1t03.flac
+3b3ba7651a9e037d2526c0617a7f5bc6  bobdylan1992-12-07d1t04.flac
+936638795a420eefdcc53cd4280db5f8  bobdylan1992-12-07d1t05.flac
+bcaa4d75a28f04edb07e8b7ee41d2c50  bobdylan1992-12-07d1t06.flac
+014acf0ec0628f55aa735996cbbfb135  bobdylan1992-12-07d1t07.flac
+5420963dcbae32bfd9b5538a90e04531  bobdylan1992-12-07d1t08.flac
+b1bbc10eaa751e612a83076fa67a8cf2  bobdylan1992-12-07d1t09.flac
+bad1ef6a121a1d156f29a307dbe0849d  bobdylan1992-12-07d2.wav.md5
+4c8dbe01891e70610b5be4b66d688e13  bobdylan1992-12-07d2_log.txt
+79d9267617a7ebf2c84033e344965238  bobdylan1992-12-07d2t01.flac
+ce8c80837fd6d9830cb4183ee6338ec9  bobdylan1992-12-07d2t02.flac
+e27f7c20f5707f12421d187656ec5c19  bobdylan1992-12-07d2t03.flac
+c8c76981ae6e997f3fbc4c56333b3f38  bobdylan1992-12-07d2t04.flac
+d4fe72c5a5d4dd15ff78b944f1d1fd20  bobdylan1992-12-07d2t05.flac
+43d482a22613507d1df906b21cced7c0  bobdylan1992-12-07d2t06.flac
+044367e33ccc108c6710e95c707c8713  bobdylan1992-12-07d2t07.flac
+89f6757121a36886880458ac5a36ae4d  bobdylan1992-12-07d2t08.flac
+867f2194a1d23120438c34838759857c  bobdylan1992-12-07d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-12-07.flac16 
+=================== 
+=================== 
+=================== 
+bobdylan1992-12-07d1t01.flac:750fdb5dd887eb22cb55673431c6fa44
+bobdylan1992-12-07d1t02.flac:3ed4baf8356019c536a9b7cbc5268415
+bobdylan1992-12-07d1t03.flac:865eaaa7236a470bf5f3fe5f02d70cd6
+bobdylan1992-12-07d1t04.flac:1ea3b53571d4ec53cfc6a239d21304a9
+bobdylan1992-12-07d1t05.flac:89c01ab9497de028334a629f9623c09e
+bobdylan1992-12-07d1t06.flac:bf0d14c81a9c13fc4e791797fb1c55f9
+bobdylan1992-12-07d1t07.flac:09ee488d235d128b3ca116a3eab4d94f
+bobdylan1992-12-07d1t08.flac:08db38704b8defed69db0cfd6ee970f7
+bobdylan1992-12-07d1t09.flac:1341856faa9ec1b51a53b343f2d2e23b
+bobdylan1992-12-07d2t01.flac:db192b6fd6be1cf6ca31d867f8c2ae39
+bobdylan1992-12-07d2t02.flac:46fabf9999235c1f894677c778d277ee
+bobdylan1992-12-07d2t03.flac:9171bc84774f515ef3b9e2a5101dafe0
+bobdylan1992-12-07d2t04.flac:795738e0ed5e7cbcac1488720b6cd919
+bobdylan1992-12-07d2t05.flac:74c798a53b0da72711d0cf91d7e67c47
+bobdylan1992-12-07d2t06.flac:a1c69275a33bbdaed1dfffb16006f14b
+bobdylan1992-12-07d2t07.flac:a5f71a3a4e32a84485d3a92e18745fc8
+bobdylan1992-12-07d2t08.flac:0e2616f379ad7e17ec164163f0f074e3
+bobdylan1992-12-07d2t09.flac:c9c418f910697cee9d177440362e26a3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-12-07.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:42.74       49918892 B   ---   --   ---xx   flac  0.5767  bobdylan1992-12-07d1t01.flac
+     6:11.63       65592620 B   ---   --   ---xx   flac  0.5868  bobdylan1992-12-07d1t02.flac
+     5:53.69       62431532 B   ---   --   ---xx   flac  0.5843  bobdylan1992-12-07d1t03.flac
+     9:09.68       97003580 B   ---   --   ---xx   flac  0.5647  bobdylan1992-12-07d1t04.flac
+     6:32.45       69254684 B   ---   --   ---xx   flac  0.5740  bobdylan1992-12-07d1t05.flac
+     4:02.17       42728828 B   ---   --   ---xx   flac  0.5952  bobdylan1992-12-07d1t06.flac
+     8:32.15       90352124 B   ---   --   ---xx   flac  0.6147  bobdylan1992-12-07d1t07.flac
+     4:28.56       47406956 B   ---   --   ---xx   flac  0.5261  bobdylan1992-12-07d1t08.flac
+     5:23.42       57076028 B   ---   --   ---xx   flac  0.5275  bobdylan1992-12-07d1t09.flac
+     6:53.21       72902636 B   ---   --   ---xx   flac  0.5419  bobdylan1992-12-07d2t01.flac
+     6:11.65       65597324 B   ---   --   ---xx   flac  0.5465  bobdylan1992-12-07d2t02.flac
+     6:08.19       64959932 B   ---   --   ---xx   flac  0.6140  bobdylan1992-12-07d2t03.flac
+     8:13.40       87059324 B   ---   --   ---xx   flac  0.5776  bobdylan1992-12-07d2t04.flac
+     7:56.11       83992316 B   ---   --   ---xx   flac  0.5378  bobdylan1992-12-07d2t05.flac
+     7:15.26       76795196 B   ---   --   ---xx   flac  0.5907  bobdylan1992-12-07d2t06.flac
+     5:57.31       63047756 B   ---   --   ---xx   flac  0.5910  bobdylan1992-12-07d2t07.flac
+     4:12.40       44546924 B   ---   --   ---xx   flac  0.6092  bobdylan1992-12-07d2t08.flac
+     3:37.71       38445836 B   ---   --   ---xx   flac  0.4888  bobdylan1992-12-07d2t09.flac
+   111:24.23     1179112488 B                            0.5713  (18 files)
+=================== 
+=================== 
+=================== 

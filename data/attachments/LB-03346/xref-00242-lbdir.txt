@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-10-21-c.flacf 
+=================== 
+=================== 
+=================== 
+cf3e766c10a19ad22274096733dd9508  bd05-10-21-LB-3346.txt
+f3b328297f8f31e349b6582127f06660  Bob Dylan - October 21, 2005 - Goteborg, Sweden.md5
+28c6ca88ad52e341d2d971befb4c9af4  Goteborg2005.txt
+6d40f1fdb81ccc2f006f24fa341d2e7c  Track01.flac
+78c13020e3292191e68f71ee914a448f  Track02.flac
+12fe9da8e5ed56c6dce8a6aac54a8946  Track03.flac
+167a310d6a46fb52406a2b20340c8e9e  Track04.flac
+936443ffcd7d18b6a8aa13c5a94249e9  Track05.flac
+f5ac8ee5fb57074b23ee46803c039339  Track06.flac
+69fc1639ae99e604037a26a0b4cc34e5  Track07.flac
+d34bc38479754500ed28cb366820d373  Track08.flac
+fcc05583e1e9da28418dd23d43062de5  Track09.flac
+5a9f8a485a6760830b6f20f127ff3798  Track10.flac
+d5aafd3786ca784fa61ff44024bcb0f3  Track11.flac
+6e2ef4885180c7f4ff3713874a9751ff  Track12.flac
+b22741d1cdc16dfa9c2dafab091d1a8f  Track13.flac
+c9157460dd23866fb68d41680ddf18a0  Track14.flac
+e095ee9ee1fdd13f58fd7235aec86716  Track15.flac
+7155ee2c989b3ef8ec0b23fa3c537ce3  Track17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-10-21-c.flacf 
+=================== 
+=================== 
+=================== 
+track01.flac:8185b15bd353cd460c624ef103fa8943
+track02.flac:dd304999e3d5a2383d5b0adcdc37af5d
+track03.flac:6e083b38086136506de14cb73864b1d5
+track04.flac:7e030ddc6ab87392ebee3ec37b74b004
+track05.flac:28294e29a602e1545f53df8f6e836be2
+track06.flac:8ed13b9529d3e30a30c9cbd0e8c748af
+track07.flac:c7a7910a52dd3952b7c227863721e07a
+track08.flac:afdeb9b0a12ded2f8161e275dfb041e4
+track09.flac:f59d229bdb5d4cfc5240f0eb69305f8f
+track10.flac:0a6f464f75572e1b3d501013a413bd52
+track11.flac:ae22a2e80ec18d27b64de5748afb4914
+track12.flac:8a4c35b48a87e80ad6c72b36c46fb823
+track13.flac:eeda13668b66b384a32bd0653ed202ea
+track14.flac:44d17ba73fdf97bbdd37229277cb50e9
+track15.flac:be8977cc2600e0b241fed1685d91895f
+track17.flac:52b9d60bb4bf0d3bade6e95dc782f925
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-10-21-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:34.01       58919996 B   ---   --   ---xx   flac  0.5660  Track01.flac
+     3:40.45       38913884 B   ---   --   ---xx   flac  0.5541  Track02.flac
+     5:50.42       61838828 B   ---   --   ---xx   flac  0.5301  Track03.flac
+     5:46.31       61107356 B   ---   --   ---xx   flac  0.5309  Track04.flac
+     7:52.16       83298476 B   ---   --   ---xx   flac  0.5734  Track05.flac
+     9:21.18       99002780 B   ---   --   ---xx   flac  0.5253  Track06.flac
+     6:55.04       73215452 B   ---   --   ---xx   flac  0.5738  Track07.flac
+     5:29.09       58056812 B   ---   --   ---xx   flac  0.5314  Track08.flac
+     5:33.12       58769468 B   ---   --   ---xx   flac  0.4504  Track09.flac
+     7:15.15       76769324 B   ---   --   ---xx   flac  0.5645  Track10.flac
+     5:53.13       62299820 B   ---   --   ---xx   flac  0.5292  Track11.flac
+     7:24.00       78321644 B   ---   --   ---xx   flac  0.5412  Track12.flac
+    13:31.33      143138060 B   ---   --   ---xx   flac  0.4997  Track13.flac
+     6:44.49       71380892 B   ---   --   ---xx   flac  0.5500  Track14.flac
+    12:16.15      129865724 B   ---   --   ---xx   flac  0.5111  Track15.flac
+     5:33.46       58849436 B   ---   --   ---xx   flac  0.5483  Track17.flac
+   114:40.49     1213747952 B                            0.5334  (16 files)
+=================== 
+=================== 
+=================== 

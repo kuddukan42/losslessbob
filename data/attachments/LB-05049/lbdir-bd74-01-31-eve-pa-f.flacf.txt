@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-31-eve-pa-f.flacf 
+=================== 
+=================== 
+=================== 
+df3260fbaa82eb075d2133c207b78d9f  B.Dylan1974-01-30d1t01.flac
+f2df031d51d8de6a0d91ac8346aa1787  B.Dylan1974-01-30d1t02.flac
+bd87392d1ff32a3f0682307110931230  B.Dylan1974-01-30d1t03.flac
+3ca0b03241859a1d10f6f24526c6372d  B.Dylan1974-01-30d1t04.flac
+0f96ad186b03b06aefc5bb643d82b437  B.Dylan1974-01-30d1t05.flac
+ffa29d5937134f8cc3e9a34c18a0983e  B.Dylan1974-01-30d1t06.flac
+3c4d557c0011072c05f4e604fa0b7413  B.Dylan1974-01-30d1t07.flac
+d33c9c321d56d7d677d93b1b972d154d  B.Dylan1974-01-30d1t08.flac
+5bb052d9a8eb6f6cc4fcb77f3f0f35cb  B.Dylan1974-01-30d1t09.flac
+e0adf7a3fd9e010bda8daa78ccd77804  B.Dylan1974-01-30d1t10.flac
+69ddde191e26231abd817ff55af5a2f4  B.Dylan1974-01-30d1t11.flac
+cd761704b69f95863f51990ffa0f31e3  B.Dylan1974-01-30d1t12.flac
+a2fb41d3e410f89e927fe796de112293  B.Dylan1974-01-30d1t13.flac
+6966c0989be7825d3ff64df667a56d78  B.Dylan1974-01-30d1t14.flac
+0865e0300d641facce533f84ee29b57b  B.Dylan1974-01-30d2t01.flac
+c5f8c57b947a2ef386a13f772979d604  B.Dylan1974-01-30d2t02.flac
+3b749b085da9d2b49cf4354b81e96df5  B.Dylan1974-01-30d2t03.flac
+0e6d01c432f144fdee425b2f6f6a0e41  B.Dylan1974-01-30d2t04.flac
+871b0f3c523761bb54e089fe7e665052  B.Dylan1974-01-30d2t05.flac
+bdb3648f767960c2ec13b0cee6650b10  B.Dylan1974-01-30d2t06.flac
+1d08f1094702f2fb571abcca90445bed  B.Dylan1974-01-30d2t07.flac
+041cd4d84925fc44ba7334e18ce5033b  B.Dylan1974-01-30d2t08.flac
+0fdd0965fc8319ad296a1851208bab1c  B.Dylan1974-01-30d2t09.flac
+ada720acef441f78b9d290c94697d565  B.Dylan1974-01-30d2t10.flac
+78b1559f4f3c6018fc12e02ca883ad10  B.Dylan1974-01-30d2t11.flac
+217f21caa8d9e7ea32070b8d05ec6398  B.Dylan1974-01-30d2t12.flac
+78b8c639ca259ebe6db370104f7fee2f  B.Dylan1974-01-30d2t13.flac
+4acb2a5c4fac10281d4c26950df07367  B.Dylan1974-01-30d2t14.flac
+911c77768507ad018467f9b0debc737f  bd1974-01-30.early.info.txt.txt
+1e1f32e4f6e063fc5f9cdf0eedbc66bf  Bob_Dylan_And_The_Band.1974-01-30.early.ffp
+e67c5a975b6632c48b7699c4804d9dbb  Bob_Dylan_And_The_Band.1974-01-30.early.md5
+a6c0d81c05b4174eea31f4aacb40ea5c  Bob_Dylan_And_The_Band.1974-01-30.early.shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-31-eve-pa-f.flacf 
+=================== 
+=================== 
+=================== 
+B.Dylan1974-01-30d1t01.flac:ee0a7a6a78c8566058e6a2a1708da2e1
+B.Dylan1974-01-30d1t02.flac:e7d56d1b30763967a8c4155e19f201c5
+B.Dylan1974-01-30d1t03.flac:d7b223a723d5c6ab3c9bf6f1059963a2
+B.Dylan1974-01-30d1t04.flac:6dfcf314cd53b51dd0901be65360cd02
+B.Dylan1974-01-30d1t05.flac:5125dc8969c4f23ff70c69d239149a87
+B.Dylan1974-01-30d1t06.flac:638818777e6b91d906726e3dee50465c
+B.Dylan1974-01-30d1t07.flac:110c4b052358623f7644a3c60f816653
+B.Dylan1974-01-30d1t08.flac:0357721829c424f493481958518af8eb
+B.Dylan1974-01-30d1t09.flac:ab0041fc55acf5bda54036568d0ef836
+B.Dylan1974-01-30d1t10.flac:c22dcbd2693941d37805a8f411481f39
+B.Dylan1974-01-30d1t11.flac:98ea8cfcdb40768f46acb208c81c5430
+B.Dylan1974-01-30d1t12.flac:2f495f2bbafce4fccec7d9d74340540c
+B.Dylan1974-01-30d1t13.flac:45d86ac36f8d575ae2961ccc8c46244a
+B.Dylan1974-01-30d1t14.flac:faca09d22ece51713b170f6cc0dc9248
+B.Dylan1974-01-30d2t01.flac:ce5fb38d73c611fec50f3aa03b940be0
+B.Dylan1974-01-30d2t02.flac:0ec1251a567361d758f6c82792c1e586
+B.Dylan1974-01-30d2t03.flac:b71c152ca505408d7d71b96d32e051f6
+B.Dylan1974-01-30d2t04.flac:ee46b7614f2ce8be51e4a10b90425ef2
+B.Dylan1974-01-30d2t05.flac:7ed47b40503c11f2ee02977339ef56b8
+B.Dylan1974-01-30d2t06.flac:379532c51b09d5d820a905ea6b3dae24
+B.Dylan1974-01-30d2t07.flac:e3dbea6b038ac2017ee686edfd011746
+B.Dylan1974-01-30d2t08.flac:65de8b6d81c270985ee2aee36c9064a4
+B.Dylan1974-01-30d2t09.flac:8c28808a44f348ed61cc4e51dc9212ea
+B.Dylan1974-01-30d2t10.flac:37ce270fa18f8ea349719fee6521a298
+B.Dylan1974-01-30d2t11.flac:a0d618fbcfc06f43a1f2825d97e7b635
+B.Dylan1974-01-30d2t12.flac:deb53486d6fe7ff5b1ead8f40d457688
+B.Dylan1974-01-30d2t13.flac:e06d790d65ba0fe86a0ca7d57c97a104
+B.Dylan1974-01-30d2t14.flac:dfd9ee761d1f539463e1a5d7e4a75aac
+=================== 
+=================== 
+=================== 
+=== shntool for: bd74-01-31-eve-pa-f.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.43       39438380 B   ---   --   ---xx   flac  0.6505  B.Dylan1974-01-30d1t01.flac
+     3:05.66       32789276 B   ---   --   ---xx   flac  0.6682  B.Dylan1974-01-30d1t02.flac
+     5:48.12       61415468 B   ---   --   ---xx   flac  0.6691  B.Dylan1974-01-30d1t03.flac
+     3:32.56       37528556 B   ---   --   ---xx   flac  0.6676  B.Dylan1974-01-30d1t04.flac
+     3:31.42       37319228 B   ---   --   ---xx   flac  0.6572  B.Dylan1974-01-30d1t05.flac
+     4:00.53       42460700 B   ---   --   ---xx   flac  0.6481  B.Dylan1974-01-30d1t06.flac
+     4:43.71       50088236 B   ---   --   ---xx   flac  0.6564  B.Dylan1974-01-30d1t07.flac
+     4:33.17       48197228 B   ---   --   ---xx   flac  0.6385  B.Dylan1974-01-30d1t08.flac
+     3:32.66       37552076 B   ---   --   ---xx   flac  0.6485  B.Dylan1974-01-30d1t09.flac
+     3:22.16       35670476 B   ---   --   ---xx   flac  0.6489  B.Dylan1974-01-30d1t10.flac
+     4:43.17       49961228 B   ---   --   ---xx   flac  0.6662  B.Dylan1974-01-30d1t11.flac
+     2:32.73       26984540 B   ---   --   ---xx   flac  0.6911  B.Dylan1974-01-30d1t12.flac
+     4:00.17       42376028 B   ---   --   ---xx   flac  0.6868  B.Dylan1974-01-30d1t13.flac
+     4:00.61       42479516 B   ---   --   ---xx   flac  0.6634  B.Dylan1974-01-30d1t14.flac
+     3:16.15       34609724 B   ---   --   ---xx   flac  0.6151  B.Dylan1974-01-30d2t01.flac
+     3:45.31       39762956 B   ---   --   ---xx   flac  0.6234  B.Dylan1974-01-30d2t02.flac
+     5:13.69       55375532 B   ---   --   ---xx   flac  0.6190  B.Dylan1974-01-30d2t03.flac
+     5:00.69       53082332 B   ---   --   ---xx   flac  0.6187  B.Dylan1974-01-30d2t04.flac
+     6:02.48       63969740 B   ---   --   ---xx   flac  0.6259  B.Dylan1974-01-30d2t05.flac
+     4:11.17       44316428 B   ---   --   ---xx   flac  0.6117  B.Dylan1974-01-30d2t06.flac
+     3:47.10       40066364 B   ---   --   ---xx   flac  0.6632  B.Dylan1974-01-30d2t07.flac
+     3:16.70       34739084 B   ---   --   ---xx   flac  0.6796  B.Dylan1974-01-30d2t08.flac
+     2:50.21       30037436 B   ---   --   ---xx   flac  0.6058  B.Dylan1974-01-30d2t09.flac
+     4:10.08       44118860 B   ---   --   ---xx   flac  0.6364  B.Dylan1974-01-30d2t10.flac
+     4:05.35       43300364 B   ---   --   ---xx   flac  0.6564  B.Dylan1974-01-30d2t11.flac
+     6:00.24       63560492 B   ---   --   ---xx   flac  0.6712  B.Dylan1974-01-30d2t12.flac
+     3:32.73       37568540 B   ---   --   ---xx   flac  0.6763  B.Dylan1974-01-30d2t13.flac
+     5:02.42       53371628 B   ---   --   ---xx   flac  0.6456  B.Dylan1974-01-30d2t14.flac
+   115:28.17     1222140416 B                            0.6496  (28 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,54 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-01-22-psbd-In-the-Summertime.flacf 
+=================== 
+=================== 
+=================== 
+16ff22d3d49aa924d99f13a19a85594d  bd1980-01-22.sbd.sbeok.flac16.ffp
+328f2d8db708fbba1e0e08df9868d193  bd1980-01-22.sbd.sbeok.flac16.md5
+c8a80fabb86e062010d7e5f843b93cec  bd1980-01-22sbd.t01.flac
+7b0a9e36b2741948bd8fcd537742e387  bd1980-01-22sbd.t02.flac
+cea24cf3f07721a10875da4c7e0ed41c  bd1980-01-22sbd.t03.flac
+74d8e5e5000e1b4b31a8b7b8333cf3d3  bd1980-01-22sbd.t04.flac
+319a61b527f636b7e73213facaf9094e  bd1980-01-22sbd.t05.flac
+cbfce44462c78ba2afc26faec50607d9  bd1980-01-22sbd.t06.flac
+8f4cdc94e404cdb8d884638b931c26df  bd1980-01-22sbd.t07.flac
+62e5e9c994d4f62499665dda54643c83  bd1980-01-22sbd.t08.flac
+91d07eb02522ca586905bfa89402c109  bd1980-01-22sbdinfo.txt
+579c31ad975072b0e962c2ea635453a1  bd80-01-22-psbd-In-the-Summertime-LB-3565.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-01-22-psbd-In-the-Summertime.flacf 
+=================== 
+=================== 
+=================== 
+bd1980-01-22sbd.t01.flac:0598d4660a5368ef665a7be0467dc484
+bd1980-01-22sbd.t02.flac:b050db11790ccbcb7387624c31216e73
+bd1980-01-22sbd.t03.flac:18c18e23e25c528a1a04df897ab628c3
+bd1980-01-22sbd.t04.flac:e87e1a205485af6fc0d403ac5840cc47
+bd1980-01-22sbd.t05.flac:3dfb9c536e8ad988bbc57b87b0c9b108
+bd1980-01-22sbd.t06.flac:eb1eaff5f4152dc4e50f211990c834ac
+bd1980-01-22sbd.t07.flac:0a8719ff6731f2e745b7080f492d7b74
+bd1980-01-22sbd.t08.flac:36e0efe8c4e4f53bea344cc54d31c1c5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-01-22-psbd-In-the-Summertime.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:51.54       51459452 B   ---   --   ---xx   flac  0.6313  bd1980-01-22sbd.t01.flac
+     5:32.04       58574252 B   ---   --   ---xx   flac  0.6464  bd1980-01-22sbd.t02.flac
+     5:54.46       62553836 B   ---   --   ---xx   flac  0.7056  bd1980-01-22sbd.t03.flac
+     3:51.07       40764908 B   ---   --   ---xx   flac  0.6900  bd1980-01-22sbd.t04.flac
+     4:48.62       50949068 B   ---   --   ---xx   flac  0.6925  bd1980-01-22sbd.t05.flac
+     5:09.10       54531164 B   ---   --   ---xx   flac  0.6517  bd1980-01-22sbd.t06.flac
+     4:27.40       47192924 B   ---   --   ---xx   flac  0.6982  bd1980-01-22sbd.t07.flac
+     2:47.70       29623484 B   ---   --   ---xx   flac  0.5757  bd1980-01-22sbd.t08.flac
+    37:22.68      395649088 B                            0.6658  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,14 @@
+7be49ee918033b91c26d56e30836a489  [shntool]  bd1994-08-16_SBD_d1t01.flac
+70790e983b14947d6bb9760d0be329e4  [shntool]  bd1994-08-16_SBD_d1t02.flac
+29c8acf29f256ac0a5a7be5f41b148b0  [shntool]  bd1994-08-16_SBD_d1t03.flac
+f19d5f4a164c486d939cade59a2450ec  [shntool]  bd1994-08-16_SBD_d1t04.flac
+255b11d99ed4c59bd020bcfc57ba94a1  [shntool]  bd1994-08-16_SBD_d1t05.flac
+43b2830c34036cadcd7e41efeae8dccb  [shntool]  bd1994-08-16_SBD_d1t06.flac
+37260e5d77f5eeac48f79e5e658ab10f  [shntool]  bd1994-08-16_SBD_d1t07.flac
+4ff89d354d78f369eb6ed5b19bd3ae94  [shntool]  bd1994-08-16_SBD_d1t08.flac
+2edaa779f7d6e5686284e279ee51b51e  [shntool]  bd1994-08-16_SBD_d1t09.flac
+aa2ce0274f254ea0f18e2878a3775e60  [shntool]  bd1994-08-16_SBD_d2t01.flac
+375e6f2c68adc0fbecb0a1df335adb61  [shntool]  bd1994-08-16_SBD_d2t02.flac
+9f77dfa67969857562c19c93ddb80052  [shntool]  bd1994-08-16_SBD_d2t03.flac
+7bff2a9dd92a33b0795c6dddca021720  [shntool]  bd1994-08-16_SBD_d2t04.flac
+6bc6a55d2a5499f326fc8f02026a080c  [shntool]  bd1994-08-16_SBD_d2t05.flac

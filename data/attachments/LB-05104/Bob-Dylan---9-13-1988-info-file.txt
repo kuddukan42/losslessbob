@@ -1,0 +1,113 @@
+Artist - Bob Dylan
+
+Date - 1988/09/13
+
+Venue - Civic Arena, Pittsburgh, PA
+
+Setlist And Fingerprints -
+
+Track 01 - Subterranean Homesick Blues.flac:7693ffec6afec78d6ed007e82b4f51f6
+Track 02 - It's All Over Now, Baby Blue.flac:56b64d83abe43ad9ef17fb1458c12e06
+Track 03 - Stuck Inside Of Mobile.flac:24a803047a88e9db12aeb3e9d3b65003
+Track 04 - Simple Twist Of Fate.flac:4876af8871ee0297e825a87f8e82ef83
+Track 05 - ITALTL, ITATTC.flac:464c9636c7618c9fc092447d2f8e2568
+Track 06 - Shelter From The Storm.flac:743e6cdeb0feef1eb9e046ee77737613
+Track 07 - Highway 61 Revisited.flac:c42b1d2cb70a5e767e92ea11a56df665
+Track 08 - To Ramona.flac:ddc80e7abf4640a02abd21596508e60c
+Track 09 - Girl From The North Country.flac:69516a8eb865a36e02f4aaf17a75f56d
+Track 10 - Don't Think Twice, It's All Right.flac:ff3f41aed07596150cb676ff75326a1f
+Track 11 - Knockin' On Heaven's Door.flac:8658f55636f7a5304265fb1c5f098509
+Track 12 - I Shall Be Released.flac:aee7d2d4ee5942deec2cdeb3694264c2
+Track 13 - Silvio.flac:3cdfc3e4f7b6f66c631b5188cebfb97c
+Track 14 - Like A Rolling Stone.flac:36d78dd3f10261cd2b114ee9fb524e6e
+Track 15 - applause only.flac:ece12d21bc299221d2365b7b460b64f7
+Track 16 - It Ain't Me, Babe.flac:6a13d49d37f805ff8c84f849960b18ee
+Track 17 - All Along The Watchtower.flac:45d486c709492adb72bab22d3b041ac8
+Track 18 - Maggie's Farm.flac:6641c1733c8a3992e4eb49d108b9c589
+
+Track 05 = It Takes A Lot To Laugh, It Takes A Train To Cry
+
+Lineage -
+
+monaural mic, unknown make > 
+analog tape recorder, unknown make > 
+unknown brand master cassette tape > 
+TDK D90 normal bias cassette tape, 1st gen >
+SONY TC-WE805S stereo double cassette deck > 
+Aiwa XC-RW700 CD/CD recorder >
+SONY CD-R AUDIO 80 min. CD-Rs >  
+Cakewalk Pyro 2005 (giant wav files onto HD here) > 
+Cakewalk Pyro 2005 (track wav files here) > 
+Trader's Little Helper wav to flac 
+(encode level 8 (aligned on sector boundaries))  
+
+Quality -  8-9/10 very good plus to excellent minus audience recording
+
+18 tracks, 83:12  This is the ENTIRE concert.
+CD 1 - 8 tracks, 39:58
+CD 2 - 10 tracks, 43:14 
+
+The taper gave me this tape over 18 years ago. 
+I was present at the show and am familiar with the
+venue so here is a brief description of the concert tape:
+
+1) As mentioned above, this recording is complete.
+
+2) The audience is very well-behaved. There is very little talking
+and shouting close to the taper and the music volume tends to drown 
+virtually all of it out. No whistling or screaming. 
+
+3) There is no distortion present. There are no speed problems
+or any other serious faults to prevent you from enjoying this
+show. There is no hiss.
+
+4) This is a very clear recording. The instruments
+come through clearly and distinctly. The vocals are almost
+always clear (hey, this is Bob !). There is almost no stage 
+banter (hey, this is Bob !) I know that the taper was very 
+close to the stage at this venue. I graded this show an 
+8-9/10 because the sound is a bit thin and the recording 
+itself is not very loud. 
+
+This was the first time that I ever saw Bob Dylan and it was
+very interesting. He seemed to speak or chant the lyrics
+with odd inflections and stresses on certain words rather
+than to sing the lyrics. His delivery was rambunctious and
+belligerent, like he wanted you to jump on stage so he could
+kick your ass. I thought he was great ! I've seen him about
+a dozen times now, all over the country. An American prophet... 
+
+5) Just a brief heads-up : This is the second time that I used
+Trader's Little Helper to convert wav to flac and also the
+second time that I converted wav to flac with the "align to
+sector boundaries" option activated. Everything should have 
+gone well. (I didn't reconvert flac to wav, burn to CD and
+listen to the product). There should be no ticks between tracks. 
+I'm positive that I did everything correctly. I've previously used 
+Flac Frontend for wav to flac with no problems and didn't use
+the align to sector boundaries option.
+
+6) Two brief requests: 
+
+1) If you have a high-grade version of this show, please upload it 
+or PM me, send me a copy & I'll upload it.
+
+2) If you have a high-grade version of Rory Gallagher at
+The Bottom Line, NY, NY September 6, 1979 ~ 86 min. FM, PLEASE
+up it or trade me a copy. I've been looking for that show for
+20 years and I can't find it.  
+
+So there you have it. This is the raw recording that I've had lo
+these many years. I changed NOTHING about this recording except
+to track it and to isolate a very short section of audience 
+applause (track 15). Keep it in or leave it out of your completed 
+CDs. No music is missing. That's about all that I can think of to say, 
+so let's wrap this up.
+
+Finally, no buy, no sell, no mp3. Please seed this as long as you can. 
+Please trade this freely as it probably is uncirculated. This show will 
+be a welcome addition to almost any Dylan fan's collection. I will post 
+a sample to help some of you decide whether or not to download it.
+As you can see, the setlist is fantastic. The song titles are correct.
+So, as Mr. Natural is so fond of saying, have fun, don't freak out and 
+enjoy the concert ! 

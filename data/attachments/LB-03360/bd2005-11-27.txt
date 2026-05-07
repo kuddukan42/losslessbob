@@ -1,0 +1,102 @@
+Bob Dylan
+The Point Theatre
+Dublin, Ireland
+November 27, 2005
+
+Source:
+Neumann KM140's > Sound Devices MP-2 > Sony SBM-1 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > CD Wave > FLAC frontend
+
+Disc 1:
+01. Introduction [01:08]
+02. Drifter's Escape [04:33]
+03. Señor (Tales Of Yankee Power) [05:35]
+04. God Knows [04:34]
+05. It's Alright, Ma (I'm Only Bleeding) [07:00]
+06. Love Minus Zero/No Limit [04:53]
+07. Cry A While [06:08]
+08. Boots Of Spanish Leather [06:52]
+09. High Water (For Charley Patton) [06:50]
+10. Every Grain Of Sand [08:00]
+11. Tweedle Dee & Tweedle Dum [05:44]
+Total time: [61:18]
+
+Disc 2:
+01. New Morning [05:03]
+02. 'Til I Fell In Love With You [05:55]
+03. Visions Of Johanna [09:12]
+04. Highway 61 Revisited [10:28]
+05. Don't Think Twice, It's All Right [06:32]
+06. Band Introduction [00:45]
+07. All Along The Watchtower [05:28]
+Total time: [43:23]
+
+Band Members:
+Bob Dylan - keyboard, harp
+Stu Kimball - guitar
+Denny Freeman - guitar
+Donnie Herron - violin, banjo, electric mandolin, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-11-27d1t01.flac:16be377e9afa6d386ad73eac68705492
+bd2005-11-27d1t02.flac:6fa3500d18753e950c712c2682bce3d4
+bd2005-11-27d1t03.flac:cbc5e8f499fcd89b71e8d5cf7d5803e2
+bd2005-11-27d1t04.flac:d26d292a9075e0d9bbd8b5c9ff05cd13
+bd2005-11-27d1t05.flac:1108f3108683c23088366aa7bff05876
+bd2005-11-27d1t06.flac:5eeebecdac0ae63c00148d6298feef6c
+bd2005-11-27d1t07.flac:5284603a59727b9c1b05e0da6d3268ea
+bd2005-11-27d1t08.flac:c7454593b8e2de696c081b4a635bb56f
+bd2005-11-27d1t09.flac:704cd4476e634841b4aa19237537f46b
+bd2005-11-27d1t10.flac:de3c787cbfb20d6992a191ae05d60882
+bd2005-11-27d1t11.flac:b22b3fa0f0c506ab2bdd09052f857095
+bd2005-11-27d2t01.flac:da4e443e96f756943f5598a084462d8e
+bd2005-11-27d2t02.flac:5d177fce2857ac092901bae5ba1f05f8
+bd2005-11-27d2t03.flac:8e4b04431df9dc53b7957232a1bc4297
+bd2005-11-27d2t04.flac:465a43c147e488490277114ca9d39591
+bd2005-11-27d2t05.flac:8942093125018e9544517719e4c20bc1
+bd2005-11-27d2t06.flac:d691b205d17fb7d63a99b63e8506bd2a
+bd2005-11-27d2t07.flac:abdfcf25107646d597524c33844aef7b
+
+flac md5
+752e39569e14e8bfde1eee54e3c6c69d *bd2005-11-27d1t01.flac
+88a39d0b0e606f63da99adbe72098f10 *bd2005-11-27d1t02.flac
+c3df53f9e57a4e3512385f3d2a4ad255 *bd2005-11-27d1t03.flac
+07e2b1c4ed9bc1c2d54c556c75de5063 *bd2005-11-27d1t04.flac
+f08d99062d316268588f792429d0b141 *bd2005-11-27d1t05.flac
+35b8456dfc2d7c8cef1aa43829c42202 *bd2005-11-27d1t06.flac
+e4a935b1e9828d80520d4684dc323891 *bd2005-11-27d1t07.flac
+952765bd0e3fa5e2e7a2c5f6602da9a2 *bd2005-11-27d1t08.flac
+cc7bad1dd4f4d3078bb7b5401e174db0 *bd2005-11-27d1t09.flac
+a96382e61c09fea5bf6656e6b5726d08 *bd2005-11-27d1t10.flac
+63b244824968d13eccdb02c87df3f59c *bd2005-11-27d1t11.flac
+d9fdf4e9e996dcbfa9f48133573064ba *bd2005-11-27d2t01.flac
+ee90bcbff042ad4d8ad3726490329f1d *bd2005-11-27d2t02.flac
+90e52fd5c6fbb2f024595330320c947e *bd2005-11-27d2t03.flac
+bf77ee7aab9ab2d5f900e8e38bc521b9 *bd2005-11-27d2t04.flac
+215936dc66aefcee4cac95bb405c6ff5 *bd2005-11-27d2t05.flac
+e3f16323545a46a5e4c5afeb5539eebf *bd2005-11-27d2t06.flac
+0020043125e0dce29a999f842fcfe3f0 *bd2005-11-27d2t07.flac
+
+wav md5
+a1caca3c19128eeb3e110b2b3a60947d *bd2005-11-27d1t01.wav
+83a513673a1dd9faf4da81e568540a56 *bd2005-11-27d1t02.wav
+cda0c93a73214aa9fc6c98d6286afe64 *bd2005-11-27d1t03.wav
+c819450a41b36b9aed4bec08c84a9ae6 *bd2005-11-27d1t04.wav
+5fb915001c81b609ccbe8f2d21fbf83a *bd2005-11-27d1t05.wav
+63a28570100b5228d55010fde9074e63 *bd2005-11-27d1t06.wav
+1431272b6988c1005b3f0ee34e0f5bd8 *bd2005-11-27d1t07.wav
+b68e0b383eebcc1f29a66cccfefeaaf8 *bd2005-11-27d1t08.wav
+bca04ba56a3d7df6c4a3058fb405a7a1 *bd2005-11-27d1t09.wav
+1ce634644dcff66c3387c4b59c50de38 *bd2005-11-27d1t10.wav
+eb5119e09e2cd989037beebccdc8d8dc *bd2005-11-27d1t11.wav
+b5dc90702c6e46031abd4a417d54c147 *bd2005-11-27d2t01.wav
+66f9535027c7dc3e4b34971926280878 *bd2005-11-27d2t02.wav
+83b00de150d0d54240e6ba2304adca35 *bd2005-11-27d2t03.wav
+300e2319993c81af2325dcba573190b1 *bd2005-11-27d2t04.wav
+2033c0edc92fc3c821cf29b4c345990f *bd2005-11-27d2t05.wav
+852882089d406339d2f11888f2178847 *bd2005-11-27d2t06.wav
+36a444abe5f6e38ae38abfe44bd763cf *bd2005-11-27d2t07.wav
+
+

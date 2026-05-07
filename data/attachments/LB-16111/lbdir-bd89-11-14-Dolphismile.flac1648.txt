@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd89-11-14-Dolphismile.flac1648
+===================
+===================
+===================
+291f43ad1317003967d99eb089512e4f *01 Stuck Inside of Mobile.flac
+dcfcdc79e6e086ac613e0f26c93f1524 *02 I Want You.flac
+12cb3ba42ba0b552af8f7e3a1d05309b *03 Ballad Of A Thin Man.flac
+726f20e0b636fe08ba55bd26eb85adf3 *04 Man Of Peace.flac
+7051970476c57d21d649615714130a0a *05 Simple Twist Of Fate.flac
+0e8f4242ed5ea5cf65902a2723397637 *06 I Believe In You.flac
+c64dbf1f34961a6c7a75584b5902fd4f *07 Rainy Day Women.flac
+5e53d2670e98458994e5c0257c3fbb4f *08 Its All Over Now Baby Blue.flac
+94cf94998d1e28c027bc2b8813e335af *09 It Aint Me Babe.flac
+8462149965fee64589e69c41f4b23e46 *10 Tamborine Man.flac
+f5061a79f73f5b2cda313fd0b799ec20 *11 Everything Is Broken.flac
+f6bf124c73fce7b16d17cab844a69ea1 *12 What Good Am I.flac
+1267569a78cf49b3ebc8f1b9608ec83e *13 Most Of The Time.flac
+60c5df1c3406c38055a4be4638845816 *14 It Takes A Lot To Laugh.flac
+21c7dc95b46cdb22504899df394e4bad *15 Like A Rolling Stone.flac
+c7e9810fb645176e53b06f8f6b055d90 *16 Knockin On Heavens Door.flac
+4d0d7830b809f588c39ca4928a65c2c3 *17 Maggies Farm.flac
+14413fdaf2625bbc8a2e201793a58f3e *Bob Dylan Festival Hall TBPAC Tampa 1989-11-14  Dolphinsmile Master.ffp
+5222a63f92fa9ac55206b22003d0d46c *Bob Dylan Festival Hall TBPAC Tampa 1989-11-14  Dolphinsmile Master.md5
+14413fdaf2625bbc8a2e201793a58f3e *Bob Dylan Festival Hall TBPAC Tampa 1989-11-14  Dolphinsmile Master.txt
+8b7380e6cb9cc7f58e9a6132c0691870 *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-11-14-Dolphismile.flac1648
+===================
+===================
+===================
+01 Stuck Inside of Mobile.flac:3264275e57e3ea14348400d44f0a92dd
+02 I Want You.flac:cdfaa55aa8d15940188a9be7d3a6aac0
+03 Ballad Of A Thin Man.flac:64d7e6abd8ea3aea9c4ab6594bd00b41
+04 Man Of Peace.flac:a3658ac00cd19a1d03184114551f05bf
+05 Simple Twist Of Fate.flac:8c6a879d87aaab4f3a070c08f3dc397d
+06 I Believe In You.flac:4eb8de3a78edab972d4c77d5cb59abb5
+07 Rainy Day Women.flac:ca76e16ecd56539decb1a9a1f213a5ef
+08 Its All Over Now Baby Blue.flac:5db1490441f717feb77baf0d006d1042
+09 It Aint Me Babe.flac:96226f1fe1bc909aa26d5dae3c008d55
+10 Tamborine Man.flac:e3f145992ddddd8e9099f8764927f9b2
+11 Everything Is Broken.flac:94d5db007efdc7721eae56e889849eaa
+12 What Good Am I.flac:3b0aea1c6b2c667175751c833969adfb
+13 Most Of The Time.flac:ec1d35741cb78e276573783d841e93c9
+14 It Takes A Lot To Laugh.flac:be2454a4c86af1902d3b10e21222eff9
+15 Like A Rolling Stone.flac:38b9c35bd21450ddf896d5506d1647c0
+16 Knockin On Heavens Door.flac:4b399917ac3b4b71d5ccc20e5af8ce7d
+17 Maggies Farm.flac:e3191c48ea4e3cfd125331e9ca407e01
+===================
+===================
+===================
+=== shntool len for: bd89-11-14-Dolphismile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.463      66520932 B   cxx   --   ---xx   flac  0.7199  01 Stuck Inside of Mobile.flac
+     4:28.680      51586612 B   cxx   --   ---xx   flac  0.7303  02 I Want You.flac
+     8:06.785      93462840 B   cxx   --   ---xx   flac  0.7348  03 Ballad Of A Thin Man.flac
+     5:02.860      58149172 B   cxx   --   ---xx   flac  0.7394  04 Man Of Peace.flac
+     6:04.128      69912648 B   cxx   --   ---xx   flac  0.7162  05 Simple Twist Of Fate.flac
+     5:55.767      68307296 B   cxx   --   ---xx   flac  0.7210  06 I Believe In You.flac
+     3:52.005      44545096 B   cxx   --   ---xx   flac  0.7393  07 Rainy Day Women.flac
+     7:10.488      82653664 B   cxx   --   ---xx   flac  0.7251  08 Its All Over Now Baby Blue.flac
+     7:59.399      92044692 B   cxx   --   ---xx   flac  0.7289  09 It Aint Me Babe.flac
+     7:34.315      87228428 B   cxx   --   ---xx   flac  0.7255  10 Tamborine Man.flac
+     4:00.305      46138552 B   cxx   --   ---xx   flac  0.7488  11 Everything Is Broken.flac
+     5:33.255      63984980 B   cxx   --   ---xx   flac  0.6985  12 What Good Am I.flac
+     5:34.286      64182932 B   cxx   --   ---xx   flac  0.7064  13 Most Of The Time.flac
+     5:23.873      62183692 B   cxx   --   ---xx   flac  0.7014  14 It Takes A Lot To Laugh.flac
+     6:58.018      80259540 B   cxx   --   ---xx   flac  0.6951  15 Like A Rolling Stone.flac
+     6:18.099      72595108 B   cxx   --   ---xx   flac  0.6852  16 Knockin On Heavens Door.flac
+     7:00.893      80811508 B   cxx   --   ---xx   flac  0.6991  17 Maggies Farm.flac
+   102:49.619    1184567692 B                            0.7176  (17 files)
+===================
+===================
+===================

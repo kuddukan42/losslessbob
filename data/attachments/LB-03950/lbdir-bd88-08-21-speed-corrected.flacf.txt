@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-08-21-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+e2b51445270ae6cb670ac540c0e94758  88 08 21 d1 t01.flac
+65b624556aa2ddad92cd68eba17aab2e  88 08 21 d1 t02.flac
+0a3dfd5dc7f23bcf76fe7ddb22637d6d  88 08 21 d1 t03.flac
+67f3bdcd528dbdd1e3844ffbaf1e2dd9  88 08 21 d1 t04.flac
+f3d03c4904b982525311248c89ee91ca  88 08 21 d1 t05.flac
+80b8363080903dd3485c5c3ea62b9322  88 08 21 d1 t06.flac
+e5dcf2089fcbabed6e87c272dee9367c  88 08 21 d1 t07.flac
+79ab6435ba90eaaf7fe1dd1b644ee1fc  88 08 21 d1 t08.flac
+d21bad6cc297565e915d0dec9890a23d  88 08 21 d2 t01.flac
+4ae252f82c5b278949ac031a1044416e  88 08 21 d2 t02.flac
+f8a9399e8f99526e0c63bcd2f0541ef5  88 08 21 d2 t03.flac
+d4f6b13a917f31c7d8618292b1a565ea  88 08 21 d2 t04.flac
+f190dfb9665b2facdd43c0099910e22f  88 08 21 d2 t05.flac
+a63c36e137d0b4ea8b59e1e7c23a6746  88 08 21 d2 t06.flac
+e899db5bea6274fa873accd0d609a882  88 08 21 d2 t07.flac
+651703b447eb90ee7d11c6fc3ce3e735  88 08 21 d2 t08.flac
+8fdb2a8e9e215ff4fdaf4f3a8bf61378  bd88 08 21 speed corrected.md5
+cafa970a2f8a327a599b55fd039807d4  bd88-08-21-speed-corrected-LB-3950.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-08-21-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+88 08 21 d1 t01.flac:f69a19b247f1300a3781e6b4a004c4e1
+88 08 21 d1 t02.flac:e5bc704fc4531c153432086dbe2315f3
+88 08 21 d1 t03.flac:caf43b0f4653cc439839fa8889a0aaba
+88 08 21 d1 t04.flac:084d7496829abf0a99884b5559e32dc6
+88 08 21 d1 t05.flac:116a6017a281170e367d6d05dda1d980
+88 08 21 d1 t06.flac:01c75362019b124f810e03e8359284bb
+88 08 21 d1 t07.flac:1c0ed1763b24e19676438d6ca94e7580
+88 08 21 d1 t08.flac:7240d26fbff1c21f9d1d516c4b72fcd8
+88 08 21 d2 t01.flac:69abe99a95c1de1de0aae7e0a6b71135
+88 08 21 d2 t02.flac:ca607cd7700fe3f872e2ac4887e1cae1
+88 08 21 d2 t03.flac:cc331d7129df1b1cc1a082644ec4f041
+88 08 21 d2 t04.flac:55cff45643354381344190382925f7c4
+88 08 21 d2 t05.flac:e63b24b6b0a0745e7421f5c369f4a6c6
+88 08 21 d2 t06.flac:c1d4b2ae55eb71a44cde993f95f345ab
+88 08 21 d2 t07.flac:f6302bc1af530509d9f5c94c12925098
+88 08 21 d2 t08.flac:93836118fde8177a52205fda07ce695e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-08-21-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:49.13       40426220 B   ---   --   ---xx   flac  0.5924  88 08 21 d1 t01.flac
+     3:52.42       41023628 B   ---   --   ---xx   flac  0.5936  88 08 21 d1 t02.flac
+     4:48.20       50850284 B   ---   --   ---xx   flac  0.6111  88 08 21 d1 t03.flac
+     6:53.22       72904988 B   ---   --   ---xx   flac  0.6059  88 08 21 d1 t04.flac
+     6:58.14       73768172 B   ---   --   ---xx   flac  0.6049  88 08 21 d1 t05.flac
+     4:33.01       48159596 B   ---   --   ---xx   flac  0.5959  88 08 21 d1 t06.flac
+     5:12.10       55060364 B   ---   --   ---xx   flac  0.5153  88 08 21 d1 t07.flac
+     6:01.40       63774524 B   ---   --   ---xx   flac  0.5127  88 08 21 d1 t08.flac
+     4:22.09       46238012 B   ---   --   ---xx   flac  0.4744  88 08 21 d2 t01.flac
+     4:15.12       45010268 B   ---   --   ---xx   flac  0.4869  88 08 21 d2 t02.flac
+     4:09.53       44048300 B   ---   --   ---xx   flac  0.6156  88 08 21 d2 t03.flac
+     5:27.42       57781628 B   ---   --   ---xx   flac  0.6054  88 08 21 d2 t04.flac
+    10:33.73      111832940 B   ---   --   ---xx   flac  0.5753  88 08 21 d2 t05.flac
+     5:34.19       58962332 B   ---   --   ---xx   flac  0.5430  88 08 21 d2 t06.flac
+     4:17.05       45346604 B   ---   --   ---xx   flac  0.6182  88 08 21 d2 t07.flac
+     6:53.21       72902636 B   ---   --   ---xx   flac  0.6052  88 08 21 d2 t08.flac
+    87:41.21      928090496 B                            0.5736  (16 files)
+=================== 
+=================== 
+=================== 

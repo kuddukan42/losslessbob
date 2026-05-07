@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-16-a.flacf 
+=================== 
+=================== 
+=================== 
+caa6a0cff59c7c73c0c38a7ec60f98b0  bd1995-06-16.flac Boston d1.shntool.txt
+1ebb8991111593d0919a3995f1a04e39  bd1995-06-16.flac Boston d2.shntool.txt
+e84399fef1b9e68a59209f72dc1f94ca  bd1995-06-16.info.r9453.txt
+f4ef53fda9ee742eb980799c744d8054  bd1995-06-16d1.LOG
+84585cfa7b1d0a0612d31c8a77b4ddd1  bd1995-06-16d1t01.flac
+dea8a4322bfb6f7d9aeb10e11a6f24f6  bd1995-06-16d1t02.flac
+2011cf03a31f46067d2259158ac63b1d  bd1995-06-16d1t03.flac
+68d12eab8ca8c4ddbf5bcc4323437f99  bd1995-06-16d1t04.flac
+fd991ddb8a0d15d468d91c0dd951cab6  bd1995-06-16d1t05.flac
+edb9b2becffbb10c7c28dfced85e90fa  bd1995-06-16d1t06.flac
+c639cf2b9dc9cee057836594c18011a8  bd1995-06-16d1t07.flac
+dcb203f5975b85cd800a468593466ed7  bd1995-06-16d1t08.flac
+768ac65b80b309e4dcb3d45e67d772a5  bd1995-06-16d1t09.flac
+3cdabc3a8710754e5e50b5e68fea7c52  bd1995-06-16d2.LOG
+22488c52703c2a73f3a71d10b492e259  bd1995-06-16d2t01.flac
+a7bd2a69cba99ff642baf09bb0fb6607  bd1995-06-16d2t02.flac
+02c8770e327a6aa6a1721b9b007465a4  bd1995-06-16d2t03.flac
+800c052b241b936c7c5e9d5a07530f58  bd1995-06-16d2t04.flac
+a61fe7903567fe92b72f4359d516cf30  bd1995-06-16d2t05.flac
+df42c4a1970d7451d6e6fb3d0a522211  bd1995-06-16d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-16-a.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-06-16d1t01.flac:415c8c8cfc53e5b6071e139a7f6b89a4
+bd1995-06-16d1t02.flac:0c0c36277ab46be9cee5603a1c172849
+bd1995-06-16d1t03.flac:f868e5a0ebeb5d86e74c31469007e2a1
+bd1995-06-16d1t04.flac:a02ba0206a9144dc8f77a5ad44d5ffbb
+bd1995-06-16d1t05.flac:03fb814b646984c0ad0143b95561205a
+bd1995-06-16d1t06.flac:6affc810227e40f600186a3cde6d2a09
+bd1995-06-16d1t07.flac:72b591b9943475685dbed8477f6f4905
+bd1995-06-16d1t08.flac:2abdd357ec86b2ee401a6a2992047ca7
+bd1995-06-16d1t09.flac:c0b6ae54fe0ab05dac41c46774aaf3d3
+bd1995-06-16d2t01.flac:88df93c5297847d62fe75318380e92db
+bd1995-06-16d2t02.flac:8ae0e2d13960be271b04546ba2144c4b
+bd1995-06-16d2t03.flac:af2150a879136aaa2d4a575e521bf933
+bd1995-06-16d2t04.flac:77dec5c5696659baf0a80bccdf51e097
+bd1995-06-16d2t05.flac:58e2f59fb31a6630330d185131bc486d
+bd1995-06-16d2t06.flac:2cdd638d0557ec9df1f53b2b6e7b2bae
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-06-16-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.73       57501740 B   ---   --   ---xx   flac  0.6543  bd1995-06-16d1t01.flac
+     5:43.29       60573452 B   ---   --   ---xx   flac  0.5889  bd1995-06-16d1t02.flac
+     6:10.45       65373884 B   ---   --   ---xx   flac  0.6466  bd1995-06-16d1t03.flac
+     5:23.14       57010172 B   ---   --   ---xx   flac  0.5899  bd1995-06-16d1t04.flac
+     7:03.58       74753660 B   ---   --   ---xx   flac  0.6155  bd1995-06-16d1t05.flac
+     6:33.19       69369932 B   ---   --   ---xx   flac  0.6428  bd1995-06-16d1t06.flac
+     7:52.57       83394908 B   ---   --   ---xx   flac  0.4557  bd1995-06-16d1t07.flac
+     5:22.22       56852588 B   ---   --   ---xx   flac  0.5290  bd1995-06-16d1t08.flac
+     7:00.38       74177420 B   ---   --   ---xx   flac  0.5535  bd1995-06-16d1t09.flac
+     6:02.59       63995612 B   ---   --   ---xx   flac  0.6478  bd1995-06-16d2t01.flac
+     6:54.61       73173116 B   ---   --   ---xx   flac  0.6134  bd1995-06-16d2t02.flac
+     7:20.33       77693660 B   ---   --   ---xx   flac  0.6263  bd1995-06-16d2t03.flac
+     8:11.67       86770028 B   ---   --   ---xx   flac  0.6216  bd1995-06-16d2t04.flac
+     8:34.14       90702572 B   ---   --   ---xx   flac  0.5877  bd1995-06-16d2t05.flac
+     5:18.33       56172860 B   ---   --   ---xx   flac  0.6323  bd1995-06-16d2t06.flac
+    98:58.22     1047515604 B                            0.5983  (15 files)
+=================== 
+=================== 
+=================== 

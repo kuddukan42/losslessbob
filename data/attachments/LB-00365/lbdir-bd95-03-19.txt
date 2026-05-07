@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-19 
+=================== 
+=================== 
+=================== 
+9642c3fe2af1b87ce2fca62ed44b63cc  bd95-03-19.txt
+ce5b26a25e781b91cf08f84dc24483c3  kerkrade back.jpg
+f4e68c5faafeb2767daef9af503bf87e  kerkrade front.jpg
+c2579bdabfcdd338dbe241b7947dfd6a  noname.md5
+2671337bfb5d61846a3fb336232ec621  track 01.shn
+88540a1ec025b5d004ced03e0fa1e136  track 02.shn
+1a5b65af05e3398b68a38fdee5091496  track 03.shn
+6c2d09234bdc83c29f0c7ac013171ca8  track 04.shn
+4f68344bb8e127b672eae623a447c0a0  track 05.shn
+7444fdff2a8ddeb36de23269b4c2704c  track 06.shn
+63d1d772c9b308b625f5d980c5a84639  track 07.shn
+5a9fb65374f2edc35d200c97c40ef3a0  track 08.shn
+38e7f12dfa4c90ea4e4f2b0c97ed201a  track 09.shn
+26e930d3a3aaac8260f09e3073c6671f  track 10.shn
+22aaef71172a83ea1262fc25e1046996  track 11.shn
+0766e7735172c7b72a78bfd101bfe211  track 12.shn
+a5b14e2bb8c77f636b12f18830ba7d3d  track 13.shn
+ea113499fa54a450dbff55862ac219a6  track 14.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-03-19 
+=================== 
+=================== 
+=================== 
+3d11af31a237f1dbec57f88525441121  [shntool]  track_01.wav
+4f49145f291d148eef072ebd077ca282  [shntool]  track_02.wav
+49e96182bb268a33cf74812926ce74fa  [shntool]  track_03.wav
+6de703bbf5a8c229d60d547f1829ec3a  [shntool]  track_04.wav
+7d1efefaabab6407f9ac75ab857d9e49  [shntool]  track_05.wav
+cf6c22a8896dc83c40e4efcfa1589236  [shntool]  track_06.wav
+80f59a998114034af51174450fff03e2  [shntool]  track_07.wav
+d597804891347faae5e967d1f6e349c4  [shntool]  track_08.wav
+69498354d8560c0acb843435d2c29786  [shntool]  track_09.wav
+4d65718f190b24bcacc2bdfd6d30a374  [shntool]  track_10.wav
+e3c4cd4e6b30cb3ef140fcd7e0f6889a  [shntool]  track_11.wav
+56e0c3b7720f59acfb5e9e735b34d0d6  [shntool]  track_12.wav
+c7858d02c32dc447800ca2010405d29b  [shntool]  track_13.wav
+b44c3902f45b441409162e15c6facbee  [shntool]  track_14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-19 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.46       53557136 B   -b-   --   ---xx    shn  0.6848  track 01.shn
+     4:53.26       51746756 B   -b-   --   ---xx    shn  0.6584  track 02.shn
+     5:47.05       61221508 B   -b-   --   ---xx    shn  0.6876  track 03.shn
+     5:27.38       57772412 B   -b-   --   ---xx    shn  0.6490  track 04.shn
+     7:39.67       81125468 B   -b-   --   ---xx    shn  0.6550  track 05.shn
+     5:03.59       53588528 B   -b-   --   ---xx    shn  0.6320  track 06.shn
+     6:28.70       68608400 B   -b-   --   ---xx    shn  0.5997  track 07.shn
+     4:15.21       45030316 B   -b-   --   ---xx    shn  0.6214  track 08.shn
+     5:41.69       60315240 B   -b-   --   ---xx    shn  0.6419  track 09.shn
+     7:11.73       76201072 B   -b-   --   ---xx    shn  0.7052  track 10.shn
+     6:14.22       66025156 B   -b-   --   ---xx    shn  0.7058  track 11.shn
+     6:56.68       73543544 B   -b-   --   ---xx    shn  0.7282  track 12.shn
+     2:09.68       22915772 B   -b-   --   ---xx    shn  0.5723  track 13.shn
+     6:57.26       73621076 B   -b-   --   ---xx    shn  0.6942  track 14.shn
+    79:51.59      845272384 B                            0.6664  (14 files)
+=================== 
+=================== 
+=================== 

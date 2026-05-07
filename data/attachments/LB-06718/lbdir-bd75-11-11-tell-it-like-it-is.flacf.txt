@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-11-tell-it-like-it-is.flacf 
+=================== 
+=================== 
+=================== 
+12424f427713d89e16c022d0ad1947da  bd75-11-11-tell-it-like-it-is-LB-6718.txt
+9f21fc774021009048aa11c28c814cff  bd75-11-11-tell-it-like-it-is-t01.flac
+1c02f90662f24035338acfefa86e6761  bd75-11-11-tell-it-like-it-is-t02.flac
+651717a99da3952644d2184c49e8330a  bd75-11-11-tell-it-like-it-is-t03.flac
+1cb0738732150532276bbf305c582a90  bd75-11-11-tell-it-like-it-is-t04.flac
+0c47443d8c4b7b0023862d10d555d198  bd75-11-11-tell-it-like-it-is-t05.flac
+77e2fb22fcab1730cd0120c74434518a  bd75-11-11-tell-it-like-it-is-t06.flac
+4bda8aaf1bd9b22fd475efdc9e912b90  bd75-11-11-tell-it-like-it-is-t07.flac
+44abc3035e6712502a1c7270cba4221b  bd75-11-11-tell-it-like-it-is-t08.flac
+4bee326e8aa00a26592c42d1022ced51  bd75-11-11-tell-it-like-it-is-t09.flac
+6a91aa36d9b3876357d0491a4ba12a42  bd75-11-11-tell-it-like-it-is-t10.flac
+b0d20a586ed0cdac62f41bcd3d6ed16e  bd75-11-11-tell-it-like-it-is-t11.flac
+c256f15c774e5cbed6562bd52accceae  bd75-11-11-tell-it-like-it-is-t12.flac
+84b67334cd4266da54e1e27da04c9c0a  bd75-11-11-tell-it-like-it-is-t13.flac
+cefba2f98107258e87f6949740edbf6f  bd75-11-11-tell-it-like-it-is.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-11-tell-it-like-it-is.flacf 
+=================== 
+=================== 
+=================== 
+bd75-11-11-tell-it-like-it-is-t01.flac:410d039d057e2ae309abe9cd25c54867
+bd75-11-11-tell-it-like-it-is-t02.flac:9a015d9c2bc867a3ababa5b6598b082d
+bd75-11-11-tell-it-like-it-is-t03.flac:970197f9757fc6f660964f074c5ad4b0
+bd75-11-11-tell-it-like-it-is-t04.flac:4541c204a9b1c0052d0367469243a239
+bd75-11-11-tell-it-like-it-is-t05.flac:6b40f8786ede05e43b72c83aa8cc7824
+bd75-11-11-tell-it-like-it-is-t06.flac:39f2a4eb5af8f6c9d13ce936d6e32d46
+bd75-11-11-tell-it-like-it-is-t07.flac:e3a06ac50661701b0cab020c0c70996a
+bd75-11-11-tell-it-like-it-is-t08.flac:d0e744eec1092bfc52f6178b50e41bb5
+bd75-11-11-tell-it-like-it-is-t09.flac:c9cab1b449e13661d125eed420342a29
+bd75-11-11-tell-it-like-it-is-t10.flac:81fca818a5b055604f1f800f0dca41f4
+bd75-11-11-tell-it-like-it-is-t11.flac:834a12102b1eab7c5d28464965c0d9f9
+bd75-11-11-tell-it-like-it-is-t12.flac:65f72dfc248060408945bdadfff161fe
+bd75-11-11-tell-it-like-it-is-t13.flac:fa740d597ab6c7c938b0a8a425534255
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-11-tell-it-like-it-is.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:16.53       66451100 B   ---   --   ---xx   flac  0.6083  bd75-11-11-tell-it-like-it-is-t01.flac
+     5:32.72       58734188 B   ---   --   ---xx   flac  0.6066  bd75-11-11-tell-it-like-it-is-t02.flac
+     5:30.73       58383740 B   ---   --   ---xx   flac  0.6086  bd75-11-11-tell-it-like-it-is-t03.flac
+     3:01.40       32022524 B   ---   --   ---xx   flac  0.6067  bd75-11-11-tell-it-like-it-is-t04.flac
+     4:54.25       51920444 B   ---   --   ---xx   flac  0.6023  bd75-11-11-tell-it-like-it-is-t05.flac
+     3:12.40       33962924 B   ---   --   ---xx   flac  0.6101  bd75-11-11-tell-it-like-it-is-t06.flac
+     2:31.17       26676428 B   ---   --   ---xx   flac  0.6014  bd75-11-11-tell-it-like-it-is-t07.flac
+     4:02.10       42712364 B   ---   --   ---xx   flac  0.5862  bd75-11-11-tell-it-like-it-is-t08.flac
+     8:06.50       85848044 B   ---   --   ---xx   flac  0.6825  bd75-11-11-tell-it-like-it-is-t09.flac
+     4:24.10       46593164 B   ---   --   ---xx   flac  0.6883  bd75-11-11-tell-it-like-it-is-t10.flac
+     4:48.60       50944364 B   ---   --   ---xx   flac  0.6879  bd75-11-11-tell-it-like-it-is-t11.flac
+     4:11.65       44429324 B   ---   --   ---xx   flac  0.7026  bd75-11-11-tell-it-like-it-is-t12.flac
+     4:34.73       48505340 B   ---   --   ---xx   flac  0.7035  bd75-11-11-tell-it-like-it-is-t13.flac
+    61:08.63      647183948 B                            0.6415  (13 files)
+=================== 
+=================== 
+=================== 

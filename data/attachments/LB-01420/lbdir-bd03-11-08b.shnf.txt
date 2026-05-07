@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-08b.shnf 
+=================== 
+=================== 
+=================== 
+6c454103734905d6ea252d1a33f2cb1d  bd03-11-08b.txt
+a1c15a3cfb891393e97f1482b834bce4  Bob Dylan - 08.11.2003, Düsseldorf CD1- 01 - Down Along The .shn
+9b8675426de9f8142ac6b375b211393e  Bob Dylan - 08.11.2003, Düsseldorf CD1- 02 - I'll Remember Y.shn
+b097bfaf10ffbdf21c084bfee68dd9c6  Bob Dylan - 08.11.2003, Düsseldorf CD1- 03 - Tweedle Dee & T.shn
+f4aa7d2b0d43af0ab029ba44087ede49  Bob Dylan - 08.11.2003, Düsseldorf CD1- 04 - Love Minus Zero.shn
+6f2046f563049b19177b195e042bbfd9  Bob Dylan - 08.11.2003, Düsseldorf CD1- 05 - It's Alright, M.shn
+e32ef8d50575da6d440336133d515806  Bob Dylan - 08.11.2003, Düsseldorf CD1- 06 - Girl Of The Nor.shn
+03c863b3efa3e4f7d45b93a11e19c8a8  Bob Dylan - 08.11.2003, Düsseldorf CD1- 07 - Cold Irons Boun.shn
+f88ad958a470eaa075132e8cdfba87f1  Bob Dylan - 08.11.2003, Düsseldorf CD1- 08 - Man In The Long.shn
+1fe7445a264be9c80a4dbf807aa89377  Bob Dylan - 08.11.2003, Düsseldorf CD1- 09 - Highway 61 Revi.shn
+cba40b19f090fd68682e51521dff1489  Bob Dylan - 08.11.2003, Düsseldorf CD1- 10 - Tryin' To Get T.shn
+19e9ca45eba9cd4713b3699a4b61ca1a  Bob Dylan - 08.11.2003, Düsseldorf CD1- 11 - Honest With Me.shn
+8764db17dc559b1cd1c4802c72407aad  Bob Dylan - 08.11.2003, Düsseldorf CD2- 01 - The Lonesome De.shn
+9e2fd923f990624f5e58161c0fd8948a  Bob Dylan - 08.11.2003, Düsseldorf CD2- 02 - Summer Days.shn
+e9d46c078d4c61a0bc96c175c42ba15a  Bob Dylan - 08.11.2003, Düsseldorf CD2- 03 - Cats's In The W.shn
+e17c82639fa452eee5b93567ab49ff58  Bob Dylan - 08.11.2003, Düsseldorf CD2- 04 - Like A Rolling .shn
+413388ec57a9adce75b7bb7e8b2649ab  Bob Dylan - 08.11.2003, Düsseldorf CD2- 05 - All Along The W.shn
+b4176c588287b5a463a168144787f921  Bob Dylan - 08.11.2003, Düsseldorf CD2- 06 - Forever Young.shn
+3a6b48c4b7b3b953a5d9e869e7f7c362  Bob Dylan - 08.11.2003, Düsseldorf.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-08b.shnf 
+=================== 
+=================== 
+=================== 
+76b9f8756bc1055300809bde52e7d75c  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_01_-_Down_Along_The_.wav
+16c42cf2f6343a507d803f909a398b09  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_02_-_I_ll_Remember_Y.wav
+3f77e8f9a923ed291faa43a64fd1d44b  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_03_-_Tweedle_Dee___T.wav
+3b89ada6a3815f5ea490e015ab218ac2  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_04_-_Love_Minus_Zero.wav
+8ca44596175f0b3be0a460c95a2b42a4  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_05_-_It_s_Alright,_M.wav
+85c0f61a9f7ab1f7d8f78730cfb9b4be  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_06_-_Girl_Of_The_Nor.wav
+80e724bb5abc6ad800585936cfffe3f8  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_07_-_Cold_Irons_Boun.wav
+497ce620b9ab069b024e14895c68f9b4  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_08_-_Man_In_The_Long.wav
+20edfac442b97d26d215e0797ceaef20  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_09_-_Highway_61_Revi.wav
+dadc11a444021b460ae25024a1fc82c4  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_10_-_Tryin__To_Get_T.wav
+507bca147afa7130518810a282ea1362  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_11_-_Honest_With_Me.wav
+a1882f3d4d23193f39db49f23d754db6  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_01_-_The_Lonesome_De.wav
+d7eb0bd705247bd7abc33864602e2869  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_02_-_Summer_Days.wav
+ad472b110be14919a8e252e0fba0f0f3  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_03_-_Cats_s_In_The_W.wav
+04f83cb47ebc2963ac0037bd762cbd40  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_04_-_Like_A_Rolling_.wav
+cf3694bbeb930fd763d33bcfb6be976f  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_05_-_All_Along_The_W.wav
+2d0bb104b3982ee5ffdc91748cdfa44c  [shntool]  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_06_-_Forever_Young.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-08b.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:13.02       76385950 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_01_-_Down_Along_The_.wav
+     5:54.42       62544430 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_02_-_I_ll_Remember_Y.wav
+     5:42.36       60413518 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_03_-_Tweedle_Dee___T.wav
+     6:40.54       70687054 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_04_-_Love_Minus_Zero.wav
+     8:09.42       86358430 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_05_-_It_s_Alright,_M.wav
+     4:36.74       48860494 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_06_-_Girl_Of_The_Nor.wav
+     6:12.19       65665534 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_07_-_Cold_Irons_Boun.wav
+     6:08.23       64969342 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_08_-_Man_In_The_Long.wav
+     6:39.43       70484782 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_09_-_Highway_61_Revi.wav
+     7:05.40       75064126 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_10_-_Tryin__To_Get_T.wav
+     7:06.37       75233470 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD1-_11_-_Honest_With_Me.wav
+     6:47.63       71943022 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_01_-_The_Lonesome_De.wav
+    12:10.46      128880238 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_02_-_Summer_Days.wav
+     4:56.45       52320286 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_03_-_Cats_s_In_The_W.wav
+     6:34.54       69628654 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_04_-_Like_A_Rolling_.wav
+     8:11.49       86727694 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_05_-_All_Along_The_W.wav
+     7:49.02       82736350 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_08.11.2003,_D_sseldorf_CD2-_06_-_Forever_Young.wav
+   117:59.71     1248903374 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

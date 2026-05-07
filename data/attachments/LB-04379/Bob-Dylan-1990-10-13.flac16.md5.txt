@@ -1,0 +1,18 @@
+5118f137ba96c77c8cdc5e759b963cb9 *Bob Dylan 1990-10-13d1t01 Tangled Up In Blue.flac
+6d3a9464b158a3b779e1c003fcbf8a50 *Bob Dylan 1990-10-13d1t02 I Want You.flac
+e9127c04c7123bfd6e97afd7cd537c4d *Bob Dylan 1990-10-13d1t03 Man In The Long Black Coat.flac
+c844234563d292ab707877c9b30bb185 *Bob Dylan 1990-10-13d1t04 Masters Of War.flac
+38ab0569ba9ca1f9c80ecb53d68e8b5e *Bob Dylan 1990-10-13d1t05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+451b0b096334479bfc4c76e4cff66df7 *Bob Dylan 1990-10-13d1t06 Gotta Serve Somebody.flac
+d63e6ffe886d81f6d6dd0c4624c9b020 *Bob Dylan 1990-10-13d1t07 It's Alright Ma (I'm Only Bleeding).flac
+f4aaf1bde85a0d381b071eb00e43fc84 *Bob Dylan 1990-10-13d1t08 Gates Of Eden.flac
+0647a66200e656ee4afd84797a0d99a2 *Bob Dylan 1990-10-13d1t09 Don't Think Twice It's All Right.flac
+a2c47298052be318d5b96e8ddabfc4b6 *Bob Dylan 1990-10-13d1t10 Trail Of The Buffalo.flac
+dfdd2827899eb1eb27b5974bf01ac5cc *Bob Dylan 1990-10-13d2t01 Under The Red Sky.flac
+c3891bc305504bc98e983fa3d5e9a17d *Bob Dylan 1990-10-13d2t02 Wiggle Wiggle.flac
+6edb9b57cc953ae5aef5065d5d7ca004 *Bob Dylan 1990-10-13d2t03 I'll Remember You.flac
+6e1bfb9000bd495f8d6a08abe8c7ad0d *Bob Dylan 1990-10-13d2t04 All Along The Watchtower.flac
+9bcb2136a3604300ef2451953149eb03 *Bob Dylan 1990-10-13d2t05 I Shall Be Released.flac
+9d3a6587312e153d490e50f2dfe0fb38 *Bob Dylan 1990-10-13d2t06 Like A Rolling Stone.flac
+d5605ae582d4ede823d4ac07801f753d *Bob Dylan 1990-10-13d2t07 Blowin' In The Wind.flac
+97e1465cbaf70287382472ee0598e5d9 *Bob Dylan 1990-10-13d2t08 Highway 61 Revisited.flac

@@ -1,0 +1,150 @@
+===================
+===================
+===================
+=== flac.ffp
+===================
+===================
+===================
+CD 1\01 Tuning.flac:ec1892f785263893cb20a45e3a2107dd
+CD 1\02 Highway 61 Revisited.flac:a23d75e9c8bb5d12fa503c591a452130
+CD 1\03 Jokerman.flac:eb940e2675ca23a30ff602ce7092b6f4
+CD 1\04 All Along The Watchtower.flac:00db310934f3b6f78368d740c3b6d43b
+CD 1\05 Just Like A Woman.flac:72e3c7f2ad2907bc2249cf093176ad21
+CD 1\06 Maggie's Farm.flac:3e4e5ab79fbbf362069a59b847fee826
+CD 1\07 I And I.flac:3a6251d97990a417753c789d2e01dfa0
+CD 1\08 License To Kill.flac:05003a113b0bf44f801ab4c8fc86582c
+CD 1\09 Greg Sutton , My Mojo Working.flac:c9f7b57bcf20116bb0295ca087bc1443
+CD 1\10 It Ain't Me Babe.flac:07fd53d5d6adb490f0c65e08713b77b7
+CD 1\11 It's Alright, Ma (I'm Only Bleeding).flac:edbe830aae73da9f6f146ef39d395c26
+CD 1\12 Don't Think Twice, It's All Right.flac:aef890dcd776847b3713eb71109747b8
+CD 1\13 It's All Over Now Baby Blue.flac:3a9ddae0cdb98adbcd4fe938cfb3d9cf
+CD 1\14 Masters Of War.flac:ffcc6835b6e7a1390daab93ac00b450b
+CD 2\01 Ballad Of A Thin Man.flac:39402e5f122fcce45669f09ff3aa8a8a
+CD 2\02 When You Gonna Wake Up.flac:e3cb6c74114413839b84db595c085cd3
+CD 2\03 Every Grain Of Sand.flac:e5e647fc15ce8528ae057342f205a9a7
+CD 2\04 Like A Rolling Stone.flac:a81a916c2f8be1bfe30c65374f1c46a2
+CD 2\05 Audience.flac:182a9a13af2891fc23ff2c7f990fd75b
+CD 2\06 Girl Of The North Country.flac:964045c004d6284d09e46b62adf5e2b8
+CD 2\07 The Lonesome Death Of Hattie Carroll.flac:e40764825e9756ae406a4724a1544821
+CD 2\08 Do You Wanna Sing - Carlos Santana invitation.flac:c9a60e0f807b49ee14fa7288050d26b7
+CD 2\09 Blowin' In The Wind.flac:3eafe2d3ecfab2c9e9bd232716af6f51
+CD 2\10 I Shall Be Released.flac:d80a3422c3dbf28941ce7a6449178d9a
+CD 2\11 Tombstone Blues.flac:57276f5bbbcb91e52215617f05d89337
+CD 2\12 Why Do I Have To Choose.flac:db0d60d7b31076240f1fec70d2b9b98d
+CD 2\13 Forever Young.flac:fee004662c03b59c10731db6c82a9db7
+CD 2\14 Cheers.flac:8221bdb14c5595fd5b05ec149a141c40
+===================
+===================
+===================
+=== flac.md5
+===================
+===================
+===================
+e51782b6a7f5af28ac817db3021b44c6 *CD 1\01 Tuning.flac
+10822435592262a5c831f44b80e97834 *CD 1\02 Highway 61 Revisited.flac
+c8c79a20a10bc62e3db0ebfcdee222a0 *CD 1\03 Jokerman.flac
+da06c3c20c45d1d24720f0b18fef5a36 *CD 1\04 All Along The Watchtower.flac
+b99d9601f07833778c73537029f900bd *CD 1\05 Just Like A Woman.flac
+55807642fc559d104ef76890b6dc88dd *CD 1\06 Maggie's Farm.flac
+4348ccebb4ad109c4d4274172b0480c4 *CD 1\07 I And I.flac
+0e9ce9e5485e53bcc93c2cd208a9858a *CD 1\08 License To Kill.flac
+50a7b75d72fc214875f79c78b3dcc4e6 *CD 1\09 Greg Sutton , My Mojo Working.flac
+af78db8ffc295aca0c97587d043ea552 *CD 1\10 It Ain't Me Babe.flac
+887da4cd46d4625a4075d23bf1ac6d02 *CD 1\11 It's Alright, Ma (I'm Only Bleeding).flac
+32585d065fcf6910228cdde4541c58b5 *CD 1\12 Don't Think Twice, It's All Right.flac
+89607fc756eca900802d47eb0b18355c *CD 1\13 It's All Over Now Baby Blue.flac
+33017a248936c1f75c09c045e26fc0ec *CD 1\14 Masters Of War.flac
+dc0b8ac2988e953bccf93864a013bb82 *CD 2\01 Ballad Of A Thin Man.flac
+a4ed9bb9329a7a4146d76c7770d2a84e *CD 2\02 When You Gonna Wake Up.flac
+eda210c712442746d796d7071f397f5b *CD 2\03 Every Grain Of Sand.flac
+cf122706a3b1b4f1948220d20b337e2d *CD 2\04 Like A Rolling Stone.flac
+b3d5b97ad475ceae2e938095c8d6d8db *CD 2\05 Audience.flac
+d302351f74aebac9e6ca1bdbfcef4746 *CD 2\06 Girl Of The North Country.flac
+7b9c7f594e9d60a78c2470bea27d9008 *CD 2\07 The Lonesome Death Of Hattie Carroll.flac
+654e2a7f3e80ead9659d68d2a686acfe *CD 2\08 Do You Wanna Sing - Carlos Santana invitation.flac
+955f0d736e7541ab1b07099bba747590 *CD 2\09 Blowin' In The Wind.flac
+7c6ce5b11567bd8fe742dab544bf37a3 *CD 2\10 I Shall Be Released.flac
+937f301bba2971a7c5b858595e050417 *CD 2\11 Tombstone Blues.flac
+ac4cce223a91914a25572b6e0e0b377d *CD 2\12 Why Do I Have To Choose.flac
+5c17379ab97f0660d9446f29179e4776 *CD 2\13 Forever Young.flac
+e153af447bf00c4a499e5c0b7c95e0fa *CD 2\14 Cheers.flac
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+++++++++++++++++++++++++++++++++++++++++++++++++++
+recieved this show as audio cdr's in a snail mail trade years ago from a very reliable trader, before
+chuck (kisseber) shared his copy as, Boots, Compilations, Remasters, Non-Commercial Series #2 
+
+yesterday I converted it to flac files, and although it seems to match, my audio rip can't be, LB-1514 
+... but I will borrow the setlist from chuck's info file.
+thank you chuck for all you're wonderful uploads
+
+I could be wrong but my ears don't hear that, digi-pop d2t13 4:03 ... anyway, before I delete this from my drive, I thought someone might want a copy.
+++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+Bob Dylan
+1984-06-03
+Munich, West Germany
+
+
+Lineage: Trade Audio CDR's  ->  EAC (secure/offset correct)  ->  WAV  ->  TLH - FLAC Level 8
+
+
+CD1
+
+:, 01. Tuning 01:00, 02. Highway 61 Revisited 04:34, 03. Jokerman 06:30, 04. All Along The Watchtower 04:43, 05. Just Like A Woman 06:53, 06. Maggie's Farm 04:22, 07. I And I 05:39, 08. License To Kill 03:58, 09. Greg Sutton / Got My Mojo Working 04:46, 10. It Ain't Me, Babe 06:22, 11. It's Alright, Ma (I'm Only Bleeding) 06:45, 12. Don't Think Twice, It's All Right 05:25, 13. It's All Over Now, Baby Blue 05:51, 14. Masters Of War 05:07, IA063
+
+CD2
+
+:, 01. Ballad Of A Thin Man 04:10, 02. When You Gonna Wake Up 04:33, 03. Every Grain Of Sand 05:34, 04. Like A Rolling Stone 06:29, 05. Audience 03:41, 06. Girl Of The North Country 04:16, 07. The Lonesome Death Of Hattie Carroll 05:14, 08. Do You Wanna Sing Now - Carlos Santana Invitation 01:30, 09. Blowin' In The Wind 05:13, 10. I Shall Be Released 04:47, 11. Tombstone Blues 04:55, 12. Why Do I Have To Choose 04:57, 13. Forever Young 05:05, 14. Cheers 00:34 
+
+
+
+
+
+ 
+===================
+===================
+===================
+=== shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.08       10602860 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\01 Tuning.wav
+     4:34.26       48394796 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\02 Highway 61 Revisited.wav
+     6:30.24       68852492 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\03 Jokerman.wav
+     4:43.45       50027084 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\04 All Along The Watchtower.wav
+     6:53.31       72926156 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\05 Just Like A Woman.wav
+     4:22.16       46254476 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\06 Maggie's Farm.wav
+     5:39.65       59952524 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\07 I And I.wav
+     3:58.05       41995004 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\08 License To Kill.wav
+     4:46.33       50528060 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\09 Greg Sutton , My Mojo Working.wav
+     6:22.68       67544780 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\10 It Ain't Me Babe.wav
+     6:45.04       71451452 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\11 It's Alright, Ma (I'm Only Bleeding).wav
+     5:25.30       57400604 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\12 Don't Think Twice, It's All Right.wav
+     5:51.72       62085788 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\13 It's All Over Now Baby Blue.wav
+     5:07.70       54319484 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 1\14 Masters Of War.wav
+     4:10.60       44241164 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\01 Ballad Of A Thin Man.wav
+     4:33.11       48183116 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\02 When You Gonna Wake Up.wav
+     5:34.41       59014076 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\03 Every Grain Of Sand.wav
+     6:29.68       68779580 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\04 Like A Rolling Stone.wav
+     3:41.53       39109100 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\05 Audience.wav
+     4:16.35       45240764 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\06 Girl Of The North Country.wav
+     5:14.72       55558988 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\07 The Lonesome Death Of Hattie Carroll.wav
+     1:30.67       16033628 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\08 Do You Wanna Sing - Carlos Santana invitation.wav
+     5:13.63       55361420 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\09 Blowin' In The Wind.wav
+     4:47.46       50735036 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\10 I Shall Be Released.wav
+     4:55.05       52049804 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\11 Tombstone Blues.wav
+     4:57.35       52473164 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\12 Why Do I Have To Choose.wav
+     5:05.48       53914940 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\13 Forever Young.wav
+     0:34.06        6011756 B   ---   --   -----    wav  1.0000  C:\EAC\Bob Dylan - 1984-06-03  Munich, West Germany\CD 2\14 Cheers.wav
+   133:07.57     1409042096 B                            1.0000  (28 files)
+===================
+===================
+===================

@@ -1,0 +1,22 @@
+01 Duncan and Brady.flac:  successfully decoded to '01 Duncan and Brady.wav'
+02 It ain't me, babe.flac:  successfully decoded to '02 It ain't me, babe.wav'
+03 Masters of war.flac:  successfully decoded to '03 Masters of war.wav'
+04 It's all over now, baby blue.flac:  successfully decoded to '04 It's all over now, baby blue.wav'
+05 Tangled up in blue.flac:  successfully decoded to '05 Tangled up in blue.wav'
+06 Don't think twice, it's all right.flac:  successfully decoded to '06 Don't think twice, it's all right.wav'
+07 Country Pie.flac:  successfully decoded to '07 Country Pie.wav'
+08 Shooting star.flac:  successfully decoded to '08 Shooting star.wav'
+
+No errors occured.
+
+
+01 Duncan and Brady.wav:  track looks like CDDA with probability 100%
+02 It ain't me, babe.wav:  track looks like CDDA with probability 100%
+03 Masters of war.wav:  track looks like CDDA with probability 100%
+04 It's all over now, baby blue.wav:  track looks like CDDA with probability 100%
+05 Tangled up in blue.wav:  track looks like CDDA with probability 100%
+06 Don't think twice, it's all right.wav:  track looks like CDDA with probability 100%
+07 Country Pie.wav:  track looks like CDDA with probability 99%
+08 Shooting star.wav:  track looks like CDDA with probability 100%
+
+No errors occured.

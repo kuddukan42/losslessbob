@@ -1,0 +1,108 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+Studio 4
+Conshohocken, Pennsylvania
+17 June 2005
+Tell Ol Bill recording session, produced by Jack Frost
+
+Disc>EAC>TLH8
+
+Dolphinsmile Archive
+
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+Tell Ol' Bill
+
+
+
+
+
+
+
+ 
+
+1-27 Bob Dylan (vocal & keyboard), Stu Kimball (guitar), Denny Freeman (guitar), Donnie Herron (mandolin, pedal steel guitar), Elana Fremerman (violin), Tony Garnier (bass), George Recile (drums & percussion).
+
+28 Bob Dylan (vocal & guitar), Stu Kimball (guitar), Denny Freeman (guitar), Donnie Herron (violin, pedal steel guitar), Tony Garnier (bass), George Recile (drums & percussion).
+
+ 
+
+===================
+===================
+===================
+=== Tell Ol Bill Session.ffp
+===================
+===================
+===================
+01 Track01.flac:0d4503d4ea4d9e2a3ca293d1ef1eba05
+02 Track02.flac:0d311c63d73260a5974225fcb4b5d74d
+03 Track03.flac:50532dc3b3b88899a843aee1f679a33d
+04 Track04.flac:1f123df367a390bec54f19c6910f5b35
+05 Track05.flac:8ec4ebd439bfc09ac9f05b9dffcedfd0
+06 Track06.flac:8a004f9f864024908a7d6101b061b172
+07 Track07.flac:7d6b7831f6e4748f2e4a7b7a3845f794
+08 Track08.flac:c08c7ca7d009a076c9e0807590bfc448
+09 Track09.flac:34c4ec9917a70cff4a1371a038fe723a
+10 Track10.flac:32f982d6f704c72a27b58f1baa436aa4
+11 Track11.flac:cf8853b54cbd87add5a4efebe4266b43
+12 Track12.flac:d063326242c3a04713f2ce554142385d
+13 Track13.flac:79acba985d7821acdec4d5f9dfa265ed
+===================
+===================
+===================
+=== Tell Ol Bill Session.md5
+===================
+===================
+===================
+c32ae22fed1e69b59f1b2672ae19213d *01 Track01.flac
+885dddfc4b843b77bd6dc5cf64dae0b0 *02 Track02.flac
+8ce54578baf14801dffc58af1abe30e3 *03 Track03.flac
+7910afa3e6db0a478c5e96b08afceaf5 *04 Track04.flac
+53efb73ffbf8d14474ae8e4fd6a2c6fa *05 Track05.flac
+963f3881fa283f72da24bc59a954d707 *06 Track06.flac
+6851dc1cb641c9006298e2870f9c251a *07 Track07.flac
+0af3035f0acaf8392648716a7dce6aeb *08 Track08.flac
+ae43c90d7b96d00f47e5719d7b3e5857 *09 Track09.flac
+5dc672e0941f2d08dd7da56e99ab4277 *10 Track10.flac
+e5ef5083df983b34e2f5a043640f46ff *11 Track11.flac
+e46789e0b4fc33116142a4e43ba2afcc *12 Track12.flac
+3fe013ea76c97afc308b5e648586bffd *13 Track13.flac
+===================
+===================
+===================
+=== Tell Ol Bill Session.txt
+===================
+===================
+===================
+01 Track01.flac:0d4503d4ea4d9e2a3ca293d1ef1eba05
+02 Track02.flac:0d311c63d73260a5974225fcb4b5d74d
+03 Track03.flac:50532dc3b3b88899a843aee1f679a33d
+04 Track04.flac:1f123df367a390bec54f19c6910f5b35
+05 Track05.flac:8ec4ebd439bfc09ac9f05b9dffcedfd0
+06 Track06.flac:8a004f9f864024908a7d6101b061b172
+07 Track07.flac:7d6b7831f6e4748f2e4a7b7a3845f794
+08 Track08.flac:c08c7ca7d009a076c9e0807590bfc448
+09 Track09.flac:34c4ec9917a70cff4a1371a038fe723a
+10 Track10.flac:32f982d6f704c72a27b58f1baa436aa4
+11 Track11.flac:cf8853b54cbd87add5a4efebe4266b43
+12 Track12.flac:d063326242c3a04713f2ce554142385d
+13 Track13.flac:79acba985d7821acdec4d5f9dfa265ed
+===================
+===================
+===================

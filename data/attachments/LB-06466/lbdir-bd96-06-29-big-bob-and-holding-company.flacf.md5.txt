@@ -1,0 +1,12 @@
+24c30713a2cd3bc36e92e17f63a9ac0c  bd96-06-29-big-bob-and-the-holding-company.flacf.md5
+5847cdcb4bd2b1f7e3a3c95d42bf8ac1  bd96-06-29-big-bob-holding-co-t01.flac
+e3306acf2fc2501c715018a25df9fe9f  bd96-06-29-big-bob-holding-co-t02.flac
+afc74774c94adb791f85c70d3035aadb  bd96-06-29-big-bob-holding-co-t03.flac
+95c10530ac3061b43158fd6c9327cd7b  bd96-06-29-big-bob-holding-co-t04.flac
+4ad7f0971ea29b92977c6aced7cd71e3  bd96-06-29-big-bob-holding-co-t05.flac
+b65061a96d52f2965c686acf9be4c856  bd96-06-29-big-bob-holding-co-t06.flac
+46ddbb338b0e60832d4ae85c32bf607d  bd96-06-29-big-bob-holding-co-t07.flac
+3f48c849da0555985b2968aad404acc8  bd96-06-29-big-bob-holding-co-t08.flac
+f2322b7a557259c97dd4b248ff24bd07  bd96-06-29-big-bob-holding-co-t09.flac
+d0ae193e6a5b4c8a2185de52b4c3a78e  bd96-06-29-big-bob-holding-co-t10.flac
+6232fd0d5ff347c8c8a38d1c36513b91  bd96-06-29-big-bob-holding-co-t11.flac

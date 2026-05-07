@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-19-b.flacf 
+=================== 
+=================== 
+=================== 
+856cf4641b2a5f2aa362440bd6a660fe  2000-07-19 Finger Lakes Performing Arts Center, Canandaigua, New York, USA [uT].md5
+46cc88fc2e2a13f70444213ef202cbfe  CD1\01 Oh baby it ain't no lie.flac
+b33c9e5e1ff3066b4a617127a3f61991  CD1\02 To Ramona.flac
+f5d13d79b0f68e050b7bc1c7b55784b4  CD1\03 Desolation Row.flac
+be68c18f8c4c1eba001eb900725e255f  CD1\04 The ballad of Frankie Lee and Judas Priest.flac
+02b91d329df9784eb306279afcb475a9  CD1\05 Tangled up in blue.flac
+94e5764887abf5e5b2bc0cc48303803c  CD1\06 Searching for a soldier's grave.flac
+f2dc822369fa260a9b83bdcb006f0ef9  CD1\07 Country Pie.flac
+165013bce1f314de17a9de0e3f40c13d  CD1\08 Queen Jane approximately.flac
+08c7911a233ef546e8c439ac987e40bc  CD1\09 Tombstone blues.flac
+a529fc9045b56f2da55e668bbe6792fd  CD1\10 I don't believe you (she acts like we never have met).flac
+bafadfb08277e07e31b21e2d1150757f  CD1\11 The wicked messenger.flac
+0e281cdf52c52daf0f6d5f970b24b2c0  CD1\12 (band intro).flac
+974832ca0f707326ae451fb99d842e1a  CD1\12 Leopard-skin pill-box hat.flac
+2b8aaaed1494595535ccb1af7a01b80b  CD2\13 Things have changed.flac
+11180646d9fa4d4c3ef73c2745efbe4d  CD2\14 Like a rolling stone.flac
+ffad806c8064fc53df5a12216d7cd46f  CD2\15 It ain't me, babe.flac
+b10f53656e1608653482ed4ccca8d768  CD2\16 Highway_61.flac
+64ec297c0803f2acb579075357c4854c  CD2\17 Blowin' in the wind.flac
+cd89f116730beae0a83669c0625c5d48  Info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-19-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Oh baby it ain't no lie.flac:0488618713340b546059f645bb6fdbf4
+02 To Ramona.flac:1d11c5f62fc0212bd1795b31d95a6c2f
+03 Desolation Row.flac:7d4efc6ad8a38f51002e296dc763c032
+04 The ballad of Frankie Lee and Judas Priest.flac:ab1e4e0f44573fffa87f535a914ea1fe
+05 Tangled up in blue.flac:467d525e16917f95825a3edcde8b07a7
+06 Searching for a soldier's grave.flac:324b8c584cd84afdfb900c1a67f00c6a
+07 Country Pie.flac:22adddaeb1385099e6396729ad7376d0
+08 Queen Jane approximately.flac:6f11983f3adfe02e11b76d3212f04863
+09 Tombstone blues.flac:5f0780d5cab47d11fc2701bc02fd2582
+10 I don't believe you (she acts like we never have met).flac:6b6f678a83be1de20413f8c692de813f
+11 The wicked messenger.flac:42075e237219eb0835f2afe3cb9a7b01
+12 (band intro).flac:dfffdd383c9357f0f01c82dee09756f2
+12 Leopard-skin pill-box hat.flac:b83f89f92628c8e24882fa57094530b0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-19-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+13 Things have changed.flac:479f2b7109e1ff24f055d47f474a59c9
+14 Like a rolling stone.flac:61c5bb042700f32f5eb57c8d4fdb8a68
+15 It ain't me, babe.flac:dbf5f1768f7a76cc5d24bfe1eea55bf6
+16 Highway_61.flac:f9b01a74449ac24d535f0a5bab99d2f2
+17 Blowin' in the wind.flac:1c78707183007c0cfbd4ee05d664e2c3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-19-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:39.66       38786876 B   ---   --   ---xx   flac  0.5156  01 Oh baby it ain't no lie.flac
+     6:13.46       65905436 B   ---   --   ---xx   flac  0.4978  02 To Ramona.flac
+     9:46.67      103528028 B   ---   --   ---xx   flac  0.5090  03 Desolation Row.flac
+     5:50.65       61892924 B   ---   --   ---xx   flac  0.4790  04 The ballad of Frankie Lee and Judas Priest.flac
+     8:59.74       95253692 B   ---   --   ---xx   flac  0.5332  05 Tangled up in blue.flac
+     3:20.29       35348252 B   ---   --   ---xx   flac  0.4893  06 Searching for a soldier's grave.flac
+     2:44.07       28946108 B   ---   --   ---xx   flac  0.5233  07 Country Pie.flac
+     7:16.29       76978652 B   ---   --   ---xx   flac  0.5031  08 Queen Jane approximately.flac
+     6:00.40       63598124 B   ---   --   ---xx   flac  0.5346  09 Tombstone blues.flac
+     6:38.17       70247228 B   ---   --   ---xx   flac  0.5309  10 I don't believe you (she acts like we never have met).flac
+     3:39.45       38737484 B   ---   --   ---xx   flac  0.5433  11 The wicked messenger.flac
+     0:47.00        8290844 B   ---   --   ---xx   flac  0.4497  12 (band intro).flac
+     6:02.08       63875660 B   ---   --   ---xx   flac  0.5376  12 Leopard-skin pill-box hat.flac
+    70:59.43      751389308 B                            0.5157  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-19-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.14       65830172 B   ---   --   ---xx   flac  0.5307  13 Things have changed.flac
+     7:16.03       76917500 B   ---   --   ---xx   flac  0.5213  14 Like a rolling stone.flac
+     8:16.46       87602636 B   ---   --   ---xx   flac  0.4800  15 It ain't me, babe.flac
+     5:54.19       62490332 B   ---   --   ---xx   flac  0.5498  16 Highway_61.flac
+     4:50.43       51257180 B   ---   --   ---xx   flac  0.4884  17 Blowin' in the wind.flac
+    32:30.50      344097820 B                            0.5129  (5 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-11-11-lk.flacf 
+=================== 
+=================== 
+=================== 
+59843f1b0cf9363b84b175d2ee26e31d  bd1978-11-11_Vancouver.txt
+539c4eed14f868a5568a344fa7f18646  D1\bd1978-11-11_Vancouver 101.flac
+b13a9ff62d4f2aa5cf20586826e401e9  D1\bd1978-11-11_Vancouver 102.flac
+015b216e205696dbdbaac400377ea97d  D1\bd1978-11-11_Vancouver 103.flac
+99827657b564d0c11c04dcbfde267cd8  D1\bd1978-11-11_Vancouver 104.flac
+6575c0dc2c1d6d68e4715875baffbc7e  D1\bd1978-11-11_Vancouver 105.flac
+1265c281c25f8d7edeaa8241c76dd3e5  D1\bd1978-11-11_Vancouver 106.flac
+893655d341527ef909373e13dc96d8e9  D1\bd1978-11-11_Vancouver 107.flac
+a7026131867dd0ae584b941a9fe79cb9  D1\bd1978-11-11_Vancouver 108.flac
+31e58f580e93081ba71b8873064f60bf  D1\bd1978-11-11_Vancouver 109.flac
+18ba5cba05b403463f9691ec5025cfb7  D1\bd1978-11-11_Vancouver 110.flac
+629ce45a48a3ef6b81658db14417b035  D1\bd1978-11-11_Vancouver 111.flac
+67e5536c010b7d47fc9b5fb985519e53  D1\bd1978-11-11_Vancouver 112.flac
+da3ca1317393367b7aa90c75a373b413  D1\bd1978-11-11_Vancouver 113.flac
+9614c19b8d252b03f5c9da56d25e0e87  D1\bd1978-11-11_Vancouver 114.flac
+7759aaf82292fd125a6d6ea3f40f8747  D1\D1.md5
+f476ff3840c810a012d318d391c558ee  D2\bd1978-11-11_Vancouver 201.flac
+0c6f5a5b6ba72556799e0979088ccc97  D2\bd1978-11-11_Vancouver 202.flac
+45cd4968fff0220afa4d2d89a46937aa  D2\bd1978-11-11_Vancouver 203.flac
+34f2c69540966c78094e9cdf43e5c2c8  D2\bd1978-11-11_Vancouver 204.flac
+49a7f5051d7e3e969cc6701beefc9c23  D2\bd1978-11-11_Vancouver 205.flac
+e020981ce887a386db959a947d559853  D2\bd1978-11-11_Vancouver 206.flac
+aeaa2d1df97e67b9b192719cddc78c06  D2\bd1978-11-11_Vancouver 207.flac
+9dcb1d29d49056c9502797ca2e9608dc  D2\bd1978-11-11_Vancouver 208.flac
+596723071c674b49fc2ecc27b94174ad  D2\bd1978-11-11_Vancouver 209.flac
+9ed252160b2fe24cac5b3d09865adfcc  D2\bd1978-11-11_Vancouver 210.flac
+2b54aeda31cd61f0b0eaa926cdab6bb8  D2\bd1978-11-11_Vancouver 211.flac
+c5bb3f6976e4b5a98e2255a5201a3b26  D2\bd1978-11-11_Vancouver 212.flac
+ee2ac52e55ec08dc46e10a5bdabf701c  D2\bd1978-11-11_Vancouver 213.flac
+a66259550e22671d957fb320aa08d1e9  D2\bd1978-11-11_Vancouver 214.flac
+aa3588b5f7bd64ec38e4b81c3c2c583d  D2\D2.md5
+2cf6d493a4240d40ad9a176bd5fbd930  LK 1978 Leg 3 DVD 7.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-11-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+bd1978-11-11_Vancouver 101.flac:06a0848822d61e9e283ef6fd52320ece
+bd1978-11-11_Vancouver 102.flac:08cfdf50eb4155806c799bd3f33db7e3
+bd1978-11-11_Vancouver 103.flac:dc0eac760c87e8104eecf14383cc2718
+bd1978-11-11_Vancouver 104.flac:9817127183f5899a935e5c678664aa6c
+bd1978-11-11_Vancouver 105.flac:a12199886de08eed5d9b4ad4734a458d
+bd1978-11-11_Vancouver 106.flac:383d3bba41d6e541bf82cfdba59c71fd
+bd1978-11-11_Vancouver 107.flac:04acecd4ca1c498b2205394ea4e62812
+bd1978-11-11_Vancouver 108.flac:fd2b9fa8e8e8e145d2d1ea399b191b81
+bd1978-11-11_Vancouver 109.flac:256b6b7a708b1c24253042d25bd97693
+bd1978-11-11_Vancouver 110.flac:231ff9c1942b4cf7b566494d4137a88a
+bd1978-11-11_Vancouver 111.flac:39e0f4da2348891d8376ef5001e897fe
+bd1978-11-11_Vancouver 112.flac:0a7cbb648758e8bff49cfa96fcaad1e9
+bd1978-11-11_Vancouver 113.flac:54129f0841e63367f394b897f3f0d4c6
+bd1978-11-11_Vancouver 114.flac:b7d772086a36d534a298fd60d2df465b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-11-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+bd1978-11-11_Vancouver 201.flac:99e66815ea3cf42cb8a2901ec9cbc87b
+bd1978-11-11_Vancouver 202.flac:654d7d5ee46cb885d465f170f6628a7a
+bd1978-11-11_Vancouver 203.flac:f2a4ae33af6679e5ecafaf7063f9b161
+bd1978-11-11_Vancouver 204.flac:add83516f963b87bdb4c0edf4aa14c43
+bd1978-11-11_Vancouver 205.flac:fd2c1af9d2c5b1e305995e957431a728
+bd1978-11-11_Vancouver 206.flac:a9efb20448978b3d42d7192c625bd910
+bd1978-11-11_Vancouver 207.flac:8dcf2d7f0456b59d9a1510e173718e9e
+bd1978-11-11_Vancouver 208.flac:39b43215d083c92fd274edeb8274175d
+bd1978-11-11_Vancouver 209.flac:ad92653ed72dcc05a12f38f5c9df7e13
+bd1978-11-11_Vancouver 210.flac:2690f1b7a5ee147b26437f90f958d267
+bd1978-11-11_Vancouver 211.flac:7e61a2d03969e6435f5a9598f221ba75
+bd1978-11-11_Vancouver 212.flac:b9c237ff756928efa35bf74ad7be67d0
+bd1978-11-11_Vancouver 213.flac:6b6a02f5d9c2857af3bfae86c3a98e51
+bd1978-11-11_Vancouver 214.flac:1ae96bb0a8651468831c8c1431eb0519
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-11-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:05.52       32756348 B   ---   --   ---xx   flac  0.4356  bd1978-11-11_Vancouver 101.flac
+     2:12.45       23390684 B   ---   --   ---xx   flac  0.5179  bd1978-11-11_Vancouver 102.flac
+     5:07.67       54312428 B   ---   --   ---xx   flac  0.4784  bd1978-11-11_Vancouver 103.flac
+     3:59.06       42173756 B   ---   --   ---xx   flac  0.5013  bd1978-11-11_Vancouver 104.flac
+     4:35.19       48554732 B   ---   --   ---xx   flac  0.5193  bd1978-11-11_Vancouver 105.flac
+     7:37.18       80657180 B   ---   --   ---xx   flac  0.4605  bd1978-11-11_Vancouver 106.flac
+     4:29.09       47472812 B   ---   --   ---xx   flac  0.5049  bd1978-11-11_Vancouver 107.flac
+     5:12.44       55140332 B   ---   --   ---xx   flac  0.5056  bd1978-11-11_Vancouver 108.flac
+     4:32.59       48119612 B   ---   --   ---xx   flac  0.4660  bd1978-11-11_Vancouver 109.flac
+     4:25.33       46823660 B   ---   --   ---xx   flac  0.5354  bd1978-11-11_Vancouver 110.flac
+     4:14.67       44963228 B   ---   --   ---xx   flac  0.5044  bd1978-11-11_Vancouver 111.flac
+     5:30.62       58357868 B   ---   --   ---xx   flac  0.4850  bd1978-11-11_Vancouver 112.flac
+     3:11.40       33786524 B   ---   --   ---xx   flac  0.5178  bd1978-11-11_Vancouver 113.flac
+     4:25.59       46884812 B   ---   --   ---xx   flac  0.5030  bd1978-11-11_Vancouver 114.flac
+    62:40.55      663393976 B                            0.4933  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-11-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.00       66150044 B   ---   --   ---xx   flac  0.4233  bd1978-11-11_Vancouver 201.flac
+     3:18.54       35054252 B   ---   --   ---xx   flac  0.4649  bd1978-11-11_Vancouver 202.flac
+     4:55.51       52157996 B   ---   --   ---xx   flac  0.4788  bd1978-11-11_Vancouver 203.flac
+     7:06.30       75217004 B   ---   --   ---xx   flac  0.4418  bd1978-11-11_Vancouver 204.flac
+     4:48.56       50934956 B   ---   --   ---xx   flac  0.4091  bd1978-11-11_Vancouver 205.flac
+     3:43.73       39508940 B   ---   --   ---xx   flac  0.5332  bd1978-11-11_Vancouver 206.flac
+     4:49.21       51029036 B   ---   --   ---xx   flac  0.5644  bd1978-11-11_Vancouver 207.flac
+     5:48.51       61507196 B   ---   --   ---xx   flac  0.5211  bd1978-11-11_Vancouver 208.flac
+     3:55.04       41463452 B   ---   --   ---xx   flac  0.5492  bd1978-11-11_Vancouver 209.flac
+     3:02.26       32165996 B   ---   --   ---xx   flac  0.5471  bd1978-11-11_Vancouver 210.flac
+     1:37.56       17242556 B   ---   --   ---xx   flac  0.4893  bd1978-11-11_Vancouver 211.flac
+     6:38.10       70230764 B   ---   --   ---xx   flac  0.5570  bd1978-11-11_Vancouver 212.flac
+     6:25.02       67918748 B   ---   --   ---xx   flac  0.5591  bd1978-11-11_Vancouver 213.flac
+     6:47.74       71968892 B   ---   --   ---xx   flac  0.5724  bd1978-11-11_Vancouver 214.flac
+    69:12.58      732549832 B                            0.5083  (14 files)
+=================== 
+=================== 
+=================== 

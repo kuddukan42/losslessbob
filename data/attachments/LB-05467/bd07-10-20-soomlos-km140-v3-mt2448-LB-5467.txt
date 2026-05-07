@@ -1,0 +1,8 @@
+Bob Dylan, 10/20/07, Bloomington, Illinois, US Cellular Coliseum, 2CDR
+
+LB-5467, (69min+43min), source: soomlos, 9th row left floor, neumann km140's > lunatec v3 > m-audio mt24/96 (24/48), audacity > r8brain > cd wave > flac (16/44.1); bittorrent download 10/07; in 3-way comparison, this is warmest, then romeo LB-5452, and then csheb  LB-5453, levels seem to come down a little at d1t2 1:0x; excellent sound [A]
+
+Disc 1:, 01. introduction [00:43], 02. Rainy Day Women #12 & 35 [04:43], 03. Don't Think Twice, It's All Right [06:12], 04. I'll Be Your Baby Tonight [05:47], 05. Tangled Up In Blue [08:50], 06. 'Til I Fell In Love With You [08:24], 07. When The Deal Goes Down [06:03], 08. The Levee's Gonna Break [07:14], 09. Workingman's Blues #2 [06:59], 10. High Water (For Charley Patton) [06:21], 11. Spirit On The Water [06:42], Total Time: [68:04], Disc 2:, 01. Highway 61 Revisited [06:55], 02. Ain't Talkin' [08:08], 03. Summer Days [06:50], 04. Masters Of War [07:55], (encore), 05. Thunder On The Mountain [05:48], 06. band introduction [00:35], 07. All Along The Watchtower [06:29], Total Time: [42:45]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

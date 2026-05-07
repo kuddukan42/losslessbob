@@ -1,0 +1,53 @@
+===================
+===================
+===================
+=== 1975_11_11_WATERBURY__AUD_.ffp
+===================
+===================
+===================
+D1\TRACK01.FLAC:b78dff6fad2139794da6e0939de10c0c
+D1\TRACK02.FLAC:85694ec0dcab26bc26afbc6bb26dec36
+D1\TRACK03.FLAC:0eb4a7d86d0c1746778a7f3074f180bd
+D1\TRACK04.FLAC:5379251ad2f0b0b26f8a6bea91100595
+D1\TRACK05.FLAC:8a9ab8e00338a94c04d86a8b381bfbb0
+D1\TRACK06.FLAC:7fb2d3409ea2543533b89be4eda5cbd0
+D1\TRACK07.FLAC:a8b0d7823400afd411d902394f2cadd3
+D1\TRACK08.FLAC:fea98c248e0fb507ab684e1d751858b4
+D1\TRACK09.FLAC:f9eb5516ee7ff1111299cf45bbdf84d6
+D2\TRACK01.FLAC:ec79391d087e982b186047fc785e5d06
+D2\TRACK02.FLAC:fd12b70e7a3c72b7d48816ad72cb63b4
+D2\TRACK03.FLAC:2d69ff5ba970f3c16b6d446a3ce4278e
+D2\TRACK04.FLAC:180f38c2642efe0af79baf983571a8e7
+D2\TRACK05.FLAC:a5e7d44026d1cda7404c576d9755c025
+D2\TRACK06.FLAC:05541265a34a0cc1c5c0a28b555007a8
+D2\TRACK07.FLAC:089a1f9e333b4a80af795e8b380133f4
+D2\TRACK08.FLAC:ab40625cd05e478fc2913d7f94d11f99
+D2\TRACK09.FLAC:c0902fcdcc3a76c84ff230d48cb8042f
+===================
+===================
+===================
+=== 1975_11_11_WATERBURY__AUD_.MD5
+===================
+===================
+===================
+c77e74e8053e813334419eec6faf130c *D1\Track01.flac
+61d08b9141d12af340488278d0965613 *D1\Track02.flac
+bfa6ae378d64feb72d362b595fb0a2ff *D1\Track03.flac
+9f2465caa0c952fd938820a2346bcc39 *D1\Track04.flac
+fe40cd6d9173012be0e302a2d41542b8 *D1\Track05.flac
+808fdbcc82a492ca1c9f1f5858fdb698 *D1\Track06.flac
+f9466088ecd4ecf13b75a8e30d9b10fe *D1\Track07.flac
+3f0fdc3d09df48979b75d64793739485 *D1\Track08.flac
+e0e6326c706e59db47ebec2c927049a0 *D1\Track09.flac
+cff6a01fc0444a4a473c0a636979da5e *D2\Track01.flac
+c3b9c51820457f311992e599043b27aa *D2\Track02.flac
+a2440bfab15ee475eac594cb183f40c3 *D2\Track03.flac
+fe456c5dd8775170a6340cd69c238b1f *D2\Track04.flac
+c43632161e162f4f41f25d7d3093c5fc *D2\Track05.flac
+a34f1a9873c8c967c8a6c89518d3cde3 *D2\Track06.flac
+b597d29d965862282486d1c79f99852f *D2\Track07.flac
+05a8004c1c7763fa9a78faab11d1a97b *D2\Track08.flac
+5c70747389cc2dcaf782735c029a553b *D2\Track09.flac
+===================
+===================
+===================

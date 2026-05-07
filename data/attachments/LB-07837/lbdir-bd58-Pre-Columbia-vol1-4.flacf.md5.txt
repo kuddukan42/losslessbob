@@ -1,0 +1,143 @@
+23c8081f3df87adb3a9595a5e7cfe6e8  1958 Pre-Columbia Volume 1\1958 Pre-Columbia Volume 1.md5
+a89c4ba1ace64a55b0e9b24c57285e35  1960-05 Pre-Columbia Volume 2\1960-05 Pre-Columbia Volume 2.md5
+0167690aa77a32ada37d5e790057f9f9  1961-02 Pre-Columbia Volume 3\1961-02 Pre-Columbia Volume 3.md5
+00b6dc73038f8efdb490f8e9bbf69a18  1961-05-06 Pre-Columbia Volume 4\1961-05-06 Pre-Columbia Volume 4.md5
+aebb4d7fd115287222b34b4d0f5db2a7  1961-05-06 Pre-Columbia Volume 4\Artwork\Pcbd4.jpg
+4aab50218c75bc66c97af6a50af393fc  Bob Dylan Pre-Columbia Tapes 1 - 4.txt
+3fe02e78584f57973e7c0d1a95684e7e  Bob Dylan Pre-Columbia.md5
+a6f2f3edaac055189bc67ef13df98646  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\01 John Bucklen talks about Dylan.flac
+7c3d10a52cbeb4e11e8fd0ee7ab241d6  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\02 Hey Little Richard.flac
+97d89113ff2ccddf08e4813a33e57deb  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\03 Dylan & Bucklen argue about Lttle Richard.flac
+43f42448757f2ccfee3638d2bdba3aee  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\04 John Bucklen talks about Dylan.flac
+be0b87249d89f2b176249156050caa03  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\05 Dylan & Bucklen argue about Rhythm & Blues.flac
+507d8afe1f651ccca9a564a0c63469ae  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\06 John Bucklen talks about Dylan & Dylan sings 'Buzz Buzz Buzz'.flac
+f3880005b7e38c5916ffe264689669a3  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\07 Jenny, Jenny, Jenny.flac
+64778dada5aa78436018297b6898f3df  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\08 John Bucklen talks about Dylan.flac
+fd6560f449d5e10921a536295c11fe26  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\09 Blue Moon.flac
+cc9ee304bdd9a695be5ca77f26629419  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\10 Dylan & Bucklen argue about Ricky Nelson.flac
+c8c9d4b2141b39431f2fca3c47637c49  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\11 John Bucklen talks about Dylan.flac
+f92a367870f2b1e4ac33062462714341  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\12 John Bucklen talks about Dylan.flac
+ecd96ebca08332b6048f4945ab0aee35  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\13 John Bucklen talks about Dylan.flac
+f1c703fad34d460cf12f99ea9e114ef2  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\14 John Bucklen talks about Dylan.flac
+3ccb3ed8cbf93f018a7715819aed9769  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\15 Red Rosey.flac
+b73aa55b54975ba33ce267e1af4e82f5  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\16 Johnny I hardly knew you.flac
+f80304405a9506ca8f614072e96efe35  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\17 Jesus Christ.flac
+5a5da341b1b9fbb5597cd52db5e2fbd3  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\18 Streets of glory.flac
+3462e8eb408fdb74303f7f4df2e5de00  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\19 K.C. Moan.flac
+2b63a6dd86b30e46150e751acd365612  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\20 Blues Yodel # 8.flac
+01672035beadd1a3a6c2364d92745fff  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\21 I'm a gambler.flac
+fe12a6dc340d5b15cae7256b36ec373d  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\22 Talking Columbia.flac
+27eb2930a6e5fa5140fb32c894296a53  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\23 Talking Merchant Marine.flac
+4e3e503ab2c33337c02889be61c7f4ef  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\24 Talking Hugh Brown.flac
+cde48b5d389ac242c5df05d07e437968  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\25 Talking Lobbyist.flac
+071497fa6bad53059bc0c5e905d13cf6  v1-1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958]\Info\1958 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1958].txt
+f5f506052cfbb20502d1f24211dd89ed  v1-1960-05 The Home of Karen Wallace, Minnesota, USA [May 1960]\01 Dylan raps about his origin.flac
+6da9bcd7573e6489852779f5c9e63dca  v1-1960-05 The Home of Karen Wallace, Minnesota, USA [May 1960]\02 Go down you murderers.flac
+b52a59e2462f372fbcb591e6d1952d98  v1-1960-05 The Home of Karen Wallace, Minnesota, USA [May 1960]\03 Dylan raps and strums his guitar.flac
+a779664c15b3e769f7478eb7992815bc  v1-1960-05 The Home of Karen Wallace, Minnesota, USA [May 1960]\04 Dylan raps and strums his guitar.flac
+057e47e1eb31a2f3c6af0bab66d6e42a  v1-1960-05 The Home of Karen Wallace, Minnesota, USA [May 1960]\05 Dylan sings unidentified song.flac
+12e9112d6dc22a0b6f37cc623abfc553  v1-1960-05 The Home of Karen Wallace, Minnesota, USA [May 1960]\Info\1960-05 The Home of Karen Wallace, Minnesota, USA [May 1960].txt
+359ff43c4afb8207a46c3e5516f22e11  v1-1960-09 The home of Bob Dylan, Minneapolis, Minnesota, USA\01 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1960).flac
+4fbf0bb0b26135b975d56a09fe7acdc1  v1-1960-09 The home of Bob Dylan, Minneapolis, Minnesota, USA\1960-09 The Home of Bob Dylan, Minneapolis, Minnesota, USA [Autumn 1960].txt
+527662350017afb66f9bccbfb60736db  v1-1961 Gerde's Folk City, New York City, New York, USA [Late 1961]\01 San Francisco Bay Blues.flac
+dd398e9072e3523bc9a70d3da374214f  v1-1961 Gerde's Folk City, New York City, New York, USA [Late 1961]\02 The Great Divide.flac
+036e6c13d9c415cbd574b891fe376757  v1-1961 Gerde's Folk City, New York City, New York, USA [Late 1961]\Info\1961 Gerde's Folk City, New York City, New York, USA [Late 1961].txt
+df9be6f6f0cf442a6eb99519467acb62  v1-1961-02 or 03 The Home of Bob and Sid Gleason, East Orange, New Jersey, USA [February or March 1961]\01THEH~1.FLA
+acb4c0952d583dbf7d505e45f9877a6c  v1-1961-02 or 03 The Home of Bob and Sid Gleason, East Orange, New Jersey, USA [February or March 1961]\1961-0~1.TXT
+216a6135ea68463db280d6469d9432f0  v1-1962-02 or 03 Cynthia Gooding's Apartment, New York City, NY [February or March 1962]\01 Wichita.flac
+0f139923667fbb1bb03bc3b9d4fccb02  v1-1962-02 or 03 Cynthia Gooding's Apartment, New York City, NY [February or March 1962]\02 Acne.flac
+9703ae91cc0e2729ad2d4472a3cc8632  v1-1962-02 or 03 Cynthia Gooding's Apartment, New York City, NY [February or March 1962]\03 Dylan strums his guitar.flac
+815324899d4a76cb62ee1cc078a90594  v1-1962-02 or 03 Cynthia Gooding's Apartment, New York City, NY [February or March 1962]\04 Rocks and gravel.flac
+6a51b98721222bfd323d444e6b11f1e5  v1-1962-02 or 03 Cynthia Gooding's Apartment, New York City, NY [February or March 1962]\05 Ranger's command.flac
+89112827bbda3fec88999a9ce4b71132  v1-1962-02 or 03 Cynthia Gooding's Apartment, New York City, NY [February or March 1962]\Info\1962-02 or 03 Cynthia Gooding's Apartment, New York City, NY [February or March 1962].txt
+66cb3ea8cc1c89bdc616d529861ab780  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\01 The two sisters.flac
+756f082a7b35a857c14dc423e3260eac  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\02 Karen Wallace's recording problem.flac
+83ffcd0124fe57ce46465813bdb8782e  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\03 Pastures of plenty.flac
+046f2d566e57f38e597dfc9f855970ba  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\04 Muleskinner blues.flac
+6db7b96ba6df8b6e95904ef469a0b827  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\05 Payday at Coal Creek.flac
+9d829e9aaf4c982e9daec6004b88562f  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\06 Karen Wallace talks about her recording problems.flac
+2ab67e052d5b968a8668037680772bc2  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\07 One-eyed Jacks.flac
+bc3dc1107457c82f4bb023d4c292c03d  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\08 Go down you murderesrs [unidentified artist].flac
+aedb9b6a3d669217126cf91e9e123875  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\09 This land is your land.flac
+388593f9f3bc684fcc5a44a70a609382  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\10 Saro Jane.flac
+b06d80c03c764ff3935734e860b6a6db  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\11 Nobody loves you when you're down and out.flac
+f869436f975bf8b6c856f08b699381d6  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\12 Great historical bum.flac
+490a3b9f9958ceafdd225bb87230f431  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\13 Mary Ann.flac
+4f4100032948df61c88daa2a00272b28  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\14 Sinner man.flac
+0a1bfdcd75aeebf7d26e1fcfa18f39f0  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\15 Abner Young.flac
+bcd499c5b4d0c1ba17b2a8b1902b8620  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\16 Good morning Captain - Muleskinner.flac
+4b8d5a8c83df9237fd31b791dccf8a77  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\17 One-eyed Jacks.flac
+d462cdf0b9ab8417089803a4f81e495f  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\18 Columbus Stackade blues.flac
+3ee96a37ddaa3f8ca21473b78a5ea650  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\19 Unidentified song plus 'This land is your land'.flac
+ea82d76c5c1c3a9b11f54af2df1c45c9  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\20 Gotta travel on.flac
+e03aef123f12f018a7b2f90f6dd232a7  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\21 Gamblin' man.flac
+680965bdc41a066e89f48fa1ebe39201  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\22 Wild mountain thyme.flac
+3cbc3dfef6ea6334326705875a47b67d  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\23 Go away from my window [fragment].flac
+a03d8664ef188c35f6c1618c7ea1d031  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\24 Saro Jane [fragment].flac
+1a6d1dc82631341457dcde1e7d2b94a2  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\25 Nobody loves you when you're down and out.flac
+c5128aea7a302f39dded54a5f49d1620  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\26 Great historical bum.flac
+49f5fd865f50118bd0db96aa9d88c062  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\26 Terry Wallace Ellison talks about Dylan.flac
+28acfc10db38ed81fdacebbd520cd919  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\27 Mary Ann.flac
+df41c3ac378d5d8901978f8eb71fdff3  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\28 Every night when the sun goes down.flac
+7ac8979fce84da10f7cfffac827f0401  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\29 Sinner man.flac
+1c48e2c59cb5a693be4bceb9a588df0e  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\30 Abner young.flac
+3ac4d7a4b173f6aa973947280443d07c  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\31 900 miles.flac
+477ab3aa7fa49c0f71dbb3a832013b3f  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\32 Muleskinner blues.flac
+78e4b511238f5a0743c306b7908f6d42  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\33 One-eyed Jacks.flac
+3ec02a95a630627fd69e82af3208ae7a  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\34 Columbus Stockade blues.flac
+97c7650ba38787987d02d1ddeb4c2838  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\35 Payday at Coal Creek [fragment].flac
+1424f7ad704679da40db1f4eb2792aeb  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\Artwork & Info\1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960].txt
+e08fb05dc5f1ed5f6587d313328dfeb2  v2-1960-05 The Home of Karen Wallace, Minneapolis, Minnesota, USA [May 1960]\Artwork & Info\Pcbd2.jpg
+daeaea9604f0c5660fa15cf52105972e  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\01 Hard times in New York Town.flac
+7cd54b2e1af1afa84ee0cf9c92fa0589  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\02 Wayfaring stranger.flac
+ff831a3dc365e1451f2873914c516d7d  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\03 Long time man feel bad & Lonesome whistle blues.flac
+7e5a00bdfcee90d80c7b1bd8403364c8  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\04 Baby of mine.flac
+e5bd1b2d94029fd697b4d9733ff4e671  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\05 Baby let me follow you down.flac
+9411b07e2ce88d834d03b09ca8cde560  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\06 San Fransisco Bay blues.flac
+7ac82918daf7ded95c2e7f80fc967b35  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\07 You're no good.flac
+aebfb92d4201a1db6fa7e3c866282841  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\08 House of the risin' sun.flac
+aaa0ecebfb123b247a8c957da339ddf8  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\09 Unidentified instrumental.flac
+16e1fbd86167c1e1f0aae95a533b60d5  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\10 Roll in my sweet baby's arms & The bells of rhymney [fragment].flac
+b938efa188ef64812ae6f397ccd6ff9b  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\11 Come all you fair and tender ladies.flac
+60014c60ea93db17db6028722da7e744  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\12 Roll in my sweet baby's arms.flac
+f19f1fe0567d9b7d0c011c4e3fc535bb  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\13 The bells of rhymney.flac
+19db54f9b4536f88717f1e4869edae7d  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\14 Highway 51.flac
+5a96f8fa7fd97d6b6cc929d4ddb68e5f  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\15 This land is your land.flac
+dc75ec34950ba444b3820f2ae1081b46  v3-1961-11-23 The home of Eve and Mac McKenzie, New York City, New York, USA\Info\1961-11 & 12 The home of Eve and Mac McKenzie, New York City, New York, USA.txt
+316b9a897a2eb3600a5c7d225ddf7e57  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\01 Unidentified instrumental.flac
+750854b22bda3b67e3fd0e1cac0ec6cd  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\02 See that my grave is kept clean [fragment].flac
+5df79b905d3ffdebf27bc086169a8995  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\03 Dylan raps and strums his guitar.flac
+e98d7e581afd5ce92a82b3f9c22cdec5  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\04 Go down you murderers.flac
+9a79f18a3bfef02667b55a3b639f6e89  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\05 A hard rain's a-gonna fall.flac
+00ec53fa632f839fc595fa05698aa655  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\06 Instrumental & tuning.flac
+15b3ed08d481e482727099a8f46c9443  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\07 James Alley blues.flac
+305be0a34118a69b9586ef368caa2e15  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\08 I rode out one morning.flac
+baf6135448315570190d58aca947d2a9  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\09 Unidentified instrumental.flac
+f3dc0cc7faec412f51b7ee561c4d61f9  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\10 Don't think twice, it's alright.flac
+0c1817a3be7196f56254f98bf59030fb  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\11 Unidentified instrumental.flac
+55bbf2c2711846dd15bf46b8c5855608  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\12 Long time gone.flac
+16d6f9f154f4d4b4feffea22ce74c64f  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\13 Only a hobo.flac
+a56cdad5f1471c88401c7db3df856828  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\14 House of the risin' sun.flac
+30a3c04e6553e3ed43db2a61e0e4b995  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\15 Unidentified instrumental.flac
+a5745fa318feb3594d4c2f9086151bb3  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\16 Cocaine [instrumental].flac
+6f15d75b08ab712baacb29236f1858df  v3-1963-04-12 The home of Eve and Mac McKenzie, New York City, New York, USA [The 2nd McKenzie Tape]\Artwork and info\Pcbd3.jpg
+a827f2c95bfe90c335b3deaec3c0a7e5  v4-1961 Billy James Interview, Unknown location, New York City, New York, USA [late 1961]\01 Interview conducted by Billy James.flac
+1a67ce7fae6e21ae9d262b7f0ad2dfb7  v4-1961 Billy James Interview, Unknown location, New York City, New York, USA [late 1961]\Info\1961BI~1.TXT
+fb76b98b70ae8938886e59f5d4a23da1  v4-1961-05-06 Indian Neck Festival, Montowesi Hotel, Branford, Connecticut, USA\01 Talking Columbia.flac
+77a016e8017128f3ebf11e1794f37708  v4-1961-05-06 Indian Neck Festival, Montowesi Hotel, Branford, Connecticut, USA\02 Hangknot, slipknot.flac
+59dd8850bfed16b30a5627f178eceef3  v4-1961-05-06 Indian Neck Festival, Montowesi Hotel, Branford, Connecticut, USA\03 Talking Fish Blues.flac
+f19b0c067a094a0c2dcf1b3d4244168f  v4-1961-05-06 Indian Neck Festival, Montowesi Hotel, Branford, Connecticut, USA\Info\1961-05-06 Indian Neck Festival, Montowesi Hotel, Branford, Connecticut, USA.txt
+821812095e7285a5eb66415b3eb5f149  v4-1961-10-29 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA\01 Sally Girl.flac
+ea6eb5e8b4aeb352611604e7ecc21ba3  v4-1961-10-29 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA\02 The girl I left behind.flac
+b488ee1bb110d73977b7b5c7718dcdf6  v4-1961-10-29 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA\Info\1961-10-29 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA.txt
+4d9b83924974ff6884c639f5e1dcc2bb  v4-1963-03 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA\01 Oscar Brand reads announcement.flac
+a2e8daffdb75e7f369992b4e60ee19a7  v4-1963-03 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA\02 Girl from the North Country.flac
+3289759c9da31205a45018941a545cb5  v4-1963-03 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA\03 Only a hobo.flac
+92e0754c50ef1f07319bfa99776584e9  v4-1963-03 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA\Info\1963-03 Oscar Brand Show, WNYC Radio Studio, New York City, New York, USA.txt
+70ef06b31b69d8f90093e917db254adc  v4-1964-02-25 Steve Allen Show, NBC Studios, Los Angeles, California, USA\01 The lonesome death of Hattie Carroll.flac
+ab1ef1cea5a19f351f7da46f3c1eb176  v4-1964-02-25 Steve Allen Show, NBC Studios, Los Angeles, California, USA\Info\1964-02-25 Steve Allen Show, NBC Studios, Los Angeles, California, USA.txt
+c10d1e5501a8d98d00634df4ab90ff79  v4-1965-02-17 Les Crane Show, WABC TV Studios, New York City, ew YorkY, USA\01 Announcement for Dylan.flac
+a40698b8039e91682df64909bd6b108c  v4-1965-02-17 Les Crane Show, WABC TV Studios, New York City, ew YorkY, USA\02 It's all over now, baby blue.flac
+04ca8400d60e319be16d71da9867b847  v4-1965-02-17 Les Crane Show, WABC TV Studios, New York City, ew YorkY, USA\03 Les Crane, Dylan and other guests rap.flac
+4a32e94c8546777b5715d884cae3e8e8  v4-1965-02-17 Les Crane Show, WABC TV Studios, New York City, ew YorkY, USA\04 It's alright, ma (I'm only bleeding).flac
+6ef84112a9c82d881517bc59cc050941  v4-1965-02-17 Les Crane Show, WABC TV Studios, New York City, ew YorkY, USA\Info\1965-02-17 Les Crane Show, WABC TV Studios, New York City, NY, USA.txt

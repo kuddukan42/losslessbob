@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-06-01-zoomh2.flacf 
+=================== 
+=================== 
+=================== 
+22ac6eccde96eb3f6ca0c4e76d747aab  Bob Dylan - In The Land Of The Midnight Sun.md5
+045fef373d99fbd08b20235bfacbca3d  bob_helsinki08_back.jpg
+de56cf16631c611aae664c9a6ed4497c  bob_helsinki08_front.jpg
+50aabf8f9f074b70f9683808c0df7e77  bob_helsinki_info.txt
+838b315c01bb1c9752c92db5ab04584d  Disc1_Track01.flac
+7c29f617e42cd06a1c810431fc307e83  Disc1_Track02.flac
+51153660015b7a9f0d28fff39d10078d  Disc1_Track03.flac
+5147bcf4989924794764a4486fade7c0  Disc1_Track04.flac
+14f973652cf9a9d47e49285938c6fb06  Disc1_Track05.flac
+11a65764ce63dff80e3a3bd4adfd616a  Disc1_Track06.flac
+ed6eb971442ba85487f78e029d1b57ef  Disc1_Track07.flac
+e7173840723aa93432e900fd1ef77a63  Disc1_Track08.flac
+3f17905a7af426927d958797ce29ad56  Disc1_Track09.flac
+4f5872bb11ed0fa7a35ac70e20a9eafa  Disc1_Track10.flac
+3c86345dbfa857f0f16199bd8315b56c  Disc2_Track01.flac
+b07dbe02a399f577719ee59a0cd42800  Disc2_Track02.flac
+1fe5dedf115eb0d3cb25eafaad906880  Disc2_Track03.flac
+875b4afeaa887a1d42c99d7c05dde091  Disc2_Track04.flac
+698f991fa80b3f123c50567a6b70437e  Disc2_Track05.flac
+9ec6e9f45e5afa73b067d6b9d227df71  Disc2_Track06.flac
+dcfd0be537ec60d53b4d864ad628bdf8  Disc2_Track07.flac
+0f009163b866114a62bbe9994373acfb  Disc2_Track08.flac
+981a303c540480e8cff9bdfaa01d7a59  Disc2_Track09.flac
+b4d3bcbb21048b4e41bedc8d6b4f5df8  Disc2_Track10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-01-zoomh2.flacf 
+=================== 
+=================== 
+=================== 
+Disc1_Track01.flac:dbc42332857c378e1a2bc79fe9279b34
+Disc1_Track02.flac:31fa334c372a96e587c3125be2421477
+Disc1_Track03.flac:f8c47f4ca12c7772bbd0450d7e47fdd7
+Disc1_Track04.flac:aafb8f75f4f9dd6841946da8236bd740
+Disc1_Track05.flac:2f7ca1bca79e357d2e1395dd73252bdd
+Disc1_Track06.flac:a8e48c3b3049d5a49719da6c65439bda
+Disc1_Track07.flac:80ac9243d7d676bcf6901563cbda076b
+Disc1_Track08.flac:ff54e1ab6c658e25867b6eee27fb191e
+Disc1_Track09.flac:508d4b4ec6da83c3d4cd4a70a1f797cc
+Disc1_Track10.flac:171e490cc4b6dce317c84e2365f3d2ef
+Disc2_Track01.flac:b131a42a4547a4b1ca504e505b849a1d
+Disc2_Track02.flac:96346ac00a256229b1f15c036d00a4ef
+Disc2_Track03.flac:a02d95ef785cb4ceed4ea4b0020a08bf
+Disc2_Track04.flac:3349f6b8a277af0bb6a8a964e1ebc629
+Disc2_Track05.flac:d8891c79005f7cbd37537a6b98f736b6
+Disc2_Track06.flac:24c81eb508bbaeebfb106c0565bc14d0
+Disc2_Track07.flac:d420df3631c1fbab3b393a398c0f09a1
+Disc2_Track08.flac:590ed791596ad3dbbad99a97cf745519
+Disc2_Track09.flac:01a86d0418ccb5beaeda3955f47388c8
+Disc2_Track10.flac:59de13b49b3ec60d1b21deb8b6becc94
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-01-zoomh2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:41.22        7284188 B   ---   --   ---xx   flac  0.4451  Disc1_Track01.flac
+     5:02.62       53418668 B   ---   --   ---xx   flac  0.5191  Disc1_Track02.flac
+     5:12.38       55126220 B   ---   --   ---xx   flac  0.4796  Disc1_Track03.flac
+     6:40.62       70705868 B   ---   --   ---xx   flac  0.5067  Disc1_Track04.flac
+     9:15.59       98040812 B   ---   --   ---xx   flac  0.4155  Disc1_Track05.flac
+     6:52.17       72716828 B   ---   --   ---xx   flac  0.4959  Disc1_Track06.flac
+     7:03.42       74716028 B   ---   --   ---xx   flac  0.5175  Disc1_Track07.flac
+     7:34.42       80184428 B   ---   --   ---xx   flac  0.4723  Disc1_Track08.flac
+     6:10.31       65340956 B   ---   --   ---xx   flac  0.5228  Disc1_Track09.flac
+     7:18.17       77303228 B   ---   --   ---xx   flac  0.4081  Disc1_Track10.flac
+     7:25.00       78498044 B   ---   --   ---xx   flac  0.5103  Disc2_Track01.flac
+     8:13.67       87122828 B   ---   --   ---xx   flac  0.3864  Disc2_Track02.flac
+     6:53.58       72989660 B   ---   --   ---xx   flac  0.5311  Disc2_Track03.flac
+     6:51.53       72625100 B   ---   --   ---xx   flac  0.3865  Disc2_Track04.flac
+     5:56.68       62958380 B   ---   --   ---xx   flac  0.5158  Disc2_Track05.flac
+     6:04.04       64219052 B   ---   --   ---xx   flac  0.5355  Disc2_Track06.flac
+     4:06.38       43483820 B   ---   --   ---xx   flac  0.4092  Disc2_Track07.flac
+     6:20.43       67133180 B   ---   --   ---xx   flac  0.5452  Disc2_Track08.flac
+     1:28.50       15640844 B   ---   --   ---xx   flac  0.4395  Disc2_Track09.flac
+     6:22.52       67507148 B   ---   --   ---xx   flac  0.5318  Disc2_Track10.flac
+   121:36.00     1287015280 B                            0.4793  (20 files)
+=================== 
+=================== 
+=================== 

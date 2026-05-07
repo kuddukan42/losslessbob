@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-19 
+=================== 
+=================== 
+=================== 
+af302a8782c55101bc226c54989c88ff  bd05-03-19.txt
+ef8ada6c9edaa1c2501fd10e74e8a58a  bdVegasD1T1.shn
+5a8e318b57ff0d41c7a3847a1e333602  bdVegasD1T10.shn
+85d91fe3f0d709f7a1220420773123be  bdVegasD1T11.shn
+dc9be6fd00ab7bf6cfa50adf05937120  bdVegasD1T12.shn
+004dcd8ea28fe6c66463c20c65060d9d  bdVegasD1T2.shn
+854dfb190814c7d8084980c75d91cd57  bdVegasD1T3.shn
+ffcce04ae1a2f56fcaadbc387fea176c  bdVegasD1T4.shn
+01f6cd17e11d643860a63fec35edc52c  bdVegasD1T5.shn
+3b0998add027b867192fe0b971d6a585  bdVegasD1T6.shn
+43875531b347bbf6e4fe785da1182686  bdVegasD1T7.shn
+65c88bd688185c6160a7e4bb0bed49c5  bdVegasD1T8.shn
+e45601aa2415f0ed46fe490ecc766355  bdVegasD1T9.shn
+b6218128d63146bf405d8c1933172f54  bdVegasD2T1.shn
+0659b9b557baac1eb9a5a76c44d227c7  bdVegasD2T2.shn
+9fe7ff2c11d4b90d425912217486e2b4  BobDylanVegas2005.rtf
+c4219444732cd0cb155a21f9f290a6cf  checksum.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-03-19 
+=================== 
+=================== 
+=================== 
+2426fe85884bb5ed65e7c70634deb75a  [shntool]  bdVegasD1T1.wav
+24fcbe5c69449bedc5870fd51a28a0d2  [shntool]  bdVegasD1T2.wav
+f4cf8c475d5d609f9a2121941f219074  [shntool]  bdVegasD1T3.wav
+d2be3ef375a1048053051a6be29b92de  [shntool]  bdVegasD1T4.wav
+fa8e8b9de893e144ad6e8873ffa93be5  [shntool]  bdVegasD1T5.wav
+72f120fdfac3aa94139d72163dfbb3f8  [shntool]  bdVegasD1T6.wav
+8a8cad6e2899acbaae2c45b10bb48229  [shntool]  bdVegasD1T7.wav
+e24b6590fc21be3b485a074167cd3bc1  [shntool]  bdVegasD1T8.wav
+0bc85fbe56e3cd29363acefaa98b9e97  [shntool]  bdVegasD1T9.wav
+6ba7032464471eca5c76cf8ae5fffc01  [shntool]  bdVegasD1T10.wav
+67fdf86aa848180a918f8893b8deb02e  [shntool]  bdVegasD1T11.wav
+ed40700dc8d2c22b5aca6e846dd0a36e  [shntool]  bdVegasD1T12.wav
+9405eaea6d05252003378a1c2373236d  [shntool]  bdVegasD2T1.wav
+dd11f07102e11f973cba18f0c096d275  [shntool]  bdVegasD2T2.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-19 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.25       53331644 B   ---   --   -----    wav  1.0000  bdVegasD1T1.wav
+     6:50.35       72406364 B   ---   --   -----    wav  1.0000  bdVegasD1T10.wav
+     4:58.70       52731884 B   ---   --   -----    wav  1.0000  bdVegasD1T11.wav
+     8:23.45       88834496 B   -b-   --   -----    wav  1.0000  bdVegasD1T12.wav
+     4:25.55       46875404 B   ---   --   -----    wav  1.0000  bdVegasD1T2.wav
+     7:05.20       75017084 B   ---   --   -----    wav  1.0000  bdVegasD1T3.wav
+     6:39.65       70536524 B   ---   --   -----    wav  1.0000  bdVegasD1T4.wav
+     6:52.15       72712124 B   ---   --   -----    wav  1.0000  bdVegasD1T5.wav
+     5:24.50       57271244 B   ---   --   -----    wav  1.0000  bdVegasD1T6.wav
+     6:01.50       63798044 B   ---   --   -----    wav  1.0000  bdVegasD1T7.wav
+     6:14.10       65997164 B   ---   --   -----    wav  1.0000  bdVegasD1T8.wav
+     6:29.40       68713724 B   ---   --   -----    wav  1.0000  bdVegasD1T9.wav
+     7:03.55       74746604 B   ---   --   -----    wav  1.0000  bdVegasD2T1.wav
+     6:58.07       73751708 B   ---   --   -----    wav  1.0000  bdVegasD2T2.wav
+    88:30.17      936724012 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

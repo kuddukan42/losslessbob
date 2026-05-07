@@ -1,0 +1,38 @@
+===================
+===================
+===================
+=== 1975_11_6_EVE_SPRINGFIELD.MD5
+===================
+===================
+===================
+0b32d1dfcac8247898056fb1082a2e81 *Track01.flac
+d8f3b869a0d8acb4b8ae07ee7e429f3c *Track02.flac
+692ea6974e8f1948612c284a2c83b492 *Track03.flac
+5228cf4b7c0f5c34c1d189d5b69ff925 *Track04.flac
+7a8380f294c53aa4662cb35290681829 *Track05.flac
+75e655528918e291c5c1b937c0c847cb *Track06.flac
+f40109ee28d0dce69d1b0d73c3ad79a1 *Track07.flac
+f6e466f2f3dad0e67310c5531819eaef *Track08.flac
+da03edae9164177a6ad85cbedd468c51 *Track09.flac
+f61c36dcd545362bdef2b0a682b90ad9 *Track10.flac
+88e11782d6bf64df0d81ce757ac456a2 *Track11.flac
+df14dca2a9852bf35aa170beb950a45d *Track12.flac
+2c9afe8a897a080eda0a5b72e3d49b31 *Track13.flac
+22a3223b81edf7ae20fb4bb3957f188e *Track14.flac
+===================
+===================
+===================
+=== LBF-00467-bd75-11-06e.txt
+===================
+===================
+===================
+Bob Dylan, 11/6/75, evening, Civic Center,  Springfield, Massachusetts, 1CDR,
+
+(63min), very good sound,  from shn download phil's ftp server 10/01; 
+
+levels start very low and has some hissiness that fades in and out and level fluctuations and hums and near the end some large drops probably from aging tape source; 
+
+1 A Hard Rain's A-Gonna Fall 2 Romance In Durango 3 Isis 4 The Times They Are A-Changin' (acoustic) (cut) 5 The Water Is Wide (acoustic) 6 I Dreamed I Saw St Augustine 7 Never Let Me Go (acoustic) 8 I Shall Be Released (acoustic) 9 Hurricane 10 One More Cup Of Coffee (Valley Below) 11 Sara 12 Just Like A Woman  (cut) 13 Knockin' On Heaven's Door 14 This Land Is Your Land 
+===================
+===================
+===================

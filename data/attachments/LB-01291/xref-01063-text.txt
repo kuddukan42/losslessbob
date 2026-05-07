@@ -1,0 +1,200 @@
+===================
+===================
+===================
+=== BD 2003-10-12 Karlsbad, Sweden.ffp
+===================
+===================
+===================
+Bd 2003- 10-12 D1 01.flac:d4dc48e4dd5b8e1a687f77f0642f3d3d
+Bd 2003- 10-12 D1 02.flac:a82aa1cfb0f8a07417f310e34d45ee3e
+Bd 2003- 10-12 D1 03.flac:80ae42bcc6e21990be5398615ac1d168
+Bd 2003- 10-12 D1 04.flac:cd618237a537e4658d81c5c5d21d4b73
+Bd 2003- 10-12 D1 05.flac:52c19f87ca503e7ce1f0cb09398dafd3
+Bd 2003- 10-12 D1 06.flac:bf3eabb9b7ae879abe1165311d7b7aba
+Bd 2003- 10-12 D1 07.flac:c572b50b0bb45074b7d85a15a1271acb
+Bd 2003- 10-12 D1 08.flac:24d75c413249402a7aca0328bdcbc856
+Bd 2003- 10-12 D1 09.flac:c21b6c7d9f730fe73d03fbce9bd803fc
+Bd 2003- 10-12 D1 10.flac:492b57b7ba1ac93824b7311a51fd1272
+Bd 2003- 10-12 D1 11.flac:a499910e4c6ebd3d8970306a9ec692c5
+Bd 2003- 10-12 D1 12.flac:e87440dde3af2c41df9f5a73f2678b8c
+Bd 2003- 10-12 D2 01.flac:bfbaef20d0a6d7c51e0e21245d05af2a
+Bd 2003- 10-12 D2 02.flac:e03a1936db3822766e693fa70e27bb49
+Bd 2003- 10-12 D2 03.flac:4c8b1a411077db41dd1c63654888956c
+Bd 2003- 10-12 D2 04.flac:0133a7520b708e8f548cf134d86389ca
+Bd 2003- 10-12 D2 05.flac:03596e44107bc9fdfb094c42a8f45cc8
+Bd 2003- 10-12 D2 06.flac:729eb1eb3e885925829d35fcbff6d431
+Bd 2003- 10-12 D2 07.flac:fafa56b0ea832a061c2903afb890838a
+Bd 2003- 10-12 D2 08.flac:640ff238c8ff542cb864ab3f44b61b33
+Bd 2003- 10-12 D2 09.flac:02a25d2d7d0b072f5d77d0ee7066f5f0
+===================
+===================
+===================
+=== BD 2003-10-12 Karlsbad, Sweden.md5
+===================
+===================
+===================
+d6c69811f2d4a34eaa93684effb4ac19 *Bd 2003- 10-12 D1 01.flac
+d6cfa7f119a20d4550d7aecfbe4ced64 *Bd 2003- 10-12 D1 02.flac
+a14bbee346609ce98b22199eaeed7bb7 *Bd 2003- 10-12 D1 03.flac
+e6eb495a9c8bd2dd324fcb430be6693b *Bd 2003- 10-12 D1 04.flac
+40a791d4a6e7a6184c811865f5d6ca4c *Bd 2003- 10-12 D1 05.flac
+d752379f8bec27345ef768b08ea62fdc *Bd 2003- 10-12 D1 06.flac
+11198b036c5e31cb66f037c6214f6c13 *Bd 2003- 10-12 D1 07.flac
+fc156989b283d4d647e5d3f34e718019 *Bd 2003- 10-12 D1 08.flac
+82fa91db5be358a1dc9b98f00d04a308 *Bd 2003- 10-12 D1 09.flac
+6acc47ce4401c03a7281062b69bd35c8 *Bd 2003- 10-12 D1 10.flac
+8c9de19a50a74d93f7298f41711e21dd *Bd 2003- 10-12 D1 11.flac
+cce66f8a0ceb08008a90074814354ad0 *Bd 2003- 10-12 D1 12.flac
+5e54991dd65e0e97e3953d8a0f975af4 *Bd 2003- 10-12 D2 01.flac
+27aeb8926979da788940d7e91840a157 *Bd 2003- 10-12 D2 02.flac
+46e1767a99ff67111facc1e10f74b914 *Bd 2003- 10-12 D2 03.flac
+a2a7ce325e930c5ae03ab3aeaa46d3dc *Bd 2003- 10-12 D2 04.flac
+278f9a806ed10954008c2a5607c001ad *Bd 2003- 10-12 D2 05.flac
+7dc95bb3cafdff6d122f0f12b6833eda *Bd 2003- 10-12 D2 06.flac
+02f80791c603b10f51b61ede1a4dfbd1 *Bd 2003- 10-12 D2 07.flac
+dcff5b0559cf0c389334c93289fc530d *Bd 2003- 10-12 D2 08.flac
+4a2b9928b46f23c8c4f21ca0fd38a10c *Bd 2003- 10-12 D2 09.flac
+3aa35f02af17c64ad5772afa7f56ea26 *BD 2003-10-12 Karlsbad, Sweden.ffp
+cc89937a755cb08d0ca059e16286d279 *BD 2003-10-12 Karlsbad, Sweden_wav.md5
+31f7463f954e37bdf144ddd35b8b2de9 *Karlstad 2.log
+7b78dc3a67c1ca52372cd20df6927c0b *Karlstad, Sweden, 2003-10-12.txt
+6a3a06678f3df7bc37b789d32500d13a *Karlstadt, Sweden.log
+894373fb9b8d91adee64bbe5da1c9ffd *Karlstadt, Sweden.txt
+===================
+===================
+===================
+=== BD 2003-10-12 Karlsbad, Sweden_wav.md5
+===================
+===================
+===================
+fdb15106740893c43e9d4a3215aa426b *Bd 2003- 10-12 D1 01.wav
+ce90391d47668cd56f79ebbe8c8eaf6b *Bd 2003- 10-12 D1 02.wav
+c56c676934805ec14551ec8ec5212142 *Bd 2003- 10-12 D1 03.wav
+b029d05385b402a7d5d4ad3efc38d327 *Bd 2003- 10-12 D1 04.wav
+98c2d4cceaf28a255fad6c8664e52808 *Bd 2003- 10-12 D1 05.wav
+10a246959e7fdfc234f4d152d6205e44 *Bd 2003- 10-12 D1 06.wav
+6cb6bfcb71497623510df6560c21870e *Bd 2003- 10-12 D1 07.wav
+57e843afad1c9048e874832572293e05 *Bd 2003- 10-12 D1 08.wav
+c5985b30d16ee28f2511b98cb14b5c40 *Bd 2003- 10-12 D1 09.wav
+b1df2e34451de36a1f47809707f147d2 *Bd 2003- 10-12 D1 10.wav
+517cbd8a2a0a4e4f0eae775e41ccddd9 *Bd 2003- 10-12 D1 11.wav
+e865fb6d12b24669ce66bedf6ea7d430 *Bd 2003- 10-12 D1 12.wav
+77b7b317cfeda35f4683be2de3d24f2a *Bd 2003- 10-12 D2 01.wav
+96f46c34a4b06ee5c0782c9684d095a7 *Bd 2003- 10-12 D2 02.wav
+9b8d5bc06c3e70daf3d67696e630ad90 *Bd 2003- 10-12 D2 03.wav
+5032fefa64177fd927d46e59c3a25d99 *Bd 2003- 10-12 D2 04.wav
+522702370eaaba0981fcff2039926f3b *Bd 2003- 10-12 D2 05.wav
+c078addd07fbb5e83e42cddc62de95d2 *Bd 2003- 10-12 D2 06.wav
+03253db215b4cdba555f345a6eea6b0a *Bd 2003- 10-12 D2 07.wav
+41373e49b02722bd162af7bc68e60932 *Bd 2003- 10-12 D2 08.wav
+48e0cad3e8628ac4bf1cb87bc8a520b2 *Bd 2003- 10-12 D2 09.wav
+31f7463f954e37bdf144ddd35b8b2de9 *Karlstad 2.log
+7b78dc3a67c1ca52372cd20df6927c0b *Karlstad, Sweden, 2003-10-12.txt
+6a3a06678f3df7bc37b789d32500d13a *Karlstadt, Sweden.log
+894373fb9b8d91adee64bbe5da1c9ffd *Karlstadt, Sweden.txt
+===================
+===================
+===================
+=== Karlstad, Sweden, 2003-10-12.txt
+===================
+===================
+===================
+B O B  D Y L A N 
+=================
+
+Lfbergs Lila Arena
+Karlstad, Sweden, 2003-10-12
+12 October 2003
+
+D1: [1:15:34] 762,86 MB
+
+1. To Be Alone With You
+2. It's All Over Now, Baby Blue
+3. Cry A While
+4. Desolation Row
+5. It's Alright, Ma (I'm Only Bleeding)
+6. Boots Of Spanish Leather
+7. Things Have Changed
+8. Highway 61 Revisited
+9. Moonlight
+10. Tweedle Dee & Tweedle Dum
+11. Every Grain Of Sand
+
+D2: [0:52:47] 532,91 MB
+
+12. Honest With Me
+13. Mr. Tambourine Man
+14. Summer Days
+15. Cat's In The Well
+16. Like A Rolling Stone
+17. Forever Young
+18. All Along The Watchtower
+
+
+Concert # 1558 of The Never-Ending Tour. 
+Third concert of the 2003 Europe Fall Tour. 
+2003 concert # 68.
+Concert # 57 with the 16th Never-Ending 
+
+Tour Band: 
+Bob Dylan (vocal), 
+Freddie Koella (guitar), 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion)
+
+2, 5, 6, 13 acoustic with the band.
+1-5, 9-17 Bob Dylan (piano).
+6-8, 14 Bob Dylan (guitar).
+2, 4, 11, 13, 17 Bob Dylan (harmonica).
+6 Larry Campbell (cittern).
+12 Larry Campbell (slide guitar)
+
+Notes
+
+LB-number for this concert: LB-1291.
+
+3 new songs (16%) compared to previous concert. 2 new songs for this tour.
+
+Stereo audience recording, 125 minutes.
+Session info updated 16 February 2010.
+===================
+===================
+===================
+=== Karlstadt, Sweden.txt
+===================
+===================
+===================
+CD: CD: Bob Dylan - Karlstad CD 1
+
+[1:15:34.52] 762,86 MB
+
+01. Bd 2003: 10-12 D1 01    [0:01:02.24]
+02. Bd 2003: 10-12 D1 02    [0:04:26.10]
+03. Bd 2003: 10-12 D1 03    [0:07:07.51]
+04. Bd 2003: 10-12 D1 04    [0:05:58.55]
+05. Bd 2003: 10-12 D1 05    [0:10:27.05]
+06. Bd 2003: 10-12 D1 06    [0:07:24.48]
+07. Bd 2003: 10-12 D1 07    [0:05:41.20]
+08. Bd 2003: 10-12 D1 08    [0:06:55.62]
+09. Bd 2003: 10-12 D1 09    [0:07:25.34]
+10. Bd 2003: 10-12 D1 10    [0:05:23.62]
+11. Bd 2003: 10-12 D1 11    [0:05:42.14]
+12. Bd 2003: 10-12 D1 12    [0:07:59.42]
+
+CD: Bob Dylan - Karlstad CD 2
+
+[0:52:47.61] 532,91 MB
+
+01. Bd 2003: 10-12 D2 01    [0:07:03.27]
+02. Bd 2003: 10-12 D2 02    [0:06:11.19]
+03. Bd 2003: 10-12 D2 03    [0:07:20.08]
+04. Bd 2003: 10-12 D2 04    [0:05:11.18]
+05. Bd 2003: 10-12 D2 05    [0:04:43.36]
+06. Bd 2003: 10-12 D2 06    [0:07:21.11]
+07. Bd 2003: 10-12 D2 07    [0:00:32.23]
+08. Bd 2003: 10-12 D2 08    [0:06:51.60]
+09. Bd 2003: 10-12 D2 09    [0:07:33.09]
+===================
+===================
+===================

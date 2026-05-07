@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-02-25-umm.flacf 
+=================== 
+=================== 
+=================== 
+234d532f8419874aea33975baf44d2d2  bdportd1t01.flac
+63566c14c9bb4d9e0d7c93007173a4a3  bdportd1t02.flac
+ec25320e99cba574a77e24cfb7103a18  bdportd1t03.flac
+4eb50365419f44ac5ab7b0bea706081f  bdportd1t04.flac
+e1c09ab84b5ca58bd577192e59e35700  bdportd1t05.flac
+431777197c799584b1a9e59e458e1656  bdportd1t06.flac
+fc6b9087713d22a96a64e3422686c875  bdportd1t07.flac
+d5e5bb240b3816dba4873d2943ddf4c3  bdportd1t08.flac
+25b4651782193a520af734547d320ec6  bdportd1t09.flac
+0d782cabe4b36c1d6a0c9ef285caef80  bdportd1t10.flac
+636b9f3e9533fd086bf891c79bff4af5  bdportd2t01.flac
+4c2296061fb1a82af573d8d05a7ef935  bdportd2t02.flac
+c7e861d60da32138dbbf5a270044fec7  bdportd2t03.flac
+19d385a7d90f3378bf4f9bb8f49911fc  bdportd2t04.flac
+61f69d9d6e57708f4e28dd96665e55d2  bdportd2t05.flac
+8981d9e81e7092facad2c15fdd330490  bdportd2t06.flac
+0dc390414d9860d867040d5ee8ad226b  bdportd2t07.flac
+e15afb54a5e4a70ff8e2930cb2a3d029  Bob Dylan - Portland, Maine - February 25, 1999.txt
+7108de7b4bfd373d2b66cbc67cef0738  Bob Dylan Portland 1999_2_25.md5
+351096952c255b34820b96bfd600cd5f  UMM091 - Bob Dylan - Live 1999 - Back.jpg
+d49a22e0a3e2bedf4851c1093e2c9714  UMM091 - Bob Dylan - Live 1999 - Front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-25-umm.flacf 
+=================== 
+=================== 
+=================== 
+bdportd1t01.flac:40b6585185ee61d015662f47fa458c60
+bdportd1t02.flac:f4a2af966e28c3f0f5f88062fc0eddd4
+bdportd1t03.flac:3a005d46a6faa20fc0471fd3f596ac3a
+bdportd1t04.flac:70ec1477e34708cb6146718f77f252ac
+bdportd1t05.flac:2a2c7d5fbcdbeef2fa577467b673989f
+bdportd1t06.flac:ff67713ff22e2832caf2c7f0977d252f
+bdportd1t07.flac:147b1b4d0b7f2a6fef691602b9fafe4a
+bdportd1t08.flac:1b5f1ed0a9756ccff8945357e8c7e718
+bdportd1t09.flac:3a6d2d56d09039a734f694c2c2b824c8
+bdportd1t10.flac:966ec45a82cf35368a3d01d8e087d64e
+bdportd2t01.flac:f0c014388ad52d110b93bcf45810a763
+bdportd2t02.flac:045a961d5b676299837b956556cea203
+bdportd2t03.flac:0643c16be167443c0bf542a06181bc37
+bdportd2t04.flac:e4523352e0a2d4a2d34f720ab2b2fd93
+bdportd2t05.flac:45550aa877cefa67270b5e1ca0d782ea
+bdportd2t06.flac:d12ba0ed9f8e89301d27be7ef6f9937d
+bdportd2t07.flac:339899a5515cebce960c9a6d2e7d50cc
+=================== 
+=================== 
+=================== 
+=== shntool for: bd99-02-25-umm.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.55       47581004 B   ---   --   ---xx   flac  0.6203  bdportd1t01.flac
+     4:42.12       49773068 B   ---   --   ---xx   flac  0.5725  bdportd1t02.flac
+     6:57.15       73594124 B   ---   --   ---xx   flac  0.5955  bdportd1t03.flac
+     6:46.03       71625500 B   ---   --   ---xx   flac  0.5751  bdportd1t04.flac
+     5:39.64       59950172 B   ---   --   ---xx   flac  0.5983  bdportd1t05.flac
+     5:26.49       57621692 B   ---   --   ---xx   flac  0.5636  bdportd1t06.flac
+     8:36.59       91161212 B   ---   --   ---xx   flac  0.5922  bdportd1t07.flac
+     7:55.68       83949980 B   ---   --   ---xx   flac  0.6310  bdportd1t08.flac
+     6:28.01       68445596 B   ---   --   ---xx   flac  0.5944  bdportd1t09.flac
+     4:38.55       49168604 B   ---   --   ---xx   flac  0.5811  bdportd1t10.flac
+     6:17.13       66533420 B   ---   --   ---xx   flac  0.5732  bdportd2t01.flac
+     0:40.25        7114844 B   ---   --   ---xx   flac  0.5763  bdportd2t02.flac
+     7:40.68       81303980 B   ---   --   ---xx   flac  0.5887  bdportd2t03.flac
+     5:33.23       58795340 B   ---   --   ---xx   flac  0.5398  bdportd2t04.flac
+     5:46.66       61189676 B   ---   --   ---xx   flac  0.6001  bdportd2t05.flac
+     5:46.22       61086188 B   ---   --   ---xx   flac  0.5763  bdportd2t06.flac
+     4:25.40       46840124 B   ---   --   ---xx   flac  0.5827  bdportd2t07.flac
+    97:51.38     1035734524 B                            0.5876  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,150 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd62-witmark-years.flacf 
+=================== 
+=================== 
+=================== 
+85352bce8d39a04d0f89b9b198ab8f9a  bd62-witmark-years-d1t01.flac
+82ee258786a9e6f324de19e4dc0b2cb2  bd62-witmark-years-d1t02.flac
+7e64893e0175ead753e44dc896ee39c7  bd62-witmark-years-d1t03.flac
+d383ba16a1fd67d4ceea6da043d9d779  bd62-witmark-years-d1t04.flac
+c8b2a929cdb4600400be226089917733  bd62-witmark-years-d1t05.flac
+7c00b8f23c531f037afbf447ed755ca7  bd62-witmark-years-d1t06.flac
+962a14216b8a3ce53cdcbeca6ff946a7  bd62-witmark-years-d1t07.flac
+261230078e68bf8b3fc7bfb509d1ff5d  bd62-witmark-years-d1t08.flac
+408c1a9c94e28d6ed8bd77d34fc85fb6  bd62-witmark-years-d1t09.flac
+47097ca5b9a3567b9cc3483630efc0b5  bd62-witmark-years-d1t10.flac
+e13a0c47835723870584825dbdde1f67  bd62-witmark-years-d1t11.flac
+b6a0975a5990c8d053a55ca0853a1025  bd62-witmark-years-d1t12.flac
+509ac8930f1aff2d1090a5929369dfa1  bd62-witmark-years-d1t13.flac
+250db875445edf1ec82ca0363f9bcf0d  bd62-witmark-years-d1t14.flac
+fadf97a31461ebf636b209c23445d69c  bd62-witmark-years-d1t15.flac
+302783c6426e0d8e479e5bc7bd48df76  bd62-witmark-years-d1t16.flac
+0e6499909a8017f1587c7f512604d3e4  bd62-witmark-years-d1t17.flac
+1a51b2d6f1ac9fbeff85ded347c881e1  bd62-witmark-years-d1t18.flac
+3b570ea04c3c562973e14391cc1b3dd4  bd62-witmark-years-d1t19.flac
+a20fb819e0a2f28cbe8574db7fea51a6  bd62-witmark-years-d1t20.flac
+13d6c580ce1128c41c6455e17b8d3d38  bd62-witmark-years-d1t21.flac
+ff854f4abaa7b6d8b31cb901c0bf2760  bd62-witmark-years-d2t01.flac
+31486e18efcb64beff8d94bd91a9c15c  bd62-witmark-years-d2t02.flac
+e5236e1d2953217b851afba238616888  bd62-witmark-years-d2t03.flac
+b5ac8c90b958d08edc3028255e1d72fd  bd62-witmark-years-d2t04.flac
+91a0bab8008bdc77183413dfa58fb35b  bd62-witmark-years-d2t05.flac
+e5fcc0bed8b7d8a1ab407cb5f492b308  bd62-witmark-years-d2t06.flac
+4bc32448b6a7708c678ba38c515287e8  bd62-witmark-years-d2t07.flac
+b357eacd0ef93a9c49a0d9d663e57553  bd62-witmark-years-d2t08.flac
+e8b3772d33123c322668dbe1f0ca681d  bd62-witmark-years-d2t09.flac
+d27fadc2a93b25b12b06c29e473fecea  bd62-witmark-years-d2t10.flac
+4f4e8be65002a0c60dac93c0c9beaa8d  bd62-witmark-years-d2t11.flac
+3a6fe160032e7a6fb1092a35e1323912  bd62-witmark-years-d2t12.flac
+2a378a7d758802a6169f39927fdff7b0  bd62-witmark-years-d2t13.flac
+6781a07bebbfdf0787030d93f5e5cc26  bd62-witmark-years-d2t14.flac
+108e5a6cd3b7fc26f119ea082b431de3  bd62-witmark-years-d2t15.flac
+6fc1de35c50a45b99c199618a74148e6  bd62-witmark-years-d2t16.flac
+bc6df9feebe8cd1a265c5509cb23f521  bd62-witmark-years-d2t17.flac
+21a8bd37b273c63c40da5cd1f4a28410  bd62-witmark-years-d2t18.flac
+8af9ca89aea92dbdaf32f221196c34c6  bd62-witmark-years-d2t19.flac
+40ae2f8f0818e2b89f197ba225ccdeab  bd62-witmark-years-d2t20.flac
+a487e5da7860c92a3dbf5db113a45d08  bd62-witmark-years.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-witmark-years.flacf 
+=================== 
+=================== 
+=================== 
+bd62-witmark-years-d1t01.flac:05e999da9fb960802afdf0bf708e424c
+bd62-witmark-years-d1t02.flac:d4474b7ea7cdbcbbc6d290e7f9810a8e
+bd62-witmark-years-d1t03.flac:352a98a53d4e5597226d058c017ab6ba
+bd62-witmark-years-d1t04.flac:0cb2acecd32cf8c986531bd2931c8f81
+bd62-witmark-years-d1t05.flac:023c523184a5508c214b3d80aecb1b56
+bd62-witmark-years-d1t06.flac:792e2e7c1bcdf1f1f65a9036c3269e81
+bd62-witmark-years-d1t07.flac:74c40db9413b0f8b3499f68d913515dc
+bd62-witmark-years-d1t08.flac:2955c7e453b6acdde69d19f9508fe6fe
+bd62-witmark-years-d1t09.flac:70714b4f3812aa15d6d901cf3d8628ab
+bd62-witmark-years-d1t10.flac:90cbae6de71a3f2da9ac43a07a0f442d
+bd62-witmark-years-d1t11.flac:59a99daa75a19c905457d9f28cc2dd60
+bd62-witmark-years-d1t12.flac:4ff707cd2dee653cac301c0634f5d078
+bd62-witmark-years-d1t13.flac:09905c7b0ac9dc55b13a525aec8a2029
+bd62-witmark-years-d1t14.flac:cda1f271d993e4c6b108c5fac3a9faa7
+bd62-witmark-years-d1t15.flac:45cc01dd9581994122e3ce753655e7f3
+bd62-witmark-years-d1t16.flac:88aee6f2b2b72e6f1f56616e12a5a62f
+bd62-witmark-years-d1t17.flac:dacab740ff78509ddda03413fed660cd
+bd62-witmark-years-d1t18.flac:8a3f5bb130f0deada2b33e2b5802fac9
+bd62-witmark-years-d1t19.flac:ef6e5b27c30289a2fb55fda39ffbaab4
+bd62-witmark-years-d1t20.flac:1a3f7dbbc063e959ee18b35c5b607a74
+bd62-witmark-years-d1t21.flac:76240dcf15387d226bc85a6eb39823d1
+bd62-witmark-years-d2t01.flac:b6c7c37b3f6a780671e3f1ad88e1356b
+bd62-witmark-years-d2t02.flac:6f8637c781a201aab475f2976dda3f1f
+bd62-witmark-years-d2t03.flac:6c560775311e8d30679d4abdffac0a36
+bd62-witmark-years-d2t04.flac:68030ea1308f92ef5163c3be0f76ce7f
+bd62-witmark-years-d2t05.flac:e2b170808daa4feaedcef34b59e81c65
+bd62-witmark-years-d2t06.flac:26cae9fadb52a40464dd540faa5d896e
+bd62-witmark-years-d2t07.flac:c61176495eb2587b6384e1fc03b9ab04
+bd62-witmark-years-d2t08.flac:009dfa4b300c62f41a9a47210e3e097c
+bd62-witmark-years-d2t09.flac:efc4e12ff9347b1d04a5b1af2c270e9d
+bd62-witmark-years-d2t10.flac:e8b0fa6f0670988a4e0c70250b678083
+bd62-witmark-years-d2t11.flac:e4228380854e9c20ef98e3a2f7cd4cfe
+bd62-witmark-years-d2t12.flac:42464b9b2fbe064a5191cf7e4151df9d
+bd62-witmark-years-d2t13.flac:3df8150750d6a4974dce38934b467f51
+bd62-witmark-years-d2t14.flac:dde436feb609d795cda12c74d0ae86d0
+bd62-witmark-years-d2t15.flac:58a84376dd19b9bcd2bb13e5a69a714c
+bd62-witmark-years-d2t16.flac:a968f51f9402326745b0a49a23b10097
+bd62-witmark-years-d2t17.flac:41fd806466200ca498f44b3f8c01ae44
+bd62-witmark-years-d2t18.flac:d22410628c9e7d51b35cebaa24e05b76
+bd62-witmark-years-d2t19.flac:7c4447129aade8f61de4cd075180589e
+bd62-witmark-years-d2t20.flac:e069179697583db96f4ab7e26b217a5d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd62-witmark-years.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:42.50       28694444 B   ---   --   ---xx   flac  0.3649  bd62-witmark-years-d1t01.flac
+     2:29.50       26401244 B   ---   --   ---xx   flac  0.4851  bd62-witmark-years-d1t02.flac
+     3:50.30       40642604 B   ---   --   ---xx   flac  0.3208  bd62-witmark-years-d1t03.flac
+     4:11.70       44441084 B   ---   --   ---xx   flac  0.3847  bd62-witmark-years-d1t04.flac
+     4:30.37       47715068 B   ---   --   ---xx   flac  0.4241  bd62-witmark-years-d1t05.flac
+     7:03.13       74647820 B   ---   --   ---xx   flac  0.4442  bd62-witmark-years-d1t06.flac
+     1:36.50       17052044 B   ---   --   ---xx   flac  0.4118  bd62-witmark-years-d1t07.flac
+     2:44.25       28988444 B   ---   --   ---xx   flac  0.5020  bd62-witmark-years-d1t08.flac
+     1:34.37       16668668 B   ---   --   ---xx   flac  0.4968  bd62-witmark-years-d1t09.flac
+     3:47.25       40101644 B   ---   --   ---xx   flac  0.4928  bd62-witmark-years-d1t10.flac
+     3:26.63       36486620 B   ---   --   ---xx   flac  0.4511  bd62-witmark-years-d1t11.flac
+     2:30.12       26488268 B   ---   --   ---xx   flac  0.4535  bd62-witmark-years-d1t12.flac
+     4:41.50       49686044 B   ---   --   ---xx   flac  0.4460  bd62-witmark-years-d1t13.flac
+     2:53.00       30517244 B   ---   --   ---xx   flac  0.4774  bd62-witmark-years-d1t14.flac
+     3:17.25       34809644 B   ---   --   ---xx   flac  0.4255  bd62-witmark-years-d1t15.flac
+     3:45.38       39779420 B   ---   --   ---xx   flac  0.4962  bd62-witmark-years-d1t16.flac
+     1:22.12       14493068 B   ---   --   ---xx   flac  0.3580  bd62-witmark-years-d1t17.flac
+     2:00.13       21198620 B   ---   --   ---xx   flac  0.3987  bd62-witmark-years-d1t18.flac
+     4:29.25       47510444 B   ---   --   ---xx   flac  0.3951  bd62-witmark-years-d1t19.flac
+     3:56.12       41658668 B   ---   --   ---xx   flac  0.3790  bd62-witmark-years-d1t20.flac
+     1:59.38       21081020 B   ---   --   ---xx   flac  0.4364  bd62-witmark-years-d1t21.flac
+     5:40.62       60121868 B   ---   --   ---xx   flac  0.3333  bd62-witmark-years-d2t01.flac
+     3:08.25       33222044 B   ---   --   ---xx   flac  0.3106  bd62-witmark-years-d2t02.flac
+     3:12.38       33958220 B   ---   --   ---xx   flac  0.3167  bd62-witmark-years-d2t03.flac
+     1:38.62       17433068 B   ---   --   ---xx   flac  0.3539  bd62-witmark-years-d2t04.flac
+     3:36.50       38220044 B   ---   --   ---xx   flac  0.4760  bd62-witmark-years-d2t05.flac
+     3:26.50       36456044 B   ---   --   ---xx   flac  0.4545  bd62-witmark-years-d2t06.flac
+     1:27.13       15377420 B   ---   --   ---xx   flac  0.3941  bd62-witmark-years-d2t07.flac
+     2:23.62       25371068 B   ---   --   ---xx   flac  0.3812  bd62-witmark-years-d2t08.flac
+     4:17.68       45494780 B   ---   --   ---xx   flac  0.3970  bd62-witmark-years-d2t09.flac
+     2:54.20       30740684 B   ---   --   ---xx   flac  0.4645  bd62-witmark-years-d2t10.flac
+     3:00.00       31752044 B   ---   --   ---xx   flac  0.4450  bd62-witmark-years-d2t11.flac
+     4:00.50       42453644 B   ---   --   ---xx   flac  0.4707  bd62-witmark-years-d2t12.flac
+     4:06.12       43422668 B   ---   --   ---xx   flac  0.4118  bd62-witmark-years-d2t13.flac
+     1:59.58       21128060 B   ---   --   ---xx   flac  0.3775  bd62-witmark-years-d2t14.flac
+     4:16.42       45257228 B   ---   --   ---xx   flac  0.4031  bd62-witmark-years-d2t15.flac
+     5:56.13       62829020 B   ---   --   ---xx   flac  0.4175  bd62-witmark-years-d2t16.flac
+     2:13.12       23489468 B   ---   --   ---xx   flac  0.4183  bd62-witmark-years-d2t17.flac
+     3:35.23       37980140 B   ---   --   ---xx   flac  0.3895  bd62-witmark-years-d2t18.flac
+     1:14.65       13206524 B   ---   --   ---xx   flac  0.3806  bd62-witmark-years-d2t19.flac
+     7:18.25       77322044 B   ---   --   ---xx   flac  0.4224  bd62-witmark-years-d2t20.flac
+   138:21.00     1464298204 B                            0.4169  (41 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,242 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf 
+=================== 
+=================== 
+=================== 
+80cb7b56a4762ff3836161ebacb07635  bd01-Australia_Waltzing-Matilda-lk-comp-LB-3442.txt
+55520970af0f475306a402ca19ff1f66  bd2001_Australia_Waltzing Matilda.flacf.txt
+ec9b7b6ae95e2fae29b44046999d88e6  D1\D1.md5
+7fa6dd1e741274a9a91d1e6a92d50680  D1\Track01.flac
+95ab73025fb7add4e8067783e5d5c9f7  D1\Track02.flac
+2beaa7d94e8283032bdf09e333e30932  D1\Track03.flac
+395da3b01a612ed15376309a261ecadc  D1\Track04.flac
+0dcefe9d87904c38acfbabf9b22bddc7  D1\Track05.flac
+3ec895f80b974129fb1ae4050baa06d2  D1\Track06.flac
+a454a0f8dd553fb629692ff1f9e5b2f4  D1\Track07.flac
+9f0078a85d9e41466dc80a80ee58037c  D1\Track08.flac
+a0054153994dee0671c28dc42f02cc28  D1\Track09.flac
+aaf09a8d08c079bd5c9c175d4db10834  D1\Track10.flac
+16bf23dd891fb65a632d7781960127ef  D1\Track11.flac
+609abbddfcde42fd864cf7e955395111  D1\Track12.flac
+e43a0005198e983cf0a935402828ca62  D1\Track13.flac
+d2918007d18e6aaec20731a0e07c5a87  D1\Track14.flac
+73e01d7f9bf0f0d2779e961e32c97a60  D1\Track15.flac
+bb61f5495167e34618076b6a667500c8  D2\D2.md5
+946dee5f2d7ac05f662fd694e562f40e  D2\Track01.flac
+3a46761d359ee041e987a6e3521631b0  D2\Track02.flac
+49e8df250169269a9c4bc7f51ca395f0  D2\Track03.flac
+8a82811b873f581546cf04e960770529  D2\Track04.flac
+60e75c1971b3da9568bffdb6dc27af0f  D2\Track05.flac
+edea73baa6851ee3c667aed6a9a63ca2  D2\Track06.flac
+d93d9497aaccad0df2f8755b720d50c0  D2\Track07.flac
+f42b56a6a22d9c4bf7ba9d5aab9dce6b  D2\Track08.flac
+c51cef8448d7a15fdc18c5cd81a23cdf  D2\Track09.flac
+4f712fb5f8a8148d8b36c573ff34c54d  D2\Track10.flac
+7fa17645d8002ce605a37f93bc8bbc0e  D2\Track11.flac
+a19258c627275dc90e55563cf039caee  D2\Track12.flac
+11e6a20fd23b92e2ec46e64b91dbec40  D2\Track13.flac
+67c21987616981a92493605d53288c5b  D2\Track14.flac
+e615950ebb2433d2bc4a97f5a9c6f861  D3\D3.md5
+453e8161d31dc820dfd6a7ee9e9754d4  D3\Track01.flac
+001e4ca41acc999e796ae3db43f4c155  D3\Track02.flac
+4cb97e73b335195ddc85237d89eb5cfa  D3\Track03.flac
+86c1ee42634ebed27d07a1af66151abc  D3\Track04.flac
+23194a6981a1dc050fd1a0ac356e48d6  D3\Track05.flac
+7b0600a0d58b63c6c98322a682808188  D3\Track06.flac
+e479f99898d4aa12f28d7627aeb799cd  D3\Track07.flac
+41fde8d85c0f112651b8573d49236b7d  D3\Track08.flac
+db308d3da418a686f24cebefc1f83160  D3\Track09.flac
+86af85dbfa648572128541e089e3ef59  D3\Track10.flac
+bb44398c99d5d62596510cc5b58feb1d  D3\Track11.flac
+d459cbda38c5f9ea42c4cd4698d94722  D4\D4.md5
+c456fa33786265ee28963db76bbe954b  D4\Track01.flac
+36fdec1731379e11ebce7d88c85df510  D4\Track02.flac
+09d49fafeebd6e9dcd75904815e1952b  D4\Track03.flac
+739473a8a5dd169a0a45e0d092c169df  D4\Track04.flac
+e89b62732bcd27658528d06225edf9a6  D4\Track05.flac
+2087bba9d25325675ca51b23cbba56fb  D4\Track06.flac
+2c545a39885095f09531bb1744aab07a  D4\Track07.flac
+1b9582484db140fd8a17536c0e1229b4  D4\Track08.flac
+b05a74983d29f2496bed54d13d0ab350  D4\Track09.flac
+981a82304fde3c394113ea5c1e89aba4  D4\Track10.flac
+27198659f8bc17d193667dc858114e85  D4\Track11.flac
+7a398cd2bff12c7f34f066c4e75df9c3  D4\Track12.flac
+7b0fc28fe1a0c8c46367ceba452abeb9  D4\Track13.flac
+ee068ab0bc2067e180dfe37af999446c  D4\Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf\D3 
+=================== 
+=================== 
+=================== 
+Track01.flac:2ea5430b61ff364c157078f0d68335d5
+Track02.flac:4da5a084365679c69d2bb790c121d04c
+Track03.flac:d967059554fa1fefe13aab29f4df671e
+Track04.flac:3ff7c9ecca50e38ed8f5e2576cf8b95d
+Track05.flac:d7374fb41e6906bc313f68369e4864fa
+Track06.flac:8ebee20f25510257c965848c4918edd0
+Track07.flac:7863164f6b559cdd96a8be7de99d547b
+Track08.flac:375009052c72fe0c76591c09a4fd03ac
+Track09.flac:311bb4eb7fb371388f1f45f4ef969fb5
+Track10.flac:bccad6e62e2c23fca72b88559f553a29
+Track11.flac:12fff7f906a9516b3e6411d4c381111e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:b5437102e892f719d1c8fec8bea90f76
+Track02.flac:14d7439674f2517e9e12843390969d2d
+Track03.flac:85dc53ea566ba60923a34420d8fc0ee1
+Track04.flac:c8bb760e4ff9713f55d710ccbb692f31
+Track05.flac:0675f7d85d69ca19e62e24e457f95c44
+Track06.flac:009e55c354028eb1fb259bf16ad4875d
+Track07.flac:60d308f70e9b037c3b75a514f1e6223d
+Track08.flac:1027cf3d43d88235587f7fb0a53e4e12
+Track09.flac:21cafe89180ab8db9b79567745b97304
+Track10.flac:6f4745d1fbe47a48766a0f45cb839efd
+Track11.flac:c38f77b77b0ac1b05b93f0934dd2742a
+Track12.flac:e80b2e5690cf21e80b3a68af735739d9
+Track13.flac:3a890288ff7f1b282214d392a4f13c63
+Track14.flac:e4c3763f89d5fbf914384c758edd6fec
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf\D4 
+=================== 
+=================== 
+=================== 
+Track01.flac:1938f018dac8481b4a15e8eed151c56a
+Track02.flac:fdeb6c83b77526d674f6c3009a88a945
+Track03.flac:3807d2f0344852e48841c50b8622a6c2
+Track04.flac:c5af889fb0e52356b766392667aa63cf
+Track05.flac:f01478dd9e65e7ede4dbdc9dd79df680
+Track06.flac:6901dd801540bbd5db41f3989f0fef94
+Track07.flac:77eb742d6d3fb59913c2e3984ef81cf4
+Track08.flac:78752b4f1bac3851fcc0d4def2b0e1bf
+Track09.flac:2214ca91e09086911f814c20e0303ad9
+Track10.flac:818e6b1cdd196f205446b7448ec5cff3
+Track11.flac:0181c56f0c56fab937c1f95a0c1bc3e8
+Track12.flac:db996ca0062a7dab3b49d2fd1a0581f8
+Track13.flac:30e1eb75514e11ecd0baafc31928bece
+Track14.flac:7630c0b83856f1026fc1ae141505b0de
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:5b64c58aa3026302477debcfbf94c25c
+Track02.flac:bc268e90c94149f9e8b6513eea1173f0
+Track03.flac:e15c93e25bf3b3fd3380b2f54d09987e
+Track04.flac:d10bf41e928d154149308c21d7c4140f
+Track05.flac:ba38e7402a2065079ac6aa19ad0ef960
+Track06.flac:6fd1a2ca4fe8913648608394626b64c0
+Track07.flac:52291e2929e0706e81a1c470c02ed6d9
+Track08.flac:ee714250f3fd6b2d0f01afe5466b5be3
+Track09.flac:3240aa27cac4b328b342706cea87f0ec
+Track10.flac:34ceccd25d31c07fa8ff409fec78820e
+Track11.flac:121be59505ad26fa074204614fa68da7
+Track12.flac:7460f6640839d5e03d1d4a9c90c266dd
+Track13.flac:8055c2ff7a19442f8b2d642441cef533
+Track14.flac:b1af12075188cd3db24435706ebafea0
+Track15.flac:95aeb771a0bc52f381ef1feb9b0c17dc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf\D3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:37.64       80765372 B   ---   --   ---xx   flac  0.4943  Track01.flac
+     5:16.03       55749500 B   ---   --   ---xx   flac  0.4791  Track02.flac
+     5:33.45       58847084 B   ---   --   ---xx   flac  0.5144  Track03.flac
+     6:02.28       63922700 B   ---   --   ---xx   flac  0.4466  Track04.flac
+     5:32.36       58649516 B   ---   --   ---xx   flac  0.4346  Track05.flac
+     5:01.09       53117612 B   ---   --   ---xx   flac  0.5719  Track06.flac
+     8:48.58       93275660 B   ---   --   ---xx   flac  0.4568  Track07.flac
+     5:49.69       61725932 B   ---   --   ---xx   flac  0.4754  Track08.flac
+     9:05.65       96290924 B   ---   --   ---xx   flac  0.5096  Track09.flac
+     5:26.27       57569948 B   ---   --   ---xx   flac  0.4572  Track10.flac
+     7:59.30       84566204 B   ---   --   ---xx   flac  0.4299  Track11.flac
+    72:13.59      764480452 B                            0.4775  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:20.57       67166108 B   ---   --   ---xx   flac  0.4654  Track01.flac
+     5:48.24       61443692 B   ---   --   ---xx   flac  0.5061  Track02.flac
+     6:18.15       66714524 B   ---   --   ---xx   flac  0.5864  Track03.flac
+     5:57.45       63080684 B   ---   --   ---xx   flac  0.4990  Track04.flac
+     6:20.14       67064972 B   ---   --   ---xx   flac  0.5134  Track05.flac
+     3:48.38       40308620 B   ---   --   ---xx   flac  0.5724  Track06.flac
+     6:36.57       69988508 B   ---   --   ---xx   flac  0.4940  Track07.flac
+     5:30.60       58353164 B   ---   --   ---xx   flac  0.6347  Track08.flac
+     5:07.08       54173660 B   ---   --   ---xx   flac  0.5392  Track09.flac
+     5:04.43       53726780 B   ---   --   ---xx   flac  0.5187  Track10.flac
+     7:03.33       74694860 B   ---   --   ---xx   flac  0.5777  Track11.flac
+     5:13.30       55283804 B   ---   --   ---xx   flac  0.5173  Track12.flac
+     2:49.74       29985692 B   ---   --   ---xx   flac  0.5221  Track13.flac
+     4:25.29       46814252 B   ---   --   ---xx   flac  0.6373  Track14.flac
+    76:25.02      808799320 B                            0.5395  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf\D4 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.40       53366924 B   ---   --   ---xx   flac  0.5904  Track01.flac
+     5:42.04       60338252 B   ---   --   ---xx   flac  0.5266  Track02.flac
+     3:53.67       41258828 B   ---   --   ---xx   flac  0.5170  Track03.flac
+     8:19.73       88195340 B   ---   --   ---xx   flac  0.5308  Track04.flac
+     5:24.60       57294764 B   ---   --   ---xx   flac  0.4761  Track05.flac
+     6:31.29       69040652 B   ---   --   ---xx   flac  0.5050  Track06.flac
+     3:49.00       40395644 B   ---   --   ---xx   flac  0.6127  Track07.flac
+     4:03.00       42865244 B   ---   --   ---xx   flac  0.5629  Track08.flac
+     6:15.19       66194732 B   ---   --   ---xx   flac  0.5578  Track09.flac
+     8:54.06       94211756 B   ---   --   ---xx   flac  0.6056  Track10.flac
+     4:21.03       46047500 B   ---   --   ---xx   flac  0.6534  Track11.flac
+     4:30.55       47757404 B   ---   --   ---xx   flac  0.4950  Track12.flac
+     6:02.41       63953276 B   ---   --   ---xx   flac  0.5089  Track13.flac
+     4:04.50       43159244 B   ---   --   ---xx   flac  0.5734  Track14.flac
+    76:54.72      814079560 B                            0.5496  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-Australia_Waltzing-Matilda-lk-comp.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.07       35472908 B   ---   --   ---xx   flac  0.6356  Track01.flac
+     3:09.14       33372572 B   ---   --   ---xx   flac  0.5234  Track02.flac
+     5:30.51       58331996 B   ---   --   ---xx   flac  0.6278  Track03.flac
+     5:09.30       54578204 B   ---   --   ---xx   flac  0.5799  Track04.flac
+     3:40.41       38904476 B   ---   --   ---xx   flac  0.4768  Track05.flac
+     6:04.22       64261388 B   ---   --   ---xx   flac  0.5980  Track06.flac
+     5:30.13       58242620 B   ---   --   ---xx   flac  0.5015  Track07.flac
+     6:16.25       66385244 B   ---   --   ---xx   flac  0.5456  Track08.flac
+     5:04.46       53733836 B   ---   --   ---xx   flac  0.6665  Track09.flac
+     5:18.60       56236364 B   ---   --   ---xx   flac  0.5235  Track10.flac
+     2:44.12       28957868 B   ---   --   ---xx   flac  0.5447  Track11.flac
+     6:52.30       72747404 B   ---   --   ---xx   flac  0.5975  Track12.flac
+     5:22.44       56904332 B   ---   --   ---xx   flac  0.5137  Track13.flac
+     8:38.52       91497548 B   ---   --   ---xx   flac  0.5526  Track14.flac
+     4:29.15       47486924 B   ---   --   ---xx   flac  0.5176  Track15.flac
+    77:12.12      817113684 B                            0.5624  (15 files)
+=================== 
+=================== 
+=================== 

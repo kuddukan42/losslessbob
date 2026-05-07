@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-26-a.flacf 
+=================== 
+=================== 
+=================== 
+380b178d37734c20276bb1ccaccc7623  2000-03-26 Casper Events Center, Casper, Wyoming, USA [uT].md5
+122f686ec5c63c1c339abec2c77718a6  CD1\01 Hallelujah, I'm ready to go.flac
+4dfcd665bcfce9f44fc9855e6640f723  CD1\02 Mr. Tambourine man.flac
+15de1dd68258c74bae61a203fad69512  CD1\03 Masters of war.flac
+bcc0e65eea135384a5ef34134ee9c8ba  CD1\04 Love minus zero - no limit.flac
+3ea071a00e3db27b9a26c0a3bddbc7a3  CD1\05 Tangled up in blue.flac
+f47c5f9e4267abc218d36e339b8b47a3  CD1\06 Gates of Eden.flac
+b649905a69e850f0f99b4891a1e8a303  CD1\07 Country Pie.flac
+7b4e7b9ce16c6d58b0ff3efde56d4884  CD2\08 All along the watchtower.flac
+d6b512763a106510461d2d2e37b0cc1a  CD2\09 Simple twist of fate.flac
+33d7594fe32c9f015d9668032b3e7f3b  CD2\10 Stuck inside of Mobile with the Memphis blues again.flac
+be8f2e203757942982d1fa37f6be0536  CD2\11 Make you feel my love.flac
+a3b0f59112c103880a5dd0d6b92f32c4  CD2\12 Highway 61 revisited.flac
+a86aca418bac7901ef4f42d6e30ef1e3  CD2\13 Love sick.flac
+8ac4e1220c1ce58fc86954196a0db40a  CD2\14 Like a rolling stone.flac
+499a60998d347f5f6ee1b2701e2e3d88  CD2\15 It ain't me, babe.flac
+3dac8b063d77791ce00998917024bbf5  CD2\16 Not fade away.flac
+530534ee6a1ba2024bb44b119f1e280c  CD2\17 Blowin' in the wind.flac
+a1036564269830c08010b19d7232bc73  CD2\18 Rainy day women # 12 & 35.flac
+ee8c98985fb1a37865351d0d04e1de94  Info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-26-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Hallelujah, I'm ready to go.flac:a5f0c6f1585e2a8a251caea59f4ab046
+02 Mr. Tambourine man.flac:6bd0ebaed3be3e8500a3b0d23dec0a6d
+03 Masters of war.flac:02564c0c015852163c76503a3c14077b
+04 Love minus zero - no limit.flac:634f3007288032f12951670b280f2767
+05 Tangled up in blue.flac:62a4e0e27241f1bba93371282873faa3
+06 Gates of Eden.flac:25a6cc7c623145e3ca876f519afd03d2
+07 Country Pie.flac:0cd6ad243c9b5795267ba054004de997
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-26-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+08 All along the watchtower.flac:ba7ae2e270155ce845d5e491e3d786de
+09 Simple twist of fate.flac:3be5d28d7e3fd3ecb270c36353bdd17f
+10 Stuck inside of Mobile with the Memphis blues again.flac:fa9bf33ab155f2824efeca329c65dba6
+11 Make you feel my love.flac:9f39321d9c94fdbc82bc93ec0468552d
+12 Highway 61 revisited.flac:28d04807ec571b162c5bf18e1eaced5f
+13 Love sick.flac:c94edbec52fc6893b897ed02cb79a590
+14 Like a rolling stone.flac:d364cc72b20ad54129f4aeea08e8122f
+15 It ain't me, babe.flac:24f12a60576afee5849b6b458e78dcbb
+16 Not fade away.flac:9c4a4385dd03bcf6584b2104c9c24708
+17 Blowin' in the wind.flac:096c3c4c1d1361e212eb32ade38e23bd
+18 Rainy day women # 12 & 35.flac:2670632fa0bd332ab031867d4b8dd118
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-26-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:03.60       32422364 B   ---   --   ---xx   flac  0.5291  01 Hallelujah, I'm ready to go.flac
+     6:25.00       67914044 B   ---   --   ---xx   flac  0.4957  02 Mr. Tambourine man.flac
+     5:02.33       53350460 B   ---   --   ---xx   flac  0.4328  03 Masters of war.flac
+     6:20.24       67088492 B   ---   --   ---xx   flac  0.4966  04 Love minus zero - no limit.flac
+     8:26.23       89312540 B   ---   --   ---xx   flac  0.5724  05 Tangled up in blue.flac
+     6:53.42       72952028 B   ---   --   ---xx   flac  0.4819  06 Gates of Eden.flac
+     3:08.60       33304364 B   ---   --   ---xx   flac  0.5434  07 Country Pie.flac
+    39:20.17      416344292 B                            0.5082  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-26-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.26       47336396 B   ---   --   ---xx   flac  0.5821  08 All along the watchtower.flac
+     7:48.59       82694012 B   ---   --   ---xx   flac  0.4377  09 Simple twist of fate.flac
+     7:33.22       79960988 B   ---   --   ---xx   flac  0.5393  10 Stuck inside of Mobile with the Memphis blues again.flac
+     4:56.30       52285004 B   ---   --   ---xx   flac  0.4134  11 Make you feel my love.flac
+     6:28.29       68511452 B   ---   --   ---xx   flac  0.5829  12 Highway 61 revisited.flac
+     7:39.31       81040556 B   ---   --   ---xx   flac  0.4603  13 Love sick.flac
+     7:38.27       80854748 B   ---   --   ---xx   flac  0.5620  14 Like a rolling stone.flac
+     9:25.31       99738956 B   ---   --   ---xx   flac  0.4459  15 It ain't me, babe.flac
+     4:14.23       44859740 B   ---   --   ---xx   flac  0.5530  16 Not fade away.flac
+     5:35.51       59213996 B   ---   --   ---xx   flac  0.4544  17 Blowin' in the wind.flac
+     6:06.65       64715324 B   ---   --   ---xx   flac  0.5525  18 Rainy day women # 12 & 35.flac
+    71:55.19      761211172 B                            0.5033  (11 files)
+=================== 
+=================== 
+=================== 

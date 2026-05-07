@@ -1,0 +1,10 @@
+    length     expanded size   cdr  WAVE problems filename
+     3:42.15       39196124    ---   --   ---xx   dylan-1966-02-06-t01.flac
+     6:47.16       71832476    ---   --   ---xx   dylan-1966-02-06-t02.flac
+     8:08.27       86146748    ---   --   ---xx   dylan-1966-02-06-t03.flac
+     3:04.39       32549372    ---   --   ---xx   dylan-1966-02-06-t04.flac
+     3:57.21       41856236    ---   --   ---xx   dylan-1966-02-06-t05.flac
+     8:23.01       88731596    ---   --   ---xx   dylan-1966-02-06-t06.flac
+     4:28.13       47305820    ---   --   ---xx   dylan-1966-02-06-t07.flac
+     7:43.37       81760268    ---   --   ---xx   dylan-1966-02-06-t08.flac
+    46:14.19      489378640 B                     (totals for 8 files, 0.4920 overall compression ratio)

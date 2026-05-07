@@ -1,0 +1,10 @@
+Bob Dylan, 12/9/95, Boston, MA, Orpheum Theatre, 2CDR
+
+LB-5710, (40min+73min), Source: DAUD Sheopps mk4 > DAT first row balcony unknown taper, Transfer: Panasonic SV-3700 > M-Audio 2496 digital in [48/16] > WaveLab 5.0, Mastered with iZotope Ozone 3, Dithered to [44.1/16] > CD Wave > TLH > Flac, Transfer and Mastering by Green Mountain Bros.January 2008, Note: Cut in Maggie's Farm. Source DAT had end of show from possible, different source cloned to end of tape. Separate mastering settings, were applied and then the two parts were crossfaded.; bittorrent download 01/08; same recording as LB-534 based on similar wav and spectral view on d2t2 except this has lower levels so that this does not have all the clipping on loud songs like d1t6 and d2t2 that that one has; this does not have the -6db limiting starting on d2t2 that one has; this does not have the static on d2t12 that one has; d2t4 seems to fit into this show in sound quality and spectral view; excellent sound [A]
+
+abrupt start on d1t1
+
+Disc 1 39:32, 1. Crash On The Levee (Down In The Flood), 2. Tonight I'll Be Staying Here With You, 3. All Along The Watchtower, 4. Positively 4th Street, 5. Pledging My Time, 6. Silvio, Disc 2 72:52, 1. Tangled Up In Blue @, 2. To Ramona @, 3. John Brown @, 4. Maggie's Farm, 5. Lenny Bruce, 6. Band Intros, 7. Seeing The Real You At Last, 8. crowd, Encores:, 9. Alabama Getaway, 10. One Too Many Mornings @, 11. crowd, 12. Rainy Day Women No. 12 & 35, @ - Acoustic
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

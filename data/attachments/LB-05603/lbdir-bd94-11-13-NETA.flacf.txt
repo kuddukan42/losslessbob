@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-11-13-NETA.flacf 
+=================== 
+=================== 
+=================== 
+2544963aacc22a0942f679ab63ad46dd  bd-941113-NewOrleans.ffp
+c597fc2c8977e2e93ea850cdd20135a8  bd-941113-NewOrleans.md5
+dbfd093db318e0ff7bcab1db3bc1311a  info.txt
+12f4c69087595f1eaaec3390094dc656  track101.flac
+5f49155b0ad895a22626eb34ec44e160  track102.flac
+488f662b17363ecb17aa2199be3a97b4  track103.flac
+6b70076aa9079f6598e4400c51635e0e  track104.flac
+76cacf220cc936b50b05067bbed449f8  track105.flac
+5fab771c2ba72a0ba94858cddba8286c  track106.flac
+55bad68227ca717b4467f73c225124fc  track107.flac
+096d7d0688da260f8fc36d60bf626323  track108.flac
+79b540b144a549885595c34d26e9179c  track109.flac
+19c48c340997b461f6256143dd8bb396  track110.flac
+2948819e5bb1b36a2bebf4eef161142d  track201.flac
+a71c414d69719ab7128d3a25052b77ba  track202.flac
+eebac3530bacdab57f0079dfd713fe63  track203.flac
+2e4d855a34e1ab97d0d1a83eab941b67  track204.flac
+b43d1a8823b18c97a18adceb1720fe6a  track205.flac
+14205be6894e552635ee26ccb7866e30  track206.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-11-13-NETA.flacf 
+=================== 
+=================== 
+=================== 
+track101.flac:352c30c88a90a2ad58250b57a138b125
+track102.flac:f83c8bd18a4b3b19be6464f6ad1bc132
+track103.flac:abe70b3d68bc52abea485311b9f1a948
+track104.flac:daec486c9a7d0db411d5431aeb80aad9
+track105.flac:ca4a5251270dc0f4e92cf62a7a77f735
+track106.flac:5d3919e48c9c63644c829f9de441908f
+track107.flac:b77ed75c2a00317b319061c93776ca36
+track108.flac:ca517f3604b50d32009e9648100017c5
+track109.flac:0044ca5a84e81cfcaf0c0552297ccbe2
+track110.flac:4d389181905440643beb9f99e3f02e11
+track201.flac:11929143a108c7f896938ace97079d6a
+track202.flac:e4987173152528795e6ec64e2dc16cc1
+track203.flac:f44c6401dbd0df312b8be4e6f1fc3d4b
+track204.flac:01a9491feee2b460ed919ae50d819d0b
+track205.flac:c3d7863539cded52aacd4c42628772f0
+track206.flac:0bcf760b6635c1bc32b7d2c162ebf6a3
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-11-13-NETA.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.02        5296748 B   ---   --   ---xx   flac  0.3825  track101.flac
+     7:38.42       80890028 B   ---   --   ---xx   flac  0.4776  track102.flac
+     5:59.34       63407612 B   ---   --   ---xx   flac  0.4646  track103.flac
+     5:28.28       57925100 B   ---   --   ---xx   flac  0.4961  track104.flac
+     7:09.55       75805004 B   ---   --   ---xx   flac  0.4462  track105.flac
+     9:51.63      104400620 B   ---   --   ---xx   flac  0.4710  track106.flac
+     8:34.15       90704924 B   ---   --   ---xx   flac  0.4409  track107.flac
+     6:29.01       68621996 B   ---   --   ---xx   flac  0.3686  track108.flac
+     5:57.47       63085388 B   ---   --   ---xx   flac  0.3686  track109.flac
+     7:33.64       80059772 B   ---   --   ---xx   flac  0.4103  track110.flac
+     6:47.11       71820716 B   ---   --   ---xx   flac  0.5040  track201.flac
+     7:45.50       82143644 B   ---   --   ---xx   flac  0.4469  track202.flac
+    10:32.19      111529532 B   ---   --   ---xx   flac  0.4969  track203.flac
+     8:47.37       93049868 B   ---   --   ---xx   flac  0.4551  track204.flac
+    10:49.49      114598892 B   ---   --   ---xx   flac  0.3944  track205.flac
+     5:42.20       60375884 B   ---   --   ---xx   flac  0.4856  track206.flac
+   115:37.12     1223715728 B                            0.4482  (16 files)
+=================== 
+=================== 
+=================== 

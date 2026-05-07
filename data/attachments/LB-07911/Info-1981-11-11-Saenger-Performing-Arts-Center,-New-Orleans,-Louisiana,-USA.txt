@@ -1,0 +1,116 @@
+Saenger Performing Arts Center
+New Orleans, Louisiana
+November 11, 1981
+
+*****  This recording does not seem to have any LB-reference  *****
+See http://jokerman.org.uk/lb/detail/LB-03117.html and note the differences
+NOTES: Complete; does NOT have the LB-3117 mentioned flaws 
+
+a) Original text info file: not present; created
+b) md5 file: original(s) not present
+c) FLAC fingerprint: no original present; created as tracks have been renamed
+d) FLAC .txt: no original present; created as tracks have been renamed
+e) shntool_len: no original present, created & included
+
+Taper: unidentified
+Source: no information
+Lineage: received in an '05 trade; tracks are renamed
+UploaderRating: B ('hissy')
+UploaderFrecquencyAnalysis: not much above 12-13kHz
+
+01. Gotta Serve Somebody [03:24]
+02. I Believe In You [04:21]
+03. Like A Rolling Stone [06:05]
+04. I Want You [03:19]
+05. Man Gave Names To All The Animals [05:37]
+06. Maggie's Farm [03:49]
+07. Simple Twist Of Fate [04:28]
+08. Girl From The North Country [04:53]
+09. Ballad Of A Thin Man [03:49]
+10. Heart Of Mine [03:12]
+11. All Along The Watchtower [03:18]
+12. I'll Be Your Baby Tonight [02:33]
+13. Forever Young [04:59]
+14. Gamblin' Man (trad.) [03:09]
+15. The Times They Are A-Changin' [05:17]
+16. A Hard Rain's A-Gonna Fall [06:24]
+Total time [68:46]
+
+17. Watered-Down Love [04:08]
+18. Shot Of Love [04:54]
+19. Masters Of War [02:22]
+20. Just Like A Woman [03:34]
+21. Solid Rock [03:54]
+22. Mr. Tambourine Man [04:46]
+23. It's All In The Game (Carl Sigman/Charles Gates Dawes) [03:37]
+24. When You Gonna Wake Up [04:31]
+25. In The Garden [06:13]
+26. Blowin' In The Wind [04:53]
+27. It's Alright, Ma (I'm Only Bleeding) [05:35]
+28. It Ain't Me, Babe [05:37]
+29. Knockin' On Heaven's Door [05:49]
+Total time [59:59]
+
+Concert #20 of US and Canada Fall Tour 1981
+1981 concert #47
+
+Bob Dylan (vocal & guitar)
+Fred Tackett (guitar)
+Steve Ripley (guitar)
+Al Kooper (keyboards)
+Tim Drummond (bass)
+Jim Keltner (drums)
+Arthur Rosato (drums)
+Clydie King, Regina Havis, Madelyn Quebec (background vocals)
+
+12, 23 Bob Dylan & Clydie King (shared vocal)
+13, 15, 28, 29 Bob Dylan (harmonica)
+14 Clydie King, Regina Havis, Madelyn Quebec (vocals)
+27, 28 Bob Dylan solo (vocal & guitar)
+
+BobTalk:
+Well, thank you. Time to wake up (....), this time, .... anybody feel lonely? (after I Want You)
+Does anybody here know anything about voodoo? You know who here knows the most about voodoo? I know about black cat crossing your path 'cause today a white cat crossed my path, I now that means something. (after Heart Of Mine)
+All right thank you. We got a song here for all the gambling men out there. Any gambling men out there? You gamble with anything you know, not just cards. I know we got some gambling men. Well here's a song just for you. Make you think twice about gambling
+I think that's the way it went. I used to sing that song on the street corner. Never dreamed I'd be singing it in a concert hall. Imagine singing that song on a street corner. Tourists walk by, throw food into the hat. Angel food. Another song I used to sing on the street, never got no money for this one. (after The Times They Are A-Changin')
+Thank you. That was a request. Song that we don't usually do anymore. Somebody's birthday. Anyway here's a song that we never do. There's somebody wants to hear this. Somebody wants to hear this, and I'll try to do the best I can. (before It's All In The Game)
+Thank you. When you gonna wake up? When am I gonna wake up? I'll wake up one of these days I'm telling you.
+Thank you. It's life and life only. Yes it is. Life only. You can kill a man but you can't kill and idea right? Can't kill and idea. I'll try to do this if I can remember the words. (before It Ain't Me, Babe)
+We don't have a player playing. Let's have a look at that though. Soon as I get back to my hotel room. All right, ha ha OK. OK we gotta go now. Remember now, don't buy nothing you can't pay for. Ha ha! (before Knockin' On Heaven's Door)
+
+3 new songs (10%) compared to previous concert
+No new songs for this tour
+
+Stereo audience recording, 135 minutes
+
+
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.26       36046796 B   ---   --   ---xx   flac  0.6041  01 Gotta serve somebody.flac
+     4:21.72       46209788 B   ---   --   ---xx   flac  0.5833  02 I believe in you.flac
+     6:05.66       64541276 B   ---   --   ---xx   flac  0.5966  03 Like a rolling stone.flac
+     3:19.63       35251820 B   ---   --   ---xx   flac  0.5839  04 I want you.flac
+     5:37.69       59609132 B   ---   --   ---xx   flac  0.5751  05 Man gave names to all the animals.flac
+     3:49.53       40520300 B   ---   --   ---xx   flac  0.5880  06 Maggie's farm.flac
+     4:28.45       47381084 B   ---   --   ---xx   flac  0.5786  07 Simple twist of fate.flac
+     4:53.02       51689948 B   ---   --   ---xx   flac  0.5691  08 Girl from the North Country.flac
+     3:49.61       40539116 B   ---   --   ---xx   flac  0.5764  09 Ballad of a thin man.flac
+     3:12.66       34024076 B   ---   --   ---xx   flac  0.5813  10 Heart of mine.flac
+     3:18.67       35084828 B   ---   --   ---xx   flac  0.6089  11 All along the watchtower.flac
+     2:33.68       27149180 B   ---   --   ---xx   flac  0.6171  12 I'll be your baby tonight.flac
+     4:59.06       52757756 B   ---   --   ---xx   flac  0.6097  13 Forever young.flac
+     3:09.10       33363164 B   ---   --   ---xx   flac  0.5955  14 Gamblin' man.flac
+     5:17.43       56019980 B   ---   --   ---xx   flac  0.5959  15 The times they are a-changin'.flac
+     6:24.30       67808204 B   ---   --   ---xx   flac  0.6093  16 A hard rain's a-gonna fall.flac
+     4:08.68       43907180 B   ---   --   ---xx   flac  0.6100  17 Watered-down love.flac
+     4:54.60       52002764 B   ---   --   ---xx   flac  0.6180  18 Shot of love.flac
+     2:22.49       25164092 B   ---   --   ---xx   flac  0.6257  19 Masters of war.flac
+     3:34.45       37855484 B   ---   --   ---xx   flac  0.6108  20 Just like a woman.flac
+     3:54.16       41315276 B   ---   --   ---xx   flac  0.5750  21 Solid rock.flac
+     4:46.08       50469260 B   ---   --   ---xx   flac  0.5838  22 Mr. Tambourine Man.flac
+     3:38.38       38544620 B   ---   --   ---xx   flac  0.5790  23 It's all in the game.flac
+     4:31.27       47867948 B   ---   --   ---xx   flac  0.5883  24 When you gonna wake up.flac
+     6:13.45       65903084 B   ---   --   ---xx   flac  0.5859  25 In the garden.flac
+   106:51.53     1131026156 B                            0.5931  (25 files)

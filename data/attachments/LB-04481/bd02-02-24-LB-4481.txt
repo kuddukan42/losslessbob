@@ -1,0 +1,12 @@
+Bob Dylan, 2/24/02, Austin, Texas, Frank Erwin Center, University of Texas at Austin, 2CDR
+
+LB-4481, (64min+71min), Audience recording > Unknown transfer > CDR (x) > EAC (Secure/Offset) > WAV > FLAC (Level 8) > Data DVD > HD > Torrent, Not much spectral density above 17kHz, could be the same equipment as LB-0317 and LB-0319. CEDAR-type f/p d1t02 "oh yes ... larry campbell" (male). Background talk throughout but not overly distracting. Static d1t01@0:27-0:31; d2t07 begins w/ 4" silence. Excellent sound, A-.; bittorrent download 02/07; background talking begin of d1t3; excellent sound [A-]; not much above 17k; heard clipping/ limiting to -9db at d2t9 5:30
+
+CD1
+63:50, 1. Duncan And Brady, 2. Boots Of Spanish Leather, 3. It's Alright, Ma (I'm Only Bleeding), 4. Searching For A Soldier's Grave, 5. Maggie's Farm, 6. I'll Be Your Baby Tonight, 7. Lonesome Day Blues, 8. Lay Lady Lay, 9. High Water (for Charlie Patton), 10. Visions Of Johanna, 
+
+CD2
+70:39, 11. One Too Many Mornings, 12. Tangled Up In Blue, 13. Summer Days, 14. Sugar Baby, 15. The Wicked Messenger, 16. Rainy Day Women # 12 & 35, 17. Like A Rolling Stone, 18. Honest With Me, 19. Blowin' In The Wind, 20. All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

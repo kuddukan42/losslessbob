@@ -1,0 +1,119 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-06-10-buda.flacf 
+=================== 
+=================== 
+=================== 
+8096345dea58cfab20596a7223df01ec  BOB DYLAN 2008 June 10 Vienna, Stadthalle DVD COVER.JPG
+30086be457325610544251c4bd11402d  BOB DYLAN 2008 June 10 Vienna, Stadthalle TICKET.jpg
+cb4a7a1c716a8772b88ca0b6ef82f33e  BOB DYLAN 2008 June 10 Vienna, Stadthalle, Austria.ffp
+b43c5fd55ea43691bac67e56d8350138  BOB DYLAN 2008 June 10 Vienna, Stadthalle, Austria.md5
+8911dde5714c1a59c88319ee8dbc46ab  BOB DYLAN 2008 June 10 Vienna, Stadthalle, Austria.txt
+0ec5fc0afd777a19fd19e07195d2e77e  DISC I\01 Introduction.flac
+441751cc43b38b0b2cb9293ab87775c3  DISC I\02 Cat's In The Well.flac
+4c9c6d9a333140b254210208cff0fee5  DISC I\03 Love Minus Zero-No Limit.flac
+ad2991225dda11905ad20c9f7b2a17a3  DISC I\04 The Levee's Gonna Break.flac
+6236fc04c5bdacfc8f018f349f0f773d  DISC I\05 John Brown.flac
+7e1622a17f113cddf017ba1945972f20  DISC I\06 Sugar Baby.flac
+1ebf86f711260c4c88377cd93dc2941b  DISC I\07 High Water (For Charley Patton).flac
+65fdd4fe6aa412f09476b0fea5e90709  DISC I\08 Workingman's Blues #2.flac
+83735c1755f9a6ec3d1030f632a02fed  DISC I\09 Tangled Up In Blue.flac
+fc27d2e86224a8bff902216e47081833  DISC I\10 Masters Of War.flac
+866ae2768425a031223a6a52fcf8ab06  DISC I\11 It's Alright Ma (I'm Only Bleeding).flac
+13ee2fda42fc77ee714b0cd4ff8d19ae  DISC I\12 Beyond The Horizon.flac
+c7b1d559cc50031fa3c569e3cf723fbd  DISC II\01 Highway 61 Revisited.flac
+133f1f9b858802de0b07439aee53c6ab  DISC II\02 Nettie Moore.flac
+fa5476445e861bada080ef0c7a0de563  DISC II\03 Summer Days.flac
+bdc6b2e7e71a9839cc3970220fddb464  DISC II\04 Ain't Talkin'.flac
+233510ea6bd4c6db71d65a746f5166f0  DISC II\05 Thunder On The Mountain.flac
+b14a67f9e76b995ac1caf1a73eda4884  DISC II\06 Band introductions.flac
+25484a2b5b3c2e9083a055efaa669625  DISC II\07 All Along The Watchtower.flac
+9021dac7952606827dc6d89a1e3a7d51  DISC II\08 Blowin' In The Wind (2008 June 11 Salzburg).flac
+acadf8e499e4a2c1cb81ed0a2b2770cd  DISC II\09 Till I Fell In Love With You (2008 June 11 Salzburg).flac
+6b189be4568ca3777642e649e9b674ea  DISC II\10 Just Like A Woman (2008 June 3 St.Petersburg).flac
+d2d06e11491c260a9531670937699535  DISC II\11 Tryin' To Get To Heaven (2008 June 9 Ostrava).flac
+6fd3e23af2de11868f86c444e34bd6bf  DISC II\12 Positively 4th Street (2008 June 11 Salzburg).flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-10-buda.flacf\DISC II 
+=================== 
+=================== 
+=================== 
+01 Highway 61 Revisited.flac:a19af4bcca4d9f140dce08cfe25ff331
+02 Nettie Moore.flac:c2379eff1c57272f4ee8a734433b9c8b
+03 Summer Days.flac:d4d186d67f566d253d5ca6176b556a5f
+04 Ain't Talkin'.flac:392fc48c78b15f652bfab04eb1544a8d
+05 Thunder On The Mountain.flac:480396ec5205002ba070c36bf4ed0720
+06 Band introductions.flac:12e2d8d502285e13db0af000b8c136e9
+07 All Along The Watchtower.flac:261367046e542ac453b4680ff187e434
+08 Blowin' In The Wind (2008 June 11 Salzburg).flac:9ba9a2d23af2d2ffd0d2c5876e18dc01
+09 Till I Fell In Love With You (2008 June 11 Salzburg).flac:52c09f176dcc8c9ae37368381afcd83b
+10 Just Like A Woman (2008 June 3 St.Petersburg).flac:56d327159f132f2bc4ee00e482c91cd2
+11 Tryin' To Get To Heaven (2008 June 9 Ostrava).flac:8a83bf6c66d30ec8101d94c2f5ee6930
+12 Positively 4th Street (2008 June 11 Salzburg).flac:624f952c20f7f71159d9154f20c965c3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-10-buda.flacf\DISC I 
+=================== 
+=================== 
+=================== 
+01 Introduction.flac:a7844cc9a04f4f9f44d5deb84bb9bb13
+02 Cat's In The Well.flac:fdc10e02d5668b85287ca7b2c4f5c3bb
+03 Love Minus Zero-No Limit.flac:88e5210688c795f26ec9def7a32165a6
+04 The Levee's Gonna Break.flac:c4bafce5a5c45c63056fd0d0a2b5e844
+05 John Brown.flac:b88f564f17c5038e24a0982c6de29ab7
+06 Sugar Baby.flac:dac68abe9d926f20636107928238a9c1
+07 High Water (For Charley Patton).flac:c8e46a3d5c7ab1cbd5f283ee230e1aef
+08 Workingman's Blues #2.flac:2b47a7f499aa5498069ec85bd979c099
+09 Tangled Up In Blue.flac:e516a225fa8f9d7ade9767cf393e130c
+10 Masters Of War.flac:d8574c5bacd2f0c729271559055b7543
+11 It's Alright Ma (I'm Only Bleeding).flac:d2847868959dbc01fe386e1ef37a3187
+12 Beyond The Horizon.flac:900442b38e71498153348a3ca40e6327
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-10-buda.flacf\DISC II 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:29.05       68631404 B   ---   --   ---xx   flac  0.6433  01 Highway 61 Revisited.flac
+     7:54.67       83771228 B   ---   --   ---xx   flac  0.4840  02 Nettie Moore.flac
+     5:49.20       61610684 B   ---   --   ---xx   flac  0.6207  03 Summer Days.flac
+    11:29.74      121713692 B   ---   --   ---xx   flac  0.5379  04 Ain't Talkin'.flac
+     6:33.61       69468716 B   ---   --   ---xx   flac  0.6312  05 Thunder On The Mountain.flac
+     0:54.17        9565628 B   ---   --   ---xx   flac  0.5539  06 Band introductions.flac
+     4:37.14       48895772 B   ---   --   ---xx   flac  0.6075  07 All Along The Watchtower.flac
+     6:08.47       65025788 B   ---   --   ---xx   flac  0.5705  08 Blowin' In The Wind (2008 June 11 Salzburg).flac
+     6:34.23       69555740 B   ---   --   ---xx   flac  0.5878  09 Till I Fell In Love With You (2008 June 11 Salzburg).flac
+     7:36.71       80605436 B   ---   --   ---xx   flac  0.5743  10 Just Like A Woman (2008 June 3 St.Petersburg).flac
+     4:25.16       46783676 B   ---   --   ---xx   flac  0.5670  11 Tryin' To Get To Heaven (2008 June 9 Ostrava).flac
+     4:52.58       51645260 B   ---   --   ---xx   flac  0.6757  12 Positively 4th Street (2008 June 11 Salzburg).flac
+    73:26.23      777273024 B                            0.5828  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-10-buda.flacf\DISC I 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:36.60       17075564 B   ---   --   ---xx   flac  0.4738  01 Introduction.flac
+     3:58.61       42126716 B   ---   --   ---xx   flac  0.6189  02 Cat's In The Well.flac
+     5:24.22       57205388 B   ---   --   ---xx   flac  0.5843  03 Love Minus Zero-No Limit.flac
+     6:39.33       70461260 B   ---   --   ---xx   flac  0.6153  04 The Levee's Gonna Break.flac
+     6:02.14       63889772 B   ---   --   ---xx   flac  0.5482  05 John Brown.flac
+     7:48.66       82710476 B   ---   --   ---xx   flac  0.5074  06 Sugar Baby.flac
+     5:29.33       58113260 B   ---   --   ---xx   flac  0.6127  07 High Water (For Charley Patton).flac
+     6:40.32       70635308 B   ---   --   ---xx   flac  0.5670  08 Workingman's Blues #2.flac
+     8:25.43       89183180 B   ---   --   ---xx   flac  0.5988  09 Tangled Up In Blue.flac
+     5:25.56       57461756 B   ---   --   ---xx   flac  0.6000  10 Masters Of War.flac
+     7:32.18       79775180 B   ---   --   ---xx   flac  0.6216  11 It's Alright Ma (I'm Only Bleeding).flac
+     5:33.24       58797692 B   ---   --   ---xx   flac  0.4728  12 Beyond The Horizon.flac
+    70:37.12      747435552 B                            0.5738  (12 files)
+=================== 
+=================== 
+=================== 

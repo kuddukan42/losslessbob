@@ -1,0 +1,37 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-23-soundcheck-f.flacf 
+=================== 
+=================== 
+=================== 
+866012a2d12bcce40885adb8c832b3f1  1981 Soundchecks 17 & 18 Jul 81 + 23 Oct 81.txt
+c861cec591c0ea5f5e5805a164811e80  1981-10-23.md5
+ce6744435a7f42c4c5861dcf90d7b2a0  Track12.flac
+ef4e88395b7eafe2c2825ab78e2b0e50  Track13.flac
+e85a1a416cdd8c2a9781adae7c06a3b9  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-23-soundcheck-f.flacf 
+=================== 
+=================== 
+=================== 
+track12.flac:84564faf76be193e2a99fc71fa5cde77
+track13.flac:237284f99f73a1152396f7e72a565f7b
+track14.flac:cafdaa755736ccf6cffb5a0474e7db47
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-23-soundcheck-f.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:17.50       24284444 B   ---   --   ---xx   flac  0.3265  Track12.flac
+     5:44.59       60820412 B   ---   --   ---xx   flac  0.3391  Track13.flac
+     2:26.65       25907324 B   ---   --   ---xx   flac  0.3437  Track14.flac
+    10:29.24      111012180 B                            0.3374  (3 files)
+=================== 
+=================== 
+=================== 

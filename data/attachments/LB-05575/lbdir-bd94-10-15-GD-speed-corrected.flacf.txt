@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-15-GD-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+41c334e5cb99ca0413b1ff62dfb81b5d  bd-941015-Westpoint-GD.ffp
+51d8d87e476e27f6c099c02aafa7b35a  info.txt
+daf2f27d53f381c6e69517a448c40709  track101.flac
+64249d7ec98f6469e636bf7e5f622dc1  track102.flac
+72ef85a2ef475e3ba01fc881e4d0af29  track103.flac
+24292f42ef8ff385e5803e98cc485882  track104.flac
+acfe22ba8fc3cd1d23798d46afc4fe73  track105.flac
+60125b4f35e6dc6c38915445a029f33a  track106.flac
+6e10336878aa2a5a600f32bc99d2ce96  track107.flac
+013840a1ea37fd4054bd0e666cea9f62  track108.flac
+de8731533f6a20ce2629683eb27037cc  track109.flac
+ff3cf245f1b9f834e07169c4583e8764  track110.flac
+796685026d2245024e244962e3984619  track201.flac
+ddd44467c0f7837cfa1dc7bb9d5fe97a  track202.flac
+18c08fcc807319efb02e072458f91d77  track203.flac
+9caaf197fe90b5f141503f0aeefe2611  track204.flac
+cd890ea6733f8df84a8e64233bbedbf4  track205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-15-GD-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+track101.flac:eec1ab382f0a6912d9d6513acd2144d0
+track102.flac:7d04f9625e4b25d4e49df5ea1de2fca8
+track103.flac:b9d28c3c5c20366d086d0e53a9a72721
+track104.flac:8124f6f3d3bb13326b34f67624ad460c
+track105.flac:16b29f899cb0c546fdc7e0fbd5aa887a
+track106.flac:0017799a8e0b5c9895a67ca0704934a9
+track107.flac:fb6babdeb164667d08461a623f517896
+track108.flac:c8aefb7e6f4015f17eb561dfde656ed9
+track109.flac:3d1de89b97380dfc8592096bb81fa1cc
+track110.flac:d4a33a34d61f922807d7d4bbeb973155
+track201.flac:4fda15f25830d0af74b1b06755669693
+track202.flac:662aefe164cfbc7c75385a84addfef8e
+track203.flac:797604297ecae4d81ccebde529226ff7
+track204.flac:4cef686db9f30173d47a7436722352e9
+track205.flac:cd3271abd806e53c8651fe89c259f693
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-10-15-GD-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.44        6630332 B   ---   --   ---xx   flac  0.5095  track101.flac
+     7:37.34       80694812 B   ---   --   ---xx   flac  0.5656  track102.flac
+     6:37.47       70141388 B   ---   --   ---xx   flac  0.5599  track103.flac
+     5:55.36       62706716 B   ---   --   ---xx   flac  0.5999  track104.flac
+     8:46.24       92842892 B   ---   --   ---xx   flac  0.5504  track105.flac
+     9:22.43       99237980 B   ---   --   ---xx   flac  0.5769  track106.flac
+     8:31.59       90279212 B   ---   --   ---xx   flac  0.5350  track107.flac
+     5:33.39       58832972 B   ---   --   ---xx   flac  0.4837  track108.flac
+     6:21.49       67323692 B   ---   --   ---xx   flac  0.4933  track109.flac
+     6:36.32       69929708 B   ---   --   ---xx   flac  0.5155  track110.flac
+     6:24.16       67775276 B   ---   --   ---xx   flac  0.5976  track201.flac
+     8:27.68       89594780 B   ---   --   ---xx   flac  0.6015  track202.flac
+     9:26.01       99844796 B   ---   --   ---xx   flac  0.5750  track203.flac
+     5:23.44       57080732 B   ---   --   ---xx   flac  0.6160  track204.flac
+     8:06.27       85793948 B   ---   --   ---xx   flac  0.5246  track205.flac
+   103:48.38     1098709236 B                            0.5572  (15 files)
+=================== 
+=================== 
+=================== 

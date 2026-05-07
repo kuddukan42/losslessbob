@@ -1,0 +1,44 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-18-d2fix 
+=================== 
+=================== 
+=================== 
+62844c3730de18426447de2197dd5338  bd88-10-18fixed.txt
+190789f87bdfa58f0960dad9fd3886d4  noname.md5
+5ac48f8839077410c8e992d92f50e304  readme.txt
+9408d68e69e895520c57c1609b82e598  Track01.shn
+49a2c07013bd74cee68c8e06f08ff34e  Track02.shn
+d20843a73a2e1f1b9137767a8e00904d  Track03.shn
+7940c99591f9704d5fb57939b20a4398  Track04.shn
+9f840680052cc4c5c41afb6112aa0296  Track05.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-10-18-d2fix 
+=================== 
+=================== 
+=================== 
+253e266fac253a1e1406786a849e6629  [shntool]  Track01.wav
+80faa6b0174d9b5643ebe0295cf7d7df  [shntool]  Track02.wav
+9c854926767eeb75ac5d0abe64d96249  [shntool]  Track03.wav
+288a9fbcfe1bebccc8b880fe0245d8a9  [shntool]  Track04.wav
+ce1142e9060909b5fd2b88dfa20ad6f9  [shntool]  Track05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-18-d2fix 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.38       51951020 B   ---   --   ---xx    shn  0.6694  Track01.shn
+     4:11.14       44309372 B   ---   --   ---xx    shn  0.6909  Track02.shn
+     5:51.64       62066972 B   ---   --   ---xx    shn  0.7325  Track03.shn
+     5:45.15       60893324 B   ---   --   ---xx    shn  0.7533  Track04.shn
+     4:37.01       48865196 B   ---   --   ---xx    shn  0.7588  Track05.shn
+    25:19.57      268085884 B                            0.7229  (5 files)
+=================== 
+=================== 
+=================== 

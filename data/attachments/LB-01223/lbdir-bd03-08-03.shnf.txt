@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-03.shnf 
+=================== 
+=================== 
+=================== 
+099044f9cecaf4f180176de90418c10a  bd03-08-03.txt
+9ec86666e27df3db3ec26438a2ec189b  bd03-08-03d1t01.shn
+05d9c7de115a3295a7cab5e611be01f0  bd03-08-03d1t02.shn
+3c35e0795d62e065c90cb8139744a867  bd03-08-03d1t03.shn
+73749c6ff46ca874c50b2a20754e5173  bd03-08-03d1t04.shn
+346fd932280cba4708b6ce07dcf86ea3  bd03-08-03d1t05.shn
+a32ac22257f2d71626703e7a46c3ab57  bd03-08-03d1t06.shn
+53c5b66484abb7e48a15d6d778201581  bd03-08-03d1t07.shn
+6e6e22172dddaed8e48b7bfb2c6b51de  bd03-08-03d1t08.shn
+e7580e81986e1fa816d4c30e1c365dee  bd03-08-03d1t09.shn
+55ffedc1d459954fd43b32309237c8ad  bd03-08-03d1t10.shn
+462add22e3bece679f85df1ffdc2a410  bd03-08-03d1t11.shn
+c49fa5f2bb641f77c1fcc143be7061c8  bd03-08-03d2t01.shn
+243a3dd509365b132ca0e5525c87573c  bd03-08-03d2t02.shn
+6de9019d130478b3fd581ac64c937b16  bd03-08-03d2t03.shn
+4aafef306ae2574d67b723b49a2824b6  bd03-08-03d2t04.shn
+5ec435e25dc9b52291bb621de373e5f5  bd03-08-03d2t05.shn
+2d0e4e53e4848ed6f436a15dd264316b  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-03.shnf 
+=================== 
+=================== 
+=================== 
+92d99c52d093d3fdf5dbd825221647db  [shntool]  bd03-08-03d1t01.wav
+13c6e84a993deba7b372f311e06b82cc  [shntool]  bd03-08-03d1t02.wav
+911c8e22d234fc1bd670a789c3676d5b  [shntool]  bd03-08-03d1t03.wav
+2b79d0bf8f4b3292afa1f446bb778389  [shntool]  bd03-08-03d1t04.wav
+b32635ef4af12493f9d849223a1270b3  [shntool]  bd03-08-03d1t05.wav
+53288b030d939bf03b072758ae79ca85  [shntool]  bd03-08-03d1t06.wav
+dc8b1ace93315f2e004c1c220dceb526  [shntool]  bd03-08-03d1t07.wav
+fa28afa6e309fe0638888d68098197d2  [shntool]  bd03-08-03d1t08.wav
+be9fcbddf9c657f0d813b9da485a5d84  [shntool]  bd03-08-03d1t09.wav
+d317b7a18e62d3ef9db85d50043c1386  [shntool]  bd03-08-03d1t10.wav
+98980c278457c21dc7d6827bb7acb5f2  [shntool]  bd03-08-03d1t11.wav
+4ed1f5ee71fcd078433bb91b5581d73b  [shntool]  bd03-08-03d2t01.wav
+adb82f8549a695df3df9dfa340c83e58  [shntool]  bd03-08-03d2t02.wav
+36edfc5d8a66366eb78f9d22a9790a1b  [shntool]  bd03-08-03d2t03.wav
+4f521581ea84b6238726d611d9249866  [shntool]  bd03-08-03d2t04.wav
+57a098b0ec2430042f8ea1e3e0a5dd38  [shntool]  bd03-08-03d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-03.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:26.28       78740300 B   ---   --   ---xx    shn  0.5852  bd03-08-03d1t01.shn
+     5:48.02       61391948 B   ---   --   ---xx    shn  0.6055  bd03-08-03d1t02.shn
+     5:09.28       54573500 B   ---   --   ---xx    shn  0.5708  bd03-08-03d1t03.shn
+     6:56.63       73530620 B   ---   --   ---xx    shn  0.5960  bd03-08-03d1t04.shn
+     6:35.20       69725084 B   ---   --   ---xx    shn  0.6046  bd03-08-03d1t05.shn
+     7:08.25       75558044 B   ---   --   ---xx    shn  0.6166  bd03-08-03d1t06.shn
+     4:56.11       52240316 B   ---   --   ---xx    shn  0.6256  bd03-08-03d1t07.shn
+     5:47.56       61342556 B   ---   --   ---xx    shn  0.4826  bd03-08-03d1t08.shn
+     6:45.62       71587868 B   ---   --   ---xx    shn  0.6183  bd03-08-03d1t09.shn
+     7:56.68       84126380 B   ---   --   ---xx    shn  0.6451  bd03-08-03d1t10.shn
+    10:50.63      114808220 B   ---   --   ---xx    shn  0.5549  bd03-08-03d1t11.shn
+     6:08.04       64924652 B   ---   --   ---xx    shn  0.5779  bd03-08-03d2t01.shn
+     9:47.65      103699724 B   ---   --   ---xx    shn  0.5831  bd03-08-03d2t02.shn
+     5:11.20       54907484 B   ---   --   ---xx    shn  0.6178  bd03-08-03d2t03.shn
+     2:38.20       27918284 B   ---   --   ---xx    shn  0.5549  bd03-08-03d2t04.shn
+     3:45.60       39831164 B   ---   --   ---xx    shn  0.5461  bd03-08-03d2t05.shn
+   102:52.70     1088906144 B                            0.5884  (16 files)
+=================== 
+=================== 
+=================== 

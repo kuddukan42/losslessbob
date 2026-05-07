@@ -1,0 +1,8 @@
+Bob Dylan, 11/22/80, San Francisco, 2CDR
+
+LB-6573, (62min+56min), JTT; "Very Good Audience Recording", Very Good Audience Recording, SOURCE: CDRs > EAC > Soundforge 9 * > FLAC Level 6 Align on sector boundaries, * Tidy Transitions, Disc One, Track 10 (start cut), Artwork by JTT, August 2007; bittorrent download 10/08; same as L;B-4558 with same wav and spectral view and levels on d1t7 and d1t10 except fade in at beginnning of d1t10 and gaps between tracks replaced with discontinuity; this is also missing Carolyn Dennis: Walk Around Heaven All Day on that one; (did not listen to all of this)
+
+Disc One, 01. Gotta Serve Somebody, 02. I Believe In You, 03. Like A Rolling Stone, 04. Man Gave Names To All The Animals, 05. Simple Twist Of Fate, 06. Fever, 07. Girl From The North Country, 08. We Just Disagree, 09. Ain't Gonna Go To Hell For Anybody, 10. Slow Train, 11. Abraham, Martin And John, 12. Rise Again, 13. Let's Keep It Between Us, Disc Two, 01. Mary From The Wild Moor, 02. Solid Rock, 03. Just Like A Woman, 04. Senor (Tales Of Yankee Power), 05. Mr. Tambourine Man *, 06. Knockin' On Heaven's Door *, 07. In The Garden, 08. Blowin' In The Wind, 09. City Of Gold, 10. It Ain't Me, Babe, 11. A Hard Rain's A-Gonna Fall, * with Roger McGuinn
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

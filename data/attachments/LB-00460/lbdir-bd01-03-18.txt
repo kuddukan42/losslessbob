@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-03-18 
+=================== 
+=================== 
+=================== 
+0f5b9f8720b67be139d2c327aeb293e9  bd01-03-18.txt
+f2b190e7806c47e3a99cc9e88fa79ce2  dylan00-03-18d1t01.shn
+21919daa76d881901ba8b7d2c92bca3e  dylan00-03-18d1t02.shn
+60614b9b4a4ab32dc27ceb6a54cfd0e1  dylan00-03-18d1t03.shn
+711c829d104462467a585b209c44ced3  dylan00-03-18d1t04.shn
+90c5b1561ef1f9a0229237cdce90a551  dylan00-03-18d1t05.shn
+2daa018d96fec57af879950b70119009  dylan00-03-18d1t06.shn
+9b1a6e377190e1b0d7f9590f602bb2ed  dylan00-03-18d1t07.shn
+2e1af73c4b54a353f7d5564f20d6bdb2  dylan00-03-18d1t08.shn
+2dfc2ba0b8fa370e3e1a66aba1399125  dylan00-03-18d1t09.shn
+a70e8670a5f1f823639ac220b206051e  dylan00-03-18d1t10.shn
+a1e119337e580b9f85759ccee8120cbd  dylan00-03-18d2t01.shn
+e4ab5b99a32794cb2b7b748364125bf6  dylan00-03-18d2t02.shn
+662311f12a93bf560582a266211175b6  dylan00-03-18d2t03.shn
+53cb267561e9c94267ce5f807c6bb15f  dylan00-03-18d2t04.shn
+5f68db9ec12f49f8da7f44a3dbab9982  dylan00-03-18d2t05.shn
+d1f5ffca272e74b2cfa3a0f3c37b9dee  dylan00-03-18d2t06.shn
+1700f115cc9702c5e887da0f73ec998b  dylan00-03-18d2t07.shn
+b009a647c32776988568e9b5852016e9  dylan00-03-18d2t08.shn
+d99e9b8d920c0b1612f7947117a10b86  dylan00-03-18d2t09.shn
+e93c355cfbedcb9f2e7edceed3d7dbb2  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-03-18 
+=================== 
+=================== 
+=================== 
+45e61d6a1c7d7b165f3fa5c62e03a48d  [shntool]  dylan00-03-18d1t01.wav
+13eb0bca90725850078ee6d1304d6574  [shntool]  dylan00-03-18d1t02.wav
+612555ddb35761dea3116b94146d7963  [shntool]  dylan00-03-18d1t03.wav
+900e3f4beeb08f74bdce8a33b7c2d5b3  [shntool]  dylan00-03-18d1t04.wav
+54243e2f80473872524ee928d3e55104  [shntool]  dylan00-03-18d1t05.wav
+22dd10c201d19c3998e7887932dce8b0  [shntool]  dylan00-03-18d1t06.wav
+437b31b42670d8572da6bedb14ef0b59  [shntool]  dylan00-03-18d1t07.wav
+f3b73c997ee503eb7cfa8a88bf641126  [shntool]  dylan00-03-18d1t08.wav
+d1ffa7ce3bccd76856de86e2e89e3079  [shntool]  dylan00-03-18d1t09.wav
+3a3b83cc47d81a11b96229857ffcf1c0  [shntool]  dylan00-03-18d1t10.wav
+9d83181e3971532a1ba18a64985faa15  [shntool]  dylan00-03-18d2t01.wav
+98235862e0a61d0e056b65fe96efee1d  [shntool]  dylan00-03-18d2t02.wav
+d4d293938c52c3f1802f8dd8b0fc3753  [shntool]  dylan00-03-18d2t03.wav
+38360a34151cb3980e21f7f513efdf4d  [shntool]  dylan00-03-18d2t04.wav
+dc39d73bdaf9897663976eacc44acaa6  [shntool]  dylan00-03-18d2t05.wav
+e77f8e0a0dd2c435f46b709e24ff5b7e  [shntool]  dylan00-03-18d2t06.wav
+0d0594320d95131144f20bac509ae573  [shntool]  dylan00-03-18d2t07.wav
+c609866f79a57ac2660e0e261b0bed71  [shntool]  dylan00-03-18d2t08.wav
+db10f866b84bf34710506dd28e2da32e  [shntool]  dylan00-03-18d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-18 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.33       42766474 B   ---   h-   ---xx    shn  0.5809  dylan00-03-18d1t01.shn
+     6:00.32       63579322 B   ---   h-   ---xx    shn  0.5885  dylan00-03-18d1t02.shn
+     8:40.25       91786858 B   ---   h-   ---xx    shn  0.5604  dylan00-03-18d1t03.shn
+     8:00.38       84761434 B   ---   h-   ---xx    shn  0.5864  dylan00-03-18d1t04.shn
+     6:00.27       63567562 B   ---   h-   ---xx    shn  0.5236  dylan00-03-18d1t05.shn
+     6:00.32       63579322 B   ---   h-   ---xx    shn  0.5775  dylan00-03-18d1t06.shn
+     6:50.46       72432250 B   ---   h-   ---xx    shn  0.5087  dylan00-03-18d1t07.shn
+     9:00.28       95321914 B   ---   h-   ---xx    shn  0.5020  dylan00-03-18d1t08.shn
+     7:33.54       80036266 B   ---   h-   ---xx    shn  0.5938  dylan00-03-18d1t09.shn
+     8:09.41       86356090 B   ---   h-   ---xx    shn  0.4845  dylan00-03-18d1t10.shn
+     4:10.34       44180026 B   ---   h-   ---xx    shn  0.5874  dylan00-03-18d2t01.shn
+     8:50.12       93520282 B   ---   h-   ---xx    shn  0.5710  dylan00-03-18d2t02.shn
+     5:45.65       61010938 B   ---   h-   ---xx    shn  0.5316  dylan00-03-18d2t03.shn
+     7:02.67       74598442 B   ---   h-   ---xx    shn  0.5852  dylan00-03-18d2t04.shn
+     4:10.30       44170618 B   ---   h-   ---xx    shn  0.4687  dylan00-03-18d2t05.shn
+     4:48.23       50857354 B   ---   h-   ---xx    shn  0.5880  dylan00-03-18d2t06.shn
+     6:19.38       66945034 B   ---   h-   ---xx    shn  0.5289  dylan00-03-18d2t07.shn
+     5:45.45       60963898 B   ---   h-   ---xx    shn  0.5951  dylan00-03-18d2t08.shn
+     5:52.01       62095210 B   ---   h-   ---xx    shn  0.5086  dylan00-03-18d2t09.shn
+   123:03.71     1302529294 B                            0.5503  (19 files)
+=================== 
+=================== 
+=================== 

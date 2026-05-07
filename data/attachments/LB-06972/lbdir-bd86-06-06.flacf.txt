@@ -1,0 +1,41 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-06-06.flacf 
+=================== 
+=================== 
+=================== 
+100b8217d07dd5e345e8a1d5dec37938  01 -intro-.flac
+6f19724a5d43820de216525a283e470a  02 Band Of The Hand.flac
+0da3ee6ac518e3fbbe53e1443efa73ee  03 License To Kill.flac
+54e08e6871afdc9cb7d2fb930d22c6ce  04 Bob Dylan - Tom Petty.md5
+d953ebf7163544b6c686a8343caa55b2  04 Shake A Hand.flac
+e79bdbd5eeccc43436721f4f7f1dd772  fingerprint.txt
+d824bae76745da65e25bd91e0686091c  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-06-06.flacf 
+=================== 
+=================== 
+=================== 
+01 -intro-.flac:46cf86e1f1cfce7bcd166e2625202e34
+02 Band Of The Hand.flac:18eaaf98bd980762c4187a8f089dbbae
+03 License To Kill.flac:300a1cc92be005820af006cb57337394
+04 Shake A Hand.flac:2705b54032c32bfdfd47ab183dc2b908
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-06-06.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:14.40       23731724 B   ---   --   ---xx   flac  0.5718  01 -intro-.flac
+     4:19.74       45861692 B   ---   --   ---xx   flac  0.5913  02 Band Of The Hand.flac
+     3:41.15       39019724 B   ---   --   ---xx   flac  0.5775  03 License To Kill.flac
+     4:29.40       47545724 B   ---   --   ---xx   flac  0.5829  04 Shake A Hand.flac
+    14:45.19      156158864 B                            0.5823  (4 files)
+=================== 
+=================== 
+=================== 

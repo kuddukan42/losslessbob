@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-09-01-musiclists.flacf 
+=================== 
+=================== 
+=================== 
+956ced89cd4ce3bd24e92307168b1d66  01 - Intro.flac
+9f0852a455817a626b6fdad0744072fa  02 - Watching the River Flow.flac
+59accadbd0a5697a82421291004b6ad6  03 - It's all Over Now, Baby Blue.flac
+f0845cc610adf7d82ecbf74635e892c6  04 - Stuck Inside of Mobile.flac
+21e8ff5dc5839bb26519f6cd5709d4f2  05 - Million Miles.flac
+e13f2c9bca339cf2dec819cef48d3d3c  06 - Simple Twist of Fate.flac
+8bc289af1a52b83d401bee00859ec8bc  07 - High Water (For Charlie Patton).flac
+b2c871eb6e8a1c6bbd4575a237cc1f49  08 - My Back Pages.flac
+c2c6627b38377bf6bc50aa112c814750  09 - Summer Days.flac
+b408daca153c8788bdc1e4f08d0a9d50  10 - Love Sick.flac
+1a5ac1fb66252b01c5b12cc55676a81e  11 - Tweedle Dee & Tweedle Dum.flac
+bef95e7cf9c0270d8ea61f79979e2131  12 - Just Like a Woman.flac
+80dedc40aedba7b9134741b122324b8e  13 - Highway 61 Revisited.flac
+249d7620ef60db6415efc6c24bc7f499  14 - Nettie Moore.flac
+2c6388b7025d17d5c65b91efa0c261ba  15 - Thunder on the Mountain.flac
+60df60c449af7ed790f3d56da4a65ff7  16 - Like a Rolling Stone.flac
+2d38a04a1fc775ebf09f0882ef8ed7cf  17 - Band Intro.flac
+6367c1d7d4e3c684b6c91cb0e74790a8  18 - All Along the Watchtower.flac
+58e2d8b4579f9a7ecc997f16cb2f84a4  Bob Dylan 1SEP08 The Joint Las Vegas.ffp.txt
+e03ee637e99ec6891d4d89ee5e199082  Bob Dylan 1SEP08 The Joint Las Vegas.md5
+e39721ac7bdbcb7dbc6d4ce3bf68d5c1  Bob Dylan 1SEP08 The Joint Las Vegas.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-09-01-musiclists.flacf 
+=================== 
+=================== 
+=================== 
+01 - Intro.flac:09f938357dd90a3b2619a3de24ab0df5
+02 - Watching the River Flow.flac:2eda269b743af4fd5297c80705baccf4
+03 - It's all Over Now, Baby Blue.flac:dcc774bf5d1d992c24c7dcec889d332c
+04 - Stuck Inside of Mobile.flac:648eed7e3dd634765782d83b1c312a66
+05 - Million Miles.flac:7f9e097a43d6ec1eb907a5cdf29d2572
+06 - Simple Twist of Fate.flac:77fc8edc0f69bbf24d621f29edbc2d8d
+07 - High Water (For Charlie Patton).flac:eb3340b04bb1bde472088bc81b5514e4
+08 - My Back Pages.flac:10b5c728e0ecb4500625b859658c7543
+09 - Summer Days.flac:d9ae8a17cebfe16728393e4f77e1b161
+10 - Love Sick.flac:442730bcecbff299790b0b8bb53f01b5
+11 - Tweedle Dee & Tweedle Dum.flac:ec7e3e6bd959c2bbb8abe500ba5672af
+12 - Just Like a Woman.flac:439f987918829cb97811be9da82aa0ad
+13 - Highway 61 Revisited.flac:e882360f7e944c95fbed1b8c6597dcfc
+14 - Nettie Moore.flac:7e2b3671739bb3c6e055a0a39bb68351
+15 - Thunder on the Mountain.flac:40017b8c125362152ee1c743fa0f5d1a
+16 - Like a Rolling Stone.flac:8865943d6843462f014ae5ae18c0d6f0
+17 - Band Intro.flac:b6988a75e6d9d176128aa5ad7b46b18c
+18 - All Along the Watchtower.flac:40f049f24dfe4368b333bd2296304cf7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-09-01-musiclists.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.57       10189480 B   -b-   --   ---xx   flac  0.4875  01 - Intro.flac
+     4:22.74       46390000 B   -b-   --   ---xx   flac  0.4944  02 - Watching the River Flow.flac
+     5:44.74       60854516 B   -b-   --   ---xx   flac  0.4917  03 - It's all Over Now, Baby Blue.flac
+     8:13.36       87050296 B   -b-   --   ---xx   flac  0.5257  04 - Stuck Inside of Mobile.flac
+     7:07.71       75490128 B   -b-   --   ---xx   flac  0.4731  05 - Million Miles.flac
+     7:48.38       82644344 B   -b-   --   ---xx   flac  0.4515  06 - Simple Twist of Fate.flac
+     5:46.16       61072632 B   -b-   --   ---xx   flac  0.4745  07 - High Water (For Charlie Patton).flac
+     7:15.69       76896976 B   -b-   --   ---xx   flac  0.4601  08 - My Back Pages.flac
+     5:59.10       63351948 B   -b-   --   ---xx   flac  0.4768  09 - Summer Days.flac
+     5:48.52       61508868 B   -b-   --   ---xx   flac  0.4614  10 - Love Sick.flac
+     5:08.47       54441896 B   -b-   --   ---xx   flac  0.4522  11 - Tweedle Dee & Tweedle Dum.flac
+     7:49.00       82731592 B   -b-   --   ---xx   flac  0.4539  12 - Just Like a Woman.flac
+     6:49.35       72229288 B   -b-   --   ---xx   flac  0.4685  13 - Highway 61 Revisited.flac
+     7:49.32       82807932 B   -b-   --   ---xx   flac  0.4351  14 - Nettie Moore.flac
+     7:16.06       76924656 B   -b-   --   ---xx   flac  0.4820  15 - Thunder on the Mountain.flac
+     7:28.28       79092700 B   -b-   --   ---xx   flac  0.4868  16 - Like a Rolling Stone.flac
+     0:29.48        5229384 B   -b-   --   ---xx   flac  0.4897  17 - Band Intro.flac
+     5:14.31       55461588 B   -b-   --   ---xx   flac  0.5015  18 - All Along the Watchtower.flac
+   107:10.49     1134368224 B                            0.4739  (18 files)
+=================== 
+=================== 
+=================== 

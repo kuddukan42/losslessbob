@@ -1,0 +1,128 @@
+===================
+===================
+===================
+=== 1980-04-17 Massey Hall, Toronto, Ontario, Canada.txt
+===================
+===================
+===================
+Massey Hall
+Toronto, Ontario, Canada
+April 17, 1980
+
+Bridges-Evans-King-Havis-Young:
+	Let It Ride (McCoy/Dennis)
+	(You've Got To) Hold On (?) 
+	Look Up And Live By Faith (Roberts Lawrence Curtis)
+	Show Me The Way Lord (?)
+	Freedom At The Wall (?)
+	This Train Is Bound For Glory (This Train) (Big Bill Broonzy)
+7. Gotta Serve Somebody
+8. I Believe In You
+9. When You Gonna Wake Up
+10. Ain't Gonna Go 
+11. To Hell For Anybody
+12. Cover Down, Break Through
+13. Precious Angel
+14. Man Gave Names To All The Animals
+15. Slow Train
+16. Regina McCreary Havis: My Heart (Regina McCreary Havis)
+17. Mona Lisa Young: Stranger In The City (Healing) (?)
+18. Do Right To Me Baby (Do Unto Others)
+19. Solid Rock
+20. Saving Grace
+21. Saved (Bob Dylan/Tim Drummond)
+22. What Can I Do For You?
+23. In The Garden
+24. Are You Ready?
+25. Pressing On
+
+
+First concert of the Third Gospel Tour
+Gospel concert # 51
+1980 concert # 25
+First concert with the Third Gospel Band:
+Bob Dylan (vocal & guitar)
+Fred Tackett (guitar)
+Spooner Oldham (keyboards)
+Tim Drummond (bass)
+Terry Young (keyboards)
+Jim Keltner (drums)
+Clydie King, Gwen Evans, Mary Elizabeth Bridges, Regina Havis, Mona Lisa Young (background vocals)
+
+13 Bob Dylan (harmonica)
+16 Bob Dylan (piano)
+
+NOTE: Live debuts of Ain't Gonna Go To Hell For Anybody and Cover Down, Break Through
+
+
+
+BobTalk:
+Thank you. Torontos a beautiful city. Id like to say hello to a friend of mine, Gordon Lightfoot, one of my favorite songwriters. (..). Aint gonna go to hell for anybody. I know Gordon feels that same way too. Anyway, (..) pressure, Gordon Lightfoot. Been a long time. Right, Gordon? This thing here is called Cover Down, Break Through. If youd ever want to cover down. (after Aint Gonna Go To Hell For Anybody)
+Thats the first time weve ever played that. I hope we didnt (..). (after Cover Down, Break Through)
+[Shouts from the audience: Hurricane!, Judas!, If Dogs Run Free!] (after Precious Angel)
+Its far too late for this world. You better (..) for the next one. All right. You get a lot of criticism not for seeing what you believe, you really do. [Voice from the audience: I dont believe you!] Thats all right, I wanted to say it anyway. I (..) friends to lose as it is, so (..). (before Slow Train)
+Thank you, thank you. Some of the girls been with me for a while, made my records with me, some are new. Gonna bring out a girl (..) for a while. Gonna sing a song she wrote. Regina McCreary. (..). (after Slow Train)
+Thank you. Anybody know what time it is? Anybody know what time? [Voice from the audience: 8 oclock!] I saw the newspaper last night that The Who were playing in, I think it was Vancouver last night. Peter Townshend he apologized to all the fans, he said to them we'll never leave you alone again. You just think about that for a minute. There is one who will never leave you alone, I just don't think that it's Peter. He he. (before Saved)
+We dont have time for one more. [Someone in the band: We have time for one more.] The man says we can play one more. [Voice from the audience: One more hour!] Gordon, I want to see you after the show. Ha ha. Always have a good time here in Toronto, beautiful city. Trying to revive itself. (before In The Garden)
+I wanna give youyou should give a hand to this fine supporting group up here. They travel with me everywhere I go. I know you're gonna read in the newspapers tomorrow that everybody walked out. You tell them the truth now. On the keyboards tonight, Spooner Oldham. On the other set of keyboards, Terry Young. On the drums, Jim Keltner. Lead guitar, Fred Tackett. Playing bass guitar tonight, Tim Drummond. On the far left, your right, a young lady who's a legend in her own time, Miss Clydie King. Standing next to her is Mary Elizabeth Bridges. All right. Mona Lisa Young. Standing next to her is Gwen Evans. You didn't hear her sing tonight, maybe you will tomorrow night. And standing next to her of course, you met this young lady earlier, Regina McCreary. (before Are You Ready?)
+
+Stereo studio recording, 135 minutes
+===================
+===================
+===================
+=== md5.txt
+===================
+===================
+===================
+11dc33d64df3acdc1b4138c354777b54 *14 What can I do for you.shn
+c5c5a4f38bd96ef9a68ea72a200d1e37 *01 Gotta serve somebody.shn
+e059a9d8cc3746794971bc1232246148 *02 I believe in you.shn
+9392c120f8e1e1aa24618ef6c22fee45 *03 When you gonna wake up.shn
+6a99a7959dd6d33a38a0e8a86ee171e7 *04 Ain't gonna go to hell for anybody.shn
+ad4f270a740f9919a636327be5896e9a *05 Cover down, break through.shn
+4cdcfab47861834cdd8890d8174945f2 *06 Precious angel.shn
+fab5ee06a676b092d046a67dc36027e6 *07 Man gave names to all the animals.shn
+547be824850d7a7fa47d0c8056d63b14 *08 Slow train.shn
+d838f9aaa9cafe287572e1910cc28ef2 *10 Do right to me baby (do unto others).shn
+6a3fa725789203f66beaf38819c1508f *11 Solid rock.shn
+4a4e540a374d0f907898b4b1b57244c7 *12 Saving grace.shn
+8157a9cfbfbb78bde75628f5fdffb963 *13 Saved.shn
+
+
+43b9ec2f6ca9aae84ca511b691c6ee09 *03 Pressing on.shn
+7317dd17b2a61ae3a2fd6ccfd27bf723 *01 In the garden.shn
+f252f67d1f25034b34adb4e8af586104 *02 Are you ready.shn
+
+===================
+===================
+===================
+=== 1980-04-17 Toronto, Ontario, Canada d1.md5
+===================
+===================
+===================
+11dc33d64df3acdc1b4138c354777b54 *14 What can I do for you.shn
+c5c5a4f38bd96ef9a68ea72a200d1e37 *01 Gotta serve somebody.shn
+e059a9d8cc3746794971bc1232246148 *02 I believe in you.shn
+9392c120f8e1e1aa24618ef6c22fee45 *03 When you gonna wake up.shn
+6a99a7959dd6d33a38a0e8a86ee171e7 *04 Ain't gonna go to hell for anybody.shn
+ad4f270a740f9919a636327be5896e9a *05 Cover down, break through.shn
+4cdcfab47861834cdd8890d8174945f2 *06 Precious angel.shn
+fab5ee06a676b092d046a67dc36027e6 *07 Man gave names to all the animals.shn
+547be824850d7a7fa47d0c8056d63b14 *08 Slow train.shn
+d838f9aaa9cafe287572e1910cc28ef2 *10 Do right to me baby (do unto others).shn
+6a3fa725789203f66beaf38819c1508f *11 Solid rock.shn
+4a4e540a374d0f907898b4b1b57244c7 *12 Saving grace.shn
+8157a9cfbfbb78bde75628f5fdffb963 *13 Saved.shn
+===================
+===================
+===================
+=== 1980-04-17 Toronto, Ontario, Canada d2.md5
+===================
+===================
+===================
+43b9ec2f6ca9aae84ca511b691c6ee09 *03 Pressing on.shn
+7317dd17b2a61ae3a2fd6ccfd27bf723 *01 In the garden.shn
+f252f67d1f25034b34adb4e8af586104 *02 Are you ready.shn
+===================
+===================
+===================

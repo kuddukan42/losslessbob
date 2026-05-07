@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-19-c.flacf 
+=================== 
+=================== 
+=================== 
+40d8ec8531435449df8e387be3e83b87  01. Track 1.flac
+a8643d10171deaf5c1ae0466903e55b0  02. Track 2.flac
+8af35b225e171772087d1da7b802a80b  03. Track 3.flac
+0fc05bdcb7391ea649169dd3ca13c411  04. Track 4.flac
+40e065f8d20ddb7f8986a80ec637d3bf  05. Track 5.flac
+59f636bc9d5742f64a5acf9484bdc5ff  06. Track 6.flac
+4c43954682b9787f7e60dbb57c698573  07. Track 7.flac
+66648401a21e74f3c41bb1bb83ac4e21  08. Track 8.flac
+d30b93a4e2493ece1eb5d250b65971f5  09. Track 9.flac
+6951ee692aa86b252449f62f7ea33f94  10. Track 10.flac
+b12f4bbd69ae626fb361207d9defb7a8  11. Track 11.flac
+a007a6f82b3c3fff12f56c124bf8045b  12. Track 12.flac
+187e3bb068711ff6aa085c89e526f939  13. Track 13.flac
+6e380eb7ad914a3b3f5d7691bb1c63cc  14. Track 14.flac
+72cf65ce485ebcc180114ee87fca0497  15. Track 15.flac
+3330275bae89ffaa20e9a337468f7d9b  16. Track 16.flac
+27b06c72465eca6e20c61735b7b2ee15  Bob Dylan 1988.19.09 Charlottesville [Unknown Audience].md5
+587a73ee9210a843fb759b91fb663a98  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-19-c.flacf 
+=================== 
+=================== 
+=================== 
+01. Track 1.flac:f021e9eb0f7a0530029e910214bd6a55
+02. Track 2.flac:402bf622ae05d4708bbc5c18b54bbdff
+03. Track 3.flac:8b7b55f4ff5b861a5293cc99968d0a18
+04. Track 4.flac:285680fd365c2532c6423d83be8f2720
+05. Track 5.flac:43a9af4cd5fe133ad3ecea61b63b0d5c
+06. Track 6.flac:f2ab5a5f1a127fff866d68333fc4cb7c
+07. Track 7.flac:a19c1f513f5adeaff556e99a7f6a952b
+08. Track 8.flac:fc6f921a28cb56a7a6eaaee76c7cc864
+09. Track 9.flac:160f8e86ca2502e93b82ecc6e9ecf683
+10. Track 10.flac:62137d4f1fb30ba3f4b49478bffac25d
+11. Track 11.flac:9ec17c2efd6177cdc98d3d779396476a
+12. Track 12.flac:b4e697160c448914245b677881eb85e9
+13. Track 13.flac:cb5d3e5689f76042dcff9ec704fb6d46
+14. Track 14.flac:cb67086ee82cf9c9a39ddc8a9a80bdfa
+15. Track 15.flac:e718fcf0d0ed74214e6e47520c5e2026
+16. Track 16.flac:0da39ac5ac9ddd64abcc0c6abbfe43bd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-19-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:15.03       34405100 B   ---   --   ---xx   flac  0.6567  01. Track 1.flac
+     5:59.30       63398204 B   ---   --   ---xx   flac  0.6719  02. Track 2.flac
+     5:25.52       57452348 B   ---   --   ---xx   flac  0.6732  03. Track 3.flac
+     4:57.20       52437884 B   ---   --   ---xx   flac  0.6840  04. Track 4.flac
+     4:55.30       52108604 B   ---   --   ---xx   flac  0.6940  05. Track 5.flac
+     4:21.30       46111004 B   ---   --   ---xx   flac  0.6885  06. Track 6.flac
+     5:20.16       56485676 B   ---   --   ---xx   flac  0.6124  07. Track 7.flac
+     3:58.45       42089084 B   ---   --   ---xx   flac  0.6481  08. Track 8.flac
+     4:42.60       49885964 B   ---   --   ---xx   flac  0.6451  09. Track 9.flac
+     3:39.04       38641052 B   ---   --   ---xx   flac  0.6706  10. Track 10.flac
+     5:17.70       56083484 B   ---   --   ---xx   flac  0.6689  11. Track 11.flac
+     6:06.40       64656524 B   ---   --   ---xx   flac  0.6811  12. Track 12.flac
+     3:32.27       37460348 B   ---   --   ---xx   flac  0.6264  13. Track 13.flac
+     4:16.05       45170204 B   ---   --   ---xx   flac  0.5980  14. Track 14.flac
+     4:18.37       45598268 B   ---   --   ---xx   flac  0.6700  15. Track 15.flac
+     4:45.52       50396348 B   ---   --   ---xx   flac  0.6797  16. Track 16.flac
+    74:51.71      792380096 B                            0.6618  (16 files)
+=================== 
+=================== 
+=================== 

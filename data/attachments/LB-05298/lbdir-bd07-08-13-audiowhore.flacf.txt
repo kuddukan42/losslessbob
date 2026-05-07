@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-08-13-audiowhore.flacf 
+=================== 
+=================== 
+=================== 
+327c1af798b9ad4b978efc59d56a7915  BOB Brisbane 070813 d1t01.flac
+4b915d2d5fe398935b428d6a78818db5  BOB Brisbane 070813 d1t02.flac
+7bce9028cc984590aa5235f6c13d616c  BOB Brisbane 070813 d1t03.flac
+b2c00e73bbd135a2bda18d203bc542d5  BOB Brisbane 070813 d1t04.flac
+13a2c70ca29f6366365f10038ec94713  BOB Brisbane 070813 d1t05.flac
+d7215a76f6faf03db832cb3fef2716b6  BOB Brisbane 070813 d1t06.flac
+08f5b6577d42a020b98a8781c1e42fcb  BOB Brisbane 070813 d1t07.flac
+9d35c42f804b9e4ce868639382873787  BOB Brisbane 070813 d1t08.flac
+bcf738f07ddffd83fb73752c92af15bf  BOB Brisbane 070813 d1t09.flac
+6262257b26a55e6359c99a697f7419cd  BOB Brisbane 070813 d1t10.flac
+397c01b81b546ab9e6c7c2e25f5ce776  BOB Brisbane 070813 d1t11.flac
+40256072f8bd08b638fd4d559f9e48d2  BOB Brisbane 070813 d2t01.flac
+84a5804c8e7150b90571e1b91d8fcb07  BOB Brisbane 070813 d2t02.flac
+fadd3d8aa81b166be3894ad28d4600b3  BOB Brisbane 070813 d2t03.flac
+a43eead8198de9855183b55a2c82aba7  BOB Brisbane 070813 d2t04.flac
+77582e7902dc761214cf8b27534d1cd4  BOB Brisbane 070813 d2t05.flac
+d923705640e3c03664445bc0d4b3e3eb  BOB Brisbane 070813 d2t06.flac
+9787a9308842b67e01429aca78b52c58  BOB Brisbane 070813 d2t07.flac
+ba16e91cd7ea9f1ac200d02fede89eec  BOB Brisbane 070813 d2t08.flac
+f4ca2f0d898765c0e759963f94fbc7f2  Bob Brisbane 2007.txt
+00e899911a0e1c0cb941c752faa079f4  BOB DYLAN - Brisbane, Australia - 13 August 2007.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-08-13-audiowhore.flacf 
+=================== 
+=================== 
+=================== 
+BOB Brisbane 070813 d1t01.flac:e6accb87344c5e37a513a46f6a3176ec
+BOB Brisbane 070813 d1t02.flac:d25442c4de09971241dc1d52806da0b0
+BOB Brisbane 070813 d1t03.flac:712cbc6343d7467fdab0c1f8923901d4
+BOB Brisbane 070813 d1t04.flac:7d31ed7fd48b8f85659af77d19152a7a
+BOB Brisbane 070813 d1t05.flac:051b55fd7917e96ca9ae1c4713da0ae8
+BOB Brisbane 070813 d1t06.flac:dcf1be5399e6d9ea12d09abd66f03ed5
+BOB Brisbane 070813 d1t07.flac:14a89e51d6162e355ae465c7ed496726
+BOB Brisbane 070813 d1t08.flac:6ed727fa67ef057c0e35c1a33f54dc4f
+BOB Brisbane 070813 d1t09.flac:24ae46431430e7661d4242822ef1ef36
+BOB Brisbane 070813 d1t10.flac:46c3924a02bc65275838d7c58105a100
+BOB Brisbane 070813 d1t11.flac:423c7ee708f597fb1b0d4d8fc7aeebe8
+BOB Brisbane 070813 d2t01.flac:ce8ab50d2569b69b27c2c3497da37866
+BOB Brisbane 070813 d2t02.flac:655031fbcf32f62a7787bfbc10b31f45
+BOB Brisbane 070813 d2t03.flac:c51cd49a3cce80db5996470e0801f00d
+BOB Brisbane 070813 d2t04.flac:373e44b321db7732365b6f55fa509271
+BOB Brisbane 070813 d2t05.flac:2885fc31169e3c7fcbcfc917658c66e5
+BOB Brisbane 070813 d2t06.flac:b05b32fd76a6ae4d72bde26df477cfa3
+BOB Brisbane 070813 d2t07.flac:cfd1a82a38e60f6c3088eba46ac5d294
+BOB Brisbane 070813 d2t08.flac:abdd503283e0ec5cb5c70e1af8759637
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-08-13-audiowhore.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:08.53       12119900 B   ---   --   ---xx   flac  0.4919  BOB Brisbane 070813 d1t01.flac
+     3:57.51       41926796 B   ---   --   ---xx   flac  0.5823  BOB Brisbane 070813 d1t02.flac
+     6:04.06       64223756 B   ---   --   ---xx   flac  0.5551  BOB Brisbane 070813 d1t03.flac
+     7:05.12       74998268 B   ---   --   ---xx   flac  0.5518  BOB Brisbane 070813 d1t04.flac
+     5:31.59       58527212 B   ---   --   ---xx   flac  0.5276  BOB Brisbane 070813 d1t05.flac
+     6:15.71       66317036 B   ---   --   ---xx   flac  0.5713  BOB Brisbane 070813 d1t06.flac
+     6:39.07       70400108 B   ---   --   ---xx   flac  0.4658  BOB Brisbane 070813 d1t07.flac
+     6:18.31       66752156 B   ---   --   ---xx   flac  0.5386  BOB Brisbane 070813 d1t08.flac
+     6:45.44       71545532 B   ---   --   ---xx   flac  0.4817  BOB Brisbane 070813 d1t09.flac
+     6:35.24       69734492 B   ---   --   ---xx   flac  0.5662  BOB Brisbane 070813 d1t10.flac
+     7:16.00       76910444 B   ---   --   ---xx   flac  0.4837  BOB Brisbane 070813 d1t11.flac
+     5:38.56       59754956 B   ---   --   ---xx   flac  0.5855  BOB Brisbane 070813 d2t01.flac
+     8:59.00       95079644 B   ---   --   ---xx   flac  0.5465  BOB Brisbane 070813 d2t02.flac
+     7:56.05       83978204 B   ---   --   ---xx   flac  0.4726  BOB Brisbane 070813 d2t03.flac
+     5:33.67       58898828 B   ---   --   ---xx   flac  0.5781  BOB Brisbane 070813 d2t04.flac
+     6:20.01       67034396 B   ---   --   ---xx   flac  0.5322  BOB Brisbane 070813 d2t05.flac
+     3:46.45       39972284 B   ---   --   ---xx   flac  0.4957  BOB Brisbane 070813 d2t06.flac
+     6:50.02       72328748 B   ---   --   ---xx   flac  0.5819  BOB Brisbane 070813 d2t07.flac
+     6:34.19       69546292 B   -b-   --   ---xx   flac  0.5624  BOB Brisbane 070813 d2t08.flac
+   115:16.28     1220049052 B                            0.5356  (19 files)
+=================== 
+=================== 
+=================== 

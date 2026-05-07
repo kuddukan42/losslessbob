@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-04-27-a.flacf 
+=================== 
+=================== 
+=================== 
+fdd4a48937b45fc83f879afe1edc12ee  01 New Morning.flac
+3daa862af5297b9f6e80501009596f2c  02 Lay Lady Lay.flac
+99c8c6cb398165835d2d094620eb0f7b  03 All Along the Watchtower.flac
+9394b5d827fa9030a27360b5a947c1fe  04 The Man in Me.flac
+b6a2cdf6f270bdc3f3b03b121e1418fb  05 Gotta Serve Somebody.flac
+b8614b3533f0259546cfc345e6a88f43  06 Wiggle Wiggle.flac
+9d62d9a4d382b0c3b341f328c9a476b4  07 John Brown.flac
+a3b59a413d17e428f246445cdb3f0d1a  08 Boots of Spanish Leather.flac
+6ba82e39b87204e5c113e5c280b47802  09 Mr Tambourine Man.flac
+decec7fdde601d01f6cf79b67413c341  10 Bob Dylan's Dream.flac
+e475af35c30211fc32317453185dfee1  11 Everything is Broken.flac
+c03b0b59f671499698d69d0a45b604c0  12 Man in a Long Black Coat.flac
+f9e6abef19acb18922c862ce5122eabc  13 Seeing the Real You at Last.flac
+a9732fbe4b47685ac749b1238d2d1cb4  14 Under the Red Sky.flac
+8909b4eadce02a29862101ad6bf01088  15 I Shall Be Released.flac
+64cc9a0c1c2496975ac0a99f5b93f108  16 Like a Rolling Stone.flac
+9a4310c63b8cb29363805b59be44ecbb  17 Blowin' in the Wind.flac
+2414d9c6f76bb9e51fb039f999dffb86  18 Highway 61 Revisited.flac
+9f3fab8a76c8f65087f3e21e2e262022  BOB DYLAN - 1991-04-27 MIAMI, FLORIDA (AUD Xfer from cassette).ffp
+ec4a17acc301b70baf038f01c5c8628e  BOB DYLAN - 1991-04-27 MIAMI, FLORIDA (AUD Xfer from cassette).md5
+dc4a107e0131041bb11d4cb549309924  BOB DYLAN - 1991-04-27 MIAMI, FLORIDA (AUD Xfer from cassette).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-04-27-a.flacf 
+=================== 
+=================== 
+=================== 
+01 New Morning.flac:61fec7bf1a8752bd3a479772f5bbcfbf
+02 Lay Lady Lay.flac:c54c0e4e935cb7182ac92217b4649b7b
+03 All Along the Watchtower.flac:8ddca7e363ea57a8b18f4daae38d84f7
+04 The Man in Me.flac:f6ce0d1c35f451ff0101b5f620424851
+05 Gotta Serve Somebody.flac:5f5711253d9e5298093a2a32579e5da1
+06 Wiggle Wiggle.flac:cbffe5caaf8dddc420646e26105734ab
+07 John Brown.flac:296350e2d61541e1eda41b130be492c8
+08 Boots of Spanish Leather.flac:4cf0dd1e5bf1560c0028c290dc4ff9cc
+09 Mr Tambourine Man.flac:39f88b1398cf04e7f75bfe19fcc8492f
+10 Bob Dylan's Dream.flac:01c98d4ff12b5917cc7f6997e538fcb8
+11 Everything is Broken.flac:6ba229db9e63618cd3b6270853c5e321
+12 Man in a Long Black Coat.flac:a4f569d6d2cbcfbd71e66c0c29e17bdb
+13 Seeing the Real You at Last.flac:53d56b959a1f4fb1becec9bbbd4b9530
+14 Under the Red Sky.flac:8601f378c06d1f5c6f1542df39414bda
+15 I Shall Be Released.flac:ac98431413e345f9fc46ce2e5b857ea0
+16 Like a Rolling Stone.flac:533e589cc984d6500aba794b497a0fbb
+17 Blowin' in the Wind.flac:b6922fc7c28f7e4cfceb89da2b2cbe46
+18 Highway 61 Revisited.flac:9cb4140be9f0a1f77b84803acba85979
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-04-27-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.11       40068716 B   ---   --   ---xx   flac  0.6145  01 New Morning.flac
+     5:40.45       60081884 B   ---   --   ---xx   flac  0.6229  02 Lay Lady Lay.flac
+     3:30.30       37114604 B   ---   --   ---xx   flac  0.6402  03 All Along the Watchtower.flac
+     4:07.42       43669628 B   ---   --   ---xx   flac  0.6237  04 The Man in Me.flac
+     5:46.33       61112060 B   ---   --   ---xx   flac  0.6302  05 Gotta Serve Somebody.flac
+     3:19.39       35195372 B   ---   --   ---xx   flac  0.6432  06 Wiggle Wiggle.flac
+     4:37.17       48902828 B   ---   --   ---xx   flac  0.5990  07 John Brown.flac
+     3:55.60       41595164 B   ---   --   ---xx   flac  0.5846  08 Boots of Spanish Leather.flac
+     6:03.19       64077932 B   ---   --   ---xx   flac  0.6009  09 Mr Tambourine Man.flac
+     4:36.73       48858136 B   -b-   --   ---xx   flac  0.5925  10 Bob Dylan's Dream.flac
+     4:12.64       44603376 B   -b-   --   ---xx   flac  0.6185  11 Everything is Broken.flac
+     5:04.61       53769116 B   ---   --   ---xx   flac  0.6246  12 Man in a Long Black Coat.flac
+     4:24.23       46623740 B   ---   --   ---xx   flac  0.6404  13 Seeing the Real You at Last.flac
+     4:48.03       50810300 B   ---   --   ---xx   flac  0.6248  14 Under the Red Sky.flac
+     5:36.50       59388044 B   ---   --   ---xx   flac  0.6281  15 I Shall Be Released.flac
+     7:23.38       78234620 B   ---   --   ---xx   flac  0.6495  16 Like a Rolling Stone.flac
+     5:28.74       58033292 B   ---   --   ---xx   flac  0.6205  17 Blowin' in the Wind.flac
+     4:29.29       47520636 B   -b-   --   ---xx   flac  0.6471  18 Highway 61 Revisited.flac
+    86:53.36      919659448 B                            0.6230  (18 files)
+=================== 
+=================== 
+=================== 

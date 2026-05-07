@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-05-03 worcester 
+=================== 
+=================== 
+=================== 
+787250aa0fdd176716e3bda9df008ee2  bd80-05-03.txt
+20e16f311395ef604624f9db6a89ddfa  bd80-05-03d1t01.shn
+7bf667f9e4caf87098d83958812a1c62  bd80-05-03d1t02.shn
+8ebf43d7c37ad693690e614a96e44b83  bd80-05-03d1t03.shn
+6ae3b87c4cc42573071cfc3d3ac69094  bd80-05-03d1t04.shn
+6fb918dc928c4863a08985512313ecf6  bd80-05-03d1t05.shn
+6392d05663f15dcc41d0a955d9d46d59  bd80-05-03d1t06.shn
+b71b0a52f404ab4b370224f7b7597bf8  bd80-05-03d1t07.shn
+0c5dea301d2f69496377e995b39bb5f3  bd80-05-03d1t08.shn
+d6d094ddf76736d4425e9898856363af  bd80-05-03d2t01.shn
+37dc245655713f8ac226b2296c186027  bd80-05-03d2t02.shn
+6b796a935f46c1112dfab0de8f79ecbc  bd80-05-03d2t03.shn
+842389ec200c24d52457b56366daabb3  bd80-05-03d2t04.shn
+04bd5e45dc6ef1c9258d7934081e1caf  bd80-05-03d2t05.shn
+15752362294fe6e8256547fa532b2db9  bd80-05-03d2t06.shn
+0774efafd3ea276d4a30d8b41650d761  bd80-05-03d2t07.shn
+5ef6b7a3196aec83aee45733dbd045e7  bd80-05-03d2t08.shn
+5f52e2f6ac6a8ce8c735173375ce3d99  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-05-03 worcester 
+=================== 
+=================== 
+=================== 
+8db804e40b86eea5ba07baa55009e097  [shntool]  bd80-05-03d1t01.wav
+aa3d1bd282459d0bba5ef8d84204f023  [shntool]  bd80-05-03d1t02.wav
+2a52578e7db6d165fc4a6c4b0e781a84  [shntool]  bd80-05-03d1t03.wav
+8c04221248f7a4bcf32eebd7a51199e8  [shntool]  bd80-05-03d1t04.wav
+f226ef1ba234dfc9f8e5e4775d212267  [shntool]  bd80-05-03d1t05.wav
+44ebe64fe58d0c4c3ccf1f30df601bbf  [shntool]  bd80-05-03d1t06.wav
+6f82e6a11c90c3b17a3385cdb9d52e02  [shntool]  bd80-05-03d1t07.wav
+ed0e5d1963172e69bc5eca84ebe73724  [shntool]  bd80-05-03d1t08.wav
+4355c63ba5f691501d6b9f9b8a725900  [shntool]  bd80-05-03d2t01.wav
+56d15887742760a8718ad433c221134c  [shntool]  bd80-05-03d2t02.wav
+c9189d487ade6dd54413e95343e7c6a8  [shntool]  bd80-05-03d2t03.wav
+6c897fbfcc095349a2b044b22989e60b  [shntool]  bd80-05-03d2t04.wav
+8397a9a92c60ed4e4c554308a89f23e3  [shntool]  bd80-05-03d2t05.wav
+d6606bb32895080e25ce136958a394ad  [shntool]  bd80-05-03d2t06.wav
+0bcd36c675d86f9b219cd9ade1b958bb  [shntool]  bd80-05-03d2t07.wav
+30afe587cc61b90d513c7ad4ac9c3574  [shntool]  bd80-05-03d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-05-03 worcester 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:18.16       66716876 B   ---   --   ---xx    shn  0.5757  bd80-05-03d1t01.shn
+     5:02.19       53317532 B   ---   --   ---xx    shn  0.5722  bd80-05-03d1t02.shn
+     6:04.30       64280204 B   ---   --   ---xx    shn  0.6080  bd80-05-03d1t03.shn
+     5:27.46       57791036 B   ---   --   ---xx    shn  0.6097  bd80-05-03d1t04.shn
+     4:37.30       48933404 B   ---   --   ---xx    shn  0.6087  bd80-05-03d1t05.shn
+     5:30.00       58212044 B   ---   --   ---xx    shn  0.6095  bd80-05-03d1t06.shn
+     6:21.53       67333100 B   ---   --   ---xx    shn  0.6100  bd80-05-03d1t07.shn
+     7:40.72       81313388 B   ---   --   ---xx    shn  0.6124  bd80-05-03d1t08.shn
+     4:47.22       50678588 B   ---   --   ---xx    shn  0.5605  bd80-05-03d2t01.shn
+     6:23.29       67629452 B   ---   --   ---xx    shn  0.5775  bd80-05-03d2t02.shn
+     8:37.35       91281164 B   ---   --   ---xx    shn  0.5740  bd80-05-03d2t03.shn
+     1:03.72       11282588 B   ---   --   ---xx    shn  0.5923  bd80-05-03d2t04.shn
+     7:17.12       77115068 B   ---   --   ---xx    shn  0.5890  bd80-05-03d2t05.shn
+     6:04.01       64211996 B   ---   --   ---xx    shn  0.6304  bd80-05-03d2t06.shn
+     8:03.15       85236524 B   ---   --   ---xx    shn  0.6328  bd80-05-03d2t07.shn
+     4:39.50       49333244 B   ---   --   ---xx    shn  0.5660  bd80-05-03d2t08.shn
+    93:58.52      994666208 B                            0.5969  (16 files)
+=================== 
+=================== 
+=================== 

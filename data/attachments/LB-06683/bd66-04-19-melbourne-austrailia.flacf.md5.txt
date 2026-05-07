@@ -1,0 +1,12 @@
+926255cc88e8c41655ca530f10ecee51 *bd66-04-19-melbourne-austrailia-t01.flac
+88562936b70bdbf5988fa416bb8a9f7d *bd66-04-19-melbourne-austrailia-t02.flac
+a5e2669c447617326a99691a794276eb *bd66-04-19-melbourne-austrailia-t03.flac
+c5ca1aa6f61ca87e94a2438b109ab5ab *bd66-04-19-melbourne-austrailia-t04.flac
+25c19f778922e0084e46de45a2d43834 *bd66-04-19-melbourne-austrailia-t05.flac
+f3128699557da64b4f53d51d94f0919f *bd66-04-19-melbourne-austrailia-t06.flac
+b1a57b25aa133db4b6efe83f124a5717 *bd66-04-19-melbourne-austrailia-t07.flac
+6e3d0c8fc262b16bf7978237c1a9a18f *bd66-04-19-melbourne-austrailia-t08.flac
+170200d2aa6a90542cfe413f087aa5ac *bd66-04-19-melbourne-austrailia-t09.flac
+1a28d506edd15f59c068b1b9f7113d9c *bd66-04-19-melbourne-austrailia-t10.flac
+7fd6cff355a14380d5be20446feaefa9 *lbdir-bd66-04-19-melbourne-austrailia.flacf.md5
+b0bfc33bf1144174653f1849fb06a0a8 *lbdir-bd66-04-19-melbourne-austrailia.flacf.txt

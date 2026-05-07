@@ -1,0 +1,83 @@
+664a8deba827cc9307f738a07b4ef1a6 *DylanReh1984 APCD104-1 A FRONT.jpg
+5f4473fe94f5fb074919551b105d366a *DylanReh1984 APCD104-1 B BACK.jpg
+ba3125dd9c7a973db3776953828a52e5 *DylanReh1984 APCD104-2 A FRONT.jpg
+939cb0e841cfb862c54395cb30135d9a *DylanReh1984 APCD104-2 B BACK.jpg
+02c19da5896f3685a8af14613d1fbdfa *Front01.jpg
+5c01db42512c5e1fc16a360ffd828ae7 *Front02.jpg
+5b96b06c1d1f8f29755b663dc0f98697 *info.txt
+6f54e68423fd8508ff0abd76c0cb0db1 *CD 01\01 Instrumental.flac
+470a313a187dfcf78837fe307ac85bf9 *CD 01\02 Maggie's Farm.flac
+403944c42a959faec7ab337a11c835b3 *CD 01\03 All Along The Watchtower.flac
+4071534fedef1f85056354e173892ad4 *CD 01\04 Just Like A Woman.flac
+3fb7d8bf01b60c93f79bff43faef9c9b *CD 01\05 Just Like A Woman.flac
+06dd338550277a34ef9c06dfc3baddd1 *CD 01\06 When You Gonna Wake Up.flac
+63580665b82e560c814b6d6ffda9f76a *CD 01\07 When You Gonna Wake Up.flac
+4295c7fd360d64a62e2b69d6ec68ca45 *CD 01\08 Shelter From The Storm.flac
+03f498eb6abb25522c6af5cb0e50c15c *CD 01\09 Watered-Down Love.flac
+1cf24ea6f5f87d3a967efdc6fab6df91 *CD 01\10 Masters Of War.flac
+b41c97f818ad069df8c3e78f53a6356b *CD 01\11 Masters Of War.flac
+fc26aa816f7b628a03612308e33155d9 *CD 01\12 Jokerman.flac
+981e7e165ed08de262d8cf72649b6310 *CD 01\13 Simple Twist Of Fate.flac
+d738128903e591a279a5bc7f00fbbdb0 *CD 01\14 Simple Twist Of Fate.flac
+ea10c31cc8c1311db5be635e1f653342 *CD 01\15 Man Of Peace.flac
+f0bbaa5d89bf9ad4e11d2d73856f51fe *CD 01\16 Man Of Peace.flac
+62bb745759c1f880e4bb3967d76992fc *CD 01\17 I And I.flac
+35e46b053149cadaaea2bbc8f6d938d2 *CD 01\18 It's All Over Now, Baby Blue.flac
+9566e712d55ad6caf428570b2af79ee6 *CD 01\19 Ballad Of A Thin Man.flac
+b7e556baa28744469121ba73b03ab1a6 *CD 01\20 Heart Of Mine.flac
+1a8ccdb9f03b9e20508529208940bb61 *CD 01\21 Highway 61 Revisited.flac
+9e007072b907b9f625c746d1f03eac87 *CD 01\22 Around And Around.flac
+1e257d0525f19a1c1bef6790a0058340 *CD 01\23 Leopard-Skin Pill-Box Hat.flac
+e3d2765cde22533f7c42ff9979ceccc0 *CD 01\24 Unidentified Instrumental.flac
+01c79ef3beb72dd9f449ae73cb528ac4 *CD 01\25 It's All Over Now, Baby Blue.flac
+4922043c80f4a2a2e711a59c0b3dcd0b *CD 01\26 Almost Done.flac
+599dfcfe456e324ce9d30e61bea6f539 *CD 01\27 Always On My Mind.flac
+f673d2b03a2120170cbb4371a96da26e *CD 01\28 Always On My Mind.flac
+80e03dfca23904bec93a9744e1a72437 *CD 01\29 Always On My Mind.flac
+5d65a4452582f3aaae4eb6cd2a2dc56b *CD 01\30 Every Grain Of Sand.flac
+07408dff1ca9d78cd43e143c199ebff2 *CD 01\31 Every Grain Of Sand.flac
+879ab7ab78704a28a005ba7da323aafc *CD 01\32 Every Grain Of Sand.flac
+d1b5bbb314149954d323e7297d0a5b0e *CD 01\33 Girl From The North Country.flac
+f30bdf78ad2b08b5bfc1c2e5bb162b50 *CD 01\CD 01.ffp
+78c69e9d911e7ec85d5e89e83a915a82 *CD 01\Front01.jpg
+f280439f56a717110993f46351b1641e *CD 02\01. (instrumental #1).flac
+99c2baf87abe1525ea703094c0a42dc3 *CD 02\02. (instrumental #2).flac
+0446cabf9e430b781c04ea62f67258e9 *CD 02\03. (instrumental #3).flac
+d43a08e558b3501adea1a678859edfa8 *CD 02\04. (Vocal improvisationJam).flac
+e04ad9579ebbf4e5b7eab2dec55e50e1 *CD 02\05. (instrumental #4).flac
+a9235607e7ec5d8c77ae6ac234d18057 *CD 02\06. (instrumental #5).flac
+0ec9e7da2bc5e1c69eb26e847d7222b2 *CD 02\07. (instrumental #6).flac
+5fdfea9430f63bf671fb79a8a8f29d9d *CD 02\08. (instrumental #7).flac
+7a5ef7caa9d8b87836dcbd4fd17c4813 *CD 02\09. War Time (instrumental #1).flac
+bc716a949c14bdcbde1ef9a3e76ad14f *CD 02\10. War Time (instrumental #2).flac
+60288123940fefbbf2f2bee68e3ce476 *CD 02\11. War Time.flac
+b343b52a57bd76b0ef45221214c26d21 *CD 02\12. (instrumental #8).flac
+cc7e34b3db650aeddf19d784e5deeced *CD 02\13. (instrumental #9).flac
+7120f3d701045a2b874bcf958c8b1b25 *CD 02\14. Almost Done #1.flac
+9178604f94a57411d233bf5416a309e1 *CD 02\15. Almost Done #2.flac
+4b6f8c6c936001918de39db7db48cda2 *CD 02\16. Almost Done #3.flac
+7d2c405837d445f75c1deaa02046c18a *CD 02\17. Almost Done #4 (instrumental).flac
+dfac21e11573606cf978e76f7f9ab800 *CD 02\18. Almost Done #5 (instrumental).flac
+b55491467322ee94633a84ec674a9fef *CD 02\19. Enough Is Enough.flac
+c81db13d509a5949cf825c043d50e5a8 *CD 02\20. (instrumental #10).flac
+b8482fa0e9378b60bf64af3591563fa2 *CD 02\21. Dirty Lies.flac
+a4a978b7b97cda8fe89679071217baa8 *CD 02\22. Why Do I Have To Choose (Willie Nelson).flac
+80df511883f73e5b9a98c4e86e7cb244 *CD 02\23. To Each His Own (Ray EvansJay Livingston).flac
+ab97af315bef13ac7ac5b8fac42154ce *CD 02\24. (instrumental #11).flac
+ee6e0d830be1d00a7df8c8b69c81002e *CD 02\CD 02.ffp
+58e8f8380d6cdad9094adb25efd17765 *CD 02\Front02.jpg
+e9d6cc716066b856daca2eed8d5d7113 *CD 03\01. Jokerman.flac
+2a7e55107fbc41e16e7462f77e6e533b *CD 03\02. All Along The Watchtower.flac
+e34dd4cb70ccee7fe830cce38693f293 *CD 03\03. Just Like A Woman.flac
+0eaed441df69478fc19adac3fcb1b0cc *CD 03\04. Highway 61 Revisited.flac
+48cbefe1816c85aa3a041ba887791f30 *CD 03\05. I And I.flac
+b38579c4727b294ab49776c5066d4047 *CD 03\06. Shelter From The Storm #1.flac
+d5a3edc3e0897a398152f3b24aaf22fd *CD 03\07. Shelter From The Storm #2.flac
+72dce568252f306c0f13238e1133219b *CD 03\08. (instrumental).flac
+f4c09d2edb59e6f2b981436c83ab8a91 *CD 03\09. License To Kill.flac
+db8ceb1155d49502c0644aae9d73fcf0 *CD 03\10. Ballad Of A Thin Man.flac
+8a3950a2f067987992accb1a057a51f2 *CD 03\11. When You Gonna Wake Up.flac
+10329d74612af8647e8993a8218e1722 *CD 03\12. To Ramona.flac
+f3457baea3e95e7103c5f70c4cee9569 *CD 03\13. Girl From The North Country.flac
+40d47c3bf65b4cbb67686e486839f6bd *CD 03\CD 03.ffp
+58e8f8380d6cdad9094adb25efd17765 *CD 03\Front02.jpg

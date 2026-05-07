@@ -1,0 +1,13 @@
+BOB DYLAN
+Arena Flegrea
+Naples, Italy 
+July 26, 2001
+
+LB-7275 fixed (Track14)
+
+Again, I made a mistake when replacing t14 on the last version I torrented of this show, as I did actually not include a correct Track14, as I guessed, but a preliminar version in which digipops @ 5:16 had still not been fixed. So, please, excuse any inconveniences I may have caused through my forgetfulness and grab this new replacement if you want or let it pass if you think it's not worth the download. This is a new version of the same track where both digipops have been carefully removed without any other consequences, no samples to be carried over when aligning on sector boundaries, as verifiable reading the flac-conversion log file I'm attaching in this torrent, so no need to change anything else, but once more the flac fingerprints and md5 sigmatures. Third time is the right one, they say, so I hope everything is OK this last chance.
+
+Good luck!
+
+Luisbp51 (Hungercity March 2009)
+

@@ -1,0 +1,3 @@
+4e3451e5930fe422e76e8f0ddd368b29 *bd03-08-02deadset-akg-t01.shn
+e79e1f97c72bb5e8b8f0cc811e07650e *bd03-08-02deadset-akg-t02.shn
+3b0f3f8af5d108edf3ae3fe59515a2c1 *bd03-08-02deadset-akg-t03.shn

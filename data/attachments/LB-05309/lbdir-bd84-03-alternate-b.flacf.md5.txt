@@ -1,0 +1,25 @@
+57ab8ea6ef198298ef0332d06f4419fa  BD - The Plugz Rehearsals 1984 (Fixed LB-5309 + Alternate copy).txt
+c23d8d3a1883ad80a8ab4c275ba728fc  BD_Plugz Rehearsals (March 1984) Alternate copy 1\fp alt 1.txt
+1ded7fedbfa7c01b61a24c2308788612  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track01.flac
+1ad79c99d5f18367f7cf4e0953c3650c  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track02.flac
+0f7c1745a8a0e8c94744bbfa826ee6c9  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track03.flac
+d30ceb344136b9fcb1aeb091df16f8ca  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track04.flac
+44d6594594460db6833f312b8d825ac2  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track05.flac
+052d2ce9eab5aee879e3c3f0e813ec53  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track06.flac
+9b17b39985f284bfe2e399d235674a85  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track07.flac
+b81cfc13d1b710ea615dcc57c1f78ab2  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track08.flac
+8bfc960062b21c1deb57d6a2c3690344  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track09.flac
+35c215f900ab4eb735ac1fa007026583  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track10.flac
+2a3dededc088e480f8426babe677263e  BD_Plugz Rehearsals (March 1984) Alternate copy 2\fp alt 2.txt
+d2788894177c6577f7cfa450abe19c81  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track01.flac
+7e60694ac008071101bb4ce0122d3848  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track02.flac
+c2ee3146a66a898b058b049facbfad9c  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track03.flac
+fbe77894ee7fe9756c03bae54eee704f  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track04.flac
+47be74795053a55741802bcaec6aa93f  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track05.flac
+8380a582c1da1e339695bb4b32d4c1ed  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track06.flac
+5f634a3ab17f076ccb68cff895ad3eb9  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track07.flac
+4139be7a58d9cfbb28a2467910e0ce7e  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track08.flac
+865b511022ac3320c4020da272dd783d  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track09.flac
+f8e4c160beeb7fee76120d16dc39c671  BD_Plugz Rehearsals (March 1984) Alternate copy.md5
+d0d819a7e01fffbaffd566c6781ade3c  BD_Plugz Rehearsals (March 1984) Alternate copy.txt
+e19e88d053e7dbfbacbf87df99b45b10  DylanPlugzBack.jpg

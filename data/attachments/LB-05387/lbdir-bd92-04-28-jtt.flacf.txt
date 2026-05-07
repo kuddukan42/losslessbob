@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-28-jtt.flacf 
+=================== 
+=================== 
+=================== 
+5407cf9c4109256e0e35c6ac55f0f313  Disc One\Dylan - April 28th 1992 Disc01Track01.flac
+b9f9ae4fda3458dd59f513fd70b96a41  Disc One\Dylan - April 28th 1992 Disc01Track02.flac
+0addb11f360dfbfce2e8d5eb82c2c9fc  Disc One\Dylan - April 28th 1992 Disc01Track03.flac
+d93ac115c5aecbf72a12a2f4fcc372c6  Disc One\Dylan - April 28th 1992 Disc01Track04.flac
+280fe75ab70e9b8af466b9acfa91230d  Disc One\Dylan - April 28th 1992 Disc01Track05.flac
+e97ce39fc4ed3e2063af66cb518a33ad  Disc One\Dylan - April 28th 1992 Disc01Track06.flac
+0cbeab2a10aca27d338298330386ee84  Disc One\Dylan - April 28th 1992 Disc01Track07.flac
+f375fb7dcc9fc311f40c635a5aaec91e  Disc One\Dylan - April 28th 1992 Disc01Track08.flac
+5d36c6512e99f7ed9c8b8a51d7d3caba  Disc One\Dylan - April 28th 1992 Disc01Track09.flac
+7ada64804cb9576f764ff481f3509522  Disc One\Dylan - April 28th 1992 Disc01Track10.flac
+bef1ee074206f7fa0b85a3b4f7d149d5  Disc Two\Dylan - April 28th 1992 Disc02Track01.flac
+2cee0a5ec21a8ab5b0422849282b7db0  Disc Two\Dylan - April 28th 1992 Disc02Track02.flac
+64fa8c721db39e4425f4f1bcbbdd321c  Disc Two\Dylan - April 28th 1992 Disc02Track03.flac
+bd57fe7c7f19648044fa1258b5cba0ce  Disc Two\Dylan - April 28th 1992 Disc02Track04.flac
+99a2e48d0fcf38ed348cbb1c54d88e28  Disc Two\Dylan - April 28th 1992 Disc02Track05.flac
+b80fab0d905fefdc1012b3ec005bd83b  Disc Two\Dylan - April 28th 1992 Disc02Track06.flac
+e39f0ed369a3c1f2585745a25f40bd0a  Disc Two\Dylan - April 28th 1992 Disc02Track07.flac
+dc0092f6d8dae735a7c4d9901b2d0231  Disc Two\Dylan - April 28th 1992 Disc02Track08.flac
+88814688572099d2216b1e09c9ace6b6  Dylan - Seattle April 28th 1992 Info.txt
+f8a3c483a5b40de1f31d92df34ed183a  Dylan - Seattle April 28th 1992.md5
+edebb909f7437163464005b705cf0cc7  Seattle 28.04.1992 - F.jpg
+e87a7e9eedbe4a8fefb26ebbaec58458  Seattle 28.04.1992 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-28-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - April 28th 1992 Disc01Track01.flac:f7a4e68c57a39b4b7128cf478684aaec
+Dylan - April 28th 1992 Disc01Track02.flac:d761cf62872211b5221dba39f68fe1a2
+Dylan - April 28th 1992 Disc01Track03.flac:baf33bddf30008acdff62c31985e0f9f
+Dylan - April 28th 1992 Disc01Track04.flac:fc2631026df6d418d68295ce9bb158ba
+Dylan - April 28th 1992 Disc01Track05.flac:b73825c066267ffef84c08c0d3db0110
+Dylan - April 28th 1992 Disc01Track06.flac:899432d51b3241eb66bf71fbf5b3a9c3
+Dylan - April 28th 1992 Disc01Track07.flac:158dac13bf980c113a149752219e60aa
+Dylan - April 28th 1992 Disc01Track08.flac:b063ae4f75b218bc28093ca74e4d6d8d
+Dylan - April 28th 1992 Disc01Track09.flac:85bf4402ac07e10173ebe331f2977cda
+Dylan - April 28th 1992 Disc01Track10.flac:03178900b79061422eb100da0582d49a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-28-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - April 28th 1992 Disc02Track01.flac:c338db01f3b640a4b0f09dc0984a5dda
+Dylan - April 28th 1992 Disc02Track02.flac:ec0be4e6c31d298873bad0ec08e31198
+Dylan - April 28th 1992 Disc02Track03.flac:c7179584dc8e52d52be9cf561fe9cf24
+Dylan - April 28th 1992 Disc02Track04.flac:3a1d6422fab93034e9451feae1c4a2f5
+Dylan - April 28th 1992 Disc02Track05.flac:72bfdccd26f3d0f4082d44100df0ec15
+Dylan - April 28th 1992 Disc02Track06.flac:b6a403dcc9747b488d0a861baf71fba8
+Dylan - April 28th 1992 Disc02Track07.flac:b9ff77d867d87f7c69b5d39cee686037
+Dylan - April 28th 1992 Disc02Track08.flac:9f6e6b025312776b13f710f39edddedb
+=================== 
+=================== 
+=================== 
+=== shntool for: bd92-04-28-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:39.43       38731820 B   -b-   --   ---xx   flac  0.6237  Dylan - April 28th 1992 Disc01Track01.flac
+     2:55.62       31014956 B   -b-   --   ---xx   flac  0.6212  Dylan - April 28th 1992 Disc01Track02.flac
+     3:56.56       41762860 B   -b-   --   ---xx   flac  0.6261  Dylan - April 28th 1992 Disc01Track03.flac
+     5:50.40       61833260 B   -b-   --   ---xx   flac  0.6156  Dylan - April 28th 1992 Disc01Track04.flac
+     6:44.02       71270444 B   -b-   --   ---xx   flac  0.6151  Dylan - April 28th 1992 Disc01Track05.flac
+     7:46.40       82296876 B   -b-   --   ---xx   flac  0.5863  Dylan - April 28th 1992 Disc01Track06.flac
+     4:26.70       47087660 B   -b-   --   ---xx   flac  0.6129  Dylan - April 28th 1992 Disc01Track07.flac
+     3:29.40       36962348 B   -b-   --   ---xx   flac  0.5734  Dylan - April 28th 1992 Disc01Track08.flac
+     3:51.27       40812588 B   -b-   --   ---xx   flac  0.5808  Dylan - April 28th 1992 Disc01Track09.flac
+     3:28.11       36716588 B   -b-   --   ---xx   flac  0.5738  Dylan - April 28th 1992 Disc01Track10.flac
+    46:09.16      488489400 B                            0.6030  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd92-04-28-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:58.74       52740140 B   -b-   --   ---xx   flac  0.5925  Dylan - April 28th 1992 Disc02Track01.flac
+     3:40.16       38846508 B   -b-   --   ---xx   flac  0.6108  Dylan - April 28th 1992 Disc02Track02.flac
+    10:45.11      113803308 B   -b-   --   ---xx   flac  0.5982  Dylan - April 28th 1992 Disc02Track03.flac
+     5:27.58       57819180 B   -b-   --   ---xx   flac  0.5850  Dylan - April 28th 1992 Disc02Track04.flac
+     5:59.33       63406124 B   -b-   --   ---xx   flac  0.6189  Dylan - April 28th 1992 Disc02Track05.flac
+     5:25.13       57360428 B   -b-   --   ---xx   flac  0.6170  Dylan - April 28th 1992 Disc02Track06.flac
+     6:28.11       68468780 B   -b-   --   ---xx   flac  0.6084  Dylan - April 28th 1992 Disc02Track07.flac
+     3:32.03       37404716 B   -b-   --   ---xx   flac  0.5802  Dylan - April 28th 1992 Disc02Track08.flac
+    46:16.69      489849184 B                            0.6020  (8 files)
+=================== 
+=================== 
+=================== 

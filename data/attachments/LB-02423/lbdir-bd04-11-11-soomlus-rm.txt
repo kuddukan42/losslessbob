@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-11-soomlus-rm 
+=================== 
+=================== 
+=================== 
+66d4508da51ed73142fff5ddb027f3bb  bd04-11-11-soomlus-rm-d1t01.shn
+ddbdda6cccc619108452177ea6b03b8f  bd04-11-11-soomlus-rm-d1t02.shn
+7fd7538e98ca2a27bafea2d9b80b0ee3  bd04-11-11-soomlus-rm-d1t03.shn
+ffdbd8b11c8e931325e595d814ac93e3  bd04-11-11-soomlus-rm-d1t04.shn
+f56e9eb70954a3e0d001b91a4cccf5d0  bd04-11-11-soomlus-rm-d1t05.shn
+5501c5d00140d73934b3ab56a2307799  bd04-11-11-soomlus-rm-d1t06.shn
+d256386ed1ffc4efd4b3279a7d9334e7  bd04-11-11-soomlus-rm-d1t07.shn
+177120a8caa9c3dc6ba6f73a3e0b2724  bd04-11-11-soomlus-rm-d1t08.shn
+da47443e9f3d1dc9368439fe3847d0b5  bd04-11-11-soomlus-rm-d1t09.shn
+d45b60e560126f22653ddfd2de38ad89  bd04-11-11-soomlus-rm-d1t10.shn
+6ad04538eab4786b011dc078e787dee3  bd04-11-11-soomlus-rm-d1t11.shn
+17a95fffb3f0dee5551411e4cb81ff93  bd04-11-11-soomlus-rm-d1t12.shn
+8c4ddffe7929983683fb190a65749a68  bd04-11-11-soomlus-rm-d2t01.shn
+b4711818259c6ce318f96868efabd54b  bd04-11-11-soomlus-rm-d2t02.shn
+07a107a08341fe3b94b60df28654ebc6  bd04-11-11-soomlus-rm-d2t03.shn
+ed5e65a405225b734d86f4c1f6748497  bd04-11-11-soomlus-rm-d2t04.shn
+7090b1cc522ecd2afbe8068993c8fa84  bd04-11-11-soomlus-rm-d2t05.shn
+8898ee785e6b3261e5b44d5dbb60b10f  bd04-11-11-soomlus-rm-d2t06.shn
+75fe53a6d001c427db9488a0bb6bde85  bd04-11-11-soomlus-rm.txt
+67edf1ba9fe9e8398a914d854f1e259b  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-11-11-soomlus-rm 
+=================== 
+=================== 
+=================== 
+c08a2f2b3b8cdde9e6d1c06f61f83108  [shntool]  bd04-11-11-soomlus-rm-d1t01.wav
+49e5eb50864ed97a4e4dd31aeea7946b  [shntool]  bd04-11-11-soomlus-rm-d1t02.wav
+97103f214c0874c9a7020e83eeace6ce  [shntool]  bd04-11-11-soomlus-rm-d1t03.wav
+424ec5e7547ec86c10ccf699b67becc5  [shntool]  bd04-11-11-soomlus-rm-d1t04.wav
+b069533be3da492b973a940da1bb2e59  [shntool]  bd04-11-11-soomlus-rm-d1t05.wav
+3d8655908d939ed90b4140a8e3359665  [shntool]  bd04-11-11-soomlus-rm-d1t06.wav
+13ad3d805ea6f7c6789dba702f5ad5ef  [shntool]  bd04-11-11-soomlus-rm-d1t07.wav
+982351cd2a112290ebb16588bf522ba7  [shntool]  bd04-11-11-soomlus-rm-d1t08.wav
+5779b9fabd8a0d35123d032f94a14fd1  [shntool]  bd04-11-11-soomlus-rm-d1t09.wav
+97d78397d9730c0617bc53cef849ff1e  [shntool]  bd04-11-11-soomlus-rm-d1t10.wav
+8d31390f638bf98efd3630d5c0dce57e  [shntool]  bd04-11-11-soomlus-rm-d1t11.wav
+537b9e1416da5be22c4400dcae5b4445  [shntool]  bd04-11-11-soomlus-rm-d1t12.wav
+b4e1f33b0e2e23e558606310b38277f1  [shntool]  bd04-11-11-soomlus-rm-d2t01.wav
+968c4239a4ef2350234a73c2f62ab556  [shntool]  bd04-11-11-soomlus-rm-d2t02.wav
+e7c9b67138c471aca3ef632792f4d727  [shntool]  bd04-11-11-soomlus-rm-d2t03.wav
+255b3867c9441ecfeab880f1ff739ba5  [shntool]  bd04-11-11-soomlus-rm-d2t04.wav
+21004927bb12a0cc710d8c8e1cc01b68  [shntool]  bd04-11-11-soomlus-rm-d2t05.wav
+a428f503c53e1db8180b4d9075d1279d  [shntool]  bd04-11-11-soomlus-rm-d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-11-soomlus-rm 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.62       10906268 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t01.wav
+     5:21.35       56706764 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t02.wav
+     5:49.08       61582460 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t03.wav
+     5:45.19       60902732 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t04.wav
+     7:23.68       78305180 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t05.wav
+     7:29.26       79264796 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t06.wav
+     6:56.09       73403612 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t07.wav
+     6:37.69       70193132 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t08.wav
+     6:24.16       67775276 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t09.wav
+     6:21.31       67281356 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t10.wav
+     6:45.40       71536124 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t11.wav
+     6:49.40       72241724 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d1t12.wav
+     7:31.31       79629356 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d2t01.wav
+     5:33.32       58816508 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d2t02.wav
+    10:42.48      113361740 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d2t03.wav
+     7:05.32       75045308 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d2t04.wav
+     0:42.04        7418252 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d2t05.wav
+     6:15.23       66204140 B   ---   --   -----    wav  1.0000  bd04-11-11-soomlus-rm-d2t06.wav
+   110:35.68     1170574728 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,22 @@
+161c2828f4d03318cb1d49377695fe4e  Bob Dylan - 1989-10-17  info file.txt
+1766106b3a9e3c012313a2887b6cf91b  Bob Dylan - 1989-10-17 CD one.ffp
+2c67f7b8a938adcec9dc895567f1c171  Bob Dylan - 1989-10-17 CD two.ffp
+88e007269cdd2af0c48ef4ebb7e6948b  DigiFlawFinder-bd89-10-17-a.flacf.wavf.html
+6e7049c295efb0ef2da783cd8f67c2a6  Setlist & Fingerprints.txt
+cba89036b86f8e0726d4a29ca67475ba  Track 01 - To Be Alone With You.flac
+e2554524a496e5cee50225259f2860ac  Track 02 - Man In The Long Black Coat.flac
+366bcaafa90dbef87155106511202412  Track 03 - Man Of Peace.flac
+462cf62e68925492e8e6f43cd5e89f19  Track 04 - I Want You.flac
+bdb0dfcb4895d80241de0be0bffce02d  Track 05 - Ballad Of A Thin Man.flac
+79bf7f2dbc572093d5a1f8252ad4be6a  Track 06 - Highway 61 Revisited.flac
+fbda5715e4133b793a5c7bc3aefe9f5c  Track 07 - It's All Over Now, Baby Blue.flac
+3b55b1f2a128dd90332b5eae784e621a  Track 08 - Gates Of Eden.flac
+d5e6cae66bdf400e0c4d591a3a9d8a59  Track 09 - Ode To Barbara Allen.flac
+289dc97daae4271e8c2a3b3a2cc1c71a  Track 10 - Boots Of Spanish Leather.flac
+aea932f2a7b08a6b802cf5278e9d06f0  Track 11 - Everything Is Broken.flac
+c6f2ba7a3b93da5c228ddf47f0361c3f  Track 12 - ITALTL, ITATTCry.flac
+7d4404d48ac5e21b0fa44d7662732338  Track 13 - Precious Memories.flac
+7cd7c305235488656d67971a76c2fa4b  Track 14 - In The Garden.flac
+03818a0943bc898b9b8eb67a789b2e97  Track 15 - Like A Rolling Stone.flac
+628623fccaee177a9d357a7b74ccd974  Track 16 - Most Of The Time.flac
+701a0f9fe443f15555174a19764ed958  Track 17 - All Along The Watchtower.flac

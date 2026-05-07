@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-08-29-always-on-my-mind-vol1.flacf 
+=================== 
+=================== 
+=================== 
+af44f3b18b21f5a60095b56d1111f1dc  bd94-08-29-always-on-my-mind-vol1-d1t01.flac
+7a504efe5eab3eab9469bc9bbe8b2284  bd94-08-29-always-on-my-mind-vol1-d1t02.flac
+7dfc62d07bf14ac9de8ed4c10e33fee2  bd94-08-29-always-on-my-mind-vol1-d1t03.flac
+9abe1ab70ebbb16ffe6eb2486971ea6b  bd94-08-29-always-on-my-mind-vol1-d1t04.flac
+22f03d7505f64226a86dd76592792815  bd94-08-29-always-on-my-mind-vol1-d1t05.flac
+35bcf6b73bd0a580aedce70daa87678e  bd94-08-29-always-on-my-mind-vol1-d1t06.flac
+9dbd0959afb692a3fbbb711e1b4607f1  bd94-08-29-always-on-my-mind-vol1-d1t07.flac
+ef02de452d6b3b8ee9c91848d177cbb0  bd94-08-29-always-on-my-mind-vol1-d1t08.flac
+b2d1e467a29a221da05d12e1c271210b  bd94-08-29-always-on-my-mind-vol1-d1t09.flac
+abe893b24716a5dfbd0ed38bf3f00d72  bd94-08-29-always-on-my-mind-vol1-d1t10.flac
+5826c50956f78e6cc7b06478d6494640  bd94-08-29-always-on-my-mind-vol1-d2t01.flac
+8dfcff5f7b3afb6d217653b39b39bc9a  bd94-08-29-always-on-my-mind-vol1-d2t02.flac
+fd376aea853a00aab22c57930a3b6f59  bd94-08-29-always-on-my-mind-vol1-d2t03.flac
+4c3d18f87586860c3bf778357e5ee966  bd94-08-29-always-on-my-mind-vol1-d2t04.flac
+fa149de112a0c504b7dff0a4cfe2f63b  bd94-08-29-always-on-my-mind-vol1-d2t05.flac
+4ebf85757223b0148f1938fabc85652f  bd94-08-29-always-on-my-mind-vol1-d2t06.flac
+4af884ff3615e8f06cbfa24d1e18c86a  bd94-08-29-always-on-my-mind-vol1-d2t07.flac
+61600e85737e29ff1a094a3043d2cca5  bd94-08-29-always-on-my-mind-vol1-d2t08.flac
+b3dbed650641e75bdeb75d9fdf9a93bf  bd94-08-29-always-on-my-mind-vol1-d2t09.flac
+63c27ca36b661d73e874ce3656f8202d  bd94-08-29-always-on-my-mind-vol1.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-08-29-always-on-my-mind-vol1.flacf 
+=================== 
+=================== 
+=================== 
+bd94-08-29-always-on-my-mind-vol1-d1t01.flac:a017b73d77cbd41455fa1fa7b05dc222
+bd94-08-29-always-on-my-mind-vol1-d1t02.flac:60b42dcf8fd6a16e06650e1bcc213a8d
+bd94-08-29-always-on-my-mind-vol1-d1t03.flac:2420546047a1dd98c5cde6c03bef8a23
+bd94-08-29-always-on-my-mind-vol1-d1t04.flac:9d38527e4aee27e400dae7089e790371
+bd94-08-29-always-on-my-mind-vol1-d1t05.flac:caa1ab298a5d3e3a3837665567063a74
+bd94-08-29-always-on-my-mind-vol1-d1t06.flac:fd41f65d45a81c878f2fead0c6ee9a6c
+bd94-08-29-always-on-my-mind-vol1-d1t07.flac:b8892ad9f623fe7eed998754f3a0e07c
+bd94-08-29-always-on-my-mind-vol1-d1t08.flac:4e0c1fcafdba7eeda8585d0c8450322f
+bd94-08-29-always-on-my-mind-vol1-d1t09.flac:9954a372b2b933da635ff95290029eff
+bd94-08-29-always-on-my-mind-vol1-d1t10.flac:d12310d598e722910f2cbaf6a2ca4952
+bd94-08-29-always-on-my-mind-vol1-d2t01.flac:424905f25277609224143a0f81956cf5
+bd94-08-29-always-on-my-mind-vol1-d2t02.flac:0d08cba3edba33183efd84b8c7431f28
+bd94-08-29-always-on-my-mind-vol1-d2t03.flac:19021dc3fdf888ff711f3e110dcfb9aa
+bd94-08-29-always-on-my-mind-vol1-d2t04.flac:c113964dbb1cc99a79dd76d7b0accab1
+bd94-08-29-always-on-my-mind-vol1-d2t05.flac:de41acf049fff2930394b2c4a613a35a
+bd94-08-29-always-on-my-mind-vol1-d2t06.flac:a75a638c51c9c0e1967820f4af1fc24f
+bd94-08-29-always-on-my-mind-vol1-d2t07.flac:c77a079e66924bf968b11366dcef9c58
+bd94-08-29-always-on-my-mind-vol1-d2t08.flac:7aaae48b43fb5309f54945f708694354
+bd94-08-29-always-on-my-mind-vol1-d2t09.flac:937d618f477834d0a24492cc508cebba
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-08-29-always-on-my-mind-vol1.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:03.09       85222412 B   ---   --   ---xx   flac  0.5953  bd94-08-29-always-on-my-mind-vol1-d1t01.flac
+     6:59.65       74064524 B   ---   --   ---xx   flac  0.6073  bd94-08-29-always-on-my-mind-vol1-d1t02.flac
+     5:24.63       57301820 B   ---   --   ---xx   flac  0.6316  bd94-08-29-always-on-my-mind-vol1-d1t03.flac
+     8:23.31       88802156 B   ---   --   ---xx   flac  0.6163  bd94-08-29-always-on-my-mind-vol1-d1t04.flac
+     9:36.26      101667596 B   ---   --   ---xx   flac  0.6066  bd94-08-29-always-on-my-mind-vol1-d1t05.flac
+     6:41.50       70854044 B   ---   --   ---xx   flac  0.5926  bd94-08-29-always-on-my-mind-vol1-d1t06.flac
+     6:14.39       66065372 B   ---   --   ---xx   flac  0.5748  bd94-08-29-always-on-my-mind-vol1-d1t07.flac
+     6:31.48       69085340 B   ---   --   ---xx   flac  0.5427  bd94-08-29-always-on-my-mind-vol1-d1t08.flac
+     7:41.05       81332204 B   ---   --   ---xx   flac  0.5168  bd94-08-29-always-on-my-mind-vol1-d1t09.flac
+     6:02.70       64021484 B   ---   --   ---xx   flac  0.6208  bd94-08-29-always-on-my-mind-vol1-d1t10.flac
+     9:07.52       96613148 B   ---   --   ---xx   flac  0.6088  bd94-08-29-always-on-my-mind-vol1-d2t01.flac
+     7:40.42       81242828 B   ---   --   ---xx   flac  0.6502  bd94-08-29-always-on-my-mind-vol1-d2t02.flac
+     8:20.46       88308236 B   ---   --   ---xx   flac  0.6048  bd94-08-29-always-on-my-mind-vol1-d2t03.flac
+     9:48.54      103850252 B   ---   --   ---xx   flac  0.5586  bd94-08-29-always-on-my-mind-vol1-d2t04.flac
+     5:16.57       55876508 B   ---   --   ---xx   flac  0.6046  bd94-08-29-always-on-my-mind-vol1-d2t05.flac
+     5:50.16       61777676 B   ---   --   ---xx   flac  0.6367  bd94-08-29-always-on-my-mind-vol1-d2t06.flac
+     7:39.56       81099356 B   ---   --   ---xx   flac  0.6356  bd94-08-29-always-on-my-mind-vol1-d2t07.flac
+     9:23.69       99475532 B   ---   --   ---xx   flac  0.5973  bd94-08-29-always-on-my-mind-vol1-d2t08.flac
+     7:33.04       79918652 B   ---   --   ---xx   flac  0.6259  bd94-08-29-always-on-my-mind-vol1-d2t09.flac
+   142:20.52     1506579140 B                            0.6005  (19 files)
+=================== 
+=================== 
+=================== 

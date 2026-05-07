@@ -1,0 +1,26 @@
+d8bc7c399242b08c4254119641124e86  Bob Dylan Palaeur Roma Italy 1984 06 19.md5
+2f1f6a37455110ad232718189e931a70  CD1\01  Highway 61 Revisited.flac
+7860528e62be76dff826a2acb45e4199  CD1\02  Jokerman.flac
+3df885e8edc7bd8ee217378ead39d0cb  CD1\03  All ALong The Watchtower.flac
+46401471b863739d36b72621534fbc82  CD1\04  Just Like A Woman.flac
+86f43f791b9f59b9b076112f0f27e46a  CD1\05  Maggie's Farm.flac
+dc6cbd50fc9440737d250702a6c9fede  CD1\06  I And I.flac
+394c859f5f62e56e54f7e1eb89ec8605  CD1\07  License To Kill.flac
+87e7bf34261564744cf5dedf37f692cb  CD1\08  A hard rain's A Gonna Fall.flac
+9f1b795e33553cb923d2bdcd82eb0d03  CD1\09  Tangled Up In Blue.flac
+70c7e76ae2b63c13812477b89d41948d  CD1\10  It's Alright Ma I'm Only Bleeding.flac
+5e4d76972730deba873d1bc523b8b4c4  CD1\11  Simple Twist Of Fate.flac
+5b3456ab37c30c134a421b81d3e22834  CD1\Fingerprint.txt
+206b8389ae03b049ba01dedb7a4eb843  CD2\01  Masters Of War.flac
+f5fee4d05a31dc2b126a2000e739f442  CD2\02  Ballad Of A Thin Man.flac
+855907ad27ba31a7929ca798bc4d5a8f  CD2\03  When You Gonna Wake Up.flac
+d524bb0e77e545b9e674bb7d939b24c7  CD2\04  Every Grain Of Sand.flac
+6d5cc0cac83a0de6d396db4eb74c3843  CD2\05  Like A Rolling Stone.flac
+809d8bd0b105fa084e3ffd114f797143  CD2\06  Mr Tambourine Man.flac
+9f55de9b4579832fc22c65e9a86e9c36  CD2\07  It Ain't Me Babe.flac
+de1cc23a4d976c4a844acb6c3798003c  CD2\08  The Times They Are A Changin'.flac
+0052f815d09cca87c22a77b77c79c33d  CD2\09  I Shall Be Released.flac
+b8d24742dd35ab41ab0b5b69e9a2bc1f  CD2\10  Tombstone Blues.flac
+ec194efeb47093e399f8df82817c7efc  CD2\11  Blowin' In The Wind.flac
+46292fd080de06f968c0e233bb76909d  CD2\Fingerprint.txt
+a03f088234a8146bb60944fc109a217b  Info.txt

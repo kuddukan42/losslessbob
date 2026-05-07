@@ -1,0 +1,14 @@
+Bob Dylan, 3/14/78, Brisbane, 2CDR
+
+LB-4161, (46min+72min), nothing above 16k; spectral change improves fidelity on d2 as if different source; d1 matches setlist timings and sort of the comments in dylanbase97 for this date; d2 matches setlist from Perth 3/27/78 and is similar in wav and spectral views to LB-2810 except that one has a little higher levels and is full spectrum with what looks like noise above 15k with similar sound quality; good sound [C-]; (did not listen to all of d2)
+
+digital drops near each track boundary; analog drops near beginning of track boundaries on d1t2, d1t3, d1t4, d1t9
+
+CD1
+1 (cut) One More Cup Of Coffee (Valley Below) 2 Blowin' In The Wind 3 Don't Think Twice, It's All Right 4 Just Like A Woman 5 Oh, Sister (cut) 6 All Along The Watchtower 7 The Man In Me 8 band intros 9 Forever Young 10 The Times TheyAre A-Changin' 11 Knockin' On Heaven's Door 
+
+CD2
+1 One Of Us Must Know (Sooner Or Later) 2 You're A Big Girl Now 3 One More Cup Of Coffee (Valley Below)  4 Blowin' In The Wind  5 I Want You 6 Don't Think Twice, It's All Right 7 Just Like A Woman 8 Oh, Sister 9 To Ramona  10 All Along The Watchtower 11 The Man In Me 12 All I Really WantTo Do 13 band intros 14  It's Alright, Ma (I'm Only Bleeding) 15 Forever Young 16 The Times TheyAre A-Changin'
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

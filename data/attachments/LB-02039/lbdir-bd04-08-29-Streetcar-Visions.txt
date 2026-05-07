@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-29-Streetcar-Visions 
+=================== 
+=================== 
+=================== 
+e291e3ec3cedd78afeb0628a4e8c1edd  bd04-08-29-Streetcar-Visions.txt
+01657398704f1d3797af3ef7c49fcd53  bd040829.md5
+25eba23bb04c31e3b7901ea36b9a22fc  bd040829.txt
+643cddb2442f4eded5254edecba7b304  bd040829d1t01.shn
+233c4a3133c6864c3a03dbb3190734ec  bd040829d1t02.shn
+44ccdd3fdc7cfbb304f452e035ee145f  bd040829d1t03.shn
+8be4b82db122f60551b56c4196558854  bd040829d1t04.shn
+2dbc5ad4340bad933b5a7df694dc6789  bd040829d1t05.shn
+61d7bf59e8ce6ee8da3e1668362160ae  bd040829d1t06.shn
+da6175171e448d0b6ff2e809d95bc073  bd040829d1t07.shn
+498959be2b3ff04b9104f8c15f35bc13  bd040829d1t08.shn
+2273b56cee2a15acdd44062d6eaf48a2  bd040829d1t09.shn
+5cddd032436bf8b46c4e4dbc6d6f58a5  bd040829d1t10.shn
+093f0a23c510f91aa199e1dca378d028  bd040829d1t11.shn
+af36e43230bdd3f742bbb9d288000353  bd040829d2t01.shn
+93b4479f4c63756cd19573318bc18b87  bd040829d2t02.shn
+b7b8c3f071144b7ea19f7565d488aaf1  bd040829d2t03.shn
+369b50111af2b2b177ab98bec4c5672b  bd040829d2t04.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-29-Streetcar-Visions 
+=================== 
+=================== 
+=================== 
+14d2114f088d19425f32aaa0042425c8  [shntool]  bd040829d1t01.wav
+b31e8a791879ce96a83b9d8136ae85ad  [shntool]  bd040829d1t02.wav
+59ad62028f8b90c7d9c7187142a1485d  [shntool]  bd040829d1t03.wav
+8bef3e8d91ca09a7d7fc956cdc42d2eb  [shntool]  bd040829d1t04.wav
+2cbb29f84ef342a84d8e2a5b4a6df2d3  [shntool]  bd040829d1t05.wav
+4808f3d7268f97f13cc18c878905f9eb  [shntool]  bd040829d1t06.wav
+73a79488f7d16312ac7b6911d9c9cb78  [shntool]  bd040829d1t07.wav
+165972ab873b974ac3244ad593fe2e18  [shntool]  bd040829d1t08.wav
+2543420b779c1885ad8eca10ebea1200  [shntool]  bd040829d1t09.wav
+725902a0c66756d58afb77f2a8cf5dd8  [shntool]  bd040829d1t10.wav
+46adf2bd697734bff01223ffc5363489  [shntool]  bd040829d1t11.wav
+b4120e1cff1912f0dc1b3b3cad6550b9  [shntool]  bd040829d2t01.wav
+93098a15ce6565ebee39e2c825e770db  [shntool]  bd040829d2t02.wav
+aff59ff1adee2833bc91cdc3f6da28d4  [shntool]  bd040829d2t03.wav
+dd3f93304728d3fa37cf5aa55de3b652  [shntool]  bd040829d2t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-29-Streetcar-Visions 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:19.46       14043836 B   ---   --   -----    wav  1.0000  bd040829d1t01.wav
+     4:16.63       45306620 B   ---   --   -----    wav  1.0000  bd040829d1t02.wav
+     5:46.69       61196732 B   ---   --   -----    wav  1.0000  bd040829d1t03.wav
+     5:16.13       55773020 B   ---   --   -----    wav  1.0000  bd040829d1t04.wav
+     4:05.40       43312124 B   ---   --   -----    wav  1.0000  bd040829d1t05.wav
+     5:38.09       59644412 B   ---   --   -----    wav  1.0000  bd040829d1t06.wav
+     7:22.56       78100556 B   ---   --   -----    wav  1.0000  bd040829d1t07.wav
+     6:31.42       69071228 B   ---   --   -----    wav  1.0000  bd040829d1t08.wav
+     5:10.60       54825164 B   ---   --   -----    wav  1.0000  bd040829d1t09.wav
+     5:35.34       59174012 B   ---   --   -----    wav  1.0000  bd040829d1t10.wav
+     6:30.40       68890124 B   ---   --   -----    wav  1.0000  bd040829d1t11.wav
+     5:26.54       57633452 B   ---   --   -----    wav  1.0000  bd040829d2t01.wav
+     6:30.73       68967740 B   ---   --   -----    wav  1.0000  bd040829d2t02.wav
+     7:09.29       75743852 B   ---   --   -----    wav  1.0000  bd040829d2t03.wav
+     5:22.67       56958428 B   ---   --   -----    wav  1.0000  bd040829d2t04.wav
+    82:04.20      868641300 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

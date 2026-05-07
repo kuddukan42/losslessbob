@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-05-08-b.flacf 
+=================== 
+=================== 
+=================== 
+1cd7184637a490dc35f78b12ee15e305  1994.05.08 The River Stage, Tom Lee Park, Memphis, Tennessee, USA.md5
+d0e8a3fbe63ffcaf02ccc9009c1c9baf  CD1\01 Jokerman.flac
+e13fa5b6a0cc275f75add49d77a927a4  CD1\02 Señor (Tales of Yankee Power).flac
+f6ab3009e60d9c46f6519e4dac0330d3  CD1\03 All along the watchtower.flac
+9171d26eea643299f8bb19a4b45d5f31  CD1\04 I shall be released.flac
+44f72810bb5dcd529d794cbd5f0a774a  CD1\05 Tangled up in blue.flac
+9b591d7a73db5ab60422a1ad28ef05af  CD1\06 Watching the river flow.flac
+4717fb08c2f1082fade68aae6f00b146  CD1\07 Masters of war.flac
+7a2e4fac823633b68595762764f14335  CD1\08 Mama, you been on my mind.flac
+53b72260515cd6b939bc858ac7a9d1d6  CD2\01 It's all over now, baby blue.flac
+0b7f9b5266440bfd4da602fc7c008267  CD2\02 Highway 61 revisited.flac
+7e88fb79a6009176a3c4090a7a201c22  CD2\03 In the garden.flac
+8328a215a88abf3e8da9cf9cb89c906a  CD2\04 She belongs to me.flac
+8506f9862346c7a7b530ebfaad9e6a12  CD2\05 Maggie's farm.flac
+ac291255580c241ea715d3cceadde219  CD2\06 Ballad of a thin man.flac
+01f77e7f02cd0924f7419d944e3ed367  CD2\07 It ain't me, babe.flac
+260454df692941d2fff9fdc839b2bcb7  txt.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-05-08-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Jokerman.flac:0c7a14841e108e3d0cab66f8a5cdf7ac
+02 Señor (Tales of Yankee Power).flac:77b4c5d946ea9bac79cf4e9b486bfd13
+03 All along the watchtower.flac:5693f280d8e1ad6b258a73d093a409b6
+04 I shall be released.flac:fb60f50497fab2d269153ca85f072610
+05 Tangled up in blue.flac:bbd85321b6cd0e4509279839c4ca91a4
+06 Watching the river flow.flac:662c1f302ce700fd570102c99cd761ab
+07 Masters of war.flac:19eb334922e2391ef90e82665cccfce0
+08 Mama, you been on my mind.flac:4fef1c50739f96382280dee17c6d6c9a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-05-08-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+01 It's all over now, baby blue.flac:550507cf418cad6c2d7696aabdb54325
+02 Highway 61 revisited.flac:0c58410703b4fc12550471076a07e15b
+03 In the garden.flac:9cdfbc44add2a475ef9167a6557b199f
+04 She belongs to me.flac:39be56b53aabb9ab6a2258944c9f2750
+05 Maggie's farm.flac:cad28b016fca5a61831fac6907e23257
+06 Ballad of a thin man.flac:ea082e0685f2f6cee77baf648f06f95a
+07 It ain't me, babe.flac:f2d6f7cfa12eccefb7b38b274083296c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-05-08-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.57       77220908 B   ---   --   ---xx   flac  0.6192  01 Jokerman.flac
+     6:01.25       63739244 B   ---   --   ---xx   flac  0.6011  02 Señor (Tales of Yankee Power).flac
+     5:27.34       57762812 B   ---   --   ---xx   flac  0.6311  03 All along the watchtower.flac
+     6:09.28       65157500 B   ---   --   ---xx   flac  0.5917  04 I shall be released.flac
+     9:02.71       95775836 B   ---   --   ---xx   flac  0.6011  05 Tangled up in blue.flac
+     5:50.43       61841180 B   ---   --   ---xx   flac  0.5711  06 Watching the river flow.flac
+     5:47.38       61300220 B   ---   --   ---xx   flac  0.4964  07 Masters of war.flac
+     5:15.53       55690700 B   ---   --   ---xx   flac  0.5544  08 Mama, you been on my mind.flac
+    50:52.49      538488400 B                            0.5856  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-05-08-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:40.58       81280460 B   ---   --   ---xx   flac  0.4761  01 It's all over now, baby blue.flac
+     5:18.67       56252828 B   ---   --   ---xx   flac  0.6577  02 Highway 61 revisited.flac
+     7:35.05       80273804 B   ---   --   ---xx   flac  0.6303  03 In the garden.flac
+     7:00.25       74146844 B   ---   --   ---xx   flac  0.6016  04 She belongs to me.flac
+     5:25.11       57355916 B   ---   --   ---xx   flac  0.6526  05 Maggie's farm.flac
+     9:02.13       95639420 B   ---   --   ---xx   flac  0.5864  06 Ballad of a thin man.flac
+     9:05.36       96222716 B   ---   --   ---xx   flac  0.5813  07 It ain't me, babe.flac
+    51:07.65      541171988 B                            0.5920  (7 files)
+=================== 
+=================== 
+=================== 

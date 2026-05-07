@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-18-e.flacf 
+=================== 
+=================== 
+=================== 
+b3d3d2e5ad4ce709f7ae87cdfc705b7d  01. Introduction.flac
+3ca48016ccb54c0a22f03e4fe50e8d76  02. Absolutely Sweet Marie.flac
+7df300ebeeba12681a326b132963484e  03. I Want You.flac
+4873e8b2e5e45e9df561e61e71fb3507  04. Cold Irons Bound.flac
+92656ce94dff0e2bb124b7516e79410c  05. You're A Big Girl Now.flac
+6635aa83a86dc5360ec31e6b823b60d1  06. Silvio.flac
+c7db680784e2b06bd38493e23e18081f  07. Desolation Row.flac
+686aa3e9cb6602c6ee08744cf9cbc8d2  08. It's All Over Now, Baby Blue.flac
+75e08b89fb0cfa2fde0f86be39926238  09. Tangled Up In Blue.flac
+e926a3f87a8a0e9a8ffcf19bc5ebd240  10. Million Miles.flac
+380b7ddc5115d235e0b659b91513524f  11. Stuck Inside of Mobile With the Memphis Blues Again.flac
+c36c26b9546f53175d0ab60efd157bf4  12. Til I Fell In Love With You.flac
+8393c8558f02289debb619f4ae7d3323  13. Highway 61 Revisited.flac
+b499e99de2db618ec9226970f7d292aa  14. Knockin' On Heaven's Door.flac
+2bb61e0289f0933b008209ee76c5827b  15. Love Sick.flac
+d7f8bfa4f02ee102a51a9da4a9312415  16. Rainy Day Women # 12 & 35.flac
+c762729498b5d3d2caf58a728f26ae38  1998-01-18,New York City,New York,(Estados Unidos).nfo
+dad325b5d28fb81c3068ee03e0f675c1  1998-01-18,New York City,New York,(Estados Unidos).txt
+395e7488c3aa8841283461e24b137ac6  FCMD5-sums.MD5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-18-e.flacf 
+=================== 
+=================== 
+=================== 
+01. Introduction.flac:1358126bc5077f19bf367a84afc4e8e3
+02. Absolutely Sweet Marie.flac:abae512cd9084d2dc43e20394001dbb7
+03. I Want You.flac:498934be7a71db159c998cd10eb16b41
+04. Cold Irons Bound.flac:03361b8bd04228f25c9ccee68f7f3975
+05. You're A Big Girl Now.flac:bd9a534ac9b94716e861841842c42cbc
+06. Silvio.flac:50ecc668958a3d8e09b9869a0f069252
+07. Desolation Row.flac:81cb27594dede57740ff279471cea285
+08. It's All Over Now, Baby Blue.flac:dafd911368462a6aaca12aad56c4f98a
+09. Tangled Up In Blue.flac:040e9f1e45c8eaa27624589072717e6d
+10. Million Miles.flac:1227c6afd7dd5b3f460724f8dd98eecd
+11. Stuck Inside of Mobile With the Memphis Blues Again.flac:cdf77b42e68ab4650f88eb7c010fdc6a
+12. Til I Fell In Love With You.flac:082337ca477613fa68e2faaff7ee894f
+13. Highway 61 Revisited.flac:8479e787bc25f73583068fe6ec585afe
+14. Knockin' On Heaven's Door.flac:9b19c5fb7c4e932a7c0e296f859edea3
+15. Love Sick.flac:5483d80eaa20d31f762bbd9201815cf5
+16. Rainy Day Women # 12 & 35.flac:f8904df0216e7cdfc9b29aa14337b9dd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-18-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:23.09        4078412 B   ---   --   ---xx   flac  0.4358  01. Introduction.flac
+     4:00.72       42505388 B   ---   --   ---xx   flac  0.5201  02. Absolutely Sweet Marie.flac
+     5:19.68       56431580 B   ---   --   ---xx   flac  0.4820  03. I Want You.flac
+     6:42.68       71072780 B   ---   --   ---xx   flac  0.5172  04. Cold Irons Bound.flac
+     5:46.39       61126172 B   ---   --   ---xx   flac  0.4673  05. You're A Big Girl Now.flac
+     7:00.34       74168012 B   ---   --   ---xx   flac  0.5274  06. Silvio.flac
+    10:37.07      112383308 B   ---   --   ---xx   flac  0.5168  07. Desolation Row.flac
+     8:06.73       85902140 B   ---   --   ---xx   flac  0.5121  08. It's All Over Now, Baby Blue.flac
+     8:19.03       88030700 B   ---   --   ---xx   flac  0.6069  09. Tangled Up In Blue.flac
+     6:17.67       66660428 B   ---   --   ---xx   flac  0.6017  10. Million Miles.flac
+     6:42.36       70997516 B   ---   --   ---xx   flac  0.6297  11. Stuck Inside of Mobile With the Memphis Blues Again.flac
+     7:40.47       81254588 B   ---   --   ---xx   flac  0.5732  12. Til I Fell In Love With You.flac
+     6:58.64       73885772 B   ---   --   ---xx   flac  0.6022  13. Highway 61 Revisited.flac
+     6:56.35       73464764 B   ---   --   ---xx   flac  0.5316  14. Knockin' On Heaven's Door.flac
+     5:53.03       62276300 B   ---   --   ---xx   flac  0.5380  15. Love Sick.flac
+     4:27.03       47105900 B   ---   --   ---xx   flac  0.6185  16. Rainy Day Women # 12 & 35.flac
+   101:13.28     1071343760 B                            0.5494  (16 files)
+=================== 
+=================== 
+=================== 

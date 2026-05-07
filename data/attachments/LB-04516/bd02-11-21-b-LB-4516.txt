@@ -1,0 +1,12 @@
+Bob Dylan, 11/21/02, Wilkes-Barre, Pennsylvania, First Union Center, 2CDR
+
+LB-4516, (60min+71min), version "b", unknown aud, DAT>WAV>EAC>FLAC level 8; some analog clipping on d1t2 loudest parts where limited portion of wav is reflected backward; after d1t2 levels are ok until end of d2t10; different recording and in comparison has similar quality with LB-802 being the warmest but fuzzier, LB-809 is in between and this one is the harshest
+
+CD1
+1 Intro, 2 Maggie's Farm, 3 I'll Remember You, 4 Highway 61 Revisited, 5 Accidentally Like A Martyr (Warren Zevon), 6 Things Have Changed, 7 Brown Sugar (Mick Jagger/Keith Richards), 8 Never Gonna Be The Same Again, 9 It's Alright, Ma (I'm Only Bleeding), 10 Girl From The North Country, 11 Cold Irons Bound, 
+
+CD2
+1 Shelter From The Storm, 2 Old Man (Neil Young), 3 Honest With Me, 4 Just Like A Woman, 5 High Water (for Charlie Patton), 6 Mutineer (Warren Zevon), 7 Bye And Bye, 8 Summer Days, 9 Blowin' In The Wind, 10 All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

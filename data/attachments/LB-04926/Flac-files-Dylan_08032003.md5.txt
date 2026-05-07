@@ -1,0 +1,19 @@
+66fdef45bf1c2a802e59572cc6d0ff51 *17 Johnny B Goode.flac
+165e8b384596096b917606551fdeba3d *02 If You See Her, Say Hello.flac
+ac5b72fad1f7371a00e0083e12884d92 *03 Twiddle Dum and Twiddle Dee.flac
+34e22d360718bf8d032ae339a1db8ba7 *04 Watching the River Flow.flac
+5525987224508cae1b97d691293a0176 *05 Highway 61 revisisted.flac
+48feb657f00c699ceb5196fdd7394d81 *06 Most Likely You'll Go Your Way (and I'll Go Mine).flac
+7e862940958a872d002facf11c08ad19 *07 The Drifter's Escape.flac
+30278d27628dba2ebd6d8602c45c21d9 *08 Bye and Bye pt. 1.flac
+0b88c4db0d1fbfec42ed14dd7b7642bf *09 Bye and Bye pt. 2.flac
+95f4601df2475671f9a1692396faaa9f *10 Be Honest With Me.flac
+42d70bd78396cde9af5fb5cb929ca1ec *11 Band Intros.flac
+9e75a32036e822d07f565331c6cbc374 *12 Summer Days.flac
+2e72448fd511be0ce6ecfea089dafe82 *13 encore noise.flac
+7afb8155859d364a9daa36770fd4034b *14 Rainy Day Women #12 & #35.flac
+1033f142a9a44390431b938ff9db5eae *15 Big River.flac
+a2f214bad686e509bf71a1500a00acd5 *16 Desolation Row.flac
+9a136599f1675d1fb19035a138d15197 *01 Silvio.flac
+a9002d9133eb4e8f286542cf261e4ab2 *flac fingerprint.txt
+fba7421368df9738f37d3917edcaf12d *info.txt

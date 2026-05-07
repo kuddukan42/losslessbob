@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd95-10-06-b.flacf
+===================
+===================
+===================
+11508ac01a5485eb744e5fa892ae2cff *Art+info\Info.txt
+14054903cbcf0c2d438422b48b61acc7 *Art+info\S6262.jpg
+4c5733628f914db1ec9961b6577d5861 *Art+info\S6263.jpg
+cba88603363e3665250daf053b79363b *BOB DYLAN 1995 10 06 Jacksonville, Florida Audience.md5
+bf6087e4ea8f4c0c38689dfef996f156 *Disc 1\Track01.flac
+ddf226220c1f154266875ed3790065f0 *Disc 1\Track02.flac
+c090720afdb400fcb4195a693bfe697d *Disc 1\Track03.flac
+591a1c02d8fcffa5e2a5b476fa3a50f7 *Disc 1\Track04.flac
+fb3ea74d7d292f64af37b265553cd94e *Disc 1\Track05.flac
+db9bed487482d1f986ae2874887ee35a *Disc 1\Track06.flac
+521a125abb39726d1b01253468f2c306 *Disc 1\Track07.flac
+25b718cc1d187efb483dfe12e29e6250 *Disc 1\Track08.flac
+57696e19931e70c8fcf0d8416beee80c *Disc 1\Track09.flac
+207f20d29a767e61be234e57f5c6b3a4 *Disc 2\Track01.flac
+8780f0c7f1f8f59d8b89e8c12ac37d7d *Disc 2\Track02.flac
+e44e30f65788254da6611abc6e0b17ac *Disc 2\Track03.flac
+8665111b8f75566d291f3c47abdef7e5 *Disc 2\Track04.flac
+65aed742e2c4a29a57b68b7383a71d2f *Disc 2\Track05.flac
+20f718353d044e264e218a1544cc44d4 *Disc 2\Track06.flac
+===================
+===================
+===================
+=== ffp for: bd95-10-06-b.flacf
+===================
+===================
+===================
+Disc 1\Track01.flac:ac9229fcd358b155c4c48ab150cbe4cd
+Disc 1\Track02.flac:8409cbcac621a50c17c0d28f399d8475
+Disc 1\Track03.flac:31c8d34e907ad943a2de65d01c986bde
+Disc 1\Track04.flac:d3f5e81003c71567bad5abf780a615a1
+Disc 1\Track05.flac:13a7194ef9f36dad0996822a56524d30
+Disc 1\Track06.flac:28163453002f49beda6b709935fc6844
+Disc 1\Track07.flac:356dca71388941a7f67207701bdbb722
+Disc 1\Track08.flac:baa831fa5b7b6bad13b3b86a365dec87
+Disc 1\Track09.flac:d1ad58c339fd3248aee45e0c760b0bef
+Disc 2\Track01.flac:e11332df7f07dde96b8d961138832d4b
+Disc 2\Track02.flac:15c9a3a8d573777c85b3db4b063823f2
+Disc 2\Track03.flac:054c5876a6d14f1c11d35efa3c498408
+Disc 2\Track04.flac:818eba9c25510f8e89735504de79e802
+Disc 2\Track05.flac:42ba538a5240b8c676523915e181f3d0
+Disc 2\Track06.flac:1fb0f416e238ec62b140c5191c686f9f
+===================
+===================
+===================
+=== shntool len for: bd95-10-06-b.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:31.22       69023276 B   -b-   --   ---xx   flac  0.5901  Track01.flac
+     6:32.11       69175340 B   -b-   --   ---xx   flac  0.5881  Track02.flac
+     6:57.50       73677356 B   -b-   --   ---xx   flac  0.5727  Track03.flac
+     9:27.23      100071980 B   -b-   --   ---xx   flac  0.5399  Track04.flac
+     6:48.26       72032300 B   -b-   --   ---xx   flac  0.5540  Track05.flac
+     7:25.33       78575660 B   ---   --   ---xx   flac  0.5687  Track06.flac
+    10:12.29      108025388 B   -b-   --   ---xx   flac  0.5777  Track07.flac
+     6:48.71       72138284 B   -b-   --   ---xx   flac  0.5528  Track08.flac
+     6:49.57       72281132 B   -b-   --   ---xx   flac  0.5697  Track09.flac
+    67:33.22      715000716 B                            0.5674  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd95-10-06-b.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:33.13       79939628 B   -b-   --   ---xx   flac  0.6092  Track01.flac
+     9:32.49      101016620 B   -b-   --   ---xx   flac  0.5717  Track02.flac
+     9:21.38       99049004 B   -b-   --   ---xx   flac  0.6035  Track03.flac
+     5:39.74       59973164 B   -b-   --   ---xx   flac  0.6137  Track04.flac
+    10:53.01      115190828 B   -b-   --   ---xx   flac  0.5718  Track05.flac
+     5:43.74       60678188 B   -b-   --   ---xx   flac  0.5855  Track06.flac
+    48:44.23      515847432 B                            0.5902  (6 files)
+===================
+===================
+===================

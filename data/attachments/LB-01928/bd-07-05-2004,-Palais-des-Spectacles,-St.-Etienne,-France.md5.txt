@@ -1,0 +1,19 @@
+500f2099404b0a0870b92bc263935bfb *bd 07-05-2004, Palais des Spectacles, St. Etienne, France.txt
+0f5766ea13274cdcd890207c3fd7f932 *bd07-05-2004 cover.jpg
+c792e7e6a78cb68c63790ebc4fde956a *t00d1-Intro.flac
+c787c9183564eec6143b2066f0907b0d *t01d1-Drifter's Escape.flac
+ec0db86decf72626055528e5cb5284fc *t02d1-I'll Be Your Baby Tonight.flac
+01ff29c93cc92ff439d031edad7c094f *t03d1-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+a30bb1f9bfc11778bc2bc1ffe3552116 *t04d1-Moonlight.flac
+50b9ac01de887641ccd82d7458fe786c *t05d1-It's Alright, Ma (I'm Only Bleeding).flac
+860f1c3881866dad300a0f17cbc860f1 *t06d1-Tweedle Dee & Tweedle Dum.flac
+3b1e029e4abd50ba7fd3a9571c2e9306 *t07d1-Man In The Long Black Coat.flac
+dd28d00bbda7797bb66951b2800bbb2b *t08d1-Highway 61 Revisited.flac
+f3e691dac07bab58ec6a2a72df21be3f *t09d1-Standing In The Doorway.flac
+1ac3f7e9318d4f2d91166b7c816f79dd *t10d2-I Don't Believe You (She Acts Like We Never Have Met).flac
+051a5c1e154130e04ff29c51198c692d *t11d2-It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+5df2631cb89affe29b01baf346283f58 *t12d2-Honest With Me.flac
+24acba4419bd52394264441e91cc1e3f *t13d2-Every Grain Of Sand.flac
+93b57ab5bcae3ecadc22b10af27d14b1 *t14d2-Summer Days.flac
+07987fc5f6ead36dbfe2598da1600de9 *t15d2-Like A Rolling Stone.flac
+f730fa496360444fd425762217f12811 *t16d2-All Along The Watchtower  .flac

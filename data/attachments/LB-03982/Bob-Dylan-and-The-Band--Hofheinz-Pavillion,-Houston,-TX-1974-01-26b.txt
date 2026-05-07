@@ -1,0 +1,39 @@
+Bob Dylan and The Band
+Hofheinz Pavillion, Houston, TX 1974-01-26 evening show
+
+01 Most Likely You Go Your Way (and I'll Go Mine)
+02 Lay Lady Lay
+03 Just Like Tom Thumb's Blues
+04 Rainy Day Women # 12 & 35
+05 It Ain't Me, Babe
+06 Ballad of a Thin Man
+07 Stage Fright (fragment)
+08 The Night They Drove Old Dixie Down (part)
+09 Up on Cripple Creek (in progress)
+10 All Along the Watchtower
+11 Ballad of Hollis Brown
+12 Knockin' on Heaven's Door
+13 The Times They Are A-Changin'
+14 Don't Think Twice, It's Alright
+15 Gates of Eden
+16 Just Like a Woman
+17 It's Alright, Ma (I'm Only Bleeding)
+18 The Weight (in progress)
+19 Forever Young
+20 Something There Is About You
+21 Like a Rolling Stone
+22 Most Likely You Go Your Way (and I'll Go Mine)
+
+master audience tape > reel > 24/96 wav > 16/44.1 wav > SBE correct > FLAC level 8
+
+There's a story behind this one...
+
+I was involved with trading tapes of the Jan-Feb 1974 Dylan & The Band tour.  It was very exciting to trade new recordings of Bob Dylan during his first tour in 8 years, and this more than anything else hooked me into being a lifelong trader.  
+
+Time had passed after the tour, and as we took inventory of shows in circulation, we noticed one missing: this one.  A taper from Pennsylvania suggested that I place an ad in the college newspaper for a tape of this show.  I did, and shortly after I got a letter from someone who had taped the show and would be willing to make me a copy.  "You're not from the FBI, are you?" he asked during our later phone conversation.
+
+Despite this tape coming from the original taper, don't expect high quality.  There is a noticable hiss band running throughout.  The taper overuses the pause button.  I didn't ask or don't rmeember what kind of equipment was used, but obviously it was not up to today's high standards, or even 1974's.  Also, the taper obviously didn't think enough of The Band to tape their complete sets.  The start-stops are the taper's - I've included all of the fragments of The Band songs that are on the reel.
+
+I corrected DC offset and peak normalized this recording, but no EQ/compression/noise reduction were used.  I have included every millisecond of sound from the show here.
+
+Oddity: at the very beginning of the show, before "Most Likely," a guitarist (Dylan?) is playing a passage from the song Greensleeves!

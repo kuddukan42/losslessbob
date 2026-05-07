@@ -1,0 +1,16 @@
+1a25434902f564176f1413a852e8ded8  bd64-06-09-emmett-grogan-acetates-capricorn-t01.flac
+63adfef59455323dbcc4130824116253  bd64-06-09-emmett-grogan-acetates-capricorn-t02.flac
+95d7451d7d587188c9040044245514ba  bd64-06-09-emmett-grogan-acetates-capricorn-t03.flac
+28473c44c45863bab7be728bd78ad82e  bd64-06-09-emmett-grogan-acetates-capricorn-t04.flac
+8b4cc18aa54755a67611e350f331ffaa  bd64-06-09-emmett-grogan-acetates-capricorn-t05.flac
+13d74a45e2d4c807bb8a41ded219d198  bd64-06-09-emmett-grogan-acetates-capricorn-t06.flac
+5190f2a3c1e3e7168adc4312620333d9  bd64-06-09-emmett-grogan-acetates-capricorn-t07.flac
+c938e82a95dc95fa54a6bf6967a60dc8  bd64-06-09-emmett-grogan-acetates-capricorn-t08.flac
+75be6f7b5bed6ee88711851637a00037  bd64-06-09-emmett-grogan-acetates-capricorn-t09.flac
+5fcb88876de39b7f7a48b5ab09c7fafd  bd64-06-09-emmett-grogan-acetates-capricorn-t10.flac
+9c9566bdd437bc22acf0a36d0c6f1460  bd64-06-09-emmett-grogan-acetates-capricorn-t11.flac
+5f808819ea662b9170f072f81725d8aa  bd64-06-09-emmett-grogan-acetates-capricorn-t12.flac
+87be1f4a0f7816b802831f190cd468ac  bd64-06-09-emmett-grogan-acetates-capricorn-t13.flac
+f13ffa187565cbe97e91d3f28bb6f1bd  bd64-06-09-emmett-grogan-acetates-capricorn-t14.flac
+d6ed64044846877f261fd22f47b06dd7  bd64-06-09-emmett-grogan-acetates-capricorn-t15.flac
+d5ca9ceb7c244d21f0b6acf1ecc0b51d  bd64-06-09-emmett-grogan-acetates-capricorn.flacf.md5

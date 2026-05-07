@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd24-03-24-DK-WI.flac24
+===================
+===================
+===================
+9b09bd665a7003e41fba560d167e48dc *bobdylan2024-03-24-24Bit-t01.flac
+a2d53e9369ddc459c2f3060f7906a28c *bobdylan2024-03-24-24Bit-t02.flac
+da26c4bcf9b8e19e97cb3c2140cd9cab *bobdylan2024-03-24-24Bit-t03.flac
+226f3c51feee831350015c031ffba506 *bobdylan2024-03-24-24Bit-t04.flac
+0e250f59198ec5ba3d9b8ff3b80f4e88 *bobdylan2024-03-24-24Bit-t05.flac
+2b6c2eb88a0a3e52c6244063bf740d3a *bobdylan2024-03-24-24Bit-t06.flac
+2e0cece71d557f40587cee1fa924fc2c *bobdylan2024-03-24-24Bit-t07.flac
+2103e1b46c21ea2ee86212e02af80635 *bobdylan2024-03-24-24Bit-t08.flac
+f211789fd587dacdfae4682d86c8b909 *bobdylan2024-03-24-24Bit-t09.flac
+3990aed724ab24f081435f7895d8a418 *bobdylan2024-03-24-24Bit-t10.flac
+737fd3d0d4e33008da26f712b1cb5447 *bobdylan2024-03-24-24Bit-t11.flac
+bae1a6111a1b9461ab6094d1531b4e2c *bobdylan2024-03-24-24Bit-t12.flac
+fcd62b86ab9cd3ab54240a14948f2680 *bobdylan2024-03-24-24Bit-t13.flac
+bc19c50fd2254a16b7e198eb2600a0e1 *bobdylan2024-03-24-24Bit-t14.flac
+bcc627d62e6a9e330f13116067f5b135 *bobdylan2024-03-24-24Bit-t15.flac
+217f86a186aaf59c4971ac91e96dfd32 *bobdylan2024-03-24-24Bit-t16.flac
+4b1dc0ec98a0b2ebdc843d240a672894 *bobdylan2024-03-24-24Bit-t17.flac
+21c07a17f755f0da23167074bd57af11 *bobdylan2024-03-24-24Bit.ffp
+2df7904e4a24f1959b2d3a849f6e665b *bobdylan2024-03-24.txt
+===================
+===================
+===================
+=== ffp for: bd24-03-24-DK-WI.flac24
+===================
+===================
+===================
+bobdylan2024-03-24-24Bit-t01.flac:1247b866c296065f075698646bd9833b
+bobdylan2024-03-24-24Bit-t02.flac:e1f843639823da9b83150462bec23785
+bobdylan2024-03-24-24Bit-t03.flac:c674d0b3c6ef182a9ab49a26a574a907
+bobdylan2024-03-24-24Bit-t04.flac:92c7744914340aee53068367ee649c56
+bobdylan2024-03-24-24Bit-t05.flac:8c60c802350a5d3f6974f445a887959a
+bobdylan2024-03-24-24Bit-t06.flac:6a2fccac7c0bc6758e2414dd894de6ca
+bobdylan2024-03-24-24Bit-t07.flac:c6f8d64a426c310030908b16ae2734e9
+bobdylan2024-03-24-24Bit-t08.flac:2a061d17b4125cecd24df491ff9341a5
+bobdylan2024-03-24-24Bit-t09.flac:cfa9e7f0555261909af1e2b487b05a73
+bobdylan2024-03-24-24Bit-t10.flac:2701bd224a7f933511b8a6141d0943de
+bobdylan2024-03-24-24Bit-t11.flac:912c81c4712ec9fd7cb51fb38fadc8c3
+bobdylan2024-03-24-24Bit-t12.flac:b1051d95394b63a16031418d1f52f127
+bobdylan2024-03-24-24Bit-t13.flac:1adc0eef59a65e2bedbb130942ed6057
+bobdylan2024-03-24-24Bit-t14.flac:ef98a5c400fc35d6d5d67b31794ff8e1
+bobdylan2024-03-24-24Bit-t15.flac:5a074a4cd76d76a8f429759c4326886e
+bobdylan2024-03-24-24Bit-t16.flac:cc24576835ca818614b0c93c69d01bbf
+bobdylan2024-03-24-24Bit-t17.flac:2e72b9770156067ad30ad2b71d988c1d
+===================
+===================
+===================
+=== shntool len for: bd24-03-24-DK-WI.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.080     179182124 B   cxx   --   ---xx   flac  0.4859  bobdylan2024-03-24-24Bit-t01.flac
+     4:48.987     166456364 B   cxx   --   ---xx   flac  0.4772  bobdylan2024-03-24-24Bit-t02.flac
+     5:32.693     191631404 B   cxx   --   ---xx   flac  0.4593  bobdylan2024-03-24-24Bit-t03.flac
+     6:46.013     233863724 B   cxx   --   ---xx   flac  0.4829  bobdylan2024-03-24-24Bit-t04.flac
+     5:38.973     195248684 B   cxx   --   ---xx   flac  0.4572  bobdylan2024-03-24-24Bit-t05.flac
+     4:59.613     172577324 B   cxx   --   ---xx   flac  0.4458  bobdylan2024-03-24-24Bit-t06.flac
+     7:10.467     247948844 B   cxx   --   ---xx   flac  0.4513  bobdylan2024-03-24-24Bit-t07.flac
+     6:21.240     219594284 B   cxx   --   ---xx   flac  0.4965  bobdylan2024-03-24-24Bit-t08.flac
+     7:22.547     254906924 B   cxx   --   ---xx   flac  0.4583  bobdylan2024-03-24-24Bit-t09.flac
+     5:56.320     205240364 B   cxx   --   ---xx   flac  0.4787  bobdylan2024-03-24-24Bit-t10.flac
+    10:43.013     370375724 B   cxx   --   ---xx   flac  0.4346  bobdylan2024-03-24-24Bit-t11.flac
+     4:17.147     148116524 B   cxx   --   ---xx   flac  0.5163  bobdylan2024-03-24-24Bit-t12.flac
+     6:46.093     233909804 B   cxx   --   ---xx   flac  0.4317  bobdylan2024-03-24-24Bit-t13.flac
+     3:02.853     105323564 B   cxx   --   ---xx   flac  0.4572  bobdylan2024-03-24-24Bit-t14.flac
+     5:16.373     182231084 B   cxx   --   ---xx   flac  0.4354  bobdylan2024-03-24-24Bit-t15.flac
+     6:47.027     234447404 B   cxx   --   ---xx   flac  0.4823  bobdylan2024-03-24-24Bit-t16.flac
+     6:27.400     223142444 B   cxx   --   ---xx   flac  0.4306  bobdylan2024-03-24-24Bit-t17.flac
+   103:07.840    3564196588 B                            0.4615  (17 files)
+===================
+===================
+===================

@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-striptease.flacf 
+=================== 
+=================== 
+=================== 
+b0a1cb923defa7c7fdb16dd11ed514a4  bd65-striptease-t01.flac
+9bd0ddcded0594eeb05caf42f212e549  bd65-striptease-t02.flac
+906be7e0c1b3b77a572482e3b94e9347  bd65-striptease-t03.flac
+7e8746d69d743b4c21a1c3b8c33f2509  bd65-striptease-t04.flac
+0096423d706b90e91a4efabee279c12c  bd65-striptease-t05.flac
+c876d075f96f029cea80e5b7c21157d5  bd65-striptease-t06.flac
+f40c0d3ad6fdb38d5a280ec615a8ae52  bd65-striptease-t07.flac
+03bdf0d2ce05cc13903c398cb6d2b82d  bd65-striptease-t08.flac
+99f72a60e1a730f3411e439bd94c4308  bd65-striptease-t09.flac
+a40478df505a899ccfb09ca6deffb913  bd65-striptease-t10.flac
+6e7693769041620ae12d4ee47e606026  bd65-striptease-t11.flac
+a6504bacfd4da4e06d04ca61af90377a  bd65-striptease-t12.flac
+3efe7184a3b28b2f7a9bbf5fd8596f58  bd65-striptease-t13.flac
+ebba72a0a7cb1c11c502034ba0e9b664  bd65-striptease-t14.flac
+ee316522216054ec45b3962a742181ec  bd65-striptease-t15.flac
+1e8e0a81a1b7f6886ffb2075b95c1919  bd65-striptease-t16.flac
+30125d58695b20d3a356d4b010878345  bd65-striptease-t17.flac
+62ba2ea941d52274f8e94f0d21fb4d27  bd65-striptease-t18.flac
+d33aed73fbe5fa18844b806fa23b0b99  bd65-striptease-t19.flac
+256acc9afb6d88c11bfe6dc48e746f73  bd65-striptease.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-striptease.flacf 
+=================== 
+=================== 
+=================== 
+bd65-striptease-t01.flac:0a11e852510daf19a81c4b2d7becc4fc
+bd65-striptease-t02.flac:6449bbb71ec233c54a2231528860b593
+bd65-striptease-t03.flac:617f67cc71e8c0d6a4ef789a76317346
+bd65-striptease-t04.flac:98760b3c4ac2fdd1df83dc614f05ece3
+bd65-striptease-t05.flac:586311868eb5076aa697079be0936f9c
+bd65-striptease-t06.flac:6c47fad6960c653fd2b14f0ae7a2b3bb
+bd65-striptease-t07.flac:0e5011640bf25e47db58013d2bb5a5cd
+bd65-striptease-t08.flac:0e29f36e6920cf6ddb2adb56075327b9
+bd65-striptease-t09.flac:238cfd414f18ee0b5508f49bf9ffb120
+bd65-striptease-t10.flac:7cb658162e97a667bfff4c2729521ea5
+bd65-striptease-t11.flac:5d0a14d20cf25450214b591d301eef5e
+bd65-striptease-t12.flac:82f71da1bf30ff8dde5ba480cddf04b8
+bd65-striptease-t13.flac:7656828525380fbe9a1c728f5818eac3
+bd65-striptease-t14.flac:9b540a895391e8fd428322f238d1d206
+bd65-striptease-t15.flac:8569965b913d166e2a527393509efd49
+bd65-striptease-t16.flac:54f565355891270dc113d2224e07f0d8
+bd65-striptease-t17.flac:0ff8af4e0f1008d038d7cdcbc6d4ec7d
+bd65-striptease-t18.flac:2369226d9549cf32d5831362da57a073
+bd65-striptease-t19.flac:1169103fd966b451709b2f6afe53bd79
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-striptease.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:36.17       38142428 B   ---   --   ---xx   flac  0.3948  bd65-striptease-t01.flac
+     3:06.05       32822204 B   ---   --   ---xx   flac  0.3478  bd65-striptease-t02.flac
+     4:10.28       44165900 B   ---   --   ---xx   flac  0.3877  bd65-striptease-t03.flac
+     3:47.35       40125164 B   ---   --   ---xx   flac  0.3400  bd65-striptease-t04.flac
+     2:33.15       27024524 B   ---   --   ---xx   flac  0.3861  bd65-striptease-t05.flac
+     2:34.32       27240908 B   ---   --   ---xx   flac  0.3912  bd65-striptease-t06.flac
+     3:37.65       38431724 B   ---   --   ---xx   flac  0.3708  bd65-striptease-t07.flac
+     2:02.65       21673724 B   ---   --   ---xx   flac  0.3623  bd65-striptease-t08.flac
+     3:48.53       40343900 B   ---   --   ---xx   flac  0.3603  bd65-striptease-t09.flac
+     3:07.40       33080924 B   ---   --   ---xx   flac  0.3633  bd65-striptease-t10.flac
+     1:03.20       11160284 B   ---   --   ---xx   flac  0.3792  bd65-striptease-t11.flac
+     3:09.30       33410204 B   ---   --   ---xx   flac  0.3706  bd65-striptease-t12.flac
+     3:13.30       34115804 B   ---   --   ---xx   flac  0.3755  bd65-striptease-t13.flac
+     4:41.40       49662524 B   ---   --   ---xx   flac  0.3742  bd65-striptease-t14.flac
+     2:58.62       31545068 B   ---   --   ---xx   flac  0.3622  bd65-striptease-t15.flac
+     7:11.38       76117820 B   ---   --   ---xx   flac  0.3510  bd65-striptease-t16.flac
+     5:45.37       60945068 B   ---   --   ---xx   flac  0.3423  bd65-striptease-t17.flac
+     3:51.68       40908380 B   ---   --   ---xx   flac  0.3540  bd65-striptease-t18.flac
+     6:16.07       66342908 B   ---   --   ---xx   flac  0.3644  bd65-striptease-t19.flac
+    70:36.12      747259460 B                            0.3649  (19 files)
+=================== 
+=================== 
+=================== 

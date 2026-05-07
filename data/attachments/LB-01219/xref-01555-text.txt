@@ -1,0 +1,189 @@
+===================
+===================
+===================
+=== bd90-11-08.txt
+===================
+===================
+===================
+There are a lot of LB numbers but likely only two sources:  LB-0422, LB-1219, LB-3730, B-7094, and LB-8251 are the same - and LB-9060 is another. 
+
+Blindwilly posted LB-9060 in Nov. '13.  Before that, knockingman posted LB-7094, also called "Don't Turn A Slow Waltz Into Techno," which includes a bunch of bonus tracks, in March '12.  shinsuke posted a SHN > WAV > FLAC conversion of LB-1219 (cb master) in '05.  
+
+If you have the cb master or one of its many variations, then you probably are good here.  The variations appear to sound better or worse, or have more errors and flaws or fewer.  For most, it's a draw.  I just prefer LB-1219 of the lot.  LB-9060 comes in sixth place for me.  
+
+The problem I have with LB-1219 is that the track labeling is not according to DIME standards and the headers have extra RIFF chunks.  I hate too many RIFF chunks.  So I fixed everything and converted it all back to SHN. I did not monkey with the audio otherwise.  So if you are fond of the warm, dulcid tones of this version, they are still here.  
+
+Bob Dylan
+Carver Hockey Arena
+Iowa City, IA  USA
+November 8, 1990
+
+Source:  cb master
+
+SHN > TLH (SHN > WAV, shntool, detect and strip headers, shntool, WAV > SHN) > SHN. 
+
+Fixed LB-1219
+
+CD 1:
+01. Marine Hymn (instrumental)
+02. Most Likely You Go Your Way (And I'll Go Mine)
+03. Lay Lady Lay 
+04. I'll Be Your Baby Tonight 
+05. Silvio 
+06. Simple Twist Of Fate 
+07. Gotta Serve Somebody 
+08. Desolation Row 
+09. One Too Many Mornings 
+10. John Brown 
+11. Don't Think Twice, It's All Right 
+12. Knockin' On Heaven's Door 
+13. Everything Is Broken 
+14. Joey 
+15. Under The Red Sky 
+16. T.V. Talkin' Song 
+
+CD 2:
+01. All Along The Watchtower 
+02. I Shall Be Released 
+03. Like A Rolling Stone 
+04. Blowin' In The Wind 
+05. Maggie's Farm
+
+Total time = 96:54
+
+Original:
+8d275acbefb8d774e76c69bacd154246 *bd_90-11-08_cd1_Track 01.shn
+3321cccd15e186e6a7849d34a5bc40f9 *bd_90-11-08_cd1_Track 10.shn
+98ce420c3a7b6427c3eb217531a3101e *bd_90-11-08_cd1_Track 11.shn
+a9b4cc1be11fab636758b6d3a453b22c *bd_90-11-08_cd1_Track 12.shn
+59ec1863bc79265c47f5e02548eaf184 *bd_90-11-08_cd1_Track 13.shn
+b3d3dd00d9b2585781ca0fdbb3c5129e *bd_90-11-08_cd1_Track 14.shn
+769d213cdb2114917f799b0727ef0159 *bd_90-11-08_cd1_Track 15.shn
+df2184f06cb8a66b9f9ad14e7afa0b86 *bd_90-11-08_cd1_Track 16.shn
+3d9fb8ba3bb34f426c597d130b001a5a *bd_90-11-08_cd1_Track 2.shn
+f8a1f62769fe06ac550c7e7a28fac2bd *bd_90-11-08_cd1_Track 3.shn
+df04ae3c9ab9a4f5df49ee1cac034668 *bd_90-11-08_cd1_Track 4.shn
+297652cf1b105fb85a92c293c9b54170 *bd_90-11-08_cd1_Track 5.shn
+a43058a7f566afb4f7b1eb76027f4a4d *bd_90-11-08_cd1_Track 6.shn
+1808640326fd6fbbc5625afa921c1d47 *bd_90-11-08_cd1_Track 7.shn
+8a4ddf5b8b4788159bd319026c35a43f *bd_90-11-08_cd1_Track 8.shn
+bc089a77b1872fdf14243392d63bcfd8 *bd_90-11-08_cd1_Track 9.shn
+658bb9aaf5eeca28333a7d30b0c20ab7 *bd_90-11-08_cd2_Track 1.shn
+6b022a84ea1abb5c0ca9f6840cbe5dd3 *bd_90-11-08_cd2_Track 2.shn
+cb2596d8d8ae6edd3279d8226353a9f2 *bd_90-11-08_cd2_Track 3.shn
+31284c8290ed0fb12d843c6b1650217d *bd_90-11-08_cd2_Track 4.shn
+aaec764e47fafe760ddafc4211f73156 *bd_90-11-08_cd2_Track 5.shn
+
+Fixed:
+88722394eacf89dccf0b4fcc7562853d *bd_90-11-08_cd1_Track 01-stripped.shn
+34413b57a4e215c25c070884f85da8ff *bd_90-11-08_cd1_Track 02-stripped.shn
+ee4a460715ef849dd0acfbb72961e819 *bd_90-11-08_cd1_Track 03-stripped.shn
+13315b1422932f7b6dbb633f71635668 *bd_90-11-08_cd1_Track 04-stripped.shn
+0c736b3b159017602127ac6a9810e1c8 *bd_90-11-08_cd1_Track 05-stripped.shn
+e6ee6b275678e334905893fedc88bc61 *bd_90-11-08_cd1_Track 06-stripped.shn
+008cf2125cf82c323f22750c8098cb58 *bd_90-11-08_cd1_Track 07-stripped.shn
+7c031791f0057b1cc66df72249c9588d *bd_90-11-08_cd1_Track 08-stripped.shn
+fdd7c7087479e9a7985dffa58200e542 *bd_90-11-08_cd1_Track 09-stripped.shn
+d92ff716ae9e40b602786ad2f0b53175 *bd_90-11-08_cd1_Track 10-stripped.shn
+04b020518cc9cd87c5d6c54766003923 *bd_90-11-08_cd1_Track 11-stripped.shn
+8d23031a4b92632215145a3a9a56d952 *bd_90-11-08_cd1_Track 12-stripped.shn
+515be1656c326030d2a5c45a35fb86ff *bd_90-11-08_cd1_Track 13-stripped.shn
+a5c9a655e95a9678cef23a34e0646172 *bd_90-11-08_cd1_Track 14-stripped.shn
+b66f3d831e2f913ef3b84096a56565b2 *bd_90-11-08_cd1_Track 15-stripped.shn
+36bfd92007b9095502e433f9771d9f00 *bd_90-11-08_cd1_Track 16-stripped.shn
+7de239f9735eb682eacce4059c579512 *bd_90-11-08_cd2_Track 01-stripped.shn
+b3d1577fbdfa71eee7dac325fe2896f2 *bd_90-11-08_cd2_Track 02-stripped.shn
+a765d2d545f7429241426ae0bb6ad243 *bd_90-11-08_cd2_Track 03-stripped.shn
+df563cfa76c5ffe7255dd9864b8e285b *bd_90-11-08_cd2_Track 04-stripped.shn
+
+===================
+===================
+===================
+=== bd_90-11-08_shn.md5
+===================
+===================
+===================
+88722394eacf89dccf0b4fcc7562853d *bd_90-11-08_cd1_Track 01-stripped.shn
+34413b57a4e215c25c070884f85da8ff *bd_90-11-08_cd1_Track 02-stripped.shn
+ee4a460715ef849dd0acfbb72961e819 *bd_90-11-08_cd1_Track 03-stripped.shn
+13315b1422932f7b6dbb633f71635668 *bd_90-11-08_cd1_Track 04-stripped.shn
+0c736b3b159017602127ac6a9810e1c8 *bd_90-11-08_cd1_Track 05-stripped.shn
+e6ee6b275678e334905893fedc88bc61 *bd_90-11-08_cd1_Track 06-stripped.shn
+008cf2125cf82c323f22750c8098cb58 *bd_90-11-08_cd1_Track 07-stripped.shn
+7c031791f0057b1cc66df72249c9588d *bd_90-11-08_cd1_Track 08-stripped.shn
+fdd7c7087479e9a7985dffa58200e542 *bd_90-11-08_cd1_Track 09-stripped.shn
+d92ff716ae9e40b602786ad2f0b53175 *bd_90-11-08_cd1_Track 10-stripped.shn
+04b020518cc9cd87c5d6c54766003923 *bd_90-11-08_cd1_Track 11-stripped.shn
+8d23031a4b92632215145a3a9a56d952 *bd_90-11-08_cd1_Track 12-stripped.shn
+515be1656c326030d2a5c45a35fb86ff *bd_90-11-08_cd1_Track 13-stripped.shn
+a5c9a655e95a9678cef23a34e0646172 *bd_90-11-08_cd1_Track 14-stripped.shn
+b66f3d831e2f913ef3b84096a56565b2 *bd_90-11-08_cd1_Track 15-stripped.shn
+36bfd92007b9095502e433f9771d9f00 *bd_90-11-08_cd1_Track 16-stripped.shn
+7de239f9735eb682eacce4059c579512 *bd_90-11-08_cd2_Track 01-stripped.shn
+b3d1577fbdfa71eee7dac325fe2896f2 *bd_90-11-08_cd2_Track 02-stripped.shn
+a765d2d545f7429241426ae0bb6ad243 *bd_90-11-08_cd2_Track 03-stripped.shn
+df563cfa76c5ffe7255dd9864b8e285b *bd_90-11-08_cd2_Track 04-stripped.shn
+e57b6dcf3533ad03541b99aed79e433e *bd_90-11-08_cd2_Track 05-stripped.shn
+===================
+===================
+===================
+=== shntool_len_fixed.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:57.47       20749388 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 01-stripped.wav
+     3:53.17       41141228 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 02-stripped.wav
+     3:59.27       42223148 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 03-stripped.wav
+     4:08.12       43775468 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 04-stripped.wav
+     2:43.06       28767356 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 05-stripped.wav
+     5:41.26       60213596 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 06-stripped.wav
+     5:47.02       61215548 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 07-stripped.wav
+     7:14.45       76663484 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 08-stripped.wav
+     4:46.33       50528060 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 09-stripped.wav
+     4:23.35       46475564 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 10-stripped.wav
+     4:40.60       49533164 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 11-stripped.wav
+     5:15.60       55707164 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 12-stripped.wav
+     3:25.05       36173804 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 13-stripped.wav
+     7:07.02       75327548 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 14-stripped.wav
+     3:54.17       41317628 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 15-stripped.wav
+     4:09.00       43923644 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd1_Track 16-stripped.wav
+     3:17.64       34901372 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd2_Track 01-stripped.wav
+     3:50.35       40654364 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd2_Track 02-stripped.wav
+     7:11.48       76141340 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd2_Track 03-stripped.wav
+     4:09.18       43965980 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd2_Track 04-stripped.wav
+     5:19.02       56276348 B   ---   --   -----    wav  1.0000  bd_90-11-08_cd2_Track 05-stripped.wav
+    96:54.36     1025675196 B                            1.0000  (21 files)
+===================
+===================
+===================
+=== shntool_len_original.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:57.47       20749470 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 01.wav
+     4:23.35       46475646 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 10.wav
+     4:40.60       49533246 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 11.wav
+     5:15.60       55707246 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 12.wav
+     3:25.05       36173886 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 13.wav
+     7:07.02       75327630 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 14.wav
+     3:54.17       41317710 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 15.wav
+     4:09.00       43923726 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 16.wav
+     3:53.17       41141310 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 2.wav
+     3:59.27       42223230 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 3.wav
+     4:08.12       43775550 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 4.wav
+     2:43.06       28767438 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 5.wav
+     5:41.26       60213678 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 6.wav
+     5:47.02       61215630 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 7.wav
+     7:14.45       76663566 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 8.wav
+     4:46.33       50528142 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd1_Track 9.wav
+     3:17.64       34901454 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd2_Track 1.wav
+     3:50.35       40654446 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd2_Track 2.wav
+     7:11.48       76141422 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd2_Track 3.wav
+     4:09.18       43966062 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd2_Track 4.wav
+     5:19.02       56276430 B   ---   -e   -----    wav  1.0000  bd_90-11-08_cd2_Track 5.wav
+    96:54.36     1025676918 B                            1.0000  (21 files)
+===================
+===================
+===================

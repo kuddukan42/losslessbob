@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-15-old-orchard-beach.flacf 
+=================== 
+=================== 
+=================== 
+01b9c7b02e1693bcfd0b3cdd16269039  bd89-07-15-old-orchard-beach.txt
+ba25b9302be65d0a1bdf6cfd7e2d9f0b  bd89-07-15.flacf.md5
+0791bdd4b7c19884d494c5b4a1f2f203  bd89-07-15t01.flac
+00e952f3daaa097722d1d9ec639918ab  bd89-07-15t02.flac
+b5f96b8b3242e0ba81cb4bca41e13440  bd89-07-15t03.flac
+419ebc36516ad69de963b69759df2320  bd89-07-15t04.flac
+f1cb2b2d0c56d2061d62b5bc2d45a1d6  bd89-07-15t05.flac
+1267cfdacf2728dc35dfcbc4fb7353f4  bd89-07-15t06.flac
+b2efef7e2194e86f247c2fd3ee4df229  bd89-07-15t07.flac
+6554e5db3e6ef6881afbc1a1bef190d0  bd89-07-15t08.flac
+fae3773b855a8b3483ca516503fab736  bd89-07-15t09.flac
+f74c735a3481631f205dac6f39249b20  bd89-07-15t10.flac
+a91a9ef312b21a2f7d3a19e5f45465f3  bd89-07-15t11.flac
+a7fba2bc742bb47c75bd5bd44109ac48  bd89-07-15t12.flac
+6d91e60a290c190ed5981c37aec35c52  bd89-07-15t13.flac
+093987069eb944bdb41be68b20c89f10  bd89-07-15t14.flac
+0561d48fb4d39ff2367a15833f6eead3  bd89-07-15t15.flac
+5d4f3aa09fec29b8e6a7786517638958  bd89-07-15t16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-15-old-orchard-beach.flacf 
+=================== 
+=================== 
+=================== 
+bd89-07-15t01.flac:8c3dc565b100e3087928f54fedf3a1ba
+bd89-07-15t02.flac:1e52d2e463b218926fdad1fa985b6cb4
+bd89-07-15t03.flac:b96db9206785344eb8d42817cd4fe82e
+bd89-07-15t04.flac:769e2053a36ce278faa3b0ccce269afc
+bd89-07-15t05.flac:8862955dd5e92849d2ff9547c0bb48e9
+bd89-07-15t06.flac:bb3d002ca4c47ffbaf8dfc6660e10307
+bd89-07-15t07.flac:f808bd1e145553c19f64af073acd048d
+bd89-07-15t08.flac:9e9201a7be05ce02a8bde5d10b4345ff
+bd89-07-15t09.flac:d114639e0e9d5a67408b37e423f88d80
+bd89-07-15t10.flac:23eacf70d31a90fe9f6be1357eb0d633
+bd89-07-15t11.flac:a78f86ee9e354f29f9c39301f94e1705
+bd89-07-15t12.flac:08112c0f35d00cbe1cdbe7487cd4972c
+bd89-07-15t13.flac:cdae9700c0744fb69e6bc5f9872f0302
+bd89-07-15t14.flac:7a115d2552b83e62219866bfec7d55d3
+bd89-07-15t15.flac:90b0abe13dcc2dd9abfe4444df61b5d3
+bd89-07-15t16.flac:f12af50e4c013348a5288515e7e9ebaa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-15-old-orchard-beach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:13.59       34184012 B   ---   --   ---xx   flac  0.6844  bd89-07-15t01.flac
+     4:59.22       52795388 B   ---   --   ---xx   flac  0.6409  bd89-07-15t02.flac
+     5:24.10       57177164 B   ---   --   ---xx   flac  0.6220  bd89-07-15t03.flac
+     5:01.51       53216396 B   ---   --   ---xx   flac  0.6430  bd89-07-15t04.flac
+     5:21.38       56713820 B   ---   --   ---xx   flac  0.6588  bd89-07-15t05.flac
+     3:55.00       41454044 B   ---   --   ---xx   flac  0.6501  bd89-07-15t06.flac
+     4:01.02       42517148 B   ---   --   ---xx   flac  0.6455  bd89-07-15t07.flac
+     4:32.64       48131372 B   ---   --   ---xx   flac  0.6488  bd89-07-15t08.flac
+     6:30.13       68826620 B   ---   --   ---xx   flac  0.6373  bd89-07-15t09.flac
+     3:34.25       37808444 B   ---   --   ---xx   flac  0.6484  bd89-07-15t10.flac
+     3:55.32       41529308 B   ---   --   ---xx   flac  0.6581  bd89-07-15t11.flac
+     4:02.35       42771164 B   ---   --   ---xx   flac  0.6370  bd89-07-15t12.flac
+     6:42.12       70941068 B   ---   --   ---xx   flac  0.6678  bd89-07-15t13.flac
+     4:35.70       48674684 B   ---   --   ---xx   flac  0.6127  bd89-07-15t14.flac
+     4:35.64       48660572 B   ---   --   ---xx   flac  0.6191  bd89-07-15t15.flac
+     3:52.27       40988348 B   ---   --   ---xx   flac  0.6467  bd89-07-15t16.flac
+    74:17.74      786389552 B                            0.6444  (16 files)
+=================== 
+=================== 
+=================== 

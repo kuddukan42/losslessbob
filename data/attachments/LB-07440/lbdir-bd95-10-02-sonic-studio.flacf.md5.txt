@@ -1,0 +1,18 @@
+23b796a117260f25697fbe49e44ed05b  cd 1\cd 1.ffp
+cdcbb931f7f3606ea73a9d144a238c90  cd 1\Track01.flac
+c0e227830781645b1403335e60098877  cd 1\Track02.flac
+d07e425245c3d29ecee1629b8b6d7b2a  cd 1\Track03.flac
+92572f872ab855050cce6e8193771839  cd 1\Track04.flac
+42f39dc7d082fcf19f4484a8ed2f1a64  cd 1\Track05.flac
+fe2346d54e5d2a13bd8d75ac4dcd8e8b  cd 1\Track06.flac
+c7bb585c8eab649b727323cfe8d32f4d  cd 1\Track07.flac
+e95f4b9cada156a48c0fb3abfc1cb9b9  cd 1\Track08.flac
+a8d65c4e44d6fbc5de54b859b0fd5805  cd 1\Track09.flac
+2f3783899777dc40cc6c8a64ab27f952  cd 2\cd 2.ffp
+7b62af9aa33a514106850c3e9dd49f23  cd 2\Track01.flac
+78fbcdde09c929ecca92397b359bb33a  cd 2\Track02.flac
+73a541ba9edaf0a3c661748cd8636ac2  cd 2\Track03.flac
+d861ca8663df718bace317f356edb820  cd 2\Track04.flac
+f937544117cb8630f7ccf523ab375065  cd 2\Track05.flac
+eda0c22fabcf2f1b2b80e7da23757acf  cd 2\Track06.flac
+d588c7051fa10da2af394e189fb2fa51  info.txt

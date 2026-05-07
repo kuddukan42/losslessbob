@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-03.flacf 
+=================== 
+=================== 
+=================== 
+2ae648ecb61e053126baef5f880e0d30  06 07 03 d1 t01.flac
+d82aa52529d3cbf9e25794186d77732c  06 07 03 d1 t02.flac
+c4bad87cd92db98e8e8b1903bcded5b2  06 07 03 d1 t03.flac
+e15ef01a2234fda06a3059bf17735f6e  06 07 03 d1 t04.flac
+322f0ceffe2d5eb828a792e2c325a0a2  06 07 03 d1 t05.flac
+dcb00f49c97c0369d2baebea39014c66  06 07 03 d1 t06.flac
+514ad284cfeca65a9c8621432b70c1fb  06 07 03 d1 t07.flac
+bde8e17dbdd85de37e79aa0ff5a5bbf4  06 07 03 d2 t01.flac
+3de86628c75b2d61820b2e0218353452  06 07 03 d2 t02.flac
+e654d06748ae90204ae8e7babc940460  06 07 03 d2 t03.flac
+b34d93350fcbc600a1188e2c39878ab6  06 07 03 d2 t04.flac
+073744a9801e65fba301fa362790bdd5  06 07 03 d2 t05.flac
+fef8fedcbd5acc9d26ebf6e5a2e5fdca  06 07 03 d2 t06.flac
+33527a6665c10c39352005505bf13f7d  06 07 03 d2 t07.flac
+1045d1cdcdd80ee3bd269496d469cdf2  06 07 03 d2 t08.flac
+5b9324bb38a9b39f5b57d7eb3c868ff6  bd06 07 03.md5
+62a10965644e5f4322261f316509f2e8  bd06-07-03-LB-3908.txt
+b874ece2ae50eacbaa4804814ed4b130  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-03.flacf 
+=================== 
+=================== 
+=================== 
+06 07 03 d1 t01.flac:addb13cbda2208044f90fac793997ac8
+06 07 03 d1 t02.flac:2ff875b8a259d62a90348cafc49c95b3
+06 07 03 d1 t03.flac:4c70087a46fd04667ec1f71f31cfa563
+06 07 03 d1 t04.flac:43af423bd631929c41cf425c2b09a20f
+06 07 03 d1 t05.flac:d6e647d52b6cf90c921f34dd8f64c565
+06 07 03 d1 t06.flac:2dabb8bfd0d00f3690c1bbe6a12117f0
+06 07 03 d1 t07.flac:c2d5d470911bb8c51cf9215a9d1f62c2
+06 07 03 d2 t01.flac:0cc870abdec2bcd2af90057e82d2b295
+06 07 03 d2 t02.flac:7088068e5aed7d2cc3ba371639cb6d5e
+06 07 03 d2 t03.flac:f347f25dd4f8ea2684a58046f45368fd
+06 07 03 d2 t04.flac:d80a97ad289ae71dc89791f2380de37c
+06 07 03 d2 t05.flac:ce814e4454ee35cb394be7aa174da4b8
+06 07 03 d2 t06.flac:2c6fa07b5213bbe43c9f56c7588586bf
+06 07 03 d2 t07.flac:3993ea22c17f953eff156dd8254fa8d6
+06 07 03 d2 t08.flac:65e3b650fbfd0cdd90b326989fc49e26
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-03.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.52       62215148 B   ---   --   ---xx   flac  0.6239  06 07 03 d1 t01.flac
+     7:25.14       78530972 B   ---   --   ---xx   flac  0.6137  06 07 03 d1 t02.flac
+     7:09.09       75696812 B   ---   --   ---xx   flac  0.6275  06 07 03 d1 t03.flac
+     5:56.13       62829020 B   ---   --   ---xx   flac  0.6054  06 07 03 d1 t04.flac
+     8:05.13       85584620 B   ---   --   ---xx   flac  0.6200  06 07 03 d1 t05.flac
+     6:28.65       68596124 B   ---   --   ---xx   flac  0.5838  06 07 03 d1 t06.flac
+     7:25.63       78646220 B   ---   --   ---xx   flac  0.6275  06 07 03 d1 t07.flac
+     7:32.49       79848092 B   ---   --   ---xx   flac  0.5921  06 07 03 d2 t01.flac
+     6:53.68       73013180 B   ---   --   ---xx   flac  0.6347  06 07 03 d2 t02.flac
+     5:41.65       60305324 B   ---   --   ---xx   flac  0.5880  06 07 03 d2 t03.flac
+     5:51.52       62038748 B   ---   --   ---xx   flac  0.6306  06 07 03 d2 t04.flac
+     5:25.69       57492332 B   ---   --   ---xx   flac  0.6006  06 07 03 d2 t05.flac
+    10:18.31      109088156 B   ---   --   ---xx   flac  0.6072  06 07 03 d2 t06.flac
+     7:04.66       74948876 B   ---   --   ---xx   flac  0.6300  06 07 03 d2 t07.flac
+     6:08.46       65023436 B   ---   --   ---xx   flac  0.6294  06 07 03 d2 t08.flac
+   103:21.00     1093857060 B                            0.6144  (15 files)
+=================== 
+=================== 
+=================== 

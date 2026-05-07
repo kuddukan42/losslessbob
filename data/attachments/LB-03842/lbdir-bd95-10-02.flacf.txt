@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-02.flacf 
+=================== 
+=================== 
+=================== 
+e65c97a7ae36fcb4412786203cbf883a  bd95-10-02-LB-3842.txt
+a7db1cd628e886e76d433f94bfb81975  Bob Dylan 2 oct 1995 Fort Pierce.txt
+a36e596d8dd0ef7a25eb0e862a6009e1  CD1\01 Crash OnTthe Levee (Down In The Flood).flac
+b9aee2bd369fedf451adace9dd29f5ae  CD1\02 Lay, Lady, Lay.flac
+3d0dae46b8c87c8b9c707a614dfb9e4f  CD1\03 All Along The Watchtower.flac
+32bfbb01ba62f4241155c983fe59d725  CD1\04 Simple Twist Of Fate.flac
+965c4d7a40b6b592af370df5bea60692  CD1\05 Tombstone Blues.flac
+54b88a6b496eb1a1e5ab997861e32f2c  CD1\06 Silvio.flac
+49bbd2f2c00dc00f87e6716effa81e06  CD1\07 Tangled Up In Blue.flac
+8ef5678d6fa1d3553d09800ed4fdfdec  CD1\08 Masters Of War.flac
+252955e0d70335ba1fcb47072f7b49ea  CD1\09 One Too Many Mornings.flac
+c14737e21ed44fdf8a2d3f620c0defdd  CD2\01 God Knows.flac
+64a8677f161c491132f9048860443b36  CD2\02 Never Gonna Be The Same Again.flac
+434cb4bb5694ea52e560cc8b21a1940b  CD2\03 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+59990def1ee47c440fce7ef4144f2aab  CD2\04 Like A Rolling Stone.flac
+55c5bf40213956ca0d14c012bdf52938  CD2\05 The Times They Are A-Changin'.flac
+1fce4084ced40f9ca1f21dbf998ff8fe  CD2\06 Rainy Day Women #12 & 35.flac
+e31b1a4457629b1318ed8ef1cce2b215  fingerprintD1.txt
+03323e0a51c45f9f847182e7a306093c  fingerprintD2.txt
+d440d9d69d17410c2d237bdbdef2dc27  Fortpierce_021095.Jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-02.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash OnTthe Levee (Down In The Flood).flac:cbeb7f4e226db6da2798e964b62ab76d
+02 Lay, Lady, Lay.flac:70661db9026d348259c798874a824263
+03 All Along The Watchtower.flac:c2dd551704b5b3c862cc4141f79adc96
+04 Simple Twist Of Fate.flac:5e6bc4eaf60509d4ff4009e0df7a3a1d
+05 Tombstone Blues.flac:ec17fd793324f4a58eeab4b756d6e88f
+06 Silvio.flac:8c157a9b39176a03edaba440465d0aa1
+07 Tangled Up In Blue.flac:52d09156c39f52f822f4d2e69365f003
+08 Masters Of War.flac:b5fe80840bf84ab2099d1460cb190806
+09 One Too Many Mornings.flac:5aa0f2cf47850158f2e28a0ee2d5c238
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-02.flacf\CD2 
+=================== 
+=================== 
+=================== 
+01 God Knows.flac:0aeaaef80c8b8c0a0b02b7f3a1821643
+02 Never Gonna Be The Same Again.flac:d6fa8a821c4c45fe93bc16cf9b512f34
+03 Stuck Inside Of Mobile With The Memphis Blues Again.flac:f16d0baf2949bf3553b9817c79b6fbb6
+04 Like A Rolling Stone.flac:c8dc1716587bc92db284ba8799ce89ba
+05 The Times They Are A-Changin'.flac:3b2da10aee7e448f12a8b71c2a2f3f8c
+06 Rainy Day Women #12 & 35.flac:1e8aa8804ffc0382771824afd5c0c579
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-02.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.67       53783228 B   ---   --   ---xx   flac  0.6234  01 Crash OnTthe Levee (Down In The Flood).flac
+     5:00.50       53037644 B   ---   --   ---xx   flac  0.5618  02 Lay, Lady, Lay.flac
+     6:00.50       63621644 B   ---   --   ---xx   flac  0.5927  03 All Along The Watchtower.flac
+     8:16.28       87560300 B   ---   --   ---xx   flac  0.5326  04 Simple Twist Of Fate.flac
+     6:16.12       66354668 B   ---   --   ---xx   flac  0.6049  05 Tombstone Blues.flac
+     6:55.42       73304828 B   ---   --   ---xx   flac  0.6100  06 Silvio.flac
+     9:34.45      101359484 B   ---   --   ---xx   flac  0.5529  07 Tangled Up In Blue.flac
+     6:36.58       69990860 B   ---   --   ---xx   flac  0.4758  08 Masters Of War.flac
+     6:24.72       67906988 B   ---   --   ---xx   flac  0.4167  09 One Too Many Mornings.flac
+    60:10.49      636919644 B                            0.5498  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-02.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:43.15       71124524 B   ---   --   ---xx   flac  0.5768  01 God Knows.flac
+     8:24.54       89032652 B   ---   --   ---xx   flac  0.5327  02 Never Gonna Be The Same Again.flac
+    12:19.68      130519580 B   ---   --   ---xx   flac  0.5680  03 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     8:37.41       91295276 B   ---   --   ---xx   flac  0.5897  04 Like A Rolling Stone.flac
+    11:22.33      120382460 B   ---   --   ---xx   flac  0.5347  05 The Times They Are A-Changin'.flac
+     5:53.38       62358620 B   ---   --   ---xx   flac  0.6212  06 Rainy Day Women #12 & 35.flac
+    53:21.24      564713112 B                            0.5658  (6 files)
+=================== 
+=================== 
+=================== 

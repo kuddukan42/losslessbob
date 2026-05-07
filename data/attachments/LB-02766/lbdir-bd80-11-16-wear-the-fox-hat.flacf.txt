@@ -1,0 +1,138 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-16-wear-the-fox-hat.flacf 
+=================== 
+=================== 
+=================== 
+c7cda3d847def03d6a3acc5d124bad20  bd80-11-16-wear-the-fox-hat-LB-2766.txt
+b964255c43f64c5028f5fb69c43329ca  disco1\Track01.flac
+a302b3f3020e245d616b4f95539a895b  disco1\Track02.flac
+d76ad976b73553d88154a90e54c47dfd  disco1\Track03.flac
+6af8138441201b237bab2ce3037c5d99  disco1\Track04.flac
+243ecd1b0adc18f189e24484ca55cc70  disco1\Track05.flac
+49450b2dc5280b6a74ef3b56ca9993e8  disco1\Track06.flac
+6bcf0b988f67163430bcbc3bc0d2e29d  disco1\Track07.flac
+4bba6ba27e70edd5673e691e338add21  disco1\Track08.flac
+cbfedaa2b85e62b445bcc40738fa8e7f  disco1\Track09.flac
+323eee166a382dc0d7a33fcae669322f  disco1\Track10.flac
+a445f971bacf3431876cb3d40f099add  disco1\Track11.flac
+d718e394b6ceb31e0f802e588a8154b5  disco1\Track12.flac
+bcc1d91ac804f49c7652c1659eb3a72a  disco1\Track13.flac
+71223e3dc9e619dbc8f1c1d63406877d  disco1\Unknown Title.log
+7dcc6685ba5ca0a99288fbf958fe0352  disco1\ffp.disco1.txt
+accaf836e4245e977b07f33612ec9f73  disco2\Track01.flac
+d9a57e390e6ed1c215fc1c90742e0ded  disco2\Track02.flac
+4eaccd8ffda6101d5438102c20357a0b  disco2\Track03.flac
+bc331991b3a13a5b5cc79dae2f679ebb  disco2\Track04.flac
+9df28bd7b49729adbe148f8dcf94296b  disco2\Track05.flac
+9727cc87c99b327be77eeb7779055da7  disco2\Track06.flac
+4f5b32fd81a5332aacc0566fa9b969c2  disco2\Track07.flac
+7fd3705ef26219e5a4592b489ca58cac  disco2\Track08.flac
+667fc35d18d092c430dad3fba4ac6401  disco2\Track09.flac
+cab13a6655500773fc407f9c6de5dbec  disco2\Track10.flac
+98ffabbe2af7d97a54ebf816c1a8a495  disco2\Track11.flac
+1f376f8716acdcf949197758d87c8f8e  disco2\Track12.flac
+36b28122314e2a9290e996e3c6917c86  disco2\Track13.flac
+a28df9baba0c22fc6237677fc77a313e  disco2\Track14.flac
+24e2908ca244d6119a9deeb8ed6a79c6  disco2\Track15.flac
+9e6b79694870a0c43b1389ba0217f0e1  disco2\Unknown Title.log
+4944e58cc1d98da9720cefc8f02c2e1d  disco2\ffp.disco2.txt
+064d66847e93062b2a451609f951bbf1  fox warfield\Sin título-1.jpg
+3167cd6b0de6e4219aff9cf413c975ca  fox warfield\Sin título-2.jpg
+4179866384112930accf4fc23997aada  fox warfield\Sin título-3.jpg
+5a36681292a231a53a3bb33095b3d115  fox warfield\Sin título-4.jpg
+cd02abe9c4fdce80a7449ba95f3d52f5  fox warfield\back-2.jpg
+5ff831dca59af5e5aec34437b438e6f0  fox warfield\back.jpg
+a64db1263e7ab14f3a30549f7d20c649  Fox Warfield November 16th 1980.doc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-16-wear-the-fox-hat.flacf\disco1 
+=================== 
+=================== 
+=================== 
+Track01.flac:7a27c1947208a4f676ff583c984153aa
+Track02.flac:4164132b9767a69b0527bdb5bc3b2be7
+Track03.flac:02f1b38f3ad98d05c7150433beec35f6
+Track04.flac:0451dd09ba74ea06cdcb296b5a41926c
+Track05.flac:4431a6791ef9128ccc107fc254d38176
+Track06.flac:1901aea1edf1b7d23bca6202b0f2ea59
+Track07.flac:e9a75e2a3a5d9b33b3aa0b6bc8f50330
+Track08.flac:babce1042b164382fee637daf8150939
+Track09.flac:e0f9b8e66f6872a0c9debbdbd0e2f619
+Track10.flac:f45169d22706888af8f5ad57a5f3c73b
+Track11.flac:37db0f2924553218162731819ea3ad0b
+Track12.flac:6121eb1d18b83a45be6c6987f66e3bfb
+Track13.flac:7356a8dc2688dff230075196a1433e4c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-16-wear-the-fox-hat.flacf\disco2 
+=================== 
+=================== 
+=================== 
+Track01.flac:fd12cbd4e63303d770241bd24ed8384e
+Track02.flac:99f67d985b61c956f28124ae3d5a0040
+Track03.flac:1f1252d85b0cced755d4112d1f318bb7
+Track04.flac:adaf04eab0a5a27c653fb6b3433bb077
+Track05.flac:373480d2e5ce2daa519ae5221e3645b7
+Track06.flac:9bee00baae6d31f5e58abfdef7684346
+Track07.flac:62ed58b901435d5ca4077c1d46174357
+Track08.flac:b0261deac848d7ca9ab3513a2124f204
+Track09.flac:3e714f0edddc1da3d61c13bd70fa74c3
+Track10.flac:148e9f621f950d31efd5df6e027e282c
+Track11.flac:effcb2c16f3d627c7fc1389faefa3a8f
+Track12.flac:fb3cc083ca155b52d73dd97c9afd3644
+Track13.flac:c54806d9075bab04b5af92431b673958
+Track14.flac:77d894455eb20f8ff2d932f753d0d6d4
+Track15.flac:6fc2d394e4c26594ded1cd2ce4c110d2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-16-wear-the-fox-hat.flacf\disco1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:04.08       32476460 B   ---   --   ---xx   flac  0.5946  Track01.flac
+     4:11.08       44295260 B   ---   --   ---xx   flac  0.5725  Track02.flac
+     4:15.38       45071420 B   ---   --   ---xx   flac  0.5911  Track03.flac
+     3:07.12       33015068 B   ---   --   ---xx   flac  0.5862  Track04.flac
+     4:26.13       46953020 B   ---   --   ---xx   flac  0.6809  Track05.flac
+     4:27.12       47127068 B   ---   --   ---xx   flac  0.6372  Track06.flac
+     5:31.65       58541324 B   ---   --   ---xx   flac  0.6516  Track07.flac
+     3:26.23       36392540 B   ---   --   ---xx   flac  0.5413  Track08.flac
+     6:20.67       67189628 B   ---   --   ---xx   flac  0.6165  Track09.flac
+     5:12.65       55189724 B   ---   --   ---xx   flac  0.6589  Track10.flac
+     4:20.35       45946364 B   ---   --   ---xx   flac  0.6299  Track11.flac
+     4:42.05       49756604 B   ---   --   ---xx   flac  0.5983  Track12.flac
+     5:22.12       56829068 B   ---   --   ---xx   flac  0.6259  Track13.flac
+    58:27.63      618783548 B                            0.6183  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-16-wear-the-fox-hat.flacf\disco2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.59       48119612 B   ---   --   ---xx   flac  0.5637  Track01.flac
+     3:10.15       33551324 B   ---   --   ---xx   flac  0.5535  Track02.flac
+     4:06.00       43394444 B   ---   --   ---xx   flac  0.6250  Track03.flac
+     3:48.60       40360364 B   ---   --   ---xx   flac  0.5840  Track04.flac
+     6:11.35       65526764 B   ---   --   ---xx   flac  0.6240  Track05.flac
+     4:28.35       47357564 B   ---   --   ---xx   flac  0.6215  Track06.flac
+     3:52.30       40995404 B   ---   --   ---xx   flac  0.5818  Track07.flac
+     4:10.55       44229404 B   ---   --   ---xx   flac  0.5907  Track08.flac
+     4:36.10       48709964 B   ---   --   ---xx   flac  0.5435  Track09.flac
+     5:14.20       55436684 B   ---   --   ---xx   flac  0.5608  Track10.flac
+     2:57.65       31375724 B   ---   --   ---xx   flac  0.6026  Track11.flac
+     5:31.05       58400204 B   ---   --   ---xx   flac  0.6047  Track12.flac
+     4:20.70       46028684 B   ---   --   ---xx   flac  0.6420  Track13.flac
+     2:55.70       31034684 B   ---   --   ---xx   flac  0.6230  Track14.flac
+     4:36.14       48719372 B   ---   --   ---xx   flac  0.6284  Track15.flac
+    64:33.18      683240196 B                            0.5971  (15 files)
+=================== 
+=================== 
+=================== 

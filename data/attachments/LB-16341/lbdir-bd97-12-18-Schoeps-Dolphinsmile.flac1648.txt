@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd97-12-18-Schoeps-Dolphinsmile.flac1648
+===================
+===================
+===================
+a4915bec8f746968ce14f004d283b451 *01 Maggies Farm.flac
+7a0453993186d24ea77cd2784e35d876 *02 I Want You.flac
+d4f1fa706da8f10668896167b408fe8f *03 Cold Irons Bound.flac
+857239377e094b5a3611b165e7caab48 *04 Born In Time.flac
+b43343ca181b3d30a61990cddac2fd79 *05 Cant Wait.flac
+75b2693132b377f4179d188441ce99b2 *06 Silvio.flac
+5fd7db6f5c740374ec4d830987fa2614 *07 Stone Walls and Steel Bars.flac
+d729713315875845d3902a40c49734d2 *08 Tamborine Man.flac
+4c9e0b772945ad26c080583197ea9f1f *09 Tangled Up In Blue.flac
+76a3d44fa6986951cf7900fa97509fe4 *10 It Takes A Lot To Laugh.flac
+85b6776ba37db3218a60e544c11ae59e *11 Blind Willie McTell.flac
+af532061ad60d61c8f019b1998d59396 *12 Till I Fell In Love With You.flac
+ef906fed569b3ce5366c376c51c2b534 *13 Like A Rolling Stone.flac
+5f7e4b79394063d9ae463dbeef71976d *14 It Aint Me Babe.flac
+cfa9563ab73dca7108c66e54fec0a327 *15 Love Sick.flac
+47a0502d165516da553e7a8cc6c5decc *16 Rainy Day Women.flac
+27bba9edf83f50863072b3e3b6c091e1 *Bob Dylan El Rey Los Angeles 1997-12-18 Schoeps Dolphinsmile Archive.ffp
+3205e4cbcc824754f35d3592693d1686 *Bob Dylan El Rey Los Angeles 1997-12-18 Schoeps Dolphinsmile Archive.md5
+27bba9edf83f50863072b3e3b6c091e1 *Bob Dylan El Rey Los Angeles 1997-12-18 Schoeps Dolphinsmile Archive.txt
+535b5d8825d6443e68228391f09d569e *info.txt
+===================
+===================
+===================
+=== ffp for: bd97-12-18-Schoeps-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Maggies Farm.flac:a6eb1a09c05219e60c11fd8efacb7010
+02 I Want You.flac:7d009ec0b6207b6a4b993686653aaba4
+03 Cold Irons Bound.flac:a67ed8eebebfe417453d57c9b5a68510
+04 Born In Time.flac:f719dde36c27ab75c441a26478e0b562
+05 Cant Wait.flac:14ca63117b0095ad54e1091d580da429
+06 Silvio.flac:d8e465db674cd8aa3c4ec91fd031cbe3
+07 Stone Walls and Steel Bars.flac:eb12fd2287372dd86be81fea6e347707
+08 Tamborine Man.flac:500217415998916b61d563112ee07ccb
+09 Tangled Up In Blue.flac:744cc8af62ddda4a181e27e46987c7f5
+10 It Takes A Lot To Laugh.flac:6f42993705b3d7fef937d0cb707f3d37
+11 Blind Willie McTell.flac:73955b3f30cd4b6bc0aec3b8bf6638a1
+12 Till I Fell In Love With You.flac:02f85eb9b49cad069491958a8760b320
+13 Like A Rolling Stone.flac:3cb6f0395566ee61cb3083bbf9eb3319
+14 It Aint Me Babe.flac:dd211253510ad856d2ebc1c34cba97d6
+15 Love Sick.flac:83b8d5909a22fab0f3d61db6bb4855cd
+16 Rainy Day Women.flac:0c1db5ccee7aa6c7e8d420ad72116e92
+===================
+===================
+===================
+=== shntool len for: bd97-12-18-Schoeps-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:06.17       64602420 B   -b-   --   ---xx   flac  0.5694  01 Maggies Farm.flac
+     5:10.14       54717588 B   -b-   --   ---xx   flac  0.5492  02 I Want You.flac
+     6:54.57       73163824 B   -b-   --   ---xx   flac  0.5629  03 Cold Irons Bound.flac
+     5:23.28       57042984 B   -b-   --   ---xx   flac  0.5474  04 Born In Time.flac
+     5:41.28       60218416 B   -b-   --   ---xx   flac  0.5746  05 Cant Wait.flac
+     6:53.19       72896812 B   -b-   --   ---xx   flac  0.5817  06 Silvio.flac
+     3:48.24       40275244 B   -b-   --   ---xx   flac  0.4874  07 Stone Walls and Steel Bars.flac
+     5:59.07       63344788 B   -b-   --   ---xx   flac  0.5020  08 Tamborine Man.flac
+     8:12.28       86854704 B   -b-   --   ---xx   flac  0.5681  09 Tangled Up In Blue.flac
+     6:00.32       63580204 B   -b-   --   ---xx   flac  0.5310  10 It Takes A Lot To Laugh.flac
+     6:22.14       67418664 B   -b-   --   ---xx   flac  0.5277  11 Blind Willie McTell.flac
+     7:15.25       76792984 B   -b-   --   ---xx   flac  0.5573  12 Till I Fell In Love With You.flac
+    10:59.62      116393668 B   -b-   --   ---xx   flac  0.5372  13 Like A Rolling Stone.flac
+     8:54.70       94363176 B   -b-   --   ---xx   flac  0.4611  14 It Aint Me Babe.flac
+     6:07.05       64750384 B   -b-   --   ---xx   flac  0.5062  15 Love Sick.flac
+     5:29.55       58164324 B   -b-   --   ---xx   flac  0.5698  16 Rainy Day Women.flac
+   105:18.36     1114580184 B                            0.5393  (16 files)
+===================
+===================
+===================

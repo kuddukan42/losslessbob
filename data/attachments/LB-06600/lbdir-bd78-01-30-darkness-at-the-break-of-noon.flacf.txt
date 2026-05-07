@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-01-30-darkness-at-the-break-of-noon.flacf 
+=================== 
+=================== 
+=================== 
+9016b87a5c8f61fe6dcfbedf78e99afb  bd78-01-30-darkness-at-the-break-of-noon-t01.flac
+90637e60a535cd1e1c66bcfb683d7d96  bd78-01-30-darkness-at-the-break-of-noon-t02.flac
+d9fd3fefadf367ccfcacfd99559b67fd  bd78-01-30-darkness-at-the-break-of-noon-t03.flac
+5f23e381adcea3fa3e6abc40459be4ba  bd78-01-30-darkness-at-the-break-of-noon-t04.flac
+94eb4e66a3686722a20f430686881049  bd78-01-30-darkness-at-the-break-of-noon-t05.flac
+1912f41c5ff39d065e203e7a298c09ee  bd78-01-30-darkness-at-the-break-of-noon-t06.flac
+46f85cc462ce989955789b097f3d4615  bd78-01-30-darkness-at-the-break-of-noon-t07.flac
+90ad823b36f250f805024ded83da20f8  bd78-01-30-darkness-at-the-break-of-noon-t08.flac
+cedfd8a3b35216eeb4da74f85f27f8a2  bd78-01-30-darkness-at-the-break-of-noon-t09.flac
+b23df24236288d3e57334dbc7ebd9010  bd78-01-30-darkness-at-the-break-of-noon-t10.flac
+3e561c6fbe231fa0e68bb98cbf40b785  bd78-01-30-darkness-at-the-break-of-noon-t11.flac
+194e44308e9bafdabad7063a3e81b0b0  bd78-01-30-darkness-at-the-break-of-noon-t12.flac
+4e981f05c6a54cda663dc77476e43b18  bd78-01-30-darkness-at-the-break-of-noon-t13.flac
+9afea22221e4d847f197ea6c206bc59b  bd78-01-30-darkness-at-the-break-of-noon-t14.flac
+4db680e9a6b2a1695d99f6cadf4e78b1  bd78-01-30-darkness-at-the-break-of-noon-t15.flac
+7a9a30dae7d2f62d299f17ce1d73daca  bd78-01-30-darkness-at-the-break-of-noon-t16.flac
+e74f237d85d3ad23216333cc2d59982a  bd78-01-30-darkness-at-the-break-of-noon-t17.flac
+e246b3b77bb68a4fc613e4b1e40d0b56  bd78-01-30-darkness-at-the-break-of-noon.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-01-30-darkness-at-the-break-of-noon.flacf 
+=================== 
+=================== 
+=================== 
+bd78-01-30-darkness-at-the-break-of-noon-t01.flac:cbafa76ab1f3c504c4fa8d6b1997d44b
+bd78-01-30-darkness-at-the-break-of-noon-t02.flac:9b5098373c6621d79c6acb42513eb468
+bd78-01-30-darkness-at-the-break-of-noon-t03.flac:87c227af628dd61a5156cf05f40e5079
+bd78-01-30-darkness-at-the-break-of-noon-t04.flac:6956e56a8170dde2e9e2e725c3b5674a
+bd78-01-30-darkness-at-the-break-of-noon-t05.flac:880949da8d3d68dfaa665f5e0f6f96ff
+bd78-01-30-darkness-at-the-break-of-noon-t06.flac:b1b9fc40f47a33e813b0192da3aff96e
+bd78-01-30-darkness-at-the-break-of-noon-t07.flac:8cdc4bc6e9f149811e8fbbb8b09ab624
+bd78-01-30-darkness-at-the-break-of-noon-t08.flac:2ee4223b5bc89c842633aa67a705e87b
+bd78-01-30-darkness-at-the-break-of-noon-t09.flac:c3431b9abc23b78626e214cb8fafbbd8
+bd78-01-30-darkness-at-the-break-of-noon-t10.flac:c4f18e4b93cafd074e95dfb18c743834
+bd78-01-30-darkness-at-the-break-of-noon-t11.flac:44d4f175afb9611d7f6b837b460c48bc
+bd78-01-30-darkness-at-the-break-of-noon-t12.flac:d2e64d765cabe8146aa2215c9720fb30
+bd78-01-30-darkness-at-the-break-of-noon-t13.flac:3a3d23aeae3e45dc0e7a2792c9c792e2
+bd78-01-30-darkness-at-the-break-of-noon-t14.flac:f52bd2222f39b973aea86ff8b351b469
+bd78-01-30-darkness-at-the-break-of-noon-t15.flac:6cb8372738fd7f9ee377cd26b3139c24
+bd78-01-30-darkness-at-the-break-of-noon-t16.flac:17a9c35cb088508d44acd6925b96a950
+bd78-01-30-darkness-at-the-break-of-noon-t17.flac:8e3afbd074d77c94ff7ea83b317c460b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-01-30-darkness-at-the-break-of-noon.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.68       48493580 B   ---   --   ---xx   flac  0.6041  bd78-01-30-darkness-at-the-break-of-noon-t01.flac
+     4:46.50       50568044 B   ---   --   ---xx   flac  0.5677  bd78-01-30-darkness-at-the-break-of-noon-t02.flac
+     4:08.42       43846028 B   ---   --   ---xx   flac  0.5958  bd78-01-30-darkness-at-the-break-of-noon-t03.flac
+     4:19.48       45800540 B   ---   --   ---xx   flac  0.5892  bd78-01-30-darkness-at-the-break-of-noon-t04.flac
+     4:35.25       48568844 B   ---   --   ---xx   flac  0.5771  bd78-01-30-darkness-at-the-break-of-noon-t05.flac
+     4:23.17       46433228 B   ---   --   ---xx   flac  0.5880  bd78-01-30-darkness-at-the-break-of-noon-t06.flac
+     6:13.50       65914844 B   ---   --   ---xx   flac  0.5895  bd78-01-30-darkness-at-the-break-of-noon-t07.flac
+     5:26.20       57553484 B   ---   --   ---xx   flac  0.5963  bd78-01-30-darkness-at-the-break-of-noon-t08.flac
+     6:48.20       72018284 B   ---   --   ---xx   flac  0.6239  bd78-01-30-darkness-at-the-break-of-noon-t09.flac
+     1:26.35       15252764 B   ---   --   ---xx   flac  0.5610  bd78-01-30-darkness-at-the-break-of-noon-t10.flac
+     4:12.63       44601020 B   ---   --   ---xx   flac  0.5907  bd78-01-30-darkness-at-the-break-of-noon-t11.flac
+     5:27.50       57800444 B   ---   --   ---xx   flac  0.5938  bd78-01-30-darkness-at-the-break-of-noon-t12.flac
+     5:08.07       54347708 B   ---   --   ---xx   flac  0.5464  bd78-01-30-darkness-at-the-break-of-noon-t13.flac
+     3:20.00       35280044 B   ---   --   ---xx   flac  0.4710  bd78-01-30-darkness-at-the-break-of-noon-t14.flac
+     4:23.18       46435580 B   ---   --   ---xx   flac  0.4823  bd78-01-30-darkness-at-the-break-of-noon-t15.flac
+     3:28.40       36785324 B   ---   --   ---xx   flac  0.5013  bd78-01-30-darkness-at-the-break-of-noon-t16.flac
+     2:49.65       29964524 B   ---   --   ---xx   flac  0.4870  bd78-01-30-darkness-at-the-break-of-noon-t17.flac
+    75:33.18      799664284 B                            0.5696  (17 files)
+=================== 
+=================== 
+=================== 

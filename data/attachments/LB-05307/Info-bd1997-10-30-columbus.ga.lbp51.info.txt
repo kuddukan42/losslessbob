@@ -1,0 +1,65 @@
+Columbus Civic Center
+Columbus, Georgia
+October 30, 1997
+
+No LB # for this date.
+
+I received this one in trade as flac, part of a data DVD (Thanks again, Jan!). The info files that came inside accompaining the flacs are also included. 
+Had a small gap at the beginning of first track, d1t01. I just removed the gap without any other specific change, except for the few clicks I repaired, kept the old tracks as received, though (these are the originals), then renamed the files according to the standard etree nomenclature.
+
+THE FIXED TRACKS (to be later seeded on a different torrent): gap d1t01 0:00.750 removed, clicks on d1t05 3:16.300, 4:06.335 & 4:19.950 patched with small fragments of wave from the opossite channel; small click d1t06 1:35.590 removed; click on left channel d1t09 2:37.617 carefully patched with a minimal fragment taken from right channel.
+about 2 sec. from the start of d2t01 were added to the end of d1t01; click d2t04 2:28.860 & 5:07.979 partialy patched, rest (about 2 samples on the 2nd one) removed; clicks on d2t05 0.08.486, 0.45.206 & 2:29.606 all fixed up. Other flaws as mic or wind noise on d2t01 0:03.180 or a brief fluctuation of volume on d1t06 that slightly drops down from 3:14.191 to aprox. 3:15.900 had to be left to preserve the nature of the recording.
+
+THESE ARE THE ORIGINAL FILES AS I RECEIVED THEM.
+
+Source: Audience recording of unknown generation. Full spectrum. Very good to excellent sound [B+]
+Lineage: Unknown aud. recording > ? > flac
+
+Disc 1  
+
+01.	Maggie's Farm [05:48]
+02.	Lay Lady Lay [04:32]
+03.	Cold Irons Bound [06:27]
+04.	You're A Big Girl Now [05:10]
+05.	Can't Wait [06:12]
+06.	Silvio (Bob Dylan & Robert Hunter) [06:55]
+07.	Cocaine Blues (trad.) [04:35]
+08.	Tangled Up In Blue [07:55]
+09.	It's All Over Now, Baby Blue [06:45]
+10.	Til I Fell In Love With You [05:53]
+11.	Not Dark Yet [05:27]
+
+Total time: [65:43]
+
+
+Disc 2
+
+01.	Highway 61 Revisited [06:01]
+02.	Like A Rolling Stone [08:30]
+03.	It Ain't Me, Babe [06:52]
+04.	Love Sick [06:25]
+05.	Rainy Day Women # 12 & 35 [04:27]
+
+Total time: [32:17]
+
+Concert # 910 of The Never-Ending Tour
+Concert # 6 of the 1997 US Fall Tour
+1997 concert # 68
+
+Concert # 57 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+7-9, 14 acoustic with the band
+
+Note. Live Debut of Not Dark Yet
+
+6 new songs (37%) compared to previous concert
+3 new songs for this tour
+
+Stereo audience recording, 105 minutes (present one is 98 minutes)
+
+Luisbp51 seed at Hungercity on Aug. 2007

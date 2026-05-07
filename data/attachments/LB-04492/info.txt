@@ -1,0 +1,38 @@
+Bob Dylan
+
+Jacksonville Veterans Memorial Coliseum
+Jacksonville, Florida
+Tuesday 5 February 2002
+
+CD1 71:08
+
+0. intro
+1. Hallelujah, I'm Ready To Go
+2. The Times They Are A-Changin'
+3. Desolation Row
+4. Searching For A Soldier's Grave
+5. Gotta Serve Somebody
+6. Floater (Too Much To Ask)
+7. Lonesome Day Blues
+8. Stuck Inside Of Mobile With The Memphis Blues Again
+9. Don't Think Twice, It's All Right
+10. Masters Of War
+11. Tangled Up In Blue
+
+CD2 60:17
+
+12. Summer Days
+13. Mississippi
+14. Drifter's Escape
+15. Leopard-Skin Pill-Box Hat
+
+16. Country Pie
+17. Like A Rolling Stone
+18. I Shall Be Released
+19. Honest With Me
+20. Blowin' In The Wind
+
+Audience MD recording > MD(m) > Unknown transfer > CDR(x) > EAC (Secure/Offset) > WAV > FLAC (Level 8) > HungerCity, MD source was spotted using Spectral Analysis w/ Cool Edit Pro ("lego parapet" artifacts are apparent).
+
+Not much spectral density above 18kHz. CEDAR-type f/ps are in abundance; d1t02@0:47 coversation between female and taper about who can see ok. Excellent sound, A-.
+

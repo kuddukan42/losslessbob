@@ -1,0 +1,114 @@
+===================
+===================
+===================
+=== md5 for: bd90-02-08-i.flacf
+===================
+===================
+===================
+981d0d3149273535af83bba9646edd94 *bd-1990-02-08-London-HG.md5
+ebbc1b8e40b989d24e37664439a5a1d7 *bd-1990-02-08-London-HG.txt
+e43125a39f5083413437dfe4bee46845 *Disc1\bd-1990-02-08-HG-d1t01.flac
+7e71ef36d46d5caa506a286363a677c3 *Disc1\bd-1990-02-08-HG-d1t02.flac
+a1ac3ca12db66a21632eefd3c94703a7 *Disc1\bd-1990-02-08-HG-d1t03.flac
+605fcf07aa269bd3a716833b07807a6d *Disc1\bd-1990-02-08-HG-d1t04.flac
+a088736106c875b123b5b7e39146f200 *Disc1\bd-1990-02-08-HG-d1t05.flac
+c7f6cc2e057caa43b38cbfda37e50dc4 *Disc1\bd-1990-02-08-HG-d1t06.flac
+cc9c47937eae909d5fdbaa8ebddbf91e *Disc1\bd-1990-02-08-HG-d1t07.flac
+b9b6ed56a7a28662e1ca73338e8f9b69 *Disc1\bd-1990-02-08-HG-d1t08.flac
+2ab00dcb2d63765f5a1001d56d1f5271 *Disc1\bd-1990-02-08-HG-d1t09.flac
+b7c51c31ef1950a6cf771cf842609da5 *Disc1\bd-1990-02-08-HG-d1t10.flac
+e83798a9f1cfcd0e89005e6f64159145 *Disc2\bd-1990-02-08-HG-d2t01.flac
+be298b88f5911aa910fc61f462f546f4 *Disc2\bd-1990-02-08-HG-d2t02.flac
+f821f315e7f33572fa0d164ce9e412fc *Disc2\bd-1990-02-08-HG-d2t03.flac
+7085dce487e159b962e170204c210672 *Disc2\bd-1990-02-08-HG-d2t04.flac
+d3c2218683a2aebc2363c5213fa69e86 *Disc2\bd-1990-02-08-HG-d2t05.flac
+7ee63e4221df312fea21e020f574f2db *Disc2\bd-1990-02-08-HG-d2t06.flac
+6a79a2a3a4e12adcba2d487f6eba1f80 *Disc2\bd-1990-02-08-HG-d2t07.flac
+e9da6ec9526d4e902377d3ff83489e7f *Disc2\bd-1990-02-08-HG-d2t08.flac
+a6d63a43a7f06008155e01d74c56a7a4 *Disc2\bd-1990-02-08-HG-d2t09.flac
+7a0e57b2b2f7d9094f4ea23d3806b11c *Disc2\bd-1990-02-08-HG-d2t10.flac
+df50b7fce2ae3aff51f87dc34f7dd7b8 *Disc2\bd-1990-02-08-HG-d2t11.flac
+87339728ed0530f634a69fa2d902623b *Disc2\bd-1990-02-08-HG-d2t12.flac
+9a8b1fa1ae8bf2a0bdf938c9a803d799 *Disc2\bd-1990-02-08-HG-d2t13.flac
+fc6ece574287cf039e1eb6bfaa704570 *Disc2\bd-1990-02-08-HG-d2t14.flac
+526d5008ec68df705757fd62ecc58edb *Disc2\bd-1990-02-08-HG-d2t15.flac
+7fb1fd3ff6024421f255b969d150c150 *Lon02-08-90(HG)-B.JPG
+7ba90d0adbc485ba6c12a31c27f8993c *Lon02-08-90(HG)-F.JPG
+===================
+===================
+===================
+=== ffp for: bd90-02-08-i.flacf
+===================
+===================
+===================
+Disc1\bd-1990-02-08-HG-d1t01.flac:9a03749d323ff1560d6cad043def6985
+Disc1\bd-1990-02-08-HG-d1t02.flac:19a4f157f23814acb2ff484444692f5e
+Disc1\bd-1990-02-08-HG-d1t03.flac:cb554af1e852281e7ffb3208e0da6b0d
+Disc1\bd-1990-02-08-HG-d1t04.flac:c526b5f612c3fd12331399fdea10c3ed
+Disc1\bd-1990-02-08-HG-d1t05.flac:d3c93eeac9b686f7daede03871be7066
+Disc1\bd-1990-02-08-HG-d1t06.flac:61730e9bef473ee6688307080ec87ac4
+Disc1\bd-1990-02-08-HG-d1t07.flac:20387beff0bec2e3fe784397198f7fd5
+Disc1\bd-1990-02-08-HG-d1t08.flac:1301eef6337e173cb9aad439da208470
+Disc1\bd-1990-02-08-HG-d1t09.flac:b1f1f501980377baae98a5b3382ae3e1
+Disc1\bd-1990-02-08-HG-d1t10.flac:eaaf61ade804db69af226573a3559991
+Disc2\bd-1990-02-08-HG-d2t01.flac:b16d13b7439f32f9cb7197409fc243d4
+Disc2\bd-1990-02-08-HG-d2t02.flac:4ad57d387f0be559ae7f1f5dfb6bf742
+Disc2\bd-1990-02-08-HG-d2t03.flac:fcae6e82101f8db5dff3a30c3436b4ae
+Disc2\bd-1990-02-08-HG-d2t04.flac:6866c5e0ba6c93b9816a0e6cdea482e9
+Disc2\bd-1990-02-08-HG-d2t05.flac:c27e3cecb18962926823a066638a3e50
+Disc2\bd-1990-02-08-HG-d2t06.flac:ca66edb8bf7cd6b017f20b6c2fa2f22f
+Disc2\bd-1990-02-08-HG-d2t07.flac:e14d69f1dd7445c8f51f2251bed13353
+Disc2\bd-1990-02-08-HG-d2t08.flac:a4784c5b46295ff062f7e078072a8978
+Disc2\bd-1990-02-08-HG-d2t09.flac:930b1295c9dab7fd24f6f8c5f8d5a323
+Disc2\bd-1990-02-08-HG-d2t10.flac:97c511a305c4dbd9b5788c18f9aeb86a
+Disc2\bd-1990-02-08-HG-d2t11.flac:f0152552dd2d750070f36fd62a388dbf
+Disc2\bd-1990-02-08-HG-d2t12.flac:0bb80aa5b9e311cc2541708dc5f7b93d
+Disc2\bd-1990-02-08-HG-d2t13.flac:9d2cf79a20c0d2cc757a9e002de9d5a6
+Disc2\bd-1990-02-08-HG-d2t14.flac:180310d5db846646fe78c16025f379d6
+Disc2\bd-1990-02-08-HG-d2t15.flac:d45cba7c9047a06c027588ed9ec8a387
+===================
+===================
+===================
+=== shntool len for: bd90-02-08-i.flacf\Disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:22.01        3883196 B   ---   --   ---xx   flac  0.5918  bd-1990-02-08-HG-d1t01.flac
+     4:18.09       45532412 B   ---   --   ---xx   flac  0.6455  bd-1990-02-08-HG-d1t02.flac
+     4:12.67       44610428 B   ---   --   ---xx   flac  0.5918  bd-1990-02-08-HG-d1t03.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.6106  bd-1990-02-08-HG-d1t04.flac
+     6:04.40       64303724 B   ---   --   ---xx   flac  0.6149  bd-1990-02-08-HG-d1t05.flac
+     3:44.18       39555980 B   ---   --   ---xx   flac  0.6134  bd-1990-02-08-HG-d1t06.flac
+     5:30.47       58322588 B   ---   --   ---xx   flac  0.6316  bd-1990-02-08-HG-d1t07.flac
+     3:04.03       32464700 B   ---   --   ---xx   flac  0.6382  bd-1990-02-08-HG-d1t08.flac
+     3:10.02       33520748 B   ---   --   ---xx   flac  0.6075  bd-1990-02-08-HG-d1t09.flac
+     3:06.34       32890412 B   ---   --   ---xx   flac  0.6140  bd-1990-02-08-HG-d1t10.flac
+    38:29.71      407475032 B                            0.6184  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd90-02-08-i.flacf\Disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.38       51069020 B   ---   --   ---xx   flac  0.5473  bd-1990-02-08-HG-d2t01.flac
+     4:51.37       51419468 B   ---   --   ---xx   flac  0.5511  bd-1990-02-08-HG-d2t02.flac
+     3:44.40       39607724 B   ---   --   ---xx   flac  0.5767  bd-1990-02-08-HG-d2t03.flac
+     7:08.73       75670940 B   ---   --   ---xx   flac  0.5495  bd-1990-02-08-HG-d2t04.flac
+     3:57.27       41870348 B   ---   --   ---xx   flac  0.5592  bd-1990-02-08-HG-d2t05.flac
+     0:58.26       10292396 B   ---   --   ---xx   flac  0.5761  bd-1990-02-08-HG-d2t06.flac
+     3:55.69       41616332 B   ---   --   ---xx   flac  0.6173  bd-1990-02-08-HG-d2t07.flac
+     3:14.38       34311020 B   ---   --   ---xx   flac  0.5942  bd-1990-02-08-HG-d2t08.flac
+     4:00.56       42467756 B   ---   --   ---xx   flac  0.6251  bd-1990-02-08-HG-d2t09.flac
+     6:28.21       68492636 B   ---   --   ---xx   flac  0.5970  bd-1990-02-08-HG-d2t10.flac
+     3:05.15       32669324 B   ---   --   ---xx   flac  0.6658  bd-1990-02-08-HG-d2t11.flac
+     6:35.35       69760364 B   ---   --   ---xx   flac  0.6784  bd-1990-02-08-HG-d2t12.flac
+     6:28.72       68612588 B   ---   --   ---xx   flac  0.5549  bd-1990-02-08-HG-d2t13.flac
+     4:19.60       45828764 B   ---   --   ---xx   flac  0.5878  bd-1990-02-08-HG-d2t14.flac
+     4:38.31       49112156 B   ---   --   ---xx   flac  0.6520  bd-1990-02-08-HG-d2t15.flac
+    68:17.38      722800836 B                            0.5945  (15 files)
+===================
+===================
+===================

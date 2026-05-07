@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-gleason-home-tape.flacf 
+=================== 
+=================== 
+=================== 
+1eb3673bac8ea595afd9a42916d22688  bd61-gleason-home-tape-LB-2862.txt
+dbbfc0f6f68b23f1f467f72506c70c61  bd6x-ght-t01.flac
+c85ca663301d679e9b7442fac1583784  bd6x-ght-t02.flac
+5a7b2416d3f5f210f8ef3486d263123b  bd6x-ght-t03.flac
+b9a3ef614c9b886adcc6c87d8dae9bf8  bd6x-ght-t04.flac
+82ff2a27b624886b92431180d57d273d  bd6x-ght-t05.flac
+5610c914e8d3a810d2e864fa95adaca5  bd6x-ght-t06.flac
+4a4b66bec7760c55b1c9b1eb70fac909  bd6x-ght-t07.flac
+171ae5cdb35e54280df65bbdceaaab87  bd6x-ght-t08.flac
+40b35a5be543d023aeabff6efef5277a  bd6x-ght-t09.flac
+cb13468fc68b04a5fcebc1785d0e75c0  bd6x-ght-t10.flac
+9f78b08496fe5e53b60516cdb8bafade  bd6x-ght-t11.flac
+56b02dc0f541c1efdb54cd2282466b20  bd6x-ght-t12.flac
+8158ad31a82876c35c0660a961d16288  bd6x-ght-t13.flac
+8a3fe282c97262248f0d90af5f27dc83  bd6x-ght-t14.flac
+272e105c0295388c0f524e70dd087345  bd6x-ght-t15.flac
+af2b65416fdb8c646460a6184e0c5df4  bd6x-ght-t16.flac
+614a11fb7629dc61ecd35173f146a2eb  bd6x-ght-t17.flac
+fb3a5d33f72bd6d95411a6a80070f7d8  bd6x-ght-t18.flac
+ffebeeebcbbfb46467d8c0dc661295bf  bd6x-ght-t19.flac
+b3a01f20159cdd33ab4492b958fd0f7f  bd6x-ght-t20.flac
+39dbc440ca4cb18d30821f920e6ea490  bd6x-ght-t21.flac
+df178f54d99233ea9a504aca7af99cc2  bd6x-ght-t22.flac
+5597b7e4ddb097aca655b468ac0a09e3  gleason home tape.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-gleason-home-tape.flacf 
+=================== 
+=================== 
+=================== 
+bd6x-ght-t01.flac:3da8753af8fe58e245426898e0e1ea6c
+bd6x-ght-t02.flac:30ff908b65aae61d2a8a9eab487ce85f
+bd6x-ght-t03.flac:76bec5519b24bec0eb6cb43ec0a2f285
+bd6x-ght-t04.flac:439735b74eb690f5b9fb5410394e62a5
+bd6x-ght-t05.flac:8a37ba96832a31cf21b1eac7df65d73a
+bd6x-ght-t06.flac:c6b41fe8ed7f6398e625058c749ab0d6
+bd6x-ght-t07.flac:052e67ebfa8b26209113f5c6a3cf6e65
+bd6x-ght-t08.flac:29c40517d8f37fa93e7e4f2eeaf09e3d
+bd6x-ght-t09.flac:c9efc95348e8cd57089609da9d63dd00
+bd6x-ght-t10.flac:bc231dbfafb4c016c7c9202da2cf1c25
+bd6x-ght-t11.flac:2432b92a785e56cd3df633dabc97adbb
+bd6x-ght-t12.flac:6dc36eb454c2655df8b57fbb469b557c
+bd6x-ght-t13.flac:31050d07f439b7ed66571f0e34bb599d
+bd6x-ght-t14.flac:621f6daaa80261638ff349e2c9d69d9f
+bd6x-ght-t15.flac:e60aa0d63ecd7a5847b5e487af5f66f9
+bd6x-ght-t16.flac:c3f9c149435225893030ee14daf13865
+bd6x-ght-t17.flac:3382dd5423378a5936a57ec5bc2777df
+bd6x-ght-t18.flac:2c29d2e06583ac48ec453842e3135333
+bd6x-ght-t19.flac:8af4b98b8fc1af0b4b8fbc548af11cf2
+bd6x-ght-t20.flac:000486587a36cf820f58d44e5d34098c
+bd6x-ght-t21.flac:1989d2d60a287d055e51bd6a509fc335
+bd6x-ght-t22.flac:5dc82b6dd957e83ae7948015d47eb261
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-gleason-home-tape.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:52.67       19914428 B   ---   --   ---xx   flac  0.4393  bd6x-ght-t01.flac
+     2:48.24       29691692 B   ---   --   ---xx   flac  0.4125  bd6x-ght-t02.flac
+     4:47.27       50690348 B   ---   --   ---xx   flac  0.3931  bd6x-ght-t03.flac
+     5:54.71       62612636 B   ---   --   ---xx   flac  0.3944  bd6x-ght-t04.flac
+     5:53.22       62320988 B   ---   --   ---xx   flac  0.4421  bd6x-ght-t05.flac
+     1:07.29       11887052 B   ---   --   ---xx   flac  0.4324  bd6x-ght-t06.flac
+     0:17.59        3137612 B   ---   --   ---xx   flac  0.4000  bd6x-ght-t07.flac
+     0:18.24        3231692 B   ---   --   ---xx   flac  0.4014  bd6x-ght-t08.flac
+     0:30.74        5466092 B   ---   --   ---xx   flac  0.3749  bd6x-ght-t09.flac
+     2:41.06       28414556 B   ---   --   ---xx   flac  0.3856  bd6x-ght-t10.flac
+     2:46.16       29320076 B   ---   --   ---xx   flac  0.3873  bd6x-ght-t11.flac
+     3:39.26       38692796 B   ---   --   ---xx   flac  0.3807  bd6x-ght-t12.flac
+     1:47.24       18931292 B   ---   --   ---xx   flac  0.3884  bd6x-ght-t13.flac
+     3:40.14       38840972 B   ---   --   ---xx   flac  0.5157  bd6x-ght-t14.flac
+     4:02.02       42693548 B   ---   --   ---xx   flac  0.5071  bd6x-ght-t15.flac
+     4:27.65       47251724 B   ---   --   ---xx   flac  0.4897  bd6x-ght-t16.flac
+     6:59.63       74059820 B   ---   --   ---xx   flac  0.4352  bd6x-ght-t17.flac
+     4:46.20       50497484 B   ---   --   ---xx   flac  0.4533  bd6x-ght-t18.flac
+     3:43.55       39466604 B   ---   --   ---xx   flac  0.4286  bd6x-ght-t19.flac
+     3:35.00       37926044 B   ---   --   ---xx   flac  0.4350  bd6x-ght-t20.flac
+     2:09.69       22917932 B   ---   --   ---xx   flac  0.4200  bd6x-ght-t21.flac
+     3:43.32       39412508 B   ---   --   ---xx   flac  0.3508  bd6x-ght-t22.flac
+    71:33.39      757377896 B                            0.4279  (22 files)
+=================== 
+=================== 
+=================== 

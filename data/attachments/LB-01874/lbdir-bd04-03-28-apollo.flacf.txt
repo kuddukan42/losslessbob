@@ -1,0 +1,33 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-28-apollo.flacf 
+=================== 
+=================== 
+=================== 
+4b4984a7a2f2964f846ccbc744b3ec6f  achangegonnacome-intro.flac
+3a81e9638f3820a7345ef96ad4e1b3c9  achangegonnacome.flac
+dc31671e7393cede678e2f592eb91512  bd04-03-28.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-03-28-apollo.flacf 
+=================== 
+=================== 
+=================== 
+achangegonnacome.flac:a26b5249de0766d423248021f5ab791e
+achangegonnacome-intro.flac:d9cacfde9c6e2da9509dbbf15d6fd069
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-28-apollo.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:06.38       22315820 B   ---   --   ---xx   flac  0.5456  achangegonnacome-intro.flac
+     3:38.37       38542268 B   ---   --   ---xx   flac  0.6288  achangegonnacome.flac
+     5:45.00       60858088 B                            0.5983  (2 files)
+=================== 
+=================== 
+=================== 

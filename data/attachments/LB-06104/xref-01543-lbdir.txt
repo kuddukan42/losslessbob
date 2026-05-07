@@ -1,0 +1,76 @@
+===================
+===================
+===================
+=== md5 for: bd95-12-09-g.flacf
+===================
+===================
+===================
+5842cc8f720d67ce1b774274d0630014 *bd1995-12-09 Boston.md5
+11036094d87f4420f0f2ed601bf98a64 *bd1995-12-09 Boston01.flac
+6c5a59af28b9f092c567e649bb88da06 *bd1995-12-09 Boston02.flac
+76fe28a7b3fd34bb35f84c25191a0be4 *bd1995-12-09 Boston03.flac
+a3e36783c323bf0f24de5ed2436d4000 *bd1995-12-09 Boston04.flac
+d24a29d67ddd3b360cb0633ebf4a4936 *bd1995-12-09 Boston05.flac
+ad4e5316379cf5fd51493132d1d0f8dc *bd1995-12-09 Boston06.flac
+5c1f77e9e9c3e9bebf42acd67c3ba9aa *bd1995-12-09 Boston07.flac
+e01a069037018a98d4e99528158e872c *bd1995-12-09 Boston08.flac
+a796501d4d506bee46e676a166df3917 *bd1995-12-09 Boston09.flac
+1c1bd8f965f5fa2699a505a1a084c8e2 *bd1995-12-09 Boston10.flac
+0c96560e860969336abbfee071dff900 *bd1995-12-09 Boston11.flac
+48dd855b51800d01d9ceccd1eb2eefb8 *bd1995-12-09 Boston12.flac
+0ea717321024c489bb6208ce6d18476f *bd1995-12-09 Boston13.flac
+de7a455549740f32644715d3ff19ffc9 *bd1995-12-09 Boston14.flac
+01a9fd30e6af0d54d54a2cc70e566a97 *bd1995-12-09 Boston15.flac
+6fa9cf2628e0f8b49b914d7d970aa54f *bd1995-12-09 Boston16.flac
+77484dfc71bdac093ea2c84524892a1e *Note.txt
+===================
+===================
+===================
+=== ffp for: bd95-12-09-g.flacf
+===================
+===================
+===================
+bd1995-12-09 Boston01.flac:809a51c326fecbdf8eb9167797ad143b
+bd1995-12-09 Boston02.flac:f9f1ae0bdff3ff415b710ad749d60873
+bd1995-12-09 Boston03.flac:4c29455b085a43bf3176a22eeea001d3
+bd1995-12-09 Boston04.flac:5b52a10131891c93b5285ecc94d77fc5
+bd1995-12-09 Boston05.flac:0cb73abdb14bfb12043ac228e6f9a754
+bd1995-12-09 Boston06.flac:94a0f8fdcb32e405c6134b69c1f4b659
+bd1995-12-09 Boston07.flac:b5969b933a6da31f1ce960ab59d931c8
+bd1995-12-09 Boston08.flac:aa461a956d8998bd3950c8faca25e7b9
+bd1995-12-09 Boston09.flac:3809d6474dbeb7a9b829d41e398f5014
+bd1995-12-09 Boston10.flac:51fa784781961f69dd9325df9a393704
+bd1995-12-09 Boston11.flac:c18077adbc418c8ffb58f0f63925fc08
+bd1995-12-09 Boston12.flac:c9fa580fa8888a0b57931120116d6ec9
+bd1995-12-09 Boston13.flac:d7c57667002d78ae8cbf67d92d1140a6
+bd1995-12-09 Boston14.flac:a22f8d5b7d71ac158eb1e464aac4aa01
+bd1995-12-09 Boston15.flac:12e5852dc6c29df51bb12f5bf0dc764b
+bd1995-12-09 Boston16.flac:807a43bfa7e91858ae8791a7c3881f6f
+===================
+===================
+===================
+=== shntool len for: bd95-12-09-g.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.63       54832220 B   ---   --   ---xx   flac  0.5965  bd1995-12-09 Boston01.flac
+     5:22.23       56854940 B   ---   --   ---xx   flac  0.5634  bd1995-12-09 Boston02.flac
+     6:44.63       71413820 B   ---   --   ---xx   flac  0.6009  bd1995-12-09 Boston03.flac
+     8:16.73       87666140 B   ---   --   ---xx   flac  0.5740  bd1995-12-09 Boston04.flac
+     5:55.67       62779628 B   ---   --   ---xx   flac  0.6042  bd1995-12-09 Boston05.flac
+     8:17.44       87774332 B   ---   --   ---xx   flac  0.6251  bd1995-12-09 Boston06.flac
+     9:51.23      104306540 B   ---   --   ---xx   flac  0.5418  bd1995-12-09 Boston07.flac
+     6:24.14       67770572 B   ---   --   ---xx   flac  0.5026  bd1995-12-09 Boston08.flac
+     7:19.37       77526668 B   ---   --   ---xx   flac  0.5119  bd1995-12-09 Boston09.flac
+     7:02.46       74549036 B   ---   --   ---xx   flac  0.6195  bd1995-12-09 Boston10.flac
+     7:58.24       84375692 B   ---   --   ---xx   flac  0.5385  bd1995-12-09 Boston11.flac
+     1:09.71       12338636 B   ---   --   ---xx   flac  0.4984  bd1995-12-09 Boston12.flac
+     6:56.38       73471820 B   ---   --   ---xx   flac  0.5418  bd1995-12-09 Boston13.flac
+     6:38.64       70357772 B   ---   --   ---xx   flac  0.5616  bd1995-12-09 Boston14.flac
+     9:28.36      100279916 B   ---   --   ---xx   flac  0.4709  bd1995-12-09 Boston15.flac
+     3:20.52       35402348 B   ---   --   ---xx   flac  0.5723  bd1995-12-09 Boston16.flac
+   105:58.63     1121700080 B                            0.5577  (16 files)
+===================
+===================
+===================

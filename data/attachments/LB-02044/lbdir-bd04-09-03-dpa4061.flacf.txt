@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-09-03-dpa4061.flacf 
+=================== 
+=================== 
+=================== 
+69a33943d8d0b16e626fadbf9748e1b1  bd-2004-09-03-d1t01.flac
+c81311a6dd99e3c791e59c7345598ba8  bd-2004-09-03-d1t02.flac
+f00ab3410801af75044bad6d8b82fdc4  bd-2004-09-03-d1t03.flac
+49d458e819136c1d6fe04f371ed3066d  bd-2004-09-03-d1t04.flac
+af7bfc47cf4ec1446d83f198e182baea  bd-2004-09-03-d1t05.flac
+7d6a0fb233e5250ae3de271661bf4bfb  bd-2004-09-03-d1t06.flac
+cacdbe8edb1f78d1772d1ff186b88335  bd-2004-09-03-d1t07.flac
+154e72dd82c7bc6ce5047e9ad875bf77  bd-2004-09-03-d1t08.flac
+9f6b115d86857ac1e88d9c5d4d812bb7  bd-2004-09-03-d1t09.flac
+ca1905a6b1f562325f7faf9b77731db2  bd-2004-09-03-d1t10.flac
+b594c1fadfa699d963b563e6c4d4fd5a  bd-2004-09-03-d1t11.flac
+74d79adfe84539670a30a0b0074d206b  bd-2004-09-03-d1t12.flac
+fe535b75db15020b137538a4b519d07f  bd-2004-09-03-d1t13.flac
+92ded72fbcd14d73885334018cd6572f  bd-2004-09-03-d2t01.flac
+e608c6e433cdeb5b84377ae95d95a5de  bd-2004-09-03-d2t02.flac
+882c1eb7883d03b62f10e292db31ef12  bd04-09-03-dpa4061.txt
+3bebade891ece74aabb5d6d3d0ad89ee  bd2004-09-03-okc flac fingerprints.txt
+04d1b7359c8d823efb069825874f03a0  bob dylan - 2004-09-03 - oklahoma city.txt
+8b9c2dcb1ce478766a4972865ccfdefb  disc1 eac log.LOG
+1ebe8a2b76de12e469ccfd20cfe54c6d  disc2 eac log.LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-09-03-dpa4061.flacf 
+=================== 
+=================== 
+=================== 
+bd-2004-09-03-d1t01.flac:019b1ed5f3c9b5b19706725b598508cf
+bd-2004-09-03-d1t02.flac:22441b8e8172f3179c82bf60dfd4ca6e
+bd-2004-09-03-d1t03.flac:11cc60b02497f8123532a8babb01878c
+bd-2004-09-03-d1t04.flac:2825a30332970b6e7640e0006a63f6eb
+bd-2004-09-03-d1t05.flac:758f5972822c373feaa4d619e5587c35
+bd-2004-09-03-d1t06.flac:a242f10eacbcdf920bb0de7ddd25c16e
+bd-2004-09-03-d1t07.flac:3139a5960c46f491100ec1d701f9033e
+bd-2004-09-03-d1t08.flac:a6a5a0e76112bb36644d67bf7de468a5
+bd-2004-09-03-d1t09.flac:e0d07b6adb8b1f78176714091ff99df0
+bd-2004-09-03-d1t10.flac:ac1d28873aca36fa5582197939fe0c38
+bd-2004-09-03-d1t11.flac:f2d70fefb993c1cb134c0cc8cba08646
+bd-2004-09-03-d1t12.flac:908b2a42f4af0ed791eb2ce8ee9042e5
+bd-2004-09-03-d1t13.flac:1df7389e7c16a04c8a0d0ce749966553
+bd-2004-09-03-d2t01.flac:6e1b275bcf073bf0ce27a07c046d77ed
+bd-2004-09-03-d2t02.flac:247e90830708cebbb04e92eefef1a849
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-09-03-dpa4061.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.37       10141868 B   ---   --   ---xx   flac  0.5502  bd-2004-09-03-d1t01.flac
+     4:28.02       47279948 B   ---   --   ---xx   flac  0.6694  bd-2004-09-03-d1t02.flac
+     4:04.31       43114556 B   ---   --   ---xx   flac  0.6273  bd-2004-09-03-d1t03.flac
+     6:22.16       67422476 B   ---   --   ---xx   flac  0.6727  bd-2004-09-03-d1t04.flac
+     5:37.23       59500940 B   ---   --   ---xx   flac  0.6415  bd-2004-09-03-d1t05.flac
+     6:03.10       64056764 B   ---   --   ---xx   flac  0.6542  bd-2004-09-03-d1t06.flac
+     5:11.07       54876908 B   ---   --   ---xx   flac  0.5973  bd-2004-09-03-d1t07.flac
+     5:25.58       57466460 B   ---   --   ---xx   flac  0.6216  bd-2004-09-03-d1t08.flac
+     8:02.57       85158908 B   ---   --   ---xx   flac  0.6554  bd-2004-09-03-d1t09.flac
+     4:55.07       52054508 B   ---   --   ---xx   flac  0.6010  bd-2004-09-03-d1t10.flac
+     6:30.66       68951276 B   ---   --   ---xx   flac  0.6624  bd-2004-09-03-d1t11.flac
+     7:46.28       82268300 B   ---   --   ---xx   flac  0.5750  bd-2004-09-03-d1t12.flac
+     8:39.72       91720988 B   ---   --   ---xx   flac  0.6589  bd-2004-09-03-d1t13.flac
+     7:35.10       80285564 B   ---   --   ---xx   flac  0.6682  bd-2004-09-03-d2t01.flac
+     5:55.69       62784332 B   ---   --   ---xx   flac  0.6645  bd-2004-09-03-d2t02.flac
+    87:35.43      927083796 B                            0.6408  (15 files)
+=================== 
+=================== 
+=================== 

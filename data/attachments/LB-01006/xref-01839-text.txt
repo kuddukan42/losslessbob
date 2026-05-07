@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== bd2003-04-25.info.txt
+===================
+===================
+===================
+Bob Dylan
+Fair Grounds Race Course
+New Orleans Jazz & Heritage Festival
+New Orleans, Louisiana
+25 April 2003
+
+Musicians: Bob Dylan (vocal, piano, guitar & hamonica), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Receli (drums & percussion).
+Lineage: taper (sorry, no equipment info)>CD-Rs>me>EAC>wav>shn>flac 8
+
+disc 1
+
+1. intro
+2. To Be Alone With You
+3. Tonight I'll Be Staying Here With You
+4. Highway 61 Revisited
+5. Things Have Changed
+6. It's All Over Now, Baby Blue
+7. Dignity
+8. Mr. Tambourine Man
+9. Drifter's Escape
+10. Bye And Bye
+11. Stuck Inside Of Mobile With The Memphis Blues Again
+12. Saving Grace
+
+disc 2
+
+1. Honest With Me
+2. A Hard Rain's A-Gonna Fall
+3. Summer Days
+4. Like A Rolling Stone
+5. All Along The Watchtower
+6. crowd
+===================
+===================
+===================
+=== Bob Dylan- 2003 04 25 New Orleans LA - 2CD (SHN).ffp
+===================
+===================
+===================
+1Track01.flac:54cbf7f8404c82045dc1f06f151c8216
+1Track02.flac:0ea1c11f1bd933baf53af1da55048482
+1Track03.flac:093c2afb239105dd566d922d0e89454e
+1Track04.flac:b961653fbdb1fe0bfae9661c40efe06c
+1Track05.flac:ed99bd901c7fe6937ae695c1b92c3f7b
+1Track06.flac:8e8d6dda14938c084f6cb3286bf6d63b
+1Track07.flac:56f604478233e72e86dc28d7ce967600
+1Track08.flac:f413d81326cd9367fe7f18cb7c9d51e9
+1Track09.flac:0ff394f37ebc85226d3e723502c01732
+1Track10.flac:3f6e8a5203700361d57b00ecf2430965
+1Track11.flac:6c27c99c452154430759f87c7fea0d1f
+1Track12.flac:122caad4240e2c2cfecdfc424c477bc0
+2Track01.flac:bddeaf8d60d04d6079e95e8ec0cecb05
+2Track02.flac:cb5e059080d4c763c8745520d1efea16
+2Track03.flac:ff98429d5221d3d5f3d99bcd1fce9d67
+2Track04.flac:233e616c5778cd28fc26e9663d802c1a
+2Track05.flac:a22bf0b581bc674b7d877060b3aa826b
+2Track06.flac:ba387dd2203ad45197bc89d79c6fbfc5
+===================
+===================
+===================

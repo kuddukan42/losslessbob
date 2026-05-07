@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: BD 12Sep98 Christchurch 
+=================== 
+=================== 
+=================== 
+101cbce3c01f5cb456c959260e1e6238  D1\D1.md5
+956ea7b7822079f53ef8c8f4c217b1d9  D1\Track01.flac
+5938e42ae6bc2deb79a4b0ff8b244c97  D1\Track02.flac
+799917a044b18f0e06754fcbe35beb2c  D1\Track03.flac
+3ef204621d62b9148368bc0cff2daad3  D1\Track04.flac
+f95ec44c602e3939fd85fda3424bc7f6  D1\Track05.flac
+59de854d826827b3e6114b23ccaae2c1  D1\Track06.flac
+413125472dd395833e195bcfddc02652  D1\Track07.flac
+d2bf2a176b1fcc533e0bb361152bbe89  D1\Track08.flac
+3ba215c6394c081e3b8efb36d1f507e0  D1\Track09.flac
+be4ff213520f2e07df4bae1af19c617d  D1\Track10.flac
+3edecd22acc6189fd129fb1e03f8b76f  D1\Track11.flac
+8685c4ef19b1439dfeebe6ebfae7f2a1  D2\D2.md5
+6129daf2fc63fcc31518039995d4c0d6  D2\Track01.flac
+c8a93d013af5d35b80233057816686c6  D2\Track02.flac
+3afbfedc7b86113669277b809d4c1802  D2\Track03.flac
+3d54ce223e6d2415df7384a206de8c52  D2\Track04.flac
+4aafb346c3034c892bb27ad289e512a4  D2\Track05.flac
+59d11625e6e29c87be281a18eb70fc6a  D2\Track06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: BD 12Sep98 Christchurch\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:f962902114d6459175383bd3912f3efb
+Track02.flac:e8dd131dabeef4f3696f5611888f906c
+Track03.flac:e2dcfd13ec299b6548a1da714989532d
+Track04.flac:98be84b286032506eab1abc61133821b
+Track05.flac:06d310c450a7a4cdc1044025ab6c1b08
+Track06.flac:73fdcbfe801d50b8ee2919a2be3f13b4
+Track07.flac:bf6517aab56de0478962ae0d50edb257
+Track08.flac:e2d1742a68128aa981186be0f8313db9
+Track09.flac:9e9ea8a18f17597d78e737c51dae4b20
+Track10.flac:f8e07077a1e5cce5f04b43fb1ec4017e
+Track11.flac:afb58329dc091158e026796338c6da8f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: BD 12Sep98 Christchurch\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:4f1b821414a33b28adcb52998b8da138
+Track02.flac:a9bbae3c6fec9039b8be735565f96d67
+Track03.flac:674d59b73c8fbce5ea7b640fddc127b0
+Track04.flac:540553b90f054cfb3cb59ef452ba8d2f
+Track05.flac:8d11a40bb31feab0618c00937cdbbb88
+Track06.flac:c7f6a1efb2221187a69e486421b38e2f
+=================== 
+=================== 
+=================== 
+=== shntool len for: BD 12Sep98 Christchurch\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.12       45186668 B   ---   --   ---xx   flac  0.5684  Track01.flac
+     4:26.29       46990652 B   ---   --   ---xx   flac  0.5263  Track02.flac
+     6:27.42       68365628 B   ---   --   ---xx   flac  0.5198  Track03.flac
+     5:53.62       62415068 B   ---   --   ---xx   flac  0.4888  Track04.flac
+     6:23.36       67645916 B   ---   --   ---xx   flac  0.5012  Track05.flac
+     5:43.45       60611084 B   ---   --   ---xx   flac  0.5008  Track06.flac
+     7:04.28       74859500 B   ---   --   ---xx   flac  0.5072  Track07.flac
+     5:49.55       61693004 B   ---   --   ---xx   flac  0.4516  Track08.flac
+     5:43.45       60611084 B   ---   --   ---xx   flac  0.3984  Track09.flac
+     8:32.24       90373292 B   ---   --   ---xx   flac  0.4919  Track10.flac
+     6:16.24       66382892 B   ---   --   ---xx   flac  0.4559  Track11.flac
+    66:37.27      705134788 B                            0.4899  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: BD 12Sep98 Christchurch\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:41.39       91996172 B   ---   --   ---xx   flac  0.4856  Track01.flac
+     5:29.72       58204988 B   ---   --   ---xx   flac  0.4685  Track02.flac
+     4:36.59       48825212 B   ---   --   ---xx   flac  0.5410  Track03.flac
+     6:23.61       67704716 B   ---   --   ---xx   flac  0.4686  Track04.flac
+     5:51.58       62052860 B   ---   --   ---xx   flac  0.5462  Track05.flac
+     6:28.28       68509100 B   ---   --   ---xx   flac  0.4492  Track06.flac
+    37:32.17      397293048 B                            0.4902  (6 files)
+=================== 
+=================== 
+=================== 

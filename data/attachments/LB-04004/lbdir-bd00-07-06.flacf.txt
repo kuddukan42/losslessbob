@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-06.flacf 
+=================== 
+=================== 
+=================== 
+1c8bf8905627bbc431978d04e412a391  bd00-07-06-LB-4004.txt
+7ad1e4db869363134ad823d6562af7ce  bd2000-07-06 info.txt
+0f8400768637b5f581724fd6a80c8add  bd2000-07-06.flac Oklahoma City.ffp
+5f16a5fcc6fd98096cfe36908e9d56dc  bd2000-07-06.flac Oklahoma City.md5
+93dda1c66e1f36d410e3bf4e58743e8a  bd2000-07-06.flac Oklahoma City.shntool.txt
+4f3104059d54e66910efd499b80d73aa  bd2000-07-06.flac Oklahoma City.st5
+afcfbe3ea6cdf7a98718570ddc3b8078  bd2000-07-06.flac Oklahoma City.txt
+da9ee3a6e333d180a3fa62458809e9c6  bd2000-07-06.LOG
+21687c6ba6d69fbe412322cfa95985ae  bd2000-07-06t01.flac
+155adf51cc3beea7b7504f2237625d8a  bd2000-07-06t02.flac
+1a6bba6b2ebaa20bf776e114b04adc59  bd2000-07-06t03.flac
+1a3cea5592f2ad7f342a3f88c6787b4b  bd2000-07-06t04.flac
+5ba245e1322b53cc106a3f0325381401  bd2000-07-06t04fa.PNG
+54abbf69a2a547327e8651a2d2a7e87a  bd2000-07-06t04sa.PNG
+ec5e3669e247208c4f3e8625dd2fa97f  bd2000-07-06t05.flac
+30bfebe23374ef74c9b473131142d522  bd2000-07-06t06.flac
+88b25240c65fe9b79d364c8d52686b3a  bd2000-07-06t07.flac
+35803c34abedf98f1d26ebe27f941eed  bd2000-07-06t08.flac
+dd1cdefa32f110639cbba0778f901e2d  bd2000-07-06t09.flac
+399860703feef7ff9c2d9c31312d7843  bd2000-07-06t10.flac
+8473e87a170418e6ecc27642171a8507  bd2000-07-06t11.flac
+feb184e08c2ae69419fa468cf385520f  bd2000-07-06t12.flac
+47bb98dc72d11cc6f6cb6003fb999ea3  bd2000-07-06t13.flac
+49c6e898b7f0e5662d7b301efa98238c  bd2000-07-06t14.flac
+84d1448e29e5201fb3686449c4436790  bd2000-07-06t15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-06.flacf 
+=================== 
+=================== 
+=================== 
+bd2000-07-06t01.flac:11d9cf1b6e0f6f599ce79e08469579cc
+bd2000-07-06t02.flac:95ecdf93cbc782caf42e6c0d524e89c9
+bd2000-07-06t03.flac:bbcfc2af6ce4da79c2c95b84cecc431e
+bd2000-07-06t04.flac:6480ebc38d74ad2c002e1235a75f18f6
+bd2000-07-06t05.flac:a35cac56929bba270e16e74b031feec6
+bd2000-07-06t06.flac:a25cdd27aeb4c1fd2afa39ad14b56cee
+bd2000-07-06t07.flac:bcd933e372dfad38e5106b010a88437a
+bd2000-07-06t08.flac:138c1b8b105f524d99cba06b0fed6493
+bd2000-07-06t09.flac:f03766b029fedf3a9c498c675e567d9e
+bd2000-07-06t10.flac:28561d18e8ed46773b318463c9cc7c27
+bd2000-07-06t11.flac:d9de7b9fb2a3dab1509b8d38be4988d1
+bd2000-07-06t12.flac:abac0a981591389801b5a9674a44d87b
+bd2000-07-06t13.flac:64b668ddd3eae12141f82deec455b13e
+bd2000-07-06t14.flac:5d4b143d76f51e93e475f0945a5c4285
+bd2000-07-06t15.flac:6425ed32a1bc82f1e6c21f52a98e0c76
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-06.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:25.68       36321980 B   ---   --   ---xx   flac  0.5855  bd2000-07-06t01.flac
+     3:41.36       39069116 B   ---   --   ---xx   flac  0.4735  bd2000-07-06t02.flac
+     7:12.30       76275404 B   ---   --   ---xx   flac  0.5426  bd2000-07-06t03.flac
+     7:01.17       74304428 B   ---   --   ---xx   flac  0.5990  bd2000-07-06t04.flac
+     3:07.04       32996252 B   ---   --   ---xx   flac  0.5170  bd2000-07-06t05.flac
+     2:35.65       27494924 B   ---   --   ---xx   flac  0.5795  bd2000-07-06t06.flac
+     4:39.27       49279148 B   ---   --   ---xx   flac  0.5815  bd2000-07-06t07.flac
+     5:01.28       53162300 B   ---   --   ---xx   flac  0.6118  bd2000-07-06t08.flac
+     5:48.21       61436636 B   ---   --   ---xx   flac  0.5522  bd2000-07-06t09.flac
+     4:41.20       49615484 B   ---   --   ---xx   flac  0.6074  bd2000-07-06t10.flac
+     5:43.52       60627548 B   ---   --   ---xx   flac  0.6173  bd2000-07-06t11.flac
+     6:07.09       64760012 B   ---   --   ---xx   flac  0.6038  bd2000-07-06t12.flac
+     7:00.15       74123324 B   ---   --   ---xx   flac  0.5979  bd2000-07-06t13.flac
+     6:28.23       68497340 B   ---   --   ---xx   flac  0.4871  bd2000-07-06t14.flac
+     5:49.33       61641260 B   ---   --   ---xx   flac  0.6250  bd2000-07-06t15.flac
+    78:22.73      829605156 B                            0.5745  (15 files)
+=================== 
+=================== 
+=================== 

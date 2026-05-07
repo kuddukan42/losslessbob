@@ -1,0 +1,14 @@
+89333c1976aa86c50804ce4d5dc97133 *bd86-02-24-true-confessions-d1t01.flac
+35053f056b77b7e497c393a7f136b0d8 *bd86-02-24-true-confessions-d1t02.flac
+3a590fd3f1b3726deeec61f1cdc4cf6b *bd86-02-24-true-confessions-d1t03.flac
+b0687609bf51c4a7dc280824bba07753 *bd86-02-24-true-confessions-d1t04.flac
+108672308e769e9fc04bbb731913f360 *bd86-02-24-true-confessions-d1t05.flac
+2b962f171d477e597b6489b8f9864ad9 *bd86-02-24-true-confessions-d1t06.flac
+4ee023277800832b134cca29d8601606 *bd86-02-24-true-confessions-d1t07.flac
+cb85f0879b173325b4b44ca938524d06 *bd86-02-24-true-confessions-d1t08.flac
+e8ab411f5f2b3edc4ecf8529c459251c *bd86-02-24-true-confessions-d1t09.flac
+4558e6d46fc2baf25799d6c5f0494247 *bd86-02-24-true-confessions-d1t10.flac
+6c65e484c56506d6946052439f6e3f7f *bd86-02-24-true-confessions-d1t11.flac
+1ec54588a3635884cb9492782e865c42 *bd86-02-24-true-confessions-d1t12.flac
+1771146da92b2e78c876527427b7516e *bd86-02-24-true-confessions-d1t13.flac
+6beafa03cb1ba40f30eaa671e2315ef1 *bd86-02-24-true-confessions-d1t14.flac

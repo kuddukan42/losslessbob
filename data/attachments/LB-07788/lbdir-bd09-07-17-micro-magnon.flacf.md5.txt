@@ -1,0 +1,17 @@
+1e4544c5abad29655620fd2850ddaec2  Bob Dylan Essex Junction July 17 2009.checksum.md5
+49b3b828b10917f4f172f813ebfb54f3  Bob Dylan Essex Junction July 17 2009.txt
+1b55ea553bad97b05037eb15161b0a80  Bob Dylan VT01.flac
+3c4d2175ab1dc2d5e069110e5b827f8f  Bob Dylan VT02.flac
+886a7f306fccbb3a5ae0e5bb0abe11ab  Bob Dylan VT03.flac
+abb5b503a65c09268a39177fbac5dc25  Bob Dylan VT04.flac
+6b15ed9fc124cc486e5cc4e91bca3b5b  Bob Dylan VT05.flac
+85e2803123421ccc0fb72d7a8d25e765  Bob Dylan VT06.flac
+0f024a7bd290a469724959d1eb3da8fd  Bob Dylan VT07.flac
+db92ce40b49ea8d85bb761a486246ed0  Bob Dylan VT08.flac
+0aaf827a33318c86970f0d2012f8dd71  Bob Dylan VT09.flac
+e39508da43ed1d5e7d6ac7f79440bde5  Bob Dylan VT10.flac
+95c3139dcf943a1e2bfbc9ef49ccf048  Bob Dylan VT11.flac
+eb47b7d1f7eb86a7cdd0b15cac659b6f  Bob Dylan VT12.flac
+e78495af84e4c0c0008608879ad398a1  Bob Dylan VT13.flac
+407d813d9e042f46c94540a19f740851  Bob Dylan VT14.flac
+5285733d77e34ac953c4e6691ec843a0  Bob Dylan VT15.flac

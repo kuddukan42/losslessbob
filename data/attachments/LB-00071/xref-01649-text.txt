@@ -1,0 +1,73 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+Moncton, New Brunswick
+Moncton Coliseum
+
+August 8, 2002
+
+dat clone>upload
+ 
+ 	
+I Am The Man, Thomas (acoustic)
+Just Like Tom Thumb's Blues (acoustic) (Larry on pedal steel)
+Don't Think Twice, It's All Right (acoustic)
+Masters Of War (acoustic) (Charlie on dobro and Bob on harp)
+Cry A While (Larry on slide guitar)
+Moonlight (Tony on standup bass)
+I Don't Believe You (She Acts Like We Never Have Met)
+High Water (For Charley Patton)
+Tomorrow Is A Long Time (acoustic) (Bob on harp)
+It's Alright, Ma (I'm Only Bleeding) (acoustic) (Charlie on dobro and Larry on cittern)
+My Back Pages (acoustic)(Larry on fiddle and Bob on harp)
+Summer Days (Tony on standup bass)
+Never Gonna Be The Same Again (Larry on pedal steel)
+The Wicked Messenger (Bob on harp)
+Rainy Day Women #12 & 35 (Larry on steel guitar)
+(encore)
+
+Like A Rolling Stone
+Honest With Me (Larry on slide guitar)
+Blowin' In The Wind (acoustic)
+All Along The Watchtower
+===================
+===================
+===================
+=== disc 1.ffp
+===================
+===================
+===================
+01 Track01.flac:e8fd48e8cdc866ab92634e37d78f0f63
+02 Track02.flac:d254b128391e78c82eaede3fc41c4ad6
+03 Track03.flac:ebaee4db28d8873425a5a84a45b0d162
+04 Track04.flac:b9a4913ed1c3c01ef493878e65cdf3f9
+05 Track05.flac:f3573b205faeeb72f1dae389947a1494
+06 Track06.flac:7fe0b4368f4d71a149ab8eb2bf1ac133
+07 Track07.flac:34cf3ba72902470bedd269222c8d6b2c
+08 Track08.flac:d94ad0b0da27f79951343c1c5bdeb0fe
+09 Track09.flac:0e9f6e52ba3d2faf4aa194b9d5278dec
+10 Track10.flac:f12ba3b136b5384ee01b0ab361e52f0d
+11 Track11.flac:64308d56aca36c290e6a45ac38c2cdcf
+===================
+===================
+===================
+=== disc 2.ffp
+===================
+===================
+===================
+01 Track01.flac:7aea75111c9e803f6399ddf916cda5bb
+02 Track02.flac:7fd80cab26473b038df2c4c2e71b6967
+03 Track03.flac:094a31d16635664fc2667c9fb528804a
+04 Track04.flac:0307a85b205285ef7241fa60716a6f91
+05 Track05.flac:1c942addb7d76c5f4bd79857860f5954
+06 Track06.flac:04f540a4284249a4190143c842c39dd3
+07 Track07.flac:256656deb8b7589638faa61d61d67ce2
+08 Track08.flac:bd3dc47382aeae8bc809088242b9a6aa
+===================
+===================
+===================

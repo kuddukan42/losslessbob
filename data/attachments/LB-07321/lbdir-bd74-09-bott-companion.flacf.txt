@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-09-bott-companion.flacf 
+=================== 
+=================== 
+=================== 
+15a9c8f540df86a4e695f195c8e57ad5  74-09-16 Call Letter Blues -take 3.flac
+bd717313ceb5a12a2fa0581ff2b4b976  74-09-16 Idiot Wind -take 6, overdubbed Oct 8,.flac
+558234d0ea3db57be75e931b1bcc2865  74-09-16 If You See Her Say Hello -take 2.flac
+372660f19623980625ea056b0ea67a68  74-09-16 Lily, Rosemary & The Jack Of Hearts  -take 1.flac
+a6649e067ed10e4805890b4337bcd5bf  74-09-16 Tangled Up In Blue -take 1.flac
+855e8d42b098c0cbb7f73564a1cceedd  74-09-17 Shelter From The Storm (fast) -take 3x.flac
+1f565fffdb99a37c6821a3830a1773b8  74-09-17 Youre A Big Girl Now -take 2.flac
+393b32987d4a800d4ff25a15deef45ac  74-09-19 Idiot Wind -take 4.flac
+0cda3f59a077017a48c1ecb7d4583a84  74-09-19 If You See Her Say Hello -take 1.flac
+9a1136e8bfc9d46563ecf48d7424a87b  74-09-19 Tangled Up In Blue -take 2 or 3.flac
+b1d7ee097088f876738b0795e4766e66  74-09-19 Up To Me -take 2.flac
+07de4fb7c02db2d4a3a2f30de78e4239  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-09-bott-companion.flacf 
+=================== 
+=================== 
+=================== 
+74-09-16 Call Letter Blues -take 3.flac:07fc0717c860c769c911e3459546c6ea
+74-09-16 Idiot Wind -take 6, overdubbed Oct 8,.flac:7c6352a61013c84be094962e58687440
+74-09-16 If You See Her Say Hello -take 2.flac:48a7c24f1e4a2a2cac2c85479cdca9a8
+74-09-16 Lily, Rosemary & The Jack Of Hearts  -take 1.flac:a605934408009ce7bddc9306cef4b937
+74-09-16 Tangled Up In Blue -take 1.flac:925b90d0af818b1fdaf60f1c0742370c
+74-09-17 Shelter From The Storm (fast) -take 3x.flac:b31e3c7a49df7e86eee2031bacaf1873
+74-09-17 Youre A Big Girl Now -take 2.flac:7c48689ff230351c7fdefc280020d89e
+74-09-19 Idiot Wind -take 4.flac:67b9e0e23999593375d3fc014f193511
+74-09-19 If You See Her Say Hello -take 1.flac:526bb748989369a391d07a48dbdae40d
+74-09-19 Tangled Up In Blue -take 2 or 3.flac:acf22119437c349f163ea2ee4d9b216c
+74-09-19 Up To Me -take 2.flac:734852fd10e28c1afe039df0a06a4359
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-09-bott-companion.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:27.72       47268188 B   ---   --   ---xx   flac  0.6005  74-09-16 Call Letter Blues -take 3.flac
+     8:53.06       94035356 B   ---   --   ---xx   flac  0.5293  74-09-16 Idiot Wind -take 6, overdubbed Oct 8,.flac
+     3:47.01       40045196 B   ---   --   ---xx   flac  0.6244  74-09-16 If You See Her Say Hello -take 2.flac
+     9:46.46      103478636 B   ---   --   ---xx   flac  0.5954  74-09-16 Lily, Rosemary & The Jack Of Hearts  -take 1.flac
+     6:51.27       72563948 B   ---   --   ---xx   flac  0.6161  74-09-16 Tangled Up In Blue -take 1.flac
+     6:01.04       63689852 B   ---   --   ---xx   flac  0.6374  74-09-17 Shelter From The Storm (fast) -take 3x.flac
+     4:22.03       46223900 B   ---   --   ---xx   flac  0.5196  74-09-17 Youre A Big Girl Now -take 2.flac
+     8:53.01       94023596 B   ---   --   ---xx   flac  0.5474  74-09-19 Idiot Wind -take 4.flac
+     3:23.41       35905676 B   ---   --   ---xx   flac  0.4954  74-09-19 If You See Her Say Hello -take 1.flac
+     6:50.10       72347564 B   ---   --   ---xx   flac  0.5773  74-09-19 Tangled Up In Blue -take 2 or 3.flac
+     6:18.33       66756860 B   ---   --   ---xx   flac  0.5138  74-09-19 Up To Me -take 2.flac
+    69:34.19      736338772 B                            0.5696  (11 files)
+=================== 
+=================== 
+=================== 

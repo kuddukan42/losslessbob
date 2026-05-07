@@ -1,0 +1,46 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-07-29 Riverside Church (LK tape) 
+=================== 
+=================== 
+=================== 
+0c0f3b208d0b583a11b703c6a8b975e6  bd61-07-29.txt
+f8627c7dcee31f9c98a0eeeed5e663ef  bobdylan1961-07-29.txt
+c12bf2b83a52cf69246879863f37a7f3  bobdylan1961-07-29d1.md5
+3adaa745d1cbd4cc51e15a7320751459  bobdylan1961-07-29d1t01.shn
+c038005dcb7a9122b076c1e5d7497440  bobdylan1961-07-29d1t02.shn
+5bd3365f3364ed611e31b9c30682dd70  bobdylan1961-07-29d1t03.shn
+51365f3b7e264008b0fb14ec18a593d1  bobdylan1961-07-29d1t04.shn
+9d3dad8fedf006afb865589afdb3f42d  bobdylan1961-07-29d1t05.shn
+57d350fbece1b04ff9e0b0d7c5979d64  readme.txt
+8853fd3102dddaaa405c81113d791b04  readme2.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd61-07-29 Riverside Church (LK tape) 
+=================== 
+=================== 
+=================== 
+b9d7eead4c86e973c32beee9f26d1ba8  [shntool]  bobdylan1961-07-29d1t01.wav
+62de263abf8657c27319ed687ed491d5  [shntool]  bobdylan1961-07-29d1t02.wav
+78789ad30b64108dc96ac58e6513e3ee  [shntool]  bobdylan1961-07-29d1t03.wav
+9a42440febf2f78ccb93670308c3ec6b  [shntool]  bobdylan1961-07-29d1t04.wav
+9d7d9ab652666da6488334cf6aa1fec9  [shntool]  bobdylan1961-07-29d1t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-07-29 Riverside Church (LK tape) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.15       56835320 B   -b-   --   ---xx    shn  0.5200  bobdylan1961-07-29d1t01.shn
+     4:03.63       43012340 B   -b-   --   ---xx    shn  0.5073  bobdylan1961-07-29d1t02.shn
+     9:06.47       96425516 B   -b-   --   ---xx    shn  0.4918  bobdylan1961-07-29d1t03.shn
+     3:59.00       42158796 B   -b-   --   ---xx    shn  0.5829  bobdylan1961-07-29d1t04.shn
+     3:33.29       37641244 B   -b-   --   ---xx    shn  0.5513  bobdylan1961-07-29d1t05.shn
+    26:05.03      276073216 B                            0.5220  (5 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,31 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:47.48       50739740 B   ---   --   ---xx    shn  0.6465  Dylan&Garcia80-11-16d1t01.shn
+     4:25.51       46865996 B   ---   --   ---xx    shn  0.6378  Dylan&Garcia80-11-16d1t02.shn
+     5:40.33       60053660 B   ---   --   ---xx    shn  0.6719  Dylan&Garcia80-11-16d1t03.shn
+     6:15.73       66321740 B   ---   --   ---xx    shn  0.6281  Dylan&Garcia80-11-16d1t04.shn
+     5:19.43       56372780 B   ---   --   ---xx    shn  0.6468  Dylan&Garcia80-11-16d1t05.shn
+     4:16.25       45217244 B   ---   --   ---xx    shn  0.6492  Dylan&Garcia80-11-16d1t06.shn
+     4:39.10       49239164 B   ---   --   ---xx    shn  0.6246  Dylan&Garcia80-11-16d1t07.shn
+     5:23.55       57106604 B   ---   --   ---xx    shn  0.6650  Dylan&Garcia80-11-16d1t08.shn
+     3:18.30       34997804 B   ---   --   ---xx    shn  0.5974  Dylan&Garcia80-11-16d1t09.shn
+     4:23.68       46553180 B   ---   --   ---xx    shn  0.6411  Dylan&Garcia80-11-16d1t10.shn
+     3:23.43       35910380 B   ---   --   ---xx    shn  0.6509  Dylan&Garcia80-11-16d1t11.shn
+     5:57.03       62981900 B   ---   --   ---xx    shn  0.6438  Dylan&Garcia80-11-16d1t12.shn
+     4:29.25       47510444 B   ---   --   ---xx    shn  0.6746  Dylan&Garcia80-11-16d1t13.shn
+     3:48.64       40369772 B   ---   --   ---xx    shn  0.6514  Dylan&Garcia80-11-16d1t14.shn
+     3:58.72       42152588 B   ---   --   ---xx    shn  0.6364  Dylan&Garcia80-11-16d1t15.shn
+     4:25.42       46844828 B   ---   --   ---xx    shn  0.6275  Dylan&Garcia80-11-16d1t16.shn
+     5:22.01       56803196 B   ---   --   ---xx    shn  0.6518  Dylan&Garcia80-11-16d2t01.shn
+     4:06.18       43436780 B   ---   --   ---xx    shn  0.6620  Dylan&Garcia80-11-16d2t02.shn
+     5:48.45       61493084 B   ---   --   ---xx    shn  0.6256  Dylan&Garcia80-11-16d2t03.shn
+     4:17.60       45475964 B   ---   --   ---xx    shn  0.6496  Dylan&Garcia80-11-16d2t04.shn
+     3:04.59       32596412 B   ---   --   ---xx    shn  0.5975  Dylan&Garcia80-11-16d2t05.shn
+     4:48.69       50965532 B   ---   --   ---xx    shn  0.6376  Dylan&Garcia80-11-16d2t06.shn
+     7:42.01       81499196 B   ---   --   ---xx    shn  0.6334  Dylan&Garcia80-11-16d2t07.shn
+     8:10.16       86473676 B   ---   --   ---xx    shn  0.6963  Dylan&Garcia80-11-16d2t08.shn
+     8:57.14       94759772 B   ---   --   ---xx    shn  0.6423  Dylan&Garcia80-11-16d2t09.shn
+    10:29.28      111021500 B   ---   --   ---xx    shn  0.6667  Dylan&Garcia80-11-16d2t10.shn
+     8:14.32       87216908 B   ---   --   ---xx    shn  0.6804  Dylan&Garcia80-11-16d2t11.shn
+     6:10.70       65432684 B   ---   --   ---xx    shn  0.6962  Dylan&Garcia80-11-16d2t12.shn
+   151:46.48     1606412528 B                            0.6511  (28 files)
+

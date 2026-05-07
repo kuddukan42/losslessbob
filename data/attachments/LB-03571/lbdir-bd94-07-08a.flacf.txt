@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-08a.flacf 
+=================== 
+=================== 
+=================== 
+2b356a08f079af0b89fc4bd2931ed509  bd94-07-08a-LB-3571.txt
+125baf430408b0ff374e5db14fa972fd  fingerprint.ffp.txt
+b56a75546e99a31e386e849cb80f9739  Milan 8 july 1994\D1T01.flac
+18b05afe8f676651fd32b623e904d254  Milan 8 july 1994\D1T02.flac
+6da70121838c8c16511b922b2f746c42  Milan 8 july 1994\D1T03.flac
+561d9e57da04872ec5b6ee5e5122d14a  Milan 8 july 1994\D1T04.flac
+a4a51d10bcfbf2c296064a4d225d6a04  Milan 8 july 1994\D1T05.flac
+398f9b994968ebef0d56b7c5ca493dc6  Milan 8 july 1994\D1T06.flac
+44ffcf405e6119b777702cf47f4e78d6  Milan 8 july 1994\D1T07.flac
+f3433805a866601e9dbcc8502403d3e1  Milan 8 july 1994\D2T01.flac
+ee6c70ed6c3bf22de9e09b798475651e  Milan 8 july 1994\D2T02.flac
+f74b9af7f0e1aea45626b3e61c89827d  Milan 8 july 1994\D2T03.flac
+5b4e1828aef7abbd23dbc55ad0b06e57  Milan 8 july 1994\D2T04.flac
+f4e91d2e05af8e57eb06ba19fdbe8331  Milan 8 july 1994\D2T05.flac
+17ad40ea8919e0713504baa43d6ae1e4  Milan 8 july 1994\D2T06.flac
+d435bf03ec512eb563189fefa6dc19ee  Milan 8 july 1994\D2T07.flac
+8e44b97622ab1e851e5f69716bb1fdba  Milano.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-08a.flacf\Milan 8 july 1994 
+=================== 
+=================== 
+=================== 
+D1T01.flac:035f52cfc4946f6291f55e71104ef9b5
+D1T02.flac:2d3ed7c64beb33e2200bce818e8535e2
+D1T03.flac:7066bf6be10e1556b6a8ae2e541747b6
+D1T04.flac:327368d00a27464955c26777af386846
+D1T05.flac:f3df540cf56b46acef065d46f6795423
+D1T06.flac:79d572e9d7fa23121a7d59322a67d786
+D1T07.flac:2ebe696cb642fb4f5b85ae625b3ac419
+D2T01.flac:f871b10f6b75aaed6ffe75f56a8cb3b2
+D2T02.flac:47b8307c5bbbfc3e17cda9a4218ae057
+D2T03.flac:443f876ad7193a433272b740d64f1169
+D2T04.flac:0b6160cc72bb2e9a8d87aee5c1fdd06c
+D2T05.flac:040cbced9ffa8ab0b38cebb8b6eec598
+D2T06.flac:afc82e81150f1c0ebf0d8c7188e87865
+D2T07.flac:8e40605cf9fe23b7a77b664a1b3f8c87
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-08a.flacf\Milan 8 july 1994 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:42.30       81567404 B   ---   --   ---xx   flac  0.5064  D1T01.flac
+     6:02.11       63882716 B   ---   --   ---xx   flac  0.5045  D1T02.flac
+     5:51.12       61944668 B   ---   --   ---xx   flac  0.5126  D1T03.flac
+     6:32.59       69287612 B   ---   --   ---xx   flac  0.5108  D1T04.flac
+     9:46.35      103452764 B   ---   --   ---xx   flac  0.5173  D1T05.flac
+     5:40.65       60128924 B   ---   --   ---xx   flac  0.5203  D1T06.flac
+     6:37.71       70197836 B   ---   --   ---xx   flac  0.5166  D1T07.flac
+     5:55.62       62767868 B   ---   --   ---xx   flac  0.5113  D2T01.flac
+     7:38.09       80812412 B   ---   --   ---xx   flac  0.5178  D2T02.flac
+     6:09.30       65162204 B   ---   --   ---xx   flac  0.5064  D2T03.flac
+     7:44.69       82011932 B   ---   --   ---xx   flac  0.5064  D2T04.flac
+     6:53.22       72904988 B   ---   --   ---xx   flac  0.5251  D2T05.flac
+     7:20.46       77724236 B   ---   --   ---xx   flac  0.5342  D2T06.flac
+     9:16.66       98233676 B   ---   --   ---xx   flac  0.5171  D2T07.flac
+    99:12.62     1050079240 B                            0.5150  (14 files)
+=================== 
+=================== 
+=================== 

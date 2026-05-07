@@ -1,0 +1,16 @@
+bbf511f3455891a22c1d4670a26dd47f *bd_1978-07-01_West-Germany_d2t01.shn
+b60090a10942f91804d14f058997d450 *bd_1978-07-01_West-Germany_d2t02.shn
+0763a61b19ef782826082bac6081d555 *bd_1978-07-01_West-Germany_d2t03.shn
+8d1c53a8a2273d8cc73f4b690b867744 *bd_1978-07-01_West-Germany_d2t04.shn
+3062601d1331fa5431c69c531d411551 *bd_1978-07-01_West-Germany_d2t05.shn
+e9160710fb74a4cbc5133894accf9e53 *bd_1978-07-01_West-Germany_d2t06.shn
+d1b0a9e594bfab3b6b3cf94a525c9e47 *bd_1978-07-01_West-Germany_d2t07.shn
+0a7b93bfc281c6294b056e7d33d7928a *bd_1978-07-01_West-Germany_d2t08.shn
+b68ddea5eeb979eb03f53cf7f59f9fec *bd_1978-07-01_West-Germany_d2t09.shn
+7485892f4ce897270e2c232c9625c1e7 *bd_1978-07-01_West-Germany_d2t10.shn
+1308bda6b1c04c382a721dfa2bb0d757 *bd_1978-07-01_West-Germany_d2t11.shn
+9bdb8930a6d11480356a578cd29c6797 *bd_1978-07-01_West-Germany_d2t12.shn
+c42230e98d6dcb78e62ad367aff72d10 *bd_1978-07-01_West-Germany_d2t13.shn
+f939919c041de05b471d87431cfe360f *bd_1978-07-01_West-Germany_d2t14.shn
+22623256e0ebd2ddc208377a689cf810 *bd_1978-07-01_West-Germany_d2t15.shn
+e79d06edede439c6c9663dac95adfd8a *bd_1978-07-01_West-Germany_d2t16.shn

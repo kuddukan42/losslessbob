@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-17-zimmy21.flacf 
+=================== 
+=================== 
+=================== 
+7fdc4e690ab6151e9a2b9bb5c5a7fc9f  bd98-06-17-zimmy21-LB-4319.txt
+df92506d8d692100f40e7c590b6085b2  BobDylanBrussels1998.txt
+95946dcc5be20703bf282a48700b3809  d1Track01.flac
+d4198920b18857795868eb31f21157de  d1Track02.flac
+5e3db14767926addc46943ea24ff60f9  d1Track03.flac
+495dc22a59fea7c555bc9876b9d1013b  d1Track04.flac
+1bcd4078f7b9561ec7f4a3fe60868440  d1Track05.flac
+1ef6e039c7178dd30bb02bcc02fc7a99  d1Track06.flac
+eebe62375f6c6926873ad8d80608c04c  d1Track07.flac
+7e8e81fc02315bdb721021523fd6a87a  d1Track08.flac
+1947b0c9ba3bc4af9643ec1fbe5d8093  d1Track09.flac
+d355c118b2605519ac912624c54cb4ed  d2Track01.flac
+bfb4ade60eb7600a36c175b0e0c31eb0  d2Track02.flac
+f8baa407d3ca02556ec425d8f3c94956  d2Track03.flac
+23cf2373864aa1b98943e109e54514c1  d2Track04.flac
+4d6dd43f7fab7ad007c20eb942609b6e  d2Track05.flac
+a924c81dd0c624c98b44cd9454179924  d2Track06.flac
+bd643bfc34849c3bd52e181a9553a2cf  d2Track07.flac
+29e757ee09210f3144127d98f01590e5  d2Track08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-17-zimmy21.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:12d0c076334e64a9ff5f25e4cf3c1ac5
+d1Track02.flac:dd4063df31e1648949226ae32eea61df
+d1Track03.flac:1c12caec9c0af3e0b13040d9cf6a7898
+d1Track04.flac:3b14ff5e91557ddb14cf0519bee9945b
+d1Track05.flac:6ed4ed7e6e83a505974faf24876e671b
+d1Track06.flac:46d71f0f3ff43a791818bc0a8a3c91e9
+d1Track07.flac:91371cff8c3492b5bd0b86dea7fd993a
+d1Track08.flac:f7bb6bf0e50f698f45e4cb6457cbbdf7
+d1Track09.flac:f117a8080d123c5d0b7f02ae5393cdc5
+d2Track01.flac:384f92b1e8dc63d860a13788912090f6
+d2Track02.flac:43e562ee90c5eda790304df5806835d4
+d2Track03.flac:c1ae1bbac26ee37dcfc3a1cc7a2c1a57
+d2Track04.flac:73f78eec9214c0ec28fc595c06bcceb0
+d2Track05.flac:dad3c200d309afcde96bdeadafb18766
+d2Track06.flac:8ea7056d50c58cce25d8d38866f99a32
+d2Track07.flac:d419f21efe28b87b012ca0ee0090d127
+d2Track08.flac:ba60b59ae7538a0e693f4fa56af82555
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-17-zimmy21.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.22       56323388 B   ---   --   ---xx   flac  0.6001  d1Track01.flac
+     6:42.62       71058668 B   ---   --   ---xx   flac  0.5816  d1Track02.flac
+     6:35.36       69762716 B   ---   --   ---xx   flac  0.6001  d1Track03.flac
+     7:54.13       83644220 B   ---   --   ---xx   flac  0.5678  d1Track04.flac
+     7:25.59       78636812 B   ---   --   ---xx   flac  0.6012  d1Track05.flac
+     4:47.55       50756204 B   ---   --   ---xx   flac  0.5559  d1Track06.flac
+     5:06.00       53978444 B   ---   --   ---xx   flac  0.5381  d1Track07.flac
+     7:49.73       82903340 B   ---   --   ---xx   flac  0.5724  d1Track08.flac
+    10:05.00      106722044 B   ---   --   ---xx   flac  0.6270  d1Track09.flac
+     4:47.28       50692700 B   ---   --   ---xx   flac  0.5189  d2Track01.flac
+     6:06.59       64701212 B   ---   --   ---xx   flac  0.6036  d2Track02.flac
+     6:11.67       65602028 B   ---   --   ---xx   flac  0.6134  d2Track03.flac
+     8:13.01       86967596 B   ---   --   ---xx   flac  0.5978  d2Track04.flac
+     6:36.64       70004972 B   ---   --   ---xx   flac  0.5849  d2Track05.flac
+     5:19.60       56412764 B   ---   --   ---xx   flac  0.5620  d2Track06.flac
+     6:02.38       63946220 B   ---   --   ---xx   flac  0.5994  d2Track07.flac
+     5:54.47       62556188 B   ---   --   ---xx   flac  0.5617  d2Track08.flac
+   110:59.09     1174669516 B                            0.5849  (17 files)
+=================== 
+=================== 
+=================== 

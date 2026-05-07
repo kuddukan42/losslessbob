@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-10-more-sunrises.flacf 
+=================== 
+=================== 
+=================== 
+2acdeca03e25e8652a7e8e07487fc644  bd90-10-more-sunrises-d1t01.flac
+7d77ec029e73882f05a4a93bb9b4b432  bd90-10-more-sunrises-d1t02.flac
+844f9e9a8d66dc6646ae566acd82d8f1  bd90-10-more-sunrises-d1t03.flac
+e683aacf58e72a20661e7df258194443  bd90-10-more-sunrises-d1t04.flac
+a72511030302501b97d6d134e90d35bc  bd90-10-more-sunrises-d1t05.flac
+f87c0134aad72852757e6d8582dfa8fe  bd90-10-more-sunrises-d1t06.flac
+60dab7dc2d4892dda416357830c2735f  bd90-10-more-sunrises-d1t07.flac
+ed6a16e51ab5ba98435df3d36ae7b4f1  bd90-10-more-sunrises-d1t08.flac
+7d4e2b4ef4ac02f1a4dc760fe34be769  bd90-10-more-sunrises-d1t09.flac
+068853cc0eb25370e9e84674e7f7f47c  bd90-10-more-sunrises-d1t10.flac
+1b5693024ee59836f42346382f11f324  bd90-10-more-sunrises-d1t11.flac
+5dd553aa017c3af737527679243c7ebd  bd90-10-more-sunrises-d1t12.flac
+cc326477a2ec2299f2253fdbc7d04aef  bd90-10-more-sunrises-d1t13.flac
+8aa9f09c2c4de6793f41a0ed338695ce  bd90-10-more-sunrises-d1t14.flac
+a5be777671b495246fb8a233b82b163b  bd90-10-more-sunrises-d1t15.flac
+9e312185d37b6eb672b47e936b3f5f5a  bd90-10-more-sunrises.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-10-more-sunrises.flacf 
+=================== 
+=================== 
+=================== 
+bd90-10-more-sunrises-d1t01.flac:5243fded3d395292b71d248221531aaa
+bd90-10-more-sunrises-d1t02.flac:67d81287af326e29400e02b2815b7a4c
+bd90-10-more-sunrises-d1t03.flac:70fac8323754d8b5582f9b83de4cf1fa
+bd90-10-more-sunrises-d1t04.flac:369b3d743dc18fc8a626dacf757c479d
+bd90-10-more-sunrises-d1t05.flac:6297f333e300bd6dfe965c0d66c024c1
+bd90-10-more-sunrises-d1t06.flac:905849b2a618a319ffd2899346399308
+bd90-10-more-sunrises-d1t07.flac:4101d2bf2d8eaf6ba489b33de6f26d49
+bd90-10-more-sunrises-d1t08.flac:fa12557933c6b20539a0df9e7cbd3c12
+bd90-10-more-sunrises-d1t09.flac:a76b59dd4f80845581884f6719340747
+bd90-10-more-sunrises-d1t10.flac:adc1b22ba7a614c3b3f87c1f8b3b1a13
+bd90-10-more-sunrises-d1t11.flac:e57581351438c9bd562704340f61b94a
+bd90-10-more-sunrises-d1t12.flac:6d6819b023118ab01a4d54a49cb5badd
+bd90-10-more-sunrises-d1t13.flac:38a6af24c4ab2a6752b23ac90c71da8d
+bd90-10-more-sunrises-d1t14.flac:26ece4d2ad456069fe8c4420faca38c8
+bd90-10-more-sunrises-d1t15.flac:db57c9ff8197561a7df7beac63857a95
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-10-more-sunrises.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.15       43076924 B   ---   --   ---xx   flac  0.6414  bd90-10-more-sunrises-d1t01.flac
+     5:55.00       62622044 B   ---   --   ---xx   flac  0.6441  bd90-10-more-sunrises-d1t02.flac
+     7:23.60       78286364 B   ---   --   ---xx   flac  0.6578  bd90-10-more-sunrises-d1t03.flac
+     3:28.35       36773564 B   ---   --   ---xx   flac  0.6298  bd90-10-more-sunrises-d1t04.flac
+     5:02.00       53272844 B   ---   --   ---xx   flac  0.6734  bd90-10-more-sunrises-d1t05.flac
+     7:40.02       81148748 B   ---   --   ---xx   flac  0.6263  bd90-10-more-sunrises-d1t06.flac
+     4:52.35       51591164 B   ---   --   ---xx   flac  0.6595  bd90-10-more-sunrises-d1t07.flac
+     4:06.60       43535564 B   ---   --   ---xx   flac  0.6323  bd90-10-more-sunrises-d1t08.flac
+     4:05.63       43366220 B   ---   --   ---xx   flac  0.6084  bd90-10-more-sunrises-d1t09.flac
+     4:27.47       47209388 B   ---   --   ---xx   flac  0.6216  bd90-10-more-sunrises-d1t10.flac
+     5:01.05       53108204 B   ---   --   ---xx   flac  0.6327  bd90-10-more-sunrises-d1t11.flac
+     6:20.25       67090844 B   ---   --   ---xx   flac  0.6437  bd90-10-more-sunrises-d1t12.flac
+     5:46.43       61135580 B   ---   --   ---xx   flac  0.6875  bd90-10-more-sunrises-d1t13.flac
+     4:37.62       49008668 B   ---   --   ---xx   flac  0.6958  bd90-10-more-sunrises-d1t14.flac
+     5:03.70       53613884 B   ---   --   ---xx   flac  0.6648  bd90-10-more-sunrises-d1t15.flac
+    77:55.72      824840004 B                            0.6488  (15 files)
+=================== 
+=================== 
+=================== 

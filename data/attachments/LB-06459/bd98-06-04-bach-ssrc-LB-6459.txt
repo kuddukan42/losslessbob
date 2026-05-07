@@ -1,0 +1,12 @@
+Bob Dylan, 6/4/98, Rostock, Germany Stadthalle, 2CDR
+
+LB-6459, (65min+33min), Taper: "Bach", Lineage: OKM II Rockversion > Sony DAT TCD-D8 (48 kHZ - 16 bit) > TASCAM DA-40 professional > ssrc convert to 44.1 kHz >WaveTerminal > HD > WaveLab 6 >, convert to flac dBpowerAMP > md5summer.; bittorrent download 09/08; same recording as LB-4470 based on same clapping wavs at end of d1t8; channels are swapped, levels are lower and this has more above 21k;; (did not listen to all of this)
+
+CD1
+01. Introduction, 02. All Along The Watchtower, 03. Tonight I'll Be Staying Here With You, 04. Cold Irons Bound, 05. What Good Am I?, 06. Silvio (Bob Dylan & Robert Hunter), 07. Girl From The North Country, 08. Masters Of War, 09. Tangled Up In Blue, 10. Tears Of Rage (Bob Dylan/Richard Manuel), 11. You Ain't Goin' Nowhere, 
+
+CD2
+01. Highway 61 Revisited, 02. My Back Pages, 03. Love Sick, 04. Rainy Day Women # 12 & 35, 05. It Ain't Me, Babe, Enjoy!!
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,25 @@
+068e431164bfc214ad042129fe5b397c  A Blessing In Disguise [CD1]\1990-11-14_101.flac
+bb9bf6aea7df2b7e54f994f332de30b1  A Blessing In Disguise [CD1]\1990-11-14_102.flac
+6e905cd15fee039fd9c0bc6dfd85312a  A Blessing In Disguise [CD1]\1990-11-14_103.flac
+fa33c11021f91923f9055509fe6ad818  A Blessing In Disguise [CD1]\1990-11-14_104.flac
+b98c8fac83b3050f19ab295929cf31b2  A Blessing In Disguise [CD1]\1990-11-14_105.flac
+d72cff48d2e9afd9510ccb8405ccb137  A Blessing In Disguise [CD1]\1990-11-14_106.flac
+90ca78f62aa17fd3073cb66e87d082c6  A Blessing In Disguise [CD1]\1990-11-14_107.flac
+509f65272d01621899d4098dca99b3b0  A Blessing In Disguise [CD1]\1990-11-14_108.flac
+b84038bfbdd053371b7e8bc6e1e9dd3f  A Blessing In Disguise [CD1]\1990-11-14_109.flac
+51046f422bbbf5862cfa3d626216a7ba  A Blessing In Disguise [CD1]\A Blessing In Disguise [CD1].LOG
+45237387ed46fb46e9e8bee7d459bd8e  A Blessing In Disguise [CD1]\A Blessing In Disguise [CD1].md5
+30def3e14d8517fe20765328bdb772aa  A Blessing In Disguise [CD2]\1990-11-14_201.flac
+2b523724af5ac7c4103e7711dea408b2  A Blessing In Disguise [CD2]\1990-11-14_202.flac
+7769c202624f0950143e9638b73e21fd  A Blessing In Disguise [CD2]\1990-11-14_203.flac
+388156082bb7aaf1daec7e87b4b1eae1  A Blessing In Disguise [CD2]\1990-11-14_204.flac
+9132e695c88f98e4468f184461091dcf  A Blessing In Disguise [CD2]\1990-11-14_205.flac
+0261cbc5c2d6561ca205219c745fe4d6  A Blessing In Disguise [CD2]\1990-11-14_206.flac
+b7c52cdd1ae1959ecee11aeeeb35e1b9  A Blessing In Disguise [CD2]\1990-11-14_207.flac
+a512735a4fa333ab185321e9c1851cf9  A Blessing In Disguise [CD2]\1990-11-14_208.flac
+3106a25952264a9819c69137c1527462  A Blessing In Disguise [CD2]\1990-11-14_209.flac
+a3027d9628f640e76daa67e1b3380311  A Blessing In Disguise [CD2]\1990-11-14_210.flac
+428d4cef61b901fa27bff99afd40ebf4  A Blessing In Disguise [CD2]\1990-11-14_211.flac
+aa32c2c612b0896d8c9dfa414f946486  A Blessing In Disguise [CD2]\A Blessing In Disguise [CD2].LOG
+1f411bb9262dc150e3d988163e0c4d0a  A Blessing In Disguise [CD2]\A Blessing In Disguise [CD2].md5
+47740f7309ad5cb0ad6fc4c86168c8a2  info.txt

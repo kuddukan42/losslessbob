@@ -1,0 +1,21 @@
+c2b9806c1da3251ab4f871b592ae3eca  CD1\00 Announcement.flac
+c5a021b8ccb372dedd2e9b30f49671a9  CD1\01 Crash on the Levee (down in the flood).flac
+65b6978bb106874776625f1c783ec22c  CD1\02 I don't believe you (she acts like we never have met).flac
+cb90adfd75e4e34df341d4e7223d6547  CD1\03 All along the watchtower.flac
+504c1d022294653b931f075d5b2916c0  CD1\04 Just like a woman.flac
+77fb2c2bb274c5834f608407f5ff36d3  CD1\05 Tangled up in blue.flac
+1a6132307ea11542fa7184c4fe540f88  CD1\06 Watching the river flow.flac
+7abf5f149c9baffa8a799f0b85b0d753  CD1\07 Mr. Tambourine Man.flac
+3e42a49e609409c3724f7a9b4fb457c5  CD1\08 Desolation Row.flac
+cad816f1da8197fd06bd992e7ab0ba1c  CD1\09 Don't think twice, it's all right.flac
+84b062a227374253b4349136ac25be9c  CD1\FLAC CD1.md5
+2f230e5246f7696b57f4e8c3445c726b  CD2\10 God knows.flac
+54ce686b258059a11da03471fe4cdb46  CD2\11 Man in the long black coat.flac
+35a23437d161878857985e593e5401f4  CD2\12 Maggie's farm.flac
+3a388cb1efdadaff9fcacde508b3cb64  CD2\13 Ballad of a thin man.flac
+f9245e59f87a113f085594f003ac635c  CD2\14 It ain't me, babe.flac
+d5082bd0f49f0abf7713672384bae752  CD2\FLAC CD2.md5
+d656362d2ae4d1b7890c1edc1186bfa1  Info\1995-03-12 Prague, Czech Republic.txt
+d06fbd09ab317c6b141dc27e5ac8bfbb  Info\bd1995-03-12 prague.txt
+1a47f0101b970c4649cfbeba772baea8  Info\Prague 95-03-12-d1.LOG
+3ef1c2f36a8b70513f7a41a011672b42  Info\Prague-95-03-12-d2.LOG

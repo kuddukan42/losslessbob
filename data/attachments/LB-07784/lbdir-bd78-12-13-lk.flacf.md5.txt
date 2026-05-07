@@ -1,0 +1,32 @@
+9174a11f73b2705674ac461bafa0bb30  D1\D1.md5
+0a341cbed5d85609b13a216b0809d5e1  D1\Jacksonville 13dec78 101.flac
+ced2e974aeb74a46d1a9dc1b8cdb9c59  D1\Jacksonville 13dec78 102.flac
+0dde956267b76e0269f71ddcc6be9662  D1\Jacksonville 13dec78 103.flac
+efca570cfb960cb0682dee0d095e4aa2  D1\Jacksonville 13dec78 104.flac
+6df242a83d1c4b944b7da6735d93f2d3  D1\Jacksonville 13dec78 105.flac
+db4157cde7385358a9eb0bffa645c18c  D1\Jacksonville 13dec78 106.flac
+42f3a564507a1f4f45d94ef4d9ebcde6  D1\Jacksonville 13dec78 107.flac
+0fb612e95942e7918dcfa593938bf777  D1\Jacksonville 13dec78 108.flac
+9da98bef36673d6f2ac4013d7d04c761  D1\Jacksonville 13dec78 109.flac
+04b6756245b7fbe07c81c0b3a89d98db  D1\Jacksonville 13dec78 110.flac
+96fef1f3eff112052b74dbea634cba4f  D1\Jacksonville 13dec78 111.flac
+e6c7d1f3688b09a52d3b7abb6cb6c8c2  D1\Jacksonville 13dec78 112.flac
+b1401d4b5a3f5312d7e2bcafb69a13ee  D1\Jacksonville 13dec78 113.flac
+bc8c6a14e77fb4d6d694c27734cd107d  D1\Jacksonville 13dec78 114.flac
+e0a98355952eb34d49dd02801566f7e0  D1\Jacksonville 13dec78 115.flac
+c7b2e2d5f01bb15924f9447f16d8704e  D1\Jacksonville 13dec78 116.flac
+fc4c5fbe551baeaea5009c70215ae237  D2\D2.md5
+3507d634dab61e3f0f32ae784587d238  D2\Jacksonville 13dec78 201.flac
+de57f5ec0616c0442654e36f8173eec4  D2\Jacksonville 13dec78 202.flac
+7c25a3b7d503d169eddf54bda3f55f1a  D2\Jacksonville 13dec78 203.flac
+b08bc01072227ca69754fde401bf1f34  D2\Jacksonville 13dec78 204.flac
+49af05a613c0b38889a47d9570bdfee1  D2\Jacksonville 13dec78 205.flac
+4ba1cb317421ab468c11f186db46c26e  D2\Jacksonville 13dec78 206.flac
+4b7c8ce2f50d824020e4842c2cbe259e  D2\Jacksonville 13dec78 207.flac
+d8c29a6c8105553f9321eeb4f8007077  D2\Jacksonville 13dec78 208.flac
+43cc4947ef4cddc821b91419557ac84e  D2\Jacksonville 13dec78 209.flac
+76f8d74c56f98f8f667c8995c86b78aa  D2\Jacksonville 13dec78 210.flac
+26a70c6fc002b98bd8e1ff1bd146216a  D2\Jacksonville 13dec78 211.flac
+a4532a63ab3402f3da7a4e8cb9850fa0  D2\Jacksonville 13dec78 212.flac
+a7910d6e97f287f750eafe30b28a6dc7  info.txt
+0a2d82d6f879f4c4599019ada92493db  LK 1978 Leg 3 DVD 12.md5

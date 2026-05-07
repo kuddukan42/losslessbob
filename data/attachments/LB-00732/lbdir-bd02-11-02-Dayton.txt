@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-02-Dayton 
+=================== 
+=================== 
+=================== 
+353d861d0971ba4f5fd42bfc3541bec8  1__021102_Dayton\021102_101_Intro.shn
+b1b03e1f60b55aa4fa4e095a888d77c0  1__021102_Dayton\021102_102_Seeing the Real You at Last.shn
+39d78025941d694f9b9fdfece1525c5e  1__021102_Dayton\021102_103_In The Summertime.shn
+0801ae063c1fa08348b9bf353c57f3d3  1__021102_Dayton\021102_104_Tombstone Blues.shn
+a63afc7924e26762083604951fe75dac  1__021102_Dayton\021102_105_Accidentally Like A Martyr.shn
+1dae45a087b3705a3dc1329b95472169  1__021102_Dayton\021102_106_I'll Be Your Baby Tonight.shn
+fd2d2a85d1e38a8603e6f5a565f4e0f9  1__021102_Dayton\021102_107_Brown_Sugar.shn
+f50e9884cf03f7e103ccb63371d2896a  1__021102_Dayton\021102_108_Ballad of a Thin Man.shn
+cba37785df572786b2a0f0845d7a7643  1__021102_Dayton\021102_109_It's Alright Ma.shn
+798259de04795974defcd7a92aa78dff  1__021102_Dayton\021102_110_Boots of Spanish Leather.shn
+4fd078c667ad469527e8976f81ec2a6c  1__021102_Dayton\021102_111_Drifters_Escape.shn
+f7154d3197652ff7ca169233e0018dc7  1__021102_Dayton\021102_112_My_Back_Pages.shn
+9cbf2524e621d54a87af63bf79e9495f  1__021102_Dayton\021102_113_Old_Man.shn
+65fadef121b29fcdb57aa18439706cfe  1__021102_Dayton\noname.md5
+8c9b419398c8fca905b5521b12321e78  2__021102_Dayton\021102_201_Honest with me.shn
+0f761455ade163abd0b888080bec6209  2__021102_Dayton\021102_202_It ain't me babe.shn
+81c3a5ec8a70b615f27c904211744e4b  2__021102_Dayton\021102_203_High Water.shn
+bca8aaf30bfce67ad5e4ddd3d7fd0b44  2__021102_Dayton\021102_204_Mutineer.shn
+660e2898bcc5ee8cd6c25dcdc859e2ca  2__021102_Dayton\021102_205_Moonlight.shn
+03c8b6c85cb023282c4454e05ce7f6b3  2__021102_Dayton\021102_206_Summer Days.shn
+1242da55d07c0d4c6c29f88362903c0e  2__021102_Dayton\021102_207a_Blowin in the wind.shn
+b9d5be08d913027b319ddff1bf317e17  2__021102_Dayton\021102_207b_band_intro.shn
+7ac3fa1e00c45b7a153a8cc8ac02f592  2__021102_Dayton\021102_208_All Along the Watchtower.shn
+da344e5781f7d2891e2a9a964175e4e0  2__021102_Dayton\noname.md5
+409f70ca254379101658e338ccc60513  bd02-11-02.txt
+fc020eee6b106c75a8460fb4c1e87e00  readmebd02-11-02-Dayton.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-02-Dayton\1__021102_Dayton 
+=================== 
+=================== 
+=================== 
+ea19d0412d4f27af6f4fdb08dc08135d  [shntool]  021102_101_Intro.wav
+1b7efc28d80738f7d55fd4acee5ad2bf  [shntool]  021102_102_Seeing_the_Real_You_at_Last.wav
+91f441b1b66ebcc89e5807b399686656  [shntool]  021102_103_In_The_Summertime.wav
+e5b48b3a0c460aa768dcd5150676131f  [shntool]  021102_104_Tombstone_Blues.wav
+61d6ff6ba8ebedd033f25164e585343d  [shntool]  021102_105_Accidentally_Like_A_Martyr.wav
+8eab67a3377e128d6f18022335cf2b45  [shntool]  021102_106_I'll_Be_Your_Baby_Tonight.wav
+cb86b76653c121920addeb88f0889cba  [shntool]  021102_107_Brown_Sugar.wav
+98bad519135995ff0c8b4c30a74cb9ae  [shntool]  021102_108_Ballad_of_a_Thin_Man.wav
+c1b4b09c879cde2e7fc5cab600473c74  [shntool]  021102_109_It's_Alright_Ma.wav
+59d0abfd1280596429afa7f792853340  [shntool]  021102_110_Boots_of_Spanish_Leather.wav
+936c16bebbb98ffd88c9c5f99ec731b3  [shntool]  021102_111_Drifters_Escape.wav
+87d72c26d61218440e529c232825a926  [shntool]  021102_112_My_Back_Pages.wav
+463e964964fbdfd4920daab50d39f5e7  [shntool]  021102_113_Old_Man.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-02-Dayton\2__021102_Dayton 
+=================== 
+=================== 
+=================== 
+1c2bf0a74c46caee4cb83d73d01f00d1  [shntool]  021102_201_Honest_with_me.wav
+c912c3fd359f073f5672897f78225df6  [shntool]  021102_202_It_ain't_me_babe.wav
+4c132820a5a390ccae293bcce373f0db  [shntool]  021102_203_High_Water.wav
+55a86d54e5394d6ca7e75626538cf5f7  [shntool]  021102_204_Mutineer.wav
+a2e92fec4fa010f261f673fa67a00638  [shntool]  021102_205_Moonlight.wav
+b8388fd9f8e4de8980bf40cdc37e13e4  [shntool]  021102_206_Summer_Days.wav
+0bfe9b6ecf93a6803902324a1ff069b7  [shntool]  021102_207a_Blowin_in_the_wind.wav
+c35a1c3006c2c1542c2bf39331dbf855  [shntool]  021102_207b_band_intro.wav
+6d06bf20068d7b6bbda0c1b5db5cc072  [shntool]  021102_208_All_Along_the_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-02-Dayton\1__021102_Dayton 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:36.31       17007504 B   -b-   he   ---xx    shn  0.5068  021102_101_Intro.shn
+     5:17.49       56034702 B   -b-   -e   ---xx    shn  0.5904  021102_102_Seeing the Real You at Last.shn
+     3:38.15       38491274 B   -b-   -e   ---xx    shn  0.5710  021102_103_In The Summertime.shn
+     6:22.54       67511438 B   -b-   -e   ---xx    shn  0.5578  021102_104_Tombstone Blues.shn
+     4:29.40       47545230 B   -b-   -e   ---xx    shn  0.4758  021102_105_Accidentally Like A Martyr.shn
+     6:07.50       64857486 B   -b-   -e   ---xx    shn  0.5161  021102_106_I'll Be Your Baby Tonight.shn
+     4:13.53       44753038 B   -b-   -e   ---xx    shn  0.5992  021102_107_Brown_Sugar.shn
+     6:48.71       72138894 B   -b-   -e   ---xx    shn  0.5183  021102_108_Ballad of a Thin Man.shn
+     8:08.68       86243470 B   -b-   -e   ---xx    shn  0.5491  021102_109_It's Alright Ma.shn
+     7:53.27       83501198 B   -b-   -e   ---xx    shn  0.4453  021102_110_Boots of Spanish Leather.shn
+     6:17.39       66594958 B   -b-   -e   ---xx    shn  0.5917  021102_111_Drifters_Escape.shn
+     7:27.29       78919822 B   -b-   -e   ---xx    shn  0.5179  021102_112_My_Back_Pages.shn
+     3:56.36       41714190 B   -b-   -e   ---xx    shn  0.6116  021102_113_Old_Man.shn
+    72:18.37      765313204 B                            0.5383  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-02-Dayton\2__021102_Dayton 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:38.64       70358158 B   -b-   -e   ---xx    shn  0.6043  021102_201_Honest with me.shn
+     8:22.15       88587918 B   -b-   -e   ---xx    shn  0.4845  021102_202_It ain't me babe.shn
+     7:40.04       81153678 B   -b-   -e   ---xx    shn  0.5788  021102_203_High Water.shn
+     3:31.51       37341326 B   -b-   -e   ---xx    shn  0.4721  021102_204_Mutineer.shn
+     5:26.36       57591438 B   -b-   -e   ---xx    shn  0.4403  021102_205_Moonlight.shn
+    12:46.59      135262094 B   -b-   -e   ---xx    shn  0.5840  021102_206_Summer Days.shn
+     5:02.14       53306254 B   -b-   -e   ---xx    shn  0.5629  021102_207a_Blowin in the wind.shn
+     0:36.49        6466702 B   -b-   -e   ---xx    shn  0.5137  021102_207b_band_intro.shn
+     7:17.16       77124750 B   -b-   -e   ---xx    shn  0.6347  021102_208_All Along the Watchtower.shn
+    57:22.09      607192318 B                            0.5545  (9 files)
+=================== 
+=================== 
+=================== 

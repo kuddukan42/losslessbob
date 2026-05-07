@@ -1,0 +1,8 @@
+Bob Dylan, 6/15/91, Linz, Austria, 2CDR
+
+LB-6114, (54min+43min), legendary taper J, Sennheiser MKE2002 -> portable DATrecorder - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 05/08; asymetric wav on d2t4 with bottom limited to -6db and top going to 0db; same recording as LB-3806 based on same clapping at end of d1t9 with channels swapped and inverted; in comparison that is more muffled with more hiss; in comparison to hg LB-1838 that sounds harsh and hollow; excellent sound [A-]
+
+1 intro, 2 New Morning, 3 Lay Lady Lay, 4 All Along The Watchtower, 5 Shelter From The Storm, 6 Gotta Serve Somebody, 7 Wiggle Wiggle, 8 Bob Dylan's Dream, 9 Mr. Tambourine Man, 10 Don't Think Twice, It's All Right, 11 It Ain't Me, Babe, 1 Everything Is Broken, 2 Just Like A Woman, 3 Man In The Long Black Coat, 4 Rainy Day Women # 12 & 35, 5 I Shall Be Released, 6 Like A Rolling Stone, 7 Blowin' In The Wind, 8 Highway 61 Revisited
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

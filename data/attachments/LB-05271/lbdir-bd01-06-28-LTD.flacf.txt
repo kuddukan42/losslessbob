@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-06-28-LTD.flacf 
+=================== 
+=================== 
+=================== 
+f2f13deb1142cf8d3344b832c7ae9a95  2001-06-28 Langesund-LTD info.txt
+b2f659ad03c0ea33412f9dd647fa9691  CD1\bd01-06-28d1t01-LTD.flac
+a2b78277a6e64d6aa8df01a9a9423726  CD1\bd01-06-28d1t02-LTD.flac
+8fb1f9dcf8d74a7b6995fec931c91027  CD1\bd01-06-28d1t03-LTD.flac
+790b5c2fb15bbc1562019c4bdb2ed9bf  CD1\bd01-06-28d1t04-LTD.flac
+c3ebc85dab8223b8143cc78a14a9ed05  CD1\bd01-06-28d1t05-LTD.flac
+89c6eb86e3b63443dbbe8728bd94a60a  CD1\bd01-06-28d1t06-LTD.flac
+fe251ce673366c4001102fa90e2e583d  CD1\bd01-06-28d1t07-LTD.flac
+7ebc2b2e59692b2c98d809634f3ebd44  CD1\bd01-06-28d1t08-LTD.flac
+e3d8a3213767e5a3d576fa0a6a131af0  CD1\bd01-06-28d1t09-LTD.flac
+af07a49c3f215faa670054e967f2f2b3  CD1\bd01-06-28d1t10-LTD.flac
+b0f62f50e8d13b70ea903668bf011bca  CD1\bd01-06-28d1t11-LTD.flac
+a46f53a4dc449f0b17ef56b583d0359e  CD1\CD1.ffp
+df93f0de4f66338c234fde90747552e1  CD1\CD1.md5
+d83c89b43a381cf6c772323f4590dcc5  CD2\bd01-06-28d2t01-LTD.flac
+1abe4ab3933ca56605361a9c5e0e1196  CD2\bd01-06-28d2t02-LTD.flac
+cff9fa19c19312b0cc01584fd78a7c9e  CD2\bd01-06-28d2t03-LTD.flac
+d9bf482580fd3055187cb0edf7fb85a3  CD2\bd01-06-28d2t04-LTD.flac
+e2500df35f6b230ce7259951d2b389f3  CD2\bd01-06-28d2t05-LTD.flac
+33d257d3634d8a2baf5bf50be4e651c7  CD2\bd01-06-28d2t06-LTD.flac
+fba76ac9a9dadcf1cbf37837833b188a  CD2\bd01-06-28d2t07-LTD.flac
+1aa13a4cb239836e492d13c2e89a3575  CD2\bd01-06-28d2t08-LTD.flac
+4240206305a013c6bee76d8b28b58cb1  CD2\bd01-06-28d2t09-LTD.flac
+3720bd2fb180fb7385714108b371edfd  CD2\CD2.ffp
+ce4f47af5d58f3d72132eb0074decc3f  CD2\CD2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-06-28-LTD.flacf\CD1 
+=================== 
+=================== 
+=================== 
+bd01-06-28d1t01-LTD.flac:220cd110e9232a59c7b77c5e8b10729b
+bd01-06-28d1t02-LTD.flac:beb9d382cf44822ac15e31c199aa753c
+bd01-06-28d1t03-LTD.flac:09483f7c3574807791362ac1b79b19ee
+bd01-06-28d1t04-LTD.flac:7aa072f891bd61748d976b93817e5546
+bd01-06-28d1t05-LTD.flac:18a07ee90579981cf3ab211861c5d020
+bd01-06-28d1t06-LTD.flac:8614589d9c34bfed3406db1d7ff7de83
+bd01-06-28d1t07-LTD.flac:ad60d9f771821df006040641ae0d2b24
+bd01-06-28d1t08-LTD.flac:4f981827e85c1c6be72b6d69ec5c0f48
+bd01-06-28d1t09-LTD.flac:4f5fb42df5f850747df05c49d8fc80aa
+bd01-06-28d1t10-LTD.flac:c6440aba10a7208e149cd5aa40aec8a8
+bd01-06-28d1t11-LTD.flac:2a12f9b76c18dcd3a783ca53a84fe13b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-06-28-LTD.flacf\CD2 
+=================== 
+=================== 
+=================== 
+bd01-06-28d2t01-LTD.flac:ad2bfe2d073d6a1d56e0417fe9aa85cf
+bd01-06-28d2t02-LTD.flac:af63ac4295db20b07755dec214a99987
+bd01-06-28d2t03-LTD.flac:bfe370f27072417ca48301d09111e85a
+bd01-06-28d2t04-LTD.flac:b7b2bd8facd232fea130f15352c7eec1
+bd01-06-28d2t05-LTD.flac:5e8d9fd0495d0b7efbc294b05f044b15
+bd01-06-28d2t06-LTD.flac:0e6f3ba5c33b58b46aa37e3ab20fd0cc
+bd01-06-28d2t07-LTD.flac:b9179ae0046ed24b9ffdfea2d0f6d98b
+bd01-06-28d2t08-LTD.flac:ba03756a5c50486719dc14ec0a76bb0e
+bd01-06-28d2t09-LTD.flac:0cdbf5efa986ef52d2d0ec89c95ee9d5
+=================== 
+=================== 
+=================== 
+=== shntool for: bd01-06-28-LTD.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.27       41693948 B   ---   --   ---xx   flac  0.5782  bd01-06-28d1t01-LTD.flac
+     6:02.37       63943868 B   ---   --   ---xx   flac  0.5998  bd01-06-28d1t02-LTD.flac
+     9:31.31      100797356 B   ---   --   ---xx   flac  0.6156  bd01-06-28d1t03-LTD.flac
+     5:24.36       57238316 B   ---   --   ---xx   flac  0.6010  bd01-06-28d1t04-LTD.flac
+     6:50.51       72443996 B   ---   --   ---xx   flac  0.5893  bd01-06-28d1t05-LTD.flac
+     5:41.19       60197132 B   ---   --   ---xx   flac  0.6262  bd01-06-28d1t06-LTD.flac
+     9:40.68      102471980 B   ---   --   ---xx   flac  0.5633  bd01-06-28d1t07-LTD.flac
+     8:10.47       86546588 B   ---   --   ---xx   flac  0.5442  bd01-06-28d1t08-LTD.flac
+     7:08.17       75539228 B   ---   --   ---xx   flac  0.5566  bd01-06-28d1t09-LTD.flac
+     6:11.33       65522060 B   ---   --   ---xx   flac  0.6056  bd01-06-28d1t10-LTD.flac
+     6:00.34       63584012 B   ---   --   ---xx   flac  0.6075  bd01-06-28d1t11-LTD.flac
+    74:38.25      789978484 B                            0.5879  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd01-06-28-LTD.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:31.08       68991260 B   ---   --   ---xx   flac  0.5979  bd01-06-28d2t01-LTD.flac
+     2:45.11       29131916 B   ---   --   ---xx   flac  0.5714  bd01-06-28d2t02-LTD.flac
+     7:08.06       75513356 B   ---   --   ---xx   flac  0.5864  bd01-06-28d2t03-LTD.flac
+     3:52.06       40938956 B   ---   --   ---xx   flac  0.4972  bd01-06-28d2t04-LTD.flac
+     5:01.54       53223452 B   ---   --   ---xx   flac  0.5915  bd01-06-28d2t05-LTD.flac
+     4:46.33       50528060 B   ---   --   ---xx   flac  0.5591  bd01-06-28d2t06-LTD.flac
+     5:51.46       62024636 B   ---   --   ---xx   flac  0.6064  bd01-06-28d2t07-LTD.flac
+     5:15.23       55620140 B   ---   --   ---xx   flac  0.5537  bd01-06-28d2t08-LTD.flac
+     6:14.44       66077132 B   ---   --   ---xx   flac  0.6144  bd01-06-28d2t09-LTD.flac
+    47:26.06      502048908 B                            0.5802  (9 files)
+=================== 
+=================== 
+=================== 

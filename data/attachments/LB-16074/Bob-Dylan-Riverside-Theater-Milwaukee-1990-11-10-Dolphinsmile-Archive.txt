@@ -1,0 +1,20 @@
+01 Marine Hymn.flac:244f0061320793fef98fe66ce0e0c883
+02 SHBs.flac:d11007c31800bf209f1374914be47de9
+03 Lay Lady Lay.flac:4281bbfdb88068cf35bed7f581725dc9
+04 All Along the Watchtower.flac:ed08b196bc7981a50985d107f4404567
+05 Positively Fourth Street.flac:e0e30beddb5e8a3912b1da721a7d2c14
+06 Masters Of War.flac:6a0ad3cbd64a5d9ba1b86ffa929aacf4
+07 Gotta Serve Somebody.flac:4f444b308a1a182a7ddaba844c392553
+08 Boots Of Spanish Leather.flac:7d2cb4415931b0f143891ab56a0f3a9d
+09 Desolation Row.flac:8780e2f2a85aa1edad509b566e5dbade
+10 Hattie Carroll.flac:e5461b6142a3ee7d4373b0489e899275
+11 Tamborine Man.flac:ecc2539392965bfdfc8152c75a4209ca
+12 Under The Red Sky.flac:5b7f34ed5cbdf2695cb18a74d3d5f04f
+13 Joey.flac:5529cadf41da1a614c6b003b8c9ef5fc
+14 TV Talkin Song.flac:cc9266360889d2c14bcadcc413a20196
+15 Every Grain Of Sand.flac:65ca048408d0b5223c2eeb26900e9272
+16 Wiggle Wiggle.flac:3f7f6cec3627867bcf599a2339eeeee4
+17 I Shall Be Released.flac:3cf5e4261cf447e29290e85f05fa9f86
+18 Like A Rolling Stone.flac:d826d7b9d319ceb41a392fc81b030c42
+19 Times Are A Changin.flac:4adb43f11bc20d54567983ac1365f597
+20 Maggies Farm.flac:d4b1273c87b00c72b265d37b2d9ed32d

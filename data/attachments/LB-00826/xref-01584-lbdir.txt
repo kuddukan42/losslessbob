@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd92-04-16-RL-LK.flacf
+===================
+===================
+===================
+6be3d98036faeccad93a0218204d5dbe *d1t01.shn
+5be7f14a21927bd30c72f179899946fb *d1t02.shn
+36014c20a14987b8ea41629bacd410ba *d1t03.shn
+79543f01ea6198292b6e058b3ce0faf0 *d1t04.shn
+cecbe687204005a453385c1194755f63 *d1t05.shn
+ed9662a324a7f44706adad2bc1f29af0 *d1t06.shn
+3dca4fa6e432cd690a3d8f35a4399bbe *d1t07.shn
+6a0e6bdb1a0ad2fa1b2fc4b546125140 *d1t08.shn
+4154d8526f66e8e335f4bd9afbd04dac *d1t09.shn
+035a324386252ddef2dd180ec6e38ba6 *d1t10.shn
+5ebaea693f0f5d7c90b8048c4366edfc *d2t01.shn
+1ea22a5d95dee7596505caef8ba4b8ae *d2t02.shn
+d8fe35fab9ed1fbc801b35295ff8564b *d2t03.shn
+035c2c04658fb06fd97b6195e533c4be *d2t04.shn
+d7193b7d9095e12dc32f59cb78e42d1b *d2t05.shn
+ab00fe741b7e92260c1735291a2ae0f9 *d2t06.shn
+bc49946bbf3997f18a817ddfc0c0e1bc *d2t07.shn
+1054cb29529fc288d01d9d1e50837e05 *d2t08.shn
+384824115d474da9dbe0ddc26f6cc73a *info.txt
+12711c5b837aeff415aa3fa83fdca467 *noname.md5
+===================
+===================
+===================
+=== shntool md5/hash for: bd92-04-16-RL-LK.flacf
+===================
+===================
+===================
+0c593f6567f21f5fdceadc1ebbbda157  [shntool]  d1t01.shn
+57238469707de1ec0923e9e6f51fc8b4  [shntool]  d1t02.shn
+a02f34ce7744ffeab5fd19ff20813a7e  [shntool]  d1t03.shn
+e497ac36db01810a752b7584fc6fb00e  [shntool]  d1t04.shn
+58f73a933fe24a5e1edaf3391aa6bb01  [shntool]  d1t05.shn
+9590c1410c2beb6b2ebfa2bc2f3c2826  [shntool]  d1t06.shn
+dfa8315080d5b05e4202074881ca1979  [shntool]  d1t07.shn
+2d21c5c82c716de2671b6f845acc2de5  [shntool]  d1t08.shn
+221ef5e21e8f745a9b5c3b0e764139b5  [shntool]  d1t09.shn
+5ec3476c19c28450a54bc637c367bc52  [shntool]  d1t10.shn
+080f25a063ec983c9b4284c045e90a8d  [shntool]  d2t01.shn
+3316128f303884a6f024479a78cdd516  [shntool]  d2t02.shn
+ad9c9f895047f8cfca389803b9234e53  [shntool]  d2t03.shn
+9ff4cbc192c6f9054822d35c0b0130ab  [shntool]  d2t04.shn
+533f1f6a7a8e8506031ebec148346727  [shntool]  d2t05.shn
+46e23af53c9a769388536e1a15555e46  [shntool]  d2t06.shn
+acbe3fe6dcc6ceed44d17070ed73ecc3  [shntool]  d2t07.shn
+81e8105e40d91305c388f903392162c7  [shntool]  d2t08.shn
+===================
+===================
+===================
+=== shntool len for: bd92-04-16-RL-LK.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.61       37011116 B   ---   --   ---xx    shn  0.7218  d1t01.shn
+     2:37.38       27784220 B   ---   --   ---xx    shn  0.7421  d1t02.shn
+     3:55.26       41515196 B   ---   --   ---xx    shn  0.7415  d1t03.shn
+     5:42.28       60394700 B   ---   --   ---xx    shn  0.7276  d1t04.shn
+     9:10.72       97189388 B   ---   --   ---xx    shn  0.7356  d1t05.shn
+     4:08.09       43768412 B   ---   --   ---xx    shn  0.7218  d1t06.shn
+     5:22.23       56854940 B   ---   --   ---xx    shn  0.7032  d1t07.shn
+     3:16.42       34673228 B   ---   --   ---xx    shn  0.6801  d1t08.shn
+     3:30.73       37215740 B   ---   --   ---xx    shn  0.6462  d1t09.shn
+     4:49.30       51050204 B   ---   --   ---xx    shn  0.6560  d1t10.shn
+     6:07.34       64818812 B   ---   --   ---xx    shn  0.6796  d2t01.shn
+     3:26.12       36366668 B   ---   --   ---xx    shn  0.7262  d2t02.shn
+     9:02.00       95608844 B   ---   --   ---xx    shn  0.7170  d2t03.shn
+     5:04.68       53785580 B   ---   --   ---xx    shn  0.7080  d2t04.shn
+     5:42.17       60368828 B   ---   --   ---xx    shn  0.7354  d2t05.shn
+     4:19.27       45751148 B   ---   --   ---xx    shn  0.7437  d2t06.shn
+     4:17.16       45372476 B   ---   --   ---xx    shn  0.7329  d2t07.shn
+     4:29.05       47463404 B   ---   --   ---xx    shn  0.6598  d2t08.shn
+    88:31.56      936992904 B                            0.7111  (18 files)
+===================
+===================
+===================

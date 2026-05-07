@@ -1,0 +1,21 @@
+b04c2a4997e7525c4ebea16608a24f5d  1992-03-18 Perth, West Australia, Australia d1\01 Track01.flac
+a34c2eed8045473d2be4f42cd2971b94  1992-03-18 Perth, West Australia, Australia d1\02 Track02.flac
+701aefef15bf17380b0ef9f3ee682019  1992-03-18 Perth, West Australia, Australia d1\03 Track03.flac
+606ddb747320118561c5b545e6488d3d  1992-03-18 Perth, West Australia, Australia d1\04 Track04.flac
+762ad80909539a819145b7f4befb2347  1992-03-18 Perth, West Australia, Australia d1\05 Track05.flac
+ad928021dd31515e8eb0461d9e226a76  1992-03-18 Perth, West Australia, Australia d1\06 Track06.flac
+7155fe3d48e4cd89f283764e7636d6a1  1992-03-18 Perth, West Australia, Australia d1\07 Track07.flac
+bef2caadcab0ecce77a6b62a28e07184  1992-03-18 Perth, West Australia, Australia d1\08 Track08.flac
+df459ab1002a740acac4128af3a92a13  1992-03-18 Perth, West Australia, Australia d1\09 Track09.flac
+006f1c63bb6aa052e7895504ab5f0ede  1992-03-18 Perth, West Australia, Australia d1\10 Track10.flac
+ab7839d153aef320b9eabdf04191d54f  1992-03-18 Perth, West Australia, Australia d1\d1.md5
+dbd4e0492a1c352fafa768e74ac98505  1992-03-18 Perth, West Australia, Australia d2\01 Track01.flac
+89d7d6a0371fb15b9f6fc110b3c4fa78  1992-03-18 Perth, West Australia, Australia d2\02 Track02.flac
+83a8b30c97f5fe2b8d6ab44ba4ea2005  1992-03-18 Perth, West Australia, Australia d2\03 Track03.flac
+6a9eed469c91b4b246cb62e01fb7400f  1992-03-18 Perth, West Australia, Australia d2\04 Track04.flac
+2ed55ef4b9a030c4d5ac0ffa1a83acdd  1992-03-18 Perth, West Australia, Australia d2\05 Track05.flac
+66dac76c9f651a16d26fe42a8989cd69  1992-03-18 Perth, West Australia, Australia d2\06 Track06.flac
+7475c47425df41d05cc3ad02985d4609  1992-03-18 Perth, West Australia, Australia d2\07 Track07.flac
+ba295422c5e656480f0ee431e9d5775d  1992-03-18 Perth, West Australia, Australia d2\08 Track08.flac
+772751b73decbcebc100d09199ceb12b  1992-03-18 Perth, West Australia, Australia d2\d2.md5
+b5cc8600358baa70a0cf14ea90a6dc32  1992-03-18.rtf

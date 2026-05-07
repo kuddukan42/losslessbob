@@ -1,0 +1,8 @@
+d7c33f45b2f1267928db66c61048c8d4 *Track 01.shn
+208c580929ecb8e4256619c523e083ab *Track 02.shn
+fe8ca69baf9a2e30570075483f2ad83a *Track 03.shn
+05492a4f699a0beea1b0bb91ceaf8787 *Track 04.shn
+890a2e3d6034c149096d73315f3c1c9e *Track 05.shn
+ca22f3d420685302fdc28c1dd63b802b *Track 06.shn
+53e7cd85813de04b76b9eceabc7ab8e4 *Track 07.shn
+e580ca8bd0c2951cbc1a8e358d6b2fcb *Track 08.shn

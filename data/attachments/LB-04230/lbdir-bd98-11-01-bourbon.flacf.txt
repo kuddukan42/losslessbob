@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-11-01-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+604aaf4941a190cc7b8a117fc0584217  BD1998-11-01.txt
+6a418fa6b896d99c291ace7933d0534a  BD1998-11-01d1t01.flac
+7569a52c8efd4d5d0f2541e096846c0d  BD1998-11-01d1t02.flac
+1609eec2cb2dba13ec07fe184afee64a  BD1998-11-01d1t03.flac
+b86f571f162e4bf95047ff2827e7be92  BD1998-11-01d1t04.flac
+7ea48b2ae0719213bd47b1711046cd28  BD1998-11-01d1t05.flac
+8c0f3bba1f9d76696da62c21217ff112  BD1998-11-01d1t06.flac
+7568a2d38597c3372bdd17b9881ee682  BD1998-11-01d1t07.flac
+596736f27de4a6f969ad7f0799c45c68  BD1998-11-01d1t08.flac
+8a3d2243442ddddf42295d174857076b  BD1998-11-01d1t09.flac
+4a8ec59225dcd72ca09cc0dd1f1bedbd  BD1998-11-01d2t01.flac
+cdebca64f869c15adb88a1daaec82b7a  BD1998-11-01d2t02.flac
+f76bd9f0da1d6771035dc345d9b685cb  BD1998-11-01d2t03.flac
+9a2ed4ed516fd12689c31e3d8fc0bf9d  BD1998-11-01d2t04.flac
+c0cea8bbfe944f6daf3cb031fd4bfbcc  BD1998-11-01d2t05.flac
+676c7a75465442e887fc7d00a7e4ca3a  BD1998-11-01d2t06.flac
+63a9c4be098c09021b96801a45e2fca1  bd98-11-01-bourbon-LB-4230.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-11-01-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+BD1998-11-01d1t01.flac:4ea1e7e353d5590027e567a38d6028d2
+BD1998-11-01d1t02.flac:86148b2bf7ebe1143729a43e9d99bb5c
+BD1998-11-01d1t03.flac:58b19dfe243e946192b5e9f46eceab8f
+BD1998-11-01d1t04.flac:9d27f732c8d3cb4e97736c5cda9163ee
+BD1998-11-01d1t05.flac:c8099bca6b801b1796771ed299d0d6c4
+BD1998-11-01d1t06.flac:fe485638ad06f1fbe700c066e2e0e450
+BD1998-11-01d1t07.flac:dd76d9940c4ce0c2c2878852c88d6c12
+BD1998-11-01d1t08.flac:b94e05fdc3c044cc8b3fc91b78ab36b5
+BD1998-11-01d1t09.flac:c9835f68df0f67642be701ef7099a007
+BD1998-11-01d2t01.flac:11ad0d5bdd23cc208334d87011fde018
+BD1998-11-01d2t02.flac:833c71a4c8d6450834a4e868bf77f6b9
+BD1998-11-01d2t03.flac:e494613d30ba91af330cd331a6e8ac3f
+BD1998-11-01d2t04.flac:730c1f8a81777f47b9298ce8df4e8bae
+BD1998-11-01d2t05.flac:f577dcd55f2732d7ad0875eaca189902
+BD1998-11-01d2t06.flac:142415510676ca835950d62a97946ecf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-11-01-bourbon.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.55       45464204 B   ---   --   ---xx   flac  0.6019  BD1998-11-01d1t01.flac
+     5:12.43       55137980 B   ---   --   ---xx   flac  0.5600  BD1998-11-01d1t02.flac
+     5:27.44       57786332 B   ---   --   ---xx   flac  0.6087  BD1998-11-01d1t03.flac
+     4:24.36       46654316 B   ---   --   ---xx   flac  0.5105  BD1998-11-01d1t04.flac
+     5:40.11       60001916 B   ---   --   ---xx   flac  0.6126  BD1998-11-01d1t05.flac
+     6:57.18       73601180 B   ---   --   ---xx   flac  0.5434  BD1998-11-01d1t06.flac
+     4:12.61       44596316 B   ---   --   ---xx   flac  0.5329  BD1998-11-01d1t07.flac
+     5:36.14       59303372 B   ---   --   ---xx   flac  0.4633  BD1998-11-01d1t08.flac
+     7:57.02       84147548 B   ---   --   ---xx   flac  0.5584  BD1998-11-01d1t09.flac
+     8:02.28       85090700 B   ---   --   ---xx   flac  0.5181  BD1998-11-01d2t01.flac
+     3:10.27       33579548 B   ---   --   ---xx   flac  0.4434  BD1998-11-01d2t02.flac
+     8:20.38       88289420 B   ---   --   ---xx   flac  0.5991  BD1998-11-01d2t03.flac
+     5:27.16       57720476 B   ---   --   ---xx   flac  0.5256  BD1998-11-01d2t04.flac
+     4:47.47       50737388 B   ---   --   ---xx   flac  0.6251  BD1998-11-01d2t05.flac
+     6:28.72       68612588 B   ---   --   ---xx   flac  0.5092  BD1998-11-01d2t06.flac
+    86:02.62      910723284 B                            0.5502  (15 files)
+=================== 
+=================== 
+=================== 

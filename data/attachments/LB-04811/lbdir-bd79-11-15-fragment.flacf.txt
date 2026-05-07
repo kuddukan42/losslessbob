@@ -1,0 +1,36 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-15-fragment.flacf 
+=================== 
+=================== 
+=================== 
+615efe4e7436851388ff4456edb5faa6  bd79-11-15-fragment-LB-4811.txt
+8005502a04bcf42e4f3bac8f5982ceeb  disc 1\Track02.flac
+fe4728c5bc2b1929b68e623c6353ec96  disc 1\Track09.flac
+b7831d67f8652f90c3d39c63facbcee7  Dylan1979-11-15.md5
+1c1cfeff06bc17dbef8abb7c52b8f961  Dylan1979-11-15.txt
+0d221ec2d173a99455c5a6b80000b532  lbdir-bd79-11-15-fragment.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-15-fragment.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track02.flac:fbbe9ad9f3c1bb96c00f7b1879eeae17
+Track09.flac:0c777da3169c326d59d9395010be1c17
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-15-fragment.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.32       53700908 B   ---   --   ---xx   flac  0.6008  Track02.flac
+     1:24.72       14986988 B   ---   --   ---xx   flac  0.5936  Track09.flac
+     6:29.29       68687896 B                            0.5992  (2 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,110 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+bd1991-04-24d1t01.flac:cbe9f4f8a37a24541b6fcddfe6563e61bd1991-04-24d1t02.flac:894a3d8b4fcd18474b5513554031dc60bd1991-04-24d1t03.flac:090f7e784cfa05120fc2840ffce6acdebd1991-04-24d1t04.flac:e390411dbc256419330442b35e71691fbd1991-04-24d1t05.flac:9933189d40b5297b987d1f17f31a3068bd1991-04-24d1t06.flac:84f5b681151bb724d27c3f93368ab74fbd1991-04-24d1t07.flac:363d1f26abf3f619fdec64c8ab73997bbd1991-04-24d1t08.flac:6a2476e0317c41a23d4b0cddd2047bcbbd1991-04-24d1t09.flac:1bea69dc986ea1274a0d64338e57b3bcbd1991-04-24d1t10.flac:87140c82a64918927775a75557a15876bd1991-04-24d1t11.flac:c8299d06ca0800eba7baf884d808fdfabd1991-04-24d1t12.flac:080da7d875410a00683d2375659ec9bdbd1991-04-24d1t13.flac:cb972a39ecf6647c80b472f788f95e6abd1991-04-24d1t14.flac:b9b7bfab5bbf59be7ee292b483ea32f6bd1991-04-24d1t15.flac:0b88537d524693b5ce7058dadaa10657bd1991-04-24d2t01.flac:458df59590678c929ad3cebcdbfe9d12bd1991-04-24d2t02.flac:a168b1cc0ef91a9ac5ea8b04f1e30099bd1991-04-24d2t03.flac:08a11bd36e5594655720be0e140e847f
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+City Auditorium
+ 
+Macon, Georgia
+ 
+24 April 1991
+ 
+ 
+1.    New Morning
+2.    Lay Lady Lay
+3.    All Along The Watchtower
+4.    The Man In Me
+5.    Gotta Serve Somebody
+6.    Wiggle Wiggle
+ 
+7.    It's All Over Now, Baby Blue
+8.    Gates Of Eden
+9.    Mr. Tambourine Man
+10.    Bob Dylan's Dream
+ 
+11.    Everything Is Broken
+12.    Man In The Long Black Coat
+13.    Highway 61 Revisited
+14.    Under The Red Sky
+15.    I Shall Be Released
+16.    Like A Rolling Stone
+ 
+
+ 
+17.    Blowin' In The Wind
+18.    Maggie's Farm
+ 
+ 
+Concert # 289 of The Never-Ending Tour.  Concert # 5 of the 1991 USA Spring Tour. 1991 concert # 26.
+ 
+Concert # 5 with the 5th Never-Ending Tour band: Bob Dylan (vocal & guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+ 
+7-10, 17 acoustic with the band.
+ 
+2, 4, 7, 9, 10, 12, 17  Bob Dylan harmonica.
+ 
+14-16  Bob Dylan electric piano.
+ 
+13  John Jackson (electric slide guitar).
+ 
+Note.
+The quality of the available recording does not permit transcription of Bob Dylan's comments between songs.
+ 
+BobTalk:
+ 
+This is one of my anti-drug songs. (before Mr. Tambourine Man).
+ 
+3 new songs (16%) compared to previous concert. 1 new song for this tour.
+ 
+Stereo audience recording, 85 minutes.
+ 
+Session info updated 31 March 1992.
+
+www.bjorner.com
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+963b9533257181f998e008de47bd3af0 *bd1991-04-24d1t01.flac
+d5c6afcfc5751116960eb0a805a48c41 *bd1991-04-24d1t02.flac
+fa5808941cf6879f8b8991839dc1d34c *bd1991-04-24d1t03.flac
+79124370f0a06880c2cb1c0b2a795617 *bd1991-04-24d1t04.flac
+6cdcccb1c2e99d2134b4780382553f10 *bd1991-04-24d1t05.flac
+a2a7f22ea51eca089d6beb203439e1f0 *bd1991-04-24d1t06.flac
+932fe54b3f449532ad77ee882992079e *bd1991-04-24d1t07.flac
+f0c0f16f34728cbb87a3b4ed646ad3f4 *bd1991-04-24d1t08.flac
+8c821d1e4682ad9aff509f7ad58902d6 *bd1991-04-24d1t09.flac
+e20401caacdbe95056f259ad3c3a0c28 *bd1991-04-24d1t10.flac
+82ba22b3e506ae7e3319d9f66bb1d0e0 *bd1991-04-24d1t11.flac
+90aa8b67ba97f626e3612c4fdfc973b0 *bd1991-04-24d1t12.flac
+4f7e8e9066b0eaf0d04502673aa25803 *bd1991-04-24d1t13.flac
+12de4457ea1f2bf89c467398de85be2f *bd1991-04-24d1t14.flac
+2c57fbce9a9b5fce2ae95f10d8c52085 *bd1991-04-24d1t15.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+e2b40f4dfc949cf4c108abb949e4a666 *bd1991-04-24d2t01.flac
+7949953cd927b2be09c601f42dac6794 *bd1991-04-24d2t02.flac
+bfd580bc88d65c47741c6de51087e20d *bd1991-04-24d2t03.flac
+
+===================
+===================
+===================

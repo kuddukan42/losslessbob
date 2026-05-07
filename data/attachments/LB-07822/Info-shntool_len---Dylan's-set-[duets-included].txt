@@ -1,0 +1,21 @@
+shntool 3.0.4
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.18       52433544 B   -b-   --   ---xx   flac  0.5990  01 The boxer [Dylan & Simon].flac
+     2:07.40       22495788 B   -b-   --   ---xx   flac  0.6900  02 That'll be the day [Dylan & Simon].flac
+     2:32.59       26952544 B   -b-   --   ---xx   flac  0.6953  03 The wanderer [Dylan & Simon].flac
+     5:41.73       60324680 B   -b-   --   ---xx   flac  0.6102  04 Knockin' on heaven's door [Dylan & Simon].flac
+     2:48.60       29775632 B   -b-   --   ---xx   flac  0.6262  05 I am the man, Thomas.flac
+     6:48.60       72112588 B   -b-   --   ---xx   flac  0.6662  06 Mr. Tambourine Man.flac
+     8:11.36       86697204 B   -b-   --   ---xx   flac  0.6651  07 Desolation Row.flac
+     7:42.43       81598484 B   -b-   --   ---xx   flac  0.6136  08 It's all over now, baby blue.flac
+     8:57.17       94766056 B   -b-   --   ---xx   flac  0.5737  09 Tangled up in blue.flac
+     4:10.05       44110648 B   -b-   --   ---xx   flac  0.6076  11 All along the watchtower.flac
+     4:28.67       47432500 B   -b-   --   ---xx   flac  0.5618  11 Lay lady lay.flac
+     7:43.58       81809860 B   -b-   --   ---xx   flac  0.6356  12 Stuck inside of Mobile with the Memphis blues again.flac
+     6:24.36       67823268 B   -b-   --   ---xx   flac  0.5248  13 Not dark yet.flac
+     0:58.55       10360164 B   -b-   --   ---xx   flac  0.5105  14 (band intro).flac
+     6:40.42       70658192 B   -b-   --   ---xx   flac  0.6865  14 Highway 61 revisited.flac
+     7:35.16       80299692 B   -b-   --   ---xx   flac  0.6749  15 Like a rolling stonec.flac
+     6:18.08       66698864 B   -b-   --   ---xx   flac  0.5771  16 Blowin' in the wind.flac
+     4:18.29       45579196 B   -b-   --   ---xx   flac  0.6527  17 Not fade away.flac
+    98:26.47     1041928904 B                            0.6224  (18 files)

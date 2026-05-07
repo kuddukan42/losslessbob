@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-02-12-ss6p-pdub.flac16 
+=================== 
+=================== 
+=================== 
+59705063dea6f57f0686daea46419459  bd1999-02-12.info.txt
+c92845e39c9fea2f5de824a7c4e56653  bd1999-02-12.ss6p.pdub.sbeok.flac16 Cardondale.ffp
+2437d6b1710623a6a56b61439120c911  bd1999-02-12.ss6p.pdub.sbeok.flac16 Cardondale.md5
+9560621396c309e17daea5bcac9712ef  bd1999-02-12.ss6p.pdub.sbeok.flac16 Cardondale.st5
+e469ba36271cbffc5446425bfccce297  bd99-02-12-ss6p-pdub-LB-4695.txt
+cbd0b34473d66681266668faad22c819  d1\bd1999-02-12d1.LOG
+cc8163e83122a1b5a7fd613b91cfe5ff  d1\bd1999-02-12d1t01.flac
+b7550360a537d9d780e13481b11b4338  d1\bd1999-02-12d1t02.flac
+493235d26f4281883801aa1fb3ba2acf  d1\bd1999-02-12d1t03.flac
+17e432e9073ba8e1c897feddff113abb  d1\bd1999-02-12d1t04.flac
+6bfac6d7265a11e5083b3d8a411ac372  d1\bd1999-02-12d1t05.flac
+79d0322f930fb0b0cff433b4de66a8d2  d1\bd1999-02-12d1t06.flac
+4e77ae862dd363aef8735c39a93010f1  d1\bd1999-02-12d1t07.flac
+2b53b20be9320233582592e7c36c9200  d1\bd1999-02-12d1t08.flac
+a8d81dba0a5fbc4c33f6bfd1601b7e16  d1\bd1999-02-12d1t09.flac
+1632685995e830fb35457f078871eca0  d1\bd1999-02-12d1t10.flac
+c061d3848459833398e86600cd2ac8ca  d1\d1.shntool.txt
+356a1e69f56dfaa57e0dc325e15f22dd  d1t03.PNG
+6c084e779b7f3d01c10fe5f902387bd1  d2\bd1999-02-12d2.LOG
+6d97ec3bdc65327edbb94c0c8d0c3305  d2\bd1999-02-12d2t01.flac
+8e401cb87fad1d26f57ae4fc8aa5d10b  d2\bd1999-02-12d2t02.flac
+addef0a95a8497c0bc06a78834aa740d  d2\bd1999-02-12d2t03.flac
+99bff0af875f75a78182d17ed06aeb37  d2\bd1999-02-12d2t04.flac
+b83efea2d81927a02b399d14a8b2e0ff  d2\bd1999-02-12d2t05.flac
+264a13414ad4ba155ddbe94ce9bd4171  d2\bd1999-02-12d2t06.flac
+7936c45c78d4bb55bb56a9c1417d97f0  d2\bd1999-02-12d2t07.flac
+a1d9bd7521f4e03e414045c17e6168b3  d2\d2.shntool.txt
+ba5fc1bafe9aa55994ca542ed4b67b99  d2t05.PNG
+3190b0e8256b93baa21058060e715ce0  lbdir-bd99-02-12-ss6p-pdub.flac16.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-12-ss6p-pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+bd1999-02-12d1t01.flac:678c6752275396a9fe39c57d88fda4b7
+bd1999-02-12d1t02.flac:14b369533b25269b1cda8e37a1aefbdc
+bd1999-02-12d1t03.flac:b7a7ba6c2ad86f1eaa551943813339e1
+bd1999-02-12d1t04.flac:29748ab01836cf1856a37debfe193949
+bd1999-02-12d1t05.flac:37b3c98e576e6b2e007811c059316544
+bd1999-02-12d1t06.flac:ddf508a3928cfbe39a22c2004aba1d05
+bd1999-02-12d1t07.flac:9b53c16cede6e37494314e7175578849
+bd1999-02-12d1t08.flac:c411528653e3851d4ad63a48aad75941
+bd1999-02-12d1t09.flac:3b51daef3a234cdc7e0a87e51aebc9eb
+bd1999-02-12d1t10.flac:bad4fadf7997e365b875f4ea90d8fcee
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-12-ss6p-pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+bd1999-02-12d2t01.flac:43eaacec5d0c7b94862f141a2ac6ebe0
+bd1999-02-12d2t02.flac:e77b50e91a67944fa6f283f19dbd9a06
+bd1999-02-12d2t03.flac:c87c2a770e72f78295e94fd913f5bc07
+bd1999-02-12d2t04.flac:08b43d95837cb57915a52a452067420d
+bd1999-02-12d2t05.flac:ede8cf482bc69a87f6cc1c951f32f0a6
+bd1999-02-12d2t06.flac:79f7b54b248a681a0f6438e8a0b6bc5b
+bd1999-02-12d2t07.flac:8b0e07b28b86cbbe5d2d2374c09bfb4a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-12-ss6p-pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:33.29       48225452 B   ---   --   ---xx   flac  0.6012  bd1999-02-12d1t01.flac
+     4:50.58       51292460 B   ---   --   ---xx   flac  0.5594  bd1999-02-12d1t02.flac
+     6:13.61       65940716 B   ---   --   ---xx   flac  0.5711  bd1999-02-12d1t03.flac
+     5:46.12       61062668 B   ---   --   ---xx   flac  0.4756  bd1999-02-12d1t04.flac
+     6:12.20       65667884 B   ---   --   ---xx   flac  0.5380  bd1999-02-12d1t05.flac
+     5:32.55       58694204 B   ---   --   ---xx   flac  0.5900  bd1999-02-12d1t06.flac
+     4:24.65       46722524 B   ---   --   ---xx   flac  0.4362  bd1999-02-12d1t07.flac
+     7:08.04       75508652 B   ---   --   ---xx   flac  0.4502  bd1999-02-12d1t08.flac
+     8:37.19       91243532 B   ---   --   ---xx   flac  0.5618  bd1999-02-12d1t09.flac
+     6:59.18       73953980 B   ---   --   ---xx   flac  0.4744  bd1999-02-12d1t10.flac
+    60:18.41      638312072 B                            0.5249  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-12-ss6p-pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.25       62680844 B   ---   --   ---xx   flac  0.5408  bd1999-02-12d2t01.flac
+     7:46.55       82331804 B   ---   --   ---xx   flac  0.4805  bd1999-02-12d2t02.flac
+     9:00.38       95345420 B   ---   --   ---xx   flac  0.5439  bd1999-02-12d2t03.flac
+     5:30.54       58339052 B   ---   --   ---xx   flac  0.4870  bd1999-02-12d2t04.flac
+     6:12.20       65667884 B   ---   --   ---xx   flac  0.5507  bd1999-02-12d2t05.flac
+     5:09.59       54646412 B   ---   --   ---xx   flac  0.4384  bd1999-02-12d2t06.flac
+     5:08.12       54359468 B   ---   --   ---xx   flac  0.5450  bd1999-02-12d2t07.flac
+    44:43.38      473370884 B                            0.5143  (7 files)
+=================== 
+=================== 
+=================== 

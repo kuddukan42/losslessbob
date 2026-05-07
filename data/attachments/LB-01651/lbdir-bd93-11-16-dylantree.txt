@@ -1,0 +1,261 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-11-16-dylantree 
+=================== 
+=================== 
+=================== 
+4e8ca61f8908e5262c6e45e0e691e9e7  bd93-11-16-dylantree.txt
+d289ece1c8523179c21d32e4d49681ed  DylanSupperClubd1\01-Absolutely Sweet Marie.shn
+8984404685bc4c1c53ceaa023343baef  DylanSupperClubd1\01-Absolutely Sweet Marie.skt
+06a09aa155a13a29a03a025e22d15c17  DylanSupperClubd1\02-Lay, Lady, Lay.shn
+d93284c220334e985355b16bcbd12841  DylanSupperClubd1\02-Lay, Lady, Lay.skt
+14ed8384fa81839c4ae0cf4dc03c6f51  DylanSupperClubd1\03-Blood In My Eyes.shn
+df531b1af05d00a1b65d77a1ecc08c6c  DylanSupperClubd1\03-Blood In My Eyes.skt
+10f8421bf331675f5e29b1fe717bd7b1  DylanSupperClubd1\04-Queen Jane Approximately.shn
+d11f714c10ba876824686869b1011a7a  DylanSupperClubd1\04-Queen Jane Approximately.skt
+c5b6c249f79c9467311f41ae68ea7a53  DylanSupperClubd1\05-Tight Connection To My Heart (Has Anybody Seen My Love).shn
+cf0ef6eb1130b2c5ed76c5b41321feec  DylanSupperClubd1\05-Tight Connection To My Heart (Has Anybody Seen My Love).skt
+a606128ac2ed790aa5f9b5dad0525a59  DylanSupperClubd1\06-Disease Of Conceit.shn
+c836a1cc79618f64bb5c3e27cd728055  DylanSupperClubd1\06-Disease Of Conceit.skt
+9d0fa7d9505d09704831a499f59397de  DylanSupperClubd1\07-I Want You.shn
+8b46d7bd9fb38b1466f1481a9613f51c  DylanSupperClubd1\07-I Want You.skt
+e92075ff81f84dcbcd2548a5d26e830f  DylanSupperClubd1\08-Ring Them Bells.shn
+a81b70a49ea00e87fbcf38554328de81  DylanSupperClubd1\08-Ring Them Bells.skt
+250b8386233f9b910c630b40643b3a3a  DylanSupperClubd1\09-My Back Pages.shn
+4c2a2939be02f23637290451c5d85787  DylanSupperClubd1\09-My Back Pages.skt
+8533f9145317dd8bf5ec5716664058b4  DylanSupperClubd1\10-Forever Young.shn
+cdc2b632ee2a6d6ac5d6b3783ab5be7a  DylanSupperClubd1\10-Forever Young.skt
+fa53f46ea0960ec349cfe33ad12ab3cb  DylanSupperClubd1\README - Supper Club DAT - Disc 1.txt
+0e0302819380ea016557d437a28ebbd1  DylanSupperClubd1\Supper Club DAT - Disc 1 - SHN.md5
+5cd9962f2b374cc42683a2c5095c5b64  DylanSupperClubd1\Supper Club DAT - Disc 1 - WAV.md5
+d0d986eab6745db503cd9fd1fb0d7b49  DylanSupperClubd1\Supper Club DAT - Disc 1.log
+69d14f8eae5aa4286afc8e2eb21a8ac8  DylanSupperClubd1\Supper_Club_back.jpeg
+b329a1c80f031647b1f54d22708b32ad  DylanSupperClubd1\Supper_Club_front.jpeg
+65f62c56c1527100dbb3e85d4dec243b  DylanSupperClubd1\supper_club_upgrade_1_back.jpeg
+c4563295a56c92a256a5d7f8697a59de  DylanSupperClubd1\supper_club_upgrade_1_front.jpeg
+766ddedc0dc7f4911ee932e8a40c6729  DylanSupperClubd2\01-Ragged And Dirty.shn
+2217dc09e8afe5949be4de4f5fdba074  DylanSupperClubd2\01-Ragged And Dirty.skt
+df658b5e0ea40cced3c7375bda6aa111  DylanSupperClubd2\02-Lay, Lady, Lay.shn
+86fa6e2ed0859963845f90e6eec889bb  DylanSupperClubd2\02-Lay, Lady, Lay.skt
+58a955affee018a425f9b3268e3853c4  DylanSupperClubd2\03-I'll Be Your Baby Tonight.shn
+25e3ca4292f61a4874e689c1d7f3937f  DylanSupperClubd2\03-I'll Be Your Baby Tonight.skt
+1de180f89d4cab4c86aee9beb035221a  DylanSupperClubd2\04-Queen Jane Approximately.shn
+9f1c6e201aeebf4a5c5e3284f18fe3e9  DylanSupperClubd2\04-Queen Jane Approximately.skt
+e39c29ae7774b03ed59c186c93cc7840  DylanSupperClubd2\05-Jack-A-Roe.shn
+1333b03eb18a133c40814bc506adf850  DylanSupperClubd2\05-Jack-A-Roe.skt
+60aa7a8b7d66cb85e4a69618ab3f5df0  DylanSupperClubd2\06-One Too Many Mornings.shn
+20c7d66aeb06f5cb3339eeeebdaff04e  DylanSupperClubd2\06-One Too Many Mornings.skt
+7bcc1e7e2580382a23740ba0e65f5cd3  DylanSupperClubd2\07-I Want You.shn
+494545af0bb1dd96dd58361229c4f068  DylanSupperClubd2\07-I Want You.skt
+1f2f1bb94132071fdd376d4c3316b14f  DylanSupperClubd2\08-Ring Them Bells.shn
+26cda0208c75818c544143042eb556b6  DylanSupperClubd2\08-Ring Them Bells.skt
+372e15ec0a32b967fdb4ec3733a4a474  DylanSupperClubd2\09-My Back Pages.shn
+34959aaa1cb48e386a9577f33357e549  DylanSupperClubd2\09-My Back Pages.skt
+e47df00318769f5a17fcd19bfcef4bff  DylanSupperClubd2\10-Forever Young.shn
+5aef5cd4fa80598b3751c240808880df  DylanSupperClubd2\10-Forever Young.skt
+754ff28679a2d3ba355bb205eaca6e56  DylanSupperClubd2\README - Supper Club DAT - Disc 2.txt
+fdee4d93b3a2aa0d7c2cfc8c5e77040a  DylanSupperClubd2\Supper Club DAT - Disc 2 - SHN.md5
+e6624462e26fb1d1cb2ee59a0f6f8feb  DylanSupperClubd2\Supper Club DAT - Disc 2 - WAV.md5
+f8c883f06c1b7308e4e5a583d6afb0ca  DylanSupperClubd2\Supper Club DAT - Disc 2.log
+2c74e46bf0fe90fc7fdc7ece23756b51  DylanSupperClubd3\01-Ragged And Dirty.shn
+d7d22391776c062010bdd884413d8eeb  DylanSupperClubd3\01-Ragged And Dirty.skt
+57f684f8db8a2889cb7f965c2884d901  DylanSupperClubd3\02-One More Cup Of Coffee (Valley Below).shn
+3c31965417aaf6b9947395a28dd57888  DylanSupperClubd3\02-One More Cup Of Coffee (Valley Below).skt
+0ab9722d9f4a7ecc83456b9f39691116  DylanSupperClubd3\03-Blood In My Eyes.shn
+2664b6ce2cc169eb454859881248fb14  DylanSupperClubd3\03-Blood In My Eyes.skt
+ec991e74876b79ca0aed30886d335f48  DylanSupperClubd3\04-Queen Jane Approximately.shn
+cf6f992bd5f96b6c90e1b9bb36c36393  DylanSupperClubd3\04-Queen Jane Approximately.skt
+27ddcc1318927491591dfe100870d086  DylanSupperClubd3\05-I'll Be Your Baby Tonight.shn
+daf937bc988bb8422ce4b946da11623c  DylanSupperClubd3\05-I'll Be Your Baby Tonight.skt
+98140b30aa17ef4840210db944841de5  DylanSupperClubd3\06-Disease Of Conceit.shn
+47abdab4e8b759bccd4639c8bca8fb44  DylanSupperClubd3\06-Disease Of Conceit.skt
+ad2ec7f92e398e9e7c08956323a88fe2  DylanSupperClubd3\07-I Want You.shn
+172b192d9b99283f147d3916189a3e0c  DylanSupperClubd3\07-I Want You.skt
+77a3b29c404c2a2a29bcdd4d6f112ab8  DylanSupperClubd3\08-Ring Them Bells.shn
+c93cfea93300669dc5525b968424e1e0  DylanSupperClubd3\08-Ring Them Bells.skt
+4115e09021a027f1588ba786de9ee5dd  DylanSupperClubd3\09-My Back Pages.shn
+4851845f363f9874b3fdd6b834347055  DylanSupperClubd3\09-My Back Pages.skt
+804447da0d7282efc7819d13b6e78c0e  DylanSupperClubd3\10-Forever Young.shn
+d6a43cb3584fb499726f327ca82de47a  DylanSupperClubd3\10-Forever Young.skt
+0edb63361300353f9b9ed2f85416e7d2  DylanSupperClubd3\README - Supper Club DAT - Disc 3.txt
+2053bd86f9a12d09d5edfae3c3ae1ed0  DylanSupperClubd3\Supper Club DAT - Disc 3 - SHN.md5
+6108bc41065621e00fdeee30f71c303b  DylanSupperClubd3\Supper Club DAT - Disc 3 - WAV.md5
+fa3b23b17b4f5e4f4d5a9c76cf7694e0  DylanSupperClubd3\Supper Club DAT - Disc 3.log
+27a4c262aebd827df604897f9df21ba9  DylanSupperClubd3\supper_club_upgrade_2_back.jpeg
+52a9701109b2b3a1718287257420d735  DylanSupperClubd3\supper_club_upgrade_2_front.jpeg
+703c7c259dc5e1b34692a61443ef5215  DylanSupperClubd4\01-Ragged And Dirty.shn
+447e43f8e90806522b7572a9167f1492  DylanSupperClubd4\01-Ragged And Dirty.skt
+d3824f7048ef8e0791a6ef233d40733f  DylanSupperClubd4\02-Lay, Lady, Lay.shn
+3bab10ed413b418270470c2381fb098b  DylanSupperClubd4\02-Lay, Lady, Lay.skt
+8540a0685db0ed5462d1d0626eb0afdc  DylanSupperClubd4\03-Tight Connection To My Heart (Has Anybody Seen My Love).shn
+e1fd246a8cd95e087f4ac39326aad119  DylanSupperClubd4\03-Tight Connection To My Heart (Has Anybody Seen My Love).skt
+d771b9de48ec55d969803cd5ab0e20f7  DylanSupperClubd4\04-Weeping Willow.shn
+24c290f7374f8fc95cce4627747a5dff  DylanSupperClubd4\04-Weeping Willow.skt
+b759aaf223a736cb3a4e9ae1dfc35bbe  DylanSupperClubd4\05-Delia.shn
+1c4e4d2697e5becf8125c510db28050e  DylanSupperClubd4\05-Delia.skt
+d0b09f40160e96d22a96dc3bb88e487c  DylanSupperClubd4\06-Jim Jones.shn
+9c865e352dd8c6b03d63695d5ae4998a  DylanSupperClubd4\06-Jim Jones.skt
+dc85aeac8782164b399a07715af9bed3  DylanSupperClubd4\07-Queen Jane Approximately.shn
+3c19a8ab982b61f2b11737b4d8539751  DylanSupperClubd4\07-Queen Jane Approximately.skt
+0771775973ce2c6ae8628838cf21d1e9  DylanSupperClubd4\08-Ring Them Bells.shn
+5e6a936abc4a24656b46276f37d84119  DylanSupperClubd4\08-Ring Them Bells.skt
+0341f910250ce0f42c2a4706e83b1e35  DylanSupperClubd4\09-Jack-A-Roe.shn
+bbca0edcc4bf1edce24a9a6b6e62c715  DylanSupperClubd4\09-Jack-A-Roe.skt
+ed79013060aa363f01570f917bf3fb32  DylanSupperClubd4\10-Forever Young.shn
+0174773998b89e3fe87ff7106ca1de64  DylanSupperClubd4\10-Forever Young.skt
+b81f0284e4f945f5cdf82aeb130d25a8  DylanSupperClubd4\11-I Shall Be Released.shn
+7692b242919b4198efec0cb4051e7eac  DylanSupperClubd4\11-I Shall Be Released.skt
+a9d8f74bf97232b38c20fe9e4517dd5d  DylanSupperClubd4\README - Supper Club DAT - Disc 4.txt
+2178d88fed05d65c88061440143e2c76  DylanSupperClubd4\Supper Club DAT - Disc 4 - SHN.md5
+a86be99dffaa02095444b67b06bebba3  DylanSupperClubd4\Supper Club DAT - Disc 4 - WAV.md5
+01c39987a740e3c032862248ffb8da21  DylanSupperClubd4\Supper Club DAT - Disc 4.log
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-11-16-dylantree\DylanSupperClubd1 
+=================== 
+=================== 
+=================== 
+3bbb5ceb4a1bfc472c09380a27157ee1  [shntool]  01-Absolutely_Sweet_Marie.wav
+31758a90a05f33a262cdb2e82d57f85d  [shntool]  02-Lay,_Lady,_Lay.wav
+123b2fa6e29e4afef1e9be4f0a662de7  [shntool]  03-Blood_In_My_Eyes.wav
+6876195e3131c7faa6dd0bc078030e35  [shntool]  04-Queen_Jane_Approximately.wav
+ca5d165f5b8cb46413ce32430b8d1ef0  [shntool]  05-Tight_Connection_To_My_Heart__Has_Anybody_Seen_My_Love_.wav
+8998512869fd913ec934d56cb4739388  [shntool]  06-Disease_Of_Conceit.wav
+a381e3250c9a7430d571df23e99373a5  [shntool]  07-I_Want_You.wav
+c8923fe8da0ccc0aaa91076e859e10bb  [shntool]  08-Ring_Them_Bells.wav
+3432476bdc35184e9648c0f0be9a3b1d  [shntool]  09-My_Back_Pages.wav
+a2d823b72255f41dfa292a6110e81630  [shntool]  10-Forever_Young.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-11-16-dylantree\DylanSupperClubd3 
+=================== 
+=================== 
+=================== 
+f414efd4e48ac65dc3bde0d2337f6d1d  [shntool]  01-Ragged_And_Dirty.wav
+b12e879d64df3df80041d3209b9e2dc5  [shntool]  02-One_More_Cup_Of_Coffee__Valley_Below_.wav
+0083feb456fd754dbd54c11b02c07e0b  [shntool]  03-Blood_In_My_Eyes.wav
+998e2805db0d4388706bba56af4a8c30  [shntool]  04-Queen_Jane_Approximately.wav
+12e074051ccbe4973c255d220dd163a3  [shntool]  05-I_ll_Be_Your_Baby_Tonight.wav
+1799738616bd8dc1b87d9aed44f3ebcc  [shntool]  06-Disease_Of_Conceit.wav
+1d36a0169544631108209ed3976750d9  [shntool]  07-I_Want_You.wav
+6c25477f07328bc6ae5e616ccf3b513a  [shntool]  08-Ring_Them_Bells.wav
+e79288e85b1546a98858564e34f4f77e  [shntool]  09-My_Back_Pages.wav
+0dc57f964ddbe3bcffc8c53e1c247556  [shntool]  10-Forever_Young.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-11-16-dylantree\DylanSupperClubd4 
+=================== 
+=================== 
+=================== 
+8ae87ae225ce68a901467a2f80c0eba0  [shntool]  01-Ragged_And_Dirty.wav
+71abca2ba54968773d28f502f77224f5  [shntool]  02-Lay,_Lady,_Lay.wav
+ea4576a9f5c5c07e0110c7b7d4ea1e27  [shntool]  03-Tight_Connection_To_My_Heart__Has_Anybody_Seen_My_Love_.wav
+c8cc98a6193300232a09f8de8f5324ce  [shntool]  04-Weeping_Willow.wav
+62f36ff5d79879037d9f57ce77fa4493  [shntool]  05-Delia.wav
+eab95b04cc78ef2b6e555132d675fd93  [shntool]  06-Jim_Jones.wav
+cd9877388d86f93f10e28ccbc7ddc1c9  [shntool]  07-Queen_Jane_Approximately.wav
+fd4f4fce807ae8d4309d478f2f86d79a  [shntool]  08-Ring_Them_Bells.wav
+995b7058476f1fd51cb1a0a2ff3055a3  [shntool]  09-Jack-A-Roe.wav
+98786a0ae335c3e52f493dd894a0753b  [shntool]  10-Forever_Young.wav
+bd20d2fcae93454a6138270e405381ca  [shntool]  11-I_Shall_Be_Released.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-11-16-dylantree\DylanSupperClubd2 
+=================== 
+=================== 
+=================== 
+2a2930304aa0aa925bf65cd16b388772  [shntool]  01-Ragged_And_Dirty.wav
+50af8b21881be7963166707f8445ca6c  [shntool]  02-Lay,_Lady,_Lay.wav
+ace729bc495476afb8b428a1e426c73e  [shntool]  03-I_ll_Be_Your_Baby_Tonight.wav
+a1227a2a32942e9b3a4f0c5b9ef5a9f2  [shntool]  04-Queen_Jane_Approximately.wav
+ab314806dafd47df578eb9389a5bb830  [shntool]  05-Jack-A-Roe.wav
+0fa44d7ab9a05e9e75b33b32deaf8c1e  [shntool]  06-One_Too_Many_Mornings.wav
+7730a47adb44794f52813aa38590a673  [shntool]  07-I_Want_You.wav
+f02865418b250efec4aafe8c17f4485f  [shntool]  08-Ring_Them_Bells.wav
+d69c63d2a86693ba9b2d61606e92ff01  [shntool]  09-My_Back_Pages.wav
+8eb7deebe86cb249c1c16b61110e6e59  [shntool]  10-Forever_Young.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16-dylantree\DylanSupperClubd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.03       48341068 B   -b-   --   -----    wav  1.0000  01-Absolutely_Sweet_Marie.wav
+     5:11.46       54968636 B   ---   --   -----    wav  1.0000  02-Lay,_Lady,_Lay.wav
+     4:14.08       44824460 B   ---   --   -----    wav  1.0000  03-Blood_In_My_Eyes.wav
+     9:10.34       97100012 B   ---   --   -----    wav  1.0000  04-Queen_Jane_Approximately.wav
+     7:59.74       84669692 B   ---   --   -----    wav  1.0000  05-Tight_Connection_To_My_Heart__Has_Anybody_Seen_My_Love_.wav
+     5:55.33       62699660 B   ---   --   -----    wav  1.0000  06-Disease_Of_Conceit.wav
+     6:05.18       64428380 B   ---   --   -----    wav  1.0000  07-I_Want_You.wav
+     6:05.14       64418972 B   ---   --   -----    wav  1.0000  08-Ring_Them_Bells.wav
+     6:01.01       63682796 B   ---   --   -----    wav  1.0000  09-My_Back_Pages.wav
+     6:28.52       68565180 B   -b-   --   -----    wav  1.0000  10-Forever_Young.wav
+    61:45.58      653698856 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16-dylantree\DylanSupperClubd3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.35       47005132 B   -b-   --   -----    wav  1.0000  01-Ragged_And_Dirty.wav
+     6:05.25       64444844 B   ---   --   -----    wav  1.0000  02-One_More_Cup_Of_Coffee__Valley_Below_.wav
+     5:41.24       60208892 B   ---   --   -----    wav  1.0000  03-Blood_In_My_Eyes.wav
+     8:33.26       90554396 B   ---   --   -----    wav  1.0000  04-Queen_Jane_Approximately.wav
+     5:15.14       55598972 B   ---   --   -----    wav  1.0000  05-I_ll_Be_Your_Baby_Tonight.wav
+     5:30.46       58320236 B   ---   --   -----    wav  1.0000  06-Disease_Of_Conceit.wav
+     5:57.28       63040700 B   ---   --   -----    wav  1.0000  07-I_Want_You.wav
+     5:02.30       53343404 B   ---   --   -----    wav  1.0000  08-Ring_Them_Bells.wav
+     5:58.22       63202988 B   ---   --   -----    wav  1.0000  09-My_Back_Pages.wav
+     7:23.35       78227196 B   -b-   --   -----    wav  1.0000  10-Forever_Young.wav
+    59:53.60      633946760 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16-dylantree\DylanSupperClubd4 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.73       50093308 B   -b-   --   -----    wav  1.0000  01-Ragged_And_Dirty.wav
+     5:00.19       52964732 B   ---   --   -----    wav  1.0000  02-Lay,_Lady,_Lay.wav
+     7:03.45       74723084 B   ---   --   -----    wav  1.0000  03-Tight_Connection_To_My_Heart__Has_Anybody_Seen_My_Love_.wav
+     4:25.04       46755452 B   ---   --   -----    wav  1.0000  04-Weeping_Willow.wav
+     7:24.21       78371036 B   ---   --   -----    wav  1.0000  05-Delia.wav
+     5:27.14       57715772 B   ---   --   -----    wav  1.0000  06-Jim_Jones.wav
+     7:45.26       82087196 B   ---   --   -----    wav  1.0000  07-Queen_Jane_Approximately.wav
+     4:39.41       49312076 B   ---   --   -----    wav  1.0000  08-Ring_Them_Bells.wav
+     5:54.37       62532668 B   ---   --   -----    wav  1.0000  09-Jack-A-Roe.wav
+     9:02.34       95688812 B   ---   --   -----    wav  1.0000  10-Forever_Young.wav
+     6:30.17       68835660 B   -b-   --   -----    wav  1.0000  11-I_Shall_Be_Released.wav
+    67:56.31      719079796 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16-dylantree\DylanSupperClubd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:41.37       49655836 B   -b-   --   -----    wav  1.0000  01-Ragged_And_Dirty.wav
+     4:47.47       50737388 B   ---   --   -----    wav  1.0000  02-Lay,_Lady,_Lay.wav
+     5:08.24       54387692 B   ---   --   -----    wav  1.0000  03-I_ll_Be_Your_Baby_Tonight.wav
+     8:21.60       88517564 B   ---   --   -----    wav  1.0000  04-Queen_Jane_Approximately.wav
+     6:29.52       68741948 B   ---   --   -----    wav  1.0000  05-Jack-A-Roe.wav
+     5:36.01       59272796 B   ---   --   -----    wav  1.0000  06-One_Too_Many_Mornings.wav
+     6:09.55       65221004 B   ---   --   -----    wav  1.0000  07-I_Want_You.wav
+     5:41.42       60251228 B   ---   --   -----    wav  1.0000  08-Ring_Them_Bells.wav
+     6:03.16       64070876 B   ---   --   -----    wav  1.0000  09-My_Back_Pages.wav
+     7:09.14       75708204 B   -b-   --   -----    wav  1.0000  10-Forever_Young.wav
+    60:08.48      636564536 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 

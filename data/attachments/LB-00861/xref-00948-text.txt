@@ -1,0 +1,193 @@
+===================
+===================
+===================
+=== 1979-11-16 Fox Warfield Theatre, San Francisco, California, USA.md5
+===================
+===================
+===================
+ab48181eaa2f1e4efdd3f23e2e4e67e3 *Artwork and info\1979-11-16 c-23b.JPG
+98cef4e6cebde769cc9ec8afce36cb9f *Artwork and info\1979-11-16 c-23cd.JPG
+9e00e8a913d22c6a7e8d3678f7b0a223 *Artwork and info\1979-11-16 c-23f.JPG
+3197193bc18525e31e57ad22d9ff8731 *Artwork and info\1979-11-16 Fox Warfield Theatre, San Francisco, California, USA back.jpg
+bbc7ed06cb7aa48326f222ac353b8b4b *Artwork and info\1979-11-16 Fox Warfield Theatre, San Francisco, California, USA cover.jpg
+84d076da59e769030246a2105268abc3 *Artwork and info\1979-11-16 Fox Warfield Theatre, San Francisco, California, USA.txt
+25c447e05d0e9514e2719847c8e0f48c *CD1\01 Gotta serve somebody.flac
+abb5cc33d8c53bd61d39db00364a9b22 *CD1\02 I believe in you.flac
+095f51a2714d0c50b134aca52e6194f5 *CD1\03 When you gonna wake up.flac
+bfcefcebfdb5bba9e44c2f619760eda5 *CD1\04 When he returns.flac
+9bdfc105d25a37c25d171a3c434c7194 *CD1\05 Man gave names to all the animals.flac
+3b3d2947b56563e3321e645ee81d64df *CD1\06 Precious angel.flac
+73507e92e04ce9327c0ca0614f3af3ef *CD1\07 Slow train.flac
+6e713db2ec9f4f174001886a47339941 *CD1\08 Covenant woman.flac
+887086577e72823ae50ab0e54e30aa36 *CD1\09 Ain't no man righteous, no not one.flac
+93964db5fc24492224109c7036dd91b6 *CD1\11 Gonna change my way of thinking.flac
+83f20abe3a7cd3d1f1684bb466e35b89 *CD1\12 Do right to me baby (do unto others).flac
+cfba75e14898e896ad861f2b94847d49 *CD1\13 Solid rock.flac
+db9c5a31303b65f383a4b596ffa7afb2 *CD1\FLAC CD1.md5
+9e04c3596159605565a95fb1fde5e3a8 *CD2\14 Saving grace.flac
+6888992ca207fcc3e0e8891988b8d33c *CD2\15 Saved.flac
+e434447d8679f781b2f3df43b1eb176b *CD2\16 What can I do for you.flac
+ea5548fefaba74e0d157b9c0f8667859 *CD2\17 In the garden.flac
+f5136d39def36b79adfd654222e53fd3 *CD2\18 Blessed be the name.flac
+0fdbd72336d69953235abefd478d8330 *CD2\19 Pressing on.flac
+e40dbb2fcfd87353fbc72ab9b1adad63 *CD2\FLAC CD2.md5
+dddf8338ad24f95817290312ff878735 *CD3 Fillers (unidentified venues)\20 Mr. Tambourine Man.flac
+f382293b33a69bfa7d93b9c6ba8871ff *CD3 Fillers (unidentified venues)\21 The times they are a-changin'.flac
+09e512f2fb1ace50f0212b63ddd72a65 *CD3 Fillers (unidentified venues)\22 When I paint my masterpiece.flac
+ab06dfdd7bc5708bbc0b58b4641f7b4b *CD3 Fillers (unidentified venues)\23 Seven days.flac
+03a5cbb63f9a9a9614c88e99164be31c *CD3 Fillers (unidentified venues)\24 Blowin' in the wind [w Joan Baez].flac
+f823d0f645e37edc639c14448867ab5a *CD3 Fillers (unidentified venues)\25 I dreamed I saw St. Augustine.flac
+48f68cbb4a0fd534e45c4868c9f5513d *CD3 Fillers (unidentified venues)\26 Diamonds & Rust [Joan Baez].flac
+394bd517dbe41ae208def1d2034e4346 *CD3 Fillers (unidentified venues)\27 Like a rolling stone.flac
+9daaa9cdad57a63d6460c0d69611aa3a *CD3 Fillers (unidentified venues)\28 Isis.flac
+5c1e5df777f7f930a95eacb6a99ef8a9 *CD3 Fillers (unidentified venues)\FLAC CD3 Fillers [unidentified venue(s)].md5
+===================
+===================
+===================
+=== 1979-11-16 Fox Warfield Theatre, San Francisco, California, USA.txt
+===================
+===================
+===================
+Fox Warfield Theatre
+San Francisco, California
+November 16, 1979
+
+*  This recording is the same as LB-0861; but with a different MD5 checksum!  *
+NOTE: given song titles
+
+Taper: unidentified
+Lineage: received in a trade as SHNs; later converted to FLACs with song titles
+LB Rating: A-
+Frequency analysis: full spectrum
+
+LB-0861, (74min+31min), excellent sound, a little clearer and brighter than "Contract with the Lord" bootleg, downloaded from a.b.m.s.d. 2/03, Not sure of source/lineage; see this link for some information on this show: http://www.angelfire.com/rant/gospelproject/autumn/16nov79.html -- this leads to guess that this is number 3 recording "The third (161179PBMD) is a mono audience recording and appears to be simply another incarnation of the 161179JSMD master. It lacks all eight songs performed by the band, but includes the band introductions preceding "Blessed Is The Name." This recording is also superb, has a number of very minor edits between songs (suggesting digital remastering?) and has a destructive edit clipping the last few notes of "In The Garden.""
+
+After d1t9 God Uses Ordinary People [sung by Mona Lisa Young] - MISSING - Not on original; edit at d2t3 6:20 - on original, there was a small pop on the downloaded version at d2t5 1:25 that was subsequently fixed in cooledit2000 by amplification.
+Uploader's note: NOT fixed on this edition.
+
+01. Gotta Serve Somebody [06:50]
+02. I Believe In You [04:58]
+03. When You Gonna Wake Up [05:49]
+04. When He Returns [04:56]
+05. Man Gave Names To All The Animals [05:27]
+06. Precious Angel [06:31]
+07. Slow Train [06:30]
+08. Covenant Woman [06:30]
+09. Ain't No Man Righteous, No Not One [05:00]
+10. God Uses Ordinary People (?) [Mona Lisa Young]** 
+11. Gonna Change My Way Of Thinking [05:08]
+12. Do Right To Me Baby (Do Unto Others) [05:59]
+13. Solid Rock [04:39]
+Total time: [68:21]
+**) NOT on this release!
+
+14. Saving Grace [04:51]
+15. Saved (Bob Dylan/Tim Drummond) [04:44]
+16. What Can I Do For You? [05:41]
+17. In The Garden [07:51]
+18. Blessed Be The Name [04:46]
+19. Pressing On [07:27]
+Total time: [35:22]
+
+Fillers: from unidentified dates and venues:
+20. Mr. Tambourine Man
+21. The Times They Are A-Changin'
+22. When I Paint My Masterpeice
+23. Seven Days
+24. Blowin' In The Wind
+25. I Dreamed I Saw St. Augustine
+26. Diamonds & Rust [Joan Baez]
+27. Like A Rolling Stone
+28. Isis
+
+Concert # 14 of the First Gospel Tour
+
+Concert # 14 with the First Gospel Band:
+Bob Dylan (vocal & guitar)
+Fred Tackett (guitar)
+Spooner Oldham (keyboards)
+Tim Drummond (bass)
+Terry Young (keyboards)
+Jim Keltner (drums)
+Regina Havis, Helena Springs, Mona Lisa Young (background vocals)
+
+NOTE: Live debut of Ain't No Man Righteous, No Not One
+
+4 Bob Dylan solo (vocal & guitar) with Spooner Oldham (piano)
+13 Bob Dylan (harmonica)
+17 Bob Dylan (piano)
+
+BobTalk:
+Thank you. You know we read in the newspaper every day, what a horrible situation this world is in. Now God chooses the foolish things in this world to confound the wise. Anyway, we know this world is going to be destroyed, we know that. Christ will set up his kingdom in Jerusalem for a thousand years where the lion will lie down with the lamb. Have you heard that before? [applause] Have you heard that before? [applause] I'm just curious to know, how many believe that? [more applause] All right. This is called "Slow Train Coming". It's been coming a long time and it's picking up speed.
+We're gonna do something right here that we haven't done before. This is a song that nobody knows. Nobody in this band even knows it, that's how I can tell who really wants to stick with me and who doesn't. Well, Regina knows it and I'm gonna call her up and have her sing it for you. If I forget the lyrics, I know she won't. This is called "No Man Righteous, No, Not One". (plays Ain't No Man Righteous, No Not One) All right, Yes, I, I'm sure that's going to be on the next album. Regina, I want you to hear her sing another song. Ah, wait. Mona, Mona Lisa's gonna come and sing a song for you, I know you'll wanna hear. Yeah, I know you'll wanna hear it and it's good for you to hear it. It's called, "God Uses Ordinary People."
+
+Thank you. You know, I really want to thank all you people for all the letters and all the cards and all the encouragement. It's very kind. [audience: "God loves you Bobby!"] He loves you too, don't you forget it. All right, this is called, well this is a song we been working in on. And we hope to record sometime. Maybe it'll be out uh-- they hold my records so long you know . . . You might hear it, in a month from now, maybe a year from now, but remember whenever you do remember you heard it first right here. I tell you San Francisco is a great town. We know that there're a lot of things wrong with it, but we, there are a lot of people here that we love. And we're gonna miss it too. Anyway, this is called "Hanging On To A Solid Rock, Made Before The Foundation Of The World"
+
+That's right. You know, Satan's called the God of this world, that's true, and it's such a wonderful feeling when you've been delivered from that. (before Saved)
+
+On the keyboards tonight, give him a warm hand, Spooner Oldham. On the other set of keyboards, Terry Young. On the lead guitar, Fred Tackett. On..., playing the drums tonight, Jim Keltner. And on bass guitar, Tim Drummond. Singing on the bottom tonight is Helena Springs. Singing in the middle is Regina McCreary. Singing on top is Mona Lisa Young. I'll say it again, it's just like, we've been here a while now, it does feel just like the first night however. I wish we could stay longer, but we can't, we got to go. So we want to give all praise and glory to God tonight. Ain't nobody down here deserve any. All right. (before Blessed Be The Name)
+
+BOOTLEGS:
+History Vols. 16-17 (LP)
+San Franciscan Night (LP)
+Contract With The Lord Silver Rarities IRA 12
+
+REFERENCES:
+Clinton Heylin: Saved! The Gospel Speeches of Bob Dylan. Hanuman Books 1990, pages 22-24 and 51
+Watt Alexander: The Gospel Project
+
+Stereo audience recording, 95 minutes
+
+Review (http://www.bobsboots.com/CdS/cd-c23.html)
+The powerful Warfield concert begins on this disc and is concluded on the companion disc "Part 2".  This near flawless audience recording preserves it in all its glory. This gospel show explodes with vocal passion to be found in few other Dylan periods. If you're a fan of Dylan's gospel period, this set is a 'Must-have'. 
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+25c447e05d0e9514e2719847c8e0f48c *01 Gotta serve somebody.flac
+abb5cc33d8c53bd61d39db00364a9b22 *02 I believe in you.flac
+095f51a2714d0c50b134aca52e6194f5 *03 When you gonna wake up.flac
+bfcefcebfdb5bba9e44c2f619760eda5 *04 When he returns.flac
+9bdfc105d25a37c25d171a3c434c7194 *05 Man gave names to all the animals.flac
+3b3d2947b56563e3321e645ee81d64df *06 Precious angel.flac
+73507e92e04ce9327c0ca0614f3af3ef *07 Slow train.flac
+6e713db2ec9f4f174001886a47339941 *08 Covenant woman.flac
+887086577e72823ae50ab0e54e30aa36 *09 Ain't no man righteous, no not one.flac
+93964db5fc24492224109c7036dd91b6 *11 Gonna change my way of thinking.flac
+83f20abe3a7cd3d1f1684bb466e35b89 *12 Do right to me baby (do unto others).flac
+cfba75e14898e896ad861f2b94847d49 *13 Solid rock.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+9e04c3596159605565a95fb1fde5e3a8 *14 Saving grace.flac
+6888992ca207fcc3e0e8891988b8d33c *15 Saved.flac
+e434447d8679f781b2f3df43b1eb176b *16 What can I do for you.flac
+ea5548fefaba74e0d157b9c0f8667859 *17 In the garden.flac
+f5136d39def36b79adfd654222e53fd3 *18 Blessed be the name.flac
+0fdbd72336d69953235abefd478d8330 *19 Pressing on.flac
+===================
+===================
+===================
+=== FLAC CD3 Fillers [unidentified venue(s)].md5
+===================
+===================
+===================
+dddf8338ad24f95817290312ff878735 *20 Mr. Tambourine Man.flac
+f382293b33a69bfa7d93b9c6ba8871ff *21 The times they are a-changin'.flac
+09e512f2fb1ace50f0212b63ddd72a65 *22 When I paint my masterpiece.flac
+ab06dfdd7bc5708bbc0b58b4641f7b4b *23 Seven days.flac
+03a5cbb63f9a9a9614c88e99164be31c *24 Blowin' in the wind [w Joan Baez].flac
+f823d0f645e37edc639c14448867ab5a *25 I dreamed I saw St. Augustine.flac
+48f68cbb4a0fd534e45c4868c9f5513d *26 Diamonds & Rust [Joan Baez].flac
+394bd517dbe41ae208def1d2034e4346 *27 Like a rolling stone.flac
+9daaa9cdad57a63d6460c0d69611aa3a *28 Isis.flac
+===================
+===================
+===================

@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-21-lk.flacf 
+=================== 
+=================== 
+=================== 
+c7ae399b296efa9f7c23e7770b172b25  01 Gotta serve somebody.flac
+f5d006c1a98fdb700ec80114c076e57d  02 I believe in you.flac
+3128352340751481e349af21b886eca6  03 Like a rolling stone.flac
+33e196633712a65c982bd76aa2054c1e  04 I want you.flac
+ffe6b81a2d0abea8f8eaa28544269d36  05 Man gave names to all the animals.flac
+d2a0d8de1e4155f787126facf10fa0e7  06 Maggie's farm.flac
+9a51ec084109d5031d975725ea2ddeab  07 Girl of the North Country.flac
+4c309c1de7b485131fb6a8d346416558  08 Ballad of a thin man.flac
+b0080cc5bc074c0bea820e84616b0539  09 In the summertime.flac
+82a293207a7b7e7136c585c65e344d38  10 All along the watchtower.flac
+5ac23705973a625ffa9206713a1ee74c  11 Forever young.flac
+abe97bf994a86b32e315866de4636e96  12 Gamblin' man.flac
+1addf487374d43ec6b8286d65dff3cc9  13 The times they are a-changin'.flac
+e2482bf580f0ab77c2bbd6508cd82410  14 A hard rain's a-gonna fall.flac
+eda79b9d2087131646e78b94d80b3dcc  15 It's all in the game.flac
+52b79817a673329bb10789fa3912d9bc  16 Slow train.flac
+153f95d0bb7c4387566e618cd2f3cdd7  17 Masters of war [cut-in].flac
+8d91a8dbadafd54d95e851993f324255  18 Mr. Tambourine man.flac
+a55792f10be6a48a19b9dd99ea5c18de  19 Solid rock.flac
+daa47c73dab4482b2dcfa6b654e3240c  20 Just like a woman.flac
+b0ac425f52c1d4a4a32abcb461055ab7  21 Heart of mine.flac
+b1511bd259d79691c0bb009dc2a74f00  22 Senor (Tales of Yankee Power).flac
+9fd76b59ac3ead54f8932ce23b3c7bf9  23 When you gonna wake up.flac
+e758a869daec77e39d797938407f0d08  24 In the garden.flac
+5e34a0cdce16168bfc6c92b7cd64550e  25 Blowin' in the wind.flac
+a44678a7e7cae3b48f435eb594a58bb9  26 It ain't me, babe.flac
+b007adb626572e8129ebead8da36eb9f  27 No money down.flac
+c84b219b66a798813fea3db368f6d05e  Boston - 21.10.1981 - F.jpg
+626264dab01705cb51a722d4f9053925  Boston - 21.10.1981 - R.jpg
+eb5056968f85eaf00e287cb82bf4c821  Dylan - Boston Oct. 21st 1981 Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-21-lk.flacf 
+=================== 
+=================== 
+=================== 
+01 gotta serve somebody.flac:498d8d765bc2b8ab0d0ca658a7df9f2d
+02 i believe in you.flac:ddd365660ac1ab9959cd5262f2ed9c44
+03 like a rolling stone.flac:68587b3cae3d3e52f817697d18df64df
+04 i want you.flac:695b9fd4e18349451e20f0e8e3beb396
+05 man gave names to all the animals.flac:8cf09eefcc744d9ac415545e6230bf95
+06 maggie's farm.flac:bdc54d550989400ec231397d266a5ff4
+07 girl of the north country.flac:a01f350335cfcaf7ab861bc1a9af9bc0
+08 ballad of a thin man.flac:d6f90527e637b37390265b77be5c64ab
+09 in the summertime.flac:955a4f052240e4450da3109a55a1cce6
+10 all along the watchtower.flac:9e4a59985b91821cb24a1ea2056b33e3
+11 forever young.flac:975c6017708cfa0330466e1406b19b9f
+12 gamblin' man.flac:9663525b2fc941db30b63e064dd6c615
+13 the times they are a-changin'.flac:608557e76aa164a21c34ac6e57c4deeb
+14 a hard rain's a-gonna fall.flac:e0d475a31ce54bc5cc53fd2de99cf8cb
+15 it's all in the game.flac:a31b355bb90bc0687fd1b446095ea261
+16 slow train.flac:de077116740c314b434aacc58290f89a
+17 masters of war [cut-in].flac:0716687e767094b4a65090dcb3e6518e
+18 mr. tambourine man.flac:a5674428c7cacca9d5c95a419a454d90
+19 solid rock.flac:7edf7e1ed93752f0e937ddd803f7aabf
+20 just like a woman.flac:55d250b377624b9594a958ed28574b3e
+21 heart of mine.flac:5a733d3a2a6c2c1a2fd2df0be0e888ee
+22 senor (tales of yankee power).flac:c357c91a7fc09dc4e922d5faad4db0cc
+23 when you gonna wake up.flac:d7271d8b15910cd812d6c59de0b3ccbf
+24 in the garden.flac:d62a75f321c4728707148c301cb33d96
+25 blowin' in the wind.flac:7b1ff0ddb1a8f1d16c80ff4c210a56e8
+26 it ain't me, babe.flac:18e1b17ce2f969187a3b2220bf0d81a7
+27 no money down.flac:9c3db044b3a7cb7023dcfa8e1094b47c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-21-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.31       41173036 B   -b-   --   ---xx   flac  0.6523  01 Gotta serve somebody.flac
+     4:37.53       48988204 B   -b-   --   ---xx   flac  0.6380  02 I believe in you.flac
+     6:51.06       72515628 B   -b-   --   ---xx   flac  0.6414  03 Like a rolling stone.flac
+     3:58.32       42057772 B   -b-   --   ---xx   flac  0.6360  04 I want you.flac
+     4:32.45       48087084 B   -b-   --   ---xx   flac  0.6301  05 Man gave names to all the animals.flac
+     4:24.53       46694444 B   -b-   --   ---xx   flac  0.6388  06 Maggie's farm.flac
+     4:59.33       52822060 B   -b-   --   ---xx   flac  0.6258  07 Girl of the North Country.flac
+     3:40.09       38830124 B   -b-   --   ---xx   flac  0.6382  08 Ballad of a thin man.flac
+     3:19.66       35258412 B   -b-   --   ---xx   flac  0.6323  09 In the summertime.flac
+     3:58.73       42156076 B   -b-   --   ---xx   flac  0.6463  10 All along the watchtower.flac
+     4:42.20       49791020 B   -b-   --   ---xx   flac  0.6288  11 Forever young.flac
+     4:11.67       44433452 B   -b-   --   ---xx   flac  0.6210  12 Gamblin' man.flac
+     5:31.64       58540076 B   -b-   --   ---xx   flac  0.6186  13 The times they are a-changin'.flac
+     7:16.05       76922924 B   -b-   --   ---xx   flac  0.6271  14 A hard rain's a-gonna fall.flac
+     3:49.38       40484908 B   -b-   --   ---xx   flac  0.6277  15 It's all in the game.flac
+     5:03.12       53477420 B   -b-   --   ---xx   flac  0.6402  16 Slow train.flac
+     4:02.45       42795052 B   -b-   --   ---xx   flac  0.6384  17 Masters of war [cut-in].flac
+     6:19.10       66879532 B   -b-   --   ---xx   flac  0.6457  18 Mr. Tambourine man.flac
+     4:45.44       50378052 B   -b-   --   ---xx   flac  0.6372  19 Solid rock.flac
+     4:43.56       50053164 B   -b-   --   ---xx   flac  0.6190  20 Just like a woman.flac
+     4:38.69       49201196 B   -b-   --   ---xx   flac  0.6105  21 Heart of mine.flac
+     4:49.10       51003436 B   -b-   --   ---xx   flac  0.6230  22 Senor (Tales of Yankee Power).flac
+     5:36.24       59326508 B   -b-   --   ---xx   flac  0.6229  23 When you gonna wake up.flac
+     6:58.46       73842732 B   -b-   --   ---xx   flac  0.6193  24 In the garden.flac
+     5:16.40       55836716 B   -b-   --   ---xx   flac  0.6396  25 Blowin' in the wind.flac
+     5:52.43       62193708 B   -b-   --   ---xx   flac  0.6248  26 It ain't me, babe.flac
+     5:42.34       60407852 B   -b-   --   ---xx   flac  0.6291  27 No money down.flac
+   133:36.54     1414150588 B                            0.6311  (27 files)
+=================== 
+=================== 
+=================== 

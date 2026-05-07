@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-20-Mad-Dog-Remaster.flacf 
+=================== 
+=================== 
+=================== 
+26076fe3675fc784dcc4e1fc3c71fa38  Artwork and info\info.txt
+1569b105e71cc0a3ffef5f6c1b1dc978  Artwork and info\Joint_Vegas_2002_Inside_One.jpg
+cb78c37a956c20f6361789ebfd6c80d1  Artwork and info\Joint_Vegas_2002_Inside_Two.jpg
+27626b3201da4a96502466055dd2c8b2  Artwork and info\Joint_Vegas_One_Cover.jpg
+e5f056b20af21cc0be736aa923385d1b  Artwork and info\Joint_Vegas_Two_Cover.jpg
+a5eefd8d014a0eb32db09ae489a0da67  Bob Dylan 2002.10.20 The Joint, Las Vegas, Nevada [Mad Dog Remaster].md5
+81807f8ee27ce9eb97a71b5299c8d447  CD1\01 Solid rock.flac
+0f9fba2b6462f4aad50628b77e76f93c  CD1\02 When I paint my masterpiece.flac
+d058a5543f9b655be6fd5553aeacaae5  CD1\03 Tombstone blues.flac
+21a9665c0c8022f69878cc34a0ba2b24  CD1\04 Accidentally like a martyr.flac
+9a1e42bd6ab4ba73876e467892c704dc  CD1\05 Stuck inside of Mobile with the Memphis blues again.flac
+8114a8a5e31a1312bf77b2101c6fa370  CD1\06 Brown sugar.flac
+9f7c8d8a5919405df784c77635a01bea  CD1\07 Blind Willie McTell.flac
+a43d6fb570a583c7d4167d07eb410925  CD1\08 It's alright, ma (I'm only bleeding).flac
+5b7cb27da79c1ba54cc1934d23f4e0af  CD1\09 Never gonna be the same again.flac
+723b84e0b08758d6b414b587b5ec5890  CD1\10 Cold irons bound.flac
+b233205a051c5145b82b6838736d8439  CD2\11 Love minus zero - no limit.flac
+fa6d38963eb729d240f29bec41650eb0  CD2\12 Old man.flac
+d350589e96529755a3fe2739a7e0ebca  CD2\13 Honest with me.flac
+c5c8c905d8ca9c42d0793a39bf8d2fbe  CD2\14 Mama, you been on my mind.flac
+33d3fc678bcaf7cee125d066cc7d109b  CD2\15 High water (for Charley Patton).flac
+1bd065facb76cbb4af98b1c28ec3f36c  CD2\16 Rainy day women #12 & 35.flac
+485f4fc560e304dede195eb9bb78eaaa  CD2\17 Knockin' on heaven's door.flac
+60bc265125108bed188f23ff2b0e8158  CD2\18 All along the watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-20-Mad-Dog-Remaster.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 solid rock.flac:988320abb03831d1fc2eaad9753cf6f3
+02 when i paint my masterpiece.flac:720c50aa2fbb19aaacd0ff75f0fc7e52
+03 tombstone blues.flac:66584ae2fa09815a2c8120470df509f8
+04 accidentally like a martyr.flac:1e1c577c3a49125876049b419de05314
+05 stuck inside of mobile with the memphis blues again.flac:c37fbbee05d6ed7f029af46560fea6a1
+06 brown sugar.flac:d42b57c7e6b43d1dc9eb70426cdac2ea
+07 blind willie mctell.flac:7af66e1d84220328025b3b2656de58c3
+08 it's alright, ma (i'm only bleeding).flac:7ac89da2dea27d688e9d37ee7a356f23
+09 never gonna be the same again.flac:661098658da8cdea31acadcdc5969b99
+10 cold irons bound.flac:764aaa04817382c13aa043d5438b125b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-20-Mad-Dog-Remaster.flacf\cd2 
+=================== 
+=================== 
+=================== 
+11 love minus zero - no limit.flac:103d81d981f087facccb8f215ce78c20
+12 old man.flac:cb5bfe8ed2dd0b28b7352f0de9d00686
+13 honest with me.flac:13d8a1c79bd4ea3de5419cd7e6646cbd
+14 mama, you been on my mind.flac:411d8e52038e25280412d0cef02914df
+15 high water (for charley patton).flac:51a0ab3ac8d16134dc082f97e39e9ec7
+16 rainy day women #12 & 35.flac:b7f8ca345116c2664b83122f86b36e26
+17 knockin' on heaven's door.flac:a2bb67d7458f3776ad912c2e84314afe
+18 all along the watchtower.flac:debf00f9d1691c3a3349789aa02c4330
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-20-Mad-Dog-Remaster.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:21.61       56767916 B   ---   --   ---xx   flac  0.6301  01 Solid rock.flac
+     6:40.01       70562396 B   ---   --   ---xx   flac  0.6165  02 When I paint my masterpiece.flac
+     6:34.18       69543980 B   ---   --   ---xx   flac  0.6371  03 Tombstone blues.flac
+     4:20.54       45991052 B   ---   --   ---xx   flac  0.6135  04 Accidentally like a martyr.flac
+     9:27.01      100021196 B   ---   --   ---xx   flac  0.6397  05 Stuck inside of Mobile with the Memphis blues again.flac
+     4:20.73       46035740 B   ---   --   ---xx   flac  0.6434  06 Brown sugar.flac
+     6:25.09       67935212 B   ---   --   ---xx   flac  0.6588  07 Blind Willie McTell.flac
+     7:38.66       80946476 B   ---   --   ---xx   flac  0.6503  08 It's alright, ma (I'm only bleeding).flac
+     5:58.10       63174764 B   ---   --   ---xx   flac  0.6013  09 Never gonna be the same again.flac
+     6:41.06       70750556 B   ---   --   ---xx   flac  0.6276  10 Cold irons bound.flac
+    63:27.74      671729288 B                            0.6330  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-20-Mad-Dog-Remaster.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:18.47       66789788 B   ---   --   ---xx   flac  0.6024  11 Love minus zero - no limit.flac
+     4:09.18       43965980 B   ---   --   ---xx   flac  0.6613  12 Old man.flac
+     7:04.34       74873612 B   ---   --   ---xx   flac  0.6725  13 Honest with me.flac
+     5:32.74       58738892 B   ---   --   ---xx   flac  0.6361  14 Mama, you been on my mind.flac
+     7:11.69       76190732 B   ---   --   ---xx   flac  0.6587  15 High water (for Charley Patton).flac
+     8:26.50       89376044 B   ---   --   ---xx   flac  0.6475  16 Rainy day women #12 & 35.flac
+     7:40.04       81153452 B   ---   --   ---xx   flac  0.6346  17 Knockin' on heaven's door.flac
+     8:24.59       89044412 B   ---   --   ---xx   flac  0.6653  18 All along the watchtower.flac
+    54:48.55      580132912 B                            0.6478  (8 files)
+=================== 
+=================== 
+=================== 

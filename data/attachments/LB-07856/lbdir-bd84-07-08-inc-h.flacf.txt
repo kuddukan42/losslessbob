@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-07-08-inc-h.flacf 
+=================== 
+=================== 
+=================== 
+c4f77b257a10d34faba7b6c7a553df30  01 Highway 61 Revisited..flac
+eda5ebc948d9493523e8a98eec184c65  02 Jokerman..flac
+aec41294c946e323289ae783e489af91  03 All Along The Watchtower..flac
+2658e00fdaad3e305f6fb6a5b3c20a14  04 Just Like A Woman..flac
+9d592633f066bb71ce49973c4691dba9  05 Maggies Farm..flac
+0a0e42f083685a086d73486fc5648a78  07 License To Kill..flac
+cbd3c7823717fe568c7f06c5be1d29b4  08 Just My Imagination..flac
+6b1356572d733028f2b4bfbaadae0219  09 Hard Rains Gonna Fall..flac
+da423bd20d339abc95a8daa76ec78186  10 Tangled Up In Blue..flac
+64105019833b511963bf031cd7d99b26  11 To Romona..flac
+2b5cf031484c919b9ede4dec13b27e09  12 Its All Right Ma (I,m Only Bleeding)..flac
+a73cf52deb02291070a10e4b81773994  13 Shelter From The Storm..flac
+ab9842ecff8794625fec0cac49bd6a54  14 Masters Of War..flac
+73cc618097d0f7de79bb56786a47e40b  15 Ballad Of A Thin Man..flac
+5a1c867512425c147d9ae6c282198357  16 Enough Is Enough..flac
+a0b0a10420d08888ca1cca689c5a3877  17 Every Grain Of Sand..flac
+bda04097ff76bcd18f69bae4e5a8faa5  18 Like A Rolling Stone..flac
+3a8c5f7f11c9b93036bf4018be709f88  19 Mr Tambourine Man..flac
+937b018593b86baf29855838ac90d711  20 With God On Our Side..flac
+c7444a76261d8b2242716013688c9310  22 Simple Twist Of Fate..flac
+dc88a2cead129e9dd8d0df74657953a3  25 Leopard Skin Pill Box Hat..flac
+430ae4de944905a9376cd2590510b8e7  26 Tombstone Blues..flac
+60abd5b6a4bd65ac2d83647eb55e2628  27 Times They Are A Changing..flac
+ea03c912c4e239f37b0932c145f112cb  28 Blowing In The Wind..flac
+c4510ac3f95472d4bcf0b3c626c6c2be  Bob Dylan Slane Ireland 8-7-84.ffp
+50cc8edabf8df929cbb6d2593b58f72e  Bob Dylan Slane Ireland 8-7-84.md5
+ee3342a92d2fec065d57393286b84a94  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-07-08-inc-h.flacf 
+=================== 
+=================== 
+=================== 
+01 Highway 61 Revisited..flac:97db96b20eebe8c138d6c6a2ff7e86c2
+02 Jokerman..flac:b3b964b3cfba3451aa1fac02c197232b
+03 All Along The Watchtower..flac:6eb1de69f982a127e8b0a06fdea7ea16
+04 Just Like A Woman..flac:d68c85327afb08336865864a1179eadf
+05 Maggies Farm..flac:5cbe18296009aebf9a8c8c0523f8cd2f
+07 License To Kill..flac:d0e2da77c638b0ec21d9f999ace5130a
+08 Just My Imagination..flac:fe7e4e8c2b1e1080271f4f70c2af0a95
+09 Hard Rains Gonna Fall..flac:b6dff4dd26d2d4c41baaacdd9e5097d4
+10 Tangled Up In Blue..flac:830cbd6f77052b84893c840089a0edb6
+11 To Romona..flac:94f1cfc7c630799a1d2e7585d26346f2
+12 Its All Right Ma (I,m Only Bleeding)..flac:c32a4864018d21f0b20ae165e9606f63
+13 Shelter From The Storm..flac:ff568850b16f5eacf639f1089eeb3bf3
+14 Masters Of War..flac:590e6d03aed05b3035fc5cce8df68fe1
+15 Ballad Of A Thin Man..flac:6f2384d5ed685c0d5bfc5bf881e8f257
+16 Enough Is Enough..flac:a70b9d9b6c9e86ea2ae944001b84c585
+17 Every Grain Of Sand..flac:3cc35acfb08bb4297b40335cf01589cb
+18 Like A Rolling Stone..flac:c25f75e80a867c2a2a5c1065096632e6
+19 Mr Tambourine Man..flac:86ad9e0e12c4ce7ba36d11346d37103c
+20 With God On Our Side..flac:9ac34fb9d5518db80b28a8f4c924b182
+22 Simple Twist Of Fate..flac:cc66b5f3b91d0c82240f849771bf94de
+25 Leopard Skin Pill Box Hat..flac:3b6fb39616031ec8410f2218b11cbdc9
+26 Tombstone Blues..flac:0a460598da39c8dc0afcdca71312b72f
+27 Times They Are A Changing..flac:457c8b55d0f3cd087edf414ed49d7f74
+28 Blowing In The Wind..flac:bd42936aeb5578919b75194d137f9c33
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-07-08-inc-h.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.38       51773484 B   -b-   --   ---xx   flac  0.4026  01 Highway 61 Revisited..flac
+     6:57.09       73580588 B   -b-   --   ---xx   flac  0.3926  02 Jokerman..flac
+     3:50.26       40632364 B   -b-   --   ---xx   flac  0.3976  03 All Along The Watchtower..flac
+     6:19.31       66928684 B   -b-   --   ---xx   flac  0.3833  04 Just Like A Woman..flac
+     5:26.49       57622572 B   -b-   --   ---xx   flac  0.3972  05 Maggies Farm..flac
+     4:07.53       43696172 B   -b-   --   ---xx   flac  0.4042  07 License To Kill..flac
+     7:06.38       75235372 B   -b-   --   ---xx   flac  0.4073  08 Just My Imagination..flac
+     5:47.42       61308972 B   -b-   --   ---xx   flac  0.3953  09 Hard Rains Gonna Fall..flac
+     6:32.73       69320748 B   -b-   --   ---xx   flac  0.4089  10 Tangled Up In Blue..flac
+     4:50.54       51281964 B   -b-   --   ---xx   flac  0.4062  11 To Romona..flac
+     6:01.44       63782956 B   -b-   --   ---xx   flac  0.4075  12 Its All Right Ma (I,m Only Bleeding)..flac
+     5:36.59       59408428 B   -b-   --   ---xx   flac  0.4061  13 Shelter From The Storm..flac
+     6:36.52       69976108 B   -b-   --   ---xx   flac  0.4092  14 Masters Of War..flac
+     4:46.05       50462764 B   -b-   --   ---xx   flac  0.4097  15 Ballad Of A Thin Man..flac
+     4:22.64       46366764 B   -b-   --   ---xx   flac  0.4091  16 Enough Is Enough..flac
+     6:23.65       67715116 B   -b-   --   ---xx   flac  0.3993  17 Every Grain Of Sand..flac
+     8:17.70       87834668 B   -b-   --   ---xx   flac  0.4009  18 Like A Rolling Stone..flac
+     5:59.47       63438892 B   -b-   --   ---xx   flac  0.3973  19 Mr Tambourine Man..flac
+     5:03.47       53559340 B   -b-   --   ---xx   flac  0.3930  20 With God On Our Side..flac
+     6:02.45       63963180 B   -b-   --   ---xx   flac  0.3882  22 Simple Twist Of Fate..flac
+     1:04.20       11337772 B   -b-   --   ---xx   flac  0.3882  25 Leopard Skin Pill Box Hat..flac
+     5:39.36       59883564 B   -b-   --   ---xx   flac  0.3851  26 Tombstone Blues..flac
+     6:23.72       67731500 B   -b-   --   ---xx   flac  0.3812  27 Times They Are A Changing..flac
+     6:48.29       72040492 B   -b-   --   ---xx   flac  0.3849  28 Blowing In The Wind..flac
+   135:00.18     1428882464 B                            0.3981  (24 files)
+=================== 
+=================== 
+=================== 

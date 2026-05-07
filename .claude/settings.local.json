@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(sqlite3 /home/tjenkins/Documents/losslessbob/data/losslessbob.db \"SELECT * FROM meta WHERE key='sdf_hash';\")",
+      "Bash(xxd)",
+      "WebFetch(domain:pypi.org)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(apt list *)",
+      "Bash(wine --version)",
+      "Bash(wine /home/tjenkins/Documents/losslessbob/tools/ExportSqlCE40.exe)",
+      "Bash(apt-cache search *)",
+      "Bash(dpkg -l)",
+      "Bash(apt-cache show *)",
+      "Bash(sqlite3 /home/tjenkins/Documents/losslessbob/data/losslessbob.db \"SELECT * FROM entry_files WHERE lb_number=16588;\")",
+      "Bash(sqlite3 /home/tjenkins/Documents/losslessbob/data/losslessbob.db \"SELECT lb_number, date_str, location FROM entries WHERE lb_number=16588;\")",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(python3 -c \"import sys,json,os; d=json.load\\(sys.stdin\\); fp=d.get\\('tool_input',{}\\).get\\('file_path',''\\); proj=os.path.realpath\\('/home/tjenkins/Documents/losslessbob'\\); mem=os.path.realpath\\(os.path.expanduser\\('~/.claude'\\)\\); block=bool\\(fp\\) and not os.path.realpath\\(fp\\).startswith\\(proj+os.sep\\) and not os.path.realpath\\(fp\\).startswith\\(mem+os.sep\\) and os.path.realpath\\(fp\\)!=proj; print\\(json.dumps\\({'continue':False,'stopReason':'Access denied: outside project directory'}\\) if block else '{}'\\)\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(python -m py_compile gui/lookup_tab.py)",
+      "Bash(python -m py_compile gui/search_tab.py gui/rename_tab.py)",
+      "Bash(python -m py_compile backend/db.py backend/app.py gui/styles.py gui/rename_tab.py gui/search_tab.py gui/collection_tab.py gui/main_window.py)",
+      "Bash(python3 -c \"import ast, sys; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/lookup_tab.py'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/lookup_tab.py'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/home/tjenkins/Documents/losslessbob/gui/setup_tab.py'\\).read\\(\\)\\); print\\('OK'\\)\")"
+    ]
+  }
+}

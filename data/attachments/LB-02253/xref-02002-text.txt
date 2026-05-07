@@ -1,0 +1,111 @@
+===================
+===================
+===================
+=== Bob Dylan Chastain Park Atlanda 1989 -08-15.ffp
+===================
+===================
+===================
+01 Most Likely Youll Go Your Way.flac:88d7f0c16ec7c3577c6083ed56caa035
+02 Peggy O.flac:138eb95c3fa843d59a9f020a7cd8c917
+03 Masters of War.flac:63d7e0f93776d8656a20d76194c822fa
+04 Shelter From the Storm.flac:1e142974d4270147128d56e34e179bb5
+05 Ballad Of A Thin Man.flac:ed9206405a57e07fb3a2da0b96264e31
+06 Stuck Inside of Mobile.flac:0621daf7b47bae51772918c7f8b4d7f1
+07 Its All Over Now Baby Blue.flac:304b303d8e897479cb7ffc9938e06c99
+08 Man of Constant Sorrow.flac:a2d44293d822b7599fcae68119bd24b3
+09 Its Alright Ma.flac:c594a24a95785614205057b03b4a6641
+10 One Too Many Mornings.flac:558b7797db4c465a29b61eca7153dc71
+11 All Along the Watchtower.flac:817c1b8fb3f84b00fc404f294f33ce56
+12 I'll Remember You.flac:c104e533bb84326f38f94ffbf3fa8a0d
+13 I Shall Be Released.flac:b4ba2b807285b816c452dc6be0e87e34
+14 Like A Rolling Stone.flac:647f38bf3a3a7c8d62a978bf59912145
+15 Barbara Allen.flac:7cf430044a594e16d61f6445440d63c5
+16 Mr Tamborine Man.flac:2290f3ad6c500515227a32ecf8a7d411
+17 Maggies Farm.flac:3159b28def2552fbd3c7ae6265009698
+===================
+===================
+===================
+=== Bob Dylan Chastain Park Atlanda 1989 -08-15.md5
+===================
+===================
+===================
+5124c2d1224d65fa136f93cfe0858667 *01 Most Likely Youll Go Your Way.flac
+46612c3c4526279900472b29929f8090 *02 Peggy O.flac
+e00a8d25172813f17bfd13adb1d55d25 *03 Masters of War.flac
+5d4515ba6b4cdf7ae7efde434975e2cd *04 Shelter From the Storm.flac
+a6e1d1aee59df2469e4f7c9e581d51c0 *05 Ballad Of A Thin Man.flac
+9e670853da3d7c59f95e39b184a0f380 *06 Stuck Inside of Mobile.flac
+038fcda78bdc85ae9cf77b6313de7604 *07 Its All Over Now Baby Blue.flac
+c1aa95beacd4857e4a9af4a31d415f82 *08 Man of Constant Sorrow.flac
+753433d930777d4b3cfd71a9b6562a1e *09 Its Alright Ma.flac
+61d048ef2cea6265ac8a4a211aaf64d9 *10 One Too Many Mornings.flac
+506af9bedbbbb98b1a16c7468f065b6c *11 All Along the Watchtower.flac
+35e124f3e55914f4a224f0f71a4c38d6 *12 I'll Remember You.flac
+649782c36f93d8a8fc08fa08486ed546 *13 I Shall Be Released.flac
+92c3f2385930c9d16fff283a0dc5a517 *14 Like A Rolling Stone.flac
+a439f90119c515f294cc2df63682961f *15 Barbara Allen.flac
+84da011b0c2b7d7d41a01c15cabf3b0c *16 Mr Tamborine Man.flac
+c511d175dbd3a851e520db954df36830 *17 Maggies Farm.flac
+===================
+===================
+===================
+=== Bob Dylan Chastain Park Atlanda 1989 -08-15.txt
+===================
+===================
+===================
+01 Most Likely Youll Go Your Way.flac:88d7f0c16ec7c3577c6083ed56caa035
+02 Peggy O.flac:138eb95c3fa843d59a9f020a7cd8c917
+03 Masters of War.flac:63d7e0f93776d8656a20d76194c822fa
+04 Shelter From the Storm.flac:1e142974d4270147128d56e34e179bb5
+05 Ballad Of A Thin Man.flac:ed9206405a57e07fb3a2da0b96264e31
+06 Stuck Inside of Mobile.flac:0621daf7b47bae51772918c7f8b4d7f1
+07 Its All Over Now Baby Blue.flac:304b303d8e897479cb7ffc9938e06c99
+08 Man of Constant Sorrow.flac:a2d44293d822b7599fcae68119bd24b3
+09 Its Alright Ma.flac:c594a24a95785614205057b03b4a6641
+10 One Too Many Mornings.flac:558b7797db4c465a29b61eca7153dc71
+11 All Along the Watchtower.flac:817c1b8fb3f84b00fc404f294f33ce56
+12 I'll Remember You.flac:c104e533bb84326f38f94ffbf3fa8a0d
+13 I Shall Be Released.flac:b4ba2b807285b816c452dc6be0e87e34
+14 Like A Rolling Stone.flac:647f38bf3a3a7c8d62a978bf59912145
+15 Barbara Allen.flac:7cf430044a594e16d61f6445440d63c5
+16 Mr Tamborine Man.flac:2290f3ad6c500515227a32ecf8a7d411
+17 Maggies Farm.flac:3159b28def2552fbd3c7ae6265009698
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 08/15/89
+Chastain Park Amphitheatre, Atlanta, GA
+
+P master Crown/RS mics>Sony D6>Dat to me>
+File cloned in Microtrack>Goldwave tracking
+and slight volume boost/removal of tape flip>TLH8
+
+Dolphinsmile : Producer
+for the benefit of the Dolphinsmile Archive
+
+Most Likely You Go Your Way (And I'll Go Mine), 
+Pretty Peggy-O, 
+Masters Of War, 
+Shelter From The Storm, 
+Ballad Of A Thin Man, 
+Stuck Inside Of Mobile With The Memphis Blues Again
+It's All Over Now Baby Blue, 
+Man Of Constant Sorrow, 
+It's Alright Ma (I'm Only Bleeding)-tape flip
+One Too Many Mornings
+All Along The Watchtower, 
+I'll Remember You, 
+I Shall Be Released, 
+Like A Rolling Stone, 
+
+E: 
+Barbara Allen, 
+Mr. Tambourine Man, 
+Maggie's Farm
+===================
+===================
+===================

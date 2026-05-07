@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-03-a.flacf 
+=================== 
+=================== 
+=================== 
+f1b798b529328ad5e2e7404750d13d0d  1997-08-03 Loon Mountain, Lincoln, New Hampshire, USA.md5
+c2d2155109586150afd260c2871e5c6c  CD1\01 Absolutely sweet Marie.flac
+b706b4016efde7138d74a485c408458b  CD1\02 I want you.flac
+71f774e97cea3e179eba184b8195e6ab  CD1\03 Tough mama.flac
+9abc7d76d35f29958820384966a0cddf  CD1\04 All along the watchtower.flac
+94e132e58c3bb26061080bf4e39de14a  CD1\05 You ain't going nowhere.flac
+6e8f01b4923ab2af188bec249e0f2936  CD1\06 Silvio.flac
+a5221f9f240f3e01e030b30ef8f025c3  CD1\07 Mr. Tambourine Man.flac
+9157e3312c507ff805f1899d26503cb1  CD1\08 Tangled up in blue.flac
+eab3e9a604da30f8ce5118cb53eb82a0  CD1\09 Cocaine blues.flac
+9619650129b6c5927f77ea8b1e748760  CD1\10 Maggie's farm.flac
+cb9b70f28dfd9d17e69e59f88bdb2f37  CD1\11 This wheel's on fire.flac
+bcbc72d66fe265135552a210a7fbbad0  CD1\CD1.shntool_len.txt
+faccf5bae8db70334e8ba3a619a077a9  CD1\CD1_ffp.txt
+bdcd705e2a20631e05cc213d9b60a711  CD2\12 Highway 61 revisited.flac
+29ad58eefde213e3e9890c83886e2e3b  CD2\13 Like a rolling stone.flac
+dae9167089da741423c714ea78e6a31e  CD2\14 Forever young.flac
+93b075ebac4f955ec15f2737a04fa2de  CD2\15 Rainy day women # 12 & 35.flac
+afdc1b3b3d1e9aded380219533a5c1d8  CD2\CD2.shntool_len.txt
+f7c412c240801cb1a6d0ec519112869f  CD2\CD2_ffp.txt
+d66be63fabb06351001c3c914a71842c  Info\1997-08-03 Loon Mountain, Lincoln, New Hampshire, USA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-03-a.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 absolutely sweet marie.flac:63b33d7be3a6b30e593f2d1374eed439
+02 i want you.flac:0a62a2a35f51626e064d61111cc73163
+03 tough mama.flac:7d7105517fc205ec04f1a69fea036593
+04 all along the watchtower.flac:f789a95c6d6bfe7e6f411e254a3ac6b6
+05 you ain't going nowhere.flac:8f57029e5aac298c7ed9283b7e6451aa
+06 silvio.flac:e1be44b056037e4da13460e99a291f8d
+07 mr. tambourine man.flac:16c4d591b307a4a1ba6e95259eb22d92
+08 tangled up in blue.flac:a48396ec2a2748629aa3d6bbf99be3dd
+09 cocaine blues.flac:15c2afde5e6ba5bbea5007808058d931
+10 maggie's farm.flac:5f862ea2a9105a1a434ce10fa878c910
+11 this wheel's on fire.flac:9c4399b1af9406a8eafbe420f68e26a3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-03-a.flacf\cd2 
+=================== 
+=================== 
+=================== 
+12 highway 61 revisited.flac:a3ccccbb9153c4e822686f1b14187108
+13 like a rolling stone.flac:d11ffc92681209c0a9cbbc7059ffb3bf
+14 forever young.flac:f896d739fc565207f15d1a75d8a3c5da
+15 rainy day women # 12 & 35.flac:ee5a0c13aa6e51546d58bc23daf393d5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-03-a.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.49       63619292 B   ---   --   ---xx   flac  0.7112  01 Absolutely sweet Marie.flac
+     5:31.15       58423724 B   ---   --   ---xx   flac  0.7006  02 I want you.flac
+     5:03.55       53578604 B   ---   --   ---xx   flac  0.7071  03 Tough mama.flac
+     6:19.25       66914444 B   ---   --   ---xx   flac  0.7461  04 All along the watchtower.flac
+     4:41.08       49587260 B   ---   --   ---xx   flac  0.7134  05 You ain't going nowhere.flac
+     7:29.08       79222460 B   ---   --   ---xx   flac  0.7471  06 Silvio.flac
+     8:36.20       91069484 B   ---   --   ---xx   flac  0.6310  07 Mr. Tambourine Man.flac
+     9:55.10      104981564 B   ---   --   ---xx   flac  0.7209  08 Tangled up in blue.flac
+     5:39.50       59917244 B   ---   --   ---xx   flac  0.6169  09 Cocaine blues.flac
+     6:53.50       72970844 B   ---   --   ---xx   flac  0.6316  10 Maggie's farm.flac
+     6:15.25       66208844 B   ---   --   ---xx   flac  0.7055  11 This wheel's on fire.flac
+    72:25.15      766493764 B                            0.6934  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-03-a.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:32.12       90345068 B   ---   --   ---xx   flac  0.7368  12 Highway 61 revisited.flac
+     9:21.10       98983964 B   ---   --   ---xx   flac  0.6858  13 Like a rolling stone.flac
+     8:39.14       91584572 B   ---   --   ---xx   flac  0.6451  14 Forever young.flac
+     5:46.44       61137932 B   ---   --   ---xx   flac  0.6818  15 Rainy day women # 12 & 35.flac
+    32:19.05      342051536 B                            0.6877  (4 files)
+=================== 
+=================== 
+=================== 

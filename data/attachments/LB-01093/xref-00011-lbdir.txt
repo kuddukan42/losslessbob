@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-18-b.flacf 
+=================== 
+=================== 
+=================== 
+8b5fb20473ec8e6f5d270545435e8fe2  Bob Dylan-1988-06-18 Alpine Valley Amphitheater, East Troy, Wisconsin, USA.md5
+dcd4fb7ad5f8be654fe83fddd78b00e1  CD1\01 Subterranean homesick blues.flac
+ceda8e1e7b4ece55289ed55bcc65da7d  CD1\02 You're a big girl now.flac
+8854e54f793d0382827e30ce4ba74e2c  CD1\03 The ballad of Frankie Lee and Judas Priest.flac
+81bec45d6ac5546dc0cd1cc216acd324  CD1\04 Maggie's farm.flac
+19f2cfabf1a06a2b9b12a3b4e9d4adf9  CD1\05 Gates of Eden.flac
+a99739e6db05cfd0c9cd00f98adca0c7  CD1\06 Stuck inside of Mobile with the Memphis blues again.flac
+df90baffebaf4b5afce3527145b39990  CD1\07 Mama, you been on my mind.flac
+49c5b93b92d872eadc195de0ca64b597  CD1\08 Ballad of Hollis Brown.flac
+f0e4adf4fa0c55d43b20987d4d794d4d  CD1\09 Boots of Spanish leather.flac
+55914ca480ce93e16a1ef405ad4cb2b6  CD2\01 Barbara Allen.flac
+909b95f8723268ffab2df81c38925ca9  CD2\02 Tangled up in blue.flac
+7a2b234719c670d1a49a6795ea58a03f  CD2\03 Absolutely sweet Marie.flac
+782aafb9bed651f5d5773e9c0231c2b2  CD2\04 I shall be released.flac
+5a1b4056e2b84155439582b90ccbf47c  CD2\05 Like a rolling stone.flac
+dc2e1c6fc600f03051912404ff65faa5  CD2\06 It ain't me, babe.flac
+4abe9f3cfa22e72a181be38e02db4236  CD2\07 Blowin' in the wind.flac
+0cee05a57fbfd63d17aa89666f93761b  CD2\08 Gotta serve somebody.flac
+fe4f63728bb9326844fc5c50950efc32  CD2\09 All along the watchtower.flac
+75aaec6fdf0ff28764982aeec920ec07  Info\bd1988-06-18.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-18-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Subterranean homesick blues.flac:3e95ca72d11961f2263efe1cbb0f99d7
+02 You're a big girl now.flac:2bdfebc6fb23a5f88d7919a1d89c3c00
+03 The ballad of Frankie Lee and Judas Priest.flac:1829ff451482efedeca93c0d06bb8639
+04 Maggie's farm.flac:81722ea1dc6f2ca2d8f8c49cb662fd8a
+05 Gates of Eden.flac:a5949d259843fd100dd9dd8d34a99735
+06 Stuck inside of Mobile with the Memphis blues again.flac:d6d92f7933f29bd7bc66e3151945f21e
+07 Mama, you been on my mind.flac:a49e0105ad24c9fe5f45fc0585487e81
+08 Ballad of Hollis Brown.flac:cfa0eb5dd0f65dab26460fc92b67e7db
+09 Boots of Spanish leather.flac:c253a2cc0536167ecdc9f9a3af8c0812
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-18-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+01 Barbara Allen.flac:ba0a214c51a758e9d662afcfa97cdb3e
+02 Tangled up in blue.flac:7cec851464296a33389bf16a62c312bf
+03 Absolutely sweet Marie.flac:3da505d985adbe4a776218b459da9377
+04 I shall be released.flac:099fe6d42b0e89f2e5b311552dc65db8
+05 Like a rolling stone.flac:4173a1849c45dcd019b368fd2f7c350a
+06 It ain't me, babe.flac:12ff2f22552414776b65ad237d9b8d75
+07 Blowin' in the wind.flac:6c4bb89f921e58498122a3263cbaf555
+08 Gotta serve somebody.flac:60b23aea2ebfbfc1a9beef7509609559
+09 All along the watchtower.flac:bc5b9331bb44e77309d58592f807d132
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-18-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:31.53       37345100 B   ---   --   ---xx   flac  0.6042  01 Subterranean homesick blues.flac
+     5:42.25       60387644 B   ---   --   ---xx   flac  0.5627  02 You're a big girl now.flac
+     5:50.38       61829420 B   ---   --   ---xx   flac  0.5932  03 The ballad of Frankie Lee and Judas Priest.flac
+     5:17.54       56045852 B   ---   --   ---xx   flac  0.6590  04 Maggie's farm.flac
+     6:08.33       64992860 B   ---   --   ---xx   flac  0.6395  05 Gates of Eden.flac
+     7:10.31       75924956 B   ---   --   ---xx   flac  0.6449  06 Stuck inside of Mobile with the Memphis blues again.flac
+     3:15.38       34487420 B   ---   --   ---xx   flac  0.5796  07 Mama, you been on my mind.flac
+     5:42.34       60408812 B   ---   --   ---xx   flac  0.5704  08 Ballad of Hollis Brown.flac
+     4:51.72       51501788 B   ---   --   ---xx   flac  0.5543  09 Boots of Spanish leather.flac
+    47:31.03      502923852 B                            0.6038  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-18-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.56       53228156 B   ---   --   ---xx   flac  0.5230  01 Barbara Allen.flac
+     7:00.54       74215052 B   ---   --   ---xx   flac  0.6443  02 Tangled up in blue.flac
+     5:03.23       53503340 B   ---   --   ---xx   flac  0.6562  03 Absolutely sweet Marie.flac
+     4:14.57       44939708 B   ---   --   ---xx   flac  0.6040  04 I shall be released.flac
+     5:51.19       61961132 B   ---   --   ---xx   flac  0.6675  05 Like a rolling stone.flac
+     4:35.01       48512396 B   ---   --   ---xx   flac  0.5720  06 It ain't me, babe.flac
+     3:11.32       33767708 B   ---   --   ---xx   flac  0.5914  07 Blowin' in the wind.flac
+     4:39.42       49314428 B   ---   --   ---xx   flac  0.6197  08 Gotta serve somebody.flac
+     4:34.27       48397148 B   ---   --   ---xx   flac  0.6394  09 All along the watchtower.flac
+    44:12.11      467839068 B                            0.6166  (9 files)
+=================== 
+=================== 
+=================== 

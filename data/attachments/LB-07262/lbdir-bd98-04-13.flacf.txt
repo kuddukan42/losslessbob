@@ -1,0 +1,62 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-04-13.flacf 
+=================== 
+=================== 
+=================== 
+3d6d74490a169d69b4c53fa554ecb5ae  01 Absolutely Sweet Marie.flac
+1332642326dfe75d392e59657fceffdb  02 I want you.flac
+3ae845d765abc55ee63a8f316a4032b8  03 Can't wait.flac
+5522a08ee55446b64fe4326484c8dfef  04 I'll be your baby tonight.flac
+eb3082ca2fa9ade63fb8859b0aac3abf  05 Silvio.flac
+952543e660ca01069fabb7280d987a2d  06 Stone walls and steel bars.flac
+a2d614de4e29d2b44e49e9d419277441  07 Forever young.flac
+cf74f806fbfb4105e3084693e9148b28  08 Tangled up in blue.flac
+51b7a99caf9f59e797123577b807515a  09 'Til I fell in love with you.flac
+ead46dd11f0cafc58598494623164530  10 Positively 4th Street.flac
+d5035272abbdbe6372122caea3df7f8f  11 Rainy day women # 12 & 35.flac
+5d708763302c59e602fea5338e2e0d0b  1998-04-13 Athletic Track, Ibirapuera Sporting Complex, São Paolo, Brazil.txt
+350a2a60d1a5131ca1dd0ec14bb5fb72  April 13 1998 Ibirapuera Sporting Complex  Sao Paolo, Brazil.md5
+0b2ef7b0bd5866b7f3e1c6935007aa9c  April 13 1998 Ibirapuera Sporting Complex  Sao Paolo, Brazil.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-04-13.flacf 
+=================== 
+=================== 
+=================== 
+01 Absolutely Sweet Marie.flac:378bb2076967fe7f33a6c1635a52adef
+02 I want you.flac:2eb0750377b674bcc3ffeca105f1dba3
+03 Can't wait.flac:5fe1bb691337da6e81e53db9a0d23ba1
+04 I'll be your baby tonight.flac:0d68e0449f5dc137dc7b819bcc1f05b3
+05 Silvio.flac:a53281a4f9983aa4ed94ce20583b28d3
+06 Stone walls and steel bars.flac:b414581709ad774af8c374dc834037df
+07 Forever young.flac:e3d5d0dc50fa3190eb06a2ebfa3e4d2e
+08 Tangled up in blue.flac:8694a580cbd6d0af81e39cf105f57ef5
+09 'Til I fell in love with you.flac:3d5fe1880e6f5d36b4d80c61ce15310a
+10 Positively 4th Street.flac:54d5fca08d566bcca48a0c1c58fbc495
+11 Rainy day women # 12 & 35.flac:1495db1484c57d93887e573b0c344180
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-04-13.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.32       53348108 B   ---   --   ---xx   flac  0.6022  01 Absolutely Sweet Marie.flac
+     5:30.27       58275548 B   ---   --   ---xx   flac  0.6040  02 I want you.flac
+     5:47.35       61293164 B   ---   --   ---xx   flac  0.6001  03 Can't wait.flac
+     5:35.51       59213996 B   ---   --   ---xx   flac  0.5783  04 I'll be your baby tonight.flac
+     6:51.07       72516908 B   ---   --   ---xx   flac  0.6121  05 Silvio.flac
+     3:07.45       33092684 B   ---   --   ---xx   flac  0.5533  06 Stone walls and steel bars.flac
+     5:31.52       58510748 B   ---   --   ---xx   flac  0.5972  07 Forever young.flac
+     8:15.39       87409772 B   ---   --   ---xx   flac  0.6193  08 Tangled up in blue.flac
+     5:48.31       61460156 B   ---   --   ---xx   flac  0.6253  09 'Til I fell in love with you.flac
+     7:15.21       76783436 B   ---   --   ---xx   flac  0.4742  10 Positively 4th Street.flac
+     4:01.30       42583004 B   ---   --   ---xx   flac  0.5430  11 Rainy day women # 12 & 35.flac
+    62:46.70      664487524 B                            0.5840  (11 files)
+=================== 
+=================== 
+=================== 

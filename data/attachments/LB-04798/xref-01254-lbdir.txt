@@ -1,0 +1,118 @@
+===================
+===================
+===================
+=== md5 for: bd78-10-31-e.flacf
+===================
+===================
+===================
+1870262002ddfbbc9b86f8d535025172 *Bob Dylan 1978-10-31 St Paul PART ONE\01 Track01.flac
+62b44bb6b9f82b47e7c2c5c675eba41f *Bob Dylan 1978-10-31 St Paul PART ONE\02 Track02.flac
+f8891b338cb38eb896372978832b6af3 *Bob Dylan 1978-10-31 St Paul PART ONE\03 Track03.flac
+352aa869d35cd7a2b593d5c012ad6c1f *Bob Dylan 1978-10-31 St Paul PART ONE\04 Track04.flac
+1845cadc04f4ae5637c89330ee756cec *Bob Dylan 1978-10-31 St Paul PART ONE\05 Track05.flac
+3113e0955f65444f897c84b05163df6a *Bob Dylan 1978-10-31 St Paul PART ONE\06 Track06.flac
+d9538baefd55132f3b3dde2f77b3bfbb *Bob Dylan 1978-10-31 St Paul PART ONE\07 Track07.flac
+b3b7f59cbeda1352e3cbcb6d91dfc587 *Bob Dylan 1978-10-31 St Paul PART ONE\08 Track08.flac
+ddba3115ce01728fd572527df76e6ef1 *Bob Dylan 1978-10-31 St Paul PART ONE\09 Track09.flac
+382b625900c4bfef4a8fb8593e0efc0e *Bob Dylan 1978-10-31 St Paul PART ONE\10 Track10.flac
+47e3d38a67913c3187e14d4e585a0f9c *Bob Dylan 1978-10-31 St Paul PART ONE\11 Track11.flac
+c5c1226abea64d55e3149b477d5970d9 *Bob Dylan 1978-10-31 St Paul PART ONE\12 Track12.flac
+09da12e53a6ce6b3cbb0fccbd619f064 *Bob Dylan 1978-10-31 St Paul PART ONE\13 Track13.flac
+fd277a0b82a1f0154316fccd90549cfa *Bob Dylan 1978-10-31 St Paul PART ONE\14 Track14.flac
+ab69d2c6a7632e930f0a5b58eb50627b *Bob Dylan 1978-10-31 St Paul PART TWO\01 Track01.flac
+81ecb2f0642e253d0397757f7e83726b *Bob Dylan 1978-10-31 St Paul PART TWO\02 Track02.flac
+877a52606ea8d67f132cc0e2a35ed899 *Bob Dylan 1978-10-31 St Paul PART TWO\03 Track03.flac
+d4302e53c799aa6f7c3345657775dfac *Bob Dylan 1978-10-31 St Paul PART TWO\04 Track04.flac
+59a34f16aa5a606d4643249d01182b93 *Bob Dylan 1978-10-31 St Paul PART TWO\05 Track05.flac
+059fdf9fffaf768dbf4b45518010c16b *Bob Dylan 1978-10-31 St Paul PART TWO\06 Track06.flac
+2990be801bd0e3fcabb5bf457fbae6e0 *Bob Dylan 1978-10-31 St Paul PART TWO\07 Track07.flac
+15be6611a5b34ffd00bdd23ae1e4d87b *Bob Dylan 1978-10-31 St Paul PART TWO\08 Track08.flac
+f3d65ddd3a1dfbd2a4bd2953778f4711 *Bob Dylan 1978-10-31 St Paul PART TWO\09 Track09.flac
+dc9fea01a37a0671331b87c25f1713ac *Bob Dylan 1978-10-31 St Paul PART TWO\10 Track10.flac
+d831be4042c6edd001e25214d6ca29b4 *Bob Dylan 1978-10-31 St Paul PART TWO\11 Track11.flac
+7deb0aca07a1a9e759e700ec69216f19 *Bob Dylan 1978-10-31 St Paul PART TWO\12 Track12.flac
+a3fb9910d1f1a201698f78660985f86e *Bob Dylan 1978-10-31 St Paul PART TWO\13 Track13.flac
+c57121b81deaf6e165baabcdc6287a27 *Bob Dylan 1978-10-31 St Paul.ffp
+35b02bb45725ed9d2db247fdafa86ceb *Bob Dylan 1978-10-31 St Paul.txt
+===================
+===================
+===================
+=== ffp for: bd78-10-31-e.flacf
+===================
+===================
+===================
+Bob Dylan 1978-10-31 St Paul PART ONE\01 Track01.flac:8560282831d1d870a0db6a101f4dfd97
+Bob Dylan 1978-10-31 St Paul PART ONE\02 Track02.flac:e959da7233cd05cfe1f5acda6eda8be6
+Bob Dylan 1978-10-31 St Paul PART ONE\03 Track03.flac:dccf02ea643e9cc456ca524db220b8e2
+Bob Dylan 1978-10-31 St Paul PART ONE\04 Track04.flac:41063e91c03860e7eb9c0245bbd90616
+Bob Dylan 1978-10-31 St Paul PART ONE\05 Track05.flac:f5fc4baa4cec045e8a88cce842c36cb7
+Bob Dylan 1978-10-31 St Paul PART ONE\06 Track06.flac:5fe8271ed2a0247b4e109b5da8ca82d3
+Bob Dylan 1978-10-31 St Paul PART ONE\07 Track07.flac:16a3db08dbfe4b3e816f0f324eb2e9a2
+Bob Dylan 1978-10-31 St Paul PART ONE\08 Track08.flac:4b5960461169c07ffede3535a2191a09
+Bob Dylan 1978-10-31 St Paul PART ONE\09 Track09.flac:d8b38acab947f9db137e90f3124dc74e
+Bob Dylan 1978-10-31 St Paul PART ONE\10 Track10.flac:a82fca6cdd1b79b85555d5dfc4e7d28e
+Bob Dylan 1978-10-31 St Paul PART ONE\11 Track11.flac:c8dbca86433771e85798a107700fa33c
+Bob Dylan 1978-10-31 St Paul PART ONE\12 Track12.flac:dcbce45f92c74476fa47552ef6afec7b
+Bob Dylan 1978-10-31 St Paul PART ONE\13 Track13.flac:df2d0aec2deb21300a56f751389ff1f5
+Bob Dylan 1978-10-31 St Paul PART ONE\14 Track14.flac:32e7ed2188dbe2e9221622dbbb76f214
+Bob Dylan 1978-10-31 St Paul PART TWO\01 Track01.flac:25bf6d9eef1c110936f48226192ca268
+Bob Dylan 1978-10-31 St Paul PART TWO\02 Track02.flac:25a39a356d815b92ec12f58e4473eb3c
+Bob Dylan 1978-10-31 St Paul PART TWO\03 Track03.flac:e1cafbe085e7ae3ebb281363423da087
+Bob Dylan 1978-10-31 St Paul PART TWO\04 Track04.flac:e15d1a3497aa50c20be711d20fa1f14e
+Bob Dylan 1978-10-31 St Paul PART TWO\05 Track05.flac:a5471647fac980bb66c5a601a893296b
+Bob Dylan 1978-10-31 St Paul PART TWO\06 Track06.flac:5ca1b3170af5a4838eb3da841adb2808
+Bob Dylan 1978-10-31 St Paul PART TWO\07 Track07.flac:b187201f1918ef0f39374591404c2fbd
+Bob Dylan 1978-10-31 St Paul PART TWO\08 Track08.flac:b2cadd6de0074d7ae7dd41ac59e40e04
+Bob Dylan 1978-10-31 St Paul PART TWO\09 Track09.flac:cf4751a337a679007a070a76aca08317
+Bob Dylan 1978-10-31 St Paul PART TWO\10 Track10.flac:2c5a30fddb5a66534f799087d7705bb3
+Bob Dylan 1978-10-31 St Paul PART TWO\11 Track11.flac:07bf71086c8241462aea997112290111
+Bob Dylan 1978-10-31 St Paul PART TWO\12 Track12.flac:a274b8d84782e6041c6a04dbdad8575f
+Bob Dylan 1978-10-31 St Paul PART TWO\13 Track13.flac:98111ace6049fe558fce515a9cb74cd9
+===================
+===================
+===================
+=== shntool len for: bd78-10-31-e.flacf\Bob Dylan 1978-10-31 St Paul PART ONE
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:42.25       28635644 B   ---   --   ---xx   flac  0.6247  01 Track01.flac
+     5:44.71       60848636 B   ---   --   ---xx   flac  0.6173  02 Track02.flac
+     4:48.31       50876156 B   ---   --   ---xx   flac  0.6069  03 Track03.flac
+     4:41.05       49580204 B   ---   --   ---xx   flac  0.6178  04 Track04.flac
+     7:54.22       83665388 B   ---   --   ---xx   flac  0.5807  05 Track05.flac
+     4:52.37       51595868 B   ---   --   ---xx   flac  0.6068  06 Track06.flac
+     6:02.50       63974444 B   ---   --   ---xx   flac  0.5787  07 Track07.flac
+     4:19.00       45687644 B   ---   --   ---xx   flac  0.5827  08 Track08.flac
+     7:13.32       76456508 B   ---   --   ---xx   flac  0.6263  09 Track09.flac
+     4:40.62       49537868 B   ---   --   ---xx   flac  0.6126  10 Track10.flac
+     4:41.64       49718972 B   ---   --   ---xx   flac  0.6141  11 Track11.flac
+     5:03.03       53456300 B   ---   --   ---xx   flac  0.6225  12 Track12.flac
+     6:15.39       66241772 B   ---   --   ---xx   flac  0.6282  13 Track13.flac
+     3:19.37       35190668 B   ---   --   ---xx   flac  0.6130  14 Track14.flac
+    72:19.28      765466072 B                            0.6084  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd78-10-31-e.flacf\Bob Dylan 1978-10-31 St Paul PART TWO
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:58.36       52651916 B   ---   --   ---xx   flac  0.6089  01 Track01.flac
+     5:12.29       55105052 B   ---   --   ---xx   flac  0.6033  02 Track02.flac
+     5:27.70       57847484 B   ---   --   ---xx   flac  0.5921  03 Track03.flac
+     5:55.04       62631452 B   ---   --   ---xx   flac  0.6194  04 Track04.flac
+     4:32.30       48051404 B   ---   --   ---xx   flac  0.6243  05 Track05.flac
+     5:39.50       59917244 B   ---   --   ---xx   flac  0.6202  06 Track06.flac
+     4:09.45       44029484 B   ---   --   ---xx   flac  0.6335  07 Track07.flac
+     3:57.13       41837420 B   ---   --   ---xx   flac  0.6417  08 Track08.flac
+     3:22.45       35738684 B   ---   --   ---xx   flac  0.6452  09 Track09.flac
+     9:20.30       98854604 B   ---   --   ---xx   flac  0.6385  10 Track10.flac
+     6:49.04       72157052 B   ---   --   ---xx   flac  0.6631  11 Track11.flac
+     8:35.43       90947180 B   ---   --   ---xx   flac  0.6834  12 Track12.flac
+     4:20.41       45960476 B   ---   --   ---xx   flac  0.6748  13 Track13.flac
+    72:20.65      765729452 B                            0.6366  (13 files)
+===================
+===================
+===================

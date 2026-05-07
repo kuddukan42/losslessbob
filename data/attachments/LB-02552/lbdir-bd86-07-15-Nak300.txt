@@ -1,0 +1,159 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-07-15-Nak300 
+=================== 
+=================== 
+=================== 
+4da9078463f34d9feeb45425a01654f7  bd86-07-15-Nak300.txt
+ef56a5feca2b228e1b9db57ecb2c9b0e  Disc1\DylanPetty-1986-7-15d1.md5
+522d7f2ff2be3d11d14326b4b43ee96a  Disc1\DylanPetty-1986-7-15d1t01.shn
+4f0369809cb824b55c6f069263422116  Disc1\DylanPetty-1986-7-15d1t02.shn
+0986cb82b93583c044d605280d904361  Disc1\DylanPetty-1986-7-15d1t03.shn
+33a992373f1c597165795c7aa008ee2d  Disc1\DylanPetty-1986-7-15d1t04.shn
+43cbba0820c40921f2ec80e430835352  Disc1\DylanPetty-1986-7-15d1t05.shn
+bc5de107f3d1b1579a1ef6241d8f6edf  Disc1\DylanPetty-1986-7-15d1t06.shn
+cc8e2200d6f36161374d36d790b365e4  Disc1\DylanPetty-1986-7-15d1t07.shn
+d4f60a69c16e9c24452ca108265d6b92  Disc1\DylanPetty-1986-7-15d1t08.shn
+6bede3d4bf14956c28d428f72db556ee  Disc1\DylanPetty-1986-7-15d1t09.shn
+f2d78446314f0624331347ccd15ac4ad  Disc1\DylanPetty-1986-7-15d1t10.shn
+58ecf078d72d59218d47f8bb71a856ce  Disc1\DylanPetty-1986-7-15d1t11.shn
+4901904318c1581f41c23a544c3a1bc9  Disc2\DylanPetty-1986-7-15d2.md5
+4f75c741cf5ddf7989cd7f7e44b0a0e2  Disc2\DylanPetty-1986-7-15d2t01.shn
+f9e4b8cff7132381d6b7586a24a846e9  Disc2\DylanPetty-1986-7-15d2t02.shn
+5bd32898c3fdcdff1a57d30f5f7a21af  Disc2\DylanPetty-1986-7-15d2t03.shn
+0ab18e6a62bfb8a5d08f091e57e61475  Disc2\DylanPetty-1986-7-15d2t04.shn
+058293ae538d8b62655063c864fd0f05  Disc2\DylanPetty-1986-7-15d2t05.shn
+51cff815249993646d3dfe99c7c46e1c  Disc2\DylanPetty-1986-7-15d2t06.shn
+ccf86a8094daa850def628d6328200ab  Disc2\DylanPetty-1986-7-15d2t07.shn
+09f2e216d81151c9ff7c804a6e946483  Disc2\DylanPetty-1986-7-15d2t08.shn
+fc6f41f0a3456f77a4695759a15a9893  Disc2\DylanPetty-1986-7-15d2t09.shn
+c1863717c3e884465f3a8e06b8a6abe4  Disc2\DylanPetty-1986-7-15d2t10.shn
+67cdf359c7b8a586c110c54a6adff2c6  Disc2\DylanPetty-1986-7-15d2t11.shn
+5d45d1410e2a8c708ea80f1a17f2bbfd  Disc2\DylanPetty-1986-7-15d2t12.shn
+a42920c3e97dcad755648985c7390c96  Disc2\DylanPetty-1986-7-15d2t13.shn
+4ef01ecaae9d48396821f55f6f58e628  Disc2\DylanPetty-1986-7-15d2t14.shn
+b72e8997785795dbdea4d58c81c6392e  Disc2\DylanPetty-1986-7-15d2t15.shn
+e1b1c404c5f958aaab60369e870beb72  Disc3\DylanPetty-1986-7-15d3.md5
+cfbb2a496518380eea6bde4c5443f671  Disc3\DylanPetty-1986-7-15d3t01.shn
+1d6753255c9ab9688a026e207dc830b6  Disc3\DylanPetty-1986-7-15d3t02.shn
+ff97048a746c7a34a94ffb4f3800f1f8  Disc3\DylanPetty-1986-7-15d3t03.shn
+8d5d22cde52e483df39f6b682c3d6f34  Disc3\DylanPetty-1986-7-15d3t04.shn
+acf399b21b223fb2aeb1aae87341cc9a  Disc3\DylanPetty-1986-7-15d3t05.shn
+ae03d668a1d24a96524487c01cfa5449  Disc3\DylanPetty-1986-7-15d3t06.shn
+b2153a0cb0cc4fad047c2b034ba59b45  DylanPetty1986-7-15.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-07-15-Nak300\Disc1 
+=================== 
+=================== 
+=================== 
+d1082b564a7ca5b5d09bebab1f9466c4  [shntool]  DylanPetty-1986-7-15d1t01.wav
+43e740ff70bc1c0e49d9e1554076d437  [shntool]  DylanPetty-1986-7-15d1t02.wav
+d112e39f2cfed3dc7df885c29d0f6f5f  [shntool]  DylanPetty-1986-7-15d1t03.wav
+06f2c0530fcc9fe62f0607ed7f25c2d8  [shntool]  DylanPetty-1986-7-15d1t04.wav
+e7d4358220fc0e13cd006ead43a3cae3  [shntool]  DylanPetty-1986-7-15d1t05.wav
+79723599eebe2aa7c37ea9a521ea5349  [shntool]  DylanPetty-1986-7-15d1t06.wav
+5ce6f5e231d477e9bcfec829408c855a  [shntool]  DylanPetty-1986-7-15d1t07.wav
+26fe646c1251f0a04237f1ff4bd84fc9  [shntool]  DylanPetty-1986-7-15d1t08.wav
+ff0c6eb5c39e170809c24a155a61ed2c  [shntool]  DylanPetty-1986-7-15d1t09.wav
+0086c08d2deaed923b7a23436915deef  [shntool]  DylanPetty-1986-7-15d1t10.wav
+722141c3ed853fdbeb897b039bd31fbf  [shntool]  DylanPetty-1986-7-15d1t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-07-15-Nak300\Disc2 
+=================== 
+=================== 
+=================== 
+11656e91a1c2c56b8f22eede2d3edbe1  [shntool]  DylanPetty-1986-7-15d2t01.wav
+35942695b534bff850deac1de2cfeb2d  [shntool]  DylanPetty-1986-7-15d2t02.wav
+20f6fca9799ecba5a5822804f52bc96e  [shntool]  DylanPetty-1986-7-15d2t03.wav
+075d1a7e798d77a09ff286a0cbb0e676  [shntool]  DylanPetty-1986-7-15d2t04.wav
+864ad8ebbacb0ab7e8f06b0792e9d812  [shntool]  DylanPetty-1986-7-15d2t05.wav
+9e436b6bcaecbf26650f0c6db02ce567  [shntool]  DylanPetty-1986-7-15d2t06.wav
+fb6db69e015ab95ce9226020dc3c3916  [shntool]  DylanPetty-1986-7-15d2t07.wav
+740d729e713993241d6e934f52918676  [shntool]  DylanPetty-1986-7-15d2t08.wav
+fc41bde4964293eb3f856840f94d4bd1  [shntool]  DylanPetty-1986-7-15d2t09.wav
+566246624f1d6996c6b204f7bff95fe8  [shntool]  DylanPetty-1986-7-15d2t10.wav
+cb1f7c9ad5a54496e3042bfaf9e19dc9  [shntool]  DylanPetty-1986-7-15d2t11.wav
+da0e2a429fccb6b54a64c08648263f75  [shntool]  DylanPetty-1986-7-15d2t12.wav
+53b623774b7089f9aded3b9c89ef02e9  [shntool]  DylanPetty-1986-7-15d2t13.wav
+b200a185543e9540c1ce2d03b14726a1  [shntool]  DylanPetty-1986-7-15d2t14.wav
+65e7135e2495096337886f8b71ecdb44  [shntool]  DylanPetty-1986-7-15d2t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-07-15-Nak300\Disc3 
+=================== 
+=================== 
+=================== 
+7ea7c533ea139b52df36d8edcec8d109  [shntool]  DylanPetty-1986-7-15d3t01.wav
+e4c2e01f28a741df6b4be5a263f508b5  [shntool]  DylanPetty-1986-7-15d3t02.wav
+e18f46f26fb7c033aa7f3a2d82578408  [shntool]  DylanPetty-1986-7-15d3t03.wav
+82863988f813639e7a3bfb9c0a2364ae  [shntool]  DylanPetty-1986-7-15d3t04.wav
+cc454dc4fb13798085aa4c7af777479a  [shntool]  DylanPetty-1986-7-15d3t05.wav
+2da0821e2b18a53e51ee4651111fb100  [shntool]  DylanPetty-1986-7-15d3t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-15-Nak300\Disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.02       35990348 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t01.wav
+     4:20.14       45896972 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t02.wav
+     3:14.66       34376876 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t03.wav
+     4:41.51       49688396 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t04.wav
+     5:18.45       56201084 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t05.wav
+     4:36.24       48742892 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t06.wav
+     5:09.61       54651116 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t07.wav
+     5:32.70       58729484 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t08.wav
+     3:37.25       38337644 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t09.wav
+     5:20.42       56546828 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t10.wav
+     6:19.21       66905036 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d1t11.wav
+    51:35.46      546066676 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-15-Nak300\Disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:24.16       57191276 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t01.wav
+     4:34.37       48420668 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t02.wav
+     5:56.63       62946620 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t03.wav
+     5:35.42       59192828 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t04.wav
+     4:27.54       47225852 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t05.wav
+     5:52.45       62198684 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t06.wav
+     4:35.66       48665276 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t07.wav
+     5:43.23       60559340 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t08.wav
+     3:44.55       39643004 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t09.wav
+     6:43.25       71148044 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t10.wav
+     3:45.49       39805292 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t11.wav
+     4:56.52       52336748 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t12.wav
+     4:25.35       46828364 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t13.wav
+     4:37.46       48971036 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t14.wav
+     5:47.29       61279052 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d2t15.wav
+    76:11.37      806412084 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-15-Nak300\Disc3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.74       54858092 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d3t01.wav
+    11:09.58      118148060 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d3t02.wav
+     6:08.15       64950524 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d3t03.wav
+     4:54.33       51939260 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d3t04.wav
+     4:30.27       47691548 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d3t05.wav
+     6:30.32       68871308 B   ---   --   -----    wav  1.0000  DylanPetty-1986-7-15d3t06.wav
+    38:24.14      406458792 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

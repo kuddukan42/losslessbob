@@ -1,0 +1,18 @@
+a243982410a3e7be7adf30d93c89c19f *01 bd2024-11-8 Notts_spot.flac
+0a606a63e74d0dfa9f414e2c0e13aa42 *02 nottingham.flac
+5c378928e9f7a49d5c94959a8398f254 *03 nottingham.flac
+342c5614b1518f399637ea7cbfb4480e *04 nottingham.flac
+f2b13adfbbb4ef5d55381a0dda86e984 *05 nottingham.flac
+d4952545c0d76b987da84552df7b09aa *06 nottingham.flac
+b71c4ee4b7101fb7df0e2d33200d1be4 *07 nottingham.flac
+90cea6eaaee27f5497b20bc040e8a869 *08 nottingham.flac
+4abdcc735d0e8395c2f8564c90a47802 *09 nottingham.flac
+9665e562e59e7df45a6162c553421a11 *10 nottingham.flac
+1ea672cb03336d4ebac61138cce73b55 *11 nottingham.flac
+4caceacc4da58a90b0a3282c9b46523d *12 nottingham.flac
+9ee0ea6361c7fadf6a4bf44ae12ef234 *13 nottingham.flac
+bef362674d143c7305b9d095cc3ecb79 *14 nottingham.flac
+65899ee32c64d7e556d6a8df3637c082 *15 nottingham.flac
+d5bdf78a9cc2115fbab8c0494bd8792f *16 nottingham.flac
+d3e5a0fa1a73d3b8b6c2c7cb89225f85 *17 nottingham.flac
+9a7e9c00eefb4a1e587c331f379a77d6 *info.txt

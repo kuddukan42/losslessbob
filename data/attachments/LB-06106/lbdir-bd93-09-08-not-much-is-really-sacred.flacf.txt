@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-08-not-much-is-really-sacred.flacf 
+=================== 
+=================== 
+=================== 
+f0687eff9b003c5fa4b07fb04a06a9d0  bd93-09-08-not-much-is-really-sacred-LB-6106.txt
+bac2c5720d0fbd55a5185974246b4543  bd93-09-08-not-much-sacred1t01.flac
+227a64e8eb383fc1e322fc3c0e74c1b9  bd93-09-08-not-much-sacred1t02.flac
+92469666d1c89f7451aca0afdc125bb5  bd93-09-08-not-much-sacred1t03.flac
+dfc8e6871faf88f4cd8c68838fc9f1ea  bd93-09-08-not-much-sacred1t04.flac
+5091085264cd3e4472dcf5fdb8c2f60b  bd93-09-08-not-much-sacred1t05.flac
+486b0182961aff3d1e99f3c5c82d058c  bd93-09-08-not-much-sacred1t06.flac
+1f9679b7428ae80585997ef920f2780c  bd93-09-08-not-much-sacred1t07.flac
+9bab724344158d56e52549d58d6173df  bd93-09-08-not-much-sacred1t08.flac
+74aa7bb9cf9634c05ace7042a3250743  bd93-09-08-not-much-sacred1t09.flac
+0a6076aebb33278fe02a88159f1fe38f  bd93-09-08-not-much-sacred1t10.flac
+ba4533fd8d0932bc66b9726e6297ad3d  bd93-09-08-not-much-sacred1t11.flac
+c0acc4e21333ef01f89d7b5d376bae42  bd93-09-08-not-much-sacred2t01.flac
+856292db9dac4feee856a0128e1ddd64  bd93-09-08-not-much-sacred2t02.flac
+ebedaed8191229511d925bbcf2482b24  bd93-09-08-not-much-sacred2t03.flac
+2496395de49e42f6820cc792a81fefa8  bd93-09-08-not-much-sacred2t04.flac
+c9304894f061f592ec242e7823b71b77  bd93-09-08-not-much-sacred2t05.flac
+6f4595ca5594a0c7a310dc7fbb8c1afa  bd93-09-08-not-much-sacred2t06.flac
+337d2bd4ffd6f9bbb86b25f6a6cc8252  bd93-09-08-not-much-sacred2t07.flac
+a5d35e4ca45905a2b4bdd754bf8d28d4  bd93-09-08-not-much-sacred2t08.flac
+1c6d14da52fe9e0b1b591edf21fd13b5  bd93-09-08-not-much-sacred2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-08-not-much-is-really-sacred.flacf 
+=================== 
+=================== 
+=================== 
+bd93-09-08-not-much-sacred1t01.flac:6f7b65fdd57b7868176cbfc0d733e0ce
+bd93-09-08-not-much-sacred1t02.flac:3be14f68c97cadafd9b3777e465d7c28
+bd93-09-08-not-much-sacred1t03.flac:b9e4106b27139365b204c584f547d190
+bd93-09-08-not-much-sacred1t04.flac:7b1bab97fbc0c113add3df30d2924de5
+bd93-09-08-not-much-sacred1t05.flac:47dbe0a48fadd38673f4edfecaffe313
+bd93-09-08-not-much-sacred1t06.flac:0997d2e04a0eae1a5559e38d89ac9424
+bd93-09-08-not-much-sacred1t07.flac:231a18f6f3e0454d439d4a2c144cb5c1
+bd93-09-08-not-much-sacred1t08.flac:e97733449f0f256178e60ea930d385ae
+bd93-09-08-not-much-sacred1t09.flac:28315efd0d15d0b47328c3e35df97a92
+bd93-09-08-not-much-sacred1t10.flac:9d423035be131954de965d3192f9f081
+bd93-09-08-not-much-sacred1t11.flac:5bcb9318391f91fbb7929d2422343ff9
+bd93-09-08-not-much-sacred2t01.flac:4eed349affcc1c305e625bc310f4207e
+bd93-09-08-not-much-sacred2t02.flac:4084c1f20984877e5a36ac33487bef69
+bd93-09-08-not-much-sacred2t03.flac:581ddc33027c4c6caf896c357f6022d1
+bd93-09-08-not-much-sacred2t04.flac:7b9b81a263035f942d0c1da36120abb8
+bd93-09-08-not-much-sacred2t05.flac:1dcfb8c28b682a2e3ddef94f22d7ecc8
+bd93-09-08-not-much-sacred2t06.flac:61b6bcf2c8e370bcc56726116c1d0b63
+bd93-09-08-not-much-sacred2t07.flac:eb1a48ed8cbfec4c7d39255830e589c2
+bd93-09-08-not-much-sacred2t08.flac:57d912b4e02484fbd4e650cde5af64f3
+bd93-09-08-not-much-sacred2t09.flac:af40bd62939ae889694047e5a5c8358e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-08-not-much-is-really-sacred.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.55       47404604 B   ---   --   ---xx   flac  0.5663  bd93-09-08-not-much-sacred1t01.flac
+     8:15.00       87318044 B   ---   --   ---xx   flac  0.5611  bd93-09-08-not-much-sacred1t02.flac
+     5:59.60       63468764 B   ---   --   ---xx   flac  0.5669  bd93-09-08-not-much-sacred1t03.flac
+     8:43.33       92334860 B   ---   --   ---xx   flac  0.5653  bd93-09-08-not-much-sacred1t04.flac
+     4:58.32       52642508 B   ---   --   ---xx   flac  0.5699  bd93-09-08-not-much-sacred1t05.flac
+     6:56.45       73488284 B   ---   --   ---xx   flac  0.5571  bd93-09-08-not-much-sacred1t06.flac
+     5:54.00       62445644 B   ---   --   ---xx   flac  0.5419  bd93-09-08-not-much-sacred1t07.flac
+     7:45.63       82174220 B   ---   --   ---xx   flac  0.5600  bd93-09-08-not-much-sacred1t08.flac
+     8:32.62       90462668 B   ---   --   ---xx   flac  0.5454  bd93-09-08-not-much-sacred1t09.flac
+     5:45.43       60959180 B   ---   --   ---xx   flac  0.5647  bd93-09-08-not-much-sacred1t10.flac
+     5:49.15       61598924 B   ---   --   ---xx   flac  0.5795  bd93-09-08-not-much-sacred1t11.flac
+     7:59.25       84554444 B   ---   --   ---xx   flac  0.5521  bd93-09-08-not-much-sacred2t01.flac
+     9:02.33       95686460 B   ---   --   ---xx   flac  0.5619  bd93-09-08-not-much-sacred2t02.flac
+     3:36.00       38102444 B   ---   --   ---xx   flac  0.5654  bd93-09-08-not-much-sacred2t03.flac
+     6:48.50       72088844 B   ---   --   ---xx   flac  0.5760  bd93-09-08-not-much-sacred2t04.flac
+     9:10.57       97154108 B   ---   --   ---xx   flac  0.5969  bd93-09-08-not-much-sacred2t05.flac
+     7:14.48       76670540 B   ---   --   ---xx   flac  0.5879  bd93-09-08-not-much-sacred2t06.flac
+     7:57.50       84260444 B   ---   --   ---xx   flac  0.5682  bd93-09-08-not-much-sacred2t07.flac
+     9:02.00       95608844 B   ---   --   ---xx   flac  0.5888  bd93-09-08-not-much-sacred2t08.flac
+     7:40.27       81207548 B   ---   --   ---xx   flac  0.5931  bd93-09-08-not-much-sacred2t09.flac
+   141:41.23     1499631376 B                            0.5689  (20 files)
+=================== 
+=================== 
+=================== 

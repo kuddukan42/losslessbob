@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-jbaez-Together-63-64-dm-remaster 
+=================== 
+=================== 
+=================== 
+4333db4623f80f4586020dbd70ed2fb9  bd-jbaez-Together-63-64-dm-remaster.txt
+edaa3ffad23fa074963821e3ae5cda2f  dylan and baez - LK_dan mc remaster.md5
+badf55c07471cd78e67094f653bf1c4a  dylan and baez - LK_dan mc remaster.txt
+3eb7015dd125152b3e560a26dd7b5e46  dylan and baez d1t01.shn
+3e44c4b82c9a907e769f6955e64dc240  dylan and baez d1t02.shn
+19ae2caaee4f945bfdf9ecf022d5cc26  dylan and baez d1t03.shn
+1e1f066c94d584bd458ef9911f00d914  dylan and baez d1t04.shn
+d042d63238068a4305ddbb609b4cee85  dylan and baez d1t05.shn
+38e5b854b1f88ab659e63c641146d92a  dylan and baez d1t06.shn
+4bf07bb2e7212897f9f2cee95db3b2dd  dylan and baez d1t07.shn
+7ad9a9250b2b1eb182f44dfcd5566649  dylan and baez d1t08.shn
+409fed8dc523c08cb3c1029d6ab165f1  dylan and baez d1t09.shn
+bf1bb6f2e84262f0a26460786f6f3de0  dylan and baez d1t10.shn
+3d2206c320de2bb2d52a86fa1dd395bc  dylan and baez d1t11.shn
+bdbc5af404c67ec34a2165efd9dac0be  dylan and baez d1t12.shn
+7b3534e8b3e19a55771d7392fe35ef82  dylan and baez d1t13.shn
+1dda8c40006b5cd788a63a2c5447c5a6  dylan and baez d1t14.shn
+1484c63fb80885fd66bca28959ae51c7  dylan and baez d1t15.shn
+68ddeeedfbd1ff2e81e2ac01473e8ec2  dylan and baez d1t16.shn
+be8901a4d219205a69c1bc02f400129e  dylan and baez d2t1.shn
+30924a435c5a911295d207fc619e7f4a  dylan and baez d2t2.shn
+f0dd0eea5adf53dad20ba32dfe2334c9  dylan and baez d2t3.shn
+465291b8681a5ed555a338f88369ed50  dylan and baez d2t4.shn
+adffeed4a99c85a06d4ff2b86301c89a  dylan and baez d2t5.shn
+54b86afb47c42b83097e85d5456fb034  dylan and baez d2t6.shn
+02def2e4dd432a85a8dfeeff3b890098  dylan and baez d2t7.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-jbaez-Together-63-64-dm-remaster 
+=================== 
+=================== 
+=================== 
+391e3d43ced995a58430280654038e58  [shntool]  dylan_and_baez_d1t01.wav
+75adce77ac1ee7a404a3dd46aaece999  [shntool]  dylan_and_baez_d1t02.wav
+df293986f9a3b1dcab99b9a5ac58ef2f  [shntool]  dylan_and_baez_d1t03.wav
+4ff6c3533f5fc9c87fa849d6b793da6e  [shntool]  dylan_and_baez_d1t04.wav
+f161af81b128817e3f86b550832f1922  [shntool]  dylan_and_baez_d1t05.wav
+b697cd54f76cd5b056cc9826c940e0a5  [shntool]  dylan_and_baez_d1t06.wav
+987602c70eea2d329788aa41ec33ae1c  [shntool]  dylan_and_baez_d1t07.wav
+75871753dcd4dd230bb151bd587b0955  [shntool]  dylan_and_baez_d1t08.wav
+9e6867a3cbd281ffdc798fdb79933669  [shntool]  dylan_and_baez_d1t09.wav
+793b99636e484ca95fe815d04af17a52  [shntool]  dylan_and_baez_d1t10.wav
+2d06c0c89f9b6e3185ed800174623415  [shntool]  dylan_and_baez_d1t11.wav
+074a1ca8f7b0df22ae906bb301dd02d1  [shntool]  dylan_and_baez_d1t12.wav
+6f9baef50b0b4f4765fd836dbcbd4ad6  [shntool]  dylan_and_baez_d1t13.wav
+55a599442e07bbc1947d952fba09c467  [shntool]  dylan_and_baez_d1t14.wav
+106d194883062c7c129f06f2baf80832  [shntool]  dylan_and_baez_d1t15.wav
+2452609dff5e84016050419d7a4065a4  [shntool]  dylan_and_baez_d1t16.wav
+6f58013c8ac03272ebe51475bec9f7f0  [shntool]  dylan_and_baez_d2t1.wav
+2dfb8f825ead2f61407027bb07911f99  [shntool]  dylan_and_baez_d2t2.wav
+104a76d34f4e9683a6b07e88996b26a9  [shntool]  dylan_and_baez_d2t3.wav
+16b6e1f28862791c8bb922702335e1ff  [shntool]  dylan_and_baez_d2t4.wav
+e646a5aed3e29ab4605498b6f7b0c9f4  [shntool]  dylan_and_baez_d2t5.wav
+bf5a7ff48552d982ee2446eb5133260e  [shntool]  dylan_and_baez_d2t6.wav
+649bbc1224cfc86172675d3dfc3090f4  [shntool]  dylan_and_baez_d2t7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-jbaez-Together-63-64-dm-remaster 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:42.66       28732080 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t01.wav
+     2:09.36       22841392 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t02.wav
+     3:09.33       33417264 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t03.wav
+     2:15.02       23818752 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t04.wav
+     3:25.29       36230256 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t05.wav
+     4:26.37       47009472 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t06.wav
+     4:03.43       42966384 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t07.wav
+     0:23.61        4200720 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t08.wav
+     1:59.69       21153936 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t09.wav
+     4:48.38       50892624 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t10.wav
+     3:42.48       39274544 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t11.wav
+     3:24.60       36126768 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t12.wav
+     3:12.70       34033488 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t13.wav
+     2:41.72       28569792 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t14.wav
+     3:50.35       40654368 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t15.wav
+     2:13.23       23515132 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d1t16.wav
+     3:39.69       38793932 B   ---   --   -----    wav  1.0000  dylan_and_baez_d2t1.wav
+     3:47.65       40195724 B   ---   --   -----    wav  1.0000  dylan_and_baez_d2t2.wav
+     6:32.46       69257820 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d2t3.wav
+     4:36.52       48808748 B   ---   --   -----    wav  1.0000  dylan_and_baez_d2t4.wav
+     3:52.59       41063612 B   ---   --   -----    wav  1.0000  dylan_and_baez_d2t5.wav
+     6:26.41       68186876 B   ---   --   -----    wav  1.0000  dylan_and_baez_d2t6.wav
+     5:13.23       55267816 B   -b-   --   -----    wav  1.0000  dylan_and_baez_d2t7.wav
+    82:40.28      875011500 B                            1.0000  (23 files)
+=================== 
+=================== 
+=================== 

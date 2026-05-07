@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-02-06-tarantula.flacf 
+=================== 
+=================== 
+=================== 
+9b697cbc8d2d79d5b1b3fc1da8056c29  bd1999-02-06 info.txt
+56f46de908d4ed4cf477bb29df62fec4  bd1999-02-06.ffp
+27a504411d87eacd9a553b499d8831dc  bd1999-02-06.md5
+1cad32478a87e878d43fea02c5288af6  bd1999-02-06d1t01.flac
+80b2b281fa40a964cb8fd2c3c74b6db7  bd1999-02-06d1t02.flac
+0c9ebb4809af9871fa94028a0fedb9df  bd1999-02-06d1t03.flac
+3f03e8450f7d95b6e952b4353acc6cde  bd1999-02-06d1t04.flac
+4adc7a1e0e1f4ccbbdf526aa62f4a8ac  bd1999-02-06d1t05.flac
+99e47be184576b3dc9d436120e727f03  bd1999-02-06d1t06.flac
+c0c255ef1509da90d7dedff3ec8947b9  bd1999-02-06d1t07.flac
+01dc57a0d695ddc24a3c86867385b1e6  bd1999-02-06d1t08.flac
+8cb11871547ad2651a280a3cc8439fe4  bd1999-02-06d1t09.flac
+e0ee280a8ae6c76db84072d378ce5b5d  bd1999-02-06d2t01.flac
+3bd37b169556c2b5a11af83edfce4c2f  bd1999-02-06d2t02.flac
+63d6074784301a1a5b1fa2daf376c4e4  bd1999-02-06d2t03.flac
+cb1a57bfa57aa8cebff4544c2e1dd173  bd1999-02-06d2t04.flac
+4a936864b73712f4feae39331b881091  bd1999-02-06d2t05.flac
+0c34fe7eb6adc0831fe1abb8b1e25dfa  bd1999-02-06d2t06.flac
+7f32d0e3cc8799544a13771e2a7b36aa  bd1999-02-06d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-06-tarantula.flacf 
+=================== 
+=================== 
+=================== 
+bd1999-02-06d1t01.flac:77595cf15ccda24dd3ed9701b33d630a
+bd1999-02-06d1t02.flac:35ec457cf1fa96df3c433cc7275e6cc3
+bd1999-02-06d1t03.flac:630bc4fae52275c0084ade171255eefc
+bd1999-02-06d1t04.flac:a736598d91d89b4aa051444d53274008
+bd1999-02-06d1t05.flac:85b85a7284d57f073408866ce3b15386
+bd1999-02-06d1t06.flac:e1cdc78ee7015de04c7f5b2f9362c907
+bd1999-02-06d1t07.flac:78d846521fec17898ce40797ad9f15d5
+bd1999-02-06d1t08.flac:6a7b8259ff055d7dd8db4f6a56125810
+bd1999-02-06d1t09.flac:09f230d6367aa9bfc00cb9e8a448b803
+bd1999-02-06d2t01.flac:c8bbac8441c8606b564f2b483d202e0e
+bd1999-02-06d2t02.flac:c8d8a8eaa26d93bf3d8f2c95f439fe8b
+bd1999-02-06d2t03.flac:0fa2e0ad07ad5fe428441e79c9d090c1
+bd1999-02-06d2t04.flac:8a354e1aeda73ab71b11f4f8b91a5c36
+bd1999-02-06d2t05.flac:75a5ddc74674c1e08db2d09e0251ebcc
+bd1999-02-06d2t06.flac:8aa443d971e050010aa0e62764bc925e
+bd1999-02-06d2t07.flac:4092e8ac74f2ca59790b8bfaf2acce32
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-06-tarantula.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.59       44415212 B   ---   --   ---xx   flac  0.6124  bd1999-02-06d1t01.flac
+     5:24.60       57294764 B   ---   --   ---xx   flac  0.5473  bd1999-02-06d1t02.flac
+     7:01.53       74389100 B   ---   --   ---xx   flac  0.5795  bd1999-02-06d1t03.flac
+     3:59.53       42284300 B   ---   --   ---xx   flac  0.5004  bd1999-02-06d1t04.flac
+     5:44.74       60855692 B   ---   --   ---xx   flac  0.6117  bd1999-02-06d1t05.flac
+     3:59.50       42277244 B   ---   --   ---xx   flac  0.4680  bd1999-02-06d1t06.flac
+     7:45.70       82190684 B   ---   --   ---xx   flac  0.4587  bd1999-02-06d1t07.flac
+     5:42.21       60378236 B   ---   --   ---xx   flac  0.5274  bd1999-02-06d1t08.flac
+     8:25.44       89185532 B   ---   --   ---xx   flac  0.5765  bd1999-02-06d1t09.flac
+     4:13.65       44782124 B   ---   --   ---xx   flac  0.5551  bd1999-02-06d2t01.flac
+     6:34.04       69511052 B   ---   --   ---xx   flac  0.5787  bd1999-02-06d2t02.flac
+     9:17.19       98299532 B   ---   --   ---xx   flac  0.5977  bd1999-02-06d2t03.flac
+     5:45.53       60982700 B   ---   --   ---xx   flac  0.5312  bd1999-02-06d2t04.flac
+     5:24.26       57214796 B   ---   --   ---xx   flac  0.5979  bd1999-02-06d2t05.flac
+     6:32.24       69205292 B   ---   --   ---xx   flac  0.4713  bd1999-02-06d2t06.flac
+     5:38.31       59696156 B   ---   --   ---xx   flac  0.5992  bd1999-02-06d2t07.flac
+    95:42.31     1012962416 B                            0.5525  (16 files)
+=================== 
+=================== 
+=================== 

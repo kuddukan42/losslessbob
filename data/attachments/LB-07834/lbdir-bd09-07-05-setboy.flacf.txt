@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-07-05-setboy.flacf 
+=================== 
+=================== 
+=================== 
+c08654110ad4fdd9ef9a69e66710fac3  dylan.disc01Track01.flac
+0ba6bf1274febc5cdcd6e64bed5cb8ca  dylan.disc01Track02.flac
+f3fc2ee38e08dbdf08e2e730df3a60e5  dylan.disc01Track03.flac
+0aae47b78e223b1e351d1b1166cc66dc  dylan.disc01Track04.flac
+40ab3fae5bf91b1487438acf9e2ff38c  dylan.disc01Track05.flac
+6a3d5a9675318db2354e5398cba94b73  dylan.disc01Track06.flac
+4ed4cb87f45a95a04d0bb47595ab0c1f  dylan.disc01Track07.flac
+3919c046cd1a9479b6958d642d9fc598  dylan.disc01Track08.flac
+436f1a80ed2b67968a805293058eb07b  dylan.disc02Track01.flac
+9ace7f39ccc1711f7f26292ffd310825  dylan.disc02Track02.flac
+48c6068799f01731d1e346cbf03e8798  dylan.disc02Track03.flac
+6c8e8a0e0e6af16f1b92ea836587d707  dylan.disc02Track04.flac
+35c129c7a81d529069c4a450b5adde3f  dylan.disc02Track05.flac
+02b9ee149d0d9df654100e1d84ca038f  dylan.disc02Track06.flac
+fbe701755906227c6885d1f4ce22ba9f  dylan.disc02Track07.flac
+e6ebc2c9963edd761609351ec02d79c6  dylan.disc02Track08.flac
+f456bd05b73eb1eb578202cbf1032fdf  dylan.disc02Track09.flac
+0f9a6be7cdc974e016b3c2c10e3efe31  dylan.disc02Track10.flac
+a78fb8187974c7d640c188dcdca5b787  dylan.disc02Track11.flac
+9794ec63dcf12b314172267bab040250  dylan2009-05-07.busman.txt
+9c470c3dfe9477b6a1d30970b408e9a4  dylan2009-07-05.busman.fingerprint.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-07-05-setboy.flacf 
+=================== 
+=================== 
+=================== 
+dylan.disc01Track01.flac:ef41701fd054352baef28c8fc97adf7d
+dylan.disc01Track02.flac:4f2133291abd921c6546ccf86ce8d102
+dylan.disc01Track03.flac:7e1cbdafe2708bb157089813868cbf39
+dylan.disc01Track04.flac:9e2623b439a8ef0a6d5cbfd4e0d2dec9
+dylan.disc01Track05.flac:39d261823076815e87c00c93626fa5a0
+dylan.disc01Track06.flac:10ed5387dd87eb5fe814238078451f30
+dylan.disc01Track07.flac:eb4875b5f251d07cc42b20fa63b27615
+dylan.disc01Track08.flac:2aa09f0bb105f31e973f875009d69e9c
+dylan.disc02Track01.flac:77cfce5275a2b7dd7ae44931c1bcd38d
+dylan.disc02Track02.flac:f1ff27fd3b13dd190c55ee1c50bd7567
+dylan.disc02Track03.flac:01ae0b374cf9a09fa486de0acb5d9c08
+dylan.disc02Track04.flac:e8df5b8913ccd14cc341719a9ec99c47
+dylan.disc02Track05.flac:275c50d4e0b6e4b5f0f923c870fc700b
+dylan.disc02Track06.flac:4dc4a8e71e5677d484fdbd9741cdde75
+dylan.disc02Track07.flac:69f7bacdcc3ceff9f930e94a51441575
+dylan.disc02Track08.flac:c1ab87859faa09b7a8027f47254dcb3b
+dylan.disc02Track09.flac:deb850f335b0f8b551478f5d6dc74a2b
+dylan.disc02Track10.flac:bf275ea884496624e1d544222d43b081
+dylan.disc02Track11.flac:4c90e01bfdd4a5f5494e90fb6baac591
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-07-05-setboy.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:14.49       13168892 B   ---   --   ---xx   flac  0.3006  dylan.disc01Track01.flac
+     4:51.62       51478268 B   ---   --   ---xx   flac  0.4348  dylan.disc01Track02.flac
+     4:58.73       52738940 B   ---   --   ---xx   flac  0.4283  dylan.disc01Track03.flac
+     7:38.37       80878268 B   ---   --   ---xx   flac  0.4627  dylan.disc01Track04.flac
+     7:01.68       74424376 B   -b-   --   ---xx   flac  0.4217  dylan.disc01Track05.flac
+     7:00.03       74095100 B   ---   --   ---xx   flac  0.3530  dylan.disc01Track06.flac
+     6:47.06       71808952 B   -b-   --   ---xx   flac  0.3992  dylan.disc01Track07.flac
+     6:48.25       72030044 B   ---   --   ---xx   flac  0.4225  dylan.disc01Track08.flac
+     4:40.24       49448488 B   -b-   --   ---xx   flac  0.3683  dylan.disc02Track01.flac
+     7:24.39       78413372 B   ---   --   ---xx   flac  0.4470  dylan.disc02Track02.flac
+     6:32.38       69238220 B   ---   --   ---xx   flac  0.4118  dylan.disc02Track03.flac
+     7:30.64       79530572 B   ---   --   ---xx   flac  0.4359  dylan.disc02Track04.flac
+     8:02.59       85163608 B   -b-   --   ---xx   flac  0.3673  dylan.disc02Track05.flac
+     6:07.20       64785884 B   ---   --   ---xx   flac  0.4630  dylan.disc02Track06.flac
+     7:01.54       74391448 B   -b-   --   ---xx   flac  0.4429  dylan.disc02Track07.flac
+     0:41.64        7382972 B   ---   --   ---xx   flac  0.2558  dylan.disc02Track08.flac
+     4:01.66       42667676 B   ---   --   ---xx   flac  0.4279  dylan.disc02Track09.flac
+     5:35.31       59166952 B   -b-   --   ---xx   flac  0.4543  dylan.disc02Track10.flac
+     5:14.57       55523708 B   ---   --   ---xx   flac  0.4179  dylan.disc02Track11.flac
+   109:15.14     1156335740 B                            0.4185  (19 files)
+=================== 
+=================== 
+=================== 

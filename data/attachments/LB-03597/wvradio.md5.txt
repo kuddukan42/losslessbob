@@ -1,0 +1,21 @@
+70cfafd4d8bc1a98ea1fc4a7974a9918 *01 bd_wvr.announcer1.flac
+b2ef3ca4f1c8f717b88597fee91b7a16 *02 bd1974-01-14.aft.sbd.jlaw.flac
+60a82f8bbb2feac3b03f69a1dccf617b *03 bd1974-02-11.eve.sbd.tttaac.flac
+569721c15e8a9760624c10a87b567f09 *04 bd1974-02-13.sbd.cripplecreek.flac
+23fe7fb56987ea1885a60cd27a576b56 *05 bd1974-02-13.sbd.knockin.flac
+16747bb4bf50cacfdb644a13fb16ff3e *06 bd1974-02-14.eve.sbd.06.thinman.flac
+d268d32dce1a89f5531f9927341bddd7 *07 bd1974-02-14.eve.sbd.23.shape.flac
+c53f6d1d21790e21a80ee2e9a454bbe7 *08 bd1975-03-23.sbd.aintthatalotoflove.flac
+8259c4a803fe51722968c27e80e5a198 *09 bd1975-03-23.sbd.helpless.flac
+f3d0e6ad29cf5987d4c2ce3d27bbe534 *10 bd1975-10-31.sbd.isbr.flac
+49d7fd7d4e0e62f6daba12f1ea96a1f9 *11 bd1975-12-04.sbd.00sfbayblues.flac
+44d55ced3e030111efc7ab31065921ed *12 bd1975-12-04.sbd.hurricane.flac
+78b3ac0d31818105c5f05d5f511db2fa *13 bd1975-12-08.sbd.06.lifeonmars.flac
+6ba86079612673f0d3a32f94524bdd28 *14 bd1975-12-08.sbd.11.shadows.flac
+3bccad85be4b105e8b8fdd3312ce7917 *15 bd1976-11-25.sbd.03.nodifference.flac
+9a3f4d6fce4f016e227012c71de6e7d1 *16 bd1976-11-25.sbd.26.neildiamond.flac
+aabcf0053ebacd6d2c2d6c1d7801331e *17 bd_wvr.announcer2.flac
+b5bc91cf728c04d2e7e5d363fbd36827 *wvr_artwork.jpg
+a34304348ecb291e7c022696e5f51d51 *wvr_fa.jpg
+7fffb79d6b2643f50ee5dd5688d6dc3d *wvr_info.txt
+2a15173d8c42ef4d345f9f5263186c1f *wvradio.ffp

@@ -1,0 +1,44 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-05-05-the-live-dylan-bp074.flacf 
+=================== 
+=================== 
+=================== 
+7e313cbcc307d33841af89622b645957  bd66-05-05-the-live-dylan-bp074-t01.flac
+1b86f059aaa0d16f01d269e364821baa  bd66-05-05-the-live-dylan-bp074-t02.flac
+f856a4c969082e95f2579043066eda50  bd66-05-05-the-live-dylan-bp074-t03.flac
+e8d85fd97494f84dbc57d483ac89379a  bd66-05-05-the-live-dylan-bp074-t04.flac
+cdc450c118e71d4068c76f2abc8e1705  bd66-05-05-the-live-dylan-bp074-t05.flac
+334b1c758b9f3205b88e3b946282db4e  bd66-05-05-the-live-dylan-bp074-t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-05-05-the-live-dylan-bp074.flacf 
+=================== 
+=================== 
+=================== 
+bd66-05-05-the-live-dylan-bp074-t01.flac:2c9178948f7e4c80cefc2f51cf60ae04
+bd66-05-05-the-live-dylan-bp074-t02.flac:7df8c26151882c15648161f4f99f3b04
+bd66-05-05-the-live-dylan-bp074-t03.flac:2da3a61511af5deb393de95116515e02
+bd66-05-05-the-live-dylan-bp074-t04.flac:c76c3f3df2e1b1bd794d120afae56ec2
+bd66-05-05-the-live-dylan-bp074-t05.flac:6448e8774e77ea3c923b116c660bbb5c
+bd66-05-05-the-live-dylan-bp074-t06.flac:c2cc87f99e6ddcd446cbfff9991443f0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-05-05-the-live-dylan-bp074.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:50.00       82908044 B   ---   --   ---xx   flac  0.4372  bd66-05-05-the-live-dylan-bp074-t01.flac
+     4:28.45       47381084 B   ---   --   ---xx   flac  0.4831  bd66-05-05-the-live-dylan-bp074-t02.flac
+     5:07.55       54284204 B   ---   --   ---xx   flac  0.4395  bd66-05-05-the-live-dylan-bp074-t03.flac
+    10:35.03      112021100 B   ---   --   ---xx   flac  0.4581  bd66-05-05-the-live-dylan-bp074-t04.flac
+     5:02.25       53331644 B   ---   --   ---xx   flac  0.4540  bd66-05-05-the-live-dylan-bp074-t05.flac
+     8:30.42       90062828 B   ---   --   ---xx   flac  0.4626  bd66-05-05-the-live-dylan-bp074-t06.flac
+    41:34.20      439988904 B                            0.4550  (6 files)
+=================== 
+=================== 
+=================== 

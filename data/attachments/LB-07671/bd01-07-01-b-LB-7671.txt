@@ -1,0 +1,14 @@
+Bob Dylan, 7/1/01, Helsingborg, Sweden, 2CDR
+
+LB-7671, (69min+54min), version "b"; This recording is derived from LB-4040, you'll find the same problems here:, mic noise static and drops d1t1 0:39, lots d1t4 4:xx; plus a few more; bittorrent download 06/09; same recording as LB-4040 based on same clapping wavs at end of d1t1; in comparison that is not full spectrum and this is is fuller spectrum and the channels are swapped and the levels are higher on this so clips a little; this has more hiss than that and is warmer but more muffled so probably gots its fuller spectrum through a cassette generation; (did not listen to all of this)
+
+drop d1t3 0:00, d1t6 0:00, d1t8 0:00, between cdrs, d2t3 0:00, end of d2t3; discontinuities between tracks
+
+CD1
+1. Duncan And Brady, 2. Mr. Tambourine Man, 3. Tangled Up In Blue, 4. Maggie's Farm, 5. I Threw It All Away, 6. Absolutely Sweet Marie, 7. My Back Pages, 8. It's Alright, Ma (I'm Only Bleeding), 9. Don't Think Twice, It's All Right, 10. Dignity, 11. Cold Irons Bound, 
+
+CD2
+12. Leopard-Skin Pill-Box Hat, 13. Things Have Changed, 14. Like A Rolling Stone, 15. If Dogs Run Free, 16. All Along The Watchtower, 17. I Shall Be Released, 18. Highway 61 Revisited, 19. Blowin' In The Wind, 20. Rainy Day Women #12 & 35 (Larry on lap steel guitar on stand)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

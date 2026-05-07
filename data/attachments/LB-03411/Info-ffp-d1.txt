@@ -1,0 +1,11 @@
+01 Cocaine blues.flac:503d172a7f1d889042d7ef650e11c00f
+02 Mr. Tambourine Man.flac:d9213878fb416b5c45ee952c843601c6
+03 Desolation Row.flac:44255cc0ec0a597c4ced39ce2646caff
+04 One too many mornings.flac:fbf9fbdd66e6fae132db312083d8b489
+05 Tangled up in blue.flac:2c7a8e4a3cfeb0ca2a7a7185a10e3381
+06 All along the watchtower.flac:50638a6d8ec720ba49488414a5f835b2
+07 Make you feel my love.flac:e93b2156889f8444fa05d4067a075241
+08 Watching the river flow.flac:88a2462d2c596bdf9a379c6b175b4309
+09 Not dark yet.flac:ebe6d5949a9d85ff1cac06a78b63c0cc
+10 (band intro).flac:0f5941df5f90d62c6b98847e3029fe1c
+11 Highway 61 revisited.flac:06325efa4e2505d92367217e68697ddc

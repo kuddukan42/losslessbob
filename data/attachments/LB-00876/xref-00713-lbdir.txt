@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-10-19-a.flacf 
+=================== 
+=================== 
+=================== 
+a5290883356754bc01b6c70e5a34bfd6  disc 1\disc 1 eac.LOG
+adef967ded83d83942d12f5d68bc1fcb  disc 1\Track01.flac
+f945cbaec0fbfef43980e98bc869d2e3  disc 1\Track02.flac
+1e0b042c7d0359869274961d26e7004b  disc 1\Track03.flac
+78ab14039672111e4424abdfe4c42028  disc 1\Track04.flac
+f27008a6713cda49b8cbe7fb3b4efe8b  disc 1\Track05.flac
+fdaa12f505ce61027826038768e7bc09  disc 1\Track06.flac
+916af9568a347707aaa4b4cfa56bed7d  disc 1\Track07.flac
+9999e4573d58d18f69d8eb770784cab4  disc 1\Track08.flac
+bf607ab8515c2b5cd6f67f08f91b1b1c  disc 2\disc 2 eac.LOG
+ca2d582b087f4eb114db0ca3e60eda54  disc 2\Track01.flac
+4e760889ba338b46e786dfe1e2a20ee3  disc 2\Track02.flac
+ed624727e94629f13ad08cb7d8e44125  disc 2\Track03.flac
+37b2365c5e7664beea06b241c23b2d3c  disc 2\Track04.flac
+55c83936b1fa421b5f8f5fdf7eae5ce9  disc 2\Track05.flac
+70303c9876cf02f7bdde943b2769364f  disc 2\Track06.flac
+6177d7f47fc4944f641c510851edfce9  disc 2\Track07.flac
+50a3d4b1e7f1e95cb96300ace03fcc6a  Dylan 1996-10-19.md5
+07fa83bb7b2c8331b970bbe70dac27d1  Dylan 1996-10-19.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-19-a.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:a6a3a7004dddd3377436d79584b8b2c1
+Track02.flac:5fe805b319a59e7f6458e47f175bed6d
+Track03.flac:3e7674cf2f4293755baa117feeda902d
+Track04.flac:b88c8badd4cd56e12ad6bd3ab494debf
+Track05.flac:47b45c364f1216d56bfe0f7c5dc2d3d3
+Track06.flac:17f2569a3d8d1db2ee33c65baa985eae
+Track07.flac:d64e6ac66172ea27a891a049e7abb4a4
+Track08.flac:90621b621c362b145eb95944140691f1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-19-a.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:227d51d480608956e802a7b96757024a
+Track02.flac:7ca55238d14c6f126ae5214c42e1a504
+Track03.flac:f1673dada6e207e73dd05ecd86b98355
+Track04.flac:cf63f1eaf9b57f2ab9cebff077575f50
+Track05.flac:28d98e13207d12c2624a26f1fa3462cf
+Track06.flac:31dd8a1c7486f3e37364abd380120ad1
+Track07.flac:e6bc45c93e53986f247eb43904fa621c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-19-a.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.35       50179964 B   ---   --   ---xx   flac  0.5815  Track01.flac
+     5:56.46       62906636 B   ---   --   ---xx   flac  0.5476  Track02.flac
+     5:38.39       59714972 B   ---   --   ---xx   flac  0.5792  Track03.flac
+     8:53.00       94021244 B   ---   --   ---xx   flac  0.5445  Track04.flac
+     6:13.06       65811356 B   ---   --   ---xx   flac  0.5865  Track05.flac
+     8:46.51       92906396 B   ---   --   ---xx   flac  0.5805  Track06.flac
+     7:37.69       80777132 B   ---   --   ---xx   flac  0.5735  Track07.flac
+     6:40.12       70588268 B   ---   --   ---xx   flac  0.5158  Track08.flac
+    54:30.33      576905968 B                            0.5628  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-19-a.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:05.33       64463660 B   ---   --   ---xx   flac  0.5154  Track01.flac
+     7:31.43       79657580 B   ---   --   ---xx   flac  0.5796  Track02.flac
+     8:02.37       85111868 B   ---   --   ---xx   flac  0.5269  Track03.flac
+     7:38.39       80882972 B   ---   --   ---xx   flac  0.5307  Track04.flac
+    11:03.32      117028508 B   ---   --   ---xx   flac  0.5690  Track05.flac
+     6:45.11       71467916 B   ---   --   ---xx   flac  0.5400  Track06.flac
+     7:57.24       84199292 B   ---   --   ---xx   flac  0.5930  Track07.flac
+    55:03.69      582811796 B                            0.5530  (7 files)
+=================== 
+=================== 
+=================== 

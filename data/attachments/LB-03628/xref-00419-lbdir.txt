@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-04-03-b.flacf 
+=================== 
+=================== 
+=================== 
+7db184390d1a2f3f4a60c2281c438bf8  2000-04-03 Five Seasons Center, Cedar Rapids, Iowa, USA.md5
+028758c83be4fb1faaeaba400c58a056  CD1\01 Roving gambler.flac
+9351f4bf2a07d062d1337f7878ccbd71  CD1\02 Song to Woody.flac
+51dd80c092e63d47711db2705dd169fb  CD1\03 Desolation Row.flac
+09ca1f14c7f3cc08741f78c6b28d1921  CD1\04 Mama you been on my mind.flac
+45fef08b5da76edc9312054a7fe892a3  CD1\05 Tangled up in blue.flac
+ec9bb89a2541b1aa8eb43b7c74d39c51  CD1\06 The white dove.flac
+11c10f4676e6291d73406ff4c3ee1706  CD1\07 Gotta serve somebody.flac
+7a4f3126debdf67fa174004da3bef565  CD1\08 You ain't goin' nowhere.flac
+0f1db2cc99c48af7a7a7ec84b0f4e96f  CD1\09 Tombstone blues.flac
+a7b59a2cd5b597ba8010733d61b86ca8  CD1\10 I'll be your baby tonight.flac
+1634323b82a6b8cc028fa9cad47f26e0  CD1\11 Lenny Bruce.flac
+f2c6eccc539b1d478cfada08962a6bcd  CD1\12 Leopard-skin pill-box hat.flac
+db27b566a3adbfe7219a7613f8f7a53c  CD2\13 Love sick.flac
+be23462a62d28a0d0ddbf709a27a436f  CD2\14 Like a rolling stone.flac
+e2ea27a3f98250114f0f894665a1c21c  CD2\15 Knockin' on Heaven's door.flac
+432e5aefecc9d2b3ffe088fe4db1f8ee  CD2\16 Not fade away.flac
+f5d36ca0223ee20ff93c38e41bcacf94  CD2\17 Don't think twice, it's all right.flac
+2e879ee3d46dc8f0d03ae09682dacc38  CD2\18 Rainy day women # 12 & 35.flac
+a228965b1b123fafffec6181c294d812  Info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-04-03-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 roving gambler.flac:d3d4d9f7c7c0477f165c3d5ac29ef1a8
+02 song to woody.flac:9a0aa085d37aac6cf5a986b1e63adebb
+03 desolation row.flac:bdf8c1ed13d1b1fea7a174fd5e2e162d
+04 mama you been on my mind.flac:089da646baad32c440629e9c8e893f90
+05 tangled up in blue.flac:1f91222aba377313ce551fcde79c327c
+06 the white dove.flac:dc0074ecd00f3868c802fc8d6422d002
+07 gotta serve somebody.flac:7b5997df1ad8233245fb433230ea5d26
+08 you ain't goin' nowhere.flac:59485ed9bfe99ee0a4751a47a79533be
+09 tombstone blues.flac:79970b2e049fb5edca73ef9a9b55fbb6
+10 i'll be your baby tonight.flac:5d61fc8ca496e968be13db7a9dcb2e60
+11 lenny bruce.flac:896431cf966560c93fa078485d737b5d
+12 leopard-skin pill-box hat.flac:5012dccf19d01b13b5ff5e7c194e94ee
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-04-03-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+13 love sick.flac:26f775599286f0c56b27d36a7d7c5758
+14 like a rolling stone.flac:7aa19b2575b35b07a00e2ad3a20c5435
+15 knockin' on heaven's door.flac:631613e42c4b0b2fc6248cfb7336c6db
+16 not fade away.flac:f3b252e136a47691d607b4b36e4424e5
+17 don't think twice, it's all right.flac:f1e060e96f088aac9a79ce779c889ef0
+18 rainy day women # 12 & 35.flac:0f6b8efa30e7eefe8e228ebc4a24836f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-04-03-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:51.11       51358316 B   ---   --   ---xx   flac  0.5359  01 Roving gambler.flac
+     4:04.45       43147484 B   ---   --   ---xx   flac  0.4458  02 Song to Woody.flac
+     9:11.35       97278764 B   ---   --   ---xx   flac  0.5017  03 Desolation Row.flac
+     4:22.12       46245068 B   ---   --   ---xx   flac  0.4894  04 Mama you been on my mind.flac
+     7:47.10       82402364 B   ---   --   ---xx   flac  0.5677  05 Tangled up in blue.flac
+     4:13.01       44631596 B   ---   --   ---xx   flac  0.4668  06 The white dove.flac
+     5:43.67       60662828 B   ---   --   ---xx   flac  0.5693  07 Gotta serve somebody.flac
+     4:45.69       50436332 B   ---   --   ---xx   flac  0.5242  08 You ain't goin' nowhere.flac
+     7:02.04       74450252 B   ---   --   ---xx   flac  0.5824  09 Tombstone blues.flac
+     6:03.40       64127324 B   ---   --   ---xx   flac  0.5416  10 I'll be your baby tonight.flac
+     6:58.12       73763468 B   ---   --   ---xx   flac  0.5558  11 Lenny Bruce.flac
+     6:23.11       67587116 B   ---   --   ---xx   flac  0.6313  12 Leopard-skin pill-box hat.flac
+    71:26.17      756090912 B                            0.5403  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-04-03-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:00.40       84766124 B   ---   --   ---xx   flac  0.5342  13 Love sick.flac
+     7:23.64       78295772 B   ---   --   ---xx   flac  0.5967  14 Like a rolling stone.flac
+     6:23.67       67718828 B   ---   --   ---xx   flac  0.5327  15 Knockin' on Heaven's door.flac
+     4:26.59       47061212 B   ---   --   ---xx   flac  0.6098  16 Not fade away.flac
+     6:40.61       70703516 B   ---   --   ---xx   flac  0.5202  17 Don't think twice, it's all right.flac
+     7:11.32       76103708 B   ---   --   ---xx   flac  0.6043  18 Rainy day women # 12 & 35.flac
+    40:07.23      424649160 B                            0.5641  (6 files)
+=================== 
+=================== 
+=================== 

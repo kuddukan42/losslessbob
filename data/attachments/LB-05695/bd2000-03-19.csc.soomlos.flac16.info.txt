@@ -1,0 +1,43 @@
+Bob Dylan
+Idaho State University
+Holt Arena
+Pocatello, Idaho
+March 19, 2000
+
+Disc 1:
+01. Hallelujah, I'm Ready To Go [03:10]
+02. Mr. Tambourine Man [06:11]
+03. It's Alright, Ma (I'm Only Bleeding) [07:28]
+04. It's All Over Now, Baby Blue [07:24]
+05. Tangled Up In Blue [07:31]
+06. Rock Of Ages [03:49]
+07. Country Pie [02:58] 
+08. Señor (Tales Of Yankee Power) [05:33]
+09. Stuck Inside Of Mobile With The Memphis Blues Again [07:19]
+10. I'll Be Your Baby Tonight [05:57]
+11. Not Dark Yet [06:18] 
+12. band introductions [00:47]
+13. Highway 61 Revisited [08:26]
+Total time: [72:58]
+
+Disc 2: (encores) 
+01. Love Sick [05:59] 
+02. Like A Rolling Stone [08:16] 
+03. It Ain't Me, Babe [09:48] 
+04. Not Fade Away [05:54]
+05. Blowin' In The Wind [06:18]
+06. Rainy Day Women #12 & 35 [06:32]
+Total time: [42:50]
+
+Band Members
+Bob Dylan - vocals, guitar, harp
+Larry Campbell - guitars, pedal steel, vocals
+Charlie Sexton - guitars, vocals
+David Kemper - drums
+Tony Garnier - electric & stand-up bass
+
+source: soomlos
+left center grandstand
+core-sound cardioids > sony tcd-d8
+sony tcd-d8 > m-audio mt24/96 (16/44.1)
+sound forge 7.0 > cd wave > flac

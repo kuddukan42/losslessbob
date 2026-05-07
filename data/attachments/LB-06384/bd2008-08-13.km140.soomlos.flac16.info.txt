@@ -1,0 +1,60 @@
+Bob Dylan
+Convention Hall
+Asbury Park, New Jersey
+August 13, 2008
+
+Disc 1:
+01. introduction
+02. Rainy Day Women #12 & 35
+03. It Ain't Me, Babe
+04. Rollin' And Tumblin'
+05. Spirit On The Water
+06. High Water (For Charley Patton)
+07. Tryin' To Get To Heaven
+08. Honest With Me
+09. Tangled Up In Blue
+10. It's Alright, Ma (I'm Only Bleeding)
+11. Beyond The Horizon
+12. Highway 61 Revisited
+
+Disc 2:
+01. Nettie Moore
+02. Summer Days
+03. Ain't Talkin'
+(encore)
+04. Like A Rolling Stone
+05. band introduction
+06. Thunder On The Mountain
+07. Blowin' In The Wind
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - lead guitar
+Donnie Herron - violin, viola, banjo, mandolin, steel guitar
+Stu Kimball - rhythm guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann km140's > lunatec v3 > m-audio mt1 (24/48)
+
+ffp
+bd2008-08-13d1t01.flac:86522a33cf81c4b5bd118be2dbcc55fb
+bd2008-08-13d1t02.flac:dd8bdf962991f0d28df7e16795f28c35
+bd2008-08-13d1t03.flac:ce3ae84c703d3a28725bafc13543f8da
+bd2008-08-13d1t04.flac:7ef0ae8b16b8a13881efeeb0ddda653d
+bd2008-08-13d1t05.flac:bfc7e28769ef379987e07eae5757b6d5
+bd2008-08-13d1t06.flac:5b338d05df60a10c151a4b74fdd1fde1
+bd2008-08-13d1t07.flac:c31718644a7525b47742ad665094616d
+bd2008-08-13d1t08.flac:f39064ab0188fa91e5c6f9be336ebaf9
+bd2008-08-13d1t09.flac:508ccb6a833b7cca42dc56c06382ca2d
+bd2008-08-13d1t10.flac:8512bf610f85b66c2c15df89a5ccf254
+bd2008-08-13d1t11.flac:b1c32c6d96ff62fa0fda50b4c14644bb
+bd2008-08-13d1t12.flac:5865caf5505bf1b4d46dc9bf64c1a288
+bd2008-08-13d2t01.flac:ccd68c5a304cb017d301228f061fd4b4
+bd2008-08-13d2t02.flac:19f124f59efc9d2dfb66abd900463f1c
+bd2008-08-13d2t03.flac:bbfa1eadf4cdf9cc1d49a4833948edc7
+bd2008-08-13d2t04.flac:1c4281fee2fb257c27d23049d9552890
+bd2008-08-13d2t05.flac:a5c3854d3be50fade35119e635caf3fa
+bd2008-08-13d2t06.flac:39ebfc8a6ad70d9dd615a6478f5f3a0f
+bd2008-08-13d2t07.flac:89fcafb64ce28bbd1d9855f17fd9e0f6

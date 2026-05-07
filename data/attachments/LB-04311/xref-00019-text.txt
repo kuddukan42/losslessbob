@@ -1,0 +1,24 @@
+===================
+===================
+===================
+=== 1987-09-21-Copenhagen.md5
+===================
+===================
+===================
+d32675761df2a59d103bbbda85d33436 *Track01.flac
+26be92b81a58c08f133ef7488c39fc17 *Track02.flac
+cf363bfc413e716a4a3cfeb904b1ed27 *Track03.flac
+5492d58234742d122d7c2ba170cf64d8 *Track04.flac
+ea828409cb1279cd71c28fb2c5a7c734 *Track05.flac
+e4a3b7fcc04171cf92fb192b5f3179e0 *Track06.flac
+dc99fc71627164cc273777aeadf4f020 *Track07.flac
+414e53fe5b0c823705aa47afd06b68cb *Track08.flac
+cd0403194f450a9789b761b504f65982 *Track09.flac
+283e087d085df22a9a149f39caf6c39a *Track10.flac
+6f2db0dbba1f2d404653159324b86d54 *Track11.flac
+69c8128a07883c2e7431e1a95f2a3e4e *Track12.flac
+b672d3f75e95188a7691a4aa2f287a1c *Track13.flac
+165ae4e7e4e02d6a31f2a019e7a340c9 *Track14.flac
+===================
+===================
+===================

@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-10-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+5277b7a94d077467898c81ce086f6716  Basel.md5
+98b7574eb27ea03ac56a95d17307e97c  BobDylan03Basel.txt
+37900d82f5c7e1587d640b2e7fc29d1d  DylanBasel1987Front.jpg
+934b2d17ce4938f724d7ec91ff2263ef  DylanBasel87.jpg
+deb82d15616a456cbc40a56927db8402  Track01.flac
+0c196fc9af41ece326278a7855d1b471  Track02.flac
+ea00b934fd3e99226ffd6bacfc0eb52e  Track03.flac
+04a375f4bdd181782ff9effa74baf8e2  Track04.flac
+bdbb6356ddd0465cb6a4f5f2693501ae  Track05.flac
+adcb4f2bc17b51d8eb49bd3c9ad8395b  Track06.flac
+d57c1fe28e93926e509d8dc42d179763  Track07.flac
+a88316ef0412ffc33f82205f68aabbac  Track08.flac
+31b540a49c989deb0808587a7089ec95  Track09.flac
+a71bfe1b55ba230c7f6165b93ddca59f  Track10.flac
+a5eac5a455a85d98f28c7a6d6706d83c  Track11.flac
+92c06565967bd08b3983ed44c5fa33f9  Track12.flac
+9ab4716339f3e4bdd4d962eab0f11a3f  Track13.flac
+068c150c278956387785408b4fa373f2  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-10-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:9a7a693c7f6fdfd41e9c519b0cdf5f90
+Track02.flac:41ede6bbefe2d5b51e0af6bc181d9b7c
+Track03.flac:22370d2ca34ae736246d3e777f14077f
+Track04.flac:f6de0e0a5e8aac374496a8358d15ac06
+Track05.flac:08aebe42ab9997c52fc7817b470489a4
+Track06.flac:7f5e5cd5b4add9e39c7994fad9bbbc13
+Track07.flac:a64815753ff6e94f4dcfb42a260cab33
+Track08.flac:0fbbcb4d4dac5e4f3bd9de2b749bea8c
+Track09.flac:bbbed4de10102afb9d0c9a5ddc029659
+Track10.flac:a84d794230d95aca0d41102be6a2b9ec
+Track11.flac:c67bfa138d427a2cddf638eab391907f
+Track12.flac:5b8b67aed95ac1232c531ad596df331c
+Track13.flac:815073e71489743a213ee9d11d09e1fc
+Track14.flac:260ddc0280f2a489ed974a18b35cae29
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-09-10-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.15       61422524 B   ---   --   ---xx   flac  0.5955  Track01.flac
+     4:16.67       45316028 B   ---   --   ---xx   flac  0.6681  Track02.flac
+     4:08.35       43829564 B   ---   --   ---xx   flac  0.6942  Track03.flac
+     6:17.64       66653372 B   ---   --   ---xx   flac  0.6805  Track04.flac
+     5:04.68       53785580 B   ---   --   ---xx   flac  0.6717  Track05.flac
+     5:04.05       53637404 B   ---   --   ---xx   flac  0.6539  Track06.flac
+     4:43.22       49972988 B   ---   --   ---xx   flac  0.6628  Track07.flac
+     2:41.55       28529804 B   ---   --   ---xx   flac  0.6983  Track08.flac
+     3:40.07       38824508 B   ---   --   ---xx   flac  0.6314  Track09.flac
+     3:30.60       37185164 B   ---   --   ---xx   flac  0.6349  Track10.flac
+     4:13.19       44673932 B   ---   --   ---xx   flac  0.6130  Track11.flac
+     3:30.20       37091084 B   ---   --   ---xx   flac  0.6169  Track12.flac
+     5:29.13       58066220 B   ---   --   ---xx   flac  0.6186  Track13.flac
+     5:16.59       55881212 B   ---   --   ---xx   flac  0.6213  Track14.flac
+    63:45.59      674869384 B                            0.6459  (14 files)
+=================== 
+=================== 
+=================== 

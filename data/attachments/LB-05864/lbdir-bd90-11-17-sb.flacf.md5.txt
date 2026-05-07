@@ -1,0 +1,24 @@
+1290a950b303bd89a1a9023a655d8391  infos.txt
+79165992db6d10fb6a9f1b2d93e03d13  No Reason To Get Exited [CD1]\1990-11-17_101.flac
+7e11fcea555ab2bef5f1bf45e3ecbe51  No Reason To Get Exited [CD1]\1990-11-17_102.flac
+7f7157c86ee3662307ee8611d9819cb7  No Reason To Get Exited [CD1]\1990-11-17_103.flac
+be1a70f235c910d82c6691106c127733  No Reason To Get Exited [CD1]\1990-11-17_104.flac
+dbc415eb5a81444af54347e5033f4fd8  No Reason To Get Exited [CD1]\1990-11-17_105.flac
+f473cb576d4a270dbb678aca38e872ff  No Reason To Get Exited [CD1]\1990-11-17_106.flac
+9b501a6773f0407898b452f10ea8faf1  No Reason To Get Exited [CD1]\1990-11-17_107.flac
+85c023726e212e830f293fc02c6be31d  No Reason To Get Exited [CD1]\1990-11-17_108.flac
+074af97626ac930c68d3350d0c3cd466  No Reason To Get Exited [CD1]\1990-11-17_109.flac
+a6b4e84b11dbd5b01458259d3fdcfec1  No Reason To Get Exited [CD1]\1990-11-17_110.flac
+05cf6dd98f3d1890a7abc9139e9737fa  No Reason To Get Exited [CD1]\No Reason To Get Exited [CD1].LOG
+b9a42e75aeea0213c4ee87947b1d789f  No Reason To Get Exited [CD1]\No Reason To Get Exited [CD1].md5
+e7011a1209f2ed70b03453ddb1531d29  No Reason To Get Exited [CD2]\1990-11-17_201.flac
+b78c816d6d947eee92f0dee71cff0b5f  No Reason To Get Exited [CD2]\1990-11-17_202.flac
+dec9a8bc1ee265b4da29589dd4d4f429  No Reason To Get Exited [CD2]\1990-11-17_203.flac
+e10c64439a16c96ed96eabe6bb688e97  No Reason To Get Exited [CD2]\1990-11-17_204.flac
+8ed6c54a2ab53caa2fb28f7e5e4646ef  No Reason To Get Exited [CD2]\1990-11-17_205.flac
+21c270683295c8d29dab350429b2c070  No Reason To Get Exited [CD2]\1990-11-17_206.flac
+a915d66253606899ab197c3416dc376c  No Reason To Get Exited [CD2]\1990-11-17_207.flac
+421fbd5abfba445edd918d4bf70ee57d  No Reason To Get Exited [CD2]\1990-11-17_208.flac
+5f07b90082a115085aa66b2eb6ba7c30  No Reason To Get Exited [CD2]\1990-11-17_209.flac
+f48eabddfbf282e010613dcceba82de1  No Reason To Get Exited [CD2]\No Reason To Get Exited [CD2].LOG
+e79ff1a36b330477f096f60a20ad7c8c  No Reason To Get Exited [CD2]\No Reason To Get Exited [CD2].md5

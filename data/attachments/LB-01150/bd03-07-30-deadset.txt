@@ -1,0 +1,8 @@
+Bob Dylan with The Dead, 07/30/03, St. Pete Times Forum, Tampa, FL, 1CDR
+
+(21min) From M.E.'s setup setup AT the board...B&K 4024's -> Modified Sonisacs pre-amp
+->Apogee MiniMe -> Sony Vaio/SoundForge 6. Normalized to 0dB peak (not RMS). > 44k wav file for set 1 > cooledit2000 for dylan track extraction > wav > shn
+
+1 > Friend of the Devil
+2 Gotta Serve Somebody
+3 Like a Rolling Stone >

@@ -1,0 +1,35 @@
+4c0ac1aa8cbd08259c7bf142aaa5f0d4  Bob Dylan - Nippon Budokan Hall, Tokyo, Japan, 1 March 1978 - setlist.rtf
+d24041258f75bae23325efb8d1cdcea4  cd1\1 Traccia Audio.flac
+0d235ab3fe3d32a66d514edcc683fa54  cd1\10 Traccia Audio.flac
+e3e5a59ff200cfa24542c0e39533ab7e  cd1\11 Traccia Audio.flac
+41604b0a499e1265b132ea1d3fb70800  cd1\12 Traccia Audio.flac
+2d02199e170b0d130d0e794a3f6dda66  cd1\13 Traccia Audio.flac
+0eafe87b43ca59d6c0d0158a589882c6  cd1\14 Traccia Audio.flac
+ab89a6ecd280bd1b7ac8c3cfc483230f  cd1\2 Traccia Audio.flac
+ab156676dfd283f6bf34cbf028541114  cd1\3 Traccia Audio.flac
+7a864833e3bfdf0e0db894d92c51c895  cd1\4 Traccia Audio.flac
+61031a328695c22a8aa2eafd501027a9  cd1\5 Traccia Audio.flac
+46a12447a1f5ed3332af87d9fc89b5df  cd1\6 Traccia Audio.flac
+b5c529d806b49a8e4175ea2d3268bb1d  cd1\7 Traccia Audio.flac
+8a4512bac03b7e8e38efd7764ef0c8b2  cd1\8 Traccia Audio.flac
+57a59883e93f05ff4511fb6aeb075a2d  cd1\9 Traccia Audio.flac
+7418b09e366b0ae14dc3485528d7a57b  cd1\checksum.md5
+653cfdd2fb500825e4b37c0313ab1479  cd1\fingerprint.ffp.txt
+f84ba336d15b7cbea2a8160914442f19  cd1\md5sum.md5
+6fd8f52e392e170434bf3bec4f396365  cd2\1 Traccia Audio.flac
+f5cf6c0a31e124e05324801f8af41f72  cd2\10 Traccia Audio.flac
+68b81bb770aaa75b67e3537a315ce5a0  cd2\11 Traccia Audio.flac
+0f73db698b1ea62242e039c592367375  cd2\12 Traccia Audio.flac
+d64336e0988bd11287d31b781d732557  cd2\13 Traccia Audio.flac
+dbaec16f7f6d42f15511a4db0dc2e6c1  cd2\14 Traccia Audio.flac
+d95bbc2938fac05182c325f743190a1c  cd2\2 Traccia Audio.flac
+36f385c69cfe89417a24c598dafe9f8f  cd2\3 Traccia Audio.flac
+1c9349f08f7baf7ad505ade6bd8dcd8d  cd2\4 Traccia Audio.flac
+fab13685154e6e9274a0e4328a6e260f  cd2\5 Traccia Audio.flac
+60c61f68dbc63e3dfe4da861a61fab93  cd2\6 Traccia Audio.flac
+4052902c3dd95f784df2055498ac6c0b  cd2\7 Traccia Audio.flac
+a5b45aea382ca8b41ab9a0510749d880  cd2\8 Traccia Audio.flac
+71c1ddfe7694d03d7a4c2cb708c1a164  cd2\9 Traccia Audio.flac
+e639f0f496a0e4133a6c220170ba9b50  cd2\checksum.md5
+566cbd031250bd4592abafd659d82847  cd2\fingerprint.ffp.txt
+2c2dbd03872aa4110bf704b988fa081b  cd2\md5sum.md5

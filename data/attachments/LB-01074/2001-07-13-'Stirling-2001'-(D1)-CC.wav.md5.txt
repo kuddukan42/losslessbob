@@ -1,0 +1,32 @@
+; Using hkSFV on 06.27.2003 at 19:30:42
+; http://www.big-o-software.com
+;
+;/----
+;     12044636 19:14.32 2003-06-27 101 - Intro.wav
+;     42286652 19:15.20 2003-06-27 102 - Oh Babe, It Ain't No Lie.wav
+;     52390844 19:16.14 2003-06-27 103 - To Ramona.wav
+;     63151244 19:17.14 2003-06-27 104 - Mr. Tambourine Man.wav
+;     70912844 19:18.14 2003-06-27 105 - Maggie's Farm.wav
+;     40395644 19:18.52 2003-06-27 106 - Tell Me That It Isn't True.wav
+;     64915244 19:19.44 2003-06-27 107 - Just Like A Woman.wav
+;     66326444 19:20.36 2003-06-27 108 - Gotta Serve Somebody.wav
+;     50274044 19:21.14 2003-06-27 109 - I Shall Be Released.wav
+;     86560700 19:22.16 2003-06-27 110 - Visions Of Johanna.wav
+;     82783388 19:23.12 2003-06-27 111 - Don't Think Twice.wav
+;     88200044 19:24.10 2003-06-27 112 - Memphis Blues Again.wav
+;     58910588 19:25.28 2003-06-27 113 - Not Dark Yet.wav
+;\----
+;
+d19c51a4220b4a6cde54e7b9f29adf59 *101 - Intro.wav
+b461c56ee97bb74a0f4413987f0d7234 *102 - Oh Babe, It Ain't No Lie.wav
+cc7d7a84c801ddfed29664a150499434 *103 - To Ramona.wav
+76b5c134e234601fbc46c40f35f776f2 *104 - Mr. Tambourine Man.wav
+683c71815311cfcfffc3a2ee32c6c0eb *105 - Maggie's Farm.wav
+d3a2481eab539b3b4f78b649ec3227b3 *106 - Tell Me That It Isn't True.wav
+d9f387ce8536774a59a751f0d1205032 *107 - Just Like A Woman.wav
+d32c16fe105f3f0f84c9d260f1c80187 *108 - Gotta Serve Somebody.wav
+92a3fb23578c09dc27448f49be3b3f1f *109 - I Shall Be Released.wav
+95f60c629050a4088ad0412f183c2ecb *110 - Visions Of Johanna.wav
+c5c53819ac6eab8831f2cbde1a2ce344 *111 - Don't Think Twice.wav
+a5e0ca376d5dc67a3008260ffeedb473 *112 - Memphis Blues Again.wav
+dbeaa142f2bcdb59a6f285e7f24a97eb *113 - Not Dark Yet.wav

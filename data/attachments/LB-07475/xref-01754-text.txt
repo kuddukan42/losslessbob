@@ -1,0 +1,162 @@
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+254b7a599cbd2721be1d7ba692e9a393 *00 (warm up).flac
+e279db79934ab220a009485bace19f0b *01 Crash on the levee (down in the flood).flac
+ab806a2f233f2ae9fabd35e910a2b643 *02 I want you.flac
+fe957b3c40c672f0d3687f444dfafc02 *03 All along the watchtower.flac
+8b18564089600d02def35b42950ea908 *04 Positively 4th Street.flac
+90a3ccfb42fbd7c6e455405626e46196 *05 Leopard-skin pill-box hat.flac
+e36dfa3f51df7ce04f181793debd4d5c *06 Silvio.flac
+d068206dfb2ddad49b8488799f23dba8 *07 Tangled up in blue.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+46da84846cfcf5f2ce4c056bc6c02b34 *08 Boots of Spanish leather.flac
+0fb6327694e46ff9b0160671908c291b *09 Don't think twice, it's all right.flac
+e607946480898d155fa018c6c15f9dfe *10 God knows.flac
+dbd6f443eee52c8e6e4238707cd766cf *11 Knockin' on heaven's door.flac
+ea35d0cf205e9cf97c5eec6566d2ddd0 *12 (band intro).flac
+49464e99da0574bf04f7ac1be4aa40a8 *12 Cat's in the well.flac
+37d5bb3ea8da579d86938d770da2a351 *13 Alabama getaway.flac
+f47ff88ab29ade0885279eed7c0eec36 *14 It ain't me, babe.flac
+9a9feb6fbfb3982526bed687791ceac1 *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================
+=== Bob Dylan 1995-11-07 Dallas Music Complex, Dallas, Texas, USA [VTX merge].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Dallas Music Complex
+Dallas, Texas
+November 7, 1995
+
+*** This is the same recording as LB-7475 ***
+
+Taper: unidentified
+Source/Lineage: no info
+
+Merged by V4TX:  Disc 1:  June 2005/Disc 2:  May 2009
+Three Source merge:
+1.) LB-2883
+2.) V4TX master
+3.) Cracked Bells In A Busted Barn, ThinMan Bootleg
+
+01 (warm up) (V4TX master) [00:15]
+02 Crash On The Levee (Down In The Flood) [04:59]
+03 I Want You [06:43]
+04 All Along The Watchtower [07:02]
+05 Positively 4th Street [09:01]
+06 Leopard-Skin Pill-Box Hat [08:23]
+07 Silvio (Bob Dylan & Robert Hunter) [07:50]
+08 Tangled Up In Blue [11:38]
+Total time [55:54]
+
+09 Boots Of Spanish leather [08:29]
+10 Don't Think Twice, It's All Right [07:15]
+11 God Knows [07:31]
+12 Knockin' On Heaven's Door [09:15]
+12 (band intro) [00:34]
+13 Cat's In The Well [09:02]
+14 Alabama Getaway (Robert Hunter/Jerry Garcia) [07:18]
+15 It Ain't Me, Babe (LB-2883/Cracked Bells boot, splice at 7:39, encore wait from v4tx source) [13:40]
+16 Rainy Day Women # 12 & 35 (beginning from v4tx source, rest Cracked Bells boot) [06:17]
+Total time [69:22	]
+
+Concert # 743 of The Never-Ending Tour. Concert # 29 of the 1995 Fall Classics Tour
+Concert # 103 in 1995
+
+Concert # 287 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+79, 14  acoustic with the band
+7, 14  Bob Dylan harmonica
+13  John Jackson backup vocal 
+
+10 new songs (66%) compared to previous concert
+2 new songs for this tour
+
+Stereo audience recording, 125 minutes
+
+I did this for myself and decided to share.  I was at this show and I always thought I had the best recording until someone shared LB-2883 here a few years ago.  Unfortunately, I do not know who shared it, or I would thank them.  Also unfortunately, it was incomplete.  Whoever shared it used a multi generational cassette copy of my tape to add the last two songs to the incomplete version.  I had always assumed that whoever taped LB-2883 brought a two-hour tape to the show.  I was wrong.  I purchased the Thinman boot, a half-assed label if there ever was one, Cracked Bells, hoping to find the complete show in the upgraded tape.  It was complete, sorta, more on that later, it was the same source, but it sounded as if it had a cassette in the lineage as it had hiss, something that was lacking from LB-2883.  So I set out to combine the sources to complete what I felt was a great show and what some consider a top 1995 show.  I spliced the Cracked Bells version of IAMB, onto the LB-2883 version.  The splice is at the 7:39 point.  You can clearly hear the drop in quality and the slight drop in speed. This to me proves the cassette lineage.  It is beyond my ability to speed correct.  If anyone else wants to fix it you will not insult me in the least. I also noticed that RDW had the first few seconds sliced off.  I used my recording to patch this, along with the encore wait before that song.  I also used my recording to add 14 seconds to the beginning of disc one.  This really isnt that big of a deal, but I was used to hearing this show with that bit of drum and guitar, so I wanted it there.  If you just want to start with the LB-2883 version leave off track 101.  The edit isnt so great there anyway.  Again, this was done by me, for me.  I dont say its perfect, but its as complete and in the best quality as is out there.  I did nothing to the sound of any version used.
+
+CD1 .md5:
+254b7a599cbd2721be1d7ba692e9a393 *00 (warm up).flac
+e279db79934ab220a009485bace19f0b *01 Crash on the levee (down in the flood).flac
+ab806a2f233f2ae9fabd35e910a2b643 *02 I want you.flac
+fe957b3c40c672f0d3687f444dfafc02 *03 All along the watchtower.flac
+8b18564089600d02def35b42950ea908 *04 Positively 4th Street.flac
+90a3ccfb42fbd7c6e455405626e46196 *05 Leopard-skin pill-box hat.flac
+e36dfa3f51df7ce04f181793debd4d5c *06 Silvio.flac
+d068206dfb2ddad49b8488799f23dba8 *07 Tangled up in blue.flac
+
+CD2 .md5:
+46da84846cfcf5f2ce4c056bc6c02b34 *08 Boots of Spanish leather.flac
+0fb6327694e46ff9b0160671908c291b *09 Don't think twice, it's all right.flac
+e607946480898d155fa018c6c15f9dfe *10 God knows.flac
+dbd6f443eee52c8e6e4238707cd766cf *11 Knockin' on heaven's door.flac
+ea35d0cf205e9cf97c5eec6566d2ddd0 *12 (band intro).flac
+49464e99da0574bf04f7ac1be4aa40a8 *12 Cat's in the well.flac
+37d5bb3ea8da579d86938d770da2a351 *13 Alabama getaway.flac
+f47ff88ab29ade0885279eed7c0eec36 *14 It ain't me, babe.flac
+9a9feb6fbfb3982526bed687791ceac1 *15 Rainy day women # 12 & 35.flac
+
+* * *  Enjoy your Bobby Hobby  * * *
+===================
+===================
+===================
+=== Bob Dylan.txt
+===================
+===================
+===================
+Bob Dylan 
+Dallas Music Complex
+Dallas, Texas
+November 7, 1995
+Merged by V4TX:  Disc 1:  June 2005/Disc 2:  May 2009
+
+Three Source merge.
+1.) LB-2883
+2.) V4TX master
+3.) Cracked Bells In A Busted Barn, Thinman Bootleg
+
+DISC ONE 
+1. warm up(V4TX master)
+2. Crash On The Levee (Down In The Flood)
+3. I Want You
+4. All Along The Watchtower
+5. Positively 4th Street
+6. Leopard-Skin Pill-Box Hat
+7. Silvio (Bob Dylan & Robert Hunter)
+8. Tangled Up In Blue
+
+DISC TWO 
+1. Boots Of Spanish Leather
+2. Don't Think Twice, It's All Right
+3. God Knows
+4. Knockin' On Heaven's Door
+5. intros
+6. Cat's In The Well
+7. Alabama Getaway (Robert Hunter/Jerry Garcia)
+8. It Ain't Me, Babe(LB-2883/Cracked Bells boot, splice at 7:39, encore wait from V4TX source) 
+9. Rainy Day Women # 12 & 35(beginning from V4TX source, rest Cracked Bells boot)
+
+I did this for myself and decided to share.  I was at this show and I always thought I had the best recording until someone shared LB-2883 here a few years ago.  Unfortunately I do not know who shared it, or I would thank them.  Also unfortunately it was incomplete.  Whoever shared it used a multi generational cassette copy of my tape to add the last two songs to the incomplete version.  I had always assumed that whoever taped LB-2883 brought a two hour tape to the show.  I was wrong.  I purchased the Thinman boot, a half-assed label if there ever was one, Cracked Bells, hoping to find the complete show in the upgraded tape.  It was complete, sorta, more on that later, it was the same source, but it sounded as if it had a cassette in the lineage as it had hiss, something that was lacking from LB-2883.  So I set out to combine the sources to complete what I felt was a great show and what some consider a top 1995 show.  I spliced the Cracked Bells version of IAMB, onto the LB-2883 version.  The splice is at the 7:39 point.  You can clearly hear the drop in quality and the slight drop in speed. This to me proves the cassette lineage.  It is beyond my ability to speed correct.  If anyone else wants to fix it you will not insult me in the least. I also noticed that RDW had the first few seconds sliced off.  I used my recording to patch this, along with the encore wait before that song.  I also used my recording to add 14 seconds to the beginning of disc one.  This really isnt that big of a deal, but I was used to hearing this show with that bit of drum and guitar, so I wanted it there.  If you just want to start with the LB-2883 version leave off track 101.  The edit isnt so great there anyway.  Again, this was done by me, for me.  I dont say its perfect, but its as complete and in the best quality as is out there.  I did nothing to the sound of any version used.   
+===================
+===================
+===================

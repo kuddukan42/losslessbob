@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-03-remaster-by-schubert.flacf 
+=================== 
+=================== 
+=================== 
+0cfc002436bdb949efb81f571dba5189  101 Introduction.flac
+8408b05807f7dafbbe46384eb887326d  102 Maggie's Farm.flac
+5ef0c83e0398c43aa9622e26ab80e4a3  103 She Belongs To Me.flac
+9ce018567b8be99153387ceba292ec89  104 Lonesome Day Blues.flac
+2b4bf6695a7b360bd5f6ed20823798a9  105 Queen Jane Approximately.flac
+150c9e3417b5d8484cadf0ea895367d1  106 'Til I Fell In Love With You.flac
+f2c656914ccaf3b5d6a3e17a13c3a0cb  107 It's Alright, Ma (I'm Only Bleeding).flac
+f1a6a663846126a029f622c5f6f01de5  108 Make You Feel My Love.flac
+5f67f0cdbf25255cc1226236c29dbf32  109 Highway 61 Revisited.flac
+b9b1bd2800e36f785a0868a6066b4ccd  110 Tears Of Rage.flac
+a366fa4320cb0741bd6bc62a2ba89b61  2006-04-03 Stockton (remaster by schubert)_wav_d1.md5
+5bb227028cd8389b9600e44eb6ee9025  2006-04-03 Stockton (remaster by schubert)_wav_d2.md5
+61e6f3bf1fc0029fd0ad973f0cbe315f  201 Honest With Me.flac
+cf1af7a42f999ce49832670c5e497b76  202 Girl Of The North Country.flac
+52a5c7d9f27b76ce73607d05c1c217dd  203 High Water (For Charley Patton).flac
+2853d7c8c7b1837d825ff778787356ce  204 Lay, Lady, Lay.flac
+c052c9eddd1445ef668354af0620ee51  205 Summer Days.flac
+cc903e77680e5b5b56fa717b95535511  206 Audience.flac
+eb64ff07f7a6e442102d81e56a6b75a6  207 Like A Rolling Stone.flac
+0e570d3cd2c549a5dfa0f2910ae345a8  208 All Along The Watchtower.flac
+e4532c9995701ba591a4f59006055e22  bd06-04-03-remaster-by-schubert-LB-3722.txt
+5c1b6f9d7eb9febbf3b82ae0c83007d0  Dylan2006-04-03 Stockton.(remaster by schubert) - Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-03-remaster-by-schubert.flacf 
+=================== 
+=================== 
+=================== 
+101 Introduction.flac:9f82d0a1de2e898e57b26ea1b3e6eeca
+102 Maggie's Farm.flac:a827f93e4441ae6a6111fe85214b7fd6
+103 She Belongs To Me.flac:8ff91cd4488ea974d3f490914ec47370
+104 Lonesome Day Blues.flac:7b036357d3367b1444ec1dc7360f2a82
+105 Queen Jane Approximately.flac:68385a2cac1804ca031acf79b59fc0b1
+106 'Til I Fell In Love With You.flac:65a8d4b8ca7e12984e559fa56944823c
+107 It's Alright, Ma (I'm Only Bleeding).flac:c501dc061f9482b255f7d899d8b474ec
+108 Make You Feel My Love.flac:0feae35b5ea426123c2381acbbe432ca
+109 Highway 61 Revisited.flac:7e8a7ff5d770f261167020ae1c2a7406
+110 Tears Of Rage.flac:6f7df440a0fb8bcb7df88060bb5f8361
+201 Honest With Me.flac:03c7afe64930cfafd6b248eb199ecb6a
+202 Girl Of The North Country.flac:fbe3efeeea0c9251c0f0243f1ce71cad
+203 High Water (For Charley Patton).flac:2615f723186aad5e775c93d876d4b6e2
+204 Lay, Lady, Lay.flac:2e7f7ce2909d5f49264c7a858b114d62
+205 Summer Days.flac:f3f1973f600166586aad5fcb000c52f0
+206 Audience.flac:f1d03824514bad0c25d907469635ce8d
+207 Like A Rolling Stone.flac:0bc3261edb9c4b630d070ae1c383d15c
+208 All Along The Watchtower.flac:144bb5b4c8f690ba37ef2e63d24ef6b9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-03-remaster-by-schubert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:09.21        1637036 B   ---   --   ---xx   flac  0.5035  101 Introduction.flac
+     5:47.31       61283756 B   ---   --   ---xx   flac  0.6944  102 Maggie's Farm.flac
+     5:49.55       61693004 B   ---   --   ---xx   flac  0.6509  103 She Belongs To Me.flac
+     7:54.73       83785340 B   ---   --   ---xx   flac  0.6769  104 Lonesome Day Blues.flac
+     7:57.61       84286316 B   ---   --   ---xx   flac  0.6151  105 Queen Jane Approximately.flac
+     7:04.02       74798348 B   ---   --   ---xx   flac  0.6428  106 'Til I Fell In Love With You.flac
+     7:47.33       82456460 B   ---   --   ---xx   flac  0.6539  107 It's Alright, Ma (I'm Only Bleeding).flac
+     5:09.68       54667580 B   ---   --   ---xx   flac  0.5482  108 Make You Feel My Love.flac
+     7:00.47       74198588 B   ---   --   ---xx   flac  0.6860  109 Highway 61 Revisited.flac
+     7:55.47       83900588 B   ---   --   ---xx   flac  0.5918  110 Tears Of Rage.flac
+     7:16.49       77025692 B   ---   --   ---xx   flac  0.6720  201 Honest With Me.flac
+     6:11.47       65554988 B   ---   --   ---xx   flac  0.5392  202 Girl Of The North Country.flac
+     7:08.62       75645068 B   ---   --   ---xx   flac  0.6636  203 High Water (For Charley Patton).flac
+     5:36.13       59301020 B   ---   --   ---xx   flac  0.6038  204 Lay, Lady, Lay.flac
+     6:12.11       65646716 B   ---   --   ---xx   flac  0.6736  205 Summer Days.flac
+     3:25.08       36180860 B   ---   --   ---xx   flac  0.5312  206 Audience.flac
+     7:04.37       74880668 B   ---   --   ---xx   flac  0.6751  207 Like A Rolling Stone.flac
+     6:24.48       67850540 B   ---   --   ---xx   flac  0.6458  208 All Along The Watchtower.flac
+   111:56.38     1184792568 B                            0.6377  (18 files)
+=================== 
+=================== 
+=================== 

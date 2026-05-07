@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-11-Violence-Of-A-Summers-Dream.flacf 
+=================== 
+=================== 
+=================== 
+8cbb2b043e051555b2a639fba7db3c7a  bd00-05-11-Violence-Of-A-Summers-Dream-LB-3211.txt
+de1b3d9c9e1cb850eaf924b6c874bfbc  bdylan-ViolenceSummerDream-101RovingGambler.flac
+c9036a692cf5ce86996b961df58d4a67  bdylan-ViolenceSummerDream-102TheTimesTheyAreA-Changin.flac
+28cfc9e17a467e286fae96cc25413244  bdylan-ViolenceSummerDream-103ItsAlrightMaImOnlyBleeding.flac
+fffff0fe6f05ebd0bd665ff1c7cb630c  bdylan-ViolenceSummerDream-104MrTambourineMan.flac
+b090b95eed3706d5ca55cd73f9a331ef  bdylan-ViolenceSummerDream-105TangledUpInBlue.flac
+62e5626c1628689207f278c53d2fad42  bdylan-ViolenceSummerDream-106GatesOfEden.flac
+56f6c0ab3c283b5bf07e73346170fb8a  bdylan-ViolenceSummerDream-107CountryPie.flac
+5bed137be7c5902ba6943a1d87213600  bdylan-ViolenceSummerDream-108ThingsHaveChanged.flac
+986ab8103e7964b08c8e9baa6b46c042  bdylan-ViolenceSummerDream-109DownAlongTheCove.flac
+5b266433e1f1aaaa38d299516e8bee1e  bdylan-ViolenceSummerDream-110EveryGrainOfSand.flac
+ad255b3d121cdeadac869c470fbce2fd  bdylan-ViolenceSummerDream-111ColdIronsBound.flac
+c599990a99e0847f884e64287ab652a0  bdylan-ViolenceSummerDream-112Leopard-SkinPill-BoxHat.flac
+482caa4191e8d2150b895a94012ae219  bdylan-ViolenceSummerDream-201LoveSick.flac
+d8b8f28963f41c18b8bb3249f5689e89  bdylan-ViolenceSummerDream-202LikeARollingStone.flac
+15a0885a106812e7368c5f10ba86eb75  bdylan-ViolenceSummerDream-203ForeverYoung.flac
+800289cd310a6496e7366d2606b781df  bdylan-ViolenceSummerDream-204NotFadeAway.flac
+efdca51b46a04774e02086395f349ca7  bdylan-ViolenceSummerDream-205DontThinkTwiceItsAllRight.flac
+4700e84423906acdab41d52fccbdcf5c  bdylan-ViolenceSummerDream-206RainyDayWomen1235.flac
+a34b3cdb672184c1377489ae4ad016b6  bdylan-ViolenceSummerDream-207MastersOfWar.flac
+60482de4e754b18984391a05c2a70f70  bdylan-ViolenceSummerDream-208ItsAllOverNowBabyBlue.flac
+f9ddc0cc8699047b4553596f8758c65c  bdylan-ViolenceSummerDream-209OneTooManyMornings.flac
+e2c8a7b7abe2b51315a4580ccee3f300  bdylan-ViolenceSummerDream-210CantWait.flac
+6a45017cbf9a795986f83614d170adb2  bdylan-ViolenceSummerDream-211WatchingTheRioverFlow.flac
+e03c0b11f270965e7f0a4a36b1faee61  bdylan-ViolenceSummerDream-212NotDarkYet.flac
+a5f17b931deaa68b4b112171e8b4226a  ViolenceSummerDream.ffp.txt
+0f2e786f7b150687c0cb1e323cc73d0c  ViolenceSummerDream.md5
+9d94bc522ff57b2079360dccb5780635  ViolenceSummerDream.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-11-Violence-Of-A-Summers-Dream.flacf 
+=================== 
+=================== 
+=================== 
+bdylan-ViolenceSummerDream-101RovingGambler.flac:84ab13a621067295dfc2afa9f3510190
+bdylan-ViolenceSummerDream-102TheTimesTheyAreA-Changin.flac:98f9bb279e1ef4d4127985cf1c8a5e65
+bdylan-ViolenceSummerDream-103ItsAlrightMaImOnlyBleeding.flac:680567f2a874b0594d1be5cfa5d29709
+bdylan-ViolenceSummerDream-104MrTambourineMan.flac:64e34986e1ebf700238fbfea34ccfc47
+bdylan-ViolenceSummerDream-105TangledUpInBlue.flac:1ae044d446a318d7cb8aed0aebc9b9e1
+bdylan-ViolenceSummerDream-106GatesOfEden.flac:d7f847a871cf550586255c5dbe2cf30d
+bdylan-ViolenceSummerDream-107CountryPie.flac:300ba206b55ff2748637ff16afe53782
+bdylan-ViolenceSummerDream-108ThingsHaveChanged.flac:1be6c3bdf4703af8b453456fe443d8c0
+bdylan-ViolenceSummerDream-109DownAlongTheCove.flac:9f33cfe11d3ced39d6ee2ff08fc4b903
+bdylan-ViolenceSummerDream-110EveryGrainOfSand.flac:3d55f1502e355bd9dfbdcb97b8cb7655
+bdylan-ViolenceSummerDream-111ColdIronsBound.flac:586d56c23478dc57e436a300f3623f53
+bdylan-ViolenceSummerDream-112Leopard-SkinPill-BoxHat.flac:395b64d6d0a821832519e3cd91a650e0
+bdylan-ViolenceSummerDream-201LoveSick.flac:19f9047627ed380a369661544a006f7f
+bdylan-ViolenceSummerDream-202LikeARollingStone.flac:532662a3baefb889931fa7d2cc174f03
+bdylan-ViolenceSummerDream-203ForeverYoung.flac:a39a1b0335872104665f83f1aa8ec850
+bdylan-ViolenceSummerDream-204NotFadeAway.flac:0a06f6f2e6b1503a11eb7006589808e7
+bdylan-ViolenceSummerDream-205DontThinkTwiceItsAllRight.flac:fba1eb4de5682909cbf7ec52fe14ead6
+bdylan-ViolenceSummerDream-206RainyDayWomen1235.flac:5edfec14d01a856628d90663c5586d5f
+bdylan-ViolenceSummerDream-207MastersOfWar.flac:8c681dfd0a41f52105bcb3652307bdd2
+bdylan-ViolenceSummerDream-208ItsAllOverNowBabyBlue.flac:09b4e4a1a5c0413974131dd516b1de7c
+bdylan-ViolenceSummerDream-209OneTooManyMornings.flac:21c05d4c34e74bc2468189c2e6979346
+bdylan-ViolenceSummerDream-210CantWait.flac:2fc41808ad05b8312c2c3b0259bc1706
+bdylan-ViolenceSummerDream-211WatchingTheRioverFlow.flac:4fc9b89a72f9878b85436af70dea1c01
+bdylan-ViolenceSummerDream-212NotDarkYet.flac:c7a80a8201486b6bfd788cc12f68b63d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-11-Violence-Of-A-Summers-Dream.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.72       43387388 B   ---   --   ---xx   flac  0.7073  bdylan-ViolenceSummerDream-101RovingGambler.flac
+     6:27.50       68384444 B   ---   --   ---xx   flac  0.6819  bdylan-ViolenceSummerDream-102TheTimesTheyAreA-Changin.flac
+     7:34.70       80250284 B   ---   --   ---xx   flac  0.6675  bdylan-ViolenceSummerDream-103ItsAlrightMaImOnlyBleeding.flac
+     6:18.63       66827420 B   ---   --   ---xx   flac  0.6919  bdylan-ViolenceSummerDream-104MrTambourineMan.flac
+     8:54.47       94308188 B   ---   --   ---xx   flac  0.7209  bdylan-ViolenceSummerDream-105TangledUpInBlue.flac
+     7:59.73       84667340 B   ---   --   ---xx   flac  0.6529  bdylan-ViolenceSummerDream-106GatesOfEden.flac
+     2:59.42       31674428 B   ---   --   ---xx   flac  0.7063  bdylan-ViolenceSummerDream-107CountryPie.flac
+     5:33.53       58865900 B   ---   --   ---xx   flac  0.7050  bdylan-ViolenceSummerDream-108ThingsHaveChanged.flac
+     6:52.42       72775628 B   ---   --   ---xx   flac  0.7140  bdylan-ViolenceSummerDream-109DownAlongTheCove.flac
+     7:47.05       82390604 B   ---   --   ---xx   flac  0.6246  bdylan-ViolenceSummerDream-110EveryGrainOfSand.flac
+     6:38.55       70336604 B   ---   --   ---xx   flac  0.6810  bdylan-ViolenceSummerDream-111ColdIronsBound.flac
+     6:36.55       69983804 B   ---   --   ---xx   flac  0.7020  bdylan-ViolenceSummerDream-112Leopard-SkinPill-BoxHat.flac
+     5:54.20       62492684 B   ---   --   ---xx   flac  0.6223  bdylan-ViolenceSummerDream-201LoveSick.flac
+     8:01.65       85001324 B   ---   --   ---xx   flac  0.7165  bdylan-ViolenceSummerDream-202LikeARollingStone.flac
+     6:13.44       65900732 B   ---   --   ---xx   flac  0.6197  bdylan-ViolenceSummerDream-203ForeverYoung.flac
+     4:38.26       49100396 B   ---   --   ---xx   flac  0.6974  bdylan-ViolenceSummerDream-204NotFadeAway.flac
+     8:04.37       85464668 B   ---   --   ---xx   flac  0.6266  bdylan-ViolenceSummerDream-205DontThinkTwiceItsAllRight.flac
+     7:28.58       79163660 B   ---   --   ---xx   flac  0.7048  bdylan-ViolenceSummerDream-206RainyDayWomen1235.flac
+     5:35.57       59228108 B   ---   --   ---xx   flac  0.6462  bdylan-ViolenceSummerDream-207MastersOfWar.flac
+     7:29.65       79356524 B   ---   --   ---xx   flac  0.6618  bdylan-ViolenceSummerDream-208ItsAllOverNowBabyBlue.flac
+     5:36.00       59270444 B   ---   --   ---xx   flac  0.5930  bdylan-ViolenceSummerDream-209OneTooManyMornings.flac
+     5:01.50       53214044 B   ---   --   ---xx   flac  0.6237  bdylan-ViolenceSummerDream-210CantWait.flac
+     6:08.70       65079884 B   ---   --   ---xx   flac  0.6708  bdylan-ViolenceSummerDream-211WatchingTheRioverFlow.flac
+     6:04.60       64350764 B   ---   --   ---xx   flac  0.5697  bdylan-ViolenceSummerDream-212NotDarkYet.flac
+   154:08.54     1631475264 B                            0.6671  (24 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-11-04-b.flac16 
+=================== 
+=================== 
+=================== 
+57d1ed511bc0477835f4af014e0ea798  Bob Dylan - Knoxville, Tennessee - November 4, 1997.ffp
+a2ed1f28bdef5532a775cef1ce374e6a  D-1 extraction log.LOG
+9f8bb52456aea77291b75526abfc8f40  D-2 extraction log.LOG
+f20c83276971ab935776ed943a4f90ae  info file.txt
+1ccd4f3ff84007fa96355f33884dd315  Track 101.flac
+d3d13825761473e05d29f015bcbd6917  Track 102.flac
+99747d2f340fbd2ffe9b3298b0ea6b07  Track 103.flac
+e8c00c145a034f3a88ddc7444e12c48c  Track 104.flac
+3662287bb9e7a241e1c1d8decc3bf870  Track 105.flac
+edbafc5971cbbc1fb0cff9fea31b0cef  Track 106.flac
+41c751362d75b0da2a4541e24a75052f  Track 107.flac
+eae11cdf08a59399099f8d43f42100d6  Track 108.flac
+6b538c932a1367fa661b82376fec4a8c  Track 109.flac
+94a0505d3fab671890f77489af72e0d9  Track 110.flac
+248aa12e6a39deac3f59de5925fb6495  Track 111.flac
+5240b4522847c045446b747de02bec9c  Track 201.flac
+21db74f2b83886cbec413df563574113  Track 202.flac
+3b6ed6d775391dd53d68d2669375259d  Track 203.flac
+bd37387e4cbd7e8551bad342f14345ee  Track 204.flac
+da12f75e13566913a562ac6c8104d319  Track 205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-11-04-b.flac16 
+=================== 
+=================== 
+=================== 
+Track 101.flac:7b2cd3a0f9dd83b0a41dacb8beda96ae
+Track 102.flac:edef56cf7e4693f4aaba23392a909ab0
+Track 103.flac:2f9fe14ecd1441c0ea7a0dc3b0f8b229
+Track 104.flac:44bb490b7df35e63ceaab8b57cefeacf
+Track 105.flac:b019dad42c7aa571a3f9dc8e87589661
+Track 106.flac:e3ef50a905709a7de836188002c3c597
+Track 107.flac:c470efd81a82e7ba4ffc2cd6a8324801
+Track 108.flac:9879c508a503ade3fd7d219411b6ff09
+Track 109.flac:ec6e0773d854073ab9bdda8b0e0d9541
+Track 110.flac:9f73b7a4f585ecded8ff61fde3aa99fe
+Track 111.flac:6f983931e945f62f0d7b718a9e7e013e
+Track 201.flac:9fea4bb1c69a440c1c7f8db233a5cda3
+Track 202.flac:3263ccf5b8d678ca463fa0db1a572c96
+Track 203.flac:124a3675884b2bf04f5efa34c71a3119
+Track 204.flac:4539ddf9742de0509d74f4bbc1f49b4a
+Track 205.flac:44680f17c325a473e01bf6c356d53643
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-11-04-b.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.32       61638908 B   ---   --   ---xx   flac  0.5903  Track 101.flac
+     5:00.27       52983548 B   ---   --   ---xx   flac  0.5592  Track 102.flac
+     7:06.51       75266396 B   ---   --   ---xx   flac  0.5879  Track 103.flac
+     7:40.38       81233420 B   ---   --   ---xx   flac  0.5706  Track 104.flac
+     6:00.24       63560492 B   ---   --   ---xx   flac  0.5789  Track 105.flac
+     7:50.31       82980956 B   ---   --   ---xx   flac  0.6110  Track 106.flac
+     4:35.04       48519452 B   ---   --   ---xx   flac  0.5369  Track 107.flac
+     8:00.29       84740252 B   ---   --   ---xx   flac  0.6106  Track 108.flac
+     6:10.32       65343308 B   ---   --   ---xx   flac  0.5752  Track 109.flac
+     6:07.42       64837628 B   ---   --   ---xx   flac  0.5948  Track 110.flac
+     6:11.42       65543228 B   ---   --   ---xx   flac  0.5522  Track 111.flac
+     8:10.40       86530124 B   ---   --   ---xx   flac  0.6196  Track 201.flac
+    10:09.11      107453516 B   ---   --   ---xx   flac  0.5972  Track 202.flac
+     8:50.36       93576716 B   ---   --   ---xx   flac  0.5444  Track 203.flac
+     6:00.31       63576956 B   ---   --   ---xx   flac  0.5399  Track 204.flac
+     4:30.33       47705660 B   ---   --   ---xx   flac  0.6096  Track 205.flac
+   108:13.53     1145490560 B                            0.5817  (16 files)
+=================== 
+=================== 
+=================== 

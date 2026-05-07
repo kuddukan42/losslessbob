@@ -1,0 +1,327 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-Electric-Gashcat.flacf 
+=================== 
+=================== 
+=================== 
+9cd4a78ff904de79584f7aa100177b08  Electric Gashcat\Electric Gashcat Description.txt
+7642ec91c097063f911e4ea902b4aa48  Electric Gashcat\Gashcat 65-66 Tracklists.rtf
+cc13a0bcbe008e4c22023c5b26fd20d1  Electric Gashcat\Gashcat-Vol 1-back.jpg
+4565eca23112a57a0a27de02039cf6bc  Electric Gashcat\Gashcat-Vol 1-front.jpg
+17c8256faaa1fb63eb874359af9aaab7  Electric Gashcat\Gashcat-Vol 2-back.jpg
+3d13a85e1e1611bb57e56806d2d8e344  Electric Gashcat\Gashcat-Vol 2-front.jpg
+2ea5b60a6c864b6b66337da51fcd990e  Electric Gashcat v.1 d1\Electric Gashcat v.1 d.1
+88b316f237c7a6fb0f81a621e0812b9a  Electric Gashcat v.1 d1\Track01.flac
+d3875a78f12575b34b923693f8a4d1e9  Electric Gashcat v.1 d1\Track02.flac
+e41ff5c30d356686a27f4fbd587a5404  Electric Gashcat v.1 d1\Track03.flac
+4a13fa2f2f16dc3bbd1a134989ebd92d  Electric Gashcat v.1 d1\Track04.flac
+0155c40bb34a6cf43ef482a7959ef80b  Electric Gashcat v.1 d1\Track05.flac
+e095f5d36b24f1840a799ba559279499  Electric Gashcat v.1 d1\Track06.flac
+254739283a5d3d515a70cc311d586630  Electric Gashcat v.1 d1\Track07.flac
+18537e825724eb84b7bd047d809bf57e  Electric Gashcat v.1 d1\Track08.flac
+a7a95f989545641aff351f125ea66aac  Electric Gashcat v.1 d1\Track09.flac
+c3a02870918cc1424f820b9fac85a648  Electric Gashcat v.1 d1\Track10.flac
+958e0f0a2d26ef986d9b4080dd8400ee  Electric Gashcat v.1 d1\Track11.flac
+7f19c62efa5454ea23b93ad6d0b9d7b2  Electric Gashcat v.1 d1\Track12.flac
+26de7a0d910991486c4b622d5747354b  Electric Gashcat v.1 d1\Track13.flac
+95b31319c6a34e36d5d3314d6b34f3fc  Electric Gashcat v.1 d1\Track14.flac
+49c858dad7c0906c961331f39a398e33  Electric Gashcat v.1 d1\Track15.flac
+72d64de2462c001b56e37b45ab7b9897  Electric Gashcat v.1 d1\Track16.flac
+eca7b340cedae12b118cd37d2fc9fed5  Electric Gashcat v.1 d1\Track17.flac
+cd0463e615b593f2c6b290a266199f17  Electric Gashcat v.1 d1\Track18.flac
+3cecfca904beb85af5a8793d1705f442  Electric Gashcat v.1 d1\Track19.flac
+e8c46fdfdefab797c54cd621334cc7ea  Electric Gashcat v.1 d1\Track20.flac
+02c6cf26594cb9165268f6b5b8e91f20  Electric Gashcat v.1 d1\Track21.flac
+8c8faa6185608652554af08a631fa7f8  Electric Gashcat v.1 d1\Track22.flac
+252ca06dd4ee0282016f720094343cfc  Electric Gashcat v.1 d1\Track23.flac
+34b513de99a87e100337f42ec67f1f51  Electric Gashcat v.1 d1\Track24.flac
+23198f713cda9a99ca2d17f405fdffc1  Electric Gashcat v.1 d1\Track25.flac
+5a736dfa4004b53b2610baeec932d64a  Electric Gashcat v.1 d2\Electric Gashcat v.1 d2.md5
+b45ea274dd9d170eecc18284d836293d  Electric Gashcat v.1 d2\Track01.flac
+f64dedc2e598c11c3858f59c5b51d47c  Electric Gashcat v.1 d2\Track02.flac
+80ac71cc7c15c4ccfdda6805192ade2b  Electric Gashcat v.1 d2\Track03.flac
+7ff59e6add54670e0e88e4f1854237fc  Electric Gashcat v.1 d2\Track04.flac
+c1fd302641f5b43a28aa763e59f3a374  Electric Gashcat v.1 d2\Track05.flac
+dd36e62ba523f56bd14cf982d5f09e26  Electric Gashcat v.1 d2\Track06.flac
+1a119620eb84dffc744c794156d359c7  Electric Gashcat v.1 d2\Track07.flac
+e8d3e83f5cbe716f395fa388d9ddde0d  Electric Gashcat v.1 d2\Track08.flac
+1d7e1872a2c88f673cfc11d580e1fe5f  Electric Gashcat v.1 d2\Track09.flac
+09f384f2a3d1b16061b8a25ac21b32ee  Electric Gashcat v.1 d2\Track10.flac
+a2fc2b285d71fdc1bfb9fb90d2eee02e  Electric Gashcat v.1 d2\Track11.flac
+1feef6b779a477a55142a0eba6226a5b  Electric Gashcat v.1 d2\Track12.flac
+2b30d4df27c86745ce25c13f158377cc  Electric Gashcat v.1 d2\Track13.flac
+c729491a230c130780ad0127829be585  Electric Gashcat v.1 d2\Track14.flac
+3be07da1f435c61369f5f0120d44a69a  Electric Gashcat v.1 d2\Track15.flac
+a90bf2f39d976d53dbc8db7f91473c15  Electric Gashcat v.1 d2\Track16.flac
+becced1cfecd81a0463f64d50e88abdc  Electric Gashcat v.1 d2\Track17.flac
+3f1a2dd401bf6db2be73a9a94a5343be  Electric Gashcat v.1 d2\Track18.flac
+5b59d6d4ac6a2259b727f98f94fd60d0  Electric Gashcat v.1 d2\Track19.flac
+92768cb9f6c8b837a1e61fab7538a727  Electric Gashcat v.2 d1\Electric Gashcat v.2 d1.md5
+967b9d29839441ad726d74e3117d78f7  Electric Gashcat v.2 d1\Track01.flac
+2a801c27258d6d7a43efd1c05aac8107  Electric Gashcat v.2 d1\Track02.flac
+41f4c562afe543bda7245c18340bb86a  Electric Gashcat v.2 d1\Track03.flac
+309a9404dfbccde7ab55846d7db5c393  Electric Gashcat v.2 d1\Track04.flac
+37c06616c848ceeb9cad7248e015d398  Electric Gashcat v.2 d1\Track05.flac
+647f39a6ea610d974d9905da559cb30a  Electric Gashcat v.2 d1\Track06.flac
+433f96d57c7aa351f8e2e8849f63e76a  Electric Gashcat v.2 d1\Track07.flac
+c097251bda0d9bd102d2736486aac7bf  Electric Gashcat v.2 d1\Track08.flac
+609e8f47deea2f04544358c58ed94e93  Electric Gashcat v.2 d1\Track09.flac
+2458cb5b238c4670f20f3f2f81ce9244  Electric Gashcat v.2 d1\Track10.flac
+288186a3c7452c3a3734ccc23836cd90  Electric Gashcat v.2 d1\Track11.flac
+c4c7fcfe29ee2c6d7f923fa159eacdbf  Electric Gashcat v.2 d1\Track12.flac
+9cb97d83937f365ed582b3f192cfa3d8  Electric Gashcat v.2 d1\Track13.flac
+269a00590831096849c32d43c629f5d3  Electric Gashcat v.2 d1\Track14.flac
+fe281589cabcadbc4bc3a4c00ecff2ea  Electric Gashcat v.2 d1\Track15.flac
+cbcacdd094df0513c09173632ae6e659  Electric Gashcat v.2 d1\Track16.flac
+5715db4b3cdfc28def7d96129ae298d8  Electric Gashcat v.2 d1\Track17.flac
+b61048491a913d77f38ef835cc316346  Electric Gashcat v.2 d1\Track18.flac
+5336dfb33853ba3970274a9571b45b41  Electric Gashcat v.2 d2\Electric Gashcat v.2 d2.md5
+28838291803736f2c5ec8a10e76b0501  Electric Gashcat v.2 d2\Track01.flac
+ded7388087e6564297487065dca502ac  Electric Gashcat v.2 d2\Track02.flac
+46467c408b6ea3289ad44e85a0d89fe2  Electric Gashcat v.2 d2\Track03.flac
+fee8e8547f1c7adda7a77fae50935891  Electric Gashcat v.2 d2\Track04.flac
+029d3742f6c5aaee2b7830f63f495a1e  Electric Gashcat v.2 d2\Track05.flac
+591aa11c6c229d23d4ee103edd5d0755  Electric Gashcat v.2 d2\Track06.flac
+a9bee737f9d2d7ffe42e9f8ff1d29161  Electric Gashcat v.2 d2\Track07.flac
+2a17274ebfc4eacc0fda555a8d0cae8a  Electric Gashcat v.2 d2\Track08.flac
+7aba627c491b226b136b84d27469071a  Electric Gashcat v.2 d2\Track09.flac
+dbf120838215269bfe26360962192f86  Electric Gashcat v.2 d2\Track10.flac
+74039bf7e757d06f5c4b6907dfb9588e  Electric Gashcat v.2 d2\Track11.flac
+8e080c7408efa28ad71d07c84debaad1  Electric Gashcat v.2 d2\Track12.flac
+e5a41a6291cbbc180d00f5786f39fa19  Electric Gashcat v.2 d2\Track13.flac
+0cbff907d1b02e675ab1a4511d3e12ba  Electric Gashcat v.2 d2\Track14.flac
+c2c26943358fc2ea09e9c9e61335e97a  Electric Gashcat v.2 d2\Track15.flac
+bee0a9eb907376c1543386b371c74e21  Electric Gashcat v.2 d2\Track16.flac
+62267403d6acf259517e9697f00a0f47  Electric Gashcat v.2 d2\Track17.flac
+dea50d949b8d1637310d39b44dbf8e30  Electric Gashcat v.2 d2\Track18.flac
+f6a5e8e96adf97ab8c03fe7e6f79c9a7  Electric Gashcat v.2 d2\Track19.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-Electric-Gashcat.flacf\Electric Gashcat v.2 d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:525b6a3ed3f11101d35eeb4cd4a64480
+Track02.flac:9916e62277bd74e07044581e348ad71a
+Track03.flac:6bb0c4c618ac141cf8dc8a50648997e7
+Track04.flac:62f90ed505673d505f90d400c7a49363
+Track05.flac:c38f57311dc02d07ac2054de102b8ecf
+Track06.flac:b35f10be9581d4860b906b59f75d0c2d
+Track07.flac:7d949bfe2cccfa92359889a08c368f1e
+Track08.flac:06ffed87ace025c01554fb75340b7eee
+Track09.flac:34d25f3790f3aad922b1ef06a978c6db
+Track10.flac:1e9aea668b5a1bf91cd306eb2126f2e0
+Track11.flac:d3db83a5c587d77a555a6e9a2483839a
+Track12.flac:8e4a2916c9c239c887a160ae55fef80d
+Track13.flac:4264bbe2dc3445b122e3983206df08d7
+Track14.flac:29a62ea673f1c7a5e0e4a92de3986675
+Track15.flac:531afc1d4f2e65643e040d9bcae6fc8e
+Track16.flac:3331a60f3baa11d9eba1d0b66b25c515
+Track17.flac:9ec39eccee0317e6eb9ed70f43a21ced
+Track18.flac:1a833c1b6d7826a643cfb8d4607439b3
+Track19.flac:aa5436af311fc153e8106758dc81b57f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-Electric-Gashcat.flacf\Electric Gashcat v.1 d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:b68603e5c2703fa04cf01cbfb33b72bb
+Track02.flac:383d0dcf3a3ef7171486e43b3a04fd38
+Track03.flac:a89bb9ad3d743c568cf2f103a24f40da
+Track04.flac:4f0bbbed58b790270ecc7fd351b179c3
+Track05.flac:b78427715055099af20442f3ba1b7bae
+Track06.flac:430bd5ecb2c6729fa6b22e695d7f9b4b
+Track07.flac:f67c4f880cf9af9faaa6f8b170cc0ac5
+Track08.flac:41d48cc20d5e17c2b274789475e5b9fd
+Track09.flac:643c7b27fcebf75b468efd1b36c699d3
+Track10.flac:594f2f8487ce3e4b0a3ee213736a8c45
+Track11.flac:e1ae48839f4ab4478846c021da56ab89
+Track12.flac:614cdcd4b3734896d9f647d0194ca9fd
+Track13.flac:4cb319cf6eb0ee26dc06b24a867d5fb8
+Track14.flac:0985da62d32940860e32ff9110cd936e
+Track15.flac:9984444e9689181475a946fc405e29f5
+Track16.flac:a4bda8e4662f881de16b3bd4713ca839
+Track17.flac:a61427b1187fe94f9e6605272e9fd98f
+Track18.flac:44fdbfa2a0bea261bf968352ceb99933
+Track19.flac:5bf02eef623af998eb519f6cdc73d536
+Track20.flac:0ec93fa86987650c9819f715083303e6
+Track21.flac:af49608e2e8b7b4f0e07c67f5d103322
+Track22.flac:5a85d15783c8b1fae4d7443d98bedba3
+Track23.flac:26119e16040871962184c8190ba6a3d8
+Track24.flac:a8968a07516380ecad72ae493f709404
+Track25.flac:7085b3bfd9f0cd3d4630107e87089e5f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-Electric-Gashcat.flacf\Electric Gashcat v.1 d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:6742fdeeb032bf863554e519ee4c5392
+Track02.flac:23aa05c6a5e595779643bd83e814e1be
+Track03.flac:bae1612f167d658d5b941e2458fe766a
+Track04.flac:302a0074400558853b3d06a0423ade4d
+Track05.flac:cd8764924f3daf17ceea484508dc51fc
+Track06.flac:ea9d4a49b2441add90fa11ac82541993
+Track07.flac:783e38961f2e2c353fe9e968c27e376f
+Track08.flac:b74ab3070cf833af68fea9986f1bafbe
+Track09.flac:646d0c9d226273a659d56486bbb72f69
+Track10.flac:8fbfe407f43fd373981d6c7d94477966
+Track11.flac:63415e2d762647c6f47a4a18ee8ada91
+Track12.flac:8577d386937b858f25c623f1d25f6d9d
+Track13.flac:24f7164586d6cb8e99d0cd6e6ac20aa7
+Track14.flac:c99234340d19fa7946f6a75fc5324501
+Track15.flac:feabcb02bf72cdb035eb4e5ea9a9f8c7
+Track16.flac:263060a4bb1782893936f94e850b5934
+Track17.flac:561f0ba5207a59640c1e24f9a83cd066
+Track18.flac:48b937c40925672e63d34d1ad4e1cd6e
+Track19.flac:6f199570e49365dd31f5098c8d952f2d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-Electric-Gashcat.flacf\Electric Gashcat v.2 d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:f1e08194bd59905b4f4761f68e15427d
+Track02.flac:f761365bff814bf2fd65827b0a635c6a
+Track03.flac:2658c6b4b1f625db159bc03dc0009864
+Track04.flac:d78ce80451ff8f59163b24a6fc0f669c
+Track05.flac:d1abe2175b9f0dab72ee51dd3dcf8907
+Track06.flac:88851e3bd0eab3880bb310321545d9ee
+Track07.flac:dcd343872d78b27e431e19d1e4937f36
+Track08.flac:6da2a5c5a7b4cea7419aa2f6ce117ca0
+Track09.flac:b5866aeea93566f26ece7118431558b7
+Track10.flac:e626c00bd2f7e5dd8c3b596d0dcc5133
+Track11.flac:6c0f900d3533f9e5a3bb9f5e12367823
+Track12.flac:5d8fe422447628c3ad367c90e1fcd5d2
+Track13.flac:d873b3817fdd90323c7811509d7ec9fc
+Track14.flac:9ec80d97ec561852913e24fa8933d50d
+Track15.flac:65dc08a5251aa2d9598eb5fd6bf150a9
+Track16.flac:e0db74976983c67b745d90cd576a7e14
+Track17.flac:4a9b185ec6c67ca57e2d391bbc740af0
+Track18.flac:42a10fa7d06a2abbd9df9138035bc154
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-Electric-Gashcat.flacf\Electric Gashcat v.2 d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:07.02       32991548 B   ---   --   ---xx   flac  0.5929  Track01.flac
+     3:28.43       36792380 B   ---   --   ---xx   flac  0.5894  Track02.flac
+     5:01.17       53136428 B   ---   --   ---xx   flac  0.5499  Track03.flac
+     4:56.62       52360268 B   ---   --   ---xx   flac  0.5809  Track04.flac
+     5:07.27       54218348 B   ---   --   ---xx   flac  0.4638  Track05.flac
+     3:51.40       40842524 B   ---   --   ---xx   flac  0.4518  Track06.flac
+     3:00.28       31817900 B   ---   --   ---xx   flac  0.4574  Track07.flac
+     4:17.72       45504188 B   ---   --   ---xx   flac  0.4568  Track08.flac
+     4:42.74       49918892 B   ---   --   ---xx   flac  0.4493  Track09.flac
+     1:30.23       15930140 B   ---   --   ---xx   flac  0.4990  Track10.flac
+     2:54.70       30858284 B   ---   --   ---xx   flac  0.5188  Track11.flac
+     7:18.50       77380844 B   ---   --   ---xx   flac  0.4822  Track12.flac
+     1:02.15       10972124 B   ---   --   ---xx   flac  0.5978  Track13.flac
+     4:06.65       43547324 B   ---   --   ---xx   flac  0.5141  Track14.flac
+     2:55.02       30874748 B   ---   --   ---xx   flac  0.5031  Track15.flac
+     8:57.69       94889132 B   ---   --   ---xx   flac  0.6301  Track16.flac
+     4:54.28       51927500 B   ---   --   ---xx   flac  0.3031  Track17.flac
+     3:20.36       35364716 B   ---   --   ---xx   flac  0.4405  Track18.flac
+     4:43.42       50020028 B   ---   --   ---xx   flac  0.5544  Track19.flac
+    79:18.15      839347316 B                            0.5085  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-Electric-Gashcat.flacf\Electric Gashcat v.1 d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.70       45675884 B   ---   --   ---xx   flac  0.5390  Track01.flac
+     3:35.18       37968380 B   ---   --   ---xx   flac  0.5957  Track02.flac
+     2:56.62       31192268 B   ---   --   ---xx   flac  0.6426  Track03.flac
+     3:03.72       32450588 B   ---   --   ---xx   flac  0.2674  Track04.flac
+     5:28.12       57887468 B   ---   --   ---xx   flac  0.5354  Track05.flac
+     0:56.09        9899612 B   ---   --   ---xx   flac  0.5407  Track06.flac
+     2:15.13       23844620 B   ---   --   ---xx   flac  0.6253  Track07.flac
+     3:42.16       39198476 B   ---   --   ---xx   flac  0.5584  Track08.flac
+     3:20.41       35376476 B   ---   --   ---xx   flac  0.5330  Track09.flac
+     2:35.05       27353804 B   ---   --   ---xx   flac  0.5354  Track10.flac
+     2:56.05       31058204 B   ---   --   ---xx   flac  0.6136  Track11.flac
+     1:43.12       18197468 B   ---   --   ---xx   flac  0.3556  Track12.flac
+     3:38.33       38532860 B   ---   --   ---xx   flac  0.6438  Track13.flac
+     4:55.57       52172108 B   ---   --   ---xx   flac  0.6275  Track14.flac
+     3:21.40       35550524 B   ---   --   ---xx   flac  0.6396  Track15.flac
+     3:55.21       41503436 B   ---   --   ---xx   flac  0.5936  Track16.flac
+     1:07.62       11964668 B   ---   --   ---xx   flac  0.5509  Track17.flac
+     1:37.62       17256668 B   ---   --   ---xx   flac  0.4990  Track18.flac
+     1:59.13       21022220 B   ---   --   ---xx   flac  0.5510  Track19.flac
+     2:55.45       30975884 B   ---   --   ---xx   flac  0.5180  Track20.flac
+     6:30.20       68843084 B   ---   --   ---xx   flac  0.3549  Track21.flac
+     1:52.54       19883852 B   ---   --   ---xx   flac  0.5203  Track22.flac
+     3:51.16       40786076 B   ---   --   ---xx   flac  0.4616  Track23.flac
+     1:12.43       12801980 B   ---   --   ---xx   flac  0.5983  Track24.flac
+     5:04.25       53684444 B   ---   --   ---xx   flac  0.6351  Track25.flac
+    78:54.01      835081052 B                            0.5404  (25 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-Electric-Gashcat.flacf\Electric Gashcat v.1 d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.62        7201868 B   ---   --   ---xx   flac  0.5283  Track01.flac
+     3:36.13       38133020 B   ---   --   ---xx   flac  0.7051  Track02.flac
+     4:24.63       46717820 B   ---   --   ---xx   flac  0.3624  Track03.flac
+     3:12.13       33899420 B   ---   --   ---xx   flac  0.6155  Track04.flac
+     4:07.61       43714316 B   ---   --   ---xx   flac  0.6374  Track05.flac
+     3:51.40       40842524 B   ---   --   ---xx   flac  0.3246  Track06.flac
+    11:45.35      124444364 B   ---   --   ---xx   flac  0.6107  Track07.flac
+     0:45.73        8109740 B   ---   --   ---xx   flac  0.4382  Track08.flac
+     3:41.59       39123212 B   ---   --   ---xx   flac  0.6680  Track09.flac
+     0:51.37        9083468 B   ---   --   ---xx   flac  0.4755  Track10.flac
+     5:43.14       60538172 B   ---   --   ---xx   flac  0.6441  Track11.flac
+     6:25.62       68059868 B   ---   --   ---xx   flac  0.6765  Track12.flac
+     3:36.58       38238860 B   ---   --   ---xx   flac  0.6076  Track13.flac
+     3:06.05       32822204 B   ---   --   ---xx   flac  0.4670  Track14.flac
+     5:02.16       53310476 B   ---   --   ---xx   flac  0.4656  Track15.flac
+     4:24.18       46611980 B   ---   --   ---xx   flac  0.4833  Track16.flac
+     3:52.57       41058908 B   ---   --   ---xx   flac  0.5205  Track17.flac
+     5:56.15       62833724 B   ---   --   ---xx   flac  0.5660  Track18.flac
+     4:44.47       50208188 B   ---   --   ---xx   flac  0.5699  Track19.flac
+    79:49.73      844952132 B                            0.5635  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-Electric-Gashcat.flacf\Electric Gashcat v.2 d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.61       10903916 B   ---   --   ---xx   flac  0.4676  Track01.flac
+     1:32.66       16384076 B   ---   --   ---xx   flac  0.5939  Track02.flac
+     0:58.33       10308860 B   ---   --   ---xx   flac  0.4364  Track03.flac
+     1:04.16       11327276 B   ---   --   ---xx   flac  0.5540  Track04.flac
+     3:32.48       37509740 B   ---   --   ---xx   flac  0.4955  Track05.flac
+     3:26.58       36474860 B   ---   --   ---xx   flac  0.6486  Track06.flac
+     4:09.19       43968332 B   ---   --   ---xx   flac  0.4738  Track07.flac
+     8:26.46       89366636 B   ---   --   ---xx   flac  0.6386  Track08.flac
+     6:38.70       70371884 B   ---   --   ---xx   flac  0.6340  Track09.flac
+     7:37.54       80741852 B   ---   --   ---xx   flac  0.4792  Track10.flac
+     3:39.61       38775116 B   ---   --   ---xx   flac  0.7108  Track11.flac
+     8:30.07       89980508 B   ---   --   ---xx   flac  0.5740  Track12.flac
+     6:29.32       68694908 B   ---   --   ---xx   flac  0.6003  Track13.flac
+     6:25.20       67961084 B   ---   --   ---xx   flac  0.6641  Track14.flac
+     3:41.09       39005612 B   ---   --   ---xx   flac  0.5678  Track15.flac
+     3:18.54       35054252 B   ---   --   ---xx   flac  0.6106  Track16.flac
+     5:45.40       60952124 B   ---   --   ---xx   flac  0.6020  Track17.flac
+     3:31.28       37286300 B   ---   --   ---xx   flac  0.5632  Track18.flac
+    79:50.47      845067336 B                            0.5868  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd04-02-28-c.flacf
+===================
+===================
+===================
+43ba9e7cb68a282673a25da43422c282 *01 Drifter's Escape.flac
+33c7459d9989aa75072149b15b4d6a62 *02 Tell Me That It Isn't True.flac
+ba19944836ec0af1c679e21b087a1ac9 *03 Cry A While.flac
+3287a6cf4e33b530498aefd29b8878c6 *04 The Lonesome Death Of Hattie Carroll.flac
+d8dfed65a2db5d9e2de43738cbb6d45f *05 It's Alright, Ma (I'm Only Bleeding).flac
+d3a29ab471d3464462beca4c34a7c57e *06 Girl From The North Country.flac
+c1685e526a6b87aaa517fc2c720f17cc *07 Things Have Changed.flac
+32c02a1be59f6235d426ec197f935478 *08 Highway 61 Revisited.flac
+58c06805c4556d4917a1248ca0955194 *09 Make You Feel My Love.flac
+8a8f29c142d48f68bbbf025417e49750 *10 Tweedle Dee & Tweedle Dum.flac
+1e1e68eeec9d481d9f763612b2141dc9 *11 Every Grain Of Sand.flac
+4afcfbcec6c1fcd7372f88078e125a45 *12 Honest With Me.flac
+721c2ac5027ecb44c9767d1f9fde1183 *13 Saving Grace.flac
+d86c01dd47c2ad70a6bd7fc3827fe3b9 *14 Summer Days.flac
+f4c3748e4b567dd0bfed2f07e9aac9d8 *15 Cat's In The Well.flac
+d6f194b7a8c8cf8eef172b0c3cf0ecb6 *16 Like A Rolling Stone.flac
+d0b221e796755505dffba64b3744a42a *17 All Along The Watchtower.flac
+18292e0d944fd88bed7647d3007a1dc7 *2004-02-28 Cain's Ballroom, Tulsa, Oklahoma, USA [derived f. possibly LB-1631 unidentified taper].txt
+0346b626284b46b13ddbc218f49f346a *2004-02-28 Cain's Ballroom, Tulsa, Oklahoma, USA [possibly LB-1631 unidentified taper].ffp
+31bbad84b9af4eb5fb198b0a0e2b4033 *ORIGINAL bd2004-02-28abmsd.txt
+===================
+===================
+===================
+=== ffp for: bd04-02-28-c.flacf
+===================
+===================
+===================
+01 Drifter's Escape.flac:0737a76456d436eec9f9e84ed399f585
+02 Tell Me That It Isn't True.flac:a0b6c1203b4124dae969b6333d7866fd
+03 Cry A While.flac:f902aac08f025e77dd7742aea903a92e
+04 The Lonesome Death Of Hattie Carroll.flac:35256bc21c1cc6b8959c9b1b279f550f
+05 It's Alright, Ma (I'm Only Bleeding).flac:c785dd4ae191b383d63116c0b63fefea
+06 Girl From The North Country.flac:1e999d7f98e8b8ffec9256afde8b878b
+07 Things Have Changed.flac:70dafddade714203558f1d96b5960cc2
+08 Highway 61 Revisited.flac:a30cf1a7abf9c637cc037cf7647d4f09
+09 Make You Feel My Love.flac:636315a3b9a6774c65425e95aca03702
+10 Tweedle Dee & Tweedle Dum.flac:5500a8ff4777fa132575ff95c1185f23
+11 Every Grain Of Sand.flac:5c66f9a2f96a66e5e0f22f7f2c7c6e57
+12 Honest With Me.flac:790b769803ca4be989c182a8a1077767
+13 Saving Grace.flac:853b270146dce0bbc369bf23d9e99932
+14 Summer Days.flac:a697f1339519c36fa952ae5b74550832
+15 Cat's In The Well.flac:866804069adffdcb01e12ccda8ed534a
+16 Like A Rolling Stone.flac:7357620790277b611ebbc723bbe56a84
+17 All Along The Watchtower.flac:ad908ca025a0981b6e7807549a5b20bd
+===================
+===================
+===================
+=== shntool len for: bd04-02-28-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:35.31       59166956 B   ---   --   ---xx   flac  0.6393  01 Drifter's Escape.flac
+     3:52.31       40997756 B   ---   --   ---xx   flac  0.5976  02 Tell Me That It Isn't True.flac
+     5:56.47       62908988 B   ---   --   ---xx   flac  0.6123  03 Cry A While.flac
+     6:01.10       63703964 B   ---   --   ---xx   flac  0.5399  04 The Lonesome Death Of Hattie Carroll.flac
+     8:15.68       87477980 B   ---   --   ---xx   flac  0.6319  05 It's Alright, Ma (I'm Only Bleeding).flac
+     5:27.18       57725180 B   ---   --   ---xx   flac  0.5668  06 Girl From The North Country.flac
+     7:19.24       77496092 B   ---   --   ---xx   flac  0.6732  07 Things Have Changed.flac
+     6:05.32       64461308 B   ---   --   ---xx   flac  0.6600  08 Highway 61 Revisited.flac
+     4:58.62       52713068 B   ---   --   ---xx   flac  0.5938  09 Make You Feel My Love.flac
+     5:40.13       60006620 B   ---   --   ---xx   flac  0.5940  10 Tweedle Dee & Tweedle Dum.flac
+     7:31.11       79582316 B   ---   --   ---xx   flac  0.5867  11 Every Grain Of Sand.flac
+     6:59.53       74036300 B   ---   --   ---xx   flac  0.6396  12 Honest With Me.flac
+     2:28.49       26222492 B   ---   --   ---xx   flac  0.5267  13 Saving Grace.flac
+     6:18.41       66775676 B   ---   --   ---xx   flac  0.6407  14 Summer Days.flac
+     3:55.01       41456396 B   ---   --   ---xx   flac  0.6322  15 Cat's In The Well.flac
+     7:03.45       74723084 B   ---   --   ---xx   flac  0.6343  16 Like A Rolling Stone.flac
+     6:41.63       70884620 B   ---   --   ---xx   flac  0.6208  17 All Along The Watchtower.flac
+   100:10.74     1060338796 B                            0.6160  (17 files)
+===================
+===================
+===================

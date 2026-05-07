@@ -1,0 +1,126 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-14-Love-Sick-c.flacf 
+=================== 
+=================== 
+=================== 
+a29b0f6034bdf5f5ca1d0400d944873b  Bob Dylan Love Sick.md5
+a29b0f6034bdf5f5ca1d0400d944873b  Bob Dylan Love Sick.txt
+841ba41eb54aad0439c858be7b12c546  cd-1\cd-1.ffp
+841ba41eb54aad0439c858be7b12c546  cd-1\cd-1.txt
+7fb71bdb588271a7aa18edad3af19037  cd-1\Track01.flac
+4c5404b19f5bb03ddb2a95ec7e6882bb  cd-1\Track02.flac
+ccfd36fd6e723a58dab215c31c9da0be  cd-1\Track03.flac
+cca994f5ec4cb989521bd4af8c5d9825  cd-1\Track04.flac
+37392640e1d83391165ca84a3458fe6e  cd-1\Track05.flac
+2013dcabcfbcbf89a0bc88caf553fa26  cd-1\Track06.flac
+c38550090eace161a9c7533cbf808723  cd-1\Track07.flac
+91ba549d53a110a7c5c9ef9d53c6eb88  cd-1\Track08.flac
+67d8560476a3913b2f399e6da148dd33  cd-1\Track09.flac
+9b442a0edcfafffb9501c395465e45a7  cd-1\Track10.flac
+9c0f68cab1a994a14f46699d040a91df  cd-1\Track11.flac
+67c350b4e2968fbcf3677ba4a4fcb3b4  cd-1\Track12.flac
+f74407c7c1fc5202168d4f8721aa1eff  cd-1\Unknown Title.log
+ee18be0ad440a49e37f4c5df9ee868be  cd-2\cd-2.ffp
+ee18be0ad440a49e37f4c5df9ee868be  cd-2\cd-2.txt
+a3c0ca9d045e07e897522496b5fb2d15  cd-2\Track01.flac
+15f1d3dab72a2ec0335373ffa113f207  cd-2\Track02.flac
+d7804519e5acbf86a05c978340d918bf  cd-2\Track03.flac
+d78e712d9d4cc10c398352cef4f59fbd  cd-2\Track04.flac
+698aeb5a82fd434343cc5556f090a126  cd-2\Track05.flac
+573e381b933a80a927a2e66c2bcfc82c  cd-2\Track06.flac
+22e9339c9dab5e0cd8d5ea70813fed31  cd-2\Track07.flac
+c3b9ee36f72485a99042f1a6357826c3  cd-2\Track08.flac
+19ac843b743d9a15569ed3b62c81a017  cd-2\Track09.flac
+066adf7c9ab064396a6f5cc9ec6f252c  cd-2\Track10.flac
+a8dee4a70413bda4f61f886d17faba55  cd-2\Track11.flac
+1eeb5b9e1be2cb58b5ef6f9ded8e3bab  cd-2\Track12.flac
+7f6da8bef7036a546e91336d8ac3c67f  cd-2\Track13.flac
+b0019269c785fca6d5bbe842428330c0  cd-2\Unknown Title.log
+5d7916491f4eaed6baa2c141af1f5926  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-14-Love-Sick-c.flacf\cd-1 
+=================== 
+=================== 
+=================== 
+track01.flac:56204c92ad8eebf2adc0837330235aa8
+track02.flac:d414810999359192fddbb0d13c9dd235
+track03.flac:bbd2c1d79ab26e0cdddb5792e759f658
+track04.flac:c459fae9ed93978a89509082dc40da76
+track05.flac:af0b9124219bd18fd8cd97a012f52485
+track06.flac:40ab1c762f51ca61aad34ae5be9f0a96
+track07.flac:2e0df938a7ed4ce78378f9935edab291
+track08.flac:6b0ac7aa50a0b2f84684f2dcc780240d
+track09.flac:fd80f6e02d511da60a88bd5441d60009
+track10.flac:b410e77ba13c2785e04e099f57cf99f5
+track11.flac:bf2a0b938b39d1008e8b9d2654bbde45
+track12.flac:cb02c1607b79e51b7caa1afc88fe26e6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-14-Love-Sick-c.flacf\cd-2 
+=================== 
+=================== 
+=================== 
+track01.flac:cdba3c877054201885674babd0362378
+track02.flac:ebc242b87df36fe78e371ee54f8bb547
+track03.flac:ac1dfabe859a94fbf031e8d7c2cd13f3
+track04.flac:cfdc7834f9ccfcdaef02d848e808bbaa
+track05.flac:5e3a22b9da73bd63333810043ea20e43
+track06.flac:a49f7950960fa802026b96477ac2a6cd
+track07.flac:81c4fcb36d9b3f5c924d27e5a53d64d1
+track08.flac:d24cb29c521a4ca5aa65e5195d3737e2
+track09.flac:9cf602f7e0adc7635c2f1d930e0a198d
+track10.flac:df55ca0eaeff3fbc9312f77d5e7ae7c3
+track11.flac:0716ccb393abfe5cf897a710b14855d0
+track12.flac:147d3dd0bbae9ec0027c2286d9daaa7c
+track13.flac:6aa78cb2ac6209aa85dba8a4afa98906
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-14-Love-Sick-c.flacf\cd-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.02       47809148 B   ---   --   ---xx   flac  0.6303  Track01.flac
+     5:55.00       62622044 B   ---   --   ---xx   flac  0.5600  Track02.flac
+     6:38.02       70211948 B   ---   --   ---xx   flac  0.6156  Track03.flac
+     5:44.45       60787484 B   ---   --   ---xx   flac  0.5931  Track04.flac
+     6:06.69       64724732 B   ---   --   ---xx   flac  0.6251  Track05.flac
+     7:12.07       76221308 B   ---   --   ---xx   flac  0.6356  Track06.flac
+     5:53.00       62269244 B   ---   --   ---xx   flac  0.5782  Track07.flac
+     4:54.37       51948668 B   ---   --   ---xx   flac  0.5691  Track08.flac
+     7:34.08       80104460 B   ---   --   ---xx   flac  0.6405  Track09.flac
+     5:44.12       60709868 B   ---   --   ---xx   flac  0.5980  Track10.flac
+     6:24.66       67892876 B   ---   --   ---xx   flac  0.5988  Track11.flac
+     5:44.53       60806300 B   ---   --   ---xx   flac  0.6429  Track12.flac
+    72:23.01      766108080 B                            0.6087  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-14-Love-Sick-c.flacf\cd-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:50.32       93567308 B   ---   --   ---xx   flac  0.6022  Track01.flac
+     6:11.10       65467964 B   ---   --   ---xx   flac  0.5784  Track02.flac
+     5:16.27       55805948 B   ---   --   ---xx   flac  0.5463  Track03.flac
+     4:00.53       42460700 B   ---   --   ---xx   flac  0.6458  Track04.flac
+     4:43.65       50074124 B   ---   --   ---xx   flac  0.4702  Track05.flac
+     3:53.36       41185916 B   ---   --   ---xx   flac  0.5175  Track06.flac
+     4:05.63       43366220 B   ---   --   ---xx   flac  0.5289  Track07.flac
+     5:55.74       62796092 B   ---   --   ---xx   flac  0.5326  Track08.flac
+     6:07.25       64797644 B   ---   --   ---xx   flac  0.5486  Track09.flac
+     6:03.72       64202588 B   ---   --   ---xx   flac  0.5257  Track10.flac
+     4:37.04       48872252 B   ---   --   ---xx   flac  0.4838  Track11.flac
+     8:25.46       89190236 B   ---   --   ---xx   flac  0.4804  Track12.flac
+     5:35.60       59235164 B   ---   --   ---xx   flac  0.5043  Track13.flac
+    73:47.42      781022156 B                            0.5365  (13 files)
+=================== 
+=================== 
+=================== 

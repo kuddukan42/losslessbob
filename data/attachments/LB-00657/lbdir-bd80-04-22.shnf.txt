@@ -1,0 +1,128 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-04-22.shnf 
+=================== 
+=================== 
+=================== 
+146add8787f6c20bc521f4a92645fd4d *- Montrael101.shn
+3ef0201badcc305baa4ade4234b83d98 *- Montrael102.shn
+9fe09378169bb7585b2d122a8699520c *- Montrael103.shn
+6d83ae2d0e0da5595b104a15c6665f8a *- Montrael104.shn
+0a0fc89e36bdb030d0fff16aaa357f8d *- Montrael105.shn
+5ffbc912c5826b9fa90a23b4d60e7582 *- Montrael106.shn
+c901d7b58cba9cd57fc343925aa29561 *- Montrael107.shn
+4c55cf1cc500d0a60e19647181b49759 *- Montrael108.shn
+878e4cdf2fc1d4d3aca94c6444ccbb59 *- Montrael109.shn
+a9fb9e14075cbc9928b8b482dc239d51 *- Montrael110.shn
+faaeb580b1b0581d6a082f017e777685 *- Montrael111.shn
+1c472bdfb85ee9b7babb2489025a9850 *- Montrael112.shn
+21baf8334c291425d451a16bcb6cb29f *- Montrael113.shn
+ce62200736c58f53b35e851ad1f10162 *- Montrael114.shn
+010de11249b38717bd7bd64b4b37853e *- Montreal201.shn
+15d2aeb341a853ab0cd957496b1fbb59 *- Montreal202.shn
+54259f4a457d8799e715275c5be4f7ad *- Montreal203.shn
+055195874973d42509425f71db5a939a *- Montreal204.shn
+29f7bee8c555ca8addba2a2e6d8fc2ab *- Montreal205.shn
+a3122ef7106a44833b1599aa164ae332 *- Montreal206.shn
+f7cf26731fa52078b5837fc02f6f553a *- Montreal207.shn
+65a1d675184b86b81102567e7d762e32 *- Montreal208.shn
+c6cb56ce1fccf1e40c0f1283c50b0141 *- Montreal209.shn
+1f9653464134079c9cb508b9fe0ac32e *- Montreal210.shn
+a81b24f901924e50af75c6f5c008cfe7 *- Montreal211.shn
+c835e79388bad4f068ac9c5710bd17c6 *- Montreal212.shn
+f4904102d1640769b810751f09acba05 *- Montreal213.shn
+bc002ca83bdd2e13731ee32dc0fbaf32 *- Montreal214.shn
+a50a5d8d665f4c6b223e1b37fa67ee2f *- Montreal215.shn
+368dbc182335dd66c144602a8c798ced *- Montreal216.shn
+78614f60879497c2b545a84c5dd28798 *- Montreal217.shn
+8d30db284c20b065cc0c5bf5bf695fc1 *- Montreal218.shn
+dc064e97e926e7f875a8906290fa8024 *- Montreal219.shn
+7baaa400e70cc4a0fed5bd49f27fc756 *bd80-04-22.txt
+222c8d7153974d2f8aec37790cd9a3a4 *noname_d1.md5
+36dc56d1fbe14852c2a03ad8d6a88613 *noname_d2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-04-22.shnf 
+=================== 
+=================== 
+=================== 
+a4ba47e9df1321e71a77638cb0e169f6  [shntool]  __Montrael101.wav
+7c598bb06b610f73ad85c425e5383e1d  [shntool]  __Montrael102.wav
+c15cd5e17fcdfc6561a870a778bfffa1  [shntool]  __Montrael103.wav
+811c1c4408b1645bac77d6703883c3db  [shntool]  __Montrael104.wav
+5837b253fff4a4e06e5016f6443ff836  [shntool]  __Montrael105.wav
+b449f64d2c5209476f588073cc35fa2d  [shntool]  __Montrael106.wav
+ed5d429f94120b5e8d3e63241fe5bb16  [shntool]  __Montrael107.wav
+ac2eb973d09066ee5e3b267ca81a1f17  [shntool]  __Montrael108.wav
+ab3a909fe3009e1c2a95b9b69fba177b  [shntool]  __Montrael109.wav
+0f9557f0032d234787c72132300713f9  [shntool]  __Montrael110.wav
+cd70e76a1c2423cc4d86e75bca6d8da1  [shntool]  __Montrael111.wav
+ceaa857d4d8d4ed663471e7ec8ac0f92  [shntool]  __Montrael112.wav
+75b02b9f3612d5c8e8d589cdb90a41c2  [shntool]  __Montrael113.wav
+273d113f46aeba1f6a0c51d150650735  [shntool]  __Montrael114.wav
+083c352ed8f0af710baf3075e3229342  [shntool]  __Montreal201.wav
+27f93211b819e5b617f763e08415194b  [shntool]  __Montreal202.wav
+55d479d5441c47ab11c6a845980e7d93  [shntool]  __Montreal203.wav
+6d72d48e48b959427b729f7cc304184f  [shntool]  __Montreal204.wav
+3eb762de1db20db8d08aab49bf4cdc17  [shntool]  __Montreal205.wav
+6de69171d1bd41439bc4176891077065  [shntool]  __Montreal206.wav
+f33fb586280fb298fda2cc9c81f39890  [shntool]  __Montreal207.wav
+43a9f9003849eae80b42a87d9b738fa9  [shntool]  __Montreal208.wav
+6b26e4dbadac477508c898e8c3714365  [shntool]  __Montreal209.wav
+3f80b3c320174af5292356d9b44a53e2  [shntool]  __Montreal210.wav
+39b548fe9b1c57e6ca07dc54fdf70015  [shntool]  __Montreal211.wav
+ca77f05e7c38f4e05b44f7ee6baee676  [shntool]  __Montreal212.wav
+b3f56dfb10da84574012d37a53ff24f7  [shntool]  __Montreal213.wav
+35e0f7c79744a14837b329fb3dd08298  [shntool]  __Montreal214.wav
+9ea6f4860f0bdccba540387345de6327  [shntool]  __Montreal215.wav
+d60d7246e0ee0b4799456950831fb00d  [shntool]  __Montreal216.wav
+8e5b388d5d583db0a6a2d514404b2f61  [shntool]  __Montreal217.wav
+1fe6b41c6b3456edc102a88767394b21  [shntool]  __Montreal218.wav
+7acb34acd87e4dff3c317436bbb0fa0d  [shntool]  __Montreal219.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-04-22.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.31       76277788 B   ---   -e   -----    wav  1.0000  __Montrael101.wav
+     5:11.71       55027468 B   ---   -e   -----    wav  1.0000  __Montrael102.wav
+     5:36.57       59404540 B   ---   -e   -----    wav  1.0000  __Montrael103.wav
+     5:38.73       59794972 B   ---   -e   -----    wav  1.0000  __Montrael104.wav
+     1:11.02       12529180 B   ---   -e   -----    wav  1.0000  __Montrael105.wav
+     4:34.63       48481852 B   ---   -e   -----    wav  1.0000  __Montrael106.wav
+     5:39.47       59910220 B   ---   -e   -----    wav  1.0000  __Montrael107.wav
+     6:15.08       66168892 B   ---   -e   -----    wav  1.0000  __Montrael108.wav
+     6:48.22       72023020 B   ---   -e   -----    wav  1.0000  __Montrael109.wav
+     6:23.66       67716508 B   ---   -e   -----    wav  1.0000  __Montrael110.wav
+     4:05.47       43328620 B   ---   -e   -----    wav  1.0000  __Montrael111.wav
+     4:47.25       50685676 B   ---   -e   -----    wav  1.0000  __Montrael112.wav
+     2:36.16       27556108 B   ---   -e   -----    wav  1.0000  __Montrael113.wav
+     4:01.56       42644188 B   ---   -e   -----    wav  1.0000  __Montrael114.wav
+     5:06.50       54096076 B   ---   -e   -----    wav  1.0000  __Montreal201.wav
+     4:28.20       47322316 B   ---   -e   -----    wav  1.0000  __Montreal202.wav
+     6:23.70       67725916 B   ---   -e   -----    wav  1.0000  __Montreal203.wav
+     7:05.20       75017116 B   ---   -e   -----    wav  1.0000  __Montreal204.wav
+     2:36.70       27683116 B   ---   -e   -----    wav  1.0000  __Montreal205.wav
+     2:04.57       22007740 B   ---   -e   -----    wav  1.0000  __Montreal206.wav
+     5:24.09       57174844 B   ---   -e   -----    wav  1.0000  __Montreal207.wav
+     5:44.21       60731068 B   ---   -e   -----    wav  1.0000  __Montreal208.wav
+     1:57.59       20777644 B   ---   -e   -----    wav  1.0000  __Montreal209.wav
+     1:18.65       13912156 B   ---   -e   -----    wav  1.0000  __Montreal210.wav
+     1:32.00       16228876 B   ---   -e   -----    wav  1.0000  __Montreal211.wav
+     4:25.24       46802524 B   ---   -e   -----    wav  1.0000  __Montreal212.wav
+     1:31.58       16188892 B   ---   -e   -----    wav  1.0000  __Montreal213.wav
+     1:03.40       11207356 B   ---   -e   -----    wav  1.0000  __Montreal214.wav
+     3:06.38       32899852 B   ---   -e   -----    wav  1.0000  __Montreal215.wav
+     2:23.44       25328764 B   ---   -e   -----    wav  1.0000  __Montreal216.wav
+     3:48.71       40386268 B   ---   -e   -----    wav  1.0000  __Montreal217.wav
+     2:37.26       27756028 B   ---   -e   -----    wav  1.0000  __Montreal218.wav
+     3:23.02       35813980 B   ---   -e   -----    wav  1.0000  __Montreal219.wav
+   136:06.53     1440609564 B                            1.0000  (33 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd89-06-20-Dolphinsmile.flac1648
+===================
+===================
+===================
+43e18661e87b518e4835cc7c83cef10a *01 Most Likely Youll Go Your Way.flac
+bc2c6b08894f5f101716267666c6e7ca *02 You Dont Know Me.flac
+6cb06af85a7556a80c4e98ab9b2fd918 *03 Stuck Inside Of Mobile.flac
+59d24faf99645748a9d26fe3be9188c9 *04 Simple Twist Of Fate.flac
+2e953c1179f45bbbad70af398335685c *05 Ill Be Your Baby Tonight.flac
+a7a9dd970b1987ee168b74d8193d6067 *06 All Along The Watchtower.flac
+b4c7e6e527abdf1aed666350696b8f24 *07 Mama You Been On My Mind.flac
+79ac57e78c98ca0da169501b16fa61a5 *08 Girl From The North Country.flac
+835dafdb4cb0ab557dc56fe87f52f6a7 *09 Hattie Carroll.flac
+eaee75f2561f9391271c92326c1f8084 *10 I Shall Be Released.flac
+bc443325a5a425cbe0b2e73f6c654908 *11 Ballad Of A Thin Man.flac
+5b45732a41228e15b0c7ab82be4b5e1f *12 Silvio.flac
+1a9ed0206b4c628a3b06099cd99ba3ee *13 Like A Rolling Stone.flac
+37ce2dc648c9b8080059bd7387d35ec8 *14 Tamborine Man.flac
+f96f03eaef734a76b4545451d9d009ca *15 Knockin On Heavens Door.flac
+635959dc5c029475c204dc7227ba4f8e *16 Maggies Farm.flac
+8ba060fecce7243f240bc37b7f3d90a5 *Bob Dylan  Gradinate Rome 1989-06-20 Dolphinsmile Archive.ffp
+46a56cd712a75ae3c307c444febf6eec *Bob Dylan  Gradinate Rome 1989-06-20 Dolphinsmile Archive.md5
+8ba060fecce7243f240bc37b7f3d90a5 *Bob Dylan  Gradinate Rome 1989-06-20 Dolphinsmile Archive.txt
+865e0da5e855598d088229cf32b2e8ce *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-06-20-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Most Likely Youll Go Your Way.flac:e0bf0304ad78c9b582537b0583201f3b
+02 You Dont Know Me.flac:18bbbc3da5438ea63ac817acad8e1f17
+03 Stuck Inside Of Mobile.flac:b1b12a367c5de665eaec704720450704
+04 Simple Twist Of Fate.flac:335112a0a8edd00d0d248129079febd1
+05 Ill Be Your Baby Tonight.flac:3462284df544a11410679b276603b63a
+06 All Along The Watchtower.flac:c2023b99f05739a356d74a624fa416e5
+07 Mama You Been On My Mind.flac:b30cdfe3be1d079b05b23d11db993230
+08 Girl From The North Country.flac:015ea4103a3b7eaac692dbf45fa445d7
+09 Hattie Carroll.flac:8b8a2b9ffe70f089ad22d473a65694f3
+10 I Shall Be Released.flac:d3403d5bc90d56bf6723ed816833e101
+11 Ballad Of A Thin Man.flac:bc10318e6cf7711117df0145fa33bec6
+12 Silvio.flac:9d83094a9a4cba9c4f67aabc544a6dab
+13 Like A Rolling Stone.flac:1e838287b8eea49482edc2da816b1f50
+14 Tamborine Man.flac:e5ab40d179a3769609fb9afa05238086
+15 Knockin On Heavens Door.flac:a7a092b277ff067eaf8dfcdade300e15
+16 Maggies Farm.flac:31900e021c34fba5c06dfafc25aa2548
+===================
+===================
+===================
+=== shntool len for: bd89-06-20-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:54.823      68126028 B   cxx   --   ---xx   flac  0.5849  01 Most Likely Youll Go Your Way.flac
+     3:43.501      42912220 B   cxx   --   ---xx   flac  0.5991  02 You Dont Know Me.flac
+     5:54.165      67999708 B   cxx   --   ---xx   flac  0.6181  03 Stuck Inside Of Mobile.flac
+     6:49.379      78600744 B   cxx   --   ---xx   flac  0.6086  04 Simple Twist Of Fate.flac
+     4:48.227      55339696 B   cxx   --   ---xx   flac  0.6191  05 Ill Be Your Baby Tonight.flac
+     3:33.290      40951748 B   cxx   --   ---xx   flac  0.6307  06 All Along The Watchtower.flac
+     4:39.094      53586144 B   cxx   --   ---xx   flac  0.6126  07 Mama You Been On My Mind.flac
+     5:16.151      60701120 B   cxx   --   ---xx   flac  0.6039  08 Girl From The North Country.flac
+     5:57.965      68729240 B   cxx   --   ---xx   flac  0.6082  09 Hattie Carroll.flac
+     5:31.436      63635832 B   cxx   --   ---xx   flac  0.6310  10 I Shall Be Released.flac
+     4:49.493      55582648 B   cxx   --   ---xx   flac  0.6503  11 Ballad Of A Thin Man.flac
+     2:36.341      30017444 B   cxx   --   ---xx   flac  0.6641  12 Silvio.flac
+     6:25.412      73999152 B   cxx   --   ---xx   flac  0.6565  13 Like A Rolling Stone.flac
+     6:59.841      80609540 B   cxx   --   ---xx   flac  0.5820  14 Tamborine Man.flac
+     6:09.625      70967976 B   cxx   --   ---xx   flac  0.6175  15 Knockin On Heavens Door.flac
+     4:57.058      57035128 B   cxx   --   ---xx   flac  0.6264  16 Maggies Farm.flac
+    84:05.800     968794368 B                            0.6173  (16 files)
+===================
+===================
+===================

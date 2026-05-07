@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-15-LTE.flacf 
+=================== 
+=================== 
+=================== 
+d152342b186882927bd500e5972d9835  bd-79-11-15-d1 (Track 01).flac
+087bdbdf3cf528ef60cd01401509768a  bd-79-11-15-d1 (Track 02).flac
+f439861b485bc361e2f2afbaad66f7b8  bd-79-11-15-d1 (Track 03).flac
+8a80179dcae71ac116ee9c6f661faad9  bd-79-11-15-d1 (Track 04).flac
+cd3f667ef076d183542d5ec998a75c02  bd-79-11-15-d1 (Track 05).flac
+0422d9be0e694716d425ee904ace0a65  bd-79-11-15-d1 (Track 06).flac
+08c716b8d864a8b49d1b22a454d01fad  bd-79-11-15-d1 (Track 07).flac
+bf7149cde23b04bd7da2577996653a9e  bd-79-11-15-d1 (Track 08).flac
+2662bf094d0d831c127e4385987f7213  bd-79-11-15-d1 (Track 09).flac
+05ec7c7f3eb00a8bdf852c04a49d8498  bd-79-11-15-d1 (Track 10).flac
+1c2396d426d313758b355a7f2527f994  bd-79-11-15-d1 (Track 11).flac
+5a97cbc6ea1207ad93e68edd09bf0f05  bd-79-11-15-d1 (Track 12).flac
+29dc7ee240b29f558241cafae8f24fa7  bd-79-11-15-d1 (Track 13).flac
+0e1d2febe3ca5b4a9a974d436829905e  bd-79-11-15-d2 (Track 01).flac
+84741375f2c44d51711bf74f038bc32c  bd-79-11-15-d2 (Track 02).flac
+f9dbca8e081c88a38a04db62019923b3  bd-79-11-15-d2 (Track 03).flac
+41e806f4a9ed3f716f3deb5156e73e20  bd-79-11-15-d2 (Track 04).flac
+fb46ea6bf39a068d40ca8931ff311243  bd-79-11-15-LTE.txt
+d8ae5bea6a6373c0f125c4e0ca3665e9  bd79-11-15-LTE-LB-2674.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-15-LTE.flacf 
+=================== 
+=================== 
+=================== 
+bd-79-11-15-d1 (Track 01).flac:0e9f0086008c453ba6eeda4a90c5c6fc
+bd-79-11-15-d1 (Track 02).flac:9bcab0dde7d3e2b8345667af97d5138b
+bd-79-11-15-d1 (Track 03).flac:70a66479f02595a07cfe2d6851e5acab
+bd-79-11-15-d1 (Track 04).flac:ba3b7214789c43d40478f1bc82dea6ac
+bd-79-11-15-d1 (Track 05).flac:bc92374e479cb00ba8dcd0710901f09c
+bd-79-11-15-d1 (Track 06).flac:4a2300fe716a0a58ef776b10714237a4
+bd-79-11-15-d1 (Track 07).flac:815440107252b04eba7b851193d4048f
+bd-79-11-15-d1 (Track 08).flac:b33315955a6b7bc97a74f3686111d854
+bd-79-11-15-d1 (Track 09).flac:6407d72828e938074fccb1df23fd59f0
+bd-79-11-15-d1 (Track 10).flac:7733f2ac8b7901c900d61a3cfe0a253e
+bd-79-11-15-d1 (Track 11).flac:d667c2681833d6a42fc85d0af6420401
+bd-79-11-15-d1 (Track 12).flac:3f14c4c5fc96d80cc702f1193aadf0f0
+bd-79-11-15-d1 (Track 13).flac:40c9baea45c506b5d379459fbc162c7b
+bd-79-11-15-d2 (Track 01).flac:b16e39e54869de601bcd31fffafc9cd6
+bd-79-11-15-d2 (Track 02).flac:f6d0b1ebebebc30b237aecb0fedee7ac
+bd-79-11-15-d2 (Track 03).flac:c859820f6c50e4e0ab1ad4a63900fa0d
+bd-79-11-15-d2 (Track 04).flac:8e0084e7a30902a0e6574000eed4f532
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-15-LTE.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:46.60       71759564 B   ---   --   ---xx   flac  0.4077  bd-79-11-15-d1 (Track 01).flac
+     5:20.21       56497436 B   ---   --   ---xx   flac  0.3773  bd-79-11-15-d1 (Track 02).flac
+     5:58.38       63240620 B   ---   --   ---xx   flac  0.3993  bd-79-11-15-d1 (Track 03).flac
+     5:13.67       55370828 B   ---   --   ---xx   flac  0.3781  bd-79-11-15-d1 (Track 04).flac
+     5:26.60       57647564 B   ---   --   ---xx   flac  0.3989  bd-79-11-15-d1 (Track 05).flac
+     6:02.48       63969740 B   ---   --   ---xx   flac  0.4155  bd-79-11-15-d1 (Track 06).flac
+     6:21.31       67281356 B   ---   --   ---xx   flac  0.4120  bd-79-11-15-d1 (Track 07).flac
+     6:16.66       66481676 B   ---   --   ---xx   flac  0.3910  bd-79-11-15-d1 (Track 08).flac
+     4:58.23       52621340 B   ---   --   ---xx   flac  0.4049  bd-79-11-15-d1 (Track 09).flac
+     4:47.58       50763260 B   ---   --   ---xx   flac  0.3990  bd-79-11-15-d1 (Track 10).flac
+     4:31.00       47804444 B   ---   --   ---xx   flac  0.4403  bd-79-11-15-d1 (Track 11).flac
+     4:24.66       46724876 B   ---   --   ---xx   flac  0.3682  bd-79-11-15-d1 (Track 12).flac
+     4:11.23       44330540 B   ---   --   ---xx   flac  0.4226  bd-79-11-15-d1 (Track 13).flac
+     5:19.44       56375132 B   ---   --   ---xx   flac  0.3994  bd-79-11-15-d2 (Track 01).flac
+     7:50.46       83016236 B   ---   --   ---xx   flac  0.3830  bd-79-11-15-d2 (Track 02).flac
+     4:26.49       47037692 B   ---   --   ---xx   flac  0.4192  bd-79-11-15-d2 (Track 03).flac
+     6:45.44       71545532 B   ---   --   ---xx   flac  0.3691  bd-79-11-15-d2 (Track 04).flac
+    94:42.69     1002467836 B                            0.3981  (17 files)
+=================== 
+=================== 
+=================== 

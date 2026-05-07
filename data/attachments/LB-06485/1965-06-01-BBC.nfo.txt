@@ -1,0 +1,84 @@
+Bob Dylan
+"In Concert"
+Studio TC4
+BBC Television Theatre
+London
+1965-06-01
+
+   First show
+01 Ballad of Hollis Brown 04:57
+02 Mr. Tambourine Man 05:49
+03 Gates of Eden 06:42
+04 If You Gotta Go, Go Now 02:35
+05 Lonesome Death of Hattie Carroll 06:13
+06 It Ain't Me, Babe 04:03
+30:21
+
+   Second show
+07 Love Minus Zero/No Limit 04:00
+08 One Too Many Mornings 04:13
+09 Boots of Spanish Leather 06:41
+10 It's Alright, Ma (I'm only Bleeding) 09:01
+11 She Belongs to Me 04:45
+12 It's All over Now, Baby Blue 05:08
+33:49
+
+2 shows 64:10
+
+Studio TC4, BBC Television Theatre, Shepherd's Bush, London, W12 7RJ
+Production Company: British Broadcasting Corporation (BBC)
+Producer: Stewart Morris
+Sound: Brian Forgham
+
+Tracks 1-6  First show broadcast BBC-1 1965-06-26
+Tracks 7-12 Second show broadcast BBC-1 1965-06-19
+30 minutes edit broadcast BBC 1966-03-12 8:40pm
+06 Broadcast "Late Night Line-Up" BBC-1 1965-06-26
+
+-------------------------------------------------------------
+Recorded on 15th & 26th June 1965, in Hull, Yorkshire, U.K.
+
+Rediffusion Junction Box JB101 >
+Kolster Brandes RT20/BSR Monardeck TD1 1/4 inch recorder (3.75 ips) >
+Master reel > Minidisc >
+CDR >
+Cool Edit Pro 2.0 (pitch corrected 2005-09-10/12) no NR >
+AllAlongtheWatchtower freebie 2005-09-14
+FLAC 0.3925 (12 files)
+------------------------------------
+SM remaster.
+All work done with Amadeus II 3.8.7
+
+Note: There are four different segments:
+1: d1t1-d1t3
+2: d1t4-d1t6
+3: d1t7 [00:00-00:30] (crossfade edit)
+4: d1t7 [00:30-04:00]-d1t12
+
+right channel only was used for true mono;
+image wandered for d1t7 [00:00-00:30] (crossfade/pasteover edit),
+this was corrected by using right channel only, but you 
+can still hear the edit, as some echo has been 
+applied to the edit piece, and the crossfade is too long.
+
+Pitch/Speed correction with Amadeus II 3.8.7
+(change pitch & speed - quality best)
+d1t1-d1t2 Pitch/Speed -0.2/105.7%
+d1t3 Pitch/Speed -0.2/105.7%; 0:00-0:09 0.2/100.0%; 0:09-1:43 0.3/100.0%
+d1t4-d1t5 Pitch/Speed 0.1/100%
+d1t6 Pitch/Speed 0.1/100%, 0.1/100%
+d1t7-d1t12 Pitch/Speed 0.1/100%
+tuning with:
+Tuning forks: E 329.6 Hz, A 440 Hz, C 523.3 Hz
+Harmonicas: M. Hohner Echo Super Vamper C/Super Vamper G
+Guitar: Epiphone FT-150
+
+d1t5 @ 0:03 power surge attenuated
+d1t9 @ 0:41 tick fixed, @ 0:44 click fixed, @1:33 click fixed
+No NR or compression used, levels untouched
+
+xACT 1.62 >
+AIFF to FLAC >
+FLAC (lvl 4) 0.4647 (12 files), FLAC tags, 
+mdf5, ffp, st5
+2008-09-09

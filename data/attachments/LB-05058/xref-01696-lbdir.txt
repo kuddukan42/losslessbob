@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd97-02-09-d.flacf
+===================
+===================
+===================
+e49741dabaee3549366ff3f547c22f4f *1997-02-09 - Tokyo (Holy Grail).md5
+8c2fc61c92a892dce236c5a86f59f787 *D_1\01 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+504be2023829dff4c8e932629d73ed44 *D_1\02 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+f732d62908a8d7c2c855b0e731ce4c5a *D_1\03 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+16c996a121259e7a8a556cd17b984471 *D_1\04 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+8bada5ce94d2e14030d6f514c80efef8 *D_1\05 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+bfe2c6bd8e0bf977196e39141d661aa5 *D_1\06 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+2634a1f59c2d993bbfe86fbdf4ad8555 *D_1\07 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+3076175c78ea47ca34b4e1c22cafb94a *D_1\08 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+8f376cfe4fc9d79b58d5e30b85a5368d *D_1\09 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+c29c84f33be9af1793d2a1c6695e1991 *D_2\01 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+17da847a927aa569d4299a5481afcc3a *D_2\02 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+6a4ebebd03349d02541e0fec713834ba *D_2\03 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+52ca4a0e51ce1fabc467b4640057c89b *D_2\04 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+a96fa8b1d83dde9f9615038210346d00 *D_2\05 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+4ee24a1c76a8e6e556bde9144e2b9634 *D_2\06 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+d7d2915dbe188e6cef775e98e0ef5755 *info.txt
+===================
+===================
+===================
+=== ffp for: bd97-02-09-d.flacf
+===================
+===================
+===================
+D_1\01 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:7f289d358437e4001f9835d76e47e4ea
+D_1\02 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:239f2d6ad026335e10711236b1b5f096
+D_1\03 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:e19e02954e4bdd0f68a1bb6d000bee6d
+D_1\04 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:ccc23a866cbdc3319b623109104cb1d1
+D_1\05 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:e893b8657685b40b0c913d6f7e814911
+D_1\06 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:34322834a73efae5b97f548b5c42e149
+D_1\07 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:f53b21928058711cd6297ad56d1c8da0
+D_1\08 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:a7b9e184ff99faaee1c46b35f885c9ce
+D_1\09 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac:1d784e7d3ccd1b2710f04702d1581f5b
+D_2\01 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac:77dd5a440cf2e71ef84749094a982f5f
+D_2\02 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac:d356b0a9e4fa367d0e0619edb0bb131b
+D_2\03 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac:2c8b81632a07c9da84299a4349fb3ad7
+D_2\04 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac:ec7c450ddeb1a57e163ec2289903c502
+D_2\05 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac:1c91a828d3991c5a0e714b786b613285
+D_2\06 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac:d1ffd03557641ce6f214db2b2e7c17b6
+===================
+===================
+===================
+=== shntool len for: bd97-02-09-d.flacf\D_1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.09       55763852 B   -b-   --   ---xx   flac  0.6659  01 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+     5:38.06       59636300 B   -b-   --   ---xx   flac  0.6392  02 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+     5:56.65       62950796 B   -b-   --   ---xx   flac  0.6631  03 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+     5:48.00       61386140 B   -b-   --   ---xx   flac  0.6272  04 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+     7:00.33       74165948 B   -b-   --   ---xx   flac  0.6577  05 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+     6:55.01       73208540 B   -b-   --   ---xx   flac  0.6937  06 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+     6:11.51       65563292 B   -b-   --   ---xx   flac  0.6608  07 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+     5:35.04       59103404 B   -b-   --   ---xx   flac  0.6148  08 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+     7:12.28       76271516 B   -b-   --   ---xx   flac  0.6897  09 of Bob Dylan - 1997-02-09 - Tokyo - CD1.flac
+    55:33.46      588049788 B                            0.6587  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd97-02-09-d.flacf\D_2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:25.35       67997324 B   -b-   --   ---xx   flac  0.6778  01 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+     7:04.71       74960732 B   -b-   --   ---xx   flac  0.6224  02 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+     8:28.49       89727548 B   -b-   --   ---xx   flac  0.7000  03 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+     9:00.73       95428748 B   -b-   --   ---xx   flac  0.7128  04 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+     7:57.26       84204668 B   -b-   --   ---xx   flac  0.7047  05 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+     6:47.61       71939228 B   -b-   --   ---xx   flac  0.6979  06 of Bob Dylan - 1997-02-09 - Tokyo - CD2.flac
+    45:45.17      484258248 B                            0.6879  (6 files)
+===================
+===================
+===================

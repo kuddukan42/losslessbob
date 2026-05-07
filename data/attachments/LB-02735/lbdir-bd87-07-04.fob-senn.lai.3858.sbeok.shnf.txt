@@ -1,0 +1,68 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-04.fob-senn.lai.3858.sbeok.shnf 
+=================== 
+=================== 
+=================== 
+e75a4752998a59273a00be64992cb410  bd1987-07-04.md5
+969bca91ebe2a833317033535ede6aeb  bd1987-07-04.txt
+8b7c7613952acca8f8684a367d70cc5a  bd87-07-04-LB-2735.txt
+06700555c7071bfe823382004d12e06b  gd87-07-04d2t206.shn
+8ec45c4c4eebf56af88f708c52169d69  gd87-07-04d2t207.shn
+0a29373d1ec418003faa070716066a3a  gd87-07-04d2t208.shn
+d65c310aea18cf10180ad79121fe16e2  gd87-07-04d2t209.shn
+1da022a057f818ab7e1d29966362c6be  gd87-07-04d2t210.shn
+d09a66ef99596c38865dc2fb42eeb6b3  gd87-07-04d2t211.shn
+29095f749531c501202c639bd9bba9ea  gd87-07-04d2t212.shn
+95e998f590b76801c09c2a0580e1d94a  gd87-07-04d3t301.shn
+48d60add9d40cbb0d4178cb83c506068  gd87-07-04d3t302.shn
+c014144fef6e5119edf451b022aec94d  gd87-07-04d3t303.shn
+2ad37233264e354ce908fac8fcb578e4  gd87-07-04d3t304.shn
+3267ed2008072b331c7e91c69498db5b  gd87-07-04d3t305.shn
+089129d48cc66008ba747991ef30fe7d  gd87-07-04d3t306.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-07-04.fob-senn.lai.3858.sbeok.shnf 
+=================== 
+=================== 
+=================== 
+484530a192c06ea6c56f2312215499f3  [shntool]  gd87-07-04d2t206.wav
+2b309c56cab710b0f804bc7d640d0199  [shntool]  gd87-07-04d2t207.wav
+aba2138d7e8e7fda29f8d2eadeecb798  [shntool]  gd87-07-04d2t208.wav
+7b27254b1bf0e808ad9bd5d1f8be55e1  [shntool]  gd87-07-04d2t209.wav
+3cd2486c22aa5478bbd2512c09f21f69  [shntool]  gd87-07-04d2t210.wav
+6c0c977bdaa221131392230371fe07f1  [shntool]  gd87-07-04d2t211.wav
+a411d85a4028deef7f33e0daefa9fa2c  [shntool]  gd87-07-04d2t212.wav
+dab209566c3e66b6d27c6306f60da2f2  [shntool]  gd87-07-04d3t301.wav
+731dc834cd61f19308a0829c49f693ec  [shntool]  gd87-07-04d3t302.wav
+e4eddd1cc558ff508c3d01a3476079ba  [shntool]  gd87-07-04d3t303.wav
+8bbefba337f3ae4bc421fabbc139a8c8  [shntool]  gd87-07-04d3t304.wav
+5cf7f7c3422d4f69ebc1080cb5b1c798  [shntool]  gd87-07-04d3t305.wav
+a91d9180113704fba9196f2b8e1882c9  [shntool]  gd87-07-04d3t306.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-04.fob-senn.lai.3858.sbeok.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.05       52402604 B   ---   --   -----    wav  1.0000  gd87-07-04d2t206.wav
+     5:00.38       53009420 B   ---   --   -----    wav  1.0000  gd87-07-04d2t207.wav
+     5:09.06       54521756 B   ---   --   -----    wav  1.0000  gd87-07-04d2t208.wav
+     6:39.65       70536524 B   ---   --   -----    wav  1.0000  gd87-07-04d2t209.wav
+     4:24.21       46619036 B   ---   --   -----    wav  1.0000  gd87-07-04d2t210.wav
+     5:19.19       56316332 B   ---   --   -----    wav  1.0000  gd87-07-04d2t211.wav
+     5:33.46       58849436 B   ---   --   -----    wav  1.0000  gd87-07-04d2t212.wav
+     7:45.57       82160108 B   ---   --   -----    wav  1.0000  gd87-07-04d3t301.wav
+     6:29.35       68701964 B   ---   --   -----    wav  1.0000  gd87-07-04d3t302.wav
+     5:14.68       55549580 B   ---   --   -----    wav  1.0000  gd87-07-04d3t303.wav
+    10:16.52      108784748 B   ---   --   -----    wav  1.0000  gd87-07-04d3t304.wav
+     4:11.36       44361116 B   ---   --   -----    wav  1.0000  gd87-07-04d3t305.wav
+     7:05.18       75012184 B   -b-   --   -----    wav  1.0000  gd87-07-04d3t306.wav
+    78:07.16      826824808 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

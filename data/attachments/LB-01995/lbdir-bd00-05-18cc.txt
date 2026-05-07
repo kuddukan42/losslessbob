@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-18cc 
+=================== 
+=================== 
+=================== 
+b5b134c0c19e8cba16a9ad253d95740f  bd00-05-18cc.txt
+eb9b953a122061bc6be8ccbfc7d27ba1  BD000518d1t01.shn
+4ec039b584f9a29dde881c926b7fbda0  BD000518d1t02.shn
+765e6f5ef8a9232cce6d1c3b6dbee2a7  BD000518d1t03.shn
+058a1fe2d9616a471fe779cc4b97d135  BD000518d1t04.shn
+eca903c0c947cef6a1dc0f46028dbb91  BD000518d1t05.shn
+3989c0377e67cf8dc23275fa33c3e229  BD000518d1t06.shn
+f9c0ae8d12a2dba93a541a5c9e583d08  BD000518d1t07.shn
+c5fb0d979cc4bab45a8c9676f35d1874  BD000518d1t08.shn
+8c691b108582153cff2507b56e3a1463  BD000518d1t09.shn
+67b7f8e01038ab61b45157f2e3eb0503  BD000518d1t10.shn
+6b4864a26e5e80a3b6d819f73d76ae10  BD000518d1t11.shn
+5a944a9b56aa2bfe828b8c4452329c3a  BD000518d1t12.shn
+fac7d0934c3ec0e2e1af4484264b1c82  BD000518d1t13.shn
+5826ebbb5fec97e78f6ece2f12ccd3cb  BD000518d1t14.shn
+8c546abac5c2d95ab5753ab3aee610c3  BD000518d2t01.shn
+acba23a07c2ee11d99a0955e168e3600  BD000518d2t02.shn
+ebe582337a6cd49359be9c549183b73b  BD000518d2t03.shn
+bc6f7c99e1e3b5586e42f0937ceda414  BD000518d2t04.shn
+1f4e075911e0be11cb299df042adee67  BD000518d2t05.shn
+a7ddf602dfd2c1de2d2835596b53bc16  BD000518d2t06.shn
+4082944b47291b1aef1367f9be810605  BD000518d2t07.shn
+7984fdd7bc9c64bc277d0dfebc0501f4  BD000518d2t08.shn
+8dcf7ad317a2af8848bd77aac7f2bd6d  BD000518d2t09.shn
+21434140943df18f455cd1f62b7ebee8  BD000518d2t10.shn
+12331f46ff8ed4411d05252dcb63d3df  BD000518d2t11.shn
+fb046b47b1e8ec603c1ac1fd26acc0ee  BD000518d2t12.shn
+d847ebf0a3594ff49ec16d924e13ebfe  BD000518d2t13.shn
+2474f72531d25e220c6cfd5d6e354558  Bob Dylan Stockholm, Globen 2000-05-18 .txt
+935221f4818cbd4cc3d181488c454a23  d1noname.md5
+ccbd3e728915766ea300670bafc7cc90  d2noname.md5
+ea2f1cf372eac9d8b5696c48848856cd  oh_me_oh_myback.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-18cc 
+=================== 
+=================== 
+=================== 
+42dc975d7b7c3789b5b18b4c2aa2e286  [shntool]  BD000518d1t01.wav
+1b12054d055b20c215796abda254c11b  [shntool]  BD000518d1t02.wav
+cef2f2e18ba8e1b69c3f78acc6da9b61  [shntool]  BD000518d1t03.wav
+4e6b2c47fd1339f276d072fab440c1a5  [shntool]  BD000518d1t04.wav
+deb749c683bf8f23488283af609cfdcb  [shntool]  BD000518d1t05.wav
+459e69900191674084220e7c72a93869  [shntool]  BD000518d1t06.wav
+14b65017398ad4608c3460525d4ce1c4  [shntool]  BD000518d1t07.wav
+ab7c21f24650af92ebe55941ed140be7  [shntool]  BD000518d1t08.wav
+83f633245236f2bd3b4406ac4bf82e78  [shntool]  BD000518d1t09.wav
+cbfe4c6f8943b05b4e481e8fbfb6d86a  [shntool]  BD000518d1t10.wav
+3dd721db1b200f6495187c0d33e82456  [shntool]  BD000518d1t11.wav
+8263879efe3102bc265f8b350128eebc  [shntool]  BD000518d1t12.wav
+c38ab2df3da658186db6722dbc467257  [shntool]  BD000518d1t13.wav
+8a547d3da72b593a9f9a153def9c793a  [shntool]  BD000518d1t14.wav
+ad00c26e880264944ec67c0aa9d28230  [shntool]  BD000518d2t01.wav
+f1c5ade8ff972f762b4e17225039c83a  [shntool]  BD000518d2t02.wav
+2500ce0fb6bc793070734ff0d9a2e0e2  [shntool]  BD000518d2t03.wav
+a3f00b4425475fe12dee8349f7fca11a  [shntool]  BD000518d2t04.wav
+f9aa0b0f4b3c9c902606ed32fcd2f653  [shntool]  BD000518d2t05.wav
+e5a31bd5f47fcef0dfe3f6fb6b9ca10f  [shntool]  BD000518d2t06.wav
+8f5a2ebd6afc18d424b3b215b6a9f249  [shntool]  BD000518d2t07.wav
+e6c41481c0d26c7ae8dd987ca3dd65ec  [shntool]  BD000518d2t08.wav
+0d32c2db52d9fa1bcc4722cdaf2f61f0  [shntool]  BD000518d2t09.wav
+1ce9a9906282cc3177c146806dd3baad  [shntool]  BD000518d2t10.wav
+87f762c95e1ffa7bea437134a380cdf0  [shntool]  BD000518d2t11.wav
+a09905538d7767792671f384fddbbf22  [shntool]  BD000518d2t12.wav
+c420bab6c0b923d78433c5be84fb4882  [shntool]  BD000518d2t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-18cc 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.58        4629244 B   -b-   h-   -----    wav  1.0000  BD000518d1t01.wav
+     3:47.05       40055068 B   -b-   h-   -----    wav  1.0000  BD000518d1t02.wav
+     6:04.40       64304188 B   -b-   h-   -----    wav  1.0000  BD000518d1t03.wav
+     5:17.30       55989868 B   -b-   h-   -----    wav  1.0000  BD000518d1t04.wav
+     8:02.20       85072348 B   -b-   h-   -----    wav  1.0000  BD000518d1t05.wav
+     9:01.33       95510524 B   -b-   h-   -----    wav  1.0000  BD000518d1t06.wav
+     6:45.04       71451916 B   -b-   h-   -----    wav  1.0000  BD000518d1t07.wav
+     2:35.65       27495388 B   -b-   h-   -----    wav  1.0000  BD000518d1t08.wav
+     7:07.52       75445612 B   -b-   h-   -----    wav  1.0000  BD000518d1t09.wav
+     5:36.56       59402620 B   -b-   h-   -----    wav  1.0000  BD000518d1t10.wav
+     6:03.06       64047820 B   -b-   h-   -----    wav  1.0000  BD000518d1t11.wav
+     5:44.01       60684460 B   -b-   h-   -----    wav  1.0000  BD000518d1t12.wav
+     6:08.03       64922764 B   -b-   h-   -----    wav  1.0000  BD000518d1t13.wav
+     5:40.05       59987956 B   -b-   h-   -----    wav  1.0000  BD000518d1t14.wav
+     6:48.61       72202204 B   -b-   h-   -----    wav  1.0000  BD000518d2t01.wav
+     8:07.46       86015500 B   -b-   h-   -----    wav  1.0000  BD000518d2t02.wav
+     4:16.25       45217708 B   -b-   h-   -----    wav  1.0000  BD000518d2t03.wav
+     5:45.39       60950236 B   -b-   h-   -----    wav  1.0000  BD000518d2t04.wav
+     7:23.29       78213916 B   -b-   h-   -----    wav  1.0000  BD000518d2t05.wav
+     6:33.67       69482780 B   -b-   h-   -----    wav  1.0000  BD000518d2t06.wav
+     3:05.37       32721532 B   -b-   h-   -----    wav  1.0000  BD000518d2t07.wav
+     7:31.00       79556908 B   -b-   h-   -----    wav  1.0000  BD000518d2t08.wav
+     6:01.62       63826732 B   -b-   h-   -----    wav  1.0000  BD000518d2t09.wav
+     4:57.67       52548892 B   -b-   h-   -----    wav  1.0000  BD000518d2t10.wav
+     4:47.35       50709628 B   -b-   h-   -----    wav  1.0000  BD000518d2t11.wav
+     5:50.69       61902796 B   -b-   h-   -----    wav  1.0000  BD000518d2t12.wav
+     6:56.12       73411988 B   -b-   h-   -----    wav  1.0000  BD000518d2t13.wav
+   156:25.27     1655760596 B                            1.0000  (27 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74 02 09eve-a seattle 
+=================== 
+=================== 
+=================== 
+5a894c46360298ef017d5ab040207c0d  74 02 09 eve d1 t01.shn
+0caa0e33cdb5c31c1b47441a81987b13  74 02 09 eve d1 t02.shn
+f3399015f43db6e863f79c2a7f41fbc5  74 02 09 eve d1 t03.shn
+9ce1c8ce4e7bdbe30f482cc531b9ae68  74 02 09 eve d1 t04.shn
+8e06853ac3a4a66d6ae367462d0ff5ff  74 02 09 eve d1 t05.shn
+7020cf19da4bbf3d490d6fe96db7fae3  74 02 09 eve d1 t06.shn
+7e0e5f3fdf4c1a16dc7fb40923198cbf  74 02 09 eve d1 t07.shn
+fac4145b50ef3d86c2df7e0742f5c973  74 02 09 eve d1 t08.shn
+b9027eb16c64671339720a526a7ba7b2  74 02 09 eve d1 t09.shn
+d9f6edb46bd9bfacd968594f793428c0  74 02 09 eve d1 t10.shn
+bc9959e482ec9883c658e83aa719b951  74 02 09 eve d1 t11.shn
+41cb48cdce42828f2e17665f54515e23  74 02 09 eve d1 t12.shn
+61e643a176281afbeb34096eb5ff75a8  74 02 09 eve d1 t13.shn
+4ad3094786079010bc5f91f1b7270b75  74 02 09 eve d1 t14.shn
+86ba0482c98f60bbd46706a4dd74166e  74 02 09 eve d2 t01.shn
+787efa9e666ec83da09a33977b8db373  74 02 09 eve d2 t02.shn
+dbd626f50ebb9527a2d5516383d213a3  74 02 09 eve d2 t03.shn
+db0fa8d370427d95589c5dd43a9577dc  74 02 09 eve d2 t04.shn
+78f65183d1253b8864edb7819cfe85c8  74 02 09 eve d2 t05.shn
+536ac6457d19d455bad2df29c07c1b0c  74 02 09 eve.md5
+c660fd9060154ada96a1aa9eedf24cf8  bd74-02-09eve-a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74 02 09eve-a seattle 
+=================== 
+=================== 
+=================== 
+fac91e277cffffaa876bb2e6436d02b3  [shntool]  74_02_09_eve_d1_t01.wav
+6c9c86a2bd62c1975ca2c0b984f16dc0  [shntool]  74_02_09_eve_d1_t02.wav
+0a99cdd7ef2863d44217b60832060396  [shntool]  74_02_09_eve_d1_t03.wav
+389adf703d53ee16e87d813ae9084383  [shntool]  74_02_09_eve_d1_t04.wav
+67b4e8476ece4f439a670c233ddc81d6  [shntool]  74_02_09_eve_d1_t05.wav
+26c3aeec00a91fab0c29f840d6f10a70  [shntool]  74_02_09_eve_d1_t06.wav
+05cd02900e20d0b7bbc46c4d5ec56756  [shntool]  74_02_09_eve_d1_t07.wav
+8d7d4f945ccb2a44d376ed9bdcc7866e  [shntool]  74_02_09_eve_d1_t08.wav
+c7d59623b078334ea329168ad0e193b4  [shntool]  74_02_09_eve_d1_t09.wav
+165dbc09a0e0713045fe23e11f5462f3  [shntool]  74_02_09_eve_d1_t10.wav
+2fa6d677ef6591c855f56f1adca1accd  [shntool]  74_02_09_eve_d1_t11.wav
+9ea4191c6df882d6b4ab58f40305e6d8  [shntool]  74_02_09_eve_d1_t12.wav
+dafe701b1da0d0436aa2b0b0ad981449  [shntool]  74_02_09_eve_d1_t13.wav
+7a2a61f503881792f323789cdc84b205  [shntool]  74_02_09_eve_d1_t14.wav
+890e0db5019527f15e043898e9085391  [shntool]  74_02_09_eve_d2_t01.wav
+91b4034c60b589beab53c8f1f4c917d3  [shntool]  74_02_09_eve_d2_t02.wav
+68c3770d578b45647dd9df93dfb26cfb  [shntool]  74_02_09_eve_d2_t03.wav
+848a570585276554f9e3c479aa574b95  [shntool]  74_02_09_eve_d2_t04.wav
+d125491befb4faf0424beb8ca57b5363  [shntool]  74_02_09_eve_d2_t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74 02 09eve-a seattle 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:41.38       39073820 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t01.wav
+     3:06.13       32841020 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t02.wav
+     6:24.70       67902284 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t03.wav
+     3:26.64       36488972 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t04.wav
+     3:39.26       38692796 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t05.wav
+     4:16.54       45285452 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t06.wav
+     2:55.52       30992348 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t07.wav
+     4:12.37       44539868 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t08.wav
+     4:07.15       43606124 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t09.wav
+     3:32.36       37481516 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t10.wav
+     4:12.36       44537516 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t11.wav
+     3:22.41       35729276 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t12.wav
+     4:22.01       46219196 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t13.wav
+     5:15.69       55728332 B   ---   --   -----    wav  1.0000  74_02_09_eve_d1_t14.wav
+     5:18.07       56111708 B   ---   --   -----    wav  1.0000  74_02_09_eve_d2_t01.wav
+     5:02.03       53279900 B   ---   --   -----    wav  1.0000  74_02_09_eve_d2_t02.wav
+     5:56.43       62899580 B   ---   --   -----    wav  1.0000  74_02_09_eve_d2_t03.wav
+     3:33.29       37641452 B   ---   --   -----    wav  1.0000  74_02_09_eve_d2_t04.wav
+     3:49.47       40506188 B   ---   --   -----    wav  1.0000  74_02_09_eve_d2_t05.wav
+    80:16.06      849557348 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== bd-1991-06-08-Milan-HG.md5
+===================
+===================
+===================
+7c13a1cb1ad1bbd74077c952b70decf1 *Disc1\bd-1991-06-08-HG-d1t01.flac
+c951c33f54aa862a836544f725586da2 *Disc1\bd-1991-06-08-HG-d1t02.flac
+8a2a18fb50131aca7ea260faa0e878a0 *Disc1\bd-1991-06-08-HG-d1t03.flac
+044323ff4b1947af8cb021d3da37dc3f *Disc1\bd-1991-06-08-HG-d1t04.flac
+1f51226b656182d471cec5d89c1061d6 *Disc1\bd-1991-06-08-HG-d1t05.flac
+6c147c11ef985dd6aedc81147af25ac2 *Disc1\bd-1991-06-08-HG-d1t06.flac
+518b7cb2f5b5087a39b2aba20642ef50 *Disc1\bd-1991-06-08-HG-d1t07.flac
+8a2a08ff4218a01595c38cb0756a345b *Disc1\bd-1991-06-08-HG-d1t08.flac
+26bec30d9e26674dd50ce0989ccf03e8 *Disc1\bd-1991-06-08-HG-d1t09.flac
+8daf374f096b7e7da11d4c802687c563 *Disc1\bd-1991-06-08-HG-d1t10.flac
+cbd0b8a29d36cb0d3807f36cf84cbf81 *Disc2\bd-1991-06-08-HG-d2t01.flac
+7e03253efbb78d8ff75306c1a98eaded *Disc2\bd-1991-06-08-HG-d2t02.flac
+f81a162782a6738272f61be77ee9c252 *Disc2\bd-1991-06-08-HG-d2t03.flac
+c661de003df723d84e2bb3161c10fd60 *Disc2\bd-1991-06-08-HG-d2t04.flac
+baad9994bf526e800126b4706b50b414 *Disc2\bd-1991-06-08-HG-d2t05.flac
+9c58161c39385f4924a1e669e8a17564 *Disc2\bd-1991-06-08-HG-d2t06.flac
+a39975692ac2e8af444c56dd52b07dc1 *Disc2\bd-1991-06-08-HG-d2t07.flac
+8ae486925d23512ff920e77c138b577e *Mil06-08-91(HG)-B.JPG
+7bddad7dca25a63ba93f29e1da312cfe *Mil06-08-91(HG)-F.JPG
+===================
+===================
+===================
+=== bd-1991-06-08-Milan-HG.txt
+===================
+===================
+===================
+Bob Dylan
+Arena di Milano
+Milano, Italy
+June 8, 1991
+
+Holy Grail Series: Something Is Happening Here, But You Don't Know What It Is
+
+Sound Quality: Excellent
+
+This set is based on the same recording as LB-1837 but without the small gaps after each track.
+
+Disk 1
+
+01 New Morning + Ballad Of A Thin Man
+02 All Along The Watchtower
+03 Shelter From The Storm
+04 Gotta Serve Somebody
+05 Wiggle Wiggle
+06 It's All Over Now, Baby Blue (Acoustic W Band)
+07 Mr. Tambourine Man (Acoustic W Band)
+08 The Lonesome Death Of Hattie Carroll (Acoustic W Band)
+09 One Too Many Mornings (Acoustic W Band)
+10 Knockin' On Heaven's Door
+
+Disc 2
+
+01 Just Like A Woman
+02 Man In The Long Black Coat
+03 Highway 61 Revisited
+04 I Shall Be Released
+05 Like A Rolling Stone
+06 Blowin' In The Wind (Acoustic W Band)
+07 Maggie's Farm
+
+
+=========================
+=========================
+=========================
+=== md5 for bd-1991-06-08-Milan-HG
+=========================
+=========================
+=========================
+
+
+7c13a1cb1ad1bbd74077c952b70decf1 *Disc1/bd-1991-06-08-HG-d1t01.flac
+c951c33f54aa862a836544f725586da2 *Disc1/bd-1991-06-08-HG-d1t02.flac
+8a2a18fb50131aca7ea260faa0e878a0 *Disc1/bd-1991-06-08-HG-d1t03.flac
+044323ff4b1947af8cb021d3da37dc3f *Disc1/bd-1991-06-08-HG-d1t04.flac
+1f51226b656182d471cec5d89c1061d6 *Disc1/bd-1991-06-08-HG-d1t05.flac
+6c147c11ef985dd6aedc81147af25ac2 *Disc1/bd-1991-06-08-HG-d1t06.flac
+518b7cb2f5b5087a39b2aba20642ef50 *Disc1/bd-1991-06-08-HG-d1t07.flac
+8a2a08ff4218a01595c38cb0756a345b *Disc1/bd-1991-06-08-HG-d1t08.flac
+26bec30d9e26674dd50ce0989ccf03e8 *Disc1/bd-1991-06-08-HG-d1t09.flac
+8daf374f096b7e7da11d4c802687c563 *Disc1/bd-1991-06-08-HG-d1t10.flac
+cbd0b8a29d36cb0d3807f36cf84cbf81 *Disc2/bd-1991-06-08-HG-d2t01.flac
+7e03253efbb78d8ff75306c1a98eaded *Disc2/bd-1991-06-08-HG-d2t02.flac
+f81a162782a6738272f61be77ee9c252 *Disc2/bd-1991-06-08-HG-d2t03.flac
+c661de003df723d84e2bb3161c10fd60 *Disc2/bd-1991-06-08-HG-d2t04.flac
+baad9994bf526e800126b4706b50b414 *Disc2/bd-1991-06-08-HG-d2t05.flac
+9c58161c39385f4924a1e669e8a17564 *Disc2/bd-1991-06-08-HG-d2t06.flac
+a39975692ac2e8af444c56dd52b07dc1 *Disc2/bd-1991-06-08-HG-d2t07.flac
+8ae486925d23512ff920e77c138b577e *Mil06-08-91(HG)-B.JPG
+7bddad7dca25a63ba93f29e1da312cfe *Mil06-08-91(HG)-F.JPG
+
+
+
+===================
+===================
+===================

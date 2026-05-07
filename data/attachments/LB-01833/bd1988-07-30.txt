@@ -1,0 +1,63 @@
+Bob Dylan
+Mesa Amphitheater
+Mesa, Arizona
+30 July 1988
+
+Musicians: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Kenny Aaronson (bass), Christopher Parker (drums).
+Source: Aud
+Lineage: CD-Rs > EAC secure mode > CoolEdit Pro > CD Wave > FLAC Frontend > .flacs
+Taped by: ?
+Transfered by: ?
+Sound Quality: solid A (if the vocals where a bit more upfront it would have been an A+)
+Sound Processing: all tracks normalized & slight treble boost; moderate bass cut applied to electric tracks
+File Size: 538 megs .flac 
+Notes: d2t01 cut at start
+
+disk 1
+
+1. Subterranean Homesick Blues
+2. Absolutely Sweet Marie
+3. Highway 61 Revisited
+4. You're A Big Girl Now
+5. Driftin' Too Far From Shore
+6. Joey (Bob Dylan & Jacques Levy)
+7. Mr. Tambourine Man
+8. Don't Think Twice, It's All Right
+
+disk 2 
+
+1. Eileen Aroon (trad., arr. Clancy Brothers and Tommy Makem)
+2. It Ain't Me, Babe
+3. Ballad Of A Thin Man
+4. I Shall Be Released
+5. Silvio (Bob Dylan & Robert Hunter)
+6. Like A Rolling Stone
+7. audience noise
+8. Forever Young
+9. Blowin' In The Wind
+10. Maggie's Farm
+
+disk 1 .flac fp
+
+bd1988-07-30d1t01.flac:072c9f7551e4298e81c3a3e6b2a7cbd1
+bd1988-07-30d1t02.flac:6386c626fc7a12a25fbc6dec7e5ae8e6
+bd1988-07-30d1t03.flac:35bfbd490d527848523afdc929c755bb
+bd1988-07-30d1t04.flac:8a61cf643e4f6e1af39628e1dfe1a857
+bd1988-07-30d1t05.flac:c9b557ddb2766c782548d7376eae48e4
+bd1988-07-30d1t06.flac:8f085249c991f3452131c6d9f519efce
+bd1988-07-30d1t07.flac:0a38c39f0ac81ccf09ecb89027d9b350
+bd1988-07-30d1t08.flac:cd8ceb195633ce2b43fdf34acf7ef615
+
+
+disk 2 fp 
+
+bd1988-07-30d2t01.flac:79608e34221c4fa1565b433c2b58d4b4
+bd1988-07-30d2t02.flac:4eafae452fec0febd86d9368cc7c766c
+bd1988-07-30d2t03.flac:3dec3e8b79bbca4cbf6ea817528e1dcd
+bd1988-07-30d2t04.flac:cadf6d7a32e00fd83e0aa3f40d8dbe82
+bd1988-07-30d2t05.flac:5f2799b7f623e6ce946f160aa8bb46e8
+bd1988-07-30d2t06.flac:d2db4c368dce5b6ab52281c3124017ca
+bd1988-07-30d2t07.flac:258f704191cdd7e5011e9f168026d620
+bd1988-07-30d2t08.flac:a5d80f99b04c84767b3c519b6097f77a
+bd1988-07-30d2t09.flac:d52c70ba321d79cdcec4839d668709ec
+bd1988-07-30d2t10.flac:ff725b5319b7501d603db1b606e67eb6

@@ -1,0 +1,103 @@
+The Bob Dylan Show
+University Of Portland
+Earle Chilis Center
+Portland, Oregon
+March 12, 2005
+
+Source:
+9th row center
+AKG (ck91>mk90/3+h98>se300b) > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > Cool Edit 96 > CD Wave > FLAC frontend
+
+Notes:
+d1t07 drop-out @ 01:24
+Some excessive crowd screams close to mics
+
+Recorded & compiled by:
+Soomlos
+
+Disc 1:
+01. Introduction [00:52]
+02. Maggie's Farm [04:48]
+03. Tell Me That It Isn't True [04:41]
+04. Down Along The Cove [06:53]
+05. Positively 4th Street [07:58]
+06. Floater (Too Much To Ask) [07:35]
+07. Tweedle Dee & Tweedle Dum [05:52]
+08. Ballad Of Hollis Brown [05:40]
+09. Highway 61 Revisted [06:09]
+10. Boots Of Spanish Leather [05:55]
+Total time: [56:23]
+
+Disc 2:
+01. Honest With Me [06:58]
+02. It Ain't Me, Babe [05:54]
+03. Summer Days [11:28]
+     (encore)
+04. A-11 [03:06]
+05. Band Introductions [00:25]
+06. All Along The Watchtower [06:03]
+Total time: [33:54]
+
+Band Members:
+Bob Dylan - piano, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, pedal steel
+Elana Fremerman - fiddle & bow
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-03-12d1t01.flac:442c5f8f98fb0dd3f334944a643d7001
+bd2005-03-12d1t02.flac:285b6b573f3d27b981a11d2a8bf7ec43
+bd2005-03-12d1t03.flac:43d791fd304ef8e5498c3d442854dd85
+bd2005-03-12d1t04.flac:696d9d677f76cd6c49119952db128457
+bd2005-03-12d1t05.flac:67b136d1714a46cef2b298c71f70dbdd
+bd2005-03-12d1t06.flac:bf61fd59b164bf02fa90e15103a81353
+bd2005-03-12d1t07.flac:af447ff1c8722c08e07f2750d396a2a0
+bd2005-03-12d1t08.flac:66d9a9322b7e0eb97c77ed1a7fde4725
+bd2005-03-12d1t09.flac:a379986885a493a5f577574f32f403ca
+bd2005-03-12d1t10.flac:2517e9302ec47a7af966ca76466c74ed
+bd2005-03-12d2t01.flac:f97d64f375a4e806d949f315b6e9c870
+bd2005-03-12d2t02.flac:0eeb0eb59e2cf72ca8d7c046c981e599
+bd2005-03-12d2t03.flac:299945e1a4c523caf15927048304db65
+bd2005-03-12d2t04.flac:b55bdcdf2c1b69e2b1ace134ded6c78c
+bd2005-03-12d2t05.flac:b1cdc167baa2757dc3a058fa7ec9e956
+bd2005-03-12d2t06.flac:3e63b1a6c5a28463250c86a724947988
+
+flac md5
+b96209c95da6a1748914694a03d83402 *bd2005-03-12d1t01.flac
+f3cfe9a3197dd823808328d73cc3ea60 *bd2005-03-12d1t02.flac
+ca23d5ff1bfe48373f7c50f0d5795c04 *bd2005-03-12d1t03.flac
+fe8f24caf4d2354ed39af597f542de65 *bd2005-03-12d1t04.flac
+1c8ee6732d4056ec061be065da4680a2 *bd2005-03-12d1t05.flac
+c55c2b29e85d5f97373a9ef0398d9d50 *bd2005-03-12d1t06.flac
+0b212a6cd7dff77cba44dff4000bf50d *bd2005-03-12d1t07.flac
+b1489ac684a10cafc3ffe8e7f3750962 *bd2005-03-12d1t08.flac
+bfa3cf93a0a85d170206096f0c3940ef *bd2005-03-12d1t09.flac
+c6eea9a184a5bb131dbfab2988700f74 *bd2005-03-12d1t10.flac
+58e9fd5749f1514790835ac0bbfd7045 *bd2005-03-12d2t01.flac
+b7e94ef0f90b474eda7c7e1d93444526 *bd2005-03-12d2t02.flac
+343c9f1e8a594d7ccd463bcaf8b7dd8f *bd2005-03-12d2t03.flac
+de3f75701346a07f8d65142aff522f59 *bd2005-03-12d2t04.flac
+14cd9a09f55968cb0558de23b460b12c *bd2005-03-12d2t05.flac
+c5fccd6eefacfa8171d301390c28d4d4 *bd2005-03-12d2t06.flac
+
+wav md5
+24341c31da70a32b23d5c99c37fe7067 *bd2005-03-12d1t01.wav
+d69a0771ed21b39d541bdb694bf026a8 *bd2005-03-12d1t02.wav
+6b794d21c71bde1c4c424c37d0f02af1 *bd2005-03-12d1t03.wav
+5dd7c9d8a6e5c1f1125bf3113fe55712 *bd2005-03-12d1t04.wav
+1347af834a8b6482b5187949cc39ed31 *bd2005-03-12d1t05.wav
+5ba284de977b12ba0f852097f75f65c8 *bd2005-03-12d1t06.wav
+9215cafd1a7b413accb0e2f923f44ee0 *bd2005-03-12d1t07.wav
+846650b3ba62bafd4baf0349aa79dff3 *bd2005-03-12d1t08.wav
+44d0b4507ef2c226e2e9f8f7b8acaef8 *bd2005-03-12d1t09.wav
+df8b3cfbdffe37d4dbed91d667a819b0 *bd2005-03-12d1t10.wav
+0f35124ffd4bd0b407fd4c3709871cc4 *bd2005-03-12d2t01.wav
+4a2e4ae2268a5e21eb6b7a1c51d03791 *bd2005-03-12d2t02.wav
+ca387b8a21b111bc3ba4819c6d68dcff *bd2005-03-12d2t03.wav
+0b22069929ebcdb4bdcb991787c001e9 *bd2005-03-12d2t04.wav
+f37b776172a26f0db6e4eecc023143a3 *bd2005-03-12d2t05.wav
+a8c9b5482ddf77e52e693d9d84130251 *bd2005-03-12d2t06.wav

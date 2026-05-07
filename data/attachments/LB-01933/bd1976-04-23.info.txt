@@ -1,0 +1,72 @@
+Bob Dylan
+Sports Stadium
+Orlando, Florida
+23 April 1976
+
+Musicians:Bob Dylan (guitar & vocal), Scarlet Rivera (violin), T-bone J. Henry Burnette (guitar & piano), Steven Soles (guitar), Mick Ronson (guitar), Bobby Neuwirth (guitar & vocal), Roger McGuinn (guitar & vocal), David Mansfield (steel guitar, mandolin, violin & dobro), Rob Stoner (bass), Howie Wyeth (drums), Gary Burke (congas).
+d1t01 Bob Dylan harmonica.
+d1t03 Bob Dylan & Bobby Neuwirth shared vocal.
+d1t08-10 Joan Baez (guitar and shared vocal).
+d2t06 T-bone J. Henry Burnette vocal, Joan Baez background vocal.
+d2t09 Bob Dylan & Roger McGuinn shared vocal.
+d210 shared vocal by Bob Dylan & the group.
+
+Source: Aud mono
+Lineage: CD-Rs 
+Taped by: ?
+Transfered by: ?
+Sound Quality: B/B- (standard for RTR II tapes; mono; Les Kokay rates it "VG")
+Sound Processing: Minor digi-errors in d2t02 corrected manually with CoolEdit Pro.  Otherwise, n/a.
+Size: 651 megs .shn
+
+disk 1
+
+1. Mr. Tambourine Man
+2. It's Alright, Ma (I'm Only Bleeding)
+3. Vincent van Gogh (Robert Friemark)
+4. I'll Be Your Baby Tonight
+5. Maggie's Farm
+6. One Too Many Mornings
+7. Isis (Bob Dylan–Jacques Levy/Bob Dylan) - fade out/edit at end
+8. Blowin' In The Wind - fade in
+9. Railroad Boy (trad.)
+10. I Pity The Poor Immigrant
+
+disk 2
+
+1. Romance In Durango (Bob Dylan–Jacques Levy/Bob Dylan)
+2. I Threw It All Away
+3. Seven Days
+4. You're Gonna Make Me Lonesome When You Go - slow version; edit at end
+5. Lay Lady Lay
+6. Silver Mantis (J. Henry Burnett/Fleming)
+7. Mozambique (Bob Dylan–Jacques Levy/Bob Dylan)
+8. Idiot Wind - edit at end
+9. Knockin' On Heaven's Door - fade in
+10. Gotta Travel On (Paul Clayton-Larry Ehrlich-David Lazar-Tom Six)
+
+disk 1 shnfp
+
+76ac7db3118680926a57ed1213976b90  [shntool]  bd1976-04-23d1t01.shn
+644a04ed54a1dadbe1f1fed1c5fb140a  [shntool]  bd1976-04-23d1t02.shn
+4024ba06e3f4f8f8e4a633ab2aaa8214  [shntool]  bd1976-04-23d1t03.shn
+c5124271f17085a93971cd80f21d58ec  [shntool]  bd1976-04-23d1t04.shn
+fd83e817c87f55aaa6964a183afc855a  [shntool]  bd1976-04-23d1t05.shn
+0fd4e01bf88fe5f0f008108c0acc2254  [shntool]  bd1976-04-23d1t06.shn
+1bc059123efe6c42febd0ff681a88cb5  [shntool]  bd1976-04-23d1t07.shn
+246bd529c2de25496b22503b46d836cd  [shntool]  bd1976-04-23d1t08.shn
+cc5c98cf3678ccec854e2474002ff9e6  [shntool]  bd1976-04-23d1t09.shn
+1eb101c3a567a6366cd42c60ebeeb3c4  [shntool]  bd1976-04-23d1t10.shn
+
+disk 1 shnfp
+
+aaf273d816a2c098ab763f7027ab7853  [shntool]  bd1976-04-23d2t01.shn
+34bca91675e4ca6d759770a21717a902  [shntool]  bd1976-04-23d2t02.shn
+e6946920ac2ac33d5108abfef4314f92  [shntool]  bd1976-04-23d2t03.shn
+60531caccc6779e1d67f462731b28f3e  [shntool]  bd1976-04-23d2t04.shn
+9e1841b7a199cee54fcfade624295cb1  [shntool]  bd1976-04-23d2t05.shn
+1b6dd61a21ea494ac7510c97eaeb2202  [shntool]  bd1976-04-23d2t06.shn
+66aeeaf56e4aebd54a65cdbc55646791  [shntool]  bd1976-04-23d2t07.shn
+051b4d0e49fadd13f8586da3f4945c22  [shntool]  bd1976-04-23d2t08.shn
+e4954b3de41c70f1fddadfefaacbf5b0  [shntool]  bd1976-04-23d2t09.shn
+df1227209476db5c7a492374d6dcda6d  [shntool]  bd1976-04-23d2t10.shn

@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-26-h.flacf 
+=================== 
+=================== 
+=================== 
+b663873f649695cebc743ee323162b4b  disc one\1 Oh, Babe It Ain't No Lie.flac
+c491c16ca24fdfefcced75d303a66e7b  disc one\10 Tombstone Blues.flac
+e0f625bc7a1d3e65786ed4472d225179  disc one\11 Not Dark Yet.flac
+f2dee1acc05afb9cdcbfb32e3874ff3c  disc one\2 The Times They Are A-Changin'.flac
+99a38f169f487d36f346d4fd07dd78c5  disc one\3 Boots Of Spanish Leather.flac
+d153bb53e7c6ff24f478dd235e662e55  disc one\4 John Brown.flac
+8607545b6b6933190edf8be783d355d6  disc one\5 Visions Of Johanna.flac
+708be986028671c6423ca8ea87b1801f  disc one\6 Seeing The Real You At Last.flac
+99fc0dc428219c8c3d4743fa43a29c26  disc one\7 Ballad Of A Thin Man.flac
+62fd8aa5fbb683cafbac9871de073b65  disc one\8 Most Likely You Go Your Way (And I'll Go Mine).flac
+2fad286ab1773abf31fc937c695afc86  disc one\9 Every Grain Of Sand.flac
+6011f44a97c53bf68c300376640fc56f  disc one\md5sum.md5
+dd140ecdc04c655c94ea082147e32833  disc two\1 Highway 61 Revisited.flac
+e89ecd9569c74e2a395d1dd5f9a42c6b  disc two\10 Love Minus Zero-No Limit.flac
+69b65bceda1c7910c366f3737d72a766  disc two\11 Highlands.flac
+2d3e49a7403793f2f32ed07c309d1d47  disc two\3 Like A Rolling Stone.flac
+54c5f7b245c58f0ed8b9ec4e2bccb5bd  disc two\4 It Ain't Me, Babe.flac
+447a3551597de819d205121254f848a1  disc two\5 Not Fade Away.flac
+8c0c62ef6e1966617cfe468ea5c7f3c2  disc two\6 Blowin' In The Wind.flac
+78a7936b99da395e6bced163d850393e  disc two\7 Alabama Getaway.flac
+cd5d7a29c377d5b4d76104f0b0f593b3  disc two\8 I Shall Be Released.flac
+4e5d4591edc3e14c9d646c011d3acc99  disc two\9 Cocaine Around My Brain.flac
+ddcf7a66297f6b459b935bba553a4e05  disc two\md5sum.md5
+dcabd4e66dd0116a13e11e113c08827e  fingerprint.ffp.txt
+418ce89739c0129c72012775faf0c1d6  Tramps.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-26-h.flacf\disc one 
+=================== 
+=================== 
+=================== 
+1 Oh, Babe It Ain't No Lie.flac:b612c670a117d273ff294bcc8c860500
+10 Tombstone Blues.flac:9aafb161f9c6b89e4e24f51afc266514
+11 Not Dark Yet.flac:4d4cdec2d2a9754a5f15e77dc0f3c579
+2 The Times They Are A-Changin'.flac:bc9ce723e84525da0f87941ef3710697
+3 Boots Of Spanish Leather.flac:2861aa46b4e2d46cf230e18826ae9452
+4 John Brown.flac:1db08750d5e0001f323d2b75dbf9b145
+5 Visions Of Johanna.flac:13667f70edce681f75a6fbbd44b42e2c
+6 Seeing The Real You At Last.flac:8bd56e28ebd93aa4dcdc2226b0ec6605
+7 Ballad Of A Thin Man.flac:1599231cee45ccc5231e724eb485882f
+8 Most Likely You Go Your Way (And I'll Go Mine).flac:0ff9e248ad0caf97d7db6d7a1a4da5aa
+9 Every Grain Of Sand.flac:92e0362b60f8631af53c758fcf2b7745
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-26-h.flacf\disc two 
+=================== 
+=================== 
+=================== 
+1 Highway 61 Revisited.flac:730f2bfd17e1220f0958a63e1d484b21
+10 Love Minus Zero-No Limit.flac:e3dbe4030746fd648977514573770fce
+11 Highlands.flac:3440e9775932d059e9f1cee829ffe57e
+3 Like A Rolling Stone.flac:765fee5d49507f32ff3231884ee8ca6b
+4 It Ain't Me, Babe.flac:c608f0241315ba76bf01ec765b3bc009
+5 Not Fade Away.flac:cebbfa2f987ccc94adde8c4f8ae4e66a
+6 Blowin' In The Wind.flac:3d97804a231e6f1f5e5a6f969c629da9
+7 Alabama Getaway.flac:49ed68dbf92415585e6bfdab546b73e1
+8 I Shall Be Released.flac:128b3645e411ba8fa385f236c03e571a
+9 Cocaine Around My Brain.flac:c9dbefdbe53322061ce9c92981abe76c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-26-h.flacf\disc one 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:57.67       41964428 B   ---   --   ---xx   flac  0.6020  1 Oh, Babe It Ain't No Lie.flac
+     5:49.62       61709468 B   ---   --   ---xx   flac  0.6328  10 Tombstone Blues.flac
+     5:57.19       63019532 B   ---   --   ---xx   flac  0.4841  11 Not Dark Yet.flac
+     6:24.21       67787036 B   ---   --   ---xx   flac  0.5727  2 The Times They Are A-Changin'.flac
+     6:15.46       66258236 B   ---   --   ---xx   flac  0.4926  3 Boots Of Spanish Leather.flac
+     8:03.04       85210652 B   ---   --   ---xx   flac  0.5093  4 John Brown.flac
+     8:27.24       89491292 B   ---   --   ---xx   flac  0.5832  5 Visions Of Johanna.flac
+     5:33.70       58905884 B   ---   --   ---xx   flac  0.6532  6 Seeing The Real You At Last.flac
+     6:26.02       68095148 B   ---   --   ---xx   flac  0.6197  7 Ballad Of A Thin Man.flac
+     6:26.46       68198636 B   ---   --   ---xx   flac  0.6283  8 Most Likely You Go Your Way (And I'll Go Mine).flac
+     7:42.07       81513308 B   ---   --   ---xx   flac  0.5392  9 Every Grain Of Sand.flac
+    71:03.68      752153620 B                            0.5708  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-26-h.flacf\disc two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:03.68       64193180 B   ---   --   ---xx   flac  0.6046  1 Highway 61 Revisited.flac
+     5:34.56       59049356 B   ---   --   ---xx   flac  0.5457  10 Love Minus Zero-No Limit.flac
+     9:55.39      105049772 B   ---   --   ---xx   flac  0.5574  11 Highlands.flac
+     7:42.23       81550940 B   ---   --   ---xx   flac  0.6153  3 Like A Rolling Stone.flac
+     9:24.69       99651932 B   ---   --   ---xx   flac  0.5007  4 It Ain't Me, Babe.flac
+     4:12.34       44532812 B   ---   --   ---xx   flac  0.6114  5 Not Fade Away.flac
+     5:42.54       60455852 B   ---   --   ---xx   flac  0.5165  6 Blowin' In The Wind.flac
+     4:44.22       50149388 B   ---   --   ---xx   flac  0.6247  7 Alabama Getaway.flac
+     5:49.60       61704764 B   ---   --   ---xx   flac  0.5663  8 I Shall Be Released.flac
+     4:16.44       45261932 B   ---   --   ---xx   flac  0.5692  9 Cocaine Around My Brain.flac
+    63:27.19      671599928 B                            0.5660  (10 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,13 @@
+08a127d477f332dfc8a15cef8a4044f4 *00 Announcement.flac
+37effffe48320cd0f7c4669693860682 *01 Tweedle Dee and Tweedle Dum.flac
+3ab9e592b7b8963b65335f7f3ddd9bbb *02 Yea! Heavy and a bottle of bread.flac
+76a1d5312aafbeaea85d733760455488 *03 Tombstone blues.flac
+7ac7adeb898f162d8f8947fbf9dc7dbf *04 The end of the innocence.flac
+c6bc01e791db6a5d6c25bf872d3ead23 *05 Things have changed.flac
+a58386c116d1e75d5390bfc623be43d1 *06 Brown sugar.flac
+70561d0ce5c5f7e15993b9f4c5d2c9ce *07 Masters of war.flac
+a52a8b67fc5d43573fc582cd27627f86 *08 It's alright, ma (I'm only bleeding).flac
+b29c0ae83d058362680f0bbc2b74606a *09 Just like a woman.flac
+515edaa7037c79eabdbdb8c904471eb4 *10 Drifter's escape.flac
+f0a941e82923e814cad2ad6190be0d32 *11 Shelter from the storm.flac
+ef9df88cc97b134a09d3bd4636bbe209 *12 Old man.flac

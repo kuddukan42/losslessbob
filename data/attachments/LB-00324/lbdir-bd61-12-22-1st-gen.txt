@@ -1,0 +1,123 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-12-22-1st-gen 
+=================== 
+=================== 
+=================== 
+1e90278528ee15c5ff2bec386b603f81  bd61-12-22.txt
+2abf6231b662d1d28f0adbe807e05837  d1\Track01.shn
+9b4dd2400e4cdef05d1cd1281977ad8d  d1\Track02.shn
+f6afcab06bf3162c6dcab48796981f46  d1\Track03.shn
+92896343d88f9773f83f8dea35d67795  d1\Track04.shn
+866e9d8ef98f0e11c0474b8d526b1505  d1\Track05.shn
+58d963b8c31388b119906f1ca57d757d  d1\Track06.shn
+41cbbe1d039fac7313176d77a3ccd568  d1\Track07.shn
+30ed59f5219efcd9a1743dcaa7e0b207  d1\Track08.shn
+6e2ffc91c9ceb53b2728be4f72cb8cfe  d1\Track09.shn
+9aba9a5e2f392aa22bd6b55c3b6e315a  d1\Track10.shn
+16b1b181a0063ee7772ee3f444b62644  d1\Track11.shn
+30818a7812d8557a210c9ea813a1dbb0  d1\Track12.shn
+13f8eba5b55e82d22ae7dd86700d476b  d1\Track13.shn
+ec2fd1d4aeb34448627030a239459f8b  d1\noname.md5
+08e44cdc53d87e98a315aa628bdb5eb8  d2\Track01.shn
+bf7a953d725cabe9c898cc14e40876f6  d2\Track02.shn
+70bb6d8cc87752e67bb0eaf763b1d1b0  d2\Track03.shn
+27926bddf2191ecaa2474a194d6ed6d5  d2\Track04.shn
+7135e7b69d71820cfa707b4147b0fb87  d2\Track05.shn
+dd9df751f287a6830a3cdc712811619c  d2\Track06.shn
+07727d0c734d30de5ff3eaf01a4d92e3  d2\Track07.shn
+0dd80c7335864f2b86ddbefb0c0e62bc  d2\Track08.shn
+624e544780f8d3c30be79eecd45c3ecf  d2\Track09.shn
+3d672ba46d486bd140dd1c7691282838  d2\Track10.shn
+10ce4db7998dffc637e78fcd4a34dacf  d2\Track11.shn
+2e17570dfdf35653005c5376b128ad54  d2\Track12.shn
+1906616332e5e93cb83c62358df1341f  d2\Track13.shn
+6d193b4381877d90a34a353271b929f3  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd61-12-22-1st-gen\d2 
+=================== 
+=================== 
+=================== 
+969a320eab7bd92e03fa85ccc15e1827  [shntool]  Track01.wav
+ad4c4cea962b30f21cfad069b2205d3e  [shntool]  Track02.wav
+4dac69e20d36f812e02a3d3ce2012926  [shntool]  Track03.wav
+772007f036409068f5735080e1cfe762  [shntool]  Track04.wav
+ef8071386172b892ac30a26434e7356f  [shntool]  Track05.wav
+fa7f139257f6e37425ebb6f8831e2529  [shntool]  Track06.wav
+de818bd0e460241e1ae6e0241e6c0497  [shntool]  Track07.wav
+7c15a8c38f2cf3f3ef9d6960effe67cc  [shntool]  Track08.wav
+9290ff97533c41a47378447223011397  [shntool]  Track09.wav
+4340b4a7773424b82a43deb4d63d3a13  [shntool]  Track10.wav
+25af39510c06d78de88e3b8538daadf8  [shntool]  Track11.wav
+9487bb1657db4a921f8798cd1fa7dbee  [shntool]  Track12.wav
+a8de049ee2427b286045c53927b09939  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd61-12-22-1st-gen\d1 
+=================== 
+=================== 
+=================== 
+b69b82ec4d54b81305b3538820bf7fc8  [shntool]  Track01.wav
+6b027ef51bd6a70589bb96e45eaea7a2  [shntool]  Track02.wav
+115f36e6d64aaa8c220dc1ff2780b6c4  [shntool]  Track03.wav
+1392c09b80c9f15786b6c84862b2792a  [shntool]  Track04.wav
+89ec2b69c1b4808b2ea4eb1e24bc872f  [shntool]  Track05.wav
+5dba190c0a69d01cb292c6cf29689870  [shntool]  Track06.wav
+f14fe1295fb99c92af9f3ec907ee7c2f  [shntool]  Track07.wav
+3a2805552b239476480b4e90e1a79226  [shntool]  Track08.wav
+308f2200c8f938853de5d4b208f07de4  [shntool]  Track09.wav
+f623e9b7ea1eab28f37a70e1b1b19802  [shntool]  Track10.wav
+c67784c33b222d8350ba6e66b0fb70eb  [shntool]  Track11.wav
+17948d0fbce1dab0511ffda383561801  [shntool]  Track12.wav
+dc030a197a2c8b25094fcd33a984a703  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-12-22-1st-gen\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.35       43123964 B   ---   --   -----    wav  1.0000  Track01.wav
+     2:59.18       31617980 B   ---   --   -----    wav  1.0000  Track02.wav
+     1:42.74       18166892 B   ---   --   -----    wav  1.0000  Track03.wav
+     1:30.50       15993644 B   ---   --   -----    wav  1.0000  Track04.wav
+     6:24.16       67775276 B   ---   --   -----    wav  1.0000  Track05.wav
+     2:18.24       24399692 B   ---   --   -----    wav  1.0000  Track06.wav
+     1:55.07       20302508 B   ---   --   -----    wav  1.0000  Track07.wav
+     0:52.14        9205772 B   ---   --   -----    wav  1.0000  Track08.wav
+     1:47.31       18947756 B   ---   --   -----    wav  1.0000  Track09.wav
+     2:37.21       27744236 B   ---   --   -----    wav  1.0000  Track10.wav
+     3:39.36       38716316 B   ---   --   -----    wav  1.0000  Track11.wav
+     3:22.38       35722220 B   ---   --   -----    wav  1.0000  Track12.wav
+     5:18.29       56163452 B   ---   --   -----    wav  1.0000  Track13.wav
+    38:32.18      407879708 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-12-22-1st-gen\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.51       33988796 B   ---   --   -----    wav  1.0000  Track01.wav
+     4:16.28       45224300 B   ---   --   -----    wav  1.0000  Track02.wav
+     2:17.64       24317372 B   ---   --   -----    wav  1.0000  Track03.wav
+     2:15.34       23894012 B   ---   --   -----    wav  1.0000  Track04.wav
+     4:24.04       46579052 B   ---   --   -----    wav  1.0000  Track05.wav
+     2:06.12       22254668 B   ---   --   -----    wav  1.0000  Track06.wav
+     3:00.67       31909628 B   ---   --   -----    wav  1.0000  Track07.wav
+     4:50.07       51172508 B   ---   --   -----    wav  1.0000  Track08.wav
+     3:43.00       39337244 B   ---   --   -----    wav  1.0000  Track09.wav
+     1:29.48       15812540 B   ---   --   -----    wav  1.0000  Track10.wav
+     3:03.46       32389436 B   ---   --   -----    wav  1.0000  Track11.wav
+     3:04.60       32598764 B   ---   --   -----    wav  1.0000  Track12.wav
+     5:50.35       61822364 B   ---   --   -----    wav  1.0000  Track13.wav
+    43:35.06      461300684 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,44 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd62-09-22a.flacf 
+=================== 
+=================== 
+=================== 
+e2de4939b39c3407c750bb01b04667d2  bd62-09-22a-LB-3525.txt
+c423d07dd241b0cd31df58c1b2b855d6  Info\1962-09-22 Carnegie Hall, New York City, New York, USA.txt
+b638dc686ed7431e7b67e55395b02162  Info\ffp.txt
+3ea4380f5098b5eac161bdfbb8a66d42  Track01.flac
+e5ec12adf63e896baf16dc526667452d  Track02.flac
+5e2129d83a1c80e217e964cdb07d373c  Track03.flac
+cbca02f9652d87e373f73ef5bdd48932  Track04.flac
+8223564395f864343147c57fc53098f8  Track05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-09-22a.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:b5d0337ea59ff8593a3dc0c9beba9a30
+Track02.flac:caeffba0c3d74fd676232fd18270c3f2
+Track03.flac:ba57565771e499bc237a85111d2e2579
+Track04.flac:880a1e9388c2a53f816eecc5bdb1f03f
+Track05.flac:fff4086b38a52c3cc8778e7f5573beda
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd62-09-22a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:06.19       32855132 B   ---   --   ---xx   flac  0.5347  Track01.flac
+     4:08.15       43782524 B   ---   --   ---xx   flac  0.4752  Track02.flac
+     4:31.52       47926748 B   ---   --   ---xx   flac  0.4629  Track03.flac
+     5:36.05       59282204 B   ---   --   ---xx   flac  0.4745  Track04.flac
+     7:16.14       76943372 B   ---   --   ---xx   flac  0.4624  Track05.flac
+    24:38.30      260789980 B                            0.4765  (5 files)
+=================== 
+=================== 
+=================== 

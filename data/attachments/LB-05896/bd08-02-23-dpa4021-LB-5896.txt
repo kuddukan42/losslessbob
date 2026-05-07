@@ -1,0 +1,8 @@
+Bob Dylan, 2/23/08, Dallas, Texas, 2CDR
+
+LB-5896, (59min+54min), Source: DPA 4021 > PS-2 > R09 (24/48), Location: FOB, DFC, Transfer: SD > SoundForge 9.0e (MBIT+) > CDWave > FLAC (6), Taper: prof_peabody, Notes:, Thanks to Team TX for blocking support, tracking, and post show, drinking support; bittorrent download 03/08; in spectral view at end of d1t3 there is a void at 19k and higher density band above 20k; similar sound quality to soomlos LB-5874; excellent sound [A]
+
+Disc One, 1. Rainy Day Women #12 & 35, 2. Lay, Lady, Lay, 3. Just Like Tom Thumb's Blues, 4. Senor (Tales Of Yankee Power), 5. The Levee's Gonna Break, 6. Spirit On The Water, 7. Stuck Inside Of Mobile With The Memphis Blues Again, 8. 'Til I Fell In Love With You, 9. The Lonesome Death Of Hattie Carroll, Disc Two:, 1. Honest With Me, 2. When The Deal Goes Down, 3. Highway 61 Revisited, 4. Workingman's Blues #2, 5. Summer Days, 6. Ballad Of A Thin Man, Encore:, 7. Thunder On The Mountain, 8. All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

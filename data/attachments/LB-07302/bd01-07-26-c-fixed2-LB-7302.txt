@@ -1,0 +1,14 @@
+Bob Dylan, 7/26/01, Naples, Italy, 2CDR
+
+LB-7302, (68min+58min), version "c"; LB-4428 fixed2, I've been told track 14 didn't decode right, producing FLAC_STREAM_DECODER_ERROR. I verified my flacs and the same error happened. Fortunately I had a previous version of the same recording already fixed and supposedly aligned on SB, though I finally reworked track18 and there were differences on last tracks from t18 between such version and my last upload of it. However t14 should be exactly the same one, so I replaced the wrong file on torrent # 5023:, http://www.hungercity.org/details.php?id=5023&hit=1, and made this new torrent with the correct file. Nothing should have changed except track14 and the ffp and md5's, so nobody who got the previous one would have to download this completely, but just t14 and those verification tools I mentioned., Good luck this time!, Luisbp51 (Hunfercity March 2009); bittorrent download 03/09; as indicated all files match LB-7275 except t14 which decodes fine but has the digipops that were on LB-4428 and fixed in LB-7275 (did not listen to all of this)
+
+two digipops t14 5:16
+
+Cd1
+01. Hallelujah, I'm Ready To Go, 02. Mr. Tambourine Man, 03. Desolation Row, 04. I Don't Believe You (She Acts Like We Never Have Met), 05. Lay, Lady, Lay, 06. Gotta Serve Somebody, 07. Shelter From The Storm, 08. Masters Of War, 09. It's All Over Now, Baby Blue, 10. Don't Think Twice, It's All Right, 11. Everything Is Broken, 
+
+Cd2
+12. Make You Feel My Love, 13. Cold Irons Bound, 14. Rainy Day Women #12 & 35, 15. Country Pie, 16. Like A Rolling Stone, 17. One Too Many Mornings, 18. All Along The Watchtower, 19. Knockin' On Heaven's Door, 20. Highway 61 Revisited, 21. Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

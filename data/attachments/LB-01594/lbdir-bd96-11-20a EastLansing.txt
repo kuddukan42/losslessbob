@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-20a EastLansing 
+=================== 
+=================== 
+=================== 
+88b7a73170ff34735781a135cefdd291  bd96-11-20a.txt
+d8730f7cd3be44a8f3c1097a23bbe969  EastLansingNov20_1996_D1\EastLansingNov20_1996D1.md5
+15aabaf9f76cbfb1aa31f1c9bad99fc9  EastLansingNov20_1996_D1\EastLansingNov20_96D1T01.shn
+263c0f276c8788a3154571db4b6ac433  EastLansingNov20_1996_D1\EastLansingNov20_96D1T02.shn
+922f328abdb89653a3ffe2d9f1f4f431  EastLansingNov20_1996_D1\EastLansingNov20_96D1T03.shn
+85f3b302773782632fc08f22486bbacc  EastLansingNov20_1996_D1\EastLansingNov20_96D1T04.shn
+241e0dd5baac9aa714a6257a0b7c2191  EastLansingNov20_1996_D1\EastLansingNov20_96D1T05.shn
+c29dc516c814094afd7b01ed2d9e37df  EastLansingNov20_1996_D1\EastLansingNov20_96D1T06.shn
+ac6ff9fa02546ad544f69d50886712a7  EastLansingNov20_1996_D1\EastLansingNov20_96D1T07.shn
+0b2678e0e51c891f999600755e5a364f  EastLansingNov20_1996_D1\EastLansingNov20_96D1T08.shn
+f772759cba673b99d6b42d60ae663655  EastLansingNov20_1996_D1\EastLansingNov20_96D1T09.shn
+40242133955b1b2c92a132377b484698  EastLansingNov20_1996_D1\EastLansingNov20_96D1T10.shn
+4aafe4fc2a5ed41228444e8aee3b2644  EastLansingNov20_1996_D2\EastLansingNov20_1996D2.md5
+463dd1224f01451ca2437fe716130b12  EastLansingNov20_1996_D2\EastLansingNov20_96D2T01.shn
+17d91d0c77d9a8c085603eabb5a9542c  EastLansingNov20_1996_D2\EastLansingNov20_96D2T02.shn
+c54a1680c78aefd8eb146b9b4f6eff0c  EastLansingNov20_1996_D2\EastLansingNov20_96D2T03.shn
+c7c394495de0d2298887e8456a13c971  EastLansingNov20_1996_D2\EastLansingNov20_96D2T04.shn
+6d849e1130271e4b0aa66ffb7a29be93  EastLansingNov20_1996_D2\EastLansingNov20_96D2T05.shn
+e7f14fa0b1e810d9e79c66817a5f95ec  Positively Potpourri.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-11-20a EastLansing\EastLansingNov20_1996_D1 
+=================== 
+=================== 
+=================== 
+f36cbcffe63c1f244dbca66575eb05c7  [shntool]  EastLansingNov20_96D1T01.wav
+d16578d3ba1c9ba6cd4e5466d3a6d178  [shntool]  EastLansingNov20_96D1T02.wav
+9ded2db96ad32d071d5b05ad1e5c90ba  [shntool]  EastLansingNov20_96D1T03.wav
+5d5ae14c41e8711a99adf58e9f3741d5  [shntool]  EastLansingNov20_96D1T04.wav
+efb2c5b502135b29d34ddc2b716333a3  [shntool]  EastLansingNov20_96D1T05.wav
+d2ef574f7daf92490683a0802db20ee2  [shntool]  EastLansingNov20_96D1T06.wav
+5d5a7b4067e2c5e89848976abe0cfa04  [shntool]  EastLansingNov20_96D1T07.wav
+40a5a7587f02876b0cc3c3e0188f1c8c  [shntool]  EastLansingNov20_96D1T08.wav
+c425207db3be8f8b77f528f03c2cdc92  [shntool]  EastLansingNov20_96D1T09.wav
+6029b3f12a31120de3d04449c685c891  [shntool]  EastLansingNov20_96D1T10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-11-20a EastLansing\EastLansingNov20_1996_D2 
+=================== 
+=================== 
+=================== 
+a7fcc1f68f7d0c228fa5c70eac330c4c  [shntool]  EastLansingNov20_96D2T01.wav
+71a8b531abfb006851051407b2664c54  [shntool]  EastLansingNov20_96D2T02.wav
+86697a79b4ec279ac70db59ec5a00337  [shntool]  EastLansingNov20_96D2T03.wav
+0589ffcbc4a7ef859044b7750ed8daa1  [shntool]  EastLansingNov20_96D2T04.wav
+a79b19595b79110b5288745bbffa9216  [shntool]  EastLansingNov20_96D2T05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-20a EastLansing\EastLansingNov20_1996_D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.03       45871100 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T01.wav
+     4:12.52       44575148 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T02.wav
+     5:59.24       63384092 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T03.wav
+     8:13.19       87009932 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T04.wav
+     8:18.72       88016588 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T05.wav
+     6:40.09       70581212 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T06.wav
+     7:16.53       77035100 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T07.wav
+     5:16.33       55820060 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T08.wav
+     9:41.23      102542540 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T09.wav
+     6:05.74       64560092 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D1T10.wav
+    66:04.62      699395864 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-20a EastLansing\EastLansingNov20_1996_D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:50.14       93524972 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D2T01.wav
+     8:25.66       89237276 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D2T02.wav
+     8:37.40       91292924 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D2T03.wav
+     9:30.12      100576268 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D2T04.wav
+     4:35.23       48564140 B   ---   --   -----    wav  1.0000  EastLansingNov20_96D2T05.wav
+    39:59.05      423195580 B                            1.0000  (5 files)
+=================== 
+=================== 
+=================== 

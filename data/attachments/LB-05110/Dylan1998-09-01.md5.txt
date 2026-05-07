@@ -1,0 +1,18 @@
+f21f1fe61f4f306749856e1cb614a916 *disc 1\Track01.flac
+89caa5343b0ac268aa741db875bfdba1 *disc 1\Track02.flac
+6f16fcb79c8d71cb29210a63c2f2efe9 *disc 1\Track03.flac
+e0fa65f3ee4e1783fe2619cd2542f73a *disc 1\Track04.flac
+c4e6a57f2657c4f349af3896e98ad133 *disc 1\Track05.flac
+0ae72eb5458b9a2ebf45bd89be1f0cdf *disc 1\Track06.flac
+e66ba061223a6bdf0e0f49750a460bf0 *disc 1\Track07.flac
+5bbd11864b936f8ddb56c5e835dfd0c6 *disc 1\Track08.flac
+0a8a11ab52d9f6934ac857ab63cd2706 *disc 1\Track09.flac
+69a95800329c29bc1ca0ac9e0eaaf2c5 *disc 2\Track01.flac
+ea07d2b995fcbb32e447dd1e99a831dd *disc 2\Track02.flac
+cd9a2ef643a28dfe083815419bbd755a *disc 2\Track03.flac
+b9f145338e59c0ca7c01da4ffbeebcfa *disc 2\Track04.flac
+4e6fbc05a16a1b77606f68d4651d1596 *disc 2\Track05.flac
+a955a309efe2139ab2879edd80b9de1b *disc 2\Track06.flac
+415749ac97ad6cde392e40c571b2571b *disc 2\Track07.flac
+1cf5896e60e82646270a7ae2bb43f0aa *disc 2\Track08.flac
+0c74fb3cea395f623085c490eaa038ff *Dylan1998-03-01.txt

@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-05-e.flacf 
+=================== 
+=================== 
+=================== 
+776b9c8e01a29be847305c9c8d352c47  Bob Dylan 2003.05.11 Freiburg, Germany.md5
+6c3fd8dbbe40642079039af9d6f2bf11  disc 1\Track01.flac
+0816c51d962395a313326baa7332d509  disc 1\Track02.flac
+bbd068caa476b1204cbfd46452d89cff  disc 1\Track03.flac
+7d76cfc6762d21498564a9e757813538  disc 1\Track04.flac
+ad4c62a4109eaf3b6e96924ac3ce2ea6  disc 1\Track05.flac
+db038edc39fbfcf27f35bf88979b6390  disc 1\Track06.flac
+79fccf90ca516e65fad49c395ace9970  disc 1\Track07.flac
+f49c6b7b3b02f2ebb45a9003cd1cd246  disc 1\Track08.flac
+547e0e134491cace7c28774538ca58f9  disc 1\Track09.flac
+630089672d147312edb496dbbc38a10b  disc 1\Track10.flac
+0ed476a77af03bd277c666bba60a9347  disc 1\Track11.flac
+93416f42f3814688610f14595be7fcfd  disc 2\Track01.flac
+6cb2029a9336818ed7663e5f48871e41  disc 2\Track02.flac
+f88844ea7668a2f1044b16b116844ed5  disc 2\Track03.flac
+659b0f8f5424677f4c063708d8a13e50  disc 2\Track04.flac
+d13a586040774612156ae67e1b450bb2  disc 2\Track05.flac
+56cce6124ab7998c48b9f27b09ef5e8c  disc 2\Track06.flac
+175da648748987ed4964867bd804bfb8  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-05-e.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+track01.flac:9c93551dab0d6e948aa9212069cb9aca
+track02.flac:9a7dec8d536644ac6639b48cfc2f0ca2
+track03.flac:f3658ae694296b689d27c5eb89ede199
+track04.flac:fe1c0e0cfa14839203847ba8ceaad8de
+track05.flac:57436b69a753acaea3a28bfa2404968f
+track06.flac:a83aa4c3262f553aa5f90c298a660d98
+track07.flac:7e3ad855e50b928573b784e6befa3103
+track08.flac:576702b3d42150f74dc3fdbc8f4e7af3
+track09.flac:5384e0b75ed70958671453346fb17292
+track10.flac:a7ab89d9fedbd46cc3437774f5aa0fa6
+track11.flac:675574d4529377b004336bcd90dbd645
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-05-e.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+track01.flac:c13b73ced36965eaba4377fa669ef573
+track02.flac:c63ca3bfcc3df5702ab0d5f3aa771532
+track03.flac:7142eb064429b5556e68e9349aab90ca
+track04.flac:833e60b1ef0c2370fede13897f881ae0
+track05.flac:e55244e56eba10f9e4fa2bfa5e8b3511
+track06.flac:ad1649a66b8fbe853787a9f18b1e442e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-05-e.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:56.46       73490636 B   ---   --   ---xx   flac  0.6110  Track01.flac
+     5:43.66       60660476 B   ---   --   ---xx   flac  0.5719  Track02.flac
+     5:35.34       59174012 B   ---   --   ---xx   flac  0.5927  Track03.flac
+     7:58.42       84418028 B   ---   --   ---xx   flac  0.6038  Track04.flac
+     8:01.05       84860204 B   ---   --   ---xx   flac  0.6374  Track05.flac
+     4:53.04       51694652 B   ---   --   ---xx   flac  0.5462  Track06.flac
+     5:52.36       62177516 B   ---   --   ---xx   flac  0.6328  Track07.flac
+     6:50.32       72399308 B   ---   --   ---xx   flac  0.6070  Track08.flac
+     7:28.45       79133084 B   ---   --   ---xx   flac  0.6435  Track09.flac
+     7:49.59       82870412 B   ---   --   ---xx   flac  0.5794  Track10.flac
+     6:47.14       71827772 B   ---   --   ---xx   flac  0.5739  Track11.flac
+    73:57.08      782706100 B                            0.6023  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-05-e.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:29.00       79203644 B   ---   --   ---xx   flac  0.6444  Track01.flac
+     6:28.65       68596124 B   ---   --   ---xx   flac  0.5919  Track02.flac
+    11:20.52      120074348 B   ---   --   ---xx   flac  0.6156  Track03.flac
+     5:02.25       53331644 B   ---   --   ---xx   flac  0.6414  Track04.flac
+     6:44.31       71338556 B   ---   --   ---xx   flac  0.6352  Track05.flac
+     8:32.44       90420332 B   ---   --   ---xx   flac  0.6121  Track06.flac
+    45:37.67      482964648 B                            0.6220  (6 files)
+=================== 
+=================== 
+=================== 

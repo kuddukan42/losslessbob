@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-17-ss6p-pdub.flac16 
+=================== 
+=================== 
+=================== 
+55b63dbdf4e3f49bee3162de95de293e  bd1995-12-17.info.txt
+42c182e936fb28ccff6ac697a1d282c2  bd1995-12-17.ss6p.pdub.sbeok.flac16 Philadelphia.ffp
+86f152b5365e6c3b160c65004e092708  bd1995-12-17.ss6p.pdub.sbeok.flac16 Philadelphia.md5
+5f8e47f071dc579757780d33ac22cb22  bd1995-12-17.ss6p.pdub.sbeok.flac16 Philadelphia.st5
+d14fdc2f1b6681d367dd44c1099d8f82  bd95-12-17-ss6p-pdub-LB-4684.txt
+85e7967496afad8b99d4ce47f443eb0b  d1\bd1995-12-17d1.LOG
+5b93655dc7fe88f7344deeb8a2cfdca8  d1\bd1995-12-17d1t01.flac
+8d8e6e2bffa7f7a07a4a2035cd9d2fa8  d1\bd1995-12-17d1t02.flac
+9729a165715bc8e2acbb5b216d92e5fb  d1\bd1995-12-17d1t03.flac
+4498329c849d9a33c8eb62aa5c7ad14a  d1\bd1995-12-17d1t04.flac
+0a197d38504db318fbced77fae207ab6  d1\bd1995-12-17d1t05.flac
+3a3ae62c364f38e1e9cf25d1d9a758a0  d1\bd1995-12-17d1t06.flac
+1d1b28e6f8a55299fc130000b32aa54d  d1\bd1995-12-17d1t07.flac
+7b36bdf1263f556d8b67fde8ac1aa28d  d1\bd1995-12-17d1t08.flac
+0b6ac066428e2390ccfef1c731838091  d1\bd1995-12-17d1t09.flac
+b5dbafae9ff2eddf72f8b4e0813e35bb  d1\d1.shntool.txt
+074191d61b14106c55c0b280af68fefd  d1t03.PNG
+b53735fb6c5c75a77667cb3dc5ed8a82  d2\bd1995-12-17d2.LOG
+3a875bd4109559b087a6d37c016f4117  d2\bd1995-12-17d2t01.flac
+5d3f013e169fc8364bff1dbabc88f61b  d2\bd1995-12-17d2t02.flac
+0a5d1df6604ec7008cf05d4435353f41  d2\bd1995-12-17d2t03.flac
+5325ae09f4ed021754fc20a264b9436d  d2\bd1995-12-17d2t04.flac
+61b44260e35d3e4dd0fb47f6d80200db  d2\bd1995-12-17d2t05.flac
+c5560444f283a706da114f6dee75cc43  d2\bd1995-12-17d2t06.flac
+2dc4539c0470d9e55f43e04c3fa91fac  d2\d2.shntool.txt
+741c15b9a00a4fd957fe6331e3c9b398  d2t02.PNG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-17-ss6p-pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+bd1995-12-17d1t01.flac:fca2104d8b00f4b549cb490539e4bf4a
+bd1995-12-17d1t02.flac:1f23411e151f67f3c1890ae7c822d16f
+bd1995-12-17d1t03.flac:fed75c9151b4f21d39f9371862c29767
+bd1995-12-17d1t04.flac:4a6a8120413fc354505b260ef9466244
+bd1995-12-17d1t05.flac:3ece02e07f9be3767b34c234a1e39956
+bd1995-12-17d1t06.flac:48360918b5db0e3e326361e9eb4d6053
+bd1995-12-17d1t07.flac:d72c0ff14c9b6363d667350d72af3e49
+bd1995-12-17d1t08.flac:864f81fc5f30bad23fd49c286788be5d
+bd1995-12-17d1t09.flac:bb9e69df8d4e484366db5daece0d17a1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-17-ss6p-pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+bd1995-12-17d2t01.flac:d7685cf2376a69f98e0d3029a4417054
+bd1995-12-17d2t02.flac:78def4940d713955279ac925191941ac
+bd1995-12-17d2t03.flac:5ab7e4a153ae3fc23b908a150326b415
+bd1995-12-17d2t04.flac:344e101ce4c9b511f8667b060b990088
+bd1995-12-17d2t05.flac:df3b9f0ba6b0419f3b168d77d8408d5d
+bd1995-12-17d2t06.flac:388e247ca2b92420cb32b5aa93b3373b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-17-ss6p-pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.17       55253228 B   ---   --   ---xx   flac  0.6508  bd1995-12-17d1t01.flac
+     6:28.08       68462060 B   ---   --   ---xx   flac  0.5992  bd1995-12-17d1t02.flac
+     7:21.32       77867708 B   ---   --   ---xx   flac  0.6224  bd1995-12-17d1t03.flac
+    10:40.42      112994828 B   ---   --   ---xx   flac  0.5490  bd1995-12-17d1t04.flac
+     7:40.00       81144044 B   ---   --   ---xx   flac  0.6201  bd1995-12-17d1t05.flac
+     8:03.34       85281212 B   ---   --   ---xx   flac  0.6378  bd1995-12-17d1t06.flac
+    12:00.43      127109180 B   ---   --   ---xx   flac  0.5627  bd1995-12-17d1t07.flac
+    10:54.21      115415036 B   ---   --   ---xx   flac  0.5332  bd1995-12-17d1t08.flac
+    10:01.35      106098764 B   ---   --   ---xx   flac  0.4776  bd1995-12-17d1t09.flac
+    78:23.07      829626060 B                            0.5737  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-17-ss6p-pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.73       60500540 B   ---   --   ---xx   flac  0.4585  bd1995-12-17d2t01.flac
+     9:31.60      100865564 B   ---   --   ---xx   flac  0.6309  bd1995-12-17d2t02.flac
+     8:54.52       94319948 B   ---   --   ---xx   flac  0.5368  bd1995-12-17d2t03.flac
+     9:11.41       97292876 B   ---   --   ---xx   flac  0.6063  bd1995-12-17d2t04.flac
+    11:05.02      117310748 B   ---   --   ---xx   flac  0.5615  bd1995-12-17d2t05.flac
+    10:00.74      106014092 B   ---   --   ---xx   flac  0.5976  bd1995-12-17d2t06.flac
+    54:27.02      576303768 B                            0.5730  (6 files)
+=================== 
+=================== 
+=================== 

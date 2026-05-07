@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-23.shnf 
+=================== 
+=================== 
+=================== 
+0c325df442a75bd8ea9cf7cc014ab14e  06 What Good Am I.shn
+5344c7db985cab1899cd05cbbacf1395  07 Everything Is Broken.shn
+8fc3a6a4d8cf6ebffb3c5db48a7e5cf8  08 It Ain't Me Babe.shn
+5e6b8f9efe0309a2288c5e1cadebb67f  BD93-02-23.md5
+d85e3a520324f2a67ce4c3b367bab401  BD93-02-23.nfo
+fd2b9868c4f4341e79418722502e773f  bd93-02-23.shnf.txt
+3cc25e49416408c3cc71e653ab7be708  BD93-02-23D101.shn
+9cda08535667934f4661b150894c9a45  BD93-02-23D102.shn
+cf3db924d911cea7800e98fe5a3d0995  BD93-02-23D103.shn
+ed89b5d092494fd32a759a7bd6c46c13  BD93-02-23D104.shn
+fdd19b806ce6cabc914cdc6e5f71b571  BD93-02-23D105.shn
+b6927092b4daf6a2d6e637fccca4ea47  BD93-02-23D106.shn
+d62b30218e55bb3dbe53a5fee78d30fe  BD93-02-23D107.shn
+45a235b298950be222eed438aae3be6a  BD93-02-23D108.shn
+5eb0ad485a89e5b10a26a9a973bee352  BD93-02-23D109.shn
+6267095914c3de32e27ce0df43a8da6c  BD93-02-23D110.shn
+62d0bf4021dc13ba27c5507e8b6b0ace  BD93-02-23D201.shn
+029aca13c3c6a8a53cbb7072ce5d4d10  BD93-02-23D202.shn
+26c2dbee19c3be67934b6253ad891ffc  BD93-02-23D203.shn
+8b2c0a621004ab3211eb0d18ece052be  BD93-02-23D204.shn
+0d02ec8c36644271b398dba974f1ad47  BD93-02-23D205.shn
+c1dfb2337b92b5683a763edb33826b1d  Info.txt
+25e36ddee079d299d4ad4885d79b3782  last 3 tracks.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-02-23.shnf 
+=================== 
+=================== 
+=================== 
+34be553f0cf29d281a31462dd5069c57  [shntool]  06_What_Good_Am_I.wav
+bdccbb4c707816f64b7c977de578cc3a  [shntool]  07_Everything_Is_Broken.wav
+e1df42b4d1e6d15de9fa648a9f995989  [shntool]  08_It_Ain't_Me_Babe.wav
+3263dee141705ef50e8b4489c11b39a6  [shntool]  BD93-02-23D101.wav
+9f7d45ff4302b0e4e156e411492fe9d6  [shntool]  BD93-02-23D102.wav
+498eaedd5fa6ab9a18753d49bb1b258e  [shntool]  BD93-02-23D103.wav
+9990705bdfa9550c9fd010d55ef2e65a  [shntool]  BD93-02-23D104.wav
+3701025b818d7640cfe47728c84a75d8  [shntool]  BD93-02-23D105.wav
+bbbc6e8cfb4043e78d40bd96291a01f4  [shntool]  BD93-02-23D106.wav
+4dbed46a63bc552f45b80e26e30cd8de  [shntool]  BD93-02-23D107.wav
+bd76fffd319be82ac26b2564526640b4  [shntool]  BD93-02-23D108.wav
+3505c09d6db6050afb3ca184579b9987  [shntool]  BD93-02-23D109.wav
+dfe479f4bbadda4b0608312316e87f41  [shntool]  BD93-02-23D110.wav
+58b2f5d45c112d5a47d7f3d2ec2b6964  [shntool]  BD93-02-23D201.wav
+840033e10dcf0c6692f1490eb7b2e6b9  [shntool]  BD93-02-23D202.wav
+009d56f4ef75886b949eed4cc987de79  [shntool]  BD93-02-23D203.wav
+2adeeee2f5994aef3d90a64fea2c4faf  [shntool]  BD93-02-23D204.wav
+a398bdc9186aab497c117f2aca42dc2a  [shntool]  BD93-02-23D205.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-23.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:18.40       77357576 B   -b-   --   ---xx    shn  0.6311  06 What Good Am I.shn
+     6:17.02       66506840 B   -b-   --   ---xx    shn  0.7161  07 Everything Is Broken.shn
+    10:12.07      107973308 B   ---   --   ---xx    shn  0.5946  08 It Ain't Me Babe.shn
+     5:46.01       61036828 B   ---   -e   ---xx    shn  0.5346  BD93-02-23D101.shn
+     5:14.44       55493164 B   ---   -e   ---xx    shn  0.5375  BD93-02-23D102.shn
+     6:36.12       69882700 B   ---   -e   ---xx    shn  0.5775  BD93-02-23D103.shn
+    11:40.47      123590620 B   ---   -e   ---xx    shn  0.5811  BD93-02-23D104.shn
+     9:00.39       95347804 B   ---   -e   ---xx    shn  0.5595  BD93-02-23D105.shn
+    10:30.43      111233212 B   ---   -e   ---xx    shn  0.5713  BD93-02-23D106.shn
+     5:48.52       61509580 B   ---   -e   ---xx    shn  0.5028  BD93-02-23D107.shn
+     4:46.00       50450476 B   ---   -e   ---xx    shn  0.4495  BD93-02-23D108.shn
+     6:10.36       65352748 B   ---   -e   ---xx    shn  0.4680  BD93-02-23D109.shn
+     8:54.57       94331740 B   ---   -e   ---xx    shn  0.4715  BD93-02-23D110.shn
+     8:44.00       92433676 B   ---   -e   ---xx    shn  0.5006  BD93-02-23D201.shn
+     5:16.32       55817740 B   ---   -e   ---xx    shn  0.6000  BD93-02-23D202.shn
+     8:15.42       87416860 B   ---   -e   ---xx    shn  0.6012  BD93-02-23D203.shn
+     8:20.36       88284748 B   ---   -e   ---xx    shn  0.5171  BD93-02-23D204.shn
+     7:00.35       74170396 B   ---   -e   ---xx    shn  0.5887  BD93-02-23D205.shn
+   135:53.00     1438190016 B                            0.5580  (18 files)
+=================== 
+=================== 
+=================== 

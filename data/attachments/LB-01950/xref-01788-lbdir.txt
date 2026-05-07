@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd91-07-11-d.flacf
+===================
+===================
+===================
+7b799fbe49fc88e166fbfe3e39798d19 *Art + info\info.txt
+c707b4411a723faec3ca28794cc554a6 *Art + info\S2920.jpg
+d3ad6cc9f82eb55a9c19d518a8a13d8f *Art + info\S2921.jpg
+2af1407ac69c81202e267e76be7fc581 *BOB DYLAN 1991 07 11 Wantagh, New York  Audience.md5
+8ad195b7d8ae6ce8a79fa0a20ab40af3 *Disc 1\01 New Morning.flac
+234182b0c251cf1eede19cd0329a1bee *Disc 1\02 Lay Lady Lay.flac
+520627a400fc06cc50b4de90b7a036db *Disc 1\03 All Along the Watchtower.flac
+7c83c7971947619455bb8e5a9f855aa6 *Disc 1\04 Shelter from the Storm.flac
+b615c95206f90621b45272260eddef31 *Disc 1\05 Gotta Serve Somebody.flac
+cba3e199f5284594295fbdec73547ff9 *Disc 1\06 Wiggle Wiggle.flac
+777db2ac4cadb5c1cd713bc56020fa18 *Disc 1\07 I'll Be Your Baby Tonight.flac
+4fc95dc9b0ab18769452ebc6d94abca6 *Disc 1\08 Paint My Masterpiece.flac
+d70eec1a6d62e473e12da780f4d4f76a *Disc 1\09 Barbara Allen.flac
+0dc54ae811293032649d9b3a8cc4714f *Disc 2\10 Bob Dylan's Dream.flac
+8966e39269b0eec0ba11071483c643b9 *Disc 2\11 Don't Think Twice.flac
+9fa4141ab81d53355b31ef13581610cd *Disc 2\12 Girl from N Country.flac
+c10c3dbd0270aa151b1a3d396157a8f3 *Disc 2\13 Man in Long Black Coat.flac
+2d9c535a655f8cc8a2520eba90595b08 *Disc 2\14 Everything is Broken.flac
+b072fb4c4356e22cf6eb9e17c2a186fb *Disc 2\15 I Believe in You.flac
+43d7bd4c4e51d910704ae8c8c7057c54 *Disc 2\16 Highway 61 Revisited.flac
+9ffa77eb63e46db66c16391ce2cd186c *Disc 2\17 Lenny Bruce.flac
+32035e8396802b562b11181803e92230 *Disc 2\18 Ballad of a Thin Man.flac
+===================
+===================
+===================
+=== ffp for: bd91-07-11-d.flacf
+===================
+===================
+===================
+Disc 1\01 New Morning.flac:aaabcedd484f88c6d05b2385fe2ad739
+Disc 1\02 Lay Lady Lay.flac:863588e06daec280d062ca28072cdd73
+Disc 1\03 All Along the Watchtower.flac:dc3e2074ff81578a2c74037db7d713bb
+Disc 1\04 Shelter from the Storm.flac:35498bed76acc7d451b7aab1bb8df0fd
+Disc 1\05 Gotta Serve Somebody.flac:8819525528d3ca7034e28281c606bc46
+Disc 1\06 Wiggle Wiggle.flac:cfd3e1c8275d76b673b14aae1192f037
+Disc 1\07 I'll Be Your Baby Tonight.flac:f345c7ee88a22bbc0fd1cd87a703cc91
+Disc 1\08 Paint My Masterpiece.flac:0eb25da01192544755c1f92fa3b9c244
+Disc 1\09 Barbara Allen.flac:5153af45b5efb27a147af7b44ff87f2f
+Disc 2\10 Bob Dylan's Dream.flac:6c81be2bb6dba301dc3b7128294ae31a
+Disc 2\11 Don't Think Twice.flac:87f2f61d931ec8c0ae83cb0ff345ef55
+Disc 2\12 Girl from N Country.flac:f2a789e8b3d318a7948ca94b9c05dab8
+Disc 2\13 Man in Long Black Coat.flac:683370becc21ed246459fdc929af5b8f
+Disc 2\14 Everything is Broken.flac:cfe7a5d97d753e5697a8bce53f2a45a8
+Disc 2\15 I Believe in You.flac:a33f74906c46d7cd79cfbcc4dabbba0c
+Disc 2\16 Highway 61 Revisited.flac:ebbbd6ffcc4333d165e44dacbaaecf0e
+Disc 2\17 Lenny Bruce.flac:976e18467ab9fa4d84b06db6d2638cf5
+Disc 2\18 Ballad of a Thin Man.flac:931f33267ea0c47f4bb0a3fdefd98fd0
+===================
+===================
+===================
+=== shntool len for: bd91-07-11-d.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.29       61632232 B   -b-   --   ---xx   flac  0.5405  01 New Morning.flac
+     4:28.29       47342824 B   -b-   --   ---xx   flac  0.5592  02 Lay Lady Lay.flac
+     4:22.28       46282984 B   -b-   --   ---xx   flac  0.5629  03 All Along the Watchtower.flac
+     4:26.04       46932712 B   -b-   --   ---xx   flac  0.5674  04 Shelter from the Storm.flac
+     5:56.53       62922472 B   -b-   --   ---xx   flac  0.5661  05 Gotta Serve Somebody.flac
+     3:21.54       35583208 B   -b-   --   ---xx   flac  0.5829  06 Wiggle Wiggle.flac
+     3:43.28       39403240 B   -b-   --   ---xx   flac  0.5588  07 I'll Be Your Baby Tonight.flac
+     4:57.28       52457704 B   -b-   --   ---xx   flac  0.5789  08 Paint My Masterpiece.flac
+     4:02.27       42753256 B   -b-   --   ---xx   flac  0.5028  09 Barbara Allen.flac
+    41:07.56      435310632 B                            0.5575  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd91-07-11-d.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:49.54       40522984 B   -b-   --   ---xx   flac  0.5504  10 Bob Dylan's Dream.flac
+     5:23.04       56987368 B   -b-   --   ---xx   flac  0.5595  11 Don't Think Twice.flac
+     3:30.29       37113064 B   -b-   --   ---xx   flac  0.5292  12 Girl from N Country.flac
+     5:33.28       58807528 B   -b-   --   ---xx   flac  0.5476  13 Man in Long Black Coat.flac
+     3:26.51       36458728 B   -b-   --   ---xx   flac  0.5815  14 Everything is Broken.flac
+     5:22.03       56807656 B   -b-   --   ---xx   flac  0.5551  15 I Believe in You.flac
+     4:11.03       44283112 B   -b-   --   ---xx   flac  0.5930  16 Highway 61 Revisited.flac
+     4:54.28       51927784 B   -b-   --   ---xx   flac  0.5659  17 Lenny Bruce.flac
+     6:17.51       66622696 B   -b-   --   ---xx   flac  0.5849  18 Ballad of a Thin Man.flac
+    42:28.27      449530920 B                            0.5637  (9 files)
+===================
+===================
+===================

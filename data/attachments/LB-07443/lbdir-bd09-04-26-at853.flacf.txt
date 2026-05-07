@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-26-at853.flacf 
+=================== 
+=================== 
+=================== 
+b49d52146b9f3298787e72491bb59be6  d101.flac
+add63096f78b0d2d752b9de6918cbc70  d102.flac
+579b5f39c863ee23bd5aedbe881ca003  d103.flac
+9f4dd35cea65faf9edbbc16bbe5f0ad7  d104.flac
+ab97e1e46393b94b6251aadad564b12e  d105.flac
+3f7f998fd8803766ffe0d5353b727d61  d106.flac
+59e6dbc7b321928cbf61668cf82745ce  d107.flac
+078356e4d3de01b1e62cb3770d2b1737  d108.flac
+f849419e4d308c2afa0e70de429b49d9  d109.flac
+4b2d58872b6f4a2fa896272c0c7beb42  d201.flac
+e304469012f095692e8c2d0538622125  d202.flac
+3fc7965ed9cc0738277d0d59be56b854  d203.flac
+b4d1f2c9096f9567b9bbaef0a2a21961  d204.flac
+f2ecfa0eaeecb010b71c5544a783ff0d  d205.flac
+919c09afc71698af354f77baa29ef04c  d206.flac
+c3995d5d08da978544c93b230e4580ee  d207.flac
+ecb51804efb1e23040a217219fb24a32  d208.flac
+b44e6f6a10184d445dc1215f3bcd5eb5  d209.flac
+7a2e222e0725f30f03445a0e198c8e1c  Dylan, Roundhouse, 26 April 2009.ffp
+8bdb1cc6f3af56e74a59c4d45daabf23  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-26-at853.flacf 
+=================== 
+=================== 
+=================== 
+d101.flac:8ef2eec4875ac659933c9d0514d997d0
+d102.flac:6ff374204ae88333d7312565e65dee54
+d103.flac:c1e55855792a704dd0b7802ed506fb5d
+d104.flac:fa9305533e413702d440eb4d440895ba
+d105.flac:91c22946a331b94d14113a939d03968b
+d106.flac:4ac49ad910f09c6236f2de6e5d138e1a
+d107.flac:458b9b19463f524082049c9967daaa6e
+d108.flac:013120ee214f1c55999a83b41b6a87f3
+d109.flac:f09a8b03ead7a017f781eaa00294f667
+d201.flac:30573d07048444fd97392a74150a8556
+d202.flac:7dc3f6dcc9a5f96b551dcba1fa7105a8
+d203.flac:9b09342722b34c826af3e4cd46619cd4
+d204.flac:7aa87da687b42db8b23b955a31e89365
+d205.flac:26a9ca56e57c48854e4b99c20b537fb2
+d206.flac:bf777656ccfef4bc7158912cdec05d21
+d207.flac:b99a63ae2c83f3b41748c667a9297824
+d208.flac:85736381bacf7063f8c09f653be2b1db
+d209.flac:d88aae47860e335e741bd353003a3e18
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-26-at853.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.52       52513148 B   ---   --   ---xx   flac  0.4508  d101.flac
+     5:46.18       61076780 B   ---   --   ---xx   flac  0.4383  d102.flac
+     7:34.60       80226764 B   ---   --   ---xx   flac  0.4675  d103.flac
+     6:50.01       72326396 B   ---   --   ---xx   flac  0.4547  d104.flac
+     7:15.74       76908092 B   ---   --   ---xx   flac  0.4985  d105.flac
+     7:12.18       76247180 B   ---   --   ---xx   flac  0.4901  d106.flac
+     5:14.70       55554284 B   ---   --   ---xx   flac  0.4756  d107.flac
+     5:13.04       55222652 B   ---   --   ---xx   flac  0.4278  d108.flac
+     6:03.21       64082636 B   ---   --   ---xx   flac  0.4902  d109.flac
+     6:58.74       73909292 B   ---   --   ---xx   flac  0.4934  d201.flac
+     4:20.19       45908732 B   ---   --   ---xx   flac  0.4572  d202.flac
+     7:46.51       82322396 B   ---   --   ---xx   flac  0.5258  d203.flac
+     8:34.47       90780188 B   ---   --   ---xx   flac  0.4575  d204.flac
+     6:52.17       72716828 B   ---   --   ---xx   flac  0.5154  d205.flac
+     7:05.04       74979452 B   ---   --   ---xx   flac  0.5223  d206.flac
+     5:02.48       53385740 B   ---   --   ---xx   flac  0.5163  d207.flac
+     7:57.20       84189884 B   ---   --   ---xx   flac  0.4553  d208.flac
+     5:48.74       61562152 B   -b-   --   ---xx   flac  0.4771  d209.flac
+   116:34.72     1233912596 B                            0.4799  (18 files)
+=================== 
+=================== 
+=================== 

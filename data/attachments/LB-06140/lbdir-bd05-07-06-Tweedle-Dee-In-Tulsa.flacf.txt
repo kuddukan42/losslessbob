@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-07-06-Tweedle-Dee-In-Tulsa.flacf 
+=================== 
+=================== 
+=================== 
+0e3dbc8967e3008697b30e7b13175f7d  artwork\back.JPG
+64c128ce7c6d06333257e268c7f7f94e  artwork\cd.JPG
+f19659121831bff536e205a6787f99ac  artwork\front.JPG
+e8672d6ca862af40214198a2fbaa5808  EAC.log
+70855aa41e375d44d557c9749322266b  fp.txt
+41193ba002ba5221342c7b46be804ce2  info.txt
+36d768817112f2304d116462bcd7951a  md5.md5
+598be260dcb32b37097144f94b798038  md5.txt
+a516f3128650d9f79d9e18d455203e5d  Track01.flac
+0f83e8759fcb001aaef355766e8a3018  Track02.flac
+445f788d9cfcdf66a091c615ba4c4a4c  Track03.flac
+9cb579013f978a0769296e46e1168499  Track04.flac
+0e7a44ccc59da02f7090912a5c3749ce  Track05.flac
+1f606befd964ce91f00ee9b1b4d8067f  Track06.flac
+ce2dcb96483b850b99f3a0d61b84cbe1  Track07.flac
+69a3f41c86882b477a7103862012b3b8  Track08.flac
+5ecd17ce7a701022a59fecae7247ee89  Track09.flac
+0876597d7e53600bf8031eb949a761b4  Track10.flac
+364b7ac573edb6036d438d3809b83a02  Track11.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-07-06-Tweedle-Dee-In-Tulsa.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:3fc1c0128aed0a988dc902e1500cd7be
+Track02.flac:83bee1dc7cffbf4cbafd8191e642077f
+Track03.flac:66baf5921ffcb5ed69c97bbb41961645
+Track04.flac:28fac97c7cefc55b3651492979ddf5ac
+Track05.flac:de41be3f871509c5bc414da5aa40e256
+Track06.flac:e06a591f8e6514167166ad1090d74aaf
+Track07.flac:432ad2e4a717ea4ab417f66e13d05633
+Track08.flac:8397032b12bc2f87dae4de5a056a74f5
+Track09.flac:f123e74dd896b75373cd5ebbfdfe3308
+Track10.flac:776b40fdb344225d5bbaac3535601103
+Track11.flac:6181045c99cbda7633a3997f553fdf1d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-07-06-Tweedle-Dee-In-Tulsa.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.34       56175212 B   ---   --   ---xx   flac  0.6716  Track01.flac
+     5:34.41       59014076 B   ---   --   ---xx   flac  0.6339  Track02.flac
+     7:34.57       80219708 B   ---   --   ---xx   flac  0.6604  Track03.flac
+     6:45.30       71512604 B   ---   --   ---xx   flac  0.6828  Track04.flac
+     7:01.72       74433788 B   ---   --   ---xx   flac  0.6776  Track05.flac
+     6:25.73       68085740 B   ---   --   ---xx   flac  0.6670  Track06.flac
+     6:21.23       67262540 B   ---   --   ---xx   flac  0.6952  Track07.flac
+     5:22.02       56805548 B   ---   --   ---xx   flac  0.6671  Track08.flac
+     9:50.74      104250092 B   ---   --   ---xx   flac  0.6834  Track09.flac
+     7:44.04       81859052 B   ---   --   ---xx   flac  0.6380  Track10.flac
+     5:06.51       54098396 B   ---   --   ---xx   flac  0.6831  Track11.flac
+    73:06.11      773716756 B                            0.6693  (11 files)
+=================== 
+=================== 
+=================== 

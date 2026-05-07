@@ -1,0 +1,41 @@
+Bob Dylan
+October 30, 1999
+Milwaukee Arena - Milwaukee, WI
+
+Source: 	DAUD/FOB B&K 4022 (ORTF) > Beyer MV-100 > 
+		Sony SBM-1 > Sony TCD-D8 @ 48kHz
+		(1st Gen clone of DAT Master used in below transfer)
+			
+Conversion: 	Sony PCM-R500 > AM Presto II Coax > Delta Di0 2496 > 
+		Samplitude v5.5 > CDwav > mkwACT v0.97 
+		(shn files have seek tables appended) **No DAE at all** 		
+
+Detailed info:	This recording was done front of soundboard, dead center with mics in hat by Team DPA.
+
+Minor Edits:	Fades in/out beg/end of sets--3 sec fade-in's and 5 sec fade-out's
+		
+Huge thanks to TeamDPA who supplied the clone!
+Transferred, Encoded, and Seeded by SwampW00kie <swampwookie@hotmail.com>.
+Please contact me with questions etc.  
+
+Disc 1 				                        	     
+01. I am the Man, Thomas
+02. The Times They Are A-Changin
+03. It's Alright, Ma (I'm Only Bleeding)
+04. Mama You Been On My Mind
+05. Tangled Up In Blue
+06. All Along the Watchtower
+07. Every Grain of Sand	 
+08. Silvio
+	Total: 48:22                   
+
+Disc 2
+01. Not Dark Yet
+02. Highway 61 Revisisted
+03. Love Sick
+04. Like a Rolling Stone
+05. Blowin' In the Wind
+06. Not Fade Away
+	Total: 40:29
+		                   		
+Notes: Double bill with Phil Lesh & Friends.

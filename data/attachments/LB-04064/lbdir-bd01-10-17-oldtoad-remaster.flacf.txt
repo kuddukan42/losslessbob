@@ -1,0 +1,123 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-17-oldtoad-remaster.flacf 
+=================== 
+=================== 
+=================== 
+ab6b3f607663873a8b8ef986990ed52b  2006 info\bd2001-10-17 info.txt
+7a488fdc6b7c41ef7521a33a66c8c912  2006 info\bd2001-10-17.shnf La Jolla, CA.ffp
+f0d34241a4af27807efecc5137614cf7  2006 info\bd2001-10-17.shnf La Jolla, CA.st5
+8828c8872ebd29ddd5b6652cbafa7404  2006 info\bd2001-10-17d1t05fa.PNG
+7105ccdcdf6a130b2f39c561dfe5d6fb  2006 info\bd2001-10-17d1t05sa.PNG
+1e3059fa1adfb0ab0240b80008e5764b  2006 info\bd2001-10-17d2t04fa.PNG
+10cb1caf9f295423e565ca148c26babb  2006 info\bd2001-10-17d2t04sa.PNG
+500d74f83b3847445578afe079aa2f7f  2006 info\d1.shntool.txt
+652f32f675c4acefc430aeb24bcf8a35  2006 info\d1.txt
+de3b5c995af6f4239d9f5feca5a8f4a9  2006 info\d2.shntool.txt
+b25878e44aa74adb5adf65cc7618ed72  2006 info\d2.txt
+c180ff872696bae02c2f1d3f15af5e68  artwork, lineage & setlist\la_jolla_2001_back.jpg
+3e89d92b13a722e9367607290c3b9ad3  artwork, lineage & setlist\la_jolla_2001_front.jpg
+b090f47716daa9465bbbf5aa7a3c5efc  artwork, lineage & setlist\lineage.txt
+e0920c9432b2fe3c29072b91fffbd83b  artwork, lineage & setlist\setlist.txt
+8084165d6c6476e0ad2d03f526bbe6f0  bd01-10-17-oldtoad-remaster-LB-4064.txt
+6e60ada46a847246d1376860326d7366  d1\bd-01-10-17d1.LOG
+322da2c27cda2fe835f45b7b61fc33ca  d1\bd2001-10-17d1t01.flac
+be5eec6e1d5440cc0f2a6f0e2a9579f6  d1\bd2001-10-17d1t02.flac
+fdc695f2ca657bad74256ac4d861b6b1  d1\bd2001-10-17d1t03.flac
+9955f20e6e74d14e380b0aac85f0b8c7  d1\bd2001-10-17d1t04.flac
+39c428dd430a53db04b25468207df9f7  d1\bd2001-10-17d1t05.flac
+b9ea082795d65998863bf48d7623764b  d1\bd2001-10-17d1t06.flac
+8f9d4395974fc2884cc32b28fb4e9a5e  d1\bd2001-10-17d1t07.flac
+a9f6ac96e09c0d590c6cd5523b35fa68  d1\bd2001-10-17d1t08.flac
+602684dd9c7ce0a10d84050428ae27f3  d1\bd2001-10-17d1t09.flac
+4328ab98c5a8643007f5a2127db1a877  d1\bd2001-10-17d1t10.flac
+812151900f931be8c95ac008c30a4da1  d1\bd2001-10-17d1t11.flac
+26a58449c713af21a463ea66e2f3af1a  d2\bd-01-10-17d2.LOG
+233dd46a63e721bfcdd9e72d6f566524  d2\bd2001-10-17d2t01.flac
+860cd376108410235f09015ea6a80e25  d2\bd2001-10-17d2t02.flac
+53f91e7b50b2668f836f759b176852f9  d2\bd2001-10-17d2t03.flac
+9d6929bf1d7ecdec7596c4a04c2f853d  d2\bd2001-10-17d2t04.flac
+50020824c5e62109172a7fe2fd2b432e  d2\bd2001-10-17d2t05.flac
+d880b709e254b95a54c7509cad59b6bb  d2\bd2001-10-17d2t06.flac
+54faf145f190ff44b668be3f2033f30a  d2\bd2001-10-17d2t07.flac
+f6d5ef6e22a655ea1ad38a4cce043bcf  d2\bd2001-10-17d2t08.flac
+d8085d7ab65a855f1dd81c26aa5e0082  d2\bd2001-10-17d2t09.flac
+ed62bd9c8440dd91b0bcdec855538131  d2\bd2001-10-17d2t10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-17-oldtoad-remaster.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd2001-10-17d1t01.flac:36a987b484dd6ce5a517c4856b0de8f3
+bd2001-10-17d1t02.flac:a24dff51807778acaff9bc0513154a38
+bd2001-10-17d1t03.flac:215f351e2baf363901c8a13a32a6565e
+bd2001-10-17d1t04.flac:3049ea3b8b02194827d021bcf20f13a8
+bd2001-10-17d1t05.flac:b3dc774ea90d8e695b8f25c369476ea6
+bd2001-10-17d1t06.flac:6145ca852d102a2e49e3209ef30818d8
+bd2001-10-17d1t07.flac:6821acd4b9d81cb999e5d94b7a58068c
+bd2001-10-17d1t08.flac:75be1f152d845d8a6934424fecffc8c8
+bd2001-10-17d1t09.flac:ef749eb93713432e0e2764e30e8ab8f2
+bd2001-10-17d1t10.flac:a71a4ac535fcdf7a6bd4ccd5921ea536
+bd2001-10-17d1t11.flac:7bda9a7149560056ac8fccb9db98be05
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-17-oldtoad-remaster.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd2001-10-17d2t01.flac:bf18492da0607e27a5f554f43d8f5057
+bd2001-10-17d2t02.flac:6243bde16079bff1d9cbac67d9fc4409
+bd2001-10-17d2t03.flac:60c121d0ec71c53830cd3fe91de2f012
+bd2001-10-17d2t04.flac:69863390202b871c5f9ce2a5b1162f5c
+bd2001-10-17d2t05.flac:d1aad7210bc2586fdeddb73a6d1aa1a4
+bd2001-10-17d2t06.flac:5f8b10f061be5e9d543bedeaa7063a69
+bd2001-10-17d2t07.flac:f6f372d77ddf8ce8a7ff87a30b3631d8
+bd2001-10-17d2t08.flac:26c0efb0b154a853e08fa52b9f803164
+bd2001-10-17d2t09.flac:32443a0c531eed435ed145d133b3ca05
+bd2001-10-17d2t10.flac:7efe8013d35b95f57ce2bbaab14541c6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-17-oldtoad-remaster.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:48.72        8636588 B   ---   --   ---xx   flac  0.5553  bd2001-10-17d1t01.flac
+     2:42.68       28736780 B   ---   --   ---xx   flac  0.6387  bd2001-10-17d1t02.flac
+     6:54.60       73170764 B   ---   --   ---xx   flac  0.5835  bd2001-10-17d1t03.flac
+     8:32.10       90340364 B   ---   --   ---xx   flac  0.6069  bd2001-10-17d1t04.flac
+     3:08.65       33316124 B   ---   --   ---xx   flac  0.5597  bd2001-10-17d1t05.flac
+     4:37.68       49022780 B   ---   --   ---xx   flac  0.5626  bd2001-10-17d1t06.flac
+     7:24.61       78465116 B   ---   --   ---xx   flac  0.5898  bd2001-10-17d1t07.flac
+     7:58.60       84460364 B   ---   --   ---xx   flac  0.6069  bd2001-10-17d1t08.flac
+     6:03.42       64132028 B   ---   --   ---xx   flac  0.5816  bd2001-10-17d1t09.flac
+     5:05.64       53952572 B   ---   --   ---xx   flac  0.5579  bd2001-10-17d1t10.flac
+     7:13.74       76555292 B   ---   --   ---xx   flac  0.5395  bd2001-10-17d1t11.flac
+    60:32.44      640788772 B                            0.5823  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-17-oldtoad-remaster.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:33.44       90596732 B   ---   --   ---xx   flac  0.5714  bd2001-10-17d2t01.flac
+     5:35.56       59225756 B   ---   --   ---xx   flac  0.6212  bd2001-10-17d2t02.flac
+     7:01.00       74264444 B   ---   --   ---xx   flac  0.4725  bd2001-10-17d2t03.flac
+     6:12.02       65625548 B   ---   --   ---xx   flac  0.5842  bd2001-10-17d2t04.flac
+     7:46.74       82376492 B   ---   --   ---xx   flac  0.6107  bd2001-10-17d2t05.flac
+     6:10.68       65427980 B   ---   --   ---xx   flac  0.6162  bd2001-10-17d2t06.flac
+     7:04.61       74937116 B   ---   --   ---xx   flac  0.6206  bd2001-10-17d2t07.flac
+     4:15.66       45137276 B   ---   --   ---xx   flac  0.5216  bd2001-10-17d2t08.flac
+     6:59.38       74001020 B   ---   --   ---xx   flac  0.6460  bd2001-10-17d2t09.flac
+     5:21.02       56629148 B   ---   --   ---xx   flac  0.5579  bd2001-10-17d2t10.flac
+    65:01.36      688221512 B                            0.5842  (10 files)
+=================== 
+=================== 
+=================== 

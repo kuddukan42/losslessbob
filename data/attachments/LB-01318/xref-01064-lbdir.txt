@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== md5 for: bd03-10-16-maddogs-rem-by-KSS.flacf
+===================
+===================
+===================
+9894845c715387769b5df7da58d750c6 *2003-10-16 Copenhagen DK (maddogs rem. by KSS).ffp
+650e427798376eeae8ffe6cc669a712a *Copenhagen 2003.txt
+e78f41bf344946990bd02be9f4a075b8 *Disc 1\01-Announcement.flac
+0d66aa5b3ada5b372ce1b47f23f8fa50 *Disc 1\02-To Be Alone With You.flac
+2063f3f206d1370ef7b2ddd7bd26b1c0 *Disc 1\03-It's All Over Now, Baby Blue.flac
+58ec2f17fba0b5e0c273b48f250c5f8a *Disc 1\04-Cry A While.flac
+3cde9d0c0436bed4f4fe5ccb0abbc54c *Disc 1\05-Boots Of Spanish Leather.flac
+8b4b562e6937d4e0e0e5e3cd8469f3fb *Disc 1\06-It's Alright, Ma (I'm Only Bleeding).flac
+981c79d0ffef080c0747dd0a98b4b9f2 *Disc 1\07-My Back Pages.flac
+e2de477fd8cac586ea056293d24efacf *Disc 1\08-Things Have Changed.flac
+97a54ef86fbb67206ae99bd3d00282c0 *Disc 1\09-Highway 61 Revisited.flac
+72fa3cc5b80e82176dc07e662587b836 *Disc 1\10-Bye And Bye.flac
+496ea61c51f13b4b8f224b1cd182d166 *Disc 1\11-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+9d1916b0c3314180026f9b0e6c071fe4 *Disc 1\12-Every Grain Of Sand.flac
+f2fdf5e25bc5ae93375c0cccdf8936d8 *Disc 2\01-Honest With Me.flac
+a2890ec820190db207f12e3cdd0d2df4 *Disc 2\02-Love Minus Zero,No Limit.flac
+f6b35cd90edc5ef055bc2fbd354cd49d *Disc 2\03-Summer Days.flac
+ae089d9eb47456b4010fe37453c98039 *Disc 2\04-Encore.flac
+ed96085b78386362c3652de86a773472 *Disc 2\05-Cat's In The Well.flac
+f3c5721ed2d2f186f8449a00b5d1f84c *Disc 2\06-Band Introduction.flac
+9ce13cc862920424d23148f2ad094067 *Disc 2\07-Like A Rolling Stone.flac
+6679cd14c1c6454d2b4d941d35b0dc31 *Disc 2\08-All Along The Watchtower.flac
+2e825fb3210d8ffae1a3d17736b60999 *Disc 2\Copenhagen 2003 Disc 2.log
+===================
+===================
+===================
+=== ffp for: bd03-10-16-maddogs-rem-by-KSS.flacf
+===================
+===================
+===================
+Disc 1\01-Announcement.flac:67a34b63612f85dd2ec86a9059799b3e
+Disc 1\02-To Be Alone With You.flac:612ae9d6fbe1aab142d477eb7b6b56c9
+Disc 1\03-It's All Over Now, Baby Blue.flac:f31b3e024711b0ad34b0b0af489de951
+Disc 1\04-Cry A While.flac:5d3471a9b81d93437eab6e558faa89eb
+Disc 1\05-Boots Of Spanish Leather.flac:30e54df2971350e5aa6454f52ba8e3bd
+Disc 1\06-It's Alright, Ma (I'm Only Bleeding).flac:619debac5cc4287818d1b3d07ac4327a
+Disc 1\07-My Back Pages.flac:634468c3c5cd547dcfdf58b09527b67e
+Disc 1\08-Things Have Changed.flac:8bc857c14d974502598a1be823006e19
+Disc 1\09-Highway 61 Revisited.flac:2894ed8433b9e48d1c71ab915fd3a1dc
+Disc 1\10-Bye And Bye.flac:ea2550101279dc83902edea95f273e00
+Disc 1\11-Stuck Inside Of Mobile With The Memphis Blues Again.flac:8ea0342ff0dbdd7be7955e447629518a
+Disc 1\12-Every Grain Of Sand.flac:4c6fb7df7b6f98df62e544358a15cc98
+Disc 2\01-Honest With Me.flac:659d1db3eea822e5954c65141e938331
+Disc 2\02-Love Minus Zero,No Limit.flac:5ec0c0ca500e5702d350cce67844369b
+Disc 2\03-Summer Days.flac:34e11ee3a23957bca12fa39dd4b4ba17
+Disc 2\04-Encore.flac:9efd3e6a3fe69d2f76436cdc0e64e400
+Disc 2\05-Cat's In The Well.flac:bdafd2154fd33eccc5e120a5d85d1ad9
+Disc 2\06-Band Introduction.flac:495676bc1b91a3bef77fb887b5492395
+Disc 2\07-Like A Rolling Stone.flac:d8f577f74c1aba9928ebfb74186146d2
+Disc 2\08-All Along The Watchtower.flac:fcdc522bcb4cd264631273f72248d4bb
+===================
+===================
+===================
+=== shntool len for: bd03-10-16-maddogs-rem-by-KSS.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:48.08        8486060 B   ---   --   ---xx   flac  0.6005  01-Announcement.flac
+     4:27.03       47105900 B   ---   --   ---xx   flac  0.7498  02-To Be Alone With You.flac
+     7:02.19       74485532 B   ---   --   ---xx   flac  0.6989  03-It's All Over Now, Baby Blue.flac
+     5:46.11       61060316 B   ---   --   ---xx   flac  0.7224  04-Cry A While.flac
+     6:19.39       66947372 B   ---   --   ---xx   flac  0.6607  05-Boots Of Spanish Leather.flac
+     7:26.22       78726188 B   ---   --   ---xx   flac  0.7037  06-It's Alright, Ma (I'm Only Bleeding).flac
+     6:22.55       67514204 B   ---   --   ---xx   flac  0.6814  07-My Back Pages.flac
+     6:50.02       72328748 B   ---   --   ---xx   flac  0.7116  08-Things Have Changed.flac
+     7:46.26       82263596 B   ---   --   ---xx   flac  0.7243  09-Highway 61 Revisited.flac
+     5:45.50       60975644 B   ---   --   ---xx   flac  0.5839  10-Bye And Bye.flac
+     8:14.43       87242780 B   ---   --   ---xx   flac  0.7190  11-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     7:56.63       84114620 B   ---   --   ---xx   flac  0.6404  12-Every Grain Of Sand.flac
+    74:45.41      791250960 B                            0.6894  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd03-10-16-maddogs-rem-by-KSS.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:13.65       76534124 B   ---   --   ---xx   flac  0.7316  01-Honest With Me.flac
+     6:25.29       67982252 B   ---   --   ---xx   flac  0.6396  02-Love Minus Zero,No Limit.flac
+     8:12.26       86849996 B   ---   --   ---xx   flac  0.7117  03-Summer Days.flac
+     4:03.73       43036940 B   ---   --   ---xx   flac  0.6358  04-Encore.flac
+     4:39.69       49377932 B   ---   --   ---xx   flac  0.7110  05-Cat's In The Well.flac
+     0:33.61        5964716 B   ---   --   ---xx   flac  0.6631  06-Band Introduction.flac
+     7:23.53       78269900 B   ---   --   ---xx   flac  0.7124  07-Like A Rolling Stone.flac
+     8:41.34       91984412 B   ---   --   ---xx   flac  0.6999  08-All Along The Watchtower.flac
+    47:14.35      500000272 B                            0.6957  (8 files)
+===================
+===================
+===================

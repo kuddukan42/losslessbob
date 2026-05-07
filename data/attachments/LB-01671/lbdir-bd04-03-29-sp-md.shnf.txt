@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-29-sp-md.shnf 
+=================== 
+=================== 
+=================== 
+1c26da186a4ed03d2ce361db0b697029  bd04-03-29-sp-md.txt
+4461e48bc8c744018ef69fa235206bd0  bd2004-03-29.txt
+fc1c547b67a6d38123e643a62dc7d265  disc 1\disc 1.md5
+3d3044f40d131341f571e05729e842ee  disc 1\track 1.shn
+017369947f98486c0f48875090430194  disc 1\track 10.shn
+ef480e1ef2a525c9ad0008b462d07e0c  disc 1\track 11.shn
+04eb52e4f1013279b70fb3e232e33168  disc 1\track 2.shn
+a7bfe0fbdbd80b36d784b89924ee05ee  disc 1\track 3.shn
+3928ad8d8a4f2ac9b0ea68f1b3c793ac  disc 1\track 4.shn
+92ad36c73983fa832b66d68989a5266f  disc 1\track 5.shn
+68f81b97de90b27c949b9cb9f6e113e4  disc 1\track 6.shn
+71caea4f004a41d4173b590fea859088  disc 1\track 7.shn
+a9448e9a63356051281d8f33c4757b50  disc 1\track 8.shn
+2cb53c5695a0af0f7fddd17fb42e5fd3  disc 1\track 9.shn
+13adbc6d0bd34783744bea0c48234a04  disc 2\disc 2.md5
+6e27e039ee3ce12bb526ac6136e2e229  disc 2\track 1.shn
+f8fd07a154f8b11ffc734a5c6915b19f  disc 2\track 2.shn
+97f9cb37973805580f3213ca1e3661e1  disc 2\track 3.shn
+76e8b84616e875aff86d2f8c8108ad2d  disc 2\track 4.shn
+8660bb5e1f3b041ffa07b3b30d72027d  disc 2\track 5.shn
+89c02a99ed67468de4432ef9999c09d0  disc 2\track 6.shn
+e33b015105f65c99c6d355c5d3392237  disc 2\track 7.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-29-sp-md.shnf\disc 1 
+=================== 
+=================== 
+=================== 
+588f2d322499be593a786d56eebd31c0  [shntool]  track_1.wav
+cf70650678fa0be7b0d67a2ec9154571  [shntool]  track_2.wav
+3c3b954250525648d0f9780f9b55b2ba  [shntool]  track_3.wav
+77ffa893fea5fa7d3406a8b2c33338ba  [shntool]  track_4.wav
+0590d1019070296db67429b1f382d490  [shntool]  track_5.wav
+2f483900e8040e651de70775a014fb82  [shntool]  track_6.wav
+deff1f011aa9bcf001ce43088ff841f4  [shntool]  track_7.wav
+e766e8d134bf06054d8154b5e56e580d  [shntool]  track_8.wav
+35d331bd0a1e435ca0b4dc02d6d3364d  [shntool]  track_9.wav
+95769c54c933ec4301f7365d16b7dbae  [shntool]  track_10.wav
+831b32618343f999813f6ccb1942a835  [shntool]  track_11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-29-sp-md.shnf\disc 2 
+=================== 
+=================== 
+=================== 
+550c2c6155e18d43027422a700e5385e  [shntool]  track_1.wav
+b6080d68db87264634ff4f569f8d5f56  [shntool]  track_2.wav
+96119311f3aea79ba8c28a05729e13f2  [shntool]  track_3.wav
+4d65c638642be2d5555f40e8d6f676bf  [shntool]  track_4.wav
+f4f774915563cefbc994bb2bd4d0fea6  [shntool]  track_5.wav
+5aab291f6ce89d99aac583ef0c8e36bb  [shntool]  track_6.wav
+45405a212ab25e33c4c316e36433779c  [shntool]  track_7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-29-sp-md.shnf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:49.27        8706092 B   -b-   --   -----    wav  1.0000  track_1.wav
+     5:48.45       61493292 B   -b-   --   -----    wav  1.0000  track_10.wav
+     8:38.08       91394092 B   -b-   --   -----    wav  1.0000  track_11.wav
+     4:29.39       47542316 B   -b-   --   -----    wav  1.0000  track_2.wav
+     5:33.69       58904620 B   -b-   --   -----    wav  1.0000  track_3.wav
+     5:22.29       56868908 B   -b-   --   -----    wav  1.0000  track_4.wav
+     7:08.06       75513900 B   -b-   --   -----    wav  1.0000  track_5.wav
+     7:15.39       76824620 B   -b-   --   -----    wav  1.0000  track_6.wav
+     7:00.70       74252332 B   -b-   --   -----    wav  1.0000  track_7.wav
+     7:03.50       74735660 B   -b-   --   -----    wav  1.0000  track_8.wav
+     7:43.07       81690668 B   -b-   --   -----    wav  1.0000  track_9.wav
+    66:53.14      707926500 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-29-sp-md.shnf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.01       66859052 B   -b-   --   -----    wav  1.0000  track_1.wav
+     6:53.24       72908844 B   -b-   --   -----    wav  1.0000  track_2.wav
+     5:42.13       60358700 B   -b-   --   -----    wav  1.0000  track_3.wav
+     8:02.73       85196844 B   -b-   --   -----    wav  1.0000  track_4.wav
+     5:51.60       62058540 B   -b-   --   -----    wav  1.0000  track_5.wav
+     6:39.65       70537260 B   -b-   --   -----    wav  1.0000  track_6.wav
+     7:09.51       75796524 B   -b-   --   -----    wav  1.0000  track_7.wav
+    46:38.63      493715764 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 

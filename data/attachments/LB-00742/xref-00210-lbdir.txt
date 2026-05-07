@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-21-b.flacf 
+=================== 
+=================== 
+=================== 
+9962d129abbad9e99495dbc996fd30d9  2002-10-21 Arizona Veterans Memorial Coliseum Arena, Arizona State Fair, Phoenix, Arizona.txt
+0a5ef8256adc31ee45d19d2edb23eff3  Bob Dylan 2002.10.21 Veterans Memorial Coliseum Arena, Arizona State Fair, Phoenix, Arizona.md5
+aaf224c3c7c649fd26dd25545de42356  CD1\00 Announcement.flac
+2eaa63d9f48aa6689f4c5d9554617ad4  CD1\01 Seeing the real you at last.flac
+4b51f806391261efdea495e3a395a05c  CD1\02 I'll remember you.flac
+b61d2e3f509880ff71a6af43902f300d  CD1\03 Tombstone blues.flac
+9ca84c9f601f762c0345d7467a84b865  CD1\04 Accidentally like a martyr.flac
+dec2003fa41e8afe72bb3a8f5b206980  CD1\05 Watching the river flow.flac
+859836953412b058bcb855ee2dcbd408  CD1\06 Brown Sugar.flac
+2704b5961f5badd9fabf52b5ee9620d0  CD1\07 Just like a woman.flac
+1c0c4797d2ae4140d8edb88edcbe2df0  CD1\08 It's alright, ma (I'm only bleeding).flac
+25d9272b98f81c4ee80675a194eddd4f  CD1\09 Shooting star.flac
+9b5409afd5e27f16c885f1deec3fc1e0  CD1\10 Drifter's escape.flac
+21037655810218e38ec7f2f3fb7f490a  CD2\11 Masters of war.flac
+845a8b8afd47a8d0c14060dd94f9ede8  CD2\12 Old man.flac
+b5b05cdf7c5d39cadd7c1a0938d5113c  CD2\13 Summer days.flac
+6d596bb3448d5274a422c92074eae17c  CD2\14 Like a rolling stone.flac
+720450ce0fea8a962d13a0077f7c545a  CD2\15 Blowin' in the wind.flac
+afc8c82b76e85dbd87a5910ecbdd0653  CD2\16 All along the watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-21-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+00 announcement.flac:8eeb306fdbd1f161e96630d164fcf4a3
+01 seeing the real you at last.flac:17f9535417b206073183648208d83694
+02 i'll remember you.flac:76ee45d9538274643c3b7dfffbde1cf6
+03 tombstone blues.flac:d83542d7959e6251fdfdc69c391f4c22
+04 accidentally like a martyr.flac:2fd84d204a16ee545f56936758bc49a0
+05 watching the river flow.flac:8b894f536c619f5c92583bce6cc6d486
+06 brown sugar.flac:9096685c93ec36edb2f114d44c9ac02e
+07 just like a woman.flac:a3f0559a68fb079bf23b5bbe2fd0dcf4
+08 it's alright, ma (i'm only bleeding).flac:1bc7157ca79ee6b555e7ce7328291085
+09 shooting star.flac:11a4226f619fe1994df9a831ca23928d
+10 drifter's escape.flac:39bf019127ba7271ff740788ae5f8575
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-21-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+11 masters of war.flac:152b850187af982bf6c0c333840856ea
+12 old man.flac:8315783b9065d399e9d956bcc97bc6cb
+13 summer days.flac:02043e26c29e7ab5fc5dc2153b363f2a
+14 like a rolling stone.flac:020bff3e4e24c794c02ba2ccb4fdfe1b
+15 blowin' in the wind.flac:b8906ffeb05854310aba1f03a95107d9
+16 all along the watchtower.flac:b25941e0998f5090d01cb94fa49d21f7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-21-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:17.38       13672220 B   ---   --   ---xx   flac  0.5100  00 Announcement.flac
+     4:46.01       50452796 B   ---   --   ---xx   flac  0.5509  01 Seeing the real you at last.flac
+     5:16.21       55791836 B   ---   --   ---xx   flac  0.4727  02 I'll remember you.flac
+     6:12.32       65696108 B   ---   --   ---xx   flac  0.5316  03 Tombstone blues.flac
+     4:03.33       42942860 B   ---   --   ---xx   flac  0.4562  04 Accidentally like a martyr.flac
+     5:22.12       56829068 B   ---   --   ---xx   flac  0.5366  05 Watching the river flow.flac
+     4:12.23       44506940 B   ---   --   ---xx   flac  0.5780  06 Brown Sugar.flac
+     7:46.62       82348268 B   ---   --   ---xx   flac  0.5130  07 Just like a woman.flac
+     7:08.35       75581564 B   ---   --   ---xx   flac  0.5180  08 It's alright, ma (I'm only bleeding).flac
+     7:09.00       75675644 B   ---   --   ---xx   flac  0.4501  09 Shooting star.flac
+     6:08.10       64938764 B   ---   --   ---xx   flac  0.5601  10 Drifter's escape.flac
+    59:22.42      628436068 B                            0.5151  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-21-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:35.07       48526508 B   ---   --   ---xx   flac  0.4941  11 Masters of war.flac
+     4:24.42       46668428 B   ---   --   ---xx   flac  0.5616  12 Old man.flac
+    11:54.57      126083708 B   ---   --   ---xx   flac  0.5745  13 Summer days.flac
+     7:50.16       82945676 B   ---   --   ---xx   flac  0.5756  14 Like a rolling stone.flac
+     5:16.70       55907084 B   ---   --   ---xx   flac  0.5219  15 Blowin' in the wind.flac
+    12:57.02      137067548 B   ---   --   ---xx   flac  0.4350  16 All along the watchtower.flac
+    46:58.44      497198952 B                            0.5213  (6 files)
+=================== 
+=================== 
+=================== 

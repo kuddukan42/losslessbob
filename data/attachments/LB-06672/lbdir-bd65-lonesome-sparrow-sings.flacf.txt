@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-lonesome-sparrow-sings.flacf 
+=================== 
+=================== 
+=================== 
+d658b257aafada8d987e73b20f030914  bd65-lonesome-sparrow-sings-t01.flac
+65fdc114a76b2c284f3f291ceb660deb  bd65-lonesome-sparrow-sings-t02.flac
+1d143ba2d57236ce568c270828031336  bd65-lonesome-sparrow-sings-t03.flac
+7c046fba8fca2c93a1ffee1ea99511e6  bd65-lonesome-sparrow-sings-t04.flac
+ffc66ba2d39507960f8333f0288cd05d  bd65-lonesome-sparrow-sings-t05.flac
+9ad1a07a16bb3fc32f08398136b22331  bd65-lonesome-sparrow-sings-t06.flac
+db589fb21e973027e02ff7b3c5189d4e  bd65-lonesome-sparrow-sings-t07.flac
+5c4d27f5340d6a1dae2c0d29654eb0eb  bd65-lonesome-sparrow-sings-t08.flac
+581af4b3e84efe2527b0e8bdaaa1586a  bd65-lonesome-sparrow-sings-t09.flac
+8ce948c9c52bdbda466596392d7b0133  bd65-lonesome-sparrow-sings-t10.flac
+2ba2fc5e905ce13747fd85908e833548  bd65-lonesome-sparrow-sings-t11.flac
+2c6bbf2a25662f8ddb237aebfcd9a657  bd65-lonesome-sparrow-sings-t12.flac
+7c943a8d9658735bb6a12bdc85b20021  bd65-lonesome-sparrow-sings-t13.flac
+6d8a9d425805aa46d70decd3ef7d3d66  bd65-lonesome-sparrow-sings-t14.flac
+43a2a995c05092435fdc6f7526c673c2  bd65-lonesome-sparrow-sings-t15.flac
+28c99260a9d77ab9ce6ac798fa2bce19  bd65-lonesome-sparrow-sings-t16.flac
+d108459722ceee648c542a3d57747d98  bd65-lonesome-sparrow-sings-t17.flac
+7dcd8ae2c9285350bb65ab30c27cb436  bd65-lonesome-sparrow-sings-t18.flac
+cc9abe6e794b64a87f4bfce8d803aace  bd65-lonesome-sparrow-sings-t19.flac
+264c3e4c51ac6497e2a796253c09f126  bd65-lonesome-sparrow-sings.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-lonesome-sparrow-sings.flacf 
+=================== 
+=================== 
+=================== 
+bd65-lonesome-sparrow-sings-t01.flac:82d5d15df88204d1cacbe3cca0d0d20e
+bd65-lonesome-sparrow-sings-t02.flac:836b1d45ddfe926d9d89ecb36c9b84bd
+bd65-lonesome-sparrow-sings-t03.flac:1c78d16e03cbfbd9de65d200ac05d279
+bd65-lonesome-sparrow-sings-t04.flac:145009ab035d064cd9bee1cb1bfb9f0e
+bd65-lonesome-sparrow-sings-t05.flac:e4089c35979ec1781260fe6d99d6307c
+bd65-lonesome-sparrow-sings-t06.flac:3a86303b91734e8c371d145caeb681bb
+bd65-lonesome-sparrow-sings-t07.flac:8c5263f7d9772cc2df87ae0fe0894efc
+bd65-lonesome-sparrow-sings-t08.flac:8489354afc1ae48d9308392593468878
+bd65-lonesome-sparrow-sings-t09.flac:ee8dca4496e419857a864b2cccf5d0a9
+bd65-lonesome-sparrow-sings-t10.flac:edef8a1376b0cbcecaabd65f3dd031f7
+bd65-lonesome-sparrow-sings-t11.flac:ab9937e350532316cd4765715147853e
+bd65-lonesome-sparrow-sings-t12.flac:97059f79ef83fbdf9730cf6c9a4c3f46
+bd65-lonesome-sparrow-sings-t13.flac:673d3ba65b07c75a7050841074c92598
+bd65-lonesome-sparrow-sings-t14.flac:88b58b2e2e118465cf0352a728b54054
+bd65-lonesome-sparrow-sings-t15.flac:e2fbbfb7895ce4825b8b5679daba2e50
+bd65-lonesome-sparrow-sings-t16.flac:967c268311be8b082b24bb946cf932a4
+bd65-lonesome-sparrow-sings-t17.flac:ce9e1c36787b4d0194e9a9f2f6d442d9
+bd65-lonesome-sparrow-sings-t18.flac:a671d8954442f7a3c2a6588037a0bbc8
+bd65-lonesome-sparrow-sings-t19.flac:99e6b4b48bae09c74229c7f041b4512e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-lonesome-sparrow-sings.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.38        9791420 B   ---   --   ---xx   flac  0.5157  bd65-lonesome-sparrow-sings-t01.flac
+     3:39.35       38713964 B   ---   --   ---xx   flac  0.4772  bd65-lonesome-sparrow-sings-t02.flac
+     2:33.67       27146828 B   ---   --   ---xx   flac  0.5576  bd65-lonesome-sparrow-sings-t03.flac
+     3:06.05       32822204 B   ---   --   ---xx   flac  0.4404  bd65-lonesome-sparrow-sings-t04.flac
+     3:45.20       39737084 B   ---   --   ---xx   flac  0.4591  bd65-lonesome-sparrow-sings-t05.flac
+     0:53.05        9361004 B   ---   --   ---xx   flac  0.3563  bd65-lonesome-sparrow-sings-t06.flac
+     1:41.65       17969324 B   ---   --   ---xx   flac  0.3693  bd65-lonesome-sparrow-sings-t07.flac
+     4:57.43       52491980 B   ---   --   ---xx   flac  0.5981  bd65-lonesome-sparrow-sings-t08.flac
+     3:33.22       37624988 B   ---   --   ---xx   flac  0.6056  bd65-lonesome-sparrow-sings-t09.flac
+     3:41.33       39062060 B   ---   --   ---xx   flac  0.6433  bd65-lonesome-sparrow-sings-t10.flac
+     3:12.72       34038188 B   ---   --   ---xx   flac  0.6103  bd65-lonesome-sparrow-sings-t11.flac
+    11:57.10      126502364 B   ---   --   ---xx   flac  0.6291  bd65-lonesome-sparrow-sings-t12.flac
+     0:54.63        9673820 B   ---   --   ---xx   flac  0.5336  bd65-lonesome-sparrow-sings-t13.flac
+     3:30.50       37161644 B   ---   --   ---xx   flac  0.5735  bd65-lonesome-sparrow-sings-t14.flac
+     1:30.37       15963068 B   ---   --   ---xx   flac  0.5568  bd65-lonesome-sparrow-sings-t15.flac
+     7:33.10       79932764 B   ---   --   ---xx   flac  0.6084  bd65-lonesome-sparrow-sings-t16.flac
+     0:58.73       10402940 B   ---   --   ---xx   flac  0.5437  bd65-lonesome-sparrow-sings-t17.flac
+     8:28.17       89651228 B   ---   --   ---xx   flac  0.5687  bd65-lonesome-sparrow-sings-t18.flac
+     8:26.55       89387804 B   ---   --   ---xx   flac  0.4974  bd65-lonesome-sparrow-sings-t19.flac
+    75:20.45      797434676 B                            0.5594  (19 files)
+=================== 
+=================== 
+=================== 

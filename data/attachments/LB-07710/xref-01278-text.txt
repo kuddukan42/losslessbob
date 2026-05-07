@@ -1,0 +1,118 @@
+===================
+===================
+===================
+=== 96 11 13 Madison, Wisconsin.md5
+===================
+===================
+===================
+b96076072848d7074aa49286166d89c1 *Info.txt
+c30e61797b0646a6b27cb60dd8125cd1 *S6448.jpg
+bea6ad069516d9bbb3ae03c1b144f6d4 *S6449.jpg
+9e6e81516ad25fc4755e66c76890bfb8 *CD1\CD1.md5
+7fa09cfee04824d20922e59b76408b55 *CD1\Track01.shn
+2bbbc074e1f8bb6c992f4e85030c1fe2 *CD1\Track02.shn
+bb2e006347be174a33f22e1aa9c505ff *CD1\Track03.shn
+4101dd47e9ce7dd2ef0fa286b0700dc7 *CD1\Track04.shn
+d1f90122f33fb2fb99aaf483d91e36fc *CD1\Track05.shn
+abc067e7111afb6e42bc54543246ee0d *CD1\Track06.shn
+838267c1a08e4472d9e570516390e2c2 *CD1\Track07.shn
+b59e0327ab6df9f97b0f4cc591495d42 *CD1\Track08.shn
+cf87aaa5be5d80fc907bc77c7fc07f97 *CD2\CD2.md5
+21025f3100ee5ecd9b8c987ed9379653 *CD2\Track01.shn
+71bfd75d12bb90ef3647ad18f47a5ba2 *CD2\Track02.shn
+679d61852ddc2d240ac6568fec727405 *CD2\Track03.shn
+2a6f928ee6b27018c5e9a68e8c1df24c *CD2\Track04.shn
+99e5ccfbdabcc98ad141c6605427aad3 *CD2\Track05.shn
+64f8f56e41b2a1027f2cbd5174d7db11 *CD2\Track06.shn
+6bc9423790277f6e6e86e38a8a7fd6cc *CD2\Track07.shn
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+
+Bob Dylan
+Dane County Memorial Coliseum
+Madison, Wisconsin 
+13 November 1996
+ 
+Source : Audience recording
+ 
+Set:
+
+01.   Crash On The Levee (Down In The Flood)
+02.   Tonight I'll Be Staying Here With You
+03.   All Along The Watchtower
+04.   Positively 4th Street
+05.   Watching The River Flow
+06.   Silvio (Bob Dylan & Robert Hunter)
+07.   Mr. Tambourine Man
+08.   Masters Of War
+09.   Don't Think Twice, It's All Right
+10.   Everything Is Broken
+11.   She Belongs To Me
+12.   Highway 61 Revisited
+13.   Like A Rolling Stone
+14.   One Too Many Mornings
+15.   Rainy Day Women # 12 & 35
+
+
+Concert # 834 of The Never-Ending Tour. Concert # 20 of the 1996 US Fall Tour. 1996 concert # 78.
+Concert # 20 with the 10th Never-Ending Tour Band: 
+Bob Dylan (vocal & guitar), 
+Bucky Baxter (pedal steel guitar & electric slide guitar), 
+John Jackson (guitar), Tony Garnier (bass), 
+David Kemper (drums & percussion).
+7-9, 14  acoustic with the band.
+6, 15 John Jackson, Bucky Baxter (backup vocals).
+
+ 
+9 new songs (60%) compared to previous concert. No new songs for this tour. 
+
+
+Stereo audience recording, 115 minutes. 
+
+
+
+
+
+
+
+
+
+
+
+===================
+===================
+===================
+=== CD1.md5
+===================
+===================
+===================
+7fa09cfee04824d20922e59b76408b55 *Track01.shn
+2bbbc074e1f8bb6c992f4e85030c1fe2 *Track02.shn
+bb2e006347be174a33f22e1aa9c505ff *Track03.shn
+4101dd47e9ce7dd2ef0fa286b0700dc7 *Track04.shn
+d1f90122f33fb2fb99aaf483d91e36fc *Track05.shn
+abc067e7111afb6e42bc54543246ee0d *Track06.shn
+838267c1a08e4472d9e570516390e2c2 *Track07.shn
+b59e0327ab6df9f97b0f4cc591495d42 *Track08.shn
+===================
+===================
+===================
+=== CD2.md5
+===================
+===================
+===================
+21025f3100ee5ecd9b8c987ed9379653 *Track01.shn
+71bfd75d12bb90ef3647ad18f47a5ba2 *Track02.shn
+679d61852ddc2d240ac6568fec727405 *Track03.shn
+2a6f928ee6b27018c5e9a68e8c1df24c *Track04.shn
+99e5ccfbdabcc98ad141c6605427aad3 *Track05.shn
+64f8f56e41b2a1027f2cbd5174d7db11 *Track06.shn
+6bc9423790277f6e6e86e38a8a7fd6cc *Track07.shn
+===================
+===================
+===================

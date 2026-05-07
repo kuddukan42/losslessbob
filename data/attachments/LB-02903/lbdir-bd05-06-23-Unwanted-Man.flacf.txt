@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-06-23-Unwanted-Man.flacf 
+=================== 
+=================== 
+=================== 
+922206de19831c432ac6fa539b56e538  bd05-06-23-Unwanted-Man-LB-2903.txt
+5a202ca8820e15345958a773e82a545b  Disc 1\Fingerprints.txt
+cf6575d9932277c66fd6887db6e4a58b  Disc 1\Track01.flac
+e87d7e9347569a1fcc9a1f88626c1725  Disc 1\Track02.flac
+7b5c4e064201af0e0f9a43cea72f7563  Disc 1\Track03.flac
+dcfed73353c7501582b679dbf4de3034  Disc 1\Track04.flac
+9c363a16e3a16a47a6b365e28f4bdb0b  Disc 1\Track05.flac
+cc318737ea9b8364303d762c143879f2  Disc 1\Track06.flac
+06e50a5bf68b8e57bcb02329f82cc3f5  Disc 1\Track07.flac
+cc5d0999df426d2beb325ca841200670  Disc 1\Track08.flac
+eaa4715bd1d016cef6c64304a3dfe83c  Disc 1\Track09.flac
+94f6c58d25675c96f263fdd1c4753841  Disc 1\Track10.flac
+9b6fb898cd5bdef6ae5cde0b1d211eca  Disc 2\Fingerprints.txt
+014d26ee923b191d77360a64ce41b9d5  Disc 2\Track01.flac
+01b74de4035f01d118409779975c4e50  Disc 2\Track02.flac
+ca00c275c4d0f6ca9685244b5a25f86b  Disc 2\Track03.flac
+1135fc84435569d88d99e099b5db1903  Disc 2\Track04.flac
+2c015673dc916e2d4f2f5135121b859e  Disc 2\Track05.flac
+a3b1dae13a07e45ec30930371c2e590c  Setlist.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-06-23-Unwanted-Man.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:803f3a324601827815b711efefcff7e0
+Track02.flac:f6f8d10888168c2ba9eb508c6cf7d5d0
+Track03.flac:50fe37a2747491e7b27d268dab38779e
+Track04.flac:1d94539be4adf7fafeb72dca6c1fd2e3
+Track05.flac:d8b1136f57dab803f1f0f6684b1044de
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-06-23-Unwanted-Man.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:45e8b0092e1fd4537afe1387eb95354f
+Track02.flac:b465e508e8d523bd08953181b6774a1c
+Track03.flac:fc033209032c563312bdf0b605711b04
+Track04.flac:71a74b1b590ad38800b9af862ecd940e
+Track05.flac:3b44c90ace6bd67f9e0d1332db28bd73
+Track06.flac:6ba0dc886079363072cefa2146260d20
+Track07.flac:f570415c22f8fdcaa4a9da36dc4e3c29
+Track08.flac:b710a252b53ebdf3d9d5093a70c07b22
+Track09.flac:d8e26022e300d6fd6d856d110d091c2f
+Track10.flac:932ad15f74f0c0c92725ba8a058e10a2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-06-23-Unwanted-Man.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:09.31       86332556 B   ---   --   ---xx   flac  0.5209  Track01.flac
+     8:27.47       89545388 B   ---   --   ---xx   flac  0.5473  Track02.flac
+     7:06.23       75200540 B   ---   --   ---xx   flac  0.5148  Track03.flac
+     0:26.67        4744028 B   ---   --   ---xx   flac  0.5126  Track04.flac
+     6:53.22       72904988 B   ---   --   ---xx   flac  0.5467  Track05.flac
+    31:03.40      328727500 B                            0.5323  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-06-23-Unwanted-Man.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:28.06       57873356 B   ---   --   ---xx   flac  0.5588  Track01.flac
+     8:17.30       87741404 B   ---   --   ---xx   flac  0.5133  Track02.flac
+     7:48.61       82698716 B   ---   --   ---xx   flac  0.5488  Track03.flac
+     6:59.54       74038652 B   ---   --   ---xx   flac  0.4950  Track04.flac
+     8:53.18       94063580 B   ---   --   ---xx   flac  0.5482  Track05.flac
+     5:59.48       63440540 B   ---   --   ---xx   flac  0.5146  Track06.flac
+     7:33.49       80024492 B   ---   --   ---xx   flac  0.5405  Track07.flac
+     7:53.61       83580716 B   ---   --   ---xx   flac  0.4990  Track08.flac
+     8:51.15       93703724 B   ---   --   ---xx   flac  0.5588  Track09.flac
+     7:14.62       76703468 B   ---   --   ---xx   flac  0.5151  Track10.flac
+    75:00.29      793868648 B                            0.5296  (10 files)
+=================== 
+=================== 
+=================== 

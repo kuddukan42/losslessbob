@@ -1,0 +1,12 @@
+Bob Dylan, 3/16/95, Bielefeld, Germany, Stadthalle, 2CDR
+
+LB-3491, (52min+42min), Taper: no info, Olav ASM, Lineage: FLAC DVD-R > WAV > (CoolEdit inspecting; nothing found) > T-RackS 2.0 (4.0dB volume boost) > FLAC frontend (sector alignment) > DIME; bittorrent download 01/06; same recording as version "a" LB- except with higher levels
+
+CD1
+01. Crash On The Levee (Down In The Flood), 02. If Not For You, 03. All Along The Watchtower, 04. Just Like A Woman, 05. Tangled Up In Blue, 06. Positively 4th Street, 07. Mr. Tambourine Man, 08. Masters Of War, 
+
+CD2
+09. Boots Of Spanish Leather, 10. Dignity, 11. Man In The Long Black Coat, 12. Maggie's Farm, 13. (encore), 14. Like A Rolling Stone
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

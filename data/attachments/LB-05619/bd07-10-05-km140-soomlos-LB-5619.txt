@@ -1,0 +1,8 @@
+Bob Dylan, 10/5/07, Manchester, New Hampshire, USA, Verizon Wireless Arena, 2CDR
+
+LB-5619, (66min+46min), source: soomlos, 7th row center, neumann km140's > m-audio mt24/96 (line-in 24/48), audacity > r8brain > cd wave > flac (16/44.1); bittorrent download 12/07; in comparison to UMM LB-5537 this is warmer sound; excellent sound [A]
+
+Disc 1:, 01. introduction [00:39], 02. Cat's In The Well [04:36], 03. Lay, Lady, Lay [05:34], 04. Just Like Tom Thumb's Blues [07:22], 05. Positively 4th Street [05:51], 06. The Levee's Gonna Break [07:42], 07. Spirit On The Water [06:41], 08. Honest With Me [06:59], 09. Beyond The Horizon [07:11], 10. High Water (For Charley Patton) [06:03], 11. My Back Pages [06:53], Total time: [65:39], Disc 2:, 01. Highway 61 Revisited [06:30], 02. Nettie Moore [08:02], 03. Summer Days [06:06], 04. Like A Rolling Stone [10:22], (encore), 05. Thunder On The Mountain [06:50], 06. band intoduction [00:48], 07. Blowin' In The Wind [06:58], Total time: [45:39]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

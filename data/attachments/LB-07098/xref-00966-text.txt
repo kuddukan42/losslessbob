@@ -1,0 +1,140 @@
+===================
+===================
+===================
+=== 1984-06-07 Still Walking Towards The Sun.txt
+===================
+===================
+===================
+BOB DYLAN: *Still Walking Towards The Sun*
+
+Stade de Schaerbeek Stadion 
+Brussels, Belgium 
+June 7, 1984:
+
+
+*A Southside Butcher Production*
+
+Bob Dylan
+Mick Taylor (guitar),
+Ian MacLagan (keyboards),
+Gregg Sutton (bass),
+Colin Allen (drums),
+Carlos Santana (guitar) during the encores.
+
+CD 1
+
+1. Highway 61 Revisited 
+2. Jokerman 
+3. All Along The Watchtower 
+4. Just Like A Woman
+5. Maggie's Farm 
+6. I And I 
+7. License To Kill 
+8. Just My Imagination, sung by Greg Sutton
+9. Mr. Tambourine Man (acoustic) 
+10. It Ain't Me, Babe (acoustic) 
+11. It's Alright, Ma (I'm Only Bleeding) (acoustic)
+12. It's All Over Now, Baby Blue 
+
+
+CD 2
+
+13. Masters Of War 
+14. Ballad Of A Thin Man 
+15. Simple Twist Of Fate 
+16. Every Grain Of Sand  
+17. Like A Rolling Stone 
+18. Tangled Up In Blue (acoustic) 
+19. Girl From The North Country (acoustic) 
+20. Love Minus Zero - No Limit 
+21. Tombstone Blues 
+22. Why Do I Have To Choose
+
+I recieved the original Audio CD-Rs from the 
+"southside butcher" long time ago. 
+Ripped 2004-07-25 with EAC (secure mode)
+(see Log-file)
+First converted the tracks to "shn", 
+decoded now to wav with TLH.
+Encoded with Flac Frontend 1.7.1 => Flac in 2012
+MD5 and ffp created with TLH
+enjoy
+-ebbbi-
+
+===================
+===================
+===================
+=== Still Walking Towards The Sun [CD1].ffp
+===================
+===================
+===================
+101 Highway 61 Revisited.flac:03d44f7419bdc2fb4c3340897afea931
+102 Jokerman.flac:f50cc65ca3c69fe92cc4fac674302717
+103 All Along The Watchtower.flac:377039681adcb6a83af06d7cb047a8e9
+104 Just Like A Woman.flac:09a1db0e8745c9600081fa61533ec71c
+105 Maggie's Farm.flac:ae10c1ad335a7e9aef22fdb9c5aa49e9
+106 I And I.flac:e57eac159f07027725bf8262f5abd59d
+107 License To Kill.flac:9c1bc125520cefd6468e7c62632565c0
+108 Just My Imagination (sung by Greg Sutton).flac:481d7e68623dd284e1abb3725d755374
+109 Mr. Tambourine Man (@).flac:d0d298f2dfbf25161dc18aa868870945
+110 It Ain't Me, Babe (@).flac:cd1c7f0fc9b324edcfffdae2d02d0c35
+111 It's Alright, Ma (I'm Only Bleeding) (@).flac:d1a7d88b107beeb9b64afb9550eb6744
+112 It's All Over Now, Baby Blue.flac:599834ecb1d5d17cb3d590639eb485bc
+===================
+===================
+===================
+=== Still Walking Towards The Sun [CD1].md5
+===================
+===================
+===================
+ba5c5d152d3c5ecb5593abe9a84e9b09 *101 Highway 61 Revisited.flac
+f8f626c2122429144c1b3952a7ab5f4e *102 Jokerman.flac
+798369571ef9b763f463a02e78d24d87 *103 All Along The Watchtower.flac
+16121992df43fcbc3855452ba7ff0b9d *104 Just Like A Woman.flac
+028953bec7432ed0bb4e0faa024748cd *105 Maggie's Farm.flac
+591b5e9b0e555d78c3218771a5a2f923 *106 I And I.flac
+43b13f08aaef5003323d859cb6e8d0c1 *107 License To Kill.flac
+2a2db5e4c0a2b7d079ef9ffa6bf5148b *108 Just My Imagination (sung by Greg Sutton).flac
+23412ce182fb52df7020faf7911f8032 *109 Mr. Tambourine Man (@).flac
+bdecf7ec95d04723d800e9569950896d *110 It Ain't Me, Babe (@).flac
+f582404284aeac408f9926f2772e4ab6 *111 It's Alright, Ma (I'm Only Bleeding) (@).flac
+f693868afd436ef53675b3abd8c68618 *112 It's All Over Now, Baby Blue.flac
+849e3b2b4bb738617969d7b4a7c074f8 *Still Walking Towards The Sun [CD1].LOG
+===================
+===================
+===================
+=== Still Walking Towards The Sun [CD2].ffp
+===================
+===================
+===================
+201 Masters Of War.flac:f6a7c64deaf223a82e854f3c78e45619
+202 Ballad Of A Thin Man.flac:35773d9f89fd378cc0d359e7ccddca6f
+203 Simple Twist Of Fate.flac:238a7e0fe1758b0ea14d9f105054251d
+204 Every Grain Of Sand.flac:a79668735d2c24d314115642a803ae49
+205 Like A Rolling Stone.flac:a30c6303061694602a6a96ee4b4d95e3
+206 Tangled Up In Blue (@).flac:88d12aee7d43242735fc3ba2f5008e9c
+207 Girl From The North Country (@).flac:68104f0ec6c84a5bab4255621c71f226
+208 Love Minus Zero - No Limit.flac:2672bba30152989ee6cd60ba08a419bb
+209 Tombstone Blues.flac:2093febdcf601f60091e74ebbdc69b91
+210 Why Do I Have To Choose.flac:a19683250f8acb438bdac3dd9e8f6f85
+===================
+===================
+===================
+=== Still Walking Towards The Sun [CD2].md5
+===================
+===================
+===================
+6bfd08fb6044f7c40c7ba946141f0b86 *201 Masters Of War.flac
+2c394ec5a7de0896da464a8ca1cbaaf6 *202 Ballad Of A Thin Man.flac
+0a0b4e75f878a90fc323a4d4294118c5 *203 Simple Twist Of Fate.flac
+7c8d2836c2e89eacefe47a14a07702cc *204 Every Grain Of Sand.flac
+3e18e3cb654a0d32e05a4ab79aa09ced *205 Like A Rolling Stone.flac
+8153371f4b9336d527d0c9800520ca66 *206 Tangled Up In Blue (@).flac
+dbc6d0565184ba4ba4405eadf36b2a30 *207 Girl From The North Country (@).flac
+56cccafdf76aa17d16cfbc33d2a3e546 *208 Love Minus Zero - No Limit.flac
+96656dac28b1179da094e7031465f2f9 *209 Tombstone Blues.flac
+4eefdc52c561dc8d61869e8d41de5075 *210 Why Do I Have To Choose.flac
+d151406a56c5ccd7a1cbc933f49199af *Still Walking Towards The Sun [CD2].LOG
+===================
+===================
+===================

@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-01-12-set4-w-remaster.flacf 
+=================== 
+=================== 
+=================== 
+6a59c0a1abab0fc343c5eb7aa7e8a82b  1.flac
+c588becddea0bea69f71f57791d2162c  10.flac
+00766130eaf9fd78722f6544c2b24e71  11.flac
+3efecd23f5e01df6ba86a12d8d3f943e  12.flac
+df5abf207e915733cf7e070d232e9cfe  13.flac
+16e869e66e3cd12a79409b6efcfa54c8  14.flac
+b34118ac4e43cc050a6233bbf266e3c3  15.flac
+0619dea25257b031c946cc3707213180  16.flac
+68cc246f99996aae5c8081170921e22e  2.flac
+bcec28c6b20b922e1186daa65784814b  3.flac
+554684a514ff1bd7e003d0cdf86f49e0  4.flac
+d269dee51a9cd6a2c72cb6a2c92771f2  5.flac
+9064ef288ec52bd2882ad52b06491a5a  6.flac
+3326949b269131015268cae1b582c6ab  7.flac
+8f932c62c699857dccdc60c43af0e204  8.flac
+6bd7a657f3d07a51024e8bd7c7ffa178  9.flac
+7bd3e85020d58c7b413d78d6061a3140  bd90-01-12-set4-w-remaster.txt
+ea656e02000e294760ce13c203964197  readme.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-12-set4-w-remaster.flacf 
+=================== 
+=================== 
+=================== 
+1.flac:51aae3741591f3d75993fbbedc1215d1
+10.flac:c280075bf2ce2fd14ca0750ccdbdc0f1
+11.flac:7399c7e65a02a89aa2754cf0e7e87c46
+12.flac:5da70e087e0e034f89a054663176d353
+13.flac:e418c24049f56ea3cd2e387274fa4dac
+14.flac:b7200651398dabb9490eb32207e813c9
+15.flac:4fa8de59bbdcac75276576c47c05553e
+16.flac:fdfa29b93581173749cac85815180742
+2.flac:24b1e153a2544648e0662c5c56d82ec1
+3.flac:18ece0d4d738e6f7c31c6c65138f48bc
+4.flac:1f258779e721ebcf335755fa3c3586f9
+5.flac:25ae88c1e305e7a2c41f5b7cc8238001
+6.flac:79d8d3a42f24a7815dc75169c4d6d66d
+7.flac:67da60ae81c6650d50e87f7af4a5e2e9
+8.flac:d2310a54789811dcfa69a8bb137560d4
+9.flac:7f0d1a33376cc2a624bcd78f85a29be6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-12-set4-w-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.59       44591612 B   ---   --   ---xx   flac  0.5602  1.flac
+     4:12.60       44593964 B   ---   --   ---xx   flac  0.5626  10.flac
+     5:35.53       59218700 B   ---   --   ---xx   flac  0.6035  11.flac
+     4:31.06       47818556 B   ---   --   ---xx   flac  0.5668  12.flac
+     4:23.55       46522604 B   ---   --   ---xx   flac  0.5999  13.flac
+     4:54.07       51878108 B   ---   --   ---xx   flac  0.6263  14.flac
+     5:56.69       62960732 B   ---   --   ---xx   flac  0.5592  15.flac
+     9:06.38       96403820 B   ---   --   ---xx   flac  0.5839  16.flac
+     3:49.72       40564988 B   ---   --   ---xx   flac  0.5447  2.flac
+     4:54.70       52026284 B   ---   --   ---xx   flac  0.5699  3.flac
+     4:39.42       49314428 B   ---   --   ---xx   flac  0.5562  4.flac
+     3:52.64       41075372 B   ---   --   ---xx   flac  0.5460  5.flac
+     4:03.71       43032236 B   ---   --   ---xx   flac  0.5638  6.flac
+     6:02.16       63894476 B   ---   --   ---xx   flac  0.4649  7.flac
+     4:42.38       49834220 B   ---   --   ---xx   flac  0.5615  8.flac
+     4:46.33       50528060 B   ---   --   ---xx   flac  0.5776  9.flac
+    79:46.03      844258160 B                            0.5656  (16 files)
+=================== 
+=================== 
+=================== 

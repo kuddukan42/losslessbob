@@ -1,0 +1,110 @@
+===================
+===================
+===================
+=== 1995-11-09 Symphony Hall, Phoenix, Arizona, USA.txt
+===================
+===================
+===================
+Symphony Hall
+Phoenix, Arizona
+November 9, 1995
+
+For some, an obscure recording;
+NOTE: Stevie Nicks shares vocal on I Shall Be Released
+
+Originally this recording was low on volume; increased 3.5dB;
+excessive bass has been reduced to acceptable level; no eq
+Listen to the samples and decide; its your prerogative
+
+Lineage: SHN DVD-R > WAV > T-Racks 2 > FLAC frontend (aligned on sector boundaries) > You
+Taper: no info
+
+
+01. Crash On The Levee (Down In The Flood)
+02. If Not For You
+03. All Along The Watchtower
+04. You're A Big Girl Now
+05. Most Likely You Go Your Way (And I'll Go Mine)
+06. Silvio (Bob Dylan & Robert Hunter)
+07. Mr. Tambourine Man
+08. Masters Of War
+
+09. Don't Think Twice, It's All Right
+10. Maggie's Farm
+11. I'll Remember You
+12. (band intro)
+12. Obviously Five Believers
+13. (encore)
+13. Alabama Getaway (Robert Hunter/Jerry Garcia)
+14. (encore)
+14. I Shall Be Released
+15. (encore)
+15. Rainy Day Women # 12 & 35
+
+
+Concert # 744 of The Never-Ending Tour
+Concert # 30 of the 1995 Fall Classics Tour
+Concert # 104 in 1995
+
+Concert # 288 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+79 acoustic with the band
+7 Bob Dylan harmonica
+13 John Jackson backup vocal
+14 Stevie Nicks (shared vocal)
+
+BobTalk:
+Thank you! I wanna bring out one of my favorite female singers, Stevie Nicks! (before I Shall Be Released)
+
+9 new songs (60%) compared to previous concert
+No new songs for this tour
+Stereo audience recording, 110 minutes
+
+FLAC frontend fingerprints d1:
+
+FLAC frontend fingerprints d2:
+
+* * * Enjoy your Bobby Hobby * * * 
+
+
+===================
+===================
+===================
+=== ffp d1.txt
+===================
+===================
+===================
+01 Crash on the levee (down in the flood).flac:2634470bf26b0946ce9fe30812b5a8fb
+02 If not for you.flac:06ca0611899c124ecba9dd3ef2124f11
+03 All along the watchtower.flac:156699c673ba65688caaa11732d5e42e
+04 You're a big girl now.flac:e139bd712acc5dd01033c3f7d469a51c
+05 Most likely you go your way (and I'll go mine).flac:14d145623014754f357a62cb00a5efc4
+06 Silvio.flac:6d5bd9c8464489314fa5ddb51b5e8e62
+07 Mr. Tambourine Man.flac:30023d7ca2dee7d14c15287b52ebb1b1
+08 Masters of war.flac:1538b6fa4761ed3201767942f87cf639
+===================
+===================
+===================
+=== ffp d2.txt
+===================
+===================
+===================
+09 Don't think twice, it's all right.flac:4a0ef2f274253dfa6806dcdf2f807f7a
+10 Maggie's farm.flac:105f812ce2e2b8a867a7eca0700bbcef
+11 I'll remember you.flac:3dd65690a113740b69295293c101764e
+12 (band intro).flac:45dd1b951970da55af89dc53cabc6742
+12 Obviously five believers.flac:7c918bce1d487d56ebd90352aa99c35d
+13 (encore).flac:88b6b1d659be3ae38ea9f0681359031d
+13 Alabama getaway.flac:e4a518eb12f8f2e5287dbd2340742e46
+14 (encore).flac:8580c573f5bf9d885bc4bd147aa26e3f
+14 I shall be released (w Stevie Nicks).flac:f57e88f2baa0d1965e80266ca16456f9
+15 (encore).flac:e8a8d0483d6dfbf0dabcecb3fbe48c60
+15 Rainy day women # 12 & 35.flac:da96653ee6d2d11fc98ee7a944423cf3
+===================
+===================
+===================

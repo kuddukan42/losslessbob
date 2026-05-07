@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-06-30-IAR-e.flacf 
+=================== 
+=================== 
+=================== 
+38ec4c110db1aba0d4f583b7beb36518  CD1\01 Don't Let Your Deal Go Down.shn
+6742fe96a65c4bb91aa9baef6978634b  CD1\02 You're A Big Girl Now.shn
+fc70e684827fa0a393ff21105e77c400  CD1\03 Seeing The Real You At Last.shn
+85e656df58238872cd8107da103cc249  CD1\04 Just Like A Woman.shn
+e8f9e0919c11864c122a52ecfad08aeb  CD1\05 Tangled Up In Blue.shn
+676b627701c29ac356c5c74e4bf5615e  CD1\06 What Good Am I.shn
+fa40627832fe630bc2403166fd4f0bd8  CD1\07 Maggie's Farm.shn
+43111556a0698be27ae5c14ceae87d29  CD1\08 Love Minus Zero.shn
+d2c3dba55cc220a1e5f428ad4b4c1738  CD1\09 Girl On The Green Briar Shore.shn
+55a6793a495169e7d0e1b5292b41e407  CD1\10 Hard Rain's A-Gonna Fall.shn
+c0e99601dced00a1dc6177839fd50dd3  CD1\11 It's All Over Now, Baby Blue.shn
+efc60c5037fe98c0d929e4535f31fa43  CD1\bd 1992-06-30 CD1.md5
+d89e11a706c9ee4b3d7fdb5a57caabe3  CD2\01 Everything Is Broken.shn
+d5af6cb6c13c6d52a7b3bbae3bad4d55  CD2\02 Idiot Wind.shn
+e1ea53cbbba2c0871f8130863861b39e  CD2\03 I And I.shn
+2bc5d26ce65ab1193688104721612600  CD2\04 Highway 61 Revisited.shn
+e2cecd80f51757ec394392e537cfc944  CD2\05 Applause.shn
+be052ceb24aabaa149616e3fdc59dd59  CD2\06 Silvio.shn
+7fd08f60903bf96308992b67f354f8e1  CD2\07 All Along The Watchtower.shn
+e97581f5d95ae1789887ed27e8d70bd8  CD2\08 Blowin' In The Wind.shn
+9179aeece78d3dc41397e486aefd505a  CD2\bd 1992-06-30 CD2.md5
+d2c795c8792b5b44f0da2bcb27ebeb55  info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-06-30-IAR-e.flacf\cd1 
+=================== 
+=================== 
+=================== 
+f43f897fb08beaee8778845ab6b1eb4b  [shntool]  01_don't_let_your_deal_go_down.wav
+dc25aa4b8e1b329e1f465f6aa2595b87  [shntool]  02_you're_a_big_girl_now.wav
+6fc25b5d0460de26779ed6cdd71237c2  [shntool]  03_seeing_the_real_you_at_last.wav
+102e66249f22ca99d2ca00657a50b4c4  [shntool]  04_just_like_a_woman.wav
+2ad0fe7948c13997b8bf65f771e5b9d5  [shntool]  05_tangled_up_in_blue.wav
+1ade8961c2fcf9fac3955276d548f796  [shntool]  06_what_good_am_i.wav
+e3739068f19abc50723d023aa2d3dd81  [shntool]  07_maggie's_farm.wav
+dfaa4e6cec5c646eebcdb7ac9bedfb05  [shntool]  08_love_minus_zero.wav
+ee821205752e3449cdb203d667e3ac1f  [shntool]  09_girl_on_the_green_briar_shore.wav
+0968815aa03255709e85c3e4aa843280  [shntool]  10_hard_rain's_a-gonna_fall.wav
+3be3191156b6c8eba4e48f02da23821a  [shntool]  11_it's_all_over_now,_baby_blue.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-06-30-IAR-e.flacf\cd2 
+=================== 
+=================== 
+=================== 
+7b97bb84860134492f8fcd6f1b34d3f4  [shntool]  01_everything_is_broken.wav
+7a97c04ef7b03e397656831c94da2b4f  [shntool]  02_idiot_wind.wav
+43bb353404c671de396d9876a83fa01d  [shntool]  03_i_and_i.wav
+b283275eee26047bd1a91b9942cfb913  [shntool]  04_highway_61_revisited.wav
+48107700a2fc534f3d1cde207b84c338  [shntool]  05_applause.wav
+870aede19f45250d4d6f058cd1b7aaf8  [shntool]  06_silvio.wav
+881f04f323c769dc74c498d8d76d6b53  [shntool]  07_all_along_the_watchtower.wav
+751fb8f98315183daed08108330c63be  [shntool]  08_blowin'_in_the_wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-06-30-IAR-e.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.50       63268844 B   ---   --   ---xx    shn  0.6477  01 Don't Let Your Deal Go Down.shn
+     4:40.50       49509644 B   ---   --   ---xx    shn  0.6041  02 You're A Big Girl Now.shn
+     4:42.05       49756604 B   ---   --   ---xx    shn  0.6759  03 Seeing The Real You At Last.shn
+     5:42.65       60481724 B   ---   --   ---xx    shn  0.6547  04 Just Like A Woman.shn
+     8:33.63       90641420 B   ---   --   ---xx    shn  0.6816  05 Tangled Up In Blue.shn
+     6:14.31       66046556 B   ---   --   ---xx    shn  0.5950  06 What Good Am I.shn
+     6:32.38       69238220 B   ---   --   ---xx    shn  0.6614  07 Maggie's Farm.shn
+     3:46.60       40007564 B   ---   --   ---xx    shn  0.5414  08 Love Minus Zero.shn
+     2:38.35       27953564 B   ---   --   ---xx    shn  0.5214  09 Girl On The Green Briar Shore.shn
+     9:02.14       95641772 B   ---   --   ---xx    shn  0.6210  10 Hard Rain's A-Gonna Fall.shn
+     6:19.51       66975596 B   ---   --   ---xx    shn  0.6166  11 It's All Over Now, Baby Blue.shn
+    64:12.12      679521508 B                            0.6297  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-06-30-IAR-e.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.27       54041948 B   ---   --   ---xx    shn  0.6631  01 Everything Is Broken.shn
+    10:33.02      111665948 B   ---   --   ---xx    shn  0.6329  02 Idiot Wind.shn
+     8:37.47       91309388 B   ---   --   ---xx    shn  0.6493  03 I And I.shn
+     7:36.72       80607788 B   ---   --   ---xx    shn  0.6807  04 Highway 61 Revisited.shn
+     1:20.48       14224940 B   ---   --   ---xx    shn  0.4907  05 Applause.shn
+     4:40.32       49467308 B   ---   --   ---xx    shn  0.6770  06 Silvio.shn
+     6:03.00       64033244 B   ---   --   ---xx    shn  0.6033  07 All Along The Watchtower.shn
+     4:08.42       43846028 B   ---   --   ---xx    shn  0.5734  08 Blowin' In The Wind.shn
+    48:06.45      509196592 B                            0.6381  (8 files)
+=================== 
+=================== 
+=================== 

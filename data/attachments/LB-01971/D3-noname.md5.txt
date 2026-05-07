@@ -1,0 +1,15 @@
+5b6fcb05ad7a754e0bf37a98e67bd9ae *07 Jokerman I1.shn
+cee6eefac41ec53471f62d824841a1d8 *02 I&I e I1.shn
+cd5520c5e582a486f437065a88e6a715 *03 I&I O t7.shn
+8e14b7658388680c6c57d1ff17c54ee7 *04 I&I RW (mono) D3t11.shn
+66cf62b4332ac81720d4f4235a3c4e0b *05 I&I W t14.shn
+befe7d4af7fe6f15d19391c2e8103404 *06 Jokerman D-M D2t1.shn
+b37b4ac859f10bc9886f853488253e66 *01 I&I D-M D2t7.shn
+c98fec5aa37bb7993b073cb010fba1fc *08 Jokerman O t1.shn
+7693e534bfcea0b6337d56e54602d129 *09 Jokerman RW (mono) D4t10.shn
+6e2c188972297a2a2e8208137f19a08a *10 Jokerman W t8.shn
+16c6fe372b94ddbecd7a7a3a984cc058 *11 License D-M D2t4.shn
+65c458f36671af9c1b46eebf4767cfb4 *12 License I1.shn
+0aa414d698c5b61b2a6e9dde0179ea74 *13 License O t4.shn
+02a872110864426bd8c53a610f9d22f5 *14 License RW (mono) D1t3.shn
+414cfcffa0795360295762212fc3806a *15 License W t11.shn

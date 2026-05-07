@@ -1,0 +1,14 @@
+BOB DYLAN
+Arena Flegrea, Naples, Italy 
+July 26, 2001
+
+LB-4428 fixed2
+
+I've been told track 14 didn't decode right, producing FLAC_STREAM_DECODER_ERROR. I verified my flacs and the same error happened. Fortunately I had a previous version of the same recording already fixed and supposedly aligned on SB, though I finally reworked track18 and there were differences on last tracks from t18 between such version and my last upload of it. However t14 should be exactly the same one, so I replaced the wrong file on torrent # 5023:
+
+http://www.hungercity.org/details.php?id=5023&hit=1, and made this new torrent with the correct file. Nothing should have changed except track14 and the ffp and md5's, so nobody who got the previous one would have to download this completely, but just t14 and those verification tools I mentioned.
+
+Good luck this time!
+
+Luisbp51 (Hunfercity March 2009)
+

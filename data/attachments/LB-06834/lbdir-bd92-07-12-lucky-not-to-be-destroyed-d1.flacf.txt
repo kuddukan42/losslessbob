@@ -1,0 +1,54 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-07-12-lucky-not-to-be-destroyed-d1.flacf 
+=================== 
+=================== 
+=================== 
+635079c06ef5663f5ba8b03ae0ed4430  bd92-07-12-lucky-not-to-be-destroyed-d1.flacf.md5
+69c0c926566623c620e03d560cfd8574  bd92-07-12-lucky-not-to-be-destroyed-d1t01.flac
+9495a59ace6c8019866ae34ff828e45e  bd92-07-12-lucky-not-to-be-destroyed-d1t02.flac
+fc7e2abef91fb289d6f7ad3e4fb95fc1  bd92-07-12-lucky-not-to-be-destroyed-d1t03.flac
+e06d27fd4c67a5c82e7db4830e6b7796  bd92-07-12-lucky-not-to-be-destroyed-d1t04.flac
+9dbabb0eb4ee70c566d2d81ff36a2bd7  bd92-07-12-lucky-not-to-be-destroyed-d1t05.flac
+2494407f56816cc16d80ea88db230c05  bd92-07-12-lucky-not-to-be-destroyed-d1t06.flac
+c12e60fdea435832358cf3d39677f37c  bd92-07-12-lucky-not-to-be-destroyed-d1t07.flac
+5ce218d374fc72dc24c20e4e409697a1  bd92-07-12-lucky-not-to-be-destroyed-d1t08.flac
+152b20ecdbf84a6516f290efa924d1cb  bd92-07-12-lucky-not-to-be-destroyed-d1t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-07-12-lucky-not-to-be-destroyed-d1.flacf 
+=================== 
+=================== 
+=================== 
+bd92-07-12-lucky-not-to-be-destroyed-d1t01.flac:d9816d4d6f86637f073bd5109425e58a
+bd92-07-12-lucky-not-to-be-destroyed-d1t02.flac:d0c1edc4c64ff8d2d688d30a45465c1c
+bd92-07-12-lucky-not-to-be-destroyed-d1t03.flac:7be609de6349167773529936b0b366fb
+bd92-07-12-lucky-not-to-be-destroyed-d1t04.flac:4d19382c9b9d305fad2fa426867b6a50
+bd92-07-12-lucky-not-to-be-destroyed-d1t05.flac:97992dd0cb9b5e8b878aee6e95e5fc4a
+bd92-07-12-lucky-not-to-be-destroyed-d1t06.flac:049e278918ac0c3169cad534e33feba5
+bd92-07-12-lucky-not-to-be-destroyed-d1t07.flac:6dc1fa47d68e060890a9d5f7a249b406
+bd92-07-12-lucky-not-to-be-destroyed-d1t08.flac:77bc552c8cbf3192027ad05a2feecc76
+bd92-07-12-lucky-not-to-be-destroyed-d1t09.flac:3e01ba5a57883d9714b09f6e2ba516e6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-07-12-lucky-not-to-be-destroyed-d1.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.45       44558684 B   ---   --   ---xx   flac  0.6548  bd92-07-12-lucky-not-to-be-destroyed-d1t01.flac
+     6:20.71       67199036 B   ---   --   ---xx   flac  0.6559  bd92-07-12-lucky-not-to-be-destroyed-d1t02.flac
+     5:50.68       61899980 B   ---   --   ---xx   flac  0.6500  bd92-07-12-lucky-not-to-be-destroyed-d1t03.flac
+     9:21.02       98965148 B   ---   --   ---xx   flac  0.6471  bd92-07-12-lucky-not-to-be-destroyed-d1t04.flac
+     6:41.26       70797596 B   ---   --   ---xx   flac  0.6522  bd92-07-12-lucky-not-to-be-destroyed-d1t05.flac
+     4:14.46       44913836 B   ---   --   ---xx   flac  0.6504  bd92-07-12-lucky-not-to-be-destroyed-d1t06.flac
+     8:25.06       89096156 B   ---   --   ---xx   flac  0.6685  bd92-07-12-lucky-not-to-be-destroyed-d1t07.flac
+     4:26.02       46927148 B   ---   --   ---xx   flac  0.6480  bd92-07-12-lucky-not-to-be-destroyed-d1t08.flac
+     5:20.59       56586812 B   ---   --   ---xx   flac  0.6395  bd92-07-12-lucky-not-to-be-destroyed-d1t09.flac
+    54:53.25      580944396 B                            0.6525  (9 files)
+=================== 
+=================== 
+=================== 

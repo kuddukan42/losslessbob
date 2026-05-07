@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-17-HG-osaka.flacf 
+=================== 
+=================== 
+=================== 
+ce97b4f9a39211bf8b345e4cda14cf30  bd-1997-02-17-osaka-AUD-HG.txt
+c4f2e968fa14478367162a5a62f6eeca  bd-1997-02-17osaka-HG-FLAC-d1 (Track 01).flac
+155bf2be5507a21ae9633379f8e43481  bd-1997-02-17osaka-HG-FLAC-d1 (Track 02).flac
+7cad8d5752a24528a778abef0241ff3e  bd-1997-02-17osaka-HG-FLAC-d1 (Track 03).flac
+fced21abd31eb9bee0947f4ac563d118  bd-1997-02-17osaka-HG-FLAC-d1 (Track 04).flac
+5f27bf20d08f2d2a3542d9c1f971499e  bd-1997-02-17osaka-HG-FLAC-d1 (Track 05).flac
+5d5bcb1f6461ffb2094a0673cdc8ed5f  bd-1997-02-17osaka-HG-FLAC-d1 (Track 06).flac
+b5b98a45a2ac13525b35caadcea3ec62  bd-1997-02-17osaka-HG-FLAC-d1 (Track 07).flac
+61c41d074442cb280533da6dbd0aeb3b  bd-1997-02-17osaka-HG-FLAC-d1 (Track 08).flac
+92426bbafd96470d7b12c174f9db4644  bd-1997-02-17osaka-HG-FLAC-d1 (Track 09).flac
+50841180ed188204810bd4d1980f3c34  bd-1997-02-17osaka-HG-FLAC-d2 (Track 01).flac
+21b42df0bf0ee62827ff15e9c8e1f904  bd-1997-02-17osaka-HG-FLAC-d2 (Track 02).flac
+abc802db21663df86d9307ecd3f1a181  bd-1997-02-17osaka-HG-FLAC-d2 (Track 03).flac
+13dd0255f021fc606120bfebe6e9109a  bd-1997-02-17osaka-HG-FLAC-d2 (Track 04).flac
+5fc574d36782dc4d7b76f6c4988a2d8a  bd-1997-02-17osaka-HG-FLAC-d2 (Track 05).flac
+1c02eb28cf27d5662a70d33ce5f67998  bd-1997-02-17osaka-HG-FLAC-d2 (Track 06).flac
+d0c3ce2117b7a473e6da47222c47999f  bd-1997-02-17osaka-HG-FLAC-d2 (Track 07).flac
+21c858482655409200a688d214090773  bd97-02-17-HG.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-17-HG-osaka.flacf 
+=================== 
+=================== 
+=================== 
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 01).flac:3e12b79efcf3d8468f5f975d35c390a9
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 02).flac:c5acb355e20f0c371c2d0a5d2d8c9cdd
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 03).flac:95110ea3cdf1619d0a840d7cd1ded0e4
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 04).flac:f272b71296bad230daf2310803d4d199
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 05).flac:a92ee2f20ed1f3b9bbe4995ad2058b11
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 06).flac:f96141aa66b1727f0cd561f23855b1ec
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 07).flac:5691a97fd55f618318dd34d8faf4c25b
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 08).flac:6dfec14968511b06af4353955797c3a9
+bd-1997-02-17osaka-HG-FLAC-d1 (Track 09).flac:ebbb8ced1d9af528c858f08abfda70ce
+bd-1997-02-17osaka-HG-FLAC-d2 (Track 01).flac:89c87f32fefc0acc95ca8e26fcef5ad2
+bd-1997-02-17osaka-HG-FLAC-d2 (Track 02).flac:fae215c394c7a1fa367f77220629b54a
+bd-1997-02-17osaka-HG-FLAC-d2 (Track 03).flac:0d8f8b9f5c12a1e77a4b1e361fe0b9b6
+bd-1997-02-17osaka-HG-FLAC-d2 (Track 04).flac:32708d936b0fc9fc47d884a2005ad37e
+bd-1997-02-17osaka-HG-FLAC-d2 (Track 05).flac:8674f14388c96dbcaeb96e9d6c2f8d91
+bd-1997-02-17osaka-HG-FLAC-d2 (Track 06).flac:cc2317152058dd9c9ed623a7f5ff7918
+bd-1997-02-17osaka-HG-FLAC-d2 (Track 07).flac:efebb6d8c1c7f4046c161fa6439b7dc2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-17-HG-osaka.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.09       54351404 B   -b-   --   ---xx   flac  0.6357  bd-1997-02-17osaka-HG-FLAC-d1 (Track 01).flac
+     6:34.12       69529868 B   ---   --   ---xx   flac  0.6024  bd-1997-02-17osaka-HG-FLAC-d1 (Track 02).flac
+     6:34.32       69576908 B   ---   --   ---xx   flac  0.6398  bd-1997-02-17osaka-HG-FLAC-d1 (Track 03).flac
+     6:19.20       66902684 B   ---   --   ---xx   flac  0.5837  bd-1997-02-17osaka-HG-FLAC-d1 (Track 04).flac
+     8:48.12       93167468 B   ---   --   ---xx   flac  0.5840  bd-1997-02-17osaka-HG-FLAC-d1 (Track 05).flac
+     8:12.51       86908796 B   ---   --   ---xx   flac  0.6602  bd-1997-02-17osaka-HG-FLAC-d1 (Track 06).flac
+     6:36.44       69957932 B   ---   --   ---xx   flac  0.5961  bd-1997-02-17osaka-HG-FLAC-d1 (Track 07).flac
+     8:37.67       91356428 B   ---   --   ---xx   flac  0.6120  bd-1997-02-17osaka-HG-FLAC-d1 (Track 08).flac
+     6:32.11       69174716 B   ---   --   ---xx   flac  0.5401  bd-1997-02-17osaka-HG-FLAC-d1 (Track 09).flac
+     6:18.48       66792424 B   -b-   --   ---xx   flac  0.6226  bd-1997-02-17osaka-HG-FLAC-d2 (Track 01).flac
+     6:20.72       67201388 B   ---   --   ---xx   flac  0.5772  bd-1997-02-17osaka-HG-FLAC-d2 (Track 02).flac
+     7:19.17       77479628 B   ---   --   ---xx   flac  0.6610  bd-1997-02-17osaka-HG-FLAC-d2 (Track 03).flac
+     1:22.60       14605964 B   ---   --   ---xx   flac  0.5666  bd-1997-02-17osaka-HG-FLAC-d2 (Track 04).flac
+    11:06.37      117569468 B   ---   --   ---xx   flac  0.6661  bd-1997-02-17osaka-HG-FLAC-d2 (Track 05).flac
+     9:22.34       99216812 B   ---   --   ---xx   flac  0.5861  bd-1997-02-17osaka-HG-FLAC-d2 (Track 06).flac
+     7:18.39       77355308 B   -b-   --   ---xx   flac  0.6590  bd-1997-02-17osaka-HG-FLAC-d2 (Track 07).flac
+   112:32.40     1191147196 B                            0.6163  (16 files)
+=================== 
+=================== 
+=================== 

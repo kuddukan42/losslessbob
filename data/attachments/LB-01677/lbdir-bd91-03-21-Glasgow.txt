@@ -1,0 +1,136 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-03-21-Glasgow 
+=================== 
+=================== 
+=================== 
+427aee132f2db1174acca462cb2d391c  bd91-03-21.txt
+a870fea0c8afdb6babf5ae5c3e8a6cbc  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track01 - Track01.shn
+006ed34ce67331bc788d1bcafd867486  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track02 - Track02.shn
+1e2d67f97f636a8f0dc7247ff3216266  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track03 - Track03.shn
+255f4b007b13a57d0c849167ca89c33c  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track04 - Track04.shn
+90611f7fe79d1ffdb8ab7cfc8c4e71ba  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track05 - Track05.shn
+4afb44356f66886635f10e12814e78c4  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track06 - Track06.shn
+d530915f1913652f1acecb1ce60ac0cf  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track07 - Track07.shn
+a0d758787df02d0f4fab4f043d08cd38  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track08 - Track08.shn
+cc2694612b0c2166d550659f820a0f44  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track09 - Track09.shn
+678a6258195efae27b65a8a93fcc1f1b  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track10 - Track10.shn
+e3d6cdbd2fb7a1c80c4433213ce9b985  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track11 - Track11.shn
+35a6c47dfaa4aa1b888a5a933969c4fe  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track12 - Track12.shn
+50e309b70bfba69e8259b9c633231972  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track13 - Track13.shn
+56180fd72710e0460aad007615d8d941  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track14 - Track14.shn
+8d3ccd21fdd5e04efddf66d2c4e12390  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track15 - Track15.shn
+53753de1d0e350085dfbdc8010f90ddc  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_Track16 - Track16.shn
+68fa68a54c86953504badc44c0d6346b  bd_91-03-02_cd1.shnf\bd_91-03-02_cd1_shn.md5
+68eb6ef9a8b01617b23b757c2dc8d5ac  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track01 - Track01.shn
+9c2767fe60790928d5bd770b51f2efdc  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track02 - Track02.shn
+a8e0d2a955ef8f663c84c74062e4640f  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track03 - Track03.shn
+b98f8d1b6041c1c49e490aab037d15c0  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track04 - Track04.shn
+357ec8a5d50349bfe5083d02882f6303  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track05 - Track05.shn
+5bdf2791910ea548545ab3ec8933356b  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track06 - Track06.shn
+4caf1477f61f12848ec1fc8e45ffe318  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track07 - Track07.shn
+9a9cf5ca6ce1356d5b44dbf2099a97ca  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track08 - Track08.shn
+e9cfa08fdfc46201abc63e4a0ae97ff3  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track09 - Track09.shn
+387b8c65869e46e5a5debb5fe3b77b34  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track10 - Track10.shn
+d6fe144d1a0192b3dba25fd49447d292  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track11 - Track11.shn
+7ee053524470035f0b3a7ef452985cdd  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track12 - Track12.shn
+1867f8936b5f189af3c269f777e15f1b  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track13 - Track13.shn
+f6dcd04f5caa02eaaa5984f5e2dbb9cc  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_Track14 - Track14.shn
+0da7bf03e7b4ca2436729735c0973ec1  bd_91-03-02_cd2.shnf\bd_91-03-02_cd2_shn.md5
+cc05291625ca82a14086bd15045be285  text.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-03-21-Glasgow\bd_91-03-02_cd1.shnf 
+=================== 
+=================== 
+=================== 
+cf7c1e035d97a0afdbff4b41d7cbfa21  [shntool]  bd_91-03-02_cd1_Track01_-_Track01.wav
+b1e82123e7f568c1e08e756fe9a759fa  [shntool]  bd_91-03-02_cd1_Track02_-_Track02.wav
+16ed058668cee210bfe840ecc47411b9  [shntool]  bd_91-03-02_cd1_Track03_-_Track03.wav
+46f518b0688e551a792d5881d7805478  [shntool]  bd_91-03-02_cd1_Track04_-_Track04.wav
+94173ac20e4ee41caa0875a871b6de70  [shntool]  bd_91-03-02_cd1_Track05_-_Track05.wav
+12804d38be0f94994ead8ff571c7d732  [shntool]  bd_91-03-02_cd1_Track06_-_Track06.wav
+3f2dd17519747facedce8b7f71f59811  [shntool]  bd_91-03-02_cd1_Track07_-_Track07.wav
+ff8e490c4da972cacfbf92264d94d659  [shntool]  bd_91-03-02_cd1_Track08_-_Track08.wav
+b8e92be7c460d404f1cbc602b214b327  [shntool]  bd_91-03-02_cd1_Track09_-_Track09.wav
+d3580d66cd2993468604ca7dcd6d66be  [shntool]  bd_91-03-02_cd1_Track10_-_Track10.wav
+daf543c5b2b8e442cc6b27e75271105a  [shntool]  bd_91-03-02_cd1_Track11_-_Track11.wav
+e67ec06f737fd01047a7df96e540297c  [shntool]  bd_91-03-02_cd1_Track12_-_Track12.wav
+1443c3d75771c8e0011e6d6085716a50  [shntool]  bd_91-03-02_cd1_Track13_-_Track13.wav
+1ce067332bec5e43b309854a1cd1e410  [shntool]  bd_91-03-02_cd1_Track14_-_Track14.wav
+dad5f8103a05b2026c0aad33103e874a  [shntool]  bd_91-03-02_cd1_Track15_-_Track15.wav
+e52abcaacb30fea53cc7129f03ed892d  [shntool]  bd_91-03-02_cd1_Track16_-_Track16.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-03-21-Glasgow\bd_91-03-02_cd2.shnf 
+=================== 
+=================== 
+=================== 
+baf9ef4918f1037ce8521ae9a7b2c928  [shntool]  bd_91-03-02_cd2_Track01_-_Track01.wav
+1044d23e014e3449639c253549905f18  [shntool]  bd_91-03-02_cd2_Track02_-_Track02.wav
+efc47d329ead9add24a2ac63adfeb697  [shntool]  bd_91-03-02_cd2_Track03_-_Track03.wav
+51e344677a855e401dea4bb80b1738ea  [shntool]  bd_91-03-02_cd2_Track04_-_Track04.wav
+c0b48ad3617d7f01292758000e247932  [shntool]  bd_91-03-02_cd2_Track05_-_Track05.wav
+b6a69a86988c912e5f567cbab412dd2b  [shntool]  bd_91-03-02_cd2_Track06_-_Track06.wav
+82b5a537ada3162713c25666abcea50b  [shntool]  bd_91-03-02_cd2_Track07_-_Track07.wav
+08c14da1375d1fe83d5dd13456439603  [shntool]  bd_91-03-02_cd2_Track08_-_Track08.wav
+7319a02e3a0100ed64b944d6a4b2ab22  [shntool]  bd_91-03-02_cd2_Track09_-_Track09.wav
+057e08ec2c6086f6093c30aaee18974b  [shntool]  bd_91-03-02_cd2_Track10_-_Track10.wav
+e2bf7d48ea0554db85ae7508ca6800b5  [shntool]  bd_91-03-02_cd2_Track11_-_Track11.wav
+d5b78c8e1c9370666f8b4f7f6ec2d0c4  [shntool]  bd_91-03-02_cd2_Track12_-_Track12.wav
+abaa4d94e821587e4df47fe6b56b78e1  [shntool]  bd_91-03-02_cd2_Track13_-_Track13.wav
+01fedd17e28f180687ae667c4be2a9b0  [shntool]  bd_91-03-02_cd2_Track14_-_Track14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-03-21-Glasgow\bd_91-03-02_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.69       13922128 B   -b-   --   -----    wav  1.0000  bd_91-03-02_cd1_Track01_-_Track01.wav
+     3:01.27       31991948 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track02_-_Track02.wav
+     4:34.42       48432428 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track03_-_Track03.wav
+     4:39.63       49363820 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track04_-_Track04.wav
+     7:18.56       77394956 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track05_-_Track05.wav
+     4:41.06       49582556 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track06_-_Track06.wav
+     4:36.22       48738188 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track07_-_Track07.wav
+     4:12.24       44509292 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track08_-_Track08.wav
+     4:30.01       47630396 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track09_-_Track09.wav
+     4:39.16       49253276 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track10_-_Track10.wav
+     6:11.28       65510300 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track11_-_Track11.wav
+     3:44.40       39607724 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track12_-_Track12.wav
+     4:42.45       49850684 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track13_-_Track13.wav
+     4:52.70       51673484 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track14_-_Track14.wav
+     3:44.04       39523052 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd1_Track15_-_Track15.wav
+     6:24.21       67787416 B   -b-   --   -----    wav  1.0000  bd_91-03-02_cd1_Track16_-_Track16.wav
+    73:12.09      774771648 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-03-21-Glasgow\bd_91-03-02_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:33.02       48161704 B   -b-   --   -----    wav  1.0000  bd_91-03-02_cd2_Track01_-_Track01.wav
+     4:10.47       44211340 B   -b-   --   -----    wav  1.0000  bd_91-03-02_cd2_Track02_-_Track02.wav
+     3:04.64       32608176 B   -b-   --   -----    wav  1.0000  bd_91-03-02_cd2_Track03_-_Track03.wav
+     4:46.11       50476316 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track04_-_Track04.wav
+     4:41.34       49648412 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track05_-_Track05.wav
+     2:44.21       28979036 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track06_-_Track06.wav
+     5:39.02       59804348 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track07_-_Track07.wav
+     4:08.20       43794284 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track08_-_Track08.wav
+     4:24.10       46593164 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track09_-_Track09.wav
+     5:11.20       54907484 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track10_-_Track10.wav
+     5:04.54       53752652 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track11_-_Track11.wav
+     3:45.67       39847628 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track12_-_Track12.wav
+     4:19.74       45861692 B   ---   --   -----    wav  1.0000  bd_91-03-02_cd2_Track13_-_Track13.wav
+     4:28.25       47333980 B   -b-   --   -----    wav  1.0000  bd_91-03-02_cd2_Track14_-_Track14.wav
+    61:02.01      645980216 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

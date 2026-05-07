@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-11-d.flacf
+===================
+===================
+===================
+ae6b79a6942da0b0c2cbe27cda3dea58 *01 Track 01.flac
+02cbb5ea75537d76c6627b923df6d77b *02 Track 02.flac
+a2f565c7fca5417081a289308b6a7aff *03 Track 03.flac
+de31c383e11c6d428a43f3c4f2c02fef *04 Track 04.flac
+5b8bf3f2a33cd4e4931a82b926e1956f *05 Track 05.flac
+dc299e9e72069ce72dbfc6059108fae4 *06 Track 06.flac
+99bf93f8cd5cb9b0e0bd424ef3a6b05c *07 Track 07.flac
+a8f50a479ecdf789e4dd93ec079ef22c *08 Track 08.flac
+30d0d96fb02df4df01172295ac72c3c3 *09 Track 09.flac
+3d29b2dc873213c58516298dbf3244dc *10 Track 10.flac
+7d63247f4f8382dcd3fc721ece701bf9 *11 Track 11.flac
+27da23248661f9f5478b7ac92bd3d46c *12 Track 12.flac
+6853f0232fb1a0babe4b1684091f888c *13 Track 13.flac
+4a4dea99e9e8ce308abad6f9eacbee5d *14 Track 14.flac
+eec1499a9e706abd1557dc6e3c39a37f *15 Track 15.flac
+d3d0db50d31123d4259954f957cd31ac *16 Track 16.flac
+2c8450d1d02907a4fd8e66fefadb6502 *fingerprint.ffp.txt
+168fa51c103968bd0ae540c48b2a9b96 *md5sum.md5
+26d69b7ac3c67841202fe7fef328ea7a *notes\add.rtf
+1785ed2f7dd87b6ad58762258cdfe60b *text.txt
+===================
+===================
+===================
+=== ffp for: bd99-04-11-d.flacf
+===================
+===================
+===================
+01 Track 01.flac:63bf44d5c2cab2632dff06eb34e9587c
+02 Track 02.flac:9f961f616dff0ad4da889eef683af01f
+03 Track 03.flac:c677ee38b103ad0c2a14bf5286208fa9
+04 Track 04.flac:406edf2b33550e0aae5c2394d383f023
+05 Track 05.flac:1ef5c24cea70c561089c4561964c9089
+06 Track 06.flac:7ff69ffb1f319e96972b85f1131d42f2
+07 Track 07.flac:6c9207e6b51df41eee1f66b3e26ddb3c
+08 Track 08.flac:15d934e5850de9a04adc61986fd6d54a
+09 Track 09.flac:6ba7238b16cf7567b2f6d5717ef9942a
+10 Track 10.flac:d441407b524942d7f424f4de7b6bae31
+11 Track 11.flac:c41166af1d456498948c22399b953875
+12 Track 12.flac:24a377b226872d2e39d84b15a8b770bb
+13 Track 13.flac:21a4422551df826a6a6311f24dc2642f
+14 Track 14.flac:d33a8e64268f8218295419d907a86abc
+15 Track 15.flac:69c7737a0b0494bdaf6ac9e265f9b75a
+16 Track 16.flac:69ccb95b0785dfc10177f728bfbe8a51
+===================
+===================
+===================
+=== shntool len for: bd99-04-11-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.30       58106204 B   ---   --   ---xx   flac  0.6498  01 Track 01.flac
+     5:39.28       59865500 B   ---   --   ---xx   flac  0.6545  02 Track 02.flac
+     5:56.47       62908988 B   ---   --   ---xx   flac  0.6601  03 Track 03.flac
+     6:59.51       74031596 B   ---   --   ---xx   flac  0.6565  04 Track 04.flac
+     4:40.43       49493180 B   ---   --   ---xx   flac  0.6368  05 Track 05.flac
+     7:41.31       81393356 B   ---   --   ---xx   flac  0.6739  06 Track 06.flac
+     6:12.74       65794892 B   ---   --   ---xx   flac  0.6233  07 Track 07.flac
+     5:09.04       54517052 B   ---   --   ---xx   flac  0.6375  08 Track 08.flac
+     7:19.66       77594876 B   ---   --   ---xx   flac  0.6075  09 Track 09.flac
+     7:35.65       80414924 B   ---   --   ---xx   flac  0.6424  10 Track 10.flac
+     7:48.47       82665788 B   ---   --   ---xx   flac  0.6131  11 Track 11.flac
+     8:21.05       88388204 B   ---   --   ---xx   flac  0.6214  12 Track 12.flac
+     5:35.14       59126972 B   ---   --   ---xx   flac  0.6075  13 Track 13.flac
+     6:17.42       66601628 B   ---   --   ---xx   flac  0.6692  14 Track 14.flac
+     4:59.30       52814204 B   ---   --   ---xx   flac  0.6389  15 Track 15.flac
+     3:35.26       37987196 B   ---   --   ---xx   flac  0.6438  16 Track 16.flac
+    99:22.03     1051704560 B                            0.6392  (16 files)
+===================
+===================
+===================

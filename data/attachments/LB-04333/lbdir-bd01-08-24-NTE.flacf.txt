@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-08-24-NTE.flacf 
+=================== 
+=================== 
+=================== 
+215867898bdac70658543e5bdf1bd0f4  bd01-08-24-NTE-LB-4333.txt
+6612e694a2693e342a127e8ae249a615  bd2001-08-24-info.txt
+d3ab57ad280ed537574e22e8b592dabe  bd2001-08-24-Las Vegas-d1\Track01.flac
+0b14640cc99f4a5d91f3c805833edc2c  bd2001-08-24-Las Vegas-d1\Track02.flac
+94b99b8e62cbfa292fc6eb94748a01ae  bd2001-08-24-Las Vegas-d1\Track03.flac
+4d90015d58b105bce2730c58b80ceb8d  bd2001-08-24-Las Vegas-d1\Track04.flac
+4c5a8e017b168e15b769b23d48f9ad82  bd2001-08-24-Las Vegas-d1\Track05.flac
+45c37fbcd8424b42f42332057634a1ec  bd2001-08-24-Las Vegas-d1\Track06.flac
+ba228763b574606a6b7dd6496099b001  bd2001-08-24-Las Vegas-d1\Track07.flac
+f296ac27dfd12349699ac8f3f975f61c  bd2001-08-24-Las Vegas-d1\Track08.flac
+62679b0b7c49aea60301e67bce19dfd2  bd2001-08-24-Las Vegas-d1\Track09.flac
+8b3f29c171548c349703baf9ee56520b  bd2001-08-24-Las Vegas-d1\Track10.flac
+eb4f3dfc855f34f419e4d867f3cfd8f0  bd2001-08-24-Las Vegas-d1\Track11.flac
+29644501d1c918cd2592fc46f73c1176  bd2001-08-24-Las Vegas-d1\Track12.flac
+600f057aade49e223abe81dd7f254807  bd2001-08-24-Las Vegas-d1\bd2001-08-24-Las Vegas-d1.md5
+301f42573d2bcd2689f5cc1b08a88904  bd2001-08-24-Las Vegas-d2\1 Audio Track.flac
+75fe4d852632bc6cedc2eeaa3fe650d5  bd2001-08-24-Las Vegas-d2\2 Audio Track.flac
+8edcc3ad2c7f4e4597cedf28b07e8238  bd2001-08-24-Las Vegas-d2\3 Audio Track.flac
+78faa70ec0896e7572ac7b0797a2c395  bd2001-08-24-Las Vegas-d2\4 Audio Track.flac
+b927eeb7272b039daa6753215034d0a3  bd2001-08-24-Las Vegas-d2\5 Audio Track.flac
+95655300da65e32a54bd5376b56ab3e1  bd2001-08-24-Las Vegas-d2\6 Audio Track.flac
+6a5fab1b1be923c93ba39e3ed2e93bae  bd2001-08-24-Las Vegas-d2\7 Audio Track.flac
+ac2f03cd5cd55f50cb28a2cd03279012  bd2001-08-24-Las Vegas-d2\8 Audio Track.flac
+f21a9ea07322028eca3ce62415652941  bd2001-08-24-Las Vegas-d2\9 Audio Track.flac
+71c5902602d3aedb3e6d3e5b924962ff  bd2001-08-24-Las Vegas-d2\bd2001-08-24-Las Vegas_d2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-08-24-NTE.flacf\bd2001-08-24-Las Vegas-d2 
+=================== 
+=================== 
+=================== 
+1 Audio Track.flac:e10b3e07ec84709de075045fabd039db
+2 Audio Track.flac:8934cd85732653d2f8528a840027e137
+3 Audio Track.flac:e3c755103749339dac4832dd7d73fb7f
+4 Audio Track.flac:ed9e3446fc5f164b1b75544b4caed3a5
+5 Audio Track.flac:e1cea79b27da5b72b95a6db7e321b460
+6 Audio Track.flac:e7c089a25110af7b44a6ba4e80e67bc9
+7 Audio Track.flac:01d668f93bb834eecdf04e7616570a87
+8 Audio Track.flac:dd5588e85fd3484be2c788dc4430ef37
+9 Audio Track.flac:330f965dcf9d79205371aa310d115e1e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-08-24-NTE.flacf\bd2001-08-24-Las Vegas-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:08a9afe229cf3e3e3661eb2d858e5203
+Track02.flac:9d451e8136d5f70b965a6ccdf7d0d5d8
+Track03.flac:124198cd7502313fb17743d3c3adaeda
+Track04.flac:dfe71affd332bd1764e53714f97a0551
+Track05.flac:4c1e7a72881ef5e869bb69f66b8ec616
+Track06.flac:4dc0571fc9b89985bb548437cd11db59
+Track07.flac:f33ff06a6629b8e993f1f28622f9312a
+Track08.flac:39904fd56766ff8f3ce3e7a5a76235cc
+Track09.flac:f4fae579780a684a387f0e22b9a9c1b7
+Track10.flac:196a0e358f4585034fedff886f83dc45
+Track11.flac:39af27a973b025ec3664284dd127985a
+Track12.flac:71a114f3c5eba7d66a8255b107bccb9d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-24-NTE.flacf\bd2001-08-24-Las Vegas-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:59.10       42183164 B   ---   --   ---xx   flac  0.5466  1 Audio Track.flac
+     6:20.30       67102604 B   ---   --   ---xx   flac  0.6081  2 Audio Track.flac
+     5:41.45       60258284 B   ---   --   ---xx   flac  0.6405  3 Audio Track.flac
+     5:51.37       62003468 B   ---   --   ---xx   flac  0.5919  4 Audio Track.flac
+     8:09.52       86381948 B   ---   --   ---xx   flac  0.6167  5 Audio Track.flac
+     5:35.40       59188124 B   ---   --   ---xx   flac  0.6094  6 Audio Track.flac
+     4:30.53       47752700 B   ---   --   ---xx   flac  0.6324  7 Audio Track.flac
+     4:59.30       52814204 B   ---   --   ---xx   flac  0.6202  8 Audio Track.flac
+     7:02.24       74497292 B   ---   --   ---xx   flac  0.6330  9 Audio Track.flac
+    52:10.21      552181788 B                            0.6132  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-24-NTE.flacf\bd2001-08-24-Las Vegas-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.12       44481068 B   ---   --   ---xx   flac  0.5962  Track01.flac
+     5:38.14       59656172 B   ---   --   ---xx   flac  0.5629  Track02.flac
+     7:15.46       76842236 B   ---   --   ---xx   flac  0.5398  Track03.flac
+     3:20.68       35439980 B   ---   --   ---xx   flac  0.5284  Track04.flac
+     2:55.17       30910028 B   ---   --   ---xx   flac  0.5664  Track05.flac
+     3:53.50       41218844 B   ---   --   ---xx   flac  0.5523  Track06.flac
+     5:08.15       54366524 B   ---   --   ---xx   flac  0.5861  Track07.flac
+     5:51.59       62055212 B   ---   --   ---xx   flac  0.5943  Track08.flac
+     5:13.14       55246172 B   ---   --   ---xx   flac  0.5512  Track09.flac
+     6:06.23       64616540 B   ---   --   ---xx   flac  0.5617  Track10.flac
+     4:37.58       48999260 B   ---   --   ---xx   flac  0.5440  Track11.flac
+     5:25.26       57391196 B   ---   --   ---xx   flac  0.5847  Track12.flac
+    59:38.27      631223232 B                            0.5644  (12 files)
+=================== 
+=================== 
+=================== 

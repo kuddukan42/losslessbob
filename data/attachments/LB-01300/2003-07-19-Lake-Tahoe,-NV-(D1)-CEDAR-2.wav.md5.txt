@@ -1,0 +1,26 @@
+; Using hkSFV on 11.05.2003 at 17:44:50
+; http://www.big-o-software.com
+;
+;/----
+;      4057244 17:27.52 2003-11-05 100-intro.wav
+;     48902828 17:28.46 2003-11-05 101-Tombstone Blues.wav
+;     50419868 17:29.36 2003-11-05 102-Lay, Lady, Lay.wav
+;     55114460 17:30.28 2003-11-05 103-Tweedle Dee & Tweedle Dum.wav
+;     67610636 17:31.28 2003-11-05 104-Don't Think Twice, It's All Right.wav
+;     66909740 17:32.22 2003-11-05 105-Things Have Changed.wav
+;     62727884 17:33.12 2003-11-05 106-Watching The River Flow.wav
+;     81247532 17:34.12 2003-11-05 107-It's Alright, Ma (I'm Only Bleeding).wav
+;     51087836 17:34.50 2003-11-05 108-Make You Feel My Love.wav
+;     65964236 17:35.34 2003-11-05 109-A Hard Rain's A-Gonna Fall.wav
+;\----
+;
+e38cc50bcb69d873fe96f9d0314a5137 *100-intro.wav
+b384167cbbb8878ad56e8dc9142e9150 *101-Tombstone Blues.wav
+a2721e5cfa8c9fed4f458fa874162421 *102-Lay, Lady, Lay.wav
+662e40100cbaada2b0d28fd5afc4a82d *103-Tweedle Dee & Tweedle Dum.wav
+caf0bad53408328a65db000dd3374243 *104-Don't Think Twice, It's All Right.wav
+833cbf4dace189b4c364e38c82e7a489 *105-Things Have Changed.wav
+92c18f0f6e0be75151564db232a83461 *106-Watching The River Flow.wav
+06633258ae271951c22a6d7523bd488f *107-It's Alright, Ma (I'm Only Bleeding).wav
+8054509440d44ef7c25c35b3c9122eaf *108-Make You Feel My Love.wav
+bd8c48c65e4d193f5edcdce2798a1a44 *109-A Hard Rain's A-Gonna Fall.wav

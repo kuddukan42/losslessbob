@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== md5 for: bd03-07-16-e.flacf
+===================
+===================
+===================
+1bc2e4e53030eb060905a9a1b9eb82ec *cd1\01 Bob Dylan - Intro.flac
+121b4181fe30989bd886464e1e3f7522 *cd1\02 Bob Dylan - Maggie's Farm.flac
+634eb42651d37590686dac00c0381dc2 *cd1\03 Bob Dylan - Tonight I'll Be Staying Here With You.flac
+910e1578532b368de13f932c484c9a59 *cd1\04 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
+0a5532a6a67a6b264c2e6065f26bda3f *cd1\05 Bob Dylan - Just Like A Woman.flac
+520d73bacf3ac38e9cbf72af17733391 *cd1\06 Bob Dylan - Things Have Changed.flac
+326615ef0df8391231774ce9fb6f528d *cd1\07 Bob Dylan - Watching The River Flow.flac
+73bbd6f9e7a77231e66f79d229d8f36e *cd1\08 Bob Dylan - It's Alright, Ma (I'm Only Bleeding).flac
+c59e958f3129d56cbe10d3815facbbe4 *cd1\09 Bob Dylan - It Ain't Me, Babe.flac
+32ac0c9e0cf1f5b05a7099bac92f75ee *cd1\Big Sky, 2003-07-16 [Disc 1].log
+dae88bb9c305557bff9b8b74c5b37360 *cd1\fingerprint.ffp.txt
+60e6abb074c7fdb810b83b781dd2c546 *cd1\md5sum.md5
+28edcd4e9f4a74e19db3074ecc616f35 *cd2\01 Bob Dylan - Dignity.flac
+81d49a3c4198361450abb8c7dd6c5a1f *cd2\02 Bob Dylan - Drifter's Escape.flac
+93839da378abc50d9c1a27206d669f22 *cd2\03 Bob Dylan - Make You Feel My Love.flac
+a135276feaa93ef04b668d721f8b991f *cd2\04 Bob Dylan - Honest With Me.flac
+7f7700bff34671908e24eace07d92702 *cd2\05 Bob Dylan - Bye And Bye.flac
+56868f1a4e901db1169c144261aeaa87 *cd2\06 Bob Dylan - Summer Days.flac
+3bc6bd9937de44c18dbc4c09a991adf5 *cd2\07 Bob Dylan - Cheering.flac
+d9056a64eed177aa10dc58bee9b0103b *cd2\08 Bob Dylan - Like A Rolling Stone.flac
+df516901926b78efa25a644852f6dace *cd2\09 Bob Dylan - All Along The Watchtower.flac
+e349a6422242d5edd883fd8c8e65beca *cd2\Big Sky, 2003-07-16 [Disc 2].log
+48be7f5cc26fd8b00a813da13e38682a *cd2\fingerprint.ffp.txt
+4d82910ca3e2d1db982b6959888052a6 *cd2\md5sum.md5
+d54998df0e5f9a2f29dbdc576de70c9a *infos.txt
+a0c53931ee202d96d9f0bd7242d0830c *notes.txt
+f926789c0d001d12f3a1e84ec809b0dc *shntool.txt
+===================
+===================
+===================
+=== ffp for: bd03-07-16-e.flacf
+===================
+===================
+===================
+cd1\01 Bob Dylan - Intro.flac:c6f53d68d104bf0c1aa1d7234117429d
+cd1\02 Bob Dylan - Maggie's Farm.flac:0e118cdfb08aa43e7e94595bc11e2726
+cd1\03 Bob Dylan - Tonight I'll Be Staying Here With You.flac:a50b30bcee75eeeece7474ec6f44c51a
+cd1\04 Bob Dylan - Tweedle Dee & Tweedle Dum.flac:a29e3d33904a62ea84e77acfdccc10a3
+cd1\05 Bob Dylan - Just Like A Woman.flac:06c84a3a67d95f2b285b4b05856d0249
+cd1\06 Bob Dylan - Things Have Changed.flac:78247510e31ace9227b5c386008e3b76
+cd1\07 Bob Dylan - Watching The River Flow.flac:0e45b2f562a2f5e653d5436acbeb1612
+cd1\08 Bob Dylan - It's Alright, Ma (I'm Only Bleeding).flac:1486407245e2a635745d6d2a702a297e
+cd1\09 Bob Dylan - It Ain't Me, Babe.flac:b531d6bf216ad5a1b43bfb99b565dbae
+cd2\01 Bob Dylan - Dignity.flac:af0136630eb25b3f8c72c84050c5b918
+cd2\02 Bob Dylan - Drifter's Escape.flac:cf1d6cd6ec0f8f767d70f4918e628f69
+cd2\03 Bob Dylan - Make You Feel My Love.flac:253b6e1e3cc1d9808f00c9ec38211ddc
+cd2\04 Bob Dylan - Honest With Me.flac:90372fb8b9920a67659b7d48bf62a7bf
+cd2\05 Bob Dylan - Bye And Bye.flac:95a99abf580788276452a1e249dd05ee
+cd2\06 Bob Dylan - Summer Days.flac:c27e54a7752bc322871693a5a2818aae
+cd2\07 Bob Dylan - Cheering.flac:c86cd814925a9c3864259265e55f0365
+cd2\08 Bob Dylan - Like A Rolling Stone.flac:5615cc662a5cada5312b6f28b83fbc5a
+cd2\09 Bob Dylan - All Along The Watchtower.flac:d1e9629589eb62b3bb452252cfa932ed
+===================
+===================
+===================
+=== shntool len for: bd03-07-16-e.flacf\cd1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.33        6604460 B   ---   --   ---xx   flac  0.4347  01 Bob Dylan - Intro.flac
+     4:44.57       50231708 B   ---   --   ---xx   flac  0.5443  02 Bob Dylan - Maggie's Farm.flac
+     4:13.60       44770364 B   ---   --   ---xx   flac  0.4857  03 Bob Dylan - Tonight I'll Be Staying Here With You.flac
+     5:10.24       54740492 B   ---   --   ---xx   flac  0.4966  04 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
+     7:29.48       79316540 B   ---   --   ---xx   flac  0.5024  05 Bob Dylan - Just Like A Woman.flac
+     6:25.15       67949324 B   ---   --   ---xx   flac  0.5225  06 Bob Dylan - Things Have Changed.flac
+     5:21.36       56709116 B   ---   --   ---xx   flac  0.5332  07 Bob Dylan - Watching The River Flow.flac
+     7:24.18       78363980 B   ---   --   ---xx   flac  0.5132  08 Bob Dylan - It's Alright, Ma (I'm Only Bleeding).flac
+     6:57.72       73728188 B   ---   --   ---xx   flac  0.4577  09 Bob Dylan - It Ain't Me, Babe.flac
+    48:24.63      512414172 B                            0.5048  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd03-07-16-e.flacf\cd2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.30       59693804 B   ---   --   ---xx   flac  0.5236  01 Bob Dylan - Dignity.flac
+     4:42.72       49914188 B   ---   --   ---xx   flac  0.5490  02 Bob Dylan - Drifter's Escape.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.4477  03 Bob Dylan - Make You Feel My Love.flac
+     6:34.42       69600428 B   ---   --   ---xx   flac  0.5376  04 Bob Dylan - Honest With Me.flac
+     5:59.21       63377036 B   ---   --   ---xx   flac  0.4111  05 Bob Dylan - Bye And Bye.flac
+     8:20.57       88334108 B   ---   --   ---xx   flac  0.5229  06 Bob Dylan - Summer Days.flac
+     3:27.00       36514844 B   ---   --   ---xx   flac  0.4398  07 Bob Dylan - Cheering.flac
+     7:02.21       74490236 B   ---   --   ---xx   flac  0.5291  08 Bob Dylan - Like A Rolling Stone.flac
+     6:39.45       70489484 B   ---   --   ---xx   flac  0.5488  09 Bob Dylan - All Along The Watchtower.flac
+    53:21.63      564804972 B                            0.5063  (9 files)
+===================
+===================
+===================

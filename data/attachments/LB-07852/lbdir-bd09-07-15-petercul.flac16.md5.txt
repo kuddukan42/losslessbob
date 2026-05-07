@@ -1,0 +1,24 @@
+b6380a9cb85c149a70f74ef93f17d38a  01-Intro.flac
+aaa9541505591468abf596d2bed4fed8  02-Rainy Day Women.flac
+9a9b5b925e69081d125ef269e8959eb8  03-Stuck Inside of Mobile.flac
+411caf057658807eb129bc7926d0ba5c  04-The Levees Gonna Break.flac
+bb366b01bd9a15037b751d9c0c5dcd14  05-Trying To Get To Heaven.flac
+d7a2d943a1431cb6122512f50f64878a  06-High Water.flac
+5886f04f0e568ef4f8aa8e61f5be57af  07-I Feel A Change Coming On.flac
+f74aaccb8c2ceea5d78a65863b2ade73  08-Tweedle Dee & Tweedle Dum.flac
+a050e8a060472298da2e2ee938036b7a  09-When The Deal Goes Down.flac
+6dfed86c9ae257db532dd53d0a6a220f  10-Highway 61.flac
+3d425d91caf486ce0e2c3cb87a5202ca  11-Ballad of A Thin Man.flac
+4d70de754af4a487ff0dfab76624e684  12-Thunder on the Mountain.flac
+6ada7ec271cced7f8a451244d8c3ce14  13-Like a Rolling Stone.flac
+45838148b1f047e2823796a0c29cfeb5  14-Jolene.flac
+e8f255d32a9af4919d775a5657e9cdd4  15-Watchtower.flac
+44d9f3b58602b8a4dc6345bc0d7e7e47  2009-0715-NewBritain-Dylan.txt
+7a54fe005b59abba3c5c80111704f718  bd2009-07-15-newBritain.alt-BACK.jpg
+3da382d2dc326896688629fbf6834d55  bd2009-07-15-newBritain.alt-FRONT.jpg
+1976e4b2db6505e4ef65eef4158253c9  bd2009-07-15-newbritain.petercul.flac16.md5
+9fb3b943512cc7fce71d1a2f74687769  bd2009-07-15.petercul.flac16.encoding-log.txt
+a88ed1b29b59d1945d91679c260ab3df  bd2009-07-15.petercul.flac16.info.txt
+6dff7ca19c6d292cdc3ae2c523b727a8  bd20090715-NewBritain.ffp.txt
+16fb1d0727ef3432a1f7c195d50d0f4b  New Britain_2009_petercul_B.jpg
+51d7f3ea5b9897d324580a9cc7fe3f4f  New Britain_2009_petercul_F.jpg

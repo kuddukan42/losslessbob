@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-10-25-schubert2.flacf 
+=================== 
+=================== 
+=================== 
+e52e034dc5faea31cb80ce030108ac6e  bd05-10-25-schubert2-LB-3404.txt
+731fdc9bfb474238b48e752a1e7fef42  bd05-10-25d1t01.flac
+9459f6d93077f2f6fc4dd04f124dc5d1  bd05-10-25d1t02.flac
+50eeae86b9184dd1837580de2509f6d3  bd05-10-25d1t03.flac
+06303b8ca979c27272388afae07bd534  bd05-10-25d1t04.flac
+a093800b56346c2bd13e5aed3766bd60  bd05-10-25d1t05.flac
+9b66e9323023a9fb80bccd0072c2a6f3  bd05-10-25d1t06.flac
+a26909c6278b7f39a46aec83a93b5edc  bd05-10-25d1t07.flac
+e96b109526e70b91224716307783d871  bd05-10-25d1t08.flac
+e6ab60251a78951f0d93c4cee50238af  bd05-10-25d1t09.flac
+5768f6cbdc1c5dd65a5b6fb703257e57  bd05-10-25d1t10.flac
+4430c1ca52b069afdea4e06a8a3f2593  bd05-10-25d2t01.flac
+987f60b84051b8d92ed65bd08b6ab61c  bd05-10-25d2t02.flac
+ba16a5710a2553e37627407091ad90be  bd05-10-25d2t03.flac
+04d8f3ffa835552b23375566317c2fb2  bd05-10-25d2t04.flac
+3f37ee28122df9054c4fcc380de443e2  bd05-10-25d2t05.flac
+149323b475a726464a969504276394d2  bd05-10-25d2t06.flac
+fa5392f9cdaf3d39c53e3e987082b8c0  bd05-10-25d2t07.flac
+5bf373699793fd1d36aaf856b1feb724  dylan 2005-10-25 berlin (schubert-power-version).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-10-25-schubert2.flacf 
+=================== 
+=================== 
+=================== 
+bd05-10-25d1t01.flac:0c4a22b1bc59449b24d5ee52e42ea23f
+bd05-10-25d1t02.flac:d4e87db076c24e653cd271b20daba379
+bd05-10-25d1t03.flac:2c2e4d2965176af1f8ef7869b248cd54
+bd05-10-25d1t04.flac:09ef62e5d178f972ad871a9dd52af8bf
+bd05-10-25d1t05.flac:e50544e0cd4c798e1e8657956174331c
+bd05-10-25d1t06.flac:ac8fbde206f5a622d0aed4147c5e17f6
+bd05-10-25d1t07.flac:d1c6c9b2177fb480e38f39079ce9d8ff
+bd05-10-25d1t08.flac:f914e19fa2afe35a1af20f9f18c43e46
+bd05-10-25d1t09.flac:6d83830023b6c519067fd36bc70dc725
+bd05-10-25d1t10.flac:e63311de34586de7d9b08b5d19688c6f
+bd05-10-25d2t01.flac:da4694d86803a581c743ba2664f08679
+bd05-10-25d2t02.flac:d1058bad939150ebc5bc5d9fa076192b
+bd05-10-25d2t03.flac:8b3bfcf38da30dbb2c93fdd56a52f4a4
+bd05-10-25d2t04.flac:4913c210b3cb47654587d84146e751d5
+bd05-10-25d2t05.flac:6f4a71ff74d36f54099c490e3f49270a
+bd05-10-25d2t06.flac:c29bab15b8057b13c3b0a5a56c3c72a4
+bd05-10-25d2t07.flac:7f32c9a7373fc2a3c54da194d724c5f4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-10-25-schubert2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.36       10845116 B   ---   --   ---xx   flac  0.4989  bd05-10-25d1t01.flac
+     4:50.16       51193676 B   ---   --   ---xx   flac  0.6925  bd05-10-25d1t02.flac
+     6:01.33       63758060 B   ---   --   ---xx   flac  0.6642  bd05-10-25d1t03.flac
+     6:14.37       66060668 B   ---   --   ---xx   flac  0.6807  bd05-10-25d1t04.flac
+     5:46.26       61095596 B   ---   --   ---xx   flac  0.6417  bd05-10-25d1t05.flac
+     7:32.10       79756364 B   ---   --   ---xx   flac  0.6895  bd05-10-25d1t06.flac
+     6:02.33       63934460 B   ---   --   ---xx   flac  0.6474  bd05-10-25d1t07.flac
+     5:50.14       61772972 B   ---   --   ---xx   flac  0.6750  bd05-10-25d1t08.flac
+     7:56.25       84025244 B   ---   --   ---xx   flac  0.6100  bd05-10-25d1t09.flac
+     5:45.42       60956828 B   ---   --   ---xx   flac  0.6159  bd05-10-25d1t10.flac
+     6:36.20       69901484 B   ---   --   ---xx   flac  0.6022  bd05-10-25d2t01.flac
+     6:34.38       69591020 B   ---   --   ---xx   flac  0.6778  bd05-10-25d2t02.flac
+     7:45.58       82162460 B   ---   --   ---xx   flac  0.5591  bd05-10-25d2t03.flac
+     5:41.55       60281804 B   ---   --   ---xx   flac  0.6593  bd05-10-25d2t04.flac
+    12:02.38      127450220 B   ---   --   ---xx   flac  0.6473  bd05-10-25d2t05.flac
+     7:36.73       80610140 B   ---   --   ---xx   flac  0.6688  bd05-10-25d2t06.flac
+     7:25.69       78660332 B   ---   --   ---xx   flac  0.6504  bd05-10-25d2t07.flac
+   110:44.23     1172056444 B                            0.6457  (17 files)
+=================== 
+=================== 
+=================== 

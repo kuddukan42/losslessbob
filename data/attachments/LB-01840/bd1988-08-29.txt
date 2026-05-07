@@ -1,0 +1,52 @@
+Bob Dylan
+Exhibition Stadium Grandstand
+Canadian National Exhibition
+Toronto, Ontario, Canada
+29 August 1988
+
+Musicians: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Kenny Aaronson (bass), Christopher Parker (drums)
+Source: Aud
+Lineage: CD-R > EAC (secure mode) > CoolEdit Pro > CD Wave > FLAC Frontend > .flac
+Taped by: ?
+Transfered by: ?
+Sound Quality: B > B+
+Sound Processing: minor bass reduction/treble boost; minor noise reduction; channels balanced; normalized
+File Size: 482 Megs .flac
+
+Notes: mild bass distortion t01>t02 right channel; t01 cut at start; t03 01:24 > 02:22 mono on account of flawed left channel; t09 >t11 have a "treble wave" running through them, where the highs go up & down (somewhat annoying, but still highly listenable); t10 cut at start
+
+1. Subterranean Homesick Blues
+2. Absolutely Sweet Marie
+3. Masters Of War
+4. Simple Twist Of Fate
+5. Shelter From The Storm
+6. Highway 61 Revisited
+7. Girl From The North Country
+8. Don't Think Twice, It's All Right
+9. One Too Many Mornings
+10. Barbara Allen (trad.)
+11. I Shall Be Released
+12. Silvio (Bob Dylan & Robert Hunter)
+13. Like A Rolling Stone
+14. It Ain't Me, Babe
+15. All Along The Watchtower
+16. Knockin' On Heaven's Door
+
+.flac fp
+
+bd1988-08-29t01.flac:1911b10a4c9668e64215ff399b969024
+bd1988-08-29t02.flac:4830d91564641f997261def2b563e415
+bd1988-08-29t03.flac:d1c8f42340e962da8e70fac0d5d89f14
+bd1988-08-29t04.flac:68d858aa343afdeb2c59d0554e4fba49
+bd1988-08-29t05.flac:94872c7e0cd0695d80b644b7dd48ca7b
+bd1988-08-29t06.flac:666f8e2a40c18cec9e656945c66aa190
+bd1988-08-29t07.flac:6b26dd8e7cd131469f9c9045ecc4cca1
+bd1988-08-29t08.flac:6d3d7710dd950d6d1062ec735cc946d8
+bd1988-08-29t09.flac:a2a574f8fc1d4d87a7aca45544f22b54
+bd1988-08-29t10.flac:a495a2d87e450356a4635d69f7e1eeac
+bd1988-08-29t11.flac:3de7370bdaa5f636831e124052f62244
+bd1988-08-29t12.flac:bca940b3b859d7c8d4d1b307f89df788
+bd1988-08-29t13.flac:2569f3c9c8a8a773767cd1d61807081d
+bd1988-08-29t14.flac:7e86a6dc8108258db906a46f833f4924
+bd1988-08-29t15.flac:74eb906e29b7738cadb5adfb0d23efb5
+bd1988-08-29t16.flac:bd3025030e3a4400597ca5d20303c3bf

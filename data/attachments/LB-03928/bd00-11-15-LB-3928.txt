@@ -1,0 +1,14 @@
+Bob Dylan, 11/15/00, Salisbury, Maryland, Wicomico County Civic Center, 2CDR
+
+LB-3928, (72min+42min), Trade CDR > EAC (Secure) > WAV > FLAC (Level 8), d1t1 starts out ragged and dirty w/ all sorts of problems, sounds like a loose connection in the recording rig; d1t2 things begin to settle down a bit; d1t3@2:50 big drop; d1t4@1:05 glitch; d1t5 sound improves dramatically; d1t5@0:03 CEDAR-type fingerprint "... this is like the worst audience I've ever seen". I get the disinct impression that the first 4 tracks are from a different (inferior) source to the remainder. Some other minor glitches here and there. Apart from the first 4 tracks sound is very good., Listening to this gives me some appreciation for what tapers must go through, they are awesome and deserving of high praise. Judging by the way this guy hums a tune it's the same taper who did the 2000-11-06 Pittsburg show (#106780).; bittorrent download 08/06;on d1t1-3 and first 15 seconds of d1t4 there is nothing above 14k except a little noise and a hiss band; quality is good sound [C]; the rest of the show seems from a different recording and is excellent sound [A]; background talking d1t8, d1t10; overall very good to excellent sound [B+]
+
+digi-pop d1t1 0:10, lots of analog drops d1t1 and a fe more through d1t3, square wav static noise d1t4 1:06; drop/pop d1t8 0:32; static d2t7 1:21 on right channel
+
+CD1
+71:08, 01. Duncan And Brady (acoustic), 02. Chimes Of Freedom (acoustic) (Larry on bouzouki), 03. It's Alright, Ma (I'm Only Bleeding) (acoustic), 04. Mama, You Been On My Mind (acoustic), 05. Tangled Up In Blue (acoustic), 06. Searching For A Soldier's Grave (acoustic) (Larry on mandolin), 07. Country Pie, 08. Positively 4th Street, 09. Stuck Inside Of Mobile With The Memphis Blues Again, 10. Just Like A Woman, 11. Drifter's Escape (Bob on harp), 12. Leopard-Skin Pill-Box Hat, 
+
+CD2
+41:37, (encore), 13. Things Have Changed, 14. Like A Rolling Stone, 15. If Dogs Run Free (acoustic) (Larry and Charlie on electric guitars), 16. All Along The Watchtower, 17. Don't Think Twice, It's All Right (acoustic) (Bob on harp), 18. Highway 61 Revisited, 19. Blowin' In The Wind (acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== BobDylan-JonesBeach-1988-06-30-SBD.ffp
+===================
+===================
+===================
+BobDylan-JonesBeach-1988-06-30d1 - Track 01.flac:d8533f857fba04faffa62c66ec94ce9b
+BobDylan-JonesBeach-1988-06-30d1 - Track 02.flac:15893a026bb56427d26d22982c20726e
+BobDylan-JonesBeach-1988-06-30d1 - Track 03.flac:9e981af5e79116c3b8aa951993d4cea3
+BobDylan-JonesBeach-1988-06-30d1 - Track 04.flac:584a0c8a374ebc099a9875c36d9334cc
+BobDylan-JonesBeach-1988-06-30d1 - Track 05.flac:562152c67d2942557140431782b93423
+BobDylan-JonesBeach-1988-06-30d1 - Track 06.flac:bdd5f2881a644368907b1ddbe4e02e9f
+BobDylan-JonesBeach-1988-06-30d1 - Track 07.flac:1d503bd9c1f062208294b47f2b6d1f26
+BobDylan-JonesBeach-1988-06-30d1 - Track 08.flac:867ef8c354b2b68669b08ba41a7cb576
+BobDylan-JonesBeach-1988-06-30d2 - Track 01.flac:21b643bee2112132a8b9c5ad3bf845a0
+BobDylan-JonesBeach-1988-06-30d2 - Track 02.flac:6e03f2d65c14fb2b31f9e1d8fb9563ee
+BobDylan-JonesBeach-1988-06-30d2 - Track 03.flac:7d192cd69de919a003e4b73ad5ab475b
+BobDylan-JonesBeach-1988-06-30d2 - Track 04.flac:bbfa6ff26a160d9f5563631d8d948272
+BobDylan-JonesBeach-1988-06-30d2 - Track 05.flac:6e26bc2db41c675328ed800e5e739c05
+BobDylan-JonesBeach-1988-06-30d2 - Track 06.flac:f7fe0996ae448887ccdb97d082eb5f1b
+BobDylan-JonesBeach-1988-06-30d2 - Track 07.flac:2387f860ca01ee7a4cb796c87d6ab3b1
+BobDylan-JonesBeach-1988-06-30d2 - Track 08.flac:a3fda9ac8379cd5f43bf9b3cf73abbf4
+BobDylan-JonesBeach-1988-06-30d2 - Track 09.flac:241d6ba1520f10eb8f8a58a1087d49fe
+===================
+===================
+===================
+=== BobDylan-JonesBeach-1988-06-30-SBD.txt
+===================
+===================
+===================
+BobDylan-JonesBeach-1988-06-30d1 - Track 01.flac:d8533f857fba04faffa62c66ec94ce9b
+BobDylan-JonesBeach-1988-06-30d1 - Track 02.flac:15893a026bb56427d26d22982c20726e
+BobDylan-JonesBeach-1988-06-30d1 - Track 03.flac:9e981af5e79116c3b8aa951993d4cea3
+BobDylan-JonesBeach-1988-06-30d1 - Track 04.flac:584a0c8a374ebc099a9875c36d9334cc
+BobDylan-JonesBeach-1988-06-30d1 - Track 05.flac:562152c67d2942557140431782b93423
+BobDylan-JonesBeach-1988-06-30d1 - Track 06.flac:bdd5f2881a644368907b1ddbe4e02e9f
+BobDylan-JonesBeach-1988-06-30d1 - Track 07.flac:1d503bd9c1f062208294b47f2b6d1f26
+BobDylan-JonesBeach-1988-06-30d1 - Track 08.flac:867ef8c354b2b68669b08ba41a7cb576
+BobDylan-JonesBeach-1988-06-30d2 - Track 01.flac:21b643bee2112132a8b9c5ad3bf845a0
+BobDylan-JonesBeach-1988-06-30d2 - Track 02.flac:6e03f2d65c14fb2b31f9e1d8fb9563ee
+BobDylan-JonesBeach-1988-06-30d2 - Track 03.flac:7d192cd69de919a003e4b73ad5ab475b
+BobDylan-JonesBeach-1988-06-30d2 - Track 04.flac:bbfa6ff26a160d9f5563631d8d948272
+BobDylan-JonesBeach-1988-06-30d2 - Track 05.flac:6e26bc2db41c675328ed800e5e739c05
+BobDylan-JonesBeach-1988-06-30d2 - Track 06.flac:f7fe0996ae448887ccdb97d082eb5f1b
+BobDylan-JonesBeach-1988-06-30d2 - Track 07.flac:2387f860ca01ee7a4cb796c87d6ab3b1
+BobDylan-JonesBeach-1988-06-30d2 - Track 08.flac:a3fda9ac8379cd5f43bf9b3cf73abbf4
+BobDylan-JonesBeach-1988-06-30d2 - Track 09.flac:241d6ba1520f10eb8f8a58a1087d49fe
+===================
+===================
+===================
+=== BobDylan-JonesBeach-1988-06-30-SBDinfo.txt
+===================
+===================
+===================
+JUN 30, 1988
+Wantagh, NY
+Jones Beach Theater
+SBD
+
+CD's Ripped to 16 bit WAVE w/EAC > Encoded to FLAC (level 6) w/TLH
+
+SET LIST:
+*****Disc One*****
+1. Subterranean Homesick Blues
+2. Just Like Tom Thumbs Blues
+3. Youre A Big Girl Now
+4. Tangled Up In Blue
+5. Masters Of War
+6. I Shall Be Released
+7. Stuck Inside Of Mobile With The Memphis Blues Again
+8. Lakes Of Pontchartrain
+*****Disc Two*****
+1. A Hard Rains A-Gonna Fall
+2. Eileen Aroon
+3. Boots Of Spanish Leather
+4. Silvio
+5. Gates Of Eden
+6. Like A Rolling Stone
+7. The Times They Are A-Changin
+8. All Along The Watchtower
+9. Maggies Farm
+===================
+===================
+===================

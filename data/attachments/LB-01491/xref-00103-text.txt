@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== 2000-09-17 Glasgow, Scotland.txt
+===================
+===================
+===================
+﻿Bob Dylan
+2000-09-17 Glasgow, Scotland
+
+Disk 1
+
+1.Announcement
+2.Somebody Touched Me     (acoustic)
+3.The Times They Are A-Changin'     (acoustic)
+4.It's Alright, Ma (I'm Only Bleeding)     (acoustic)
+5.It's All Over Now, Baby Blue     (acoustic)
+6.Tangled Up In Blue     (acoustic) (Bob on harp)
+7.This World Can't Stand Long     (acoustic)
+8.Country Pie
+9.Just Like A Woman
+10.Most Likely You Go Your Way (And I'll Go Mine)
+11.Highlands
+
+Disk 2
+
+1.Drifter's Escape     (acoustic) (Bob on harp)
+2.Rainy Day Women #12 & 35
+  (encore)
+3.Things Have Changed
+4.Like A Rolling Stone
+5.It Ain't Me, Babe     (acoustic)
+6.Highway 61 Revisited
+7.Blowin' In The Wind     (acoustic)
+8.To Be Alone With You
+9.Forever Young     (acoustic)
+		   
+Musicians: 
+Bob Dylan (electric & acoustic guitar; voc; harp) 
+David Kemper (drums) 
+Larry Campbell (electric & acoustic guitar; pedal steel guitar; 
+electric slide guitar; fiddle; bouzouki, mandolin, voc) 
+Tony Garnier (electric & acoustic bass, standup bass) 
+Charly Sexton (electric & acoustic guitar, voc)	 
+  
+				    
+  
+with additional SoundMastering
+Soundquality: 12+ 
+Technical Info: 
+Neumann SKM140 / Neumann BS48i-2 / SBM1 / Sony TDC-D100
+===================
+===================
+===================
+=== BD 2000-09-17 Glasgow.md5
+===================
+===================
+===================
+e19bcef3660bbe1424f83b7857b9c815 *101 Announcement.flac
+23b7fcac45a7435d549ec03e23d3a533 *102 Somebody Touched Me.flac
+de3ba3c44f382f316b2069ed4adf9f63 *103 The Times They Are A-Changin'.flac
+70351627ecc55e21a2c39552856c3fec *104 It's Alright, Ma (I'm Only Bleeding).flac
+fd9cd6b1f5c15a83138e00043cdf6b91 *105 It's All Over Now, Baby Blue.flac
+af885fea6c10d9304c2f406901f67a40 *106 Tangled Up In Blue.flac
+e03edcbd367ba26e6ef7f1af4a4ca4d7 *107 This World Can't Stand Long.flac
+62946c2f9c318693483ee8436b2c6066 *108 Country Pie.flac
+a2ffe238da7d4f36c5bf874b56ff6e72 *109 Just Like A Woman.flac
+afa58b07e62f410d79c2c7cf0c311106 *110 Most Likely You Go Your Way (And I'll Go Mine).flac
+1b0240734874fc8165a0136c0ab344ea *111 Highlands.flac
+6b775b40d4efb96694dc52201797bf31 *201 Drifter's Escape.flac
+ad3cb646936fda48165ac025a645bd31 *202 Rainy Day Women #12 & 35.flac
+2b9306b49a4b0940e3ed666fe84ffbb5 *203 Things Have Changed .flac
+6e050c52434e4479a2f424a88fee0168 *204 Like A Rolling Stone.flac
+ebc42287cc6bbfdc777c5a0ed5e8fb03 *205 It Ain't Me, Babe.flac
+6abd23202659e7ed77bed718d12c833c *206 Highway 61 Revisited.flac
+1821043e95a0e9fb179679d45d6d3d62 *207 Blowin' In The Wind.flac
+029042d5e4a4b230101c227c2349f08b *208 To Be Alone With You.flac
+2d49d6371d51f8fe842e4382bb3a00fe *209 Forever Young.flac
+===================
+===================
+===================

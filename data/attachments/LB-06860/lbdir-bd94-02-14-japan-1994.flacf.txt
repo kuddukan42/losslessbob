@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-02-14-japan-1994.flacf 
+=================== 
+=================== 
+=================== 
+ae6bd7e6f6d0694aebb7f86f32fa545c  bd94-02-14-japan-1994-d1t01.flac
+def9ab8db88efde6f7a3ee3356b31dad  bd94-02-14-japan-1994-d1t02.flac
+5f533581de6ed8c11bded83965860632  bd94-02-14-japan-1994-d1t03.flac
+74d87208c4e68f9576998e35c11ec209  bd94-02-14-japan-1994-d1t04.flac
+d98a948c356dd0507c1c4677b701e99c  bd94-02-14-japan-1994-d1t05.flac
+beef8cd362e6daa614d360ffb4a40d92  bd94-02-14-japan-1994-d1t06.flac
+65637058bf2abb05f53432057fa1c831  bd94-02-14-japan-1994-d1t07.flac
+339daf059bacad8633080396547b3ff3  bd94-02-14-japan-1994-d1t08.flac
+c4e76d870908e86f7119e453ffa56efe  bd94-02-14-japan-1994-d1t09.flac
+07a1993712c4919400114158776c93b1  bd94-02-14-japan-1994-d1t10.flac
+2146513890fd131878d21606797b6e50  bd94-02-14-japan-1994-d2t01.flac
+61221ceb65934970881ea0d113fe2bcb  bd94-02-14-japan-1994-d2t02.flac
+d04252b24bb7031757047c19fda1751e  bd94-02-14-japan-1994-d2t03.flac
+c373b5f4f951518adc8dfb8935112111  bd94-02-14-japan-1994-d2t04.flac
+718f2f371165ee8644c02fea97a09a94  bd94-02-14-japan-1994-d2t05.flac
+4625ca1c6a2b0fef28dd97436647b786  bd94-02-14-japan-1994-d2t06.flac
+7c542783e083c354fd5ffdc183cd80b4  bd94-02-14-japan-1994-d2t07.flac
+8e4bcd6c66c400fff7a51f28afabc8bf  bd94-02-14-japan-1994-d2t08.flac
+daeaaec51b42ade24df25921d0fb37a0  bd94-02-14-japan-1994-d2t09.flac
+b40a278974735103dfe04ff8af23357e  bd94-02-14-japan-1994.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-02-14-japan-1994.flacf 
+=================== 
+=================== 
+=================== 
+bd94-02-14-japan-1994-d1t01.flac:00aa87c71e9fe72bef3e3daaa8a88ee4
+bd94-02-14-japan-1994-d1t02.flac:ef5310f6bac85527304a8b80aa14b961
+bd94-02-14-japan-1994-d1t03.flac:001b1893c27f6be5be63404b626e764f
+bd94-02-14-japan-1994-d1t04.flac:432c14719c328eed20a29273a5f9b535
+bd94-02-14-japan-1994-d1t05.flac:c540f08a7ce67f23f60336feb30b5c1b
+bd94-02-14-japan-1994-d1t06.flac:ef476a72f8ab40cec10e839ca0ea017b
+bd94-02-14-japan-1994-d1t07.flac:453561b3ecb197448fc98b0b1a41ef1d
+bd94-02-14-japan-1994-d1t08.flac:bb7ff3a47de99334e54f816eaa5c9418
+bd94-02-14-japan-1994-d1t09.flac:099f6b2cb4c010503dfc65ae2ca82306
+bd94-02-14-japan-1994-d1t10.flac:56a1a5e970237069cf9754ec85d77ac4
+bd94-02-14-japan-1994-d2t01.flac:7f0afcea46968d557ad3957477125775
+bd94-02-14-japan-1994-d2t02.flac:eb4e463da7a70cf69fa87bef49641d90
+bd94-02-14-japan-1994-d2t03.flac:09571e9e15e3d802e1a17755061524be
+bd94-02-14-japan-1994-d2t04.flac:6b4fe69fdb07102fff7f03bf56652e38
+bd94-02-14-japan-1994-d2t05.flac:b91161fdbfcdbd94675b26f118850e2b
+bd94-02-14-japan-1994-d2t06.flac:adc777ec8b831c189e47c305773edc39
+bd94-02-14-japan-1994-d2t07.flac:af7496ecedac2348fa35200aec922785
+bd94-02-14-japan-1994-d2t08.flac:f24c525a3b8be25c8865cd22a5d06279
+bd94-02-14-japan-1994-d2t09.flac:96f92c329c2cd6b51dee3e33b90bbc50
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-02-14-japan-1994.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:36.10       91045964 B   ---   --   ---xx   flac  0.5301  bd94-02-14-japan-1994-d1t01.flac
+     6:36.18       69896780 B   ---   --   ---xx   flac  0.5041  bd94-02-14-japan-1994-d1t02.flac
+     5:13.30       55283804 B   ---   --   ---xx   flac  0.5452  bd94-02-14-japan-1994-d1t03.flac
+     8:27.60       89575964 B   ---   --   ---xx   flac  0.5095  bd94-02-14-japan-1994-d1t04.flac
+     9:54.32      104856908 B   ---   --   ---xx   flac  0.5035  bd94-02-14-japan-1994-d1t05.flac
+     6:16.60       66467564 B   ---   --   ---xx   flac  0.4872  bd94-02-14-japan-1994-d1t06.flac
+     4:22.53       46341500 B   ---   --   ---xx   flac  0.4720  bd94-02-14-japan-1994-d1t07.flac
+     7:00.67       74245628 B   ---   --   ---xx   flac  0.4822  bd94-02-14-japan-1994-d1t08.flac
+     7:36.33       80516060 B   ---   --   ---xx   flac  0.4755  bd94-02-14-japan-1994-d1t09.flac
+     8:01.70       85013084 B   ---   --   ---xx   flac  0.5484  bd94-02-14-japan-1994-d1t10.flac
+     6:01.25       63739244 B   ---   --   ---xx   flac  0.5341  bd94-02-14-japan-1994-d2t01.flac
+     8:04.73       85549340 B   ---   --   ---xx   flac  0.5518  bd94-02-14-japan-1994-d2t02.flac
+     9:59.27      105727148 B   ---   --   ---xx   flac  0.5705  bd94-02-14-japan-1994-d2t03.flac
+     8:12.00       86788844 B   ---   --   ---xx   flac  0.5333  bd94-02-14-japan-1994-d2t04.flac
+     9:31.33      100802060 B   ---   --   ---xx   flac  0.5001  bd94-02-14-japan-1994-d2t05.flac
+     7:05.42       75068828 B   ---   --   ---xx   flac  0.5282  bd94-02-14-japan-1994-d2t06.flac
+     7:41.35       81402764 B   ---   --   ---xx   flac  0.5161  bd94-02-14-japan-1994-d2t07.flac
+     6:04.35       64291964 B   ---   --   ---xx   flac  0.5096  bd94-02-14-japan-1994-d2t08.flac
+     6:40.43       70661180 B   ---   --   ---xx   flac  0.4523  bd94-02-14-japan-1994-d2t09.flac
+   141:27.71     1497274628 B                            0.5154  (19 files)
+=================== 
+=================== 
+=================== 

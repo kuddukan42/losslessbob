@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-02-15-Kokura 
+=================== 
+=================== 
+=================== 
+be21b59af2d835460e7a97ef02b92712  bd94-02-15.txt
+91192c3901f6b49241c0f35612255ef9  d1t01.shn
+725e8a6c8ac529f454c99f2087264b79  d1t02.shn
+38c32e2ff888b720f0f4b6c292e5fadb  d1t03.shn
+a758ab34c5d4ed567066d788be08ff27  d1t04.shn
+b65d7a419b2497be0641652ca806b79a  d1t05.shn
+8996e6cf81987ed3907fd3fe4b04d06e  d1t06.shn
+03ff35debd16082a823633245a5bd195  d1t07.shn
+8b189daf942f0c63ba9b05e657fc5dae  d1t08.shn
+9be68fc92f34eaacfcf2f8ae37fc1624  d2t01.shn
+31e9d55eeb7185bcc629bf134de5d838  d2t02.shn
+f2a67ef1c12067c777438ed694dd062f  d2t03.shn
+a6fc2feb53e378f7bfc7c3b9d3c8f63e  d2t04.shn
+0b95654a146701b6c7afce1689bf4787  d2t05.shn
+27f441069b559f2b954fc7aa38bb241f  d2t06.shn
+10e99479118a218586a29250d86920a4  noname.md5
+dd853ea1c5424004329e003fbf1597a4  Setlist.rtf
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-02-15-Kokura 
+=================== 
+=================== 
+=================== 
+1ada8521ef77009899cc5fb0035fd2aa  [shntool]  d1t01.wav
+2f630cdaca47c6d0251f4e36bd39fb77  [shntool]  d1t02.wav
+2676f4656c32202a3162e876db3fbe73  [shntool]  d1t03.wav
+281931e9554fe7976d5f98ff475c7a55  [shntool]  d1t04.wav
+3891654218f6e8a103580f73d56cb5d2  [shntool]  d1t05.wav
+fd513a893c7fb10a54a82382f0712cd9  [shntool]  d1t06.wav
+5d84bdc53a1d0faa6c865b0214e3e216  [shntool]  d1t07.wav
+bf857e0d6dba3ebfebb1141f13ce5898  [shntool]  d1t08.wav
+c4d9c5f556c430098bb195eb0f3bc05c  [shntool]  d2t01.wav
+f4a4b78acdddf55873774f9340a26b05  [shntool]  d2t02.wav
+28cfaf5c6b15e88392d8e5a3a07726f9  [shntool]  d2t03.wav
+648872f86215b572d57d9d94fca6105e  [shntool]  d2t04.wav
+4f56e86824ff68043bf2d1b3f40dece0  [shntool]  d2t05.wav
+ea1c742002fa3ba7fe29a6043750df3d  [shntool]  d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-02-15-Kokura 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:16.22       87546188 B   ---   --   -----    wav  1.0000  d1t01.wav
+     6:22.56       67516556 B   ---   --   -----    wav  1.0000  d1t02.wav
+     5:07.23       54208940 B   ---   --   -----    wav  1.0000  d1t03.wav
+     8:34.22       90721388 B   ---   --   -----    wav  1.0000  d1t04.wav
+    11:02.32      116852108 B   ---   --   -----    wav  1.0000  d1t05.wav
+     6:37.46       70139036 B   ---   --   -----    wav  1.0000  d1t06.wav
+     4:15.65       45134924 B   ---   --   -----    wav  1.0000  d1t07.wav
+     9:18.29       98499452 B   ---   --   -----    wav  1.0000  d1t08.wav
+     7:23.15       78180524 B   ---   --   -----    wav  1.0000  d2t01.wav
+     6:57.71       73725836 B   ---   --   -----    wav  1.0000  d2t02.wav
+     9:06.50       96432044 B   ---   --   -----    wav  1.0000  d2t03.wav
+     9:30.66      100703276 B   ---   --   -----    wav  1.0000  d2t04.wav
+     8:22.14       88585772 B   ---   --   -----    wav  1.0000  d2t05.wav
+     8:36.22       91074188 B   ---   --   -----    wav  1.0000  d2t06.wav
+   109:32.08     1159320232 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

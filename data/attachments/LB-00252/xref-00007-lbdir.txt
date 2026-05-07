@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-07-c.flacf 
+=================== 
+=================== 
+=================== 
+ee493da61ea4420e152c041edd9fff53  1988.06.07 Concord, CA,Concord Pavillon [LB255 derived].shntool_len.txt
+818f4f59d009c76bb0abcf94ec64bcc3  Bob Dylan-1988.06.07 Concord, CA,Concord Pavillon [Unknown].md5
+5a26ffffd63642c0ab5ece441677ab62  DigiFlawFinder-bd88-06-07-c.flacf.wavf.html
+ae28b1ddd41700613936e2c1dbd48e66  info.txt
+725005a66175715a1583ff341ae5df08  Track01.flac
+5987641b930674b85ada7a1718721300  Track02.flac
+e3022bd721692879cd3e3cbe932d9644  Track03.flac
+0563bfda4b57d61442f36d33b869826f  Track04.flac
+6bb8c4a331d14b032989861ab7a72dd9  Track05.flac
+e379e7b4bbedd1ded1470bac437b7234  Track06.flac
+11d412c674fdad7dfd8af0eb6d11fdec  Track07.flac
+aea1cff9755cfa199a56acb403f1ee9c  Track08.flac
+d147f6b9c1230a9fb0b1de53233ccc3c  Track09.flac
+0f09f6ca1482d81ad255993d9de07622  Track10.flac
+e5d0b8918803fc69830b212e0c76d809  Track11.flac
+67cb3940411999c5028aa92d17ebde67  Track12.flac
+c1d570f5a09929b781ad782b78070cde  Track13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-07-c.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:95a9beacb446adf09d0cbbfd0d9a7d58
+Track02.flac:4e801d2fc3e37ffdc32568f65da91686
+Track03.flac:ab5c6469fcd55ff1f48b894ffac3eb1f
+Track04.flac:60b4ab01c78603ad37308aea05a4d71d
+Track05.flac:2d709b652620f94083cc2b612988fa7e
+Track06.flac:a3758c9e4868535bfa060e31e4443d52
+Track07.flac:4f1aec0dc7b0de3ab2f9183f9e5208b6
+Track08.flac:1b4184786504fb7a473e83331666a9cf
+Track09.flac:c8c69c4a3eb571e371a853015f16fe8f
+Track10.flac:0c66c50bf75060372e762cbf9c2855d1
+Track11.flac:2c6d8609a982f8cea170ec36725125fa
+Track12.flac:72db28fb115d1f3d1408a6bb35681df7
+Track13.flac:1d15e808fda6fe62cf9445dfcdfb0982
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-07-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.03       42519500 B   ---   --   ---xx   flac  0.6776  Track01.flac
+     5:38.43       59724380 B   ---   --   ---xx   flac  0.6817  Track02.flac
+     5:28.62       58005068 B   ---   --   ---xx   flac  0.6771  Track03.flac
+     6:01.53       63805100 B   ---   --   ---xx   flac  0.6563  Track04.flac
+     6:13.49       65912492 B   ---   --   ---xx   flac  0.6859  Track05.flac
+     6:11.20       65491484 B   ---   --   ---xx   flac  0.6797  Track06.flac
+     4:50.28       51221900 B   ---   --   ---xx   flac  0.6737  Track07.flac
+     4:51.55       51461804 B   ---   --   ---xx   flac  0.6644  Track08.flac
+     4:26.26       46983596 B   ---   --   ---xx   flac  0.6310  Track09.flac
+     4:51.24       51388892 B   ---   --   ---xx   flac  0.6621  Track10.flac
+     5:32.63       58713020 B   ---   --   ---xx   flac  0.6537  Track11.flac
+     9:25.41       99762476 B   ---   --   ---xx   flac  0.6668  Track12.flac
+     4:54.37       51948668 B   ---   --   ---xx   flac  0.6796  Track13.flac
+    72:27.54      766938380 B                            0.6689  (13 files)
+=================== 
+=================== 
+=================== 

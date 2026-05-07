@@ -1,0 +1,259 @@
+===================
+===================
+===================
+=== 1976-04-18 Lakeland - LK.ffp
+===================
+===================
+===================
+D1\Track01.flac:29475eaa2965ee8d8f9a51ae761b99a8
+D1\Track02.flac:a7947ec0bf4abc81003831ea7ef06222
+D1\Track03.flac:519b49a2b2373f4208d075bdcd14e423
+D1\Track04.flac:2ee655be6255a34d074344d3a66797e3
+D1\Track05.flac:d514ddae39ee7f1f5c13a1e765ea8a86
+D1\Track06.flac:7c55b58043d891c25f9d8501987e5beb
+D1\Track07.flac:451a5a0d9d40c5e5aea12620d2d6cb62
+D1\Track08.flac:a37c057ae327e448e663624c5680eefb
+D1\Track09.flac:80e762f50d15771aa49f40125d66e8d9
+D1\Track10.flac:0b95a4907e49f62cdd6100c3af8c6cab
+D1\Track11.flac:430d8940f6771aa883250983dd9c6e88
+D1\Track12.flac:2135c41435d934012a4a47de0456085f
+D1\Track13.flac:91664180aa6a5dea7ab0ccf2020e6c78
+D1\Track14.flac:e95f1b3e57f000cc3b44c26d2202d177
+D1\Track15.flac:ffabf81498146d5fa35601b3fbd8edad
+D1\Track16.flac:ad419159370374c88e35f12ff8cb574c
+D2\Track01.flac:e2dff275b6824835aa8a93a6cec4be39
+D2\Track02.flac:3e628f4862e3144cdfbcd42d0836c3f3
+D2\Track03.flac:43e17dc4eda6be7cf8b8b686cbd1b0a2
+D2\Track04.flac:8bc2424244e38fe92bbd4f8e691839e2
+D2\Track05.flac:5c32155e7191e900c9f6a2a927b08513
+D2\Track06.flac:2092265a3bc7535b9231fbc51285ac58
+===================
+===================
+===================
+=== 1976-04-18 Lakeland - LK.md5
+===================
+===================
+===================
+c036f097cf7afd99e74f33dbc99a0b3f *D1\D1.md5
+955bd1147a4e0676d13138c02f1d2566 *D1\data-ffp.txt
+9c9debec36ed4a9f8ce1c79209623bb8 *D1\data-sl.txt
+92240a569f3da9fdff527efeef091023 *D1\Track01.flac
+2eef0115c6f005a5e8e2dbe9e684a7a1 *D1\Track02.flac
+1c6e4ac60bc7e09d4897baca0c6b014d *D1\Track03.flac
+56bb61d61fa1cfcc1fc6312ed6f980b1 *D1\Track04.flac
+5cb3d594eecd7687d2fa01f0e0ed15e4 *D1\Track05.flac
+9947bcb861f02a0b5ed2b84256b64953 *D1\Track06.flac
+b9429d412eff5c5776afdeb722ae31ce *D1\Track07.flac
+309c75e312dd7548a8176fc368b7cdfc *D1\Track08.flac
+24c8f2c3c616706cd531cd75f42d1575 *D1\Track09.flac
+e9fc10770ff679ab66ce75a672b44f2c *D1\Track10.flac
+025009169f9021288bcdfbdfac08373b *D1\Track11.flac
+25dd81bfdabafa9fa31cfcbaf8bf74ef *D1\Track12.flac
+21998448cffa7d1af3cfa1cd1dc7928e *D1\Track13.flac
+c463c56dcc0564b1f88f430bbccd1ca1 *D1\Track14.flac
+9d761dcd0df97288bcb32ecdfc140a22 *D1\Track15.flac
+17de9be8f03f3d8fd9c0bcfe8201ab59 *D1\Track16.flac
+dace60ad43fdf7ebba654824ad79091b *D2\D2.md5
+a70d4c70f1b1bbc272cc59e6af3a1184 *D2\data-ffp.txt
+2494e5a19452e7a45b2aa151a9ae85b4 *D2\data-sl.txt
+d83662528c5d14e905db5e1903fc1c57 *D2\Track01.flac
+20d6311c0101ad98f9f2e84675ee8da2 *D2\Track02.flac
+c082fd133f2750a91783f935644baf16 *D2\Track03.flac
+b7cb69c2e6208692191db6adbbb311c4 *D2\Track04.flac
+2c65d91c510acb2c2b394762d8f9eb50 *D2\Track05.flac
+4c84fa01235a6e34ce3d442fbd3b4d5a *D2\Track06.flac
+===================
+===================
+===================
+=== Notes.txt
+===================
+===================
+===================
+Bob Dylan, 4/18/76, Lakeland, FL, 2CDR
+
+CD1
+1 Visions Of Johanna, 
+2 If You See Her, Say Hello, 
+3 Vincent van Gogh, 
+4 Weary Blues From Waitin'(Hank Williams) 
+5 I'll Be Your Baby Tonight, 
+6 Maggie's Farm, 
+7 One Too Many Mornings, 
+8 Seven Days, 
+9 Railroad Boy, 
+10 Wild Mountain Thyme, 
+11 Blowin' In The Wind, 
+12 I Pity The Poor Immigrant, 
+13 Shelter From The Storm, 
+14 I Threw It All Away, 
+15 Just Like Tom Thumb's Blues, 
+16 Mozambique, 
+
+CD2
+1 Going, Going, Gone, 
+2 Lay Lady Lay, 
+3 Silver Mantis,  
+4 Idiot Wind, 
+5 Knockin' On Heaven's Door, 
+6 Gotta Travel On
+
+Boot un1976titled > EAC > Flac
+===================
+===================
+===================
+=== original_files.txt
+===================
+===================
+===================
+Filename<tab>Filesize<tab>md5
+Top Folder is  Lakeland 18 April 76
+
+FOLDER  Lakeland 18 April 76
+Notes.txt	636	bf45323a8c3a764260d33ab729c42caf
+
+FOLDER  Lakeland 18 April 76\D1
+D1.md5	768	c036f097cf7afd99e74f33dbc99a0b3f
+Track01.flac	45628619	92240a569f3da9fdff527efeef091023
+Track02.flac	23902428	2eef0115c6f005a5e8e2dbe9e684a7a1
+Track03.flac	17629116	1c6e4ac60bc7e09d4897baca0c6b014d
+Track04.flac	22791763	56bb61d61fa1cfcc1fc6312ed6f980b1
+Track05.flac	26184009	5cb3d594eecd7687d2fa01f0e0ed15e4
+Track06.flac	25984002	9947bcb861f02a0b5ed2b84256b64953
+Track07.flac	20393170	b9429d412eff5c5776afdeb722ae31ce
+Track08.flac	24035773	309c75e312dd7548a8176fc368b7cdfc
+Track09.flac	11493128	24c8f2c3c616706cd531cd75f42d1575
+Track10.flac	16206033	e9fc10770ff679ab66ce75a672b44f2c
+Track11.flac	17343178	025009169f9021288bcdfbdfac08373b
+Track12.flac	23759624	25dd81bfdabafa9fa31cfcbaf8bf74ef
+Track13.flac	31885952	21998448cffa7d1af3cfa1cd1dc7928e
+Track14.flac	18160058	c463c56dcc0564b1f88f430bbccd1ca1
+Track15.flac	29219709	9d761dcd0df97288bcb32ecdfc140a22
+Track16.flac	14891259	17de9be8f03f3d8fd9c0bcfe8201ab59
+
+FOLDER  Lakeland 18 April 76\D2
+D2.md5	288	dace60ad43fdf7ebba654824ad79091b
+Track01.flac	26922927	d83662528c5d14e905db5e1903fc1c57
+Track02.flac	22780576	20d6311c0101ad98f9f2e84675ee8da2
+Track03.flac	27300446	c082fd133f2750a91783f935644baf16
+Track04.flac	53500212	b7cb69c2e6208692191db6adbbb311c4
+Track05.flac	22753897	2c65d91c510acb2c2b394762d8f9eb50
+Track06.flac	22989923	4c84fa01235a6e34ce3d442fbd3b4d5a
+
+Total number of files is 25 and total size is 545757494 bytes
+===================
+===================
+===================
+=== D1.md5
+===================
+===================
+===================
+92240a569f3da9fdff527efeef091023 *Track01.flac
+2eef0115c6f005a5e8e2dbe9e684a7a1 *Track02.flac
+1c6e4ac60bc7e09d4897baca0c6b014d *Track03.flac
+56bb61d61fa1cfcc1fc6312ed6f980b1 *Track04.flac
+5cb3d594eecd7687d2fa01f0e0ed15e4 *Track05.flac
+9947bcb861f02a0b5ed2b84256b64953 *Track06.flac
+b9429d412eff5c5776afdeb722ae31ce *Track07.flac
+309c75e312dd7548a8176fc368b7cdfc *Track08.flac
+24c8f2c3c616706cd531cd75f42d1575 *Track09.flac
+e9fc10770ff679ab66ce75a672b44f2c *Track10.flac
+025009169f9021288bcdfbdfac08373b *Track11.flac
+25dd81bfdabafa9fa31cfcbaf8bf74ef *Track12.flac
+21998448cffa7d1af3cfa1cd1dc7928e *Track13.flac
+c463c56dcc0564b1f88f430bbccd1ca1 *Track14.flac
+9d761dcd0df97288bcb32ecdfc140a22 *Track15.flac
+17de9be8f03f3d8fd9c0bcfe8201ab59 *Track16.flac
+===================
+===================
+===================
+=== data-ffp.txt
+===================
+===================
+===================
+Track01.flac:29475eaa2965ee8d8f9a51ae761b99a8
+Track02.flac:a7947ec0bf4abc81003831ea7ef06222
+Track03.flac:519b49a2b2373f4208d075bdcd14e423
+Track04.flac:2ee655be6255a34d074344d3a66797e3
+Track05.flac:d514ddae39ee7f1f5c13a1e765ea8a86
+Track06.flac:7c55b58043d891c25f9d8501987e5beb
+Track07.flac:451a5a0d9d40c5e5aea12620d2d6cb62
+Track08.flac:a37c057ae327e448e663624c5680eefb
+Track09.flac:80e762f50d15771aa49f40125d66e8d9
+Track10.flac:0b95a4907e49f62cdd6100c3af8c6cab
+Track11.flac:430d8940f6771aa883250983dd9c6e88
+Track12.flac:2135c41435d934012a4a47de0456085f
+Track13.flac:91664180aa6a5dea7ab0ccf2020e6c78
+Track14.flac:e95f1b3e57f000cc3b44c26d2202d177
+Track15.flac:ffabf81498146d5fa35601b3fbd8edad
+Track16.flac:ad419159370374c88e35f12ff8cb574c
+===================
+===================
+===================
+=== data-sl.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     7:10.55       75981404    ---   --   ---xx   Track01.flac
+     4:28.00       47275244    ---   --   ---xx   Track02.flac
+     3:12.43       33969980    ---   --   ---xx   Track03.flac
+     4:15.37       45069068    ---   --   ---xx   Track04.flac
+     4:39.61       49359116    ---   --   ---xx   Track05.flac
+     4:36.74       48860492    ---   --   ---xx   Track06.flac
+     3:45.15       39725324    ---   --   ---xx   Track07.flac
+     4:17.62       45480668    ---   --   ---xx   Track08.flac
+     2:19.37       24606668    ---   --   ---xx   Track09.flac
+     3:16.25       34633244    ---   --   ---xx   Track10.flac
+     3:33.47       37683788    ---   --   ---xx   Track11.flac
+     4:33.31       48230156    ---   --   ---xx   Track12.flac
+     5:59.38       63417020    ---   --   ---xx   Track13.flac
+     3:34.44       37853132    ---   --   ---xx   Track14.flac
+     5:42.16       60366476    ---   --   ---xx   Track15.flac
+     2:50.74       30162092    ---   --   ---xx   Track16.flac
+    68:16.59      722673872 B                     (totals for 16 files, 0.5113 overall compression ratio)
+
+===================
+===================
+===================
+=== D2.md5
+===================
+===================
+===================
+d83662528c5d14e905db5e1903fc1c57 *Track01.flac
+20d6311c0101ad98f9f2e84675ee8da2 *Track02.flac
+c082fd133f2750a91783f935644baf16 *Track03.flac
+b7cb69c2e6208692191db6adbbb311c4 *Track04.flac
+2c65d91c510acb2c2b394762d8f9eb50 *Track05.flac
+4c84fa01235a6e34ce3d442fbd3b4d5a *Track06.flac
+===================
+===================
+===================
+=== data-ffp.txt
+===================
+===================
+===================
+Track01.flac:e2dff275b6824835aa8a93a6cec4be39
+Track02.flac:3e628f4862e3144cdfbcd42d0836c3f3
+Track03.flac:43e17dc4eda6be7cf8b8b686cbd1b0a2
+Track04.flac:8bc2424244e38fe92bbd4f8e691839e2
+Track05.flac:5c32155e7191e900c9f6a2a927b08513
+Track06.flac:2092265a3bc7535b9231fbc51285ac58
+===================
+===================
+===================
+=== data-sl.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     5:22.62       56946668    ---   --   ---xx   Track01.flac
+     4:37.73       49034540    ---   --   ---xx   Track02.flac
+     5:41.49       60267692    ---   --   ---xx   Track03.flac
+    10:57.23      115948940    ---   --   ---xx   Track04.flac
+     4:42.26       49805996    ---   --   ---xx   Track05.flac
+     4:43.66       50076476    ---   --   ---xx   Track06.flac
+    36:05.74      382080312 B                     (totals for 6 files, 0.4613 overall compression ratio)
+
+===================
+===================
+===================

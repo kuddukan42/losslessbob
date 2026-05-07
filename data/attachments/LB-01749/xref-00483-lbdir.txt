@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-26-d.flacf 
+=================== 
+=================== 
+=================== 
+5ccde99b0c1c5f9f7f2dc75fd3255ee8  CD1\01 Intro.shn
+accf18b0e1ab780f6d67c157e10608c0  CD1\02 The wicked messenger.shn
+f9d489801489979a740ab3c1742f7462  CD1\03 You ain't goin' nowhere.shn
+e92555740f168dcfc64e4e784b3585f5  CD1\04 Cry a while.shn
+a886b8e019ceddc7ef205eb4814785a4  CD1\05 The lonesome death of Hattie Carroll.shn
+99787d95f43ec63eacd13bdf83c88715  CD1\06 Highway 61 revisited.shn
+79796fe34d119b1ffbf3d9bffda4ca48  CD1\07 Make you feel my love.shn
+d07e163305554b2c94c59d854f14a2a5  CD1\08 Cold irons bound.shn
+21baf87c1ac8e6524da35a10f64583c5  CD1\09 I don't believe you (she acts like we never have met).shn
+ca653cb5ab147d4072d3bdc37300baa1  CD1\10 Man in the long black coat.shn
+95499f3e71ba85e2d152e836cbe4abd4  CD1\11 Rainy day women #12 & 35.shn
+0cf645a574e83975bc4420651f83e8b7  CD1\12 I believe in you.shn
+92c3806722d3bfa546187f817e45f721  CD1\2004-03-26 Boston, Massachusetts (Fine Wine) CD1.md5
+cb9a6daa43bb83bad7e3a9d0b00907a8  CD2\01 Honest with me.shn
+5114e30d08a8752686fe9f3eaf219375  CD2\02 Tell me that it isn't true.shn
+c647bf0d1cdc4fa608b9af0747f08fa3  CD2\03 Summer days.shn
+7afec3f8695f8ff3c140c955ab7c3caa  CD2\04 Down along the cove.shn
+5c356e260c14d4338dc6d25eec4ad6e5  CD2\05 Like a rolling stone.shn
+d912ab8fe41770df22a30a98f464eff0  CD2\06 (band introduction).shn
+b17648f010b86486ece88549c0c0a677  CD2\07 All along the watchtower.shn
+c21daff54ecd1eaec6d1881c2bd23d3e  CD2\2004-03-26 Boston, Massachusetts (Fine Wine) CD2.md5
+e6c1f78ff2a9c2c0f93c15d0722092af  dylan2004-03-26 Fine Wine.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-26-d.flacf\cd1 
+=================== 
+=================== 
+=================== 
+6446ea53331134ac9b39d298cec0195c  [shntool]  01_intro.wav
+bf9690be361a7a628cb170b7f6cc3d93  [shntool]  02_the_wicked_messenger.wav
+1169cddf648febc60920a8a4e26c5296  [shntool]  03_you_ain't_goin'_nowhere.wav
+caf3cf768aa7fa9fffecca538e53223c  [shntool]  04_cry_a_while.wav
+5e7510aa8b583c59b1b9680e22e3a1d9  [shntool]  05_the_lonesome_death_of_hattie_carroll.wav
+ce69ee85445e06504bb3ec0fcf62eed1  [shntool]  06_highway_61_revisited.wav
+4d08a4f93e96630b6a056a62a288b5f8  [shntool]  07_make_you_feel_my_love.wav
+f6e3de8f91d97a820c34092a2dbe5c7a  [shntool]  08_cold_irons_bound.wav
+6a84808305e1457460e16e057a3f013c  [shntool]  09_i_don't_believe_you_(she_acts_like_we_never_have_met).wav
+b98d9b671764ea624998622f177071e6  [shntool]  10_man_in_the_long_black_coat.wav
+f35be4c2b05c291ec36a2ed10e64084f  [shntool]  11_rainy_day_women_#12___35.wav
+e1703d83473ef5f56ceb152b4a670890  [shntool]  12_i_believe_in_you.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-26-d.flacf\cd2 
+=================== 
+=================== 
+=================== 
+6f23c88c3af7f5e37faba31e95febd7c  [shntool]  01_honest_with_me.wav
+bc1bec01f8a269d737a6baefae613cbe  [shntool]  02_tell_me_that_it_isn't_true.wav
+b1157fdfa68b9be01115b687822dca91  [shntool]  03_summer_days.wav
+bbf35edea6faeac16bc6b664688aa223  [shntool]  04_down_along_the_cove.wav
+89e79505f072f6d3459b6d68a1296e11  [shntool]  05_like_a_rolling_stone.wav
+9abbff61e5c3580dda4bd88df5f9680d  [shntool]  06_(band_introduction).wav
+8d9f0812651a785e03d81d7d08c5a0a0  [shntool]  07_all_along_the_watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-26-d.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.35        7843964 B   ---   --   ---xx    shn  0.5694  01 Intro.shn
+     4:33.73       48328940 B   ---   --   ---xx    shn  0.6663  02 The wicked messenger.shn
+     5:13.05       55225004 B   ---   --   ---xx    shn  0.6328  03 You ain't goin' nowhere.shn
+     6:04.49       64324892 B   ---   --   ---xx    shn  0.6532  04 Cry a while.shn
+     6:15.23       66204140 B   ---   --   ---xx    shn  0.5364  05 The lonesome death of Hattie Carroll.shn
+     7:41.65       81473324 B   ---   --   ---xx    shn  0.6768  06 Highway 61 revisited.shn
+     5:25.43       57431180 B   ---   --   ---xx    shn  0.5805  07 Make you feel my love.shn
+     5:53.17       62309228 B   ---   --   ---xx    shn  0.6643  08 Cold irons bound.shn
+     6:52.72       72846188 B   ---   --   ---xx    shn  0.6394  09 I don't believe you (she acts like we never have met).shn
+     5:49.06       61577756 B   ---   --   ---xx    shn  0.6109  10 Man in the long black coat.shn
+     5:51.27       61979948 B   ---   --   ---xx    shn  0.6550  11 Rainy day women #12 & 35.shn
+     6:35.24       69734492 B   ---   --   ---xx    shn  0.6007  12 I believe in you.shn
+    67:00.64      709279056 B                            0.6284  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-26-d.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:06.66       75301676 B   ---   --   ---xx    shn  0.6622  01 Honest with me.shn
+     5:11.29       54928652 B   ---   --   ---xx    shn  0.5988  02 Tell me that it isn't true.shn
+    12:13.25      129360044 B   ---   --   ---xx    shn  0.5652  03 Summer days.shn
+     6:37.66       70186076 B   ---   --   ---xx    shn  0.6771  04 Down along the cove.shn
+     6:55.26       73267196 B   ---   --   ---xx    shn  0.6726  05 Like a rolling stone.shn
+     1:10.72       12517388 B   ---   --   ---xx    shn  0.5765  06 (band introduction).shn
+     6:39.64       70534172 B   ---   --   ---xx    shn  0.6586  07 All along the watchtower.shn
+    45:55.48      486095204 B                            0.6302  (7 files)
+=================== 
+=================== 
+=================== 

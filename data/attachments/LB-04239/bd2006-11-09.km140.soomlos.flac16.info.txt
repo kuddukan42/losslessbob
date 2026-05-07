@@ -1,0 +1,63 @@
+Bob Dylan
+Cumberland County Civic Center
+Portland, Maine
+November 9, 2006
+ 
+source: soomlos
+fob, dfc, ga floor
+neumann km140's > lunatec v3 > microtrack 24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+Disc 1: 
+01. introduction [00:48]
+02. Cat's In The Well [04:19]
+03. Just Like Tom Thumb's Blues [06:50]
+04. Stuck Inside Of Mobile With The Memphis Blues Again [08:45]
+05. High Water (For Charley Patton) [07:00]
+06. Tangled Up In Blue [08:31]
+07. When The Deal Goes Down [06:36] 
+08. It's Alright, Ma (I'm Only Bleeding) [06:57]
+09. Watching The River Flow [06:52]
+10. Most Likely You Go Your Way (And I'll Go Mine) [07:51] 
+11. Desolation Row [11:23] 
+Total time: [75:58]
+
+Disc 2:
+01. Highway 61 Revisited [07:13]
+02. Spirit On The Water [07:24]
+03. Summer Days [10:58] 
+04. Thunder On The Mountain [05:54]
+05. Like A Rolling Stone [06:42]
+06. band introduction [00:51]
+07. All Along The Watchtower [06:33]
+Total time: [45:40]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass 
+
+Flac Fingerprint
+bd2006-11-09d1t01.flac:a25d62b4d385ac4f695ad190544deb2f
+bd2006-11-09d1t02.flac:32108b0f1cfbbe366a1778cfa6a1eadd
+bd2006-11-09d1t03.flac:1c6312af494d322b47493e85c48433f0
+bd2006-11-09d1t04.flac:4d8789685ad049bfab460e4dd4b5dc5c
+bd2006-11-09d1t05.flac:cd90a1d44256f23fc6fb269d2f235b9d
+bd2006-11-09d1t06.flac:09eea0bfea199980b859e80ae9aa90bf
+bd2006-11-09d1t07.flac:9da77f86a15a10d2b1f9b1989c7d6fab
+bd2006-11-09d1t08.flac:410441193bb28130ee10742b0e583243
+bd2006-11-09d1t09.flac:3d3d5b41ce200bc2af90125499d9e6aa
+bd2006-11-09d1t10.flac:46f8adab2eea5110c44dc06143849c0b
+bd2006-11-09d1t11.flac:7009f6253798e757717513779617abeb
+bd2006-11-09d2t01.flac:ac236171f178ee7e749036c8d051fe6a
+bd2006-11-09d2t02.flac:dfb2b35a181420543593c28eda80a173
+bd2006-11-09d2t03.flac:c06e48bcc42e71a333f5a160dd041bc0
+bd2006-11-09d2t04.flac:139a3379ea7aa58ca8a379e8c76ebae1
+bd2006-11-09d2t05.flac:3ec3e338c161145860b04c552b49cc98
+bd2006-11-09d2t06.flac:e7846795242ea2779cb59b13f17b6bbf
+bd2006-11-09d2t07.flac:312e7bcf35f57e9b9e247560f966529a
+
+

@@ -1,0 +1,19 @@
+# Core
+flask==3.0.3
+flask-cors==4.0.1
+requests==2.32.3
+beautifulsoup4==4.12.3
+lxml==6.1.0
+
+# GUI
+PyQt6==6.7.1
+PyQt6-WebEngine==6.7.0
+
+# File watching
+watchdog==4.0.1
+
+# Production WSGI server (optional, for non-dev use)
+waitress==3.0.0
+
+# Packaging (run separately, not imported)
+# pyinstaller==6.8.0

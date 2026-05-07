@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-17-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+e46b3850614c1c9f0e86919fd259f563  BD1999-07-17.txt
+d78cd5af2bae610332180ef45bf63dfe  BD1999-07-17d1t01.flac
+3584d6fd6093a21fa0e6134a9cca694a  BD1999-07-17d1t02.flac
+e83e86f42f3739cb1471fea2ad3c674d  BD1999-07-17d1t03.flac
+908c53f0582b4f8cb5b32f439b609aad  BD1999-07-17d1t04.flac
+e46d930c9b1a4b786501227208bd3994  BD1999-07-17d1t05.flac
+c9838dde95c0626b0224ae51d6a91ad6  BD1999-07-17d1t06.flac
+b2137278becebbea5c4c4b6eb28aa86a  BD1999-07-17d1t07.flac
+df57c2f3e04ceffa2d81f850c663f915  BD1999-07-17d1t08.flac
+56f6bd2d75f83479863bb088a5881afc  BD1999-07-17d1t09.flac
+89511c81a5db0332dc4d543f8f98f34e  BD1999-07-17d1t10.flac
+ca55ed4ade26c3d027583e2b1a779354  BD1999-07-17d1t11.flac
+963fa64341e198ee90fb3cc5c250e9dc  BD1999-07-17d2t01.flac
+211ab80606a5959a6428ac02d222dd35  BD1999-07-17d2t02.flac
+1d9b0d84b8f3bedb745f9886134d6f26  bd99-07-17-schoeps-LB-4135.txt
+44802561c76e69dce82bff3eab947c33  PS1999-07-17.txt
+817ebb5a04f08c7794a5091a57e562f5  PS1999-07-17d2t03.flac
+b6e9491cd99f3ebd3ac01b303e09064c  PS1999-07-17d2t04.flac
+4b4c3cc8ea0496a0d60ced61a04949bd  PS1999-07-17d2t05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-17-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+BD1999-07-17d1t01.flac:19a6ea4dbc375c73115d1b33182e0bc5
+BD1999-07-17d1t02.flac:9827839a9669f17c8b7886a8c65ee035
+BD1999-07-17d1t03.flac:9835dd439389b43b16a84f9012bbea2a
+BD1999-07-17d1t04.flac:a720d95eaf94b4e78a8ac12a0049d302
+BD1999-07-17d1t05.flac:3a8296ff3ef6c9841799d0bf6c353a47
+BD1999-07-17d1t06.flac:0a33ee00b0475b7788ecfe417ca93882
+BD1999-07-17d1t07.flac:d91e5757abbd9ec8eac03f7a82d25605
+BD1999-07-17d1t08.flac:57c11fab3a1cb1bfbdea71c2f34f6985
+BD1999-07-17d1t09.flac:1f51053024aa69459bf7b6a9efd30a6e
+BD1999-07-17d1t10.flac:e6197c45ee7ba4ffd7fd53b06a2d28c7
+BD1999-07-17d1t11.flac:4d50c4b247a2d64f230ba57e21502ecf
+BD1999-07-17d2t01.flac:03015cc0c93efc31b8520ff91994cf32
+BD1999-07-17d2t02.flac:75dfab4116ccdb7fbd18b2734bac615c
+PS1999-07-17d2t03.flac:e6b04e4722567b204f8c0fe05dfcc2b8
+PS1999-07-17d2t04.flac:155c64583b3b40af84ad2e1349a3132e
+PS1999-07-17d2t05.flac:c900e4bfc602595afadc44211e9d0b3e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-17-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.49       33984092 B   ---   --   ---xx   flac  0.6042  BD1999-07-17d1t01.flac
+     7:29.73       79375340 B   ---   --   ---xx   flac  0.6165  BD1999-07-17d1t02.flac
+     5:24.30       57224204 B   ---   --   ---xx   flac  0.5964  BD1999-07-17d1t03.flac
+     4:59.19       52788332 B   ---   --   ---xx   flac  0.6027  BD1999-07-17d1t04.flac
+     8:50.54       93619052 B   ---   --   ---xx   flac  0.6477  BD1999-07-17d1t05.flac
+     3:46.56       39998156 B   ---   --   ---xx   flac  0.6354  BD1999-07-17d1t06.flac
+     4:26.64       47072972 B   ---   --   ---xx   flac  0.5570  BD1999-07-17d1t07.flac
+     7:34.01       80087996 B   ---   --   ---xx   flac  0.6549  BD1999-07-17d1t08.flac
+     6:32.74       69322892 B   ---   --   ---xx   flac  0.5158  BD1999-07-17d1t09.flac
+     8:27.57       89568908 B   ---   --   ---xx   flac  0.6217  BD1999-07-17d1t10.flac
+     7:36.04       80447852 B   ---   --   ---xx   flac  0.6348  BD1999-07-17d1t11.flac
+    12:11.10      128971964 B   ---   --   ---xx   flac  0.5504  BD1999-07-17d2t01.flac
+     4:36.27       48749948 B   ---   --   ---xx   flac  0.6470  BD1999-07-17d2t02.flac
+     7:36.44       80541932 B   ---   --   ---xx   flac  0.6502  PS1999-07-17d2t03.flac
+     4:25.17       46786028 B   ---   --   ---xx   flac  0.7346  PS1999-07-17d2t04.flac
+     5:42.23       60382940 B   ---   --   ---xx   flac  0.6931  PS1999-07-17d2t05.flac
+   102:53.02     1088922608 B                            0.6187  (16 files)
+=================== 
+=================== 
+=================== 

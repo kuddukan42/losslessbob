@@ -1,0 +1,41 @@
+Bob Dylan
+October 26, 1999 - early show
+Park West
+Chicago, Illinois
+
+AUD DAT Master [unknown equipment] > DAT clone(s) > WAV > Soundforge 6.0 > CD Wave > CD > EAC > WAV > FLAC
+
+
+CD 1  [74:08.01]
+
+01 Oh Babe, It Ain't No Lie  [03:55.42]
+02 The Times They Are A-Changin'  [05:46.59]
+03 Desolation Row  [07:50.59]
+04 Girl From The North Country  [05:47.59]
+05 Don't Think Twice, It's All Right  [07:21.15]
+06 All Along The Watchtower  [04:21.61]
+07 I Want You  [05:03.61]
+08 Just Like Tom Thumb's Blues  [05:30.44]
+09 Not Dark Yet  [06:34.00]
+10 Silvio  [08:34.71]
+11 Love Sick  [06:30.08]  %
+12 It Ain't Me, Babe   [06:50.47]
+
+
+Bob Dylan - vocal, guitar, harmonica
+Larry Campbell - guitar, pedal steel, mandolin
+Charlie Sexton - guitar
+Tony Garnier - bass 
+David Kemper - drums 
+
+I did not harm the sound of the recording in any way
+This is the same recording as LB-3743 but is a fairly new transfer from my DAT clone
+d1t02@5:38, d1t05@7:07, d1t06@0:10, d1t07@0:31 - noise from beer bottles and plastic cups
+my source notes that the last track is from a different source, there is a cut before that last track 
+but the sound quality does not change noticeably, so it might just be from a different transfer.
+
+Please retain this info file as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+further info:
+http://www.bjorner.com/DSN21160.htm#_Toc473349149

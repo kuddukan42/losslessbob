@@ -1,0 +1,56 @@
+Bob Dylan
+Civic Auditorium
+Santa Cruz, California
+March 15, 2000
+
+01. Oh Babe, It Ain't No Lie
+02. Mr. Tambourine Man
+03. Masters Of War
+04. Don't Think Twice, It's All Right
+05. Tangled Up In Blue
+06. Pass Me Not, O Gentle Savior
+07. Hootchie Cootchie Man
+08. Positively 4th Street
+09. Drifter's Escape
+10. Things Have Changed
+11. Not Dark Yet
+12. band introduction
+13. Highway 61 Revisited
+(encore)
+14. Love Sick
+15. Silvio
+16. It Ain't Me, Babe
+17. Not Fade Away 
+Total time: [100:59.19]
+
+Band members
+Bob Dylan - vocals, guitar, harp
+Charlie Sexton - guitar, backing vocals
+Larry Campbell - guitar, mandolin, pedal steel, backing vocals
+David Kemper - drums
+Tony Garnier - bass
+
+source: soomlos
+center ga floor
+core-sound cardiods > sony tcd-d8 (16/44.1)
+sony tcd-d8 > m-audio mt1 > usb > hd
+audacity > cd wave > flac
+
+ffp
+bd2000-03-15t01.flac:9c6c91802dd2c56a04cfe2b153705109
+bd2000-03-15t02.flac:902e48c34d93d2e695629ff47d1d75e4
+bd2000-03-15t03.flac:a87522262caec6556c4e4bd3f9895dff
+bd2000-03-15t04.flac:ed5f5dc0023d1227e0482085b3d8f45a
+bd2000-03-15t05.flac:b6b1bf3cd12fe28b5a87d4ae0419c18f
+bd2000-03-15t06.flac:e65cf184fa2791a78e1090d70787e015
+bd2000-03-15t07.flac:1a5d27ed32edf3f5135a8004b169cf6a
+bd2000-03-15t08.flac:2de721dc13fb82d7d5fc0ee0b4667902
+bd2000-03-15t09.flac:caab8bbb654b5137130e85107a164cb5
+bd2000-03-15t10.flac:9d64a89fee12baad34b4f5cbb470a959
+bd2000-03-15t11.flac:5efec2a9b8018a569cd154ddf181131f
+bd2000-03-15t12.flac:36a70ad20f1b7467e06bae37aeeb88c1
+bd2000-03-15t13.flac:23249020562c7847b927e90fb0716040
+bd2000-03-15t14.flac:e23447d550aea6c0c98583ae996636c1
+bd2000-03-15t15.flac:f356d4592811014b2eb223ade9e64d5a
+bd2000-03-15t16.flac:90fcb3bee96ddefda9b16315feb5f5ca
+bd2000-03-15t17.flac:a92eb03b83b545711fa25dd5acc67721

@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-07-01-fendert.flacf 
+=================== 
+=================== 
+=================== 
+22e0cd478c9aaaf5d8328dad68bd1cdd  101 Highway 61 Revisited.flac
+851281432828de21132c263963e3be5f  102 Jokerman.flac
+4f453d7e49beb8dc9441269cf2c74465  103 All Along the Watchtower.flac
+19325b71a32e230621e136b396941e0f  104 Just Like a Woman.flac
+3dcd255abdd049ad3b2987820d549259  105 Maggies Farm.flac
+9db070585fdf131465ebd0992aff54ea  106 I and I.flac
+677379d50f600b92dbe92b78d29c8846  107 License to Kill.flac
+1ad0e0f48a9b736b2d406bb7ebd5d355  108 Hard Rain.flac
+51be66ea15cdc57dbefeac3bc619bd90  109 Tangled Up in Blue.flac
+f91abcbe5b52c5addbe707591a70d267  110 It's Alright Ma.flac
+57cbc68c7d9bb1d84be0511eb019fd83  111 Simple Twist of Fate.flac
+9f8950679479cbfa69bf9468d6044b26  112 Masters of War.flac
+8250fcf3954b21aaf94b8c9906d2ac76  113 Ballad of a Thin Man.flac
+866e5e40695c941a46c1d2ef50cc2f2f  114 Enough is Enough.flac
+536a8be4693218465dcfc072d08506a7  201 Every Grain of Sand.flac
+a75e811004251c73c3ce83187be12373  202 Like A Rolling Stone.flac
+6b3f0125e8dce0755c01077f8d13c660  203 Mr Tambourine Man.flac
+f35b740e2d5a3925401cfb14ed440ceb  204 It Aint Me Babe.flac
+ec812bae8e45b1cc887fd072c3faf4ae  205 The Times They Are A Changing.flac
+52032194882c0ee6279fda9920cc4cf8  206 It's All Over Now Baby Blue.flac
+2b6531a0b1f1ff77dea58ce530be007c  207 Leopard Skin Pill Box Hat.flac
+9a300432abeaf9b9e345168b09af9983  208 Tomebstone Blues.flac
+eafd80368a2df979aab1fb344db22cee  209 Blowing  in the Wind.flac
+24b66270fe2a0786b56b2486e40dd80f  210 Knocking On Heavens Door.flac
+2c9b625695d99ab08ed230b0ac69d1c0  Bob Dylan 23 Paris 7-1-84.txt
+95332ae638bffb30fdebd61dc7a37e8a  Fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-07-01-fendert.flacf 
+=================== 
+=================== 
+=================== 
+101 Highway 61 Revisited.flac:8ebf990e4a347f6625dec4284a13fe4c
+102 Jokerman.flac:1bb8cf5c86003a02d92181f75ad9aa72
+103 All Along the Watchtower.flac:84470643de5ec8f832016377c5b9159e
+104 Just Like a Woman.flac:9733f36111dbae159e4e0fa3127c8767
+105 Maggies Farm.flac:7d4caac340d783d0e8e3f72a015dec99
+106 I and I.flac:e00fa138a9d0745118234a09a976f68a
+107 License to Kill.flac:fbe2db67701e9281ea959c12e95e9874
+108 Hard Rain.flac:17af2197ee3efb3e9a7510bf589a554e
+109 Tangled Up in Blue.flac:1d7aec425f99d9e2a3062bbdcc30049e
+110 It's Alright Ma.flac:fff904cfceeacf072fc8c0c52c4422d9
+111 Simple Twist of Fate.flac:741e405bc2be3623cbb0620b6ad02760
+112 Masters of War.flac:49b1dea1247d9b2a589deb3ec38f418a
+113 Ballad of a Thin Man.flac:7970b9a14ca0848f80ea118d15ead965
+114 Enough is Enough.flac:7e789ccc26c291cbd2c54187fca59eae
+201 Every Grain of Sand.flac:a2eebf24e14209829efabf5ae74b9f13
+202 Like A Rolling Stone.flac:b720d298f0bcc404e9b60bb31ddb95c4
+203 Mr Tambourine Man.flac:1d4ba5d19c5d6eb26c131e43761c2a76
+204 It Aint Me Babe.flac:50f0cf1034072cef7d330c3d2dad598e
+205 The Times They Are A Changing.flac:bff2545a245e0982aa5ea78a0367fa79
+206 It's All Over Now Baby Blue.flac:dd1f7f40d91b5d8db8eea5c7f7e8250d
+207 Leopard Skin Pill Box Hat.flac:179e9df648c51169fdeec65d0ec98f8a
+208 Tomebstone Blues.flac:74fd2df1ec88a2977136c9b44a885aeb
+209 Blowing  in the Wind.flac:b610b9c105411c7477fb7c777305d7a3
+210 Knocking On Heavens Door.flac:de2b3ba12887b96d24501fdeea51b3a5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-07-01-fendert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.16       58073276 B   ---   --   ---xx   flac  0.6364  101 Highway 61 Revisited.flac
+     6:20.51       67151996 B   ---   --   ---xx   flac  0.6248  102 Jokerman.flac
+     4:08.10       43770764 B   ---   --   ---xx   flac  0.6366  103 All Along the Watchtower.flac
+     5:51.48       62029340 B   ---   --   ---xx   flac  0.6270  104 Just Like a Woman.flac
+     4:37.65       49015724 B   ---   --   ---xx   flac  0.6468  105 Maggies Farm.flac
+     6:02.39       63948572 B   ---   --   ---xx   flac  0.6182  106 I and I.flac
+     3:44.34       39593612 B   ---   --   ---xx   flac  0.6218  107 License to Kill.flac
+     6:09.39       65183372 B   ---   --   ---xx   flac  0.5808  108 Hard Rain.flac
+     7:24.49       78436892 B   ---   --   ---xx   flac  0.5970  109 Tangled Up in Blue.flac
+     6:21.52       67330748 B   ---   --   ---xx   flac  0.6019  110 It's Alright Ma.flac
+     5:30.22       58263788 B   ---   --   ---xx   flac  0.6314  111 Simple Twist of Fate.flac
+     6:40.73       70731740 B   ---   --   ---xx   flac  0.6359  112 Masters of War.flac
+     4:06.11       43420316 B   ---   --   ---xx   flac  0.6452  113 Ballad of a Thin Man.flac
+     3:35.60       38067164 B   ---   --   ---xx   flac  0.6372  114 Enough is Enough.flac
+     6:05.67       64543628 B   ---   --   ---xx   flac  0.6143  201 Every Grain of Sand.flac
+     6:48.43       72072380 B   ---   --   ---xx   flac  0.6529  202 Like A Rolling Stone.flac
+     5:21.35       56706764 B   ---   --   ---xx   flac  0.5896  203 Mr Tambourine Man.flac
+     5:54.55       62575004 B   ---   --   ---xx   flac  0.5889  204 It Aint Me Babe.flac
+     6:26.62       68236268 B   ---   --   ---xx   flac  0.6031  205 The Times They Are A Changing.flac
+     5:46.41       61130876 B   ---   --   ---xx   flac  0.6227  206 It's All Over Now Baby Blue.flac
+     3:25.00       36162044 B   ---   --   ---xx   flac  0.6523  207 Leopard Skin Pill Box Hat.flac
+     4:39.39       49307372 B   ---   --   ---xx   flac  0.6627  208 Tomebstone Blues.flac
+     5:09.38       54597020 B   ---   --   ---xx   flac  0.6142  209 Blowing  in the Wind.flac
+     5:09.20       54554684 B   ---   --   ---xx   flac  0.6165  210 Knocking On Heavens Door.flac
+   130:50.69     1384903344 B                            0.6213  (24 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-18-b.flacf 
+=================== 
+=================== 
+=================== 
+1d7753e59f7c997994579e8a55b4d121  disc1\fingerprint.ffp.txt
+ced40defa15107c797f494aa4c2ced61  disc1\md5sum.md5
+fd899217d309abbb77bc2f16b88c81e1  disc1\Piste  1.flac
+d7e741134b09a50e2f13587063104249  disc1\Piste  2.flac
+57456ec90165f4336853f2cb7d523fa9  disc1\Piste  3.flac
+b833e078be2808f4544af985e580a9ed  disc1\Piste  4.flac
+0b3c73f109a4f2a95e9ec0b07e92d3e6  disc1\Piste  5.flac
+5292d78b9a0cbb89e77c75e972dbe05a  disc1\Piste  6.flac
+f325048ca539ba1fd4e447ba54a8cf3e  disc1\Piste  7.flac
+439035130437d6f0311a56a9e8a52ea0  disc1\Piste  8.flac
+31bfb09f6131cbf9d75f01fe5f68380a  disc1\Piste  9.flac
+7f8e7e108bc18f716750c776ce911810  disc1\Piste 10.flac
+a830fecabd4c0ecbb5ca3fd56db59fd8  disc2\fingerprint.ffp.txt
+a63e9942617447885bd9fa93dda46970  disc2\md5sum.md5
+94d6b85f733b0a42fa90b09871a5d8fa  disc2\Piste  1.flac
+d1dc8809489caecf664ac84162968837  disc2\Piste  2.flac
+eb5af3760bd726319cfb8fb72cbda543  disc2\Piste  3.flac
+372629593c377f7a529aa84cf8384579  disc2\Piste  4.flac
+adb5044835ba2c7e2b60477e7e952aea  disc2\Piste  5.flac
+6cb0812e0e53e4b71dedb3fc8589bf3e  disc2\Piste  6.flac
+45d2a1e6e5c5c2c0c606bd9812096c67  disc2\Piste  7.flac
+bbba7adb662ad30bf806c9e848e4b08a  disc2\Piste  8.flac
+b987545bbadc337e9f6e701ae2284b20  setlist.txt
+26a604076fdf7becab11e3d21d7d1cba  shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-18-b.flacf\disc1 
+=================== 
+=================== 
+=================== 
+Piste  1.flac:0072f4bb1b5a0a642716dbade88e2d8f
+Piste  2.flac:a58981014b8976d908fcac8a7f750091
+Piste  3.flac:662df4c36a2a5c7ada043d243895ebd6
+Piste  4.flac:39b4ed225755c8f8b71598320b233b3e
+Piste  5.flac:415c2810b456b1f12d917f2e241c4123
+Piste  6.flac:f257efcd976dd184b94e7862b8119f71
+Piste  7.flac:05871911e76455f1ae3e71a6e843fedc
+Piste  8.flac:a481ea1d2cca1e0c4da0f02be0568048
+Piste  9.flac:8f787c3865f71cbfc1fbc64f0865363f
+Piste 10.flac:078a433e2e5daf3adbd0467c0f30cc4a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-18-b.flacf\disc2 
+=================== 
+=================== 
+=================== 
+Piste  1.flac:8d6629f714f1de0628bbe92a7f5104b7
+Piste  2.flac:98265fc4cde650a7ec935a5d52318c73
+Piste  3.flac:79093ebd9a4a64b528ffe51dc09aad6c
+Piste  4.flac:0628531d5b7219973ac204c3ebc9a5dc
+Piste  5.flac:6cab91fd65924a31e549998f2c0dcd7c
+Piste  6.flac:8ebaf3a93581f09069b8fde4c771aa0d
+Piste  7.flac:f74c28f304b10441493cf0d40e21d498
+Piste  8.flac:56034e270f249a4fb2c7275f1101b142
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-18-b.flacf\disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.04        6536252 B   ---   --   ---xx   flac  0.6272  Piste  1.flac
+     5:28.35       57941564 B   ---   --   ---xx   flac  0.6690  Piste  2.flac
+     5:40.74       60150092 B   ---   --   ---xx   flac  0.6442  Piste  3.flac
+     5:31.60       58529564 B   ---   --   ---xx   flac  0.6277  Piste  4.flac
+     7:10.23       75906140 B   ---   --   ---xx   flac  0.6440  Piste  5.flac
+     7:04.11       74819516 B   ---   --   ---xx   flac  0.6662  Piste  6.flac
+     5:19.62       56417468 B   ---   --   ---xx   flac  0.6379  Piste  7.flac
+     5:49.08       61582460 B   ---   --   ---xx   flac  0.6752  Piste  8.flac
+     5:23.17       57017228 B   ---   --   ---xx   flac  0.6424  Piste  9.flac
+     6:01.28       63746300 B   ---   --   ---xx   flac  0.6819  Piste 10.flac
+    54:06.22      572646584 B                            0.6544  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-18-b.flacf\disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:54.73       62617340 B   ---   --   ---xx   flac  0.6336  Piste  1.flac
+     7:11.30       76099004 B   ---   --   ---xx   flac  0.6911  Piste  2.flac
+     7:06.71       75313436 B   ---   --   ---xx   flac  0.6850  Piste  3.flac
+     6:09.53       65216300 B   ---   --   ---xx   flac  0.6623  Piste  4.flac
+     9:51.05      104264204 B   ---   --   ---xx   flac  0.6811  Piste  5.flac
+     4:25.18       46788380 B   ---   --   ---xx   flac  0.6946  Piste  6.flac
+     7:16.00       76910444 B   ---   --   ---xx   flac  0.6892  Piste  7.flac
+     6:32.19       69193532 B   ---   --   ---xx   flac  0.6922  Piste  8.flac
+    54:27.44      576402640 B                            0.6791  (8 files)
+=================== 
+=================== 
+=================== 

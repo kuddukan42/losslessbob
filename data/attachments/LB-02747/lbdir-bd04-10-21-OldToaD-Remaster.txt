@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-21-OldToaD-Remaster 
+=================== 
+=================== 
+=================== 
+ba7c481faa1edd0ee2e37a6c72d0eea2  bd-04-10-21d1-shn.md5
+cbde6ae04f19027592b3f9cba425e07c  bd-04-10-21d1-t01.shn
+40eb4c929ee45b931b1c27a67d75b172  bd-04-10-21d1-t02.shn
+3001750ed4270461cd44afa242131e5f  bd-04-10-21d1-t03.shn
+29b7e0fcd157b1f1079c164143cb49b5  bd-04-10-21d1-t04.shn
+d2ea192375d38b2af6594b38983f5f37  bd-04-10-21d1-t05.shn
+4138333d89279fa1f4831319af47703a  bd-04-10-21d1-t06.shn
+dc131994f5562b7b4d3e2e43442df3c1  bd-04-10-21d1-t07.shn
+2c9a9dc7063fe013159ab9b623de3239  bd-04-10-21d1-t08.shn
+dd8f7e569cc84d24876f229b71d8b1b0  bd-04-10-21d1-t09.shn
+39bb2888bfd722731219f9e3746d5430  bd-04-10-21d1-t10.shn
+a4a530be23a58cad2133bb3c130f14d9  bd-04-10-21d1-t11.shn
+3890cef768b0374b9583f7d23ccd1924  bd-04-10-21d1-wav.md5
+8f7127c4c31930fc676199d04526cfe3  bd-04-10-21d2-shn.md5
+564e63ab36bfd20c80d4cf4fc7f34072  bd-04-10-21d2-t01.shn
+a68ac6f7ad3ade306282290d8b89353b  bd-04-10-21d2-t02.shn
+872bc80f17a4e4d6f8a52897b2a63938  bd-04-10-21d2-t03.shn
+1a0dd6b504ddc4206e82d7f43d0af26f  bd-04-10-21d2-t04.shn
+bbc61ef42a074dcb8573c801e5bfe098  bd-04-10-21d2-t05.shn
+e8f52b4f90af2723583d63fe462885b1  bd-04-10-21d2-t06.shn
+086880a40d3642683e3f66d9551c34ea  bd-04-10-21d2-t07.shn
+727eddc798fa8d23f41d21d42d6a0ea8  bd-04-10-21d2-wav.md5
+e097adcdfa48bfa21a4c6067a2b8d000  bd04-10-21-OldToaD-Remaster-LB-2747.txt
+df09a76d0d178048344f67646fa8d2d2  easytree download.doc
+940146b5b069b491b2f3c8520677ed72  lineage.txt
+ff6586edb2aeadee912fdd10a56c5b8a  setlist.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-10-21-OldToaD-Remaster 
+=================== 
+=================== 
+=================== 
+d50a11119b7a8578765a56447e4f8921  [shntool]  bd-04-10-21d1-t01.wav
+7e67073f67949bbe7bbac8651cd845ab  [shntool]  bd-04-10-21d1-t02.wav
+04cdf26be71ea562199171f4c07d795a  [shntool]  bd-04-10-21d1-t03.wav
+057a2f0273c7dd9ca6cc42888bc0b27e  [shntool]  bd-04-10-21d1-t04.wav
+fcbe90f86c026848aaeb0a2a7064bd08  [shntool]  bd-04-10-21d1-t05.wav
+238646f08018796a3c960e0f707f492f  [shntool]  bd-04-10-21d1-t06.wav
+8b46d090f7815b5bde2dcbc79659533e  [shntool]  bd-04-10-21d1-t07.wav
+af54de3b41eeb8119ce149ff0f9a92f8  [shntool]  bd-04-10-21d1-t08.wav
+25ca07a9e76c168d536285a127754a6f  [shntool]  bd-04-10-21d1-t09.wav
+1e90eb266ae526a4472dc20779fb521e  [shntool]  bd-04-10-21d1-t10.wav
+9d8ebad33625735ec5b80ea62701a82c  [shntool]  bd-04-10-21d1-t11.wav
+3b3ff42085361629e5abf05a601f66f0  [shntool]  bd-04-10-21d2-t01.wav
+d084cb78155a9b4d517d45c0e83dae62  [shntool]  bd-04-10-21d2-t02.wav
+4452f7bb1dea89c2073da4002cee94e5  [shntool]  bd-04-10-21d2-t03.wav
+142f4596d528c6a38ef0da33898a061a  [shntool]  bd-04-10-21d2-t04.wav
+900f2e99592142ba0b759fc380802b2a  [shntool]  bd-04-10-21d2-t05.wav
+e100bf430be1d8d8a23fef5923210bc9  [shntool]  bd-04-10-21d2-t06.wav
+36f8ad2016b7a6ca2d10167dc3bd450e  [shntool]  bd-04-10-21d2-t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-21-OldToaD-Remaster 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:58.15       10266532 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t01.wav
+     4:39.66       49371972 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t02.wav
+     5:15.44       55670368 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t03.wav
+     6:36.56       69986372 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t04.wav
+     6:58.09       73756412 B   ---   --   -----    wav  1.0000  bd-04-10-21d1-t05.wav
+     5:34.56       59049928 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t06.wav
+     5:17.45       56023984 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t07.wav
+     6:06.72       64730724 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t08.wav
+     6:21.42       67306736 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t09.wav
+     5:04.19       53670304 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t10.wav
+     5:17.71       56085660 B   -b-   --   -----    wav  1.0000  bd-04-10-21d1-t11.wav
+     4:47.58       50763260 B   ---   --   -----    wav  1.0000  bd-04-10-21d2-t01.wav
+     6:43.57       71224436 B   -b-   --   -----    wav  1.0000  bd-04-10-21d2-t02.wav
+     6:54.21       73077952 B   -b-   --   -----    wav  1.0000  bd-04-10-21d2-t03.wav
+     6:34.67       69658812 B   -b-   --   -----    wav  1.0000  bd-04-10-21d2-t04.wav
+     2:25.68       25737716 B   -b-   --   -----    wav  1.0000  bd-04-10-21d2-t05.wav
+     6:26.46       68198948 B   -b-   --   -----    wav  1.0000  bd-04-10-21d2-t06.wav
+     6:04.28       64276084 B   -b-   --   -----    wav  1.0000  bd-04-10-21d2-t07.wav
+    98:09.15     1038856200 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

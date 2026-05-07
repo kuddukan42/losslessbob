@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-21-bach-patched.flacf 
+=================== 
+=================== 
+=================== 
+09fbde1c7cfd35dadfd2c808e141dfa7  101 - Introduction.flac
+9f3d88c770137b8431d9f5b8faca4233  102 - Hallelujah, I'm Ready To Go.flac
+fcc4aceddad3d1c9a4680cb5618dad70  103 - My Back Pages.flac
+868482f76b7259060d92d8567ce4feeb  104 - Masters Of War.flac
+602b80c0f71c7d9438012c5403521b7f  105 - Tomorrow Is A Long Time.flac
+9604c11afdf37ae03168bf3e494c242e  106 - A Hard Rain's A-Gonna Fall.flac
+a6ba2efabad6ac923f096108afa43d1d  107 - Tangled Up In Blue.flac
+84b6f1aaac7892c22f3a5eb3cfcd3e9b  108 - The Lonesome Death Of Hattie Carroll.flac
+9a7045918dbfb40fb81bb352f6349adb  109 - Gotta Serve Somebody.flac
+8fada1d1ace87d4d07287a1cad1d890c  110 - You're A Big Girl Now.flac
+989b142221b80475cfdd4e0dd0771080  111 - All Along The Watchtower.flac
+467dcb8505c67b4261c4fe4ddeb694fc  201 - Tryin' To Get To Heaven.flac
+ba65ddd59d40c6d6d02c4c229b093acc  202 - To Be Alone With You.flac
+8124a898bb3919567521e086d5866da6  203 - Ballad Of A Thin Man.flac
+e856e4a23732fcbae43baaa957b9e6ea  204 - Like A Rolling Stone.flac
+ba23d3dc6cea0f04e02fc66f8a50d040  205 - Forever Young.flac
+716deea6ffd778bf53e8fbc421e41267  206 - Maggie's Farm.flac
+34047bac6f0c3fd4203184cc56d4cd15  207 - It Ain't Me, Babe.flac
+d816371246b95a00b74878956c5a1156  208 - Rainy Day Women #12 & #35.flac
+a9dd5981e11012dd6a940385769ca993  209 - Blowin' In The Wind.flac
+896d8767fe5c6188175cb67a28b3ed51  bd2000-05-21 horsens - bach.txt
+d5955e3949d7cd4697baa7c5c4969669  d1.md5
+6c16836a6e8469f2e63a03c24bbb1a16  d2.md5
+b3d5cf0b27a169697baaec048ae781eb  eac - d1.log
+b425e8d37fbd4cf3b5eeb4bc3d927f4d  eac - d2.log
+f20a681321d290a0e5bba2802cf5b67d  lbdir-bd00-05-21-bach-patched.flacf.md5
+b21531a8c8e2a90c17484b3f2b534933  lbdir-bd00-05-21-bach-patched.flacf.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-21-bach-patched.flacf 
+=================== 
+=================== 
+=================== 
+101 - Introduction.flac:ff4e4605a9dd9e45818a756b6e34e9bc
+102 - Hallelujah, I'm Ready To Go.flac:87a9fb4bef45192a458657894bd0cf58
+103 - My Back Pages.flac:e394645bdc7aa0b8793ec9eab9badc27
+104 - Masters Of War.flac:7fd00dc8b755e11bbd9c51594bf35b2d
+105 - Tomorrow Is A Long Time.flac:52b72fe829af502daca6b947da6154ab
+106 - A Hard Rain's A-Gonna Fall.flac:f93ab9cb8ff4d6c77bd6187df16ad3c4
+107 - Tangled Up In Blue.flac:71f7b851ccdd4ac9aaec1bad3a39118b
+108 - The Lonesome Death Of Hattie Carroll.flac:d470ce642cee90ccf957e305bf183afc
+109 - Gotta Serve Somebody.flac:6a6eb9142d759686e76cf96a91362f01
+110 - You're A Big Girl Now.flac:d5edb08245e9c587bd8b3612051cd5fd
+111 - All Along The Watchtower.flac:7b4d8025ebcd59bc601c42afc8186c6e
+201 - Tryin' To Get To Heaven.flac:50cdbe196c0c3be35766b5f86a8da0e7
+202 - To Be Alone With You.flac:7944f1aa7ac50379189b231addbeee0b
+203 - Ballad Of A Thin Man.flac:0815c1e30c41bb61ccc184ad39861990
+204 - Like A Rolling Stone.flac:3325971a4c0979a236c214b8e2e8c88f
+205 - Forever Young.flac:f569b1f2cbb9113514023f33e3612e0f
+206 - Maggie's Farm.flac:c5dc4f4240b30f8c0b536c022743d193
+207 - It Ain't Me, Babe.flac:600f3781a4d61cdc6f9763ce1e9a6c35
+208 - Rainy Day Women #12 & #35.flac:3ba2eb7f9c3a3411cb571f67a0bd2363
+209 - Blowin' In The Wind.flac:ed0462cf7c24c2a1b6d50888a3092e6d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-21-bach-patched.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:15.36        2730716 B   ---   --   ---xx   flac  0.4876  101 - Introduction.flac
+     3:03.43       32382380 B   ---   --   ---xx   flac  0.5544  102 - Hallelujah, I'm Ready To Go.flac
+     5:33.59       58880012 B   ---   --   ---xx   flac  0.4703  103 - My Back Pages.flac
+     5:51.02       61921148 B   ---   --   ---xx   flac  0.4720  104 - Masters Of War.flac
+     5:10.33       54761660 B   ---   --   ---xx   flac  0.4445  105 - Tomorrow Is A Long Time.flac
+     9:48.19      103767932 B   ---   --   ---xx   flac  0.4884  106 - A Hard Rain's A-Gonna Fall.flac
+     7:09.74       75849692 B   ---   --   ---xx   flac  0.5659  107 - Tangled Up In Blue.flac
+     6:41.19       70781132 B   ---   --   ---xx   flac  0.4114  108 - The Lonesome Death Of Hattie Carroll.flac
+     4:57.21       52440236 B   ---   --   ---xx   flac  0.5758  109 - Gotta Serve Somebody.flac
+     5:32.01       58567196 B   ---   --   ---xx   flac  0.4654  110 - You're A Big Girl Now.flac
+     4:47.34       50706812 B   ---   --   ---xx   flac  0.5863  111 - All Along The Watchtower.flac
+     6:27.51       68386796 B   ---   --   ---xx   flac  0.4881  201 - Tryin' To Get To Heaven.flac
+     7:43.64       81823772 B   ---   --   ---xx   flac  0.5451  202 - To Be Alone With You.flac
+     7:28.64       79177772 B   ---   --   ---xx   flac  0.5488  203 - Ballad Of A Thin Man.flac
+     7:07.21       75372236 B   ---   --   ---xx   flac  0.5873  204 - Like A Rolling Stone.flac
+     6:59.10       73935164 B   ---   --   ---xx   flac  0.5153  205 - Forever Young.flac
+     7:05.13       75000620 B   ---   --   ---xx   flac  0.5879  206 - Maggie's Farm.flac
+     8:13.56       87096956 B   ---   --   ---xx   flac  0.4519  207 - It Ain't Me, Babe.flac
+     6:53.37       72940268 B   ---   --   ---xx   flac  0.6012  208 - Rainy Day Women #12 & #35.flac
+     6:06.43       64663580 B   ---   --   ---xx   flac  0.4686  209 - Blowin' In The Wind.flac
+   122:56.25     1301186080 B                            0.5163  (20 files)
+=================== 
+=================== 
+=================== 

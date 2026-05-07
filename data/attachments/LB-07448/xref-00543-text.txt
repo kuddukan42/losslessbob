@@ -1,0 +1,129 @@
+===================
+===================
+===================
+=== bd 1980-11-13 [Fixed LB-7448].txt
+===================
+===================
+===================
+Bob Dylan
+fox Warfield
+San Francisco, CA
+13 November 1980
+
+Fixed LosslessBob-7448
+
+LB-7448 entry: "(72min+54min), from lk fall 80 set; bittorrent download 04/09, this is a  close eac match on d1t1 to LB-496{*} with same flaws except this also has more discontinuities; (did not listen to all of this)" 
+
+* LB-496 "reported as master aud from "legendary" taper jf; aud; excellent sound, from shn upload phil's ftp server 11/00; (requested to be traded discreetly); ; (however jf did not record any shows in 1980) Carlos Santana guest (a sort of close eac match circulated as part of the lk fall 80 set); has asymetric wavs biased towards the top. analog pop d1t13 1:37; drop/cut between cdrs; discontinuities between tracks"
+
+
+> Wave Repair 4.9.3 to fix index clicks. Unnoted if analog pop d1t13 1:37 is also on LB-7448. In anycase it is not on this fixed version > flac lvl 8
+
+
+CD1
+
+01 Let Me Ride 
+02 It's Gonna Rain Again 
+03 Come On InThis House 
+04 Saved By the Grace of Your Love 
+
+05 Gotta Serve Somebody 
+06 I Believe In You 
+07 Like A Rolling Stone 
+
+08 Till I get it Right 
+
+09 Man Gave Names To All The Animals 
+10 To Ramona 
+11 Ain't Gonna Go To Hell 
+12 Girl From The North Country 
+13 Slow Train 
+
+14 Walk Around Heaven All Day 
+
+15 Abraham, Martin And John 
+16 Let's Keep It Between Us 
+
+CD2
+
+17 Covenant Woman 
+18 Solid Rock 
+19 What Can I Do For You? 
+20 The Groom's Still Waiting At The Altar 
+21 Just Like A Woman 
+22 Senor (Tales Of Yankee Power) 
+23 In The Garden 
+24 Blowin' In The Wind 
+25 City Of Gold 
+26 It Ain't Me, Babe (acoustic)
+
+Note. Live debut of The Groom's Still Waiting At The Altar.
+===================
+===================
+===================
+=== bd 1980-11-13.ffp
+===================
+===================
+===================
+Track 01.flac:d6b8f6cefef7f9349bd3be5272865795
+Track 02.flac:df2b40ddeb607d3242b15190b57e4fa6
+Track 03.flac:d1e2dbcc3ca38bfb591b3de25382c265
+Track 04.flac:a32dc4260eb3ede2e5784d556b0eea37
+Track 05.flac:5f61f0d6591c59b18bc4108bea1446a6
+Track 06.flac:d994c6bb5635f6f03f6274be81be9771
+Track 07.flac:9274c70188f6685f76559f57c76298d2
+Track 08.flac:d938a7a845b518ce419f0bd0aad2d57c
+Track 09.flac:7396fc0a76ed66adf9812e243c2bb8fd
+Track 10.flac:fd7071250833ca516d22bf5ff1d41b23
+Track 11.flac:d543a8753cec4859cdff2c136f559c67
+Track 12.flac:ac301ffaae2e75da406742437f27be05
+Track 13.flac:90127f0b8f164cebac1b5865a29d9c4b
+Track 14.flac:9881b7c175bbff124c9be5ad9d8c3c89
+Track 15.flac:65a735b2ebcf9c8aa75987ef9e4cbdfa
+Track 16.flac:cad8edb7ebb95e5a5d39e7561ed38a5d
+Track 17.flac:8af8dc8a4cad2046ddcfd4fe3ace5691
+Track 18.flac:7e88de414166d927d26e414ec8363e1d
+Track 19.flac:27b943f0af15bdb361ca589f7999d485
+Track 20.flac:e22263bddbbfe12c1aa5190cf43a4368
+Track 21.flac:5ac539ad50d06e065310de6205c37f4d
+Track 22.flac:4cd498ec4bc719cedef22c58f6aae862
+Track 23.flac:83190d31b94aecf5a1437acd0c7d923d
+Track 24.flac:e4a3f68d4dc22c9249914bd6ec86a2de
+Track 25.flac:6489f90aee41fabf30fcd54a67d5e4ad
+Track 26.flac:0b15c34bdf52892170ff6fd9534367a5
+===================
+===================
+===================
+=== bd 1980-11-13.md5
+===================
+===================
+===================
+775c0c4a3163982b871879702da88a47 *Track 01.flac
+dadec269b22033b2f8982661b7bc6e3f *Track 02.flac
+c653c6f10310788f94a65b58d327aba9 *Track 03.flac
+5964229115a0c8f2187849bc0c93dfd6 *Track 04.flac
+0a45fda02a35e96c117a882dbef92dfe *Track 05.flac
+8932a6cd253f41fbd52c3019a0785c49 *Track 06.flac
+31b778961fd3a760432ce17af85d1b06 *Track 07.flac
+02dbf00366d16e8e59f7d59427a512a4 *Track 08.flac
+6e5b41323066457f092487b0a39f935b *Track 09.flac
+faf67ad008b4abeaf9093f7564ac3af1 *Track 10.flac
+b99a488be73a86252d836aeea9ce70ee *Track 11.flac
+f3daa67e65959143bcb91685519db930 *Track 12.flac
+e657e9fb44d636a366bb6e3ea6a36ebb *Track 13.flac
+d1531d386e28cdbcae012725908dda1f *Track 14.flac
+598f8585d82beee06e9f583e21e44017 *Track 15.flac
+b185fc0c1e179d2cc29be3325a0236e8 *Track 16.flac
+5e144e995785423748ebde54807e022d *Track 17.flac
+d1499e9cd235939add7494325083cb23 *Track 18.flac
+980a22bf98b4f7d1c9b025d7ca89ed43 *Track 19.flac
+bd64ceedb8ad69e8e6e7535f26d8de4f *Track 20.flac
+ea8aebdcfd0655f577b90a6381ea4afe *Track 21.flac
+493fd15335d6a10be56d447f7da5f5d2 *Track 22.flac
+b8fd20019b506704d8589b7b41222ce7 *Track 23.flac
+c16efe750ee9de5ca16d68ca2473681c *Track 24.flac
+f4d395d4041b3b4588a18873d5764bed *Track 25.flac
+19094dce3dac25e3a1c5aea6f150b75a *Track 26.flac
+===================
+===================
+===================

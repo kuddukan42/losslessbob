@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-22-SB.flacf 
+=================== 
+=================== 
+=================== 
+19bb68fa96346d45b6113b501fd62b89  22 June 1988.txt
+b77545139f45b1a3f3556027e994fd54  bd88-06-22-SB-LB-4689.txt
+a0c9d65396a77fc50c0dd704275349a9  I Know What You Want [CD1]\BD 1988-06-22_101.flac
+4709e79f55ab0adfdc7cb3abdff12e8f  I Know What You Want [CD1]\BD 1988-06-22_102.flac
+4f78ed7e165619a2bf940fa96b02a6b4  I Know What You Want [CD1]\BD 1988-06-22_103.flac
+dad763a8e27d9b6a793cb17eb7b0b689  I Know What You Want [CD1]\BD 1988-06-22_104.flac
+4227f672e7845f089600050a5e867525  I Know What You Want [CD1]\BD 1988-06-22_105.flac
+416e9b46fbefea39663409573bff91a2  I Know What You Want [CD1]\BD 1988-06-22_106.flac
+f95c5ae96f260911b8be2fdcf416c3ea  I Know What You Want [CD1]\BD 1988-06-22_107.flac
+a7210943e1401d75bfa43c2b1a288362  I Know What You Want [CD1]\BD 1988-06-22_108.flac
+4ed3e57644711277900fe2c5d7e0e1eb  I Know What You Want [CD1]\I Know What You Want [CD1].md5
+28e2994b471ff91fec145c9086807222  I Know What You Want [CD2]\BD-1988-06-22_201.flac
+fbddf9e7eed902eeb633b4046146c013  I Know What You Want [CD2]\BD-1988-06-22_202.flac
+b4f88adcee25e4187b4e7797fea1e16f  I Know What You Want [CD2]\BD-1988-06-22_203.flac
+ff87abfbe967e7764b9c7c0b31e4d6a5  I Know What You Want [CD2]\BD-1988-06-22_204.flac
+d9c106fb6da8848cf0e10e0329194523  I Know What You Want [CD2]\BD-1988-06-22_205.flac
+1eadc3d235b272e64acc7f7f3520b3cb  I Know What You Want [CD2]\BD-1988-06-22_206.flac
+6f08daeb56771134c2056b7f56119ecc  I Know What You Want [CD2]\I Know What You Want [CD2].md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-22-SB.flacf\I Know What You Want [CD1] 
+=================== 
+=================== 
+=================== 
+BD 1988-06-22_101.flac:16afb4cdcd8cb45fcca7f3b640941dcc
+BD 1988-06-22_102.flac:b329a058cf917435f651ee8811e421de
+BD 1988-06-22_103.flac:72da78e5992dff5db8b83952ca971435
+BD 1988-06-22_104.flac:b1e81c8cdb9fbe9b8676af167de0eb75
+BD 1988-06-22_105.flac:deca40960585ad81a49589541b6759e3
+BD 1988-06-22_106.flac:a9904589be00272da96161aed7fce7a3
+BD 1988-06-22_107.flac:6945c5fa5e4ec0cd8ba67fd1f2e8ce73
+BD 1988-06-22_108.flac:c12bd6d5f42c498797b9c9bfdbe2fc3f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-22-SB.flacf\I Know What You Want [CD2] 
+=================== 
+=================== 
+=================== 
+BD-1988-06-22_201.flac:664aef81d5a9435e1c50cf89fcf5e7fe
+BD-1988-06-22_202.flac:4ef7dc9dc301a822247030e4ff3814df
+BD-1988-06-22_203.flac:9b73316c8818b399e1efb883b750d068
+BD-1988-06-22_204.flac:52bd7a9c18c3ca4a3f231a430fb01333
+BD-1988-06-22_205.flac:e004759fc9c2dfe1a55d3f41c25feb07
+BD-1988-06-22_206.flac:98e74b9b2875e8bf34e3ff69cac29b3f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-22-SB.flacf\I Know What You Want [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.47       41740988 B   ---   --   ---xx   flac  0.6972  BD 1988-06-22_101.flac
+     5:22.06       56814956 B   ---   --   ---xx   flac  0.6999  BD 1988-06-22_102.flac
+     2:58.37       31486268 B   ---   --   ---xx   flac  0.7152  BD 1988-06-22_103.flac
+     4:37.11       48888716 B   ---   --   ---xx   flac  0.7128  BD 1988-06-22_104.flac
+     3:29.58       37004060 B   ---   --   ---xx   flac  0.7062  BD 1988-06-22_105.flac
+     3:32.26       37457996 B   ---   --   ---xx   flac  0.7238  BD 1988-06-22_106.flac
+     4:24.44       46673132 B   ---   --   ---xx   flac  0.6715  BD 1988-06-22_107.flac
+     5:45.32       60933308 B   ---   --   ---xx   flac  0.6757  BD 1988-06-22_108.flac
+    34:06.36      360999424 B                            0.6980  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-22-SB.flacf\I Know What You Want [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.43       55137980 B   ---   --   ---xx   flac  0.6348  BD-1988-06-22_201.flac
+     5:05.59       53940812 B   ---   --   ---xx   flac  0.6862  BD-1988-06-22_202.flac
+     5:05.06       53816156 B   ---   --   ---xx   flac  0.6550  BD-1988-06-22_203.flac
+     7:39.59       81106412 B   ---   --   ---xx   flac  0.7036  BD-1988-06-22_204.flac
+     4:52.67       51666428 B   ---   --   ---xx   flac  0.6978  BD-1988-06-22_205.flac
+     7:22.01       77971196 B   ---   --   ---xx   flac  0.6936  BD-1988-06-22_206.flac
+    35:18.10      373638984 B                            0.6811  (6 files)
+=================== 
+=================== 
+=================== 

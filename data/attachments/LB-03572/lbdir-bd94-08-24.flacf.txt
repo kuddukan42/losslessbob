@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-08-24.flacf 
+=================== 
+=================== 
+=================== 
+bc12d6ad54af98c0e8cace82c590327e  1994-08-24 South Bend\D1T01.flac
+52bf80e35921b62a7557d44da48f1b0e  1994-08-24 South Bend\D1T02.flac
+9221d00fdaf183b4878398620c35e65f  1994-08-24 South Bend\D1T03.flac
+32e2bc4d8710ef3c22db0f05f953ad51  1994-08-24 South Bend\D1T04.flac
+5ba637bee46cd71f6d1002db7e82cb88  1994-08-24 South Bend\D1T05.flac
+9aaae5570e80a454e1dbc2ca8066a129  1994-08-24 South Bend\D1T06.flac
+01a5b64bcec88ce36f3347e28490c258  1994-08-24 South Bend\D1T07.flac
+03f10d4e258fae85e4ddff9813efc551  1994-08-24 South Bend\D1T08.flac
+6c81957ceaea1076a2b9389e8e106ec9  1994-08-24 South Bend\D1T09.flac
+429391efde818267d092e2d7cbad8fcc  1994-08-24 South Bend\D2T01.flac
+7a0cd435032cd8d2b4f47d6ff751bb42  1994-08-24 South Bend\D2T02.flac
+cc1da8f6df97e0c87a3bf3fc8dcd33d6  1994-08-24 South Bend\D2T03.flac
+94e7fea679389b23849b4f7fe3ba9f43  1994-08-24 South Bend\D2T04.flac
+5de4dbd96129ea24519da046d1e52839  1994-08-24 South Bend\D2T05.flac
+6a1077c76438207b639ef4836483c7ca  bd94-08-24-LB-3572.txt
+fbb09f2f492df5c24dfeee09d3ee66df  fingerprint.ffp.txt
+4b43199f4ceb26e9ac226087a2a6cb3b  SOUTH BEND, 24 August 1994 B.jpg
+04b82bedd2e1ee9d0b3593de05098857  SOUTH BEND, 24 August 1994 F.jpg
+eb24ad599f76eb8014b0a704ebc01a97  South Bend.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-08-24.flacf\1994-08-24 South Bend 
+=================== 
+=================== 
+=================== 
+D1T01.flac:67188e564c5c77a6176e740544dd67b3
+D1T02.flac:f354bb9222517763561f69b2cb3dc70a
+D1T03.flac:964803fdeb017675f4a6ea372180a017
+D1T04.flac:abd9a0fb512917adb5ba78ea162556e4
+D1T05.flac:8208d2f0961b60997b466836e8764c73
+D1T06.flac:433f807d802b89ed070e1da946e4cf46
+D1T07.flac:01b2ec357407521d0b732f9c0fdd9818
+D1T08.flac:5c6b978a1edec9dc5c224619f7f1c0f3
+D1T09.flac:20d1082aad4e662cd33accb1adf62814
+D2T01.flac:5ed65a8dbb18adbbcfebca77fdda6d86
+D2T02.flac:a7d33b50b5d7b39f2d6f3024c7a580a1
+D2T03.flac:af70e28094a6eabaf062eb9add6e8ad4
+D2T04.flac:2fa966f3da4d521b4d792db842edbdfc
+D2T05.flac:3dda281153384ad433c2c7ec7f128355
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-08-24.flacf\1994-08-24 South Bend 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:17.37       87757868 B   ---   --   ---xx   flac  0.5492  D1T01.flac
+     6:28.24       68499692 B   ---   --   ---xx   flac  0.5675  D1T02.flac
+     6:16.29       66394652 B   ---   --   ---xx   flac  0.5901  D1T03.flac
+     9:17.14       98287772 B   ---   --   ---xx   flac  0.5463  D1T04.flac
+     9:25.14       99698972 B   ---   --   ---xx   flac  0.5650  D1T05.flac
+     9:32.67      101058428 B   ---   --   ---xx   flac  0.4970  D1T06.flac
+     5:40.07       59992508 B   ---   --   ---xx   flac  0.4201  D1T07.flac
+     5:52.28       62158700 B   ---   --   ---xx   flac  0.4280  D1T08.flac
+     7:04.56       74925356 B   ---   --   ---xx   flac  0.4329  D1T09.flac
+     6:20.28       67097900 B   ---   --   ---xx   flac  0.5743  D2T01.flac
+     8:00.46       84780236 B   ---   --   ---xx   flac  0.5873  D2T02.flac
+     8:24.73       89077340 B   ---   --   ---xx   flac  0.6204  D2T03.flac
+     6:34.07       69518108 B   ---   --   ---xx   flac  0.5176  D2T04.flac
+     8:47.22       93014588 B   ---   --   ---xx   flac  0.4917  D2T05.flac
+   106:02.02     1122262120 B                            0.5311  (14 files)
+=================== 
+=================== 
+=================== 

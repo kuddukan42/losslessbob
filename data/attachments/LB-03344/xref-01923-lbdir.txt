@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd97-04-05-d.flacf
+===================
+===================
+===================
+fbde409ceb9024a326b16cecad98fb0d *CD 1\01 Crash on the Levee (down in the flood - 01 Crash on the Levee (down in the flood).flac
+d4f22613c4d9b28c5fab234039e8df5b *CD 1\02 I want you - 02 I want you.flac
+4ff19a2df141748bb6d3a82792b19739 *CD 1\03 All along the watchtower - 03 All along the watchtower.flac
+0d95f46563e47de4d627676c6527429b *CD 1\04 Positively 4th Street - 04 Positively 4th Street.flac
+d7eb6528d27f2d963bdff767bd364054 *CD 1\05 Watching the river flow - 05 Watching the river flow.flac
+0df2624014621f0533166e949183a80e *CD 1\06 - Silvio.flac
+51846c0b74911149374b7d90f09c1b88 *CD 1\07 Oh baby it ain't no lie - 07 Oh baby it ain't no lie.flac
+a60556537e38b9782cd4178abe74275f *CD 1\08 Desolation Row - 08 Desolation Row.flac
+bb47bd485a6b7922cdd9cb4f67154cc4 *CD 1\09 Don't think twice - it's all right.flac
+753519b0b0744f54b2010e53e8f9022e *CD 1\CD 1.md5
+08ce84880ff401449a2c9171cf8dbbc2 *CD 2\10 God knows - 10 God knows.flac
+63d69302e859dda8ca6924b349215ea9 *CD 2\11 She belongs to me - 11 She belongs to me.flac
+0dc3abee1ca3ee41719c89b863a187f2 *CD 2\12 Highway 61 revisited - 12 Highway 61 revisited.flac
+9ee0799241e17830325470f6ae029457 *CD 2\13 Like a rolling stone - 13 Like a rolling stone.flac
+89ccb16ffb275348c3bdeb74bd5e97a4 *CD 2\14 It ain't me - babe.flac
+2b88efeca38c1fa69b89f37228e4e688 *CD 2\15 Rainy day women # 12 - 35.flac
+b2f35925b27181ed88012216fb47eb6c *CD 2\CD 2.md5
+48966a7d73e163d1e821b86604274c1e *info.txt
+===================
+===================
+===================
+=== ffp for: bd97-04-05-d.flacf
+===================
+===================
+===================
+CD 1\01 Crash on the Levee (down in the flood - 01 Crash on the Levee (down in the flood).flac:cd84f13bfabfda1e9eb2f40a5d85ec16
+CD 1\02 I want you - 02 I want you.flac:9a4cb5999a22392b3a50444c90f26753
+CD 1\03 All along the watchtower - 03 All along the watchtower.flac:75d47a426d8c2643f772660d6bf00221
+CD 1\04 Positively 4th Street - 04 Positively 4th Street.flac:26e9534d8a8bfecc93ee81fec22feb80
+CD 1\05 Watching the river flow - 05 Watching the river flow.flac:dd4055fe8abd3a3c07031a27e7eb80b6
+CD 1\06 - Silvio.flac:37fd6fb0de646da05e7dcea2245743a8
+CD 1\07 Oh baby it ain't no lie - 07 Oh baby it ain't no lie.flac:8dcae7e7ed0b82429c677ef80fc0c776
+CD 1\08 Desolation Row - 08 Desolation Row.flac:934f14d063f8824308c1df31a5532bcc
+CD 1\09 Don't think twice - it's all right.flac:e64e45197e607bb514ad49606cb463f2
+CD 2\10 God knows - 10 God knows.flac:34582b8219b5546e5b3952fce7dc9212
+CD 2\11 She belongs to me - 11 She belongs to me.flac:17a33600ffeb2fe895bd1cc4252d7252
+CD 2\12 Highway 61 revisited - 12 Highway 61 revisited.flac:988f9bf613d92c40b5841ca0dfcecff9
+CD 2\13 Like a rolling stone - 13 Like a rolling stone.flac:0233c448c300d3405a1de66127e9b2fc
+CD 2\14 It ain't me - babe.flac:da3ebba62a434bf4a98640c2f2830b51
+CD 2\15 Rainy day women # 12 - 35.flac:2afc4ba263ee3a7fd5f72c6b043cdabf
+===================
+===================
+===================
+=== shntool len for: bd97-04-05-d.flacf\CD 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:47.01       50629196 B   ---   --   ---xx   flac  0.5857  01 Crash on the Levee (down in the flood - 01 Crash on the Levee (down in the flood).flac
+     6:46.01       71620796 B   ---   --   ---xx   flac  0.6286  02 I want you - 02 I want you.flac
+     6:36.00       69854444 B   ---   --   ---xx   flac  0.6763  03 All along the watchtower - 03 All along the watchtower.flac
+     8:42.00       92080844 B   ---   --   ---xx   flac  0.5871  04 Positively 4th Street - 04 Positively 4th Street.flac
+     8:19.00       88023644 B   ---   --   ---xx   flac  0.5883  05 Watching the river flow - 05 Watching the river flow.flac
+     7:52.58       83397260 B   ---   --   ---xx   flac  0.6382  06 - Silvio.flac
+     5:46.00       61034444 B   ---   --   ---xx   flac  0.5746  07 Oh baby it ain't no lie - 07 Oh baby it ain't no lie.flac
+    10:27.00      110602844 B   ---   --   ---xx   flac  0.5401  08 Desolation Row - 08 Desolation Row.flac
+     9:22.00       99136844 B   ---   --   ---xx   flac  0.6062  09 Don't think twice - it's all right.flac
+    68:37.60      726380316 B                            0.6001  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd97-04-05-d.flacf\CD 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:47.08       71813660 B   ---   --   ---xx   flac  0.5197  10 God knows - 10 God knows.flac
+     8:30.00       89964044 B   ---   --   ---xx   flac  0.5295  11 She belongs to me - 11 She belongs to me.flac
+     9:50.00      104076044 B   ---   --   ---xx   flac  0.5363  12 Highway 61 revisited - 12 Highway 61 revisited.flac
+     9:20.00       98784044 B   ---   --   ---xx   flac  0.5490  13 Like a rolling stone - 13 Like a rolling stone.flac
+     8:49.00       93315644 B   ---   --   ---xx   flac  0.4098  14 It ain't me - babe.flac
+     7:01.55       74393804 B   ---   --   ---xx   flac  0.5757  15 Rainy day women # 12 - 35.flac
+    50:17.63      532347240 B                            0.5186  (6 files)
+===================
+===================
+===================

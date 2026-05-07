@@ -1,0 +1,12 @@
+60d13fbb58596ad3dff384d3d2ca2dc5  bd93-10-02-stumblin-along-d1t01.flac
+1f142ad8db14f5f59ff81684083c776e  bd93-10-02-stumblin-along-d1t02.flac
+823aa3d4a0e2c161157485ef8503bbe0  bd93-10-02-stumblin-along-d1t03.flac
+640a6a5031ba11818e842b01a54aa630  bd93-10-02-stumblin-along-d1t04.flac
+8141c4df78fe040d3c773388ae8a87d9  bd93-10-02-stumblin-along-d1t05.flac
+ace91434a4b9d4857548e23579c4b0cc  bd93-10-02-stumblin-along-d1t06.flac
+f0d83353ef5b88278f885ad4ca51bcba  bd93-10-02-stumblin-along-d1t07.flac
+dd2dfc5a473adba35b2b7a2a5f3614fc  bd93-10-02-stumblin-along-d1t08.flac
+a263cd5a0d97290353353915188ddc17  bd93-10-02-stumblin-along-d1t09.flac
+ca4843254e7eee980794de8511e5365f  bd93-10-02-stumblin-along-d1t10.flac
+fbad3e5c6f0a720e134e7fad3b945034  bd93-10-02-stumblin-along-d1t11.flac
+46c45962a2ad43b69b47964af9bd54d9  bd93-10-02-stumblin-along.flacf.md5

@@ -1,0 +1,269 @@
+===================
+===================
+===================
+=== dead2003-08-05.txt
+===================
+===================
+===================
+The Dead
+08/05/2003
+Verizon Wireless Amp., Indianapolis, IN
+
+Location: Taper's section
+
+Taper: Jim O'Malley
+
+Source: AKG 391B>Denecke AD-20>Sony PCM- M1Dat>CDR>EAC>SHN
+
+Mastering: SHN>WAV>ADWS>CD WAV>SHN(seekable)
+
+Mastering by T. Wiley 08/26/2003.
+
+SET 1
+CD 1 {67:55.51}   
+01. Jam-> {3:24.41}
+02. Playin' In The Band-> {10:09.62} 
+03. U.S. Blues-> {7:49.25} 
+04. Stagger Lee {8:23.15} 
+05. Good Morning Little School Girl* {6:35.49}
+06. Mr. Jones* {7:23.51}
+07. Oh Boy* {4:28.35}
+08. Baba Jingo {7:53.03} 
+09. He's Gone {11:47.70}
+
+SET 1 Cont.
+CD 2 {74:36.74}
+01. Unbroken Chain {12:11.21} 
+SET 2 
+02. //Weather Report Suite {8:24.73} 
+03. Let It Grow {16:54.47} 
+04. The Eleven {15:21.16} 
+05. All That We Are {6:14.52} 
+06. Drums {15:30.15}
+
+SET 2 Cont.
+CD 3 {54:15.13} 
+01. Space {6:25.58} 
+02. Lady With A Fan {8:39.36} 
+03. Morning Dew {11:59.43} 
+04. Terrapin Station {8:25.22} 
+05. Sugar Magnolia {10:00.38} 
+06. Donor Rap {1:19.23} 
+ENCORE
+07. Attics Of My Life {7:25.18}  
+
+* With Bob Dylan
+
+Notes: All breaks between disks are seemless. D2t02 (Weather Report Suite) begining is clipped 
+I am not sure how much is missing. Redundancy between D2 and D3 is removed.
+
+Thanks to Brian B. for the source SHNs!
+
+Enjoy!!
+
+C:\SHN>shntool len *.wav
+    length     expanded size   cdr  WAVE  probs   filename
+     3:24.41      36082076     ---   --    ---    dead2003-08-05d1t01.wav
+    10:09.62     107573468     ---   --    ---    dead2003-08-05d1t02.wav
+     7:49.25      82790444     ---   --    ---    dead2003-08-05d1t03.wav
+     8:23.15      88764524     ---   --    ---    dead2003-08-05d1t04.wav
+     6:35.49      69793292     ---   --    ---    dead2003-08-05d1t05.wav
+     7:23.51      78265196     ---   --    ---    dead2003-08-05d1t06.wav
+     4:28.35      47357564     ---   --    ---    dead2003-08-05d1t07.wav
+     7:53.03      83444300     ---   --    ---    dead2003-08-05d1t08.wav
+    11:47.70     124879484     ---   --    ---    dead2003-08-05d1t09.wav
+    12:11.21     128997836     ---   --    ---    dead2003-08-05d2t01.wav
+     8:24.73      89077340     ---   --    ---    dead2003-08-05d2t02.wav
+    16:54.47     178980188     ---   --    ---    dead2003-08-05d2t03.wav
+    15:21.16     162502076     ---   --    ---    dead2003-08-05d2t04.wav
+     6:14.52      66095948     ---   --    ---    dead2003-08-05d2t05.wav
+    15:30.15     164087324     ---   --    ---    dead2003-08-05d2t06.wav
+     6:25.58      68050460     ---   --    ---    dead2003-08-05d3t01.wav
+     8:39.36      91636316     ---   --    ---    dead2003-08-05d3t02.wav
+    11:59.43     126932780     ---   --    ---    dead2003-08-05d3t03.wav
+     8:25.22      89133788     ---   --    ---    dead2003-08-05d3t04.wav
+    10:00.38     105929420     ---   --    ---    dead2003-08-05d3t05.wav
+     1:19.23      13989740     ---   --    ---    dead2003-08-05d3t06.wav
+     7:25.18      78540380     ---   --    ---    dead2003-08-05d3t07.wav
+   196:47.63    2082903944 B                      (totals for 22 files)
+===================
+===================
+===================
+=== dead2003-08-05d1shn.md5
+===================
+===================
+===================
+60bfa85644d043131bbb03cbe7147fec *dead2003-08-05d1t01.shn
+47cfcc51271d24c0910f8dfec86b9ad0 *dead2003-08-05d1t02.shn
+723843adf74fa3339068dc40efe1de78 *dead2003-08-05d1t03.shn
+98261d28b2032363a50c18e61bb55885 *dead2003-08-05d1t04.shn
+f04bf614d0db9310123c75992e1f7410 *dead2003-08-05d1t05.shn
+096008da7894514e1703aa1b3b6b36f5 *dead2003-08-05d1t06.shn
+61085bd83a9fe7b8a26251b8857e65b7 *dead2003-08-05d1t07.shn
+28402b7200f07c94e13e741ee3083f6f *dead2003-08-05d1t08.shn
+c0c34ebb34a7b67c02386b8a3308d22a *dead2003-08-05d1t09.shn
+===================
+===================
+===================
+=== dead2003-08-05d1wav.md5
+===================
+===================
+===================
+f9620899cdb4645ba8a7ed7de971ed10 *dead2003-08-05d1t01.wav
+d99ea854ee93a30f15b7f23b1f2c4760 *dead2003-08-05d1t02.wav
+8ae7ce1e9ecaf677a7380093190edc1e *dead2003-08-05d1t03.wav
+d504f36420a160bce0d9284e0c553426 *dead2003-08-05d1t04.wav
+bbabe73b3cff96f0aa22361da99543c7 *dead2003-08-05d1t05.wav
+8cc6d0f5610927c2bd7d80db1465b2fe *dead2003-08-05d1t06.wav
+10aa95d924ca665d83f1ba16275dce12 *dead2003-08-05d1t07.wav
+6880f6fcacc2faf57b89f2a1950cc800 *dead2003-08-05d1t08.wav
+e0c150c57264be008f7d13d2c70cb1ce *dead2003-08-05d1t09.wav
+===================
+===================
+===================
+=== dead2003-08-05d2shn.md5
+===================
+===================
+===================
+2475cf40d17cff092b17397cd0ec6d17 *dead2003-08-05d2t01.shn
+fc053fb865afaefc9f8b5f84b85bfe8a *dead2003-08-05d2t02.shn
+79e45f57feff0c91ec75c1684e62f5f1 *dead2003-08-05d2t03.shn
+429094125918339abeb31091d0fb9280 *dead2003-08-05d2t04.shn
+ae65f2b6369a8466762c9609fb538416 *dead2003-08-05d2t05.shn
+e1ed32381660becf7613fa794848910d *dead2003-08-05d2t06.shn
+===================
+===================
+===================
+=== dead2003-08-05d2wav.md5
+===================
+===================
+===================
+6a2206181baaed00003c55fa3e6b7a23 *dead2003-08-05d2t01.wav
+57a669a779d8e4914ef992c4069b492f *dead2003-08-05d2t02.wav
+7e16660d2306baf65d2de92efa631066 *dead2003-08-05d2t03.wav
+39f128ca339dde6882c4e562a21c3623 *dead2003-08-05d2t04.wav
+ab45a97266c1535b5c22f2334253ee11 *dead2003-08-05d2t05.wav
+07bf7441c61d96f970ad81a1280e292d *dead2003-08-05d2t06.wav
+===================
+===================
+===================
+=== dead2003-08-05d3shn.md5
+===================
+===================
+===================
+dad6ab1307208da049380d034b0759c1 *dead2003-08-05d3t01.shn
+1f06c736adb5b646e602edb3c781639f *dead2003-08-05d3t02.shn
+e715a8e375aedf7f59a1643556267512 *dead2003-08-05d3t03.shn
+bdde72e0698ec7b106a451405d952c5d *dead2003-08-05d3t04.shn
+34ec277d6c0b3da7f1275b116d3e5130 *dead2003-08-05d3t05.shn
+35925256c5d87b584542a5a56c9f99be *dead2003-08-05d3t06.shn
+9cea44f817587a5411eeb9931f4ffdfd *dead2003-08-05d3t07.shn
+===================
+===================
+===================
+=== dead2003-08-05d3wav.md5
+===================
+===================
+===================
+efcbe9e0ed92ddeec3fa67e368c3f375 *dead2003-08-05d3t01.wav
+01d135bff5578ae518c3e0f03dbb25c6 *dead2003-08-05d3t02.wav
+aac4451c0218e1f8947d84346bd03cfe *dead2003-08-05d3t03.wav
+e92a8699ba08c3c153db5388655f024a *dead2003-08-05d3t04.wav
+3101a08290d529cea8c984cfc3f96b64 *dead2003-08-05d3t05.wav
+27b7231c93ff0b642123beb40a90bbf6 *dead2003-08-05d3t06.wav
+dc726c17ce300b3a303724a809c59954 *dead2003-08-05d3t07.wav
+===================
+===================
+===================
+=== shntool.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE  probs   filename
+     3:24.41      36082076     ---   --    -xx    dead2003-08-05d1t01.shn
+    10:09.62     107573468     ---   --    -xx    dead2003-08-05d1t02.shn
+     7:49.25      82790444     ---   --    -xx    dead2003-08-05d1t03.shn
+     8:23.15      88764524     ---   --    -xx    dead2003-08-05d1t04.shn
+     6:35.49      69793292     ---   --    -xx    dead2003-08-05d1t05.shn
+     7:23.51      78265196     ---   --    -xx    dead2003-08-05d1t06.shn
+     4:28.35      47357564     ---   --    -xx    dead2003-08-05d1t07.shn
+     7:53.03      83444300     ---   --    -xx    dead2003-08-05d1t08.shn
+    11:47.70     124879484     ---   --    -xx    dead2003-08-05d1t09.shn
+    12:11.21     128997836     ---   --    -xx    dead2003-08-05d2t01.shn
+     8:24.73      89077340     ---   --    -xx    dead2003-08-05d2t02.shn
+    16:54.47     178980188     ---   --    -xx    dead2003-08-05d2t03.shn
+    15:21.16     162502076     ---   --    -xx    dead2003-08-05d2t04.shn
+     6:14.52      66095948     ---   --    -xx    dead2003-08-05d2t05.shn
+    15:30.15     164087324     ---   --    -xx    dead2003-08-05d2t06.shn
+     6:25.58      68050460     ---   --    -xx    dead2003-08-05d3t01.shn
+     8:39.36      91636316     ---   --    -xx    dead2003-08-05d3t02.shn
+    11:59.43     126932780     ---   --    -xx    dead2003-08-05d3t03.shn
+     8:25.22      89133788     ---   --    -xx    dead2003-08-05d3t04.shn
+    10:00.38     105929420     ---   --    -xx    dead2003-08-05d3t05.shn
+     1:19.23      13989740     ---   --    -xx    dead2003-08-05d3t06.shn
+     7:25.18      78540380     ---   --    -xx    dead2003-08-05d3t07.shn
+   196:47.63    2082903944 B                      (totals for 22 files, 0.6077 overall compression ratio)
+===================
+===================
+===================
+=== to03-08-05-akg.19185.shnf_mychecksums.txt
+===================
+===================
+===================
+11c60eea158d7d5d35737ca955f18b74  dead2003-08-05.txt
+97ad5f1b3cef1b119bf3a7eb3d4707f2  dead2003-08-05d1shn.md5
+60bfa85644d043131bbb03cbe7147fec  dead2003-08-05d1t01.shn
+47cfcc51271d24c0910f8dfec86b9ad0  dead2003-08-05d1t02.shn
+723843adf74fa3339068dc40efe1de78  dead2003-08-05d1t03.shn
+98261d28b2032363a50c18e61bb55885  dead2003-08-05d1t04.shn
+f04bf614d0db9310123c75992e1f7410  dead2003-08-05d1t05.shn
+096008da7894514e1703aa1b3b6b36f5  dead2003-08-05d1t06.shn
+61085bd83a9fe7b8a26251b8857e65b7  dead2003-08-05d1t07.shn
+28402b7200f07c94e13e741ee3083f6f  dead2003-08-05d1t08.shn
+c0c34ebb34a7b67c02386b8a3308d22a  dead2003-08-05d1t09.shn
+a9ba2df36e5574f20272a229cc93abf5  dead2003-08-05d1wav.md5
+5c94892d7931cd274a667536214ad587  dead2003-08-05d2shn.md5
+2475cf40d17cff092b17397cd0ec6d17  dead2003-08-05d2t01.shn
+fc053fb865afaefc9f8b5f84b85bfe8a  dead2003-08-05d2t02.shn
+79e45f57feff0c91ec75c1684e62f5f1  dead2003-08-05d2t03.shn
+429094125918339abeb31091d0fb9280  dead2003-08-05d2t04.shn
+ae65f2b6369a8466762c9609fb538416  dead2003-08-05d2t05.shn
+e1ed32381660becf7613fa794848910d  dead2003-08-05d2t06.shn
+0e00f9582d62e8f128276de88fd6dcb6  dead2003-08-05d2wav.md5
+885743d808e091003da309af613b8fbe  dead2003-08-05d3shn.md5
+dad6ab1307208da049380d034b0759c1  dead2003-08-05d3t01.shn
+1f06c736adb5b646e602edb3c781639f  dead2003-08-05d3t02.shn
+e715a8e375aedf7f59a1643556267512  dead2003-08-05d3t03.shn
+bdde72e0698ec7b106a451405d952c5d  dead2003-08-05d3t04.shn
+34ec277d6c0b3da7f1275b116d3e5130  dead2003-08-05d3t05.shn
+35925256c5d87b584542a5a56c9f99be  dead2003-08-05d3t06.shn
+9cea44f817587a5411eeb9931f4ffdfd  dead2003-08-05d3t07.shn
+309373aec5b423fa1d3d7a741adb05d6  dead2003-08-05d3wav.md5
+d41d8cd98f00b204e9800998ecf8427e  md5_ok
+569e24153670131854528992fb2a8dcf  shntool.txt
+
+c5848ca61df066e761b1185a8e66e57d  [shntool]  dead2003-08-05d1t01.shn
+3e1803246c7b5d4f592dc2e69972cabf  [shntool]  dead2003-08-05d1t02.shn
+9fe5c00a8013938a11d7aacd5bfe455c  [shntool]  dead2003-08-05d1t03.shn
+718c8a0014e12d9eb570b71c0340cb45  [shntool]  dead2003-08-05d1t04.shn
+b7212747628d3d3ecf52f6bb182d72dd  [shntool]  dead2003-08-05d1t05.shn
+13c32c4774b450166b7e2bc4ebc199ae  [shntool]  dead2003-08-05d1t06.shn
+1263bcdd7b354e94977dd30fe7da6f35  [shntool]  dead2003-08-05d1t07.shn
+e51d09bda5be02f89b8b6e25a63196f3  [shntool]  dead2003-08-05d1t08.shn
+e3fc3bbe3f0a45235c5164425db78c51  [shntool]  dead2003-08-05d1t09.shn
+9e8eff318c26fdcbc866dfaa87bcd467  [shntool]  dead2003-08-05d2t01.shn
+2ed2810b3707762cea304df62a60bd38  [shntool]  dead2003-08-05d2t02.shn
+82ca1e87bd4ba2edc4fa0785f501644e  [shntool]  dead2003-08-05d2t03.shn
+9579654a5cd76dbd8165e4d334211db7  [shntool]  dead2003-08-05d2t04.shn
+c92e45eb5ed73e2545dcf10cec349463  [shntool]  dead2003-08-05d2t05.shn
+2e55f8f3a29055c7e6ee3ff761afe9e4  [shntool]  dead2003-08-05d2t06.shn
+202e2a3d1052e47dbdb838abc2d105ce  [shntool]  dead2003-08-05d3t01.shn
+a4b8f68980a5f9bd63d864d0fc12d64d  [shntool]  dead2003-08-05d3t02.shn
+0c334a1ee73513a305c911999f02873b  [shntool]  dead2003-08-05d3t03.shn
+8c6985f847a460096acdc03339ba1ae0  [shntool]  dead2003-08-05d3t04.shn
+a33c99574ffc99fe97665b019db94682  [shntool]  dead2003-08-05d3t05.shn
+6f711ac49b81f892d220d566acc8e5cd  [shntool]  dead2003-08-05d3t06.shn
+cce7568eb89016c9680e70c9e18eaac6  [shntool]  dead2003-08-05d3t07.shn
+===================
+===================
+===================

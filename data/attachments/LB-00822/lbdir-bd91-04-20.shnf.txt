@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-04-20.shnf 
+=================== 
+=================== 
+=================== 
+36c21f3a652f0d7fe0107930b947354e  bd91-04-20.txt
+2ad2245da5f0a48c84de23f0a8f000ac  d1\01 New Morning.shn
+c5624a2221a00f20f6feb198833d6a54  d1\02 Lay Lady Lay.shn
+1bc856cb88571e4a3d4207b2b496b1ab  d1\03 All Along The Watchtower.shn
+a0e74c72e7ce01dd24833b0c920477ab  d1\04 The Man In Me.shn
+2f6d739fb799083b6324271ee5ede9fb  d1\05 Gotta Serve Somebody.shn
+f06da8b14c53b40b4836c319ea56be17  d1\06 Wiggle Wiggle.shn
+e90dd14f6cd4ef96285e4118539a9a57  d1\07 The Lonesome Death Of Hattie Carroll.shn
+b743dd4e2652bf195c837f400ca926c4  d1\08 Gates Of Eden.shn
+ab00a49ec65ec629331d9c25778d0a7b  d1\09 Barbara Allen.shn
+8ad0dc94ab0f49dd7529157b028a96c8  d1\1.md5
+b0fc899f34c7bb762040ecd807c76b31  d1\10 Bob Dylan's Dream.shn
+8b7e0a717a3518b97eb6ea8fa0a40f7a  d2\01 Everything Is Broken.shn
+ba7893117fd467f6d68bb287c711a9d0  d2\02 Positively 4th Street.shn
+9ad44203897374e652883ca2e3171372  d2\03 Highway 61 Revisited.shn
+a9820a1acee746ba8ce819f655308728  d2\04 Under The Red Sky.shn
+7cde088a92e944652c20c62a402a6924  d2\05 I Shall Be Released.shn
+23b4ea282e3a0cf0fe73ecffde1dc5e2  d2\06 Like A Rolling Stone.shn
+f8d6f17cace5b6de2bdc9bc86924f701  d2\07 Blowin' In The Wind.shn
+1913882b04305354ce5fc72cba3f423d  d2\08 Maggie's Farm.shn
+4c5708b4fa6c700853b3a5840be71bb5  d2\2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-04-20.shnf\d2 
+=================== 
+=================== 
+=================== 
+0329a83ed7a2d6b39b7ddd8deb29f747  [shntool]  01_Everything_Is_Broken.wav
+2c5bb97fd1f208fee65dd1c263555006  [shntool]  02_Positively_4th_Street.wav
+68eeb222136a9991f154e5705bc9172d  [shntool]  03_Highway_61_Revisited.wav
+115f6d9874aec2f1a667b358340b0bce  [shntool]  04_Under_The_Red_Sky.wav
+ae976ed4ae542a80ef5cef65b85210a0  [shntool]  05_I_Shall_Be_Released.wav
+b1f34251f4ac6fea999bcd5ab76ad3a3  [shntool]  06_Like_A_Rolling_Stone.wav
+b792b441568f0060ddde0188a3ab8b35  [shntool]  07_Blowin'_In_The_Wind.wav
+b6e0d4d6a9c40abc5848814b1d59f0d5  [shntool]  08_Maggie's_Farm.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-04-20.shnf\d1 
+=================== 
+=================== 
+=================== 
+81fbe7a9dc71e5153cb531847222d030  [shntool]  01_New_Morning.wav
+19e0a97d6609f57ac792616ce2097bc1  [shntool]  02_Lay_Lady_Lay.wav
+929002ea32ebb5af3b78e777444c5f42  [shntool]  03_All_Along_The_Watchtower.wav
+316aa850ab5f4f67961cba51655a188f  [shntool]  04_The_Man_In_Me.wav
+5a62ba15cb0b9565521d14b9eae68157  [shntool]  05_Gotta_Serve_Somebody.wav
+dd79451efee17b9ae459508462fa45f3  [shntool]  06_Wiggle_Wiggle.wav
+5401450513dfccc1c3334f437c31c057  [shntool]  07_The_Lonesome_Death_Of_Hattie_Carroll.wav
+f94759642dc73c5abf00ec60a573c242  [shntool]  08_Gates_Of_Eden.wav
+c5a88987c95bcafa562e3e2f5767536f  [shntool]  09_Barbara_Allen.wav
+06bfed3602f88327cdba34df42db0f97  [shntool]  10_Bob_Dylan's_Dream.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-04-20.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.40       43841324 B   ---   --   ---xx    shn  0.6741  01 Everything Is Broken.shn
+     5:21.34       56704412 B   ---   --   ---xx    shn  0.6541  02 Positively 4th Street.shn
+     5:15.17       55606028 B   ---   --   ---xx    shn  0.6982  03 Highway 61 Revisited.shn
+     4:32.41       48077276 B   ---   --   ---xx    shn  0.6512  04 Under The Red Sky.shn
+     4:28.48       47388140 B   ---   --   ---xx    shn  0.6695  05 I Shall Be Released.shn
+     6:38.08       70226060 B   ---   --   ---xx    shn  0.7144  06 Like A Rolling Stone.shn
+     5:52.07       62109308 B   ---   --   ---xx    shn  0.6661  07 Blowin' In The Wind.shn
+     5:24.19       57198332 B   ---   --   ---xx    shn  0.7142  08 Maggie's Farm.shn
+    41:40.64      441150880 B                            0.6821  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-04-20.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.49       48448892 B   ---   --   ---xx    shn  0.6469  01 New Morning.shn
+     5:06.60       54119564 B   ---   --   ---xx    shn  0.6512  02 Lay Lady Lay.shn
+     3:10.07       33532508 B   ---   --   ---xx    shn  0.6791  03 All Along The Watchtower.shn
+     4:46.28       50516300 B   ---   --   ---xx    shn  0.6901  04 The Man In Me.shn
+     5:54.53       62570300 B   ---   --   ---xx    shn  0.6828  05 Gotta Serve Somebody.shn
+     3:29.26       36928796 B   ---   --   ---xx    shn  0.6981  06 Wiggle Wiggle.shn
+     6:04.49       64324892 B   ---   --   ---xx    shn  0.6982  07 The Lonesome Death Of Hattie Carroll.shn
+     5:24.67       57311228 B   ---   --   ---xx    shn  0.6664  08 Gates Of Eden.shn
+     4:02.23       42742940 B   ---   --   ---xx    shn  0.6537  09 Barbara Allen.shn
+     4:20.74       46038092 B   ---   --   ---xx    shn  0.6728  10 Bob Dylan's Dream.shn
+    46:54.61      496533512 B                            0.6741  (10 files)
+=================== 
+=================== 
+=================== 

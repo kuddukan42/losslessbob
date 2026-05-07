@@ -1,0 +1,58 @@
+Bob Dylan and his Band
+Fort Worth, Texas
+Willie Nelson's 4th of July Picnic
+Fort Worth Stockyards
+40-acre North Forty Field
+July 4, 2005
+
+AUDIENCE recording by M&A
+
+MBHO 603a > Lunatech V-3 > Sony-D100 > Audio CD from M&A
+(wav encoded to FLAC with xACT 1.4b24)
+
+Single disc	54:58
+1.	Intro	0:33
+1.	Drifter's Escape	4:37
+2.	I'll Be Your Baby Tonight	5:44
+3.	Absolutely Sweet Marie	6:37
+4.	You Win Again (acoustic) (with Willie Nelson)	4:21
+5.	Highway 61 Revisited	7:38
+6.	Shooting Star	6:30
+7.	Cold Irons Bound	6:03
+8.	Like A Rolling Stone	7:25
+9.	All Along The Watchtower	5:29
+ 	 
+Band Members
+Bob Dylan - keyboard, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - violin, electric mandolin, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+bd2005-07-04.ffp.txt
+bd2005-07-04t01.flac:f1f25c6b4532c635a72b8e891b9b6879bd2005-07-04t02.flac:07d925c5f69e62581723e6274a83bfd0bd2005-07-04t03.flac:4548b1bf8e0371c4436152bae431ea8ebd2005-07-04t04.flac:019f874db24164aa96485284e03821e6bd2005-07-04t05.flac:534f7e2d39edb3a008755c3b7737944fbd2005-07-04t06.flac:c70eda11488f08147f1d59eab3aba29fbd2005-07-04t07.flac:8acdfde4ec6f4cef73117090906f2bcebd2005-07-04t08.flac:7b75864e906b028f274329103c366987bd2005-07-04t09.flac:d2c824e74989504c033ae0f313b09b50bd2005-07-04t10.flac:27afc726f096bf1ef62a52612a2610c7
+
+bd2005-07-04.flac.md5
+8b7b1f2422407cb7bed8321ecaebd66a *bd2005-07-04t01.flac
+167c211cdd86e832ff18bdc8f95c4136 *bd2005-07-04t10.flac
+1fa00a2557959a5061d2f522b0daadae *bd2005-07-04t09.flac
+d7fa5396aad29804ea792db55d3cbc9d *bd2005-07-04t08.flac
+d3c938424e3515c66f417a142b9f9203 *bd2005-07-04t07.flac
+0136d261c8aa15db94f68227ea0d0732 *bd2005-07-04t06.flac
+ff240dc67d662633ddbc802220a89289 *bd2005-07-04t05.flac
+7a6c8d624975b29b9db3d7356472cf94 *bd2005-07-04t04.flac
+cd361d7cf28828cb020d9fb5fe159d73 *bd2005-07-04t03.flac
+12ba7932dc30e7b3526042ceb44e5af3 *bd2005-07-04t02.flac
+
+bd2005-07-04.wav.md5
+861ba63ee8f514881947ded15755f3ad *bd2005-07-04t01.wav
+1f643a0aaed83bf56cbcd7fcd81fb6d6 *bd2005-07-04t02.wav
+9b99e8634fbe50d7a85622307a3a21ca *bd2005-07-04t03.wav
+478d42555bf72b6e18440201bdac7717 *bd2005-07-04t04.wav
+cb9d188f2bb8014dd348e8b43b7f1d67 *bd2005-07-04t05.wav
+4fb473e4260e6dcdb5979423b80b47ba *bd2005-07-04t06.wav
+0a1a818044abfd977d437c01605b81b4 *bd2005-07-04t07.wav
+25f5bb005c860d2c1e329d7496fae375 *bd2005-07-04t08.wav
+984f545fc9d0973c49f7863ae632078e *bd2005-07-04t09.wav
+9e30b397caf1729f94a8f37b8cb68fc9 *bd2005-07-04t10.wav

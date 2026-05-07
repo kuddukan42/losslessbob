@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-15a.flacf 
+=================== 
+=================== 
+=================== 
+0f74ecbce0f1e1b84eeffba3108506da  01 Intro.flac
+2025434147f0fb55b8cbae50f14e72e7  02 Maggie's Farm.flac
+c593a7b1eaa49b46e456fc02fd33b0ca  03 She Belongs to Me.flac
+106270ed86543417dcbd7395490cf996  04 Lonesome Day Blues.flac
+891fc8c426db482bdd99261547e7cce5  05 Queen Jane.flac
+b998fc0609ac8018a9682e97cc9f566d  06 Til I Fell in Love With You.flac
+04aaa56d9485f60a82aee9365a8790b9  07 It's Alright, Ma.flac
+59ec66ef43bf9642fcb7989b8e1eaf81  08 Don't Think Twice.flac
+9405e320e0e6911b744ad875b261365f  09 Highway 61.flac
+060b7165e8e48877fda5366b52e239d4  10 Every Grain of Sand.flac
+9ad2eeb9706f7c1769743e16f87d6463  11 Cold Irons Bound.flac
+f418b91af13aad8d4c4655ebd1c9e517  12 Boots of Spanish Leather.flac
+79a18d1784ab5455fe1c37ae4395d124  13 High Water.flac
+49ce1d75058e3cf9cf9c51c74b827391  14 Like A Rolling Stone.flac
+c4d5a6acfe9c10dbc6797dce54def41d  15 Watchtower.flac
+009b1dfbbc9bb43ceca2bea19df4e250  bd06-04-15a-LB-3751.txt
+c4b6bb83b8cdaf38bd9c111afdd474df  Bob Dylan Grand Prairie.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-15a.flacf 
+=================== 
+=================== 
+=================== 
+01 Intro.flac:5fa4e8acbabe5fb757c6f34c2ca75cb4
+02 Maggie's Farm.flac:4425783dac254ba6c4a7a7e43c0921d7
+03 She Belongs to Me.flac:70dce8b59f58c1a21da21f9f2bd2f017
+04 Lonesome Day Blues.flac:d4e60419e2df4f27331fe128149a9d5e
+05 Queen Jane.flac:91d54735934105775ec7f3a8549869d1
+06 Til I Fell in Love With You.flac:be0cc6f0bcfe971f72eef9d1da2818cf
+07 It's Alright, Ma.flac:b9fe567cbfa658916ace080d7ba0cd23
+08 Don't Think Twice.flac:d5a00dc6e20b65d4a4522797dace04d8
+09 Highway 61.flac:27feffaccdacd54ff8112283e9d968a5
+10 Every Grain of Sand.flac:5dcdc30de69b2ce53e2e873f5a35d0c8
+11 Cold Irons Bound.flac:d0ddcb5770d24878014a5a07e7c7d463
+12 Boots of Spanish Leather.flac:6d34d1d4c1d8ed944e2dddab9132c919
+13 High Water.flac:18652c52a7500328d6f674df1cea0f4b
+14 Like A Rolling Stone.flac:80f3fdeedfe554df1f0e684f0b365dfa
+15 Watchtower.flac:5420516f23c8669aa76e484efb9cb05d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-15a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:34.48        6110252 B   -b-   --   ---xx   flac  0.6123  01 Intro.flac
+     5:09.22       54558764 B   -b-   --   ---xx   flac  0.6831  02 Maggie's Farm.flac
+     5:42.29       60397100 B   -b-   --   ---xx   flac  0.6725  03 She Belongs to Me.flac
+     7:10.53       75976748 B   -b-   --   ---xx   flac  0.6757  04 Lonesome Day Blues.flac
+     8:54.60       94339628 B   -b-   --   ---xx   flac  0.6247  05 Queen Jane.flac
+     6:54.66       73184300 B   -b-   --   ---xx   flac  0.6405  06 Til I Fell in Love With You.flac
+     7:56.67       84123692 B   -b-   --   ---xx   flac  0.6606  07 It's Alright, Ma.flac
+     7:56.14       83999276 B   -b-   --   ---xx   flac  0.6191  08 Don't Think Twice.flac
+     6:48.63       72119852 B   -b-   --   ---xx   flac  0.6760  09 Highway 61.flac
+     8:03.45       85307948 B   -b-   --   ---xx   flac  0.6032  10 Every Grain of Sand.flac
+     7:21.47       77902892 B   -b-   --   ---xx   flac  0.6563  11 Cold Irons Bound.flac
+     6:32.27       69212204 B   -b-   --   ---xx   flac  0.5641  12 Boots of Spanish Leather.flac
+     9:25.73       99836972 B   -b-   --   ---xx   flac  0.6522  13 High Water.flac
+     7:26.52       78796844 B   -b-   --   ---xx   flac  0.6793  14 Like A Rolling Stone.flac
+     5:36.56       59401772 B   -b-   --   ---xx   flac  0.6745  15 Watchtower.flac
+   101:35.47     1075268244 B                            0.6468  (15 files)
+=================== 
+=================== 
+=================== 

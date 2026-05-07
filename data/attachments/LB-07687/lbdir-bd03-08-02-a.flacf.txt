@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-02-a.flacf 
+=================== 
+=================== 
+=================== 
+316a10a0ddb3a15a50259269c82e4254  2003-08-02 - Joliet (LB-1206).ffp
+5537878f62cc574fcb98b9fa54f32038  CD1 Dylans set\01 Silvio.flac
+c032bdc9aa9f7009a7a9b3c03e4ab716  CD1 Dylans set\02 If you see her, say hello.flac
+dfabd03346dc17091e7503b10da83300  CD1 Dylans set\03 Tweedle Dee & Tweedle Dum.flac
+e895fd9adc71592ae08e638c4b6fc083  CD1 Dylans set\04 Joey.flac
+f7e4fe33afb5815775630d6f9bb5b328  CD1 Dylans set\05 Highway 61 revisited.flac
+bf7c39867320e37a535c46bee32f7444  CD1 Dylans set\06 Don't think twice, it's all right.flac
+4473fbff8b9822cff0a5898a8996ec8d  CD1 Dylans set\07 Cold irons bound.flac
+ba23e0458086f7120ec8649db13b50bb  CD1 Dylans set\08 A hard rain's a-gonna fall.flac
+0486f0f22b73cf6462a0a4a95fd4b4cb  CD1 Dylans set\09 Honest with me.flac
+479463722de636ed593ef83ed24a73fe  CD1 Dylans set\10 Summer days.flac
+b12382b4a44e4663811a42d679b907ae  CD1 Dylans set\11 All along the watchtower.flac
+b4de14450d8ec212c7db6edb26b54ab1  CD2 The Dead set\01 Intrumental jam.flac
+dcc6413d781c181e7f6f70debaa05966  CD2 The Dead set\02 Let the good times roll.flac
+c272d339315aae321aca86f153d7ee6c  CD2 The Dead set\03 Try just a little bit harder.flac
+e501d494d7e695e51b43719036061173  CD2 The Dead set\04 Just be still.flac
+dbac306c613f47de41130bd74bfb1bb0  CD2 The Dead set\05 Goin' down the road feelin' bad.flac
+a09cce22424623d727a137dad0d253a9  CD2 The Dead set\06 Senor (Tales of Yankee Power).flac
+6a2a1d65553674b0b4f3b8c9fd1723d9  CD2 The Dead set\07 Around and around.flac
+4802d64ea31d0b2a57332f33dea3389d  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-08-02-a.flacf\CD2 The Dead set 
+=================== 
+=================== 
+=================== 
+01 Intrumental jam.flac:25058aefb7a5e2a35062ddb425265071
+02 Let the good times roll.flac:b6083bc9ec64c13a654d9ea722e23bac
+03 Try just a little bit harder.flac:400cb1937c5d88b55b7b1734d3e46cbe
+04 Just be still.flac:5bbb9240c03b589048f8ff380144ae00
+05 Goin' down the road feelin' bad.flac:991c5853bbb567bb4bbcccd776adb9c1
+06 Senor (Tales of Yankee Power).flac:287db762d67391e6fe7e86069251228d
+07 Around and around.flac:5c5990be80da84aaf9e4be0528d9edca
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-08-02-a.flacf\CD1 Dylans set 
+=================== 
+=================== 
+=================== 
+01 Silvio.flac:6441b1a5e296c5efcf2a5ade80dad434
+02 If you see her, say hello.flac:00caace661750fd87f55cebc250ab5a6
+03 Tweedle Dee & Tweedle Dum.flac:e5b2d7e173a72faac56efc20f0c1e99c
+04 Joey.flac:60405ef7452b802b48e1a4eda21deee4
+05 Highway 61 revisited.flac:701163079278f31ba28f1cf5cb385d94
+06 Don't think twice, it's all right.flac:611e8fe138b756e068d61da4df36484c
+07 Cold irons bound.flac:2f77a2195b112bd8063ef2e6d8a87991
+08 A hard rain's a-gonna fall.flac:beeab166c64d9ab28b2c7921ccdd5b69
+09 Honest with me.flac:3f08a1c81bff26bc2239edea9f4f2b1d
+10 Summer days.flac:484c2385d2616a2108ce004107bcacfc
+11 All along the watchtower.flac:53687f0cf0e086b92dd4708742bb549d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-02-a.flacf\CD2 The Dead set 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:35.43       69779180 B   ---   --   ---xx   flac  0.5078  01 Intrumental jam.flac
+     5:08.03       54338300 B   ---   --   ---xx   flac  0.6231  02 Let the good times roll.flac
+    14:04.31      148954556 B   ---   --   ---xx   flac  0.6057  03 Try just a little bit harder.flac
+     5:04.21       53675036 B   ---   --   ---xx   flac  0.6005  04 Just be still.flac
+     6:57.09       73580012 B   ---   --   ---xx   flac  0.6339  05 Goin' down the road feelin' bad.flac
+     8:02.68       85184780 B   ---   --   ---xx   flac  0.5612  06 Senor (Tales of Yankee Power).flac
+     7:04.69       74955932 B   ---   --   ---xx   flac  0.6058  07 Around and around.flac
+    52:57.19      560467796 B                            0.5917  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-02-a.flacf\CD1 Dylans set 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:08.51       86203196 B   ---   --   ---xx   flac  0.5656  01 Silvio.flac
+     5:15.16       55603676 B   ---   --   ---xx   flac  0.5725  02 If you see her, say hello.flac
+     4:35.59       48648812 B   ---   --   ---xx   flac  0.5692  03 Tweedle Dee & Tweedle Dum.flac
+     8:19.02       88028348 B   ---   --   ---xx   flac  0.5953  04 Joey.flac
+     6:23.07       67577708 B   ---   --   ---xx   flac  0.5925  05 Highway 61 revisited.flac
+     7:55.02       83794748 B   ---   --   ---xx   flac  0.5131  06 Don't think twice, it's all right.flac
+     5:57.16       63012476 B   ---   --   ---xx   flac  0.5768  07 Cold irons bound.flac
+     6:03.69       64195532 B   ---   --   ---xx   flac  0.5610  08 A hard rain's a-gonna fall.flac
+     7:26.06       78688556 B   ---   --   ---xx   flac  0.5987  09 Honest with me.flac
+    10:13.19      108177932 B   ---   --   ---xx   flac  0.5672  10 Summer days.flac
+     7:12.28       76270700 B   ---   --   ---xx   flac  0.5690  11 All along the watchtower.flac
+    77:29.50      820201684 B                            0.5705  (11 files)
+=================== 
+=================== 
+=================== 

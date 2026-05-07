@@ -1,0 +1,22 @@
+7da0062eb49599b4232a413e0e3f47fb  Bob Dylan 2001-04-18 Boulder, CO.md5
+e1caa10bf584d41a66993095a74c8ca7  Bob Dylan 2001-04-18 d1\Track01.flac
+801c0502ac0b160dd024a33938d56c20  Bob Dylan 2001-04-18 d1\Track02.flac
+3e16325b363d8b7acf05b37279bafacb  Bob Dylan 2001-04-18 d1\Track03.flac
+ce91a8a5161dc9a0566eff9f254ba699  Bob Dylan 2001-04-18 d1\Track04.flac
+43d58a1afe9e0b2fd9fb274903c209c0  Bob Dylan 2001-04-18 d1\Track05.flac
+676cb8a881f84a1e40b9a73621578901  Bob Dylan 2001-04-18 d1\Track06.flac
+1389b1c523b3d5708a98fe0925e1cbc4  Bob Dylan 2001-04-18 d1\Track07.flac
+49b46f05992a31d8ef4278e937b21a93  Bob Dylan 2001-04-18 d1\Track08.flac
+79c8b673d27bcee25d0110c9302c315f  Bob Dylan 2001-04-18 d1\Track09.flac
+16d35ec1efbfe0ecefa03ebc11f2d0f8  Bob Dylan 2001-04-18 d1\Track10.flac
+a8c94b99dc681dfd619c992f71b7aed5  Bob Dylan 2001-04-18 d1\Track11.flac
+195aa713b9b0ca919d26a2248223176a  Bob Dylan 2001-04-18 d1\Track12.flac
+8ffb77d76c82cd8d3d9803d664caa435  Bob Dylan 2001-04-18 d2\Track01.flac
+0a12c919a7c7990beb743c8137920773  Bob Dylan 2001-04-18 d2\Track02.flac
+d4412718a354c65aefb90aaa0388a369  Bob Dylan 2001-04-18 d2\Track03.flac
+be3678d69a19da17650e825bf8dc59b2  Bob Dylan 2001-04-18 d2\Track04.flac
+bf7464f8fcc550f6e95b590eb84a0f87  Bob Dylan 2001-04-18 d2\Track05.flac
+29ab767ca647dfab68e3ce6c5543831c  Bob Dylan 2001-04-18 d2\Track06.flac
+34ff0217f523c600f730fc1f9a67140b  Bob Dylan 2001-04-18 d2\Track07.flac
+001372312785d98c66153d0c1850de65  Bob Dylan 2001-04-18 d2\Track08.flac
+7b9736458ff973460d6b43f5be81d84b  info.txt

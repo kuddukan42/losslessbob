@@ -1,0 +1,13 @@
+f09161e5b2564a103e7267c8eaf826a4  d5\snack5.ffp.txt
+9080e0d2dd55e1fece185a50388f63b5  d5\snack5.txt
+aa9e3d9aaf357af211427661c2cada4d  d5\snackd5t01.flac
+879705a586ab642ce9146231f9e04ae1  d5\snackd5t02.flac
+5805410b172343038030ee64b188538a  d5\snackd5t03.flac
+fec9d393370d868ad973232fcabab038  d5\snackd5t04.flac
+a0811c0e430f720679097063afef8e96  d5\snackd5t05.flac
+063b79b20c3fb97cdfa05b79bd58a506  d5\snackd5t06.flac
+66d219a7885e695a2d6fdb642a218e83  d5\snackd5t07.flac
+b9ce88f33f811d61f1d9fd63727c9286  d5\snackd5t08.flac
+18112e6b0edfabcff7681f69bba53b1d  d5\va_1975-03-23_sf-snack-benefit-concert-d5_inlay-card.jpg
+7fff15ba3e85d33d1bc0ca84472f9654  d5\va_1975-03-23_sf-snack-benefit-concert-d5_insert.jpg
+cedf7c8f1f30fc858711ed4ffa0354a8  SNACK benefit (complete) 1975-03-23.txt

@@ -1,0 +1,53 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-08-24-at829-inc.flac16 
+=================== 
+=================== 
+=================== 
+c26853ea2a997d9201715c51e9557095  bd2008-8-24t01.flac
+e33d877aaf64294d6da8b3d765c4e541  bd2008-8-24t02.flac
+eecec5d61d025cb7263201c3d9d157e8  bd2008-8-24t03.flac
+c90a0e3421391233d14c1be0b3e01013  bd2008-8-24t04.flac
+1989e0fb84faad0b852662d7af8e576e  bd2008-8-24t05.flac
+74201e63d339a2d421a82c9a3c1c205f  bd2008-8-24t06.flac
+b8ae33db6f306069264316b5c986b7ec  bd2008-8-24t07.flac
+39e0e03d64440ccd11f05e9fe018169b  bd2008-8-24t08.flac
+3fb3deae236b723f37c2ee1cf6c868de  fingerprint.ffp.txt
+418ab2881d69e60d8b85af89287fe0c6  info.txt
+9133b41b5a84c1671e19bf714858bfc5  md5sum.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-08-24-at829-inc.flac16 
+=================== 
+=================== 
+=================== 
+bd2008-8-24t01.flac:a838ef4ecc214e20fd0aab72f94e503e
+bd2008-8-24t02.flac:3d3e7d10fab4308a535e89ad64d3acdf
+bd2008-8-24t03.flac:57c90b3681c7bb7ea66443fd06ca0887
+bd2008-8-24t04.flac:4ea9caef912e427c0a874ec67b68da30
+bd2008-8-24t05.flac:0837af90008b1cc9af516ce0db96b7ee
+bd2008-8-24t06.flac:c03a3fc84ba450803ddf43e436746f6b
+bd2008-8-24t07.flac:0b7e254e3edde9a52b1cdf2f6b96ce6f
+bd2008-8-24t08.flac:9952fb1544f5de3bee58db0ba535eda1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-08-24-at829-inc.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.976      68539340 B   cxx   --   ---xx   flac  0.3950  bd2008-8-24t01.flac
+     6:07.131      70489128 B   cxx   --   ---xx   flac  0.3986  bd2008-8-24t02.flac
+     5:46.253      66480536 B   cxx   --   ---xx   flac  0.3972  bd2008-8-24t03.flac
+     6:51.192      78948840 B   cxx   --   ---xx   flac  0.3963  bd2008-8-24t04.flac
+     7:02.252      81072404 B   cxx   --   ---xx   flac  0.4105  bd2008-8-24t05.flac
+     6:27.526      74404940 B   cxx   --   ---xx   flac  0.3857  bd2008-8-24t06.flac
+     5:43.992      66046600 B   cxx   --   ---xx   flac  0.4149  bd2008-8-24t07.flac
+     1:39.853      19171844 B   cxx   --   ---xx   flac  0.3601  bd2008-8-24t08.flac
+    45:35.173     525153632 B                            0.3983  (8 files)
+=================== 
+=================== 
+=================== 

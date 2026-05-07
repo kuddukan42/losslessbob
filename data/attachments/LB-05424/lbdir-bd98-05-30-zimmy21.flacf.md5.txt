@@ -1,0 +1,15 @@
+243159d6de08852cddd8ebff383d4c15  Bob Dylan - Nurburg 30 may 1998.md5
+783106db95797d5a80aace56fea5ab4b  bob dylan nurburg 30 may 1998.txt
+8596ab39f152334f15e21e997523dfd1  Track01.flac
+672e533ecb853f3762c297eb86341e5e  Track02.flac
+1f0ec33b9ce5cfbc98a5dde4edac176b  Track03.flac
+030fb80f9613c662724f6b3374c04e99  Track04.flac
+295ef809b7346ce5a906fdcf37fdd3ac  Track05.flac
+7f697830b8d8093ff8532e830e40d2e1  Track06.flac
+de58c67b383199f1c52f494047ad8d96  Track07.flac
+ea7f250f82507e0e0e5bbb0ebfed5459  Track08.flac
+a3c86a3afadfdfa9da7f81b9532dd115  Track09.flac
+049d2948e9e33aed16f3ce960e4ffb09  Track10.flac
+19973ffc10f5770a68e897ea034e2f74  Track11.flac
+1d32824dd28f6f030929b7b05ff1e3d5  Track12.flac
+e880bf7d75d99ae78643d9eff93e325c  Track13.flac

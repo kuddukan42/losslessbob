@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd91-11-06-c.flacf
+===================
+===================
+===================
+be7954662635935f15253c5f26acf682 *Bob Dylan 6 nov 1991 South Bend.txt
+6adf0af7d789da3ba87603982d14d3ac *D1\01 Maggies Farm.shn
+739c4fca4fa8a88510fc6b1e67b550bb *D1\02 One Irish Rover.shn
+bdcb6eb43cfe0835a082be3b1939ce74 *D1\03 Rainy Day Women _12_35.shn
+43cf1a56ba7ee0c213d3f7ecd055270e *D1\04 Shelter From The Storm.shn
+c877018853f1935e818fa2869691e01e *D1\05 Early Morning Rain.shn
+c7d56829a0d0913e657c71c1a33bc2b5 *D1\06 Gotta Serve Somebody.shn
+7fc914a577ec583865947e993f35ac83 *D1\07 You Don_t Know Me.shn
+48edc3dbe6467e010fdd34c314f32d16 *D1\08 All Along The Watchtower.shn
+6ccbf850311037055e2b23fb44717998 *D1\09 I_m A Roving Gambler.shn
+aa7311988b7f61fb5ddf72cbf32546f4 *D1\10 Gates Of Eden (acoustic w b.shn
+8648edfa396685b75e971af7e257f03a *D1\11 John Brown (acoustic w band.shn
+4a4a24b4bc0ebd4a6485f0e7df9f7743 *D1\12 It_s All Over Now_ Baby Blu.shn
+d447903299118285171ca66404e36b0d *D1\13 Everything Is Broken.shn
+e411e8c4a565c99031ac6fa4390cbf7d *D1\14 Just Like A Woman.shn
+4f7c8e861cd50a86a5d9237dc1c0f4b3 *D1.md5
+20d96dbf67b6a1ae0a5260ae52ede974 *D2\01 Highway 61 Revisited.shn
+25b5304e90d5927cb78cfbb5193337ac *D2\02 I_ll Remember You.shn
+b0d17e1d92652dde65f161bad05b6611 *D2\03 What Good Am I_.shn
+e4d96a9b9fdd84ce862f9d2236ab47ca *D2\04 Watching The River Flow.shn
+0b9f1a982b85e63d9c7a2c8d2657e707 *D2.md5
+b57fac91fbab863e0b607a706721c7b6 *southbend.jpg
+===================
+===================
+===================
+=== shntool md5/hash for: bd91-11-06-c.flacf
+===================
+===================
+===================
+602a440302cbfffdb178a95912bb590e  [shntool]  D1\01 Maggies Farm.shn
+42d82997954e5ed632ffa336f5590a60  [shntool]  D1\02 One Irish Rover.shn
+98558bbc4a0d3d06724f4b07a337fbb3  [shntool]  D1\03 Rainy Day Women _12_35.shn
+6568314192d881f83ebcabdaedccb42a  [shntool]  D1\04 Shelter From The Storm.shn
+02b60a2467436a1a4248d0d4661b7d04  [shntool]  D1\05 Early Morning Rain.shn
+d67c324b5d2bcc8751f198307005c06e  [shntool]  D1\06 Gotta Serve Somebody.shn
+4c4d85759c430d3d71ad2af12d77891c  [shntool]  D1\07 You Don_t Know Me.shn
+2cb15eb8164cb9c17299c2b58d1227e5  [shntool]  D1\08 All Along The Watchtower.shn
+7f700116ab0a1253e4154ffa7241a0b0  [shntool]  D1\09 I_m A Roving Gambler.shn
+fa7c9d29c527fba2b692c3a6d20244a8  [shntool]  D1\10 Gates Of Eden (acoustic w b.shn
+b20d49b0f8b672efb05ba218c8d25a33  [shntool]  D1\11 John Brown (acoustic w band.shn
+f5652bd29ba46ebe1eda8c67a010d6c9  [shntool]  D1\12 It_s All Over Now_ Baby Blu.shn
+a1b602a0e40a9ce41f51a783154ab9c2  [shntool]  D1\13 Everything Is Broken.shn
+aca8c91fdff505241c313048d30e0252  [shntool]  D1\14 Just Like A Woman.shn
+cf8a18252b77878b9ed514d405bd6345  [shntool]  D2\01 Highway 61 Revisited.shn
+54d2ff9232f616a295115acb9e37fa3b  [shntool]  D2\02 I_ll Remember You.shn
+e497ee5a3652cf4db74b2e18fed035a1  [shntool]  D2\03 What Good Am I_.shn
+40c68d38ba4e3bcc869dde30313d3fb4  [shntool]  D2\04 Watching The River Flow.shn
+===================
+===================
+===================
+=== shntool len for: bd91-11-06-c.flacf\D1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:15.36       55649900 B   -b-   --   ---xx    shn  0.6338  01 Maggies Farm.shn
+     3:25.22       36213180 B   -b-   --   ---xx    shn  0.5752  02 One Irish Rover.shn
+     4:52.09       51529844 B   -b-   --   ---xx    shn  0.6416  03 Rainy Day Women _12_35.shn
+     6:07.62       64884060 B   -b-   --   ---xx    shn  0.6472  04 Shelter From The Storm.shn
+     5:22.19       56845364 B   -b-   --   ---xx    shn  0.6278  05 Early Morning Rain.shn
+     5:10.58       54819484 B   -b-   --   ---xx    shn  0.6425  06 Gotta Serve Somebody.shn
+     4:31.26       47864988 B   -b-   --   ---xx    shn  0.5674  07 You Don_t Know Me.shn
+     4:40.07       49408508 B   ---   --   ---xx    shn  0.6594  08 All Along The Watchtower.shn
+     4:15.38       45070596 B   -b-   --   ---xx    shn  0.5900  09 I_m A Roving Gambler.shn
+     5:32.40       58657884 B   -b-   --   ---xx    shn  0.6360  10 Gates Of Eden (acoustic w b.shn
+     5:11.43       54960548 B   -b-   --   ---xx    shn  0.5961  11 John Brown (acoustic w band.shn
+     5:21.15       56658988 B   -b-   --   ---xx    shn  0.5958  12 It_s All Over Now_ Baby Blu.shn
+     4:08.13       43777212 B   -b-   --   ---xx    shn  0.6580  13 Everything Is Broken.shn
+     4:38.58       49175660 B   ---   --   ---xx    shn  0.6382  14 Just Like A Woman.shn
+    68:32.68      725516216 B                            0.6236  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd91-11-06-c.flacf\D2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:33.07       79926188 B   -b-   --   ---xx    shn  0.6345  01 Highway 61 Revisited.shn
+     6:05.74       64559484 B   -b-   --   ---xx    shn  0.6249  02 I_ll Remember You.shn
+     6:13.01       65800404 B   -b-   --   ---xx    shn  0.5944  03 What Good Am I_.shn
+     6:50.32       72398700 B   -b-   --   ---xx    shn  0.6516  04 Watching The River Flow.shn
+    26:42.39      282684776 B                            0.6274  (4 files)
+===================
+===================
+===================

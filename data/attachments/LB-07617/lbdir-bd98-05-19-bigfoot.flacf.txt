@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-05-19-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+3adafedddafddf267c7fea4bd76b0e77  BobDylan1998-05-19.ffp
+fa443f5d73f66e6215106e4dcc0533ca  BobDylan1998-05-19.txt
+f3433eead598daa4f288cb702b584ee6  BobDylan1998-05-19tr01.flac
+26c978565fa620776b286fa82d23a3fa  BobDylan1998-05-19tr02.flac
+f016d6056c4b93a25d2d7b54e1185589  BobDylan1998-05-19tr03.flac
+04b9dbec2b24e77893412e9498d8e4ff  BobDylan1998-05-19tr04.flac
+cce13d72013452a38bcd7d7cd1885f9a  BobDylan1998-05-19tr05.flac
+ed57c070edc026862e534e4208165478  BobDylan1998-05-19tr06.flac
+26f996f4b54cbc71f49527463eb7897d  BobDylan1998-05-19tr07.flac
+001200ea0e444db53494b8170be8aa9e  BobDylan1998-05-19tr08.flac
+072729e4bb34d72c1e16cbf300908a15  BobDylan1998-05-19tr09.flac
+0d9eea539f6128142bc9ded17995094f  BobDylan1998-05-19tr10.flac
+f0383e8b235344685f3014410d3eb3c5  BobDylan1998-05-19tr11.flac
+08c2c1306f77016b5fb394ab288f8107  BobDylan1998-05-19tr12.flac
+72e8e0303fde1e7c92df086c7749f445  BobDylan1998-05-19tr13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-05-19-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+BobDylan1998-05-19tr01.flac:7e315d83202e67c04a97588543a3585c
+BobDylan1998-05-19tr02.flac:412489e66c83082232d68ea332410b1b
+BobDylan1998-05-19tr03.flac:0136ff405d235b7811237b2f6db8a129
+BobDylan1998-05-19tr04.flac:1a653b803a73faea619c743a3db05726
+BobDylan1998-05-19tr05.flac:ce3176f1c21b9699ac604b3456f5e7cb
+BobDylan1998-05-19tr06.flac:ad3143319fa9ba443094ea03c960150c
+BobDylan1998-05-19tr07.flac:375cb40adf51c7739abcb64e229bf654
+BobDylan1998-05-19tr08.flac:6f475fd39234a2446359565dfe9054e3
+BobDylan1998-05-19tr09.flac:d88bb5eb4c67351b9e635e540e6b8343
+BobDylan1998-05-19tr10.flac:447d66bce98189f5cc2e9b2eab346361
+BobDylan1998-05-19tr11.flac:76bac44f2335226746f69cdc51a7bef5
+BobDylan1998-05-19tr12.flac:978251be3dbf6dce1b57d84f9c27b10c
+BobDylan1998-05-19tr13.flac:b3b6546255511085f3bec5f9346286ff
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-05-19-bigfoot.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.19       47496332 B   ---   --   ---xx   flac  0.6120  BobDylan1998-05-19tr01.flac
+     4:30.33       47705660 B   ---   --   ---xx   flac  0.5866  BobDylan1998-05-19tr02.flac
+     6:44.66       71420876 B   ---   --   ---xx   flac  0.6027  BobDylan1998-05-19tr03.flac
+     6:09.41       65188076 B   ---   --   ---xx   flac  0.5748  BobDylan1998-05-19tr04.flac
+     6:47.56       71926556 B   ---   --   ---xx   flac  0.6357  BobDylan1998-05-19tr05.flac
+     3:11.20       33739484 B   ---   --   ---xx   flac  0.5529  BobDylan1998-05-19tr06.flac
+     5:22.41       56897276 B   ---   --   ---xx   flac  0.5384  BobDylan1998-05-19tr07.flac
+     8:53.09       94042412 B   ---   --   ---xx   flac  0.6171  BobDylan1998-05-19tr08.flac
+     4:29.38       47541020 B   ---   --   ---xx   flac  0.4840  BobDylan1998-05-19tr09.flac
+     6:06.53       64687100 B   ---   --   ---xx   flac  0.6023  BobDylan1998-05-19tr10.flac
+     6:39.38       70473020 B   ---   --   ---xx   flac  0.5766  BobDylan1998-05-19tr11.flac
+     5:30.04       58221452 B   ---   --   ---xx   flac  0.5536  BobDylan1998-05-19tr12.flac
+     4:38.58       49175660 B   ---   --   ---xx   flac  0.6397  BobDylan1998-05-19tr13.flac
+    73:33.26      778514924 B                            0.5869  (13 files)
+=================== 
+=================== 
+=================== 

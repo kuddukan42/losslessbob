@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-17-f.flacf
+===================
+===================
+===================
+28d7d3978c00fa1d7ffa1d2052f3e7ad *01 Friend Of The Devil.flac
+2a3d6c09a110ef41eec5a869ae3d184f *02 To Ramona.flac
+d0315a86cb05b3d5e91dc67e7f91e828 *03 Masters Of War.flac
+f33b49ab795d5a4a1a2b6f878818bdc2 *04 Desolation Row.flac
+6c076a3f30c0d394a781140a0f55d167 *05 The Times They Are A-Changin'.flac
+062a8ae50edee6fc797c7bc76358793d *06 Tangled Up In Blue.flac
+d3aa55a7cb054c7c485d4f886cd71ebe *07 Don't Think Twice, It's All Right.flac
+3775e051790b61838727ebd7ed886083 *08 'Til I Fell In Love With You.flac
+cce62a8960c7ea654f1677229a668d53 *09 I Want You.flac
+0bd70098ae5f15889890bf8908e798fd *10 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+99f9a2c37504c2fe312fccea46937482 *11 I Shall Be Released.flac
+232f0b21874d111b0166755ac1503fb9 *12 Highway 61 Revisited.flac
+0cb2d753830a5b0e3cab80197cc79dc8 *13 (crowd pleasure).flac
+996287a127df8524682ffe98b25e7c88 *13 Love Sick.flac
+4d774f094a174b37058b75e0d2626594 *14 Leopard-Skin Pill-Box Hat.flac
+fecb40b6fcbe3a630e37ce8d0790d59b *15 Blowin' In The Wind.flac
+597e69303d356355f66f9f1eafcb7919 *16 Not Fade Away.flac
+7e4ce507f2d69632c6ed82ec39283fe8 *1999-04-17 La Malagueta Bull Ring, Málaga, Spain [].ffp
+b28eaed43dd6da7fe8598cacd5d9003f *1999-04-17 La Malagueta Bull Ring, Málaga, Spain [derived f. LB-144 unidentified taper].txt
+===================
+===================
+===================
+=== ffp for: bd99-04-17-f.flacf
+===================
+===================
+===================
+01 Friend Of The Devil.flac:1c7a2e4746e139c152491090441c3bb8
+02 To Ramona.flac:96c129cc490a6bc4db439e7cbbca36cf
+03 Masters Of War.flac:0af0a59e23f166f71f1932a6421efb1a
+04 Desolation Row.flac:5f4548651a70bb5acf0eda4b5a944482
+05 The Times They Are A-Changin'.flac:04d5f28308bce15bd93f493685f7ae2b
+06 Tangled Up In Blue.flac:d333ed26920ab9770e0441df4b9c318e
+07 Don't Think Twice, It's All Right.flac:a8743d8299272de9973c678c4008dd79
+08 'Til I Fell In Love With You.flac:77d96bbac5531f977963807dbc0a5ea6
+09 I Want You.flac:398d27ddea43703c06111ed06a10d3a3
+10 Stuck Inside Of Mobile With The Memphis Blues Again.flac:4196a4428db64e8e80d2c8b290ecbb6a
+11 I Shall Be Released.flac:5b40ccf77ddef379c79fde444d0ecffb
+12 Highway 61 Revisited.flac:7a37eecd8199d79fa86f20c150c1909f
+13 (crowd pleasure).flac:3c29b0aec7025d474971a8485a63dd90
+13 Love Sick.flac:00a2e13a5ab229299e86fc596bc3f56b
+14 Leopard-Skin Pill-Box Hat.flac:af5c6a6485da17209f0c57bd7f01e9ad
+15 Blowin' In The Wind.flac:908fac181bdbda4402d1c4248b8d5452
+16 Not Fade Away.flac:61de69baacd85b2df38efe7e59c37514
+===================
+===================
+===================
+=== shntool len for: bd99-04-17-f.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.58       61523660 B   ---   --   ---xx   flac  0.5754  01 Friend Of The Devil.flac
+     5:52.55       62222204 B   ---   --   ---xx   flac  0.5412  02 To Ramona.flac
+     5:32.73       58736540 B   ---   --   ---xx   flac  0.5553  03 Masters Of War.flac
+     7:30.10       79403564 B   ---   --   ---xx   flac  0.5951  04 Desolation Row.flac
+     6:27.34       68346812 B   ---   --   ---xx   flac  0.5717  05 The Times They Are A-Changin'.flac
+     6:44.51       71385596 B   ---   --   ---xx   flac  0.6376  06 Tangled Up In Blue.flac
+     7:47.51       82498796 B   ---   --   ---xx   flac  0.5515  07 Don't Think Twice, It's All Right.flac
+     6:19.69       67017932 B   ---   --   ---xx   flac  0.6291  08 'Til I Fell In Love With You.flac
+     5:14.72       55558988 B   ---   --   ---xx   flac  0.5590  09 I Want You.flac
+     8:11.61       86755916 B   ---   --   ---xx   flac  0.6479  10 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     5:32.55       58694204 B   ---   --   ---xx   flac  0.5793  11 I Shall Be Released.flac
+     6:05.07       64402508 B   ---   --   ---xx   flac  0.6757  12 Highway 61 Revisited.flac
+     2:25.58       25714460 B   ---   --   ---xx   flac  0.4638  13 (crowd pleasure).flac
+     5:35.10       59117564 B   ---   --   ---xx   flac  0.5955  13 Love Sick.flac
+     6:00.20       63551084 B   ---   --   ---xx   flac  0.6912  14 Leopard-Skin Pill-Box Hat.flac
+     5:27.43       57783980 B   ---   --   ---xx   flac  0.5755  15 Blowin' In The Wind.flac
+     4:37.40       48956924 B   ---   --   ---xx   flac  0.6560  16 Not Fade Away.flac
+   101:15.17     1071670732 B                            0.5994  (17 files)
+===================
+===================
+===================

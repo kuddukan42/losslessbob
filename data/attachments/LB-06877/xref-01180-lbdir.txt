@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-11-French-Set.flacf
+===================
+===================
+===================
+4e8462c5a499abe346921715f9eed96b *Art & Info\Prague 1995.03.11 rec info.txt
+ca3e30851c95c16a9331037b86124ed5 *Art & Info\Prague-1995.htm
+9c9c6e091223075ce6b5d9a4e7c228fc *CD1\bd95-03-11 d1t01.flac
+5bdd61ea4097c95300b2e25831f3950f *CD1\bd95-03-11 d1t02.flac
+949c0c184c51b0d73f524d6f890816e1 *CD1\bd95-03-11 d1t03.flac
+fbee1013fdecdd48be835b76fb2bc59d *CD1\bd95-03-11 d1t04.flac
+32d9dd858fdde7556449d1c7a7cb6207 *CD1\bd95-03-11 d1t05.flac
+88edfd2ca38aaa5ab601e5c5324eeed3 *CD1\bd95-03-11 d1t06.flac
+2efad1695529969e54f76450f87ef623 *CD1\bd95-03-11 d1t07.flac
+1d1e27c20d6227181e84f5a9fa1ec146 *CD1\bd95-03-11 d1t08.flac
+eae2b5f1df33002c9a25eb6e27099120 *CD1\bd95-03-11 d1t09.flac
+65adf93ed2dcbfe8c567cb1669a1ab47 *CD1\bd95-03-11 d1t10.flac
+5498d2d2e27be14b971a2805d08803eb *CD1\bd95-03-11 d1t11.flac
+9617ad661fb2b8f3c386690922b568ee *CD1\CD1 flac.md5
+c9008ce04af2e5fb4df6a6afbb981243 *CD1\CD1 wav.md5
+32955cc2c0bc166eb7928e58f7414927 *CD1\CD1.shntool.txt
+f06151390cf7bea92843e1d75e20874d *CD1\Prague 1995-03-11 cd1.log
+556f54c8f210ed30a1c59694d08ee9eb *CD2\bd95-03-11 d2t01.flac
+af52670b09650acc5cd07edc85ade988 *CD2\bd95-03-11 d2t02.flac
+cdd280231819e32be7f47bbfa1f14926 *CD2\bd95-03-11 d2t03.flac
+c089c85fdf8fb665563f512662c0ff7f *CD2\CD2 flac.md5
+d2ff15904852e08c4bf4edabf265c145 *CD2\CD2 wav.md5
+5088cca13ac0cc39d5ee7a0a89c6bb16 *CD2\CD2.shntool.txt
+6a72ff108fc65183533f4a14b92ac2a5 *CD2\Prague 1995-03-11 cd2.log
+===================
+===================
+===================
+=== ffp for: bd95-03-11-French-Set.flacf
+===================
+===================
+===================
+CD1\bd95-03-11 d1t01.flac:0b20a4c2defda8705d7d150e7f622d33
+CD1\bd95-03-11 d1t02.flac:6208b7ad1e915c32745355397504caa7
+CD1\bd95-03-11 d1t03.flac:3d0a60c6503dd5b57fc3073f0cfa588a
+CD1\bd95-03-11 d1t04.flac:f4c94b2abab53a3a7b532c810605368a
+CD1\bd95-03-11 d1t05.flac:99547ec36683c15ffd66027db41cf82e
+CD1\bd95-03-11 d1t06.flac:a4d341e03c5e71277253c1c9e0f4b9a9
+CD1\bd95-03-11 d1t07.flac:a55b5f33fa08f8bfd1d35d6a4f214790
+CD1\bd95-03-11 d1t08.flac:a1a7ce99b7154102f646a79044689ee6
+CD1\bd95-03-11 d1t09.flac:ee3a63ae8614093bf5f80798d7366a7f
+CD1\bd95-03-11 d1t10.flac:6207cac5a22ad4b7a2b7718e2ef822c2
+CD1\bd95-03-11 d1t11.flac:839ce67633b3c673340744c0d5a79100
+CD2\bd95-03-11 d2t01.flac:3f4cc6b5902879122ee7e6350fd1c174
+CD2\bd95-03-11 d2t02.flac:301839c14db27685d61a1e5ebb286763
+CD2\bd95-03-11 d2t03.flac:23aac4497c3817597c5116753b5d745c
+===================
+===================
+===================
+=== shntool len for: bd95-03-11-French-Set.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:48.59       50942012 B   ---   --   ---xx   flac  0.7142  bd95-03-11 d1t01.flac
+     4:11.45       44382284 B   ---   --   ---xx   flac  0.6710  bd95-03-11 d1t02.flac
+     5:02.70       53437484 B   ---   --   ---xx   flac  0.7074  bd95-03-11 d1t03.flac
+     7:36.58       80574860 B   ---   --   ---xx   flac  0.6659  bd95-03-11 d1t04.flac
+     7:45.15       82061324 B   ---   --   ---xx   flac  0.6670  bd95-03-11 d1t05.flac
+     7:05.67       75127628 B   ---   --   ---xx   flac  0.6827  bd95-03-11 d1t06.flac
+     6:39.45       70489484 B   ---   --   ---xx   flac  0.5875  bd95-03-11 d1t07.flac
+     6:45.73       71613740 B   ---   --   ---xx   flac  0.5702  bd95-03-11 d1t08.flac
+     8:23.35       88811564 B   ---   --   ---xx   flac  0.5945  bd95-03-11 d1t09.flac
+     7:40.47       81254588 B   ---   --   ---xx   flac  0.6379  bd95-03-11 d1t10.flac
+     6:05.57       64520108 B   ---   --   ---xx   flac  0.6881  bd95-03-11 d1t11.flac
+    72:06.46      763215076 B                            0.6485  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd95-03-11-French-Set.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:10.24       65324492 B   ---   --   ---xx   flac  0.7032  bd95-03-11 d2t01.flac
+     5:08.74       54505292 B   ---   --   ---xx   flac  0.6335  bd95-03-11 d2t02.flac
+     5:54.43       62546780 B   ---   --   ---xx   flac  0.6237  bd95-03-11 d2t03.flac
+    17:13.66      182376564 B                            0.6551  (3 files)
+===================
+===================
+===================

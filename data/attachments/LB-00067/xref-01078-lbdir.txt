@@ -1,0 +1,104 @@
+===================
+===================
+===================
+=== md5 for: bd02-05-02-cc-c.flacf
+===================
+===================
+===================
+cd4e83e5c92da4529c991986855c5b2e *101 Intro.flac
+34e7d443519285a3dcc580577b3dbb94 *102 Wait For The Light To Shine.flac
+19c5d879731be05caba1fd03a41438c1 *103 I Threw It All Away.flac
+3e410199a3b1818a82fe4770103b6402 *104 It´s Alright, Ma (I´m Only Bleeding).flac
+c9f0c9d7af9b94b22cbdbbc64de86502 *105 Love Minus Zero - No Limit.flac
+7ba89da1fa6710757b5c503c7488afb8 *106 Solid Rock.flac
+04fd76a81b5b79e74fcb13ae09923558 *107 Watching The River Flow.flac
+a5a72402cb0699459a57c1a9e003ede4 *108 Sugar Baby.flac
+851d37c1504fc926927d0e54eff06174 *109 Lonesome Day Blues.flac
+ba03a72cb74bb9ef838e1d7f735e4856 *110 Masters Of War.flac
+2ee620c00efdefda705cc15fed3fdea8 *111 Mr Tambourine Man.flac
+8b9ab07e3902dadb814ea9df05e7c52f *112 Tangled Up In Blue.flac
+433533042759ab830f8cf077b3f2d018 *113 Blind Willie McTell.flac
+e05205ac89aac0173774b28f99fc4ad1 *201 Summer Days.flac
+7792764a1fd4942d3b4559fee9e45c5b *202 The Wicked Messenger.flac
+2eebd468053adf9f5451d1d140ec2fbc *203 Rainy Day Women Nos 12 and 35.flac
+d16e128f47e3a2b25a0c261e55f4b8f1 *204 Man Of Constant Sorrow.flac
+389a85c74f24fc1c876799c8d90efe4b *205 Like A Rolling Stone.flac
+bf749e80cf3da28f80f485bf21278c91 *206 If Dogs Run Free.flac
+ed7bdca821943882189d9f031950f768 *207 Honest With Me.flac
+b8a4b5ef0ad3e1a7c129baaedff29516 *208 Blowin' In The Wind.flac
+375650025a13c84b242b625545eb968c *209 All Along The Watchtower.flac
+e39253f6866a6610f50b803f056e4d4b *210 In The Garden.flac
+c59c570baf80a0b5840fc74d6580f643 *Bob Dylan - 2002-05-02 Rotterdam [Crystal Cat CC 631-632].txt
+76ac33c9fca002ce0ec636dc5ab92597 *CatRotterdam1_8.jpg
+bff5a2123c3aed20e878f93963ac9180 *CatRotterdam2_3.jpg
+ed89165dd23c8fcd8e0aef69b617bd12 *CatRotterdam4_5.jpg
+ccea64fbe1a7dfd9eba45eedbfc40ec1 *CatRotterdam6_7.jpg
+8b827ea5d7274a51f3db8509c6c29e3d *CatRotterdamB.jpg
+8dc03b2b96ecc69efa321dda2addf58e *CatRotterdamBI.jpg
+c7ab951db292bbfdd0c38ffa5ef1b113 *cover.jpg
+0ba9b8b077f34d011dbe5bf4892a3cfe *Torrent downloaded from Demonoid.me.txt
+===================
+===================
+===================
+=== ffp for: bd02-05-02-cc-c.flacf
+===================
+===================
+===================
+101 Intro.flac:995fb43c2eb8e607fa7e411686fb3b5b
+102 Wait For The Light To Shine.flac:31fd92cd1c8d271334a722abd458b11b
+103 I Threw It All Away.flac:0c831f1605d4dff7036f64bfa901f180
+104 It´s Alright, Ma (I´m Only Bleeding).flac:2dc64a83658feeca199e50d23c819bd6
+105 Love Minus Zero - No Limit.flac:7c975cd430b51c477e459d09a023572e
+106 Solid Rock.flac:0bd4b4db467a68a4d43f6a9ffdc39793
+107 Watching The River Flow.flac:68d217148dd52832490af0f3e80b8544
+108 Sugar Baby.flac:5dd42d2600fdf7722d0fdda01cb258c0
+109 Lonesome Day Blues.flac:39e223b9a9b5c161c8f7be01e9c92b96
+110 Masters Of War.flac:04b9acd1309247fc9c6c92791873eea7
+111 Mr Tambourine Man.flac:e488ac24c707bdabeb59be382037e6b8
+112 Tangled Up In Blue.flac:12bfd5f1c1ff2b1c1ef6dd429ddc7823
+113 Blind Willie McTell.flac:b30954769c15166a7e671709cdabc441
+201 Summer Days.flac:c6a4f5a8107e345a61152abb71f8a74d
+202 The Wicked Messenger.flac:efaad55c66a39479ccb62def0337daa1
+203 Rainy Day Women Nos 12 and 35.flac:4d27fb46d1637c607d0017d36e6601d3
+204 Man Of Constant Sorrow.flac:dc6e74290ca51b4ba4b0d42e639ac8d2
+205 Like A Rolling Stone.flac:2608f155cf6c1743ba9402f8f952d9fc
+206 If Dogs Run Free.flac:ac5dc2d5a714390c93236e493da8f827
+207 Honest With Me.flac:bc2a78d7ebe51ae72b650537dee43c20
+208 Blowin' In The Wind.flac:c183e8eb59ec7080df2a90bf0ccd6c4c
+209 All Along The Watchtower.flac:0ffed6849ea187935f5204568a9dda9a
+210 In The Garden.flac:ddc018d337b973d7c9b223c1dd96d7a3
+===================
+===================
+===================
+=== shntool len for: bd02-05-02-cc-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:33.01       16407596 B   ---   --   ---xx   flac  0.6193  101 Intro.flac
+     2:57.00       31222844 B   ---   --   ---xx   flac  0.7377  102 Wait For The Light To Shine.flac
+     4:45.26       50335196 B   ---   --   ---xx   flac  0.7021  103 I Threw It All Away.flac
+     6:32.33       69226460 B   ---   --   ---xx   flac  0.6851  104 It´s Alright, Ma (I´m Only Bleeding).flac
+     6:14.54       66100652 B   ---   --   ---xx   flac  0.6628  105 Love Minus Zero - No Limit.flac
+     4:42.03       49751900 B   ---   --   ---xx   flac  0.7085  106 Solid Rock.flac
+     6:58.34       73815212 B   ---   --   ---xx   flac  0.6904  107 Watching The River Flow.flac
+     7:26.41       78770876 B   ---   --   ---xx   flac  0.6312  108 Sugar Baby.flac
+     7:33.17       79949228 B   ---   --   ---xx   flac  0.7106  109 Lonesome Day Blues.flac
+     4:53.64       51835772 B   ---   --   ---xx   flac  0.6442  110 Masters Of War.flac
+     7:21.24       77848892 B   ---   --   ---xx   flac  0.6886  111 Mr Tambourine Man.flac
+     8:31.39       90232172 B   ---   --   ---xx   flac  0.6905  112 Tangled Up In Blue.flac
+     7:17.42       77185628 B   ---   --   ---xx   flac  0.6625  113 Blind Willie McTell.flac
+     7:53.27       83500748 B   ---   --   ---xx   flac  0.6878  201 Summer Days.flac
+     6:34.00       69501644 B   ---   --   ---xx   flac  0.7126  202 The Wicked Messenger.flac
+    13:56.00      147470444 B   ---   --   ---xx   flac  0.6963  203 Rainy Day Women Nos 12 and 35.flac
+     5:16.00       55742444 B   ---   --   ---xx   flac  0.6989  204 Man Of Constant Sorrow.flac
+     8:27.27       89498348 B   ---   --   ---xx   flac  0.6797  205 Like A Rolling Stone.flac
+     5:37.48       59559740 B   ---   --   ---xx   flac  0.6726  206 If Dogs Run Free.flac
+     7:05.00       74970044 B   ---   --   ---xx   flac  0.7152  207 Honest With Me.flac
+     7:28.00       79027244 B   ---   --   ---xx   flac  0.6554  208 Blowin' In The Wind.flac
+     8:56.46       94658636 B   ---   --   ---xx   flac  0.6569  209 All Along The Watchtower.flac
+     6:20.74       67206092 B   ---   --   ---xx   flac  0.6981  210 In The Garden.flac
+   154:22.00     1633817812 B                            0.6836  (23 files)
+===================
+===================
+===================

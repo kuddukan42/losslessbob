@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-18-non-mk 
+=================== 
+=================== 
+=================== 
+964536b3f6afd2cc5c2d84f1ed21da2e  1-SHN\01 Rainy Day Women # 12 & 35.shn
+d02a05d5259f1b80df32d93e5b372f48  1-SHN\02 Simple Twist Of Fate.shn
+ba1fba29e9389986d6e4898f5e36e5e2  1-SHN\03 Union Sundown.shn
+14237e111ec8c1a9743be4ccc2f38262  1-SHN\04 Just Like A Woman.shn
+27ee773b7740fb0b06498ea83282ba6a  1-SHN\05 Stuck Inside Of Mobile With The Memphis Blues Again.shn
+0a4d6493c78c4ba652263821be00dc6c  1-SHN\06 Shooting Star.shn
+d76b81c5f43e92d0fbbb0729cfcaa82d  1-SHN\07 Maggie's Farm.shn
+ed836484844aeccf366e4848ff91aea0  1-SHN\08 Love Minus Zero - No Limit.shn
+027e23a9b280b4e55971273b0720db04  1-SHN\09 Little Moses.shn
+425a41b3050eb6338371ddf36cc5a1c2  1-SHN\10 Visions Of Johanna.shn
+52ccfa66369c6997da134c128f8e705f  1-SHN\noname.md5
+7e91292e2d87da23750ca717bc9c1609  1992_04_18_Auckland_back.jpg
+905fb1c459b33bd643d1ea872b33d8a9  1992_04_18_Auckland_front.jpg
+a8950df417fb25b55e22b52e7f5ca16f  2-SHN\1 Desolation Row.shn
+58a2bfeaf4fb1c56cd11080280e221f1  2-SHN\2 Cat's In The Well.shn
+3d11133734a9ac3d7151552e58c0ec79  2-SHN\3 Idiot Wind.shn
+9ef8a4d1094bc1ed681198e9c44a0544  2-SHN\4 The Times They Are A-Changin'.shn
+2decba1db21ec01a6a69c01256325a1b  2-SHN\5 Highway 61 Revisited.shn
+ca33bcf12ab13173d8f62b69de761d71  2-SHN\6 I Don't Believe You.shn
+2f77a02bd976f96dcacd86590d18be25  2-SHN\7 All Along The Watchtower.shn
+812bc8d26be87297bc9e02665654782c  2-SHN\8 Blowin' In The Wind.shn
+1ed1990b724dd1cd302ed50a9691a347  2-SHN\noname.md5
+760ad3e545ea38ad924447f1fe635d23  bd92-04-18-non-mk.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-04-18-non-mk\1-SHN 
+=================== 
+=================== 
+=================== 
+fd06de9ea1a5387c6911b179bbb8d820  [shntool]  01_Rainy_Day_Women___12___35.wav
+5da19ec93ce7ae8a880a59e177a2c632  [shntool]  02_Simple_Twist_Of_Fate.wav
+845d39bcf5bc9c499b05ac5c3aaed5ab  [shntool]  03_Union_Sundown.wav
+baec73ae11304de61b2e1f87ed3e3422  [shntool]  04_Just_Like_A_Woman.wav
+62d6b150e246163b800405d87d931d97  [shntool]  05_Stuck_Inside_Of_Mobile_With_The_Memphis_Blues_Again.wav
+18d75a4a23865912d8ea58c7108db477  [shntool]  06_Shooting_Star.wav
+f65264d3a0c8b168bb015c47fb636ee5  [shntool]  07_Maggie_s_Farm.wav
+d3d96ca386814f27a49145ea18516c72  [shntool]  08_Love_Minus_Zero_-_No_Limit.wav
+aa4e40c8b996cfffb4f251c6c78f1bfc  [shntool]  09_Little_Moses.wav
+9f4450f1070398319b35eebb1d3218ee  [shntool]  10_Visions_Of_Johanna.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-04-18-non-mk\2-SHN 
+=================== 
+=================== 
+=================== 
+29321e80df9dbb3e19e7e519ed03f483  [shntool]  1_Desolation_Row.wav
+05f6dc6cbdcabfb9fefbaf687b90f2dd  [shntool]  2_Cat_s_In_The_Well.wav
+75b38c70843e89e1c31a66d09c669347  [shntool]  3_Idiot_Wind.wav
+20630ab9d04f4934eea9a79b4ef4c490  [shntool]  4_The_Times_They_Are_A-Changin_.wav
+e0cbaea83111510fd7bf70653d51a94e  [shntool]  5_Highway_61_Revisited.wav
+45f3c61563668ba40a018938803357a6  [shntool]  6_I_Don_t_Believe_You.wav
+4fa903b54a08f3d11847afb3dfaddcd4  [shntool]  7_All_Along_The_Watchtower.wav
+9bda4cf69f85be99c5e8b487e31ab4f1  [shntool]  8_Blowin__In_The_Wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-18-non-mk\1-SHN 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.05       36526604 B   ---   --   -----    wav  1.0000  01_Rainy_Day_Women___12___35.wav
+     6:14.25       66032444 B   ---   --   -----    wav  1.0000  02_Simple_Twist_Of_Fate.wav
+     3:43.40       39431324 B   ---   --   -----    wav  1.0000  03_Union_Sundown.wav
+     5:27.48       57795740 B   ---   --   -----    wav  1.0000  04_Just_Like_A_Woman.wav
+     8:07.47       86017388 B   ---   --   -----    wav  1.0000  05_Stuck_Inside_Of_Mobile_With_The_Memphis_Blues_Again.wav
+     4:13.29       44697452 B   ---   --   -----    wav  1.0000  06_Shooting_Star.wav
+     4:54.54       51988652 B   ---   --   -----    wav  1.0000  07_Maggie_s_Farm.wav
+     3:15.73       34569740 B   ---   --   -----    wav  1.0000  08_Love_Minus_Zero_-_No_Limit.wav
+     3:23.47       35919788 B   ---   --   -----    wav  1.0000  09_Little_Moses.wav
+     6:39.05       70395404 B   ---   --   -----    wav  1.0000  10_Visions_Of_Johanna.wav
+    49:26.73      523374536 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-18-non-mk\2-SHN 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:37.47       70141388 B   ---   --   -----    wav  1.0000  1_Desolation_Row.wav
+     3:32.67       37554428 B   ---   --   -----    wav  1.0000  2_Cat_s_In_The_Well.wav
+     9:12.66       97528076 B   ---   --   -----    wav  1.0000  3_Idiot_Wind.wav
+     5:19.01       56273996 B   ---   --   -----    wav  1.0000  4_The_Times_They_Are_A-Changin_.wav
+     4:48.66       50958476 B   ---   --   -----    wav  1.0000  5_Highway_61_Revisited.wav
+     4:38.45       49145084 B   ---   --   -----    wav  1.0000  6_I_Don_t_Believe_You.wav
+     5:19.47       56382188 B   ---   --   -----    wav  1.0000  7_All_Along_The_Watchtower.wav
+     3:10.32       33591308 B   ---   --   -----    wav  1.0000  8_Blowin__In_The_Wind.wav
+    42:39.71      451574944 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

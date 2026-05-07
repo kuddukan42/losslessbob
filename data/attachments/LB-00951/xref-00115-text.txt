@@ -1,0 +1,45 @@
+===================
+===================
+===================
+=== bd80-05-01 Buffalo aud.md5
+===================
+===================
+===================
+15cc38f83019787f8b83d5cbb2492111 *bd80-05-01.txt
+76aae84efeb3f202fc26b5861e4f11a2 *bd80-05-01d1t01.flac
+af6daf7f36d84b9def8a1585e7bb8b4d *bd80-05-01d1t02.flac
+70bc2d95f52922920587d53151e7f42e *bd80-05-01d1t03.flac
+c2b7679c51c454a25cc64c91b976ca5a *bd80-05-01d1t04.flac
+8e7787b713ed345943de209d23165362 *bd80-05-01d1t05.flac
+bdc5c5a1ede236186a5c87f92815bf9f *bd80-05-01d1t06.flac
+ac08f58c98c346b8d538cd5074ce696f *bd80-05-01d1t07.flac
+d19de71c66be0b13d2a82e5240ae4664 *bd80-05-01d1t08.flac
+653b7328c8f91366e6367fea81a17cdf *bd80-05-01d2t01.flac
+843ecb3916b872186620682e3c225b66 *bd80-05-01d2t02.flac
+c26a414408608c13a67df413a18976ce *bd80-05-01d2t03.flac
+83cba1a85a5859569e6838cce4bfc02c *bd80-05-01d2t04.flac
+c971ca9bde35b2eff507fda630ba0b7e *bd80-05-01d2t05.flac
+4bfd89122d348fd934e2cd46b6431373 *bd80-05-01d2t06.flac
+===================
+===================
+===================
+=== bd80-05-01.txt
+===================
+===================
+===================
+Bob Dylan, 5/1/80, Buffalo, New York, 2CDR
+
+LosslessBob LB-951
+
+(44min+45min), very good sound; missing first 2 songs Gotta Serve Somebody, I Believe In You and cuts into 3rd which are reported by dylanbase 97 not to circulate; also missing the girls songs as just have bob's intros to the songs
+
+begin of d1t1 missing; 6sec drop d1t1 0:21
+
+CD1
+1 When You Gonna Wake Up ?, 2 Ain't Gonna Go To Hell, 3 Cover Down/Break Through, 4 Precious Angel, 5 Man Gave Names To All The Animals, 6 Slow Train, 7 intro to Lord Don't Move That Mountain (Mahalia Jackson), + intro to  Walk Around Heaven All Day (Rev J Cleveland/C George), + Do Right To Me Baby (Do Unto Others), 8 Solid Rock, + begin of next song 
+
+CD2
+1 Saving Grace, 2 Saved (Dylan/Drummond), 3 What Can I Do For You ?, 4 In The Garden,  5 Are You Ready ?, 6 Pressing On
+===================
+===================
+===================

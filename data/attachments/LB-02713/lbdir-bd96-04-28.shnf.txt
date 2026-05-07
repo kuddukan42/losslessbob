@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-04-28.shnf 
+=================== 
+=================== 
+=================== 
+3afec88be7663500441bb0628f867d5b  bd96-04-28-LB-2713.txt
+1dd91329f5114556da03012eea22bb10  bd96-04-28.md5
+23d56d18c8adaffcb6758931fea59184  bd96-04-28.txt
+07eaa90a3cce7663f2562b042baa5bbd  bd96-04-28d1t01.shn
+71bd6c02d2305344b2026a18da63a6c2  bd96-04-28d1t02.shn
+ba4af5f6b5bc7f8aa2dd389d0fe78027  bd96-04-28d1t03.shn
+843fecf321f300a0113f94fe9cae1c0f  bd96-04-28d1t04.shn
+7314f229a5dfd61bab0756dd8cea11b7  bd96-04-28d1t05.shn
+2531e64478d1a0cd0c7db9003dfc844a  bd96-04-28d1t06.shn
+6e6a2dba6cff03bba5ec6f2c27b5c520  bd96-04-28d1t07.shn
+56054eefd3e09929f7a3419dbf63f3c9  bd96-04-28d1t08.shn
+96ee6cf9cbb8331fdc469cf569017c19  bd96-04-28d2t01.shn
+710f411b4930b940b3fbf283675503ff  bd96-04-28d2t02.shn
+152584fe5886cdc9e6e8b6210cec802f  bd96-04-28d2t03.shn
+5b5cb8fa739a8bba0cdaddb6ad9f607b  bd96-04-28d2t04.shn
+e054eb0fa6a25816ae0127a14513dbb8  bd96-04-28d2t05.shn
+627db6541e1799df62be469cf7b08026  bd96-04-28d2t06.shn
+a79755920472d46daa1d04ef60d31ec0  bd96-04-28d2t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-04-28.shnf 
+=================== 
+=================== 
+=================== 
+80f2317ba095a625189476bd02912f9c  [shntool]  bd96-04-28d1t01.wav
+c5f30b2289a727c3fd1909d0340ca3dc  [shntool]  bd96-04-28d1t02.wav
+d94ad8d76b4a78633be480257e377776  [shntool]  bd96-04-28d1t03.wav
+729730c87507fe8d24b5d09bf0b349d3  [shntool]  bd96-04-28d1t04.wav
+dd8c5503138bc12a9e57c8f686b16b2f  [shntool]  bd96-04-28d1t05.wav
+ea37b9bb52fe1959b8362ed28ecee293  [shntool]  bd96-04-28d1t06.wav
+f02d08f4757da611c242fc183b38e54c  [shntool]  bd96-04-28d1t07.wav
+c12a1d6e3bc39ff31c1a0e0798e674bd  [shntool]  bd96-04-28d1t08.wav
+c4bfd6df0b609ff09fc30a6e897a59da  [shntool]  bd96-04-28d2t01.wav
+731bb2efcf6f72178db3bd13df6faf1b  [shntool]  bd96-04-28d2t02.wav
+afaaeed5012769f644843bb82abc5e3a  [shntool]  bd96-04-28d2t03.wav
+b688d48c5b3605d9c9cc760023f6c3f7  [shntool]  bd96-04-28d2t04.wav
+7d31c1a284cd2c5ef214e8983f4ae40d  [shntool]  bd96-04-28d2t05.wav
+ec1a174fd3eacebb6ac5c0d8016db360  [shntool]  bd96-04-28d2t06.wav
+3dfc2a3f5d618854e4b44e833f1dd39f  [shntool]  bd96-04-28d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-28.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.38       54067820 B   ---   --   -----    wav  1.0000  bd96-04-28d1t01.wav
+     5:41.37       60239468 B   ---   --   -----    wav  1.0000  bd96-04-28d1t02.wav
+     6:10.47       65378588 B   ---   --   -----    wav  1.0000  bd96-04-28d1t03.wav
+     7:48.53       82679900 B   ---   --   -----    wav  1.0000  bd96-04-28d1t04.wav
+     7:18.27       77326748 B   ---   --   -----    wav  1.0000  bd96-04-28d1t05.wav
+     7:15.36       76818716 B   ---   --   -----    wav  1.0000  bd96-04-28d1t06.wav
+     8:42.08       92099660 B   ---   --   -----    wav  1.0000  bd96-04-28d1t07.wav
+     8:58.03       94910300 B   ---   --   -----    wav  1.0000  bd96-04-28d1t08.wav
+     8:08.64       86233772 B   ---   --   -----    wav  1.0000  bd96-04-28d2t01.wav
+     8:47.20       93009884 B   ---   --   -----    wav  1.0000  bd96-04-28d2t02.wav
+     6:23.44       67664732 B   ---   --   -----    wav  1.0000  bd96-04-28d2t03.wav
+     7:01.60       74405564 B   ---   --   -----    wav  1.0000  bd96-04-28d2t04.wav
+     7:56.49       84081692 B   ---   --   -----    wav  1.0000  bd96-04-28d2t05.wav
+    11:46.38      124627820 B   ---   --   -----    wav  1.0000  bd96-04-28d2t06.wav
+     8:13.71       87132236 B   ---   --   -----    wav  1.0000  bd96-04-28d2t07.wav
+   115:19.70     1220676900 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

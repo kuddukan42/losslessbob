@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-06-10-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+0e8a2fd9f15f8fd321394d8451f5ae6b  Dylan-Mai-10-08.md5
+b5e0b1c69bd40969e82e5ba9a4599edd  Dylan-Mai-10-08_d1t01.flac
+26cd78de32d02bf09c0f86d8c972514f  Dylan-Mai-10-08_d1t02.flac
+32e1079c701ffe257c6208d7749dedcf  Dylan-Mai-10-08_d1t03.flac
+07f73e12173bb5ac058896c7060892f9  Dylan-Mai-10-08_d1t04.flac
+bf099af836d43fabb0c5525a68e3b29f  Dylan-Mai-10-08_d1t05.flac
+7cd1603d3dc6528a322d778d6ff6b340  Dylan-Mai-10-08_d1t06.flac
+a7591c6101ba93bd579fd6f2b86ed9e3  Dylan-Mai-10-08_d1t07.flac
+a1ba05626b67a48cc0f35bb3e08b680a  Dylan-Mai-10-08_d1t08.flac
+693093ad477c78042d443d54d5657bdd  Dylan-Mai-10-08_d1t09.flac
+e377498698aee75887332627a376dc6c  Dylan-Mai-10-08_d1t10.flac
+01b7857ce8fb0aa5265e5252ac7e57f6  Dylan-Mai-10-08_d1t11.flac
+b34e9e7e70133dd4ba95c91cdb393d53  Dylan-Mai-10-08_d1t12.flac
+ed5702897b5e6d8bf03939001d0e091a  Dylan-Mai-10-08_d2t01.flac
+aadc68239abf5f32d2ecc701ac8d7255  Dylan-Mai-10-08_d2t02.flac
+6a9ccb2f6b3fd91e5141f3846cd77a15  Dylan-Mai-10-08_d2t03.flac
+a2e285f8b58c36b7a3f5a89caefb35bb  Dylan-Mai-10-08_d2t04.flac
+363c00ba9707369ba15d533d116bbc8e  Dylan-Mai-10-08_d2t05.flac
+d6d3a62365d56ba105cad4cfbe198413  Dylan-Mai-10-08_d2t06.flac
+817e55ed0930f2c4cfd18f6e90bdfc14  Dylan-Mai-10-08_d2t07.flac
+5cfec1079496eee33ab1fb6d4b5452ea  Dylan-Mai-10-08_d2t08.flac
+7ff4ada45b1d9ddfd205f41559523c16  Dylan-Mai.10.2008.ffp
+795bd01ece62ef570fed506f72154360  Dylan-Mai.10.2008.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-06-10-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+Dylan-Mai-10-08_d1t01.flac:e74695731230e22af7dfc9b6e15d132f
+Dylan-Mai-10-08_d1t02.flac:41af91940b8336534fd2c19224f48cf7
+Dylan-Mai-10-08_d1t03.flac:a1d371c0d8a767693487f3cffb3f25a5
+Dylan-Mai-10-08_d1t04.flac:85e9d2c17632f5ee276467e08ae9fb36
+Dylan-Mai-10-08_d1t05.flac:eb361bf6199c72d596d459a8f33f58f8
+Dylan-Mai-10-08_d1t06.flac:278a4afba24c954f65a8786518bb1247
+Dylan-Mai-10-08_d1t07.flac:e6110f6f25db53507bbe4a11f1d70505
+Dylan-Mai-10-08_d1t08.flac:2e22c20b39a576c1e7f2aa1e30b981a4
+Dylan-Mai-10-08_d1t09.flac:bddeea50a3a42a262fa9246bb99a6d12
+Dylan-Mai-10-08_d1t10.flac:baf6e6595c5c74175a09101cdde6d657
+Dylan-Mai-10-08_d1t11.flac:b2891fb03d6319de40eb27ad36a1be5f
+Dylan-Mai-10-08_d1t12.flac:27de5eda2398d52cda4dbd2777230201
+Dylan-Mai-10-08_d2t01.flac:20ec746c5d856396ab33c698630670b4
+Dylan-Mai-10-08_d2t02.flac:ae212bc16de937a682498fb8c31e7670
+Dylan-Mai-10-08_d2t03.flac:632857ff492168b713ce90de686fa840
+Dylan-Mai-10-08_d2t04.flac:b03e2c7775ef7d91a614f4f94575e6b8
+Dylan-Mai-10-08_d2t05.flac:ba764a0e808cf6dcce703f01b3a4a1cb
+Dylan-Mai-10-08_d2t06.flac:599c891932ffd7fcd6923c126a8dd858
+Dylan-Mai-10-08_d2t07.flac:e81d3a656330107bdb9f791537e4791c
+Dylan-Mai-10-08_d2t08.flac:e253e44902c8618612323483e5030426
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-06-10-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:31.35       16134764 B   ---   --   ---xx   flac  0.4473  Dylan-Mai-10-08_d1t01.flac
+     4:05.05       43229804 B   ---   --   ---xx   flac  0.6335  Dylan-Mai-10-08_d1t02.flac
+     5:25.22       57381788 B   ---   --   ---xx   flac  0.5981  Dylan-Mai-10-08_d1t03.flac
+     6:37.45       70136684 B   ---   --   ---xx   flac  0.6335  Dylan-Mai-10-08_d1t04.flac
+     6:02.28       63922700 B   ---   --   ---xx   flac  0.5460  Dylan-Mai-10-08_d1t05.flac
+     7:46.40       82296524 B   ---   --   ---xx   flac  0.5086  Dylan-Mai-10-08_d1t06.flac
+     5:31.58       58524860 B   ---   --   ---xx   flac  0.6263  Dylan-Mai-10-08_d1t07.flac
+     6:38.21       70256636 B   ---   --   ---xx   flac  0.5769  Dylan-Mai-10-08_d1t08.flac
+     8:26.65       89411324 B   ---   --   ---xx   flac  0.6031  Dylan-Mai-10-08_d1t09.flac
+     5:27.11       57708716 B   ---   --   ---xx   flac  0.6053  Dylan-Mai-10-08_d1t10.flac
+     7:32.09       79754012 B   ---   --   ---xx   flac  0.6405  Dylan-Mai-10-08_d1t11.flac
+     5:25.32       57405308 B   ---   --   ---xx   flac  0.4704  Dylan-Mai-10-08_d1t12.flac
+     6:30.69       68958332 B   ---   --   ---xx   flac  0.6576  Dylan-Mai-10-08_d2t01.flac
+     7:55.28       83855900 B   ---   --   ---xx   flac  0.4633  Dylan-Mai-10-08_d2t02.flac
+     5:46.45       61140284 B   ---   --   ---xx   flac  0.6349  Dylan-Mai-10-08_d2t03.flac
+     8:12.64       86939372 B   ---   --   ---xx   flac  0.5410  Dylan-Mai-10-08_d2t04.flac
+     4:45.06       50288156 B   ---   --   ---xx   flac  0.5392  Dylan-Mai-10-08_d2t05.flac
+     6:38.66       70362476 B   ---   --   ---xx   flac  0.6453  Dylan-Mai-10-08_d2t06.flac
+     0:52.23        9226940 B   ---   --   ---xx   flac  0.5604  Dylan-Mai-10-08_d2t07.flac
+     4:45.09       50295212 B   ---   --   ---xx   flac  0.6248  Dylan-Mai-10-08_d2t08.flac
+   115:57.06     1227229792 B                            0.5813  (20 files)
+=================== 
+=================== 
+=================== 

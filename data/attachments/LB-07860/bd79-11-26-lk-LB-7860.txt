@@ -1,0 +1,10 @@
+Bob Dylan, 11/26/79, Tempe, AZ, 2CDR
+
+LB-7860, (67min+32min), from lk 79 series;  no info file; bittorrent download 08/09; this is a not close eac match on d1t2 to LB-7210 and has different discontinuities between tracks; (did not listen to all of this)
+
+drop cut d1t3 4:34; beginning of d1t10, between cdrs, discontinuities near beginning of tracks;
+
+Tracklisting:, CD 1, 01 - Gotta Serve Somebody, 02 - I Believe In You, 03 - When You Gonna Wake Up, 04 - When He Returns, 05 - Man Gave Names To All The Animals, 06 - Precious Angel.flac, 07 - Slow Train, 08 - Covenant Woman, 09 - Put Your Hand In The Hand Of The Man From Galilee, 10 - Gonna Change My Way Of Thinking., 11 - Do Right To Me Baby (Do Unto Others), CD 2, 01 - Solid Rock, 02 - Saving Grace, 03 - Saved, 04 - What Can I Do For You, 05 - In The Garden
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

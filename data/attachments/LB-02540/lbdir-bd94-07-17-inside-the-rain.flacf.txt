@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-17-inside-the-rain.flacf 
+=================== 
+=================== 
+=================== 
+e3f54ef6f2d721180152b0f6a58dddbb  bd94-07-17-inside-the-rain.txt
+639627940439ecdc24203be410dd67a6  DylanInsideRain.jpg
+3f5f651cc999ee697259498fcc66acb5  fingerprint.txt
+fa1bc1e197108f79b3ff9603b6b52037  Track01.flac
+fd805a796904a2ccaeda23fb346487ae  Track02.flac
+af9dd71db17e863b7241332ff855c136  Track03.flac
+fda8f71095c8c5ec76104109af5eaad6  Track04.flac
+f62d76221421ecc521b345ca8bea1c9a  Track05.flac
+8fda0a9777c1be577a330f6dc4872929  Track06.flac
+39905f77e954c174b67d07fb29fc66e3  Track07.flac
+95e19049c1c907a7add001f8ee217e8c  Track08.flac
+19cf0f5a574cf482d1575da500af94c4  Track09.flac
+cc3a498419ef03791967e0346c7ad4f3  Track10.flac
+5f7daa65eaddeb8ebbed5da9a962fcd1  Track11.flac
+6911dc4f4f7752f1b66e2cdf5a55799a  Track12.flac
+b255ae95514ad2337a3e7897d8bd9b55  Track13.flac
+c14a1c72b86d13228a18bbc7bb731e0a  Track14.flac
+d23badab66d0f6e6237d3f6df7812c4d  Track15.flac
+89c0213aadde77305d72a312ce1559aa  wav1.LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-17-inside-the-rain.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:c3ef3da01b04703cf41f4165a3511a83
+Track02.flac:7e98bf00afd2a00dfb2ee7dec8b4196a
+Track03.flac:a4f33d725e9089b205cb7f0380fc455b
+Track04.flac:970bc1f443ec6d139038863944aa9fba
+Track05.flac:3c7c474a48711f574db46106cd88e971
+Track06.flac:fc63fd5ea6cc6cdba4d54da10a1766e8
+Track07.flac:0b2d67a30dc0d31832f8bdc6526f42bb
+Track08.flac:83ce9a98328f09f83c153f2ab7e6215c
+Track09.flac:63920250efff33322742b0e917a5a6d6
+Track10.flac:cc3f5f6530353c86b15e8241fce90b2e
+Track11.flac:db303ec49898092ac9510232b9cd91c4
+Track12.flac:6ba8e1a0af01a2a15eaba6e1a945bbc9
+Track13.flac:d9935450462629566450f1b08601a35c
+Track14.flac:fba5660c7169d9014c436e9aae74096e
+Track15.flac:a475554c7deec076f6ad0c510caf9dac
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-17-inside-the-rain.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:02.30       85095404 B   ---   --   ---xx   flac  0.5908  Track01.flac
+     6:42.17       70952828 B   ---   --   ---xx   flac  0.5853  Track02.flac
+     5:36.07       59286908 B   ---   --   ---xx   flac  0.6011  Track03.flac
+     7:07.32       75398108 B   ---   --   ---xx   flac  0.5510  Track04.flac
+     9:24.62       99635468 B   ---   --   ---xx   flac  0.5598  Track05.flac
+     6:49.29       72215852 B   ---   --   ---xx   flac  0.5348  Track06.flac
+     5:18.11       56121116 B   ---   --   ---xx   flac  0.4620  Track07.flac
+     6:03.42       64132028 B   ---   --   ---xx   flac  0.4404  Track08.flac
+     9:01.25       95491244 B   ---   --   ---xx   flac  0.4681  Track09.flac
+     1:05.49       11581292 B   ---   --   ---xx   flac  0.4485  Track10.flac
+     2:42.29       28645052 B   ---   --   ---xx   flac  0.4344  Track11.flac
+     0:25.70        4574684 B   ---   --   ---xx   flac  0.3792  Track12.flac
+     0:43.09        7606412 B   ---   --   ---xx   flac  0.5643  Track13.flac
+     0:55.16        9739676 B   ---   --   ---xx   flac  0.5148  Track14.flac
+     4:01.62       42658268 B   ---   --   ---xx   flac  0.5767  Track15.flac
+    73:59.40      783134340 B                            0.5306  (15 files)
+=================== 
+=================== 
+=================== 

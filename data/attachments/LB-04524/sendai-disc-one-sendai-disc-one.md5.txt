@@ -1,0 +1,11 @@
+e221a14c4abfaceedf6b41e41fd0e36f *sendai disc one log.LOG
+a5e30df53e18e75c65054d80113b8760 *sendai disc one.ffp
+12e776e9b4699cf3e8c603defb33a099 *Track01.flac
+5fb177c379e3f62d5c260a69d62830da *Track02.flac
+9b923929b74c55ef12c1a8b5c315b832 *Track03.flac
+a316c57a865aa5375e6518022d635ec0 *Track04.flac
+06e7d38086d1e205cb55d3545b1e2e54 *Track05.flac
+32c53457082b1906833d2a4de6dc6227 *Track06.flac
+f2986f057a697c6a7a1713802e99d6a6 *Track07.flac
+486dda9a2ef158488e103cd46cf0a9ac *Track08.flac
+76ad19babf556c36771a5b2107c66fd8 *Track09.flac

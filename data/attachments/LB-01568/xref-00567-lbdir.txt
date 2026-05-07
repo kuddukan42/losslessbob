@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-14-c.flacf 
+=================== 
+=================== 
+=================== 
+44b24c6f3b0174cc2403c97f84c26b13  1992-04-14 Sydney, New South Wales, Australia D1\01 Track01.flac
+6cce9f0522d356c2cd9e7afabc197463  1992-04-14 Sydney, New South Wales, Australia D1\02 Track02.flac
+6f5d4706975ac6ff844ea9d28e4c3946  1992-04-14 Sydney, New South Wales, Australia D1\03 Track03.flac
+899d6dab91132f62c80dbe3cc9fb3c5a  1992-04-14 Sydney, New South Wales, Australia D1\04 Track04.flac
+90a0f3fc6d4ceb05dd01bbae62e6a03e  1992-04-14 Sydney, New South Wales, Australia D1\05 Track05.flac
+0dcb8f71f0e043fa70a6463a4bdb3868  1992-04-14 Sydney, New South Wales, Australia D1\06 Track06.flac
+8fb51bfdb80528acd2538f64a7dc5683  1992-04-14 Sydney, New South Wales, Australia D1\07 Track07.flac
+577e3b4d0113ce60a875f2ae3a4c761b  1992-04-14 Sydney, New South Wales, Australia D1\08 Track08.flac
+f2fd032d9be302dd7ddd5c0215a44c42  1992-04-14 Sydney, New South Wales, Australia D1\09 Track09.flac
+c6176e6f6f96a8eb0e848fff7c3b2cc6  1992-04-14 Sydney, New South Wales, Australia D1\10 Track10.flac
+af2289cf7dcc51f1be07861c8aaf3232  1992-04-14 Sydney, New South Wales, Australia D2\01 Track01.flac
+91c28f0b4476f26a7ed118243ab46df3  1992-04-14 Sydney, New South Wales, Australia D2\02 Track02.flac
+9e15e096eaa3dbbb912b4a3e127f513d  1992-04-14 Sydney, New South Wales, Australia D2\03 Track03.flac
+97d225c2f0f0f37e2bb68032df581c84  1992-04-14 Sydney, New South Wales, Australia D2\04 Track04.flac
+06e5e10fdbcf915acb0ef4f1a479d27f  1992-04-14 Sydney, New South Wales, Australia D2\05 Track05.flac
+79b793898a9aeb3a83dcef414b41079a  1992-04-14 Sydney, New South Wales, Australia D2\06 Track06.flac
+e52b6c9e686e477b349aa33e4ef1f823  1992-04-14 Sydney, New South Wales, Australia D2\07 Track07.flac
+1c7bc66f463b90cd9d96a0b84773fc18  1992-04-14 Sydney, New South Wales, Australia D2\08 Track08.flac
+008af9020793fd1b22f3c73173ba6c33  1992.04.14 Sydney, New South Wales, Australia,State Theatre.md5
+34423197d29d998dcfeebd01937f7bfb  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-14-c.flacf\1992-04-14 sydney, new south wales, australia d1 
+=================== 
+=================== 
+=================== 
+01 track01.flac:f7018ef3c4b6605da2692079b483dbe9
+02 track02.flac:920e7a440697d029c501fd69a8ec1099
+03 track03.flac:24a83c5bcc8c03df8c9c998682d2cea1
+04 track04.flac:a1f29ed92be539b1d164c297fb96675a
+05 track05.flac:6db74fe23d6375c2f6f6b46b514c8746
+06 track06.flac:a7ca01adb9ec0684b6c678f795460c0b
+07 track07.flac:1b14eb29dc0782ac35d624ed7715640b
+08 track08.flac:74e21975a71f2eb58e9cf21ac87802ae
+09 track09.flac:007842e3490a9e7b254c7be6e9d9d44b
+10 track10.flac:cab37d0331256c43d35f4985cb2df230
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-14-c.flacf\1992-04-14 sydney, new south wales, australia d2 
+=================== 
+=================== 
+=================== 
+01 track01.flac:416b839621873c636c406347150eb4ea
+02 track02.flac:9d9819abe568f0701771e17e9e09be61
+03 track03.flac:496737cb5c2c79e4fb3dfd565ab85523
+04 track04.flac:4f29e583c6db4143c2f95f63e741a32d
+05 track05.flac:f7d956a0a219d738a41fed2f836b8341
+06 track06.flac:fd6035c9ca7f617c30737c797d74c87d
+07 track07.flac:28e071c683b3ea4024f8a078b8e033b4
+08 track08.flac:0dd4c460e85766dc49905c5245a51054
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-14-c.flacf\1992-04-14 sydney, new south wales, australia d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:42.03       28583900 B   ---   --   ---xx   flac  0.6667  01 Track01.flac
+     5:06.42       54077228 B   ---   --   ---xx   flac  0.6869  02 Track02.flac
+     3:26.60       36479564 B   ---   --   ---xx   flac  0.6933  03 Track03.flac
+     6:14.21       66023036 B   ---   --   ---xx   flac  0.6819  04 Track04.flac
+     7:49.16       82769276 B   ---   --   ---xx   flac  0.6882  05 Track05.flac
+     5:22.37       56887868 B   ---   --   ---xx   flac  0.6847  06 Track06.flac
+     5:36.14       59303372 B   ---   --   ---xx   flac  0.6892  07 Track07.flac
+     2:58.74       31573292 B   ---   --   ---xx   flac  0.6908  08 Track08.flac
+     3:53.16       41138876 B   ---   --   ---xx   flac  0.6933  09 Track09.flac
+     8:42.22       92132588 B   ---   --   ---xx   flac  0.6939  10 Track10.flac
+    51:52.05      548969000 B                            0.6878  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-14-c.flacf\1992-04-14 sydney, new south wales, australia d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.34       65171612 B   ---   --   ---xx   flac  0.6980  01 Track01.flac
+     3:23.56       35940956 B   ---   --   ---xx   flac  0.6905  02 Track02.flac
+     8:14.31       87214556 B   ---   --   ---xx   flac  0.6817  03 Track03.flac
+     5:37.57       59580908 B   ---   --   ---xx   flac  0.6997  04 Track04.flac
+     6:13.40       65891324 B   ---   --   ---xx   flac  0.6668  05 Track05.flac
+     5:06.30       54049004 B   ---   --   ---xx   flac  0.6628  06 Track06.flac
+     3:57.57       41940908 B   ---   --   ---xx   flac  0.6659  07 Track07.flac
+     4:08.44       43850732 B   ---   --   ---xx   flac  0.6907  08 Track08.flac
+    42:51.49      453640000 B                            0.6821  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,62 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-12-NETI.flacf 
+=================== 
+=================== 
+=================== 
+e9ca70fd0761b011e172a380bd811a8b  bd-930612-FinsburyPark.ffp
+14a08eab25ca066d4f893de12c65b296  bd-930612-FinsburyPark.md5
+1e64b0fa06650d02a9cd05a4c1089f15  info.txt
+625ac2ca5ea4d9a0f6eec23db0bf7bcf  track101.flac
+01b7da15316ccdc6eea56448c46c550b  track102.flac
+61858b039031bf9aae3fa04df6ae6632  track103.flac
+7f594e9e83792faeb34c5383919b4a68  track104.flac
+d114712ec7fd0713d52a3df7be1a8468  track105.flac
+d1caac6c61d4f8a3b68f839d321d28ad  track106.flac
+6cf07835a4221a9cac35553bb3df5dc9  track107.flac
+4f12d47c6c12679cfb4eb8f9e857197a  track108.flac
+8853c5d407ea78e4df298b17c582babc  track109.flac
+4dd0dc743cc136552b777e9c1bf373f9  track110.flac
+49e6bfd65b3a922c09e531577314fecb  track111.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-12-NETI.flacf 
+=================== 
+=================== 
+=================== 
+track101.flac:8bbdfae148185c7aeac9943987e43696
+track102.flac:63c8b99f352fa33fa4f7a95341c6ea38
+track103.flac:b8f6377f938cc43701c5ebda21654417
+track104.flac:ba8edfc66d80d3ce7fd53084015aaffb
+track105.flac:bfe7886e9c2f5d117a7bf0e9cb1e4922
+track106.flac:703dc02ce8a205727d5fac1de29a7067
+track107.flac:e3db2b9bd942104a100f019c29735607
+track108.flac:865c7aa5a2f632876d230c8a39543276
+track109.flac:0af3a63188e092b114de79da52771f78
+track110.flac:7f378b554cb18926d06468a4d8913c06
+track111.flac:7f9fbb1d68ad72daa3a1fb7a9806945b
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-06-12-NETI.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.14       47308172 B   ---   --   ---xx   flac  0.4616  track101.flac
+     8:39.22       91603388 B   ---   --   ---xx   flac  0.5267  track102.flac
+     5:34.41       59014076 B   ---   --   ---xx   flac  0.5481  track103.flac
+     6:13.37       65884268 B   ---   --   ---xx   flac  0.4818  track104.flac
+    10:34.51      111957596 B   ---   --   ---xx   flac  0.5590  track105.flac
+     8:10.51       86555996 B   ---   --   ---xx   flac  0.4695  track106.flac
+     6:09.32       65166908 B   ---   --   ---xx   flac  0.4711  track107.flac
+     5:30.44       58315532 B   ---   --   ---xx   flac  0.4105  track108.flac
+     7:14.50       76675244 B   ---   --   ---xx   flac  0.4910  track109.flac
+     7:32.01       79735196 B   ---   --   ---xx   flac  0.5720  track110.flac
+     6:48.62       72117068 B   ---   --   ---xx   flac  0.4242  track111.flac
+    76:56.30      814333444 B                            0.4984  (11 files)
+=================== 
+=================== 
+=================== 

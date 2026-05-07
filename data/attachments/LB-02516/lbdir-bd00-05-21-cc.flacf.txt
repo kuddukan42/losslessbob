@@ -1,0 +1,120 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-21-cc.flacf 
+=================== 
+=================== 
+=================== 
+0a87f0b758f3d474198a7ded9157d56a  bd00-05-21-cc.txt
+321d6f71565565328efa115275a6014d  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 01).flac
+4083a4aa081992737d7f3351bd92bede  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 02).flac
+3dda16156376668e0eb4e907a3bd005c  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 03).flac
+e5a1c0486828a76391f6c0286e981fba  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 04).flac
+76249267614459b78cb69358a8c5927b  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 05).flac
+65b6db57b6eb0af2234b7de05c56bd16  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 06).flac
+e0b593a931b84a0a36bdcc112d2db420  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 07).flac
+79a647e57f566260edbab435adc4fc13  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 08).flac
+ced2e5a1956a1bdfd1870ae6f4bf8bef  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 09).flac
+c8390b9eef7c683d69609691e62b16f6  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 10).flac
+bc413223e5a723236648c1ad70946422  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 11).flac
+e23a7b0602558a725b0d7fba15339fc8  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 12).flac
+ce2a608698142a2bac0a82d87a3b7dc0  dylanhorsens 1\Bob Dylan  -  Horsens Theater disk 1 (Track 13).flac
+7e3b596a429e44835588babe45298bec  dylanhorsens 2\Bob Dylan  -  Horsens Theater disk 2 (Track 01).flac
+f68308a39eb5794ac5e66e73b1ec5ffb  dylanhorsens 2\Bob Dylan  -  Horsens Theater disk 2 (Track 02).flac
+db2ba922da7a7abfa434faab29e3862e  dylanhorsens 2\Bob Dylan  -  Horsens Theater disk 2 (Track 03).flac
+aee2668e4f6dae547d9e3ade0fd5fbb6  dylanhorsens 2\Bob Dylan  -  Horsens Theater disk 2 (Track 04).flac
+a7355e4bb059950090585978ce268100  dylanhorsens 2\Bob Dylan  -  Horsens Theater disk 2 (Track 05).flac
+0fe4336fd2dbcd9552861381be5ff614  dylanhorsens 2\Bob Dylan  -  Horsens Theater disk 2 (Track 06).flac
+a0ab1166b1ff4622b81e7de86d64def4  dylanhorsens 2\Bob Dylan  -  Horsens Theater disk 2 track 10 fix.flac
+55b2cb6a47a9599fea90e85e39cc2c4a  dylanhorsens 2\Bob Dylan - Horsens Theater disk 2 (Track 11).flac
+09b1f31c59aaddc5f8955b15c4da67b5  dylanhorsens 2\Bob Dylan - Horsens Theater disk 2 (Track 7).flac
+564a649e922814e8909a9e1506581b41  dylanhorsens 2\Bob Dylan - Horsens Theater disk 2 (Track 8).flac
+2f6e454d4ba186b0b1e4472378ea8e75  dylanhorsens 2\Bob Dylan - Horsens Theater disk 2 (Track 9).flac
+74ffd84ca23b631c0fe08d8ec5abd4c4  horsens back cover.jpg
+dfdeec1ac61f36baf4d4f66fd71800fb  Horsens front cover.jpg
+2c41af7d689057d6fee2426db05e6861  horsens inside photo.jpg
+ba83b6475caf64ce43baf674c0d769b8  Horsens Teater - BobsBoots - Bootleg CD-fix.txt
+8414e9ecfcfad5b361f314d9e10f3694  Horsens Teater - BobsBoots - Bootleg CD.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-21-cc.flacf\dylanhorsens 1 
+=================== 
+=================== 
+=================== 
+Bob Dylan  -  Horsens Theater disk 1 (Track 01).flac:daa1fb994ab46abdc422a7040c8585cf
+Bob Dylan  -  Horsens Theater disk 1 (Track 02).flac:74231188bb2a6718b954db7e4632cf6a
+Bob Dylan  -  Horsens Theater disk 1 (Track 03).flac:9e3e9b62bc002a9858e65ba2f3785585
+Bob Dylan  -  Horsens Theater disk 1 (Track 04).flac:2946f3193558af752cc0afb92abd544d
+Bob Dylan  -  Horsens Theater disk 1 (Track 05).flac:90cfd91717e2783f388f3e163a412f05
+Bob Dylan  -  Horsens Theater disk 1 (Track 06).flac:ea3116a3dfe3d8575111c99c12dd82f8
+Bob Dylan  -  Horsens Theater disk 1 (Track 07).flac:63fa13c3cef10bef9a1e3186e774a07a
+Bob Dylan  -  Horsens Theater disk 1 (Track 08).flac:f66b813c94691c97d2acde017a2b4324
+Bob Dylan  -  Horsens Theater disk 1 (Track 09).flac:ebfcc2b0f4e108e7670e98a9b7154974
+Bob Dylan  -  Horsens Theater disk 1 (Track 10).flac:67b769196b647f7fb88149cd8871504c
+Bob Dylan  -  Horsens Theater disk 1 (Track 11).flac:06f1cb36b32c458ddd230dd4be8d13eb
+Bob Dylan  -  Horsens Theater disk 1 (Track 12).flac:82c8ded37ebd4a02672f41a9ddc73a75
+Bob Dylan  -  Horsens Theater disk 1 (Track 13).flac:63ae5a75b5b42fc7bc2c5c8b1a02c223
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-21-cc.flacf\dylanhorsens 2 
+=================== 
+=================== 
+=================== 
+Bob Dylan  -  Horsens Theater disk 2 (Track 01).flac:918e0916d5a29d9751451d2aea4926a7
+Bob Dylan  -  Horsens Theater disk 2 (Track 02).flac:e38df1d4bb982c8afc0e20a69afece6a
+Bob Dylan  -  Horsens Theater disk 2 (Track 03).flac:1fae3910b0752f68c952fe3dcc734dea
+Bob Dylan  -  Horsens Theater disk 2 (Track 04).flac:5108103f9892c6df370344513a989b47
+Bob Dylan  -  Horsens Theater disk 2 (Track 05).flac:4ff9e2cb1adbb2ab50c6dbb177078c02
+Bob Dylan  -  Horsens Theater disk 2 (Track 06).flac:338ba7d8d5ec0aed8149e881ae2758fb
+Bob Dylan  -  Horsens Theater disk 2 track 10 fix.flac:24e7db68723bcafb40f702560f7092d6
+Bob Dylan - Horsens Theater disk 2 (Track 11).flac:48e421ef071d0d8181e5289d72457376
+Bob Dylan - Horsens Theater disk 2 (Track 7).flac:72afdf17e85552000343fd8096e68d45
+Bob Dylan - Horsens Theater disk 2 (Track 8).flac:d9ee9d247541887bd61080afdc617735
+Bob Dylan - Horsens Theater disk 2 (Track 9).flac:5247cbad9d476fbc3185fcc54417d3d3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-21-cc.flacf\dylanhorsens 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.31        6246956 B   ---   --   ---xx   flac  0.6637  Bob Dylan  -  Horsens Theater disk 1 (Track 01).flac
+     2:59.51       31695596 B   ---   --   ---xx   flac  0.7527  Bob Dylan  -  Horsens Theater disk 1 (Track 02).flac
+     5:35.24       59150492 B   ---   --   ---xx   flac  0.6592  Bob Dylan  -  Horsens Theater disk 1 (Track 03).flac
+     5:50.53       61864700 B   ---   --   ---xx   flac  0.6630  Bob Dylan  -  Horsens Theater disk 1 (Track 04).flac
+     5:10.52       54806348 B   ---   --   ---xx   flac  0.6443  Bob Dylan  -  Horsens Theater disk 1 (Track 05).flac
+     9:45.35      103276364 B   ---   --   ---xx   flac  0.6714  Bob Dylan  -  Horsens Theater disk 1 (Track 06).flac
+     7:12.47       76315388 B   ---   --   ---xx   flac  0.7401  Bob Dylan  -  Horsens Theater disk 1 (Track 07).flac
+     6:42.72       71082188 B   ---   --   ---xx   flac  0.6207  Bob Dylan  -  Horsens Theater disk 1 (Track 08).flac
+     4:57.32       52466108 B   ---   --   ---xx   flac  0.7238  Bob Dylan  -  Horsens Theater disk 1 (Track 09).flac
+     5:12.51       55156796 B   ---   --   ---xx   flac  0.6431  Bob Dylan  -  Horsens Theater disk 1 (Track 10).flac
+     5:08.01       54333596 B   ---   --   ---xx   flac  0.7177  Bob Dylan  -  Horsens Theater disk 1 (Track 11).flac
+     6:10.61       65411516 B   ---   --   ---xx   flac  0.6577  Bob Dylan  -  Horsens Theater disk 1 (Track 12).flac
+     7:37.32       80690108 B   ---   --   ---xx   flac  0.6798  Bob Dylan  -  Horsens Theater disk 1 (Track 13).flac
+    72:59.17      772496156 B                            0.6778  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-21-cc.flacf\dylanhorsens 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:49.23       82785740 B   ---   --   ---xx   flac  0.6926  Bob Dylan  -  Horsens Theater disk 2 (Track 01).flac
+     6:58.69       73897532 B   ---   --   ---xx   flac  0.7223  Bob Dylan  -  Horsens Theater disk 2 (Track 02).flac
+     6:56.02       73387148 B   ---   --   ---xx   flac  0.6858  Bob Dylan  -  Horsens Theater disk 2 (Track 03).flac
+     7:04.05       74805404 B   ---   --   ---xx   flac  0.7118  Bob Dylan  -  Horsens Theater disk 2 (Track 04).flac
+     8:12.62       86934668 B   ---   --   ---xx   flac  0.6304  Bob Dylan  -  Horsens Theater disk 2 (Track 05).flac
+     6:50.27       72387548 B   ---   --   ---xx   flac  0.7290  Bob Dylan  -  Horsens Theater disk 2 (Track 06).flac
+     6:28.58       68579660 B   ---   --   ---xx   flac  0.7116  Bob Dylan  -  Horsens Theater disk 2 track 10 fix.flac
+     7:29.23       79257740 B   ---   --   ---xx   flac  0.7111  Bob Dylan - Horsens Theater disk 2 (Track 11).flac
+     7:29.73       79375340 B   ---   --   ---xx   flac  0.6679  Bob Dylan - Horsens Theater disk 2 (Track 7).flac
+     4:41.58       49704860 B   ---   --   ---xx   flac  0.7052  Bob Dylan - Horsens Theater disk 2 (Track 8).flac
+     6:19.26       66916796 B   ---   --   ---xx   flac  0.6752  Bob Dylan - Horsens Theater disk 2 (Track 9).flac
+    76:20.51      808032436 B                            0.6934  (11 files)
+=================== 
+=================== 
+=================== 

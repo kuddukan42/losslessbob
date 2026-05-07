@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-05-jtt 
+=================== 
+=================== 
+=================== 
+3ed20ce7f75e75f7b9a527a9c055d23d  bd90-02-05-jtt-LB-2944.txt
+d4f41ae244fe5155519eca92009ec7db  Disc 1\Track01.shn
+736af5225e3d47d8c286d2bbc2eb9443  Disc 1\Track02.shn
+f4570d0e8b5c5ee10c3969102be7193f  Disc 1\Track03.shn
+eb3a3d798b42eb02726b28155fe9ceac  Disc 1\Track04.shn
+2c79df5093d83dfde23017ff18c0a4a4  Disc 1\Track05.shn
+e154d65908b4505920c90be642708b74  Disc 1\Track06.shn
+9ba184c3d759adcd225b7e0ee61df9a3  Disc 1\Track07.shn
+8da508434908d804a059f8487770245f  Disc 1\Track08.shn
+f6e3e2cbd51c481a6710dc1ebabd623f  Disc 1\Track09.shn
+8d13fd946993ec907cba02b6c574758e  Disc 1\Track10.shn
+e108fee561d658f4fae0d259a45d854c  Disc 1\Track11.shn
+978c6b1b635bfa9347938b758c5f3514  Disc 1\Track12.shn
+fd0405421336f9dfdb8df4b3e9125b39  Disc 1\noname.md5
+324bfab147dfd1c41b9ccba496e05b2f  Disc 2\Track01.shn
+6171d7127a4b71a4651d7a2a0dd26738  Disc 2\Track02.shn
+d799bd1f3f95445adf02550dd6491ea7  Disc 2\Track03.shn
+793eaa8f5bc811fed2fc738f80cb2019  Disc 2\Track04.shn
+ff1f6cb301f15813e3486e5a11f857fd  Disc 2\Track05.shn
+fcd905e76d0466f7e6b63375d4851476  Disc 2\Track06.shn
+1e25f919fb8383dbfa2c470c29dbd592  Disc 2\Track07.shn
+105bfde41158efc6ebe8798b6b6621ca  Disc 2\noname.md5
+681509a0dc0637f37ea7e8338897a781  Hammersmith 05.02.1990 - F.jpg
+f0da4b76269c497c1b648331a9a775e7  Hammersmith 05.02.1990 - R.jpg
+1e00251f10cd5d4e226cbb7ede1d5e30  Hammersmith 05.02.90 Info..txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-02-05-jtt\Disc 2 
+=================== 
+=================== 
+=================== 
+a3d3d37d50418cd72a1c92d3044def7d  [shntool]  Track01.wav
+9d7ba7655065e5ed1906cfa551854422  [shntool]  Track02.wav
+c5f1610630c6719388e6023722bb7d78  [shntool]  Track03.wav
+9f9e457545b981065fdd3c79f79315cb  [shntool]  Track04.wav
+00c19a77148cf9f073d5ca22be1c115c  [shntool]  Track05.wav
+98dd3b0344f8f7baab1fd82e1dd4c0fc  [shntool]  Track06.wav
+0a100b85f7cbfe503fb84b45d5a03b25  [shntool]  Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-02-05-jtt\Disc 1 
+=================== 
+=================== 
+=================== 
+409a8ae22f357570538be0c85ca8151a  [shntool]  Track01.wav
+5123cf65a89ef875c1b38ba8eae84fbb  [shntool]  Track02.wav
+7dcc5c6ee6062cf5a5230c3065c1d403  [shntool]  Track03.wav
+09626f7f3c4b4ced9baf4f49967ccc44  [shntool]  Track04.wav
+3c5bf1adf02239a5820a13bd9baeeab4  [shntool]  Track05.wav
+13ef6b17a61e379bc460dc10f61fdbf8  [shntool]  Track06.wav
+f4906578d0f9728d5e788951b4cf8e4a  [shntool]  Track07.wav
+1f6d1d6e775b877c56609aed57d3b3ad  [shntool]  Track08.wav
+db1be9d75b1ccedf0b1ec3f3b190d61e  [shntool]  Track09.wav
+66e5a6ca9bbfa706be2325c1425d7c43  [shntool]  Track10.wav
+6aa1cc4e9596ec7b1d7db567075988e4  [shntool]  Track11.wav
+c71216a259803e8c08cdb9dc46078767  [shntool]  Track12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-05-jtt\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.22       52971788 B   ---   --   -----    wav  1.0000  Track01.wav
+     3:02.73       32276540 B   ---   --   -----    wav  1.0000  Track02.wav
+     5:25.17       57370028 B   ---   --   -----    wav  1.0000  Track03.wav
+     4:39.55       49345004 B   ---   --   -----    wav  1.0000  Track04.wav
+     7:24.33       78399260 B   ---   --   -----    wav  1.0000  Track05.wav
+     6:23.69       67723532 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:08.23       54385340 B   ---   --   -----    wav  1.0000  Track07.wav
+    37:04.67      392471492 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-05-jtt\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.03       53985500 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:01.35       53178764 B   ---   --   -----    wav  1.0000  Track02.wav
+     2:56.02       31051148 B   ---   --   -----    wav  1.0000  Track03.wav
+     5:43.09       60526412 B   ---   --   -----    wav  1.0000  Track04.wav
+     3:19.29       35171852 B   ---   --   -----    wav  1.0000  Track05.wav
+     2:45.50       29223644 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:45.16       60895676 B   ---   --   -----    wav  1.0000  Track07.wav
+     4:41.13       49599020 B   ---   --   -----    wav  1.0000  Track08.wav
+     6:33.29       69393452 B   ---   --   -----    wav  1.0000  Track09.wav
+     4:57.66       52546076 B   ---   --   -----    wav  1.0000  Track10.wav
+     7:00.21       74137436 B   ---   --   -----    wav  1.0000  Track11.wav
+     5:06.35       54060764 B   ---   --   -----    wav  1.0000  Track12.wav
+    58:56.08      623769744 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

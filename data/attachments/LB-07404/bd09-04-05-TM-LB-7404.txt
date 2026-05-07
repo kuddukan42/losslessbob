@@ -1,0 +1,10 @@
+Bob Dylan, 4/5/09, Saarbrucken, Germany, 2CDR
+
+LB-7404, (77min+30min), Technical Information:, Taper: TOM MOORE, Microphones: OKM II R + A3 Adapter, Recorder: M-Audio Microtrack @ 44,1 kHz/16 bit + APC Powerpack, Software: edit and split with Steinberg WaveLabStudio 6.0, * CD 1 Track 10: Approximate 6,30 min of this song are lost on the tape of TOM MOORE due technical problems with the microtrack., I used here the romeo-tape for this song., Neumann km140 > M-Audio MicroTrack 24/96 (44100 16bit) > CD Wave > Cool Edit, taper: romeo, The full excellent romeo recording (LB-7355): http://www.dimeadozen.org/torrents-details.php?id=243860, enjoy, TOM MOORE, 2009-04-15; bittorrent download 04/09; has spectral fuzz band above 18k; in comparison to romeo LB-7355, this is a little harsher and more echoey; (did not listen to all of this)
+
+drop/cut between cdrs
+
+CD 1 [76:54.42], (01) [Intro], (02) Gotta Serve Somebody, (03) Lay, Lady, Lay, (04) The Levee's Gonna Break, (05) Every Grain of Sand, (06) Tweedle Dee & Tweedle Dum, (07) Beyond The Horizon, (08) Honest With Me, (09) Sugar Baby, (10) Stuck Inside of Mobile with the Memphis Blues Again *, (11) Po' Boy, (12) Summer Days, (13) I Believe in You, (14) Highway 61 Revisited, CD 2 [29:27.24], (01) Like A Rolling Stone, (02) All Along The Watchtower, (03) Spirit On The Water, (04) [Band Intro], (05) Blowin' In The Wind, Band
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

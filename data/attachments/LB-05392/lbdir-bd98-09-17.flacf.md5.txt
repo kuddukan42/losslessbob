@@ -1,0 +1,20 @@
+5ea312186102fd24a103385c020b0855  BD 1998-09-17 Maui.txt
+e777fefdf9214779c34fdd5a17fcd0c7  D1\01 Track 01.flac
+a3ef12e43c2a50a8452164fb7c00a181  D1\02 Track 02.flac
+33b7e6a2ff9ca444236429af72e5ead4  D1\03 Track 03.flac
+a6cad47e32f0a069b13114ef6e3878d3  D1\04 Track 04.flac
+afbea349080ea1c1d451e73db1e5e07c  D1\05 Track 05.flac
+3bace74eb7e8ae951a07013fe38db5e2  D1\06 Track 06.flac
+c4f2e15370e6e77f7b76a7f8cef2aa43  D1\07 Track 07.flac
+b4b98447ce539fef679d16bbee398215  D1\08 Track o8.flac
+b0e8b6589931d63bfcc72a56bbcd9395  D1\09 Track 09.flac
+4f463eb4e224ca799444c0b0afe9a831  D1\10 Track 10.flac
+1baa51cb60804f6b42f54db1c81d405d  D2\01 Track 01.flac
+f921814d47af0a4d88d5ee53aba23f34  D2\02 Track 02.flac
+e026eb3c2d5620eef3de852178ed14bc  D2\03 Track 03.flac
+aa957b0c22dd6b9908016c92155dad29  D2\04 Track 04.flac
+27f1b2b6a89f2aca0f796fb736372177  D2\05 Track 05.flac
+4b19378ddb51502099fa126993db1ad8  D2\06 Track 06.flac
+552a43c230f2404c5bae7c5dee965a4e  D2\07 Track 07.flac
+83b9788cca479fc3bd8862b04d6ba9dc  fingerprintD1.ffp
+5c63342c9139c4a61156e6742728be74  fingerprintD2.ffp

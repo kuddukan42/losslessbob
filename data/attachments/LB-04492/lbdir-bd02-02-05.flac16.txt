@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-02-05.flac16 
+=================== 
+=================== 
+=================== 
+bada3b05d989fddb2d90111b17ed0696  bd02-02-05-LB-4492.txt
+de10b7db4b794299fb47f74ac656798c  bd2002-02-05.aud.sbeok.flac16 Jacksonville, FL.ffp
+db23c283129d26ae7a9610686e35fcc6  bd2002-02-05.aud.sbeok.flac16 Jacksonville, FL.md5
+ba585701f67d643b6d81fa3dbb169355  d1\bd2002-02-05d1.LOG
+3c82aa161c49185c27f037f8309a04e8  d1\bd2002-02-05d1t01.flac
+7b3955895019745eccddbdaaba62adc6  d1\bd2002-02-05d1t02.flac
+20b6a0ebea6ca1ae6e5e58f7e31a0b7c  d1\bd2002-02-05d1t03.flac
+ee77de40094007109ac471a664a55721  d1\bd2002-02-05d1t04.flac
+dc42c80cf7b3ef77f81550b9e7d82030  d1\bd2002-02-05d1t05.flac
+1d3e46d753fc0addf29ae4362820d9be  d1\bd2002-02-05d1t06.flac
+7347c36e0644b568c929f307b5cf8f90  d1\bd2002-02-05d1t07.flac
+3c2f684278b6731d3b84b8a3becb9893  d1\bd2002-02-05d1t08.flac
+5665e8226b7790cc977f9dc6cdd66467  d1\bd2002-02-05d1t09.flac
+d6bc1a4b95eb888908842ae16bc22707  d1\bd2002-02-05d1t10.flac
+c00713f0107f84e836a9fb1ec29df632  d1\bd2002-02-05d1t11.flac
+67a2d5417c250f83a99083e045d51714  d1\bd2002-02-05d1t12.flac
+1eef3a1e057ddc303e9db75083e59b7d  d1\d1.shntool.txt
+8c3d126fc08285eeb9d60d589a2b56d5  d1t03.bmp
+c6dff4e26d6ffa8b4f8cdc2da918f665  d2\bd2002-02-05d2.LOG
+3c85cbf1ebde5f524c8a9de766c894fd  d2\bd2002-02-05d2t01.flac
+3e485e512659aeba29e540c1d15a58a9  d2\bd2002-02-05d2t02.flac
+325ab9503975cefc8c8edbc401a8d1ca  d2\bd2002-02-05d2t03.flac
+60ea174cb8fb75b24deedb158088a4f1  d2\bd2002-02-05d2t04.flac
+dfc3366bc826cac4550393aa2d345eed  d2\bd2002-02-05d2t05.flac
+9902c05b61160aa4de636910f63f820b  d2\bd2002-02-05d2t06.flac
+9607de0eb3147a988ef6d06b2d6ef39e  d2\bd2002-02-05d2t07.flac
+b65de68d1b26b96d75b2f624ba163e7e  d2\bd2002-02-05d2t08.flac
+89d0d07295f054e3b0f8a17a8c8eba7b  d2\bd2002-02-05d2t09.flac
+ba27e57f415b285e962b9e6cd4dce933  d2\d2.shntool.txt
+bee82aef0cd01ff10d14024b0aa98b4c  d2t08.bmp
+df845a83a82d72aa34aeb05f77b6b46f  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-02-05.flac16\d1 
+=================== 
+=================== 
+=================== 
+bd2002-02-05d1t01.flac:9e07a61a33b12ebdf62351110b76a819
+bd2002-02-05d1t02.flac:e1b14228bfa5320ea9991410a9cad37c
+bd2002-02-05d1t03.flac:d37eea8f4e88233c90e90ffd3904a02e
+bd2002-02-05d1t04.flac:07c2a821b13cce267575a5c0297b8503
+bd2002-02-05d1t05.flac:f7eeb9c092a501882ec1055525df6e89
+bd2002-02-05d1t06.flac:b0a1d6979f5ef3f1c8dab71ab7d7f0da
+bd2002-02-05d1t07.flac:6510b5cd78546fc6798cb15198756518
+bd2002-02-05d1t08.flac:4285c71173374d0f2878e86ee821a3bb
+bd2002-02-05d1t09.flac:eee50cf569fffc54e96c73814b6ea0dd
+bd2002-02-05d1t10.flac:9b429dd3e60ab420d4322b8f921f5017
+bd2002-02-05d1t11.flac:769e0a52096a9f102b2aa50bd0a6dbaf
+bd2002-02-05d1t12.flac:c4626661dd968640420cf0c405d75f8e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-02-05.flac16\d2 
+=================== 
+=================== 
+=================== 
+bd2002-02-05d2t01.flac:01e16a458ba43daf77fac0c351c15f2a
+bd2002-02-05d2t02.flac:5e0185c8cd8bdf8b4d61d56d446c9934
+bd2002-02-05d2t03.flac:af75f957c6e8c21d88137a1bc5687fcf
+bd2002-02-05d2t04.flac:1bebd3d2c67f48e3dcf68fbe8271f86d
+bd2002-02-05d2t05.flac:83600fda3bb4a805eec1fc031c42778c
+bd2002-02-05d2t06.flac:904001ab849bbf678908800179aecf91
+bd2002-02-05d2t07.flac:1e79f6288c66ffc6a06f0413341f389c
+bd2002-02-05d2t08.flac:04f48b78a6ebee45d8c6ede3e6fcfa77
+bd2002-02-05d2t09.flac:212ac661a247ce3ac434bf1d2cc1df82
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-02-05.flac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:46.30        8185004 B   ---   --   ---xx   flac  0.6023  bd2002-02-05d1t01.flac
+     2:38.09       27892412 B   ---   --   ---xx   flac  0.6800  bd2002-02-05d1t02.flac
+     6:16.32       66401708 B   ---   --   ---xx   flac  0.6594  bd2002-02-05d1t03.flac
+     8:20.45       88305884 B   ---   --   ---xx   flac  0.6690  bd2002-02-05d1t04.flac
+     3:38.44       38558732 B   ---   --   ---xx   flac  0.6300  bd2002-02-05d1t05.flac
+     4:52.13       51539420 B   ---   --   ---xx   flac  0.6607  bd2002-02-05d1t06.flac
+     7:01.71       74431436 B   ---   --   ---xx   flac  0.5926  bd2002-02-05d1t07.flac
+     7:29.21       79253036 B   ---   --   ---xx   flac  0.6671  bd2002-02-05d1t08.flac
+     8:50.49       93607292 B   ---   --   ---xx   flac  0.6657  bd2002-02-05d1t09.flac
+     6:59.25       73970444 B   ---   --   ---xx   flac  0.6293  bd2002-02-05d1t10.flac
+     5:13.15       55248524 B   ---   --   ---xx   flac  0.6522  bd2002-02-05d1t11.flac
+     9:01.23       95486540 B   ---   --   ---xx   flac  0.6939  bd2002-02-05d1t12.flac
+    71:08.02      752880432 B                            0.6551  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-02-05.flac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:29.01       68621996 B   ---   --   ---xx   flac  0.6621  bd2002-02-05d2t01.flac
+     6:11.63       65592620 B   ---   --   ---xx   flac  0.6566  bd2002-02-05d2t02.flac
+     5:00.74       53094092 B   ---   --   ---xx   flac  0.6770  bd2002-02-05d2t03.flac
+    10:46.46      114062636 B   ---   --   ---xx   flac  0.6442  bd2002-02-05d2t04.flac
+     3:48.40       40313324 B   ---   --   ---xx   flac  0.6608  bd2002-02-05d2t05.flac
+     7:49.37       82818668 B   ---   --   ---xx   flac  0.6641  bd2002-02-05d2t06.flac
+     6:04.54       64336652 B   ---   --   ---xx   flac  0.6570  bd2002-02-05d2t07.flac
+     7:13.17       76421228 B   ---   --   ---xx   flac  0.6631  bd2002-02-05d2t08.flac
+     6:53.06       72867356 B   ---   --   ---xx   flac  0.6607  bd2002-02-05d2t09.flac
+    60:17.38      638128572 B                            0.6592  (9 files)
+=================== 
+=================== 
+=================== 

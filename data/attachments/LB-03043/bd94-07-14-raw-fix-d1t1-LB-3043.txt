@@ -1,0 +1,9 @@
+Bob Dylan, 7/14/94, Graz, Austria, Schwarzl Freizeitzentrum, 
+
+LB-3043, (8min), Fix for d1t1; NOTES: This is the same recording as LB-2986 (taped by sh; raw) only with a less glitchy replacement for track d1t1. The original had a series of dropouts from 5:59 to 6:09.; bittorrent download 08/05; fixes problem successfully, can still hear a small stray clap at 5:59
+
+CD1
+1  1. Jokerman
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

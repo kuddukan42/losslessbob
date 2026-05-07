@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-21tyrus ketchum alt 
+=================== 
+=================== 
+=================== 
+e1ad29cf8df1950e3884cc3d319c645b  bd03-07-21.md5
+7759e42e24176da938c5348d9e0c0c3c  bd03-07-21.txt
+d277ed01add27a81365f65c9ee45c16f  bd03-07-21d1t01.shn
+6ba78fadc19d91389496ba656196977d  bd03-07-21d1t02.shn
+2b426808d317c21f197ddf04fba14a35  bd03-07-21d1t03.shn
+090009ec2bdc1972a5b2664cbee24f5c  bd03-07-21d1t04.shn
+3f88ec66ee3d270f5926fafd05f3b202  bd03-07-21d1t05.shn
+59d31a7815c628e5ab3b79437535357c  bd03-07-21d1t06.shn
+dce117aa5695644985595d719e8894b2  bd03-07-21d1t07.shn
+b2f9ac736d1ec09d7d9cf003cd8a1dad  bd03-07-21d1t08.shn
+5d9d3df82411dee9f0a877e05a9ba412  bd03-07-21d1t09.shn
+884cd3c8a48d9d91475156d3700f670d  bd03-07-21d1t10.shn
+fc0df51b9070be37820c5b2081a7d920  bd03-07-21d1t11.shn
+4c8b233f96c101caeed467650af4fe0a  bd03-07-21d1t12.shn
+506a1fcd1ba9defe10cdb78e36319b36  bd03-07-21d2t01.shn
+4b6eb2c35a88e5f3e30776b717478d5e  bd03-07-21d2t02.shn
+caae9f47a2d3ace6d5ac5896bdbee062  bd03-07-21d2t03.shn
+93ab317b396d751738191e32b4130c85  bd03-07-21d2t04.shn
+40240f8a4874fa450d27deab785882cb  bd03-07-21d2t05.shn
+f448cb8ca4c84f5c6b6a0627c8c49fe8  bd03-07-21tyrus.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-21tyrus ketchum alt 
+=================== 
+=================== 
+=================== 
+54dac58747cd2b20719217d2b1ac0db9  [shntool]  bd03-07-21d1t01.wav
+9db874318ddd179153f8d1dfd677f7a0  [shntool]  bd03-07-21d1t02.wav
+a7e4f30f3acd5e4579ba325808aa66e0  [shntool]  bd03-07-21d1t03.wav
+cabf5da764cddfaefe3f9eb1cd97c0b3  [shntool]  bd03-07-21d1t04.wav
+6b1de4be43105b7133878d2029a281b9  [shntool]  bd03-07-21d1t05.wav
+81366bb3adb9bc15950e02a796b02413  [shntool]  bd03-07-21d1t06.wav
+2c4663423007e10e8cc87aa366db9c0d  [shntool]  bd03-07-21d1t07.wav
+bc97de49fe1c53f9ce76b9515ba4ff30  [shntool]  bd03-07-21d1t08.wav
+c9e324147e13a4e100e4a6dfca54ad48  [shntool]  bd03-07-21d1t09.wav
+b994ec732f7fea944d9299ee1480db06  [shntool]  bd03-07-21d1t10.wav
+167eba3789a996d04e87c919a1d5c4d7  [shntool]  bd03-07-21d1t11.wav
+a476d1dbe4b3163d60121fc8d872520b  [shntool]  bd03-07-21d1t12.wav
+6031da139fa5976e40690521af4012a0  [shntool]  bd03-07-21d2t01.wav
+a34891e92ab2ea35f7a040a43a66084e  [shntool]  bd03-07-21d2t02.wav
+a121408571c730c9c27a6469b6afc44d  [shntool]  bd03-07-21d2t03.wav
+168b70b80dc3193dc8f802217c08cc4f  [shntool]  bd03-07-21d2t04.wav
+640fa197d4f0932f85d53205599dbe4f  [shntool]  bd03-07-21d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-21tyrus ketchum alt 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:42.64        7559372 B   ---   --   ---xx    shn  0.4306  bd03-07-21d1t01.shn
+     4:48.46       50911436 B   ---   --   ---xx    shn  0.5754  bd03-07-21d1t02.shn
+     4:07.43       43671980 B   ---   --   ---xx    shn  0.5323  bd03-07-21d1t03.shn
+     5:13.51       55333196 B   ---   --   ---xx    shn  0.5125  bd03-07-21d1t04.shn
+     6:46.55       71747804 B   ---   --   ---xx    shn  0.4961  bd03-07-21d1t05.shn
+     6:44.70       71430284 B   ---   --   ---xx    shn  0.5567  bd03-07-21d1t06.shn
+     6:04.67       64367228 B   ---   --   ---xx    shn  0.5854  bd03-07-21d1t07.shn
+     8:26.47       89368988 B   ---   --   ---xx    shn  0.4714  bd03-07-21d1t08.shn
+     5:31.59       58527212 B   ---   --   ---xx    shn  0.6016  bd03-07-21d1t09.shn
+     6:23.73       67732940 B   ---   --   ---xx    shn  0.5189  bd03-07-21d1t10.shn
+     7:08.45       75605084 B   ---   --   ---xx    shn  0.5640  bd03-07-21d1t11.shn
+     6:38.74       70381292 B   ---   --   ---xx    shn  0.5141  bd03-07-21d1t12.shn
+     6:53.57       72987308 B   ---   --   ---xx    shn  0.5800  bd03-07-21d2t01.shn
+     6:14.14       66006572 B   ---   --   ---xx    shn  0.4215  bd03-07-21d2t02.shn
+     7:02.27       74504348 B   ---   --   ---xx    shn  0.5705  bd03-07-21d2t03.shn
+     6:41.60       70877564 B   ---   --   ---xx    shn  0.5964  bd03-07-21d2t04.shn
+     6:08.50       65032844 B   ---   --   ---xx    shn  0.6052  bd03-07-21d2t05.shn
+   101:40.02     1076045452 B                            0.5416  (17 files)
+=================== 
+=================== 
+=================== 

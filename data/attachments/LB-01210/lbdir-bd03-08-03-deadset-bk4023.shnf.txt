@@ -1,0 +1,37 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-03-deadset-bk4023.shnf 
+=================== 
+=================== 
+=================== 
+74f01320c3050291d5c4aafb888aee10  bd03-08-03-deadset-bk4023.md5
+1875e6b4d2b4363d4c33d845b95de2b8  bd03-08-03-deadset-bk4023.txt
+79d3a341618a613a0a8f9756b1c1acc0  bd03-08-03deadset-bk4023-t01.shn
+289cae13ecc19f403f79b4351a4ca64a  bd03-08-03deadset-bk4023-t02.shn
+b4a5f5cd09d2d90e86acf3a876536108  bd03-08-03deadset-bk4023-t03.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-03-deadset-bk4023.shnf 
+=================== 
+=================== 
+=================== 
+de2e3a14c8ffc13cb8e831f5001e4a82  [shntool]  bd03-08-03deadset-bk4023-t01.wav
+016ba1f04d5046be27ea08d1b567bda3  [shntool]  bd03-08-03deadset-bk4023-t02.wav
+7d6b5f572b18eab33399a746dd96954f  [shntool]  bd03-08-03deadset-bk4023-t03.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-03-deadset-bk4023.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.04       64924894 B   ---   -e   ---xx    shn  0.5779  bd03-08-03deadset-bk4023-t01.shn
+     9:47.65      103699966 B   ---   -e   ---xx    shn  0.5831  bd03-08-03deadset-bk4023-t02.shn
+     5:11.20       54907726 B   ---   -e   ---xx    shn  0.6186  bd03-08-03deadset-bk4023-t03.shn
+    21:07.14      223532586 B                            0.5904  (3 files)
+=================== 
+=================== 
+=================== 

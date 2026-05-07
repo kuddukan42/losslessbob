@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-29-e.flacf 
+=================== 
+=================== 
+=================== 
+e780adfef7f995ba50ffa833956c2c05  2000-06-29 Verizon Wireless Amphitheater, Irvine, California.md5
+d4dfd7bb4d24ad667ec3373ef9eb216e  bd00-06-29b-LB-3936.txt
+7d52979de968bfc23a69cbc5e8db9434  CD1\01 Duncan and Brady.flac
+49a671a4984e4644c27403491b45462e  CD1\02 That lucky old sun.flac
+5512d106e651090c62e9a547a3fbc2b3  CD1\03 Masters of war.flac
+6d7e02d9d98756b241288adcd56b879b  CD1\04 Don't think twice, it's all right.flac
+55c53ee82a25352e46441ceb88bcd1cf  CD1\05 Tangled up in blue.flac
+6a26012f2cc38db43871292be7a044b8  CD1\06 Searching for a soldier's grave.flac
+cc6dd290c42fb30177eafd80dbc02584  CD1\07 Country Pie.flac
+4928f2a77f4634325853d5525c390200  CD1\08 Tell me that it isn't true.flac
+0e848eab9f2746570faa5c986da83dfc  CD1\09 Crash on the levee (down in the flood).flac
+c13d8e078ca2022dd0fa7e62ebb269d9  CD1\10 I don't believe you (she acts like we never have met).flac
+eadacfc28517d1dc3953634a0a091dbd  CD1\11 Drifter's escape.flac
+5c25b578d2a33831db19fd92525a8ed6  CD1\12 Leopard-skin pill-box hat.flac
+20628e0062762b0b52b6267fba1ddced  CD2\13 (audience wait).flac
+4dd4912b984c4712921a85a8d14021eb  CD2\13 Things have changed.flac
+7d26e3b8a23922a2f8c1a86e5e9f1f9d  CD2\14 Like a rolling stone.flac
+f416fa018fee944445dd08c263a6aceb  CD2\15 Forever young.flac
+b0c1143bf5ed6643b1b9254a04461d74  CD2\16 Highway 61 revisited.flac
+65e1b94b3df213fd50bb06dc02ce446b  CD2\17 Blowin' in the wind.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-29-e.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 duncan and brady.flac:019f94aad8c62c356c0180fbbaaa26af
+02 that lucky old sun.flac:dc28baacb1a3b4b8cccfff6335dd09b7
+03 masters of war.flac:7970e922b918db7377e63ba0e46a4b99
+04 don't think twice, it's all right.flac:b4dded7f4634a95ec7411916be0f7b7a
+05 tangled up in blue.flac:aa80b4e651a632d39a484b7b83d0e570
+06 searching for a soldier's grave.flac:e3af1aff7f25d0d55a59d9a763ecba45
+07 country pie.flac:da93539537db942899cd624dcd7e165b
+08 tell me that it isn't true.flac:f318464deec6023a348c70426fc74477
+09 crash on the levee (down in the flood).flac:167921909bdd8a761e181c0436320f23
+10 i don't believe you (she acts like we never have met).flac:332996f79ff519ba7d5dee7e7e8cbd3d
+11 drifter's escape.flac:314eb0b002ae778cbfc678f3c60ad636
+12 leopard-skin pill-box hat.flac:f72a3bb86152a7ee41e0526f51e7803b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-29-e.flacf\cd2 
+=================== 
+=================== 
+=================== 
+13 (audience wait).flac:af233f373f4156dbfd980ee97b651243
+13 things have changed.flac:9ee50138b800d4ae7d77331dcc7b4938
+14 like a rolling stone.flac:c0f88eddc787d17378d65255479ee167
+15 forever young.flac:e4421f1314c3474e66db7c88a74fac53
+16 highway 61 revisited.flac:83cd17228507000294d6f4d8634a7e93
+17 blowin' in the wind.flac:6842c84a8ea8cc837d936ac4a3d4b94a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-29-e.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:35.10       37949564 B   ---   --   ---xx   flac  0.5230  01 Duncan and Brady.flac
+     3:15.59       34536812 B   ---   --   ---xx   flac  0.4429  02 That lucky old sun.flac
+     5:09.19       54552332 B   ---   --   ---xx   flac  0.4510  03 Masters of war.flac
+     6:38.33       70284860 B   ---   --   ---xx   flac  0.4517  04 Don't think twice, it's all right.flac
+     7:48.12       82583468 B   ---   --   ---xx   flac  0.5187  05 Tangled up in blue.flac
+     3:17.01       34753196 B   ---   --   ---xx   flac  0.4176  06 Searching for a soldier's grave.flac
+     2:31.07       26652908 B   ---   --   ---xx   flac  0.5145  07 Country Pie.flac
+     3:55.10       41477564 B   ---   --   ---xx   flac  0.4521  08 Tell me that it isn't true.flac
+     4:44.05       50109404 B   ---   --   ---xx   flac  0.5284  09 Crash on the levee (down in the flood).flac
+     6:13.33       65874860 B   ---   --   ---xx   flac  0.4726  10 I don't believe you (she acts like we never have met).flac
+     4:40.11       49417916 B   ---   --   ---xx   flac  0.5154  11 Drifter's escape.flac
+     6:11.72       65613788 B   ---   --   ---xx   flac  0.5138  12 Leopard-skin pill-box hat.flac
+    57:59.47      613806672 B                            0.4857  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-29-e.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:18.68       24503180 B   ---   --   ---xx   flac  0.5046  13 (audience wait).flac
+     5:59.57       63461708 B   ---   --   ---xx   flac  0.5409  13 Things have changed.flac
+     7:10.23       75906140 B   ---   --   ---xx   flac  0.5414  14 Like a rolling stone.flac
+     6:54.00       73029644 B   ---   --   ---xx   flac  0.5075  15 Forever young.flac
+     7:05.19       75014732 B   ---   --   ---xx   flac  0.5717  16 Highway 61 revisited.flac
+     5:20.12       56476268 B   ---   --   ---xx   flac  0.4689  17 Blowin' in the wind.flac
+    34:48.29      368391672 B                            0.5272  (6 files)
+=================== 
+=================== 
+=================== 

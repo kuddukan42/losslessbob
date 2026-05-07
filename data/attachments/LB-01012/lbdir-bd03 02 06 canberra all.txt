@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03 02 06 canberra all 
+=================== 
+=================== 
+=================== 
+ffa2c99e177dd5c835f506287222bc83  03 02 06 d1 t01.shn
+668063e0551a40b51cba3d07a5d2be8c  03 02 06 d1 t02.shn
+3b27d6341f3279ce33710cd5a7eb726e  03 02 06 d1 t03.shn
+29f43982c7f5582c7559d5703b61555d  03 02 06 d1 t04.shn
+5f30d75ac5d15e0183d7f97de32be777  03 02 06 d1 t05.shn
+ad0312d2dcdc3e7715e88743702076bf  03 02 06 d1 t06.shn
+9f74be9092d5f3ed0022887d44f16c0a  03 02 06 d1 t07.shn
+1ec9393bded4a6a7ebba1e455a2bf8c7  03 02 06 d1 t08.shn
+24167f9f8cae843ae582a1b1fc416d7d  03 02 06 d1 t09.shn
+94ae740bf5e7e6736966b08a1fc902f0  03 02 06 d1 t10.shn
+362b191726ac9eb8630b753640517e28  03 02 06 d2 t01.shn
+bd21960454df621bb00d1de9c4b53bad  03 02 06 d2 t02.shn
+fb741beeafe8249235115396a5954c1e  03 02 06 d2 t03.shn
+da3f9465291683ee671705c27f1e47d9  03 02 06 d2 t04.shn
+242e3fa7289eb8c1035ed0fb6a84ec2b  03 02 06 d2 t05.shn
+a2566efa44827b6394b27fce7bd28b79  03 02 06 d2 t06.shn
+87e6d2f11b61a79b639e91e76b962229  03 02 06 d2 t07.shn
+d36b6c1a55c4cd62d56d1153a3b67510  03 02 06 d2 t08.shn
+e9201dd93a29b78f5ce922a10f3fcac0  bd03 02 06.md5
+f06243700d030ec7e0c682244eb77947  bd03-02-06all.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03 02 06 canberra all 
+=================== 
+=================== 
+=================== 
+039d79aff0923feca5cc6e874cc02593  [shntool]  03_02_06_d1_t01.wav
+140c0d50888e783d500d2a00f9521515  [shntool]  03_02_06_d1_t02.wav
+44e157d1a859284666b000330680c645  [shntool]  03_02_06_d1_t03.wav
+6e891b8b9428c37a1d03f19b159ad532  [shntool]  03_02_06_d1_t04.wav
+3f3a20f171904842887706ddc0f89289  [shntool]  03_02_06_d1_t05.wav
+d5292b49e7aa82e655bd3d41568cfcac  [shntool]  03_02_06_d1_t06.wav
+a72970faeeaa792990dfb3c169fc2a2a  [shntool]  03_02_06_d1_t07.wav
+dbc999a2315e4ac492c0fc3417ba3edf  [shntool]  03_02_06_d1_t08.wav
+38aa9fd335976acee7c140ac9aae4df2  [shntool]  03_02_06_d1_t09.wav
+8a85edf0414f6148fabf6795a84a7e1c  [shntool]  03_02_06_d1_t10.wav
+aa7216aaf87085f95ec9487d817c4cf6  [shntool]  03_02_06_d2_t01.wav
+419e56868ac65e1a577cebabfd1d6f22  [shntool]  03_02_06_d2_t02.wav
+f344bca14e8c2a9afff68a409a240dd6  [shntool]  03_02_06_d2_t03.wav
+7519a6a7c0fb1ef0bd198ca5b0f588db  [shntool]  03_02_06_d2_t04.wav
+6e3363b703dedf90229c06446292757c  [shntool]  03_02_06_d2_t05.wav
+cd997defdafa9d5d37634dd3a33c244e  [shntool]  03_02_06_d2_t06.wav
+f7d41442e79b5359be1948961a0e303f  [shntool]  03_02_06_d2_t07.wav
+a0cce987f27aa1f44736e78fdb8fa2f6  [shntool]  03_02_06_d2_t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03 02 06 canberra all 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.16       63188876 B   ---   --   ---xx    shn  0.5937  03 02 06 d1 t01.shn
+     7:17.06       77100956 B   ---   --   ---xx    shn  0.6504  03 02 06 d1 t02.shn
+     5:30.21       58261436 B   ---   --   ---xx    shn  0.6500  03 02 06 d1 t03.shn
+     5:46.61       61177916 B   ---   --   ---xx    shn  0.6251  03 02 06 d1 t04.shn
+     5:54.45       62551484 B   ---   --   ---xx    shn  0.6407  03 02 06 d1 t05.shn
+     4:10.30       44170604 B   ---   --   ---xx    shn  0.6362  03 02 06 d1 t06.shn
+     5:21.27       56687948 B   ---   --   ---xx    shn  0.6062  03 02 06 d1 t07.shn
+     6:21.72       67377788 B   ---   --   ---xx    shn  0.6423  03 02 06 d1 t08.shn
+     7:46.43       82303580 B   ---   --   ---xx    shn  0.5928  03 02 06 d1 t09.shn
+     5:18.36       56179916 B   ---   --   ---xx    shn  0.6808  03 02 06 d1 t10.shn
+     6:23.17       67601228 B   ---   --   ---xx    shn  0.6144  03 02 06 d2 t01.shn
+     7:52.04       83270252 B   ---   --   ---xx    shn  0.6561  03 02 06 d2 t02.shn
+     6:56.23       73436540 B   ---   --   ---xx    shn  0.6259  03 02 06 d2 t03.shn
+     5:45.40       60952124 B   ---   --   ---xx    shn  0.6429  03 02 06 d2 t04.shn
+     6:37.37       70117868 B   ---   --   ---xx    shn  0.6545  03 02 06 d2 t05.shn
+     9:00.00       95256044 B   ---   --   ---xx    shn  0.6448  03 02 06 d2 t06.shn
+     4:56.36       52299116 B   ---   --   ---xx    shn  0.6649  03 02 06 d2 t07.shn
+     7:53.72       83606588 B   ---   --   ---xx    shn  0.6485  03 02 06 d2 t08.shn
+   114:50.61     1215540264 B                            0.6370  (18 files)
+=================== 
+=================== 
+=================== 

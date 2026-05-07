@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-17a-Malaga 
+=================== 
+=================== 
+=================== 
+8565889abd29645d1ba3c3cac041a46d  bd99-04-17.txt
+0cba8c6d1f910812fd175175617f1b96  LisbonToBarcelonaInfo.doc
+5d67b42ec6fbf3b120f72267f3edf202  Mal-0417-d1-t01.shn
+e27ce982cf9365eb78a4659393a5660a  Mal-0417-d1-t02.shn
+695a6dd20195a1d186b4b82597ce3939  Mal-0417-d1-t03.shn
+aeeb3f681a1c3e27c529a668f6851ece  Mal-0417-d1-t04.shn
+9d4659b4913f98a9cb88a1221b825983  Mal-0417-d1-t05.shn
+e3b06a93c05b1c6da092567e556632f5  Mal-0417-d1-t06.shn
+de0f23e72a26d544d00d5673869f9a06  Mal-0417-d1-t07.shn
+92ce215852130e47bf195bd570ec49b7  Mal-0417-d1-t08.shn
+71388d7ab898b6ea681a725bc16f0f26  Mal-0417-d1-t09.shn
+90cc40d4b48b71cd9af50e3997f144b9  Mal-0417-d1-t10.shn
+2734ca300abd47bd69a5d96504b0877e  Mal-0417-d2-t01.shn
+3b315b84ac87e8eb1516940ac0d9c9e8  Mal-0417-d2-t02.shn
+be1f909ff0e7a44e5192dcf94352a648  Mal-0417-d2-t03.shn
+411c73965afeea7b72f87ac1c670e2f1  Mal-0417-d2-t04.shn
+446ffc92b8e54dd61a547e3fb5e1dc4e  Mal-0417-d2-t05.shn
+2febf38edaa10a958d618c4672867abf  Mal-0417-d2-t06.shn
+ae31576695e96ac9fc7088d9363665d6  Mal-0417-d2-t07.shn
+6b452d7c6b9171c0edee62ebb694aadf  Malaga.jpg
+47fd69fb6eec15a2a14a618ea0a1ae7e  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-04-17a-Malaga 
+=================== 
+=================== 
+=================== 
+40c580956910a0b9675d16b61cbfae51  [shntool]  Mal-0417-d1-t01.wav
+1bbb3b6fb551729f7ab92406acc5bd60  [shntool]  Mal-0417-d1-t02.wav
+59d4ecfd6a4ff39757ff1cd8d8f1bb04  [shntool]  Mal-0417-d1-t03.wav
+9c46fc19b685b5fdf1b781947d31652e  [shntool]  Mal-0417-d1-t04.wav
+19a0c99858dd4772b798e5d400d38f51  [shntool]  Mal-0417-d1-t05.wav
+61a154ff0c18e7d2478f82885874ae69  [shntool]  Mal-0417-d1-t06.wav
+0fc2c0ef1b973d3c03dda4654486a68e  [shntool]  Mal-0417-d1-t07.wav
+7d4abe644bcb2090c629405090412777  [shntool]  Mal-0417-d1-t08.wav
+4f40263a3b8a918a6f254da90969357c  [shntool]  Mal-0417-d1-t09.wav
+f265db43fa71431814e5f0020a8bc66b  [shntool]  Mal-0417-d1-t10.wav
+2c07f47c9655d6fae226e40687a9394a  [shntool]  Mal-0417-d2-t01.wav
+5a04e4fcdb2d38647e22a3797c261f0f  [shntool]  Mal-0417-d2-t02.wav
+ca57cb7c3668694d02b67404193e9607  [shntool]  Mal-0417-d2-t03.wav
+a949fdcfbde6becd3da4fbd1899ab241  [shntool]  Mal-0417-d2-t04.wav
+b314582fb0159cffe7fda8ca4ff6c0b0  [shntool]  Mal-0417-d2-t05.wav
+9b69187e5e81542865f5c497e0fa0f12  [shntool]  Mal-0417-d2-t06.wav
+82dde87d7c7d3de6d936a6d1b911a297  [shntool]  Mal-0417-d2-t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-17a-Malaga 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:13.03        2300044 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t01.wav
+     5:55.29       62690208 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t02.wav
+     5:39.26       59859920 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t03.wav
+     5:40.32       60051832 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t04.wav
+     7:33.29       79976504 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t05.wav
+     6:27.68       68427400 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t06.wav
+     6:43.52       71210888 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t07.wav
+     8:23.18       88770532 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t08.wav
+     5:40.06       59989688 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t09.wav
+     5:11.06       54873972 B   -b-   --   -----    wav  1.0000  Mal-0417-d1-t10.wav
+     8:24.64       89055912 B   -b-   --   -----    wav  1.0000  Mal-0417-d2-t01.wav
+     5:55.31       62694740 B   -b-   --   -----    wav  1.0000  Mal-0417-d2-t02.wav
+     7:54.46       83720680 B   -b-   --   -----    wav  1.0000  Mal-0417-d2-t03.wav
+     5:48.09       61407368 B   -b-   --   -----    wav  1.0000  Mal-0417-d2-t04.wav
+     5:56.31       62871080 B   -b-   --   -----    wav  1.0000  Mal-0417-d2-t05.wav
+     5:50.54       61867820 B   -b-   --   -----    wav  1.0000  Mal-0417-d2-t06.wav
+     4:05.19       43262444 B   -b-   --   -----    wav  1.0000  Mal-0417-d2-t07.wav
+   101:22.70     1073031032 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

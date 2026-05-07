@@ -1,0 +1,8 @@
+Bob Dylan, 8/8/07, Christchurch, New Zealand, Westpac Arena, 2CDR
+
+LB-5344, (76min+41min), source: soomlos, 11th row left center, neumann km140's > lunatec v3 > m-audio mt24/96 (24/48), audacity > r8brain > cd wave > flac (16/44.1); bittorrent download 08/07; levels go down d1t2 1:04; excellent sound [A]
+
+Disc 1:, 01. introduction [00:58], 02. Leopard-Skin Pill-Box Hat [03:55], 03. Don't Think Twice, It's All Right [06:06], 04. Watching The River Flow [04:51], 05. It's Alright, Ma (I'm Only Bleeding) [07:11], 06. Workingman's Blues #2 [07:19], 07. Rollin' And Tumblin' [06:31], 08. Just Like A Woman [08:47], 09. Lonesome Day Blues [07:17], 10. Most Likely You Go Your Way (And I'll Go Mine) [07:59], 11. Tangled Up In Blue [08:01], 12. Spirit On The Water [06:57], Total time: [76:01], Disc 2:, 01. Highway 61 Revisited [06:14], 02. When The Deal Goes Down [06:01], 03. Summer Days [06:40], 04. Masters Of War [08:58], (encore), 05. Thunder On The Mountain [06:03], 06. band introduction [00:41], 07. All Along The Watchtower [05:55], Total time: [40:36]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

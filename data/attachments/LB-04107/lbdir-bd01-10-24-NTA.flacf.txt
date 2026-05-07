@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-24-NTA.flacf 
+=================== 
+=================== 
+=================== 
+469911260875ce935149f5de25d11447  bd01-10-24-NTA-LB-4107.txt
+0eb3080b3e9b4d512e56244675b71c4d  bd2001-10-24-Lacrosse-d1\Track01.flac
+75123f6764548f675d1e74360ace2c11  bd2001-10-24-Lacrosse-d1\Track02.flac
+70f3d4a4ed08254d4d322615b3949cf7  bd2001-10-24-Lacrosse-d1\Track03.flac
+c229523ace7b3e6efd11698f0eca6997  bd2001-10-24-Lacrosse-d1\Track04.flac
+285b55aa77ea94e582b0928019042b28  bd2001-10-24-Lacrosse-d1\Track05.flac
+448a3c4a41a611896cb463286a9f6538  bd2001-10-24-Lacrosse-d1\Track06.flac
+db9916b2a4da1b0f51373bbb19bd0fc0  bd2001-10-24-Lacrosse-d1\Track07.flac
+7ddd9880287ff03594500d507a95de57  bd2001-10-24-Lacrosse-d1\Track08.flac
+5c8eb2e12da32f6512ad82b2c2b3ad7a  bd2001-10-24-Lacrosse-d1\Track09.flac
+91d43ddac07114e55c87bb29323f2727  bd2001-10-24-Lacrosse-d1\Track10.flac
+713a93bc4fee678e1e891ceedbccb8fd  bd2001-10-24-Lacrosse-d1\Track11.flac
+73bfae1d02f334eb45f62d75de8e5205  bd2001-10-24-Lacrosse-d1\bd2001-10-24-Lacrosse-d1.md5
+8239b3370104e84630a9202a8b2dd11d  bd2001-10-24-Lacrosse-d2\Track01.flac
+12ac3e4c5b1c67b38d4465b3a980a43f  bd2001-10-24-Lacrosse-d2\Track02.flac
+1a16ab57f9d50e785be3b4a902c43a69  bd2001-10-24-Lacrosse-d2\Track03.flac
+5e61ea883404581deb4ed82d64f3d450  bd2001-10-24-Lacrosse-d2\Track04.flac
+8f3a9aa75107f451ba35002bd3d27322  bd2001-10-24-Lacrosse-d2\Track05.flac
+82de9aa3ef27ac5a2b81e89c48c678b0  bd2001-10-24-Lacrosse-d2\Track06.flac
+31f8f179392f91c53bf0bf74d2e2cab6  bd2001-10-24-Lacrosse-d2\Track07.flac
+9729bddbe398b9113c8486daedb91c81  bd2001-10-24-Lacrosse-d2\Track08.flac
+740f55ce7c4d99a66a293e3e7db41ef2  bd2001-10-24-Lacrosse-d2\Track09.flac
+ab8f2114de9440512d9051d1fcf8faaa  bd2001-10-24-Lacrosse-d2\bd2001-10-24-Lacrosse-d2.md5
+602f39eccb57032969cc05ed1e994583  bd2001-10-24-Lacrosse-NTA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-24-NTA.flacf\bd2001-10-24-Lacrosse-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:2119d34dc4c67efddfd1b1db13176753
+Track02.flac:218e63f6dc53a1c00a61eee866c87e1a
+Track03.flac:33612c352ff92ff4090441792d27b44a
+Track04.flac:24bffc70bd25c9b78bd15a1c2472ea89
+Track05.flac:de5287f51d50443db02fa8b484e272e7
+Track06.flac:6e27e13f1f53e5df151c76524ff0a274
+Track07.flac:7946c14a32a11b07eb32a531b0f60616
+Track08.flac:8c91764dcc52feb09ee41578e190b514
+Track09.flac:966513bf7bec218227c9b4c762786aa0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-24-NTA.flacf\bd2001-10-24-Lacrosse-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:a9f2fa0f020574c408db4aee1a53a337
+Track02.flac:14f7ce0c48519c05805ce90b3855b531
+Track03.flac:9f7cdf1818ef62a758ea9e9a3a2dabef
+Track04.flac:643173262a3f1d3f7ed7a3a9b040b643
+Track05.flac:74777214ea147e6cc540ee70d36a69e2
+Track06.flac:99a74ad2fa12e7f75f6258bba35f7110
+Track07.flac:9e248007ef1dec234babecb03ac4392e
+Track08.flac:b567ef07802a9ee8d989120fa85572f0
+Track09.flac:eca297b47cea6e28ac821679d4bf88f4
+Track10.flac:452f52132aea8c24135b493f46a3b05b
+Track11.flac:bc84e582cb91fee515877c1d2708e471
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-24-NTA.flacf\bd2001-10-24-Lacrosse-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:07.52       64861148 B   ---   --   ---xx   flac  0.5929  Track01.flac
+     7:37.23       80668940 B   ---   --   ---xx   flac  0.4108  Track02.flac
+     5:16.74       55916492 B   ---   --   ---xx   flac  0.6330  Track03.flac
+     8:59.09       95100812 B   ---   --   ---xx   flac  0.5868  Track04.flac
+     5:54.02       62450348 B   ---   --   ---xx   flac  0.5203  Track05.flac
+     7:59.72       84664988 B   ---   --   ---xx   flac  0.5926  Track06.flac
+     6:32.66       69304076 B   ---   --   ---xx   flac  0.5424  Track07.flac
+     6:40.69       70722332 B   ---   --   ---xx   flac  0.6291  Track08.flac
+     5:21.45       56730284 B   ---   --   ---xx   flac  0.5168  Track09.flac
+    60:30.37      640419420 B                            0.5572  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-24-NTA.flacf\bd2001-10-24-Lacrosse-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:06.52       32932748 B   ---   --   ---xx   flac  0.5841  Track01.flac
+     7:04.19       74838332 B   ---   --   ---xx   flac  0.5774  Track02.flac
+     4:58.26       52628396 B   ---   --   ---xx   flac  0.4758  Track03.flac
+     3:20.36       35364716 B   ---   --   ---xx   flac  0.5244  Track04.flac
+     6:18.52       66801548 B   ---   --   ---xx   flac  0.5956  Track05.flac
+     7:37.12       80643068 B   ---   --   ---xx   flac  0.4949  Track06.flac
+     4:19.29       45755852 B   ---   --   ---xx   flac  0.5607  Track07.flac
+     5:45.19       60902732 B   ---   --   ---xx   flac  0.5372  Track08.flac
+     8:11.55       86741804 B   ---   --   ---xx   flac  0.4584  Track09.flac
+     9:16.65       98231324 B   ---   --   ---xx   flac  0.5160  Track10.flac
+     5:11.03       54867500 B   ---   --   ---xx   flac  0.5199  Track11.flac
+    65:09.68      689708020 B                            0.5264  (11 files)
+=================== 
+=================== 
+=================== 

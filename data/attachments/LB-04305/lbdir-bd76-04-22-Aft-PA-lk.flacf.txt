@@ -1,0 +1,53 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-04-22-Aft-PA-lk.flacf 
+=================== 
+=================== 
+=================== 
+ee93656e72aac78cae62f4635a8105d4  bd76-04-22-Aft-PA-lk-LB-4305.txt
+f0d3447fedaf4ac570d8a086359c387e  Clearwater 22 April 76 Aft (PA).md5
+e8229cd07d85f498066d7de87f71b661  Notes.txt
+7d63fa4241083499a3b13ae33688d1be  Track01.flac
+f4375ea0953981c34013ba51bfd1a258  Track02.flac
+8c3678d3eb6f5315549338d6250bdde8  Track03.flac
+923cbf3d621af5887e67fdac8911530f  Track04.flac
+c5328bc0ae1433f05ab6f2fe3b444982  Track05.flac
+25bb6bc9b185dfbe9e3156779c6ae62c  Track06.flac
+edfedfff9fad513da3c9318ba2718088  Track07.flac
+0ef02b7cd5d2774fb17556410e700a63  Track08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-04-22-Aft-PA-lk.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:7fae3df9eb286feccde45d7d9ae4c083
+Track02.flac:024793a78b64501558971bf5ce465e1f
+Track03.flac:9a1a01978060c34809e0f3578c1313c7
+Track04.flac:dd90c11ebdabdf17f8deca3f0ec179f4
+Track05.flac:1de79c73e5f31dcb4f13907338ee06b2
+Track06.flac:8737476b938b923eab090532dba60593
+Track07.flac:e88b4b09efa6d73875453d4e3c648400
+Track08.flac:050fc526e69046657e76204f9193c26d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-04-22-Aft-PA-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:10.30       44170604 B   ---   --   ---xx   flac  0.4559  Track01.flac
+     4:40.66       49547276 B   ---   --   ---xx   flac  0.4669  Track02.flac
+     4:33.08       48176060 B   ---   --   ---xx   flac  0.4685  Track03.flac
+     2:58.24       31455692 B   ---   --   ---xx   flac  0.4887  Track04.flac
+     5:00.30       52990604 B   ---   --   ---xx   flac  0.4626  Track05.flac
+     5:29.00       58035644 B   ---   --   ---xx   flac  0.4808  Track06.flac
+     7:06.02       75151148 B   ---   --   ---xx   flac  0.5072  Track07.flac
+     2:41.42       28499228 B   ---   --   ---xx   flac  0.6027  Track08.flac
+    36:39.52      388026256 B                            0.4869  (8 files)
+=================== 
+=================== 
+=================== 

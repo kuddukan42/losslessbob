@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== md5 for: bd98-05-19-lk.flacf
+===================
+===================
+===================
+39772637198c2a0e8759c19df4d64580 *01 Absolutely Sweet Marie.flac
+3fffa63fcb35a1577846588718f05fd3 *02 The Man In Me.flac
+93a69f8f9301cce4311ba53cfb873e53 *03 Cold Irons Bound.flac
+b9a76034b6e96892a55708fa076fdc90 *04 Just Like A Woman.flac
+ac3f5159031a35294758cab15828d4c4 *05 Silvio.flac
+b298b48dc726eca8523e4ac86f2127eb *06 Stone Walls And Steel Bars (acoustic w band).flac
+8543045ceafde67427bf30922ea87e61 *07 Masters Of War (acoustic w band) .flac
+1d728a7bb0d80fb9a667db3d36ba393e *08 Tangled Up In Blue (acoustic w band).flac
+3b9a1fafa6c112772de5d41a6409c2ed *09 Make You Feel My Love.flac
+0349811a8e4c28d38ff8a73bc85fe7af *10 Highway 61 Revisited.flac
+a22148cd7c1cff819b3a7484e6f5bd91 *11 Forever Young (acoustic w band).flac
+e7acd53e96fd0f76fdd8965a2ab505d5 *12 Love Sick.flac
+c73796d6af7154b14ead478e07d2e593 *13 Rainy Day Women # 12 & 35 .flac
+24772442e192f9ab4684032c4c8bcc21 *Bob Dylan San Jose 19 May 1998.md5
+e1bf4a115f74a4335b2eba0f6f8670da *Note.txt
+===================
+===================
+===================
+=== ffp for: bd98-05-19-lk.flacf
+===================
+===================
+===================
+01 Absolutely Sweet Marie.flac:750363c8d58e32e1ed64bf5332f6ccfd
+02 The Man In Me.flac:3fcdcf84a480aa3dd73191c8e27a9648
+03 Cold Irons Bound.flac:79b45a1bf1584eadfe8c16a503f54110
+04 Just Like A Woman.flac:6c0e0b2b44998497b591494ed1701126
+05 Silvio.flac:3122aca68a056319b24b8b653d7b454b
+06 Stone Walls And Steel Bars (acoustic w band).flac:446bf4c46bcaaf720df109b1d79fdb55
+07 Masters Of War (acoustic w band) .flac:98224c23214ac1bbc9a463b121894125
+08 Tangled Up In Blue (acoustic w band).flac:81c2151d870a3a1a019e4bee91236d90
+09 Make You Feel My Love.flac:6870cef9848a784ac04f96dd82103597
+10 Highway 61 Revisited.flac:83889e53d9d753ace282b2826c8524ec
+11 Forever Young (acoustic w band).flac:60e8836fc564871ee884cc99a9bed1b6
+12 Love Sick.flac:b08519a6b4a3878e7d8ec1cc0bf7cd27
+13 Rainy Day Women # 12 & 35 .flac:6fcdef53556c951b55aa66cc11c0aa72
+===================
+===================
+===================
+=== shntool len for: bd98-05-19-lk.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:23.65       46546124 B   ---   --   ---xx   flac  0.6535  01 Absolutely Sweet Marie.flac
+     4:27.05       47110604 B   ---   --   ---xx   flac  0.6476  02 The Man In Me.flac
+     6:42.31       70985756 B   ---   --   ---xx   flac  0.6497  03 Cold Irons Bound.flac
+     6:04.74       64383692 B   ---   --   ---xx   flac  0.6339  04 Just Like A Woman.flac
+     6:55.24       73262492 B   ---   --   ---xx   flac  0.6573  05 Silvio.flac
+     3:05.08       32652860 B   ---   --   ---xx   flac  0.6246  06 Stone Walls And Steel Bars (acoustic w band).flac
+     5:28.51       57979196 B   ---   --   ---xx   flac  0.6098  07 Masters Of War (acoustic w band) .flac
+     8:50.25       93550844 B   ---   --   ---xx   flac  0.6475  08 Tangled Up In Blue (acoustic w band).flac
+     4:29.34       47531612 B   ---   --   ---xx   flac  0.5865  09 Make You Feel My Love.flac
+     5:31.36       58473116 B   ---   --   ---xx   flac  0.6321  10 Highway 61 Revisited.flac
+     6:44.30       71336204 B   ---   --   ---xx   flac  0.6158  11 Forever Young (acoustic w band).flac
+     5:23.50       57094844 B   ---   --   ---xx   flac  0.6104  12 Love Sick.flac
+     4:25.10       46769564 B   ---   --   ---xx   flac  0.6352  13 Rainy Day Women # 12 & 35 .flac
+    72:31.68      767676908 B                            0.6326  (13 files)
+===================
+===================
+===================

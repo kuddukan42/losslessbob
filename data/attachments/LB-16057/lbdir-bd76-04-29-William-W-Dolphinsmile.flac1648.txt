@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd76-04-29-William-W-Dolphinsmile.flac1648
+===================
+===================
+===================
+5ed0bde9d6cef7d7cb2b14b22f080f61 *01 Tamborine Man.flac
+ad5e8b10de408f730adade92cbd3db7d *02 Its Alright Ma.flac
+abac68493a3d51b02f44aa239f814637 *03 Where Did Vincent Van Gogh.flac
+f9dbfc39ebdd9b7a2e436d95b04c093c *04 I ll Be Your Baby Tonight.flac
+17e3f06bf76f1144a5dc57739fffdef4 *05 Maggies Farm.flac
+db639787ecee47c0277fa757af0e7058 *06 One Too Many Mornings.flac
+7bb5d87a221044227586cf300930190e *07 Isis.flac
+32d56d3f4e0008d664ac2cf10bd72b98 *08 Blowin In The Wind.flac
+4a1c0667e823bc5dbd94061565926203 *09 Railroad Boy.flac
+0ce3f4885865011ba98689320404ed91 *10 I Pity The Poor Immigrant.flac
+e8b736dff8005ae9ffc9cf6162b522d5 *11 Shelter From The Storm.flac
+9ce5440c569c08cedea98f5effb420ad *12 I Threw It All Away.flac
+e0cf3eb41049533af66b6eeff1217c64 *13 Stuck Inside Of Mobile.flac
+63e6a18b7aaf1e35a7a8234924ca9afa *14 Youre Gonna Make Me Lonesome.flac
+48587e4c51f93e39547098119a9960a8 *15 Going Going Gone.flac
+3ac5bb773750ef9056e70d297713bf8b *16 Lay Lady Lay.flac
+41aa03a9b4d6010423829c892ac604a5 *17 Silver Mantis.flac
+7d888cc04c670de1008e0391bee2e410 *18 Mozambique.flac
+b5a7d1b1e41e1e1765827cb9f6728669 *19 Idiot Wind.flac
+dfe3ab9111bf6d98eb859ff047812ea1 *20 Knockin On Heavens Door.flac
+4803eea63d9a74429bc8d241d5605cc6 *21 Gotta Travel On.flac
+187f18b70ef3aa34d8ebedee38f610d0 *Bob Dylan Expo Hall Municipal Auditorium Mobile AL 1976-4-29 Dolphinsmile Archive.ffp
+f9a0a3555c5a6473dfbd165d7fbfa71a *Bob Dylan Expo Hall Municipal Auditorium Mobile AL 1976-4-29 Dolphinsmile Archive.md5
+187f18b70ef3aa34d8ebedee38f610d0 *Bob Dylan Expo Hall Municipal Auditorium Mobile AL 1976-4-29 Dolphinsmile Archive.txt
+6c9da9599b161fed2e9c7f59b556ab0c *info.txt
+===================
+===================
+===================
+=== ffp for: bd76-04-29-William-W-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Tamborine Man.flac:e6d8be5edd09c88371ddb70532eee3c4
+02 Its Alright Ma.flac:6e49953b77023bba77820b4cbe687892
+03 Where Did Vincent Van Gogh.flac:e3664dcf195d3926e2627b07b1fe3fd6
+04 I ll Be Your Baby Tonight.flac:9f6a6bf27de0735b1496baee6d76c53a
+05 Maggies Farm.flac:aedb65524530229c29817becf9fce6d4
+06 One Too Many Mornings.flac:b68a48afe3081a16e098f8caa47e1396
+07 Isis.flac:4d11218820b037f36733b69645a2650e
+08 Blowin In The Wind.flac:6e77c21a64d4a2bab02937baf76e11a9
+09 Railroad Boy.flac:30de068db51d6a43f619bfa3227ba290
+10 I Pity The Poor Immigrant.flac:2dfd7332df2850e0b8353cf832226f62
+11 Shelter From The Storm.flac:180145b574737bcd624e7740c5dbd660
+12 I Threw It All Away.flac:6eda5eb71909dd9778421992d5acda81
+13 Stuck Inside Of Mobile.flac:8de5a146dd51d8e3534096fd6c499c47
+14 Youre Gonna Make Me Lonesome.flac:8368c7b9ef95d6acddfbf49be8886689
+15 Going Going Gone.flac:cce6f2c15ddc0d531876670ec6fa2008
+16 Lay Lady Lay.flac:ee33f7a1af055655dc425522b043ee63
+17 Silver Mantis.flac:35b050159f6fb623be057a1523efae2d
+18 Mozambique.flac:9f19a5646e4b4838ecf044bd9771bec2
+19 Idiot Wind.flac:eb93052e88e1f811763999ff7c0ec84a
+20 Knockin On Heavens Door.flac:15aa5851e367dcda7a9a1b042230bf5f
+21 Gotta Travel On.flac:7277c5dc149ac7c933218d7098f9abaf
+===================
+===================
+===================
+=== shntool len for: bd76-04-29-William-W-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:59.154      68957624 B   cxx   --   ---xx   flac  0.5227  01 Tamborine Man.flac
+     5:45.327      66302788 B   cxx   --   ---xx   flac  0.4998  02 Its Alright Ma.flac
+     3:18.442      38100944 B   cxx   --   ---xx   flac  0.4952  03 Where Did Vincent Van Gogh.flac
+     4:05.916      47215972 B   cxx   --   ---xx   flac  0.5350  04 I ll Be Your Baby Tonight.flac
+     4:56.247      56879372 B   cxx   --   ---xx   flac  0.5460  05 Maggies Farm.flac
+     4:18.872      49703512 B   cxx   --   ---xx   flac  0.5105  06 One Too Many Mornings.flac
+     6:32.498      75359620 B   cxx   --   ---xx   flac  0.5251  07 Isis.flac
+     3:55.705      45255324 B   cxx   --   ---xx   flac  0.5296  08 Blowin In The Wind.flac
+     2:55.367      33670524 B   cxx   --   ---xx   flac  0.5242  09 Railroad Boy.flac
+     4:45.018      54723548 B   cxx   --   ---xx   flac  0.5484  10 I Pity The Poor Immigrant.flac
+     6:12.080      71439464 B   cxx   --   ---xx   flac  0.5372  11 Shelter From The Storm.flac
+     4:29.258      51697612 B   cxx   --   ---xx   flac  0.5326  12 I Threw It All Away.flac
+     8:46.371     101063332 B   cxx   --   ---xx   flac  0.5140  13 Stuck Inside Of Mobile.flac
+     4:53.768      56403528 B   cxx   --   ---xx   flac  0.4807  14 Youre Gonna Make Me Lonesome.flac
+     3:51.062      44363876 B   cxx   --   ---xx   flac  0.4708  15 Going Going Gone.flac
+     5:26.802      62746008 B   cxx   --   ---xx   flac  0.4702  16 Lay Lady Lay.flac
+     7:19.479      84380096 B   cxx   --   ---xx   flac  0.4279  17 Silver Mantis.flac
+     4:12.621      48503300 B   cxx   --   ---xx   flac  0.5023  18 Mozambique.flac
+    10:53.199     125414236 B   cxx   --   ---xx   flac  0.5109  19 Idiot Wind.flac
+     4:52.510      56161948 B   cxx   --   ---xx   flac  0.5152  20 Knockin On Heavens Door.flac
+     7:26.315      85692528 B   cxx   --   ---xx   flac  0.5056  21 Gotta Travel On.flac
+   114:56.012    1324035156 B                            0.5084  (21 files)
+===================
+===================
+===================

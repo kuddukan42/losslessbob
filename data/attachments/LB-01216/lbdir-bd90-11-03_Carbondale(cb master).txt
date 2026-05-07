@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-11-03_Carbondale(cb master) 
+=================== 
+=================== 
+=================== 
+60b9ee7760aeaf12de29aba7c7f70732  bd90-11-03cb.txt
+20460ce910dc014760b3997ecc87b4d4  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 01.shn
+0d371db97294e9178bec8dd14e0f9083  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 10.shn
+31e1d20f41ab038e57c4be73a6eded0e  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 11.shn
+98d89a762acc5fb2579cf242a140d888  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 12.shn
+db4769baeb106d7cb43554a6ad7c5169  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 13.shn
+2a11c4159ad1931dc31423ee7fb2ccec  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 14.shn
+fef235cf9173373cc4e56f147d71c9ed  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 15.shn
+8cf20aa9d324c710a314019390f342c8  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 16.shn
+c49b6be14124d88bd12ade2d7ffff537  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 2.shn
+6bb255d6129de3a7d3cc78ae53dc6c3e  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 3.shn
+64aa3f2aa507d4703eb2a9cda70b5404  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 4.shn
+3baf56a45262c19d2eed35ccbdc15f76  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 5.shn
+5cb43ffc809329832b66b47365835ae1  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 6.shn
+aff05c7b63101e7df6e44aceff20110c  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 7.shn
+8628a7817c7e7a1c90f42a747b774236  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 8.shn
+0f535b744bc3bf543f1924a7d40562ca  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_Track 9.shn
+9e3e0dc992825c60d20878edfa64f10c  bd_90-11-03_cd1.shnf\bd_90-11-03_cd1_shn.md5
+a7cab780fe9ae88b30285983d928efc0  bd_90-11-03_cd2.shnf\bd_90-11-03_cd2_Track 1.shn
+80280c5630744fd37025b24ff1132e33  bd_90-11-03_cd2.shnf\bd_90-11-03_cd2_Track 2.shn
+080e32727956c64d21b1c68963e46a59  bd_90-11-03_cd2.shnf\bd_90-11-03_cd2_Track 3.shn
+d3de1ae0697a46adaad09611477d24a7  bd_90-11-03_cd2.shnf\bd_90-11-03_cd2_Track 4.shn
+6e66d3835ebbfebfc3c65fc3f558fcce  bd_90-11-03_cd2.shnf\bd_90-11-03_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-11-03_Carbondale(cb master)\bd_90-11-03_cd1.shnf 
+=================== 
+=================== 
+=================== 
+c9742d1894c1cadf759e298c09e81bd7  [shntool]  bd_90-11-03_cd1_Track_01.wav
+a6690fd329a35f7da3e71fef995a9ed3  [shntool]  bd_90-11-03_cd1_Track_2.wav
+0e90dc3bc5a79e504f0b760806aadb58  [shntool]  bd_90-11-03_cd1_Track_3.wav
+d74ab89497d69408c1e3252db1c5d025  [shntool]  bd_90-11-03_cd1_Track_4.wav
+19a8bf4d155140c20cacf0e35cc7e303  [shntool]  bd_90-11-03_cd1_Track_5.wav
+6f074dba7f8a9dc1ebf91aa936a8fa4c  [shntool]  bd_90-11-03_cd1_Track_6.wav
+5f9be86e2eaf1ac09480609525bcede1  [shntool]  bd_90-11-03_cd1_Track_7.wav
+8e7290c987f0725ebd2c1ab6f4909597  [shntool]  bd_90-11-03_cd1_Track_8.wav
+a10c2a48c0436f47ffb12b94624b03d0  [shntool]  bd_90-11-03_cd1_Track_9.wav
+06a97be1a2d07ed7fd70441d83bb1d90  [shntool]  bd_90-11-03_cd1_Track_10.wav
+9c13c6cc80767b88b1903715107a297e  [shntool]  bd_90-11-03_cd1_Track_11.wav
+d559cb0b551b2dd724ac2a6f3f358b17  [shntool]  bd_90-11-03_cd1_Track_12.wav
+b12edaf0beb4a71f22fd46ebfb3ef187  [shntool]  bd_90-11-03_cd1_Track_13.wav
+db0ebd006075162d4504d7f7d1f58c9c  [shntool]  bd_90-11-03_cd1_Track_14.wav
+4fc4dfc8786e2f2bb39a3232723ddcbe  [shntool]  bd_90-11-03_cd1_Track_15.wav
+5aa5b55503ebff2ab252d44df8232316  [shntool]  bd_90-11-03_cd1_Track_16.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-11-03_Carbondale(cb master)\bd_90-11-03_cd2.shnf 
+=================== 
+=================== 
+=================== 
+6ba50fad1bb528a45d68c6f5fed8133f  [shntool]  bd_90-11-03_cd2_Track_1.wav
+05d62b971fc973a6719d9d006db47d1f  [shntool]  bd_90-11-03_cd2_Track_2.wav
+c5d704c5f0ef078d82183bd82e24d9aa  [shntool]  bd_90-11-03_cd2_Track_3.wav
+ab15ff738ae5ccfe291b3cc8e0616a81  [shntool]  bd_90-11-03_cd2_Track_4.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-03_Carbondale(cb master)\bd_90-11-03_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:13.45       12983166 B   ---   -e   ---xx    shn  0.5448  bd_90-11-03_cd1_Track 01.shn
+     6:09.55       65221086 B   ---   -e   ---xx    shn  0.6072  bd_90-11-03_cd1_Track 10.shn
+     5:18.45       56201166 B   ---   -e   ---xx    shn  0.5861  bd_90-11-03_cd1_Track 11.shn
+     4:14.54       44932734 B   ---   -e   ---xx    shn  0.6215  bd_90-11-03_cd1_Track 12.shn
+     7:02.16       74478558 B   ---   -e   ---xx    shn  0.6748  bd_90-11-03_cd1_Track 13.shn
+     3:43.16       39374958 B   ---   -e   ---xx    shn  0.6877  bd_90-11-03_cd1_Track 14.shn
+     3:57.58       41943342 B   ---   -e   ---xx    shn  0.5452  bd_90-11-03_cd1_Track 15.shn
+     3:30.71       37211118 B   ---   -e   ---xx    shn  0.6638  bd_90-11-03_cd1_Track 16.shn
+     3:46.70       40031166 B   ---   -e   ---xx    shn  0.6480  bd_90-11-03_cd1_Track 2.shn
+     3:48.37       40306350 B   ---   -e   ---xx    shn  0.6702  bd_90-11-03_cd1_Track 3.shn
+     4:23.24       46449774 B   ---   -e   ---xx    shn  0.6258  bd_90-11-03_cd1_Track 4.shn
+     5:02.05       53284686 B   ---   -e   ---xx    shn  0.6297  bd_90-11-03_cd1_Track 5.shn
+     5:13.26       55274478 B   ---   -e   ---xx    shn  0.5980  bd_90-11-03_cd1_Track 6.shn
+     5:06.70       54143166 B   ---   -e   ---xx    shn  0.6593  bd_90-11-03_cd1_Track 7.shn
+     3:11.39       33784254 B   ---   -e   ---xx    shn  0.5763  bd_90-11-03_cd1_Track 8.shn
+     4:05.63       43366302 B   ---   -e   ---xx    shn  0.5969  bd_90-11-03_cd1_Track 9.shn
+    69:49.19      738986304 B                            0.6254  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-03_Carbondale(cb master)\bd_90-11-03_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:41.01       38986878 B   ---   -e   ---xx    shn  0.6309  bd_90-11-03_cd2_Track 1.shn
+     6:48.58       72107742 B   ---   -e   ---xx    shn  0.6512  bd_90-11-03_cd2_Track 2.shn
+     4:22.01       46219278 B   ---   -e   ---xx    shn  0.6199  bd_90-11-03_cd2_Track 3.shn
+     3:55.57       41588190 B   ---   -e   ---xx    shn  0.6387  bd_90-11-03_cd2_Track 4.shn
+    18:47.42      198902088 B                            0.6373  (4 files)
+=================== 
+=================== 
+=================== 

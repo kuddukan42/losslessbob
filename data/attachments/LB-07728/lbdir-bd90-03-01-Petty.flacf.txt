@@ -1,0 +1,42 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-03-01-Petty.flacf 
+=================== 
+=================== 
+=================== 
+e3e011d402afb0f4ca09e537e6add80e  01 Rainy day women # 12 & 35 [Dylan on vocal].flac
+56dbfe753653cc09326d2adad59755cf  02 Everybody's movin' [Dylan shared vocal with Tom Petty].flac
+d911f0076e3df272ef997c7940a6c2d5  03 Travelin' band [Dylan on guitar].flac
+cbcdbb7068cad8c4d071e085c274c430  04 I'm crying [Dylan on guitar].flac
+89958a1b7fc3fc193286fda9700ea193  1990-03-01 The Forum, Los Angeles, California, USA [Dylan guest at Petty concert].md5
+dc1ebe78ffcf92060809a7e7f90f3453  1990-03-01 The Forum, Los Angeles, California, USA [Tom Petty Concert].ffp
+d9357f71d4ec042716abc724301a61fa  Info\1990-03-01 The Forum, Inglewood [guest at a Tom Petty concert], Los Angeles, California, USA.txt
+87752e478b99a25c50318dc174b93591  Info\FFP 1990-03-01 The Forum, Los Angeles, California, USA [Tom Petty Concert].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-03-01-Petty.flacf 
+=================== 
+=================== 
+=================== 
+01 Rainy day women # 12 & 35 [Dylan on vocal].flac:ac0ea96c5cffdc8c915a4816a636d875
+02 Everybody's movin' [Dylan shared vocal with Tom Petty].flac:41f95e95e4909a5e43b57e06b2124af8
+03 Travelin' band [Dylan on guitar].flac:fc3db8c91c70f10989cfb6d35096e1d1
+04 I'm crying [Dylan on guitar].flac:2453bc35c5ac734b959ad8ed96411d91
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-03-01-Petty.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:55.43       41555180 B   ---   --   ---xx   flac  0.5981  01 Rainy day women # 12 & 35 [Dylan on vocal].flac
+     4:34.36       48418316 B   ---   --   ---xx   flac  0.6011  02 Everybody's movin' [Dylan shared vocal with Tom Petty].flac
+     4:17.69       45497132 B   ---   --   ---xx   flac  0.5619  03 Travelin' band [Dylan on guitar].flac
+     4:03.51       42985196 B   ---   --   ---xx   flac  0.5478  04 I'm crying [Dylan on guitar].flac
+    16:51.49      178455824 B                            0.5776  (4 files)
+=================== 
+=================== 
+=================== 

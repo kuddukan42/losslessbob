@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-04-27-Who-Lives-Outside.flacf 
+=================== 
+=================== 
+=================== 
+a0cee912f7d95b70c561ae1eb4de8a10  bd02-04-27-Who-Lives-Outside-LB-2769.txt
+3c9c2be408adfbb65a04740e886493b6  CD1\Track01.shn
+d3b6a6fc4c2d38d3a395a8adbb825461  CD1\Track02.shn
+de9ef7a6f02d136ffeda036878332c50  CD1\Track03.shn
+0b7c5341d7ef7958493f14d1a6fed216  CD1\Track04.shn
+f668cb80003ea728a13c7bae00edb9d8  CD1\Track05.shn
+a3263490377ed89a33c8403b0857bd9a  CD1\Track06.shn
+5beba5aa86c8ac22ec6bf7bb8fb3c9d1  CD1\Track07.shn
+036a0fe69c69b360101354e5490c4298  CD1\Track08.shn
+7de8ce10af65cefe00e7f00b7b0ab440  CD1\Track09.shn
+dbcdda8be9071bf77aa7a2114140f561  CD1\Track10.shn
+2d9f0d0b9c34e680bcf6499e9179983e  CD1\Track11.shn
+e5baa192e662d4264aa6dbcb3549044e  CD1\noname.md5
+d796b809ae42f8299c67fee488e64e73  CD2\Track01.shn
+c22f11017198800742b5192a712acca9  CD2\Track02.shn
+376ed0559686a4026dd31ba57ea65245  CD2\Track03.shn
+157dafbef5295e0dfe8fcef497fe3a44  CD2\Track04.shn
+56011dc0851d9c6179d579a74c93f8a5  CD2\Track05.shn
+02c2347a6b01e8d8ba5a660b4568d4f2  CD2\Track06.shn
+527fbbf63918958c3c368f07943e4b49  CD2\Track07.shn
+25907ab2fbf0b0df4cd208fd341f2cf6  CD2\Track08.shn
+973d4ab6effb110660bab86b9ec81ae5  CD2\Track09.shn
+f5021138a76d4148f413d1737e341385  CD2\noname.md5
+7100dac7b1c107a057078d29fe675a84  Info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-04-27-Who-Lives-Outside.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10ffd09f1a9533e9c9928a6100aa6d00  [shntool]  Track01.wav
+2533d17855b3b651e60b2a11ee7dd8b2  [shntool]  Track02.wav
+4cc47b1fe054a4708489f85c63609514  [shntool]  Track03.wav
+58e29475b1fc4e73bbc6a309895ab5c7  [shntool]  Track04.wav
+cf39cd1016b12f30ddf3ce4ff1610611  [shntool]  Track05.wav
+29357c80b6e1cad48fa2ee3fd9883a92  [shntool]  Track06.wav
+ca5746096dd698c6d2aa34b02a53fa11  [shntool]  Track07.wav
+ebbde1c12bf8559627e3f359f7362a3b  [shntool]  Track08.wav
+37faf39810a9977240fb4c62566e1a76  [shntool]  Track09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-04-27-Who-Lives-Outside.flacf\CD1 
+=================== 
+=================== 
+=================== 
+2e9e148f798576e49e575684cac7d23b  [shntool]  Track01.wav
+e0b493dff8887a65cfb704039a8f7604  [shntool]  Track02.wav
+0bdf314541f48c81ea487ab5d3189134  [shntool]  Track03.wav
+b0fa65d590e845314fdf6f3472f2b879  [shntool]  Track04.wav
+6d54fc9b6c6c3b6875be448e2775fd75  [shntool]  Track05.wav
+5751c41113fea1a4dc9813fd417d3f15  [shntool]  Track06.wav
+67f39921d9bd454c05b747ac343e7c56  [shntool]  Track07.wav
+b7711d209591e152da470d8c3ba4e4d3  [shntool]  Track08.wav
+a697b0b13e8c53bcf7bfe4e64eb706bf  [shntool]  Track09.wav
+84574cf62c72f443d1f46eda217a3068  [shntool]  Track10.wav
+4ddb9b3fb0b447ca2e30305751ca48db  [shntool]  Track11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-27-Who-Lives-Outside.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:49.69       93477932 B   ---   --   -----    wav  1.0000  Track01.wav
+     7:59.48       84608540 B   ---   --   -----    wav  1.0000  Track02.wav
+     5:42.59       60467612 B   ---   --   -----    wav  1.0000  Track03.wav
+    10:36.56      112322156 B   ---   --   -----    wav  1.0000  Track04.wav
+     6:40.62       70705868 B   ---   --   -----    wav  1.0000  Track05.wav
+     8:29.48       89900540 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:31.21       58437836 B   ---   --   -----    wav  1.0000  Track07.wav
+     6:56.07       73398908 B   ---   --   -----    wav  1.0000  Track08.wav
+     6:14.14       66006572 B   ---   --   -----    wav  1.0000  Track09.wav
+    67:01.09      709325964 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-27-Who-Lives-Outside.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.38       43660220 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:45.40       60952124 B   ---   --   -----    wav  1.0000  Track02.wav
+     9:42.43      102765980 B   ---   --   -----    wav  1.0000  Track03.wav
+     7:32.30       79803404 B   ---   --   -----    wav  1.0000  Track04.wav
+     6:16.04       66335852 B   ---   --   -----    wav  1.0000  Track05.wav
+     7:54.07       83630108 B   ---   --   -----    wav  1.0000  Track06.wav
+     6:09.09       65112812 B   ---   --   -----    wav  1.0000  Track07.wav
+     5:02.61       53416316 B   ---   --   -----    wav  1.0000  Track08.wav
+     5:17.65       56071724 B   ---   --   -----    wav  1.0000  Track09.wav
+     4:56.58       52350860 B   ---   --   -----    wav  1.0000  Track10.wav
+     8:27.45       89540684 B   ---   --   -----    wav  1.0000  Track11.wav
+    71:12.25      753640084 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 

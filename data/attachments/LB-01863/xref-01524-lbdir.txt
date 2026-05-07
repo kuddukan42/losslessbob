@@ -1,0 +1,72 @@
+===================
+===================
+===================
+=== md5 for: bd95-07-08-i.flacf
+===================
+===================
+===================
+345816a20907e14ed5acfb3214212363 *bd-95-07-08-munich-master-d1 (Track 01).flac
+722354c40eb09bcfd310a2d1353526e1 *bd-95-07-08-munich-master-d1 (Track 02).flac
+d647fa147d27552c26ad83c313b4ee02 *bd-95-07-08-munich-master-d1 (Track 03).flac
+e967fb97e16f4f9aae3f1098079a04a0 *bd-95-07-08-munich-master-d1 (Track 04).flac
+eba0ad832b186a16fd082a51e62d87c3 *bd-95-07-08-munich-master-d1 (Track 05).flac
+ad495b9a7e6c6d483bd804f50f1a8d00 *bd-95-07-08-munich-master-d1 (Track 06).flac
+87c52e89a4e9101844fe8a53c897d236 *bd-95-07-08-munich-master-d1 (Track 07).flac
+b38ee381e28d079272d87c4bb14a5803 *bd-95-07-08-munich-master-d1 (Track 08).flac
+8a912b2aa0b05aad89a3ac4a7c2750bb *bd-95-07-08-munich-master-d2 (Track 01).flac
+49ac9e5953f029e2066332da86c89088 *bd-95-07-08-munich-master-d2 (Track 02).flac
+dce820caa9ff7e3a5766bc68bc914479 *bd-95-07-08-munich-master-d2 (Track 03).flac
+74d3e22ff2ce28bd04be6bf25b98a3fa *bd-95-07-08-munich-master-d2 (Track 04).flac
+464b953e7cd59a4faf266e8afae1ba2b *bd-95-07-08-munich-master-d2 (Track 05).flac
+c24c3e5dc5a29c2213cc4ff8df76181d *bd-95-07-08-munich-master-d2 (Track 06).flac
+df9a958e96318757583dffd579ea5870 *bd-95-07-08-munich-master-d2 (Track 07).flac
+56f25a3a1a25524cce6fe42819e027ff *bd-95-07-08-munich-master.txt
+===================
+===================
+===================
+=== ffp for: bd95-07-08-i.flacf
+===================
+===================
+===================
+bd-95-07-08-munich-master-d1 (Track 01).flac:a37d418b40f013b6d26158389d42791c
+bd-95-07-08-munich-master-d1 (Track 02).flac:64877f99dfb8674e16723d1d97a7f702
+bd-95-07-08-munich-master-d1 (Track 03).flac:30dde631468cb2ed80fadb19b29dcbe6
+bd-95-07-08-munich-master-d1 (Track 04).flac:46980162dce954faff826a7d83d9ae53
+bd-95-07-08-munich-master-d1 (Track 05).flac:c1da42ff67718bebc2903ea8228bd5cf
+bd-95-07-08-munich-master-d1 (Track 06).flac:99061f398c4e459446e86cd58580da88
+bd-95-07-08-munich-master-d1 (Track 07).flac:4475ee15ff3392e13ae2d060420fd76a
+bd-95-07-08-munich-master-d1 (Track 08).flac:279f346c658e81618ee8fa658fc39003
+bd-95-07-08-munich-master-d2 (Track 01).flac:9c9546ebdcb64212a888885681a3f741
+bd-95-07-08-munich-master-d2 (Track 02).flac:76d432fdc6df5c8175a2d4e2bb3028b0
+bd-95-07-08-munich-master-d2 (Track 03).flac:21d298c4ce94d851b622d8a4231ca3ed
+bd-95-07-08-munich-master-d2 (Track 04).flac:adac6e4d8c022f4ecb0318068946ba53
+bd-95-07-08-munich-master-d2 (Track 05).flac:0ee6902d1dfe9c403c9dd7d0070069e6
+bd-95-07-08-munich-master-d2 (Track 06).flac:876b756bfc5cea810b9b16fa3db04fb5
+bd-95-07-08-munich-master-d2 (Track 07).flac:608bbed4f42c6e44220f054d9045ec60
+===================
+===================
+===================
+=== shntool len for: bd95-07-08-i.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.43       53726684 B   -b-   --   ---xx   flac  0.6452  bd-95-07-08-munich-master-d1 (Track 01).flac
+     9:25.64       99816572 B   ---   --   ---xx   flac  0.5366  bd-95-07-08-munich-master-d1 (Track 02).flac
+     6:20.35       67114364 B   ---   --   ---xx   flac  0.6481  bd-95-07-08-munich-master-d1 (Track 03).flac
+     7:31.71       79723436 B   ---   --   ---xx   flac  0.6083  bd-95-07-08-munich-master-d1 (Track 04).flac
+     7:07.42       75421628 B   ---   --   ---xx   flac  0.6400  bd-95-07-08-munich-master-d1 (Track 05).flac
+     7:17.03       77093900 B   ---   --   ---xx   flac  0.6430  bd-95-07-08-munich-master-d1 (Track 06).flac
+     8:25.16       89119676 B   ---   --   ---xx   flac  0.4440  bd-95-07-08-munich-master-d1 (Track 07).flac
+     9:02.49       95724092 B   ---   --   ---xx   flac  0.4495  bd-95-07-08-munich-master-d1 (Track 08).flac
+     7:27.58       78987164 B   -b-   --   ---xx   flac  0.4926  bd-95-07-08-munich-master-d2 (Track 01).flac
+     6:58.29       73803452 B   ---   --   ---xx   flac  0.6214  bd-95-07-08-munich-master-d2 (Track 02).flac
+    10:47.46      114239036 B   ---   --   ---xx   flac  0.5659  bd-95-07-08-munich-master-d2 (Track 03).flac
+    10:14.69      108471932 B   ---   --   ---xx   flac  0.6503  bd-95-07-08-munich-master-d2 (Track 04).flac
+     6:54.06       73043756 B   ---   --   ---xx   flac  0.6369  bd-95-07-08-munich-master-d2 (Track 05).flac
+     9:28.15      100230524 B   ---   --   ---xx   flac  0.4778  bd-95-07-08-munich-master-d2 (Track 06).flac
+     7:55.51       83909996 B   ---   --   ---xx   flac  0.5847  bd-95-07-08-munich-master-d2 (Track 07).flac
+   120:01.72     1270426212 B                            0.5700  (15 files)
+===================
+===================
+===================

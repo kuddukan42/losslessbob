@@ -1,0 +1,112 @@
+===================
+===================
+===================
+=== Bob Dylan Plaza de Toros Bilbao Spain 6-19-1995.ffp
+===================
+===================
+===================
+track001.flac:06100e4838e8fd9c5e525608c2aeb405
+track002.flac:b43e36c9b2f39f1d0fe174f64417aa5b
+track003.flac:2a55c4b9765a31ad462771890868c0e9
+track004.flac:29a249c1d029ca9f6b30e7fe7b5e720b
+track005.flac:9de4b36fd1f2d136912a277978f1e61f
+track006.flac:d6a6ca4b47216cdd8c07936c41fe6448
+track007.flac:75c49559066c0d0043e0d7cbbaa3a939
+track008.flac:1cfa35771d058ecb56a2e24fdb5766ae
+track009.flac:789f3fa3b68cc6b01928d7aeb591f8a9
+track010.flac:d38196b8788f7fd59ddd7cf6775c4235
+track011.flac:6f97058cd3d89e7c983644dff581429b
+track012.flac:6459dff189acea8095b08e1e661d4531
+track013.flac:ee0bb32bf027a30f837b28eabb02f9df
+track014.flac:d8b78a488621dd82699580def487bb3c
+track015.flac:2daf31044e80a28f42b992d25ff15c56
+===================
+===================
+===================
+=== Bob Dylan Plaza de Toros Bilbao Spain 6-19-1995.md5
+===================
+===================
+===================
+26b189d3b86121f1a4f95a4aaa9dd876 *track001.flac
+e2cf3dedc75605ba43b8b074d1830e0a *track002.flac
+9f009455fd921b3db89964c9abf77aa4 *track003.flac
+060a843ead84561701ea464bb53bfa5b *track004.flac
+c0794022259db2520d0fa977dd0e70fb *track005.flac
+235468891b8d76206aea9fabdfbe6bd2 *track006.flac
+b18b485bb2174348057888449f94719d *track007.flac
+1cbad56f363d187846112dfd11333475 *track008.flac
+dd6b396fb70ec37140058c32a8000866 *track009.flac
+86a4752a720c16e350711ab4702b8576 *track010.flac
+da3021bab1ce133ee02e426c56dcfdcb *track011.flac
+c36b5d409629f8384aebf180959b5b96 *track012.flac
+144dda2f4f0113baed393d9383984556 *track013.flac
+b477e7d8b5f18c1bbac19a90eab602c3 *track014.flac
+86dff6a70d727b0fc38529d5e01f8e0c *track015.flac
+===================
+===================
+===================
+=== Bob Dylan Plaza de Toros Bilbao Spain 6-19-1995.txt
+===================
+===================
+===================
+track001.flac:06100e4838e8fd9c5e525608c2aeb405
+track002.flac:b43e36c9b2f39f1d0fe174f64417aa5b
+track003.flac:2a55c4b9765a31ad462771890868c0e9
+track004.flac:29a249c1d029ca9f6b30e7fe7b5e720b
+track005.flac:9de4b36fd1f2d136912a277978f1e61f
+track006.flac:d6a6ca4b47216cdd8c07936c41fe6448
+track007.flac:75c49559066c0d0043e0d7cbbaa3a939
+track008.flac:1cfa35771d058ecb56a2e24fdb5766ae
+track009.flac:789f3fa3b68cc6b01928d7aeb591f8a9
+track010.flac:d38196b8788f7fd59ddd7cf6775c4235
+track011.flac:6f97058cd3d89e7c983644dff581429b
+track012.flac:6459dff189acea8095b08e1e661d4531
+track013.flac:ee0bb32bf027a30f837b28eabb02f9df
+track014.flac:d8b78a488621dd82699580def487bb3c
+track015.flac:2daf31044e80a28f42b992d25ff15c56
+===================
+===================
+===================
+=== info bilbao.txt
+===================
+===================
+===================
+Bob Dylan 07/16/95
+Plaza De Toros, Bilbao, Spain
+ 
+
+I didnt receive this set of Spanish shows from the taper but
+from a VERY VIP Dylanlogist, still trucking today. He got the
+clones from the European taper. He sent me a set. 
+I put the first one on the dat machine. WTF!!!?? The levels were less than low AND the one channel was way up while the other was way down. I didnt bother putting the second show on. I tried to be Christian about this, thinking that the clucker who taped this had had a ale too many, as peeps in Europe are prone to have and fucked up.
+FF a week, someone called me and asked me for a copy of one of these shows. I said 'sure, why not,' but warned him about the possiblity of level/vol issues. NO problema he said. 
+Went to make a clone and it wouldnt take, couldnt figure it out.
+Then I moved in closer focusing on the small lights on the front of the deck... THE FING thing was 32!!! Checked all the shows all were 32 all were made with analog cables. ALL WERE FING ANALOG and had vol/balance issues. FING DYLANOLGISTS!! I knew what was coming but I just couldnt let it pass I had to call the VIP VERY important Dylanlogist and check what the f went down. So I braced myself and made the call.
+"The taper wanted to abort attempts at boot cds, thats why hes only sending to me and with the unfortunate adjustments. He will not be sending digital copies to anyone, wants to thwart the bootleggers". 
+"Or hes a bootlegger himslelf, the fing clucker"I said.
+VIP Dylanologist went ape.. "how dare you etc..... so and so
+is a highly esteemed European authority..."
+
+I think best to cut the story short here, right at this point. I was able, after much experimenting, to clone the 32 dat to Microtrack, then I put in Goldwave and resampled and fixed
+the balance and upped the vol.
+
+
+
+Let me see if I can figure out the lineage:
+
+Dat master, dat recorder and Senn2002>analog copies
+sent to Dyngst>"clone" sent to me>Cloned in Micotrack
+using Tascam dat deck and special rematering technique
+
+Dolphinsmile Producer
+Dolphinsmile Technical Remastering
+for the Dolphinsmile Archive
+
+
+Crash On The Levee (Down In The Flood), If Not For You, All Along The Watchtower, Born In Time, I'll Be Your Baby Tonight, Silvio
+Mr. Tambourine Man, Masters Of War, It's All Over Now Baby Blue
+God Knows, Disease Of Conceit, Leopard-Skin Pill-Box Hat 
+E: Like A Rolling Stone, It Ain't Me Babe, Rainy Day Women No. 12 & 35
+===================
+===================
+===================

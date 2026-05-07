@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-24 Hammersmith.shnf 
+=================== 
+=================== 
+=================== 
+f6fa97934d6c5503381f40a426470485  bd03-11-24.txt
+f8c4a1913232f079149c947ddbf3ebfc  d1\01.shn
+fef080ee6e020aca64cc93000ba85611  d1\02.shn
+9b63a243f43c047927879aaa08003f5a  d1\03.shn
+a25b0c9645d902c970fe207c7f41aa39  d1\04.shn
+5cff83aa98a6d9c3055c5156eb622bcf  d1\05.shn
+6bf8ff59325e5200cc24a7834dd402e4  d1\06.shn
+b79a9b7f2fa9ab3853d0cb11adf30efb  d1\07.shn
+5dbb7ace582d6f216e7608c85ced2ed9  d1\08.shn
+4ae7416039788a27f7f02a50b576b02e  d1\09.shn
+004e56a79e3e379a44d3b8d4ca8f3e2f  d1\10.shn
+ac3f48264b8445d37dfb5202adf0af48  d1\11.shn
+da464c67e0a49e9476ca0f6d1219648b  d1\noname.md5
+c3b4a9158f550c816f41d5d5b2fea69a  d2\01.shn
+2fe26091091a05d52bf543bf9ad2c828  d2\02.shn
+70b334f51eaedc002ec88be4ec3aac29  d2\03.shn
+97ef1a190c99dcf20e301c9495fa0ca7  d2\04.shn
+634131e9671ae2adb432cbe62c906d30  d2\05.shn
+dda87944cb6de66194d5d54045c16130  d2\06.shn
+02657a35de86c61cd491aa80ae6e127f  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-24 Hammersmith.shnf\d1 
+=================== 
+=================== 
+=================== 
+2bd6055528eef20356782a8a035514fe  [shntool]  01.wav
+88441c1e29a62521b210f83175ed57d3  [shntool]  02.wav
+17c442c558ee0832651ed67b58c699f8  [shntool]  03.wav
+ebdc9b92dc9fc06a90d863f5281eb024  [shntool]  04.wav
+296368d59e59e3996125a67d96635893  [shntool]  05.wav
+d1020a5609ed602642678ffb0a4eb5a5  [shntool]  06.wav
+3fec4d25297b00b4996647479257fd74  [shntool]  07.wav
+df6a0f77ec66930764d684db0d53f118  [shntool]  08.wav
+ec58fdac06fb7ff1b3025beaa251a457  [shntool]  09.wav
+4569f330205bbd12e20da6432928ed8b  [shntool]  10.wav
+7b9988399ab8f6e668d2fb18fce3516c  [shntool]  11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-24 Hammersmith.shnf\d2 
+=================== 
+=================== 
+=================== 
+1a36d8899690b9c75bde9bcd326f9fe7  [shntool]  01.wav
+b7e8f081e03e1d928c0e13264abb9913  [shntool]  02.wav
+ad2d7daf8ec78fe2990ef74205b45be9  [shntool]  03.wav
+be386ddbde706b0509f8298300a63770  [shntool]  04.wav
+dd8b114ae1af54d716b5c0ec25c3472d  [shntool]  05.wav
+7ff5da541af45a33ec3d1eafc32fded9  [shntool]  06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-24 Hammersmith.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:41.04       60161852 B   ---   --   -----    wav  1.0000  01.wav
+     4:50.22       51207788 B   ---   --   -----    wav  1.0000  02.wav
+     5:58.60       63292364 B   ---   --   -----    wav  1.0000  03.wav
+     6:01.12       63708668 B   ---   --   -----    wav  1.0000  04.wav
+     7:44.11       81875516 B   ---   --   -----    wav  1.0000  05.wav
+     6:23.19       67605932 B   ---   --   -----    wav  1.0000  06.wav
+     6:53.26       72914396 B   ---   --   -----    wav  1.0000  07.wav
+     5:35.02       59098748 B   ---   --   -----    wav  1.0000  08.wav
+     8:07.14       85939772 B   ---   --   -----    wav  1.0000  09.wav
+     7:57.22       84194588 B   ---   --   -----    wav  1.0000  10.wav
+     6:53.45       72959084 B   ---   --   -----    wav  1.0000  11.wav
+    72:05.12      762958708 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-24 Hammersmith.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:29.33       79281260 B   ---   --   -----    wav  1.0000  01.wav
+     6:15.66       66305276 B   ---   --   -----    wav  1.0000  02.wav
+     7:26.06       78688556 B   ---   --   -----    wav  1.0000  03.wav
+     4:43.01       49923596 B   ---   --   -----    wav  1.0000  04.wav
+     6:41.23       70790540 B   ---   --   -----    wav  1.0000  05.wav
+     7:12.60       76345964 B   ---   --   -----    wav  1.0000  06.wav
+    39:48.39      421335192 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

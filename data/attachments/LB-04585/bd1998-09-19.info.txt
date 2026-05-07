@@ -1,0 +1,37 @@
+Bob Dylan
+
+University Of Hawaii At Manoa
+Honolulu, Hawaii
+19 September 1998
+
+CD1 46:40
+
+1. Leopard-Skin Pill-Box Hat
+2. Tonight I'll Be Staying Here With You
+3. Cold Irons Bound
+4. Simple Twist Of Fate
+5. Can't Wait
+6. Silvio
+7. Stone Walls And Steel Bars
+8. Don't Think Twice, It's All Right
+
+CD2 58:02
+
+9. Tangled Up In Blue
+10. It Ain't Me, Babe
+11. I Shall Be Released
+12. 'Til I Fell In Love With You
+
+13. Love Sick
+14. Rainy Day Women # 12 & 35
+15. Blowin' In The Wind
+16. Highway 61 Revisited
+17. Forever Young
+
+Audience recording (Full spectrum) > Unknown transfer > CDR (x) >  EAC (Secure) > FLAC > Trade DVD > HD > CEP > TLH > HungerCity
+
+Original d1 (11 tracks) and d2 (10 tracks) overlapped. I deleted d1t01 which was 5.68" silence. Faded in d1t02 which began w/ a loud click. Concatenated d1t04 + d1t05 and d1t10 + d1t11. I deleted the first 19" (overlap) of d2t01 and concatenated the remainder w/ d2t02. Faded out d1 and faded in d2 (overlap is now about 1"). Removed 3.761" silence (this can be seen in the screendump) from d2t03@7:33.437. Removed 20.437" silence from the end of d2t10 and faded out.
+
+Excellent sound, [A-].
+
+Please retain this info file as an indicator for this particular lossless set of files. If you happen to pass it on in trades, then please list it as such in your description, thereby reducing the possibility of others getting duplicates.

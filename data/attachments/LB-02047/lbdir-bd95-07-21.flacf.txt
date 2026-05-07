@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-21.flacf 
+=================== 
+=================== 
+=================== 
+763ca2bf25054f9936bf08d2464f6688  bd - 1995-07-21-valencia-d1\1 Crash On The Levee (Down In The Flood).flac
+f43dbbac30ed97514258f286250a4406  bd - 1995-07-21-valencia-d1\2 I'll Be Your Baby Tonight-fixed.flac
+c41ccd52875bda778c444a9944634d3b  bd - 1995-07-21-valencia-d1\3 All Along The Watchtower-fixed.flac
+a0ee1a439bbb772b01007eaaf7ba68ce  bd - 1995-07-21-valencia-d1\4 Just Like A Woman-fixed.flac
+40f6729e7c8edbf018ae4a94508da42f  bd - 1995-07-21-valencia-d1\5 Positively 4th Street-fixed.flac
+63fc65e8bfba30d4121e0dbc62af379e  bd - 1995-07-21-valencia-d1\6 Silvio-fixed.flac
+58b107a910bbc574c8c857b836045ad1  bd - 1995-07-21-valencia-d1\7 Mr. Tambourine Man-fixed.flac
+5be25ad11232a26e0169a7c987ce4dd5  bd - 1995-07-21-valencia-d1\8 Gates Of Eden-fixed.flac
+5797f9556a852e9c0464b262f851fb37  bd - 1995-07-21-valencia-d2\1 Don't Think Twice, It's All Right.flac
+70ded8eff864aaa061a47070725f9843  bd - 1995-07-21-valencia-d2\2 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+588ba4a015c8c6fe375cd6c995c8292b  bd - 1995-07-21-valencia-d2\3 I Believe In You.flac
+81d7abb8d743bcf9a019e095407de6d4  bd - 1995-07-21-valencia-d2\4 Leopard-Skin Pill-Box Hat.flac
+ccfee081422a18f3fa593a9b74811bf8  bd - 1995-07-21-valencia-d2\5 Knockin' On Heaven's Door.flac
+eb9620d59253967d17e8397b0bdc104a  bd - 1995-07-21-valencia-d2\6 My Back Pages.flac
+15f2657de75967d7d026bb6aefa7dda2  bd - 1995-07-21-valencia-d2\7 Rainy Day Women # 12 & 35.flac
+2fa434ce9045f60d18b2f5cc9592de5c  bd-1995-07-21-Valencia.txt
+2853ac01b11f4fbf46793b54965b7262  bd95-07-21.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-21.flacf\bd - 1995-07-21-valencia-d1 
+=================== 
+=================== 
+=================== 
+1 Crash On The Levee (Down In The Flood).flac:eede72eb809f81494c1001720b6a6f14
+2 I'll Be Your Baby Tonight-fixed.flac:ccf3c948bec95405cf62bd482d5f8c3d
+3 All Along The Watchtower-fixed.flac:f72d3cbf4d46b2b49ce97aa2827504af
+4 Just Like A Woman-fixed.flac:88678999ac3b95c07b3546314d553d93
+5 Positively 4th Street-fixed.flac:cff3b9377c20a22b4ed2a7d62e08355e
+6 Silvio-fixed.flac:668d30576fcb3a2e0ef8297e15ac0d47
+7 Mr. Tambourine Man-fixed.flac:627d2e5862a2daf4d4879cad8de4a42f
+8 Gates Of Eden-fixed.flac:46bb61ce6f9f5a5619f8ab3281c22f20
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-21.flacf\bd - 1995-07-21-valencia-d2 
+=================== 
+=================== 
+=================== 
+1 Don't Think Twice, It's All Right.flac:4cecd1822fedc5c9ef40f6000e2f39ea
+2 Stuck Inside Of Mobile With The Memphis Blues Again.flac:d791c776eb3c25563256d33d7d4da1d1
+3 I Believe In You.flac:7c8369f9d6b4d853f5a1dc32c9f783e9
+4 Leopard-Skin Pill-Box Hat.flac:122984dcc222cfcca40f19f672d092af
+5 Knockin' On Heaven's Door.flac:5a5eedd26ab8163ccc46309902ab00e2
+6 My Back Pages.flac:731ef6929a8d77a73dd3c4ff6088052c
+7 Rainy Day Women # 12 & 35.flac:1b93945d672e69c7f57729f9e238b366
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-21.flacf\bd - 1995-07-21-valencia-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:58.65       52720124 B   ---   --   ---xx   flac  0.5356  1 Crash On The Levee (Down In The Flood).flac
+     6:48.00       71971244 B   ---   --   ---xx   flac  0.4903  2 I'll Be Your Baby Tonight-fixed.flac
+     6:04.51       64329596 B   ---   --   ---xx   flac  0.5194  3 All Along The Watchtower-fixed.flac
+     6:31.73       69144140 B   ---   --   ---xx   flac  0.4683  4 Just Like A Woman-fixed.flac
+     8:35.70       91010684 B   ---   --   ---xx   flac  0.4677  5 Positively 4th Street-fixed.flac
+     6:40.72       70729388 B   ---   --   ---xx   flac  0.5357  6 Silvio-fixed.flac
+     7:44.28       81915500 B   ---   --   ---xx   flac  0.3812  7 Mr. Tambourine Man-fixed.flac
+     7:50.26       82969196 B   ---   --   ---xx   flac  0.4229  8 Gates Of Eden-fixed.flac
+    55:15.10      584789872 B                            0.4721  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-21.flacf\bd - 1995-07-21-valencia-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:26.74       89432492 B   ---   --   ---xx   flac  0.4778  1 Don't Think Twice, It's All Right.flac
+     9:41.25      102547244 B   ---   --   ---xx   flac  0.5120  2 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     7:27.69       79013132 B   ---   --   ---xx   flac  0.4888  3 I Believe In You.flac
+     6:58.23       73789340 B   ---   --   ---xx   flac  0.5266  4 Leopard-Skin Pill-Box Hat.flac
+     8:33.39       90584972 B   ---   --   ---xx   flac  0.5246  5 Knockin' On Heaven's Door.flac
+     9:57.19      105355532 B   ---   --   ---xx   flac  0.4569  6 My Back Pages.flac
+     7:16.08       76929260 B   ---   --   ---xx   flac  0.5039  7 Rainy Day Women # 12 & 35.flac
+    58:21.32      617651972 B                            0.4973  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,8 @@
+Bob Dylan, 6/17/91, Stuttgart, Germany, 2CDR
+
+LB-6681, (63min+34min), legendary taper J, Sennheiser MKE2002 -> portable DATrecorder - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 10/08; same recording as hg LB-1842 based on same clapping wavs at end of d1t8; in comparison that has less fidelity like an analog generation and more hiss; excellent sound [A]
+
+1 intro, 2 New Morning, 3 Lay Lady Lay, 4 All Along The Watchtower, 5 Shelter From The Storm, 6 Gotta Serve Somebody, 7 Wiggle Wiggle, 8 When I Paint My Masterpiece, 9 Leopard-Skin Pill-Box Hat, 10 Trail Of The Buffalo (trad. arr. Woody Guthrie), 11 It's All Over Now, Baby Blue, 12 Mr. Tambourine Man, 13 Bob Dylan's Dream, 1 Knockin' On Heaven's Door, 2 Everything Is Broken, 3 I Believe In You, 4 Highway 61 Revisited, 5 What Good Am I?, 6 Ballad Of A Thin Man
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

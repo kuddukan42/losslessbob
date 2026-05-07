@@ -1,0 +1,10 @@
+Bob Dylan, 6/10/88, Berkeley, California, 
+
+LB-16060, nathan 24, Nathan Wirth wav file (24bit, 48kHz) as shared at expectingrain, split in Audacity, tagged and converted to flac with foobar2000
+---------------------------------------------------
+bittorrent download 06/24; this is same recording as LB-9895 based on same clapping wavs at end of t3 with wavs inverted; in comparison on t8 that is a little warmer; (did not listen to all of this)
+---------------------------------------------------
+1. Subterranean Homesick Blues, 2. Joey (Bob Dylan & Jacques Levy), 3. Absolutely Sweet Marie, 4. Watching The River Flow, 5. Tangled Up In Blue, 6. Masters Of War, 7. San Francisco Bay Blues (Jesse Fuller), 8. Boots Of Spanish Leather, 9. Lakes Of Pontchartrain (trad.), 10. The Times They Are A-Changin', 11. It Takes A Lot To Laugh, It Takes A Train To Cry, 12. In The Garden, 13. Gates Of Eden, 14. Like A Rolling Stone, 15. Rank Strangers To Me (A. Brumley), 16. Everybody's Movin' (Glen Trout), 17. Maggie's Farm
+---------------------------------------------------
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

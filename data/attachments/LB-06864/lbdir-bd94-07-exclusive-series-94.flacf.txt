@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-exclusive-series-94.flacf 
+=================== 
+=================== 
+=================== 
+44fba6213cae0873149471647a70bd49  bd94-07-exclusive-series-94.flacf.md5
+46eeaa9d47957d062c5e90152a64dd8e  bd94-07-exclusive_series-94-d1t01.flac
+0b6005cfa833827bf523add0159e7c4c  bd94-07-exclusive_series-94-d1t02.flac
+76f26a33884218f60aba88dd5bd62293  bd94-07-exclusive_series-94-d1t03.flac
+d8163e05174b2a9a5300eeb31d717194  bd94-07-exclusive_series-94-d1t04.flac
+72ebbb19e53a2539cc32d7844fdaea42  bd94-07-exclusive_series-94-d1t05.flac
+0a85c0de394c0f7b6a15e51b8e3cec52  bd94-07-exclusive_series-94-d1t06.flac
+a6599deafc626d1e3ffed586a4688571  bd94-07-exclusive_series-94-d1t07.flac
+667dd472268488f4fc320e78eae5b967  bd94-07-exclusive_series-94-d1t08.flac
+4a2b93eb320de71a61ebd95ce2eced27  bd94-07-exclusive_series-94-d1t09.flac
+255e80a063607af73013471e7aa7a0d1  bd94-07-exclusive_series-94-d1t10.flac
+358018d4b6823a0e311cd903e4cc810c  bd94-07-exclusive_series-94-d1t11.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-exclusive-series-94.flacf 
+=================== 
+=================== 
+=================== 
+bd94-07-exclusive_series-94-d1t01.flac:ca76a9c2fce5b26f3bc103e72358e73c
+bd94-07-exclusive_series-94-d1t02.flac:43621bb973f0b10212a8e60b1cefd1cd
+bd94-07-exclusive_series-94-d1t03.flac:69ec3d0a049c825d1285dc212de2f747
+bd94-07-exclusive_series-94-d1t04.flac:7482d52e01c432fde8eb3d62948b8697
+bd94-07-exclusive_series-94-d1t05.flac:f17ec2f4d1776799a448296af416eea9
+bd94-07-exclusive_series-94-d1t06.flac:fc913ae52d08790a1c6a9083333b7f48
+bd94-07-exclusive_series-94-d1t07.flac:c0861deb172639fa44c254266bf05185
+bd94-07-exclusive_series-94-d1t08.flac:2b73b52aa4d629b0117a1352aae64e8a
+bd94-07-exclusive_series-94-d1t09.flac:79a7199b2ce18fe3b4d657f915d3acc4
+bd94-07-exclusive_series-94-d1t10.flac:21c7a916e668ee527f51e29710a286a6
+bd94-07-exclusive_series-94-d1t11.flac:5720d149c6ff8b93177b4f39dcefbaf5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-exclusive-series-94.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:12.13       65651420 B   ---   --   ---xx   flac  0.6748  bd94-07-exclusive_series-94-d1t01.flac
+     7:53.27       83500748 B   ---   --   ---xx   flac  0.6422  bd94-07-exclusive_series-94-d1t02.flac
+     7:47.58       82515260 B   ---   --   ---xx   flac  0.6174  bd94-07-exclusive_series-94-d1t03.flac
+     5:41.12       60180668 B   ---   --   ---xx   flac  0.5840  bd94-07-exclusive_series-94-d1t04.flac
+     5:22.25       56859644 B   ---   --   ---xx   flac  0.6385  bd94-07-exclusive_series-94-d1t05.flac
+     7:36.50       80556044 B   ---   --   ---xx   flac  0.6462  bd94-07-exclusive_series-94-d1t06.flac
+     6:36.03       69861500 B   ---   --   ---xx   flac  0.6333  bd94-07-exclusive_series-94-d1t07.flac
+     6:41.17       70776428 B   ---   --   ---xx   flac  0.5906  bd94-07-exclusive_series-94-d1t08.flac
+     7:04.20       74840684 B   ---   --   ---xx   flac  0.6603  bd94-07-exclusive_series-94-d1t09.flac
+    10:05.40      106816124 B   ---   --   ---xx   flac  0.7298  bd94-07-exclusive_series-94-d1t10.flac
+     6:50.73       72495740 B   ---   --   ---xx   flac  0.5929  bd94-07-exclusive_series-94-d1t11.flac
+    77:51.38      824054260 B                            0.6417  (11 files)
+=================== 
+=================== 
+=================== 

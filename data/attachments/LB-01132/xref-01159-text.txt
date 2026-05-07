@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== 780711_Gothenburg.txt
+===================
+===================
+===================
+Bob Dylan
+7/11/78
+Scandinavium
+Gothenburg,Sweden
+
+disc 1
+
+My Back Pages
+She's Love Crazy
+Baby Stop Crying
+Mr. Tambourine Man
+Shelter From The Storm
+It's All Over Now, Baby Blue
+Girl From The North Country
+Ballad Of A Thin Man
+Maggie's Farm
+I Dont Believe You (She Acts Like We Never Have Met)
+Like A Rolling Stone
+I Shall Be Released
+Is Your Love In Vain?
+Going, Going, Gone
+ Rainy Day Women # 12 & 35
+True Love Tends To Forget
+
+disc 2
+
+Gates Of Eden
+The Man In Me
+One More Cup Of Coffee (Valley Below)
+Blowin' In The Wind
+I Want You
+Seor (Tales Of Yankee Power)
+Masters Of War
+Just Like A Woman
+Don't Think Twice, It's All Right
+All Along The Watchtower
+All I Really Want To Do
+It's Alright, Ma (I'm Only Bleeding)
+Forever Young
+Changing Of The Guards
+The Times They Are A-Changin'
+
+01.flac:969248c7334b12c0f008d3f2eddea1cd
+02.flac:eea4a5cc4cf4bb589958c1f055fa92cf
+03.flac:e4410cdbbb3782706daf8a5549abe750
+04.flac:c5ed76b79ca1ddc223cc8ee2619783d4
+05.flac:ac12398a58b888905d3a6e8a42f44673
+06.flac:b4354d3ff34eee979a116ee9cf753a5a
+07.flac:93021edb0793d9bf47c522ae4b3b270f
+08.flac:cdb11c93ea3a2264b303ced16dc2f9aa
+09.flac:beaf9088bf07eb5f4c5a056cda3bf06f
+10.flac:a3e0889d15b8c4b680a5312395c1ef4e
+11.flac:06517a00c2dc79f1e89c13d1bdeaf961
+12.flac:487d206a932f5af82ee56eb5b709ed0a
+13.flac:e6efd7748fc609cccc13b09c3ac5311a
+14.flac:c365b7811c66ca93b2af86b33c4edae6
+15.flac:5cc4765d3dfb33a0a79c4b84f4183e9a
+16.flac:637b2a630fc357cae839bf444490afa2
+17.flac:c52d5733235680902ed6f15082ed25b9
+18.flac:519087261ac2b275bc1051e277eff86d
+19.flac:d298dc8337c2211f5e6909fa361136ea
+20.flac:cb34e26327683f08f4d0c25104da83b4
+21.flac:e3f9e540afef9da47f7956463cbd02a0
+22.flac:43a4593f7a525082c7e5095357c76f25
+23.flac:54ea11b14b345d21e5a17d3cab8ef98c
+24.flac:247d39320287c7d6a49c5a15a603df2c
+25.flac:7518f5690db537c13fc15510a5ee1de1
+26.flac:12b1f194cf954c8ae6baec604b1d59b7
+27.flac:27ad40511185731fab56b48722203c5d
+28.flac:d5086dad4603a027a9c40e7dfa5e9c80
+29.flac:26ce6e6d07978553081b66496b0cc625
+30.flac:bafe6967da0643c198d855fe85b0a3f9
+31.flac:f150fa91e160bd6bc78f532a0a1776af
+
+===================
+===================
+===================

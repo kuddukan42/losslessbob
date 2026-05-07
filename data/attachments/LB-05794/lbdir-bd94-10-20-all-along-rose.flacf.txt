@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-20-all-along-rose.flacf 
+=================== 
+=================== 
+=================== 
+382369a807b67e86083af573128f43c3  bd94-10-20-all-along-rosed1t01.flac
+a5a3f078c92ca5c590fe0a4e393af359  bd94-10-20-all-along-rosed1t02.flac
+9c0aafd6cf4b25d0272504f0e701a19d  bd94-10-20-all-along-rosed1t03.flac
+9567545575e9dba9800c463bf8949a64  bd94-10-20-all-along-rosed1t04.flac
+ef3eb492cf2b73407ba9824d0a97a376  bd94-10-20-all-along-rosed1t05.flac
+1fe719596a8231b1c13f4ee82d391e4a  bd94-10-20-all-along-rosed1t06.flac
+5cc08bfa6e1f6972b6e2562b583c2039  bd94-10-20-all-along-rosed1t07.flac
+bb7bde1f87a1c4e696c5e0fa2ac287e0  bd94-10-20-all-along-rosed1t08.flac
+c9d4a92dc82c04001b47e562ac72e2f0  bd94-10-20-all-along-rosed1t09.flac
+0597b6a6e55a4173bfb2c5356fa2368d  bd94-10-20-all-along-rosed1t10.flac
+ec28afa85cf7da34c768950edfd41ba3  bd94-10-20-all-along-rosed2t01.flac
+922e909e60a6aad96ab85c4e2abdb792  bd94-10-20-all-along-rosed2t02.flac
+d2cfc013b64e12bd10efc6613a2eb37b  bd94-10-20-all-along-rosed2t03.flac
+c1ce348c3874f89f05b8fa53ad1d6473  bd94-10-20-all-along-rosed2t04.flac
+fc70affd0e4b7993171a5625dc23b05e  bd94-10-20-all-along-rosed2t05.flac
+6fff5f60344490a9bba86b6cfd2e145f  bd94-10-20-all-along-rosed2t06.flac
+3549af82ce903a281425a4a9b974bcef  bd94-10-20-all-along-rosed2t07.flac
+ee10aa14900af9d86d34967366ebe6c1  bd94-10-20-all-along-rosed2t08.flac
+fb919c5710dfc230936aad6e31e3443e  bd94-10-20-all-along-rosed2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-20-all-along-rose.flacf 
+=================== 
+=================== 
+=================== 
+bd94-10-20-all-along-rosed1t01.flac:5705d63911fda14062d906c8c9909eaf
+bd94-10-20-all-along-rosed1t02.flac:d79899508f32665bc9b5d4ce96a9744a
+bd94-10-20-all-along-rosed1t03.flac:82ec63eede150994b7e0f656173c556f
+bd94-10-20-all-along-rosed1t04.flac:c3e4028ad2401a01b771203634c9654a
+bd94-10-20-all-along-rosed1t05.flac:a57762b8d4e33b3a81a1ae90ce387b38
+bd94-10-20-all-along-rosed1t06.flac:90fe058910b2b14b131482275ddf9284
+bd94-10-20-all-along-rosed1t07.flac:9225be44f494d90f8a22cf53e6ea1d5d
+bd94-10-20-all-along-rosed1t08.flac:4a470dc8f10606b0c88878130661a389
+bd94-10-20-all-along-rosed1t09.flac:d49f4eeb737de1ed3671e656fc7ea350
+bd94-10-20-all-along-rosed1t10.flac:c33254ed735c7c51b53548aec4671040
+bd94-10-20-all-along-rosed2t01.flac:0ea17d50626b4cd5ee262da626d7f011
+bd94-10-20-all-along-rosed2t02.flac:ecef7d6c6a85df3ea650e3e2c2c96ee8
+bd94-10-20-all-along-rosed2t03.flac:b56c57df07b98e0a1d50546941b6bb97
+bd94-10-20-all-along-rosed2t04.flac:d3400bcd1c489936cbd63f4e135cf5e5
+bd94-10-20-all-along-rosed2t05.flac:79320ac57252a1dca4cb0dfcb41e14e0
+bd94-10-20-all-along-rosed2t06.flac:2dd7d2fc1a18d7c695a7022bf81fdef2
+bd94-10-20-all-along-rosed2t07.flac:697aee4bd2667957fb105a0afb506e40
+bd94-10-20-all-along-rosed2t08.flac:394483bf1df18d87726839c8b5889d20
+bd94-10-20-all-along-rosed2t09.flac:c0c4e38e39a55f765c962bc607ea2f45
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-10-20-all-along-rose.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:37.10       80638364 B   ---   --   ---xx   flac  0.6024  bd94-10-20-all-along-rosed1t01.flac
+     7:04.10       74817164 B   ---   --   ---xx   flac  0.6150  bd94-10-20-all-along-rosed1t02.flac
+     5:31.55       58517804 B   ---   --   ---xx   flac  0.6352  bd94-10-20-all-along-rosed1t03.flac
+    10:01.70      106181084 B   ---   --   ---xx   flac  0.5671  bd94-10-20-all-along-rosed1t04.flac
+     8:38.60       91516364 B   ---   --   ---xx   flac  0.6086  bd94-10-20-all-along-rosed1t05.flac
+     7:05.57       75104108 B   ---   --   ---xx   flac  0.6065  bd94-10-20-all-along-rosed1t06.flac
+     4:34.65       48486524 B   ---   --   ---xx   flac  0.5040  bd94-10-20-all-along-rosed1t07.flac
+     6:05.68       64545980 B   ---   --   ---xx   flac  0.4792  bd94-10-20-all-along-rosed1t08.flac
+     6:24.12       67765868 B   ---   --   ---xx   flac  0.5021  bd94-10-20-all-along-rosed1t09.flac
+     6:21.05       67220204 B   ---   --   ---xx   flac  0.6178  bd94-10-20-all-along-rosed1t10.flac
+     9:19.42       98706428 B   ---   --   ---xx   flac  0.6293  bd94-10-20-all-along-rosed2t01.flac
+     8:01.33       84926060 B   ---   --   ---xx   flac  0.6385  bd94-10-20-all-along-rosed2t02.flac
+     7:36.72       80607788 B   ---   --   ---xx   flac  0.6257  bd94-10-20-all-along-rosed2t03.flac
+     7:13.18       76423580 B   ---   --   ---xx   flac  0.5404  bd94-10-20-all-along-rosed2t04.flac
+     8:47.00       92962844 B   ---   --   ---xx   flac  0.6633  bd94-10-20-all-along-rosed2t05.flac
+     6:01.55       63809804 B   ---   --   ---xx   flac  0.6831  bd94-10-20-all-along-rosed2t06.flac
+    11:15.67      119227628 B   ---   --   ---xx   flac  0.5607  bd94-10-20-all-along-rosed2t07.flac
+     5:48.45       61493084 B   ---   --   ---xx   flac  0.5943  bd94-10-20-all-along-rosed2t08.flac
+     6:15.08       66168860 B   ---   --   ---xx   flac  0.5905  bd94-10-20-all-along-rosed2t09.flac
+   139:45.02     1479119540 B                            0.5949  (19 files)
+=================== 
+=================== 
+=================== 

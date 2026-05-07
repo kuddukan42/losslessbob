@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-19-LTD.flacf 
+=================== 
+=================== 
+=================== 
+c702b8c6cdbc372d560bc2eebe42d209  bd1991-06-19-Offenbach-d1\bd1991-06-19-Offenbach-d1.md5
+71f3e0015e43cd6ba8ceb37b2590a494  bd1991-06-19-Offenbach-d1\Track01.flac
+11e173bc9202acb7ebf5750e6f0a0350  bd1991-06-19-Offenbach-d1\Track02.flac
+8114a2c69a3ef9ce75b6deb30db08501  bd1991-06-19-Offenbach-d1\Track03.flac
+b4628472e8bd9739bc1313ed1670010d  bd1991-06-19-Offenbach-d1\Track04.flac
+d46f160a4c3e456295b05aed706b60bf  bd1991-06-19-Offenbach-d1\Track05.flac
+24b71b4f3e91af601ada7daae9448e03  bd1991-06-19-Offenbach-d1\Track06.flac
+c84c999202407d3cafa31f55d8ec7611  bd1991-06-19-Offenbach-d1\Track07.flac
+a76f1580d8c66be8f069522870b4c502  bd1991-06-19-Offenbach-d1\Track08.flac
+7822465dca90c5b00438f5857ffd8d8c  bd1991-06-19-Offenbach-d2\bd1991-06-19-Offenbach-d2.md5
+6c2bf671d2034cebcdd3e77416461f06  bd1991-06-19-Offenbach-d2\Track01.flac
+bdf3ddfc65b5e49d233bd802117bf3e9  bd1991-06-19-Offenbach-d2\Track02.flac
+7a91703d3333787851a965051eea3f9c  bd1991-06-19-Offenbach-d2\Track03.flac
+51cb4c2f0969f10f44978b329238a94b  bd1991-06-19-Offenbach-d2\Track04.flac
+959bae65a00398afbf848f5359756b60  bd1991-06-19-Offenbach-d2\Track05.flac
+fd0e283a30396af7b54cd6ad42e135ad  bd1991-06-19-Offenbach-d2\Track06.flac
+6df9daeb9a967316604f8d10151d545a  bd1991-06-19-Offenbach-d2\Track07.flac
+e955698a515bd94c412c1ab40051df0d  bd1991-06-19-Offenbach-d2\Track08.flac
+e43e0355ab7a4721fbdf112ac7b3c667  bd1991-06-19-Offenbach-d2\Track09.flac
+d4022763479fc546deebb44d55c9bbd9  bd1991-06-19-Offenbach-d2\Track10.flac
+99f909f8334f06cc57dcb47c8b55cdac  bd1991-06-19-Offenbach-LDT.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-19-LTD.flacf\bd1991-06-19-Offenbach-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:e66c25703cc249ea0fcdfe582e63f5bc
+Track02.flac:a2442fcb3c7cf0c5bd94ab39e2b50f11
+Track03.flac:97ced31dc4ee50f73d7d188ec3a8e0ae
+Track04.flac:8a2dc5f75112c0c4ed245e0175ceeaee
+Track05.flac:586e5743e245af2240c739ad965c088c
+Track06.flac:e50ddb83e5af02861cc739e9ccb2c7d8
+Track07.flac:40bdd69fcf63f8cde2e938b7eb314bda
+Track08.flac:36fa89f212996b4a01c02e03db7b08b5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-19-LTD.flacf\bd1991-06-19-Offenbach-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:0166e8746e88aad73977d0612c8674d3
+Track02.flac:bb65a2e01983b16c081f9a57e7b08a63
+Track03.flac:eca8673deefcdc66481225fc1ef87b16
+Track04.flac:071086c8405cf0ba7cbacf4c2845853a
+Track05.flac:5b206a5ca81d07b6b004b00e4f74f15b
+Track06.flac:0d6407b8d066c8142521b2bf7d44dcb6
+Track07.flac:ceb991709cbea1f069525279f353dc1f
+Track08.flac:785a5b5bc6a8240644d6d30e21117253
+Track09.flac:8e02717f7724a44412ffb641d7e4f130
+Track10.flac:ca25ae1da59f6f8710e41827783f2f30
+=================== 
+=================== 
+=================== 
+=== shntool for: bd91-06-19-LTD.flacf\bd1991-06-19-Offenbach-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:34.10       58941164 B   ---   --   ---xx   flac  0.4682  Track01.flac
+     4:42.65       49897724 B   ---   --   ---xx   flac  0.4754  Track02.flac
+     5:18.00       56095244 B   ---   --   ---xx   flac  0.4748  Track03.flac
+     4:54.70       52026284 B   ---   --   ---xx   flac  0.4863  Track04.flac
+     8:18.25       87906044 B   ---   --   ---xx   flac  0.4777  Track05.flac
+     3:19.70       35268284 B   ---   --   ---xx   flac  0.5139  Track06.flac
+     5:53.40       62363324 B   ---   --   ---xx   flac  0.4764  Track07.flac
+     5:50.67       61897628 B   ---   --   ---xx   flac  0.5036  Track08.flac
+    43:52.47      464395696 B                            0.4829  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd91-06-19-LTD.flacf\bd1991-06-19-Offenbach-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.65       48839324 B   ---   --   ---xx   flac  0.4301  Track01.flac
+     6:43.45       71195084 B   ---   --   ---xx   flac  0.4938  Track02.flac
+     7:11.50       76146044 B   ---   --   ---xx   flac  0.4901  Track03.flac
+     6:04.35       64291964 B   ---   --   ---xx   flac  0.5195  Track04.flac
+     5:56.00       62798444 B   ---   --   ---xx   flac  0.4918  Track05.flac
+     4:32.05       47992604 B   ---   --   ---xx   flac  0.5041  Track06.flac
+     6:34.05       69513404 B   ---   --   ---xx   flac  0.4802  Track07.flac
+     4:51.00       51332444 B   ---   --   ---xx   flac  0.5148  Track08.flac
+     5:44.45       60787484 B   ---   --   ---xx   flac  0.5036  Track09.flac
+     5:42.32       60404108 B   ---   --   ---xx   flac  0.5241  Track10.flac
+    57:56.57      613300904 B                            0.4957  (10 files)
+=================== 
+=================== 
+=================== 

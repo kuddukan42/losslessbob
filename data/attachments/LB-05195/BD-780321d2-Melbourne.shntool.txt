@@ -1,0 +1,18 @@
+    length     expanded size   cdr  WAVE problems filename
+     4:25.03       46753100    ---   --   ---xx   780321bTrack01.flac
+     4:36.42       48785228    ---   --   ---xx   780321bTrack02.flac
+     3:40.09       38829212    ---   --   ---xx   780321bTrack03.flac
+     4:40.23       49446140    ---   --   ---xx   780321bTrack04.flac
+     2:51.11       30190316    ---   --   ---xx   780321bTrack05.flac
+     5:12.22       55088588    ---   --   ---xx   780321bTrack06.flac
+     5:29.54       58162652    ---   --   ---xx   780321bTrack07.flac
+     4:45.52       50396348    ---   --   ---xx   780321bTrack08.flac
+     4:17.37       45421868    ---   --   ---xx   780321bTrack09.flac
+     3:35.74       38100092    ---   --   ---xx   780321bTrack10.flac
+     3:50.10       40595564    ---   --   ---xx   780321bTrack11.flac
+     6:30.13       68826620    ---   --   ---xx   780321bTrack12.flac
+     6:03.69       64195532    ---   --   ---xx   780321bTrack13.flac
+     5:59.74       63501692    ---   --   ---xx   780321bTrack14.flac
+     4:57.05       52402604    ---   --   ---xx   780321bTrack15.flac
+     4:34.57       48467708    ---   --   ---xx   780321bTrack16.flac
+    75:30.30      799163264 B                     (totals for 16 files, 0.3571 overall compression ratio)

@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-11-20-MA.flacf 
+=================== 
+=================== 
+=================== 
+aa22ecb39facaad048b2d70c53ca7505  bd06-11-20-MA-LB-4257.txt
+9c7c402473418d758ad0b7b467e2c620  bob dylan 11-20-06 101.flac
+69dfe05a7fdb34c02f66db9227a4bd87  bob dylan 11-20-06 102.flac
+f8744bdc43c7440eac2c30b8c732bd1d  bob dylan 11-20-06 103.flac
+39597068b22d9661803fc94e80643adf  bob dylan 11-20-06 104.flac
+c8b0125775f3a03e6af2fb19c224242b  bob dylan 11-20-06 105.flac
+f9a6ded0640cea4087eda0f9a419893f  bob dylan 11-20-06 106.flac
+d25c2e27780f96aaf785e70333e77ad8  bob dylan 11-20-06 107.flac
+1dfaa7bb2caf92cbd4446e23a5a0b36a  bob dylan 11-20-06 108.flac
+b0d6155c4485c0419859a9fd9edbe51f  bob dylan 11-20-06 109.flac
+e14100fe6b8b052fd97eddb92ee1a09e  bob dylan 11-20-06 201.flac
+96bf622369e31b77e142dcc7e988524b  bob dylan 11-20-06 202.flac
+47dabf27f660960463dbf27e967a3b30  bob dylan 11-20-06 203.flac
+9126d16e92f459f6049cc718dd4fc27f  bob dylan 11-20-06 204.flac
+f0e1489a32da06773e673c7d8b0cc57a  bob dylan 11-20-06 205.flac
+c9cde9d07483dca9c30e58b5fc4af43f  bob dylan 11-20-06 206.flac
+32a936baa826028f7a22a9ca0747fc8a  bob dylan 11-20-06 207.flac
+da429c957f4c69c9463c434a499fa152  bob dylan 11-20-06 208.flac
+5d0b581c037c1a023e2f610fd7ba4c34  bob dylan 11-20-06 209.flac
+517cde77dc0e20175b7500a3999c16e7  bob dylan 11-20-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-11-20-MA.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 11-20-06 101.flac:21c57929c56739162a2458ebf6466a09
+bob dylan 11-20-06 102.flac:28da3b8db72e8fb29834fd789bc5fabe
+bob dylan 11-20-06 103.flac:5d296c0ff2449b36eba9ee629a3d0e5f
+bob dylan 11-20-06 104.flac:75764ae694a5f4d94f0a6a02dcb5c739
+bob dylan 11-20-06 105.flac:07e8e630b232c55fcacba56839b2f220
+bob dylan 11-20-06 106.flac:134e164936f9df651f710e234bb59c54
+bob dylan 11-20-06 107.flac:baa54bea3f2c9a0148f4e97eb7ae1f73
+bob dylan 11-20-06 108.flac:d68e489b4c12bc99756359c2750619ef
+bob dylan 11-20-06 109.flac:0a38fee9a24c761cb7d5959ee8488bd7
+bob dylan 11-20-06 201.flac:3724f7376d5a0071b12ac21aa8544adb
+bob dylan 11-20-06 202.flac:e1b028398255e6427ad3201b152a0340
+bob dylan 11-20-06 203.flac:fa1a2cef08f331c34f65990ab0c509a9
+bob dylan 11-20-06 204.flac:ccd7bbf2956bdb5b8af889dcd7bbf9b1
+bob dylan 11-20-06 205.flac:282923b8dfd18cecba0fa6381ca1af09
+bob dylan 11-20-06 206.flac:c2f2e52fa87bd774365c58348943b90c
+bob dylan 11-20-06 207.flac:ee4451d1f6ac67c64867633444d9207d
+bob dylan 11-20-06 208.flac:78e349f0333fb4485830058ab1d1421d
+bob dylan 11-20-06 209.flac:a86da576dc54e074e09e104467cdcb84
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-11-20-MA.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:48.54        8594252 B   ---   --   ---xx   flac  0.4590  bob dylan 11-20-06 101.flac
+     5:20.45       56553884 B   ---   --   ---xx   flac  0.5202  bob dylan 11-20-06 102.flac
+     4:53.19       51729932 B   ---   --   ---xx   flac  0.5043  bob dylan 11-20-06 103.flac
+     6:26.18       68132780 B   ---   --   ---xx   flac  0.5359  bob dylan 11-20-06 104.flac
+     5:42.47       60439388 B   ---   --   ---xx   flac  0.4385  bob dylan 11-20-06 105.flac
+     7:01.02       74269148 B   ---   --   ---xx   flac  0.5388  bob dylan 11-20-06 106.flac
+     6:40.49       70675292 B   ---   --   ---xx   flac  0.4037  bob dylan 11-20-06 107.flac
+     7:59.49       84610892 B   ---   --   ---xx   flac  0.5404  bob dylan 11-20-06 108.flac
+     6:55.33       73283660 B   ---   --   ---xx   flac  0.4802  bob dylan 11-20-06 109.flac
+     7:36.27       80501948 B   ---   --   ---xx   flac  0.5405  bob dylan 11-20-06 201.flac
+     7:00.06       74102156 B   ---   --   ---xx   flac  0.4401  bob dylan 11-20-06 202.flac
+     5:27.40       57776924 B   ---   --   ---xx   flac  0.5698  bob dylan 11-20-06 203.flac
+     7:33.02       79913948 B   ---   --   ---xx   flac  0.4135  bob dylan 11-20-06 204.flac
+     6:01.17       63720428 B   ---   --   ---xx   flac  0.5681  bob dylan 11-20-06 205.flac
+     3:06.71       32977436 B   ---   --   ---xx   flac  0.4223  bob dylan 11-20-06 206.flac
+     8:31.12       90168668 B   ---   --   ---xx   flac  0.5200  bob dylan 11-20-06 207.flac
+     6:24.11       67763516 B   ---   --   ---xx   flac  0.5710  bob dylan 11-20-06 208.flac
+     6:28.47       68553788 B   ---   --   ---xx   flac  0.5756  bob dylan 11-20-06 209.flac
+   109:57.24     1163768040 B                            0.5063  (18 files)
+=================== 
+=================== 
+=================== 

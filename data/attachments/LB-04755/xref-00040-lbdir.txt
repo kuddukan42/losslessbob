@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-15-b.flacf 
+=================== 
+=================== 
+=================== 
+2b6977be2061cbc317bdaf1016b8dd65  Bob Dylan 1988.09.15 Chapel Hill, North Carolina.md5
+d70ee14adcabcf80dff1a793940f5ccf  info.txt
+db67e3d27de787525d9a4bc7bc13e3fd  Track01.flac
+ae921004dee4acb043093db8238f22a3  Track02.flac
+32862f7a4af929ad87c1ef145e7850ed  Track03.flac
+af97056e63b1aeecc4de6cf9b9ad3e3a  Track04.flac
+064caece9c8b2f8360a84e818f826074  Track05.flac
+6dfd4296a1321d7b1e64e5e93a225ee3  Track06.flac
+13913fa980103fd1a51fcadc61eb4f8e  Track07.flac
+cc07f85e3e926d054d1ea3064c3c7f46  Track08.flac
+d52ba213e4113e5d6168dc8773e8f513  Track09.flac
+8d471e1b756d4941c4a8849f03c556aa  Track10.flac
+97a28fecbe17933ad3501555a250d535  Track11.flac
+12cc11443e7d160e422702cffec5ee24  Track12.flac
+c4f8696cd431eca59198ce7e7cd70035  Track13.flac
+e5bc19a34eedfa48ca5c5be688dfa2a9  Track14.flac
+8d64493922e5ee26bb575b7df31e9833  Track15.flac
+6f225dfac72a34521cd0a69ec4a783e8  Track16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-15-b.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:3a97a7ffdb9ffeeecbf11c037ca8116e
+Track02.flac:8fd856d9e7951714a6d89ae2f808fe4e
+Track03.flac:e881eb6e2d64175b42d563867cd2458c
+Track04.flac:d6ef2c2c3db704aa7715d47a0cc2b9df
+Track05.flac:82d2b592dab1f0ecf033fdf38ccc9c6e
+Track06.flac:3af436bf8e5714231082ff1089c8bb8c
+Track07.flac:6012f0c6e26c5c8fdb0716b2d2b32e1a
+Track08.flac:a7e56762f9abd14373ced52a701735db
+Track09.flac:362ffa21531c52c7d30320b12fdfea6e
+Track10.flac:230fc1b5d9cc34955cb372ac5e78331c
+Track11.flac:082f6e51d18b0b887a21625174e84ce0
+Track12.flac:1b34c1cea6c9f254fd364714727fc758
+Track13.flac:ba61038ba97a12f892a32d351206772e
+Track14.flac:096b1e190beded4bdef296bce42ddfe5
+Track15.flac:07be9b9951dbba284412700a904dfa17
+Track16.flac:cd2873e73b52907f17d3bd58f260faef
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-15-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.27       37460348 B   ---   --   ---xx   flac  0.6561  Track01.flac
+     4:28.59       47414012 B   ---   --   ---xx   flac  0.6561  Track02.flac
+     5:28.71       58026236 B   ---   --   ---xx   flac  0.6564  Track03.flac
+     4:58.41       52663676 B   ---   --   ---xx   flac  0.6547  Track04.flac
+     4:47.72       50796188 B   ---   --   ---xx   flac  0.6616  Track05.flac
+     4:09.27       43987148 B   ---   --   ---xx   flac  0.6612  Track06.flac
+     5:40.06       59990156 B   ---   --   ---xx   flac  0.6545  Track07.flac
+     5:40.72       60145388 B   ---   --   ---xx   flac  0.6509  Track08.flac
+     4:50.41       51252476 B   ---   --   ---xx   flac  0.6532  Track09.flac
+     3:09.16       33377276 B   ---   --   ---xx   flac  0.6511  Track10.flac
+     5:36.66       59425676 B   ---   --   ---xx   flac  0.6534  Track11.flac
+     6:13.24       65853692 B   ---   --   ---xx   flac  0.6582  Track12.flac
+     5:04.58       53762060 B   ---   --   ---xx   flac  0.6526  Track13.flac
+     4:31.62       47950268 B   ---   --   ---xx   flac  0.6495  Track14.flac
+     4:44.40       50191724 B   ---   --   ---xx   flac  0.6588  Track15.flac
+     5:19.01       56273996 B   ---   --   ---xx   flac  0.6676  Track16.flac
+    78:17.08      828570320 B                            0.6561  (16 files)
+=================== 
+=================== 
+=================== 

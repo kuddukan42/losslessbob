@@ -1,0 +1,54 @@
+Bob Dylan
+Lotto Arena
+Antwerp, Belgium
+October 29, 2024
+
+01. All Along The Watchtower
+02. It Ain't Me, Babe 
+03. I Contain Multitudes 
+04. False Prophet 
+05. When I Paint My Masterpiece 
+06. Black Rider 
+07. My Own Version Of You
+08. To Be Alone With You 
+09. Crossing The Rubicon 
+10. Desolation Row
+11. Key West (Philosopher Pirate) 
+12. It's All Over Now, Baby Blue 
+13. I've Made Up My Mind To Give Myself To You
+14. Watching The River Flow
+15. Mother Of Muses
+16. Goodbye Jimmy Reed
+17. Every Grain Of Sand
+
+Band Members
+Bob Dylan - vocals, guitar, piano, harp
+Jim Keltner - drums
+Doug Lancio - guitar 
+Bob Britt - guitar
+Tony Garnier - bass
+
+Recorded by: soomlos
+10th row center
+schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3 (24-bit / 48000 Hz)
+sound devices mixpre-3 > usb > pc > poly wav (24-bit / 48000 Hz)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24-bit / 48000 Hz)
+
+ffp
+bd2024-10-29-soomlos-t01.flac:54cef58dcdd36dcc8ac9039d2314995f
+bd2024-10-29-soomlos-t02.flac:4b2ab8118decfe73657390b7efed379a
+bd2024-10-29-soomlos-t03.flac:9f55f955e16c3bd0ad23801b8565db57
+bd2024-10-29-soomlos-t04.flac:5477d9c048878d4d6f53055ab138efda
+bd2024-10-29-soomlos-t05.flac:bd99ae59b188982fc854fa2e76443b61
+bd2024-10-29-soomlos-t06.flac:116ed13828aa7829b5e6d9df7d9662b7
+bd2024-10-29-soomlos-t07.flac:a875ff543cbec3a90a7b229ab91c9c45
+bd2024-10-29-soomlos-t08.flac:b3a887218f03a55a90239b2093cff548
+bd2024-10-29-soomlos-t09.flac:eb20f4f0e8a9526ed2d5b1d156002465
+bd2024-10-29-soomlos-t10.flac:13bfa9ddcdfe485027e6a41b9bbfc60b
+bd2024-10-29-soomlos-t11.flac:658edd55162ed444a2ae4b70c4b487ec
+bd2024-10-29-soomlos-t12.flac:8829f5d1952497369cf9014402045e04
+bd2024-10-29-soomlos-t13.flac:2e2f8142d45441bb80d4f74663e54733
+bd2024-10-29-soomlos-t14.flac:a0cf69a82d644befab38d22d6c8b88dd
+bd2024-10-29-soomlos-t15.flac:d0e76e3d8f7b9572e991531a81795bfd
+bd2024-10-29-soomlos-t16.flac:31ccc62bbc2d24becd82b5309034b131
+bd2024-10-29-soomlos-t17.flac:391b1691e4a93e69174312da86b8f203

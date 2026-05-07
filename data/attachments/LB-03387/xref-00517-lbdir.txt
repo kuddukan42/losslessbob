@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-06-a.flacf 
+=================== 
+=================== 
+=================== 
+4cfbf1c797ebb027b49a47c094982619  1997-04-06 Metro Centre, Halifax, Nova Scotia, Canada [Holy Grail].md5
+7ac2e2eca906694c23c462b44eb414de  CD1\01 Crash on the Levee (down in the flood).flac
+b08898b99237d794b7753e588e3381cd  CD1\02 Man in the long black coat.flac
+519157b4ae6e3865c9f63e69c4961369  CD1\03 All along the watchtower.flac
+3789498e0e106da71f9ac55989722a43  CD1\04 Just like a woman.flac
+1e8c323715111c3166ab0e89a00be54f  CD1\05 It takes a lot to laugh, it takes a train to cry.flac
+8e887919b36588e7d839732c64f4c05d  CD1\06 Silvio.flac
+80fbdac428e64cb2b5165229b4d517b3  CD1\07 Oh baby it ain't no lie.flac
+5fe2b4aa3e9fd1ecddba30f915a7ce02  CD1\08 Mr. Tambourine Man.flac
+938513a1c7003d560b769ac441f59287  CD1\09 Tangled up in blue.flac
+9309488b4867f1767a8e492675338f63  CD1\CD1.shntool_len.txt
+1f8172f4135be6391dcf4aeff129210b  CD1\ffp CD1.ffp
+1f8172f4135be6391dcf4aeff129210b  CD1\ffp CD1.txt
+c6a2a8067518fa5747dc79e4420db0cd  CD2\01 Maggie's farm.flac
+0cfb7c1d76786f337569c35f0a875b9e  CD2\02 You're a big girl now.flac
+58fd7250a51aed154984a8cec33ca337  CD2\03 Everything is broken.flac
+1b232f80cbe1255cdfd2d13f27fd64e6  CD2\04 Like a rolling stone.flac
+a5b6b684fcc40711e9a33d37a84b9fa9  CD2\05 My back pages.flac
+ff85950953de0b27097d4e7b12444828  CD2\06 Rainy day women # 12 & 35.flac
+6b2bf66b17951186e2954df28a8d8559  CD2\CD2.shntool_len.txt
+4d5155131fa4e655f145093a3348fa42  CD2\ffp CD.txt
+4d5155131fa4e655f145093a3348fa42  CD2\ffp CD2.ffp
+ed53cf9537fe069ed7b6a63b42ee4dc9  Info\1997-04-06 Metro Centre, Halifax, Nova Scotia, Canada [Holy Grail].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-06-a.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 crash on the levee (down in the flood).flac:71972c7afb8646a25b9e06145166ae03
+02 man in the long black coat.flac:aee71ae5cc6d5289189368d76e6d88e5
+03 all along the watchtower.flac:cba2be56e28d24cd2d20e489e656220a
+04 just like a woman.flac:1a4b5e688d6af7d18f50b977e2ca6c6b
+05 it takes a lot to laugh, it takes a train to cry.flac:f9fc6b1d0645ab2052ebe995f8c31073
+06 silvio.flac:19979abe0d2adfeee76c4032597a8752
+07 oh baby it ain't no lie.flac:e270c00cb9811a88dc0c0c706104cfb8
+08 mr. tambourine man.flac:1e122462df40b3e14df655b26624a9a8
+09 tangled up in blue.flac:6d576d6e2f3d28c4cc7187f1c487aa4b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-06-a.flacf\cd2 
+=================== 
+=================== 
+=================== 
+01 maggie's farm.flac:429088c3a17cdb84f7865bdec3ce51c6
+02 you're a big girl now.flac:b446ca4dbfd1d329702fe429e878d585
+03 everything is broken.flac:36dba3122d79a149af88f35500c5e822
+04 like a rolling stone.flac:042c71f69ed66349fd631d2b645d64e4
+05 my back pages.flac:69944562966b662b81f9c1e4a7d22845
+06 rainy day women # 12 & 35.flac:3404d75504edd50da1fa84a28ce65ba1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-06-a.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:27.61       47242316 B   ---   --   ---xx   flac  0.6056  01 Crash on the Levee (down in the flood).flac
+     7:34.53       80210300 B   ---   --   ---xx   flac  0.5149  02 Man in the long black coat.flac
+     6:00.56       63635756 B   ---   --   ---xx   flac  0.6307  03 All along the watchtower.flac
+     7:19.16       77477276 B   ---   --   ---xx   flac  0.5922  04 Just like a woman.flac
+     7:45.12       82054268 B   ---   --   ---xx   flac  0.5921  05 It takes a lot to laugh, it takes a train to cry.flac
+     8:15.21       87367436 B   ---   --   ---xx   flac  0.6150  06 Silvio.flac
+     5:48.19       61431932 B   ---   --   ---xx   flac  0.5743  07 Oh baby it ain't no lie.flac
+     9:13.31       97622156 B   ---   --   ---xx   flac  0.5645  08 Mr. Tambourine Man.flac
+     9:10.20       97067084 B   ---   --   ---xx   flac  0.5980  09 Tangled up in blue.flac
+    65:34.64      694108524 B                            0.5859  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-06-a.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.13       77117420 B   ---   --   ---xx   flac  0.6064  01 Maggie's farm.flac
+     6:54.29       73097852 B   ---   --   ---xx   flac  0.5751  02 You're a big girl now.flac
+     9:14.17       97765628 B   ---   --   ---xx   flac  0.6146  03 Everything is broken.flac
+    11:18.00      119599244 B   ---   --   ---xx   flac  0.6288  04 Like a rolling stone.flac
+    10:37.32      112442108 B   ---   --   ---xx   flac  0.5846  05 My back pages.flac
+     5:30.26       58273196 B   ---   --   ---xx   flac  0.6638  06 Rainy day women # 12 & 35.flac
+    50:51.42      538295448 B                            0.6103  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,120 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-18-Live-by-Faith.flacf 
+=================== 
+=================== 
+=================== 
+525bb634a7588485868e32dd2ab85bd8  bd1979-11-18-d1\bd1979-11-18-d1.md5
+1c794b082e019646258460dbcfce62c7  bd1979-11-18-d1\Track01.flac
+f15b920bc7172e5bad8e7ad8a5b89e5c  bd1979-11-18-d1\Track02.flac
+fc83186bf03a69858a34a2afe30b4626  bd1979-11-18-d1\Track03.flac
+d0f3b6fe64d523f35b38e3073b5ced9c  bd1979-11-18-d1\Track04.flac
+3bca2a958db264851b4198a5b3fd86d1  bd1979-11-18-d1\Track05.flac
+bcb1624d65af51367195de6af5019d5c  bd1979-11-18-d1\Track06.flac
+238305a61e53cb862ff540e20fb65b9c  bd1979-11-18-d1\Track07.flac
+78228c152dcd7089dff2e5b43bea6e99  bd1979-11-18-d1\Track08.flac
+6efaa3bd07cc7ff371e31dd14b822e4c  bd1979-11-18-d1\Track09.flac
+b9b463054fa7c14b262ed16821a637b6  bd1979-11-18-d1\Track10.flac
+ab782ca2ae7ab00f33c2d1c2ac17c54b  bd1979-11-18-d1\Track11.flac
+19167c13109a45aba0c75e486bc6d687  bd1979-11-18-d1\Track12.flac
+17299221da6799f32dd24fb5e32acae8  bd1979-11-18-d1\Track13.flac
+658afa090b50c84df16bea2cdf40ae58  bd1979-11-18-d1\Track14.flac
+89a2a42f1eced30e570dc566995e47fd  bd1979-11-18-d2\bd1979-11-18-d2.md5
+c12da60f09acda25b669f189ccc804e4  bd1979-11-18-d2\Track01.flac
+22bca0569f9c6f4558639f3f580fb271  bd1979-11-18-d2\Track02.flac
+afa064296764d048936b7e69b7d6e449  bd1979-11-18-d2\Track03.flac
+08a8c4edd90aa9ed67e98e91c823731c  bd1979-11-18-d2\Track04.flac
+17f130974d0cbb41f5746b6cbe26b2a2  bd1979-11-18-d2\Track05.flac
+d776f42c861b3e1ecab9932314c6e1cf  bd1979-11-18-d2\Track06.flac
+9b6aedf3894d5f50610a58242528c412  bd1979-11-18-d2\Track07.flac
+2a072c6c7b8b493824d51ec3e90aaf13  bd1979-11-18-d2\Track08.flac
+002e641d752ff31c53eb5ab296d854aa  bd1979-11-18-d2\Track09.flac
+0f6bada32335ff25921b9434a9914a0e  bd1979-11-18-d2\Track10.flac
+26f23a659b3af13297e5e039f27f3093  bd1979-11-18-d2\Track11.flac
+45e92d0026745ecc58b77ff3ae2545aa  Live by Faith 1979-11-18.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-18-Live-by-Faith.flacf\bd1979-11-18-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:28f3d5d02885fbd4f59f14d843696ee2
+Track02.flac:88dc9350e17cb340e0aa964fa5c33066
+Track03.flac:2f9a1e8ee6efbed7264e56db7c222bb3
+Track04.flac:87faf19d17ec9d7781f9c38097674356
+Track05.flac:239f50a852aba57b06bf894277c29e71
+Track06.flac:463d1a037a167258da0b8c4c0566ad8c
+Track07.flac:36c25c6aad3b6ec9ef78c28102c28626
+Track08.flac:ee9dafbed8bb177d6d45ba74efb8b169
+Track09.flac:c18be8bc59a899a8d2a5d951b2598078
+Track10.flac:0630ce40797313c31d143a36136fa394
+Track11.flac:0badcb8a8c877909db8d45b58e7b29ca
+Track12.flac:ef0bd6e5ba5bc12695dc59767ad72798
+Track13.flac:4a049860bdebeb40fe50ff6835197016
+Track14.flac:c03b98288e7b43673f505ce8a3650b3b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-18-Live-by-Faith.flacf\bd1979-11-18-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:8ff0d72005cb5153a25a0ba9f7f4654f
+Track02.flac:c9bd07588eb2410fa9cab3f75bebc6c8
+Track03.flac:430f95260e7745a80118a675d2d2ece6
+Track04.flac:a0d3a2675a258d60c3962ecd21317dae
+Track05.flac:7ced8db9fc45378ac42fdb702d1a3402
+Track06.flac:23d5365ddb57b2500e92fba320b45815
+Track07.flac:28810c1e24c53db12134ebdeda8dc990
+Track08.flac:e8f8a90ea55505c5283ace4869c34aeb
+Track09.flac:c0d84321e63a3ad4acbbc17ff5437e21
+Track10.flac:edf84b587c6c42a304258c90c4c7bd87
+Track11.flac:e1cac3b6e503ae5b43ec98b3644a35d5
+=================== 
+=================== 
+=================== 
+=== shntool for: bd79-11-18-Live-by-Faith.flacf\bd1979-11-18-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.29       40111052 B   ---   --   ---xx   flac  0.5374  Track01.flac
+     3:26.59       36477212 B   ---   --   ---xx   flac  0.6268  Track02.flac
+     3:49.39       40487372 B   ---   --   ---xx   flac  0.6278  Track03.flac
+     2:52.29       30409052 B   ---   --   ---xx   flac  0.6724  Track04.flac
+     4:29.17       47491628 B   ---   --   ---xx   flac  0.5887  Track05.flac
+     5:16.57       55876508 B   ---   --   ---xx   flac  0.6246  Track06.flac
+     3:55.33       41531660 B   ---   --   ---xx   flac  0.6410  Track07.flac
+     6:38.06       70221356 B   ---   --   ---xx   flac  0.6776  Track08.flac
+     4:54.54       51988652 B   ---   --   ---xx   flac  0.6029  Track09.flac
+     6:09.63       65239820 B   ---   --   ---xx   flac  0.6712  Track10.flac
+     5:00.36       53004716 B   ---   --   ---xx   flac  0.5680  Track11.flac
+     5:24.42       57252428 B   ---   --   ---xx   flac  0.6222  Track12.flac
+     6:13.19       65841932 B   ---   --   ---xx   flac  0.6543  Track13.flac
+     6:35.15       69713324 B   ---   --   ---xx   flac  0.6634  Track14.flac
+    68:33.48      725646712 B                            0.6305  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd79-11-18-Live-by-Faith.flacf\bd1979-11-18-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.65       61010924 B   ---   --   ---xx   flac  0.5825  Track01.flac
+     3:26.59       36477212 B   ---   --   ---xx   flac  0.6354  Track02.flac
+     4:59.19       52788332 B   ---   --   ---xx   flac  0.6698  Track03.flac
+     4:47.70       50791484 B   ---   --   ---xx   flac  0.6124  Track04.flac
+     4:53.74       51859292 B   ---   --   ---xx   flac  0.6794  Track05.flac
+     4:49.71       51146636 B   ---   --   ---xx   flac  0.5932  Track06.flac
+     4:48.66       50958476 B   ---   --   ---xx   flac  0.6960  Track07.flac
+     5:35.33       59171660 B   ---   --   ---xx   flac  0.6284  Track08.flac
+     9:44.33      103095260 B   ---   --   ---xx   flac  0.6274  Track09.flac
+     3:48.10       40242764 B   ---   --   ---xx   flac  0.6918  Track10.flac
+     6:54.01       73031996 B   ---   --   ---xx   flac  0.6120  Track11.flac
+    59:34.51      630574036 B                            0.6353  (11 files)
+=================== 
+=================== 
+=================== 

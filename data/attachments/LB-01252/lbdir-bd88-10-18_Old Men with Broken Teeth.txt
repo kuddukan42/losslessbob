@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-18_Old Men with Broken Teeth 
+=================== 
+=================== 
+=================== 
+d0b23c878b04d1f4c3790d17bb2b30e6  bd88-10-18_Old_men.txt
+552dac7bfa683db81060dba6f19361b3  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 01.shn
+80711a9c66af44f845eb4baa8fd7c320  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 02.shn
+93b69a9a02bfbfdb23d0b9eeaad14ddd  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 03.shn
+27afc679a6ad295025dda6145fcce1b1  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 04.shn
+40bc743c15bb60c95b7bbac75aaedd1c  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 05.shn
+5b28a58f93a17d5e2f34b36a0724cfcc  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 06.shn
+384dbec82c83542fc8c6904691426fa8  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 07.shn
+2ce26e9375e7e5183447eb1f4a209849  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 08.shn
+97b8ce6d5d64bb43da81426346d8f576  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 09.shn
+17deb12f1794d6bb5fa60a768c92020c  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 10.shn
+ed6defeda11587ddf618f870fe6730e4  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_Track 11.shn
+c01a788d34f4ec2eeff8b1fd0e7e7d2a  bd_88-10-18_cd1.shnf\bd_88-10-18_cd1_shn.md5
+4da39d07aad3687371e8e20d9d5d1d25  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 01.shn
+017edd60da883e6f2dd5fec9f1036009  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 02.shn
+f76ebdef0ec1846b2b6c6daa98632972  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 03.shn
+bdb74450a0b559e7bbb91de4263c6913  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 04.shn
+89fae7f6fea65d4fe421d941102892c5  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 05.shn
+fd6177114a7b7673318fcc2dd039add4  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 06.shn
+f2673efb4ac7f7655356acbdc9e579d8  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 07.shn
+0be8fd26c66faeaf75279aca84335307  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 08.shn
+281a3295a02737957259760956dc661f  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 10.shn
+9b4f47137c4251326846e8d72509b8e6  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 11.shn
+6658a672efc7a92544a6ec8b49acc10f  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track 12.shn
+54d3f7b68c6d8e423e40b81b2768229f  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_Track09.shn
+cf2fb01500aa3713ec498e4399f5b671  bd_88-10-18_cd2.shnf\bd_88-10-18_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-10-18_Old Men with Broken Teeth\bd_88-10-18_cd1.shnf 
+=================== 
+=================== 
+=================== 
+b8bdbb7d0c69e4fc614f6ed9b055cc2a  [shntool]  bd_88-10-18_cd1_Track_01.wav
+c62f918b01158d80f506837eabe23ce5  [shntool]  bd_88-10-18_cd1_Track_02.wav
+d93410cf1815d685fd14e514fec8d707  [shntool]  bd_88-10-18_cd1_Track_03.wav
+2dc29423013ff971743b5a5584a528cc  [shntool]  bd_88-10-18_cd1_Track_04.wav
+ffb3963a4fa48aea9af60030b29099d0  [shntool]  bd_88-10-18_cd1_Track_05.wav
+adbfcdf2a124b23a187af968f4d57992  [shntool]  bd_88-10-18_cd1_Track_06.wav
+6f6f48b6a5d258879e163ff79c8acc0e  [shntool]  bd_88-10-18_cd1_Track_07.wav
+0dc46d9139d612cccc9db50a7a95213f  [shntool]  bd_88-10-18_cd1_Track_08.wav
+bda4a2f559c78ba4d270b4612f201e40  [shntool]  bd_88-10-18_cd1_Track_09.wav
+27948a6bc5f3465dd8cd81944726baf5  [shntool]  bd_88-10-18_cd1_Track_10.wav
+6ba3f94650756d9e90cbcadb726469c5  [shntool]  bd_88-10-18_cd1_Track_11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-10-18_Old Men with Broken Teeth\bd_88-10-18_cd2.shnf 
+=================== 
+=================== 
+=================== 
+d60374769d5157f1b26f968d706fc3c9  [shntool]  bd_88-10-18_cd2_Track09.wav
+bb949070b01960af27e7348c4ed71751  [shntool]  bd_88-10-18_cd2_Track_01.wav
+825865b413d2945240ac704b34e5eb7b  [shntool]  bd_88-10-18_cd2_Track_02.wav
+0ecb3ec5b959bf40f79351520ccbdd0d  [shntool]  bd_88-10-18_cd2_Track_03.wav
+e2b5238ff802972b39bc063d2cbf36c5  [shntool]  bd_88-10-18_cd2_Track_04.wav
+0d058d7867bb9cf558231fa03e0f175e  [shntool]  bd_88-10-18_cd2_Track_05.wav
+1bde59684aa7a6c188b94515fceb52d7  [shntool]  bd_88-10-18_cd2_Track_06.wav
+f2adfffcf26fd2dd9827c994ee224c46  [shntool]  bd_88-10-18_cd2_Track_07.wav
+579be0aeb9b4bd8323428ff41f3593bd  [shntool]  bd_88-10-18_cd2_Track_08.wav
+108fd141c0576d9d9e1812604c6476be  [shntool]  bd_88-10-18_cd2_Track_10.wav
+c089b1a8be4d35468c829074a0a570f2  [shntool]  bd_88-10-18_cd2_Track_11.wav
+751c93d73e13bd0244f7bd4db19bfc7f  [shntool]  bd_88-10-18_cd2_Track_12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-18_Old Men with Broken Teeth\bd_88-10-18_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.18       33911262 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_01.wav
+     4:49.10       51003246 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_02.wav
+     5:02.23       53327022 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_03.wav
+     5:21.10       56648046 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_04.wav
+     6:27.44       68370414 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_05.wav
+     6:36.02       69859230 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_06.wav
+     7:29.18       79246062 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_07.wav
+     7:26.14       78707454 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_08.wav
+     5:26.23       57560622 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_09.wav
+     4:33.22       48209070 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_10.wav
+     4:02.40       42783006 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd1_Track_11.wav
+    60:25.74      639625434 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-18_Old Men with Broken Teeth\bd_88-10-18_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:30.37       47715150 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track09.wav
+     6:56.04       73391934 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_01.wav
+     4:52.30       51579486 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_02.wav
+     4:09.11       43949598 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_03.wav
+     5:49.60       61704846 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_04.wav
+     5:43.12       60533550 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_05.wav
+     4:35.74       48684174 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_06.wav
+     3:48.55       40348686 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_07.wav
+     5:49.09       61584894 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_08.wav
+     4:11.06       44290638 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_10.wav
+     4:57.41       52487358 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_11.wav
+     5:06.19       54023214 B   ---   -e   -----    wav  1.0000  bd_88-10-18_cd2_Track_12.wav
+    60:29.58      640293528 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

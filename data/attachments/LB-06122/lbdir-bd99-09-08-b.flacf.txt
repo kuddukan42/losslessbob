@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-09-08-b.flacf 
+=================== 
+=================== 
+=================== 
+ab0fc0b81cf80b0d0e7a30ee6a3cf3c6  BobDylanD1\BobDylanD1.ffp
+d789383cb6e8e6384ab0de55e788d753  BobDylanD1\d1-1.theboxer.flac
+2206ec54d7121f19cbadb753528f12bb  BobDylanD1\d1-10.allalongthewatchtower.flac
+5d2e90b6917328d75aec3de537e92fc8  BobDylanD1\d1-2.iwalktheline.flac
+19e249a9a8e166440a354b2a7b2171b3  BobDylanD1\d1-3.thewanderer.flac
+04fdcfd7f77755fc70fb4b4be212a88d  BobDylanD1\d1-4.knockin'onheaven'sdoor.flac
+c100e311014764ad9d1a27ec2462ef21  BobDylanD1\d1-5.iamtheman,thomas.flac
+a8f4ad5ed9968ae13b154f27affe19de  BobDylanD1\d1-6.mr.tamborineman.flac
+afd95c5c3c30d9c8e01a1211b0bfe32a  BobDylanD1\d1-7.it'salright,ma(i'monlybleeding).flac
+9c2bf9fc69e2dc0054ea43acd142a4b9  BobDylanD1\d1-8.it'sallovernow,babyblue.flac
+205d89cd6e74e9bc29a16dac10a96f9f  BobDylanD1\d1-9.tangledupinblue.flac
+7d5a1a2c94288a537618c32c39e2d03a  BobDylanD2\BobDylanD2.ffp
+385c28f9eafe9fd1d72871240cd828f6  BobDylanD2\d2-1.justlikeawoman.flac
+a58269efd9c59d75daea3dac8ac490bb  BobDylanD2\d2-2.silvio.flac
+beeb85d4484864c8f3ae483b5e073e51  BobDylanD2\d2-3.notdarkyet.flac
+a083dcce2e67ce5bd483610beb22a08f  BobDylanD2\d2-4highway61revisited.flac
+7703422a7d048e3d602a1ce6bcbaa529  BobDylanD2\d2-5.likearollingstone.flac
+4d45afc747d8f1cf6809ad594369fa07  BobDylanD2\d2-6.blowin'inthewind.flac
+95c3615bdb1805be3c9cd15139c8413f  BobDylanD2\d2-7.notfadeaway.flac
+958f3df7e33568369fb6abdb3f4cbfc4  torrent-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-09-08-b.flacf\BobDylanD1 
+=================== 
+=================== 
+=================== 
+d1-1.theboxer.flac:db1180c8acf1f51cb640f8248d337f1a
+d1-10.allalongthewatchtower.flac:62098a895e8d227cd894bc2ac1d6e0dd
+d1-2.iwalktheline.flac:5d2021bdd49dfaf20582e4e1ee2ac4aa
+d1-3.thewanderer.flac:afc05b5336c3ee0ae20e6f050bd36c11
+d1-4.knockin'onheaven'sdoor.flac:63c428d9b2d575a2192c24ee84df0b16
+d1-5.iamtheman,thomas.flac:2311300811f4c75cfd4f926eff39d418
+d1-6.mr.tamborineman.flac:509c9c1873e8612ba8e00e8698fa3472
+d1-7.it'salright,ma(i'monlybleeding).flac:d69715ecea3d8e873d97ea7352dac9ec
+d1-8.it'sallovernow,babyblue.flac:e7763eb4215acba707557295660adac5
+d1-9.tangledupinblue.flac:f4bd5ba127fc4027c7317d89458a7d10
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-09-08-b.flacf\BobDylanD2 
+=================== 
+=================== 
+=================== 
+d2-1.justlikeawoman.flac:2a7364bb639497078212293a7e5c84a3
+d2-2.silvio.flac:0be3d353555916fdf0e6313f070c8a8f
+d2-3.notdarkyet.flac:94483082b42f82058b412bf98bda6d61
+d2-4highway61revisited.flac:e14c5a1c0944df724a1d6e82252f638e
+d2-5.likearollingstone.flac:ff63a81ef878da856768fdc34c3d6ac3
+d2-6.blowin'inthewind.flac:2856d998c0646f4abc001cdf58566046
+d2-7.notfadeaway.flac:d667ced4d8adcc36a390cd4d0e377e6a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-08-b.flacf\BobDylanD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.33       57760460 B   ---   --   ---xx   flac  0.4025  d1-1.theboxer.flac
+     4:21.34       46120412 B   ---   --   ---xx   flac  0.4365  d1-10.allalongthewatchtower.flac
+     1:54.63       20257820 B   ---   --   ---xx   flac  0.4261  d1-2.iwalktheline.flac
+     2:23.65       25378124 B   ---   --   ---xx   flac  0.4488  d1-3.thewanderer.flac
+     5:50.15       61775324 B   ---   --   ---xx   flac  0.4256  d1-4.knockin'onheaven'sdoor.flac
+     3:04.58       32594060 B   ---   --   ---xx   flac  0.4397  d1-5.iamtheman,thomas.flac
+     7:15.05       76745804 B   ---   --   ---xx   flac  0.4425  d1-6.mr.tamborineman.flac
+     7:05.02       74974748 B   ---   --   ---xx   flac  0.4298  d1-7.it'salright,ma(i'monlybleeding).flac
+     8:07.03       85913900 B   ---   --   ---xx   flac  0.4251  d1-8.it'sallovernow,babyblue.flac
+     9:01.02       95437148 B   ---   --   ---xx   flac  0.4473  d1-9.tangledupinblue.flac
+    54:30.55      576957800 B                            0.4323  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-08-b.flacf\BobDylanD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:16.28       66392300 B   ---   --   ---xx   flac  0.4180  d2-1.justlikeawoman.flac
+     5:47.31       61283756 B   ---   --   ---xx   flac  0.4329  d2-2.silvio.flac
+     6:58.04       73744652 B   ---   --   ---xx   flac  0.3989  d2-3.notdarkyet.flac
+     9:01.35       95514764 B   ---   --   ---xx   flac  0.4364  d2-4highway61revisited.flac
+     8:13.71       87132236 B   ---   --   ---xx   flac  0.4354  d2-5.likearollingstone.flac
+     6:31.04       68981852 B   ---   --   ---xx   flac  0.4202  d2-6.blowin'inthewind.flac
+     4:13.03       44636300 B   ---   --   ---xx   flac  0.4480  d2-7.notfadeaway.flac
+    47:01.26      497685860 B                            0.4266  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== Dylan_1998_07_06_Lucca.md5
+===================
+===================
+===================
+101f13aa37950ecd2367e64745c43aea *Dylan_1998_07_06_Lucca.md5
+7915dcf6f75e015a3567f33715db6a61 *Dylan_1998_07_06_Lucca_D1_01.flac
+ae63224d24bd6785565600407a806df5 *Dylan_1998_07_06_Lucca_D1_02.flac
+bed221b5cbf4305f5c4e054f0f7a4f56 *Dylan_1998_07_06_Lucca_D1_03.flac
+7171844dd0bdad235e3dafc70db23874 *Dylan_1998_07_06_Lucca_D1_04.flac
+6878cfeb56281db0f783aa242b87a955 *Dylan_1998_07_06_Lucca_D1_05.flac
+77df721e0f9e348a03ae89e1e3ad3910 *Dylan_1998_07_06_Lucca_D1_06.flac
+81200e1964470180d6ef1d3f526e8435 *Dylan_1998_07_06_Lucca_D1_07.flac
+437897acbbd2c0a48ecef1132b2099e6 *Dylan_1998_07_06_Lucca_D2_01.flac
+f03d5b6bce56d2bcabe9dcf7140da5db *Dylan_1998_07_06_Lucca_D2_02.flac
+401e83de7c2709971efbe7f4bcc09603 *Dylan_1998_07_06_Lucca_D2_03.flac
+fcc4d59c2a2069b4dc7ae0288b83915f *Dylan_1998_07_06_Lucca_D2_04.flac
+d722846b7e459fbeee6caaa3af374174 *Dylan_1998_07_06_Lucca_D2_05.flac
+8a00a204f1995b36aa604352f2053b9c *Dylan_1998_07_06_Lucca_D2_06.flac
+4060b94b721aeddafd15aa017f0fd5d7 *Dylan_1998_07_06_Lucca_D2_07.flac
+2867303303432a0c694e24fd68e4f1bd *Dylan_1998_07_06_Lucca_D2_08.flac
+c2f0510787aad7193cfdce19aff9de87 *Dylan_1998_07_06_Lucca_D2_09.flac
+c87d090466fa1f8fe22936d13401f92c *Dylan_1998_07_06_Lucca_info.txt
+8b55a47fa892e00998f0e3583d5a4747 *Dylan_1998_07_06_Lucca_shntool_len.txt
+===================
+===================
+===================
+=== Dylan_1998_07_06_Lucca_info.txt
+===================
+===================
+===================
+Bob Dylan 
+06.07.1998
+Lucca, Italy
+Piazza Napoleone
+
+
+unknown source; sorry, no more informations 
+
+
+Disk One [40:21.48]
+
+01 Gotta Serve Somebody [3:57.22]
+02 Senor (Tales of Yankee Power) [4:33.41]
+03 Cold Irons Bound [6:29.69]
+04 What Good Am I? [6:15.38]
+05 Can't Wait [5:58.40]
+06 Silvio [6:56.56]
+07 Mr. Tambourine Man [6:10.07]
+
+Disk Two [60:56.37]
+
+01 A Hard Rain's A-Gonna Fall [9:42.40]
+02 Tangled Up in Blue [9:56.47]
+03 Forever Young [6:13.66]
+04 She Belongs to Me [5:52.56]
+05 Blind Willie McTell [6:12.73]
+06 Highway 61 Revisited [5:26.67]
+07 Love Sick [6:22.11]
+08 Rainy Day Women # 12 & 35 [5:37.66]
+09 Blowin' in the Wind [5:30.61]
+
+total time: 101:18.10
+===================
+===================
+===================
+=== Dylan_1998_07_06_Lucca_shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:57.22       41858528 B   -b-   --   ---xx   flac  0.5099  Dylan_1998_07_06_Lucca_D1_01.flac
+     4:33.41       48253556 B   -b-   --   ---xx   flac  0.4891  Dylan_1998_07_06_Lucca_D1_02.flac
+     6:29.69       68781932 B   ---   --   ---xx   flac  0.5173  Dylan_1998_07_06_Lucca_D1_03.flac
+     6:15.38       66239300 B   -b-   --   ---xx   flac  0.4744  Dylan_1998_07_06_Lucca_D1_04.flac
+     5:58.40       63245264 B   -b-   --   ---xx   flac  0.5276  Dylan_1998_07_06_Lucca_D1_05.flac
+     6:56.56       73514036 B   -b-   --   ---xx   flac  0.5455  Dylan_1998_07_06_Lucca_D1_06.flac
+     6:10.07       65284448 B   -b-   --   ---xx   flac  0.4842  Dylan_1998_07_06_Lucca_D1_07.flac
+     9:42.40      102758864 B   -b-   --   ---xx   flac  0.4825  Dylan_1998_07_06_Lucca_D2_01.flac
+     9:56.47      105244868 B   -b-   --   ---xx   flac  0.5356  Dylan_1998_07_06_Lucca_D2_02.flac
+     6:13.66       65952476 B   ---   --   ---xx   flac  0.4830  Dylan_1998_07_06_Lucca_D2_03.flac
+     5:52.56       62224436 B   -b-   --   ---xx   flac  0.5027  Dylan_1998_07_06_Lucca_D2_04.flac
+     6:12.73       65792480 B   -b-   --   ---xx   flac  0.4965  Dylan_1998_07_06_Lucca_D2_05.flac
+     5:26.67       57663968 B   -b-   --   ---xx   flac  0.5675  Dylan_1998_07_06_Lucca_D2_06.flac
+     6:22.11       67410596 B   -b-   --   ---xx   flac  0.5178  Dylan_1998_07_06_Lucca_D2_07.flac
+     5:37.66       59602076 B   ---   --   ---xx   flac  0.5752  Dylan_1998_07_06_Lucca_D2_08.flac
+     5:30.61       58355456 B   -b-   --   ---xx   flac  0.4888  Dylan_1998_07_06_Lucca_D2_09.flac
+   101:18.10     1072182284 B                            0.5122  (16 files)
+===================
+===================
+===================

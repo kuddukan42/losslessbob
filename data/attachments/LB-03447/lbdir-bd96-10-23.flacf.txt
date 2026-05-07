@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-10-23.flacf 
+=================== 
+=================== 
+=================== 
+8c86c0c541a1176290cb274abbcfd6dc  bd1996-10-23.info.txt
+9c40b4aad0edec8b0e655d001d1fb6b0  bd1996-10-23checksum.md5
+7c6191e79361842f2a1cb0603654e572  bd1996-10-23d1log.LOG
+b743a6f8079b68312b976abb6030d77b  bd1996-10-23d1t01.flac
+4423bf5409bd5a43bce81fca9598a8dc  bd1996-10-23d1t02.flac
+626ba93aa1744b5c9af0984e12fb6dd9  bd1996-10-23d1t03.flac
+4d08f5258907c0f7c3d4c32b0d83447f  bd1996-10-23d1t04.flac
+351370cde1b79185bf813dd6526653c8  bd1996-10-23d1t05.flac
+2d2a211b5ed3979e8f1fdac74c0de67e  bd1996-10-23d1t06.flac
+8f2102521ee1eabf0bd2bfe3e802f100  bd1996-10-23d1t07.flac
+1db77db95c50145d1e5dc3c82e768d4d  bd1996-10-23d1t08.flac
+acc5b16e68f287b205c304ecf6b63413  bd1996-10-23d2log.LOG
+f77e8f32c59ee7d86a818eecfe890d52  bd1996-10-23d2t01.flac
+54dffb1379d74c0a1492424f5051f53f  bd1996-10-23d2t02.flac
+cedcc9f2d6cdfe28ba7b492abbf33a6d  bd1996-10-23d2t03.flac
+bfae2cc6d9411b53c812238af26fd335  bd1996-10-23d2t04.flac
+8a74a5e078c4d5b69a1b5f928494a50f  bd1996-10-23d2t05.flac
+446b9e83df712845d47a71d4a3f29b84  bd1996-10-23d2t06.flac
+cdcf819ee628fa5568e54b72f71633b0  bd1996-10-23d2t07.flac
+35b420c5867b6154596fec7babdbf72b  bd96-10-23-LB-3447.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-23.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-10-23d1t01.flac:b39c383ac139e177541c104621078373
+bd1996-10-23d1t02.flac:a6a0acf5ef9a94b01f3efae498e40112
+bd1996-10-23d1t03.flac:f1c53d10234359a5f7b25a83df3d75ce
+bd1996-10-23d1t04.flac:b0486b248089b6e737f055a9760d90d7
+bd1996-10-23d1t05.flac:423c096469c548a84b9bfd0efa78eb9b
+bd1996-10-23d1t06.flac:f5bce3120e4926c2760e0adb5f32866e
+bd1996-10-23d1t07.flac:ba7cfdcacb7bef8159bf011d5d10581d
+bd1996-10-23d1t08.flac:f98514f85b6bf15d5c00cb342a8889e2
+bd1996-10-23d2t01.flac:bd5144adf62bd8d29072b7b3b517ac0c
+bd1996-10-23d2t02.flac:7c963fd5f368f57d479ac27dad03d6d1
+bd1996-10-23d2t03.flac:067f0b9f6428e1d48dc66ee8efe9a752
+bd1996-10-23d2t04.flac:3745550d1311a83988c87b383435de3a
+bd1996-10-23d2t05.flac:b9bd2988efcc63e4ca3ddcb4e5d2c7de
+bd1996-10-23d2t06.flac:18b846fb592acbf76fae491052c5e5b7
+bd1996-10-23d2t07.flac:b719310729f1e05a618dd8f726b03b41
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-23.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.52       51983948 B   ---   --   ---xx   flac  0.5676  bd1996-10-23d1t01.flac
+     6:05.26       64447196 B   ---   --   ---xx   flac  0.5599  bd1996-10-23d1t02.flac
+     6:53.46       72961436 B   ---   --   ---xx   flac  0.5805  bd1996-10-23d1t03.flac
+     7:01.08       74283260 B   ---   --   ---xx   flac  0.5464  bd1996-10-23d1t04.flac
+     9:40.14      102344972 B   ---   --   ---xx   flac  0.5612  bd1996-10-23d1t05.flac
+     8:51.61       93811916 B   ---   --   ---xx   flac  0.5716  bd1996-10-23d1t06.flac
+     7:30.32       79455308 B   ---   --   ---xx   flac  0.4686  bd1996-10-23d1t07.flac
+     9:05.44       96241532 B   ---   --   ---xx   flac  0.4339  bd1996-10-23d1t08.flac
+     7:48.18       82597580 B   ---   --   ---xx   flac  0.4891  bd1996-10-23d2t01.flac
+    10:07.41      107171276 B   ---   --   ---xx   flac  0.4987  bd1996-10-23d2t02.flac
+     7:59.21       84545036 B   ---   --   ---xx   flac  0.5723  bd1996-10-23d2t03.flac
+     9:36.45      101712284 B   ---   --   ---xx   flac  0.6001  bd1996-10-23d2t04.flac
+     7:25.65       78650924 B   ---   --   ---xx   flac  0.5330  bd1996-10-23d2t05.flac
+    10:07.71      107241836 B   ---   --   ---xx   flac  0.5318  bd1996-10-23d2t06.flac
+     3:14.03       34228700 B   ---   --   ---xx   flac  0.5342  bd1996-10-23d2t07.flac
+   116:22.22     1231677204 B                            0.5351  (15 files)
+=================== 
+=================== 
+=================== 

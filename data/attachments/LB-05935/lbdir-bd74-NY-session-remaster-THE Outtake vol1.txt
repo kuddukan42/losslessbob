@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-NY-session-remaster-THE Outtake vol1 
+=================== 
+=================== 
+=================== 
+a446b5f6209ecfc6a8dd33fd9bbf1624  01_TangledUpInBlue.shn
+1fe312a2ab574d4bab8846d1196faddf  02_SimpleTwistOfFate.shn
+4a9b64e9aebec57e34accff48f46e070  03_YoureABigGirlNow.shn
+6afd8cdf3a5b259dcaff2cf1cc315bcd  04_IdiotWind.shn
+b7bd033ec549085d5504e4dc8e271a12  05_YoureGonnaMakeMeLonesome.shn
+ff534ffb2852839d5d41f0555f3f71ac  06_MeetMeInTheMorning.shn
+60cf2b958da7fb0e7990657d6e93aa1b  07_LilyRosemaryAndTheJackOfHe.shn
+158ec5f93eec749c9e2f3b4f3f50d002  08_IfYouSeeHerSayHello.shn
+cdfa6100e19e650ee666dbf0f36e6dc0  09_ShelterFromTheStorm.shn
+7552b076352628479189affd15008b5c  10_BucketsOfRain.shn
+597f00837c3ffae891062c40f4392a61  back.jpg
+b7c7009de06970bc02f2d32128d28e70  disk.jpg
+750c51db412fa7623e8422a08fb22691  front.jpg
+4975330c891aee69b067b5714b490320  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-NY-session-remaster-THE Outtake vol1 
+=================== 
+=================== 
+=================== 
+251f5551f44747a4e210d1765a7e0eeb  [shntool]  01_TangledUpInBlue.wav
+6392b2f3bf11599480eb3e8dc0d8e1a4  [shntool]  02_SimpleTwistOfFate.wav
+0cbf2819b737ee8d88a51838a39b6159  [shntool]  03_YoureABigGirlNow.wav
+8c7741c2ada3b302a035d9e979de2ba5  [shntool]  04_IdiotWind.wav
+2e408b6d99133337514d2ddb410efdae  [shntool]  05_YoureGonnaMakeMeLonesome.wav
+11cbe636885a98ef838d1764272dd827  [shntool]  06_MeetMeInTheMorning.wav
+2f1856a16b12e7e095316042e82e2aa8  [shntool]  07_LilyRosemaryAndTheJackOfHe.wav
+c1d6dfde1c6646e7e6c057b69e0c22c6  [shntool]  08_IfYouSeeHerSayHello.wav
+0e82da13eafef50d063ae32b76d36d1b  [shntool]  09_ShelterFromTheStorm.wav
+f0bde6a3dc51bb6369cd0cbebf02cb5c  [shntool]  10_BucketsOfRain.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-NY-session-remaster-THE Outtake vol1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.00       72853908 B   -b-   --   ---xx    shn  0.5680  01_TangledUpInBlue.shn
+     4:23.06       46406768 B   -b-   --   ---xx    shn  0.5568  02_SimpleTwistOfFate.shn
+     4:24.44       46673216 B   -b-   --   ---xx    shn  0.5130  03_YoureABigGirlNow.shn
+     8:51.70       93832336 B   -b-   --   ---xx    shn  0.5241  04_IdiotWind.shn
+     3:05.00       32634460 B   -b-   --   ---xx    shn  0.5624  05_YoureGonnaMakeMeLonesome.shn
+     4:23.12       46422072 B   -b-   --   ---xx    shn  0.5956  06_MeetMeInTheMorning.shn
+     9:52.16      104466220 B   -b-   --   ---xx    shn  0.6148  07_LilyRosemaryAndTheJackOfHe.shn
+     3:27.02       36519796 B   -b-   --   ---xx    shn  0.4941  08_IfYouSeeHerSayHello.shn
+     5:01.49       53212108 B   -b-   --   ---xx    shn  0.5613  09_ShelterFromTheStorm.shn
+     3:26.26       36399144 B   -b-   --   ---xx    shn  0.4788  10_BucketsOfRain.shn
+    53:48.00      569420028 B                            0.5548  (10 files)
+=================== 
+=================== 
+=================== 

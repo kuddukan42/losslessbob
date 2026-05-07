@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-23-a-million-at-my-feet.flacf 
+=================== 
+=================== 
+=================== 
+222e2d6a67c56b9575377c182b0f8bba  bd95-03-23-a-million-at-my-feet.flacf.md5
+5a952976699b11831f19cc8660c4de6d  bd95-03-23-a-million-d1t01.flac
+fd108a2e99f1ab0cdefec591ffc4b3ef  bd95-03-23-a-million-d1t02.flac
+a947803d5bb10c469c84dbb553cc1769  bd95-03-23-a-million-d1t03.flac
+67e8bcb6c893cf53b4e13e208ee315f9  bd95-03-23-a-million-d1t04.flac
+14bba2dd7c65f30f4e0ac2aee893b521  bd95-03-23-a-million-d1t05.flac
+b879da12b037c55fefdb730aee68ca4d  bd95-03-23-a-million-d1t06.flac
+b8f74b1c7d1bf365c2fe7fc7e4e0f3b3  bd95-03-23-a-million-d1t07.flac
+4777eac8f9b05ab9b9eff9c36e5db3d6  bd95-03-23-a-million-d1t08.flac
+fec50c67b03c574cadc9d7735a582490  bd95-03-23-a-million-d1t09.flac
+afb49b084eaedaf3aac0dc828c904cad  bd95-03-23-a-million-d1t10.flac
+520d47584c02b97531e520d78a79d3e2  bd95-03-23-a-million-d1t11.flac
+7432a8c95f024ab2fe0d6d6652a520a6  bd95-03-23-a-million-d2t01.flac
+a740e02eb9ffe03bb928dec88d04462b  bd95-03-23-a-million-d2t02.flac
+35c74b59cfc5fecbe90043a65ecf0574  bd95-03-23-a-million-d2t03.flac
+6d475784becb6eb17c525af92bad3300  bd95-03-23-a-million-d2t04.flac
+634c14214c6bb87b9a4bf16b49285d8c  bd95-03-23-a-million-d2t05.flac
+61f58c7f188b758efe593394230e8d68  bd95-03-23-a-million-d2t06.flac
+ed4ca7e201c7605a4d91c38f71abf06c  bd95-03-23-a-million-d2t07.flac
+48130bce38317407ed7a5d0502754ca6  bd95-03-23-a-million-d2t08.flac
+bb533d40bbdf2ab6499e7aedac491aa2  bd95-03-23-a-million-d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-23-a-million-at-my-feet.flacf 
+=================== 
+=================== 
+=================== 
+bd95-03-23-a-million-d1t01.flac:77da4d5e9912b64888bc2573c706c0d7
+bd95-03-23-a-million-d1t02.flac:b475b28aee0bc6f6a5207e5ba654e0bc
+bd95-03-23-a-million-d1t03.flac:0a57f36cd64eff2b5dbf115dccbe82ea
+bd95-03-23-a-million-d1t04.flac:e03613c26a82b1babb1b5bd77fcd54c9
+bd95-03-23-a-million-d1t05.flac:0c8ead815d9baf02f08f0d0f17a1dc74
+bd95-03-23-a-million-d1t06.flac:6c2d150b3300b362cefc09047dd6067c
+bd95-03-23-a-million-d1t07.flac:9ba205a7b5a9f560828fdc9e30bfd414
+bd95-03-23-a-million-d1t08.flac:81693725af836fde9fe2661542496e9f
+bd95-03-23-a-million-d1t09.flac:86104a9bd199e7f05f9758854fa23e1a
+bd95-03-23-a-million-d1t10.flac:264c216a1cd4d9ebd3604219cace5ddf
+bd95-03-23-a-million-d1t11.flac:1af68e59a23a69155d62aafd51af9058
+bd95-03-23-a-million-d2t01.flac:e7aa797244b80f88cd821262705340eb
+bd95-03-23-a-million-d2t02.flac:b5006926b6b103190602b775a693798a
+bd95-03-23-a-million-d2t03.flac:6fae50776da03823bcc3cf73a8b8c597
+bd95-03-23-a-million-d2t04.flac:a330e0d5ecff545cc714ee33f52394b3
+bd95-03-23-a-million-d2t05.flac:053e419a1994b0fb43cf4856c5ec4bce
+bd95-03-23-a-million-d2t06.flac:fb0f5b0688d2991a6f9ac263b7a7b372
+bd95-03-23-a-million-d2t07.flac:1cf33383b2cb505df7efa999964106b8
+bd95-03-23-a-million-d2t08.flac:ad95ed246d7a599a38683a7f2ac8f930
+bd95-03-23-a-million-d2t09.flac:f6dac0f34af791d63635ce7fb14582d3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-23-a-million-at-my-feet.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.17       54194828 B   ---   --   ---xx   flac  0.7568  bd95-03-23-a-million-d1t01.flac
+     3:55.66       41609276 B   ---   --   ---xx   flac  0.7141  bd95-03-23-a-million-d1t02.flac
+     5:14.31       55462556 B   ---   --   ---xx   flac  0.7420  bd95-03-23-a-million-d1t03.flac
+     6:40.07       70576508 B   ---   --   ---xx   flac  0.6706  bd95-03-23-a-million-d1t04.flac
+     7:56.16       84004076 B   ---   --   ---xx   flac  0.6869  bd95-03-23-a-million-d1t05.flac
+     8:01.56       84980156 B   ---   --   ---xx   flac  0.6636  bd95-03-23-a-million-d1t06.flac
+     6:02.37       63943868 B   ---   --   ---xx   flac  0.5505  bd95-03-23-a-million-d1t07.flac
+     7:19.51       77559596 B   ---   --   ---xx   flac  0.5112  bd95-03-23-a-million-d1t08.flac
+     6:21.05       67220204 B   ---   --   ---xx   flac  0.6507  bd95-03-23-a-million-d1t09.flac
+     7:07.32       75398108 B   ---   --   ---xx   flac  0.6919  bd95-03-23-a-million-d1t10.flac
+     6:23.38       67650620 B   ---   --   ---xx   flac  0.7258  bd95-03-23-a-million-d1t11.flac
+     6:05.36       64470716 B   ---   --   ---xx   flac  0.7561  bd95-03-23-a-million-d2t01.flac
+     7:34.32       80160908 B   ---   --   ---xx   flac  0.6912  bd95-03-23-a-million-d2t02.flac
+     8:01.15       84883724 B   ---   --   ---xx   flac  0.5974  bd95-03-23-a-million-d2t03.flac
+     8:10.66       86591276 B   ---   --   ---xx   flac  0.6092  bd95-03-23-a-million-d2t04.flac
+     6:25.49       68029292 B   ---   --   ---xx   flac  0.6312  bd95-03-23-a-million-d2t05.flac
+     7:28.24       79083692 B   ---   --   ---xx   flac  0.5943  bd95-03-23-a-million-d2t06.flac
+     7:40.38       81233420 B   ---   --   ---xx   flac  0.5856  bd95-03-23-a-million-d2t07.flac
+     6:01.42       63779228 B   ---   --   ---xx   flac  0.6407  bd95-03-23-a-million-d2t08.flac
+     7:09.68       75835580 B   ---   --   ---xx   flac  0.6725  bd95-03-23-a-million-d2t09.flac
+   134:47.51     1426667632 B                            0.6520  (20 files)
+=================== 
+=================== 
+=================== 

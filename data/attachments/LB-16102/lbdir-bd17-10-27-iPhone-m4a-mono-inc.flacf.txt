@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd17-10-27-iPhone-m4a-mono-inc.flacf
+===================
+===================
+===================
+cb507a93eecfa26eee07079c74e81fe0 *05 Summer Days (beginning cut).flac
+98bf149fd3c0a0201c0c0b2d873639b7 *06 Melancholy Mood.flac
+e52d6ef80db431b1582c4084e1a665c4 *07 Honest With Me.flac
+ae6cf6c211c97cf859e9dfe9b507a015 *08 Tryin' To Get To Heaven.flac
+dba8705cbf2ee935add806dff6f4a56d *09 Once Upon A Time.flac
+b379b33f5836be2923a6fdf91be0fbc2 *10 Pay In Blood.flac
+b8b617a669e65fc60a79e1a8b820b97c *11 Tangled Up In Blue.flac
+15f9d8108926868708b795d70e7163d5 *12 The September Of My Years.flac
+d0ce61a43d88efcc12beccfb7b3af05d *13 Early Roman Kings.flac
+7ba72a89c595067072694f44554515e8 *14 Soon After Midnight.flac
+9ba3e26b2762b7b0df2f8585ba52b743 *15 Desolation Row.flac
+16297988af1bcc706ba6152146986ef0 *16 Thunder On The Mountain.flac
+a06645c5cd4b74a57e879dd4d93ab4cd *17 Autumn Leaves.flac
+af4c170c5ef91079bd6354c93eb052ca *18 Long And Wasted Years.flac
+995888dda578d090542912331915038b *19 Audience.flac
+f544dec425040b97698bcb871bb49061 *20 Blowin' In The Wind.flac
+886d2d7f06e1d3debe2b3928184ed3b2 *2017-10-27 Info.txt
+8d529bb03e999f6a2163da2b7b531a2d *2017-10-27.ffp
+c4cf5142c9a26c9249d513ee0f3c11b4 *2017-10-27.md5
+533a892ce81a7695b65597b3f9b00c1d *21 Ballad Of A Thin Man.flac
+===================
+===================
+===================
+=== ffp for: bd17-10-27-iPhone-m4a-mono-inc.flacf
+===================
+===================
+===================
+05 Summer Days (beginning cut).flac:b553232910196c98cbfecc87699515bd
+06 Melancholy Mood.flac:bb00a86314d224a16658b1a077e3505a
+07 Honest With Me.flac:d6f10e930d5e50ad90c45a92b50884f1
+08 Tryin' To Get To Heaven.flac:b1ab85eed4c72c4c5310d2a27351058f
+09 Once Upon A Time.flac:dd9698fa2dafb04542388c71ec484b22
+10 Pay In Blood.flac:f1ed22b2b872b7846138d81d37dc8166
+11 Tangled Up In Blue.flac:b2ff8a0ee25424d4d3112aa0a04f5d1a
+12 The September Of My Years.flac:d8a7fefc3522eb5bc60895d2fe8cf8b9
+13 Early Roman Kings.flac:6e62a4af68410dfad8eaf9c5a0439c8b
+14 Soon After Midnight.flac:a1019cb271c7a9ec204aaa988beb0c95
+15 Desolation Row.flac:f7ce0794236c620ca154a842c780ce21
+16 Thunder On The Mountain.flac:cf4ea1039a680bd3d7ec093ebec20ceb
+17 Autumn Leaves.flac:760b2923cc020de3332c85ed8a23b06a
+18 Long And Wasted Years.flac:ac570cc4b9ecb38474c48edf22acff41
+19 Audience.flac:ecfe2e74b3bd62f080f98f89e8087408
+20 Blowin' In The Wind.flac:d7d4f0f614032748ed61d98ea7e8b24c
+21 Ballad Of A Thin Man.flac:88ba2d9254b588c189e242f804ccc57d
+===================
+===================
+===================
+=== shntool len for: bd17-10-27-iPhone-m4a-mono-inc.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:35.000      29547044 B   cxx   --   ---xx   flac  0.6039  05 Summer Days (beginning cut).flac
+     3:23.322      17933044 B   cxx   --   ---xx   flac  0.5530  06 Melancholy Mood.flac
+     4:09.082      21969046 B   cxx   --   ---xx   flac  0.5735  07 Honest With Me.flac
+     4:09.201      21979586 B   cxx   --   ---xx   flac  0.5613  08 Tryin' To Get To Heaven.flac
+     4:17.444      22706572 B   cxx   --   ---xx   flac  0.5513  09 Once Upon A Time.flac
+     4:25.634      23428996 B   cxx   --   ---xx   flac  0.5739  10 Pay In Blood.flac
+     5:19.793      28205830 B   cxx   --   ---xx   flac  0.5725  11 Tangled Up In Blue.flac
+     3:48.106      20119032 B   cxx   --   ---xx   flac  0.5541  12 The September Of My Years.flac
+     5:46.927      30599018 B   cxx   --   ---xx   flac  0.5776  13 Early Roman Kings.flac
+     4:11.490      22181472 B   cxx   --   ---xx   flac  0.5922  14 Soon After Midnight.flac
+     7:47.415      41226028 B   cxx   --   ---xx   flac  0.5736  15 Desolation Row.flac
+     6:03.793      32086624 B   cxx   --   ---xx   flac  0.5862  16 Thunder On The Mountain.flac
+     3:37.162      19153694 B   cxx   --   ---xx   flac  0.5410  17 Autumn Leaves.flac
+     4:16.175      22594712 B   cxx   --   ---xx   flac  0.6099  18 Long And Wasted Years.flac
+     1:31.684       8086554 B   cxx   --   ---xx   flac  0.6195  19 Audience.flac
+     5:32.987      29369530 B   cxx   --   ---xx   flac  0.6029  20 Blowin' In The Wind.flac
+     6:27.545      34181518 B   cxx   --   ---xx   flac  0.6009  21 Ballad Of A Thin Man.flac
+    80:22.761     425368300 B                            0.5798  (17 files)
+===================
+===================
+===================

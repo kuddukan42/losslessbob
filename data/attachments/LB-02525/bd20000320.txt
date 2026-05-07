@@ -1,0 +1,44 @@
+source unknown
+
+2000-03-20 Nampa, Idaho 
+1 Hallelujah, I'm Ready to Go   
+2 Mr. Tambourine Man   
+3 It's Alright, Ma (I'm Only Bleeding)   
+4 To Ramona   
+5 Tangled Up in Blue   
+6 Rock of Ages   
+7 Country Pie   
+8 Ballad of a Thin Man   
+9 Seeing the Real You at Last   
+10 Watching the River Flow   
+11 Not Dark Yet   
+12 Highway 61 Revisited   
+13 Love Sick   
+14 Like a Rolling Stone   
+15 It Ain't Me, Babe   
+16 Not Fade Away   
+17 Blowin' in the Wind   
+18 Rainy Day Women #12 & 35 
+ 
+
+09e06b67504975099c76c18b07912843 *bd20000320d1t01.shn
+86be714c307069bf5022d379f5ff719a *bd20000320d1t02.shn
+e0a503a3c9cbf59c4a5643c22c044f1e *bd20000320d1t03.shn
+f552e4f33d3870b35bc80a0839216f2d *bd20000320d1t04.shn
+73cd19a4a3529b9c7e39ccdad3873f31 *bd20000320d1t05.shn
+a854d416d561c87890214b1a505e56cd *bd20000320d1t06.shn
+7df892a513ded386a59e9e7981cd7872 *bd20000320d1t07.shn
+137cbf3dfdbca915ecb38834e19a0085 *bd20000320d1t08.shn
+76902c54b733733d142832431c3b6631 *bd20000320d1t09.shn
+0c3c78cccb07621b8496d52bc92c5d39 *bd20000320d2t01.shn
+96a934848ce995d75f5965a344c95a70 *bd20000320d2t02.shn
+80f57e7fa9bb6bd44b2a07995ab2616d *bd20000320d2t03.shn
+eff89e95425bdc4ce50df0d41e10bab8 *bd20000320d2t04.shn
+9fd40537e9a26d1c863c4a7e3f440121 *bd20000320d2t05.shn
+02d3ed0835da5f07ac3ec9f8a2e8dd68 *bd20000320d2t06.shn
+6b9bce9ce4f8c2cb98860401b8b82fc6 *bd20000320d2t07.shn
+fdd787d5092c1e39cf6ef38c228d7b86 *bd20000320d2t08.shn
+c3eaffdc2377c718ba777c1c58288740 *bd20000320d2t09.shn
+d3622df9ec741529b5f6d545eaa2ec16 *bd20000320d2t10.shn
+
+ 

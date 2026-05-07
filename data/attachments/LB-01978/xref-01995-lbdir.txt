@@ -1,0 +1,895 @@
+===================
+===================
+===================
+=== md5 for: bd61-BobDylan-com-v2.flacf
+===================
+===================
+===================
+6a50dc49d7e51ee09d856e0c3e816514 *01\BobDylan.com Vol1 b.jpg
+9a9e322fc6647790254c0b266b670910 *01\BobDylan.com Vol1 f.jpg
+0a4c5cce0551e591c07343bf181104d4 *01\noname.md5
+e290c31fac8bd8a4b2cd3c4955657efa *01\Track01.flac
+96c404df3e294e7ef3c3752276ed5edd *01\Track02.flac
+cf0cc31939b8643731e8db0683701da2 *01\Track03.flac
+d2fb674d89ef2bba62f9988da8a950ae *01\Track04.flac
+07fd6f7076b0af6d03e2ecff3ec56c4a *01\Track05.flac
+7a53cea1d5bfbe638e15617bb67bbf2a *01\Track06.flac
+ebde2b69955dd6c4a38f83394462f462 *01\Track07.flac
+a213700302f2fcf79ecea88e32234a6e *01\Track08.flac
+1e64beeb96aa21d82088d90d49c56eb7 *01\Track09.flac
+2fed09d5124b383f0e3e2cff4cd087d6 *01\Track10.flac
+92dfd87c3ea368f4b78b40c226722eb1 *01\Track11.flac
+98619adac5176d8e97c0c79146ecd070 *01\Track12.flac
+8966c6f2103651186473a2c1f38fcd5f *02\BobDylan.com Vol2 b.jpg
+8dff7ced4c8a8b0c88ddbfe6cc723605 *02\BobDylan.com Vol2 f.jpg
+241834551c3e69f7419ca00cf5e80f54 *02\noname.md5
+39e8fb144441540867ee0a27ed908bc6 *02\Track01.flac
+69666e6997cbb13727b8cb597fbc1a90 *02\Track02.flac
+ca4ff56a9830df1357654421859e0d4b *02\Track03.flac
+a921ea5fffc6bc35f4e4dd5a27bbb6b4 *02\Track04.flac
+551392d4d184c5cba20111e6c8921194 *02\Track05.flac
+31fdb495cb80084c31f69a4dff623a1b *02\Track06.flac
+a1dac9f204ad3d3b7397192cdf8c3027 *02\Track07.flac
+8398b2bc3c82ad3a1ebdb46e37efd5ec *02\Track08.flac
+a26e161e8553d2c400ef42ddd3f91f3e *02\Track09.flac
+1bb2cf73958fe7a3b91b0843e0661b7c *02\Track10.flac
+4a38142fcd3671b103b1b6312f7c05fe *02\Track11.flac
+ac2bc9a3a8c80f3390a52e766a9fac26 *02\Track12.flac
+1be04df78411d15652fae8191344526c *03\BobDylan.com Vol3 b.jpg
+8e102a994cdd5957f5ddcb0cd10039ab *03\BobDylan.com Vol3 f.jpg
+7ec0e5b40ad8aa4468e8558051408ce9 *03\noname.md5
+fc53c3b288ebf2e6aa091c42af5770c8 *03\Track01.flac
+9e8277ac4156189cb0f48f7602c39d91 *03\Track02.flac
+2a270510f833ebfa4a889298b643586f *03\Track03.flac
+e4a631688fd30b5e560bbc62958b99d3 *03\Track04.flac
+d3fa58427d1367f49ad0dcce54373837 *03\Track05.flac
+0c5af9ef7c83478d328679dcab582527 *03\Track06.flac
+8b94115e0846c77a462bc45c2e12d4d9 *03\Track07.flac
+8d650ab376c59ed81c8f2ed729f2ba17 *03\Track08.flac
+27c3934f8aeffff3e937cbededb1a8d3 *03\Track09.flac
+0199a5fc38781b6dd212be72605842ab *03\Track10.flac
+145d33e9c6a50e563725f7c034e93b61 *03\Track11.flac
+b05f9fdcbcfc057e2b191ef27d3ffdda *03\Track12.flac
+a697d754de66539cbf1585b1213ab5cd *03\Track13.flac
+ad912c304e3b85d52aea232f1529ea0a *04\BobDylan.com Vol4 b.jpg
+f18954bcfa05a27ebe8cf465afe9e101 *04\BobDylan.com Vol4 f.jpg
+db210da86e89ead955ef5c4a7d9e7986 *04\noname.md5
+a05ee78b84b0461566abad758435e379 *04\Track01.flac
+b10ccf176a4cb68db441fed9490eaebe *04\Track02.flac
+f938f973d02276bc2f7b18ba3ed189db *04\Track03.flac
+a3ffb77ba0377a627e60748ec5fd66ff *04\Track04.flac
+572358cd255a627565f9022082d52a94 *04\Track05.flac
+7ddbfbd7e1b5190ea7b4fd265f076c87 *04\Track06.flac
+4d40f074b18b3911904299ca2fd80e09 *04\Track07.flac
+e1459237ea313d6e81014bd28eb7c12a *04\Track08.flac
+cebb8a28ff38a7c5d14935da42cb3278 *04\Track09.flac
+9689733d9b3eb888a7f57e84ed18d578 *04\Track10.flac
+a8548a5ff70256c5a1600a49b356efd6 *04\Track11.flac
+d2eb068e59c1e012cff1fc5f13b5bc8d *04\Track12.flac
+7eb44149aa0793ce3108b0d0963172d5 *04\Track13.flac
+1930afa3cbecfe530217d51dd1aee07b *05\BobDylan.com Vol5 b.jpg
+de9818035a05627e236f32685970025c *05\BobDylan.com Vol5 f.jpg
+f58e324bca586188109c8d8d761f512d *05\noname.md5
+2960113dfa152401d2e3beaf37698a0e *05\Track01.flac
+93859c532c45de2627974c12a29d6b80 *05\Track02.flac
+c8315860a93b62a4a5a9cd492ca30fe6 *05\Track03.flac
+5bcfcc050c5afa81f79f8032249c4c03 *05\Track04.flac
+e83636c62682c7d320daf9cbb8521f45 *05\Track05.flac
+a1824148431f4a37e6b03ae9cbc39d89 *05\Track06.flac
+a76ab44f53367a0fe3fe46e7218cf569 *05\Track07.flac
+caab9885184c9903bf963e251983cf09 *05\Track08.flac
+1786cb04daca4d3dd8ecd9ca41f4c5a1 *05\Track09.flac
+9014d560b44a2259f0665cd9ca73d117 *05\Track10.flac
+1baa2ca623d9eb2ee84992416affdfe0 *05\Track11.flac
+a4fd096364f31e4e04ff3c82451563ed *05\Track12.flac
+8912352045e945386dd3a4b0a3d817e9 *05\Track13.flac
+c225e3182feac855cf270cf0d1ac076c *05\Track14.flac
+eee2f578d48de9f47626e0ad1e5c98e1 *06\BobDylan.com Vol6 b.jpg
+8edb63fe55d8f89dedd3a5228e81a8e4 *06\BobDylan.com Vol6 f.jpg
+330d85d1e7c3d5e71e8f27b9d3ddd2d6 *06\noname.md5
+954bba73d424cd9fe6dce9c645769d36 *06\Track01.flac
+b7d71bf929dcbcab15c49bd917723db7 *06\Track02.flac
+400e9731cdb1a920d9b3080a0292176e *06\Track03.flac
+87d612235ff3d365b87d84223323a3c4 *06\Track04.flac
+b22615a9755bfee4f1867c0aa3cad867 *06\Track05.flac
+009e7f57a7718b60b2319f4e432560c8 *06\Track06.flac
+c876695453e07eda378159f1f3d03360 *06\Track07.flac
+973d2859137eb5637d059253156339be *06\Track08.flac
+c9ae0f8c3d30ea71b6774963e9364f37 *06\Track09.flac
+4e76d624d83df1a805edd6b68ad3c824 *06\Track10.flac
+2a97a191944369fada669ec587f7658a *06\Track11.flac
+e2ce74b2d8d8cc68368f767668665934 *06\Track12.flac
+d224cee5e36793bfd000f04a79d0e431 *06\Track13.flac
+6f9df93e26339cc43bff6c7d313e41e4 *07\BobDylan.com Vol7 b.jpg
+de3c11e694007fdb7249e239e042c41f *07\BobDylan.com Vol7 f.jpg
+8c35e2f20641fa01293197007395aee9 *07\noname.md5
+730ce62d49a87546437f8c652808f800 *07\Track01.flac
+422490a9c0010c5fe6a4be3fb2bcdf94 *07\Track02.flac
+ef6fbff50ea113d8cd7e5049a84dce25 *07\Track03.flac
+7cbac4d8d3b62dbc65983ca7df4e9921 *07\Track04.flac
+1fb289ae9077b69cbd1676a3b87bbcd2 *07\Track05.flac
+21e27ef1f818d1934296806a6a91fb42 *07\Track06.flac
+393bcf483f1bc1ef52daf948240c749a *07\Track07.flac
+860f52150aa101cf3992548cfcd793ac *07\Track08.flac
+4a88156f21d85f78ec1bfd232a50afd5 *07\Track09.flac
+74e95a8bccd6eeec5ccf215f5e4ff291 *07\Track10.flac
+532e766d264a61d58bb547951f758712 *07\Track11.flac
+91408be83fbf25780c9570803a375c84 *07\Track12.flac
+6d880908f8a3aefc3d0cc294fc0f576c *07\Track13.flac
+23c9e9f3718478d9352f2a06f31e5fce *07\Track14.flac
+8a988d6224ca7719dc2a351bc85a4312 *08\BobDylan.com Vol8 b.jpg
+96d94f7f5525f65c31da5ff85ac75a28 *08\BobDylan.com Vol8 f.jpg
+db300198ac570b02522ac1cce6267aa2 *08\noname.md5
+8f86d9104a1a2a15e0a139327f02cabb *08\Track01.flac
+1d5f33bc74066b03038d01155acd34a9 *08\Track02.flac
+684899eea4b5a0bb31450906da5b3ac8 *08\Track03.flac
+f8c3cd6d850d030e14ab4be198bd572b *08\Track04.flac
+626f8b06d0453d5d50666ca063d95e5b *08\Track05.flac
+29dfb2f42135e2453f4194a6436ea21c *08\Track06.flac
+4c19588c7abc1ebeea36fbeb0b028c84 *08\Track07.flac
+38da76e0ac91648ae7c33727329601d3 *08\Track08.flac
+5b3a5b6e8b34529da2d5a868d133837b *08\Track09.flac
+87b92d9453cb1588079a20a4edcf9fdf *08\Track10.flac
+b074e31d04f0dcb0c1d8e99d122a4bab *08\Track11.flac
+70511a06856b2364acbbd2cf1ba184e8 *08\Track12.flac
+e0dd86728e950416b481852d39330132 *08\Track13.flac
+f9304dc359433a75314175ff70f4eaf9 *08\Track14.flac
+ad82f1e9acf78c5358f984c08b6f5f49 *09\augustine_041705.flac
+89a952e24527727fb444365eacb2a4c5 *09\believeinyou_041705.flac
+58b904b78563337457bd0ab482abfaa8 *09\born_020198.flac
+86a0109050959fdf36aee649f8bac3d3 *09\highwater_042505.flac
+482f60dd0c50c1a989a35c3576e662c0 *09\redsky_042605.flac
+26da2c62e8279f2fa1fb75cb333ada5a *09\shooting_042605.flac
+7e77bc6ba3ac4b7eed5b65c908e89e96 *09\visions_042505.flac
+1bb84471273818aaf3a6aa1ae5cf6e8f *09\_note.txt
+7d33d3bc23bc2f931245817dbd423aff *BobDylan.com track lists.txt
+7cc42f21c923ba92e7405cfb0112fb37 *BobDylan.com.md5
+f960c95a604f0750737e2caccaa3a27a *lbdir-bd61-BobDylan-com-v2.flacf.txt
+87466dbdd109be78d42f0e9895217134 *Other releases\Best of Vol 1\01 Lay Down Your Weary Tune - Carnegie Hall, New York City, 26 Oct 1963.flac
+cda8e1828526e9ed47b9cec985af8584 *Other releases\Best of Vol 1\02 Idiot Wind - Historic Orpheum Theater, Minneapolis, MN, 30 Aug 1992.flac
+841bcf6e7af4594f8b57d6ad06c81b16 *Other releases\Best of Vol 1\03 Visions Of Johanna - Historic Orpheum Theater, Minneapolis, MN, 3 Sep 1992.flac
+1f16ff51a240a69ff41248238f041ec9 *Other releases\Best of Vol 1\04 Tight Connection To My Heart - Supper Club, New York City, 17 Nov 1993, second show.flac
+3023605b37f52c38832975cc4983c209 *Other releases\Best of Vol 1\05 Weeping Willow (traditional) - Supper Club, New York City, 17 Nov 1993, second show.flac
+8e93cfde82fc61354ada1dfea383f819 *Other releases\Best of Vol 1\06 Mr. Tambourine Man - Wolftrap, Vienna, VA, 23 Aug 1997.flac
+6279346aa7f974df78168665845778cc *Other releases\Best of Vol 1\07 Cold Irons Bound - El Rey Theater, Los Angeles, 16 Dec 1997.flac
+541cf1ae9b3b371d053cb83d5dee73a9 *Other releases\Best of Vol 1\08 The Lonesome Death of Hattie Carroll - El Rey Theater, Los Angeles, 16 Dec 1997.flac
+077e80499ec2915dc51317640ac0cfb9 *Other releases\Best of Vol 1\09 'Til I Fell In Love With You - El Rey Theater, Los Angeles, 16 Dec 199709 Unknown Artist - Track 9.flac
+f413c9281801d549c137254a5be130c3 *Other releases\Best of Vol 1\10 You're A Big Girl Now - El Rey Theater, Los Angeles, 17 Dec 1997.flac
+cd397b94012572ea65d19f35e42f5bb8 *Other releases\Best of Vol 1\11 Love Sick - Grammy Awards, Radio City Music Hall, New York City, 28 Feb 1998.flac
+83383889239e02fe958bb4f10627112f *Other releases\Best of Vol 2\01 Girl Of The North Country - Madison Square Garden, New York City, 20 Jan 1998.flac
+c100755901277e7842247e8387b9594e *Other releases\Best of Vol 2\02 The Man In Me - Landmark Theater, Syracuse, NY, 28 Jan 1998.flac
+abb4ca48b72ae6263e096fa2031f48fe *Other releases\Best of Vol 2\03 Born In Time - New Jersey Center for the Performing Arts, Newark, NJ, 1 Feb 1998.flac
+531d4a98a1d7efc77b1d22d911c57594 *Other releases\Best of Vol 2\04 Tears Of Rage (Bob Dylan-Richard Manuel) - Madison Square Garden, New York City, 17 Jan 1998.flac
+01ec73d408890147c305a7af27a3c86c *Other releases\Best of Vol 2\05 Delia (traditional) - Supper Club, New York City, 17 Nov 1993, second show.flac
+ed8f7bff721b1a4c8e89960317a17a89 *Other releases\Best of Vol 2\06 Make You Feel My Love - Pauley Pavilion, UCLA, Los Angeles, CA, 21 May 1998.flac
+a24dd931cb9c82d639ce4e29c774338a *Other releases\Best of Vol 2\07 I'm Not Supposed To Care (Gordon Lightfoot) - The Pond, Anaheim, CA, 23 May 1998.flac
+2c05218a9ffcc0feb4cd7fb39bdeb6cd *Other releases\Best of Vol 2\08 Shelter From The Storm - Roseland, New York City, 19 Oct 1994.flac
+1b09df3252b72584ad5d895d2016605b *Other releases\Best of Vol 2\09 Boots Of Spanish Leather - Glasgow, Scotland, 21 Jun 1998.flac
+4ccf1d52f2b36be0b2816843b06cc457 *Other releases\Best of Vol 2\10 Mama, You Been On My Mind - Brussels, Belgium, 17 Jun 1998.flac
+16a1012d45140f5ea847b49848d89fe3 *Other releases\Best of Vol 2\11 Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac
+66ac8e739d5fa9cde03dc9f5b6fb285a *Other releases\Best of Vol 2\12 A Hard Rain's Gonna Fall - Messehalle, Leipzig, Germany, 2 Jun 1998.flac
+6a9837bcd368c1fc3b236a3da56400dc *Other releases\Best of Vol 3\01 I And I - Forum, Dijon, France, 1 Jul 1998.flac
+1278393a8432614d2c3ac731c2ac2a10 *Other releases\Best of Vol 3\02 Newry Highwayman [a.k.a. The Roving Blade] (traditional) - Botanic Gardens, Belfast, Northern Ireland, 19 Jun 1998.flac
+b05f9fdcbcfc057e2b191ef27d3ffdda *Other releases\Best of Vol 3\03 Friend Of The Devil (Robert Hunter-Jerry Garcia) - Nuremberg, Germany, 31 May 199.flac
+a697d754de66539cbf1585b1213ab5cd *Other releases\Best of Vol 3\04 Rank Strangers To Me (Albert E. Brumley) - La Scalinata, Rome, Italy, 5 Jul 1998.flac
+47a5b7e8aa22f4b38ac0c178bb679c68 *Other releases\Best of Vol 3\05 Shake Sugaree (Elizabeth Cotten) - The Roxy, Atlanta, GA, 1 Dec 1997.flac
+64e92c811ee49d0e556661b0355277f5 *Other releases\Best of Vol 3\06 Oh Babe, It Ain't No Lie (Elizabeth Cotten) - Stadtpark, Hamburg, Germany 12 Jun 1998.flac
+c6bfb27366a31e9fb76b1204216ba095 *Other releases\Best of Vol 3\07 The Times We've Known [Les Bons Moments] (Charles Aznavour) - Madison Square Garden, New York City, 1 Nov 1998.flac
+16b8706212ff49fcd042107d2c752d9e *Other releases\Best of Vol 3\08 Little Moses (Bert A. Williams-Earl C. Jones) - Historic Orpheum Theater, Minneapolis, MN, 2 Sep 1992.flac
+6c25d8754d4d81e0b979760239c0850b *Other releases\Best of Vol 3\09 (filler) Mama, You Been On My Mind - Brussels, Belgium, 17 Jun 1998.flac
+0c11ae3615f0298883aa3740646f297d *Other releases\Best of Vol 3\10 (filler) Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac
+e6b38935bdc7aecfe8aacbcc5f2795da *Other releases\Best of Vol 3\11 (filler) A Hard Rain's Gonna Fall - Messehalle, Leipzig, Germany, 2 Jun 1998.flac
+4e85392e0131a66a3824351fed25de0e *Other releases\Best of Vol 3\12 (filler) Baby Let Me Follow You Down (Rev Gary Davies, arr. Eric von Schmidt)  - with The Hawks, Free Trade Hall, Manchester, England, 17 May 1966.flac
+f57fa1f62bb4710647fe293f6691a800 *Other releases\Best of Vol 4\01 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+53def3cc3a1f8b68c51a920c2ea32d35 *Other releases\Best of Vol 4\02 Tight Connection To My Heart - Supper Club, New York City, 17 Nov 1993, second show02 Unknown Artist - Track 2.flac
+e85ad5e61888421986cb3074a205b47d *Other releases\Best of Vol 4\03 Weeping Willow (traditional) - Supper Club, New York City, 17 Nov 1993, second show03 Unknown Artist - Track 3.flac
+562cf8abc51adb107fbb76a3802fc9a3 *Other releases\Best of Vol 4\04 Idiot Wind - Historic Orpheum Theater, Minneapolis, MN, 30 Aug 1992.flac
+3db92d4d186be873e823de0aba058b67 *Other releases\Best of Vol 4\05 Visions Of Johanna - Historic Orpheum Theater, Minneapolis, MN, 3 Sep 199205 Unknown Artist - Track 5.flac
+5889e0eca661432d6dc86df8f876a40f *Other releases\Best of Vol 4\06 'Til I Fell In Love With You - El Rey Theater, Los Angeles, 16 Dec 19906 Unknown Artist - Track 6.flac
+743c1728b9f936308b83746277dcd74f *Other releases\Best of Vol 4\07 Lay Down Your Weary Tune - Carnegie Hall, New York City, 26 Oct 1963.flac
+04bbce9ef232d4cc57fea161af870e42 *Other releases\Best of Vol 4\08 The Lonesome Death of Hattie Carroll - El Rey Theater, Los Angeles, 16 Dec 199708 Unknown Artist - Track 8.flac
+37069c73f901cb443574c0bb05b81329 *Other releases\Best of Vol 4\09 John Brown - Town Hall, New York City, 12 Apr 196309 Unknown Artist - Track 9.flac
+a48c4417a864f1859f63dd0d311e4ca2 *Other releases\Best of Vol 4\10 Percy's Song - Carnegie Hall, New York City, 26 Oct 196310 Unknown Artist - Track 10.flac
+135a967694340a139ccb85b45d5cc55a *Other releases\Best of Vol 4\11 Seven Curses - Carnegie Hall, New York City, 26 Oct 1963.flac
+a8861c7a852ee04b8d36c487e78ca8b0 *Other releases\Best of Vol 5\01 I Believe In You - Blue Cross Arena, Rochester, NY, 3 Nov 199801 Track01.flac
+3ff61adcfd7a4fbb5752cdcd4b1cf342 *Other releases\Best of Vol 5\02 Across The Borderline (Ry Cooder-John Hiatt-Jim Dickinson) - Blue Cross Arena, Rochester, NY, 3 Nov 1998.flac
+a7edf7796162863bb062d410dc4c7dbb *Other releases\Best of Vol 5\03 Man In The Long Black Coat - Ice Palace, Tampa, FL, 30 Jan 1999.flac
+893a6af757132f02dd17079126053c6f *Other releases\Best of Vol 5\04 Never Gonna Be The Same Again - Ice Palace, Tampa, FL, 30 Jan 1999.flac
+60458c852afe0b984af6b421ea26341d *Other releases\Best of Vol 5\05 To Be Alone With You - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+331527c3227963ce1cdb465f85de6b29 *Other releases\Best of Vol 5\06 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+f48f54362654a5585a4df66182011a01 *Other releases\Best of Vol 5\07 (bonus) Rock of Ages Pensacola 2 Feb 99.flac
+4dcfe12f45277278a8a427c9ad9259b7 *Other releases\Best of Vol 5\08 (bonus)Pass me not 23 or 24 Feb 99.flac
+fbae1b3d352809c9ff42a17e9f078009 *Other releases\Best of Vol 5\09 (bonus)Mr. Tambourine Man - Wolftrap, Vienna, VA, 23 Aug 1997.flac
+c835cda2dbc880f07800ec57b0b99e37 *Other releases\Best of Vol 5\10 (bonus)Can You Please Crawl Out Your Window - early version released in 1965 as Positively 4th Street by mistake .flac
+9965931cef6e3acce1f98d65ded8f9ba *Other releases\Best of Vol 5\11 (bonus)Chimes (with Joan Osbourne) - The 60's.flac
+6bb2981f1835629379ef4c974fb4257d *Other releases\Best of Vol 5\12 (bonus)Dignity (alt) Touched by an Angel.flac
+f2c44280870257708a4da1b0b4fc7585 *Other releases\Best of Vol 5\13 (bonus)Train of Love Cash tribute April 99.flac
+4f27b3173a10c2899a7b3e947d96afe3 *Other releases\Best of Vol 5\14 (bonus)Cousins (Patti Duke Theme) spoof.flac
+25a4888c3626e837146f2f539172994b *Other releases\Best of Vol 5\15 (bonus)Winning Ugly IV Stones.flac
+c89bdc4618b8c030b308ed6ffbfc0e5c *Other releases\From the Vaults Vol 1 D1\01 Bob Dylan - Visions Of Johanna.flac
+f47fa29bd78cde401c6e0e1910baddd8 *Other releases\From the Vaults Vol 1 D1\02 Bob Dylan - Tight Connection To My Heart.flac
+f03c149fc13f5ae243d094a055a65835 *Other releases\From the Vaults Vol 1 D1\03 Bob Dylan - Delia.flac
+89f02930721c4e72b5a1b320efa0adcd *Other releases\From the Vaults Vol 1 D1\04 Bob Dylan - Weeping Willow.flac
+c303ece30b21acdfa5ee78f4d38ddaea *Other releases\From the Vaults Vol 1 D1\05 Bob Dylan - Shelter From The Storm.flac
+044c4379c80d0238dc4427b62c2dbd30 *Other releases\From the Vaults Vol 1 D1\06 Bob Dylan - Mr Tambourine Man.flac
+5eb3e32868ccf9e652ede6b6380edf7e *Other releases\From the Vaults Vol 1 D1\07 Bob Dylan - The Lonesome Death Of Hattie Carroll.flac
+1e0acde9b6f1235a41f44dfe91975677 *Other releases\From the Vaults Vol 1 D1\08 Bob Dylan - Tears Of Rage.flac
+0bfa43c4cdb351e24877bd3ee522c5ef *Other releases\From the Vaults Vol 1 D1\09 Bob Dylan - Born In Time.flac
+ba07605e204b4bb40bae699f50107e7b *Other releases\From the Vaults Vol 1 D2\01 Bob Dylan - Girl Of The North Country.flac
+5eb2cfd62bd2463643bb274fb4880604 *Other releases\From the Vaults Vol 1 D2\02 Bob Dylan - The Man In Me.flac
+017d4ff95eeb498c682adbdfceebc5ac *Other releases\From the Vaults Vol 1 D2\03 Bob Dylan - Love Sick.flac
+9c02b67c107834eb8f01cd32f217c826 *Other releases\From the Vaults Vol 1 D2\04 Bob Dylan - Make You Feel My Love.flac
+95165892b2fef1214c6ac120daf326c3 *Other releases\From the Vaults Vol 1 D2\05 Bob Dylan - I'm Not Supposed To Care.flac
+cca09e676881788967d1abfc4964484e *Other releases\From the Vaults Vol 1 D2\06 Bob Dylan - A Hard Rain's A-Gonna Fall.flac
+efdcddac99725336f8849fd4682da55f *Other releases\From the Vaults Vol 1 D2\07 Bob Dylan - Mama You Been On My Mind.flac
+67fbf2de3aed51646aaadaa8212d7ff6 *Other releases\From the Vaults Vol 1 D2\08 Bob Dylan - Boots Of Spanish Leather.flac
+e766936aa7963ce3c289e10c563203dc *Other releases\From the Vaults Vol 1 D2\09 Bob Dylan - Señor.flac
+9bd173c74dbf61a82533bb21b33f9405 *Other releases\From the Vaults Vol 2 D1\01 Bob Dylan - Idiot Wind.flac
+a91d81f69eda4ab00c4182e37c6822c0 *Other releases\From the Vaults Vol 2 D1\02 Bob Dylan - I Believe In You.flac
+deea3827e925560735aad445a2c8b085 *Other releases\From the Vaults Vol 2 D1\03 Bob Dylan - Across The Borderline.flac
+fc6bee6841ccade268b9dc27ebcbbd97 *Other releases\From the Vaults Vol 2 D1\04 Bob Dylan - Man In The Long Black Coat.flac
+75d9caae6f75354e320fc64a506b86c4 *Other releases\From the Vaults Vol 2 D1\05 Bob Dylan - Don't Think Twice.flac
+61c597424fa6557d9fecfaf42166f348 *Other releases\From the Vaults Vol 2 D1\06 Bob Dylan - Never Gonna Be The Same Again.flac
+cccb7fb5a49f7e14bae0023bfb831d42 *Other releases\From the Vaults Vol 2 D1\07 Bob Dylan - Not Fade Away.flac
+a2185398f811a5b454e5bf3f64fad791 *Other releases\From the Vaults Vol 2 D1\08 Bob Dylan - Silvio.flac
+182e7207dd02b0d14b94859ebc68f097 *Other releases\From the Vaults Vol 2 D1\09 Bob Dylan - To Be Alone With You.flac
+668a1a00a2ed4b44f89209b14f114b3f *Other releases\From the Vaults Vol 2 D1\10 Bob Dylan - Little Moses.flac
+d91ae4c542b982b9d434cc91f0679244 *Other releases\From the Vaults Vol 2 D1\11 Bob Dylan - The Times We've Known.flac
+af6672f642b6955e62a61fbc02526ca1 *Other releases\From the Vaults Vol 2 D2\01 Bob Dylan - Shake Sugaree.flac
+2de8f7796769272ebd5365589809e303 *Other releases\From the Vaults Vol 2 D2\02 Bob Dylan - Watching The River Flow.flac
+7b85d7c2e80c7ffde3d08a2868325bc7 *Other releases\From the Vaults Vol 2 D2\03 Bob Dylan - Make You Feel My Love.flac
+d2a953deffdee8d24e61c0f10e9b8755 *Other releases\From the Vaults Vol 2 D2\04 Bob Dylan - Love Sick.flac
+baf56feb2e74248092cc2fec450ab08b *Other releases\From the Vaults Vol 2 D2\05 Bob Dylan - Blowin' In The Wind.flac
+2ccc756bc69e46e1aee27655be756de1 *Other releases\From the Vaults Vol 2 D2\06 Bob Dylan - The Roving Blade.flac
+2bda90e396c7bdafc21174ab91c9838a *Other releases\From the Vaults Vol 2 D2\07 Bob Dylan - Visions Of Johanna.flac
+dc2f68f6406f1cf7fcabdfbde513600f *Other releases\From the Vaults Vol 2 D2\08 Bob Dylan - I And I.flac
+b12653ae2e66f9e39472a2a21bb5df78 *Other releases\From the Vaults Vol 2 D2\09 Bob Dylan - Oh Babe It Ain't No Lie.flac
+dabde350f4c8754fc47c69a7f4ce4435 *Other releases\From the Vaults Vol 2 D2\10 Bob Dylan - Friend Of The Devil.flac
+61d501c444a552aa54f10bc118e1563c *Other releases\From the Vaults Vol 2 D2\11 Bob Dylan - Tears Of Rage.flac
+921e9b32c776967ee7dfcd068a010a44 *Other releases\Masters\01 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+2d7961d9862d20c7434ecb438ee5e442 *Other releases\Masters\02 Man In The Long Black Coat - Ice Palace, Tampa, FL, 30 Jan 1999.flac
+097817caff8fdc0961c989856a274ca5 *Other releases\Masters\03 To Be Alone With You - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+0dcf5ebf98feeecdb2cd359b98ca33ee *Other releases\Masters\04 Never Gonna Be The Same Again - Ice Palace, Tampa, FL, 30 Jan 1999.flac
+8e41b1df02e5d48d7f923c35a46bd92f *Other releases\Masters\05 Don't Think Twice, It's Alright - RPI Fieldhouse, Troy, NY, 22 Feb 1999.flac
+e24cd49ce9c776a0c387943179aab30c *Other releases\Masters\06 Visions Of Johanna - Cumberland County Civic Center, Portland, ME, 25 Feb 1999.flac
+eff387e35917f9eb197f20285376fcca *Other releases\Masters\07 Friend Of The Devil (Robert Hunter-Jerry Garcia) - Broome County Arena, Binghamton, NY, 19 Feb 1999.flac
+ccbd2c0323bee1e4372c7318c3459ce1 *Other releases\Masters\08 Watching The River Flow - Leon County Civic Center, Tallahassee, FL, 1 Feb 1999.flac
+7718d19eb41794f89f8b484f1aa0a501 *Other releases\Masters\09 Make You Feel My Love - UNO Lakefront Arena, New Orleans, LA, 3 Feb 1999.flac
+ba19ae48025d131bd7b54a730fa17a86 *Other releases\Masters\10 Tears Of Rage (Bob Dylan-Richard Manuel) - RPI Fieldhouse, Troy, NY, 22 Feb 1999.flac
+105793f4de37339848716dd0ee8c165a *Other releases\Masters\11 Love Sick - Municipal Auditorium, Nashville, TN 6 Feb 1999.flac
+ab24507ed8ccef3208fed29a3718ba9a *Other releases\Masters\12 Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac
+8b042729279a49f83f6527d32781d97e *Other releases\Masters\13 I And I - Forum, Dijon, France, 1 Jul 1998.flac
+243b9828278391dd012c49a7256e977f *Update.txt
+===================
+===================
+===================
+=== ffp for: bd61-BobDylan-com-v2.flacf
+===================
+===================
+===================
+01\Track01.flac:557ab2ec516551ed84189d9a8d5c1929
+01\Track02.flac:d0b8225a29bb9623916971bd00124f3d
+01\Track03.flac:22d482eab388428a72c0a4302fbbad21
+01\Track04.flac:ef5fb66f4b491dbaa33e860a1268a6ad
+01\Track05.flac:82ae8e149ac7348cc74de19f82def44b
+01\Track06.flac:c62e53406a723b29922a084b743dbf14
+01\Track07.flac:ee31223f328925edda39349c25b6f155
+01\Track08.flac:a3d51b34491387e3b5c3b175a89b6522
+01\Track09.flac:f375ed96854df3a606aaf9308e5cc745
+01\Track10.flac:192b0f84464162dc6d0db8804e41c6fc
+01\Track11.flac:eee78920588ffe3bd83fe80909eefe96
+01\Track12.flac:b49c2b9db41ad54cd0ffd7cf8c114754
+02\Track01.flac:40b814af04c66241cf8a204ef537f044
+02\Track02.flac:86f71814dcfafb24c58fac3f2c2df16f
+02\Track03.flac:5c34c99c21f6e378eb70688577389d35
+02\Track04.flac:af0e679ed8e7ca0ceedd58ac120945f6
+02\Track05.flac:c34d85b12eedf492f1d4613230c0c3e9
+02\Track06.flac:6029527438e8c7ad5bed7c305b56aa24
+02\Track07.flac:8de1b43bcff42b9516e90f4d1405f231
+02\Track08.flac:83e3821102aa7bae51a90ee34ed5498a
+02\Track09.flac:68c2af3a5151e19fe06ebe313393f99f
+02\Track10.flac:8cc5aa8461e19601eba93a6f62112be0
+02\Track11.flac:14ee29a9b8ba0bfb98e83815c9fe473c
+02\Track12.flac:c5a6946372b4bc3150bed241ac4bddb2
+03\Track01.flac:1ded317d7999991a027f287c486cb160
+03\Track02.flac:88048c5130fa3c4b267596e195a96b83
+03\Track03.flac:69d8c573f2e301735861d9f0caf1d430
+03\Track04.flac:44ce09b145cd1cb49af3801dee158070
+03\Track05.flac:2c302e0a5eaeca1324cc813d15b06a5d
+03\Track06.flac:96313c044a7e6d052a4311d3a7c37f4c
+03\Track07.flac:cd00579c41b6bce619a0afef7321dd5d
+03\Track08.flac:2578bb44314969a6ecbd67b55118ef70
+03\Track09.flac:e3d190ae9aaddeb4a8c350ed767a6097
+03\Track10.flac:87e78a20bb2b5c0ef291f0664acc335e
+03\Track11.flac:29b994a9e5901af61b9aaa28919ff33c
+03\Track12.flac:fe5a0f8326532f2e5c719d0e6b02c997
+03\Track13.flac:1a25486eb804762554725bd935e8c9d5
+04\Track01.flac:b2e9e341254bd97b8b6b951616cea1d1
+04\Track02.flac:a554447cb025a1293d8827637db73a63
+04\Track03.flac:9443b16f88aaed33c4d4fbc35b55189e
+04\Track04.flac:2c8b629ecd172d1cf66e596933a7c378
+04\Track05.flac:4fdc7e9dd967b0281fe455cf68f9caaf
+04\Track06.flac:91a4a3cb412ba284b9ffffa5295806d6
+04\Track07.flac:7863bc8f8dec9ade36481c3bb9ee6977
+04\Track08.flac:2b5ca5442f69c31314fe62439e4fc632
+04\Track09.flac:4ec5c95d02f8e5eb824bff95ebd0318d
+04\Track10.flac:f418cd47ebf907df11629bfe28a721c7
+04\Track11.flac:868b2e30fc3ce9f9831010b0dd98417e
+04\Track12.flac:a8b2a2c95e3d3eaf2fcda4e42bf30ea8
+04\Track13.flac:ad3a5e18c2daa22d68019ad1f06b5615
+05\Track01.flac:ea2656f45643f6c8d84664040724478f
+05\Track02.flac:5889ed374b1921ee8018a0c9209a2bd9
+05\Track03.flac:2884b8ea943e97d7b35fed3f4cc1060c
+05\Track04.flac:fb822123f1b5d38aee9a65aae85de194
+05\Track05.flac:1ffaa7ce94b6c0a3ff1b15a1a87297f4
+05\Track06.flac:ae61f89d36aeba8671fe0cd880db11f6
+05\Track07.flac:aacc368010a3762957700aa047d38c67
+05\Track08.flac:04e9331435930e620ec8dafaa70430c8
+05\Track09.flac:ef48758f48014e610ed942d25a4ffba0
+05\Track10.flac:baa4095d79b6e546313473e774813855
+05\Track11.flac:934827f9180524ebe80228309bf20738
+05\Track12.flac:b95a3d064f701ff0a525dc223f21aae2
+05\Track13.flac:01fb5f202c28f31615ccdde2870cc97f
+05\Track14.flac:6294f4e4a99f7db31e9aefe5bcfef1fc
+06\Track01.flac:b145080df1adf6b0b91266d6cf8d8c77
+06\Track02.flac:e7bdb9c851493cadd9a263197e98fa50
+06\Track03.flac:140557df07a6e32fbb0c7bd810f24515
+06\Track04.flac:571c7276cedcd1fdc32539af3b0c3569
+06\Track05.flac:97671fb41593ca202980686bc8adfd25
+06\Track06.flac:74c9ad190db78b5520e5113282661dbd
+06\Track07.flac:a3445962f95bc555d9f70d28d7fdf8b6
+06\Track08.flac:b971d764754c54c180422767e8792677
+06\Track09.flac:8c1fc9ac16c73f8dc66b78fd8b203d5c
+06\Track10.flac:142dbf984d0e60eb552c0963a16c6d7a
+06\Track11.flac:cbc123126d44c61f31440cf4a688133a
+06\Track12.flac:d6e60f47c3de65b5dda8b67d52d351e6
+06\Track13.flac:23c60755b4ca4f31cb24bad20af6bd5b
+07\Track01.flac:3f7eef3b31362f14a95a36db65660cac
+07\Track02.flac:02fb66ca7457a80ee2649bf575d0e1c5
+07\Track03.flac:d891834af821699c624b0795b4f0e6f2
+07\Track04.flac:e57b175198730615ffe08ca0ac6e52d3
+07\Track05.flac:47f327512ddd3c1809443229dd1ecd3c
+07\Track06.flac:26589cc3534335a3f5615d0af2fb3fa0
+07\Track07.flac:b82e2915e8e98299e6f4a4490aab2f82
+07\Track08.flac:38b823ccf7f34cff42e68d75a670b69a
+07\Track09.flac:af4fb3d89fa17d34811d26a6cf5e569e
+07\Track10.flac:a286df1ee50ca31f905c4712e6d139f0
+07\Track11.flac:7b1852f28778849395bc5d06b5ea0753
+07\Track12.flac:03536a64d4559c2a5915e804b53637f5
+07\Track13.flac:3421e87e3d5fa477bcaf156943b8b5dc
+07\Track14.flac:cdaabc027b5a133566f9748e82bb9a10
+08\Track01.flac:f12a11c89c0529b2ae5f81341f246ae3
+08\Track02.flac:7a6778fb8590d0fb34e239b6ff1fc1b3
+08\Track03.flac:59cf3843c05d19f9d236366a4faf8ad7
+08\Track04.flac:c071280f6916d1f37d570d203d332b24
+08\Track05.flac:d56c330618de07a4c090d16fa6da79d5
+08\Track06.flac:124a5b6c1e36da7b17e90fec771431b7
+08\Track07.flac:272cdadbe784616f8160284a6c131d03
+08\Track08.flac:4a3831575aa13ba61598935480a06a36
+08\Track09.flac:2051f76d09771701b1b81837fd448722
+08\Track10.flac:dc2da3ab60c1967f261b994804073b53
+08\Track11.flac:ed747be516f25143ffba31310b43d23c
+08\Track12.flac:95b8f35e61fb0d4ca06d3480a423fb64
+08\Track13.flac:3adf560f0a18ebf367181669eb0261f2
+08\Track14.flac:978c5880b9eef8898d062746ea62c522
+09\augustine_041705.flac:d64e4279fe56727a66e44f300a42089c
+09\believeinyou_041705.flac:c3c402aee4ddf6e5caffdba0293e0116
+09\born_020198.flac:4b1778582815b2f5c76112941a5e0c69
+09\highwater_042505.flac:0ff37d17054f5a1b1703ad5aa24aa990
+09\redsky_042605.flac:96ca7df4a5242020a52d1ab8c35bec9b
+09\shooting_042605.flac:a7fb64534e9ba48c354af3e2ffa03e29
+09\visions_042505.flac:27eb5b06deb87423bb57a4ae6553a9cf
+Other releases\Best of Vol 1\01 Lay Down Your Weary Tune - Carnegie Hall, New York City, 26 Oct 1963.flac:09b2138cf8de2f5f8c2ba52a4e83972a
+Other releases\Best of Vol 1\02 Idiot Wind - Historic Orpheum Theater, Minneapolis, MN, 30 Aug 1992.flac:e3211d717389f2969134e14b7ed38b37
+Other releases\Best of Vol 1\03 Visions Of Johanna - Historic Orpheum Theater, Minneapolis, MN, 3 Sep 1992.flac:ead7b1f7f8a9a5a531f46bd816947dd0
+Other releases\Best of Vol 1\04 Tight Connection To My Heart - Supper Club, New York City, 17 Nov 1993, second show.flac:09db38931d4cc80fcc7e390fc945f7a0
+Other releases\Best of Vol 1\05 Weeping Willow (traditional) - Supper Club, New York City, 17 Nov 1993, second show.flac:acdfcf6cb1a2b53477fb213d61bc2c6e
+Other releases\Best of Vol 1\06 Mr. Tambourine Man - Wolftrap, Vienna, VA, 23 Aug 1997.flac:5927d9f207cd73411d2172c933020405
+Other releases\Best of Vol 1\07 Cold Irons Bound - El Rey Theater, Los Angeles, 16 Dec 1997.flac:1f99858398c43a086d312f0d1a40e53a
+Other releases\Best of Vol 1\08 The Lonesome Death of Hattie Carroll - El Rey Theater, Los Angeles, 16 Dec 1997.flac:762e2b28a619cf79f745971d1d723bac
+Other releases\Best of Vol 1\09 'Til I Fell In Love With You - El Rey Theater, Los Angeles, 16 Dec 199709 Unknown Artist - Track 9.flac:05eea98bab338817da45848e22e49cae
+Other releases\Best of Vol 1\10 You're A Big Girl Now - El Rey Theater, Los Angeles, 17 Dec 1997.flac:79f4085728af9ba2e1aa71f50c2ad1c7
+Other releases\Best of Vol 1\11 Love Sick - Grammy Awards, Radio City Music Hall, New York City, 28 Feb 1998.flac:056dcf81b1c895e179effcd637806096
+Other releases\Best of Vol 2\01 Girl Of The North Country - Madison Square Garden, New York City, 20 Jan 1998.flac:eb9a88269d41245337794746a47e0df8
+Other releases\Best of Vol 2\02 The Man In Me - Landmark Theater, Syracuse, NY, 28 Jan 1998.flac:b407136ebd42588b3e78a3a706e1eca3
+Other releases\Best of Vol 2\03 Born In Time - New Jersey Center for the Performing Arts, Newark, NJ, 1 Feb 1998.flac:3d790eaf493098c085ba8525049fceb7
+Other releases\Best of Vol 2\04 Tears Of Rage (Bob Dylan-Richard Manuel) - Madison Square Garden, New York City, 17 Jan 1998.flac:0ea7773171516ff7105d5217f74cd28e
+Other releases\Best of Vol 2\05 Delia (traditional) - Supper Club, New York City, 17 Nov 1993, second show.flac:0f26fead0dcad76977f84e67db1bae7e
+Other releases\Best of Vol 2\06 Make You Feel My Love - Pauley Pavilion, UCLA, Los Angeles, CA, 21 May 1998.flac:082fb001121c3158fa146fbbd11b219d
+Other releases\Best of Vol 2\07 I'm Not Supposed To Care (Gordon Lightfoot) - The Pond, Anaheim, CA, 23 May 1998.flac:88820f1031ede981d423dd6b0b672776
+Other releases\Best of Vol 2\08 Shelter From The Storm - Roseland, New York City, 19 Oct 1994.flac:51396bd25c71e47d58247269f06614b7
+Other releases\Best of Vol 2\09 Boots Of Spanish Leather - Glasgow, Scotland, 21 Jun 1998.flac:ffffd0d297659c805fcac588d063d345
+Other releases\Best of Vol 2\10 Mama, You Been On My Mind - Brussels, Belgium, 17 Jun 1998.flac:7393aa05a8f5e93f658f8eabf673eb8c
+Other releases\Best of Vol 2\11 Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac:a13e4b1c3aaa1826cc952ed9c6f69c1c
+Other releases\Best of Vol 2\12 A Hard Rain's Gonna Fall - Messehalle, Leipzig, Germany, 2 Jun 1998.flac:84be9514d359421413a05ef12a5a16cc
+Other releases\Best of Vol 3\01 I And I - Forum, Dijon, France, 1 Jul 1998.flac:3e116a2a7162a7170f425b6c7b7dc96f
+Other releases\Best of Vol 3\02 Newry Highwayman [a.k.a. The Roving Blade] (traditional) - Botanic Gardens, Belfast, Northern Ireland, 19 Jun 1998.flac:db1da8c2520c2e060f000aa0ef99d1c5
+Other releases\Best of Vol 3\03 Friend Of The Devil (Robert Hunter-Jerry Garcia) - Nuremberg, Germany, 31 May 199.flac:fe5a0f8326532f2e5c719d0e6b02c997
+Other releases\Best of Vol 3\04 Rank Strangers To Me (Albert E. Brumley) - La Scalinata, Rome, Italy, 5 Jul 1998.flac:1a25486eb804762554725bd935e8c9d5
+Other releases\Best of Vol 3\05 Shake Sugaree (Elizabeth Cotten) - The Roxy, Atlanta, GA, 1 Dec 1997.flac:a4780b5702ecf9e8c659612bdb48c417
+Other releases\Best of Vol 3\06 Oh Babe, It Ain't No Lie (Elizabeth Cotten) - Stadtpark, Hamburg, Germany 12 Jun 1998.flac:89d3a8a1cdf6506225f31437a090e4e7
+Other releases\Best of Vol 3\07 The Times We've Known [Les Bons Moments] (Charles Aznavour) - Madison Square Garden, New York City, 1 Nov 1998.flac:0317eced0a8ea994d50315ae41087c1e
+Other releases\Best of Vol 3\08 Little Moses (Bert A. Williams-Earl C. Jones) - Historic Orpheum Theater, Minneapolis, MN, 2 Sep 1992.flac:339cd63795fbff845da796916f88cf6e
+Other releases\Best of Vol 3\09 (filler) Mama, You Been On My Mind - Brussels, Belgium, 17 Jun 1998.flac:8791edde66ca1b1ee835123e51e0a859
+Other releases\Best of Vol 3\10 (filler) Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac:e4aa90e511e4190b325e2562ca2e59d4
+Other releases\Best of Vol 3\11 (filler) A Hard Rain's Gonna Fall - Messehalle, Leipzig, Germany, 2 Jun 1998.flac:68bf14712eddeaa66b23e066afba6fa7
+Other releases\Best of Vol 3\12 (filler) Baby Let Me Follow You Down (Rev Gary Davies, arr. Eric von Schmidt)  - with The Hawks, Free Trade Hall, Manchester, England, 17 May 1966.flac:835e68f969717b1bbb748cb4133bbddb
+Other releases\Best of Vol 4\01 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac:7ba5f5086282223ad3a1526e4d5cf82c
+Other releases\Best of Vol 4\02 Tight Connection To My Heart - Supper Club, New York City, 17 Nov 1993, second show02 Unknown Artist - Track 2.flac:2dece91010ae6fe77e90803ac5272993
+Other releases\Best of Vol 4\03 Weeping Willow (traditional) - Supper Club, New York City, 17 Nov 1993, second show03 Unknown Artist - Track 3.flac:5ef24dcdb898464ec99bc526abce3a9b
+Other releases\Best of Vol 4\04 Idiot Wind - Historic Orpheum Theater, Minneapolis, MN, 30 Aug 1992.flac:d716190a54a0eaf6ed7bcf8bbb24ed57
+Other releases\Best of Vol 4\05 Visions Of Johanna - Historic Orpheum Theater, Minneapolis, MN, 3 Sep 199205 Unknown Artist - Track 5.flac:848266af35ad4d7c64fddf7a786461dd
+Other releases\Best of Vol 4\06 'Til I Fell In Love With You - El Rey Theater, Los Angeles, 16 Dec 19906 Unknown Artist - Track 6.flac:409d91ee710c31bdfb5ec469a285f989
+Other releases\Best of Vol 4\07 Lay Down Your Weary Tune - Carnegie Hall, New York City, 26 Oct 1963.flac:f5f0eb7ee6e08f30bbe613f1aa8966f9
+Other releases\Best of Vol 4\08 The Lonesome Death of Hattie Carroll - El Rey Theater, Los Angeles, 16 Dec 199708 Unknown Artist - Track 8.flac:36644fe9fdd711a7b5e0cd8828f1e22d
+Other releases\Best of Vol 4\09 John Brown - Town Hall, New York City, 12 Apr 196309 Unknown Artist - Track 9.flac:be17fac172edf1d3a173c3ccc0c52f65
+Other releases\Best of Vol 4\10 Percy's Song - Carnegie Hall, New York City, 26 Oct 196310 Unknown Artist - Track 10.flac:690deed7e491e033a53af529c5b2c45d
+Other releases\Best of Vol 4\11 Seven Curses - Carnegie Hall, New York City, 26 Oct 1963.flac:fdd6fcb5d860b850f972f6a01e7a6c12
+Other releases\Best of Vol 5\01 I Believe In You - Blue Cross Arena, Rochester, NY, 3 Nov 199801 Track01.flac:e965860dec5395f5ba259fc9dbf8fd80
+Other releases\Best of Vol 5\02 Across The Borderline (Ry Cooder-John Hiatt-Jim Dickinson) - Blue Cross Arena, Rochester, NY, 3 Nov 1998.flac:b1b159f3359038405aee03c67fc9d52c
+Other releases\Best of Vol 5\03 Man In The Long Black Coat - Ice Palace, Tampa, FL, 30 Jan 1999.flac:d54815d6d5db0f315026503808198055
+Other releases\Best of Vol 5\04 Never Gonna Be The Same Again - Ice Palace, Tampa, FL, 30 Jan 1999.flac:23be749e66f075f2ad89cd1a63186311
+Other releases\Best of Vol 5\05 To Be Alone With You - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac:40ceb8c5f8358c792baa97f61b0322ca
+Other releases\Best of Vol 5\06 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac:34b74e2649c8004791532c1ee2bd8e49
+Other releases\Best of Vol 5\07 (bonus) Rock of Ages Pensacola 2 Feb 99.flac:2eed90a2e633f982db93e87b2986aab6
+Other releases\Best of Vol 5\08 (bonus)Pass me not 23 or 24 Feb 99.flac:df35857e5625a67f78ed3c7f09ff96d7
+Other releases\Best of Vol 5\09 (bonus)Mr. Tambourine Man - Wolftrap, Vienna, VA, 23 Aug 1997.flac:49323002a66911be649d47ad6821f8c4
+Other releases\Best of Vol 5\10 (bonus)Can You Please Crawl Out Your Window - early version released in 1965 as Positively 4th Street by mistake .flac:7cf61674e4e9991537fb9efda4b1eeee
+Other releases\Best of Vol 5\11 (bonus)Chimes (with Joan Osbourne) - The 60's.flac:49fa2437a6f255c65b7244e72ce8d739
+Other releases\Best of Vol 5\12 (bonus)Dignity (alt) Touched by an Angel.flac:3b8e324cb4c877c8bebf27cc7fc8298c
+Other releases\Best of Vol 5\13 (bonus)Train of Love Cash tribute April 99.flac:8d6a41d73e3230895634e42009f36e74
+Other releases\Best of Vol 5\14 (bonus)Cousins (Patti Duke Theme) spoof.flac:79a3e4e441bdf146aa0371222314953a
+Other releases\Best of Vol 5\15 (bonus)Winning Ugly IV Stones.flac:180438e141e585cf6c7d7df1320e2abc
+Other releases\From the Vaults Vol 1 D1\01 Bob Dylan - Visions Of Johanna.flac:f4a5afb841845719445570dd643a77ca
+Other releases\From the Vaults Vol 1 D1\02 Bob Dylan - Tight Connection To My Heart.flac:c109f4b366f563b279db5f37863a4bb4
+Other releases\From the Vaults Vol 1 D1\03 Bob Dylan - Delia.flac:19de13b14d91cd26beb653140ad3140a
+Other releases\From the Vaults Vol 1 D1\04 Bob Dylan - Weeping Willow.flac:58edffe701f1a6dfff3e937c25e85d9b
+Other releases\From the Vaults Vol 1 D1\05 Bob Dylan - Shelter From The Storm.flac:b0d24b9f30390189b2b676e1fb696dbb
+Other releases\From the Vaults Vol 1 D1\06 Bob Dylan - Mr Tambourine Man.flac:8667f2dc8bc009ed9358b15f3961ea75
+Other releases\From the Vaults Vol 1 D1\07 Bob Dylan - The Lonesome Death Of Hattie Carroll.flac:412f4e6c9c36af3cdc1c515231f212c6
+Other releases\From the Vaults Vol 1 D1\08 Bob Dylan - Tears Of Rage.flac:842f45b3f56b462090fd1c87dbd94e1a
+Other releases\From the Vaults Vol 1 D1\09 Bob Dylan - Born In Time.flac:483e876646935361a5f01841b24b78fc
+Other releases\From the Vaults Vol 1 D2\01 Bob Dylan - Girl Of The North Country.flac:56669b58c80ee49c20150cb5b5a78eb1
+Other releases\From the Vaults Vol 1 D2\02 Bob Dylan - The Man In Me.flac:16267b53b98f3a5e2f5c793b5be0e357
+Other releases\From the Vaults Vol 1 D2\03 Bob Dylan - Love Sick.flac:f3116afdcea31c80a1b1bde038db7f48
+Other releases\From the Vaults Vol 1 D2\04 Bob Dylan - Make You Feel My Love.flac:15d01947609bda386f138d314fc691ae
+Other releases\From the Vaults Vol 1 D2\05 Bob Dylan - I'm Not Supposed To Care.flac:0b31cba736fe2f442f07208d42513035
+Other releases\From the Vaults Vol 1 D2\06 Bob Dylan - A Hard Rain's A-Gonna Fall.flac:d7b2ecf72f445ea1d6215eb0a142c2b8
+Other releases\From the Vaults Vol 1 D2\07 Bob Dylan - Mama You Been On My Mind.flac:2a4835d07470b78c3148a0b82a08a259
+Other releases\From the Vaults Vol 1 D2\08 Bob Dylan - Boots Of Spanish Leather.flac:5ddffd1d68822f6d1ae976c064a645c8
+Other releases\From the Vaults Vol 1 D2\09 Bob Dylan - Señor.flac:e16727b6f3883f6a0a73cfce55b8726a
+Other releases\From the Vaults Vol 2 D1\01 Bob Dylan - Idiot Wind.flac:0d580311fc62bf2fac30c0e731bb2716
+Other releases\From the Vaults Vol 2 D1\02 Bob Dylan - I Believe In You.flac:271bcad7e8fa6d5d3edf4c0dba09864d
+Other releases\From the Vaults Vol 2 D1\03 Bob Dylan - Across The Borderline.flac:04e5f3f23c63a9b4e28157e5b1cd5741
+Other releases\From the Vaults Vol 2 D1\04 Bob Dylan - Man In The Long Black Coat.flac:e0f320a8871c2e419870b7ec34231052
+Other releases\From the Vaults Vol 2 D1\05 Bob Dylan - Don't Think Twice.flac:e62decc2f024dd6cbdb338574fa3c375
+Other releases\From the Vaults Vol 2 D1\06 Bob Dylan - Never Gonna Be The Same Again.flac:9d4de21024fba82f4acb9c67d4bd9d68
+Other releases\From the Vaults Vol 2 D1\07 Bob Dylan - Not Fade Away.flac:bac50a332ff3f6b626fa7bdc506476cd
+Other releases\From the Vaults Vol 2 D1\08 Bob Dylan - Silvio.flac:ef96ec7855e73a928b3fc72cfc3ea1da
+Other releases\From the Vaults Vol 2 D1\09 Bob Dylan - To Be Alone With You.flac:513a15dc4eb92ae626e8618c6494f699
+Other releases\From the Vaults Vol 2 D1\10 Bob Dylan - Little Moses.flac:17688d088d1b142387190f634e4c5a6f
+Other releases\From the Vaults Vol 2 D1\11 Bob Dylan - The Times We've Known.flac:02f65b4f32864f041437c843b3cc2fe0
+Other releases\From the Vaults Vol 2 D2\01 Bob Dylan - Shake Sugaree.flac:e205523a2b4334aaf36648dc1e91bc6c
+Other releases\From the Vaults Vol 2 D2\02 Bob Dylan - Watching The River Flow.flac:0e8177ca1e099ae7fb6f6b3f4ad800b1
+Other releases\From the Vaults Vol 2 D2\03 Bob Dylan - Make You Feel My Love.flac:f7e0e07c02c9ce0075ccece6a457ec1c
+Other releases\From the Vaults Vol 2 D2\04 Bob Dylan - Love Sick.flac:b73674e3ab12f7cc181a0f07d484ce6c
+Other releases\From the Vaults Vol 2 D2\05 Bob Dylan - Blowin' In The Wind.flac:f81a65876949f2bc07e6feda4ad8cec7
+Other releases\From the Vaults Vol 2 D2\06 Bob Dylan - The Roving Blade.flac:846c0eac59059afa9c8fd0b513ca1ea2
+Other releases\From the Vaults Vol 2 D2\07 Bob Dylan - Visions Of Johanna.flac:a3c600515ac4b49a2868d7ad4a2b0e47
+Other releases\From the Vaults Vol 2 D2\08 Bob Dylan - I And I.flac:605039a362e12169061150fcc4c0ca53
+Other releases\From the Vaults Vol 2 D2\09 Bob Dylan - Oh Babe It Ain't No Lie.flac:24cc7c3798168e63a2b3f7be75a39d12
+Other releases\From the Vaults Vol 2 D2\10 Bob Dylan - Friend Of The Devil.flac:ef22863214a907c2ca494903a117e10e
+Other releases\From the Vaults Vol 2 D2\11 Bob Dylan - Tears Of Rage.flac:45ff8172ddd0f08263b8fbd5acc0389d
+Other releases\Masters\01 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac:10b08b1e56911b76cd771c42f8a16c4c
+Other releases\Masters\02 Man In The Long Black Coat - Ice Palace, Tampa, FL, 30 Jan 1999.flac:24e1f7035f28ba12028d22acdb2e9939
+Other releases\Masters\03 To Be Alone With You - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac:5e2d59f2d17ef9c44a5aad7c2af0c0e2
+Other releases\Masters\04 Never Gonna Be The Same Again - Ice Palace, Tampa, FL, 30 Jan 1999.flac:a9324507f2db2af1869172d9443f0e60
+Other releases\Masters\05 Don't Think Twice, It's Alright - RPI Fieldhouse, Troy, NY, 22 Feb 1999.flac:18c2be15e9eb8a9d05b7724bf9679205
+Other releases\Masters\06 Visions Of Johanna - Cumberland County Civic Center, Portland, ME, 25 Feb 1999.flac:525c74038b3f47f6c98b8e51e0d16456
+Other releases\Masters\07 Friend Of The Devil (Robert Hunter-Jerry Garcia) - Broome County Arena, Binghamton, NY, 19 Feb 1999.flac:a13753f93db987173d98f294798e9925
+Other releases\Masters\08 Watching The River Flow - Leon County Civic Center, Tallahassee, FL, 1 Feb 1999.flac:ca959b8aad5170f3d7f3517c9c407358
+Other releases\Masters\09 Make You Feel My Love - UNO Lakefront Arena, New Orleans, LA, 3 Feb 1999.flac:75a3c33ecfc18beb8cfaaa3ed9b55c42
+Other releases\Masters\10 Tears Of Rage (Bob Dylan-Richard Manuel) - RPI Fieldhouse, Troy, NY, 22 Feb 1999.flac:d9f61642a86317f4fc492505724b6cd2
+Other releases\Masters\11 Love Sick - Municipal Auditorium, Nashville, TN 6 Feb 1999.flac:90ea06eb3b02b29e788f4a9b421a435d
+Other releases\Masters\12 Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac:f9b581e144e7e3f30cbbc950bc14854f
+Other releases\Masters\13 I And I - Forum, Dijon, France, 1 Jul 1998.flac:3e43f6cfd499e1e9eef9a519ba6ad2d4
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\01
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.17       53842028 B   ---   --   ---xx   flac  0.4906  Track01.flac
+     7:02.46       74549036 B   ---   --   ---xx   flac  0.5936  Track02.flac
+     6:56.62       73528268 B   ---   --   ---xx   flac  0.5001  Track03.flac
+     7:16.05       76922204 B   ---   --   ---xx   flac  0.2652  Track04.flac
+     4:59.24       52800092 B   ---   --   ---xx   flac  0.4774  Track05.flac
+     5:10.18       54726380 B   ---   --   ---xx   flac  0.3195  Track06.flac
+     6:50.70       72488684 B   ---   --   ---xx   flac  0.6465  Track07.flac
+     5:00.31       52992956 B   ---   --   ---xx   flac  0.5805  Track08.flac
+     3:48.37       40306268 B   ---   --   ---xx   flac  0.5659  Track09.flac
+     3:49.43       40496780 B   ---   --   ---xx   flac  0.4267  Track10.flac
+     9:05.59       96276812 B   ---   --   ---xx   flac  0.2737  Track11.flac
+     6:43.11       71115116 B   ---   --   ---xx   flac  0.4475  Track12.flac
+    71:48.48      760044624 B                            0.4558  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\02
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.17       42376028 B   ---   --   ---xx   flac  0.4231  Track01.flac
+     5:46.10       61057964 B   ---   --   ---xx   flac  0.5614  Track02.flac
+    10:48.68      114467180 B   ---   --   ---xx   flac  0.6037  Track03.flac
+     7:03.43       74718380 B   ---   --   ---xx   flac  0.5844  Track04.flac
+     4:20.07       45880508 B   ---   --   ---xx   flac  0.5359  Track05.flac
+     5:27.54       57809852 B   ---   --   ---xx   flac  0.5743  Track06.flac
+     5:48.30       61457804 B   ---   --   ---xx   flac  0.5218  Track07.flac
+     4:19.24       45744092 B   ---   --   ---xx   flac  0.5801  Track08.flac
+     5:18.28       56161100 B   ---   --   ---xx   flac  0.5551  Track09.flac
+     7:08.16       75536876 B   ---   --   ---xx   flac  0.5483  Track10.flac
+     6:59.28       73977500 B   ---   --   ---xx   flac  0.6068  Track11.flac
+     3:34.72       37918988 B   ---   --   ---xx   flac  0.6241  Track12.flac
+    70:35.22      747106272 B                            0.5655  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\03
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:04.46       32565836 B   ---   --   ---xx   flac  0.5936  Track01.flac
+     3:56.65       41783324 B   ---   --   ---xx   flac  0.5228  Track02.flac
+     3:59.01       42161996 B   ---   --   ---xx   flac  0.5687  Track03.flac
+     7:55.05       83801804 B   ---   --   ---xx   flac  0.5975  Track04.flac
+     6:21.72       67377788 B   ---   --   ---xx   flac  0.5577  Track05.flac
+     4:37.19       48907532 B   ---   --   ---xx   flac  0.4711  Track06.flac
+     4:28.64       47425772 B   ---   --   ---xx   flac  0.5238  Track07.flac
+     9:03.69       95947532 B   ---   --   ---xx   flac  0.5226  Track08.flac
+     6:24.43       67838780 B   ---   --   ---xx   flac  0.5452  Track09.flac
+     3:34.72       37918988 B   ---   --   ---xx   flac  0.6241  Track10.flac
+     4:28.18       47317580 B   ---   --   ---xx   flac  0.5373  Track11.flac
+     6:19.25       66914444 B   ---   --   ---xx   flac  0.5796  Track12.flac
+     3:13.55       34174604 B   ---   --   ---xx   flac  0.4528  Track13.flac
+    67:28.29      714135980 B                            0.5477  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\04
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.36       55474316 B   ---   --   ---xx   flac  0.5197  Track01.flac
+     5:06.44       54081932 B   ---   --   ---xx   flac  0.5473  Track02.flac
+     3:35.74       38100092 B   ---   --   ---xx   flac  0.5057  Track03.flac
+     4:33.70       48321884 B   ---   --   ---xx   flac  0.5152  Track04.flac
+     4:36.72       48855788 B   ---   --   ---xx   flac  0.5241  Track05.flac
+     4:39.66       49370876 B   ---   --   ---xx   flac  0.5206  Track06.flac
+     3:36.40       38196524 B   ---   --   ---xx   flac  0.5908  Track07.flac
+     5:05.03       53809100 B   ---   --   ---xx   flac  0.5220  Track08.flac
+     4:50.63       51304220 B   ---   --   ---xx   flac  0.5755  Track09.flac
+     5:11.58       54996860 B   ---   --   ---xx   flac  0.5180  Track10.flac
+     6:07.07       64755308 B   ---   --   ---xx   flac  0.4593  Track11.flac
+     5:25.12       57358268 B   ---   --   ---xx   flac  0.5874  Track12.flac
+     8:10.74       86610092 B   ---   --   ---xx   flac  0.4675  Track13.flac
+    66:15.19      701235260 B                            0.5226  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\05
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:02.72       64026188 B   ---   --   ---xx   flac  0.5022  Track01.flac
+     5:05.25       53860844 B   ---   --   ---xx   flac  0.5509  Track02.flac
+     4:11.02       44281148 B   ---   --   ---xx   flac  0.4480  Track03.flac
+     7:52.28       83326700 B   ---   --   ---xx   flac  0.5234  Track04.flac
+     5:33.73       58912940 B   ---   --   ---xx   flac  0.4823  Track05.flac
+     5:25.24       57386492 B   ---   --   ---xx   flac  0.5179  Track06.flac
+     5:16.56       55874156 B   ---   --   ---xx   flac  0.4934  Track07.flac
+     3:42.47       39271388 B   ---   --   ---xx   flac  0.5751  Track08.flac
+     9:58.21      105536636 B   ---   --   ---xx   flac  0.5563  Track09.flac
+     4:29.74       47625692 B   ---   --   ---xx   flac  0.6020  Track10.flac
+     6:42.57       71046908 B   ---   --   ---xx   flac  0.5859  Track11.flac
+     4:17.29       45403052 B   ---   --   ---xx   flac  0.5928  Track12.flac
+     3:11.37       33779468 B   ---   --   ---xx   flac  0.5992  Track13.flac
+     5:47.08       61229660 B   ---   --   ---xx   flac  0.5784  Track14.flac
+    77:37.28      821561272 B                            0.5418  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\06
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:26.25       89317244 B   ---   --   ---xx   flac  0.5480  Track01.flac
+     5:18.41       56191676 B   ---   --   ---xx   flac  0.5561  Track02.flac
+     8:55.64       94524572 B   ---   --   ---xx   flac  0.5622  Track03.flac
+     4:56.52       52336748 B   ---   --   ---xx   flac  0.5405  Track04.flac
+     6:06.27       64625948 B   ---   --   ---xx   flac  0.3143  Track05.flac
+     3:29.07       36884108 B   ---   --   ---xx   flac  0.2611  Track06.flac
+     4:48.73       50974940 B   ---   --   ---xx   flac  0.2758  Track07.flac
+     5:19.33       56349260 B   ---   --   ---xx   flac  0.3239  Track08.flac
+     7:40.47       81254588 B   ---   --   ---xx   flac  0.2753  Track09.flac
+     2:58.16       31436876 B   ---   --   ---xx   flac  0.5106  Track10.flac
+     4:55.19       52082732 B   ---   --   ---xx   flac  0.4563  Track11.flac
+     6:28.22       68494988 B   ---   --   ---xx   flac  0.5135  Track12.flac
+     7:37.02       80619548 B   ---   --   ---xx   flac  0.5418  Track13.flac
+    77:00.53      815093228 B                            0.4477  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\07
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.69       73015532 B   ---   --   ---xx   flac  0.4854  Track01.flac
+     3:35.49       38041292 B   ---   --   ---xx   flac  0.5337  Track02.flac
+     4:19.06       45701756 B   ---   --   ---xx   flac  0.5213  Track03.flac
+     5:01.14       53129372 B   ---   --   ---xx   flac  0.5143  Track04.flac
+     4:09.58       44060060 B   ---   --   ---xx   flac  0.5097  Track05.flac
+     5:16.55       55871804 B   ---   --   ---xx   flac  0.5675  Track06.flac
+     4:08.33       43824860 B   ---   --   ---xx   flac  0.5431  Track07.flac
+     4:57.29       52459052 B   ---   --   ---xx   flac  0.5681  Track08.flac
+     6:02.66       64012076 B   ---   --   ---xx   flac  0.5117  Track09.flac
+     5:48.08       61406060 B   ---   --   ---xx   flac  0.4436  Track10.flac
+     5:46.38       61123820 B   ---   --   ---xx   flac  0.5418  Track11.flac
+     5:16.15       55777724 B   ---   --   ---xx   flac  0.5197  Track12.flac
+     8:05.08       85572860 B   ---   --   ---xx   flac  0.5349  Track13.flac
+     4:37.60       49003964 B   ---   --   ---xx   flac  0.4856  Track14.flac
+    73:58.58      783000232 B                            0.5189  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\08
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.23       53503340 B   ---   --   ---xx   flac  0.4753  Track01.flac
+     4:33.15       48192524 B   ---   --   ---xx   flac  0.4655  Track02.flac
+     6:28.60       68584364 B   ---   --   ---xx   flac  0.5131  Track03.flac
+     6:15.53       66274700 B   ---   --   ---xx   flac  0.4306  Track04.flac
+     4:26.23       46976540 B   ---   --   ---xx   flac  0.4539  Track05.flac
+     2:57.36       31307516 B   ---   --   ---xx   flac  0.2675  Track06.flac
+     2:34.09       27186812 B   ---   --   ---xx   flac  0.2466  Track07.flac
+     2:43.30       28823804 B   ---   --   ---xx   flac  0.2337  Track08.flac
+     2:22.00       25048844 B   ---   --   ---xx   flac  0.6056  Track09.flac
+     3:09.04       33349052 B   ---   --   ---xx   flac  0.5774  Track10.flac
+     2:46.32       29357708 B   ---   --   ---xx   flac  0.4891  Track11.flac
+     3:20.34       35360012 B   ---   --   ---xx   flac  0.3370  Track12.flac
+     5:01.54       53223452 B   ---   --   ---xx   flac  0.4745  Track13.flac
+     4:44.45       50203484 B   ---   --   ---xx   flac  0.4619  Track14.flac
+    56:26.43      597392152 B                            0.4417  (14 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\09
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:47.34       50705644 B   -b-   --   ---xx   flac  0.5396  augustine_041705.flac
+     5:23.57       57112044 B   -b-   --   ---xx   flac  0.5189  believeinyou_041705.flac
+     5:09.100      39564844 B   cxx   --   ---xx   flac  0.6150  born_020198.flac
+     6:48.20       72019244 B   -b-   --   ---xx   flac  0.5361  highwater_042505.flac
+     6:14.19       66017644 B   -b-   --   ---xx   flac  0.4970  redsky_042605.flac
+     6:11.64       65595244 B   -b-   --   ---xx   flac  0.5000  shooting_042605.flac
+    10:21.59      109683244 B   -b-   --   ---xx   flac  0.4753  visions_042505.flac
+    44:56.474     460697908 B                            0.5159  (7 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\Best of Vol 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.16       52252076 B   ---   --   ---xx   flac  0.5325  01 Lay Down Your Weary Tune - Carnegie Hall, New York City, 26 Oct 1963.flac
+    10:46.71      114121436 B   ---   --   ---xx   flac  0.6203  02 Idiot Wind - Historic Orpheum Theater, Minneapolis, MN, 30 Aug 1992.flac
+     6:53.49       72968492 B   ---   --   ---xx   flac  0.5602  03 Visions Of Johanna - Historic Orpheum Theater, Minneapolis, MN, 3 Sep 1992.flac
+     6:59.71       74078636 B   ---   --   ---xx   flac  0.6370  04 Tight Connection To My Heart - Supper Club, New York City, 17 Nov 1993, second show.flac
+     4:21.35       46122764 B   ---   --   ---xx   flac  0.5947  05 Weeping Willow (traditional) - Supper Club, New York City, 17 Nov 1993, second show.flac
+     7:11.49       76143692 B   ---   --   ---xx   flac  0.4934  06 Mr. Tambourine Man - Wolftrap, Vienna, VA, 23 Aug 1997.flac
+     6:38.49       70322492 B   ---   --   ---xx   flac  0.6214  07 Cold Irons Bound - El Rey Theater, Los Angeles, 16 Dec 1997.flac
+     6:42.23       70966940 B   ---   --   ---xx   flac  0.5316  08 The Lonesome Death of Hattie Carroll - El Rey Theater, Los Angeles, 16 Dec 1997.flac
+     5:47.41       61307276 B   ---   --   ---xx   flac  0.6203  09 'Til I Fell In Love With You - El Rey Theater, Los Angeles, 16 Dec 199709 Unknown Artist - Track 9.flac
+     5:00.29       52988252 B   ---   --   ---xx   flac  0.5809  10 You're A Big Girl Now - El Rey Theater, Los Angeles, 17 Dec 1997.flac
+     5:04.74       53799692 B   ---   --   ---xx   flac  0.6348  11 Love Sick - Grammy Awards, Radio City Music Hall, New York City, 28 Feb 1998.flac
+    70:23.57      745071748 B                            0.5853  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\Best of Vol 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:59.34       63407612 B   ---   --   ---xx   flac  0.6012  01 Girl Of The North Country - Madison Square Garden, New York City, 20 Jan 1998.flac
+     4:21.72       46209788 B   ---   --   ---xx   flac  0.6403  02 The Man In Me - Landmark Theater, Syracuse, NY, 28 Jan 1998.flac
+     5:10.40       54778124 B   ---   --   ---xx   flac  0.6122  03 Born In Time - New Jersey Center for the Performing Arts, Newark, NJ, 1 Feb 1998.flac
+     7:18.46       77371436 B   ---   --   ---xx   flac  0.6179  04 Tears Of Rage (Bob Dylan-Richard Manuel) - Madison Square Garden, New York City, 17 Jan 1998.flac
+     7:04.58       74930060 B   ---   --   ---xx   flac  0.6403  05 Delia (traditional) - Supper Club, New York City, 17 Nov 1993, second show.flac
+     4:02.44       42792332 B   ---   --   ---xx   flac  0.5989  06 Make You Feel My Love - Pauley Pavilion, UCLA, Los Angeles, CA, 21 May 1998.flac
+     3:58.49       42098492 B   ---   --   ---xx   flac  0.6061  07 I'm Not Supposed To Care (Gordon Lightfoot) - The Pond, Anaheim, CA, 23 May 1998.flac
+     7:58.20       84366284 B   ---   --   ---xx   flac  0.6415  08 Shelter From The Storm - Roseland, New York City, 19 Oct 1994.flac
+     6:23.21       67610636 B   ---   --   ---xx   flac  0.5724  09 Boots Of Spanish Leather - Glasgow, Scotland, 21 Jun 1998.flac
+     4:33.59       48296012 B   ---   --   ---xx   flac  0.5542  10 Mama, You Been On My Mind - Brussels, Belgium, 17 Jun 1998.flac
+     4:27.67       47256428 B   ---   --   ---xx   flac  0.6117  11 Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac
+     9:09.69       97005932 B   ---   --   ---xx   flac  0.5932  12 A Hard Rain's Gonna Fall - Messehalle, Leipzig, Germany, 2 Jun 1998.flac
+    70:29.54      746123136 B                            0.6088  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\Best of Vol 3
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:22.46       67493036 B   ---   --   ---xx   flac  0.5485  01 I And I - Forum, Dijon, France, 1 Jul 1998.flac
+     4:26.19       46967132 B   ---   --   ---xx   flac  0.5419  02 Newry Highwayman [a.k.a. The Roving Blade] (traditional) - Botanic Gardens, Belfast, Northern Ireland, 19 Jun 1998.flac
+     6:19.25       66914444 B   ---   --   ---xx   flac  0.5796  03 Friend Of The Devil (Robert Hunter-Jerry Garcia) - Nuremberg, Germany, 31 May 199.flac
+     3:13.55       34174604 B   ---   --   ---xx   flac  0.4528  04 Rank Strangers To Me (Albert E. Brumley) - La Scalinata, Rome, Italy, 5 Jul 1998.flac
+     5:12.38       55126220 B   ---   --   ---xx   flac  0.5238  05 Shake Sugaree (Elizabeth Cotten) - The Roxy, Atlanta, GA, 1 Dec 1997.flac
+     5:04.50       53743244 B   ---   --   ---xx   flac  0.5514  06 Oh Babe, It Ain't No Lie (Elizabeth Cotten) - Stadtpark, Hamburg, Germany 12 Jun 1998.flac
+     3:34.00       37749644 B   ---   --   ---xx   flac  0.5116  07 The Times We've Known [Les Bons Moments] (Charles Aznavour) - Madison Square Garden, New York City, 1 Nov 1998.flac
+     4:31.70       47969084 B   ---   --   ---xx   flac  0.5193  08 Little Moses (Bert A. Williams-Earl C. Jones) - Historic Orpheum Theater, Minneapolis, MN, 2 Sep 1992.flac
+     4:35.20       48557084 B   ---   --   ---xx   flac  0.4751  09 (filler) Mama, You Been On My Mind - Brussels, Belgium, 17 Jun 1998.flac
+     4:26.65       47075324 B   ---   --   ---xx   flac  0.5283  10 (filler) Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac
+     9:01.71       95599436 B   ---   --   ---xx   flac  0.5253  11 (filler) A Hard Rain's Gonna Fall - Messehalle, Leipzig, Germany, 2 Jun 1998.flac
+     3:32.74       37570892 B   ---   --   ---xx   flac  0.6301  12 (filler) Baby Let Me Follow You Down (Rev Gary Davies, arr. Eric von Schmidt)  - with The Hawks, Free Trade Hall, Manchester, England, 17 May 1966.flac
+    60:22.08      638940144 B                            0.5342  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\Best of Vol 4
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:36.45       38208284 B   ---   --   ---xx   flac  0.5910  01 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+     7:05.42       75068828 B   ---   --   ---xx   flac  0.5822  02 Tight Connection To My Heart - Supper Club, New York City, 17 Nov 1993, second show02 Unknown Artist - Track 2.flac
+     4:22.04       46226252 B   ---   --   ---xx   flac  0.5322  03 Weeping Willow (traditional) - Supper Club, New York City, 17 Nov 1993, second show03 Unknown Artist - Track 3.flac
+    10:50.69      114822332 B   ---   --   ---xx   flac  0.6024  04 Idiot Wind - Historic Orpheum Theater, Minneapolis, MN, 30 Aug 1992.flac
+     6:56.60       73523564 B   ---   --   ---xx   flac  0.5005  05 Visions Of Johanna - Historic Orpheum Theater, Minneapolis, MN, 3 Sep 199205 Unknown Artist - Track 5.flac
+     5:48.08       61406060 B   ---   --   ---xx   flac  0.5586  06 'Til I Fell In Love With You - El Rey Theater, Los Angeles, 16 Dec 19906 Unknown Artist - Track 6.flac
+     5:00.47       53030588 B   ---   --   ---xx   flac  0.4771  07 Lay Down Your Weary Tune - Carnegie Hall, New York City, 26 Oct 1963.flac
+     6:43.09       71110412 B   ---   --   ---xx   flac  0.4478  08 The Lonesome Death of Hattie Carroll - El Rey Theater, Los Angeles, 16 Dec 199708 Unknown Artist - Track 8.flac
+     5:12.45       55142684 B   ---   --   ---xx   flac  0.3184  09 John Brown - Town Hall, New York City, 12 Apr 196309 Unknown Artist - Track 9.flac
+     9:07.20       96537884 B   ---   --   ---xx   flac  0.2737  10 Percy's Song - Carnegie Hall, New York City, 26 Oct 196310 Unknown Artist - Track 10.flac
+     3:58.19       42027932 B   ---   --   ---xx   flac  0.4270  11 Seven Curses - Carnegie Hall, New York City, 26 Oct 1963.flac
+    68:41.68      727104820 B                            0.4817  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\Best of Vol 5
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.08       48881660 B   ---   --   ---xx   flac  0.5245  01 I Believe In You - Blue Cross Arena, Rochester, NY, 3 Nov 199801 Track01.flac
+     4:39.68       49375580 B   ---   --   ---xx   flac  0.5206  02 Across The Borderline (Ry Cooder-John Hiatt-Jim Dickinson) - Blue Cross Arena, Rochester, NY, 3 Nov 1998.flac
+     5:05.18       53844380 B   ---   --   ---xx   flac  0.5219  03 Man In The Long Black Coat - Ice Palace, Tampa, FL, 30 Jan 1999.flac
+     5:14.68       55549580 B   ---   --   ---xx   flac  0.5155  04 Never Gonna Be The Same Again - Ice Palace, Tampa, FL, 30 Jan 1999.flac
+     4:51.01       51334796 B   ---   --   ---xx   flac  0.5753  05 To Be Alone With You - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+     3:36.44       38205932 B   ---   --   ---xx   flac  0.5906  06 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+     4:30.30       47698604 B   ---   --   ---xx   flac  0.6149  07 (bonus) Rock of Ages Pensacola 2 Feb 99.flac
+     4:42.66       49900076 B   ---   --   ---xx   flac  0.4927  08 (bonus)Pass me not 23 or 24 Feb 99.flac
+     7:18.57       77397308 B   ---   --   ---xx   flac  0.2635  09 (bonus)Mr. Tambourine Man - Wolftrap, Vienna, VA, 23 Aug 1997.flac
+     3:49.41       40492076 B   ---   --   ---xx   flac  0.4268  10 (bonus)Can You Please Crawl Out Your Window - early version released in 1965 as Positively 4th Street by mistake .flac
+     4:09.06       43937756 B   ---   --   ---xx   flac  0.6109  11 (bonus)Chimes (with Joan Osbourne) - The 60's.flac
+     5:37.19       59491532 B   ---   --   ---xx   flac  0.6892  12 (bonus)Dignity (alt) Touched by an Angel.flac
+     4:06.72       43563788 B   ---   --   ---xx   flac  0.2989  13 (bonus)Train of Love Cash tribute April 99.flac
+     2:06.13       22257020 B   ---   --   ---xx   flac  0.4582  14 (bonus)Cousins (Patti Duke Theme) spoof.flac
+     7:53.44       83540732 B   ---   --   ---xx   flac  0.6496  15 (bonus)Winning Ugly IV Stones.flac
+    72:19.30      765470820 B                            0.5188  (15 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\From the Vaults Vol 1 D1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:51.52       72622748 B   ---   --   ---xx   flac  0.5620  01 Bob Dylan - Visions Of Johanna.flac
+     7:02.38       74530220 B   ---   --   ---xx   flac  0.6440  02 Bob Dylan - Tight Connection To My Heart.flac
+     7:04.70       74958284 B   ---   --   ---xx   flac  0.6075  03 Bob Dylan - Delia.flac
+     4:10.20       44147084 B   ---   --   ---xx   flac  0.5976  04 Bob Dylan - Weeping Willow.flac
+     7:53.05       83449004 B   ---   --   ---xx   flac  0.6005  05 Bob Dylan - Shelter From The Storm.flac
+     7:09.30       75746204 B   ---   --   ---xx   flac  0.4281  06 Bob Dylan - Mr Tambourine Man.flac
+     6:44.22       71317388 B   ---   --   ---xx   flac  0.5143  07 Bob Dylan - The Lonesome Death Of Hattie Carroll.flac
+     7:10.40       75946124 B   ---   --   ---xx   flac  0.5480  08 Bob Dylan - Tears Of Rage.flac
+     5:10.38       54773420 B   ---   --   ---xx   flac  0.5612  09 Bob Dylan - Born In Time.flac
+    59:17.15      627490476 B                            0.5615  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\From the Vaults Vol 1 D2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:01.00       63680444 B   ---   --   ---xx   flac  0.5194  01 Bob Dylan - Girl Of The North Country.flac
+     4:19.30       45758204 B   ---   --   ---xx   flac  0.5828  02 Bob Dylan - The Man In Me.flac
+     5:18.27       56158748 B   ---   --   ---xx   flac  0.5805  03 Bob Dylan - Love Sick.flac
+     3:56.13       41661020 B   ---   --   ---xx   flac  0.5281  04 Bob Dylan - Make You Feel My Love.flac
+     3:55.52       41576348 B   ---   --   ---xx   flac  0.5759  05 Bob Dylan - I'm Not Supposed To Care.flac
+     8:56.23       94604540 B   ---   --   ---xx   flac  0.5965  06 Bob Dylan - A Hard Rain's A-Gonna Fall.flac
+     4:31.15       47839724 B   ---   --   ---xx   flac  0.5597  07 Bob Dylan - Mama You Been On My Mind.flac
+     6:19.72       67024988 B   ---   --   ---xx   flac  0.5621  08 Bob Dylan - Boots Of Spanish Leather.flac
+     4:25.61       46889516 B   ---   --   ---xx   flac  0.5784  09 Bob Dylan - Señor.flac
+    47:43.68      505193532 B                            0.5667  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\From the Vaults Vol 2 D1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:48.56      114438956 B   ---   --   ---xx   flac  0.6109  01 Bob Dylan - Idiot Wind.flac
+     4:26.19       46967132 B   ---   --   ---xx   flac  0.5902  02 Bob Dylan - I Believe In You.flac
+     4:39.22       49267388 B   ---   --   ---xx   flac  0.5674  03 Bob Dylan - Across The Borderline.flac
+     5:01.31       53169356 B   ---   --   ---xx   flac  0.5763  04 Bob Dylan - Man In The Long Black Coat.flac
+     6:03.62       64179068 B   ---   --   ---xx   flac  0.5422  05 Bob Dylan - Don't Think Twice.flac
+     5:06.46       54086636 B   ---   --   ---xx   flac  0.5676  06 Bob Dylan - Never Gonna Be The Same Again.flac
+     3:35.22       37977788 B   ---   --   ---xx   flac  0.6061  07 Bob Dylan - Not Fade Away.flac
+     5:20.54       56575052 B   ---   --   ---xx   flac  0.6219  08 Bob Dylan - Silvio.flac
+     4:50.29       51224252 B   ---   --   ---xx   flac  0.5957  09 Bob Dylan - To Be Alone With You.flac
+     4:26.04       46931852 B   ---   --   ---xx   flac  0.5320  10 Bob Dylan - Little Moses.flac
+     3:32.01       37399196 B   ---   --   ---xx   flac  0.5520  11 Bob Dylan - The Times We've Known.flac
+    57:50.46      612216676 B                            0.5816  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\From the Vaults Vol 2 D2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.16       54898076 B   ---   --   ---xx   flac  0.5783  01 Bob Dylan - Shake Sugaree.flac
+     5:03.12       53477468 B   ---   --   ---xx   flac  0.5925  02 Bob Dylan - Watching The River Flow.flac
+     4:08.39       43838972 B   ---   --   ---xx   flac  0.5233  03 Bob Dylan - Make You Feel My Love.flac
+     5:21.61       56767916 B   ---   --   ---xx   flac  0.5723  04 Bob Dylan - Love Sick.flac
+     5:28.44       57962732 B   ---   --   ---xx   flac  0.5591  05 Bob Dylan - Blowin' In The Wind.flac
+     4:24.42       46668428 B   ---   --   ---xx   flac  0.5896  06 Bob Dylan - The Roving Blade.flac
+     8:07.64       86057372 B   ---   --   ---xx   flac  0.5490  07 Bob Dylan - Visions Of Johanna.flac
+     6:21.24       67264892 B   ---   --   ---xx   flac  0.5910  08 Bob Dylan - I And I.flac
+     4:58.71       52734236 B   ---   --   ---xx   flac  0.6037  09 Bob Dylan - Oh Babe It Ain't No Lie.flac
+     5:59.39       63419372 B   ---   --   ---xx   flac  0.5683  10 Bob Dylan - Friend Of The Devil.flac
+     7:50.12       82936268 B   ---   --   ---xx   flac  0.5561  11 Bob Dylan - Tears Of Rage.flac
+    62:55.49      666025732 B                            0.5702  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd61-BobDylan-com-v2.flacf\Other releases\Masters
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:38.57       38589308 B   ---   --   ---xx   flac  0.5655  01 Not Fade Away (Buddy Holly-Norman Petty) - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+     5:05.26       53863196 B   ---   --   ---xx   flac  0.4982  02 Man In The Long Black Coat - Ice Palace, Tampa, FL, 30 Jan 1999.flac
+     4:52.62       51654668 B   ---   --   ---xx   flac  0.5479  03 To Be Alone With You - RPI Fieldhouse, Troy, NY 22 Feb 1999.flac
+     5:08.21       54380636 B   ---   --   ---xx   flac  0.4997  04 Never Gonna Be The Same Again - Ice Palace, Tampa, FL, 30 Jan 1999.flac
+     6:06.74       64736492 B   ---   --   ---xx   flac  0.4228  05 Don't Think Twice, It's Alright - RPI Fieldhouse, Troy, NY, 22 Feb 1999.flac
+     8:11.14       86645372 B   ---   --   ---xx   flac  0.4407  06 Visions Of Johanna - Cumberland County Civic Center, Portland, ME, 25 Feb 1999.flac
+     6:03.66       64188476 B   ---   --   ---xx   flac  0.4693  07 Friend Of The Devil (Robert Hunter-Jerry Garcia) - Broome County Arena, Binghamton, NY, 19 Feb 1999.flac
+     5:05.72       53971388 B   ---   --   ---xx   flac  0.5151  08 Watching The River Flow - Leon County Civic Center, Tallahassee, FL, 1 Feb 1999.flac
+     4:11.15       44311724 B   ---   --   ---xx   flac  0.4129  09 Make You Feel My Love - UNO Lakefront Arena, New Orleans, LA, 3 Feb 1999.flac
+     7:50.59       83046812 B   ---   --   ---xx   flac  0.4878  10 Tears Of Rage (Bob Dylan-Richard Manuel) - RPI Fieldhouse, Troy, NY, 22 Feb 1999.flac
+     5:24.56       57285356 B   ---   --   ---xx   flac  0.4978  11 Love Sick - Municipal Auditorium, Nashville, TN 6 Feb 1999.flac
+     4:28.35       47357564 B   ---   --   ---xx   flac  0.5586  12 Señor (Tales Of Yankee Power) - Piazza Napoleone, Lucca, Italy, 6 Jul 1998.flac
+     6:26.51       68210396 B   ---   --   ---xx   flac  0.5632  13 I And I - Forum, Dijon, France, 1 Jul 1998.flac
+    72:35.08      768241388 B                            0.4944  (13 files)
+===================
+===================
+===================

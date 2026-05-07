@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-14-at831-schubert-rem.flacf 
+=================== 
+=================== 
+=================== 
+acf756afa8fddcc13f21055a756859f6  101 Announcement.flac
+2343927d3273ae68799c22568f598c77  102 Blues Instrumental.flac
+36331ca43152f501f9a9ae40501e8ae9  103 Drifter's Escape.flac
+d8f12a6acb0e43764b4131febddaeb52  104 I'll Be Your Baby Tonight.flac
+8e0bd67e4aa6090ccd875e1b2ad189a4  105 Tweedle Dee & Tweedle Dum.flac
+6d38ebe22f0b4f185883dfa289b1e8a4  106 Just Like A Woman.flac
+42f05d978f0c493a7efc636dc834a5c8  107 Things Have Changed.flac
+80afa1fe56f10582b01ff53270bbc6e6  108 Girl Of The North Country.flac
+ceb51adab5902f94f023bde9054a1e33  109 Cold Irons Bound.flac
+e9c7d3e736a9483aa8f155c2edff8eaa  110 Every Grain Of Sand.flac
+dfd48bb358ba9e7c73eabffb0feb41ce  111 Highway 61 Revisited.flac
+32e3cb84aee7a626f8ed1600df015041  201 Sugar Baby.flac
+fcbea055b6cce5524cf743c1bf9d3e70  202 Most Likely You Go Your Way (And I'll Go Mine).flac
+850e4103266bb3f86b8d8c15ec63d9f3  203 Honest With Me.flac
+3a8d37d0f38318f068a3ae3d89675fcf  204 It Ain't Me, Babe.flac
+dd9ef82a0809fdbb5b6266feec3f02b9  205 Summer Days.flac
+9f4970dd82f1e194d95f965461c60135  206 Like A Rolling Stone.flac
+88fd73ad3a78f4556fba6e57b8e3e427  207 All Along The Watchtower.flac
+92957528d6fc1b07f0646139e99220e7  bd04-10-14-at831-schubert-rem.txt
+50a5ba7d31cdf2731020ecf490da5d9b  bd04-10-14stc_asm.nfo
+87bce9dd7109ff0e20bb23e726f09737  bd04-10-14stc_asm_d1_flacs.md5
+0b6e2dfefb44f8b08215e741c0f71613  bd04-10-14stc_asm_d1_wavs.md5
+1c00f2557f59053c1675e01abd1f2ed3  bd04-10-14stc_asm_d2_flacs.md5
+a990dc09033b609881c2ba3f777bc91a  bd04-10-14stc_asm_d2_wavs.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-14-at831-schubert-rem.flacf 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:69e06f1556425cfb90da2dec48921124
+102 Blues Instrumental.flac:ab3d8ec6c61e05b52481fabf5a191ff5
+103 Drifter's Escape.flac:c19c100685caa432d6a7dc6bb977eb77
+104 I'll Be Your Baby Tonight.flac:ed1f306ab4e4a680a3573de745973b14
+105 Tweedle Dee & Tweedle Dum.flac:f0416ac3f6b297873c74f7616d17c10e
+106 Just Like A Woman.flac:0b27174739b3e9171dd13d280af5a0d4
+107 Things Have Changed.flac:db4242ead73961eaf5ebb603b0fdb6cc
+108 Girl Of The North Country.flac:25b94644a6ded98dfa3e0e2d0372aa6f
+109 Cold Irons Bound.flac:f04259e78e57376d8873a130569ea434
+110 Every Grain Of Sand.flac:a12604c93e8a44a8f268e7ad16b0cb1b
+111 Highway 61 Revisited.flac:48ab9ee1bdc40e22b0b6256905a85f1b
+201 Sugar Baby.flac:b8dc21c6aefdbda285a09141b57d5aab
+202 Most Likely You Go Your Way (And I'll Go Mine).flac:8ab4be7ff788ded3862f1060be28f458
+203 Honest With Me.flac:670ccc59211412cce34a6ca1978d66ae
+204 It Ain't Me, Babe.flac:d549c24a2552b72072248732eae54605
+205 Summer Days.flac:b8a80c6feb5f78a43c4a057fb5949889
+206 Like A Rolling Stone.flac:014262a3ace1dd542c1a71f11f1ff301
+207 All Along The Watchtower.flac:3bcf8828f3b8fa1a315f0413ec1b0e68
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-14-at831-schubert-rem.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.44        7159532 B   ---   --   ---xx   flac  0.5674  101 Announcement.flac
+     1:57.14       20671772 B   ---   --   ---xx   flac  0.5931  102 Blues Instrumental.flac
+     4:34.54       48460652 B   ---   --   ---xx   flac  0.6227  103 Drifter's Escape.flac
+     5:19.15       56306924 B   ---   --   ---xx   flac  0.5607  104 I'll Be Your Baby Tonight.flac
+     5:31.55       58517804 B   ---   --   ---xx   flac  0.5706  105 Tweedle Dee & Tweedle Dum.flac
+     6:28.31       68516156 B   ---   --   ---xx   flac  0.5635  106 Just Like A Woman.flac
+     6:34.05       69513404 B   ---   --   ---xx   flac  0.6043  107 Things Have Changed.flac
+     5:42.41       60425276 B   ---   --   ---xx   flac  0.5076  108 Girl Of The North Country.flac
+     5:34.73       59089340 B   ---   --   ---xx   flac  0.6083  109 Cold Irons Bound.flac
+     7:18.34       77343212 B   ---   --   ---xx   flac  0.5025  110 Every Grain Of Sand.flac
+     6:20.45       67137884 B   ---   --   ---xx   flac  0.6338  111 Highway 61 Revisited.flac
+     7:50.49       83023292 B   ---   --   ---xx   flac  0.4956  201 Sugar Baby.flac
+     7:53.00       83437244 B   ---   --   ---xx   flac  0.6010  202 Most Likely You Go Your Way (And I'll Go Mine).flac
+     6:43.39       71180972 B   ---   --   ---xx   flac  0.6320  203 Honest With Me.flac
+     5:52.67       62250428 B   ---   --   ---xx   flac  0.5241  204 It Ain't Me, Babe.flac
+     7:16.62       77056268 B   ---   --   ---xx   flac  0.5777  205 Summer Days.flac
+     6:59.32       73986908 B   ---   --   ---xx   flac  0.5657  206 Like A Rolling Stone.flac
+     6:20.74       67206092 B   ---   --   ---xx   flac  0.5540  207 All Along The Watchtower.flac
+   104:59.59     1111283160 B                            0.5693  (18 files)
+=================== 
+=================== 
+=================== 

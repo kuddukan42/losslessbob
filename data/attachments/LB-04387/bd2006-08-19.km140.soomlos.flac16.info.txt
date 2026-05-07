@@ -1,0 +1,60 @@
+Bob Dylan
+Harry Grove Stadium
+Frederick, Maryland
+August 19, 2006
+ 
+source: soomlos
+fob, center, ga field
+neumann km140's > edirol ua-5(bm2p+) > microtrack 24/96 (24/48)
+audacity > cd wave > flac (16/44.1)
+
+Disc 1:
+01. introduction [01:43]
+02. Maggie's Farm [05:03]
+03. The Times They Are A-Changin' [06:39]
+04. Lonesome Day Blues [07:58]
+05. Positively 4th Street [07:17]
+06. Stuck Inside Of Mobile With The Memphis Blues Again [08:46]
+07. 'Til I Fell In Love With You [06:54]
+08. To Ramona [06:24]
+09. Cold Irons Bound [06:23]
+10. Girl Of The North Country [05:50]
+Total time: [63:04]
+
+Disc 2:
+01. Highway 61 Revisited [06:32]
+02. Sugar Baby [07:39]
+03. Summer Days* [09:22]
+04. Like A Rolling Stone [07:30]
+05. band introduction [00:42]
+06. All Along The Watchtower [05:47]
+Total time: [37:35]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums 
+Tony Garnier - bass
+
+* with Jimmie Vaughan on guitar
+
+Flac Fingerprint
+bd2006-08-19d1t01.flac:cbecca9ecc00caaad58883c3c298886f
+bd2006-08-19d1t02.flac:ae11fc5eadcebb4b1446e67404cb7c62
+bd2006-08-19d1t03.flac:9827e74bba35c3f61f8b3851a85de06d
+bd2006-08-19d1t04.flac:14de5fe29c2d945510fea8c03180c522
+bd2006-08-19d1t05.flac:12dca83cdbf220b9977688274c3550ca
+bd2006-08-19d1t06.flac:5d88541c028db6b1428e59a007756998
+bd2006-08-19d1t07.flac:59bd676e5a821d4a30d5122b6df5adec
+bd2006-08-19d1t08.flac:eb62bf99d209f26427093f7e39e3aed7
+bd2006-08-19d1t09.flac:298dc82264f5e401629ae14de08d7374
+bd2006-08-19d1t10.flac:3e8caf05e09bd4e5b87ea6c3bb79c692
+bd2006-08-19d2t01.flac:1f7c24bf78f1e8bd6c4d8e25fda1edde
+bd2006-08-19d2t02.flac:1020a24dc7a6e77132be6a487917b110
+bd2006-08-19d2t03.flac:1fbe666cadfffc63baf28cee10949c90
+bd2006-08-19d2t04.flac:7a6b972ec3049f70f7c4aea5e10b4c61
+bd2006-08-19d2t05.flac:a440d52088efafa614d47d1a92b7dc4a
+bd2006-08-19d2t06.flac:745ce170be79614d304c602718dbf22e
+

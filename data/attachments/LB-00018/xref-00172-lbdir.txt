@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-06-29-Birds-Nest-In-Your-Hair.flacf 
+=================== 
+=================== 
+=================== 
+339a19ac90f6bf9e99d4d652aa7b84ed  01 Come on in this house.flac
+8a09ef61b8bfcea5a204c53e5b10a9fb  02 It's gonna rain.flac
+1b01362530ddcc361baabd2c5dbb1319  03 Show me the way, Lord.flac
+fb2f21febc6d19a5b282227cf4b73eaa  04 Saved by the grace of your love.flac
+0d4a98b93148ec9c924a9c4d864a8cd3  05 Gotta serve somebody.flac
+cd230bb1bc19ea64779ac96c77d778b0  06 I believe in you.flac
+25c66020d716158d32fc5776428cdcb4  07 Like a rolling stone.flac
+9db3c93546cb3aba20c08d4f3fcd24b2  08 'Till I get it right.flac
+ca3c98ad6d5d69daa4d5551ffbcce11d  09 Man gave names to all the animals.flac
+93aa3a2d8e758cd12144e09c94d1e156  10 Maggie's farm.flac
+865fdf630219016e0913e3fdf8ad68ec  11 Simple twist of fate.flac
+a04dfcbaea0eeff2f747509432e6f2cc  12 Dead man, dead man.flac
+4fcb2faa11ec0ca970986c1a6f4d51e2  13 Girl of the North Country.flac
+b8252d9514f5035c323f110e5009ac22  14 Ballad of a thin man.flac
+9d0c77013d7905e342dabbe1e37487c0  15 Slow train.flac
+f5c4ab768d1f736f7f62005e54a24842  16 Walk around heaven all day.flac
+63df6d9779a3a6ce6f48ed7a24ab080b  17 Let's begin.flac
+0145acba46b5594197b0b2f250c17ba4  18 All along the watchtower.flac
+d8195e0a9af1229070289bbc880093a4  19 Lenny Bruce.flac
+02b98def119488205bc32356e061d707  20 Mr. Tambourine man.flac
+5f4e449b4fe2c9749353b7e147e086b9  21 Solid rock.flac
+98d78b74a9bcb155e09134cb4facd5d9  22 Just like a woman.flac
+31933466e4c3b7a7f05d2501953d09c9  23 In the summertime.flac
+b3bb9eb15d8302f989fae2803eaa556e  24 Masters of war.flac
+b9940c52892006e9beec68e5619f076d  25 Forever young.flac
+67a179ffd990f825002ed5038c06bbc8  26 When you gonna wake up.flac
+645dfedd1930022caefdc57882bc02bc  27 In the garden.flac
+56db346159cf70f0cf1ce080578a0aab  28 Blowin' in the wind.flac
+17295632fd1ecc11223f4f0aba92f3fa  29 Love minus zero_No limit.flac
+eb1368bd0c2cf83daf18dbdbf6b2eefc  30 Knockin' on heaven's door.flac
+5566917692085d6e7399f39bb0332e2d  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-06-29-Birds-Nest-In-Your-Hair.flacf 
+=================== 
+=================== 
+=================== 
+01 come on in this house.flac:dfa8166cfd34eedbf4acab434fd04856
+02 it's gonna rain.flac:5d86460110e65dd30fd9fa3369e81589
+03 show me the way, lord.flac:c3087c52a18d409a46af138375b167fb
+04 saved by the grace of your love.flac:35799788689e6749d82f59d379cb1fa1
+05 gotta serve somebody.flac:5560003d5ae556d571b254b4b232a348
+06 i believe in you.flac:3d2eff98aa219745299599184018855f
+07 like a rolling stone.flac:c6844abb21dd9e4640a4dfa9ca7773c2
+08 'till i get it right.flac:ff14063674d90008eedd742a10da6afe
+09 man gave names to all the animals.flac:8a21ebd42d69137054082b005a07b127
+10 maggie's farm.flac:8c98ccc8519adf0e29d5695f8b37dfdc
+11 simple twist of fate.flac:8a8acec6448ae1f8108e8fc4d97fd8ad
+12 dead man, dead man.flac:98b813f2f62b671097a0bf884ab3607e
+13 girl of the north country.flac:eb817e4168544f6f8ecdd18bff797137
+14 ballad of a thin man.flac:b5d16aaa18d549e2559a2b8149ca014f
+15 slow train.flac:0126b8b33f1790fc6218a7ae69b9eb00
+16 walk around heaven all day.flac:df77bad25247f3f701b3f146a891df63
+17 let's begin.flac:0b01269936183220fdf25d6484c6af33
+18 all along the watchtower.flac:ea1033b5785b773eae1e035d31d4fd6f
+19 lenny bruce.flac:6f219b43575aa27a0c2fe416acf4dc39
+20 mr. tambourine man.flac:1e58d406408ce5213355d824ab93cb1f
+21 solid rock.flac:23283562c16403bd4852c4acd46b3a4c
+22 just like a woman.flac:c7549dba9e8d75bccdb86d6adb85493c
+23 in the summertime.flac:916dd73f0e526705193657ed1354ba46
+24 masters of war.flac:ebd6fcd7bd34128aac563010991fb7d8
+25 forever young.flac:c6351397829087c85db3d4985a15e685
+26 when you gonna wake up.flac:1e63c0540191d8f56693eb3edc255dc3
+27 in the garden.flac:40fd3b37bd6c0116893d4cb0831db019
+28 blowin' in the wind.flac:5e4a511def3334bc8d57310c20f1978d
+29 love minus zero_no limit.flac:5e2b32b7be8d96d49bec6ae1cda44c46
+30 knockin' on heaven's door.flac:8cb8dbcd2e6567d0e06127b6777dd530
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-06-29-Birds-Nest-In-Your-Hair.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.55       44405804 B   ---   --   ---xx   flac  0.7040  01 Come on in this house.flac
+     4:03.45       42971084 B   ---   --   ---xx   flac  0.6593  02 It's gonna rain.flac
+     2:56.15       31081724 B   ---   --   ---xx   flac  0.7240  03 Show me the way, Lord.flac
+     2:33.02       26993948 B   ---   --   ---xx   flac  0.6891  04 Saved by the grace of your love.flac
+     4:50.28       51221900 B   ---   --   ---xx   flac  0.7227  05 Gotta serve somebody.flac
+     4:54.20       51908684 B   ---   --   ---xx   flac  0.6941  06 I believe in you.flac
+     6:28.70       68607884 B   ---   --   ---xx   flac  0.7230  07 Like a rolling stone.flac
+     3:38.62       38601068 B   ---   --   ---xx   flac  0.6585  08 'Till I get it right.flac
+     4:42.28       49810700 B   ---   --   ---xx   flac  0.6921  09 Man gave names to all the animals.flac
+     4:05.15       43253324 B   ---   --   ---xx   flac  0.7180  10 Maggie's farm.flac
+     4:59.10       52767164 B   ---   --   ---xx   flac  0.7007  11 Simple twist of fate.flac
+     4:59.27       52807148 B   ---   --   ---xx   flac  0.7203  12 Dead man, dead man.flac
+     4:52.15       51544124 B   ---   --   ---xx   flac  0.6910  13 Girl of the North Country.flac
+     3:28.33       36768860 B   ---   --   ---xx   flac  0.7115  14 Ballad of a thin man.flac
+     4:41.17       49608428 B   ---   --   ---xx   flac  0.7243  15 Slow train.flac
+     4:57.38       52480220 B   ---   --   ---xx   flac  0.6583  16 Walk around heaven all day.flac
+     3:23.62       35955068 B   ---   --   ---xx   flac  0.6468  17 Let's begin.flac
+     2:39.43       28148780 B   ---   --   ---xx   flac  0.7059  18 All along the watchtower.flac
+     4:23.35       46475564 B   ---   --   ---xx   flac  0.6665  19 Lenny Bruce.flac
+     5:36.25       59329244 B   ---   --   ---xx   flac  0.7210  20 Mr. Tambourine man.flac
+     4:20.62       46009868 B   ---   --   ---xx   flac  0.7256  21 Solid rock.flac
+     4:05.55       43347404 B   ---   --   ---xx   flac  0.6916  22 Just like a woman.flac
+     3:19.35       35185964 B   ---   --   ---xx   flac  0.6989  23 In the summertime.flac
+     3:17.28       34816700 B   ---   --   ---xx   flac  0.7103  24 Masters of war.flac
+     4:49.55       51109004 B   ---   --   ---xx   flac  0.6966  25 Forever young.flac
+     4:42.02       49749548 B   ---   --   ---xx   flac  0.7180  26 When you gonna wake up.flac
+     9:44.35      103099964 B   ---   --   ---xx   flac  0.6941  27 In the garden.flac
+     5:04.48       53738540 B   ---   --   ---xx   flac  0.7202  28 Blowin' in the wind.flac
+     4:29.50       47569244 B   ---   --   ---xx   flac  0.7082  29 Love minus zero_No limit.flac
+     5:07.20       54201884 B   ---   --   ---xx   flac  0.6975  30 Knockin' on heaven's door.flac
+   135:26.60     1433568840 B                            0.7005  (30 files)
+=================== 
+=================== 
+=================== 

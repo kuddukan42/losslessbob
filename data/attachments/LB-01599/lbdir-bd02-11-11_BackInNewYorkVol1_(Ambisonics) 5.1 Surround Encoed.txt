@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-11_BackInNewYorkVol1_(Ambisonics) 5.1 Surround Encoed 
+=================== 
+=================== 
+=================== 
+35132ae3c80791a31dcb4e4bec38bfae  back.jpg
+3bc8263605236b6541d6326ab405e50b  backstereo.jpg
+7ffb55bc744323598aeb8023273c56aa  cd1 (complete)\BackInNewYorkVol1CD1.cue
+549181b7909efee12c5a8783eaa14495  cd1 (complete)\noname.md5
+144067639a659649e921aa4be0b2d760  cd1 (complete)\track1.shn
+d72660dca712b0e1f0915a3f3ec0bed6  cd1 (complete)\track10.shn
+f0199b7f5a3b845d5f2f8d98a1e22343  cd1 (complete)\track11.shn
+48fd1d2aeed9c136bf4b8fabbafff470  cd1 (complete)\track12.shn
+f894c78f1756922362670aa61d736785  cd1 (complete)\track13.shn
+b1db1f2c78b9d5806fe60a6ce481fd11  cd1 (complete)\track2.shn
+31fc0558516f71585c372be0711e14b7  cd1 (complete)\track3.shn
+a153cf195408cb96e8b53aee9feb420d  cd1 (complete)\track4.shn
+510f0a7429057d1ffc5d91aec7cfab34  cd1 (complete)\track5.shn
+a5058906727d677610cc9368ed47e163  cd1 (complete)\track6.shn
+4ee24fb0305e9eb07e1149e4a6115e8f  cd1 (complete)\track7.shn
+f4e678e58d132931b77b097e671565a7  cd1 (complete)\track8.shn
+16b1036b6650f97db1ace30363dd68e4  cd1 (complete)\track9.shn
+7be935ed824fa131e566eadfc8b5dc82  cd2 (complete)\BackInNewYorkVol1CD2.cue
+3d6b7987b12e7447fa691af38cec634b  cd2 (complete)\noname.md5
+f84377e9c9a5a0c742a4ea7f23e5d009  cd2 (complete)\track1.shn
+a6b9bb796b878a65144a44736427fb6f  cd2 (complete)\track2.shn
+887e5d5ab34608134f1b85dcb11563d6  cd2 (complete)\track3.shn
+2ae3dbd472362969b6b19b46d0f95820  cd2 (complete)\track4.shn
+a6e2039c51aede43faaa5d9cc977459a  cd2 (complete)\track5.shn
+b49a434e6354e9b81e285d48fea5cdb7  cd2 (complete)\track6.shn
+acc76ed4705de21c7c1b9dfb553e7c70  cd2 (complete)\track7.shn
+602de78fe8115e4badc8cfaf18cc4471  cd2 (complete)\track8.shn
+1d392057e5217ce0caf92ab8a211c652  front.jpg
+c254bd9c51b1414ba8f910efec50ce19  frontstereo.jpg
+ad1fab1608b4a4de57d193d377815bc5  Readme.txt
+37864fd8155e874d7b1be51bf3fccb76  Thumbs.db
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-11_BackInNewYorkVol1_(Ambisonics) 5.1 Surround Encoed\cd1 (complete) 
+=================== 
+=================== 
+=================== 
+9be68562e7b960186ae0b501bb6f6722  [shntool]  track1.wav
+afd0990ee4c7fb314375f5b2be4d3b58  [shntool]  track2.wav
+b9c7c89e11729ffd0b166fbd16ede434  [shntool]  track3.wav
+e7562763364f3ca8c206633a7aecade7  [shntool]  track4.wav
+bd0f00323bb82ba98dfac0589f437068  [shntool]  track5.wav
+4eab7c7534315b1162cd8e4afd0f2cc8  [shntool]  track6.wav
+d32a70da6a42340277d620e4e023241a  [shntool]  track7.wav
+f864cf5b4aaa41656b410a4351c3e330  [shntool]  track8.wav
+01ff1af0381c400a650daec34623c256  [shntool]  track9.wav
+b705f06177429761763058239cdef853  [shntool]  track10.wav
+b05d5d0538677e13cb01ce3ceb8a551d  [shntool]  track11.wav
+ce06e0739cea42f4381ba8352ae60105  [shntool]  track12.wav
+4c5f3b29746dfa29bd5a31a47808015f  [shntool]  track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-11_BackInNewYorkVol1_(Ambisonics) 5.1 Surround Encoed\cd2 (complete) 
+=================== 
+=================== 
+=================== 
+04352b2ef23364ef32958edad71fa968  [shntool]  track1.wav
+8dc5727608ad5d058682e7d84c47cfa8  [shntool]  track2.wav
+632151eb1d145f65d3b44f029e3d46d6  [shntool]  track3.wav
+31ed5590cf6263b0ac19cda243b4f608  [shntool]  track4.wav
+2c94303135d78825bdd3ea696b81fdf9  [shntool]  track5.wav
+4fc23c9944c05c07e42d6bc3808aa2d9  [shntool]  track6.wav
+d49f01453093d936d61ff8bb2eae67a2  [shntool]  track7.wav
+85767a127cde87d138e57f823336c7ab  [shntool]  track8.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-11_BackInNewYorkVol1_(Ambisonics) 5.1 Surround Encoed\cd1 (complete) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.66       10739756 B   -b-   --   -----    wav  1.0000  track1.wav
+     7:51.55       83214380 B   -b-   --   -----    wav  1.0000  track10.wav
+     6:19.14       66887724 B   -b-   --   -----    wav  1.0000  track11.wav
+     6:14.70       66138156 B   -b-   --   -----    wav  1.0000  track12.wav
+     3:58.68       42143788 B   -b-   --   -----    wav  1.0000  track13.wav
+     4:40.51       49512492 B   -b-   --   -----    wav  1.0000  track2.wav
+     4:09.65       44077100 B   -b-   --   -----    wav  1.0000  track3.wav
+     6:26.32       68165676 B   -b-   --   -----    wav  1.0000  track4.wav
+     4:53.22       51736620 B   -b-   --   -----    wav  1.0000  track5.wav
+     6:28.49       68558892 B   -b-   --   -----    wav  1.0000  track6.wav
+     4:20.57       45998124 B   -b-   --   -----    wav  1.0000  track7.wav
+     5:15.42       55664684 B   -b-   --   -----    wav  1.0000  track8.wav
+     8:09.27       86323244 B   -b-   --   -----    wav  1.0000  track9.wav
+    69:50.19      739160636 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-11_BackInNewYorkVol1_(Ambisonics) 5.1 Surround Encoed\cd2 (complete) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:30.05       79392812 B   -b-   --   -----    wav  1.0000  track1.wav
+     6:10.56       65400876 B   -b-   --   -----    wav  1.0000  track2.wav
+     7:54.37       83701804 B   -b-   --   -----    wav  1.0000  track3.wav
+     3:24.08       36003884 B   -b-   --   -----    wav  1.0000  track4.wav
+     6:03.59       64172076 B   -b-   --   -----    wav  1.0000  track5.wav
+     9:16.09       98099244 B   -b-   --   -----    wav  1.0000  track6.wav
+     6:41.20       70783020 B   -b-   --   -----    wav  1.0000  track7.wav
+     6:53.17       72892460 B   -b-   --   -----    wav  1.0000  track8.wav
+    53:53.61      570446176 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

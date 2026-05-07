@@ -1,0 +1,107 @@
+===================
+===================
+===================
+=== bd 1993-02-16 Utrecht.txt
+===================
+===================
+===================
+Vredenburg
+
+Bob Dylan
+Utrecht, The Netherlands
+16 February 1993
+
+1. I'm Moving On (Hank Snow)
+2. The Man In Me
+3. All Along The Watchtower
+4. Tangled Up In Blue
+5. I'll Remember You
+6. Stuck Inside Of Mobile With The Memphis Blues Again
+7. It Takes A Lot To Laugh, It Takes A Train To Cry
+8. Tomorrow Night (Sam Coslow/Will Grosz)
+9. Jim Jones (trad. arr. by Bob Dylan)
+10. Mr. Tambourine Man
+11. Don't Think Twice, It's All Right
+12. Cat's In The Well
+13. I And I
+14. Simple Twist Of Fate
+15. Highway 61 Revisited
+ 
+16. What Good Am I?
+17. Rainy Day Women # 12 & 35
+18. It Ain't Me, Babe
+
+Concert # 465 of The Never-Ending Tour. 
+Concert # 9 of the 1993 Winter Tour Of Europe. 
+1993 concert # 9.Concert # 9 with the 9th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & guitar), 
+Bucky Baxter (pedal steel guitar & electric
+slide guitar), 
+John Jackson (guitar), 
+Tony Garnier (bass), 
+Winston Watson (drums & percussion).
+
+8-11, 18 acoustic with the band.
+11, 18 Bucky Baxter electric mandolin.
+3, 4, 10, 11, 13, 14, 16-18 Bob Dylan harmonica.
+
+5 new songs (27%) compared to previous concert. 
+2 new songs for this tour.
+Stereo audience recording, 130 minutes.
+===================
+===================
+===================
+=== BD 1993-02-16 Utrecvht, NL.ffp
+===================
+===================
+===================
+bd 1993-02-16_101 .flac:2ef1757e22efaba500f0ab1b90f6297a
+bd 1993-02-16_102 .flac:36c95b7de4e204a985f51d5e0134ede7
+bd 1993-02-16_103 .flac:a7101c00480f9bcd33feec230782f8d6
+bd 1993-02-16_104 .flac:e77dc75901f347a1201134ee33db60d0
+bd 1993-02-16_105 .flac:c02f35aaabd33a35c431cddc77eaa1c8
+bd 1993-02-16_106 .flac:7f415475fdba9b720362c4ee3fb3dbef
+bd 1993-02-16_107 .flac:c4208150baa31b3ba9b75d94a5f8e837
+bd 1993-02-16_108 .flac:7b323fc1172bd501bb54507f52848251
+bd 1993-02-16_109 .flac:8f3a1946f7e96c927a6078078d9749d4
+bd 1993-02-16_110 .flac:f7d198f4258a5230741d0ddb92e6a6e8
+bd 1993-02-16_111 .flac:e1071920356876b88232b71193065042
+bd 1993-02-16_201 .flac:3a607be8379ed64e85459d0ace8aa239
+bd 1993-02-16_202 .flac:86c7a9153bfc067f0af4846c3dcd71d9
+bd 1993-02-16_203 .flac:1d4c079437f6217aedd9994011ab5cc2
+bd 1993-02-16_204 .flac:f2b4a24d0fd2fe4a765eb25a1cdc62fe
+bd 1993-02-16_205 .flac:e8e3a68cd5719cb254bfa03c00f6c1f3
+bd 1993-02-16_206 .flac:badee7567bef4badfa6f310d5fe9387b
+bd 1993-02-16_207 .flac:0acf5065ee619c7bc60fe4bbe05e50d4
+===================
+===================
+===================
+=== BD 1993-02-16 Utrecvht, NL.md5
+===================
+===================
+===================
+16255f131aa266e54621d9051e45ff63 *bd 1993-02-16 Utrecht 1 - Bob Dylan.log
+d6c9b7a9bfe0b6c8e88b344119aacd6c *bd 1993-02-16 Utrecht 2 - Bob Dylan.log
+93754ffe6fa54bebc7ac6550185d5b5a *bd 1993-02-16 Utrecht.txt
+dfc1317b32b981cd04c82bd65900ab0f *bd 1993-02-16_101 .flac
+d5f168034f70c7dfd1694efb164142bb *bd 1993-02-16_102 .flac
+7d3467f1cb925e53e5653f47881dcebb *bd 1993-02-16_103 .flac
+c81322483f363b995cdbbf17598bbbe8 *bd 1993-02-16_104 .flac
+4112b9eaaf8072ba3993cd0039cc1d3b *bd 1993-02-16_105 .flac
+817a681c265b57fa27ca4163493f0de5 *bd 1993-02-16_106 .flac
+9c660d561388e0ba6b80ba982ff24241 *bd 1993-02-16_107 .flac
+42afa3a7da48c4b00954768df4604678 *bd 1993-02-16_108 .flac
+2ce94f4f59874ebba39b3e9c47d1b6ed *bd 1993-02-16_109 .flac
+bdf73393cc70d6639282922661713e5b *bd 1993-02-16_110 .flac
+75f28aa89d38980af7c2b17f6d1f2f26 *bd 1993-02-16_111 .flac
+753c3c85d223cf583c55389f0087af93 *bd 1993-02-16_201 .flac
+17cf795b73e53e1a59f99d5c1818c00d *bd 1993-02-16_202 .flac
+7e9c44a65b823d72478769b646d11f87 *bd 1993-02-16_203 .flac
+f3c3b722306342d8caf137951791fc48 *bd 1993-02-16_204 .flac
+dad94c71626d2cc849de1d5692cee81d *bd 1993-02-16_205 .flac
+62a8ad9808d586802a986dcd31824ad4 *bd 1993-02-16_206 .flac
+57aaa6493403314da1fdd3c621633ad4 *bd 1993-02-16_207 .flac
+===================
+===================
+===================

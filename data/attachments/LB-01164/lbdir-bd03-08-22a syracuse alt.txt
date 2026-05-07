@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-22a syracuse alt 
+=================== 
+=================== 
+=================== 
+deab0f71e820581acfc7693481c50e01  bd03-08-22.md5
+9b5eb3082f1ea691ea05e3e7cb50cfe9  bd03-08-22a.txt
+7b4b2cc383acf1c8157884f7d419a9dd  bd03-08-22d1t01.shn
+0c5e3cf4affcd5b7ba71d687243a7a9b  bd03-08-22d1t02.shn
+f32c10daeb48b8501968dc9ed5d70cb6  bd03-08-22d1t03.shn
+f36b35e4d038ccfc515e60c060ec866f  bd03-08-22d1t04.shn
+b3b216d727f55bd3c69cd590036ed71a  bd03-08-22d1t05.shn
+eb657f1dd981062ed07f61717fc83d1f  bd03-08-22d1t06.shn
+3e51cd54996f31ef92657eb3e76d3dc5  bd03-08-22d1t07.shn
+ecc9c29dedb00f67f0a21b2d7f038fcf  bd03-08-22d1t08.shn
+1ab7ccb0c1df22073dea7a8a410badf3  bd03-08-22d1t09.shn
+f1bbf5d53044058a17d4ccea2f2d8778  bd03-08-22d1t10.shn
+8961e1088d6a79a820d8b67341c55d31  bd03-08-22d1t11.shn
+3cbed1ce3cc0b55a1ad8bc1c8473e224  bd03-08-22d2t01.shn
+2f6bf6b4f53dd225f3d1a32e47176ebf  bd03-08-22d2t02.shn
+91ce699479a10dc590f5e7537ac64d65  bd03-08-22d2t03.shn
+42f88a4f2ebf8ce0324c32d957c43898  bd03-08-22d2t04.shn
+b11c65c51a020438de18e8f8270c4c80  bd03-08-22d2t05.shn
+e30d0d87b16a5af3a55ee1871db7ca81  bd03-08-22d2t06.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-22a syracuse alt 
+=================== 
+=================== 
+=================== 
+49aea366ca805df4ff708780e179a309  [shntool]  bd03-08-22d1t01.wav
+970680aca2ff9336b2f326a26022ed7d  [shntool]  bd03-08-22d1t02.wav
+01e9158e6ed0d102323c057bd4f5593c  [shntool]  bd03-08-22d1t03.wav
+8b10b0022671822dde2c4d3a165c1dba  [shntool]  bd03-08-22d1t04.wav
+a274a0a44ba83766920be9440803808d  [shntool]  bd03-08-22d1t05.wav
+34927e7a564b771353af52da67a1cf9e  [shntool]  bd03-08-22d1t06.wav
+b15ccd0e6e3f3c23f1bb768a94c251b6  [shntool]  bd03-08-22d1t07.wav
+00873f00b8b00347f731de29268513bf  [shntool]  bd03-08-22d1t08.wav
+abd6d539d2fdeedde54e36c17aa064cf  [shntool]  bd03-08-22d1t09.wav
+f7c8d7cc325ae6e8b995436645794a60  [shntool]  bd03-08-22d1t10.wav
+26744102ee8139b0f9d3e3d3b13d2605  [shntool]  bd03-08-22d1t11.wav
+e3dfac54d950c3b179e5bfa708914635  [shntool]  bd03-08-22d2t01.wav
+88176013f4242b5a683c13ed5ce8bd26  [shntool]  bd03-08-22d2t02.wav
+f5902561d64e2ce82656e68fb5f5e97c  [shntool]  bd03-08-22d2t03.wav
+106f27c3e9cc32ab4880f135da0dcc69  [shntool]  bd03-08-22d2t04.wav
+4f3e6987bc61feb84e5931e5c035c6cf  [shntool]  bd03-08-22d2t05.wav
+08efd92301d2f43815cb7c60e681d354  [shntool]  bd03-08-22d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-22a syracuse alt 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:59.02       10412444 B   ---   h-   ---xx    shn  0.4042  bd03-08-22d1t01.shn
+     6:25.34       67994108 B   ---   h-   ---xx    shn  0.5095  bd03-08-22d1t02.shn
+    10:44.09      113622908 B   ---   h-   ---xx    shn  0.4715  bd03-08-22d1t03.shn
+     7:03.63       74765516 B   ---   h-   ---xx    shn  0.4362  bd03-08-22d1t04.shn
+     5:26.27       57570044 B   ---   h-   ---xx    shn  0.5265  bd03-08-22d1t05.shn
+     6:08.10       64938860 B   ---   h-   ---xx    shn  0.5162  bd03-08-22d1t06.shn
+     6:45.34       71522108 B   ---   h-   ---xx    shn  0.4925  bd03-08-22d1t07.shn
+     7:08.61       75642812 B   ---   h-   ---xx    shn  0.5197  bd03-08-22d1t08.shn
+     7:21.27       77856044 B   ---   h-   ---xx    shn  0.4478  bd03-08-22d1t09.shn
+     6:49.24       72204190 B   ---   h-   ---xx    shn  0.5063  bd03-08-22d1t10.shn
+     4:49.35       51062062 B   ---   h-   ---xx    shn  0.3649  bd03-08-22d1t11.shn
+     7:04.28       74859596 B   ---   h-   ---xx    shn  0.5245  bd03-08-22d2t01.shn
+     8:38.50       91492940 B   ---   h-   ---xx    shn  0.4562  bd03-08-22d2t02.shn
+     7:03.01       74619692 B   ---   h-   ---xx    shn  0.5286  bd03-08-22d2t03.shn
+     6:48.15       72006620 B   ---   h-   ---xx    shn  0.5413  bd03-08-22d2t04.shn
+     5:21.08       56643356 B   ---   h-   ---xx    shn  0.5319  bd03-08-22d2t05.shn
+     8:56.31       94623452 B   ---   h-   ---xx    shn  0.5454  bd03-08-22d2t06.shn
+   113:33.09     1201836752 B                            0.4948  (17 files)
+=================== 
+=================== 
+=================== 

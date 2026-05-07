@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-03-23-lk1.flacf 
+=================== 
+=================== 
+=================== 
+386fe440d78eb8c52aadca5dc81621f2  1992-03-23 State Theatre, Sydney d1\01 Track01.flac
+595ee45752df8a092ae4e1dee7991c46  1992-03-23 State Theatre, Sydney d1\02 Track02.flac
+86943926da2435dc3b4de8558514259b  1992-03-23 State Theatre, Sydney d1\03 Track03.flac
+b35d3694a58cda90abfea64662bf836a  1992-03-23 State Theatre, Sydney d1\04 Track04.flac
+8b74684baea14ab6ced3b4ed0e46a312  1992-03-23 State Theatre, Sydney d1\05 Track05.flac
+7ce6542305dd40e86f4d291ffb43636e  1992-03-23 State Theatre, Sydney d1\06 Track06.flac
+167b81b01f1a978da1a663af93819afe  1992-03-23 State Theatre, Sydney d1\07 Track07.flac
+00af600c2a56e5f2d6cb1cfd274d2bfa  1992-03-23 State Theatre, Sydney d1\08 Track08.flac
+091c60f7c66158563cc69b407129048d  1992-03-23 State Theatre, Sydney d1\09 Track09.flac
+6bcfdc85f971da8738fc01679f375747  1992-03-23 State Theatre, Sydney d1\10 Track10.flac
+c789ac18edc29a09b67446076449ad98  1992-03-23 State Theatre, Sydney d1\11 Track11.flac
+7bc15e90e0fa0012a123d19d2902c7ac  1992-03-23 State Theatre, Sydney d2\01 Track01.flac
+51731dcf52d01662ff06fec16d01bbfe  1992-03-23 State Theatre, Sydney d2\02 Track02.flac
+c50cbbbfb9eef197d449b29dc93e806b  1992-03-23 State Theatre, Sydney d2\03 Track03.flac
+a10930ad87cc0f7841ccb93cb184be76  1992-03-23 State Theatre, Sydney d2\04 Track04.flac
+b66eed5bbb3d09bf7b2b0cd4907736d3  1992-03-23 State Theatre, Sydney d2\05 Track05.flac
+75b73ad3eeaec70a9860e1fe5e1b27a7  1992-03-23 State Theatre, Sydney d2\06 Track06.flac
+9ecf9ed9fb661f6be0395ef29cff2bc3  1992-03-23 State Theatre, Sydney d2\07 Track07.flac
+137de94ea4105765dc5349993823e090  1992.03.23 State Theatre, Sydney,.md5
+e477a1acc4c4b5ce2829975fecf2866c  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-03-23-lk1.flacf\1992-03-23 state theatre, sydney d1 
+=================== 
+=================== 
+=================== 
+01 track01.flac:b9814be1e63797fa6ca2af406b62d2eb
+02 track02.flac:e32be78a9735ef2794ffeba96b97ec83
+03 track03.flac:fb8d7bc5b39f21c56481c6f10052b1b1
+04 track04.flac:0868e158da01c9658c28865eac31545c
+05 track05.flac:30c7bee6653e626bf1e5717695c66c30
+06 track06.flac:981bb4dd8039ce38aabd4f2bc0ca56a8
+07 track07.flac:28a8f8b1f6e5cb04e9a68958ded758e7
+08 track08.flac:22a904164c37a22a6a8c04d40c3e22c2
+09 track09.flac:91bba8d6cc2f4b1c0fd472c6f0e897da
+10 track10.flac:e5be4e2436f0664daf33f08d3c9c8529
+11 track11.flac:51ee3c145e21f6d59fb659e868945a1f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-03-23-lk1.flacf\1992-03-23 state theatre, sydney d2 
+=================== 
+=================== 
+=================== 
+01 track01.flac:e3f382cf80500c01720c9c5869523695
+02 track02.flac:829f72385bc1f6b3f31d0e0f6eef8c30
+03 track03.flac:90f5f1fd336927e7e01c0d7954a8c9c8
+04 track04.flac:ac775641311cebd2446779d375cbe32c
+05 track05.flac:64bd36e42af7a5958f7b9da4ec7de4a6
+06 track06.flac:8ccd0599130991db5f6207902c4dd2c5
+07 track07.flac:497c86830735fa2b0ef159781632a31b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-03-23-lk1.flacf\1992-03-23 state theatre, sydney d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.22       43622588 B   ---   --   ---xx   flac  0.6800  01 Track01.flac
+     3:13.01       34047596 B   ---   --   ---xx   flac  0.6696  02 Track02.flac
+     3:26.00       36338444 B   ---   --   ---xx   flac  0.6728  03 Track03.flac
+     5:38.69       59785532 B   ---   --   ---xx   flac  0.6825  04 Track04.flac
+     5:51.20       61963484 B   ---   --   ---xx   flac  0.6844  05 Track05.flac
+     4:24.60       46710764 B   ---   --   ---xx   flac  0.6701  06 Track06.flac
+     5:11.68       55020380 B   ---   --   ---xx   flac  0.6672  07 Track07.flac
+     3:33.06       37587356 B   ---   --   ---xx   flac  0.7095  08 Track08.flac
+     4:03.14       42898172 B   ---   --   ---xx   flac  0.7108  09 Track09.flac
+     5:05.42       53900828 B   ---   --   ---xx   flac  0.7100  10 Track10.flac
+     7:33.43       80010380 B   ---   --   ---xx   flac  0.6889  11 Track11.flac
+    52:08.45      551885524 B                            0.6862  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-03-23-lk1.flacf\1992-03-23 state theatre, sydney d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.64       41780972 B   ---   --   ---xx   flac  0.6792  01 Track01.flac
+     3:55.50       41571644 B   ---   --   ---xx   flac  0.6756  02 Track02.flac
+     6:22.45       67490684 B   ---   --   ---xx   flac  0.7059  03 Track03.flac
+     5:52.03       62099900 B   ---   --   ---xx   flac  0.6814  04 Track04.flac
+     5:53.17       62309228 B   ---   --   ---xx   flac  0.6834  05 Track05.flac
+     5:13.63       55361420 B   ---   --   ---xx   flac  0.6895  06 Track06.flac
+     4:01.36       42597116 B   ---   --   ---xx   flac  0.7142  07 Track07.flac
+    35:15.53      373210964 B                            0.6902  (7 files)
+=================== 
+=================== 
+=================== 

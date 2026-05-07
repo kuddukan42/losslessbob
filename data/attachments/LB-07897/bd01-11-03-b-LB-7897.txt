@@ -1,0 +1,10 @@
+Bob Dylan, 11/3/01, Nashville, TN, USA, 2CDR
+
+LB-7897, (72min+70min), version "b"; Rip from audio CD. Complete recording including "Knockin' On Heaven's Door", CDR > EAC > .wav > FLAC Frontend > FLAC, Quality: Very Good; bittorrent download 08/09; same recording as oldttoad LB-5210 based on same clapping wavs at end of d1t1 with similar wav and spectral view except sometimes levels are different; they have different digital flaws; (did not listen to all of this)
+
+drop/cut between cdrs, d2t3 3:31, 5:06, disciontinuities between tracks
+
+Disc 1, 1) Humming Bird, 2) It Ain't Me Babe, 3) Desolation Row, 4) This World Can't Stand Long, 5) Lonesome Day Blues, 6) I Threw It All Away, 7) High Water, 8) Floater, 9) One Too Many Mornings, 10) John Brown, 11) Visions Of Johanna, Disc 2, 1) Summer Days, 2) Mississippi, 3) The Wicked Messenger, 4) Leopard-Skin Pill-Box Hat, 5) Things Have Changed, 6) Like A Rolling Stone, 7) I Shall Be Released, 8) Honest With Me, 9) Blowing In The Wind, 10) All Along The Watchtower, 11) Knocking On Heaven's Door
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

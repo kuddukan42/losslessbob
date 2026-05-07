@@ -1,0 +1,63 @@
+Bob Dylan
+Campo de Fútbol de Prada de Moles
+Encamp, Andorra
+June 22, 2008
+ 
+Disc 1:
+01. //introduction
+02. All Along The Watchtower 
+03. Don't Think Twice, It's All Right  
+04. High Water (For Charley Patton)  
+05. Tryin' To Get To Heaven  
+06. Rollin' And Tumblin' 
+07. Visions Of Johanna  
+08. Million Miles
+09. Beyond The Horizon 
+10. Tangled Up In Blue  
+11. Highway 61 Revisited 
+12. Sugar Baby 
+
+Disc 2:
+01. It's Alright, Ma (I'm Only Bleeding)
+02. Nettie Moore
+03. Summer Days
+04. Ballad Of A Thin Man
+(encore) 
+05. Thunder On The Mountain
+06. band introduction
+07. Blowin' In The Wind
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - lead guitar
+Donnie Herron - violin, viola, banjo, mandolin, steel guitar
+Stu Kimball - rhythm guitar
+George Recile - drums
+Tony Garnier - bass 
+
+source: soomlos
+neumann km140's > lunatec v3 > m-audio mt1 (24/48)
+
+notes: 
+d1t01 introduction fades in (no music lost)
+
+ffp
+bd2008-06-22d1t01.flac:a99b556335c78bb1d8eee492ce543bbf
+bd2008-06-22d1t02.flac:60e28ba810b7b14bbac0e1f0f6b975cf
+bd2008-06-22d1t03.flac:3d885a6df7a0c3f7c9d863965889ca47
+bd2008-06-22d1t04.flac:cba581bd4b8ca14d0c5735b19e05bc94
+bd2008-06-22d1t05.flac:992e08fcbe9ab3218affc84af7bf9751
+bd2008-06-22d1t06.flac:5496fcffa07a1e8401375c145e641c25
+bd2008-06-22d1t07.flac:2923338ddfaf931910c124c6804f4eaf
+bd2008-06-22d1t08.flac:ea7311bf68b3efa1a01009315d0212ac
+bd2008-06-22d1t09.flac:b729d441d82d4b4b3459a1dbe84b3b72
+bd2008-06-22d1t10.flac:d151de2649f00d74741feaadc8c18d7e
+bd2008-06-22d1t11.flac:f58f32e644885b2d2565aab86ca668af
+bd2008-06-22d1t12.flac:2294ae0fef920a6f7dd35e586b64f170
+bd2008-06-22d2t01.flac:e6ed041e324d80e69cdfd86182cb9125
+bd2008-06-22d2t02.flac:2ee7714adab1149e0fb8f44663038856
+bd2008-06-22d2t03.flac:eaf3a53029f9a7c7e01eac9aa50ff557
+bd2008-06-22d2t04.flac:c2c93ffd6d21c51913a71f20ee1b2ff0
+bd2008-06-22d2t05.flac:e106d4a8a23592ac3d7d62fddb1bb8b5
+bd2008-06-22d2t06.flac:ba16074dd7f80d3bd79d5fb1a3b38dcb
+bd2008-06-22d2t07.flac:114b49654ceff21f33960ffd1649cba4

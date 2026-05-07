@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd89-11-14-sb-b.flacf
+===================
+===================
+===================
+dd40b7d2869ccf5d819b71b4a333893a *(Bob Dylan) 1989-11-14  (Can't Buy A Thrill,SSB).ffp
+9cf9fd0f1c2fd8e8bee3289619fcfb18 *(Bob Dylan) 1989-11-14  (Can't Buy A Thrill,SSB).md5
+581f2895a747b1a91b27d51c8e44125f *1989-11-14_Can't Buy A Thrill.txt
+6e10ea60b85e02a9ca038fb418b847c7 *disc 01\BD 1989-11-14 d101.flac
+91a62116a3fea40ed51c75f498aa5625 *disc 01\BD 1989-11-14 d102.flac
+e82c9af23e2751d7b09708d8f9abc335 *disc 01\BD 1989-11-14 d103.flac
+4bf5df24d5f7b49f72f3c1ff8dccaa8c *disc 01\BD 1989-11-14 d104.flac
+d5fab77fff983d0faa8c8c830774928d *disc 01\BD 1989-11-14 d105.flac
+b984746cc84150f90cc13c3b202dcf57 *disc 01\BD 1989-11-14 d106.flac
+5d78c4b314a79277154a4c9ae859a4d1 *disc 01\BD 1989-11-14 d107.flac
+91e77836db381037d695805b1a403d92 *disc 02\BD 1989-11-14 d201.flac
+90f041228f95bf28440d959f57822650 *disc 02\BD 1989-11-14 d202.flac
+95a1be20a9208c38683d8dad0bc9333a *disc 02\BD 1989-11-14 d203.flac
+577e409fe56344ec9fa0644162e9eb9a *disc 02\BD 1989-11-14 d204.flac
+4654c32b0074800a1e1bfe4d4d8c95c5 *disc 02\BD 1989-11-14 d205.flac
+ac989ab2b9abae41f5bb31a178af23cd *disc 02\BD 1989-11-14 d206.flac
+7da367f54be593c9c4ebadb4b8391a1b *disc 02\BD 1989-11-14 d207.flac
+050cd1686cfde4e9573a92c255c54bd6 *disc 02\BD 1989-11-14 d208.flac
+c6e712b9bbe53b600191b21c37431939 *disc 02\BD 1989-11-14 d209.flac
+===================
+===================
+===================
+=== ffp for: bd89-11-14-sb-b.flacf
+===================
+===================
+===================
+disc 01\BD 1989-11-14 d101.flac:f82b41fd541e07b830c41c738ab47899
+disc 01\BD 1989-11-14 d102.flac:6e7b936020e9175a91a41c02db02ea36
+disc 01\BD 1989-11-14 d103.flac:e1e4464db8640e488e39dac6ea460e43
+disc 01\BD 1989-11-14 d104.flac:810a00d494565cb9d7a8cbd45b48cab3
+disc 01\BD 1989-11-14 d105.flac:0270cad7589e4375f0391b363ed4ad65
+disc 01\BD 1989-11-14 d106.flac:babe668ffba1662872e71bd14735fde1
+disc 01\BD 1989-11-14 d107.flac:84b773b29b2ab40371a4dcccf1a619af
+disc 02\BD 1989-11-14 d201.flac:b5ddd38aa1e3d064b8953f8e948f05c5
+disc 02\BD 1989-11-14 d202.flac:95b88bcd4cd7c2de7a01880575800ffb
+disc 02\BD 1989-11-14 d203.flac:14c858769a13cce16dcc64f60b0ae57c
+disc 02\BD 1989-11-14 d204.flac:592a0ec4b6b7e88d272457946b4ec18d
+disc 02\BD 1989-11-14 d205.flac:9bd492f2bde8ae102af42a65c428d90a
+disc 02\BD 1989-11-14 d206.flac:e7ceb787908150ea5f0524462d1817bc
+disc 02\BD 1989-11-14 d207.flac:57822b94c045282ffa60d7dd02ecd833
+disc 02\BD 1989-11-14 d208.flac:a1fe13550a6d585be428209b3c6cac92
+disc 02\BD 1989-11-14 d209.flac:3e9fe3885859b9600f83c9155a9a77e8
+===================
+===================
+===================
+=== shntool len for: bd89-11-14-sb-b.flacf\disc 01
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.51       63271132 B   -b-   --   ---xx   flac  0.6419  BD 1989-11-14 d101.flac
+     5:16.72       55911788 B   ---   --   ---xx   flac  0.6333  BD 1989-11-14 d102.flac
+     7:53.26       83498396 B   ---   --   ---xx   flac  0.6242  BD 1989-11-14 d103.flac
+     5:15.56       55697756 B   ---   --   ---xx   flac  0.6207  BD 1989-11-14 d104.flac
+     6:35.49       69793292 B   ---   --   ---xx   flac  0.5970  BD 1989-11-14 d105.flac
+     6:09.12       65119868 B   ---   --   ---xx   flac  0.6046  BD 1989-11-14 d106.flac
+    11:54.39      126041372 B   ---   --   ---xx   flac  0.6177  BD 1989-11-14 d107.flac
+    49:04.05      519333604 B                            0.6193  (7 files)
+===================
+===================
+===================
+=== shntool len for: bd89-11-14-sb-b.flacf\disc 02
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:26.26       89319596 B   ---   --   ---xx   flac  0.5935  BD 1989-11-14 d201.flac
+     8:00.49       84787292 B   ---   --   ---xx   flac  0.5820  BD 1989-11-14 d202.flac
+     4:28.43       47376380 B   ---   --   ---xx   flac  0.5958  BD 1989-11-14 d203.flac
+     5:07.66       54310076 B   ---   --   ---xx   flac  0.5457  BD 1989-11-14 d204.flac
+     6:33.01       69327596 B   ---   --   ---xx   flac  0.5683  BD 1989-11-14 d205.flac
+     6:04.06       64223756 B   ---   --   ---xx   flac  0.5911  BD 1989-11-14 d206.flac
+     7:15.48       76846940 B   ---   --   ---xx   flac  0.5976  BD 1989-11-14 d207.flac
+     6:51.13       72531020 B   ---   --   ---xx   flac  0.5873  BD 1989-11-14 d208.flac
+     7:29.58       79340060 B   ---   --   ---xx   flac  0.5954  BD 1989-11-14 d209.flac
+    60:17.10      638062716 B                            0.5851  (9 files)
+===================
+===================
+===================

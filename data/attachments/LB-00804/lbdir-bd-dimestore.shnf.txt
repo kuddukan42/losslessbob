@@ -1,0 +1,126 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-dimestore.shnf 
+=================== 
+=================== 
+=================== 
+ecff9a1b390c539fc8730ba540a1d098  bd-dimestore-d1.md5
+21758c59f8af51d00ae1d4fc24c6461a  bd-dimestore-d1t01.shn
+ac084c41b45ebaad1f8fb6d8a0198b00  bd-dimestore-d1t02.shn
+dd6b8d0eec37513c55872712a45bd4e9  bd-dimestore-d1t03.shn
+e09128b182e58c2fbf139fb7178475f8  bd-dimestore-d1t04.shn
+1471b188593a993386f8940838f1542d  bd-dimestore-d1t05.shn
+8b960ee65ebbf5b2aa0502a459acecad  bd-dimestore-d1t06.shn
+01060b9e4c9e241fac3446418a9f0314  bd-dimestore-d1t07.shn
+4e5eb07948fd63f73078e4ae3757b012  bd-dimestore-d1t08.shn
+b2e3a37f41743bfd86f50e06ba2421b2  bd-dimestore-d1t09.shn
+cfd21ac87f58698f7c681e1fb5d5e29d  bd-dimestore-d1t10.shn
+532e43aac1d3bd7d45b91a4bd8cbdcfe  bd-dimestore-d1t11.shn
+29a305d149ec03a047bd9ada5a331f8b  bd-dimestore-d1t12.shn
+6be0d71257f81076b4c44e603e31fbb8  bd-dimestore-d1t13.shn
+04b73b02e3e365fb32135d364767ac1e  bd-dimestore-d1t14.shn
+b0832b90605496c52cb6fefdcb31bfbb  bd-dimestore-d1t15.shn
+a209aaced8e666f4b98286addd0c6d41  bd-dimestore-d1t16.shn
+6256321aaa1937da8a75e4a1ad3c6b2f  bd-dimestore-d1t17.shn
+7d8b7e746e8ff9c263ac48db001df210  bd-dimestore-d1t18.shn
+b640e1f3f9a72e8450154524c7965bd2  bd-dimestore-d1t19.shn
+df6c532ccf68b308f8926e96b583b3c2  bd-dimestore-d2.md5
+0ca30477cfef0de1960feddcad32272d  bd-dimestore-d2t01.shn
+316b1de5413014da8690a4c095112f78  bd-dimestore-d2t02.shn
+a1384fe8d37300460f217ade7ced0c94  bd-dimestore-d2t03.shn
+7f943e547c44c77af33bf837479bf802  bd-dimestore-d2t04.shn
+61938755431c021231f1b1fb63d5ae4c  bd-dimestore-d2t05.shn
+9352206ed553fb13dd5af7df500fae9f  bd-dimestore-d2t06.shn
+72e0a9fe1ee132e2ff1005868ea82bb9  bd-dimestore-d2t07.shn
+9fcffe47948ae1d0cdf5ba431bab3db7  bd-dimestore-d2t08.shn
+d61a4f89fe77829ac916545b3e3a73f5  bd-dimestore-d2t09.shn
+7903322adbc7ca7d4ba2158008183e70  bd-dimestore-d2t10.shn
+332019ba03fc6af938a5039522a4e93b  bd-dimestore-d2t11.shn
+e0a5f7ceddb662a444c7166627a0da33  bd-dimestore-d2t12.shn
+01f156349dc829f3c5c54ed86b0a78be  bd-dimestore-d2t13.shn
+e132cc6f3137cda06e3f115145ba79bb  Dimestore Medicine.txt
+7c8c9355c78ac01f12959091173b9b66  Scans - Bob Dylan - Dimestore Medicine.zip
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-dimestore.shnf 
+=================== 
+=================== 
+=================== 
+dfa5c9fcbd7b0dedd9c25bc3bbb639a8  [shntool]  bd-dimestore-d1t01.wav
+ce21132f66274e36d5c13b44027448ed  [shntool]  bd-dimestore-d1t02.wav
+d7d491c850e29bd92d9b1f9df1463a50  [shntool]  bd-dimestore-d1t03.wav
+57588bb5fd822cf2bd7504bd4dd0feab  [shntool]  bd-dimestore-d1t04.wav
+6ae9f34e51df11bd72e1a56818699b90  [shntool]  bd-dimestore-d1t05.wav
+ef12190104c1280ce0a02e3daa0aa009  [shntool]  bd-dimestore-d1t06.wav
+8514da409e23d4af69c312fe12350436  [shntool]  bd-dimestore-d1t07.wav
+ee272798659c71405080c91b60e98efa  [shntool]  bd-dimestore-d1t08.wav
+39f5ac17027b38b0b57749f7a9064462  [shntool]  bd-dimestore-d1t09.wav
+1d247c4e3a7eeaab4ca04855565fceed  [shntool]  bd-dimestore-d1t10.wav
+150453e49078a2a9ae6c1714d8318964  [shntool]  bd-dimestore-d1t11.wav
+45e7b1cc51b81a505376d2ef68595716  [shntool]  bd-dimestore-d1t12.wav
+a236d022e5a3ec222ee375e131849ede  [shntool]  bd-dimestore-d1t13.wav
+042e24b0a15e9404f771825e3c1b84b1  [shntool]  bd-dimestore-d1t14.wav
+419b1e99974d741c2e1a2ead6efbb8ed  [shntool]  bd-dimestore-d1t15.wav
+59fd353837696a195eeb5661f64d94b9  [shntool]  bd-dimestore-d1t16.wav
+ee7d7d08ddc6b1679ec468e80abe38a3  [shntool]  bd-dimestore-d1t17.wav
+83c6b3bdd80be77baec4a6d32ad2efcc  [shntool]  bd-dimestore-d1t18.wav
+17005ba5781f3203ad6f349f85f86fd1  [shntool]  bd-dimestore-d1t19.wav
+02f1f96a52c9a994e6e80c409afc396d  [shntool]  bd-dimestore-d2t01.wav
+2b9f41465b5d6d702c6fa90bc4226160  [shntool]  bd-dimestore-d2t02.wav
+4e6bca021856d7c1f7a258a7be6e017c  [shntool]  bd-dimestore-d2t03.wav
+b570b390dfaa86e51df76cab09acc8b8  [shntool]  bd-dimestore-d2t04.wav
+5328b1bc31394f81cf7a5966a566a32a  [shntool]  bd-dimestore-d2t05.wav
+fed41b4c4d8f88a16bd584dbbdf7fa5e  [shntool]  bd-dimestore-d2t06.wav
+16c6c8623879e7ea24de270d67d19676  [shntool]  bd-dimestore-d2t07.wav
+2545c6452a03d17358c59f5d2e8abdee  [shntool]  bd-dimestore-d2t08.wav
+a9e323aae2195f5625e1193c0771a987  [shntool]  bd-dimestore-d2t09.wav
+36c44caca3d464bc8aa2918537f7d93f  [shntool]  bd-dimestore-d2t10.wav
+b95e7fe5f1217a9cad948bfcb979552e  [shntool]  bd-dimestore-d2t11.wav
+67c80003955e6cd1b13fa94132c15a26  [shntool]  bd-dimestore-d2t12.wav
+fa6b0fb616232fff65fc32c71b76c3ea  [shntool]  bd-dimestore-d2t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-dimestore.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.55       35585804 B   ---   --   ---xx    shn  0.6896  bd-dimestore-d1t01.shn
+     3:52.64       41075372 B   ---   --   ---xx    shn  0.6429  bd-dimestore-d1t02.shn
+     3:29.27       36931148 B   ---   --   ---xx    shn  0.6814  bd-dimestore-d1t03.shn
+     3:47.46       40151036 B   ---   --   ---xx    shn  0.6534  bd-dimestore-d1t04.shn
+     2:32.71       26979836 B   ---   --   ---xx    shn  0.6358  bd-dimestore-d1t05.shn
+     1:03.42       11212028 B   ---   --   ---xx    shn  0.5852  bd-dimestore-d1t06.shn
+     6:10.53       65392700 B   ---   --   ---xx    shn  0.6754  bd-dimestore-d1t07.shn
+     8:28.16       89648876 B   ---   --   ---xx    shn  0.6379  bd-dimestore-d1t08.shn
+    11:57.68      126638780 B   ---   --   ---xx    shn  0.6775  bd-dimestore-d1t09.shn
+     3:11.55       33821804 B   ---   --   ---xx    shn  0.6583  bd-dimestore-d1t10.shn
+     1:31.02       16057148 B   ---   --   ---xx    shn  0.6177  bd-dimestore-d1t11.shn
+     4:04.54       43168652 B   ---   --   ---xx    shn  0.6119  bd-dimestore-d1t12.shn
+     1:12.68       12860780 B   ---   --   ---xx    shn  0.6367  bd-dimestore-d1t13.shn
+     0:59.26       10468796 B   ---   --   ---xx    shn  0.6044  bd-dimestore-d1t14.shn
+     0:56.52       10000748 B   ---   --   ---xx    shn  0.5740  bd-dimestore-d1t15.shn
+     7:35.35       80344364 B   ---   --   ---xx    shn  0.6977  bd-dimestore-d1t16.shn
+     6:18.10       66702764 B   ---   --   ---xx    shn  0.5660  bd-dimestore-d1t17.shn
+     5:32.23       58618940 B   ---   --   ---xx    shn  0.7511  bd-dimestore-d1t18.shn
+     1:44.68       18505580 B   ---   --   ---xx    shn  0.5493  bd-dimestore-d1t19.shn
+     2:55.57       31004108 B   ---   --   ---xx    shn  0.6939  bd-dimestore-d2t01.shn
+     0:56.59       10017212 B   ---   --   ---xx    shn  0.5728  bd-dimestore-d2t02.shn
+     3:47.53       40167500 B   ---   --   ---xx    shn  0.5564  bd-dimestore-d2t03.shn
+     3:35.64       38076572 B   ---   --   ---xx    shn  0.6229  bd-dimestore-d2t04.shn
+     3:44.40       39607724 B   ---   --   ---xx    shn  0.5583  bd-dimestore-d2t05.shn
+     3:06.50       32928044 B   ---   --   ---xx    shn  0.5037  bd-dimestore-d2t06.shn
+     4:27.17       47138828 B   ---   --   ---xx    shn  0.6218  bd-dimestore-d2t07.shn
+     6:51.00       72500444 B   ---   --   ---xx    shn  0.6136  bd-dimestore-d2t08.shn
+     5:22.66       56956076 B   ---   --   ---xx    shn  0.5859  bd-dimestore-d2t09.shn
+     4:04.63       43189820 B   ---   --   ---xx    shn  0.6182  bd-dimestore-d2t10.shn
+     6:13.01       65799596 B   ---   --   ---xx    shn  0.6003  bd-dimestore-d2t11.shn
+    24:24.71      258416636 B   ---   --   ---xx    shn  0.4518  bd-dimestore-d2t12.shn
+     8:10.42       86534828 B   ---   --   ---xx    shn  0.4703  bd-dimestore-d2t13.shn
+   155:33.68     1646502544 B                            0.5970  (32 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-03-creatures-void-of-form.flacf 
+=================== 
+=================== 
+=================== 
+8bcdf76f70b1c03112892513dd08b3f0  bd76-05-03-creatures-void-of-form-d1t01.flac
+41c438ef3d2d2b2876d7fa84950bdf70  bd76-05-03-creatures-void-of-form-d1t02.flac
+da5f9c036abba1b57e91159904221550  bd76-05-03-creatures-void-of-form-d1t03.flac
+1728606c30be829952b857df5cde20ad  bd76-05-03-creatures-void-of-form-d1t04.flac
+4a8713ce5227fa8c032a55c43d7950c8  bd76-05-03-creatures-void-of-form-d1t05.flac
+2da66f082a5401b72a8c7c7b9c2cd7f7  bd76-05-03-creatures-void-of-form-d1t06.flac
+39701e130c9d410095ae4e198be3f27b  bd76-05-03-creatures-void-of-form-d1t07.flac
+0eff13767471c9b7c7c94d8bd4c37dd7  bd76-05-03-creatures-void-of-form-d1t08.flac
+a92dc6a32f07e156df1e578d20477106  bd76-05-03-creatures-void-of-form-d1t09.flac
+a772c4e8531cb1fce2fa6f8c1d80ceb1  bd76-05-03-creatures-void-of-form-d1t10.flac
+89e46a5a5f6181c24788bd26849aabc8  bd76-05-03-creatures-void-of-form-d1t11.flac
+71360f29ba4e81f511a39341a5f3a28e  bd76-05-03-creatures-void-of-form-d1t12.flac
+ccf9ff8b5941415d0312caa9e5b5bfc5  bd76-05-03-creatures-void-of-form-d1t13.flac
+b693c2aedea6f82f8785264d316659b8  bd76-05-03-creatures-void-of-form-d1t14.flac
+a21d441cce0cd5c2f0333e2e127d1730  bd76-05-03-creatures-void-of-form-d1t15.flac
+5cbd05193333b11f95763763f55f396d  bd76-05-03-creatures-void-of-form.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-03-creatures-void-of-form.flacf 
+=================== 
+=================== 
+=================== 
+bd76-05-03-creatures-void-of-form-d1t01.flac:f4851002029f76a0eff679edf1bfc684
+bd76-05-03-creatures-void-of-form-d1t02.flac:be143771be0cd32bc859faf7218e163c
+bd76-05-03-creatures-void-of-form-d1t03.flac:708233eb5df0f58aa29717d31df9d345
+bd76-05-03-creatures-void-of-form-d1t04.flac:8fd5a8140c63efb31a072ec6cae970c9
+bd76-05-03-creatures-void-of-form-d1t05.flac:b81f25a9d4338fdb775f6058d4cb4bdd
+bd76-05-03-creatures-void-of-form-d1t06.flac:fe1aa5ee3d8235a86705ee2afc84e333
+bd76-05-03-creatures-void-of-form-d1t07.flac:2481aec3d37a1e3d9f83068e10e3ca32
+bd76-05-03-creatures-void-of-form-d1t08.flac:9fa40e3775696b0e0d97dd8b940b3ae3
+bd76-05-03-creatures-void-of-form-d1t09.flac:4ea94915bba23bc6552dacd11fee9a71
+bd76-05-03-creatures-void-of-form-d1t10.flac:4d59efe307e394a9f1c4494301f56aef
+bd76-05-03-creatures-void-of-form-d1t11.flac:000c1530b4b11b282cb54c8d255f4d49
+bd76-05-03-creatures-void-of-form-d1t12.flac:df6ec3f6949c88f78e7187327f27be5b
+bd76-05-03-creatures-void-of-form-d1t13.flac:d3b3bcc2ecfa0844313ec0b354059fa7
+bd76-05-03-creatures-void-of-form-d1t14.flac:a264363e7b9e333d1847cdb53f83131b
+bd76-05-03-creatures-void-of-form-d1t15.flac:b2a6fd0efa59fd79eeafb6ba7ef64560
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-03-creatures-void-of-form.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:40.60       60117164 B   ---   --   ---xx   flac  0.6357  bd76-05-03-creatures-void-of-form-d1t01.flac
+     3:44.40       39607724 B   ---   --   ---xx   flac  0.6238  bd76-05-03-creatures-void-of-form-d1t02.flac
+     3:16.30       34645004 B   ---   --   ---xx   flac  0.6131  bd76-05-03-creatures-void-of-form-d1t03.flac
+     5:40.70       60140684 B   ---   --   ---xx   flac  0.6322  bd76-05-03-creatures-void-of-form-d1t04.flac
+     6:25.10       67937564 B   ---   --   ---xx   flac  0.6024  bd76-05-03-creatures-void-of-form-d1t05.flac
+     2:46.42       29381228 B   ---   --   ---xx   flac  0.6113  bd76-05-03-creatures-void-of-form-d1t06.flac
+     4:44.13       50128220 B   ---   --   ---xx   flac  0.6353  bd76-05-03-creatures-void-of-form-d1t07.flac
+     6:00.27       63567548 B   ---   --   ---xx   flac  0.6020  bd76-05-03-creatures-void-of-form-d1t08.flac
+     5:05.63       53950220 B   ---   --   ---xx   flac  0.6038  bd76-05-03-creatures-void-of-form-d1t09.flac
+     3:27.70       36679484 B   ---   --   ---xx   flac  0.6130  bd76-05-03-creatures-void-of-form-d1t10.flac
+     3:55.02       41458748 B   ---   --   ---xx   flac  0.6478  bd76-05-03-creatures-void-of-form-d1t11.flac
+     4:15.73       45153740 B   ---   --   ---xx   flac  0.6202  bd76-05-03-creatures-void-of-form-d1t12.flac
+     4:59.00       52743644 B   ---   --   ---xx   flac  0.6109  bd76-05-03-creatures-void-of-form-d1t13.flac
+     4:58.57       52701308 B   ---   --   ---xx   flac  0.6394  bd76-05-03-creatures-void-of-form-d1t14.flac
+     8:10.08       86454860 B   ---   --   ---xx   flac  0.6704  bd76-05-03-creatures-void-of-form-d1t15.flac
+    73:11.40      774667140 B                            0.6260  (15 files)
+=================== 
+=================== 
+=================== 

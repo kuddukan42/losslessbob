@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-21-bach.flacf 
+=================== 
+=================== 
+=================== 
+83c32d2009c94b563968f2e50b25d689  2007-04-21-Frankfurt.md5
+79efb62f15b2b18d50b9ff41b74defd0  2007-04-21-Frankfurt.txt
+19675eb9f23a318a03c21a69f047b23b  bd07-04-21-bach-LB-4762.txt
+6f72e7f158fc58cf6c0005d24df9924a  lbdir-bd07-04-21-bach.flacf.md5
+e792e64d4765a5a125ea3eecef398609  Track101Introduction.flac
+f2737902a34e854bcd7c5fb99c5c97a3  Track102Cat's In The Well.flac
+4557991f21d6d1f09941355dd847e5d5  Track103Don't Think Twice, It's All Right.flac
+fef2a2e428f97afb1e2e15428c3e1923  Track104Watching The River Flow.flac
+4fbf4909a705967414e879c7733cbead  Track105It's Alright, Ma (I'm Only Bleeding).flac
+02c228b71ebad408cd82216b152fe0b5  Track106To Ramona.flac
+9706eb3f1cf39e8cf2f5296ccdaa0283  Track107The  Levee's Gonna Break.flac
+b8f038fbd74c5000a3da7d46fd53b048  Track108A Hard Rain's A-Gonna Fall.flac
+6e5d17b6f62d956d33e658c0bd493960  Track109Rollin' And Tumblin'.flac
+58fe3cb3d9d29e418b3fdbc6b6963754  Track110When The Deal Goes Down.flac
+1e21d79696b47ec43aa854cbe71adca0  Track111Things Have Changed.flac
+47b9e755ff00186d191aaee3dc8ccca9  Track112Spirit On The Water.flac
+9bb09da9f2d1f6d5e67a61aafe80bb9e  Track113Highway 61 Revisited.flac
+adf38a321a23855b05e0f891623619f3  Track201Nettie Moore.flac
+f4002f21595e6fed637d8fbaac46c183  Track202Summer Days.flac
+3d524ed91c2ee677e39c32436fe6e1f3  Track203Like A Rolling Stones.flac
+7da7f534659b99161fa94a1080ab7840  Track204Thunder On The Mountain.flac
+20be7b263f323aec14c64ac72a94d7d7  Track205All Along The Watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-21-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101Introduction.flac:73a7cd18f467bd7fcf4653b744fdcd1f
+Track102Cat's In The Well.flac:bacfd244562804d395557e31fe117342
+Track103Don't Think Twice, It's All Right.flac:37d16409a95b2163b719fee013dd3f8c
+Track104Watching The River Flow.flac:7c50e145443a26eac7ab08895a0b344b
+Track105It's Alright, Ma (I'm Only Bleeding).flac:e69685dfe9b5c03126d52cb597a62b31
+Track106To Ramona.flac:90f743499b7ce936adecdd9b0ac23bb6
+Track107The  Levee's Gonna Break.flac:0a2d36407f8823f8d8d24fff7ebd3d9b
+Track108A Hard Rain's A-Gonna Fall.flac:3649d068ea943564a5f92f0e4fd7aaed
+Track109Rollin' And Tumblin'.flac:9e83c607eedfe74441dd1c3c9f96ced0
+Track110When The Deal Goes Down.flac:a338861811ee39a464367b65a2a4b704
+Track111Things Have Changed.flac:ae2a4ce7c36e24adc845445d7a922c3d
+Track112Spirit On The Water.flac:11e4b19ae62fca8dd70c0163d5c831a2
+Track113Highway 61 Revisited.flac:01ff93ce11f72024cf492f1a3b5475a2
+Track201Nettie Moore.flac:3be4a4d34b1b5c5494734f7082707672
+Track202Summer Days.flac:4c728dd96b69447a3239942359e0400d
+Track203Like A Rolling Stones.flac:ba76424b51ff95b6f270a9733fa19700
+Track204Thunder On The Mountain.flac:d671c67d5c52bfe10410c858ff115ce4
+Track205All Along The Watchtower.flac:5429519de11da6e10c6e2d38f7c487c0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-21-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:50.68        8979980 B   ---   --   ---xx   flac  0.4141  Track101Introduction.flac
+     4:11.12       44304668 B   ---   --   ---xx   flac  0.5070  Track102Cat's In The Well.flac
+     6:09.65       65244524 B   ---   --   ---xx   flac  0.4217  Track103Don't Think Twice, It's All Right.flac
+     5:30.60       58353164 B   ---   --   ---xx   flac  0.4692  Track104Watching The River Flow.flac
+     7:14.44       76661132 B   ---   --   ---xx   flac  0.4991  Track105It's Alright, Ma (I'm Only Bleeding).flac
+     6:06.37       64649468 B   ---   --   ---xx   flac  0.4024  Track106To Ramona.flac
+     6:45.28       71507900 B   ---   --   ---xx   flac  0.4524  Track107The  Levee's Gonna Break.flac
+     6:49.28       72213500 B   ---   --   ---xx   flac  0.4132  Track108A Hard Rain's A-Gonna Fall.flac
+     7:06.24       75202892 B   ---   --   ---xx   flac  0.4891  Track109Rollin' And Tumblin'.flac
+     6:37.04       70040252 B   ---   --   ---xx   flac  0.3264  Track110When The Deal Goes Down.flac
+     6:47.63       71943020 B   ---   --   ---xx   flac  0.4525  Track111Things Have Changed.flac
+     7:02.42       74539628 B   ---   --   ---xx   flac  0.3700  Track112Spirit On The Water.flac
+     5:39.39       59891372 B   ---   --   ---xx   flac  0.5161  Track113Highway 61 Revisited.flac
+     7:40.24       81200492 B   ---   --   ---xx   flac  0.3445  Track201Nettie Moore.flac
+     5:52.42       62191628 B   ---   --   ---xx   flac  0.4675  Track202Summer Days.flac
+     9:48.68      103883180 B   ---   --   ---xx   flac  0.4502  Track203Like A Rolling Stones.flac
+     7:14.70       76722284 B   ---   --   ---xx   flac  0.4694  Track204Thunder On The Mountain.flac
+     5:10.35       54766364 B   ---   --   ---xx   flac  0.4763  Track205All Along The Watchtower.flac
+   112:39.03     1192295448 B                            0.4396  (18 files)
+=================== 
+=================== 
+=================== 

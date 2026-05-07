@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== md5 for: bd03-02-11-c.flacf
+===================
+===================
+===================
+4f3ef989e0b113441aeacc21a7aa329c *101 (Bob Dylan) - Maggie's Farm.flac
+09d2c4bdfe4dd37e38967668b66cfe8c *102 (Bob Dylan) - I'll Be Your Baby Tonight.flac
+54864c55502dc25077ccd66eb721e22e *103 (Bob Dylan) - Highway 61 Revisited.flac
+c297c631d915bea80ef7b8329f5a4ce3 *104 (Bob Dylan) - You Ain't Goin' Nowhere.flac
+5bbad988bd61a07a7aed5c506beea805 *105 (Bob Dylan) - Things Have Changed.flac
+7c76351296c173bf2754ba0628981602 *106 (Bob Dylan) - The Wicked Messenger.flac
+b715be7bd879033fcf96cc44f4d0d653 *107 (Bob Dylan) - It's All Over Now, Baby Blue.flac
+b95038c2776795a1786803d17cff6ef6 *108 (Bob Dylan) - Masters Of War.flac
+d5f9d7b3a30470efcf50cc3f629223ed *109 (Bob Dylan) - Forever Young.flac
+6007e79c1a16f9c2e36bf980af6f1eff *110 (Bob Dylan) - Don't Think Twice, It's All Right.flac
+f2222fe3ab7e1cb091cffce88f9e8550 *2003-02-11 Brisbane (1) Bris. Entertainment Centre.log
+43fbb60df572e058193bd5a75c2d0907 *2003-02-11 Brisbane Entertainment Centre.ffp
+70f2c4eb6397ab8901897a4160f32070 *2003-02-11 Brisbane Entertainment Centre.md5
+535a369580cf4e4b7a4f1d189e6b4f95 *2003-02-11 Brisbane, Bris. Entertainment Centre.txt
+e09d2c1cc2a3a72fdf71e347c5fac1e9 *201 (Bob Dylan) - Watching The River Flow.flac
+3566729b0ac7141d7a4f26d0e381bdb2 *202 (Bob Dylan) - Honest With Me.flac
+5b8fd69d7b4a61a160564208d8cea648 *203 (Bob Dylan) - Saving Grace.flac
+b758aa12f336e027bc285bcc9a488191 *204 (Bob Dylan) - High Water (for Charley Patton).flac
+5d5ff752f93b522e756169b33b740694 *205 (Bob Dylan) - Moonlight.flac
+8ef062b3b297f0b2bd6577903b8a39e9 *206 (Bob Dylan) - Summer Days.flac
+9640f88286c671e0d9691659c9a99fdf *207 (Bob Dylan) - Encore.flac
+c1582254bc094e96212dd8a022724083 *208 (Bob Dylan) - It Ain't Me, Babe.flac
+85defedbf07044f2afe6cc090642848f *209 (Bob Dylan) - All Along The Watchtower.flac
+===================
+===================
+===================
+=== ffp for: bd03-02-11-c.flacf
+===================
+===================
+===================
+101 (Bob Dylan) - Maggie's Farm.flac:9b58d1ca7aeb4c168cbfa5f6378cbbfb
+102 (Bob Dylan) - I'll Be Your Baby Tonight.flac:efa082e831b9d2de98591d580271b978
+103 (Bob Dylan) - Highway 61 Revisited.flac:81edd1c45b91739a21a8e5327d288f14
+104 (Bob Dylan) - You Ain't Goin' Nowhere.flac:72fdebdfac9bde744ea18c394cf733bf
+105 (Bob Dylan) - Things Have Changed.flac:20eded402a9749001d8abcb508576cbf
+106 (Bob Dylan) - The Wicked Messenger.flac:3c3242023463e344c6591de6bc42e2df
+107 (Bob Dylan) - It's All Over Now, Baby Blue.flac:386e9f6f862c1e13acd713da14be8e8e
+108 (Bob Dylan) - Masters Of War.flac:ecc4b030ec603e3e7bc68b18a043626f
+109 (Bob Dylan) - Forever Young.flac:5036f0129c0b5935340d4e5bac6a14c0
+110 (Bob Dylan) - Don't Think Twice, It's All Right.flac:9da8b50c46a1689025aa4309b7253d4e
+201 (Bob Dylan) - Watching The River Flow.flac:0c059dece50a4d613ccf74df1196a776
+202 (Bob Dylan) - Honest With Me.flac:12bddecccddad79e5fe39ee62c50d424
+203 (Bob Dylan) - Saving Grace.flac:1b54fadc99b9fb13ad4708f881a6601d
+204 (Bob Dylan) - High Water (for Charley Patton).flac:86adcd2f7f7f2d2b3c45d35c7a4d6856
+205 (Bob Dylan) - Moonlight.flac:c70abd97a328414a00bf95117d41174a
+206 (Bob Dylan) - Summer Days.flac:e3996ed116f998130ccada8328c2baf0
+207 (Bob Dylan) - Encore.flac:67b49a1f6d6f25ac26545cd004b0fe35
+208 (Bob Dylan) - It Ain't Me, Babe.flac:e544899f62dc58c96e9022dcf1fc5d6e
+209 (Bob Dylan) - All Along The Watchtower.flac:30dde2db409ed6f4a8c35d616997a32d
+===================
+===================
+===================
+=== shntool len for: bd03-02-11-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:27.00       68266844 B   ---   --   ---xx   flac  0.4291  101 (Bob Dylan) - Maggie's Farm.flac
+     7:07.00       75322844 B   ---   --   ---xx   flac  0.4320  102 (Bob Dylan) - I'll Be Your Baby Tonight.flac
+     6:31.00       68972444 B   ---   --   ---xx   flac  0.4269  103 (Bob Dylan) - Highway 61 Revisited.flac
+     5:25.00       57330044 B   ---   --   ---xx   flac  0.4261  104 (Bob Dylan) - You Ain't Goin' Nowhere.flac
+     7:03.00       74617244 B   ---   --   ---xx   flac  0.4290  105 (Bob Dylan) - Things Have Changed.flac
+     6:05.00       64386044 B   ---   --   ---xx   flac  0.4419  106 (Bob Dylan) - The Wicked Messenger.flac
+     9:37.00      101782844 B   ---   --   ---xx   flac  0.4147  107 (Bob Dylan) - It's All Over Now, Baby Blue.flac
+     5:09.00       54507644 B   ---   --   ---xx   flac  0.4285  108 (Bob Dylan) - Masters Of War.flac
+     8:20.00       88200044 B   ---   --   ---xx   flac  0.4299  109 (Bob Dylan) - Forever Young.flac
+     6:54.43       73130780 B   ---   --   ---xx   flac  0.4131  110 (Bob Dylan) - Don't Think Twice, It's All Right.flac
+     7:14.00       76557644 B   ---   --   ---xx   flac  0.4245  201 (Bob Dylan) - Watching The River Flow.flac
+     8:56.00       94550444 B   ---   --   ---xx   flac  0.4189  202 (Bob Dylan) - Honest With Me.flac
+     5:38.00       59623244 B   ---   --   ---xx   flac  0.3984  203 (Bob Dylan) - Saving Grace.flac
+     7:35.00       80262044 B   ---   --   ---xx   flac  0.4128  204 (Bob Dylan) - High Water (for Charley Patton).flac
+     5:04.00       53625644 B   ---   --   ---xx   flac  0.3795  205 (Bob Dylan) - Moonlight.flac
+     8:33.00       90493244 B   ---   --   ---xx   flac  0.4160  206 (Bob Dylan) - Summer Days.flac
+     2:05.00       22050044 B   ---   --   ---xx   flac  0.4030  207 (Bob Dylan) - Encore.flac
+     9:26.00       99842444 B   ---   --   ---xx   flac  0.3824  208 (Bob Dylan) - It Ain't Me, Babe.flac
+     8:29.00       89787644 B   ---   --   ---xx   flac  0.4035  209 (Bob Dylan) - All Along The Watchtower.flac
+   131:38.43     1393309172 B                            0.4164  (19 files)
+===================
+===================
+===================

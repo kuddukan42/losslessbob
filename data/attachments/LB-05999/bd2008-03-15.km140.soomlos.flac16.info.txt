@@ -1,0 +1,43 @@
+Bob Dylan
+Estadio Velez Sarsfield
+Buenos Aires, Argentina
+March 15, 2008
+
+Disc 1:
+01. introduction [01:24]
+02. Rainy Day Women #12 & 35 [04:08]
+03. Lay, Lady, Lay [04:38]
+04. Watching The River Flow [04:41]
+05. Masters Of War [05:41]
+06. The Levee's Gonna Break [06:46]
+07. Spirit On The Water [07:11]
+08. Things Have Changed [06:32]
+09. Workingman's Blues #2 [07:04]
+10. Just Like A Woman [07:35] 
+11. Honest With Me [06:37]
+12. When The Deal Goes Down [06:27]
+Total time: [68:52]
+
+Disc 2:
+01. Highway 61 Revisited [06:12]
+02. Nettie Moore [07:37]
+03. Summer Days [05:49]
+04. Like A Rolling Stone [10:50] 
+(encore)
+05. Stuck Inside Of Mobile With The Memphis Blues Again [06:43]
+06. band introduction [00:34]
+07. All Along The Watchtower [05:36]
+08. Blowin' In The Wind [07:38]
+Total time: [51:04]
+
+Band Members
+Bob Dylan - vocals, electric guitar, keyboard, harp
+Denny Freeman - lead guitar
+Donnie Herron - violin, viola, electric mandolin, pedal steel, lap steel
+Stu Kimball - rhythm guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann km140's > denecke ps2/ad20 > m-audio mt1 (16/44.1)
+m-audio mt1 > usb > hd > audacity > cd wave > flac

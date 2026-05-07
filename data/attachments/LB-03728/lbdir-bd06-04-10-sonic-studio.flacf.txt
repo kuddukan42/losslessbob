@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-10-sonic-studio.flacf 
+=================== 
+=================== 
+=================== 
+cef2091daae4dbe8a035c1834c661d93  bd06-04-10-sonic-studio-LB-3728.txt
+0cfbc8a9c4ec0dde4f946e8fcf8a0af4  bd4-10-06chsum
+7045ee7660d0706924574a48f9219f7a  bd4-10-06d1tr1.flac
+5f0099e3a7d0dc920e4cfd12a34d4af5  bd4-10-06d1tr2.flac
+f9c5241c9df9f8ec448c76f7bde34b25  bd4-10-06d1tr3.flac
+717095afd834cf9c1f4164d3b4ca231f  bd4-10-06d1tr4.flac
+d9fde73d0bee7832aeb7e41f0d151216  bd4-10-06d1tr5.flac
+509091d6f7efcc26993c4581523344dc  bd4-10-06d1tr6.flac
+ae7109fd33ac8bd3e9ad3afa13d42a39  bd4-10-06d1tr7.flac
+778a636f7f229160ad83cd400af53bb7  bd4-10-06d1tr8.flac
+3b1644e56815703fb0edb614d24eb9bc  bd4-10-06d2tr1.flac
+83e3745e901d58bbbe88ab660947b228  bd4-10-06d2tr2.flac
+91a167e2dedf302874eb6e39e435c206  bd4-10-06d2tr3.flac
+0857fdf3208feec134601043248ef95f  bd4-10-06d2tr4.flac
+eb87455691002321c78aea4e87b08371  bd4-10-06d2tr5.flac
+b2087dd22257a9895776b71e817195aa  bd4-10-06d2tr6.flac
+bf0dbd219ddd5768613dcdc1f7b28e99  bddisc1
+281fbe1f156a223b2c3383612a2c5716  Dylan4-10-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-10-sonic-studio.flacf 
+=================== 
+=================== 
+=================== 
+bd4-10-06d1tr1.flac:bddf38a3d2c4ff346449ce27ec5c4ab0
+bd4-10-06d1tr2.flac:952d3466165d82439948bf9553db1ac9
+bd4-10-06d1tr3.flac:ff7d93251c2fc3293da88e253480c4eb
+bd4-10-06d1tr4.flac:dec8654bf9c42ac9f068872bb487fff8
+bd4-10-06d1tr5.flac:472c2204c2222d6ef265fced0b1e4c28
+bd4-10-06d1tr6.flac:2acf3aca82b762c9339ca75395af8d1c
+bd4-10-06d1tr7.flac:3d9072e90d9d686698fbd184842023f5
+bd4-10-06d1tr8.flac:8be1845aa44341f3af3067de35e0a50f
+bd4-10-06d2tr1.flac:978f10afdd1719ff235a2cafed54797f
+bd4-10-06d2tr2.flac:1ffd9adce5fd4ae9512edadc5411790d
+bd4-10-06d2tr3.flac:098474208f1eff5e45bbff257673e3d3
+bd4-10-06d2tr4.flac:c16bb7f304563399297faa36587c34db
+bd4-10-06d2tr5.flac:15fd8f8711b24f12d43c6b62040f0af5
+bd4-10-06d2tr6.flac:60a80ed63827afa7a60dfc2e8fa03930
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-10-sonic-studio.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:17.62       56064668 B   ---   --   ---xx   flac  0.5336  bd4-10-06d1tr1.flac
+     5:46.23       61088540 B   ---   --   ---xx   flac  0.5004  bd4-10-06d1tr2.flac
+     7:23.70       78309884 B   ---   --   ---xx   flac  0.5415  bd4-10-06d1tr3.flac
+     8:04.26       85438796 B   ---   --   ---xx   flac  0.5039  bd4-10-06d1tr4.flac
+     7:01.58       74400860 B   ---   --   ---xx   flac  0.5312  bd4-10-06d1tr5.flac
+     7:25.71       78665036 B   ---   --   ---xx   flac  0.5198  bd4-10-06d1tr6.flac
+     5:46.02       61039148 B   ---   --   ---xx   flac  0.4782  bd4-10-06d1tr7.flac
+     6:27.59       68405612 B   ---   --   ---xx   flac  0.5162  bd4-10-06d1tr8.flac
+     8:08.30       86153804 B   ---   --   ---xx   flac  0.4789  bd4-10-06d2tr1.flac
+     6:56.20       73429484 B   ---   --   ---xx   flac  0.5049  bd4-10-06d2tr2.flac
+     5:50.26       61801196 B   ---   --   ---xx   flac  0.4702  bd4-10-06d2tr3.flac
+     7:28.42       79126028 B   ---   --   ---xx   flac  0.5144  bd4-10-06d2tr4.flac
+     7:16.34       76990412 B   ---   --   ---xx   flac  0.5144  bd4-10-06d2tr5.flac
+     5:53.19       62313932 B   ---   --   ---xx   flac  0.5176  bd4-10-06d2tr6.flac
+    94:47.17     1003227400 B                            0.5092  (14 files)
+=================== 
+=================== 
+=================== 

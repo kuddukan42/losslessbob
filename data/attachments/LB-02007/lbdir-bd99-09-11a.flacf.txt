@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-09-11a.flacf 
+=================== 
+=================== 
+=================== 
+97baa5a93ab986840ef274fdb5a2ffdd  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track01.flac
+61a7a042ce0afda8e5a15100832dd60c  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track02.flac
+af73de62b72f8a0a9eeb9fd06767b876  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track03.flac
+b3ea26c78a234c193f3a6bafac8e97cf  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track04.flac
+2f67f18a90249fd48e2943553ad97188  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track05.flac
+cf0174dec76719efa12fceb5714d4a25  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track06.flac
+6d44f29c474fee8567f656bdebf7488f  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track07.flac
+62f190800ccaee600de8c88983acd56c  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track08.flac
+6fc62d9c14ebc6a620eee4a5b73eacbc  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track09.flac
+a378a1a9a9059e72dc43a87d4a8bdb57  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track10.flac
+3c24613d1e10f23c8c6a9a405fd528e2  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track11.flac
+1807c1ba1d435f58883fdc73e3fba19e  1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC\Track12.flac
+e462e736db9b334f82af9d6d4dddc331  1999-09-11 - Memphis, TN - off DAT master - Disc 2 - FLAC\Track01.flac
+a49042fc1c35765113747d62ef2def3f  1999-09-11 - Memphis, TN - off DAT master - Disc 2 - FLAC\Track02.flac
+ac4ce088e97e3722597187a502f5987a  1999-09-11 - Memphis, TN - off DAT master - Disc 2 - FLAC\Track03.flac
+dccb6f77fe1e6cd732676d2849bbf8ab  1999-09-11 - Memphis, TN - off DAT master - Disc 2 - FLAC\Track04.flac
+39f419d67d615931905c17372c93a3ef  1999-09-11 - Memphis, TN - off DAT master - Disc 2 - FLAC\Track05.flac
+afb6bc339043fb7c4fa0121f744c8ff3  bd99-09-11a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-09-11a.flacf\1999-09-11 - Memphis, TN - off DAT master - Disc 2 - FLAC 
+=================== 
+=================== 
+=================== 
+Track01.flac:9e4b42ac6fa2daf3fe0c13b358ca5969
+Track02.flac:29e415d46fbd22db7b3638729286bd68
+Track03.flac:cf60b6fffdbdc12d632434998b59e4a0
+Track04.flac:27bb8ef04cc5fb35cf27683fc9f9f6e9
+Track05.flac:2f808db3e3e4f55ed890acb05299901f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-09-11a.flacf\1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC 
+=================== 
+=================== 
+=================== 
+Track01.flac:7664d9782d7b15f6a0a6d3e7a4ac28e4
+Track02.flac:917cc0454d9bb0c38a72529c6392bc2b
+Track03.flac:976403dec18ab4b4e2e74fc67bd22802
+Track04.flac:3f8c3b28149723e77946b5e3d4f905fe
+Track05.flac:d610f8ebdb32d3b3a5fa2ee344f1315e
+Track06.flac:085dbd21a1afdb2775a500cfe4898b34
+Track07.flac:bcc19c3d4dfab18af25281fd27cff268
+Track08.flac:f3608dd018530ffa00e3440a06de9b52
+Track09.flac:f7a4704f5e0c1f5830dc5118c54014f4
+Track10.flac:fecc2e99d55cd74816bcd23b45f6cd4b
+Track11.flac:d6c1f9a8dba307d7decb6f824933f3e2
+Track12.flac:8ca114012ee569d439afe6cfe4245a4a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-11a.flacf\1999-09-11 - Memphis, TN - off DAT master - Disc 2 - FLAC 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:27.18        4805180 B   ---   --   ---xx   flac  0.4979  Track01.flac
+     7:59.32       84570908 B   ---   --   ---xx   flac  0.5915  Track02.flac
+     5:02.44       53376332 B   ---   --   ---xx   flac  0.4946  Track03.flac
+     0:28.30        5009804 B   ---   --   ---xx   flac  0.4976  Track04.flac
+     4:05.26       43279196 B   ---   --   ---xx   flac  0.6087  Track05.flac
+    18:03.00      191041420 B                            0.5635  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-11a.flacf\1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.52        8413148 B   ---   --   ---xx   flac  0.4592  Track01.flac
+     2:13.72       23630588 B   ---   --   ---xx   flac  0.6096  Track02.flac
+     6:13.55       65926604 B   ---   --   ---xx   flac  0.5726  Track03.flac
+     7:09.72       75844988 B   ---   --   ---xx   flac  0.5640  Track04.flac
+     6:59.33       73989260 B   ---   --   ---xx   flac  0.5275  Track05.flac
+     8:07.22       85958588 B   ---   --   ---xx   flac  0.6112  Track06.flac
+     4:20.36       45948716 B   ---   --   ---xx   flac  0.5984  Track07.flac
+     6:28.37       68530268 B   ---   --   ---xx   flac  0.5549  Track08.flac
+     8:40.51       91847996 B   ---   --   ---xx   flac  0.6035  Track09.flac
+     6:36.05       69866204 B   ---   --   ---xx   flac  0.4661  Track10.flac
+     0:31.01        5470796 B   ---   --   ---xx   flac  0.5612  Track11.flac
+     5:55.66       62777276 B   ---   --   ---xx   flac  0.6355  Track12.flac
+    64:04.52      678204432 B                            0.5704  (12 files)
+=================== 
+=================== 
+=================== 

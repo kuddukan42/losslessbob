@@ -1,0 +1,109 @@
+===================
+===================
+===================
+=== md5 for: bd67-Basement-tapes-Safety-Tape-reconstructed-jtt-a.flacf
+===================
+===================
+===================
+aa29e6cedf0e55b5d099f87aa9d0981c *01 MILLION DOLLAR BASH  # 2 HR (hear player).flac
+b21c3bf26d9f583124bbe1b4230bd721 *02. YEAH! HEAVY AND A BOTTLE OF BREAD #2 HR.flac
+a103ab9262bc3ed95b74194b34b2dac7 *03. I'M NOT THERE  HR.flac
+0dd663f7fbfca37a67fc56af49cf9307 *04. PLEASE MRS. HENRY HR.flac
+f373b61a43185bbc8b45ea82314a049f *05. CRASH ON THE LEVEE #2 HR.flac
+ec9f7f47f1d4f3f7904da1c232e01e0e *06. LO AND BEHOLD #2 HR.flac
+147a879796bc9af972bb8417cc7cc2a9 *06. mono LO AND BEHOLD #2 HR.flac
+0cc1862e150a5eed124d7a53ed7f9fb2 *07. THIS WHEEL'S ON FIRE  HR.flac
+1d13bfa946567133e0ae9703759433b1 *08. YOU AIN'T GOIN' NOWHERE #2  HR.flac
+3482e13a717c9dda5b9f68fb31decb89 *09. I SHALL BE RELEASED HR.flac
+dc4a8e13b2b59c55c391982782f7b9f7 *10. TOO MUCH OF NOTHING #2 HR.flac
+951b95abb35d3a7eb3c3d2cec083642d *11. NOTHING WAS DELIVERED (Short Version) #3  HR.flac
+6497544855e5560e21f5fd6b47c4ed6f *12. ODDS AND ENDS #2.flac
+30324ce16df4d6578a29724f2d6a5dd8 *13. GET YOR ROCKS OFF HR.flac
+6f1c592f52602de3c7cdbb0c1d8faba6 *14. CLOTHES LINE SAGA HR.flac
+01786c2b3eac62b6a7f332b75f04ee91 *15. APPLE SUCKLING TREE #1 HR.flac
+539444fd237cd8225429889f6598dca2 *16. APPLE SUCKLING TREE #2.flac
+448a933e20fb41772f4ea645df7060fb *17. OPEN THE DOOR HOMER #1 HR.flac
+52f912478ec7a977e23f6bbfe3121e6a *18. OPEN THE DOOR HOMER #2.flac
+921dc219ffa2f0850930f66ddb1ae895 *19. OPEN THE DOOR HOMER #3.flac
+facbf3a61cb0b33a6b4327305df701d2 *20. NOTHING WAS DELIVERED #1 HR.flac
+a49586779b9e4a8425cb91840dc4b785 *21. NOTHING WAS DELIVERED #2.flac
+b3ff13cafbad14fc08952d4d1f3806eb *22. TEARS OF RAGE #1.flac
+a3a3134c827f8008f779f2bfb2ee9d38 *23. TEARS OF RAGE #2.flac
+c2d142738d826dc85126d2788936e3dd *24. QUINN THE ESKIMO #1.flac
+4148e4dd722faa6f542d8158d8295003 *25. QUINN THE ESKIMO #2  HR.flac
+f36a5c8322b8a62c81eb52c77a22e1f6 *Basement Safety Tape Box.jpg
+ca4a16d1123ea989201502e21c7c37c5 *Complete Basement Safety Tape - F.jpg
+44e7f91c322f66b5c254c717c8824b5e *Complete Basement Safety Tape - R.jpg
+881d05c04f30cbc0aff65a1b76635ee9 *Dylan & Band - Complete Basement Safety Tape_Info.txt
+7bf73368baf381f17d2aa07f11c4a44f *Horn 2 reconstructed.md5
+===================
+===================
+===================
+=== ffp for: bd67-Basement-tapes-Safety-Tape-reconstructed-jtt-a.flacf
+===================
+===================
+===================
+01 MILLION DOLLAR BASH  # 2 HR (hear player).flac:b86d05a6300834cb751848a361e53c3a
+02. YEAH! HEAVY AND A BOTTLE OF BREAD #2 HR.flac:fa9777c3fb2399fca32a4635712b6ff5
+03. I'M NOT THERE  HR.flac:b7334ad1c78a04f60a6bdf907b9cd8df
+04. PLEASE MRS. HENRY HR.flac:59d4182b55ccfb43c681a0ecf0e9d9e0
+05. CRASH ON THE LEVEE #2 HR.flac:d2061880c68ba0cbbfd55456d86e5a7c
+06. LO AND BEHOLD #2 HR.flac:fcc8b436b631d575251d780d538bfe62
+06. mono LO AND BEHOLD #2 HR.flac:f3ba626c9b6490963e28b54ae3280d7d
+07. THIS WHEEL'S ON FIRE  HR.flac:77883eb7080c584d861b01cbbb444db6
+08. YOU AIN'T GOIN' NOWHERE #2  HR.flac:4a13f7c1cf813bdd7b24e25f805fa780
+09. I SHALL BE RELEASED HR.flac:8ce52f60186ee38dc7ab675d2aab12d6
+10. TOO MUCH OF NOTHING #2 HR.flac:2a383437f878b5a100602a4105a5df87
+11. NOTHING WAS DELIVERED (Short Version) #3  HR.flac:406fa5b3deffcc75c1221f149553b82b
+12. ODDS AND ENDS #2.flac:2179bd64051000a18bbaece78f6e5cab
+13. GET YOR ROCKS OFF HR.flac:6f24d769c1f875b728131027422f8122
+14. CLOTHES LINE SAGA HR.flac:be1a3a19a77b1e8cc04cf4417c0c34f7
+15. APPLE SUCKLING TREE #1 HR.flac:e2e17aeb562a9fc652b17555896e93af
+16. APPLE SUCKLING TREE #2.flac:2d29274eccaa7da496d7a9bc3d61bf2e
+17. OPEN THE DOOR HOMER #1 HR.flac:0773c4faa2def02ab2be044c65116314
+18. OPEN THE DOOR HOMER #2.flac:77e77fdcb9293ca05ea7479cc5b0c73c
+19. OPEN THE DOOR HOMER #3.flac:1aa539374c229d2632d86397305c7ca0
+20. NOTHING WAS DELIVERED #1 HR.flac:3f516a31ed8d3a1ba84f7b1690f6f49f
+21. NOTHING WAS DELIVERED #2.flac:c0814a9db770cc8fe4436cc38ceb7398
+22. TEARS OF RAGE #1.flac:06efe2976ddbc993d5abea5120fad09c
+23. TEARS OF RAGE #2.flac:74c76f02e0887701c6d990efd3bdb690
+24. QUINN THE ESKIMO #1.flac:b0209dfe0e887e8b44acaf501380126b
+25. QUINN THE ESKIMO #2  HR.flac:2f3ed2981bc9ef006f1698bf06e72170
+===================
+===================
+===================
+=== shntool len for: bd67-Basement-tapes-Safety-Tape-reconstructed-jtt-a.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:30.29       26528252 B   ---   --   ---xx   flac  0.4915  01 MILLION DOLLAR BASH  # 2 HR (hear player).flac
+     2:10.32       23007308 B   ---   --   ---xx   flac  0.5029  02. YEAH! HEAVY AND A BOTTLE OF BREAD #2 HR.flac
+     5:06.00       53978444 B   ---   --   ---xx   flac  0.4846  03. I'M NOT THERE  HR.flac
+     2:30.56       26591756 B   ---   --   ---xx   flac  0.4795  04. PLEASE MRS. HENRY HR.flac
+     2:02.60       21661964 B   ---   --   ---xx   flac  0.4879  05. CRASH ON THE LEVEE #2 HR.flac
+     2:45.68       29265980 B   ---   --   ---xx   flac  0.4843  06. LO AND BEHOLD #2 HR.flac
+     2:48.02       29639948 B   ---   --   ---xx   flac  0.5125  06. mono LO AND BEHOLD #2 HR.flac
+     3:51.55       40877804 B   ---   --   ---xx   flac  0.5355  07. THIS WHEEL'S ON FIRE  HR.flac
+     2:41.69       28562732 B   ---   --   ---xx   flac  0.5152  08. YOU AIN'T GOIN' NOWHERE #2  HR.flac
+     3:52.62       41070668 B   ---   --   ---xx   flac  0.4808  09. I SHALL BE RELEASED HR.flac
+     2:50.41       30084476 B   ---   --   ---xx   flac  0.4800  10. TOO MUCH OF NOTHING #2 HR.flac
+     0:31.60        5609564 B   ---   --   ---xx   flac  0.4754  11. NOTHING WAS DELIVERED (Short Version) #3  HR.flac
+     1:47.20       18921884 B   ---   --   ---xx   flac  0.5255  12. ODDS AND ENDS #2.flac
+     3:43.60       39478364 B   ---   --   ---xx   flac  0.4629  13. GET YOR ROCKS OFF HR.flac
+     3:18.52       35049548 B   ---   --   ---xx   flac  0.4703  14. CLOTHES LINE SAGA HR.flac
+     2:39.03       28054700 B   ---   --   ---xx   flac  0.5562  15. APPLE SUCKLING TREE #1 HR.flac
+     2:46.39       29374172 B   ---   --   ---xx   flac  0.6416  16. APPLE SUCKLING TREE #2.flac
+     2:43.74       28927292 B   ---   --   ---xx   flac  0.5325  17. OPEN THE DOOR HOMER #1 HR.flac
+     0:57.42       10153628 B   ---   --   ---xx   flac  0.5753  18. OPEN THE DOOR HOMER #2.flac
+     3:13.50       34162844 B   ---   --   ---xx   flac  0.6125  19. OPEN THE DOOR HOMER #3.flac
+     4:11.67       44434028 B   ---   --   ---xx   flac  0.5538  20. NOTHING WAS DELIVERED #1 HR.flac
+     3:37.25       38337644 B   ---   --   ---xx   flac  0.6403  21. NOTHING WAS DELIVERED #2.flac
+     3:56.16       41668076 B   ---   --   ---xx   flac  0.5907  22. TEARS OF RAGE #1.flac
+     4:06.11       43420316 B   ---   --   ---xx   flac  0.6062  23. TEARS OF RAGE #2.flac
+     2:00.70       21332684 B   ---   --   ---xx   flac  0.6187  24. QUINN THE ESKIMO #1.flac
+     2:09.49       22870892 B   ---   --   ---xx   flac  0.5455  25. QUINN THE ESKIMO #2  HR.flac
+    74:55.62      793064968 B                            0.5346  (26 files)
+===================
+===================
+===================

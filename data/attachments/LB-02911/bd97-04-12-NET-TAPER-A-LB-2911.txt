@@ -1,0 +1,10 @@
+Bob Dylan, 4/12/97, Waltham, Massachusetts, Bentley College, 2CDR
+
+LB-2911, (55min+53min), Taper: NET TAPER A, Source: low gen audio disks > (feurio) wav > (flacfrontend) > flac., (Caveat: I have used the label NET TAPER A to refer to a taper whose work does not, seem to circulate widely. All of the NET TAPER A recordings come from my source, who, received them directly from the taper. There is always the possibility of misidentification, since the taper may also have sent recordings which were not his own. My apologies if any, such misidentification has occurred in the present case.); levels go down for last 30 seconds of d1t7 and near end of d2t4; background talking d2t2, d2t5
+
+drop and square wav static d1t4 6:23
+
+Disk One, 1 Crash On The Levee (Down In The Flood), 2 Pretty Peggy-O, 3 All Along The Watchtower, 4 Just Like A Woman, 5 It Takes A Lot To Laugh, It Takes A Train To Cry, 6 Silvio, 7 Friend Of The Devil (acoustic w band), 8 Masters Of War (acoustic w band), Disk Two, 1 Don't Think Twice, It's All Right (acoustic w band), 2 Obviously Five Believers, 3 Shooting Star, 4 Leopard-Skin Pill-Box Hat, 5 Like A Rolling Stone, 6 My Back Pages (acoustic w band), 7 Rainy Day Women # 12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

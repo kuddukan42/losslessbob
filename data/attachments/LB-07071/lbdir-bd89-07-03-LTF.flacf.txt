@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-03-LTF.flacf 
+=================== 
+=================== 
+=================== 
+be8d4f8bc565913ddca2fb84648c23ff  bd-19890703-Milwaukee.ffp
+63d30ba64f889c9e1bf2def27268ccf5  bd-19890703-Milwaukee.md5
+0d0da8bd66a80cc3511c294f1ad166b5  bd1989-07-03-d1t01.flac
+1a4d22d88930ec97b879bcb100c80687  bd1989-07-03-d1t02.flac
+16fef163305c328628279e184d5022e3  bd1989-07-03-d1t03.flac
+b143c31a79670421c340b26b716e7c56  bd1989-07-03-d1t04.flac
+3cae5d730920fb91ed2fa63579cff19d  bd1989-07-03-d1t05.flac
+8adf61e4264a3b018ba04de4460ec706  bd1989-07-03-d1t06.flac
+ba939b645ff2d38a671d4d844ce13ead  bd1989-07-03-d1t07.flac
+a6762bff8f93aef2e7c98dce62ee5fcf  bd1989-07-03-d1t08.flac
+f3a2c21911ccb911b3599d32d7019dd0  bd1989-07-03-d2t01.flac
+5ee495f0914ac8dee03f93a5748a9e83  bd1989-07-03-d2t02.flac
+60d4637b02ac352eec6f5a0eda79a28a  bd1989-07-03-d2t03.flac
+821c2fe6affb1403c2e856653efbb0b6  bd1989-07-03-d2t04.flac
+0383fa50961b071afd8179b3bc0914c3  bd1989-07-03-d2t05.flac
+22ca7900613f7b687c90013156b4e4fd  bd1989-07-03-d2t06.flac
+4ed6cac285384e9133210fb50bfa97b8  bd1989-07-03-d2t07.flac
+6ffa53f4347d5714f7d9339b00aa128d  bd1989-07-03-d2t08.flac
+cd8033e509ca4497b36b99f9eb71f15a  bd1989-07-03-d2t09.flac
+8a8576914cb363eeb230d92b92be3d0e  bd1989-07-03-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-03-LTF.flacf 
+=================== 
+=================== 
+=================== 
+bd1989-07-03-d1t01.flac:557c70ffc4a340d902bd3bb620017545
+bd1989-07-03-d1t02.flac:0321dd53451def58a971b7b1884d5a0e
+bd1989-07-03-d1t03.flac:599abe6028f2bff4ad46f35a38155e2b
+bd1989-07-03-d1t04.flac:2a129eaa85437e6fdedd3c60d6005b62
+bd1989-07-03-d1t05.flac:11fb4fff2cda12dd8246068c74ea003a
+bd1989-07-03-d1t06.flac:a1649bc4fb98d7b99b4ba7b0a54a99e8
+bd1989-07-03-d1t07.flac:737f8130ed385b2c8e4ca938c83a8aba
+bd1989-07-03-d1t08.flac:9b3e104253d778e8a9935a348cc99e95
+bd1989-07-03-d2t01.flac:230672c4f267971c9b5fc6655c87dcd7
+bd1989-07-03-d2t02.flac:a5f5ad1d2300cebd2fcf2cd7259d2c44
+bd1989-07-03-d2t03.flac:b168787598773e476403abd3de6bd80f
+bd1989-07-03-d2t04.flac:86e2dd12659c321340922d9551634b5f
+bd1989-07-03-d2t05.flac:0694a71b9f5edd3391c55199e247453f
+bd1989-07-03-d2t06.flac:0222e50ba7c096b9c4786c2ea57ce500
+bd1989-07-03-d2t07.flac:0f5315aac2da276113ddb45b57a202a9
+bd1989-07-03-d2t08.flac:0f23d5d115c923c28e55dc7ac1e225cf
+bd1989-07-03-d2t09.flac:6b4baa5ac33c42aeb8bd7f89523d3770
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-03-LTF.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:33.22       48208988 B   ---   --   ---xx   flac  0.6130  bd1989-07-03-d1t01.flac
+     4:39.08       49234460 B   ---   --   ---xx   flac  0.6323  bd1989-07-03-d1t02.flac
+     5:47.71       61377836 B   ---   --   ---xx   flac  0.6250  bd1989-07-03-d1t03.flac
+     5:25.73       57501740 B   ---   --   ---xx   flac  0.6185  bd1989-07-03-d1t04.flac
+     4:13.23       44683340 B   ---   --   ---xx   flac  0.5923  bd1989-07-03-d1t05.flac
+     4:29.39       47543372 B   ---   --   ---xx   flac  0.6163  bd1989-07-03-d1t06.flac
+     3:33.21       37622636 B   ---   --   ---xx   flac  0.5540  bd1989-07-03-d1t07.flac
+     5:31.14       58421372 B   ---   --   ---xx   flac  0.5651  bd1989-07-03-d1t08.flac
+     5:10.50       54801644 B   ---   --   ---xx   flac  0.5534  bd1989-07-03-d2t01.flac
+     4:41.59       49707212 B   ---   --   ---xx   flac  0.6099  bd1989-07-03-d2t02.flac
+     4:09.15       43958924 B   ---   --   ---xx   flac  0.6349  bd1989-07-03-d2t03.flac
+     3:10.68       33675980 B   ---   --   ---xx   flac  0.5744  bd1989-07-03-d2t04.flac
+     3:42.64       39311372 B   ---   --   ---xx   flac  0.6383  bd1989-07-03-d2t05.flac
+     7:06.18       75188780 B   ---   --   ---xx   flac  0.6381  bd1989-07-03-d2t06.flac
+     6:07.25       64797644 B   ---   --   ---xx   flac  0.5410  bd1989-07-03-d2t07.flac
+     4:57.26       52451996 B   ---   --   ---xx   flac  0.6189  bd1989-07-03-d2t08.flac
+     5:53.34       62349212 B   ---   --   ---xx   flac  0.6431  bd1989-07-03-d2t09.flac
+    83:13.30      880836508 B                            0.6049  (17 files)
+=================== 
+=================== 
+=================== 

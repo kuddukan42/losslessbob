@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-03-bach-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+a0443b06d74b0af6a01a90f52b65a8c6  1998-06-03-Berlin.md5
+100efba6e20c0cd436f524bd05445ae4  1998-06-03-Berlin.txt
+faf5dde525daf9a62b3bd13e93e1a7c9  Track101.flac
+dc7cf0cf484130dae6bdf8d0df4fab85  Track102.flac
+01f5d6e6a5f9df2324ac9ae9eb595927  Track103.flac
+65e9bee784d0442a9e9e75c5bdc9fb17  Track104.flac
+c6a2e569b6bee77dab045c944323e079  Track105.flac
+469e7ab07c2b070d5bcc271a13032133  Track106.flac
+d5c48e43c030009f68065e4bf9d462f4  Track107.flac
+825b2d5fa291d7f18599bdd7f599483f  Track108.flac
+93deada636a2312e3e760efd5953e351  Track109.flac
+addc8deb0d3f3ec4f40111189a6d5be3  Track110.flac
+1d015bfa8cf7bb962f6b582d3e1e745d  Track111.flac
+404cab4a33b5348f6d84f50a910ae400  Track201.flac
+35259b47130825d097cd70f49aff7f50  Track202.flac
+63d284d294b4ba68eab858f7a8c1afc6  Track203.flac
+a4dc881a66edd0d95f860719f45c0171  Track204.flac
+35d84c6adb253a93c45fd60467b8d1b0  Track205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-03-bach-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:6b028bf28383b4b575b893e50e96a45b
+Track102.flac:0cbcf51a787309a14e8710d2c50bd2dc
+Track103.flac:f599bdf51d981c71026a4025598870cb
+Track104.flac:49130042df1009cf6123c5e8efec2432
+Track105.flac:1e210df55816c96730bca0f92241c572
+Track106.flac:90ede486254f22a356fe95f540e121be
+Track107.flac:62257bd7fc664a713ee0a13b9142aa43
+Track108.flac:77670da03fa0df4c5746a38854a3df6d
+Track109.flac:fcca67becb3aecbf71f56c831a5769ff
+Track110.flac:49b9d23369d5c85c243c93a8e58da2ed
+Track111.flac:49ff506ac5258763ce73226c39fd4092
+Track201.flac:8952071aeabb950c525b668157774931
+Track202.flac:6e1a2d65af1a4e6ea7c12e49fd2d5b4c
+Track203.flac:348d5975071c79ae2e65047d794382f7
+Track204.flac:6f755fcca8372f67553572dc2a31c0d8
+Track205.flac:9f2d14425c965849b51f7243487f981a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-03-bach-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:29.25        5174444 B   ---   --   ---xx   flac  0.4434  Track101.flac
+     3:34.08       37768460 B   ---   --   ---xx   flac  0.6100  Track102.flac
+     4:54.37       51948668 B   ---   --   ---xx   flac  0.5975  Track103.flac
+     6:50.70       72488684 B   ---   --   ---xx   flac  0.5869  Track104.flac
+     5:02.66       53428076 B   ---   --   ---xx   flac  0.5970  Track105.flac
+     6:42.37       70999868 B   ---   --   ---xx   flac  0.6212  Track106.flac
+     6:04.59       64348412 B   ---   --   ---xx   flac  0.5736  Track107.flac
+     5:30.55       58341404 B   ---   --   ---xx   flac  0.5881  Track108.flac
+     5:28.22       57910988 B   ---   --   ---xx   flac  0.5590  Track109.flac
+     8:13.32       87040508 B   ---   --   ---xx   flac  0.6469  Track110.flac
+     5:42.38       60418220 B   ---   --   ---xx   flac  0.5128  Track111.flac
+     7:29.53       79328300 B   ---   --   ---xx   flac  0.5959  Track201.flac
+     7:53.20       83484284 B   ---   --   ---xx   flac  0.5732  Track202.flac
+     5:04.24       53682092 B   ---   --   ---xx   flac  0.5423  Track203.flac
+     5:03.01       53451596 B   ---   --   ---xx   flac  0.6013  Track204.flac
+     4:58.42       52666028 B   ---   --   ---xx   flac  0.5225  Track205.flac
+    89:02.64      942480032 B                            0.5832  (16 files)
+=================== 
+=================== 
+=================== 

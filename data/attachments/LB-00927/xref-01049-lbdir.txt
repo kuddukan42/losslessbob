@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd03-02-18-a.flacf
+===================
+===================
+===================
+3b8618ded9f0bef6b15bd988c6fac973 *101 - Tweedle Dee & Tweedle Dum.flac
+44c1e2d223358e6ecf3f4ac012e6b268 *102 - I'll Be Your Baby Tonight.flac
+f0912b98bd28058b954e6e152ae454ed *103 - Highway 61 Revisited.flac
+e3e089a79994a171a4a7c3118bf635ba *104 - It's All Over Now, Baby Blue.flac
+3bf45e5f1190e95f5e52b3dbefb46865 *105 - Things Have Changed.flac
+582cc48dea19636fa26309550517a98e *106 - The Wicked Messenger.flac
+0426e5067c35d9d5a6bc9385eb66f87e *107 - Boots Of Spanish Leather.flac
+a6f588c14d654994757f1df547339c8e *108 - Masters Of War.flac
+173a93f286ca798472d9cf4dc76c9d1b *109 - Mama, You Been On My Mind.flac
+74755fb71f0aba3e04c8da6c3b7435bf *110 - It's Alright, Ma (I'm Only Bleeding).flac
+5be9da14b398a4979c95b824ca4a2f97 *111 - Mr. Tambourine Man.flac
+ba00f01f0662fda9ac7fb0b3abdc6d73 *18 February 2003.txt
+527d16e28584468fb03e9f737671fbf4 *2003-02-18 Newcastle (Australia) Entertainment Center (D1).log
+5a80582ff2be30bddda36033fe93e906 *2003-02-18 Newcastle (Australia).ffp
+23d31f0464b72343fe5ad410c64c6ef6 *2003-02-18 Newcastle (Australia).md5
+854e125539f57140ed15923af1663cb0 *201 - Honest With Me.flac
+bca6e60aff4a17a1203dcb826ead1dce *202 - Moonlight.flac
+0ce0947a1bf1da514c40a9f97b388bf9 *203 - Summer Days.flac
+758fb9762f55f1596ef4398cb543f9d8 *204 - Blowin' In The Wind.flac
+749678e3372b55fca1c2138ce60a3174 *205 - All Along The Watchtower.flac
+===================
+===================
+===================
+=== ffp for: bd03-02-18-a.flacf
+===================
+===================
+===================
+101 - Tweedle Dee & Tweedle Dum.flac:9f6a8db58e853add7b643824df6fad5b
+102 - I'll Be Your Baby Tonight.flac:3c1dbfb877a63f56cd072402f24cd7db
+103 - Highway 61 Revisited.flac:9e40fecc5affef74d1d4a39414928027
+104 - It's All Over Now, Baby Blue.flac:f5bcddc2950272c378e43e0800533662
+105 - Things Have Changed.flac:1de8ce3c8443755d16dbad49604bab2d
+106 - The Wicked Messenger.flac:ed83f8fee0b3f9737a06021e7cef41da
+107 - Boots Of Spanish Leather.flac:4ba067ee2c70f1fe11802505d223a94d
+108 - Masters Of War.flac:683626bfbea0a0f973ecbe1d3b25784e
+109 - Mama, You Been On My Mind.flac:06bca6d1f90a1c47fa76055a14ed3fa9
+110 - It's Alright, Ma (I'm Only Bleeding).flac:23ed8f51fa30d4fc56cf6efc532a3419
+111 - Mr. Tambourine Man.flac:0906d9265b1327e82804177a0093adcb
+201 - Honest With Me.flac:5b6801945a5f54b27bb4f800e0e32190
+202 - Moonlight.flac:4e8afb36b520a6a9aed4efc8124e9e2c
+203 - Summer Days.flac:0a56830c19dea3a6db2fc59a249d8f6e
+204 - Blowin' In The Wind.flac:26ed96430128643455f2cb8f0c9f5d2f
+205 - All Along The Watchtower.flac:b8c8c23d0642de3ffabad2a4454bcbb3
+===================
+===================
+===================
+=== shntool len for: bd03-02-18-a.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.21       60907436 B   ---   --   ---xx   flac  0.5430  101 - Tweedle Dee & Tweedle Dum.flac
+     5:30.67       58369628 B   ---   --   ---xx   flac  0.5525  102 - I'll Be Your Baby Tonight.flac
+     5:16.58       55878860 B   ---   --   ---xx   flac  0.6109  103 - Highway 61 Revisited.flac
+     8:25.60       89223164 B   ---   --   ---xx   flac  0.5348  104 - It's All Over Now, Baby Blue.flac
+     7:03.24       74673692 B   ---   --   ---xx   flac  0.5896  105 - Things Have Changed.flac
+     4:46.18       50492780 B   ---   --   ---xx   flac  0.6671  106 - The Wicked Messenger.flac
+     7:25.06       78512156 B   ---   --   ---xx   flac  0.4549  107 - Boots Of Spanish Leather.flac
+     4:50.46       51264236 B   ---   --   ---xx   flac  0.5515  108 - Masters Of War.flac
+     4:40.55       49521404 B   ---   --   ---xx   flac  0.4982  109 - Mama, You Been On My Mind.flac
+     7:55.58       83926460 B   ---   --   ---xx   flac  0.5939  110 - It's Alright, Ma (I'm Only Bleeding).flac
+     6:54.53       73154300 B   ---   --   ---xx   flac  0.5336  111 - Mr. Tambourine Man.flac
+     7:43.65       81826124 B   ---   --   ---xx   flac  0.6379  201 - Honest With Me.flac
+     5:14.01       55391996 B   ---   --   ---xx   flac  0.4454  202 - Moonlight.flac
+     9:54.43      104882780 B   ---   --   ---xx   flac  0.5483  203 - Summer Days.flac
+     5:48.11       61413116 B   ---   --   ---xx   flac  0.5507  204 - Blowin' In The Wind.flac
+     7:57.32       84218108 B   ---   --   ---xx   flac  0.6141  205 - All Along The Watchtower.flac
+   105:13.18     1113656240 B                            0.5588  (16 files)
+===================
+===================
+===================

@@ -1,0 +1,66 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-27-and-Van-Morrison-HH.flacf 
+=================== 
+=================== 
+=================== 
+6ab1670d307fd0a7292b78b30b8ae4a7  Bob Dylan and Van Morrison 1991.md5
+94f3c55c48ee48251bcdbeb1d7dc2dc8  Bob Dylan.doc
+4e25fe77af435a242118cc080f6d81af  Dylan Morrison.txt
+c347d69b388abbabaf2f894c4200465c  Torrent downloaded from Demonoid.com.txt
+19233c909cfacd4b7fb7417e31fff9c4  Unknown Artist -  - 01 - Track 1.flac
+ba0bc2d00975610d804c86cc27e950b3  Unknown Artist -  - 02 - Track 2.flac
+2305a1b2789d844aaaf59ed4aefcaca1  Unknown Artist -  - 03 - Track 3.flac
+f026e47ef1491b01d99a1d19937475a9  Unknown Artist -  - 04 - Track 4.flac
+8cef597034cdcdb0d19e711f2644618a  Unknown Artist -  - 05 - Track 5.flac
+af802ce5b1e9d47a038a13b23d15497a  Unknown Artist -  - 06 - Track 6.flac
+7072cae07e3afd966c1510f6a936d444  Unknown Artist -  - 07 - Track 7.flac
+0ef4552d290aa118d5ca473e0ae0d1d1  Unknown Artist -  - 08 - Track 8.flac
+255f7a0a45295df891e680df2454f931  Unknown Artist -  - 09 - Track 9.flac
+52c15719352794c5a182a393f16b2a02  Unknown Artist -  - 10 - Track 10.flac
+2087c27dfd74e383e518eabf6a26eefb  Unknown Artist -  - 11 - Track 11.flac
+17e716466b0bb1e8882b3da88f8fb183  Unknown Artist -  - 12 - Track 12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-27-and-Van-Morrison-HH.flacf 
+=================== 
+=================== 
+=================== 
+unknown artist -  - 01 - track 1.flac:40e70247d98451a81d411de267653d5c
+unknown artist -  - 02 - track 2.flac:518e7f34c59893e19d68fdac1b2d61bb
+unknown artist -  - 03 - track 3.flac:a1ee28733f50bec226ea6d924fe7b19e
+unknown artist -  - 04 - track 4.flac:ff740dc14facb3fc74535d5d9559906a
+unknown artist -  - 05 - track 5.flac:2992cca02f1ae75dd86516618975d1e7
+unknown artist -  - 06 - track 6.flac:c6457382fdfcbf2aa9f85ccf0e7d08cc
+unknown artist -  - 07 - track 7.flac:a1612a32855915e9d9bd03e740088ba4
+unknown artist -  - 08 - track 8.flac:7a42b616515b43c774afcfa55e31f1af
+unknown artist -  - 09 - track 9.flac:2520442b5ec7f547ba38eca1c95f40a2
+unknown artist -  - 10 - track 10.flac:3df69ca6ba4f002c82266320ff283632
+unknown artist -  - 11 - track 11.flac:b5bd6b8ebed4bcb3c761645c43627e7f
+unknown artist -  - 12 - track 12.flac:88d071e72de196872d90b43bdf4e51a4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-27-and-Van-Morrison-HH.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:35.04       27351452 B   ---   --   ---xx   flac  0.2900  Unknown Artist -  - 01 - Track 1.flac
+     5:11.47       54970988 B   ---   --   ---xx   flac  0.2649  Unknown Artist -  - 02 - Track 2.flac
+     2:35.68       27501980 B   ---   --   ---xx   flac  0.2816  Unknown Artist -  - 03 - Track 3.flac
+     3:45.67       39847628 B   ---   --   ---xx   flac  0.2670  Unknown Artist -  - 04 - Track 4.flac
+     0:37.56        6658556 B   ---   --   ---xx   flac  0.2517  Unknown Artist -  - 05 - Track 5.flac
+     3:37.10       38302364 B   ---   --   ---xx   flac  0.2626  Unknown Artist -  - 06 - Track 6.flac
+     5:52.25       62151644 B   ---   --   ---xx   flac  0.2780  Unknown Artist -  - 07 - Track 7.flac
+     4:39.05       49227404 B   ---   --   ---xx   flac  0.2564  Unknown Artist -  - 08 - Track 8.flac
+     4:17.14       45367772 B   ---   --   ---xx   flac  0.2680  Unknown Artist -  - 09 - Track 9.flac
+     4:27.27       47162348 B   ---   --   ---xx   flac  0.2703  Unknown Artist -  - 10 - Track 10.flac
+     5:58.14       63184172 B   ---   --   ---xx   flac  0.2629  Unknown Artist -  - 11 - Track 11.flac
+     4:02.47       42799388 B   ---   --   ---xx   flac  0.5377  Unknown Artist -  - 12 - Track 12.flac
+    47:40.09      504525696 B                            0.2914  (12 files)
+=================== 
+=================== 
+=================== 

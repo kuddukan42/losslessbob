@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-17-paradise-regained.flacf 
+=================== 
+=================== 
+=================== 
+7dc1f741e58a40df887a4428de16acc8  bd95-12-17-paradise-regained-d1t01.flac
+426d05e05f08b9d2b98e3d646f2fbc27  bd95-12-17-paradise-regained-d1t02.flac
+508f582306244a4eadcd0d40c7ba187c  bd95-12-17-paradise-regained-d1t03.flac
+c77a106cb9a0e04dba4cfd4d637ee8f5  bd95-12-17-paradise-regained-d1t04.flac
+78453172bd535805f5ae624281153485  bd95-12-17-paradise-regained-d1t05.flac
+ad342efc710f95d3771fc36a8ca1f093  bd95-12-17-paradise-regained-d1t06.flac
+22726fd6431d94eede75b3edb5104c3b  bd95-12-17-paradise-regained-d1t07.flac
+02cd2e677c28747f52bae5b7e777d663  bd95-12-17-paradise-regained-d1t08.flac
+1d3699c25d4905a9d2d780c579b63cbd  bd95-12-17-paradise-regained-d1t09.flac
+7676271d8005fc8e092f95cc67a53299  bd95-12-17-paradise-regained-d2t01.flac
+559fad4bb83832ea64cf6139840780ce  bd95-12-17-paradise-regained-d2t02.flac
+8eab9401cbe9bca280f15b736ce51592  bd95-12-17-paradise-regained-d2t03.flac
+2497a6d0f7f6173c96e6e38dde347a6d  bd95-12-17-paradise-regained-d2t04.flac
+0e2d9bd5fb34d390a84bdff86073d1c6  bd95-12-17-paradise-regained-d2t05.flac
+43ea4fe6762ca9af25f41c244374067b  bd95-12-17-paradise-regained-d2t06.flac
+2778dd91f28955f4b4ebb1d7e6dbf7d7  bd95-12-17-paradise-regained-d2t07.flac
+ce015d7ad9b74db1eec9c22147cdd9c1  bd95-12-17-paradise-regained-d2t08.flac
+ed42792a6c7b2fa61b3db1f561f2aed8  bd95-12-17-paradise-regained-d2t09.flac
+f44d7cf898e1ce7aa53db6aaac5122ad  bd95-12-17-paradise-regained.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-17-paradise-regained.flacf 
+=================== 
+=================== 
+=================== 
+bd95-12-17-paradise-regained-d1t01.flac:ad387d4c8fdd8635bedc10574c4998a3
+bd95-12-17-paradise-regained-d1t02.flac:efb4492176c43b98ed15491640a74689
+bd95-12-17-paradise-regained-d1t03.flac:a986feca172d525610a99f3939c6e627
+bd95-12-17-paradise-regained-d1t04.flac:6259d47ea5cbc5c9cab19c21cc1eac80
+bd95-12-17-paradise-regained-d1t05.flac:d7b477dfe5c7597175c23879b4f808ca
+bd95-12-17-paradise-regained-d1t06.flac:3c6e7b0cac3a685562cc487904ba3070
+bd95-12-17-paradise-regained-d1t07.flac:d416a116aead26342e954f4872533d23
+bd95-12-17-paradise-regained-d1t08.flac:4f092ea4fef83f0be5467ddd14ca1eca
+bd95-12-17-paradise-regained-d1t09.flac:9b9e6e2dd3e59e629a2e79147ea7a076
+bd95-12-17-paradise-regained-d2t01.flac:2da7b999c2e5201c653d939ca87d5860
+bd95-12-17-paradise-regained-d2t02.flac:fb3a9e4dd5436a5b256aeab2d26ef002
+bd95-12-17-paradise-regained-d2t03.flac:086f16adf147bd45a99cc65d9738866c
+bd95-12-17-paradise-regained-d2t04.flac:84e1dac30ce5e6f750da5326238897ed
+bd95-12-17-paradise-regained-d2t05.flac:19c55c8d4957077c51fcd38965ca939b
+bd95-12-17-paradise-regained-d2t06.flac:2ce916e894c6fbc54370200f221d2c60
+bd95-12-17-paradise-regained-d2t07.flac:42365ac4e1c54119304515a8987651c7
+bd95-12-17-paradise-regained-d2t08.flac:da638035b9d01a43d1d41d559939d332
+bd95-12-17-paradise-regained-d2t09.flac:340bb7d991f4af14ef78f0bbcd9136ae
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-17-paradise-regained.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.07       55053308 B   ---   --   ---xx   flac  0.7043  bd95-12-17-paradise-regained-d1t01.flac
+     6:26.38       68179820 B   ---   --   ---xx   flac  0.6601  bd95-12-17-paradise-regained-d1t02.flac
+     7:24.10       78345164 B   ---   --   ---xx   flac  0.6780  bd95-12-17-paradise-regained-d1t03.flac
+    10:43.12      113453468 B   ---   --   ---xx   flac  0.6170  bd95-12-17-paradise-regained-d1t04.flac
+     7:37.25       80673644 B   ---   --   ---xx   flac  0.6771  bd95-12-17-paradise-regained-d1t05.flac
+     8:22.00       88552844 B   ---   --   ---xx   flac  0.6868  bd95-12-17-paradise-regained-d1t06.flac
+    12:22.63      131037020 B   ---   --   ---xx   flac  0.6278  bd95-12-17-paradise-regained-d1t07.flac
+    10:38.50      112660844 B   ---   --   ---xx   flac  0.6084  bd95-12-17-paradise-regained-d1t08.flac
+     9:45.00      103194044 B   ---   --   ---xx   flac  0.5623  bd95-12-17-paradise-regained-d1t09.flac
+     5:50.00       61740044 B   ---   --   ---xx   flac  0.4989  bd95-12-17-paradise-regained-d2t01.flac
+     9:30.25      100606844 B   ---   --   ---xx   flac  0.6375  bd95-12-17-paradise-regained-d2t02.flac
+     8:27.55       89564204 B   ---   --   ---xx   flac  0.5545  bd95-12-17-paradise-regained-d2t03.flac
+     8:47.55       93092204 B   ---   --   ---xx   flac  0.6070  bd95-12-17-paradise-regained-d2t04.flac
+    10:04.60      106686764 B   ---   --   ---xx   flac  0.6132  bd95-12-17-paradise-regained-d2t05.flac
+     7:49.65       82884524 B   ---   --   ---xx   flac  0.6534  bd95-12-17-paradise-regained-d2t06.flac
+     9:33.60      101218364 B   ---   --   ---xx   flac  0.5553  bd95-12-17-paradise-regained-d2t07.flac
+     7:30.10       79403564 B   ---   --   ---xx   flac  0.6259  bd95-12-17-paradise-regained-d2t08.flac
+     5:18.05       56107004 B   ---   --   ---xx   flac  0.5654  bd95-12-17-paradise-regained-d2t09.flac
+   151:24.15     1602453672 B                            0.6175  (18 files)
+=================== 
+=================== 
+=================== 

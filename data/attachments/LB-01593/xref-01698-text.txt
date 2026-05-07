@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== bd-1996-11-04-Spartanburg-HG.md5
+===================
+===================
+===================
+0154d6df6d7c4e5c5f2b1ec70417ecab *Disc1\bd-1996-11-04-HG-d1t01.flac
+50f4c7b1c721c2bc8f458dccacaa0f6a *Disc1\bd-1996-11-04-HG-d1t02.flac
+474c26449f0f3fcc286068b921d47336 *Disc1\bd-1996-11-04-HG-d1t03.flac
+3b2197f2dfc5f80628f2c9ae329dd91b *Disc1\bd-1996-11-04-HG-d1t04.flac
+a8db5ef8fb4b617fe9466cb31e7a13d0 *Disc1\bd-1996-11-04-HG-d1t05.flac
+7df19652dbbf8b1005c67500208dea56 *Disc1\bd-1996-11-04-HG-d1t06.flac
+2ac1c9fbaab877678e5217b5e65a1a9b *Disc1\bd-1996-11-04-HG-d1t07.flac
+b6ddff850f5392634bf9c22108c239c2 *Disc1\bd-1996-11-04-HG-d1t08.flac
+1c6d4684fdfd82b868f5f83bb0a2f5d4 *Disc1\bd-1996-11-04-HG-d1t09.flac
+ca38de1e8fe4f62ab02070656a240041 *Disc2\bd-1996-11-04-HG-d2t01.flac
+3f2a8691b0a086af2a7fc39fd9f80ba0 *Disc2\bd-1996-11-04-HG-d2t02.flac
+2af1b6a5525a4f3e619f201ca864385c *Disc2\bd-1996-11-04-HG-d2t03.flac
+6a3894cc81155d4de2f67301cfb283ca *Disc2\bd-1996-11-04-HG-d2t04.flac
+5f07f4ea6fc9c4e7856ad3dbf441a58f *Disc2\bd-1996-11-04-HG-d2t05.flac
+2d7cfdb71f833c4f0af915131457022a *Disc2\bd-1996-11-04-HG-d2t06.flac
+===================
+===================
+===================
+=== bd-1996-11-04-Spartanburg-HG.txt
+===================
+===================
+===================
+Bob Dylan
+Memorial Auditorium Theater
+Spartanburg, South Carolina
+November 4, 1996
+
+Holy Grail Series
+
+Sound Quality: Excellent
+
+
+This set is based on the same recording as LB-1593.
+
+
+Disk 1
+
+01 Crash On The Levee (Down In The Flood)
+02 Man In The Long Black Coat
+03 All Along The Watchtower
+04 Positively 4th Street
+05 I'll Be Your Baby Tonight
+06 Silvio, Tangled Up In Blue (Acoustic W Band)
+07 To Ramona (Acoustic W Band)
+08 Don't Think Twice, It's All Right (Acoustic W Band)
+
+Disc 2
+
+01 God Knows
+02 I And I
+03 Seeing The Real You At Last
+04 Like A Rolling Stone
+05 Girl From The North Country (Acoustic W Band)
+06 Rainy Day Women # 12 & 35
+
+
+============================
+============================
+============================
+=== md5 for bd-1996-11-04-Spartanburg-HG
+============================
+============================
+============================
+
+
+0154d6df6d7c4e5c5f2b1ec70417ecab *Disc1/bd-1996-11-04-HG-d1t01.flac
+50f4c7b1c721c2bc8f458dccacaa0f6a *Disc1/bd-1996-11-04-HG-d1t02.flac
+474c26449f0f3fcc286068b921d47336 *Disc1/bd-1996-11-04-HG-d1t03.flac
+3b2197f2dfc5f80628f2c9ae329dd91b *Disc1/bd-1996-11-04-HG-d1t04.flac
+a8db5ef8fb4b617fe9466cb31e7a13d0 *Disc1/bd-1996-11-04-HG-d1t05.flac
+7df19652dbbf8b1005c67500208dea56 *Disc1/bd-1996-11-04-HG-d1t06.flac
+2ac1c9fbaab877678e5217b5e65a1a9b *Disc1/bd-1996-11-04-HG-d1t07.flac
+b6ddff850f5392634bf9c22108c239c2 *Disc1/bd-1996-11-04-HG-d1t08.flac
+1c6d4684fdfd82b868f5f83bb0a2f5d4 *Disc1/bd-1996-11-04-HG-d1t09.flac
+ca38de1e8fe4f62ab02070656a240041 *Disc2/bd-1996-11-04-HG-d2t01.flac
+3f2a8691b0a086af2a7fc39fd9f80ba0 *Disc2/bd-1996-11-04-HG-d2t02.flac
+2af1b6a5525a4f3e619f201ca864385c *Disc2/bd-1996-11-04-HG-d2t03.flac
+6a3894cc81155d4de2f67301cfb283ca *Disc2/bd-1996-11-04-HG-d2t04.flac
+5f07f4ea6fc9c4e7856ad3dbf441a58f *Disc2/bd-1996-11-04-HG-d2t05.flac
+2d7cfdb71f833c4f0af915131457022a *Disc2/bd-1996-11-04-HG-d2t06.flac
+
+
+
+
+===================
+===================
+===================

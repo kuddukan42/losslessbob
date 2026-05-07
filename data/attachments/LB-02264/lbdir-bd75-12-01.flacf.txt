@@ -1,0 +1,196 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-12-01.flacf 
+=================== 
+=================== 
+=================== 
+382a8610b5be446adebfd5bea610820c  bd75-12-01.txt
+196e17e8631daf9087abc5bd17493007  DylanToronto1stDecember1-2Back.jpg
+eb47f0c44ee63edc421357a3314cce24  DylanToronto1stDecember1-2Front.jpg
+4856cfb7e5907529a32d2bcffb04588d  DylanToronto1stDecember3-4Back.jpg
+4815e6653cbc3f032433296ea767d40f  DylanToronto1stDecember3-4Front.jpg
+0a5b5f37fbac838791d1f36ca7267f9e  Toron     to01.12.75d1tr4-LaissezFaire.flac
+01b145f6dcb0df1eb6c23b1ed2be77b7  Toronto 01.12.75 d1tr1 -  Good Love Is Hard To Find.flac
+9405d0a93236cb253c75a86d12441dd9  Toronto 01.12.75 d1tr10 - Nowhere To Go.flac
+d4d8a21cc1fe4082fa55b9122f509b20  Toronto 01.12.75 d1tr11 - Mercedes Benz.flac
+7e371ccba52b63ef99c5f9b359ebb22e  Toronto 01.12.75 d1tr12 - Woman Of Heart And Mind.flac
+99b340ec9b45d2611a926e18b5ab8f10  Toronto 01.12.75 d1tr13 - Coyote.flac
+32b3b9a6e455deadb170ad44d0e0d0d2  Toronto 01.12.75 d1tr14 - Edith And The Kingpin.flac
+60dd311ad253828e7c94453cfcda81f3  Toronto 01.12.75 d1tr15 - Don`t Interrupt The Sorrow.flac
+1b7985e237d1384e8ca376deb476adc8  Toronto 01.12.75 d1tr2 - Sleazy.flac
+d91672faad52ee5de1f4a009670714e5  Toronto 01.12.75 d1tr3 - Hulahoop.flac
+20340effcb50d94ef6c67b3f5d3e4c2a  Toronto 01.12.75 d1tr4 - Laissez Faire.flac
+7fdadc2b40533924cf99c07870468cd7  Toronto 01.12.75 d1tr5 - Catfish.flac
+9af171bf3a269178e5d44d18af48f1f9  Toronto 01.12.75 d1tr6 - Is There Life On Mars.flac
+1576b33f98c30a899104a9e9e2fac166  Toronto 01.12.75 d1tr7 - Alabama Dark.flac
+fe2f337c53b5d9a00e4704d59883f2f9  Toronto 01.12.75 d1tr8 - New Sun Rising.flac
+a5728f1624524c894452af8065580378  Toronto 01.12.75 d1tr9 - Cindy.flac
+40d18bd94d32b9a168f1179d38bb34a7  Toronto01.12.75d2tr1-Ramblin`Jack.flac
+a610b7a128e1be63e6bfe41101f63ca8  Toronto01.12.75d2tr10-ItTakesALotToLaugh....flac
+10f9908ed0c5a26078d1be2c6d075e1f  Toronto01.12.75d2tr11-RomanceInDurango.flac
+03f090b54cfae13afff93e8efdca6a16  Toronto01.12.75d2tr12-Isis.flac
+69b51230342281a3b1836e3f5f222b7d  Toronto01.12.75d2tr13-TheTimesTheyAreA-Changin`.flac
+38ab2d912d782e88efb33c5aa743d754  Toronto01.12.75d2tr14-DarkAsADungeon.flac
+0fe03c15b076ea46bece8661eba8f958  Toronto01.12.75d2tr15-NeverLetMeGo.flac
+bd04d5a83b03ab1b54c33269dc93b0af  Toronto01.12.75d2tr2-MuleskinnerBlues.flac
+7a07458f4b356dba1241bca7a0b8d0f9  Toronto01.12.75d2tr3-PrettyBoyFloyd.flac
+37c14bab9c88097b7ce303e5f63e8c66  Toronto01.12.75d2tr4-SaltPorkWestViurginia.flac
+2422bbb1c4ac265e4f8d5251c9b41ce8  Toronto01.12.75d2tr5-I`mARichAndRamblin`Boy.flac
+11ba5925b1895a948160f05cfd483557  Toronto01.12.75d2tr6-WhenIPaintMyMasterpiece.flac
+94e8448c6286ff4085ba59dce2c0e2cc  Toronto01.12.75d2tr7-ItAin`tMeBabe.flac
+e1d5a67d9b3cc5587ecd145e5cc9e231  Toronto01.12.75d2tr8-LonesomeDeathOfHattieCarroll.flac
+1d90c1760279e2973f37e7db119c6803  Toronto01.12.75d2tr9-TonightI`llBeStayingHereWithYou.flac
+97c2d41c871011b89f7e8254f94a29ab  Toronto01.12.75d3tr1-IDreamedISawSt.Augustine.flac
+3219efc5a45d0f130df21889a713dd82  Toronto01.12.75d3tr10-EightMilesHigh.flac
+27e886a0ed05187c06fb957f0aeef15f  Toronto01.12.75d3tr11-ChestnutMare.flac
+42ed2c4e51698fee03e2df82988fa048  Toronto01.12.75d3tr12-RaceAmonstTheRuins.flac
+b8a371640dae88eea5ae6091cd7d14ea  Toronto01.12.75d3tr13-TheWatchman`sGone.flac
+e27c5b69d5c13f98d687b972b3771ed9  Toronto01.12.75d3tr14-Sundown.flac
+f5a2cf47e322bf52b9892a63c47fb577  Toronto01.12.75d3tr2-IShallBeReleased.flac
+9237b05fe16bc4a0c09c89b84af8d48a  Toronto01.12.75d3tr3-DiamondsAndRust.flac
+73ea9e3479ac027ee622225bf8583628  Toronto01.12.75d3tr4-SwingLowSweetChariot.flac
+dde2074a5a36ed557f7f720725138675  Toronto01.12.75d3tr5-JoeHill.flac
+45e43f3b74da5b935f3f4725b90bbdb2  Toronto01.12.75d3tr6-LoveSongToAStranger.flac
+df6ef3bb1c4c98eed44bb1ffed7eab4c  Toronto01.12.75d3tr7-LongBlackVeil.flac
+1a97dc5cdf9bd8700b273178d56df2b8  Toronto01.12.75d3tr8-PleaseComeToBoston.flac
+df71998a86daeafde90abfd1c1825255  Toronto01.12.75d3tr9-TheNightTheyDroveOldDixieDown.flac
+d1a1af2ac4e7eaada24a4cd1a1e18e20  Toronto01.12.75d4tr1-It`sAllOverNow,BabyBlue.flac
+a8e6814829a27cfc75f697d57274e6b5  Toronto01.12.75d4tr10-ThisLandIsYourLand.flac
+01d59450b82028f4c9c7e2cc98f97592  Toronto01.12.75d4tr2-LoveMinusZero.flac
+560c0cf93a8a7dd03ddfed6247ba19f1  Toronto01.12.75d4tr3-SimpleTwistOfFate.flac
+f366b6a2cf0fcc153623dd688fe37cdf  Toronto01.12.75d4tr4-OhSister.flac
+eecdb9ed59c4feeaeed206254098ee45  Toronto01.12.75d4tr5-Hurricane.flac
+6bc073e1638556fdf0d8c78c96732bb0  Toronto01.12.75d4tr6-OneMoreCupOfCoffee.flac
+8184c5c3c77efdbf520827f0cf9983d0  Toronto01.12.75d4tr7-Sara.flac
+13b779340cfab49d30b0a385515878a4  Toronto01.12.75d4tr8-JustLikeAWoman.flac
+c51ad4ce07ee61c51dfe7bc134183eec  Toronto01.12.75d4tr9-Knockin`OnHeaven`sDoor.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-12-01.flacf 
+=================== 
+=================== 
+=================== 
+Toron     to01.12.75d1tr4-LaissezFaire.flac:f7ee28ff3be71dc1465a039515b736da
+Toronto 01.12.75 d1tr1 -  Good Love Is Hard To Find.flac:bd28290ea300a55af800368b51c787c5
+Toronto 01.12.75 d1tr10 - Nowhere To Go.flac:b247327ba3c733599b161a0310b0fe78
+Toronto 01.12.75 d1tr11 - Mercedes Benz.flac:446119368ed413f2d6664f5dbe9ecd6b
+Toronto 01.12.75 d1tr12 - Woman Of Heart And Mind.flac:33c1b7cc546ba359b3e5a8d46d2042f1
+Toronto 01.12.75 d1tr13 - Coyote.flac:0db8627c866a9964ba55788dff039c20
+Toronto 01.12.75 d1tr14 - Edith And The Kingpin.flac:7fc8639e500bcaaf23e92463cd2219dc
+Toronto 01.12.75 d1tr15 - Don`t Interrupt The Sorrow.flac:dddefa2b94edc34eaa283424d358fd25
+Toronto 01.12.75 d1tr2 - Sleazy.flac:54a6ce508ff88561d061f0afb861002a
+Toronto 01.12.75 d1tr3 - Hulahoop.flac:13bbc0f4923e02a049ad09a123f659c7
+Toronto 01.12.75 d1tr4 - Laissez Faire.flac:f7ee28ff3be71dc1465a039515b736da
+Toronto 01.12.75 d1tr5 - Catfish.flac:391f39aa1f29a44f484633d67ba0a8af
+Toronto 01.12.75 d1tr6 - Is There Life On Mars.flac:273a1b874b40ebe371d6ff5fedb383d4
+Toronto 01.12.75 d1tr7 - Alabama Dark.flac:f408628e64aa81dcd1028ca84bd0c783
+Toronto 01.12.75 d1tr8 - New Sun Rising.flac:a89d438ec55f08f97dc74f827dbced81
+Toronto 01.12.75 d1tr9 - Cindy.flac:e9c495e6fd9627ab49632caa5aa937f0
+Toronto01.12.75d2tr10-ItTakesALotToLaugh....flac:8c21221bcf0adb77d1b2508a7e647f27
+Toronto01.12.75d2tr11-RomanceInDurango.flac:151c9bb37136e5e60747c081d0e16408
+Toronto01.12.75d2tr12-Isis.flac:e04a8a7049869af4150fdbead405bb2f
+Toronto01.12.75d2tr13-TheTimesTheyAreA-Changin`.flac:9ffdd17961728d4ed7855666a007ef03
+Toronto01.12.75d2tr14-DarkAsADungeon.flac:d121f0397de1b3026cafe75892e445b9
+Toronto01.12.75d2tr15-NeverLetMeGo.flac:d2f1a3812382e05fbbf0cb675def45f7
+Toronto01.12.75d2tr1-Ramblin`Jack.flac:19ae947e05f38c4a4e40ac35627e3984
+Toronto01.12.75d2tr2-MuleskinnerBlues.flac:dd232580d27f457d2bb27e165a7a4e4e
+Toronto01.12.75d2tr3-PrettyBoyFloyd.flac:29fa11677fbe9118289a27d30c1fdaed
+Toronto01.12.75d2tr4-SaltPorkWestViurginia.flac:f703834c0100f2f9bccd86a3885a1871
+Toronto01.12.75d2tr5-I`mARichAndRamblin`Boy.flac:01b86c73ce14163e472111465fd21ea6
+Toronto01.12.75d2tr6-WhenIPaintMyMasterpiece.flac:4e283876af09f781e4b6f82137513d8c
+Toronto01.12.75d2tr7-ItAin`tMeBabe.flac:2653718d4147035bbc6ffd6324416912
+Toronto01.12.75d2tr8-LonesomeDeathOfHattieCarroll.flac:a4849df40995968b667a8379fcbbcc53
+Toronto01.12.75d2tr9-TonightI`llBeStayingHereWithYou.flac:0de688b244c73a558067f8a9144bc5ff
+Toronto01.12.75d3tr10-EightMilesHigh.flac:b5d199baf07db0624c6dcd37668eef1e
+Toronto01.12.75d3tr11-ChestnutMare.flac:87182cb36452534b30a72f3e71300524
+Toronto01.12.75d3tr12-RaceAmonstTheRuins.flac:f75797a19b84687894c5b4fa40ee30b6
+Toronto01.12.75d3tr13-TheWatchman`sGone.flac:df15b656715bcb266d6beb1189caa6ea
+Toronto01.12.75d3tr14-Sundown.flac:58e280afce4d7d9ee46173f3bbe3e92b
+Toronto01.12.75d3tr1-IDreamedISawSt.Augustine.flac:cf01bdb14a1dd270d84b1c504470b74e
+Toronto01.12.75d3tr2-IShallBeReleased.flac:1d3d1a0118649fe8b94099dab92cce48
+Toronto01.12.75d3tr3-DiamondsAndRust.flac:b0f5f9be70a06c0a35e84bf96dd4e47b
+Toronto01.12.75d3tr4-SwingLowSweetChariot.flac:875b15c48c8a7990190c8bcbfa8386d0
+Toronto01.12.75d3tr5-JoeHill.flac:d2b7fe636b3b54e0c8e5762f8c469d53
+Toronto01.12.75d3tr6-LoveSongToAStranger.flac:983eafcdae3e6fed404068d0280a70ef
+Toronto01.12.75d3tr7-LongBlackVeil.flac:471dc32d32ffb15812f6156339f8c7f7
+Toronto01.12.75d3tr8-PleaseComeToBoston.flac:d2ae52346597b40d3bf631776f4edab1
+Toronto01.12.75d3tr9-TheNightTheyDroveOldDixieDown.flac:d01f9e874116d6d91ee791aa9897f682
+Toronto01.12.75d4tr10-ThisLandIsYourLand.flac:f35a5644014a78a6d7e838283d780a45
+Toronto01.12.75d4tr1-It`sAllOverNow,BabyBlue.flac:783a746dadff29adc9fef8dc6b7eea52
+Toronto01.12.75d4tr2-LoveMinusZero.flac:738ad99d477beb692fe447449fe1b6f6
+Toronto01.12.75d4tr3-SimpleTwistOfFate.flac:ae7dc02e8f0acc5042d509cb69393f09
+Toronto01.12.75d4tr4-OhSister.flac:54c54bb5ab6ac411ef84f9632d6410f9
+Toronto01.12.75d4tr5-Hurricane.flac:3cdc9bbd5eb4e138e3695872cd603a4e
+Toronto01.12.75d4tr6-OneMoreCupOfCoffee.flac:68a079bdf53fd5f9f7d7627369321c26
+Toronto01.12.75d4tr7-Sara.flac:6c6f95e7477492266fd636f3d216de32
+Toronto01.12.75d4tr8-JustLikeAWoman.flac:3066374d4f4172f08d624df9b866049c
+Toronto01.12.75d4tr9-Knockin`OnHeaven`sDoor.flac:96f97d7a6599ca8072b0ed5c3ce076f1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-12-01.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:38.09       49060412 B   ---   --   ---xx   flac  0.4883  Toron     to01.12.75d1tr4-LaissezFaire.flac
+     3:13.45       34151084 B   ---   --   ---xx   flac  0.4907  Toronto 01.12.75 d1tr1 -  Good Love Is Hard To Find.flac
+     5:50.01       61742396 B   ---   --   ---xx   flac  0.4816  Toronto 01.12.75 d1tr10 - Nowhere To Go.flac
+     3:32.07       37413308 B   ---   --   ---xx   flac  0.4916  Toronto 01.12.75 d1tr11 - Mercedes Benz.flac
+     4:05.53       43342700 B   ---   --   ---xx   flac  0.4605  Toronto 01.12.75 d1tr12 - Woman Of Heart And Mind.flac
+     3:56.73       41802140 B   ---   --   ---xx   flac  0.4942  Toronto 01.12.75 d1tr13 - Coyote.flac
+     3:38.65       38608124 B   ---   --   ---xx   flac  0.5445  Toronto 01.12.75 d1tr14 - Edith And The Kingpin.flac
+     4:13.04       44638652 B   ---   --   ---xx   flac  0.4736  Toronto 01.12.75 d1tr15 - Don`t Interrupt The Sorrow.flac
+     3:46.01       39868796 B   ---   --   ---xx   flac  0.4892  Toronto 01.12.75 d1tr2 - Sleazy.flac
+     5:44.61       60825116 B   ---   --   ---xx   flac  0.4889  Toronto 01.12.75 d1tr3 - Hulahoop.flac
+     4:38.09       49060412 B   ---   --   ---xx   flac  0.4883  Toronto 01.12.75 d1tr4 - Laissez Faire.flac
+     4:13.38       44718620 B   ---   --   ---xx   flac  0.4812  Toronto 01.12.75 d1tr5 - Catfish.flac
+     6:22.11       67410716 B   ---   --   ---xx   flac  0.4653  Toronto 01.12.75 d1tr6 - Is There Life On Mars.flac
+     3:47.31       40115756 B   ---   --   ---xx   flac  0.4757  Toronto 01.12.75 d1tr7 - Alabama Dark.flac
+     4:01.47       42622988 B   ---   --   ---xx   flac  0.4820  Toronto 01.12.75 d1tr8 - New Sun Rising.flac
+     3:25.51       36281996 B   ---   --   ---xx   flac  0.4676  Toronto 01.12.75 d1tr9 - Cindy.flac
+     1:41.41       17912876 B   ---   --   ---xx   flac  0.5264  Toronto01.12.75d2tr1-Ramblin`Jack.flac
+     3:05.62       32779868 B   ---   --   ---xx   flac  0.5645  Toronto01.12.75d2tr10-ItTakesALotToLaugh....flac
+     5:10.21       54733436 B   ---   --   ---xx   flac  0.5629  Toronto01.12.75d2tr11-RomanceInDurango.flac
+     5:39.72       59968988 B   ---   --   ---xx   flac  0.5728  Toronto01.12.75d2tr12-Isis.flac
+     2:43.67       28910828 B   ---   --   ---xx   flac  0.5220  Toronto01.12.75d2tr13-TheTimesTheyAreA-Changin`.flac
+     3:47.13       40073420 B   ---   --   ---xx   flac  0.5271  Toronto01.12.75d2tr14-DarkAsADungeon.flac
+     2:36.19       27563132 B   ---   --   ---xx   flac  0.5203  Toronto01.12.75d2tr15-NeverLetMeGo.flac
+     2:51.24       30220892 B   ---   --   ---xx   flac  0.5130  Toronto01.12.75d2tr2-MuleskinnerBlues.flac
+     3:48.58       40355660 B   ---   --   ---xx   flac  0.5114  Toronto01.12.75d2tr3-PrettyBoyFloyd.flac
+     3:41.32       39059708 B   ---   --   ---xx   flac  0.5445  Toronto01.12.75d2tr4-SaltPorkWestViurginia.flac
+     3:48.07       40235708 B   ---   --   ---xx   flac  0.5618  Toronto01.12.75d2tr5-I`mARichAndRamblin`Boy.flac
+     4:37.13       48893420 B   ---   --   ---xx   flac  0.5444  Toronto01.12.75d2tr6-WhenIPaintMyMasterpiece.flac
+     5:03.02       53453948 B   ---   --   ---xx   flac  0.5516  Toronto01.12.75d2tr7-ItAin`tMeBabe.flac
+     5:19.55       56401004 B   ---   --   ---xx   flac  0.5444  Toronto01.12.75d2tr8-LonesomeDeathOfHattieCarroll.flac
+     3:55.65       41606924 B   ---   --   ---xx   flac  0.5473  Toronto01.12.75d2tr9-TonightI`llBeStayingHereWithYou.flac
+     2:46.28       29348300 B   ---   --   ---xx   flac  0.6157  Toronto01.12.75d3tr1-IDreamedISawSt.Augustine.flac
+     4:04.28       43107500 B   ---   --   ---xx   flac  0.6115  Toronto01.12.75d3tr10-EightMilesHigh.flac
+     7:16.18       76952780 B   ---   --   ---xx   flac  0.5747  Toronto01.12.75d3tr11-ChestnutMare.flac
+     3:24.50       36103244 B   ---   --   ---xx   flac  0.5730  Toronto01.12.75d3tr12-RaceAmonstTheRuins.flac
+     3:23.32       35884508 B   ---   --   ---xx   flac  0.5806  Toronto01.12.75d3tr13-TheWatchman`sGone.flac
+     3:32.40       37490924 B   ---   --   ---xx   flac  0.5728  Toronto01.12.75d3tr14-Sundown.flac
+     4:44.05       50109404 B   ---   --   ---xx   flac  0.5951  Toronto01.12.75d3tr2-IShallBeReleased.flac
+     3:40.12       38836268 B   ---   --   ---xx   flac  0.5944  Toronto01.12.75d3tr3-DiamondsAndRust.flac
+     3:10.44       33619532 B   ---   --   ---xx   flac  0.5801  Toronto01.12.75d3tr4-SwingLowSweetChariot.flac
+     2:45.14       29138972 B   ---   --   ---xx   flac  0.5843  Toronto01.12.75d3tr5-JoeHill.flac
+     5:50.12       61768268 B   ---   --   ---xx   flac  0.5570  Toronto01.12.75d3tr6-LoveSongToAStranger.flac
+     1:55.24       20342492 B   ---   --   ---xx   flac  0.5699  Toronto01.12.75d3tr7-LongBlackVeil.flac
+     4:49.54       51106652 B   ---   --   ---xx   flac  0.5874  Toronto01.12.75d3tr8-PleaseComeToBoston.flac
+     4:11.25       44335244 B   ---   --   ---xx   flac  0.6038  Toronto01.12.75d3tr9-TheNightTheyDroveOldDixieDown.flac
+     4:13.14       44662172 B   ---   --   ---xx   flac  0.5090  Toronto01.12.75d4tr1-It`sAllOverNow,BabyBlue.flac
+     3:26.68       36498380 B   ---   --   ---xx   flac  0.5549  Toronto01.12.75d4tr10-ThisLandIsYourLand.flac
+     3:39.70       38796284 B   ---   --   ---xx   flac  0.5171  Toronto01.12.75d4tr2-LoveMinusZero.flac
+     4:06.14       43427372 B   ---   --   ---xx   flac  0.4949  Toronto01.12.75d4tr3-SimpleTwistOfFate.flac
+     4:08.53       43871900 B   ---   --   ---xx   flac  0.5404  Toronto01.12.75d4tr4-OhSister.flac
+     8:11.45       86718284 B   ---   --   ---xx   flac  0.5526  Toronto01.12.75d4tr5-Hurricane.flac
+     3:50.68       40731980 B   ---   --   ---xx   flac  0.5237  Toronto01.12.75d4tr6-OneMoreCupOfCoffee.flac
+     4:36.21       48735836 B   ---   --   ---xx   flac  0.5277  Toronto01.12.75d4tr7-Sara.flac
+     4:24.00       46569644 B   ---   --   ---xx   flac  0.5066  Toronto01.12.75d4tr8-JustLikeAWoman.flac
+     4:12.28       44518700 B   ---   --   ---xx   flac  0.5174  Toronto01.12.75d4tr9-Knockin`OnHeaven`sDoor.flac
+   227:22.24     2406507668 B                            0.5324  (55 files)
+=================== 
+=================== 
+=================== 

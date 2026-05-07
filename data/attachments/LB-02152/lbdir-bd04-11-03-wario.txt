@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-03-wario 
+=================== 
+=================== 
+=================== 
+d417bcc30b7adb6b5354522818989a11  bd04-11-03-wario.txt
+1a9c4e37bc53a502e5bc1ba2cc6448fa  bd041103.md5
+7cfed073ce30751cdaa0f7d815fbe31f  bd041103d1t01-fixed.shn
+4d7f3ee7bd5941bdd4fcd87f97b3cc14  bd041103d1t02-fixed.shn
+b036c93e21ff48c4ad47014a38909b93  bd041103d1t03-fixed.shn
+b48d345b27e6eb1ea907031549fa1b76  bd041103d1t04-fixed.shn
+93ed63d6abc0d1f2f9b9c5d74611ded4  bd041103d1t05-fixed.shn
+6bac2dd310a284c1b91f47b96e8f264e  bd041103d1t06-fixed.shn
+d47ff7a008a2cde36fc87c88c0a1c1e4  bd041103d1t07-fixed.shn
+a6c18a54b59b97fd101ac26d2de8e690  bd041103d1t08-fixed.shn
+237433a7d15b8538657e93184cf57d3e  bd041103d1t09-fixed.shn
+31f00d20f0e4d9501ac3086183f70aaf  bd041103d1t10-fixed.shn
+ce11bae4c82bd5c27a96824648b20fab  bd041103d1t11-fixed.shn
+dabccbd0888b1645deaef424f498775f  bd041103d2t01-fixed.shn
+b6f783ac466b6091596d6be01b692622  bd041103d2t02-fixed.shn
+6f2c821910a6aed73f45e2e9eeaebff6  bd041103d2t03-fixed.shn
+77bc727ab56956a803ad45f719900a61  bd041103d2t04-fixed.shn
+b952fa93acd17a7cccc6ac0db40685df  bd041103d2t05-fixed.shn
+85bf42ae13c71c5eee67de8590ccf616  bd041103d2t06-fixed.shn
+db4c0f0de0f19dda253f366ed56c8ef0  bd041103d2t07-fixed.shn
+ac256204f0f8d5c20978f0551d0ef73e  BobDylan11-3-04WestLafayette.txt
+b4fa45d447fc0b5c87a87653584e671d  BobDylan11-3-04WestLafayetteBack.jpg
+cbdc3bc2d7708807e9079656604e56cc  BobDylan11-3-04WestLafayetteCD1.jpg
+1e102ba4421d546f35c459a553271004  BobDylan11-3-04WestLafayetteCD2.jpg
+ea096b7facff63ac391c704e03162778  BobDylan11-3-04WestLafayetteFront.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-11-03-wario 
+=================== 
+=================== 
+=================== 
+8db4a12da78d7b117e86957a19bce1c1  [shntool]  bd041103d1t01-fixed.wav
+aa2ddeb8eddda96b7bc69e0ef34beb39  [shntool]  bd041103d1t02-fixed.wav
+2f881050a511a2ebba7e00c67781656a  [shntool]  bd041103d1t03-fixed.wav
+127e662fb5f8e57153606f55ba6d5faa  [shntool]  bd041103d1t04-fixed.wav
+76c95f8558c19ca819910f15fc9f03bd  [shntool]  bd041103d1t05-fixed.wav
+cf1ec3ef30b6ee9b637b1cf56f844be7  [shntool]  bd041103d1t06-fixed.wav
+1e2ecfc6de4629a8082763b0d8f95c30  [shntool]  bd041103d1t07-fixed.wav
+b741a1ad442c60bf8aa1abcc0f632b4a  [shntool]  bd041103d1t08-fixed.wav
+28a967e2fedef49121ddb8ea44fa0c4a  [shntool]  bd041103d1t09-fixed.wav
+3457e250632325f0d020e54620eae141  [shntool]  bd041103d1t10-fixed.wav
+533c373dc663c4b755217bf98d74c527  [shntool]  bd041103d1t11-fixed.wav
+f7182c613d6c707d638a5ba51e0260dd  [shntool]  bd041103d2t01-fixed.wav
+d82d59fb723ce7fb51bbf53b83819d34  [shntool]  bd041103d2t02-fixed.wav
+e139e8e1945bcbf72993fbd55a8f833d  [shntool]  bd041103d2t03-fixed.wav
+2915cb97acbba24b97ff3d584e4561d3  [shntool]  bd041103d2t04-fixed.wav
+2b290a5b1bd53532106f7f1f5bd60abb  [shntool]  bd041103d2t05-fixed.wav
+b034a590ab823d8c2a5d43c04385ebcc  [shntool]  bd041103d2t06-fixed.wav
+a092b9a63135c3dc086c9c390df9a484  [shntool]  bd041103d2t07-fixed.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-03-wario 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.25       10819244 B   ---   --   -----    wav  1.0000  bd041103d1t01-fixed.wav
+     4:29.25       47510444 B   ---   --   -----    wav  1.0000  bd041103d1t02-fixed.wav
+     5:50.05       61751804 B   ---   --   -----    wav  1.0000  bd041103d1t03-fixed.wav
+     7:39.69       81129932 B   ---   --   -----    wav  1.0000  bd041103d1t04-fixed.wav
+     5:21.19       56669132 B   ---   --   -----    wav  1.0000  bd041103d1t05-fixed.wav
+     8:59.39       95171372 B   ---   --   -----    wav  1.0000  bd041103d1t06-fixed.wav
+     7:31.06       79570556 B   ---   --   -----    wav  1.0000  bd041103d1t07-fixed.wav
+     7:03.30       74687804 B   ---   --   -----    wav  1.0000  bd041103d1t08-fixed.wav
+     7:39.04       80977052 B   ---   --   -----    wav  1.0000  bd041103d1t09-fixed.wav
+     6:15.35       66232364 B   ---   --   -----    wav  1.0000  bd041103d1t10-fixed.wav
+     7:20.39       77707772 B   ---   --   -----    wav  1.0000  bd041103d1t11-fixed.wav
+     8:50.29       93560252 B   ---   --   -----    wav  1.0000  bd041103d2t01-fixed.wav
+     7:10.18       75894380 B   ---   --   -----    wav  1.0000  bd041103d2t02-fixed.wav
+     7:00.41       74184476 B   ---   --   -----    wav  1.0000  bd041103d2t03-fixed.wav
+     9:57.33      105388460 B   ---   --   -----    wav  1.0000  bd041103d2t04-fixed.wav
+     6:44.64       71416172 B   ---   --   -----    wav  1.0000  bd041103d2t05-fixed.wav
+     0:45.48        8050940 B   ---   --   -----    wav  1.0000  bd041103d2t06-fixed.wav
+     5:34.30       58988204 B   ---   --   -----    wav  1.0000  bd041103d2t07-fixed.wav
+   115:14.34     1219710360 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

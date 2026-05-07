@@ -1,0 +1,62 @@
+Bob Dylan
+Sydney Entertainment Centre
+Sydney, Australia
+August 16, 2007
+ 
+Disc 1:
+01. introduction [00:42]
+02. Leopard-Skin Pill-Box Hat [05:18]  
+03. Don't Think Twice, It's All Right [05:59]  
+04. I'll Be Your Baby Tonight [05:39]  
+05. The Levee's Gonna Break [06:48]  
+06. When The Deal Goes Down [06:11]
+07. Cry A While [06:07]  
+08. Stuck Inside Of Mobile With The Memphis Blues Again [08:41]  
+09. Visions Of Johanna [07:54]  
+10. Honest With Me [06:38]  
+11. Spirit On The Water [06:49]  
+12. Highway 61 Revisited [05:41]
+Total time: [72:36]
+
+Disc 2:
+01. Ain't Talkin' [08:11] 
+02. Summer Days [06:11] 
+03. Blowin' In The Wind [09:04]  
+    (encore) 
+04. Thunder On The Mountain [06:33]  
+06. band introduction [00:50]
+07. All Along The Watchtower [06:42]  
+Total time: [37:34] 
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+11th row center
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-08-16d1t01.flac:18ab8e4ad8b8db912d6b3d61f472420a
+bd2007-08-16d1t02.flac:319dc8c206de6f65849d776842267992
+bd2007-08-16d1t03.flac:ab546293e1e031f85fd22e4e16a684df
+bd2007-08-16d1t04.flac:79324a3b6f61c7fb648b0553e2cbad9f
+bd2007-08-16d1t05.flac:cc26d52ea493fe8fe95187e0bfb4895c
+bd2007-08-16d1t06.flac:5c8d00d867eead1e058c49ad11556c5b
+bd2007-08-16d1t07.flac:e563e64bc1c4b8f2cb8a27309a3828f9
+bd2007-08-16d1t08.flac:3ee8f7c3e14f105afb2d8815dd7231fa
+bd2007-08-16d1t09.flac:8484cd92081555f95444d5633f0b489e
+bd2007-08-16d1t10.flac:64556639d358d2b0961aae3df959a121
+bd2007-08-16d1t11.flac:8b7d84fe7df1736dec4d5d3f246a4f3c
+bd2007-08-16d1t12.flac:8ef810166545d03469f608dfe027e9c5
+bd2007-08-16d2t01.flac:501892ed63b6e4c1a1c392cdabf7d847
+bd2007-08-16d2t02.flac:39b0a588b5fddf04ec074cdfef299499
+bd2007-08-16d2t03.flac:f049e8f1f5d36f8093a123032eb34a4e
+bd2007-08-16d2t04.flac:b421a1eb4dc08fc3d2a4103aca014f96
+bd2007-08-16d2t05.flac:33a29a836264c01bf8a90cab964fb512
+bd2007-08-16d2t06.flac:04f2aca04b33bb08daa8b5d777403c0b

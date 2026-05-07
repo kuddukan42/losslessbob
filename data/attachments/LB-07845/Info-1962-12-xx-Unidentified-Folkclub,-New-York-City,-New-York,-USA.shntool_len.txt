@@ -1,0 +1,7 @@
+shntool 3.0.4
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:12.26       12761996 B   ---   --   ---xx   flac  0.4106  01 Ramblin' down thru the world.flac
+     2:16.24       24046892 B   ---   --   ---xx   flac  0.4160  02 Freight train blues.flac
+     2:32.16       26850476 B   ---   --   ---xx   flac  0.4208  03 Walls of red wing.flac
+     6:00.66       63659364 B                            0.4170  (3 files)

@@ -1,0 +1,62 @@
+Bob Dylan
+Forum
+Copenhagen, Denmark
+April 2, 2007
+
+source: soomlos
+fob, center, ga floor
+km140 > v3 > mt24/96 (24/48)
+audacity > r8brain > cd wave > flac
+
+Disc 1:
+01. introduction [00:52]
+02. Tweedle Dee & Tweedle Dum [05:18]
+03. Man In The Long Black Coat [04:44]
+04. Watching The River Flow [05:53]
+05. It's Alright, Ma (I'm Only Bleeding) [07:13]
+06. When The Deal Goes Down [05:24]
+07. Highway 61 Revisited [06:28]
+08. Visions Of Johanna [09:15]
+09. Rollin' And Tumblin' [05:49]
+10. Desolation Row [11:26]
+11. Spirit On The Water [07:19]
+12. Stuck Inside Of Mobile with The Memphis Blues Again [08:11]
+Total Time: [78:00]
+
+Disc 2: 
+01. Nettie Moore [07:39]
+02. Summer Days [06:24]
+03. Like A Rolling Stone [11:12]
+    (encore) 
+04. Thunder On The Mountain [06:14]
+05. band introductions [00:43]
+06. All Along The Watchtower [05:31]
+Total time: [37:46]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar, slide guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - electric & stand-up bass
+
+Flac Fingerprint
+bd2007-04-02d1t01.flac:1a241acd71d7de4b613e51552bf84cf1
+bd2007-04-02d1t02.flac:6efe6466614ae4124ea774cc3d35231a
+bd2007-04-02d1t03.flac:475350b5bbedf80c0f55212dd1886af0
+bd2007-04-02d1t04.flac:0a96c673971e4a3e9f50c45a524c858f
+bd2007-04-02d1t05.flac:772371160e09c8604617d6b83d84337d
+bd2007-04-02d1t06.flac:80731e23b6168e753140fd496a0f1408
+bd2007-04-02d1t07.flac:66b6b0019d2a9f22a0db70077719c8f2
+bd2007-04-02d1t08.flac:45cc95f47597fdd2a288be8f31d97356
+bd2007-04-02d1t09.flac:24ffa0d40ecc1fc9d3e33d4259eb932e
+bd2007-04-02d1t10.flac:ac420893bb7a8969b8beea0109ac6322
+bd2007-04-02d1t11.flac:a6e156fc2c02c80100298a56bce1319f
+bd2007-04-02d1t12.flac:efe596f8604d828e8085dcd742f84d0b
+bd2007-04-02d2t01.flac:b6f9f505dd1e033bbfa65d8fa699c36f
+bd2007-04-02d2t02.flac:e0f7690386375b8a6e8e3f04a335e29e
+bd2007-04-02d2t03.flac:0efe42dbc1a561d8eadb5400cec29185
+bd2007-04-02d2t04.flac:b1f21d7d6436a8cdd8f8e93fa49be5de
+bd2007-04-02d2t05.flac:310c2116545fbb83affa23bf6cf0058d
+bd2007-04-02d2t06.flac:ba36ab357f072833a64c92a101a50bba

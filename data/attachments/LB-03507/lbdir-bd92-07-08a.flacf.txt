@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-07-08a.flacf 
+=================== 
+=================== 
+=================== 
+6a8b432264411e32eafc34ada22725c6  bd1992-07-08.aud.flacf.ffp
+32bd326f14c56e2de751c9860b76ebdb  bd1992-07-08.aud.flacf.md5
+93f24fd9c1d52280fad80a265da1663d  bd1992-07-08.aud.flacf.txt
+ccfc794858e34d81afb0c74f0f9797cd  bd1992-07-08d1.LOG
+cb7a07b3f48c423562c8af023594b389  bd1992-07-08d1t01.flac
+be6fbcc6a094d1f791a9e35976e4a550  bd1992-07-08d1t02.flac
+c5e3d95ab994059182643eceb95c0952  bd1992-07-08d1t03.flac
+abeea8b44ef8dd680437c3cb420f2c25  bd1992-07-08d1t04.flac
+7fae6c39d860a1af3e510fd6bf456b4f  bd1992-07-08d1t05.flac
+a46106342cb264855de282ec243651a9  bd1992-07-08d1t06.flac
+bd551eae9fae728d74a7f2d77e22cac9  bd1992-07-08d1t07.flac
+b2697db4f4654afa372ce740785e5a96  bd1992-07-08d1t08.flac
+862b95bdcc54ef5f2ef860b9a4d36cdf  bd1992-07-08d1t09.flac
+0d3b9c120f26a33e6bada4aa7de51ab8  bd1992-07-08d2.LOG
+bfa4f1cfd495287b11b8f322603db44b  bd1992-07-08d2t01.flac
+fc6b620d137d9984698ba6a0d525a389  bd1992-07-08d2t02.flac
+96db07e2d266b0b49d7c8f5ff107d6da  bd1992-07-08d2t03.flac
+64b6f366748688166b750029c2dcdb03  bd1992-07-08d2t04.flac
+9ec04fcaa3bfe0c8e306301212ef9e69  bd1992-07-08d2t05.flac
+aad3a17d39ac95ecc142c45dc4826341  bd1992-07-08d2t06.flac
+1100a3b3669cd60260862fd640e3eb17  bd1992-07-08d2t07.flac
+da04527e570a89707d82e4e21d3698bf  bd1992-07-08d2t08.flac
+729113e4f317d18027ef2d1202ff6753  bd1992-07-08d2t09.flac
+342d16ecd8fda4150364dcc00a45debf  bd92-07-08a-LB-3507.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-07-08a.flacf 
+=================== 
+=================== 
+=================== 
+bd1992-07-08d1t01.flac:89c214f2456ded1e8d8bc05a208fe2e1
+bd1992-07-08d1t02.flac:8d804f8d4579d22bf7710aa0cc8cf2c2
+bd1992-07-08d1t03.flac:72335d9a4968d15ef954f7eca8e71701
+bd1992-07-08d1t04.flac:e58342698af35fc97a52b409fa9083d2
+bd1992-07-08d1t05.flac:370ccfedde967596972eaa5d199c5950
+bd1992-07-08d1t06.flac:57e9777106f44af880d3c876c21a13aa
+bd1992-07-08d1t07.flac:993a7591a94cd9cfa8c17b65dad67c93
+bd1992-07-08d1t08.flac:acb0b68345a13a1f1698f665566be347
+bd1992-07-08d1t09.flac:84ba07a656d70c91a9eda43fd2b98410
+bd1992-07-08d2t01.flac:b65b950938838499c266ee771002ff63
+bd1992-07-08d2t02.flac:cee3158e6f70e2806ff94bcae67b613d
+bd1992-07-08d2t03.flac:67c3c0da132ce223bd3abbdad672843f
+bd1992-07-08d2t04.flac:3a0536edf757ad9842e2b542b08b3628
+bd1992-07-08d2t05.flac:0daf7adc78be717da06edf422815db2e
+bd1992-07-08d2t06.flac:96ccbf5c6b458d7c14f5320e8fe03fdd
+bd1992-07-08d2t07.flac:066885f878c4f190779592ace06707d1
+bd1992-07-08d2t08.flac:970a24b571e3cdbe8fd8249d5c252e2c
+bd1992-07-08d2t09.flac:b95c7317902e471b4effd3ebce413bb4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-07-08a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.42       45962828 B   ---   --   ---xx   flac  0.4835  bd1992-07-08d1t01.flac
+     6:01.25       63739244 B   ---   --   ---xx   flac  0.5010  bd1992-07-08d1t02.flac
+     7:02.00       74440844 B   ---   --   ---xx   flac  0.5226  bd1992-07-08d1t03.flac
+     6:00.48       63616940 B   ---   --   ---xx   flac  0.4895  bd1992-07-08d1t04.flac
+     8:18.21       87896636 B   ---   --   ---xx   flac  0.5441  bd1992-07-08d1t05.flac
+     6:50.04       72333452 B   ---   --   ---xx   flac  0.5167  bd1992-07-08d1t06.flac
+     7:22.03       77975900 B   ---   --   ---xx   flac  0.5211  bd1992-07-08d1t07.flac
+     5:25.65       57482924 B   ---   --   ---xx   flac  0.4213  bd1992-07-08d1t08.flac
+     3:55.25       41512844 B   ---   --   ---xx   flac  0.4031  bd1992-07-08d1t09.flac
+     7:17.73       77258540 B   ---   --   ---xx   flac  0.4687  bd1992-07-08d2t01.flac
+    11:06.58      117618860 B   ---   --   ---xx   flac  0.4739  bd1992-07-08d2t02.flac
+     5:17.61       56062316 B   ---   --   ---xx   flac  0.5186  bd1992-07-08d2t03.flac
+     7:08.64       75649772 B   ---   --   ---xx   flac  0.5102  bd1992-07-08d2t04.flac
+     5:36.64       59420972 B   ---   --   ---xx   flac  0.4679  bd1992-07-08d2t05.flac
+     7:04.16       74831276 B   ---   --   ---xx   flac  0.5387  bd1992-07-08d2t06.flac
+     8:28.54       89738252 B   ---   --   ---xx   flac  0.4524  bd1992-07-08d2t07.flac
+     4:17.15       45370124 B   ---   --   ---xx   flac  0.5315  bd1992-07-08d2t08.flac
+     5:16.24       55798892 B   ---   --   ---xx   flac  0.3942  bd1992-07-08d2t09.flac
+   116:50.62     1236710616 B                            0.4896  (18 files)
+=================== 
+=================== 
+=================== 

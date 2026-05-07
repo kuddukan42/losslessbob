@@ -1,0 +1,116 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Kisstadion
+Budapest, Hungary
+12 June 1991
+ 
+ 
+1.    New Morning
+2.    Lay Lady Lay
+3.    All Along The Watchtower
+4.    Gotta Serve Somebody
+5.    Shelter From The Storm
+6.    You're A Big Girl Now
+ 
+7.    When First Unto This Country (trad.)
+8.    Don't Think Twice, It's All Right
+9.    Mr. Tambourine Man
+10.    It Ain't Me, Babe
+ 
+11.    Knockin' On Heaven's Door
+12.    Rainy Day Women # 12 & 35
+13.    Just Like A Woman
+14.    Highway 61 Revisited
+15.    Shooting Star
+16.    I Shall Be Released
+17.    Like A Rolling Stone
+ 
+
+ 
+18.    Acoustic Jam
+19.    One Too Many Mornings
+20.    Blowin' In The Wind
+21.    Maggie's Farm
+ 
+ 
+Concert # 307 of The Never-Ending Tour.  Concert # 6 of the 1991 Summer Tour Of Europe. 1991 concert # 44.
+ 
+Concert # 23 with the 5th Never-Ending Tour band: Bob Dylan (vocal & guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+ 
+7  Bob Dylan (vocal, harmonica & guitar), John Jackson (guitar).
+ 
+8-10, 18, 19  acoustic with the band.
+ 
+2, 5, 8-11, 18  Bob Dylan harmonica.
+ 
+16  Bob Dylan electric piano.
+ 
+19  fragment only
+ 
+Note. Second performance of First Came Unto This Country. First time was in Norfolk, Virginia, 7 November 1989, when it was done "electric".
+ 
+BobTalk:
+ 
+Thank you everybody! That was my foreign language song. It's my only foreign language song. (after When First Unto This Country).
+ 
+It's one of my anti-drug songs comin' up. It's one of my first anti-drug songs. (before Rainy Day Women).
+ 
+Thank you everybody! Give my band a hand! Just one, ... that hand. You only got two hands.  ???? Two hands and two feet. And one head! (after Like A Rolling Stone).
+ 
+Thank you! This is one of my songs about a ... You got farms over here? It's about a farm over there. (before Maggie's Farm).
+ 
+All right! Thank you! If you ever come across the sea to the States .... you can come and see me! (after Maggie's Farm).
+ 
+7 new songs (35%) compared to previous concert. 2 new songs for this tour.
+ 
+Stereo audience recording, 95 minutes.
+ 
+Session info updated 1 July 1992.
+
+www.bjorner.com/
+
+===================
+===================
+===================
+=== checksum.md5
+===================
+===================
+===================
+c8596876ed8ab421b9b5b46265a32bb0 *03 All Along The Watchtower.shn
+6241e0db5517bae1b7a5cb1b61db8f5c *01 new morning.shn
+f207abfa377ea4ef9a66928fcda3f57f *07 You_re A Big Girl Now.shn
+ec8894e8743d132243bd1b5188fce152 *11 Knockin_ On Heaven_s#FB8.shn
+eb0fd2f9d8f63e67cba8c914429470b7 *10 It Ain_t Me_ Babe (a#FB7.shn
+50ae0eeb4cfa303eb41a8006ad1ba22c *07 When First Unto This#FB3.shn
+cbc420c06d5aa0d6eedd5dea11b68330 *02 Lay Lady Lay.shn
+3ccd0c1145828fae6caf762c21429d68 *05 Shelter From The Storm.shn
+21431591c24db14b5a11a5bcbb36def6 *04 Gotta Serve Somebody.shn
+48710b446a5f0290202cba5b885664f4 *09 Mr. Tambourine Man (#FB6.shn
+6541382916565418c69325e4a22f259d *08 Don_t Think Twice_ I#FB5.shn
+
+===================
+===================
+===================
+=== checksum.md5
+===================
+===================
+===================
+5bd5dd96b27e48f367861e40ca025b76 *02 Just Like A Woman.shn
+1f52189cd855872dafe346f375abe0b3 *05 I Shall Be Released.shn
+76a1a9243fd2a8441ebd5cb336d40c3a *06 Like A Rolling Stone.shn
+be70ee7f11d16732b4994b95566c4d05 *04 Shooting Star.shn
+9bea44fa8dd926bbe4c523e78bb68295 *03 Highway 61 Revisited.shn
+a4971827eb74dbcf16e31b36562d1303 *08 One Too Many Morning#FC1.shn
+605df40d4dee108ee35a62e2af90b417 *07 Acoustic Jam (acoustic).shn
+dee601c9d71c2bc35578d4c449fa2967 *09 Blowin_ In The Wind #FC2.shn
+306c67db9d6a2909199cf8bb259840b5 *10 Maggie_s Farm.shn
+077eff49bdabb5fdc54ddefbc29e86e4 *01 Rainy Day Women _ 12#FBA.shn
+
+===================
+===================
+===================

@@ -1,0 +1,22 @@
+; Using hkSFV on 02.05.2004 at 02:39:19
+; http://www.big-o-software.com
+;
+;/----
+;     52522556 02:31.28 2004-02-05 2-01-Make You Feel My Love.wav
+;      6715004 02:31.40 2004-02-05 2-02-just got out of rehab.wav
+;     93616700 02:33.10 2004-02-05 2-03-'Til I Fell In Love With You.wav
+;     57000764 02:34.02 2004-02-05 2-04-Love Sick.wav
+;     57838076 02:34.54 2004-02-05 2-05-Rainy Day Women.wav
+;     52809500 02:35.38 2004-02-05 2-06-Blowin' In The Wind.wav
+;     95865212 02:36.52 2004-02-05 2-07-Like A Rolling Stone.wav
+;     71482028 02:37.46 2004-02-05 2-08-Forever Young.wav
+;\----
+;
+8102e72ec4544c3b5a47f33076eb4988 *2-01-Make You Feel My Love.wav
+b973c7d162862b64551f44e6180fb89a *2-02-just got out of rehab.wav
+ef993131a7260f334f4fe7bb8ea1be75 *2-03-'Til I Fell In Love With You.wav
+e144da80c42e8370cbf3a1835e735f48 *2-04-Love Sick.wav
+4d6ea29ac8d8b327fc2a8411fca5d885 *2-05-Rainy Day Women.wav
+b3ab5be9b005fdc3e983863b6cca3bb5 *2-06-Blowin' In The Wind.wav
+2d0663a500f00755bf72a832d56b7003 *2-07-Like A Rolling Stone.wav
+2f15fdaad60e64799cb1891293c93dab *2-08-Forever Young.wav

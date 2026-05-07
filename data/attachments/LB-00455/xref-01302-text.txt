@@ -1,0 +1,164 @@
+===================
+===================
+===================
+=== bd86-02-10-Sydney.master.md5
+===================
+===================
+===================
+84181100787a26123161ae7793da6cf2 *bd86-02-10.txt
+3c9a1e7d58bb25775cadb3917462946a *d1\noname.md5
+62d5669cfb327e2894d9c2fe9e333ad8 *d1\Track01.shn
+e23f641d6e625ccee3d92f52a407953e *d1\Track02.shn
+83124b42e8407f8c9cea2316289932b4 *d1\Track03.shn
+8f5faa2f0c75389c29db42f28cdcd8ae *d1\Track04.shn
+ec0eee72c456424ae8630057d98aad47 *d1\Track05.shn
+916e56b4cb8a2c31f04b26b3cf3561f9 *d1\Track06.shn
+e5aace5324cd919694b9a52bdf2e3932 *d1\Track07.shn
+105cb22223d809c75240feb19aab5a94 *d1\Track08.shn
+bba5f73e07e3506c1ec892cd1af48621 *d1\Track09.shn
+e1244432ffdd1210dc3a34d0b34edbe7 *d1\Track10.shn
+f65b9e01673fd0913ea3a9d8a9dab9cd *d1\Track11.shn
+d8de8a7b31db413869d8e974ab92a104 *d1\Track12.shn
+0b1e00f6345d59a437931c698f760101 *d1\Track13.shn
+724477122c32c7ce7c245a332f739882 *d2\noname.md5
+1cc0f0a030e7da15e6736b6b0f81a2be *d2\Track01.shn
+39fd14d197ea3130ef0ba4028bca8684 *d2\Track02.shn
+3370e81b7a8f56ff29ca3a68c6030cee *d2\Track03.shn
+db319a01e860daebaf6d7f19b59b931a *d2\Track04.shn
+580df2336807260adb55400fd1b6c76e *d2\Track05.shn
+5fa344ed761b8a7ec019a217666601f8 *d2\Track06.shn
+26bbeb106b302ee88ae7e4ba5996da84 *d2\Track07.shn
+55a2c29c6fa81cd95e2797f652c24599 *d2\Track08.shn
+040aab081ce4041ce4573f15dface09c *d2\Track09.shn
+e7c6e08b992749f83e4153486b7a7cf3 *d2\Track10.shn
+073fd1db1d000d1f8f6461e8446dcfad *d3\noname.md5
+6c83b045877bb0ab631c40852fe1288b *d3\Track01.shn
+d9361f498652cb115392304ed94fd1cc *d3\Track02.shn
+a67822266d02d9c2b5ab5ac02887547a *d3\Track03.shn
+772bc91e1e9ded1ecd5881a44eb3e918 *d3\Track04.shn
+5bdf195609c23b65366f37f2f169fb88 *d3\Track05.shn
+bd45dabb1288c30f0df6ba5a0e8ab181 *d3\Track06.shn
+aa73efcdb208677e65398076890a16a5 *d3\Track07.shn
+f43f68d74648f1fd4f5bdfded3c124f0 *d3\Track08.shn
+f88f593e3aa7d3148ae3e4933276a7e3 *d3\Track09.shn
+===================
+===================
+===================
+=== bd86-02-10.txt
+===================
+===================
+===================
+Bob Dylan, 2/10/86, Sydney, Austrailia, 3CDR
+
+(62min+53min+53min), from aud master, average to good sound, has extended talking introductions in Ballad of a Thin Man & In the Garden; (note: same as from shn upload phil 10/01 but different extraction)
+
+CD1
+1 Instrumental (Inst.) 
+2 Positively 4th Street 
+3 Clean-Cut Kid 
+4 Shake ( ? ) 
+5 I'll Remember You 
+6 Trust Yourself 
+7 That Lucky Old Sun (Haven Gillespie/Beasley Smith) 
+8 Masters Of War 
+9 Straight Into Darkness (Petty) 
+10 American Girl (Petty) 
+11 It's Alright, Ma (I'm Only Bleeding) (Solo) 
+12 The Times They Are A-Changin' (Solo) 
+13 It Ain't Me, Babe (Solo) 
+
+CD2
+1 I Forgot More Than You'll Ever Know (Cecil A Null) 
+2 Just Like A Woman 
+3 I'm Movin' On (Hank Snow) 
+4 Lenny Bruce 
+5 When The Night Comes Falling From The Sky 
+6 Lonesome Town (Baker Knight) 
+7 Seeing The Real You At Last 
+8 Ballad Of A Thin Man 
+9 So You Wanna Be A Rock N Roll Star ? (Petty) 
+10  Refugee (Petty) 
+
+CD3
+1 Rainy Day Women Nos. 12 & 35 (cut - missing end)
+2 Shot Of Love 
+3 Across The Borderline (Cooder/Hiatt/Dickinson) 
+4 I And I 
+5 Like A Rolling Stone 
+6 In The Garden 
+7 Blowin' In The Wind 
+8 Uranium Rock (Warren Smith) 
+9 Knockin' On Heaven's Door 
+
+
+Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers:
+Tom Petty (guitar), Mike Campbell (guitar), Benmont Tench (keyboards), Howie Epstein (bass), Stan Lynch (drums)and The Queens Of Rhythm: Debra Byrd, Queen Esther Marrow, Madelyn Quebec, Elisecia Wright (backing vocals).
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+62d5669cfb327e2894d9c2fe9e333ad8 *Track01.shn
+e23f641d6e625ccee3d92f52a407953e *Track02.shn
+83124b42e8407f8c9cea2316289932b4 *Track03.shn
+8f5faa2f0c75389c29db42f28cdcd8ae *Track04.shn
+ec0eee72c456424ae8630057d98aad47 *Track05.shn
+916e56b4cb8a2c31f04b26b3cf3561f9 *Track06.shn
+e5aace5324cd919694b9a52bdf2e3932 *Track07.shn
+105cb22223d809c75240feb19aab5a94 *Track08.shn
+bba5f73e07e3506c1ec892cd1af48621 *Track09.shn
+e1244432ffdd1210dc3a34d0b34edbe7 *Track10.shn
+f65b9e01673fd0913ea3a9d8a9dab9cd *Track11.shn
+d8de8a7b31db413869d8e974ab92a104 *Track12.shn
+0b1e00f6345d59a437931c698f760101 *Track13.shn
+62d5669cfb327e2894d9c2fe9e333ad8 *Track01.shn
+e23f641d6e625ccee3d92f52a407953e *Track02.shn
+83124b42e8407f8c9cea2316289932b4 *Track03.shn
+8f5faa2f0c75389c29db42f28cdcd8ae *Track04.shn
+ec0eee72c456424ae8630057d98aad47 *Track05.shn
+916e56b4cb8a2c31f04b26b3cf3561f9 *Track06.shn
+e5aace5324cd919694b9a52bdf2e3932 *Track07.shn
+105cb22223d809c75240feb19aab5a94 *Track08.shn
+bba5f73e07e3506c1ec892cd1af48621 *Track09.shn
+e1244432ffdd1210dc3a34d0b34edbe7 *Track10.shn
+f65b9e01673fd0913ea3a9d8a9dab9cd *Track11.shn
+d8de8a7b31db413869d8e974ab92a104 *Track12.shn
+0b1e00f6345d59a437931c698f760101 *Track13.shn
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+1cc0f0a030e7da15e6736b6b0f81a2be *Track01.shn
+39fd14d197ea3130ef0ba4028bca8684 *Track02.shn
+3370e81b7a8f56ff29ca3a68c6030cee *Track03.shn
+db319a01e860daebaf6d7f19b59b931a *Track04.shn
+580df2336807260adb55400fd1b6c76e *Track05.shn
+5fa344ed761b8a7ec019a217666601f8 *Track06.shn
+26bbeb106b302ee88ae7e4ba5996da84 *Track07.shn
+55a2c29c6fa81cd95e2797f652c24599 *Track08.shn
+040aab081ce4041ce4573f15dface09c *Track09.shn
+e7c6e08b992749f83e4153486b7a7cf3 *Track10.shn
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+6c83b045877bb0ab631c40852fe1288b *Track01.shn
+d9361f498652cb115392304ed94fd1cc *Track02.shn
+a67822266d02d9c2b5ab5ac02887547a *Track03.shn
+772bc91e1e9ded1ecd5881a44eb3e918 *Track04.shn
+5bdf195609c23b65366f37f2f169fb88 *Track05.shn
+bd45dabb1288c30f0df6ba5a0e8ab181 *Track06.shn
+aa73efcdb208677e65398076890a16a5 *Track07.shn
+f43f68d74648f1fd4f5bdfded3c124f0 *Track08.shn
+f88f593e3aa7d3148ae3e4933276a7e3 *Track09.shn
+===================
+===================
+===================

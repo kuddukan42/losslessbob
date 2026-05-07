@@ -1,0 +1,135 @@
+===================
+===================
+===================
+=== IAR Filter - Bob Dylan - Paris Second, Apr. 30, 2002.txt
+===================
+===================
+===================
+Bob Dylan: 
+Still On The Road  2002 Europe Spring Tour
+
+Znith, Paris, France
+30 April 2002
+
+Disc 1
+
+1. I Am The Man, Thomas (Ralph Stanley/Larry Sparks)
+2. I Want You
+3. Desolation Row
+4. It Ain't Me, Babe
+5. Highway 61 Revisited
+6. Simple Twist Of Fate
+7. Lonesome Day Blues
+8. Floater (Too Much To Ask)
+9. Fourth Time Around
+10. Visions Of Johanna
+11. Don't Think Twice, It's All Right
+
+Disc 2
+
+12. Summer Days
+13. Not Dark Yet
+14. Drifter's Escape
+15. Leopard-Skin Pill-Box Hat
+
+16. Things Have Changed
+17. Like A Rolling Stone
+18. Knockin' On Heaven's Door
+19. Honest With Me
+20. Blowin' In The Wind
+21. All Along The Watchtower
+
+
+Concert # 1421 of The Never-Ending Tour. 
+Concert # 20 of the 2002 Europe Spring Tour. 
+2002 concert # 38.
+Concert # 7 with the 14th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & guitar), 
+Charlie Sexton (guitar),
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), Jim
+Keltner (drums & percussion).
+
+14, 9-11, 18, 20 acoustic with the band.
+4, 6, 11, 14, 20 Bob Dylan (harmonica).
+15 new songs (71%) compared to previous concert. No new songs for this tour.
+Session info updated 13 May 2002.
+===================
+===================
+===================
+=== IAR Filter - Paris Second Night, France, April 30, 2002.md5
+===================
+===================
+===================
+90baef376348fdbefd7446f0abd3f200 *CD1\01 Intro.flac
+1db217c6293b1853947c9002e0a91216 *CD1\02 I Am The Man, Thomas.flac
+765f87eec2f1ff16c92164d6ac86855e *CD1\03 I Want You.flac
+df575588d0e4c8e370379244064ea2a3 *CD1\04 Desolation Row.flac
+00e7cd0d560fccf0a27b4385f0eaf4f1 *CD1\05 It Ain't Me, Babe.flac
+3d60e3e0869fe8d2f3bc2367361af8f9 *CD1\06 Highway 61 Revisited.flac
+547b763ab832e07184a22b4037f769eb *CD1\07 Simple Twist Of Fate.flac
+419fdfb797f1a6cc4c5b31c37d942156 *CD1\08 Lonesome Day Blues.flac
+21a0e281d3e2e5093483b44785056f07 *CD1\09 Floater (Too Much To Ask).flac
+a45609608299eb620e4fa57e63643e40 *CD1\10 Fourth Time Around.flac
+58bc29b9450f0c9156e8cdd4866d3e19 *CD1\11 Visions Of Johanna.flac
+9b3e2fcc06758606a6e37ab7fd6f69c4 *CD1\12 Don't Think Twice, It's All Right.flac
+ee1ecb7bcd43957fca753a07c6801d0f *CD1\13 Tail.flac
+117212f02d0c504dccecdb9b46ebd680 *CD1\bd 2002-04-30 CD1 SHN.md5
+3f19f102fcc91b0f6730bfda89955d9d *CD1\Paris Second 2002, Paris, France, April 30, 2002, CD1, CC-629 (Imroved Air Filter).log
+033b992eb337ff2a675de3d9b9f1a847 *CD2\01 Summer Days.flac
+5253cd6d385db436a384750965e42c02 *CD2\02 Not Dark Yet.flac
+c3a71c17aa3e8615c836c14d8f6aeb20 *CD2\03 Drifter's Escape.flac
+20b442c3c37efef2450514ca766584cd *CD2\04 Leopard-Skin Pill-Box Hat.flac
+9da3e3a70be60d6b1907ec93c86318cd *CD2\05 Things Have Changed.flac
+67964d59215999aee4f9b40f43a1635d *CD2\06 Like A Rolling Stone.flac
+b19a877af7b102f22a1408a61e3c61b9 *CD2\07 Knockin' On Heaven's Door.flac
+957db8998be1905f1f2ecfe9f3e60225 *CD2\08 Honest With Me.flac
+83e5a405317665b4f7e4d5d61ba46b51 *CD2\09 Blowin' In The Wind.flac
+a9e102fe5d0d1a6b97d2228a08f49d56 *CD2\10 All Along The Watchtower.flac
+bb9fda46f1078169ef60a5c97338ad49 *CD2\11 Outro.flac
+faa572bae33f2d5caffc2bc1e191492e *CD2\bd 2002-04-30 CD2 SHN.md5
+bf70455e44f8ba8243c8dcdf084feef3 *CD2\Paris Second 2002, Paris, France, April 30, 2002, CD2, CC-630 (Improved Air Filter).log
+dbca1dc0651510ea990f1df9433bd702 *IAR Filter - Bob Dylan - Paris Second, Apr. 30, 2002.txt
+fc764ffd57de12570adf8c61456c796f *IAR Uploads.xls
+===================
+===================
+===================
+=== bd 2002-04-30 CD1 SHN.md5
+===================
+===================
+===================
+60edc08eb4d5379a5a8db512e0d3414f *01 Intro.shn
+9127da079fdacc3dd5ec4410f5878de1 *02 I Am The Man, Thomas.shn
+5b5a6f2fcaeedfd365dcf86d38e2b5a6 *03 I Want You.shn
+3922e12ea5ef1104eb121b200ccddb53 *04 Desolation Row.shn
+81ef01e2c4d6257a52e0ab39c0dc6c90 *05 It Ain't Me, Babe.shn
+83fad9d9084fdd90d79c331b32b063e2 *06 Highway 61 Revisited.shn
+df4bbf251ff1ebe9db4cfa89ec763e67 *07 Simple Twist Of Fate.shn
+1e5cdd8ec3bad520bee9c329229c6c6e *08 Lonesome Day Blues.shn
+e84062782e876c779e8c8bb405133db0 *09 Floater (Too Much To Ask).shn
+46381f9a63a2c855d2b6d113ee9de926 *10 Fourth Time Around.shn
+5251c7d6f6f545cdac71e832082f438e *11 Visions Of Johanna.shn
+d0b14cf0e61ce437e423d89d7795710d *12 Don't Think Twice, It's All Right.shn
+55f0f1cdbd7be2d6fb64a2b8bad63e49 *13 Tail.shn
+===================
+===================
+===================
+=== bd 2002-04-30 CD2 SHN.md5
+===================
+===================
+===================
+e01e0769774ea82ca8776b6efde34fb2 *01 Summer Days.shn
+5067f1a255e4b92dc9552d29672e01ea *02 Not Dark Yet.shn
+946aa4baea742548dde711c264fcc35f *03 Drifter's Escape.shn
+3d5622b6a8de54bbb4a4cfda788cee29 *04 Leopard-Skin Pill-Box Hat.shn
+1bf874e123f393ba2ff963fc9e2d5a5e *05 Things Have Changed.shn
+1bc65762235b8c5b937e44006f9d63a2 *06 Like A Rolling Stone.shn
+17f6c243608a10859074139f2cd1409b *07 Knockin' On Heaven's Door.shn
+fce92d581fa51063448284eaa4f7a25a *08 Honest With Me.shn
+b3931ed09ad09db05917aac01294d97c *09 Blowin' In The Wind.shn
+b902019d1cbf1a50d1d24b500b197e45 *10 All Along The Watchtower.shn
+00cae4532751dbdf5ba9272747524bbe *11 Outro.shn
+===================
+===================
+===================

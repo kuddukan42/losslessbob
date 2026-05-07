@@ -1,0 +1,14 @@
+Bob Dylan, 9/18/93, Atlanta, Georgia, 2CDR
+
+LB-7092, (65min+33min), PDub Master: Sonic Studios 6p mics > Sony D3, D7 or D8 > Sony R300 (?) > Optical leads > Sony CD Burner > CDR(1) > EAC (Secure/Offset) > FLAC (Level 8) > Data DVD, "Raw". There are flaws at the start of d1t01. Excellent sound, [A-].; bittorrent download 01/09; background talking d1t2, d1t9; in comparison to GD LB-5795 this is harsher but more upfront sounding; excellent sound [A-]
+
+d1t5 and d1t10 flacs pass md5 but only decode through errors of crc mismatch and have drops d1t5 8:46 and d1t10 4:32, 8:43; multiple big drops on d1t1until d1t2 0:09; feedback d1t3 4:04; big level fluctuation with clipping d1t7 0:54 and then levels remains higher than before; noise d1t9 1:49, 3:39
+
+CD1
+64:37, 0 intro 1. You're Gonna Quit Me, 2. Stuck Inside Of Mobile With The Memphis Blues Again, 3. All Along The Watchtower, 4. Simple Twist Of Fate, 5. Silvio, 6. Born In Time, 7. Blackjack Davey, 8. Gates Of Eden, 9. It's All Over Now, Baby Blue, 
+
+CD2
+32:25, 10. God Knows, 11. Maggie's Farm, 12. What Good Am I?, 13. It Ain't Me, Babe
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,30 @@
+13f968ea67012743d1b908e382ae2620  Bob Dylan - Tokyo February 20th 1978.md5
+b646f706f5410727951526b95be5d381  Bob Dylan - Tokyo February 20th 1978.txt
+cc6d0318b740e9334aec7fdca2b34423  Bob Dylan - Tokyo February 20th 1978_Info.txt
+9dffbf2c7deff45ef6bfd84c7e2bc611  Disc One\Disc01Track01 - Dylan_Tokyo 20.02.1978.flac
+041a7c4d74a6f3194a728554ab9b9aa1  Disc One\Disc01Track02 - Dylan_Tokyo 20.02.1978.flac
+63774124ead9873cbb0d593b561f9571  Disc One\Disc01Track03 - Dylan_Tokyo 20.02.1978.flac
+c3e87290ff90d3841f1e04f7e264ad4c  Disc One\Disc01Track04 - Dylan_Tokyo 20.02.1978.flac
+7334d4e0911ec8735e78b0565112b707  Disc One\Disc01Track05 - Dylan_Tokyo 20.02.1978.flac
+c77109b58b82cb1c8c5209a124dc790d  Disc One\Disc01Track06 - Dylan_Tokyo 20.02.1978.flac
+96aedf44f1d8ed6f52490b680f0705ac  Disc One\Disc01Track07 - Dylan_Tokyo 20.02.1978.flac
+29f34ebab772a37489f63053b54bd0ce  Disc One\Disc01Track08 - Dylan_Tokyo 20.02.1978.flac
+eda0cf12fdc8ec4c296b23bac7078591  Disc One\Disc01Track09 - Dylan_Tokyo 20.02.1978.flac
+b2e51315f56f149fc55fc4eff521fb96  Disc One\Disc01Track10 - Dylan_Tokyo 20.02.1978.flac
+4cb471f995906b548d7eb45ec8da025c  Disc One\Disc01Track11 - Dylan_Tokyo 20.02.1978.flac
+d82bc24a62a8e846410039c2da5f7712  Disc One\Disc01Track12 - Dylan_Tokyo 20.02.1978.flac
+1931e609c296b1d2faf4c1a890e31c18  Disc One\Disc01Track13 - Dylan_Tokyo 20.02.1978.flac
+daebe72ac21dc4125a5f4ba9eb21bc1d  Disc One\Disc01Track14 - Dylan_Tokyo 20.02.1978.flac
+dbc0573d733da818ca573c95737cda59  Disc Two\Disc02Track01 - Dylan_Tokyo 20.02.1978.flac
+1a968c227c9cf6a84def7ac05a5a65f6  Disc Two\Disc02Track02 - Dylan_Tokyo 20.02.1978.flac
+f9d3fe35e6d94fbb49290058f36d4dc9  Disc Two\Disc02Track03 - Dylan_Tokyo 20.02.1978.flac
+e8bd5d187e0a60de6d6b7040ddcffd93  Disc Two\Disc02Track04 - Dylan_Tokyo 20.02.1978.flac
+0a830d2f6989d3e7d74ae1c7fa613b72  Disc Two\Disc02Track05 - Dylan_Tokyo 20.02.1978.flac
+e192f7da0ae8538e1b5531e3578daa53  Disc Two\Disc02Track06 - Dylan_Tokyo 20.02.1978.flac
+d03c501b67d9e442e47d287908b8f085  Disc Two\Disc02Track07 - Dylan_Tokyo 20.02.1978.flac
+f884671f4f0785be225f496c9d966e1c  Disc Two\Disc02Track08 - Dylan_Tokyo 20.02.1978.flac
+ca6f57cf5643059cc5b8ea67e667a1f7  Disc Two\Disc02Track09 - Dylan_Tokyo 20.02.1978.flac
+9053a1ef0db2a0f861706ff185f09bdd  Disc Two\Disc02Track10 - Dylan_Tokyo 20.02.1978.flac
+a6515fcf55e507b24dcd79a713a7514c  Disc Two\Disc02Track11 - Dylan_Tokyo 20.02.1978.flac
+15f41f1e0a39d1b7636410cc3415e6be  Disc Two\Disc02Track12 - Dylan_Tokyo 20.02.1978.flac
+c94266e22233743bbaca0ac52ac5ffa4  Disc Two\Disc02Track13 - Dylan_Tokyo 20.02.1978.flac

@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-10-nakcm100-1gen.flacf 
+=================== 
+=================== 
+=================== 
+dc95064077784854cd97f22052704564  bd1988-09-10.ffp
+8c38eb8bb28a8715e6c9cc76522ac96a  bd1988-09-10.md5
+847d6ea397f4e1463aa2259d3da1f18a  bd1988-09-10.txt
+0f1b25fdfb34aad1aab7de1475c9ebf3  bd1988-09-10t01.flac
+0affc1edee63451a5085568202a4bcbe  bd1988-09-10t02.flac
+cd14b220570d74edf58decba1682c1e6  bd1988-09-10t03.flac
+8dbe9a7785475ab5c89da22158e3af4b  bd1988-09-10t04.flac
+347e0e0e7c6c1dbbd738aba19d05cbae  bd1988-09-10t05.flac
+6cbd317c021498acfe6e52617e72be46  bd1988-09-10t06.flac
+c8fb6db9b3a29281285c42b8f97bbf51  bd1988-09-10t07.flac
+aae48ab70c11bae31112df7ed1e380a2  bd1988-09-10t08.flac
+79e1ba83dc34268a3c8a569066fda6b9  bd1988-09-10t09.flac
+f3c5784d6223c245d3bc0892c3d38ebf  bd1988-09-10t10.flac
+a6dce3f6c4dcfa323b5182b8ca4f0285  bd1988-09-10t11.flac
+86d527562f132111c7102d7f37bd9431  bd1988-09-10t12.flac
+2d89b24b63f8d5572880cafc124b1faf  bd1988-09-10t13.flac
+b89cd852b27cb722281545defe4b67d1  bd1988-09-10t14.flac
+0c2836d4a679b2858bc8c01f1b51285b  bd1988-09-10t15.flac
+2ca3429ce0089da10dd8334e1f425796  bd1988-09-10t16.flac
+aaec5073a5084ee2f238eb017da475ad  bd1988-09-10t17.flac
+915c0783bcd18278d532ee05236888b4  bd1988-09-10t18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-10-nakcm100-1gen.flacf 
+=================== 
+=================== 
+=================== 
+bd1988-09-10t01.flac:3f91e21c1ce33b7eaa8fdf1b6198a73f
+bd1988-09-10t02.flac:f736d757d6e2e85fed4bd718d7ff059f
+bd1988-09-10t03.flac:f045d13916d01d4915e6afc27807b635
+bd1988-09-10t04.flac:59dbc1785681649fe74ec2fc0bc41b7c
+bd1988-09-10t05.flac:079850c6515572a8391d221476a2e97f
+bd1988-09-10t06.flac:1be6f68d671473e315c6d565ac1bfa4a
+bd1988-09-10t07.flac:c1dab5deeb282d8588a1d8a45d0010ff
+bd1988-09-10t08.flac:16b51d0392e8f6e10b5eac4adff1c202
+bd1988-09-10t09.flac:3542866149bae1fd156f6181f62319cc
+bd1988-09-10t10.flac:3df1e554b10f61021e26a2f26af184b3
+bd1988-09-10t11.flac:1c2b387f12c97b4fe39add44e11ceeff
+bd1988-09-10t12.flac:00e06aaa852b532f99de166fbb76eae0
+bd1988-09-10t13.flac:9b664c4ff20065f32437ad3da28c6deb
+bd1988-09-10t14.flac:1f544df43a7b4be9d3857612364b322a
+bd1988-09-10t15.flac:a480d7307bf8abfaa6aed4058135026a
+bd1988-09-10t16.flac:e58cbb3d6040e1fa7ede2ab96f4382ca
+bd1988-09-10t17.flac:2742e151bcc16b2a614a32cb3dc089f2
+bd1988-09-10t18.flac:623207f459d6bd63425b9dd2caeb1f9a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-10-nakcm100-1gen.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:08.15       33198524 B   ---   --   ---xx   flac  0.5740  bd1988-09-10t01.flac
+     5:25.18       57372380 B   ---   --   ---xx   flac  0.5916  bd1988-09-10t02.flac
+     4:57.56       52522556 B   ---   --   ---xx   flac  0.6072  bd1988-09-10t03.flac
+     4:39.30       49286204 B   ---   --   ---xx   flac  0.5998  bd1988-09-10t04.flac
+     5:06.04       53987852 B   ---   --   ---xx   flac  0.5955  bd1988-09-10t05.flac
+     4:22.58       46353260 B   ---   --   ---xx   flac  0.5990  bd1988-09-10t06.flac
+     4:09.44       44027132 B   ---   --   ---xx   flac  0.5582  bd1988-09-10t07.flac
+     4:23.71       46560236 B   ---   --   ---xx   flac  0.5439  bd1988-09-10t08.flac
+     5:49.38       61653020 B   ---   --   ---xx   flac  0.5678  bd1988-09-10t09.flac
+     5:02.68       53432780 B   ---   --   ---xx   flac  0.5551  bd1988-09-10t10.flac
+     3:37.27       38342348 B   ---   --   ---xx   flac  0.6038  bd1988-09-10t11.flac
+     4:29.43       47552780 B   ---   --   ---xx   flac  0.5914  bd1988-09-10t12.flac
+     6:31.42       69071228 B   ---   --   ---xx   flac  0.6065  bd1988-09-10t13.flac
+     0:34.52        6119948 B   ---   --   ---xx   flac  0.5082  bd1988-09-10t14.flac
+     4:04.30       43112204 B   ---   --   ---xx   flac  0.5698  bd1988-09-10t15.flac
+     5:15.50       55683644 B   ---   --   ---xx   flac  0.5551  bd1988-09-10t16.flac
+     4:17.40       45428924 B   ---   --   ---xx   flac  0.6177  bd1988-09-10t17.flac
+     4:18.63       45659420 B   ---   --   ---xx   flac  0.6013  bd1988-09-10t18.flac
+    80:14.74      849364440 B                            0.5842  (18 files)
+=================== 
+=================== 
+=================== 

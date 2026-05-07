@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-10-cc-jtt-fix.flacf 
+=================== 
+=================== 
+=================== 
+c563e3285fe5f0294090c8da4cbaaec4  101-Intro.flac
+32311f38d6040da80dbb4e0a0086d428  102-Leopard Skin Pill Box Hat.flac
+1b73d78adac2ee84587b390186e9ecb2  103-When I Paint My Masterpiece.flac
+c15335e029b1416e08b2c8b2399f29af  104-Watching The River Flow.flac
+e9f9c055f51e065402019a0cfa90aaae  105-Boots Of Spannish Leather.flac
+5e4e06f31949064142f07cafe175f705  106-Rollin' And Tumblin'.flac
+89788384169b410212a91089e1b087f6  107-Po' Boy.flac
+86b3477510c8378c4e513721908f0eb0  108-Honest With Me.flac
+cb8ff443beecd8a5a45506db8b8474eb  109-Workingman's Blues #2.flac
+a3d66680ac15d456d00707b2101d9102  110-High Water (For Charley Patton).flac
+78a507e5df827fad047784ba84425886  201-Love Sick.flac
+ab0cb183c5dbad61e7cbbf3ed2f32bfa  202-Highway 61 Revisited.flac
+399fc63554c5756b57055e2db9257039  203-Nettie Moore Fixed JTT.flac
+ad9fe06779e12f89a95dedd467cfb843  204-Summer Days.flac
+9fa543e0c88d8c44af203e7f70727ad7  205-Like A Rolling Stone.flac
+dcef5d587f1d8d6f7dd3e2df91209049  206-All Along The Watchtower.flac
+13606e6d8d446bcf9d40979cd1a152fc  207-Spirit On The Water.flac
+791392c2ffe70c32aee90a802ade81a8  208-Blowin' In The Wind.flac
+00e982e392d4255e426b470091627ba6  209-If You Ever Go To Houston.flac
+bd722adfce7c3688cd837ed61a04e8ad  210-Something.flac
+d18c37f546759ab494b3502375d6bbe9  211-One More Cup Of Coffe (Valley Below).flac
+299045b21786604aac39d6315ea7348e  212-This Wheel's On Fire.flac
+06420e7c0f3ff16e1e3859711cf0e04a  Amsterdam First Evening Back.jpg
+3953f9573f0c2ff890e2df3400610f39  Amsterdam First Evening Disc 01 flac.md5
+796c53eb48496d885708f3beed3e5d8f  Amsterdam First Evening Disc 01 waw.md5
+0438f1d714033a8e464cb0f57e93cd17  Amsterdam First Evening Disc 01.jpg
+e4596b513ff567f7cabafccebe7c8ebb  Amsterdam First Evening Disc 01.log
+7ac2ef983ce426cc242a9a2fff2da968  Amsterdam First Evening Disc 02 flac.md5
+621a4d6cd6aaf114a8389d075165ddaa  Amsterdam First Evening Disc 02 waw.md5
+2e7156a2f3156b8a1c20cbfe9adffac0  Amsterdam First Evening Disc 02.jpg
+da9a745871ea6ddad2c896e20a789255  Amsterdam First Evening Disc 02.log
+b91bf4fda8bd66fa4f1284b0ac08bfc1  Amsterdam First Evening Front.jpg
+b26fa56456c8ee8e6cb58b0935cd95b2  Amsterdam First Evening.txt
+4fe8db0f62c806f9c3bf08c7c2f1cebc  bd2009-04-10  Amsterdam First Evening  Crystal Cat (Corrected, JTT).md5
+041a5d7cd0c350da119bf32efcea7db1  bd2009-04-10  Amsterdam First Evening  Crystal Cat (Corrected, JTT).txt
+bfbde6ab2bf91908fccd4ae6f7cb8870  CC922-27_1.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-10-cc-jtt-fix.flacf 
+=================== 
+=================== 
+=================== 
+101-Intro.flac:37f15d1e72587eb52cab286f4db57273
+102-Leopard Skin Pill Box Hat.flac:05d97ee63e55b9a5bdbfe9c6634caf3a
+103-When I Paint My Masterpiece.flac:ea2832a8948e9f1790691822555e8afa
+104-Watching The River Flow.flac:8bb31c40a7c46bce3ee5bea1afdcb50e
+105-Boots Of Spannish Leather.flac:673a0118cda7c7bf28b163f3eeb8539f
+106-Rollin' And Tumblin'.flac:b078f7f08184bcd63ad572d433881fcb
+107-Po' Boy.flac:0afe5646a4d2d77a558c0a36a941687d
+108-Honest With Me.flac:77fd4969c5bef8e6612757246806bd6e
+109-Workingman's Blues #2.flac:3360411485d7a430a406831c479c6bd2
+110-High Water (For Charley Patton).flac:fe2555596449a168069e07544e386a03
+201-Love Sick.flac:2faa2e166a58ca55e68a544bcc21d78a
+202-Highway 61 Revisited.flac:1e65827af3e1aff81f7b0fa6d6b1423c
+203-Nettie Moore Fixed JTT.flac:eff52db8d732ecd63054041979213bbd
+204-Summer Days.flac:8dbc3da5d4c49eea7cb763dd88906c00
+205-Like A Rolling Stone.flac:34dac5262857f050d6197c2402828064
+206-All Along The Watchtower.flac:169eb3d2dba9731025778d2ccdec2785
+207-Spirit On The Water.flac:6d8595332d40c984194e947fb3319a77
+208-Blowin' In The Wind.flac:21f28bdf593a67b3b81597289301789d
+209-If You Ever Go To Houston.flac:473fa00c83241864fa814e02fdd84e3b
+210-Something.flac:1191caea05dd5a4c263de2ebca05a02a
+211-One More Cup Of Coffe (Valley Below).flac:1d5ac2a17d20fcf6a9f957a2e0b21793
+212-This Wheel's On Fire.flac:d63f5442e9389eda91261f14d77e3881
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-10-cc-jtt-fix.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:53.30        9419804 B   ---   --   ---xx   flac  0.5304  101-Intro.flac
+     3:43.28       39403100 B   ---   --   ---xx   flac  0.6314  102-Leopard Skin Pill Box Hat.flac
+     6:00.32       63579308 B   ---   --   ---xx   flac  0.6278  103-When I Paint My Masterpiece.flac
+     5:20.57       56582108 B   ---   --   ---xx   flac  0.6515  104-Watching The River Flow.flac
+     5:56.53       62923100 B   ---   --   ---xx   flac  0.5591  105-Boots Of Spannish Leather.flac
+     7:42.26       81557996 B   ---   --   ---xx   flac  0.6464  106-Rollin' And Tumblin'.flac
+     4:48.06       50817356 B   ---   --   ---xx   flac  0.5897  107-Po' Boy.flac
+     7:28.01       79029596 B   ---   --   ---xx   flac  0.6382  108-Honest With Me.flac
+     7:01.03       74271500 B   ---   --   ---xx   flac  0.6164  109-Workingman's Blues #2.flac
+     6:18.08       66698060 B   ---   --   ---xx   flac  0.6092  110-High Water (For Charley Patton).flac
+     6:15.13       66180620 B   ---   --   ---xx   flac  0.5668  201-Love Sick.flac
+     7:17.67       77244428 B   ---   --   ---xx   flac  0.6364  202-Highway 61 Revisited.flac
+     8:18.42       87946028 B   ---   --   ---xx   flac  0.5593  203-Nettie Moore Fixed JTT.flac
+     5:58.25       63210044 B   ---   --   ---xx   flac  0.6342  204-Summer Days.flac
+    10:26.01      110428796 B   ---   --   ---xx   flac  0.6012  205-Like A Rolling Stone.flac
+     4:30.70       47792684 B   ---   --   ---xx   flac  0.6177  206-All Along The Watchtower.flac
+     7:35.05       80273804 B   ---   --   ---xx   flac  0.5705  207-Spirit On The Water.flac
+     5:51.14       61949372 B   ---   --   ---xx   flac  0.5973  208-Blowin' In The Wind.flac
+     6:03.35       64115564 B   ---   --   ---xx   flac  0.6054  209-If You Ever Go To Houston.flac
+     3:26.51       36458396 B   ---   --   ---xx   flac  0.6073  210-Something.flac
+     5:45.40       60952124 B   ---   --   ---xx   flac  0.6492  211-One More Cup Of Coffe (Valley Below).flac
+     6:15.62       66295868 B   ---   --   ---xx   flac  0.6274  212-This Wheel's On Fire.flac
+   132:56.69     1407129656 B                            0.6098  (22 files)
+=================== 
+=================== 
+=================== 

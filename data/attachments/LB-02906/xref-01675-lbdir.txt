@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd97-04-10-HG.flacf
+===================
+===================
+===================
+420977122d27c5c54f1e5c1cb063aae2 *bd-1997-04-10-Portland-HG.md5
+75e4b2e8cc90183853b620a276589616 *bd-1997-04-10-Portland-HG.txt
+e3fd6fc5594e23a3d71bfc6118fc3005 *Disc1\bd-1997-04-10-HG-d1t01.flac
+b5d1352fdcc9e957f81167bc95e34eea *Disc1\bd-1997-04-10-HG-d1t02.flac
+4f37114b59db7075fb1b5b7104741c68 *Disc1\bd-1997-04-10-HG-d1t03.flac
+65b3c4defdb6dabf5971dfb9bdc9d732 *Disc1\bd-1997-04-10-HG-d1t04.flac
+82b9ddee3c2b862b15c66725791a0e99 *Disc1\bd-1997-04-10-HG-d1t05.flac
+ad0cdc481ce75243b27367c7105e82b4 *Disc1\bd-1997-04-10-HG-d1t06.flac
+1af89602488b991e773fe5278ad85cd5 *Disc1\bd-1997-04-10-HG-d1t07.flac
+cc9ba29dddf120914d2ed8351a1d51de *Disc1\bd-1997-04-10-HG-d1t08.flac
+32fcf70093c1696ef54f5638a89c9323 *Disc1\bd-1997-04-10-HG-d1t09.flac
+b0d7e149fc63b10f35f10d21a10149fb *Disc2\bd-1997-04-10-HG-d2t01.flac
+c2c0cfbc5a7dc078cbd61480a9b43337 *Disc2\bd-1997-04-10-HG-d2t02.flac
+bbd2522a3491497ede90cb4055aa0fd4 *Disc2\bd-1997-04-10-HG-d2t03.flac
+1c158f3d6bb2ad3eb373e7d4764e6d8c *Disc2\bd-1997-04-10-HG-d2t04.flac
+1810a381fb62c1640da8d7961c7a12b5 *Disc2\bd-1997-04-10-HG-d2t05.flac
+11635324faa8813fd2135b7bfb7a96f0 *Disc2\bd-1997-04-10-HG-d2t06.flac
+095f485a17d0fb0aabbc845eb640ce98 *Port04-10-97(HG)-B.jpg
+a5487b68a7665d5cf374a8bdc8559746 *Port04-10-97(HG)-F.jpg
+===================
+===================
+===================
+=== ffp for: bd97-04-10-HG.flacf
+===================
+===================
+===================
+Disc1\bd-1997-04-10-HG-d1t01.flac:46ed211c97dd909aa989efa6109b1ead
+Disc1\bd-1997-04-10-HG-d1t02.flac:f42faf80302dd1a2e3f9cb4f52024cd3
+Disc1\bd-1997-04-10-HG-d1t03.flac:afbc384d748788f050f757ffd84b4dd3
+Disc1\bd-1997-04-10-HG-d1t04.flac:3b70a9ad586f52eb0f6ace3630242cb5
+Disc1\bd-1997-04-10-HG-d1t05.flac:acfaa7ced4ca82a87256b9365dfd3f88
+Disc1\bd-1997-04-10-HG-d1t06.flac:f25a3507eb194c2b6c62b15d0a97eb2d
+Disc1\bd-1997-04-10-HG-d1t07.flac:aa62f2a89f7e2be297a27542321c9f2e
+Disc1\bd-1997-04-10-HG-d1t08.flac:da56cca8e2c5e18c036102360afd304d
+Disc1\bd-1997-04-10-HG-d1t09.flac:f56a4bd980145debd94b5d46cadd71f4
+Disc2\bd-1997-04-10-HG-d2t01.flac:4f6472ca3bb41c8a57f642f8fe2d86cd
+Disc2\bd-1997-04-10-HG-d2t02.flac:e33cd9fb7366c2fcf63eb15c06448183
+Disc2\bd-1997-04-10-HG-d2t03.flac:f1ecad64e962e3fb1780434c570e1456
+Disc2\bd-1997-04-10-HG-d2t04.flac:d88e8b8d49fbe51a97e1ac26336820bd
+Disc2\bd-1997-04-10-HG-d2t05.flac:e763ba7fbcc577e95e600f5e4cea489b
+Disc2\bd-1997-04-10-HG-d2t06.flac:4d55c7fee5f526be5e2f61c17ce7c8c1
+===================
+===================
+===================
+=== shntool len for: bd97-04-10-HG.flacf\Disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.10       50473964 B   ---   --   ---xx   flac  0.6574  bd-1997-04-10-HG-d1t01.flac
+     5:48.73       61558940 B   ---   --   ---xx   flac  0.6244  bd-1997-04-10-HG-d1t02.flac
+     5:44.37       60768668 B   ---   --   ---xx   flac  0.6993  bd-1997-04-10-HG-d1t03.flac
+     4:36.46       48794636 B   ---   --   ---xx   flac  0.6506  bd-1997-04-10-HG-d1t04.flac
+     6:37.10       70054364 B   ---   --   ---xx   flac  0.6469  bd-1997-04-10-HG-d1t05.flac
+     9:09.71       97010636 B   ---   --   ---xx   flac  0.6716  bd-1997-04-10-HG-d1t06.flac
+     7:47.66       82534076 B   ---   --   ---xx   flac  0.6496  bd-1997-04-10-HG-d1t07.flac
+     6:07.73       64910540 B   ---   --   ---xx   flac  0.6236  bd-1997-04-10-HG-d1t08.flac
+     8:51.59       93807212 B   ---   --   ---xx   flac  0.6835  bd-1997-04-10-HG-d1t09.flac
+    59:30.70      629913036 B                            0.6581  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd97-04-10-HG.flacf\Disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:34.39       90761372 B   ---   --   ---xx   flac  0.6606  bd-1997-04-10-HG-d2t01.flac
+     8:06.70       85895084 B   ---   --   ---xx   flac  0.6050  bd-1997-04-10-HG-d2t02.flac
+     7:21.57       77926508 B   ---   --   ---xx   flac  0.6864  bd-1997-04-10-HG-d2t03.flac
+    12:04.34      127793612 B   ---   --   ---xx   flac  0.6527  bd-1997-04-10-HG-d2t04.flac
+    12:27.59      131909612 B   ---   --   ---xx   flac  0.5924  bd-1997-04-10-HG-d2t05.flac
+     6:53.73       73024940 B   ---   --   ---xx   flac  0.6590  bd-1997-04-10-HG-d2t06.flac
+    55:29.32      587311128 B                            0.6387  (6 files)
+===================
+===================
+===================

@@ -1,0 +1,49 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+D1T01.flac:8a7b889f684dc6c61277d01adbf89fd1D1T02.flac:ada285d4eabcb262ad6071b36e55db72D1T03.flac:2c39b669b809e510648a4b756ae66e79D1T04.flac:478e00cd904d4e6606b11b2129344744D1T05.flac:14a81fce31f3b01232a7ae0b4a530c9dD1T06.flac:8e10fa333853ef16941481651f430d38D1T07.flac:e5399a411e4d0d9ebed2d66e8fcd63e7D2T01.flac:bcf88f48ca4e555b1de2edb17f2f39ccD2T02.flac:6692158b25c9f315b49b8a9f36b095f0D2T03.flac:2257bc69dedbf2e4bc478b8d7383bbffD2T04.flac:46fe05288216ac5733407cbe2e1c26a8D2T05.flac:aa8b122a795a13c583b03f098ddd004bD2T06.flac:0aec2c0aa8f30555da6037e0cdc0ca66D2T07.flac:7c7ebecd9547e0e700d319742797fdc0
+===================
+===================
+===================
+=== Upper Darby.txt
+===================
+===================
+===================
+Bob Dylan Upper Darby 27 oct 1994
+
+data DVD trade (flac) > Torrent > Dime > .....
+no edit
+
+incl
+fingerprint
+txt file
+
+NO ARTWORK  (yet??)
+
+++++++++++++++++++++++++
+October 27 1994	The Tower Theater  Upper Darby, Pennsylvania
+
+Never-Ending Tour Concert #627
+
+1 Jokerman
+2 Lay Lady Lay
+3 All Along The Watchtower
+4 Born In Time
+5 Tangled Up In Blue
+6 Watching The River Flow
+7 Mr. Tambourine Man (acoustic w band)
+
+1 Masters Of War (acoustic w band)
+2 Don't Think Twice, It's All Right (acoustic w band)
+3 God Knows
+4 She Belongs To Me
+5 Maggie's Farm
+6 Like A Rolling Stone
+7 It Ain't Me, Babe (acoustic w band)
+===================
+===================
+===================

@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd97-12-05-d.flacf
+===================
+===================
+===================
+301d0372f1a64d0b4b3caa03a9642ff9 *101 - Maggie's Farm.flac
+2ce071fa4a6ba85fdcd76d6e8c52e28b *102 - I'll Not Be A Stranger.flac
+d013d91669467061b40526f5e889d56b *103 - Cold Irons Bound.flac
+b58e0ad8ac74a8d6327b4b1e411f1ef0 *104 - Just Like A Woman.flac
+466d9c50dbf861affb2cb4af0f3b3b09 *105 - Can't Wait.flac
+2e3ddf992631cedc524f2111691ebd10 *106 - Silvio.flac
+6e6eb3b3904c3c224942ca30bc0aaf0f *107 - Roving Gambler.flac
+d7b911ef2554a45864685cdda4de390f *108 - Mr Tambourine Man.flac
+cd6824e05f2e1864971cf80ecc2930e8 *201 - Tangled Up In Blue.flac
+512236dbc3cb0d7829315dad210e246a *202 - Blind Willie McTell.flac
+efbcfac32ade2bb48878558f5fd87037 *203 - White Dove.flac
+e4d8d11c4ad04140f7d41160379bb2c9 *204 - 'Til I Fell In Love With You.flac
+fa6dee90d931688e60f57db15bda3664 *205 - Highway 61 Revisited.flac
+dca6e5529b402093ec989025cee92b3a *206 - Like A Rolling Stone.flac
+fb35aa507e16d17bf715467adeff9a7b *207 - Don't Think Twice, It's All Right.flac
+b32a1ce3c9de849bec0c0d6a48088bf5 *208 - Love Sick.flac
+08fa7e17244ccbe36a1d427c3333f457 *209 - Rainy Day Women #12 & 35.flac
+c030577d054a24af52f9625708c951e6 *bd-1997-12-05 Washington, DC 930 Club info.txt
+===================
+===================
+===================
+=== ffp for: bd97-12-05-d.flacf
+===================
+===================
+===================
+101 - Maggie's Farm.flac:356482ef771951576dcaaa9caa9fe9fc
+102 - I'll Not Be A Stranger.flac:12b12917583bf3920241ad95589dc854
+103 - Cold Irons Bound.flac:2779ab580d5fd3766f1ddddbae8cdd1d
+104 - Just Like A Woman.flac:f2924517fcd0cf1aa2d7f984fae98681
+105 - Can't Wait.flac:4de2a0ee3a5ef759a3332ee0476dbf40
+106 - Silvio.flac:dc3cc6b748076c4c0e2105be039c9510
+107 - Roving Gambler.flac:45f8aea834dbeb64b05eba0dfc0bc179
+108 - Mr Tambourine Man.flac:814a2967177de12e0d1dd3e3278178f1
+201 - Tangled Up In Blue.flac:24df8a4ad506df7b83df4628b6859c61
+202 - Blind Willie McTell.flac:003592436909e8eaadd62442fa9b7941
+203 - White Dove.flac:c62cdb048bafee75a2107bf8f16fd2fb
+204 - 'Til I Fell In Love With You.flac:3d8d765393d8a0bec201766d838e825e
+205 - Highway 61 Revisited.flac:7df81d6da692b17a25fdd08a782fe178
+206 - Like A Rolling Stone.flac:21879e2e9a275ab10e18e2b659db786f
+207 - Don't Think Twice, It's All Right.flac:71d0135b9f437f8bdf45c0cebbc04d0e
+208 - Love Sick.flac:311872d05d8f95af184c13cbc7d91d59
+209 - Rainy Day Women #12 & 35.flac:486b470e02fafc62194c9705db28c730
+===================
+===================
+===================
+=== shntool len for: bd97-12-05-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.18       61605980 B   ---   --   ---xx   flac  0.6522  101 - Maggie's Farm.flac
+     3:49.27       40459148 B   ---   --   ---xx   flac  0.6326  102 - I'll Not Be A Stranger.flac
+     7:00.65       74240924 B   ---   --   ---xx   flac  0.6414  103 - Cold Irons Bound.flac
+     5:51.07       61932908 B   ---   --   ---xx   flac  0.6223  104 - Just Like A Woman.flac
+     6:05.56       64517756 B   ---   --   ---xx   flac  0.6366  105 - Can't Wait.flac
+     6:56.40       73476524 B   ---   --   ---xx   flac  0.6614  106 - Silvio.flac
+     3:38.23       38509340 B   ---   --   ---xx   flac  0.6474  107 - Roving Gambler.flac
+     6:04.08       64228460 B   ---   --   ---xx   flac  0.6320  108 - Mr Tambourine Man.flac
+     8:20.05       88211804 B   ---   --   ---xx   flac  0.6678  201 - Tangled Up In Blue.flac
+     6:09.09       65112812 B   ---   --   ---xx   flac  0.6156  202 - Blind Willie McTell.flac
+     4:16.20       45205484 B   ---   --   ---xx   flac  0.6221  203 - White Dove.flac
+     5:57.08       62993660 B   ---   --   ---xx   flac  0.6462  204 - 'Til I Fell In Love With You.flac
+     8:55.64       94524572 B   ---   --   ---xx   flac  0.6626  205 - Highway 61 Revisited.flac
+     8:53.05       94033004 B   ---   --   ---xx   flac  0.6360  206 - Like A Rolling Stone.flac
+     8:21.56       88508156 B   ---   --   ---xx   flac  0.6485  207 - Don't Think Twice, It's All Right.flac
+     5:29.03       58042700 B   ---   --   ---xx   flac  0.6409  208 - Love Sick.flac
+     4:49.16       51017276 B   ---   --   ---xx   flac  0.6946  209 - Rainy Day Women #12 & 35.flac
+   106:26.55     1126620508 B                            0.6457  (17 files)
+===================
+===================
+===================

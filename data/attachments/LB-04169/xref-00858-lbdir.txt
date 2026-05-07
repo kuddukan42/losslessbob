@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-10-13-c.flacf 
+=================== 
+=================== 
+=================== 
+2150006c25b3b6e0da23ebb4e68f0f89  bobdylan20061013.txt
+79751f98f370027ae6a4059119eba59a  Disc 01\bobdylan20061013d01.ffp
+36cae2e642e75eb3107a8233d09edb3b  Disc 01\bobdylan20061013d01tr01.flac
+961730c453559dc4477c88b367aa72dc  Disc 01\bobdylan20061013d01tr02.flac
+ec2879870bb4c277507954f162402efb  Disc 01\bobdylan20061013d01tr03.flac
+5ce9dc248df49472703cef89f084135a  Disc 01\bobdylan20061013d01tr04.flac
+9034f992e1ba2ccca62975ce89801781  Disc 01\bobdylan20061013d01tr05.flac
+ecf97e3c0d582723eed0af2253cc6007  Disc 01\bobdylan20061013d01tr06.flac
+efabef5c8fc1270cbbb620954ad1eea3  Disc 01\bobdylan20061013d01tr07.flac
+e8c3661c0a6b0d95807fd41035c13b48  Disc 01\bobdylan20061013d01tr08.flac
+de1794ae8f9d87872913a7f5d0a14e77  Disc 01\bobdylan20061013d01tr09.flac
+bb0f19e0e38cb8f37a1d0f377ad606f9  Disc 01\bobdylan20061013d01tr10.flac
+af5c2e50744df69b757931732ff919e9  Disc 01\bobdylan20061013d01tr11.flac
+4e82b2ccfd23f2e49b3ae7a46ef4ebd5  Disc 02\bobdylan20061013d02.ffp
+4b4cf2398f13b38255948d344f06ddcf  Disc 02\bobdylan20061013d02tr01.flac
+09e4c799b48865752e16562ca547a521  Disc 02\bobdylan20061013d02tr02.flac
+cb7009165e63ad50e3d97e6c65ba1a8e  Disc 02\bobdylan20061013d02tr03.flac
+992c1c08034d70f4dca0d27635826623  Disc 02\bobdylan20061013d02tr04.flac
+c6b0f297a191de6594133484f23750ca  Disc 02\bobdylan20061013d02tr05.flac
+55f109de401388a88860053f8b2f83d0  Disc 02\bobdylan20061013d02tr06.flac
+4b81e43c0ae775042e356fa68bc0c5e0  Disc 02\bobdylan20061013d02tr07.flac
+5c8b9e78e41df4981b1b816c288437bf  Seattle_2006_soomlos_F.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-13-c.flacf\Disc 01 
+=================== 
+=================== 
+=================== 
+bobdylan20061013d01tr01.flac:62588b862600c326a2f539b66d781562
+bobdylan20061013d01tr02.flac:364b4335cc6742696bf1aa0553e4213a
+bobdylan20061013d01tr03.flac:f48be20ef504d28d46daf85aff0d6d54
+bobdylan20061013d01tr04.flac:a4ef7dd6260c634474bb4312211fc397
+bobdylan20061013d01tr05.flac:fc47069697e6382881f9294d4829a6b9
+bobdylan20061013d01tr06.flac:7eca9f102e00d854b4490b4053993514
+bobdylan20061013d01tr07.flac:8d8c2dff637c0d5d6abaeaac6951d5f6
+bobdylan20061013d01tr08.flac:b8dea5b8788a0b53c85a64a307e67269
+bobdylan20061013d01tr09.flac:f83c405d2d33ddf2f0390f64c0593f90
+bobdylan20061013d01tr10.flac:ad10729176d6174cdbd94af6f0e24f3c
+bobdylan20061013d01tr11.flac:7a1274dfe7c3a6e049f025cecabd9b1e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-13-c.flacf\Disc 02 
+=================== 
+=================== 
+=================== 
+bobdylan20061013d02tr01.flac:73dcb9a1213f7497cb5e6837c82de05f
+bobdylan20061013d02tr02.flac:5f3d46a5949ccfbaaa820ab296e95293
+bobdylan20061013d02tr03.flac:34ea89a2a23bf8a48578db8172d05a94
+bobdylan20061013d02tr04.flac:e309e2f3b87dca408208955972207d7e
+bobdylan20061013d02tr05.flac:e73d6687d0767c434f340eb8773d482b
+bobdylan20061013d02tr06.flac:22dba30852a4d4f59379befd2fa8e2b0
+bobdylan20061013d02tr07.flac:bb0f3e9832ac3cd7948cf51e664d3fda
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-10-13-c.flacf\Disc 01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:12.67       12858428 B   ---   --   ---xx   flac  0.3999  bobdylan20061013d01tr01.flac
+     5:02.09       53294012 B   ---   --   ---xx   flac  0.5271  bobdylan20061013d01tr02.flac
+     4:44.70       50262284 B   ---   --   ---xx   flac  0.5119  bobdylan20061013d01tr03.flac
+     6:58.64       73885772 B   ---   --   ---xx   flac  0.5422  bobdylan20061013d01tr04.flac
+     6:32.66       69304076 B   ---   --   ---xx   flac  0.4885  bobdylan20061013d01tr05.flac
+     7:33.22       79960988 B   ---   --   ---xx   flac  0.5128  bobdylan20061013d01tr06.flac
+     6:45.36       71526716 B   ---   --   ---xx   flac  0.4750  bobdylan20061013d01tr07.flac
+     6:34.64       69652172 B   ---   --   ---xx   flac  0.5397  bobdylan20061013d01tr08.flac
+     5:51.01       61918796 B   ---   --   ---xx   flac  0.3887  bobdylan20061013d01tr09.flac
+     8:07.39       85998572 B   ---   --   ---xx   flac  0.5146  bobdylan20061013d01tr10.flac
+     6:45.38       71531420 B   ---   --   ---xx   flac  0.4773  bobdylan20061013d01tr11.flac
+    66:09.26      700193236 B                            0.4969  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-10-13-c.flacf\Disc 02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.06       66869756 B   ---   --   ---xx   flac  0.5169  bobdylan20061013d02tr01.flac
+     6:34.25       69560444 B   ---   --   ---xx   flac  0.4521  bobdylan20061013d02tr02.flac
+     9:43.38      102930620 B   ---   --   ---xx   flac  0.4594  bobdylan20061013d02tr03.flac
+     5:52.43       62193980 B   ---   --   ---xx   flac  0.5482  bobdylan20061013d02tr04.flac
+     6:25.39       68005772 B   ---   --   ---xx   flac  0.5299  bobdylan20061013d02tr05.flac
+     0:34.29        6065852 B   ---   --   ---xx   flac  0.5068  bobdylan20061013d02tr06.flac
+     6:19.47       66966188 B   ---   --   ---xx   flac  0.4919  bobdylan20061013d02tr07.flac
+    41:49.02      442592612 B                            0.4958  (7 files)
+=================== 
+=================== 
+=================== 

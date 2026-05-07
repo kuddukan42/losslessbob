@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== bd91-11-18 Utica-WAV.md5
+===================
+===================
+===================
+8633dfa3c3d41c82744807c7f48b45af *bd91-11-18d1t01.wav
+f4a5a717e79ded10d24ac2a9df1a27a1 *bd91-11-18d1t02.wav
+90d8b406b49acc4569d27641b206c2fc *bd91-11-18d1t03.wav
+1434ead6b6e4611e647ec54387e290f9 *bd91-11-18d1t04.wav
+1235c0ddb2adb480d86085fea66c66bb *bd91-11-18d1t05.wav
+f5309d316d5c78d1618ff287b8fb438d *bd91-11-18d1t06.wav
+22421e0b1808332f9b383d9e002aec9b *bd91-11-18d1t07.wav
+4077cb21f9f3d4e3e68cd44ce7937643 *bd91-11-18d1t08.wav
+2673d9a311b40fccbd7463a0b4c474eb *bd91-11-18d1t09.wav
+cad2d3e5550845ada8341b23271980f0 *bd91-11-18d1t10.wav
+959ce239924a0aa9dfd1a92c701c3d4d *bd91-11-18d1t11.wav
+4a9e885ba2cc75734fcaa476623b59fe *bd91-11-18d2t01.wav
+9514062f8336309559634d3bb4cd8b46 *bd91-11-18d2t02.wav
+293534aff5041c9eda0c997fb8584046 *bd91-11-18d2t03.wav
+e7657f560ae49fe3bba488744f9eb815 *bd91-11-18d2t04.wav
+be09d66299e8189e0d465a97d5519c3c *bd91-11-18d2t05.wav
+===================
+===================
+===================
+=== bd91-11-18 Utica.ffp
+===================
+===================
+===================
+bd91-11-18d1t01.flac:d819e9bb156575612fc0ca2419076b7e
+bd91-11-18d1t02.flac:956f50038078c8178ed81fed611c1ff1
+bd91-11-18d1t03.flac:447bf45bdab44980209339bab2532a15
+bd91-11-18d1t04.flac:0f7281483b386b7a73d1183230cc6d1f
+bd91-11-18d1t05.flac:bad57dcc545313384ab85b071ae7b6ed
+bd91-11-18d1t06.flac:16569d0760a5d71996c512e6a7365e89
+bd91-11-18d1t07.flac:ad20cbd04f342692bdbc64341e222036
+bd91-11-18d1t08.flac:06d3d11753b4bc30421afb5b974becff
+bd91-11-18d1t09.flac:367a6867a54f09db79443db1b7ceb2fb
+bd91-11-18d1t10.flac:ad0e40a5b587169b069d30df5747717d
+bd91-11-18d1t11.flac:eefd9203d93a171c803608bf83daac58
+bd91-11-18d2t01.flac:201928d862b7d0afa1b71ddce49681de
+bd91-11-18d2t02.flac:ef64b85484de2c774d10039573c40078
+bd91-11-18d2t03.flac:e3b9c1e27fb55c1c1adaf671e255e4a9
+bd91-11-18d2t04.flac:c8b60a3640fd644b36317985f3025f4f
+bd91-11-18d2t05.flac:9f7837441b46224ef9fa842fc59ac6d9
+===================
+===================
+===================
+=== bd91-11-18.txt
+===================
+===================
+===================
+Bob Dylan, 11/18/91, Utica, 2CDR
+
+(60min+36min), aud, 
+some mic noises between d1t5 and t6, t8, end of t11, d1t7 sounds as if from a different source, begin of d1t8 may be missing 
+
+
+CD1 
+1 To Be Alone With You 2 I Believe In You 3 All Along The Watchtower 4 I'll Be Your Baby Tonight 5 Gotta Serve Somebody 6 When I Paint My Masterpiece 7 Watching The River Flow 8 Trail Of The Buffalo (acoustic) 9 It's All Over Now, Baby Blue (acoustic w band) 10 Ballad Of Hollis Brown (acoustic w band) 11 One Too Many Mornings (acoustic w band) 
+
+CD2 
+1 Everything Is Broken 2 Lenny Bruce 3 What Good Am I? 4 Highway 61 Revisited 5 Man In The Long Black Coat + Maggie's Farm
+===================
+===================
+===================

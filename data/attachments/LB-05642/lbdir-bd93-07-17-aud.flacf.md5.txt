@@ -1,0 +1,16 @@
+01a46bc63dd5732447c1ec3dccca5b32  1993-07-13-Bern.txt
+7a70a2da1aa5a6b6b6e79cd559bb794b  1993-07-17-Bern.md5
+49e3407c1e35ca232ac99b8d4164ae87  Track101.flac
+f6e895a19505ad80d816010a97a664e4  Track102.flac
+567dc72f7d4aad067d3acba54f0b790b  Track103.flac
+f8764fd3e8b483d6590a6c48c7e5f85f  Track104.flac
+739b9d3470dbdd41a4e4ba4698fbb1a1  Track105.flac
+f2e9f80c15e5908853fd8c03fd8961f6  Track106.flac
+ebdafed36b5fdbf54b8a024672cdad7d  Track107.flac
+951609762217317178acc84cb5df3dc8  Track108.flac
+8b28cfe6e718163bee21a7aee9e5f3a5  Track109.flac
+bafff0728de39cd86d5da885d7d046ab  Track201.flac
+b5083e9ef24a54fc68f94c9a305a18a3  Track202.flac
+a735eae88f3ec0df317f1eef6b7ce0fe  Track203.flac
+55ce4d767cd301a1a9a3a76b508498a2  Track204.flac
+da7df41e1dda611c7b80b1ac35f58ed4  Track205.flac

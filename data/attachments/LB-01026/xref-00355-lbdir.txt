@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-29-Jays-version-a.flacf 
+=================== 
+=================== 
+=================== 
+c88381d45ce112f2080d49dd80b57686  dylan nashville 03 disc101.flac
+f27360bb57a0230510df421d0dbdcbaf  dylan nashville 03 disc102.flac
+209cca1a82fd769d203d4c571c0c0e9b  dylan nashville 03 disc103.flac
+1e880127e71d6aeb49c3e855b9557470  dylan nashville 03 disc104.flac
+eef223c4623529ab4f38e046e949a8ed  dylan nashville 03 disc105.flac
+9ded24736d9cd5f1f0343192ff0c2e25  dylan nashville 03 disc106.flac
+616f8c564e1e77410369b11b3980375c  dylan nashville 03 disc107.flac
+ca7375232e9368a3eda5f37f284fd1ae  dylan nashville 03 disc108.flac
+443374fe7c8a9d458f356f6a17e7d6e2  dylan nashville 03 disc109.flac
+352e781e7c7caeeb59c00bd9b3b60f5f  dylan nashville 03 disc201.flac
+40c16b93e9f28380cc94c2119c0e352b  dylan nashville 03 disc202.flac
+ef2d72ce2edd65bb7961fa97750b2dff  dylan nashville 03 disc203.flac
+1e1eec46764d0a395b2af01a1a1d99b5  dylan nashville 03 disc204.flac
+54fa4c17b61e4d3b05be0f248868c5ce  dylan nashville 03 disc205.flac
+99ab9020a1cbbfc379589b26554ad9c7  dylan nashville 03 disc206.flac
+956668f0a4a2c0473719be13b00b0d13  dylan nashville 03 disc207.flac
+5c4dd8682853127ebe37e7a70eb9ddc9  dylan nashville 03 disc208.flac
+8abf2d7fdb95c0b4d0ddb6721b2734dc  dylan nashville 03.md5
+f32b3631993392ef7c83e5cd2fc39a5b  nashville03.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-04-29-Jays-version-a.flacf 
+=================== 
+=================== 
+=================== 
+dylan nashville 03 disc101.flac:2ee852d31973320360691d249263a1c3
+dylan nashville 03 disc102.flac:f8d308bf3d4ec5d1f12a9e1c78de7e56
+dylan nashville 03 disc103.flac:db9a7328483f77116a043b3c1946bfa7
+dylan nashville 03 disc104.flac:9036b3a6d6e91186efb2352d1c314bef
+dylan nashville 03 disc105.flac:26fbe3d678d8a36a259a98f19284b422
+dylan nashville 03 disc106.flac:e174403cff2063237afb0df37dc82c88
+dylan nashville 03 disc107.flac:da60c2435c1b9c94968b9ed2fcc05435
+dylan nashville 03 disc108.flac:b7e216e8c73e3b1fa1084d83eb632a2a
+dylan nashville 03 disc109.flac:ec37c63293688ca29f49f977bdefd944
+dylan nashville 03 disc201.flac:e6a6af8d5f18897a2874a34b200fa51c
+dylan nashville 03 disc202.flac:cd21c8c45079e37a8d8963547170c81e
+dylan nashville 03 disc203.flac:172305788df5d56359fcbf305b96f65d
+dylan nashville 03 disc204.flac:620808295ebf7a5747e1051b72fec68b
+dylan nashville 03 disc205.flac:317cf9e97af60f257fbc23c33b9ef2d5
+dylan nashville 03 disc206.flac:ce77b423c3ae89eb6f80633c97b0ceeb
+dylan nashville 03 disc207.flac:b1eb699c6856cc1955f84827ada312c0
+dylan nashville 03 disc208.flac:02aac24f08da7ca51a653df78af8e194
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-29-Jays-version-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.31        5364956 B   ---   --   ---xx   flac  0.5188  dylan nashville 03 disc101.flac
+     5:23.54       57104252 B   ---   --   ---xx   flac  0.5614  dylan nashville 03 disc102.flac
+     4:25.01       46748396 B   ---   --   ---xx   flac  0.5652  dylan nashville 03 disc103.flac
+     6:15.09       66171212 B   ---   --   ---xx   flac  0.6056  dylan nashville 03 disc104.flac
+     6:09.65       65244524 B   ---   --   ---xx   flac  0.5177  dylan nashville 03 disc105.flac
+     6:44.10       71289164 B   ---   --   ---xx   flac  0.5752  dylan nashville 03 disc106.flac
+     5:26.01       57508796 B   ---   --   ---xx   flac  0.5679  dylan nashville 03 disc107.flac
+     6:56.65       73535324 B   ---   --   ---xx   flac  0.5426  dylan nashville 03 disc108.flac
+     5:04.23       53679740 B   ---   --   ---xx   flac  0.5735  dylan nashville 03 disc109.flac
+     5:26.42       57605228 B   ---   --   ---xx   flac  0.5992  dylan nashville 03 disc201.flac
+     6:44.55       71395004 B   ---   --   ---xx   flac  0.4726  dylan nashville 03 disc202.flac
+     4:14.30       44876204 B   ---   --   ---xx   flac  0.4802  dylan nashville 03 disc203.flac
+     7:07.58       75459260 B   ---   --   ---xx   flac  0.6123  dylan nashville 03 disc204.flac
+     6:25.73       68085740 B   ---   --   ---xx   flac  0.5161  dylan nashville 03 disc205.flac
+     9:26.64       99992972 B   ---   --   ---xx   flac  0.5679  dylan nashville 03 disc206.flac
+     7:23.00       78145244 B   ---   --   ---xx   flac  0.5876  dylan nashville 03 disc207.flac
+     6:53.33       72930860 B   ---   --   ---xx   flac  0.5997  dylan nashville 03 disc208.flac
+   100:38.14     1065136876 B                            0.5605  (17 files)
+=================== 
+=================== 
+=================== 

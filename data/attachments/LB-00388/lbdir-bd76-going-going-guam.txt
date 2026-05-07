@@ -1,0 +1,268 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-going-going-guam 
+=================== 
+=================== 
+=================== 
+0d3727e358d98fac89c03dbcea84c29e  D1-Track01.shn
+6edbe8b71bb9d43fd442be8e3304a4c6  D1-Track02.shn
+91f599b61f7bb5b552b655b669f7383d  D1-Track03.shn
+919f38ec6642df8a7088e825457be5b5  D1-Track04.shn
+fd03d8d21780abc9216cafe86467cbf9  D1-Track05.shn
+5039cc630c7fea805132af61ed061fd6  D1-Track06.shn
+ee1cb6dc681ba9d625dc19f949c7f6c9  D1-Track07.shn
+cb25372678da851d7bc60874e06e0c76  D1-Track08.shn
+39dd16405cc7ac2afef96769c58be999  D1-Track09.shn
+6ac68b7ba6cca2ffa93f1975b507979a  D1-Track10.shn
+2865059b82580baf8fe4e20e4be36265  D1-Track11.shn
+e0fa40dbfa2c0ba0f241cc29f1bc0861  D1-Track12.shn
+dfd333e0c9090d17af5f121ec861f0f1  D1-Track13.shn
+9c0ad1178bb3bf2c76bf81bd503108d5  D1-Track14.shn
+e7566248277649e4a0e9047470cac999  D1-Track15.shn
+807d877808b7ecc7266dc7a43a3557dd  D1-Track16.shn
+1438e9f0d7ccc9b245ed9a5226726731  D1-Track17.shn
+d247caaec4be74421fd9bf117f29a331  D1-Track18.shn
+ebd560fb194c18f4e0421443997e077a  D1-Track19.shn
+141550e8eef2ad3bb6aebc02d7ade19b  D1-Track20.shn
+f44e5b3cf1de772c39234761c338f50d  D1-Track21.shn
+05dcc1b03e0ace6924405a137aa4d88d  D1-Track22.shn
+c5f2c60b29f7826b38b76c3ffb9205a9  D2-Track01.shn
+c12c89825701ecdfb8d415bf383b62c6  D2-Track02.shn
+ab25abb6b5a1a57d16c9dc8e4e3e9f14  D2-Track03.shn
+99d267dff1ab08d9415162fa0a777371  D2-Track04.shn
+57e230c6013989d4fe5000d952848294  D2-Track05.shn
+add9aab3396c59612d1dad66643319ae  D2-Track06.shn
+af20fbfd5820cc5fe8c0cf88e0ee9dca  D2-Track07.shn
+c9d4c2c38cc3a4769f8392cb86110b82  D2-Track08.shn
+97523e8cda8f564f8bd058492db071b4  D2-Track09.shn
+328305e8ba8c578d13b46d28bd3f72bb  D2-Track10.shn
+f0646169fd07c5fdd303c1771deca567  D2-Track11.shn
+6c361dc9686bf4bbf91f2af9ef15b561  D2-Track12.shn
+d13fd1941a3419415fc3c830a72a93de  D2-Track13.shn
+8fb0efd2b317f4da6c2072f0df42d0d2  D2-Track14.shn
+0ab75918189aed027c5b70ec3b1643c5  D2-Track15.shn
+74c276b9164ddfc6c8e2d4ad85831f07  D3-Track01.shn
+e0ee35d2651f2a150671b6754a575ace  D3-Track02.shn
+e7154aaf9e5cd49ade5e1b8dd49d4234  D3-Track03.shn
+fdae8c9ab84d85567f86c212a70293fc  D3-Track04.shn
+7ea4e09943d8fec9e0e971f82ad5c203  D3-Track05.shn
+9d70439a4bedbef63ad30b3459841554  D3-Track06.shn
+bd0057f667ab608bd7e1a328eca20841  D3-Track07.shn
+ad916718afd1df79943ae5921af865a5  D3-Track08.shn
+17e048cb3e8b8de83f9ce9aa09bf910f  D3-Track09.shn
+94b8d518dabc05249ec518829b0d058b  D3-Track10.shn
+7dc531f893490f73c3dc888b636f09dd  D3-Track11.shn
+780106ca0a802691a88a03789dc921ba  D3-Track12.shn
+9220ba9076061d3fba8e3fa14d3fa45d  D3-Track13.shn
+2685b5a21aea77047146387c0c4612c7  D3-Track14.shn
+028ba643fa092ae65ede866346ebfc7d  D3-Track15.shn
+70f7caacc644cc5a5dffc6f746ad5ecd  D3-Track16.shn
+4ea373b78a8b45ffcdb98a7248155b93  D3-Track17.shn
+b4f1a4ad66e69b46e410ee664096d327  D3-Track18.shn
+5b5a26690ea8733b7d3357fc735ac8cd  D4-Track01.shn
+25834a5c30a90ddc56ac8962ebcf0013  D4-Track02.shn
+79d11f8af690c05118a12bca1d0952de  D4-Track03.shn
+d9cde5b6bee4c16a685f29a6391ba473  D4-Track04.shn
+d7de69713087a8db6d08bdd39be2e5ad  D4-Track05.shn
+0f75594fc49af642bcf09b81ae6ffa08  D4-Track06.shn
+f129399cd0dd35e03222ef999ce35109  D4-Track07.shn
+4913630d6a5d40a1899e337476dae13d  D4-Track08.shn
+7e2ad602488153a5e843be74c8063565  D4-Track09.shn
+9f850d9af4658b911bb5c190415c4488  D4-Track10.shn
+05efd20a9e0e3595c3186ea37ed75d11  D4-Track11.shn
+f5c6be45135ec0272be55c5d9216ff86  D4-Track12.shn
+09a6459bad80c82e704a81b096e78e64  D4-Track13.shn
+f1abed5e972c48fe90158bbf4f20c68d  D4-Track14.shn
+686bdcbcf3dbe38706b648c6da01f3aa  D4-Track15.shn
+908cbc5c6d8ad6614d9d05cc89d31644  D4-Track16.shn
+670e5d7b92a685030fdbc70fa03de3a3  D4-Track17.shn
+a2751a372ec653b893ca5ea64de1c3c4  D4-Track18.shn
+f04b9b04d35b12049d129e958ce7f8b2  D4-Track19.shn
+9b6ec96cf74ef6f1a9a8bb318e956e37  D4-Track20.shn
+182527df517568254a7a11971d54ce65  D4-Track21.shn
+ff0cca03ae53951cb6ba20899e1d384b  D4-Track22.shn
+1bee7d278f480f16ef9fae6b656c81f3  D4-Track23.shn
+fafc9f6249b691dff9b80d239c3b41b4  D4-Track24.shn
+dad52e7270b8e5a18219fa8846a74524  GuamD1.md5
+ddf680eddb3535b72d6f9fe3e06bc2b7  GuamD2.md5
+95b46c17e366223a3b192926778b476b  GuamD3.md5
+1e7f48a09e22431ac78ed63aae6798e0  GuamD4.md5
+d25108ec1b2f66a158623735ad936b1c  info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd76-going-going-guam 
+=================== 
+=================== 
+=================== 
+ac73ea6b208577e0397766090fabb3c9  [shntool]  D1-Track01.wav
+1d2a0938c94f3639deabaf3c08e86eb3  [shntool]  D1-Track02.wav
+98e9663a6a619614cf69d8867de668d2  [shntool]  D1-Track03.wav
+e0da837cf5c6261e4c6b009fcbdff9a8  [shntool]  D1-Track04.wav
+53c2a7bb6ab8621037c269c16a35fa49  [shntool]  D1-Track05.wav
+b09829e2c10862c5b290951e220d5cd9  [shntool]  D1-Track06.wav
+23f1bfbe278360e2302f29f4fefef67d  [shntool]  D1-Track07.wav
+5c30eaccbb64fa95587c457e4b32824e  [shntool]  D1-Track08.wav
+6c41f3d0e3fb60346b36e7257ea7d614  [shntool]  D1-Track09.wav
+c6a8aed1f4c661b7a8875d33f707913c  [shntool]  D1-Track10.wav
+901f604a1b85954db5f23400eec20781  [shntool]  D1-Track11.wav
+214516fcebff3f5740e6482f7527a46b  [shntool]  D1-Track12.wav
+4a8b7da9188c9246124e97074eae8b0d  [shntool]  D1-Track13.wav
+a2a64d988129f9c7f20e234ee5b31486  [shntool]  D1-Track14.wav
+b86f2403ce7770de7a564d7c0a4e9699  [shntool]  D1-Track15.wav
+715724d2445e9802b49ead28b4bb24ee  [shntool]  D1-Track16.wav
+be2a6caf3f06804fdf1b834762bc66fe  [shntool]  D1-Track17.wav
+729ba5f5c330b4beecbcb16e9be9d5bd  [shntool]  D1-Track18.wav
+09a5329d1d4cac3a7cdd10d818a8c7f9  [shntool]  D1-Track19.wav
+a70ef7312198fe7d8df98a058da690e1  [shntool]  D1-Track20.wav
+6c5c82c4e5185e6c3d94b05c46f0245b  [shntool]  D1-Track21.wav
+374de501a77737e92fb00ebbe354db02  [shntool]  D1-Track22.wav
+a77a9b3013336a401197ceeaf9a08ed2  [shntool]  D2-Track01.wav
+53b497bb4033b0636d8ad0835740457b  [shntool]  D2-Track02.wav
+e3a032680aebe479d756355d620f4416  [shntool]  D2-Track03.wav
+3af75f12e5a30a0211df999631b20ee3  [shntool]  D2-Track04.wav
+de7505a6600969d5bc527949965ff3d4  [shntool]  D2-Track05.wav
+aa889797548450486f6516c9dc8fba2c  [shntool]  D2-Track06.wav
+a3134911c070b644a881dfd2607dbfe5  [shntool]  D2-Track07.wav
+c4c5867258e6d356be86e7b25dda69ff  [shntool]  D2-Track08.wav
+1fb8c7207d4cf77818754c3ba39ef035  [shntool]  D2-Track09.wav
+89710ba335d53c70269a3b9c80718df4  [shntool]  D2-Track10.wav
+0215e1ef0bacef292150de58a82f76e9  [shntool]  D2-Track11.wav
+2e7acaf589cc022cce34b0b66f4f06d1  [shntool]  D2-Track12.wav
+8303f08724022dd38b9764172458d34a  [shntool]  D2-Track13.wav
+17f4fcb8a8c783ebfc0b8453f6b93f64  [shntool]  D2-Track14.wav
+33f64a511d4c616845b10a1cdb3afa06  [shntool]  D2-Track15.wav
+c5ac31a8ace8f894c9dc485d35991778  [shntool]  D3-Track01.wav
+bba8b66b5ae31e35b1ff397dbe76a877  [shntool]  D3-Track02.wav
+9e5dde5abfe02e54a33e66ab36db595a  [shntool]  D3-Track03.wav
+eb8b87d1759ba1b70dd9c162bc25d1f6  [shntool]  D3-Track04.wav
+d1fb28fc009ef8673e2325a53bbc14f2  [shntool]  D3-Track05.wav
+9bd87de72456db86a2681a96291b6c52  [shntool]  D3-Track06.wav
+cd8e4794bb039cd63003645aac4ee198  [shntool]  D3-Track07.wav
+72d8f3296548454529370cc8630f5ffd  [shntool]  D3-Track08.wav
+b75395ae8fa1cb71b065f50786529eb2  [shntool]  D3-Track09.wav
+e9e476e00ff46716bdae30817746e684  [shntool]  D3-Track10.wav
+7831af8cce4f1737b0ea54c8a562d5d6  [shntool]  D3-Track11.wav
+d111f1c319dc07df016997871a912f3b  [shntool]  D3-Track12.wav
+0b05ecf03692bd5268f629343d446d92  [shntool]  D3-Track13.wav
+7989e64208c7f4ee7127fd06c0f861b4  [shntool]  D3-Track14.wav
+1cc4234caa5c4c662686248eab993d3a  [shntool]  D3-Track15.wav
+91f85b5c16525fe8107d9f7f3df94bd8  [shntool]  D3-Track16.wav
+4f0caa4d18ddef83df278ac9780b741b  [shntool]  D3-Track17.wav
+b087d326f7e0c6adb86905178686dcfb  [shntool]  D3-Track18.wav
+3f55b1f0ab7d70a19aadca2a4f40ce48  [shntool]  D4-Track01.wav
+cb82c01f4265a1a53b8365d0208e7b41  [shntool]  D4-Track02.wav
+d77b8f6d7883dc699d564f382033bf85  [shntool]  D4-Track03.wav
+57de749cb747820df1573ba54a2064e5  [shntool]  D4-Track04.wav
+3ad77b236de7490400a9e78ac7c55c60  [shntool]  D4-Track05.wav
+d5c27a2d13f529f42b0f9a1667e2a9bf  [shntool]  D4-Track06.wav
+866702ea7e8659786895ebf5d98535bd  [shntool]  D4-Track07.wav
+30801bc78088c9dab8dd4a00e6110172  [shntool]  D4-Track08.wav
+1ad4d1cb5d7e3cd20d7ccbd9f4154f11  [shntool]  D4-Track09.wav
+481b2a445fc2739e8403175921773b31  [shntool]  D4-Track10.wav
+5c9e99c3b76319cc32246bba2a857fe6  [shntool]  D4-Track11.wav
+5867ce2774247e0385ecab44e2840ecc  [shntool]  D4-Track12.wav
+6b39eaae25f9bc4589af0e04ae898317  [shntool]  D4-Track13.wav
+7f66011e8f4b37da03a03957cc97fc83  [shntool]  D4-Track14.wav
+1872e9b3a2379b89bb7cd968c393bdcc  [shntool]  D4-Track15.wav
+4c05cf16c747796bce42a11ed280b9dd  [shntool]  D4-Track16.wav
+dc7b60cc8a00031c0e6ac7d2e3ed1b58  [shntool]  D4-Track17.wav
+cfeafe8df2d2e91d446d5225809b4400  [shntool]  D4-Track18.wav
+370d4c449ee5e2548f4852c323eac784  [shntool]  D4-Track19.wav
+9d539986cf7da97e734c8b6ab8090923  [shntool]  D4-Track20.wav
+373bd0432ab26beb082d0949b48feee8  [shntool]  D4-Track21.wav
+0ab27b336ffa2cd675df38dba6969e6b  [shntool]  D4-Track22.wav
+77e57006d148c749f419671331225be9  [shntool]  D4-Track23.wav
+4356ee1b5029e5acdd78a3ec1b78d936  [shntool]  D4-Track24.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-going-going-guam 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:38.43        6804380 B   ---   --   ---xx    shn  0.6155  D1-Track01.shn
+     3:31.22       37272188 B   ---   --   ---xx    shn  0.5638  D1-Track02.shn
+     3:03.20       32328284 B   ---   --   ---xx    shn  0.5722  D1-Track03.shn
+     4:02.70       42853484 B   ---   --   ---xx    shn  0.5472  D1-Track04.shn
+     2:29.40       26377724 B   ---   --   ---xx    shn  0.5841  D1-Track05.shn
+     6:03.48       64146140 B   ---   --   ---xx    shn  0.6146  D1-Track06.shn
+     1:49.00       19227644 B   ---   --   ---xx    shn  0.5445  D1-Track07.shn
+     4:28.72       47444588 B   ---   --   ---xx    shn  0.6149  D1-Track08.shn
+     2:48.73       29806940 B   ---   --   ---xx    shn  0.6421  D1-Track09.shn
+     4:02.40       42782924 B   ---   --   ---xx    shn  0.6978  D1-Track10.shn
+     3:14.30       34292204 B   ---   --   ---xx    shn  0.5981  D1-Track11.shn
+     0:50.07        8836508 B   ---   --   ---xx    shn  0.5207  D1-Track12.shn
+     4:29.40       47545724 B   ---   --   ---xx    shn  0.6424  D1-Track13.shn
+     3:11.40       33786524 B   ---   --   ---xx    shn  0.5631  D1-Track14.shn
+     5:24.18       57195980 B   ---   --   ---xx    shn  0.6831  D1-Track15.shn
+     3:53.00       41101244 B   ---   --   ---xx    shn  0.6553  D1-Track16.shn
+     1:43.40       18263324 B   ---   --   ---xx    shn  0.6123  D1-Track17.shn
+     1:25.62       15139868 B   ---   --   ---xx    shn  0.5690  D1-Track18.shn
+     3:40.70       38972684 B   ---   --   ---xx    shn  0.6347  D1-Track19.shn
+     4:33.38       48246620 B   ---   --   ---xx    shn  0.5976  D1-Track20.shn
+     5:38.25       59682044 B   ---   --   ---xx    shn  0.6479  D1-Track21.shn
+     7:28.27       79090748 B   ---   --   ---xx    shn  0.6724  D1-Track22.shn
+     5:54.46       62553836 B   ---   --   ---xx    shn  0.6032  D2-Track01.shn
+     4:38.66       49194476 B   ---   --   ---xx    shn  0.5949  D2-Track02.shn
+     5:22.62       56946668 B   ---   --   ---xx    shn  0.6198  D2-Track03.shn
+     4:35.08       48528860 B   ---   --   ---xx    shn  0.6192  D2-Track04.shn
+     4:12.30       44523404 B   ---   --   ---xx    shn  0.6232  D2-Track05.shn
+     9:35.18      101472380 B   ---   --   ---xx    shn  0.6044  D2-Track06.shn
+     5:36.55       59399804 B   ---   --   ---xx    shn  0.6371  D2-Track07.shn
+     2:11.71       23275436 B   ---   --   ---xx    shn  0.6230  D2-Track08.shn
+     7:03.55       74746604 B   ---   --   ---xx    shn  0.6266  D2-Track09.shn
+     3:27.58       36651260 B   ---   --   ---xx    shn  0.5767  D2-Track10.shn
+     6:15.05       66161804 B   ---   --   ---xx    shn  0.6243  D2-Track11.shn
+     4:33.36       48241916 B   ---   --   ---xx    shn  0.5876  D2-Track12.shn
+     8:17.39       87762572 B   ---   --   ---xx    shn  0.6168  D2-Track13.shn
+     2:31.50       26754044 B   ---   --   ---xx    shn  0.5864  D2-Track14.shn
+     4:41.46       49676636 B   ---   --   ---xx    shn  0.5733  D2-Track15.shn
+     5:49.50       61681244 B   ---   --   ---xx    shn  0.5568  D3-Track01.shn
+     6:22.42       67483628 B   ---   --   ---xx    shn  0.5999  D3-Track02.shn
+     2:30.40       26554124 B   ---   --   ---xx    shn  0.5879  D3-Track03.shn
+     6:07.48       64851740 B   ---   --   ---xx    shn  0.5957  D3-Track04.shn
+     3:12.60       34009964 B   ---   --   ---xx    shn  0.5412  D3-Track05.shn
+     1:36.32       17009708 B   ---   --   ---xx    shn  0.5463  D3-Track06.shn
+     4:01.20       42559484 B   ---   --   ---xx    shn  0.5968  D3-Track07.shn
+     2:29.60       26424764 B   ---   --   ---xx    shn  0.5895  D3-Track08.shn
+     2:02.68       21680780 B   ---   --   ---xx    shn  0.6070  D3-Track09.shn
+     0:52.50        9290444 B   ---   --   ---xx    shn  0.5756  D3-Track10.shn
+     4:45.12       50302268 B   ---   --   ---xx    shn  0.6045  D3-Track11.shn
+     3:22.03       35639900 B   ---   --   ---xx    shn  0.6034  D3-Track12.shn
+     1:28.57       15657308 B   ---   --   ---xx    shn  0.5362  D3-Track13.shn
+     9:59.53      105788300 B   ---   --   ---xx    shn  0.5860  D3-Track14.shn
+     6:10.45       65373884 B   ---   --   ---xx    shn  0.6082  D3-Track15.shn
+     5:27.10       57706364 B   ---   --   ---xx    shn  0.5858  D3-Track16.shn
+     5:45.30       60928604 B   ---   --   ---xx    shn  0.6064  D3-Track17.shn
+     7:32.19       79777532 B   ---   --   ---xx    shn  0.5618  D3-Track18.shn
+     5:29.17       58075628 B   ---   --   ---xx    shn  0.6062  D4-Track01.shn
+     1:42.57       18126908 B   ---   --   ---xx    shn  0.6368  D4-Track02.shn
+     2:18.30       24413804 B   ---   --   ---xx    shn  0.6384  D4-Track03.shn
+     7:22.03       77975900 B   ---   --   ---xx    shn  0.6238  D4-Track04.shn
+     2:33.63       27137420 B   ---   --   ---xx    shn  0.5815  D4-Track05.shn
+     2:16.40       24084524 B   ---   --   ---xx    shn  0.6105  D4-Track06.shn
+     1:22.72       14634188 B   ---   --   ---xx    shn  0.6373  D4-Track07.shn
+     2:24.48       25514540 B   ---   --   ---xx    shn  0.6431  D4-Track08.shn
+     3:35.70       38090684 B   ---   --   ---xx    shn  0.5970  D4-Track09.shn
+     0:54.60        9666764 B   ---   --   ---xx    shn  0.5303  D4-Track10.shn
+     4:59.51       52863596 B   ---   --   ---xx    shn  0.5802  D4-Track11.shn
+     0:52.36        9257516 B   ---   --   ---xx    shn  0.5275  D4-Track12.shn
+     3:16.05       34586204 B   ---   --   ---xx    shn  0.6170  D4-Track13.shn
+     3:24.25       36044444 B   ---   --   ---xx    shn  0.6173  D4-Track14.shn
+     3:32.30       37467404 B   ---   --   ---xx    shn  0.6652  D4-Track15.shn
+     0:57.53       10179500 B   ---   --   ---xx    shn  0.5642  D4-Track16.shn
+     3:23.60       35950364 B   ---   --   ---xx    shn  0.5749  D4-Track17.shn
+     2:36.00       27518444 B   ---   --   ---xx    shn  0.6678  D4-Track18.shn
+     2:37.65       27847724 B   ---   --   ---xx    shn  0.5586  D4-Track19.shn
+     5:31.65       58541324 B   ---   --   ---xx    shn  0.5851  D4-Track20.shn
+     4:31.22       47856188 B   ---   --   ---xx    shn  0.5978  D4-Track21.shn
+     1:23.48       14754140 B   ---   --   ---xx    shn  0.5942  D4-Track22.shn
+     7:21.12       77820668 B   ---   --   ---xx    shn  0.6711  D4-Track23.shn
+     4:47.44       50730332 B   ---   --   ---xx    shn  0.6609  D4-Track24.shn
+   316:24.70     3348945716 B                            0.6082  (79 files)
+=================== 
+=================== 
+=================== 

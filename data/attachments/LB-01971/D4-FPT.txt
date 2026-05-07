@@ -1,0 +1,14 @@
+cd8d5234e0053b91beef0570d640421b  [shntool]  01 Lord D-M D2t12.shn
+075b6e6dcf42fc095bac068708fcdba5  [shntool]  02 Lord O.shn
+b88cb4e39eb27563c8c9e3d2fd3d8582  [shntool]  03 Peace D-M D2t5.shn
+391a2b70631c0506c90260aa8ec768e1  [shntool]  04 Peace I1.shn
+518ef4a311b20e171eccaf61a80349d3  [shntool]  05 Peace O t5.shn
+3372baf089a9c23a45de7b0f2b49dba1  [shntool]  06 Peace RW (mono) D1t5.shn
+a4a7314b2b80a99a5129ecb0ae003599  [shntool]  07 Peace W t12.shn
+6128c0615648a2bab539180521d4a6f3  [shntool]  08 Someone b O.shn
+0168fb4f102b8c28b364de8a4fd21511  [shntool]  09 Someone r RW D3t7.shn
+653cf3f9ffc9d448527ee52aa60e5407  [shntool]  10 Sweetheart (later) D-M D2t2.shn
+cb2487317da64769a42d6e549e53e6d2  [shntool]  11 Sweetheart (lighthouse) I1.shn
+c2b0ec1fe29a370ce61c26a176185497  [shntool]  12 Sweetheart O t2.shn
+a0c413b5e4c5d6dfedace490fb3ac493  [shntool]  13 Sweetheart RW (mono) D4 t11.shn
+bd56d7cfed0dad37ceeede171f717499  [shntool]  14 Sweetheart W t9.shn

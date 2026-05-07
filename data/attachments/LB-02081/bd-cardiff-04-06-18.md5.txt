@@ -1,0 +1,40 @@
+; Using hkSFV on 09.23.2004 at 11:51:39
+; http://www.big-o-software.com
+;
+;/----
+;      5044465 15:47.30 2004-09-22 101 intro.flac
+;     68915598 15:50.13 2004-09-22 102 seeing the real you at last & it`s all over now baby blue.flac
+;     31269798 15:51.26 2004-09-22 103 tweedle dum and tweedle dee.flac
+;     41290812 15:53.06 2004-09-22 104 just like a woman.flac
+;     44705695 15:54.30 2004-09-22 105 most likely you go your way and i`ll go mine.flac
+;     25950316 15:55.28 2004-09-22 106 girl from the north country.flac
+;     65712889 15:57.18 2004-09-22 107 cold irons bound & if dogs run free.flac
+;     41975518 15:58.23 2004-09-22 108 highway 61 revisited.flac
+;     75481560 16:00.32 2004-09-22 109 shooting star& stuck inside of mobile with the memphis blues agai.flac
+;     44989155 16:01.36 2004-09-22 110 honest with me.flac
+;     36235053 17:39.15 2004-09-22 201 it ain`t me babe.flac
+;     45632592 17:40.52 2004-09-22 202 summer days.flac
+;      7336211 17:41.14 2004-09-22 203 applause.flac
+;     30739820 17:42.20 2004-09-22 204 cat`s in the well.flac
+;     47418647 17:43.50 2004-09-22 205 like a rolling stone.flac
+;     41038535 17:45.04 2004-09-22 206 all along the watchtower.flac
+;      4139793 17:45.28 2004-09-22 207 applause.flac
+;\----
+;
+ec8e315efafcf3ec384b00500f75a7af *101 intro.flac
+45c040a457d367fa58132156d7659657 *102 seeing the real you at last & it`s all over now baby blue.flac
+f677e0380e0578d41a3b6c2edefc6aa1 *103 tweedle dum and tweedle dee.flac
+a8381ea18a35cf3c66def69c330e4d3b *104 just like a woman.flac
+0b1acd33b73200e98cbc743c7b4daf65 *105 most likely you go your way and i`ll go mine.flac
+334e1b4f254d20ae07a7d681edcceb6f *106 girl from the north country.flac
+5ce92a05cfa2b82a487ff0606fe50e6c *107 cold irons bound & if dogs run free.flac
+74f91bbca433b70e987854c5676ce455 *108 highway 61 revisited.flac
+38d136024138a7ca9bef46ca01ec495d *109 shooting star& stuck inside of mobile with the memphis blues agai.flac
+62b8b9e9bc9d915b9dd3985e0d73707a *110 honest with me.flac
+e3ff014239082a555d031f025cc08998 *201 it ain`t me babe.flac
+5b3f8c5132f1b07502a53f5013dcf31a *202 summer days.flac
+e09f47737e3d2430e3d9553fd24aee48 *203 applause.flac
+339c22e613de19b5cb247dda61e9908c *204 cat`s in the well.flac
+2a27c61812f35e901a69d8eafc9c6688 *205 like a rolling stone.flac
+366855c7ba195bd51d4d39075c0129b4 *206 all along the watchtower.flac
+ab59ccbb3f92e4dc16ea08f465bce473 *207 applause.flac

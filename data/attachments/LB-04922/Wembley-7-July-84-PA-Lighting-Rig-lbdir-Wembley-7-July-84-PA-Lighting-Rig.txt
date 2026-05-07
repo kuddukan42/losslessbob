@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: Wembley 7 July 84 PA-Lighting Rig 
+=================== 
+=================== 
+=================== 
+aac582619eb206319fc494c2e245ccd0  D1\Track01.flac
+e484571492ee4f142d4f20e9dc958f40  D1\Track02.flac
+2d61aa883d7c288d7f5b6df55b601f62  D1\Track03.flac
+5d3efd5b9e2e864caa34fe79ecc34c0b  D1\Track04.flac
+616e5b89c5a4fc82b53c7b8b33f7a19a  D1\Track05.flac
+cfc4ca969b6c7ec764e2f1470b0327da  D1\Track06.flac
+11549716ead757b0e3a61a6f09e67f01  D1\Track07.flac
+e25aa2cc62fd5c2cc6992389baab1945  D1\Track08.flac
+02c66e364eb1a944526a4a9782dbcb90  D1\Track09.flac
+1ed09c8368e726b88a6db967cbe08c70  D1\Track10.flac
+559c04f5cbf7e1b4cbaea13204d67e83  D1\Track11.flac
+5612d78ffbc0f4852cc2e7cf3fc41b8c  D1\Track12.flac
+dff762d22c8a03da881bc8989c903d3e  D2\Track01.flac
+ab06aff63a0f933cc15eb306c1a16fc6  D2\Track02.flac
+7464c98103d5127bf49afd5df024b277  D2\Track03.flac
+73364036fe7610eff2885eea2e146e29  D2\Track04.flac
+7e212992111035368381dc9c04a96a0d  D2\Track05.flac
+83f585b56df249057a7548fd06922b59  D2\Track06.flac
+b92b5c6a20cee19dfba3e02558ae988d  D2\Track07.flac
+0bc254458fd61a90dd6ad25e3cadc83a  D2\Track08.flac
+2c78b576115b43e7c75021579b23a415  D2\Track09.flac
+353ca5a17347fea207b68dcc3a8e769e  D2\Track10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: Wembley 7 July 84 PA-Lighting Rig\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:a1110943a09c8cef90b694221da4fd23
+Track02.flac:66303da4ab91684c014250cf2646a9fb
+Track03.flac:11c75598c8df2dfa161efe825334dfbe
+Track04.flac:c9d7c08b9047685ab3bce25feb62759a
+Track05.flac:dcb1110c624c70b6bb80bcd69f4acf61
+Track06.flac:aacf1383765d3de7b788a86da38ecc95
+Track07.flac:f3ecc872bdc87d47eac412e2223eea22
+Track08.flac:bfd117493a3179cc6c4549b463dcf82a
+Track09.flac:2a148c03ba1eaa9e5a2fa5897c075846
+Track10.flac:76ea83babfaa50035a7b7dddabe30909
+Track11.flac:fda231afef03c94447df50b0b4572644
+Track12.flac:f9b8799573e1fefbcc7ea7b966535628
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: Wembley 7 July 84 PA-Lighting Rig\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:bff882c70b044f94a54f4c89c6254349
+Track02.flac:c049986f2d2ae5d09abc6d13e916fab6
+Track03.flac:e5df60d944b087dbf57dcd393aab1aec
+Track04.flac:8b10b7125ba8ea2f5b847aff2f64c1ac
+Track05.flac:ce94bb4ee70fc1a25c480b9f50a981e2
+Track06.flac:4a2b3e62afb3b5dc9a2411e310b643be
+Track07.flac:6ff27ca0d21cbcee9c317f6178378780
+Track08.flac:6c2238245fa2a8aa16ecf7e5b44732c3
+Track09.flac:4cc614496d4b5edd2e4c0b09ace7ed59
+Track10.flac:2847ae9d5924c1e5e64755532ff1a50e
+=================== 
+=================== 
+=================== 
+=== shntool for: Wembley 7 July 84 PA-Lighting Rig\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:39.52       28169948 B   ---   --   ---xx   flac  0.4213  Track01.flac
+     6:31.55       69101804 B   ---   --   ---xx   flac  0.4155  Track02.flac
+     4:08.22       43798988 B   ---   --   ---xx   flac  0.4210  Track03.flac
+     6:00.15       63539324 B   ---   --   ---xx   flac  0.4190  Track04.flac
+     4:58.61       52710716 B   ---   --   ---xx   flac  0.4217  Track05.flac
+     6:38.26       70268396 B   ---   --   ---xx   flac  0.4180  Track06.flac
+     4:06.47       43504988 B   ---   --   ---xx   flac  0.4205  Track07.flac
+     6:23.62       67707068 B   ---   --   ---xx   flac  0.4179  Track08.flac
+     6:14.21       66023036 B   ---   --   ---xx   flac  0.4206  Track09.flac
+     7:04.07       74810108 B   ---   --   ---xx   flac  0.4243  Track10.flac
+     6:53.64       73003772 B   ---   --   ---xx   flac  0.4205  Track11.flac
+     1:07.09       11840012 B   ---   --   ---xx   flac  0.4164  Track12.flac
+    62:46.66      664478160 B                            0.4198  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: Wembley 7 July 84 PA-Lighting Rig\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.35       71347964 B   ---   --   ---xx   flac  0.4127  Track01.flac
+     4:16.06       45172556 B   ---   --   ---xx   flac  0.4170  Track02.flac
+     4:36.66       48841676 B   ---   --   ---xx   flac  0.4236  Track03.flac
+     6:35.16       69715676 B   ---   --   ---xx   flac  0.4218  Track04.flac
+    10:19.00      109191644 B   ---   --   ---xx   flac  0.4239  Track05.flac
+     6:21.08       67227260 B   ---   --   ---xx   flac  0.4204  Track06.flac
+     4:45.64       50424572 B   ---   --   ---xx   flac  0.4215  Track07.flac
+     6:46.48       71731340 B   ---   --   ---xx   flac  0.4237  Track08.flac
+     5:51.65       62069324 B   ---   --   ---xx   flac  0.4190  Track09.flac
+     4:41.17       49608428 B   ---   --   ---xx   flac  0.4160  Track10.flac
+    60:58.25      645330440 B                            0.4203  (10 files)
+=================== 
+=================== 
+=================== 

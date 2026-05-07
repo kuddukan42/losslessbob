@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-25a.flacf 
+=================== 
+=================== 
+=================== 
+e46798898a1cd16a9c4607bf6b895621  bd03-04-25a.txt
+7c814ae0978cf0c27327245b29b2ebb1  Bob Dylan New Orleans Fairgrounds 20030425.md5
+ea493638005eba18e74066537bb2d8b2  Bob Dylan New Orleans Fairgrounds 20030425.txt
+594fa85030f9846db425c012161e715d  Disk 1\BobDylan_NewOrleans_20050425 D1T01.flac
+89607a4540a420c1a256468924598002  Disk 1\BobDylan_NewOrleans_20050425 D1T02.flac
+a37b968395f62b240540958f3cfdd15f  Disk 1\BobDylan_NewOrleans_20050425 D1T03.flac
+f1251c071d1d352f327f2efcb81d88b2  Disk 1\BobDylan_NewOrleans_20050425 D1T04.flac
+0caa5c4c2946a4911de6d97807c055f9  Disk 1\BobDylan_NewOrleans_20050425 D1T05.flac
+ec6cfa69fb184505f07187b4198b3107  Disk 1\BobDylan_NewOrleans_20050425 D1T06.flac
+d53203eabdb77a2e353ee29e986c2ec4  Disk 1\BobDylan_NewOrleans_20050425 D1T07.flac
+2f45b59c4f28914a7c2b7694d3ddef5d  Disk 1\BobDylan_NewOrleans_20050425 D1T08.flac
+95aa556138a4552697a0e1b461891c3c  Disk 1\BobDylan_NewOrleans_20050425 D1T09.flac
+1950e372996afa773071144a7ab5b877  Disk 1\BobDylan_NewOrleans_20050425 D1T10.flac
+c7069b9adffcbde483f50af702f9e522  Disk 2\BobDylan_NewOrleans_20050425 D2T01.flac
+18ab59d3c3338098a987d2909e0d9cca  Disk 2\BobDylan_NewOrleans_20050425 D2T02.flac
+7a7a621748abb4443148f176ddc7b626  Disk 2\BobDylan_NewOrleans_20050425 D2T03.flac
+091f9213758084c336f4111f3a3a45f5  Disk 2\BobDylan_NewOrleans_20050425 D2T04.flac
+14c2e60d2b192332bd0d871d5b5e1be6  Disk 2\BobDylan_NewOrleans_20050425 D2T05.flac
+98f3bd970ec6f1bf9a119c0a9a779f57  Disk 2\BobDylan_NewOrleans_20050425 D2T06.flac
+8129ee92bf90c6da9e4b2cded873f6cb  Disk 2\BobDylan_NewOrleans_20050425 D2T07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-04-25a.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+BobDylan_NewOrleans_20050425 D1T01.flac:49878c47f3e309a6c1b7029c3552a1f2
+BobDylan_NewOrleans_20050425 D1T02.flac:bf0ec31ed612dfa0ae27b530306cf2a0
+BobDylan_NewOrleans_20050425 D1T03.flac:edcde3ccdc353fc8f048bcd4fb527842
+BobDylan_NewOrleans_20050425 D1T04.flac:38018d063cc11d255ff0abab7e2eeccd
+BobDylan_NewOrleans_20050425 D1T05.flac:aaadf397db429b6ebc565c67129d577f
+BobDylan_NewOrleans_20050425 D1T06.flac:44532174aaf2fa5a330aee9cd5ba540b
+BobDylan_NewOrleans_20050425 D1T07.flac:c3e2ca7b82be72160401f475ee4b5fc7
+BobDylan_NewOrleans_20050425 D1T08.flac:ec928c865066eb6ae1d52c728909e66d
+BobDylan_NewOrleans_20050425 D1T09.flac:8309da966e84abf30c165ce970e67a78
+BobDylan_NewOrleans_20050425 D1T10.flac:614400355a72d538c7787d765fc9808a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-04-25a.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+BobDylan_NewOrleans_20050425 D2T01.flac:2c26519d6263adef65fa12927e127304
+BobDylan_NewOrleans_20050425 D2T02.flac:43a656b2c0de331f7060987d989bc55b
+BobDylan_NewOrleans_20050425 D2T03.flac:b89d5593f68bd07dadb9efba22026118
+BobDylan_NewOrleans_20050425 D2T04.flac:3cbd64bf0712a1818edb294ee3fe19a6
+BobDylan_NewOrleans_20050425 D2T05.flac:fb327fdaa46c4625dab828478c2e8bca
+BobDylan_NewOrleans_20050425 D2T06.flac:c060e1aba8374a849579f10bb87ed09a
+BobDylan_NewOrleans_20050425 D2T07.flac:d7f19639e94ba5b412ebac4653dcf3c8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-25a.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:16.08       13425260 B   ---   --   ---xx   flac  0.3878  BobDylan_NewOrleans_20050425 D1T01.flac
+     4:07.13       43601420 B   ---   --   ---xx   flac  0.5349  BobDylan_NewOrleans_20050425 D1T02.flac
+     4:27.26       47159996 B   ---   --   ---xx   flac  0.4865  BobDylan_NewOrleans_20050425 D1T03.flac
+     5:11.27       54923948 B   ---   --   ---xx   flac  0.5270  BobDylan_NewOrleans_20050425 D1T04.flac
+     6:48.16       72008876 B   ---   --   ---xx   flac  0.5339  BobDylan_NewOrleans_20050425 D1T05.flac
+     7:39.73       81139340 B   ---   --   ---xx   flac  0.4782  BobDylan_NewOrleans_20050425 D1T06.flac
+     5:29.16       58073276 B   ---   --   ---xx   flac  0.5502  BobDylan_NewOrleans_20050425 D1T07.flac
+     6:14.40       66067724 B   ---   --   ---xx   flac  0.4613  BobDylan_NewOrleans_20050425 D1T08.flac
+     6:05.29       64454252 B   ---   --   ---xx   flac  0.5567  BobDylan_NewOrleans_20050425 D1T09.flac
+     5:28.05       57871004 B   ---   --   ---xx   flac  0.4048  BobDylan_NewOrleans_20050425 D1T10.flac
+    52:47.28      558725096 B                            0.5001  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-25a.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:32.48       79845740 B   ---   --   ---xx   flac  0.5184  BobDylan_NewOrleans_20050425 D2T01.flac
+     4:04.73       43213340 B   ---   --   ---xx   flac  0.4310  BobDylan_NewOrleans_20050425 D2T02.flac
+     6:56.47       73492988 B   ---   --   ---xx   flac  0.5494  BobDylan_NewOrleans_20050425 D2T03.flac
+     6:48.46       72079436 B   ---   --   ---xx   flac  0.4977  BobDylan_NewOrleans_20050425 D2T04.flac
+     8:38.25       91434044 B   ---   --   ---xx   flac  0.5207  BobDylan_NewOrleans_20050425 D2T05.flac
+     7:04.50       74911244 B   ---   --   ---xx   flac  0.5256  BobDylan_NewOrleans_20050425 D2T06.flac
+     7:23.73       78316940 B   ---   --   ---xx   flac  0.5277  BobDylan_NewOrleans_20050425 D2T07.flac
+    48:29.62      513293732 B                            0.5155  (7 files)
+=================== 
+=================== 
+=================== 

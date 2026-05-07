@@ -1,0 +1,8 @@
+Bob Dylan, 7/19/87, Eugene, Oregon, 1CDR
+
+LB-6576, (74min), Dylan & The Dead, (Disc 3): SBD>?>CD, Notes:, Audio anomalies do exist., Tools:, Dell Inspiron 8200 (Hardware), Windows XP Professional 5.1.2600 Build 2600 (OS), Exact Audio Copy V0.9 Beta 4 (Secure Mode Extraction), Multiquence v2.50 (Crossfading), Sound Forge 6.0b (Build 185) (WAV Editing), CD Wave Audio Editor 1.7 (Tracking), mkw Audio Compression Tool 0.97 Beta 1 (SHN Compression), md5summer v1.1.0.24 (MD5 Generation), SHNTool 1.01 (Sector Boundary Verification), ----------, Major domo arigato to Sir Peter Pendragon for the source discs!, Another installment of The Music Never Stopped Project!, Sir Paino - April 2003, USS KITTY HAWK (CV 63); bittorrent download 10/08; this is just cd3 of http://db.etree.org/shninfo_detail.php?shnid=17352; has same wav and spectral view and levels as LB-10 on t5 with tracks cut differently; (did not listen to all of this)
+
+Disc Three:, Dylan & The Dead, 1. Maggies Farm [4:16], 2. Dead Man [5:22], 3. Watching The River Flow [4:57], 4. Simple Twist Of Fate [5:24], 5. Frankie Lee & Judas Priest [5:50], 6. Stuck Inside Of Mobile (With The Memphis Blues Again) [6:34], 7. Heart Of Mine [4:33], 8. It's All Over Now, Baby Blue [5:47], 9. Rainy Day Women [5:07], 10. Queen Jane [6:48], 11. Ballad Of A Thin Man [5:51], 12. Highway 61 [5:14], 13. Tangled Up In Blue [7:31], Encore, Touch Of Grey (missing), All Along The Watchtower (missing)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

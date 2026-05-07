@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-31-eve-j.flacf 
+=================== 
+=================== 
+=================== 
+1be038012d89ddc24ca5e0845097eb14  Dylan Band 1974 Jan 30 MSG NY,NY.md5
+2572184491d5d21fc6d7304df0ad12be  Dylan The Band 1974 Jan 30 MSG NY,NY01.flac
+c00a34b5fa645e70f781d52b81862cc4  Dylan The Band 1974 Jan 30 MSG NY,NY02.flac
+dfe9956e61bcf1e81ecd618d5db2c3db  Dylan The Band 1974 Jan 30 MSG NY,NY03.flac
+9b8c9f9196b6d0aaf0109051325e70e1  Dylan The Band 1974 Jan 30 MSG NY,NY04.flac
+8cc17a116ce42e24c50d71d6e41bdb6e  Dylan The Band 1974 Jan 30 MSG NY,NY05.flac
+24c7928fe928ddc60b66388ef4b603ee  Dylan The Band 1974 Jan 30 MSG NY,NY06.flac
+ee64c9d4e92507fe1a6c48a6abdf6d29  Dylan The Band 1974 Jan 30 MSG NY,NY07.flac
+12e52e4fa07cd5c1f1c80b32ea2959c7  Dylan The Band 1974 Jan 30 MSG NY,NY08.flac
+9425a63478d80aa66700c3535793c6e8  Dylan The Band 1974 Jan 30 MSG NY,NY09.flac
+ccec8a750e4e31247c537703d24c81d5  Dylan The Band 1974 Jan 30 MSG NY,NY10.flac
+f9b4915ce707f64ca8e6097941dead23  Dylan The Band 1974 Jan 30 MSG NY,NY11.flac
+7f6802a64f677a8481f037db4ccf0255  Dylan The Band 1974 Jan 30 MSG NY,NY12.flac
+c5de5e3465c1106f142dda841ff9dbad  Dylan The Band 1974 Jan 30 MSG NY,NY13.flac
+4fba0b0110584464082ac4421ec8cffa  Dylan The Band 1974 Jan 30 MSG NY,NY14.flac
+d26013b153ed9beca9876576ebe5f534  Dylan The Band 1974 Jan 30 MSG NY,NY16.flac
+5101eb5805c4f9eb07a879e14e5575f2  Dylan The Band 1974 Jan 30 MSG NY,NY17.flac
+6610c8ff727b2be2fd484609644293ef  Dylan The Band 1974 Jan 30 MSG NY,NY18.flac
+33b889984762d2de25f7af3efd3af58d  Dylan The Band 1974 Jan 30 MSG NY,NY19.flac
+be48fc983fe25654f92329e820c5ba54  Dylan The Band 1974 Jan 30 MSG NY,NY20.flac
+d9605cb55560702037896c981d23ff2f  Dylan The Band 1974 Jan 30 MSG NY,NY21.flac
+954dc479f314073c98d0b6f0e451ed68  Dylan The Band 1974 Jan 30 MSG NY,NY22.flac
+680e04aebd93edd1035742c5707c04e2  Dylan The Band 1974 Jan 30 MSG NY,NY23.flac
+94275c2587d09babac152851291e9bc2  Dylan The Band 1974 Jan 30 MSG NY,NY24.flac
+ec224c0e14aa82f6aee733a8a73ca61d  Dylan The Band 1974 Jan 30 MSG NY,NY25.flac
+b5134d4bb872fc8dc829e4be8146bb94  Dylan The Band 1974 Jan 30 MSG NY,NY26.flac
+f792fcba5baad662c347333e11a3559e  Dylan The Band 1974 Jan 30 MSG NY,NY27.flac
+db33d72d42eb81dc7a3106e1ed5e2ebc  Dylan The Band 1974 Jan 30 MSG NY,NY28.flac
+b1747cc86133051a2a370a8feb49bfab  Dylan The Band 1974 Jan 30 MSG NY,NY29.flac
+cdf19c61aef731a96608abde9e0521b8  Dylan The Band NY NY 1974.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-31-eve-j.flacf 
+=================== 
+=================== 
+=================== 
+Dylan The Band 1974 Jan 30 MSG NY,NY01.flac:ebbb5390337b9c26983a90e31733e910
+Dylan The Band 1974 Jan 30 MSG NY,NY02.flac:95dff3e8c7fcf10f59922c213e46e629
+Dylan The Band 1974 Jan 30 MSG NY,NY03.flac:340d7bf81b20137bcecbac5802c306c0
+Dylan The Band 1974 Jan 30 MSG NY,NY04.flac:41c68242638ffc5b4d431ea7e8b15a6e
+Dylan The Band 1974 Jan 30 MSG NY,NY05.flac:9e99f055fdbb8bfcd7719e3b90e287cb
+Dylan The Band 1974 Jan 30 MSG NY,NY06.flac:a287d53259b6f7bfd162aac10f13af45
+Dylan The Band 1974 Jan 30 MSG NY,NY07.flac:9add17243f8caeb8130caaf22b748e91
+Dylan The Band 1974 Jan 30 MSG NY,NY08.flac:7e8f4fcb6764f9bcc3166098a365b039
+Dylan The Band 1974 Jan 30 MSG NY,NY09.flac:f5527dffc721fa1eb2e7cbb64a66f39a
+Dylan The Band 1974 Jan 30 MSG NY,NY10.flac:5a9547d65418a85214aed0bfd6a545df
+Dylan The Band 1974 Jan 30 MSG NY,NY11.flac:bc8ea95edc17b0681d4947538a0ec67e
+Dylan The Band 1974 Jan 30 MSG NY,NY12.flac:6502b8e8e703a02705492ed1df792a4f
+Dylan The Band 1974 Jan 30 MSG NY,NY13.flac:2dbef97f0644a6be9ed96316e796914a
+Dylan The Band 1974 Jan 30 MSG NY,NY14.flac:351be69879fc3a0d696499798e847538
+Dylan The Band 1974 Jan 30 MSG NY,NY16.flac:f7959b7e143c7fafba67e399761a38eb
+Dylan The Band 1974 Jan 30 MSG NY,NY17.flac:821c0f1b0edd200d819885f5841b4b45
+Dylan The Band 1974 Jan 30 MSG NY,NY18.flac:b941d3af38dcbbe4722c7b7f15fdeceb
+Dylan The Band 1974 Jan 30 MSG NY,NY19.flac:5340efdd602588db7f1786243d3c7f73
+Dylan The Band 1974 Jan 30 MSG NY,NY20.flac:b04414585215c4a03fe8ca5e12bdc75f
+Dylan The Band 1974 Jan 30 MSG NY,NY21.flac:37c097aceec4ee21539ad713f1f03168
+Dylan The Band 1974 Jan 30 MSG NY,NY22.flac:de71b3cb765597faa178cda3f105fac9
+Dylan The Band 1974 Jan 30 MSG NY,NY23.flac:4156b9b003dc674025e95a7b57c3b260
+Dylan The Band 1974 Jan 30 MSG NY,NY24.flac:19a16202aa310d9ce83aaf3c2f3c2775
+Dylan The Band 1974 Jan 30 MSG NY,NY25.flac:8b38a863db4588025311616ebcc2475b
+Dylan The Band 1974 Jan 30 MSG NY,NY26.flac:eb1b7de4fed3047e48ae6bf00e7cbca3
+Dylan The Band 1974 Jan 30 MSG NY,NY27.flac:8cc82501bf7d9124279c83d917c995f6
+Dylan The Band 1974 Jan 30 MSG NY,NY28.flac:a3595bcaf6c6d6ddbe061e32518e8df8
+Dylan The Band 1974 Jan 30 MSG NY,NY29.flac:47ee228ce73ca0a9e358fb436dc8aefe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-31-eve-j.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.64       42662972 B   ---   --   ---xx   flac  0.5879  Dylan The Band 1974 Jan 30 MSG NY,NY01.flac
+     3:07.53       33111500 B   ---   --   ---xx   flac  0.6171  Dylan The Band 1974 Jan 30 MSG NY,NY02.flac
+     5:43.29       60573452 B   ---   --   ---xx   flac  0.6146  Dylan The Band 1974 Jan 30 MSG NY,NY03.flac
+     3:25.51       36281996 B   ---   --   ---xx   flac  0.6104  Dylan The Band 1974 Jan 30 MSG NY,NY04.flac
+     3:29.59       37006412 B   ---   --   ---xx   flac  0.5970  Dylan The Band 1974 Jan 30 MSG NY,NY05.flac
+     3:58.01       41985596 B   ---   --   ---xx   flac  0.5869  Dylan The Band 1974 Jan 30 MSG NY,NY06.flac
+     4:41.21       49617836 B   ---   --   ---xx   flac  0.5857  Dylan The Band 1974 Jan 30 MSG NY,NY07.flac
+     4:28.30       47345804 B   ---   --   ---xx   flac  0.5755  Dylan The Band 1974 Jan 30 MSG NY,NY08.flac
+     0:00.05          11804 B   --s   --   ---xx   flac  0.4965  Dylan The Band 1974 Jan 30 MSG NY,NY09.flac
+     3:31.41       37316876 B   ---   --   ---xx   flac  0.5778  Dylan The Band 1974 Jan 30 MSG NY,NY10.flac
+     3:24.72       36154988 B   ---   --   ---xx   flac  0.5702  Dylan The Band 1974 Jan 30 MSG NY,NY11.flac
+     4:30.37       47715068 B   ---   --   ---xx   flac  0.5830  Dylan The Band 1974 Jan 30 MSG NY,NY12.flac
+     2:42.41       28673276 B   ---   --   ---xx   flac  0.5588  Dylan The Band 1974 Jan 30 MSG NY,NY13.flac
+     4:00.17       42376028 B   ---   --   ---xx   flac  0.5851  Dylan The Band 1974 Jan 30 MSG NY,NY14.flac
+     3:12.22       33920588 B   ---   --   ---xx   flac  0.5407  Dylan The Band 1974 Jan 30 MSG NY,NY16.flac
+     3:46.66       40021676 B   ---   --   ---xx   flac  0.5378  Dylan The Band 1974 Jan 30 MSG NY,NY17.flac
+     5:11.03       54867500 B   ---   --   ---xx   flac  0.5443  Dylan The Band 1974 Jan 30 MSG NY,NY18.flac
+     4:53.62       51831068 B   ---   --   ---xx   flac  0.5458  Dylan The Band 1974 Jan 30 MSG NY,NY19.flac
+     6:03.61       64176716 B   ---   --   ---xx   flac  0.5467  Dylan The Band 1974 Jan 30 MSG NY,NY20.flac
+     4:11.61       44419916 B   ---   --   ---xx   flac  0.5391  Dylan The Band 1974 Jan 30 MSG NY,NY21.flac
+     3:40.32       38883308 B   ---   --   ---xx   flac  0.5668  Dylan The Band 1974 Jan 30 MSG NY,NY22.flac
+     3:16.54       34701452 B   ---   --   ---xx   flac  0.5617  Dylan The Band 1974 Jan 30 MSG NY,NY23.flac
+     5:16.48       55855340 B   ---   --   ---xx   flac  0.5533  Dylan The Band 1974 Jan 30 MSG NY,NY24.flac
+     5:03.37       53536268 B   ---   --   ---xx   flac  0.5539  Dylan The Band 1974 Jan 30 MSG NY,NY25.flac
+     4:08.18       43789580 B   ---   --   ---xx   flac  0.5579  Dylan The Band 1974 Jan 30 MSG NY,NY26.flac
+     8:54.03       94204700 B   ---   --   ---xx   flac  0.5476  Dylan The Band 1974 Jan 30 MSG NY,NY27.flac
+     4:31.61       47947916 B   ---   --   ---xx   flac  0.5465  Dylan The Band 1974 Jan 30 MSG NY,NY28.flac
+     3:29.30       36938204 B   ---   --   ---xx   flac  0.5630  Dylan The Band 1974 Jan 30 MSG NY,NY29.flac
+   116:46.29     1235927840 B                            0.5671  (28 files)
+=================== 
+=================== 
+=================== 

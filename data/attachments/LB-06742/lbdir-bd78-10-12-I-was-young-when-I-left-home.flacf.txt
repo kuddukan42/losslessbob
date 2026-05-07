@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-12-I-was-young-when-I-left-home.flacf 
+=================== 
+=================== 
+=================== 
+602db4048a1c032b67216f6bb58613ef  bd78-10-12-I-was-young-when-I-left-home.flacf.md5
+79363492ebd32432ae424f9bc4e21b63  bd78-10-12-I-was-young-whne-I-left-home-d1t01.flac
+6fbd57ee205f4135d6029352e4bf0152  bd78-10-12-I-was-young-whne-I-left-home-d1t02.flac
+4bd7fae14e954b43c629723a0aa6abc9  bd78-10-12-I-was-young-whne-I-left-home-d1t03.flac
+fccc9b57a2504100fa4fe3c70ff7494b  bd78-10-12-I-was-young-whne-I-left-home-d1t04.flac
+612c56a109343a8917d2441e8539d1d6  bd78-10-12-I-was-young-whne-I-left-home-d1t05.flac
+125747d7dfcb90e87dae81ea36cd8a04  bd78-10-12-I-was-young-whne-I-left-home-d1t06.flac
+c7307e4fbc2e17f301ef73a7a54defe0  bd78-10-12-I-was-young-whne-I-left-home-d1t07.flac
+9830e2fce7a3dd0c5a898240c4bb2552  bd78-10-12-I-was-young-whne-I-left-home-d1t08.flac
+be9817ea900c044cb54801ce15633a9e  bd78-10-12-I-was-young-whne-I-left-home-d1t09.flac
+fe84e4145ef5c0fc64f85e9aa03d3f86  bd78-10-12-I-was-young-whne-I-left-home-d1t10.flac
+d17236f19b1895049825e3da80844df0  bd78-10-12-I-was-young-whne-I-left-home-d1t11.flac
+1d057a07f94d7a33435d41b52e31dc58  bd78-10-12-I-was-young-whne-I-left-home-d1t12.flac
+0d14c441dd0ae7c793f64b05f258a242  bd78-10-12-I-was-young-whne-I-left-home-d1t13.flac
+2a0f09d857a5f72a453d52994ff8801a  bd78-10-12-I-was-young-whne-I-left-home-d1t14.flac
+c470b9cce1249b519cc5aaf62df729e3  bd78-10-12-I-was-young-whne-I-left-home-d1t15.flac
+8a8c14451bd7c97b645f4dbd66c3a63e  bd78-10-12-I-was-young-whne-I-left-home-d1t16.flac
+c2a99b652b52059c012a5fa8b52377b5  bd78-10-12-I-was-young-whne-I-left-home-d2t01.flac
+97fd1c7c19310ab48c65aeb24606a152  bd78-10-12-I-was-young-whne-I-left-home-d2t02.flac
+f2597fca76a2a15b43f4ecc1da790b08  bd78-10-12-I-was-young-whne-I-left-home-d2t03.flac
+7b9bebcb2e52b3adff082641a59b17ce  bd78-10-12-I-was-young-whne-I-left-home-d2t04.flac
+4601adae794bfb81ed17468579ad29e7  bd78-10-12-I-was-young-whne-I-left-home-d2t05.flac
+42dff77e100d35547dce636618573a92  bd78-10-12-I-was-young-whne-I-left-home-d2t06.flac
+260e62fd3286217dcd9f58923bf53f55  bd78-10-12-I-was-young-whne-I-left-home-d2t07.flac
+9bca28a1656ffd4c46edd16338173ffd  bd78-10-12-I-was-young-whne-I-left-home-d2t08.flac
+958842b6b39aaeeb482a7800d5172172  bd78-10-12-I-was-young-whne-I-left-home-d2t09.flac
+81021355ff45789cc9e37aa01d74fa1b  bd78-10-12-I-was-young-whne-I-left-home-d2t10.flac
+3a9d23c8fadd7e65915d2aca2683fa15  bd78-10-12-I-was-young-whne-I-left-home-d2t11.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-12-I-was-young-when-I-left-home.flacf 
+=================== 
+=================== 
+=================== 
+bd78-10-12-I-was-young-whne-I-left-home-d1t01.flac:361128d7a17857e5e6a9b189d2f9100e
+bd78-10-12-I-was-young-whne-I-left-home-d1t02.flac:875039e374265baf0047e8997dc537aa
+bd78-10-12-I-was-young-whne-I-left-home-d1t03.flac:36b24bfc8b063a2362d2d49d7908ea45
+bd78-10-12-I-was-young-whne-I-left-home-d1t04.flac:a217ebe3410fc492787d20224a9a0fee
+bd78-10-12-I-was-young-whne-I-left-home-d1t05.flac:db69abd700d80a6d736db6509ce5d3bf
+bd78-10-12-I-was-young-whne-I-left-home-d1t06.flac:73c2f43ce6e9a756cfa43903c4a5ffca
+bd78-10-12-I-was-young-whne-I-left-home-d1t07.flac:896d229925432a4846c3059883dbdcf6
+bd78-10-12-I-was-young-whne-I-left-home-d1t08.flac:b1aec95a63cb4b24e9ea88c1dc1b437a
+bd78-10-12-I-was-young-whne-I-left-home-d1t09.flac:6a8d90b3e3eb114ffeb3c993e94175ae
+bd78-10-12-I-was-young-whne-I-left-home-d1t10.flac:d526e5a9b5722ccd08c04395196135d8
+bd78-10-12-I-was-young-whne-I-left-home-d1t11.flac:fe4d5e0e63152624945da9b4ffa08f98
+bd78-10-12-I-was-young-whne-I-left-home-d1t12.flac:991948b8683f454b6e4fcbe75fccd05f
+bd78-10-12-I-was-young-whne-I-left-home-d1t13.flac:8d298d0d49698e548eeb23737ea0dfee
+bd78-10-12-I-was-young-whne-I-left-home-d1t14.flac:739036bc024c3967a2f95d92fe86d055
+bd78-10-12-I-was-young-whne-I-left-home-d1t15.flac:32f9aaf5e0131766e40ef697202631bd
+bd78-10-12-I-was-young-whne-I-left-home-d1t16.flac:e242eda078f91ad4f762bef3ebcd4507
+bd78-10-12-I-was-young-whne-I-left-home-d2t01.flac:a05c32deb05bf6b72bbd68bb227044bb
+bd78-10-12-I-was-young-whne-I-left-home-d2t02.flac:ce495ea8df039b1cb7c28a0c98c0bdcd
+bd78-10-12-I-was-young-whne-I-left-home-d2t03.flac:c63d22428e06d6174bce25c9f0e26b3c
+bd78-10-12-I-was-young-whne-I-left-home-d2t04.flac:fcf2fcbcaf7e29195b1ce046c93efa98
+bd78-10-12-I-was-young-whne-I-left-home-d2t05.flac:509e519c3608aaa76f5dd5db599a2d60
+bd78-10-12-I-was-young-whne-I-left-home-d2t06.flac:4b2f0d15b4ef3b3c12f40a914a144453
+bd78-10-12-I-was-young-whne-I-left-home-d2t07.flac:973605dd352ca87798ce5a305e626d71
+bd78-10-12-I-was-young-whne-I-left-home-d2t08.flac:dbda5241569e1e8094253a09be6738f4
+bd78-10-12-I-was-young-whne-I-left-home-d2t09.flac:432be5402fdf88b0f7c1441b0176b5a4
+bd78-10-12-I-was-young-whne-I-left-home-d2t10.flac:38fd314c96e6497d9de0cf3ce02d533d
+bd78-10-12-I-was-young-whne-I-left-home-d2t11.flac:f2d29b7fdd21ebd7de30c430abe42dab
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-12-I-was-young-when-I-left-home.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:16.42       34673228 B   ---   --   ---xx   flac  0.5804  bd78-10-12-I-was-young-whne-I-left-home-d1t01.flac
+     3:04.48       32570540 B   ---   --   ---xx   flac  0.5952  bd78-10-12-I-was-young-whne-I-left-home-d1t02.flac
+     4:27.12       47127068 B   ---   --   ---xx   flac  0.6118  bd78-10-12-I-was-young-whne-I-left-home-d1t03.flac
+     4:36.15       48721724 B   ---   --   ---xx   flac  0.6082  bd78-10-12-I-was-young-whne-I-left-home-d1t04.flac
+     4:40.38       49481420 B   ---   --   ---xx   flac  0.6225  bd78-10-12-I-was-young-whne-I-left-home-d1t05.flac
+     8:02.20       85071884 B   ---   --   ---xx   flac  0.5848  bd78-10-12-I-was-young-whne-I-left-home-d1t06.flac
+     4:22.25       46275644 B   ---   --   ---xx   flac  0.6157  bd78-10-12-I-was-young-whne-I-left-home-d1t07.flac
+     4:39.35       49297964 B   ---   --   ---xx   flac  0.6121  bd78-10-12-I-was-young-whne-I-left-home-d1t08.flac
+     4:15.55       45111404 B   ---   --   ---xx   flac  0.6079  bd78-10-12-I-was-young-whne-I-left-home-d1t09.flac
+     6:32.47       69259388 B   ---   --   ---xx   flac  0.6151  bd78-10-12-I-was-young-whne-I-left-home-d1t10.flac
+     4:05.00       43218044 B   ---   --   ---xx   flac  0.6048  bd78-10-12-I-was-young-whne-I-left-home-d1t11.flac
+     5:05.20       53849084 B   ---   --   ---xx   flac  0.5963  bd78-10-12-I-was-young-whne-I-left-home-d1t12.flac
+     4:49.10       51003164 B   ---   --   ---xx   flac  0.5652  bd78-10-12-I-was-young-whne-I-left-home-d1t13.flac
+     5:50.40       61834124 B   ---   --   ---xx   flac  0.5356  bd78-10-12-I-was-young-whne-I-left-home-d1t14.flac
+     2:58.18       31441580 B   ---   --   ---xx   flac  0.5593  bd78-10-12-I-was-young-whne-I-left-home-d1t15.flac
+     4:45.25       50332844 B   ---   --   ---xx   flac  0.5572  bd78-10-12-I-was-young-whne-I-left-home-d1t16.flac
+     4:49.25       51038444 B   ---   --   ---xx   flac  0.5539  bd78-10-12-I-was-young-whne-I-left-home-d2t01.flac
+     5:47.20       61257884 B   ---   --   ---xx   flac  0.5323  bd78-10-12-I-was-young-whne-I-left-home-d2t02.flac
+     5:54.30       62516204 B   ---   --   ---xx   flac  0.5803  bd78-10-12-I-was-young-whne-I-left-home-d2t03.flac
+     4:15.25       45040844 B   ---   --   ---xx   flac  0.5838  bd78-10-12-I-was-young-whne-I-left-home-d2t04.flac
+     5:26.57       57640508 B   ---   --   ---xx   flac  0.5641  bd78-10-12-I-was-young-whne-I-left-home-d2t05.flac
+     4:22.20       46263884 B   ---   --   ---xx   flac  0.5661  bd78-10-12-I-was-young-whne-I-left-home-d2t06.flac
+     3:40.50       38925644 B   ---   --   ---xx   flac  0.5794  bd78-10-12-I-was-young-whne-I-left-home-d2t07.flac
+     3:13.35       34127564 B   ---   --   ---xx   flac  0.5719  bd78-10-12-I-was-young-whne-I-left-home-d2t08.flac
+     9:12.73       97544540 B   ---   --   ---xx   flac  0.5728  bd78-10-12-I-was-young-whne-I-left-home-d2t09.flac
+     6:31.07       68988908 B   ---   --   ---xx   flac  0.5671  bd78-10-12-I-was-young-whne-I-left-home-d2t10.flac
+     6:42.33       70990460 B   ---   --   ---xx   flac  0.5630  bd78-10-12-I-was-young-whne-I-left-home-d2t11.flac
+   135:27.00     1433603988 B                            0.5805  (27 files)
+=================== 
+=================== 
+=================== 

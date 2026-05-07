@@ -1,0 +1,125 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-10-23-b.flacf 
+=================== 
+=================== 
+=================== 
+5152fc65b188bce6d940093fcba480af  BD 1981-10-23 Philadelphia.txt
+a7eb9cd8045ec666457fe8740fc54907  d1\01 - Traccia Audio.flac
+e55b2fa394dc76216c90cb43b96987bd  d1\02 - Traccia Audio.flac
+a3f7147f08ebf093c6bffe19426e1682  d1\03 - Traccia Audio.flac
+013ca0cf14d43fe24cb6d1712f32f701  d1\04 - Traccia Audio.flac
+eb42e6b624226f9ec4b1d7a35350716a  d1\05 - Traccia Audio.flac
+cb84228b4f1fe8148a26de9670f7b1ac  d1\06 - Traccia Audio.flac
+7ac93edb2993a1e1d3e1350f88f74599  d1\07 - Traccia Audio.flac
+9a304e82586e96969e04bfcecaf2546b  d1\08 - Traccia Audio.flac
+d8e3dadb2bc7d3e718273857d1b8ecdf  d1\09 - Traccia Audio.flac
+105dd0a3efb0f8bb4a43d4409177d426  d1\10 - Traccia Audio.flac
+7f16f1021ea871c6dd0a5296db32e1f0  d1\11 - Traccia Audio.flac
+cc6d02b7cea9ab195ebfabd4ceb9e4d1  d1\12 - Traccia Audio.flac
+1d1d5c2ad212cdbf9bf1b8973ed4c382  d1\13 - Traccia Audio.flac
+550f5850bae1be017167fa5ee61724a9  d1\14 - Traccia Audio.flac
+272bccae466fa3eccbf73052e1e36f73  d1\15 - Traccia Audio.flac
+3dd8e200809f8ed99a538539f51a78d4  d1\16 - Traccia Audio.flac
+efd256100d2dc003784b0f612cc45841  d2\01 - Traccia Audio.flac
+af903cae66265f3b5178aa16e3112e88  d2\02 - Traccia Audio.flac
+e6c17fefbc64e838baceeeaa3ee4e8c1  d2\03 - Traccia Audio.flac
+5695ff6cb9c8823c6b5a9bee3a0bd219  d2\04 - Traccia Audio.flac
+624e9ffda1cea54ae924c12b6b656920  d2\05 - Traccia Audio.flac
+00ee75f360ca23bcbcc897cb3cc729ca  d2\06 - Traccia Audio.flac
+cace54c8323f1e5bf208aac923da33ee  d2\07 - Traccia Audio.flac
+f9eb9f25c595b691b69cb1190fa3b3a9  d2\08 - Traccia Audio.flac
+39a48ec77ef8c1d07cd675c894a46ee9  d2\09 - Traccia Audio.flac
+d07c04c8ec1f1bb7f31ddd6f23f58dcc  d2\10 - Traccia Audio.flac
+49caf10daf529045222c21852ff927eb  d2\11 - Traccia Audio.flac
+de509c3959b026b6170374ba5222cf4a  fingerprint.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-23-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+01 - Traccia Audio.flac:f0b341f653f9853aa03fa16f06451b7b
+02 - Traccia Audio.flac:0409eda0e80d5383397cb83126cc0e67
+03 - Traccia Audio.flac:3b0c0e6672e95d11b576ec413fea7f0b
+04 - Traccia Audio.flac:a5c1a8d614ef50977207a08777635512
+05 - Traccia Audio.flac:d7308781642efe62d4aa7a2f94e7684b
+06 - Traccia Audio.flac:90b8076cc3a22a2e2049d5ee0a5faafb
+07 - Traccia Audio.flac:977fdff1af0387cea4bd583883028698
+08 - Traccia Audio.flac:38410782ecd11d8841401350c3c41724
+09 - Traccia Audio.flac:b0e3792261c22354dad6b193832d8053
+10 - Traccia Audio.flac:3af40db28a22edb0d9f7a2b0498a5cf4
+11 - Traccia Audio.flac:8858c491e26ed54ea8d87e07648b435f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-10-23-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+01 - Traccia Audio.flac:5ecd2a95f357e37ddc7fdf6a066b7f7e
+02 - Traccia Audio.flac:efd073a6a15baff533c4906f2030a461
+03 - Traccia Audio.flac:dd8dcdbee9ea82341f26b47c17e70eab
+04 - Traccia Audio.flac:5b06140fcdc0807c6b330b1839323ec3
+05 - Traccia Audio.flac:527b1b379847302e7cb25a055ebb1014
+06 - Traccia Audio.flac:fdedb0d529bd295ab594c754c9266e6a
+07 - Traccia Audio.flac:b3687d2ab4ca88bdb7d0e484fc318aac
+08 - Traccia Audio.flac:18efde50e0e6df2a758bf24ab59c24b0
+09 - Traccia Audio.flac:1e2004e4468e7efd09c0fa7c4238d73d
+10 - Traccia Audio.flac:b9edbfd80fde623c9a02e4ce12a24dc4
+11 - Traccia Audio.flac:68f1ed42ca28b04a999bc5369b3bee86
+12 - Traccia Audio.flac:620f70ae7ccaf9ec8f580f5078517b84
+13 - Traccia Audio.flac:ee4793489c1de8f7b7327102dedf07f7
+14 - Traccia Audio.flac:f9c3938e6fdc35441cc4a3b872a7096e
+15 - Traccia Audio.flac:88a724add9ef777c536b285300606c3d
+16 - Traccia Audio.flac:b060b9358540e37ef66182cbb729bf3e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-23-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.16       52957676 B   ---   --   ---xx   flac  0.5925  01 - Traccia Audio.flac
+     5:11.35       54942764 B   ---   --   ---xx   flac  0.5861  02 - Traccia Audio.flac
+     3:38.23       38509340 B   ---   --   ---xx   flac  0.6005  03 - Traccia Audio.flac
+     3:46.50       39984044 B   ---   --   ---xx   flac  0.5906  04 - Traccia Audio.flac
+     4:37.72       49032188 B   ---   --   ---xx   flac  0.5698  05 - Traccia Audio.flac
+     4:10.06       44114156 B   ---   --   ---xx   flac  0.6081  06 - Traccia Audio.flac
+     7:28.06       79041356 B   ---   --   ---xx   flac  0.5940  07 - Traccia Audio.flac
+     4:44.62       50243468 B   ---   --   ---xx   flac  0.6121  08 - Traccia Audio.flac
+     4:50.43       51257180 B   ---   --   ---xx   flac  0.6008  09 - Traccia Audio.flac
+     5:12.54       55163852 B   ---   --   ---xx   flac  0.5965  10 - Traccia Audio.flac
+     3:43.35       39419564 B   ---   --   ---xx   flac  0.5208  11 - Traccia Audio.flac
+    52:24.27      554665588 B                            0.5896  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-10-23-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.35       42947564 B   ---   --   ---xx   flac  0.6061  01 - Traccia Audio.flac
+     5:01.04       53105852 B   ---   --   ---xx   flac  0.5903  02 - Traccia Audio.flac
+     6:35.55       69807404 B   ---   --   ---xx   flac  0.6173  03 - Traccia Audio.flac
+     4:18.21       45560636 B   ---   --   ---xx   flac  0.6188  04 - Traccia Audio.flac
+     4:50.48       51268940 B   ---   --   ---xx   flac  0.5930  05 - Traccia Audio.flac
+     4:01.15       42547724 B   ---   --   ---xx   flac  0.6084  06 - Traccia Audio.flac
+     4:39.14       49248572 B   ---   --   ---xx   flac  0.6010  07 - Traccia Audio.flac
+     3:43.07       39353708 B   ---   --   ---xx   flac  0.6068  08 - Traccia Audio.flac
+     3:29.16       36905276 B   ---   --   ---xx   flac  0.5868  09 - Traccia Audio.flac
+     3:02.36       32189516 B   ---   --   ---xx   flac  0.5848  10 - Traccia Audio.flac
+     4:40.36       49476716 B   ---   --   ---xx   flac  0.5613  11 - Traccia Audio.flac
+     3:38.26       38516396 B   ---   --   ---xx   flac  0.5854  12 - Traccia Audio.flac
+     6:08.50       65032844 B   ---   --   ---xx   flac  0.5886  13 - Traccia Audio.flac
+     4:28.44       47378732 B   ---   --   ---xx   flac  0.5844  14 - Traccia Audio.flac
+     4:52.10       51532364 B   ---   --   ---xx   flac  0.6080  15 - Traccia Audio.flac
+     6:18.19       66723932 B   ---   --   ---xx   flac  0.5943  16 - Traccia Audio.flac
+    73:50.61      781596176 B                            0.5964  (16 files)
+=================== 
+=================== 
+=================== 

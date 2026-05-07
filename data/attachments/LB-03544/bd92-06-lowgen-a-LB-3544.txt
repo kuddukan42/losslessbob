@@ -1,0 +1,8 @@
+Bob Dylan, 6/xx/92, Acme Recording, Chicago, Illinois, 1CDR
+
+LB-3544, (19min), , lowgen version "a"; Four Tunes from the Bromberg '92 sessions, There's nothing new here. These tunes surfaced a few years ago in mp3 format and seem to have been processed by some awful hiss-reducer because it's full of that "gurgling water" sound throughout the spectrum. If you can get past this major distraction, it's some good listening., There is a current torrent on Bootcity which has been eq'd. I haven't listened to it but because in my opinion nearly everyone does a bad job of this, I'll seed my own., This version has been radically repitched and eq'd. Seeded on Dylantree Feb 2006. Please do not reseed elsewhere without this info file and all relevant comments., Lowgen; bittorrent download 02/06; very similar to LB-1454 the previous lowgen remaster with very close spectral view except levels a little higher. May be just slightly less harsh, pitched slower by 14 seconds, and tracks in reverse order; excellent sound [A]
+
+1 Kaatskill Serenade, 2 Miss The Mississippi And You, 3 Polly Vaughn, 4 Sloppy Drunk
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-22-h.flacf
+===================
+===================
+===================
+1a7a53b03897b6b6e06b45fa749476d9 *0100 Intro.shn
+e10fd5f2b957ca064abc80498dfa2396 *0101 Cocaine Blues.shn
+7bfccd8dd183188d8b18e5133bf15e7a *0102 Mr. Tambourine Man.shn
+b3d88e06cea4d2e05cbf7f2de424b086 *0103 Master Of War.shn
+147a2cde816e3f86d05e5640ae668b5f *0104 It's All Over Now.shn
+0fbaba7d6640d351a235490110840455 *0105 Mama, You Been.shn
+ef52e98f719805c951d1a0fb823da5c1 *0106 Tangled Up In Blue.shn
+b006cc18f3350aff5e86f1de480be6f1 *0107 One To Many Mornings.shn
+16cac20eed787a745b4571a17062ea32 *0201 Can't Wait.shn
+64dbfb837a45942fc19c41e3c7ac77b5 *0202 I'll Be Your Baby.shn
+ba37294bbc7f2c337d4f668849801211 *0203 Stuck Inside Of Mobile.shn
+0de3d0f0a779b4f34e46f3072ef4dc5b *0204 Not Dark Yet.shn
+613885259e3465baefdbdae91a3130f3 *0205 Highway 61 Revisited.shn
+413f3a455305a2788524c5b433fffcdd *0206 Intro.shn
+affeb89756330f701c559418027d84f5 *0206 Love Sick.shn
+d737b5630597c02dc0e3b6cd46edb2ab *0207 To Be Alone With You .shn
+103b12dd1c74d763d61c37b8a089ac49 *0208 Blowin' In The Wind .shn
+9d319b79c1a29152f43e6335e87aec41 *0209 Like A Rolling Stone.shn
+5bd61e258d9b96a2bde20187d7a3d3de *Barcellona99B.jpg
+7419729372d48d066e303a2de2588bb7 *Barecellona99F.jpg
+43fe1a4c81fec67834dd88e4acd57782 *bd 1999-04-22 barcelona shns.txt
+8befdfdf40f05720b3bfedb4be180ee7 *checksum.md5
+===================
+===================
+===================
+=== shntool md5/hash for: bd99-04-22-h.flacf
+===================
+===================
+===================
+e7edc4f2e9e697e741faaf4948700585  [shntool]  0100 Intro.shn
+dd9252817977c87bb0f0d2ddf641e05f  [shntool]  0101 Cocaine Blues.shn
+938ed793bb52fc085b6da10fa80bf5c8  [shntool]  0102 Mr. Tambourine Man.shn
+a5207d4679601a2c5b963483dbafc4ae  [shntool]  0103 Master Of War.shn
+85c090e1713ff00a65b7d948321870b3  [shntool]  0104 It's All Over Now.shn
+c97f15f99fbbe4961b0acccc164ca4ad  [shntool]  0105 Mama, You Been.shn
+ba07a8a2a0ba390a52ece04417d7cdb0  [shntool]  0106 Tangled Up In Blue.shn
+dc8da3e6497485b20614486e4d448bf0  [shntool]  0107 One To Many Mornings.shn
+4bf175f1e1d0a34c28d678abcfd1e0a3  [shntool]  0201 Can't Wait.shn
+32b542f12461879a7f97fb88aa4349c1  [shntool]  0202 I'll Be Your Baby.shn
+5754c07cd181fffcf2b089f822e931b7  [shntool]  0203 Stuck Inside Of Mobile.shn
+20033451ab2c9439f62fcdc6e50ad462  [shntool]  0204 Not Dark Yet.shn
+bbdcea70eb6d6fcc2951f806f0267fab  [shntool]  0205 Highway 61 Revisited.shn
+0126b0d1cd1e3413d31d780f017e5763  [shntool]  0206 Intro.shn
+9ba26d3081c389941a9fcb1d04c552fc  [shntool]  0206 Love Sick.shn
+20dc83c327e2210f1b87a63a1057c200  [shntool]  0207 To Be Alone With You .shn
+d5b27b7008e94cb37aa5ea6c8aef7acd  [shntool]  0208 Blowin' In The Wind .shn
+082f1e167ef65950a65b81349f6cfbe0  [shntool]  0209 Like A Rolling Stone.shn
+===================
+===================
+===================
+=== shntool len for: bd99-04-22-h.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:06.68       22386276 B   -b-   --   ---xx    shn  0.3854  0100 Intro.shn
+     3:54.70       41442284 B   ---   --   ---xx    shn  0.5778  0101 Cocaine Blues.shn
+     6:24.16       67775276 B   ---   --   ---xx    shn  0.5901  0102 Mr. Tambourine Man.shn
+     5:32.15       58600124 B   ---   --   ---xx    shn  0.5912  0103 Master Of War.shn
+     6:53.58       72989660 B   ---   --   ---xx    shn  0.5682  0104 It's All Over Now.shn
+     5:07.24       54211292 B   ---   --   ---xx    shn  0.5198  0105 Mama, You Been.shn
+     8:01.26       84909596 B   ---   --   ---xx    shn  0.6351  0106 Tangled Up In Blue.shn
+     6:01.22       63733188 B   -b-   --   ---xx    shn  0.4576  0107 One To Many Mornings.shn
+     7:06.48       75258268 B   -b-   --   ---xx    shn  0.6119  0201 Can't Wait.shn
+     5:53.45       62375084 B   ---   --   ---xx    shn  0.5897  0202 I'll Be Your Baby.shn
+     8:09.62       86405468 B   ---   --   ---xx    shn  0.6229  0203 Stuck Inside Of Mobile.shn
+     5:53.65       62422124 B   ---   --   ---xx    shn  0.4844  0204 Not Dark Yet.shn
+     5:53.69       62431532 B   ---   --   ---xx    shn  0.6718  0205 Highway 61 Revisited.shn
+     2:15.44       23917532 B   ---   --   ---xx    shn  0.4279  0206 Intro.shn
+     5:50.65       61892924 B   ---   --   ---xx    shn  0.5759  0206 Love Sick.shn
+     4:19.17       45727628 B   ---   --   ---xx    shn  0.6754  0207 To Be Alone With You .shn
+     5:43.01       60507596 B   ---   --   ---xx    shn  0.5521  0208 Blowin' In The Wind .shn
+     9:10.22       97072552 B   -b-   --   ---xx    shn  0.6241  0209 Like A Rolling Stone.shn
+   104:18.62     1104058404 B                            0.5793  (18 files)
+===================
+===================
+===================

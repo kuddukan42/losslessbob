@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-08-03-come-baby-rock-me.flacf 
+=================== 
+=================== 
+=================== 
+140024b6914269d39bdc994621dc5c75  bd86-08-03-come-baby-rock-me-d1t01.flac
+96d05aa668fd6d807d8ff65579998892  bd86-08-03-come-baby-rock-me-d1t02.flac
+772c786e1fdcbb59202a7d62232dbb21  bd86-08-03-come-baby-rock-me-d1t03.flac
+83386aba47e58dcdb4339c99238faa91  bd86-08-03-come-baby-rock-me-d1t04.flac
+f65276439b564fb48156c15f2e8962bb  bd86-08-03-come-baby-rock-me-d1t05.flac
+fe1b8f2d6b62f3c4ec46f59fa2ad0893  bd86-08-03-come-baby-rock-me-d1t06.flac
+a4ad3c4d552c874f3e401c27259ffb9e  bd86-08-03-come-baby-rock-me-d1t07.flac
+d667eb409c26b93b4b7912cc019bc015  bd86-08-03-come-baby-rock-me-d1t08.flac
+d0c507d16fb5adfa14babeec7cc94e1c  bd86-08-03-come-baby-rock-me-d1t09.flac
+5b64a55ac738697b033bdaffc14b29c2  bd86-08-03-come-baby-rock-me-d1t10.flac
+ee5352f8ce441dc3865282353fc90a49  bd86-08-03-come-baby-rock-me-d1t11.flac
+084f52efa06a51bd4fd629ddeeb4b9b7  bd86-08-03-come-baby-rock-me-d1t12.flac
+c19096925c8c428d5ab192ad18fe0672  bd86-08-03-come-baby-rock-me-d1t13.flac
+9cc40bc73c2d4073ce4c6239e4762ae1  bd86-08-03-come-baby-rock-me-d1t14.flac
+22441fdfda24d6aeabfcf6e2a1f355ad  bd86-08-03-come-baby-rock-me-d1t15.flac
+6bf6f99facd7b75845fcc62c3de25c4b  bd86-08-03-come-baby-rock-me-d1t16.flac
+00a7a08b887fd53c389af5948894c6c8  bd86-08-03-come-baby-rock-me-d1t17.flac
+6fcd45ad7ac2324bb798e5432df2e530  bd86-08-03-come-baby-rock-me.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-08-03-come-baby-rock-me.flacf 
+=================== 
+=================== 
+=================== 
+bd86-08-03-come-baby-rock-me-d1t01.flac:7279b435931a04cbc0ea13d4558c56f1
+bd86-08-03-come-baby-rock-me-d1t02.flac:e4d473e0744778d8024517e350c0dcc3
+bd86-08-03-come-baby-rock-me-d1t03.flac:b69f914efd5b83c31d3036f360cfa808
+bd86-08-03-come-baby-rock-me-d1t04.flac:f5b79c705391ac69b3f8704f15afc81b
+bd86-08-03-come-baby-rock-me-d1t05.flac:2a2d24d147bdb57f01febbf97807ec85
+bd86-08-03-come-baby-rock-me-d1t06.flac:93fd6e88a3d23aefc6912cb2317c8953
+bd86-08-03-come-baby-rock-me-d1t07.flac:8ea455ed42fc141667c26bef2ff15738
+bd86-08-03-come-baby-rock-me-d1t08.flac:398e783778621b4c3a539b466f164a7a
+bd86-08-03-come-baby-rock-me-d1t09.flac:2ca395de65b6a7acbf3da6f75298a99a
+bd86-08-03-come-baby-rock-me-d1t10.flac:4c25053a02c6b2223b11d8fcc1580f97
+bd86-08-03-come-baby-rock-me-d1t11.flac:6286d7446097e85baede2e0b04b930ee
+bd86-08-03-come-baby-rock-me-d1t12.flac:c7e02692c3b6d379a96ad186adca74fc
+bd86-08-03-come-baby-rock-me-d1t13.flac:4dc783a448e4198720bec234c8f36b3c
+bd86-08-03-come-baby-rock-me-d1t14.flac:6b35f051536769dcc8ead017e74e273a
+bd86-08-03-come-baby-rock-me-d1t15.flac:75fd145f94fca1c6f0e36105c618d1ed
+bd86-08-03-come-baby-rock-me-d1t16.flac:5e46f1eb2dc333eb56b134c9713d6a8e
+bd86-08-03-come-baby-rock-me-d1t17.flac:45ef9638461551c7ba11795ace377ff1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-08-03-come-baby-rock-me.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.47       33979388 B   ---   --   ---xx   flac  0.7356  bd86-08-03-come-baby-rock-me-d1t01.flac
+     3:46.10       39889964 B   ---   --   ---xx   flac  0.7247  bd86-08-03-come-baby-rock-me-d1t02.flac
+     4:06.58       43530860 B   ---   --   ---xx   flac  0.7396  bd86-08-03-come-baby-rock-me-d1t03.flac
+     4:05.07       43234508 B   ---   --   ---xx   flac  0.6964  bd86-08-03-come-baby-rock-me-d1t04.flac
+     9:26.03       99849500 B   ---   --   ---xx   flac  0.6992  bd86-08-03-come-baby-rock-me-d1t05.flac
+     5:37.70       59611484 B   ---   --   ---xx   flac  0.7328  bd86-08-03-come-baby-rock-me-d1t06.flac
+     4:16.30       45229004 B   ---   --   ---xx   flac  0.7158  bd86-08-03-come-baby-rock-me-d1t07.flac
+     3:07.12       33015068 B   ---   --   ---xx   flac  0.7335  bd86-08-03-come-baby-rock-me-d1t08.flac
+     7:53.33       83514860 B   ---   --   ---xx   flac  0.7366  bd86-08-03-come-baby-rock-me-d1t09.flac
+     5:11.52       54982748 B   ---   --   ---xx   flac  0.6684  bd86-08-03-come-baby-rock-me-d1t10.flac
+     4:22.15       46252124 B   ---   --   ---xx   flac  0.6863  bd86-08-03-come-baby-rock-me-d1t11.flac
+     2:56.45       31152284 B   ---   --   ---xx   flac  0.6937  bd86-08-03-come-baby-rock-me-d1t12.flac
+     3:26.68       36498380 B   ---   --   ---xx   flac  0.6906  bd86-08-03-come-baby-rock-me-d1t13.flac
+     3:07.22       33038588 B   ---   --   ---xx   flac  0.6755  bd86-08-03-come-baby-rock-me-d1t14.flac
+     5:56.45       62904284 B   ---   --   ---xx   flac  0.6932  bd86-08-03-come-baby-rock-me-d1t15.flac
+     3:34.58       37886060 B   ---   --   ---xx   flac  0.6888  bd86-08-03-come-baby-rock-me-d1t16.flac
+     3:48.27       40282748 B   ---   --   ---xx   flac  0.6982  bd86-08-03-come-baby-rock-me-d1t17.flac
+    77:56.02      824851852 B                            0.7071  (17 files)
+=================== 
+=================== 
+=================== 

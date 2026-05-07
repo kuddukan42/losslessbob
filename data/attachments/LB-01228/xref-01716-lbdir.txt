@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== md5 for: bd90-11-18-c.flacf
+===================
+===================
+===================
+c79ed8fbe5b401df3cc7d8519e3df095 *01.flac
+117538cbb6ae571adcf5a66baa5f1544 *02.flac
+05f3e3da58369c1946d67654b37a4b2e *03.flac
+f793662958c20512c64e1b923eca2bf1 *04.flac
+057ed6de3cf58061b9ae4d6c01c8db47 *05.flac
+3b75094122f016af33cd2a48e9db8000 *06.flac
+c79446b65eba4b8f232fa79d8ee46b86 *07.flac
+33da61b1ce8c2073ee78004d5d3d27c2 *08.flac
+1f9bd498776483e499c9a879faca0354 *09.flac
+60bedd96a2ac0eced3325994ded5808e *10.flac
+33f0ae65a1eecd06efbce67aa0266b50 *11.flac
+faeb2753e254339278fda7e93e3971f1 *12.flac
+154681181a1a80529ab813091949c338 *13.flac
+2bc2c3c63c17f96acf7227abd9f0979b *14.flac
+fed1b869c9e3eb7bdca6e97d36f6f6ef *15.flac
+3aeed70b303877857e55d91476c37976 *16.flac
+797df7edf317a1cb3a3223488573d607 *17.flac
+9e431ce82497d670d5b289a63661fe85 *18.flac
+ffa18fbfa5894ea4ed24a1ee75017c0d *19.flac
+d7f271d774c56100471331c5dcda3c48 *20.flac
+6457fc47aab7f184714deac2387fcd25 *Bob Dylan Fox Theatre Detroit MI Nov 18 1990 from master.ffp
+6457fc47aab7f184714deac2387fcd25 *Bob Dylan Fox Theatre Detroit MI Nov 18 1990 from master.txt
+b3abc3d1a641a56fa277b3a6453457ab *info.txt
+===================
+===================
+===================
+=== ffp for: bd90-11-18-c.flacf
+===================
+===================
+===================
+01.flac:85f65e6a4b30880c2d4aaf5cf4167417
+02.flac:1a6fca4039395cff8664771597cc1b82
+03.flac:485036c988c78ec9a8975ea947a75ae6
+04.flac:69e5e5d1dd432a2441657c8f9da4fca9
+05.flac:b502d1b0ddd534eb6c6ed50cc1dc2719
+06.flac:1c3936428532a60c5016603383107378
+07.flac:3f0ac1c246b9854877a6171d5eefe0bc
+08.flac:18d5f9df9ccd10cdf201be84d00bc49d
+09.flac:6a2da23f757642ad60860776445a732d
+10.flac:01eeb278b0dd6c78e56000a627ccff44
+11.flac:4c6089b55d08c8e74ede5b752178b84f
+12.flac:853144433e64076003eef63f4fde68b6
+13.flac:58f11772778ae17d097c1d201cd11063
+14.flac:f16f552fe80592f2c83f215a996af9ce
+15.flac:0881c3ade0c9398d120da31a18af4b7b
+16.flac:648ba0e471d52639cf08f93525f26482
+17.flac:265b00f26f228c6ee259865b687a48a8
+18.flac:01b860b4fc4857693b73120a43967343
+19.flac:7280c66c22d006d3014e3f865586e827
+20.flac:951bcf70a161e3025ac206b459dbdd47
+===================
+===================
+===================
+=== shntool len for: bd90-11-18-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.114      50325868 B   cxx   --   ---xx   flac  0.5789  01.flac
+     4:30.785      51990828 B   cxx   --   ---xx   flac  0.5958  02.flac
+     4:08.411      47694956 B   cxx   --   ---xx   flac  0.5752  03.flac
+     4:00.359      46148984 B   cxx   --   ---xx   flac  0.5464  04.flac
+     3:03.472      35226636 B   cxx   --   ---xx   flac  0.6248  05.flac
+     5:40.783      65430436 B   cxx   --   ---xx   flac  0.5351  06.flac
+     5:54.234      68013028 B   cxx   --   ---xx   flac  0.5957  07.flac
+     4:57.931      57202792 B   cxx   --   ---xx   flac  0.5109  08.flac
+     5:13.660      60222728 B   cxx   --   ---xx   flac  0.5302  09.flac
+     3:25.278      39413448 B   cxx   --   ---xx   flac  0.4802  10.flac
+     6:24.727      73867556 B   cxx   --   ---xx   flac  0.5139  11.flac
+     3:57.424      45585384 B   cxx   --   ---xx   flac  0.5544  12.flac
+     6:19.633      72889572 B   cxx   --   ---xx   flac  0.5938  13.flac
+     3:51.332      44415752 B   cxx   --   ---xx   flac  0.5775  14.flac
+     3:06.601      35827464 B   cxx   --   ---xx   flac  0.5237  15.flac
+     3:04.580      35439404 B   cxx   --   ---xx   flac  0.5698  16.flac
+     4:06.363      47301768 B   cxx   --   ---xx   flac  0.5423  17.flac
+     6:40.599      76915012 B   cxx   --   ---xx   flac  0.5526  18.flac
+     5:13.029      60101636 B   cxx   --   ---xx   flac  0.5139  19.flac
+     6:12.161      71454888 B   cxx   --   ---xx   flac  0.5774  20.flac
+    94:13.475    1085468140 B                            0.5544  (20 files)
+===================
+===================
+===================

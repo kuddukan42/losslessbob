@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-08-offmaster-munich.shnf 
+=================== 
+=================== 
+=================== 
+f1644e2d01f98ecc4281ec4183aac07a  bd1995-07-08 munich.md5
+bb5795f9debb8fcc34436ecd320c3326  bd1995-07-08 munich.txt
+5c720d9154a2101d0038a9a9c5da5b99  bd1995-07-08_d1t1.shn
+0715be67792bcc7e92adb49ef035f221  bd1995-07-08_d1t2.shn
+ea419fe41f04d4bdd5bd7c816515526c  bd1995-07-08_d1t3.shn
+6a870c42941eb4aa07e9d98bc7efc4b0  bd1995-07-08_d1t4.shn
+adef9563ba9657d29d7d9c2fa4bdf12a  bd1995-07-08_d1t5.shn
+c53c9e6f490356c8efd6a9997e839066  bd1995-07-08_d1t6.shn
+2f1fa67d400fab520fdadb949e86c3ee  bd1995-07-08_d1t7.shn
+d6546fafd39ed8269f2431e05f88e9f5  bd1995-07-08_d1t8.shn
+7cdf9c678a8e1db3dbcf0e2f0f6d2080  bd1995-07-08_d2t1.shn
+c4a0838d18bbf3cadbcdded5ff03dcaa  bd1995-07-08_d2t2.shn
+8869071f9f8153a5ee28ef7143683ef5  bd1995-07-08_d2t3.shn
+e45fb2c040244db4f74a6c1aec50c5d1  bd1995-07-08_d2t4.shn
+9b227fc7131a2d13c5de175b952ca0d9  bd1995-07-08_d2t5.shn
+2370eb3970a9f848145c966fbf7bb6fe  bd1995-07-08_d2t6.shn
+1a8d3d7be4865532b3d4eb240b9082bf  bd1995-07-08_d2t7.shn
+df540aa72bd2117e1f466ebeb3030572  bd95-07-08.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-07-08-offmaster-munich.shnf 
+=================== 
+=================== 
+=================== 
+6dbe6e1bf8521c47112d59e2573e4412  [shntool]  bd1995-07-08_d1t1.wav
+a79df21c3ebe812e551d00cff0527363  [shntool]  bd1995-07-08_d1t2.wav
+919564bc7704a6c1defaf45741ddce7c  [shntool]  bd1995-07-08_d1t3.wav
+5da8a570539dd2e2889fed024e6ec127  [shntool]  bd1995-07-08_d1t4.wav
+ed35bd7d8f33c714d9bac505b79fad65  [shntool]  bd1995-07-08_d1t5.wav
+1223c6b1a589d0fa53b732b27acb961f  [shntool]  bd1995-07-08_d1t6.wav
+842e108a93f16664bdf2ea89db78caaf  [shntool]  bd1995-07-08_d1t7.wav
+5ce1209926e7f80a278722d8b030fd14  [shntool]  bd1995-07-08_d1t8.wav
+6bc5a4f2f13f5caa11dd4ce706598e54  [shntool]  bd1995-07-08_d2t1.wav
+ca01b08e66b936ad68f9d7fd95162265  [shntool]  bd1995-07-08_d2t2.wav
+28a2cb7f896eb7e0827c8757c882bf46  [shntool]  bd1995-07-08_d2t3.wav
+db8f00b9244c8581cf8063d912130b67  [shntool]  bd1995-07-08_d2t4.wav
+29988f210152c3469fb6d48faf10a586  [shntool]  bd1995-07-08_d2t5.wav
+067fbbaf830c0fce2c659fe5024eb3ad  [shntool]  bd1995-07-08_d2t6.wav
+4cd393d84a3fc9cff47c3ca12f9eda19  [shntool]  bd1995-07-08_d2t7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-08-offmaster-munich.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.43       53726780 B   ---   --   -----    wav  1.0000  bd1995-07-08_d1t1.wav
+     9:25.64       99816572 B   ---   --   -----    wav  1.0000  bd1995-07-08_d1t2.wav
+     6:20.35       67114364 B   ---   --   -----    wav  1.0000  bd1995-07-08_d1t3.wav
+     7:31.71       79723436 B   ---   --   -----    wav  1.0000  bd1995-07-08_d1t4.wav
+     7:07.42       75421628 B   ---   --   -----    wav  1.0000  bd1995-07-08_d1t5.wav
+     7:17.03       77093900 B   ---   --   -----    wav  1.0000  bd1995-07-08_d1t6.wav
+     8:25.16       89119676 B   ---   --   -----    wav  1.0000  bd1995-07-08_d1t7.wav
+     9:02.49       95724092 B   ---   --   -----    wav  1.0000  bd1995-07-08_d1t8.wav
+     7:27.58       78987260 B   ---   --   -----    wav  1.0000  bd1995-07-08_d2t1.wav
+     6:58.29       73803452 B   ---   --   -----    wav  1.0000  bd1995-07-08_d2t2.wav
+    10:47.46      114239036 B   ---   --   -----    wav  1.0000  bd1995-07-08_d2t3.wav
+    10:14.69      108471932 B   ---   --   -----    wav  1.0000  bd1995-07-08_d2t4.wav
+     6:54.06       73043756 B   ---   --   -----    wav  1.0000  bd1995-07-08_d2t5.wav
+     9:28.15      100230524 B   ---   --   -----    wav  1.0000  bd1995-07-08_d2t6.wav
+     7:55.51       83909996 B   ---   --   -----    wav  1.0000  bd1995-07-08_d2t7.wav
+   120:01.72     1270426404 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

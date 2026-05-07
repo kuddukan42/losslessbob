@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== md5 for: bd92-03-29-IA062,flacf
+===================
+===================
+===================
+3d17135ad483c9b75d0160c324fa5df2 *1992-04-06-cd1-01. Bob Dylan - Intro.flac
+43975e1aed947409548b7ddf8ec0ff17 *1992-04-06-cd1-02. Bob Dylan - All Along The Watchtower.flac
+8d330b95006912f906bd12c7ea432330 *1992-04-06-cd1-03. Bob Dylan - Simple Twist Of Fate.flac
+1205b3135604ea446e444c6b62b80ba7 *1992-04-06-cd1-04. Bob Dylan - Everything Is Broken.flac
+bf5d4610f721b1a3247d75c631f52e5e *1992-04-06-cd1-05. Bob Dylan - Just Like A Woman.flac
+8724e5571c6a9e2890115f4cf01df3c1 *1992-04-06-cd1-06. Bob Dylan - Tangled Up In Blue.flac
+62ccb751fc2d85586c601cca961c98ef *1992-04-06-cd1-07. Bob Dylan - She Belongs To Me.flac
+46d2308b48ff9b780f06208e80607c35 *1992-04-06-cd1-08. Bob Dylan - Maggie's Farm.flac
+2e260ec98b614c4aad627c941af2fa8f *1992-04-06-cd1-09. Bob Dylan - Love Minus Zero-No Limit.flac
+465585fa3099e482ed51faa687be2d6a *1992-04-06-cd1-10. Bob Dylan - Little Moses.flac
+5ec69fd10fe71c8d917d63e7e807cfbf *1992-04-06-cd1-11. Bob Dylan - Gates Of Eden.flac
+d632cbd7d0054fe25dd45204c73987c1 *1992-04-06-cd2-01. Bob Dylan - Mr. Tambourine Man.flac
+af9bae84d27dc12beb36bb65e850c577 *1992-04-06-cd2-02. Bob Dylan - Car's In The Weel.flac
+02e105425bc4591d2d2532538a2ae130 *1992-04-06-cd2-03. Bob Dylan - I'll Remember You.flac
+a46ec7a1b99126bcb349132cb759064d *1992-04-06-cd2-04. Bob Dylan - The Times They Are A-Changin'.flac
+57a1bd8785fc6d5a420a3d138ffd28d1 *1992-04-06-cd2-05. Bob Dylan - Highway 61 Revisited.flac
+e4b4dc38ea20a8acc400a34694bf5021 *1992-04-06-cd2-06. Bob Dylan - Ballad Of A Thin Man.flac
+6fee48cc7444f0aedf3c9914cb8bda61 *1992-04-06-cd2-07. Bob Dylan - Watching The River Flow.flac
+c1471736d791d786867ea14173ef2a9a *1992-04-06-cd2-08. Bob Dylan - Audience.flac
+100f0db8b52b3803338e9c029db7e768 *1992-04-06-cd2-09. Bob Dylan - Blowin' In The Wind.flac
+27b3150a3fdfaed5bca9258d7a54aeb6 *Bob Dylan - Canberra, Australia, March 29, 1992, IAR062 CD1.log
+56d22b4ffe49d82aa96ab881febe3ab3 *Bob Dylan - Canberra, Australia, March 29, 1992, IAR062 CD2.log
+51639eebfd9380ae984af923e369c21a *Bob Dylan 1992-03-29 Canberra, Australia (IA062).md5
+5c29c8cdfd973ba96330437ea35c779f *Bob Dylan 1992-03-29 Canberra, Australia (IA062).txt
+===================
+===================
+===================
+=== ffp for: bd92-03-29-IA062,flacf
+===================
+===================
+===================
+1992-04-06-cd1-01. Bob Dylan - Intro.flac:3014a3cf0955f1635d5af4c324936a1c
+1992-04-06-cd1-02. Bob Dylan - All Along The Watchtower.flac:c39ca3d226240975e1e4a01b1ce97775
+1992-04-06-cd1-03. Bob Dylan - Simple Twist Of Fate.flac:1f5c9b48de6ad738d113838b7656c4a7
+1992-04-06-cd1-04. Bob Dylan - Everything Is Broken.flac:e5e4bb4247a1b7043360c07e945b4f08
+1992-04-06-cd1-05. Bob Dylan - Just Like A Woman.flac:aa3edcd4d6a7b8e424883c70ea7a2ad8
+1992-04-06-cd1-06. Bob Dylan - Tangled Up In Blue.flac:20c877e55218bf4a160727617927de22
+1992-04-06-cd1-07. Bob Dylan - She Belongs To Me.flac:20552401e17a10277c4fc70cdd37e0e2
+1992-04-06-cd1-08. Bob Dylan - Maggie's Farm.flac:99fe16e2d268522df6f18b95bf483ac8
+1992-04-06-cd1-09. Bob Dylan - Love Minus Zero-No Limit.flac:c9eab23a74eb7f4a61e45aff4c780c72
+1992-04-06-cd1-10. Bob Dylan - Little Moses.flac:1cebe7f2e7312c003cd901cd32756215
+1992-04-06-cd1-11. Bob Dylan - Gates Of Eden.flac:7d393e48194f58c0c7151fb5307ce52f
+1992-04-06-cd2-01. Bob Dylan - Mr. Tambourine Man.flac:675460652c6b3c7c790a63e699cd53ce
+1992-04-06-cd2-02. Bob Dylan - Car's In The Weel.flac:b5b323d14501aefeb4ca09cd76493e37
+1992-04-06-cd2-03. Bob Dylan - I'll Remember You.flac:d7c85c4b99890206cb6ea02e35466c65
+1992-04-06-cd2-04. Bob Dylan - The Times They Are A-Changin'.flac:b30ae020de7b927cd9566a70b86af2c9
+1992-04-06-cd2-05. Bob Dylan - Highway 61 Revisited.flac:6847716e7b3cebcd8f3fc1972f96a091
+1992-04-06-cd2-06. Bob Dylan - Ballad Of A Thin Man.flac:2fd5636f575c90c215c9b85606b7c4a9
+1992-04-06-cd2-07. Bob Dylan - Watching The River Flow.flac:e85e7be8a42a9df1d2212c1029cf750a
+1992-04-06-cd2-08. Bob Dylan - Audience.flac:0216ea197e7e9afe0d67bb924cb6f52a
+1992-04-06-cd2-09. Bob Dylan - Blowin' In The Wind.flac:14037ddec6cde1c7f45f863af5f26b0c
+===================
+===================
+===================
+=== shntool len for: bd92-03-29-IA062,flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:16.07        2838908 B   ---   --   ---xx   flac  0.5981  1992-04-06-cd1-01. Bob Dylan - Intro.flac
+     3:54.46       41385836 B   ---   --   ---xx   flac  0.6862  1992-04-06-cd1-02. Bob Dylan - All Along The Watchtower.flac
+     7:20.02       77620748 B   ---   --   ---xx   flac  0.6563  1992-04-06-cd1-03. Bob Dylan - Simple Twist Of Fate.flac
+     3:37.46       38387036 B   ---   --   ---xx   flac  0.6999  1992-04-06-cd1-04. Bob Dylan - Everything Is Broken.flac
+     6:40.03       70567100 B   ---   --   ---xx   flac  0.6881  1992-04-06-cd1-05. Bob Dylan - Just Like A Woman.flac
+     6:39.39       70475372 B   ---   --   ---xx   flac  0.6931  1992-04-06-cd1-06. Bob Dylan - Tangled Up In Blue.flac
+     4:27.44       47202332 B   ---   --   ---xx   flac  0.6407  1992-04-06-cd1-07. Bob Dylan - She Belongs To Me.flac
+     6:28.25       68502044 B   ---   --   ---xx   flac  0.6928  1992-04-06-cd1-08. Bob Dylan - Maggie's Farm.flac
+     3:14.44       34325132 B   ---   --   ---xx   flac  0.6380  1992-04-06-cd1-09. Bob Dylan - Love Minus Zero-No Limit.flac
+     4:26.23       46976540 B   ---   --   ---xx   flac  0.6393  1992-04-06-cd1-10. Bob Dylan - Little Moses.flac
+     5:05.38       53891420 B   ---   --   ---xx   flac  0.6421  1992-04-06-cd1-11. Bob Dylan - Gates Of Eden.flac
+     7:39.28       81033500 B   ---   --   ---xx   flac  0.6459  1992-04-06-cd2-01. Bob Dylan - Mr. Tambourine Man.flac
+     4:23.39       46484972 B   ---   --   ---xx   flac  0.6461  1992-04-06-cd2-02. Bob Dylan - Car's In The Weel.flac
+     5:20.66       56603276 B   ---   --   ---xx   flac  0.6247  1992-04-06-cd2-03. Bob Dylan - I'll Remember You.flac
+     6:21.47       67318988 B   ---   --   ---xx   flac  0.6175  1992-04-06-cd2-04. Bob Dylan - The Times They Are A-Changin'.flac
+     5:23.08       56996060 B   ---   --   ---xx   flac  0.6409  1992-04-06-cd2-05. Bob Dylan - Highway 61 Revisited.flac
+     6:28.70       68607884 B   ---   --   ---xx   flac  0.6452  1992-04-06-cd2-06. Bob Dylan - Ballad Of A Thin Man.flac
+     5:19.59       56410412 B   ---   --   ---xx   flac  0.6539  1992-04-06-cd2-07. Bob Dylan - Watching The River Flow.flac
+     0:59.10       10431164 B   ---   --   ---xx   flac  0.5959  1992-04-06-cd2-08. Bob Dylan - Audience.flac
+     3:08.67       33320828 B   ---   --   ---xx   flac  0.6166  1992-04-06-cd2-09. Bob Dylan - Blowin' In The Wind.flac
+    97:15.36     1029379552 B                            0.6541  (20 files)
+===================
+===================
+===================

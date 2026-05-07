@@ -1,0 +1,122 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-11-13-sb.flacf 
+=================== 
+=================== 
+=================== 
+c988065f031c3df80c0f24812d04cdd4  13.11.1990.txt
+f332d128683d69acd0139cb51239353b  Butcherart.doc
+515a26710599141180ea9992d7b6df96  Southside ButchersDVDs.xls
+404a93de093f0a9fe683e8ce8bbc06f1  SSB When The Roses Fade (1990-11-13).md5
+9dbb092b1ec7bf86aee4185ed4e252e0  When The Roses Fade [CD1]\1990-11-13_101.flac
+19dfe6d14d445fa5c7e93329c0989d5b  When The Roses Fade [CD1]\1990-11-13_102.flac
+3da920f16f64e1d0c3a734c024a4b3dd  When The Roses Fade [CD1]\1990-11-13_103.flac
+78f1c0010586d07cfbafc0ed18b083dd  When The Roses Fade [CD1]\1990-11-13_104.flac
+723e6f9a56872ef906103c570b678fb2  When The Roses Fade [CD1]\1990-11-13_105.flac
+d7d53427991a349b4bdbecf17f1ee0af  When The Roses Fade [CD1]\1990-11-13_106.flac
+b117293479cafdcb50c0101f30851a77  When The Roses Fade [CD1]\1990-11-13_107.flac
+eb2d84dd4d5d67099be6d962b0bc0aa5  When The Roses Fade [CD1]\1990-11-13_108.flac
+eebc1e06f0f905c932db0e56c48851f1  When The Roses Fade [CD1]\1990-11-13_109.flac
+31580a2b83c2cec95bb0c7cbb7a62184  When The Roses Fade [CD1]\1990-11-13_110.flac
+bc30080c403551edb18aa2f20e46c555  When The Roses Fade [CD1]\1990-11-13_111.flac
+e75777665a678ff69ec1c7f96e157f0f  When The Roses Fade [CD1]\1990-11-13_112.flac
+a9078cc27186b3005e723e079f5ee38a  When The Roses Fade [CD1]\When The Roses Fade [CD1].LOG
+846377e417982c4e0204170e8140fe12  When The Roses Fade [CD1]\When The Roses Fade [CD1].md5
+0e6ee18aec469b69bd0d00b29da3db12  When The Roses Fade [CD2]\1990-11-13_201.flac
+4c2a4d97ec9f34d21174a562b1cb42ad  When The Roses Fade [CD2]\1990-11-13_202.flac
+63b2a77e6d0c72dd59b68e65a2770076  When The Roses Fade [CD2]\1990-11-13_203.flac
+f90aedf116e7997813719cfe2fc2235f  When The Roses Fade [CD2]\1990-11-13_204.flac
+16310ae24992af13ebfc5a4c49f056f4  When The Roses Fade [CD2]\1990-11-13_205.flac
+33ea0c70e611d2dedd6198e00eddc56a  When The Roses Fade [CD2]\1990-11-13_206.flac
+d4b719d5503b892a9ae97e18e01a5cf1  When The Roses Fade [CD2]\1990-11-13_207.flac
+ac090831c87122744096f94d3ba0b4df  When The Roses Fade [CD2]\1990-11-13_208.flac
+e953ef00f4801143da3bd3e0b5bede60  When The Roses Fade [CD2]\1990-11-13_209.flac
+ef3ba553968c890fee49a595e1ed405d  When The Roses Fade [CD2]\1990-11-13_210.flac
+6d642fd5ede1142a08e2dbc4de9e0fbb  When The Roses Fade [CD2]\1990-11-13_211.flac
+33f2a91943a1c48e111d577627ff2f77  When The Roses Fade [CD2]\1990-11-13_212.flac
+8b3e50eeb261ee373bda62dcbbffb31c  When The Roses Fade [CD2]\When The Roses Fade [CD2].LOG
+16bcebd27e0aa26dc2441ad1164db3be  When The Roses Fade [CD2]\When The Roses Fade [CD2].md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-11-13-sb.flacf\When The Roses Fade [CD1] 
+=================== 
+=================== 
+=================== 
+1990-11-13_101.flac:b7c4885b1d7a1bb691580609942fa683
+1990-11-13_102.flac:499c1f6782151ca1db1872b470116488
+1990-11-13_103.flac:babaee9a13b198eba9ad19d781673a3e
+1990-11-13_104.flac:590cc5362e4e847bb8a023e37a66f0f3
+1990-11-13_105.flac:6025e3e690a4aadccb29067386f2f097
+1990-11-13_106.flac:59a581cb8665c3a8a2dbc0c9b7f398ed
+1990-11-13_107.flac:fe51ac70dde69a0b1ac25b8a436fe8a5
+1990-11-13_108.flac:5fea954c31aae3b7e9d070ca27416e88
+1990-11-13_109.flac:144f6d2ddee652bb3dc8d3e1dece741d
+1990-11-13_110.flac:e290effceba992d87d1aa9b457319dc8
+1990-11-13_111.flac:665881f409c2bcad9ec91af8b71ba32e
+1990-11-13_112.flac:a711f7ed062e76ec95f259fb5ae3cd43
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-11-13-sb.flacf\When The Roses Fade [CD2] 
+=================== 
+=================== 
+=================== 
+1990-11-13_201.flac:316bf3d8addd753bf0eca59c8c8f3947
+1990-11-13_202.flac:7f3886b91efda3f83f38d3ef13270552
+1990-11-13_203.flac:2630beab7af02165868ec4fdd9cdc58c
+1990-11-13_204.flac:1d7ef36b1b6bd98c02fe4a61e3ade842
+1990-11-13_205.flac:a2af27925e460a3140c163ed12841d94
+1990-11-13_206.flac:d3680a8cc8c8be85e5b870cffd1182a8
+1990-11-13_207.flac:d49156b80354a0d0596a83ba0e7f0417
+1990-11-13_208.flac:937904960ee6f9c6b1e359be88b9cb6e
+1990-11-13_209.flac:2c54fd028af542368eda412281090a05
+1990-11-13_210.flac:e8250dc485c2b2696e8d2c98ee9d6fcd
+1990-11-13_211.flac:1b97164d442140c7e036ab01470b8077
+1990-11-13_212.flac:84fa4ad4488daf85e94d9903a48cde0c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-13-sb.flacf\When The Roses Fade [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.17       10624028 B   ---   --   ---xx   flac  0.6352  1990-11-13_101.flac
+     3:55.51       41573996 B   ---   --   ---xx   flac  0.6953  1990-11-13_102.flac
+     4:37.62       49008668 B   ---   --   ---xx   flac  0.6976  1990-11-13_103.flac
+     5:31.58       58524860 B   ---   --   ---xx   flac  0.6977  1990-11-13_104.flac
+     4:03.07       42881708 B   ---   --   ---xx   flac  0.7042  1990-11-13_105.flac
+     4:23.23       46447340 B   ---   --   ---xx   flac  0.6696  1990-11-13_106.flac
+     5:19.52       56393948 B   ---   --   ---xx   flac  0.6948  1990-11-13_107.flac
+     5:15.31       55638956 B   ---   --   ---xx   flac  0.6599  1990-11-13_108.flac
+     4:06.13       43425020 B   ---   --   ---xx   flac  0.6632  1990-11-13_109.flac
+     4:47.72       50796188 B   ---   --   ---xx   flac  0.6536  1990-11-13_110.flac
+     7:41.52       81442748 B   ---   --   ---xx   flac  0.6851  1990-11-13_111.flac
+     3:55.00       41454044 B   ---   --   ---xx   flac  0.7127  1990-11-13_112.flac
+    54:37.63      578211504 B                            0.6835  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-13-sb.flacf\When The Roses Fade [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:36.12       80466668 B   ---   --   ---xx   flac  0.7243  1990-11-13_201.flac
+     4:41.16       49606076 B   ---   --   ---xx   flac  0.7107  1990-11-13_202.flac
+     4:04.07       43058108 B   ---   --   ---xx   flac  0.7242  1990-11-13_203.flac
+     4:18.06       45525356 B   ---   --   ---xx   flac  0.7044  1990-11-13_204.flac
+     4:59.18       52785980 B   ---   --   ---xx   flac  0.7071  1990-11-13_205.flac
+     6:48.59       72110012 B   ---   --   ---xx   flac  0.7367  1990-11-13_206.flac
+     6:31.55       69101804 B   ---   --   ---xx   flac  0.6648  1990-11-13_207.flac
+     5:13.57       55347308 B   ---   --   ---xx   flac  0.7255  1990-11-13_208.flac
+     5:16.42       55841228 B   ---   --   ---xx   flac  0.6407  1990-11-13_209.flac
+     5:33.30       58811804 B   ---   --   ---xx   flac  0.6548  1990-11-13_210.flac
+     5:05.08       53820860 B   ---   --   ---xx   flac  0.6210  1990-11-13_211.flac
+     3:20.38       35369420 B   ---   --   ---xx   flac  0.7015  1990-11-13_212.flac
+    63:28.48      671844624 B                            0.6934  (12 files)
+=================== 
+=================== 
+=================== 

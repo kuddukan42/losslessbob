@@ -1,0 +1,153 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-05-french-girl.flacf 
+=================== 
+=================== 
+=================== 
+c1f1f75c1212b09ea7f7a7196878c6ce  bd87-05-french-girl-d1t01.flac
+52487bf77034d3d4c408635d1512d164  bd87-05-french-girl-d1t02.flac
+a8c2cc559988702d83e0e1721fdfbd2e  bd87-05-french-girl-d1t03.flac
+b30ab95a8612ec8a6a5e1c9d86c19718  bd87-05-french-girl-d1t04.flac
+3f0f6fdcb5f1d6d6b4e2c5feb25860d2  bd87-05-french-girl-d1t05.flac
+d4a0ea56b0665a553333a12e84524d62  bd87-05-french-girl-d1t06.flac
+83cf3f31ed60eb9b685e7e2dee2a4fa7  bd87-05-french-girl-d1t07.flac
+2689d13a9cd4f7ddfefe5f11af7d236f  bd87-05-french-girl-d1t08.flac
+23aa450ee1875b1476a2cac07b1a0f03  bd87-05-french-girl-d1t09.flac
+41ebd7fa41a4d947186296ed3fed0313  bd87-05-french-girl-d1t10.flac
+db2dacecc8e6c72f6462b4b2f07bd815  bd87-05-french-girl-d1t11.flac
+4b0b1bc04f3f501391cbb05de2495463  bd87-05-french-girl-d1t12.flac
+ff95a808ed1835fd2e9725d39b83b492  bd87-05-french-girl-d1t13.flac
+ffbf30365fcc95185fa1d033f66d5d74  bd87-05-french-girl-d1t14.flac
+04008099bb300670533a7d7ef3a7290b  bd87-05-french-girl-d1t15.flac
+89cb05f8ffc88ac91ac50b3be8a0a8de  bd87-05-french-girl-d2t01.flac
+307eef1d0cd44c19b3821ee473c5486e  bd87-05-french-girl-d2t02.flac
+0f3ad434fe38674ab358c1e048a81ea0  bd87-05-french-girl-d2t03.flac
+af6bac40a7b892b4c95a58a74c24c5c5  bd87-05-french-girl-d2t04.flac
+75d9c5eab6e3e927d80c0ccc06ba233b  bd87-05-french-girl-d2t05.flac
+93396f070c34bc0116afcfa3712b822a  bd87-05-french-girl-d2t06.flac
+b6734b2f80583c97dcfa5a2c1a9262c5  bd87-05-french-girl-d2t07.flac
+7ca0205e359117940b21f6fdeb95805c  bd87-05-french-girl-d2t08.flac
+8e55ce9baf496992a3357d223ef4902f  bd87-05-french-girl-d2t09.flac
+769e4c9e0b67f0d5e28bc22a067a1767  bd87-05-french-girl-d2t10.flac
+19ec277ca0dc68cfd952e466e60af365  bd87-05-french-girl-d2t11.flac
+f7737ff056aeb5b6c4b0b6738c765c5f  bd87-05-french-girl-d2t12.flac
+b4dc99d2819d15852a98c5d75cf27632  bd87-05-french-girl-d2t13.flac
+5eabdb9cc169b3a20c9e8dd88fc81df8  bd87-05-french-girl-d3t01.flac
+ffeee4f62f158e0da4eb6c6119ae7bd5  bd87-05-french-girl-d3t02.flac
+58795559644b04a22c8e357667427ccb  bd87-05-french-girl-d3t03.flac
+597e3d0fe1117fffc55d8d5a129a6316  bd87-05-french-girl-d3t04.flac
+cdaf580e6c8ce23fd5b86a651aadb335  bd87-05-french-girl-d3t05.flac
+4623a76e48f2d55d63648484595195e7  bd87-05-french-girl-d3t06.flac
+9010fd0a1448fefa496abf0c991591dd  bd87-05-french-girl-d3t07.flac
+c7e53d054def31b55de9d4d35e5dc910  bd87-05-french-girl-d3t08.flac
+f1592bb19781ad0c582995c7c4c900d5  bd87-05-french-girl-d3t09.flac
+546be5322a7e7641667ae1274e0eb2df  bd87-05-french-girl-d3t10.flac
+77907253bc6e481a7dfd85d57bfa840e  bd87-05-french-girl-d3t11.flac
+a85b2850a43d70b7f4c6e5a8a7898fd7  bd87-05-french-girl-d3t12.flac
+5e6742eddc47c80d7f4742ba4ae557cf  bd87-05-french-girl-d3t13.flac
+4dfdaccf8a612dcf569e1c39c7fb3cba  bd87-05-french-girl-d3t14.flac
+c7d9d29718549f5c24de554a35f514dd  bd87-05-french-girl.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-05-french-girl.flacf 
+=================== 
+=================== 
+=================== 
+bd87-05-french-girl-d1t01.flac:8bb628f341d6bcd9c9d2aef3e858ae75
+bd87-05-french-girl-d1t02.flac:b74a262d971fe0cb73035072732d9cdf
+bd87-05-french-girl-d1t03.flac:440567f9df32fba85a259051ec2e04ab
+bd87-05-french-girl-d1t04.flac:3c262424dd9f91ac29d2fecc04a29dd1
+bd87-05-french-girl-d1t05.flac:d101a0fb3ae1b557437a310268a0ec8c
+bd87-05-french-girl-d1t06.flac:cfde1dc94c0a9a5f019f156837997aa9
+bd87-05-french-girl-d1t07.flac:9738aeebf50e36ab3cde35b4b7a436ec
+bd87-05-french-girl-d1t08.flac:4674a2c59cf2d12dd5fc6ab6fba891b9
+bd87-05-french-girl-d1t09.flac:b7ba402ed0730ca4dacc9f0d942ec47f
+bd87-05-french-girl-d1t10.flac:8146a2dfbb426b462c2d3c372cb007bd
+bd87-05-french-girl-d1t11.flac:242a3cac67a5e0d0bd8dec2911428541
+bd87-05-french-girl-d1t12.flac:03d6efd0c4dc6d4ef8ae5559dc7adc2a
+bd87-05-french-girl-d1t13.flac:4ee74c95e7334ac7bf4b67b1a7c4a3ca
+bd87-05-french-girl-d1t14.flac:2fa33cb42ca697e7ea286310171c3ad5
+bd87-05-french-girl-d1t15.flac:23662173f37696df48776489d0f081a8
+bd87-05-french-girl-d2t01.flac:d99e9c1e539288cdb94d53cd88b22f98
+bd87-05-french-girl-d2t02.flac:2c8477c0d81faf10713047037782a867
+bd87-05-french-girl-d2t03.flac:3776941ee640289bc2a609305aa462f6
+bd87-05-french-girl-d2t04.flac:69f9a7f412b53a3baf593ac2b6b796ed
+bd87-05-french-girl-d2t05.flac:e29a5b5f8333aae947293ac2923755eb
+bd87-05-french-girl-d2t06.flac:af75c461beb37f43f91d6320ebe707df
+bd87-05-french-girl-d2t07.flac:d2f9240dfb6d353cbf470692243e3e11
+bd87-05-french-girl-d2t08.flac:88b75bbd7605e6623b3b64f94e4a39cf
+bd87-05-french-girl-d2t09.flac:4eeb062a7acd08173ce20e87005b8afe
+bd87-05-french-girl-d2t10.flac:a20780cc844773744d00ce378f29cf58
+bd87-05-french-girl-d2t11.flac:43871443989e49456127dd89d94ebd28
+bd87-05-french-girl-d2t12.flac:031d8856ef34e5f881c70729fc059f6a
+bd87-05-french-girl-d2t13.flac:d64ac05c86671a2a87bad506d73184fd
+bd87-05-french-girl-d3t01.flac:170c59d6d69b65d4e2fe1e77c93ddec4
+bd87-05-french-girl-d3t02.flac:f289e7afd5b5ee38d46c455f82c32e4e
+bd87-05-french-girl-d3t03.flac:3f360458d8f902948b8948683c98d85f
+bd87-05-french-girl-d3t04.flac:be42e1fbbd3092a89b645c1f22b69383
+bd87-05-french-girl-d3t05.flac:b017e2d2e3fda6a0af0e750886eaffb9
+bd87-05-french-girl-d3t06.flac:1c13702bde45fbece274fe3527c74730
+bd87-05-french-girl-d3t07.flac:63162e09cff5be702510f33a83e2f82e
+bd87-05-french-girl-d3t08.flac:411cd338898f5aa285200edc0b6d1ee4
+bd87-05-french-girl-d3t09.flac:a66680e6b741ce57f0d990459b29dcd8
+bd87-05-french-girl-d3t10.flac:57f7ba6783fa004979d7d69aab466d43
+bd87-05-french-girl-d3t11.flac:cf4c6e2baa3707a6afc9c6991e47dbe5
+bd87-05-french-girl-d3t12.flac:8d0a6fb1994ee5c5b696be8c458ef0bc
+bd87-05-french-girl-d3t13.flac:eb69be4620d4c12d669e2a59d2bf42fe
+bd87-05-french-girl-d3t14.flac:70944ca6b4057da671c7fdc9af694d64
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-05-french-girl.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:13.62       34191068 B   ---   --   ---xx   flac  0.5859  bd87-05-french-girl-d1t01.flac
+     4:01.20       42559484 B   ---   --   ---xx   flac  0.5768  bd87-05-french-girl-d1t02.flac
+     4:05.10       43241564 B   ---   --   ---xx   flac  0.6024  bd87-05-french-girl-d1t03.flac
+     3:44.35       39595964 B   ---   --   ---xx   flac  0.5900  bd87-05-french-girl-d1t04.flac
+     4:23.10       46416764 B   ---   --   ---xx   flac  0.5973  bd87-05-french-girl-d1t05.flac
+     3:35.73       38097740 B   ---   --   ---xx   flac  0.6033  bd87-05-french-girl-d1t06.flac
+     2:17.67       24324428 B   ---   --   ---xx   flac  0.6034  bd87-05-french-girl-d1t07.flac
+     5:16.63       55890620 B   ---   --   ---xx   flac  0.6038  bd87-05-french-girl-d1t08.flac
+     4:51.35       51414764 B   ---   --   ---xx   flac  0.6032  bd87-05-french-girl-d1t09.flac
+     4:21.17       46080428 B   ---   --   ---xx   flac  0.6142  bd87-05-french-girl-d1t10.flac
+     5:33.63       58889420 B   ---   --   ---xx   flac  0.6696  bd87-05-french-girl-d1t11.flac
+     3:15.60       34539164 B   ---   --   ---xx   flac  0.5678  bd87-05-french-girl-d1t12.flac
+     4:37.27       48926348 B   ---   --   ---xx   flac  0.5847  bd87-05-french-girl-d1t13.flac
+     3:34.55       37879004 B   ---   --   ---xx   flac  0.5800  bd87-05-french-girl-d1t14.flac
+     4:08.25       43806044 B   ---   --   ---xx   flac  0.5776  bd87-05-french-girl-d1t15.flac
+     5:43.42       60604028 B   ---   --   ---xx   flac  0.6043  bd87-05-french-girl-d2t01.flac
+     9:12.10       97396364 B   ---   --   ---xx   flac  0.6182  bd87-05-french-girl-d2t02.flac
+     3:34.10       37773164 B   ---   --   ---xx   flac  0.6010  bd87-05-french-girl-d2t03.flac
+     5:14.55       55519004 B   ---   --   ---xx   flac  0.6018  bd87-05-french-girl-d2t04.flac
+     4:07.68       43730780 B   ---   --   ---xx   flac  0.5690  bd87-05-french-girl-d2t05.flac
+     6:15.42       66248828 B   ---   --   ---xx   flac  0.5819  bd87-05-french-girl-d2t06.flac
+     5:34.63       59065820 B   ---   --   ---xx   flac  0.5765  bd87-05-french-girl-d2t07.flac
+     3:50.40       40666124 B   ---   --   ---xx   flac  0.6032  bd87-05-french-girl-d2t08.flac
+     3:54.50       41395244 B   ---   --   ---xx   flac  0.6105  bd87-05-french-girl-d2t09.flac
+     2:52.72       30510188 B   ---   --   ---xx   flac  0.5758  bd87-05-french-girl-d2t10.flac
+     4:11.00       44276444 B   ---   --   ---xx   flac  0.6059  bd87-05-french-girl-d2t11.flac
+     2:18.60       24484364 B   ---   --   ---xx   flac  0.6197  bd87-05-french-girl-d2t12.flac
+     5:38.43       59724380 B   ---   --   ---xx   flac  0.6283  bd87-05-french-girl-d2t13.flac
+     3:44.07       39530108 B   ---   --   ---xx   flac  0.5924  bd87-05-french-girl-d3t01.flac
+     5:47.73       61382540 B   ---   --   ---xx   flac  0.5720  bd87-05-french-girl-d3t02.flac
+     3:55.12       41482268 B   ---   --   ---xx   flac  0.6070  bd87-05-french-girl-d3t03.flac
+     2:57.05       31234604 B   ---   --   ---xx   flac  0.6076  bd87-05-french-girl-d3t04.flac
+     3:48.73       40390940 B   ---   --   ---xx   flac  0.5926  bd87-05-french-girl-d3t05.flac
+     3:33.22       37624988 B   ---   --   ---xx   flac  0.5952  bd87-05-french-girl-d3t06.flac
+     3:45.35       39772364 B   ---   --   ---xx   flac  0.5961  bd87-05-french-girl-d3t07.flac
+     5:54.48       62558540 B   ---   --   ---xx   flac  0.5960  bd87-05-french-girl-d3t08.flac
+     3:54.10       41301164 B   ---   --   ---xx   flac  0.5550  bd87-05-french-girl-d3t09.flac
+     3:12.60       34009964 B   ---   --   ---xx   flac  0.5652  bd87-05-french-girl-d3t10.flac
+     3:19.52       35225948 B   ---   --   ---xx   flac  0.5834  bd87-05-french-girl-d3t11.flac
+     4:00.50       42453644 B   ---   --   ---xx   flac  0.5701  bd87-05-french-girl-d3t12.flac
+     3:18.63       35075420 B   ---   --   ---xx   flac  0.5615  bd87-05-french-girl-d3t13.flac
+     3:24.15       36020924 B   ---   --   ---xx   flac  0.5736  bd87-05-french-girl-d3t14.flac
+   178:07.52     1885310952 B                            0.5951  (42 files)
+=================== 
+=================== 
+=================== 

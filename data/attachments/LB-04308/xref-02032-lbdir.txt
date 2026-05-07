@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd76-04-25-audiowhore-repair.flacf
+===================
+===================
+===================
+a6ba9a1e7faf83b01ea51e6b2a1b0d46 *01 1976-04-25 Gainesville (repair).flac
+e3af2b7f205da74f7bd0a235d60ab5fc *02 1976-04-25 Gainesville (repair).flac
+11a08cfc10cb3756de29c88fbd1bcb9b *03 1976-04-25 Gainesville (repair).flac
+42c9f350bd0c117d0a00e9ad7d7fd02d *04 1976-04-25 Gainesville (repair).flac
+1078bf4c962e7ac51e48bb7b4d552eed *05 1976-04-25 Gainesville (repair).flac
+05a3b19c3490748c6006fb540bc036af *06 1976-04-25 Gainesville (repair).flac
+6850d8b9aa3d3d28ca2165c519cfee24 *07 1976-04-25 Gainesville (repair).flac
+be14d2cc871871855e2c3d62ac05cfeb *08 1976-04-25 Gainesville (repair).flac
+209557450abbf552669de0bb994b0d54 *09 1976-04-25 Gainesville (repair).flac
+06aff868aa658deac0d72cfeb13d0520 *10 1976-04-25 Gainesville (repair).flac
+2ac7c6dce403f0e30163847eb0b693da *11 1976-04-25 Gainesville (repair).flac
+87bc6cfa5d5a5b53b651e2fe99150e08 *12 1976-04-25 Gainesville (repair).flac
+adce886857738e9a921c3f02d72a4988 *13 1976-04-25 Gainesville (repair).flac
+28bec99da9db4bda7d7ab1ec51086a1f *14 1976-04-25 Gainesville (repair).flac
+61f6fdb10f971bf08a6c44e74952e089 *15 1976-04-25 Gainesville (repair).flac
+32abd80151a4985402022140ce43e31a *16 1976-04-25 Gainesville (repair).flac
+642e80daec5a478e63b86320736aa62c *17 1976-04-25 Gainesville (repair).flac
+98706819cb576a06c62d9997a7edf0bf *18 1976-04-25 Gainesville (repair).flac
+eb6c81e0b0a92b255724eecea9e3f722 *19 1976-04-25 Gainesville (repair).flac
+e97144822029a04ee55c45aa5a6e7bf2 *20 1976-04-25 Gainesville (repair).flac
+77fa9f3ae4d456bdde8c7488f4835c14 *21 1976-04-25 Gainesville (repair).flac
+e196f505b91f1ca17f0ab690b577589a *BOB DYLAN 1976-04-25 Gainesville (repair).ffp
+74cf43b4da0e506947c6dceda3492220 *BOB DYLAN 1976-04-25 Gainesville, Florida (audiowhore repair).txt
+d0dde725279bbed3c5a376343455f068 *BOB DYLAN 1976-04-25 Gainesville, Florida (repaired).md5
+0e88ff1c8e196a6b670ac69c41339150 *ORIGINAL Notes.txt
+===================
+===================
+===================
+=== ffp for: bd76-04-25-audiowhore-repair.flacf
+===================
+===================
+===================
+01 1976-04-25 Gainesville (repair).flac:487e19c1b835ceda3ad037b7fdc2176d
+02 1976-04-25 Gainesville (repair).flac:873fbc66ce88432b060b3feea669feed
+03 1976-04-25 Gainesville (repair).flac:d4e145c08f0245da05c04d9d0fe716e2
+04 1976-04-25 Gainesville (repair).flac:b826d8a9a7ff04522986700dba7fac59
+05 1976-04-25 Gainesville (repair).flac:21a92a164c9aaef04ca7d228d7553fcd
+06 1976-04-25 Gainesville (repair).flac:ff5e48212cab0c38e4cc7bb7ecc73389
+07 1976-04-25 Gainesville (repair).flac:0c4090bd34eff02210f146cd4a2f2531
+08 1976-04-25 Gainesville (repair).flac:8a483ae9d2c102bf9f2d8f55a6507af0
+09 1976-04-25 Gainesville (repair).flac:8513bc38d1d21baa799b864f3da7dac4
+10 1976-04-25 Gainesville (repair).flac:898206d8e83d23e12ff7c754971ded19
+11 1976-04-25 Gainesville (repair).flac:ff1d71d23f63a006abca29e82b63577d
+12 1976-04-25 Gainesville (repair).flac:dcfdc3e5d13c0756b87c5218fb141863
+13 1976-04-25 Gainesville (repair).flac:ece29292f9229b2ccae000284bfcf889
+14 1976-04-25 Gainesville (repair).flac:e748109626edae67fb29b83a450e163e
+15 1976-04-25 Gainesville (repair).flac:37118fea89490c400f6f01973c19c85a
+16 1976-04-25 Gainesville (repair).flac:67bf3a0cde1d300a61459f068ae4d9b5
+17 1976-04-25 Gainesville (repair).flac:1d648a672130ffbeb277585d62c31852
+18 1976-04-25 Gainesville (repair).flac:2c321c26544821181938ba987b451fd9
+19 1976-04-25 Gainesville (repair).flac:1659a47d28c21ac0dc43ff5689c0a4b5
+20 1976-04-25 Gainesville (repair).flac:9bed23dac08d3c830de76ba56298fede
+21 1976-04-25 Gainesville (repair).flac:3cfc6fcff3cb554aa484f1623c7d9088
+===================
+===================
+===================
+=== shntool len for: bd76-04-25-audiowhore-repair.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.00       62798444 B   ---   --   ---xx   flac  0.2838  01 1976-04-25 Gainesville (repair).flac
+     5:24.12       57181328 B   -b-   --   ---xx   flac  0.2781  02 1976-04-25 Gainesville (repair).flac
+     3:07.51       33106188 B   -b-   --   ---xx   flac  0.2856  03 1976-04-25 Gainesville (repair).flac
+     4:01.36       42598152 B   -b-   --   ---xx   flac  0.3200  04 1976-04-25 Gainesville (repair).flac
+     4:36.47       48797456 B   -b-   --   ---xx   flac  0.3224  05 1976-04-25 Gainesville (repair).flac
+     3:39.74       38804872 B   -b-   --   ---xx   flac  0.3170  06 1976-04-25 Gainesville (repair).flac
+     5:59.09       63347780 B   -b-   --   ---xx   flac  0.3226  07 1976-04-25 Gainesville (repair).flac
+     3:47.49       40158784 B   -b-   --   ---xx   flac  0.3162  08 1976-04-25 Gainesville (repair).flac
+     3:34.36       37833624 B   -b-   --   ---xx   flac  0.3112  09 1976-04-25 Gainesville (repair).flac
+     3:01.07       31944332 B   -b-   --   ---xx   flac  0.3179  10 1976-04-25 Gainesville (repair).flac
+     4:47.45       50732776 B   -b-   --   ---xx   flac  0.3261  11 1976-04-25 Gainesville (repair).flac
+     5:22.67       56958800 B   -b-   --   ---xx   flac  0.3258  12 1976-04-25 Gainesville (repair).flac
+     4:43.20       49968408 B   -b-   --   ---xx   flac  0.3098  13 1976-04-25 Gainesville (repair).flac
+     5:16.67       55898896 B   -b-   --   ---xx   flac  0.3185  14 1976-04-25 Gainesville (repair).flac
+     4:35.62       48655052 B   -b-   --   ---xx   flac  0.3139  15 1976-04-25 Gainesville (repair).flac
+     3:51.57       40882796 B   -b-   --   ---xx   flac  0.3128  16 1976-04-25 Gainesville (repair).flac
+     3:32.36       37481568 B   -b-   --   ---xx   flac  0.3213  17 1976-04-25 Gainesville (repair).flac
+     4:51.65       51485944 B   -b-   --   ---xx   flac  0.3213  18 1976-04-25 Gainesville (repair).flac
+    10:46.47      114063880 B   -b-   --   ---xx   flac  0.3195  19 1976-04-25 Gainesville (repair).flac
+     4:22.48       46330124 B   -b-   --   ---xx   flac  0.3254  20 1976-04-25 Gainesville (repair).flac
+     7:09.44       75778576 B   -b-   --   ---xx   flac  0.3235  21 1976-04-25 Gainesville (repair).flac
+   102:29.52     1084807780 B                            0.3143  (21 files)
+===================
+===================
+===================

@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-30-blown-out-on-the-trail.flacf 
+=================== 
+=================== 
+=================== 
+65bf838f3077d8875e8647228524bed5  bd88-06-30-blown-out-on-the-trail-d1t01.flac
+0c326c04132e12a45f1093049f6ea8e2  bd88-06-30-blown-out-on-the-trail-d1t02.flac
+b8edd56b2d94756f4bd1a29d17e6b592  bd88-06-30-blown-out-on-the-trail-d1t03.flac
+cc2bb3b4004ea7f5371fe4f61c5cb81a  bd88-06-30-blown-out-on-the-trail-d1t04.flac
+c936063fad0fd6d6b124330133988a9f  bd88-06-30-blown-out-on-the-trail-d1t05.flac
+3ac50013437ade1e78bc6c87efb8c02a  bd88-06-30-blown-out-on-the-trail-d1t06.flac
+862ad11f264e0c84c725a9960830fd75  bd88-06-30-blown-out-on-the-trail-d1t07.flac
+9ff90207e8d59dc506d18d4373044de6  bd88-06-30-blown-out-on-the-trail-d1t08.flac
+7069dc9b80f120bc3b1a49169b4aeb6c  bd88-06-30-blown-out-on-the-trail-d1t09.flac
+a590a1d7384c476ff9def6e824977301  bd88-06-30-blown-out-on-the-trail-d1t10.flac
+47a33e7834e125a2b4d65f10e4c5f68b  bd88-06-30-blown-out-on-the-trail-d1t11.flac
+4fac72d88d5837932422d2978c2f9772  bd88-06-30-blown-out-on-the-trail-d1t12.flac
+af46c8b9e0586165626cab0c9ea86acf  bd88-06-30-blown-out-on-the-trail-d1t13.flac
+ef2918ad104724f833b97187991c58fb  bd88-06-30-blown-out-on-the-trail-d1t14.flac
+3253e2f113cfc7addd2afa3f4b7536d8  bd88-06-30-blown-out-on-the-trail-d2t01.flac
+d82f006a347a711af52c5486c7a2dfc2  bd88-06-30-blown-out-on-the-trail-d2t02.flac
+07842373cca8ab6abc3b135c71ea2de1  bd88-06-30-blown-out-on-the-trail-d2t03.flac
+6d47b2c516ddca6f85ba264ce8582db7  bd88-06-30-blown-out-on-the-trail-d2t04.flac
+cff0ccdf74f4227f2bbc955accc816bc  bd88-06-30-blown-out-on-the-trail-d2t05.flac
+8997e2119c0b0925267b2fffe1d3fb65  bd88-06-30-blown-out-on-the-trail-d2t06.flac
+496802984c6ea2f2f488289594328d03  bd88-06-30-blown-out-on-the-trail-d2t07.flac
+d2536fae314b846fb6a9d950ee7c60f1  bd88-06-30-blown-out-on-the-trail-d2t08.flac
+4fe7d574119fca5c8a9c8600861afff6  bd88-06-30-blown-out-on-the-trail-d2t09.flac
+c2552ef15048a6885c73834b196490fc  bd88-06-30-blown-out-on-the-trail-d2t10.flac
+ad39a4cbbdfc5c9af59a5444ade58033  bd88-06-30-blown-out-on-the-trail-d2t11.flac
+ebaee92c1e29b98d5a167df346c438bd  bd88-06-30-blown-out-on-the-trail-d2t12.flac
+bde6995872f4ce3eac153c8e95808f42  bd88-06-30-blown-out-on-the-trail-d2t13.flac
+b26cd29b0b38ccd1dde9d024d0ad0474  bd88-06-30-blown-out-on-the-trail-d2t14.flac
+d0a34b3a23f6f5b25c1d06c41a72bf8f  bd88-06-30-blown-out-on-the-trail.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-30-blown-out-on-the-trail.flacf 
+=================== 
+=================== 
+=================== 
+bd88-06-30-blown-out-on-the-trail-d1t01.flac:eeb3fd1ff11336c4213543c0f3267024
+bd88-06-30-blown-out-on-the-trail-d1t02.flac:be12c1aebf9cb9bce3eb2dc3f1fce410
+bd88-06-30-blown-out-on-the-trail-d1t03.flac:16b0c7b4fb905d4e6b2d61280d8009ec
+bd88-06-30-blown-out-on-the-trail-d1t04.flac:88156bd5dc8fe3108b4d0ce859eabe16
+bd88-06-30-blown-out-on-the-trail-d1t05.flac:71dfd6f2cbd3c74adf9405854ce4eea3
+bd88-06-30-blown-out-on-the-trail-d1t06.flac:9e8382ef2e54bcd61b34d1fe2522223c
+bd88-06-30-blown-out-on-the-trail-d1t07.flac:6bfa959d0a9c46e9fb383831bec3f500
+bd88-06-30-blown-out-on-the-trail-d1t08.flac:aa27315749dedd0755bcd868178d51bf
+bd88-06-30-blown-out-on-the-trail-d1t09.flac:13db842e962059045bd7c9b3745b2ea3
+bd88-06-30-blown-out-on-the-trail-d1t10.flac:e8a389f20a606092d4029e69e6ba9433
+bd88-06-30-blown-out-on-the-trail-d1t11.flac:de8247acd525cc4456fb310c1d4cf0ed
+bd88-06-30-blown-out-on-the-trail-d1t12.flac:5bc916ecdde64f372cfc5ad0f0023029
+bd88-06-30-blown-out-on-the-trail-d1t13.flac:f573bc4469a03961f79ccb652e84eb2d
+bd88-06-30-blown-out-on-the-trail-d1t14.flac:afba3755abdde0eea353cbada174916b
+bd88-06-30-blown-out-on-the-trail-d2t01.flac:766917a5b51deb2fb953442db80b562c
+bd88-06-30-blown-out-on-the-trail-d2t02.flac:6b201c8c196ef2b4584b2eaf640ff2f1
+bd88-06-30-blown-out-on-the-trail-d2t03.flac:b945a45c5181e31c63eb2663992701cf
+bd88-06-30-blown-out-on-the-trail-d2t04.flac:4ef3d1b0036d82fb1eb2aa73cbe1a4ac
+bd88-06-30-blown-out-on-the-trail-d2t05.flac:ee37fac2189d6cd285910ccd82a4ba6e
+bd88-06-30-blown-out-on-the-trail-d2t06.flac:1c214ded9600999cce86d99f10cb250a
+bd88-06-30-blown-out-on-the-trail-d2t07.flac:03a06cf57103a95e58d97587cf154990
+bd88-06-30-blown-out-on-the-trail-d2t08.flac:ca159d8cbcf0bde871f07b0f9195ff3e
+bd88-06-30-blown-out-on-the-trail-d2t09.flac:be2361ce097670ff55a2a2add00a2be7
+bd88-06-30-blown-out-on-the-trail-d2t10.flac:b29b6412080944af29e7cfee7a846c29
+bd88-06-30-blown-out-on-the-trail-d2t11.flac:aeba276a856fe85758550de1fcd7c0f5
+bd88-06-30-blown-out-on-the-trail-d2t12.flac:4f1bc7820d0e22f67ce9e02ef0e8d6ef
+bd88-06-30-blown-out-on-the-trail-d2t13.flac:2f38396c2727df14fc995cf1fb156f3a
+bd88-06-30-blown-out-on-the-trail-d2t14.flac:99dc69829438eb97758310a3b189eeb8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-30-blown-out-on-the-trail.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:31.07       37236908 B   ---   --   ---xx   flac  0.6359  bd88-06-30-blown-out-on-the-trail-d1t01.flac
+     4:34.18       48375980 B   ---   --   ---xx   flac  0.6218  bd88-06-30-blown-out-on-the-trail-d1t02.flac
+     4:42.50       49862444 B   ---   --   ---xx   flac  0.5896  bd88-06-30-blown-out-on-the-trail-d1t03.flac
+     6:14.32       66048908 B   ---   --   ---xx   flac  0.6107  bd88-06-30-blown-out-on-the-trail-d1t04.flac
+     4:13.28       44695100 B   ---   --   ---xx   flac  0.6302  bd88-06-30-blown-out-on-the-trail-d1t05.flac
+     4:19.12       45715868 B   ---   --   ---xx   flac  0.5919  bd88-06-30-blown-out-on-the-trail-d1t06.flac
+     6:07.43       64839980 B   ---   --   ---xx   flac  0.6085  bd88-06-30-blown-out-on-the-trail-d1t07.flac
+     5:30.65       58364924 B   ---   --   ---xx   flac  0.5546  bd88-06-30-blown-out-on-the-trail-d1t08.flac
+     7:54.20       83660684 B   ---   --   ---xx   flac  0.5784  bd88-06-30-blown-out-on-the-trail-d1t09.flac
+     4:16.50       45276044 B   ---   --   ---xx   flac  0.5363  bd88-06-30-blown-out-on-the-trail-d1t10.flac
+     4:36.27       48749948 B   ---   --   ---xx   flac  0.5786  bd88-06-30-blown-out-on-the-trail-d1t11.flac
+     4:21.70       46205084 B   ---   --   ---xx   flac  0.6233  bd88-06-30-blown-out-on-the-trail-d1t12.flac
+     6:22.40       67478924 B   ---   --   ---xx   flac  0.6244  bd88-06-30-blown-out-on-the-trail-d1t13.flac
+     6:37.13       70061420 B   ---   --   ---xx   flac  0.6144  bd88-06-30-blown-out-on-the-trail-d1t14.flac
+     4:48.20       50850284 B   ---   --   ---xx   flac  0.5811  bd88-06-30-blown-out-on-the-trail-d2t01.flac
+     4:14.20       44852684 B   ---   --   ---xx   flac  0.6332  bd88-06-30-blown-out-on-the-trail-d2t02.flac
+     4:42.12       49773068 B   ---   --   ---xx   flac  0.6488  bd88-06-30-blown-out-on-the-trail-d2t03.flac
+     4:54.65       52014524 B   ---   --   ---xx   flac  0.5621  bd88-06-30-blown-out-on-the-trail-d2t04.flac
+     3:46.18       39908780 B   ---   --   ---xx   flac  0.5602  bd88-06-30-blown-out-on-the-trail-d2t05.flac
+     7:17.07       77103308 B   ---   --   ---xx   flac  0.5578  bd88-06-30-blown-out-on-the-trail-d2t06.flac
+     6:35.38       69767420 B   ---   --   ---xx   flac  0.5635  bd88-06-30-blown-out-on-the-trail-d2t07.flac
+     5:15.37       55653068 B   ---   --   ---xx   flac  0.5513  bd88-06-30-blown-out-on-the-trail-d2t08.flac
+     5:31.70       58553084 B   ---   --   ---xx   flac  0.5500  bd88-06-30-blown-out-on-the-trail-d2t09.flac
+     4:04.23       43095740 B   ---   --   ---xx   flac  0.6298  bd88-06-30-blown-out-on-the-trail-d2t10.flac
+     5:52.02       62097548 B   ---   --   ---xx   flac  0.6025  bd88-06-30-blown-out-on-the-trail-d2t11.flac
+     4:25.35       46828364 B   ---   --   ---xx   flac  0.6143  bd88-06-30-blown-out-on-the-trail-d2t12.flac
+     3:36.45       38208284 B   ---   --   ---xx   flac  0.5771  bd88-06-30-blown-out-on-the-trail-d2t13.flac
+     4:48.10       50826764 B   ---   --   ---xx   flac  0.5444  bd88-06-30-blown-out-on-the-trail-d2t14.flac
+   143:14.52     1516105136 B                            0.5906  (28 files)
+=================== 
+=================== 
+=================== 

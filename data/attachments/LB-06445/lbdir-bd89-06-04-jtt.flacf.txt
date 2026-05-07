@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-04-jtt.flacf 
+=================== 
+=================== 
+=================== 
+86da57129ec691b749270a16fe30c356  Disc One\Disc01Track01 BD June 4th.1989.flac
+5bda69ac62bf7fb445839f1f44fbf65f  Disc One\Disc01Track02 BD June 4th.1989.flac
+5b463a7bb29d3b682c9be810449ad1f2  Disc One\Disc01Track03 BD June 4th.1989.flac
+d95e1c169c4706d2a6af87b4662fb7a1  Disc One\Disc01Track04 BD June 4th.1989.flac
+88b3cc1c1778dcd40b8c1adea6091308  Disc One\Disc01Track05 BD June 4th.1989.flac
+a2a596361d5b912478d49ac128731de7  Disc One\Disc01Track06 BD June 4th.1989.flac
+14500f512a770f187f388dbdb825c0e8  Disc One\Disc01Track07 BD June 4th.1989.flac
+044af8578b8d671b98ec8a1d40837064  Disc One\Disc01Track08 BD June 4th.1989.flac
+0df7b9125e57986ede231b5da761d728  Disc Two\Disc02Track01 BD June 4th.1989.flac
+ee4332fb3f63f8a00cbeeb04afe309ef  Disc Two\Disc02Track02 BD June 4th.1989.flac
+9820ece3ee076f93f0c74cc996b59aec  Disc Two\Disc02Track03 BD June 4th.1989.flac
+9f5f4bb78f4196daca6af613a8d272f3  Disc Two\Disc02Track04 BD June 4th.1989.flac
+c5bb8d52d4eddb93a1280946e2a1231c  Disc Two\Disc02Track05 BD June 4th.1989.flac
+c9df7e34c03e35dd5d71e72285cad374  Disc Two\Disc02Track06 BD June 4th.1989.flac
+5901db58139561c4115b6bf5c8e482dc  Disc Two\Disc02Track07 BD June 4th.1989.flac
+6489ce4480dab6d33ba605f9979a47a2  Dylan - Dublin 04.06.1989_Info.txt
+926027a417753d58409da0dea91edfa0  Dylan - Dublin June 4th 1989 (JTT).md5
+7796317b85266ffc2456b133dbfbedf1  Dylan - Dublin June 4th 1989 (JTT).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-04-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 BD June 4th.1989.flac:399e48aa73ca1309f2c09135bae29c98
+Disc01Track02 BD June 4th.1989.flac:b6c77519bc37e6247cb9030b86cf4c9a
+Disc01Track03 BD June 4th.1989.flac:6ea854f8ce9db3633f2cd0b9a784f5ea
+Disc01Track04 BD June 4th.1989.flac:63565068213feef9d98d05528b431144
+Disc01Track05 BD June 4th.1989.flac:97f0b94ef7990460c6f86070e0e30af4
+Disc01Track06 BD June 4th.1989.flac:f9419d7a5bf03081577c0f2546f89a7d
+Disc01Track07 BD June 4th.1989.flac:86ff8b6762da2dbf2d8403eb456b7d58
+Disc01Track08 BD June 4th.1989.flac:acf4f8ffbfabdb3cdabc921f5b2ad30f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-04-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 BD June 4th.1989.flac:1d54ec4fcf33e75f1b6cd29847d24fe3
+Disc02Track02 BD June 4th.1989.flac:7df096c9359a27a2da4fa9a39cd7be81
+Disc02Track03 BD June 4th.1989.flac:0c7c9baebe603b604d192a32752e2db8
+Disc02Track04 BD June 4th.1989.flac:0a42d7dd95826fd2d6a8b071593bb9d3
+Disc02Track05 BD June 4th.1989.flac:98dc8915a4630fce76fb2ddbd6695def
+Disc02Track06 BD June 4th.1989.flac:32c30223cc92f95e7b4947e56192c749
+Disc02Track07 BD June 4th.1989.flac:cfd5507a4c3d86a285ed8294f918a34d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-04-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:40.09       38829212 B   ---   --   ---xx   flac  0.6198  Disc01Track01 BD June 4th.1989.flac
+     5:51.06       61930556 B   ---   --   ---xx   flac  0.5904  Disc01Track02 BD June 4th.1989.flac
+     5:16.20       55789484 B   ---   --   ---xx   flac  0.6193  Disc01Track03 BD June 4th.1989.flac
+     6:38.27       70270748 B   ---   --   ---xx   flac  0.6021  Disc01Track04 BD June 4th.1989.flac
+     5:44.16       60719276 B   ---   --   ---xx   flac  0.6075  Disc01Track05 BD June 4th.1989.flac
+     6:58.52       73857548 B   ---   --   ---xx   flac  0.6176  Disc01Track06 BD June 4th.1989.flac
+     4:43.28       49987100 B   ---   --   ---xx   flac  0.5682  Disc01Track07 BD June 4th.1989.flac
+     6:18.45       66785084 B   ---   --   ---xx   flac  0.5954  Disc01Track08 BD June 4th.1989.flac
+    45:10.53      478169008 B                            0.6026  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-04-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.35       50003564 B   ---   --   ---xx   flac  0.5658  Disc02Track01 BD June 4th.1989.flac
+     3:56.42       41729228 B   ---   --   ---xx   flac  0.5945  Disc02Track02 BD June 4th.1989.flac
+     5:29.13       58066220 B   ---   --   ---xx   flac  0.5831  Disc02Track03 BD June 4th.1989.flac
+     8:14.43       87242780 B   ---   --   ---xx   flac  0.5786  Disc02Track04 BD June 4th.1989.flac
+     5:56.43       62899580 B   ---   --   ---xx   flac  0.5537  Disc02Track05 BD June 4th.1989.flac
+     6:08.48       65028140 B   ---   --   ---xx   flac  0.5830  Disc02Track06 BD June 4th.1989.flac
+     5:01.44       53199932 B   ---   --   ---xx   flac  0.5866  Disc02Track07 BD June 4th.1989.flac
+    39:30.43      418169444 B                            0.5772  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-13.shnf 
+=================== 
+=================== 
+=================== 
+1518e42c239f57ea9fb11a6d4accaa70  bd95-05-13.txt
+d9665f794750cca03ff74cf1ac73b10b  bd95-05-13d1t01.shn
+3778a519341390836d4c5f875c383dce  bd95-05-13d1t02.shn
+3f564a73fc2beaf50031d694603c037c  bd95-05-13d1t03.shn
+c1c52f0cc5856bb99963996ac03145d0  bd95-05-13d1t04.shn
+787bfd510ad83911eea9e408ef16e8b0  bd95-05-13d1t05.shn
+77f16f5e0d19e6641a156add687301f5  bd95-05-13d1t06.shn
+b7a0661a4370e47851da9993899b5282  bd95-05-13d1t07.shn
+0128cb0916a9c2f4d70a2ef4294a7abd  bd95-05-13d1t08.shn
+ecd4ef9d8d395baa7a677bcf0129228a  bd95-05-13d2t01.shn
+70c4e58f678c570a69215846f4e5b981  bd95-05-13d2t02.shn
+b5115ccd75097533c1e92d8aad18705e  bd95-05-13d2t03.shn
+c419c1a5963e89f3d68fa7bf137bc612  bd95-05-13d2t04.shn
+c30ccf78e9019a6a4bfc2892e3347b82  bd95-05-13d2t05.shn
+bc35f29902757d59a7834fb354005528  bd95-05-13d2t06.shn
+011556ff7d68a6815ab04be41c074f60  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-05-13.shnf 
+=================== 
+=================== 
+=================== 
+d7a76a5b032ea176570091e4c4af034b  [shntool]  bd95-05-13d1t01.wav
+a880b37bae18a0a527a73b6bde076edb  [shntool]  bd95-05-13d1t02.wav
+9d5a0b5c68cc059e7745dd9ecd6f1ba9  [shntool]  bd95-05-13d1t03.wav
+12d995f5dd30be087bb37501ca16f482  [shntool]  bd95-05-13d1t04.wav
+36a654fb53a9477db55216b3ac3ca74f  [shntool]  bd95-05-13d1t05.wav
+bfb9b327f90fa4b7def11c9b431d0efe  [shntool]  bd95-05-13d1t06.wav
+e7fbe9d5cb5bbe2f836225b4a8dd87e3  [shntool]  bd95-05-13d1t07.wav
+8cbc72df6cda46eb5f19baead5830439  [shntool]  bd95-05-13d1t08.wav
+ea0ae901c3a40f2b1c3184345b8c55d1  [shntool]  bd95-05-13d2t01.wav
+01ec75be83b1f16ac55cc0b65f80cf7c  [shntool]  bd95-05-13d2t02.wav
+f2eab5cb1ffaea97eea7328ddfa8c7ea  [shntool]  bd95-05-13d2t03.wav
+cc7c45b607363d4dc57235c3201ab2e7  [shntool]  bd95-05-13d2t04.wav
+4a4555675a6d696dd38396b57cf1fa18  [shntool]  bd95-05-13d2t05.wav
+e9a7050501f81050bd28f51ac743b0e1  [shntool]  bd95-05-13d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-13.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.60       51120764 B   ---   --   -----    wav  1.0000  bd95-05-13d1t01.wav
+     5:04.06       53639756 B   ---   --   -----    wav  1.0000  bd95-05-13d1t02.wav
+     5:41.42       60251228 B   ---   --   -----    wav  1.0000  bd95-05-13d1t03.wav
+     6:15.68       66309980 B   ---   --   -----    wav  1.0000  bd95-05-13d1t04.wav
+     6:38.69       70369532 B   ---   --   -----    wav  1.0000  bd95-05-13d1t05.wav
+     7:21.14       77825372 B   ---   --   -----    wav  1.0000  bd95-05-13d1t06.wav
+     7:02.23       74494940 B   ---   --   -----    wav  1.0000  bd95-05-13d1t07.wav
+     5:54.37       62532668 B   ---   --   -----    wav  1.0000  bd95-05-13d1t08.wav
+     6:03.39       64124972 B   ---   --   -----    wav  1.0000  bd95-05-13d2t01.wav
+     5:52.35       62175164 B   ---   --   -----    wav  1.0000  bd95-05-13d2t02.wav
+     7:50.36       82992716 B   ---   --   -----    wav  1.0000  bd95-05-13d2t03.wav
+     7:52.15       83296124 B   ---   --   -----    wav  1.0000  bd95-05-13d2t04.wav
+     7:04.22       74845388 B   ---   --   -----    wav  1.0000  bd95-05-13d2t05.wav
+     8:38.37       91462268 B   ---   --   -----    wav  1.0000  bd95-05-13d2t06.wav
+    92:09.53      975440872 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

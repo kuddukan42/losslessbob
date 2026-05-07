@@ -1,0 +1,69 @@
+===================
+===================
+===================
+=== md5 for: bd76-05-11-incomplete-sbd-jtt.flacf
+===================
+===================
+===================
+9c9c9772293945abc67a54db60ea3845 *BOB DYLAN - San Antonio May 11th 1976 Incomplete SBD_Info.txt
+5f241ec5e6787fbf6538876e591dc065 *BOB DYLAN - San Antonio May 11th 1976 SBD.ffp
+493496d513c69978c5ecc1f78b7d5d12 *BOB DYLAN - San Antonio May 11th 1976_Track01.flac
+98ab9d4ddd20641807a786493cdf0282 *BOB DYLAN - San Antonio May 11th 1976_Track02.flac
+a9fefe7d5d3d9f76360895f215607979 *BOB DYLAN - San Antonio May 11th 1976_Track03.flac
+ee195f3b36164bc63a52787869d9ab35 *BOB DYLAN - San Antonio May 11th 1976_Track04.flac
+6a0672c4378862c8a87ff7b49b59d343 *BOB DYLAN - San Antonio May 11th 1976_Track05.flac
+95c8ddc73b2377f76c0a254ddc03a2b5 *BOB DYLAN - San Antonio May 11th 1976_Track06.flac
+419f5abed4dc00cdcdcf7cc83a0b14a8 *BOB DYLAN - San Antonio May 11th 1976_Track07.flac
+8a2cbe8814dbd3fe2771d19207dd9154 *BOB DYLAN - San Antonio May 11th 1976_Track08.flac
+18bcafc1f0e44cb3398ddc33d934bd20 *BOB DYLAN - San Antonio May 11th 1976_Track09.flac
+a58078d3fa9645e10b5fa95bc629af48 *BOB DYLAN - San Antonio May 11th 1976_Track10.flac
+24b8ef86b15d8aaaebf0424dac08bc36 *BOB DYLAN - San Antonio May 11th 1976_Track11.flac
+3be1eeb182d0a95a7ed12e5f72aa4cb4 *BOB DYLAN - San Antonio May 11th 1976_Track12.flac
+bba1e8ec417a5215b11cdc90cb9ece49 *BOB DYLAN - San Antonio May 11th 1976_Track13.flac
+bc0e81f04df353fbf08f860df849467e *San Antonio, TX 1976 - F.jpg
+087222fe3e3e6f0537ca3ae6f5df32ac *San Antonio, TX 1976 - R.jpg
+===================
+===================
+===================
+=== ffp for: bd76-05-11-incomplete-sbd-jtt.flacf
+===================
+===================
+===================
+BOB DYLAN - San Antonio May 11th 1976_Track01.flac:d53b56ebecf919d27a5fd3fa7cf50f36
+BOB DYLAN - San Antonio May 11th 1976_Track02.flac:f5c0c08064a15d404401c776e5390430
+BOB DYLAN - San Antonio May 11th 1976_Track03.flac:6adb09104cc50c153e1665a3752fcc2f
+BOB DYLAN - San Antonio May 11th 1976_Track04.flac:e01ec096a0ff074307514fa9b1fdc961
+BOB DYLAN - San Antonio May 11th 1976_Track05.flac:94d6565f25a7a2c2339e4532f6893431
+BOB DYLAN - San Antonio May 11th 1976_Track06.flac:395b34c1d08f54b811bc04458d611e53
+BOB DYLAN - San Antonio May 11th 1976_Track07.flac:336a4cbcf21975cf33a7db055254af71
+BOB DYLAN - San Antonio May 11th 1976_Track08.flac:66b495aa3f588053755b7efac72efbd7
+BOB DYLAN - San Antonio May 11th 1976_Track09.flac:8abbfa31bda753aff1e595d4c46a1a4e
+BOB DYLAN - San Antonio May 11th 1976_Track10.flac:e45979f0d2201bf12f71520a8af9c808
+BOB DYLAN - San Antonio May 11th 1976_Track11.flac:55d84065277e093efb4fa09d4c75e868
+BOB DYLAN - San Antonio May 11th 1976_Track12.flac:11ea8b8a87ba9f420b718dabb203df5a
+BOB DYLAN - San Antonio May 11th 1976_Track13.flac:35de3dcc13a5624012f9f04cf07339f6
+===================
+===================
+===================
+=== shntool len for: bd76-05-11-incomplete-sbd-jtt.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.12       51889868 B   ---   --   ---xx   flac  0.5053  BOB DYLAN - San Antonio May 11th 1976_Track01.flac
+     4:39.24       49272092 B   ---   --   ---xx   flac  0.5265  BOB DYLAN - San Antonio May 11th 1976_Track02.flac
+     3:59.60       42300764 B   ---   --   ---xx   flac  0.5322  BOB DYLAN - San Antonio May 11th 1976_Track03.flac
+     3:00.26       31813196 B   ---   --   ---xx   flac  0.5159  BOB DYLAN - San Antonio May 11th 1976_Track04.flac
+     5:50.49       61855292 B   ---   --   ---xx   flac  0.5352  BOB DYLAN - San Antonio May 11th 1976_Track05.flac
+     4:50.09       51177212 B   ---   --   ---xx   flac  0.5364  BOB DYLAN - San Antonio May 11th 1976_Track06.flac
+     6:48.35       72053564 B   ---   --   ---xx   flac  0.5174  BOB DYLAN - San Antonio May 11th 1976_Track07.flac
+     2:18.50       24460844 B   ---   --   ---xx   flac  0.5261  BOB DYLAN - San Antonio May 11th 1976_Track08.flac
+     4:49.36       51064316 B   ---   --   ---xx   flac  0.5574  BOB DYLAN - San Antonio May 11th 1976_Track09.flac
+     4:24.05       46581404 B   ---   --   ---xx   flac  0.5606  BOB DYLAN - San Antonio May 11th 1976_Track10.flac
+     5:12.51       55156796 B   ---   --   ---xx   flac  0.5502  BOB DYLAN - San Antonio May 11th 1976_Track11.flac
+    10:23.17      109937228 B   ---   --   ---xx   flac  0.5535  BOB DYLAN - San Antonio May 11th 1976_Track12.flac
+     2:57.42       31321628 B   ---   --   ---xx   flac  0.5438  BOB DYLAN - San Antonio May 11th 1976_Track13.flac
+    64:08.41      678884204 B                            0.5370  (13 files)
+===================
+===================
+===================

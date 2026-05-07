@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 
+Lehigh University
+Stabler Arena
+Bethlehem, Pennsylvania USA
+November 8, 2000  
+
+I'm filling in a few more gaps from the great run of Bob Dylan 2000 shows that have recently been posted.
+
+After digging around a bit, and clouds of dust, I found a box of old trades. 
+
+The source of all of these is.... Trade CDR > Wav > Flac > You
+
+
+Disc one
+========
+
+Duncan And Brady 
+The Times They Are A-Changin' 
+Desolation Row 
+Fourth Time Around 
+Tangled Up In Blue 
+Searching For A Soldier's Grave 
+Country Pie  
+Shelter From The Storm  
+Watching The River Flow 
+Tombstone Blues 
+Tryin' To Get To Heaven 
+The Wicked Messenger 
+Leopard-Skin Pill-Box Hat 
+
+
+Disc two 
+========
+
+encore 
+
+Things Have Changed  
+Like A Rolling Stone  
+If Dogs Run Free  
+All Along The Watchtower  
+I Shall Be Released 
+Highway 61 Revisited  
+Blowin' In The Wind
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+abb0ccb9f4af9cf6cc6f71380e87222e *info.txt
+62ce68db09115eb7cdc4194d15c85471 *CD1\01 Track 01.flac
+3908138a11a6fda80f40fe783924cdee *CD1\02 Track 02.flac
+608b7749da94f17091371987067b6dc4 *CD1\03 Track 03.flac
+76ce7e46fa551d9f7b8174e970802e06 *CD1\04 Track 04.flac
+6978444d9ba06dc907310f6fa6186ec5 *CD1\05 Track 05.flac
+f4e6170ef5c4ec479e7d3c14dae8bcc5 *CD1\06 Track 06.flac
+1681b3ed00104e7b769f0fd7286042da *CD1\07 Track 07.flac
+f725378abd8eeea58d307a7219e72d74 *CD1\08 Track 08.flac
+44845e88a87cfb24466a6f880d3327c1 *CD1\09 Track 09.flac
+d17528a39f214d4cd711b085d011d7c1 *CD1\10 Track 10.flac
+0ac95b49206926bd123c3a615e666d45 *CD1\11 Track 11.flac
+a6628eebf98264808f43a82fffbd941d *CD1\12 Track 12.flac
+4e929d5cb0f84257d91a85c11862417b *CD1\13 Track 13.flac
+8633229d9edc9e05c4664527b5415eb3 *CD2\01 Track 01.flac
+df6912150f363df85ae6d2d8874519d6 *CD2\02 Track 02.flac
+7067971d7bc3e55ed34c101c0c2c6d1c *CD2\03 Track 03.flac
+c2dc94d389935b80fef6276464e8a9c0 *CD2\04 Track 04.flac
+f75a5f78d4ec1a524432c84e7098d7c8 *CD2\05 Track 05.flac
+c8991fd1967cda4b93f876a356aaf702 *CD2\06 Track 06.flac
+6970b019358918a1e34ad537ee9c24d6 *CD2\07 Track 07.flac
+===================
+===================
+===================

@@ -1,0 +1,8 @@
+Bob Dylan, 10/10/01, Sacramento, CA, Memorial Auditorium, 2CDR
+
+LB-4658, (63min+61min), Equipment:, COS-11PTs > CPS161(Pre amp) > TCD-D100 (16bit/44.1kHz), Lineage:, DAT master > DTC-ZE700 > RPD-500 > CD-Rs, > PC(WAV) > TLH > FLAC (level 6); bittorrent download 04/07; in 3-way comparison, LB-448 was warmest, then this and then LB-449; excellent sound [A]
+
+Disc1:, 1 Wait For The Light To Shine (acoustic), 2 Song To Woody (acoustic), 3 Desolation Row (acoustic), 4 Searching For A Soldier's Grave (acoustic), 5 Things Have Changed, 6 Summer Days, 7 I Want You (Bob on harp), 8 Cry A While, 9 Masters Of War (acoustic), 10 Boots Of Spanish Leather (acoustic), 11 Don't Think Twice, It's All Right (acoustic), Disc2:, 1 Highway 61 Revisited, 2 Sugar Baby, 3 The Wicked Messenger (Bob on harp), 4 Leopard-Skin Pill-Box Hat, 5 (encore), Love Sick, 6 Like A Rolling Stone, 7 If Dogs Run Free (acoustic), 8 Honest With Me, 9 Blowin' In The Wind (acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

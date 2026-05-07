@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-30-row-aa.shnf 
+=================== 
+=================== 
+=================== 
+7abce224505d6613f606b4731645aaeb  bd05-04-30-row-aa-d1t01.shn
+4337bbf8c6b73bacee3ecfb5bfdc746b  bd05-04-30-row-aa-d1t02.shn
+d8c502bb471e75f19cc3f0fd7bf45d7d  bd05-04-30-row-aa-d1t03.shn
+b350e66734a7bb1680bedf951aa5701b  bd05-04-30-row-aa-d1t04.shn
+f51362cf76a86923b05cd1970deb2915  bd05-04-30-row-aa-d1t05.shn
+1868114e996a471b4d84f22c6eeb06ed  bd05-04-30-row-aa-d1t06.shn
+90607f5e2d66066ebf56a47d876a3b1b  bd05-04-30-row-aa-d1t07.shn
+eefc9cbb33fd5de86f1dab6d0951737a  bd05-04-30-row-aa-d1t08.shn
+2bba8a0d6a71f2562a399a899af72215  bd05-04-30-row-aa-d1t09.shn
+2389b1f74bdd6eabda169f5485846c5c  bd05-04-30-row-aa-d1t10.shn
+2fcc7eb38ab43d1965e42a71e28693b9  bd05-04-30-row-aa-d1t11.shn
+6e42fd2c49b449e8d17f264283c5cc56  bd05-04-30-row-aa-d1t12.shn
+70e992354221b837e441e1fa50db3183  bd05-04-30-row-aa-d2t01.shn
+c682bb7fbe77688015b8a9fba228e26f  bd05-04-30-row-aa-d2t02.shn
+d41fc737f28fb2a29a5145462e4a26f1  bd05-04-30-row-aa-d2t03.shn
+e12751e91211f8fead07610a5edcd37b  bd05-04-30-row-aa-d2t04.shn
+aef4ef38bf90743dce2ef00b5f5205fc  bd05-04-30-row-aa-LB-2667.txt
+2293fc0082cb129980d6f7a5e6a34f20  noname.md5
+280de48c8aec4d0e37a9a37e91ebd5fb  previous-files\050430-Beacon-D1.txt
+eeea63157a039b960e87ffa243e021d2  previous-files\050430-Beacon-D1_EAC.TXT
+d905125a5ec11af347129531afd4aba6  previous-files\050430-Beacon-D2.txt
+6987ea7e44b2da6d70aba83b0c23b2ce  previous-files\050430-Beacon-D2_EAC.TXT
+3fee67f90d42967a5a0d1a0a04830638  previous-files\050430_Disc1.md5
+59460b9eb1ecb9d5996a51bc4f474462  previous-files\050430_Disk2.md5
+34f931690a0ac243e620099eba4a0a17  previous-files\050430_info.txt
+d7ff01f22afaa0397ea0b5e5151a27db  previous-files\bd05-04-30-row-aa-48k-LB-2660.txt
+c6fa2b1e1fed6c31ffb64b71382240fa  previous-files\reviews.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-04-30-row-aa.shnf 
+=================== 
+=================== 
+=================== 
+ab864c6389eeff027a23e5d2f622d473  [shntool]  bd05-04-30-row-aa-d1t01.wav
+8957a99ea29e5d90f52f6007a7c5a133  [shntool]  bd05-04-30-row-aa-d1t02.wav
+bc35e79d4aae8956700ec57d2dad9016  [shntool]  bd05-04-30-row-aa-d1t03.wav
+7ef0b847020e0d6fa7fcbb53a8701e92  [shntool]  bd05-04-30-row-aa-d1t04.wav
+6b8a3f30206d68f445a1148963f28e0e  [shntool]  bd05-04-30-row-aa-d1t05.wav
+94ec9f80f87504dd41a5cf20858e3e42  [shntool]  bd05-04-30-row-aa-d1t06.wav
+0eb90646da570374521e148e676967e1  [shntool]  bd05-04-30-row-aa-d1t07.wav
+979ff6d0468e9172ecb4cbbf830f4713  [shntool]  bd05-04-30-row-aa-d1t08.wav
+8b4c96f2afb6cbfd19bab2566ac2d8b0  [shntool]  bd05-04-30-row-aa-d1t09.wav
+89e5045a14757421ea0de41701d5a73b  [shntool]  bd05-04-30-row-aa-d1t10.wav
+0303c4141c142283b04358df82a3249a  [shntool]  bd05-04-30-row-aa-d1t11.wav
+baa4ed4020627f67f06042992290197f  [shntool]  bd05-04-30-row-aa-d1t12.wav
+55294fa74e36f07e828e0ba34e45b1cf  [shntool]  bd05-04-30-row-aa-d2t01.wav
+110d8fcbc27f2e9bd04236a00e6c03e6  [shntool]  bd05-04-30-row-aa-d2t02.wav
+5ecc3c9e02c4abac39bc1ffa1c9069a7  [shntool]  bd05-04-30-row-aa-d2t03.wav
+7560630f2465b04e069d15274ee9bc4e  [shntool]  bd05-04-30-row-aa-d2t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-30-row-aa.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:28.28        5005100 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t01.wav
+     5:16.03       55749500 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t02.wav
+     6:43.18       71131580 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t03.wav
+     5:37.50       59564444 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t04.wav
+     6:28.46       68551436 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t05.wav
+     5:26.52       57628748 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t06.wav
+     6:31.68       69132380 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t07.wav
+     6:38.21       70256636 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t08.wav
+     6:37.31       70103756 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t09.wav
+     5:57.69       63137132 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t10.wav
+     7:34.59       80224412 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t11.wav
+     6:44.00       71265644 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d1t12.wav
+     6:34.45       69607484 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d2t01.wav
+     5:16.47       55852988 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d2t02.wav
+     0:31.09        5489612 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d2t03.wav
+     5:39.08       59818460 B   ---   --   -----    wav  1.0000  bd05-04-30-row-aa-d2t04.wav
+    88:06.29      932519312 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

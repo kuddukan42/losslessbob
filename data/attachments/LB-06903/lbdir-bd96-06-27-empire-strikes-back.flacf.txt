@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-27-empire-strikes-back.flacf 
+=================== 
+=================== 
+=================== 
+77aac7eebf856175daf3b14731afff85  bd96-06-27-empire-strikes-back-d1t01.flac
+ee09e7602dd36b2f20ffb8439b05d235  bd96-06-27-empire-strikes-back-d1t02.flac
+f1a463bd947267726696d35a866ceea1  bd96-06-27-empire-strikes-back-d1t03.flac
+9f10b892e08ac91bfb92274cd617e043  bd96-06-27-empire-strikes-back-d1t04.flac
+ab8f56cfd20030cb129e21cfb8b4f44e  bd96-06-27-empire-strikes-back-d1t05.flac
+fb7eff4aa08e2286af4759d96ffb5a60  bd96-06-27-empire-strikes-back-d1t06.flac
+aadb34d13b4bb90142591ebaae50bbbd  bd96-06-27-empire-strikes-back-d1t07.flac
+cee751f1bddbdceb96ec6d2db02e7ef5  bd96-06-27-empire-strikes-back-d1t08.flac
+7c6d3ac3fdce01dea1861d72dd62d32e  bd96-06-27-empire-strikes-back-d1t09.flac
+573e5c3519a6ec76db3e5e37e1b10381  bd96-06-27-empire-strikes-back-d1t10.flac
+e21d62989dc43447e668906b552c36b1  bd96-06-27-empire-strikes-back-d2t01.flac
+6be05e63da48beae5d833c9df62c865d  bd96-06-27-empire-strikes-back-d2t02.flac
+dd5c359ed14389e7545611b22d1eb616  bd96-06-27-empire-strikes-back-d2t03.flac
+668e2e5abc61532315a1accb797026ef  bd96-06-27-empire-strikes-back-d2t04.flac
+75d6ce66350353beac75f90717356d07  bd96-06-27-empire-strikes-back-d2t05.flac
+1b43cf30b2942275726b4814e2fbbf14  bd96-06-27-empire-strikes-back-d2t06.flac
+3263b300b3b09962be9aeee25d04fc77  bd96-06-27-empire-strikes-back-d2t07.flac
+db4674b331ad44904333818f85c76ee8  bd96-06-27-empire-strikes-back-d2t08.flac
+05373770f0ba3d1208252b5c8bf16a63  bd96-06-27-empire-strikes-back-d2t09.flac
+e662aaa14d1aa1c9cb2696d0fc1ad3b2  bd96-06-27-empire-strikes-back-d2t10.flac
+fdff2d23080ea2af9b78b2316161f745  bd96-06-27-empire-strikes-back.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-06-27-empire-strikes-back.flacf 
+=================== 
+=================== 
+=================== 
+bd96-06-27-empire-strikes-back-d1t01.flac:d376ffe024f5485b1b80a3720bd9cbdf
+bd96-06-27-empire-strikes-back-d1t02.flac:76a8c3ed6938fd8063c12380e6509c64
+bd96-06-27-empire-strikes-back-d1t03.flac:a41b1473124b47782b5a6630ef8aa2f1
+bd96-06-27-empire-strikes-back-d1t04.flac:10d0a8a6ddd44dce03155386c7d5aead
+bd96-06-27-empire-strikes-back-d1t05.flac:b81becd14fca0b7a34aba936d30204a7
+bd96-06-27-empire-strikes-back-d1t06.flac:9bb1ecb0cdba8ef6d6ac3920f6522ab7
+bd96-06-27-empire-strikes-back-d1t07.flac:43287f1066f27fead4c8f1e0aa4b35a9
+bd96-06-27-empire-strikes-back-d1t08.flac:8b15c2feefe900c43a6445f6ccd7fd0e
+bd96-06-27-empire-strikes-back-d1t09.flac:4e77432206f77c426132cdc2daa1a83e
+bd96-06-27-empire-strikes-back-d1t10.flac:59befc5c464404502f02e60d16cd04fe
+bd96-06-27-empire-strikes-back-d2t01.flac:68e5b4e8ea93389b1d0e5eacf4210074
+bd96-06-27-empire-strikes-back-d2t02.flac:8d3f619d2d4e51fb98c1882e7f467616
+bd96-06-27-empire-strikes-back-d2t03.flac:5e38c54f64f7ab30e65a1644b27ffba8
+bd96-06-27-empire-strikes-back-d2t04.flac:5798476d0a1893a7c98c9957ef20eff3
+bd96-06-27-empire-strikes-back-d2t05.flac:76f9d06d96dc1ebe36728e05e5c52ed8
+bd96-06-27-empire-strikes-back-d2t06.flac:d4924eca286fee8bda56bb0c13881836
+bd96-06-27-empire-strikes-back-d2t07.flac:c1d5fe0d432fc9d55ac43311eca992f5
+bd96-06-27-empire-strikes-back-d2t08.flac:279767077089c21c1624e6ccc13d3ac8
+bd96-06-27-empire-strikes-back-d2t09.flac:6462eeca6d550d2bca931972b63756a7
+bd96-06-27-empire-strikes-back-d2t10.flac:664ee9b44bd7640ece6e664e92cd02e8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-27-empire-strikes-back.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.44       59550332 B   ---   --   ---xx   flac  0.6057  bd96-06-27-empire-strikes-back-d1t01.flac
+     6:03.61       64176716 B   ---   --   ---xx   flac  0.5480  bd96-06-27-empire-strikes-back-d1t02.flac
+     6:46.42       71717228 B   ---   --   ---xx   flac  0.5825  bd96-06-27-empire-strikes-back-d1t03.flac
+     5:37.19       59491532 B   ---   --   ---xx   flac  0.4965  bd96-06-27-empire-strikes-back-d1t04.flac
+     7:48.18       82597580 B   ---   --   ---xx   flac  0.5232  bd96-06-27-empire-strikes-back-d1t05.flac
+     7:20.02       77620748 B   ---   --   ---xx   flac  0.5537  bd96-06-27-empire-strikes-back-d1t06.flac
+    10:12.73      108128540 B   ---   --   ---xx   flac  0.4890  bd96-06-27-empire-strikes-back-d1t07.flac
+     6:57.13       73589420 B   ---   --   ---xx   flac  0.4423  bd96-06-27-empire-strikes-back-d1t08.flac
+     7:04.63       74941820 B   ---   --   ---xx   flac  0.4480  bd96-06-27-empire-strikes-back-d1t09.flac
+     8:18.18       87889580 B   ---   --   ---xx   flac  0.5333  bd96-06-27-empire-strikes-back-d1t10.flac
+     8:39.55       91681004 B   ---   --   ---xx   flac  0.5364  bd96-06-27-empire-strikes-back-d2t01.flac
+     5:36.28       59336300 B   ---   --   ---xx   flac  0.5751  bd96-06-27-empire-strikes-back-d2t02.flac
+     6:53.32       72928508 B   ---   --   ---xx   flac  0.6392  bd96-06-27-empire-strikes-back-d2t03.flac
+    11:50.19      125288732 B   ---   --   ---xx   flac  0.5535  bd96-06-27-empire-strikes-back-d2t04.flac
+     7:01.17       74304428 B   ---   --   ---xx   flac  0.6499  bd96-06-27-empire-strikes-back-d2t05.flac
+     4:38.72       49208588 B   ---   --   ---xx   flac  0.6057  bd96-06-27-empire-strikes-back-d2t06.flac
+     8:16.53       87619100 B   ---   --   ---xx   flac  0.5148  bd96-06-27-empire-strikes-back-d2t07.flac
+     8:46.38       92875820 B   ---   --   ---xx   flac  0.5384  bd96-06-27-empire-strikes-back-d2t08.flac
+     5:51.52       62038748 B   ---   --   ---xx   flac  0.5229  bd96-06-27-empire-strikes-back-d2t09.flac
+     6:27.55       68396204 B   ---   --   ---xx   flac  0.4989  bd96-06-27-empire-strikes-back-d2t10.flac
+   145:49.24     1543380928 B                            0.5401  (20 files)
+=================== 
+=================== 
+=================== 

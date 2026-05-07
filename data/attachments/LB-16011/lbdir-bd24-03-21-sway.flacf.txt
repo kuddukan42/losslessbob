@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd24-03-21-sway.flacf
+===================
+===================
+===================
+43eb8385d02f13f2793851597d646a99 *bd2024-03-21 Aseville_sway_01.flac
+4e32f8865626560f01a2f1a581a3bb75 *bd2024-03-21 Asheville_sway_02.flac
+40de2ead16e7d68569ae76f40382edad *bd2024-03-21 Asheville_sway_03.flac
+6b83055147961b3892b88c34c5b82246 *bd2024-03-21 Asheville_sway_04.flac
+987d3a630fc2e26459b4e69c9b197b85 *bd2024-03-21 Asheville_sway_05.flac
+f47f753731a30dd59770ca0a6f673ca5 *bd2024-03-21 Asheville_sway_06.flac
+0a8ee9fcd674bee03d3836c2f703be4a *bd2024-03-21 Asheville_sway_07.flac
+bb45384714ee41504a48e827a5fb140c *bd2024-03-21 Asheville_sway_08.flac
+070b14c7aef4724e8f4cd44ffb81f6f5 *bd2024-03-21 Asheville_sway_09.flac
+bd855aa4b0bf69b867a2550917c468f3 *bd2024-03-21 Asheville_sway_10.flac
+1ec12cddaf0d0c58b4847e93f30eed21 *bd2024-03-21 Asheville_sway_11.flac
+a854955d6043cb9f26254fb991e3b6cd *bd2024-03-21 Asheville_sway_12.flac
+ba58cceebb000f05095fa0b949eacf1a *bd2024-03-21 Asheville_sway_13.flac
+21129e649220bcdc8b99269ff9533d72 *bd2024-03-21 Asheville_sway_14.flac
+35dc424a0284c56b922eb74b2bcdb357 *bd2024-03-21 Asheville_sway_15.flac
+bae6945efe7fb3547ed05af677b47339 *bd2024-03-21 Asheville_sway_16.flac
+3dfd5ca109539522ffb7fd527aa8c528 *bd2024-03-21 Asheville_sway_17.flac
+90381b779d6453b53ca66ad293f7db6a *bd2024-03-21 Ashville_sway.md5
+bdef3ac86ae111a18d34d7d549eb5b40 *info.txt
+===================
+===================
+===================
+=== ffp for: bd24-03-21-sway.flacf
+===================
+===================
+===================
+bd2024-03-21 Aseville_sway_01.flac:2275c5da57f106a6dcd52539c350b979
+bd2024-03-21 Asheville_sway_02.flac:5443da86b91ec8720021a7e2d5310784
+bd2024-03-21 Asheville_sway_03.flac:384ae6c6eaa1f38d85228d6880256961
+bd2024-03-21 Asheville_sway_04.flac:d6a09ac2f16faf8e1e916f3e3ff9751e
+bd2024-03-21 Asheville_sway_05.flac:7ac69d13dcc54d89ceda86342749742a
+bd2024-03-21 Asheville_sway_06.flac:0d86fd3452a57a53803141c1561476df
+bd2024-03-21 Asheville_sway_07.flac:b1145df07d7a8d7d61dae408042f1ffb
+bd2024-03-21 Asheville_sway_08.flac:db6aa0cb7e3f35ce03aa38c7a799aef0
+bd2024-03-21 Asheville_sway_09.flac:742c4f5a0218d73ff2fabe3a37588547
+bd2024-03-21 Asheville_sway_10.flac:d2a26c8863deb491e2b6d110e39d791b
+bd2024-03-21 Asheville_sway_11.flac:13f66b4233eabb10128ddf0b571eb305
+bd2024-03-21 Asheville_sway_12.flac:5ccb77e6de7c017858de216df97e355b
+bd2024-03-21 Asheville_sway_13.flac:e7fc2362d1bc28d7842ebbd268b86b85
+bd2024-03-21 Asheville_sway_14.flac:07c6944dcc8eb4dd6316df291c94af68
+bd2024-03-21 Asheville_sway_15.flac:ed603c61abf76d65464081815bd4d3e0
+bd2024-03-21 Asheville_sway_16.flac:8f82f5dcf0c4ec9b6b36b7c2270ce30d
+bd2024-03-21 Asheville_sway_17.flac:c72318b28460a16f4c38f42bde31ad1a
+===================
+===================
+===================
+=== shntool len for: bd24-03-21-sway.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.03       54691100 B   ---   --   ---xx   flac  0.4089  bd2024-03-21 Aseville_sway_01.flac
+     4:23.26       46454396 B   ---   --   ---xx   flac  0.3883  bd2024-03-21 Asheville_sway_02.flac
+     5:28.65       58012124 B   ---   --   ---xx   flac  0.3646  bd2024-03-21 Asheville_sway_03.flac
+     6:56.50       73500044 B   ---   --   ---xx   flac  0.4050  bd2024-03-21 Asheville_sway_04.flac
+     5:17.12       55947068 B   ---   --   ---xx   flac  0.3890  bd2024-03-21 Asheville_sway_05.flac
+     5:06.33       54056060 B   ---   --   ---xx   flac  0.3655  bd2024-03-21 Asheville_sway_06.flac
+     6:32.71       69315836 B   ---   --   ---xx   flac  0.3698  bd2024-03-21 Asheville_sway_07.flac
+     6:04.32       64284908 B   ---   --   ---xx   flac  0.4115  bd2024-03-21 Asheville_sway_08.flac
+     7:22.48       78081740 B   ---   --   ---xx   flac  0.3583  bd2024-03-21 Asheville_sway_09.flac
+     6:55.70       73370684 B   ---   --   ---xx   flac  0.3895  bd2024-03-21 Asheville_sway_10.flac
+     9:52.34      104508812 B   ---   --   ---xx   flac  0.3341  bd2024-03-21 Asheville_sway_11.flac
+     4:31.23       47858540 B   ---   --   ---xx   flac  0.3738  bd2024-03-21 Asheville_sway_12.flac
+     7:10.70       76016684 B   ---   --   ---xx   flac  0.3399  bd2024-03-21 Asheville_sway_13.flac
+     9:02.23       95662940 B   ---   --   ---xx   flac  0.3409  bd2024-03-21 Asheville_sway_14.flac
+     8:23.12       88757468 B   ---   --   ---xx   flac  0.3659  bd2024-03-21 Asheville_sway_15.flac
+     0:54.69        9687932 B   ---   --   ---xx   flac  0.4269  bd2024-03-21 Asheville_sway_16.flac
+     7:58.30       84390688 B   -b-   --   ---xx   flac  0.3591  bd2024-03-21 Asheville_sway_17.flac
+   107:11.71     1134597024 B                            0.3699  (17 files)
+===================
+===================
+===================

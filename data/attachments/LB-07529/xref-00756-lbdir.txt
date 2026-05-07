@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-02-14-b.flacf 
+=================== 
+=================== 
+=================== 
+84d60fe57381fb265e397a8cf0c2f286  Disc 1\14.2.99 South Bend.log
+f6ab4eebea1333a8c7e900bbb66dac5f  Disc 1\Bob  Dylan - 14.2.99 South Bend.m3u
+4162c85918b0044bc394561c9afeafd1  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t01.flac
+a1bdb8c2c9aefaabe9f96b38ff66cded  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t02.flac
+9f3d5d59240cff701fb5f0b1faddd0b3  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t03.flac
+391291f006a0783fc386bfe5737254ed  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t04.flac
+664d1c9eb2d83d4f639c2d97c77a62d4  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t05.flac
+801aac46309557cb0842d04c6891d268  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t06.flac
+bc7bbbefb00ae219b109c251eb935f70  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t07.flac
+f6f1a9a1923823818c41d698f9401389  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t08.flac
+6feddcef04dd2c3f1acf81d90bc82d8a  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t09.flac
+0fc2f0b313f58f7bec7ecbc61b15bd7d  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t10.flac
+0fe25acac4394ace5383e7a690f0de40  Disc 1\Bob  Dylan- 14.2.99 South Bend-d1-t11.flac
+7a8471b7f80d2683a476a256158d6541  Disc 1\fingerprint.ffp.txt
+3dfe463f8bc8f4af0b8b8f0543d495b9  Disc 2\14.2.99 South Bend.log
+bad213b1b4873b73cc0e21121909ca43  Disc 2\Bob Dylan - 14.2.99 South Bend.m3u
+b865b67f2dd78ec74ff78a03a269760f  Disc 2\Bob Dylan- 14.2.99 South Bend-d2-t01.flac
+91213ef68c7c1ab5d665dd7a8a32e6c5  Disc 2\Bob Dylan- 14.2.99 South Bend-d2-t02.flac
+eff6e1d62a83244d68fa6d7099a297e5  Disc 2\Bob Dylan- 14.2.99 South Bend-d2-t03.flac
+7bf310de5bb23dd54d130663e1a42bab  Disc 2\Bob Dylan- 14.2.99 South Bend-d2-t04.flac
+6b1c94712f5fe8fbe14cf17d0237451d  Disc 2\Bob Dylan- 14.2.99 South Bend-d2-t05.flac
+488108b274fe1111f547e59d9bfe2b5e  Disc 2\fingerprint.ffp.txt
+da0db0586a469a5345d3869d4bb185ce  Infos.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-14-b.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+Bob  Dylan- 14.2.99 South Bend-d1-t01.flac:347b607a0b712c39c9f6ac8726bb596b
+Bob  Dylan- 14.2.99 South Bend-d1-t02.flac:026aed56608324a82998141cd169905f
+Bob  Dylan- 14.2.99 South Bend-d1-t03.flac:ecd6d90db5b586794e6d8e21ed7dce68
+Bob  Dylan- 14.2.99 South Bend-d1-t04.flac:57831c2feb118ad6e2092d3c34b634b9
+Bob  Dylan- 14.2.99 South Bend-d1-t05.flac:3702ae4d584bb973d9e5e2cc09be5442
+Bob  Dylan- 14.2.99 South Bend-d1-t06.flac:90b39578bf8eab353227884012f32a83
+Bob  Dylan- 14.2.99 South Bend-d1-t07.flac:bca6b22edde7f6e61f3eaa643b73f1e5
+Bob  Dylan- 14.2.99 South Bend-d1-t08.flac:1daa143175277992b146752511e7a0b6
+Bob  Dylan- 14.2.99 South Bend-d1-t09.flac:51f9c854e25369bc987aa32d19e89378
+Bob  Dylan- 14.2.99 South Bend-d1-t10.flac:54d635f3d02c0bfd18f2e4eb94e84c99
+Bob  Dylan- 14.2.99 South Bend-d1-t11.flac:1ef0e9d133770c19e8b62afa5a2c6ac6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-14-b.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+Bob Dylan- 14.2.99 South Bend-d2-t01.flac:0644372410af4b2f07bf6cb2d6e0dae4
+Bob Dylan- 14.2.99 South Bend-d2-t02.flac:909d3b26ec2d76047abead7915a7c050
+Bob Dylan- 14.2.99 South Bend-d2-t03.flac:c7a38b69f24022521c315ccacd787f84
+Bob Dylan- 14.2.99 South Bend-d2-t04.flac:dd5b7c50cb12609c71f34f66fa014ea9
+Bob Dylan- 14.2.99 South Bend-d2-t05.flac:d8cefae66e8259eaf11a62918af0016f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-14-b.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.72       44445788 B   ---   --   ---xx   flac  0.5135  Bob  Dylan- 14.2.99 South Bend-d1-t01.flac
+     4:38.37       49126268 B   ---   --   ---xx   flac  0.4633  Bob  Dylan- 14.2.99 South Bend-d1-t02.flac
+     7:18.49       77378492 B   ---   --   ---xx   flac  0.5174  Bob  Dylan- 14.2.99 South Bend-d1-t03.flac
+     5:18.20       56142284 B   ---   --   ---xx   flac  0.4691  Bob  Dylan- 14.2.99 South Bend-d1-t04.flac
+     6:02.35       63939164 B   ---   --   ---xx   flac  0.5536  Bob  Dylan- 14.2.99 South Bend-d1-t05.flac
+     6:20.74       67206092 B   ---   --   ---xx   flac  0.4552  Bob  Dylan- 14.2.99 South Bend-d1-t06.flac
+    10:44.13      113632220 B   ---   --   ---xx   flac  0.4459  Bob  Dylan- 14.2.99 South Bend-d1-t07.flac
+     8:52.68       94004780 B   ---   --   ---xx   flac  0.5562  Bob  Dylan- 14.2.99 South Bend-d1-t08.flac
+     6:41.60       70877564 B   ---   --   ---xx   flac  0.4326  Bob  Dylan- 14.2.99 South Bend-d1-t09.flac
+     3:57.05       41818604 B   ---   --   ---xx   flac  0.4608  Bob  Dylan- 14.2.99 South Bend-d1-t10.flac
+     7:08.47       75609788 B   ---   --   ---xx   flac  0.5315  Bob  Dylan- 14.2.99 South Bend-d1-t11.flac
+    71:15.30      754181044 B                            0.4920  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-14-b.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:55.20       83837084 B   ---   --   ---xx   flac  0.5530  Bob Dylan- 14.2.99 South Bend-d2-t01.flac
+     5:29.17       58075628 B   ---   --   ---xx   flac  0.4941  Bob Dylan- 14.2.99 South Bend-d2-t02.flac
+     5:52.69       62255132 B   ---   --   ---xx   flac  0.5583  Bob Dylan- 14.2.99 South Bend-d2-t03.flac
+     7:18.56       77394956 B   ---   --   ---xx   flac  0.4813  Bob Dylan- 14.2.99 South Bend-d2-t04.flac
+     4:17.04       45344252 B   ---   --   ---xx   flac  0.5741  Bob Dylan- 14.2.99 South Bend-d2-t05.flac
+    30:53.16      326907052 B                            0.5295  (5 files)
+=================== 
+=================== 
+=================== 

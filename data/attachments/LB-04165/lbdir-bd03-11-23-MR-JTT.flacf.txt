@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-23-MR-JTT.flacf 
+=================== 
+=================== 
+=================== 
+34a1af513285e118f8d8c2742b388020  bd03-11-23-MR-JTT-LB-4165.txt
+f3b11d96b08d5866803942cc90cb5550  Disc One\SBE_MR_Disc01Track01.flac
+48eb311f28a05080f412b74afa45cc72  Disc One\SBE_MR_Disc01Track02.flac
+d5d4106c29a250dc223800d6cc1fe74f  Disc One\SBE_MR_Disc01Track03.flac
+3e5cbcac1f676b90f1b09998aaab5f8c  Disc One\SBE_MR_Disc01Track04.flac
+f9647fdb1aad52682da71a06ca8e9322  Disc One\SBE_MR_Disc01Track05.flac
+ca2d7c190b95ec0e966bf1bf195acb71  Disc One\SBE_MR_Disc01Track06.flac
+f688c6dce9349a601831926f9778d0b9  Disc One\SBE_MR_Disc01Track07.flac
+8123d58db11209b5c25c4e491b6fcda1  Disc One\SBE_MR_Disc01Track08.flac
+08539a322fdff6f01b33981e28adefb3  Disc One\SBE_MR_Disc01Track09.flac
+7cce770ef39f9096b12cc59386deed7d  Disc One\SBE_MR_Disc01Track10.flac
+c074cc6c13ccab82c121f95c9df8cdfc  Disc Two\SBE_MR_Disc02Track01.flac
+593ffbad264de1dd7fdfd369ae962b2e  Disc Two\SBE_MR_Disc02Track02.flac
+67efe1e80fc8e5d582215fa4eaf80533  Disc Two\SBE_MR_Disc02Track03.flac
+0392c2144e438a2b1b1979a09490efa2  Disc Two\SBE_MR_Disc02Track04.flac
+513e9b0d9239a86294a62b803df881b0  Disc Two\SBE_MR_Disc02Track05.flac
+faaede4e2fb4309e5744ba5fabf79492  Disc Two\SBE_MR_Disc02Track06.flac
+fe91410791f1f800b3a88cd1b76b4d32  Disc Two\SBE_MR_Disc02Track07.flac
+baadc83ae59d7c36a4961a9205f64500  Disc Two\SBE_MR_Disc02Track08.flac
+6efaf6c0aba224d335cec7bb6165f8c9  Info.txt
+a160fd1e65234761a8960cf3f5f5dd21  Shepherds Bush 2003 (DAT Master) - F.jpg
+137f120a5a14d8a2b3ba28cbbe4d6284  Shepherds Bush 2003 (DAT Master) - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-23-MR-JTT.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+SBE_MR_Disc01Track01.flac:b3b01d7839ca1212626b68a5163f0bf1
+SBE_MR_Disc01Track02.flac:b5dfad83738cd7d5140ea2ec4fbeae7d
+SBE_MR_Disc01Track03.flac:9b82a42e2b574bfa67f8205ced4c6ec3
+SBE_MR_Disc01Track04.flac:074981c78fc240458e6d0db2681773dd
+SBE_MR_Disc01Track05.flac:41208b8ed6261f6dbe7b855d7a507622
+SBE_MR_Disc01Track06.flac:c97d308bab233f16328ec6813a7c29c3
+SBE_MR_Disc01Track07.flac:0b5d91afc4519afbddc2ea994059f86e
+SBE_MR_Disc01Track08.flac:52d3eadecc09a65d431c1a202242fab1
+SBE_MR_Disc01Track09.flac:63e874d91871f081d46f34af695dd458
+SBE_MR_Disc01Track10.flac:10e88ca04d13aed1b1e575bac1c7c037
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-23-MR-JTT.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+SBE_MR_Disc02Track01.flac:e00a42b04acaf131225af369ebad0e5d
+SBE_MR_Disc02Track02.flac:3678c469d72386a7e6fa684720e4456d
+SBE_MR_Disc02Track03.flac:23d0232c20266f00a50248a8f874c618
+SBE_MR_Disc02Track04.flac:b8b78a353b4d6fbb3eebac35ed9cf585
+SBE_MR_Disc02Track05.flac:ebc8b686e529ab7995b432c8d2866944
+SBE_MR_Disc02Track06.flac:07737d8d5e851b5b3aee829722086963
+SBE_MR_Disc02Track07.flac:89e34cc6643512d34dc2719d8e0da7e7
+SBE_MR_Disc02Track08.flac:b9180fcac07f55cf8d8ba24b8ea77304
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-23-MR-JTT.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:28.60        5080364 B   ---   --   ---xx   flac  0.5636  SBE_MR_Disc01Track01.flac
+     5:31.29       58456652 B   ---   --   ---xx   flac  0.6263  SBE_MR_Disc01Track02.flac
+     4:20.66       46019276 B   ---   --   ---xx   flac  0.6221  SBE_MR_Disc01Track03.flac
+     5:49.52       61685948 B   ---   --   ---xx   flac  0.6223  SBE_MR_Disc01Track04.flac
+     6:37.53       70155500 B   ---   --   ---xx   flac  0.6040  SBE_MR_Disc01Track05.flac
+     6:27.28       68332700 B   ---   --   ---xx   flac  0.6059  SBE_MR_Disc01Track06.flac
+     7:24.38       78411020 B   ---   --   ---xx   flac  0.6266  SBE_MR_Disc01Track07.flac
+     6:34.18       69543980 B   ---   --   ---xx   flac  0.5918  SBE_MR_Disc01Track08.flac
+     6:57.61       73702316 B   ---   --   ---xx   flac  0.6252  SBE_MR_Disc01Track09.flac
+     6:56.07       73398908 B   ---   --   ---xx   flac  0.5605  SBE_MR_Disc01Track10.flac
+    57:08.37      604786664 B                            0.6081  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-23-MR-JTT.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:30.66       68951276 B   ---   --   ---xx   flac  0.6068  SBE_MR_Disc02Track01.flac
+     6:20.03       67039100 B   ---   --   ---xx   flac  0.6226  SBE_MR_Disc02Track02.flac
+     6:54.64       73180172 B   ---   --   ---xx   flac  0.6377  SBE_MR_Disc02Track03.flac
+     7:05.50       75087644 B   ---   --   ---xx   flac  0.6059  SBE_MR_Disc02Track04.flac
+    10:31.12      111336668 B   ---   --   ---xx   flac  0.6169  SBE_MR_Disc02Track05.flac
+     5:27.37       57769868 B   ---   --   ---xx   flac  0.6090  SBE_MR_Disc02Track06.flac
+     7:25.68       78657980 B   ---   --   ---xx   flac  0.6510  SBE_MR_Disc02Track07.flac
+     7:20.55       77745404 B   ---   --   ---xx   flac  0.6283  SBE_MR_Disc02Track08.flac
+    57:36.55      609768112 B                            0.6226  (8 files)
+=================== 
+=================== 
+=================== 

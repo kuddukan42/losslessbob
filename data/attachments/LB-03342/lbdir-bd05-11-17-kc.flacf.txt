@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-17-kc.flacf 
+=================== 
+=================== 
+=================== 
+03cbc18ec2c9e4c69f85de30a75c1add  bd05-11-17-kc-LB-3342.txt
+2688e94ac902e5b2812afbae4a9588cc  bd20051117fingerprint.txt
+b15ec23378f72054f25d0d32bd900416  bd_2005-11-17_GlasgowUK_KCVersion.txt
+21062220bbf25d8cd20a0fb8075529d9  d1t01-stripped-fixed.flac
+41be771912dc05933cdf3a632c9ec12c  d1t02-stripped-fixed.flac
+1c5243d607819bd7aee963e6b0f89020  d1t03-stripped-fixed.flac
+7b22d9b58cbb43670fc863392e113174  d1t04-stripped-fixed.flac
+e46f28445bd901397aff93461db0c262  d1t05-stripped-fixed.flac
+1158db10542acb50756e48422671f76f  d1t06-stripped-fixed.flac
+927e3bb355a443500912b711826fae01  d1t07-stripped-fixed.flac
+8bb1170256b0f86b9060e4d77e5cf189  d1t08-stripped-fixed.flac
+ebac7b4b04dc095b0670662d8935f4b7  d1t09-stripped-fixed.flac
+6e6cca15fc2337581712323959cd908c  d1t10-stripped-fixed.flac
+2c824b487ea182b152a8bac8235d53b4  d2t01-stripped-fixed.flac
+5a2c2fa8256942e1d2c446184ebc06dc  d2t02-stripped-fixed.flac
+a03e734fa1504c876f8f8f9ffa5f3bb9  d2t03-stripped-fixed.flac
+8039bbedd6ae558aec329f0179f07a1b  d2t04-stripped-fixed.flac
+4108fc1d7d60bf2c3abc8caec125353d  d2t05-stripped-fixed.flac
+8c49699f3c9ff29d392ccca79af7f1f3  d2t06-stripped-fixed.flac
+0b6dd4fc968e0b54b372200cd717a9ea  d2t07-stripped-fixed.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-17-kc.flacf 
+=================== 
+=================== 
+=================== 
+d1t01-stripped-fixed.flac:f089d9897efc59d2fedf17f5b7fd4fd7
+d1t02-stripped-fixed.flac:f180875a3a9eba504d81e04fe5f38d77
+d1t03-stripped-fixed.flac:94621d215d04366406ee4dff8959dbd3
+d1t04-stripped-fixed.flac:28b487cd870a09aa778ce4b93b411a8f
+d1t05-stripped-fixed.flac:443a40aaa0eb5a0946863cf274901f6b
+d1t06-stripped-fixed.flac:5222443f9cca5135b5602b178fb5a216
+d1t07-stripped-fixed.flac:1d9aa58a916f48e668e92d083a6e98b9
+d1t08-stripped-fixed.flac:dfc53d0ce2c739a7a0962fcdf772f082
+d1t09-stripped-fixed.flac:4724ae372b765c72d0418efdce9e0a77
+d1t10-stripped-fixed.flac:3a4e4566394fbc325602dfe306388817
+d2t01-stripped-fixed.flac:312e878e4668cfb775a5734d4fea8a79
+d2t02-stripped-fixed.flac:299d654c185c91953cee5598682bfdb0
+d2t03-stripped-fixed.flac:dfd9b20732df48ae55ce8c9b76b6d13c
+d2t04-stripped-fixed.flac:a54d6b39643dc178b90b4e063d71d7c6
+d2t05-stripped-fixed.flac:5ee6c5c5306f443e7d06d32e8c5ce1e6
+d2t06-stripped-fixed.flac:7c489656f0911235a4658f1e07322218
+d2t07-stripped-fixed.flac:644879f457a0317b4d99ac4ca4e45761
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-17-kc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.00       52214444 B   ---   --   ---xx   flac  0.5381  d1t01-stripped-fixed.flac
+     5:35.71       59261036 B   ---   --   ---xx   flac  0.4773  d1t02-stripped-fixed.flac
+     5:44.09       60702812 B   ---   --   ---xx   flac  0.4825  d1t03-stripped-fixed.flac
+     7:21.20       77839484 B   ---   --   ---xx   flac  0.5177  d1t04-stripped-fixed.flac
+     5:39.71       59966636 B   ---   --   ---xx   flac  0.4669  d1t05-stripped-fixed.flac
+     8:18.02       87851948 B   ---   --   ---xx   flac  0.5312  d1t06-stripped-fixed.flac
+     7:27.51       78970796 B   ---   --   ---xx   flac  0.4319  d1t07-stripped-fixed.flac
+     7:50.53       83032700 B   ---   --   ---xx   flac  0.5175  d1t08-stripped-fixed.flac
+     9:05.57       96272108 B   ---   --   ---xx   flac  0.4771  d1t09-stripped-fixed.flac
+     7:33.61       80052716 B   ---   --   ---xx   flac  0.5076  d1t10-stripped-fixed.flac
+     7:13.28       76447100 B   ---   --   ---xx   flac  0.3771  d2t01-stripped-fixed.flac
+     6:17.35       66585164 B   ---   --   ---xx   flac  0.5094  d2t02-stripped-fixed.flac
+     6:02.59       63995612 B   ---   --   ---xx   flac  0.3997  d2t03-stripped-fixed.flac
+     5:32.69       58727132 B   ---   --   ---xx   flac  0.4997  d2t04-stripped-fixed.flac
+     6:29.40       68713724 B   ---   --   ---xx   flac  0.5576  d2t05-stripped-fixed.flac
+     0:48.36        8551916 B   ---   --   ---xx   flac  0.4787  d2t06-stripped-fixed.flac
+     5:20.05       56459804 B   ---   --   ---xx   flac  0.5493  d2t07-stripped-fixed.flac
+   107:17.67     1135645132 B                            0.4890  (17 files)
+=================== 
+=================== 
+=================== 

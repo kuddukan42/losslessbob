@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-07 
+=================== 
+=================== 
+=================== 
+d0f26e2eca14b6860c0f143201e96e93  bd89-06-07.md5
+67fc980a8258159d0498bc05158a6076  bd89-06-07.txt
+8cc96b8ba93c26cc901c0e9489e1995b  bd89-06-07t01.shn
+2fdaa64f8841835fccefd23b2f0cdfe0  bd89-06-07t02.shn
+633331f61c1be4960c517df61914ba90  bd89-06-07t03.shn
+67e17a4769d888899c4e98755a9605c1  bd89-06-07t04.shn
+069bbc4dd1b93ca60b6ff99c7470cbdf  bd89-06-07t05.shn
+2f8703f097852c66d5b50740e611635e  bd89-06-07t06.shn
+5e4f90e8b6f81933a837f0cd965198be  bd89-06-07t07.shn
+b5db685f114d625fc7a2d4a675eb56b4  bd89-06-07t08.shn
+905e0dc53f377c9eb6edfea75e92e2e8  bd89-06-07t09.shn
+b5ee1e0ceb72f3d4c9f504434f7d4cc1  bd89-06-07t10.shn
+8efd67edde683feb7b23c845469d233b  bd89-06-07t11.shn
+d00941c0017c988826a2c39b5cd57cbe  bd89-06-07t12.shn
+3fc1bd77d3b4eeb311d09662663c7d14  bd89-06-07t13.shn
+50ae5a191230d881423007aabc689974  bd89-06-07t14.shn
+f0b9926522c2fc4cfbfc85cbba01675c  bd89-06-07t15.shn
+7ab7d1ad7d0b85881bcfe7de9e1c0d9e  bd89-06-07t16.shn
+16b416b2034f26464cc46a38329dbfc0  bd89-06-07t17.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-06-07 
+=================== 
+=================== 
+=================== 
+7a689706124c386df2826c20ecb2f3c4  [shntool]  bd89-06-07t01.wav
+032904af9c108c825cadc9961d901cc6  [shntool]  bd89-06-07t02.wav
+c680ad3a196de4d3f3b7a587dea5f3e5  [shntool]  bd89-06-07t03.wav
+5ae0ee12b4f035535deecc1add61f5a9  [shntool]  bd89-06-07t04.wav
+ac08bf2f155274f479bf08d9988d7663  [shntool]  bd89-06-07t05.wav
+af7be9a28f066fcdbbf58450f897e3ff  [shntool]  bd89-06-07t06.wav
+58e37237c50cb44be850f7ba944c9bfd  [shntool]  bd89-06-07t07.wav
+a21f72378254da5e70c1dff48cdcc229  [shntool]  bd89-06-07t08.wav
+7942fe564d2cefae3d7d747edb846cff  [shntool]  bd89-06-07t09.wav
+4dcbfd54ab315748d9bc9ad8e6c44cc9  [shntool]  bd89-06-07t10.wav
+f750eb0d402870d9fbdad9102628fa8b  [shntool]  bd89-06-07t11.wav
+f382a34f76cae72c5a2c3a2e0826e372  [shntool]  bd89-06-07t12.wav
+ca48cef6dea7e846dd99eb7a3b774195  [shntool]  bd89-06-07t13.wav
+34b26025ab7d55779141703047ade1ac  [shntool]  bd89-06-07t14.wav
+a162a4042d53047f9e43d98b3d569644  [shntool]  bd89-06-07t15.wav
+5e695586a5aa72901dd307d0a122a8e9  [shntool]  bd89-06-07t16.wav
+827c38f5bb47473905467ed731535b8d  [shntool]  bd89-06-07t17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-07 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.29       40111052 B   ---   --   ---xx    shn  0.6836  bd89-06-07t01.shn
+     2:53.40       30611324 B   ---   --   ---xx    shn  0.6732  bd89-06-07t02.shn
+     4:01.42       42611228 B   ---   --   ---xx    shn  0.6762  bd89-06-07t03.shn
+     5:21.14       56657372 B   ---   --   ---xx    shn  0.6451  bd89-06-07t04.shn
+     5:01.27       53159948 B   ---   --   ---xx    shn  0.6764  bd89-06-07t05.shn
+     4:15.29       45050252 B   ---   --   ---xx    shn  0.7068  bd89-06-07t06.shn
+     5:22.10       56824364 B   ---   --   ---xx    shn  0.6200  bd89-06-07t07.shn
+     5:01.04       53105852 B   ---   --   ---xx    shn  0.6873  bd89-06-07t08.shn
+     7:06.29       75214652 B   ---   --   ---xx    shn  0.6641  bd89-06-07t09.shn
+     3:25.00       36162044 B   ---   --   ---xx    shn  0.6911  bd89-06-07t10.shn
+     3:55.31       41526956 B   ---   --   ---xx    shn  0.6436  bd89-06-07t11.shn
+     5:48.20       61434284 B   ---   --   ---xx    shn  0.7137  bd89-06-07t12.shn
+     4:53.66       51840476 B   ---   --   ---xx    shn  0.6286  bd89-06-07t13.shn
+     4:21.28       46106300 B   ---   --   ---xx    shn  0.5713  bd89-06-07t14.shn
+     4:19.59       45826412 B   ---   --   ---xx    shn  0.6690  bd89-06-07t15.shn
+     3:26.20       36385484 B   ---   --   ---xx    shn  0.6463  bd89-06-07t16.shn
+     5:46.46       61142636 B   ---   --   ---xx    shn  0.6827  bd89-06-07t17.shn
+    78:46.44      833770636 B                            0.6636  (17 files)
+=================== 
+=================== 
+=================== 

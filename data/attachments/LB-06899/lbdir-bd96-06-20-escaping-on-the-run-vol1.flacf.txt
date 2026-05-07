@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-20-escaping-on-the-run-vol1.flacf 
+=================== 
+=================== 
+=================== 
+bfe344d5e9060794b0df66f6cc56af18  bd96-06-20-escaping-on-the-run-vol1-d1t01.flac
+6c40a6cc0226c3ca64e84a1f331d3508  bd96-06-20-escaping-on-the-run-vol1-d1t02.flac
+49ef54f45c40a3dcde983bc34b6295dc  bd96-06-20-escaping-on-the-run-vol1-d1t03.flac
+9f6cbe1e18f77069a59cf7c349fcfdbc  bd96-06-20-escaping-on-the-run-vol1-d1t04.flac
+c0f45258e4a20eee2e36a9fce0c7fb22  bd96-06-20-escaping-on-the-run-vol1-d1t05.flac
+93721ef835df9b560993d253581f5ac3  bd96-06-20-escaping-on-the-run-vol1-d1t06.flac
+18eb600b089f8160ab2c9d128716a2a1  bd96-06-20-escaping-on-the-run-vol1-d1t07.flac
+f799a66900dfdbfa636853209f0fb11a  bd96-06-20-escaping-on-the-run-vol1-d1t08.flac
+9fc9218c33c1900cd3001bbbd7e67461  bd96-06-20-escaping-on-the-run-vol1-d2t01.flac
+04336e2da3891afe93eff19eb131de23  bd96-06-20-escaping-on-the-run-vol1-d2t02.flac
+7de6ecc30c674a5b650ab3d9b850fb54  bd96-06-20-escaping-on-the-run-vol1-d2t03.flac
+0f40ce4c28d62e21104a2715d9b50b8e  bd96-06-20-escaping-on-the-run-vol1-d2t04.flac
+b857dee5c463a12855746f90d2d81979  bd96-06-20-escaping-on-the-run-vol1-d2t05.flac
+2c6f0e5d2bc3ff91205d8a7063b520bd  bd96-06-20-escaping-on-the-run-vol1-d2t06.flac
+6c7354c9dbf29e0cbaae0cfb1cce7366  bd96-06-20-escaping-on-the-run-vol1-d2t07.flac
+fb9102a2c5681a41b97e56f2508fc120  bd96-06-20-escaping-on-the-run-vol1.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-06-20-escaping-on-the-run-vol1.flacf 
+=================== 
+=================== 
+=================== 
+bd96-06-20-escaping-on-the-run-vol1-d1t01.flac:504ab7baa152a0b08b82617d75f98cdb
+bd96-06-20-escaping-on-the-run-vol1-d1t02.flac:79bf7277be96c1dfee4c87591a4f2e73
+bd96-06-20-escaping-on-the-run-vol1-d1t03.flac:1855e30d8325505df6e22fcef84976de
+bd96-06-20-escaping-on-the-run-vol1-d1t04.flac:ee547738362c86c55a9175a6cf9931d4
+bd96-06-20-escaping-on-the-run-vol1-d1t05.flac:0af631e7bd8b11adaec9b233a1e231f1
+bd96-06-20-escaping-on-the-run-vol1-d1t06.flac:18e9d1f7d1f5e8ede05b6f7d80d08bdd
+bd96-06-20-escaping-on-the-run-vol1-d1t07.flac:734b70471c4628c50fc4b42b360036c6
+bd96-06-20-escaping-on-the-run-vol1-d1t08.flac:5305db3ddd4a46f3578c73b9c7d4f024
+bd96-06-20-escaping-on-the-run-vol1-d2t01.flac:002bffd3434baedf6e2a43259cb026b1
+bd96-06-20-escaping-on-the-run-vol1-d2t02.flac:c6b91c343bfbc477faea00121e4af9fe
+bd96-06-20-escaping-on-the-run-vol1-d2t03.flac:dc88106dbff2a1ffd27c8cad91601142
+bd96-06-20-escaping-on-the-run-vol1-d2t04.flac:8467fddaa41e791a9985cf461c114ef7
+bd96-06-20-escaping-on-the-run-vol1-d2t05.flac:7073143ca9780f9fa3b547b2e9956b97
+bd96-06-20-escaping-on-the-run-vol1-d2t06.flac:28b8f94ea94687539182c717c8b2234b
+bd96-06-20-escaping-on-the-run-vol1-d2t07.flac:7f7d874020e8ca8487216c8b31b4a19c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-20-escaping-on-the-run-vol1.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:14.12       44833868 B   ---   --   ---xx   flac  0.6770  bd96-06-20-escaping-on-the-run-vol1-d1t01.flac
+     6:44.13       71296220 B   ---   --   ---xx   flac  0.5811  bd96-06-20-escaping-on-the-run-vol1-d1t02.flac
+     6:23.42       67660028 B   ---   --   ---xx   flac  0.6383  bd96-06-20-escaping-on-the-run-vol1-d1t03.flac
+     6:13.18       65839580 B   ---   --   ---xx   flac  0.5902  bd96-06-20-escaping-on-the-run-vol1-d1t04.flac
+     6:17.70       66667484 B   ---   --   ---xx   flac  0.5798  bd96-06-20-escaping-on-the-run-vol1-d1t05.flac
+     8:00.60       84813164 B   ---   --   ---xx   flac  0.6462  bd96-06-20-escaping-on-the-run-vol1-d1t06.flac
+    11:00.62      116569868 B   ---   --   ---xx   flac  0.5854  bd96-06-20-escaping-on-the-run-vol1-d1t07.flac
+     8:00.30       84742604 B   ---   --   ---xx   flac  0.5674  bd96-06-20-escaping-on-the-run-vol1-d1t08.flac
+     6:56.02       73387148 B   ---   --   ---xx   flac  0.6039  bd96-06-20-escaping-on-the-run-vol1-d2t01.flac
+     7:20.62       77761868 B   ---   --   ---xx   flac  0.6564  bd96-06-20-escaping-on-the-run-vol1-d2t02.flac
+     7:42.71       81663836 B   ---   --   ---xx   flac  0.5683  bd96-06-20-escaping-on-the-run-vol1-d2t03.flac
+     6:20.12       67060268 B   ---   --   ---xx   flac  0.6303  bd96-06-20-escaping-on-the-run-vol1-d2t04.flac
+     8:11.40       86706524 B   ---   --   ---xx   flac  0.6417  bd96-06-20-escaping-on-the-run-vol1-d2t05.flac
+    11:32.00      122068844 B   ---   --   ---xx   flac  0.5739  bd96-06-20-escaping-on-the-run-vol1-d2t06.flac
+     5:47.05       61222604 B   ---   --   ---xx   flac  0.6306  bd96-06-20-escaping-on-the-run-vol1-d2t07.flac
+   110:45.49     1172293908 B                            0.6073  (15 files)
+=================== 
+=================== 
+=================== 

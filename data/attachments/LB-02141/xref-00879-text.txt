@@ -1,0 +1,171 @@
+===================
+===================
+===================
+=== bd2004-10-24.info.txt
+===================
+===================
+===================
+Bob Dylan 
+Boulder, Colorado
+University Of Colorado
+Coors Events Center
+October 24, 2004
+
+Musicians: Bob Dylan (piano, harp), Larry Campbell (guitar, slide guitar, cittern, pedal steel), Stu Kimball (guitar), Tony Garnier (bass), George Recile (drums)
+Source: Aud
+Lineage: a brave taper > ? > CD-Rs > shns > abmsd > CoolEdit Pro > shntool > shn
+Taped by: ?
+Transfered by ?: 
+Sound Quality: VG 
+Processing: shn > .wav > sample rate adjusted to 48000 > sample type converted to 44100 w/ a 999 "quality rate" > shntool > shn.  This was necessary in order to "fix the speed" of the files as posted to abmsd on 2004-11-02. 
+File Size: 556 megs .shn
+
+disk 1
+  
+1. Down Along The Cove 
+2. God Knows 
+3. Tweedle Dee & Tweedle Dum 
+4. Lay, Lady, Lay 
+5. Highway 61 Revisited 
+6. Can't Wait 
+7. Most Likely You Go Your Way (And I'll Go Mine) 
+8. High Water (For Charley Patton) 
+9. Positively 4th Street 
+
+disk 2
+
+1. Bye And Bye 
+2. Don't Think Twice, It's All Right (acoustic) 
+3. Honest With Me 
+4. Forever Young 
+5. Summer Days 
+6. Like A Rolling Stone 
+7. All Along The Watchtower 
+
+===================
+===================
+===================
+=== bd2004-10-24d1.shns.md5
+===================
+===================
+===================
+52c6e8afc2210d33bea9e239dec87626 *bd2004-10-24d1t01.shn
+ed5dec4a965f3efbd6292483d9c09fd0 *bd2004-10-24d1t02.shn
+68b963663dbf91c5c4a15983d40ab9dd *bd2004-10-24d1t03.shn
+d612cf554361ae4751b55c28333598e6 *bd2004-10-24d1t04.shn
+de8006ccef864d053deaa9985ff60220 *bd2004-10-24d1t05.shn
+9a1c83e022d7dbe320d68302e2bb6f82 *bd2004-10-24d1t06.shn
+21b7cc214877df202b7d83e2f5cb1853 *bd2004-10-24d1t07.shn
+4f9d32741e29ada14db4e79984b7a23a *bd2004-10-24d1t08.shn
+02a87f918fc809552ea5c2c8b440f1ea *bd2004-10-24d1t09.shn
+===================
+===================
+===================
+=== bd2004-10-24d1.shntoolfp.txt
+===================
+===================
+===================
+17ebec93d87b1e01978cd07da3091aa3  [shntool]  bd2004-10-24d1t01.shn
+2ad362e5deb6ab9eee8f4e59a5c14a8d  [shntool]  bd2004-10-24d1t02.shn
+d130c08850db2264bbc9f1d15733c1d5  [shntool]  bd2004-10-24d1t03.shn
+3f1827c80e3a28a08980e4fc3a3c3bcc  [shntool]  bd2004-10-24d1t04.shn
+a1c96f142ff58cb78f09286c8c34b697  [shntool]  bd2004-10-24d1t05.shn
+873dce1cf285b18d1ba47802fe7bdee8  [shntool]  bd2004-10-24d1t06.shn
+63cff14e2f115739ca6ec17b30c963cb  [shntool]  bd2004-10-24d1t07.shn
+d6527daf5dae86bc98550e83ae386ac1  [shntool]  bd2004-10-24d1t08.shn
+e758cc99f99e3ff07dc09f0c05899b1b  [shntool]  bd2004-10-24d1t09.shn
+===================
+===================
+===================
+=== bd2004-10-24d1.shntoolresults.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     7:07.70       75487484    ---   --   ---xx   bd2004-10-24d1t01.shn
+     4:19.66       45842876    ---   --   ---xx   bd2004-10-24d1t02.shn
+     5:26.23       57560540    ---   --   ---xx   bd2004-10-24d1t03.shn
+     5:25.32       57405308    ---   --   ---xx   bd2004-10-24d1t04.shn
+     6:05.50       64503644    ---   --   ---xx   bd2004-10-24d1t05.shn
+     5:21.56       56756156    ---   --   ---xx   bd2004-10-24d1t06.shn
+     8:03.19       85245932    ---   --   ---xx   bd2004-10-24d1t07.shn
+     6:47.69       71957132    ---   --   ---xx   bd2004-10-24d1t08.shn
+     6:10.24       65324492    ---   --   ---xx   bd2004-10-24d1t09.shn
+    54:48.34         553.21 MB                    (totals for 9 files, 0.5337 overall compression ratio)
+===================
+===================
+===================
+=== bd2004-10-24d1.waves.md5
+===================
+===================
+===================
+11a0605d8c1fd87aebf7f8f125f04f47 *bd2004-10-24d1t01.wav
+faca17e6b2d7631f07c0ba4ede5fd1de *bd2004-10-24d1t02.wav
+c1027a1901872827069cce484e7cc373 *bd2004-10-24d1t03.wav
+6dfae26badde1f5046161fe2d9a1c47f *bd2004-10-24d1t04.wav
+8f7cd1e45bee1de7950f5d88f844bfa8 *bd2004-10-24d1t05.wav
+075d9461e83f48479947529e43388226 *bd2004-10-24d1t06.wav
+d3dffcdb5da26478d63b25e20c236a21 *bd2004-10-24d1t07.wav
+e7869c733ef6aada7f148723ced895f1 *bd2004-10-24d1t08.wav
+0d894296461c3e1e5950c2a04407a648 *bd2004-10-24d1t09.wav
+===================
+===================
+===================
+=== bd2004-10-24d2.shns.md5
+===================
+===================
+===================
+557f6b27264cc409896c8a4f020519bb *bd2004-10-24d2t01.shn
+97780441128b907c18bce19ffe0019c1 *bd2004-10-24d2t02.shn
+4c56bde72d5b289d8518f35cba1f254a *bd2004-10-24d2t03.shn
+71c253ab4bd4ad021c16f7a2a3db7eea *bd2004-10-24d2t04.shn
+250986b0f0c66931fbfff1c109ba3d34 *bd2004-10-24d2t05.shn
+3bae930d569afc74bbdd99dd1b56e289 *bd2004-10-24d2t06.shn
+89957f83ea135da1ddc1605c22a2f5eb *bd2004-10-24d2t07.shn
+===================
+===================
+===================
+=== bd2004-10-24d2.shntoolfp.txt
+===================
+===================
+===================
+37f3ab94846727612c4a7b561fabf9f4  [shntool]  bd2004-10-24d2t01.shn
+0315cb9de105c33eb92cdd6608f1b92c  [shntool]  bd2004-10-24d2t02.shn
+1a1130216cda018b57bfcffa3810bfd1  [shntool]  bd2004-10-24d2t03.shn
+ef6abe134c8e9be554d62d84d5a9e571  [shntool]  bd2004-10-24d2t04.shn
+25db0425a945b5385ad1fcdf115d7ef1  [shntool]  bd2004-10-24d2t05.shn
+7c7a97d69eaba52c11c41ec5b53fbeb0  [shntool]  bd2004-10-24d2t06.shn
+bef66f7a03f66e53777494ae00d38ae1  [shntool]  bd2004-10-24d2t07.shn
+===================
+===================
+===================
+=== bd2004-10-24d2.shntoolresults.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     5:13.17       55253228    ---   --   ---xx   bd2004-10-24d2t01.shn
+     6:50.57       72458108    ---   --   ---xx   bd2004-10-24d2t02.shn
+     6:52.72       72846188    ---   --   ---xx   bd2004-10-24d2t03.shn
+     6:09.42       65190428    ---   --   ---xx   bd2004-10-24d2t04.shn
+    10:54.32      115440908    ---   --   ---xx   bd2004-10-24d2t05.shn
+     7:19.17       77479628    ---   --   ---xx   bd2004-10-24d2t06.shn
+     6:12.73       65792540    ---   --   ---xx   bd2004-10-24d2t07.shn
+    49:33.10         500.17 MB                    (totals for 7 files, 0.5227 overall compression ratio)
+===================
+===================
+===================
+=== bd2004-10-24d2.waves.md5
+===================
+===================
+===================
+be8cfb266af86d8f5b39697d66f7711d *bd2004-10-24d2t01.wav
+56e975e0181ce6c1c7d2748585751991 *bd2004-10-24d2t02.wav
+dd9dea84ba0e10fe4276c839b4ee7bee *bd2004-10-24d2t03.wav
+3dbbdb6f374e2545c95bee43234eab13 *bd2004-10-24d2t04.wav
+0b9ba9430edbe69afe2f16982bfb537a *bd2004-10-24d2t05.wav
+8f34f75528f4510c1430c62372c33de6 *bd2004-10-24d2t06.wav
+c2cfb31ba4878e5e0ca947ace7c9e78a *bd2004-10-24d2t07.wav
+===================
+===================
+===================

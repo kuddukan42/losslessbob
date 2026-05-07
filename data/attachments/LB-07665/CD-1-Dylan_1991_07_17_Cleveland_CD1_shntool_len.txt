@@ -1,0 +1,11 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.01       58214396 B   ---   --   ---xx   flac  0.6314  Dylan_1991_07_17_Cleveland_CD1_01.flac
+     5:02.34       53352812 B   ---   --   ---xx   flac  0.6578  Dylan_1991_07_17_Cleveland_CD1_02.flac
+     4:16.26       45219596 B   ---   --   ---xx   flac  0.6612  Dylan_1991_07_17_Cleveland_CD1_03.flac
+     5:30.52       58334348 B   ---   --   ---xx   flac  0.6530  Dylan_1991_07_17_Cleveland_CD1_04.flac
+     4:53.57       51819308 B   ---   --   ---xx   flac  0.6416  Dylan_1991_07_17_Cleveland_CD1_05.flac
+     3:20.20       35327084 B   ---   --   ---xx   flac  0.6660  Dylan_1991_07_17_Cleveland_CD1_06.flac
+     5:13.03       55220300 B   ---   --   ---xx   flac  0.6648  Dylan_1991_07_17_Cleveland_CD1_07.flac
+     5:43.57       60639308 B   ---   --   ---xx   flac  0.6700  Dylan_1991_07_17_Cleveland_CD1_08.flac
+     3:41.30       39055004 B   ---   --   ---xx   flac  0.6761  Dylan_1991_07_17_Cleveland_CD1_09.flac
+    43:11.55      457182156 B                            0.6570  (9 files)

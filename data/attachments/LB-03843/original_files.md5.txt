@@ -1,0 +1,20 @@
+8ab8909c6a3591abd5d782891ef9bac7 *cary front.jpg
+3fa9821f43ec3cb0e04e9abea60bc345 *cary rear.jpg
+968b64783b16d370bc1b8849f9f3054a *disk01\Bob Dylan - Track 01.flac
+6af46f20665b74a75b04ba6c341539dc *disk01\Bob Dylan - Track 02.flac
+84655c3c539399449227787d9e73bd6e *disk01\Bob Dylan - Track 03.flac
+538e9a721a233037fd1d62bfe0829d1a *disk01\Bob Dylan - Track 04.flac
+62aa1b4409c99db4e8a060710a589bf5 *disk01\Bob Dylan - Track 05.flac
+f1eb5bb891c000a5736f829a0e68b061 *disk01\Bob Dylan - Track 06.flac
+8253955576a6d85fd82fb702eae26a77 *disk01\Bob Dylan - Track 07.flac
+ccd16496a4a1f4375ef5103e495d60be *disk01\Bob Dylan - Track 08.flac
+23398a8caf87a231e5fee62f79ed8e9f *disk01\Bob Dylan - Track 09.flac
+ac2a864dd144cce6c93200be0cdf3b68 *disk01\Bob Dylan - Track 10.flac
+2e7230fcbb694017de3aef084377a320 *disk01\cary2003D1fingerprint.txt
+a991186c9b69f0fad26ba1959795f7db *disk02\Bob Dylans - Track 01.flac
+fb73a06ca24d2f9c0de4d7636d42c115 *disk02\Bob Dylans - Track 02.flac
+73c36a273d27794bd97a4649ff758107 *disk02\Bob Dylans - Track 03.flac
+dd2218a2d1d3149dae4389e12cda8326 *disk02\Bob Dylans - Track 04.flac
+13d1753c27c6760a1ae9792061290760 *disk02\Bob Dylans - Track 05.flac
+fd35ea4f7755630994ce18f4d377c611 *disk02\Bob Dylans - Track 06.flac
+1682361755df1732d447670297ab54ae *disk02\cary2003D2fingerprint.txt

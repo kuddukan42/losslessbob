@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-05-21-walkin-dude.flacf 
+=================== 
+=================== 
+=================== 
+9eae4530d4df9d8f83b187b8b67c6e8d  101 - Rainy Day Women #12 & 35.flac
+a1950011ee50a7cd22a7bcfe93b05eee  102 - It Ain't Me, Babe.flac
+4f9c92488d8734655b05aa6051050524  103 - Rollin' and Tumblin'.flac
+dcb2c9a5e1f2af9971e941231c8a17b7  104 - Positively 4th Street.flac
+a100dd1092f386c8ebc8360bb3eb03b4  105 - Tweedle Dee & Tweedle Dum.flac
+8abd89e860b4af1a3af8f47ff5026115  106 - High Water (For Charlie Patton).flac
+efc2f1c82414b81c140bca8af556879b  107 - Moonlight.flac
+457effc026ebedfb8d00746a8948f1e5  108 - The Levee's Gonna Break.flac
+04e4539cc8bfab51d0bd7b3aa7ef3d6e  109 - Nettie Moore.flac
+2c5a41205460ddb457700f6214d43f7e  110 - Highway 61 Revisited.flac
+1c27fb1429d0dce03df1025bcc8fc708  201 - Workingman's Blues #2.flac
+363dcc601e40a42c6e0690a449805c56  202 - It's Alright, Ma (I'm Only Bleeding).flac
+d4442a470f2a731d78693625f410469e  203 - Spirit On the Water.flac
+502fdafcd02c8da99699a38eefc6d458  204 - Summer Days.flac
+d73ad3115e86e190cadff49213d673a7  205 - All Along the Watchtower.flac
+505ae3b24656f5ac5ed4a905f55ca321  206 - Thunder On the Mountain.flac
+ebf8edb2b30c4a00eb63c4b0e888c0c0  207 - Like a Rolling Stone.flac
+433454003e544e76cc051b26110b0fff  artwork\Halifax Back.jpg
+7a5ee59c1b6f1be3f3e624ac7771c582  artwork\Halifax Front.jpg
+288a5f336c4012b6cbfe972e46ccdc85  fingerprint.ffp
+6604245a017499f7f6304398689646a5  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-05-21-walkin-dude.flacf 
+=================== 
+=================== 
+=================== 
+101 - Rainy Day Women #12 & 35.flac:4ec668fd3cdad31f26a96d87b5ce4b98
+102 - It Ain't Me, Babe.flac:3b3f84d019e243a8da3a8abd5ede749e
+103 - Rollin' and Tumblin'.flac:18cab835dc33e7c24f834fb0b853cf6a
+104 - Positively 4th Street.flac:abd542bd9696bd8e5cb3349bd799c65b
+105 - Tweedle Dee & Tweedle Dum.flac:288bb3691cbdc4427b20c4de07c79934
+106 - High Water (For Charlie Patton).flac:47aac20c5a78f6f5f6a856aba4fd84c3
+107 - Moonlight.flac:1b46ed66d8cf3c26f562bf40b07500ce
+108 - The Levee's Gonna Break.flac:3fa258214772c9eb7529f1535a040f47
+109 - Nettie Moore.flac:b2665457fc2dfdae00e33e590ba12472
+110 - Highway 61 Revisited.flac:b10333359c3f3cc78c61b0f7a24ee29d
+201 - Workingman's Blues #2.flac:6fe4f9d07162cb2b5cf70da1be792ea8
+202 - It's Alright, Ma (I'm Only Bleeding).flac:aad7b55376b001df1b06fc3a926b363a
+203 - Spirit On the Water.flac:a647832d61914d649de67af958530ba7
+204 - Summer Days.flac:1c80e88cf7847da3a15289c6347c2fb1
+205 - All Along the Watchtower.flac:792261d56098b4de22183310eb52e96f
+206 - Thunder On the Mountain.flac:46b63dc1f86df17136eca98afaabb2dc
+207 - Like a Rolling Stone.flac:597cc1250a2047634aa570b17b934d75
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-05-21-walkin-dude.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:01.00       63680444 B   ---   --   ---xx   flac  0.6710  101 - Rainy Day Women #12 & 35.flac
+     6:08.00       64915244 B   ---   --   ---xx   flac  0.6501  102 - It Ain't Me, Babe.flac
+     6:37.00       70030844 B   ---   --   ---xx   flac  0.6817  103 - Rollin' and Tumblin'.flac
+     5:51.00       61916444 B   ---   --   ---xx   flac  0.6498  104 - Positively 4th Street.flac
+     3:50.00       40572044 B   ---   --   ---xx   flac  0.6320  105 - Tweedle Dee & Tweedle Dum.flac
+     6:04.00       64209644 B   ---   --   ---xx   flac  0.6738  106 - High Water (For Charlie Patton).flac
+     4:59.00       52743644 B   ---   --   ---xx   flac  0.5611  107 - Moonlight.flac
+     7:28.00       79027244 B   ---   --   ---xx   flac  0.6738  108 - The Levee's Gonna Break.flac
+     8:11.00       86612444 B   ---   --   ---xx   flac  0.5567  109 - Nettie Moore.flac
+     6:18.00       66679244 B   ---   --   ---xx   flac  0.6997  110 - Highway 61 Revisited.flac
+     7:10.00       75852044 B   ---   --   ---xx   flac  0.6106  201 - Workingman's Blues #2.flac
+     7:05.00       74970044 B   ---   --   ---xx   flac  0.6902  202 - It's Alright, Ma (I'm Only Bleeding).flac
+     7:23.00       78145244 B   ---   --   ---xx   flac  0.5535  203 - Spirit On the Water.flac
+     6:20.00       67032044 B   ---   --   ---xx   flac  0.6991  204 - Summer Days.flac
+     4:42.00       49744844 B   ---   --   ---xx   flac  0.6887  205 - All Along the Watchtower.flac
+     7:29.00       79203644 B   ---   --   ---xx   flac  0.6846  206 - Thunder On the Mountain.flac
+     6:36.00       69854444 B   ---   --   ---xx   flac  0.6856  207 - Like a Rolling Stone.flac
+   108:12.00     1145189548 B                            0.6497  (17 files)
+=================== 
+=================== 
+=================== 

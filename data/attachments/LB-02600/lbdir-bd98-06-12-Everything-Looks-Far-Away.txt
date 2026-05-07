@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-12-Everything-Looks-Far-Away 
+=================== 
+=================== 
+=================== 
+395627ef220efb539073c1ff0748db6b  bd1998-06-12_EverythingLooksFarAway-Back.jpg
+244fa055254e0d84f10c2f0a9c028518  bd1998-06-12_EverythingLooksFarAway-Front.jpg
+f2726d98ab1bf9b8595e040aa0da7af7  bd1998-06-12_EverythingLooksFarAway-Spectral.jpg
+90714684ba01f72ce1b12b8238429df0  bd1998-06-12_EverythingLooksFarAway.txt
+493b6936b816ef19c1ff35be784a201f  bd1998-06-12_EverythingLooksFarAway_d1.LOG
+401bfa0b22d068bea7cbd6fb60737b3a  bd1998-06-12_EverythingLooksFarAway_d1.md5
+383a94aff000d214a9c2819477cba1ef  bd1998-06-12_EverythingLooksFarAway_d1t01.shn
+12d9d48df66b32804d13ba8c4ec45223  bd1998-06-12_EverythingLooksFarAway_d1t02.shn
+4095dbd443e633de4a77b864971ba31c  bd1998-06-12_EverythingLooksFarAway_d1t03.shn
+166565b5d826aa72c3b9d8d814885db7  bd1998-06-12_EverythingLooksFarAway_d1t04.shn
+489acf0d6e13279fb9ee98539aca0fd7  bd1998-06-12_EverythingLooksFarAway_d1t05.shn
+540f41d50aa164b0e35a69bc6399cdfe  bd1998-06-12_EverythingLooksFarAway_d1t06.shn
+3e38e70ef37f5007c3fc38ccf53e0d03  bd1998-06-12_EverythingLooksFarAway_d1t07.shn
+454d2f2dd288697ef3a811ac3904d096  bd1998-06-12_EverythingLooksFarAway_d1t08.shn
+9c5f397a30d6f64dd399ea7b189cd282  bd1998-06-12_EverythingLooksFarAway_d1t09.shn
+f7873b3e4454a1d2f92eef3467135e20  bd1998-06-12_EverythingLooksFarAway_d1t10.shn
+4056f886ddd4ca82cf43d9171f6cef47  bd1998-06-12_EverythingLooksFarAway_d1t11.shn
+0501750ee9e6d61ada4ddf84d545fcdd  bd1998-06-12_EverythingLooksFarAway_d1t12.shn
+a26ae0c3113250563194cd5f1474fe03  bd1998-06-12_EverythingLooksFarAway_d2.LOG
+9eeefc857c2da7516a19eb0bc2f8ffa0  bd1998-06-12_EverythingLooksFarAway_d2.md5
+f1c4dda446b41e43df96862b3e06bd95  bd1998-06-12_EverythingLooksFarAway_d2t01.shn
+78e60c8c5fdf17da62ba74786123f4d3  bd1998-06-12_EverythingLooksFarAway_d2t02.shn
+3655ac795ae273eaca6c9d65710257be  bd1998-06-12_EverythingLooksFarAway_d2t03.shn
+aa98a7dc776b911639aaf6b471d30dce  bd1998-06-12_EverythingLooksFarAway_d2t04.shn
+f321e61dee31118c64d26251d6bc72ca  bd1998-06-12_EverythingLooksFarAway_d2t05.shn
+1351535452b1a9d322c84de2b22d6281  bd1998-06-12_EverythingLooksFarAway_d2t06.shn
+913c1ff1b314578fab90b50b2586f72d  bd1998-06-12_EverythingLooksFarAway_d2t07.shn
+1c2e4f816ec48e187f83c9f41324360f  bd1998-06-12_EverythingLooksFarAway_d2t08.shn
+8dd1e30b0f8883770237011020cce0aa  bd1998-06-12_EverythingLooksFarAway_d2t09.shn
+46cc010b54df36e97aea60d49d6b617b  bd1998-06-12_EverythingLooksFarAway_d2t10.shn
+544fe9bcea3764fcb10469c8b9ce8880  bd1998-06-12_EverythingLooksFarAway_d2t11.shn
+1dd9904772224ba978a470ee42b05d2f  bd1998-06-12_EverythingLooksFarAway_d2t12.shn
+c730658007dccec5b01b569affbe8bb1  bd1998-06-12_EverythingLooksFarAway_WAV FILES.md5
+d9f11b9dd262e7db84ca6da91bb2791d  bd98-06-12-Everything-Looks-Far-Away-LB-2600.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-06-12-Everything-Looks-Far-Away 
+=================== 
+=================== 
+=================== 
+51e573cc454bd7feae34df8cd608379a  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t01.wav
+36bacc59f29a0843986a05184dd71ec8  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t02.wav
+80aac19398c7ebedfc96bc8140335cc5  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t03.wav
+c9d2d291e74b82d8a8af7f63d59a0a27  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t04.wav
+9676e046974dbfea1e80ee6f6cb73c5e  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t05.wav
+4cf9e77000bc531e09df545272fc46ce  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t06.wav
+e27d62484dff235908c03de2bf491fb8  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t07.wav
+ae12da955a6413cd08e2e314efa4c5cc  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t08.wav
+98551a5895cd79844b9ca2e5aa3a1465  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t09.wav
+8a7aa6333f0663951d15f0af8defc599  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t10.wav
+d2f675c136986816e8c6a09c7d44d560  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t11.wav
+74ef9fe0e7f9ffd110f6b39b580c1608  [shntool]  bd1998-06-12_EverythingLooksFarAway_d1t12.wav
+076b488e78a5e7bd5a774f4f66157bbf  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t01.wav
+98813976c68754bbc653462fbcf93851  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t02.wav
+9f5186eb4f27c57363116270f378b75d  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t03.wav
+ee55a8ae9e093e97b8a970dc2f25c996  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t04.wav
+accd5766b97a1701f24af4fb28c45039  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t05.wav
+c025a07d99f3c288f24b3bbe62fc3486  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t06.wav
+dcbef2c558ef91dacd44666f9ae71f7d  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t07.wav
+da679afb879f029886d9bd9914a1a543  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t08.wav
+582ce80c0c889b37383457c0d443d488  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t09.wav
+98e55bb5f1e0ffe6dc52ca5ed956b297  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t10.wav
+c3f6a86f8e6a79adc9ad2dcf1b7997a8  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t11.wav
+3454b7df2835a9bbd56331221bb7617a  [shntool]  bd1998-06-12_EverythingLooksFarAway_d2t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-12-Everything-Looks-Far-Away 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.19       57021932 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t01.wav
+     5:21.13       56655020 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t02.wav
+     6:01.13       63711020 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t03.wav
+     7:20.38       77705420 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t04.wav
+     6:58.57       73869308 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t05.wav
+     5:22.07       56817308 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t06.wav
+     5:30.26       58273196 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t07.wav
+     6:21.40       67302524 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t08.wav
+     8:35.57       90980108 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t09.wav
+     5:45.30       60928604 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t10.wav
+     4:33.03       48164300 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t11.wav
+     5:55.22       62673788 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d1t12.wav
+     7:20.39       77707772 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t01.wav
+     7:09.62       75821468 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t02.wav
+     5:26.67       57664028 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t03.wav
+     5:42.61       60472316 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t04.wav
+     5:11.56       54992156 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t05.wav
+     5:36.16       59308076 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t06.wav
+     6:49.17       72187628 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t07.wav
+     3:35.33       38003660 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t08.wav
+     5:30.70       58376684 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t09.wav
+     6:48.62       72117068 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t10.wav
+     4:12.51       44572796 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t11.wav
+     8:36.53       91147100 B   ---   --   -----    wav  1.0000  bd1998-06-12_EverythingLooksFarAway_d2t12.wav
+   145:10.12     1536473280 B                            1.0000  (24 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== md5 for: bd75-11-27-sb-e.flacf
+===================
+===================
+===================
+fcc9cae016b6074495e60ec9266183ee *1975-11-27 No Llores, Mi Querida.txt
+31e5670bb48b1677354f2f6c5b34b39a *BDylan_1975-11-27 Bangor, Maine (No Llores, Mi Querida - A Southside Butcher Prod.).md5
+87f241da7c65dfe1b5c3f3b42105855e *No Llores, Mi Querida [CD1]\1975-11-27_101.flac
+52aeb5c8c57f2c9413cf58d875be136e *No Llores, Mi Querida [CD1]\1975-11-27_102.flac
+dee46340be5c87475af5ecd4d876d149 *No Llores, Mi Querida [CD1]\1975-11-27_103.flac
+4a1f7e8c0fe3c21de6f51d2bd94824e8 *No Llores, Mi Querida [CD1]\1975-11-27_104.flac
+dd944803d4eecec5f380bc2c4e00037d *No Llores, Mi Querida [CD1]\1975-11-27_105.flac
+3ee35fa945967ec00fdae4622a5327da *No Llores, Mi Querida [CD1]\1975-11-27_106.flac
+5e654e9ee19608b42a8e29954fe59c7b *No Llores, Mi Querida [CD1]\1975-11-27_107.flac
+3e6e3cd4bd035b1940cc7d3d22817d94 *No Llores, Mi Querida [CD1]\1975-11-27_108.flac
+482eedb5a727c941fae48e89404e82e1 *No Llores, Mi Querida [CD1]\1975-11-27_109.flac
+bf60fec257621fa5c87fb41949724d56 *No Llores, Mi Querida [CD1]\1975-11-27_110.flac
+95c30de1dfe0c6a3143f5851506c3745 *No Llores, Mi Querida [CD1]\1975-11-27_111.flac
+db78fc1abb2d771c863a50abcd9d61c1 *No Llores, Mi Querida [CD1]\No Llores, Mi Querida [CD1].ffp
+57c0879da58e4b815ef41ef6d408e8ec *No Llores, Mi Querida [CD2]\1975-11-27_201.flac
+987ca48784e0a1035a7b5842c3d3cadb *No Llores, Mi Querida [CD2]\1975-11-27_202.flac
+f363e0d95d72c14c0e496c47649a547a *No Llores, Mi Querida [CD2]\1975-11-27_203.flac
+08cf4bd2c69a0ac4fc949514e6570994 *No Llores, Mi Querida [CD2]\1975-11-27_204.flac
+da30409cd9dae1455d8117882b76af11 *No Llores, Mi Querida [CD2]\1975-11-27_205.flac
+bad9da1832af54e0759f494f2e13173d *No Llores, Mi Querida [CD2]\1975-11-27_206.flac
+02a6b2daf7537298e356f6c7423bf573 *No Llores, Mi Querida [CD2]\1975-11-27_207.flac
+567c03b1650c52621dfabd40c0037657 *No Llores, Mi Querida [CD2]\1975-11-27_208.flac
+57cc315a57a936136b38c7edd0d10af2 *No Llores, Mi Querida [CD2]\1975-11-27_209.flac
+fd8a16b9ac571ca9536a57c738c6bf45 *No Llores, Mi Querida [CD2]\1975-11-27_210.flac
+27141f9807469c699dc3301c2cd7a0e9 *No Llores, Mi Querida [CD2]\No Llores, Mi Querida [CD2].ffp
+===================
+===================
+===================
+=== ffp for: bd75-11-27-sb-e.flacf
+===================
+===================
+===================
+No Llores, Mi Querida [CD1]\1975-11-27_101.flac:fe228cc9ef49762fe2a92049527b14cb
+No Llores, Mi Querida [CD1]\1975-11-27_102.flac:6e8e8da24c565088841d14bb74e8fc8d
+No Llores, Mi Querida [CD1]\1975-11-27_103.flac:ae820e266bf89802acca3fd28cc8779e
+No Llores, Mi Querida [CD1]\1975-11-27_104.flac:4da00c30a3026fa2b43902ce3e48fe1e
+No Llores, Mi Querida [CD1]\1975-11-27_105.flac:e9e893e39b6b3e90a40a77d2b7f17700
+No Llores, Mi Querida [CD1]\1975-11-27_106.flac:f3fbd73cd470cb6bb63383a008a0abc7
+No Llores, Mi Querida [CD1]\1975-11-27_107.flac:1dd9c06de171253483f35b34b4569265
+No Llores, Mi Querida [CD1]\1975-11-27_108.flac:bd19c2f299a507574d6acd11a8732324
+No Llores, Mi Querida [CD1]\1975-11-27_109.flac:daf3e98df53c4a185b46dca19a7b3dc7
+No Llores, Mi Querida [CD1]\1975-11-27_110.flac:d73b289fefed177b8f5002762de62b91
+No Llores, Mi Querida [CD1]\1975-11-27_111.flac:1d291b94bee5053bae84a4beb4fcf8f5
+No Llores, Mi Querida [CD2]\1975-11-27_201.flac:1af06c27276b2cccefb341c149546a09
+No Llores, Mi Querida [CD2]\1975-11-27_202.flac:9478858af375963c52f6d4df90a96cc7
+No Llores, Mi Querida [CD2]\1975-11-27_203.flac:d1b2a855e9091498b92aca34c739a357
+No Llores, Mi Querida [CD2]\1975-11-27_204.flac:e0a8dede8c46289125e9bb9786a42415
+No Llores, Mi Querida [CD2]\1975-11-27_205.flac:f47b6d4190fc4a9a0ef8b2c5a3140fa3
+No Llores, Mi Querida [CD2]\1975-11-27_206.flac:bbf6c8b66419f04d07892370323958f2
+No Llores, Mi Querida [CD2]\1975-11-27_207.flac:98ac0c9c324923876a753ec9c03a9490
+No Llores, Mi Querida [CD2]\1975-11-27_208.flac:7f4208a10371f39d4c43b4b014854f97
+No Llores, Mi Querida [CD2]\1975-11-27_209.flac:57223fc1d832a8dddf55573a26db87a2
+No Llores, Mi Querida [CD2]\1975-11-27_210.flac:a4ec1a129c2f297143f7d9db595d9da7
+===================
+===================
+===================
+=== shntool len for: bd75-11-27-sb-e.flacf\No Llores, Mi Querida [CD1]
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:21.61       46183916 B   ---   --   ---xx   flac  0.5956  1975-11-27_101.flac
+     5:17.72       56088188 B   ---   --   ---xx   flac  0.6000  1975-11-27_102.flac
+     5:55.34       62702012 B   ---   --   ---xx   flac  0.5976  1975-11-27_103.flac
+     3:56.17       41670428 B   ---   --   ---xx   flac  0.6081  1975-11-27_104.flac
+     5:48.38       61476620 B   ---   --   ---xx   flac  0.6192  1975-11-27_105.flac
+     5:53.60       62410364 B   ---   --   ---xx   flac  0.5954  1975-11-27_106.flac
+     5:28.26       57920396 B   ---   --   ---xx   flac  0.6118  1975-11-27_107.flac
+     3:33.22       37624988 B   ---   --   ---xx   flac  0.5992  1975-11-27_108.flac
+     3:33.50       37690844 B   ---   --   ---xx   flac  0.6010  1975-11-27_109.flac
+     2:49.60       29952764 B   ---   --   ---xx   flac  0.6328  1975-11-27_110.flac
+     4:03.74       43039292 B   ---   --   ---xx   flac  0.5957  1975-11-27_111.flac
+    50:42.64      536759812 B                            0.6044  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd75-11-27-sb-e.flacf\No Llores, Mi Querida [CD2]
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.68       56431580 B   ---   --   ---xx   flac  0.5807  1975-11-27_201.flac
+     2:59.10       31599164 B   ---   --   ---xx   flac  0.5837  1975-11-27_202.flac
+     4:16.03       45165500 B   ---   --   ---xx   flac  0.5880  1975-11-27_203.flac
+     5:00.36       53004716 B   ---   --   ---xx   flac  0.6016  1975-11-27_204.flac
+     8:00.45       84777884 B   ---   --   ---xx   flac  0.6340  1975-11-27_205.flac
+     4:23.49       46508492 B   ---   --   ---xx   flac  0.6045  1975-11-27_206.flac
+     5:05.26       53863196 B   ---   --   ---xx   flac  0.6029  1975-11-27_207.flac
+     4:51.41       51428876 B   ---   --   ---xx   flac  0.5792  1975-11-27_208.flac
+     4:25.38       46835420 B   ---   --   ---xx   flac  0.6044  1975-11-27_209.flac
+     3:36.72       38271788 B   ---   --   ---xx   flac  0.6192  1975-11-27_210.flac
+    47:59.13      507886616 B                            0.6021  (10 files)
+===================
+===================
+===================

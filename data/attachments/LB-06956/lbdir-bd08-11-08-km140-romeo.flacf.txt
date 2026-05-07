@@ -1,0 +1,149 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-11-08-km140-romeo.flacf 
+=================== 
+=================== 
+=================== 
+52314f095e76dd7531de28b7d1be492b  bd2008-11-08.km140.romeo.ffp
+2f3633720d7cf051d3728726ee80cc52  bd2008-11-08.km140.romeo.md5
+9ad9bf1952a7880e665edf829b814da0  bd2008-11-08.km140.romeo.txt
+1bae76994e22ce65993eb4c19a6cc40d  bd2008-11-08d1t01.flac
+790c74b27523635911377e8fcfb32f45  bd2008-11-08d1t02.flac
+bbb63c172f6a32e359fecbca1d83bb01  bd2008-11-08d1t03.flac
+ed3624faa77241544993205cede2e871  bd2008-11-08d1t04.flac
+7c6038138e9ce84cded369e7a2608611  bd2008-11-08d1t05.flac
+28d902c1745cd5a528efc42fe4158bf1  bd2008-11-08d1t06.flac
+781d9c711dd5f6aadb78897a51f2a247  bd2008-11-08d1t07.flac
+852460612ef7e3c15bd47f356e1c33c9  bd2008-11-08d1t08.flac
+562244041ae80d3f865275627e1795e3  bd2008-11-08d1t09.flac
+d07e3cb57021d447ad92e0baec7cad57  bd2008-11-08d1t10.flac
+4b68f0064d5b584075141ea762fb5f19  bd2008-11-08d1t11.flac
+69aab341e7400156bba5d94aefdd7bae  bd2008-11-08d1t12.flac
+2536b40470f7980883b22739af711e49  bd2008-11-08d1t13.flac
+ee848a0737ecf74c84ebe5c0c316f507  bd2008-11-08d2t01.flac
+fafca43ebfe7cb75d35395cd4c83b346  bd2008-11-08d2t02.flac
+c632b4cc73f0f7192fe5938a65f45358  bd2008-11-08d2t03.flac
+cbc6a4baa6442a39d77bb3a90666a4da  bd2008-11-08d2t04.flac
+1a065a53a0b965b23cff53ca8d7d483e  bd2008-11-08d2t05.flac
+5e5704d6bacad8493dd57aad462318e7  bd2008-11-08d2t06.flac
+c3abf5bf6e1cb385cf49bd68a28e37f5  bd2008-11-08d2t07.flac
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-11-08-km140-romeo.flacf 
+=================== 
+=================== 
+=================== 
+52314f095e76dd7531de28b7d1be492b  bd2008-11-08.km140.romeo.ffp
+2f3633720d7cf051d3728726ee80cc52  bd2008-11-08.km140.romeo.md5
+9ad9bf1952a7880e665edf829b814da0  bd2008-11-08.km140.romeo.txt
+1bae76994e22ce65993eb4c19a6cc40d  bd2008-11-08d1t01.flac
+790c74b27523635911377e8fcfb32f45  bd2008-11-08d1t02.flac
+bbb63c172f6a32e359fecbca1d83bb01  bd2008-11-08d1t03.flac
+ed3624faa77241544993205cede2e871  bd2008-11-08d1t04.flac
+7c6038138e9ce84cded369e7a2608611  bd2008-11-08d1t05.flac
+28d902c1745cd5a528efc42fe4158bf1  bd2008-11-08d1t06.flac
+781d9c711dd5f6aadb78897a51f2a247  bd2008-11-08d1t07.flac
+852460612ef7e3c15bd47f356e1c33c9  bd2008-11-08d1t08.flac
+562244041ae80d3f865275627e1795e3  bd2008-11-08d1t09.flac
+d07e3cb57021d447ad92e0baec7cad57  bd2008-11-08d1t10.flac
+4b68f0064d5b584075141ea762fb5f19  bd2008-11-08d1t11.flac
+69aab341e7400156bba5d94aefdd7bae  bd2008-11-08d1t12.flac
+2536b40470f7980883b22739af711e49  bd2008-11-08d1t13.flac
+ee848a0737ecf74c84ebe5c0c316f507  bd2008-11-08d2t01.flac
+fafca43ebfe7cb75d35395cd4c83b346  bd2008-11-08d2t02.flac
+c632b4cc73f0f7192fe5938a65f45358  bd2008-11-08d2t03.flac
+cbc6a4baa6442a39d77bb3a90666a4da  bd2008-11-08d2t04.flac
+1a065a53a0b965b23cff53ca8d7d483e  bd2008-11-08d2t05.flac
+5e5704d6bacad8493dd57aad462318e7  bd2008-11-08d2t06.flac
+c3abf5bf6e1cb385cf49bd68a28e37f5  bd2008-11-08d2t07.flac
+52314f095e76dd7531de28b7d1be492b  bd2008-11-08.km140.romeo.ffp
+2f3633720d7cf051d3728726ee80cc52  bd2008-11-08.km140.romeo.md5
+9ad9bf1952a7880e665edf829b814da0  bd2008-11-08.km140.romeo.txt
+1bae76994e22ce65993eb4c19a6cc40d  bd2008-11-08d1t01.flac
+790c74b27523635911377e8fcfb32f45  bd2008-11-08d1t02.flac
+bbb63c172f6a32e359fecbca1d83bb01  bd2008-11-08d1t03.flac
+ed3624faa77241544993205cede2e871  bd2008-11-08d1t04.flac
+7c6038138e9ce84cded369e7a2608611  bd2008-11-08d1t05.flac
+28d902c1745cd5a528efc42fe4158bf1  bd2008-11-08d1t06.flac
+781d9c711dd5f6aadb78897a51f2a247  bd2008-11-08d1t07.flac
+852460612ef7e3c15bd47f356e1c33c9  bd2008-11-08d1t08.flac
+562244041ae80d3f865275627e1795e3  bd2008-11-08d1t09.flac
+d07e3cb57021d447ad92e0baec7cad57  bd2008-11-08d1t10.flac
+4b68f0064d5b584075141ea762fb5f19  bd2008-11-08d1t11.flac
+69aab341e7400156bba5d94aefdd7bae  bd2008-11-08d1t12.flac
+2536b40470f7980883b22739af711e49  bd2008-11-08d1t13.flac
+ee848a0737ecf74c84ebe5c0c316f507  bd2008-11-08d2t01.flac
+fafca43ebfe7cb75d35395cd4c83b346  bd2008-11-08d2t02.flac
+c632b4cc73f0f7192fe5938a65f45358  bd2008-11-08d2t03.flac
+cbc6a4baa6442a39d77bb3a90666a4da  bd2008-11-08d2t04.flac
+1a065a53a0b965b23cff53ca8d7d483e  bd2008-11-08d2t05.flac
+5e5704d6bacad8493dd57aad462318e7  bd2008-11-08d2t06.flac
+c3abf5bf6e1cb385cf49bd68a28e37f5  bd2008-11-08d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-11-08-km140-romeo.flacf 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-11-08-km140-romeo.flacf 
+=================== 
+=================== 
+=================== 
+bd2008-11-08d1t01.flac:b94df420ec9da2201979d80a827c9318
+bd2008-11-08d1t02.flac:4b5947b06cb068e6c95a098b158fce6c
+bd2008-11-08d1t03.flac:71193a9bfaee0682f6664db2b32d3612
+bd2008-11-08d1t04.flac:d6e5eae09c869cb67595f7d421789169
+bd2008-11-08d1t05.flac:354d24381ea7b05502729b5a9f8b3d63
+bd2008-11-08d1t06.flac:148bc504a6d1cf732355d1ea7f287326
+bd2008-11-08d1t07.flac:46a82e4f4a0a9eb423a7b0b16fc7c778
+bd2008-11-08d1t08.flac:3d14aab85480fcb0619c8a99df8d6958
+bd2008-11-08d1t09.flac:7d140ab47ad158e2ed5dbc0e8d8f50eb
+bd2008-11-08d1t10.flac:a50120262a4b8929238ed5d6daeb2169
+bd2008-11-08d1t11.flac:3c551b1697a7aa8a20e4ccb936a6bb6b
+bd2008-11-08d1t12.flac:83021fbfe6f2f27e1d6475b2f4ffd80f
+bd2008-11-08d1t13.flac:72ae17e90b001e8a2cf20d428a0f9b63
+bd2008-11-08d2t01.flac:b6b92fa624af88d3826ab1b1d91696cc
+bd2008-11-08d2t02.flac:2f1ae2d2e33a8ad2ec6b30993efb75d6
+bd2008-11-08d2t03.flac:c38e6f6b3f8d732f339bd585d99de76c
+bd2008-11-08d2t04.flac:a476e3401686b0cf524e75c5cd20b5b2
+bd2008-11-08d2t05.flac:52a44cdf75a40c41a1bcc4379d0a2dd2
+bd2008-11-08d2t06.flac:09230b389a0410ada87e7f49c552b6ef
+bd2008-11-08d2t07.flac:a53ecf5b2180350254422371b2c51041
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-11-08-km140-romeo.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:12.37       12787868 B   ---   --   ---xx   flac  0.4542  bd2008-11-08d1t01.flac
+     3:19.15       35138924 B   ---   --   ---xx   flac  0.5442  bd2008-11-08d1t02.flac
+     4:29.68       47611580 B   ---   --   ---xx   flac  0.5805  bd2008-11-08d1t03.flac
+     6:35.20       69725084 B   ---   --   ---xx   flac  0.5470  bd2008-11-08d1t04.flac
+     4:37.56       48994556 B   ---   --   ---xx   flac  0.5448  bd2008-11-08d1t05.flac
+     5:00.64       53070572 B   ---   --   ---xx   flac  0.5401  bd2008-11-08d1t06.flac
+     8:11.74       86786492 B   ---   --   ---xx   flac  0.5707  bd2008-11-08d1t07.flac
+     6:01.18       63722780 B   ---   --   ---xx   flac  0.5476  bd2008-11-08d1t08.flac
+     7:06.57       75280508 B   ---   --   ---xx   flac  0.5886  bd2008-11-08d1t09.flac
+     6:25.52       68036348 B   ---   --   ---xx   flac  0.5176  bd2008-11-08d1t10.flac
+     7:47.42       82477628 B   ---   --   ---xx   flac  0.5874  bd2008-11-08d1t11.flac
+     7:14.53       76682300 B   ---   --   ---xx   flac  0.5558  bd2008-11-08d1t12.flac
+     6:22.69       67547132 B   ---   --   ---xx   flac  0.6178  bd2008-11-08d1t13.flac
+     8:39.74       91725692 B   ---   --   ---xx   flac  0.5421  bd2008-11-08d2t01.flac
+     6:47.37       71881868 B   ---   --   ---xx   flac  0.6049  bd2008-11-08d2t02.flac
+     5:52.03       62099900 B   ---   --   ---xx   flac  0.5652  bd2008-11-08d2t03.flac
+     3:45.08       39708860 B   ---   --   ---xx   flac  0.4406  bd2008-11-08d2t04.flac
+     6:55.28       73271900 B   ---   --   ---xx   flac  0.5878  bd2008-11-08d2t05.flac
+     0:39.41        6976076 B   ---   --   ---xx   flac  0.5339  bd2008-11-08d2t06.flac
+     5:01.40       53190524 B   ---   --   ---xx   flac  0.5950  bd2008-11-08d2t07.flac
+   112:07.31     1186716592 B                            0.5621  (20 files)
+=================== 
+=================== 
+=================== 

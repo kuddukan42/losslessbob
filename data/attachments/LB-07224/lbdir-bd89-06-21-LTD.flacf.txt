@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-21-LTD.flacf 
+=================== 
+=================== 
+=================== 
+80690444de94600ea092c8ac8bb4c735  1989-06-21 Cava de Tirreni.md5
+861cc598505ae741388d56a980ec3a57  Cava de Tirreni-01.flac
+6502ccdfc54ee987870677084ccc66be  Cava de Tirreni-02.flac
+749d3290ea92b46ce45fffcd6d6da38a  Cava de Tirreni-03.flac
+9347c0ffc6529cb57e17e184f02942bb  Cava de Tirreni-04.flac
+be040218e4cf2205d4f4a773f2e75d24  Cava de Tirreni-05.flac
+4ae369be0b1cc237b884c6eaee22ca66  Cava de Tirreni-06.flac
+c4e977db7e3832270101bae874afe240  Cava de Tirreni-07.flac
+299f555d6b0f982c154f6a3e48338825  Cava de Tirreni-08.flac
+bf82ae3f1726769d813feade350008fc  Cava de Tirreni-09.flac
+ee75395c2db65b4ddc319cba04dfe63b  Cava de Tirreni-10.flac
+59c2d9388edd4edc74b061f8e3a640c9  Cava de Tirreni-11.flac
+4ec5b38e1dfc53e87129ba537644253f  Cava de Tirreni-12.flac
+5fae39f1728c6ae3e0bf446ff6a7855b  Cava de Tirreni-13.flac
+b5e73103002f25f492d32c1a750cc0d4  Cava de Tirreni-14.flac
+e3cb5f2d8228ad9841e126bfff9bc8a2  Cava de Tirreni-15.flac
+aba0f38ffdeaa31917fc6d51815c46fb  Cava de Tirreni-1989-06-21.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-21-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Cava de Tirreni-01.flac:00965bcd978e2a15e2697f531b20dab2
+Cava de Tirreni-02.flac:efd62d26a5e4bdb27fbeb449fd9ec38e
+Cava de Tirreni-03.flac:b010364972ae357bc19c0c6a259402e4
+Cava de Tirreni-04.flac:95a9a3ab1f6bde074778c302b9fbb25a
+Cava de Tirreni-05.flac:b2319298ad975dab64b1cc9bb2ce48ce
+Cava de Tirreni-06.flac:9f98d76e770714893b9a75dc22c473d3
+Cava de Tirreni-07.flac:a54974eadecfb0bb085a8b54ceaeb458
+Cava de Tirreni-08.flac:8bba7c983bbabbf57a50228d24b627fe
+Cava de Tirreni-09.flac:ed7e5aa99b34d63bd2cd26cffb22fd94
+Cava de Tirreni-10.flac:9391bb4dd4ec1df4bdc7f262cd252417
+Cava de Tirreni-11.flac:2d9e38953207aeab421ed539bfb1d214
+Cava de Tirreni-12.flac:d3a030349380daf9a08c0177021d77a5
+Cava de Tirreni-13.flac:7e20d39a572710744d211a58f061a5e4
+Cava de Tirreni-14.flac:490661fd99c45f0db862c6642456a8cc
+Cava de Tirreni-15.flac:66eaa6fe25c7eb74ae27dff5016f2715
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-21-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.53       57807920 B   -b-   --   ---xx   flac  0.5715  Cava de Tirreni-01.flac
+     5:07.21       54205168 B   -b-   --   ---xx   flac  0.6019  Cava de Tirreni-02.flac
+     5:26.59       57644160 B   -b-   --   ---xx   flac  0.6235  Cava de Tirreni-03.flac
+     5:41.48       60264344 B   -b-   --   ---xx   flac  0.6358  Cava de Tirreni-04.flac
+     5:25.64       57480400 B   -b-   --   ---xx   flac  0.6242  Cava de Tirreni-05.flac
+     4:27.27       47163412 B   -b-   --   ---xx   flac  0.6336  Cava de Tirreni-06.flac
+     4:33.47       48268804 B   -b-   --   ---xx   flac  0.5013  Cava de Tirreni-07.flac
+     5:55.59       62761712 B   -b-   --   ---xx   flac  0.5678  Cava de Tirreni-08.flac
+     6:48.36       72055188 B   -b-   --   ---xx   flac  0.5313  Cava de Tirreni-09.flac
+     4:00.33       42414324 B   -b-   --   ---xx   flac  0.6272  Cava de Tirreni-10.flac
+     3:46.39       39957896 B   -b-   --   ---xx   flac  0.6200  Cava de Tirreni-11.flac
+     8:06.34       85811172 B   -b-   --   ---xx   flac  0.6375  Cava de Tirreni-12.flac
+     4:24.44       46672124 B   -b-   --   ---xx   flac  0.5434  Cava de Tirreni-13.flac
+     5:39.58       59936824 B   -b-   --   ---xx   flac  0.6141  Cava de Tirreni-14.flac
+     4:58.55       52696844 B   -b-   --   ---xx   flac  0.6399  Cava de Tirreni-15.flac
+    79:51.03      845140292 B                            0.5985  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-02-02-b.flacf 
+=================== 
+=================== 
+=================== 
+388585fb3c6a71b34e3cb88ed8d963ef  bd 1980-02-02 Alabama.ffp
+917fc93dbbef68bcf206f2ba3337561d  bd 1980-02-02 Alabama.md5
+8215f1fa0d0094ccacd00ec0e3ec199f  bd 1980-02-02.txt
+5193e2d8446545a849111320975d2768  Track 01.flac
+92399b0127b09a2bcfa32e5774c89d13  Track 02.flac
+b0d1b3f09c6bf2f63bf467fd8dab684f  Track 03.flac
+514ff58deba47b59574bd55d928c546e  Track 04.flac
+f871dce85bbf21d79610a806d45674fb  Track 05.flac
+408fb01bb5afc91f36271d4660917470  Track 06.flac
+eef0d2254ea6cad597be40dbd7da3058  Track 07.flac
+7f4d59b7c87088d983b3b5d993001667  Track 08.flac
+4b12dd3236225ffa338f01828b5dd8e7  Track 09.flac
+e300e429cf69341526d77885f9ea2e8d  Track 10.flac
+e52ceb8733a65eec6f4a696b36b78b3c  Track 11.flac
+62a7b7439e76584cbab60548d8e9ac1c  Track 12.flac
+3e56400827916488eb449004cd0ceac8  Track 13.flac
+aae5bf29c9f28563a5a44a339d8fa97a  Track 14.flac
+6039b3cc3de74c7cedd3c833de6d5be0  Track 15.flac
+6ececf7797765987bf4f7f811e1523f6  Track 16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-02-02-b.flacf 
+=================== 
+=================== 
+=================== 
+track 01.flac:b4ec3f38fd9518db08e6aeadfe668afe
+track 02.flac:93fd32938d36edee988af7506969b7ce
+track 03.flac:2b56ff61b25834e524cff49ac2dfe287
+track 04.flac:8a9bffdf12ece63a5a515f20735693cc
+track 05.flac:befad2e6a413fc57bb2731b0a2550467
+track 06.flac:87afd981d6b938e03e8eb5e6b1fa1419
+track 07.flac:d6c9cc4d67fa918c30f0f7cad1980c0a
+track 08.flac:84b5cd5dd7e009682c0bdf6502925054
+track 09.flac:8d36d5ed80135ad3e11e9e141f28bd01
+track 10.flac:d30ae93a3e171b8d020a9298a2a4c93f
+track 11.flac:a188f9d83794f8fc5b719daa15f7e173
+track 12.flac:4bdf0b162716af0bb999eb42eb5dddfa
+track 13.flac:6674277181728f9f389f5361dc6383ba
+track 14.flac:3a9454b311c4e5d2ce3203a7ccedd9a8
+track 15.flac:1f47cd9c8b2d97a26b999c51c0486da2
+track 16.flac:0c8549603344a6c656c2b36c7cc5b35c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-02-02-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:02.61       74584316 B   ---   --   ---xx   flac  0.5846  Track 01.flac
+     4:40.74       49566092 B   ---   --   ---xx   flac  0.5640  Track 02.flac
+     5:34.55       59047004 B   ---   --   ---xx   flac  0.5836  Track 03.flac
+     5:02.56       53404556 B   ---   --   ---xx   flac  0.5505  Track 04.flac
+     5:43.71       60672236 B   ---   --   ---xx   flac  0.5651  Track 05.flac
+     5:37.52       59569148 B   ---   --   ---xx   flac  0.5863  Track 06.flac
+     6:53.27       72916748 B   ---   --   ---xx   flac  0.5895  Track 07.flac
+     5:54.22       62497388 B   ---   --   ---xx   flac  0.5575  Track 08.flac
+     4:36.67       48844028 B   ---   --   ---xx   flac  0.5803  Track 09.flac
+     5:27.62       57828668 B   ---   --   ---xx   flac  0.5641  Track 10.flac
+     4:07.73       43742540 B   ---   --   ---xx   flac  0.6022  Track 11.flac
+     4:59.63       52891820 B   ---   --   ---xx   flac  0.5697  Track 12.flac
+     4:58.71       52734236 B   ---   --   ---xx   flac  0.5964  Track 13.flac
+     6:39.01       70385996 B   ---   --   ---xx   flac  0.5686  Track 14.flac
+     6:45.34       71522012 B   ---   --   ---xx   flac  0.5785  Track 15.flac
+     6:11.45       65550284 B   ---   --   ---xx   flac  0.5958  Track 16.flac
+    90:18.09      955757072 B                            0.5773  (16 files)
+=================== 
+=================== 
+=================== 

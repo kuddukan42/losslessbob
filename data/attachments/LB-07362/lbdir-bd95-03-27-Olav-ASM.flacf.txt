@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-27-Olav-ASM.flacf 
+=================== 
+=================== 
+=================== 
+95e56f2a6251e7ce2ddd04ccb7041b4c  CD1\00 Announcement.flac
+18b67022c94e6b219ab499c2be956fcc  CD1\01 Crash on the levee (down in the flood).flac
+906581aabf53195f4c013565f3d7393e  CD1\02 Senor (Tales of Yankee Power).flac
+e0053e54ad5a29b8586c81aee24bdf8f  CD1\03 All along the watchtower.flac
+2e13073b79ef932eb0be14ce137697c4  CD1\04 Just like a woman.flac
+c5b38206a48c268254bda006477f02f6  CD1\05 Tangled up in blue.flac
+2ac308434cbeda4a621bd7490c91921f  CD1\06 Born in time.flac
+602cc98a3d3e299eb926aa60d2f0f823  CD1\07 Mr. Tambourine Man.flac
+ea98203c091266e1fc55dbc3769eee7b  CD1\08 Boots of Spanish leather.flac
+a945f8d693efb6b7bead3c2fdd8a12a5  CD1\FLAC CD1.md5
+d965e7c539f196fdf8ce87ee16a11fc0  CD2\09 Desolation Row.flac
+1987b30e57d77335418943340799481a  CD2\10 Dignity.flac
+43b79917a4375d1c88e40431acf0c0e4  CD2\11 She belongs to me.flac
+2c18409ccc400db4b7b8969139862035  CD2\12 (band intro).flac
+7038ba2424058275301f05720c3ac387  CD2\12 Maggie's farm.flac
+98738d17581fc219c339f3ec14b566ed  CD2\13 (encore).flac
+1dc6de2fae8ba3d5c627f0277bf2acbd  CD2\13 Like a rolling stone.flac
+57bc1fc94e80413d06b9ca23bf33bba0  CD2\14 (encore).flac
+d802a1134f0d640dc12156d943368bf7  CD2\14 It ain't me, babe.flac
+a45215727be1b0ebf85ccfd0987cd683  CD2\15 (encore).flac
+51f676e8e6646fbeb399212a1c9c3f23  CD2\15 Highway 61 revisited.flac
+0b04d5347d0c19c85f895264f64b3ace  CD2\FLAC CD2.md5
+122198cdaa0513e0a39c03d24db6adc4  DigiFlawFinder-bd95-03-27-Olav-ASM.flacf.wavf.html
+ea0312ef92699f35cfce4b5476d94a18  Info\1995-03-27 Cardiff ICA, Cardiff, Wales, England [off master + Olav ASM].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-27-Olav-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:2420ea4288bc06a8b41b731378316092
+01 Crash on the levee (down in the flood).flac:0e792af48b6f26b4f1cbcdd514770089
+02 Senor (Tales of Yankee Power).flac:9e543877a8d9d807e011a214462484e2
+03 All along the watchtower.flac:6655d8ad1ced1f1faba9bd0da1d28525
+04 Just like a woman.flac:889b4929fa689d523d17dbeb0ee5c993
+05 Tangled up in blue.flac:b3f002719a6d4d218a0f3f42ac6b80ce
+06 Born in time.flac:d376499800685caf4f0ff38f2dd1706a
+07 Mr. Tambourine Man.flac:34e73f083fbdfb15464c17d68bb91857
+08 Boots of Spanish leather.flac:f637123bc3dd67388d06a8c3f981e3f9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-27-Olav-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+09 Desolation Row.flac:9ffbc91530c5a08ee4cdb728407ac09f
+10 Dignity.flac:b2ecaa59e39c1a617574a4a06d3faddd
+11 She belongs to me.flac:2a8714ed25de036bd5ab70f91930e813
+12 (band intro).flac:ba45b37a75a28d4f11f3cf14695fca9d
+12 Maggie's farm.flac:f32e156e0a8b3117d448760477842caa
+13 (encore).flac:7e67818d9b89535d6cc476f7a1ed1898
+13 Like a rolling stone.flac:4783dcab1b3f89355fb0cbafded1bb91
+14 (encore).flac:ac52c14200609c71b5c4c7680097eaae
+14 It ain't me, babe.flac:9322bd87498c3d5062db7ea38602c66c
+15 (encore).flac:18e0274f4437bec20112a5ceb5b68daf
+15 Highway 61 revisited.flac:f6b65ec5a4cbd5c45f044c8e9fc6980d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-27-Olav-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:10.00        1764044 B   ---   --   ---xx   flac  0.6015  00 Announcement.flac
+     5:08.32       54406508 B   ---   --   ---xx   flac  0.6819  01 Crash on the levee (down in the flood).flac
+     4:52.67       51666428 B   ---   --   ---xx   flac  0.6354  02 Senor (Tales of Yankee Power).flac
+     5:08.37       54418268 B   ---   --   ---xx   flac  0.6661  03 All along the watchtower.flac
+     6:39.19       70428332 B   ---   --   ---xx   flac  0.6144  04 Just like a woman.flac
+     8:25.73       89253740 B   ---   --   ---xx   flac  0.6275  05 Tangled up in blue.flac
+     6:04.01       64211996 B   ---   --   ---xx   flac  0.5957  06 Born in time.flac
+     6:38.12       70235468 B   ---   --   ---xx   flac  0.4994  07 Mr. Tambourine Man.flac
+     8:01.05       84860204 B   ---   --   ---xx   flac  0.4811  08 Boots of Spanish leather.flac
+    51:08.21      541244988 B                            0.5925  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-27-Olav-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:44.66      103172876 B   ---   --   ---xx   flac  0.5416  09 Desolation Row.flac
+     7:53.53       83561900 B   ---   --   ---xx   flac  0.6583  10 Dignity.flac
+     5:59.52       63449948 B   ---   --   ---xx   flac  0.5542  11 She belongs to me.flac
+     0:30.04        5301452 B   ---   --   ---xx   flac  0.5649  12 (band intro).flac
+     5:53.65       62422124 B   ---   --   ---xx   flac  0.6861  12 Maggie's farm.flac
+     1:46.30       18769004 B   ---   --   ---xx   flac  0.5919  13 (encore).flac
+     7:05.16       75007676 B   ---   --   ---xx   flac  0.6525  13 Like a rolling stone.flac
+     0:43.23        7639340 B   ---   --   ---xx   flac  0.6459  14 (encore).flac
+     8:01.01       84850796 B   ---   --   ---xx   flac  0.5539  14 It ain't me, babe.flac
+     1:04.13       11320220 B   ---   --   ---xx   flac  0.6416  15 (encore).flac
+     7:21.63       77940620 B   ---   --   ---xx   flac  0.6679  15 Highway 61 revisited.flac
+    56:04.11      593435956 B                            0.6120  (11 files)
+=================== 
+=================== 
+=================== 

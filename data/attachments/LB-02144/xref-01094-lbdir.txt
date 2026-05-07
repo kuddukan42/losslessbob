@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== md5 for: bd89-06-22-c.flacf
+===================
+===================
+===================
+8665adf79be70b33876a6cf46588d9b3 *1989-22-6_Livorno_1cd.flac.ffp
+9525e82accb3eac0f9256417fb0a00b7 *1989-22-6_Livorno_1cd.flac.md5
+64f5dccabbeb25a8d58ab1b86d6a6b05 *INFO.txt
+4dd096c5f2c1751a2d3e58e3a11ebab4 *Track 01.flac
+383bccb4928ace3d862c50120231e6f8 *Track 02.flac
+184abc9550e41cdfc5d8463731bdf639 *Track 03.flac
+4060fb0f03aadab438e8c3e677853aaa *Track 04.flac
+9f4621b0bb6e57f0358e391089c163d5 *Track 05.flac
+fb117b5f80739807024401d2d05abae6 *Track 06.flac
+f07d0199e870f0ae05f48b7f930347e5 *Track 07.flac
+f1823511bdcff55a3ef0cd5dd2132af2 *Track 08.flac
+779e8a4db03de38259e094516ee5758e *Track 09.flac
+0a85b0c7230e4a4a61f28be537bbcb69 *Track 10.flac
+e730e0374fe0c278b1e2c922eae9a859 *Track 11.flac
+b01d197ada6ef2fd1ffe94bc37952bd0 *Track 12.flac
+c8fca18af35c072d839a19fb58ed79cc *Track 13.flac
+06c33d9b42959c26fb34afc5b9d1f981 *Track 14.flac
+da7ba40a8af0b09055c19e22e86bbbc0 *Track 15.flac
+3e5ec1070dc0d2691ccd2c12fe752316 *Track 16.flac
+===================
+===================
+===================
+=== ffp for: bd89-06-22-c.flacf
+===================
+===================
+===================
+Track 01.flac:4e30915f5750b4af6103d45dc75c99db
+Track 02.flac:dc926fce6a31409f2c57a0a1447b4aea
+Track 03.flac:4279378f97b43bcb49219f7510ff5c7a
+Track 04.flac:a9f09b60268310002db3f2373e58a17b
+Track 05.flac:0c423235a5ed062ce51444b6d68a9a89
+Track 06.flac:7b866f4512fdc3acbc224d71a877c0f7
+Track 07.flac:d5d7fa299a4877c4e573756f1434b479
+Track 08.flac:e5e9d49ba89cb3bcd43c9512ea9b4b93
+Track 09.flac:3d454a027a3b504ffc7487a2b06ed9ff
+Track 10.flac:9f95a4dec1f4da2d7dd285b487fe9da9
+Track 11.flac:a0c6f26ab40f3d1ca2fea2ee1e5f918f
+Track 12.flac:4a8dc59451b924e59afc852373d488d5
+Track 13.flac:b7ecb422ec7c3926fc21348f31608d5e
+Track 14.flac:0dc29d6f7754fb15cfbac29260c00cf6
+Track 15.flac:0b30467a48db1220c31bce2009a28587
+Track 16.flac:61dc40305c61b26c230a69cc0fd73447
+===================
+===================
+===================
+=== shntool len for: bd89-06-22-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.46       48971036 B   ---   --   ---xx   flac  0.6989  Track 01.flac
+     6:47.54       71921852 B   ---   --   ---xx   flac  0.7330  Track 02.flac
+     4:46.67       50608028 B   ---   --   ---xx   flac  0.7091  Track 03.flac
+     4:30.41       47724476 B   ---   --   ---xx   flac  0.6914  Track 04.flac
+     4:22.49       46332092 B   ---   --   ---xx   flac  0.6838  Track 05.flac
+     5:23.45       57083084 B   ---   --   ---xx   flac  0.7346  Track 06.flac
+     5:15.27       55629548 B   ---   --   ---xx   flac  0.6591  Track 07.flac
+     4:57.64       52541372 B   ---   --   ---xx   flac  0.7325  Track 08.flac
+     4:37.29       48931052 B   ---   --   ---xx   flac  0.6717  Track 09.flac
+     3:57.20       41853884 B   ---   --   ---xx   flac  0.6667  Track 10.flac
+     3:22.54       35759852 B   ---   --   ---xx   flac  0.7369  Track 11.flac
+     3:45.69       39852332 B   ---   --   ---xx   flac  0.6984  Track 12.flac
+     5:28.35       57941564 B   ---   --   ---xx   flac  0.7436  Track 13.flac
+     5:22.20       56847884 B   ---   --   ---xx   flac  0.7096  Track 14.flac
+     5:02.22       53324588 B   ---   --   ---xx   flac  0.7451  Track 15.flac
+     5:06.62       54124268 B   ---   --   ---xx   flac  0.7464  Track 16.flac
+    77:25.29      819446912 B                            0.7116  (16 files)
+===================
+===================
+===================

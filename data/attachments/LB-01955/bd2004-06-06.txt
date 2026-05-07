@@ -1,0 +1,38 @@
+Bob Dylan
+6-6-2004
+Borgata Hotel Casino And Spa
+Event Center
+Atlantic City, New Jersey
+
+Taper:      Travelin' Man Records
+Location:   Section C, row 4 (roughly 30-40 feet DFC from stage/4 rows behind board)
+Config:     hat mount
+Source:     Schoeps mk41 > KCY 250/2I > Sonosax SX-M2-LS/2 > D100
+Conversion: D8 > 7-pin Oade optical > PC
+
+
+cd 1:
+1.  God Knows
+2.  Forever Young
+3.  Watching The River Flow
+4.  Tryin' To Get To Heaven
+5.  Stuck Inside Of Mobile With The Memphis Blues Again
+6.  Tweedle Dee & Tweedle Dum
+7.  Blind Willie McTell
+8.  Highway 61 Revisited
+9.  I Shall Be Released
+
+
+cd 2:
+1.  High Water (For Charley Patton)
+2.  Moonlight
+3.  Honest With Me
+4.  Lay, Lady, Lay
+5.  Summer Days
+
+(encore)
+
+6.  Cat's In The Well
+7.  Like A Rolling Stone
+8.  band intros
+9.  All Along The Watchtower

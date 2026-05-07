@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-03-critics-choice-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+8bb36945b735ce647d321e8eaac370b8  bd90-02-03-critics-choice-vol1-2-d1t01.flac
+0086e3b4d47b743cb99ff9e7f1865d17  bd90-02-03-critics-choice-vol1-2-d1t02.flac
+f592cc992197b2475d575a9b93bcd921  bd90-02-03-critics-choice-vol1-2-d1t03.flac
+b17a497f0c2306f56341c93bc3c69932  bd90-02-03-critics-choice-vol1-2-d1t04.flac
+ed14f0195c5cc48dc2659e168e72ef57  bd90-02-03-critics-choice-vol1-2-d1t05.flac
+f97724a3c4d4ebcfea69477d115dce8b  bd90-02-03-critics-choice-vol1-2-d1t06.flac
+cd6063cf9e6c4e0c0916493fffa4d647  bd90-02-03-critics-choice-vol1-2-d1t07.flac
+0aa08e65ffc7fecf3a0662e2917a7595  bd90-02-03-critics-choice-vol1-2-d1t08.flac
+4e06f2bbe1007dd3f85005099869a8af  bd90-02-03-critics-choice-vol1-2-d1t09.flac
+21d29efcf0a13c4e6fe59d30d86f3787  bd90-02-03-critics-choice-vol1-2-d1t10.flac
+d04a79104ed1ea1479c5c39e6869086d  bd90-02-03-critics-choice-vol1-2-d1t11.flac
+0d3484810cc5d675f67bcf7140bca5b6  bd90-02-03-critics-choice-vol1-2-d1t12.flac
+e883940de6549618a369c61a6e9769c2  bd90-02-03-critics-choice-vol1-2-d1t13.flac
+466cf9d7a673a811341be488640460b3  bd90-02-03-critics-choice-vol1-2-d1t14.flac
+314386b3e27ffbbb69424252b2f7c42c  bd90-02-03-critics-choice-vol1-2-d2t01.flac
+f54040756eddc3c16f8b993b2708649e  bd90-02-03-critics-choice-vol1-2-d2t02.flac
+6fefef16816d61f05a2714dd95cdb470  bd90-02-03-critics-choice-vol1-2-d2t03.flac
+c371c3149190bc352204010dcfe29c63  bd90-02-03-critics-choice-vol1-2-d2t04.flac
+73fde156c80e31c6209c8bca4d8353dd  bd90-02-03-critics-choice-vol1-2-d2t05.flac
+3b50ffdc84dcf72c7140e0a5431c83a9  bd90-02-03-critics-choice-vol1-2-d2t06.flac
+5e17e7a4ddd766718c6a42fc57e9e601  bd90-02-03-critics-choice-vol1-2-d2t07.flac
+c4418aeaf5aacf9b29461e7749574829  bd90-02-03-critics-choice-vol1-2-d2t08.flac
+534e01d5d975a6ad4622006f27b16d9e  bd90-02-03-critics-choice-vol1-2-d2t09.flac
+a4130c2cd93ee8b20286231f4ad17b14  bd90-02-03-critics-choice-vol1-2-d2t10.flac
+cc2ba21defd15e36b5d0fcb477c90138  bd90-02-03-critics-choice-vol1-2-d2t11.flac
+f2c0cfd91ed153212fc3e10363d722c8  bd90-02-03-critics-choice-vol1-2-d2t12.flac
+33455cf70a6aae0f37265b96e62f6ad5  bd90-02-03-critics-choice-vol1-2-d2t13.flac
+4bb30120b75cdd1d52ca5cc217347602  bd90-02-03-critics-choice-vol1-2-d2t14.flac
+da0dabccf6666914a549a095dcc28d26  bd90-02-03-critics-choice-vol1-2-d2t15.flac
+00cc26b94ab3f210d6ceef8672f938d7  bd90-02-03-critics-choice-vol1-2-d2t16.flac
+7892bac0da703bdb6e07de6f77f8bc96  bd90-02-03-critics-choice-vol1-2.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-03-critics-choice-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+bd90-02-03-critics-choice-vol1-2-d1t01.flac:49fbfea1424a6b5f018c3ab7fe2c3b52
+bd90-02-03-critics-choice-vol1-2-d1t02.flac:46d6fc406d30edf979ab7220b236c7b8
+bd90-02-03-critics-choice-vol1-2-d1t03.flac:02a1070d331b4d007a77c9171c4e1ec3
+bd90-02-03-critics-choice-vol1-2-d1t04.flac:ffb302a20a02542afcb5aa6287fb3c69
+bd90-02-03-critics-choice-vol1-2-d1t05.flac:5201c1885515ae3f847c5998b0ce98a0
+bd90-02-03-critics-choice-vol1-2-d1t06.flac:44f27e555d08daaf8afa000cd0b349f8
+bd90-02-03-critics-choice-vol1-2-d1t07.flac:e3a9aa4c92862cce1268d8520f069f8b
+bd90-02-03-critics-choice-vol1-2-d1t08.flac:8ceee3e4c0c7cfa09a1bac6dab9e8fb0
+bd90-02-03-critics-choice-vol1-2-d1t09.flac:ebbbe1a09c98ffa675990e3fd7870e5d
+bd90-02-03-critics-choice-vol1-2-d1t10.flac:685f4be68925eab36098110385318dfb
+bd90-02-03-critics-choice-vol1-2-d1t11.flac:7a7f23ef004588c2fbfe34c0a6593322
+bd90-02-03-critics-choice-vol1-2-d1t12.flac:7f1b9dbf73312570cb0eac92da9e6a09
+bd90-02-03-critics-choice-vol1-2-d1t13.flac:8d3501e3224de16df08424843b5107f6
+bd90-02-03-critics-choice-vol1-2-d1t14.flac:af5c33c50cf2d4d90581a2f0b3729527
+bd90-02-03-critics-choice-vol1-2-d2t01.flac:0435a86f9da6e31366dc87ab792984fa
+bd90-02-03-critics-choice-vol1-2-d2t02.flac:92c87699133e59f5ffbff722628c50f2
+bd90-02-03-critics-choice-vol1-2-d2t03.flac:d183df6b8aa79fb39bcf0da25a6e237b
+bd90-02-03-critics-choice-vol1-2-d2t04.flac:8f400e0784eeb7666f8771e50de9a048
+bd90-02-03-critics-choice-vol1-2-d2t05.flac:2aad709c9f64557a3c50dd33ab3dd730
+bd90-02-03-critics-choice-vol1-2-d2t06.flac:1871e79bace5404069a6f4a7c66234a7
+bd90-02-03-critics-choice-vol1-2-d2t07.flac:2f173b8982e1a189b1560a3216360ac6
+bd90-02-03-critics-choice-vol1-2-d2t08.flac:11fd45afbe4d0c8877abd0289a56493c
+bd90-02-03-critics-choice-vol1-2-d2t09.flac:5dbb129f4961d19f712b142e0cd6cee5
+bd90-02-03-critics-choice-vol1-2-d2t10.flac:7fe62839d66c4f9ffd5edabd1167a3cf
+bd90-02-03-critics-choice-vol1-2-d2t11.flac:aa6e4d40a57bdcb5889a111e9380a256
+bd90-02-03-critics-choice-vol1-2-d2t12.flac:dd7064d5b35a137db42962de66e313a1
+bd90-02-03-critics-choice-vol1-2-d2t13.flac:8263913ab36d11bb51a97eb02aa84b27
+bd90-02-03-critics-choice-vol1-2-d2t14.flac:c51b98e589a1b6e1423051216d60acdb
+bd90-02-03-critics-choice-vol1-2-d2t15.flac:e138f7f94472ab7ed70ada483df3f9d0
+bd90-02-03-critics-choice-vol1-2-d2t16.flac:a7e252be0f01cf64c24de94a57b4a70c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-03-critics-choice-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.47       53912588 B   ---   --   ---xx   flac  0.6720  bd90-02-03-critics-choice-vol1-2-d1t01.flac
+     5:14.73       55561340 B   ---   --   ---xx   flac  0.6715  bd90-02-03-critics-choice-vol1-2-d1t02.flac
+     2:59.47       31686188 B   ---   --   ---xx   flac  0.7175  bd90-02-03-critics-choice-vol1-2-d1t03.flac
+     5:50.13       61770620 B   ---   --   ---xx   flac  0.7052  bd90-02-03-critics-choice-vol1-2-d1t04.flac
+     3:13.57       34179308 B   ---   --   ---xx   flac  0.6988  bd90-02-03-critics-choice-vol1-2-d1t05.flac
+     2:59.03       31582700 B   ---   --   ---xx   flac  0.7099  bd90-02-03-critics-choice-vol1-2-d1t06.flac
+     5:52.20       62139884 B   ---   --   ---xx   flac  0.6736  bd90-02-03-critics-choice-vol1-2-d1t07.flac
+     4:47.17       50666828 B   ---   --   ---xx   flac  0.6876  bd90-02-03-critics-choice-vol1-2-d1t08.flac
+     6:35.70       69842684 B   ---   --   ---xx   flac  0.6553  bd90-02-03-critics-choice-vol1-2-d1t09.flac
+     4:49.38       51069020 B   ---   --   ---xx   flac  0.6169  bd90-02-03-critics-choice-vol1-2-d1t10.flac
+     5:25.60       57471164 B   ---   --   ---xx   flac  0.6515  bd90-02-03-critics-choice-vol1-2-d1t11.flac
+     6:00.57       63638108 B   ---   --   ---xx   flac  0.5832  bd90-02-03-critics-choice-vol1-2-d1t12.flac
+     6:52.18       72719180 B   ---   --   ---xx   flac  0.6090  bd90-02-03-critics-choice-vol1-2-d1t13.flac
+     3:45.12       39718268 B   ---   --   ---xx   flac  0.5917  bd90-02-03-critics-choice-vol1-2-d1t14.flac
+     4:33.55       48286604 B   ---   --   ---xx   flac  0.6797  bd90-02-03-critics-choice-vol1-2-d2t01.flac
+     3:16.42       34673228 B   ---   --   ---xx   flac  0.7195  bd90-02-03-critics-choice-vol1-2-d2t02.flac
+     4:21.33       46118060 B   ---   --   ---xx   flac  0.6853  bd90-02-03-critics-choice-vol1-2-d2t03.flac
+     4:41.25       49627244 B   ---   --   ---xx   flac  0.6430  bd90-02-03-critics-choice-vol1-2-d2t04.flac
+     3:40.05       38819804 B   ---   --   ---xx   flac  0.6896  bd90-02-03-critics-choice-vol1-2-d2t05.flac
+     6:31.32       69047708 B   ---   --   ---xx   flac  0.7242  bd90-02-03-critics-choice-vol1-2-d2t06.flac
+     4:15.35       45064364 B   ---   --   ---xx   flac  0.6324  bd90-02-03-critics-choice-vol1-2-d2t07.flac
+     4:35.53       48634700 B   ---   --   ---xx   flac  0.7372  bd90-02-03-critics-choice-vol1-2-d2t08.flac
+     4:49.30       51050204 B   ---   --   ---xx   flac  0.6872  bd90-02-03-critics-choice-vol1-2-d2t09.flac
+     4:02.40       42782924 B   ---   --   ---xx   flac  0.7094  bd90-02-03-critics-choice-vol1-2-d2t10.flac
+     4:28.37       47362268 B   ---   --   ---xx   flac  0.6506  bd90-02-03-critics-choice-vol1-2-d2t11.flac
+     4:42.30       49815404 B   ---   --   ---xx   flac  0.6392  bd90-02-03-critics-choice-vol1-2-d2t12.flac
+     5:52.73       62264540 B   ---   --   ---xx   flac  0.6337  bd90-02-03-critics-choice-vol1-2-d2t13.flac
+     3:21.50       35574044 B   ---   --   ---xx   flac  0.5885  bd90-02-03-critics-choice-vol1-2-d2t14.flac
+     4:35.70       48674684 B   ---   --   ---xx   flac  0.6410  bd90-02-03-critics-choice-vol1-2-d2t15.flac
+     1:36.05       16946204 B   ---   --   ---xx   flac  0.5978  bd90-02-03-critics-choice-vol1-2-d2t16.flac
+   138:57.22     1470699864 B                            0.6627  (30 files)
+=================== 
+=================== 
+=================== 

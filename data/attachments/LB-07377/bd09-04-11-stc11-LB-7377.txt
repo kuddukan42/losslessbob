@@ -1,0 +1,12 @@
+Bob Dylan, 4/11/09, Amsterdam, The Netherlands, 2CDR
+
+LB-7377, (75min+45min), Lineage:, CA STC11 > Edirol R-09HR (@24/96) > SoundForge 9.0e (=> 16/44.1) > Trader's Little Helper 2.4.1 > .flac16, ---, TT: 119:00.00, Last rev. 12Apr09; bittorrent download 04/09; cdr splits not specified; (did not listen to all of this)
+
+CD1
+01. [00:43.19] (introduction), 02. [04:16.27] Maggie's Farm, 03. [05:44.09] Mr Tambourine Man, 04. [04:49.24] Man in the Long Black Coat, 05. [07:15.58] The Levee's Gonna Break, 06. [05:51.17] When the Deal Goes down, 07. [06:36.72] Things Have Changed, 08. [06:03.45] The Lonesome Death of Hattie Carroll, 09. [05:09.70] Tough Mama, 10. [07:03.65] Workingman's Blues #2, 11. [07:55.56] It's Alright, Ma (I'm Only Bleeding), 12. [06:03.54] Just Like a Woman, 13. [06:53.52] Highway 61 Revisited, 
+
+CD2
+14. [08:37.62] Nettie Moore, 15. [06:29.00] Thunder on the Mountain, 16. [10:12.64] Like A Rolling Stone, Encore, 17. [04:41.46] All Along the Watchtower, 18. [07:47.69] Spirit on the Water, 19. [06:43.16] Blowin' in the Wind, Complete concert
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

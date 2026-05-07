@@ -1,0 +1,108 @@
+===================
+===================
+===================
+=== 19971026.txt
+===================
+===================
+===================
+Mobile Civic Center Arena
+Mobile, Alabama
+26 October 1997
+
+1.    Absolutely Sweet Marie
+2.    Tonight I'll Be Staying Here With You
+3.    Cold Irons Bound
+4.    Just Like A Woman
+5.    Can't Wait
+6.    Silvio (Bob Dylan & Robert Hunter)
+7.    Stone Walls And Steel Bars (Ray Pennington / Ray Marcum)
+8.    Tangled Up In Blue
+9.    Mr. Tambourine Man
+10.    Til I Fell In Love With You
+11.    This Wheel's On Fire (Bob Dylan/Rick Danko)
+12.    Stuck Inside Of Mobile With The Memphis Blues Again
+
+13.    Like A Rolling Stone
+14.    One Too Many Mornings
+15.    Love Sick
+16.    Rainy Day Women # 12 & 35
+
+Concert # 907 of The Never-Ending Tour. Third concert of the 1997 US Fall Tour. 1997 concert # 65.
+Concert # 54 with the 11th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), Larry Campbell (guitar), Tony Garnier (bass), David Kemper (drums & percussion).
+7-9, 14  acoustic with the band.
+3   Bucky Baxter (organ).
+6, 7, 11, 16  Larry Campbell & Bucky Baxter (backup vocals).
+BobTalk
+<mumble mumble> special request tonight. About 200 people wanted to hear this. (before Stuck Inside Of Mobile).
+5 new songs (31%) compared to previous concert. 5 new songs for this tour.
+Stereo audience recording, 110 minutes.
+
+ 
+914bd777140077b148cb3fa5ee988726 *bd971026_d2t05.shn
+1624f5a18ecf176ce8c6d1002280f73b *bd971026_d1t01.shn
+d87a9ed92883fd204830267ec10ba0e3 *bd971026_d1t02.shn
+16778ee842c32bfbbef2b87fff4f4372 *bd971026_d1t03.shn
+b8769de881f9e42ede807846f655c38d *bd971026_d1t04.shn
+d065200a9eaa62c5d5b4ddf91a88746c *bd971026_d1t05.shn
+c93479f911baf9ee244014876a85e51a *bd971026_d1t06.shn
+3c48866bc8f815add1e829564b1b138b *bd971026_d1t07.shn
+5d2e9a50b02220f2ff80805fce7b99e3 *bd971026_d1t08.shn
+d796dd15d034c98224bfb4d721484a42 *bd971026_d1t09.shn
+3f243792d3b2495feb583bd456c8afb3 *bd971026_d1t10.shn
+677b4b406bf2c382e12ffecfb0749c5f *bd971026_d1t11.shn
+99683edd4b2ff5cb915e5cd5cc42ba79 *bd971026_d2t01.shn
+06c4780a79584068c79fbc2561fbda8f *bd971026_d2t02.shn
+489d172ed6665ed59a79692d6017eb9c *bd971026_d2t03.shn
+aeb88b7df175b55e1c9ac1d1b94ce6c1 *bd971026_d2t04.shn
+
+===================
+===================
+===================
+=== Bob Dylan- 1997 10 26 Mobile AL (FLAC).md5
+===================
+===================
+===================
+140918ea304d135b34c391b74bd820d5 *19971026.txt
+337d31d89294787a5b99fa35aad41958 *bd971026_d1t01.flac
+093d1494875f63c97fd6ba48f9b2bdf4 *bd971026_d1t02.flac
+87ea1ab865f6d0e09d2979aaa64ea29d *bd971026_d1t03.flac
+162720f70dab2915db3aec0a4460d143 *bd971026_d1t04.flac
+3405827e7ad7bae3923c4213aa3a344e *bd971026_d1t05.flac
+3c67ec91b15551f793725a22ca83e8fd *bd971026_d1t06.flac
+ba8d2cb147b43202db292cecccf0505b *bd971026_d1t07.flac
+426200eb45aef4c7859ac30533e92d2e *bd971026_d1t08.flac
+28396565ba2188b939d118d77c76979b *bd971026_d1t09.flac
+15b31fb509184755c8125339b572edbf *bd971026_d1t10.flac
+356979ee16a82abe45e42471595bc593 *bd971026_d1t11.flac
+31a290cd4accac2a5e12dffe1fce8a73 *bd971026_d2t01.flac
+f7eebe20835c8dea22bdf120c9f01bf6 *bd971026_d2t02.flac
+d9b94be196e0fb1eaa05da2be2419815 *bd971026_d2t03.flac
+5a54e05f13ec8eae4146cdcb037d96c3 *bd971026_d2t04.flac
+ad57545240bc1548b9c049d39ce40179 *bd971026_d2t05.flac
+510cb49f4b48971c0e68c14be06e35df *Bob Dylan- 1997 10 26 Mobile AL.ffp
+===================
+===================
+===================
+=== Bob Dylan- 1997 10 26 Mobile AL.ffp
+===================
+===================
+===================
+bd971026_d1t01.flac:535317e08215e549c4e3ec58e95f23c1
+bd971026_d1t02.flac:9091bc134681de6fd3dd76e9c2f9e5ad
+bd971026_d1t03.flac:07ea146e41a4a116ce946d6154621c8a
+bd971026_d1t04.flac:bb6445dc30cc3658e8a1990318b72c86
+bd971026_d1t05.flac:4a7934ece4d90493770c8f5cccf40172
+bd971026_d1t06.flac:a417ca85fb3bcb3339cd8f62589d0748
+bd971026_d1t07.flac:754adc6eee2efe905965694031c10fbb
+bd971026_d1t08.flac:acac155bfcd9419a44d4191bde9114d3
+bd971026_d1t09.flac:261586adaad3633afdd798743403aa1a
+bd971026_d1t10.flac:f36ccb49b5b876b80972ba4d0b5cc291
+bd971026_d1t11.flac:cdb18202706f751660e4b272d173c99e
+bd971026_d2t01.flac:226ae1b26a699499038d0b4fa79368c1
+bd971026_d2t02.flac:de061dbf9b9461644ec72bb93efb049a
+bd971026_d2t03.flac:91f99f19538e559ae3c40ff26ea9f2dc
+bd971026_d2t04.flac:66be5fc3d9455623e140461f242cdcb4
+bd971026_d2t05.flac:f047d97a03441cc27581884dd27fd525
+===================
+===================
+===================

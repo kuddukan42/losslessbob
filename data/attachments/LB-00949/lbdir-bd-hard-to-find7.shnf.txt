@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-hard-to-find7.shnf 
+=================== 
+=================== 
+=================== 
+ca469d9c593f380ccdd533fe2054afc7  BDHTF7-01 The Loneso.shn
+a23168de19ea74d0ccd384ed54b8d022  BDHTF7-02 Chimes Of Freedom.shn
+cc9d12e74cd3e0d10375bbe497d25efc  BDHTF7-03 Train Of Love.shn
+17d4dc331519fb9cb7c356f8723b6213  BDHTF7-04 I'm Not Sup.shn
+fa9aa8f9f2a785fd22acdbcab102f2bf  BDHTF7-05 Newry Highwayman.shn
+465a55d8e55c5b435ed4669eb08c4f48  BDHTF7-06 The Times.shn
+d12942687379789f9fa5e6ef71d8c208  BDHTF7-07 The White Dove.shn
+d88e50d08b7388295de0868c43569452  BDHTF7-08 Oh Babe, It.shn
+1a4648ffb77dd6496a392e14280e3c91  BDHTF7-09 Handy Dandy.shn
+088fc75eff16c2f1518d411c96b72744  BDHTF7-10 TV-Talking Song.shn
+5a0ec18b9322f86bd7ddb3e147cdc881  BDHTF7-11 My Blue Eyed Jane.shn
+9ee56a722e65442225fbbc3d27a99d7b  BDHTF7-12 Hallelujah.shn
+c97d33843d0ac2dd4e1d6a5b04d2d5ee  BDHTF7-13 Be Not A Stranger.shn
+beea27fdda2a60cee09de7eb4253db0c  BDHTF7-14 Long Black Veil.shn
+6d1c56ad227e7b576f41ec7665a0379a  BDHTF7-15 Viola Lee Blues.shn
+9e48994b8b798a3ddb5191cc41e769b4  BDHTF7-16 Rock Of Ages.shn
+5160ccc37ee4b4af8625b4e74fb5be82  BDHTF7-17 Down Along.shn
+c2638577fb7642198783e9e6e38be497  BDHTF7-18 I Am The M.shn
+6043944582f1646a4182d09a74efbcda  BDHTF7-19 Dark As A Dungeon.shn
+ea2877a5ef46defe26e1a70cb93a689d  BDHTF7-20 Pass Me Not O Gen.shn
+c8b223c1b50fe54818768c82525c474f  bdhtf7-b.jpg
+d23a132258117421b800b21ef9bf81f3  bdhtf7-f.jpg
+6bdff778f02fc3bbbf994a2f805c6266  BDHTF7-info.rtf
+22e42f1ec4091ad31a6d8dbd66d6f1bf  new-BDHTF7-checksum.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-hard-to-find7.shnf 
+=================== 
+=================== 
+=================== 
+ff34b27274f743627e457c0c35454d54  [shntool]  BDHTF7-01_The_Loneso.wav
+13ac4016d5c85cffed74c83bce892615  [shntool]  BDHTF7-02_Chimes_Of_Freedom.wav
+a92f03c53fb97102e1710cbc0444ce11  [shntool]  BDHTF7-03_Train_Of_Love.wav
+5e4046e9e2b41595a88726a75951dfda  [shntool]  BDHTF7-04_I'm_Not_Sup.wav
+a1d702f9e13beb1b75aae847a8fd61fc  [shntool]  BDHTF7-05_Newry_Highwayman.wav
+b6982164df955aff447b4fc36eb6727e  [shntool]  BDHTF7-06_The_Times.wav
+ff957864ef26e76adce6575784ba03af  [shntool]  BDHTF7-07_The_White_Dove.wav
+8aa8ba6d90a4dc2f1ecaa5d14c316a46  [shntool]  BDHTF7-08_Oh_Babe,_It.wav
+f38304cb15e74a5c767b999ea7b47790  [shntool]  BDHTF7-09_Handy_Dandy.wav
+64760b2c84a6d8b14bcdb89e29172f71  [shntool]  BDHTF7-10_TV-Talking_Song.wav
+b48e98f4818d1fb9dc109550b2998ef3  [shntool]  BDHTF7-11_My_Blue_Eyed_Jane.wav
+b010b9ef1c2b9675fffa601348167666  [shntool]  BDHTF7-12_Hallelujah.wav
+89051eb5f2c240c34c48c1324d001bd7  [shntool]  BDHTF7-13_Be_Not_A_Stranger.wav
+ec8d421644143066fd9d6d4d655475c7  [shntool]  BDHTF7-14_Long_Black_Veil.wav
+f1b5e3578f6fb327297b85270103a50d  [shntool]  BDHTF7-15_Viola_Lee_Blues.wav
+df4b4f13f5e3b71f112daf064999c6aa  [shntool]  BDHTF7-16_Rock_Of_Ages.wav
+9245ea96da2cd031ac1cf71f35b7190a  [shntool]  BDHTF7-17_Down_Along.wav
+e464e6c23b6906923212457837b22de1  [shntool]  BDHTF7-18_I_Am_The_M.wav
+2e87ab938fb2461495cbf894ac536efa  [shntool]  BDHTF7-19_Dark_As_A_Dungeon.wav
+8123b7fc9ed1f10cbd225850e4e3d00f  [shntool]  BDHTF7-20_Pass_Me_Not_O_Gen.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-hard-to-find7.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:59.36       31660316 B   ---   --   ---xx    shn  0.6914  BDHTF7-01 The Loneso.shn
+     4:05.00       43218044 B   ---   --   ---xx    shn  0.7071  BDHTF7-02 Chimes Of Freedom.shn
+     3:17.10       34774364 B   ---   --   ---xx    shn  0.6933  BDHTF7-03 Train Of Love.shn
+     4:02.00       42688844 B   ---   --   ---xx    shn  0.6451  BDHTF7-04 I'm Not Sup.shn
+     4:23.62       46539068 B   ---   --   ---xx    shn  0.7029  BDHTF7-05 Newry Highwayman.shn
+     3:03.00       32281244 B   ---   --   ---xx    shn  0.6149  BDHTF7-06 The Times.shn
+     4:32.37       48067868 B   ---   --   ---xx    shn  0.6577  BDHTF7-07 The White Dove.shn
+     4:02.37       42775868 B   ---   --   ---xx    shn  0.6485  BDHTF7-08 Oh Babe, It.shn
+     4:45.00       50274044 B   ---   --   ---xx    shn  0.6746  BDHTF7-09 Handy Dandy.shn
+     3:38.36       38539916 B   ---   --   ---xx    shn  0.6284  BDHTF7-10 TV-Talking Song.shn
+     2:59.37       31662668 B   ---   --   ---xx    shn  0.6400  BDHTF7-11 My Blue Eyed Jane.shn
+     2:33.74       27163292 B   ---   --   ---xx    shn  0.7120  BDHTF7-12 Hallelujah.shn
+     3:02.00       32104844 B   ---   --   ---xx    shn  0.7086  BDHTF7-13 Be Not A Stranger.shn
+     6:01.73       63852140 B   ---   --   ---xx    shn  0.6813  BDHTF7-14 Long Black Veil.shn
+     4:33.74       48331292 B   ---   --   ---xx    shn  0.6930  BDHTF7-15 Viola Lee Blues.shn
+     3:46.74       40040492 B   ---   --   ---xx    shn  0.5965  BDHTF7-16 Rock Of Ages.shn
+     4:07.36       43655516 B   ---   --   ---xx    shn  0.6539  BDHTF7-17 Down Along.shn
+     2:23.37       25312268 B   ---   --   ---xx    shn  0.6952  BDHTF7-18 I Am The M.shn
+     5:56.74       62972492 B   ---   --   ---xx    shn  0.6985  BDHTF7-19 Dark As A Dungeon.shn
+     3:41.72       39153788 B   ---   --   ---xx    shn  0.5839  BDHTF7-20 Pass Me Not O Gen.shn
+    77:57.19      825068368 B                            0.6671  (20 files)
+=================== 
+=================== 
+=================== 

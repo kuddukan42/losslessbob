@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-30-d.flacf
+===================
+===================
+===================
+1dfc6c6f5c9e07a230a4268e6d09d6bb *Bob Dylan 1999-04-30 Vienna PART ONE\01 Track01.flac
+7178d258024ea8eca8693e81c9b18e23 *Bob Dylan 1999-04-30 Vienna PART ONE\02 Track02.flac
+13e26aa498be555e989905f61813a1a6 *Bob Dylan 1999-04-30 Vienna PART ONE\03 Track03.flac
+23d44e5e31167b7d73422ae38ecca661 *Bob Dylan 1999-04-30 Vienna PART ONE\04 Track04.flac
+8b3d89358d21b00e0503f1da8998a2c4 *Bob Dylan 1999-04-30 Vienna PART ONE\05 Track05.flac
+e9713cc2441d606ab2a388abb7d5535e *Bob Dylan 1999-04-30 Vienna PART ONE\06 Track06.flac
+0dcad5223cb810949e61ae5b8c1d933f *Bob Dylan 1999-04-30 Vienna PART ONE\07 Track07.flac
+61b2ac2a9a8073846fd4c382a5b7f74a *Bob Dylan 1999-04-30 Vienna PART ONE\08 Track08.flac
+67ed3f1f9028cab55ea18c577cfee26c *Bob Dylan 1999-04-30 Vienna PART ONE\09 Track09.flac
+98b3cfc0539d9d5f6280a097e3a499f0 *Bob Dylan 1999-04-30 Vienna PART ONE\10 Track10.flac
+bdda57ddff4e18b95a60d081caa5170e *Bob Dylan 1999-04-30 Vienna PART ONE\Bob Dylan 1999-04-30 Vienna PART ONE.ffp
+26a607fc483df0c90f2a0785c4658136 *Bob Dylan 1999-04-30 Vienna PART TWO\01 Track01.flac
+a6993e0fbd15dee2b2cf6bc16740ff12 *Bob Dylan 1999-04-30 Vienna PART TWO\02 Track02.flac
+0215f0d862b2caaa9fc8dc4a4a18db86 *Bob Dylan 1999-04-30 Vienna PART TWO\03 Track03.flac
+3cb30aa042d0297e4204a4a2b55d4eb6 *Bob Dylan 1999-04-30 Vienna PART TWO\04 Track04.flac
+a2786f957746e427ffa2bb4e96a41f48 *Bob Dylan 1999-04-30 Vienna PART TWO\05 Track05.flac
+2044306c2a82d0ccebd969f80763389f *Bob Dylan 1999-04-30 Vienna PART TWO\06 Track06.flac
+8fded40ab550ff3b302874162f2b8d20 *Bob Dylan 1999-04-30 Vienna PART TWO\07 Track07.flac
+49e892f3bee611b967ec6aa6a16484e6 *Bob Dylan 1999-04-30 Vienna PART TWO\Bob Dylan 1999-04-30 Vienna PART TWO.ffp
+7165044d53bc89711e3c600b0eb28aed *Bob Dylan 1999-04-30 Vienna.txt
+===================
+===================
+===================
+=== ffp for: bd99-04-30-d.flacf
+===================
+===================
+===================
+Bob Dylan 1999-04-30 Vienna PART ONE\01 Track01.flac:135e2c0ce91b6983fb606191d2e16110
+Bob Dylan 1999-04-30 Vienna PART ONE\02 Track02.flac:f1d7b5676f4e4b2e07d28613ffc0c470
+Bob Dylan 1999-04-30 Vienna PART ONE\03 Track03.flac:2312ed2b2ecc89c9adba2317c9dbd3cb
+Bob Dylan 1999-04-30 Vienna PART ONE\04 Track04.flac:3bdd471d0acb7ece0ad6d8108e4a2346
+Bob Dylan 1999-04-30 Vienna PART ONE\05 Track05.flac:fea324482e51c35b7d4f30ba6b5b5de4
+Bob Dylan 1999-04-30 Vienna PART ONE\06 Track06.flac:822d79c5e25b48be4a5055ca6289ae26
+Bob Dylan 1999-04-30 Vienna PART ONE\07 Track07.flac:4772ffa47607a4675274b8ef2f3d7b42
+Bob Dylan 1999-04-30 Vienna PART ONE\08 Track08.flac:fd3d1dc82e0296689425a5afb30434f0
+Bob Dylan 1999-04-30 Vienna PART ONE\09 Track09.flac:ab0c9dbc8ba423b29983be1ba129476c
+Bob Dylan 1999-04-30 Vienna PART ONE\10 Track10.flac:d28d580ec78dbfdd8c6e08b64c75c771
+Bob Dylan 1999-04-30 Vienna PART TWO\01 Track01.flac:08065145419cd269acf3e98e94e31879
+Bob Dylan 1999-04-30 Vienna PART TWO\02 Track02.flac:70a2736482b6188ccfeca68e3acd94c1
+Bob Dylan 1999-04-30 Vienna PART TWO\03 Track03.flac:67d662775992bbc8472da07edb91519b
+Bob Dylan 1999-04-30 Vienna PART TWO\04 Track04.flac:7bc1cbcd51200455bdbfd8870b6bd754
+Bob Dylan 1999-04-30 Vienna PART TWO\05 Track05.flac:9a5d6e2edf4e5e3dbaaebf901cf7dc8f
+Bob Dylan 1999-04-30 Vienna PART TWO\06 Track06.flac:b250d17045bec52bd6df89ac2a1ce6c0
+Bob Dylan 1999-04-30 Vienna PART TWO\07 Track07.flac:42fc87815cb2dff30f2edc5357b05cea
+===================
+===================
+===================
+=== shntool len for: bd99-04-30-d.flacf\Bob Dylan 1999-04-30 Vienna PART ONE
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:35.71       59261036 B   ---   --   ---xx   flac  0.5026  01 Track01.flac
+     5:58.73       63322940 B   ---   --   ---xx   flac  0.5059  02 Track02.flac
+     5:30.55       58341404 B   ---   --   ---xx   flac  0.4877  03 Track03.flac
+    10:28.20      110826284 B   ---   --   ---xx   flac  0.4756  04 Track04.flac
+     8:42.01       92083196 B   ---   --   ---xx   flac  0.5390  05 Track05.flac
+     8:09.44       86363132 B   ---   --   ---xx   flac  0.4878  06 Track06.flac
+     5:57.34       63054812 B   ---   --   ---xx   flac  0.4577  07 Track07.flac
+     6:48.18       72013580 B   ---   --   ---xx   flac  0.5041  08 Track08.flac
+     4:01.63       42660620 B   ---   --   ---xx   flac  0.4595  09 Track09.flac
+     9:16.17       98118428 B   ---   --   ---xx   flac  0.4755  10 Track10.flac
+    70:29.21      746045432 B                            0.4908  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd99-04-30-d.flacf\Bob Dylan 1999-04-30 Vienna PART TWO
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:54.68       62605580 B   ---   --   ---xx   flac  0.4531  01 Track01.flac
+     7:14.37       76644668 B   ---   --   ---xx   flac  0.5244  02 Track02.flac
+     6:07.62       64884668 B   ---   --   ---xx   flac  0.4328  03 Track03.flac
+     6:16.02       66331148 B   ---   --   ---xx   flac  0.5135  04 Track04.flac
+     8:38.39       91466972 B   ---   --   ---xx   flac  0.4392  05 Track05.flac
+     4:05.62       43363868 B   ---   --   ---xx   flac  0.5050  06 Track06.flac
+     8:24.45       89011484 B   ---   --   ---xx   flac  0.4947  07 Track07.flac
+    46:42.15      494308388 B                            0.4791  (7 files)
+===================
+===================
+===================

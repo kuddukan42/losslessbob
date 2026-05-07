@@ -1,0 +1,19 @@
+468a7982db6d532f5f498d6d9742da69  01-Cat's In The Well.flac
+5e1a0d7760ad739a1aedc59353ba57b3  02-Lay, Lady, Lay.flac
+defbdadb91e545b8086686dd8e85c0ae  03-I'll Be Your Baby Tonight.flac
+92baa751a98b95ddba6d890741f8c87f  04-You're A Big Girl Now.flac
+c70025b1280b2043ed547f70816d7cdd  05-Rollin' And Tumblin'.flac
+3ef7afbb3b410602e498f4c3653a83ea  06-Spirit On The Water.flac
+3cd97dda09ec88c61afe988e2a582d39  07-Cry A While.flac
+4c69cce2128ef62d47b5605f2cfc49fc  08-Workingman's Blues #2.flac
+b8340c1c1a128db897f9657395046674  09-Things Have Changed.flac
+a63445d997515728b80f14b70e367453  10-Under The Red Sky.flac
+c399e1e9225d0634c2b07274ed49e6d9  11-Highway 61 Revisited.flac
+81276925970e5867521dd8dd04494c68  12-Ain't Talkin'.flac
+d03cc55866fd7f55477faa09105d4fbd  13-Summer Days.flac
+3012a4c58355977b593f2b799115cf4b  14-Like A Rolling Stone.flac
+a34715ac2adbeba2efd9d8717cb250d3  15-I Shall Be Released.flac
+9693ba1847a36837faef16d8dc494037  16-Thunder On The Mountain.flac
+d97bac5751a2b65db6bf3cb2210d1721  17-All Along The Watchtower.flac
+7e81cd979f378d01dedc7ca6191c1753  Bob Dylan 2007-10-29.md5
+c61137492c829aa8e85b9045a331e719  Dylan.txt

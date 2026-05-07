@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-02-05-jokerman-and-queen-mary.flacf 
+=================== 
+=================== 
+=================== 
+cbeb8d979a7921b31de722225151246a  bd94-02-05-jokerman-and-queen-mary-d1t01.flac
+9a445378ff4e3d84dbdb553344107977  bd94-02-05-jokerman-and-queen-mary-d1t02.flac
+9422bcc0629f0eb0a566c3a3ee8ef160  bd94-02-05-jokerman-and-queen-mary-d1t03.flac
+75288c528c99759d1ba0198aeb131450  bd94-02-05-jokerman-and-queen-mary-d1t04.flac
+b0bd3626e6784ce8c9da2ad7bbe57dba  bd94-02-05-jokerman-and-queen-mary-d1t05.flac
+ae586fb3b25b9927205afcc942061fb1  bd94-02-05-jokerman-and-queen-mary-d1t06.flac
+3d516352b3829222d89252270adb1585  bd94-02-05-jokerman-and-queen-mary-d1t07.flac
+7deeb93a7a276c3516ea3131a08523ae  bd94-02-05-jokerman-and-queen-mary-d1t08.flac
+8f3b455c716105da4d31f672ae731c4c  bd94-02-05-jokerman-and-queen-mary-d1t09.flac
+0f08c4d03123acffdd77f16c75429579  bd94-02-05-jokerman-and-queen-mary-d1t10.flac
+1c1702a5bc4dae1b43ba90e106465ef6  bd94-02-05-jokerman-and-queen-mary-d2t01.flac
+760705769bcf2f4b23c8b1dc3193be0d  bd94-02-05-jokerman-and-queen-mary-d2t02.flac
+48e0ddd7a6c9484e9a62477cea5933ce  bd94-02-05-jokerman-and-queen-mary-d2t03.flac
+518573826b7e617da5fac570b4429d83  bd94-02-05-jokerman-and-queen-mary-d2t04.flac
+fcb7a75b93d6064ca74a5043aaf4fdf8  bd94-02-05-jokerman-and-queen-mary-d2t05.flac
+09ae7bcc2e2448449ce921d58fc96fcf  bd94-02-05-jokerman-and-queen-mary.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-02-05-jokerman-and-queen-mary.flacf 
+=================== 
+=================== 
+=================== 
+bd94-02-05-jokerman-and-queen-mary-d1t01.flac:97dee06086fe365c8d7237c782b42449
+bd94-02-05-jokerman-and-queen-mary-d1t02.flac:f54e0e5fbbae4f0def6ecb66a498c3d0
+bd94-02-05-jokerman-and-queen-mary-d1t03.flac:82ef0ba27233bf49f0df9abe069d9f16
+bd94-02-05-jokerman-and-queen-mary-d1t04.flac:18f43e269ecee54d40830f0549087c79
+bd94-02-05-jokerman-and-queen-mary-d1t05.flac:a8b7daf899e11af4f7161aa224422853
+bd94-02-05-jokerman-and-queen-mary-d1t06.flac:4140e21a66a0657fb79ee83f0d3960d4
+bd94-02-05-jokerman-and-queen-mary-d1t07.flac:7393ca74040508d0a996765d28040d43
+bd94-02-05-jokerman-and-queen-mary-d1t08.flac:f4d4d437c7d340f6db40adc15851db3c
+bd94-02-05-jokerman-and-queen-mary-d1t09.flac:a36c6f0fac5a3f4fd045a758336ce805
+bd94-02-05-jokerman-and-queen-mary-d1t10.flac:49a7a5414635957e1854ddb6e57525c1
+bd94-02-05-jokerman-and-queen-mary-d2t01.flac:b40d2780daab7cecdd86976394081f9a
+bd94-02-05-jokerman-and-queen-mary-d2t02.flac:3d84ec2a56aeb561c06d91ee91bbaf81
+bd94-02-05-jokerman-and-queen-mary-d2t03.flac:6c76ece66a606347941c4f15671f54c6
+bd94-02-05-jokerman-and-queen-mary-d2t04.flac:9c1dd4d1c99f9efec0462886cd3553a8
+bd94-02-05-jokerman-and-queen-mary-d2t05.flac:06de53143293bcf846d0a98f02428afd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-02-05-jokerman-and-queen-mary.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:42.70       92245484 B   ---   --   ---xx   flac  0.6155  bd94-02-05-jokerman-and-queen-mary-d1t01.flac
+     6:02.45       63962684 B   ---   --   ---xx   flac  0.5852  bd94-02-05-jokerman-and-queen-mary-d1t02.flac
+     5:53.72       62438588 B   ---   --   ---xx   flac  0.6386  bd94-02-05-jokerman-and-queen-mary-d1t03.flac
+     8:30.63       90112220 B   ---   --   ---xx   flac  0.5875  bd94-02-05-jokerman-and-queen-mary-d1t04.flac
+    11:14.52      119015948 B   ---   --   ---xx   flac  0.5953  bd94-02-05-jokerman-and-queen-mary-d1t05.flac
+     1:07.70       11983484 B   ---   --   ---xx   flac  0.5543  bd94-02-05-jokerman-and-queen-mary-d1t06.flac
+    10:16.60      108803564 B   ---   --   ---xx   flac  0.5666  bd94-02-05-jokerman-and-queen-mary-d1t07.flac
+     7:40.55       81273404 B   ---   --   ---xx   flac  0.5191  bd94-02-05-jokerman-and-queen-mary-d1t08.flac
+     6:50.18       72366380 B   ---   --   ---xx   flac  0.5092  bd94-02-05-jokerman-and-queen-mary-d1t09.flac
+     7:49.70       82896284 B   ---   --   ---xx   flac  0.5497  bd94-02-05-jokerman-and-queen-mary-d1t10.flac
+     6:17.64       66653372 B   ---   --   ---xx   flac  0.6320  bd94-02-05-jokerman-and-queen-mary-d2t01.flac
+     8:47.63       93111020 B   ---   --   ---xx   flac  0.6449  bd94-02-05-jokerman-and-queen-mary-d2t02.flac
+     6:23.12       67589468 B   ---   --   ---xx   flac  0.6951  bd94-02-05-jokerman-and-queen-mary-d2t03.flac
+     8:25.13       89112620 B   ---   --   ---xx   flac  0.6648  bd94-02-05-jokerman-and-queen-mary-d2t04.flac
+    10:20.60      109509164 B   ---   --   ---xx   flac  0.5885  bd94-02-05-jokerman-and-queen-mary-d2t05.flac
+   114:25.37     1211073684 B                            0.5975  (15 files)
+=================== 
+=================== 
+=================== 

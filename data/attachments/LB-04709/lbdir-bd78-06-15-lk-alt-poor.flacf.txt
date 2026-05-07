@@ -1,0 +1,129 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-15-lk-alt-poor.flacf 
+=================== 
+=================== 
+=================== 
+0a6f6d41f826df4a9907eeaa26b9ba6e  bd78-06-15-lk-alt-poor-LB-4709.txt
+cc2c044ea6dccd47e101f63438090250  D1\Part 101.flac
+44cfb8b4d7a113179145e6d242252ef5  D1\Part 102.flac
+23f37c1bf29ca751f12a653b96b49c4a  D1\Part 103.flac
+602c046c05c60b43be1509a1ba9ef02c  D1\Part 104.flac
+7524305bace5c99d9a840a9426713c25  D1\Part 105.flac
+56c3d11ce0d45e663115167efcf1ea1d  D1\Part 106.flac
+03bdbfd009644f74f3e0ac436dc18596  D1\Part 107.flac
+a782ebb7ebd07b83986a013146e9b164  D1\Part 108.flac
+87e3819a8965e8d43dbb16e1ab0d70b9  D1\Part 109.flac
+ee3e64710a2c7821cb2c8eb145cc79bf  D1\Part 110.flac
+46e15b5da55bc1714ec567a43c91a7e4  D1\Part 111.flac
+7248fb1f0b6b38150430e39bb54533cc  D1\Part 112.flac
+8710740831cf2a6a601bc3ff4bd993f8  D1\Part 113.flac
+208129bd9e691fe8b0ae3f836011b91e  D1\Part 114.flac
+b87187545c68aa3329e372c539fcbd4b  D1\Part 115.flac
+4040410bad5eff35e715220cadc43966  D1\Part 116.flac
+ed387d80d9d0d9a9ebe0901645f4b462  D2\Part 201.flac
+222d4858296ba7241d2346b21a5942dc  D2\Part 202.flac
+b9edd8f022539a47b6ae3d03b80f04ac  D2\Part 203.flac
+e89ff721a1c350aeb769114bf290146a  D2\Part 204.flac
+ab44c2cf4e069445ebd9148d0407d3be  D2\Part 205.flac
+1df3e7c5c6e7eaa6d9732ac22735e3e0  D2\Part 206.flac
+21a5922735f03147fec80b63d319ff96  D2\Part 207.flac
+f6ef575e0ec7424dfb29f97a70d7425e  D2\Part 208.flac
+9e5326bac9d582f4b66ee67288b1cbe7  D2\Part 209.flac
+57b7629a4ad195f28ac3f191f20d13e8  D2\Part 210.flac
+81452b6b5ecc5386570c9f89826fc504  D2\Part 211.flac
+a59c1b9aefce78521f0f9fef721397d6  D2\Part 212.flac
+c2b9fca60bc6b70f07929ba8d9951d58  EC 15 June 78 (alt - poor).md5
+fe9a9a2d2ebd401087fbd140a217f1f4  lbdir-bd78-06-15-lk-alt-poor.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-15-lk-alt-poor.flacf\D1 
+=================== 
+=================== 
+=================== 
+Part 101.flac:586d0741bed0e3a321d4cbb9b34b8922
+Part 102.flac:7cdfebb4901127307394b0f7afd66afd
+Part 103.flac:bda501163feb4991effa1b2bc3d78947
+Part 104.flac:008959fc84e8acfd9753bfdac2f4a11c
+Part 105.flac:f08be8bde6a25297d23f17268e25fe4d
+Part 106.flac:e84e14e6bfafce2047d874ac5d6eef2a
+Part 107.flac:5c1d7725a96923404404b2968e4abf6c
+Part 108.flac:9089819dce6fb87a361d2d7521438a02
+Part 109.flac:d7561a102d65805bd5977e831b9b6967
+Part 110.flac:87472af8dfd9e62c8bb0ebe513eae88a
+Part 111.flac:24e1eaaf88ee43bcd5218c75847b423b
+Part 112.flac:19da15f788f8f401e0b7a63af21a2915
+Part 113.flac:c793ccc228d2df8294591ff70baa288a
+Part 114.flac:7d3bf7032a2afa5c7402f88eb97be46c
+Part 115.flac:d9b783758187f190bc6e8524c85e415e
+Part 116.flac:e5174f6f2e402cc418f45871fbfc3894
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-06-15-lk-alt-poor.flacf\D2 
+=================== 
+=================== 
+=================== 
+Part 201.flac:eaff81ac794297e9a3cf3c7dfc19635b
+Part 202.flac:7bd3c2ffdd54ff248cc9bc1b9f5b6ff8
+Part 203.flac:d201ee9045a850b0733fb239bac5d488
+Part 204.flac:5dffd2510f468f92788eaeac5938e49f
+Part 205.flac:8d4781f2e2a9b718e834733805eef214
+Part 206.flac:b61e12703b7e4d798c3f6f32c798a417
+Part 207.flac:f37a3a94955a1483f106cd2dff052f75
+Part 208.flac:8c0c50ee487eda1d9389b0a3076655a4
+Part 209.flac:eed164fb4dd7b150f8758bf6fa0bcd7f
+Part 210.flac:41d6a7176251cd2a803be762a8fee62b
+Part 211.flac:c0932fa51ce63af7575a3416be42a546
+Part 212.flac:b70d75c752e313d19843a56d97371955
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-15-lk-alt-poor.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.63       35251820 B   ---   --   ---xx   flac  0.5020  Part 101.flac
+     2:29.17       26323628 B   ---   --   ---xx   flac  0.5004  Part 102.flac
+     5:14.65       55542524 B   ---   --   ---xx   flac  0.5033  Part 103.flac
+     5:03.70       53613884 B   ---   --   ---xx   flac  0.5021  Part 104.flac
+     4:26.23       46976540 B   ---   --   ---xx   flac  0.5002  Part 105.flac
+     3:33.29       37641452 B   ---   --   ---xx   flac  0.5028  Part 106.flac
+     6:56.28       73448300 B   ---   --   ---xx   flac  0.4958  Part 107.flac
+     4:23.14       46426172 B   ---   --   ---xx   flac  0.4984  Part 108.flac
+     4:45.25       50332844 B   ---   --   ---xx   flac  0.4996  Part 109.flac
+     4:04.14       43074572 B   ---   --   ---xx   flac  0.4937  Part 110.flac
+     6:28.27       68506748 B   ---   --   ---xx   flac  0.4886  Part 111.flac
+     4:19.57       45821708 B   ---   --   ---xx   flac  0.4871  Part 112.flac
+     4:42.04       49754252 B   ---   --   ---xx   flac  0.4902  Part 113.flac
+     1:16.33       13484060 B   ---   --   ---xx   flac  0.4922  Part 114.flac
+     4:13.05       44641004 B   ---   --   ---xx   flac  0.4899  Part 115.flac
+     5:17.72       56088188 B   ---   --   ---xx   flac  0.4889  Part 116.flac
+    70:34.21      746927696 B                            0.4957  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-15-lk-alt-poor.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:06.69       32972732 B   ---   --   ---xx   flac  0.4900  Part 201.flac
+     4:59.38       52833020 B   ---   --   ---xx   flac  0.4846  Part 202.flac
+     2:40.11       28249916 B   ---   --   ---xx   flac  0.4786  Part 203.flac
+     5:07.59       54293612 B   ---   --   ---xx   flac  0.4894  Part 204.flac
+     3:03.26       32342396 B   ---   --   ---xx   flac  0.4643  Part 205.flac
+     5:42.11       60354716 B   ---   --   ---xx   flac  0.5182  Part 206.flac
+     5:09.17       54547628 B   ---   --   ---xx   flac  0.5232  Part 207.flac
+     3:44.03       39520700 B   ---   --   ---xx   flac  0.5214  Part 208.flac
+     3:25.50       36279644 B   ---   --   ---xx   flac  0.5177  Part 209.flac
+     0:03.52         651548 B   --s   --   ---xx   flac  0.5042  Part 210.flac
+     5:41.45       60258284 B   ---   --   ---xx   flac  0.5292  Part 211.flac
+     4:47.02       50631548 B   ---   --   ---xx   flac  0.5415  Part 212.flac
+    47:31.08      502935744 B                            0.5084  (12 files)
+=================== 
+=================== 
+=================== 

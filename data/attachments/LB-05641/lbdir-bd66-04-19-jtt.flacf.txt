@@ -1,0 +1,61 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-04-19-jtt.flacf 
+=================== 
+=================== 
+=================== 
+a204a852b0f64f3d33e4a289bb0ed2ad  Dylan - Melbourne April 19th or 20th 1966 _Info.txt
+f23afd7f16de86573811189641917602  Dylan - Melbourne April 19th or 20th 1966.md5
+c877537cebf094c40ac23d01945bc665  Melbourne 1966 - F.jpg
+7f5c335c023377c470d4c5ccfcf17648  Melbourne 1966 - Inlay.jpg
+e0790f3cad917c331563d59889130c04  Melbourne 1966 - R.jpg
+a76ab8520ad51f2b553d07d1e5e2e164  Track01.flac
+99b75deb7b7536446ce1480cf14af3ca  Track02.flac
+ec73e0f1be4ac134d97101c70aa8ea9b  Track03.flac
+d3bec032b38fae3ada204e533e49465d  Track04.flac
+b640a2dc76703b932ffd85c1f89aa354  Track05.flac
+f3d19045717b16f1f95beebbfef2fd62  Track06.flac
+a30cef881fd7f39ac707930aef6976b3  Track07.flac
+4a15aed04432bfb7af86a3a25375e975  Track08.flac
+bd5e7a7cdb758301e5f7d6d7aa99baa9  Track09.flac
+86cc1ac1470206dee791cf5e95042cb9  Track10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-04-19-jtt.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:893939f147c1f60498b366988262cab5
+Track02.flac:4b29abe7979b3f35f067b3038dc51b4d
+Track03.flac:06a30f540bef4c8003defbd55587ec28
+Track04.flac:8b1b1dd6bb32dc27862861c3b916df99
+Track05.flac:3f20be5b1a66a9e2f6056f5d586b1199
+Track06.flac:248b2bde8b8314e4c16621584084c08e
+Track07.flac:86810f722a2ba71615a3cbb2f126b5e4
+Track08.flac:6de4ac3109768df1aa8bb9591c54fadd
+Track09.flac:e513c724b0aeacdaf7c3e042f0904f89
+Track10.flac:0ba800d258048adfe0112b3dd8200930
+=================== 
+=================== 
+=================== 
+=== shntool for: bd66-04-19-jtt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:58.10       31422764 B   ---   --   ---xx   flac  0.3341  Track01.flac
+     7:15.00       76734044 B   ---   --   ---xx   flac  0.3287  Track02.flac
+     8:51.72       93837788 B   ---   --   ---xx   flac  0.3328  Track03.flac
+     6:39.46       70491836 B   ---   --   ---xx   flac  0.3311  Track04.flac
+    12:27.46      131879036 B   ---   --   ---xx   flac  0.3274  Track05.flac
+     6:33.65       69478124 B   ---   --   ---xx   flac  0.3239  Track06.flac
+     0:33.58        5957660 B   ---   --   ---xx   flac  0.2984  Track07.flac
+     1:41.55       17945804 B   ---   --   ---xx   flac  0.3051  Track08.flac
+     4:21.15       46075724 B   ---   --   ---xx   flac  0.2992  Track09.flac
+     5:49.61       61707116 B   ---   --   ---xx   flac  0.3025  Track10.flac
+    57:12.53      605529896 B                            0.3231  (10 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,10 @@
+Bob Dylan, 8/19/02, Southampton, New York, All For The Sea Annual Benefit Concert, Long Island University, 2CDR
+
+LB-3845, (62min+37min), Source: soomlos, fob, center, ga field (25-30ft from stage), at853's > sound pro's spsb-1(160hz roll off) > denecke ad-20 > sony d8, sony d8 > tascam cd-rw700 > eac > cool edit > cd wave > flac frontend; bittorrent download 06/06; same recording as LB-652 except that one has higher levels and is harsher through remastering; excellent sound [A]
+
+analog noise d1t5 5:54
+
+Disc 1:, 01. Introduction [01:58], 02. A Voice From On High [04:19], 03. I'll Be Your Baby Tonight [05:13], 04. It's Alright, Ma (I'm Only Bleeding) [06:58], 05. If You See Her, Say Hello [05:54], 06. Tweedle Dee & Tweedle Dum [05:28], 07. Quinn, The Eskimo (The Mighty Quinn) [05:21], 08. Moonlight [05:06], 09. High Water (For Charley Patton) [06:58], 10. Forever Young [06:59], 11. Tangled Up In Blue [09:07], 12. Searching For A Soldier's Grave [03:18], Total time: [66:47], Disc 2:, 01. Summer Days [06:42], 02. Never Gonna Be The Same Again [06:17], 03. The Wicked Messenger [04:18], 04. Rainy Day Women #12 & 35 [13:02], (encore), 05. Like A Rolling Stone [08:02], 06. Blowin' In The Wind [07:04], 07. All Along The Watchtower [06:17], Total time: [51:47]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

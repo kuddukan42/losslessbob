@@ -1,0 +1,30 @@
+Bob Dylan
+Glasgow, Scotland
+Braehead Arena
+
+2011-10-08
+
+
+01. Introduction
+02. Leopard-Skin Pill-Box Hat
+03. It's All Over Now, Baby Blue
+04. Things Have Changed
+05. Tangled Up In Blue
+06. Honest With Me
+07. The Lonesome Death Of Hattie Carroll
+08. Summer Days
+09. A Hard Rain's A-Gonna Fall
+10. Highway 61 Revisited
+11. Tryin' To Get To Heaven
+12. Thunder On The Mountain
+13. Ballad Of A Thin Man
+
+14. encore applause
+15. Like A Rolling Stone
+16. All Along The Watchtower
+
+Taper:   "Bach"
+Lineage: Neumann AK40  >Neumann MTX 191 A 
+	 >Marantz PMD 661 (48 kHz-16bit) > 
+	 USB 2.0 >PC > ssrc >WaveLab 6.10 >tagging 	 
+	 Foobar >TotalCommander (md5) >µTorrent 2.0

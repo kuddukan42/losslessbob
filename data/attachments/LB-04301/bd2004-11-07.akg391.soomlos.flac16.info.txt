@@ -1,0 +1,61 @@
+Bob Dylan
+University Of Pittsburgh
+Petersen Events Center
+Pittsburgh, Pennsylvania
+November 7, 2004
+
+Source: soomlos
+11th row center
+akg 391's > denecke ps2/ad-20 > sony d8
+sony d8 > m-audio microtrack > audacity > cd wave > flac
+
+Disc 1:
+01. introduction [00:49]
+02. Rainy Day Women #12 & 35 [04:21]
+03. Forever Young [06:44]
+04. God Knows [04:35]
+05. Bye And Bye [05:41]
+06. It's Alright, Ma (I'm Only Bleeding) [07:06]
+07. Lady, Lady, Lay [05:35]
+08. High Water (For Charley Patton) [06:45]
+09. Positively 4th Street [07:41]
+10. Watching The River Flow [06:38]
+11. Can't Wait [05:07]
+12. Don't Think Twice, It's All Right [06:13]
+Total time: [67:25]
+
+Disc 2:
+01. Honest With Me [07:07]
+02. Sugar Baby [07:25]
+03. Summer Days [11:29]
+04. Like A Rolling Stone [06:36]
+05. band introduction [00:47]
+06. All Along The Watchtower [05:59]
+Total time: [39:28]
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Stu Kimball - guitar
+Larry Campbell - guitar, steel guitar, cittern
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2004-11-07d1t01.flac:0138ca9a29ce1d4cfce87557398825c3
+bd2004-11-07d1t02.flac:8ad4d1f2a2f501ab39227415b9d7b29d
+bd2004-11-07d1t03.flac:7e2f7eb1559fb87dce36bdf640e4fa34
+bd2004-11-07d1t04.flac:f2173e70128d66a64a7dd2d225a601b6
+bd2004-11-07d1t05.flac:9220c3a2ea84bd71d5448af99bde5292
+bd2004-11-07d1t06.flac:78792eacaa858be4d3845852e9061bcd
+bd2004-11-07d1t07.flac:0f341ad93afe0ca59d658623441338be
+bd2004-11-07d1t08.flac:9c762bf50a9240f26b2a84a8aede260e
+bd2004-11-07d1t09.flac:93888e11f4dcb320f0116d2df211104e
+bd2004-11-07d1t10.flac:6b9f7f3e60a8d4185c50aa0bb262d452
+bd2004-11-07d1t11.flac:9c2c536b5b2db4c32e2c903b59e01778
+bd2004-11-07d1t12.flac:ee47b434291b36a0b4369d3c52d10ca0
+bd2004-11-07d2t01.flac:6a7cdfd9ee177242895d2cc7b57e764e
+bd2004-11-07d2t02.flac:4acdcdec8d49513a2242ad7817ec76be
+bd2004-11-07d2t03.flac:2e9ccdad49f40a2472bf0526d6782b63
+bd2004-11-07d2t04.flac:575369616a3910cf907a6b6906530cbd
+bd2004-11-07d2t05.flac:cbdec227d9d32a659414bc1d4b2e492b
+bd2004-11-07d2t06.flac:07fd8bfbace83f638fc1d2a288d8dc7b

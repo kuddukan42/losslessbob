@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-26 vegas.shnf 
+=================== 
+=================== 
+=================== 
+7bab315f99cbe9a91b707d563b1b4dd1  bd99-06-26.txt
+1826ba2a5e1fbc7cfd5007e2922cd5e9  bd99-06-26d1t01.shn
+d66b784dc71fdbfaff473a65d3f51f55  bd99-06-26d1t02.shn
+00879f5b624574c3870e6b93aea141b7  bd99-06-26d1t03.shn
+ec56209e48449e98654e8282d7f2e094  bd99-06-26d1t04.shn
+c97604c49c478c03ea12100493f3c9b6  bd99-06-26d1t05.shn
+78bfce4a597cbed89a12a5a3e9062ef7  bd99-06-26d1t06.shn
+dd240c9ac10a9bb37629de811bac89e6  bd99-06-26d2t01.shn
+0a18c080f55eb6aae5cddddc90d8f7a4  bd99-06-26d2t02.shn
+4ac493daee6087e9ee1980cc34aefc9b  bd99-06-26d2t03.shn
+122606574f0aa7dc3a1b095895beb8c5  bd99-06-26d2t04.shn
+0471f36bc582fa9e63ae0314e9333621  bd99-06-26d2t05.shn
+0067942861f7c6c9092e6e4bfefc62aa  bd99-06-26d2t06.shn
+e67c787b82db7b15c909e70a63fc10c2  bd99-06-26d2t07.shn
+317c09e91699ed35eea8920e22a376d4  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-06-26 vegas.shnf 
+=================== 
+=================== 
+=================== 
+f087bfb8b3d9344a1361b7adac6fb3f7  [shntool]  bd99-06-26d1t01.wav
+625342c45214d5b34e5b1bbb5256799c  [shntool]  bd99-06-26d1t02.wav
+2fa42b3fab5e0a3fbd6de2ef1f2f80aa  [shntool]  bd99-06-26d1t03.wav
+7da9cb361a265791e29d2bd5037d7cb1  [shntool]  bd99-06-26d1t04.wav
+3fa17974d93184e56869603e6192b703  [shntool]  bd99-06-26d1t05.wav
+7c9a2ee3864313f04c05b15d2bd0dc7f  [shntool]  bd99-06-26d1t06.wav
+5608965aeee68c3fbeb966e3067d8fc6  [shntool]  bd99-06-26d2t01.wav
+9cd43c8daec562b18832fae1bbaa869d  [shntool]  bd99-06-26d2t02.wav
+4f787a62eff87c300f8de366b5dc0d23  [shntool]  bd99-06-26d2t03.wav
+a7d7dd5b71cfff9410f8dcf7b614d667  [shntool]  bd99-06-26d2t04.wav
+44b9fdc3bbe1303f2904639ec84ca6cb  [shntool]  bd99-06-26d2t05.wav
+37e6fd4562a66d8c3bef1d597dd128b6  [shntool]  bd99-06-26d2t06.wav
+11f652427f4ad62b83ff1860b02a4804  [shntool]  bd99-06-26d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-26 vegas.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:07.53       33111500 B   ---   --   -----    wav  1.0000  bd99-06-26d1t01.wav
+     7:51.63       83232620 B   ---   --   -----    wav  1.0000  bd99-06-26d1t02.wav
+     5:14.57       55523708 B   ---   --   -----    wav  1.0000  bd99-06-26d1t03.wav
+     6:00.24       63560492 B   ---   --   -----    wav  1.0000  bd99-06-26d1t04.wav
+     8:52.41       93941276 B   ---   --   -----    wav  1.0000  bd99-06-26d1t05.wav
+     5:09.65       54660524 B   ---   --   -----    wav  1.0000  bd99-06-26d1t06.wav
+     6:05.51       64505996 B   ---   --   -----    wav  1.0000  bd99-06-26d2t01.wav
+     8:22.64       88703372 B   ---   --   -----    wav  1.0000  bd99-06-26d2t02.wav
+     6:26.09       68111612 B   ---   --   -----    wav  1.0000  bd99-06-26d2t03.wav
+     8:20.20       88247084 B   ---   --   -----    wav  1.0000  bd99-06-26d2t04.wav
+     7:05.32       75045308 B   ---   --   -----    wav  1.0000  bd99-06-26d2t05.wav
+     7:16.10       76933964 B   ---   --   -----    wav  1.0000  bd99-06-26d2t06.wav
+     5:00.21       52969436 B   ---   --   -----    wav  1.0000  bd99-06-26d2t07.wav
+    84:53.60      898546892 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

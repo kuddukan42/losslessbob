@@ -1,0 +1,54 @@
+PlexTools Professional V2.06        Digital Audio Extraction
+Copyright (C) 1999-2003 Plextor SA/NV
+13 April 2004
+---------------------------------------------------------------
+
+
+Software information
+--------------------
+Windows XP V5.01.2600 Service Pack 1
+ASPI Manager: wnaspi32.dll version 4.60 (1021) (not used by PlexTools Professional)
+Description : ASPI for Win32 (95/NT) DLL (Adaptec)
+
+Source
+------
+ID:0 PLEXTOR  CD-R   PREMIUM   V1.03 (#098893), Read Speed: 18-40X CAV
+Disc Type    : AudioCD , 1 sessions, 15 Tracks, 70:35.13
+Taiyo Yuden (type 1), 79:59:72
+
+Digital Audio Extraction Error Information log
+----------------------------------------------
+
+Start of extraction
+Extracting track 1    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track01.wav - 02:33)
+    Elapsed time: 00:12
+Extracting track 2    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track02.wav - 05:30)
+    Elapsed time: 00:16
+Extracting track 3    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track03.wav - 04:28)
+    Elapsed time: 00:11
+Extracting track 4    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track04.wav - 04:52)
+    Elapsed time: 00:11
+Extracting track 5    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track05.wav - 04:31)
+    Elapsed time: 00:10
+Extracting track 6    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track06.wav - 06:53)
+    Elapsed time: 00:14
+Extracting track 7    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track07.wav - 04:43)
+    Elapsed time: 00:09
+Extracting track 8    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track08.wav - 04:47)
+    Elapsed time: 00:09
+Extracting track 9    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track09.wav - 04:26)
+    Elapsed time: 00:08
+Extracting track 10    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track10.wav - 06:51)
+    Elapsed time: 00:12
+Extracting track 11    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track11.wav - 04:22)
+    Elapsed time: 00:07
+Extracting track 12    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track12.wav - 04:10)
+    Elapsed time: 00:06
+Extracting track 13    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track13.wav - 04:26)
+    Elapsed time: 00:07
+Extracting track 14    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track14.wav - 02:57)
+    Elapsed time: 00:04
+Extracting track 15    (G:\DVDbackup\Bob Dylan Look Back 01july78\disk1\Look_Back_disk1_Track15.wav - 04:59)
+    Elapsed time: 00:07
+15 track(s) successfully extracted
+Total Elapsed Time : 02:30

@@ -1,0 +1,10 @@
+Bob Dylan, 8/23/97, Vienna, Virginia, 2CDR
+
+LB-6428, (49min+51min), low gen ALD > DAT > CD > EAC > Soundforge 6.0 > CD Wave > FLAC;; in 3-way comparison all are sort of close to mono;  bootleg "Weekend at Wolftrap" has most hiss, then this, then bootleg "Back at Wolftrap" has very little and clearest sound;  bootleg "Back at Wolftrap" is harshest; then bootleg  "Weekend at Wolftrap" and then this; bootleg "Weekend at Wolftrap" has fullest sound then this and then bootleg  "Back at Wolftrap";  the bootlegs do not have the flaws noted on this one; overall the more fullness of  bootleg "Weekend at Wolftrap" made it seem best; (did not listen to all of this)
+
+a few spots of distortion like at d1t2 0:57 1:04, 5:25
+
+CD 1 [48:44.51], 01 Absolutely Sweet Marie [04:38.04], 02 Man In The Long Black Coat [06:11.29], 03 Tough Mama [05:17.72], 04 Under The Red Sky [05:27.06], 05 Silvio [07:39.66], 06 Stone Walls And Steel Bars [03:28.02], 07 Mr. Tambourine Man [07:12.21], 08 Tangled Up In Blue [08:50.01], CD 2 [50:33.71], 01 Stuck Inside Of Mobile With The Memphis Blues Again [08:49.03], 02 Blind Willie McTell [07:57.30], 03 Leopard-Skin Pill-Box Hat [07:25.15], 04 Like A Rolling Stone [10:35.12], 05 Don't Think Twice, It's All Right [08:46.01], 06 Alabama Getaway [07:01.10]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

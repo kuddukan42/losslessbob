@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-17-alt-b.flacf 
+=================== 
+=================== 
+=================== 
+50d14e6fe88385c5ef0206371312c684  bd1999-11-17 alt.md5
+eaa65a89a0c22f666ae69dc9637390fc  bd1999-11-17 alt_d1t01.flac
+bef791d5e55ec8d5c2b3831e47eeea4c  bd1999-11-17 alt_d1t02.flac
+ef7eeb0df646f726bbfbb421cbd34716  bd1999-11-17 alt_d1t03.flac
+9b9fce6b1d78554577c347031c99bb39  bd1999-11-17 alt_d1t04.flac
+b684f70d4cfa2a574a734f5cbd7759e7  bd1999-11-17 alt_d1t05.flac
+a83e73af545ab7dd04137a5eb4f8d1d2  bd1999-11-17 alt_d1t06.flac
+a8d9094e9cf0a11b5b8dafd6cd45d5fa  bd1999-11-17 alt_d1t07.flac
+bf1228219596f189c69182069e9bac22  bd1999-11-17 alt_d1t08.flac
+b3b29db48cbfe351e460e64d70c48331  bd1999-11-17 alt_d1t09.flac
+bef64e8c739c1554e0fbbac49dc40e61  bd1999-11-17 alt_d1t10.flac
+76714a763e8241229b036d10272cf479  bd1999-11-17 alt_d1t11.flac
+41afc4c71897fe3cbd6acfbcb256ee29  bd1999-11-17 alt_d1t12.flac
+0ffcdffa6c7a1a3dae38ad734f87ffef  bd1999-11-17 alt_d2t01.flac
+d129bf523a4c539613cd98d8aae7bd83  bd1999-11-17 alt_d2t02.flac
+9a9bbebc951d2e6c628bd16a6ad8a030  bd1999-11-17 alt_d2t03.flac
+e0dd0f983056b84d4f4b3f4cb396dc94  bd1999-11-17 alt_d2t04.flac
+2db558b27ae3c3f4ef6d592bc4c2e6cb  bd1999-11-17 alt_ffp.txt
+0b1bfd8fda7c1abacd797f057f356815  bd1999-11-17 alt_info.txt
+9c8c2f6c48defcb0bddc9d203a5167fa  bd99-11-17-alt-b-LB-4784.txt
+a9fd8e6320e5a4cdb169a560d37d2fd0  lbdir-bd99-11-17-alt-b.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-17-alt-b.flacf 
+=================== 
+=================== 
+=================== 
+bd1999-11-17 alt_d1t01.flac:6134329bba3553e4958c6d74c6532e4a
+bd1999-11-17 alt_d1t02.flac:f1db5f2f8d030bf961f42a1e6af08716
+bd1999-11-17 alt_d1t03.flac:36e904cfde5532fb62826ad015d35281
+bd1999-11-17 alt_d1t04.flac:1973b36b07edc6cb7e5e8641d6fe8a95
+bd1999-11-17 alt_d1t05.flac:985e9e96d990458305d28afd78862767
+bd1999-11-17 alt_d1t06.flac:27921c90d436421dfc6b04e963958be8
+bd1999-11-17 alt_d1t07.flac:f62a0d45be9b30d46924514e9e23908a
+bd1999-11-17 alt_d1t08.flac:534e90e3f98f1d142fd7a89782ede0dc
+bd1999-11-17 alt_d1t09.flac:37d2431b02e9aa90d75c7d57e853c421
+bd1999-11-17 alt_d1t10.flac:7d917b23e5c03f11e3a1add9089b2df0
+bd1999-11-17 alt_d1t11.flac:c0ef8243ff2f09077289ee06415a6253
+bd1999-11-17 alt_d1t12.flac:71c89ce77ff25ad399d227a9025a3c55
+bd1999-11-17 alt_d2t01.flac:618232da9593de37af093219c49847d3
+bd1999-11-17 alt_d2t02.flac:6c6d0fe6f7c86c4b345a0b0e046adb1f
+bd1999-11-17 alt_d2t03.flac:f4f25bb3a19c932dee9365595322b60e
+bd1999-11-17 alt_d2t04.flac:c881babee20cf08463188b623c905ac9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-17-alt-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:10.33       44177660 B   ---   --   ---xx   flac  0.4843  bd1999-11-17 alt_d1t01.flac
+     6:50.44       72427532 B   ---   --   ---xx   flac  0.4691  bd1999-11-17 alt_d1t02.flac
+     9:34.61      101397116 B   ---   --   ---xx   flac  0.4540  bd1999-11-17 alt_d1t03.flac
+     3:36.36       38187116 B   ---   --   ---xx   flac  0.4727  bd1999-11-17 alt_d1t04.flac
+     9:11.72       97365788 B   ---   --   ---xx   flac  0.4926  bd1999-11-17 alt_d1t05.flac
+     7:03.58       74753660 B   ---   --   ---xx   flac  0.4907  bd1999-11-17 alt_d1t06.flac
+     7:43.28       81739100 B   ---   --   ---xx   flac  0.4857  bd1999-11-17 alt_d1t07.flac
+     5:50.24       61796492 B   ---   --   ---xx   flac  0.4913  bd1999-11-17 alt_d1t08.flac
+     5:04.26       53686796 B   ---   --   ---xx   flac  0.4773  bd1999-11-17 alt_d1t09.flac
+     6:35.12       69706268 B   ---   --   ---xx   flac  0.4766  bd1999-11-17 alt_d1t10.flac
+     8:11.71       86779436 B   ---   --   ---xx   flac  0.4513  bd1999-11-17 alt_d1t11.flac
+     5:56.60       62939564 B   ---   --   ---xx   flac  0.5046  bd1999-11-17 alt_d1t12.flac
+     8:47.74       93136892 B   ---   --   ---xx   flac  0.4695  bd1999-11-17 alt_d2t01.flac
+     5:29.60       58176764 B   ---   --   ---xx   flac  0.4949  bd1999-11-17 alt_d2t02.flac
+     8:43.35       92339564 B   ---   --   ---xx   flac  0.4616  bd1999-11-17 alt_d2t03.flac
+     3:55.55       41583404 B   ---   --   ---xx   flac  0.4948  bd1999-11-17 alt_d2t04.flac
+   106:46.74     1130193152 B                            0.4775  (16 files)
+=================== 
+=================== 
+=================== 

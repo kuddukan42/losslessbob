@@ -1,0 +1,162 @@
+===================
+===================
+===================
+=== md5 for: bd78-07-15-jtt-h.flacf
+===================
+===================
+===================
+575c09c32ac45e5c918db6ad6aa6542f *Blackbushe 15.07.1978 (JTT) - F.jpeg
+e58a2465471559e8a22b51d8fe4c78a3 *Blackbushe 15.07.1978 (JTT) - Programme Scan 01.jpeg
+b56feb8bb30b4d3ae54290b4b81581f7 *Blackbushe 15.07.1978 (JTT) - Programme Scan 02.jpeg
+51ce10cea56ab8f5fc739aeb5dae477d *Blackbushe 15.07.1978 (JTT) - R.jpeg
+47a1056af3fe54f593cdada4e3155753 *BOB DYLAN - Blackbushe July 15th 1978 (JTT).md5
+47a1056af3fe54f593cdada4e3155753 *BOB DYLAN - Blackbushe July 15th 1978 (JTT).txt
+5adc3cdd6b1a41a5f2f8cd6f3089364f *BOB DYLAN - Blackbushe July 15th 1978 (JTT)_Info.txt
+427b20151f4ff9406f7b99bf916365a2 *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 01.flac
+d3dc9646b6231abb5ce151321062ab94 *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 02.flac
+ab4e693aaeb62f7f25616684c1abdc95 *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 03.flac
+8501d9258e33cc95d27c4ef4cdb068fd *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 04.flac
+10f5964bd9caf8724ff4631e35551d44 *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 05.flac
+5976a620d8b264be88ba79de319d7df4 *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 06.flac
+cd7aa3e46b036b97e8f07efd43cd2ee8 *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 07.flac
+16c0eabc10e7f348bd59530fe093304a *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 08.flac
+fb0477a7ff2e212abce55200047a4d51 *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 09.flac
+5cb696d0d54c437e17e7d5fcb66c8da0 *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 10.flac
+bee7a79463b15750603955d442bcd55e *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 11.flac
+de322c0eef7caaddc7691a8f4b310d9e *Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 12.flac
+73e30835d95eead5f5e40aa0221598db *Disc 01\Disc 01.ffp
+3c0fa36991610f411ffe6e1ecb39c408 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 01.flac
+1196111eca74e17f35368723833da8d9 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 02.flac
+b7085a24676ef04a53e684831805b173 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 03.flac
+01d59818e5b4f3a0715651b856bea4d8 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 04.flac
+fb4303b3d3fd4a4657547e42f4c30ff9 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 05.flac
+5172277aab44b9ceede78ce4861bab57 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 06.flac
+57a2839ce5781594994070ca656634b0 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 07.flac
+da5f9b4f17ad4d2d725668f902ca5d09 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 08.flac
+426befdffcb1bce2c03610db9e9a6c09 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 09.flac
+190ffb5d4d907d5c440f43359a14b54f *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 10.flac
+c7554da31c01ac1ccd361ffc8f43d46e *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 11.flac
+40c4c37baeb0de3190f3e8f1f157e7c4 *Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 12.flac
+f239c34a0688fca360a7c1621fd2348e *Disc 02\Disc 02.ffp
+3c0ff17bb24231de40a525a950e3e995 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 01.flac
+c27e8abeeea1c24f3fdab487c5becee0 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 02.flac
+e1e9ba52a228c2a43633ecf58a28e7d5 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 03.flac
+30d680dd4dd1a33471733f4f5b73c345 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 04.flac
+7e62451999ee401d0ec2e96e347fa1c6 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 05.flac
+fdada22f1d27d0cd8eb81059ac414b0d *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 06.flac
+cf2bed8db9f251ccac0efee11405e1cc *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 07.flac
+fef02a5daf078edede6c173df82a6351 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 08.flac
+40094255d4188e7a627b8ae1a71c97e2 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 09.flac
+f58dfc14005ff0608a456425da7be688 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 10.flac
+635a66f7abcf597bbb4f1beb050be817 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 11.flac
+1d571f1aa222210a1dd753bd1bd5a7f3 *Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 12.flac
+f8b4494d39f9aff853043558fbf7b1de *Disc 03\Disc 03.ffp
+===================
+===================
+===================
+=== ffp for: bd78-07-15-jtt-h.flacf
+===================
+===================
+===================
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 01.flac:fd66739af31bdc47edb36be9b0d98608
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 02.flac:0bf375ff52df98e1c971019528f69b5d
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 03.flac:798eeaa0d2e3fceb0c5ffa8afc658044
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 04.flac:135dd190ad249fd2eb3fc90b6b06ab11
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 05.flac:40f364fc8621aa8ce912cbe400b6a5bf
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 06.flac:b3f013223380db3505e36d5d2ebe718c
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 07.flac:0405ba35cdf05bf6a8bedf145b68ada8
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 08.flac:a091067b53069a12b105439f9427e985
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 09.flac:0a9a4d9fd4ed58bfdc8b32cdbb48091b
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 10.flac:754a2c47e200de629d8fee4f99bcdaa4
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 11.flac:5f27e2d8a453a00501dc6f8b671c7c98
+Disc 01\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 12.flac:976ce2a280fc7885669680fe9e794020
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 01.flac:72ac1eb5d18aec3fac613d18b713bab4
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 02.flac:ce1ffa24659ba47fbf3057a1a42f57dd
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 03.flac:b62369472d68de0738db1a38fc0088ec
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 04.flac:1b05dafcacab213cbe7a2588ee8583e4
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 05.flac:e20585997c9160c0a647fdc26ca9c7ba
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 06.flac:3178fa2b67374db3a8917f8cd6f6ecfc
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 07.flac:e716f08befdcc4f69fd3146619264b71
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 08.flac:caaa2a8dc4d0fcbfe9999639ed5ee1d2
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 09.flac:5beb9c44bf5178c521a7ab57b3ffa388
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 10.flac:498c9c2ea9c481f02cb693ce79598ea9
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 11.flac:3091215f00b51cf140c539d5acb00549
+Disc 02\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 12.flac:46ac8a0af67bea93d1952553373edf7d
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 01.flac:7b640ae5e5c8b15a925aae9d25fa6d9a
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 02.flac:31b77c906172eed3d260145142ce56cd
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 03.flac:d19164f74926bbad5623b6994e77c9eb
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 04.flac:733f1010f3af090938d93aac997b5db2
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 05.flac:b9a1612b53a4bb5672dce1ddf5f79204
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 06.flac:1684c5d5fd22cc53ce7a4587e13315d3
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 07.flac:0b5e5447343d5bd7bd68aa6656622a7d
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 08.flac:cee3aae92e48b1a50e46a685a8449d33
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 09.flac:a65225e78c4bd6208161ea225aebe542
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 10.flac:409c8c8b29a04c46463d8cb9c8d5248d
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 11.flac:1838d3e78438106cc82b5563638dac6f
+Disc 03\Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 12.flac:fcfc4f753a5420aeb8c48836384bac10
+===================
+===================
+===================
+=== shntool len for: bd78-07-15-jtt-h.flacf\Disc 01
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:23.58       35945660 B   ---   --   ---xx   flac  0.6137  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 01.flac
+     2:28.25       26166044 B   ---   --   ---xx   flac  0.6203  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 02.flac
+     5:18.15       56130524 B   ---   --   ---xx   flac  0.6072  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 03.flac
+     4:07.60       43711964 B   ---   --   ---xx   flac  0.6159  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 04.flac
+     4:34.14       48366572 B   ---   --   ---xx   flac  0.6213  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 05.flac
+     4:38.48       49152140 B   ---   --   ---xx   flac  0.6194  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 06.flac
+     5:05.08       53820860 B   ---   --   ---xx   flac  0.5853  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 07.flac
+     4:15.32       45057308 B   ---   --   ---xx   flac  0.6178  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 08.flac
+     4:34.55       48463004 B   ---   --   ---xx   flac  0.6268  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 09.flac
+     4:04.00       43041644 B   ---   --   ---xx   flac  0.6080  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 10.flac
+     6:57.51       73678796 B   ---   --   ---xx   flac  0.6314  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 11.flac
+     4:18.65       45664124 B   ---   --   ---xx   flac  0.6237  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 01 Track 12.flac
+    53:46.56      569198640 B                            0.6161  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd78-07-15-jtt-h.flacf\Disc 02
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.03       47282300 B   ---   --   ---xx   flac  0.6159  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 01.flac
+     7:25.34       78578012 B   ---   --   ---xx   flac  0.6108  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 02.flac
+     4:34.56       48465356 B   ---   --   ---xx   flac  0.6225  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 03.flac
+     5:47.00       61210844 B   ---   --   ---xx   flac  0.6333  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 04.flac
+     5:36.16       59308076 B   ---   --   ---xx   flac  0.5948  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 05.flac
+     4:24.33       46647260 B   ---   --   ---xx   flac  0.5950  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 06.flac
+     5:30.48       58324940 B   ---   --   ---xx   flac  0.5722  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 07.flac
+     4:17.00       45334844 B   ---   --   ---xx   flac  0.5984  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 08.flac
+     3:15.32       34473308 B   ---   --   ---xx   flac  0.5961  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 09.flac
+     4:24.11       46595516 B   ---   --   ---xx   flac  0.5814  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 10.flac
+     3:08.06       33177356 B   ---   --   ---xx   flac  0.5668  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 11.flac
+     5:22.16       56838476 B   ---   --   ---xx   flac  0.5756  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 02 Track 12.flac
+    58:13.30      616236288 B                            0.5984  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd78-07-15-jtt-h.flacf\Disc 03
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:13.42       44728028 B   ---   --   ---xx   flac  0.5890  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 01.flac
+     5:47.20       61257884 B   ---   --   ---xx   flac  0.5749  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 02.flac
+     4:42.20       49791884 B   ---   --   ---xx   flac  0.5820  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 03.flac
+     4:48.36       50887916 B   ---   --   ---xx   flac  0.5895  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 04.flac
+     3:20.19       35324732 B   ---   --   ---xx   flac  0.6097  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 05.flac
+     3:30.56       37175756 B   ---   --   ---xx   flac  0.6072  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 06.flac
+     0:34.13        6028220 B   ---   --   ---xx   flac  0.5787  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 07.flac
+     6:58.39       73826972 B   ---   --   ---xx   flac  0.6108  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 08.flac
+     7:39.71       81134636 B   ---   --   ---xx   flac  0.6320  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 09.flac
+     6:04.69       64371932 B   ---   --   ---xx   flac  0.6017  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 10.flac
+     5:03.26       53510396 B   ---   --   ---xx   flac  0.5929  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 11.flac
+     2:28.19       26151932 B   ---   --   ---xx   flac  0.5729  Bob Dylan - Blackbushe July 15th 1978 (JTT)_Disc 03 Track 12.flac
+    55:11.55      584190288 B                            0.5990  (12 files)
+===================
+===================
+===================

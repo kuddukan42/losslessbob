@@ -1,0 +1,125 @@
+===================
+===================
+===================
+=== Bob Dylan - 1992-04-07 Melbourne (JLT - shn) info.txt
+===================
+===================
+===================
+Bob Dylan - 1992-04-07 Melbourne (JLT - shn)
+
+JLT/LK TAPES
+COMPLETE SET
+I'm sharing some concerts from the 1992 Australian Tour that I have received from a friend. He received them straight from Les Kokay, who has agreed to openly publish them. The only information that came to me was:
+
+"These files are exactly as I received them, no changes made in any form.
+Thanks to the taper, to LK for making them available, and to my friend Marcos for sharing them with me."
+
+I've added the info file and a new .md5
+Setlist below from the Olof Bjorner Page: http://bjorner.com/still.htm
+
+Palais Theatre Melbourne, Victoria, Australia 
+7 April 1992 
+
+1. All Along The Watchtower 
+2. Simple Twist Of Fate 
+3. Everything Is Broken 
+4. Just Like A Woman 
+5. Tangled Up In Blue 
+6. She Belongs To Me 
+7. Maggie's Farm 
+8. Love Minus Zero/No Limit 
+9. Little Moses (Bert A. Williams/Earle C. Jones) 
+10. Golden Vanity (trad.) 
+11. It's All Over Now, Baby Blue 
+12. Cat's In The Well 
+13. I Believe In You 
+14. The Times They Are A-Changin' 
+15. Highway 61 Revisited 
+16. Absolutely Sweet Marie 
+17. Ballad Of A Thin Man 
+18. Blowin' In The Wind 
+
+Concert # 377 of The Never-Ending Tour. Concert # 13 of the 1992 Tour Of Australia. 1992 concert # 13. Concert # 13 with the 6th Never-Ending Tour band: 
+Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums). 
+
+8, 9, 18 Bob Dylan (acoustic guitar & vocal). 
+2-5, 8, 11, 13, 14, 16, 18 Bob Dylan harmonica. 
+10 Bob Dylan (acoustic guitar & vocal), John Jackson (guitar). 
+11, 14 acoustic with the band. 
+5, 14 Bucky Baxter (mandolin). 
+15 Bucky Baxter (electric slide guitar). 
+
+BobTalk: 
+Here's a song about ... uh ... somebody who went to sea. (before Golden Vanity). 
+This is my first time playin' here at this hall. Maybe I ...Somebody asked me if I'd come back next year and play it again. So, yes you, you all come back, now.[from the audience: "We love you Bob. We love you Bob"] You what?? [someone: "We love you Bob"] You love me? Can you believe it? (turning to the band) They love me! (before Blowin' In The Wind). 
+
+6 new songs (33%) compared to previous concert. 1 new song for this tour. 
+Stereo audience recording, 95 minutes. Session info updated 15 December 1994.
+
+Thanks to everybody involved!!
+
+
+1.md5
+a5a59b98bb69fcb75af6daf5d54840ca *01 All Along The Watchtower.shn
+c6ad38f50150efdc44ca3467f27c3d22 *02 Simple Twist Of Fate.shn
+c6f280830913e69c2a898725dffa30f3 *03 Everything Is Broken.shn
+253cf3191a4c83317f1861a4f302d72d *04 Just Like A Woman.shn
+dc12a821edbb47f30729fa371b70e3be *05 Tangled Up In Blue.shn
+e17595719d23b445c5b7e365ad9f3d66 *06 She Belongs To Me.shn
+dd5696f10e192e23292bacf139c5c881 *07 Maggie's Farm.shn
+50257c4ea8a6fbc781ce355f4a7644cc *08 Love Minus Zero - No Limit.shn
+938ed59f2ec21365e914b5c476a9b0e8 *09 Little Moses.shn
+0316b6b0c55a1aaf1d0ddbd97dc6cb8a *10 Golden Vanity.shn
+
+2.md5
+117c73e126fdd6ddf769d978e9de5683 *1 It's All Over Now Baby Blue.shn
+fa5f39dd573c3767ec8d75fb57f29192 *2 Cat's In The Well.shn
+9d93bbdc099867006840e6aa3d06c1e3 *3 I Believe In You.shn
+9ec7e3be23df71cf1ded693007deab35 *4 The Times They Are A-Changin'.shn
+5e55e18584be638ec8f41d7d9da3c652 *5 Highway 61 Revisited.shn
+75c5ac736c4a5d591da795bc965b3fba *6 Absolutely Sweet Marie.shn
+9c9620e0e7873521d279791aa0b0f705 *7 Ballad Of A Thin Man.shn
+7470663b610784063c1a33beaaf0284a *8 Blowin' In The Wind.shn
+===================
+===================
+===================
+=== Bob Dylan - 1992-04-07 Melbourne (JLT - shn) info.txt.md5
+===================
+===================
+===================
+cc52f67bef3af8f09ff28857b2eb5e2d *Bob Dylan - 1992-04-07 Melbourne (JLT - shn) info.txt
+===================
+===================
+===================
+=== 1.md5
+===================
+===================
+===================
+a5a59b98bb69fcb75af6daf5d54840ca *01 All Along The Watchtower.shn
+c6ad38f50150efdc44ca3467f27c3d22 *02 Simple Twist Of Fate.shn
+c6f280830913e69c2a898725dffa30f3 *03 Everything Is Broken.shn
+253cf3191a4c83317f1861a4f302d72d *04 Just Like A Woman.shn
+dc12a821edbb47f30729fa371b70e3be *05 Tangled Up In Blue.shn
+e17595719d23b445c5b7e365ad9f3d66 *06 She Belongs To Me.shn
+dd5696f10e192e23292bacf139c5c881 *07 Maggie's Farm.shn
+50257c4ea8a6fbc781ce355f4a7644cc *08 Love Minus Zero - No Limit.shn
+938ed59f2ec21365e914b5c476a9b0e8 *09 Little Moses.shn
+0316b6b0c55a1aaf1d0ddbd97dc6cb8a *10 Golden Vanity.shn
+===================
+===================
+===================
+=== 2.md5
+===================
+===================
+===================
+117c73e126fdd6ddf769d978e9de5683 *1 It's All Over Now Baby Blue.shn
+fa5f39dd573c3767ec8d75fb57f29192 *2 Cat's In The Well.shn
+9d93bbdc099867006840e6aa3d06c1e3 *3 I Believe In You.shn
+9ec7e3be23df71cf1ded693007deab35 *4 The Times They Are A-Changin'.shn
+5e55e18584be638ec8f41d7d9da3c652 *5 Highway 61 Revisited.shn
+75c5ac736c4a5d591da795bc965b3fba *6 Absolutely Sweet Marie.shn
+9c9620e0e7873521d279791aa0b0f705 *7 Ballad Of A Thin Man.shn
+7470663b610784063c1a33beaaf0284a *8 Blowin' In The Wind.shn
+===================
+===================
+===================

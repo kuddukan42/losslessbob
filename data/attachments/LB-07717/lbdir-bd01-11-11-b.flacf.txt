@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-11-11-b.flacf 
+=================== 
+=================== 
+=================== 
+baa7dce42723a37caab500149b4eb2f4  101_Roving Gambler.flac
+e5b68e80ff43850401125e2f8cbcce1c  102_Girl From The North Country.flac
+3eb9b34194b287957fd9929b624ce3ef  103_It's Alright, Ma.flac
+73a8e053f540b2fc5a08b11e92f446b2  104_This World Can't Stand Long.flac
+c3ea2983580e837c7a822d31edcd64e6  105_Cry A While.flac
+4085e6ccbd173265f01c7cd6e8e18152  106_I Want You.flac
+1f2a330915a8efe0c9b90df09046ea1f  107_Floater.flac
+5db77de4ece6ee1d3bfa05e6a9f11b0c  108_High Water.flac
+ee90f106f528b759f5869da493d77ba1  109_Visions Of Johanna.flac
+a35ecd7edc6131dbf2b758016a5bfb22  110_John Brown.flac
+cf6c2d751498cb1ed9820191ab0b6e8a  111_Love Minus Zero.flac
+469dabe584237779c09624feb5531884  201_Summer Days.flac
+d9268cfa8ab7d2a7c2a9869d3e7482fc  202_Sugar Baby.flac
+01190efe7e2cf965ff69e7c328e6dc40  203_The Wicked Messenger.flac
+cf8ae65a913d501551a80e92c90e8edf  204_Rainy Day Women # 12 & 35.flac
+5224e494d2b0c6df4c82e3ebe322db3b  205_Country Pie.flac
+2659fbcd6d94260746546f75bf10435c  206_Like A Rolling Stone.flac
+92e4ac1a3154006dc071e8e4502cb999  207_If Dogs Run Free.flac
+c4bbe42d8e9fa9f174f63b185989e005  208_Honest With Me.flac
+da888d926500d1a7cc6fb0f471c61138  209_Blowin' In The Wind.flac
+48e69f1dc7e2e05dff92c4c0b5c2a895  210_All Along The Watchtower.flac
+c8ab06d352681ac71ba6f50957bc3231  bd2001-11-11_University Park, Pennsylvania.ffp
+a88a889aef575cc3e87c410f85dfdbfa  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-11-11-b.flacf 
+=================== 
+=================== 
+=================== 
+101_Roving Gambler.flac:d95ab4cfba0da512f41a8c4799337648
+102_Girl From The North Country.flac:838f6e34176f5d7c93d00e4678e2a4d1
+103_It's Alright, Ma.flac:b4a7b20788329729bcfe6253ba00952a
+104_This World Can't Stand Long.flac:2abc0bbe1fa5962ab567d7d865965826
+105_Cry A While.flac:c0868104e97563bb0168ad3b9841a501
+106_I Want You.flac:423401e5e54f1666f9e09fc0b7d67d77
+107_Floater.flac:fb73cecd9756da90425c5e5f240b1efb
+108_High Water.flac:d7540f7bab44d6161c0baf3febf0fc36
+109_Visions Of Johanna.flac:b32b4550b83b49ea14f2fc7e5d7fd8cc
+110_John Brown.flac:8f9c9ca120d7c847b0af0922a9bb3d2c
+111_Love Minus Zero.flac:72919dd9255b4fad9a4efb225cfbe962
+201_Summer Days.flac:4286356a17ae9c69819ba3f2149fb75d
+202_Sugar Baby.flac:8e7587838133de93d9995f70965686f4
+203_The Wicked Messenger.flac:0f9260da6d417fac5b658a669bec133f
+204_Rainy Day Women # 12 & 35.flac:de32ef12d82162b6d45d6eb78b943c2b
+205_Country Pie.flac:c1e0acf8c6669de4f51ea4578997ea1c
+206_Like A Rolling Stone.flac:4c935f5d9ffc9a0c3ca882e4760890d9
+207_If Dogs Run Free.flac:c521060a48d50c35dbbce8ec7a1fb6e6
+208_Honest With Me.flac:01a932a8a2d1854a1cd4af7af3bda7fb
+209_Blowin' In The Wind.flac:89596505be5bbd8b99716b98aef9e995
+210_All Along The Watchtower.flac:84ae30d33271aa98592b387b600e0c26
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-11-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.32       45057308 B   ---   --   ---xx   flac  0.6014  101_Roving Gambler.flac
+     6:13.50       65914844 B   ---   --   ---xx   flac  0.5223  102_Girl From The North Country.flac
+     7:47.18       82421180 B   ---   --   ---xx   flac  0.6245  103_It's Alright, Ma.flac
+     4:04.28       43107500 B   ---   --   ---xx   flac  0.6239  104_This World Can't Stand Long.flac
+     5:59.53       63452300 B   ---   --   ---xx   flac  0.6186  105_Cry A While.flac
+     6:51.71       72667436 B   ---   --   ---xx   flac  0.6038  106_I Want You.flac
+     6:42.36       70997516 B   ---   --   ---xx   flac  0.5588  107_Floater.flac
+     6:30.30       68866604 B   ---   --   ---xx   flac  0.6266  108_High Water.flac
+     9:55.16      104995676 B   ---   --   ---xx   flac  0.6102  109_Visions Of Johanna.flac
+     5:34.37       59004668 B   ---   --   ---xx   flac  0.5482  110_John Brown.flac
+     6:25.42       68012828 B   ---   --   ---xx   flac  0.6210  111_Love Minus Zero.flac
+     6:24.05       67749404 B   ---   --   ---xx   flac  0.6315  201_Summer Days.flac
+     7:47.26       82439996 B   ---   --   ---xx   flac  0.4539  202_Sugar Baby.flac
+     5:22.36       56885516 B   ---   --   ---xx   flac  0.6882  203_The Wicked Messenger.flac
+    10:44.47      113712188 B   ---   --   ---xx   flac  0.6124  204_Rainy Day Women # 12 & 35.flac
+     3:08.11       33189116 B   ---   --   ---xx   flac  0.6369  205_Country Pie.flac
+     7:54.28       83679500 B   ---   --   ---xx   flac  0.6239  206_Like A Rolling Stone.flac
+     4:04.46       43149836 B   ---   --   ---xx   flac  0.5383  207_If Dogs Run Free.flac
+     7:16.26       76971596 B   ---   --   ---xx   flac  0.6417  208_Honest With Me.flac
+     6:19.74       67029692 B   ---   --   ---xx   flac  0.5889  209_Blowin' In The Wind.flac
+     5:54.67       62603228 B   ---   --   ---xx   flac  0.6277  210_All Along The Watchtower.flac
+   135:17.29     1431907932 B                            0.5994  (21 files)
+=================== 
+=================== 
+=================== 

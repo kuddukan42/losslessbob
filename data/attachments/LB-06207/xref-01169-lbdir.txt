@@ -1,0 +1,104 @@
+===================
+===================
+===================
+=== md5 for: bd93-11-16-k.flacf
+===================
+===================
+===================
+0c91648bc3ac9caee7882949e246f8b3 *Bob Dylan November-16-1993 The Supper Club New York, NY  (Early Show+Late Show).md5
+0c91648bc3ac9caee7882949e246f8b3 *Bob Dylan November-16-1993 The Supper Club New York, NY  (Early Show+Late Show).txt
+d8d6f3dd2c90a26bd82da92260107f9d *Early show\01.flac
+264121ae202a7ae74feaf5d701542b6a *Early show\02.flac
+ffd5dd5b372e7c787876e8a61925c7b3 *Early show\03.flac
+1c0202e110a862b20eff7ac8fd950344 *Early show\04.flac
+27bc48e1d1b9822fb31d81112a3f957b *Early show\05.flac
+543c8ee18375f94d66dea1ddd2acc28f *Early show\06.flac
+c29e904a800cdc327bbe56c4706a0d12 *Early show\07.flac
+99483c90223f8f7a32ee1e2f1464db33 *Early show\08.flac
+13747514bb50ee8bcf783f5c38fb1d29 *Early show\09.flac
+acba55b8355d92c76862f83eed311e0a *Early show\10.flac
+55bba63d2b414b6df96e2b9a74cf9dab *Early show\Early show.ffp
+55bba63d2b414b6df96e2b9a74cf9dab *Early show\Early show.txt
+04cdf255cef6bc044ce0e357f4355d33 *Early show\Unknown Title.log
+e1493fe533ca7c9be8cd12f0486fefdc *info.txt
+1f56f4ac285e586110061722e7ae3d08 *Late show\01.flac
+201ee0ecb126061bc853c2ac5b0a0867 *Late show\02.flac
+f0154e47735c0d4c1faf1b493b98aa36 *Late show\03.flac
+3981bb25c369e19700af8dfcb33761e8 *Late show\04.flac
+6d5c2b3c755171ef68db2a3fdb5608b5 *Late show\05.flac
+cb632c182fcb4e1562a3ea7ea70499a4 *Late show\06.flac
+e0c8d348e0a7dc0176da239dbb94216f *Late show\07.flac
+c807b8317660314861992a4b3c324ded *Late show\08.flac
+4aee7fbe324a4a0f95481d2b7a6d71ca *Late show\09.flac
+8cd4295c6b5e039bd1d2a3da2f8060a6 *Late show\10.flac
+cb88625d064124f3f090a014de487c7d *Late show\Late show.ffp
+cb88625d064124f3f090a014de487c7d *Late show\Late show.txt
+5cd69a1423a65f2bd9a95eabef88fc72 *Late show\Unknown Title.log
+===================
+===================
+===================
+=== ffp for: bd93-11-16-k.flacf
+===================
+===================
+===================
+Early show\01.flac:656fc3ee0c3e6a59d3709a473b697122
+Early show\02.flac:4bf340646d61cdd851d053d684b2861c
+Early show\03.flac:fd67fc64087a48a482f25f1cadd500bd
+Early show\04.flac:3f27feb41542fb5828518a20c642285c
+Early show\05.flac:3f4758abdec8ec00a2aa3bf81eda70e0
+Early show\06.flac:14be40bcbbac2d680ca52a32356b6ac3
+Early show\07.flac:19de25c131f777b6739472397441a52f
+Early show\08.flac:097dc93c28123d663848bc53826441b0
+Early show\09.flac:5804938d2979c100644f4fa9fa8b1c9b
+Early show\10.flac:5508aa0f8c67b797e19988f698e395e5
+Late show\01.flac:d5a37ea88f523f13956e520be379ac82
+Late show\02.flac:96545480f9b225575d07b3c7da6883e3
+Late show\03.flac:54b02716cd22d645765562ce705e3ce8
+Late show\04.flac:1f93fdd08ab3c96a4c172825f922314a
+Late show\05.flac:47f831c04d78872f82cc35c94eb0d10d
+Late show\06.flac:b8b20c397c373963a2dac9d6c400f67b
+Late show\07.flac:5777beab8d756001efdb3a54ff364207
+Late show\08.flac:4a75bdc7237e239c856c96fbe818f113
+Late show\09.flac:c40d7aa6be7dce3a47ba4a14d1931de6
+Late show\10.flac:5bf24d8c221b7a68c31f985961bd0d18
+===================
+===================
+===================
+=== shntool len for: bd93-11-16-k.flacf\Early show
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:52.18       51551180 B   ---   --   ---xx   flac  0.7137  01.flac
+     5:18.19       56139932 B   ---   --   ---xx   flac  0.6717  02.flac
+     4:18.18       45553580 B   ---   --   ---xx   flac  0.6606  03.flac
+     9:12.09       97394012 B   ---   --   ---xx   flac  0.6416  04.flac
+     8:01.48       84961340 B   ---   --   ---xx   flac  0.6693  05.flac
+     5:56.66       62953676 B   ---   --   ---xx   flac  0.6363  06.flac
+     6:07.57       64872908 B   ---   --   ---xx   flac  0.6421  07.flac
+     6:06.20       64609484 B   ---   --   ---xx   flac  0.6177  08.flac
+     6:08.09       64936412 B   ---   --   ---xx   flac  0.6547  09.flac
+     6:46.54       71745452 B   ---   --   ---xx   flac  0.6058  10.flac
+    62:48.18      664717976 B                            0.6492  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd93-11-16-k.flacf\Late show
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:24.43       57254780 B   ---   --   ---xx   flac  0.6773  01.flac
+     4:49.44       51083132 B   ---   --   ---xx   flac  0.6804  02.flac
+     5:09.72       54676988 B   ---   --   ---xx   flac  0.6602  03.flac
+     8:28.15       89646524 B   ---   --   ---xx   flac  0.6699  04.flac
+     6:29.48       68732540 B   ---   --   ---xx   flac  0.6722  05.flac
+     5:36.63       59418620 B   ---   --   ---xx   flac  0.6059  06.flac
+     6:12.37       65707868 B   ---   --   ---xx   flac  0.6530  07.flac
+     5:43.33       60582860 B   ---   --   ---xx   flac  0.5865  08.flac
+     6:06.40       64656524 B   ---   --   ---xx   flac  0.6468  09.flac
+     7:34.56       80217356 B   ---   --   ---xx   flac  0.6102  10.flac
+    61:36.01      651977192 B                            0.6459  (10 files)
+===================
+===================
+===================

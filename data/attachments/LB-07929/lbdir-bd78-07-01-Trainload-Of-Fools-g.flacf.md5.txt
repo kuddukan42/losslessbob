@@ -1,0 +1,41 @@
+105a67a24b1a82b1fc61d9f16f8123d0  Artwork\Trainload 1.JPG
+70941650870bfbd2f6efc100a48864f6  Artwork\Trainload 2.JPG
+2444defea97bef1e0a0d512bf7f72541  Artwork\Trainload 3.JPG
+8eb255445f83d1760310e56a0dbe8de5  Artwork\Trainload 4.JPG
+9497044d2724ac9125bd4fee6d632242  Artwork\Trainload 5.JPG
+3ee469f184b4d206e7225a4c62563768  Artwork\Trainload back.JPG
+623ee9c09d507c34c04dbfdce29ab2b9  Artwork\Trainload front.JPG
+329ed27a5dcdc095b6a60739ee2afb6a  CD I\01. She's Love Crazy (Tampa Red).flac
+ea6c1b2772fb004a09f0e8f61cbc40ad  CD I\02. Baby, Stop Crying.flac
+f9456937b5cbdb8b633cdfff432c09ce  CD I\03. Mr. Tambourine Man.flac
+637c60ba40999ea3a9f859685ccf84f8  CD I\04. Shelter From The Storm.flac
+5b44e648f33f573beacce8d810a15590  CD I\05. It's All Over Now, Baby Blue.flac
+cddc280258e7763baf43ecf0da9e8778  CD I\06. Tangled Up In Blue.flac
+e7188f6e1e2e262a8c1ffce082ce65ee  CD I\07. Ballad Of a Thin Man.flac
+32aeead5bb61672b0e0c80b530d00efb  CD I\08. Maggies Farm.flac
+827545e0e5ce69edd11e85e9b6eea175  CD I\09. I Don't Believe You.flac
+f98c0b52fcb5a2e8e1eb1f158ff6736b  CD I\10. Like a Rolling Stone.flac
+260effe4aa81d0aace29fb925e0aeb84  CD I\11. I Shall Be Released.flac
+24f184314360ff28e8de6c3ec89425d4  CD I\12. Going, Going, Gone.flac
+badd4db7d157b4323c9cdb6cc3bad013  CD I\13. A Change Is Gonna Come (Voc. Carolyn Dennis).flac
+9f4b8f860a68ceed03f8b374ab13a002  CD I\14. Love Minus Zero  No Limit (Voc. Helena Springs).flac
+2292c7aa52e81436a2ef91114c219f80  CD I\15. Laissez Faire (Steve Soles Solo).flac
+94093b3804d0970bfcc22a703818132c  CD I\CD I.md5
+2d7b9624537886c07b789056d4c2ba1f  CD II\01. A Hard Rain's A Gonna Fall (Bob Dylan Solo).flac
+30c84b847ea3ea300d63937dee87dd7e  CD II\02. One Of Us Must Know.flac
+ee63942810f64191bd9725813bedf79f  CD II\03. You're a Big Girl Now.flac
+fd190dea3ccd7df0c0fed00ad5284f42  CD II\04. One More Cup Of Coffee.flac
+67d833432cd713d4deb0d5acdd2a7e96  CD II\05. Blowin' In The Wind.flac
+48c0508e4e68672eb3ba70436a1176aa  CD II\06. I Want You.flac
+ebc657d895252d92ed6438151885ed49  CD II\07. Senor (Tales Of Yankee Power).flac
+c1a6d0462357e9e25b99fb818b47ada1  CD II\08. Masters Of War.flac
+53e8bdd7b201c04a6b7f35e178f8ccb9  CD II\09. Just Like a Woman.flac
+a9560408d02338c1cd7ec48961e8b854  CD II\10. Don't Think Twice, It's All Right.flac
+e3fbc45f64891c290296a78001f31825  CD II\11. All Along The Watchtower.flac
+b93b140c2460d35a9dfee9055f2b7862  CD II\12. All I Really Want To Do.flac
+c4a6f9173b538aa79d071bb254f922ef  CD II\13. It's Alright, Ma (I'm Only Bleeding).flac
+e08b8f42481411802aff90fdd46043b5  CD II\14. Forever Young.flac
+5d5b89c2312830040d2e8d740082a734  CD II\15. I'll Be Your Baby Tonight.flac
+c70eae2322c6b69fe411bedcba7f5961  CD II\16. The Times They Are A Changin'.flac
+ddd4263189b6025b012c6d2cc552ff08  CD II\CD II.md5
+b880f67deccd344e872fb2c37dd1e268  info.txt

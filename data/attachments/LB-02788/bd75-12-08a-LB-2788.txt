@@ -1,0 +1,10 @@
+Bob Dylan, 12/8/75, Madison Square Garden, New York City, New York, 2CDR
+
+LB-2788, (68min+31min), version "a"; Taper: Unidentified, Lineage: Lowgen audio disks > (Feurio) wav > (flacfrontend) flac., Note: The glitches on the last two tracks of disk 2 indicates that, well-known commercial boot is derived from this source tape. The, commercial boot has Hattie Carroll cut, but there is no such cut, in this version.; excellent sound [A]; in comparisom to bootleg Night of the Hurricane 1 this one has warmer, fuller, more natural, and better sound
+
+has static noise on d2t5, d2t6
+
+Disk One, 1 When I Paint My Masterpiece, 2 It Ain't Me, Babe, 3 The Lonesome Death Of Hattie Carroll, 4 Tonight I'll Be Staying Here With You, 5 It Takes A Lot To Laugh, It Takes A Train To Cry, 6 Romance In Durango, 7 Isis, 8 The Times They Are A-Changin', 9 Dark As A Dungeon, 10 Mama, You Been On My Mind, 11 Never Let Me Go, 12 I Dreamed I Saw St. Augustine, 13 I Shall Be Released, 14 Love Minus Zero/No Limit, 15 Simple Twist Of Fate, 16 Oh, Sister, Disk Two, 1 Hurricane, 2 One More Cup Of Coffee (Valley Below), 3 Sara, 4 Just Like A Woman, 5 Knockin' On Heaven's Door, 6 This Land Is Your Land
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

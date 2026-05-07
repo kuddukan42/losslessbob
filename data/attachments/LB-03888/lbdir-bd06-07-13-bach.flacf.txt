@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-13-bach.flacf 
+=================== 
+=================== 
+=================== 
+ff778177cab1991ab611f1ad68a87d6c  2006-07-13-Le Cannet-06-flac.md5
+81d27417220b7a5d26fb22cb4b0a076a  bd06-07-13-bach-LB-3888.txt
+53ac42b2d7e32442063dfe07b40c9aed  info.txt
+e166a2de804d0d095f3e401dd488ca1e  Le Cannet-06-pt.1(01).flac
+5e8d53599a1ee5f7e8ffe7fc81bdff9f  Le Cannet-06-pt.1(02).flac
+a00c7884e72350ec4f097b310f0b3e4f  Le Cannet-06-pt.1(03).flac
+5ef988d56ae2480f482ff1214808fac7  Le Cannet-06-pt.1(04).flac
+dd0d88e4465646d0c7f289f5958fba1d  Le Cannet-06-pt.1(05).flac
+fc3ba39a04a5930db348db2da6562900  Le Cannet-06-pt.1(06).flac
+b099106324faa8084657647c5642a967  Le Cannet-06-pt.1(07).flac
+b173f533b5dfc83d69674d3e42c9b108  Le Cannet-06-pt.1(08).flac
+7c23989054153597909fe0066d3ea8c9  Le Cannet-06-pt.1(09).flac
+e2fbaa4c1e3329ed466f0f6ac1646aca  Le Cannet-06-pt.1(10).flac
+de5d98c124380ddbc3457ecb30e5abbd  Le Cannet-06-pt.2(1).flac
+3adb3004322d126b16f1f7f02badd270  Le Cannet-06-pt.2(2).flac
+f74621c1269cf869ae1a0240673d8d59  Le Cannet-06-pt.2(3).flac
+23fd404798ea6d8649a9a11c117c0dd3  Le Cannet-06-pt.2(4).flac
+a6d5c209a2bfd597185e83addf25401f  Le Cannet-06-pt.2(5).flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-13-bach.flacf 
+=================== 
+=================== 
+=================== 
+Le Cannet-06-pt.1(01).flac:4206402882f3075915c9b337f234487d
+Le Cannet-06-pt.1(02).flac:334f8d492fbfd63a4cf627c5bd9d803b
+Le Cannet-06-pt.1(03).flac:d34348c4809d6898f8c3ff6de58341aa
+Le Cannet-06-pt.1(04).flac:efb46cd167cdb9df622674fb68f4012e
+Le Cannet-06-pt.1(05).flac:74fa5d8f45a108a1fc05d340cc3d1475
+Le Cannet-06-pt.1(06).flac:cf724e422c5cf7b0f497c9ba1808c69a
+Le Cannet-06-pt.1(07).flac:dc0c6a2e47e2881cbb10ef35b2dd96e8
+Le Cannet-06-pt.1(08).flac:42bc3cad8d4ff2efd9cf8e111d368466
+Le Cannet-06-pt.1(09).flac:d65e5dc9e4e678e8c55a6d4886a61da1
+Le Cannet-06-pt.1(10).flac:e3373cddf4691159eaf44bb7ca49bc0b
+Le Cannet-06-pt.2(1).flac:326139a1b3daaa89cf1d736ba4da42ca
+Le Cannet-06-pt.2(2).flac:fc4ffacaf4942874865edbd97cd2a425
+Le Cannet-06-pt.2(3).flac:b36900138a77ef8682aa2b1820e190aa
+Le Cannet-06-pt.2(4).flac:b4dfcc1949fd355d5446bcea971e0ec7
+Le Cannet-06-pt.2(5).flac:132aed49a80ffafa0ca466e689a0cb8a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-13-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.53       62217500 B   ---   --   ---xx   flac  0.5170  Le Cannet-06-pt.1(01).flac
+     7:18.30       77333804 B   ---   --   ---xx   flac  0.4825  Le Cannet-06-pt.1(02).flac
+     5:40.52       60098348 B   ---   --   ---xx   flac  0.4960  Le Cannet-06-pt.1(03).flac
+     7:17.06       77100956 B   ---   --   ---xx   flac  0.4928  Le Cannet-06-pt.1(04).flac
+     7:33.57       80043308 B   ---   --   ---xx   flac  0.5190  Le Cannet-06-pt.1(05).flac
+     8:09.27       86323148 B   ---   --   ---xx   flac  0.4375  Le Cannet-06-pt.1(06).flac
+     8:45.18       92652380 B   ---   --   ---xx   flac  0.5143  Le Cannet-06-pt.1(07).flac
+     6:50.17       72364028 B   ---   --   ---xx   flac  0.5072  Le Cannet-06-pt.1(08).flac
+     6:46.48       71731340 B   ---   --   ---xx   flac  0.4972  Le Cannet-06-pt.1(09).flac
+     9:17.47       98365388 B   ---   --   ---xx   flac  0.4569  Le Cannet-06-pt.1(10).flac
+     6:48.22       72022988 B   ---   --   ---xx   flac  0.5217  Le Cannet-06-pt.2(1).flac
+     5:54.71       62612636 B   ---   --   ---xx   flac  0.3772  Le Cannet-06-pt.2(2).flac
+     9:33.56      101208956 B   ---   --   ---xx   flac  0.4884  Le Cannet-06-pt.2(3).flac
+     7:38.66       80946476 B   ---   --   ---xx   flac  0.5206  Le Cannet-06-pt.2(4).flac
+     5:42.69       60491132 B   ---   --   ---xx   flac  0.5184  Le Cannet-06-pt.2(5).flac
+   109:10.39     1155512388 B                            0.4895  (15 files)
+=================== 
+=================== 
+=================== 

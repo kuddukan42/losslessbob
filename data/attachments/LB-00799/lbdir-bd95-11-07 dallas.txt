@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-11-07 dallas 
+=================== 
+=================== 
+=================== 
+32036505cb1c2ba182239bb312ff2a06  bd95-11-07.md5
+47da93d7d69ae296c37a364a7e191166  bd95-11-07.txt
+e305fb72ce42c8e93dedff4a5eb6ff6b  bd95-11-07d1t01.shn
+3f8b638fc69afa72ea8962c6da912531  bd95-11-07d1t02.shn
+d37cca8b8658688161b5553ede06ff75  bd95-11-07d1t03.shn
+dad13aa301fa4d3abdfeeb5700d34a50  bd95-11-07d1t04.shn
+51e87b8c60bd4dc77e34587b9d89e434  bd95-11-07d1t05.shn
+09fd55b03a29eb6f8a75e1d4447beda7  bd95-11-07d1t06.shn
+4032386517c536c9c04963dd804030a4  bd95-11-07d1t07.shn
+5652bf908294e03c97f7d6e73568cab8  bd95-11-07d1t08.shn
+7987f1d7fad359868040ff8192cd3a5d  bd95-11-07d1t09.shn
+a80247416766cc971a22e47438f1015b  bd95-11-07d2t01.shn
+f3df00aa17ce8ce772997087eb2af6e1  bd95-11-07d2t02.shn
+a9152e4596fa24eb2c54f902b4f288b7  bd95-11-07d2t03.shn
+aeceedd9557054fdfdcbae1e395e4c9e  bd95-11-07d2t04.shn
+9c62f3317399a3a5457d47289afddf5b  bd95-11-07d2t05.shn
+8d7db93e780113532717767632c761fe  bd95-11-07d2t06.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-11-07 dallas 
+=================== 
+=================== 
+=================== 
+9eea2f4069f8a1c2af87710b2d0be342  [shntool]  bd95-11-07d1t01.wav
+1b56dbf8c1e549c3b15fe4f99dc44adf  [shntool]  bd95-11-07d1t02.wav
+a0ce0a299e16dbc21d1d3bc3b06e9671  [shntool]  bd95-11-07d1t03.wav
+ee4f98f39cb2a930f75b9617fcbc8feb  [shntool]  bd95-11-07d1t04.wav
+05d3a2216b8a5d6a76bbeb8d73deb40c  [shntool]  bd95-11-07d1t05.wav
+eee2a969ba0c0d94319f40307d900f50  [shntool]  bd95-11-07d1t06.wav
+ec707e4d1f941887834ee8befbbe42b6  [shntool]  bd95-11-07d1t07.wav
+67ee90c285eb3f29b8b52e7db75a03fd  [shntool]  bd95-11-07d1t08.wav
+87fc652b16b6bb24bac2df850759bc53  [shntool]  bd95-11-07d1t09.wav
+22a8bf458949303ab8a35aeaef8764d2  [shntool]  bd95-11-07d2t01.wav
+12cc46543440164bd212c647d0e5be79  [shntool]  bd95-11-07d2t02.wav
+d1018566934400c7e7787d34a6fe1690  [shntool]  bd95-11-07d2t03.wav
+19ed3bc59d78620eec99ba0fad1c096c  [shntool]  bd95-11-07d2t04.wav
+d6393a5741d0228b7ff62c07bbb0f36d  [shntool]  bd95-11-07d2t05.wav
+4277351ac2553499c29e572bd5371f4a  [shntool]  bd95-11-07d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-11-07 dallas 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.22       55794188 B   ---   --   ---xx    shn  0.5575  bd95-11-07d1t01.shn
+     6:31.22       69024188 B   ---   --   ---xx    shn  0.5554  bd95-11-07d1t02.shn
+     7:11.40       76122524 B   ---   --   ---xx    shn  0.5762  bd95-11-07d1t03.shn
+     9:04.42       96060428 B   ---   --   ---xx    shn  0.5563  bd95-11-07d1t04.shn
+     8:22.11       88578716 B   ---   --   ---xx    shn  0.5779  bd95-11-07d1t05.shn
+     7:47.17       82418828 B   ---   --   ---xx    shn  0.5821  bd95-11-07d1t06.shn
+    11:24.68      120817580 B   ---   --   ---xx    shn  0.5275  bd95-11-07d1t07.shn
+     8:22.08       88571660 B   ---   --   ---xx    shn  0.5026  bd95-11-07d1t08.shn
+     7:09.25       75734444 B   ---   --   ---xx    shn  0.5224  bd95-11-07d1t09.shn
+     7:42.30       81567404 B   ---   --   ---xx    shn  0.5428  bd95-11-07d2t01.shn
+     9:49.02      103904348 B   ---   --   ---xx    shn  0.5508  bd95-11-07d2t02.shn
+     8:56.58       94686860 B   ---   --   ---xx    shn  0.6115  bd95-11-07d2t03.shn
+     7:05.03       74977100 B   ---   --   ---xx    shn  0.5773  bd95-11-07d2t04.shn
+    12:15.49      129769292 B   ---   --   ---xx    shn  0.5600  bd95-11-07d2t05.shn
+     5:28.44       57962732 B   ---   --   ---xx    shn  0.5932  bd95-11-07d2t06.shn
+   122:26.66     1295990292 B                            0.5582  (15 files)
+=================== 
+=================== 
+=================== 

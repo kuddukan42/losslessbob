@@ -1,0 +1,104 @@
+===================
+===================
+===================
+=== fingerprint.txt
+===================
+===================
+===================
+1 Audio Track.flac:21a7d317f66696abec22ef716ff28e282 Audio Track.flac:b46a605cdd49956cb56f28361de823773 Audio Track.flac:bf90dacb0795c3656200c4413d7148024 Audio Track.flac:f073838c49df900a683ace768bdbd7fa5 Audio Track.flac:d6e4e51075a09d2db6a314d4e396148a6 Audio Track.flac:b524a2f8d47bc48ff939bd931aca83457 Audio Track.flac:771f47640dd6ce00d2c11b1588994dca8 Audio Track.flac:27e72251af77bf6fc1e7b04d3cff99a09 Audio Track.flac:bf60f60b9e02e8b74b2e05bde64bcbfd
+10 Audio Track.flac:4ba014b5f99643b7609770aaaab97d4d11 Audio Track.flac:0a63c31bf43f91a4dd22fba606cd1906
+
+1 Audio Track.flac:e351a52660fb3b6ad73d0e91a40603642 Audio Track.flac:f57e7eff530cd650d2f122e2d022e7e03 Audio Track.flac:64a5e685c8b9dce3c87093b17e3ac6d34 Audio Track.flac:b7f187e9b426d00141374659535060d05 Audio Track.flac:b0b3ce3786fe18031c73fd7e531a3a1f
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     5:54.09       62466812 B   ---   --   ---xx  1 Audio Track.flac     6:27.13       68297420 B   ---   --   ---xx  2 Audio Track.flac     5:48.67       61544828 B   ---   --   ---xx  3 Audio Track.flac     5:15.53       55690700 B   ---   --   ---xx  4 Audio Track.flac     6:47.58       71931260 B   ---   --   ---xx  5 Audio Track.flac     5:55.38       62711420 B   ---   --   ---xx  6 Audio Track.flac     6:33.72       69494588 B   ---   --   ---xx  7 Audio Track.flac     5:25.00       57330044 B   ---   --   ---xx  8 Audio Track.flac     5:38.17       59663228 B   ---   --   ---xx  9 Audio Track.flac
+     8:35.30       90916604 B   ---   --   ---xx  10 Audio Track.flac     6:04.36       64294316 B   ---   --   ---xx  1 Audio Track.flac     6:53.13       72883820 B   ---   --   ---xx  2 Audio Track.flac     5:30.19       58256732 B   ---   --   ---xx  3 Audio Track.flac    12:28.01      131949596 B   ---   --   ---xx  4 Audio Track.flac     7:00.20       74135084 B   ---   --   ---xx  5 Audio Track.flac     8:49.14       93348572 B   ---   --   ---xx  6 Audio Track.flac   109:07.10     1154915024 B                            0.4870  (16 files)
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+North Shore Event Centre
+Glenfield
+Auckland, New Zealand
+
+22 February 2003
+ 
+1.Tweedle Dee & Tweedle Dum
+2.I'll Be Your Baby Tonight
+3.Highway 61 Revisited
+4.You Ain't Goin' Nowhere
+5.Things Have Changed
+6.Cold Irons Bound
+7.It Ain't Me, Babe
+8.Mr. Tambourine Man
+9.Masters Of War
+10.Tangled Up In Blue
+11.Positively 4th Street
+12.Honest With Me
+13.Moonlight
+14.Summer Days
+
+15.Forever Young
+16.All Along The Watchtower
+  
+Concert # 1499 of The Never-Ending Tour. Concert # 9 of the 2003 Tour Down Under. 2003 concert # 9.
+ 
+Concert # 9 with the 15th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bill Burnette (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+ 
+7-10, 15 acoustic with the band.
+1-4, 6, 10, 12-14 Bob Dylan (piano).
+2-4, 10, 15  Bob Dylan (harmonica).
+2, 4 Larry Campbell (pedal steel guitar).
+7 Larry Campbell (cittern).
+12 Larry Campbell (slide guitar).
+
+www.bjorner.com
+
+CEDAR#2
+
+Fingerprint: A number of male voices audible before "Highway 61," including a request to "stand up" and culminating with the words "last night" as the guitars kick in.
+
+Comments: DAT recording: "a little removed from the action, but quite good." Light static d2 t1 0:08-0:18. This may well be an alternate cut of CEDAR 1.
+
+Time: disc 1  73:06      disc 2  35:42
+
+From CEDAR - The Catalogue of Extant Dylan Audio Recordings  Winter 2003 Shows
+
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+ce4cf2b4401159d17138ce7e00b8fbfa *1 Audio Track.flac
+d3703afca38cdb581f863a7d7b6f0288 *10 Audio Track.flac
+a9a458148d56521074b10c368bc63202 *11 Audio Track.flac
+2af507ebe62aa025939f11bd5c5763e0 *2 Audio Track.flac
+d40e011e2cdb4527114f687a5a25b8d6 *3 Audio Track.flac
+b082bebc9d323c6ff1e23a2de3be4399 *4 Audio Track.flac
+b7d885da7c959a48eef06ed0a11e2008 *5 Audio Track.flac
+5188f205340f27cc3ea79a25126a3952 *6 Audio Track.flac
+0f2d717ab6b50e8e25597e90aeb073b0 *7 Audio Track.flac
+7eb8d0805b89bc653dffb4b618c1a931 *8 Audio Track.flac
+fb2c04d6611f459eff69dc6abe2a1664 *9 Audio Track.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+b87b1055751c23829fa4cb8f71e18714 *1 Audio Track.flac
+da0f286c8d2d41e84b39e6a91dcbe931 *2 Audio Track.flac
+5aee1cac503194e3f8e47085018f3baf *3 Audio Track.flac
+bc7f88c33ad9d3900c0bca0eb9b11aea *4 Audio Track.flac
+e3bdf3eca421e3a53ccc4dd0db9a0fc5 *5 Audio Track.flac
+
+===================
+===================
+===================

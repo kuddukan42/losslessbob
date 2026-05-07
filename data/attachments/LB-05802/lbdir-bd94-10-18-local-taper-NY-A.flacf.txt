@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-18-local-taper-NY-A.flacf 
+=================== 
+=================== 
+=================== 
+57edf1a9026b2a45f816ed92022be8a1  bd-1994-10-18-info.txt
+afe2ff1d26a23ad851ab10a96ec3e9b7  bd-19941018-NYC.md5
+f5f837f0db5e5719228c4593e5ae638a  bd1994-10-18-d1t01.flac
+6b85037a2355905e88d30c446c2c740b  bd1994-10-18-d1t02.flac
+639172a4dec0ad997bcd3c61d4a6e676  bd1994-10-18-d1t03.flac
+62386eafa7bbed718399c655070d85b2  bd1994-10-18-d1t04.flac
+f3b0c28188a6d8673c69412f592819a9  bd1994-10-18-d1t05.flac
+4e317e7660785470ccb095d5ddfe76f1  bd1994-10-18-d1t06.flac
+7d54e14692bc62590c25b5e4b1f9d018  bd1994-10-18-d1t07.flac
+eed318fbd478f460c3d66ab046f8599e  bd1994-10-18-d1t08.flac
+2de3faabc6b782fbb1f4b6f38194dd62  bd1994-10-18-d1t09.flac
+a3ce1b379ab7ad7f0d28c6dc565acc4e  bd1994-10-18-d1t10.flac
+9d3706925e801b1d16c4b6eec257be90  bd1994-10-18-d1t11.flac
+392df30289a0b8cf70e36b8e6e539c9a  bd1994-10-18-d2t01.flac
+b998875dcbadea21ad2ae345d0ce1be4  bd1994-10-18-d2t02.flac
+f61f21c9a4a13cdcb102c4e6079cecd0  bd1994-10-18-d2t03.flac
+57dbc8ebfd3b366fff7a23de04ef177d  bd1994-10-18-d2t04.flac
+a629fed3c556713ae17330f5bd1235fd  bd1994-10-18-d2t05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-18-local-taper-NY-A.flacf 
+=================== 
+=================== 
+=================== 
+bd1994-10-18-d1t01.flac:e76eba082193345c75cec33b408bbd90
+bd1994-10-18-d1t02.flac:a0dba1f4f41cf11c275f690590cf2be8
+bd1994-10-18-d1t03.flac:366d4fdce9c6889987be86405e137f3b
+bd1994-10-18-d1t04.flac:571b2fafbd03933a80e3b6b4e12a3bba
+bd1994-10-18-d1t05.flac:0052e3c2a8af719c15dc6be7d123a9e3
+bd1994-10-18-d1t06.flac:7c0ad7acf98451fe484acdf184dd7374
+bd1994-10-18-d1t07.flac:df008f0b031940bc13961159eefdec9d
+bd1994-10-18-d1t08.flac:b44b6f2d355764b0374da977b9de3e22
+bd1994-10-18-d1t09.flac:179b1b7c5809c0430877b09462aec6a5
+bd1994-10-18-d1t10.flac:a3260db8312f33873bc1c07cf1c9bbd7
+bd1994-10-18-d1t11.flac:7d6fe1cf04488049dcf7ae7833136bbb
+bd1994-10-18-d2t01.flac:dfcd947510f5564189473b7cd6ad7a19
+bd1994-10-18-d2t02.flac:54a4f5518a046d5b8e31e80f5c883e78
+bd1994-10-18-d2t03.flac:4c3dc1e8f875be0673a892c1eb2936b1
+bd1994-10-18-d2t04.flac:6238b9c7eae4b392656c14c369d2f253
+bd1994-10-18-d2t05.flac:3ea78c22be21bbb952a30d5759ee1bf6
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-10-18-local-taper-NY-A.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.03        6886700 B   ---   --   ---xx   flac  0.4665  bd1994-10-18-d1t01.flac
+     7:21.57       77926508 B   ---   --   ---xx   flac  0.5870  bd1994-10-18-d1t02.flac
+     6:31.36       69057116 B   ---   --   ---xx   flac  0.5828  bd1994-10-18-d1t03.flac
+     5:51.04       61925852 B   ---   --   ---xx   flac  0.6129  bd1994-10-18-d1t04.flac
+     7:36.36       80523116 B   ---   --   ---xx   flac  0.5860  bd1994-10-18-d1t05.flac
+     9:17.07       98271308 B   ---   --   ---xx   flac  0.5824  bd1994-10-18-d1t06.flac
+     9:07.59       96629612 B   ---   --   ---xx   flac  0.5450  bd1994-10-18-d1t07.flac
+     5:56.32       62873708 B   ---   --   ---xx   flac  0.4436  bd1994-10-18-d1t08.flac
+     5:27.02       57687548 B   ---   --   ---xx   flac  0.4405  bd1994-10-18-d1t09.flac
+     6:22.52       67507148 B   ---   --   ---xx   flac  0.5114  bd1994-10-18-d1t10.flac
+     7:27.18       78893180 B   ---   --   ---xx   flac  0.5667  bd1994-10-18-d1t11.flac
+     6:18.27       66742748 B   ---   --   ---xx   flac  0.5777  bd1994-10-18-d2t01.flac
+    11:18.13      119629820 B   ---   --   ---xx   flac  0.5370  bd1994-10-18-d2t02.flac
+    10:21.10      109567964 B   ---   --   ---xx   flac  0.5842  bd1994-10-18-d2t03.flac
+     7:27.20       78897884 B   ---   --   ---xx   flac  0.5761  bd1994-10-18-d2t04.flac
+     7:16.00       76910444 B   ---   --   ---xx   flac  0.4952  bd1994-10-18-d2t05.flac
+   114:19.01     1209930656 B                            0.5514  (16 files)
+=================== 
+=================== 
+=================== 

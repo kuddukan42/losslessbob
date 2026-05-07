@@ -1,0 +1,58 @@
+===================
+===================
+===================
+=== md5 for: bd95-07-27-d.flacf
+===================
+===================
+===================
+2d7773832212a45b945bf666c78ef25c *bd1995-07-27-Montpellier.md5
+10a843ceea6bde1830594d0472d38046 *bd1995-07-27-Montpellier01.flac
+e26a395e5c9b6bced9a2fee2b61da6a7 *bd1995-07-27-Montpellier02.flac
+df6177febd8d9d7c61364bd73f06ed87 *bd1995-07-27-Montpellier03.flac
+f48fe6b2f150294c7c0d53bcaafb86b0 *bd1995-07-27-Montpellier04.flac
+7851a171bfbaa1cca9a72061575df7d1 *bd1995-07-27-Montpellier05.flac
+889617f6b87dae5b9fabd50c59848dca *bd1995-07-27-Montpellier06.flac
+0175389f7eaa6c42d498ea3db1bb9e7f *bd1995-07-27-Montpellier07.flac
+26368213e6e3bbc07fa25677af49e8ac *bd1995-07-27-Montpellier08.flac
+0aaa02bb70c9995a3cdc09fc41ff67cf *bd1995-07-27-Montpellier09.flac
+8a91181cb9bca9d6dcb74e05607aec6d *bd1995-07-27-Montpellier10.flac
+fcb523e81b261d643a7d25822bad99f1 *note.txt
+===================
+===================
+===================
+=== ffp for: bd95-07-27-d.flacf
+===================
+===================
+===================
+bd1995-07-27-Montpellier01.flac:891814113e30b0f8ef99ad60dd5d3ae1
+bd1995-07-27-Montpellier02.flac:bcbfedd4f0a690f9ec13afd7a331eecd
+bd1995-07-27-Montpellier03.flac:4e045885a5d8ec7315dae16792ecc40a
+bd1995-07-27-Montpellier04.flac:f29247e5dd325aa67dead11d4927eea6
+bd1995-07-27-Montpellier05.flac:3a211e6c26c01d87865fffdcd8379c52
+bd1995-07-27-Montpellier06.flac:9ef18ee2863a1b3891a3df67d0c1f5be
+bd1995-07-27-Montpellier07.flac:4e41eb851cd091e60f6c83611eea94dd
+bd1995-07-27-Montpellier08.flac:77ea1a341a4f43319dafd5d1f5848948
+bd1995-07-27-Montpellier09.flac:7c8e51a144f60aa1bafc372ce54ddf2f
+bd1995-07-27-Montpellier10.flac:7fbb957846826f93cf6ea2092e8c3cf5
+===================
+===================
+===================
+=== shntool len for: bd95-07-27-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.47       58322588 B   ---   --   ---xx   flac  0.4564  bd1995-07-27-Montpellier01.flac
+     6:11.08       65463260 B   ---   --   ---xx   flac  0.4306  bd1995-07-27-Montpellier02.flac
+     5:54.47       62556188 B   ---   --   ---xx   flac  0.4465  bd1995-07-27-Montpellier03.flac
+     5:27.28       57748700 B   ---   --   ---xx   flac  0.4301  bd1995-07-27-Montpellier04.flac
+     6:26.70       68255084 B   ---   --   ---xx   flac  0.4542  bd1995-07-27-Montpellier05.flac
+     9:09.27       96907148 B   ---   --   ---xx   flac  0.4194  bd1995-07-27-Montpellier06.flac
+     7:29.55       79333004 B   ---   --   ---xx   flac  0.4328  bd1995-07-27-Montpellier07.flac
+     5:38.15       59658524 B   ---   --   ---xx   flac  0.4877  bd1995-07-27-Montpellier08.flac
+     6:14.18       66015980 B   ---   --   ---xx   flac  0.4810  bd1995-07-27-Montpellier09.flac
+     6:05.31       64459644 B   -b-   --   ---xx   flac  0.5060  bd1995-07-27-Montpellier10.flac
+    64:07.46      678720120 B                            0.4524  (10 files)
+===================
+===================
+===================

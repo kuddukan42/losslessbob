@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-Meeting-again-in-2003-c.flacf 
+=================== 
+=================== 
+=================== 
+b6e7fbf79adcb1c46099660e33b0404c  artwork\back.jpg
+6548e7133117d29b2860e655e95b57ea  artwork\front.jpg
+e6d0ff9a46ea32575f49d6a8eb0e33cb  DigiFlawFinder-bd07-03-Meeting-again-in-2003-c.flacf.wavf.html
+2e4cc51475f2e3f258f74995e336d79d  flac\d01t01.flac
+2e8624c8f83b2c5d52f8f7b11ac6acd5  flac\d01t02.flac
+399f197502974ead9cb7122ada869f12  flac\d01t03.flac
+5294803cfefdce4d14b047778bf42ae8  flac\d01t04.flac
+166d4ba2e34613a2681479dd003e2ce2  flac\d01t05.flac
+69c5d7d6b7cbb75d7174294047568de0  flac\d01t06.flac
+95b62cfcfe20fff35cb97189bbb9073d  flac\d01t07.flac
+a05ce1c44cb828af36dfc4237a833127  flac\d01t08.flac
+783a134ecc19af093b088edbe22a12e4  flac\d01t09.flac
+b73a399544c7cd339b0d8198d55077db  flac\d01t10.flac
+ca34ab8debfaa0387cd49f7a16e279c9  flac\d01t11.flac
+a4ad1b6b52470c53aadd98e06beaa7e2  flac\d02t01.flac
+c9c726d11fc6fd6283ecfefe702d04c0  flac\d02t02.flac
+26728ab76b1b5d536c6869dcbbb6e2f0  flac\d02t03.flac
+8eb5c9261b15ff19e905d456fff23870  flac\d02t04.flac
+c8860c85640e8fd054ef1f4d913d8f41  flac\d02t05.flac
+beb8d60fc423cfd8d698cbbade11d23a  flac\d02t06.flac
+6c277f3cd48a85ee9a1b9a8273ec1526  flac\d02t07.flac
+462c66f18ae3fa5e356522a846771c17  flac\d02t08.flac
+0b01f568209245d81c001e6bb1a3cb02  flac\d02t09.flac
+778006799e07b9bab6775f405d66748a  flac\d02t10.flac
+076d93a8d6eb74dea8b56600878ded26  flac\d02t11.flac
+6a666ff712651f609e6c80864990f05f  flac\meeting_again.ffp
+471dcc0757003dc36f98017d18a7a9e4  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-07-Meeting-again-in-2003-c.flacf\flac 
+=================== 
+=================== 
+=================== 
+d01t01.flac:7269bf897edd1a957db9db6777e0bdc5
+d01t02.flac:20f84ce5943f8d2f6736cb67c7604d71
+d01t03.flac:135d5e827b4c0bbd6c7eb8aa5078138c
+d01t04.flac:ee3d4e43579604e576a1c01b2812cbfc
+d01t05.flac:0c4c0c8ee9cf8db91767161356795328
+d01t06.flac:70f58db4ace4b2c7fbd2fd506e10da43
+d01t07.flac:deead039966148d4546d6798382fce3f
+d01t08.flac:04a47d8535a32d0f0ef592a502017369
+d01t09.flac:e02c5f513235b5ede86c5ba025e9a6f6
+d01t10.flac:70b5246a763d24d93bb04e88a33990d1
+d01t11.flac:95c3429a87e8f73597e939620f97db36
+d02t01.flac:7536e3367562b9c0eb99316aa5e484df
+d02t02.flac:a606ed7bb883c1f123efd53efb6780ec
+d02t03.flac:9caa90592b63268ca66ac386c01def35
+d02t04.flac:e73189962ca96e97a8ff33e1ee5b20ab
+d02t05.flac:e868cfdfbda6097dada6bd8b8a269440
+d02t06.flac:50971af80bfa05fe63105b9ea9994e95
+d02t07.flac:15b14fca7f1c49bd19e207731bb2287f
+d02t08.flac:81401315a8b6ae58734dd1e9fdccaf73
+d02t09.flac:7dfa2982c2a0d446d66be468f9e24ed4
+d02t10.flac:bedbd114f6058ac7f20c665911f38ba5
+d02t11.flac:38e1f7560f5973250a1cb4c63deae709
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-Meeting-again-in-2003-c.flacf\flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.00       60858044 B   ---   --   ---xx   flac  0.5569  d01t01.flac
+     6:40.00       70560044 B   ---   --   ---xx   flac  0.5196  d01t02.flac
+     9:06.00       96314444 B   ---   --   ---xx   flac  0.5168  d01t03.flac
+     5:14.00       55389644 B   ---   --   ---xx   flac  0.5534  d01t04.flac
+     7:26.00       78674444 B   ---   --   ---xx   flac  0.5591  d01t05.flac
+     7:29.00       79203644 B   ---   --   ---xx   flac  0.5760  d01t06.flac
+     6:34.00       69501644 B   ---   --   ---xx   flac  0.5541  d01t07.flac
+     8:30.00       89964044 B   ---   --   ---xx   flac  0.5461  d01t08.flac
+     5:06.00       53978444 B   ---   --   ---xx   flac  0.5775  d01t09.flac
+     7:21.00       77792444 B   ---   --   ---xx   flac  0.5226  d01t10.flac
+     7:44.73       82021340 B   ---   --   ---xx   flac  0.4734  d01t11.flac
+     7:02.00       74440844 B   ---   --   ---xx   flac  0.5108  d02t01.flac
+     6:35.49       69793292 B   ---   --   ---xx   flac  0.5632  d02t02.flac
+     7:23.51       78265196 B   ---   --   ---xx   flac  0.5634  d02t03.flac
+     4:28.35       47357564 B   ---   --   ---xx   flac  0.5547  d02t04.flac
+     7:14.29       76625852 B   ---   --   ---xx   flac  0.5394  d02t05.flac
+     6:22.21       67434236 B   ---   --   ---xx   flac  0.5179  d02t06.flac
+     6:24.20       67784684 B   ---   --   ---xx   flac  0.4730  d02t07.flac
+     8:37.19       91243532 B   ---   --   ---xx   flac  0.5601  d02t08.flac
+     6:57.58       73695260 B   ---   --   ---xx   flac  0.5353  d02t09.flac
+     9:41.39      102580172 B   ---   --   ---xx   flac  0.5505  d02t10.flac
+     6:50.17       72364028 B   ---   --   ---xx   flac  0.5709  d02t11.flac
+   154:33.36     1635842840 B                            0.5399  (22 files)
+=================== 
+=================== 
+=================== 

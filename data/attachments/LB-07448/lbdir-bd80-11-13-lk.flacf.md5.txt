@@ -1,0 +1,29 @@
+ed19b031fcc069aa4ff5c54a6687cf4a  D1\01 G Ride.flac
+7a235aea16c6ed5326a3255ed7023fb1  D1\02 G Rain.flac
+6d0b73390414875e8e9dfd7d1a4aec0d  D1\03 G House.flac
+7c3cd510cf1ca91b83c1e424c994031d  D1\04 G Grace.flac
+cb2c94e200a5079ce15104d2f3193790  D1\05 Gotta Serve.flac
+d052026523bf89c06d39097468d507e3  D1\06 Believe.flac
+8fc8c90689d265455ac0286404bd65ad  D1\07 LRS.flac
+defb165ce9bc445ce890bb68b9e43db4  D1\08 G Right.flac
+1d5bfd935f998b483d2fc51eac765ca9  D1\09 Animals.flac
+8cad34986e3b5f50ced5bff2c1d6886d  D1\10 Ramona.flac
+8e2e48dc820d9b68c08baf045cd0b0a4  D1\11 Hell.flac
+a4d54927afbb1a5f5e792679dad2aeb1  D1\12 GirlNC.flac
+50668cacd099b5e5b5c88e21f89cb1ad  D1\13 Slow Train.flac
+464dc317fe3fa27a54d0f08b65aaf0f2  D1\14 G Heaven.flac
+f455adee4bde7fadbedea9a1f23982c6  D1\15 AM&J.flac
+9258d87a09d1e85101880157d79b4445  D1\16 Between.flac
+e47040a38a63c637da1b32e4982394a4  D1\D1.md5
+1ec06b7fa6c701ae72f6e489da70e77b  D2\17 Covenant.flac
+181c96bf41cb0c3d8fccab51ecd19051  D2\18 Solid Rock.flac
+230bb82b5b396693070116cd8c50158b  D2\19 Do for Yoy.flac
+9e35dd6798e06ffb5a8ba85155f5ed09  D2\20 Groom.flac
+865cb35e4490c5944f658881f31e2c7d  D2\21 JLAW.flac
+df3dbe667812bac2079d6a145f55e0a1  D2\22 Senor.flac
+ab6c2a3c85deee5f7fcf6b5d03efd00e  D2\23 Garden.flac
+8b7ff4d0573a285cc89c993f6b392dc6  D2\24 Blowin.flac
+4c80fa48e97e7ff760f9a9d8ec2313db  D2\25 City of Gold.flac
+138995ffcaa2c1c8120efab60c84d007  D2\26 Aint Me.flac
+3ae55e2d81bb2722544047d7955f11f1  D2\D2.md5
+1446bd6eee1953e45a613e4944e96844  Les Kokay Fall 1980 tour DVD 1.md5

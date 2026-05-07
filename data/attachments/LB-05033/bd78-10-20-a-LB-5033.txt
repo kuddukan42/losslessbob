@@ -1,0 +1,10 @@
+Bob Dylan, 10/20/78, Richfield, Ohio, Richfield Coliseum, 2CDR
+
+LB-5033, (73min+62min), version "a", Trade CD > EAC > FLAC > HD > Hungercity > You, This is possible from the same source as LB-2863 based on times and track setup, but it is on a traded disk. I don't know when JTT did this transfer and I have not traded in quite a few years so I can't be sure.; bittorrent download 06/07; this is a close eac match to jtt LB-2863 on d1t3; this did not have the gaps on track boundaries on d2 except begin of d2t5; tracking a little different on d2 (did not listen to all of this)
+
+analog drop d2t11 7:01
+
+Disk 1 72:25.05, 1. My Back Pages, 2. I'm Ready (Willie Dixon), 3. Mr. Tambourine Man, 4. Shelter From The Storm, 5. It's All Over Now, Baby Blue, 6. Tangled Up In Blue, 7. Ballad Of A Thin Man, 8. Maggie's Farm, 9. I Don't Believe You (She Acts Like We Never Have Met), 10. Like A Rolling Stone, 11. I Shall Be Released, 12. Going, Going, Gone, 13. The Times They Are A-Changin', 14. It Ain't Me, Babe, 15. One More Cup Of Coffee (Valley Below), Disk 2 61:55.05, 16. Blowin' In The Wind, 17. Girl From The North Country, 18. Where Are You Tonight? (Journey Through Dark Heat), 19. Masters Of War, 20. Just Like A Woman, 21. Simple Twist Of Fate, 22. All Along The Watchtower, 23. All I Really Want To Do, Band Introductions, 24. It's Alright, Ma (I'm Only Bleeding), 25. Forever Young, 26. Changing Of The Guards
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

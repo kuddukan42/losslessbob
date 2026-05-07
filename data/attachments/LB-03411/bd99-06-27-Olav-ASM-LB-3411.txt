@@ -1,0 +1,11 @@
+Bob Dylan, 6/27/99, Phoenix, Arizona, Blockbuster Desert Sky Pavillion, 2CDR
+
+LB-3411, (62min+33min), Olav ASM; Lineage: FLAC CD-R > WAV > TrackS 24 > masters > FLAC (aligned on sector boundaries) > You, T-RackS 24: volume boosted 2.8dB / no other adjustments, Taper: no info, Note: FLAC frontend fingerprints included as 2 text files, Listen to the samples and decide for yourself; it's your prerogative; bittorrent download 12/05; lots of background talking d1t1, d1t2, d1t3, d1t11, and a little on most songs ; excellent sound [A]
+
+square wav static d1t1 0:12; discontinuity pop d2t6 0:00
+
+CD1
+01. Cocaine Blues (trad.), 02. Mr. Tambourine Man, 03. Desolation Row, 04. One Too Many Mornings, 05. Tangled Up In Blue, 06. All Along The Watchtower, 07. Make You Feel My Love, 08. Watching The River Flow, 09. Not Dark Yet, 10. (band intro), 11. Highway 61 Revisited, 12. Like A Rolling Stone, 13. Don't Think Twice, It's All Right, 14. The Sound Of Silence (Paul Simon), 15. I Walk The Line (Johnny Cash), 16. Blue Moon Of Kentucky (Bill Monroe), 17. Knockin' On Heaven's Door
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

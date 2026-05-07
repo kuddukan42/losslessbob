@@ -1,0 +1,25 @@
+5d53f7a04080d66a07a0cc933797d647  Disc One\Disc One.ffp
+2bccbcbfb0ee4271eb4c0f505adf6492  Disc One\Disc01Track01 Dylan 15.06.00.flac
+4d364c41970b183ead251595694abbd5  Disc One\Disc01Track02 Dylan 15.06.00.flac
+e720a8a0b3530dfcdbc5fdf85a78f56d  Disc One\Disc01Track03 Dylan 15.06.00.flac
+18d0443dc2a32161bb5f89ebb06236fc  Disc One\Disc01Track04 Dylan 15.06.00.flac
+64ae34a7a4dab7e8ef63feeb355e3006  Disc One\Disc01Track05 Dylan 15.06.00.flac
+18083229d604085ae44e05c3e55f0aa3  Disc One\Disc01Track06 Dylan 15.06.00.flac
+d5404c6cb3b837db20a0f168291a81d4  Disc One\Disc01Track07 Dylan 15.06.00.flac
+cee81da04c793a16492322a7a6989eb1  Disc One\Disc01Track08 Dylan 15.06.00.flac
+c0c447762d06efcd5013c2eeaeb85372  Disc One\Disc01Track09 Dylan 15.06.00.flac
+d37b0fcbf090c41c58320369624858ca  Disc One\Disc01Track10 Dylan 15.06.00.flac
+f8eb733061f61b223e2ef0cf59e0e3fa  Disc Two\Disc Two.ffp
+5df6e47f122c25fcb788a80b9d1a51b8  Disc Two\Disc02Track01 Dylan 15.06.00.flac
+1b6f677598d545ac6cc1780f315f0b19  Disc Two\Disc02Track02 Dylan 15.06.00.flac
+59d69542ba7c408145d6e2361dbe46fc  Disc Two\Disc02Track03 Dylan 15.06.00.flac
+29786b9c3f131d343dde2763a46c8943  Disc Two\Disc02Track04 Dylan 15.06.00.flac
+79d8f3660b4229f6d0984b71f36c4f8e  Disc Two\Disc02Track05 Dylan 15.06.00.flac
+dc898a04f5bb2f1c96d8c047afca0153  Disc Two\Disc02Track06 Dylan 15.06.00.flac
+d867bccf0d4222af19a0b81e3c7370ab  Disc Two\Disc02Track07 Dylan 15.06.00.flac
+e0456aa93e1f6582c21b02bb0b5e1684  Disc Two\Disc02Track08 Dylan 15.06.00.flac
+3a08251e1315c97fa271ed27487a55b1  Dylan - Portland June 15th 2000.md5
+dd8b6bde3ff4aa69962f591595327955  Dylan - Portland June 15th 2000.txt
+9667019d670dafccbac3bea9980ff7ce  Dylan - Portland June 15th 2000_Info.txt
+cf3eab1d64dfab690fd4cb6e8a47ed06  Portland, Oregon 15.06.2000 - F.jpg
+ff12490ae01f7dea0286aa7dcaeac97d  Portland, Oregon 15.06.2000 - R.jpg

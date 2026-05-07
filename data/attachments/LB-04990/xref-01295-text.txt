@@ -1,0 +1,120 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Heymann Performing Arts Center
+Lafayette, Louisiana
+13 September 1992
+ 
+ 
+1.   Everything Is Broken
+2.   Pretty Peggy-O (trad. arr. Bob Dylan)
+3.   All Along The Watchtower
+4.   Under The Red Sky
+5.   Tangled Up In Blue
+6.   She Belongs To Me
+7.   Silvio (Bob Dylan & Robert Hunter)
+8.   Little Moses (Bert A. Williams/Earle C. Jones)
+9.   Boots Of Spanish Leather
+10.   The Lonesome Death Of Hattie Carroll
+11.   It's Alright, Ma (I'm Only Bleeding)
+12.   Unbelievable
+13.   Man In The Long Black Coat
+14.   Simple Twist Of Fate
+15.   Maggie's Farm
+
+16.   Ballad Of A Thin Man
+17.   Highway 61 Revisited
+18.   Girl From The North Country
+ 
+ 
+Concert # 436 of The Never-Ending Tour.  Concert # 20 of the 1992 Late Summer Tour Of US And Canada. 1992 concert # 72.
+ 
+Concert # 6 with the 8th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Winston Watson (drums & percussion).
+ 
+8, 9, 18  Bob Dylan (acoustic guitar & vocal).
+ 
+10  Bob Dylan (acoustic guitar & vocal), Tony Garnier (bass).
+
+ 
+11  Bob Dylan (acoustic guitar & vocal), Tony Garnier (bass), Ian Wallace (drums).
+ 
+1, 3-5, 9, 10, 13, 14, 18  Bob Dylan harmonica.
+ 
+5  Bucky Baxter (mandolin).
+ 
+BobTalk:
+ 
+Thank you everybody! Give my band a hand!! (after Maggie's Farm).
+ 
+6 new songs (33%) compared to previous concert. No new songs for this tour.
+ 
+Stereo audience recording, 120 minutes.
+ 
+Session info updated 15 December 1992.
+
+/www.bjorner.com
+
+trade shn > xAct > wav > flac level 8
+
+fingerprint
+01 - Traccia Audio.flac:84409796e96e3957e82a3ff79bfd919002 - Traccia Audio.flac:7d9d0912031255479296e9a5c0671b7603 - Traccia Audio.flac:f7ca9b6e886297de3dabd81a820df1d404 - Traccia Audio.flac:84f276bdbf9a9a0b0731edf4f4929cec05 - Traccia Audio.flac:14ea93e094e4b4eaf1888c253a58b84206 - Traccia Audio.flac:9e738010ad330917144beb0ba5d6814107 - Traccia Audio.flac:68fab23d5ede382de9545bddc4db59cf08 - Traccia Audio.flac:8349cf169c41b30763a13011e13b40ba09 - Traccia Audio.flac:998da143cbe1464647c0555d35c7351110 - Traccia Audio.flac:257581459469c41222e79279a2040cef11 - Traccia Audio.flac:da76874f184ef178ad4edf1fbac620cf
+
+01 - Traccia Audio.flac:c00b970e759220da2ccbcfb3b357a13002 - Traccia Audio.flac:1ca5c62db01419d1bbf4f1ecb8aaf4cf03 - Traccia Audio.flac:f405c5f712a12492a8ebc3220785d3ed04 - Traccia Audio.flac:3729004cfd0a641feb0084f52176514005 - Traccia Audio.flac:61b9d6725d2d36bc38665a9d86e82d9006 - Traccia Audio.flac:df90e1b3f0438bf840fe5bf37feb4e7507 - Traccia Audio.flac:2d8410e60a3271248057fbcc569469d4
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 - Traccia Audio.flac:84409796e96e3957e82a3ff79bfd919002 - Traccia Audio.flac:7d9d0912031255479296e9a5c0671b7603 - Traccia Audio.flac:f7ca9b6e886297de3dabd81a820df1d404 - Traccia Audio.flac:84f276bdbf9a9a0b0731edf4f4929cec05 - Traccia Audio.flac:14ea93e094e4b4eaf1888c253a58b84206 - Traccia Audio.flac:9e738010ad330917144beb0ba5d6814107 - Traccia Audio.flac:68fab23d5ede382de9545bddc4db59cf08 - Traccia Audio.flac:8349cf169c41b30763a13011e13b40ba09 - Traccia Audio.flac:998da143cbe1464647c0555d35c7351110 - Traccia Audio.flac:257581459469c41222e79279a2040cef11 - Traccia Audio.flac:da76874f184ef178ad4edf1fbac620cf
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+e77576d0219c5a7000b468d897690ae1 *01 - Traccia Audio.flac
+1fb2ff59071cc3fefb6cd74cbb0fc1e7 *02 - Traccia Audio.flac
+3704ad3fac389c31720e8c4b80495199 *03 - Traccia Audio.flac
+d7871b842a35c9607d688df495610251 *04 - Traccia Audio.flac
+93cfa17fbc2802367373440b9e6ede5f *05 - Traccia Audio.flac
+d4450fc78ac1f79f2c96d960a9c3caec *06 - Traccia Audio.flac
+7743c1d71ba3a186030a41f9ee49e47b *07 - Traccia Audio.flac
+a137215489d3266b1b4c193444d1ae1d *08 - Traccia Audio.flac
+46186effd8a66eabba93d9657a434745 *09 - Traccia Audio.flac
+7aa3a93e3068b29c9e0cc7998cb25bd3 *10 - Traccia Audio.flac
+92998e0def166470fd4c58fb701e56d4 *11 - Traccia Audio.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 - Traccia Audio.flac:c00b970e759220da2ccbcfb3b357a13002 - Traccia Audio.flac:1ca5c62db01419d1bbf4f1ecb8aaf4cf03 - Traccia Audio.flac:f405c5f712a12492a8ebc3220785d3ed04 - Traccia Audio.flac:3729004cfd0a641feb0084f52176514005 - Traccia Audio.flac:61b9d6725d2d36bc38665a9d86e82d9006 - Traccia Audio.flac:df90e1b3f0438bf840fe5bf37feb4e7507 - Traccia Audio.flac:2d8410e60a3271248057fbcc569469d4
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+a1a1671706186921a6a2c9be89ab01d0  [shntool]  01 - Traccia Audio.flac
+3684e90f7fd2b2d8fac887ce77b02c56  [shntool]  02 - Traccia Audio.flac
+dbfd9228355852db90e4b221de0a569f  [shntool]  03 - Traccia Audio.flac
+59dfa0864687eb7d2b1e80b2cc0c13f2  [shntool]  04 - Traccia Audio.flac
+a73ffa12555c4dc695bbdeea4e3def8f  [shntool]  05 - Traccia Audio.flac
+e447b3e84d8f6e2026b13b4543ccc16f  [shntool]  06 - Traccia Audio.flac
+d4bb7857d68dc0407409179f82671c71  [shntool]  07 - Traccia Audio.flac
+
+===================
+===================
+===================

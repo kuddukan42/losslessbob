@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd64-folk-rogue.flacf 
+=================== 
+=================== 
+=================== 
+6c5792f98e9cdadd2ef0bbaf195fa786  bd64-folk-rogue.flacf.md5
+9eee9e919bf14331c7a7cd861f43d390  bd64-folk-rougue-t01.flac
+24b688f48e8d3748105a877162c50ab5  bd64-folk-rougue-t02.flac
+ce5b4608a7b82c64fe9d948f3d7a27ed  bd64-folk-rougue-t03.flac
+d9cd33ccfa2fe9b7054931a87d335b3b  bd64-folk-rougue-t04.flac
+552fbdf72bf4e1709364300e711ccfe7  bd64-folk-rougue-t05.flac
+82e60fc08fe44e830a6d4482accee8e6  bd64-folk-rougue-t06.flac
+0f26fadbb966d84643b6f2015fec1d1c  bd64-folk-rougue-t07.flac
+73f4ef2d42079b3eb3a7f03d5e207580  bd64-folk-rougue-t08.flac
+f306ae416c73ebbb8e9424465aa686c1  bd64-folk-rougue-t09.flac
+771c9f74b0865ea5a4877d9ef174da56  bd64-folk-rougue-t10.flac
+62f7c7e185f2ca50295b461c28a175a7  bd64-folk-rougue-t11.flac
+44241a09656961329130613dee011b03  bd64-folk-rougue-t12.flac
+bf4dfcf831485ec87af99afd80a975f8  bd64-folk-rougue-t13.flac
+1f7bbb40c54b0e892444d025390f7d24  bd64-folk-rougue-t14.flac
+f2c6c884d107e70ba0f23c67d7f5d819  bd64-folk-rougue-t15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd64-folk-rogue.flacf 
+=================== 
+=================== 
+=================== 
+bd64-folk-rougue-t01.flac:143807e0494f064bb74d0a600333e201
+bd64-folk-rougue-t02.flac:05f85504037eb0831b1530e71dcbc769
+bd64-folk-rougue-t03.flac:8d8770df4aa5c36e5c1ba210dd084551
+bd64-folk-rougue-t04.flac:6299ade4275b788b160e66523925cc3a
+bd64-folk-rougue-t05.flac:c845fcb4368bb5130a72c47ac37e9885
+bd64-folk-rougue-t06.flac:495677faece3a51fd99a67b65f231e98
+bd64-folk-rougue-t07.flac:319e2b21b435ec28479e04674b9cea15
+bd64-folk-rougue-t08.flac:20fb335224b5b16b3af710127e82f426
+bd64-folk-rougue-t09.flac:683f0f2771e199653c557aefcac21907
+bd64-folk-rougue-t10.flac:b40ef7a5c3476a3c8140cd12087e0816
+bd64-folk-rougue-t11.flac:215e2dc48587cd739555c53e95dc21b6
+bd64-folk-rougue-t12.flac:cead1f37bad9d95612422e87d9652888
+bd64-folk-rougue-t13.flac:a7fa757188baf7908c1d4dbbe3cd5d89
+bd64-folk-rougue-t14.flac:a4de57252e0317e7568273d4d86ab762
+bd64-folk-rougue-t15.flac:d4a96665b8724626d41553c26605a0dc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd64-folk-rogue.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:34.22       37801388 B   ---   --   ---xx   flac  0.5388  bd64-folk-rougue-t01.flac
+     4:07.20       43617884 B   ---   --   ---xx   flac  0.5542  bd64-folk-rougue-t02.flac
+     4:31.04       47813852 B   ---   --   ---xx   flac  0.5336  bd64-folk-rougue-t03.flac
+     7:25.22       78549788 B   ---   --   ---xx   flac  0.5340  bd64-folk-rougue-t04.flac
+     7:57.61       84286316 B   ---   --   ---xx   flac  0.5460  bd64-folk-rougue-t05.flac
+     3:32.11       37422716 B   ---   --   ---xx   flac  0.4915  bd64-folk-rougue-t06.flac
+     1:36.40       17028524 B   ---   --   ---xx   flac  0.5845  bd64-folk-rougue-t07.flac
+     6:44.45       71371484 B   ---   --   ---xx   flac  0.5787  bd64-folk-rougue-t08.flac
+     5:51.30       61987004 B   ---   --   ---xx   flac  0.6061  bd64-folk-rougue-t09.flac
+     4:11.35       44358764 B   ---   --   ---xx   flac  0.6082  bd64-folk-rougue-t10.flac
+     4:44.46       50205836 B   ---   --   ---xx   flac  0.4557  bd64-folk-rougue-t11.flac
+     4:36.45       48792284 B   ---   --   ---xx   flac  0.4559  bd64-folk-rougue-t12.flac
+     1:55.18       20328380 B   ---   --   ---xx   flac  0.5389  bd64-folk-rougue-t13.flac
+     5:30.68       58371980 B   ---   --   ---xx   flac  0.5395  bd64-folk-rougue-t14.flac
+     6:55.23       73260140 B   ---   --   ---xx   flac  0.5585  bd64-folk-rougue-t15.flac
+    73:14.40      775196340 B                            0.5427  (15 files)
+=================== 
+=================== 
+=================== 

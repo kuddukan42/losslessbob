@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd85-Outside-the-Empire-h.flacf 
+=================== 
+=================== 
+=================== 
+58f68413cf0366bcdb1889fe9937c30f  Bob Dylan - Outside the Empire\01. New Danville Girl.flac
+106c5fe40b722cb0c0d527384e116e89  Bob Dylan - Outside the Empire\02. Tight Connection to My Heart.flac
+e8d3f497b7d4b7b04f4c26c8b849265f  Bob Dylan - Outside the Empire\03. Clean Cut Kid.flac
+e6b7d4a4c1dfb261c6001f0039e8da45  Bob Dylan - Outside the Empire\04. I'll Remember You.flac
+88eddd60efb31771fc7ce7a046430303  Bob Dylan - Outside the Empire\05. Seeing the Real You at Last.flac
+ec98088b37d6108552a604980e2bd597  Bob Dylan - Outside the Empire\06. Something's Burning Baby.flac
+5a560ff739d57c0df86f6d212d32492c  Bob Dylan - Outside the Empire\07. Trust Yourself.flac
+fb2d2b2c9ddbda83fdad453196633028  Bob Dylan - Outside the Empire\08. Emotionally Yours.flac
+e31ddaf3b874afe348dbbd2effaa088b  Bob Dylan - Outside the Empire\09. When the Night Comes Falling.flac
+8f5ddebd8b9e35352363d8f89f940b7c  Bob Dylan - Outside the Empire\10. Never Gonna Be the Same Again.flac
+8b66324db06d61a6fff7df9601f58631  Bob Dylan - Outside the Empire\11. Waiting to Get Beat.flac
+a2a0f476cbc9a6f80fcaf786fc636812  Bob Dylan - Outside the Empire\12. Straight A's in Love.flac
+45ffff04da433e6706696f1404c05e73  Bob Dylan - Outside the Empire\13. The Very Thought of You.flac
+b23e5b39c4071f66c68cd35c1e00638a  Bob Dylan - Outside the Empire\14. Driftin' Too Far From Shore.flac
+a7bae235213ea68ad8ca28c974593729  Bob Dylan - Outside the Empire\15. Who Loves You More.flac
+8abda1ab4e21384a54253522cc29ed5d  Bob Dylan - Outside the Empire\16. Go 'Way Little Boy.flac
+8be39e3c590d950a31815c74b4ed01be  Bob Dylan - Outside the Empire\Bob Dylan - Outside the Empire.md5
+776a87933f0c82999c7a21610cb21ac1  Bob Dylan - Outside The Empire Artwork\CD Art Case Back.jpg
+f2f23b8766fe1c307df5362015d7001f  Bob Dylan - Outside The Empire Artwork\CD Art Gatefold Back.jpg
+541d0bdc1bd6743ddbc0c5790990c5a0  Bob Dylan - Outside The Empire Artwork\CD Art Gatefold Front.jpg
+641060d4f18d2ec92a1ce2bc7e13f93a  Bob Dylan - Outside The Empire Artwork\Outside the Empire CD.jpg
+c3253462e5003202e7f17458241da0fb  Bob Dylan - Outside the Empire WWM60.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd85-Outside-the-Empire-h.flacf\bob dylan - outside the empire 
+=================== 
+=================== 
+=================== 
+01. new danville girl.flac:c3f1aa016511adace94b978243d3dcd1
+02. tight connection to my heart.flac:a6681dcbe9e21eb47cb6bb3393ba1edb
+03. clean cut kid.flac:72c3d09daf50f70169132123341422fd
+04. i'll remember you.flac:e0d2670fe901e9b41160cf7ce4ed31b4
+05. seeing the real you at last.flac:ee975c93c95a60ffdd5aa1156bcef6ec
+06. something's burning baby.flac:3f24b5b9bb5cc532ac5fb8dc9c7b3264
+07. trust yourself.flac:a7e85b9702fdb23f42242fe88d51598c
+08. emotionally yours.flac:da01cb201f2c0d6024d1d8973736b476
+09. when the night comes falling.flac:09d8b1c582a0dc16f5fb785fc821fcc2
+10. never gonna be the same again.flac:dbdaf1a85a87e7f7aae84323481b4cde
+11. waiting to get beat.flac:3f2b126789ce96c1ef7fbd5c2d8165ed
+12. straight a's in love.flac:4b86af4ae4a428a25bbf0e6bbe0fd7ed
+13. the very thought of you.flac:c3aa246ba9c5a08b515c8c0c7e6ca0d8
+14. driftin' too far from shore.flac:4c8790f0a4c62d273e7fa6841f6266e7
+15. who loves you more.flac:5a0bcd5cb803534387caee8b673cb5b0
+16. go 'way little boy.flac:8d2883d2c569713ad7dd8dfe0a067477
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd85-Outside-the-Empire-h.flacf\bob dylan - outside the empire 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    12:10.72      128941388 B   ---   --   ---xx   flac  0.5942  01. New Danville Girl.flac
+     5:39.43       59900780 B   ---   --   ---xx   flac  0.6521  02. Tight Connection to My Heart.flac
+     5:17.57       56052908 B   ---   --   ---xx   flac  0.6843  03. Clean Cut Kid.flac
+     4:07.03       43577900 B   ---   --   ---xx   flac  0.5616  04. I'll Remember You.flac
+     4:55.05       52049804 B   ---   --   ---xx   flac  0.6538  05. Seeing the Real You at Last.flac
+     4:57.72       52560188 B   ---   --   ---xx   flac  0.5842  06. Something's Burning Baby.flac
+     3:01.10       31951964 B   ---   --   ---xx   flac  0.5700  07. Trust Yourself.flac
+     4:23.08       46412060 B   ---   --   ---xx   flac  0.5228  08. Emotionally Yours.flac
+     7:09.67       75833228 B   ---   --   ---xx   flac  0.6394  09. When the Night Comes Falling.flac
+     3:16.03       34581500 B   ---   --   ---xx   flac  0.5712  10. Never Gonna Be the Same Again.flac
+     2:29.42       26382428 B   ---   --   ---xx   flac  0.6046  11. Waiting to Get Beat.flac
+     3:44.58       39650060 B   ---   --   ---xx   flac  0.5575  12. Straight A's in Love.flac
+     2:24.37       25488668 B   ---   --   ---xx   flac  0.4941  13. The Very Thought of You.flac
+     3:53.68       41261180 B   ---   --   ---xx   flac  0.5616  14. Driftin' Too Far From Shore.flac
+     6:01.05       63692204 B   ---   --   ---xx   flac  0.5687  15. Who Loves You More.flac
+     3:11.60       33833564 B   ---   --   ---xx   flac  0.5895  16. Go 'Way Little Boy.flac
+    76:44.10      812169824 B                            0.5959  (16 files)
+=================== 
+=================== 
+=================== 

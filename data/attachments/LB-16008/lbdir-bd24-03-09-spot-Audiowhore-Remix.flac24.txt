@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd24-03-09-spot-Audiowhore-Remix.flac24
+===================
+===================
+===================
+66216831d4dfc93fae9825d3643148f9 *bd 2024-03-09 Orlando, Florida (spot mixed 48-24)  Audiowhore Remix.md5
+c1127f6ebb86a28ae78f8058a7743b99 *BOB DYLAN 2024-03-09 Orlando_01.flac
+32bf5e8279dd100899148a283878ccfd *BOB DYLAN 2024-03-09 Orlando_02.flac
+ce6d7a34dae53d46ddb6ffd14a0be558 *BOB DYLAN 2024-03-09 Orlando_03.flac
+7c03e895cb5e3319a1ba25020bd68bc8 *BOB DYLAN 2024-03-09 Orlando_04.flac
+e78e76fb0e6d8ba6cb96ee18dfba33b4 *BOB DYLAN 2024-03-09 Orlando_05.flac
+7cafc6badc42a33497c3be8873b6e5be *BOB DYLAN 2024-03-09 Orlando_06.flac
+86dea1bb179706ad43a8015391e75676 *BOB DYLAN 2024-03-09 Orlando_07.flac
+96c1874f3c0afdc7206e7cb6dc3d553c *BOB DYLAN 2024-03-09 Orlando_08.flac
+7f4599597c2be0573f9065a202cf23fd *BOB DYLAN 2024-03-09 Orlando_09.flac
+cb87dc003932fc485b58ed601111e379 *BOB DYLAN 2024-03-09 Orlando_10.flac
+398de41abcc90840160043fd1dd25467 *BOB DYLAN 2024-03-09 Orlando_11.flac
+4d68632b3174ed04544269ad0351be67 *BOB DYLAN 2024-03-09 Orlando_12.flac
+f44e3eb413846ffd3a0bd4b3dc16fe62 *BOB DYLAN 2024-03-09 Orlando_13.flac
+6b23563a20ca7f80c69fb33506080ccc *BOB DYLAN 2024-03-09 Orlando_14.flac
+42e6e83dc9bbf1af08980fac7206104f *BOB DYLAN 2024-03-09 Orlando_15.flac
+e69d8b35031b079d4fa0f54c855aac4e *BOB DYLAN 2024-03-09 Orlando_16.flac
+21bb5835af4b900c22209ef14f2b5e97 *BOB DYLAN 2024-03-09 Orlando_17.flac
+a3e010558f6fb49e757e81879dccfd5f *BOB DYLAN 2024-03-09 Orlando_18.flac
+6283151588eda9a340d804b1cff21a80 *BOB DYLAN 2024-03-09 Orlando_19.flac
+4e4b7119c3c7f4f40bf218831342f62a *info.txt
+===================
+===================
+===================
+=== ffp for: bd24-03-09-spot-Audiowhore-Remix.flac24
+===================
+===================
+===================
+BOB DYLAN 2024-03-09 Orlando_01.flac:38c91f827fb1f24c2149c8aee1d10ecd
+BOB DYLAN 2024-03-09 Orlando_02.flac:1ac5af8897e97f6b04981e3128878b72
+BOB DYLAN 2024-03-09 Orlando_03.flac:4f1882b7e8adc2c0c5d2c24ffb7a6ccf
+BOB DYLAN 2024-03-09 Orlando_04.flac:721d7cd5c44fdf3c03685aeea8e83f8b
+BOB DYLAN 2024-03-09 Orlando_05.flac:d30d04b23156edfe50a208ecbf413c31
+BOB DYLAN 2024-03-09 Orlando_06.flac:82631980f13f76b46f105c7ec8768444
+BOB DYLAN 2024-03-09 Orlando_07.flac:429bcb61dd15241bfe7f1491471c958f
+BOB DYLAN 2024-03-09 Orlando_08.flac:ab93a1206343a093d1487dba77293bae
+BOB DYLAN 2024-03-09 Orlando_09.flac:210220d6a764bb36ec0b75f5ab8be9b1
+BOB DYLAN 2024-03-09 Orlando_10.flac:4518206b69793ebe6857519e5955ab9b
+BOB DYLAN 2024-03-09 Orlando_11.flac:ffd83ffc3a28a8a60eba53ff9341b199
+BOB DYLAN 2024-03-09 Orlando_12.flac:39e222022b5e2b1e3d3951737cd3ed6a
+BOB DYLAN 2024-03-09 Orlando_13.flac:468327ba6482d979fb791b6cbe479ba7
+BOB DYLAN 2024-03-09 Orlando_14.flac:00261dcc195162c64ce382a90a5f617f
+BOB DYLAN 2024-03-09 Orlando_15.flac:bd1ca79a6e408a5be34331325b78f2d9
+BOB DYLAN 2024-03-09 Orlando_16.flac:d0df1487e584b4cfaab18729d0bf05f1
+BOB DYLAN 2024-03-09 Orlando_17.flac:8c989e4e087c3fd91a01ab6c25b0b02a
+BOB DYLAN 2024-03-09 Orlando_18.flac:b338a2fd49f46e7c0b4ebc1b9bc26b4f
+BOB DYLAN 2024-03-09 Orlando_19.flac:9c91b7c7e5593335de6662fad5217d60
+===================
+===================
+===================
+=== shntool len for: bd24-03-09-spot-Audiowhore-Remix.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.761      10587212 B   cxx   --   ---xx   flac  0.6656  BOB DYLAN 2024-03-09 Orlando_01.flac
+     5:22.008      92738348 B   cxx   --   ---xx   flac  0.6571  BOB DYLAN 2024-03-09 Orlando_02.flac
+     4:14.113      73184588 B   cxx   --   ---xx   flac  0.6591  BOB DYLAN 2024-03-09 Orlando_03.flac
+     6:02.460     104388524 B   cxx   --   ---xx   flac  0.6388  BOB DYLAN 2024-03-09 Orlando_04.flac
+     7:10.391     123952652 B   cxx   --   ---xx   flac  0.6541  BOB DYLAN 2024-03-09 Orlando_05.flac
+     5:42.422      98617580 B   cxx   --   ---xx   flac  0.6435  BOB DYLAN 2024-03-09 Orlando_06.flac
+     5:25.760      93818924 B   cxx   --   ---xx   flac  0.6225  BOB DYLAN 2024-03-09 Orlando_07.flac
+     5:08.918      88968428 B   cxx   --   ---xx   flac  0.6563  BOB DYLAN 2024-03-09 Orlando_08.flac
+     7:07.069     122995916 B   cxx   --   ---xx   flac  0.6292  BOB DYLAN 2024-03-09 Orlando_09.flac
+     7:30.747     129815180 B   cxx   --   ---xx   flac  0.6402  BOB DYLAN 2024-03-09 Orlando_10.flac
+     4:29.800      77702444 B   cxx   --   ---xx   flac  0.6648  BOB DYLAN 2024-03-09 Orlando_11.flac
+    10:40.226     184385132 B   cxx   --   ---xx   flac  0.6165  BOB DYLAN 2024-03-09 Orlando_12.flac
+     5:11.163      89614988 B   cxx   --   ---xx   flac  0.6600  BOB DYLAN 2024-03-09 Orlando_13.flac
+     5:53.162     101710700 B   cxx   --   ---xx   flac  0.6245  BOB DYLAN 2024-03-09 Orlando_14.flac
+     3:19.585      57480524 B   cxx   --   ---xx   flac  0.6831  BOB DYLAN 2024-03-09 Orlando_15.flac
+     5:24.904      93572396 B   cxx   --   ---xx   flac  0.6213  BOB DYLAN 2024-03-09 Orlando_16.flac
+     7:04.811     122345612 B   cxx   --   ---xx   flac  0.6680  BOB DYLAN 2024-03-09 Orlando_17.flac
+     0:53.351      15365132 B   cxx   --   ---xx   flac  0.6930  BOB DYLAN 2024-03-09 Orlando_18.flac
+     6:23.508     110450264 B   cxx   --   ---xx   flac  0.6414  BOB DYLAN 2024-03-09 Orlando_19.flac
+   103:41.159    1791694544 B                            0.6437  (19 files)
+===================
+===================
+===================

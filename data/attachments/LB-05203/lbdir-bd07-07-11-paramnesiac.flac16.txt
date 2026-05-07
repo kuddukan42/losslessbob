@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-07-11-paramnesiac.flac16 
+=================== 
+=================== 
+=================== 
+c9c7cd0184e7fa982b01b0c75163381f  BobDylan2007-07-11.ffp
+36de47066f7017ac2ee43f5b5e4c85b9  BobDylan2007-07-11.info.txt
+0ca9008155540fabff6f67b4a4bd1bb2  BobDylan2007-07-11.md5
+b39e6fe2fdcc9804931c8426be1d3a31  BobDylan2007-07-11t01.flac
+288c4afe929f356d4931ca11859fa930  BobDylan2007-07-11t02.flac
+ea50703f9eaaf8f02ac932505420bd82  BobDylan2007-07-11t03.flac
+84b0914cfa8193818370b1892c79ebda  BobDylan2007-07-11t04.flac
+0aa1442f8962bd903d6b8c7ce5fa8b55  BobDylan2007-07-11t05.flac
+b8dce78b1d8644c50c85dbbefa30eaff  BobDylan2007-07-11t06.flac
+d7b91c4d05b745ea79142a6bffee2027  BobDylan2007-07-11t07.flac
+74961665fa051c9a9aa23fe22fea0527  BobDylan2007-07-11t08.flac
+10def75535046b35af84df7009a7909d  BobDylan2007-07-11t09.flac
+d641752116a1faa4bbf283ae38946bfd  BobDylan2007-07-11t10.flac
+c542ce72278be11d876b3546a4fa23a6  BobDylan2007-07-11t11.flac
+5fb1cffbeb7619d8677387ff03db6044  BobDylan2007-07-11t12.flac
+dfaeb9824696c5ee1ca2ae776cce9fb5  BobDylan2007-07-11t13.flac
+afc9e840cd70353e37177d59c5a467f2  BobDylan2007-07-11t14.flac
+354fd0b0dd698127761d702715a8bbd6  BobDylan2007-07-11t15.flac
+c6a9be89fe7418f432d8788b8b39e657  BobDylan2007-07-11t16.flac
+f14314a4e7011429bd93096affcd5d9f  BobDylan2007-07-11t17.flac
+759670b5034a927411b1b11d5ebff52b  BobDylan2007-07-11t18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-07-11-paramnesiac.flac16 
+=================== 
+=================== 
+=================== 
+BobDylan2007-07-11t01.flac:3e719d94c52523b8c51c090fef9dd1b8
+BobDylan2007-07-11t02.flac:573080c95d3f67ea7f830d5678046a4e
+BobDylan2007-07-11t03.flac:c4c937c4927aa5aafadca3b355512d95
+BobDylan2007-07-11t04.flac:0193b30fb0cb2f6323dc4fd5f44d71d1
+BobDylan2007-07-11t05.flac:cae57475495b9874c2ff075c416cc5ae
+BobDylan2007-07-11t06.flac:9d20107194a536983ca6f573b6b21663
+BobDylan2007-07-11t07.flac:4550fd368dec500eef24ecb123c13a2a
+BobDylan2007-07-11t08.flac:8a793e7f2e1264ad99310297ea557c7d
+BobDylan2007-07-11t09.flac:cd29659692101433b8ae264cec7058d9
+BobDylan2007-07-11t10.flac:5ea416f970e3539850a2ca8e597bba67
+BobDylan2007-07-11t11.flac:4a05994d2d94d5f7e332757f6c6571a2
+BobDylan2007-07-11t12.flac:c536df54e4b9e2af10a81ab75c453d77
+BobDylan2007-07-11t13.flac:b12487144a22838218ffdccad0c07b81
+BobDylan2007-07-11t14.flac:2843f0c02a373f66c463e46ede3119fd
+BobDylan2007-07-11t15.flac:8f02803a8e33b0307641611e5714e5b4
+BobDylan2007-07-11t16.flac:b481e161b623940793c7f90596b65b64
+BobDylan2007-07-11t17.flac:ef3822cd0a20ec1cb036403abb44b0a0
+BobDylan2007-07-11t18.flac:9f31d5b1950cbada9a9a79a1ac85fcb6
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-07-11-paramnesiac.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.27        6590348 B   ---   --   ---xx   flac  0.4261  BobDylan2007-07-11t01.flac
+     4:24.20       46616684 B   ---   --   ---xx   flac  0.4928  BobDylan2007-07-11t02.flac
+     6:12.30       65691404 B   ---   --   ---xx   flac  0.5163  BobDylan2007-07-11t03.flac
+     5:17.59       56057612 B   ---   --   ---xx   flac  0.5189  BobDylan2007-07-11t04.flac
+     7:05.41       75066476 B   ---   --   ---xx   flac  0.5439  BobDylan2007-07-11t05.flac
+     7:48.42       82654028 B   ---   --   ---xx   flac  0.4953  BobDylan2007-07-11t06.flac
+     6:45.14       71474972 B   ---   --   ---xx   flac  0.5178  BobDylan2007-07-11t07.flac
+     6:38.69       70369532 B   ---   --   ---xx   flac  0.5070  BobDylan2007-07-11t08.flac
+     6:06.62       64708268 B   ---   --   ---xx   flac  0.5591  BobDylan2007-07-11t09.flac
+     6:33.19       69369932 B   ---   --   ---xx   flac  0.4223  BobDylan2007-07-11t10.flac
+     7:19.03       77446700 B   ---   --   ---xx   flac  0.5180  BobDylan2007-07-11t11.flac
+     8:05.50       85671644 B   ---   --   ---xx   flac  0.5037  BobDylan2007-07-11t12.flac
+     7:07.33       75400460 B   ---   --   ---xx   flac  0.4548  BobDylan2007-07-11t13.flac
+     5:57.36       63059516 B   ---   --   ---xx   flac  0.5480  BobDylan2007-07-11t14.flac
+     8:30.01       89966396 B   ---   --   ---xx   flac  0.5428  BobDylan2007-07-11t15.flac
+     6:00.04       63513452 B   ---   --   ---xx   flac  0.5556  BobDylan2007-07-11t16.flac
+     0:39.67        7037228 B   ---   --   ---xx   flac  0.5104  BobDylan2007-07-11t17.flac
+     5:20.42       56546828 B   ---   --   ---xx   flac  0.5521  BobDylan2007-07-11t18.flac
+   106:30.19     1127241480 B                            0.5143  (18 files)
+=================== 
+=================== 
+=================== 

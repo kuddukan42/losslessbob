@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-11-TM.flacf 
+=================== 
+=================== 
+=================== 
+3310e1d8f8bf6e25ef2eab446eb82d7e  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_01.flac
+b484d0389ee414651cfbc844150bc3f9  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_02.flac
+defd6c66f9fe9e4f6037efec8e298b05  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_03.flac
+00bfe4940ce5eb4b1193ffce4150a60d  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_04.flac
+1b93db2299647863c7e718b664d25f14  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_05.flac
+94caba84dc0efe2fcfe451fd8053f53b  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_06.flac
+a540d990e880b090d6198fdf98c82fb5  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_07.flac
+64554b216d7af7c7f0101ed63e856c4c  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_08.flac
+c0d109a70a9a1966f8f27785f2acc8c9  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_09.flac
+e6b275da7ad2f40b74ec0800e72ad088  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_10.flac
+f8e865798fc898a31db74557cfd61605  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_11.flac
+007d7a8fb21ff8e4bd6491d080bed650  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_12.flac
+62a168f10af7281be87ca5c14560fe93  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_13.flac
+d6b28f5aee3606e532a80ed20989faa7  CD 1\Dylan_2009_04_11_Amsterdam_TM_D1_shntool_len.txt
+6b979f87c21614a4ab9d78f209a002fe  CD 2\Dylan_2009_04_11_Amsterdam_TM_D2_01.flac
+53f8fe25c3e5619355121490adce1dc4  CD 2\Dylan_2009_04_11_Amsterdam_TM_D2_02.flac
+008ca5d18475fd17a6adacc6e4ad0fde  CD 2\Dylan_2009_04_11_Amsterdam_TM_D2_03.flac
+de14003aee59ec1efd135f17848dcd0e  CD 2\Dylan_2009_04_11_Amsterdam_TM_D2_04.flac
+81384fe1f42c969c955645d19a7a935f  CD 2\Dylan_2009_04_11_Amsterdam_TM_D2_05.flac
+490cd16a63c83b95bd7fcf94a40624a3  CD 2\Dylan_2009_04_11_Amsterdam_TM_D2_06.flac
+77e85a94e211bb2d158469f948534614  CD 2\Dylan_2009_04_11_Amsterdam_TM_D2_07.flac
+1ae0ffefc000c7ebbf5b4433b3f16511  CD 2\Dylan_2009_04_11_Amsterdam_TM_D2_shntool_len.txt
+c2718db92ef49dbd8a468a0995b91ba9  Dylan_2009_04_11_Amsterdam_TM.md5
+07a7954d415ac16e01810551e30ed544  Dylan_2009_04_11_Amsterdam_TM_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-11-TM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+Dylan_2009_04_11_Amsterdam_TM_D1_01.flac:b4af5a7f05546ef4dc9cdc0bac542611
+Dylan_2009_04_11_Amsterdam_TM_D1_02.flac:ecb42aab29691347626405c202c28520
+Dylan_2009_04_11_Amsterdam_TM_D1_03.flac:4f089a55e67ecf75cfc53b3f13764135
+Dylan_2009_04_11_Amsterdam_TM_D1_04.flac:cb986f4eefb0b60164fe2299341e54f9
+Dylan_2009_04_11_Amsterdam_TM_D1_05.flac:ccde6537c781f81d80eef4ed130200f0
+Dylan_2009_04_11_Amsterdam_TM_D1_06.flac:abeb652610c0e28417fef8f092d44721
+Dylan_2009_04_11_Amsterdam_TM_D1_07.flac:bacc66ed6dd7ed39541445fc91db0608
+Dylan_2009_04_11_Amsterdam_TM_D1_08.flac:73615f7d157cfb3f8baa9dae8e084878
+Dylan_2009_04_11_Amsterdam_TM_D1_09.flac:b1f41c2c28c40d127d8c4ac19eea98ee
+Dylan_2009_04_11_Amsterdam_TM_D1_10.flac:d9d9a3dfd783e0fc50662ce839382c49
+Dylan_2009_04_11_Amsterdam_TM_D1_11.flac:7aab0570b7a1b2b5a1b52d81d22bbf80
+Dylan_2009_04_11_Amsterdam_TM_D1_12.flac:135b1a2fd7f5a74ab6fb43ee9b154401
+Dylan_2009_04_11_Amsterdam_TM_D1_13.flac:70ca35dc8c12a9caf34c0dead26a3434
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-11-TM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+Dylan_2009_04_11_Amsterdam_TM_D2_01.flac:b61918462f41c46aed65322eeb88f967
+Dylan_2009_04_11_Amsterdam_TM_D2_02.flac:f19a99213d1cb05f27198be6bef8b0a4
+Dylan_2009_04_11_Amsterdam_TM_D2_03.flac:27c41023ae368c49024141a0d7a53dc6
+Dylan_2009_04_11_Amsterdam_TM_D2_04.flac:5d59972900d4349d5b0441b4189cd1b6
+Dylan_2009_04_11_Amsterdam_TM_D2_05.flac:f2f23a1bab5fad9fc63ba6f414ac55f3
+Dylan_2009_04_11_Amsterdam_TM_D2_06.flac:ff2235ba54d0f3e82f3ccecf50d26b41
+Dylan_2009_04_11_Amsterdam_TM_D2_07.flac:3fca08f0b89a974e7463f943c6ce75f9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-11-TM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.67        7036972 B   -b-   --   ---xx   flac  0.6197  Dylan_2009_04_11_Amsterdam_TM_D1_01.flac
+     4:16.47       45269036 B   -b-   --   ---xx   flac  0.6258  Dylan_2009_04_11_Amsterdam_TM_D1_02.flac
+     5:44.43       60782428 B   -b-   --   ---xx   flac  0.5923  Dylan_2009_04_11_Amsterdam_TM_D1_03.flac
+     5:05.62       53948580 B   -b-   --   ---xx   flac  0.5715  Dylan_2009_04_11_Amsterdam_TM_D1_04.flac
+     7:02.59       74579252 B   -b-   --   ---xx   flac  0.6203  Dylan_2009_04_11_Amsterdam_TM_D1_05.flac
+     5:54.18       62488292 B   -b-   --   ---xx   flac  0.5210  Dylan_2009_04_11_Amsterdam_TM_D1_06.flac
+     6:24.68       67896748 B   -b-   --   ---xx   flac  0.6166  Dylan_2009_04_11_Amsterdam_TM_D1_07.flac
+     6:09.57       65226084 B   -b-   --   ---xx   flac  0.5378  Dylan_2009_04_11_Amsterdam_TM_D1_08.flac
+     5:12.27       55100944 B   -b-   --   ---xx   flac  0.6431  Dylan_2009_04_11_Amsterdam_TM_D1_09.flac
+     6:56.19       73426888 B   -b-   --   ---xx   flac  0.5730  Dylan_2009_04_11_Amsterdam_TM_D1_10.flac
+     7:55.37       83876480 B   -b-   --   ---xx   flac  0.6128  Dylan_2009_04_11_Amsterdam_TM_D1_11.flac
+     6:04.49       64325804 B   -b-   --   ---xx   flac  0.5786  Dylan_2009_04_11_Amsterdam_TM_D1_12.flac
+     7:00.19       74132076 B   -b-   --   ---xx   flac  0.6347  Dylan_2009_04_11_Amsterdam_TM_D1_13.flac
+    74:27.47      788089584 B                            0.5944  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-11-TM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:43.49       92373068 B   -b-   --   ---xx   flac  0.5380  Dylan_2009_04_11_Amsterdam_TM_D2_01.flac
+     6:15.42       66247700 B   -b-   --   ---xx   flac  0.6314  Dylan_2009_04_11_Amsterdam_TM_D2_02.flac
+    10:30.48      111244144 B   -b-   --   ---xx   flac  0.6367  Dylan_2009_04_11_Amsterdam_TM_D2_03.flac
+     4:35.66       48664620 B   -b-   --   ---xx   flac  0.6296  Dylan_2009_04_11_Amsterdam_TM_D2_04.flac
+     6:56.49       73498668 B   -b-   --   ---xx   flac  0.5447  Dylan_2009_04_11_Amsterdam_TM_D2_05.flac
+     0:45.07        7954476 B   -b-   --   ---xx   flac  0.6292  Dylan_2009_04_11_Amsterdam_TM_D2_06.flac
+     5:49.64       61715304 B   -b-   --   ---xx   flac  0.6060  Dylan_2009_04_11_Amsterdam_TM_D2_07.flac
+    43:37.25      461697980 B                            0.5966  (7 files)
+=================== 
+=================== 
+=================== 

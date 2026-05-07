@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== set_info.txt
+===================
+===================
+===================
+Bob Dylan, 6/17/78, , Earls Court, London, England, 2CDR 
+LB-1693, (64min+71min), from Nigel Simms' master cassette recording; cassette transfer 
+and remastering by pb 4/04; remastering consisted of balancing and optimizing levels; 
+reported to be upgrade over previous circulating version; very good sound
+
+
+noise d1t10 0:02, analog drop dt10 0:05, 0:09, noise d2t3 0:49; begin of d2t6 cut
+
+
+CD1
+
+1 A Hard Rain's A-Gonna Fall (instrumental) 2 Love Her With A Feeling 3 BabyStop Crying 
+4 Mr. Tambourine Man 5 Shelter From The Storm 6 Love Minus Zero/No Limit 7 Tangled Up In Blue 
+8 Ballad Of A Thin Man 9 Maggie's Farm 10 I Don'tBelieve You 11 Like A Rolling Stone 
+12 I Shall Be Released 13 Going, Going, Gone 
+
+
+CD2
+
+1crowd 2 Rainy Day Women # 12 & 35 (instrumental) 3 One Of Us Must Know (Sooner OrLater) 
+4 You're A Big Girl Now 5 One More Cup Of Coffee (Valley Below) 6 Blowin' In The Wind 
+7 I Want You 8 Senor (Tales Of Yankee Power) 9 Masters OfWar 10 Just Like A Woman 
+11 Simple Twist Of Fate 12 All Along The Watchtower 13 All I Really Want To Do 
+14 Band Intros 15 It's Alright, Ma (I'm Only Bleeding) 16 Forever Young 
+17 The Times They Are A-Changin' 
+===================
+===================
+===================
+=== flac.txt
+===================
+===================
+===================
+Track  1.flac:fec5a8588f914423aada48a41ed1816b
+Track  2.flac:1c8c4c57cc46ebb9cfdf35c4b06b8fa2
+Track  3.flac:01622ffa799ea624e136f443a19457d1
+Track  4.flac:c9bed87daad049fcccb2f55130b54f38
+Track  5.flac:9ab0c904193c85cefcf1883e2f3c1d78
+Track  6.flac:38ce25b3ab8014395297c48e65cada4a
+Track  7.flac:b7770e9879a97129e191153577666fb5
+Track  8.flac:3d6847627aa864e628cf748e8142c606
+Track  9.flac:61c07e871a48bd1629483af1bb5b4e69
+Track 10.flac:18cf357c3022b395841e2f67686c51df
+Track 11.flac:12f4693176d9bddde3f47b88f991d31e
+Track 12.flac:3b7c5297657150bde6ea9711f4313717
+Track 13.flac:4fce6f3bda82d19cdc641c559154320f
+===================
+===================
+===================
+=== flac.txt
+===================
+===================
+===================
+Track  1.flac:2e27e7fd3faf46892d7c8b76229cc26f
+Track  2.flac:6064d3b502ba7415f5a6472f3c9df0e5
+Track  3.flac:43a1b5ce8f69157a100b061f61f5924b
+Track  4.flac:c6dce3c2dc96484b4a9931b953aaa10d
+Track  5.flac:20515a66ca4e2a8c70300b1218c43530
+Track  6.flac:9988abda17b5ce7f848f15044ff640c7
+Track  7.flac:390f5f61005bf86639a44de4cf5660a9
+Track  8.flac:12ea275ebc659957d47fdad4e8f839d4
+Track  9.flac:4c53eed5a1eed0e1527784c79e77316b
+Track 10.flac:94ff4e80f1007800cc71c32466560288
+Track 11.flac:9f313c9542e1e8f0c3e4df4f45a460ff
+Track 12.flac:140199e97629c825b72e658ed5e721cd
+Track 13.flac:0a9deb69c5dd1846f5f487d0a68dba95
+Track 14.flac:841cb39d005931e167afb882a122ca35
+Track 15.flac:9925e8f1c93a3db2dae10ee8340d12d3
+Track 16.flac:8cfc73e7ad2ee4ab3d9cea7a254612f8
+Track 17.flac:7254166d433707db67e8d1084f082468
+===================
+===================
+===================

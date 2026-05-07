@@ -1,0 +1,26 @@
+Bob Dylan & The Band
+1974-01-10 Maple Leaf Gardens, Toronto, Ontario, Canada
+mono recording 
+2024 REMIX
+
+01 Most Likely You Go Your Way
+02 I Don't Believe You
+03 As I Went Out One Morning
+04 Lay Lady Lay
+05 Just Like Tom Thumb's Blues
+06 Ballad Of A Thin Man
+07 All Along The Watchtower
+08 Ballad Of Hollis Brown
+09 Knockin' On Heaven's Door
+10 The Times They Are A-Changin'
+11 Don't Think Twice, It's All Right
+12 Gates Of Eden
+13 Love Minus Zero, No Limit
+14 It's Alright, Ma (I'm Only Bleeding) (in progress)
+15 Forever Young (in progress)
+16 Something There Is About You
+17 Like A Rolling Stone
+
+audience > Craig mono cassette recorder > Max Fox's copy > Maxell LN C-90 > Nakamichi BX-125 > Aardvark Q10 > 24-96 stereo wave > Wavelab for conversion to 24-96 mono wav, pitch correction (+1 semitone, +46 cents) editing bumper noise, normalization of joined wavs (one per cassette side) and chopping into individual tracks > Trader's Little Helper for SBE correction and compressing to FLAC 8.  No additional EQ, compression. Remixed by Bob Meyer September 2024 using RipX DAW (Mac OS 14.6.1)
+
+Transfer of original cassette made on 2011-05-01 by sst.

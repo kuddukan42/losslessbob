@@ -1,0 +1,14 @@
+bd2000-07-11d2t01.flac:  successfully decoded to 'bd2000-07-11d2t01.wav'
+bd2000-07-11d2t02.flac:  successfully decoded to 'bd2000-07-11d2t02.wav'
+bd2000-07-11d2t03.flac:  successfully decoded to 'bd2000-07-11d2t03.wav'
+bd2000-07-11d2t04.flac:  successfully decoded to 'bd2000-07-11d2t04.wav'
+
+No errors occured.
+
+
+bd2000-07-11d2t01.wav:  track looks like CDDA with probability 99%
+bd2000-07-11d2t02.wav:  track looks like CDDA with probability 100%
+bd2000-07-11d2t03.wav:  track looks like CDDA with probability 100%
+bd2000-07-11d2t04.wav:  track looks like CDDA with probability 100%
+
+No errors occured.

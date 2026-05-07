@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-08-26-complete.flacf 
+=================== 
+=================== 
+=================== 
+000ba2f34517bccc5bcf7df82fb445b2  bd19980826.md5
+cb9bc81756335aabd469840caa1f694b  bd19980826.txt
+ed77eee7ebe93d2903c737327d5c4f23  bd19980826d1t01.flac
+e552d8942f5563c67cdb0a55116f3c5d  bd19980826d1t02.flac
+1d0a228becc144ac340dc33554421b02  bd19980826d1t03.flac
+b07f1a020595f94b2c24924c9cb7b845  bd19980826d1t04.flac
+1407bd235b813b192008bb0f5d2adb5c  bd19980826d1t05.flac
+1eb29d8666b0a76822c10ca1e7cc70cf  bd19980826d1t06.flac
+a1334a82c4bf2227a2412c2064b3855b  bd19980826d1t07.flac
+3fad1b6dec367f5b9b1629336836c2db  bd19980826d1t08.flac
+32441c9696a1cf378777a48e632f6a5a  bd19980826d1t09.flac
+541bfe15a3dc32414d72949cc6601c2d  bd19980826d1t10.flac
+668496bc2f140f60b3cf94051802f84d  bd19980826d1t11.flac
+ddbdb96be9ce297ee24ad1b6cf840f28  bd19980826d2t01.flac
+bc99a78873dcf1bca9805525d2afc62f  bd19980826d2t02.flac
+9727234d8fa6708f541a41c606f3a311  bd19980826d2t03.flac
+6865733fdbd6d92bd2364e4abe0c9e11  bd19980826d2t04.flac
+784b1da18bfa8a164fba64ccce8a8c12  bd19980826d2t05.flac
+3c86ed5f220cda4be94a54899ff0b3b1  bd19980826ffprint.txt
+eccedcf4f6f7292d9013b041706988c8  bd19980826spectral.JPG
+6149e9052f68cc471f525d5242799e52  bd98-08-26-complete.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-08-26-complete.flacf 
+=================== 
+=================== 
+=================== 
+bd19980826d1t01.flac:68042ed7e0d884c01e4dee87548cd7df
+bd19980826d1t02.flac:4b9df5417ebadb70ae3191effe93ef91
+bd19980826d1t03.flac:5536a27c6f62178ba269fed74da20509
+bd19980826d1t04.flac:3886204453a2d7e05fef8fd9eebd8c4d
+bd19980826d1t05.flac:6187b69d523f1d762dccd9dd7626061d
+bd19980826d1t06.flac:3ce916901ca8931f3769ad1a6f0ff08c
+bd19980826d1t07.flac:81c8d51788a130756db91e5a6bca5089
+bd19980826d1t08.flac:9dc7ffb181b163617019815e65b3bbea
+bd19980826d1t09.flac:ceac33ebf7dde0cddd979bd1ba07af73
+bd19980826d1t10.flac:a0d099f930abddd9071dab2bfc41ce2b
+bd19980826d1t11.flac:d0e096fe7087a5d9aa9ac393d0627509
+bd19980826d2t01.flac:344d61aec8ee9a87f78b055cdabe6046
+bd19980826d2t02.flac:e8b8b50ca3d35415a8f16d4ff0ef8c2a
+bd19980826d2t03.flac:41a026f5c457cf7256297c61913d3cd8
+bd19980826d2t04.flac:479ff21513bea262f846ccdc1b7e5bb9
+bd19980826d2t05.flac:37969ecb76ca3104ace5fa0c5b3d79f7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-08-26-complete.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.14       43956572 B   ---   --   ---xx   flac  0.4755  bd19980826d1t01.flac
+     5:43.15       60540524 B   ---   --   ---xx   flac  0.4675  bd19980826d1t02.flac
+     6:18.30       66749804 B   ---   --   ---xx   flac  0.4744  bd19980826d1t03.flac
+     7:44.44       81953132 B   ---   --   ---xx   flac  0.4814  bd19980826d1t04.flac
+     5:54.05       62457404 B   ---   --   ---xx   flac  0.4958  bd19980826d1t05.flac
+     6:42.55       71042204 B   ---   --   ---xx   flac  0.4904  bd19980826d1t06.flac
+     6:20.46       67140236 B   ---   --   ---xx   flac  0.4711  bd19980826d1t07.flac
+     5:16.27       55805948 B   ---   --   ---xx   flac  0.4588  bd19980826d1t08.flac
+     7:23.31       78218156 B   ---   --   ---xx   flac  0.4838  bd19980826d1t09.flac
+     5:51.21       61965836 B   ---   --   ---xx   flac  0.4726  bd19980826d1t10.flac
+     6:35.42       69776828 B   ---   --   ---xx   flac  0.4856  bd19980826d1t11.flac
+     6:37.65       70183724 B   ---   --   ---xx   flac  0.4975  bd19980826d2t01.flac
+     5:13.00       55213244 B   ---   --   ---xx   flac  0.4863  bd19980826d2t02.flac
+     5:03.12       53477468 B   ---   --   ---xx   flac  0.5023  bd19980826d2t03.flac
+     6:54.67       73187228 B   ---   --   ---xx   flac  0.4748  bd19980826d2t04.flac
+     5:41.03       60159500 B   ---   --   ---xx   flac  0.4715  bd19980826d2t05.flac
+    97:29.27     1031827808 B                            0.4808  (16 files)
+=================== 
+=================== 
+=================== 

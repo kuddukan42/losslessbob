@@ -1,0 +1,70 @@
+===================
+===================
+===================
+=== md5 for: bd02-08-18-cc.flacf
+===================
+===================
+===================
+45e1820a02d644c4463669468efacb70 *01 I am the man, Thomas.flac
+51eea30a247f1df8dbf61508e54e0171 *02 I'll be your baby tonight.flac
+b87cbb3828c47621d6a70cc9df52ba76 *03 It's alright, ma (I'm only bleeding).flac
+41babaf718509ca3be52eb0c544e5edf *04 Highway 61 revisited.flac
+6e7a4d32822c1d60fa7d2d69c305a348 *05 Quinn the Eskimo (The Mighty Quinn).flac
+505f9b43ea2f9624271e2fb3391d3420 *06 Subterranean homesick blues.flac
+e81cad777afb7adf8466ff4d1f9b31bc *07 Friend of the devil.flac
+94f7644ff8ff07ecabccf4cb1ecf9d50 *08 Tangled up in blue.flac
+adc0dfd4dff34a175606a2b7c1c818c7 *09 Summer days.flac
+0859a69b69a865c7c76377a6eeaf4fed *10 Stone walls and steel bars.flac
+634bb6216fba99791a5c6b7706ee0c12 *11 Cold irons bound.flac
+e0e327f2c34eebc5bde983707a678e59 *12 Rainy day women # 12 & 35.flac
+d48a1f09bae135803b8b5e39bf7b6b2e *13 Not fade away.flac
+e7134b533d96e4860c094a69d2754d08 *14 All along the watchtower.flac
+dd2553bf507fc439ad696ea6478a89f1 *2002-08-18 Pimlico Race Track, Baltimore, Maryland.txt
+358bf18538d327ff5cd92d917680c473 *Bob Dylan- 2002 08 18 Baltimore MD.ffp
+===================
+===================
+===================
+=== ffp for: bd02-08-18-cc.flacf
+===================
+===================
+===================
+01 I am the man, Thomas.flac:09a1d0389d9d98bbb6b736b22e076798
+02 I'll be your baby tonight.flac:5a398af4f7482d11d1d479340e2630e3
+03 It's alright, ma (I'm only bleeding).flac:157a04a34446a14a9781f404f7c34860
+04 Highway 61 revisited.flac:92e43de25ad98ae0244d927d657d6c94
+05 Quinn the Eskimo (The Mighty Quinn).flac:b66ba9d19ed9de5f74bfdca4ea3d5b04
+06 Subterranean homesick blues.flac:8089b6e11c10993d866577eb4b6ee88c
+07 Friend of the devil.flac:31f65c09e62dfc18e422bc4bc58605b7
+08 Tangled up in blue.flac:e611bc91c8654e173593ff92f10578e2
+09 Summer days.flac:23a37068bcef56e41e195af0085bc0cc
+10 Stone walls and steel bars.flac:cd1094e6aaa30b2e91cc76ae76d52069
+11 Cold irons bound.flac:3dc3c86d2aed129290c714af79420848
+12 Rainy day women # 12 & 35.flac:f23a90b77ded0c3098748932163a6276
+13 Not fade away.flac:d3224ad8937e3a95ce8aa660336e9705
+14 All along the watchtower.flac:4f6d234e534c9bfcb5d71fed3a8221ae
+===================
+===================
+===================
+=== shntool len for: bd02-08-18-cc.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.00       36867644 B   ---   --   ---xx   flac  0.6108  01 I am the man, Thomas.flac
+     5:26.61       57649916 B   ---   --   ---xx   flac  0.5882  02 I'll be your baby tonight.flac
+     7:24.42       78420428 B   ---   --   ---xx   flac  0.5739  03 It's alright, ma (I'm only bleeding).flac
+     5:36.53       59395100 B   ---   --   ---xx   flac  0.6206  04 Highway 61 revisited.flac
+     5:04.35       53707964 B   ---   --   ---xx   flac  0.5987  05 Quinn the Eskimo (The Mighty Quinn).flac
+     5:44.58       60818060 B   ---   --   ---xx   flac  0.5620  06 Subterranean homesick blues.flac
+     6:59.27       73975148 B   ---   --   ---xx   flac  0.5784  07 Friend of the devil.flac
+     9:07.03       96497900 B   ---   --   ---xx   flac  0.6282  08 Tangled up in blue.flac
+     6:39.30       70454204 B   ---   --   ---xx   flac  0.6131  09 Summer days.flac
+     4:38.42       49138028 B   ---   --   ---xx   flac  0.5542  10 Stone walls and steel bars.flac
+     5:51.00       61916444 B   ---   --   ---xx   flac  0.5971  11 Cold irons bound.flac
+    10:52.08      115031660 B   ---   --   ---xx   flac  0.5978  12 Rainy day women # 12 & 35.flac
+     4:20.60       46005164 B   ---   --   ---xx   flac  0.6371  13 Not fade away.flac
+     6:10.12       65296268 B   ---   --   ---xx   flac  0.6405  14 All along the watchtower.flac
+    87:24.56      925173928 B                            0.6002  (14 files)
+===================
+===================
+===================

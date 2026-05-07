@@ -1,0 +1,113 @@
+===================
+===================
+===================
+=== bd2005-04-30.ffp
+===================
+===================
+===================
+CD 1\01 - Columbia Recording Artist - 050430-NYC-D1.flac:d32fb748dfaca5c34ad47058262ebd94
+CD 1\02 - Maggie's Farm - 050430-NYC-D1.flac:ec7f713ce95aaada6765acefd0d89e74
+CD 1\03 - To Ramona - 050430-NYC-D1.flac:6c84de481cf202f63de93e88679d573c
+CD 1\04 - Cry A While - 050430-NYC-D1.flac:99f4e23622917a111c5e9939071fc75d
+CD 1\05 - Bye And Bye - 050430-NYC-D1.flac:a324ff837ed1794f641db14c1090334b
+CD 1\06 - Ballad Of Hollis Brown - 050430-NYC-D1.flac:76228a3e319a42965ff35cbd4eb096fb
+CD 1\07 - If You See Her, Say Hello - 050430-NYC-D1.flac:8bcbcc28dc674a08e2a02b63b773ca0b
+CD 1\08 - Lenny Bruce - 050430-NYC-D1.flac:d6851142a6e99a45e35e9d9f7b41f79d
+CD 1\09 - Honest With Me - 050430-NYC-D1.flac:0f4cf1363bb29b76e1bea93fb762889b
+CD 1\10 - The Lonesome Death Of Hattie Carroll - 050430-NYC-D1.flac:d7302903cb07b27262d561c730d47d70
+CD 1\11 - High Water (For Charlie Patton) - 050430-NYC-D1.flac:93ece2e54e70490e57f04f098bb0a283
+CD 1\12 - I Shall Be Released - 050430-NYC-D1.flac:bab96c5ee374bb738a26499b74b59693
+CD 1\13 - Highway 61 Revisited - 050430-NYC-D1.flac:1d17f17248cf6874553f27d482dc070d
+CD 2\01 - Po' Boy - 050430-NYC-D2.flac:1ff83781f3cf3b87a1f644fbef2724a1
+CD 2\02 - Band Introductions - 050430-NYC-D2.flac:fc870ce175c96fb964c397d7fea29f07
+CD 2\03 - All Along The Watchtower - 050430-NYC-D2.flac:85e0c0dc9f03c79f6f48c2f7f2b969a2
+===================
+===================
+===================
+=== Setlist.txt
+===================
+===================
+===================
+Bob Dylan
+Beacon Theater
+New York City, New York  USA
+April 30, 2005
+
+Everything Corrected - Version #3 (really #4)
+
+"History: This show was torrented twice before, once at the wrong pitch, once with digital-pops throughout. Third time's the charm. This is a completely new transfer from original DAT. All track times are likely different. To ensure no  problems I burned CDs and listend carefully, and listened to the .flac's. The timing is definitely right, and I have heard no pops, crackles, or snaps in at least 3 full careful listens.
+
+Recording Info: Recorded from Row AA - Leaning on the stage. Sony DAT (PCM-M1) >> Soundforge XP >> CD Architect >> CD >> EAC >> FLAC. (I'd document mic's but I honestly don't recall what they are. Paid about $1K 5 years ago.)
+
+No audio processessing except about a 300% (9.9db) volume increase from source. A Blue Chair Production."
+
+My part:
+
+FLAC (Version #3 DIME download) > TLH > WAV > Adobe Audition 1.5 > WAV > TLH > FLAC(level 8).  
+
+CD 1:
+01. (intro)
+02. Maggie's Farm
+03. To Ramona
+04. Cry A While
+05. Bye and Bye
+06. Ballad of Hollis Brown
+07. If You See Her, Say Hello
+08. Lenny Bruce
+09. Honest With Me
+10. The Lonesome Death Of Hattie Carroll
+11. High Water (For Charlie Patton)
+12. I Shall Be Released
+13. Highway 61 Revisited
+
+CD 2:
+01. Po' Boy
+02. (band introductions)
+03. All Along The Watchtower
+
+Total time = 87:13
+
+CD 1\01 - Columbia Recording Artist - 050430-NYC-D1.flac:d32fb748dfaca5c34ad47058262ebd94
+CD 1\02 - Maggie's Farm - 050430-NYC-D1.flac:ec7f713ce95aaada6765acefd0d89e74
+CD 1\03 - To Ramona - 050430-NYC-D1.flac:6c84de481cf202f63de93e88679d573c
+CD 1\04 - Cry A While - 050430-NYC-D1.flac:99f4e23622917a111c5e9939071fc75d
+CD 1\05 - Bye And Bye - 050430-NYC-D1.flac:a324ff837ed1794f641db14c1090334b
+CD 1\06 - Ballad Of Hollis Brown - 050430-NYC-D1.flac:76228a3e319a42965ff35cbd4eb096fb
+CD 1\07 - If You See Her, Say Hello - 050430-NYC-D1.flac:8bcbcc28dc674a08e2a02b63b773ca0b
+CD 1\08 - Lenny Bruce - 050430-NYC-D1.flac:d6851142a6e99a45e35e9d9f7b41f79d
+CD 1\09 - Honest With Me - 050430-NYC-D1.flac:0f4cf1363bb29b76e1bea93fb762889b
+CD 1\10 - The Lonesome Death Of Hattie Carroll - 050430-NYC-D1.flac:d7302903cb07b27262d561c730d47d70
+CD 1\11 - High Water (For Charlie Patton) - 050430-NYC-D1.flac:93ece2e54e70490e57f04f098bb0a283
+CD 1\12 - I Shall Be Released - 050430-NYC-D1.flac:bab96c5ee374bb738a26499b74b59693
+CD 1\13 - Highway 61 Revisited - 050430-NYC-D1.flac:1d17f17248cf6874553f27d482dc070d
+CD 2\01 - Po' Boy - 050430-NYC-D2.flac:1ff83781f3cf3b87a1f644fbef2724a1
+CD 2\02 - Band Introductions - 050430-NYC-D2.flac:fc870ce175c96fb964c397d7fea29f07
+CD 2\03 - All Along The Watchtower - 050430-NYC-D2.flac:85e0c0dc9f03c79f6f48c2f7f2b969a2
+===================
+===================
+===================
+=== shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.28        4475900 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\01 - Columbia Recording Artist - 050430-NYC-D1.wav
+     5:12.52       55159148 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\02 - Maggie's Farm - 050430-NYC-D1.wav
+     6:38.07       70223708 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\03 - To Ramona - 050430-NYC-D1.wav
+     5:29.33       58113260 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\04 - Cry A While - 050430-NYC-D1.wav
+     6:29.06       68633756 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\05 - Bye And Bye - 050430-NYC-D1.wav
+     5:21.26       56685596 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\06 - Ballad Of Hollis Brown - 050430-NYC-D1.wav
+     6:29.62       68765468 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\07 - If You See Her, Say Hello - 050430-NYC-D1.wav
+     6:38.36       70291916 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\08 - Lenny Bruce - 050430-NYC-D1.wav
+     6:39.66       70538876 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\09 - Honest With Me - 050430-NYC-D1.wav
+     5:48.62       61533068 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\10 - The Lonesome Death Of Hattie Carroll - 050430-NYC-D1.wav
+     7:21.37       77879468 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\11 - High Water (For Charlie Patton) - 050430-NYC-D1.wav
+     7:02.71       74607836 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\12 - I Shall Be Released - 050430-NYC-D1.wav
+     6:21.34       67288412 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 1\13 - Highway 61 Revisited - 050430-NYC-D1.wav
+     5:17.67       56076428 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 2\01 - Po' Boy - 050430-NYC-D2.wav
+     0:25.50        4527644 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 2\02 - Band Introductions - 050430-NYC-D2.wav
+     5:30.46       58320236 B   ---   --   -----    wav  1.0000  C:\Documents and Settings\Birt Torrent Account\My Documents\Bit Torrents\bd2005-04-30 NYC, NY (thrice corrected)\CD 2\03 - All Along The Watchtower - 050430-NYC-D2.wav
+    87:13.08      923120720 B                            1.0000  (16 files)
+===================
+===================
+===================

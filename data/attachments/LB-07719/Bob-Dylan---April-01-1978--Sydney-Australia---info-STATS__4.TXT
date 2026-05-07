@@ -1,0 +1,10 @@
+                                        	Left Channel        	Right Channel       
+Cursor position (Time)                  	00:00:00.000        	00:00:00.000        
+Sample value at cursor (dB)             	-Inf.               	-Inf.               
+Minimum sample position (Time)          	00:00:53.355        	00:09:37.228        
+Minimum sample value (dB)               	-8.331              	-10.900             
+Maximum sample position (Time)          	00:00:53.355        	00:09:26.727        
+Maximum sample value (dB)               	-9.247              	-11.080             
+RMS level (dB)                          	-28.647             	-28.463             
+Average value (dB)                      	-95.555             	-95.583             
+Zero crossings (Hz)                     	1,095.05            	1,427.53            

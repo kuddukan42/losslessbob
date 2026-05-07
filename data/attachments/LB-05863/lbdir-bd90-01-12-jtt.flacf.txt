@@ -1,0 +1,228 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-01-12-jtt.flacf 
+=================== 
+=================== 
+=================== 
+ae8dbecad2f0fa8823342dc4b363ba0e  Disc 01\Dylan_Toad's Place_Disc01Track01.flac
+235bc327b306c9c65beb27b59f798ff5  Disc 01\Dylan_Toad's Place_Disc01Track02.flac
+c504fb238ee135544e5145fbcb061a2f  Disc 01\Dylan_Toad's Place_Disc01Track03.flac
+894b6537bd0e1ed46bcbca0980b17d39  Disc 01\Dylan_Toad's Place_Disc01Track04.flac
+04fd721993a32843e782201c53acb012  Disc 01\Dylan_Toad's Place_Disc01Track05.flac
+ed0bc5e14b577b65255a563518a8c3c6  Disc 01\Dylan_Toad's Place_Disc01Track06.flac
+4a6a310fb169e8f0069d97fe70f3042f  Disc 01\Dylan_Toad's Place_Disc01Track07.flac
+9073fdd798a8327af4117460ff73845d  Disc 01\Dylan_Toad's Place_Disc01Track08.flac
+110eaff2d0bc166844790a205ade5f8d  Disc 01\Dylan_Toad's Place_Disc01Track09.flac
+01a5d0153b5fcc9b1f89fa6f4e40934c  Disc 01\Dylan_Toad's Place_Disc01Track10.flac
+acd6c2bba5f53fe466003be7c31d6b6e  Disc 01\Dylan_Toad's Place_Disc01Track11.flac
+006d932c6c55c3705da8362a3a22e66d  Disc 02\Dylan_Toad's Place_Disc02Track01.flac
+14ad3608d760acc6b4f698be7f9b1b57  Disc 02\Dylan_Toad's Place_Disc02Track02.flac
+c31a54a290d8dcb1ddef689b7c8fc5d2  Disc 02\Dylan_Toad's Place_Disc02Track03.flac
+00579a1708a6df1435459e80f9dd77c3  Disc 02\Dylan_Toad's Place_Disc02Track04.flac
+af1846aa7b9a808d0a24da55794c496d  Disc 02\Dylan_Toad's Place_Disc02Track05.flac
+809f082935e3f2cc35eb9cd29b34307e  Disc 02\Dylan_Toad's Place_Disc02Track06.flac
+af49d55fc66eb71174eb135d0cd37a8e  Disc 02\Dylan_Toad's Place_Disc02Track07.flac
+36c5951f1b3afc1ad415d3fd7ff81248  Disc 02\Dylan_Toad's Place_Disc02Track08.flac
+7a74479b3a41c2a98ee5cae92c65be16  Disc 02\Dylan_Toad's Place_Disc02Track09.flac
+ec6f1490c978a920a8e3729c9db81d96  Disc 03\Dylan_Toad's Place_Disc03Track01.flac
+2e35d75c1884322d0f9b130203666f4a  Disc 03\Dylan_Toad's Place_Disc03Track02.flac
+937faf8019fdbac4f98907d8de269342  Disc 03\Dylan_Toad's Place_Disc03Track03.flac
+14e5ecbcbfcb05b13e24aebedab9e614  Disc 03\Dylan_Toad's Place_Disc03Track04.flac
+0849fa2c3ff3128d6ca90761e95d7707  Disc 03\Dylan_Toad's Place_Disc03Track05.flac
+8f1fa320abf743eae68467986b58b01c  Disc 03\Dylan_Toad's Place_Disc03Track06.flac
+111514fd2ff4c1360cdf9474bd293df9  Disc 03\Dylan_Toad's Place_Disc03Track07.flac
+8ca8c6463131c1112af6ba8a43f384c6  Disc 03\Dylan_Toad's Place_Disc03Track08.flac
+e89c43d41beb8aeff3dc0df6b0223d43  Disc 03\Dylan_Toad's Place_Disc03Track09.flac
+a71c2f71c481bc7a6eb69aac095e2fa0  Disc 03\Dylan_Toad's Place_Disc03Track10.flac
+4f7c0e70db4e6fc32a05c0bdabc04ef7  Disc 03\Dylan_Toad's Place_Disc03Track11.flac
+eec0053685d280accad7222475e31a1f  Disc 03\Dylan_Toad's Place_Disc03Track12.flac
+a11fb062a991dd689b9ccfc3cb25df62  Disc 03\Dylan_Toad's Place_Disc03Track13.flac
+41d87cb7c7128afa79c1702f20ea2755  Disc 03\Dylan_Toad's Place_Disc03Track14.flac
+f79a6743ffdfaa0f53d05489179c4471  Disc 04\Dylan_Toad's Place_Disc04Track01.flac
+39f7f8db1a29c2f0e0ddd9243b383a67  Disc 04\Dylan_Toad's Place_Disc04Track02.flac
+2eee0fa761d20c4744f55034c8c846fb  Disc 04\Dylan_Toad's Place_Disc04Track03.flac
+9cd90f442c005da71d33f74060971006  Disc 04\Dylan_Toad's Place_Disc04Track04.flac
+82276181ce379203bad8a38800817608  Disc 04\Dylan_Toad's Place_Disc04Track05.flac
+181d2bb7e0796c7a68ee80498a0dc68e  Disc 04\Dylan_Toad's Place_Disc04Track06.flac
+5dcfb36578bbf730fe3d175bd7b04e78  Disc 04\Dylan_Toad's Place_Disc04Track07.flac
+209964023c1a580aaa3abefa636f9aae  Disc 04\Dylan_Toad's Place_Disc04Track08.flac
+f8506e82feb1772df241ea8c70d8f7e8  Disc 04\Dylan_Toad's Place_Disc04Track09.flac
+d5e57151b2392b772b6dabc0a04cacbf  Disc 04\Dylan_Toad's Place_Disc04Track10.flac
+e013abe5d01cc8b63e3255c86284508d  Disc 04\Dylan_Toad's Place_Disc04Track11.flac
+d4cef998aed2f655711e66f31d0c17a8  Disc 04\Dylan_Toad's Place_Disc04Track12.flac
+47a3c81ec9fc7fb389fdd4283f1d9514  Disc 04\Dylan_Toad's Place_Disc04Track13.flac
+dedfe6ed45d5285e0c916a14cd04e136  Disc 04\Dylan_Toad's Place_Disc04Track14.flac
+db3d8cf4d4153d2c7f0c6d3268811c83  Disc 04\Dylan_Toad's Place_Disc04Track15.flac
+2a4248e1e3e1aec48dace2fcbee4ecab  Disc 04\Dylan_Toad's Place_Disc04Track16.flac
+1c3357e3a177e69a3845dbad13dcf3f6  Dylan - Toad's Place January 12th 1990.md5
+3fc2bee82595948c7e339632dc16c2e5  Dylan - Toad's Place_Info.txt
+7c202ffafdf2d1ccee048046ba0ab14a  Toad's Place, New Haven - 12.01.1990 - F.jpg
+ec840914f0e403f0e18bb892f3edc894  Toad's Place, New Haven - 12.01.1990 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-12-jtt.flacf\Disc 01 
+=================== 
+=================== 
+=================== 
+Dylan_Toad's Place_Disc01Track01.flac:a9d44de59e1b679f859b40c425aedf42
+Dylan_Toad's Place_Disc01Track02.flac:65b1bef8ab383d1af86f957ea8fcfd21
+Dylan_Toad's Place_Disc01Track03.flac:9a8bcb2270f1cc714d8c07c031bd8cbf
+Dylan_Toad's Place_Disc01Track04.flac:6e759a8e0d29c8bf2e695e3dcd0777a1
+Dylan_Toad's Place_Disc01Track05.flac:934033fff199ffc967ee9d8f72c6882b
+Dylan_Toad's Place_Disc01Track06.flac:2abdfa5c1e381c73d82b3dee7a01aa76
+Dylan_Toad's Place_Disc01Track07.flac:43a50397f479d8e92a725e49793259d0
+Dylan_Toad's Place_Disc01Track08.flac:1cc663b975f7215df9fc162a9b0293a5
+Dylan_Toad's Place_Disc01Track09.flac:b2e691e621c6e91824868676c0cef228
+Dylan_Toad's Place_Disc01Track10.flac:0f146061625b277cf0688324ef89b144
+Dylan_Toad's Place_Disc01Track11.flac:d519ade38444f37923898b629ab0cfdb
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-12-jtt.flacf\Disc 02 
+=================== 
+=================== 
+=================== 
+Dylan_Toad's Place_Disc02Track01.flac:1272f5636981cf6a759e8143b3ed564d
+Dylan_Toad's Place_Disc02Track02.flac:d9ab2361e9d0434a34bf2691dc3bd0d9
+Dylan_Toad's Place_Disc02Track03.flac:ef6ef245329eb92599a5236d7d0022b6
+Dylan_Toad's Place_Disc02Track04.flac:c0d12599d180cfe31a6dd9b9a69d0839
+Dylan_Toad's Place_Disc02Track05.flac:62dfe960705e8ded0d703be13ae13590
+Dylan_Toad's Place_Disc02Track06.flac:b8f4f0912f591d627c20d6ea73f119ad
+Dylan_Toad's Place_Disc02Track07.flac:c2f3c068e65d6fdf2265798a11fce895
+Dylan_Toad's Place_Disc02Track08.flac:c11685c7e168fecb94ee807ee2f2385f
+Dylan_Toad's Place_Disc02Track09.flac:11212670d8ae8fe02f6a0bd23fa9d2de
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-12-jtt.flacf\Disc 03 
+=================== 
+=================== 
+=================== 
+Dylan_Toad's Place_Disc03Track01.flac:68a79dde44f13d06ef969bed9855b4cb
+Dylan_Toad's Place_Disc03Track02.flac:10a93cad7c273431de205943a520b1de
+Dylan_Toad's Place_Disc03Track03.flac:c38975e76e4a5bd4ed7fedc06032cfc6
+Dylan_Toad's Place_Disc03Track04.flac:727194e9ea725c9a8ce46b22f0c760af
+Dylan_Toad's Place_Disc03Track05.flac:13259b371df9dceedd300832fc4f8b6b
+Dylan_Toad's Place_Disc03Track06.flac:28feb2444743de02b81882057e2d6b1e
+Dylan_Toad's Place_Disc03Track07.flac:eb9799b91671831123b5791de681aba5
+Dylan_Toad's Place_Disc03Track08.flac:f517035fcdfdc6f08c4c06612b6c71a4
+Dylan_Toad's Place_Disc03Track09.flac:165acb2f1912efb80987570fccebaccf
+Dylan_Toad's Place_Disc03Track10.flac:7e9ba62396ec5a0221030bab299da6d4
+Dylan_Toad's Place_Disc03Track11.flac:e12558bf252d89aefd54d29476382fdf
+Dylan_Toad's Place_Disc03Track12.flac:67abd704922b9cee903a6dc972908a45
+Dylan_Toad's Place_Disc03Track13.flac:91de2c2744e41bf81815c5f6b071aaab
+Dylan_Toad's Place_Disc03Track14.flac:c0be4e394cf829b979ce09ab98b2cf1e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-12-jtt.flacf\Disc 04 
+=================== 
+=================== 
+=================== 
+Dylan_Toad's Place_Disc04Track01.flac:b5b551fb3ad84e4ac88b96df025875f3
+Dylan_Toad's Place_Disc04Track02.flac:1568b1e4315b4b41aa539bad50ab8fc0
+Dylan_Toad's Place_Disc04Track03.flac:e61158994ecda6b86cdb9c52c947477c
+Dylan_Toad's Place_Disc04Track04.flac:643c40ed20e8e3afb6da5f4a67b0e5b5
+Dylan_Toad's Place_Disc04Track05.flac:bfc3c7b362b29226aadf22804c02d3ef
+Dylan_Toad's Place_Disc04Track06.flac:e49f9f6e7999f61384f901fc2f38105f
+Dylan_Toad's Place_Disc04Track07.flac:dfa74b455bb0a49decd26749f3633147
+Dylan_Toad's Place_Disc04Track08.flac:120cfb50f2af35ed5b4a9f4f7098dc4d
+Dylan_Toad's Place_Disc04Track09.flac:01ea4363305e9c7ace4d22b853bb7d45
+Dylan_Toad's Place_Disc04Track10.flac:4d0385a58bc8fb20ab5f52ff92e7fc8a
+Dylan_Toad's Place_Disc04Track11.flac:220250d3556190aab26f91d0eab9fcbd
+Dylan_Toad's Place_Disc04Track12.flac:529f6c54ef28eb1073a28ef4a33fb9a9
+Dylan_Toad's Place_Disc04Track13.flac:5fd714436a378cbdcef15f597d89d16b
+Dylan_Toad's Place_Disc04Track14.flac:573d741dcae951cdb12394b8504a6bd4
+Dylan_Toad's Place_Disc04Track15.flac:88e220ce51d3d6afc0195ffd68a470e1
+Dylan_Toad's Place_Disc04Track16.flac:bc05b504364c715585a5abe793fa3149
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-12-jtt.flacf\Disc 01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.47       62732588 B   ---   --   ---xx   flac  0.6441  Dylan_Toad's Place_Disc01Track01.flac
+     5:27.09       57704012 B   ---   --   ---xx   flac  0.6452  Dylan_Toad's Place_Disc01Track02.flac
+     6:22.09       67406012 B   ---   --   ---xx   flac  0.6400  Dylan_Toad's Place_Disc01Track03.flac
+     4:18.43       45612380 B   ---   --   ---xx   flac  0.6380  Dylan_Toad's Place_Disc01Track04.flac
+     5:02.31       53345756 B   ---   --   ---xx   flac  0.6362  Dylan_Toad's Place_Disc01Track05.flac
+     7:28.25       79086044 B   ---   --   ---xx   flac  0.6355  Dylan_Toad's Place_Disc01Track06.flac
+     3:32.03       37403900 B   ---   --   ---xx   flac  0.6269  Dylan_Toad's Place_Disc01Track07.flac
+     4:20.33       45941660 B   ---   --   ---xx   flac  0.6261  Dylan_Toad's Place_Disc01Track08.flac
+     5:24.25       57212444 B   ---   --   ---xx   flac  0.6271  Dylan_Toad's Place_Disc01Track09.flac
+     4:37.33       48940460 B   ---   --   ---xx   flac  0.6212  Dylan_Toad's Place_Disc01Track10.flac
+     2:48.51       29755196 B   ---   --   ---xx   flac  0.6254  Dylan_Toad's Place_Disc01Track11.flac
+    55:17.09      585140452 B                            0.6343  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-12-jtt.flacf\Disc 02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.35       44005964 B   ---   --   ---xx   flac  0.6562  Dylan_Toad's Place_Disc02Track01.flac
+     5:13.14       55246172 B   ---   --   ---xx   flac  0.6553  Dylan_Toad's Place_Disc02Track02.flac
+     4:27.58       47235260 B   ---   --   ---xx   flac  0.6518  Dylan_Toad's Place_Disc02Track03.flac
+     4:52.36       51593516 B   ---   --   ---xx   flac  0.6522  Dylan_Toad's Place_Disc02Track04.flac
+     5:28.60       58000364 B   ---   --   ---xx   flac  0.6563  Dylan_Toad's Place_Disc02Track05.flac
+     4:51.41       51428876 B   ---   --   ---xx   flac  0.6669  Dylan_Toad's Place_Disc02Track06.flac
+     4:21.34       46120412 B   ---   --   ---xx   flac  0.2816  Dylan_Toad's Place_Disc02Track07.flac
+     3:14.72       34390988 B   ---   --   ---xx   flac  0.6503  Dylan_Toad's Place_Disc02Track08.flac
+     4:12.14       44485772 B   ---   --   ---xx   flac  0.6401  Dylan_Toad's Place_Disc02Track09.flac
+    40:51.64      432507324 B                            0.6144  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-12-jtt.flacf\Disc 03 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.14       46249772 B   ---   --   ---xx   flac  0.6363  Dylan_Toad's Place_Disc03Track01.flac
+     6:35.37       69765068 B   ---   --   ---xx   flac  0.6379  Dylan_Toad's Place_Disc03Track02.flac
+     7:04.27       74857148 B   ---   --   ---xx   flac  0.6236  Dylan_Toad's Place_Disc03Track03.flac
+     2:33.40       27083324 B   ---   --   ---xx   flac  0.6306  Dylan_Toad's Place_Disc03Track04.flac
+     5:55.41       62718476 B   ---   --   ---xx   flac  0.6327  Dylan_Toad's Place_Disc03Track05.flac
+     4:35.36       48594716 B   ---   --   ---xx   flac  0.6256  Dylan_Toad's Place_Disc03Track06.flac
+     4:23.03       46400300 B   ---   --   ---xx   flac  0.6287  Dylan_Toad's Place_Disc03Track07.flac
+     4:34.62       48479468 B   ---   --   ---xx   flac  0.6278  Dylan_Toad's Place_Disc03Track08.flac
+     2:55.34       30950012 B   ---   --   ---xx   flac  0.6289  Dylan_Toad's Place_Disc03Track09.flac
+     3:54.18       41319980 B   ---   --   ---xx   flac  0.6422  Dylan_Toad's Place_Disc03Track10.flac
+     6:26.35       68172764 B   ---   --   ---xx   flac  0.6361  Dylan_Toad's Place_Disc03Track11.flac
+     3:19.73       35275340 B   ---   --   ---xx   flac  0.6261  Dylan_Toad's Place_Disc03Track12.flac
+     6:48.09       71992412 B   ---   --   ---xx   flac  0.6300  Dylan_Toad's Place_Disc03Track13.flac
+     4:11.26       44337596 B   ---   --   ---xx   flac  0.6256  Dylan_Toad's Place_Disc03Track14.flac
+    67:40.05      716196376 B                            0.6310  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-12-jtt.flacf\Disc 04 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:45.66       39845276 B   ---   --   ---xx   flac  0.6398  Dylan_Toad's Place_Disc04Track01.flac
+     4:00.63       42484220 B   ---   --   ---xx   flac  0.6343  Dylan_Toad's Place_Disc04Track02.flac
+     4:16.40       45252524 B   ---   --   ---xx   flac  0.6420  Dylan_Toad's Place_Disc04Track03.flac
+     4:55.26       52099196 B   ---   --   ---xx   flac  0.6430  Dylan_Toad's Place_Disc04Track04.flac
+     3:49.11       40421516 B   ---   --   ---xx   flac  0.6438  Dylan_Toad's Place_Disc04Track05.flac
+     5:03.19       53493932 B   ---   --   ---xx   flac  0.6482  Dylan_Toad's Place_Disc04Track06.flac
+     4:55.54       52165052 B   ---   --   ---xx   flac  0.6454  Dylan_Toad's Place_Disc04Track07.flac
+     4:30.56       47759756 B   ---   --   ---xx   flac  0.6422  Dylan_Toad's Place_Disc04Track08.flac
+     4:45.66       50429276 B   ---   --   ---xx   flac  0.6530  Dylan_Toad's Place_Disc04Track09.flac
+     4:13.22       44680988 B   ---   --   ---xx   flac  0.6303  Dylan_Toad's Place_Disc04Track10.flac
+     6:26.63       68238620 B   ---   --   ---xx   flac  0.6287  Dylan_Toad's Place_Disc04Track11.flac
+     4:33.47       48267788 B   ---   --   ---xx   flac  0.6405  Dylan_Toad's Place_Disc04Track12.flac
+     4:26.07       46938908 B   ---   --   ---xx   flac  0.6516  Dylan_Toad's Place_Disc04Track13.flac
+     5:26.15       57541724 B   ---   --   ---xx   flac  0.6588  Dylan_Toad's Place_Disc04Track14.flac
+     5:10.44       54787532 B   ---   --   ---xx   flac  0.6423  Dylan_Toad's Place_Disc04Track15.flac
+     8:09.16       86297276 B   ---   --   ---xx   flac  0.6527  Dylan_Toad's Place_Disc04Track16.flac
+    78:29.15      830703584 B                            0.6440  (16 files)
+=================== 
+=================== 
+=================== 

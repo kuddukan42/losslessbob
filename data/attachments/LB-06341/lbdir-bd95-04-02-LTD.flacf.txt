@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-04-02-LTD.flacf 
+=================== 
+=================== 
+=================== 
+7db7222d1b7b4c2ee9c8c2e1d8aac8f9  bd-19950402-Birmingham.ffp
+0c9aba61aeec18299ae318e457382bbb  bd-19950402-Birmingham.md5
+208245862c3020b1b45c7ed1159df52a  bd1995-04-02-d1t01.flac
+c8aab063583dc9169c37e539161dd360  bd1995-04-02-d1t02.flac
+b4bedd19e204be5159f78b22defe79fb  bd1995-04-02-d1t03.flac
+17a29d8ac927e950b98f770c499ce5d0  bd1995-04-02-d1t04.flac
+82babfb0e7094f9990725ca4f7a873b3  bd1995-04-02-d1t05.flac
+c98413911510911c7fe8ac2925b42a86  bd1995-04-02-d1t06.flac
+0183366d04b5ebcaa9171dd29af9ab98  bd1995-04-02-d1t07.flac
+c2eab1cffe9e4871d899b8cd60b66a8b  bd1995-04-02-d1t08.flac
+a0a745feb61feb54d6a6b99ed93858ab  bd1995-04-02-d1t09.flac
+233debc0e46ac47004a89e1372deee10  bd1995-04-02-d1t10.flac
+1c01de3a581c5cb6d45142b57b5f6e99  bd1995-04-02-d2t01.flac
+69c05dfc4bfb7788c86687968c7fc6ef  bd1995-04-02-d2t02.flac
+c51fe733c9d3f0d4cb99fbee08fe07f4  bd1995-04-02-d2t03.flac
+6295628cd578174afbfed80588952105  bd1995-04-02-d2t04.flac
+d61353e193c2de73dd9a0796da224c6b  bd1995-04-02-d2t05.flac
+c0e21588a63cead3cde43b1b5510a4c9  bd1995-04-02-d2t06.flac
+9021626d00c4ea7970dd819a40639693  bd1995-04-02-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-04-02-LTD.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-04-02-d1t01.flac:c026496cdb7e4e483276baf4292f9c8c
+bd1995-04-02-d1t02.flac:eb387a15d5c53193e9e740ae582c7b09
+bd1995-04-02-d1t03.flac:7c0dd771b4432a08d6b7005ff6bd87c7
+bd1995-04-02-d1t04.flac:0f1e9b5db47de9d6212c67460caa8a2b
+bd1995-04-02-d1t05.flac:47d3c946ccaba8f8fb9b7e625d391dda
+bd1995-04-02-d1t06.flac:1b8a30349e60b0dd5265cb8b7d1d430e
+bd1995-04-02-d1t07.flac:34cad8aab3cb9ebe16e05ce378a5d0f9
+bd1995-04-02-d1t08.flac:556eef8e5381e7f728ed16bf2c9846fe
+bd1995-04-02-d1t09.flac:a54a009ec8aa8a7173b223b3c7b2f98a
+bd1995-04-02-d1t10.flac:37768e983f1c00e92efadefdaac588c4
+bd1995-04-02-d2t01.flac:b18cb49ec6f6e6dd30ccbf4bb14fab0c
+bd1995-04-02-d2t02.flac:ba036e834519fe128ee9707ed756d4a8
+bd1995-04-02-d2t03.flac:ce0f70d03a453d369927b146a163feda
+bd1995-04-02-d2t04.flac:5bf97d53c331ec6de671a6688ac3ce58
+bd1995-04-02-d2t05.flac:165f24d538ea84b6b278783d5e85ff02
+bd1995-04-02-d2t06.flac:4d0a0baa02e15664b1fd4780ff2a38b5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-04-02-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:21.20        3751484 B   ---   --   ---xx   flac  0.4299  bd1995-04-02-d1t01.flac
+     5:02.28       53338700 B   ---   --   ---xx   flac  0.5536  bd1995-04-02-d1t02.flac
+     6:43.33       71166860 B   ---   --   ---xx   flac  0.5431  bd1995-04-02-d1t03.flac
+     5:46.35       61116764 B   ---   --   ---xx   flac  0.5591  bd1995-04-02-d1t04.flac
+     7:19.60       77580764 B   ---   --   ---xx   flac  0.4720  bd1995-04-02-d1t05.flac
+     6:19.08       66874460 B   ---   --   ---xx   flac  0.5735  bd1995-04-02-d1t06.flac
+     8:25.43       89183180 B   ---   --   ---xx   flac  0.5196  bd1995-04-02-d1t07.flac
+     6:44.03       71272700 B   ---   --   ---xx   flac  0.3936  bd1995-04-02-d1t08.flac
+     9:56.41      105230876 B   ---   --   ---xx   flac  0.4162  bd1995-04-02-d1t09.flac
+     6:24.48       67850540 B   ---   --   ---xx   flac  0.4300  bd1995-04-02-d1t10.flac
+     6:25.16       67951676 B   ---   --   ---xx   flac  0.5824  bd1995-04-02-d2t01.flac
+     8:11.66       86767676 B   ---   --   ---xx   flac  0.5350  bd1995-04-02-d2t02.flac
+     0:21.51        3824396 B   ---   --   ---xx   flac  0.4815  bd1995-04-02-d2t03.flac
+     8:10.45       86541884 B   ---   --   ---xx   flac  0.5162  bd1995-04-02-d2t04.flac
+     7:14.06       76571756 B   ---   --   ---xx   flac  0.5513  bd1995-04-02-d2t05.flac
+     8:45.58       92746460 B   ---   --   ---xx   flac  0.4664  bd1995-04-02-d2t06.flac
+   102:12.36     1081770176 B                            0.5031  (16 files)
+=================== 
+=================== 
+=================== 

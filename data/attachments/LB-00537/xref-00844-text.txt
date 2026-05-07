@@ -1,0 +1,237 @@
+===================
+===================
+===================
+=== 1975-11-24_Hartford.txt
+===================
+===================
+===================
+Civic Center Arena
+Hartford, Connecticut
+24 November 1975
+
+Rolling Thunder Revue concert # 23
+Bob Dylan (vocal, guitar), Bob Neuwirth (guitar), T-bone J. Henry Burnett (guitar), Roger McGuinn (guitar), Steven Soles (guitar), Mick Ronson (guitar), David Mansfield (steel guitar, violin, mandolin ,dobro), Rob Stoner (bass), Howie Wyeth (piano, drums), Luther Rix (drums, percussion), Ronee Blakley (vocal), Scarlet Rivera (violin).
+
+
+Disc One 
+
+ Bob Neuwirth:
+1. Good Love Is Hard To Find (N. Albright)
+2. Sleazy (?)
+ 
+T-bone J. Henry Burnett:
+3. Hoola Hoop (John Fleming/J. Henry Burnett/Roscoe West)
+ 
+Steven Soles:
+4. Dont Blame Me (Jimmy McHugh)
+ 
+Rob Stoner:
+5. Catfish (Bob Dylan-Jacques Levy/Bob Dylan)
+ 
+Mick Ronson:
+6.  Is There Life On Mars? (Roscoe West)
+ 
+Bob Neuwirth & Ronee Blakley:
+7.  Alabama Dark (Bob Neuwirth)
+ 
+Ronee Blakley:
+8.  Need A New Sun Rising (Ronee Blakley)
+ 
+Bob Neuwirth:
+9.  Cindy (When I Get Home) (trad.)
+10. Mercedes Benz (Janis Joplin/Michael McClure)
+ 
+Rick Danko & Allen Ginsberg:
+11. Oh What A Time (?)
+12. It Makes No Difference (Robbie Robertson)
+ 
+Joni Mitchell:
+13. Don't Interrupt The Sorrow (Joni Mitchell)
+14. Edith And The Kingpin (Joni Mitchell)
+ 
+Disc Two 
+
+1. 
+ Bob Neuwirth:
+   Song for Ramblin Jack (Bob Neuwirth) / 
+ Ramblin Jack Elliott:
+   Muleskinner Blues (Jimmie Rodgers)
+2. South Coast (Ross/Eskin/Dehz)
+3. Black Bill (?)
+4. Im A Rich And Ramblin Boy (Derroll Adams)
+   
+ Bob Dylan:
+5.  When I Paint My Masterpiece
+6.  It Ain't Me, Babe
+7.  The Lonesome Death Of Hattie Carroll
+8.  Tonight I'll Be Staying Here With You
+9.  A Hard Rain's A-Gonna Fall
+10. Romance In Durango (Jacques Levy/Bob Dylan)
+11. Isis (Jacques Levy/Bob Dylan)
+ 
+ 
+Disc Three
+
+ Bob Dylan + Joan Baez (vocal, guitar):
+1.  Blowin' In The Wind
+2.  Dark As A Dungeon (Merle Travis)
+3.  Mama, You Been On My Mind
+4.  Never Let Me Go (Joseph C. Scott)
+5.  I Shall Be Released
+
+ Joan Baez: 
+6.  Diamonds And Rust (Joan Baez)
+7.  Swing Low Sweet Chariot (trad.)
+8.  Joe Hill (Earl Robinson)
+9.  Love Song To A Stranger (Joan Baez)
+10. Help Me Make It Through The Night (Kris Kristofferson)
+11. Please Come To Boston (Dave Loggins)
+ instrumental by Sandy Bull:
+12. Rebecca Come And Live With Me (Sandy Bull)
+ 
+ Roger McGuinn: 
+13. Eight Miles High (Gene Clark, Roger McGuinn, David Crosby)
+14. Chestnut Mare (Roger McGuinn/Jacques Levy)
+ 
+ Joan Baez & Roger McGuinn:
+15. The Night They Drove Old Dixie Down (Robbie Robertson)
+ 
+Disc Four
+ Bob Dylan
+1. Love Minus Zero/No Limit
+2. Simple Twist Of Fate
+3. Oh, Sister (Jacques Levy/Bob Dylan)
+4. Hurricane (Jacques Levy/Bob Dylan)
+5. One More Cup Of Coffee (Valley Below)
+6. Sara
+7. Just Like A Woman
+
+ Bob Dylan + Roger McGuinn (shared vocal)
+8. Knockin' On Heaven's Door
+
+9. This Land Is Your Land (Woody Guthrie)
+shared vocal by Bob Dylan and the entire ensemble for the evening
+  
+
+Notes
+The full tape emerged in 2000.
+
+===================
+===================
+===================
+=== 1975-11-24_Hartford_d1.md5
+===================
+===================
+===================
+2774cb8d5dd5225116ac60c730bf82ef *1975-11-24_d1t01.flac
+1f8794614fc5b840607179409381b167 *1975-11-24_d1t02.flac
+a3a3730a3b88be7d14d6669ca1cece1a *1975-11-24_d1t03.flac
+afdf68545f3b25fb1dc84903740a8b96 *1975-11-24_d1t04.flac
+7ee2be4199d1ecc87081bf04e7030bf4 *1975-11-24_d1t05.flac
+80e097d1a46387dd36eb81e7349e3ecb *1975-11-24_d1t06.flac
+f4cff5f2e032ce3a0a5f9442ea8ec176 *1975-11-24_d1t07.flac
+99021c8cb999fb2ee8e745e224f38165 *1975-11-24_d1t08.flac
+3c9c7322a6f361a03c1ad2b210d01358 *1975-11-24_d1t09.flac
+022e00eda72b7d6cd5db3caf61d3225e *1975-11-24_d1t10.flac
+8e5e5dfc04de9798b650bd9f9f616d3f *1975-11-24_d1t11.flac
+eaefb89c26f8c4d95184215f23668960 *1975-11-24_d1t12.flac
+bd210763df21f55a8cc6a4017656eaf7 *1975-11-24_d1t13.flac
+eb2cbe790e86f442cff81e109440c2cc *1975-11-24_d1t14.flac
+===================
+===================
+===================
+=== 1975-11-24_Hartford_d2.md5
+===================
+===================
+===================
+bf4d4dc4b8527b73df3fe82a930bfa9b *1975-11-24_d2t01.flac
+e84ea315190a9ae2326958431ebfecae *1975-11-24_d2t02.flac
+0843443faa013ad180483f9fb0fdb49d *1975-11-24_d2t03.flac
+7739055d8f7a238ed2534f8fa56ce5c7 *1975-11-24_d2t04.flac
+320b1d37dbd963127afd148ad784bc9e *1975-11-24_d2t05.flac
+65484d0d00475b536475d34d075e5396 *1975-11-24_d2t06.flac
+22ed4c58fc1adb46b4acd968dd1b531e *1975-11-24_d2t07.flac
+0e19fdb86ac550410443257c9fda94cc *1975-11-24_d2t08.flac
+81a1cb7e607b981268a3298e1769dea2 *1975-11-24_d2t09.flac
+3af1aa5a42ca045090099cc3a04399ea *1975-11-24_d2t10.flac
+92d2c4cead9cd6ac47f1e1db71d3776c *1975-11-24_d2t11.flac
+===================
+===================
+===================
+=== FLAC fingerprint_d1.txt
+===================
+===================
+===================
+1975-11-24_d1t01.flac:19ef96d9aeee8f5854c375128c317285
+1975-11-24_d1t02.flac:d4316537a45c0c28b7184ff218bb3f50
+1975-11-24_d1t03.flac:792f2532423b5ca8b8d432bf6ce3a2e3
+1975-11-24_d1t04.flac:e1122d241a3179a80caac36534cabd3a
+1975-11-24_d1t05.flac:e1216db4397edf73a9799b9194cc06fb
+1975-11-24_d1t06.flac:68c925444864e5ff0ac31fd657838834
+1975-11-24_d1t07.flac:f1ffb0a167eb2fdcc67cd29e0b6869b9
+1975-11-24_d1t08.flac:8d56266303ba9a390dec6b8cab0964fe
+1975-11-24_d1t09.flac:561bb39768b84051726c619942efe710
+1975-11-24_d1t10.flac:5f13e684a0f8093a64ed826a522bc566
+1975-11-24_d1t11.flac:3fe95de1cb37aff0a705c2c26e75c79d
+1975-11-24_d1t12.flac:725bd95430283a98a449ac2251a8edf3
+1975-11-24_d1t13.flac:af21e9d97dcdb37b5ce7acbecc3c8f03
+1975-11-24_d1t14.flac:e4509ab647e02f7de99a0008f0502e4e
+===================
+===================
+===================
+=== FLAC fingerprint_d2.txt
+===================
+===================
+===================
+1975-11-24_d2t01.flac:052a4570022497008a773396adf0cc52
+1975-11-24_d2t02.flac:c9812661484c1a5be723d134f7c5cfea
+1975-11-24_d2t03.flac:484ce7b92e27b85a1531bda3cd98efbd
+1975-11-24_d2t04.flac:12cbc668574a289f9edbd0a5a4c275d8
+1975-11-24_d2t05.flac:3fb6bd06a05d841747b2ab22769e10cb
+1975-11-24_d2t06.flac:275ba587204a73c6b6d71bc4caa4f29f
+1975-11-24_d2t07.flac:60edeccdaac6d5b2dcdaeafafc0ad34e
+1975-11-24_d2t08.flac:4dff89c6e109231c9b057593059c11b7
+1975-11-24_d2t09.flac:1137b8beaba76c991acc3ead731be76b
+1975-11-24_d2t10.flac:58335b008fb602030034e35af06bb077
+1975-11-24_d2t11.flac:2e96b74764ae052e1fbb75d73bc06fe9
+===================
+===================
+===================
+=== 1975-11-24_Hartford_d3.md5
+===================
+===================
+===================
+8d2d685ce09614078c34fba040638aa8 *1975-11-24_d3t15.flac
+4f43dc9ca6cdb4233e191a4d67dc97a0 *1975-11-24_d3t02.flac
+3b8d8f5041df201ff32156f028adf348 *1975-11-24_d3t03.flac
+1c353ab421c18ff43e2716cbb54b6d3b *1975-11-24_d3t04.flac
+fde9a7439c3cdd836e7a80fb21319735 *1975-11-24_d3t05.flac
+439d2ce8cbdcf2585072393f5fb3b8dc *1975-11-24_d3t06.flac
+e4d9e1c70357c4a5b2e2ad154d2f8505 *1975-11-24_d3t07.flac
+029c5762961b1f128b1c83395183a415 *1975-11-24_d3t08.flac
+2de7cd124117c0d23fbb35c0fe0ac2d0 *1975-11-24_d3t09.flac
+1d1aeb75c0aacb928b7b750d11d5d6be *1975-11-24_d3t10.flac
+aba21638dfe9751bbdc8fc981c50866e *1975-11-24_d3t11.flac
+27e395ec57e4764fb9496487e0b7f372 *1975-11-24_d3t12.flac
+bdbf21acda63e544e2ea39ce64a45a43 *1975-11-24_d3t13.flac
+3b358dbf5311605b4f31f238299f1c5b *1975-11-24_d3t14.flac
+b217d4aa7294c0fe559a82abc443798a *1975-11-24_d3t01.flac
+===================
+===================
+===================
+=== 1975-11-24_Hartford_d4.md5
+===================
+===================
+===================
+23895a5d1c58aa69a06597318cbd1901 *1975-11-24_d4t01.flac
+ba6c279f98d62757fb6c022a84e318fa *1975-11-24_d4t02.flac
+382e866239a92423048bc3704fac51f2 *1975-11-24_d4t03.flac
+ecb6e0a3c66d797fb3d4117902f63001 *1975-11-24_d4t04.flac
+a91c9225cb51fd55ad8784dcb340b527 *1975-11-24_d4t05.flac
+0e46e99486bbfafb2aa0aea7f86c9ddf *1975-11-24_d4t06.flac
+366b125707e413b17c95e1f42ba8de05 *1975-11-24_d4t07.flac
+146d5b8f9dcc67b9efa89776a38848b9 *1975-11-24_d4t08.flac
+f5f55dc0c98de4571090bcb68c3539ff *1975-11-24_d4t09.flac
+===================
+===================
+===================

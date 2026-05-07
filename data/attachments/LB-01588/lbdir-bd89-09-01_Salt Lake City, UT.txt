@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-09-01_Salt Lake City, UT 
+=================== 
+=================== 
+=================== 
+12f22c8c10a327da0e86723939581ef8  89-09-01_cd1.shnf\89-09-01_cd1_Track01.shn
+1a1c87e7d53d159cdd2e8f37768bdd4e  89-09-01_cd1.shnf\89-09-01_cd1_Track02.shn
+5176117b6c67b107e5275fb6c9489d3b  89-09-01_cd1.shnf\89-09-01_cd1_Track03.shn
+c6b9b5189fbb3e98ff8e319bb538ad4f  89-09-01_cd1.shnf\89-09-01_cd1_Track04.shn
+a111f4cd0ead4f0ed76bef8e74078895  89-09-01_cd1.shnf\89-09-01_cd1_Track05.shn
+0840dfa8fec563d19e7b2fe47854cb8d  89-09-01_cd1.shnf\89-09-01_cd1_Track06.shn
+a3cc6ea753e8691c1af3eda7b8a50fc1  89-09-01_cd1.shnf\89-09-01_cd1_Track07.shn
+bfeb95fe6790cd3c45ccbcb6ce774e3f  89-09-01_cd1.shnf\89-09-01_cd1_Track08.shn
+2650060f5da5abfc0ca514a4a0af3869  89-09-01_cd1.shnf\89-09-01_cd1_Track09.shn
+1b35a985c8312cf15fd9124eb7365e8e  89-09-01_cd1.shnf\89-09-01_cd1_Track10.shn
+552ba5720653b7a7d4793b4a54cb9b7d  89-09-01_cd1.shnf\89-09-01_cd1_shn.md5
+5c59823ca9496f2e4a3795b8e86d7ed2  89-09-01_cd2.shnf\89-09-01_cd2_Track01.shn
+bf7f5dab4c509b3b8c2150a7f32a9f7e  89-09-01_cd2.shnf\89-09-01_cd2_Track02.shn
+9592ff4ad30deb8e0f6c0c187b351941  89-09-01_cd2.shnf\89-09-01_cd2_Track03.shn
+620f5bc1e573338c96dcc262267ed468  89-09-01_cd2.shnf\89-09-01_cd2_Track04.shn
+0ad56ee1722cf084561ff67a9e18ddbc  89-09-01_cd2.shnf\89-09-01_cd2_Track05.shn
+3f34b084b6b57fe7ec1e6bcc7bc46d2f  89-09-01_cd2.shnf\89-09-01_cd2_Track06.shn
+88f223042b5e66f99abd18a5e29f7831  89-09-01_cd2.shnf\89-09-01_cd2_Track07.shn
+c63822c37730920738d2e34c98ed3001  89-09-01_cd2.shnf\89-09-01_cd2_Track08.shn
+b2c2e29affb667883b810e865086af00  89-09-01_cd2.shnf\89-09-01_cd2_Track09.shn
+39ec863ae4914a94e7fb5c5177eacd7c  89-09-01_cd2.shnf\89-09-01_cd2_shn.md5
+943e93e4c3e962182fbd47c4c5fe2ef1  bd89-09-01.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-09-01_Salt Lake City, UT\89-09-01_cd1.shnf 
+=================== 
+=================== 
+=================== 
+d64296792bb3e87d05c0ea601d93c9cd  [shntool]  89-09-01_cd1_Track01.wav
+e2eb05ae3b0ec7f077dfdc775f508e48  [shntool]  89-09-01_cd1_Track02.wav
+7b2b7b23caf04f8fb299438987e82248  [shntool]  89-09-01_cd1_Track03.wav
+5027c30210013cf0547deb96844e35f9  [shntool]  89-09-01_cd1_Track04.wav
+4c6ff5ae3043e0f7dff5e68df52ce952  [shntool]  89-09-01_cd1_Track05.wav
+ed138e27814f305a3358663b676c393e  [shntool]  89-09-01_cd1_Track06.wav
+32d4e57a9b4310e0defa6d5bde05106a  [shntool]  89-09-01_cd1_Track07.wav
+0881ab49343dfd3ee5c1c92f1382fe51  [shntool]  89-09-01_cd1_Track08.wav
+5b96b1c28710dc7effd450ccfbc2a901  [shntool]  89-09-01_cd1_Track09.wav
+55d4294fd3f89f6169a7c1c921485eda  [shntool]  89-09-01_cd1_Track10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-09-01_Salt Lake City, UT\89-09-01_cd2.shnf 
+=================== 
+=================== 
+=================== 
+25d0e0e23966376edf366b61b0ff1b55  [shntool]  89-09-01_cd2_Track01.wav
+a88003c5b50e18a52062b1feb2439466  [shntool]  89-09-01_cd2_Track02.wav
+e078359a84a3fdb9229cc96d8b5fae04  [shntool]  89-09-01_cd2_Track03.wav
+49d19c21faa5316f3067de36e7fb39c2  [shntool]  89-09-01_cd2_Track04.wav
+4935180ca23f9f95183b0ea6877788e4  [shntool]  89-09-01_cd2_Track05.wav
+56b85a795c108836171483b3ad1e5e0c  [shntool]  89-09-01_cd2_Track06.wav
+139de21fce0bff4bafbe1f53b8448384  [shntool]  89-09-01_cd2_Track07.wav
+948910c776c5794217faf9d31e79666c  [shntool]  89-09-01_cd2_Track08.wav
+37d26c829d41b5ba26e8c292bb78ff02  [shntool]  89-09-01_cd2_Track09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-09-01_Salt Lake City, UT\89-09-01_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:07.42       33085642 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track01.wav
+     7:27.36       78935530 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track02.wav
+     6:19.33       66933274 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track03.wav
+     6:33.63       69473434 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track04.wav
+     6:22.51       67504810 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track05.wav
+     4:28.15       47310538 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track06.wav
+     4:50.66       51311290 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track07.wav
+     4:38.48       49152154 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track08.wav
+     7:52.51       83380810 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track09.wav
+     4:05.66       43373290 B   ---   h-   -----    wav  1.0000  89-09-01_cd1_Track10.wav
+    55:47.21      590460772 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-09-01_Salt Lake City, UT\89-09-01_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.24       59503306 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track01.wav
+     5:24.00       57153658 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track02.wav
+     8:24.54       89032666 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track03.wav
+     3:19.33       35181274 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track04.wav
+     5:24.00       57153658 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track05.wav
+     4:39.27       49279162 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track06.wav
+     7:17.30       77157418 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track07.wav
+     7:06.45       75252298 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track08.wav
+     4:09.63       44071834 B   ---   h-   -----    wav  1.0000  89-09-01_cd2_Track09.wav
+    51:22.51      543785274 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,10 @@
+Bob Dylan, 2/14/94, Kokura, Japan, 2CDR
+
+LB-7278, (57min+50min), version "b"; Taper: Not certain. Source: LB-3267, LB-3267 >, xACT 1.62 >, Amadeus 11 3.8.7 >, drop/static d1t1 0:57 right channel fixed;, d1-d2 [00'07"962] overlap fixed;, d2t3 I and I + Maggie's Farm tracked >, Chaotic Software Media Rage 3.4.3 >, FLAC tags >, xACT 1.62 >, md5, st5, ffp, NO EQ, NO LEVEL TOUCHED, 2009-03-12; bittorrent download 03/09; this is a not very close eac match on d1t1 to LB-3267 because of the repair; (did not listen to all of this)
+
+drop/cut end of d1t4, d1t6
+
+CD 1, 01 Introduction >, Jokerman 08:26, 02 Shelter from the Storm 06:46, 03 All along the Watchtower 04:58, 04 Just Like a Woman 08:26, 05 Tangled up in Blue 10:30, 06 I'll Be Your Baby Tonight 05:34, 07 Tomorrow Night 04:23 Sam Coslow, Wilhelm Grosz, 08 Mr. Tambourine Man 07:03, 56:18, CD 2, 01 It's All over Now, Baby Blue 07:45, 02 God Knows 05:55, 03 I and I 08:03, 04 Maggie's Farm >, Band Introduction 09:33, (encore), 05 Man in the Long Black Coat 08:30, 06 It Ain't Me, Babe 09:42, 49:31, 2CD 105:43
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

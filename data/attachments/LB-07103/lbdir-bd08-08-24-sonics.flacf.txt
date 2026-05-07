@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-08-24-sonics.flacf 
+=================== 
+=================== 
+=================== 
+591f889574694d7f56d3376274da1d42  Bob Dylan 2008-08-24 Evansville, In Flac16FFP.ffp
+2065dc038d85e67c7f434212033952f6  Dylan 2008-08-24 Evansville.txt
+9da62b7729e5f4604268b1fa5fdaf879  Dylan2008-08-24d1t01.flac
+3e9b071d3f7c71fc3c37695eff6e180e  Dylan2008-08-24d1t02.flac
+a0f794e0083ffd7f36daaf88aea1a9e0  Dylan2008-08-24d1t03.flac
+df367dd47b286cac7a8a4fa9429b50d5  Dylan2008-08-24d1t04.flac
+69a2b6f5dff365c30f7232db31603caf  Dylan2008-08-24d1t05.flac
+0af200d65f9bcb61b5509446ab43eed7  Dylan2008-08-24d1t06.flac
+65605f6353a05ccf238bb8b4b2426bb5  Dylan2008-08-24d1t07.flac
+6b9828a2f014b1466b01fcee7f840531  Dylan2008-08-24d1t08.flac
+8c2aafa2d22911bcc8854b305e70af82  Dylan2008-08-24d1t09.flac
+9f3563c0510a95e508c0651e0058cabf  Dylan2008-08-24d1t10.flac
+7b768c3819242427ec24b9baf67408ef  Dylan2008-08-24d1t11.flac
+b47a9e29034b955d0836db46c43f26e5  Dylan2008-08-24d2t01.flac
+ac6bae7b18d147b196f7324a4bf7421a  Dylan2008-08-24d2t02.flac
+a68b736b2d3dc76b16703bd509c0ddbf  Dylan2008-08-24d2t03.flac
+51fb67a60d6c1478edea6e1b04bcec4e  Dylan2008-08-24d2t04.flac
+65a438a78b52ca13f9d536d27eb6c88f  Dylan2008-08-24d2t05.flac
+be43d29f50bb66f7e5b119933cdb411b  Dylan2008-08-24d2t06.flac
+6bfe2519a67c04cad686ae03864ffba2  Dylan2008-08-24d2t07.flac
+6483db61cf9bb095244e7dc1a93587b3  Dylan2008-08-24d2t08.flac
+7f2b095ac6c7eed67c6519a97bcf3cea  Dylan2008-08-24d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-08-24-sonics.flacf 
+=================== 
+=================== 
+=================== 
+Dylan2008-08-24d1t01.flac:816ee067ef904d427fd4e5471a8ca6e6
+Dylan2008-08-24d1t02.flac:32fd89bf373828a9cd350bf6df0a24e4
+Dylan2008-08-24d1t03.flac:b0c67ae69d03afdb3bc5e2932cf1d273
+Dylan2008-08-24d1t04.flac:fa9768851d5d104977c0ca04d89f3a45
+Dylan2008-08-24d1t05.flac:38acc0d1029b688cb3f8202b21705c6b
+Dylan2008-08-24d1t06.flac:2206ff6d853e33f9c90c873774aa1b58
+Dylan2008-08-24d1t07.flac:de2f1274a950b51d0d81aac95159f7e6
+Dylan2008-08-24d1t08.flac:223754948376102d1bebf1f3abe79b7a
+Dylan2008-08-24d1t09.flac:99ddd4376e0fe749adb6331634595a4d
+Dylan2008-08-24d1t10.flac:dd859b3ecc912d6837a3bb263cb0ec56
+Dylan2008-08-24d1t11.flac:d6ba45c5efd987c6f3fddd5860961ba4
+Dylan2008-08-24d2t01.flac:81fdb63797cadc54803eba6c3e9c83a2
+Dylan2008-08-24d2t02.flac:d85379da790cd1da605f80b2477ed415
+Dylan2008-08-24d2t03.flac:c295fb4bc560643ec2c1769144365f60
+Dylan2008-08-24d2t04.flac:f506cb9682949802c92c8874c461b665
+Dylan2008-08-24d2t05.flac:51af9ffe58085f6d781864ea0c890a6e
+Dylan2008-08-24d2t06.flac:0aba6e839451a6d62558b51dc39ab250
+Dylan2008-08-24d2t07.flac:196ff434e00af31dee50f56fb1923730
+Dylan2008-08-24d2t08.flac:efaa674904ea55289b5c87e2e54be0aa
+Dylan2008-08-24d2t09.flac:e7cce88be273abc4efae8014272ecffd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-08-24-sonics.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.37       10141868 B   ---   --   ---xx   flac  0.4922  Dylan2008-08-24d1t01.flac
+     5:05.25       53860844 B   ---   --   ---xx   flac  0.5551  Dylan2008-08-24d1t02.flac
+     6:08.48       65028140 B   ---   --   ---xx   flac  0.5544  Dylan2008-08-24d1t03.flac
+     5:40.06       59990156 B   ---   --   ---xx   flac  0.5504  Dylan2008-08-24d1t04.flac
+     6:50.28       72389900 B   ---   --   ---xx   flac  0.5468  Dylan2008-08-24d1t05.flac
+     7:05.62       75115868 B   ---   --   ---xx   flac  0.5580  Dylan2008-08-24d1t06.flac
+     6:27.41       68363276 B   ---   --   ---xx   flac  0.5331  Dylan2008-08-24d1t07.flac
+     5:40.62       60121868 B   ---   --   ---xx   flac  0.5727  Dylan2008-08-24d1t08.flac
+     6:20.34       67112012 B   ---   --   ---xx   flac  0.5167  Dylan2008-08-24d1t09.flac
+     7:30.73       79551740 B   ---   --   ---xx   flac  0.5438  Dylan2008-08-24d1t10.flac
+     6:29.71       68786636 B   ---   --   ---xx   flac  0.5052  Dylan2008-08-24d1t11.flac
+     6:37.31       70103756 B   ---   --   ---xx   flac  0.5704  Dylan2008-08-24d2t01.flac
+     6:46.61       71761916 B   ---   --   ---xx   flac  0.5346  Dylan2008-08-24d2t02.flac
+     7:05.24       75026492 B   ---   --   ---xx   flac  0.5390  Dylan2008-08-24d2t03.flac
+     7:50.28       82973900 B   ---   --   ---xx   flac  0.4864  Dylan2008-08-24d2t04.flac
+     6:36.33       69932060 B   ---   --   ---xx   flac  0.5659  Dylan2008-08-24d2t05.flac
+     2:34.52       27287948 B   ---   --   ---xx   flac  0.4998  Dylan2008-08-24d2t06.flac
+     7:00.23       74142140 B   ---   --   ---xx   flac  0.5611  Dylan2008-08-24d2t07.flac
+     0:40.54        7183052 B   ---   --   ---xx   flac  0.5186  Dylan2008-08-24d2t08.flac
+     5:21.30       56695004 B   ---   --   ---xx   flac  0.5725  Dylan2008-08-24d2t09.flac
+   114:50.73     1215568576 B                            0.5423  (20 files)
+=================== 
+=================== 
+=================== 

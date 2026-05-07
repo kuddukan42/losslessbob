@@ -1,0 +1,155 @@
+===================
+===================
+===================
+=== 1997.04.18, Recreation and Convocation Center, SUNY, Albany, NY (NTC).md5
+===================
+===================
+===================
+a2af82a3766955dc6f3534f859f73cfb *01 Crash on the levee (Down in the flood).flac
+e0d6904941d77783d7f33fef7746c43c *02 Pretty Peggy-O.flac
+36d0da20c2df5ac9fd68c94efea338b2 *03 All along the watchtower.flac
+d026018b3109794b0a438eaf221420d2 *04 You ain't going nowhere.flac
+0082a5e90f92ad71662f725c3ac51235 *05 Most likely you go your way (and I'll go mine).flac
+769fb02897cc86531d66a8286d1a539e *06 Silvio.flac
+5f6151f6fd39b701352d411c822fe691 *07 Friend of the devil.flac
+9aa524b0cbe97c6d97d9c7363846f6bc *08 Mr. Tambourine man.flac
+e999566095524bdef771ee7ed2769aae *09 The lonesome death of Hattie Carroll.flac
+018fbd1faa1a41db0d6ad0434d2d7b48 *10 Tombstone blues.flac
+a66b97020387293616f0ac680e5e7474 *11 (Band intro).flac
+df09192793adc0c16b679587f1a5fba9 *12 Shooting star.flac
+f47dd7317bc781aa9d769de71877a375 *13 Ballad of a thin man.flac
+14901631ea4a994e0eec02495344fa5b *14 (Encore).flac
+6ae6e3ef83de73387feb290b622e037d *15 (Encore).flac
+7955f7bff89276939635e69e00c3107c *16 (Encore).flac
+bbd5a941d963e142ad5bade5408c6880 *17 Highway 61 revisited.flac
+27027cf7687f3083353587c189df42e5 *18 Forever young.flac
+858f99acf4be3d50cbaa6adaa4a91533 *19 Rainy day women #12 & 35.flac
+821f24a0bba386644ec7e30ebac693ff *bd_97-04-18_cd1_shn.md5
+12b84d3627a12ecb207072afc775fe29 *bd_97-04-18_cd2_shn.md5
+5c525370a5584c37caab76257c707cb3 *bd-1997-04-18-albany-AUD.txt
+===================
+===================
+===================
+=== 1997.04.18, Recreation and Convocation Center, SUNY, Albany, NY (NTC).spec.txt
+===================
+===================
+===================
+=================== 
+=================== 
+=================== 
+=== md5 for: 1997.04.18, Recreation and Convocation Center, SUNY, Albany, NY (NTC) 
+=================== 
+=================== 
+=================== 
+6ae6e3ef83de73387feb290b622e037d  15 (Encore).flac
+3d9a4deb1bdbed82af678380cca6cd99  1997.04.18, Recreation and Convocation Center, SUNY, Albany, NY (NTC).md5
+5c525370a5584c37caab76257c707cb3  bd-1997-04-18-albany-AUD.txt
+821f24a0bba386644ec7e30ebac693ff  bd_97-04-18_cd1_shn.md5
+12b84d3627a12ecb207072afc775fe29  bd_97-04-18_cd2_shn.md5
+b125e3ead4541712748b2094652ba6a8  ~uTorrentPartFile_235B210F.dat
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: 1997.04.18, Recreation and Convocation Center, SUNY, Albany, NY (NTC) 
+=================== 
+=================== 
+=================== 
+15 (encore).flac:319fef734ec3a323dea9db59e4891c7b
+=================== 
+=================== 
+=================== 
+=== shntool len for: 1997.04.18, Recreation and Convocation Center, SUNY, Albany, NY (NTC) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.02        5296748 B   ---   --   ---xx   flac  0.4458  15 (Encore).flac
+     0:30.02        5296748 B                            0.4458  (1 file)
+=================== 
+=================== 
+=================== 
+===================
+===================
+===================
+=== bd-1997-04-18-albany-AUD.txt
+===================
+===================
+===================
+NET Tapers Series #5 [Taper=NTC]
+
+Bob Dylan
+97-04-18 Albany 
+
+[audience recording; no soundboard circulates/known for this date]
+
+2CDR (62min+55min) 
+
+excellent sound, background talking d1t9,missing begin of d1t1
+
+This is a set of shn files from a recently transferred DAT master by Net Taper C
+of one of the shows on Olof's list of recommended shows. 
+
+
+CD1
+1. Crash On The Levee (Down In The Flood) (start of song cut)
+2. Pretty Peggy-O
+3. All Along The Watchtower
+4. You Ain't Goin' Nowhere
+5. Most Likely You Go Your Way (And I'll Go Mine)
+6. Silvio
+7. Friend Of The Devil (acoustic w band)
+8. Mr. Tambourine Man (acoustic w band)
+9. The Lonesome Death Of Hattie Carroll (acoustic w band)
+
+CD2
+1. Tombstone Blues
+2. Rainy day women #12 & 35
+3. Band intro
+4. Shooting Star
+5. Ballad Of A Thin Man
+6. Encore
+7. Encore
+8. Encore
+9. Highway 61 Revisited
+10. Forever Young (acoustic w band)
+11. Rainy Day Women # 12 & 35
+
+
+SHN converted into FLAC,
+File names & tags edited by Chopen, March 2010
+===================
+===================
+===================
+=== bd_97-04-18_cd1_shn.md5
+===================
+===================
+===================
+339636b002dc4d67de19811d04605248 *bd_97-04-18_cd1_Track 1.shn
+8e3e6f2cc02ba21a5256c4e78e0eec85 *bd_97-04-18_cd1_Track 2.shn
+4611c4d790e81e4e57618303dae1fd7c *bd_97-04-18_cd1_Track 3.shn
+7ed9de255e6abd440a2709d50d41f10e *bd_97-04-18_cd1_Track 4.shn
+690507f4e85aa841dc37bede068a2a82 *bd_97-04-18_cd1_Track 5.shn
+0fb0cc46145f7638596888ff63f55e77 *bd_97-04-18_cd1_Track 6.shn
+e6d5ad1a79ed7193d2232f411abcee48 *bd_97-04-18_cd1_Track 7.shn
+49dd13910057e6bca10d0a2191157bdd *bd_97-04-18_cd1_Track 8.shn
+b43e42ca6d56cbe5f20394fbdb25618f *bd_97-04-18_cd1_Track 9.shn
+===================
+===================
+===================
+=== bd_97-04-18_cd2_shn.md5
+===================
+===================
+===================
+371c80bcad6657a8f62e3ce17e416f7a *bd_97-04-18_cd2_Track 01.shn
+877309f60ea8f19f839149e7e4995e28 *bd_97-04-18_cd2_Track 10.shn
+bc583431db000e125452f2f6424b5566 *bd_97-04-18_cd2_Track 2.shn
+201ce9cea99cb88ea9af925df20eb144 *bd_97-04-18_cd2_Track 3.shn
+17ebff48701385822ed1f5ab2b0df5ff *bd_97-04-18_cd2_Track 4.shn
+6e750b78d3cb187e68f924992bebfb25 *bd_97-04-18_cd2_Track 5.shn
+ac76b6a7dec0443bbb3d9d68e9110e44 *bd_97-04-18_cd2_Track 6.shn
+4bcba7d72bfeba23534c0517ef235cd8 *bd_97-04-18_cd2_Track 7.shn
+fcd403c953626488b0ea35c103b8e6c1 *bd_97-04-18_cd2_Track 8.shn
+1131838f6075f7a83e34359ee27f4ded *bd_97-04-18_cd2_Track 9.shn
+===================
+===================
+===================

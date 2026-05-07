@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-07-12-vito.flacf 
+=================== 
+=================== 
+=================== 
+13c511cedac480d6fc22a3474361ef11  1998-07-12-Frauenfeld.md5
+f7962355c0f30aa95635a34dec575807  bd98-07-12-vito-LB-4632.txt
+23aa10ba0cf683746ba8071ca08b1496  info.txt
+c72c6bd85ed56799dedbb584cb33705a  Track101.flac
+9915fd4d271571c09e1d6cbc3f213fac  Track102.flac
+96c033e6d2745cda74899aab82a2b845  Track103.flac
+be3012f95b11a2dce395a6afcc3c6e75  Track104.flac
+5e75da7140fa646ff5629d17a85feac5  Track105.flac
+7ff5b76a9d194b026713217b839d71a0  Track106.flac
+dbf7a43d81f82d16abe1a2dd4494edb8  Track107.flac
+6403a9ef33e9caac0cccdb4d1ed84587  Track108.flac
+a80fa669fd1845f17cc76bc383585f73  Track109.flac
+f186284910835ee2e28d324c885730a7  Track110.flac
+e2d6f33a64a7c1e900613490749cec3f  Track111.flac
+285fa31855b565324289dc3e79d33788  Track112.flac
+ba5b90f07bada2e35ffb673cacfe5c00  Track113.flac
+da8efe8712748f688b303f1be196f9a1  Track201.flac
+c65b9d28ccccfb73ad505c7e15b30349  Track202.flac
+3b22be961863b76be68194f8290c3286  Track203.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-07-12-vito.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:8eb03216bc125fa73b3304456a864fca
+Track102.flac:93529cb3cc524ffb2b097fe03b3b2faa
+Track103.flac:dfb2a8c97138bbb765d2c2d1d08ac105
+Track104.flac:2533a1a4560549a53531317ab2adef90
+Track105.flac:6edde51a5269232e66a63cb1114cea78
+Track106.flac:15dfdc6e870b102eee86d39222dbfbc8
+Track107.flac:f5a649ef8c938f0f55ce9fd980fd5793
+Track108.flac:1e856c04557848227170e4ad757415e8
+Track109.flac:0259375fe3a1e6079a096183389a0ffa
+Track110.flac:c955830a74806eaf1ba2a38cd5cdb52d
+Track111.flac:697ee3a379801e551da752da94070aa7
+Track112.flac:421022a51f94e37bebebaf7eb068fa6b
+Track113.flac:9d08f396ab598873a7a41665a738608f
+Track201.flac:ed50c8670ee6f601da71e4e9942ec9bc
+Track202.flac:5b6649f729a4dc8cbead1210119f1347
+Track203.flac:7f0b75c8b018c420360ca371ea04948b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-12-vito.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.27        4473548 B   ---   --   ---xx   flac  0.4591  Track101.flac
+     4:06.44       43497932 B   ---   --   ---xx   flac  0.6362  Track102.flac
+     4:43.08       49940060 B   ---   --   ---xx   flac  0.6182  Track103.flac
+     6:38.55       70336604 B   ---   --   ---xx   flac  0.6081  Track104.flac
+     5:17.03       55925900 B   ---   --   ---xx   flac  0.5724  Track105.flac
+     6:11.08       65463260 B   ---   --   ---xx   flac  0.6108  Track106.flac
+     6:50.64       72474572 B   ---   --   ---xx   flac  0.6365  Track107.flac
+     6:42.61       71056316 B   ---   --   ---xx   flac  0.5576  Track108.flac
+     7:20.29       77684252 B   ---   --   ---xx   flac  0.6261  Track109.flac
+     6:10.33       65345660 B   ---   --   ---xx   flac  0.5572  Track110.flac
+     6:28.36       68527916 B   ---   --   ---xx   flac  0.6197  Track111.flac
+     6:06.49       64677692 B   ---   --   ---xx   flac  0.5861  Track112.flac
+     6:44.72       71434988 B   ---   --   ---xx   flac  0.6089  Track113.flac
+     5:26.37       57593468 B   ---   --   ---xx   flac  0.5920  Track201.flac
+     4:53.18       51727580 B   ---   --   ---xx   flac  0.6492  Track202.flac
+     5:52.74       62266892 B   ---   --   ---xx   flac  0.5281  Track203.flac
+    89:59.18      952426640 B                            0.5991  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd88-06-30-Two-Of-Us.flacf
+===================
+===================
+===================
+d26729c3507a2af84c5eb9694d2bd6fd *01 Subterranean Homesick Blues.flac
+d49f1c76ef2a7eb2c799ac6330cc3140 *02 Just Like Tom Thumb's Blues.flac
+b7accb3ee0291637481576d0530b9b72 *03 You're A Big Girl Now.flac
+8b848f9b0f826a4c7581882bc1e5acbb *04 Tangled Up In Blue.flac
+125aa2d7037353eba71284d721aac648 *05 Masters Of War.flac
+82eb5eaff9072862293a848965a46fa9 *06 I Shall Be Released.flac
+114b0840009a34a6b4705a25bb1ea691 *07 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+723417849e05575e2929c6cb124004ca *08 The Lakes Of Pontchartrain.flac
+3911a04b232f270d8797a8538291be5d *09 A Hard Rain's A-Gonna Fall.flac
+b662adc0711b9c732abf8c1d9e51c67a *10 Eileen Aroon.flac
+668ca9a5991f5062f247da832fc5a3a5 *11 Boots Of Spanish Leather.flac
+50e68dc023c32a4d15b7ac8253bf3933 *12 Silvio.flac
+11779724c9207472d46f1af06c3f2698 *13 Gates Of Eden.flac
+dca6901e8418fe837ae4645e347b201e *14 Like A Rolling Stone.flac
+6c373a018f2144d156733a6e35770b84 *15 The Times They Are A-Changin'.flac
+e24343a2ff008c62594e1be06d6d22f3 *16 All Along The Watchtower.flac
+5311ee2a20ac780c09b482986187ebc3 *17 Maggie's Farm.flac
+d8ee587aac4f052e5227c7dd55a1e97d *Bob Dylan 1988-06-30 Jones Beach BACK.jpg
+2e0a7a48e49b65851fe2cd5e57623d34 *Bob Dylan 1988-06-30 Jones Beach FRONT.jpg
+90ef7cc85830504540bd9f6465c07507 *fingerprint.ffp
+da8fb5eae4aff248ed49f943757a6150 *info.txt
+cf7ac251cff0b55302610d26ba3703bb *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd88-06-30-Two-Of-Us.flacf
+===================
+===================
+===================
+01 Subterranean Homesick Blues.flac:a7640b2f5ad339c93047e7c7edba133e
+02 Just Like Tom Thumb's Blues.flac:931812d5711ac37e889cc689c5478d94
+03 You're A Big Girl Now.flac:6412b2b970addcd729efe26e5ddb09cf
+04 Tangled Up In Blue.flac:2b605d0e12b6c743a39e7dd6c8e3b4df
+05 Masters Of War.flac:4259b83757a29a6b402b163d753b2bec
+06 I Shall Be Released.flac:b8ce6397fc62bfa728a7ba64d560a230
+07 Stuck Inside Of Mobile With The Memphis Blues Again.flac:f77bf9e1e4872177d6e03ea71776346e
+08 The Lakes Of Pontchartrain.flac:d75948e139114c9bf7aafa738ed67ede
+09 A Hard Rain's A-Gonna Fall.flac:ba443edb0a493eb0982ffcf2541c6a94
+10 Eileen Aroon.flac:848fb418dcaa2518a3803d36c503e97c
+11 Boots Of Spanish Leather.flac:07280b6f4883cb44e999a03905973b97
+12 Silvio.flac:98ca8709e65b611726da2b84e0676936
+13 Gates Of Eden.flac:0516cd595acd9dd41ac8ef6bb304279d
+14 Like A Rolling Stone.flac:c0d2ae2f6bf91403547a4c79c4b18288
+15 The Times They Are A-Changin'.flac:cd8b4765a3db9f353850e2de58eb6962
+16 All Along The Watchtower.flac:388280565291dda1f656f1fdf410c482
+17 Maggie's Farm.flac:b66abb2794e8a7ad113dd6f50743090d
+===================
+===================
+===================
+=== shntool len for: bd88-06-30-Two-Of-Us.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:08.55       33292604 B   ---   --   ---xx   flac  0.6967  01 Subterranean Homesick Blues.flac
+     4:45.37       50361068 B   ---   --   ---xx   flac  0.7000  02 Just Like Tom Thumb's Blues.flac
+     4:51.63       51480620 B   ---   --   ---xx   flac  0.6947  03 You're A Big Girl Now.flac
+     6:25.30       67984604 B   ---   --   ---xx   flac  0.7085  04 Tangled Up In Blue.flac
+     4:21.00       46040444 B   ---   --   ---xx   flac  0.7206  05 Masters Of War.flac
+     4:25.44       46849532 B   ---   --   ---xx   flac  0.6908  06 I Shall Be Released.flac
+     6:06.42       64661228 B   ---   --   ---xx   flac  0.7011  07 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     5:41.49       60267692 B   ---   --   ---xx   flac  0.6839  08 The Lakes Of Pontchartrain.flac
+     7:12.07       76221308 B   ---   --   ---xx   flac  0.7010  09 A Hard Rain's A-Gonna Fall.flac
+     4:21.41       46136876 B   ---   --   ---xx   flac  0.6312  10 Eileen Aroon.flac
+     4:41.48       49681340 B   ---   --   ---xx   flac  0.6648  11 Boots Of Spanish Leather.flac
+     4:31.63       47952620 B   ---   --   ---xx   flac  0.6788  12 Silvio.flac
+     6:38.45       70313084 B   ---   --   ---xx   flac  0.6864  13 Gates Of Eden.flac
+     6:54.74       73203692 B   ---   --   ---xx   flac  0.6973  14 Like A Rolling Stone.flac
+     4:22.63       46365020 B   ---   --   ---xx   flac  0.6642  15 The Times They Are A-Changin'.flac
+     4:22.36       46301516 B   ---   --   ---xx   flac  0.7009  16 All Along The Watchtower.flac
+     4:49.45       51085484 B   ---   --   ---xx   flac  0.7169  17 Maggie's Farm.flac
+    87:41.67      928198732 B                            0.6914  (17 files)
+===================
+===================
+===================

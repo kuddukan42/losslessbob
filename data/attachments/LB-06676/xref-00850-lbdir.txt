@@ -1,0 +1,61 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-04-29-d.flacf 
+=================== 
+=================== 
+=================== 
+afa52142abba54e8c29ab1ed794cc92d  01- Bob Dylan- 4-29-66- She Belongs to Me.flac
+a3824f36deea1abf8156f45d71101c49  02- Bob Dylan- 4-29-66- 4th Time Around.flac
+838a22e6941719adde3c9907b7979bff  03- Bob Dylan- 4-29-66- Visions of Johanna.flac
+0c5f2a212822e83e6d1cc4483883bab9  04- Bob Dylan- 4-29-66- It's All Over Now, Baby Blue.flac
+85dd22bfe0ebc624c38ea02e02cd01aa  05- Bob Dylan- 4-29-66- Desolation Row (Incomplete).flac
+353f39ab751d6080f95e786ba1cd256e  06- Bob Dylan- 4-29-66- I Don't Believe You (She Acts Like We Never Have Met).flac
+176ffb40979e43851dfb9d8016809a7a  07- Bob Dylan- 4-29-66- Baby, Let Me Follow You Down.flac
+ce8f90401136ac34f7e85bafefd4dd02  08- Bob Dylan- 4-29-66- Just Like Tom Thumb's Blues (Incomplete).flac
+1bf26d3b0c7c2f824ccbabcf97507136  09- Bob Dylan- 4-29-66- Leopard-Skin Pill-Box Hat.flac
+bdc7e8fbc0b5a5c3f5bbf1b73134f8e4  10- Bob Dylan- 4-29-66- One Too Many Mornings (Incomplete).flac
+d0675b22d2f25f779e3297accfcc4620  11- Bob Dylan- 4-29-66- Ballad of a Thin Man.flac
+731f6c6c16d000f5f75b89aab77db78b  Bob Dylan-4-29-66.txt
+0ba9b8b077f34d011dbe5bf4892a3cfe  Torrent downloaded from Demonoid.me (1).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-04-29-d.flacf 
+=================== 
+=================== 
+=================== 
+01- Bob Dylan- 4-29-66- She Belongs to Me.flac:6aa78a7cbdad73a4817ea440f69cb76f
+02- Bob Dylan- 4-29-66- 4th Time Around.flac:2f82b329c5513e73f3fcd3285a9bd327
+03- Bob Dylan- 4-29-66- Visions of Johanna.flac:14446215021bb895ba7ec7fc9353a682
+04- Bob Dylan- 4-29-66- It's All Over Now, Baby Blue.flac:31fe4a28b59e1bafa52cfc54de142ed3
+05- Bob Dylan- 4-29-66- Desolation Row (Incomplete).flac:298c585a187c7205c42c4fc1a7df8cd9
+06- Bob Dylan- 4-29-66- I Don't Believe You (She Acts Like We Never Have Met).flac:37f8582b78d4b68c3bf0382cd9f751c1
+07- Bob Dylan- 4-29-66- Baby, Let Me Follow You Down.flac:454c63cb77fba7734e681fd203f66d9b
+08- Bob Dylan- 4-29-66- Just Like Tom Thumb's Blues (Incomplete).flac:758400016f03d32a96339dd7d0ece278
+09- Bob Dylan- 4-29-66- Leopard-Skin Pill-Box Hat.flac:eddebe033c5dbad2bce8801cf7e208aa
+10- Bob Dylan- 4-29-66- One Too Many Mornings (Incomplete).flac:e9c0953b99dd9c505dd1b6a00c19bc6f
+11- Bob Dylan- 4-29-66- Ballad of a Thin Man.flac:5375b839a1e0b78d43ac9a9a190e1d84
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-04-29-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:13.16       34082876 B   ---   --   ---xx   flac  0.2310  01- Bob Dylan- 4-29-66- She Belongs to Me.flac
+     4:08.24       43803692 B   ---   --   ---xx   flac  0.2282  02- Bob Dylan- 4-29-66- 4th Time Around.flac
+     7:24.36       78406316 B   ---   --   ---xx   flac  0.2187  03- Bob Dylan- 4-29-66- Visions of Johanna.flac
+     5:13.37       55300268 B   ---   --   ---xx   flac  0.2198  04- Bob Dylan- 4-29-66- It's All Over Now, Baby Blue.flac
+     4:30.73       47799740 B   ---   --   ---xx   flac  0.2157  05- Bob Dylan- 4-29-66- Desolation Row (Incomplete).flac
+     5:06.51       54098396 B   ---   --   ---xx   flac  0.2246  06- Bob Dylan- 4-29-66- I Don't Believe You (She Acts Like We Never Have Met).flac
+     3:30.45       37149884 B   ---   --   ---xx   flac  0.2213  07- Bob Dylan- 4-29-66- Baby, Let Me Follow You Down.flac
+     0:37.13        6557420 B   ---   --   ---xx   flac  0.2195  08- Bob Dylan- 4-29-66- Just Like Tom Thumb's Blues (Incomplete).flac
+     3:09.63       33487820 B   ---   --   ---xx   flac  0.2261  09- Bob Dylan- 4-29-66- Leopard-Skin Pill-Box Hat.flac
+     2:15.58       23950460 B   ---   --   ---xx   flac  0.2156  10- Bob Dylan- 4-29-66- One Too Many Mornings (Incomplete).flac
+     6:02.29       63925052 B   ---   --   ---xx   flac  0.2150  11- Bob Dylan- 4-29-66- Ballad of a Thin Man.flac
+    45:12.70      478561924 B                            0.2210  (11 files)
+=================== 
+=================== 
+=================== 

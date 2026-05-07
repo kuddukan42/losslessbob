@@ -1,0 +1,73 @@
+===================
+===================
+===================
+=== md5 for: bd86-07-26-sbd-e.flacf
+===================
+===================
+===================
+15739076dbe132f9e63d281ee67969a5 *bd86-07-26-Morrison.sbd.ffp
+fd63c5dcd00f4d3c388dce612cf5e1f2 *bd86-07-26d1tr01.flac
+892d0aa4823bd4ccc9ff2b351fc4e56e *bd86-07-26d1tr02.flac
+b9ce5db9a9392ed1235fe9c51cefb325 *bd86-07-26d1tr03.flac
+3e48545e586e0c008d68309ac72aacc4 *bd86-07-26d1tr04.flac
+56fce49bd329e057b81a559f0a9c05c4 *bd86-07-26d1tr05.flac
+9c561b83912ad17741dd631787447fe7 *bd86-07-26d1tr06.flac
+618ffbabccbaa892dd03b33d6c5da496 *bd86-07-26d1tr07.flac
+0bb744e50ef93c08fa292d9ef5e57410 *bd86-07-26d1tr08.flac
+1049e0ed7c8cadb7bd86818513502d2e *bd86-07-26d2tr01.flac
+334fa106828220fdbd1f303e12527f45 *bd86-07-26d2tr02.flac
+0c54c1cf053bb385ac3422d5aa081357 *bd86-07-26d2tr03.flac
+4d2684f31fa3e3191d2870f8ece96de4 *bd86-07-26d2tr04.flac
+b4d2f24b4efcc1a6f81168226901c788 *bd86-07-26d2tr05.flac
+ef6a74fc234ac67766fd6da9173054c0 *bd86-07-26d2tr06.flac
+2825c30321ff6cda05afef1c245d85e7 *bd86-07-26d2tr07.flac
+3a2dfabd4c9bd7deae08fa3cbc288a05 *Info 1986-07-26 sbd.txt
+===================
+===================
+===================
+=== ffp for: bd86-07-26-sbd-e.flacf
+===================
+===================
+===================
+bd86-07-26d1tr01.flac:28e6f6cdf1c62932f5178f34daa94838
+bd86-07-26d1tr02.flac:2fcd498c4a5b459f21e4f32dd9949a3d
+bd86-07-26d1tr03.flac:493c43fe9ebc4a7d8a55d89dc5c4dff1
+bd86-07-26d1tr04.flac:4f657bf36bf9f97525709816e92e4f50
+bd86-07-26d1tr05.flac:10cdb76059e606e21baeb51adc638dcc
+bd86-07-26d1tr06.flac:5a59f2eed4d45491d769c89b9aaabe82
+bd86-07-26d1tr07.flac:4f5b9c3f980de95c25701844010ec19f
+bd86-07-26d1tr08.flac:82d92f88e094e41a07022778b5392213
+bd86-07-26d2tr01.flac:1ec2ffa047ad0db11eae5070e8181c7e
+bd86-07-26d2tr02.flac:66786a15a0fff185b05f858b0f75b4f7
+bd86-07-26d2tr03.flac:e0d7d6d68b1723fa8611a27edfabadd9
+bd86-07-26d2tr04.flac:ca7f1a61ac21e6e8ba963ae5d5b087bd
+bd86-07-26d2tr05.flac:25f47532f9b56e9772906fc91c2c2589
+bd86-07-26d2tr06.flac:36b3c4f1d259755400b424ed2ba630c2
+bd86-07-26d2tr07.flac:e7bcb2915802958bbbd8af4c7d000722
+===================
+===================
+===================
+=== shntool len for: bd86-07-26-sbd-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.45       54260684 B   ---   --   ---xx   flac  0.6074  bd86-07-26d1tr01.flac
+     3:31.73       37392140 B   ---   --   ---xx   flac  0.6291  bd86-07-26d1tr02.flac
+     8:56.38       94639820 B   ---   --   ---xx   flac  0.6119  bd86-07-26d1tr03.flac
+     6:36.31       69927356 B   ---   --   ---xx   flac  0.6578  bd86-07-26d1tr04.flac
+     6:03.52       64155548 B   ---   --   ---xx   flac  0.6477  bd86-07-26d1tr05.flac
+     4:57.19       52435532 B   ---   --   ---xx   flac  0.6367  bd86-07-26d1tr06.flac
+     4:41.30       49639004 B   ---   --   ---xx   flac  0.6515  bd86-07-26d1tr07.flac
+     4:59.14       52776572 B   ---   --   ---xx   flac  0.6370  bd86-07-26d1tr08.flac
+     6:08.62       65061068 B   ---   --   ---xx   flac  0.6575  bd86-07-26d2tr01.flac
+     2:21.19       24917132 B   ---   --   ---xx   flac  0.6084  bd86-07-26d2tr02.flac
+     7:43.59       81812012 B   ---   --   ---xx   flac  0.6634  bd86-07-26d2tr03.flac
+     7:04.58       74930060 B   ---   --   ---xx   flac  0.6616  bd86-07-26d2tr04.flac
+     6:17.43       66603980 B   ---   --   ---xx   flac  0.6366  bd86-07-26d2tr05.flac
+     3:17.21       34800236 B   ---   --   ---xx   flac  0.6708  bd86-07-26d2tr06.flac
+     8:19.45       88129484 B   ---   --   ---xx   flac  0.6589  bd86-07-26d2tr07.flac
+    86:07.09      911480628 B                            0.6439  (15 files)
+===================
+===================
+===================

@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-05-09-RAH-master.flacf 
+=================== 
+=================== 
+=================== 
+a3e3e413bbdb71abe4e9b1282a7284e1  1965-05-09_RAH_master.LOG
+d0445a961ada8acc999003e3df8dfbbc  1965-05-09_RAH_master.md5
+e8aed88ec799a5f63f3d3ae7fa3d95eb  1965-05-09_RAH_master.txt
+3e7bd7ffaf6da47fe459ad441976c91d  1965-05-09_RAH_master_info.txt
+614397a755743b89fea55d0d59424f71  1965-05-09_RAH_master_t01.flac
+619b104d745ed67795b05e894a7163d0  1965-05-09_RAH_master_t02.flac
+37484777abaa5e2f4b58ee9e51ae02a0  1965-05-09_RAH_master_t03.flac
+6a3895a7a2edde32bcc82a5d103a1c62  1965-05-09_RAH_master_t04.flac
+685d696382f385e8bd3257f46216ced7  1965-05-09_RAH_master_t05.flac
+7142a223fdddece45b5ec2e5ad580343  1965-05-09_RAH_master_t06.flac
+1eef8aa58530cb8b8be7f9ed798753ec  1965-05-09_RAH_master_t07.flac
+5704b0fafff5a1058c9a5b26a3118bc8  1965-05-09_RAH_master_t08.flac
+14d5d49355ec53ecab8781abb33480c2  1965-05-09_RAH_master_t09.flac
+c06806845ae2a3c49ea9ee6508dc463b  1965-05-09_RAH_master_t10.flac
+08779f9e85f23c66f0f0f7f90fe42e1d  1965-05-09_RAH_master_t11.flac
+94072b7b93af323e50ae1b76e43ea67f  1965-05-09_RAH_master_t12.flac
+487d854e5b031a6201d4432e8287bdb8  1965-05-09_RAH_master_t13.flac
+bb5979e99973f41427d153c2a5f315b8  1965-05-09_RAH_master_t14.flac
+eb7a511cb6b1dadb1823c10e59279265  1965-05-09_RAH_master_t15.flac
+0d716ae0a951e4fb53e0d07a52008919  bd65-05-09-RAH-master.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-05-09-RAH-master.flacf 
+=================== 
+=================== 
+=================== 
+1965-05-09_RAH_master_t01.flac:a7669718349faf15e3fd4de94d0c2459
+1965-05-09_RAH_master_t02.flac:ec6209f4407612e960da642cf1093c80
+1965-05-09_RAH_master_t03.flac:3702b12f4f8ffca88e47a7c9e99c7301
+1965-05-09_RAH_master_t04.flac:770d5e47d9f5bc2f1a62927ec6515734
+1965-05-09_RAH_master_t05.flac:5ae15417402a62d3e1afe74bb81b97f7
+1965-05-09_RAH_master_t06.flac:e1183ed48b3be72f9c1a5b45401c0a8d
+1965-05-09_RAH_master_t07.flac:a8778c36e0fc809af54bf6efb5c8f020
+1965-05-09_RAH_master_t08.flac:ac0ec2c65d041a2d4e04f96029b71770
+1965-05-09_RAH_master_t09.flac:155b93fff82410d3d938b07ce3cf0760
+1965-05-09_RAH_master_t10.flac:9aecf8598842026a13e4aaceff5603aa
+1965-05-09_RAH_master_t11.flac:c8e3578783a33f0ad04e018af6f563b5
+1965-05-09_RAH_master_t12.flac:1f233aa8e56362babb939748f31fe5c2
+1965-05-09_RAH_master_t13.flac:635aa493947ddb1de1349422b461312c
+1965-05-09_RAH_master_t14.flac:3d4994aadae080a658a282e43c519694
+1965-05-09_RAH_master_t15.flac:75ae81d605ddc546b9226d11dabae661
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-05-09-RAH-master.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.13       36545420 B   ---   --   ---xx   flac  0.4339  1965-05-09_RAH_master_t01.flac
+     4:54.13       51892220 B   ---   --   ---xx   flac  0.4214  1965-05-09_RAH_master_t02.flac
+     7:23.39       78236972 B   ---   --   ---xx   flac  0.4107  1965-05-09_RAH_master_t03.flac
+     2:33.53       27113900 B   ---   --   ---xx   flac  0.4234  1965-05-09_RAH_master_t04.flac
+     8:38.30       91445804 B   ---   --   ---xx   flac  0.4104  1965-05-09_RAH_master_t05.flac
+     4:41.24       49624892 B   ---   --   ---xx   flac  0.4180  1965-05-09_RAH_master_t06.flac
+     6:27.01       68269196 B   ---   --   ---xx   flac  0.4422  1965-05-09_RAH_master_t07.flac
+     4:42.54       49871852 B   ---   --   ---xx   flac  0.4308  1965-05-09_RAH_master_t08.flac
+     4:03.12       42893468 B   ---   --   ---xx   flac  0.4000  1965-05-09_RAH_master_t09.flac
+     6:09.62       65237468 B   ---   --   ---xx   flac  0.3979  1965-05-09_RAH_master_t10.flac
+     4:09.71       44090636 B   ---   --   ---xx   flac  0.3916  1965-05-09_RAH_master_t11.flac
+     4:33.59       48296012 B   ---   --   ---xx   flac  0.3850  1965-05-09_RAH_master_t12.flac
+     5:52.60       62233964 B   ---   --   ---xx   flac  0.4242  1965-05-09_RAH_master_t13.flac
+     3:06.07       32826908 B   ---   --   ---xx   flac  0.4285  1965-05-09_RAH_master_t14.flac
+     5:29.57       58169708 B   ---   --   ---xx   flac  0.4157  1965-05-09_RAH_master_t15.flac
+    76:13.30      806748420 B                            0.4151  (15 files)
+=================== 
+=================== 
+=================== 

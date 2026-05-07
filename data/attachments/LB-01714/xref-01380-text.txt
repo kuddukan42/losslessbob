@@ -1,0 +1,176 @@
+===================
+===================
+===================
+=== Bob Dylan1998-08-30.ffp
+===================
+===================
+===================
+d1T01-fixed.flac:edb730f21aa7a1baee13c0c9c133a86e
+d1T02-fixed.flac:84ca711ae67398571fa74fa5454bcb00
+d1T03-fixed.flac:cf157af52c3d4bae058870c6f1e19932
+d1T04-fixed.flac:96f860d95aae747a8a9fd3d59536af43
+d1T05-fixed.flac:f20ae1be9474b5448ada68d8930e049d
+d1T06-fixed.flac:87c602e9c236d240306d133d2b71978a
+d1T07-fixed.flac:60c2b66498b1b09e724e753052edbf7a
+d1T08-fixed.flac:6c5a5cf12b28bb9a4106a9ed85a635a0
+d1T09-fixed.flac:8057fdd1cf57b1a6575691b5d191587b
+d1T10-fixed.flac:33c0e3f64b827faa20c8201f2a1338ce
+d1T11-fixed.flac:464ec51f0b4b311d24b2d06392839256
+d1T12-fixed.flac:fbaccc71d38475ac5fc1b6cb7a03722d
+d2T01-fixed.flac:37aae13203a78f43560a47ea3ab56c8c
+d2T02-fixed.flac:1f5145bbc0f301472ebc472ddfdeb221
+d2T03-fixed.flac:e18d419070eaeb39d9898232a4435bd2
+d2T04-fixed.flac:f832dc770d1e43b5839e24ce6d0d6b21
+d2T05-fixed.flac:b4256a66b2c7ab67d959fec0811f6a6c
+d2T06-fixed.flac:412c47c779be3b888de95aeb6aa44b59
+===================
+===================
+===================
+=== shntool_len_fixed.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.74       62796092 B   ---   --   -----    wav  1.0000  d1T01-fixed.wav
+     4:40.41       49488476 B   ---   --   -----    wav  1.0000  d1T02-fixed.wav
+     2:31.47       26746988 B   ---   --   -----    wav  1.0000  d1T03-fixed.wav
+     7:38.40       80885324 B   ---   --   -----    wav  1.0000  d1T04-fixed.wav
+     6:39.30       70454204 B   ---   --   -----    wav  1.0000  d1T05-fixed.wav
+     5:51.70       62081084 B   ---   --   -----    wav  1.0000  d1T06-fixed.wav
+     5:13.71       55380236 B   ---   --   -----    wav  1.0000  d1T07-fixed.wav
+     5:05.49       53917292 B   ---   --   -----    wav  1.0000  d1T08-fixed.wav
+    10:05.64      106872572 B   ---   --   -----    wav  1.0000  d1T09-fixed.wav
+     6:55.39       73297772 B   ---   --   -----    wav  1.0000  d1T10-fixed.wav
+     6:28.61       68586716 B   ---   --   -----    wav  1.0000  d1T11-fixed.wav
+     7:27.59       78989612 B   ---   --   -----    wav  1.0000  d1T12-fixed.wav
+     5:06.68       54138380 B   ---   --   -----    wav  1.0000  d2T01-fixed.wav
+     6:14.25       66032444 B   ---   --   -----    wav  1.0000  d2T02-fixed.wav
+     6:09.70       65256284 B   ---   --   -----    wav  1.0000  d2T03-fixed.wav
+     6:01.67       63838028 B   ---   --   -----    wav  1.0000  d2T04-fixed.wav
+     6:23.22       67612988 B   ---   --   -----    wav  1.0000  d2T05-fixed.wav
+     7:29.61       79347116 B   ---   --   -----    wav  1.0000  d2T06-fixed.wav
+   112:01.58     1185721608 B                            1.0000  (18 files)
+===================
+===================
+===================
+=== shntool_len_unfixed.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.74       62796948 B   -b-   --   -----    wav  1.0000  d1T01.wav
+     4:40.41       49488116 B   -b-   --   -----    wav  1.0000  d1T02.wav
+     2:31.47       26746808 B   -b-   --   -----    wav  1.0000  d1T03.wav
+     7:38.40       80886368 B   -b-   --   -----    wav  1.0000  d1T04.wav
+     6:39.30       70453748 B   -b-   --   -----    wav  1.0000  d1T05.wav
+     5:51.70       62081688 B   -b-   --   -----    wav  1.0000  d1T06.wav
+     5:13.71       55379232 B   -b-   --   -----    wav  1.0000  d1T07.wav
+     5:05.50       53918492 B   -b-   --   -----    wav  1.0000  d1T08.wav
+    10:05.63      106871300 B   -b-   --   -----    wav  1.0000  d1T09.wav
+     6:55.39       73298680 B   -b-   --   -----    wav  1.0000  d1T10.wav
+     6:28.61       68586956 B   -b-   --   -----    wav  1.0000  d1T11.wav
+     7:27.59       78988568 B   -b-   --   -----    wav  1.0000  d1T12.wav
+     5:06.68       54137904 B   -b-   --   -----    wav  1.0000  d2T01.wav
+     6:14.26       66034204 B   -b-   --   -----    wav  1.0000  d2T02.wav
+     6:09.70       65256120 B   -b-   --   -----    wav  1.0000  d2T03.wav
+     6:01.67       63837676 B   -b-   --   -----    wav  1.0000  d2T04.wav
+     6:23.22       67613156 B   -b-   --   -----    wav  1.0000  d2T05.wav
+     7:29.60       79345204 B   -b-   --   -----    wav  1.0000  d2T06.wav
+   112:01.58     1185721168 B                            1.0000  (18 files)
+===================
+===================
+===================
+=== Townsville 98.txt
+===================
+===================
+===================
+There is only one source:  LB-1714. jokerman.org calls this recording a C, which means it is for completists only, I suppose.  I find the sound distant but decent but the distractions (the drop outs, the girl talking) are annoying.   
+
+In '10, Chopen posted the show but referenced no LB number.  Of course, it had to be sourced from LB-1714.  jokerman.org identified the upload as "a close EAC match with same digital flaws plus it had discontinuities between tracks" - which usually means there is an additional FLAC > WAV > FLAC generation.  His upload was 446.48 mb. So it technically wasn't LB-1714.   
+
+But then, neither is mine.  I am posting a fixed LB-1714 which had the original matching fingerprint (see below).  The show has been fixed because there were SBEs on every track.   
+
+But I didn't otherwise alter the audio.  
+
+Bob Dylan
+Townsville Breakwater Entertainment Centre
+Townsville, Australia
+August 30, 1998
+
+Source:  Unknown audience recording
+
+My part:
+
+FLAC > TLH (FLAC > WAV) > WAV > TLH (shntool, fixed SBEs, WAV > FLAC) > FLAC.  
+
+CD 1:
+01. Maggie's Farm
+02. Lay Lady Lay
+03. Can't Wait
+04. Simple Twist Of Fate
+05. It Takes A Lot To Laugh, It Takes A Train To Cry
+06. Silvio (Bob Dylan & Robert Hunter)
+07. Oh Baby It Ain't No Lie (Elizabeth Cotton)
+08. Masters Of War
+09. Tangled Up In Blue
+10. Cold Irons Bound
+11. She Belongs To Me
+12. 'Til I Fell In Love With You
+
+CD 2:
+01. Love Sick
+02. Rainy Day Women # 12 & 35
+03. Don't Think Twice, It's All Right
+04. Blowin' In The Wind
+05. Highway 61 Revisited
+06. Forever Young
+
+Total time = 112:02
+
+Notes:  Analog dropouts and/or noises: d1t1 3:18, 4:05, d1t2 1:43, 1:48, d1t3 1:07, 1:08, d1t4 4:48
+
+Talking: d1t1, dt12, d2t2, d2t3
+
+Original (unfixed):  
+d1T01.flac:8c6d31f774e3646274c8837e176ad0f6
+d1T02.flac:61534b89529964869ac8ada2747168d3
+d1T03.flac:f61e436b2f155aedafb469724f1d560f
+d1T04.flac:dfdc23bf7372668eff29e447b17906e4
+d1T05.flac:c532b93bcab91913ad97e67bf1809b72
+d1T06.flac:b1b670ae019ea4ab46b1e630c4d6f3f2
+d1T07.flac:b207f16fbb45966e1e9742457d2c0d55
+d1T08.flac:6bbde77497b2366c0f48204fa5c42c55
+d1T09.flac:a1604358ce1e6aed33f5acee70793fc8
+d1T10.flac:f067f887686cc30531529358c5e90357
+d1T11.flac:6c92ddb50bc61c32f8c3af06e3bce2fb
+d1T12.flac:69a16944fb3d2f770e84d6d292e3f97d
+d2T01.flac:7dd6467123b55ea9b91a8e12b03eee7d
+d2T02.flac:6e8848472eb95810aae1946992114d0c
+d2T03.flac:fefdb2af43582aa9e22f8693f9b4df48
+d2T04.flac:0a696fb9eac65e4c7da2e66d4c635db6
+d2T05.flac:be1fa1033a89ee026756c3b444b54484
+d2T06.flac:e0a278feea85e8612979834e99713486
+
+Fixed:
+d1T01-fixed.flac:edb730f21aa7a1baee13c0c9c133a86e
+d1T02-fixed.flac:84ca711ae67398571fa74fa5454bcb00
+d1T03-fixed.flac:cf157af52c3d4bae058870c6f1e19932
+d1T04-fixed.flac:96f860d95aae747a8a9fd3d59536af43
+d1T05-fixed.flac:f20ae1be9474b5448ada68d8930e049d
+d1T06-fixed.flac:87c602e9c236d240306d133d2b71978a
+d1T07-fixed.flac:60c2b66498b1b09e724e753052edbf7a
+d1T08-fixed.flac:6c5a5cf12b28bb9a4106a9ed85a635a0
+d1T09-fixed.flac:8057fdd1cf57b1a6575691b5d191587b
+d1T10-fixed.flac:33c0e3f64b827faa20c8201f2a1338ce
+d1T11-fixed.flac:464ec51f0b4b311d24b2d06392839256
+d1T12-fixed.flac:fbaccc71d38475ac5fc1b6cb7a03722d
+d2T01-fixed.flac:37aae13203a78f43560a47ea3ab56c8c
+d2T02-fixed.flac:1f5145bbc0f301472ebc472ddfdeb221
+d2T03-fixed.flac:e18d419070eaeb39d9898232a4435bd2
+d2T04-fixed.flac:f832dc770d1e43b5839e24ce6d0d6b21
+d2T05-fixed.flac:b4256a66b2c7ab67d959fec0811f6a6c
+d2T06-fixed.flac:412c47c779be3b888de95aeb6aa44b59
+
+===================
+===================
+===================

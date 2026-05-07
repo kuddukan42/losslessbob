@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-08-hg.flacf 
+=================== 
+=================== 
+=================== 
+2758c6cfecb332f4e41416451064b83a  bd-91-06-08-milan-HG-d1 (Track 01)-fixed.flac
+607ce9d6e905888dd9271f86314547bb  bd-91-06-08-milan-HG-d1 (Track 02).flac
+e5cb5e74d06c8f9676335064cd27e8d1  bd-91-06-08-milan-HG-d1 (Track 03).flac
+a1ed117eeb34801728c65cfb7e98ef85  bd-91-06-08-milan-HG-d1 (Track 04).flac
+5052597c5c36aface0c897b299da3814  bd-91-06-08-milan-HG-d1 (Track 05).flac
+cf8cdebe9b4fd709eda6c6630ca94cfc  bd-91-06-08-milan-HG-d1 (Track 06).flac
+f923ea8690fd4b6a5ed27b671db60159  bd-91-06-08-milan-HG-d1 (Track 07).flac
+0e6c2ada4121fbef05c4e0272d6e642a  bd-91-06-08-milan-HG-d1 (Track 08).flac
+61a7c0b1615343999c70d640dc6def65  bd-91-06-08-milan-HG-d1 (Track 09).flac
+a35bd96db9738b4a8403e3ab1a0c7d06  bd-91-06-08-milan-HG-d1 (Track 10).flac
+375a3c09c74ce517f55539f84eab95e9  bd-91-06-08-milan-HG-d2 (Track 01)-fixed.flac
+e6425528b46c9b6816529746ac134faa  bd-91-06-08-milan-HG-d2 (Track 02).flac
+5afdac0ec0bec32755e7f013e4a74e99  bd-91-06-08-milan-HG-d2 (Track 03).flac
+050de7ae86ea85d281292c98c7ffd467  bd-91-06-08-milan-HG-d2 (Track 04).flac
+a5afbf9b13236835a4fb544664d4d14e  bd-91-06-08-milan-HG-d2 (Track 05).flac
+aa51304dfe1d9335a90c00ca71065c51  bd-91-06-08-milan-HG-d2 (Track 06).flac
+77b186c3946db7d3b04a6d2dbcbe134f  bd-91-06-08-milan-HG-d2 (Track 07).flac
+53e6d78be1cf933709edd2bf3e278655  bd91-06-08-hg.txt
+d41d8cd98f00b204e9800998ecf8427e  edited pop at very start of d1t1 - no music present.txt
+a0b59a88a45647651bb86fbc864ef027  info.txt
+d41d8cd98f00b204e9800998ecf8427e  md5 file created by aaadbell.txt
+a312cd1ba151312366fdc450ed0f28d9  noname.md5
+60e1022064d326e411d1b06f9b40ef9a  README.txt
+05c681a2df3b1c40a91d5dc6aa05773c  shntool-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-08-hg.flacf 
+=================== 
+=================== 
+=================== 
+bd-91-06-08-milan-HG-d1 (Track 01)-fixed.flac:4875fd76680faca4ffa97b4d95b4e82b
+bd-91-06-08-milan-HG-d1 (Track 02).flac:aee644f198c2d47d48dedda6e3825f0c
+bd-91-06-08-milan-HG-d1 (Track 03).flac:1b9b2f8c830ecc9920952632670dc180
+bd-91-06-08-milan-HG-d1 (Track 04).flac:8913eb0ae5a6f5cdea7c9c3141f39780
+bd-91-06-08-milan-HG-d1 (Track 05).flac:932bcd9d89616a625d841c50b61222d0
+bd-91-06-08-milan-HG-d1 (Track 06).flac:2d2ffc847bdae2bf62763612e738ffda
+bd-91-06-08-milan-HG-d1 (Track 07).flac:8b07910f76d81ec3a1522aa52a3ba8a3
+bd-91-06-08-milan-HG-d1 (Track 08).flac:23e2eb1df5fefe95f8631d38e968bfc5
+bd-91-06-08-milan-HG-d1 (Track 09).flac:2f00209f7d177c99d3d7e38ecdcc7308
+bd-91-06-08-milan-HG-d1 (Track 10).flac:c3a07a16b6b0a79f636588bc93d082a1
+bd-91-06-08-milan-HG-d2 (Track 01)-fixed.flac:f8ec4b5da71325bf0d585ed04d6dcb61
+bd-91-06-08-milan-HG-d2 (Track 02).flac:d23bbcd1ccdcb8de89aaa37d192754dd
+bd-91-06-08-milan-HG-d2 (Track 03).flac:1881a23fd629ae7efc50743df1a32fc3
+bd-91-06-08-milan-HG-d2 (Track 04).flac:5e848e864c99390447efa695cf112f76
+bd-91-06-08-milan-HG-d2 (Track 05).flac:1d3da390ee107c9be89de27e64e1c2cc
+bd-91-06-08-milan-HG-d2 (Track 06).flac:242c90580d07e0290132b2eadc965e67
+bd-91-06-08-milan-HG-d2 (Track 07).flac:886c626750d12e2832fa371e58706510
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-08-hg.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:28.42       79126028 B   ---   --   ---xx   flac  0.5896  bd-91-06-08-milan-HG-d1 (Track 01)-fixed.flac
+     3:50.02       40576748 B   ---   --   ---xx   flac  0.6417  bd-91-06-08-milan-HG-d1 (Track 02).flac
+     5:04.44       53729132 B   ---   --   ---xx   flac  0.6184  bd-91-06-08-milan-HG-d1 (Track 03).flac
+     4:58.10       52590764 B   ---   --   ---xx   flac  0.6262  bd-91-06-08-milan-HG-d1 (Track 04).flac
+     3:18.32       35002508 B   ---   --   ---xx   flac  0.6316  bd-91-06-08-milan-HG-d1 (Track 05).flac
+     4:43.04       49930652 B   ---   --   ---xx   flac  0.5846  bd-91-06-08-milan-HG-d1 (Track 06).flac
+     5:54.40       62539724 B   ---   --   ---xx   flac  0.6032  bd-91-06-08-milan-HG-d1 (Track 07).flac
+     5:29.13       58066220 B   ---   --   ---xx   flac  0.6063  bd-91-06-08-milan-HG-d1 (Track 08).flac
+     4:40.41       49488476 B   ---   --   ---xx   flac  0.5418  bd-91-06-08-milan-HG-d1 (Track 09).flac
+     4:39.17       49255628 B   ---   --   ---xx   flac  0.6013  bd-91-06-08-milan-HG-d1 (Track 10).flac
+     5:15.22       55617788 B   ---   --   ---xx   flac  0.6212  bd-91-06-08-milan-HG-d2 (Track 01)-fixed.flac
+     5:40.62       60121868 B   ---   --   ---xx   flac  0.5950  bd-91-06-08-milan-HG-d2 (Track 02).flac
+     5:23.39       57068972 B   ---   --   ---xx   flac  0.6740  bd-91-06-08-milan-HG-d2 (Track 03).flac
+     3:31.56       37352156 B   ---   --   ---xx   flac  0.6209  bd-91-06-08-milan-HG-d2 (Track 04).flac
+     5:53.67       62426828 B   ---   --   ---xx   flac  0.6520  bd-91-06-08-milan-HG-d2 (Track 05).flac
+     4:36.74       48860492 B   ---   --   ---xx   flac  0.5610  bd-91-06-08-milan-HG-d2 (Track 06).flac
+     5:44.59       60820412 B   ---   --   ---xx   flac  0.6542  bd-91-06-08-milan-HG-d2 (Track 07).flac
+    86:13.24      912574396 B                            0.6130  (17 files)
+=================== 
+=================== 
+=================== 

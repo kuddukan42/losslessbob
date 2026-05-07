@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92 03 24 sydney 
+=================== 
+=================== 
+=================== 
+ca7cbb941bee79014c965644814a0b4f  92 03 24 d1 t01.shn
+c0888de68394c89d463975bb3af206cf  92 03 24 d1 t02.shn
+5efcc71cecb014f7c65796c39f64e0e7  92 03 24 d1 t03.shn
+4b9c90de1e6f421124c0a6ceda9ab053  92 03 24 d1 t04.shn
+9f8b43cd49f16a8d065d7db8a3324c46  92 03 24 d1 t05.shn
+c3ebb073cea339860e715f0364bd8be2  92 03 24 d1 t06.shn
+c8dfe58aaa36fb9530a37be0197f3691  92 03 24 d1 t07.shn
+d4c68dd6bcac4545dceec05e4c6ab7f8  92 03 24 d1 t08.shn
+6a100fd553a1221371a3f45d799ea318  92 03 24 d1 t09.shn
+e35f92b16a7da1cd1c29b4d03c8be28a  92 03 24 d2 t01.shn
+f0c43b25afbd804a90a9db11a4b9db6f  92 03 24 d2 t02.shn
+c4b5553d75237f10730252a51700d51f  92 03 24 d2 t03.shn
+0742cfe7d740f56e30a4e209588592db  92 03 24 d2 t04.shn
+c8745f436d328f09b457237ee3801938  92 03 24 d2 t05.shn
+3d6df0824db37d2b9931719b826872d3  92 03 24 d2 t06.shn
+3411b1efa4b852e9883e666b3e32d3c3  92 03 24 d2 t07.shn
+55776157f12c34877c4ec7bc79cf0955  92 03 24 d2 t08.shn
+a94519e93d7213c52fedbd06c2fa2b1c  92 03 24 d2 t09.shn
+3e5681087a869566a38277987a3658ed  92 03 24.md5
+6abc68e78e05e3529ca624db855ef0fd  bd92-03-24.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92 03 24 sydney 
+=================== 
+=================== 
+=================== 
+a9def60a9517c6bc737dabaa118fc3d9  [shntool]  92_03_24_d1_t01.wav
+eeb6a1da91d6cb82556e07873456dfd7  [shntool]  92_03_24_d1_t02.wav
+4978372d40848bcf069b9daacc92a455  [shntool]  92_03_24_d1_t03.wav
+5b038fee74e14ad2451b807d82df7077  [shntool]  92_03_24_d1_t04.wav
+c2ad98e9850ee54af2d96774cde47678  [shntool]  92_03_24_d1_t05.wav
+e3776398b73a9f18af544c3e4a415f9a  [shntool]  92_03_24_d1_t06.wav
+a6dc8068b06f899dd379b341f3490408  [shntool]  92_03_24_d1_t07.wav
+fae580f392bd049b979b855ed1d7206c  [shntool]  92_03_24_d1_t08.wav
+4d65a9bbda5c28b7a0e2b74df45ae62c  [shntool]  92_03_24_d1_t09.wav
+30725edda90578eb2965ed17ae7ca8c2  [shntool]  92_03_24_d2_t01.wav
+1e3e2fc7d97b4e8ed7145b7bdf667389  [shntool]  92_03_24_d2_t02.wav
+5946e0b18ac65530b1efd2308f9490b1  [shntool]  92_03_24_d2_t03.wav
+3b11fbae29df376008a266d3ed736cd0  [shntool]  92_03_24_d2_t04.wav
+5eacc547442c09d8a6591973d42610f4  [shntool]  92_03_24_d2_t05.wav
+b02d85d9fbc2806e79ceeff566e49a71  [shntool]  92_03_24_d2_t06.wav
+474c66e0a8b4d9444c8eab4a78956813  [shntool]  92_03_24_d2_t07.wav
+b81e31bb5a905d515b2cc6235ec2fc6b  [shntool]  92_03_24_d2_t08.wav
+38af098d5f4f3191a135a5dd851a4dd0  [shntool]  92_03_24_d2_t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92 03 24 sydney 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:20.14       77648972 B   ---   --   ---xx    shn  0.7411  92 03 24 d1 t01.shn
+     3:32.34       37476812 B   ---   --   ---xx    shn  0.7232  92 03 24 d1 t02.shn
+     3:48.38       40308620 B   ---   --   ---xx    shn  0.7822  92 03 24 d1 t03.shn
+     5:27.65       57835724 B   ---   --   ---xx    shn  0.7713  92 03 24 d1 t04.shn
+     7:39.60       81108764 B   ---   --   ---xx    shn  0.7757  92 03 24 d1 t05.shn
+     3:36.20       38149484 B   ---   --   ---xx    shn  0.6560  92 03 24 d1 t06.shn
+     5:42.27       60392348 B   ---   --   ---xx    shn  0.7500  92 03 24 d1 t07.shn
+     2:56.40       31140524 B   ---   --   ---xx    shn  0.6355  92 03 24 d1 t08.shn
+     4:12.09       44474012 B   ---   --   ---xx    shn  0.5846  92 03 24 d1 t09.shn
+     3:48.53       40343900 B   ---   --   ---xx    shn  0.5703  92 03 24 d2 t01.shn
+     7:19.54       77566652 B   ---   --   ---xx    shn  0.6548  92 03 24 d2 t02.shn
+     4:09.52       44045948 B   ---   --   ---xx    shn  0.7477  92 03 24 d2 t03.shn
+     4:45.59       50412812 B   ---   --   ---xx    shn  0.7231  92 03 24 d2 t04.shn
+     6:36.20       69901484 B   ---   --   ---xx    shn  0.6777  92 03 24 d2 t05.shn
+     5:44.53       60806300 B   ---   --   ---xx    shn  0.7726  92 03 24 d2 t06.shn
+     5:42.12       60357068 B   ---   --   ---xx    shn  0.7513  92 03 24 d2 t07.shn
+     4:06.58       43530860 B   ---   --   ---xx    shn  0.7670  92 03 24 d2 t08.shn
+     4:27.20       47145884 B   ---   --   ---xx    shn  0.6264  92 03 24 d2 t09.shn
+    90:57.13      962646168 B                            0.7122  (18 files)
+=================== 
+=================== 
+=================== 

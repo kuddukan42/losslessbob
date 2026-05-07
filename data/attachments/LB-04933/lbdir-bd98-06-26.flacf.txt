@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-26.flacf 
+=================== 
+=================== 
+=================== 
+0e04b40ddf4f91180a53275d7c7ae1df  bd1998-06-26-Roskilde-d1\bd1998-06-26-Roskilde-d1.md5
+9a7e0733ebaaf2db66b145ab79632dd1  bd1998-06-26-Roskilde-d1\Track01.flac
+c3882838a89a07cbfbf4d815017cfa6f  bd1998-06-26-Roskilde-d1\Track02.flac
+0ac8c04b9fea72a020598afd7e1f4980  bd1998-06-26-Roskilde-d1\Track03.flac
+b9f6e5c00ef57c2ec2acbb22b4c07649  bd1998-06-26-Roskilde-d1\Track04.flac
+eafc0613560982618d3c0fcdcc8a8669  bd1998-06-26-Roskilde-d1\Track05.flac
+9cebb2b2d3b601cc4819c203a55bb84d  bd1998-06-26-Roskilde-d1\Track06.flac
+aa513e036fce6ba71d5933ae64fd3b1f  bd1998-06-26-Roskilde-d1\Track07.flac
+abfde789f5adf7b3d103d11810e9afb9  bd1998-06-26-Roskilde-d1\Track08.flac
+066b63fe9c6d79789a21f6005d2ae7a7  bd1998-06-26-Roskilde-d2\bd1998-06-26-Roskilde-d2.md5
+7a875ca457d48446ce0535a894614f24  bd1998-06-26-Roskilde-d2\Track01.flac
+52efdc8fddd7aab0241316d40fbe8033  bd1998-06-26-Roskilde-d2\Track02.flac
+afe4261e111ae847d4aa0d64b6b19ffe  bd1998-06-26-Roskilde-d2\Track03.flac
+3d8f5cdbdff21bf07606e85828841bec  bd1998-06-26-Roskilde-d2\Track04.flac
+08c03b14f5d34d879b5bc9dac9bd9d0f  bd1998-06-26-Roskilde-d2\Track05.flac
+404c90b3effbaf2433bc84bd325fd036  bd1998-06-26-Roskilde-d2\Track06.flac
+6e029b7fe8907e9d86b18ab24c1de65c  bd1998-06-26-Roskilde-d2\Track07.flac
+b38cebaf6acb9abe20525cf46bec9461  bd1998-06-26-Roskilde.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-26.flacf\bd1998-06-26-Roskilde-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:02624d28b5b56c2ecfde814fe7990e41
+Track02.flac:435ed051d2426935f338ab2d2de354a7
+Track03.flac:e2e2e5ee3624e3dddc5a87a623ec66fd
+Track04.flac:ed8f28091d98f563b8f567f2907493e7
+Track05.flac:0d5838facaa6fefab83892fa7961fb4f
+Track06.flac:2fc0145c6e68b35cc604562e0b2e15c5
+Track07.flac:bcd0ce76582cc41310ff014342e00774
+Track08.flac:348fca6d6ceed54277e4915119a26bf6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-26.flacf\bd1998-06-26-Roskilde-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:5005a5d4d831210f75c8d61bb8626918
+Track02.flac:5863a364f102a21c9a13af7619e3804a
+Track03.flac:7f0b9edc6bd0ce5755180c392e7edcba
+Track04.flac:e497649a08f5dd393aa4269d270f71e6
+Track05.flac:fccb7cfd6190ac2f4a7a508f0fa00ad6
+Track06.flac:0b07cd2f48268ac9280e3c3d736dc56d
+Track07.flac:593102acbe3270017b0b46c90ecbf14f
+=================== 
+=================== 
+=================== 
+=== shntool for: bd98-06-26.flacf\bd1998-06-26-Roskilde-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:55.44       41557532 B   ---   --   ---xx   flac  0.5715  Track01.flac
+     4:32.01       47983196 B   ---   --   ---xx   flac  0.5794  Track02.flac
+     6:37.40       70124924 B   ---   --   ---xx   flac  0.5799  Track03.flac
+     4:34.57       48467708 B   ---   --   ---xx   flac  0.5652  Track04.flac
+     6:40.01       70562396 B   ---   --   ---xx   flac  0.6112  Track05.flac
+     5:10.09       54705212 B   ---   --   ---xx   flac  0.5330  Track06.flac
+     8:33.12       90521468 B   ---   --   ---xx   flac  0.5545  Track07.flac
+     5:45.64       61008572 B   ---   --   ---xx   flac  0.5875  Track08.flac
+    45:49.03      484931008 B                            0.5731  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd98-06-26.flacf\bd1998-06-26-Roskilde-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:49.38       82821020 B   ---   --   ---xx   flac  0.6289  Track01.flac
+     6:43.05       71101004 B   ---   --   ---xx   flac  0.5774  Track02.flac
+     5:14.03       55396700 B   ---   --   ---xx   flac  0.5321  Track03.flac
+     6:05.63       64534220 B   ---   --   ---xx   flac  0.5987  Track04.flac
+     6:38.32       70282508 B   ---   --   ---xx   flac  0.5267  Track05.flac
+     5:05.32       53877308 B   ---   --   ---xx   flac  0.6020  Track06.flac
+     6:05.28       64451900 B   ---   --   ---xx   flac  0.5037  Track07.flac
+    43:41.51      462464660 B                            0.5691  (7 files)
+=================== 
+=================== 
+=================== 

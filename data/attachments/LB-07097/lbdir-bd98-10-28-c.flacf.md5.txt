@@ -1,0 +1,19 @@
+5ba7567a2463052e3b5b7ea71b2c3fea  bd-98-10-28-Auburn Hills-d2\bd-98-10-28-Auburn Hills-d2.md5
+d25a09e277cec12f75f02a70fe8e3f12  bd-98-10-28-Auburn Hills-d2\Track01.flac
+6a361895bd9e1cfbf054b391d0b2ec66  bd-98-10-28-Auburn Hills-d2\Track02.flac
+cd7280a996c63604c33a5f52e212c243  bd-98-10-28-Auburn Hills-d2\Track03.flac
+19970166d92a431f7ae143701d1710f3  bd-98-10-28-Auburn Hills-d2\Track04.flac
+ead7d8d66946209dc2d01fc933634472  bd-98-10-28-Auburn Hills-d2\Track05.flac
+8c1fd8ed1b9453df065c9f62fe398857  bd-98-10-28-Auburn Hills-d2\Track06.flac
+fc231dc58d02adc26aa1d3f22928d1bc  bd-98-10-28-Auburn Hills-d2\Track07.flac
+1e16eaf2fed2b6a87b69106be17af1a5  bd-98-10-28-Auburn Hills-d2\Track08.flac
+30a6c0130d3bb0566585ea94f812973f  bd98-10-28-Auburn Hills-d1\bd98-10-28-Auburn Hills-d1.md5
+da3c6f770bbc9d0e573ce09f507500b2  bd98-10-28-Auburn Hills-d1\Track01.flac
+e836453e0919d0b5edfc60ad9d51cba5  bd98-10-28-Auburn Hills-d1\Track02.flac
+9d954ed48da338fb3d2978c682a1fa9d  bd98-10-28-Auburn Hills-d1\Track03.flac
+79fa451cdf85f33bddfa218a7995c143  bd98-10-28-Auburn Hills-d1\Track04.flac
+a7df8a1c418fd918ad2ca74c91d666c5  bd98-10-28-Auburn Hills-d1\Track05.flac
+772da17f6cc5f7fde405a18955d51439  bd98-10-28-Auburn Hills-d1\Track06.flac
+fccd7300458f8f339b1c5e7c6f062359  bd98-10-28-Auburn Hills-d1\Track07.flac
+b4f035295ead02d2e9a2667a7d94afc3  bd98-10-28-Auburn Hills-d1\Track08.flac
+748577968a620b3ef59ccd9e36a8dc5f  bd98-10-28.txt

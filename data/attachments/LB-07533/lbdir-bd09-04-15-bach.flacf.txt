@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-15-bach.flacf 
+=================== 
+=================== 
+=================== 
+23049449533ee6c6b0d0b9eb224e3d13  2009-04-15-Milano.md5
+b15fceb6c98ade78299fafedc8437075  2009-04-15-Milano.txt
+69685190a2e664cdc394da52aaedc06f  Track101.flac
+8d1779f5cd91fae594b5fe6eb2a2a72c  Track102.flac
+97960c36db9cddd8a378358e129b55a3  Track103.flac
+2156007df2b1ecf678bd1ea12137b2a8  Track104.flac
+ffbdc6a7ec62edc9ab9c37cbf886dc84  Track105.flac
+613d578a5cd1117c961cf137024eef47  Track106.flac
+06371360a7f7eb98903c05b7609501ce  Track107.flac
+458a2f2d325486d9cbab215969229e4d  Track108.flac
+955ec3abda5522d1e723eb9f2416aabb  Track109.flac
+6de120c5c4ed6ae34eccc0da7648b6eb  Track110.flac
+e14f38a6989ef41a4c00aeac76f84d31  Track111.flac
+d4f7593620e6aeb2465754b68bcfd318  Track201.flac
+231b3f5022bbe202fc8689a9f8c8de71  Track202.flac
+ad5597dfad9e5c6407a7838bcbd9593c  Track203.flac
+d1e0aa3aed42fc597195c648e8db943f  Track204.flac
+e3e94a0ddf282c3346aba6eeff2784d8  Track205.flac
+8b1c6c6754e718482cacf3beda66a7be  Track206.flac
+d631d17929897a61566b579fb8e016c5  Track207.flac
+92a26bebf9bcdad44c1484c30bdeda20  Track208.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-15-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:16c70cbb44cad5e63e1193b462661721
+Track102.flac:95a707205b7d799d270f591393430ae2
+Track103.flac:1eab09ccdfedc27bd0d8421003326cbc
+Track104.flac:67bbdf4e6cdbb36711642a7c644b6a4b
+Track105.flac:2d57b4091812bbd3a3625bcf0fe311ab
+Track106.flac:927fa568dbb2b34b4c2ff9d04c250d4c
+Track107.flac:076ea3946d56287fec9756b40adb7603
+Track108.flac:f20746745993bde55e3dbdda40ec25a5
+Track109.flac:3646b6712157b626a04343ed5b167b11
+Track110.flac:41c1910c92a48beaa3939d5ae59ab291
+Track111.flac:784779b6c1cb8c0fa34bf702504ccb0f
+Track201.flac:c3df0a2233ba2d730d69d2905df21480
+Track202.flac:33dd872d4521bdbc9691dfcff2b8b09c
+Track203.flac:5709897c30f491857d8dbd5fb9725443
+Track204.flac:383c328e289f011ad696075852bfc4fa
+Track205.flac:04f28afcd74e63bfc29253d85cc5f79e
+Track206.flac:c42d1f1af8fb210cb8baf4f3c1112a4c
+Track207.flac:a66e8e9517bcef94900cf112117e8e7b
+Track208.flac:1cef9e6f217fc0aa7b41d77b133a972d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-15-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.67       10212428 B   ---   --   ---xx   flac  0.4066  Track101.flac
+     2:44.47       29040188 B   ---   --   ---xx   flac  0.4559  Track102.flac
+     6:34.17       69541628 B   ---   --   ---xx   flac  0.4593  Track103.flac
+     6:23.57       67695308 B   ---   --   ---xx   flac  0.4411  Track104.flac
+     6:00.07       63520508 B   ---   --   ---xx   flac  0.4631  Track105.flac
+     6:34.62       69647468 B   ---   --   ---xx   flac  0.4424  Track106.flac
+     5:38.52       59745548 B   ---   --   ---xx   flac  0.4610  Track107.flac
+     5:18.53       56219900 B   ---   --   ---xx   flac  0.3772  Track108.flac
+     7:22.40       78062924 B   ---   --   ---xx   flac  0.4603  Track109.flac
+     6:46.01       71620796 B   ---   --   ---xx   flac  0.4358  Track110.flac
+    10:07.25      107133644 B   ---   --   ---xx   flac  0.4434  Track111.flac
+     7:14.28       76623500 B   ---   --   ---xx   flac  0.4608  Track201.flac
+     6:27.05       68278604 B   ---   --   ---xx   flac  0.4287  Track202.flac
+     6:06.59       64701212 B   ---   --   ---xx   flac  0.3854  Track203.flac
+     6:52.55       72806204 B   ---   --   ---xx   flac  0.4722  Track204.flac
+    10:38.50      112660844 B   ---   --   ---xx   flac  0.4345  Track205.flac
+     4:48.54       50930252 B   ---   --   ---xx   flac  0.4602  Track206.flac
+     7:55.45       83895884 B   ---   --   ---xx   flac  0.4030  Track207.flac
+     6:05.10       64409564 B   ---   --   ---xx   flac  0.4493  Track208.flac
+   120:37.59     1276746404 B                            0.4401  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd03-04-20-c.flacf
+===================
+===================
+===================
+9366d9dbf2028cd6874490d489f70871 *D1 shn\austin_03-04-20_cd1_Track 01-fixed.shn
+191a9e274a3a8c78638d09e034a2f0cd *D1 shn\austin_03-04-20_cd1_Track 02-fixed.shn
+57bf9b38ae6407cb0d321abde82ad035 *D1 shn\austin_03-04-20_cd1_Track 03-fixed.shn
+362daf298d49ff7e81ce356f2f98a7e0 *D1 shn\austin_03-04-20_cd1_Track 04-fixed.shn
+f0e3051f099bd736049d5aa16f7feaf3 *D1 shn\austin_03-04-20_cd1_Track 05-fixed.shn
+38bade0ab157fa442ece14b5c3d97a9a *D1 shn\austin_03-04-20_cd1_Track 06-fixed.shn
+e3d0ef52a9051aa3ac325a98805396e0 *D1 shn\austin_03-04-20_cd1_Track 07-fixed.shn
+9d03b10195fe94dd607a19f7a57d57e8 *D1 shn\austin_03-04-20_cd1_Track 08-fixed.shn
+fc1142f85aafd9f2ff0f2f0553b5f5c0 *D1 shn\austin_03-04-20_cd1_Track 09-fixed.shn
+64fb60e8943b4436759eb7312804eb4a *D1 shn\austin_03-04-20_cd1_Track 10-fixed.shn
+b46932701be81b65f0ac9f6b8d772e05 *D1 shn\noname.md5
+a1159a99d9f61a4ed84ae68afd62d6d6 *D2 shn\austin_03-04-20_cd2_Track 01-fixed.shn
+6a8b690716bb4d9a633c887c447d4c39 *D2 shn\austin_03-04-20_cd2_Track 02-fixed.shn
+dcce034156d608d9e4609d042a377785 *D2 shn\austin_03-04-20_cd2_Track 03-fixed.shn
+ea10d15ef38c878e36374a1777983bdb *D2 shn\austin_03-04-20_cd2_Track 04-fixed.shn
+17042115a63ece9f065467e405a17e57 *D2 shn\austin_03-04-20_cd2_Track 05-fixed.shn
+35436cde003ca270d40fd59225dbebc0 *D2 shn\austin_03-04-20_cd2_Track 06-fixed.shn
+f7d48753555553e9611ef19a2d119919 *D2 shn\noname.md5
+b8b0289b24a313dba54912a9ffd85058 *Text.txt
+===================
+===================
+===================
+=== shntool md5/hash for: bd03-04-20-c.flacf
+===================
+===================
+===================
+d32b6b554b90828238d6c4b672f9f388  [shntool]  D1 shn\austin_03-04-20_cd1_Track 01-fixed.shn
+2d31a433482cb49f81270734502d726a  [shntool]  D1 shn\austin_03-04-20_cd1_Track 02-fixed.shn
+7953b83eb9ff4e87b52e9b94f345dd8d  [shntool]  D1 shn\austin_03-04-20_cd1_Track 03-fixed.shn
+7b3c3ce5decbd72b2363e3490747c934  [shntool]  D1 shn\austin_03-04-20_cd1_Track 04-fixed.shn
+de6c454e6da5ce22aa13564435394177  [shntool]  D1 shn\austin_03-04-20_cd1_Track 05-fixed.shn
+abc6e1faeeb1216756b569648093e850  [shntool]  D1 shn\austin_03-04-20_cd1_Track 06-fixed.shn
+d5877fc5a7273602410046f067089155  [shntool]  D1 shn\austin_03-04-20_cd1_Track 07-fixed.shn
+4428d1e617203447239095324e2ec27b  [shntool]  D1 shn\austin_03-04-20_cd1_Track 08-fixed.shn
+576cc51d1d4c19ecfabcba4169ab7a0a  [shntool]  D1 shn\austin_03-04-20_cd1_Track 09-fixed.shn
+fdc350482c04465156bf11345452ccd8  [shntool]  D1 shn\austin_03-04-20_cd1_Track 10-fixed.shn
+fe9a2759af50f5fba24a3d2a8f90c2de  [shntool]  D2 shn\austin_03-04-20_cd2_Track 01-fixed.shn
+6a421d0d8718d1e3b075d360f74029a0  [shntool]  D2 shn\austin_03-04-20_cd2_Track 02-fixed.shn
+26919fb55faecd291cf5604b50a2f14b  [shntool]  D2 shn\austin_03-04-20_cd2_Track 03-fixed.shn
+3aeca36d8dd7be5e42a820cc7fbe8d0e  [shntool]  D2 shn\austin_03-04-20_cd2_Track 04-fixed.shn
+3f5e8b8e7c9398c8e71da578e7147b84  [shntool]  D2 shn\austin_03-04-20_cd2_Track 05-fixed.shn
+931391643aa0c3c9f50bc1ecd0ec4708  [shntool]  D2 shn\austin_03-04-20_cd2_Track 06-fixed.shn
+===================
+===================
+===================
+=== shntool len for: bd03-04-20-c.flacf\D1 shn
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.36       59707916 B   ---   --   ---xx    shn  0.5444  austin_03-04-20_cd1_Track 01-fixed.shn
+     5:15.60       55707164 B   ---   --   ---xx    shn  0.5279  austin_03-04-20_cd1_Track 02-fixed.shn
+     4:31.43       47905580 B   ---   --   ---xx    shn  0.5139  austin_03-04-20_cd1_Track 03-fixed.shn
+     6:22.11       67410716 B   ---   --   ---xx    shn  0.5628  austin_03-04-20_cd1_Track 04-fixed.shn
+     4:54.72       52030988 B   ---   --   ---xx    shn  0.5288  austin_03-04-20_cd1_Track 05-fixed.shn
+     4:29.70       47616284 B   ---   --   ---xx    shn  0.4488  austin_03-04-20_cd1_Track 06-fixed.shn
+     6:00.55       63633404 B   ---   --   ---xx    shn  0.5543  austin_03-04-20_cd1_Track 07-fixed.shn
+     7:33.67       80066828 B   ---   --   ---xx    shn  0.4451  austin_03-04-20_cd1_Track 08-fixed.shn
+     6:41.12       70764668 B   ---   --   ---xx    shn  0.5466  austin_03-04-20_cd1_Track 09-fixed.shn
+     5:40.72       60145388 B   ---   --   ---xx    shn  0.5197  austin_03-04-20_cd1_Track 10-fixed.shn
+    57:09.48      604988936 B                            0.5194  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd03-04-20-c.flacf\D2 shn
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.17       76244828 B   ---   --   ---xx    shn  0.5790  austin_03-04-20_cd2_Track 01-fixed.shn
+     6:40.60       70701164 B   ---   --   ---xx    shn  0.4495  austin_03-04-20_cd2_Track 02-fixed.shn
+     6:08.43       65016380 B   ---   --   ---xx    shn  0.5009  austin_03-04-20_cd2_Track 03-fixed.shn
+     7:35.56       80393756 B   ---   --   ---xx    shn  0.5596  austin_03-04-20_cd2_Track 04-fixed.shn
+     7:21.69       77954732 B   ---   --   ---xx    shn  0.4646  austin_03-04-20_cd2_Track 05-fixed.shn
+     6:43.34       71169212 B   ---   --   ---xx    shn  0.5749  austin_03-04-20_cd2_Track 06-fixed.shn
+    41:42.54      441480072 B                            0.5224  (6 files)
+===================
+===================
+===================

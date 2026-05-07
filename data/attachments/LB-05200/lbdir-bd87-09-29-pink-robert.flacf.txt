@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-29-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+841dea2a2a3c6c75841588182a35ce61  (01) Stuttgart.flac
+cdb8ce4f25ef4277100f3fd920ba4072  (02) Stuttgart.flac
+cc1e3760242e87266dcfaf2dd04f9de6  (03) Stuttgart.flac
+8ea1a3bfa146b79ad779b29b762b758a  (04) Stuttgart.flac
+45a3d1f073daf48ad2b9ef1822bc3d63  (05) Stuttgart.flac
+63013f674a698973612825f858a1dac8  (06) Stuttgart.flac
+e6e92626c3326e3616037de66a2e5c2e  (07) Stuttgart.flac
+5f9b86b5a53cb02cdece49135e254536  (08) Stuttgart.flac
+4a8745f248a62e20e8383c1bb7b1d8c4  (09) Stuttgart.flac
+5f3afceed21f5d7349765c252615be57  (10) Stuttgart.flac
+ccdcd6ce7a9b736d01f7c0a715ff749f  (11) Stuttgart.flac
+65ace19ff540eeaa9f61cce55f1c175a  (12) Stuttgart.flac
+3d22e33994721992d7e699a3872fb0e1  (13) Stuttgart.flac
+f33a68a5b14d7b0da2f246294a96c427  (14) Stuttgart.flac
+38214bf8f9cd9577a8b7581aea665037  BobDylan16Stuttgart.txt
+baeebaa9633ab62ee903933864c5f87e  Dylan_Stuttgart_87.md5
+aa3b688baee0d2d2b62c174a3b5bb2a7  DylanSuttgart87Back.jpg
+3862c2fe94011ea9d9ec12686dd9a2d2  DylanSuttgart87Front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-29-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+(01) Stuttgart.flac:afbdfdb6dce4961fb096c1407d94a9c1
+(02) Stuttgart.flac:272237c7d1498f0cb03a25580daf6a0f
+(03) Stuttgart.flac:373c2c35d39153f8290f3eab0fb6ed2a
+(04) Stuttgart.flac:92282e93757a1401318d82de5217cb40
+(05) Stuttgart.flac:6a0acaad4bb777561d3160fa1e397406
+(06) Stuttgart.flac:5b1b21ef500e9ff5da7ec0a05c3a0e54
+(07) Stuttgart.flac:6be15b5f9128ab5c821c170fa7174304
+(08) Stuttgart.flac:c37926555d959af99dac98000937dd2a
+(09) Stuttgart.flac:3a974a3b695af716c828d8bdde7dfe00
+(10) Stuttgart.flac:a4c247d7429beb084fce87fda40f57b5
+(11) Stuttgart.flac:d6096e20b987cf2d36af19fc1d4bf05a
+(12) Stuttgart.flac:e4eb0d4a18cd417aeda21081b8113042
+(13) Stuttgart.flac:6dc5bbbde16276a723e830d98e6a3ad6
+(14) Stuttgart.flac:33f8f504df80d0fa030dc220d01ef9c3
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-09-29-pink-robert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.71       56262236 B   ---   --   ---xx   flac  0.6359  (01) Stuttgart.flac
+     3:47.33       40120460 B   ---   --   ---xx   flac  0.6324  (02) Stuttgart.flac
+     6:34.45       69607484 B   ---   --   ---xx   flac  0.6096  (03) Stuttgart.flac
+     5:51.62       62062268 B   ---   --   ---xx   flac  0.6483  (04) Stuttgart.flac
+     3:49.31       40468556 B   ---   --   ---xx   flac  0.6023  (05) Stuttgart.flac
+     3:27.30       36585404 B   ---   --   ---xx   flac  0.6401  (06) Stuttgart.flac
+     5:30.20       58259084 B   ---   --   ---xx   flac  0.5886  (07) Stuttgart.flac
+     3:25.22       36213788 B   ---   --   ---xx   flac  0.6556  (08) Stuttgart.flac
+     4:52.61       51652316 B   ---   --   ---xx   flac  0.5631  (09) Stuttgart.flac
+     6:56.12       73410668 B   ---   --   ---xx   flac  0.6267  (10) Stuttgart.flac
+     4:15.35       45064364 B   ---   --   ---xx   flac  0.6594  (11) Stuttgart.flac
+     5:00.49       53035292 B   ---   --   ---xx   flac  0.6636  (12) Stuttgart.flac
+     6:00.19       63548732 B   ---   --   ---xx   flac  0.6010  (13) Stuttgart.flac
+     8:51.73       93840140 B   ---   --   ---xx   flac  0.6588  (14) Stuttgart.flac
+    73:42.38      780130792 B                            0.6277  (14 files)
+=================== 
+=================== 
+=================== 

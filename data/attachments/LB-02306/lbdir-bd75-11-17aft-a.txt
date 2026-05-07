@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-17aft-a 
+=================== 
+=================== 
+=================== 
+774dbd1e8e1b425eb4dcc4fd4754eba7  bd75-11-17aft-a.txt
+36109f76ee75978a184f927bd0fa858e  info.txt
+b5c445c0505f297e28a0714bd723f783  noname.md5
+48cd32fb36ad7a6cbfbceace0e7b4d3b  rochaftTrack01.shn
+52f1392b00281aeb9923974343cea57d  rochaftTrack02.shn
+8a373cf78581baab7f827af3075ecb8c  rochaftTrack03.shn
+a03e801f98eed33fc5fa9a97c94ea419  rochaftTrack04.shn
+6669086824341e4789b370b6a105f150  rochaftTrack05.shn
+3fab424d74dcc3943707f4a2821aa17e  rochaftTrack06.shn
+9fde5074ec9bead325d4aa4548b2b5da  rochaftTrack07.shn
+e9358c9cee6a1ead927dd98b58976f47  rochaftTrack08.shn
+045862a3c0c151d5ea4545b3a3857020  rochaftTrack09.shn
+aefc0166f81ea9c780c0b90e1b5869d7  rochaftTrack10.shn
+6a707d4cb8785e171e083d59338f392f  rochaftTrack11.shn
+5dbb7c43e84b2ca076d52acc905990a3  rochaftTrack12.shn
+3d8843a8046981dcdcbf898116f0f1c2  rochaftTrack13.shn
+d5f566a7aa4417395aa901df99c467b6  rochaftTrack14.shn
+5f959668f2c2d4fd4c1e835e9d500021  rochaftTrack15.shn
+d1afc3f067d37e1abd003cc9a0e0e830  rochaftTrack16.shn
+4e908210db8bafef298560d0a7c0f714  rochaftTrack17.shn
+88bd0ab831a8d2a3c914c3c21dd8e588  rochaftTrack18.shn
+aba0cf20dc97a1bd91e81cb09f8c6db3  rochaftTrack19.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd75-11-17aft-a 
+=================== 
+=================== 
+=================== 
+aa583e8ce68441a1fe13a26b5a85d602  [shntool]  rochaftTrack01.wav
+6c4b9e79841cb3e70402f08426c80f7b  [shntool]  rochaftTrack02.wav
+22034e59c948851be8f2e9a3b20179e5  [shntool]  rochaftTrack03.wav
+58f3a339ef0471300fd37a55e81d0be2  [shntool]  rochaftTrack04.wav
+4fb7b3438e0baf43258aa00192b887d2  [shntool]  rochaftTrack05.wav
+5146fff6ce05cb145278ba6be2722427  [shntool]  rochaftTrack06.wav
+616ef97731d6d0207fe1253461987511  [shntool]  rochaftTrack07.wav
+27333fe9c397b6689f75dac99d24dd98  [shntool]  rochaftTrack08.wav
+fbb80ec7740174486e35bc273cd83baa  [shntool]  rochaftTrack09.wav
+d733e109e2aaa571fdec7330c7ff50ba  [shntool]  rochaftTrack10.wav
+1d6ed2b351c090417c2b1fda6388f88c  [shntool]  rochaftTrack11.wav
+36ce8cc7c8fb49972f17c993c9d4f68f  [shntool]  rochaftTrack12.wav
+5d99fd76c8fbdcfa6d5b1b1a30b24bdc  [shntool]  rochaftTrack13.wav
+337b843519562c2588a163c2e7a011b7  [shntool]  rochaftTrack14.wav
+4604de3c60318de7d8720fb16edb0b22  [shntool]  rochaftTrack15.wav
+3374da779b11f61ee2b4a7eb2ec1b7cf  [shntool]  rochaftTrack16.wav
+96fc33df07e4027e166e232bb146a179  [shntool]  rochaftTrack17.wav
+573952642116d265fe56bfe25f8bb166  [shntool]  rochaftTrack18.wav
+66322716b213eb2683f031f13636a787  [shntool]  rochaftTrack19.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-17aft-a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.39       46661372 B   ---   --   -----    wav  1.0000  rochaftTrack01.wav
+     5:44.04       60691052 B   ---   --   -----    wav  1.0000  rochaftTrack02.wav
+     6:19.21       66905036 B   ---   --   -----    wav  1.0000  rochaftTrack03.wav
+     3:57.51       41926796 B   ---   --   -----    wav  1.0000  rochaftTrack04.wav
+     2:33.04       26998652 B   ---   --   -----    wav  1.0000  rochaftTrack05.wav
+     2:45.21       29155436 B   ---   --   -----    wav  1.0000  rochaftTrack06.wav
+     3:07.19       33031532 B   ---   --   -----    wav  1.0000  rochaftTrack07.wav
+     3:40.22       38859788 B   ---   --   -----    wav  1.0000  rochaftTrack08.wav
+     2:37.55       27824204 B   ---   --   -----    wav  1.0000  rochaftTrack09.wav
+     4:30.23       47682140 B   ---   --   -----    wav  1.0000  rochaftTrack10.wav
+     4:02.31       42761756 B   ---   --   -----    wav  1.0000  rochaftTrack11.wav
+     3:47.27       40106348 B   ---   --   -----    wav  1.0000  rochaftTrack12.wav
+     7:58.42       84418028 B   ---   --   -----    wav  1.0000  rochaftTrack13.wav
+     3:41.38       39073820 B   ---   --   -----    wav  1.0000  rochaftTrack14.wav
+     4:38.20       49086284 B   ---   --   -----    wav  1.0000  rochaftTrack15.wav
+     4:10.41       44196476 B   ---   --   -----    wav  1.0000  rochaftTrack16.wav
+     4:49.07       50996108 B   ---   --   -----    wav  1.0000  rochaftTrack17.wav
+     3:24.65       36138524 B   ---   --   -----    wav  1.0000  rochaftTrack18.wav
+     0:57.02       10059548 B   ---   --   -----    wav  1.0000  rochaftTrack19.wav
+    77:09.07      816572900 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

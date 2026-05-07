@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-10-late.flacf 
+=================== 
+=================== 
+=================== 
+556cc48953a016911907f26615b408f0  01_track_01000LateShow.shn
+5a7eb8ef5345ddae6ca78110a4b8cf4d  01_track_01000LateShow.skt
+41a15c25369694584f5b14584ad43a22  02_track_02000LateShow.shn
+1d4515911bd52ba7c112b704d61aecef  02_track_02000LateShow.skt
+d554ca4a28ded044381b65aab985d16a  03_track_03000LateShow.shn
+5a3ced31f07229d9d2e5fe3c9dc712d1  03_track_03000LateShow.skt
+d8a7f7a12fcabb9ee1f78c26c763c9fd  04_track_04000LateShow.shn
+641cbc2c0b11070138099ee9b352cfab  04_track_04000LateShow.skt
+25dc7d0969da24f28c62c305c6006891  05_track_05000LateShow.shn
+d5aa9651dc880acd80838718cb6a0ebe  05_track_05000LateShow.skt
+f12597e084f351e6000638ff8a114ee1  06_track_06000LateShow.shn
+34fea11b2d801be1b72f57c39e8154d7  06_track_06000LateShow.skt
+311a6b2c1f983d6ae2bb8ae46145e59c  07_track_07000LateShow.shn
+a4b8f041b085c7d56b97445cbd7a5236  07_track_07000LateShow.skt
+7bb00492e1c301f959e7cd80881a5ddc  08_track_08000LateShow.shn
+033ba16085bedf6a004e40ddab77de74  08_track_08000LateShow.skt
+57e3b5b6579addeab2e99b0be9788aa2  09_track_09000LateShow.shn
+268abef9d67c24327433b7a615eb45dd  09_track_09000LateShow.skt
+ceebf8eb0b66197385bf40031b358c4f  10_track_10000LateShow.shn
+fb4da5271a17d0c34a03994410a3ac27  10_track_10000LateShow.skt
+a133dd294810b953187434ef33671e4b  11_track_11000LateShow.shn
+0a4048c3a485801a10ad36ad60f75b6e  11_track_11000LateShow.skt
+f2e3ce60066587d709cff9e833a8b955  12_track_12000LateShow.shn
+b112aa3e6f590cd415d468cfd0fd84d9  12_track_12000LateShow.skt
+d4ba374d48e516ada7f9362e85deced1  13_track_13000LateShow.shn
+7ec63b419812e312150c007c7791863d  13_track_13000LateShow.skt
+7b01b01daad20f6694078acec5d207fa  14_track_14000LateShow.shn
+1f74814812adb863cc1acec16b33b85e  14_track_14000LateShow.skt
+2fef8cff48aa7e0ad02fb6bd995d48eb  15_track_15000LateShow.shn
+6acb88402ffc94dd318ecd44e8a91ac5  15_track_15000LateShow.skt
+f5105ced73a5fb847b13b282c0ea5197  bd00-03-10-late-LB-3779.txt
+9c127852b076cf50884f2eb47f576173  info.txt
+0574a55bb218a296d3ded81fd00616e3  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-03-10-late.flacf 
+=================== 
+=================== 
+=================== 
+37edea446f31da80bfe5c909816a262c  [shntool]  01_track_01000LateShow.wav
+92da852ddb99814d43c2bb171a510fd5  [shntool]  02_track_02000LateShow.wav
+1fe91774344fe3ccb349ad703fd13f7d  [shntool]  03_track_03000LateShow.wav
+a90d15afa90e1510aea21a909d0749f0  [shntool]  04_track_04000LateShow.wav
+864c1073407c1ad5d64809be928af6c6  [shntool]  05_track_05000LateShow.wav
+66c9751d2910835e955de7fbb061faf2  [shntool]  06_track_06000LateShow.wav
+fbe9e9cc05d65a60611b1c9ff23023b4  [shntool]  07_track_07000LateShow.wav
+b9ef3eea63af42327dc305df64fa047c  [shntool]  08_track_08000LateShow.wav
+302b007ef6967ddb254e0a855aa4641e  [shntool]  09_track_09000LateShow.wav
+397a49f31bc03f3d5316242cb03733d7  [shntool]  10_track_10000LateShow.wav
+39512cd35d8bd1e7fe36bbb5e12dbfa1  [shntool]  11_track_11000LateShow.wav
+9a668e3d54cb4cea0f7ba7d18b258ff6  [shntool]  12_track_12000LateShow.wav
+12539fab03db2f3a6ca7880f898aa0d2  [shntool]  13_track_13000LateShow.wav
+3f17041186d0f61fd07cf10244e8a77f  [shntool]  14_track_14000LateShow.wav
+43c11a8215ed49b72f714b7b26ef0719  [shntool]  15_track_15000LateShow.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-10-late.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:31.07       26652908 B   ---   --   -----    wav  1.0000  01_track_01000LateShow.wav
+     5:36.13       59301020 B   ---   --   -----    wav  1.0000  02_track_02000LateShow.wav
+     8:31.19       90185132 B   ---   --   -----    wav  1.0000  03_track_03000LateShow.wav
+     5:04.66       53780876 B   ---   --   -----    wav  1.0000  04_track_04000LateShow.wav
+     3:57.61       41950316 B   ---   --   -----    wav  1.0000  05_track_05000LateShow.wav
+     5:16.64       55892972 B   ---   --   -----    wav  1.0000  06_track_06000LateShow.wav
+     2:16.64       24140972 B   ---   --   -----    wav  1.0000  07_track_07000LateShow.wav
+     3:56.66       41785676 B   ---   --   -----    wav  1.0000  08_track_08000LateShow.wav
+     5:34.03       58924700 B   ---   --   -----    wav  1.0000  09_track_09000LateShow.wav
+     6:26.32       68165708 B   ---   --   -----    wav  1.0000  10_track_10000LateShow.wav
+     6:28.42       68542028 B   ---   --   -----    wav  1.0000  11_track_11000LateShow.wav
+     6:07.50       64856444 B   ---   --   -----    wav  1.0000  12_track_12000LateShow.wav
+     4:25.65       46898924 B   ---   --   -----    wav  1.0000  13_track_13000LateShow.wav
+     7:00.45       74193884 B   ---   --   -----    wav  1.0000  14_track_14000LateShow.wav
+     5:43.48       60618140 B   ---   --   -----    wav  1.0000  15_track_15000LateShow.wav
+    78:58.45      835889700 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

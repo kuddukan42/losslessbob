@@ -1,0 +1,30 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-19bw-unamp-48k.shnf 
+=================== 
+=================== 
+=================== 
+10c1d5305ce72b735ecec047e66755cb  bd03-04-19bw-unamp-48k.txt
+ca9b9770de2c166432feee3ef116b216  cd1\Track 01.mkw
+500158443c3e1377df08f0e541bb3dd2  cd1\Track 02.mkw
+b54b61148b65e14292fe1f9c2b3a7ee5  cd1\Track 03.mkw
+c2b1712c5e520492fddd74c9d9faa838  cd1\Track 04.mkw
+66374c85c7ec6400ee164dd4187acc81  cd1\Track 05.mkw
+d1a7581e715896b099102a0c86b9a0ef  cd1\Track 06.mkw
+4061fc17f08cd6613e270c39a02ebca6  cd1\Track 07.mkw
+f94b23caf48f29aea9013f4e49cd1a6a  cd1\Track 08.mkw
+7f577eed11076a90d05cc1e976e7425d  cd1\Track 09.mkw
+46e8952a0854e65afbb22fe042a1fb2d  cd1\noname.md5
+ded798a9c4999dd12a0b514a24cfc525  cd2\Track 01.mkw
+f58018e3ec9d65519345b9da8c598b5a  cd2\Track 02.mkw
+66f0b2a932307eadd2e399579261e58d  cd2\Track 03.mkw
+0ce7b9c021b2ef9ed9db67acdc0f4ce6  cd2\Track 04.mkw
+09a69111aca99cc3a2824db15d4afece  cd2\Track 05.mkw
+c13b6e085a5cd68fd807acd341bd436f  cd2\Track 06.mkw
+def9f35a8870964f334d390989d81afd  cd2\Track 07.mkw
+5e77d685a722b4a1d06afdd77a442fea  cd2\noname.md5
+f3c052c43460f096bbf118f62baa3a84  set list.txt
+=================== 
+=================== 
+=================== 

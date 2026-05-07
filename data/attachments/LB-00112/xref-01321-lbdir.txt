@@ -1,0 +1,123 @@
+===================
+===================
+===================
+=== md5 for: bd86-07-16-f.flacf
+===================
+===================
+===================
+577d76aa5187acc60f7c1e0b62b88861 *bd86-07-16d1tr01.flac
+c76933b8374c287681aed3384a579a16 *bd86-07-16d1tr02.flac
+23bc12888a45da7f4c80f835ec74891a *bd86-07-16d1tr03.flac
+c2278e96410b53f78cf93a8efb95d264 *bd86-07-16d1tr04.flac
+50573c3d76bc3126d86ee22084b38947 *bd86-07-16d1tr05.flac
+ed4f2562131a85d46afddaf32f088983 *bd86-07-16d1tr06.flac
+bd7015b6c3ac384092edf58b30e3c959 *bd86-07-16d1tr07.flac
+d2113a46f29a7b6ea50b6ec54e7bc665 *bd86-07-16d1tr08.flac
+c5c72d65a01d6590cad236867ef6972e *bd86-07-16d1tr09.flac
+af36d053da618931400fa475c43aeb51 *bd86-07-16d1tr10.flac
+e0439a2b62f1c5598eca91620999add1 *bd86-07-16d1tr11.flac
+85de0d02743e14c7b9ffa96fc78cca24 *bd86-07-16d2tr01.flac
+c1758f51f8feb0452d82c1a6a67814e1 *bd86-07-16d2tr02.flac
+a0382022527f692a87b03570b8b96670 *bd86-07-16d2tr03.flac
+4a56a95a119474ee4b5b41a1ec660c45 *bd86-07-16d2tr04.flac
+8149959ccb619436561ebece09a6b652 *bd86-07-16d2tr05.flac
+a8687621e610b623fff593203ac9909d *bd86-07-16d2tr06.flac
+a308b4d482f9de3993b59414c574fe3e *bd86-07-16d2tr07.flac
+2a7573a940bf79fee29fbcea96e6f4c9 *bd86-07-16d2tr08.flac
+f273cce6065bab204b3b6a5ac0eb5852 *bd86-07-16d3tr01.flac
+70e7d36e411007f22dd9dbfd11c4cfe8 *bd86-07-16d3tr02.flac
+4aefab6d6fa8861307393c1a01360b80 *bd86-07-16d3tr03.flac
+8693d96a92f5f9fa2dec429772e4aff2 *bd86-07-16d3tr04.flac
+be727345f5c19e9c0af2b60f2592b5da *bd86-07-16d3tr05.flac
+eeaf75fadea41294389bcc85e69890f2 *bd86-07-16d3tr06.flac
+4259c1a0c8ca76c18559482d34bc7f54 *bd86-07-16d3tr07.flac
+820bd0f0b3df50407d26d659447b39db *bd86-07-16d3tr08.flac
+fb988f0ad1575a54134a7e2d299ed5a1 *bd86-07-16d3tr09.flac
+3f17e960922cb8069305316b3c34baae *bd86-07-16d3tr10.flac
+07e5e3c29d71dfdf2a01cb799c9b8737 *bd86-07-16d3tr11.flac
+0beedf32f2ed572faa5a51fe6cb28793 *bd86-07-16d3tr12.flac
+959be0e374735a009afd2c38312f3b51 *bd86-07-16d3tr13.flac
+80b90592e24cacb5d5a6e294fd4bc0cf *info 1986-07-16.txt
+===================
+===================
+===================
+=== ffp for: bd86-07-16-f.flacf
+===================
+===================
+===================
+bd86-07-16d1tr01.flac:41ef1f8813c031a7ee828febda51f75e
+bd86-07-16d1tr02.flac:8f7e580f26e86100531214f17053c484
+bd86-07-16d1tr03.flac:1aac62125201a9aa92908a4b7e904a11
+bd86-07-16d1tr04.flac:a9acd67117ef673286f6ddd3c97100b3
+bd86-07-16d1tr05.flac:c899e6b8b30af1cf19c98c5ae262ef45
+bd86-07-16d1tr06.flac:e2ac55c84cc5e47f4b67e72652e4761f
+bd86-07-16d1tr07.flac:a1b39a209f715a5b0f72522237aac373
+bd86-07-16d1tr08.flac:2a1e10daaac6f7efbae989f5ea0de2c5
+bd86-07-16d1tr09.flac:03233e8eb1ba2ed4e761e7583b908f7a
+bd86-07-16d1tr10.flac:0df1f6c26b1f4e9df133631af2ac0906
+bd86-07-16d1tr11.flac:2ae57bcb778874e1157c8617159ee990
+bd86-07-16d2tr01.flac:90fec0bb2ce9b910f4f77f7288cda9e5
+bd86-07-16d2tr02.flac:39a948546c8efc022e5904f8d3dc5b1f
+bd86-07-16d2tr03.flac:33875cd0419cc8652847fbd63fc3cb5c
+bd86-07-16d2tr04.flac:5d900dc1d4d2369702dae277c78f2f3c
+bd86-07-16d2tr05.flac:5958b8d7520c49eff960aec4532383f1
+bd86-07-16d2tr06.flac:c992b5c99c103508d86d81dd781647d9
+bd86-07-16d2tr07.flac:93ac7ab4d5195ccd1cd2525149a3f6f3
+bd86-07-16d2tr08.flac:b4e6e3c635e267d9f49f17969af5d06a
+bd86-07-16d3tr01.flac:74bfddb48a7133d925ec3e70d2b41a49
+bd86-07-16d3tr02.flac:73e6bc85d2ce347e89d5893c11a36945
+bd86-07-16d3tr03.flac:c9f526d9eb7fbe9d51334b1a5f216fc6
+bd86-07-16d3tr04.flac:42971ed4cd9b7696b96df0b2143c2009
+bd86-07-16d3tr05.flac:647959a0a7e7a443e9c2e1e70a2131f6
+bd86-07-16d3tr06.flac:cdb9b1d3761f9864aecd6a82315aeacc
+bd86-07-16d3tr07.flac:377acd06494724c3c429023f223a8dd6
+bd86-07-16d3tr08.flac:889820e65e45753d96ad2d767092d6f3
+bd86-07-16d3tr09.flac:20390907eb8516dededb6dbec8c38c0e
+bd86-07-16d3tr10.flac:5179a6962baf9deb7937576defd8e6a7
+bd86-07-16d3tr11.flac:94f762e12e94ab05df3978f96846ebff
+bd86-07-16d3tr12.flac:461b604b429f772d5490128478773b3c
+bd86-07-16d3tr13.flac:079bd1b80b6a8dd47120dc90242dbcef
+===================
+===================
+===================
+=== shntool len for: bd86-07-16-f.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:12.04       23294252 B   ---   --   ---xx   flac  0.7064  bd86-07-16d1tr01.flac
+     4:15.22       45033788 B   ---   --   ---xx   flac  0.6774  bd86-07-16d1tr02.flac
+     2:50.52       30110348 B   ---   --   ---xx   flac  0.6879  bd86-07-16d1tr03.flac
+     5:20.72       56617388 B   ---   --   ---xx   flac  0.6552  bd86-07-16d1tr04.flac
+     5:22.25       56859644 B   ---   --   ---xx   flac  0.6849  bd86-07-16d1tr05.flac
+     3:01.28       31994300 B   ---   --   ---xx   flac  0.6542  bd86-07-16d1tr06.flac
+     4:15.12       45010268 B   ---   --   ---xx   flac  0.6930  bd86-07-16d1tr07.flac
+     4:00.56       42467756 B   ---   --   ---xx   flac  0.6688  bd86-07-16d1tr08.flac
+     3:58.07       41999708 B   ---   --   ---xx   flac  0.6868  bd86-07-16d1tr09.flac
+     5:42.67       60486428 B   ---   --   ---xx   flac  0.6522  bd86-07-16d1tr10.flac
+     6:12.61       65764316 B   ---   --   ---xx   flac  0.6627  bd86-07-16d1tr11.flac
+     4:06.42       43493228 B   ---   --   ---xx   flac  0.6669  bd86-07-16d2tr01.flac
+     3:50.73       40743740 B   ---   --   ---xx   flac  0.6485  bd86-07-16d2tr02.flac
+     7:16.42       77009228 B   ---   --   ---xx   flac  0.6650  bd86-07-16d2tr03.flac
+     4:09.26       43984796 B   ---   --   ---xx   flac  0.6602  bd86-07-16d2tr04.flac
+     5:11.05       54872204 B   ---   --   ---xx   flac  0.6732  bd86-07-16d2tr05.flac
+     5:48.43       61488380 B   ---   --   ---xx   flac  0.6824  bd86-07-16d2tr06.flac
+     4:26.22       46974188 B   ---   --   ---xx   flac  0.6694  bd86-07-16d2tr07.flac
+     5:22.09       56822012 B   ---   --   ---xx   flac  0.6756  bd86-07-16d2tr08.flac
+     4:08.23       43801340 B   ---   --   ---xx   flac  0.6803  bd86-07-16d3tr01.flac
+     6:44.60       71406764 B   ---   --   ---xx   flac  0.6356  bd86-07-16d3tr02.flac
+     3:15.16       34435676 B   ---   --   ---xx   flac  0.6943  bd86-07-16d3tr03.flac
+     5:19.35       56353964 B   ---   --   ---xx   flac  0.6860  bd86-07-16d3tr04.flac
+     3:35.52       38048348 B   ---   --   ---xx   flac  0.7009  bd86-07-16d3tr05.flac
+     5:19.18       56313980 B   ---   --   ---xx   flac  0.6876  bd86-07-16d3tr06.flac
+     5:57.65       63127724 B   ---   --   ---xx   flac  0.6503  bd86-07-16d3tr07.flac
+     6:38.51       70327196 B   ---   --   ---xx   flac  0.6647  bd86-07-16d3tr08.flac
+    10:28.28      110845100 B   ---   --   ---xx   flac  0.6715  bd86-07-16d3tr09.flac
+     8:26.48       89371340 B   ---   --   ---xx   flac  0.6823  bd86-07-16d3tr10.flac
+     6:05.41       64482476 B   ---   --   ---xx   flac  0.6627  bd86-07-16d3tr11.flac
+     4:00.43       42437180 B   ---   --   ---xx   flac  0.6738  bd86-07-16d3tr12.flac
+     8:43.69       92419532 B   ---   --   ---xx   flac  0.6761  bd86-07-16d3tr13.flac
+   166:08.17     1758396592 B                            0.6715  (32 files)
+===================
+===================
+===================

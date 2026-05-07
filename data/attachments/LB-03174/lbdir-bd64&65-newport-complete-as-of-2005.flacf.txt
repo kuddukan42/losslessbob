@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+8f5abaf2c3010b3e0bf772d4bf4f68db  bd64&65-newport-complete-as-of-2005-LB-3174.txt
+a90c28d4f95af48b80894b36714ff1c1  bd64&65-newport.flacf.md5
+b4be8e86c8f3b5eab6c655f6f033d2cd  bd64-07-24t01.flac
+252e0eb083bb8c1c1b1fe695ed7c5cb4  bd64-07-26t02.flac
+f3140b4996ff8cf2e279f45b6cac3d4f  bd64-07-26t03.flac
+b2178638f12e53890c8d3cda012ad265  bd64-07-26t04.flac
+978c20aa76b06cfd878e75bc126a6149  bd64-07-26t05.flac
+c9befe4f84b5b9d5e25b1a174ee8511a  bd64-07-26t06.flac
+37b07d6d5212d922d80ddc9e4d88a0de  bd65-07-25t07.flac
+139bf16e1d894343d19640cef3b2d314  bd65-07-25t08.flac
+74a4d38d52a8d9a23df41695177853c3  bd65-07-25t09.flac
+92115c90fc6968822b21bff8656dff3f  bd65-07-25t10.flac
+17ed5d77a7295c8e4e087549c93974a2  bd65-07-25t11.flac
+a7d0d1faedef6c98a4226910ee13a2df  bd65-07-25t12.flac
+8bf79d24287db7379fe14d3c131cac05  bd65-07-25t13.flac
+9612f46675b53d7da2f1cea0d7bed046  bd65-07-25t14.flac
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+bd64-07-24t01.flac:53b3003263c5693ba9068de336c9a1c1
+bd64-07-26t02.flac:1cf4d491dde8e6cdf1f13838d59c30ec
+bd64-07-26t03.flac:8a1de55c2e7f7bb8ee67a7186cafbdc3
+bd64-07-26t04.flac:4b53b45cc3ad81e9e1665beb632b511f
+bd64-07-26t05.flac:e708de5574ae1a8b42cfd047d167b4c9
+bd64-07-26t06.flac:61d3148a37629e1e6d8029eece925061
+bd65-07-25t07.flac:674174699cc065454663129ba5eb521c
+bd65-07-25t08.flac:915199a9ed4a251b0f24b4a303c8109b
+bd65-07-25t09.flac:422799dc8f564fc16d67c7872528e0ac
+bd65-07-25t10.flac:51cb6cf10ea8cd16698646cc59ec6fd4
+bd65-07-25t11.flac:75b24673e52adbba673c8bc0a8ee4dac
+bd65-07-25t12.flac:6bfdcd3bf3c3f008f86e0a12dba19f55
+bd65-07-25t13.flac:2513d7cb6ff023a556d0e05ba63496ca
+bd65-07-25t14.flac:50b46b5373542b9ebad7f31f8904d337
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.44       47555132 B   ---   --   ---xx   flac  0.6172  bd64-07-24t01.flac
+     3:44.29       39581852 B   ---   --   ---xx   flac  0.6133  bd64-07-26t02.flac
+     4:36.62       48832268 B   ---   --   ---xx   flac  0.5991  bd64-07-26t03.flac
+     7:32.50       79850444 B   ---   --   ---xx   flac  0.5967  bd64-07-26t04.flac
+     8:03.54       85328252 B   ---   --   ---xx   flac  0.6243  bd64-07-26t05.flac
+     6:43.66       71244476 B   ---   --   ---xx   flac  0.5916  bd64-07-26t06.flac
+     2:14.33       23715260 B   ---   --   ---xx   flac  0.5105  bd65-07-25t07.flac
+     0:55.10        9725564 B   ---   --   ---xx   flac  0.5500  bd65-07-25t08.flac
+     1:15.27       13293548 B   ---   --   ---xx   flac  0.5235  bd65-07-25t09.flac
+     5:52.59       62231612 B   ---   --   ---xx   flac  0.6115  bd65-07-25t10.flac
+     5:53.29       62337452 B   ---   --   ---xx   flac  0.6565  bd65-07-25t11.flac
+     5:47.32       61286108 B   ---   --   ---xx   flac  0.6690  bd65-07-25t12.flac
+     5:26.57       57640508 B   ---   --   ---xx   flac  0.6655  bd65-07-25t13.flac
+     7:18.24       77319692 B   ---   --   ---xx   flac  0.6243  bd65-07-25t14.flac
+    69:54.51      739942168 B                            0.6176  (14 files)
+=================== 
+=================== 
+=================== 

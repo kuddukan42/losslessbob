@@ -1,0 +1,71 @@
+===================
+===================
+===================
+=== md5 for: bd24-06-22-Ultramega.flacf
+===================
+===================
+===================
+e200880a1503071654d52a4b5818a1d5 *01 Highway 61 Revisited.flac
+27296db7eb02d2810ec0e0ed32430f0d *02 Shooting Star.flac
+22d870f4d26dff4dfa8488e045566997 *03 Love Sick.flac
+5c03ef2d0cb5257468491a31c6e8e520 *04 Little Queenie.flac
+36eb2b6c171a58edb26004b9de86fd2d *05 Mr. Blue.flac
+a1a1f6a2feb40e06f77f1466f9669b6a *06 Early Roman Kings.flac
+aa90c7a1646f1a52177181f28f247aa4 *07 Can't Wait.flac
+4c9c355073ad9b54b81940aeb0ef1477 *08 Under The Red Sky.flac
+1a56154dfbb634e16a158092480a4a18 *09 Things Have Changed.flac
+55ed573bd9df27f9c8e52e26198e8291 *10 Stella Blue.flac
+d0ea2184b1f055eab1e441e4432d6d8e *11 Six Days On The Road.flac
+29aaa4569926165103a809d749df3cb9 *12 Soon After Midnight.flac
+a3f10c19e847ce6bfa219ac6280222ba *13 Ballad Of A Thin Man.flac
+a05295cb99c3df2c52aa37576a5bb6a3 *14 I'll Be Your Baby Tonight.flac
+97e84dfffef6f95658cc06390b8d8d98 *Bob Dylan - 2024-06-22 - Charlotte, NC.ffp
+0e3906e28e5f6f8965705d505730eb56 *Bob Dylan - 2024-06-22 - Charlotte, NC.md5
+903064bca3887cc95cc6756c6f2a20e7 *Info Dylan.txt
+===================
+===================
+===================
+=== ffp for: bd24-06-22-Ultramega.flacf
+===================
+===================
+===================
+01 Highway 61 Revisited.flac:2ad0abe4c5fd40111a90233a02b786f5
+02 Shooting Star.flac:6e73001207172cf1ecfad16a036f442c
+03 Love Sick.flac:8e33bb2d7fd412fd3c516bd6af44a6bc
+04 Little Queenie.flac:ac31801cbd6af830c4a202b0ac7d1a95
+05 Mr. Blue.flac:a9bcf8686e5d4bdb82249f41e0c7eff5
+06 Early Roman Kings.flac:13e756ec763c7d84e6808ccb7052b70c
+07 Can't Wait.flac:492e50154b2774e901a985e13e614539
+08 Under The Red Sky.flac:acb541d53fa70479c0bad1107a71607b
+09 Things Have Changed.flac:1bdbd11525b0138846b7fc927bba1f5d
+10 Stella Blue.flac:fe8003aacdc8eb1596095af711afdaf2
+11 Six Days On The Road.flac:7c939e2997e99f6a25db9eaf8c1091f8
+12 Soon After Midnight.flac:3c85c12cc7c37d47a66e8c219788c12d
+13 Ballad Of A Thin Man.flac:a802bead3c28d015488b8ae401b7861e
+14 I'll Be Your Baby Tonight.flac:8cf1e04b27d6e8e776d5abaffb887699
+===================
+===================
+===================
+=== shntool len for: bd24-06-22-Ultramega.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:13.14       44662268 B   -b-   --   ---xx   flac  0.6172  01 Highway 61 Revisited.flac
+     4:09.02       43929300 B   -b-   --   ---xx   flac  0.5933  02 Shooting Star.flac
+     4:51.41       51430012 B   -b-   --   ---xx   flac  0.5843  03 Love Sick.flac
+     2:32.68       26973292 B   -b-   --   ---xx   flac  0.6147  04 Little Queenie.flac
+     3:02.20       32152940 B   -b-   --   ---xx   flac  0.5312  05 Mr. Blue.flac
+     5:56.07       62815460 B   -b-   --   ---xx   flac  0.5748  06 Early Roman Kings.flac
+     3:06.63       32959200 B   -b-   --   ---xx   flac  0.5344  07 Can't Wait.flac
+     5:09.52       54630644 B   -b-   --   ---xx   flac  0.5707  08 Under The Red Sky.flac
+     5:48.15       61422816 B   -b-   --   ---xx   flac  0.5868  09 Things Have Changed.flac
+     6:14.39       66064952 B   -b-   --   ---xx   flac  0.5512  10 Stella Blue.flac
+     3:34.10       37772364 B   -b-   --   ---xx   flac  0.6004  11 Six Days On The Road.flac
+     4:13.66       44784428 B   -b-   --   ---xx   flac  0.5681  12 Soon After Midnight.flac
+     6:31.52       69094556 B   -b-   --   ---xx   flac  0.5878  13 Ballad Of A Thin Man.flac
+     4:08.69       43909452 B   -b-   --   ---xx   flac  0.5740  14 I'll Be Your Baby Tonight.flac
+    63:32.70      672601684 B                            0.5778  (14 files)
+===================
+===================
+===================

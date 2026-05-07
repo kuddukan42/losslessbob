@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== dylan2004-03-26 Fine Wine.txt
+===================
+===================
+===================
+Bob Dylan
+3-26-2004
+Avalon
+Boston, MA
+
+"Fine Wine" taper
+Got this as aud cd-r, EAC no errors
+
+
+Disc 1 - (67:01):
+
+1) Intro
+2) The Wicked Messenger
+3) You Ain't Goin' Nowhere
+4) Cry A While
+5) The Lonesome Death Of Hattie Carroll 
+6) Highway 61 Revisited
+7) Make You Feel My Love
+8) Cold Irons Bound
+9) I Don't Believe You (She Acts Like We Never Have Met)
+10) Man In The Long Black Coat 
+11) Rainy Day Women #12 & 35
+12) I Believe In You
+
+Disc 2 - (45:55): 
+
+1) Honest With Me
+2) Tell Me That It Isn't True
+3) Summer Days
+
+ Encore
+
+4) Down Along The Cove
+5) Like A Rolling Stone
+6) Band intro
+7) All Along The Watchtower
+
+
+Enjoy the music!
+
+-ts-
+===================
+===================
+===================
+=== 2004-03-26 Boston, Massachusetts (Fine Wine) CD1.md5
+===================
+===================
+===================
+0cf645a574e83975bc4420651f83e8b7 *12 I believe in you.shn
+5ccde99b0c1c5f9f7f2dc75fd3255ee8 *01 Intro.shn
+accf18b0e1ab780f6d67c157e10608c0 *02 The wicked messenger.shn
+f9d489801489979a740ab3c1742f7462 *03 You ain't goin' nowhere.shn
+e92555740f168dcfc64e4e784b3585f5 *04 Cry a while.shn
+a886b8e019ceddc7ef205eb4814785a4 *05 The lonesome death of Hattie Carroll.shn
+99787d95f43ec63eacd13bdf83c88715 *06 Highway 61 revisited.shn
+79796fe34d119b1ffbf3d9bffda4ca48 *07 Make you feel my love.shn
+d07e163305554b2c94c59d854f14a2a5 *08 Cold irons bound.shn
+21baf87c1ac8e6524da35a10f64583c5 *09 I don't believe you (she acts like we never have met).shn
+ca653cb5ab147d4072d3bdc37300baa1 *10 Man in the long black coat.shn
+95499f3e71ba85e2d152e836cbe4abd4 *11 Rainy day women #12 & 35.shn
+===================
+===================
+===================
+=== 2004-03-26 Boston, Massachusetts (Fine Wine) CD2.md5
+===================
+===================
+===================
+b17648f010b86486ece88549c0c0a677 *07 All along the watchtower.shn
+cb9a6daa43bb83bad7e3a9d0b00907a8 *01 Honest with me.shn
+5114e30d08a8752686fe9f3eaf219375 *02 Tell me that it isn't true.shn
+c647bf0d1cdc4fa608b9af0747f08fa3 *03 Summer days.shn
+7afec3f8695f8ff3c140c955ab7c3caa *04 Down along the cove.shn
+5c356e260c14d4338dc6d25eec4ad6e5 *05 Like a rolling stone.shn
+d912ab8fe41770df22a30a98f464eff0 *06 (band introduction).shn
+===================
+===================
+===================

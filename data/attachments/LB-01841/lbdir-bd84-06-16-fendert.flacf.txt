@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-16-fendert.flacf 
+=================== 
+=================== 
+=================== 
+27506a1c45ba75fc058c00e403f9001b  101 Highyway 61 Revisited.flac
+54b0bd28dda1fb035ebdc52fd091579b  102 Jokerman.flac
+c01e914be574544bcb7e85e5a05968f8  103 All Along the Watchtower.flac
+caff70cf18381f37b4b9f42dac73a943  104 Just Like a Woman.flac
+08feee8fc92f3b5c2ecbb64549afe7e2  105 Maggies Farm.flac
+b3fec63ac846f5f5508da97dc188179e  106 I and I.flac
+30fa2465775af26ed062e48856c2f291  107 License to Kill.flac
+6e2628ced4c6f1bf68f75633b91c44b3  108 Hard Rain.flac
+4d0b686fe4f7341511ce14a2595dd274  109 Tangled Up in Blue.flac
+9cd4d08a12c1e9dabe386df95fd755ac  110 Its Alright Ma.flac
+f549e6c467eba2ca441cfb9a9fc76600  201 Love Minus Zero - No Limit.flac
+c08305aed7881a304d097cb3dc77808e  202 Masters of War.flac
+97bae90793e2aebe7ca5890a4a67916e  203 Ballad of a Thin Man.flac
+c9b581f23977c035ba56729bfa7e026b  204 Simple Twist of Fate.flac
+eeee6df07554acd75ec3a33f58b403b4  205 Every Grain of Sand.flac
+dddc1e977e1e53fbadfa24687aa64281  206 Like a Rolling Stone.flac
+ef5379faec343e2fe7f2f14e5c0eab45  207 Mr Tambourine Man.flac
+b1fec40c1c11f3d0e02bdef12755d404  208 It Aint Me Babe.flac
+5e12ae7bd7a8051d970fbdeb9a4ebc88  209 Leopard-Skin Pill-Box Hat.flac
+ad6e233f0d681236120804e70a2b2634  210 Tombstone Blues.flac
+97a3b126e8f0a0ccebe3c57a28fbdcb9  211 Blowing in the Wind.flac
+3742c978f5878ef6acc244294699cfc7  212 Just Like Tom Thumbs Blues.flac
+43924192bab0aba2f88b42b46ef9f118  213 Why Do I Have To Choose.flac
+a58dd7700d5e139a6336a3092c8e72f5  Bob Dylan  14 Cologne 6-16-84.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-16-fendert.flacf 
+=================== 
+=================== 
+=================== 
+101 Highyway 61 Revisited.flac:838573622cc88fba877cc1d9a6970c22
+102 Jokerman.flac:6a27738d542ee012670c427d78cc5288
+103 All Along the Watchtower.flac:39ca78b4405592afc4289bcdf2529d70
+104 Just Like a Woman.flac:2d69e7e4dc651c6423423e2a2f156de2
+105 Maggies Farm.flac:cea1e752276b240cc79a137bf7d2b563
+106 I and I.flac:fa7d91fa1b00da558991f5d3d84e435c
+107 License to Kill.flac:2712c89b5d8d68115ea6d494700588f5
+108 Hard Rain.flac:c3da173aa57f115a62f0e467e31c0fd9
+109 Tangled Up in Blue.flac:82c204534b7a70dd6a23cf285bb87aa1
+110 Its Alright Ma.flac:f44694884578d627a287f7d045f0f585
+201 Love Minus Zero - No Limit.flac:c78c8eb0903c365c12e252be24e3c2bf
+202 Masters of War.flac:3ae233e03be25ea48015eece88fd7d8b
+203 Ballad of a Thin Man.flac:cf3694b5a29ca27954d474a8274fcb74
+204 Simple Twist of Fate.flac:9c32a0a5cc09b3c06fb7581705428d23
+205 Every Grain of Sand.flac:eec84e9eaada36151e16ed9ddd8f9233
+206 Like a Rolling Stone.flac:d75ade1399d470189aa8f66e9ff6dac6
+207 Mr Tambourine Man.flac:e7da31993c83f9fa808992d2c1735c91
+208 It Aint Me Babe.flac:43b43610c8168425c148ae36cd950a5a
+209 Leopard-Skin Pill-Box Hat.flac:60408bdc3d7a4c13f372cbca7d007183
+210 Tombstone Blues.flac:588e316c72f1a77d6d2f8b4811fbd154
+211 Blowing in the Wind.flac:48fdc7bff9696cb0ebd3a7950770a5cd
+212 Just Like Tom Thumbs Blues.flac:63962f0a89dc90bd4b57a95e26634112
+213 Why Do I Have To Choose.flac:8a26ad96a8aba7f39f46dbbff5980608
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-16-fendert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:59.30       42230204 B   ---   --   ---xx   flac  0.5765  101 Highyway 61 Revisited.flac
+     6:59.45       74017484 B   ---   --   ---xx   flac  0.5798  102 Jokerman.flac
+     4:40.62       49537868 B   ---   --   ---xx   flac  0.5781  103 All Along the Watchtower.flac
+     6:59.56       74043356 B   ---   --   ---xx   flac  0.5761  104 Just Like a Woman.flac
+     4:46.53       50575100 B   ---   --   ---xx   flac  0.5744  105 Maggies Farm.flac
+     6:39.13       70414220 B   ---   --   ---xx   flac  0.5698  106 I and I.flac
+     3:26.41       36434876 B   ---   --   ---xx   flac  0.5765  107 License to Kill.flac
+     5:22.12       56829068 B   ---   --   ---xx   flac  0.5737  108 Hard Rain.flac
+     7:54.62       83759468 B   ---   --   ---xx   flac  0.5621  109 Tangled Up in Blue.flac
+     6:39.34       70463612 B   ---   --   ---xx   flac  0.5620  110 Its Alright Ma.flac
+     3:51.18       40790780 B   ---   --   ---xx   flac  0.5673  201 Love Minus Zero - No Limit.flac
+     6:10.04       65277452 B   ---   --   ---xx   flac  0.5728  202 Masters of War.flac
+     4:13.25       44688044 B   ---   --   ---xx   flac  0.5768  203 Ballad of a Thin Man.flac
+     4:58.58       52703660 B   ---   --   ---xx   flac  0.5691  204 Simple Twist of Fate.flac
+     5:43.39       60596972 B   ---   --   ---xx   flac  0.5660  205 Every Grain of Sand.flac
+     6:54.65       73182524 B   ---   --   ---xx   flac  0.5815  206 Like a Rolling Stone.flac
+     6:19.04       66865052 B   ---   --   ---xx   flac  0.5713  207 Mr Tambourine Man.flac
+     7:15.25       76792844 B   ---   --   ---xx   flac  0.5703  208 It Aint Me Babe.flac
+     3:46.04       39875852 B   ---   --   ---xx   flac  0.6015  209 Leopard-Skin Pill-Box Hat.flac
+     4:51.38       51421820 B   ---   --   ---xx   flac  0.6032  210 Tombstone Blues.flac
+     6:33.17       69365228 B   ---   --   ---xx   flac  0.5681  211 Blowing in the Wind.flac
+     3:27.70       36679484 B   ---   --   ---xx   flac  0.5927  212 Just Like Tom Thumbs Blues.flac
+     3:49.32       40470908 B   ---   --   ---xx   flac  0.5862  213 Why Do I Have To Choose.flac
+   125:22.57     1327015876 B                            0.5750  (23 files)
+=================== 
+=================== 
+=================== 

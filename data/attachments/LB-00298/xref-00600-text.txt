@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== text.txt
+===================
+===================
+===================
+Palace Theatre
+Sao Paolo, Brazil
+17 August 1991
+ 
+1.  New Morning
+2.  People Putting People Down (John Prine)
+3.  All Along The Watchtower
+4.  I'll Remember You
+5.  Gotta Serve Somebody
+6.  Wiggle Wiggle
+7.  I Don't Believe You (She Acts Like We Never Have Met)
+8.  I'll Be Your Baby Tonight
+9.  It's All Over Now, Baby Blue
+10.  Bob Dylan's Dream
+11.  Don't Think Twice, It's All Right
+12.  It Ain't Me, Babe
+13.  Leopard-Skin Pill-Box Hat
+14.  Everything Is Broken
+15.  Simple Twist Of Fate
+16.  Maggie's Farm
+
+17.  Lenny Bruce
+18.  Ballad Of A Thin Man
+
+Concert # 341 of The Never-Ending Tour.  Concert # 7 of the 1991 Tour of South America. 1991 concert # 78.
+ 
+Concert # 57 with the 5th Never-Ending Tour band: Bob Dylan (vocal & guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+ 
+912  acoustic with the band.
+ 
+1, 5, 7, 9, 11, 12, 18  Bob Dylan harmonica.
+ 
+Reference. Made in Brazil. Isis # 39, page 18.
+ 
+Stereo audience recording, 90 minutes.
+ 
+Session info updated 19 February 2001.
+ 
+/www.bjorner.com/ 
+ 
+
+ 
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+2451b975378d93f9e81f1721747108ce *1 Piste audio.flac
+e7fd17a98a6824110aea2dd1b3d5873f *2 Piste audio.flac
+bb6e0c8632dc5eb460b3beb25370ac68 *3 Piste audio.flac
+bd7adcea7b7f346cfeb154c3c181ccd7 *4 Piste audio.flac
+0b22e7222ffcf72db149ef5729a0e22b *5 Piste audio.flac
+6ec74e29612fa976761b33ed2603108f *6 Piste audio.flac
+94a49885f94dfb688c9170f750c92fa6 *7 Piste audio.flac
+1fd3cad662f59d34df01aa05f0d472ee *8 Piste audio.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+0119d96fe1ce81655487b79cb5fd307e *1 Piste audio.flac
+196e130faf75cfe20ed271c04addfd68 *10 Piste audio.flac
+73af5332d22e6a709da23c58f3f6d2a4 *2 Piste audio.flac
+971147a6d3af00c82ca8b9c2c5e59713 *3 Piste audio.flac
+4de9efb7ec340d2dac6a4b70425cc119 *4 Piste audio.flac
+796552bdbfef14c449468f6924441f0c *5 Piste audio.flac
+5fdf9cce88f60b82ba92351d1f23fe17 *6 Piste audio.flac
+8cc898f22573da8e191e46db51d52282 *7 Piste audio.flac
+f77e019d25f37e94575e3e4080d24671 *8 Piste audio.flac
+c511dc3fbcdd473319c886b7d4b96a44 *9 Piste audio.flac
+
+===================
+===================
+===================

@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-08-09-apehouse.flacf 
+=================== 
+=================== 
+=================== 
+d8460eb998e1554b1bc7d8e5a52b4c59  Bob Dylan 2009-8-9 Albuquerque.md5
+7685f0a5f64552c7f9a4e67e8f3a158f  Bob Dylan 2009-8-9 Albuquerque.txt
+c947571a5d4659c93e9adbae49b79243  Dylan-ABQ01.flac
+8fa78ea756c97a1e591b8a3fb8a9dc59  Dylan-ABQ02.flac
+3f40b5e86c3988382399d00c5e703253  Dylan-ABQ03.flac
+850781d91c9a8c3b53af9d4404f7b429  Dylan-ABQ04.flac
+a551b8bf867f19ffbd07847f6297e4e0  Dylan-ABQ05.flac
+3e33e830ee531593aad96dc40fbaa6e4  Dylan-ABQ06.flac
+6df66f98bd6c8c54e0d99c49ea7a932f  Dylan-ABQ07.flac
+682eaddb3fc9d7756c3f766c6b0d4d7f  Dylan-ABQ08.flac
+073373359313c58229f587e8f5baa6d6  Dylan-ABQ09.flac
+75042e49d723e48e959413158df35e2f  Dylan-ABQ10.flac
+ba3f266a7e60f1b448817f2f12a0a2b6  Dylan-ABQ11.flac
+acd09fc001f0a54eb1ae5d10dc13b0d2  Dylan-ABQ12.flac
+e1d9cb42b29eb0c592aa39f9450916b3  Dylan-ABQ13.flac
+5a5942d9a7bb7fa5072a056e8f28ebab  Dylan-ABQ14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-08-09-apehouse.flacf 
+=================== 
+=================== 
+=================== 
+Dylan-ABQ01.flac:ee8ef04d9f76f1b5392c7b3d325c849d
+Dylan-ABQ02.flac:b619628c3f16d2a47486fb574f05dcd5
+Dylan-ABQ03.flac:84af477b7dd23320e3cadd8cef7d1e9d
+Dylan-ABQ04.flac:72a91a0503bf876b1a389796b6b9a1aa
+Dylan-ABQ05.flac:b8d05831cebacf4e5caff2a3a33d6223
+Dylan-ABQ06.flac:afbf45f6d071872117b20abf05d32b92
+Dylan-ABQ07.flac:97684f5f3856ee5806bab5f67537045e
+Dylan-ABQ08.flac:2409e7cf0516d9e7cdfa79cddbb4e122
+Dylan-ABQ09.flac:d187066cdacb667c6c0bf7f27acb2163
+Dylan-ABQ10.flac:aa2e249ee79c580f14d1e12b21ce9955
+Dylan-ABQ11.flac:5af6941f3f4cbd93f829c802306f7cc6
+Dylan-ABQ12.flac:808ea1a7a3a99b1a8307cab9d57ec2c8
+Dylan-ABQ13.flac:447accf72145af4f7545033938552aff
+Dylan-ABQ14.flac:575292fdb7db5153190278ec177cf20a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-08-09-apehouse.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:02.58       63993260 B   ---   --   ---xx   flac  0.5855  Dylan-ABQ01.flac
+     5:14.08       55408460 B   ---   --   ---xx   flac  0.5798  Dylan-ABQ02.flac
+     4:00.03       42343100 B   ---   --   ---xx   flac  0.5725  Dylan-ABQ03.flac
+     8:11.50       86730044 B   ---   --   ---xx   flac  0.6194  Dylan-ABQ04.flac
+     5:55.16       62659676 B   ---   --   ---xx   flac  0.4872  Dylan-ABQ05.flac
+     7:28.35       79109564 B   ---   --   ---xx   flac  0.6096  Dylan-ABQ06.flac
+     7:09.22       75727388 B   ---   --   ---xx   flac  0.4751  Dylan-ABQ07.flac
+     7:00.62       74233868 B   ---   --   ---xx   flac  0.5747  Dylan-ABQ08.flac
+     6:26.55       68219804 B   ---   --   ---xx   flac  0.6448  Dylan-ABQ09.flac
+     8:17.17       87710828 B   ---   --   ---xx   flac  0.4813  Dylan-ABQ10.flac
+     8:22.31       88625756 B   ---   --   ---xx   flac  0.5696  Dylan-ABQ11.flac
+     6:51.39       72592172 B   ---   --   ---xx   flac  0.6284  Dylan-ABQ12.flac
+     4:41.24       49624892 B   ---   --   ---xx   flac  0.6150  Dylan-ABQ13.flac
+     5:54.46       62553048 B   -b-   --   ---xx   flac  0.6031  Dylan-ABQ14.flac
+    91:36.16      969531860 B                            0.5730  (14 files)
+=================== 
+=================== 
+=================== 

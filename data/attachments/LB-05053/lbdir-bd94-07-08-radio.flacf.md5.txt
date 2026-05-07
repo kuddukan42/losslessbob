@@ -1,0 +1,14 @@
+1157ad34aef07bc7cbd294b080d6877c  disc 1\Artista sconosciuto - Track01.flac
+f975f79befcb81bf46c7767a8939d82c  disc 1\Artista sconosciuto - Track02.flac
+8005e01aac6c66f2aec3e3392f7f44f4  disc 1\Artista sconosciuto - Track03.flac
+3835baa6cb374f6bdb64b8f381950778  disc 1\Artista sconosciuto - Track04.flac
+dbc16f33cfb3797f4863ce5992d6c14d  disc 1\Artista sconosciuto - Track05.flac
+e8f067c04db6568bb8c7625a9d02fb0d  disc 1\Artista sconosciuto - Track06.flac
+56b5a53403274f2e0dfd3fe09e1d1c0f  disc 1\Artista sconosciuto - Track07.flac
+d49cc717a9ad9f3a6ca3f9481fbb5ed2  disc 2\d2t1 - d2t1.flac
+96b05e1704daf494f827434ed216f239  disc 2\d2t2 - d2t2.flac
+fcfcdb317bc5dba6a4fe08d22fa8afc2  disc 2\d2t3 - d2t3.flac
+34a673effaa9060eaeaa468819f91f16  disc 2\d2t4 - d2t4.flac
+f82cf8315cbd5a689e40d5f8caeb84b4  disc 2\d2t5 - d2t5.flac
+a2df5a50897ed3687e40f87a1bc1667f  disc 2\d2t6 - d2t6.flac
+9c91b4462794c5c7a0f835d7385419d7  disc 2\d2t7 - d2t7.flac

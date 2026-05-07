@@ -1,0 +1,110 @@
+===================
+===================
+===================
+=== bd1993-9-03  Syracuse.txt
+===================
+===================
+===================
+
+	
+	(This info text the flac fingerprints were added by absinthe June 	12, 2010 as there was no info included with this file set when 		originally downloaded	October 2007.  This is preseumed to be 	
+	derived from LB-5417.}
+
+Information from:
+
+Olof Bjrner's
+Bob Dylan
+Yearly Chronicles
+
+Darien Center
+State Fairgrounds
+Syracuse, New York
+3 September 1993
+ 
+
+   Disk One        1.  You're Gonna Quit Me (Mance Lipscomb)
+                   2.  Stuck Inside Of Mobile With The Memphis Blues Again
+                   3.  All Along The Watchtower
+                   4.  Simple Twist Of Fate
+                   5.  Silvio (Bob Dylan & Robert Hunter)
+                   6.  Under The Red Sky
+                   7.  Little Moses (Bert A. Williams/Earle C. Jones)
+                   8.  Boots Of Spanish Leather
+                   9.  It's All Over Now, Baby Blue
+
+  Disk Two        10.  The Man In Me
+                  11.  Maggie's Farm
+
+                  12.  Man In The Long Black Coat
+                  13.  It Ain't Me, Babe
+
+ 
+
+Concert # 511 of The Never-Ending Tour.  Concert #10 of the 1993 US Fall Tour with Santana. 1993 concert # 55.
+
+Concert # 55 with the 9th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Winston Watson (drums & percussion).
+
+1, 7-9, 13  acoustic with the band.
+
+1, 4, 8, 9, 13  Bob Dylan harmonica.
+
+7  Bucky Baxter (concertina).
+
+Note. At this show Santana opened for Bob Dylan.
+
+8 new songs (61%) compared to previous concert. 3 new songs for this tour.
+
+ 
+Stereo audience recording, 90 minutes.
+
+ 
+
+Session info updated 1 February 1994.
+===================
+===================
+===================
+=== disk one fingerprint.ffp.txt
+===================
+===================
+===================
+Track01.flac:25375e4b52f739e147b79a87b902ec31Track02.flac:08f6dc1ed3cd8a2762d7d45b3158f223Track03.flac:55d14855cbf92b66ce24fcc0e28f11c7Track04.flac:481bd43d339ff1f3b735e6f1dc904b1aTrack05.flac:5ac49eeeb9e19ea6337a2c24ec8a9a4eTrack06.flac:6efdf8f560992f750217dee1df167344Track07.flac:28f9787de8d07304b2a9b4ece645507fTrack08.flac:54e9726e3dae44586682a8deaa64c573Track09.flac:adfa9f401851c2b070264a833a4b7324
+===================
+===================
+===================
+=== disk two fingerprint.ffp.txt
+===================
+===================
+===================
+Track01.flac:2446ab5e1a01493d2b8a105210701b66Track02.flac:980642b30e5c46c7bf1b144a328ce5f7Track03.flac:e2fc9d6784b5fb88c03e88ab117180e5Track04.flac:0fba4f09511676cb0babb5e25cbbdbf7
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+ff09682f825e817be688b68d02662f6d *Track01.flac
+3121d0ed8fd9108f9cdb5216960f47fb *Track02.flac
+07e6b3f6cbdc2a41414a1a1b2d593897 *Track03.flac
+3fec3acc0ee6469ddb0f7f7da4ed4023 *Track04.flac
+47fd3efe2af7c933b1a103410d4ce082 *Track05.flac
+8e3b704964dcdf1ae498a5b347e72f63 *Track06.flac
+831acd0adb60a38f8d053bce33c8703b *Track07.flac
+4d9aa61d1d4863904d76147d4bad1876 *Track08.flac
+88edb398e60f7f4c3ac349b399a73295 *Track09.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+da5f067d206a0d7be1bea4b03d0ce3c2 *Track01.flac
+bfbab728481a9951b34be7d268512fac *Track02.flac
+f547729b4f0aa180846395ff09f5841d *Track03.flac
+045ba0a93a287003a8427f8405b08acb *Track04.flac
+
+===================
+===================
+===================

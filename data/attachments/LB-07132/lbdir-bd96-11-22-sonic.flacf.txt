@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-22-sonic.flacf 
+=================== 
+=================== 
+=================== 
+1acd4612ad7c0ab8c0206b89726691b7  Bob Dylan 1996-11-22 South Bend, In Flac16FFP.ffp
+d55e3cde323f06a112573d3a98e6714c  Dylan 1996-11-22 South Bend.txt
+12e1dba84492f58e0eb549a9a02b2112  Dylan1996-11-22d1t01.flac
+5e95cdccbdaa3140fef073d5b2e9ed19  Dylan1996-11-22d1t02.flac
+e0f9207786d411accbae121b1fc5c07e  Dylan1996-11-22d1t03.flac
+1c6d8424434839164a94da64aaec565e  Dylan1996-11-22d1t04.flac
+4b58e0ff7b03c867971e07aef86ebc71  Dylan1996-11-22d1t05.flac
+7fa1cf20ac27dee09e6fadaac3423c83  Dylan1996-11-22d1t06.flac
+07f4fb55ecb91a87b1944dd5375b768e  Dylan1996-11-22d1t07.flac
+c2ffacec492cafc9a7d0069f54adef0f  Dylan1996-11-22d1t08.flac
+338fa50af38578a1c5ca03e2935656a9  Dylan1996-11-22d1t09.flac
+02417e9cb701733fe50015bc3dbfdbec  Dylan1996-11-22d2t01.flac
+460702358cc07507659020ed5d7eca7a  Dylan1996-11-22d2t02.flac
+18f10cb2acc26fb5e16564a32ae2e942  Dylan1996-11-22d2t03.flac
+eccfc74afa58f7056498d37dd307acf1  Dylan1996-11-22d2t04.flac
+5b7bf64d47a2595cc83c1e3560152014  Dylan1996-11-22d2t05.flac
+dca3f0876ad4eec7d437377963494fde  Dylan1996-11-22d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-22-sonic.flacf 
+=================== 
+=================== 
+=================== 
+Dylan1996-11-22d1t01.flac:74887b2cc3a0caade9fec93fffdde6a4
+Dylan1996-11-22d1t02.flac:b594f273ee49153208587ca849f4bd2e
+Dylan1996-11-22d1t03.flac:eb4a65b961537865a38ccbce33a5e92f
+Dylan1996-11-22d1t04.flac:abb182b111b4ee89b05efe6a0f62505b
+Dylan1996-11-22d1t05.flac:e80c13f24951386ca18b86fc06e29d79
+Dylan1996-11-22d1t06.flac:2e109c3c869a9763ccbbb2294aacad2e
+Dylan1996-11-22d1t07.flac:4ca2637a84d102ed733e6cd226c58ba7
+Dylan1996-11-22d1t08.flac:d90859cc36c7f8fffff8c6f4b2c188ef
+Dylan1996-11-22d1t09.flac:109e0cfbaba6aafb403e23861384f742
+Dylan1996-11-22d2t01.flac:f71d9871bcb0e71df9b81f63ea467e49
+Dylan1996-11-22d2t02.flac:726de0101ff26aecfaac305b666e5258
+Dylan1996-11-22d2t03.flac:3dcaa1180cc1f62a57bfcd0d073525ae
+Dylan1996-11-22d2t04.flac:ba7bb59b7f94467465cbca9ab5f01cd8
+Dylan1996-11-22d2t05.flac:3fc2ddc7a3014cf33f9cd4fecef36450
+Dylan1996-11-22d2t06.flac:a88b9bbfd04494c12c452b14ed9c15ca
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-22-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.56       50052956 B   ---   --   ---xx   flac  0.5410  Dylan1996-11-22d1t01.flac
+     4:32.01       47983196 B   ---   --   ---xx   flac  0.5641  Dylan1996-11-22d1t02.flac
+     5:44.30       60752204 B   ---   --   ---xx   flac  0.6204  Dylan1996-11-22d1t03.flac
+     6:55.47       73316588 B   ---   --   ---xx   flac  0.5693  Dylan1996-11-22d1t04.flac
+     7:12.28       76270700 B   ---   --   ---xx   flac  0.5955  Dylan1996-11-22d1t05.flac
+     7:41.45       81426284 B   ---   --   ---xx   flac  0.6353  Dylan1996-11-22d1t06.flac
+     9:24.19       99534332 B   ---   --   ---xx   flac  0.6296  Dylan1996-11-22d1t07.flac
+     4:25.16       46783676 B   ---   --   ---xx   flac  0.5617  Dylan1996-11-22d1t08.flac
+     6:32.74       69322892 B   ---   --   ---xx   flac  0.6080  Dylan1996-11-22d1t09.flac
+     7:00.70       74252684 B   ---   --   ---xx   flac  0.6146  Dylan1996-11-22d2t01.flac
+     7:10.17       75892028 B   ---   --   ---xx   flac  0.5205  Dylan1996-11-22d2t02.flac
+    10:47.00      114130844 B   ---   --   ---xx   flac  0.6266  Dylan1996-11-22d2t03.flac
+    11:00.09      116445212 B   ---   --   ---xx   flac  0.5992  Dylan1996-11-22d2t04.flac
+    10:11.45      107886284 B   ---   --   ---xx   flac  0.5932  Dylan1996-11-22d2t05.flac
+     7:38.64       80941772 B   ---   --   ---xx   flac  0.6320  Dylan1996-11-22d2t06.flac
+   111:00.71     1174991652 B                            0.5986  (15 files)
+=================== 
+=================== 
+=================== 

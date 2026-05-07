@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-07-01-km140-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+2267a94a5bab5b03ddfec40a3399121f  bd2008-07-01.km140.soomlos.flac16.ffp
+bf2c24e65681ef5167e76ce8424bf615  bd2008-07-01.km140.soomlos.flac16.info.txt
+447c08951a0d911b8247281a6fb33323  bd2008-07-01.km140.soomlos.flac16.md5
+5ccd1783db5f23f742508dcdd57cab56  bd2008-07-01d1t01.flac
+387e192768c4f38e04114f786ed741e9  bd2008-07-01d1t02.flac
+e135f580a457d06ac01f37c40744ba11  bd2008-07-01d1t03.flac
+848775964f63acc1c56957b9b3aa3909  bd2008-07-01d1t04.flac
+11d07253b2a734eba77b92bc81b34aca  bd2008-07-01d1t05.flac
+e5d25e52cbab820ce76e79bc467cc7f5  bd2008-07-01d1t06.flac
+a87b00eb5b3e4f407268c9db3c70accb  bd2008-07-01d1t07.flac
+a43345ec32254e44c63e7524cb22781f  bd2008-07-01d1t08.flac
+4eec26c02095627bc7135bd356094294  bd2008-07-01d1t09.flac
+5289c4f35a3daef3cfffefca35472047  bd2008-07-01d1t10.flac
+f48ddb242550344a23e874c098c87260  bd2008-07-01d1t11.flac
+1aad547965473f5500783c94e3164369  bd2008-07-01d1t12.flac
+c61e6a3858d6104006471e90857ab80c  bd2008-07-01d2t01.flac
+e838f1ab8957139078ca2ea46e89d804  bd2008-07-01d2t02.flac
+a63d62a2b5e8866bf26f18156c96f933  bd2008-07-01d2t03.flac
+5bc2b5b5935f0cdeb93489fbd1b506ed  bd2008-07-01d2t04.flac
+6c277158b2c430a4b1feb2f3a4cd2806  bd2008-07-01d2t05.flac
+4441ca4b952db3fe8a98781d0f406f72  bd2008-07-01d2t06.flac
+ab6db1410c64ef9793ef100a5eeb89ad  bd2008-07-01d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-07-01-km140-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+bd2008-07-01d1t01.flac:b56ff33e46c3f7ef7aa1cc19fb0be933
+bd2008-07-01d1t02.flac:11078ef32f9bcb27c3ec8a08b5e4f5a1
+bd2008-07-01d1t03.flac:ae0eabeea4663c39ad6431b87f3f6695
+bd2008-07-01d1t04.flac:3ed85e50461f231a486efe415587d3de
+bd2008-07-01d1t05.flac:ac1882d9492a0ef01fb758f8060fdfac
+bd2008-07-01d1t06.flac:1cc1e9b6d54913c2512d7ba242796bdd
+bd2008-07-01d1t07.flac:829785795ebc67081d125bca8d5d25bd
+bd2008-07-01d1t08.flac:d326bf3638816cb14d1402b3d49a7147
+bd2008-07-01d1t09.flac:72d7a4df37da0bbaf0e475ad6621e753
+bd2008-07-01d1t10.flac:ee296758ebbf1763e39a69025695c584
+bd2008-07-01d1t11.flac:c81ae00b38d5dc4a717da821edba3692
+bd2008-07-01d1t12.flac:f12d5207cb0ab805c8d0f1768b637608
+bd2008-07-01d2t01.flac:b9c6115bd9737c639a7001764fb491be
+bd2008-07-01d2t02.flac:fdfb4ab3aff8b844ed37604d2d32c31a
+bd2008-07-01d2t03.flac:c627b21fbe129ceea91aac8035b0f7e3
+bd2008-07-01d2t04.flac:5d76e24262767cde4adb281b020d81db
+bd2008-07-01d2t05.flac:eb29187a816c4f2beac6986d005cc926
+bd2008-07-01d2t06.flac:d6ffabda88b64dee7c37886bb9ae71ab
+bd2008-07-01d2t07.flac:b589fbeb27e400e0abd2b0e06b6a6dab
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-07-01-km140-soomlos.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:03.64       11263772 B   ---   --   ---xx   flac  0.3652  bd2008-07-01d1t01.flac
+     4:39.05       49227404 B   ---   --   ---xx   flac  0.4864  bd2008-07-01d1t02.flac
+     5:48.60       61528364 B   ---   --   ---xx   flac  0.4994  bd2008-07-01d1t03.flac
+     6:42.68       71072780 B   ---   --   ---xx   flac  0.5035  bd2008-07-01d1t04.flac
+     8:27.61       89578316 B   ---   --   ---xx   flac  0.4962  bd2008-07-01d1t05.flac
+     7:10.45       75957884 B   ---   --   ---xx   flac  0.5153  bd2008-07-01d1t06.flac
+     8:37.45       91304684 B   ---   --   ---xx   flac  0.4862  bd2008-07-01d1t07.flac
+     6:37.44       70134332 B   ---   --   ---xx   flac  0.4744  bd2008-07-01d1t08.flac
+     6:49.60       72288764 B   ---   --   ---xx   flac  0.5550  bd2008-07-01d1t09.flac
+     6:38.66       70362476 B   ---   --   ---xx   flac  0.3991  bd2008-07-01d1t10.flac
+     7:09.59       75814412 B   ---   --   ---xx   flac  0.5402  bd2008-07-01d1t11.flac
+     6:13.60       65938364 B   ---   --   ---xx   flac  0.4388  bd2008-07-01d1t12.flac
+     6:39.40       70477724 B   ---   --   ---xx   flac  0.5529  bd2008-07-01d2t01.flac
+     8:35.34       90926012 B   ---   --   ---xx   flac  0.4079  bd2008-07-01d2t02.flac
+     5:58.53       63275900 B   ---   --   ---xx   flac  0.5405  bd2008-07-01d2t03.flac
+     9:08.46       96775436 B   ---   --   ---xx   flac  0.4200  bd2008-07-01d2t04.flac
+     7:08.16       75536876 B   ---   --   ---xx   flac  0.5685  bd2008-07-01d2t05.flac
+     1:07.35       11901164 B   ---   --   ---xx   flac  0.4293  bd2008-07-01d2t06.flac
+     6:32.30       69219404 B   ---   --   ---xx   flac  0.4945  bd2008-07-01d2t07.flac
+   121:10.66     1282584068 B                            0.4889  (19 files)
+=================== 
+=================== 
+=================== 

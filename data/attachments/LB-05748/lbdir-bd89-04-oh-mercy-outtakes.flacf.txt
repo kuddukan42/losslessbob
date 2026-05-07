@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-04-oh-mercy-outtakes.flacf 
+=================== 
+=================== 
+=================== 
+945fc508ddbe271f1c59beb21f89df9a  bd89-04-oh-mercy-outtakes-t01.flac
+b5a9be132179aa24bfb21bb3abc11bed  bd89-04-oh-mercy-outtakes-t02.flac
+12ed3c9719fa51a3b64eb16c292f1fdb  bd89-04-oh-mercy-outtakes-t03.flac
+96a416a9f281d8950ed7846a40a727e8  bd89-04-oh-mercy-outtakes-t04.flac
+3ec46aa0411ccda252cae04397e5c359  bd89-04-oh-mercy-outtakes-t05.flac
+824bd6a2da544243d7a8d8ff75dccbdc  bd89-04-oh-mercy-outtakes-t06.flac
+8f8cfa8ff02b1bd440be75dc9db38d48  bd89-04-oh-mercy-outtakes-t07.flac
+146792372ea3cc87284eb3e8249b0060  bd89-04-oh-mercy-outtakes-t08.flac
+a2940b67d74f3b0484b1e6b58adc0c08  bd89-04-oh-mercy-outtakes-t09.flac
+fa85a8f122901c3884feb09bd1222aec  bd89-04-oh-mercy-outtakes-t10.flac
+88dec7d1184be537b4772791325d5637  bd89-04-oh-mercy-outtakes-t11.flac
+874e68e72f3106228a9d477e3cf85c5d  bd89-04-oh-mercy-outtakes-t12.flac
+4f6a8a6b2427e8d3a18ff39162ff66f6  bd89-04-oh-mercy-outtakes-t13.flac
+d5bc59fbe33296b1ca9c406ae01cd22a  bd89-04-oh-mercy-outtakes-t14.flac
+fcbf266d4a9d7d05be8298768c1e789b  bd89-04-oh-mercy-outtakes-t15.flac
+c8af04d33613acb474e47a4db1188f02  bd89-04-oh-mercy-outtakes-t16.flac
+4bcd2d7bddbbce2ca91e5086ae9a207d  bd89-04-oh-mercy-outtakes-t17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-04-oh-mercy-outtakes.flacf 
+=================== 
+=================== 
+=================== 
+bd89-04-oh-mercy-outtakes-t01.flac:384a635d38a898c3858cc45f640a4f24
+bd89-04-oh-mercy-outtakes-t02.flac:f59dab4256f75f5afbae360ecd1d9fd3
+bd89-04-oh-mercy-outtakes-t03.flac:a4cde36fda1c7dda5a14ab6fe0415904
+bd89-04-oh-mercy-outtakes-t04.flac:e0f015aa32b248f01d217594b841d799
+bd89-04-oh-mercy-outtakes-t05.flac:cfc89ebf31f2d8cc0ce4e9db6abd9c36
+bd89-04-oh-mercy-outtakes-t06.flac:bd3fbdd3c3d26f2e84fdfbfef9088fcb
+bd89-04-oh-mercy-outtakes-t07.flac:6da5a203d1f64cd747a459cebc7b7874
+bd89-04-oh-mercy-outtakes-t08.flac:5b56321a03b90c6ef3e26902eb13b631
+bd89-04-oh-mercy-outtakes-t09.flac:cf79d0385fe013a122b349bac1016b2b
+bd89-04-oh-mercy-outtakes-t10.flac:e6188c1518dff574b4c4bf58379fa091
+bd89-04-oh-mercy-outtakes-t11.flac:9fb547b888b764a9499ad3ad7cca3a61
+bd89-04-oh-mercy-outtakes-t12.flac:4f3aa3e012db565e86e5ee5bfa9350dc
+bd89-04-oh-mercy-outtakes-t13.flac:6c4c79b7feb3b3a5dae7aa4a991e10d4
+bd89-04-oh-mercy-outtakes-t14.flac:95b4c203b25b81a01ac403bdd5f8cd92
+bd89-04-oh-mercy-outtakes-t15.flac:02e36d7e85fc716614f208888dee555a
+bd89-04-oh-mercy-outtakes-t16.flac:a800d8d01323f8025a2abd726fbb79ed
+bd89-04-oh-mercy-outtakes-t17.flac:8e38f59cf2fe46a82495ca1f2e39d268
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-04-oh-mercy-outtakes.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:14.60       34362764 B   ---   --   ---xx   flac  0.5978  bd89-04-oh-mercy-outtakes-t01.flac
+     3:23.07       35825708 B   ---   --   ---xx   flac  0.6600  bd89-04-oh-mercy-outtakes-t02.flac
+     3:15.25       34456844 B   ---   --   ---xx   flac  0.6365  bd89-04-oh-mercy-outtakes-t03.flac
+     4:59.43       52844780 B   ---   --   ---xx   flac  0.5998  bd89-04-oh-mercy-outtakes-t04.flac
+     5:14.67       55547228 B   ---   --   ---xx   flac  0.6442  bd89-04-oh-mercy-outtakes-t05.flac
+     3:00.30       31822604 B   ---   --   ---xx   flac  0.6551  bd89-04-oh-mercy-outtakes-t06.flac
+     5:09.73       54679340 B   ---   --   ---xx   flac  0.6521  bd89-04-oh-mercy-outtakes-t07.flac
+     4:25.17       46786028 B   ---   --   ---xx   flac  0.6411  bd89-04-oh-mercy-outtakes-t08.flac
+     6:13.35       65879564 B   ---   --   ---xx   flac  0.6433  bd89-04-oh-mercy-outtakes-t09.flac
+     3:20.25       35338844 B   ---   --   ---xx   flac  0.6242  bd89-04-oh-mercy-outtakes-t10.flac
+     3:54.50       41395244 B   ---   --   ---xx   flac  0.5953  bd89-04-oh-mercy-outtakes-t11.flac
+     2:21.10       24895964 B   ---   --   ---xx   flac  0.6118  bd89-04-oh-mercy-outtakes-t12.flac
+     1:25.38       15083420 B   ---   --   ---xx   flac  0.6092  bd89-04-oh-mercy-outtakes-t13.flac
+     5:16.50       55860044 B   ---   --   ---xx   flac  0.6383  bd89-04-oh-mercy-outtakes-t14.flac
+     5:19.57       56405708 B   ---   --   ---xx   flac  0.6650  bd89-04-oh-mercy-outtakes-t15.flac
+     4:50.00       51156044 B   ---   --   ---xx   flac  0.6362  bd89-04-oh-mercy-outtakes-t16.flac
+     5:15.70       55730684 B   ---   --   ---xx   flac  0.6500  bd89-04-oh-mercy-outtakes-t17.flac
+    70:40.57      748070812 B                            0.6357  (17 files)
+=================== 
+=================== 
+=================== 

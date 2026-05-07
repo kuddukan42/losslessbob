@@ -1,0 +1,92 @@
+===================
+===================
+===================
+=== md5 for: bd76-05-01-audiowhore-repair.flacf
+===================
+===================
+===================
+7472ec2a66bfed30097e40be61d6828c *01 1976-05-01 Hattiesburg (repair).flac
+5a6248737e725e1477d26533f684160f *02 1976-05-01 Hattiesburg (repair).flac
+d74e641acf26fefc11ba157d0748f4a5 *03 1976-05-01 Hattiesburg (repair).flac
+be74d6b9c4a6b6b4f1dbd27377338b4a *04 1976-05-01 Hattiesburg (repair).flac
+54f7dc96526839a35bc90d504b47717b *05 1976-05-01 Hattiesburg (repair).flac
+f460459e65eef963e1e306b81991d7f2 *06 1976-05-01 Hattiesburg (repair).flac
+fd6526c1cdbfa97009274a2b43f4d598 *07 1976-05-01 Hattiesburg (repair).flac
+27adab7518f1058947e5138716a1959e *08 1976-05-01 Hattiesburg (repair).flac
+a13886218bd0f42bc15ee3073a67fd25 *09 1976-05-01 Hattiesburg (repair).flac
+7ceb29dfaf93261103f5905c6185fceb *10 1976-05-01 Hattiesburg (repair).flac
+6f02fb7c4de07ee78adb3f544c0ed7dc *11 1976-05-01 Hattiesburg (repair).flac
+1113815a5e94a1cd131ca935fcdeb21a *12 1976-05-01 Hattiesburg (repair).flac
+d34c6e18b031743928b661c264474c76 *13 1976-05-01 Hattiesburg (repair).flac
+56561523ff9d907489e155a018edb28d *14 1976-05-01 Hattiesburg (repair).flac
+bb10432c59a91a9cb42b7b31b75e6136 *15 1976-05-01 Hattiesburg (repair).flac
+d1608dd6a02af7b06a65d081664f0c98 *16 1976-05-01 Hattiesburg (repair).flac
+e713dc2caad7087943e5293c626ed862 *17 1976-05-01 Hattiesburg (repair).flac
+94f3064afcd732c765c0867e1a1d5ba3 *18 1976-05-01 Hattiesburg (repair).flac
+d36bd9bbd0108c79c6e98edae11243bc *19 1976-05-01 Hattiesburg (repair).flac
+19cc569580bded168cd92a54a0993aa7 *20 1976-05-01 Hattiesburg (repair).flac
+cad1684e3e22d5a741633d77fd709f31 *21 1976-05-01 Hattiesburg (repair).flac
+2cb7c8652abeb60b3502c94a724390b3 *BOB DYLAN 1976-05-01 Hattiesburg (audiowhore repair).txt
+a89c6cc668f6b27b6d45ccfdb6a3913d *BOB DYLAN 1976-05-01 Hattiesburg (repair).md5
+00b5e71e6a99425b447c5f816f1cdac4 *BOB DYLAN 1976-05-01 Hattiesburg.ffp
+===================
+===================
+===================
+=== ffp for: bd76-05-01-audiowhore-repair.flacf
+===================
+===================
+===================
+01 1976-05-01 Hattiesburg (repair).flac:a9880b0d56eff049037233b52b9fd277
+02 1976-05-01 Hattiesburg (repair).flac:f087c5fe142050386a1923e45bc25270
+03 1976-05-01 Hattiesburg (repair).flac:56dcd88fe54c0364ea4502ccc880c606
+04 1976-05-01 Hattiesburg (repair).flac:ca71e31bcd62e44326240a6503d86687
+05 1976-05-01 Hattiesburg (repair).flac:0578edf9e2ac278dd1c70881460c1874
+06 1976-05-01 Hattiesburg (repair).flac:fb9e0ac76bb32168feb48904b14a424d
+07 1976-05-01 Hattiesburg (repair).flac:90d51e324a1db49697054fcf9f2d6da4
+08 1976-05-01 Hattiesburg (repair).flac:214a6084201f69d6ed0321896a1d05e4
+09 1976-05-01 Hattiesburg (repair).flac:c6bf293df0772845d64384aea225f05d
+10 1976-05-01 Hattiesburg (repair).flac:9a01a8c14fc0d09862ad26c8769733f9
+11 1976-05-01 Hattiesburg (repair).flac:16da6cf2adc8de7b924729eddd3d893e
+12 1976-05-01 Hattiesburg (repair).flac:24d9869badd05f7f665400f81d5f29b3
+13 1976-05-01 Hattiesburg (repair).flac:2cfa077baf5284821d31423b1b24857e
+14 1976-05-01 Hattiesburg (repair).flac:78676ed0aafada35d767dcea6aa92f62
+15 1976-05-01 Hattiesburg (repair).flac:47823e1e583ed757756f77d3bba44ea4
+16 1976-05-01 Hattiesburg (repair).flac:3000435c05e85a546022a4690ecc9838
+17 1976-05-01 Hattiesburg (repair).flac:5bfcd33f63215b89f2575c92dbea765b
+18 1976-05-01 Hattiesburg (repair).flac:ea596f9981637aa753972608335476df
+19 1976-05-01 Hattiesburg (repair).flac:846e105a9ffdb46a2ee57071df1a4a07
+20 1976-05-01 Hattiesburg (repair).flac:62ce99f69996ea28ce6b2ef6fe42dea5
+21 1976-05-01 Hattiesburg (repair).flac:2f0cf0d10a7306c530dba7c7b37a646d
+===================
+===================
+===================
+=== shntool len for: bd76-05-01-audiowhore-repair.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.44       55846384 B   -b-   --   ---xx   flac  0.4325  01 1976-05-01 Hattiesburg (repair).flac
+     4:46.42       50548896 B   -b-   --   ---xx   flac  0.4173  02 1976-05-01 Hattiesburg (repair).flac
+     3:03.04       32290212 B   -b-   --   ---xx   flac  0.4236  03 1976-05-01 Hattiesburg (repair).flac
+     4:07.70       43734528 B   -b-   --   ---xx   flac  0.4391  04 1976-05-01 Hattiesburg (repair).flac
+     4:47.69       50790148 B   -b-   --   ---xx   flac  0.4345  05 1976-05-01 Hattiesburg (repair).flac
+     4:00.23       42391132 B   -b-   --   ---xx   flac  0.4180  06 1976-05-01 Hattiesburg (repair).flac
+     5:42.30       60399672 B   -b-   --   ---xx   flac  0.4298  07 1976-05-01 Hattiesburg (repair).flac
+     3:33.48       37686768 B   -b-   --   ---xx   flac  0.4951  08 1976-05-01 Hattiesburg (repair).flac
+     2:49.07       29828024 B   -b-   --   ---xx   flac  0.4163  09 1976-05-01 Hattiesburg (repair).flac
+     4:19.70       45851880 B   -b-   --   ---xx   flac  0.4350  10 1976-05-01 Hattiesburg (repair).flac
+     1:37.22       17161580 B   -b-   --   ---xx   flac  0.4207  11 1976-05-01 Hattiesburg (repair).flac
+     3:55.65       41606900 B   -b-   --   ---xx   flac  0.4185  12 1976-05-01 Hattiesburg (repair).flac
+     7:50.52       83031144 B   -b-   --   ---xx   flac  0.4318  13 1976-05-01 Hattiesburg (repair).flac
+     6:53.09       72873840 B   -b-   --   ---xx   flac  0.3815  14 1976-05-01 Hattiesburg (repair).flac
+     3:41.34       39063628 B   -b-   --   ---xx   flac  0.4087  15 1976-05-01 Hattiesburg (repair).flac
+     4:25.71       46913904 B   -b-   --   ---xx   flac  0.4802  16 1976-05-01 Hattiesburg (repair).flac
+     6:37.71       70197400 B   -b-   --   ---xx   flac  0.4063  17 1976-05-01 Hattiesburg (repair).flac
+     3:36.26       38164468 B   -b-   --   ---xx   flac  0.4287  18 1976-05-01 Hattiesburg (repair).flac
+     8:11.48       86724248 B   -b-   --   ---xx   flac  0.4236  19 1976-05-01 Hattiesburg (repair).flac
+     3:45.49       39806172 B   -b-   --   ---xx   flac  0.5095  20 1976-05-01 Hattiesburg (repair).flac
+     7:41.46       81428212 B   -b-   --   ---xx   flac  0.5262  21 1976-05-01 Hattiesburg (repair).flac
+   100:45.00     1066339140 B                            0.4374  (21 files)
+===================
+===================
+===================

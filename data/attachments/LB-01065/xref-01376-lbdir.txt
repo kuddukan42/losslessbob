@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== md5 for: bd03-05-18-b.flacf
+===================
+===================
+===================
+===================
+===================
+===================
+=== ffp for: bd03-05-18-b.flacf
+===================
+===================
+===================
+disc1\01 Bob Dylan - Maggie's Farm.flac:d467ae58d31aa97846a287ae9edf38f9
+disc1\02 Bob Dylan - Tell Me That It Isn't True.flac:1b09c999ad7710c10826b9a37fea0ff4
+disc1\03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac:3c1d0c832ed517947ef39fdb09fc6262
+disc1\04 Bob Dylan - Mr.Tambourine Man.flac:7590cea0b229022465e9f4d6b8d8c4c8
+disc1\05 Bob Dylan - Things Have Changed.flac:2062898e45432776f369a980eb0d41fc
+disc1\06 Bob Dylan - Drifter's Escape.flac:069b7b4f589d0b6295e95536b744d660
+disc1\07 Bob Dylan - High Water.flac:8c73bee6c188fa640456435feb648961
+disc1\08 Bob Dylan - Standing In The Doorway.flac:643d00d4bf837db39225f19ab1ed23ef
+disc1\09 Bob Dylan - Highway 61 Revisited.flac:f16679780d596bdc6b9b8c8a73aae723
+disc1\10 Bob Dylan - Love Sick.flac:b9cfadac8466bf19b1cbe9f32e1356af
+disc1\11 Bob Dylan - Watching The River Flow.flac:1b7f9d86ef72f6c283fdb7d94e65a189
+disc1\12 Bob Dylan - Bye And Bye.flac:00fdc115925f671cb867275511667675
+disc1\13 Bob Dylan - Honest With Me.flac:98f00fcdfb7d39d4b020d1c700f40abf
+disc2\01 01 Summer Days.flac:77e4c7247ffff61108e0b83fc06d5e06
+disc2\02 02 2 (encore).flac:303f8d166cba99cf46ec057e02423fd3
+disc2\03 03 Like A Rolling Stone.flac:b3d3f30cd248b792650f3bc52820a7ce
+disc2\04 04 4 All Along The Watchtower.flac:b3bc7e0a069ff3481956ce628255d4e8
+disc2\05 05 The Waifs.flac:09b2dd19de54ce305a3aac7d126276a2
+disc2\06 06 The Waifs.flac:f83dc6baab282562b3a175db0112e5af
+disc2\07 07 The Waifs.flac:3b1da6e6f851436d33db2dd887240d9c
+disc2\08 08 The Waifs.flac:d700030c11aaf75ae4bc85e636cb5f2b
+===================
+===================
+===================
+=== shntool len for: bd03-05-18-b.flacf\disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.38       56890220 B   ---   --   ---xx   flac  0.6230  01 Bob Dylan - Maggie's Farm.flac
+     3:52.35       41007164 B   ---   --   ---xx   flac  0.5853  02 Bob Dylan - Tell Me That It Isn't True.flac
+     5:30.72       58381388 B   ---   --   ---xx   flac  0.5529  03 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
+     6:22.59       67523612 B   ---   --   ---xx   flac  0.5755  04 Bob Dylan - Mr.Tambourine Man.flac
+     7:00.23       74142140 B   ---   --   ---xx   flac  0.5845  05 Bob Dylan - Things Have Changed.flac
+     4:40.08       49410860 B   ---   --   ---xx   flac  0.6426  06 Bob Dylan - Drifter's Escape.flac
+     7:08.27       75562748 B   ---   --   ---xx   flac  0.5966  07 Bob Dylan - High Water.flac
+     6:32.46       69257036 B   ---   --   ---xx   flac  0.5424  08 Bob Dylan - Standing In The Doorway.flac
+     5:54.70       62610284 B   ---   --   ---xx   flac  0.6169  09 Bob Dylan - Highway 61 Revisited.flac
+     6:05.27       64449548 B   ---   --   ---xx   flac  0.5406  10 Bob Dylan - Love Sick.flac
+     5:45.39       60949772 B   ---   --   ---xx   flac  0.6006  11 Bob Dylan - Watching The River Flow.flac
+     5:58.08       63170060 B   ---   --   ---xx   flac  0.4843  12 Bob Dylan - Bye And Bye.flac
+     7:01.49       74379692 B   ---   --   ---xx   flac  0.6232  13 Bob Dylan - Honest With Me.flac
+    77:15.51      817734524 B                            0.5813  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd03-05-18-b.flacf\disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:39.04       70393052 B   ---   --   ---xx   flac  0.6079  01 01 Summer Days.flac
+     3:34.35       37831964 B   ---   --   ---xx   flac  0.5590  02 02 2 (encore).flac
+     6:38.13       70237820 B   ---   --   ---xx   flac  0.5963  03 03 Like A Rolling Stone.flac
+     6:05.34       64466012 B   ---   --   ---xx   flac  0.6122  04 04 4 All Along The Watchtower.flac
+     6:17.52       66625148 B   ---   --   ---xx   flac  0.5381  05 05 The Waifs.flac
+     4:36.45       48792284 B   ---   --   ---xx   flac  0.5140  06 06 The Waifs.flac
+     6:07.26       64799996 B   ---   --   ---xx   flac  0.5703  07 07 The Waifs.flac
+     4:16.35       45240764 B   ---   --   ---xx   flac  0.5108  08 08 The Waifs.flac
+    44:15.19      468387040 B                            0.5685  (8 files)
+===================
+===================
+===================

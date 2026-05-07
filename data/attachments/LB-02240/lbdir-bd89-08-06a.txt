@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-08-06a 
+=================== 
+=================== 
+=================== 
+1fa3a43979cbd47705eb904ced4aea98  bd89-08-06a.txt
+065f05e211c2d9853d984c49675f2847  d1\01 Track01.shn
+9b9669eb784c2994ee465a39fbf9df62  d1\02 Track02.shn
+6e871d8af45bae733d51f8222348f1b9  d1\03 Track03.shn
+0012bfb4fe78cad6d24b814a9aa92cb4  d1\04 Track04.shn
+f1a69d93da60f28cd6856de47a0d08b4  d1\05 Track05.shn
+719b78e6a81c6e99acf6921f734e1101  d1\06 Track06.shn
+512c2db6fa0fb63d104aec5b41f16d77  d1\07 Track07.shn
+1977f7275f42abfa87f1347913edc16d  d1\08 Track08.shn
+cab34a742a429d9c0ed57b93bdaad8a1  d1\noname.md5
+7ce2cb23efb5226afe8599767588ceec  d2\01 Track01.shn
+87e442919f163fb1038368e64a3a3f69  d2\02 Track02.shn
+c4b16b653f25512bc1fa67f9d9c96ce6  d2\03 Track03.shn
+fb4603de7943ef88532b77af7cf0682c  d2\04 Track04.shn
+cc3340c1306ee9047afdd7e983fb3ff2  d2\05 Track05.shn
+2e0e59da9d064a3414e1e20449873237  d2\06 Track06.shn
+0747daf58b940ac287fb768f52b18dae  d2\07 Track07.shn
+9be6e69bb21a78ef78de607eba140aa9  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-08-06a\d1 
+=================== 
+=================== 
+=================== 
+a58fe09dcdab820f726602b4df2e9194  [shntool]  01_Track01.wav
+57772d7a297afa91cb071c9a4ee2faa6  [shntool]  02_Track02.wav
+935dd20bb752f4763dba9cefef3f3083  [shntool]  03_Track03.wav
+bfa67f89a5ac191115ec0b2810eb35c4  [shntool]  04_Track04.wav
+42cbc49e457d1c087aa9609da0d068c6  [shntool]  05_Track05.wav
+7d69e50eb3687c0da1ec34584ba7a224  [shntool]  06_Track06.wav
+89ebe5202b8e23cc33b0f60542a9f350  [shntool]  07_Track07.wav
+7efab81ff1dd5b1503c04d0751524719  [shntool]  08_Track08.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-08-06a\d2 
+=================== 
+=================== 
+=================== 
+5d9a7cfe2633ba67f8ceeb726eab5758  [shntool]  01_Track01.wav
+97181f320631993ef3939f503194bdde  [shntool]  02_Track02.wav
+67463cab1547a1baa3bb8572337195d0  [shntool]  03_Track03.wav
+f62c56be27226aa7f74b0ef4326e6c33  [shntool]  04_Track04.wav
+ce9366f6e476ab209270529175ed2dd6  [shntool]  05_Track05.wav
+1fc96ff48337e619d4e4161dd260c56b  [shntool]  06_Track06.wav
+9a344b91047adb31a5bb7706c0310979  [shntool]  07_Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-08-06a\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:42.29       70981052 B   ---   --   -----    wav  1.0000  01_Track01.wav
+     4:14.70       44970284 B   ---   --   -----    wav  1.0000  02_Track02.wav
+     5:34.14       58950572 B   ---   --   -----    wav  1.0000  03_Track03.wav
+     5:58.74       63325292 B   ---   --   -----    wav  1.0000  04_Track04.wav
+     6:05.72       64555388 B   ---   --   -----    wav  1.0000  05_Track05.wav
+     4:47.14       50659772 B   ---   --   -----    wav  1.0000  06_Track06.wav
+     6:23.42       67660028 B   ---   --   -----    wav  1.0000  07_Track07.wav
+     6:16.12       66354668 B   ---   --   -----    wav  1.0000  08_Track08.wav
+    46:03.27      487457056 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-08-06a\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:14.08       87160460 B   ---   --   -----    wav  1.0000  01_Track01.wav
+     4:26.45       47028284 B   ---   --   -----    wav  1.0000  02_Track02.wav
+     5:14.73       55561340 B   ---   --   -----    wav  1.0000  03_Track03.wav
+     4:32.37       48067868 B   ---   --   -----    wav  1.0000  04_Track04.wav
+     7:14.61       76701116 B   ---   --   -----    wav  1.0000  05_Track05.wav
+     7:20.54       77743052 B   ---   --   -----    wav  1.0000  06_Track06.wav
+     3:46.35       39948764 B   ---   --   -----    wav  1.0000  07_Track07.wav
+    40:50.13      432210884 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: BD 10Sep98 Wellington (analogue) 
+=================== 
+=================== 
+=================== 
+83dd980c1d004558de26a6aac68c73e2  10Sep98d101.flac
+500d36c476a8f850f3caf8140ba38e40  10Sep98d102.flac
+fd6d92ec13aa82cf213d7dea0490cf0d  10Sep98d103.flac
+015119dfeccf521fb1b2d284e240b2cc  10Sep98d104.flac
+7edad85baa734674752dd00443f30d8d  10Sep98d105.flac
+5e19870ce8bd1224549a260c229893e0  10Sep98d106.flac
+d4365800dff89ae357da65c2a6628f7e  10Sep98d107.flac
+5ec1c3b550592b82e6ffab9c61ce2914  10Sep98d108.flac
+1a893a4a675ee51fa6287a345b92567f  10Sep98d109.flac
+9858b4372835f7b7e317adcd79ca6c7b  10Sep98d110.flac
+15e83268f18b2d8215b54725422f126b  10Sep98d201.flac
+e4f395d27db74fd764eb7cacab5f83fd  10Sep98d202.flac
+9e8be19c3e018e7a9340aa26aeafca19  10Sep98d203.flac
+a41a00e9db472d58ecc4afc6e1513fdb  10Sep98d204.flac
+5a67ecad2afadf0a0cac969f9953526d  10Sep98d205.flac
+975804d83ae568a300cfc5344ba91c39  10Sep98d206.flac
+00b45dddbc8e422155ef80a97a4e0930  10Sep98d207.flac
+d16e2a77be86c37da28d5ddec969b075  BD 10Sep98 Wellington (analogue).md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: BD 10Sep98 Wellington (analogue) 
+=================== 
+=================== 
+=================== 
+10Sep98d101.flac:46c675076602954a5cb6ae7fc01b1517
+10Sep98d102.flac:a667ed2ea7764383a950690e542c1b39
+10Sep98d103.flac:f91ded2b12e8a03b374d4d397bd083f9
+10Sep98d104.flac:bd2fe54992ec1e98d9b8a0a1344c4fa7
+10Sep98d105.flac:a3aa8422064005f8ede70861dda82e28
+10Sep98d106.flac:c4028d481222eefbe18120d2bf3caa9e
+10Sep98d107.flac:1848be8495505d0632fdeef92655d6fa
+10Sep98d108.flac:b10feb95a18c6e74f2fb6f16e3e23c7e
+10Sep98d109.flac:baab346e0b8ba3f38391b59b06c451cc
+10Sep98d110.flac:02757bf7eb5191787355c0e2928e2cb6
+10Sep98d201.flac:cfda8f5bbd6cdf332dbfeb26df973226
+10Sep98d202.flac:032e731f7f824c6a43e3c2639a749a7e
+10Sep98d203.flac:25eead7a619f9fe0109e6efa33a0a19f
+10Sep98d204.flac:daa9c97406817169b2e2e3109bc572ae
+10Sep98d205.flac:2c5e2c161278861b4ae3d947f437553a
+10Sep98d206.flac:2c65f82e838d7b1fc4a62aac13ead7cc
+10Sep98d207.flac:a55f2e423bdad28fead36fa96550d00a
+=================== 
+=================== 
+=================== 
+=== shntool len for: BD 10Sep98 Wellington (analogue) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:40.11       60001916 B   ---   --   ---xx   flac  0.5901  10Sep98d101.flac
+     4:59.37       52830668 B   ---   --   ---xx   flac  0.5932  10Sep98d102.flac
+     6:43.35       71171564 B   ---   --   ---xx   flac  0.5876  10Sep98d103.flac
+     8:01.49       84963692 B   ---   --   ---xx   flac  0.5755  10Sep98d104.flac
+     6:15.33       66227660 B   ---   --   ---xx   flac  0.5920  10Sep98d105.flac
+     6:53.51       72973196 B   ---   --   ---xx   flac  0.6447  10Sep98d106.flac
+     6:48.38       72060620 B   ---   --   ---xx   flac  0.5977  10Sep98d107.flac
+     6:33.59       69464012 B   ---   --   ---xx   flac  0.5638  10Sep98d108.flac
+     7:47.46       82487036 B   ---   --   ---xx   flac  0.5964  10Sep98d109.flac
+     6:44.44       71369132 B   ---   --   ---xx   flac  0.5207  10Sep98d110.flac
+     5:20.48       56560940 B   ---   --   ---xx   flac  0.5497  10Sep98d201.flac
+     6:17.50       66620444 B   ---   --   ---xx   flac  0.5882  10Sep98d202.flac
+     5:39.35       59881964 B   ---   --   ---xx   flac  0.5928  10Sep98d203.flac
+     5:53.39       62360972 B   ---   --   ---xx   flac  0.6236  10Sep98d204.flac
+     6:35.73       69849740 B   ---   --   ---xx   flac  0.5624  10Sep98d205.flac
+     6:30.71       68963036 B   ---   --   ---xx   flac  0.6476  10Sep98d206.flac
+     6:04.71       64376636 B   ---   --   ---xx   flac  0.5899  10Sep98d207.flac
+   108:51.40     1152163228 B                            0.5892  (17 files)
+=================== 
+=================== 
+=================== 

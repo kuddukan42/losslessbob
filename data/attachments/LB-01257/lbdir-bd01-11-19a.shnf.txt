@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-11-19a.shnf 
+=================== 
+=================== 
+=================== 
+18744b54b178d6b53e06da33f6a7bde8  BD d2 111901  Track01.shn
+f2bfb8c8c1b79eb84725e11859486f0e  BD d2 111901  Track02.shn
+30366aa416cf2b1f24ff3214ea5bc2b0  BD d2 111901  Track03.shn
+973296bba5acedd49080321798fac29d  BD d2 111901  Track04.shn
+4511dc601469ebe672f61c26a0a456ff  BD d2 111901  Track05.shn
+763efcca8f8d0686f1746daa0ee43394  BD d2 111901  Track06.shn
+bd51c550d9cdb7c30df42a8cede20895  BD d2 111901  Track07.shn
+b17adb734230dd9f01531ef05728fbd5  BD d2 111901  Track08.shn
+059de202f33ec31d3a50d46f06cd55be  BD d2 111901  Track09.shn
+84f529fd52f1aeacbeb516b85e6c0794  BD d2 111901  Track10.shn
+9d1951e6223e9d71ab8c0650da2f0eab  BD d2 111901  Track11.shn
+d652fa76907e306eed3d4d24608a9932  BD-111901 d1  Track01.shn
+74b7ba7f79ac1c608ff95c0b52235425  BD-111901 d1  Track02.shn
+ff2a6da0a28665c02a26406abca2dfe1  BD-111901 d1  Track03.shn
+790c26413841d91dcbeaa329e558f463  BD-111901 d1  Track04.shn
+2b0f0b2bb16bbc30ad6fa399dbaa2bc3  BD-111901 d1  Track05.shn
+b33aa25b04e3ea70009b94b58c8594c0  BD-111901 d1  Track06.shn
+dcefedc61436cc7f026add720c7d8127  BD-111901 d1  Track07.shn
+521ebcfccaf476085aecb4535e15f497  BD-111901 d1  Track08.shn
+1b790cc0b7cf7bd4d41a84f59d1250ff  BD-111901 d1  Track09.shn
+3deca929b53a25ec989d6d8d9640bab2  BD-111901 d1  Track10.shn
+b674b72d93196769e943d2822e7173cc  BD-111901 d1  Track11.shn
+22aa5f3d6af0f77fa44efc99f67cd50d  bd01-11-19a.txt
+69324bcf5751887b019a4e99e260c137  msg111901.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-11-19a.shnf 
+=================== 
+=================== 
+=================== 
+893db3f44e292c110474060834c372d7  [shntool]  BD-111901_d1__Track01.wav
+a7fcd68c14898a19b687abfa3129647b  [shntool]  BD-111901_d1__Track02.wav
+4aff7287eb78d8b4eaf5d61dbac8e95f  [shntool]  BD-111901_d1__Track03.wav
+5575db222b416cb9b3eac3050e87f99e  [shntool]  BD-111901_d1__Track04.wav
+954420b30b89e6da2faafe6531341d1c  [shntool]  BD-111901_d1__Track05.wav
+912f6278d1f74cb62fe542fa6a7d511c  [shntool]  BD-111901_d1__Track06.wav
+074aecb2e37f13d3762d26e1ae0defe2  [shntool]  BD-111901_d1__Track07.wav
+6c3be2167eb2cfebe493c30a75570411  [shntool]  BD-111901_d1__Track08.wav
+07c329f601d872254a476885d599fdaa  [shntool]  BD-111901_d1__Track09.wav
+d21fabc4ff716ed476d898285e35d0e6  [shntool]  BD-111901_d1__Track10.wav
+0b021470e4c478b9deb55b6513a344df  [shntool]  BD-111901_d1__Track11.wav
+5767d6a614489728588d6bc9f7233160  [shntool]  BD_d2_111901__Track01.wav
+4835179097e2a9a8cba4d6196200f5b5  [shntool]  BD_d2_111901__Track02.wav
+867b6db8ec261ac0dd2f2c98bf684a6d  [shntool]  BD_d2_111901__Track03.wav
+b02b224384142be7afc24858fdd734e2  [shntool]  BD_d2_111901__Track04.wav
+5168bd7d2add2617c8adb38aba7d1b1e  [shntool]  BD_d2_111901__Track05.wav
+20b813822d4e557dcdf1b0709d79daf3  [shntool]  BD_d2_111901__Track06.wav
+7a89fea0a80737bb2dc3ee391400fbf0  [shntool]  BD_d2_111901__Track07.wav
+6a4bf7b7f3c55a19f2c520b57c13b359  [shntool]  BD_d2_111901__Track08.wav
+e897f689494d6a30e90ac8d53901abfb  [shntool]  BD_d2_111901__Track09.wav
+e50283a5770078c8317b35145f62a338  [shntool]  BD_d2_111901__Track10.wav
+7e78a0a7358a2ae82eb3133cebb8f5a9  [shntool]  BD_d2_111901__Track11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-19a.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:25.01       67916396 B   ---   --   ---xx    shn  0.4979  BD d2 111901  Track01.shn
+     6:09.01       65093996 B   ---   --   ---xx    shn  0.6163  BD d2 111901  Track02.shn
+     7:37.04       80624252 B   ---   --   ---xx    shn  0.4309  BD d2 111901  Track03.shn
+     5:37.60       59587964 B   ---   --   ---xx    shn  0.6332  BD d2 111901  Track04.shn
+     8:32.05       90328604 B   ---   --   ---xx    shn  0.5890  BD d2 111901  Track05.shn
+     6:15.09       66171212 B   ---   --   ---xx    shn  0.5417  BD d2 111901  Track06.shn
+     7:43.69       81835532 B   ---   --   ---xx    shn  0.5729  BD d2 111901  Track07.shn
+     7:01.48       74377340 B   ---   --   ---xx    shn  0.4974  BD d2 111901  Track08.shn
+     7:07.26       75383996 B   ---   --   ---xx    shn  0.5978  BD d2 111901  Track09.shn
+     5:54.14       62478572 B   ---   --   ---xx    shn  0.4798  BD d2 111901  Track10.shn
+     5:09.17       54547628 B   ---   --   ---xx    shn  0.6348  BD d2 111901  Track11.shn
+     2:51.60       30305564 B   ---   --   ---xx    shn  0.6349  BD-111901 d1  Track01.shn
+     9:09.57       96977708 B   ---   --   ---xx    shn  0.5076  BD-111901 d1  Track02.shn
+     9:19.31       98680556 B   ---   --   ---xx    shn  0.5635  BD-111901 d1  Track03.shn
+     3:08.34       33243212 B   ---   --   ---xx    shn  0.5336  BD-111901 d1  Track04.shn
+     5:07.21       54204236 B   ---   --   ---xx    shn  0.5453  BD-111901 d1  Track05.shn
+     8:32.19       90361532 B   ---   --   ---xx    shn  0.5776  BD-111901 d1  Track06.shn
+     7:19.36       77524316 B   ---   --   ---xx    shn  0.5953  BD-111901 d1  Track07.shn
+     6:46.41       71714876 B   ---   --   ---xx    shn  0.6314  BD-111901 d1  Track08.shn
+     5:52.59       62231612 B   ---   --   ---xx    shn  0.5967  BD-111901 d1  Track09.shn
+     7:52.67       83418428 B   ---   --   ---xx    shn  0.5032  BD-111901 d1  Track10.shn
+     7:50.12       82936268 B   ---   --   ---xx    shn  0.6248  BD-111901 d1  Track11.shn
+   147:23.16     1559943800 B                            0.5609  (22 files)
+=================== 
+=================== 
+=================== 

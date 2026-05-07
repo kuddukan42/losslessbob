@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-21-pedlar-now-speaks.flacf 
+=================== 
+=================== 
+=================== 
+65822ff9efc1bfc90115c8c7f1963737  bd95-06-21-pedlar-now-speaks-d1t01.flac
+83da0308844ae819406928a71ab30830  bd95-06-21-pedlar-now-speaks-d1t02.flac
+3d4a877b34170ddc571b5d698b55c068  bd95-06-21-pedlar-now-speaks-d1t03.flac
+1b100ceaf0feaa1ea523869d39ac8dfc  bd95-06-21-pedlar-now-speaks-d1t04.flac
+11b7b09838917bb22004fab16c86ddda  bd95-06-21-pedlar-now-speaks-d1t05.flac
+566fe8de7042bb3b1d2f3154352e081a  bd95-06-21-pedlar-now-speaks-d1t06.flac
+43cb97b08ef068ddf23ffadc88a2b69e  bd95-06-21-pedlar-now-speaks-d1t07.flac
+3e7e86dcb39d9137ddef67d4581b8dbb  bd95-06-21-pedlar-now-speaks-d1t08.flac
+1f87a010c42da7259c7f8ed095497943  bd95-06-21-pedlar-now-speaks-d1t09.flac
+699fecb0221e817f1f03166bfe9694fb  bd95-06-21-pedlar-now-speaks-d1t10.flac
+f0b8d603ed057c325a2dc834b4650a3e  bd95-06-21-pedlar-now-speaks-d1t11.flac
+4cc3a5fd95bcb5c7d2b42e27525c6f3a  bd95-06-21-pedlar-now-speaks-d2t01.flac
+d41c149936fe1e4c55b20c7fe7a3d7e2  bd95-06-21-pedlar-now-speaks-d2t02.flac
+442a6f7893277c3f4a15a0ff0c79a52b  bd95-06-21-pedlar-now-speaks-d2t03.flac
+2e6463306d4bc822fd4baa0377215c96  bd95-06-21-pedlar-now-speaks-d2t04.flac
+9a0ec2ad6ce9f65c14c9b6510bb89b8d  bd95-06-21-pedlar-now-speaks-d2t05.flac
+fd5895ec5d47423e67278d95688d3731  bd95-06-21-pedlar-now-speaks-d2t06.flac
+f568c3e7a5a4a66fd10612691fe84efe  bd95-06-21-pedlar-now-speaks-d2t07.flac
+c4014f80a2bae3ad8a0eb44a3ff90c53  bd95-06-21-pedlar-now-speaks-d2t08.flac
+26366d397c0538f3b3f612bde533cc4f  bd95-06-21-pedlar-now-speaks-d2t09.flac
+b43164028f213f5eb8720b9a7b493378  bd95-06-21-pedlar-now-speaks-d2t10.flac
+97bfc310a383ed00ae9a4ce81f456b98  bd95-06-21-pedlar-now-speaks.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-21-pedlar-now-speaks.flacf 
+=================== 
+=================== 
+=================== 
+bd95-06-21-pedlar-now-speaks-d1t01.flac:29512c7ed56eb4e3a909664df23f3431
+bd95-06-21-pedlar-now-speaks-d1t02.flac:d356d15697a124ef4e205307183735fc
+bd95-06-21-pedlar-now-speaks-d1t03.flac:e6797523098a9cd5dc856191d2f0b750
+bd95-06-21-pedlar-now-speaks-d1t04.flac:acc5442142d2494f403a495a0a38ba0b
+bd95-06-21-pedlar-now-speaks-d1t05.flac:f90f3cbc07f00802089cabded410e7b1
+bd95-06-21-pedlar-now-speaks-d1t06.flac:837c03f769ea50a6c7d6fb2487cc098a
+bd95-06-21-pedlar-now-speaks-d1t07.flac:9d9211bf53f91f177674ebf8e7260965
+bd95-06-21-pedlar-now-speaks-d1t08.flac:0d20ff7e2b8147021109c892317afc97
+bd95-06-21-pedlar-now-speaks-d1t09.flac:7d1a99dc305bbf4d19af3926d3d2a334
+bd95-06-21-pedlar-now-speaks-d1t10.flac:99614128150887297e00a17808bceb56
+bd95-06-21-pedlar-now-speaks-d1t11.flac:19c782a00ac94338119c0b035fb98c23
+bd95-06-21-pedlar-now-speaks-d2t01.flac:81ade428086d13512922daf730b0584e
+bd95-06-21-pedlar-now-speaks-d2t02.flac:9516d88ce53d7a9a94e5ff447aecd7ff
+bd95-06-21-pedlar-now-speaks-d2t03.flac:9fd1c2efe2add29597440ab160a3c41e
+bd95-06-21-pedlar-now-speaks-d2t04.flac:11d369147ab200c2fec393ca903861df
+bd95-06-21-pedlar-now-speaks-d2t05.flac:e0881dc5269dacd3a563bc3dbdc0033f
+bd95-06-21-pedlar-now-speaks-d2t06.flac:c9a4167c65969473b0b8e4e87d20347c
+bd95-06-21-pedlar-now-speaks-d2t07.flac:447843619adaf81f13bd89fc1b335645
+bd95-06-21-pedlar-now-speaks-d2t08.flac:bd1c3eff741a2e5f9571dc4461b2c211
+bd95-06-21-pedlar-now-speaks-d2t09.flac:8f6cb7501af3e3909c3bf8e87dc4f596
+bd95-06-21-pedlar-now-speaks-d2t10.flac:d342df0033496e997a25e76239065258
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-06-21-pedlar-now-speaks.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.65       52543724 B   ---   --   ---xx   flac  0.6744  bd95-06-21-pedlar-now-speaks-d1t01.flac
+     4:37.05       48874604 B   ---   --   ---xx   flac  0.6179  bd95-06-21-pedlar-now-speaks-d1t02.flac
+     6:19.13       66886220 B   ---   --   ---xx   flac  0.6639  bd95-06-21-pedlar-now-speaks-d1t03.flac
+     8:22.20       88599884 B   ---   --   ---xx   flac  0.5976  bd95-06-21-pedlar-now-speaks-d1t04.flac
+     7:55.72       83959388 B   ---   --   ---xx   flac  0.6553  bd95-06-21-pedlar-now-speaks-d1t05.flac
+     7:00.45       74193884 B   ---   --   ---xx   flac  0.6711  bd95-06-21-pedlar-now-speaks-d1t06.flac
+     8:12.48       86901740 B   ---   --   ---xx   flac  0.4918  bd95-06-21-pedlar-now-speaks-d1t07.flac
+     7:24.45       78427484 B   ---   --   ---xx   flac  0.5383  bd95-06-21-pedlar-now-speaks-d1t08.flac
+     5:47.57       61344908 B   ---   --   ---xx   flac  0.5086  bd95-06-21-pedlar-now-speaks-d1t09.flac
+     6:47.03       71801900 B   ---   --   ---xx   flac  0.6509  bd95-06-21-pedlar-now-speaks-d1t10.flac
+     5:40.25       60034844 B   ---   --   ---xx   flac  0.5999  bd95-06-21-pedlar-now-speaks-d1t11.flac
+     6:54.08       73048460 B   ---   --   ---xx   flac  0.5971  bd95-06-21-pedlar-now-speaks-d2t01.flac
+     8:40.55       91857404 B   ---   --   ---xx   flac  0.6369  bd95-06-21-pedlar-now-speaks-d2t02.flac
+     9:11.62       97342268 B   ---   --   ---xx   flac  0.5834  bd95-06-21-pedlar-now-speaks-d2t03.flac
+     5:19.58       56408060 B   ---   --   ---xx   flac  0.6359  bd95-06-21-pedlar-now-speaks-d2t04.flac
+     8:01.47       84958988 B   ---   --   ---xx   flac  0.5630  bd95-06-21-pedlar-now-speaks-d2t05.flac
+     6:00.53       63628700 B   ---   --   ---xx   flac  0.4972  bd95-06-21-pedlar-now-speaks-d2t06.flac
+     9:28.57      100329308 B   ---   --   ---xx   flac  0.5517  bd95-06-21-pedlar-now-speaks-d2t07.flac
+     7:47.48       82491740 B   ---   --   ---xx   flac  0.6145  bd95-06-21-pedlar-now-speaks-d2t08.flac
+     8:46.27       92849948 B   ---   --   ---xx   flac  0.5443  bd95-06-21-pedlar-now-speaks-d2t09.flac
+     8:09.08       86278460 B   ---   --   ---xx   flac  0.5588  bd95-06-21-pedlar-now-speaks-d2t10.flac
+   151:25.71     1602761916 B                            0.5901  (21 files)
+=================== 
+=================== 
+=================== 

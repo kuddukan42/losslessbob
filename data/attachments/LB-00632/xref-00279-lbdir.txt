@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-04-23-a.flacf 
+=================== 
+=================== 
+=================== 
+ce77a0459b018bf88821a5139483f310  BobDylan1991-04-23FoxTheatreAtlanta [Fixed LB-632].md5
+ce77a0459b018bf88821a5139483f310  fpf.txt
+8a417e86c71bd6c65a21b993c90aa328  Info.txt
+cedcfcb41d730b1a79d388b72bc5e28f  Track 01.flac
+2e49f65f2a4881c04112c047944f8dc6  Track 02.flac
+687f8d9efd85d5003ac25e5d71079832  Track 03.flac
+ee7c54d847dc9519087d3db5edb22196  Track 04.flac
+a956e4104dfdae5685b4b3b42e5a519f  Track 05.flac
+59b08ac84f26a3640bdc65b8766f4bf4  Track 06.flac
+918f8ffa11fa167deef91b4aed07ef17  Track 07.flac
+945f269eda6cee2e595f48652bbbd7e5  Track 08.flac
+3c66c3fe17333663d2e761160a57f69a  Track 09.flac
+37db787d53ffacb19c7ba54d690bd563  Track 10.flac
+07b34693ba18d914ac10cedc1dcddd1d  Track 11.flac
+de1c6f591b6237f8f0fc43af7c6fba9e  Track 12.flac
+b31e4d938d9835bc61d23fd220a9ff33  Track 13.flac
+4ec5e8355111239fff72d83854120640  Track 14.flac
+383cf667aa1435d93b470ac2e2d46506  Track 15.flac
+459cd18c4dd6190fa2c8ed5b2ad5434c  Track 16.flac
+839995db14717fba2820a5361d4e6727  Track 17.flac
+7ff74986c30ec353887e076cc9e14b1e  Track 18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-04-23-a.flacf 
+=================== 
+=================== 
+=================== 
+track 01.flac:4e7fad1c6b958670ae2a1c4a84f76723
+track 02.flac:609870bacae79dff85d4f90a62588acf
+track 03.flac:46e3dc3dfb734f7a3405eb478ea99597
+track 04.flac:311da8c5c18eb799fecbc4e062cc294f
+track 05.flac:568df5abc9e7df7a7a50bc31a20b99b6
+track 06.flac:5e712a2161a982f5921c5a942914f591
+track 07.flac:1187908c129c2f66559f0642d3c44e29
+track 08.flac:a0b78f62b2e0a0f2a98672bfad9adebc
+track 09.flac:3be38ce0d6c8bb8e603b693e2da47a7e
+track 10.flac:77da52f0409b10ff8169a6c38c207deb
+track 11.flac:aeb87d4fe19274be7657b22d6d9fa422
+track 12.flac:eeb728c7613d13a3303b5919f83e5847
+track 13.flac:f16a275bd9dfcc0b085be90f65e7fba2
+track 14.flac:c8cec1448d449d3c1a37460345a55705
+track 15.flac:5625f35ea99cd54e63277c2afebf390e
+track 16.flac:becef8ddf92dc2f18109382edfa983bd
+track 17.flac:be56b72e98733916885190ab3d579931
+track 18.flac:45b91967f6150881ccb0ddb8c11edb8c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-04-23-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:09.07       33356108 B   ---   --   ---xx   flac  0.5092  Track 01.flac
+     5:00.11       52945916 B   ---   --   ---xx   flac  0.5206  Track 02.flac
+     3:41.43       39085580 B   ---   --   ---xx   flac  0.5295  Track 03.flac
+     5:48.53       61511900 B   ---   --   ---xx   flac  0.5227  Track 04.flac
+     5:20.12       56476268 B   ---   --   ---xx   flac  0.5272  Track 05.flac
+     3:07.73       33158540 B   ---   --   ---xx   flac  0.5376  Track 06.flac
+     6:07.42       64837628 B   ---   --   ---xx   flac  0.5219  Track 07.flac
+     3:51.68       40908380 B   ---   --   ---xx   flac  0.5233  Track 08.flac
+     5:04.26       53686796 B   ---   --   ---xx   flac  0.5342  Track 09.flac
+     3:59.38       42249020 B   ---   --   ---xx   flac  0.5283  Track 10.flac
+     4:10.40       44194124 B   ---   --   ---xx   flac  0.5102  Track 11.flac
+     5:03.06       53463356 B   ---   --   ---xx   flac  0.5063  Track 12.flac
+     4:06.43       43495580 B   ---   --   ---xx   flac  0.5209  Track 13.flac
+     4:56.19       52259132 B   ---   --   ---xx   flac  0.5133  Track 14.flac
+     3:33.01       37575596 B   ---   --   ---xx   flac  0.5203  Track 15.flac
+     7:11.16       76066076 B   ---   --   ---xx   flac  0.5301  Track 16.flac
+     4:25.74       46920092 B   ---   --   ---xx   flac  0.5317  Track 17.flac
+     5:07.49       54270092 B   ---   --   ---xx   flac  0.5436  Track 18.flac
+    83:45.21      886460184 B                            0.5242  (18 files)
+=================== 
+=================== 
+=================== 

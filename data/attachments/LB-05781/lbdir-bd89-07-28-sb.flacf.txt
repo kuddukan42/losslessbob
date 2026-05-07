@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-28-sb.flacf 
+=================== 
+=================== 
+=================== 
+e1402965062c8adc3a411633b41e2593  1989-07-28.Wrap It In Glory.md5
+38464ff9e2a29daf3e22271becc008dc  info.txt
+b55012cb1b99c9e47d7a7bec3e177606  Wrap It In Glory [CD1]\1989-07-28_101.flac
+24238e55986d392e43b19db093ef5a5e  Wrap It In Glory [CD1]\1989-07-28_102.flac
+90c4d02b42682a2150db7a2c1e8ff36e  Wrap It In Glory [CD1]\1989-07-28_103.flac
+c4d8eee0f51a6db0871410e11434a972  Wrap It In Glory [CD1]\1989-07-28_104.flac
+184a1f0a3873a066ae0a8816f02c8f92  Wrap It In Glory [CD1]\1989-07-28_105.flac
+9f2ef79ea4687a7cfc4c55adbc424bac  Wrap It In Glory [CD1]\1989-07-28_106.flac
+8aff1d9d3eb36ef2abdc5ad3028093a1  Wrap It In Glory [CD1]\1989-07-28_107.flac
+b62896b12524cdc32ed28c7f32a739b2  Wrap It In Glory [CD1]\1989-07-28_108.flac
+35ced19f8c5240cef73fc78dd75c5f9a  Wrap It In Glory [CD1]\1989-07-28_109.flac
+ab20068ece58d0261c61dd88d1e38b3c  Wrap It In Glory [CD2]\1989-07-28_201.flac
+4b4dfd3934e75496161af0055bbade44  Wrap It In Glory [CD2]\1989-07-28_202.flac
+24df17c169faa3eb32b55870c424f529  Wrap It In Glory [CD2]\1989-07-28_203.flac
+cd28c6ad18ddab5942b8307ec8e688fe  Wrap It In Glory [CD2]\1989-07-28_204.flac
+24d563284a139f53e0f60d2834fd45c7  Wrap It In Glory [CD2]\1989-07-28_205.flac
+c61f8c52725fff0887eb3d2686f9c759  Wrap It In Glory [CD2]\1989-07-28_206.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-28-sb.flacf\Wrap It In Glory [CD1] 
+=================== 
+=================== 
+=================== 
+1989-07-28_101.flac:9886e9713422537e97f34422fccb662f
+1989-07-28_102.flac:068280beab926058b563738d1854a401
+1989-07-28_103.flac:7c114b278219e74bdcc4fd299a5f61fe
+1989-07-28_104.flac:b8354056b87f11e22fc34660aca73a24
+1989-07-28_105.flac:e108f6e79c3c8fccbe208577a9a93e0d
+1989-07-28_106.flac:573ec4d218e03e6ae792974da58a2baa
+1989-07-28_107.flac:a9b71967e1ebfd2ad3e34203f4e2eabd
+1989-07-28_108.flac:4a5f52707bb9fd8b62f6fbaa9e653d6a
+1989-07-28_109.flac:aa47b9b3d6f64e89146cb8fdc26b8ef2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-28-sb.flacf\Wrap It In Glory [CD2] 
+=================== 
+=================== 
+=================== 
+1989-07-28_201.flac:cb01380f37fc8ae4703eafdb5c6510cb
+1989-07-28_202.flac:523090ce949a5fd8569d0795a36e8b67
+1989-07-28_203.flac:fe6bcfafeb639a3d50473eaae7f699c8
+1989-07-28_204.flac:a4be12b322d94517336d559ad3d49958
+1989-07-28_205.flac:8e08785d14ff3beb4f521f832173b752
+1989-07-28_206.flac:315bbe33091b11a73ced7964279ce76c
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-07-28-sb.flacf\Wrap It In Glory [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.07       43763708 B   ---   --   ---xx   flac  0.6203  1989-07-28_101.flac
+     4:06.31       43467356 B   ---   --   ---xx   flac  0.5858  1989-07-28_102.flac
+     4:47.52       50749148 B   ---   --   ---xx   flac  0.6442  1989-07-28_103.flac
+     6:00.36       63588716 B   ---   --   ---xx   flac  0.6271  1989-07-28_104.flac
+     6:14.14       66006572 B   ---   --   ---xx   flac  0.6137  1989-07-28_105.flac
+     4:44.40       50191724 B   ---   --   ---xx   flac  0.6235  1989-07-28_106.flac
+     6:49.41       72244076 B   ---   --   ---xx   flac  0.5604  1989-07-28_107.flac
+     4:37.70       49027484 B   ---   --   ---xx   flac  0.5755  1989-07-28_108.flac
+     6:16.24       66382892 B   ---   --   ---xx   flac  0.5764  1989-07-28_109.flac
+    47:45.15      505421676 B                            0.6014  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-07-28-sb.flacf\Wrap It In Glory [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.71       62259836 B   ---   --   ---xx   flac  0.6302  1989-07-28_201.flac
+     5:11.55       54989804 B   ---   --   ---xx   flac  0.6232  1989-07-28_202.flac
+     4:09.24       43980092 B   ---   --   ---xx   flac  0.6380  1989-07-28_203.flac
+     8:38.34       91455212 B   ---   --   ---xx   flac  0.6653  1989-07-28_204.flac
+     6:00.06       63518156 B   ---   --   ---xx   flac  0.5941  1989-07-28_205.flac
+     4:38.52       49161548 B   ---   --   ---xx   flac  0.5970  1989-07-28_206.flac
+    34:31.17      365364648 B                            0.6281  (6 files)
+=================== 
+=================== 
+=================== 

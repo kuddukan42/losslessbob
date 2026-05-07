@@ -1,0 +1,57 @@
+Bob Dylan
+Newman Outdoor Field
+Fargo, North Dakota
+September 9, 2006
+
+source: soomlos
+fob, center ga field
+neumann km140's > edirol ua-5(bm2p+) > mircrotrack 24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44)
+
+Disc 1:
+01. introduction [01:00]
+02. Cat's In The Well [04:12]
+03. You Ain't Goin' Nowhere [03:56]
+04. Tweedle Dee & Tweedle Dum [05:22]
+05. Lay, Lady, Lay [05:38]
+06. I'll Be Your Baby Tonight [06:11]
+07. Don't Think Twice, It's All Right [06:57] 
+08. Masters Of War [05:09]
+09. Tangled Up In Blue [07:26]
+10. Boots Of Spanish Leather [06:59] 
+Total time: [52:58]
+
+Disc 2:
+01. Highway 61 Revisited [05:52] 
+02. Simple Twist Of Fate [07:13]
+03. Summer Days [09:50] 
+04. Like A Rolling Stone [06:46]
+05. band introduction [00:35]
+06. All Along The Watchtower [05:52]
+Total time: [36:12]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - mandolin, pedal steel, lap steel
+Stu Kimball - guitar
+George Recile - drums 
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2006-09-09d1t01.flac:96e29e73145a69a181efc093b76f9a1d
+bd2006-09-09d1t02.flac:dfd78236a47dafc249709e3c14c0e41f
+bd2006-09-09d1t03.flac:f0e8fd2986e654842c8a276047495169
+bd2006-09-09d1t04.flac:2df680f01e2ef9d48c2f8b37df759f35
+bd2006-09-09d1t05.flac:c2c6093bd48b8b18e4e3c107085cf13e
+bd2006-09-09d1t06.flac:027a6ee91b8414afe269c4d6db4f90a2
+bd2006-09-09d1t07.flac:0b11f4508c739ce59ed21d0f99918bce
+bd2006-09-09d1t08.flac:02f0e846f69838fced0ed43a33b53991
+bd2006-09-09d1t09.flac:0380184d49f57552a99fb063ce37a765
+bd2006-09-09d1t10.flac:85f4241eca589b05c30d4a2fd2f8b81e
+bd2006-09-09d2t01.flac:9882df88db8199aa3b1b218a41e0bf4f
+bd2006-09-09d2t02.flac:98dd1918aa79e01b56f1014a7b6a39c7
+bd2006-09-09d2t03.flac:d5e1904bb53297ba6e37cbe1bb57acb7
+bd2006-09-09d2t04.flac:f4db9816ce1e537e615cd07bda1e57a7
+bd2006-09-09d2t05.flac:fb1261367b718ede527a0184cbc547e9
+bd2006-09-09d2t06.flac:18fa64adca98be144fb48264a5b43c06

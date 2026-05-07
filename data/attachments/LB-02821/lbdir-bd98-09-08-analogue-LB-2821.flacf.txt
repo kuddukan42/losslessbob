@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd98-09-08-analogue-LB-2821.flacf
+===================
+===================
+===================
+aae78f3269be3345f3384ffff011604b *08Sep98d101.flac
+407ab17d2b226a765aa7fcf4d9f5de09 *08Sep98d102.flac
+9591679a9fd5d731191268653a4db08f *08Sep98d103.flac
+7ba6303de99fddbfaa1707a0e496f6c5 *08Sep98d104.flac
+5de833e6803cb90f29a6a3a32936960e *08Sep98d105.flac
+55ab916e37b50567c87b4dd7e5356893 *08Sep98d106.flac
+cd4c363f55f125bcef95c142a1116610 *08Sep98d107.flac
+754d17d89cdb1499fcd9bb9deb86bc90 *08Sep98d108.flac
+b43a7afc306af997542964246ea2eed7 *08Sep98d109.flac
+89290b47ed0287fd772ab2f9a0510116 *08Sep98d110.flac
+8c14eb0bed4ff64965be9b6cb46c2ad7 *08Sep98d111.flac
+8b78d1ed434f8ad79878851aaffab18b *08Sep98d201.flac
+5b3bccb9f77334b7bfae0d198f3e280e *08Sep98d202.flac
+0a7ade6bbad3fca22cb344b1e54acefd *08Sep98d203.flac
+531d143640982f363694ca3688a45a38 *08Sep98d204.flac
+997f88935d50410fce06f99365a7f890 *08Sep98d205.flac
+89417a0026af7a0b1707b26ea5f2eeba *08Sep98d206.flac
+ac0340017fd6ff32f8bc81d0f29496fe *BD 08Sep98 Auckland (analogue).md5
+6c91b41133181218e659f89ecb44716c *bd98-09-08-analogue-LB-2821.flacf_mychecksums.txt
+ec1eab2303f51f1a80e00f134eed9572 *Dylan & Patti Smith NZ-OZ 1998.txt
+===================
+===================
+===================
+=== ffp for: bd98-09-08-analogue-LB-2821.flacf
+===================
+===================
+===================
+08Sep98d101.flac:e4d3e1d5d073a42222fa9cd3ef0f6811
+08Sep98d102.flac:0a2951adc7791ab08e89bae68142899b
+08Sep98d103.flac:00d215fd3174fc3a62bf8dc6346e61aa
+08Sep98d104.flac:3929b4c1b0058a2f3d3d70fe1fe22625
+08Sep98d105.flac:0dc5dc0ce8b679a2b072b3930c2946ed
+08Sep98d106.flac:e77f02e1e6ba618506923aef5f608f3c
+08Sep98d107.flac:ca25fab623753337a216d63fd3ee906c
+08Sep98d108.flac:45b8f6092e07478a89dbd66df027695f
+08Sep98d109.flac:25f6e432f34b2464592ae74f313643fa
+08Sep98d110.flac:54f767956b76be3d7cf33469784d48ef
+08Sep98d111.flac:83dc5a5cec522670a435cce8f507db9d
+08Sep98d201.flac:8766bf91d13b17183f9f84af3475590f
+08Sep98d202.flac:0de51bf6fca923c5a31317043e27255d
+08Sep98d203.flac:4d064b9f7e562d32b6cbeab541342aeb
+08Sep98d204.flac:e8df85b503fe683f2b1050e1c5971b12
+08Sep98d205.flac:24d1659049c15317cb1196c73e3effd2
+08Sep98d206.flac:900a5670321fdd5ee0e0e950f252be0e
+===================
+===================
+===================
+=== shntool len for: bd98-09-08-analogue-LB-2821.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.05       63163004 B   ---   --   ---xx   flac  0.6429  08Sep98d101.flac
+     5:10.64       54834572 B   ---   --   ---xx   flac  0.6313  08Sep98d102.flac
+     6:34.69       69663932 B   ---   --   ---xx   flac  0.6388  08Sep98d103.flac
+     5:49.30       61634204 B   ---   --   ---xx   flac  0.6151  08Sep98d104.flac
+     5:52.54       62219852 B   ---   --   ---xx   flac  0.6368  08Sep98d105.flac
+     6:57.15       73594124 B   ---   --   ---xx   flac  0.6378  08Sep98d106.flac
+     6:16.32       66401708 B   ---   --   ---xx   flac  0.5728  08Sep98d107.flac
+     8:59.16       95117276 B   ---   --   ---xx   flac  0.5756  08Sep98d108.flac
+     7:49.22       82783388 B   ---   --   ---xx   flac  0.6216  08Sep98d109.flac
+     5:56.47       62908988 B   ---   --   ---xx   flac  0.6060  08Sep98d110.flac
+     5:39.19       59844332 B   ---   --   ---xx   flac  0.6133  08Sep98d111.flac
+     6:13.63       65945420 B   ---   --   ---xx   flac  0.6592  08Sep98d201.flac
+     5:31.48       58501340 B   ---   --   ---xx   flac  0.5951  08Sep98d202.flac
+     5:31.52       58510748 B   ---   --   ---xx   flac  0.6378  08Sep98d203.flac
+     4:48.33       50880860 B   ---   --   ---xx   flac  0.5801  08Sep98d204.flac
+     6:56.11       73408316 B   ---   --   ---xx   flac  0.6269  08Sep98d205.flac
+     6:04.36       64294316 B   ---   --   ---xx   flac  0.6117  08Sep98d206.flac
+   106:10.16     1123706380 B                            0.6174  (17 files)
+===================
+===================
+===================

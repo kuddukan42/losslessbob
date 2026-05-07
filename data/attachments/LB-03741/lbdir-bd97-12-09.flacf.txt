@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-09.flacf 
+=================== 
+=================== 
+=================== 
+e1f809db94235dde2e0c375cfbdf64aa  bd1997-12-09 boston.flacf.md5
+9537ff3f76bb2464d965e56f613b353c  bd1997-12-09 boston.flacf.txt
+6d880f60137e8737ea8f5b44369734cd  bd1997-12-09 d1t1.flac
+28eb3cf6916a3ba45db4dea3cd44552a  bd1997-12-09 d1t2.flac
+99cad1f5615efc43b23623da1e7e9642  bd1997-12-09 d1t3.flac
+fcc91e1374d18212c067a4d9976b2aa2  bd1997-12-09 d1t4.flac
+7be362fd0ee7ec8ab9b4191530dba85e  bd1997-12-09 d1t5.flac
+9afc6e785394493242e0deb78c1bd8b9  bd1997-12-09 d1t6.flac
+cab7c1c0cd15865c590936073a62e9a6  bd1997-12-09 d1t7.flac
+0fbf35bb4d9bb707c78b69d31f53cccc  bd1997-12-09 d1t8.flac
+d8225567a9ec7e716dd16f9035a9015d  bd1997-12-09 d2t1.flac
+a77edfca540f1bb62e8d02df5114a9f4  bd1997-12-09 d2t2.flac
+88e1d3d941995a482a95981e8fda9aa2  bd1997-12-09 d2t3.flac
+e6cea70f42c0babc04ce385bd8c16fbc  bd1997-12-09 d2t4.flac
+26fdebf846cfe1885860998221598892  bd1997-12-09 d2t5.flac
+187a533054b32b883650dc839a0b65f8  bd1997-12-09 d2t6.flac
+2bf21003876d0989218e026b49e37882  bd1997-12-09 d2t7.flac
+42969793f543f18428650c520d924396  bd97-12-09-LB-3741.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-09.flacf 
+=================== 
+=================== 
+=================== 
+bd1997-12-09 d1t1.flac:599b2cc0fa5bddc9022efd06a9c787a4
+bd1997-12-09 d1t2.flac:59a328876e4dfae55610a48d7d70d326
+bd1997-12-09 d1t3.flac:f7266cc3dce3f45eabe2e98206aa606c
+bd1997-12-09 d1t4.flac:7571ede85b93c2e1b4f7ef876d8ecc26
+bd1997-12-09 d1t5.flac:3ab5bbb99f8672f3f60156a4cfa85a18
+bd1997-12-09 d1t6.flac:4ec0aba1b6d4b654045625767c3da85c
+bd1997-12-09 d1t7.flac:56090c7a8b38ed49c3ce6d265a52f2b1
+bd1997-12-09 d1t8.flac:416bd234cd7dfd568faefec52c20664d
+bd1997-12-09 d2t1.flac:dcd66a9b952cdc2f48a6acb4fb2b1af1
+bd1997-12-09 d2t2.flac:a0ca5dcbb74f5edd282e63fed9d31940
+bd1997-12-09 d2t3.flac:1441aa616b4b6928bedcca31e0776792
+bd1997-12-09 d2t4.flac:df400cf20f42a448ca1191d87b49283e
+bd1997-12-09 d2t5.flac:ccb968ecce5aaf9fbaeb11e60877d832
+bd1997-12-09 d2t6.flac:b96bcf201bbfd5e0782b8c7819cd9b10
+bd1997-12-09 d2t7.flac:a744e31abbc685dfb745abd6ae5e6eb5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-09.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.08       53820860 B   ---   --   ---xx   flac  0.7162  bd1997-12-09 d1t1.flac
+     5:45.00       60858044 B   ---   --   ---xx   flac  0.7056  bd1997-12-09 d1t2.flac
+     6:58.00       73735244 B   ---   --   ---xx   flac  0.7076  bd1997-12-09 d1t3.flac
+     7:59.00       84495644 B   ---   --   ---xx   flac  0.7031  bd1997-12-09 d1t4.flac
+     5:59.00       63327644 B   ---   --   ---xx   flac  0.7130  bd1997-12-09 d1t5.flac
+     7:08.00       75499244 B   ---   --   ---xx   flac  0.7137  bd1997-12-09 d1t6.flac
+     5:17.00       55918844 B   ---   --   ---xx   flac  0.6412  bd1997-12-09 d1t7.flac
+     6:18.02       66683948 B   ---   --   ---xx   flac  0.6170  bd1997-12-09 d1t8.flac
+     8:40.23       91782140 B   ---   --   ---xx   flac  0.6313  bd1997-12-09 d2t1.flac
+     8:40.00       91728044 B   ---   --   ---xx   flac  0.6351  bd1997-12-09 d2t2.flac
+     4:33.00       48157244 B   ---   --   ---xx   flac  0.6135  bd1997-12-09 d2t3.flac
+     6:22.00       67384844 B   ---   --   ---xx   flac  0.6174  bd1997-12-09 d2t4.flac
+     8:31.00       90140444 B   ---   --   ---xx   flac  0.6333  bd1997-12-09 d2t5.flac
+     7:24.00       78321644 B   ---   --   ---xx   flac  0.6141  bd1997-12-09 d2t6.flac
+     7:03.16       74654876 B   ---   --   ---xx   flac  0.5878  bd1997-12-09 d2t7.flac
+   101:42.49     1076508708 B                            0.6554  (15 files)
+=================== 
+=================== 
+=================== 

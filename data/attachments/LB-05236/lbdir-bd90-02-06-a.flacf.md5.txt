@@ -1,0 +1,23 @@
+a88cea072fd89b1c369c74ae13bd4ae1  BD 1990-02-06 London.txt
+ab24103ac2cd2c8522fa79b20659e136  D1\Track 01.flac
+aee697fd6c152d4a0ca3693fa9190107  D1\Track 02.flac
+d6cd3dbcfb9b533005c99a8da81d4fb5  D1\Track 03.flac
+392318a57bbcd60fca0590a30351e3fd  D1\Track 04.flac
+3ad48f55e3afcafff7e47fa35c2a3530  D1\Track 05.flac
+6f6b6aa3ea699c91ddeda589f189cac2  D1\Track 06.flac
+798e4f7c22a3418298e871c86d0809fe  D1\Track 07.flac
+f67184019619c351ccc880a244567186  D1\Track 08.flac
+5be16825c7712b167338b53c1f7dcc07  D1\Track 09.flac
+c1a783c58b31efa81dae68ba40b9a24e  D1\Track 10.flac
+192a00291ffb3bda8c9f0bf3c95ff62b  D2\Track 01.flac
+0f6f67d547bf1896d977849ab122a5f6  D2\Track 02.flac
+fe33ed69b4a6d4d9e34a1501f6885ff5  D2\Track 03.flac
+7e550e54b955a26d96a00b92ae8b9218  D2\Track 04.flac
+2f88fbc6d40403bafa6df4454f39e8ce  D2\Track 05.flac
+8da866671d037c2b16611f76d3ced7a6  D2\Track 06.flac
+54b0ff5840a2794d416caaf6406e61cb  D2\Track 07.flac
+259b576f7219c4870bf4f49f869c8fdd  D2\Track 08.flac
+dd140dbb9505f3d722af06119b4ef0fe  D2\Track 09.flac
+d74f41b74535e2fc7b85a7610519debe  D2\Track 10.flac
+0848e46fd2010871056ede5428cc2f35  fingerprintD1.ffp
+7114ed183003f0ba3b00b30a47b5b848  fingerprintD2.ffp

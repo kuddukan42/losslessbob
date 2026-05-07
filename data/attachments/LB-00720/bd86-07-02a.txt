@@ -1,0 +1,40 @@
+Bob Dylan
+Rubber Bowl
+Akron, Ohio
+7/2/86
+2CDR (57min+54min), alternate recording without as much distracting crowd noise as the CB master version; some will prefer this one; good to very good sound, downloaded from a.b.m.s.d 11/02; fade in/out at d2t6 6:2x
+CASS (low gen) > CDR > EAC (w/correct offset) > WAV > SHNTOOL (join) > CE2000 (normalization & fades) > CD Wave Editor (tracking) > SHNTOOL (fix) > mkwACT > SHN
+please do not encode to mp3
+
+Disc One
+01 Shake A Hand
+02 Positively 4th Street
+03 Clean-Cut Kid
+04 I'll Remember You
+05 Trust Yourself
+06 That Lucky Old Sun
+07 Masters Of War
+08 To Ramona
+09 One Too Many Mornings
+10 It Ain't Me, Babe
+11 I Forgot More Than You'll Ever Know
+12 Band Of The Hand
+13 When The Night Comes Falling From The Sky
+14 Lonesome Town
+15 Ballad Of A Thin Man
+
+Disc Two
+01 Rainy Day Women #12 & 35
+02 Seeing The Real You At Last
+03 Across The Borderline
+04 I And I
+05 Like A Rolling Stone
+06 In The // Garden
+07 Blowin' In The Wind
+08 Red Cadillac And A Black Moustache
+09 Knockin' On Heaven's Door
+10 Don't Think Twice, It's All Right
+11 It's All Over Now, Baby Blue ##
+
+## Bob Dylan with the Grateful Dead
+NOTE: edits between some songs on source tape

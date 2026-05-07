@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-29-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+b5e8576e580762636aae46bedec452cd  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final01.flac
+1a9a195fb3576cf05a50459b77079bbe  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final02.flac
+a8af8ede744d57e816fad0a07a86772d  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final03.flac
+bdc0eb71a007d19a9c581ef215b1eabb  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final04.flac
+37ca4887765392ac57a17d25c144e3d4  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final05.flac
+8f1d271994bdd61370123c0a082835ff  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final06.flac
+2418dd666717a44ba61c3aca9e5175f0  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final07.flac
+78122726cd633379a4058c01e3508cb7  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final08.flac
+a9140cb144d13f6795ac2579c3bcbfca  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final09.flac
+2a5e1afaa976d5cdc3f2652788bffe00  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final10.flac
+65a3bcb4159eb5d200a25f126a772f14  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final11.flac
+aacc62ad094a394f30d00cf0f13758e7  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final12.flac
+d5e391a6945d6f329c9f3b92fb6efe7f  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final13.flac
+14f74b29d787ce05f6835be3c14b9cca  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final14.flac
+1322e157d66d60a8b8cb0a1091d967db  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final15.flac
+e962bd68401b6894331ba5e5e44d82b0  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final16.flac
+f544e0feaf94fb44a28e05ff476de4bd  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final17.flac
+ca64ddbd2d6a31897fb7a51552323a57  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final18.flac
+2ed4a9d4e818806a8e26f4adee57e504  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final19.flac
+2d8fae733a9e94b56a82af2b61f7c09e  Bob Dylan  Birmingham  4-29-09.md5
+f1a057b112bbdd727f0f1ae95089917a  Bob Dylan  Birmingham  4-29-09.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-29-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final01.flac:025199d5f57533625501a4c1798d1893
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final02.flac:182f75e9fa007a20f4f1e2132504aaa9
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final03.flac:9d8b5b2b34cbdf329e692950bb968ca8
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final04.flac:528f34fed011d0d3d43f34e2d913d5c6
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final05.flac:e9a38dc1562ad02eda05a26cabc3e0f2
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final06.flac:38d2cf375b7c2447e8e44edb58adb987
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final07.flac:c3a8c1c0798ab862d4ba70e14b580783
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final08.flac:aac520d6b1f138a2f783f7aedee6d5e7
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final09.flac:831ce4da0fc9a172d880a1ac6f3f196d
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final10.flac:6c1b79cad16f36465a38be76d7ea1a71
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final11.flac:0d30d0d6dbf2c652d6f1c49c0acbcee8
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final12.flac:19349c33ddcd89f2df86bb9ce25d4bb0
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final13.flac:559c466e9b986725b30c127f1c9ab0a0
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final14.flac:56d7ad24dfe1fee1cc69f5abeee5d492
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final15.flac:83b3a41e30934c7782a6a57c1020ad4d
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final16.flac:b75d8a6e3b13ae470b1a9fab9ff463e3
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final17.flac:44510293f08d408f7ad443e7befda685
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final18.flac:40c248389bc633cea1711b11088312a3
+Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final19.flac:2852d51b455c8d223db7f9216190dede
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-29-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:15.18       34440380 B   ---   --   ---xx   flac  0.4885  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final01.flac
+     5:15.53       55690700 B   ---   --   ---xx   flac  0.4694  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final02.flac
+     5:27.22       57734588 B   ---   --   ---xx   flac  0.4683  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final03.flac
+     6:42.47       71023388 B   ---   --   ---xx   flac  0.5040  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final04.flac
+     4:18.21       45560636 B   ---   --   ---xx   flac  0.4473  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final05.flac
+    11:04.39      117221372 B   ---   --   ---xx   flac  0.4596  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final06.flac
+     7:21.55       77921804 B   ---   --   ---xx   flac  0.4815  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final07.flac
+     6:57.09       73580012 B   ---   --   ---xx   flac  0.4258  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final08.flac
+     6:59.71       74078636 B   ---   --   ---xx   flac  0.4982  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final09.flac
+     6:48.74       72145292 B   ---   --   ---xx   flac  0.4463  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final10.flac
+     6:12.68       65780780 B   ---   --   ---xx   flac  0.4769  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final11.flac
+     8:07.74       86080892 B   ---   --   ---xx   flac  0.4300  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final12.flac
+     7:00.48       74200940 B   ---   --   ---xx   flac  0.5003  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final13.flac
+     6:28.53       68567900 B   ---   --   ---xx   flac  0.4898  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final14.flac
+     3:19.51       35223596 B   ---   --   ---xx   flac  0.3816  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final15.flac
+     4:50.09       51177212 B   ---   --   ---xx   flac  0.4633  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final16.flac
+     7:07.37       75409868 B   ---   --   ---xx   flac  0.3925  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final17.flac
+     0:50.63        8968220 B   ---   --   ---xx   flac  0.4433  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final18.flac
+     5:39.37       59886668 B   ---   --   ---xx   flac  0.4447  Bob Dylan  Birmingham  4-29-09  24-44-Liv2 EQ-final19.flac
+   113:49.24     1204692884 B                            0.4602  (19 files)
+=================== 
+=================== 
+=================== 

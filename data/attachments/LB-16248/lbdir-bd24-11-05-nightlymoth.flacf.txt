@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd24-11-05-nightlymoth.flacf
+===================
+===================
+===================
+8409dee9b0d8749497314ed2baf8988c *1. All Along the Watchtower.flac
+9f6b4ee46d941413f72ff5f97ce8354b *10. Desolation Row.flac
+46763ecdacc6e7b2044f132e7fba49ef *11. Key West (Philsopher Pirate).flac
+86af90fdce591c772fab8046f6d60a14 *12. Watching the River Flow.flac
+17e1221fe92537a9fe0d2fc8a715bb13 *13. It's All Over Now, Baby Blue.flac
+e57547dc81836d62f2846fa63f21f10a *14. I've Made Up My Mind to Give Myself to You.flac
+6c63e1e8944ff7f05ae23df6fc35c7e0 *15. Mother of Muses.flac
+58bfa931c9e6a76dded4f30763ed2e39 *16. Goodbye Jimmy Reed.flac
+0f244cb8567305e308affb7d922fed4e *17. Every Grain of Sand .flac
+91c332528b9b571d42b40904e4488f23 *2. It Ain't Me, Babe.flac
+1d67636226f1ba4867a9dfde1008a430 *3. I Contain Multitudes .flac
+5662e066c54093a02b0838d76a839de0 *4. False Prophet.flac
+a283cf97c5705b4851d3411c5eed1991 *5. When I Paint My Masterpiece.flac
+8ebc2dd12f09f7cbdc24d3cd5679faea *6. Black Rider.flac
+e310912edeab08daf6f3b6b2533f1491 *7. My Own Version of You.flac
+019b92edce28b445c6329acaef95e127 *8. To Be Alone with You.flac
+7a7f21afd408b3254090f5cd5b2c0d46 *9. Crossing the Rubicon.flac
+dce07f7d4c2548a1af50d2d7a467a479 *md5.md5
+242235c2f4a7c4fc13783871779c117c *notes.txt
+===================
+===================
+===================
+=== ffp for: bd24-11-05-nightlymoth.flacf
+===================
+===================
+===================
+1. All Along the Watchtower.flac:602131ab4e909f02e9c2610c9f543af0
+10. Desolation Row.flac:a7b77b698bad7134dedb649281665acd
+11. Key West (Philsopher Pirate).flac:1bd4e28fdb59899a561d8be32617c649
+12. Watching the River Flow.flac:7d5d2a68cabc8a34ec118bd69ed9ca79
+13. It's All Over Now, Baby Blue.flac:1a320e3d1917fda5444270669845d1de
+14. I've Made Up My Mind to Give Myself to You.flac:0c5da6bb6cd32e72044efa8178ef7752
+15. Mother of Muses.flac:111fa1d04f51bfa7ec45607dca31268c
+16. Goodbye Jimmy Reed.flac:8b55482aad0f86ea99cdf89eb7053c23
+17. Every Grain of Sand .flac:12def3bfd8022578644c46e191f1c19a
+2. It Ain't Me, Babe.flac:5884a995496ed2617737df0c8e08d833
+3. I Contain Multitudes .flac:e9dfa765b70bf34810b12bc0cf996459
+4. False Prophet.flac:38642e98070a889e116383bf78d255fb
+5. When I Paint My Masterpiece.flac:b1dc1051949b5c6549b4b063832fecb0
+6. Black Rider.flac:404b0ff29e09e0b5087db655f54838ac
+7. My Own Version of You.flac:3cdb62157009564031f84915875a7d0f
+8. To Be Alone with You.flac:811d7f1afdf9dc108545de5cbffc76cb
+9. Crossing the Rubicon.flac:c8c5197901bbb2b86fa4b245f473bbaa
+===================
+===================
+===================
+=== shntool len for: bd24-11-05-nightlymoth.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.65       61892924 B   ---   --   ---xx   flac  0.4938  1. All Along the Watchtower.flac
+     8:37.61       91342316 B   ---   --   ---xx   flac  0.4600  10. Desolation Row.flac
+     8:27.31       89507756 B   ---   --   ---xx   flac  0.3585  11. Key West (Philsopher Pirate).flac
+     5:33.08       58760060 B   ---   --   ---xx   flac  0.4660  12. Watching the River Flow.flac
+     4:09.35       44005964 B   ---   --   ---xx   flac  0.4019  13. It's All Over Now, Baby Blue.flac
+     6:14.10       65997164 B   ---   --   ---xx   flac  0.3880  14. I've Made Up My Mind to Give Myself to You.flac
+     5:47.02       61215548 B   ---   --   ---xx   flac  0.3812  15. Mother of Muses.flac
+     6:18.09       66700412 B   ---   --   ---xx   flac  0.4719  16. Goodbye Jimmy Reed.flac
+     7:03.65       74770124 B   ---   --   ---xx   flac  0.4033  17. Every Grain of Sand .flac
+     7:20.07       77632508 B   ---   --   ---xx   flac  0.4940  2. It Ain't Me, Babe.flac
+     5:38.29       59691452 B   ---   --   ---xx   flac  0.4523  3. I Contain Multitudes .flac
+     7:00.01       74090396 B   ---   --   ---xx   flac  0.4552  4. False Prophet.flac
+     4:49.15       51014924 B   ---   --   ---xx   flac  0.4376  5. When I Paint My Masterpiece.flac
+     4:57.48       52503740 B   ---   --   ---xx   flac  0.3997  6. Black Rider.flac
+     7:08.37       75586268 B   ---   --   ---xx   flac  0.4192  7. My Own Version of You.flac
+     4:18.62       45657068 B   ---   --   ---xx   flac  0.4662  8. To Be Alone with You.flac
+     7:34.11       80111516 B   ---   --   ---xx   flac  0.4377  9. Crossing the Rubicon.flac
+   106:48.46     1130480140 B                            0.4341  (17 files)
+===================
+===================
+===================

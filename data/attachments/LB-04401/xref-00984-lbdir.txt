@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd95-04-09-AcidProject.flacf
+===================
+===================
+===================
+0874d36478ef3ab98b6f1684ea314680 *01 - Dylan Glasgow 95 Front.jpg
+e8ffc8b91a886bf6b500908f63e20fa5 *02 - Dylan Glasgow 95 Back.jpg
+cfb68933b6a5611c71d526bbf5474cae *101.flac
+bf4fe0ddd1438644b8225d15159ee714 *102.flac
+81f7081233864406ff5deff6aeec4c78 *103.flac
+a5c911ac36f4e3f91f34cfff21d4b0df *104.flac
+512cad6d10f0083fc514e5be7659ecbf *105.flac
+eaeeeff5783818ce73817b8e9b25ab2e *106.flac
+20099968844a6d787899b66044b2cfa3 *107.flac
+af12e1be31f8dd3c34aa9e9b0dc9808e *108.flac
+70c9f0d18b741b519bc171741a4bdbca *109.flac
+077749b9a05535cebaee9454061679a7 *201.flac
+e5ee39ef71afd38be44e7f2dd6e6c6e8 *202.flac
+ca564b276fed7de7727086ff1efa005e *203.flac
+d80c7baa793b1d0e785e2b4ebf211bc5 *204.flac
+2296526fdab50116d9fa3c57d9c4b437 *205.flac
+e8bf20c50944543b071e721b6de39991 *206.flac
+62ad67c15c93539be4855bef7c4bbaf7 *Bob Dylan - Live In Glasgow 1995_AcidProject Vol 08.ffp
+78b5655a72c07f4d1206b7d1a2aaf13a *Bob Dylan - Live In Glasgow 1995_AcidProject Vol 08.md5
+62ad67c15c93539be4855bef7c4bbaf7 *checksum.txt
+1c06b671530a03cc0e2e7c2251023085 *folder.jpg
+32794b5c7fb92c7a3f9da40ec266993e *info.txt
+c10534da2028214aabc0f501f6cc8e3f *original data before the remaster\bd950409alt_info.txt
+bcc631f56316ee0a4f662c705ca9a2de *original data before the remaster\bd950409alt_md5.md5
+===================
+===================
+===================
+=== ffp for: bd95-04-09-AcidProject.flacf
+===================
+===================
+===================
+101.flac:1586b63a39839024f29099c4a82554dd
+102.flac:e57b87cc49e10f5f9253ff7a643d3bc0
+103.flac:31230f12eb24e0d1601848b46a132829
+104.flac:e163a630f85eb4e4c0e76414447863ef
+105.flac:b1c566cec7e14be8638f8cbfe933a721
+106.flac:844dae63481d9e3302cfdfe08ef03a45
+107.flac:73bd6b72fa43a9c9469732fea1f41ff9
+108.flac:97c4f9a65ebf445a74a1f552fc8949b1
+109.flac:0e2a8a6308a2b5c32f96c59c6aca8ad2
+201.flac:925e5b7533417213c4d7345a00bbacf4
+202.flac:2b6af8035649934c404c3319838ea5e0
+203.flac:25a8f2c4050c794ea33f3c1b882f4997
+204.flac:38a303c41e0f44633db0733a211d8dcb
+205.flac:f1a2ebc458838566c3422948a7f46ae5
+206.flac:b9c4763cb14aa1945de8aa6a4a890c85
+===================
+===================
+===================
+=== shntool len for: bd95-04-09-AcidProject.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.44       54081372 B   -b-   --   ---xx   flac  0.7259  101.flac
+     5:25.45       57435880 B   -b-   --   ---xx   flac  0.6535  102.flac
+     6:24.56       67869352 B   -b-   --   ---xx   flac  0.6929  103.flac
+     6:59.00       73911640 B   -b-   --   ---xx   flac  0.5943  104.flac
+     8:51.72       93837784 B   -b-   --   ---xx   flac  0.6502  105.flac
+     6:04.72       64378984 B   -b-   --   ---xx   flac  0.6708  106.flac
+     7:09.39       75767368 B   -b-   --   ---xx   flac  0.5525  107.flac
+     8:03.41       85297672 B   -b-   --   ---xx   flac  0.5469  108.flac
+     8:47.10       92986360 B   -b-   --   ---xx   flac  0.5482  109.flac
+     6:29.66       68774872 B   -b-   --   ---xx   flac  0.6694  201.flac
+     9:43.30      102911800 B   -b-   --   ---xx   flac  0.6261  202.flac
+     9:20.24       98840488 B   -b-   --   ---xx   flac  0.6735  203.flac
+     7:58.64       84469768 B   -b-   --   ---xx   flac  0.6332  204.flac
+     9:15.08       97920856 B   -b-   --   ---xx   flac  0.5892  205.flac
+     5:35.60       59235164 B   ---   --   ---xx   flac  0.6317  206.flac
+   111:16.31     1177719360 B                            0.6258  (15 files)
+===================
+===================
+===================

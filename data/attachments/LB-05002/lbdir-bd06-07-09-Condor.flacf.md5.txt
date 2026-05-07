@@ -1,0 +1,18 @@
+a760c8165db2aaecda01001762b34390  bd2006-07-09.txt
+0c3c5ab375cded5d5a59f55b4a49ee8b  Disc 1\Disc 1.md5
+ad73a8d4ece2a36eea1274eda7e781a7  Disc 1\Track01.flac
+3711f1978a7f3040682b8ce5c808d63a  Disc 1\Track02.flac
+58a0eb3c616b15135d4ae9c1a831abaa  Disc 1\Track03.flac
+77e65b8bd2e721ba562e81c014017d0b  Disc 1\Track04.flac
+3c08698a1a77dcada0dfe011e535dc3c  Disc 1\Track05.flac
+8390cbb436079cae40225798ba3e1e82  Disc 1\Track06.flac
+f1e39532f39affeee4ea103a712ac2ba  Disc 1\Track07.flac
+e003ce393640b33410abd5e78e98be70  Disc 1\Track08.flac
+d8f8f2bc38a36a6585c9ffb0ddcdbf55  Disc 2\Disc 2.md5
+9ff7364f21bdae0988ba9cdb2f37c6d2  Disc 2\Track01.flac
+6f12f5d94225592cb5d4135591c48b4d  Disc 2\Track02.flac
+587a5c256f52aba864d7e2bac5e0398b  Disc 2\Track03.flac
+eaa4c756631f775d82435efd52c81201  Disc 2\Track04.flac
+162adc15fadf34c8ddf9b3b4663c2a8e  Disc 2\Track05.flac
+15d4f20dba6badb47c3b376183e8397c  Disc 2\Track06.flac
+26dfe9c704f35cdbfc00be9336f93b0d  Disc 2\Track07.flac

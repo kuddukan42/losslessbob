@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-17 Hartford 
+=================== 
+=================== 
+=================== 
+92f85c98429a45c8c16c19f615798c53  11-17-02  # 1\BOB DYLAN01.shn
+500994bc657ce71d4f38f451a0bb8941  11-17-02  # 1\BOB DYLAN02.shn
+2dc4b572b5b5b95e4f151691bc1a5cf6  11-17-02  # 1\BOB DYLAN03.shn
+619305a2952880ca7462d3d56555abbb  11-17-02  # 1\BOB DYLAN04.shn
+e2e8c1fd5aedb6f11054244eb5cb29e8  11-17-02  # 1\BOB DYLAN05.shn
+54870aeda0468d9e327ee9dd74e33fee  11-17-02  # 1\BOB DYLAN06.shn
+c1c48aabf37aa5f92a00d1f4a20a61eb  11-17-02  # 1\BOB DYLAN07.shn
+c9ce0c38bca7ae15130d43b3d9a7c717  11-17-02  # 1\BOB DYLAN08.shn
+bac7dbd121a19ef8b2255f51fba3556b  11-17-02  # 1\BOB DYLAN09.shn
+676ece2ede27687190ee2f935ef3d2d8  11-17-02  # 1\BOB DYLAN10.shn
+637b0d66d13d88055d0fd6c065fe3dae  11-17-02  # 1\BOB DYLAN11.shn
+49339c774c4b344c062842baaf61523c  11-17-02  # 1\noname.md5
+7e59c454acf2eda8d2b482fa5056fa8a  112-17-02  # 2\BOB DYLAN01.shn
+2132f3d57bf085e429bc9488ed465a03  112-17-02  # 2\BOB DYLAN02.shn
+3af296c39a7af2cb1df1fc31afcbaf74  112-17-02  # 2\BOB DYLAN03.shn
+852253611462837664f1939a97636364  112-17-02  # 2\BOB DYLAN04.shn
+6e1a61f1d2a155fbc9e633d9e23bdf1b  112-17-02  # 2\BOB DYLAN05.shn
+dd14631634f90eb4bc591f2a27955e3a  112-17-02  # 2\BOB DYLAN06.shn
+6fafb3fb8ec428a283d0882569dc5e12  112-17-02  # 2\BOB DYLAN07.shn
+bd18f355c12dedae5c641703b44641af  112-17-02  # 2\BOB DYLAN08.shn
+14a2e8ae946a100c159db7a423969e71  112-17-02  # 2\BOB DYLAN09.shn
+9bbc96457412256a67ac91d30935bac2  112-17-02  # 2\noname.md5
+a0f9db0364873f230e1f5d9131440d49  bd02-11-17.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-17 Hartford\112-17-02  # 2 
+=================== 
+=================== 
+=================== 
+e3357819130df5e4aefdca99da52b511  [shntool]  BOB_DYLAN01.wav
+7bbca0c5189c973d14e1f123c4095bc7  [shntool]  BOB_DYLAN02.wav
+a720961550413b02a46b58bf2032f6c9  [shntool]  BOB_DYLAN03.wav
+842a1f485eba46511432bef2bbb4e376  [shntool]  BOB_DYLAN04.wav
+e47f7d5a8f585a431e2c12a035c3c34d  [shntool]  BOB_DYLAN05.wav
+70385727871aead76c2d735ad8aef280  [shntool]  BOB_DYLAN06.wav
+94d640045ea67192b0fa46e64a47c897  [shntool]  BOB_DYLAN07.wav
+bf268e68ed5fcc911802e110a09f0489  [shntool]  BOB_DYLAN08.wav
+6fe206056eeb1c72bd93e2ab237ad22a  [shntool]  BOB_DYLAN09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-17 Hartford\11-17-02  # 1 
+=================== 
+=================== 
+=================== 
+24961fb98479fd4c21903a6b74279df1  [shntool]  BOB_DYLAN01.wav
+76eb4a44ee4ac4644fcc18cbe715956c  [shntool]  BOB_DYLAN02.wav
+b6d90fde50d5ad8f052a3ea135d0a91a  [shntool]  BOB_DYLAN03.wav
+bf6fd5a2d7271298300aa3d3988db153  [shntool]  BOB_DYLAN04.wav
+d6c9d7f8820b762921d43e184096242b  [shntool]  BOB_DYLAN05.wav
+3add7b6cb658eb0f7e0cafed96d081c8  [shntool]  BOB_DYLAN06.wav
+14a2df5e02bb5448f37311d6eab76625  [shntool]  BOB_DYLAN07.wav
+e5864910e49764098ce64dda26c1276e  [shntool]  BOB_DYLAN08.wav
+7f5357f77077b43bb00c1cfd6b2a59a4  [shntool]  BOB_DYLAN09.wav
+582b7322671a9c6a0f111c007e5dad74  [shntool]  BOB_DYLAN10.wav
+03572d357179191f24477c214b1ca307  [shntool]  BOB_DYLAN11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-17 Hartford\112-17-02  # 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.63       41249420 B   ---   --   ---xx    shn  0.6909  BOB DYLAN01.shn
+     6:49.70       72312284 B   ---   --   ---xx    shn  0.6663  BOB DYLAN02.shn
+     9:40.31      102384956 B   ---   --   ---xx    shn  0.6116  BOB DYLAN03.shn
+     7:58.65       84472124 B   ---   --   ---xx    shn  0.6518  BOB DYLAN04.shn
+     3:27.23       36568940 B   ---   --   ---xx    shn  0.6120  BOB DYLAN05.shn
+     6:47.46       71903036 B   ---   --   ---xx    shn  0.5921  BOB DYLAN06.shn
+     8:03.19       85245932 B   ---   --   ---xx    shn  0.6617  BOB DYLAN07.shn
+    10:25.65      110402924 B   ---   --   ---xx    shn  0.6401  BOB DYLAN08.shn
+     7:44.49       81964892 B   ---   --   ---xx    shn  0.6739  BOB DYLAN09.shn
+    64:51.56      686504508 B                            0.6433  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-17 Hartford\11-17-02  # 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.65       62069324 B   ---   --   ---xx    shn  0.5803  BOB DYLAN01.shn
+     6:46.03       71625500 B   ---   --   ---xx    shn  0.6445  BOB DYLAN02.shn
+     6:39.36       70468316 B   ---   --   ---xx    shn  0.6393  BOB DYLAN03.shn
+     5:14.18       55431980 B   ---   --   ---xx    shn  0.6198  BOB DYLAN04.shn
+     6:57.32       73634108 B   ---   --   ---xx    shn  0.6497  BOB DYLAN05.shn
+     4:07.59       43709612 B   ---   --   ---xx    shn  0.6555  BOB DYLAN06.shn
+     7:17.24       77143292 B   ---   --   ---xx    shn  0.6218  BOB DYLAN07.shn
+     7:37.43       80715980 B   ---   --   ---xx    shn  0.6711  BOB DYLAN08.shn
+     6:46.46       71726636 B   ---   --   ---xx    shn  0.6590  BOB DYLAN09.shn
+     5:57.38       63064220 B   ---   --   ---xx    shn  0.6893  BOB DYLAN10.shn
+     5:55.39       62713772 B   ---   --   ---xx    shn  0.6573  BOB DYLAN11.shn
+    69:11.28      732302740 B                            0.6448  (11 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-04-09-fin.flacf 
+=================== 
+=================== 
+=================== 
+eb43060afbf7dfb5e64699d805d28854  bd04-04-09-fin.txt
+6e08de14c15403eed4b33b1891da7d3b  Bob Dylan Orange Peel 4_9_04.txt
+29ec352858901bcadb548e4d31b38c71  DAELog_2004_5_5_22h37m31s.txt
+8cc7860bf3ef8f642683cfbb2a59bd99  DAELog_2004_5_5_22h41m36s.txt
+b05d9fc15da40a1ab444ad8e7f896996  OrangePeel_Disk1_Track01.flac
+c41e267863927939c64a1249cc064b7f  OrangePeel_Disk1_Track02.flac
+e18c47c6c78b1e541c52342f26629751  OrangePeel_Disk1_Track03.flac
+b59d0abb9ae761e4f139deb955de6edc  OrangePeel_Disk1_Track04.flac
+49b56a5eb49357bb88bf2af88c02c6c6  OrangePeel_Disk1_Track05.flac
+75c110ee9b799cc699ee4f9e2f85a84a  OrangePeel_Disk1_Track06.flac
+2b0349925bb4ab9fa7002ff2c4c7d6d6  OrangePeel_Disk1_Track07.flac
+d1742310150c208fd24e009189b95bc4  OrangePeel_Disk1_Track08.flac
+8b68915075f211dd4b78873e9cb6e4fa  OrangePeel_Disk1_Track09.flac
+1b4e1868f5bdc886984183060a5bfa30  OrangePeel_Disk2_Track01.flac
+e2df625ef61b07bfe59fa9f764cfbaac  OrangePeel_Disk2_Track02.flac
+65d96d3ace8673fa9abcefab019ba86f  OrangePeel_Disk2_Track03.flac
+87f79a484dd719aef7ae27db0905cc4e  OrangePeel_Disk2_Track04.flac
+d1f6ea2983001dd24785da6077209178  OrangePeel_Disk2_Track05.flac
+2a80bc57918a320c47efe9f2b1474e28  OrangePeel_Disk2_Track06.flac
+8644f6303289f091091e03fc8dce9569  OrangePeel_Disk2_Track07.flac
+5bebabd0bc3e3012a12541a95e93af64  OrangePeel_Disk2_Track08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-04-09-fin.flacf 
+=================== 
+=================== 
+=================== 
+OrangePeel_Disk1_Track01.flac:3ee941a4a255de4ae4181539d69e28ed
+OrangePeel_Disk1_Track02.flac:a8bb14457529f87c7fef4a70d590ccea
+OrangePeel_Disk1_Track03.flac:134960e9ca82f3de99e609573fa4f916
+OrangePeel_Disk1_Track04.flac:eead1120ad3455440a24c1edab15dd24
+OrangePeel_Disk1_Track05.flac:c176ec0e67e8b962d89fc12f49fa6ce3
+OrangePeel_Disk1_Track06.flac:b73b78bb4feac0f428380e625ea388fc
+OrangePeel_Disk1_Track07.flac:a8730db145e931d5885aff462cbf8b4a
+OrangePeel_Disk1_Track08.flac:51eed2d582c6f04a139be3bb36247594
+OrangePeel_Disk1_Track09.flac:7258e1b22868f0d553b5962b611eeb45
+OrangePeel_Disk2_Track01.flac:cf7787b3c8226ec20b6af421b0c25c51
+OrangePeel_Disk2_Track02.flac:90f65818f86953d3b2cd10ae0ee4b58e
+OrangePeel_Disk2_Track03.flac:ed0fc059f16aa224624682c6b3166615
+OrangePeel_Disk2_Track04.flac:8cb2b589919aab68420a238d5264d61e
+OrangePeel_Disk2_Track05.flac:a8478515d68267e4758cc39322797d41
+OrangePeel_Disk2_Track06.flac:2afe1e1bf058cf875b49bf10f4c2839e
+OrangePeel_Disk2_Track07.flac:b5b7b5a9ae427b77aaa399456c5ef0e6
+OrangePeel_Disk2_Track08.flac:df1cce0be4e9a79a5ad311aff7a9b11b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-04-09-fin.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:43.20       60552284 B   ---   --   ---xx   flac  0.6001  OrangePeel_Disk1_Track01.flac
+     6:20.72       67201388 B   ---   --   ---xx   flac  0.5674  OrangePeel_Disk1_Track02.flac
+     5:30.30       58282604 B   ---   --   ---xx   flac  0.6026  OrangePeel_Disk1_Track03.flac
+     5:24.46       57261836 B   ---   --   ---xx   flac  0.5637  OrangePeel_Disk1_Track04.flac
+     7:03.61       74760716 B   ---   --   ---xx   flac  0.6278  OrangePeel_Disk1_Track05.flac
+     5:50.38       61829420 B   ---   --   ---xx   flac  0.5946  OrangePeel_Disk1_Track06.flac
+     5:40.32       60051308 B   ---   --   ---xx   flac  0.5995  OrangePeel_Disk1_Track07.flac
+     5:51.74       62090492 B   ---   --   ---xx   flac  0.6175  OrangePeel_Disk1_Track08.flac
+     5:56.04       62807852 B   ---   --   ---xx   flac  0.5228  OrangePeel_Disk1_Track09.flac
+     8:36.13       91053020 B   ---   --   ---xx   flac  0.6128  OrangePeel_Disk2_Track01.flac
+     5:40.05       59987804 B   ---   --   ---xx   flac  0.5243  OrangePeel_Disk2_Track02.flac
+     7:18.64       77413772 B   ---   --   ---xx   flac  0.6137  OrangePeel_Disk2_Track03.flac
+     6:27.60       68407964 B   ---   --   ---xx   flac  0.5589  OrangePeel_Disk2_Track04.flac
+    12:50.30      135898604 B   ---   --   ---xx   flac  0.5923  OrangePeel_Disk2_Track05.flac
+     5:52.41       62189276 B   ---   --   ---xx   flac  0.6200  OrangePeel_Disk2_Track06.flac
+     7:37.40       80708924 B   ---   --   ---xx   flac  0.5999  OrangePeel_Disk2_Track07.flac
+     8:00.38       84761420 B   ---   --   ---xx   flac  0.5883  OrangePeel_Disk2_Track08.flac
+   115:45.68     1225258684 B                            0.5901  (17 files)
+=================== 
+=================== 
+=================== 

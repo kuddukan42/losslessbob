@@ -1,0 +1,118 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-01-30-sb.flacf 
+=================== 
+=================== 
+=================== 
+a9b74395f4a40e2dbc5cdc4ce9eaef0b  1990-01-30.md5
+59a343790f5bcabbaef616cb2b6764cb  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_101.flac
+4babf10625dc7a306988ca9b82f216cb  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_102.flac
+93cf74e49244639b204369ddb8008bfe  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_103.flac
+35420ace2e57890f075b7c69eb2b90a2  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_104.flac
+07275eedb31d166b8938a910f9c37ee0  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_105.flac
+36a68d290b89ac2ed343a9f311e83343  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_106.flac
+2ff312240acd6c4b316cbb5434a608ab  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_107.flac
+04136d1bca32d4a1e3fef3225af18c39  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_108.flac
+8472e10503f853cb46ab959085d0b9f2  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_109.flac
+2e73490de45c88370582ce734dee6666  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_110.flac
+d3fe8e2c1d928ce03138b4899ed7e49e  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_111.flac
+969e2587462a3158ab03e6f538a1d2a8  Cracked Bells And Washed-Out Horns [CD1]\1990-01-30_112.flac
+9461ccd73c5453e90dc2a69f7d1bada6  Cracked Bells And Washed-Out Horns [CD1]\Cracked Bells And Washed-Out Horns [CD1].md5
+2a6834759f97651e65f5b721b2cfafdc  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_201.flac
+194f631e0cdb764745591aba529a9687  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_202.flac
+b6aa608547a91675fb9ac0f09d93bdbb  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_203.flac
+97b46459aed3d689ebf3b3183578ef93  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_204.flac
+576cb2aba0add31d79283e19ba5f88c2  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_205.flac
+196332d15f251c41761e423f6921237a  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_206.flac
+09820df5e04659d297f4adbc0cc43e7f  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_207.flac
+9e77fa77f3d137a81db8f27b0861a59b  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_208.flac
+b27d5e0523904602c9213e9d4e405186  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_209.flac
+cf4be6e4b3309cc4ee0550626381fda8  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_210.flac
+42676359865440fd1b3411c4cfbf6d0a  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_211.flac
+03ad124a834dad268f82af1ca90c8e14  Cracked Bells And Washed-Out Horns [CD2]\1990-01-30_212.flac
+2c83b8d74fe3147671d51776dca916a6  Cracked Bells And Washed-Out Horns [CD2]\Cracked Bells And Washed-Out Horns [CD2].md5
+db7ac322e5864458e605dbb3a7229954  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-30-sb.flacf\Cracked Bells And Washed-Out Horns [CD1] 
+=================== 
+=================== 
+=================== 
+1990-01-30_101.flac:e24acf5ca510872d4df7299fcf2b377a
+1990-01-30_102.flac:f0ea486456961db14c97518080a7afd5
+1990-01-30_103.flac:3e1cd9c92456f0872a60a9f5a577323e
+1990-01-30_104.flac:d0bc7931dd962c794d8e92a1eae43477
+1990-01-30_105.flac:2fc1d93744d5fa88540e4c0c4085c7b0
+1990-01-30_106.flac:a0a3ebed7e453e4ee4f47b2e9e6581f4
+1990-01-30_107.flac:ca12ec99d1ed4d93c7f4a413e15f5ae0
+1990-01-30_108.flac:609c3a9239e697dee763d145b7f11679
+1990-01-30_109.flac:9d9d6775e94f976ac0135307cdae3c0f
+1990-01-30_110.flac:5c9cbeea3c3b7cb913a2c53e44c916fb
+1990-01-30_111.flac:206138946e59437a71db16776604523a
+1990-01-30_112.flac:ff0c9fd1f624f97224c84d00fcaf5458
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-30-sb.flacf\Cracked Bells And Washed-Out Horns [CD2] 
+=================== 
+=================== 
+=================== 
+1990-01-30_201.flac:3fdbc8a64a05c0bd297f2eddd45f63b1
+1990-01-30_202.flac:561300eb74c51fda6e3ad0bc89dd5db1
+1990-01-30_203.flac:908450319e522f5ec54e7b3d67f46faf
+1990-01-30_204.flac:2419fb98582d490bab3ea589e4e0ce79
+1990-01-30_205.flac:c2d82f4a8b8589cdfd7312ba205c93e2
+1990-01-30_206.flac:2fa8bebafb047de7c2ee64985dc58c34
+1990-01-30_207.flac:29b75a2eab67dffef9fa40fe72ef90b9
+1990-01-30_208.flac:31b20d364ef5687fdb7f5c7ba12efd47
+1990-01-30_209.flac:284f0e79886ec7db29c6533009c07f02
+1990-01-30_210.flac:3fb7108c18c40bd71083b034b017452b
+1990-01-30_211.flac:2cbbd5e82e78920a7a6d7307e8bc47fe
+1990-01-30_212.flac:d9d0a564bd40ae098de133c972316fa7
+=================== 
+=================== 
+=================== 
+=== shntool for: bd90-01-30-sb.flacf\Cracked Bells And Washed-Out Horns [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:35.01       37928396 B   ---   --   ---xx   flac  0.6725  1990-01-30_101.flac
+     4:42.34       49824812 B   ---   --   ---xx   flac  0.6764  1990-01-30_102.flac
+     4:20.31       45936956 B   ---   --   ---xx   flac  0.6938  1990-01-30_103.flac
+     3:20.66       35435276 B   ---   --   ---xx   flac  0.6941  1990-01-30_104.flac
+     5:07.24       54211292 B   ---   --   ---xx   flac  0.6555  1990-01-30_105.flac
+     2:46.33       29360060 B   ---   --   ---xx   flac  0.6551  1990-01-30_106.flac
+     4:12.07       44469308 B   ---   --   ---xx   flac  0.6664  1990-01-30_107.flac
+     3:42.27       39224348 B   ---   --   ---xx   flac  0.6924  1990-01-30_108.flac
+     5:05.03       53809100 B   ---   --   ---xx   flac  0.6144  1990-01-30_109.flac
+     5:07.10       54178364 B   ---   --   ---xx   flac  0.6302  1990-01-30_110.flac
+     6:47.00       71794844 B   ---   --   ---xx   flac  0.6309  1990-01-30_111.flac
+     5:17.12       55947068 B   ---   --   ---xx   flac  0.6297  1990-01-30_112.flac
+    54:03.23      572119824 B                            0.6554  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd90-01-30-sb.flacf\Cracked Bells And Washed-Out Horns [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.03       43225100 B   ---   --   ---xx   flac  0.6666  1990-01-30_201.flac
+     2:53.41       30613676 B   ---   --   ---xx   flac  0.6830  1990-01-30_202.flac
+     4:34.50       48451244 B   ---   --   ---xx   flac  0.6478  1990-01-30_203.flac
+     4:48.22       50854988 B   ---   --   ---xx   flac  0.6606  1990-01-30_204.flac
+     5:47.18       61253180 B   ---   --   ---xx   flac  0.6448  1990-01-30_205.flac
+     4:02.41       42785276 B   ---   --   ---xx   flac  0.6769  1990-01-30_206.flac
+     4:13.74       44803292 B   ---   --   ---xx   flac  0.6545  1990-01-30_207.flac
+     6:10.48       65380940 B   ---   --   ---xx   flac  0.6958  1990-01-30_208.flac
+     7:15.66       76889276 B   ---   --   ---xx   flac  0.6455  1990-01-30_209.flac
+     4:21.64       46190972 B   ---   --   ---xx   flac  0.6849  1990-01-30_210.flac
+     6:42.52       71035148 B   ---   --   ---xx   flac  0.5726  1990-01-30_211.flac
+     3:48.73       40390940 B   ---   --   ---xx   flac  0.5436  1990-01-30_212.flac
+    58:45.27      621874032 B                            0.6462  (12 files)
+=================== 
+=================== 
+=================== 

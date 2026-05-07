@@ -1,0 +1,21 @@
+8fa4eab6551e3de91ba5f1c08e4f15c0 *2024-03-17 Charlotte, North Carolina.txt
+6c2682d7b275cef2da166dceedce0666 *bd2024-03-17 Charlotte_sway_01.flac
+9630b64beae3ce1ace7f665cc2776052 *bd2024-03-17 Charlotte_sway_02.flac
+f48b0749bf3a3c7b66c5b8c455c8e76f *bd2024-03-17 Charlotte_sway_03.flac
+b73755af27aa9674ec03af45cf3e6fe7 *bd2024-03-17 Charlotte_sway_04.flac
+8c37f559f25751c9a82963cfcce887cd *bd2024-03-17 Charlotte_sway_05.flac
+f35de63ac003af19343f2f0e483fb878 *bd2024-03-17 Charlotte_sway_06.flac
+ec536bd2ef6b31bba4bf657f311183aa *bd2024-03-17 Charlotte_sway_07.flac
+1fa22d4057c202806c779f5f4c2fca45 *bd2024-03-17 Charlotte_sway_08.flac
+1ebf7ccd5ecf052921d3228dfc8f87dc *bd2024-03-17 Charlotte_sway_09.flac
+c448852795762357907faf91dfbb72c8 *bd2024-03-17 Charlotte_sway_10.flac
+6b938277020a212ce8a92594e28d13ed *bd2024-03-17 Charlotte_sway_11.flac
+b79134c8e6823d885b4049954b32ff36 *bd2024-03-17 Charlotte_sway_12.flac
+7ecd0533e7dcd78b0fd163e31378086b *bd2024-03-17 Charlotte_sway_13.flac
+b56195ba364c56c11cbd324d6fa8f0a9 *bd2024-03-17 Charlotte_sway_14.flac
+17d4b9386ce1f03f1c267ab2f9e6f5ab *bd2024-03-17 Charlotte_sway_15.flac
+41f748bab44180761afc998fd48653f4 *bd2024-03-17 Charlotte_sway_16.flac
+00f57d5acb9d27f16e54eb0767aad4d8 *bd2024-03-17 Charlotte_sway_17.flac
+f157f16c3882370d36d18ce07ef35bc8 *bd2024-03-17 Charlotte_sway_18.flac
+1fb0a12fc68a8290cadb4e6f313ada40 *bd2024-03-17 Charlotte_sway_19.flac
+708d727ed2c74172a031033f53ba3736 *bd2024-03-17 Charlotte_sway_20.flac

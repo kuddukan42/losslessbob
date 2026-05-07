@@ -1,0 +1,95 @@
+===================
+===================
+===================
+=== bd-1992-07-07 Merano, IT.txt
+===================
+===================
+===================
+BOB DYLAN
+Hippodromo di Maia
+Merano, Italy
+July 7, 1992
+
+Contrast clause: No LosslessBob # though it would seem to fit his description of a recording derived from LTJs LB-5972 (on tracker):  a bittorrent from 04/08 is is same recording based on same clapping at end of d1t9 and is harsher with slightly more hiss and with levels raised so clips a little on d1t9; described as "Lineage: trade discs from Glyn > flac > torrent" tracked 13/5 71:33/33:19 with filenames like bd-1992-07-07d1t08.flac . As the sound is different from LB-5972, I am posting it so listeners can decide which they prefer. It is also not the same recording as the bootleg   LB-6640, Statio's master # 137 (which says in its text it is zuma66 s master LB-12258 - on tracker), or Holy Grail s LB-1268.
+
+In light of the recent LTJ recording, I decided to torrent the trade discs I received from the late
+Glyn W, excellent sound, may or may not be the same recording, but it is just excellent,
+especially in the headphones, sounds like Bob s in your head!  Been listening to this tour a lot
+lately, a lot of good recordings and interesting shows.  Best version of the few 2x2s, in my
+opinion, a great Peggy-O (he even remembers the words!) and a real nice What Good Am I? 
+Enjoy.
+
+Lineage:  trade discs from Glyn > flac > torrent
+
+Disc One   71:33
+1.  2 x 2
+2.  Pretty Peggy-O
+3.  Maggie's Farm
+4.  Every Grain Of Sand
+5.  Seeing The Real You At Last
+6.  I Dreamed I Saw St. Augustine
+7.  I'll Be Your Baby Tonight
+8.  To Ramona
+9.  Girl From The North Country
+10.  Mr. Tambourine Man
+11.  Don't Think Twice, It's All Right
+12.  Everything Is Broken
+13.  Shelter From The Storm
+
+Disc Two   33:19
+1.  The Times They Are A-Changin'
+2.  Like A Rolling Stone
+3.  Encore clapping
+4.  What Good Am I?
+5.  All Along The Watchtower
+6.  Blowin' In The Wind
+
+From: http://bjorner.com/
+
+Concert # 413 of The Never-Ending Tour.  Concert # 8 of the 1992 Summer Festival Tour Of Europe. 1992 concert # 49.
+ 
+Concert # 27 with the 7th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums), Charlie Quintana (drums & percussion).
+ 
+8, 9, 18  Bob Dylan (acoustic guitar & vocal).
+ 
+10, 11, 14  acoustic with the band.
+ 
+4, 8-11, 13, 18  Bob Dylan harmonica.
+ 
+14  Bucky Baxter (mandolin).
+ 
+Note
+First airing of I Dreamed I Saw St Augustine since Toad's Place, New Haven, Connecticut, 12 January 1990.
+ 
+11 new songs (61%) compared to previous concert. 4 new songs for this tour.
+ 
+Stereo audience recording, 100 minutes.
+===================
+===================
+===================
+=== Bob Dylan, Merano, IT 7-7-92.md5
+===================
+===================
+===================
+daba1f05125c7f69a1dc07717bbafdf4 *bd-1992-07-07d1t01.flac
+f12f4055734ae9ba52de6017e09a33fe *bd-1992-07-07d1t02.flac
+519e373cf810978b936141f70b4f8640 *bd-1992-07-07d1t03.flac
+18f38ef4c0966ae8f78bd2ce97a7dd86 *bd-1992-07-07d1t04.flac
+efefb83b7c57a3e671baded9304b60ea *bd-1992-07-07d1t05.flac
+3d38c3811c242146b890b80c6bc5d5c2 *bd-1992-07-07d1t06.flac
+ba17a9d498f08f577e98127a642095fe *bd-1992-07-07d1t07.flac
+87ac65cba5a36dfe95ee1b28ed31d27c *bd-1992-07-07d1t08.flac
+60d40de32ff591e3ad1d0151c85176ad *bd-1992-07-07d1t09.flac
+d0e11884dacf9ed47fab0942049ca973 *bd-1992-07-07d1t10.flac
+916c2c8e1021d586927979b44728db10 *bd-1992-07-07d1t11.flac
+272024cf17276d334d38d35f4a09c102 *bd-1992-07-07d1t12.flac
+14594d0fd4d7a6d3e0544bb24f997440 *bd-1992-07-07d1t13.flac
+2171d7f530fa5cbc2c99701a963ff144 *bd-1992-07-07d2t01.flac
+695e47fe649497c42f53a61852fe2df5 *bd-1992-07-07d2t02.flac
+14d76c72b2fc58039b91f6419268c0fd *bd-1992-07-07d2t03.flac
+9dc370c7a29d1c65248ef23be266f252 *bd-1992-07-07d2t04.flac
+652b9cde0094238276ea49e6b180aa3a *bd-1992-07-07d2t05.flac
+cb059c0efe49fcee988a86562b302c2f *bd-1992-07-07d2t06.flac
+===================
+===================
+===================

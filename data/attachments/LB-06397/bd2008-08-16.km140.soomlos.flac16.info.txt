@@ -1,0 +1,61 @@
+Bob Dylan
+Borgata Resort Spa and Casino
+Event Center
+Atlantic City, New Jersey
+August 16, 2008
+
+Disc 1:
+01. introduction
+02. Watching The River Flow
+03. Mr. Tambourine Man
+04. Things Have Changed
+05. Mississippi
+06. Most Likely You Go Your Way (And I'll Go Mine)
+07. Ballad Of Hollis Brown
+08. Make You Feel My Love
+09. Tweedle Dee & Tweedle Dum
+10. Visions Of Johanna
+11. Honest With Me
+12. Lenny Bruce
+
+Disc 2:
+01. I Don't Believe You (She Acts Like We Never Have Met)
+02. Highway 61 Revisited
+03. Ain't Talkin'
+04. Thunder On The Mountain
+(encore)
+05. Like A Rolling Stone
+06. band introduction
+07. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, viola, banjo, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann km140's > lunatec v3 > m-audio mt1 (24/48)
+
+ffp
+bd2008-08-16.km140.soomlos.d1t01.flac:402abb819ad30a1175eaacaa9a5ec801
+bd2008-08-16.km140.soomlos.d1t02.flac:b7395062cc056546f42758aeca14e703
+bd2008-08-16.km140.soomlos.d1t03.flac:2673eba8ef81e8cf547ccb81fe7594cb
+bd2008-08-16.km140.soomlos.d1t04.flac:75eb68a913a5f97300c5d946edb4c863
+bd2008-08-16.km140.soomlos.d1t05.flac:019e0551231ee113929413334ec5941e
+bd2008-08-16.km140.soomlos.d1t06.flac:54653aa9b371dc40ad5dab0d05a6ca62
+bd2008-08-16.km140.soomlos.d1t07.flac:722c1c2fa9ab671a103700253dc00920
+bd2008-08-16.km140.soomlos.d1t08.flac:9a96955a4e61972e863b2e7c3975bb97
+bd2008-08-16.km140.soomlos.d1t09.flac:4361a9ad3f3afd4a7a5e8cd41001f580
+bd2008-08-16.km140.soomlos.d1t10.flac:f3346f6f2df9b094d3a69c70027aa7c6
+bd2008-08-16.km140.soomlos.d1t11.flac:cb917f04f2c767281c3e24a112a5f440
+bd2008-08-16.km140.soomlos.d1t12.flac:54997335a09da4e9bdec947972649062
+bd2008-08-16.km140.soomlos.d2t01.flac:c9f3d51de21295c7e60070b122c6fe89
+bd2008-08-16.km140.soomlos.d2t02.flac:beb1740955a50a801b1e8ed03a0bcba2
+bd2008-08-16.km140.soomlos.d2t03.flac:4c7e62d94b46390c58b4d50d19159cf3
+bd2008-08-16.km140.soomlos.d2t04.flac:18f2f4f713245104df66a06d4c06b4dc
+bd2008-08-16.km140.soomlos.d2t05.flac:b6d40585efa39eef8014e4976eabdee7
+bd2008-08-16.km140.soomlos.d2t06.flac:c5a77dc724501583edbcad3720514bf8
+bd2008-08-16.km140.soomlos.d2t07.flac:d3f7222bf93394ed33f95997a1edec65

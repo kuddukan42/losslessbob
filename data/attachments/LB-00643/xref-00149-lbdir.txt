@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-08-31-a.flacf 
+=================== 
+=================== 
+=================== 
+7472161fc17fd52169ba721c4be09e9c  Bob Dylan 2002.08.31 Mesa County Fairgrounds, Grand Junction, Colorado, USA.md5
+81a6c11816275a9ebb62b43da2249bfb  CD1\01 Duncan and Brady.flac
+072ff9e409fec7d7e291e9b82951c0ab  CD1\02 I'll be your baby tonight.flac
+cc1f4a993cd6626b9bd361814ab2cc94  CD1\03 It's alright, ma (I'm only bleeding).flac
+a3df4c96b64a2d1092a58d083f5a48a9  CD1\04 I shall be released.flac
+c0c2964979a841ac2a82b7a17914958d  CD1\05 To be alone with you.flac
+422ff49100c77c2b6e0754c4165d69a1  CD1\06 Lay lady lay.flac
+dde088912a4e8243257ace91abd3272c  CD1\07 Honest with me.flac
+255f7150c5904622ea0d7bfd5fe49a16  CD1\08 High water (for Charley Patton).flac
+2d048fcc16e160f2c0d3c59e7b0fbd1c  CD2\09 Don't think twice, it's all right.flac
+9e27f01de0e2c0ce77023ee748e02e6e  CD2\10 Masters of war.flac
+cedf5b9e37f811e933358c7b975a1317  CD2\11 Tangled up in blue.flac
+4be9aec580c137392cf5b2169b49ae49  CD2\12 Summer days.flac
+13f6ea1ee05a25d4411352bee9942b4e  CD2\13 Not dark yet.flac
+031356ad7d852cda675aefc84f3ed36a  CD2\14 The wicked messenger.flac
+46a7201229bce3dd93f2574b9b3e36e2  CD2\15 Rainy day women # 12 & 35.flac
+a984bf759cb87787693bea292d7f5e42  CD2\16 Like a rolling stone.flac
+7fd0539a9c735d62dc2e20730ae4eda0  CD2\17 Knockin' on heaven's door.flac
+ec321bb48b5588241df27a7b7b803c1b  CD2\18 All along the watchtower.flac
+a5e22675d7381c622a4768ed0d0024db  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-31-a.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 duncan and brady.flac:b761374a2b51d392bb3d14ba291a7705
+02 i'll be your baby tonight.flac:227f475d18e3814283106643a382ad95
+03 it's alright, ma (i'm only bleeding).flac:31209a278fae898254f321bd07f74e99
+04 i shall be released.flac:33b2e6477d054a13ea14aa4468589890
+05 to be alone with you.flac:3f1b69ab5b3cac80b08c31beb70a7bc4
+06 lay lady lay.flac:9a745edbd68e661e79cc61e1fd1f5272
+07 honest with me.flac:a06efa2203209c2c78503e84cd3441c8
+08 high water (for charley patton).flac:0aa676610d4d59dd27074ef91b2ae0a8
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-31-a.flacf\cd2 
+=================== 
+=================== 
+=================== 
+09 don't think twice, it's all right.flac:3d9ee80a511337fc9d3b34cdd7d67b23
+10 masters of war.flac:0dd2f090e309f838ac05d6dca33dd0f5
+11 tangled up in blue.flac:d14924aa7970eb103730b33a0939061b
+12 summer days.flac:bf4af2cfdef06f1decdd2ba46058c59c
+13 not dark yet.flac:727732ab636fd599b26ed6af5f869fb4
+14 the wicked messenger.flac:ce75e4fd24165beccd1aa761a9d40671
+15 rainy day women # 12 & 35.flac:11a48bf426447b33f5ebff8743a6be9c
+16 like a rolling stone.flac:4381a35871fb0dc410df27f5ea392141
+17 knockin' on heaven's door.flac:152818bbf6e21faa1661585fc67bb514
+18 all along the watchtower.flac:95c8780e4963030524f53355c9cec81a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-31-a.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.43       43142780 B   ---   --   ---xx   flac  0.6676  01 Duncan and Brady.flac
+     5:47.05       61222604 B   ---   --   ---xx   flac  0.6546  02 I'll be your baby tonight.flac
+     6:37.65       70183724 B   ---   --   ---xx   flac  0.6367  03 It's alright, ma (I'm only bleeding).flac
+     5:04.10       53649164 B   ---   --   ---xx   flac  0.6276  04 I shall be released.flac
+     4:27.40       47192924 B   ---   --   ---xx   flac  0.6954  05 To be alone with you.flac
+     4:55.20       52085084 B   ---   --   ---xx   flac  0.6140  06 Lay lady lay.flac
+     6:54.65       73182524 B   ---   --   ---xx   flac  0.6974  07 Honest with me.flac
+     7:27.49       78966092 B   ---   --   ---xx   flac  0.6633  08 High water (for Charley Patton).flac
+    45:18.72      479624896 B                            0.6577  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-31-a.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.47       73845788 B   ---   --   ---xx   flac  0.6388  09 Don't think twice, it's all right.flac
+     5:10.50       54801644 B   ---   --   ---xx   flac  0.6340  10 Masters of war.flac
+     8:51.45       93774284 B   ---   --   ---xx   flac  0.6812  11 Tangled up in blue.flac
+     7:11.00       76028444 B   ---   --   ---xx   flac  0.6879  12 Summer days.flac
+     6:59.60       74052764 B   ---   --   ---xx   flac  0.5684  13 Not dark yet.flac
+     5:05.55       53931404 B   ---   --   ---xx   flac  0.7033  14 The wicked messenger.flac
+    15:12.05      160888604 B   ---   --   ---xx   flac  0.6462  15 Rainy day women # 12 & 35.flac
+     7:11.40       76122524 B   ---   --   ---xx   flac  0.6926  16 Like a rolling stone.flac
+     6:45.05       71453804 B   ---   --   ---xx   flac  0.6253  17 Knockin' on heaven's door.flac
+     6:00.70       63668684 B   ---   --   ---xx   flac  0.7140  18 All along the watchtower.flac
+    75:27.02      798567944 B                            0.6574  (10 files)
+=================== 
+=================== 
+=================== 

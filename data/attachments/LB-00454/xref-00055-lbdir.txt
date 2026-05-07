@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-17-b.flacf 
+=================== 
+=================== 
+=================== 
+939cf879f2e3b12cef6e6eded76421ed  17-Oct-88.txt
+93e1895c4cc114fc9f9bc687842b9b64  Bob Dylan 1988.10.17 NYC.md5
+65c46fb03765a6487b749d833af3594b  D1\1 Subterranean Homesick Blues.flac
+f3051a4d313f42ea9c7a0c2355fda3c1  D1\10 One Too Many Mornings.flac
+841e1d7eb6763c3fdc61a7d45aa3af95  D1\2 I'll Remember You.flac
+c30fd21002269d8351141280837d2ea3  D1\3 Stuck Inside of Mobile With the Memphis Blues Again.flac
+0bc493eb81715115ac92bc925972bcc8  D1\4 Ballad Of A Thin Man.flac
+41734001c8208fc621501bc3fa3fcbb8  D1\5 You're A Big Girl Now.flac
+d823c34f9b73e4e6977da6a33008a8be  D1\6 Bob Dylan's 115th Dream.flac
+2bb68fb22d754e9ab1d313b166b23e5f  D1\7 Highway 61 Revisited.flac
+805927665565af16ccab6ce1b19c524f  D1\8 Gates of Eden.flac
+0ec34335dbbe3cd44ffccf96e11d40fd  D1\9 With God On Our Side.flac
+2a099d4ec6480582251c9e33e04f0b4c  D2\2 Silvio.flac
+2ac1a3b27d7c5a49d1432f9657d0b9fb  D2\3 In The Garden.flac
+1ad8dce399836d9a2fea9713542e7650  D2\4 Like A Rolling Stone.flac
+650d74736b4b6904d96b5ed8cba4148a  D2\5 Wagoner's Lad.flac
+9539274779d85993ef9f8b5a89ee3b21  D2\6 Don't Think Twice, It's All Right.flac
+e73406a40fa5fc0a7560cd8bed85ba00  D2\7 Knockin' On Heaven's Door.flac
+064c651a98a588c0977116f394f16fad  D2\8 I Shall Be Released.flac
+8dc3fa6dd9e86dfb89cc6dc8809fcce6  D2\9 Maggie's Farm.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-17-b.flacf\D1 
+=================== 
+=================== 
+=================== 
+1 Subterranean Homesick Blues.flac:ed3fda062e22aada7fbd80d50f483e1b
+10 One Too Many Mornings.flac:6b5cf8494592d495a3a81f1e897ae6d0
+2 I'll Remember You.flac:d0a6a1d2b4791826f34a7dba135e4226
+3 Stuck Inside of Mobile With the Memphis Blues Again.flac:805621917bd89ead77f368b6ad79cdcb
+4 Ballad Of A Thin Man.flac:77a93a43bd5d9459f8f04dcc694836f5
+5 You're A Big Girl Now.flac:68123c64e22bf3fae6feb263784e9181
+6 Bob Dylan's 115th Dream.flac:8c1a9bdce8af1d0f9af8f8d48373cf66
+7 Highway 61 Revisited.flac:49ad09120dfe0691b3c2a5a1aeb76f8f
+8 Gates of Eden.flac:ff89161c584ce30d1c47397edca3beec
+9 With God On Our Side.flac:92b32d619f4fb337f31a33f421884182
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-17-b.flacf\D2 
+=================== 
+=================== 
+=================== 
+2 Silvio.flac:facf8338276644f2c0c577b58a69c234
+3 In The Garden.flac:656a8a6c8dfe7c766fbefbe00700a774
+4 Like A Rolling Stone.flac:6d275a2addb77e1104b8d4bef5e5c422
+5 Wagoner's Lad.flac:cd3b4a4c728fda3d397f866245875291
+6 Don't Think Twice, It's All Right.flac:c99fa5307b9f9b24501bef27904e8626
+7 Knockin' On Heaven's Door.flac:ab2140bbea51356a661ce22a80cfb3be
+8 I Shall Be Released.flac:7897cd48e837d6cb0afb9b394a0d561f
+9 Maggie's Farm.flac:fd136481b39770a397ad94931a530bde
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-17-b.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:01.62       32074268 B   ---   --   ---xx   flac  0.6909  1 Subterranean Homesick Blues.flac
+     5:34.53       59042300 B   ---   --   ---xx   flac  0.5561  10 One Too Many Mornings.flac
+     3:50.29       40640252 B   ---   --   ---xx   flac  0.6643  2 I'll Remember You.flac
+     6:44.41       71362076 B   ---   --   ---xx   flac  0.6758  3 Stuck Inside of Mobile With the Memphis Blues Again.flac
+     5:49.51       61683596 B   ---   --   ---xx   flac  0.6640  4 Ballad Of A Thin Man.flac
+     4:39.52       49337948 B   ---   --   ---xx   flac  0.6495  5 You're A Big Girl Now.flac
+     6:18.43       66780380 B   ---   --   ---xx   flac  0.6973  6 Bob Dylan's 115th Dream.flac
+     4:23.61       46536716 B   ---   --   ---xx   flac  0.6642  7 Highway 61 Revisited.flac
+     7:00.69       74250332 B   ---   --   ---xx   flac  0.5772  8 Gates of Eden.flac
+     6:27.00       68266844 B   ---   --   ---xx   flac  0.5871  9 With God On Our Side.flac
+    53:51.11      569974712 B                            0.6380  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-17-b.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.07       43587308 B   ---   --   ---xx   flac  0.7272  2 Silvio.flac
+     5:19.70       56436284 B   ---   --   ---xx   flac  0.7112  3 In The Garden.flac
+     6:55.06       73220156 B   ---   --   ---xx   flac  0.7416  4 Like A Rolling Stone.flac
+     4:27.00       47098844 B   ---   --   ---xx   flac  0.6178  5 Wagoner's Lad.flac
+     3:54.68       41437580 B   ---   --   ---xx   flac  0.6773  6 Don't Think Twice, It's All Right.flac
+     5:33.70       58905884 B   ---   --   ---xx   flac  0.6740  7 Knockin' On Heaven's Door.flac
+     4:15.70       45146684 B   ---   --   ---xx   flac  0.7031  8 I Shall Be Released.flac
+     5:20.23       56502140 B   ---   --   ---xx   flac  0.7344  9 Maggie's Farm.flac
+    39:54.14      422334880 B                            0.7014  (8 files)
+=================== 
+=================== 
+=================== 

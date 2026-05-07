@@ -1,0 +1,24 @@
+a50e1693807b73940dfae3a2913a312c  1999-09-04 Troy G. Chastain Memorial Park Amphitheatre, Atlanta, Georgia, USA.md5
+947a85d1a06cdbe24092338c45d08e74  Info\1999-09-04 Troy G. Chastain Memorial Park Amphitheatre, Atlanta, Georgia, USA [uT].txt
+4f3405ebc8013dbdcff4c60a72a9e592  Info\shntool_len - Dylan's set [duets included].txt
+8658b4789941c0f2bedac06eac8724a7  Part 2 Dylan's set [duets included]\01 The boxer [Dylan & Simon].flac
+afb3dcd547ddabdc0877232e1b4bbaa1  Part 2 Dylan's set [duets included]\02 That'll be the day [Dylan & Simon].flac
+57208cdcf424c1a9b51b88102b94571b  Part 2 Dylan's set [duets included]\03 The wanderer [Dylan & Simon].flac
+53237cff2e6dcbcde3113bf357149cde  Part 2 Dylan's set [duets included]\04 Knockin' on heaven's door [Dylan & Simon].flac
+c1e56e712eb9126281b4fe85b85dc36a  Part 2 Dylan's set [duets included]\05 I am the man, Thomas.flac
+062ee4488facf8b3bb28cb1a84217838  Part 2 Dylan's set [duets included]\06 Mr. Tambourine Man.flac
+1476654d0ed7fad4d608f1df5bf75855  Part 2 Dylan's set [duets included]\07 Desolation Row.flac
+b2ec4faec4573bea7296c0c21cced302  Part 2 Dylan's set [duets included]\08 It's all over now, baby blue.flac
+431d727c7a81319eb0ee4643fddc7414  Part 2 Dylan's set [duets included]\09 Tangled up in blue.flac
+3123ce71805e4b0c4beed545509f0ab1  Part 2 Dylan's set [duets included]\11 All along the watchtower.flac
+3b27b0b3311207c95c1a8d623aa0e727  Part 2 Dylan's set [duets included]\11 Lay lady lay.flac
+c1bbf8c2b1a3013a0ee1fbc2e0ff801f  Part 2 Dylan's set [duets included]\12 Stuck inside of Mobile with the Memphis blues again.flac
+0b6812486ad5d4084c291c5c1a80d751  Part 2 Dylan's set [duets included]\13 Not dark yet.flac
+49a2ac9feb2c5ae1f230847933bd58b4  Part 2 Dylan's set [duets included]\14 (band intro).flac
+35b25f52872af741c120b1e9a55c3053  Part 2 Dylan's set [duets included]\14 Highway 61 revisited.flac
+8d0b13504b977d04e0d25a4dd4b280fa  Part 2 Dylan's set [duets included]\15 Like a rolling stone.flac
+601cc98cce000551a65b029f04ca4640  Part 2 Dylan's set [duets included]\16 Blowin' in the wind.flac
+cd27fd97e1e80f86a8ff74c8d2dcc812  Part 2 Dylan's set [duets included]\17 Not fade away.flac
+ee51851f1035e1238d34dbb685eacded  Part 2 Dylan's set [duets included]\CD2 Dylan's set [duets included].ffp
+72fb5274c016138aaf0f88794b8d0990  Part 2 Dylan's set [duets included]\CD2 Dylan's set [duets included].txt
+2235971c6a8900e9d331dcdfb4d90e40  ~uTorrentPartFile_3FBA5BF2.dat

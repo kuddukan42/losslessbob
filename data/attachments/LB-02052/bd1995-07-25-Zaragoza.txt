@@ -1,0 +1,46 @@
+Bob Dylan
+1995-07-25
+Zaragoza
+Offmaster audience recording.
+Taper: identity unknown.
+
+Tracking corrections made to D1 & D2 - flac fingerprints will no longer be correct
+
+Disk One
+To Be Alone With You
+Lay Lady Lay
+All Along The Watchtower
+When I Paint My Masterpiece
+You're A Big Girl Now
+Silvio 
+Mr. Tambourine Man (acoustic w band) 
+Desolation Row (acoustic w band)
+
+Disk Two
+Love Minus Zero/No Limit (acoustic w band)
+Tombstone Blues
+In The Garden
+Obviously Five Believers
+Knockin' On Heaven's Door
+One Too Many Mornings (acoustic w band) 
+Rainy Day Women # 12 & 35
+
+Disk One
+bd1995-07-25d1t01.flac:4e94616fb9081088c45c7f5d19bc045b
+bd1995-07-25d1t02.flac:a46ca021361c0554a2a7d2e98b427776
+bd1995-07-25d1t03.flac:2a88b3dd09879200d2a7751e83624541
+bd1995-07-25d1t04.flac:8a65a5b5ea9ce51ca6620c575af12a4a
+bd1995-07-25d1t05.flac:abd692c1b5484f7f35bb8130a0630ef1
+bd1995-07-25d1t06.flac:4f6a029e9023ad9203965edad3685172
+bd1995-07-25d1t07.flac:d9a1241abfaed057918870e7aa756748
+bd1995-07-25d1t08.flac:4317d9f25a8288f778b2da41b2ba21f8
+
+Disk Two
+
+bd1995-07-25d2t01.flac:304abc2cc4af507b6ffc100e570f3c9a
+bd1995-07-25d2t02.flac:222477d06a5af2bd7d814c0d1f591e44
+bd1995-07-25d2t03.flac:60c6fc4a600bad7eb917a43ccb2ef4a1
+bd1995-07-25d2t04.flac:987bbb49e6b49d754c0e5dcfb67090c0
+bd1995-07-25d2t05.flac:45765d1f9e7e8589d264e5c5bbd6a6da
+bd1995-07-25d2t06.flac:0b5be1fb40801b202065f986cca9bbad
+bd1995-07-25d2t07.flac:4ec3cb3228be028b6a4c63a00e46ece5

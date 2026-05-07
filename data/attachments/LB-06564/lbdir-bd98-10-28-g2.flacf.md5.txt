@@ -1,0 +1,20 @@
+6bf206fc02a4a5d5fc9575b16752f955  bob dylan\01 Track 1.flac
+981539ba17dbcbbc672a2600beaba208  bob dylan\02 Track 2.flac
+5a78d7f1890ca4e8c4067e332247944f  bob dylan\03 Track 3.flac
+2ac5019177a8b36e05ccf7e99ab19328  bob dylan\04 Track 4.flac
+a06df2d02d99664267d4cd76b622303d  bob dylan\05 Track 5.flac
+7198950a41b34c6160c469da53c6b795  bob dylan\06 Track 6.flac
+c45c62ff575c18c19f415efb26329b87  bob dylan\07 Track 7.flac
+1330225f4782ee9debcb892f9333d444  bob dylan\08 Track 8.flac
+493f751419909f436d6709cd1455392e  bob dylan\09 Track 9.flac
+4106e8e410240c95f40403e79cb99292  bob dylan\10 Track 10.flac
+e8ee257a3045b2c0a2e7deaffbad193c  bob dylan\11 Track 11.flac
+000dd5d66d7b35e846acaed72d0de45f  bob dylan\12 Track 12.flac
+c5bef21691f1ed768331268320e98710  bob dylan\13 Track 13.flac
+c36bf922e2ebb2f85dbcfbd79600a1f1  bob dylan\14 Track 14.flac
+82891219d5b419184b6f63d8f659b5d9  bob dylan\15 Track 15.flac
+dc3371ee0fa61e2e39940b0f9901382c  bob dylan\16 Track 16.flac
+cf78ae4087a286be8aec598cf5ae8a20  bob dylan\17 Track 17.flac
+5b58b54e5b74b6f61f817f2c1e291316  bob dylan 1998-10-28.flac.ffp
+c70c1e6ec158c3f3454cdc718c3bf468  bob dylan 1998-10-28.flac.md5
+526cf597e3211f4d252ead054e80466a  bob dylan.info.txt

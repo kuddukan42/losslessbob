@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-15-Valencia 
+=================== 
+=================== 
+=================== 
+aff038a7ceb515e5fe796c33ca049479  bd99-04-15.txt
+0cba8c6d1f910812fd175175617f1b96  LisbonToBarcelonaInfo.doc
+6b452d7c6b9171c0edee62ebb694aadf  Malaga.jpg
+11b534aa2ac4b5f41e4b44f7c960556b  noname.md5
+a305705de73ab8f0f526df50eabb0f9e  Val-0415-d1-t01.shn
+b24b7bebc44770d43a228f1de3453272  Val-0415-d1-t02.shn
+2d075af288f0429394d1661bad07e731  Val-0415-d1-t03.shn
+716d9740ed6b87bcc3c014e8a469716d  Val-0415-d1-t04.shn
+5b66d8136975ca03dacded38018a365e  Val-0415-d1-t05.shn
+8922ada0cbbe4edf5eca5b67f8b5165c  Val-0415-d1-t06.shn
+cfd51f2e1f552f0a4d4d352580e89579  Val-0415-d1-t07.shn
+4659f19e4b83ddbf6f09e26f7adba9c0  Val-0415-d1-t08.shn
+3d6349a05401dca57fc6cd8ecec5a03b  Val-0415-d1-t09.shn
+b7c7edbf840e1c75bd9fc031e58d4417  Val-0415-d1-t10.shn
+dac0d4a47bffee9b0ec6018954da2c35  Val-0415-d2-t01.shn
+56c05c75cacbf45a97ebac8838db9591  Val-0415-d2-t02.shn
+6c66b0e8051bd5111dba895d0496ba05  Val-0415-d2-t03.shn
+ee4d46f9be11beff3da17a46da4f367a  Val-0415-d2-t04.shn
+c4c3902a9ac559ca1e7e0d7c9deb90d9  Val-0415-d2-t05.shn
+aa0ef7c1c9da12500f5d919e5306294d  Val-0415-d2-t06.shn
+ae07f7d02d1de8028c01c09c092594d2  Val-0415-d2-t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-04-15-Valencia 
+=================== 
+=================== 
+=================== 
+0cb806b7baf308a27bf46576fc9fffde  [shntool]  Val-0415-d1-t01.wav
+413758da8fe0b868e2d0dd9503cf1a00  [shntool]  Val-0415-d1-t02.wav
+f275f1d527f891dfe1865968b03df583  [shntool]  Val-0415-d1-t03.wav
+cf3fe9e42798affb683918af4d4e402e  [shntool]  Val-0415-d1-t04.wav
+921ca3d7af0a29d9a3ac0de153890269  [shntool]  Val-0415-d1-t05.wav
+8616b1835a67ed3874658c01a67b982c  [shntool]  Val-0415-d1-t06.wav
+cd4e87fbbf85a3b279bd35b153047070  [shntool]  Val-0415-d1-t07.wav
+e01d3564fd6587d85e2153fa1e9daae3  [shntool]  Val-0415-d1-t08.wav
+4fb205d40e02cc9f1f1cf566335803c2  [shntool]  Val-0415-d1-t09.wav
+5c86ed22016ac6ef5fcc638bcbf59800  [shntool]  Val-0415-d1-t10.wav
+8076dfc65fee62633267e550c07b41e9  [shntool]  Val-0415-d2-t01.wav
+92be79b50c5ad003257e7060cca60730  [shntool]  Val-0415-d2-t02.wav
+5ddad7d78acbadd816e287a4b4b18205  [shntool]  Val-0415-d2-t03.wav
+39c0cfe1d7b72558cc27e21f3ffa4879  [shntool]  Val-0415-d2-t04.wav
+0206c730d39792d60db33e37180645a5  [shntool]  Val-0415-d2-t05.wav
+7176fd40515cba8bb7f73645169dbcd4  [shntool]  Val-0415-d2-t06.wav
+7c9af9f0a4156643d090d338f6811f04  [shntool]  Val-0415-d2-t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-15-Valencia 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:09.34        1666844 B   -b-   --   -----    wav  1.0000  Val-0415-d1-t01.wav
+     6:00.72       63674268 B   -b-   --   -----    wav  1.0000  Val-0415-d1-t02.wav
+     5:13.41       55310492 B   -b-   --   -----    wav  1.0000  Val-0415-d1-t03.wav
+     5:42.18       60371096 B   -b-   --   -----    wav  1.0000  Val-0415-d1-t04.wav
+     6:27.01       68270364 B   -b-   --   -----    wav  1.0000  Val-0415-d1-t05.wav
+     8:51.37       93755468 B   ---   --   -----    wav  1.0000  Val-0415-d1-t06.wav
+     5:51.08       61935860 B   -b-   --   -----    wav  1.0000  Val-0415-d1-t07.wav
+     6:11.43       65545580 B   ---   --   -----    wav  1.0000  Val-0415-d1-t08.wav
+     7:30.27       79442936 B   -b-   --   -----    wav  1.0000  Val-0415-d1-t09.wav
+     7:19.68       77600320 B   -b-   --   -----    wav  1.0000  Val-0415-d1-t10.wav
+     7:25.29       78565224 B   -b-   --   -----    wav  1.0000  Val-0415-d2-t01.wav
+     5:06.04       53988428 B   -b-   --   -----    wav  1.0000  Val-0415-d2-t02.wav
+     6:37.07       70048396 B   -b-   --   -----    wav  1.0000  Val-0415-d2-t03.wav
+     5:40.33       60053660 B   ---   --   -----    wav  1.0000  Val-0415-d2-t04.wav
+     5:10.56       54815756 B   ---   --   -----    wav  1.0000  Val-0415-d2-t05.wav
+     6:20.42       67130828 B   ---   --   -----    wav  1.0000  Val-0415-d2-t06.wav
+     4:03.32       42940820 B   -b-   --   -----    wav  1.0000  Val-0415-d2-t07.wav
+    99:41.29     1055116340 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

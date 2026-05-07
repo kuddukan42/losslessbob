@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-02-22-csb.flacf 
+=================== 
+=================== 
+=================== 
+5139eea2cc3a1c195487cae414e4f516  101.flac
+4646e180414cd6022b61a283d7a6ebd7  102.flac
+e44c91ae1d6f0766c673955baf271b7f  103.flac
+42ff337298d8c592db6f0e2c78b8b8b3  104.flac
+a263605487dac5f817d1d54c545fa756  105.flac
+b574abd29a9854c9d43a8f06fc1ea982  106.flac
+986e754e6ec9e3f9adb353f2506096d4  107.flac
+d64dfb24ca0ff3a335f32946a16b69d7  108.flac
+e4bc28dadf6fb5139b28ffc6dbba13fd  109.flac
+d67c076b559ed1c49b27cbddfabcde57  110.flac
+b45d3c1aa2482df3bed910bfacf863a7  111.flac
+f42e95f0436655082e6bfcd30fe5da42  112.flac
+999949d5f3b4d5cd9067534eaa7a8f6b  201.flac
+8382c6999453c0c2224fb108b730a932  202.flac
+0c42787ba97fcb020420c283be2917d2  203.flac
+1cfc3be26cd04028a38c115654121853  204.flac
+889c64248fccab0fb3f9980990caccb1  205.flac
+0465385cf3c77ddf6d363864050685a0  206.flac
+e79728c560b0a3cfeeec5a7e8fa7f76e  207.flac
+53b00b61eb124ee9d77bb6c02258254c  208.flac
+4491d5ee8f493a2743e1b77e4d609599  bd02-02-22-csb-LB-3233.txt
+b87193982022bfafdd42f77c2dd6bc4d  Bob Dylan 2-22-2002.doc
+da6a013c9745a6b0966489629d2fe70c  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-02-22-csb.flacf 
+=================== 
+=================== 
+=================== 
+101.flac:5dffa5e8896ae9e1f803e7d0c452de62
+102.flac:c9db33a8babd1a6c579ed41e10e4b04a
+103.flac:612f96535bf927e3b33e7e4840de88b7
+104.flac:6b7a19740e74ea1fd23281ca146040f8
+105.flac:86e98b9a3537de1f09f83b4302667010
+106.flac:344ef802dd1eaee895677e65c52615a3
+107.flac:4ff380294265657d1cbb43772ede4442
+108.flac:d66b74eca7ae0d2046ddb3e9563e60a7
+109.flac:5f6361de3d88db088ecc0b30a308b0f9
+110.flac:ea7a2a2804ab88e1c614e8094a44054e
+111.flac:5383cc4e0f194e712a6856daed6d8d2e
+112.flac:e8461cb15430e7e6c4b7f59873650f75
+201.flac:e3c8441661bf2a06cac6074e558bdd79
+202.flac:9e025ebc2f06c39114a756ab8f7f979f
+203.flac:211511e3064f42595eee21dd2f80abb5
+204.flac:ef91c67ae89eeb6e56397e61e4c5186b
+205.flac:fe4a64a862ab26b47eaab0dedd6b4421
+206.flac:3a80061b952c2bbcb4211615ce751283
+207.flac:b00daae1aa26aa9fac3dd0c7d3273487
+208.flac:f883fb3289489d69eece7a4e4ea650cb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-02-22-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:03.13       11143820 B   ---   --   ---xx   flac  0.4706  101.flac
+     3:11.36       33777116 B   ---   --   ---xx   flac  0.6028  102.flac
+     6:10.53       65392700 B   ---   --   ---xx   flac  0.4888  103.flac
+     6:58.07       73751708 B   ---   --   ---xx   flac  0.5102  104.flac
+     4:08.33       43824860 B   ---   --   ---xx   flac  0.5128  105.flac
+     6:16.19       66371132 B   ---   --   ---xx   flac  0.5671  106.flac
+     5:10.46       54792236 B   ---   --   ---xx   flac  0.5285  107.flac
+     5:20.13       56478620 B   ---   --   ---xx   flac  0.5634  108.flac
+     6:43.05       71101004 B   ---   --   ---xx   flac  0.5549  109.flac
+     9:09.22       96895388 B   ---   --   ---xx   flac  0.4744  110.flac
+     7:14.05       76569404 B   ---   --   ---xx   flac  0.4614  111.flac
+     8:27.70       89599484 B   ---   --   ---xx   flac  0.5765  112.flac
+     6:00.00       63504044 B   ---   --   ---xx   flac  0.5188  201.flac
+     7:42.00       81496844 B   ---   --   ---xx   flac  0.4365  202.flac
+     6:22.00       67384844 B   ---   --   ---xx   flac  0.4823  203.flac
+     7:44.00       81849644 B   ---   --   ---xx   flac  0.5213  204.flac
+     7:37.00       80614844 B   ---   --   ---xx   flac  0.5278  205.flac
+     6:50.00       72324044 B   ---   --   ---xx   flac  0.5516  206.flac
+     6:04.00       64209644 B   ---   --   ---xx   flac  0.4793  207.flac
+     5:26.39       57598172 B   ---   --   ---xx   flac  0.5703  208.flac
+   123:38.61     1308679552 B                            0.5183  (20 files)
+=================== 
+=================== 
+=================== 

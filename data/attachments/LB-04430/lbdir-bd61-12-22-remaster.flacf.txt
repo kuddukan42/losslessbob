@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-12-22-remaster.flacf 
+=================== 
+=================== 
+=================== 
+7637248bc00d9faa94f26fa9a19b862b  bd61-12-22-remaster-LB-4430.txt
+644f463b9dc6dfcddcd898314bd4626b  Minnesota Hotel Tape REMASTER.md5
+4b6603d369133636c89950b7c12b42ab  Minnesota Hotel Tape REMASTER.txt
+33ded63dcf8068427beba2d12d105693  Track01.flac
+da8aa24df55dbd64bd0d3f20121c93a8  Track02.flac
+242f0ac3de2c53e74433b84f20bff85c  Track03.flac
+ab43632b14d7ce5aa278df09d6c26e27  Track04.flac
+6494dab7ad888bff2d7ec3c4f299efcb  Track05.flac
+c224ec616ad9e56ece11a6eda1e08c7c  Track06.flac
+1326c01c92e5d1430d713ec81a56d245  Track07.flac
+2277e4d681927978859c95da60f9c8eb  Track08.flac
+15ac015dcb23eaea1dc99d74a3102150  Track09.flac
+6eff2b272bd585309aac2bd16c0a046a  Track10.flac
+18e85cace5e76ad2dfd73662f9832696  Track11.flac
+8121782d7613219a4212c9eac7b22b81  Track12.flac
+279b8edbc8756c59e7f070745196bcf6  Track13.flac
+61a4d53c5a6a0a0a2011a203f2deba46  Track14.flac
+a826d404f6a942228be9d08544e7efb2  Track15.flac
+8786d3d854ca164cb072a777c8a02945  Track16.flac
+6d17fc46edcfb7878fa7b19e2b67d61a  Track17.flac
+c260c130b7b61632c97a6f0f827b4124  Track18.flac
+4ebd47e38ebe119ec3720026a9417e19  Track19.flac
+dfc1167cf63110989e6a3bdc68e4f519  Track20.flac
+7c0135cfe734eb07afebcf728fdf1602  Track21.flac
+f94f2b08dc1928cb2e2cc258c4e5703d  Track22.flac
+45fcdececc5a0b56913ec67cbb7447e3  Track23.flac
+c74779d9c9734a004461a3cc476ba4de  Track24.flac
+2f72749d8f06b890939476bc8b378613  Track25.flac
+34bb2b72f60ecccc64c2e247dbb5e966  Track26.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-12-22-remaster.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:b1433ebd2383efa213e88be427121947
+Track02.flac:783f814ebd27eff614997229ee46f5a1
+Track03.flac:36ea8fa8974cbbf610e8e8b4d0f5ab98
+Track04.flac:14ae176859b573e381f25454903ee8b3
+Track05.flac:9f1dd36bbb9b07a3226ea3442cbf9930
+Track06.flac:c8c361dcdc8559fb2ef5adb02e3f7c87
+Track07.flac:499bb20e3403e161d05599544906c2d5
+Track08.flac:485e2730a971a30de073471c839c5cb5
+Track09.flac:754f61282d545bdc521c2a5c605464d9
+Track10.flac:13def87d9a17025298f2c00c4880927d
+Track11.flac:8fa3e8eeb384387006aae9a7cc638191
+Track12.flac:32b52f7a9cdfea779bf2543f766387ba
+Track13.flac:167a906854ac6c63bb2d8e3f96c0eaef
+Track14.flac:d34aefb61adf9625516dee179efe4a7d
+Track15.flac:4338ad0ea31568b00684937ecbd391da
+Track16.flac:4c617b5732bba0aa17c826cfd9b86616
+Track17.flac:196ea1eeada241716a2e3149a232a9e8
+Track18.flac:7be7479a4dabc4cd55fc6e9b09cc995d
+Track19.flac:d5f7a725b9e5378ed0532841a0ad7f2c
+Track20.flac:a679f3c7766b974c865d9bbe73706ccc
+Track21.flac:5c1e0a3fce139e472d7ad1bb88c97cfe
+Track22.flac:d9338f6ee80e0de0c237722247ea69c8
+Track23.flac:c84905cbc230bfedee10bd7ba53a4aeb
+Track24.flac:ef5ff523a4b1a647602f0d1fc0d7207c
+Track25.flac:ea0b856c619c3d85001e4fd045cf8f11
+Track26.flac:b5cb41ced6d43297196f15162b523b4b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-12-22-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:05.26       32695196 B   ---   --   ---xx   flac  0.5752  Track01.flac
+     4:11.49       44391692 B   ---   --   ---xx   flac  0.5634  Track02.flac
+     2:16.44       24093932 B   ---   --   ---xx   flac  0.5592  Track03.flac
+     2:13.00       23461244 B   ---   --   ---xx   flac  0.6086  Track04.flac
+     4:21.10       46063964 B   ---   --   ---xx   flac  0.5390  Track05.flac
+     2:05.65       22202924 B   ---   --   ---xx   flac  0.5768  Track06.flac
+     2:58.37       31486268 B   ---   --   ---xx   flac  0.5817  Track07.flac
+     4:52.69       51671132 B   ---   --   ---xx   flac  0.5469  Track08.flac
+     3:31.06       37234556 B   ---   --   ---xx   flac  0.5409  Track09.flac
+     1:30.63       16024220 B   ---   --   ---xx   flac  0.5168  Track10.flac
+     3:00.28       31817900 B   ---   --   ---xx   flac  0.5686  Track11.flac
+     2:56.63       31194620 B   ---   --   ---xx   flac  0.6046  Track12.flac
+     5:50.31       61812956 B   ---   --   ---xx   flac  0.5662  Track13.flac
+     3:55.54       41581052 B   ---   --   ---xx   flac  0.5640  Track14.flac
+     2:55.59       31008812 B   ---   --   ---xx   flac  0.5994  Track15.flac
+     1:42.43       18093980 B   ---   --   ---xx   flac  0.5870  Track16.flac
+     1:28.12       15551468 B   ---   --   ---xx   flac  0.5797  Track17.flac
+     6:17.41       66599276 B   ---   --   ---xx   flac  0.5742  Track18.flac
+     2:15.50       23931644 B   ---   --   ---xx   flac  0.5570  Track19.flac
+     1:54.59       20248412 B   ---   --   ---xx   flac  0.5720  Track20.flac
+     0:49.12        8671868 B   ---   --   ---xx   flac  0.5648  Track21.flac
+     1:47.18       18917180 B   ---   --   ---xx   flac  0.5471  Track22.flac
+     2:34.04       27175052 B   ---   --   ---xx   flac  0.5696  Track23.flac
+     3:36.33       38180060 B   ---   --   ---xx   flac  0.5527  Track24.flac
+     3:16.63       34722620 B   ---   --   ---xx   flac  0.5478  Track25.flac
+     5:02.20       53319884 B   ---   --   ---xx   flac  0.5225  Track26.flac
+    80:30.59      852151912 B                            0.5629  (26 files)
+=================== 
+=================== 
+=================== 

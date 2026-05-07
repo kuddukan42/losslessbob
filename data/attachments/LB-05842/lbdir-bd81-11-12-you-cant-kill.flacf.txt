@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-12-you-cant-kill.flacf 
+=================== 
+=================== 
+=================== 
+440b91851f7cd4e162424678c75b45b1  bd81-11-12-you-cant-kill-d1t01.flac
+8bf9945b0478b9fd8389d48f49a01bf4  bd81-11-12-you-cant-kill-d1t02.flac
+a71d4c9af732af014c2b5dffe50606a0  bd81-11-12-you-cant-kill-d1t03.flac
+a075ec6490e779298f9d232318422aab  bd81-11-12-you-cant-kill-d1t04.flac
+6f59b76cd6857f49b4b086220dea51c9  bd81-11-12-you-cant-kill-d1t05.flac
+537e13a92c65239747723b246f06c38c  bd81-11-12-you-cant-kill-d1t06.flac
+f48dc3cb25bfda5c9e6a02a5f0c2dc09  bd81-11-12-you-cant-kill-d1t07.flac
+8bf28f7bb0f5e2e980826d9cc4f98544  bd81-11-12-you-cant-kill-d1t08.flac
+b5faa80102973af6325f9682d540fd2c  bd81-11-12-you-cant-kill-d1t09.flac
+fd986dd4a962251794f2d311d32687e0  bd81-11-12-you-cant-kill-d1t10.flac
+30677a5563513ebf12a506077acb6fe6  bd81-11-12-you-cant-kill-d1t11.flac
+1233850ddf763587dd05cb64f6a6c177  bd81-11-12-you-cant-kill-d1t12.flac
+d13e27aa5fb53783f6ae276aee772d99  bd81-11-12-you-cant-kill-d1t13.flac
+021cc596098ca19c03495b01abaeb72c  bd81-11-12-you-cant-kill-d2t01.flac
+16d5dab4d36da5f96239972a9647ef48  bd81-11-12-you-cant-kill-d2t02.flac
+493460c32ef513a4430561be24a00558  bd81-11-12-you-cant-kill-d2t03.flac
+0050f4b96a67541c794265e7867b8fa2  bd81-11-12-you-cant-kill-d2t04.flac
+8cebaf2eaa6fcd9f8b3beadfec8e08e3  bd81-11-12-you-cant-kill-d2t05.flac
+a6fa6ad6a43a3ea6334c972fe1fdb4a5  bd81-11-12-you-cant-kill-d2t06.flac
+20754a9c2fdd8c2b533d71e7810d9623  bd81-11-12-you-cant-kill-d2t07.flac
+b1f237cf05bb207aaaa31f4e4f5c5d3d  bd81-11-12-you-cant-kill-d2t08.flac
+4fdeecff792d4d7dfafdebb6422fbffa  bd81-11-12-you-cant-kill-d2t09.flac
+2dbab65ae23effc33111cd6e6208ef6c  bd81-11-12-you-cant-kill-d2t10.flac
+c8f769762d5717ef53903aacc9658451  bd81-11-12-you-cant-kill-d2t11.flac
+0d7631d994d1caf619e1222ceb63bb0e  bd81-11-12-you-cant-kill-d2t12.flac
+2cec4ed5b87d43dd75130eb95750ecaa  bd81-11-12-you-cant-kill-d2t13.flac
+ca89a78f73529afc01b6441b0eeba50c  bd81-11-12-you-cant-kill-d2t14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-12-you-cant-kill.flacf 
+=================== 
+=================== 
+=================== 
+bd81-11-12-you-cant-kill-d1t01.flac:7056ff822df78bb2ec7ad8be9c71a012
+bd81-11-12-you-cant-kill-d1t02.flac:cbec489f4c863c7778fac6c23c72b825
+bd81-11-12-you-cant-kill-d1t03.flac:302ddb8d4d4cc44fea638f0684ece080
+bd81-11-12-you-cant-kill-d1t04.flac:ad43649f1eee50f4cd3ba205b80c2de1
+bd81-11-12-you-cant-kill-d1t05.flac:9f5c97dcb220f5ee342b2dc4057d11d1
+bd81-11-12-you-cant-kill-d1t06.flac:4317db58a6641eebaacc27958bad653a
+bd81-11-12-you-cant-kill-d1t07.flac:6493b9b07503a7e85ea3193965437925
+bd81-11-12-you-cant-kill-d1t08.flac:70fadea2ba0ae36c647b19776bf66a49
+bd81-11-12-you-cant-kill-d1t09.flac:132279a7a8928af0bf1fcce2ce84ba70
+bd81-11-12-you-cant-kill-d1t10.flac:5830afb34994e577808fd8159980a760
+bd81-11-12-you-cant-kill-d1t11.flac:cbde752d60328e3085f02e520a7ecafb
+bd81-11-12-you-cant-kill-d1t12.flac:bb3723b0736ddc191b784835bddcdc51
+bd81-11-12-you-cant-kill-d1t13.flac:0aa4f15d9169111c7a1bdd0eb543d25d
+bd81-11-12-you-cant-kill-d2t01.flac:a9a27348f9473517bc91991720255db1
+bd81-11-12-you-cant-kill-d2t02.flac:ef79b7202d6f8c8fb5568ce446714709
+bd81-11-12-you-cant-kill-d2t03.flac:daf26d3288a43fd3ee186f3d4905cbcd
+bd81-11-12-you-cant-kill-d2t04.flac:638076f4b61946f3b089f2d586f655f8
+bd81-11-12-you-cant-kill-d2t05.flac:c38783ac2b8347d27cb3cf1122bd5a47
+bd81-11-12-you-cant-kill-d2t06.flac:a9c66892e090773bf6348d765cea0ad1
+bd81-11-12-you-cant-kill-d2t07.flac:bb477f32d729aa26a6f7af2650d4b565
+bd81-11-12-you-cant-kill-d2t08.flac:a7794ed80ac2b27385b1e6c0cc290c49
+bd81-11-12-you-cant-kill-d2t09.flac:30074c162dbaa66a3388911a87d40f6f
+bd81-11-12-you-cant-kill-d2t10.flac:3c7743aa10b955ab88120be0c1644df0
+bd81-11-12-you-cant-kill-d2t11.flac:4cf32fb6beb7e8fe9b29bb4d1d7a08b2
+bd81-11-12-you-cant-kill-d2t12.flac:b7c409ef778466166f5aa60e9b5f4d60
+bd81-11-12-you-cant-kill-d2t13.flac:d972058ef88717f5b1071063308c559c
+bd81-11-12-you-cant-kill-d2t14.flac:610a7bb333fa6e7ad5bb5a5cfc50fca4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-12-you-cant-kill.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.42       42434828 B   ---   --   ---xx   flac  0.5857  bd81-11-12-you-cant-kill-d1t01.flac
+     4:25.73       46917740 B   ---   --   ---xx   flac  0.5722  bd81-11-12-you-cant-kill-d1t02.flac
+     5:31.57       58522508 B   ---   --   ---xx   flac  0.6344  bd81-11-12-you-cant-kill-d1t03.flac
+     5:12.03       55043900 B   ---   --   ---xx   flac  0.6107  bd81-11-12-you-cant-kill-d1t04.flac
+     5:31.47       58498988 B   ---   --   ---xx   flac  0.6020  bd81-11-12-you-cant-kill-d1t05.flac
+     3:11.08       33711260 B   ---   --   ---xx   flac  0.6687  bd81-11-12-you-cant-kill-d1t06.flac
+     3:36.25       38161244 B   ---   --   ---xx   flac  0.6146  bd81-11-12-you-cant-kill-d1t07.flac
+     3:47.15       40078124 B   ---   --   ---xx   flac  0.6152  bd81-11-12-you-cant-kill-d1t08.flac
+     4:27.37       47185868 B   ---   --   ---xx   flac  0.6179  bd81-11-12-you-cant-kill-d1t09.flac
+     3:05.45       32739884 B   ---   --   ---xx   flac  0.5753  bd81-11-12-you-cant-kill-d1t10.flac
+     2:31.68       26796380 B   ---   --   ---xx   flac  0.5891  bd81-11-12-you-cant-kill-d1t11.flac
+     2:18.27       24406748 B   ---   --   ---xx   flac  0.5807  bd81-11-12-you-cant-kill-d1t12.flac
+     4:24.68       46729580 B   ---   --   ---xx   flac  0.5538  bd81-11-12-you-cant-kill-d1t13.flac
+     3:50.00       40572044 B   ---   --   ---xx   flac  0.5256  bd81-11-12-you-cant-kill-d2t01.flac
+     6:03.55       64162604 B   ---   --   ---xx   flac  0.5252  bd81-11-12-you-cant-kill-d2t02.flac
+     6:00.05       63515804 B   ---   --   ---xx   flac  0.5439  bd81-11-12-you-cant-kill-d2t03.flac
+     4:17.70       45499484 B   ---   --   ---xx   flac  0.5761  bd81-11-12-you-cant-kill-d2t04.flac
+     4:58.48       52680140 B   ---   --   ---xx   flac  0.5942  bd81-11-12-you-cant-kill-d2t05.flac
+     4:04.47       43152188 B   ---   --   ---xx   flac  0.5690  bd81-11-12-you-cant-kill-d2t06.flac
+     4:18.03       45518300 B   ---   --   ---xx   flac  0.5599  bd81-11-12-you-cant-kill-d2t07.flac
+     3:06.67       32968028 B   ---   --   ---xx   flac  0.5756  bd81-11-12-you-cant-kill-d2t08.flac
+     5:04.50       53743244 B   ---   --   ---xx   flac  0.5599  bd81-11-12-you-cant-kill-d2t09.flac
+     6:54.68       73189580 B   ---   --   ---xx   flac  0.5349  bd81-11-12-you-cant-kill-d2t10.flac
+     5:34.72       59086988 B   ---   --   ---xx   flac  0.5383  bd81-11-12-you-cant-kill-d2t11.flac
+     5:54.38       62535020 B   ---   --   ---xx   flac  0.5377  bd81-11-12-you-cant-kill-d2t12.flac
+     6:58.60       73876364 B   ---   --   ---xx   flac  0.5295  bd81-11-12-you-cant-kill-d2t13.flac
+     4:43.32       49996508 B   ---   --   ---xx   flac  0.5613  bd81-11-12-you-cant-kill-d2t14.flac
+   123:56.05     1311723348 B                            0.5718  (27 files)
+=================== 
+=================== 
+=================== 

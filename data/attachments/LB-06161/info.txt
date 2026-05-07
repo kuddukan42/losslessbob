@@ -1,0 +1,43 @@
+BOOT-LEGGING OFFICE "MAD AND SONS" cowardly presents...
+
+Bob Dylan
+3 june 2008
+Ice Palace, St. Petersburg, Russia
+
+
+Lineage:
+
+cheap Panasonic mic > Sharp Zaurus C700 (direct to WAV, 44100/16/mono) >
+PC > SoundForge (compress 4:1 starting from -25dB, normalize) > 
+flac (level 8) > torrent
+
+Audience recording. Dance floor, second row, center.
+Quality is not so good, because there's a lot of crowd shouting and 
+handclapping. These noises on original recording were very loud, much louder
+than music, so audio level compression was used. 
+
+
+Set-list:
+
+01. Intro 
+02. Cat's In The Well
+03. Don't Think Twice, It's All Right
+04. Rollin' And Tumblin'
+05. Tangled Up In Blue
+06. The Levee's Gonna Break
+07. Girl Of The North Country
+08. John Brown
+09. Honest With Me
+10. Just Like A Woman
+11. It's Alright, Ma (I'm Only Bleeding)
+12. Workingman's Blues #2
+13. Highway 61 Revisited
+14. Spirit On The Water
+15. Summer Days
+16. Ain't Talkin'
+    (encore)
+17. Thunder On The Mountain (and band introduction)
+18. Like A Rolling Stone
+
+
+

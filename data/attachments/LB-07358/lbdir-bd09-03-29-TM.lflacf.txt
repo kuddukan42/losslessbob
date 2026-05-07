@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-03-29-TM.lflacf 
+=================== 
+=================== 
+=================== 
+7e18e7128ea7a44af2aec0b04aefc165  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_01.flac
+638c9d4ba335c8919999230a8f2d0e5a  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_02.flac
+bcb90f92a6c86650ec5dcf794b632bd1  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_03.flac
+34ecb1cb2a2f7cbbf999c56771587f72  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_04.flac
+296f4a0f65e83fef70e54f6dc8f5f65f  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_05.flac
+1bc13d7ad5ec5e64a8bd7360e3cd2597  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_06.flac
+15dffd1425a43c581abf43acf67fd9c8  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_07.flac
+4e0d3248289458f20dfb39b2dd6490cb  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_08.flac
+4ef6ceec56cd9239a15e60b17e5f1ede  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_09.flac
+6b716db90f09d4dd8abba7a497bf70c4  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_10.flac
+3a79b0edec47da81b339429c2c381dc5  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_11.flac
+2634c001fad21c34bfb4ce84a32b8c23  CD 1\Dylan_2009_03_29_Copenhagen_TM_D1_12.flac
+df39ab906fb999fc7deecbe47b5c416f  CD 1\Dylan_2009_03_29_Copenhagen_TM_shntool_len_1.txt
+6650487cd5fc86ea60a01d058419cfa3  CD 2\Dylan_2009_03_29_Copenhagen_TM_D2_01.flac
+cd301dd52a5af7a2dadb59942884bce4  CD 2\Dylan_2009_03_29_Copenhagen_TM_D2_02.flac
+577d21ac85647021c51ab0e1e5c17f2b  CD 2\Dylan_2009_03_29_Copenhagen_TM_D2_03.flac
+8ca035c080dc717427e3980ed1210f27  CD 2\Dylan_2009_03_29_Copenhagen_TM_D2_04.flac
+b851ccc3ca3c7098c6a28b5ce0157548  CD 2\Dylan_2009_03_29_Copenhagen_TM_D2_05.flac
+5b7abf67c08dc14c1474a822f44a7495  CD 2\Dylan_2009_03_29_Copenhagen_TM_D2_06.flac
+ec7164d5ded33a0d5dc158f3064b34a6  CD 2\Dylan_2009_03_29_Copenhagen_TM_D2_07.flac
+3e1989052c41a06fb6e52996c1407fba  CD 2\Dylan_2009_03_29_Copenhagen_TM_shntool_len_2.txt
+39b7cd03c156e6a0a027cfd4c848b5ad  CD 2\Dylan_2009_04_04_Munchen_TM_D1_02.flac
+fc027700fd31aa6d861eca693d9306af  CD 2\Dylan_2009_04_04_Munchen_TM_D1_03.flac
+b332f666a18d3e675e6cad12f794371b  CD 2\Dylan_2009_04_04_Munchen_TM_D1_04.flac
+515064730f17c2294d0a5a4d198a3d05  DigiFlawFinder-bd09-03-29-TM.lflacf.wavf.html
+6f82657452b96fef4f0fd6d436abfce2  Dylan_2009_03_29_Copenhagen_TM.md5
+aeb9f905aee946f2ab0d1cc3c278faef  Dylan_2009_03_29_Copenhagen_TM_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-03-29-TM.lflacf\CD 1 
+=================== 
+=================== 
+=================== 
+Dylan_2009_03_29_Copenhagen_TM_D1_01.flac:437047a4123f05b2c78847be85b7cb56
+Dylan_2009_03_29_Copenhagen_TM_D1_02.flac:f1bd2b262552b0c2805ee731efafd0a8
+Dylan_2009_03_29_Copenhagen_TM_D1_03.flac:8e0b2e6f359db9dd650bdfbe7b7c6588
+Dylan_2009_03_29_Copenhagen_TM_D1_04.flac:ab1c77fef3b9a57708e11122dc88c10b
+Dylan_2009_03_29_Copenhagen_TM_D1_05.flac:faf4f7cce0b46437721383d5280494a9
+Dylan_2009_03_29_Copenhagen_TM_D1_06.flac:260ce96ac06cd2b2ba8d2af06f45f4f0
+Dylan_2009_03_29_Copenhagen_TM_D1_07.flac:b774c4cc9b57a4c0ad15d60f9a3f0ec2
+Dylan_2009_03_29_Copenhagen_TM_D1_08.flac:cdaefc5e9c80a11d25849831faf16fd6
+Dylan_2009_03_29_Copenhagen_TM_D1_09.flac:98eddda3dec350c8ce6954dc14114a5e
+Dylan_2009_03_29_Copenhagen_TM_D1_10.flac:735e765ff1b414594ec1ebbc22b87f80
+Dylan_2009_03_29_Copenhagen_TM_D1_11.flac:e9eccec615e42344f531b5d89aeb54ad
+Dylan_2009_03_29_Copenhagen_TM_D1_12.flac:809ddaecb4788c80e2fcabda8b4fbb2d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-03-29-TM.lflacf\CD 2 
+=================== 
+=================== 
+=================== 
+Dylan_2009_03_29_Copenhagen_TM_D2_01.flac:9f083d7d3fcc886397c82bb43d8ea8b4
+Dylan_2009_03_29_Copenhagen_TM_D2_02.flac:586200bef3a3f6a5a523ca029e1c351f
+Dylan_2009_03_29_Copenhagen_TM_D2_03.flac:697b3dc685d307ead7163bbc4f319401
+Dylan_2009_03_29_Copenhagen_TM_D2_04.flac:5add5ccf77cec5f154531964920b769c
+Dylan_2009_03_29_Copenhagen_TM_D2_05.flac:5d94a9a55bf3e9f2ed960a5b5d396680
+Dylan_2009_03_29_Copenhagen_TM_D2_06.flac:c9af99bfc97838a10d5c0a1d43261fe3
+Dylan_2009_03_29_Copenhagen_TM_D2_07.flac:043839f8c0820a04daffc33b47867704
+Dylan_2009_04_04_Munchen_TM_D1_02.flac:5c4190598c7d901c5b47428e93a25201
+Dylan_2009_04_04_Munchen_TM_D1_03.flac:d08535b26e0aa9011811dd6d033acfad
+Dylan_2009_04_04_Munchen_TM_D1_04.flac:17ad20a7343dae4a286ace2087bb347c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-03-29-TM.lflacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.00        8291404 B   -b-   --   ---xx   flac  0.6157  Dylan_2009_03_29_Copenhagen_TM_D1_01.flac
+     4:32.74       48155404 B   -b-   --   ---xx   flac  0.6489  Dylan_2009_03_29_Copenhagen_TM_D1_02.flac
+     6:42.58       71049484 B   -b-   --   ---xx   flac  0.6303  Dylan_2009_03_29_Copenhagen_TM_D1_03.flac
+     5:05.18       53843724 B   -b-   --   ---xx   flac  0.6395  Dylan_2009_03_29_Copenhagen_TM_D1_04.flac
+     8:01.74       85022144 B   -b-   --   ---xx   flac  0.6036  Dylan_2009_03_29_Copenhagen_TM_D1_05.flac
+     4:47.00       50626424 B   -b-   --   ---xx   flac  0.6069  Dylan_2009_03_29_Copenhagen_TM_D1_06.flac
+     6:12.01       65623404 B   -b-   --   ---xx   flac  0.5950  Dylan_2009_03_29_Copenhagen_TM_D1_07.flac
+     7:06.30       75216716 B   -b-   --   ---xx   flac  0.6128  Dylan_2009_03_29_Copenhagen_TM_D1_08.flac
+     6:55.45       73312472 B   -b-   --   ---xx   flac  0.6053  Dylan_2009_03_29_Copenhagen_TM_D1_09.flac
+     7:40.46       81252224 B   -b-   --   ---xx   flac  0.6405  Dylan_2009_03_29_Copenhagen_TM_D1_10.flac
+     9:28.16      100233260 B   -b-   --   ---xx   flac  0.6245  Dylan_2009_03_29_Copenhagen_TM_D1_11.flac
+     7:25.50       78616620 B   -b-   --   ---xx   flac  0.6312  Dylan_2009_03_29_Copenhagen_TM_D1_12.flac
+    74:45.38      791243280 B                            0.6210  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-03-29-TM.lflacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:01.18       63723564 B   -b-   --   ---xx   flac  0.5339  Dylan_2009_03_29_Copenhagen_TM_D2_01.flac
+     6:56.55       73510956 B   -b-   --   ---xx   flac  0.6582  Dylan_2009_03_29_Copenhagen_TM_D2_02.flac
+     9:27.37      100106284 B   -b-   --   ---xx   flac  0.6409  Dylan_2009_03_29_Copenhagen_TM_D2_03.flac
+     5:07.16       54192172 B   -b-   --   ---xx   flac  0.6424  Dylan_2009_03_29_Copenhagen_TM_D2_04.flac
+     7:16.38       76998700 B   -b-   --   ---xx   flac  0.5872  Dylan_2009_03_29_Copenhagen_TM_D2_05.flac
+     0:37.71        6694956 B   -b-   --   ---xx   flac  0.6378  Dylan_2009_03_29_Copenhagen_TM_D2_06.flac
+     5:58.72       63320076 B   -b-   --   ---xx   flac  0.6248  Dylan_2009_03_29_Copenhagen_TM_D2_07.flac
+     4:36.16       48724564 B   -b-   --   ---xx   flac  0.6264  Dylan_2009_04_04_Munchen_TM_D1_02.flac
+     5:30.61       58355756 B   -b-   --   ---xx   flac  0.6543  Dylan_2009_04_04_Munchen_TM_D1_03.flac
+     3:25.16       36200492 B   -b-   --   ---xx   flac  0.6127  Dylan_2009_04_04_Munchen_TM_D1_04.flac
+    54:58.25      581827520 B                            0.6210  (10 files)
+=================== 
+=================== 
+=================== 

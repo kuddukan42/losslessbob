@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-19-ss6p-pdub.flac16 
+=================== 
+=================== 
+=================== 
+a450229882b37f8d3392c64a7e49c9f3  bd1993-09-19.info.txt
+159527fe6b4d1bcd0c891a39488cfab0  bd1993-09-19.ss6p.pdub.sbeok.flac16 Raleigh, NC.ffp
+e3098326b5fe796a78d939b41f6f44e2  bd1993-09-19.ss6p.pdub.sbeok.flac16 Raleigh, NC.md5
+19ca9268fd6b47e03f80dc692b83f3f4  bd1993-09-19.ss6p.pdub.sbeok.flac16 Raleigh, NC.st5
+907a8bafdcee829650254b10ef5a8333  d1\bd1993-09-19d1.LOG
+422a18f34996dd84281cb4e3a1c58c58  d1\bd1993-09-19d1t01.flac
+b8015f3a6faafbd79a371beb3662e427  d1\bd1993-09-19d1t02.flac
+54a20aeba86208b5dd4aee764b15e3fd  d1\bd1993-09-19d1t03.flac
+a8f066f7da1ba49bd255eb7258f542e2  d1\bd1993-09-19d1t04.flac
+23f6b62b3f5a820e60e87abc279a2ace  d1\bd1993-09-19d1t05.flac
+3d4199a3a903573420d504b81a40a233  d1\bd1993-09-19d1t06.flac
+9379c77f22d2d59c0b273dea5e2ecdd4  d1\bd1993-09-19d1t07.flac
+f69bd0dbdff19ebdf6615a45f7220c4d  d1\d1.shntool.txt
+ec71a7c1c0cc840371f492b2be7965be  d1t03.PNG
+0067e9c90a593fab0f121573012d652d  d2\bd1993-09-19d2.LOG
+5d477107efe809c3f4224f2ad0728bcc  d2\bd1993-09-19d2t01.flac
+2b6b545f374375da1af51604feb4ed4c  d2\bd1993-09-19d2t02.flac
+2666b1c647e7c7ed7a603a549beca448  d2\bd1993-09-19d2t03.flac
+82fc1b5a1577686cad28e18cbda59afb  d2\bd1993-09-19d2t04.flac
+a6f14313a6fa1fcc9e47942de7becfbf  d2\bd1993-09-19d2t05.flac
+dc29582a1783d79e1b7019861a6e4c5d  d2\bd1993-09-19d2t06.flac
+cfa4d0bccdc5ae19f01dae51a45d1a9e  d2\bd1993-09-19d2t07.flac
+3b749a9089e71ddcff61c0d242089e9b  d2\d2.shntool.txt
+fbbd06f8589cb4ac1968950ac2de9c2b  d2t04.PNG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-19-ss6p-pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+bd1993-09-19d1t01.flac:6b24b9690ab806e559dd8037c65fd85a
+bd1993-09-19d1t02.flac:102ecddba44d14b82a051cca8f8473be
+bd1993-09-19d1t03.flac:9d211fd85cee718bf701f439ca009b45
+bd1993-09-19d1t04.flac:b3f08ddab953504f7e83bb220de28c7b
+bd1993-09-19d1t05.flac:55bbb850ecc2a8fefd40020003afe4e8
+bd1993-09-19d1t06.flac:fd7286cb342c9b12e92c50ee7293fc73
+bd1993-09-19d1t07.flac:cf775d90e25247afb1e261814b86af25
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-19-ss6p-pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+bd1993-09-19d2t01.flac:2b7171de7f9693dd334b3399913877b8
+bd1993-09-19d2t02.flac:0670d614400076e884770906ba5e8eb2
+bd1993-09-19d2t03.flac:3253e7316aadae688da4311aa329c7f4
+bd1993-09-19d2t04.flac:7309258ac2b851ecc21921348783f6b9
+bd1993-09-19d2t05.flac:bf3444247d326cfe35a9eed73d1f6ed0
+bd1993-09-19d2t06.flac:5e5cfcc99bc0a88420973816f03a2a4c
+bd1993-09-19d2t07.flac:8564af15c80efef7308e32d33c61e7ca
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-09-19-ss6p-pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:46.00       18698444 B   ---   --   ---xx   flac  0.4594  bd1993-09-19d1t01.flac
+     4:07.30       43641404 B   ---   --   ---xx   flac  0.4751  bd1993-09-19d1t02.flac
+     7:49.34       82811612 B   ---   --   ---xx   flac  0.5719  bd1993-09-19d1t03.flac
+     6:02.56       63988556 B   ---   --   ---xx   flac  0.5849  bd1993-09-19d1t04.flac
+     7:38.28       80857100 B   ---   --   ---xx   flac  0.5565  bd1993-09-19d1t05.flac
+     9:25.67       99823628 B   ---   --   ---xx   flac  0.5748  bd1993-09-19d1t06.flac
+     7:24.19       78366332 B   ---   --   ---xx   flac  0.5501  bd1993-09-19d1t07.flac
+    44:14.09      468187076 B                            0.5545  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-09-19-ss6p-pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:20.06       67046156 B   ---   --   ---xx   flac  0.4642  bd1993-09-19d2t01.flac
+     8:04.03       85384700 B   ---   --   ---xx   flac  0.4813  bd1993-09-19d2t02.flac
+     9:56.66      105289676 B   ---   --   ---xx   flac  0.5034  bd1993-09-19d2t03.flac
+     7:06.51       75266396 B   ---   --   ---xx   flac  0.5631  bd1993-09-19d2t04.flac
+     8:43.40       92351324 B   ---   --   ---xx   flac  0.5961  bd1993-09-19d2t05.flac
+     7:33.50       80026844 B   ---   --   ---xx   flac  0.5584  bd1993-09-19d2t06.flac
+     9:23.21       99362636 B   ---   --   ---xx   flac  0.5097  bd1993-09-19d2t07.flac
+    57:08.12      604727732 B                            0.5258  (7 files)
+=================== 
+=================== 
+=================== 

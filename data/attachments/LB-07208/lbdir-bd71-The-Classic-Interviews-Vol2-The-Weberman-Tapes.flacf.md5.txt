@@ -1,0 +1,18 @@
+3ede022502e99387a4b1a9f418506c11  01 - Bob Dylan and A.J. Weberman In Conversation Part 1.flac
+d8912de0f056a004da867a5e3bde55d5  02 - Bob Dylan and A.J. Weberman In Conversation Part 2.flac
+5cfab4733b5cd9480e32773f3e222bf9  03 - Bob Dylan and A.J. Weberman In Conversation Part 3.flac
+467dc9938896afa82948ea1ec4754e06  04 - Bob Dylan and A.J. Weberman In Conversation Part 4.flac
+1a65ff517abcd36c5a2fe166e48edbaa  Artwork\The Classic Interviews Vol.2 booklet01.png
+0ae19847a0da88ae6f6ac329ecea5aa6  Artwork\The Classic Interviews Vol.2 booklet02.png
+8e4c50f74394f152175bd176154bed75  Artwork\The Classic Interviews Vol.2 disc.png
+a91fa0aea055ddf240dd2d0c10636258  Artwork\The Classic Interviews Vol.2 tray01.png
+9de18e033480d292b494f5912e8528db  Artwork\The Classic Interviews Vol.2 tray02.png
+44ac3c8ffe0c70c602a642056bd11ebf  Extras\Dylan-Alan J. Weberman phone conversation.txt
+bb2cf029e2d48c7fefa89deb46c91312  Extras\Interviews_70s.pdf
+1282ac6724651bc62d8859f20f3d90d8  The Classic Interviews Vol.2 The Weberman Tapes info.txt
+a9cef8c041fcffe496cc1fa616875d56  The Classic Interviews Vol.2 The Weberman Tapes.cue
+e26dd40ccbd744bd62419942b8efbe77  The Classic Interviews Vol.2 The Weberman Tapes.ffp
+e2d8ec499bd36b2af1d54b75c1a1a09b  The Classic Interviews Vol.2 The Weberman Tapes.log
+ff6801bb5c0043bb68116e6b07f6ac5f  The Classic Interviews Vol.2 The Weberman Tapes.m3u
+58e399ef286e3293c07e98628aa0b12a  The Classic Interviews Vol.2 The Weberman Tapes.md5
+f8e77a5874409158ab44144bc77419fc  The Classic Interviews Vol.2 The Weberman Tapes.st5

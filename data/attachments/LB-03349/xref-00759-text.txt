@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== text.txt
+===================
+===================
+===================
+Recreation and Convocation Center
+State University Of New York At Albany
+Albany, New York
+April 18, 1997
+
+Unidentified taper
+Source/Lineage: no info
+
+
+01.	Crash On The Levee (Down In The Flood) [04:40]
+02.	Pretty Peggy-O (trad.) [06:36]
+03.	All Along The Watchtower [07:36]
+04.	You Ain't Goin' Nowhere [05:13]
+05.	Most Likely You Go Your Way (And I'll Go Mine) [07:09]
+06.	Silvio (Bob Dylan & Robert Hunter) [08:31]
+07.	Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson) [07:58]
+08.	Mr. Tambourine Man [07:20]
+09.	The Lonesome Death Of Hattie Carroll [07:16]
+10.	Tombstone Blues [08:19]
+11.	(band intro) [00:46]
+Total time: [71:31]
+
+12.	Shooting Star [08:31]
+13.	Ballad Of A Thin Man [10:11]
+14.	Highway 61 Revisited [10:05]
+15.	Forever Young [09:58]
+16.	Rainy Day Women # 12 & 35 [06:16]
+Total time: [45:03]
+
+Concert # 867 of The Never-Ending Tour
+Concert # 14 of the 1997 Spring Tour of Canada and USA
+1997 concert # 25
+
+Concert # 14 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+7-9, 14 acoustic with the band
+10 Bob Dylan harmonica
+4, 6, 7 Larry Campbell & Bucky Baxter (backup vocal)
+7 Larry Campbell (fiddle)
+
+10 new songs (66%) compared to previous concert
+2 new songs for this tour
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+fc090547856502f8d680500c40ce0cae *01 Crash on the levee (down in the flood).flac
+9cf9d46ad9edcc335b3772e93a107115 *02 Pretty Peggy-O.flac
+21e43d33ddcc4f642abc7a8631a3e2af *03 All along the watchtower.flac
+9bfbfc9a73a01ed8f84ba4d62a156d70 *04 You ain't goin' nowhere.flac
+ee3985b6115e630c966396617d802553 *05 Most likely you go your way (and I'll go mine).flac
+5c1fabc901e9af4bfac35c1afe9a36e0 *06 Silvio.flac
+6d1784d32d4993fc3f1624ae8ee197e8 *07 Friend of the Devil.flac
+7601e2d1d492d33020f605d7039b7393 *08 Mr. Tambourine Man.flac
+79b5457fe684de2d0297d9a29a18d15e *09 The lonesome death of Hattie Carroll.flac
+7cc630b9bd6e4e6c62061647cb71825b *10 Tombstone blues.flac
+24ea3970485d0c42bc89c7c2e67a8663 *11 (band intro).flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+8058c0f77c599269ec4bcebeb5b9079f *11 Shooting star.flac
+6e6671ac26719e9982fba73b0f9cba36 *12 Ballad of a thin man.flac
+2bdb5dc2b358cfae8516ba300efdb6a2 *13 Highway 61 revisited.flac
+034ce011029d659743c36af8f1456615 *14 Forever young.flac
+43a3e219a41309ae590c3cd399f5863e *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================

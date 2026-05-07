@@ -1,0 +1,127 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-21-lk.flacf 
+=================== 
+=================== 
+=================== 
+2de3788c9e9a42db08b1c4e0715a06e0  D1\D1.md5
+46b012e7307fe77d52838fa29c2396a5  D1\Toledo 21oct78 101.flac
+8232496370590f68c3aba9a59b1c49ff  D1\Toledo 21oct78 102.flac
+738a649a92db46d9caa58aff94bdf26b  D1\Toledo 21oct78 103.flac
+5c94a05b53afebf9fd963d9efa8f3983  D1\Toledo 21oct78 104.flac
+c5e97589cc58c24a03a0fe7e890afb42  D1\Toledo 21oct78 105.flac
+aad92d53d0aea15463ea37fe528ce1d0  D1\Toledo 21oct78 106.flac
+3c19d0e414ce3930762e0261e3a1aeed  D1\Toledo 21oct78 107.flac
+66b1f6b2baca1c6c4811355b307a588e  D1\Toledo 21oct78 108.flac
+72424bd1c8968cc892c9fb2b94c874dc  D1\Toledo 21oct78 109.flac
+7cb00826a1c4242d30d344f2c38d34a0  D1\Toledo 21oct78 110.flac
+5f22f1749f9af40cd6faadff94eca31c  D1\Toledo 21oct78 111.flac
+a16277705eb3623be964ca062894d0e6  D1\Toledo 21oct78 112.flac
+cabe3f0e50868249d22dbe92f3d9728b  D1\Toledo 21oct78 113.flac
+580e51c0de40026161691b42227d06b4  D1\Toledo 21oct78 114.flac
+f15865a83cda484020d4558b6f58c949  D1\Toledo 21oct78 115.flac
+9a61a89523b4349406bfbc33a6c28956  D2\D2.md5
+d9656c5f8aa0842a6b82e9bcd1b42055  D2\Toledo 21oct78 201.flac
+8c6adcaae5351b3b3bff3bb6fdd2d8ed  D2\Toledo 21oct78 202.flac
+1192bddc53a108085035c7a9ed134e93  D2\Toledo 21oct78 203.flac
+033bc09f64896eaf17a7b6e3124be248  D2\Toledo 21oct78 204.flac
+60ccd7456fac0386dede51690dd43d20  D2\Toledo 21oct78 205.flac
+bdcc49d6aa685a03fb0aba507e9219b9  D2\Toledo 21oct78 206.flac
+37f3c666b2a60ba811bcf93431a94a34  D2\Toledo 21oct78 207.flac
+d71a5ffc438d50cf0e70098e53fb590c  D2\Toledo 21oct78 208.flac
+9bf05f7affb1a6b00d005a0ef6d9d050  D2\Toledo 21oct78 209.flac
+e72cfe1197a9539b4423e3a8b8d2181d  D2\Toledo 21oct78 210.flac
+b043c15adf8495196037733e3f3d8255  D2\Toledo 21oct78 211.flac
+893d5873afb34611367d728e14035a76  D2\Toledo 21oct78 212.flac
+ee61b621698e9737451ff9a12e1ff617  info.txt
+ab08b20c90318b7df1b9d3db892586d2  LK 1978 Leg 3 DVD 5.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-21-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+Toledo 21oct78 101.flac:f3d30b41d00d51df43ceac4551f82050
+Toledo 21oct78 102.flac:ba7fcac71a77e0e4c6498e31a92e222c
+Toledo 21oct78 103.flac:d0c0755ab39875bd0cc6256e2a063d8e
+Toledo 21oct78 104.flac:ad0f7eaf9ff525fbd14bb5df609535b5
+Toledo 21oct78 105.flac:9c7332b7a3ade8de8b80d7283a7253b1
+Toledo 21oct78 106.flac:cccd57e5655062f1275eb1b83688462e
+Toledo 21oct78 107.flac:bd3fcf2eb2e2fff8136cece028bd6c31
+Toledo 21oct78 108.flac:2330f3d188bd507a4653d4b64095a513
+Toledo 21oct78 109.flac:5021a68f48ce73c85f911c6b6977e175
+Toledo 21oct78 110.flac:3839da7e2f2d8bb9e9e551b19cdb9cbc
+Toledo 21oct78 111.flac:43d2691aa2b93bf12255bdff06d74da0
+Toledo 21oct78 112.flac:af51b0f57faada819251486e52abada7
+Toledo 21oct78 113.flac:7fbd1fc1fe4ff65b9afd87a705a80fe7
+Toledo 21oct78 114.flac:895d720842aa68bbb1ffd371d2521312
+Toledo 21oct78 115.flac:350927ee71fbf361b859742d6795bf8a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-21-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+Toledo 21oct78 201.flac:7304e957a4d667516cb2aba56d8c0617
+Toledo 21oct78 202.flac:97626cbdfdfef482c039aea6e821c387
+Toledo 21oct78 203.flac:a25638e979bde31bcb8e0dfcb8eec9f5
+Toledo 21oct78 204.flac:77495562bfb2aa6f73a352ffb437c23c
+Toledo 21oct78 205.flac:26d4ee53c6f65ac0592113bb1c013d1a
+Toledo 21oct78 206.flac:32c39acd3a1407c5ba01913add66e73c
+Toledo 21oct78 207.flac:1a32ce4cac73629ed9af921b7920f7af
+Toledo 21oct78 208.flac:ff5c25bf59728072b2f8d78b3d760b8c
+Toledo 21oct78 209.flac:33ab311a586611c03760b3f97e4c5d03
+Toledo 21oct78 210.flac:36f0e5768996a10a6dec9798f2fff0bf
+Toledo 21oct78 211.flac:59079c53d25849a6d78b7f4870f1f3f0
+Toledo 21oct78 212.flac:52afec12dd9337a14e14d5947d4f6cbe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-21-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:45.30       29176604 B   ---   --   ---xx   flac  0.5445  Toledo 21oct78 101.flac
+     1:57.26       20699996 B   ---   --   ---xx   flac  0.5604  Toledo 21oct78 102.flac
+     5:19.55       56401004 B   ---   --   ---xx   flac  0.5718  Toledo 21oct78 103.flac
+     4:40.30       49462604 B   ---   --   ---xx   flac  0.5680  Toledo 21oct78 104.flac
+     3:54.29       41345852 B   ---   --   ---xx   flac  0.5566  Toledo 21oct78 105.flac
+     8:15.66       87473276 B   ---   --   ---xx   flac  0.5397  Toledo 21oct78 106.flac
+     4:32.64       48131372 B   ---   --   ---xx   flac  0.5674  Toledo 21oct78 107.flac
+     5:33.59       58880012 B   ---   --   ---xx   flac  0.5569  Toledo 21oct78 108.flac
+     4:24.37       46656668 B   ---   --   ---xx   flac  0.5390  Toledo 21oct78 109.flac
+     7:10.37       75939068 B   ---   --   ---xx   flac  0.5695  Toledo 21oct78 110.flac
+     4:36.62       48832268 B   ---   --   ---xx   flac  0.5310  Toledo 21oct78 111.flac
+     4:57.69       52553132 B   ---   --   ---xx   flac  0.5474  Toledo 21oct78 112.flac
+     5:21.74       56798492 B   ---   --   ---xx   flac  0.5472  Toledo 21oct78 113.flac
+     6:46.23       71672540 B   ---   --   ---xx   flac  0.4823  Toledo 21oct78 114.flac
+     4:41.25       49627244 B   ---   --   ---xx   flac  0.5404  Toledo 21oct78 115.flac
+    74:59.11      793650132 B                            0.5465  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-21-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:04.34       53705612 B   ---   --   ---xx   flac  0.4803  Toledo 21oct78 201.flac
+     5:55.32       62697308 B   ---   --   ---xx   flac  0.3901  Toledo 21oct78 202.flac
+     6:06.05       64574204 B   ---   --   ---xx   flac  0.6057  Toledo 21oct78 203.flac
+     4:45.00       50274044 B   ---   --   ---xx   flac  0.6315  Toledo 21oct78 204.flac
+     5:30.68       58371980 B   ---   --   ---xx   flac  0.6426  Toledo 21oct78 205.flac
+     5:03.64       53599772 B   ---   --   ---xx   flac  0.6305  Toledo 21oct78 206.flac
+     3:47.02       40047548 B   ---   --   ---xx   flac  0.6758  Toledo 21oct78 207.flac
+     3:09.64       33490172 B   ---   --   ---xx   flac  0.6649  Toledo 21oct78 208.flac
+     2:16.15       24025724 B   ---   --   ---xx   flac  0.5497  Toledo 21oct78 209.flac
+     6:33.66       69480476 B   ---   --   ---xx   flac  0.6571  Toledo 21oct78 210.flac
+     6:35.40       69772124 B   ---   --   ---xx   flac  0.5496  Toledo 21oct78 211.flac
+     7:02.37       74527868 B   ---   --   ---xx   flac  0.5229  Toledo 21oct78 212.flac
+    61:50.52      654566832 B                            0.5774  (12 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-04-10-b.flacf 
+=================== 
+=================== 
+=================== 
+4c6e6e7a0efe84152681d5344cea8760  2004-04-10 Township Auditorium, Columbia, South Carolina, USA [Fine Wine].md5
+d51d1399ffc448d89f4e23fd8d5f19cc  CD1\00 Announcement.flac
+53c5ac8323b5e444c1e0b03eaeb47dac  CD1\01 Maggie's farm.flac
+be17c147cfdc892924e9331c8547b138  CD1\02 Tell me that it isn't true.flac
+50d07ee8fd4028a2599896dc93bb59db  CD1\03 Lonesome day blues.flac
+2f409375c3f66d36eb7a7eb71964f9be  CD1\04 Ring them bells.flac
+202c3c02445f1ae8256e361639607885  CD1\05 Things have changed.flac
+817101710e57ada52c1ec5eaaf19381f  CD1\06 Boots of Spanish leather.flac
+432c37c037a6e2ec51d4ecaff6ea7979  CD1\07 Tweedle Dee & Tweedle Dum.flac
+388d59237a1ece6f5e9d1a3a582898aa  CD1\08 Tryin' to get to heaven.flac
+916bc46d24a52270209cc46561f2b74d  CD1\09 I don't believe you (she acts like we never have met).flac
+a332fbf0ea58ab7a402f4105c3339d6c  CD1\10 Ballad of Hollis Brown.flac
+8f527d6a35b714679fc756243a0cffe0  CD1\11 Bye and bye.flac
+89395171d20fc090d940a4f029a003e8  CD1\CD1.ffp
+89395171d20fc090d940a4f029a003e8  CD1\ffps CD1.txt
+df2dccb750ca3781328dcc5d10f0ff13  CD2\12 Honest with me.flac
+07c147f358013903d96ecb35cd4639e2  CD2\13 I believe in you.flac
+4cd78ef0efc06f0603f0288339dc98bd  CD2\14 Summer days.flac
+ce6a23d99bed819e804152cba6afc730  CD2\15 Cat's in the well.flac
+b3d8b5dffe8aa3b86472dda3e03a25bc  CD2\16 Like a rolling stone.flac
+644b241b2f42581a7dda44e789131dab  CD2\17 (band intro).flac
+868d4a5135665631863c098b95f5fb42  CD2\17 All along the watchtower.flac
+a3b20552565b492995bc324d0335046e  CD2\CD2.ffp
+a3b20552565b492995bc324d0335046e  CD2\ffps CD2.txt
+ccc9b6a513dae137700e520855d2db5c  Info\2004-04-10 Township Auditorium, Columbia, South Carolina, USA [Fine Wine].txt
+5303e0cec6fd024383383b6ee53e3fbe  Info\2004.04.10 Columbia Fine Wine d1.LOG
+e3679d3b44a2d91a347b6167533b3856  Info\2004.04.10 Columbia Fine Wine d2 fix.LOG
+4b0a9e726cce4c2341f233ac4f3ade57  Info\2004.04.10 Columbia Fine Wine d2.LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-04-10-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+00 announcement.flac:bc31f7be27b9eaa02a19883ddef7e0d1
+01 maggie's farm.flac:11bc483cc542aa056c60d77bf40ed67e
+02 tell me that it isn't true.flac:31bbb862fd924c69b8601ec3da758eb3
+03 lonesome day blues.flac:92bdb3955c6bd843b7bfd10b1ce33c13
+04 ring them bells.flac:7651c473f23a18291d935867f36f98f7
+05 things have changed.flac:a9aa5c68d1dc618c432fd8e3f9b3dca9
+06 boots of spanish leather.flac:b7f3b9852622af7bab0f33283d27281a
+07 tweedle dee & tweedle dum.flac:12ae345190c713cd0cfdee50dc90164c
+08 tryin' to get to heaven.flac:e2aaa93e0bf9e8537f499c853cfaa92d
+09 i don't believe you (she acts like we never have met).flac:f99a6ec2076ba4334882245712efa2a6
+10 ballad of hollis brown.flac:8f92cb9a00d9adce2259d11b7081c718
+11 bye and bye.flac:6bf1f61733a8c4fe3b17d0aa6cad4f00
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-04-10-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+12 honest with me.flac:6c3e4b82766ab96ca1eff076d1b2791b
+13 i believe in you.flac:9e0319fcbe57aa1cb1195ddd3d20f7ee
+14 summer days.flac:6912888c8dd4dfd9ccaa50524fa9c6c0
+15 cat's in the well.flac:6ed01c6f042ea035afecd5d111457470
+16 like a rolling stone.flac:a8968691c608bc38a9f71c96db84b805
+17 (band intro).flac:580c5c75ef4bb4202fc90eca3927bc5e
+17 all along the watchtower.flac:55cf470736c1d4f64812b21907db6a42
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-04-10-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:57.16       10092476 B   ---   --   ---xx   flac  0.4812  00 Announcement.flac
+     5:24.25       57212444 B   ---   --   ---xx   flac  0.5726  01 Maggie's farm.flac
+     4:37.55       48992204 B   ---   --   ---xx   flac  0.5187  02 Tell me that it isn't true.flac
+     6:52.06       72690956 B   ---   --   ---xx   flac  0.5905  03 Lonesome day blues.flac
+     5:03.30       53519804 B   ---   --   ---xx   flac  0.5032  04 Ring them bells.flac
+     6:53.28       72919100 B   ---   --   ---xx   flac  0.5731  05 Things have changed.flac
+     6:24.15       67772924 B   ---   --   ---xx   flac  0.4831  06 Boots of Spanish leather.flac
+     5:43.08       60524060 B   ---   --   ---xx   flac  0.5492  07 Tweedle Dee & Tweedle Dum.flac
+     6:56.30       73453004 B   ---   --   ---xx   flac  0.4917  08 Tryin' to get to heaven.flac
+     7:43.21       81722636 B   ---   --   ---xx   flac  0.5640  09 I don't believe you (she acts like we never have met).flac
+     5:01.40       53190524 B   ---   --   ---xx   flac  0.4857  10 Ballad of Hollis Brown.flac
+     6:11.09       65465612 B   ---   --   ---xx   flac  0.4190  11 Bye and bye.flac
+    67:47.58      717555744 B                            0.5242  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-04-10-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:55.63       73354220 B   ---   --   ---xx   flac  0.5965  12 Honest with me.flac
+     5:52.42       62191628 B   ---   --   ---xx   flac  0.5420  13 I believe in you.flac
+    11:12.56      118672556 B   ---   --   ---xx   flac  0.5395  14 Summer days.flac
+     5:25.13       57360620 B   ---   --   ---xx   flac  0.6029  15 Cat's in the well.flac
+     6:40.03       70567100 B   ---   --   ---xx   flac  0.5991  16 Like a rolling stone.flac
+     0:58.04       10240652 B   ---   --   ---xx   flac  0.5494  17 (band intro).flac
+     6:30.49       68911292 B   ---   --   ---xx   flac  0.5824  17 All along the watchtower.flac
+    43:35.05      461298068 B                            0.5725  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,20 @@
+d7c7ce1e82e00fdd79f57ed1b8f810a5  bd2007-04-02-Mr.M.txt
+ef692b05a45cfbfbe3fdb6d6f382507b  CD1\Track No01.flac
+060bf3732c7218a924ba934c5603b32a  CD1\Track No02.flac
+6ce1af8a1bced77226398ed8d9881df0  CD1\Track No03.flac
+8e6ee27f489ec9a40f66015efeeaf51b  CD1\Track No04.flac
+26968edf5d02d100d5935a1c7cb1ff8b  CD1\Track No05.flac
+8643ac8dd7410977372a1d74f308353d  CD1\Track No06.flac
+c54ffd41b540ea079278807bfa5c219f  CD1\Track No07.flac
+bf4bd7d32d446ef9de17ea1fc5f1d931  CD1\Track No08.flac
+33e9a5e65d1d0d09261998159967d634  CD1\Track No09.flac
+e4d027630ef161441f5a853e425c4116  CD1\Track No10.flac
+c10fef1cc3d8cf243de419817c7a911d  CD1\Track No11.flac
+855c5ca989a662e42ec8b2cf7d864192  CD1\Track No12.flac
+6f5d3e0d17c1603d5957b2c5b0bdc3ab  CD2\Track No01.flac
+c3fd7da5b2c01c78c8bc2e2a33595f66  CD2\Track No02.flac
+7e4c26dd7312c95ce28d78f917c7a609  CD2\Track No03.flac
+5dfd36cdf30cded576595c6b1eff92db  CD2\Track No04.flac
+27c3c2b11f8099fe3d372f0701f0caea  CD2\Track No05.flac
+7e9d63055840245283f252cff295af66  CD2\Track No06.flac
+569091cc7f0615615955ded48c28c2fc  CD2\Track No07.flac

@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-28-dpa4022.shnf 
+=================== 
+=================== 
+=================== 
+b360f12699ecee171d35f5b276e9866e  bd05-04-28-dpa4022-LB-2659.txt
+436daa90718ee5d03e6d21f83c752f6f  dylan2005-04-28.txt
+e05e244d081f9d40e96ba3018345564c  dylan2005-04-28d1\dylan2005-04-28d1.md5
+001ce8e120b37ff0cea37e0055c45964  dylan2005-04-28d1\dylan2005-04-28d1t01.shn
+278436a128fd7efe71c6dccd7de6d770  dylan2005-04-28d1\dylan2005-04-28d1t02.shn
+3bf0a9fdbae3826f23ff2ece10b73176  dylan2005-04-28d1\dylan2005-04-28d1t03.shn
+6542fa66bf90018064c95d7bede4ec55  dylan2005-04-28d1\dylan2005-04-28d1t04.shn
+06a66141ece82073c9c75faef9843b56  dylan2005-04-28d1\dylan2005-04-28d1t05.shn
+047a0180e1ba19111e35ba4ba9be3311  dylan2005-04-28d1\dylan2005-04-28d1t06.shn
+493bdb89d1e1933918f60936bf551765  dylan2005-04-28d1\dylan2005-04-28d1t07.shn
+faaab6b73bc7196bd98529eabe58c5c1  dylan2005-04-28d1\dylan2005-04-28d1t08.shn
+22dd3983eeb6e01ab221273fc8844649  dylan2005-04-28d2\dylan2005-04-28d2.md5
+9c4730a0c404e387a5eff9dbea7486d6  dylan2005-04-28d2\dylan2005-04-28d2t01.shn
+c70b61b2ba21e82b1e57eaca8ba72d2d  dylan2005-04-28d2\dylan2005-04-28d2t02.shn
+1585a15e6efad0121d940ce57dcf1043  dylan2005-04-28d2\dylan2005-04-28d2t03.shn
+330c33e12675d3183d0ce47bb48724a5  dylan2005-04-28d2\dylan2005-04-28d2t04.shn
+44fc477d6113fef171d50249d75d1b90  dylan2005-04-28d2\dylan2005-04-28d2t05.shn
+5f5ff3c1b370574957e1d2690f118a4b  dylan2005-04-28d2\dylan2005-04-28d2t06.shn
+fb8e710c6dd1626c7ff63ecfe15be8c7  dylan2005-04-28d2\dylan2005-04-28d2t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-04-28-dpa4022.shnf\dylan2005-04-28d1 
+=================== 
+=================== 
+=================== 
+cb75fdb8887d822e380d23580272a1ac  [shntool]  dylan2005-04-28d1t01.wav
+25b010211e95ae38fa8ac83609f44cee  [shntool]  dylan2005-04-28d1t02.wav
+78e751ecaa83d04a2d4e2c35c1a60071  [shntool]  dylan2005-04-28d1t03.wav
+3af40ac78fa48a857eaff8ef1d7602a3  [shntool]  dylan2005-04-28d1t04.wav
+1196b49d35bd2d62c2928a23f4ba46ef  [shntool]  dylan2005-04-28d1t05.wav
+73badcb5650d3969f6f7ce1556a223e8  [shntool]  dylan2005-04-28d1t06.wav
+eda26d2348d827d06c7b401e9990bf1e  [shntool]  dylan2005-04-28d1t07.wav
+db20f159d810cfb844bf100c59713405  [shntool]  dylan2005-04-28d1t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-04-28-dpa4022.shnf\dylan2005-04-28d2 
+=================== 
+=================== 
+=================== 
+64766b48d9ebe3fc7939a52417ac15bb  [shntool]  dylan2005-04-28d2t01.wav
+2b7e59ee8069112e75cc77a7fd69dc70  [shntool]  dylan2005-04-28d2t02.wav
+140d3465cc7ec68e698fc1d788f35ad7  [shntool]  dylan2005-04-28d2t03.wav
+5f5cca93ea64a30ee9847d9dc58cdc31  [shntool]  dylan2005-04-28d2t04.wav
+3068cc15d28a95f344dcaafa782bf9f3  [shntool]  dylan2005-04-28d2t05.wav
+48360e9524b5e4de7dcb3ca66ec886a9  [shntool]  dylan2005-04-28d2t06.wav
+1d84e54df87b154bd5452c878a49a356  [shntool]  dylan2005-04-28d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-28-dpa4022.shnf\dylan2005-04-28d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.03        4417100 B   ---   --   -----    wav  1.0000  dylan2005-04-28d1t01.wav
+     5:21.31       56697356 B   ---   --   -----    wav  1.0000  dylan2005-04-28d1t02.wav
+     5:34.47       59028188 B   ---   --   -----    wav  1.0000  dylan2005-04-28d1t03.wav
+     7:32.68       79892780 B   ---   --   -----    wav  1.0000  dylan2005-04-28d1t04.wav
+     6:27.42       68365628 B   ---   --   -----    wav  1.0000  dylan2005-04-28d1t05.wav
+     7:41.67       81478028 B   ---   --   -----    wav  1.0000  dylan2005-04-28d1t06.wav
+     7:28.02       79031948 B   ---   --   -----    wav  1.0000  dylan2005-04-28d1t07.wav
+    10:14.23      108363740 B   ---   --   -----    wav  1.0000  dylan2005-04-28d1t08.wav
+    50:45.58      537274768 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-28-dpa4022.shnf\dylan2005-04-28d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.41       69950876 B   ---   --   -----    wav  1.0000  dylan2005-04-28d2t01.wav
+     7:41.23       81374540 B   ---   --   -----    wav  1.0000  dylan2005-04-28d2t02.wav
+     7:14.58       76694060 B   ---   --   -----    wav  1.0000  dylan2005-04-28d2t03.wav
+     6:35.11       69703916 B   ---   --   -----    wav  1.0000  dylan2005-04-28d2t04.wav
+    11:15.39      119161772 B   ---   --   -----    wav  1.0000  dylan2005-04-28d2t05.wav
+     5:52.02       62097548 B   ---   --   -----    wav  1.0000  dylan2005-04-28d2t06.wav
+     5:47.45       61316684 B   ---   --   -----    wav  1.0000  dylan2005-04-28d2t07.wav
+    51:02.69      540299396 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 

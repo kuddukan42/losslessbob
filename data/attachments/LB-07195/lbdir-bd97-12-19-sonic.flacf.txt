@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-19-sonic.flacf 
+=================== 
+=================== 
+=================== 
+073c3958c85f4eb1c5c4555e57b816c8  Bob Dylan 1997-12-19 Los Angeles, Ca Flac16FFP.ffp
+ef5118be26ec8ea56010cc8bd18a6d52  Dylan 1997-12-19 Los Angeles.txt
+25022ec4e9317e0a8c26d8a95ddc91e5  Dylan1997-12-19d1t01.flac
+853cada21e470376b9f0df38283bff31  Dylan1997-12-19d1t02.flac
+ed3912a3e7f16c3d9c15e4fea1cfdf4d  Dylan1997-12-19d1t03.flac
+61562b679ae4c3cd3983f7750e5ca333  Dylan1997-12-19d1t04.flac
+9c5413c29ab7a5822f353c502c645f7c  Dylan1997-12-19d1t05.flac
+5d2ef76cff7fbc518133f5a21f6586bb  Dylan1997-12-19d1t06.flac
+3cead8ba1f5b1cfce1ef5981e717b34b  Dylan1997-12-19d1t07.flac
+3ece45a73ed2cd124e3544997028248a  Dylan1997-12-19d1t08.flac
+6e576148ecc946927a993d69793783d9  Dylan1997-12-19d1t09.flac
+a90a7f90174e0e918e9b7f06d6760507  Dylan1997-12-19d1t10.flac
+f9e4f5e7190d459faf51d796571832ad  Dylan1997-12-19d1t11.flac
+1c8ce072d6963bb04e43d55c12eb6478  Dylan1997-12-19d1t12.flac
+30f9e82268e7fbfec5d941b5c7d7dc0a  Dylan1997-12-19d2t01.flac
+a5196e0e1a72306fd23b2f5e07913d1c  Dylan1997-12-19d2t02.flac
+592990db15d9a6229f41938e12139f3e  Dylan1997-12-19d2t03.flac
+432f39752cb98b6253e402cf81eb3c64  Dylan1997-12-19d2t04.flac
+0f274c5278a163cf0509e74050976c25  Dylan1997-12-19d2t05.flac
+9965c7540bba0a2ae6382f69a4859e74  SCrow1997-12-19d2t06.flac
+28f5db78a42f804f33f751db71da33c4  SCrow1997-12-19d2t07.flac
+d51fd7a90b7745abe36223c036210b48  SCrow1997-12-19d2t08.flac
+05b597c492a0a7b1f444bfc3fabd9417  SCrow1997-12-19d2t09.flac
+b214db12ec6c1e80d748a37fef4d5b05  SCrow1997-12-19d2t10.flac
+d6bf7bb3f7ae2679a0a5313d8a99c268  SCrow1997-12-19d2t11.flac
+69ec0ea8ecfa7db5a0fb152f3d8e81ac  SCrow1997-12-19d2t12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-19-sonic.flacf 
+=================== 
+=================== 
+=================== 
+Dylan1997-12-19d1t01.flac:4d073b87ac5528304191eaac8117f35d
+Dylan1997-12-19d1t02.flac:685ea5b831286d2e30b9745cedf21974
+Dylan1997-12-19d1t03.flac:cd07027d3321a93c7fde993d27383d82
+Dylan1997-12-19d1t04.flac:f49d085c260bd0e65a95178f93b261b2
+Dylan1997-12-19d1t05.flac:5ae39a503562c6075f8e92533cc58301
+Dylan1997-12-19d1t06.flac:73a68b6a509018a933a47bc95842847b
+Dylan1997-12-19d1t07.flac:fff8716d3c8f85d305412890720b8ef4
+Dylan1997-12-19d1t08.flac:b13b38be1f1deff6aaf3ca6d53ea55ae
+Dylan1997-12-19d1t09.flac:c1692d9960975166da9dad0f15e44ae9
+Dylan1997-12-19d1t10.flac:a76f0d66fede2b5a81ae9144b06b8866
+Dylan1997-12-19d1t11.flac:22352e809d17317e045c87fdba869dff
+Dylan1997-12-19d1t12.flac:01491fe15489815a5277fcff10ff1fdd
+Dylan1997-12-19d2t01.flac:4dca968b892cb1eeaaf0114383653f3a
+Dylan1997-12-19d2t02.flac:4cd683803a7531555255802aa68d3af9
+Dylan1997-12-19d2t03.flac:b32715efb8b1c2e5a1c6a5a2b4c94321
+Dylan1997-12-19d2t04.flac:856e6d395fa6998684a5e9bea07a807d
+Dylan1997-12-19d2t05.flac:51c3b9284f7e2e0ee3b1a8385762b2c1
+SCrow1997-12-19d2t06.flac:889a412b2c867830288e3352a87b8f30
+SCrow1997-12-19d2t07.flac:768dabeba3ebce7856a7dca4379d1615
+SCrow1997-12-19d2t08.flac:6b6e5f77f10caddedeceba1dc13d758a
+SCrow1997-12-19d2t09.flac:2b34c8170f2755898b65fe529ef716a3
+SCrow1997-12-19d2t10.flac:e87b8e97c86f320b36ff60494ff9f11b
+SCrow1997-12-19d2t11.flac:a43649499e973639a5ee9812e4ef4e62
+SCrow1997-12-19d2t12.flac:1e9f291e4824b5936852af346a67a7de
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-19-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.53       61159100 B   ---   --   ---xx   flac  0.5656  Dylan1997-12-19d1t01.flac
+     6:17.08       66521660 B   ---   --   ---xx   flac  0.5366  Dylan1997-12-19d1t02.flac
+     6:47.59       71933612 B   ---   --   ---xx   flac  0.5629  Dylan1997-12-19d1t03.flac
+     5:44.52       60803948 B   ---   --   ---xx   flac  0.5314  Dylan1997-12-19d1t04.flac
+     6:01.32       63755708 B   ---   --   ---xx   flac  0.5716  Dylan1997-12-19d1t05.flac
+     6:52.31       72749756 B   ---   --   ---xx   flac  0.5900  Dylan1997-12-19d1t06.flac
+     4:08.36       43831916 B   ---   --   ---xx   flac  0.5286  Dylan1997-12-19d1t07.flac
+     6:17.56       66634556 B   ---   --   ---xx   flac  0.5020  Dylan1997-12-19d1t08.flac
+     8:20.64       88350572 B   ---   --   ---xx   flac  0.5613  Dylan1997-12-19d1t09.flac
+     4:32.06       47994956 B   ---   --   ---xx   flac  0.5107  Dylan1997-12-19d1t10.flac
+     9:00.46       95364236 B   ---   --   ---xx   flac  0.5507  Dylan1997-12-19d1t11.flac
+     5:36.45       59376284 B   ---   --   ---xx   flac  0.5894  Dylan1997-12-19d1t12.flac
+     7:26.63       78822620 B   ---   --   ---xx   flac  0.5888  Dylan1997-12-19d2t01.flac
+     2:06.26       22287596 B   ---   --   ---xx   flac  0.3993  Dylan1997-12-19d2t02.flac
+     7:01.28       74330300 B   ---   --   ---xx   flac  0.5275  Dylan1997-12-19d2t03.flac
+     5:43.13       60535820 B   ---   --   ---xx   flac  0.5040  Dylan1997-12-19d2t04.flac
+     5:04.74       53799692 B   ---   --   ---xx   flac  0.5429  Dylan1997-12-19d2t05.flac
+     6:02.46       63965036 B   ---   --   ---xx   flac  0.4687  SCrow1997-12-19d2t06.flac
+     5:28.36       57943916 B   ---   --   ---xx   flac  0.5629  SCrow1997-12-19d2t07.flac
+     6:03.67       64190828 B   ---   --   ---xx   flac  0.5399  SCrow1997-12-19d2t08.flac
+     5:59.38       63417020 B   ---   --   ---xx   flac  0.5035  SCrow1997-12-19d2t09.flac
+     5:17.64       56069372 B   ---   --   ---xx   flac  0.5715  SCrow1997-12-19d2t10.flac
+     7:21.71       77959436 B   ---   --   ---xx   flac  0.5642  SCrow1997-12-19d2t11.flac
+     6:18.56       66810956 B   ---   --   ---xx   flac  0.5668  SCrow1997-12-19d2t12.flac
+   145:22.20     1538608896 B                            0.5447  (24 files)
+=================== 
+=================== 
+=================== 

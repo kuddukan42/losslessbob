@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-09-03-Laughter-Down-on-Third-Street.flacf 
+=================== 
+=================== 
+=================== 
+e881bca94cd58808f2a04c5687e523cb  bd-Laughter Down on Third Street (TMR).txt
+629ae467bd7f46a027e80c5242adb1c7  bd-Laughter Down on Third Street-d1\bd-Laughter Down on Third Street-d1.md5
+a56a614b67b98267b70c92982d38810e  bd-Laughter Down on Third Street-d1\Track01.flac
+b2939efdd302adc6ab09a9c237fd45a1  bd-Laughter Down on Third Street-d1\Track02.flac
+41d12ce42deedc198dcf5201b1f751d2  bd-Laughter Down on Third Street-d1\Track03.flac
+6c48028247ef64c9b43a347206b0f604  bd-Laughter Down on Third Street-d1\Track04.flac
+8548e02ffb89c8b990e56fe32952c08b  bd-Laughter Down on Third Street-d1\Track05.flac
+fd1d288ca5cd1b11f6774bd7a7b20744  bd-Laughter Down on Third Street-d1\Track06.flac
+1b89d3977381469e1c64dbb248eb4cea  bd-Laughter Down on Third Street-d1\Track07.flac
+2d9c59b5648fc030b6591a10d6856a69  bd-Laughter Down on Third Street-d1\Track08.flac
+b3363c53bc790818dc3c7fef6020d5b7  bd-Laughter Down on Third Street-d1\Track09.flac
+b56e1afc8920f6e848524eaf53a1ffb7  bd-Laughter Down on Third Street-d1\Track10.flac
+a49ec466860063cd48e8db880d82e7c1  bd-Laughter Down on Third Street-d1\Track11.flac
+e66523e16f99286d6c1803a67fb10901  bd-Laughter Down on Third Street-d1\Track12.flac
+f8dc7da981af44d6c5d76e44e3a02010  bd-Laughter Down on Third Street-d1\Track13.flac
+7aab51b3349c7dfe4bc7bfb69d8b394d  bd-Laughter Down on Third Street-d2\bd-Laughter Down on Third Street-d2.md5
+2ccc92dd99519e80a66995d61188edbb  bd-Laughter Down on Third Street-d2\Track01.flac
+14ef5ba86572f35cd266295a8178633f  bd-Laughter Down on Third Street-d2\Track02.flac
+145947f63e5bf6bb5f0440d30e413ccf  bd-Laughter Down on Third Street-d2\Track03.flac
+cbbe590deb9299038c926e23d3c071a3  bd-Laughter Down on Third Street-d2\Track04.flac
+9582516c1dbd4103c8837a93b63b75aa  bd-Laughter Down on Third Street-d2\Track05.flac
+f11024bef86df6fed73ebb72b131229e  bd-Laughter Down on Third Street-d2\Track06.flac
+5f97126f15437f785ac79c0f9da1788d  bd-Laughter Down on Third Street-d2\Track07.flac
+28a8d83c57defb40f7c095d246d11f45  bobby-laughter.jpg
+26bcd713657871d6212df46674047976  bobby-laughter1.jpg
+3b78264a018a6f2c190f3c8759331dd0  Review.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-09-03-Laughter-Down-on-Third-Street.flacf\bd-Laughter Down on Third Street-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:6ebeb34cb00ac9b935d925f503a54294
+Track02.flac:e1e6785574aa8e25bc8d2cb1d5916122
+Track03.flac:9425f94771a8c6d57693ca24e55fa1fd
+Track04.flac:b734cfc37dcb43d41c2a5c34a958a868
+Track05.flac:6e12a171abb2fa97fec6f5cc7499bd2a
+Track06.flac:6f7807e5a3fa70e60dd0bda41d092cb6
+Track07.flac:c9c45b45063c18ac3ffa168f0642c420
+Track08.flac:ea7981b2bcfd3d312836a740d16e8477
+Track09.flac:4c5064a4c8ac74d70bf95de2148110ca
+Track10.flac:7aa5aca2224d86047393730ebc9fc349
+Track11.flac:e972e66828edde4744f1f184e9599904
+Track12.flac:0a11d302eaec25047ae56bf05f97bcbf
+Track13.flac:4013fe15112bb05c65e71971d88f88c9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-09-03-Laughter-Down-on-Third-Street.flacf\bd-Laughter Down on Third Street-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:7ce6fbcc411626a4eff1776f7222336b
+Track02.flac:e68810c6923b804e8cd9433176f7f58d
+Track03.flac:9fdd6c80b98608256f941df57851d2a9
+Track04.flac:d69ca3f93d558c79d1e1f12e5e54a341
+Track05.flac:007812bee47dee8affd84d2810e0637c
+Track06.flac:b9bcd8d5512b05e2709e106503b9dade
+Track07.flac:43276d6940ba4b127df5b1577e217847
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-09-03-Laughter-Down-on-Third-Street.flacf\bd-Laughter Down on Third Street-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:45.65        8090924 B   ---   --   ---xx   flac  0.4292  Track01.flac
+     4:23.25       46452044 B   ---   --   ---xx   flac  0.5055  Track02.flac
+     6:08.69       65077532 B   ---   --   ---xx   flac  0.4958  Track03.flac
+     6:53.27       72916748 B   ---   --   ---xx   flac  0.5085  Track04.flac
+     7:01.14       74297372 B   ---   --   ---xx   flac  0.5000  Track05.flac
+     6:29.38       68709020 B   ---   --   ---xx   flac  0.5043  Track06.flac
+     7:14.31       76630556 B   ---   --   ---xx   flac  0.4480  Track07.flac
+     6:33.06       69339356 B   ---   --   ---xx   flac  0.5059  Track08.flac
+     7:33.52       80031548 B   ---   --   ---xx   flac  0.4769  Track09.flac
+     7:00.74       74262092 B   ---   --   ---xx   flac  0.4936  Track10.flac
+     6:27.53       68391500 B   ---   --   ---xx   flac  0.4864  Track11.flac
+     4:43.34       50001212 B   ---   --   ---xx   flac  0.4761  Track12.flac
+     6:44.12       71293868 B   ---   --   ---xx   flac  0.4575  Track13.flac
+    77:59.50      825493772 B                            0.4870  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-09-03-Laughter-Down-on-Third-Street.flacf\bd-Laughter Down on Third Street-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.02       73739948 B   ---   --   ---xx   flac  0.5322  Track01.flac
+     7:40.03       81151100 B   ---   --   ---xx   flac  0.4446  Track02.flac
+     6:31.49       69087692 B   ---   --   ---xx   flac  0.5531  Track03.flac
+     2:51.50       30282044 B   ---   --   ---xx   flac  0.3970  Track04.flac
+     6:41.16       70774076 B   ---   --   ---xx   flac  0.5426  Track05.flac
+     0:33.60        5962364 B   ---   --   ---xx   flac  0.4768  Track06.flac
+     5:04.04       53635052 B   ---   --   ---xx   flac  0.5596  Track07.flac
+    36:20.34      384632276 B                            0.5117  (7 files)
+=================== 
+=================== 
+=================== 

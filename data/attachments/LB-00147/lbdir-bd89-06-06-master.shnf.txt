@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-06-master.shnf 
+=================== 
+=================== 
+=================== 
+8df2ffa65be546797095590b42463495  bd89-06-06.md5
+438f95951d08a4e7839578b3ce24451a  bd89-06-06.txt
+8c8d85c3be5677f0e974d11e89d87837  bd89-06-06t01.shn
+fa07ee33a5bc3d7dbba60418262dc36c  bd89-06-06t02.shn
+319f524b10b495e24983e46c3369d584  bd89-06-06t03.shn
+5507b056181b8eb0a6c7be447bd5ac11  bd89-06-06t04.shn
+929a7d8a5aacccae8d8561ac3ee08e55  bd89-06-06t05.shn
+59eb700b912fa255c9f4dafb94fab92a  bd89-06-06t06.shn
+0610c63e6ddaea858e6b440630a45765  bd89-06-06t07.shn
+1e8392d4c9d30ce6918f611be79a9685  bd89-06-06t08.shn
+30782473d38e8b2d77c884b268656705  bd89-06-06t09.shn
+048eca3ccdd525a4316f08f819af3be2  bd89-06-06t10.shn
+2c86106d0ffba2f020d386127382a648  bd89-06-06t11.shn
+8384f79e40f0d79b6020633fac36b5ee  bd89-06-06t12.shn
+da1145bc221cb758642d7e050cfc2669  bd89-06-06t13.shn
+63ca4f3784c95583f36a53753c13bec3  bd89-06-06t14.shn
+1369b5c8caf464e0dcb0cf6eb59d8770  bd89-06-06t15.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-06-06-master.shnf 
+=================== 
+=================== 
+=================== 
+0823b49b4ca8b746e8fc0e1f0485498f  [shntool]  bd89-06-06t01.wav
+6cfe113e38b77a448caf2757bc3d32ae  [shntool]  bd89-06-06t02.wav
+44db1ca3d8bdf505e579050db1f6625a  [shntool]  bd89-06-06t03.wav
+1980367d4ee4bab667ea85f29f957a3f  [shntool]  bd89-06-06t04.wav
+78084a05a671f0454d49cd314de9d0b6  [shntool]  bd89-06-06t05.wav
+e808790302e2b2e5e17b0e56ec82da00  [shntool]  bd89-06-06t06.wav
+c41a12da007495413aea45289432c7b3  [shntool]  bd89-06-06t07.wav
+b91c4e7aedf102e2fde97d9a5c03e890  [shntool]  bd89-06-06t08.wav
+0df7f2d582a2730df201c1487b24e068  [shntool]  bd89-06-06t09.wav
+d0649003cd3552d1e7f85c5ee04c7d1f  [shntool]  bd89-06-06t10.wav
+8fec5cb177fd192dffb9f1d3f36e0b63  [shntool]  bd89-06-06t11.wav
+e887eec2beaa603938e1ea654f397334  [shntool]  bd89-06-06t12.wav
+5e2eb1ab7d8da415e3e105eee4f1bec8  [shntool]  bd89-06-06t13.wav
+7802e61b8b2e114252f7bb4b4dfd7ea0  [shntool]  bd89-06-06t14.wav
+a71e55e1c99527417a7cc957f270808f  [shntool]  bd89-06-06t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-06-master.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.56       42820556 B   ---   --   ---xx    shn  0.6304  bd89-06-06t01.shn
+     3:16.23       34628540 B   ---   --   ---xx    shn  0.6313  bd89-06-06t02.shn
+     5:49.32       61638908 B   ---   --   ---xx    shn  0.6411  bd89-06-06t03.shn
+     4:54.39       51953372 B   ---   --   ---xx    shn  0.6690  bd89-06-06t04.shn
+     4:22.56       46348556 B   ---   --   ---xx    shn  0.6750  bd89-06-06t05.shn
+     3:49.51       40515596 B   ---   --   ---xx    shn  0.6894  bd89-06-06t06.shn
+     4:05.41       43314476 B   ---   --   ---xx    shn  0.5902  bd89-06-06t07.shn
+     7:03.59       74756012 B   ---   --   ---xx    shn  0.6552  bd89-06-06t08.shn
+     6:49.50       72265244 B   ---   --   ---xx    shn  0.6767  bd89-06-06t09.shn
+     3:40.51       38927996 B   ---   --   ---xx    shn  0.6891  bd89-06-06t10.shn
+     3:49.09       40416812 B   ---   --   ---xx    shn  0.6699  bd89-06-06t11.shn
+     6:40.32       70635308 B   ---   --   ---xx    shn  0.7372  bd89-06-06t12.shn
+     4:35.12       48538268 B   ---   --   ---xx    shn  0.6935  bd89-06-06t13.shn
+     5:04.02       53630348 B   ---   --   ---xx    shn  0.7050  bd89-06-06t14.shn
+     5:33.44       58844732 B   ---   --   ---xx    shn  0.7190  bd89-06-06t15.shn
+    73:37.32      779234724 B                            0.6744  (15 files)
+=================== 
+=================== 
+=================== 

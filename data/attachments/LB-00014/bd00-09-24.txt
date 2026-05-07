@@ -1,0 +1,48 @@
+Bob Dylan
+24 Sept 00
+Portsmouth, England
+Guildhall
+
+Recording: CSHEB (DPA 4061) > DAT
+ Transfer: D8 > M. Audio DiO 2448 @ 48k >
+           Sound Forge (48 > 44.1 & Waves L1 Ultramaximizer) 
+           > CDWav > SHN (mkwACT)
+           by Dan Krass (gser@jadetech.com)
+
+NOTE: -The click-like noises during parts of Track 10 are
+      not digital glitches.  This show was recorded right
+      at the stage monitors, which of course adds more
+      'stage noise' to the recording. The sounds you are hearing
+      are likely a guitar pick slipping or similar.
+      -There was a small bit of static at 2:45 in Track 9,
+      that was on the master. It has been corrected, almost 
+      perfectly, with software.
+
+ Disc 1
+========
+Acoustic:
+01 Somebody Touched Me
+02 To Ramona (Larry Campbell on mandolin)
+03 Visions Of Johanna
+04 Mama, You Been On My Mind (Bob Dylan on harp)
+05 Tangled Up In Blue 
+06 Searching For A Soldier's Grave (Larry Campbell on mandolin)
+Electric:
+07 Country Pie
+08 Can't Wait
+09 Gotta Serve Somebody
+10 If Not For You
+11 The Wicked Messenger (Bob Dylan on harp)
+12 Leopard-Skin Pill-Box Hat
+
+ Disc 2
+========
+Encore:
+01 Love Sick
+02 Like A Rolling Stone
+03 Fourth Time Around (acoustic - Larry Campbell on bozouki)
+04 I'll Be Your Baby Tonight (Larry Campbell on acoustic guitar)
+05 Forever Young (acoustic)
+06 Highway 61 Revisited
+07 Blowin' In The Wind (acoustic)
+

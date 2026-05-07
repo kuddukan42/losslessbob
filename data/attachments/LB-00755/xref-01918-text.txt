@@ -1,0 +1,142 @@
+===================
+===================
+===================
+=== bd1987-09-16.flac16.md5
+===================
+===================
+===================
+5a82b4da2d192793fc9fea877db94d0a *bd1987-09-16.txt.txt
+306b6445af3ce62da5d343dc10f94656 *bd1987-09-16ffp.txt.txt
+d5524a39ba2c6184fa1bb1dec2eb8fb0 *bd1987-09-16t01.flac
+6bd781818f3d7a07e670c1a84bdb7108 *bd1987-09-16t02.flac
+8cdb0dbfc4479892e88b7b00b76ef4c5 *bd1987-09-16t03.flac
+7682474b41f85c0ddc4a493690c59d9a *bd1987-09-16t04.flac
+25babb718c045ff1fba79e1de03a11f1 *bd1987-09-16t05.flac
+173fe2fa21a6e6c85603534ae850320e *bd1987-09-16t06.flac
+5d54d3383b45f621236a3a2b4d59f0aa *bd1987-09-16t07.flac
+fada9d9a55c56a5008714d1bc55ffcb7 *bd1987-09-16t08.flac
+6ed2423711bdafee5c1d614b49a37721 *bd1987-09-16t09.flac
+c41f1662749aec347de7da0d727f05ac *bd1987-09-16t10.flac
+e764ba34956bedb06d232279466237cd *bd1987-09-16t11.flac
+3f0ad583bc51e6f81b629d3056b57712 *bd1987-09-16t12.flac
+1ae82d5a6fae5bf1e6b1bd3e83108522 *bd1987-09-16t13.flac
+2eee2913b9b3cf3c4a5dffa7e203667e *bd1987-09-16t14.flac
+===================
+===================
+===================
+=== bd1987-09-16.txt.txt
+===================
+===================
+===================
+
+
+Bob Dylan with Tom Petty And The Heartbreakers & Roger McGuinn
+Temples In Flames 1987 Tour
+Frankenhalle, Nuremberg - West Germany
+16 September 1987
+
+IMPROVED AUDIO
+
+Temples in Flames Tour was a concert tour by Bob Dylan with the support of Tom Petty and the Heartbreakers
+and Roger McGuinn.
+The tour took place in September - October 1987 in several european cities, it started with 2 shows in Israel
+and ended with 4 final dates in London, England.
+It consisted of 3 concerts, where Roger McGuinn was the first one, followed by Tom Petty and the Heartbreakers,
+before Dylan came in.
+It was the last time that Dylan toured with Tom Petty (they played together again just in a couple of shows
+many years later on August 9 and 10, 2003 at Holmdel PNC Bank Arts Center).
+
+A lot of detailed info about this and others Dylan's
+recordings can be found at this great website:
+
+http_jokerman.org.uk/lb/detail/LBM-year-detail-87.html
+http_jokerman.org.uk/
+
+(please, replace _ with :// )
+
+
+I've received this recording many years ago in a tape trade. Listening it, I have thought to make an upgrade
+version seen that my copy was too noised and range of frequencies very low.
+So I removed as much noise as possible, rebalanced the sound obtaining a many more clear voice and hightest
+frequencies in most of the concert, lastly I have correcting the playing speed which was originally too fast.
+Ok, I hope you all may enjoy this reworked version and as usual all the best until the next to everybody! 
+
+
+Known lineage:
+c90 TDK D audience unkn. gen. tape > TEAC W-865R > Audacity 2.1.3 wav file aquisition, audio editing
+and tracks splitting > FLAC Frontend flac files encoding; flac files fingerprints > mkwACT whole file set
+signature > dime > you.
+
+
+
+Line Up:
+
+Bob Dylan: vocal, guitar & harmonica
+
+Tom Petty & The Heartbreakers
+Tom Petty: guitar, bass
+Mike Campbell: guitar
+Benmont Tench: keyboards
+Howie Epstein: bass, slide guitar
+Stan Lynch: drums
+
+The Queens Of Rhythm
+Carolyn Dennis: backing vocals
+Queen Esther Marrow: backing vocals
+Madelyn Quebec: backing vocals
+
+() = Roger McGuinn: guitar
+
+
+
+Setlist:
+
+01. Rainy Day Women # 12 & 35  (03:08)
+02. In The Garden  (05:27)
+03. I Want You  (05:07)
+04. Masters Of War  (03:12)
+05. Joey (09:00)
+06. Man Of Peace  (04:13)
+07. I And I  (05:34)
+08. It's All Over Now, Baby Blue  (05:56)
+09. Shot Of Love  (04:44)
+10. John Brown  (05:03)
+11. License To Kill  (04:08)
+12. Ballad Of A Thin Man  (05:30)
+13. When The Night Comes Falling From The Sky()  (06:53)
+14. Knockin' On Heaven's Door()  (06:47)
+
+
+Total Playing Time: 01:14:49
+
+
+
+
+DO NOT SELL - SHARE FREELY - PRESERVE LOSSLESS FILES DISTRIBUTION
+Support Artists! Attends their concerts,
+Buy their official releases and merchandising.
+
+===================
+===================
+===================
+=== bd1987-09-16ffp.txt.txt
+===================
+===================
+===================
+bd1987-09-16t01.flac:d5d9a24d3b26c5debea3f79163151d7f
+bd1987-09-16t02.flac:c49b2ab0c5639d063861ccae38f7a96d
+bd1987-09-16t03.flac:49525bde9171ecbf20bcf30aa3009c60
+bd1987-09-16t04.flac:5a48a0672bde1e3815697886a1cb3bca
+bd1987-09-16t05.flac:bd001c65160a162c81cb2d7a1711a62c
+bd1987-09-16t06.flac:a3dd0313ec255c18f8fca8f9951dcfb5
+bd1987-09-16t07.flac:30e5b3b957df1927188138242afd20dd
+bd1987-09-16t08.flac:dfc94678367364396c6cd2079e9e99b4
+bd1987-09-16t09.flac:153e95d53b4f0c6066f397710f227174
+bd1987-09-16t10.flac:ae536a2aef5a65f1e5a87599f5a271aa
+bd1987-09-16t11.flac:86967f2cd8a4fd7a605c55105756d82a
+bd1987-09-16t12.flac:a7af0161cb8f8abee5b816159e495178
+bd1987-09-16t13.flac:df2881b76b50af8cd3222762f6e6ff96
+bd1987-09-16t14.flac:52eca599ca117ea354b7343f80652529
+===================
+===================
+===================

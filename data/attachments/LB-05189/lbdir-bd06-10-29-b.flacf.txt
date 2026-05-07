@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-10-29-b.flacf 
+=================== 
+=================== 
+=================== 
+c4578b2a25ed4c4fffc386d59f95c3d6  d1t1 Maggie's Farm.flac
+17f5a79615d4219c23a9b2dd17422f1d  d1t2 She Belongs To Me.flac
+fd7d15483ca50bc805d4d80523093810  d1t3 Tweedle Dee and Tweedle Dum.flac
+c97f7730f334d6d103f8d6b1736c2010  d1t4 When The Deal Goes Down.flac
+c35b5fb4deb49a75297ba6fe729ef2f3  d1t5 It's Alright Ma (I'm Only Bleeding).flac
+7fa703ee020cecc32909ced53bb20cb8  d1t6 Simple Twist of Fate.flac
+484a652130b96fee6ff5ac4dd26e43b9  d1t7 Rollin' and Tumblin'.flac
+7512f3c71fdd1be6c62c365fa320c6c3  d1t8 Masters of War.flac
+c3932c24b3363e954c97d4e14ba9e79e  d2t1 Tangled Up in Blue.flac
+5c1bc713849ca06a58856e2a959970c5  d2t2 Don't Think Twice It's Alright.flac
+a031df485a2e7cccbf4bccd1ad3990f0  d2t3 Highway 61 Revisited.flac
+6bef17071e6aa5704858479bbf18a83e  d2t4 Nettie Moore.flac
+d26d1e28550cdb443c46facba7b24b81  d2t5 Summer Days.flac
+da39160deb3860aa6306a70570df10ad  d2t6 Encore Thunder on the Mountain.flac
+5cc4a9a25ab0a2a9a217eb536ddaf243  d2t7 Like a Rolling Stone.flac
+3fbd88bb40e9904c9d6f55cd3a64319a  d2t8 All Along The Watchtower.flac
+985f7801ec9cd3a88a13fb30c0ea69f4  Dylan St Paul October 29 2006 Flac.ffp
+438dce969643eeb02112d6b4e3ae3d54  Dylan St Paul October 29 2006 FLAC.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-29-b.flacf 
+=================== 
+=================== 
+=================== 
+d1t1 Maggie's Farm.flac:01b3b9328bf5cd93b3f77e91306bbfc4
+d1t2 She Belongs To Me.flac:a78dd0de6ab0a2e2e60668f5b3b2b5bc
+d1t3 Tweedle Dee and Tweedle Dum.flac:d6a52d12af0063d4f252998a2e20b4a9
+d1t4 When The Deal Goes Down.flac:fc6aa68b7a586ce9d14c2e77cf72a19c
+d1t5 It's Alright Ma (I'm Only Bleeding).flac:4cac9aee03bf4ab71254b8c635e2a1a6
+d1t6 Simple Twist of Fate.flac:8ce3bdfcbc22fe70e4298b5b31fc47bc
+d1t7 Rollin' and Tumblin'.flac:5f132b19bd36bdc6309db08045533335
+d1t8 Masters of War.flac:0b0982dff89b8fd2a51b5933d67496a4
+d2t1 Tangled Up in Blue.flac:21fe8620d4025c1e337e2caa4061435d
+d2t2 Don't Think Twice It's Alright.flac:f142bc9e224db7b1a101c4c1db84952f
+d2t3 Highway 61 Revisited.flac:733aebf5ee113e874debf3081a890108
+d2t4 Nettie Moore.flac:5a9a2c7f89041ebc308b8abdfc788f54
+d2t5 Summer Days.flac:2a31e9b0b9eff0f7a1433f4c57e13e3c
+d2t6 Encore Thunder on the Mountain.flac:22f7e83561141b2f490ead64bd099f97
+d2t7 Like a Rolling Stone.flac:a2c09dc0cb263a4de4d573ecc9ff5135
+d2t8 All Along The Watchtower.flac:2ad1eb33f5c2a46d33349a18b11f2f51
+=================== 
+=================== 
+=================== 
+=== shntool for: bd06-10-29-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:41.03       60159500 B   ---   --   ---xx   flac  0.6127  d1t1 Maggie's Farm.flac
+     4:52.48       51621740 B   ---   --   ---xx   flac  0.6274  d1t2 She Belongs To Me.flac
+     5:30.27       58275548 B   ---   --   ---xx   flac  0.5931  d1t3 Tweedle Dee and Tweedle Dum.flac
+     5:44.18       60723980 B   ---   --   ---xx   flac  0.5667  d1t4 When The Deal Goes Down.flac
+     8:16.59       87633212 B   ---   --   ---xx   flac  0.6201  d1t5 It's Alright Ma (I'm Only Bleeding).flac
+     7:51.62       83230268 B   ---   --   ---xx   flac  0.6122  d1t6 Simple Twist of Fate.flac
+     7:01.58       74400860 B   ---   --   ---xx   flac  0.6145  d1t7 Rollin' and Tumblin'.flac
+     5:23.41       57073676 B   ---   --   ---xx   flac  0.5977  d1t8 Masters of War.flac
+     7:12.09       76226012 B   ---   --   ---xx   flac  0.6144  d2t1 Tangled Up in Blue.flac
+     6:31.29       69040652 B   ---   --   ---xx   flac  0.5953  d2t2 Don't Think Twice It's Alright.flac
+     5:11.64       55010972 B   ---   --   ---xx   flac  0.6228  d2t3 Highway 61 Revisited.flac
+     7:40.24       81200492 B   ---   --   ---xx   flac  0.5578  d2t4 Nettie Moore.flac
+     8:26.62       89404268 B   ---   --   ---xx   flac  0.5893  d2t5 Summer Days.flac
+     5:57.32       63050108 B   ---   --   ---xx   flac  0.6319  d2t6 Encore Thunder on the Mountain.flac
+     6:13.43       65898380 B   ---   --   ---xx   flac  0.6230  d2t7 Like a Rolling Stone.flac
+     6:06.62       64708268 B   ---   --   ---xx   flac  0.5932  d2t8 All Along The Watchtower.flac
+   103:42.41     1097657936 B                            0.6038  (16 files)
+=================== 
+=================== 
+=================== 

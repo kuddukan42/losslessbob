@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-09-19-Spirits-of-the-Ryman.flacf 
+=================== 
+=================== 
+=================== 
+6b70a8cd6ba5ef7254feee973b85b9a9  Artwork\s-104b.jpg
+7bedab8af6b266d10a8d223e11009dfa  Artwork\s-104cd.jpg
+3bf7a3680a9736a5048607f87bd53346  Artwork\s-104cd2.jpg
+1cedbf5be2193a10cfd056b9bddbc525  Artwork\s-104f.jpg
+35134a799a45b9b05dde3d005ecc0872  Artwork\s-104ib.jpg
+0c936cc30f96d45cb3eed558014ae4b2  Artwork\s-104l.jpg
+02ee8773d570efe57f71855f73b6e6ba  bd-Spirits of the Ryman (TMR).txt
+404f7d0d6c7c19467e33cb1c8a83186b  bd-Spirits of the Ryman-d1\bd-Spirits of the Ryman-d1.md5
+7fb0e7b04849295dcb1a6c2f96d58cb3  bd-Spirits of the Ryman-d1\Track01.flac
+9204ad33c668d560507d5417df3e2d52  bd-Spirits of the Ryman-d1\Track02.flac
+24b2d2602e6a1577582bffe1d9ab92f6  bd-Spirits of the Ryman-d1\Track03.flac
+d0585d85c9bd18ffe920505d682d3093  bd-Spirits of the Ryman-d1\Track04.flac
+a5bba61b2f6c2266ac5f59bb2147d4cc  bd-Spirits of the Ryman-d1\Track05.flac
+e6cae4e0cf282b7e856b934db8293716  bd-Spirits of the Ryman-d1\Track06.flac
+c5cdbc630b14e577bf38b1f0a9a32aee  bd-Spirits of the Ryman-d1\Track07.flac
+5a2c53e115bc689ed9bed01c67bfc8ff  bd-Spirits of the Ryman-d1\Track08.flac
+eef316c76d9cb87eb0496445b0a86887  bd-Spirits of the Ryman-d1\Track09.flac
+504ed52ffbbf58152037512e529d75ff  bd-Spirits of the Ryman-d2\bd-Spirits of the Ryman-d2.md5
+f2b84ca7ce28c9e4f711add27030b4e7  bd-Spirits of the Ryman-d2\Track01.flac
+9e8eb7e813f88a96e90313ca199cffeb  bd-Spirits of the Ryman-d2\Track02.flac
+d008d2a7deb09421b6c8da3e4c50752d  bd-Spirits of the Ryman-d2\Track03.flac
+1834ca6c55652337aabe385ba9abbfdc  bd-Spirits of the Ryman-d2\Track04.flac
+fea6ad5d9fa1547ca4085b7c2398b71d  bd-Spirits of the Ryman-d2\Track05.flac
+c815167a4cf760c3ed88a0a3eb2fd916  bd-Spirits of the Ryman-d2\Track06.flac
+33a78963082711612a25deb9f43da77b  bd-Spirits of the Ryman-d2\Track07.flac
+5f21b4957f7cf03e3529afbb94d19b13  bd-Spirits of the Ryman-d2\Track08.flac
+74e36c521aa46eab35e402cd2e4edb1a  bd-Spirits of the Ryman-d2\Track09.flac
+f782489849b1d3a468a92fdb16869a7d  Bobsboots review.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-09-19-Spirits-of-the-Ryman.flacf\bd-Spirits of the Ryman-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:c2be8d77ecbaf4818d6bd5a57bf734d2
+Track02.flac:99b70ba9620b07853b20696919f18130
+Track03.flac:327bde3c0cc710a89f77f490766a7430
+Track04.flac:3b49696e4afa5cc5979d2ee0fd950726
+Track05.flac:f958fa609a5a3b0e102eca4a5f8a7bc7
+Track06.flac:1449c5efb0a280c57fee8dce01dc8830
+Track07.flac:1c822327862491c7a295862e68544060
+Track08.flac:a6c1541e548c6b67e6be67b543cad9a5
+Track09.flac:f74f2608c03f1331546a693545a8ace0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-09-19-Spirits-of-the-Ryman.flacf\bd-Spirits of the Ryman-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:46206de99fff247095545df69db66874
+Track02.flac:8d2493e6096ae83dc62de117433e00ce
+Track03.flac:94d539c59665b5fb3dcd80f84912b779
+Track04.flac:3f8e0e691dcdbb61ab07234578b83451
+Track05.flac:d629981cccbb40032339b6a1c8900c0a
+Track06.flac:344e704477892ba420ee065acbeba4fb
+Track07.flac:d23f589ec3e686b6b769e3edf7e8e14b
+Track08.flac:cdd5bada3c6333d3e0498488db60aea8
+Track09.flac:b6d7046fb213cd414e4a669aceecc1fa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-09-19-Spirits-of-the-Ryman.flacf\bd-Spirits of the Ryman-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:49.56        8775356 B   ---   --   ---xx   flac  0.4771  Track01.flac
+     5:18.26       56156396 B   ---   --   ---xx   flac  0.4979  Track02.flac
+     5:26.49       57621692 B   ---   --   ---xx   flac  0.4237  Track03.flac
+     4:51.61       51475916 B   ---   --   ---xx   flac  0.4836  Track04.flac
+     7:06.20       75193484 B   ---   --   ---xx   flac  0.4229  Track05.flac
+     7:30.65       79532924 B   ---   --   ---xx   flac  0.4772  Track06.flac
+     6:43.34       71169212 B   ---   --   ---xx   flac  0.4001  Track07.flac
+    10:16.39      108754172 B   ---   --   ---xx   flac  0.4416  Track08.flac
+     7:11.00       76028444 B   ---   --   ---xx   flac  0.4390  Track09.flac
+    55:14.50      584707596 B                            0.4465  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-09-19-Spirits-of-the-Ryman.flacf\bd-Spirits of the Ryman-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:48.13       72001820 B   ---   --   ---xx   flac  0.4764  Track01.flac
+     6:11.27       65507948 B   ---   --   ---xx   flac  0.4845  Track02.flac
+     6:21.26       67269596 B   ---   --   ---xx   flac  0.5711  Track03.flac
+     6:27.00       68266844 B   ---   --   ---xx   flac  0.5366  Track04.flac
+     7:41.57       81454508 B   ---   --   ---xx   flac  0.3852  Track05.flac
+     6:34.26       69562796 B   ---   --   ---xx   flac  0.4959  Track06.flac
+     5:16.43       55843580 B   ---   --   ---xx   flac  0.4605  Track07.flac
+     6:42.21       70962236 B   ---   --   ---xx   flac  0.5292  Track08.flac
+     6:38.36       70291916 B   ---   --   ---xx   flac  0.4879  Track09.flac
+    58:41.24      621161244 B                            0.4903  (9 files)
+=================== 
+=================== 
+=================== 

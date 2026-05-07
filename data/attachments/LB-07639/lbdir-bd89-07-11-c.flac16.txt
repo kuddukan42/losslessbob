@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-11-c.flac16 
+=================== 
+=================== 
+=================== 
+4c5da94e6824516ab03147502fb691d0  bd1989-07-11-harrisburg.flac16.md5
+cc00264b5a573801e1461736063fb26a  cd1\01 Most likely you go your way (and I'll go mine).flac
+76004f3a849d296329cf356812559b00  cd1\02 Forever young.flac
+11a91cbc9464511cdb2a2e28c2e1a990  cd1\03 All along the watchtower.flac
+65500aa656b95fb73a1682d8fcdabe92  cd1\04 Gotta serve somebody.flac
+4b3a682289ca7096f61214eb1cdc474f  cd1\05 I'll be your baby tonight.flac
+480fce1591b214f696f5acf42c387cf6  cd1\06 Ballad of a thin man.flac
+538aeabaef00d704baed4ac0b0905cb1  cd1\07 Love minus zero - no limit.flac
+dd585fdc470d86d4283ee64436f81456  cd1\08 Boots of Spanish leather.flac
+35c90fcf1780c0d351bb383674dd8e61  cd1\d2.ffp.txt
+86357943ed2ecc3e3b3c25644a7cfff7  cd2\01 Mr. Tambourine Man.flac
+ba999e6bd05021162b72531e11bfeaf9  cd2\02 Silvio.flac
+bb4cb84824eff7b07dd67ec04a88c521  cd2\03 I shall be released.flac
+e9658a9c7692a04de11dda85d4881f59  cd2\04 Like a rolling stone.flac
+2f6525a4c9b10334df30b2391f628c92  cd2\05 The times they are a-changin'.flac
+1936f48d0db3f35da864dc933c66cf9e  cd2\06 Knockin' on heaven's door.flac
+f08d9bcdbe4de4a6ec1011e9ce499e4c  cd2\07 Maggie's farm.flac
+8d7b86e8261755009d570be058472ab1  cd2\d2.ffp.txt
+ec6382c5b14e5ba8dea4fa01627da0dc  info\1989-07-11 Skyline Sports Complex, City Island, Harrisburg, Pennsylvania.doc
+39c59f12c43d7fbd0f1635ec46b139bf  info\bd1989-07-11-harrisburg.txt
+091c6473c59cefb97a4d71611f4fb8f3  info\d2t04.sa_fa.JPG
+b0e412a8f59d5272a3846d14ac99378d  info\d2t07.sa_fa.JPG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-11-c.flac16\cd1 
+=================== 
+=================== 
+=================== 
+01 Most likely you go your way (and I'll go mine).flac:cb26e7bf4f6a381a24528ae0bc26cb6c
+02 Forever young.flac:9be8e887aa84bb0b4d9d955b91086d7e
+03 All along the watchtower.flac:a978ebae93b0e997c64c6ad3fa4d9eab
+04 Gotta serve somebody.flac:11128e11eff8adbe39f663944f27096e
+05 I'll be your baby tonight.flac:9982d3eb7cec0d1fb005fba9406b5548
+06 Ballad of a thin man.flac:41a7c9c658979738f930d23250d6cd68
+07 Love minus zero - no limit.flac:6848c66c111159681a49fae00054ae7e
+08 Boots of Spanish leather.flac:cb19f9651c6e642045d957f8bdfbc4de
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-11-c.flac16\cd2 
+=================== 
+=================== 
+=================== 
+01 Mr. Tambourine Man.flac:95c0c2d76b592bd49574716aa875771e
+02 Silvio.flac:15413c92925f7a9ce4b83ac598786894
+03 I shall be released.flac:7ea5a1c9f7603f74366cffa73b064f69
+04 Like a rolling stone.flac:3c43e3ec4a6cc7cbba2c31d0f6496f64
+05 The times they are a-changin'.flac:d87ad0604c48305a4e867653abeac764
+06 Knockin' on heaven's door.flac:f0e15ea20f99ac4ad7fdf9e0b4996b27
+07 Maggie's farm.flac:6402cd8a9b9c5ff1dc47e39a8b3c8599
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-11-c.flac16\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.58       51821660 B   ---   --   ---xx   flac  0.6355  01 Most likely you go your way (and I'll go mine).flac
+     5:32.63       58713020 B   ---   --   ---xx   flac  0.6273  02 Forever young.flac
+     3:38.68       38615180 B   ---   --   ---xx   flac  0.6262  03 All along the watchtower.flac
+     6:00.53       63628700 B   ---   --   ---xx   flac  0.6267  04 Gotta serve somebody.flac
+     5:36.58       59406860 B   ---   --   ---xx   flac  0.6293  05 I'll be your baby tonight.flac
+     5:38.18       59665580 B   ---   --   ---xx   flac  0.6225  06 Ballad of a thin man.flac
+     4:56.48       52327340 B   ---   --   ---xx   flac  0.6134  07 Love minus zero - no limit.flac
+     5:55.46       62730236 B   ---   --   ---xx   flac  0.6170  08 Boots of Spanish leather.flac
+    42:13.37      446908576 B                            0.6246  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-11-c.flac16\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.58       73871660 B   ---   --   ---xx   flac  0.6255  01 Mr. Tambourine Man.flac
+     4:25.08       46764860 B   ---   --   ---xx   flac  0.6730  02 Silvio.flac
+     4:16.23       45212540 B   ---   --   ---xx   flac  0.6582  03 I shall be released.flac
+     7:45.53       82150700 B   ---   --   ---xx   flac  0.6703  04 Like a rolling stone.flac
+     6:23.18       67603580 B   ---   --   ---xx   flac  0.6573  05 The times they are a-changin'.flac
+     5:14.08       55408460 B   ---   --   ---xx   flac  0.6616  06 Knockin' on heaven's door.flac
+     5:05.71       53969036 B   ---   --   ---xx   flac  0.6711  07 Maggie's farm.flac
+    40:09.14      424980836 B                            0.6584  (7 files)
+=================== 
+=================== 
+=================== 

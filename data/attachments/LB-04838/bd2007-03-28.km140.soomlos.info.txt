@@ -1,0 +1,61 @@
+Bob Dylan
+Globe
+Stockholm, Sweden
+March 28, 2007
+
+source: soomlos
+19th row in front of stage left pa
+km140 > v3 > mt24/96 (24/48)
+audacity > r8brain > cd wave > flac
+
+Disc 1:
+01. introduction [00:44]
+02. Cat's In The Well [04:16] 
+03. Don't Think Twice, It's All Right [06:43]
+04. Watching The River Flow [06:14]
+05. It's Alright, Ma (I'm Only Bleeding) [06:56]
+06. When The Deal Goes Down [06:20]
+07. Honest With Me [06:46]
+08. Girl Of The North Country [05:39]
+09. Tangled Up In Blue [08:18]
+10. Country Pie [02:58]
+11. Nettie Moore [07:54]  
+12. Rollin' And Tumblin' [06:25]
+Total time: [69:22]
+
+Disc 2:
+01. A Hard Rain's A-Gonna Fall [06:49]
+02. Summer Days [06:07]
+03. Like A Rolling Stone [11:26]  
+     (encore) 
+04. Thunder On The Mountain [06:09]
+05. All Along The Watchtower [07:06]
+Total time: [37:40]    
+
+Band Members
+Bob Dylan - guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - mandolin, violin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2007-03-28d1t01.flac:f90742607f00bd2dc324ba2ce1558bec
+bd2007-03-28d1t02.flac:4efbe5213672ad84a86cb81648072d84
+bd2007-03-28d1t03.flac:dffba52ae8def1e8979cda8e96eb3776
+bd2007-03-28d1t04.flac:a7e735148134202fe4183f057040d081
+bd2007-03-28d1t05.flac:d417f2189790c6e5a821cd0449a911c0
+bd2007-03-28d1t06.flac:27013c998a1d38f2f21b2ec1986a16d8
+bd2007-03-28d1t07.flac:3021236aceb61f5871516d2e415c2967
+bd2007-03-28d1t08.flac:94aca13f85bbd14eb7f148331268fb15
+bd2007-03-28d1t09.flac:48271117efce728ddaa455687e972fe0
+bd2007-03-28d1t10.flac:bdd76b9f05c546a7c2c6f3f001e81daa
+bd2007-03-28d1t11.flac:db703c0f126a8560c842e70f592bae68
+bd2007-03-28d1t12.flac:e7b09defc203b271229945f928a5bb85
+bd2007-03-28d2t01.flac:219932baa8dbd675b2be1d10ae06f81a
+bd2007-03-28d2t02.flac:64afedd64ebdb018086a4fbd41c6c2f5
+bd2007-03-28d2t03.flac:e500a82324ca21821a9cd88afd249fb6
+bd2007-03-28d2t04.flac:4ff8cff35b644002267d635b09211283
+bd2007-03-28d2t05.flac:beb280484c2914db6deccee3568c4ca8
+

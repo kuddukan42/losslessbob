@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== bd2004-08-21_FLACfingerprint.txt
+===================
+===================
+===================
+bd2004-08-21_d1t01.flac:5b529fa025a5de627bbf1409dd4330c5
+bd2004-08-21_d1t02.flac:5c91d167815bbb1d282be245283aceab
+bd2004-08-21_d1t03.flac:a059824a65890c166b838f9ddac94d55
+bd2004-08-21_d1t04.flac:856fe0dfa0d11233db8c3dfcec1dbb91
+bd2004-08-21_d1t05.flac:9dbacca3cfc2cbf7c6972bb7c68a6802
+bd2004-08-21_d1t06.flac:2c8b851310c2f23d0833ccbf4d0cf096
+bd2004-08-21_d1t07.flac:f6e764b8fb77e7a4d0d7a63c4e4990d4
+bd2004-08-21_d1t08.flac:65f09b027cf37d69ac89c46f9f0f54fc
+bd2004-08-21_d1t09.flac:d0a3edb9c493efef2c3c259f6912fae1
+bd2004-08-21_d1t10.flac:05400954a8a6b4f062c045d98c64c4ed
+bd2004-08-21_d2t01.flac:2c8b4d585d9164a30821b4288a91f544
+bd2004-08-21_d2t02.flac:ed8184c57bb2581d70ecca53e493be71
+bd2004-08-21_d2t03.flac:f0ab48d7c373c9929b318ed2794d7499
+bd2004-08-21_d2t04.flac:f311582941a21e01d6447527b046cfb9
+bd2004-08-21_d2t05.flac:f4f7209d2155a24d04eafdfbc0ee78e5
+bd2004-08-21_d2t06.flac:677d77e8d1b87180cffcd80111a13a06
+===================
+===================
+===================
+=== bd2004-08-21_Lexington.md5
+===================
+===================
+===================
+de59ab2ad4ac36b19701d4f60e8ddeae *bd2004-08-21_d1t01.flac
+d0a9543716f3d5d3f0cdd7c07bad89e3 *bd2004-08-21_d1t02.flac
+123eeb8842e0c8078787d6b1a32dcfd0 *bd2004-08-21_d1t03.flac
+cb65e02721458ea8ccdb1b5e30fa1189 *bd2004-08-21_d1t04.flac
+370d8f0289ee5415465a59e0b736d141 *bd2004-08-21_d1t05.flac
+7592eef094733193bfb0f48e6eed1758 *bd2004-08-21_d1t06.flac
+2ab216bfa3ab6be06f3970f4b46a2479 *bd2004-08-21_d1t07.flac
+dab9556417ad2537e3b9157056804780 *bd2004-08-21_d1t08.flac
+38d32adddb67f8070b909cc123c8ebdc *bd2004-08-21_d1t09.flac
+c9ca532c4648cf272820f4314a510cb7 *bd2004-08-21_d1t10.flac
+8d3427fe522bea2cb29aee2ba580767b *bd2004-08-21_d2t01.flac
+af4886495b53e615833065b0d7b0c484 *bd2004-08-21_d2t02.flac
+167396b3c55415062813af250fd7c236 *bd2004-08-21_d2t03.flac
+3de4ff4d0fcd38abd910a8d57d50738e *bd2004-08-21_d2t04.flac
+e4a9ee342a177a10764ac8b70691488e *bd2004-08-21_d2t05.flac
+88dc4653ff63b6b6ad452e8d80797dbb *bd2004-08-21_d2t06.flac
+2e1227ad3e7136a91a064dd22cbdf753 *bd2004-08-21_FLACfingerprint.txt
+cad84957c525926a84c78dcfab58408e *bd2004-08-21_Lexington.md5
+0b2ca4d34522f07656c978af48cfcc41 *bd2004-08-21_Lexington.txt
+===================
+===================
+===================
+=== bd2004-08-21_Lexington.txt
+===================
+===================
+===================
+Lexington, Kentucky
+Applebee's Park
+August 21, 2004
+
+Unknown Taper
+
+D1 (10) 53:58
+
+1	Intro	01:27
+2	Maggie's Farm	04:40
+3	The Times They Are A'Changin	05:48
+4	Cold Irons Bound	05:21
+5	I Shall Be Released (*) 	06:06
+6	Tweedle Dee and Tweedle Dum	05:24
+7	Stuck Inside Of Mobile...	06:54
+8	Blind Willie McTell	06:16
+9	Watching The River Flow	06:19
+10	I Believe In You	05:39
+
+D2 (6)  35:09
+
+1	Honest With Me	06:35
+2	Ballad Of Hollis Brown	05:41
+3	Summer Days	10:14
+4	Like A Rolling Stone	06:19
+5	Band Intro	00:40
+6	All Along The Watchtower	05:37
+
+
+(*) I Shall Be Released (with Willie Nelson and his 2 sons)
+===================
+===================
+===================

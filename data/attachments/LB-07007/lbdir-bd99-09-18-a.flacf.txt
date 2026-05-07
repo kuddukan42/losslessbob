@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-09-18-a.flacf 
+=================== 
+=================== 
+=================== 
+e586fde202791c33a416929663a85996  bd99-09-18-d1\bd99-09-18-d1.md5
+4674c474a180e8e2a156db010bc77ef4  bd99-09-18-d1\Track01.flac
+15aaa1a3875bdfaaf92f794443a18bc8  bd99-09-18-d1\Track02.flac
+4ef4130f59140abac5691f05bd8ad5fe  bd99-09-18-d1\Track03.flac
+ebb2efb9ab3659a4456e199af8111cbf  bd99-09-18-d1\Track04.flac
+99f7dcd27e3061605dc598f339a170d7  bd99-09-18-d1\Track05.flac
+eaeddf6e19f3419c84b03a172a0cd248  bd99-09-18-d1\Track06.flac
+adb1fd5f524f92c15f491d53d0f53756  bd99-09-18-d1\Track07.flac
+5b81582e3276c4b238ef9ae275b20e87  bd99-09-18-d2\bd99-09-18-d2.md5
+8c6442a85ee82e8a3227788ada8bdb51  bd99-09-18-d2\Track01.flac
+6760e1be45914e7eee86689c2b340434  bd99-09-18-d2\Track02.flac
+4b0b46321f7ba5518528bab799ae9b9d  bd99-09-18-d2\Track03.flac
+0db7ff0fb74024d2c27287a2c4ee7af2  bd99-09-18-d2\Track04.flac
+1a3ec0296d75021bf13c7bfad3abc58e  bd99-09-18-Dallas.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-09-18-a.flacf\bd99-09-18-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:9fc695572e3b3ec45604ca62c5879a24
+Track02.flac:83dff034edab4f287998dc84171fa6d4
+Track03.flac:ff61d96856d37f2fa8d5be2fb37052ab
+Track04.flac:ca183146f80ee7313739639236228490
+Track05.flac:d837e82d894d6ee83e7cf0730617e769
+Track06.flac:86a24084c3e7a09168e400406f41fa97
+Track07.flac:091d4678816ca9abf11edc1f454884ba
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-09-18-a.flacf\bd99-09-18-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:34c6e3e90fd4c015d7277f1cdd964f3a
+Track02.flac:a8d13891f4d9bfc3fa17dc5116c6b759
+Track03.flac:ce9e33ebc5ad7df2cf6fd1314603cd81
+Track04.flac:3a41bf4c957d8629e80b67212de93685
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-18-a.flacf\bd99-09-18-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.42       30263228 B   ---   --   ---xx   flac  0.5484  Track01.flac
+     6:06.25       64621244 B   ---   --   ---xx   flac  0.5647  Track02.flac
+     7:23.08       78164060 B   ---   --   ---xx   flac  0.5442  Track03.flac
+     6:19.25       66914444 B   ---   --   ---xx   flac  0.4598  Track04.flac
+     8:10.54       86563052 B   ---   --   ---xx   flac  0.5953  Track05.flac
+    17:15.59      182712812 B   ---   --   ---xx   flac  0.5456  Track06.flac
+    13:21.28      141362300 B   ---   --   ---xx   flac  0.4982  Track07.flac
+    61:28.16      650601140 B                            0.5349  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-18-a.flacf\bd99-09-18-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.24       61443692 B   ---   --   ---xx   flac  0.5132  Track01.flac
+     5:32.02       58569548 B   ---   --   ---xx   flac  0.4968  Track02.flac
+     4:36.47       48796988 B   ---   --   ---xx   flac  0.5548  Track03.flac
+     5:47.63       61359020 B   ---   --   ---xx   flac  0.5345  Track04.flac
+    21:44.61      230169248 B                            0.5235  (4 files)
+=================== 
+=================== 
+=================== 

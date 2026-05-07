@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-09.shnf 
+=================== 
+=================== 
+=================== 
+48b44c97125fa1bd7c7ceedbd47bf399  bdylan1995-12-09.md5
+34ab4f89d5e6780ab2674d3310ade0c7  bdylan1995-12-09.txt
+78e5866dbe6939cdcb539dd792a55100  bdylan95-12-09d1t101.shn
+d09950f387d39b7f9cd12ba871230a16  bdylan95-12-09d1t102.shn
+eb62f6145cef611e8410b3f2d66b5f58  bdylan95-12-09d1t103.shn
+342183503a35308017a9757277b9bfa6  bdylan95-12-09d1t104.shn
+8b12bb138c51a8d1b64e885a47e563c7  bdylan95-12-09d1t105.shn
+47c39c3600d6ace9eda405727c2bcdbe  bdylan95-12-09d1t106.shn
+6be829598c6d8be8573f1f1dc12c76f8  bdylan95-12-09d1t107.shn
+a525f95b29c305f1e5530e7a493a1a90  bdylan95-12-09d1t108.shn
+9eecbfab2f0566c065285ab06f196166  bdylan95-12-09d1t109.shn
+95ef2620bb3ee1f321841700695458cb  bdylan95-12-09d1t110.shn
+b15d3304e458fe6bf518e4759c21f081  bdylan95-12-09d2t201.shn
+e7a9c78f23e1e880699185a0486b22e2  bdylan95-12-09d2t202.shn
+2f27e4cb3edefef1efa6ba7562dcb92a  bdylan95-12-09d2t203.shn
+977f99b595230ddf99e12a21650530e4  bdylan95-12-09d2t204.shn
+d8ecd17e63a9984e9eb784661422e82c  bdylan95-12-09d2t205.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-12-09.shnf 
+=================== 
+=================== 
+=================== 
+163fdfbbf2226ee5b604c4ca94dbd251  [shntool]  bdylan95-12-09d1t101.wav
+5a11c9b7881b0949aa56d9913cd26630  [shntool]  bdylan95-12-09d1t102.wav
+5345e0d24a06d5a9ecbdb2e0aa24022d  [shntool]  bdylan95-12-09d1t103.wav
+7ab035b7dc96f2f9cf1eca189af5adc6  [shntool]  bdylan95-12-09d1t104.wav
+76b259f904ba73b21fea07b15e197f06  [shntool]  bdylan95-12-09d1t105.wav
+c01813486541609720acb0a8b9092b7b  [shntool]  bdylan95-12-09d1t106.wav
+e43a9be96009c9d540e2750e9b49793d  [shntool]  bdylan95-12-09d1t107.wav
+809db5070a7153f3fb31892fd127397c  [shntool]  bdylan95-12-09d1t108.wav
+8da2b34c29adf7b938863f920959c213  [shntool]  bdylan95-12-09d1t109.wav
+af2445dd9a5426439ce82c42d5abb755  [shntool]  bdylan95-12-09d1t110.wav
+34c76b657124bcd8f37d1c1f7690c51a  [shntool]  bdylan95-12-09d2t201.wav
+47847de54e5ea9bed41153a5d023a76a  [shntool]  bdylan95-12-09d2t202.wav
+c24e072bc076a1643e0130d5e78225fe  [shntool]  bdylan95-12-09d2t203.wav
+9ebcf169ffac9338aa6217b774506085  [shntool]  bdylan95-12-09d2t204.wav
+35140a055c4bc4924b6f00ccf14bbc5b  [shntool]  bdylan95-12-09d2t205.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-09.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.08       49939056 B   -b-   --   ---xx    shn  0.6511  bdylan95-12-09d1t101.shn
+     5:28.25       57918044 B   ---   --   ---xx    shn  0.5884  bdylan95-12-09d1t102.shn
+     6:41.09       70757612 B   ---   --   ---xx    shn  0.6340  bdylan95-12-09d1t103.shn
+     8:23.10       88752764 B   ---   --   ---xx    shn  0.5798  bdylan95-12-09d1t104.shn
+     5:55.56       62753756 B   ---   --   ---xx    shn  0.6141  bdylan95-12-09d1t105.shn
+     8:30.57       90098108 B   ---   --   ---xx    shn  0.6343  bdylan95-12-09d1t106.shn
+     9:55.65      105110924 B   ---   --   ---xx    shn  0.5630  bdylan95-12-09d1t107.shn
+     6:04.33       64287260 B   ---   --   ---xx    shn  0.4979  bdylan95-12-09d1t108.shn
+     7:31.47       79666988 B   ---   --   ---xx    shn  0.5235  bdylan95-12-09d1t109.shn
+     7:09.19       75720332 B   ---   --   ---xx    shn  0.6556  bdylan95-12-09d1t110.shn
+     9:36.25      101664240 B   -b-   --   ---xx    shn  0.5650  bdylan95-12-09d2t201.shn
+     9:39.49      102250892 B   ---   --   ---xx    shn  0.6159  bdylan95-12-09d2t202.shn
+     6:47.64       71945372 B   ---   --   ---xx    shn  0.6434  bdylan95-12-09d2t203.shn
+     8:04.15       85412924 B   ---   --   ---xx    shn  0.4939  bdylan95-12-09d2t204.shn
+     5:27.57       57816908 B   ---   --   ---xx    shn  0.6544  bdylan95-12-09d2t205.shn
+   109:59.13     1164095180 B                            0.5909  (15 files)
+=================== 
+=================== 
+=================== 

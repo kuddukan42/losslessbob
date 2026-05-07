@@ -1,0 +1,29 @@
+e32366ca8f1ba54b696cf88784ace6cf  Artwork\t-62b.jpg
+3c1469aa5aee43f01c2db995fc6685a9  Artwork\t-62cd.jpg
+6e357860632e487233bd4e87e03b6622  Artwork\t-62f.jpg
+6bfa36271f4b427af7c14788b74f6bec  Artwork\t-62i.jpg
+09d3a4e04ce0983eb671a3152dd6af4c  Artwork\t-62ib.jpg
+88ae22bb0edce6965400d2bcbad95d9e  Artwork\t-62l.jpg
+675c156171b7de389e62ae3e29733141  bd-This Show's on Fire-d1\bd-This Show's on Fire-d1.md5
+1ba5462292cb01467ec3988a39e0f906  bd-This Show's on Fire-d1\Track01.flac
+f4cc958bb8fdcf92a60c0c23e46b8bce  bd-This Show's on Fire-d1\Track02.flac
+c2c98714c87865f081d50d84709db27f  bd-This Show's on Fire-d1\Track03.flac
+f5459e84a487fbc863c93476b203431e  bd-This Show's on Fire-d1\Track04.flac
+ae777f8dfd708245bdfc07a6f0cb6b85  bd-This Show's on Fire-d1\Track05.flac
+d979f635dbb249533338635dd4b27ca8  bd-This Show's on Fire-d1\Track06.flac
+7c5dd098cce4fe7fcdb6a48339407964  bd-This Show's on Fire-d1\Track07.flac
+be2f218cf16546877532567bd5bf2a90  bd-This Show's on Fire-d1\Track08.flac
+8558e2caf79d82b511e008ac55cfa14f  bd-This Show's on Fire-d1\Track09.flac
+494453270dabc7613edd7957812f1250  bd-This Show's on Fire-d1\Track10.flac
+5734ed8729c028a3b5ac05233b7a9ba1  bd-This Show's on Fire-d2\bd-This Show's on Fire-d2.md5
+a96618b4c4693bb52e7416564ece8165  bd-This Show's on Fire-d2\Track01.flac
+66f79e3e652e802a1fa46715c7700a98  bd-This Show's on Fire-d2\Track02.flac
+5c0ff852eea4dba50e2bf7503ddebe65  bd-This Show's on Fire-d2\Track03.flac
+fcc4a98164d6739b2e7210899ebfcf0e  bd-This Show's on Fire-d2\Track04.flac
+8f1dca97e0b5e7bfbe2a2d4206485315  bd-This Show's on Fire-d2\Track05.flac
+270f80f046ca6825314ec3a1c0ac3faf  bd-This Show's on Fire-d2\Track06.flac
+45b0d7faaf5f3be9d1820654ea94e0dd  bd-This Show's on Fire-d2\Track07.flac
+9ae2e0b58fdcdd5ba328fef9165527b6  bd-This Show's on Fire-d2\Track08.flac
+5fe8abe15ff797bf3573ef3b0f769626  bd-This Show's on Fire-d2\Track09.flac
+9a0747d97beedaff7fb185f33903d9eb  bd-This Show's on Fire-d2\Track10.flac
+3f303daa0bd63128652b7ad5ddc403c7  bd-This Show's on Fire.txt

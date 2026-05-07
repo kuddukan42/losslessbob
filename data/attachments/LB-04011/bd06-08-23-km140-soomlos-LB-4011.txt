@@ -1,0 +1,8 @@
+Bob Dylan, 8/23/06, First Energy Stadium, Reading, Pennsylvannia, 
+
+LB-4011, Source: soomlos, fob, center ga field, neumann km140's > edirol ua-5(bm2p+) > microtrack 24/96 (24/48), audacity > cd wave > flac (24/48), **24 bit version**
+
+01. Introduction [01:55], 02. Cats In The Well [04:17], 03. You Ain't Goin' Nowhere [04:47], 04. Tweedle Dee & Tweedle Dum [05:42], 05. Lay, Lady, Lay [06:03], 06. Watching The River Flow [05:30], 07. High Water (For Charley Patton) [06:49], 08. Not Dark Yet [06:29], 09. Tangled Up In Blue [08:03], 10. Make You Feel My Love [05:10], 11. Highway 61 Revisted [06:07], 12. Lenny Bruce [06:49], 13. Summer Days [08:53], 14. Like A Rolling Stone [06:45], 15. Band Introduction [00:40], 16. Rainy Day Women #12 & 35 [05:42], Total time: [89:48]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

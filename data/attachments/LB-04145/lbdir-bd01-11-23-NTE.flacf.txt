@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-11-23-NTE.flacf 
+=================== 
+=================== 
+=================== 
+5d232f895d985e2447d058684afe463f  bd01-11-23-NTE-LB-4145.txt
+20f064d3a6f3ba1b22bb79b360c493ad  bd2001-11-23-Portland-d1\Track01.flac
+091eac8be30cafe847073044a1e87644  bd2001-11-23-Portland-d1\Track02.flac
+f48eb0f9f0730d4f454ebfd9fd615894  bd2001-11-23-Portland-d1\Track03.flac
+afc457d1ef1f54aa04261cfdcb9565a0  bd2001-11-23-Portland-d1\Track04.flac
+b757862eef81391e88aad4b217f19bb8  bd2001-11-23-Portland-d1\Track05.flac
+afdf65d94181894ed51aba3cc51b127b  bd2001-11-23-Portland-d1\Track06.flac
+9828c667eb7a11652eb43897f152e986  bd2001-11-23-Portland-d1\Track07.flac
+f2967e1976913a0f84bc6dd7b5b41abf  bd2001-11-23-Portland-d1\Track08.flac
+e4bc5a9e86cb09f1ef3971d06ff0c2f4  bd2001-11-23-Portland-d1\Track09.flac
+058b043c64ed7cd8a655714fd6b4acb1  bd2001-11-23-Portland-d1\Track10.flac
+0a25eeb771a953935bd02584f1712692  bd2001-11-23-Portland-d1\Track11.flac
+a2e9f7e62f8bf266d5d74879242e2ce1  bd2001-11-23-Portland-d1\bd2001-11-23-Portland-d1.md5
+e8bf540851d8986c766c5b12a2aa8af8  bd2001-11-23-Portland-d2\Track01.flac
+9988d4df3047027d053509967f10096e  bd2001-11-23-Portland-d2\Track02.flac
+c00f799b078245dcb38637b31355efce  bd2001-11-23-Portland-d2\Track03.flac
+acb70cec3663d7b92bed5ab99fe1369b  bd2001-11-23-Portland-d2\Track04.flac
+007fb97fc79d3ab58a6f2656ad85dbe0  bd2001-11-23-Portland-d2\Track05.flac
+a88cdb8c898a2d696725e90ef56169c3  bd2001-11-23-Portland-d2\Track06.flac
+b0c03b4563a8a3e1c875c7339cc8df32  bd2001-11-23-Portland-d2\Track07.flac
+812aecabf0e7755cb7376822165f39b8  bd2001-11-23-Portland-d2\Track08.flac
+d4796bf43954f83309183d49b7c321c4  bd2001-11-23-Portland-d2\Track09.flac
+79e7e067b4a3a861087e212eddd866c5  bd2001-11-23-Portland-d2\Track10.flac
+24a43829d8de3b61b56b927d5c3c7bd9  bd2001-11-23-Portland-d2\bd2001-11-23-Portland-d2.md5
+5340aec4e5dc397bb2f4148cafcd1ff1  bd2001-11-23-Portland-NTE.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-11-23-NTE.flacf\bd2001-11-23-Portland-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:f6d16df42f8f8e8da4b0adb611ef9c01
+Track02.flac:fc78d37a47d3afc0b36c29bdfbe27f53
+Track03.flac:ff67aaaf234e4e213a21f2312e3d5192
+Track04.flac:27f18660fa95bb8a260cfa4294daf642
+Track05.flac:6a8698528650f55c2417766ac2a71f2f
+Track06.flac:c2dcc54ce696f8b74746ebbc8894c1c5
+Track07.flac:051da18a25dae88fe3fdd71ff862f4fd
+Track08.flac:36baefca9563f18759e5cef5c50be088
+Track09.flac:9340f1986a3d3aee0fe6f3fb38b6fc26
+Track10.flac:27a640cfeb686b8cca7a53b867785d8f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-11-23-NTE.flacf\bd2001-11-23-Portland-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:a73eed345928beefeeaed2a11c087d46
+Track02.flac:a067bd2ecefa99e498d49586b6bb92bf
+Track03.flac:f7eba9db4015db3c6854a7b08162ec49
+Track04.flac:660df4ed97ed852a7f181e596fdf31d3
+Track05.flac:5b4e2ed0c29ce259e9ad6b155a309320
+Track06.flac:15fb19db111ca33cd2a72d3135341685
+Track07.flac:925c1535991b36b0bd3cb3db30a2ecf7
+Track08.flac:b89438d16c1d83ac3cf1970802c48c44
+Track09.flac:9d3acf33c1404be6350f27cfe5888a53
+Track10.flac:8593c7a5b2c3597cd6d5cb97b8802d84
+Track11.flac:2d386329c5e67885f75a357f1ae5768b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-23-NTE.flacf\bd2001-11-23-Portland-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:06.60       64703564 B   ---   --   ---xx   flac  0.5594  Track01.flac
+     6:00.62       63649868 B   ---   --   ---xx   flac  0.5623  Track02.flac
+     5:33.46       58849436 B   ---   --   ---xx   flac  0.5912  Track03.flac
+     9:17.32       98330108 B   ---   --   ---xx   flac  0.5583  Track04.flac
+     6:20.09       67053212 B   ---   --   ---xx   flac  0.5612  Track05.flac
+     7:14.29       76625852 B   ---   --   ---xx   flac  0.5709  Track06.flac
+     4:07.35       43653164 B   ---   --   ---xx   flac  0.4071  Track07.flac
+     6:53.62       72999068 B   ---   --   ---xx   flac  0.5979  Track08.flac
+    11:55.56      126257756 B   ---   --   ---xx   flac  0.5392  Track09.flac
+     5:28.06       57873356 B   ---   --   ---xx   flac  0.5267  Track10.flac
+    68:58.22      729995384 B                            0.5521  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-23-NTE.flacf\bd2001-11-23-Portland-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:53.23       30571340 B   ---   --   ---xx   flac  0.5842  Track01.flac
+     6:28.06       68457356 B   ---   --   ---xx   flac  0.4570  Track02.flac
+     8:48.31       93212156 B   ---   --   ---xx   flac  0.5169  Track03.flac
+     4:04.35       43123964 B   ---   --   ---xx   flac  0.4910  Track04.flac
+     5:04.12       53653868 B   ---   --   ---xx   flac  0.5044  Track05.flac
+     5:32.32       58640108 B   ---   --   ---xx   flac  0.4445  Track06.flac
+     8:41.30       91975004 B   ---   --   ---xx   flac  0.5581  Track07.flac
+     7:10.32       75927308 B   ---   --   ---xx   flac  0.5790  Track08.flac
+     6:15.00       66150044 B   ---   --   ---xx   flac  0.4540  Track09.flac
+     6:36.50       69972044 B   ---   --   ---xx   flac  0.4327  Track10.flac
+     9:35.68      101589980 B   ---   --   ---xx   flac  0.5713  Track11.flac
+    71:10.19      753273172 B                            0.5115  (11 files)
+=================== 
+=================== 
+=================== 

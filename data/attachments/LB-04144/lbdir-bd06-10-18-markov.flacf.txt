@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-10-18-markov.flacf 
+=================== 
+=================== 
+=================== 
+a5e00f58dab350221ea511d398c2684c  101 Maggies Farm.flac
+ea8b19aba1e61bc2ed8ae15c6c0aec98  102 Just Like Tom Thumbs Blues.flac
+c96246dcc6fd4bbc0f12fd0158a18616  103 High Water.flac
+bebd679ef8d05f373eade82c6b96fd31  104 When The Deal Goes Down.flac
+c49553d1c0be65a2d4315c657d94397b  105 Tweedle Dee.flac
+d5d766f279769dbadc78146adebe4aba  106 Tangled Up In Blue.flac
+cc819d94d086f47131ad5ab276ac7e85  107 To Ramona.flac
+6bb4a229a084407b0a35113789184baa  108 Its Alright Ma.flac
+28e9749c879db57299aa624551b6d2d8  109 Rollin And Tumblin.flac
+20b95f4965f2ef23da0992677955700b  110 Balland Of Hollis Brown.flac
+1b19e623516a4e88b0b9d0fecf09075e  111 Highway 61 Revisited.flac
+ec0806b57e071df776941a617d1e537a  112 Nettie Moore.flac
+94d345fa20f9cf27f8daeed189186cf4  201 Summer Days.flac
+18cc2c805a0360373173cc941f24ed23  202 Thunder On The Mountain.flac
+92a8c3dbfb1666cbc4332ed576bbd087  203 Like A Rolling Stone.flac
+474ae1f8df00d0208675af24ca02cb8b  204 All Along The Watchtower.flac
+5cca52e890f0b033f862df6a84886eae  bd06-10-18-markov-LB-4144.txt
+f31ad56f9d99c1043fef9b5f752a3a9a  Dylan_-_06-10-18Sacramento.txt
+4dee396d8383215fd5fa8cbc7eec6ac1  ffp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-10-18-markov.flacf 
+=================== 
+=================== 
+=================== 
+101 Maggies Farm.flac:c9f92a1a8b82c8986b37d41ccd186722
+102 Just Like Tom Thumbs Blues.flac:a7e185ecbde28d547eddd77ce6f79588
+103 High Water.flac:6586144d903ce42adb7516626928837f
+104 When The Deal Goes Down.flac:f23d8d5774a00b207dbe847914e9b548
+105 Tweedle Dee.flac:4a10d0c1dfe3418a3d1db24809fe9fbb
+106 Tangled Up In Blue.flac:9d99cf9f1d48407870f8fd6a6ece1a80
+107 To Ramona.flac:2d1e63d8e3d9ae3f9459c9b919e4cb29
+108 Its Alright Ma.flac:f0fec9f5061b645ed3833574a419bfdc
+109 Rollin And Tumblin.flac:3198a96c422a110d71979253d703a866
+110 Balland Of Hollis Brown.flac:e56c4396c15b034bcde8d500cf68edd0
+111 Highway 61 Revisited.flac:583769054b331809fc8893d1dca5b59e
+112 Nettie Moore.flac:e2295f74163e03bd2ec4d0f35acc1cf8
+201 Summer Days.flac:347f7bbe6b29d6846cca01ca7c356704
+202 Thunder On The Mountain.flac:78081d09f7f089e3797ba8a33f01c84a
+203 Like A Rolling Stone.flac:dfdac58114866a64d09c8c2a36df89d7
+204 All Along The Watchtower.flac:2ee1e2ff2b273b88f5dd9d9ce9e4d58f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-10-18-markov.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:42.05       70924604 B   ---   --   ---xx   flac  0.2815  101 Maggies Farm.flac
+     6:35.63       69826220 B   ---   --   ---xx   flac  0.2862  102 Just Like Tom Thumbs Blues.flac
+     6:39.22       70435388 B   ---   --   ---xx   flac  0.2936  103 High Water.flac
+     5:28.62       58005068 B   ---   --   ---xx   flac  0.2437  104 When The Deal Goes Down.flac
+     5:39.67       59957228 B   ---   --   ---xx   flac  0.2856  105 Tweedle Dee.flac
+     7:52.39       83352572 B   ---   --   ---xx   flac  0.2864  106 Tangled Up In Blue.flac
+     5:58.40       63245324 B   ---   --   ---xx   flac  0.2564  107 To Ramona.flac
+     7:41.35       81402764 B   ---   --   ---xx   flac  0.2811  108 Its Alright Ma.flac
+     6:38.46       70315436 B   ---   --   ---xx   flac  0.2909  109 Rollin And Tumblin.flac
+     6:09.45       65197484 B   ---   --   ---xx   flac  0.2459  110 Balland Of Hollis Brown.flac
+     6:15.60       66291164 B   ---   --   ---xx   flac  0.2913  111 Highway 61 Revisited.flac
+     7:17.22       77138588 B   ---   --   ---xx   flac  0.2357  112 Nettie Moore.flac
+    10:36.70      112355084 B   ---   --   ---xx   flac  0.2681  201 Summer Days.flac
+     5:51.65       62069324 B   ---   --   ---xx   flac  0.2913  202 Thunder On The Mountain.flac
+     7:09.17       75715628 B   ---   --   ---xx   flac  0.2938  203 Like A Rolling Stone.flac
+     5:26.05       57518204 B   ---   --   ---xx   flac  0.2895  204 All Along The Watchtower.flac
+   108:03.63     1143750080 B                            0.2762  (16 files)
+=================== 
+=================== 
+=================== 

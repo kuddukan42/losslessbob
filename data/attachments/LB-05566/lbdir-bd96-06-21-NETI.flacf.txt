@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-21-NETI.flacf 
+=================== 
+=================== 
+=================== 
+bec829dd2dc3453256c0a5b6e8b9c75a  bd-960621-Utrecht.ffp
+67e89c7499e88efb0894fe2ffe847cef  info.txt
+3fbad145d8c88db9584d1a646c1f1a60  track101.flac
+e986e9cd67f3d0cf5205e1d542296dbd  track102.flac
+e05cdc09ff9170c4ed3789312fb446e2  track103.flac
+187a856a1c6b23a393ae18337c0d989d  track104.flac
+60a1207d42f951a558cddbe1b1aac9dc  track105.flac
+e1ba375aebd3b18849ca7a1c6f8daaca  track106.flac
+3ad2c11e3ace9a63a9e3f2f9c2c73704  track107.flac
+5d3bde4251324b1eaa0cd2271d11c81a  track108.flac
+b8378aa8cb7b68b4467baa8fa8fbfd3a  track109.flac
+eb618954d1e0fd99b3ce2058a1ed2fc9  track110.flac
+9a33a6f03d7244af6aeb764fd5ec4ad5  track111.flac
+44ba99d81ba72a722e3fea15fc1cabca  track201.flac
+cac8bdece57fbc5240bfd19ea304a3a2  track202.flac
+d83c11107bba24377b060a1448fd01fb  track203.flac
+4728cf1b2f003647597f9e0ae1b56764  track204.flac
+e76caf36aba9f89f7ca2ce95d41b85cd  track205.flac
+e4196434943c960b74ee7c792e13dd1e  track206.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-06-21-NETI.flacf 
+=================== 
+=================== 
+=================== 
+track101.flac:7537f8d59ce08cc5a8f52110267d2754
+track102.flac:319ccb3b0770e2709c55ab3f21a8eb60
+track103.flac:adc1f7cedf0b3b4dc6b69a4169c447fa
+track104.flac:7dcba37726f370958c09b4efcd0a0144
+track105.flac:37fbfc95188c576b9641771472080a7a
+track106.flac:bd1e65cb58732f129825eed4496506cc
+track107.flac:ee4198b88f5be6c9ff54719067951fdd
+track108.flac:c61ecec5cd299fdfba876fca16114c6a
+track109.flac:22839bb08e82c374d7730ab4d56d2b03
+track110.flac:525300a7de056983a78f44d9652f2e79
+track111.flac:8da682edc99213ad40a7d19a24fb8318
+track201.flac:be728f6dd0f78563fdcbb1678893de00
+track202.flac:35e6a96dc35982ebd6e1d32250b3c3e6
+track203.flac:3c1822c55c9566b76ff738a9e8ce2704
+track204.flac:1609286fbce91be5d6bbeee5363a2091
+track205.flac:d2ca9072a310f033d3598706a939c6a9
+track206.flac:451457a57ab6f013a1dc7ceec4ebe336
+=================== 
+=================== 
+=================== 
+=== shntool for: bd96-06-21-NETI.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:22.30        3951404 B   ---   --   ---xx   flac  0.4692  track101.flac
+     4:32.64       48131372 B   ---   --   ---xx   flac  0.6315  track102.flac
+     8:10.61       86579516 B   ---   --   ---xx   flac  0.5154  track103.flac
+     7:12.59       76343612 B   ---   --   ---xx   flac  0.6111  track104.flac
+     8:33.68       90653180 B   ---   --   ---xx   flac  0.5298  track105.flac
+     8:32.25       90375644 B   ---   --   ---xx   flac  0.5746  track106.flac
+     7:25.03       78505100 B   ---   --   ---xx   flac  0.6020  track107.flac
+     9:06.40       96408524 B   ---   --   ---xx   flac  0.4946  track108.flac
+    10:05.30      106792604 B   ---   --   ---xx   flac  0.5025  track109.flac
+     7:32.73       79904540 B   ---   --   ---xx   flac  0.5040  track110.flac
+     7:57.40       84236924 B   ---   --   ---xx   flac  0.5589  track111.flac
+     6:52.39       72768572 B   ---   --   ---xx   flac  0.4846  track201.flac
+     1:31.06       16066556 B   ---   --   ---xx   flac  0.4255  track202.flac
+     8:02.08       85043660 B   ---   --   ---xx   flac  0.5613  track203.flac
+     8:34.39       90761372 B   ---   --   ---xx   flac  0.5937  track204.flac
+    11:56.26      126363596 B   ---   --   ---xx   flac  0.5345  track205.flac
+     6:28.29       68511452 B   ---   --   ---xx   flac  0.6017  track206.flac
+   122:57.40     1301397628 B                            0.5470  (17 files)
+=================== 
+=================== 
+=================== 

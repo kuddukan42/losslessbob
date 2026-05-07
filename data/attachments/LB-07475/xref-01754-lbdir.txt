@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== md5 for: bd95-11-07-VTX-merge.flacf
+===================
+===================
+===================
+254b7a599cbd2721be1d7ba692e9a393 *CD1\00 (warm up).flac
+e279db79934ab220a009485bace19f0b *CD1\01 Crash on the levee (down in the flood).flac
+ab806a2f233f2ae9fabd35e910a2b643 *CD1\02 I want you.flac
+fe957b3c40c672f0d3687f444dfafc02 *CD1\03 All along the watchtower.flac
+8b18564089600d02def35b42950ea908 *CD1\04 Positively 4th Street.flac
+90a3ccfb42fbd7c6e455405626e46196 *CD1\05 Leopard-skin pill-box hat.flac
+e36dfa3f51df7ce04f181793debd4d5c *CD1\06 Silvio.flac
+d068206dfb2ddad49b8488799f23dba8 *CD1\07 Tangled up in blue.flac
+91d186c9ca848dd2735d4d19be575181 *CD1\FLAC CD1.md5
+46da84846cfcf5f2ce4c056bc6c02b34 *CD2\08 Boots of Spanish leather.flac
+0fb6327694e46ff9b0160671908c291b *CD2\09 Don't think twice, it's all right.flac
+e607946480898d155fa018c6c15f9dfe *CD2\10 God knows.flac
+dbd6f443eee52c8e6e4238707cd766cf *CD2\11 Knockin' on heaven's door.flac
+ea35d0cf205e9cf97c5eec6566d2ddd0 *CD2\12 (band intro).flac
+49464e99da0574bf04f7ac1be4aa40a8 *CD2\12 Cat's in the well.flac
+37d5bb3ea8da579d86938d770da2a351 *CD2\13 Alabama getaway.flac
+f47ff88ab29ade0885279eed7c0eec36 *CD2\14 It ain't me, babe.flac
+9a9feb6fbfb3982526bed687791ceac1 *CD2\15 Rainy day women # 12 & 35.flac
+57ded5dd8c872df1794411f29362dac2 *CD2\FLAC CD2.md5
+8d93b6340fd6a566b1962d1d113fdae4 *Info\Bob Dylan 1995-11-07 Dallas Music Complex, Dallas, Texas, USA [VTX merge].txt
+761491812086114d0a36433068ab8bcf *Info\Bob Dylan.txt
+===================
+===================
+===================
+=== ffp for: bd95-11-07-VTX-merge.flacf
+===================
+===================
+===================
+CD1\00 (warm up).flac:14a08ab2aad40bcfb8a1f513e1f41d53
+CD1\01 Crash on the levee (down in the flood).flac:3f00789c990d15f8aad8c89e29a1ba70
+CD1\02 I want you.flac:8e972df23b13cb76ae02966df078d5b9
+CD1\03 All along the watchtower.flac:3f32ae54980e48952db48aa4f76a55be
+CD1\04 Positively 4th Street.flac:a1a28cf81e0d5c8e501a0c34dc31c9de
+CD1\05 Leopard-skin pill-box hat.flac:0286203288196b267e3748856b4ae741
+CD1\06 Silvio.flac:937339d059a24399392dc00fe401b38f
+CD1\07 Tangled up in blue.flac:d02f17e30716653771330c4834683355
+CD2\08 Boots of Spanish leather.flac:0a0eb8dda92819337daaea7d0e149b73
+CD2\09 Don't think twice, it's all right.flac:17da93a2eb3670ed49bd387b4b44ad45
+CD2\10 God knows.flac:ebd13129650feebceb4446ec6b207ac0
+CD2\11 Knockin' on heaven's door.flac:7d0ec57dafd1ea944b7f5f0fe531c638
+CD2\12 (band intro).flac:a31560eeda550233744edcdad31269cb
+CD2\12 Cat's in the well.flac:f8b333114105ab4f8bcafda3eda3b22f
+CD2\13 Alabama getaway.flac:e70153dbba08d8b941d9944d7fe823a8
+CD2\14 It ain't me, babe.flac:3032df232ce91bc3fbabe8b4b11b7d89
+CD2\15 Rainy day women # 12 & 35.flac:5be2dbaaae5f2fe3ac9231a92c7aff79
+===================
+===================
+===================
+=== shntool len for: bd95-11-07-VTX-merge.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:15.03        2653100 B   ---   --   ---xx   flac  0.4203  00 (warm up).flac
+     4:59.02       52748348 B   ---   --   ---xx   flac  0.6491  01 Crash on the levee (down in the flood).flac
+     6:43.74       71263292 B   ---   --   ---xx   flac  0.6079  02 I want you.flac
+     7:02.67       74598428 B   ---   --   ---xx   flac  0.6422  03 All along the watchtower.flac
+     9:01.10       95455964 B   ---   --   ---xx   flac  0.6121  04 Positively 4th Street.flac
+     8:23.36       88813916 B   ---   --   ---xx   flac  0.6465  05 Leopard-skin pill-box hat.flac
+     7:50.34       82988012 B   ---   --   ---xx   flac  0.6537  06 Silvio.flac
+    11:38.66      123282476 B   ---   --   ---xx   flac  0.5959  07 Tangled up in blue.flac
+    55:54.67      591803536 B                            0.6255  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd95-11-07-VTX-merge.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:26.22       89310188 B   ---   --   ---xx   flac  0.5271  08 Boots of Spanish leather.flac
+     7:15.70       76898684 B   ---   --   ---xx   flac  0.5795  09 Don't think twice, it's all right.flac
+     7:31.52       79678748 B   ---   --   ---xx   flac  0.6222  10 God knows.flac
+     9:15.31       97974956 B   ---   --   ---xx   flac  0.6235  11 Knockin' on heaven's door.flac
+     0:34.58        6134060 B   ---   --   ---xx   flac  0.5571  12 (band intro).flac
+     9:02.23       95662940 B   ---   --   ---xx   flac  0.6467  12 Cat's in the well.flac
+     7:18.36       77347916 B   ---   --   ---xx   flac  0.6531  13 Alabama getaway.flac
+    13:40.49      144763292 B   ---   --   ---xx   flac  0.5792  14 It ain't me, babe.flac
+     6:17.23       66556940 B   ---   --   ---xx   flac  0.5700  15 Rainy day women # 12 & 35.flac
+    69:22.64      734327724 B                            0.5990  (9 files)
+===================
+===================
+===================

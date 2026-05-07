@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-04-dream-come-true.flacf 
+=================== 
+=================== 
+=================== 
+40e87b37f9e09a09513feade9b0d8ef2  bd87-07-04-dream-come-true-d1t01.flac
+5550db1a4cfa33741b268cdefb5d598f  bd87-07-04-dream-come-true-d1t02.flac
+516ba7f51ec7c3dde4b36dcca776836f  bd87-07-04-dream-come-true-d1t03.flac
+7611e8177623f3f1b415a04bfa7a0c30  bd87-07-04-dream-come-true-d1t04.flac
+b6439f7f846bf1b41f0e3bac22dee587  bd87-07-04-dream-come-true-d1t05.flac
+d6e15db3d9d2d04715d90240ab9f94ee  bd87-07-04-dream-come-true-d1t06.flac
+600a9d7525ac083f642b51cb8236f388  bd87-07-04-dream-come-true-d1t07.flac
+69a4a3e48045e22538a5708343d8ac8c  bd87-07-04-dream-come-true-d1t08.flac
+4b04f099f04a36151252272239da2708  bd87-07-04-dream-come-true-d1t09.flac
+144c38aca693cb4df3a915ac40ffb49e  bd87-07-04-dream-come-true-d1t10.flac
+675451d473ad2694ffd2246838a94811  bd87-07-04-dream-come-true-d1t11.flac
+e382e165ca2ab4d774390e6495e18aa1  bd87-07-04-dream-come-true-d1t12.flac
+04ee775a0b3c9c57d449af2c5c9e0b78  bd87-07-04-dream-come-true-d1t13.flac
+084bb895d80ec420c4c1d6861962802d  bd87-07-04-dream-come-true-d1t14.flac
+acd00c6e618e9b857e68ceebf70bcb1a  bd87-07-04-dream-come-true.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-07-04-dream-come-true.flacf 
+=================== 
+=================== 
+=================== 
+bd87-07-04-dream-come-true-d1t01.flac:8b899ccf5b2405fec72f8dd18f873cc8
+bd87-07-04-dream-come-true-d1t02.flac:e618f92d1276511cc544c0ab639200d3
+bd87-07-04-dream-come-true-d1t03.flac:24f8ff1e5cc7d3d85fad1aed5be3aac3
+bd87-07-04-dream-come-true-d1t04.flac:2c04b1cb8f75ff3651910aab1dc63575
+bd87-07-04-dream-come-true-d1t05.flac:56a476d3dc3baa3de6daa60f0dee161b
+bd87-07-04-dream-come-true-d1t06.flac:087b55df35178732011a6697be6f8d2f
+bd87-07-04-dream-come-true-d1t07.flac:bca3ef0b747edbdaaa63b06eee896585
+bd87-07-04-dream-come-true-d1t08.flac:f676c61865ec81e8644dc4084d84860b
+bd87-07-04-dream-come-true-d1t09.flac:8981f7a041b8cdac5f5924c32e203ebe
+bd87-07-04-dream-come-true-d1t10.flac:6247ef081fa9833f3428120e459b9e7e
+bd87-07-04-dream-come-true-d1t11.flac:f3390cc1a02009beba59107e415d087f
+bd87-07-04-dream-come-true-d1t12.flac:cf27bf9f24f226c1af74f3d944531dc3
+bd87-07-04-dream-come-true-d1t13.flac:fbd553a734d73e106ec44d6e27014952
+bd87-07-04-dream-come-true-d1t14.flac:68e5b70605671e1f89cded24585ae0d8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-04-dream-come-true.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.62       48126668 B   ---   --   ---xx   flac  0.6881  bd87-07-04-dream-come-true-d1t01.flac
+     4:16.03       45165500 B   ---   --   ---xx   flac  0.7005  bd87-07-04-dream-come-true-d1t02.flac
+     4:44.72       50266988 B   ---   --   ---xx   flac  0.6889  bd87-07-04-dream-come-true-d1t03.flac
+     5:56.10       62821964 B   ---   --   ---xx   flac  0.6940  bd87-07-04-dream-come-true-d1t04.flac
+     3:56.03       41637500 B   ---   --   ---xx   flac  0.7037  bd87-07-04-dream-come-true-d1t05.flac
+     5:25.05       57341804 B   ---   --   ---xx   flac  0.6834  bd87-07-04-dream-come-true-d1t06.flac
+     5:12.47       55147388 B   ---   --   ---xx   flac  0.7081  bd87-07-04-dream-come-true-d1t07.flac
+     5:10.23       54738140 B   ---   --   ---xx   flac  0.6839  bd87-07-04-dream-come-true-d1t08.flac
+     5:49.65       61716524 B   ---   --   ---xx   flac  0.6965  bd87-07-04-dream-come-true-d1t09.flac
+     4:17.47       45445388 B   ---   --   ---xx   flac  0.6940  bd87-07-04-dream-come-true-d1t10.flac
+     6:28.15       68478524 B   ---   --   ---xx   flac  0.6797  bd87-07-04-dream-come-true-d1t11.flac
+     5:02.20       53319884 B   ---   --   ---xx   flac  0.6120  bd87-07-04-dream-come-true-d1t12.flac
+     4:08.03       43754300 B   ---   --   ---xx   flac  0.6482  bd87-07-04-dream-come-true-d1t13.flac
+     4:55.00       52038044 B   ---   --   ---xx   flac  0.6401  bd87-07-04-dream-come-true-d1t14.flac
+    69:55.00      739998616 B                            0.6802  (14 files)
+=================== 
+=================== 
+=================== 

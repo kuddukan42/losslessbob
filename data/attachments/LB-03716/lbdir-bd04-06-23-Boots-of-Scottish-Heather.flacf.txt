@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-23-Boots-of-Scottish-Heather.flacf 
+=================== 
+=================== 
+=================== 
+c4c0b927123fedee1fd7bee93a70e89e  2004-06-23 BoSH info.txt
+0523d2b97b6c3735ea3a2f94e20814bc  2004-06-23 BoSH SBE.TIF
+605024852c9c3149264ceedb08f02a65  2004-06-23 BoSH Spectral.TIF
+6856f35b1268892efa8b659ddb0a058c  bd04-06-23-Boots-of-Scottish-Heather-LB-3716.txt
+af5c2ea7c1d8c59a76757f5712d635a5  Disc 1\2004-06-23 BoSH Shnsums Disc 1.md5
+9c3c0e0e9a29d3eadfb52f5b55eb7d4d  Disc 1\2004-06-23 BoSH Wavesums Disc 1.md5
+6fdf427b08697dc24457256d663b3a89  Disc 1\Dylan_2004-06-23_BoSH_d1t01.shn
+799060b4e4ccd7876d099d4337ab92b2  Disc 1\Dylan_2004-06-23_BoSH_d1t02.shn
+815587961e7f2a5f1a2477243f1c1c8c  Disc 1\Dylan_2004-06-23_BoSH_d1t03.shn
+fc0d9b271473c15c79ba24c8b5a95bd5  Disc 1\Dylan_2004-06-23_BoSH_d1t04.shn
+a70b312bb8737f4fc918936b886f2b44  Disc 1\Dylan_2004-06-23_BoSH_d1t05.shn
+746564ace21f3fd0d5e4afacca0aa72d  Disc 1\Dylan_2004-06-23_BoSH_d1t06.shn
+dc01dd5c597f70c92ae7634ce08685eb  Disc 1\Dylan_2004-06-23_BoSH_d1t07.shn
+c71c73bed8af8a397c908b213abe26e9  Disc 1\Dylan_2004-06-23_BoSH_d1t08.shn
+85189fd5ddad3226ff39179000272d1f  Disc 1\Dylan_2004-06-23_BoSH_d1t09.shn
+4df45caf200573d8d38d5fde6c247a5f  Disc 2\2004-06-23 BoSH Shnsums Disc 2.md5
+fc93523abbb72dd59525fc8f3a3ae0ac  Disc 2\2004-06-23 BoSH Wavesums Disc 2.md5
+9d6c156a8b4932df3b14466e0a7251c6  Disc 2\Dylan_2004-06-23_BoSH_d2t01.shn
+5d3454ea68411526672b399eff6e11ac  Disc 2\Dylan_2004-06-23_BoSH_d2t02.shn
+98daec91525d112e47ecdce25384b6c6  Disc 2\Dylan_2004-06-23_BoSH_d2t03.shn
+045891e8c0aa46707eb3096c88a77162  Disc 2\Dylan_2004-06-23_BoSH_d2t04.shn
+a405d765f8475e386d4e0403f79a0f2c  Disc 2\Dylan_2004-06-23_BoSH_d2t05.shn
+dc672dfa4835695401ae010bf4e96f68  Disc 2\Dylan_2004-06-23_BoSH_d2t06.shn
+9776334125f6e2fd5565d68384cd2bf6  Disc 2\Dylan_2004-06-23_BoSH_d2t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-06-23-Boots-of-Scottish-Heather.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+55776d8f0069553de860ca3454a77356  [shntool]  Dylan_2004-06-23_BoSH_d1t01.wav
+a863ea7917521559140d02a7b157fb6b  [shntool]  Dylan_2004-06-23_BoSH_d1t02.wav
+38a33d832a9df0854ccc0e81c7d78e2a  [shntool]  Dylan_2004-06-23_BoSH_d1t03.wav
+b7582b620dea30b302567816c5243df1  [shntool]  Dylan_2004-06-23_BoSH_d1t04.wav
+3152e24a64eecb4c24dc3bdfb4f8cb31  [shntool]  Dylan_2004-06-23_BoSH_d1t05.wav
+b0aecfb49c16fc91bf9255b5d404cae8  [shntool]  Dylan_2004-06-23_BoSH_d1t06.wav
+387ddcdd356e2dfa60e827a632f1ca43  [shntool]  Dylan_2004-06-23_BoSH_d1t07.wav
+bd8575ee76fd6a6d94f236f1088a372c  [shntool]  Dylan_2004-06-23_BoSH_d1t08.wav
+25996710cc0db3f26f1aedc30a14b837  [shntool]  Dylan_2004-06-23_BoSH_d1t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-06-23-Boots-of-Scottish-Heather.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+c59a5984550eaa9f6989b162c8200548  [shntool]  Dylan_2004-06-23_BoSH_d2t01.wav
+81264085a637d5c5e621eaa7bcb5f669  [shntool]  Dylan_2004-06-23_BoSH_d2t02.wav
+720d5038e721ce4c0d076b868193ad7d  [shntool]  Dylan_2004-06-23_BoSH_d2t03.wav
+f44b4f89f61e7a294b41f2d5c0be9bc3  [shntool]  Dylan_2004-06-23_BoSH_d2t04.wav
+9e9d9bae51294a8ee1c01887e20d9b66  [shntool]  Dylan_2004-06-23_BoSH_d2t05.wav
+fa5e41003ac4b99bbab2b07bd5e926af  [shntool]  Dylan_2004-06-23_BoSH_d2t06.wav
+ef5ad7fcbda88f5a8f5dba9520fc6b18  [shntool]  Dylan_2004-06-23_BoSH_d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-23-Boots-of-Scottish-Heather.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.08       50469260 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t01.wav
+     5:32.63       58713020 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t02.wav
+     5:54.54       62572652 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t03.wav
+     5:08.23       54385340 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t04.wav
+     7:51.73       83256140 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t05.wav
+     7:05.25       75028844 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t06.wav
+     5:38.35       59705564 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t07.wav
+     5:40.69       60138332 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t08.wav
+     6:37.49       70146092 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d1t09.wav
+    54:16.24      574415244 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-23-Boots-of-Scottish-Heather.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:33.56       80040956 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d2t01.wav
+     6:44.02       71270348 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d2t02.wav
+     6:57.34       73638812 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d2t03.wav
+     6:53.34       72933212 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d2t04.wav
+     6:28.11       68469116 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d2t05.wav
+     7:09.64       75826172 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d2t06.wav
+     6:34.45       69607484 B   ---   --   -----    wav  1.0000  Dylan_2004-06-23_BoSH_d2t07.wav
+    48:21.21      511786100 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 

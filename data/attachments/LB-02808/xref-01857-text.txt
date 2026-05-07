@@ -1,0 +1,150 @@
+===================
+===================
+===================
+=== 1975-11-13 - New Haven, Connecticut - afternoon show (LB-02808, flac).md5
+===================
+===================
+===================
+; Using hkSFV (http://www.big-o-software.com)
+;
+;/----
+;     1975-11-13 - New Haven, Connecticut - afternoon show (LB-02808, flac)
+;\----
+;
+24990f7006b5e3bbe404ad0603ab2e47 *1-01 - When I Paint My Masterpiece.flac
+0e9ed9b8d77e6ca1c7be44ae416d8388 *1-02 - It Ain't Me, Babe.flac
+5b29d340063e69c0059d122045ea6a5f *1-03 - The Lonesome Death Of Hattie Carroll.flac
+66cbdedaf6b92a52f03c054c26491946 *1-04 - Romance In Durango.flac
+6c162643217fe18718afc6cb8d13ae2d *1-05 - Isis.flac
+08098c13068b368596eec396a1a9c18f *1-06 - The Times They Are A-Changin'.flac
+a78711bfbdcd844fc76db852d163599c *1-07 - Dark As A Dungeon.flac
+de79566350740cef9ce6eb0fb32853c0 *1-08 - Never Let Me Go.flac
+5ec7995fb7c7c94ea301f2d71b95e017 *1-09 - I Dreamed I Saw St. Augustine.flac
+a6c5f71ea8be509bd29ff6f704d42a35 *1-10 - I Shall Be Released.flac
+12fb1b9ca6329993480fae01ac847992 *2-11 - Tangled Up In Blue.flac
+831ff231472a8a1e82ba66a091f90228 *2-12 - Oh Sister.flac
+7fbd39311f1a02a870785fcd825df93e *2-13 - Hurricane.flac
+96e1f1745dbd1f7d3535dad26ae16dae *2-14 - One More Cup Of Coffee (Valley Below).flac
+7308c29353ac863a17100abf9ab6c9c3 *2-15 - Sara.flac
+9328b79a2cb4c5763bade95c726d2831 *2-16 - Just Like A Woman.flac
+7f278804c4312955e6a601cb60a91f22 *2-17 - Knockin' On Heaven's Door.flac
+6bd959990f2c6b2cde1402c446a69597 *2-18 - This Land Is Your Land.flac
+3b753ae4e68203c03cec11b8dc1ae0fe *1975-11-13 - New Haven, Connecticut - afternoon show.txt
+===================
+===================
+===================
+=== 1975-11-13 - New Haven, Connecticut - afternoon show.txt
+===================
+===================
+===================
+Veterans Memorial Coliseum
+New Haven, Connecticut
+13 November 1975 - Afternoon 
+
+ 
+
+01 - When I Paint My Masterpiece
+02 - It Ain't Me, Babe
+03 - The Lonesome Death Of Hattie Carroll
+04 - Romance In Durango (Bob Dylan-Jacques Levy/Bob Dylan)
+05 - Isis (Bob Dylan-Jacques Levy/Bob Dylan)
+ 
+06 - The Times They Are A-Changin'
+07 - Dark As A Dungeon (Merle Travis)
+08 - Never Let Me Go (Joseph C. Scott)
+09 - I Dreamed I Saw St. Augustine
+10 - I Shall Be Released
+ 
+11 - Tangled Up In Blue
+12 - Oh, Sister (Bob Dylan-Jacques Levy/Bob Dylan)
+13 - Hurricane (Bob Dylan-Jacques Levy/Bob Dylan)
+14 - One More Cup Of Coffee (Valley Below)
+15 - Sara
+16 - Just Like A Woman
+17 - Knockin' On Heaven's Door
+18 - This Land Is Your Land (Woody Guthrie)
+ 
+ 
+
+Rolling Thunder Revue concert # 12.
+
+1-10, 12-18 Bob Dylan (vocal, guitar), Bob Neuwirth (guitar), T-bone J. Henry Burnett (guitar), Roger McGuinn (guitar), Steven Soles (guitar), Mick Ronson (guitar), David Mansfield (steel guitar, violin, mandolin ,dobro), Rob Stoner (bass), Howie Wyeth (piano, drums), Luther Rix (drums, percussion), Ronee Blakley (vocal).
+1 Bob Neuwirth (shared vocal).
+2, 11, 12, 15 Bob Dylan (harmonica).
+4-5, 12-18 Scarlet Rivera (violin).
+6-10 Joan Baez (vocal, guitar).
+11 Bob Dylan solo (vocal, guitar & harmonica).
+17 Roger McGuinn (shared vocal).
+18 shared vocal by Bob Dylan and the entire ensemble for the evening.
+
+BobTalk
+- This song is dedicated to Da Vinci (before It Aint Me, Babe)
+- This is Scarlet Rivera here, playing the violin. 
+  Were gonna dedicate this to Sam Peckinpah. 
+  We wish he could have come today, but he couldnt make it. (before Romance In Durango).
+- True story! (before Isis)
+- This is for Richard Manuel (before I Shall Be Released)
+- Wanna dedicate this to Brigham Young (before Oh, Sister).
+
+Note. Live debuts of Dark As A Dungeon and Tangled Up In Blue.
+
+References:
+Larry Sloman: On The Road With Bob Dylan. Bantam Books 1978, pages 153-154, 
+              Helter Skelter Publishing 2002, pages 169-171.
+Les Kokay:    Songs of the Underground. Rolling Thunder Revue. 
+              Private publication 2000, page 29.
+
+Mono audience recording, 90 minutes.
+ 
+ 
+LB-02808 (converted to flac) ; 45min+40min ; 2CDR ; Rating: A-
+ 
+11/13/75 New Haven
+
+1st show (afternoon), 
+AUD R-0>D, rates A-, 48k dat> deltadio2496> cooledit200> wav> shn
+--------------------------------------------------------------------------------
+(info file matches version from 75 lk set listed along with this additional 
+description "Compared it to, SB remaster (missing the intro slightly inferior), 
+LTE (missing the intro noticably inferior), 
+Ratso Tapes D1 & 2 (missing the intro and poorest quality), All of these are the 
+same source tape.")
+--------------------------------------------------------------------------------
+tape discontinuity pop d2t4 0:48
+--------------------------------------------------------------------------------
+CD1
+1 When I Paint My Masterpiece, 2 It Ain't Me, Babe, 3 The Lonesome Death Of Hattie Carroll, 4 Romance In Durango (Levy/Dylan), 5 Isis (Dylan/Levy), 6 The Times They Are A-Changin', 7 Dark As A Dungeon (Merle Travis), 8 Never Let Me Go (Joseph C Scott), 9 I Dreamed I Saw St. Augustine, 10 I Shall Be Released, 
+
+CD2
+1 Tangled Up In Blue, 2 Oh Sister (Dylan/Levy), 3 Hurricane (Levy/Dylan), 4 One More Cup Of Coffee, 5 Sara, 6 Just Like A Woman, 7 Knockin' On Heaven's Door, 8 This Land Is Your Land (W Guthrie) 
+--------------------------------------------------------------------------------
+
+ 
+===================
+===================
+===================
+=== bd1975-11-13 - New Haven, Connecticut - early (derived from LB-02808, flac).ffp
+===================
+===================
+===================
+1-01 - When I Paint My Masterpiece.flac:9ea77db92089a6483486379222371395
+1-02 - It Ain't Me, Babe.flac:e338da0c7317ae83f0d4ae0c85736a3b
+1-03 - The Lonesome Death Of Hattie Carroll.flac:417f24e2d8f68c0d04c78c143f05db22
+1-04 - Romance In Durango.flac:c36f3ce35ef5c16007eddeb925e817bf
+1-05 - Isis.flac:12fa28363200c6d977e84f2f1c7370d3
+1-06 - The Times They Are A-Changin'.flac:1f9da5e5a3af9fa894804f58c4a796f2
+1-07 - Dark As A Dungeon.flac:bf88467ad3f7968abbb9b5a38e5ac109
+1-08 - Never Let Me Go.flac:da95cfa64410f403830a0f2489b66b3b
+1-09 - I Dreamed I Saw St. Augustine.flac:de71046423499db24f95cb68ccab8b41
+1-10 - I Shall Be Released.flac:9151efed6a68175116cbb01f3979c78e
+2-11 - Tangled Up In Blue.flac:47161c9ccf639131655be9d55fe2a310
+2-12 - Oh Sister.flac:70971f937e50801c37d4306710239d39
+2-13 - Hurricane.flac:af8a6cdba1f91861e19d6930a6d37815
+2-14 - One More Cup Of Coffee (Valley Below).flac:04b5f374b897aa8f45ed26c65bb00b3c
+2-15 - Sara.flac:095b0ac55485e53800f7adf835227a7b
+2-16 - Just Like A Woman.flac:68246cb68bd330603b2ab6a81aa9d6d9
+2-17 - Knockin' On Heaven's Door.flac:913bac890044113d4b3ead01d9e7cac8
+2-18 - This Land Is Your Land.flac:fbf5f88da4585a6fffb620d31805fe81
+===================
+===================
+===================

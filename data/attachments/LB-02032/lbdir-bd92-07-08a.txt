@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-07-08a 
+=================== 
+=================== 
+=================== 
+3e4ce94b46661d9d276618b1003961a0  Aosta 08.07.1992.md5
+9822e86d8f505c20d9adc6714666d1f1  Aosta 08.07.1992.txt
+1ab35319ea66a35a9d6dfdd6eb8a7473  Aostad1t1.shn
+7ad54b95b04b0525dca852d3bf009b1e  Aostad1t10.shn
+d70e009ad91053e45cb337a9909c108e  Aostad1t11.shn
+6609fb426100cb582af2bb628d673497  Aostad1t2.shn
+c29b04d2c34d48bf1e45f4391fcf6707  Aostad1t3.shn
+fefa6e53ad38e07e7aa5469dc106c70b  Aostad1t4.shn
+ef33297dad6700f573c4e93c15cf2eb7  Aostad1t5.shn
+6248d937548d8cc6d4e5143a72060155  Aostad1t6.shn
+b8f23ef0478bd4ca843af67e47e45e3e  Aostad1t7.shn
+ba4e56fc531e43dc72ea251002a29765  Aostad1t8.shn
+1e43f85a7cdcf911fd86b3f0b71a3dd7  Aostad1t9.shn
+4b9ef5ed1c38c04cef70904d1b356433  Aostad2t1.shn
+f3d3bfbcf8c5a865dc15fb3e36095447  Aostad2t2.shn
+838c31b7451861c6cfecc366811ec0d4  Aostad2t3.shn
+70560df7852343324bc93061725d3501  Aostad2t4.shn
+79250e8beac91a593ebd2a6b45148e33  Aostad2t5.shn
+4ed4d0c6de94b0fe8fa6568a9814a29e  Aostad2t6.shn
+3081ed48e06f1d486de7a59ac0766fb1  Aostad2t7.shn
+f602fa141e054c7b8ab00b2a66897d3c  bd92-07-08a.txt
+30e72d12e73bc62725f666ea58c6ea12  feedback.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-07-08a 
+=================== 
+=================== 
+=================== 
+78e9e804121d7fe8e820a9c267f8cf30  [shntool]  Aostad1t1.wav
+b8ded9b5fe1455a971df26f05ee9f1f6  [shntool]  Aostad1t2.wav
+5e40a653e1c80c96ee495361868bb218  [shntool]  Aostad1t3.wav
+3cc7fad3646404dce2e048f6611ebecb  [shntool]  Aostad1t4.wav
+4cbb749e0ef9662ffc6370701816416c  [shntool]  Aostad1t5.wav
+e9c6655fdfdd49c7928f7caa9d3002ef  [shntool]  Aostad1t6.wav
+f76f828a61ec2ea53827aaa7041c9441  [shntool]  Aostad1t7.wav
+976abd45c9ca205ee6b1395069e15a1a  [shntool]  Aostad1t8.wav
+d090fbfd8411a34260d3195510853e49  [shntool]  Aostad1t9.wav
+81f0e4922b4afa8bb1da75845d447f2d  [shntool]  Aostad1t10.wav
+1d65f78e0c7aee3ac9a03a452cfcc83f  [shntool]  Aostad1t11.wav
+0b029e2ce4cefc8b294fbce6f6bd46a1  [shntool]  Aostad2t1.wav
+035edd0b472fa79a8140f08f8f1db1d0  [shntool]  Aostad2t2.wav
+6a026ee02485c5493f7fd2272b312ff0  [shntool]  Aostad2t3.wav
+6e7966369a52ffbf0648e9511e97f389  [shntool]  Aostad2t4.wav
+8d51ad040122bbfe01fb3656918c1d90  [shntool]  Aostad2t5.wav
+82f6325c4a0694db6598b7017b7b3a09  [shntool]  Aostad2t6.wav
+cc9ed3c12579879b4237052cb1616cec  [shntool]  Aostad2t7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-07-08a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.50       45099658 B   ---   h-   -----    wav  1.0000  Aostad1t1.wav
+     7:06.50       75264058 B   ---   h-   -----    wav  1.0000  Aostad1t10.wav
+    11:05.01      117308396 B   ---   --   -----    wav  1.0000  Aostad1t11.wav
+     5:58.34       63231212 B   ---   --   -----    wav  1.0000  Aostad1t2.wav
+     7:15.24       76790492 B   ---   --   -----    wav  1.0000  Aostad1t3.wav
+     5:53.51       62389196 B   ---   --   -----    wav  1.0000  Aostad1t4.wav
+     8:09.74       86433692 B   ---   --   -----    wav  1.0000  Aostad1t5.wav
+     7:06.14       75179372 B   ---   --   -----    wav  1.0000  Aostad1t6.wav
+     7:01.63       74412620 B   ---   --   -----    wav  1.0000  Aostad1t7.wav
+     5:36.10       59293964 B   ---   --   -----    wav  1.0000  Aostad1t8.wav
+     3:48.46       40327436 B   ---   --   -----    wav  1.0000  Aostad1t9.wav
+     5:18.47       56205788 B   ---   --   -----    wav  1.0000  Aostad2t1.wav
+     7:10.02       75856748 B   ---   --   -----    wav  1.0000  Aostad2t2.wav
+     4:33.44       48260732 B   ---   --   -----    wav  1.0000  Aostad2t3.wav
+     7:17.29       77155052 B   ---   --   -----    wav  1.0000  Aostad2t4.wav
+     6:34.42       69600428 B   ---   --   -----    wav  1.0000  Aostad2t5.wav
+     4:28.14       47308172 B   ---   --   -----    wav  1.0000  Aostad2t6.wav
+     4:39.60       49356764 B   ---   --   -----    wav  1.0000  Aostad2t7.wav
+   113:19.55     1199473780 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

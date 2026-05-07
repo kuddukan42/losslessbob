@@ -1,0 +1,125 @@
+===================
+===================
+===================
+=== ffp d1.txt
+===================
+===================
+===================
+Track00.flac:621f8bd7dbcbb2e6c68a4124a6c04821
+Track01.flac:94fa3e4b678e15707423a2387962965b
+Track02.flac:16f4dd17fc5a12b8cca0a63ca09aa2f8
+Track03.flac:e74ff92e759caa35e01d27621e77ae29
+Track04.flac:37e9b8297c301797b8007f4aeebdfb64
+Track05.flac:f7a6899de2ed865c00191bb22af8d726
+Track06.flac:d5f3c4916fc0cc4e20d78c51b5de28d7
+Track07.flac:6b6105fb0042f65cafcd776fdb453174
+Track08.flac:559a70b9e4112a6da1de6452a6d061ac
+Track09.flac:eef6ec39c2f167f6a2bf181b4919bced
+Track10.flac:47033de9b0b413c11397b8df57f5c984
+Track11.flac:858c8250460b77a787f89c7e91ceb3ca
+===================
+===================
+===================
+=== ffp d2.txt
+===================
+===================
+===================
+Track12.flac:33ecbe1fd3c300d249acd4736c1a4314
+Track13.flac:0e751c9961873692dfc8d11b18e00e3f
+Track14.flac:ea2b0827b20f412b3dd168c246864ca6
+Track15.flac:4bde7ef31346b2abb6927676dab14f1c
+Track16.flac:e706d363c401590e92331822a61c52af
+===================
+===================
+===================
+=== 2004-08-04 The Chance, Poughkeepsie, New York, USA.txt
+===================
+===================
+===================
+BOB DYLAN
+The Chance
+Poughkeepsie, New York
+August 4, 2004
+
+
+Taped and transferred by: StreetcarVisions
+Other than that, no lineage
+
+Upped for belars in neighbour Sweden
+No changes has been done to this recording
+Fingerprints files included.
+
+
+01. The Wicked Messenger
+02. If You See Her, Say Hello
+03. Tweedle Dee And Tweedle Dum
+04. Tonight I'll Be Staying Here With You
+05. High Water (For Charley Patton)
+06. Most Likely You Go Your Way (And I'll Go Mine)
+07. Sugar Baby
+08. Seeing The Real You At Last
+09. Ballad Of A Thin Man
+10. Highway 61 Revisited
+11. This Wheel's On Fire (Bob Dylan/Rick Danko)
+
+12. Honest With Me
+13. It Ain't Me, Babe
+14. Summer Days
+15. Don't Think Twice, It's All Right
+16. All Along The Watchtower
+
+
+Concert # 1649 of The Never-Ending Tour
+First concert of the 2004 US Summer Tour with Willie Nelson
+2004 concert # 61
+
+Concert # 28 with the 18th Never-Ending Tour Band:
+Bob Dylan (vocal & piano)
+Stu Kimball (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+George Receli (drums & percussion)
+
+13, 15 acoustic with the band
+1, 2, 4, 6, 8, 9, 11, 15 Bob Dylan (harmonica)
+2, 4, 9, 16 Larry Campbell (pedal steel guitar)
+7, 13, 15 Larry Campbell (cittern)
+12 Larry Campbell (slide guitar)
+
+NOTE: Willie Nelson and his band did not participate at this show
+
+
+Enjoy your Bobby Hobby
+Olav / Norway
+
+
+===================
+===================
+===================
+=== ffp for both discs.txt
+===================
+===================
+===================
+disc one
+Track00.flac:621f8bd7dbcbb2e6c68a4124a6c04821
+Track01.flac:94fa3e4b678e15707423a2387962965b
+Track02.flac:16f4dd17fc5a12b8cca0a63ca09aa2f8
+Track03.flac:e74ff92e759caa35e01d27621e77ae29
+Track04.flac:37e9b8297c301797b8007f4aeebdfb64
+Track05.flac:f7a6899de2ed865c00191bb22af8d726
+Track06.flac:d5f3c4916fc0cc4e20d78c51b5de28d7
+Track07.flac:6b6105fb0042f65cafcd776fdb453174
+Track08.flac:559a70b9e4112a6da1de6452a6d061ac
+Track09.flac:eef6ec39c2f167f6a2bf181b4919bced
+Track10.flac:47033de9b0b413c11397b8df57f5c984
+Track11.flac:858c8250460b77a787f89c7e91ceb3ca
+
+disc two
+Track12.flac:33ecbe1fd3c300d249acd4736c1a4314
+Track13.flac:0e751c9961873692dfc8d11b18e00e3f
+Track14.flac:ea2b0827b20f412b3dd168c246864ca6
+Track15.flac:4bde7ef31346b2abb6927676dab14f1c
+Track16.flac:e706d363c401590e92331822a61c52af
+===================
+===================
+===================

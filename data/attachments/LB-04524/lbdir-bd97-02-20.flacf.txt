@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-20.flacf 
+=================== 
+=================== 
+=================== 
+9db2ea3c9dbc08dfa6af2be95c2d7cf8  bd97-02-20-LB-4524.txt
+12e776e9b4699cf3e8c603defb33a099  sendai disc one\Track01.flac
+5fb177c379e3f62d5c260a69d62830da  sendai disc one\Track02.flac
+9b923929b74c55ef12c1a8b5c315b832  sendai disc one\Track03.flac
+a316c57a865aa5375e6518022d635ec0  sendai disc one\Track04.flac
+06e7d38086d1e205cb55d3545b1e2e54  sendai disc one\Track05.flac
+32c53457082b1906833d2a4de6dc6227  sendai disc one\Track06.flac
+f2986f057a697c6a7a1713802e99d6a6  sendai disc one\Track07.flac
+486dda9a2ef158488e103cd46cf0a9ac  sendai disc one\Track08.flac
+76ad19babf556c36771a5b2107c66fd8  sendai disc one\Track09.flac
+e221a14c4abfaceedf6b41e41fd0e36f  sendai disc one\sendai disc one log.LOG
+a5e30df53e18e75c65054d80113b8760  sendai disc one\sendai disc one.ffp
+bdf28b94c2d243cfaf159d2d4352ad0f  sendai disc one\sendai disc one.md5
+dbb3082622db74d3558f77375e1d9b5c  sendai disc two\Track01.flac
+78e414f1f579acab73c1644b7484fe83  sendai disc two\Track02.flac
+7539de9c6dbbe854a79c30a486c2aa35  sendai disc two\Track03.flac
+3e5b5123af588a405271e287d88c31c9  sendai disc two\Track04.flac
+3c7d1cc490f82c7f7345d8ad6fa4afa8  sendai disc two\Track05.flac
+6fcf6e0e93abcae6d45e8ff5c6ed24e7  sendai disc two\Track06.flac
+95346b76a9df4213529deaa97223306e  sendai disc two\sendai d2 log.LOG
+0a1a77923749b5560320ebff0b8a40dc  sendai disc two\sendai disc two.ffp
+cb889263c4b7997d9ea662587a94497a  sendai disc two\sendai disc two.md5
+dca9b795f856d63a1a9bd0a7e94c87ed  Sendai Info.txt
+6d5ab7934ecef38cb15e94676e4e501d  Sendai_200297.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-20.flacf\sendai disc two 
+=================== 
+=================== 
+=================== 
+Track01.flac:23ca599861a86ad52f0500cc4410a2a3
+Track02.flac:df0036568805dbdf76a12d9404001b15
+Track03.flac:b0299e01bcc8c961a00b912980a222e9
+Track04.flac:23247110ee699bf77babd319344905a1
+Track05.flac:5e6348098a85581377d36e776824a9dd
+Track06.flac:e5e429e26668cc208db98589dce5f3e6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-20.flacf\sendai disc one 
+=================== 
+=================== 
+=================== 
+Track01.flac:bdbe7e25d381f64935cc266053a40239
+Track02.flac:1a3c6f30f5744cb6b1e39fb11593591f
+Track03.flac:bb99e98ff5f715efc1cd15cffdcfa1e9
+Track04.flac:ed01f1b3a6d0508b0be2c8272fe416ca
+Track05.flac:258e744c16fa9cfdfc31609381db9879
+Track06.flac:4729c6b28a7e98df0ebc9a36eabd00eb
+Track07.flac:f39cf189ac29e01ad24d6daffce7fa3c
+Track08.flac:ba0c9f164b3854d3682827aa79db948d
+Track09.flac:df262ccaca12afbbfdce4d31c1fc933d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-20.flacf\sendai disc two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:38.74      102133292 B   ---   --   ---xx   flac  0.4845  Track01.flac
+     8:00.46       84780236 B   ---   --   ---xx   flac  0.4983  Track02.flac
+     6:19.11       66881516 B   ---   --   ---xx   flac  0.5470  Track03.flac
+    11:48.45      124997084 B   ---   --   ---xx   flac  0.5197  Track04.flac
+    12:10.64      128922572 B   ---   --   ---xx   flac  0.4941  Track05.flac
+     8:08.16       86120876 B   ---   --   ---xx   flac  0.5553  Track06.flac
+    56:06.31      593835576 B                            0.5133  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-20.flacf\sendai disc one 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:39.03       49222700 B   ---   --   ---xx   flac  0.5367  Track01.flac
+     5:44.34       60761612 B   ---   --   ---xx   flac  0.4890  Track02.flac
+     6:40.03       70567100 B   ---   --   ---xx   flac  0.5246  Track03.flac
+     7:15.18       76776380 B   ---   --   ---xx   flac  0.3832  Track04.flac
+     8:29.28       89853500 B   ---   --   ---xx   flac  0.4870  Track05.flac
+     7:32.49       79848092 B   ---   --   ---xx   flac  0.5537  Track06.flac
+     7:39.24       81024092 B   ---   --   ---xx   flac  0.4780  Track07.flac
+     7:12.47       76315388 B   ---   --   ---xx   flac  0.4100  Track08.flac
+     7:24.22       78373388 B   ---   --   ---xx   flac  0.4511  Track09.flac
+    62:37.03      662742252 B                            0.4767  (9 files)
+=================== 
+=================== 
+=================== 

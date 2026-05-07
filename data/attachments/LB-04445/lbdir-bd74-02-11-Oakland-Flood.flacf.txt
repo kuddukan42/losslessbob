@@ -1,0 +1,131 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-02-11-Oakland-Flood.flacf 
+=================== 
+=================== 
+=================== 
+b76cc7d859e596100e33866deca275ad  bd74-02-11-Oakland-Flood-LB-4445.txt
+e8a9303a2cc60e2d1a0d1882d3946704  disc 1\Track01.flac
+0724e98cdc282f5e3aa9d815cc9c85c3  disc 1\Track02.flac
+e956dc8bd385da1f38bd8831d32af24f  disc 1\Track03.flac
+5fbd34387cfb8b29b14b8cd1e012c653  disc 1\Track04.flac
+55903f99bdd2c8cc435e91300ee032af  disc 1\Track05.flac
+c265c983f7f479b786cefdf7859a8612  disc 1\Track06.flac
+0f7ca0536f5ffde53300930dd04bdcc3  disc 1\Track07.flac
+0873239132456f4619df5fb2c5a43b91  disc 1\Track08.flac
+b00194ca2bec5b60c96fa6d135a90b8c  disc 1\Track09.flac
+8a4e8ff0fb0f8398f7bfa90f736119e7  disc 1\Track10.flac
+83c2a878c212949e4df9aa6765654b3c  disc 1\Track11.flac
+0f622c2c3836c8465d0a753f473d223e  disc 1\Track12.flac
+7e2ec83c2a2c91ff9fd4283ce867a2ad  disc 1\Track13.flac
+0864c45e73c594848d832bddcf08a82a  disc 1\Track14.flac
+f724b911eadb80cc355cd1100e4830b0  Disc 1 eac.LOG
+db78ea476f63c22cdfe039b070163bf3  disc 2\Track01.flac
+be64b950b5d2e8f39aad26ab155fd3cb  disc 2\Track02.flac
+ebc004e4b010da97de98c9b7f2ae02f3  disc 2\Track03.flac
+d0d8ad67c5164dc6a3b555d7ae5d77a0  disc 2\Track04.flac
+3a9626128e82a8bda47f7b7429651cff  disc 2\Track05.flac
+d4e938d6742fb0285aae7d756a4a82a6  disc 2\Track06.flac
+8b4610d73e92834b39659085aa752a8f  disc 2\Track07.flac
+1a08a257d2ea2b49181fadee9087399d  disc 2\Track08.flac
+4102e5e5c975c3231bede53adfd64ceb  disc 2\Track09.flac
+9b43c725807e5c5c503aaf3e935d38d6  disc 2\Track10.flac
+46e2ce5e778341d76146bfc592da50e8  disc 2\Track11.flac
+bf38d7c5e19566726592359121f5070c  disc 2\Track12.flac
+f49d27b74debd990e89436883cf2aa8f  disc 2\Track13.flac
+a2ba4b550f7c44856c376b8de4470b37  disc 2\Track14.flac
+bf01c54de5a6c14db5a7b79b510dc7ed  Disc 2 eac.LOG
+8ae81c1b6f890606c29395bb7dcbe4a0  Oakland Flood.md5
+c6ae5ab4514673e0f855afe1479238ea  Oakland Flood.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-02-11-Oakland-Flood.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:3fbe9bb3b291448fd4b8fefa97bff3a2
+Track02.flac:5e0d77d973c7d35c4435936c0424304d
+Track03.flac:d38ec7d82f271a324498ff1476d76058
+Track04.flac:de07489e4fd52db8c843d630747f981f
+Track05.flac:9535c4137c142040ce305f594daad52e
+Track06.flac:97976ddfd432d6a7beec2d85a1a7ba99
+Track07.flac:ef06f359f7e6f383b41855eb368c2e78
+Track08.flac:21ff8e61c7707fdaf14e56748945becc
+Track09.flac:5d4c87ce1999bb24a9a4104f474d1bc7
+Track10.flac:d6aeebe8a73ee2b2022473d1968ce0b8
+Track11.flac:8f76ae488785f20ada2c468a996310b3
+Track12.flac:e673d3183971e5d578c51a32f02af2fd
+Track13.flac:175399ae9d62ea2ad18951cf196d980d
+Track14.flac:b1418adb3b40ca0b94aee208656c9a21
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-02-11-Oakland-Flood.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:931686dcbf00da99ffebe3962b60f454
+Track02.flac:14c79e25b08e940762ab4399cf8aca50
+Track03.flac:aa414681fbfd73ba4871c34b608090bd
+Track04.flac:07ede993f3aea53dccd8e85a7bafff3f
+Track05.flac:1750dc00e21488b101a6fa83911d24e6
+Track06.flac:6254a8db6ca6aeba8f969b25f2bfa6f2
+Track07.flac:d412e678483a23f67465674b1a9d3cda
+Track08.flac:495076954849fbafe069954c09e5661a
+Track09.flac:22ac431e3be8a0ff2be4fd12f05e37c3
+Track10.flac:71134053d07758bfdad3e27c7dc8648f
+Track11.flac:efd99495f55bde8f4f1b73f76d830c6a
+Track12.flac:b6c3b52c5188dae6e1c41b1cb0819076
+Track13.flac:ddd8446918f0b4708d9278a044c82dff
+Track14.flac:ba8f3725f35c52eacb41850b954e571d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-11-Oakland-Flood.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:48.29       40287452 B   ---   --   ---xx   flac  0.6043  Track01.flac
+     3:30.39       37135772 B   ---   --   ---xx   flac  0.6094  Track02.flac
+     5:38.59       59762012 B   ---   --   ---xx   flac  0.6486  Track03.flac
+     3:34.74       37923692 B   ---   --   ---xx   flac  0.6539  Track04.flac
+     3:49.18       40437980 B   ---   --   ---xx   flac  0.6478  Track05.flac
+     4:48.18       50845580 B   ---   --   ---xx   flac  0.6190  Track06.flac
+     4:53.29       51753452 B   ---   --   ---xx   flac  0.6391  Track07.flac
+     4:52.45       51614684 B   ---   --   ---xx   flac  0.5874  Track08.flac
+     3:37.07       38295308 B   ---   --   ---xx   flac  0.5986  Track09.flac
+     3:18.48       35040140 B   ---   --   ---xx   flac  0.6088  Track10.flac
+     2:50.47       30098588 B   ---   --   ---xx   flac  0.6325  Track11.flac
+     2:55.68       31029980 B   ---   --   ---xx   flac  0.5709  Track12.flac
+     4:44.55       50227004 B   ---   --   ---xx   flac  0.6032  Track13.flac
+     4:03.06       42879356 B   ---   --   ---xx   flac  0.6300  Track14.flac
+    56:26.17      597331000 B                            0.6193  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-11-Oakland-Flood.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.08       36533660 B   ---   --   ---xx   flac  0.6331  Track01.flac
+     4:15.44       45085532 B   ---   --   ---xx   flac  0.6264  Track02.flac
+     5:24.32       57228908 B   ---   --   ---xx   flac  0.5765  Track03.flac
+     4:11.18       44318780 B   ---   --   ---xx   flac  0.6540  Track04.flac
+     6:08.16       64952876 B   ---   --   ---xx   flac  0.6431  Track05.flac
+     4:50.57       51290108 B   ---   --   ---xx   flac  0.5413  Track06.flac
+     3:58.47       42093788 B   ---   --   ---xx   flac  0.5794  Track07.flac
+     0:45.10        7961564 B   ---   --   ---xx   flac  0.5860  Track08.flac
+     5:19.01       56273996 B   ---   --   ---xx   flac  0.5219  Track09.flac
+     4:59.64       52894172 B   ---   --   ---xx   flac  0.5544  Track10.flac
+     4:34.07       48350108 B   ---   --   ---xx   flac  0.5560  Track11.flac
+     8:24.21       88955036 B   ---   --   ---xx   flac  0.5651  Track12.flac
+     4:11.37       44363468 B   ---   --   ---xx   flac  0.5724  Track13.flac
+     3:57.11       41832716 B   ---   --   ---xx   flac  0.5671  Track14.flac
+    64:26.73      682134712 B                            0.5818  (14 files)
+=================== 
+=================== 
+=================== 

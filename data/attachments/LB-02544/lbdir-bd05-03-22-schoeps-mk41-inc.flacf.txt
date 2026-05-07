@@ -1,0 +1,61 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-22-schoeps-mk41-inc.flacf 
+=================== 
+=================== 
+=================== 
+1358f865287e89a33fea908a7959464a  bd05-03-22-schoeps-mk41-inc.txt
+5d1ffb577221b8fabb794a6745281612  Dylan 03-22-05 t01.flac
+ad0273a753de89d9451dec0b2ccfb4a9  Dylan 03-22-05 t02.flac
+7d32c3d0da562003f5cf2d9cbaf7a4c8  Dylan 03-22-05 t03.flac
+94492e5900553f21da97bfc00accff4b  Dylan 03-22-05 t04.flac
+b75096905687abbaeda0fa314b4e4b62  Dylan 03-22-05 t05.flac
+ae190dc1a6725334fde1f6a836230a3b  Dylan 03-22-05 t06.flac
+81f0039b2ca8cd266493c5fd9119b191  Dylan 03-22-05 t07.flac
+fd809ab086d4f09b5e17a6a43f249554  Dylan 03-22-05 t08.flac
+5e6f3fbdae5ea7205ae2091529a14b49  Dylan 03-22-05 t09.flac
+d06d03e6bf0d73f645bda5419278c697  Dylan 03-22-05 t10.flac
+a2d854f87c7898aeac9f83d58a4c2091  Dylan 03-22-05 t11.flac
+7db738f5ee733b9481cd053b21ce74d0  Dylan 03.22.05.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-03-22-schoeps-mk41-inc.flacf 
+=================== 
+=================== 
+=================== 
+Dylan 03-22-05 t01.flac:e29e05830d838f48c6591d86857a4e35
+Dylan 03-22-05 t02.flac:f49b928702392740ae8fd31129958957
+Dylan 03-22-05 t03.flac:321bb719e3f51183fd5e36e6b0432221
+Dylan 03-22-05 t04.flac:d0a23c466347f254572723d0a4e6d5a0
+Dylan 03-22-05 t05.flac:00bbc5913a6ee2ccac2bf6d0db849b8b
+Dylan 03-22-05 t06.flac:1b1beb7a119043d8c4adb375ce090665
+Dylan 03-22-05 t07.flac:9aa073e2b521bd2674d71778bd37088c
+Dylan 03-22-05 t08.flac:4267d62b04384e0d928658f92b38edf5
+Dylan 03-22-05 t09.flac:9c730b6088ed2cf4f4ec8f0fc0531f44
+Dylan 03-22-05 t10.flac:3871703df2363d75dc8563f3f2fa8ad9
+Dylan 03-22-05 t11.flac:d608172f71bc52a273166f67e53f1e4c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-22-schoeps-mk41-inc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:18.33        3252860 B   ---   --   ---xx   flac  0.4693  Dylan 03-22-05 t01.flac
+     4:42.51       49864796 B   ---   --   ---xx   flac  0.5847  Dylan 03-22-05 t02.flac
+     4:37.53       48987500 B   ---   --   ---xx   flac  0.5315  Dylan 03-22-05 t03.flac
+     5:33.50       58858844 B   ---   --   ---xx   flac  0.5111  Dylan 03-22-05 t04.flac
+     5:18.40       56189324 B   ---   --   ---xx   flac  0.5052  Dylan 03-22-05 t05.flac
+     7:42.69       81659132 B   ---   --   ---xx   flac  0.5500  Dylan 03-22-05 t06.flac
+     6:41.12       70764668 B   ---   --   ---xx   flac  0.5513  Dylan 03-22-05 t07.flac
+     7:38.03       80798300 B   ---   --   ---xx   flac  0.4664  Dylan 03-22-05 t08.flac
+     6:24.55       67867004 B   ---   --   ---xx   flac  0.5946  Dylan 03-22-05 t09.flac
+     6:44.12       71293868 B   ---   --   ---xx   flac  0.5089  Dylan 03-22-05 t10.flac
+     6:51.11       72526316 B   ---   --   ---xx   flac  0.5718  Dylan 03-22-05 t11.flac
+    62:33.14      662062612 B                            0.5361  (11 files)
+=================== 
+=================== 
+=================== 

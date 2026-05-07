@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-26-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+1cc8d71f5aa7e28b05695f52f2be3344  bd05-04-26-SP-CMC-8-LB-2644.txt
+835f1135197acae72b1fec15cc2d34ab  d1t1.flac
+5bc3f558978200730d3d7ebd498f43a8  d1t2.flac
+98958ad3d54f4c7db5b61e31dd2da8c5  d1t3.flac
+522a2f829867d8d8fb4be5b0e35ec673  d1t4.flac
+fde5defb71676d9974e3531de178a04d  d1t5.flac
+837bab4b782bd4f891d405d555970436  d1t6.flac
+d84f283a780f884eee12e1adc5eaeee8  d1t7.flac
+b2f8b3db62c0f2bf6afe0ea4ffc45b9b  d1t8.flac
+629c8e3ef06bbd8de2f402a0a2f74514  d2t1.flac
+3e0dea6cd7d4ffd277fa590257d78d25  d2t2.flac
+2e57b6fcf7ad779118780b3e202c9f49  d2t3.flac
+0e8a50eceb89238b2a163ed2afb4997e  d2t4.flac
+7414c8001b5e336e1dcc577f35218b4e  d2t5.flac
+84bf3160cc557778ff70b4853f4f6ba0  d2t6.flac
+5e116a0f6089b8439e5746140c9c18a2  dylan050426.txt
+4a4556e8509095052e7e3e62e4984f45  fingerprint.ffp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-26-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+d1t1.flac:726ce14bc3b63ae9d3f9479289406d53
+d1t2.flac:ffb4a20b8c97a231d3c81ca66d7ca626
+d1t3.flac:48a9b66c457d9e67f0564c22317bc3b6
+d1t4.flac:f314b3cd5a19ae07bf250073fad11f61
+d1t5.flac:ed8a9000df82690372c94a8e92f89cd0
+d1t6.flac:956ae9e5431815600b16d7a7b248fdaa
+d1t7.flac:121049a37f8e194c4b263f17a8cb4397
+d1t8.flac:ecbbda63e90ce10b645d6e8ada52f254
+d2t1.flac:41e3c97afb483a68ca3843d2733e421a
+d2t2.flac:81b75dc2f9e1968011da9df08d1207a7
+d2t3.flac:62cad733d18dd92f8b5104b847834c7a
+d2t4.flac:6337d13b248906c588b5a17182a41438
+d2t5.flac:ef2fc1a4219be5d43f71a52cb3ff2d0d
+d2t6.flac:93bb854316c3d5972c5d5c5048427ce3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-26-SP-CMC-8.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:41.74       49741868 B   -b-   --   ---xx   flac  0.5754  d1t1.flac
+     4:59.47       52854828 B   -b-   --   ---xx   flac  0.4951  d1t2.flac
+     7:15.45       76841004 B   -b-   --   ---xx   flac  0.5614  d1t3.flac
+     6:36.03       69861420 B   -b-   --   ---xx   flac  0.5195  d1t4.flac
+     5:37.53       59572268 B   -b-   --   ---xx   flac  0.5058  d1t5.flac
+     6:01.37       63766572 B   -b-   --   ---xx   flac  0.4526  d1t6.flac
+     6:04.74       64383020 B   -b-   --   ---xx   flac  0.4954  d1t7.flac
+     6:16.11       66352172 B   -b-   --   ---xx   flac  0.5960  d1t8.flac
+     6:00.15       63539244 B   -b-   --   ---xx   flac  0.4840  d2t1.flac
+     6:34.55       69632044 B   -b-   --   ---xx   flac  0.5204  d2t2.flac
+     6:34.07       69517036 B   -b-   --   ---xx   flac  0.5943  d2t3.flac
+     5:28.39       57950572 B   -b-   --   ---xx   flac  0.5201  d2t4.flac
+     7:55.13       83820588 B   -b-   --   ---xx   flac  0.4704  d2t5.flac
+     5:14.09       55410732 B   -b-   --   ---xx   flac  0.5326  d2t6.flac
+    85:20.32      903243368 B                            0.5226  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd92-04-06-jlt-e.shnf
+===================
+===================
+===================
+eab06a8245a889ed2c0924e89f825163 *1\01 New Morning.shn
+38d25346955f44ea2779f41906c46350 *1\02 Lay Lady Lay.shn
+498e9e71ae35da735f9abf4e0976cc0e *1\03 All Along The Watchtower.shn
+fe7f73ac217305f7c0c9cb067f5cc2b6 *1\04 Just Like A Woman.shn
+8e6a886b3872acb104a795faf91d2c9c *1\05 Tangled Up In Blue.shn
+b9a5b96ebcbe44f8f1faa40291861b01 *1\06 Black Muddy River.shn
+7017133dd4663336be3f23de323f3c67 *1\07 Leopard-Skin Pill-Box Hat.shn
+6ce13393114ae16f8e76e12e824eaba1 *1\08 Love Minus Zero - No Limit.shn
+72e331c3acd83470171900ac06ecce81 *1\09 Little Moses.shn
+db368d98ea165e28d96e61539eb5e59d *1\1.md5
+b606554ad1a504ea23dfab4535a1fb1a *1\10 Golden Vanity.shn
+961fed485449f1d0b53372e7c6b9120a *2\1 Mr. Tambourine Man.shn
+e4dabb8cc5f9a0cc0a6cf802d2c39e6e *2\2 Cat's In The Well.shn
+105c694387ed7469a67c29ccfd14a6f5 *2\2.md5
+4a9385da93d9f67f4bd807f4c383cb5d *2\3 Idiot Wind.shn
+24ae966edf3f71da85a9071c6a517129 *2\4 The Times They Are A-Changin'.shn
+4fc39206e729fdb254bc8da31e82ae92 *2\5 Highway 61 Revisited.shn
+f9d4e830537840baf4cbd59f8f75b7fa *2\6 Absolutely Sweet Marie.shn
+751bfca098741437016a31ec969c4728 *2\7 Ballad Of A Thin Man.shn
+3140e192b272d43c28fdac0854923681 *2\8 Blowin' In The Wind.shn
+acf5c0e832977abed52f3bad1178c985 *Bob Dylan - 1992-04-06 Melbourne (JLT - shn) info.txt
+f393ae1fa7eab388caf4b572df239a97 *Bob Dylan - 1992-04-06 Melbourne (JLT - shn) info.txt.md5
+===================
+===================
+===================
+=== shntool md5/hash for: bd92-04-06-jlt-e.shnf
+===================
+===================
+===================
+fdabcfb3b97ba30cf7804095c2b14cc9  [shntool]  1\01 New Morning.shn
+2fe476f9d02e20160f482595510e50e2  [shntool]  1\02 Lay Lady Lay.shn
+a347500322234ad1490be4277c0e0dc8  [shntool]  1\03 All Along The Watchtower.shn
+a139f5801d8fa5ad9312f745a0a5f23f  [shntool]  1\04 Just Like A Woman.shn
+a9611c036e03049da3caf7f47e3acbb8  [shntool]  1\05 Tangled Up In Blue.shn
+65a4e4bad6c2f989340a197fd715b1e6  [shntool]  1\06 Black Muddy River.shn
+34233becc7ef5f75b484e4318d0cfbcd  [shntool]  1\07 Leopard-Skin Pill-Box Hat.shn
+714da16611f8c2751f682a0b4af22d8f  [shntool]  1\08 Love Minus Zero - No Limit.shn
+b9b2601fc49aa4f8fbca485d5ddca836  [shntool]  1\09 Little Moses.shn
+aa2e1cbca848977b786cd0b92923858c  [shntool]  1\10 Golden Vanity.shn
+a9d3c5d1b50a58fd57e87f2ddcd8bec7  [shntool]  2\1 Mr. Tambourine Man.shn
+361c503d658c5fa111b4fa3785ccd593  [shntool]  2\2 Cat's In The Well.shn
+ccc8d1f5182a269f25b9e3968cf2d239  [shntool]  2\3 Idiot Wind.shn
+570dbc7ebc13b0d1fd864e99b09b2c68  [shntool]  2\4 The Times They Are A-Changin'.shn
+e166e01618416956d27bd50cccc20026  [shntool]  2\5 Highway 61 Revisited.shn
+003bcfd75c41a3bca05c1eb1b18a81d1  [shntool]  2\6 Absolutely Sweet Marie.shn
+393c0a91fee48248c09c0c3933c8f3ce  [shntool]  2\7 Ballad Of A Thin Man.shn
+d56b50a2b2e66845d69f9096ec356097  [shntool]  2\8 Blowin' In The Wind.shn
+===================
+===================
+===================
+=== shntool len for: bd92-04-06-jlt-e.shnf\1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:28.59       36830012 B   ---   --   ---xx    shn  0.6684  01 New Morning.shn
+     4:11.69       44438732 B   ---   --   ---xx    shn  0.6861  02 Lay Lady Lay.shn
+     3:28.08       36710060 B   ---   --   ---xx    shn  0.6944  03 All Along The Watchtower.shn
+     5:41.45       60258284 B   ---   --   ---xx    shn  0.6915  04 Just Like A Woman.shn
+     7:00.25       74146844 B   ---   --   ---xx    shn  0.7001  05 Tangled Up In Blue.shn
+     5:10.59       54822812 B   ---   --   ---xx    shn  0.6452  06 Black Muddy River.shn
+     4:10.41       44196476 B   ---   --   ---xx    shn  0.7144  07 Leopard-Skin Pill-Box Hat.shn
+     2:55.18       30912380 B   ---   --   ---xx    shn  0.6405  08 Love Minus Zero - No Limit.shn
+     3:42.36       39245516 B   ---   --   ---xx    shn  0.6131  09 Little Moses.shn
+     6:12.09       65642012 B   ---   --   ---xx    shn  0.6106  10 Golden Vanity.shn
+    46:01.69      487203128 B                            0.6672  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd92-04-06-jlt-e.shnf\2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:22.53       67509500 B   ---   --   ---xx    shn  0.6417  1 Mr. Tambourine Man.shn
+     3:17.62       34896668 B   ---   --   ---xx    shn  0.6811  2 Cat's In The Well.shn
+     8:48.51       93259196 B   ---   --   ---xx    shn  0.6555  3 Idiot Wind.shn
+     5:31.54       58515452 B   ---   --   ---xx    shn  0.6501  4 The Times They Are A-Changin'.shn
+     5:09.19       54552332 B   ---   --   ---xx    shn  0.6901  5 Highway 61 Revisited.shn
+     5:24.61       57297116 B   ---   --   ---xx    shn  0.7174  6 Absolutely Sweet Marie.shn
+     5:53.24       62325692 B   ---   --   ---xx    shn  0.6928  7 Ballad Of A Thin Man.shn
+     3:50.00       40572044 B   ---   --   ---xx    shn  0.6193  8 Blowin' In The Wind.shn
+    44:18.24      468928000 B                            0.6682  (8 files)
+===================
+===================
+===================

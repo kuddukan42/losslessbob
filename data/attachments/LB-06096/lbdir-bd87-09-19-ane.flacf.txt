@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-19-ane.flacf 
+=================== 
+=================== 
+=================== 
+cbe14e50675aa6170e9b2a2b49155a49  01.flac
+4eb2ca25b72de5ff8e9f1e2259ae4e40  02.flac
+f970dd9cefb47f0e0897cd17b77803aa  03.flac
+102c0e90765e94704ce1553d25b69aef  04.flac
+7c7ebe3b827fcaf8241423923f334f31  05.flac
+63d585ab9f1f4eb8b246a4e8af8dbbbb  06.flac
+78c3146abd8627c6047c45633f9d8bae  07.flac
+35dc1da04a42dd93a201923f954ed756  08.flac
+d4f054cfd40d7f9f8616c60f3c712f53  09.flac
+bd4bdc5b4923c7f51e2069425d7e9bf4  10.flac
+01bc89921fb120225ab2567326b4edd4  11.flac
+caba7798d83443fc16007c751b778037  12.flac
+e4da5c2ae4f8d6c40346ad838446790b  Bob Dylan live in The Rotterdam, The Netherlands Sportpaleis Ahoy 19-Sep-87.md5
+787d87d6e4db0b0f0378ff9ff64c8a15  Bob Dylan.txt
+bc76f4ba44dd30f2ef4bc69269ed3ef8  my bootleg parts\mic parts 1.JPG
+6e46549fe1a74543a3ed292604c0de2b  my bootleg parts\mic parts 2.JPG
+6300a120fff8690095fb3baf8732a909  my bootleg parts\mic parts 3.JPG
+6728f3a9285c8c5b5b453415cf632440  my bootleg parts\pc sound card.txt
+de98ea3a8ac7ba1d7acb1829398304c3  my bootleg parts\recorder & self made mic.JPG
+2226785e98287cc199755f59f376b481  my bootleg parts\selfmade microfon.txt
+88353469a50ed4f696c8044cb55d6a87  my bootleg parts\The Taper she hair, stretch fully with microphones Ane (flipp022) age 63 on 50cc roton racecer top speed 180 km.JPG
+a9909cf8de983d0606cc6bf6722a5506  my bootleg parts\the way of the signal.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-19-ane.flacf 
+=================== 
+=================== 
+=================== 
+01.flac:78db9b430475e4273b7fe30b805261a0
+02.flac:6a235ecd71f90e3bddd3438a7d2f3673
+03.flac:44a5952a5ff54f0fd62f2dfcb3b13e64
+04.flac:528fbe27700f090dfa1447d42faa0d7f
+05.flac:2a7dbc14f4a28fca8cac3ce20dfbd983
+06.flac:13426183c5940e8c38e317205f20eaf0
+07.flac:612eb34dc692e2e771eb8f68c870b35e
+08.flac:4e05f07a10c0bfa2445d0b6bd4b7a62f
+09.flac:380050d6459831d61d00e77eb96eeae1
+10.flac:8e5c31cd2043e8ea633a6bc148e14b1c
+11.flac:ceacf0b9f568d4b29f89a81bce38ec46
+12.flac:e5b8e7e18367e0f62d669458cca245c8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-19-ane.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.69       61902332 B   ---   --   ---xx   flac  0.7367  01.flac
+     2:34.14       27198572 B   ---   --   ---xx   flac  0.7502  02.flac
+     4:50.38       51245420 B   ---   --   ---xx   flac  0.7230  03.flac
+     3:48.15       40254524 B   ---   --   ---xx   flac  0.7344  04.flac
+     4:57.43       52491980 B   ---   --   ---xx   flac  0.7105  05.flac
+     4:17.59       45473612 B   ---   --   ---xx   flac  0.7106  06.flac
+     3:54.18       41319980 B   ---   --   ---xx   flac  0.6757  07.flac
+     2:25.15       25613324 B   ---   --   ---xx   flac  0.7178  08.flac
+     4:25.32       46821308 B   ---   --   ---xx   flac  0.6847  09.flac
+     6:16.58       66462860 B   ---   --   ---xx   flac  0.6888  10.flac
+     5:49.29       61631852 B   ---   --   ---xx   flac  0.6894  11.flac
+     7:51.19       83127956 B   -b-   --   ---xx   flac  0.7373  12.flac
+    57:01.34      603543720 B                            0.7127  (12 files)
+=================== 
+=================== 
+=================== 

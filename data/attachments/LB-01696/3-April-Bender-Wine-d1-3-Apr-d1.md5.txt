@@ -1,0 +1,12 @@
+1bc8dfde4b91f705b29ad8576f84ec61 *01 Intro.shn
+acfc27a47d9998bf4edfaed93bc5c029 *02 Maggie's Farm.shn
+0b8ed593d801489c5a7ef7ed7d993f26 *03 The Times They Are A'Changin.shn
+dd7076cd9906e76b7f80d655954cba98 *04 Tweedle Dee And Tweedle Dum.shn
+9f8787dd8098de183a9d1dd9c7655e7e *05 Ring Them Bells.shn
+0e4f8ef4a70cd67120151f9a2a44be24 *06 Down Along The Cove.shn
+96fb2c44ef2906bd82a658e9bdd39481 *07 Ballad Of A Thin Man.shn
+9c6b9fc3cd6c3978633020b24a8ea9ef *08 Dignity.shn
+fcc4c62f61b03ba30df85d21ace571fd *09 Ballad Of Hollis Brown.shn
+f57aee0b96cf4473e4b6c62f656d24b3 *10 Highway 61 Revisited.shn
+d7d6ec71769ba0c63416acfaca47a1fa *11 A Hard Rain's A-Gonna Fall.shn
+e0fe5cbeb671715f71f8265c97dbcbfa *12 Bye And Bye.shn

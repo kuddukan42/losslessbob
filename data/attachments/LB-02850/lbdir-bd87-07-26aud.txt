@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-26aud 
+=================== 
+=================== 
+=================== 
+a947c8c8287d2731ee974edd1022298a  bd1987-07-26aud.md5
+3e493a92d78b0961077af2fa9ddb12de  bd1987-07-26aud.txt
+975e02614cdfadab7cde848c9010d8c9  bd1987-07-26aud_d1t01.shn
+bf9af97a8f4d621c3ff263e685cffcc7  bd1987-07-26aud_d1t02.shn
+f6ad151abe9c0a89d1f66f0c9161aa57  bd1987-07-26aud_d1t03.shn
+01c218c6a4c9f9478f98e07adfd5afeb  bd1987-07-26aud_d1t04.shn
+ad4eec0c4a75a1b6ad9e221cea44032e  bd1987-07-26aud_d1t05.shn
+6fb62b0e642c6a9d48728565e045fedb  bd1987-07-26aud_d1t06.shn
+a4e8f31201aa0caf1ab84eff7746b97b  bd1987-07-26aud_d1t07.shn
+7331687fbcd21234995c5bf6ad18aded  bd1987-07-26aud_d2t01.shn
+9023e14d2d6f64e623545f6cc927e812  bd1987-07-26aud_d2t02.shn
+16b2298152c2286077ef1d522feb88fd  bd1987-07-26aud_d2t03.shn
+d305d9627310146886a4a320b3862b6e  bd1987-07-26aud_d2t04.shn
+f8e4bfb1523927b9cf95084e093364d4  bd1987-07-26aud_d2t05.shn
+c7955daa6cb941953575a4770c644611  bd1987-07-26aud_d2t06.shn
+7957634c1dade57ed48dc7fa0e729aff  bd1987-07-26aud_d2t07.shn
+c84d17c5a4b8ec5c5aed15f78137d648  bd1987-07-26aud_d2t08.shn
+5b3f62909bc29970f87b47181e726826  bd87-07-26aud-LB-2850.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-07-26aud 
+=================== 
+=================== 
+=================== 
+c9ea1b877488e2f5c2e7342b918054b3  [shntool]  bd1987-07-26aud_d1t01.wav
+6e04414602cd0efd308cc42905506af1  [shntool]  bd1987-07-26aud_d1t02.wav
+bad00da3861e23e01f1c17b212383724  [shntool]  bd1987-07-26aud_d1t03.wav
+0a489fe657ba4256c361e2931b41a235  [shntool]  bd1987-07-26aud_d1t04.wav
+718e4dac935dab5fe8e98016b6341466  [shntool]  bd1987-07-26aud_d1t05.wav
+dd061b709985805a93c1581b57ee47a2  [shntool]  bd1987-07-26aud_d1t06.wav
+b03b1fe44cd3d237e2eb72f9da45074d  [shntool]  bd1987-07-26aud_d1t07.wav
+f3d8f3da1b02fd0e576e144d566bb92f  [shntool]  bd1987-07-26aud_d2t01.wav
+93256c09a98f5ad846739bbf987f092c  [shntool]  bd1987-07-26aud_d2t02.wav
+1347c8b0daee968bf3ef0d8aea772f8d  [shntool]  bd1987-07-26aud_d2t03.wav
+14f608661fe6c263cb3be7ba22b96c18  [shntool]  bd1987-07-26aud_d2t04.wav
+cfbd696e5fd775989abe64372ec1ded0  [shntool]  bd1987-07-26aud_d2t05.wav
+bbda1d6de4a7a37c0919dcf12043af45  [shntool]  bd1987-07-26aud_d2t06.wav
+7c2dc0eb303f95ee77e60cf77a26d5f9  [shntool]  bd1987-07-26aud_d2t07.wav
+e683727668a217d7dbc69d145d0f2b32  [shntool]  bd1987-07-26aud_d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-26aud 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.45       58141484 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d1t01.wav
+     5:56.02       62803148 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d1t02.wav
+     5:29.20       58082684 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d1t03.wav
+     6:16.26       66387596 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d1t04.wav
+     4:32.58       48117260 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d1t05.wav
+     6:39.61       70527116 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d1t06.wav
+     5:33.27       58804748 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d1t07.wav
+     6:05.11       64411916 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d2t01.wav
+     7:40.22       81195788 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d2t02.wav
+     6:40.62       70705868 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d2t03.wav
+     5:05.50       53919644 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d2t04.wav
+     6:38.09       70228412 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d2t05.wav
+     6:51.22       72552188 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d2t06.wav
+     7:06.65       75299324 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d2t07.wav
+     6:44.71       71432636 B   ---   --   -----    wav  1.0000  bd1987-07-26aud_d2t08.wav
+    92:50.26      982609812 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

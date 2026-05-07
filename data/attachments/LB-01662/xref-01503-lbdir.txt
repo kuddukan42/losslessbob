@@ -1,0 +1,76 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-22-alt-e.flacf
+===================
+===================
+===================
+2e270a71bf770df7017e4161c8a3b834 *bd1995-03-22-Lille (alt).md5
+6b0fcd22436ad3b5fabdd096708f08e6 *bd1995-03-22-Lille01.flac
+c0b696303557fcfa4b6d98fd03df22ab *bd1995-03-22-Lille02.flac
+606c70781be0e3831c5cdf61aa481b3a *bd1995-03-22-Lille03.flac
+b4eee862a8c09f9b792df8a9ec0ecf0d *bd1995-03-22-Lille04.flac
+4f7b00322b78938e0fb756dec4ff8cde *bd1995-03-22-Lille05.flac
+5857d29ce62aae9c06885f77e3ba9232 *bd1995-03-22-Lille06.flac
+a2fca3e4bfe62d2934502c620aada1c2 *bd1995-03-22-Lille07.flac
+d62ccc7141926e69e848476a7bcae42a *bd1995-03-22-Lille08.flac
+394ce076b406f5f260614e5cd24dc0e4 *bd1995-03-22-Lille09.flac
+7591ec99a23dae322ef6d896288341bd *bd1995-03-22-Lille10.flac
+c54848f11dbfedb76e941fd23467f35d *bd1995-03-22-Lille11.flac
+c02430932013e1ae9d3470346fd95f9b *bd1995-03-22-Lille12.flac
+df3f32af4e4b5b3cbbc9ac21cf261925 *bd1995-03-22-Lille13.flac
+2bc7d2a04875e3de130fbf74937bd542 *bd1995-03-22-Lille14.flac
+8427d9f55224c2ab49f72e7f978b982e *bd1995-03-22-Lille15.flac
+d6c9903ac45c383d84f498a80a88d7ea *bd1995-03-22-Lille16.flac
+68fcbeece4ac46546c2312054d9b943d *Note.txt
+===================
+===================
+===================
+=== ffp for: bd95-03-22-alt-e.flacf
+===================
+===================
+===================
+bd1995-03-22-Lille01.flac:c1ebd7903cad86a048b4fd6b5a05cab2
+bd1995-03-22-Lille02.flac:a9d2f6355a24aaf498842510b3d44d0d
+bd1995-03-22-Lille03.flac:88afcfa4b5e000a02d0880b5c59c117b
+bd1995-03-22-Lille04.flac:a0e5e0cb423de86779645ff811aac81d
+bd1995-03-22-Lille05.flac:34d92b9575669076c3339db5d9afc301
+bd1995-03-22-Lille06.flac:419fc8979fec67258ab524ab5db0b359
+bd1995-03-22-Lille07.flac:248991cf26a51b9fe04a6f820c0d1569
+bd1995-03-22-Lille08.flac:ddb065a9eb878e1596ed392a4284ba79
+bd1995-03-22-Lille09.flac:ce9ea22fdfba05634492f8563cb5924e
+bd1995-03-22-Lille10.flac:e579c88472766b12efff05baa102a3dc
+bd1995-03-22-Lille11.flac:b35a0c6c3a552e68e4e17f0e608e3a43
+bd1995-03-22-Lille12.flac:a6feb5ae7d4104a6dc0c3145e2aded11
+bd1995-03-22-Lille13.flac:e3cf09881d6fc21a304403257794454f
+bd1995-03-22-Lille14.flac:203dcb4f86e5675cfc08664ee1807751
+bd1995-03-22-Lille15.flac:63418ef654f1141d8e8df1a651c96ffc
+bd1995-03-22-Lille16.flac:24ff4b6e89c7b43d51aea3636d7e57e0
+===================
+===================
+===================
+=== shntool len for: bd95-03-22-alt-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.29       54928652 B   ---   --   ---xx   flac  0.6182  bd1995-03-22-Lille01.flac
+     4:17.70       45499484 B   ---   --   ---xx   flac  0.5852  bd1995-03-22-Lille02.flac
+     5:16.22       55794188 B   ---   --   ---xx   flac  0.6097  bd1995-03-22-Lille03.flac
+     5:21.27       56687948 B   ---   --   ---xx   flac  0.5526  bd1995-03-22-Lille04.flac
+     7:42.15       81532124 B   ---   --   ---xx   flac  0.5675  bd1995-03-22-Lille05.flac
+     6:47.72       71964188 B   ---   --   ---xx   flac  0.5497  bd1995-03-22-Lille06.flac
+     6:11.43       65545580 B   ---   --   ---xx   flac  0.4652  bd1995-03-22-Lille07.flac
+     4:25.03       46753100 B   ---   --   ---xx   flac  0.4751  bd1995-03-22-Lille08.flac
+     5:36.40       59364524 B   ---   --   ---xx   flac  0.5087  bd1995-03-22-Lille09.flac
+     6:50.39       72415772 B   ---   --   ---xx   flac  0.5590  bd1995-03-22-Lille10.flac
+     6:42.28       70978700 B   ---   --   ---xx   flac  0.5833  bd1995-03-22-Lille11.flac
+     0:34.34        6077612 B   ---   --   ---xx   flac  0.4899  bd1995-03-22-Lille12.flac
+     5:33.37       58828268 B   ---   --   ---xx   flac  0.6060  bd1995-03-22-Lille13.flac
+     7:04.44       74897132 B   ---   --   ---xx   flac  0.5694  bd1995-03-22-Lille14.flac
+     7:52.45       83366684 B   ---   --   ---xx   flac  0.5200  bd1995-03-22-Lille15.flac
+     5:50.62       61884800 B   -b-   --   ---xx   flac  0.5885  bd1995-03-22-Lille16.flac
+    91:19.10      966518756 B                            0.5562  (16 files)
+===================
+===================
+===================

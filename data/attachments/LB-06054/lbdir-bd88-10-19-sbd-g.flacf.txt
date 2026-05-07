@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-19-sbd-g.flacf 
+=================== 
+=================== 
+=================== 
+de1ccfa5b78ce80ffd4314f0ab6329de  01 subterranean homesickblues.flac
+31c1f03c87947ef5e1ba8201fb53b886  02 I'll remember you.flac
+53bcdfa10d4861723c4ff0c2cd6adc51  03 John Brown.flac
+f46e19296fb2037a22134d2544d61c68  04 Memphis blues again.flac
+90205cab419c04f4894cb36f3dc3674f  05 simple twist of fate.flac
+9868148881e5ef2fab79dc1d3bf26fdc  06 Bob Dylan's 115th dream.flac
+6b81bbd28d2965b11887d6f3e145b3df  07 highway 61.flac
+5a178c689c230825d182d94804dc3dd3  08 gates of Eden.flac
+83e7380b2e6a2a39da99b4cbf5c7e66c  09 with God on our side.flac
+9992a04da28a1dec6527dcec8992604e  21 one too many mornings.flac
+3c864cd04b619efc78950806ad901073  22 Barbara Allen.flac
+01d44af15fc6545ac77baa0558d8f1e5  23 Silvio.flac
+456e4c3b328d3d37278e78c38940db32  24 in the garden.flac
+d17f93b2ed66d5fb539087034ffc19f1  25 like a rolling stone.flac
+73b1831ed5aabb40bca339c0cf0fcf5c  26 wagoner's lad.flac
+0b706baf0c33d7ad05fb371ce81467af  27 the lonesome death of Hattie Carroll.flac
+64c5024157572fa7510ad5d5de374a6e  28 knockin' on heaven's door.flac
+c87bdf688ec401e9c329b94f41c4ec65  29 Maggie's farm.flac
+a244ec0a3b9fb38ee741e113004755af  Bob Dylan New York 1988 oct 19 {soundboard}.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-19-sbd-g.flacf 
+=================== 
+=================== 
+=================== 
+01 subterranean homesickblues.flac:88d05187cf13450f8b5f786fb60e52d9
+02 I'll remember you.flac:7711bdbf5b306de15d4f94c31a7d1fc3
+03 John Brown.flac:ac6d529d9dedccb9ef6dc8588cbde6cf
+04 Memphis blues again.flac:2b263f5b65cebf6f1bfa144c472efba8
+05 simple twist of fate.flac:1aa2ad09360173cf1cac6fe669fb4dde
+06 Bob Dylan's 115th dream.flac:489e6d128586453982e7b074da8e9b86
+07 highway 61.flac:3bc1dfdf4e326efe8892da40ad40f035
+08 gates of Eden.flac:9b7ab4c7a68fe41f746f5c734c66f6a8
+09 with God on our side.flac:025211a0b9762c98518e137dde5066bd
+21 one too many mornings.flac:c6c04d49110e27f0b63fa9d8f9477da1
+22 Barbara Allen.flac:d41a92c83534d7ddfd1861560628785a
+23 Silvio.flac:f349ec11e04f04961426bb81375f4332
+24 in the garden.flac:a8da77514ac4432903d60200edfc292c
+25 like a rolling stone.flac:41d39d6c1a13a0ab2baaf095e42f06fa
+26 wagoner's lad.flac:426125c75f5abc31ddb17a0ee6bdf011
+27 the lonesome death of Hattie Carroll.flac:3e5db138e22d3838d432a2fef57dfa89
+28 knockin' on heaven's door.flac:1a87fed7e9c14f3d6b53ced8a716591d
+29 Maggie's farm.flac:82e1a3a9f8015cf1f9bb3c7da677a088
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-19-sbd-g.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.27       40105200 B   -b-   --   ---xx   flac  0.5657  01 subterranean homesickblues.flac
+     4:15.30       45053616 B   -b-   --   ---xx   flac  0.5534  02 I'll remember you.flac
+     5:46.38       61124416 B   -b-   --   ---xx   flac  0.5581  03 John Brown.flac
+     6:44.25       71324324 B   -b-   --   ---xx   flac  0.5746  04 Memphis blues again.flac
+     6:01.41       63777220 B   -b-   --   ---xx   flac  0.5546  05 simple twist of fate.flac
+     5:55.68       62781996 B   -b-   --   ---xx   flac  0.5975  06 Bob Dylan's 115th dream.flac
+     4:27.39       47190176 B   -b-   --   ---xx   flac  0.5754  07 highway 61.flac
+     7:37.52       80737476 B   -b-   --   ---xx   flac  0.5206  08 gates of Eden.flac
+     5:25.35       57411976 B   -b-   --   ---xx   flac  0.5122  09 with God on our side.flac
+     4:25.55       46875548 B   -b-   --   ---xx   flac  0.4939  21 one too many mornings.flac
+     4:23.71       46559324 B   -b-   --   ---xx   flac  0.5054  22 Barbara Allen.flac
+     3:48.51       40339520 B   -b-   --   ---xx   flac  0.5820  23 Silvio.flac
+     5:19.50       56389592 B   -b-   --   ---xx   flac  0.5748  24 in the garden.flac
+     6:41.54       70863076 B   -b-   --   ---xx   flac  0.6115  25 like a rolling stone.flac
+     4:15.20       45029904 B   -b-   --   ---xx   flac  0.5182  26 wagoner's lad.flac
+     5:20.40       56542920 B   -b-   --   ---xx   flac  0.5378  27 the lonesome death of Hattie Carroll.flac
+     5:10.00       54684312 B   -b-   --   ---xx   flac  0.5925  28 knockin' on heaven's door.flac
+     5:05.59       53941780 B   -b-   --   ---xx   flac  0.5832  29 Maggie's farm.flac
+    94:33.06     1000732376 B                            0.5573  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-DesireSessions.flacf 
+=================== 
+=================== 
+=================== 
+91b5cea352bc8b3f48ed36554ffb1bfc  bd75-DesireSessions-LB-3757.txt
+e0b7e4ba8ecadc471a742909603421e0  BobDylanDesireSessions.txt
+8ded948815480077ee347b46695b9998  DylanDesireSessionsBack.jpg
+aca63c20335da7ffc5ff2e2e6898ba5a  DylanDesireSessionsFront.jpg
+0064371816e2111e21d55baacb09c0ca  Track101.flac
+dd9935be3ab8487b32a9b8fce04792f4  Track102.flac
+50a3667b98f540cb5bb7580e7faaf0f3  Track103.flac
+0531a57354cfe47d23ee13e1e5641782  Track104.flac
+d9d1593cd804d4f501d806048b73fd08  Track105.flac
+b54b958237358b5045273c17e61e9f08  Track106.flac
+e0ee39d5d32bcbad56ef10009de6d8bc  Track107.flac
+81f2c27e225500f7eb2548896cc8642b  Track108.flac
+c6b83a90a7248c4b7627152d51a8f1a4  Track109.flac
+dc068ce42e61cf868364916157906e27  Track110.flac
+32796ebe67406757b1b3d8dd9d9fd42c  Track111.flac
+47937d5393c6ee833d1df863dc0f49a2  Track201.flac
+860222391c93fe3432101913c306b51a  Track202.flac
+83c0e7daf72bcb191dbaaf19a0f3a679  Track203.flac
+f256fbd81175ed5bb9e947720c9f8587  Track204.flac
+d6d4bfe509f562c837a02162fc48cb3a  Track205.flac
+c5ae87d7842a7a3dc75b998037dbbdcf  Track206.flac
+6d0e1346bc3da43da0da11381490ea32  Track207.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-DesireSessions.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:8ad3d095420cc98f025dd1a8ef46b039
+Track102.flac:e7403ef52615ffceb375bd19cd259fc1
+Track103.flac:23c607e128c9ad1ef1379305585a6d9b
+Track104.flac:fc94ac81a02f4cfb846aa8cf7eb5e734
+Track105.flac:a03de4288563d0e0a8fb7c38441c74be
+Track106.flac:4030d6e4c88d4cf257181f8109ecf471
+Track107.flac:6001d2e5159dcef3270cabb8abc36772
+Track108.flac:c506ad2e83aa010aed4492da05131066
+Track109.flac:59c94202302815a1f7956a6be75d7a74
+Track110.flac:5b478ba998b88fc90b808820162ccc0a
+Track111.flac:d80893bc81e70b3b3afb2b0ded5d1bf7
+Track201.flac:63bc900356e0921e398c16dfd59067f1
+Track202.flac:50b7dbb42a15af1c2f1a7305096aa689
+Track203.flac:d1c245dbb38a2fb7594e5ea92aadbbd3
+Track204.flac:c9cbf7cc2b885cf124cfe5b511277a3d
+Track205.flac:e4ef5ba2cf8ccc94d461f2f095a69689
+Track206.flac:298c546071afb5f9933ce3c2ab2f591b
+Track207.flac:05456bf17b3cf59e13148b4b3206c60a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-DesireSessions.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:18.17       34967228 B   ---   --   ---xx   flac  0.6508  Track101.flac
+     5:37.30       59517404 B   ---   --   ---xx   flac  0.6800  Track102.flac
+     2:48.35       29717564 B   ---   --   ---xx   flac  0.6413  Track103.flac
+     2:46.72       29451788 B   ---   --   ---xx   flac  0.4533  Track104.flac
+     4:29.00       47451644 B   ---   --   ---xx   flac  0.6359  Track105.flac
+     4:26.55       47051804 B   ---   --   ---xx   flac  0.6616  Track106.flac
+     3:56.74       41804492 B   ---   --   ---xx   flac  0.6597  Track107.flac
+     5:20.34       56528012 B   ---   --   ---xx   flac  0.6638  Track108.flac
+     6:48.49       72086492 B   ---   --   ---xx   flac  0.6746  Track109.flac
+     3:59.31       42232556 B   ---   --   ---xx   flac  0.6071  Track110.flac
+     3:39.34       38711612 B   ---   --   ---xx   flac  0.6575  Track111.flac
+     7:19.20       77486684 B   ---   --   ---xx   flac  0.6807  Track201.flac
+     2:53.35       30599564 B   ---   --   ---xx   flac  0.6580  Track202.flac
+    10:53.13      115219820 B   ---   --   ---xx   flac  0.6664  Track203.flac
+     2:44.45       29035484 B   ---   --   ---xx   flac  0.6776  Track204.flac
+     3:11.48       33805340 B   ---   --   ---xx   flac  0.6915  Track205.flac
+    10:51.43      114937580 B   ---   --   ---xx   flac  0.6616  Track206.flac
+     8:20.30       88270604 B   ---   --   ---xx   flac  0.6668  Track207.flac
+    93:25.65      988875672 B                            0.6567  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,55 @@
+Bob Dylan 
+Mitsubishi Electric Hall
+Düsseldorf, Germany
+October 27, 2024
+
+Taped by: mary_lynch
+dpa 4060 mics > 2 tentacle track e
+two recorders, two mics @ 30 degree angle
+
+Mastered by: finbar 
+soundforge (track stitching), CDWave (track splitting), Traders Little Helper (checksums)  
+16 BIT Version  
+
+01 All Along the Watchtower (Bob on guitar and baby grand piano)
+02 It Ain't Me, Babe (Bob on guitar and baby grand piano and harp)
+03 I Contain Multitudes (Bob on baby grand piano)
+04 False Prophet (Bob on baby grand piano) (Bob introduced Bob Britt at the end)
+05 When I Paint My Masterpiece (Bob on baby grand piano and harp)
+06 Black Rider (Bob on baby grand piano)
+07 My Own Version Of You (Bob on baby grand piano)
+08 To Be Alone With You (Bob on baby grand piano and harp)(Bob introduced Doug Lancio at the end)
+09 Crossing the Rubicon (Bob on baby grand piano) (Bob introduced Tony Garnier at the end)
+10 Desolation Row (Bob on baby grand piano and harp) (Bob introduced Jim Keltner at the end)
+11 Key West (Philosopher Pirate) (Bob on baby grand piano)
+12 It's All Over Now, Baby Blue (Bob on baby grand piano and harp)
+13 I've Made Up My Mind To Give Myself To You (Bob on baby grand piano and harp)
+14 Watching the River Flow (Bob on baby grand piano)
+15 Mother of Muses (Bob on baby grand piano)
+16 Goodbye Jimmy Reed (Bob on baby grand piano and harp)
+17 Every Grain of Sand (Bob on baby grand piano and harp)
+ 	 
+Band Members
+Bob Dylan - guitar, piano, Nord Electro 6 keyboard, harp
+Tony Garnier - electric and standup bass
+Jim Keltner - drums
+Bob Britt - acoustic guitar, electric guitar
+Doug Lancio - acoustic guitar, electric guitar
+
+dfdaa9d4c754c56efd7aa956853ee421 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht01.flac
+5a798549c59af3be6f33e9c1f1af302b *bd2024-10-27_Dusseldorf_Ger_mary_lyncht02.flac
+43ce7b8a419fd2bc9cf620041283170d *bd2024-10-27_Dusseldorf_Ger_mary_lyncht03.flac
+f52fa0b71a50d33a341e9a6e608e9e9e *bd2024-10-27_Dusseldorf_Ger_mary_lyncht04.flac
+b774a05ad33a714baa9553015f2a47a6 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht05.flac
+3854fd6ae16015645f8f4d793fac9e03 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht06.flac
+ce6c4c59c276146b0a4ebd9d35ab402e *bd2024-10-27_Dusseldorf_Ger_mary_lyncht07.flac
+b6b76ee58c37eb42ca95ce87a55dd39f *bd2024-10-27_Dusseldorf_Ger_mary_lyncht08.flac
+dd6e202ab7371a5c408f99a3b741169c *bd2024-10-27_Dusseldorf_Ger_mary_lyncht09.flac
+b20f6d23f8379cfab132d398f1c17424 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht10.flac
+98ea34967881a897249c26c4411033d6 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht11.flac
+820bc1e4e4b453cf2b4fa4346654a41e *bd2024-10-27_Dusseldorf_Ger_mary_lyncht12.flac
+8d2e7579a821a6f7c678e0923b3378da *bd2024-10-27_Dusseldorf_Ger_mary_lyncht13.flac
+8d308a39f35e8358adb5e1e2c0d76145 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht14.flac
+f8917f57114ce996dfe7a817d47c896f *bd2024-10-27_Dusseldorf_Ger_mary_lyncht15.flac
+a3b71c2098c1d1944080bbb6c583b42d *bd2024-10-27_Dusseldorf_Ger_mary_lyncht16.flac
+f685f23305b14f7ca24d73609530c199 *bd2024-10-27_Dusseldorf_Ger_mary_lyncht17.flac

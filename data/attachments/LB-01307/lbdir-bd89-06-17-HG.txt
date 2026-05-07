@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-17-HG 
+=================== 
+=================== 
+=================== 
+319d4a37581b5c04187c27bf0642524e  101 - Subterranean Homesick Blues.shn
+4bf6eec3a75d9c0ae59eda1eb70021c7  102 - I´ll Remember You.shn
+d3feeb6168fdf05ce10815cfa11c938e  103 - John Brown.shn
+7a573aae32e7910e28e7ab33408352ad  104 - You´re A Big Girl Now.shn
+84f30dcaa55cb9e0d44ac9b4e0ec08f6  105 - Shot Of Love.shn
+2ad60c6a09a18a252390dd2efa65538d  106 - Stuck Inside Of Mobile.shn
+743678c04717d3885bab1d005f6be2ae  107 - It Ain´t Me, Babe.shn
+3802ca7f9faab0f89221cd2253184d08  108 - Don´t Think Twice, It´s All Right.shn
+2c7ab6cf6547347144b8f88280957cd3  109 - Mr. Tambourine Man.shn
+4bb5ef55219d6e012d89b6c0a91b853e  1989-06-17 John Brown Went Off To War D1.CUE
+f3c1a41b9214534725b19ad91d07598a  1989-06-17 John Brown Went Off To War D1.LOG
+0a1eb5dbf4e79aea6d38fc61d21bef1f  1989-06-17 John Brown Went Off To War D1.md5
+d528b4a9c56170e8b5a815e152db0ddb  1989-06-17 John Brown Went Off To War D1.wav.md5
+8694689f072a2589ea843ae6c4c98229  1989-06-17 John Brown Went Off To War D2.CUE
+bd303c58141bbd4bc1bc3130e621bc6c  1989-06-17 John Brown Went Off To War D2.LOG
+b39795609d7164cab3871aad4ed2c762  1989-06-17 John Brown Went Off To War D2.md5
+695fef3a9cb4892bc2aedaee49d5a987  1989-06-17 John Brown Went Off To War D2.wav.md5
+2541e69faab49ef05135a7562fbc7bb0  1989-06-17 John Brown Went Off To War.doc
+c2a26564ab19a2e2219b0201d3153fa4  201 - All Along The Watchtower.shn
+089660515bc1abff06e934e4c273ca5d  202 - Silvio.shn
+87030179449a6f532beb1d3fb228cb7d  203 - In The Garden.shn
+f1b9ec0f3bf215fb1576021cbe21deab  204 - Like A Rolling Stone.shn
+508b3dc0bec20c13ab53417ff59a3cb3  205 - Blowin´ In The Wind.shn
+0413c8efa3bc1c03be6248f55e17027f  206 - To Ramona.shn
+945d503ff868400ee6d360c498306c55  207 - Maggie´s Farm.shn
+35a2043a9b98b936df9ff6d4eb7ea976  bd89-06-17-HG.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-06-17-HG 
+=================== 
+=================== 
+=================== 
+e10ac4f1614493dc40ddcd04a01af339  [shntool]  101_-_Subterranean_Homesick_Blues.wav
+30d08f905cbdde536e4a936fc2e3d218  [shntool]  102_-_I_ll_Remember_You.wav
+eae178a519103ba24a1b11749eda5049  [shntool]  103_-_John_Brown.wav
+f5360c7a5ec3fb6485d4822f404bb200  [shntool]  104_-_You_re_A_Big_Girl_Now.wav
+0b8374613ccc7c651be06ed7f739266c  [shntool]  105_-_Shot_Of_Love.wav
+48f5ff3090a35f29b321e8f2b1f9616d  [shntool]  106_-_Stuck_Inside_Of_Mobile.wav
+5996e59e83740dafaac9b3c9fb5b8553  [shntool]  107_-_It_Ain_t_Me,_Babe.wav
+07b4a053cb6029a7ee96daa6d31a86fb  [shntool]  108_-_Don_t_Think_Twice,_It_s_All_Right.wav
+6ebe12ad054a1731bf092afbc463780b  [shntool]  109_-_Mr._Tambourine_Man.wav
+346781df40adc9fb25bcf7c04add9693  [shntool]  201_-_All_Along_The_Watchtower.wav
+9ab7209f15bd81537ae3b6f72bf4e95f  [shntool]  202_-_Silvio.wav
+b7f4291bdccc3609e364db86be222c7a  [shntool]  203_-_In_The_Garden.wav
+cd9a189711d058983a143f8b01fa7d07  [shntool]  204_-_Like_A_Rolling_Stone.wav
+690b992b6bf97ae4eba252067d48dee6  [shntool]  205_-_Blowin__In_The_Wind.wav
+1879bc28e6f4845b54693930557b6092  [shntool]  206_-_To_Ramona.wav
+ea8eedfc2957012cf9569db6df86041d  [shntool]  207_-_Maggie_s_Farm.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-17-HG 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:30.32       47703308 B   ---   --   -----    wav  1.0000  101_-_Subterranean_Homesick_Blues.wav
+     4:27.29       47167052 B   ---   --   -----    wav  1.0000  102_-_I_ll_Remember_You.wav
+     5:15.09       55587212 B   ---   --   -----    wav  1.0000  103_-_John_Brown.wav
+     5:11.57       54994508 B   ---   --   -----    wav  1.0000  104_-_You_re_A_Big_Girl_Now.wav
+     6:06.08       64581260 B   ---   --   -----    wav  1.0000  105_-_Shot_Of_Love.wav
+     6:03.18       64075580 B   ---   --   -----    wav  1.0000  106_-_Stuck_Inside_Of_Mobile.wav
+     6:18.00       66679244 B   ---   --   -----    wav  1.0000  107_-_It_Ain_t_Me,_Babe.wav
+     5:53.27       62332748 B   ---   --   -----    wav  1.0000  108_-_Don_t_Think_Twice,_It_s_All_Right.wav
+     7:13.62       76527068 B   ---   --   -----    wav  1.0000  109_-_Mr._Tambourine_Man.wav
+     3:43.32       39412508 B   ---   --   -----    wav  1.0000  201_-_All_Along_The_Watchtower.wav
+     3:13.73       34216940 B   ---   --   -----    wav  1.0000  202_-_Silvio.wav
+     5:42.44       60432332 B   ---   --   -----    wav  1.0000  203_-_In_The_Garden.wav
+     7:00.18       74130380 B   ---   --   -----    wav  1.0000  204_-_Like_A_Rolling_Stone.wav
+     4:12.61       44596316 B   ---   --   -----    wav  1.0000  205_-_Blowin__In_The_Wind.wav
+     5:01.15       53131724 B   ---   --   -----    wav  1.0000  206_-_To_Ramona.wav
+     5:19.40       56365724 B   ---   --   -----    wav  1.0000  207_-_Maggie_s_Farm.wav
+    85:13.00      901933904 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

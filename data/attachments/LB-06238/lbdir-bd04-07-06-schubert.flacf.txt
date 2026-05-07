@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-07-06-schubert.flacf 
+=================== 
+=================== 
+=================== 
+4f5cfbba56c54e1a098d484a62f35ed9  2004-07-06-Montauban.md5
+7b4c9fc2a1a35f41270f86cc602d899d  2004-07-06-Montauban.txt
+3e8c266b51e060fdee9edc8652c80daf  Track101.flac
+9e3b975fae63dfcb8c358f3215cda047  Track102.flac
+91c57dfe2a01b3b6d552684d2fac36e6  Track103.flac
+213e89de0b9789366c5de93a75ac5bf2  Track104.flac
+eee69ef762fde956a3720de3ddce957f  Track105.flac
+aef7e3853c6d1f71477aed30be53db14  Track106.flac
+e04baa71affc5a876bfd7cc14230960e  Track107.flac
+1496d63d802d76395284884b43b66410  Track108.flac
+f8fcc279688e847106c109a6c60ef11a  Track109.flac
+76d27d2e3e229bbc50189bcb19e18f4d  Track110.flac
+9ae32c9b7d7b3aaa1a8eb8fa37429667  Track111.flac
+141824da135b2cc8f195e2243e409c33  Track112.flac
+4ba717c2b2d2af8e901ac8d2d5677223  Track201.flac
+f03b82e8a03134f7d5c091a145fa2324  Track202.flac
+c2c27e6ae733e4ba4c323ef914239e64  Track203.flac
+fe0c690f8a175fd2f2f1d15c379f8763  Track204.flac
+18a70b9f42d263d39bd716002d34c10d  Track205.flac
+1a6b1e90bbfa0da3031eeeaab50653bb  Track206.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-06-schubert.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:a8a2a6d32df20b77225b738731909b47
+Track102.flac:e2ffa7a2ca7e77de97c2f252da306691
+Track103.flac:016e6d8178e21e8142e766d5325c8370
+Track104.flac:ecf6b701b441461217342de6cca904e1
+Track105.flac:efa9bff415bc05b87efcd8ad63781058
+Track106.flac:4e45beadad3d20873a468d54f0fdaabe
+Track107.flac:41f23a984842a140094810111bf2035d
+Track108.flac:903a7bdef91449d341a26f3041efc446
+Track109.flac:6cdf0cab4a0cb52b38c235dce3223d07
+Track110.flac:5a9726599308aa1899355da0870602b3
+Track111.flac:e1307f1b5e9196f0dcd57aa5751e55d8
+Track112.flac:3617c149ee8d8b7556ec88d9de4d586f
+Track201.flac:63de154dfce2c60e9478749ba8ed5513
+Track202.flac:f91fd09c7b6a9f60b55cc171eb99652c
+Track203.flac:a615bff7d99ef32fbebdd2b17775f834
+Track204.flac:8333133a5a1c42c81a461f7aa36275aa
+Track205.flac:669c5df21287f33510b5c34373a0acf2
+Track206.flac:51351838fc320ff0dcd0f5919be5f2e0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-06-schubert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.54        8417852 B   ---   --   ---xx   flac  0.4039  Track101.flac
+     4:35.18       48552380 B   ---   --   ---xx   flac  0.4932  Track102.flac
+     6:14.11       65999516 B   ---   --   ---xx   flac  0.4417  Track103.flac
+     7:35.19       80306732 B   ---   --   ---xx   flac  0.4701  Track104.flac
+     9:13.71       97716236 B   ---   --   ---xx   flac  0.4444  Track105.flac
+     7:18.05       77275004 B   ---   --   ---xx   flac  0.4937  Track106.flac
+     5:48.48       61500140 B   ---   --   ---xx   flac  0.4448  Track107.flac
+     6:18.57       66813308 B   ---   --   ---xx   flac  0.4375  Track108.flac
+     7:28.55       79156604 B   ---   --   ---xx   flac  0.5001  Track109.flac
+     5:43.66       60660476 B   ---   --   ---xx   flac  0.4164  Track110.flac
+     5:40.11       60001916 B   ---   --   ---xx   flac  0.4941  Track111.flac
+     6:15.02       66154748 B   ---   --   ---xx   flac  0.4771  Track112.flac
+     7:25.34       78578012 B   ---   --   ---xx   flac  0.4978  Track201.flac
+     5:24.43       57254780 B   ---   --   ---xx   flac  0.4339  Track202.flac
+    11:27.40      121280924 B   ---   --   ---xx   flac  0.4911  Track203.flac
+     7:19.24       77496092 B   ---   --   ---xx   flac  0.4156  Track204.flac
+     7:41.09       81341612 B   ---   --   ---xx   flac  0.5032  Track205.flac
+     6:46.53       71743100 B   ---   --   ---xx   flac  0.4916  Track206.flac
+   119:04.20     1260249432 B                            0.4685  (18 files)
+=================== 
+=================== 
+=================== 

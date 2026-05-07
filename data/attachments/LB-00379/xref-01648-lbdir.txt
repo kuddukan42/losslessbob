@@ -1,0 +1,106 @@
+===================
+===================
+===================
+=== md5 for: bd02-02-10-d.flacf
+===================
+===================
+===================
+51db69c963b30a9dd91041f6f9794b6c *BOB DYLAN - 2002-02-10  Charlotte, North Carolina.ffp
+9a0a2ef6c64d67e1c655064efdf2d9ec *BOB DYLAN - 2002-02-10  Charlotte, North Carolina.md5
+0ca3b6ca6466853a0990c9968ece3665 *BOB DYLAN - 2002-02-10  Charlotte, North Carolina_info.txt
+05e06a5d77881c0661a0bf9d8928f495 *Disc One\01  Intro.flac
+eddd3f451a256c69b8df6fc62a2ea6a9 *Disc One\02 Hallelujah, I'm Ready To Go.flac
+5966df9a3b247799c6ab58698efe48eb *Disc One\03 Mr. Tambourine Man.flac
+f8e33ad2a007ca64d501adf0a2817268 *Disc One\04 It's Alright, Ma (I'm Only Bleeding).flac
+6111a5ab6a173b99891c2b8af030a259 *Disc One\05 Searching For A Soldier's Grave.flac
+17b148a35abd631a3c4f41e538c72c10 *Disc One\06 Tweedle Dee & Tweedle Dum.flac
+2cb8bf77babee0e7fcb0fa8ec86d0d8e *Disc One\07 Positively 4th Street.flac
+57b7152949039fd7344c410b2f5a7991 *Disc One\08 Cry A While.flac
+fdd1fa696196388d76a5aa6b00ae4e0f *Disc One\09 High Water (For Charlie Patton).flac
+df367a7f9817957d5fc1d37f92adf8cd *Disc One\10 Boots Of Spanish Leather.flac
+f52bb20be7b4579bc741ca8952834231 *Disc One\11 Visions Of Johanna.flac
+0708ecd6004a3710c13b9a09f9988d9a *Disc One\12 Don't Think Twice, It's All Right.flac
+5e22ea3c8fc0019718d32b3902254864 *Disc One\Bob Dylan - 2002-02-10 Charlotte, NC - Cricket Arena (Disc 1).log
+4be7ffeffa07dcc60a7d02e6e77912ed *Disc Two\01 Summer Days.flac
+2a4844954ad76cc86427441d90e4b727 *Disc Two\02 Mississippi.flac
+2a670cd66d7ded4638d10722600e5b08 *Disc Two\03 The Wicked Messenger.flac
+06102dd571f57ee3782ea05adb459064 *Disc Two\04 Rainy Day Women #12 & 35.flac
+b2a00c6fff9c092a841b804b3d21d5f7 *Disc Two\05 Country Pie.flac
+fc9307bdd82c5366118ba2afa1baa6ac *Disc Two\06 Like A Rolling Stone.flac
+680d114475480ac403d58c06e3af1213 *Disc Two\07 Knockin' On Heaven's Door.flac
+ea6807dcf1be64df8818929440bbb2e1 *Disc Two\08 Honest With Me.flac
+3d57e56392be64cb62e8013b9928bf5c *Disc Two\09 Blowin' In The Wind.flac
+b33c2e905aaa06449acc95ff8e110f6a *Disc Two\10 All Along The Watchtower.flac
+2001ece24ed3651a3298f8e4dfc5dad3 *Disc Two\Bob Dylan - 2002-02-10 Charlotte, NC - Cricket Arena (Disc 2).log
+===================
+===================
+===================
+=== ffp for: bd02-02-10-d.flacf
+===================
+===================
+===================
+Disc One\01  Intro.flac:2185fc14002a9e2e1bab43b8265b7571
+Disc One\02 Hallelujah, I'm Ready To Go.flac:35ef48615fba9c4889b279cf62474e19
+Disc One\03 Mr. Tambourine Man.flac:aee0987d9181187fd061edc908f1ab16
+Disc One\04 It's Alright, Ma (I'm Only Bleeding).flac:449e376975d152af68f3d6e78d568f39
+Disc One\05 Searching For A Soldier's Grave.flac:c2c5665beab529ee8b6958a4b9ea1e08
+Disc One\06 Tweedle Dee & Tweedle Dum.flac:8ef8714d5daee102b612aa0ff9106742
+Disc One\07 Positively 4th Street.flac:6af61cb016bce7ace08ef0dcdf4be114
+Disc One\08 Cry A While.flac:84124dd00cb9e86ae213551e8421e295
+Disc One\09 High Water (For Charlie Patton).flac:72cb5894c60b779da9a8fab47bc2cae7
+Disc One\10 Boots Of Spanish Leather.flac:ac0326743d96579d2ad9f5c3f88e4871
+Disc One\11 Visions Of Johanna.flac:f15f39671dddf7a173eb55ef54598d13
+Disc One\12 Don't Think Twice, It's All Right.flac:f02bb2e81b4c75ac86ca3521b077d5b0
+Disc Two\01 Summer Days.flac:4f2b90ac8aea6f248fb7aeb96ebe02a9
+Disc Two\02 Mississippi.flac:95e66e9335d339eb2d5e3637cfa7de34
+Disc Two\03 The Wicked Messenger.flac:d5a32989080366dfd856424fe236b86c
+Disc Two\04 Rainy Day Women #12 & 35.flac:805076360503f8cd75162e7dd8f0b304
+Disc Two\05 Country Pie.flac:b7fe1a95f558305ebb229262cd1bbcea
+Disc Two\06 Like A Rolling Stone.flac:d694fba1bebc54ee0e26cf1a1cc58898
+Disc Two\07 Knockin' On Heaven's Door.flac:94648dc70b4863ce50d9b44633a3f67a
+Disc Two\08 Honest With Me.flac:cb1fc35035fcd3115ba5f73025f79186
+Disc Two\09 Blowin' In The Wind.flac:9cab33144a9640126a87118d2d27e7ac
+Disc Two\10 All Along The Watchtower.flac:96a60e1fc9e4ebdb7c39cafda081edd1
+===================
+===================
+===================
+=== shntool len for: bd02-02-10-d.flacf\Disc One
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:05.34       11546012 B   ---   --   ---xx   flac  0.5076  01  Intro.flac
+     2:43.30       28823804 B   ---   --   ---xx   flac  0.6224  02 Hallelujah, I'm Ready To Go.flac
+     7:18.00       77263244 B   ---   --   ---xx   flac  0.5759  03 Mr. Tambourine Man.flac
+     8:10.15       86471324 B   ---   --   ---xx   flac  0.5335  04 It's Alright, Ma (I'm Only Bleeding).flac
+     4:09.00       43923644 B   ---   --   ---xx   flac  0.5192  05 Searching For A Soldier's Grave.flac
+     5:38.00       59623244 B   ---   --   ---xx   flac  0.5375  06 Tweedle Dee & Tweedle Dum.flac
+     7:57.00       84142844 B   ---   --   ---xx   flac  0.5615  07 Positively 4th Street.flac
+     5:33.30       58811804 B   ---   --   ---xx   flac  0.5654  08 Cry A While.flac
+     6:41.45       70842284 B   ---   --   ---xx   flac  0.5690  09 High Water (For Charlie Patton).flac
+     7:47.60       82519964 B   ---   --   ---xx   flac  0.3809  10 Boots Of Spanish Leather.flac
+     9:34.25      101312444 B   ---   --   ---xx   flac  0.5257  11 Visions Of Johanna.flac
+     8:05.51       85673996 B   ---   --   ---xx   flac  0.4976  12 Don't Think Twice, It's All Right.flac
+    74:43.65      790954608 B                            0.5277  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd02-02-10-d.flacf\Disc Two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.00       67208444 B   ---   --   ---xx   flac  0.5906  01 Summer Days.flac
+     6:41.00       70736444 B   ---   --   ---xx   flac  0.5696  02 Mississippi.flac
+     5:37.55       59576204 B   ---   --   ---xx   flac  0.6333  03 The Wicked Messenger.flac
+    11:43.00      124009244 B   ---   --   ---xx   flac  0.5414  04 Rainy Day Women #12 & 35.flac
+     3:55.00       41454044 B   ---   --   ---xx   flac  0.5437  05 Country Pie.flac
+     8:10.55       86565404 B   ---   --   ---xx   flac  0.5564  06 Like A Rolling Stone.flac
+     5:54.00       62445644 B   ---   --   ---xx   flac  0.5003  07 Knockin' On Heaven's Door.flac
+     7:08.10       75522764 B   ---   --   ---xx   flac  0.5747  08 Honest With Me.flac
+     6:44.65       71418524 B   ---   --   ---xx   flac  0.4904  09 Blowin' In The Wind.flac
+     6:07.55       64868204 B   ---   --   ---xx   flac  0.5883  10 All Along The Watchtower.flac
+    68:23.15      723804920 B                            0.5573  (10 files)
+===================
+===================
+===================

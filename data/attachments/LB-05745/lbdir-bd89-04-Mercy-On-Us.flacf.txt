@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-04-Mercy-On-Us.flacf 
+=================== 
+=================== 
+=================== 
+581ed70eafb9385d71a961430501379a  Artwork Mercy on us\Insidepart1.jpg
+80257d526791b2a7a6852b04653a9755  Artwork Mercy on us\Insidepart2.jpg
+8b84890952c2e131e4af1c047cfc0f97  Artwork Mercy on us\Outsidepart1.jpg
+5cb98843699906214acb1639ee8cfc84  Artwork Mercy on us\Outsidepart2.jpg
+76dc168b18513a16fe2a0cb92634e3e6  Eaclog.log
+92130b66726d785f94de273a62c168d5  fingerprint.txt
+ffa711e0075fe43fbf21fbd4416d3059  Info.txt
+adfa88a557c42947bf8741ba0c97cb0b  Music\Music.md5
+71827e2e0d6901fc890b0e0d15b54271  Music\Track01.flac
+3b2ad534bd6528f0b106d9824de89580  Music\Track02.flac
+db1f450e64fb27d2e4985812b00489dd  Music\Track03.flac
+c535342f3ef8b879020968095d37d71d  Music\Track04.flac
+03ef19a1fbc745abc0a02fc4136f84ae  Music\Track05.flac
+97a06d139ff330324b36ad7ce40e1014  Music\Track06.flac
+340baccc0ab1ef7d6fa11ca72fa327b5  Music\Track07.flac
+2799a3d2f76d5c8e230b0dfec440cb64  Music\Track08.flac
+66a5ffdde62c517951c76e194c29e1cb  Music\Track09.flac
+63c4757c17079f4712c86a09ab0458e9  Music\Track10.flac
+b0e195ec08aa079ab3b300547abdbda7  Music\Track11.flac
+52c23956b563855924b64572d88be3d0  Music\Track12.flac
+12fa7b7e0ed2dbedbf42170bcc875faa  Music\Track13.flac
+3bfd32e96e2f5c3f900bf98ce1a5d26e  Music\Track14.flac
+019959509c6d0a602bc66eed4dcf8585  Music\Track15.flac
+f36d8d6f8e7c6de4391a6bd645f927d4  Music\Track16.flac
+98892e3f259d342acccb31f139c21c83  Music\Track17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-04-Mercy-On-Us.flacf\Music 
+=================== 
+=================== 
+=================== 
+Track01.flac:cd7d4680991c5386b0d8490ec7bc0bc8
+Track02.flac:2c1894e1c2329c2a112baa8aa4993e2b
+Track03.flac:e9fe106b12ecaecd868eb05a1538674f
+Track04.flac:70ebe3e41d037c73aa16ec710d000f2b
+Track05.flac:a0e2bda5de093c2c1bbf4e5d9214e43d
+Track06.flac:523e86dff56588b9eb38cbc860927651
+Track07.flac:c73822430158592d16be4d824ae15501
+Track08.flac:d64890ae225b58a541fa09d21e35e216
+Track09.flac:0c05c188dfdd2c3053d79bd5ed209e6c
+Track10.flac:e142bd46fd93182e9bea76865546c078
+Track11.flac:1f174c8450c9f7e7e851ed398abbc620
+Track12.flac:81e2dc9e7ca8a5ec940b956bee903447
+Track13.flac:e3d78f2e762b1f16c291ce4c1b82fdeb
+Track14.flac:efa2193e193771606c5bd028487f7c14
+Track15.flac:d3f2c4e74ea49fbc23e79dce16d4169d
+Track16.flac:fb47d3ba66be5709fe4a4778666e7476
+Track17.flac:fdc7a379224be9adfe37a514d69f7b71
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-04-Mercy-On-Us.flacf\Music 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:08.40       33257324 B   ---   --   ---xx   flac  0.5169  Track01.flac
+     3:10.71       33683036 B   ---   --   ---xx   flac  0.5730  Track02.flac
+     3:10.40       33610124 B   ---   --   ---xx   flac  0.5283  Track03.flac
+     4:55.12       52066268 B   ---   --   ---xx   flac  0.4354  Track04.flac
+     5:07.40       54248924 B   ---   --   ---xx   flac  0.5212  Track05.flac
+     2:57.26       31283996 B   ---   --   ---xx   flac  0.5265  Track06.flac
+     5:08.22       54382988 B   ---   --   ---xx   flac  0.5057  Track07.flac
+     4:21.40       46134524 B   ---   --   ---xx   flac  0.5193  Track08.flac
+     6:12.20       65667884 B   ---   --   ---xx   flac  0.5071  Track09.flac
+     3:18.06       34941356 B   ---   --   ---xx   flac  0.4955  Track10.flac
+     3:51.04       40757852 B   ---   --   ---xx   flac  0.4185  Track11.flac
+     3:22.42       35731628 B   ---   --   ---xx   flac  0.4229  Track12.flac
+     5:15.61       55709516 B   ---   --   ---xx   flac  0.4710  Track13.flac
+     4:47.70       50791484 B   ---   --   ---xx   flac  0.5314  Track14.flac
+     5:19.07       56288108 B   ---   --   ---xx   flac  0.5402  Track15.flac
+     5:16.67       55900028 B   ---   --   ---xx   flac  0.5487  Track16.flac
+     5:39.11       59825516 B   ---   --   ---xx   flac  0.6380  Track17.flac
+    75:02.54      794280556 B                            0.5142  (17 files)
+=================== 
+=================== 
+=================== 

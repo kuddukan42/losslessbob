@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-11.flacf 
+=================== 
+=================== 
+=================== 
+2caa9ca1b93c8c2a750f86bb1f8d4e00  CD1\bd1997-12-11-philly.d1.ffp.txt
+b8a1cc151fd7f09ea8cb58101eee586f  CD1\bd1997-12-11-philly.d1.flac.md5
+5e048c8ccf9dfd8bf98aa00eef31d5d0  CD1\bd1997-12-11-philly.d1.wav.md5
+a7126d74847a64bab00e5b3131cbbcd3  CD1\bd1997-12-11-philly.d1t01.flac
+152621ab7e5781cd863aeee02448697e  CD1\bd1997-12-11-philly.d1t02.flac
+68588e6c6b8ca5948307c42bac4586c1  CD1\bd1997-12-11-philly.d1t03.flac
+53f85b01b3d0744f0cee53f0d1ad6ece  CD1\bd1997-12-11-philly.d1t04.flac
+749cf9c2bc3dccd2b5071a69bd297c90  CD1\bd1997-12-11-philly.d1t05.flac
+cac1edfeb3c9191ea3886c38dc41c8cd  CD1\bd1997-12-11-philly.d1t06.flac
+6ab0018a5ab7b5476cb9efe4e3801853  CD1\bd1997-12-11-philly.d1t07.flac
+fe7a626697d47173d7226df306bc3191  CD1\bd1997-12-11-philly.d1t08.flac
+46b50be6b644bf4a43fb8508a873566d  CD1\bd1997-12-11-philly.d1t09.flac
+662dec0be2a02016ff4b382d99d1b3c9  CD1\bd1997-12-11-philly.d1t10.flac
+d429e2436529061ea5e394dc58209ebd  CD1\bd1997-12-11-philly.d1t11.flac
+452eee704f869979b23033cc51b484ef  CD1\bd1997-12-11-philly.d1t12.flac
+c33667646580893a7d6e7157b41cba88  CD2\bd1997-12-11-philly.d2.ffp.txt
+28f7273304ebd32ef327fb7bca52c1d7  CD2\bd1997-12-11-philly.d2.flac.md5
+8d1ecfd17502e6d559b9f05b8c892185  CD2\bd1997-12-11-philly.d2.wav.md5
+52e52fd770a9a34e09e8eedcf0a35379  CD2\bd1997-12-11-philly.d2t01.flac
+15e0968a41a564dbb9302f7089ddc4ea  CD2\bd1997-12-11-philly.d2t02.flac
+f4a2097fc500f5ef8fa25658557f6a24  CD2\bd1997-12-11-philly.d2t03.flac
+549d39673e21bbabeef597d92af76289  CD2\bd1997-12-11-philly.d2t04.flac
+ab37957ecf7aa0b1f225bb18dbf7d456  CD2\bd1997-12-11-philly.d2t05.flac
+38849b6bf5c73824b2bc57e05d1ce721  Info\1997-12-11 Trocadero, Philadelphia, Pennsylvania, USA.doc
+ddfd805c52bb7ee2577aa2f61b42831c  Info\bd1997-12-11-trocadero.philly.d1t11.sa&fa.JPG
+fd8ac6df754c0fa31ed4f5d4ea8fd753  Info\bd1997-12-11.lbp51.info.txt
+8a1a2739534e844818d94a7c0dace17b  Info\bd1997-12-11.trocadero.philly.d1t02.sa&fa.jpg
+0f5bfa1d254f1269b766f521d83fdb58  Info\Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-11.flacf\CD1 
+=================== 
+=================== 
+=================== 
+bd1997-12-11-philly.d1t01.flac:c4e2d59825247d5d15d2ce6f1f0de056
+bd1997-12-11-philly.d1t02.flac:e2abc9c1d15cc158579cd28c3e7a4bbf
+bd1997-12-11-philly.d1t03.flac:845b9dd2386185d4ff1ba562907b1f18
+bd1997-12-11-philly.d1t04.flac:c49fa6f3b5fd0fb7cfdf8e9e68a88b35
+bd1997-12-11-philly.d1t05.flac:abbc05283f932c57b76b72183b787c3a
+bd1997-12-11-philly.d1t06.flac:0506287864c9bf93c5acf78c113b75d2
+bd1997-12-11-philly.d1t07.flac:fd87cf87d3f9b5f7952e7279cc832789
+bd1997-12-11-philly.d1t08.flac:20e9fde6fd9bce5974c79f2403f03072
+bd1997-12-11-philly.d1t09.flac:6c94cfb53401d8ca03cec09f38652f0c
+bd1997-12-11-philly.d1t10.flac:b18abb46ef48bb2448a441911f5353f3
+bd1997-12-11-philly.d1t11.flac:9ac0ced22d937398108349ea875267f4
+bd1997-12-11-philly.d1t12.flac:a591509472d94642d72a6ddbdc85df98
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-11.flacf\CD2 
+=================== 
+=================== 
+=================== 
+bd1997-12-11-philly.d2t01.flac:e9a9bc8247ef2ef759687a07d848b8d9
+bd1997-12-11-philly.d2t02.flac:b0b6b8b89671b14a3f0a6c73323a0458
+bd1997-12-11-philly.d2t03.flac:35e42dc48cbd1ffac4550f97098b63b3
+bd1997-12-11-philly.d2t04.flac:7ec99f58481bbd84ae21012309cea35f
+bd1997-12-11-philly.d2t05.flac:6d409537034fa62e8f08fd00914c5ab5
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-12-11.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:39.37       59886668 B   ---   --   ---xx   flac  0.6289  bd1997-12-11-philly.d1t01.flac
+     5:17.11       55944716 B   ---   --   ---xx   flac  0.6057  bd1997-12-11-philly.d1t02.flac
+     6:43.65       71242124 B   ---   --   ---xx   flac  0.6143  bd1997-12-11-philly.d1t03.flac
+     6:13.22       65848988 B   ---   --   ---xx   flac  0.6181  bd1997-12-11-philly.d1t04.flac
+     6:11.05       65456204 B   ---   --   ---xx   flac  0.6172  bd1997-12-11-philly.d1t05.flac
+     7:10.43       75953180 B   ---   --   ---xx   flac  0.6346  bd1997-12-11-philly.d1t06.flac
+     3:43.61       39480716 B   ---   --   ---xx   flac  0.6033  bd1997-12-11-philly.d1t07.flac
+     8:05.45       85659884 B   ---   --   ---xx   flac  0.5993  bd1997-12-11-philly.d1t08.flac
+     8:47.26       93023996 B   ---   --   ---xx   flac  0.6331  bd1997-12-11-philly.d1t09.flac
+     7:42.49       81612092 B   ---   --   ---xx   flac  0.6090  bd1997-12-11-philly.d1t10.flac
+     6:26.49       68205692 B   ---   --   ---xx   flac  0.6141  bd1997-12-11-philly.d1t11.flac
+     0:30.63        5440220 B   ---   --   ---xx   flac  0.5344  bd1997-12-11-philly.d1t12.flac
+    72:32.26      767754480 B                            0.6163  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-12-11.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.70       70019084 B   ---   --   ---xx   flac  0.5814  bd1997-12-11-philly.d2t01.flac
+     6:39.48       70496540 B   ---   --   ---xx   flac  0.6131  bd1997-12-11-philly.d2t02.flac
+     7:02.18       74483180 B   ---   --   ---xx   flac  0.5801  bd1997-12-11-philly.d2t03.flac
+     5:25.00       57330044 B   ---   --   ---xx   flac  0.5707  bd1997-12-11-philly.d2t04.flac
+     5:23.48       57090140 B   ---   --   ---xx   flac  0.6022  bd1997-12-11-philly.d2t05.flac
+    31:07.34      329418988 B                            0.5896  (5 files)
+=================== 
+=================== 
+=================== 

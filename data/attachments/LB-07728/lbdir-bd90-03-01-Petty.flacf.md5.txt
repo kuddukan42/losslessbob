@@ -1,0 +1,8 @@
+e3e011d402afb0f4ca09e537e6add80e  01 Rainy day women # 12 & 35 [Dylan on vocal].flac
+56dbfe753653cc09326d2adad59755cf  02 Everybody's movin' [Dylan shared vocal with Tom Petty].flac
+d911f0076e3df272ef997c7940a6c2d5  03 Travelin' band [Dylan on guitar].flac
+cbcdbb7068cad8c4d071e085c274c430  04 I'm crying [Dylan on guitar].flac
+89958a1b7fc3fc193286fda9700ea193  1990-03-01 The Forum, Los Angeles, California, USA [Dylan guest at Petty concert].md5
+dc1ebe78ffcf92060809a7e7f90f3453  1990-03-01 The Forum, Los Angeles, California, USA [Tom Petty Concert].ffp
+d9357f71d4ec042716abc724301a61fa  Info\1990-03-01 The Forum, Inglewood [guest at a Tom Petty concert], Los Angeles, California, USA.txt
+87752e478b99a25c50318dc174b93591  Info\FFP 1990-03-01 The Forum, Los Angeles, California, USA [Tom Petty Concert].txt

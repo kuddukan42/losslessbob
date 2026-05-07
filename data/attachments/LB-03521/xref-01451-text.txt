@@ -1,0 +1,176 @@
+===================
+===================
+===================
+=== 1998-03-31 Cameo Theater, Miami Beach, Florida, USA [off master].md5
+===================
+===================
+===================
+c2892ec877c031cf00cdf0c942749124 *CD1\01 To be alone with you.flac
+868f6ee290752fb62ea310d0d4d881e8 *CD1\02 Seor (Tales of Yankee Power).flac
+254f832ab2623da42539fed9e4f6f7bb *CD1\03 Can't wait.flac
+2a0e7e441bc9392a9f2774261d1bc4ed *CD1\04 You're a big girl now.flac
+0532336f01fd4720a9ea66b304ca2478 *CD1\05 Silvio.flac
+97b2c6dee1aa7efc54aae90423538edd *CD1\06 Cocaine blues.flac
+af7c4c4f44b74feece365189435767f5 *CD1\07 One too many mornings.flac
+94682af1ff51440502d087570bf4056e *CD1\08 Tangled up in blue.flac
+d8c8af41242934f952bea45499bdfee2 *CD1\09 Million miles.flac
+dbf83cbf319c5d753debabe010234a02 *CD1\10 Jokerman.flac
+99ffd94f0f419495051d52a8423dfe5b *CD1\11 Stuck inside of Mobile with the Memphis blues again.flac
+c037199337d004df9cd5da34b7d724c4 *CD1\FLAC CD1.md5
+ff250253ffd052a73e82d7f9558f5cdb *CD2\12 'Til I fell in love with you.flac
+067c373618528757b519bf3001661250 *CD2\13 It ain't me, babe.flac
+d1b6f18e62f7a1eb69f8d32a7ab94cfa *CD2\14 Love sick.flac
+d9d603af02ae64a3c92064dc5e240657 *CD2\15 Rainy day women # 12 & 35.flac
+2dec0df1c11b66d53a50ae2de4c0dace *CD2\FLAC CD2.md5
+e8191167548bb911858fd84a956fd864 *Info\1998-03-31 Cameo Theater, Miami Beach, Florida, USA [off master].txt
+d936cc659bba1b66120fe99432f348a1 *Info\Fingerprint d1 (original).txt
+cbf35728cabad127d7e7aa907d0ffa56 *Info\Fingerprint d2 (original).txt
+aec7be066bfd144ebc5d9dc0367b8c3f *Info\Setlist (original).txt
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+c2892ec877c031cf00cdf0c942749124 *01 To be alone with you.flac
+868f6ee290752fb62ea310d0d4d881e8 *02 Seor (Tales of Yankee Power).flac
+254f832ab2623da42539fed9e4f6f7bb *03 Can't wait.flac
+2a0e7e441bc9392a9f2774261d1bc4ed *04 You're a big girl now.flac
+0532336f01fd4720a9ea66b304ca2478 *05 Silvio.flac
+97b2c6dee1aa7efc54aae90423538edd *06 Cocaine blues.flac
+af7c4c4f44b74feece365189435767f5 *07 One too many mornings.flac
+94682af1ff51440502d087570bf4056e *08 Tangled up in blue.flac
+d8c8af41242934f952bea45499bdfee2 *09 Million miles.flac
+dbf83cbf319c5d753debabe010234a02 *10 Jokerman.flac
+99ffd94f0f419495051d52a8423dfe5b *11 Stuck inside of Mobile with the Memphis blues again.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+ff250253ffd052a73e82d7f9558f5cdb *12 'Til I fell in love with you.flac
+067c373618528757b519bf3001661250 *13 It ain't me, babe.flac
+d1b6f18e62f7a1eb69f8d32a7ab94cfa *14 Love sick.flac
+d9d603af02ae64a3c92064dc5e240657 *15 Rainy day women # 12 & 35.flac
+===================
+===================
+===================
+=== 1998-03-31 Cameo Theater, Miami Beach, Florida, USA [off master].txt
+===================
+===================
+===================
+Cameo Theater
+Miami Beach, Florida
+March 31, 1998
+
+*** Off Master ***
+
+****  This recording is not identical to LB-3521; it is derived from it! ****
+
+Taper: unidentified
+Lineage: dl some years back; as FLAC
+Rating: A
+Frequency analysis: well above 18kHz
+
+NOTE from original uploader: "The "Schubert ASM" recording had digital flaws; this recording does not. This was recorded with AKG 391s and transferred to the discs I have here from the Master DAT by the taper. CDR from taper > EAC > FLAC"
+
+01. To Be Alone With You [04:02]
+02. Seor (Tales Of Yankee Power) [04:55]
+03. Can't Wait [05:59]
+04. You're A Big Girl Now [05:55]
+05. Silvio (Bob Dylan & Robert Hunter) [06:35]
+06. Cocaine Blues (trad.) [04:39]
+07. One Too Many Mornings [05:59]
+08. Tangled Up In Blue [07:26]
+09. Million Miles [07:01]
+10. Jokerman [05:03]
+11. Stuck Inside Of Mobile With The Memphis Blues Again [07:14]
+Total time [64:38]
+
+12. 'Til I Fell In Love With You [07:01]
+13. It Ain't Me, Babe [07:31]
+14. Love Sick [05:33]
+15. Rainy Day Women # 12 & 35 [04:15]
+Total time [24:21]
+
+Concert # 959 of The Never-Ending Tour
+Second concert of the 1998 South American Tour With The Rolling Stones
+1998 concert # 23
+
+Concert # 106 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+NOTE: Second warm up show
+6-8, 13 acoustic with the band
+
+7 new songs (46%) compared to previous concert
+7 new songs for this tour
+===================
+===================
+===================
+=== Fingerprint d1 (original).txt
+===================
+===================
+===================
+01 Track01.flac:c6d89583d85ea0abffd69cdf4f24256c
+02 Track02.flac:be48287ab2dbd6ccd2f939468c35a5e2
+03 Track03.flac:0d56012c51eed4850f7520accf55b3cf
+04 Track04.flac:11b0c6abf74964376025f85a53243cd4
+05 Track05.flac:f39e678bf6c5edbb5f7bae070b76edb6
+06 Track06.flac:1da60cbc45ce62462a6ba95e7c4a60c5
+07 Track07.flac:e6e026260aa2af76428698d80a09757e
+08 Track08.flac:800b864c8cefeb9a68c7f4733ef68140
+===================
+===================
+===================
+=== Fingerprint d2 (original).txt
+===================
+===================
+===================
+Track01.flac:a81a833f0b5b147b73aa1429635217ad
+Track02.flac:3ba41050f18cf9587720d5e80a7eae1a
+Track03.flac:af905bd7c3ca8a32c960b3e86ce5db51
+Track04.flac:ae249c801fc468b1475a04e7fe8ab0cd
+Track05.flac:cb9603c9fabd5c932ef7d18cedde5f85
+Track06.flac:4326384c9f93f8f2256dcad84b30a3a3
+Track07.flac:14ede32ca9e83448e45e1258bdbbf3ef
+===================
+===================
+===================
+=== Setlist (original).txt
+===================
+===================
+===================
+Cameo Theater
+Miami Beach, Florida
+31 March 1998
+
+1. Be Alone With You
+2. Seor (Tales Of Yankee Power)
+3. Can't Wait
+4. You're A Big Girl Now
+5. Silvio
+6. Cocaine Blues 
+7. One Too Many Mornings
+8. Tangled Up In Blue
+
+ 
+Disc 2:
+
+1. Million Miles
+2. Jokerman
+3. Stuck Inside Of Mobile With The Memphis Blues Again
+4. 'Til I Fell In Love With You
+5. It Ain't Me, Babe
+6. Love Sick
+7. Rainy Day Women # 12 & 35
+===================
+===================
+===================

@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-13-ASM-by-Schubert-e.flacf 
+=================== 
+=================== 
+=================== 
+c047a04d81b168fb1e8fe42af55a79ff  101 Announcement.flac
+3de08ac91a816da1aafc8a2ca3793555  102 Rainy Day Women #12 & 35.flac
+5ef9666a4418ac3d954e7e27ba4e6105  103 Tonight I'll Be Staying Here With You.flac
+efe8c907e8c36e8f50f6067ed1e76248  104 Watching The River Flow.flac
+415a21637ff82dc05cf81f1630cd3de9  105 It's Alright, Ma (I'm Only Bleeding).flac
+31e2042a6baa44042368d734bbe3e452  106 I'll Be Your Baby Tonight.flac
+51b54b8f5a71166c51ab5a950fec326e  107 Ballad Of A Thin Man.flac
+58b643a833a935fe47c081a7d0b31fcc  108 Tweedle Dee & Tweedle Dum.flac
+7282bbb158e85f835c31e2565963c2b3  109 This Wheel's On Fire.flac
+dc4b71a096d71debd4f55fb2191e2508  110 Seeing The Real You At Last.flac
+5dcd158cf547510987659996edc92e31  111 No More One More Time.flac
+90a1403a4a96b9803a26dbcfaf4c0a34  112 Ballad Of Hollis Brown.flac
+3258e2945ef63b458e2bfbd676ada62f  2004-10-13 San Francisco-Schubert-ASM.txt
+1dbd1123e2ae6462c2cc41fbf6e45e0c  20041013sanfrancisco_d1_flacs.md5
+b8bded00d950798c6583d8bef89866bf  20041013sanfrancisco_d1_wavs.md5
+21c71328d74dcd8a8354813964be2410  20041013sanfrancisco_d2_flacs.md5
+de477c3f1fec1c907d2a491e8a9758fd  20041013sanfrancisco_d2_wavs.md5
+975802cff8ffd149de35054382153e16  201 Honest With Me.flac
+31b89ebe3c5a259332168331621533d5  202 Sugar Baby.flac
+42f11c85b854a7bc08a7c3036080e1a9  203 Summer Days.flac
+e789244df82541f0ba8788b03b79ab5a  204 Cat's In The Well.flac
+e395f670d93a389f9f3c95b81b37af93  205 Like A Rolling Stone.flac
+006e8ad8ba9acd58a2025c47d7dd29b4  206 All Along The Watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-13-ASM-by-Schubert-e.flacf 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:2dca6bf3f200c2b2bf800722f2ac2508
+102 Rainy Day Women #12 & 35.flac:feddc6883d6494cd9a6e123bbb06de06
+103 Tonight I'll Be Staying Here With You.flac:f3b6abc3d0781e98e6a6b3d8cae4b41f
+104 Watching The River Flow.flac:efe2fa97b2f3001332cb3298e546276b
+105 It's Alright, Ma (I'm Only Bleeding).flac:01a3e60556edc4ce149b7e691ab23cf1
+106 I'll Be Your Baby Tonight.flac:ec711c46917c6b015c06933af4161407
+107 Ballad Of A Thin Man.flac:7f57da6003176ccec6bd64ed6c30e081
+108 Tweedle Dee & Tweedle Dum.flac:ca2557881f31747c96f2a83d058e862b
+109 This Wheel's On Fire.flac:a30d0d118580b16c3af1ce98c0d20228
+110 Seeing The Real You At Last.flac:f6f98f441abf6ec62c64de24423415c8
+111 No More One More Time.flac:1bcb4f3afb1e23294db56c3e5d01cd2e
+112 Ballad Of Hollis Brown.flac:cdaa7b4815368352ce37553d42d5aa89
+201 Honest With Me.flac:22c676fa8689694459428f1e5619bfd5
+202 Sugar Baby.flac:d19467680f56d99749282c9339a78f60
+203 Summer Days.flac:43adad8d1affb58f2acd988b5d673132
+204 Cat's In The Well.flac:322c18bac0739c5d962be4a41d86f8d6
+205 Like A Rolling Stone.flac:b13dc968f818477b55b1a863c8a8baec
+206 All Along The Watchtower.flac:6ce5d7ccb7f89f241e9cc6b8a0d28b46
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-13-ASM-by-Schubert-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:41.69        7394732 B   ---   --   ---xx   flac  0.5771  101 Announcement.flac
+     4:04.00       43041644 B   ---   --   ---xx   flac  0.6577  102 Rainy Day Women #12 & 35.flac
+     5:06.00       53978444 B   ---   --   ---xx   flac  0.6333  103 Tonight I'll Be Staying Here With You.flac
+     5:08.00       54331244 B   ---   --   ---xx   flac  0.6628  104 Watching The River Flow.flac
+     7:24.60       78462764 B   ---   --   ---xx   flac  0.6314  105 It's Alright, Ma (I'm Only Bleeding).flac
+     6:31.45       69078284 B   ---   --   ---xx   flac  0.6122  106 I'll Be Your Baby Tonight.flac
+     6:10.45       65373884 B   ---   --   ---xx   flac  0.6293  107 Ballad Of A Thin Man.flac
+     5:34.00       58917644 B   ---   --   ---xx   flac  0.6051  108 Tweedle Dee & Tweedle Dum.flac
+     7:39.00       80967644 B   ---   --   ---xx   flac  0.6553  109 This Wheel's On Fire.flac
+     6:10.00       65268044 B   ---   --   ---xx   flac  0.6927  110 Seeing The Real You At Last.flac
+     4:03.00       42865244 B   ---   --   ---xx   flac  0.6451  111 No More One More Time.flac
+     6:01.37       63767468 B   ---   --   ---xx   flac  0.5920  112 Ballad Of Hollis Brown.flac
+     6:44.44       71369132 B   ---   --   ---xx   flac  0.6739  201 Honest With Me.flac
+     7:57.55       84272204 B   ---   --   ---xx   flac  0.5590  202 Sugar Baby.flac
+     8:42.44       92184332 B   ---   --   ---xx   flac  0.6190  203 Summer Days.flac
+     5:07.61       54298316 B   ---   --   ---xx   flac  0.6614  204 Cat's In The Well.flac
+     7:13.40       76475324 B   ---   --   ---xx   flac  0.6414  205 Like A Rolling Stone.flac
+     6:12.07       65637308 B   ---   --   ---xx   flac  0.6328  206 All Along The Watchtower.flac
+   106:32.57     1127683656 B                            0.6330  (18 files)
+=================== 
+=================== 
+=================== 

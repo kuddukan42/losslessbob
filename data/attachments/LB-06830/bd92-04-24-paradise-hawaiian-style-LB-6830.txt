@@ -1,0 +1,12 @@
+Bob Dylan, 4/24/92, Waikiki Shell, Waikiki, 2CDR
+
+LB-6830, BOOTLEG: Paradise, Hawaiian Style; cd > ultraplex > eac > wav > flac; QR Records QR 11/12; Iowa 11/8/90;Toronto 8/18/92
+---------------------------------------------------
+has a tv band; 
+
+(a bittorrent from 07/09 is same recording with similar wav and spectral view except levels are lower and has drops and big digi-pops at track boundaries plus lots and lots of disconinuities throughout; described as "***** BootCD: Paradise, Hawaiian Style, QR Records QR 11/12 *****, ***** Compared with LB-6830; this set seems to have minor discrepancies *****, ... and I have no idea why..., Taper: unidentified, Lineage: received in a trade as SHNs. LB had no SHN reference, henceforth converted to FLAC. Left as was., UploaderRating: A-, Frequency analysis: full spectrum" with filenames like "bd1992.04.24Hawaii_d1t01.flac")
+
+(a bittorrent from 02/17 is a close eac match on d1t1 with same digital flaws; described as "Source: sbd, Lineage: silver of 'Paradise Hawaiian Style'>standalone burner>CD>EAC>SF>CDWave>CD>EAC>FLAC" and in folder title "Pitch Corrected - No Bonus Tracks" with filenames like "bd1992-04-24_SBD_corr_d1t01.flac"; xref-01850)
+---------------------------------------------------
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

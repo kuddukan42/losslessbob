@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-22-a.flacf 
+=================== 
+=================== 
+=================== 
+e448b77d9078c82a36d932cba1c639b9  CD 01\DylanBM91_T001.flac
+7ac125f44a067874480eacc440b34402  CD 01\DylanBM91_T002.flac
+a6939c226a6f44fe10d54d51018e93e4  CD 01\DylanBM91_T003.flac
+ad76a7db6c3222bc40f51f120095fa21  CD 01\DylanBM91_T004.flac
+39a2d0c9bcb94ee51f68320f583ce190  CD 01\DylanBM91_T005.flac
+b8d5028713f2b8f771636792f1f55324  CD 01\DylanBM91_T006.flac
+2ed8e99747ffe2ba5c0d88ff6a438340  CD 01\DylanBM91_T007.flac
+44992333c03837269fb6e97739b7f9f0  CD 01\DylanBM91_T008.flac
+31eba751aa1290e4aa9bdd033ab4698c  CD 01\DylanBM91_T009.flac
+e1b07dde56ea2ae882775ef6b0d8c65c  CD 01\DylanBM91_T010.flac
+0ef1b2245b0648a91cd5fbc917e349a5  CD 01\DylanBM91_T011.flac
+a41f5d76acd5ff949f0dc6967222d739  CD 01\DylanBM91_T012.flac
+8ef48c5cfeb52caef52b2f0091ca53ec  CD 02\DylanBM91_T013.flac
+ee6998da6c85c2b154680e79873b5b62  CD 02\DylanBM91_T014.flac
+17cb59b49ff373ae37b5252ad4fb882d  CD 02\DylanBM91_T015.flac
+dca791d7728ba8819a04df8a366bf234  CD 02\DylanBM91_T016.flac
+bb813dd56846b1556fcb1648ff9b3117  CD 02\DylanBM91_T017.flac
+86911703b4f40965ce38331b34a3d668  CD 02\DylanBM91_T018.flac
+ed8b48f234fd9563403e91342924ac82  Dylan BM 1991 Aud back.jpg
+0af622c10b9f4ecc0e81edb28875ebe4  Dylan BM 1991 Aud front.jpg
+44ef77ff4141917ba8627e398fb5d4b7  Dylan BM 1991 Aud.md5
+df0ca1bbdecaba39bd851ccf66fc64fa  Dylan BM1991 Aud.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-22-a.flacf\CD 01 
+=================== 
+=================== 
+=================== 
+DylanBM91_T001.flac:de3a509607f90278f8793615e40e3e09
+DylanBM91_T002.flac:db5527191f9e2740ff93be3645d840aa
+DylanBM91_T003.flac:3b4620c43c336f4633449b8d34707502
+DylanBM91_T004.flac:fac8158873fd81ce861d1efa09ba9c21
+DylanBM91_T005.flac:e76b826ddce413fc3c41013388eeff82
+DylanBM91_T006.flac:e5d9129bdfb023a15e8ae1ac652840d3
+DylanBM91_T007.flac:50b4769a156ea1ccea4d136161145d26
+DylanBM91_T008.flac:28b37631eb13292bbf49e7239ca8e96e
+DylanBM91_T009.flac:4ba1966eb73718c9f105686715c426ed
+DylanBM91_T010.flac:a5f93f8bea9ed1be9d176e24d4dc93f7
+DylanBM91_T011.flac:206ce042f4c2932a36b135df1e5c848a
+DylanBM91_T012.flac:f12cad740f52643eb80cc497a1947c5c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-22-a.flacf\CD 02 
+=================== 
+=================== 
+=================== 
+DylanBM91_T013.flac:0a16706f553b99359fcaad7c2750f278
+DylanBM91_T014.flac:1b016855d3e7478f0c34374e632b48c4
+DylanBM91_T015.flac:3c9e123e830375442caed98ccda06363
+DylanBM91_T016.flac:e2ce51c66f952dfb2d441d311542b0a9
+DylanBM91_T017.flac:7ad755cc581dd4e3ce3c5f61232cccd6
+DylanBM91_T018.flac:dd1f421d1c15467e027371087ce60a03
+=================== 
+=================== 
+=================== 
+=== shntool for: bd91-06-22-a.flacf\CD 01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:33.19       69369932 B   ---   --   ---xx   flac  0.5407  DylanBM91_T001.flac
+     4:40.06       49406156 B   ---   --   ---xx   flac  0.5346  DylanBM91_T002.flac
+     5:49.59       61702412 B   ---   --   ---xx   flac  0.5356  DylanBM91_T003.flac
+     3:53.33       41178860 B   ---   --   ---xx   flac  0.5487  DylanBM91_T004.flac
+     7:43.66       81828476 B   ---   --   ---xx   flac  0.5551  DylanBM91_T005.flac
+     3:06.11       32836316 B   ---   --   ---xx   flac  0.5686  DylanBM91_T006.flac
+     3:50.70       40736684 B   ---   --   ---xx   flac  0.5331  DylanBM91_T007.flac
+     4:48.57       50937308 B   ---   --   ---xx   flac  0.5251  DylanBM91_T008.flac
+     5:01.29       53164652 B   ---   --   ---xx   flac  0.4386  DylanBM91_T009.flac
+     5:22.32       56876108 B   ---   --   ---xx   flac  0.4830  DylanBM91_T010.flac
+     6:12.10       65644364 B   ---   --   ---xx   flac  0.5229  DylanBM91_T011.flac
+     5:47.05       61222604 B   ---   --   ---xx   flac  0.5535  DylanBM91_T012.flac
+    62:49.22      664903872 B                            0.5281  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd91-06-22-a.flacf\CD 02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.28       53515100 B   ---   --   ---xx   flac  0.5197  DylanBM91_T013.flac
+     3:47.04       40052252 B   ---   --   ---xx   flac  0.5708  DylanBM91_T014.flac
+     7:18.03       77270300 B   ---   --   ---xx   flac  0.5308  DylanBM91_T015.flac
+     4:48.71       50970236 B   ---   --   ---xx   flac  0.5696  DylanBM91_T016.flac
+     4:57.57       52524908 B   ---   --   ---xx   flac  0.4630  DylanBM91_T017.flac
+     6:12.03       65627900 B   ---   --   ---xx   flac  0.5594  DylanBM91_T018.flac
+    32:07.16      339960696 B                            0.5346  (6 files)
+=================== 
+=================== 
+=================== 

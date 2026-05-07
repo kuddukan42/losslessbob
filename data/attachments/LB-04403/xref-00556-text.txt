@@ -1,0 +1,116 @@
+===================
+===================
+===================
+=== BD_1991-06-11_setlist.txt
+===================
+===================
+===================
+Bob Dylan
+Zadjan Stadium
+Belgrade, Yugoslavia
+11 June 1991
+
+1.    New Morning
+2.    Ballad Of A Thin Man
+3.    All Along The Watchtower
+4.    Shelter From The Storm
+5.    Gotta Serve Somebody
+6.    Wiggle Wiggle
+7.    It's All Over Now, Baby Blue
+8.    Gates Of Eden
+9.    Don't Think Twice, It's All Right
+10.    Girl From The North Country
+11.    Knockin' On Heaven's Door
+12.    Rainy Day Women # 12 & 35
+13.    Just Like A Woman
+14.    Shooting Star
+15.    One More Cup Of Coffee (Valley Below)
+16.    I Shall Be Released
+17.    Like A Rolling Stone
+
+18.    Blowin' In The Wind
+19.    Highway 61 Revisited
+
+Concert # 306 of The Never-Ending Tour.  Concert # 5 of the 1991 Summer Tour Of Europe. 1991 concert # 43.
+Concert # 22 with the 5th Never-Ending Tour band: Bob Dylan (vocal & guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+
+7  Bob Dylan (vocal & guitar), John Jackson (guitar).
+8-10, 18 acoustic with the band.
+1, 2, 4, 5, 7, 9, 10, 18  Bob Dylan harmonica.
+5, 11, 14, 16  Bob Dylan electric piano.
+
+Note. One More Cup Of Coffee was last played in London, 4 February 1990.
+
+BobTalk:
+Thank you! Thank you everybody! That was one of my anti-religion songs. Here's one of my fishing songs. (before Wiggle Wiggle).
+
+5 new songs (26%) compared to previous concert. 2 new songs for this tour.
+===================
+===================
+===================
+=== BD_1991-06-11_d1_flac.md5
+===================
+===================
+===================
+4cce1dcda6373ba45f51c3d6b80a3ef2 *BD_1991-06-11_d1t01.flac
+720a1c10bbefc71ba3bf186191ba25bb *BD_1991-06-11_d1t02.flac
+595ec29c287707c58a8eaa80a98a73b5 *BD_1991-06-11_d1t03.flac
+6633aa47a416858edb432db9f978e469 *BD_1991-06-11_d1t04.flac
+d808742548dca9ae39c96f595754a42e *BD_1991-06-11_d1t05.flac
+844c115b0dff3229041d0e6576a4e544 *BD_1991-06-11_d1t06.flac
+dc7d92abf135d0e28f36f3350580df40 *BD_1991-06-11_d1t07.flac
+c0b78e68954e4138245429e2c01c5d3c *BD_1991-06-11_d1t08.flac
+315224e5b6aad3ed9008c7389f28d200 *BD_1991-06-11_d1t09.flac
+a257cfd769518971bb8b54b732f3337a *BD_1991-06-11_d1t10.flac
+a18d21c5848947e33ed45a83ed874fd7 *BD_1991-06-11_d1t11.flac
+===================
+===================
+===================
+=== BD_1991-06-11_d1_wav.md5
+===================
+===================
+===================
+6807b37cc49508bc5f18b3afb7990cf4 *BD_1991-06-11_d1t01.wav
+dec7aa7a55251c93faaffb832fa9381f *BD_1991-06-11_d1t02.wav
+d929f6059c4e35055427dba5d9658550 *BD_1991-06-11_d1t03.wav
+b4d1954195336833af76829776daffc5 *BD_1991-06-11_d1t04.wav
+b8a96196039daa58aa34ab1b6c6b7c27 *BD_1991-06-11_d1t05.wav
+933bdbcea9419b83e04838de386c8b9a *BD_1991-06-11_d1t06.wav
+86b91f6a5b6bb1b99a8ed703ba60202d *BD_1991-06-11_d1t07.wav
+6c4078cc07b6c663bc7f01d87826264b *BD_1991-06-11_d1t08.wav
+13848f01a96c672dc2af14c4f24128d1 *BD_1991-06-11_d1t09.wav
+8675f753ddc9a16e5cb377efab127160 *BD_1991-06-11_d1t10.wav
+baa85031c687e3290a5fde437c75c467 *BD_1991-06-11_d1t11.wav
+===================
+===================
+===================
+=== BD_1991-06-11_d2_flac.md5
+===================
+===================
+===================
+5d88d80ec78135a16139a5eb6247e7d2 *BD_1991-06-11_d2t01.flac
+f1bb134afa8521a6f7b5775cf98b7cf8 *BD_1991-06-11_d2t02.flac
+e09109d4a52fa50ca39258f759450505 *BD_1991-06-11_d2t03.flac
+5441644e7713146f1490e26cbe07d3ac *BD_1991-06-11_d2t04.flac
+d6468acf156c64e29f5946ff42a32453 *BD_1991-06-11_d2t05.flac
+c745a835482961f3b7ec9f7e34e931e9 *BD_1991-06-11_d2t06.flac
+9b62f8140cf27c4df66b887aac47f76e *BD_1991-06-11_d2t07.flac
+e7a352bd7df96eec000f146e61acaea1 *BD_1991-06-11_d2t08.flac
+===================
+===================
+===================
+=== BD_1991-06-11_d2_wav.md5
+===================
+===================
+===================
+39cfbaca18ce6e8faaf455cb6d7d9dc7 *BD_1991-06-11_d2t01.wav
+23f7776ed0fe9afd8ea9dc5b67a6d5ec *BD_1991-06-11_d2t02.wav
+d65139960c194f931fcfb140d6f61218 *BD_1991-06-11_d2t03.wav
+2e2c5bdf3c95f3965a2b7cec375283e4 *BD_1991-06-11_d2t04.wav
+2f9bfd7def5048d6d58b0063cffd84f4 *BD_1991-06-11_d2t05.wav
+ee073978b927b13641334cf3b91c1dfc *BD_1991-06-11_d2t06.wav
+4384605425f83115f80bedef1014676c *BD_1991-06-11_d2t07.wav
+9ae525d16cf546850b69717159527830 *BD_1991-06-11_d2t08.wav
+===================
+===================
+===================

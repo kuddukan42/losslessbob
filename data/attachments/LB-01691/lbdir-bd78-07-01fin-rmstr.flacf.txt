@@ -1,0 +1,124 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-01fin-rmstr.flacf 
+=================== 
+=================== 
+=================== 
+7685bd481a620b31b871f011af083407  Bob Dylan Zeppelinfeld Nurnburg 01july1978.txt
+9a567a70269a37528ee0d9e3acb93526  DAELog_2004_4_13_22h28m27s.txt
+dbc499505cc1ec6469d88e8f8f0e5e67  DAELog_2004_4_13_22h40m33s.txt
+383375fc3e6fbc9efdb62f0b1b362734  look back nurnberg 7_1_78 front.jpg
+7d9afcdb4ff27cf53141af055ccdd929  look back nurnberg 7_1_78 rear.jpg
+e7c31a9189157a494123f1d5881e452a  Look_Back_disk1_Track01.flac
+f95a47fcadbfcfa78652278b62e91e96  Look_Back_disk1_Track02.flac
+4e85ecfd8bc71c7cd2b6efcdc10f05d5  Look_Back_disk1_Track03.flac
+8624a940079a28f69ac27164ae44d312  Look_Back_disk1_Track04.flac
+ae7b6f0df538d14e0ff5a4fd69286ca1  Look_Back_disk1_Track05.flac
+41be3465f8dd7158e35770b7fa099a75  Look_Back_disk1_Track06.flac
+7bfa1270e1451156bda3663f0b80b83b  Look_Back_disk1_Track07.flac
+aac6bd579a42203d5a62fb616f6f63f7  Look_Back_disk1_Track08.flac
+2334171dfc4ea96dd4e33474181d5719  Look_Back_disk1_Track09.flac
+45a17d880df3260a26d989a1ae86c646  Look_Back_disk1_Track10.flac
+301b0e7c13e3c589cf09aa8512d74689  Look_Back_disk1_Track11.flac
+8acc286de54880aa49a719f0671b01ae  Look_Back_disk1_Track12.flac
+bb6596dc58321c5f8cf3779cf831b19a  Look_Back_disk1_Track13.flac
+7fbb153eee21d2a8e8141472448b9aeb  Look_Back_disk1_Track14.flac
+45b2e68fb49d0e29583fecc8ac259f0d  Look_Back_disk1_Track15.flac
+57a2cd6f8e28efbe28868f78576b85e2  Look_Back_disk2_Track01.flac
+2a7ded869817c1e21de3b53752a1b608  Look_Back_disk2_Track02.flac
+d18ef40508373ac0505fb15f2fd8c248  Look_Back_disk2_Track03.flac
+4b071121ffd69e9dec140b452d89932b  Look_Back_disk2_Track04.flac
+08ed735dc808133d64649fea3c25d9b4  Look_Back_disk2_Track05.flac
+4c00e17b17ea391dcd35fff79e5f9311  Look_Back_disk2_Track06.flac
+08e774ed4d4c99efb0402e5cb795785b  Look_Back_disk2_Track07.flac
+1abca28b9f380318a9be9b6eeefd8ac4  Look_Back_disk2_Track08.flac
+4e17b73ef44f8b87aadb3a99ddbfc61a  Look_Back_disk2_Track09.flac
+a1eff2785e49844ce6b7f0d0c3013a1b  Look_Back_disk2_Track10.flac
+d30468b03a66bc0947f3a028b45d1e2a  Look_Back_disk2_Track11.flac
+fa29c09cc707bb3a268c6c187dc1c8f3  Look_Back_disk2_Track12.flac
+087b15b459d798bcf3e25237f9acc56c  Look_Back_disk2_Track13.flac
+ce70b1a58a4a9b3dd308f36a0281eede  Look_Back_disk2_Track14.flac
+d988610a62497908cba5907f3ef27b05  Look_Back_disk2_Track15.flac
+b849943ab179a4dea2a2bf8dc5fd8f8b  Look_Back_disk2_Track16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-01fin-rmstr.flacf 
+=================== 
+=================== 
+=================== 
+Look_Back_disk1_Track01.flac:14025d0fef450ff40ac5c8ad2b28585e
+Look_Back_disk1_Track02.flac:754aacfb319a4be5fe06841bbe1e7071
+Look_Back_disk1_Track03.flac:eb99be693d51b0a3bc60e4962142a8c7
+Look_Back_disk1_Track04.flac:5b4deceacf6158e8ffdf4f2b68010139
+Look_Back_disk1_Track05.flac:866a90e67835d350d3e2a785d3e84f30
+Look_Back_disk1_Track06.flac:69f02036475c4bafed7870430f848153
+Look_Back_disk1_Track07.flac:f54c09509c0d1517bbb24e5555914e9c
+Look_Back_disk1_Track08.flac:7bee1cab92dcade24d1c139049417c0b
+Look_Back_disk1_Track09.flac:6bd1a1cc3f4aca0b283ccd2e1df03d04
+Look_Back_disk1_Track10.flac:16b4c5726afddc7b44cfb5a2bab99190
+Look_Back_disk1_Track11.flac:456d187ccf3215c804c44a61fcf26139
+Look_Back_disk1_Track12.flac:0ae50634a5a8544479cc1e2e21cc2246
+Look_Back_disk1_Track13.flac:99c8ea4823749df6450006fd94cda201
+Look_Back_disk1_Track14.flac:12fd61c81bb3d3c3ac5243a9a9f4c5d8
+Look_Back_disk1_Track15.flac:baf56d45d472dd62383f8910a36fa7ce
+Look_Back_disk2_Track01.flac:b8fa04b885a6a946a11ee75d2963a983
+Look_Back_disk2_Track02.flac:9e03ae312977949793cab27e4a124725
+Look_Back_disk2_Track03.flac:07b224c9a318f7e931c0d4e3684ebf25
+Look_Back_disk2_Track04.flac:0f6b8d0ae8f46aaf2d79f30e5d019ee1
+Look_Back_disk2_Track05.flac:e5076f9a812920d223e2eaa7ea76cc23
+Look_Back_disk2_Track06.flac:c76d57b275ebce1fe969ffec49602cf1
+Look_Back_disk2_Track07.flac:7b13a9c4a468d28f08b6b1083b519afb
+Look_Back_disk2_Track08.flac:7ef1a0f95565e3ff6cf8d3bab582a75a
+Look_Back_disk2_Track09.flac:99bd81d743b96a8676ad8cbb9859d47b
+Look_Back_disk2_Track10.flac:223d1fad0cf3dc3ca3969f8ffb7e2e4a
+Look_Back_disk2_Track11.flac:f80257fd25177f8a3b61dd5564396718
+Look_Back_disk2_Track12.flac:a9d7dd18120ea97493f1f84ef845a4ad
+Look_Back_disk2_Track13.flac:5b9cd1e6bb1a57e31fd105b895aef032
+Look_Back_disk2_Track14.flac:8624d36090f61118c3e9eadc55060f51
+Look_Back_disk2_Track15.flac:118dd6cc410b22f7b159003e10128fcf
+Look_Back_disk2_Track16.flac:cac8099c3701826b5c8e7b88b62fafc3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-01fin-rmstr.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:33.38       27078620 B   ---   --   ---xx   flac  0.6564  Look_Back_disk1_Track01.flac
+     5:30.23       58266140 B   ---   --   ---xx   flac  0.6811  Look_Back_disk1_Track02.flac
+     4:28.24       47331692 B   ---   --   ---xx   flac  0.6846  Look_Back_disk1_Track03.flac
+     4:52.67       51666428 B   ---   --   ---xx   flac  0.6779  Look_Back_disk1_Track04.flac
+     4:31.65       47957324 B   ---   --   ---xx   flac  0.6835  Look_Back_disk1_Track05.flac
+     6:53.25       72912044 B   ---   --   ---xx   flac  0.6530  Look_Back_disk1_Track06.flac
+     4:43.15       49956524 B   ---   --   ---xx   flac  0.6916  Look_Back_disk1_Track07.flac
+     4:47.23       50680940 B   ---   --   ---xx   flac  0.7013  Look_Back_disk1_Track08.flac
+     4:26.40       47016524 B   ---   --   ---xx   flac  0.6981  Look_Back_disk1_Track09.flac
+     6:51.14       72533372 B   ---   --   ---xx   flac  0.7143  Look_Back_disk1_Track10.flac
+     4:22.53       46341500 B   ---   --   ---xx   flac  0.6820  Look_Back_disk1_Track11.flac
+     4:10.09       44121212 B   ---   --   ---xx   flac  0.6952  Look_Back_disk1_Track12.flac
+     4:26.61       47065916 B   ---   --   ---xx   flac  0.6667  Look_Back_disk1_Track13.flac
+     2:57.67       31380428 B   ---   --   ---xx   flac  0.6811  Look_Back_disk1_Track14.flac
+     4:59.14       52776572 B   ---   --   ---xx   flac  0.5686  Look_Back_disk1_Track15.flac
+     5:09.28       54573500 B   ---   --   ---xx   flac  0.6825  Look_Back_disk2_Track01.flac
+     4:17.53       45459500 B   ---   --   ---xx   flac  0.7213  Look_Back_disk2_Track02.flac
+     4:51.09       51353612 B   ---   --   ---xx   flac  0.6910  Look_Back_disk2_Track03.flac
+     3:12.03       33875900 B   ---   --   ---xx   flac  0.6981  Look_Back_disk2_Track04.flac
+     4:43.23       49975340 B   ---   --   ---xx   flac  0.6627  Look_Back_disk2_Track05.flac
+     2:55.72       31039388 B   ---   --   ---xx   flac  0.6595  Look_Back_disk2_Track06.flac
+     4:58.34       52647212 B   ---   --   ---xx   flac  0.6870  Look_Back_disk2_Track07.flac
+     4:45.51       50393996 B   ---   --   ---xx   flac  0.6946  Look_Back_disk2_Track08.flac
+     5:35.40       59188124 B   ---   --   ---xx   flac  0.6712  Look_Back_disk2_Track09.flac
+     5:29.26       58096796 B   ---   --   ---xx   flac  0.6795  Look_Back_disk2_Track10.flac
+     4:03.22       42916988 B   ---   --   ---xx   flac  0.7123  Look_Back_disk2_Track11.flac
+     5:34.53       59042300 B   ---   --   ---xx   flac  0.6711  Look_Back_disk2_Track12.flac
+     6:21.16       67246076 B   ---   --   ---xx   flac  0.6921  Look_Back_disk2_Track13.flac
+     7:16.50       77028044 B   ---   --   ---xx   flac  0.6835  Look_Back_disk2_Track14.flac
+     4:27.42       47197628 B   ---   --   ---xx   flac  0.6941  Look_Back_disk2_Track15.flac
+     5:17.28       55984700 B   ---   --   ---xx   flac  0.6823  Look_Back_disk2_Track16.flac
+   149:34.38     1583104340 B                            0.6813  (31 files)
+=================== 
+=================== 
+=================== 

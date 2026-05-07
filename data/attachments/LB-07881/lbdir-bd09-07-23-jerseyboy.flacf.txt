@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-07-23-jerseyboy.flacf 
+=================== 
+=================== 
+=================== 
+f5a06a9047e4c3112f5bc9dc26e543dd  d1Track01.flac
+413b57fd19bcd734b8480d03584569b2  d1Track02.flac
+b2051e445a00186190e2750204502202  d1Track03.flac
+6f3c628aff4cc17f41078c55ff30331b  d1Track04.flac
+f91f6b8a393f125b4c7b11d8b3d895e0  d1Track05.flac
+00ba488d679c1f4d09b2ec7f22721957  d1Track06.flac
+3b1a33ebe0e49b4bf5469f5623157fa7  d1Track07.flac
+7c39732e2a20b0d5581231fa95339519  d1Track08.flac
+a92f752ba84cbcf74599e396e5ccd65f  d1Track09.flac
+9f12bdeb72680a69f2ac2c8d7536a8ef  d1Track10.flac
+db2a98da9609424136bbfd8502d441d9  d1Track11.flac
+049cd4ecf00ca12537cbccd46375fcda  d1Track12.flac
+bc5d144e5e96a34eef2d59accee2e345  d2Track01.flac
+748b6da6cecd5dd886b09ef350627005  d2Track02.flac
+d713b569085b880b8514637260cf9632  d2Track03.flac
+1d529bfb019bae12716521c3f19eac7a  d2Track04.flac
+cd1e53ca2caa78d5a983b02d33123046  d2Track05.flac
+eb465fe3ef2ce8d5c38b7f193a4267f9  Dylan20090723jerseyboy.md5
+bb524d6603199e2c5e18c3df59d8cfe4  notes.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-07-23-jerseyboy.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:0adceb6baf4a7e6e88464e7618021b23
+d1Track02.flac:c92ac07434ee84eea3d5a6b75a314b25
+d1Track03.flac:1e8ce464a00d2b37e545c5d24f833dea
+d1Track04.flac:43990acce3fe2715a65eea2440968bdc
+d1Track05.flac:58398c0261da0523b4cf46739751f7a5
+d1Track06.flac:c9c36c01d29e93f3d2b3ed511b7398ec
+d1Track07.flac:3bb546de1d8c658c35aa2c20d1da4961
+d1Track08.flac:29455af7cad3bc6d90349b9cf7f15a4c
+d1Track09.flac:e6b0bcf4a23d12983429af86bd7493a1
+d1Track10.flac:306ba10adfcc5c799ca4610aa3a4a8ac
+d1Track11.flac:52213451557c2e1e65af46a80af66896
+d1Track12.flac:93ce010f5b725dee23d37c6f5b569d16
+d2Track01.flac:ba87fee747586e0cac33a97b46c8cd30
+d2Track02.flac:1e2088aaf04a59109f72682ad825f3a1
+d2Track03.flac:19816c1670e3d1d4a4272dc5b3eb6f4f
+d2Track04.flac:dfded0a02d0621454e55ebe8d3593fb8
+d2Track05.flac:1849e7d0a86b277cb9652361e1b28b40
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-07-23-jerseyboy.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:33.08       16424060 B   ---   --   ---xx   flac  0.2776  d1Track01.flac
+     5:04.03       53632700 B   ---   --   ---xx   flac  0.2938  d1Track02.flac
+     4:25.59       46884812 B   ---   --   ---xx   flac  0.2807  d1Track03.flac
+     7:47.01       82381196 B   ---   --   ---xx   flac  0.2957  d1Track04.flac
+     6:43.11       71115116 B   ---   --   ---xx   flac  0.2882  d1Track05.flac
+     4:53.11       51711116 B   ---   --   ---xx   flac  0.2830  d1Track06.flac
+     6:35.13       69708620 B   ---   --   ---xx   flac  0.2937  d1Track07.flac
+     7:15.48       76846940 B   ---   --   ---xx   flac  0.3006  d1Track08.flac
+     7:16.26       76971596 B   ---   --   ---xx   flac  0.2976  d1Track09.flac
+     7:36.53       80563100 B   ---   --   ---xx   flac  0.2951  d1Track10.flac
+     8:16.12       87522668 B   ---   --   ---xx   flac  0.2790  d1Track11.flac
+     7:22.74       78142892 B   ---   --   ---xx   flac  0.2909  d1Track12.flac
+     2:28.36       26191916 B   ---   --   ---xx   flac  0.2482  d2Track01.flac
+     7:08.03       75506300 B   ---   --   ---xx   flac  0.2876  d2Track02.flac
+     4:08.74       43921292 B   ---   --   ---xx   flac  0.2878  d2Track03.flac
+     0:35.09        6195212 B   ---   --   ---xx   flac  0.2593  d2Track04.flac
+     5:57.25       63033644 B   ---   --   ---xx   flac  0.2839  d2Track05.flac
+    95:07.16     1006753180 B                            0.2888  (17 files)
+=================== 
+=================== 
+=================== 

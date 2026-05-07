@@ -1,0 +1,149 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-16-A-Better-Contract 
+=================== 
+=================== 
+=================== 
+ed012f4d3794ec1fe3a485ddf0254204  1979-11-18 Civic Auditorium, Santa Monica, California.doc
+e6066c39129e9bd15189cd9f825b16a8  A_Better_Contract.txt
+4d6f1976f3cb701e2a940e6a4608b0a5  bd79-11-16-A-Better-Contract.txt
+99fa945a2aa74b609bbf3c6c2c1a86bc  CD1\01 Gotta serve somebody.shn
+e9c9f1be23ee7c16ab7cdd5b70a56116  CD1\02 I believe in you.shn
+65b6155a7f0644466e36f28520722687  CD1\03 When you gonna wake up.shn
+0c631704323dfd4448b9e4cc0db0afdf  CD1\04 When he returns.shn
+c9eb24c0a30e343441af0b1d80881731  CD1\05 Man gave names to all the animals.shn
+517e7307e8738afce6f4ba405f613529  CD1\06 Precious angel.shn
+967abd6437912d333334b0225040b666  CD1\07 Slow train.shn
+6222bd0e22db878752ccf4dc4151d396  CD1\08 Covenant woman.shn
+0337cb11d78bae1fe41c4bce7c98671b  CD1\09 Gonna change my way of thinking.shn
+aed9eed6f91cd20c8f81b7f6d4eb4b6d  CD1\10 Do right to me baby (do unto others).shn
+5819782b544819f3db96a028a9ae8cbb  CD1\11 Solid rock.shn
+838275ff7de648f0578145e65145d94e  CD1\12 Saving grace.shn
+31f611df4cab890ab348b264b599b53b  CD1\1979-11-18 Santa Monica, California d1.md5
+e8df311c80c38ae3910df39d13f06414  CD2\01 Saved.shn
+4180a6cd959c31e80355f095a26f648c  CD2\02 What can I do for you.shn
+e936938fafc29becb3900a579e13ab8f  CD2\03 In the garden.shn
+af277eec5ef421703f8ab4b850c2198b  CD2\04 Blessed be the name.shn
+015723d718518cf24065ded633e11925  CD2\05 Pressing on.shn
+03ebf1bba1e53d0401620da4b1fa6a7d  CD2\1979-11-18 Santa Monica, California d2.md5
+13a597f05882ef79b90c69b4af465e39  EAC d1.LOG
+3088e24a4582db811e914e0e88c768c2  EAC d2.LOG
+4b96a1a14d1b9661992873ef57996c34  Fillers\01 Mr. Tambourine Man.shn
+bee75a85109482c202cccb2f2aef44b6  Fillers\02 The times they are a-changin'.shn
+3d2371ae8467ddd354ab3afec938ee46  Fillers\03 When I paint my masterpiece.shn
+bc8cbb4c570979d7050209731a21d518  Fillers\04 Seven days.shn
+4a487d04aa8372d80e4b1877b10d7b4c  Fillers\05 Blowin' in the wind [with Baez].shn
+ab1699c0c22618579cb0d45ca2344b8a  Fillers\06 I dreamed I saw St. Augustine [with Beaz].shn
+bf1c65f587a76ba8918591d7d166ef9d  Fillers\07 Diamonds and rust [Joan Baez].shn
+266a5722797fbaa917b05532e57a49c8  Fillers\08 Like a rolling stone.shn
+f408fda91835197d792afe78314eb7a9  Fillers\09 Isis.shn
+5434577ffc9a778566501e348836dcbd  Fillers\1979-11-18 Santa Monica, California fillers.md5
+5dfda0251aa080c793d91305947091b1  Fillers\INFO.txt
+ed012f4d3794ec1fe3a485ddf0254204  Info\1979-11-18 Civic Auditorium, Santa Monica, California.doc
+e6066c39129e9bd15189cd9f825b16a8  Info\A_Better_Contract.txt
+13a597f05882ef79b90c69b4af465e39  Info\EAC d1.LOG
+3088e24a4582db811e914e0e88c768c2  Info\EAC d2.LOG
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd79-11-16-A-Better-Contract\CD1 
+=================== 
+=================== 
+=================== 
+7463ce8e17b6fae1414dcc65db063204  [shntool]  01_Gotta_serve_somebody.wav
+8a613850d9b8898e09f38a8fda72716f  [shntool]  02_I_believe_in_you.wav
+5099d433d74358c2a35a3a1e924cd241  [shntool]  03_When_you_gonna_wake_up.wav
+d4a66e91873ea3dfad80e6730b0d8a2f  [shntool]  04_When_he_returns.wav
+35a18869b5d4bf6b979af84ffcf71b26  [shntool]  05_Man_gave_names_to_all_the_animals.wav
+a668c5ba9b40b777d9eb7c7a04e4b50a  [shntool]  06_Precious_angel.wav
+9cbbcdcb2767c0bd10fa401a5bccf5bd  [shntool]  07_Slow_train.wav
+3bbca516640cdda207e0679f8c909000  [shntool]  08_Covenant_woman.wav
+95ed330406bd54e636d44fc3686b7836  [shntool]  09_Gonna_change_my_way_of_thinking.wav
+50e67305f2e11502211f501af3f0e257  [shntool]  10_Do_right_to_me_baby__do_unto_others_.wav
+86c71b8cfd620f966ba8e6874bb44ca5  [shntool]  11_Solid_rock.wav
+9d5c4a06ce7078fbc3e73af439d09847  [shntool]  12_Saving_grace.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd79-11-16-A-Better-Contract\Fillers 
+=================== 
+=================== 
+=================== 
+9af0d04d98053a39a910f5147e942faf  [shntool]  01_Mr._Tambourine_Man.wav
+dfb45b47b3de7b343ef2cefb0aee2c7b  [shntool]  02_The_times_they_are_a-changin_.wav
+225fc71072b740280a88fb4c2256cb6b  [shntool]  03_When_I_paint_my_masterpiece.wav
+b90445e37c37ba8cbc21fec7a1279f52  [shntool]  04_Seven_days.wav
+ebc5d63508477dae3d3b330856b2c5ab  [shntool]  05_Blowin__in_the_wind__with_Baez_.wav
+1bd4fd48b96b0b3fcdd8267d87ef0111  [shntool]  06_I_dreamed_I_saw_St._Augustine__with_Beaz_.wav
+9ae0466eef3bd7e1b28228253babdbc8  [shntool]  07_Diamonds_and_rust__Joan_Baez_.wav
+f7cd186a5161b3f079e7396042082cf3  [shntool]  08_Like_a_rolling_stone.wav
+63cff2d672bf87fa3e63ad6f84005d08  [shntool]  09_Isis.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd79-11-16-A-Better-Contract\CD2 
+=================== 
+=================== 
+=================== 
+6ef267ac3ef9a06fe9dd3b7c7bcf9585  [shntool]  01_Saved.wav
+e0eb56f868896f6f6801754d89f80da8  [shntool]  02_What_can_I_do_for_you.wav
+99c91558c2333fa509dc2cf9386aaf62  [shntool]  03_In_the_garden.wav
+0514f6bfbae2e6a78d05e9d941751f6e  [shntool]  04_Blessed_be_the_name.wav
+9bd60b3041ecf6fd8ca82aaa97683e3d  [shntool]  05_Pressing_on.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-16-A-Better-Contract\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:50.07       72340508 B   ---   --   -----    wav  1.0000  01_Gotta_serve_somebody.wav
+     4:58.31       52640156 B   ---   --   -----    wav  1.0000  02_I_believe_in_you.wav
+     5:49.07       61580108 B   ---   --   -----    wav  1.0000  03_When_you_gonna_wake_up.wav
+     4:56.49       52329692 B   ---   --   -----    wav  1.0000  04_When_he_returns.wav
+     5:27.58       57819260 B   ---   --   -----    wav  1.0000  05_Man_gave_names_to_all_the_animals.wav
+     6:31.10       68995964 B   ---   --   -----    wav  1.0000  06_Precious_angel.wav
+     6:30.01       68798396 B   ---   --   -----    wav  1.0000  07_Slow_train.wav
+     6:30.09       68817212 B   ---   --   -----    wav  1.0000  08_Covenant_woman.wav
+     5:08.65       54484124 B   ---   --   -----    wav  1.0000  09_Gonna_change_my_way_of_thinking.wav
+     5:59.58       63464060 B   ---   --   -----    wav  1.0000  10_Do_right_to_me_baby__do_unto_others_.wav
+     4:39.67       49373228 B   ---   --   -----    wav  1.0000  11_Solid_rock.wav
+     4:51.44       51435932 B   ---   --   -----    wav  1.0000  12_Saving_grace.wav
+    68:13.31      722078640 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-16-A-Better-Contract\Fillers 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:50.74       40746092 B   ---   --   -----    wav  1.0000  01_Mr._Tambourine_Man.wav
+     4:34.64       48484172 B   ---   --   -----    wav  1.0000  02_The_times_they_are_a-changin_.wav
+     5:26.06       57520556 B   ---   --   -----    wav  1.0000  03_When_I_paint_my_masterpiece.wav
+     2:50.23       30042140 B   ---   --   -----    wav  1.0000  04_Seven_days.wav
+     4:19.03       45694700 B   ---   --   -----    wav  1.0000  05_Blowin__in_the_wind__with_Baez_.wav
+     2:50.64       30138572 B   ---   --   -----    wav  1.0000  06_I_dreamed_I_saw_St._Augustine__with_Beaz_.wav
+     4:13.31       44702156 B   ---   --   -----    wav  1.0000  07_Diamonds_and_rust__Joan_Baez_.wav
+     7:01.38       74353820 B   ---   --   -----    wav  1.0000  08_Like_a_rolling_stone.wav
+     5:45.66       61013276 B   ---   --   -----    wav  1.0000  09_Isis.wav
+    40:52.69      432695484 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-16-A-Better-Contract\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.33       50175260 B   ---   --   -----    wav  1.0000  01_Saved.wav
+     5:41.05       60164204 B   ---   --   -----    wav  1.0000  02_What_can_I_do_for_you.wav
+     7:51.38       83173820 B   ---   --   -----    wav  1.0000  03_In_the_garden.wav
+     4:46.30       50521004 B   ---   --   -----    wav  1.0000  04_Blessed_be_the_name.wav
+     7:27.05       78862604 B   ---   --   -----    wav  1.0000  05_Pressing_on.wav
+    30:30.36      322896892 B                            1.0000  (5 files)
+=================== 
+=================== 
+=================== 

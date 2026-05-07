@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-22-g.flacf
+===================
+===================
+===================
+1ffcbd0afca900d88b908173f5b12baa *0100 Intro.flac
+4ad55712532c1605d657a1b84067ccf8 *0101 Cocaine Blues.flac
+264230820001a50e4d43399f600f1eb1 *0102 Mr. Tambourine Man.flac
+8b539d7b0948d6b1e665f5e4fdedf907 *0103 Master Of War.flac
+65932c3b8653c7b97d5d5e442e396b5f *0104 It's All Over Now.flac
+77692538edad8f1b571c5c4b63db7e75 *0105 Mama, You Been.flac
+e4724bc8f57306c17e0be012da41f8d2 *0106 Tangled Up In Blue.flac
+2cfcb965c40ad558fe7f8b41ac5fcb55 *0107 One To Many Mornings.flac
+7137bf76c529850a4b8e43820639b151 *0201 Can't Wait.flac
+9a8b6e9ca914e066f59cefe0d59c3ca9 *0202 I'll Be Your Baby.flac
+77b4e691e60d739a9496748c84e648bc *0203 Stuck Inside Of Mobile.flac
+39237e43d2a022c67b36202e03129433 *0204 Not Dark Yet.flac
+72e377f2ef9fa4561d0b1b895b1dfa79 *0205 Highway 61 Revisited.flac
+01bd754fec1c002ef9fb433158781b28 *0206 Intro.flac
+d89870a9c12661ccf389689e4129908d *0206 Love Sick.flac
+a00d40fcbc91dc13b2865e804f86feae *0207 To Be Alone With You .flac
+7582eb49991435be7a4da2c01b53d86a *0208 Blowin' In The Wind .flac
+1cd0aaede1377f5024d487380338faa5 *0209 Like A Rolling Stone.flac
+5bd61e258d9b96a2bde20187d7a3d3de *Barcellona99B.jpg
+7419729372d48d066e303a2de2588bb7 *Barecellona99F.jpg
+1bbe47b83c8cdb620c3c64b06a872f7c *fingerprint.ffp.txt
+4cbf96b845f7b9943e32feb004925f21 *infos.txt
+86c03be5de9a1eb1d0d0c65c7c052026 *lbdir-bd99-04-22-g.flacf.txt
+52ead3247d98ebcf006430a4db6b2cad *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd99-04-22-g.flacf
+===================
+===================
+===================
+0100 Intro.flac:48373a1aef1fbdfdde16fb118e3c4947
+0101 Cocaine Blues.flac:6b8878c65df8d80fe50c6d2c8b4303d8
+0102 Mr. Tambourine Man.flac:193cabcdc6534505f1ee93cd11e1d9d4
+0103 Master Of War.flac:00198a264681c262833df2fc4fa16201
+0104 It's All Over Now.flac:a86f82c9eea12373bfebf8ce7ef9db49
+0105 Mama, You Been.flac:f9797e67169dbd6ddffe4291591ad5fb
+0106 Tangled Up In Blue.flac:b009ebc1bd85d651e8d50d279cf65bd8
+0107 One To Many Mornings.flac:bbd8a44010a22e52394eb15990bb60db
+0201 Can't Wait.flac:9aa8d3bd23a6c800dea6743a5f7b6cb9
+0202 I'll Be Your Baby.flac:21c6eb9f05b8943e2871a94c40f8a4fe
+0203 Stuck Inside Of Mobile.flac:4df4f22d0d49b20af426aa84dd90cae9
+0204 Not Dark Yet.flac:0078bf7f32975a73f84e7bae3d095fa4
+0205 Highway 61 Revisited.flac:ec896b73d83939bfb159491e6c60202b
+0206 Intro.flac:6e2da3cceabfc7cc1ad30f9a3a70101f
+0206 Love Sick.flac:6de493ccda75bf60368c116dbf306461
+0207 To Be Alone With You .flac:84b30738df614cbf1a79a7333670b00e
+0208 Blowin' In The Wind .flac:e7ef867dcef63021ad6abe0387a1a4f7
+0209 Like A Rolling Stone.flac:ef5d80d5546e02c0e6e7f574968e6446
+===================
+===================
+===================
+=== shntool len for: bd99-04-22-g.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:06.68       22386276 B   -b-   --   ---xx   flac  0.3661  0100 Intro.flac
+     3:54.70       41442284 B   ---   --   ---xx   flac  0.5332  0101 Cocaine Blues.flac
+     6:24.16       67775276 B   ---   --   ---xx   flac  0.5452  0102 Mr. Tambourine Man.flac
+     5:32.15       58600124 B   ---   --   ---xx   flac  0.5444  0103 Master Of War.flac
+     6:53.58       72989660 B   ---   --   ---xx   flac  0.5200  0104 It's All Over Now.flac
+     5:07.24       54211292 B   ---   --   ---xx   flac  0.4841  0105 Mama, You Been.flac
+     8:01.26       84909596 B   ---   --   ---xx   flac  0.5912  0106 Tangled Up In Blue.flac
+     6:01.22       63733188 B   -b-   --   ---xx   flac  0.4266  0107 One To Many Mornings.flac
+     7:06.48       75258268 B   -b-   --   ---xx   flac  0.5708  0201 Can't Wait.flac
+     5:53.45       62375084 B   ---   --   ---xx   flac  0.5472  0202 I'll Be Your Baby.flac
+     8:09.62       86405468 B   ---   --   ---xx   flac  0.5823  0203 Stuck Inside Of Mobile.flac
+     5:53.65       62422124 B   ---   --   ---xx   flac  0.4500  0204 Not Dark Yet.flac
+     5:53.69       62431532 B   ---   --   ---xx   flac  0.6279  0205 Highway 61 Revisited.flac
+     2:15.44       23917532 B   ---   --   ---xx   flac  0.4056  0206 Intro.flac
+     5:50.65       61892924 B   ---   --   ---xx   flac  0.5288  0206 Love Sick.flac
+     4:19.17       45727628 B   ---   --   ---xx   flac  0.6293  0207 To Be Alone With You .flac
+     5:43.01       60507596 B   ---   --   ---xx   flac  0.5102  0208 Blowin' In The Wind .flac
+     9:10.22       97072552 B   -b-   --   ---xx   flac  0.5784  0209 Like A Rolling Stone.flac
+   104:18.62     1104058404 B                            0.5377  (18 files)
+===================
+===================
+===================

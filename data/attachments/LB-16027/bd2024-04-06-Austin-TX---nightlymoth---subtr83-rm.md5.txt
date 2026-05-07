@@ -1,0 +1,20 @@
+23812f2e87ba01176a2299e59112d510 *01. Intro.flac
+53d774d4bd25ffcb4b4dc62bff7351dd *02. Watching the River Flow.flac
+1e9b38cde8fffa2036b6fbbc0e95e278 *03. Most Likely You Go Your Way (and I'll Go Mine).flac
+184d69cb63fca3e62330cdc7ba81d184 *04. I Contain Multitudes .flac
+52ac375b5722ab20e37b5c854200b6cf *05. False Prophet.flac
+602f7ed38228c324b7d273452087f419 *06. When I Paint My Masterpiece.flac
+78809b152da29bf4304653d648e5b195 *07. Black Rider.flac
+4921e69875c3a207a0860fe8f8fa983e *08. I'll Be Your Baby Tonight.flac
+ed2b81efb97991a20fed96c0bfb0a8e2 *09. My Own Version of You.flac
+3e57d1374f5107317ef8e71155bcbef3 *10. Crossing the Rubicon.flac
+192b4167c9652d7859e40d196eeadf3b *11. To Be Alone With You.flac
+5392d7bc2b3e2a67ac778a36b9579908 *12. Key West (Philosopher Pirate).flac
+f128b8b74d274aba8691890cb013117a *13. Gotta Serve Somebody.flac
+334602c49353953fcd91db131b70c834 *14. Walking By Myself.flac
+57b30c1049b370b3215b2655b531d68c *15. I've Made Up My Mind to Give Myself to You.flac
+fec7142848e4ee51003742554574d714 *16. Big River.flac
+1f3ac46fe4e539f89b978934182a37f0 *17. Mother of Muses.flac
+b1c4c223e101d14e40047b69438c1ce4 *18. Goodbye Jimmy Reed.flac
+6c511c69a898fd29a4d6f154013b2bfa *19. Every Grain of Sand.flac
+fc28afbe41d9a874f67bcc8c4a95a710 *info.txt

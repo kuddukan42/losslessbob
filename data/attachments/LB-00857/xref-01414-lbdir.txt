@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== md5 for: bd99-06-20-Olav-ASM.flacf
+===================
+===================
+===================
+3afdf4d5a873ed8f06309e9257be12e0 *03 It's all over now, baby blue.flac
+38795ccff02578c05367091d40a44e9c *04 Tangled up in blue.flac
+c46d675795465ca4be2a53b2c2e45680 *05 All along the watchtower.flac
+55ca062a0d7dd36f208c37002f3a5c54 *06 Just like a woman.flac
+0c7b31d2ebbb17f43a5048dcedebc05f *07 Stuck inside of Mobile with the Memphis blues again.flac
+7fd80196818b1f4f34583b106654d019 *08 Not dark yet.flac
+fa11f14d5cefdca87bd14d9f108467f7 *09 Highway 61 revisited.flac
+87fdc4df33c50a29584ef47a3089ee4c *10 Like a rolling stone.flac
+46bad9c66b8274a79f30871506143a39 *11 (encore).flac
+ca9fcf5170849ee908f17d1e42794e51 *11 Not fade away.flac
+5086f6a554ee2a6958c0441f54a5b387 *12 The sound of silence [w Paul Simon].flac
+3aef7c8e9fa631242221f0d32899eb32 *13 I walk the line [w Paul Simon].flac
+a0b531c4d0d25c46b8643babc1725bdc *14 Blue moon of Kentucky [w Paul Simon].flac
+11aeaf9f972b003fd0f960b39216faa3 *Info\1999-06-20 Arrowhead Pond of Anaheim, Anaheim, California, USA.doc
+ffb1127f4f27fb6abc7715637052ba45 *Info\ffp.txt
+===================
+===================
+===================
+=== ffp for: bd99-06-20-Olav-ASM.flacf
+===================
+===================
+===================
+03 It's all over now, baby blue.flac:9bcc6f14b7d540beb83502d11d5ad023
+04 Tangled up in blue.flac:5ce92af374b0edaf78cb1f4d72173143
+05 All along the watchtower.flac:e9f8cd10549af71fc8cc7cf5d8efc1dd
+06 Just like a woman.flac:fa07793e2c7ab3727b891a6ce546db76
+07 Stuck inside of Mobile with the Memphis blues again.flac:5f6061617be3f2075d0c6a29fb881391
+08 Not dark yet.flac:fe1d6227a2477175545c2a2f31255af0
+09 Highway 61 revisited.flac:490537f27957efd74d1006dd69818136
+10 Like a rolling stone.flac:328397b5d36c5719905dc0f92259ff19
+11 (encore).flac:36206af63516cc00f717fffd9d223030
+11 Not fade away.flac:1debe3bcbe3b0cc9f66f709f9f22965e
+12 The sound of silence [w Paul Simon].flac:5c0994059c84df02e3df97bfc10e7484
+13 I walk the line [w Paul Simon].flac:197e01915ee384c2bbc7db79db1ecacf
+14 Blue moon of Kentucky [w Paul Simon].flac:6f2264da92def6bb18685edd7af59abf
+===================
+===================
+===================
+=== shntool len for: bd99-06-20-Olav-ASM.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:06.02       75151148 B   ---   --   ---xx   flac  0.5790  03 It's all over now, baby blue.flac
+     8:58.26       94964396 B   ---   --   ---xx   flac  0.6484  04 Tangled up in blue.flac
+     4:54.71       52028636 B   ---   --   ---xx   flac  0.6399  05 All along the watchtower.flac
+     7:24.03       78328700 B   ---   --   ---xx   flac  0.5912  06 Just like a woman.flac
+     7:35.21       80311436 B   ---   --   ---xx   flac  0.6265  07 Stuck inside of Mobile with the Memphis blues again.flac
+     6:41.08       70755260 B   ---   --   ---xx   flac  0.5231  08 Not dark yet.flac
+     6:49.46       72255836 B   ---   --   ---xx   flac  0.6623  09 Highway 61 revisited.flac
+     7:09.36       75760316 B   ---   --   ---xx   flac  0.6217  10 Like a rolling stone.flac
+     0:24.18        4275980 B   ---   --   ---xx   flac  0.5077  11 (encore).flac
+     3:31.23       37274540 B   ---   --   ---xx   flac  0.6620  11 Not fade away.flac
+     7:04.39       74885372 B   ---   --   ---xx   flac  0.5139  12 The sound of silence [w Paul Simon].flac
+     0:55.19        9746732 B   ---   --   ---xx   flac  0.5758  13 I walk the line [w Paul Simon].flac
+     2:20.61       24839516 B   ---   --   ---xx   flac  0.6350  14 Blue moon of Kentucky [w Paul Simon].flac
+    70:54.73      750577868 B                            0.6045  (13 files)
+===================
+===================
+===================

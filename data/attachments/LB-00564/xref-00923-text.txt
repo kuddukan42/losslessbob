@@ -1,0 +1,180 @@
+===================
+===================
+===================
+=== BOB DYLAN - Omaha, Nebraska November 4th 1978.md5
+===================
+===================
+===================
+83d308c1aaf0459986a7c44aff2e3113 *BOB DYLAN - Omaha, Nebraska November 4th 1978_Info.txt
+2926d96c697aa593563c0d4a10ce631c *Omaha, Nebraska 04.11.1978 - F.jpeg
+afae10b719300fe4e1dedc642797612b *Omaha, Nebraska 04.11.1978 - R.jpeg
+6d280e0401180524f0adc25c293e2113 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 01.flac
+bed0e26f1a8528b966f161783ec64dc8 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 02.flac
+94c25f7393d909b19f12730ffeab0b60 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 03.flac
+b2c613b02960ad18d59ec01dc23d2ebd *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 04.flac
+8536eebb8eca6edf51269ecdee1ab28b *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 05.flac
+4ed2e0f98708a91569104eb05d8b40fe *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 06.flac
+894ba49d77466cf94ee27cb82b49ef56 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 07.flac
+f1a655b957e67fbddccdd7671028c68c *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 08.flac
+c890366cc0af3cecc6fe7d80d1b39090 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 09.flac
+fda89c6070c4222eccf7ae511c11ccf5 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 10.flac
+d4f8e234ef6d92c6b6b9663cba196b07 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 11.flac
+73b9c9e252dec7922310d1a3cf7ba4e7 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 12.flac
+808f8b3d3f12257d8e16f90f0b9f3fc3 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 13.flac
+9346c6561b49967c7059d69380ada456 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 14.flac
+ec776d73f03418b6701ed694a59f40ad *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 15.flac
+b0935b763f27b3cd38af1503539400b9 *Disc One\Disc One.ffp
+3fc59caa52a870ddb3eeb9722751f9bb *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 01.flac
+ad85111a7bb251934234119f58e61825 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 02.flac
+dcf48a077d347c41bc1c03b27e06b339 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 03.flac
+e5972cf63c30cfc81e7d21362caacf4a *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 04.flac
+305f759696d222d28b7a39d9512f92a1 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 05.flac
+256f2dc01b09ca39b65f4a0b8503296c *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 06.flac
+d02b6ec20d39bc460bef2ceaa029bd73 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 07.flac
+b9ba866166cec32cedefc56af6bbc76c *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 08.flac
+69347d3ada6b256d95a2f0e8d514d9d5 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 09.flac
+ecfc8e39a83367fcad6403ad86b0e3be *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 10.flac
+be160e7f0470c9f20722357bc0ce62a3 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 11.flac
+e506b4c6cb4b3d96485bc8966216f285 *Disc Two\Disc Two.ffp
+===================
+===================
+===================
+=== BOB DYLAN - Omaha, Nebraska November 4th 1978.txt
+===================
+===================
+===================
+83d308c1aaf0459986a7c44aff2e3113 *BOB DYLAN - Omaha, Nebraska November 4th 1978_Info.txt
+2926d96c697aa593563c0d4a10ce631c *Omaha, Nebraska 04.11.1978 - F.jpeg
+afae10b719300fe4e1dedc642797612b *Omaha, Nebraska 04.11.1978 - R.jpeg
+6d280e0401180524f0adc25c293e2113 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 01.flac
+bed0e26f1a8528b966f161783ec64dc8 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 02.flac
+94c25f7393d909b19f12730ffeab0b60 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 03.flac
+b2c613b02960ad18d59ec01dc23d2ebd *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 04.flac
+8536eebb8eca6edf51269ecdee1ab28b *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 05.flac
+4ed2e0f98708a91569104eb05d8b40fe *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 06.flac
+894ba49d77466cf94ee27cb82b49ef56 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 07.flac
+f1a655b957e67fbddccdd7671028c68c *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 08.flac
+c890366cc0af3cecc6fe7d80d1b39090 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 09.flac
+fda89c6070c4222eccf7ae511c11ccf5 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 10.flac
+d4f8e234ef6d92c6b6b9663cba196b07 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 11.flac
+73b9c9e252dec7922310d1a3cf7ba4e7 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 12.flac
+808f8b3d3f12257d8e16f90f0b9f3fc3 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 13.flac
+9346c6561b49967c7059d69380ada456 *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 14.flac
+ec776d73f03418b6701ed694a59f40ad *Disc One\Bob Dylan - Omaha 04.11.78_Disc 01 Track 15.flac
+b0935b763f27b3cd38af1503539400b9 *Disc One\Disc One.ffp
+3fc59caa52a870ddb3eeb9722751f9bb *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 01.flac
+ad85111a7bb251934234119f58e61825 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 02.flac
+dcf48a077d347c41bc1c03b27e06b339 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 03.flac
+e5972cf63c30cfc81e7d21362caacf4a *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 04.flac
+305f759696d222d28b7a39d9512f92a1 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 05.flac
+256f2dc01b09ca39b65f4a0b8503296c *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 06.flac
+d02b6ec20d39bc460bef2ceaa029bd73 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 07.flac
+b9ba866166cec32cedefc56af6bbc76c *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 08.flac
+69347d3ada6b256d95a2f0e8d514d9d5 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 09.flac
+ecfc8e39a83367fcad6403ad86b0e3be *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 10.flac
+be160e7f0470c9f20722357bc0ce62a3 *Disc Two\Bob Dylan - Omaha 04.11.78_Disc 02 Track 11.flac
+e506b4c6cb4b3d96485bc8966216f285 *Disc Two\Disc Two.ffp
+===================
+===================
+===================
+=== BOB DYLAN - Omaha, Nebraska November 4th 1978_Info.txt
+===================
+===================
+===================
+BOB DYLAN - Omaha, Nebraska November 4th 1978 (Transfer from Tape, JTT)
+
+BOB DYLAN
+Civic Auditorium,
+Omaha, Nebraska
+November 4th 1978
+
+Good Audience Recording, No Cuts
+
+Lineage: Low Generation Cassettes, TDK AD90/AD60 (GS) > Akai GX95 11 >
+Soundforge PRO 10c > FLAC Level 8
+
+Mono Recording (Left Channel Used)
+
+NO SOUND REMASTERING
+
+Mastered to Digital by JTT, November 2011
+
+Artwork by JTT
+
+Disc One
+01. MY BACK PAGES
+02. SHE'S LOVE CRAZY
+03. MR. TAMBOURINE MAN
+04. SHELTER FROM THE STORM
+05. IT'S ALL OVER NOW, BABY BLUE
+06. TANGLED UP IN BLUE
+07. BALLAD OF A THIN MAN
+08. MAGGIE'S FARM
+09. I DON'T BELIEVE YOU
+10. LIKE A ROLLING STONE
+11. I SHALL BE RELEASED
+12. SENOR
+13. THE TIMES THEY ARE A-CHANGIN'
+14. IT AIN'T ME, BABE,
+15. ONE MORE CUP OF COFFEE
+
+Disc Two
+01. BLOWIN' IN THE WIND
+02. GIRL FROM THE NORTH COUNTRY,
+03. WHERE ARE YOU TONIGHT
+04. MASTERS OF WAR
+05. JUST LIKE A WOMAN
+06. TO RAMONA
+07. ALL ALONG THE WATCHTOWER
+08. ALL I REALLY WANT TO DO
+09. IT'S ALRIGHT, MA (I'M ONLY BLEEDING)
+10. FOREVER YOUNG
+11. CHANGING OF THE GUARDS
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+PLEASE DO NOT CONVERT TO LOSSY FILES AND UPLOAD LINKS ON EXPECTING RAIN OR OTHER SITES
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+===================
+===================
+===================
+=== Disc One.ffp
+===================
+===================
+===================
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 01.flac:b0bfa2faa4ea824308138d6ff9e3ce7f
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 02.flac:93918b4e0b4c67d4a3a69927e11bdc34
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 03.flac:f5e5646ec4fff66d0b971c4ed4ccd756
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 04.flac:1f700c0d3658a9ae63b96d1ae1a0b8c0
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 05.flac:1120712bcc4fd6933412165e859eb653
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 06.flac:f2b7e6237333ed8b12337d412b57f245
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 07.flac:c78ade7e5caa85ad04b5efead684945d
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 08.flac:aff189d334e08757ced1b548b819aca1
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 09.flac:802a839799738efe5c7318afd57828fd
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 10.flac:6027182ebe1aadfc64e2497e3d80c470
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 11.flac:eeaf504a3b1f85f150a92a0a36d4f343
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 12.flac:72404c2f284a4bcd0810b955de36d83c
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 13.flac:5b0ba1dacfae8fad104a1cdc4321bb8a
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 14.flac:8289a662a31cbaefc5d2685ea7aa05ea
+Bob Dylan - Omaha 04.11.78_Disc 01 Track 15.flac:f76d3b63a6a20e21c8b546da2694ac01
+===================
+===================
+===================
+=== Disc Two.ffp
+===================
+===================
+===================
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 01.flac:10334f138647a3792fb1e36c33fe3b57
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 02.flac:d0264cbd7a29c15d83e03876bf6bfb23
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 03.flac:f661090c4b622e2b00ac4851ee2563aa
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 04.flac:218f9f42d126f65bb9275558f215e961
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 05.flac:b64ad52516f68a609a953bc69551ad46
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 06.flac:a7dfe3ae886d78a2201bb3b581d9e16b
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 07.flac:813d9a8d640cfb162b839c6885f8b8f2
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 08.flac:b1347a5de7a963d0d6651e803603c26c
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 09.flac:2559c24507811a75ab233d66fa94f6e6
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 10.flac:cd9ac2b2e8c5827d653f7a57afbd4b41
+Bob Dylan - Omaha 04.11.78_Disc 02 Track 11.flac:515610fba993fa4e6816be9571ac36b2
+===================
+===================
+===================

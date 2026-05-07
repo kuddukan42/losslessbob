@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-09-jtt-1st-gen 
+=================== 
+=================== 
+=================== 
+2000e7f2da8d3cf2db0078eee7005ef6  bd1981-07-09 d1t01.shn
+af89e24b8a994789609d39b11b030e36  bd1981-07-09 d1t02.shn
+910b966dba66aad353192b1ede2f5bf8  bd1981-07-09 d1t03.shn
+cc3afa314ba545d01aa5f935b1d76ada  bd1981-07-09 d1t04.shn
+a5ba6b51f1d1f2606ec6c00061664837  bd1981-07-09 d1t05.shn
+2a64f9e0f283d829fa66d049037a8e9f  bd1981-07-09 d1t06.shn
+d1476e48235d7cdde2ce438b7d23de1c  bd1981-07-09 d1t07.shn
+c337a4b612a414e2b40ef2a56a91c93b  bd1981-07-09 d1t08.shn
+85d12a0fcafc9cf260afe735c964f347  bd1981-07-09 d1t09.shn
+f3432e1b343292072e73426d5e7f2cd2  bd1981-07-09 d1t10.shn
+fa4e3ada50a7d0bbfc44844d616da8d2  bd1981-07-09 d1t11.shn
+c8ed17aff0ac2092bbc5f5f453236374  bd1981-07-09 d1t12.shn
+c5234021db029cff07ed45c28546fedc  bd1981-07-09 d1t13.shn
+6d2e4a8d3c47b16c22f6c82bee270d6a  bd1981-07-09 d1t14.shn
+041a055df39129b25c3d80286714c6f4  bd1981-07-09 d2t01.shn
+8390088a21f823d7331ce2c33bff84b7  bd1981-07-09 d2t02.shn
+eeb61c3630bd025f606b628c1e2bf893  bd1981-07-09 d2t03.shn
+c6edd63c0b583fbbf14f7a3826d84683  bd1981-07-09 d2t04.shn
+0c14c66985b66d353bc08c6d79baa190  bd1981-07-09 d2t05.shn
+8be7a9de613d4eb4074edb5534bd1c03  bd1981-07-09 d2t06.shn
+ba74cb62e39b0b9638415caf856f6806  bd1981-07-09 d2t07.shn
+f4226a197aec40b63aa66d6343e8218c  bd1981-07-09 d2t08.shn
+14420aee4f4e6d82edded5e6d4080220  bd1981-07-09 d2t09.shn
+0b3e152b9ef9cc246b78fa502cb6c3ba  bd1981-07-09 d2t10.shn
+15151b88bbfb55b3b9dde4adea00ec87  bd1981-07-09 d2t11.shn
+7a1f597a4ca20bb6bad648fcffb2cbf8  bd1981-07-09 d2t12.shn
+33889db14433e466340b737d01783c61  bd1981-07-09 drammen.md5
+6b38acb30a9c0973a20906e8b314466a  bd1981-07-09 drammen.txt
+475716205cf02bcd7977733a61f2fc0a  bd1981-07-09 drammen_FINGERPRINTS.txt
+2115f55e3ac50f5e6e819012dc8b72fa  bd81-07-09-jtt-1st-gen-LB-2865.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd81-07-09-jtt-1st-gen 
+=================== 
+=================== 
+=================== 
+869ec6cf150c27af74521f84ab350ba6  [shntool]  bd1981-07-09_d1t01.wav
+84a76129e3992eaeb1db5d1c00617cce  [shntool]  bd1981-07-09_d1t02.wav
+23031ae25fee6dc227249aa364cd3b3d  [shntool]  bd1981-07-09_d1t03.wav
+76b67ddfe7e789247679a67e95129cb8  [shntool]  bd1981-07-09_d1t04.wav
+bef371ecb0a5ba18dfc507b1f27ee74e  [shntool]  bd1981-07-09_d1t05.wav
+4bc3ed895bd2f7041f2efe5bc3601d5f  [shntool]  bd1981-07-09_d1t06.wav
+7fb0247509da61dd5b57c90dda6e73f0  [shntool]  bd1981-07-09_d1t07.wav
+7b65e565485637c1dbf90a5813db756c  [shntool]  bd1981-07-09_d1t08.wav
+36fb32bebadf446db5a713158a55654b  [shntool]  bd1981-07-09_d1t09.wav
+37266b0d189d6b7b54c24a516cd4530b  [shntool]  bd1981-07-09_d1t10.wav
+029e4f2c8b035e236614b96057ae0c0a  [shntool]  bd1981-07-09_d1t11.wav
+2aa72ef12512d09e0340ae394edc6538  [shntool]  bd1981-07-09_d1t12.wav
+4792fbac3b4e6089e26db54b0987937e  [shntool]  bd1981-07-09_d1t13.wav
+f3ff31b0fedee631da406a12e2deb789  [shntool]  bd1981-07-09_d1t14.wav
+1233c07d1ceaf5e51964137a947a41f0  [shntool]  bd1981-07-09_d2t01.wav
+fb86f7bcbbe42d742c5e8bae7d078805  [shntool]  bd1981-07-09_d2t02.wav
+7569fe4d93b7b12c249d9191e9bfd367  [shntool]  bd1981-07-09_d2t03.wav
+2d28a524acf1c0dcebd55d58bdf9ecaa  [shntool]  bd1981-07-09_d2t04.wav
+09ecc9827dfdff4b1a4427fb418f2f5c  [shntool]  bd1981-07-09_d2t05.wav
+117b0cbdea8da908b2406587f71a1dac  [shntool]  bd1981-07-09_d2t06.wav
+c815bf4d525ce788a3406c124e49bba9  [shntool]  bd1981-07-09_d2t07.wav
+6e046cb88f28b6bfe3f4ab2591b9bb30  [shntool]  bd1981-07-09_d2t08.wav
+7807a14852ea1cb8cf41c8275ea3a2d7  [shntool]  bd1981-07-09_d2t09.wav
+6f88ae7c72372119cab0d60ce0469751  [shntool]  bd1981-07-09_d2t10.wav
+b84900c160ef0d4898bba084f2c41701  [shntool]  bd1981-07-09_d2t11.wav
+eafcbec3f6832e5ad81fab309f78cf9c  [shntool]  bd1981-07-09_d2t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-09-jtt-1st-gen 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.16       45372476 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t01.wav
+     5:01.18       53138780 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t02.wav
+     7:04.56       74925356 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t03.wav
+     3:16.09       34595612 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t04.wav
+     4:44.38       50187020 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t05.wav
+     4:08.66       43902476 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t06.wav
+     4:59.50       52861244 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t07.wav
+     4:36.04       48695852 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t08.wav
+     5:03.48       53562140 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t09.wav
+     3:58.67       42140828 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t10.wav
+     4:57.71       52557836 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t11.wav
+     4:58.42       52666028 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t12.wav
+     3:24.44       36089132 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t13.wav
+     4:32.14       48013772 B   ---   --   -----    wav  1.0000  bd1981-07-09_d1t14.wav
+     3:15.18       34440380 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t01.wav
+     5:25.36       57414716 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t02.wav
+     4:02.67       42846428 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t03.wav
+     4:17.12       45363068 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t04.wav
+     4:32.53       48105500 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t05.wav
+     4:17.46       45443036 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t06.wav
+     3:41.51       39104396 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t07.wav
+     5:24.42       57252428 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t08.wav
+    11:18.36      119683916 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t09.wav
+     4:47.50       50744444 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t10.wav
+     4:50.28       51221900 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t11.wav
+     6:17.12       66531068 B   ---   --   -----    wav  1.0000  bd1981-07-09_d2t12.wav
+   127:15.19     1346859832 B                            1.0000  (26 files)
+=================== 
+=================== 
+=================== 

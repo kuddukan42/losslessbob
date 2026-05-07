@@ -1,0 +1,17 @@
+6da7b420ec4ac73ea82558d6a8da9aa3 *Bob Dylan MSG 18 Jan 1998 FLAC.txt
+22b33036acb9e4bc9e7985b75104446c *Disc 1\Track01.flac
+49a7fb9e0d0f2d494c4811f764726fe5 *Disc 1\Track02.flac
+70a7cd020da76d451b6c81943ccbd3b8 *Disc 1\Track03.flac
+d354c756ca74bba7ff603f034c7ad594 *Disc 1\Track04.flac
+0f3bcb10a454c9a47fb64bcb0293d69c *Disc 1\Track05.flac
+1a02e39565c989f097048ad5bdd91c79 *Disc 1\Track06.flac
+e924c4a81d8cca6f5fc6b45ae9292516 *Disc 1\Track07.flac
+f2f6e3f0af00f4f4a29a56bf878360ff *Disc 2\Track01.flac
+b20b7c88d11d0c034a2359c0b3493321 *Disc 2\Track02.flac
+567712547ebc0e8b2fbf7a9cdc9931aa *Disc 2\Track03.flac
+98eadae4468b028baa84db566829a97c *Disc 2\Track04.flac
+7a051f8d1c19bd45e39dba58f756c7c9 *Disc 2\Track05.flac
+13f5c7eea46e99bbd1949e3b8eba03b4 *Disc 2\Track06.flac
+8938bd9458ed5023e983fce5aab1e3fe *Disc 2\Track07.flac
+7d241938d21737b436236123513306f4 *Disc 2\Track08.flac
+0245e70a191f880d577a910560630f5d *Disc 2\Track09.flac

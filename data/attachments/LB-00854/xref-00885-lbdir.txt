@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-11-04-c.flacf 
+=================== 
+=================== 
+=================== 
+c2f50ea0879ea9e008fc14fdbd9b3ee0  disk 1\1 Man In The Long Black Coat.flac
+c11e786ca7f2af876b55f1eeb02a757d  disk 1\10 Gates Of Eden.flac
+c43a074e31fcc3ed2372e7b1236b47f2  disk 1\11 Don't Think Twice.flac
+43ee1a77e65d0c39b2f6256665b78739  disk 1\12 It Ain't Me,Babe.flac
+c2c9fe10eb1899cf70f73c3a9d2ade91  disk 1\2 Watching The River Flow.flac
+a709fa7c4638fb10b9bc072abee4ad41  disk 1\3 Simple Twist Of Fate.flac
+2b5e1654a1dc8389500ffb176cd6cdfe  disk 1\4 I'll Be Your Baby Tonight.flac
+d7d58fdb8db172a398803fd203ec7aea  disk 1\5 All Along The Watchtower.flac
+1686fcc13e75583a6ffb767a69e3f6fc  disk 1\6 Gotta Serve Somebody.flac
+470bc7e6548dd3650a2cac438952645b  disk 1\7 Answer Me.flac
+f19c192392367fd9201ac623babf481a  disk 1\8 Maggie's Farm.flac
+6a9c73159c688b148a5bb85ba8420987  disk 1\9 Golden Vanity.flac
+5e542e4155c32898661a53aac8382fde  disk 1\disk 1.txt
+161a957223c21d1fdc5c2bfe481a951a  disk 1\md5sum.md5
+55b9994e736fc023431bc807be80b9f5  disk 2\1 Folsom Prison Blues.flac
+8cc23df8fd8f913037254e8bea42d233  disk 2\2 I'll Remember You.flac
+ef0036f13fb57595cfb52d80249ef4fa  disk 2\3 Everything Is Broken.flac
+f7c40b2568100fe85526d79c2fa2c5d9  disk 2\4 Ballad Of A Thin Man.flac
+b49cd878985347602e066a3b3edbbf05  disk 2\5 What Good Am I_.flac
+46a643a7db03c48fbbd2c350b46bc17d  disk 2\6 Highway 61 Revisited.flac
+525126af688c48b4aa4ff6610d95acda  disk 2\disk 2.txt
+347e88a2680344a1e96f06ab0cf62f04  disk 2\md5sum.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-11-04-c.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+1 Man In The Long Black Coat.flac:df2aee8df6230f3fb4ea653cc3c77651
+10 Gates Of Eden.flac:cdf5d069f79cc7da343d3fd318a5a3fe
+11 Don't Think Twice.flac:897c074c3bdd3391d52c26efe80b5d25
+12 It Ain't Me,Babe.flac:de9cc8a7788176e178f4a301ea6fe6bb
+2 Watching The River Flow.flac:496c48b27fe75472163c527839ecc704
+3 Simple Twist Of Fate.flac:9ff53f8d0292ee24b7f1ac84f945a6b1
+4 I'll Be Your Baby Tonight.flac:3e633b0342cee03a3ddb10baaf940db9
+5 All Along The Watchtower.flac:f0f0920471b251728e47a3f25329fe7a
+6 Gotta Serve Somebody.flac:d8fa7608743967c21bc1ab4eac11f3dc
+7 Answer Me.flac:3f681c0a66ed0e1f81b95ec5293c2e27
+8 Maggie's Farm.flac:2521c28b871875c5e260dd2fc6ec6e19
+9 Golden Vanity.flac:6e148ec3bd4e5e2f2bfc62d4e7bef512
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-11-04-c.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+1 Folsom Prison Blues.flac:f667b7bc75d921afe6440e5def3bb382
+2 I'll Remember You.flac:d65e2561b233298b620464bfc66bd0eb
+3 Everything Is Broken.flac:f5d0b651de55a305d207d73850cfbb51
+4 Ballad Of A Thin Man.flac:f653d04a54dcf278f05ee23f43d820bf
+5 What Good Am I_.flac:61135899bf9d7339eb8f572145f2c5e7
+6 Highway 61 Revisited.flac:4079781e317a3499032151095d963c79
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-11-04-c.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:34.05       69513404 B   ---   --   ---xx   flac  0.5990  1 Man In The Long Black Coat.flac
+     6:24.65       67890524 B   ---   --   ---xx   flac  0.5996  10 Gates Of Eden.flac
+     5:14.07       55406108 B   ---   --   ---xx   flac  0.6217  11 Don't Think Twice.flac
+     7:13.11       76407116 B   ---   --   ---xx   flac  0.6023  12 It Ain't Me,Babe.flac
+     5:11.27       54923948 B   ---   --   ---xx   flac  0.6218  2 Watching The River Flow.flac
+     7:59.71       84662636 B   ---   --   ---xx   flac  0.5905  3 Simple Twist Of Fate.flac
+     4:28.11       47301116 B   ---   --   ---xx   flac  0.6300  4 I'll Be Your Baby Tonight.flac
+     4:40.43       49493180 B   ---   --   ---xx   flac  0.6099  5 All Along The Watchtower.flac
+     7:12.03       76211900 B   ---   --   ---xx   flac  0.6030  6 Gotta Serve Somebody.flac
+     4:36.33       48764060 B   ---   --   ---xx   flac  0.5645  7 Answer Me.flac
+     6:07.05       64750604 B   ---   --   ---xx   flac  0.5962  8 Maggie's Farm.flac
+     6:26.39       68182172 B   ---   --   ---xx   flac  0.5565  9 Golden Vanity.flac
+    72:08.20      763506768 B                            0.5985  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-11-04-c.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.12       47303468 B   ---   --   ---xx   flac  0.5865  1 Folsom Prison Blues.flac
+     4:54.49       51976892 B   ---   --   ---xx   flac  0.5875  2 I'll Remember You.flac
+     4:17.10       45358364 B   ---   --   ---xx   flac  0.6262  3 Everything Is Broken.flac
+     8:12.56       86920556 B   ---   --   ---xx   flac  0.5989  4 Ballad Of A Thin Man.flac
+    10:11.20      107827484 B   ---   --   ---xx   flac  0.5385  5 What Good Am I_.flac
+     6:27.64       68417372 B   ---   --   ---xx   flac  0.5811  6 Highway 61 Revisited.flac
+    38:31.61      407804136 B                            0.5801  (6 files)
+=================== 
+=================== 
+=================== 

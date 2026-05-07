@@ -1,0 +1,147 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-14-early-jm-krwco.flacf 
+=================== 
+=================== 
+=================== 
+59f82f36f604f3d4ae120fc6285d73e8  DISC ONE\EAC.log
+d8ad0957f19b763f41997c0499aceb86  DISC ONE\Track01.flac
+a0fe4896ec4288cfb6eb0f829aedfc27  DISC ONE\Track02.flac
+caca472f7427a277a54f9f135d4f6530  DISC ONE\Track03.flac
+d0df865ba4f7b8dbce0aba6cc7f69c64  DISC ONE\Track04.flac
+5e4bc8494eff04ee8088d20597c05b15  DISC ONE\Track05.flac
+a180b7b5fe89ba30d4883e335aeeef11  DISC ONE\Track06.flac
+db97895329bd6950344fa8cb9f07f24b  DISC ONE\Track07.flac
+c32b8c5853d03cf529e9f70f1272d577  DISC ONE\Track08.flac
+bfee4d7dfad2212b78e4613bbb552c28  DISC ONE\Track09.flac
+6c21f30773c25182230829f48fab223c  DISC ONE\Track10.flac
+afed1dad931cd0671781969972307053  DISC THREE\EAC.LOG
+7cd951f3a811b56e376169ac9bca2c36  DISC THREE\Track01.flac
+3e356e4cbfe6d4b39fea8de560e1a5d5  DISC THREE\Track02.flac
+4f1f5a8f0104277414b7cd81455cd516  DISC THREE\Track03.flac
+98eefe7d354aa05f7c26b5782057fc4c  DISC THREE\Track04.flac
+9f507b904b7759e6330d167313dfa1de  DISC THREE\Track05.flac
+45bc102e92a2a97990e506a8d5bb91fa  DISC THREE\Track06.flac
+a2f8828f3c5671d1d7d43f41a0cb08de  DISC THREE\Track07.flac
+2d16c1c651caffc28d605cd6b18aab04  DISC THREE\Track08.flac
+737f9f23f673e832d07aff1a2952e7ed  DISC THREE\Track09.flac
+47e84d2ab66231749661a37a2fce99d6  DISC TWO\EAC.LOG
+3466e1f1cdccfec1c412081aea0e99a9  DISC TWO\Track01.flac
+e688d15a1a2de50882c3dd59ae76efbf  DISC TWO\Track02.flac
+03722fab2d03b6e48c6c9d5f038ba8a7  DISC TWO\Track03.flac
+99bb2e80420674c8b90170e8d7b4e16d  DISC TWO\Track04.flac
+d83081c6205140e484e5b937188280f7  DISC TWO\Track05.flac
+c58540740b215ba9d8ac5e3e7cadfde4  DISC TWO\Track06.flac
+d6c48446df864aaf415359d432fc51ff  DISC TWO\Track07.flac
+f45fd4c181834e0552607d6f2c7282ea  DISC TWO\Track08.flac
+b87e5b0a856e97e2df99049bd808d1fd  DISC TWO\Track09.flac
+3f3c4ac507d2d0f8e8c76954f9dbe55f  DYLAN BOSTON 1974 EARLY.md5
+98004af5a078bef40425866774c25add  INFO.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-14-early-jm-krwco.flacf\DISC ONE 
+=================== 
+=================== 
+=================== 
+Track01.flac:209ac9660efc8cbc74d738178554d363
+Track02.flac:8c846e3da89101c7395d79ed6b66beeb
+Track03.flac:3308cdcf5961255a76e788c90b602c6e
+Track04.flac:ee1a44d260123349a34532919f088dbe
+Track05.flac:178e36d1600eb1d5b72dc834aaff567f
+Track06.flac:e633881f4e9bfc09e58d036a73a5855d
+Track07.flac:f70d32ffbb8a04f96a27f8e0f6683798
+Track08.flac:fa8967121f0ba29dbe2b147adcf1ff98
+Track09.flac:7a7d191a2ebe745503aa8015e188fef2
+Track10.flac:50ca40bbe97951ae16c2fe2a0e9a47a9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-14-early-jm-krwco.flacf\DISC THREE 
+=================== 
+=================== 
+=================== 
+Track01.flac:e4c3fa84409d08302ebdb1179ae414bd
+Track02.flac:07ec05e3f8e12f7b019dbaafaea8e411
+Track03.flac:fd82137e0644d0bf08fb2c1b6c61605e
+Track04.flac:012b272b32c4c315d8a13e6aa3562c4c
+Track05.flac:facba654aad937c0c90af6105195ffed
+Track06.flac:e6ec85acf8096f43bcd451f08330f2dc
+Track07.flac:2f2869d69e74c0db6b0bbbc4e1b740f2
+Track08.flac:5109574ac61511c09503985fbcc8ef26
+Track09.flac:97da7d12e52121d06d66d32d94799a22
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-14-early-jm-krwco.flacf\DISC TWO 
+=================== 
+=================== 
+=================== 
+Track01.flac:db096d862a6ad1d7c9a93f730ae00630
+Track02.flac:773865a31e1f97b63c2001b6b98be75b
+Track03.flac:8c55351f00620f9b14d07c6cd9b10dfa
+Track04.flac:5d6b4081e084934aca815767714584a1
+Track05.flac:a08f76b44b10db38e39c46866058ed6c
+Track06.flac:613c08f7d2d5368e3e245669e46b39de
+Track07.flac:ee47e98b16c508de3df483a96b57723e
+Track08.flac:6e1a23999f9d1f666fadd020d8b4b983
+Track09.flac:3b4a6e505ecdacd38285b972f8d3619a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14-early-jm-krwco.flacf\DISC ONE 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:55.63       41602220 B   ---   --   ---xx   flac  0.6068  Track01.flac
+     3:22.10       35656364 B   ---   --   ---xx   flac  0.6076  Track02.flac
+     6:04.73       64381340 B   ---   --   ---xx   flac  0.6301  Track03.flac
+     4:05.73       43389740 B   ---   --   ---xx   flac  0.6223  Track04.flac
+     5:41.74       60326492 B   ---   --   ---xx   flac  0.6327  Track05.flac
+     4:09.06       43937756 B   ---   --   ---xx   flac  0.6347  Track06.flac
+     4:48.02       50807948 B   ---   --   ---xx   flac  0.6319  Track07.flac
+     4:52.72       51678188 B   ---   --   ---xx   flac  0.6092  Track08.flac
+     3:55.01       41456396 B   ---   --   ---xx   flac  0.6179  Track09.flac
+     3:49.68       40555580 B   ---   --   ---xx   flac  0.6341  Track10.flac
+    44:45.67      473792024 B                            0.6236  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14-early-jm-krwco.flacf\DISC THREE 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.08       77105660 B   ---   --   ---xx   flac  0.6187  Track01.flac
+     4:06.17       43434428 B   ---   --   ---xx   flac  0.6132  Track02.flac
+     4:08.00       43747244 B   ---   --   ---xx   flac  0.6177  Track03.flac
+     4:00.55       42465404 B   ---   --   ---xx   flac  0.6463  Track04.flac
+     4:32.68       48140780 B   ---   --   ---xx   flac  0.6333  Track05.flac
+     6:23.73       67732940 B   ---   --   ---xx   flac  0.6280  Track06.flac
+     4:44.72       50266988 B   ---   --   ---xx   flac  0.6581  Track07.flac
+     8:20.10       88223564 B   ---   --   ---xx   flac  0.6603  Track08.flac
+     4:40.30       49462604 B   ---   --   ---xx   flac  0.6417  Track09.flac
+    48:14.33      510579612 B                            0.6363  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14-early-jm-krwco.flacf\DISC TWO 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.35       43653164 B   ---   --   ---xx   flac  0.6141  Track01.flac
+     5:12.70       55201484 B   ---   --   ---xx   flac  0.6403  Track02.flac
+     2:48.01       29637596 B   ---   --   ---xx   flac  0.6386  Track03.flac
+     4:25.72       46915388 B   ---   --   ---xx   flac  0.6276  Track04.flac
+     5:09.15       54542924 B   ---   --   ---xx   flac  0.6126  Track05.flac
+     3:41.74       39158492 B   ---   --   ---xx   flac  0.6153  Track06.flac
+     4:07.63       43719020 B   ---   --   ---xx   flac  0.6290  Track07.flac
+     5:02.73       53444540 B   ---   --   ---xx   flac  0.6122  Track08.flac
+     4:12.18       44495180 B   ---   --   ---xx   flac  0.6129  Track09.flac
+    38:48.46      410767788 B                            0.6221  (9 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-22-UMM.flacf 
+=================== 
+=================== 
+=================== 
+acdbb405ef3351f21a87b7e3ce9f9ec4  bd_99_7_22_disc01track01.flac
+b1290de2f372e606b5d7a3b1f713a010  bd_99_7_22_disc01track02.flac
+809a9281003a58618f1b731785f03b85  bd_99_7_22_disc01track03.flac
+bee69d64c5df804289625e75520c1786  bd_99_7_22_disc01track04.flac
+321b35e70a535049ddb7320659ed61a5  bd_99_7_22_disc01track05.flac
+40904df0644ab40d689480bdd278e17b  bd_99_7_22_disc01track06.flac
+6110f4f8cc92795abd86b4ab03b454d1  bd_99_7_22_disc01track07.flac
+086c6968a8caf3930a6b08b0ce87aaa7  bd_99_7_22_disc01track08.flac
+656df4b621ba74fb8ea9282c5ad9ae53  bd_99_7_22_disc01track09.flac
+5aa0fb9beec58d5e7225cc80653c364b  bd_99_7_22_disc01track10.flac
+1a9cd14b0b5c89c71f8b1077f309485f  bd_99_7_22_disc01track11.flac
+daf674bf978aaa154e4433a3da9bb2a0  bd_99_7_22_disc02track01.flac
+9f6f7b2f4adbe87e793357d5cd45a9e0  bd_99_7_22_disc02track02.flac
+31b47046a7168d27769185cd4a57b9f1  bd_99_7_22_disc02track03.flac
+c7d252c6ad79d50a0f56d9e2177574e4  bd_99_7_22_disc02track04.flac
+aaa29830580136a689968e72781e8be8  bd_99_7_22_disc02track05.flac
+d8bebc4386aef67adff74f9d6e02103a  Bob Dylan - Mansfield - July 22, 1999.txt
+78f259abc683395b71a00bdb21dab5ea  Bob Dylan Mansfield 1999_7_22.md5
+176c87623cc39d40dd89b68555b66050  mansfield_MA_7_22_99 - back.jpg
+6fbcc541b94c7c3d6df88c5a7b3407b4  mansfield_MA_7_22_99 - front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-22-UMM.flacf 
+=================== 
+=================== 
+=================== 
+bd_99_7_22_disc01track01.flac:a3bca9673fbe1a697e5bd7642a94fbda
+bd_99_7_22_disc01track02.flac:ea11bf15304c3694a0bab944ad9a7135
+bd_99_7_22_disc01track03.flac:c657317bf985ee3f22705929483ee4e0
+bd_99_7_22_disc01track04.flac:1a923485729e9e6155fe4de474f69b65
+bd_99_7_22_disc01track05.flac:76950ad0963647a4a8318359bd0892ad
+bd_99_7_22_disc01track06.flac:5217073f4c7717461f463393b2bf7dc8
+bd_99_7_22_disc01track07.flac:c9840aba05bb0ad2af83e39600fb4074
+bd_99_7_22_disc01track08.flac:e4b9fa722c89c53bfea95a246e8c2cb6
+bd_99_7_22_disc01track09.flac:18718a48f63319f6e2c92f6f7698002c
+bd_99_7_22_disc01track10.flac:02f051f7cbc542f7b8418169b6d3f949
+bd_99_7_22_disc01track11.flac:eab591e732920aab20fbbc215db71dcc
+bd_99_7_22_disc02track01.flac:7abef13ee5a33f0ac2f2a1d148bdafeb
+bd_99_7_22_disc02track02.flac:93a537162897ccfa961b84a63149009f
+bd_99_7_22_disc02track03.flac:6275066ed90d8a4f4498926452f2d985
+bd_99_7_22_disc02track04.flac:3e4eb7ed5ba907a4333f1c55d2d8cea7
+bd_99_7_22_disc02track05.flac:46b354a723865cb0fecc4160cdcd0da6
+=================== 
+=================== 
+=================== 
+=== shntool for: bd99-07-22-UMM.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:36.46       38210636 B   ---   --   ---xx   flac  0.6922  bd_99_7_22_disc01track01.flac
+     6:45.63       71590220 B   ---   --   ---xx   flac  0.6692  bd_99_7_22_disc01track02.flac
+     5:46.48       61147340 B   ---   --   ---xx   flac  0.6424  bd_99_7_22_disc01track03.flac
+     7:47.42       82477628 B   ---   --   ---xx   flac  0.6885  bd_99_7_22_disc01track04.flac
+     5:59.04       63337052 B   ---   --   ---xx   flac  0.6203  bd_99_7_22_disc01track05.flac
+     3:57.72       41976188 B   ---   --   ---xx   flac  0.6669  bd_99_7_22_disc01track06.flac
+     7:33.43       80010380 B   ---   --   ---xx   flac  0.6285  bd_99_7_22_disc01track07.flac
+     6:17.59       66641612 B   ---   --   ---xx   flac  0.6653  bd_99_7_22_disc01track08.flac
+     6:10.49       65383292 B   ---   --   ---xx   flac  0.6034  bd_99_7_22_disc01track09.flac
+     0:41.22        7284188 B   ---   --   ---xx   flac  0.6098  bd_99_7_22_disc01track10.flac
+     5:57.02       62979548 B   ---   --   ---xx   flac  0.6687  bd_99_7_22_disc01track11.flac
+     7:48.47       82665788 B   ---   --   ---xx   flac  0.6601  bd_99_7_22_disc02track01.flac
+     9:53.06      104619356 B   ---   --   ---xx   flac  0.6236  bd_99_7_22_disc02track02.flac
+     7:29.28       79269500 B   ---   --   ---xx   flac  0.5998  bd_99_7_22_disc02track03.flac
+     4:35.09       48531212 B   ---   --   ---xx   flac  0.6766  bd_99_7_22_disc02track04.flac
+     5:43.56       60636956 B   ---   --   ---xx   flac  0.6425  bd_99_7_22_disc02track05.flac
+    96:03.71     1016760896 B                            0.6466  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,64 @@
+Bob Dylan
+Halle Münsterland
+Münster, Germany
+April 5, 2007
+ 
+source: soomlos
+fob, center, ga floor
+km140 > v3 > mt24/96 (24/48)
+audacity > r8brain > cd wave > flac
+
+Disc 1:
+01. introduction [00:42] 
+02. Cat's In The Well [04:19]   
+03. Don't Think Twice, It's All Right [06:51]
+04. Watching The River Flow [06:13] 
+05. It's Alright, Ma (I'm Only Bleeding) [07:23] 
+06. When The Deal Goes Down [06:08] 
+07. High Water (For Charley Patton) [07:32]
+08. The Lonesome Death Of Hattie Carroll [07:19]  
+09. 'Til I Fell In Love With You [06:42]
+10. Simple Twist Of Fate [08:00]  
+11. Rollin' And Tumblin' [06:17]  
+12. Spirit On The Water [07:22]  
+Total time: [74:53]
+
+Disc 2:
+01. Highway 61 Revisited [05:50]
+02. Nettie Moore [07:50]  
+03. Summer Days [07:14]  
+04. Like A Rolling Stone [10:11]  
+     (encore) 
+05. Thunder On The Mountain [06:21]
+06. band introduction [00:48]
+07. All Along The Watchtower [05:14] 
+Total time: [43:32]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, mandolin, violin, steel guitar  
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2007-04-05d1t01.flac:4ac983c534b17d455b261f809817b5e5
+bd2007-04-05d1t02.flac:7ea994012bea614c6bdd5d9dff124980
+bd2007-04-05d1t03.flac:a29fd7965b7596a67036f1e166857a8f
+bd2007-04-05d1t04.flac:fc558bbac63e21e70957558dc01aee1e
+bd2007-04-05d1t05.flac:1bbe5ccbd6b0357d2ef287d520de4b04
+bd2007-04-05d1t06.flac:2bbba802660577d0caebf31f2042292e
+bd2007-04-05d1t07.flac:fd44938037006e77de443b871f139649
+bd2007-04-05d1t08.flac:dbf0f0ed5e9e97daa99aa5f30b454b83
+bd2007-04-05d1t09.flac:5c6f117b1af05a7e0c22ed8d8e270504
+bd2007-04-05d1t10.flac:6dc028e0fd137455e4d912cd1c236c5b
+bd2007-04-05d1t11.flac:48379f845ef5bbdca8c0b30dc7a44ed4
+bd2007-04-05d1t12.flac:97b72fdfb2272f5079e58349c00189c3
+bd2007-04-05d2t01.flac:3b2b72ded62326a601fd8c07cf56df82
+bd2007-04-05d2t02.flac:e9b66aab9f26062983447d34161a7724
+bd2007-04-05d2t03.flac:02a7a3eca8f9c4f7a5d848714a0461ab
+bd2007-04-05d2t04.flac:956af0970d530fd4056ca6f9fb48758f
+bd2007-04-05d2t05.flac:fb593da9ab50476694b3ad9993843fb7
+bd2007-04-05d2t06.flac:2579346c7214665f0484d3fbfed7d976
+bd2007-04-05d2t07.flac:0785bf47decc7a16a7f13e8bea9f5db4

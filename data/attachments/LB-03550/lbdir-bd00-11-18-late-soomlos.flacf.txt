@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-18-late-soomlos.flacf 
+=================== 
+=================== 
+=================== 
+0385ac8695299d26df3f8a6a9c1ffbb1  bd00-11-18-late-soomlos-LB-3550.txt
+9d23142e58e42f28c0d7ab941a78c20f  bd2000-11-18late.txt
+408174aacdfbd01e04d1eb5bcb2b2243  bd2000-11-18lated1\bd2000-11-18lated1.flac.md5
+3969102674e6efce5b5ea1d6c7377a44  bd2000-11-18lated1\bd2000-11-18lated1t01.flac
+b21795e23f2b0def8ea56014411e5efd  bd2000-11-18lated1\bd2000-11-18lated1t02.flac
+21cfc0949a76687a64125101ca01d16e  bd2000-11-18lated1\bd2000-11-18lated1t03.flac
+fc08933891387b96b4ba03bd413bdf73  bd2000-11-18lated1\bd2000-11-18lated1t04.flac
+8c6cd8b96fa07a021fc49c36b2fb5a34  bd2000-11-18lated1\bd2000-11-18lated1t05.flac
+d7b03fa7cb3c33bc5008decaf046ad2b  bd2000-11-18lated1\bd2000-11-18lated1t06.flac
+da59c03a6b28b916e6207b60324b6138  bd2000-11-18lated1\bd2000-11-18lated1t07.flac
+08c143779fd69883e5429f0dc5503607  bd2000-11-18lated1\bd2000-11-18lated1t08.flac
+52d481c0ffac741e9b076d7934d1d2b2  bd2000-11-18lated1\bd2000-11-18lated1t09.flac
+c0d8ef010e212b1e39caa7bd0083e61b  bd2000-11-18lated1\bd2000-11-18lated1t10.flac
+07be1e21123b45b84c70711820b4840a  bd2000-11-18lated1\bd2000-11-18lated1t11.flac
+cf5aa927bc2fd9fe7bde159d14b19f1a  bd2000-11-18lated1\bd2000-11-18lated1t12.flac
+0925c958125a68418176fe6fe19eefb9  bd2000-11-18lated1\bd2000-11-18lated1t13.flac
+917827945bf85f428ce2537f2416ae76  bd2000-11-18lated1\bd2000-11-18lated1t14.flac
+cdf6ef0922c67d537c83ed27b48208a8  bd2000-11-18lated1\bd2000-11-18lated1t15.flac
+c4df564c9f5aac06f6cba6b58b2e467e  bd2000-11-18lated1.wav.md5
+2b5c536d58e623adae3785aee5ebf335  bd2000-11-18lated2\bd2000-11-18lated2.flac.md5
+f177b004fa0bee1009d564d7d189abc9  bd2000-11-18lated2\bd2000-11-18lated2t01.flac
+e1e0ff001f3face3b3aca859c6ce74c4  bd2000-11-18lated2\bd2000-11-18lated2t02.flac
+ba0007dde32b11e8b4c9f14a13116b90  bd2000-11-18lated2\bd2000-11-18lated2t03.flac
+cf05cdb0e5d3db71229508423cda40a4  bd2000-11-18lated2\bd2000-11-18lated2t04.flac
+bdab866c4d0aea1a1a679ca8c2f90e34  bd2000-11-18lated2.wav.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-18-late-soomlos.flacf\bd2000-11-18lated1 
+=================== 
+=================== 
+=================== 
+bd2000-11-18lated1t01.flac:7cb58395f36f51229cac7d208dad66c4
+bd2000-11-18lated1t02.flac:3b0a33e3b38d0986686b73bf204ca7f5
+bd2000-11-18lated1t03.flac:d0b7dcde994ed3aa49bcb16a4ea0cdd7
+bd2000-11-18lated1t04.flac:c10ff23da34ddd809591ec93d717e467
+bd2000-11-18lated1t05.flac:1dbcebd8f9211cfd73d0fb041c175e5b
+bd2000-11-18lated1t06.flac:065d966a8fbf55c990535dbe28360f9d
+bd2000-11-18lated1t07.flac:477a175025b96766e5d03304473afaff
+bd2000-11-18lated1t08.flac:668912e985702d28c9cb8349f3fcf868
+bd2000-11-18lated1t09.flac:116a0fdd8ffbc02bc91c8f8087b22bb1
+bd2000-11-18lated1t10.flac:44b947a659577cbf6ac9a3c59c5a65b3
+bd2000-11-18lated1t11.flac:483bdcdb18dacddad41a4a4abd34535f
+bd2000-11-18lated1t12.flac:52a45cfe898a1fff4c6491f7ebbf4b09
+bd2000-11-18lated1t13.flac:19bed8af11cdcd8366da3f63e90240e5
+bd2000-11-18lated1t14.flac:d5a1cda57b3b496bdd29743bc537601b
+bd2000-11-18lated1t15.flac:74e647d4a63200fa7e1c6cb947100384
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-18-late-soomlos.flacf\bd2000-11-18lated2 
+=================== 
+=================== 
+=================== 
+bd2000-11-18lated2t01.flac:b99214fa708e35c76d228e6a10284ac5
+bd2000-11-18lated2t02.flac:f085eb7a2275606b2e5fdfae974a61b3
+bd2000-11-18lated2t03.flac:8867a74b025cae67b3bc7be50d206927
+bd2000-11-18lated2t04.flac:7745b81cf9e340e89f0c9140c866423e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-18-late-soomlos.flacf\bd2000-11-18lated1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:07.11        1260716 B   ---   --   ---xx   flac  0.4935  bd2000-11-18lated1t01.flac
+     2:35.02       27346748 B   ---   --   ---xx   flac  0.6156  bd2000-11-18lated1t02.flac
+     5:37.47       59557388 B   ---   --   ---xx   flac  0.5019  bd2000-11-18lated1t03.flac
+     7:47.17       82418828 B   ---   --   ---xx   flac  0.4637  bd2000-11-18lated1t04.flac
+     5:02.11       53298716 B   ---   --   ---xx   flac  0.4981  bd2000-11-18lated1t05.flac
+     8:35.44       90949532 B   ---   --   ---xx   flac  0.6311  bd2000-11-18lated1t06.flac
+     3:21.55       35585804 B   ---   --   ---xx   flac  0.5187  bd2000-11-18lated1t07.flac
+     2:47.73       29630540 B   ---   --   ---xx   flac  0.6051  bd2000-11-18lated1t08.flac
+     5:49.49       61678892 B   ---   --   ---xx   flac  0.5829  bd2000-11-18lated1t09.flac
+     5:41.70       60317084 B   ---   --   ---xx   flac  0.6247  bd2000-11-18lated1t10.flac
+     5:07.38       54244220 B   ---   --   ---xx   flac  0.4790  bd2000-11-18lated1t11.flac
+     3:52.23       40978940 B   ---   --   ---xx   flac  0.6723  bd2000-11-18lated1t12.flac
+     0:41.39        7324172 B   ---   --   ---xx   flac  0.5406  bd2000-11-18lated1t13.flac
+     8:46.72       92955788 B   ---   --   ---xx   flac  0.5814  bd2000-11-18lated1t14.flac
+     0:53.62        9495068 B   ---   --   ---xx   flac  0.3875  bd2000-11-18lated1t15.flac
+    66:48.13      707042436 B                            0.5583  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-18-late-soomlos.flacf\bd2000-11-18lated2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.20       69901484 B   ---   --   ---xx   flac  0.6147  bd2000-11-18lated2t01.flac
+     4:00.36       42420716 B   ---   --   ---xx   flac  0.4865  bd2000-11-18lated2t02.flac
+     5:57.49       63090092 B   ---   --   ---xx   flac  0.6307  bd2000-11-18lated2t03.flac
+     5:43.51       60625320 B   -b-   --   ---xx   flac  0.5755  bd2000-11-18lated2t04.flac
+    22:18.06      236037612 B                            0.5859  (4 files)
+=================== 
+=================== 
+=================== 

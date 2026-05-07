@@ -1,0 +1,109 @@
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+7282dc8e183df353bd289274624c8217 *01 Crash on the levee (down in the flood).flac
+5f71f141982e911768c2675271abe9ee *02 I want you.flac
+517516ca9cf40d3afaa90fc2402a1063 *03 All along the watchtower.flac
+2dc75e693cd6dfd60323f1ae6812895d *04 Just like a woman.flac
+29130cfe63c3c1bdf72e299377e9d83c *05 Tangled up in blue.flac
+e42bcdbbdf333f0e809ce7c99ac99a18 *06 You're a big girl now.flac
+f9aea16ae303558641980b902b430365 *07 Mr. Tambourine Man.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+f3b2b9aabb81d87a6f11b14548beafaa *08 Masters of war.flac
+855002c235646703477155daf89a5f7e *09 Don't think twice, it's all right.flac
+f43c8bd13b4bb396fc551a3e3184c46e *10 Dignity.flac
+1ff7a83ebe2a7f3f896c945e6ffa9961 *11 I'll remember you.flac
+140e52980a0625563528fc3039ca4464 *12 Maggie's farm.flac
+c3e1c5cc0a16a4f76c47594a728345f4 *13 Like a rolling stone.flac
+6de5db7f9bcfa25876ab55cfa5013dcc *14 It ain't me, babe.flac
+===================
+===================
+===================
+=== Bob Dylan 1995-03-24 Le Zenith, Paris, France [off master] FIXED.txt
+===================
+===================
+===================
+Bob Dylan
+
+Le Znith
+Paris, France
+March 24, 1995
+
+Off Master (fixed)
+Taper: no info
+Source/Lineage: no info
+
+CD1:
+01 Crash On The Levee (Down In The Flood) [05:12]
+02 I Want You [04:33]
+03 All Along The Watchtower [05:15]
+04 Just Like A Woman [05:45]
+05 Tangled Up In Blue [08:17]
+06 You're A Big Girl Now [05:47]
+07 Mr. Tambourine Man [06:38]
+Total time: [41:31]
+
+CD1:
+08 Masters Of War [04:38]
+09 Don't Think Twice, Its All Right [06:35]
+10 Dignity [07:28]
+11 I'll Remember You [05:02]
+12 Maggie's Farm [08:36]
+13 Like A Rolling Stone [06:49]
+14 It Ain't Me, Babe [08:50]
+Total time: [48:01]
+
+Concert # 652 of The Never-Ending Tour
+Concert # 12 of the 1995 European Spring Tour
+Concert # 12 in 1995
+
+Concert # 196 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+
+Winston Watson (drums & percussion)
+79, 14 acoustic with the band
+1, 2, 9, 14 Bob Dylan harmonica
+
+Cue sheet:
+PARIS: DOWN IN THE FLOOD  IF YOU SEE HER/SENOR/LAY LADY  WATCHTOWER  JUST LIKE A WOMAN  TANGLED  EVERY GRAIN(F)/RIVER FLOW/TAKES A TRAIN  TAMBOURINE  BOOTS/MASTERS  DON'T THINK TWICE/DESOLATION/MAMA  DIGNITY  JOKERMAN/SHOOTING STAR/GOD  MAGGIE'S  ROLLING STONE  AIN'T ME BABE
+
+4 new songs (28%) compared to previous concert
+2 new songs for this tour
+
+Stereo audience recording, 95 minutes
+
+CD1 .md5:
+7282dc8e183df353bd289274624c8217 *01 Crash on the levee (down in the flood).flac
+5f71f141982e911768c2675271abe9ee *02 I want you.flac
+517516ca9cf40d3afaa90fc2402a1063 *03 All along the watchtower.flac
+2dc75e693cd6dfd60323f1ae6812895d *04 Just like a woman.flac
+29130cfe63c3c1bdf72e299377e9d83c *05 Tangled up in blue.flac
+e42bcdbbdf333f0e809ce7c99ac99a18 *06 You're a big girl now.flac
+f9aea16ae303558641980b902b430365 *07 Mr. Tambourine Man.flac
+
+CD2 .md5:
+f3b2b9aabb81d87a6f11b14548beafaa *08 Masters of war.flac
+855002c235646703477155daf89a5f7e *09 Don't think twice, it's all right.flac
+f43c8bd13b4bb396fc551a3e3184c46e *10 Dignity.flac
+1ff7a83ebe2a7f3f896c945e6ffa9961 *11 I'll remember you.flac
+140e52980a0625563528fc3039ca4464 *12 Maggie's farm.flac
+c3e1c5cc0a16a4f76c47594a728345f4 *13 Like a rolling stone.flac
+6de5db7f9bcfa25876ab55cfa5013dcc *14 It ain't me, babe.flac
+
+* * * Enjoy your Bobby Hobby * * *
+===================
+===================
+===================

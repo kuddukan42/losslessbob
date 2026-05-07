@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-05a.flacf 
+=================== 
+=================== 
+=================== 
+2d5fc112363f5253f8e0d17b9e7459d1  bd - 1996-07-05-d1\1 Drifter's Escape.flac
+0d4034c0123995d8a5801ee9b6616f7a  bd - 1996-07-05-d1\2 Lay Lady Lay.flac
+e40ddce9d86da08c6a8b74b73aa10c51  bd - 1996-07-05-d1\3 All Along The Watchtower.flac
+2d10fcb784caed7389ae60b0d37e0d2f  bd - 1996-07-05-d1\4 Just Like A Woman.flac
+6393e2d4319a083f4f887151a6357034  bd - 1996-07-05-d1\5 Watching The River Flow.flac
+77d55881cc86e339f554837dad95e082  bd - 1996-07-05-d1\6 Silvio.flac
+0b046ddc28ecfc5228286da3fadbdfc3  bd - 1996-07-05-d1\7 Mr. Tambourine Man.flac
+53ab632ae58cf361c35c0f225cb50c4a  bd - 1996-07-05-d1\8 Masters Of War.flac
+6877faa73964cd7385a296d0465923bf  bd - 1996-07-05-d1\9 Mama, You Been On My Mind.flac
+541c696c4c14c21b0421ee530d9ffd35  bd - 1996-07-05-d2\1 Knockin' On Heaven's Door.flac
+9fbbfa73732c180c89b6599b673b46d9  bd - 1996-07-05-d2\2 Ballad Of A Thin Man.flac
+db37a2287a62fe59e82a54d2f02391eb  bd - 1996-07-05-d2\3 Maggie's Farm.flac
+08b8fd50feac83ac003aed8cc667876c  bd - 1996-07-05-d2\4 It Ain't Me, Babe.flac
+1c0862bdbffd0d3ccba110f9e4975955  bd - 1996-07-05-d2\5 Rainy Day Women # 12 & 35.flac
+190d829afdf24e4c89b442aed466d3ba  bd1996-07-05-Ferrara.txt
+93eaad32366d8739bc4fe4fb989e2712  bd96-07-05a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-05a.flacf\bd - 1996-07-05-d1 
+=================== 
+=================== 
+=================== 
+1 Drifter's Escape.flac:b8a75f15a43852a4c6e469fd2e84e15c
+2 Lay Lady Lay.flac:6817dba8e6c0f89788da04f6e626fd07
+3 All Along The Watchtower.flac:0855ce4c96771a6e0eac099e732b1c43
+4 Just Like A Woman.flac:8cfd109f16682452c1f9a3e0268141bd
+5 Watching The River Flow.flac:6b37a81a0334d283bf0db953143ea409
+6 Silvio.flac:b582f05f915595439ad65ca6adca3e70
+7 Mr. Tambourine Man.flac:6c11f2f82ac14b682935b8bfeda63a4f
+8 Masters Of War.flac:46be27c364bf163c4ee78e6b0ab90f81
+9 Mama, You Been On My Mind.flac:c7b79c541584d0b7f81699e7c811fb58
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-05a.flacf\bd - 1996-07-05-d2 
+=================== 
+=================== 
+=================== 
+1 Knockin' On Heaven's Door.flac:4172a43558f3f5049c79b8b31e209158
+2 Ballad Of A Thin Man.flac:e23684b34139c49d35076cf4d8c01bbd
+3 Maggie's Farm.flac:877d340c575818207cb3949e3e4d3942
+4 It Ain't Me, Babe.flac:08fdce656ab49525a93829645abe39e1
+5 Rainy Day Women # 12 & 35.flac:f0c81456a0cad926751ab4acfe8a4738
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-05a.flacf\bd - 1996-07-05-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.49       53917292 B   ---   --   ---xx   flac  0.5789  1 Drifter's Escape.flac
+     6:50.39       72415772 B   ---   --   ---xx   flac  0.5011  2 Lay Lady Lay.flac
+     6:23.18       67603580 B   ---   --   ---xx   flac  0.6130  3 All Along The Watchtower.flac
+     5:32.23       58618940 B   ---   --   ---xx   flac  0.5190  4 Just Like A Woman.flac
+     6:22.42       67483628 B   ---   --   ---xx   flac  0.5068  5 Watching The River Flow.flac
+     7:34.23       80139740 B   ---   --   ---xx   flac  0.5677  6 Silvio.flac
+     9:55.07      104974508 B   ---   --   ---xx   flac  0.4909  7 Mr. Tambourine Man.flac
+     6:13.37       65884268 B   ---   --   ---xx   flac  0.4716  8 Masters Of War.flac
+     6:08.73       65086940 B   ---   --   ---xx   flac  0.5260  9 Mama, You Been On My Mind.flac
+    60:06.11      636124668 B                            0.5280  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-05a.flacf\bd - 1996-07-05-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:18.21       77312636 B   ---   --   ---xx   flac  0.5375  1 Knockin' On Heaven's Door.flac
+     7:25.67       78655628 B   ---   --   ---xx   flac  0.5376  2 Ballad Of A Thin Man.flac
+     9:18.11       98457116 B   ---   --   ---xx   flac  0.5490  3 Maggie's Farm.flac
+    11:18.50      119716844 B   ---   --   ---xx   flac  0.5000  4 It Ain't Me, Babe.flac
+     7:18.20       77310284 B   ---   --   ---xx   flac  0.5777  5 Rainy Day Women # 12 & 35.flac
+    42:39.19      451452508 B                            0.5370  (5 files)
+=================== 
+=================== 
+=================== 

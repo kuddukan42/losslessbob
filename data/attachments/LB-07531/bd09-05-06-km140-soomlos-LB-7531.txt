@@ -1,0 +1,12 @@
+Bob Dylan, 5/6/09, Dublin, Ireland, 2CDR
+
+LB-7531, (79min+43min), source: soomlos, neumann skm140 > sound devices mixpre > edirol r-09hr (24/48), edirol r-09hr > usb > hdd > sound forge 9.0 > cd wave > tlh; bittorrent download 05/09; cdr splits not specified; in comparison to romeo LB-7517 this is similar sound quality; (did not listen to all of this)
+
+CD1
+01. introduction, 02. The Wicked Messenger, 03. Girl Of The North Country, 04. Man In The Long Black Coat, 05. Stuck Inside Of Mobile With The Memphis Blues Again, 06. Blind Willie McTell, 07. Desolation Row, 08. It's Alright, Ma (I'm Only Bleeding), 09. Po' Boy, 10. Highway 61 Revisited, 11. Ballad Of A Thin Man, 12. I Don't Believe You (She Acts Like We Never Have Met), 13. Ain't Talkin' 
+
+CD2
+14. Summer Days, 15. Like A Rolling Stone, (encore), 16. All Along The Watchtower, 17. If You Ever Go To Houston, 18. Spirit On The, Water, 19. Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

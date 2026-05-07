@@ -1,0 +1,127 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-17 
+=================== 
+=================== 
+=================== 
+e51723d220018d765afe6b6f41c68c63  1-01 - Times They Are A-Changin' (87-10-17 London, UK).shn
+0ecaa1cb1b49e5f07f7a1fd7f6d4f1d1  1-02 - Like A Rolling Stone (87-10-17 London, UK).shn
+a80388dab5b4dc58986f8a6feb826ae5  1-03 - Maggie's Farm (87-10-17 London, UK).shn
+c753181a210313324ff2a477d11d6186  1-04 - Forever Young (87-10-17 London, UK).shn
+11764f54a2445ec8863b3b10fe4ec0fd  1-05 - Dead Man Dead Man (87-10-17 London, UK).shn
+d2821c0fea4a5d83333fcc50a7f1bdc4  1-06 - I Dreamed I Saw St. Augustine (87-10-17 London, UK).shn
+4fab7e7ec496f985df533d06d17f3ee0  1-07 - Simple Twist Of Fate (87-10-17 London, UK).shn
+3e20f8cf8d1aef46f2c07aa103051a28  1-08 - I'll Be Your Baby Tonight (87-10-17 London, UK).shn
+02ef58ee4056791ae57282dfe7bf0ad7  1-09 - Watching The River Flow (87-10-17 London, UK).shn
+0da06594d5f5fb67dbcc0b5d176bdeba  1-10 - Gotta Serve Somebody (87-10-17 London, UK).shn
+2dc6d77440fe61e5d5671925b8373803  1-11 - Man Of Peace (87-10-17 London, UK).shn
+e838fa25d92848ebc6f85e44ff30c793  1-12 - I And I (87-10-17 London, UK).shn
+fddd24f687a7ecc9546d1ab7e16995a4  1-13 - Don't Think Twice (87-10-17 London, UK).shn
+07e7047461f887cdb16b28fa560387eb  1-14 - Tomorrow Is A Long Time (87-10-17 London, UK).shn
+4196fede7214c3a15f0ee9d1ecb1f620  1-15 - Heart Of Mine (87-10-17 London, UK).shn
+dacea1afefc7ff439807e76fb2d291b7  1-16 - In The Garden (87-10-17 London, UK).shn
+78db0b11dfaf414bde50fd752ef72731  2-01 - Knockin' On Heaven's Door (87-10-17 London, UK).shn
+4cabf326275988ef51f854859b011429  2-02 - Chimes Of Freedom (with McGuinn) (87-10-17 London, UK).shn
+02adcdeef0339f713870218d5afa6720  2-03 - Rainy Day Women (with G. Harrison) (87-10-17 London).shn
+2d18fed6aa915fbcf743f035aba2cdce  2-04 - Go Down Moses (87-10-17 London, UK).shn
+a6e1cc16a5d888483226e61a5f58ac2e  2-05 - Emotionally Yours (87-10-16 London, UK).shn
+0d520b25039f71a108d943aade0ac719  2-06 - To Ramona (87-10-16 London, UK).shn
+b328f1da4812c2952f02848653558125  2-07 - Lenny Bruce (87-10-14 London, UK).shn
+0a890fc99fed2ad9d29c79ce1d65b1f8  2-08 - License To Kill (87-10-04 Milan, Italy).shn
+99be8bc52d26555f5d7274e22bca7363  2-09 - House Of The Rising Sun (87-10-07 Paris, France).shn
+b26cb1cb710899350cd0c7b413ca4659  2-10 - The Wicked Messenger (87-10-03 Rome, Italy).shn
+51b16f633128ee52983ae29ecb3a5fec  2-11 - Desolation Row (87-10-10 Brussels, Belgium).shn
+96bfb0fd8933105bdaa523d61dd606d3  2-12 - Hattie Carroll (87-10-10 Brussels, Belgium).shn
+fbb20ac7cf87df57b96b5b809eac4d04  2-13 - Shot Of Love (87-10-10 Brussels, Belgium).shn
+b0f42491deeafd673b61398ce13516e9  2-14 - Joey (87-09-29 Stuttgart, Germany).shn
+2081653b081a405ba8780531e2bcc9d0  2-15 - John Brown (87-09-29 Stuttgart, Germany).shn
+96969b5533998fe7e60c2f11a0570d3c  2-16 - When I Paint My Masterpiece (87-09-21 Copenhagen).shn
+dfd4c885ac3182cc801ac59f870a27cd  87-10-17-D1.md5
+e65c2df90df8ff60cba6f20e3d43c05e  87-10-17-D2.md5
+ebeaed4990933b4aca215a0a5fd4843b  bd87-10-17.txt
+733f1d9ed6e496401756431fe75437a3  bd87-10-17_Final Night-back.jpg
+5ac292f3de955c1d94ae55b37811eb8f  bd87-10-17_Final Night-front.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-10-17 
+=================== 
+=================== 
+=================== 
+1a88d56caaf75f09470e6e1e0200f473  [shntool]  1-01_-_Times_They_Are_A-Changin'_(87-10-17_London,_UK).wav
+a2ba2252499fdbd0af555d18339e0118  [shntool]  1-02_-_Like_A_Rolling_Stone_(87-10-17_London,_UK).wav
+4df7b88d653048392bafebfc4b3164b2  [shntool]  1-03_-_Maggie's_Farm_(87-10-17_London,_UK).wav
+a5f8b9e06accb4e89e8b09a46a4eb84c  [shntool]  1-04_-_Forever_Young_(87-10-17_London,_UK).wav
+2fbed32cab1dd2404b3d87b36fe44484  [shntool]  1-05_-_Dead_Man_Dead_Man_(87-10-17_London,_UK).wav
+9561dd9ee7b14b1c062914ad4c43d6e6  [shntool]  1-06_-_I_Dreamed_I_Saw_St._Augustine_(87-10-17_London,_UK).wav
+fdf89f8907cef40df7871c506f918bb0  [shntool]  1-07_-_Simple_Twist_Of_Fate_(87-10-17_London,_UK).wav
+112bfcd5ff6bdbfd225e74012cd334b7  [shntool]  1-08_-_I'll_Be_Your_Baby_Tonight_(87-10-17_London,_UK).wav
+c9f59b18f8b75aab7e17bff113c53f17  [shntool]  1-09_-_Watching_The_River_Flow_(87-10-17_London,_UK).wav
+6a65f5e1f105c87116ca1bb0fc8c082f  [shntool]  1-10_-_Gotta_Serve_Somebody_(87-10-17_London,_UK).wav
+354554f583163f2499d61e25da514bd6  [shntool]  1-11_-_Man_Of_Peace_(87-10-17_London,_UK).wav
+19f8be3be4acdcdafc4e7428a435c0aa  [shntool]  1-12_-_I_And_I_(87-10-17_London,_UK).wav
+fa2e3b2ed748e805a6ddd5a5284786a1  [shntool]  1-13_-_Don't_Think_Twice_(87-10-17_London,_UK).wav
+077c9ef32c9b730dd233cc0c3c733c08  [shntool]  1-14_-_Tomorrow_Is_A_Long_Time_(87-10-17_London,_UK).wav
+8f575a4ccc3358933627d2d7e9f39d51  [shntool]  1-15_-_Heart_Of_Mine_(87-10-17_London,_UK).wav
+38273d2c005c913dab29920a4b8dcc8c  [shntool]  1-16_-_In_The_Garden_(87-10-17_London,_UK).wav
+36dc9646d0478cbe5b199252fcbabbb0  [shntool]  2-01_-_Knockin'_On_Heaven's_Door_(87-10-17_London,_UK).wav
+c46b9cde24d8c4fc753cd1167bb57497  [shntool]  2-02_-_Chimes_Of_Freedom_(with_McGuinn)_(87-10-17_London,_UK).wav
+9fb7bada85206afeab8098155dad092c  [shntool]  2-03_-_Rainy_Day_Women_(with_G._Harrison)_(87-10-17_London).wav
+e7318d665e29778e493e26dec01a11a3  [shntool]  2-04_-_Go_Down_Moses_(87-10-17_London,_UK).wav
+90c86297ef816725d09f722cc612c2cb  [shntool]  2-05_-_Emotionally_Yours_(87-10-16_London,_UK).wav
+4cde5be5e18e5e605920220041fda337  [shntool]  2-06_-_To_Ramona_(87-10-16_London,_UK).wav
+66107a3a3a8e8f7f866e737a2fdaf999  [shntool]  2-07_-_Lenny_Bruce_(87-10-14_London,_UK).wav
+df7d01e5b28c9d28244bc925aee4d17c  [shntool]  2-08_-_License_To_Kill_(87-10-04_Milan,_Italy).wav
+8564253ceef281fbc96248bd1a4bf876  [shntool]  2-09_-_House_Of_The_Rising_Sun_(87-10-07_Paris,_France).wav
+75b6993e32fc76f7b5a4d3b69a9e93ea  [shntool]  2-10_-_The_Wicked_Messenger_(87-10-03_Rome,_Italy).wav
+d8dc491c15e77efac1d08ae07190882d  [shntool]  2-11_-_Desolation_Row_(87-10-10_Brussels,_Belgium).wav
+1f8d21ded3b40c9f5769de2f03fe3b62  [shntool]  2-12_-_Hattie_Carroll_(87-10-10_Brussels,_Belgium).wav
+8a5c0bf0efc0d8ba3542ebfe4abc24ab  [shntool]  2-13_-_Shot_Of_Love_(87-10-10_Brussels,_Belgium).wav
+5fca0577916c825294a9b6f4768aa280  [shntool]  2-14_-_Joey_(87-09-29_Stuttgart,_Germany).wav
+6ff3423df989768881e45cd083253921  [shntool]  2-15_-_John_Brown_(87-09-29_Stuttgart,_Germany).wav
+ac10939f50700190f11b7a1a4ea4f7f6  [shntool]  2-16_-_When_I_Paint_My_Masterpiece_(87-09-21_Copenhagen).wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-17 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.41       60954476 B   ---   --   ---xx    shn  0.7268  1-01 - Times They Are A-Changin' (87-10-17 London, UK).shn
+     5:07.66       54310076 B   ---   --   ---xx    shn  0.7437  1-02 - Like A Rolling Stone (87-10-17 London, UK).shn
+     4:14.72       44974988 B   ---   --   ---xx    shn  0.7272  1-03 - Maggie's Farm (87-10-17 London, UK).shn
+     6:46.00       71618444 B   ---   --   ---xx    shn  0.7332  1-04 - Forever Young (87-10-17 London, UK).shn
+     4:36.42       48785228 B   ---   --   ---xx    shn  0.7348  1-05 - Dead Man Dead Man (87-10-17 London, UK).shn
+     5:07.13       54185420 B   ---   --   ---xx    shn  0.6562  1-06 - I Dreamed I Saw St. Augustine (87-10-17 London, UK).shn
+     5:48.26       61448104 B   -b-   --   ---xx    shn  0.6438  1-07 - Simple Twist Of Fate (87-10-17 London, UK).shn
+     4:55.49       52153388 B   -b-   --   ---xx    shn  0.7513  1-08 - I'll Be Your Baby Tonight (87-10-17 London, UK).shn
+     3:00.48       31864744 B   -b-   --   ---xx    shn  0.7681  1-09 - Watching The River Flow (87-10-17 London, UK).shn
+     4:00.73       42508844 B   -b-   --   ---xx    shn  0.7454  1-10 - Gotta Serve Somebody (87-10-17 London, UK).shn
+     4:30.67       47785008 B   -b-   --   ---xx    shn  0.7128  1-11 - Man Of Peace (87-10-17 London, UK).shn
+     4:34.47       48443956 B   -b-   --   ---xx    shn  0.7530  1-12 - I And I (87-10-17 London, UK).shn
+     3:19.66       35258876 B   ---   --   ---xx    shn  0.6710  1-13 - Don't Think Twice (87-10-17 London, UK).shn
+     4:09.64       44074172 B   ---   --   ---xx    shn  0.6212  1-14 - Tomorrow Is A Long Time (87-10-17 London, UK).shn
+     3:59.55       42289004 B   ---   --   ---xx    shn  0.7474  1-15 - Heart Of Mine (87-10-17 London, UK).shn
+     5:18.32       56170508 B   ---   --   ---xx    shn  0.7289  1-16 - In The Garden (87-10-17 London, UK).shn
+     5:41.46       60260636 B   ---   --   ---xx    shn  0.7153  2-01 - Knockin' On Heaven's Door (87-10-17 London, UK).shn
+     4:04.71       43208636 B   ---   --   ---xx    shn  0.7647  2-02 - Chimes Of Freedom (with McGuinn) (87-10-17 London, UK).shn
+     3:49.33       40473260 B   ---   --   ---xx    shn  0.7851  2-03 - Rainy Day Women (with G. Harrison) (87-10-17 London).shn
+     3:25.19       36206732 B   ---   --   ---xx    shn  0.7160  2-04 - Go Down Moses (87-10-17 London, UK).shn
+     4:28.08       47294060 B   ---   --   ---xx    shn  0.6865  2-05 - Emotionally Yours (87-10-16 London, UK).shn
+     4:00.08       42354860 B   ---   --   ---xx    shn  0.6100  2-06 - To Ramona (87-10-16 London, UK).shn
+     5:31.16       58426076 B   ---   --   ---xx    shn  0.6813  2-07 - Lenny Bruce (87-10-14 London, UK).shn
+     4:13.14       44662172 B   ---   --   ---xx    shn  0.6851  2-08 - License To Kill (87-10-04 Milan, Italy).shn
+     3:05.02       32638748 B   ---   --   ---xx    shn  0.6785  2-09 - House Of The Rising Sun (87-10-07 Paris, France).shn
+     3:02.62       32250668 B   ---   --   ---xx    shn  0.6849  2-10 - The Wicked Messenger (87-10-03 Rome, Italy).shn
+     5:34.00       58917644 B   ---   --   ---xx    shn  0.7167  2-11 - Desolation Row (87-10-10 Brussels, Belgium).shn
+     5:32.17       58604828 B   ---   --   ---xx    shn  0.6372  2-12 - Hattie Carroll (87-10-10 Brussels, Belgium).shn
+     4:41.45       49674284 B   ---   --   ---xx    shn  0.7018  2-13 - Shot Of Love (87-10-10 Brussels, Belgium).shn
+     8:59.10       95103164 B   ---   --   ---xx    shn  0.7516  2-14 - Joey (87-09-29 Stuttgart, Germany).shn
+     4:51.48       51445340 B   ---   --   ---xx    shn  0.6719  2-15 - John Brown (87-09-29 Stuttgart, Germany).shn
+     4:31.68       47964380 B   ---   --   ---xx    shn  0.6964  2-16 - When I Paint My Masterpiece (87-09-21 Copenhagen).shn
+   150:49.28     1596310724 B                            0.7085  (32 files)
+=================== 
+=================== 
+=================== 

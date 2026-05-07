@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-25-schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+bc64ed4a8bbb788857933dedee405092  bd99-04-25-schubert-remaster-LB-4099.txt
+4bf324877d862920b53e84ecca5d79ab  Cd1\TRACK01.flac
+8279aaf6d58361fe977435901a86b485  Cd1\TRACK02.flac
+fe68c93db030e97361cbe7ded576ef63  Cd1\TRACK03.flac
+91a5abab8552135107e8a1c9a0069639  Cd1\TRACK04.flac
+93226543d11f9eb30f6a7d00aa91a6ee  Cd1\TRACK05.flac
+059b5cac4b29bf18ec722af9b38052e1  Cd1\TRACK06.flac
+47ca65eebe3caa8feaf8c00112f41016  Cd1\TRACK07.flac
+c5a1da95d63ee132cff1d161ce244b29  Cd1\TRACK08.flac
+e7987ebab6b19f6ae0f29093b26d332f  Cd2\TRACK01.flac
+ca6df5270a7a0706588bb5c7c3743691  Cd2\TRACK02.flac
+41f26452388508e01f7336fe099f692a  Cd2\TRACK03.flac
+326bf6686ba3d67020efe3c26881e106  Cd2\TRACK04.flac
+e1ec8ea5484fa656027a36e9544a6a57  Cd2\TRACK05.flac
+21c8d67e44a2dc6cd4cb1c7939657bc8  Cd2\TRACK06.flac
+d476c15158dd27eab1088f04c6143351  Cd2\TRACK07.flac
+cd29eff89604a751ae60388737c89a06  Cd2\TRACK08.flac
+2a62d5793b3313486d7030b3dd33eaf5  Cd2\TRACK09.flac
+42da0cb8510778c53a120f18f772ec01  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-25-schubert-remaster.flacf\Cd2 
+=================== 
+=================== 
+=================== 
+TRACK01.flac:09ce84ceaa1df7999a11402cb26babc8
+TRACK02.flac:2e2ad01bf0c16f2e74ebf0a60fb6aed1
+TRACK03.flac:f6c47354b0d4e761ff86ccb0bfef111d
+TRACK04.flac:9b4a2b1b39c5ece7e8cf122449a9c535
+TRACK05.flac:15cb167617515a5c40e9cf02cb998c9b
+TRACK06.flac:5b1cfb17a064681e15016a63bf973b58
+TRACK07.flac:361eb00fd5e1fd97865e4b1ee7cbab83
+TRACK08.flac:bf02a3ccc6306ac3bacad9900587a254
+TRACK09.flac:be6032cd4765d6fad4338321ef12e348
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-25-schubert-remaster.flacf\Cd1 
+=================== 
+=================== 
+=================== 
+TRACK01.flac:1e737f23b27cfc0d23f36b9c8e405472
+TRACK02.flac:5051219b931b4fb7b718ea3ebb463d70
+TRACK03.flac:2a2d7724b270b5819e7cb72ff159219f
+TRACK04.flac:926aedf80b857d4595cb39a74f22f27a
+TRACK05.flac:4c70236861d72de670038eb0e100284a
+TRACK06.flac:06b87b47744180e182a3d365539400d1
+TRACK07.flac:e5d23fbbef0813c9ebaf14fed7b243dc
+TRACK08.flac:f85418de6dbb282eb950c6ed77163914
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-25-schubert-remaster.flacf\Cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:59.58       74048060 B   ---   --   ---xx   flac  0.5914  TRACK01.flac
+     6:23.36       67645916 B   ---   --   ---xx   flac  0.5067  TRACK02.flac
+     7:45.30       82096604 B   ---   --   ---xx   flac  0.6109  TRACK03.flac
+     4:40.05       49403804 B   ---   --   ---xx   flac  0.4661  TRACK04.flac
+     8:45.10       92633564 B   ---   --   ---xx   flac  0.5726  TRACK05.flac
+     6:00.20       63551084 B   ---   --   ---xx   flac  0.4924  TRACK06.flac
+     6:15.09       66171212 B   ---   --   ---xx   flac  0.5682  TRACK07.flac
+     7:59.55       84625004 B   ---   --   ---xx   flac  0.4728  TRACK08.flac
+     5:50.63       61888220 B   ---   --   ---xx   flac  0.5650  TRACK09.flac
+    60:39.61      642063468 B                            0.5423  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-25-schubert-remaster.flacf\Cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:06.28        1124300 B   ---   --   ---xx   flac  0.2914  TRACK01.flac
+     4:15.36       45066716 B   ---   --   ---xx   flac  0.5296  TRACK02.flac
+     6:54.60       73170764 B   ---   --   ---xx   flac  0.5583  TRACK03.flac
+     5:11.54       54987452 B   ---   --   ---xx   flac  0.5646  TRACK04.flac
+     6:17.57       66636908 B   ---   --   ---xx   flac  0.4920  TRACK05.flac
+     8:42.18       92123180 B   ---   --   ---xx   flac  0.5530  TRACK06.flac
+     8:48.54       93266252 B   ---   --   ---xx   flac  0.6068  TRACK07.flac
+     7:28.01       79029596 B   ---   --   ---xx   flac  0.5676  TRACK08.flac
+    47:45.08      505405168 B                            0.5565  (8 files)
+=================== 
+=================== 
+=================== 

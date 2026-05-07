@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-09-07-nello.flacf 
+=================== 
+=================== 
+=================== 
+08299d63ca5eb217362bef440a175d45  01 Cat's In The Well - bd 090708.flac
+7c073815f172675ce39b6f56c1444e06  02 The Times They Are A-Changin' - bd090708.flac
+ef088b7e4350df249e5cd12ea04fa79b  03 The Levee's Gonna Break - bd 090708.flac
+2a95ea808f3cf85bc36dbe093335c2a6  04 Don't Think Twice, It's All Right - bd 09070802.flac
+3a151b99433e1f240391b772ecc352bd  05 Million Miles- bd 090708.flac
+c3c1e7b3a51422f765b1d4f79c2adbd6  06 Desolation Row - bd 090708.flac
+1de79f9841e592b6e2f96edb72b256cf  07 A Hard rain's A-Gonna Fall - bd 090708.flac
+d401067c916df75b29f1c55d0df4d8a0  08 Honest With Me - bd 090708.flac
+7efb7faa63706e33e78355429fc5c476  09 I Believe In You - bd 090708.flac
+5e8f6df612bcbcf42faea5bc8f6f696a  10 It's Alright, Ma (I'm Only Bleeding)- bd 090708.flac
+ac071376f1399c394d8eb8cbec10835a  11 When The Deal Goes Down - bd 090708.flac
+1f3419af0073b4cd74a26d28873782f5  12 Highway 61 Revisited - bd 090708.flac
+1c28ba65c674d85c836d2ba386a3a63a  13 Ain't Talking - bd 090808.flac
+31e59b3b3a2c065917667d0298786490  14 Thunder On The Mountain - bd 090708.flac
+300995a15ca36a10b2b2a929920d8c23  15 Like A Rolling Stone - bd 090708.flac
+654c515f3ec0e9633528e3acf40d2ebc  16 Band Introductions- bd 090708.flac
+4f033d6487f1443bacc828e9f5a40fc3  17 Blowing In The Wind - bd 090708.flac
+8ece0698c430bc7a9476b59a7ea73d3a  BD 90708 Santa Barbara.md5
+a182bf94c35544cb771f4251bf34df9e  Bob Dylan 2008-09-07.txt
+06af6d76095eb7226951373412d5a8ab  Dylan Stage.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-09-07-nello.flacf 
+=================== 
+=================== 
+=================== 
+01 Cat's In The Well - bd 090708.flac:6b61a234e3a85cfd7e6a85b4dbb29dc1
+02 The Times They Are A-Changin' - bd090708.flac:64db73c0c044ed20d3f2c96d1aa3116c
+03 The Levee's Gonna Break - bd 090708.flac:8816a662eda592e83973f682edfeaf29
+04 Don't Think Twice, It's All Right - bd 09070802.flac:59c5d9ee798623fd48678ed1a8b8d682
+05 Million Miles- bd 090708.flac:b5a3c7d3c517125efdee6e17fa1ed3ac
+06 Desolation Row - bd 090708.flac:b7b628d5a2a67d674d12f5e7c81f38d6
+07 A Hard rain's A-Gonna Fall - bd 090708.flac:e14f9f22c40e4511822251c36e210bda
+08 Honest With Me - bd 090708.flac:7909635e06ddb601f7907ff53216f633
+09 I Believe In You - bd 090708.flac:b0b20a0bbc18804ca8a1a117bde5bf22
+10 It's Alright, Ma (I'm Only Bleeding)- bd 090708.flac:00e83f38ff0d90edcb753db7833b6b12
+11 When The Deal Goes Down - bd 090708.flac:ebef4e76bc260519dfd77657ac1b6d7f
+12 Highway 61 Revisited - bd 090708.flac:0b19f40fcc8fc1ac1892ca081636bcae
+13 Ain't Talking - bd 090808.flac:8a8023985df1a718e548bf31addb6f11
+14 Thunder On The Mountain - bd 090708.flac:bb5c55747496241befbbcc0e691892e1
+15 Like A Rolling Stone - bd 090708.flac:b01cd3d5184714e068d5098ea5b01e0c
+16 Band Introductions- bd 090708.flac:094cb328354cd88eede6e52970e3b625
+17 Blowing In The Wind - bd 090708.flac:4cc1c71d75c19b4dc3aa9ab64dc05766
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-09-07-nello.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:42.00       49744844 B   ---   --   ---xx   flac  0.6490  01 Cat's In The Well - bd 090708.flac
+     5:23.00       56977244 B   ---   --   ---xx   flac  0.6341  02 The Times They Are A-Changin' - bd090708.flac
+    13:45.00      145530044 B   ---   --   ---xx   flac  0.5838  03 The Levee's Gonna Break - bd 090708.flac
+     6:16.00       66326444 B   ---   --   ---xx   flac  0.5750  04 Don't Think Twice, It's All Right - bd 09070802.flac
+     6:38.00       70207244 B   ---   --   ---xx   flac  0.5800  05 Million Miles- bd 090708.flac
+    10:05.00      106722044 B   ---   --   ---xx   flac  0.5843  06 Desolation Row - bd 090708.flac
+     6:42.00       70912844 B   ---   --   ---xx   flac  0.6014  07 A Hard rain's A-Gonna Fall - bd 090708.flac
+     7:28.00       79027244 B   ---   --   ---xx   flac  0.5947  08 Honest With Me - bd 090708.flac
+     6:07.00       64738844 B   ---   --   ---xx   flac  0.5516  09 I Believe In You - bd 090708.flac
+     7:48.00       82555244 B   ---   --   ---xx   flac  0.5807  10 It's Alright, Ma (I'm Only Bleeding)- bd 090708.flac
+     6:00.00       63504044 B   ---   --   ---xx   flac  0.5295  11 When The Deal Goes Down - bd 090708.flac
+     6:24.00       67737644 B   ---   --   ---xx   flac  0.6003  12 Highway 61 Revisited - bd 090708.flac
+     8:21.00       88376444 B   ---   --   ---xx   flac  0.5528  13 Ain't Talking - bd 090808.flac
+     8:55.00       94374044 B   ---   --   ---xx   flac  0.5813  14 Thunder On The Mountain - bd 090708.flac
+     6:57.00       73558844 B   ---   --   ---xx   flac  0.6013  15 Like A Rolling Stone - bd 090708.flac
+     0:35.00        6174044 B   ---   --   ---xx   flac  0.5713  16 Band Introductions- bd 090708.flac
+     9:20.00       98784044 B   ---   --   ---xx   flac  0.5707  17 Blowing In The Wind - bd 090708.flac
+   121:26.00     1285251148 B                            0.5836  (17 files)
+=================== 
+=================== 
+=================== 

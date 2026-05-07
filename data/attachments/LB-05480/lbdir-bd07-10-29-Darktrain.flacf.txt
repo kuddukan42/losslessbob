@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-10-29-Darktrain.flacf 
+=================== 
+=================== 
+=================== 
+468a7982db6d532f5f498d6d9742da69  01-Cat's In The Well.flac
+5e1a0d7760ad739a1aedc59353ba57b3  02-Lay, Lady, Lay.flac
+defbdadb91e545b8086686dd8e85c0ae  03-I'll Be Your Baby Tonight.flac
+92baa751a98b95ddba6d890741f8c87f  04-You're A Big Girl Now.flac
+c70025b1280b2043ed547f70816d7cdd  05-Rollin' And Tumblin'.flac
+3ef7afbb3b410602e498f4c3653a83ea  06-Spirit On The Water.flac
+3cd97dda09ec88c61afe988e2a582d39  07-Cry A While.flac
+4c69cce2128ef62d47b5605f2cfc49fc  08-Workingman's Blues #2.flac
+b8340c1c1a128db897f9657395046674  09-Things Have Changed.flac
+a63445d997515728b80f14b70e367453  10-Under The Red Sky.flac
+c399e1e9225d0634c2b07274ed49e6d9  11-Highway 61 Revisited.flac
+81276925970e5867521dd8dd04494c68  12-Ain't Talkin'.flac
+d03cc55866fd7f55477faa09105d4fbd  13-Summer Days.flac
+3012a4c58355977b593f2b799115cf4b  14-Like A Rolling Stone.flac
+a34715ac2adbeba2efd9d8717cb250d3  15-I Shall Be Released.flac
+9693ba1847a36837faef16d8dc494037  16-Thunder On The Mountain.flac
+d97bac5751a2b65db6bf3cb2210d1721  17-All Along The Watchtower.flac
+7e81cd979f378d01dedc7ca6191c1753  Bob Dylan 2007-10-29.md5
+c61137492c829aa8e85b9045a331e719  Dylan.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-10-29-Darktrain.flacf 
+=================== 
+=================== 
+=================== 
+01-Cat's In The Well.flac:11051968c37b4231a4ec5ba0909e978f
+02-Lay, Lady, Lay.flac:0552a4cee32e3c13c7c6d03ab24a9500
+03-I'll Be Your Baby Tonight.flac:18c020113474868f749846967ac0eb69
+04-You're A Big Girl Now.flac:25d293be32205303a14b5b4d1b3078fc
+05-Rollin' And Tumblin'.flac:70528b5f37c9b08934d81318a0b3b464
+06-Spirit On The Water.flac:f85736c641edfb3f8cdade70ed481386
+07-Cry A While.flac:eb8319b9a41c900dde3e97edf69fc013
+08-Workingman's Blues #2.flac:39316c6ab866ea0f8669002e90273b29
+09-Things Have Changed.flac:ede06ceab5bbef2bf46416b04f61a1ab
+10-Under The Red Sky.flac:0796131fd9b943d8efee54a890a46ec9
+11-Highway 61 Revisited.flac:82268bc0b0898dbb8cd58fc09accd589
+12-Ain't Talkin'.flac:46ab55fdf44867c35748ee3297948574
+13-Summer Days.flac:b125410458991c297a90882845860139
+14-Like A Rolling Stone.flac:6e10f802b39b294c0e6c1fb3ccdad932
+15-I Shall Be Released.flac:1edd8f3bd1879c41e5f5e4a503222da2
+16-Thunder On The Mountain.flac:0f8fc92099524da5d7cd23e7a688efde
+17-All Along The Watchtower.flac:7988e69679e4fefd77a0fe2c69214c87
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-10-29-Darktrain.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.69       54846332 B   ---   --   ---xx   flac  0.6010  01-Cat's In The Well.flac
+     5:35.73       59265740 B   ---   --   ---xx   flac  0.5291  02-Lay, Lady, Lay.flac
+     5:02.09       53294012 B   ---   --   ---xx   flac  0.5449  03-I'll Be Your Baby Tonight.flac
+     6:17.23       66556940 B   ---   --   ---xx   flac  0.5072  04-You're A Big Girl Now.flac
+     6:48.38       72060620 B   ---   --   ---xx   flac  0.5718  05-Rollin' And Tumblin'.flac
+     7:06.41       75242876 B   ---   --   ---xx   flac  0.4820  06-Spirit On The Water.flac
+     6:32.67       69306428 B   ---   --   ---xx   flac  0.5727  07-Cry A While.flac
+     6:50.14       72356972 B   ---   --   ---xx   flac  0.5207  08-Workingman's Blues #2.flac
+     6:45.39       71533772 B   ---   --   ---xx   flac  0.5615  09-Things Have Changed.flac
+     4:59.27       52807148 B   ---   --   ---xx   flac  0.5235  10-Under The Red Sky.flac
+     6:09.36       65176316 B   ---   --   ---xx   flac  0.6255  11-Highway 61 Revisited.flac
+     8:11.63       86760620 B   ---   --   ---xx   flac  0.5171  12-Ain't Talkin'.flac
+     6:43.21       71138636 B   ---   --   ---xx   flac  0.6067  13-Summer Days.flac
+     6:37.44       70134332 B   ---   --   ---xx   flac  0.6015  14-Like A Rolling Stone.flac
+     7:20.39       77707772 B   ---   --   ---xx   flac  0.5695  15-I Shall Be Released.flac
+     6:33.55       69454604 B   ---   --   ---xx   flac  0.6201  16-Thunder On The Mountain.flac
+     8:13.29       87033084 B   -b-   --   ---xx   flac  0.5638  17-All Along The Watchtower.flac
+   110:59.12     1174676204 B                            0.5594  (17 files)
+=================== 
+=================== 
+=================== 

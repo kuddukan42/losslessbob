@@ -1,0 +1,41 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-09-27.flacf 
+=================== 
+=================== 
+=================== 
+409de9fab70e23f28c48cd155694a313  Audio\Track01.flac
+151901c0b1668c9bef1d051df4cade5f  Audio\Track02.flac
+ea40d326f75371c8e5c6843497606049  Audio\Track03.flac
+431ae309e81e734385c4e49240d8a557  Audio\Track04.flac
+b79e9b27aa78799c4b35c07362b14733  bd97-09-27-LB-4595.txt
+6f10a7d085a2e1113f68eeab42992b6e  info.sfv
+074f9678131161390e75c7035bae5b2e  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-09-27.flacf\Audio 
+=================== 
+=================== 
+=================== 
+Track01.flac:3fd48e1e159f772fdb8407b3f46a392a
+Track02.flac:b77eaa3b5b056c00dd6779180a24bd5c
+Track03.flac:396e712915d35f30416ebdc309c83e63
+Track04.flac:dbb7d1f8b8db1e3e923b9116633ff0da
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-09-27.flacf\Audio 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:50.19       51200732 B   ---   --   ---xx   flac  0.5962  Track01.flac
+     9:50.13      104106620 B   ---   --   ---xx   flac  0.5711  Track02.flac
+     3:43.34       39417212 B   ---   --   ---xx   flac  0.5345  Track03.flac
+     5:59.26       63388796 B   ---   --   ---xx   flac  0.5932  Track04.flac
+    24:23.17      258113360 B                            0.5759  (4 files)
+=================== 
+=================== 
+=================== 

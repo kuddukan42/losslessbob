@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd89-07-21-b.flacf
+===================
+===================
+===================
+44147c20107615de86638d21c7da8599 *Bob Dylan 21-7-1989 Holmdel, New Jersey.ffp
+69ebf5a502e766968adf874d671e7ce0 *Bob Dylan 21-7-1989 Holmdel, New Jersey.md5
+69ebf5a502e766968adf874d671e7ce0 *Bob Dylan 21-7-1989 Holmdel, New Jersey.txt
+44147c20107615de86638d21c7da8599 *ffp.txt
+435cf874e349fba815dd1581ffa54635 *info.txt
+86fd9f1b1e8ee853fdc2e36bc76bf7ea *Track01.flac
+c70fbdb617c1c62b5209def366b2380d *Track02.flac
+d23f9f9246bddda2503d025fbf47e154 *Track03.flac
+b48c0cbaab4b7d7cf74fc32e3cc88762 *Track04.flac
+5e2efd414293e99aae70ec38df48216a *Track05.flac
+18c0e8c0d15e8dc4d8ae1d146777b687 *Track06.flac
+eb8e6fb2a14e8954d81fb1b4c6b58f26 *Track07.flac
+89c4d9021c20d3812aa570d30a5fcbad *Track08.flac
+5720e8fbd038bbf98e4aa4170ea2390c *Track09.flac
+380efa9b3834871a518100664f3baa7d *Track10.flac
+ece42ae3f1afcb35adf5c326a3c0554b *Track11.flac
+6ca5c70c81e2283dacc35e58d87625ec *Track12.flac
+8a6ad50b5cf5986e684b932093cbe6d1 *Track13.flac
+17c8d172f1406b3f8eb9cb8c2361b23f *Track14.flac
+179e7a9b071dd5c0c1c2b092f452593e *Track15.flac
+9e10a1913d0e41c2df9200a21539c42f *Track16.flac
+===================
+===================
+===================
+=== ffp for: bd89-07-21-b.flacf
+===================
+===================
+===================
+Track01.flac:68fc4ce9b4f0d45400acd25e0173471f
+Track02.flac:01d85a152791b39f9d961141212a0c34
+Track03.flac:82bb3637501c37505582374108c9c897
+Track04.flac:fb4644f28789da57195edb805cd4973c
+Track05.flac:b94c2e2ba6b6cfce6e6c376d5bd9d103
+Track06.flac:76e12337e4ebf85c710cde88e4d7bc1b
+Track07.flac:50ee15eb29f38afa07e4522676ee201e
+Track08.flac:2d82c3c91f8246e434dedc95f0b57736
+Track09.flac:2952f0239cee1c497e2e94db6faf440c
+Track10.flac:3caccb3c0bab143688fca286ac40c279
+Track11.flac:82c40cec2c332a5c9f2520b0996188ca
+Track12.flac:a29f93fe78bff67ae4879d7cee065907
+Track13.flac:592b5c4fb4b33343cc1666e9fa0a4c8c
+Track14.flac:88f7f30380001463ce7b68cc62286015
+Track15.flac:67b4906eeb7e34bfedb94519fb36e252
+Track16.flac:8d9c1350665d30c4d6bb043e7be70921
+===================
+===================
+===================
+=== shntool len for: bd89-07-21-b.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.37       39424268 B   ---   --   ---xx   flac  0.6150  Track01.flac
+     3:12.39       33960572 B   ---   --   ---xx   flac  0.5671  Track02.flac
+     5:26.07       57522908 B   ---   --   ---xx   flac  0.6106  Track03.flac
+     5:19.57       56405708 B   ---   --   ---xx   flac  0.6115  Track04.flac
+     5:21.66       56779676 B   ---   --   ---xx   flac  0.6218  Track05.flac
+     4:53.52       51807548 B   ---   --   ---xx   flac  0.6252  Track06.flac
+     4:12.00       44452844 B   ---   --   ---xx   flac  0.5670  Track07.flac
+     5:32.24       58621292 B   ---   --   ---xx   flac  0.5752  Track08.flac
+     2:59.69       31737932 B   ---   --   ---xx   flac  0.5469  Track09.flac
+     5:48.42       61486028 B   ---   --   ---xx   flac  0.5654  Track10.flac
+     3:57.70       41971484 B   ---   --   ---xx   flac  0.6372  Track11.flac
+     4:21.35       46122764 B   ---   --   ---xx   flac  0.6066  Track12.flac
+     4:02.48       42801740 B   ---   --   ---xx   flac  0.6141  Track13.flac
+     6:34.21       69551036 B   ---   --   ---xx   flac  0.6437  Track14.flac
+     7:46.52       82324748 B   ---   --   ---xx   flac  0.5647  Track15.flac
+     5:44.03       60688700 B   ---   --   ---xx   flac  0.6255  Track16.flac
+    78:57.22      835659248 B                            0.6008  (16 files)
+===================
+===================
+===================

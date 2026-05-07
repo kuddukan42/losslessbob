@@ -1,0 +1,119 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: BD 22Aug98 Melbourne + PS Set 
+=================== 
+=================== 
+=================== 
+294a0d21b0726c143b0cdd1e63e94c92  22Aug98Part101.flac
+863a67bb88a9cd490d5c7faa39e52596  22Aug98Part102.flac
+5579468f193de71c2cc19b028f01ae7a  22Aug98Part103.flac
+f4465c3328512d20532fc71fd02aa722  22Aug98Part104.flac
+0ab4f7a2c139265f60cc364b60adaa03  22Aug98Part105.flac
+9969ae42cc26fdff7bc5a71fc12eb263  22Aug98Part106.flac
+212bb655b476dc2e9ba5d591f0749fbb  22Aug98Part107.flac
+530de7157505f02ac30e0220e6308b23  22Aug98Part201.flac
+dbeeacefeb9c1ba816cd6dcf419c21f8  22Aug98Part202.flac
+b19b862e4fc28ebbd3132c7a42c98d92  22Aug98Part203.flac
+f049da38f8cad62fd359862e54abaaad  22Aug98Part204.flac
+f32197d631dc71da9d734db848acccfd  22Aug98Part205.flac
+54d7f3774d079c6b6066e6b321ff36d9  22Aug98Part206.flac
+28413e069322447598b46b6556d87642  22Aug98Part207.flac
+13e291eee6cbf26fbb74704060b57796  22Aug98Part208.flac
+fd17cc832e05883aab5b47c3485b17fd  22Aug98Part209.flac
+b63a5754f9770393743bc50ba12b8dff  BD 22Aug98 Melbourne + PS Set.md5
+bbce300664ccef0c449904bd278ce906  PS 22Aug98\PS 22Aug98.md5
+153d7dbaf52c1c15a14de6fcc7deec62  PS 22Aug98\Track01.flac
+bf79ff50fff9f956151442fb58de5fdd  PS 22Aug98\Track02.flac
+772fc0e1f89194628c0da5f919a4ac03  PS 22Aug98\Track03.flac
+d8b26116d9a7ec5d64a4481cd7390205  PS 22Aug98\Track04.flac
+2ee482b44acd239b717d1e752eaab9bc  PS 22Aug98\Track05.flac
+3486e52adc0a4addbeca629a64f4251a  PS 22Aug98\Track06.flac
+580ae61d77a0f84ef6cb9e237f21307c  PS 22Aug98\Track07.flac
+155802b06478755afd61142ccda92640  PS 22Aug98\Track08.flac
+8703c29e1c0d458a0b2f90bcaba851c4  PS 22Aug98\Track09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: BD 22Aug98 Melbourne + PS Set 
+=================== 
+=================== 
+=================== 
+22Aug98Part101.flac:0bb407235bcc90a7ae4a4bf92c055008
+22Aug98Part102.flac:d6c57dca221af40f28d0a3a06918808c
+22Aug98Part103.flac:ee74c6c9a1bc2aa52d81f34a915ad132
+22Aug98Part104.flac:eb2f1e9fdc7d516cd0e6450a75c4ef1c
+22Aug98Part105.flac:2e2c21bff2b069b7880b88d8c43baa60
+22Aug98Part106.flac:2f294bda9fc2eadc7c140c2995d7eee2
+22Aug98Part107.flac:8cc1be752f6ca6a1cfc59bf0bfa7293d
+22Aug98Part201.flac:94001cbc71bbd8119837d8188d024b76
+22Aug98Part202.flac:56561d0aa32c8ddb06aab79ce8412395
+22Aug98Part203.flac:0fa4272c73d300ad1b9953445d2bdc30
+22Aug98Part204.flac:cec044d828eb0a20c4ce2495dbd5877e
+22Aug98Part205.flac:5a10711a510c1c113d6765b52513788f
+22Aug98Part206.flac:4efae11e641e037632cefec2b96ea48f
+22Aug98Part207.flac:3deb57c15377ab681ec65c16f8bfbc89
+22Aug98Part208.flac:f5db6a0ea082d3724ec1127c47730b41
+22Aug98Part209.flac:400486106be6d499feafa5d308adadaf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: BD 22Aug98 Melbourne + PS Set\PS 22Aug98 
+=================== 
+=================== 
+=================== 
+Track01.flac:25e32cdb6256051c5eb740c8cd9c9fe5
+Track02.flac:8792318216082fde19b3b59c195b4831
+Track03.flac:668f22d215c0332071bf98944bb61580
+Track04.flac:6c48a051139d08ecc1aa234a4c8b0e66
+Track05.flac:468d625ee839cf12a208260ea86d0425
+Track06.flac:d0619d803b66c90973d1941c3739cf35
+Track07.flac:24a6f614e9b5df910e0d4ae009f7ca74
+Track08.flac:14944ad8e36d79f9c64e0c212a8f4776
+Track09.flac:f674a1639c01885e68843ce6319a8b37
+=================== 
+=================== 
+=================== 
+=== shntool len for: BD 22Aug98 Melbourne + PS Set 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.43       54255980 B   ---   --   ---xx   flac  0.6761  22Aug98Part101.flac
+     5:29.50       58153244 B   ---   --   ---xx   flac  0.6761  22Aug98Part102.flac
+     6:04.20       64256684 B   ---   --   ---xx   flac  0.6987  22Aug98Part103.flac
+     7:55.59       83928812 B   ---   --   ---xx   flac  0.6696  22Aug98Part104.flac
+     5:34.07       58934108 B   ---   --   ---xx   flac  0.6728  22Aug98Part105.flac
+     6:38.73       70378940 B   ---   --   ---xx   flac  0.6749  22Aug98Part106.flac
+     7:09.73       75847340 B   ---   --   ---xx   flac  0.6440  22Aug98Part107.flac
+     6:55.52       73328348 B   ---   --   ---xx   flac  0.6446  22Aug98Part201.flac
+     8:20.22       88251788 B   ---   --   ---xx   flac  0.6937  22Aug98Part202.flac
+     7:39.61       81111116 B   ---   --   ---xx   flac  0.6363  22Aug98Part203.flac
+     7:01.31       74337356 B   ---   --   ---xx   flac  0.6395  22Aug98Part204.flac
+     8:24.57       89039708 B   ---   --   ---xx   flac  0.6634  22Aug98Part205.flac
+     5:21.50       56742044 B   ---   --   ---xx   flac  0.6509  22Aug98Part206.flac
+     5:14.33       55467260 B   ---   --   ---xx   flac  0.6739  22Aug98Part207.flac
+     7:47.56       82510556 B   ---   --   ---xx   flac  0.6008  22Aug98Part208.flac
+     5:05.05       53813804 B   ---   --   ---xx   flac  0.6498  22Aug98Part209.flac
+   105:51.17     1120357088 B                            0.6593  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: BD 22Aug98 Melbourne + PS Set\PS 22Aug98 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:26.23       68144540 B   ---   --   ---xx   flac  0.6268  Track01.flac
+     5:22.04       56810252 B   ---   --   ---xx   flac  0.6245  Track02.flac
+     6:38.71       70374236 B   ---   --   ---xx   flac  0.5651  Track03.flac
+     6:27.55       68396204 B   ---   --   ---xx   flac  0.5720  Track04.flac
+     4:35.06       48524156 B   ---   --   ---xx   flac  0.5792  Track05.flac
+     5:16.04       55751852 B   ---   --   ---xx   flac  0.5810  Track06.flac
+     5:03.65       53602124 B   ---   --   ---xx   flac  0.5803  Track07.flac
+     8:41.00       91904444 B   ---   --   ---xx   flac  0.5834  Track08.flac
+     4:17.74       45508892 B   ---   --   ---xx   flac  0.6191  Track09.flac
+    52:49.02      559016700 B                            0.5912  (9 files)
+=================== 
+=================== 
+=================== 

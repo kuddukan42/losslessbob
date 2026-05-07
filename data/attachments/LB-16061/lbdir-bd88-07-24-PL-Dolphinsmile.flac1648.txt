@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd88-07-24-PL-Dolphinsmile.flac1648
+===================
+===================
+===================
+12f6dee5588e49c2d494b5834c3b2775 *01 Subterreanean Homesick Blues.flac
+d5039c370197906377890b8faf114a97 *02 I ll Remember You.flac
+4c1caf74c7aa83c0ddf31cbbf4ba467d *03 John Brown.flac
+9cbd2732b22cbd4e290df111d0ea74f2 *04 Highway 61.flac
+12eb5b4c06fe71fafee9956f41ec680b *05 Ballad Of A Thin Man.flac
+0dea1c39193e9ecee37a7e1b5df809f2 *06 I Shall Be Released.flac
+7fcd68c74fc00b9755d3cab094f33879 *07 Dont Think Twice.flac
+3cfcbde37e72a6ab397825eb43406388 *08 Hard Rain.flac
+f3f1b7df626f760b45a2d49a574c8f09 *09 Hattie Carroll.flac
+00697dbb535ae051120e016b5a4a9d39 *10 Silvio.flac
+616199447ad6d3bb5483eb0c1497d56e *11 In The Garden.flac
+72f430198486cd01bc8ecbbd7498e669 *12 Like A Rolling Stone.flac
+bc3c19cd68f08d8a22b7f20c2e6cfc50 *13 Blowin In The Wind.flac
+184da12be9cef1cbbcba5352dcc308ce *14 Times Are A Changin.flac
+278d91f4de826802df726625d6f20b59 *15 All Along The Watchtower.flac
+7f60f5e2546f5bdaef6431d5f7abe892 *Bob Dylan Chastain Park Atlanta 1988-07-24 Dolphinsmile Archive.ffp
+837b77bb8d0ac93b976acdd9b5475c63 *Bob Dylan Chastain Park Atlanta 1988-07-24 Dolphinsmile Archive.md5
+7f60f5e2546f5bdaef6431d5f7abe892 *Bob Dylan Chastain Park Atlanta 1988-07-24 Dolphinsmile Archive.txt
+b0a4152b74cd081a67d8cc13849d3531 *info.txt
+===================
+===================
+===================
+=== ffp for: bd88-07-24-PL-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Subterreanean Homesick Blues.flac:ee9b5ded88e5e82ab1212ef9a5805eec
+02 I ll Remember You.flac:5afd64708dbed1be087026540b54dd81
+03 John Brown.flac:269eac84a176b62cab629b103bd3b0a8
+04 Highway 61.flac:3da538bd3023d2cc18b88ed01255ff7d
+05 Ballad Of A Thin Man.flac:8c02f7e25e99db900d59cbf4a1ee51b7
+06 I Shall Be Released.flac:0234b6ad04b67b20fe8246235490001d
+07 Dont Think Twice.flac:6a25d1fb10a2f68352a592009f4019a9
+08 Hard Rain.flac:8a00fa2bb9224d14d23a9ef1ac32c4a3
+09 Hattie Carroll.flac:cd218363361c63505c90f8137ae1edc0
+10 Silvio.flac:60ae8fda175951e155eada4c58575ca6
+11 In The Garden.flac:9aa35bdb8c10d27c8468245cc2ea22b5
+12 Like A Rolling Stone.flac:4b34cfd980fa565010d1e2602d17398a
+13 Blowin In The Wind.flac:9ab83e987fa20934125e0082ae86d5be
+14 Times Are A Changin.flac:6a95485c49cb266d0bbfa619a6cf6b0a
+15 All Along The Watchtower.flac:f2dbc9c03dd4352b24795981281eb1f9
+===================
+===================
+===================
+=== shntool len for: bd88-07-24-PL-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:45.919      43376552 B   cxx   --   ---xx   flac  0.4912  01 Subterreanean Homesick Blues.flac
+     4:10.515      48098964 B   cxx   --   ---xx   flac  0.4995  02 I ll Remember You.flac
+     4:31.350      52099316 B   cxx   --   ---xx   flac  0.4890  03 John Brown.flac
+     4:45.204      54759132 B   cxx   --   ---xx   flac  0.5182  04 Highway 61.flac
+     4:59.346      57474512 B   cxx   --   ---xx   flac  0.5022  05 Ballad Of A Thin Man.flac
+     4:32.811      52379712 B   cxx   --   ---xx   flac  0.4943  06 I Shall Be Released.flac
+     5:07.033      58950388 B   cxx   --   ---xx   flac  0.4699  07 Dont Think Twice.flac
+     8:03.951      92918720 B   cxx   --   ---xx   flac  0.4705  08 Hard Rain.flac
+     5:30.255      63408988 B   cxx   --   ---xx   flac  0.4737  09 Hattie Carroll.flac
+     3:58.524      45796632 B   cxx   --   ---xx   flac  0.5580  10 Silvio.flac
+     5:35.931      64498716 B   cxx   --   ---xx   flac  0.5514  11 In The Garden.flac
+     7:39.482      88220560 B   cxx   --   ---xx   flac  0.5547  12 Like A Rolling Stone.flac
+     5:23.856      62180412 B   cxx   --   ---xx   flac  0.5057  13 Blowin In The Wind.flac
+     3:59.945      46069464 B   cxx   --   ---xx   flac  0.5213  14 Times Are A Changin.flac
+     4:32.642      52347292 B   cxx   --   ---xx   flac  0.5412  15 All Along The Watchtower.flac
+    76:36.764     882579360 B                            0.5090  (15 files)
+===================
+===================
+===================

@@ -1,0 +1,179 @@
+"On the Corner of 12th Street and Vine"
+
+Bob Dylan, Tom Petty & The Heartbreakers and The Queens of Rhythm
+24 July 1986
+Sandstone Amphitheater, Bonner Springs, Kansas
+
+1st analogue generation ex master>CD>Flac
+(CDs Courtesy of Court)
+
+B+, a bit bassy, audience clapping sounds thin. Some volume level issues.
+
+Except for tape-flip cuts, seamless; no track-per-disc breakdown imposed.
+
+177:50.71
+
+Bob Dylan set 1
+01. [4:09.47] Kansas City (Jerry Leiber / Mike Stoller)
+02. [4:29.25] All Along The Watchtower
+03. [3:07.22] Clean-Cut Kid
+04. [4:45.53] I'll Remember You
+05. [5:08.24] Shot Of Love
+06. [4:21.66] We Had It All (Donnie Fritts / Troy Seals)
+07. [5:06.20] Masters Of War
+
+Tom Petty & The Heartbreakers set 1
+08. [3:53.51] Listen To Her Heart (Tom Petty)
+09. [4:02.38] Think About Me (Tom Petty)
+10. [6:14.05] The Waiting (Tom Petty)
+(tape flip cut)
+11. [7:27.56] //Breakdown (Tom Petty)
+
+Bob Dylan set 2
+12. [4:13.51] To Ramona
+13. [3:53.72] One Too Many Mornings
+14. [7:50.05] A Hard Rain's A-Gonna Fall
+15. [3:49.16] I Forgot More Than You'll Ever Know (Cecil A. Null)
+16. [5:29.31] Band Of The Hand
+17. [6:17.67] When The Night Comes Falling
+18. [4:32.17] Lonesome Town (Baker Knight)
+(tape flip cut)
+19. [5:34.23] //Ballad Of A Thin Man
+
+Tom Petty & The Heartbreakers set 2
+20. [5:08.29] Straight Into Darkness (Tom Petty)
+21. [8:16.03] Spike (Tom Petty)
+22. [5:35.62] Tonight Might Be My Night (?)
+(tape flip cut)
+23. [5:36.02] Refugee (Tom Petty / Mike Campbell)
+
+Bob Dylan set 3
+24. [3:48.15] Rainy Day Women #12&35
+25. [5:02.47] Seing The Real You At Last
+26. [5:53.27] Across The Borderline (Ry Cooder / John Hiatt / Jim Dickinson)
+27. [6:54.70] I And I
+28. [5:07.08] Leopard-Skin Pill-Box Hat
+29. [6:27.69] Like A Rolling Stone
+(tape flip cut)
+30. [7:22.52] //In The Garden
+
+Encore
+31. [5:33.72] Blowin' in the Wind
+32. [3:54.53] Shake a Hand (Joseph Morris)
+33. [8:41.73] Knockin' on Heaven's Door
+
+Complete concert.
+
+The only "Kansas City" by Bob Dylan (as of 15th May 2006).
+(Trivia: Fifteen years later Dylan incorporated the line "12th Street and Vine" to his own "High Water (For Charley Patton)" on "Love And Theft". The significance of this junction explained in the attached "12thSt&Vine.txt" file.)
+
+The only performance of "Leopard-Skin Pill-Box Hat" in 1986.
+
+------------------------------------------------------------
+
+FLAWS:
+t06 [0:38] d/o in right channel
+t09 [2:37] d/o in left channel
+t10 [2:16] flaw (mic bump/strange noise?)
+t13 [1:23] two bursts of static, [2:04-2:18] wind noises
+t14 [2:21-2:36] wind noises (more later), [7:42] d/o (cut?)
+t16 [4:35] volume decrease
+t17 [1:37] d/o in left channel, [4:53] volume increase
+t19 [0:00] a couple of opening notes lost due to tape flip
+t21 [4:00] mic bumps
+t23 [5:31-5:33] diginoise (square waves)
+t25 [2:41] v small click
+t26 [3:26] v small click
+t27 [0:11] hiss increase
+t29 [1:13, 1:22m, 4:21] wind noise
+t30 [0:00] introduction partly cut (cf. BobTalk below); [0:41-1:05] distortions brought on by volume fluctuation; [3:43-3:49] wind noise
+
+some occasional mic bumps|wind noise|talking b/n songs
+
+------------------------------------------------------------
+
+FINGERPRINTS:
+t07 [0:22] woman: "It's funny" twice.
+t14 [0:37] man: "Excuse me!"
+t21 [7:32] man: "Highway 61" (after Petty mentions Highway 441)
+t26 [0:04] man: "Highway 61... 61"
+t29 [0:08] man: "Jokerman... Jokerman... Jokerman"; other man: "Highway 61"
+t33 [1:30] man (hysterically): "All right! All right! Woooo!"
+
+------------------------------------------------------------
+
+MY INVOLVEMENT:
+
+t01 [1:28-1:29] diginoise (square waveform) patched with an unknown-gen version of the same master.
+Unpatched track for purists in the "\Unpatched" directory. Both variants sector-aligned; so you can burn the show with either.
+t05 [0:43] analogue click REMOVED
+t05 [3:12] analogue pop REMOVED
+t05 [4:06] analogue pop REMOVED
+t11 [3:53] analogue click REMOVED
+t19 [1:24] analogue click REMOVED
+t23 [1:56] analogue click REMOVED
+t32 [1:16-1:23] volume reduction
+
+CD-sourced 0-byte padding(s) deleted to make the recording seamless.
+
+------------------------------------------------------------
+
+BobTalk (mostly stolen from bjorner.com)
+
+ * after Kansas City
+Well, that's the first time I've ever played that. Well, anyway we know where we are.
+
+ * before Listen To Her Heart
+OK, thank you! Right now: Tom Petty & The Heartbreakers!
+
+ * before Band Of The Hand
+OK, anybody out there know what time it is? Right? Tommy Parker, he knows. I'm gonna tell you what time it is.
+
+ * before When The Night Comes Falling
+All right now, I wanna dedicate this to all fellas over there (...) in prison. Some of those guys are there for doing good things.
+
+ * before Lonesome Town
+OK, Ricky Nelson he did a lot of my songs. I wanna do one of his. This is called Lonesome Town.
+
+ * before Straight Into Darkness
+OK, one more time now, Tom Petty & The Heartbreakers!
+
+ * before I And I
+OK, all right, we're still just across that borderline. 'Cause you're in the middle of the country here. Oh yeah, somebody asked me backstage about the remark I said before about people being in prison for doing good things? Well, I don't know how many people are living in prison for doing good things but..., I was gonna dedicate that to, I'm sure there's some people in there who have been put in there unjustly. So I dedicate it to all of them.
+
+ * before Leopard-Skin Pill-Box Hat
+All right now, Tom Petty and the Heartbreakers are: on the keyboards, Benmont Tench. He loves it, he wants you to know that. Mike Campbell on lead guitar. Stan Lynch on the drums. Peter Gabriel, is he sitting in tonight? Is he here tonight? Was he sitting in tonight, I'm not sure. Was he? All right, on the bass guitar, from Kansas City, Howie Epstein. Ha-ha. Everybody's got to be from someplace. Anyway, standing over here, is the man who wrote "Refugee", Tom Petty. Of course I can't really go on without introducing my own Heartbreakers. I'm gonna introduce my own Heartbreakers, too. That's Madelyn Quebec and Louise Bethune. Carolyn Dennis and Queen Esther Marrow.
+
+ * before In The Garden
+[Thank you. Last time I was here, I think I was here about '81, '83. Uptown Theater or wherever it was, I don't care, yeah,]* Uptown Theatre right. Anyway, we played this song last time and nobody had heard it that time, it was the first time. One of the very few times I played it. Since that time it's been recorded so a lot of people have heard it though. I'm gonna play it again here. Besides there were some people there that night that are also in this crowd tonight and they asked me to please play it again.
+
+*missing on this tape; reconstructed presumably from the SOUNDBOARD recording (LB-276, tracks 22-33 only).
+
+ * before Shake A Hand
+OK. One of our ... one of America's foremost poets is out in the house tonight, I wanna introduce him, Allen Ginsberg, wherever you are. Two hundred years from now people are gonna be reading Allen Ginsberg. "Howl". Two hundred, maybe three hundred... maybe twenty.
+
+ * before Knockin' On Heaven's Door
+OK, then. I just wanna say it does not, if, rock music, rock n' roll music reviewers here from The Kansas City Star, or The Kansas City Times, whatever. I just wanna ask them would they check with some people on the way out, what they thought, what they saw. Because... I think that's only right now, I think that's only right because these people from the newspapers now, they get in free, you know. So they... it's... there's nothing wrong with getting in free anywhere but a lot of people don't get in free. So we're gonna talk about those people tonight. The people who gotta pay a price to get in. I know I'm one. I got to pay a heavy price.
+
+------------------------------------------------------------
+
+The band is:
+
+  Bob Dylan (vocal, guitars, harmonica)
+
+Tom Petty & The Heartbreakers:
+  Tom Petty - vocal, guitar
+  Mike Campbell - guitar
+  Benmont Tench - keyboards
+  Howie Epstein - bass
+  Stan Lynch - drums
+
+The Queens Of Rhythm:
+  Carolyn Dennis - backing vocals
+  Queen Esther Marrow - backing vocals
+  Madelyn Quebec - backing vocals
+  Louise Bethune - backing vocals
+
+------------------------------------------------------------
+
+Arturo el Duderino, 15 May 2006

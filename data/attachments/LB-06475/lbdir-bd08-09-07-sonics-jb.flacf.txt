@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-09-07-sonics-jb.flacf 
+=================== 
+=================== 
+=================== 
+be03613652ee2887916c6a4412c769f0  BD 090708-101.flac
+e06fba15e50f7bc4f41c7e08bd4211c7  BD 090708-102.flac
+13b0b4c90a504562d862c3ef276f7bab  BD 090708-103.flac
+7eaa49c9aeded6648e6317e1c117ce9f  BD 090708-104.flac
+9f911c255eb6cfb06af9c13c3847f9aa  BD 090708-105.flac
+1d9b9ee996e1dd694e0487683b982f71  BD 090708-106.flac
+a2eff23984a97a7ad4bd56ecdb382f92  BD 090708-107.flac
+a0ddbd044cfe5282118e77f7399e9f16  BD 090708-108.flac
+65c03b9bcb4444a083ab90b3da4aaa14  BD 090708-109.flac
+6eab77972063add6372e3563fd0ada26  BD 090708-201.flac
+3872d55c87c72cfba59c40e22fdb04ee  BD 090708-202.flac
+357e2ef971288992b77e9ec9ad8aa525  BD 090708-203.flac
+42472107cba6c8764758e2f8f984e341  BD 090708-204.flac
+007570ea687f31d3df6a972e268f4cc6  BD 090708-205.flac
+0232293337cd24850c108cc9671c2a67  BD 090708-206.flac
+538c3fc9c5f206bdaadda0c2cb5b3d23  BD 090708-207.flac
+31a0d88b07611bf592f4c5391aaabcf3  Bob Dylan 2008-09-07.txt
+6459810ddb4ad9724e25b54e1dfcf5a8  fingerprint.ffp.txt
+e0e018bd754bd501ae739fe219cf87e9  md5sum.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-09-07-sonics-jb.flacf 
+=================== 
+=================== 
+=================== 
+BD 090708-101.flac:273c2578eee00d1e6098c8ac4c66b3d7
+BD 090708-102.flac:2fbbf77e2eb6fdfb5c4c6bf44b4f0617
+BD 090708-103.flac:b8f0a6897822e7c7b0dab44279704c0a
+BD 090708-104.flac:45c0768cf771a1c1728d9183f1b9863d
+BD 090708-105.flac:436a182401b2f6c420f99413ca449335
+BD 090708-106.flac:d1fbf5a90ebebde2f598deb9b68b6be3
+BD 090708-107.flac:37f090e8e3f6a6f3a1c4475919cb7ea7
+BD 090708-108.flac:ebff2b0393ec3bd59c9ff405ccb046da
+BD 090708-109.flac:ee5c0fd08e58bbf03f241d5e09608d3c
+BD 090708-201.flac:a952e4d2dbc723b1b2735d1833aa2a7c
+BD 090708-202.flac:26aff1b052c9cd7bb512cf5b5650bf35
+BD 090708-203.flac:0e999002979450e8de8b1a0feaa16f94
+BD 090708-204.flac:5e84b4dc7795e85d7a67301855f641d2
+BD 090708-205.flac:8c7428ef66312ed5570a737b0aba8213
+BD 090708-206.flac:fd6d6d69cb13c2e2bcc7dd9666bd1cc7
+BD 090708-207.flac:9400cf47dc0b86821968d5ba59eae1f0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-09-07-sonics-jb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.58       53232860 B   ---   --   ---xx   flac  0.6618  BD 090708-101.flac
+     5:22.42       56899628 B   ---   --   ---xx   flac  0.6676  BD 090708-102.flac
+     7:29.00       79203644 B   ---   --   ---xx   flac  0.6668  BD 090708-103.flac
+     6:26.17       68130428 B   ---   --   ---xx   flac  0.6330  BD 090708-104.flac
+     6:30.73       68967740 B   ---   --   ---xx   flac  0.6530  BD 090708-105.flac
+    10:00.71      106007036 B   ---   --   ---xx   flac  0.6546  BD 090708-106.flac
+     6:47.51       71914796 B   ---   --   ---xx   flac  0.6570  BD 090708-107.flac
+     7:24.08       78340460 B   ---   --   ---xx   flac  0.6649  BD 090708-108.flac
+     6:10.52       65390348 B   ---   --   ---xx   flac  0.6089  BD 090708-109.flac
+     7:49.08       82750460 B   ---   --   ---xx   flac  0.6532  BD 090708-201.flac
+     5:57.46       63083036 B   ---   --   ---xx   flac  0.5721  BD 090708-202.flac
+     6:23.62       67707068 B   ---   --   ---xx   flac  0.6790  BD 090708-203.flac
+     8:20.68       88359980 B   ---   --   ---xx   flac  0.6283  BD 090708-204.flac
+     8:51.66       93823676 B   ---   --   ---xx   flac  0.6334  BD 090708-205.flac
+     7:36.64       80588972 B   ---   --   ---xx   flac  0.6534  BD 090708-206.flac
+     8:28.53       89735900 B   ---   --   ---xx   flac  0.6091  BD 090708-207.flac
+   114:42.64     1214136032 B                            0.6433  (16 files)
+=================== 
+=================== 
+=================== 

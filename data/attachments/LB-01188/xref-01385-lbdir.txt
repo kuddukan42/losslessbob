@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd03-07-22-c.flacf
+===================
+===================
+===================
+5ae849e6192442eac8e6e6d637ad7028 *disc1\01 Bob Dylan - 1 Tombstone Blues.flac
+7e587a6cced0b3993ea46482c119aaf5 *disc1\02 Bob Dylan - 2 I'll Be Your Baby Tonight.flac
+69ab9b14248637b70a8391c5c3fc06cb *disc1\03 Bob Dylan - 3 Tweedle Dee & Tweedle Dum.flac
+58c5e6362d8b78ae2cf9f8f56888dbd6 *disc1\04 Bob Dylan - 4 It Ain't Me, Babe.flac
+bfa593823b54db94cd7aabd2340319d4 *disc1\05 Bob Dylan - 5 Things Have Changed.flac
+577eb700fc8b115ecd1d9198b0870945 *disc1\06 Bob Dylan - 6 Highway 61 Revisited.flac
+b7ef6a4de0f8eb2ede02c7c6073d05da *disc1\07 Bob Dylan - 7 Positively 4th Street.flac
+18f130c363b7701c88bc6e8b766dfc54 *disc1\08 Bob Dylan - 8 The Wicked Messenger.flac
+ae616b8958ab02ca91f92591d426eb26 *disc1\09 Bob Dylan - 9 Don't Think Twice, It's All Right.flac
+ecbfc6f07796c707a71a9e7cd1f0bfea *disc1\10 Bob Dylan - 10 Honest With Me.flac
+39bb7ae6e55bd061bcae6d104ea5b453 *disc1\CD audio.log
+2017da84023bb70c7148955a29fb838b *disc1\fingerprint.ffp.txt
+4ecb5b4779d139e96e4176a8ef17b929 *disc1\md5sum.md5
+1af01e5ba97ff9658dac9b89785574a7 *disc2\01 Bob Dylan - 1 Moonlight.flac
+09f1f9c51c686b8424dd276083ad9aa8 *disc2\02 Bob Dylan - 2 Summer Days.flac
+329152da49063a8a8bf71296b5e1d994 *disc2\03 Bob Dylan - 3 (encore), Like A Rolling Stone.flac
+9bef6985550ba46af8860ce0a920f6a2 *disc2\04 Bob Dylan - 4 All Along The Watchtower.flac
+7a4b100128215c0ec1632fdd09cb768e *disc2\CD audio.log
+c0e6cdcffd463d566f739565a5d05689 *disc2\fingerprint.ffp.txt
+4af829b5b1901758918c9527ee3cf28b *disc2\md5sum.md5
+c8c43283154ba25ee80a83d31b90463c *infos.txt
+a90e7a69c31aa00846dc4b362eb712a2 *notes.rtf
+dd05ddfb630e149b8118d4a6024ca5d5 *shntool.rtf
+===================
+===================
+===================
+=== ffp for: bd03-07-22-c.flacf
+===================
+===================
+===================
+disc1\01 Bob Dylan - 1 Tombstone Blues.flac:cdc464ccad70943200411afd1fb1f0d8
+disc1\02 Bob Dylan - 2 I'll Be Your Baby Tonight.flac:4b21e632c743b23737936d8685bc93e8
+disc1\03 Bob Dylan - 3 Tweedle Dee & Tweedle Dum.flac:14907072050967d67aac21e54bba97ff
+disc1\04 Bob Dylan - 4 It Ain't Me, Babe.flac:f9ec7f71c9515f383948a6354df7f4e9
+disc1\05 Bob Dylan - 5 Things Have Changed.flac:fa746ab5e5dd0ddef0676ecb85da6274
+disc1\06 Bob Dylan - 6 Highway 61 Revisited.flac:16a6e47a1c0375cd6835078ed65766aa
+disc1\07 Bob Dylan - 7 Positively 4th Street.flac:9144d3d27f019f4f859d21e6ca9e9d2d
+disc1\08 Bob Dylan - 8 The Wicked Messenger.flac:69be5662f64ce69869096f31856f50c9
+disc1\09 Bob Dylan - 9 Don't Think Twice, It's All Right.flac:dbcc31a25603cfad3bf07ecd97741706
+disc1\10 Bob Dylan - 10 Honest With Me.flac:d17d3d604cc0ba1b6bcd597f0e9bb8fc
+disc2\01 Bob Dylan - 1 Moonlight.flac:86c880d3e4b10750d21d2302a21d2032
+disc2\02 Bob Dylan - 2 Summer Days.flac:3ddd4bb1f0505ef16d0eab0844b3f6c6
+disc2\03 Bob Dylan - 3 (encore), Like A Rolling Stone.flac:8a69658393a5faeb558f438a747b33c8
+disc2\04 Bob Dylan - 4 All Along The Watchtower.flac:3886401756e2c55821ca55865ec3a927
+===================
+===================
+===================
+=== shntool len for: bd03-07-22-c.flacf\disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.37       76644668 B   ---   --   ---xx   flac  0.5823  01 Bob Dylan - 1 Tombstone Blues.flac
+     5:53.10       62292764 B   ---   --   ---xx   flac  0.5265  02 Bob Dylan - 2 I'll Be Your Baby Tonight.flac
+     5:30.22       58263788 B   ---   --   ---xx   flac  0.5327  03 Bob Dylan - 3 Tweedle Dee & Tweedle Dum.flac
+     7:02.32       74516108 B   ---   --   ---xx   flac  0.5203  04 Bob Dylan - 4 It Ain't Me, Babe.flac
+     6:50.68       72483980 B   ---   --   ---xx   flac  0.5567  05 Bob Dylan - 5 Things Have Changed.flac
+     6:24.61       67881116 B   ---   --   ---xx   flac  0.5874  06 Bob Dylan - 6 Highway 61 Revisited.flac
+     7:14.10       76581164 B   ---   --   ---xx   flac  0.5448  07 Bob Dylan - 7 Positively 4th Street.flac
+     4:42.20       49791884 B   ---   --   ---xx   flac  0.6072  08 Bob Dylan - 8 The Wicked Messenger.flac
+     7:59.41       84592076 B   ---   --   ---xx   flac  0.5118  09 Bob Dylan - 9 Don't Think Twice, It's All Right.flac
+     6:47.04       71804252 B   ---   --   ---xx   flac  0.6160  10 Bob Dylan - 10 Honest With Me.flac
+    65:39.05      694851800 B                            0.5569  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd03-07-22-c.flacf\disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:18.44       56198732 B   ---   --   ---xx   flac  0.4455  01 Bob Dylan - 1 Moonlight.flac
+    11:29.34      121619612 B   ---   --   ---xx   flac  0.5399  02 Bob Dylan - 2 Summer Days.flac
+     6:56.43       73483580 B   ---   --   ---xx   flac  0.5973  03 Bob Dylan - 3 (encore), Like A Rolling Stone.flac
+     5:31.22       58440188 B   ---   --   ---xx   flac  0.5911  04 Bob Dylan - 4 All Along The Watchtower.flac
+    29:15.68      309742112 B                            0.5461  (4 files)
+===================
+===================
+===================

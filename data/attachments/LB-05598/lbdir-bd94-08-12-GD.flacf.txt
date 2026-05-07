@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-08-12-GD.flacf 
+=================== 
+=================== 
+=================== 
+0b86b6ea449330aa36d6599edc51076b  bd-940812-Stratton-GD.ffp
+21590c82f0e740a00eb55e2755f2267f  bd-940812-Stratton-GD.md5
+e824ec2d20a28e1d11f5751e81d3bf4a  info.txt
+07b41546481a069ad4c95f4fb9d2fdf4  track101.flac
+ab7e31be78f7b30bd442fa463a6bca06  track102.flac
+660b7ce2957830d3c42cd9e31affdbf4  track103.flac
+610d385eba53acbb7463d6591d0ea1af  track104.flac
+386e3a6e17c95389bba1ead900aa16a2  track105.flac
+c8ab28ef284927a9940b7a16c71c1da1  track106.flac
+aab661bd7d9160a9823f7594e966a318  track107.flac
+839de0ccac3c5010407b7df24b80dde4  track108.flac
+0d5fabe52946d00a5661ff4ac6955df0  track109.flac
+ce55b2175fc708a68496ad8c6108a3e3  track110.flac
+d96a3ffcd2432a830a24301890384455  track201.flac
+ab29e6b6de5f84deff83dcdd3eff925e  track202.flac
+29e47c83c0d5fe2b6d170f694c2187f5  track203.flac
+da3bcdb002ae0e0c38cf0730f8d0ee39  track204.flac
+a35c1c5d3ff46ae4c116e38bd3a09050  track205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-08-12-GD.flacf 
+=================== 
+=================== 
+=================== 
+track101.flac:0fdec16ac4c67c8b7dc17588bfb6baa0
+track102.flac:91c3746f669fab1bc43e6f313244c0e7
+track103.flac:a62c6a7c6e3a7771d988eb241624c30e
+track104.flac:958cd99510dfb52fe825b129b7a1a7bc
+track105.flac:3db91cec6375a2c028a730b319b9698a
+track106.flac:82e45b1bcc9f4dda17e4b4a6b104beca
+track107.flac:b8ae4a03ed7c8a55ada91745255a8b10
+track108.flac:25c004d84ab535e760d9e564c68a8dc4
+track109.flac:927302c08749a3553dddc49883493da2
+track110.flac:70fa0730f86ea34d91053ab271477274
+track201.flac:77bae84fc320d7243a5efd0bd387bccf
+track202.flac:68418af6efa46dfdb19780cfb9607420
+track203.flac:760513bc1c358978e912752fc7109ad1
+track204.flac:9c096b67640ca28f3972ca1e72784031
+track205.flac:824948e7deb2b3e0b08fadb172193f50
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-08-12-GD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:20.64        3678572 B   ---   --   ---xx   flac  0.6333  track101.flac
+     7:33.11       79935116 B   ---   --   ---xx   flac  0.6478  track102.flac
+     5:57.20       63021884 B   ---   --   ---xx   flac  0.6377  track103.flac
+     5:40.01       59978396 B   ---   --   ---xx   flac  0.6541  track104.flac
+     7:52.22       83312588 B   ---   --   ---xx   flac  0.6202  track105.flac
+     9:00.04       95265452 B   ---   --   ---xx   flac  0.6136  track106.flac
+     8:24.74       89079692 B   ---   --   ---xx   flac  0.6035  track107.flac
+     7:01.73       74436140 B   ---   --   ---xx   flac  0.4873  track108.flac
+     5:58.23       63205340 B   ---   --   ---xx   flac  0.4423  track109.flac
+     8:12.15       86824124 B   ---   --   ---xx   flac  0.4107  track110.flac
+     6:25.53       68038700 B   ---   --   ---xx   flac  0.5905  track201.flac
+     7:38.56       80922956 B   ---   --   ---xx   flac  0.5243  track202.flac
+     8:35.14       90878972 B   ---   --   ---xx   flac  0.5934  track203.flac
+     6:28.37       68530268 B   ---   --   ---xx   flac  0.6101  track204.flac
+     9:18.13       98461820 B   ---   --   ---xx   flac  0.5181  track205.flac
+   104:27.30     1105570020 B                            0.5668  (15 files)
+=================== 
+=================== 
+=================== 

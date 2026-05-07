@@ -1,0 +1,64 @@
+===================
+===================
+===================
+=== md5 for: bd95-06-24-PA-Matrix.flacf
+===================
+===================
+===================
+326cc32143623b6dfdea2cd53c64fcf1 *bd1995-06-24 Washington 'PA' Matrix.md5
+91c3a9dd1a832c0e99516c8d8bc6abc6 *bd1995-06-24 Washington01.flac
+aae7af93d27e847466872c9e7ac75c80 *bd1995-06-24 Washington02.flac
+4e7a232be2ccb74f539baa7945117129 *bd1995-06-24 Washington03.flac
+5b8ede74cdcbb72a8781d8e62e4d055a *bd1995-06-24 Washington04.flac
+30e78ba2dd366730f9bca7b479b8801b *bd1995-06-24 Washington05.flac
+6f44f3abcadbe325737e9430da9f16dc *bd1995-06-24 Washington06.flac
+74b41977fafb07b6d13797687fdc8ae4 *bd1995-06-24 Washington07.flac
+10b138626958f6298a19e1ff867bcda9 *bd1995-06-24 Washington08.flac
+705782840772a27009f8fddf9a2a8e78 *bd1995-06-24 Washington09.flac
+07a2ea08a7c33096de125f6fca4b5272 *bd1995-06-24 Washington10.flac
+8f51405d638348683a39f900777011f1 *bd1995-06-24 Washington11.flac
+97ab3b56329378a6f6f57726e30946df *bd1995-06-24 Washington12.flac
+74860454f34602f17794779d26720401 *note.txt
+===================
+===================
+===================
+=== ffp for: bd95-06-24-PA-Matrix.flacf
+===================
+===================
+===================
+bd1995-06-24 Washington01.flac:b12dc20140bb389f326ffaefe2e07f9c
+bd1995-06-24 Washington02.flac:adb56a0b8e8fb69375ae318127f4514e
+bd1995-06-24 Washington03.flac:b65989d9c5b9ff3ad7f39f8a41c7c2bd
+bd1995-06-24 Washington04.flac:6f059f98fc12dbf07cd6fd2bcdb59862
+bd1995-06-24 Washington05.flac:9ad799d527ea83e27b1838a0a69a5b8c
+bd1995-06-24 Washington06.flac:7ec302635e2eaa613709e8bb770ecadd
+bd1995-06-24 Washington07.flac:74a193142ef927f954882dd93f659764
+bd1995-06-24 Washington08.flac:b09249cb3e04cf9054fbf6379b16a2c6
+bd1995-06-24 Washington09.flac:205d567ea9c64c734b7cd27ad9c4bd96
+bd1995-06-24 Washington10.flac:ca701105ee0942d288e17f8a83b71b32
+bd1995-06-24 Washington11.flac:dedb0ccb7cabf444c67b6e1eeb06c43a
+bd1995-06-24 Washington12.flac:f23157befa46314b567192dd2b4db8c6
+===================
+===================
+===================
+=== shntool len for: bd95-06-24-PA-Matrix.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.17       53312828 B   ---   --   ---xx   flac  0.6256  bd1995-06-24 Washington01.flac
+     4:24.28       46635500 B   ---   --   ---xx   flac  0.6157  bd1995-06-24 Washington02.flac
+     6:26.48       68203340 B   ---   --   ---xx   flac  0.6227  bd1995-06-24 Washington03.flac
+     7:08.33       75576860 B   ---   --   ---xx   flac  0.6131  bd1995-06-24 Washington04.flac
+     7:05.24       75026492 B   ---   --   ---xx   flac  0.6280  bd1995-06-24 Washington05.flac
+     8:20.17       88240028 B   ---   --   ---xx   flac  0.6301  bd1995-06-24 Washington06.flac
+     7:12.61       76348316 B   ---   --   ---xx   flac  0.5850  bd1995-06-24 Washington07.flac
+     7:33.07       79925708 B   ---   --   ---xx   flac  0.6151  bd1995-06-24 Washington08.flac
+     6:49.04       72157052 B   ---   --   ---xx   flac  0.6185  bd1995-06-24 Washington09.flac
+     9:30.62      100693868 B   ---   --   ---xx   flac  0.6056  bd1995-06-24 Washington10.flac
+     9:09.63       96991820 B   ---   --   ---xx   flac  0.5870  bd1995-06-24 Washington11.flac
+     7:58.24       84374596 B   -b-   --   ---xx   flac  0.6185  bd1995-06-24 Washington12.flac
+    86:41.13      917486408 B                            0.6127  (12 files)
+===================
+===================
+===================

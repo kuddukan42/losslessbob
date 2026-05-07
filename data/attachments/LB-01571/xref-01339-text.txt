@@ -1,0 +1,165 @@
+===================
+===================
+===================
+=== 1992-04-16.txt
+===================
+===================
+===================
+Bob Dylan
+State Theatre
+Sydney, Australia
+April 16, 1992 
+
+Source: JLT master transferred and mastered by LK
+
+My part:
+
+SHN > TLH (shntool, convert SHN) > WAV > TLH (fix SBEs, shntool, convert WAV, created a .md5 file) > SHN
+
+Fixed LB-1571
+
+CD 1:
+01. Rainy Day Women # 12 & 35 
+02. Sally Sue Brown (J. Alexander/E. Montgomery/T. Stafford)
+03. Union Sundown 
+04. Just Like A Woman 
+05. Tangled Up In Blue 
+06. I'll Be Your Baby Tonight 
+07. Man In The Long Black Coat 
+08. Love Minus Zero/No Limit 
+09. Little Moses (Bert A. Williams/Earle C. Jones) 
+10. Girl From The North Country 
+
+CD 2:
+01. Don't Think Twice, It's All Right 
+02. Cat's In The Well 
+03. Idiot Wind 
+04. The Times They Are A-Changin' 
+05. Highway 61 Revisited 
+06. Absolutely Sweet Marie 
+07. All Along The Watchtower 
+08. Blowin' In The Wind 
+
+Total time = 86:36
+
+ORIGINAL:
+451b823ad7d8a98c52ca73eb41f5ffb5 *d1t01.shn
+8be6b9a195eb616ab10fba7f730cea30 *d1t02.shn
+721840544ba355c8d88da5da90c6490b *d1t03.shn
+4d5e21e79e6f67c6ac741a0edfc3e23b *d1t04.shn
+b48755a112bd286c065a08c88416eac2 *d1t05.shn
+5c7eb73575697a001f71b5ef7b95f22d *d1t06.shn
+54363c91a4968e10169f6bd57692fbe2 *d1t07.shn
+b1c7980edc03e58e22c01e32edea5179 *d1t08.shn
+d87b7ec8a01a86dd7120cd6110483736 *d1t09.shn
+5bdec13514e48afc333a59bc7c784585 *d1t10.shn
+f22a01567063dfa44fa3bb2779453d11 *d2t01.shn
+2a322928607875284e187aad44947969 *d2t02.shn
+8666d7f4ff3edb0a811c7e06e4a8f06d *d2t03.shn
+c98debe33c86f5dd219c2fa66bdaf891 *d2t04.shn
+cde6e672f2baaf15c28418d90109918f *d2t05.shn
+3387b4c352741454f0650697553cfe30 *d2t06.shn
+241b32a1145f3a98aa2bccffd669f73b *d2t07.shn
+52d1ada3ebfd2f9741ca324e125f0776 *d2t08.shn
+
+FIXED:
+5110a3e8629fc35dc3f1100ab44397ba *d1t01-fixed.shn
+6ce68d417333e69341c0d6cd07caab28 *d1t02-fixed.shn
+6be4692b741164bcb493603f885d132a *d1t03-fixed.shn
+e90a5df5d8a0b82c519f32ef4e9d5ca0 *d1t04-fixed.shn
+4efdc20b20be6213de97d69dcfb2d545 *d1t05-fixed.shn
+dfa859a3d910535a5ffaf0eff5cda863 *d1t06-fixed.shn
+b90a65ed575ead54ae9d55bce53121e3 *d1t07-fixed.shn
+a449486f5ff7cb4aedbd01667fc61e30 *d1t08-fixed.shn
+abc074ce3d27b00a7942b8377f90a85a *d1t09-fixed.shn
+9dea4a585a7f6a7482ecd952e1444b14 *d1t10-fixed.shn
+7b809672227002b11002ec68cbafe14f *d2t01-fixed.shn
+960d41ac8d2d8f0a99400a946d8171f3 *d2t02-fixed.shn
+60db2b93f67a0c04deca72e6469127fd *d2t03-fixed.shn
+16f640711b0618052a5ee8b14cdcb3c4 *d2t04-fixed.shn
+eb4bfc1c52c083cf16a6af734043d7f0 *d2t05-fixed.shn
+43be402a27f6bea568b7805dba723000 *d2t06-fixed.shn
+bd7dfb72025d74bd3bef46992507dc01 *d2t07-fixed.shn
+5ab8ec3a0c81d0fd1a6000954d5a26c7 *d2t08-fixed.shn
+===================
+===================
+===================
+=== bd1992-04-16.ffp.md5
+===================
+===================
+===================
+5110a3e8629fc35dc3f1100ab44397ba *d1t01-fixed.shn
+6ce68d417333e69341c0d6cd07caab28 *d1t02-fixed.shn
+6be4692b741164bcb493603f885d132a *d1t03-fixed.shn
+e90a5df5d8a0b82c519f32ef4e9d5ca0 *d1t04-fixed.shn
+4efdc20b20be6213de97d69dcfb2d545 *d1t05-fixed.shn
+dfa859a3d910535a5ffaf0eff5cda863 *d1t06-fixed.shn
+b90a65ed575ead54ae9d55bce53121e3 *d1t07-fixed.shn
+a449486f5ff7cb4aedbd01667fc61e30 *d1t08-fixed.shn
+abc074ce3d27b00a7942b8377f90a85a *d1t09-fixed.shn
+9dea4a585a7f6a7482ecd952e1444b14 *d1t10-fixed.shn
+7b809672227002b11002ec68cbafe14f *d2t01-fixed.shn
+960d41ac8d2d8f0a99400a946d8171f3 *d2t02-fixed.shn
+60db2b93f67a0c04deca72e6469127fd *d2t03-fixed.shn
+16f640711b0618052a5ee8b14cdcb3c4 *d2t04-fixed.shn
+eb4bfc1c52c083cf16a6af734043d7f0 *d2t05-fixed.shn
+43be402a27f6bea568b7805dba723000 *d2t06-fixed.shn
+bd7dfb72025d74bd3bef46992507dc01 *d2t07-fixed.shn
+5ab8ec3a0c81d0fd1a6000954d5a26c7 *d2t08-fixed.shn
+===================
+===================
+===================
+=== shntool_len_fixed.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.54       36641852 B   ---   --   -----    wav  1.0000  d1t01-fixed.wav
+     2:38.17       27911228 B   ---   --   -----    wav  1.0000  d1t02-fixed.wav
+     3:58.24       42039692 B   ---   --   -----    wav  1.0000  d1t03-fixed.wav
+     5:41.29       60220652 B   ---   --   -----    wav  1.0000  d1t04-fixed.wav
+     9:13.12       97577468 B   ---   --   -----    wav  1.0000  d1t05-fixed.wav
+     4:08.60       43888364 B   ---   --   -----    wav  1.0000  d1t06-fixed.wav
+     5:22.65       56953724 B   ---   --   -----    wav  1.0000  d1t07-fixed.wav
+     3:20.37       35367068 B   ---   --   -----    wav  1.0000  d1t08-fixed.wav
+     3:30.67       37201628 B   ---   --   -----    wav  1.0000  d1t09-fixed.wav
+     4:39.55       49345004 B   ---   --   -----    wav  1.0000  d1t10-fixed.wav
+     6:09.35       65173964 B   ---   --   -----    wav  1.0000  d2t01-fixed.wav
+     3:39.51       38751596 B   ---   --   -----    wav  1.0000  d2t02-fixed.wav
+     9:02.06       95622956 B   ---   --   -----    wav  1.0000  d2t03-fixed.wav
+     5:08.46       54439436 B   ---   --   -----    wav  1.0000  d2t04-fixed.wav
+     5:02.42       53371628 B   ---   --   -----    wav  1.0000  d2t05-fixed.wav
+     4:17.20       45381884 B   ---   --   -----    wav  1.0000  d2t06-fixed.wav
+     4:11.45       44382284 B   ---   --   -----    wav  1.0000  d2t07-fixed.wav
+     3:03.43       32382380 B   ---   --   -----    wav  1.0000  d2t08-fixed.wav
+    86:36.33      916652808 B                            1.0000  (18 files)
+===================
+===================
+===================
+=== shntool_len_original.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.55       36644020 B   -b-   --   -----    wav  1.0000  d1t01.wav
+     2:38.16       27909136 B   -b-   --   -----    wav  1.0000  d1t02.wav
+     3:58.25       42041020 B   -b-   --   -----    wav  1.0000  d1t03.wav
+     5:41.29       60221000 B   -b-   --   -----    wav  1.0000  d1t04.wav
+     9:13.12       97576644 B   -b-   --   -----    wav  1.0000  d1t05.wav
+     4:08.60       43888492 B   -b-   --   -----    wav  1.0000  d1t06.wav
+     5:22.65       56954464 B   -b-   --   -----    wav  1.0000  d1t07.wav
+     3:20.36       35365600 B   -b-   --   -----    wav  1.0000  d1t08.wav
+     3:30.67       37201588 B   -b-   --   -----    wav  1.0000  d1t09.wav
+     4:39.55       49345276 B   -b-   --   -----    wav  1.0000  d1t10.wav
+     6:09.35       65174568 B   -b-   --   -----    wav  1.0000  d2t01.wav
+     3:39.51       38752680 B   -b-   --   -----    wav  1.0000  d2t02.wav
+     9:02.06       95622836 B   -b-   --   -----    wav  1.0000  d2t03.wav
+     5:08.45       54438084 B   -b-   --   -----    wav  1.0000  d2t04.wav
+     5:02.42       53371864 B   -b-   --   -----    wav  1.0000  d2t05.wav
+     4:17.20       45380976 B   -b-   --   -----    wav  1.0000  d2t06.wav
+     4:11.46       44383496 B   -b-   --   -----    wav  1.0000  d2t07.wav
+     3:03.42       32380488 B   -b-   --   -----    wav  1.0000  d2t08.wav
+    86:36.33      916652232 B                            1.0000  (18 files)
+===================
+===================
+===================

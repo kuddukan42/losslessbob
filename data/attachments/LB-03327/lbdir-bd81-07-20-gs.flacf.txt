@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-20-gs.flacf 
+=================== 
+=================== 
+=================== 
+a9b82e5c245c6806f22ab226ff08f062  bd1981-07-20d1t01.flac
+949b333dcfb301145ad778b635011a8c  bd1981-07-20d2t01.flac
+9aed6ddf9cc2ce2d8a0f72c3d1410f80  bd1981-07-20d2t02.flac
+b499da29526276b4432befcac2542b08  bd1981-07-20d2t03.flac
+e8df38064cd6f32b1dfe453a01d18515  bd1981-07-20d2t04.flac
+43e5cbed7f23011c6b3775345f213825  bd1981-07-20d2t05.flac
+039b59013c6657545631da70034d4b15  bd1981-07-20d2t06.flac
+3082f196d0205a19430d0359a7d22e9b  bd1981-07-20d2t07.flac
+864c36144f8abedd45576b431ee8bde8  bd1981-07-20d2t08.flac
+39a4eebb35412c93c8a0b134885770aa  bd1981-07-20d2t09.flac
+ff85d660183a3f586114b10f9740f6d2  bd1981-07-20d2t10.flac
+a9ed73a2bf80a46f122491c5529c9620  bd1981-07-20d2t11.flac
+3f0df9cd10648bc767138536825d2611  bd1981-07-20d2t12.flac
+87f082f74c5692cca2a5986062f3cda8  bd1981-07-20d2t13.flac
+fa8f5df0cbfc3efaf9c7f15cb0d1b8e7  bd1981-07-20d2t14.flac
+d621866adb63478efdd7f0f33d5e5c24  bd1981-07-20gs.txt
+dd99fa848dbce39c3f0deb44f3562455  bd81-07-20-gs-LB-3327.txt
+ad62f8f5e76c0cdf6254b9d25d3cb1d3  bd81-07-20gs-ffp.txt
+b3068024fc99198489bcde4b7b50597f  bd81-07-20gs.md5
+01333fcb933c015b0045e3cd4e00aff4  note-on-missing-d1-tracks.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-20-gs.flacf 
+=================== 
+=================== 
+=================== 
+bd1981-07-20d1t01.flac:558b7fecccc6adc27d9c90cf5ee6a3f4
+bd1981-07-20d2t01.flac:c336ccaaca54f1be407abce7a1830057
+bd1981-07-20d2t02.flac:b18ae779d7a46ebb9df608054f342379
+bd1981-07-20d2t03.flac:b485eb8d494810f6d245642401b76ee2
+bd1981-07-20d2t04.flac:7caf63e6c7d2a54e439937123bf729da
+bd1981-07-20d2t05.flac:6015f45317d4cc6a4a68a71824055769
+bd1981-07-20d2t06.flac:b09af18d3a6b5cbab7ed9a42ef182543
+bd1981-07-20d2t07.flac:67f1ded3b02b6596b702e1b304e04aed
+bd1981-07-20d2t08.flac:c86e67da1141ae493e1d0b74b0a83314
+bd1981-07-20d2t09.flac:e86d4e770702243aa3ffba62ddc5ce6a
+bd1981-07-20d2t10.flac:0c6886509207a1e40293354d97cc6e57
+bd1981-07-20d2t11.flac:70a52207ab8c75fe233f39dfaf2fdab9
+bd1981-07-20d2t12.flac:dfbed9808a153e130a387b9c6c819cfd
+bd1981-07-20d2t13.flac:94ff7859ac44f47807fa8cfbc2e83b40
+bd1981-07-20d2t14.flac:a0982bbcabf1586f8785b11de7258aff
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-20-gs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.67       41258828 B   ---   --   ---xx   flac  0.5886  bd1981-07-20d1t01.flac
+     4:51.00       51332444 B   ---   --   ---xx   flac  0.5868  bd1981-07-20d2t01.flac
+     5:11.26       54921596 B   ---   --   ---xx   flac  0.5960  bd1981-07-20d2t02.flac
+     4:24.36       46654316 B   ---   --   ---xx   flac  0.5812  bd1981-07-20d2t03.flac
+     4:19.66       45842876 B   ---   --   ---xx   flac  0.5464  bd1981-07-20d2t04.flac
+     4:29.26       47512796 B   ---   --   ---xx   flac  0.5394  bd1981-07-20d2t05.flac
+     4:59.01       52745996 B   ---   --   ---xx   flac  0.5898  bd1981-07-20d2t06.flac
+     2:35.25       27400844 B   ---   --   ---xx   flac  0.5872  bd1981-07-20d2t07.flac
+     4:34.05       48345404 B   ---   --   ---xx   flac  0.5736  bd1981-07-20d2t08.flac
+     3:44.37       39600668 B   ---   --   ---xx   flac  0.5965  bd1981-07-20d2t09.flac
+     4:40.18       49434380 B   ---   --   ---xx   flac  0.5757  bd1981-07-20d2t10.flac
+     7:43.12       81701468 B   ---   --   ---xx   flac  0.5477  bd1981-07-20d2t11.flac
+     7:21.60       77933564 B   ---   --   ---xx   flac  0.5865  bd1981-07-20d2t12.flac
+     4:51.19       51377132 B   ---   --   ---xx   flac  0.5920  bd1981-07-20d2t13.flac
+     8:14.34       87221612 B   ---   --   ---xx   flac  0.5814  bd1981-07-20d2t14.flac
+    75:53.57      803283924 B                            0.5770  (15 files)
+=================== 
+=================== 
+=================== 

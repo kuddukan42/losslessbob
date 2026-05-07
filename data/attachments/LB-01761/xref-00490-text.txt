@@ -1,0 +1,130 @@
+===================
+===================
+===================
+=== CD1.ffp
+===================
+===================
+===================
+00 Announcement.flac:f667908491f8461be7ce0fd90d53c8c2
+01 The wicked messenger.flac:701f10e6f6d6bba9d6ecd004d31a9853
+02 She belongs to me.flac:dddd954bf0853e595c692e0023f93959
+03 Down along the cove.flac:46d6456ea5304e67e9fb734d7d2803bf
+04 High water (for Charley Patton).flac:0fbf6d3a66873a990ec6dda91d276c6e
+05 Stuck inside of Mobile with the Memphis blues again.flac:9063770b723feb607fd90fdfd0514cbf
+06 Ballad of Hollis Brown.flac:229a793a3a038d4680f013eccc6f81f0
+07 Watching the river flow.flac:b7e040d9f3c01d0fbae7d13d400dee47
+08 Girl from the North Country.flac:05155666a3e8f8f16dfaf8eb1adefbea
+09 Ballad of a thin man.flac:704c712d3509856c1ef7c91c3214c748
+===================
+===================
+===================
+=== CD2.ffp
+===================
+===================
+===================
+10 Tweedle Dee & Tweedle Dum.flac:aca2bf238706fce7833983d8f45db6fc
+11 Tears of rage.flac:a174d6de58e9c5e42575288f461c83cd
+12 Honest with me.flac:a61dbbfd552f2fae8a7e0a4fc70df751
+13 It ain't me, babe.flac:ffa8944ed7d10b8ee4e32d80f8db1a61
+14 Summer days.flac:cf1c41f8a4e708b75b39077b7ad3c4fe
+15 Cat's in the well.flac:07dba2c472be0a5e995144e6f18ce168
+16 Like a rolling stone.flac:7795adc2dd7cf7bfe3625ee7c39ca04c
+17 (band intro).flac:28f8e5ac94f6472a2addc78507a34c8b
+17 All along the watchtower.flac:8b6125a5e7cfeae5a1047a95b7b206c7
+===================
+===================
+===================
+=== 2004-04-14 Tabernacle, Atlanta, Georgia, USA [Fine Wine].txt
+===================
+===================
+===================
+Tabernacle
+Atlanta, Georgia
+April 14, 2004
+
+*** Fine Wine *** (derived from LB-1761)
+http://jokerman.org.uk/lb/detail/LB-01746.html
+
+Spectral analysis: Excellent - but not very much above 18kHz
+
+00. Announcement [00:48]
+01. The Wicked Messenger (Bob on piano and harp) [04:29]
+02. She Belongs To Me (Bob on piano and harp, Larry on pedal steel) [06:55]
+03. Down Along The Cove (Bob on piano) [05:50]
+04. High Water (For Charley Patton) (Bob on piano) [07:11]
+05. Stuck Inside Of Mobile With The Memphis Blues Again (Bob on piano and harp, Larry on acoustic guitar) [07:11]
+06. Ballad Of Hollis Brown (acoustic) (Bob on piano, Larry on cittern) [05:08]
+07. Watching The River Flow (Bob on piano and harp, Larry on slide guitar) [06:30]
+08. Girl Of The North Country (acoustic) (Bob on piano and harp, Larry on acoustic guitar, Tony on standup bass) [05:00]
+09. Ballad Of A Thin Man (Bob on piano and harp, Larry on pedal steel) [07:53]
+Total time [56:55]
+
+10. Tweedle Dee & Tweedle Dum (Bob on piano) [05:24]
+11. Tears Of Rage (Bob on piano) [07:04]
+12. Honest With Me (Bob on piano, Larry on slide guitar) [07:09]
+13. It Ain't Me, Babe (acoustic) (Bob on piano, Larry on cittern, Tony on standup bass) [06:11]
+14. Summer Days (Bob on piano, Tony on standup bass) [11:21]
+15. Cat's In The Well (Bob on piano and harp) [05:57]
+16. Like A Rolling Stone (Bob on piano) [06:56]
+17. (band intro) [01:00]
+17. All Along The Watchtower (Bob on piano) [08:15]
+Total time [59:21]
+
+Concert # 1621 of The Never-Ending Tour
+Concert # 33 of the 2004 US Spring Tour
+2004 concert # 33
+
+Concert # 94 with the 16th Never-Ending Tour Band:
+Bob Dylan (vocal & piano)
+Freddie Koella (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+George Recile (drums & percussion)
+
+6, 8, 13 acoustic with the band
+1, 2, 5, 7-9, 15 Bob Dylan (harmonica)
+2, 9 Larry Campbell (pedal steel guitar)
+6, 13 Larry Campbell (cittern)
+7, 12 Larry Campbell (slide guitar)
+===================
+===================
+===================
+=== Dylan 2004-04-14 fine wine.txt
+===================
+===================
+===================
+Bob Dylan
+04-14-2004
+Atlanta, Georgia
+Tabernacle
+
+"Fine Wine"
+  
+disc 1
+1.  Intro
+2.  The Wicked Messenger (Bob on piano and harp) 
+3.  She Belongs To Me (Bob on piano and harp, Larry on pedal steel) 
+4.  Down Along The Cove (Bob on piano) 
+5.  High Water (For Charley Patton) (Bob on piano) 
+6.  Stuck Inside Of Mobile With The Memphis Blues Again (Bob on piano and harp, Larry on acoustic guitar) 
+7.  Ballad Of Hollis Brown (acoustic) (Bob on piano, Larry on cittern) 
+8.  Watching The River Flow (Bob on piano and harp, Larry on slide guitar) 
+9.  Girl Of The North Country (acoustic) (Bob on piano and harp, Larry on acoustic guitar, Tony on standup bass) 
+10.  Ballad Of A Thin Man (Bob on piano and harp, Larry on pedal steel) 
+11.  Tweedle Dee & Tweedle Dum (Bob on piano) 
+12.  Tears Of Rage (Bob on piano) 
+
+
+disc 2
+1.  Honest With Me (Bob on piano, Larry on slide guitar) 
+2.  It Ain't Me, Babe (acoustic) (Bob on piano, Larry on cittern, Tony on standup bass) 
+3.  Summer Days (Bob on piano, Tony on standup bass)
+4.  Cat's In The Well (Bob on piano and harp) 
+5.  Like A Rolling Stone (Bob on piano) 
+6.  Band Inro
+7.  All Along The Watchtower (Bob on piano) 
+
+ 
+===================
+===================
+===================

@@ -1,0 +1,96 @@
+===================
+===================
+===================
+=== bd-1996-05-18-Burgettstown-HG.md5
+===================
+===================
+===================
+12d5a7bc476608c1b44e175be03cd8cd *Burg05-18-96(HG)-B.JPG
+a6ae75a02998d8657b835edf8edaaec0 *Burg05-18-96(HG)-F.JPG
+5d7fa8490abeeaa8763780e5c9e33bdf *Disc1\bd-1996-05-18-HG-d1t01.flac
+3532b1535d6201bb35fee3e5f79c6e30 *Disc1\bd-1996-05-18-HG-d1t02.flac
+b330bed6216b8b4c27555a78d8fde48b *Disc1\bd-1996-05-18-HG-d1t03.flac
+88e99f1694b6f5e59a2ac67f125d878a *Disc1\bd-1996-05-18-HG-d1t04.flac
+11cc5ed3a1f7d856ae916c3dc5a41176 *Disc1\bd-1996-05-18-HG-d1t05.flac
+7f199cf8d84608f6d2ef003c931141a0 *Disc1\bd-1996-05-18-HG-d1t06.flac
+d642320f43c3c51ea35d4b7b1541312f *Disc1\bd-1996-05-18-HG-d1t07.flac
+0d84027d988b87d434a25ccb31f5d62c *Disc1\bd-1996-05-18-HG-d1t08.flac
+86fd0c943d120e2408d911477b79e3d3 *Disc1\bd-1996-05-18-HG-d1t09.flac
+1f48f9b5a3d6cb12570cb9ad02b13023 *Disc2\bd-1996-05-18-HG-d2t01.flac
+c7fc761b2761aa06d9b24def58754b8d *Disc2\bd-1996-05-18-HG-d2t02.flac
+e0433f4814fef520dc0917693c9a8bc6 *Disc2\bd-1996-05-18-HG-d2t03.flac
+66d5e9a8157e2e66db9872fe44b17983 *Disc2\bd-1996-05-18-HG-d2t04.flac
+33ccc84bf85559ffde15e497d5acfbd2 *Disc2\bd-1996-05-18-HG-d2t05.flac
+22c5174d6a8c3c831330cc03bdc4dea5 *Disc2\bd-1996-05-18-HG-d2t06.flac
+===================
+===================
+===================
+=== bd-1996-05-18-Burgettstown-HG.txt
+===================
+===================
+===================
+Bob Dylan
+Coca Cola Star Lake Amphitheater
+Burgettstown, Pennsylvania
+May 18, 1996
+
+Holy Grail Series: Back In The Land Of Coca Cola
+
+Source/Lineage: No Info
+
+Sound Quality: Excellent
+
+Disk 1
+
+01 Leopard-Skin Pill-Box Hat
+02 Tonight I'll Be Staying Here With You
+03 All Along The Watchtower
+04 Most Likely You Go Your Way (And I'll Go Mine)
+05 It Takes A Lot To Laugh, It Takes A Train To Cry
+06 Silvio
+07 Tangled Up In Blue (Acoustic W Band)
+08 Masters Of War (Acoustic W Band)
+09 Don't Think Twice, It's All Right (Acoustic W Band)
+
+Disc 2
+
+01 Seven Days
+02 Never Gonna Be The Same Again
+03 Highway 61 Revisited
+04 Alabama Getaway
+05 It Ain't Me, Babe (Acoustic W Band)
+06 Rainy Day Women # 12 & 35
+
+
+=========================
+=========================
+=========================
+=== md5 for bd-1996-05-18-Burgettstown-HG
+=========================
+=========================
+=========================
+
+
+
+5d7fa8490abeeaa8763780e5c9e33bdf *Disc1/bd-1996-05-18-HG-d1t01.flac
+3532b1535d6201bb35fee3e5f79c6e30 *Disc1/bd-1996-05-18-HG-d1t02.flac
+b330bed6216b8b4c27555a78d8fde48b *Disc1/bd-1996-05-18-HG-d1t03.flac
+88e99f1694b6f5e59a2ac67f125d878a *Disc1/bd-1996-05-18-HG-d1t04.flac
+11cc5ed3a1f7d856ae916c3dc5a41176 *Disc1/bd-1996-05-18-HG-d1t05.flac
+7f199cf8d84608f6d2ef003c931141a0 *Disc1/bd-1996-05-18-HG-d1t06.flac
+d642320f43c3c51ea35d4b7b1541312f *Disc1/bd-1996-05-18-HG-d1t07.flac
+0d84027d988b87d434a25ccb31f5d62c *Disc1/bd-1996-05-18-HG-d1t08.flac
+86fd0c943d120e2408d911477b79e3d3 *Disc1/bd-1996-05-18-HG-d1t09.flac
+1f48f9b5a3d6cb12570cb9ad02b13023 *Disc2/bd-1996-05-18-HG-d2t01.flac
+c7fc761b2761aa06d9b24def58754b8d *Disc2/bd-1996-05-18-HG-d2t02.flac
+e0433f4814fef520dc0917693c9a8bc6 *Disc2/bd-1996-05-18-HG-d2t03.flac
+66d5e9a8157e2e66db9872fe44b17983 *Disc2/bd-1996-05-18-HG-d2t04.flac
+33ccc84bf85559ffde15e497d5acfbd2 *Disc2/bd-1996-05-18-HG-d2t05.flac
+22c5174d6a8c3c831330cc03bdc4dea5 *Disc2/bd-1996-05-18-HG-d2t06.flac
+12d5a7bc476608c1b44e175be03cd8cd *Burg05-18-96(HG)-B.JPG
+a6ae75a02998d8657b835edf8edaaec0 *Burg05-18-96(HG)-F.JPG
+
+
+===================
+===================
+===================

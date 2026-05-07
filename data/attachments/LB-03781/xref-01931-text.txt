@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== Bob Dylan 3 oct 1993 San Diego.txt
+===================
+===================
+===================
+Bob Dylan
+3 oct 1993 
+San Diego
+
+
+
+================================================================================ 
+NOTE: I HAVE THIS LABELLED AS LB-3781. THESE SHOULD BE SHN FILES BUT I HAVE THEM AS FLAC FILES. I CANNOT VERIFY THAT THIS IS LB-3781.
+
+I'm filling in gaps and offering alternative versions to Bob's 1993 shows. 
+
+If you are not interested in alternative versions please check my uploads carefully so as not to get an unnecessary duplicate date. 
+
+Thanks to all those involved in getting this to me. 
+
+Original text below. 
+================================================================================ 
+
+
+
+
+October 3 1993	
+Coronado Stadium San Diego, 
+California
+
+
+
+Never-Ending Tour Concert #528	
+
+
+
+1 You're Gonna Quit Me (acoustic w band) 
+
+2 Stuck Inside Of Mobile With The Memphis Blues Again 
+
+3 All Along The Watchtower
+
+4 Simple Twist Of Fate
+
+5 I Don't Believe You
+
+6 Tangled Up In Blue
+
+
+
+1 Blackjack Davey (acoustic w band)
+
+2 Mr. Tambourine Man (acoustic w band)
+
+3 It's All Over Now, Baby Blue (acoustic w band)
+
+4 Man In The Long Black Coat
+
+5 Maggie's Farm
+
+6 I Shall Be Released
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+cc207b3dc5252170b5dac9f2ec4c1400 *Bob Dylan 3 oct 1993 San Diego.txt
+d19427d5e5e59d836c11553056b4aacb *SAN DIEGO, CA 3 Oct. 1993.jpg
+89fba032fc871884cb89bb6b345681ae *d1\01 - Traccia Audio.flac
+7bce8ac0d7096a4ed6d4161dd2d1963b *d1\02 - Traccia Audio.flac
+c331345ee7959cae5b67c5988a497b26 *d1\03 - Traccia Audio.flac
+a2f49b59b860b3eed35a1bb301b45cc6 *d1\04 - Traccia Audio.flac
+f6e6dfb611771b3e104dd10b8cd638e1 *d1\05 - Traccia Audio.flac
+320e98fba59e50e9789f638523d20799 *d1\06 - Traccia Audio.flac
+03efacedb54d21a3c061c446b58ddedf *d2\01 - Traccia Audio.flac
+cdab2dd6361ac172e5ec27c3ec310cad *d2\02 - Traccia Audio.flac
+bf958caeba5248824f725d870384636e *d2\03 - Traccia Audio.flac
+f22e58e5992953cf588afacf3ac8a857 *d2\04 - Traccia Audio.flac
+4042bdae12c10a35ad74f8d8529822ee *d2\05 - Traccia Audio.flac
+815956f9f713610fbf0d6f8e52c3ce56 *d2\06 - Traccia Audio.flac
+===================
+===================
+===================

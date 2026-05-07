@@ -1,0 +1,18 @@
+9705fe5dd6559bab54910c68452d3965 *CD1\01 Absolutely sweet Marie.flac
+332e74cd2b1884e8286b692bcc6b0074 *CD1\02 Señor (Tales of Yankee Power).flac
+992316d21b57dd29c664203ce79dce6d *CD1\03 Can't wait.flac
+cf4cc4af3e4c1e89c9c5190d2c4955d0 *CD1\04 Shooting star.flac
+5ebf82868e7565771c915cc20957190b *CD1\05 Silvio.flac
+0f9390a63a2427cf2c43b4ac43d2b07e *CD1\06 Cocaine blues.flac
+daf1ee35667387237e4b075824573d3b *CD1\07 Masters of war.flac
+9ee6bf2ec6c76a0ca7efe55142482338 *CD1\08 Tangled up in blue.flac
+d79d666bd3436032646493ca953f3c62 *CD1\FLAC CD1.md5
+d857521165f62bd4d2ed1105230a9a60 *CD2\09 Million miles.flac
+93bff117cc7a05a3a3d65eae2c1fe0cc *CD2\10 Blind Willie McTell.flac
+3427dd512222bcc37018444b2e21db92 *CD2\11 Highway 61 revisited.flac
+3f07e39ce520f34d02c3a3c2a6a1ed70 *CD2\12 'Til I fell in love with you.flac
+50eef31c8991c0b12d8a8a3f35bd0731 *CD2\13 It ain't me, babe.flac
+ffc4457248bd7319f15ad7125b2dd072 *CD2\14 Love sick.flac
+8d3af4123b06b2a364f96474f72b5369 *CD2\15 Rainy day women # 12 & 35.flac
+9014093afcb069d24b0aea3af6bbf771 *CD2\FLAC CD2.md5
+854f9c79d2509d84343b19e9225c7b09 *Info\1998-02-02 Symphony Hall, Springfield, Massachusetts, USA.txt

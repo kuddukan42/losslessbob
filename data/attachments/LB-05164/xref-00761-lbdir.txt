@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-17-c.flacf 
+=================== 
+=================== 
+=================== 
+d1e0a922326c77b740da0ac56b423a6f  bob dylan dec 17 1995.txt
+6e6713714b4f3ca56cd24cee180cb0ed  Bob Dylan_December_17_1995.md5
+dcb610d9ffa85d9aff55f4ad5afdf5fa  Disc01_Track01.flac
+afa3f42b0545687d78fa4210e1ca81e2  Disc01_Track02.flac
+299ce11960e3b451c44b80855a86ca81  Disc01_Track03.flac
+de84c854ebc28e469ba14b00f5b3570a  Disc01_Track04.flac
+8b5d401a242f8915f87b888fd1eb63ed  Disc01_Track05.flac
+41979639a610032c20ca16b38c534c2e  Disc01_Track06.flac
+3bf0d6c1674b40b8e50add368a2de6fc  Disc01_Track07.flac
+ed3cbd7b558829925d3f85d12add0afa  Disc01_Track08.flac
+ad78265b9ccb6ec4d2287188d2361ccd  Disc01_Track09.flac
+fe14bde0ca4f744777d20fd5ef38089c  Disc02_Track01.flac
+d964d06e1fab33c0d4afbc2c42607376  Disc02_Track02.flac
+fb11add2561d93bd13c345b8ded800e7  Disc02_Track03.flac
+c567a6680d049c9b38db524c674e43d4  Disc02_Track04.flac
+0e0398ff69f6900521244f1c7034bf44  Disc02_Track05.flac
+77d773b6f6fbcc8fc1bc624d2daaf421  Disc02_Track06.flac
+a943d475802517d3656bcabcd8686552  philly back.jpg
+2f7b729c7e45da95e6f3d3dc05d945d3  philly front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-17-c.flacf 
+=================== 
+=================== 
+=================== 
+Disc01_Track01.flac:efc3c94c077ca6bcf5ecaee56a8d2d01
+Disc01_Track02.flac:b53a7380131d1a0a0144a6ca926b58bd
+Disc01_Track03.flac:04471fd93bb929de07c3b6fdcc8daa4c
+Disc01_Track04.flac:eec30fb5919e6f1f29df324d60991e34
+Disc01_Track05.flac:c5ee7a2a3ac3bd24e514904bb87517fd
+Disc01_Track06.flac:8a2a43f60e80e31edf631516a56d6cae
+Disc01_Track07.flac:b0857339b5d9b33048f9efdcd20d96dd
+Disc01_Track08.flac:f994705477e4db175300628902f98af5
+Disc01_Track09.flac:6eaeb688dc7a7ccc26cf4eee0c1a0c6d
+Disc02_Track01.flac:5f316a72757e9d1b61d0a08859ead9ba
+Disc02_Track02.flac:380ee82d3561eec867445655531bf096
+Disc02_Track03.flac:0fd85e3481714fc0a1d2117045bb9ea7
+Disc02_Track04.flac:f0c3781107236bc43a0f6669e61c90c4
+Disc02_Track05.flac:38ba2bd07669b8e70e2e344e9e9b90be
+Disc02_Track06.flac:05da91b17e3871e6482d1b514a447e26
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-17-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.20       54201884 B   ---   --   ---xx   flac  0.6463  Disc01_Track01.flac
+     6:27.63       68415020 B   ---   --   ---xx   flac  0.6021  Disc01_Track02.flac
+     7:28.42       79126028 B   ---   --   ---xx   flac  0.6346  Disc01_Track03.flac
+    10:43.01      113427596 B   ---   --   ---xx   flac  0.5497  Disc01_Track04.flac
+     7:32.49       79848092 B   ---   --   ---xx   flac  0.6250  Disc01_Track05.flac
+     8:13.37       87052268 B   ---   --   ---xx   flac  0.6432  Disc01_Track06.flac
+    12:10.12      128800268 B   ---   --   ---xx   flac  0.5889  Disc01_Track07.flac
+    10:50.38      114749420 B   ---   --   ---xx   flac  0.5606  Disc01_Track08.flac
+    10:07.00      107074844 B   ---   --   ---xx   flac  0.5086  Disc01_Track09.flac
+     5:43.09       60526412 B   ---   --   ---xx   flac  0.4923  Disc02_Track01.flac
+     8:27.39       89526572 B   ---   --   ---xx   flac  0.6599  Disc02_Track02.flac
+    11:21.19      120173132 B   ---   --   ---xx   flac  0.5497  Disc02_Track03.flac
+    10:52.15      115048124 B   ---   --   ---xx   flac  0.6330  Disc02_Track04.flac
+    10:58.35      116153564 B   ---   --   ---xx   flac  0.5977  Disc02_Track05.flac
+     8:59.59       95218412 B   ---   --   ---xx   flac  0.6368  Disc02_Track06.flac
+   135:02.63     1429341636 B                            0.5927  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,15 @@
+    length     expanded size   cdr  WAVE problems filename
+     0:39.31        6952556    ---   --   ---xx   1-01 Crowd.flac
+     4:56.66       52369676    ---   --   ---xx   1-02 Gotta Serve Somebody.flac
+     4:28.54       47402252    ---   --   ---xx   1-03 I Believe In You.flac
+     5:41.37       60239468    ---   --   ---xx   1-04 A Hard Rain's A-Gonna Fall.flac
+     0:16.14        2855372    ---   --   ---xx   1-05 Dylan introduces Regina McCrary.flac
+     5:24.72       57322988    ---   --   ---xx   1-06 Man Gave Names To All The Animals.flac
+     4:26.30       46993004    ---   --   ---xx   1-07 Simple Twist Of Fate.flac
+     2:27.15       25966124    ---   --   ---xx   1-08 We Just Disagree.flac
+     2:45.61       29249516    ---   --   ---xx   1-09 All Along The Watchtower.flac
+     4:15.67       45139628    ---   --   ---xx   1-10 Ain't Gonna Go To Hell.flac
+     3:49.27       40459148    ---   --   ---xx   1-11 Girl Of The North Country.flac
+     5:07.73       54326540    ---   --   ---xx   1-12 Slow Train.flac
+     0:39.53        7004300    ---   --   ---xx   1-13 Dylan introduces Carolyn Dennis.flac
+    45:00.00      476280572 B                     (totals for 13 files, 0.6074 overall compression ratio)

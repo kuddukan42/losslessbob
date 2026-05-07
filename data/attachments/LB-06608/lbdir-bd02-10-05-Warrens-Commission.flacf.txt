@@ -1,0 +1,135 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-05-Warrens-Commission.flacf 
+=================== 
+=================== 
+=================== 
+97419a8d078c107a80d6a5ba11ad8c53  bd-Warren's Commission.d1t14.sa_fa.JPG
+923eb6e627253de87c0ab1ed5bf871b2  disc 1\disc 1.ffp.txt
+b3ccb4925d09140cbe32bbf9cb13aa33  disc 1\disc 1.md5
+bda6280b56f27ce2fd310e6c1aea160c  disc 1\Track01.flac
+63c00009cba5d6848439800e90126677  disc 1\Track02.flac
+60701f78e2fc36547d3df680cf837da9  disc 1\Track03.flac
+a150b22b41831296d03e3f5153594a86  disc 1\Track04.flac
+9337b128f63786fb43f59518b84221a7  disc 1\Track05.flac
+c8b210e26f38ef11126581a1610ba3a3  disc 1\Track06.flac
+ee066f0aa1fa63caaf4606a51b7bfe3e  disc 1\Track07.flac
+371cf7bb1a4c5702d77fb4e441c89bd9  disc 1\Track08.flac
+5a327ee22f79a82015acc00002ab780f  disc 1\Track09.flac
+6845610ee93d0750968cfaa785cafb37  disc 1\Track10.flac
+cd9bbc31fffa36425e9ebccc648540ad  disc 1\Track11.flac
+b24ad0c490ec6b485c1ed131d82bdf95  disc 1\Track12.flac
+d2b485095ec6a34688deaad89fa6246c  disc 1\Track13.flac
+ad7337fe81dd3d2df674b44e212beaed  disc 1\Track14.flac
+1b1b4ed88835efcd25ea9e29047c629a  disc 1\Warren's Commission d1.LOG
+2c862c1beea279687c34aa6143cb3ab3  disc 2\disc 2.ffp.txt
+74a817b6bb6405c02e2ee0667e124d21  disc 2\disc 2.md5
+8377c41168578ca283b0e54a7b851c35  disc 2\Track01.flac
+ff5d41e5db7c07f64be255489bef7162  disc 2\Track02.flac
+ee311336760797271504c9a0fe4e09b6  disc 2\Track03.flac
+0be23c738c56bff964be782fc67c882f  disc 2\Track04.flac
+c2525c184beef6583eddb5c2ef880aa3  disc 2\Track05.flac
+1fcac622eddc9936e8f24362b9a80523  disc 2\Track06.flac
+243abb6e5b6a6598ff6ac5dfe9bb5f24  disc 2\Track07.flac
+514a9f8748445b994d1f2c187dede11e  disc 2\Track08.flac
+8616eb12bdd210c8e83e336309abb497  disc 2\Track09.flac
+2e445de632afb6c68b7148cc8910d3c6  disc 2\Track10.flac
+f7b23d87da700f34408e52a801936f4a  disc 2\Track11.flac
+5b25438cc89d1feaccc152a5db5d0bef  disc 2\Track12.flac
+83553f34c1d0f099230e5da637ede1c5  disc 2\Track13.flac
+9ad45a62805676ba6b2bc1d085a0e320  disc 2\Track14.flac
+4024c0aa80a116708fd7bbc52f35a883  disc 2\Warren's Commission d2.LOG
+71a0de5dc5f408a907531310ff52b261  Warren's Commission.md5
+81dede22570cef86721075a3e235eeb7  Warren's Commission.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-05-Warrens-Commission.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:abb983bab86c07cbba96e5654ffd92ce
+Track02.flac:fab6a30e2233fbcc3e75deab25b8d9cc
+Track03.flac:4903c87e5f981b4302ce8bf610571a4f
+Track04.flac:316fd2118696c43208e8cdd3d5bdbd11
+Track05.flac:6d6c58dd67002976f8f942abec74adbc
+Track06.flac:de82b1d10e8b742a7ea904c2835a2fcf
+Track07.flac:e8b9047d2aad08c542edaf367f8f1518
+Track08.flac:503411b4d5863983bc86dfa98ac11f06
+Track09.flac:c35bb10ce07d78be4833cc403340e72b
+Track10.flac:6c9a2147d4ff0ddad92063ab4dfeecaa
+Track11.flac:06eee90dc878aa2158229d77d8954505
+Track12.flac:021aab0375a2bbf849dbddb1d763e224
+Track13.flac:d7817093884504f32b743fa3fd179a2a
+Track14.flac:559485bde2fac2193f110b4278a83e01
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-05-Warrens-Commission.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:3de1396c6412045cbaa4b82353606ce6
+Track02.flac:179bdab503a74062796120007dc27a97
+Track03.flac:a0b3c068ba69980c77ecaabbf140bed1
+Track04.flac:1b57cffd93f5856e2142a00b56466772
+Track05.flac:492eeac83c2cf951888d051d703cc5b2
+Track06.flac:a98b94e623b30890ca2d9b7c1b7c1744
+Track07.flac:8d112671e2b7846dd9176a151810c35a
+Track08.flac:e3ab4b1c2fff7ab05c9980655fe55ca1
+Track09.flac:09e150e03ad4f4f598e49833e82db0b5
+Track10.flac:061fa9218aed1588b66722bfc28c7f38
+Track11.flac:8e6292c6c5ddf1e84d6cc12798d3dbcc
+Track12.flac:7a16713a6276e224b49e2226bb78e737
+Track13.flac:75fed4592f072291ea1e2f2a723fb8bd
+Track14.flac:99a4311efe1bfa4c9656951184a522ad
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-05-Warrens-Commission.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:32.36       79817516 B   ---   --   ---xx   flac  0.6337  Track01.flac
+     3:06.59       32949212 B   ---   --   ---xx   flac  0.5491  Track02.flac
+     4:34.07       48350108 B   ---   --   ---xx   flac  0.5336  Track03.flac
+     7:20.12       77644268 B   ---   --   ---xx   flac  0.6427  Track04.flac
+     7:02.46       74549036 B   ---   --   ---xx   flac  0.6325  Track05.flac
+     6:10.45       65373884 B   ---   --   ---xx   flac  0.5954  Track06.flac
+     6:57.53       73683500 B   ---   --   ---xx   flac  0.6544  Track07.flac
+     4:03.54       42992252 B   ---   --   ---xx   flac  0.6305  Track08.flac
+     4:55.41       52134476 B   ---   --   ---xx   flac  0.5784  Track09.flac
+     5:20.68       56607980 B   ---   --   ---xx   flac  0.6057  Track10.flac
+     3:45.46       39798236 B   ---   --   ---xx   flac  0.6425  Track11.flac
+     3:39.22       38683388 B   ---   --   ---xx   flac  0.5792  Track12.flac
+     5:09.36       54592316 B   ---   --   ---xx   flac  0.5710  Track13.flac
+     6:55.63       73354220 B   ---   --   ---xx   flac  0.5657  Track14.flac
+    76:34.63      810530392 B                            0.6056  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-05-Warrens-Commission.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.28       52103900 B   ---   --   ---xx   flac  0.6512  Track01.flac
+     6:29.06       68633756 B   ---   --   ---xx   flac  0.6069  Track02.flac
+     5:38.35       59705564 B   ---   --   ---xx   flac  0.6431  Track03.flac
+     3:55.13       41484620 B   ---   --   ---xx   flac  0.6037  Track04.flac
+     5:10.03       54691100 B   ---   --   ---xx   flac  0.6530  Track05.flac
+     4:13.57       44763308 B   ---   --   ---xx   flac  0.6486  Track06.flac
+     6:45.46       71550236 B   ---   --   ---xx   flac  0.5777  Track07.flac
+     7:18.65       77416124 B   ---   --   ---xx   flac  0.5968  Track08.flac
+     8:46.55       92915804 B   ---   --   ---xx   flac  0.5827  Track09.flac
+     3:29.41       36964076 B   ---   --   ---xx   flac  0.6549  Track10.flac
+     3:36.59       38241212 B   ---   --   ---xx   flac  0.6104  Track11.flac
+     5:42.55       60458204 B   ---   --   ---xx   flac  0.5897  Track12.flac
+     6:54.12       73057868 B   ---   --   ---xx   flac  0.6330  Track13.flac
+     6:36.46       69962636 B   ---   --   ---xx   flac  0.6093  Track14.flac
+    79:32.71      841948408 B                            0.6147  (14 files)
+=================== 
+=================== 
+=================== 

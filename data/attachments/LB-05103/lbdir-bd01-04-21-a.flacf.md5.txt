@@ -1,0 +1,24 @@
+41f3014438291ed3899cee7c6430122f  BD 2001-04-21 Topeka.txt
+a2c6321ad4126e4ae35413fcbacf9a66  D1\1 Track 01.flac
+20c28a296890969f05a482fa827d3e8e  D1\10 Track 10.flac
+2205745d62049f6293c8da43f447e2be  D1\11 Track 11.flac
+e2c3bc9f518e225d8fcaa8bdc3e259aa  D1\12 Track 12.flac
+39debf8cac9884c67651a0b1879e2a67  D1\2 Track 02.flac
+f2e44e08db0dfd1d76fc46bdd1180a3f  D1\3 Track 03.flac
+65b521429bfd30082f4a2f73c5356b07  D1\4 Track 04.flac
+a5609d2b1df4ac3d8e8ea973c97bd21b  D1\5 Track 05.flac
+33762b63bba9f137a83db8fde8158936  D1\6 Track 06.flac
+077b63d25424003dceac13924cd368cb  D1\7 Track 07.flac
+4e62bf012746980df1d508423ab4c4e6  D1\8 Track 08.flac
+04ca0d18d38b14b5e3f6c89f207fe413  D1\9 Track 09.flac
+97aaceade5b0e3e6d949caf0bd817333  D2\1 Track 01.flac
+0d110debc4f6d6a63e6ea97e94094141  D2\2 Track 02.flac
+ee9267a85c3ea02ed39a4093cab39fd3  D2\3 Track 03.flac
+966b4c303f1192f61cbb2701dd2150d1  D2\4 Track 04.flac
+b6594e94bca2595e4a632d1611685998  D2\5 Track 05.flac
+dd3463a9ef742a1751e1efccd92fcbd7  D2\6 Track 06.flac
+986235a94651358a2c2e979abcf5c1a2  D2\7 Track 07.flac
+c65fe5ce35ac48c78e316bda8ef151c6  D2\8 Track 08.flac
+f214eb333cec1be1f1b1d66860fd75e4  D2\9 Track 09.flac
+a293a86195dac6d9d65b89e73c85e082  fingerprintD1.ffp
+72236f852de6f5b30ece55f88be2db2a  fingerprintD2.ffp

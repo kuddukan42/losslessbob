@@ -1,0 +1,68 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-14.flacf 
+=================== 
+=================== 
+=================== 
+15df7831840e8b7747fc87d51732ec6b  bd93-09-14-LB-3759.txt
+6de92fd869493d12c951991f514436a8  Bob Dylan  14 SEPT 1993  Holmdel.txt
+0740887d90958e31645b053823dcdfd3  fingerprint.ffp.txt
+4ed0d6d35c1e0f4527845d9943704ed2  FLACs\BD 1993 09 14D1T01.flac
+94db93ce45ce1f6d8cb7b9cb57e5fe67  FLACs\BD 1993 09 14D1T02.flac
+8bb44844747a31b06a9dfc48f77d8e1c  FLACs\BD 1993 09 14D1T03.flac
+70e24be8b2c5be1d8d8f4e00cf961905  FLACs\BD 1993 09 14D1T04.flac
+64c83c6d9f6619144c0aa2c96a171d9b  FLACs\BD 1993 09 14D1T05.flac
+6e066f8541e10b67a4889829ba61ccb5  FLACs\BD 1993 09 14D1T06.flac
+652e5f2e36011cb02f92ff7363e5bc27  FLACs\BD 1993 09 14D2T01.flac
+4b139a1fbf19e17dd3da9f3bee362182  FLACs\BD 1993 09 14D2T02.flac
+f7ed65f3bed9247583ab0ed508faa766  FLACs\BD 1993 09 14D2T03.flac
+2ca47c35372929a51dff886e4a56f097  FLACs\BD 1993 09 14D2T04.flac
+f40773d7c1edd373312385ac0a0bc76e  FLACs\BD 1993 09 14D2T05.flac
+ca6cb839bfec21b45330e983361a55e0  FLACs\BD 1993 09 14D2T06.flac
+b57e5b158f7ee57e27364bb3c4100651  FLACs\BD 1993 09 14D2T07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-14.flacf\FLACs 
+=================== 
+=================== 
+=================== 
+BD 1993 09 14D1T01.flac:7ac9b58d0bc3a259e034f1117467c385
+BD 1993 09 14D1T02.flac:0b34b82d6d0d17bda267c70d138c1af4
+BD 1993 09 14D1T03.flac:3daa6142d506376a8c8c6076d1c2930c
+BD 1993 09 14D1T04.flac:42b989221533f79a6d200ca319097c13
+BD 1993 09 14D1T05.flac:76e587d7c90c8d106fe5d8750ea7e9ad
+BD 1993 09 14D1T06.flac:e6338fb081e7f1f2192901f3f10dcbe5
+BD 1993 09 14D2T01.flac:0e1fc35aae3ea36f6aa86d79c4e56262
+BD 1993 09 14D2T02.flac:5f1fd6cffa50328bae4dc04f63ef8077
+BD 1993 09 14D2T03.flac:2e5ed5469fb9640f8553bdc92327105e
+BD 1993 09 14D2T04.flac:7b637d036e296cc8aa46c58ac23de055
+BD 1993 09 14D2T05.flac:a164e07593b62f1aaa33e89b0899c498
+BD 1993 09 14D2T06.flac:09264c6cca063bc939661584c262413b
+BD 1993 09 14D2T07.flac:d4de7598415ab8c3ac426c95685457ec
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-14.flacf\FLACs 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.73       52386140 B   ---   --   ---xx   flac  0.5544  BD 1993 09 14D1T01.flac
+     8:37.46       91307036 B   ---   --   ---xx   flac  0.5780  BD 1993 09 14D1T02.flac
+     5:34.03       58924700 B   ---   --   ---xx   flac  0.5762  BD 1993 09 14D1T03.flac
+     6:29.52       68741948 B   ---   --   ---xx   flac  0.5417  BD 1993 09 14D1T04.flac
+     7:38.41       80887676 B   ---   --   ---xx   flac  0.5883  BD 1993 09 14D1T05.flac
+     6:03.67       64190828 B   ---   --   ---xx   flac  0.5606  BD 1993 09 14D1T06.flac
+     7:25.49       78613292 B   ---   --   ---xx   flac  0.5278  BD 1993 09 14D2T01.flac
+     6:09.71       65258636 B   ---   --   ---xx   flac  0.5666  BD 1993 09 14D2T02.flac
+     9:18.40       98525324 B   ---   --   ---xx   flac  0.5756  BD 1993 09 14D2T03.flac
+     8:45.19       92654732 B   ---   --   ---xx   flac  0.5622  BD 1993 09 14D2T04.flac
+     7:55.06       83804156 B   ---   --   ---xx   flac  0.6105  BD 1993 09 14D2T05.flac
+     8:44.61       92577116 B   ---   --   ---xx   flac  0.5822  BD 1993 09 14D2T06.flac
+     9:56.02      105139148 B   ---   --   ---xx   flac  0.5924  BD 1993 09 14D2T07.flac
+    97:36.05     1033010732 B                            0.5723  (13 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+Bob Dylan 
+University Of Wisconsin
+Kohl Center
+Madison, Wisconsin, USA
+October 29, 2000 
+
+I'm filling in a few gaps from the great run of Bob Dylan 2000 shows that have recently been posted.
+
+This one I got in a trade and have no information about except...
+
+CDR trade > Wav > Flac > You
+
+Disc 1
+
+1. Duncan And Brady
+2. To Ramona
+3. Desolation Row
+4. Tomorrow Is A Long Time
+5. Tangled Up In Blue
+6. Searching For A Soldier's Grave
+7. Country Pie  
+8. Positively 4th Street  
+9. Tombstone Blues  
+10. Just Like A Woman 
+11. Drifter's Escape
+12. Leopard-Skin Pill-Box Hat 
+
+Disc 2
+
+(encore) 
+
+1. Things Have Changed  
+2. Like A Rolling Stone  
+3. If Dogs Run Free
+4. All Along The Watchtower  
+5. Forever Young
+5. Highway 61 Revisited  
+7. Blowin' In The Wind
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+10594e9c60dd8023b91bc5a2a396420c *Info.txt
+6ee1f79ffcd925123cddb74b5fcc53a8 *CD1\1-01 Duncan And Brady.flac
+ed89ef49474683be2327a32b1ef4bdc9 *CD1\1-02 To Ramona.flac
+2faeaf626fefb844ffb11a9bdfa9e993 *CD1\1-03 Desolation Row.flac
+791fd783d8b215e091651e944d3e61a6 *CD1\1-04 Tomorrow Is A Long Time.flac
+0bbe0d0a665c53fc6463cf5d92fad9cd *CD1\1-05 Tangled Up In Blue.flac
+6aa7aa0790d02ffeb841e3f7f3229090 *CD1\1-06 Searching For A Soldier's Grave.flac
+d3b9f04a6be304aed00bd09511acb66d *CD1\1-07 Country Pie.flac
+d154503c0b41521152ebeac1c94d7b8a *CD1\1-08 Positively 4th Street.flac
+660c8dbddb6fd0e564dbc9e3647436d1 *CD1\1-09 Tombstone Blues.flac
+7ec3648406d359a6eea5601d44a1b1e0 *CD1\1-10 Just Like A Woman.flac
+d231b89fe626113a1ca4f4ec3b379b7a *CD1\1-11 Drifter's Escape.flac
+349cd7effe0e7c0eeb59742c6128dbca *CD1\1-12 Leopard-Skin Pill-Box Hat.flac
+37a4308a81425bb9445ed723cf74fe0b *CD2\2-01 Things Have Changed.flac
+23cf9b8753514e84a73d91793171e20d *CD2\2-02 Like A Rolling Stone.flac
+3444101eaae320c476b090807004fa82 *CD2\2-03 If Dogs Run Free.flac
+63c31a9ded14576e968a492c52de5b67 *CD2\2-04 All Along The Watchtower.flac
+3bd2233cb82a86823858028d5799e51f *CD2\2-05 Forever Young.flac
+f32dd75755ff61ceeb63899d2285ef70 *CD2\2-06 Highway 61 Revisited.flac
+29cd15da3b6799b09cccbf8ca967de36 *CD2\2-07 Blowin' In The Wind.flac
+===================
+===================
+===================

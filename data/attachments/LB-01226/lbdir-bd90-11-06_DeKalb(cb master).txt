@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-11-06_DeKalb(cb master) 
+=================== 
+=================== 
+=================== 
+4e8edb031c1886657b4b50e39e4ceb08  bd90-11-06cb.txt
+61d69ed0583c69d134e4c8e0a96fb7ae  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 01.shn
+968d967747a3bb9ec8519240ca3f1e6f  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 10.shn
+1bbc491b43559ea7efa6e5b860f414ba  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 11.shn
+b08a939d59eb1511983122be7f6f60ce  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 12.shn
+d0edd462cef0f9173278788e3fbe5f57  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 13.shn
+6fe743ccfb5c38642db0546e2ca21866  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 14.shn
+b2c2f34c47eed10979c38a497ba16952  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 15.shn
+7d71e3932c5c72505d18cf211ba5a048  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 2.shn
+93c5e46c0abf5a52bf984f8989e5b751  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 3.shn
+261885b2f1c28c3ea2ff731331caaeef  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 4.shn
+3a6c8ea5018deea00cb1cade1aac13e9  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 5.shn
+d5eedebd4ca6e4777ae78deeb33ea283  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 6.shn
+67c8883b6d2bf26b3ee606606c4d82db  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 7.shn
+65c8e4dc9a7b1a321d20d73612b0eebe  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 8.shn
+8498f650ca9ef2ce650eb404ea90b80b  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_Track 9.shn
+44390649938ca1ddec104741a817120e  bd_90-11-06_cd1.shnf\bd_90-11-06_cd1_shn.md5
+7e483d9634bc00fb3cfb708a4b08b148  bd_90-11-06_cd2.shnf\bd_90-11-06_cd2_Track 1.shn
+1a002ac4fcc22fea76c4496dfd2ca9f4  bd_90-11-06_cd2.shnf\bd_90-11-06_cd2_Track 2.shn
+b02cd49e706aabd0444394a022e3dfa3  bd_90-11-06_cd2.shnf\bd_90-11-06_cd2_Track 3.shn
+59ce9c22db1704c3ffc615a89e272bd4  bd_90-11-06_cd2.shnf\bd_90-11-06_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-11-06_DeKalb(cb master)\bd_90-11-06_cd1.shnf 
+=================== 
+=================== 
+=================== 
+abd4553ef7c525234e5c5dd7b3a58452  [shntool]  bd_90-11-06_cd1_Track_01.wav
+2ae1e33e802d270bd220a3bb6ebf7a01  [shntool]  bd_90-11-06_cd1_Track_2.wav
+390cd230bf361dc7ff22745b08b4dda9  [shntool]  bd_90-11-06_cd1_Track_3.wav
+ff251994997771d59b99df498c7a1a06  [shntool]  bd_90-11-06_cd1_Track_4.wav
+2d8f499c461552433672fdc984720dd1  [shntool]  bd_90-11-06_cd1_Track_5.wav
+f8bcab4bc3a35aec8cb0f34e20ca7fc1  [shntool]  bd_90-11-06_cd1_Track_6.wav
+8b9b18367565f892ac4e4fc12d38c2dd  [shntool]  bd_90-11-06_cd1_Track_7.wav
+771b178defc4b32f48f82f85f08180b3  [shntool]  bd_90-11-06_cd1_Track_8.wav
+90ca88170b882ad417b74b5cd840bcb8  [shntool]  bd_90-11-06_cd1_Track_9.wav
+cbb8c4c9618509bf027535a85c8c5091  [shntool]  bd_90-11-06_cd1_Track_10.wav
+e141d582d043ac1596dd5481c9461a36  [shntool]  bd_90-11-06_cd1_Track_11.wav
+2db4afd3b491885ddf8ae31139c45be7  [shntool]  bd_90-11-06_cd1_Track_12.wav
+423a9afef3bae2314b15ad852d1a6368  [shntool]  bd_90-11-06_cd1_Track_13.wav
+1af90a477899591e12b8b1a1c23fca5b  [shntool]  bd_90-11-06_cd1_Track_14.wav
+6fe14802a3cd7beb194fe8a2e4de5f67  [shntool]  bd_90-11-06_cd1_Track_15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-11-06_DeKalb(cb master)\bd_90-11-06_cd2.shnf 
+=================== 
+=================== 
+=================== 
+9481f7f25c55ae2ac0d1a029422654d9  [shntool]  bd_90-11-06_cd2_Track_1.wav
+325290998f6b9af92ebf2c841869162c  [shntool]  bd_90-11-06_cd2_Track_2.wav
+9cbcd4e04dd46648c9a2a71dfc1de696  [shntool]  bd_90-11-06_cd2_Track_3.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-06_DeKalb(cb master)\bd_90-11-06_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.10       50121246 B   ---   -e   ---xx    shn  0.6070  bd_90-11-06_cd1_Track 01.shn
+     4:24.22       46621470 B   ---   -e   ---xx    shn  0.6343  bd_90-11-06_cd1_Track 10.shn
+     3:40.73       38979822 B   ---   -e   ---xx    shn  0.6404  bd_90-11-06_cd1_Track 11.shn
+     3:05.61       32777598 B   ---   -e   ---xx    shn  0.6875  bd_90-11-06_cd1_Track 12.shn
+     4:01.22       42564270 B   ---   -e   ---xx    shn  0.6277  bd_90-11-06_cd1_Track 13.shn
+     3:49.26       40456878 B   ---   -e   ---xx    shn  0.7061  bd_90-11-06_cd1_Track 14.shn
+     3:48.22       40271070 B   ---   -e   ---xx    shn  0.6319  bd_90-11-06_cd1_Track 15.shn
+     3:59.15       42195006 B   ---   -e   ---xx    shn  0.6621  bd_90-11-06_cd1_Track 2.shn
+     4:38.31       49112238 B   ---   -e   ---xx    shn  0.6326  bd_90-11-06_cd1_Track 3.shn
+     4:21.31       46113438 B   ---   -e   ---xx    shn  0.6678  bd_90-11-06_cd1_Track 4.shn
+     5:43.21       60554718 B   ---   -e   ---xx    shn  0.6657  bd_90-11-06_cd1_Track 5.shn
+     5:34.55       59047086 B   ---   -e   ---xx    shn  0.6909  bd_90-11-06_cd1_Track 6.shn
+     4:15.36       45066798 B   ---   -e   ---xx    shn  0.6336  bd_90-11-06_cd1_Track 7.shn
+     6:36.67       70012110 B   ---   -e   ---xx    shn  0.6564  bd_90-11-06_cd1_Track 8.shn
+     5:21.50       56742126 B   ---   -e   ---xx    shn  0.6302  bd_90-11-06_cd1_Track 9.shn
+    68:05.17      720635874 B                            0.6514  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-06_DeKalb(cb master)\bd_90-11-06_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:10.07       75868590 B   ---   -e   ---xx    shn  0.6546  bd_90-11-06_cd2_Track 1.shn
+     4:46.58       50586942 B   ---   -e   ---xx    shn  0.6004  bd_90-11-06_cd2_Track 2.shn
+     4:24.66       46724958 B   ---   -e   ---xx    shn  0.6609  bd_90-11-06_cd2_Track 3.shn
+    16:21.56      173180490 B                            0.6405  (3 files)
+=================== 
+=================== 
+=================== 

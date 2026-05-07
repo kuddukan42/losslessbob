@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-03-28-jtt-Two-Sources.flacf 
+=================== 
+=================== 
+=================== 
+16595b3b4af127935f96cb8312bd81e9  bd07-03-28-jtt-Two-Sources-LB-4673.txt
+277ac9f6898a0d066e30ddd0dc317802  Disc One\Disc01Track01.flac
+890b08027de52ee8ccbcd260eb6cf630  Disc One\Disc01Track02.flac
+7d8cfe7b755f5953f95ee4dbacaf3a9c  Disc One\Disc01Track03.flac
+da2603f8aa37ba43984eba6cd0c316b5  Disc One\Disc01Track04.flac
+33b69821e84b7eacd67ba4d3206b5734  Disc One\Disc01Track05.flac
+79e912e54f67a009e81e863fbd4f2e97  Disc One\Disc01Track06.flac
+e84a36c85c0fcfe9840c3dd1780d4fc7  Disc One\Disc01Track07.flac
+edfac0afa3112d69f0ce5c1a349ed1be  Disc One\Disc01Track08.flac
+bfbe43e1a2496bbc4dfbb20a3fdde1fa  Disc One\Disc01Track09.flac
+51eb7302b80404b3e546d3ed729a600c  Disc Two\Disc02Track01.flac
+6a6c9aaf3cd9560e56d9e26ddb09dcd7  Disc Two\Disc02Track02.flac
+3c9aded011f97c3bfec614e747f6c294  Disc Two\Disc02Track03.flac
+1c337fd02af3389352647f1d6400f5c8  Disc Two\Disc02Track04.flac
+1bddaeb94c2802685f01d96b0fcc5307  Disc Two\Disc02Track05.flac
+7facbc6fb2e75e795617beb7eb2d683e  Disc Two\Disc02Track06.flac
+2c8936a8425429dd5d012e1dcbee915f  Disc Two\Disc02Track07.flac
+b328f218f9cfd71a484432acdc3818a1  Disc Two\Disc02Track08.flac
+e4c4c9fc37e210f0be44727a3b9ddc05  Info.txt
+63f7e86989f9c03615888c4c59829c8e  Stockholm, Sweden 28.03.2007 JTT - F.jpg
+6635adcd89a782b51a0c9d405aa75545  Stockholm, Sweden 28.03.2007 JTT - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-03-28-jtt-Two-Sources.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01.flac:3774c44a900fad52a3ea7b607751ce99
+Disc01Track02.flac:68c16af7629c090347296ac72d3e938e
+Disc01Track03.flac:3cfadcc74025692900532e1dde357326
+Disc01Track04.flac:b0ffab3f0e0f5ba39111e37ef60f2beb
+Disc01Track05.flac:b1831e359835083db4080edaf99d4ad9
+Disc01Track06.flac:dbb7f7fb057d5ec07ac97af5e9eb720f
+Disc01Track07.flac:c5f64512c801403067058630b304d497
+Disc01Track08.flac:d1691f455ecbe1c5a236829b11115d35
+Disc01Track09.flac:ae26973dd0d7c655e51a0b43efebdf6f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-03-28-jtt-Two-Sources.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01.flac:595e11cf23670ffbba533023feb11166
+Disc02Track02.flac:aec1abe2eb544ca04994d8afabd60ec0
+Disc02Track03.flac:a8c55bd0a9c80c94a8abe0aa12e6059f
+Disc02Track04.flac:39650595015f2b61b6831b1071f97a49
+Disc02Track05.flac:17855f0b77cc6a4eb1a2c6f2df8d1aa4
+Disc02Track06.flac:709ee6a21b88cff55b61479b608c9523
+Disc02Track07.flac:3e5f2242c563b513bf81bba77eb98afa
+Disc02Track08.flac:f59e98c58da19358b119b4401bde3cf3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-03-28-jtt-Two-Sources.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.51       10880396 B   ---   --   ---xx   flac  0.2663  Disc01Track01.flac
+     4:16.47       45268988 B   ---   --   ---xx   flac  0.3024  Disc01Track02.flac
+     6:41.11       70762316 B   ---   --   ---xx   flac  0.2554  Disc01Track03.flac
+     6:14.33       66051260 B   ---   --   ---xx   flac  0.2924  Disc01Track04.flac
+     6:57.12       73587068 B   ---   --   ---xx   flac  0.2962  Disc01Track05.flac
+     6:25.62       68059868 B   ---   --   ---xx   flac  0.2349  Disc01Track06.flac
+     6:40.65       70712924 B   ---   --   ---xx   flac  0.3054  Disc01Track07.flac
+     5:33.41       58837676 B   ---   --   ---xx   flac  0.2376  Disc01Track08.flac
+     7:55.65       83942924 B   ---   --   ---xx   flac  0.3000  Disc01Track09.flac
+    51:47.12      548103420 B                            0.2782  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-03-28-jtt-Two-Sources.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:13.29       34113452 B   ---   --   ---xx   flac  0.2982  Disc02Track01.flac
+     7:52.09       83282012 B   ---   --   ---xx   flac  0.2503  Disc02Track02.flac
+     6:23.66       67716476 B   ---   --   ---xx   flac  0.3159  Disc02Track03.flac
+     6:51.36       72585116 B   ---   --   ---xx   flac  0.2937  Disc02Track04.flac
+     6:10.72       65437388 B   ---   --   ---xx   flac  0.3193  Disc02Track05.flac
+    10:59.61      116391116 B   ---   --   ---xx   flac  0.3236  Disc02Track06.flac
+     6:01.00       63680444 B   ---   --   ---xx   flac  0.3354  Disc02Track07.flac
+     5:45.34       60938012 B   ---   --   ---xx   flac  0.3343  Disc02Track08.flac
+    53:18.07      564144016 B                            0.3084  (8 files)
+=================== 
+=================== 
+=================== 

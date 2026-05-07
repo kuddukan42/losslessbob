@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-24a-paris-master 
+=================== 
+=================== 
+=================== 
+90fbcfface8edbcb76707f653363dfd7  bd-95-03-24-paris-master-d1 (Track 01).flac
+ef207af478988e6f9fc7a10388aad813  bd-95-03-24-paris-master-d1 (Track 02).flac
+316943245f2517222cf051b73e7d4cbf  bd-95-03-24-paris-master-d1 (Track 03).flac
+166c84c2747ddeafca1d94dabd3be84b  bd-95-03-24-paris-master-d1 (Track 04).flac
+5d96b3496533951430a3a57fc96b160f  bd-95-03-24-paris-master-d1 (Track 05).flac
+f9b1b84a94b275ac91c38c5c6630870b  bd-95-03-24-paris-master-d1 (Track 06).flac
+c31c403312b461d5720e1d7567616788  bd-95-03-24-paris-master-d1 (Track 07).flac
+e63350c8723cc790388367590aafd50e  bd-95-03-24-paris-master-d2 (Track 01).flac
+cd614b14c88f7123533ab9e5de4232f4  bd-95-03-24-paris-master-d2 (Track 02).flac
+476bb792c67b3f9302a345adccd515f2  bd-95-03-24-paris-master-d2 (Track 03).flac
+7c4e959adbad37925c5c814b7ae7c9ce  bd-95-03-24-paris-master-d2 (Track 04).flac
+8fd7a75e0e48aad8debc11b68ac1455e  bd-95-03-24-paris-master-d2 (Track 05).flac
+231a9bde44912adb7d31b5c66e3f9c6b  bd-95-03-24-paris-master-d2 (Track 06).flac
+33af38da12647cfac79c5d4361b984a6  bd-95-03-24-paris-master-d2 (Track 07).flac
+11ecd7b6a8b3a739234298ab490514cb  bd-95-03-24-paris-master.txt
+89539d2d3b75eb189683bcf56e9ef5a9  bd95-03-24a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-24a-paris-master 
+=================== 
+=================== 
+=================== 
+bd-95-03-24-paris-master-d1 (Track 01).flac:3bbb97e7dc7f76f50ec1d3fbbb2a9ba3
+bd-95-03-24-paris-master-d1 (Track 02).flac:144ecbdba4ff3cb7e30040fd133e224c
+bd-95-03-24-paris-master-d1 (Track 03).flac:9d9f119a95da24055764943b3aba5f27
+bd-95-03-24-paris-master-d1 (Track 04).flac:e3ad754629377a3d242264d4cfc6e0c0
+bd-95-03-24-paris-master-d1 (Track 05).flac:1d82b83b8b5a8515a73e1d864309d9f8
+bd-95-03-24-paris-master-d1 (Track 06).flac:bbd412343eb3862cfff5a80e58004c2a
+bd-95-03-24-paris-master-d1 (Track 07).flac:442b6a07ec8901e3ebb920473e67014d
+bd-95-03-24-paris-master-d2 (Track 01).flac:884bdfe302d6a139f2d82739ff79659e
+bd-95-03-24-paris-master-d2 (Track 02).flac:67bc574fea38e0ffd9d4368e3e88d45a
+bd-95-03-24-paris-master-d2 (Track 03).flac:78a53269369d852bfb7c6d7464126f27
+bd-95-03-24-paris-master-d2 (Track 04).flac:6fdb8eb0d4a42b50fb51c6ea937221c6
+bd-95-03-24-paris-master-d2 (Track 05).flac:7bef874ce13386dcda0bd581916e3235
+bd-95-03-24-paris-master-d2 (Track 06).flac:95586f40c6b274b4a26b2d94a4ea7123
+bd-95-03-24-paris-master-d2 (Track 07).flac:5c6bb0e6771077c744f2d70ae21f9a1c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-24a-paris-master 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.55       55166756 B   -b-   --   ---xx   flac  0.6476  bd-95-03-24-paris-master-d1 (Track 01).flac
+     4:33.13       48187820 B   ---   --   ---xx   flac  0.5658  bd-95-03-24-paris-master-d1 (Track 02).flac
+     5:15.38       55655420 B   ---   --   ---xx   flac  0.6358  bd-95-03-24-paris-master-d1 (Track 03).flac
+     5:45.41       60954476 B   ---   --   ---xx   flac  0.5694  bd-95-03-24-paris-master-d1 (Track 04).flac
+     8:17.74       87844892 B   ---   --   ---xx   flac  0.5950  bd-95-03-24-paris-master-d1 (Track 05).flac
+     5:47.46       61318908 B   -b-   --   ---xx   flac  0.5262  bd-95-03-24-paris-master-d1 (Track 06).flac
+     6:38.43       70308996 B   -b-   --   ---xx   flac  0.4148  bd-95-03-24-paris-master-d1 (Track 07).flac
+     4:38.73       49210772 B   -b-   --   ---xx   flac  0.4476  bd-95-03-24-paris-master-d2 (Track 01).flac
+     6:35.51       69797996 B   ---   --   ---xx   flac  0.5194  bd-95-03-24-paris-master-d2 (Track 02).flac
+     7:28.17       79067228 B   ---   --   ---xx   flac  0.6015  bd-95-03-24-paris-master-d2 (Track 03).flac
+     5:02.27       53336348 B   ---   --   ---xx   flac  0.5796  bd-95-03-24-paris-master-d2 (Track 04).flac
+     8:36.38       91111820 B   ---   --   ---xx   flac  0.5868  bd-95-03-24-paris-master-d2 (Track 05).flac
+     6:49.16       72185276 B   ---   --   ---xx   flac  0.5984  bd-95-03-24-paris-master-d2 (Track 06).flac
+     8:50.22       93543788 B   ---   --   ---xx   flac  0.4546  bd-95-03-24-paris-master-d2 (Track 07).flac
+    89:32.29      947690496 B                            0.5516  (14 files)
+=================== 
+=================== 
+=================== 

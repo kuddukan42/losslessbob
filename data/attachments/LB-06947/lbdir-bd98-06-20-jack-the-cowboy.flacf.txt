@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-20-jack-the-cowboy.flacf 
+=================== 
+=================== 
+=================== 
+d04533d8e0ca1758ac6b254be7d7857a  bd98-06-20-jack-the-cowboy-d1t01.flac
+c268cc1fa37b5acc30914a611854870c  bd98-06-20-jack-the-cowboy-d1t02.flac
+0f39fa1ce3b584d5a18cb0564fd9efda  bd98-06-20-jack-the-cowboy-d1t03.flac
+67016b0441bae8d29c30786d24dd4734  bd98-06-20-jack-the-cowboy-d1t04.flac
+8cdf3c420c0d5daf7b25245f4c65e181  bd98-06-20-jack-the-cowboy-d1t05.flac
+d33b08de7b046923002622f75f468dfa  bd98-06-20-jack-the-cowboy-d1t06.flac
+5f4aaab0459ec9897e459fed9c6079ea  bd98-06-20-jack-the-cowboy-d1t07.flac
+7af89c17c5d8257b7112f3d66fce1570  bd98-06-20-jack-the-cowboy-d1t08.flac
+9ea623c4835e28f7fa367b9cda5c3221  bd98-06-20-jack-the-cowboy-d1t09.flac
+b7ffa8fc812736c3af4eec31bd1f2cf6  bd98-06-20-jack-the-cowboy-d1t10.flac
+835e8d20d29f9e38ef4ff4376ce964a8  bd98-06-20-jack-the-cowboy-d1t11.flac
+f9125e5c5833f1b6724941ae11279f94  bd98-06-20-jack-the-cowboy-d1t12.flac
+72640b74408a5681f7aae8a43b437eb5  bd98-06-20-jack-the-cowboy-d2t01.flac
+1055b3a92b1ab6b44d0a5844c301c776  bd98-06-20-jack-the-cowboy-d2t02.flac
+d13ae6bc7c9f13ff54f6d4c59d1bd08c  bd98-06-20-jack-the-cowboy-d2t03.flac
+a06e9c3dd08bc1cdd35b9920efe7aea4  bd98-06-20-jack-the-cowboy-d2t04.flac
+ba019f60a092fe4125794958d4031fa1  bd98-06-20-jack-the-cowboy-d2t05.flac
+390c9b524186f4d5b6503979a9ca2ec6  bd98-06-20-jack-the-cowboy-d2t06.flac
+dcc2a3ca472b8c84c196dfceeeb516fa  bd98-06-20-jack-the-cowboy-d2t07.flac
+14ea7d3c472cf605547a96764e862110  bd98-06-20-jack-the-cowboy-d2t08.flac
+c46bd0f9b1e39f845ff44e6c821d7116  bd98-06-20-jack-the-cowboy.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-20-jack-the-cowboy.flacf 
+=================== 
+=================== 
+=================== 
+bd98-06-20-jack-the-cowboy-d1t01.flac:890e3fac8fe502c1aaa4a99ef5b08f66
+bd98-06-20-jack-the-cowboy-d1t02.flac:c48c1e29353cc23cf1b1bf4f43c0b18a
+bd98-06-20-jack-the-cowboy-d1t03.flac:23e2738ab8d7c6621d66b69b8c9b1b76
+bd98-06-20-jack-the-cowboy-d1t04.flac:00730ef90db5d14b966b9cb8a72b922f
+bd98-06-20-jack-the-cowboy-d1t05.flac:bfd8cb0aaacce7b56b0306e58606f359
+bd98-06-20-jack-the-cowboy-d1t06.flac:acbff5170b55a030b4f607a9d6775d7f
+bd98-06-20-jack-the-cowboy-d1t07.flac:f17c210908ef89f7120bfce803b79a44
+bd98-06-20-jack-the-cowboy-d1t08.flac:6e8a32224714720660b59ee143c8d1d0
+bd98-06-20-jack-the-cowboy-d1t09.flac:4716a89be21c0c48f5fa936b14210f34
+bd98-06-20-jack-the-cowboy-d1t10.flac:d2f4a029599227745776fd041e30c1e6
+bd98-06-20-jack-the-cowboy-d1t11.flac:e0a8c1564c8654ff1d288ed63ce4c0e8
+bd98-06-20-jack-the-cowboy-d1t12.flac:235772a4519db70e5fb24b16950339a0
+bd98-06-20-jack-the-cowboy-d2t01.flac:ea0f5aa008f732b0a1e3257bb6af9748
+bd98-06-20-jack-the-cowboy-d2t02.flac:e9dab9c45acf7f2d0b08c61484b24d5e
+bd98-06-20-jack-the-cowboy-d2t03.flac:922a7e720bb5216ff0a59f6222e5ca41
+bd98-06-20-jack-the-cowboy-d2t04.flac:f282ef045f19806d27dd2eae206859b6
+bd98-06-20-jack-the-cowboy-d2t05.flac:1bc9c9aa4e1290aa37412e1f63f86502
+bd98-06-20-jack-the-cowboy-d2t06.flac:958b1c3e8970aafca684abeb4f6ddfbd
+bd98-06-20-jack-the-cowboy-d2t07.flac:04d6bf1afc464f6192a98747b9ad6571
+bd98-06-20-jack-the-cowboy-d2t08.flac:05347aa0548a52c15210b679fc0c41fa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-20-jack-the-cowboy.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:25.15       46781324 B   ---   --   ---xx   flac  0.6272  bd98-06-20-jack-the-cowboy-d1t01.flac
+     3:55.58       41590460 B   ---   --   ---xx   flac  0.6218  bd98-06-20-jack-the-cowboy-d1t02.flac
+     6:56.16       73420076 B   ---   --   ---xx   flac  0.5982  bd98-06-20-jack-the-cowboy-d1t03.flac
+     7:14.43       76658780 B   ---   --   ---xx   flac  0.5526  bd98-06-20-jack-the-cowboy-d1t04.flac
+     6:52.31       72749756 B   ---   --   ---xx   flac  0.6368  bd98-06-20-jack-the-cowboy-d1t05.flac
+     5:19.43       56372780 B   ---   --   ---xx   flac  0.5477  bd98-06-20-jack-the-cowboy-d1t06.flac
+     5:14.06       55403756 B   ---   --   ---xx   flac  0.5417  bd98-06-20-jack-the-cowboy-d1t07.flac
+     5:04.59       53764412 B   ---   --   ---xx   flac  0.5772  bd98-06-20-jack-the-cowboy-d1t08.flac
+     6:53.19       72897932 B   ---   --   ---xx   flac  0.6451  bd98-06-20-jack-the-cowboy-d1t09.flac
+     6:09.49       65206892 B   ---   --   ---xx   flac  0.5665  bd98-06-20-jack-the-cowboy-d1t10.flac
+     8:47.43       93063980 B   ---   --   ---xx   flac  0.5599  bd98-06-20-jack-the-cowboy-d1t11.flac
+     6:01.46       63788636 B   ---   --   ---xx   flac  0.6479  bd98-06-20-jack-the-cowboy-d1t12.flac
+     5:21.56       56756156 B   ---   --   ---xx   flac  0.5458  bd98-06-20-jack-the-cowboy-d2t01.flac
+     5:41.36       60237116 B   ---   --   ---xx   flac  0.6388  bd98-06-20-jack-the-cowboy-d2t02.flac
+     5:21.40       56718524 B   ---   --   ---xx   flac  0.5463  bd98-06-20-jack-the-cowboy-d2t03.flac
+     5:36.09       59291612 B   ---   --   ---xx   flac  0.5061  bd98-06-20-jack-the-cowboy-d2t04.flac
+     6:51.42       72599228 B   ---   --   ---xx   flac  0.4890  bd98-06-20-jack-the-cowboy-d2t05.flac
+     4:13.02       44633948 B   ---   --   ---xx   flac  0.4705  bd98-06-20-jack-the-cowboy-d2t06.flac
+     7:28.04       79036652 B   ---   --   ---xx   flac  0.4984  bd98-06-20-jack-the-cowboy-d2t07.flac
+     5:51.64       62066972 B   ---   --   ---xx   flac  0.4603  bd98-06-20-jack-the-cowboy-d2t08.flac
+   119:20.06     1263038992 B                            0.5638  (20 files)
+=================== 
+=================== 
+=================== 

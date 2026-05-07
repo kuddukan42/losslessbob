@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== md5 for: bd24-11-12-EBR.flacf
+===================
+===================
+===================
+89390da5b07e3883dbef4962a6cea162 *Bob Dylan 2024-11-12.ffp
+f79db8ea0f7a1cd734e1628862627071 *Bob Dylan 2024-11-12.md5
+102e25d744bbf90857d7862550a5dfd3 *Bob Dylan 2024-11-12.txt
+144d47c94bd185c634b86573e05a8928 *BobDylan2024-11-12t01.flac
+eea9f2a8a2fd85021bc06f4483bb3f0b *BobDylan2024-11-12t02.flac
+6d331e10f486da0b379d63854110ab5d *BobDylan2024-11-12t03.flac
+eb1dc8f751e115f5a8873afef4871d28 *BobDylan2024-11-12t04.flac
+c386ef8211c23bd628f772c52818727c *BobDylan2024-11-12t05.flac
+e07606762e6986f8892787e72e2fa758 *BobDylan2024-11-12t06.flac
+767965fce5113e1842474cc671fa2c26 *BobDylan2024-11-12t07.flac
+3fa280eb5ee37fb4148ca990d6111bcc *BobDylan2024-11-12t08.flac
+852f251f6ee00c4a4f8bed49995d7c29 *BobDylan2024-11-12t09.flac
+fba38fdddf35499b34e43107151ab30f *BobDylan2024-11-12t10.flac
+cf7c9f30c374ca7a30ad12f5f2ae4299 *BobDylan2024-11-12t11.flac
+98d0849ab9b8681dd3d96886bb4abeb5 *BobDylan2024-11-12t12.flac
+7f9142c3b6762126098956a116f88e27 *BobDylan2024-11-12t13.flac
+f6a4ee89e27714ac5f828d0eeec000dd *BobDylan2024-11-12t14.flac
+65d0de6de7027a29da98ea789c258051 *BobDylan2024-11-12t15.flac
+546849811571a46a53da15b7acbe5815 *BobDylan2024-11-12t16.flac
+b668121e68d4d6c6da64b9f1da37d52e *BobDylan2024-11-12t17.flac
+ee8e8f80f1b2cebfa046a507d836fbd5 *BobDylan2024-11-12t18.flac
+e3166a65fc22e3db828ffd8e32e78b9b *BobDylan2024-11-12t19.flac
+===================
+===================
+===================
+=== ffp for: bd24-11-12-EBR.flacf
+===================
+===================
+===================
+BobDylan2024-11-12t01.flac:5113e19d6dd67194ae2f4f9c469a7423
+BobDylan2024-11-12t02.flac:309acdcda48c00d8bb842d9fdcad1a3c
+BobDylan2024-11-12t03.flac:0929e08712448cce4eca8ad8088b1767
+BobDylan2024-11-12t04.flac:f2a3d1d081c284f5d4d24d3d804d460c
+BobDylan2024-11-12t05.flac:679c63d1a09ddb3884340c292cb5c358
+BobDylan2024-11-12t06.flac:ff837bb0face27580ac836b90a80ad28
+BobDylan2024-11-12t07.flac:d0ee1a8f1b9ff2e14a1ba87d206030f7
+BobDylan2024-11-12t08.flac:c6d8cacdf3afe7fb97a3517a6f75db17
+BobDylan2024-11-12t09.flac:976465d8ffe77ebf7132474b7f28faba
+BobDylan2024-11-12t10.flac:737ed0f65b238abbb203be28719b4f1d
+BobDylan2024-11-12t11.flac:e55130f617b230fb010b016dc41afdf8
+BobDylan2024-11-12t12.flac:945195b0596498f873b23acaf19202af
+BobDylan2024-11-12t13.flac:11731cd03831d325516c257b45bcd76d
+BobDylan2024-11-12t14.flac:4889e031728c4a7cc5ae1802fe95dcec
+BobDylan2024-11-12t15.flac:a825fc2f795a5ee7916c8dce4045b9a7
+BobDylan2024-11-12t16.flac:052f88301e2446570183c0bf1a0d39c1
+BobDylan2024-11-12t17.flac:e6cde82da8e047289dce4467edf7d8dd
+BobDylan2024-11-12t18.flac:bd96483b1f6b67de3dc2654586ca662f
+BobDylan2024-11-12t19.flac:a03e05d3f9286a59e93aef3f906aa5e8
+===================
+===================
+===================
+=== shntool len for: bd24-11-12-EBR.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:59.66       10562876 B   ---   --   ---xx   flac  0.4535  BobDylan2024-11-12t01.flac
+     4:18.53       45635900 B   ---   --   ---xx   flac  0.5508  BobDylan2024-11-12t02.flac
+     6:20.51       67151996 B   ---   --   ---xx   flac  0.5512  BobDylan2024-11-12t03.flac
+     5:57.16       63012476 B   ---   --   ---xx   flac  0.4909  BobDylan2024-11-12t04.flac
+     6:48.12       71999468 B   ---   --   ---xx   flac  0.5158  BobDylan2024-11-12t05.flac
+     4:54.17       51901628 B   ---   --   ---xx   flac  0.4855  BobDylan2024-11-12t06.flac
+     5:18.07       56111708 B   ---   --   ---xx   flac  0.4503  BobDylan2024-11-12t07.flac
+     6:28.06       68457356 B   ---   --   ---xx   flac  0.4628  BobDylan2024-11-12t08.flac
+     4:37.00       48862844 B   ---   --   ---xx   flac  0.5378  BobDylan2024-11-12t09.flac
+     7:24.70       78486284 B   ---   --   ---xx   flac  0.4906  BobDylan2024-11-12t10.flac
+     7:33.70       80073884 B   ---   --   ---xx   flac  0.5189  BobDylan2024-11-12t11.flac
+     9:07.32       96566108 B   ---   --   ---xx   flac  0.4077  BobDylan2024-11-12t12.flac
+     4:14.39       44897372 B   ---   --   ---xx   flac  0.5026  BobDylan2024-11-12t13.flac
+     5:31.06       58402556 B   ---   --   ---xx   flac  0.3964  BobDylan2024-11-12t14.flac
+     6:20.41       67128476 B   ---   --   ---xx   flac  0.4119  BobDylan2024-11-12t15.flac
+     5:47.32       61286108 B   ---   --   ---xx   flac  0.3773  BobDylan2024-11-12t16.flac
+     6:53.34       72933212 B   ---   --   ---xx   flac  0.4901  BobDylan2024-11-12t17.flac
+     6:32.36       69233516 B   ---   --   ---xx   flac  0.4262  BobDylan2024-11-12t18.flac
+     1:52.50       19874444 B   ---   --   ---xx   flac  0.5123  BobDylan2024-11-12t19.flac
+   107:00.38     1132578212 B                            0.4722  (19 files)
+===================
+===================
+===================

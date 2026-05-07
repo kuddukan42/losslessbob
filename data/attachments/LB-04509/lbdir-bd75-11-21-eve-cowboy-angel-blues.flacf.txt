@@ -1,0 +1,118 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-21-eve-cowboy-angel-blues.flacf 
+=================== 
+=================== 
+=================== 
+9a1252ba5230aed9274a492c4b64470b  bd75-11-21-eve-cowboy-angel-blues-LB-4509.txt
+62a8516aecab98c8e4bfa9857d4faaa5  bd75-11-21-eve-cowboy-d1t01.flac
+c78ab26ffa14af34208ff4b7b8b67e91  bd75-11-21-eve-cowboy-d1t02.flac
+64ce2b053566c557a03299f695c1019b  bd75-11-21-eve-cowboy-d1t03.flac
+a215a80184de8b9f74d0b825946c0642  bd75-11-21-eve-cowboy-d1t04.flac
+599eeadb7690eda18b7741851b9a1b90  bd75-11-21-eve-cowboy-d1t05.flac
+f6a78bd5377aa97d889c30a1acfba73e  bd75-11-21-eve-cowboy-d1t06.flac
+787ff1460972178c683b694f2d9eae15  bd75-11-21-eve-cowboy-d1t07.flac
+11c3009c7bbade9638b349d9522cf44a  bd75-11-21-eve-cowboy-d1t08.flac
+ffe028f1de06b6b210df8fd680a5a1b3  bd75-11-21-eve-cowboy-d1t09.flac
+3de93e6a967f452538f963cfae473fa2  bd75-11-21-eve-cowboy-d1t10.flac
+218abe96cd3b86c6d7485c46b278d72b  bd75-11-21-eve-cowboy-d1t11.flac
+3cbad04f30cf18c4959e7d834985c372  bd75-11-21-eve-cowboy-d1t12.flac
+4d289cb65ca69eb028f6c97bb2032011  bd75-11-21-eve-cowboy-d1t13.flac
+4bbe74182a41e6fecd07353d365ddf83  bd75-11-21-eve-cowboy-d1t14.flac
+d841bc2fcc152e6b6c6212acc9b8faae  bd75-11-21-eve-cowboy-d1t15.flac
+e5b869f5fb11e636fa585ed8cbce4031  bd75-11-21-eve-cowboy-d2t01.flac
+a44a907cb72fea38fc01453c704b2fd0  bd75-11-21-eve-cowboy-d2t02.flac
+471acb58896c06b590e07f2da478abc3  bd75-11-21-eve-cowboy-d2t03.flac
+9735bfcbb4ef36b2f750c67836e172bb  bd75-11-21-eve-cowboy-d2t04.flac
+2619c7dd990cc81995612d4a77004b50  bd75-11-21-eve-cowboy-d2t05.flac
+fc4703d2ee24a77de600266f202f5598  bd75-11-21-eve-cowboy-d2t06.flac
+341b13f51b21a7d122db458f55298e65  bd75-11-21-eve-cowboy-d2t07.flac
+d58b8b5a44edf7532ebe125889772416  bd75-11-21-eve-cowboy-d2t08.flac
+73e867a134042e6987dc80a7029b7129  bd75-11-21-eve-cowboy-d2t09.flac
+66ba03da63a3c0771a0e98c6e00853d6  bd75-11-21-eve-cowboy-d2t10.flac
+770cefb6d4ccbf6297fa8e63a9c8db27  bd75-11-21-eve-cowboy-d2t11.flac
+c18f8dd114ceb8908156a7f5f7d64e08  bd75-11-21-eve-cowboy-d2t12.flac
+71176d6c2c4324abaadd651f044b2c65  bd75-11-21-eve-cowboy-d2t13.flac
+be1ac41e4ad89813b9dcc3b1b796b98a  bd75-11-21-eve-cowboy-d2t14.flac
+9712ea577e145dfbcd7d8247dfc77e00  bd75-11-21-eve-cowboy-d2t15.flac
+50da0149dab8d412a1e52881ea928f27  noname.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-21-eve-cowboy-angel-blues.flacf 
+=================== 
+=================== 
+=================== 
+bd75-11-21-eve-cowboy-d1t01.flac:5e93411c44868f6010472a88e8287ff1
+bd75-11-21-eve-cowboy-d1t02.flac:ab6e20e0bad5cef5448ad33943aa466c
+bd75-11-21-eve-cowboy-d1t03.flac:ae49d26deb3c7a803a34a2d65babc90a
+bd75-11-21-eve-cowboy-d1t04.flac:b30a390442776ffecac46922d7c58d4a
+bd75-11-21-eve-cowboy-d1t05.flac:2b4ac23c22cf7ca93dc221f4feadc429
+bd75-11-21-eve-cowboy-d1t06.flac:c4e88ad753f6182cdd8cb99e483966e6
+bd75-11-21-eve-cowboy-d1t07.flac:927a7912431f93af3edebf793447e00c
+bd75-11-21-eve-cowboy-d1t08.flac:c9d573ccfbed4f9cf3731e6b99637254
+bd75-11-21-eve-cowboy-d1t09.flac:9636b9c372f0c703bccf3c2f810866e3
+bd75-11-21-eve-cowboy-d1t10.flac:d81f7c9b9360bd87c39d415344c9bcca
+bd75-11-21-eve-cowboy-d1t11.flac:db5d4ec584fc11f9fe6a1208736c826f
+bd75-11-21-eve-cowboy-d1t12.flac:88aa380f9f898380e9bbabef88a2e5c7
+bd75-11-21-eve-cowboy-d1t13.flac:50e3649fba011870471e0cc68f80306e
+bd75-11-21-eve-cowboy-d1t14.flac:2643084e66ea66d84b39c8d92851aca2
+bd75-11-21-eve-cowboy-d1t15.flac:8dd01302b1a9392d1c4f118f441c0d01
+bd75-11-21-eve-cowboy-d2t01.flac:cdddbc5e109b07d0efbfa425b061d769
+bd75-11-21-eve-cowboy-d2t02.flac:5feb436f16b646cfb21a00884d56862d
+bd75-11-21-eve-cowboy-d2t03.flac:f0db66c6defc6cdd9f7eac0173af68cb
+bd75-11-21-eve-cowboy-d2t04.flac:4bcc6daf18298a01f3a468c523575de4
+bd75-11-21-eve-cowboy-d2t05.flac:d962872a88ed5d79e5808c2b6d74d822
+bd75-11-21-eve-cowboy-d2t06.flac:9f3f367195a3e78c8260b27a2639be6d
+bd75-11-21-eve-cowboy-d2t07.flac:78c497e006f6abe4ba93fc0a59243eb8
+bd75-11-21-eve-cowboy-d2t08.flac:ffa121348c3f25cc0b9c568fc108359f
+bd75-11-21-eve-cowboy-d2t09.flac:81ad78fd0d98d02ad846bc3b1df60a52
+bd75-11-21-eve-cowboy-d2t10.flac:15ba840c2267842d01dfb4fc8c84bb2e
+bd75-11-21-eve-cowboy-d2t11.flac:21d8412180c8cae69ce8e5930884896b
+bd75-11-21-eve-cowboy-d2t12.flac:3564c33ce7c1134a74d5a99490dc89a1
+bd75-11-21-eve-cowboy-d2t13.flac:dc196576f7a0a48cb0e7e64b42c84f30
+bd75-11-21-eve-cowboy-d2t14.flac:b98caaa618c227134123e32d6d347d9f
+bd75-11-21-eve-cowboy-d2t15.flac:7dbf0ad7b9570e4c8fa7b5965b47ac45
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-21-eve-cowboy-angel-blues.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.74       49036892 B   ---   --   ---xx   flac  0.5500  bd75-11-21-eve-cowboy-d1t01.flac
+     5:31.43       58489580 B   ---   --   ---xx   flac  0.5655  bd75-11-21-eve-cowboy-d1t02.flac
+     5:33.56       58872956 B   ---   --   ---xx   flac  0.5583  bd75-11-21-eve-cowboy-d1t03.flac
+     3:52.22       40976588 B   ---   --   ---xx   flac  0.5606  bd75-11-21-eve-cowboy-d1t04.flac
+     4:44.66       50252876 B   ---   --   ---xx   flac  0.5481  bd75-11-21-eve-cowboy-d1t05.flac
+     5:07.06       54168956 B   ---   --   ---xx   flac  0.5751  bd75-11-21-eve-cowboy-d1t06.flac
+     2:43.37       28840268 B   ---   --   ---xx   flac  0.5710  bd75-11-21-eve-cowboy-d1t07.flac
+     5:31.21       58437836 B   ---   --   ---xx   flac  0.5752  bd75-11-21-eve-cowboy-d1t08.flac
+     2:50.59       30126812 B   ---   --   ---xx   flac  0.5936  bd75-11-21-eve-cowboy-d1t09.flac
+     4:10.31       44172956 B   ---   --   ---xx   flac  0.5621  bd75-11-21-eve-cowboy-d1t10.flac
+     3:06.70       32975084 B   ---   --   ---xx   flac  0.5212  bd75-11-21-eve-cowboy-d1t11.flac
+     5:10.57       54818108 B   ---   --   ---xx   flac  0.5301  bd75-11-21-eve-cowboy-d1t12.flac
+     4:19.16       45725276 B   ---   --   ---xx   flac  0.5265  bd75-11-21-eve-cowboy-d1t13.flac
+     5:39.41       59896076 B   ---   --   ---xx   flac  0.5653  bd75-11-21-eve-cowboy-d1t14.flac
+     4:03.64       43015772 B   ---   --   ---xx   flac  0.5381  bd75-11-21-eve-cowboy-d1t15.flac
+     5:26.53       57631100 B   ---   --   ---xx   flac  0.5854  bd75-11-21-eve-cowboy-d2t01.flac
+     4:11.70       44441084 B   ---   --   ---xx   flac  0.6082  bd75-11-21-eve-cowboy-d2t02.flac
+     4:10.00       44100044 B   ---   --   ---xx   flac  0.6123  bd75-11-21-eve-cowboy-d2t03.flac
+     3:42.00       39160844 B   ---   --   ---xx   flac  0.6146  bd75-11-21-eve-cowboy-d2t04.flac
+     4:31.43       47905580 B   ---   --   ---xx   flac  0.5936  bd75-11-21-eve-cowboy-d2t05.flac
+     8:14.38       87231020 B   ---   --   ---xx   flac  0.6122  bd75-11-21-eve-cowboy-d2t06.flac
+     4:52.24       51565292 B   ---   --   ---xx   flac  0.6145  bd75-11-21-eve-cowboy-d2t07.flac
+     4:03.38       42954620 B   ---   --   ---xx   flac  0.6175  bd75-11-21-eve-cowboy-d2t08.flac
+     5:50.40       61834124 B   ---   --   ---xx   flac  0.6122  bd75-11-21-eve-cowboy-d2t09.flac
+     4:21.32       46115708 B   ---   --   ---xx   flac  0.6218  bd75-11-21-eve-cowboy-d2t10.flac
+     4:07.22       43622588 B   ---   --   ---xx   flac  0.6343  bd75-11-21-eve-cowboy-d2t11.flac
+     4:29.52       47573948 B   ---   --   ---xx   flac  0.5967  bd75-11-21-eve-cowboy-d2t12.flac
+     4:05.70       43382684 B   ---   --   ---xx   flac  0.6176  bd75-11-21-eve-cowboy-d2t13.flac
+     4:45.00       50274044 B   ---   --   ---xx   flac  0.5947  bd75-11-21-eve-cowboy-d2t14.flac
+     3:47.48       40155740 B   ---   --   ---xx   flac  0.6098  bd75-11-21-eve-cowboy-d2t15.flac
+   137:43.68     1457754456 B                            0.5833  (30 files)
+=================== 
+=================== 
+=================== 

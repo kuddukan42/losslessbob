@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-11-okmII-a.flacf.flacf 
+=================== 
+=================== 
+=================== 
+cce51e2522157e38330dd5d8892206e8  bd06-07-11-okmII-a-LB-4191.txt
+01eb4e83e4707848213ddcfccba76370  bd2006-07-11_d1t01.flac
+23f3ab92553c320c5835a35564b23c15  bd2006-07-11_d1t02.flac
+3e8a33339915435434339c00711280aa  bd2006-07-11_d1t03.flac
+ff492f35708b1cbccc05e0170e957714  bd2006-07-11_d1t04.flac
+8fa2f864f0aaa84b0e89633706e61b26  bd2006-07-11_d1t05.flac
+ec8c7ebae2656a558a380f2c6458588f  bd2006-07-11_d1t06.flac
+1b317ce0fa668cdbf0d9c6886bda0adc  bd2006-07-11_d1t07.flac
+4eca634ff49ebb1ff715b036d7dff4b6  bd2006-07-11_d1t08.flac
+50b9d85a1f8fec986d658970bc19697c  bd2006-07-11_d1t09.flac
+5e7d52f90bf09b0673ec8b3ad4bc85fd  bd2006-07-11_d1t10.flac
+3cdc50bd9da1fb9de7e206548afef139  bd2006-07-11_d1t11.flac
+be3fe98af0603623b88ced620466b2e9  bd2006-07-11_d1t12.flac
+729cae5d23ccfe9be85a5e4508cf54f6  bd2006-07-11_d2t01.flac
+174f80005d267d2f2280b567ec20f905  bd2006-07-11_d2t02.flac
+9b2f14c64f6ea28b89dcb38df7bc330c  bd2006-07-11_ffp.txt
+a3c1b7c4cad4880e0836504f332549f3  bd2006-07-11_info.TXT
+d7099e7dc95edbc11bc2e542d908d09c  bd2006-07-11_md5.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-11-okmII-a.flacf.flacf 
+=================== 
+=================== 
+=================== 
+bd2006-07-11_d1t01.flac:0331009c0349695a0157b47201e516ec
+bd2006-07-11_d1t02.flac:199af62dafafbbca9daa0ef922fdc900
+bd2006-07-11_d1t03.flac:1d2b26c5f97b4eac3059ec01b38a0afd
+bd2006-07-11_d1t04.flac:b196afe943de14adeca30a5f6bede2fd
+bd2006-07-11_d1t05.flac:c94f82e44ce1df370e6465a02355095a
+bd2006-07-11_d1t06.flac:349d086a61bc330948b70ea5b63c2b14
+bd2006-07-11_d1t07.flac:ab16b7f4b7bab3322545972b4751dc1e
+bd2006-07-11_d1t08.flac:8fa52d728c19d77b0917c65f774f15c9
+bd2006-07-11_d1t09.flac:8bbf85171367f38ce1d20487af1c4ac8
+bd2006-07-11_d1t10.flac:68d96ea1de2117bd651c8958e04f3eba
+bd2006-07-11_d1t11.flac:d07e655b491fc224b1300f08135bf1d1
+bd2006-07-11_d1t12.flac:e4ce97638e06dcc298860be43eecbf1c
+bd2006-07-11_d2t01.flac:a9256d3be1c24698d3d051f0560d2d4b
+bd2006-07-11_d2t02.flac:0c0785acfbee8fce5aee17e22f3f1bd1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-11-okmII-a.flacf.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.04       57692252 B   ---   --   ---xx   flac  0.5778  bd2006-07-11_d1t01.flac
+     6:49.62       72293468 B   ---   --   ---xx   flac  0.5120  bd2006-07-11_d1t02.flac
+     7:33.42       80008028 B   ---   --   ---xx   flac  0.5502  bd2006-07-11_d1t03.flac
+     5:41.26       60213596 B   ---   --   ---xx   flac  0.5176  bd2006-07-11_d1t04.flac
+     7:35.19       80306732 B   ---   --   ---xx   flac  0.5295  bd2006-07-11_d1t05.flac
+     5:41.36       60237116 B   ---   --   ---xx   flac  0.4690  bd2006-07-11_d1t06.flac
+     6:32.25       69207644 B   ---   --   ---xx   flac  0.5614  bd2006-07-11_d1t07.flac
+     6:51.49       72615692 B   ---   --   ---xx   flac  0.5210  bd2006-07-11_d1t08.flac
+     5:37.22       59498588 B   ---   --   ---xx   flac  0.5219  bd2006-07-11_d1t09.flac
+     5:02.25       53331644 B   ---   --   ---xx   flac  0.5076  bd2006-07-11_d1t10.flac
+     6:50.11       72349916 B   ---   --   ---xx   flac  0.5056  bd2006-07-11_d1t11.flac
+     8:18.28       87913100 B   ---   --   ---xx   flac  0.5189  bd2006-07-11_d1t12.flac
+     7:27.30       78921404 B   ---   --   ---xx   flac  0.5398  bd2006-07-11_d2t01.flac
+     5:39.58       59936060 B   ---   --   ---xx   flac  0.5251  bd2006-07-11_d2t02.flac
+    91:07.62      964525240 B                            0.5260  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-03.flacf 
+=================== 
+=================== 
+=================== 
+5ce1ced94917e3e38068119af2155340  bd - 1996-07-03-Konstanz-d1\01 Crash On The Levee (Down In The Flood).flac
+c02da76d749b89bed37de3bcdec8fe9d  bd - 1996-07-03-Konstanz-d1\02 I Want You.flac
+8aebd90a9eb3b5d0b1949d0a070e0173  bd - 1996-07-03-Konstanz-d1\03 All Along The Watchtower.flac
+01fdb0b46378d5b1be1ab724c094d6a2  bd - 1996-07-03-Konstanz-d1\04 Shelter From The Storm.flac
+af245912cffaca8c43a93a3eb29b657d  bd - 1996-07-03-Konstanz-d1\05 Watching The River Flow.flac
+1fc3972340db84eecc3ed262c3152c8e  bd - 1996-07-03-Konstanz-d1\06 Silvio.flac
+11c1ba6f775889a07fa53faf4c1e78ff  bd - 1996-07-03-Konstanz-d1\07 Mr. Tambourine Man.flac
+c0db82568d06f417825b7124b1618a07  bd - 1996-07-03-Konstanz-d1\08 Masters Of War.flac
+f0e0dbe0273f88a3c91a018514f32a54  bd - 1996-07-03-Konstanz-d1\09 One Too Many Mornings.flac
+b5f3cd37fd469d128b6b06e6a4e4751d  bd - 1996-07-03-Konstanz-d1\10 Maggie's Farm.flac
+81577fda1e2b87bd0ee4d0dab05eb480  bd - 1996-07-03-Konstanz-d2\1 I'll Remember You.flac
+778bc6c9590c1b476d4d9951f38bdcef  bd - 1996-07-03-Konstanz-d2\2 Everything Is Broken.flac
+2bb9d3fee530f945ca18d18a06c8a697  bd - 1996-07-03-Konstanz-d2\3 Alabama Getaway.flac
+19743285353bb1bbdc03feaa1282613d  bd - 1996-07-03-Konstanz-d2\4 The Times They Are A-Changin'.flac
+4196633f6f6a1fee1fe8e7c5129b0348  bd - 1996-07-03-Konstanz-d2\5 Rainy Day Women # 12 &  35.flac
+0a356eae7ebc9adf4f7641286dffef9a  bd - 1996-07-03-Konstanz-d2\6 Gates of Eden.flac
+09272b7af3833a5a91ed7afb91da107e  bd - 1996-07-03-Konstanz-d2\7 In the Garden.flac
+acbb8e629f86d077b7f0e574e95a4df4  bd - 1996-07-03-Konstanz-d2\8 Just Like a Woman.flac
+e543ed32484065600b9ae6dd40f58e9a  bd - 1996-07-03-Konstanz-d2\9 I and I.flac
+9eb58e2459a1ea4f42eb7ac290ac92e7  bd1996-07-03-Konstanz.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-03.flacf\bd - 1996-07-03-Konstanz-d1 
+=================== 
+=================== 
+=================== 
+01 Crash On The Levee (Down In The Flood).flac:e9f3c66a888b8480d60e836df4326b96
+02 I Want You.flac:ae2ef89472f97533594dcf9777122ba3
+03 All Along The Watchtower.flac:0b7cfc4b6bc536de9cd8799905262a3d
+04 Shelter From The Storm.flac:8d8e669afff52f1a86b2c88868ea1e7d
+05 Watching The River Flow.flac:1f5fa8a98d1d4a57dd6b2d1a7bf3ee95
+06 Silvio.flac:53017c98dbb94f01f2de6cbd31f08d93
+07 Mr. Tambourine Man.flac:68be3f762b90e931abac01c4adbf6e48
+08 Masters Of War.flac:30d3ce313083ba85dfa90143004944e2
+09 One Too Many Mornings.flac:7465375654063ee6acd9c6e2152a258a
+10 Maggie's Farm.flac:6b36185e97f2ffb17ec4bf6f62e4510f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-03.flacf\bd - 1996-07-03-Konstanz-d2 
+=================== 
+=================== 
+=================== 
+1 I'll Remember You.flac:f6a1e62e5bb31833ad4d1232abe8de1e
+2 Everything Is Broken.flac:092d7e4910ec5dbedc7dc3fc5371cba0
+3 Alabama Getaway.flac:e50e6119047df432e5b548e759d396e2
+4 The Times They Are A-Changin'.flac:a7fe8d3da54af4de9fec451484523dd3
+5 Rainy Day Women # 12 &  35.flac:f3887a72136a8aeb51ff5384c1e32221
+6 Gates of Eden.flac:32f9d5887cfe25224295dfbaa64d745a
+7 In the Garden.flac:216f964bc572d8251bd02efbff7c717f
+8 Just Like a Woman.flac:e8ebb0491dc7da0d8108dce7e88b4503
+9 I and I.flac:ffd228c28ca45afbc8cf3f9693680f06
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-03.flacf\bd - 1996-07-03-Konstanz-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:45.51       50393996 B   ---   --   ---xx   flac  0.5905  01 Crash On The Levee (Down In The Flood).flac
+     6:14.43       66074780 B   ---   --   ---xx   flac  0.5032  02 I Want You.flac
+     6:56.19       73427132 B   ---   --   ---xx   flac  0.5513  03 All Along The Watchtower.flac
+     6:44.08       71284460 B   ---   --   ---xx   flac  0.4792  04 Shelter From The Storm.flac
+     6:01.33       63758060 B   ---   --   ---xx   flac  0.4824  05 Watching The River Flow.flac
+     7:13.57       76515308 B   ---   --   ---xx   flac  0.5674  06 Silvio.flac
+    10:01.35      106098764 B   ---   --   ---xx   flac  0.4598  07 Mr. Tambourine Man.flac
+     6:30.42       68894828 B   ---   --   ---xx   flac  0.4340  08 Masters Of War.flac
+     8:05.54       85681052 B   ---   --   ---xx   flac  0.4445  09 One Too Many Mornings.flac
+     7:00.01       74090396 B   ---   --   ---xx   flac  0.5713  10 Maggie's Farm.flac
+    69:33.43      736218776 B                            0.5038  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-03.flacf\bd - 1996-07-03-Konstanz-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.33       54938060 B   ---   --   ---xx   flac  0.5027  1 I'll Remember You.flac
+     5:51.03       61923500 B   ---   --   ---xx   flac  0.5630  2 Everything Is Broken.flac
+     7:57.44       84246332 B   ---   --   ---xx   flac  0.5550  3 Alabama Getaway.flac
+     9:54.41      104878076 B   ---   --   ---xx   flac  0.5039  4 The Times They Are A-Changin'.flac
+     7:36.39       80530172 B   ---   --   ---xx   flac  0.5578  5 Rainy Day Women # 12 &  35.flac
+     7:23.62       78291068 B   ---   --   ---xx   flac  0.4392  6 Gates of Eden.flac
+     7:09.58       75812060 B   ---   --   ---xx   flac  0.5115  7 In the Garden.flac
+     6:55.59       73344812 B   ---   --   ---xx   flac  0.5819  8 Just Like a Woman.flac
+     8:20.18       88242380 B   ---   --   ---xx   flac  0.5299  9 I and I.flac
+    66:20.57      702206460 B                            0.5264  (9 files)
+=================== 
+=================== 
+=================== 

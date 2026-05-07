@@ -1,0 +1,12 @@
+Bob Dylan, 7/5/09, Rothbury, MI - Double JJ Ranch, Rothbury Festival - The Odeon Stage, 2CDR
+
+LB-7763, (73min+42min), Recording: Core Sound binaurals > Core Sound phantom power with hi-pass filter (120Hz), > Edirol R-09HR @48kHz-24bit with hi-pass filter (100 Hz) from rail, 25 ft just off axis with the stage left main speaker bank, Transfer: Edirol R-09HR > USB transfer to computer > Sound Forge 6.0 (dc offset, volume, fades, tracks), > Voxengo r8brain (resample to 44.1kHz-16bit - "very high" quality) > Trader's Little Helper 2.4.1.160 (level 8); bittorrent download 07/09; cdr splits not specified; background talking d1t8; excellent sound [A]
+
+Cd1
+01 Leopard-Skin Pill-Box Hat, 02 Senor (Tales Of Yankee Power), 03 Tangled Up In Blue, 04 Rollin' And Tumblin', 05 Spirit On The Water, 06 High Water (For Charley Patton), 07 'Til I Fell In Love With You, 08 Po' Boy, 09 Highway 61 Revisited, 10 Ballad Of A Thin Man, 11 Stuck Inside Of Mobile With The Memphis Blues Again, 
+
+CD2
+12 Nettie Moore, 13 Thunder On The Mountain, 14 Like A Rolling Stone, 15 Jolene, 16 All Along The Watchtower, 17 Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,64 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-02-08-The-Banjo-Tape.flacf 
+=================== 
+=================== 
+=================== 
+d09aa90766cd857d65d345ac56a3f49c  bd1963-02-08 The Banjo Tape.txt
+3d2f3ebd074cdb0141f343dd7e5abea6  bd1963-02-08t01 Lonesome River Edge.flac
+7423e76a58ee6f80a008556ac934aa6b  bd1963-02-08t02 Back Door Blues.flac
+c8572daa4a6ca2524cb93a7eb90fcd13  bd1963-02-08t03 Bob Dylan's Dream.flac
+1217f5061c7272c943b4525b69973557  bd1963-02-08t04 You Can Get Her.flac
+e727d98c6b130f4bbc69fe200a3ff03a  bd1963-02-08t05 Farewell.flac
+749429bf23c4f1b0f7778a92ad620170  bd1963-02-08t06 All Over You.flac
+cb204330e33953e35472b2b1de4dc2a1  bd1963-02-08t07 Masters of War.flac
+09ea44e53950553a980f0c018e1a33ff  bd1963-02-08t08 Instrumental.flac
+abfe2381a4f0d35854866b809ee8b953  bd1963-02-08t09 Keep Your Hands Off Her.flac
+60404898b71b7fd56e9ddad8d67e2594  bd1963-02-08t10 Honey Babe.flac
+04918bfdec663d18ff03a0fdcb51ea58  bd1963-02-08t11 Goin' Back to Rome.flac
+d404c9d4800536b9ba185acaf925dbf2  bd1963-02-08t12 Stealin.flac
+931d443fc14e22751df7bd43ec150ff4  bd63-02-08-The-Banjo-Tape-LB-4566.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-02-08-The-Banjo-Tape.flacf 
+=================== 
+=================== 
+=================== 
+bd1963-02-08t01 Lonesome River Edge.flac:c37c6d6396ba69d959b0dfc674c00ab2
+bd1963-02-08t02 Back Door Blues.flac:75e38b46e91e644419b0e9c38fd381bc
+bd1963-02-08t03 Bob Dylan's Dream.flac:d712a3ada665bcc7367548949cdabd11
+bd1963-02-08t04 You Can Get Her.flac:11cb69cc1bc2b98f36cbd1d01da62df8
+bd1963-02-08t05 Farewell.flac:b7df36415f0a25fe8ba4b3abd1a4ab4a
+bd1963-02-08t06 All Over You.flac:2ddf6643cb785f895d62f1231f9bfd88
+bd1963-02-08t07 Masters of War.flac:3d156a426cb05de92deaf3ce7c222d14
+bd1963-02-08t08 Instrumental.flac:b3922971dfd488313246ece1a28e7e03
+bd1963-02-08t09 Keep Your Hands Off Her.flac:3b9d14f93a55ecdd1d94370cbfee4830
+bd1963-02-08t10 Honey Babe.flac:a2092bc1e6b382759280d28306438eec
+bd1963-02-08t11 Goin' Back to Rome.flac:315755d541a9722339f80d1ca7f34f1b
+bd1963-02-08t12 Stealin.flac:c905b76cfea267722af70b1b0197ae79
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-02-08-The-Banjo-Tape.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:43.15        7620524 B   ---   --   ---xx   flac  0.4946  bd1963-02-08t01 Lonesome River Edge.flac
+     1:42.07       18009308 B   ---   --   ---xx   flac  0.5252  bd1963-02-08t02 Back Door Blues.flac
+     3:43.00       39337244 B   ---   --   ---xx   flac  0.5492  bd1963-02-08t03 Bob Dylan's Dream.flac
+     1:00.63       10732220 B   ---   --   ---xx   flac  0.4970  bd1963-02-08t04 You Can Get Her.flac
+     2:39.65       28200524 B   ---   --   ---xx   flac  0.5096  bd1963-02-08t05 Farewell.flac
+     3:51.42       40847228 B   ---   --   ---xx   flac  0.4859  bd1963-02-08t06 All Over You.flac
+     5:57.50       63092444 B   ---   --   ---xx   flac  0.4842  bd1963-02-08t07 Masters of War.flac
+     1:35.53       16882700 B   ---   --   ---xx   flac  0.4365  bd1963-02-08t08 Instrumental.flac
+     1:46.20       18745484 B   ---   --   ---xx   flac  0.4938  bd1963-02-08t09 Keep Your Hands Off Her.flac
+     0:52.45        9278684 B   ---   --   ---xx   flac  0.5060  bd1963-02-08t10 Honey Babe.flac
+     1:33.72       16574588 B   ---   --   ---xx   flac  0.5203  bd1963-02-08t11 Goin' Back to Rome.flac
+     1:29.45       15805484 B   ---   --   ---xx   flac  0.4876  bd1963-02-08t12 Stealin.flac
+    26:56.27      285126432 B                            0.5001  (12 files)
+=================== 
+=================== 
+=================== 

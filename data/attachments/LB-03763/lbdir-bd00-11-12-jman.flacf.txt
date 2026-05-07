@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-12-jman.flacf 
+=================== 
+=================== 
+=================== 
+32942161632eaa7b548cf7325cdce61e  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t1.flac
+16e81f3a083205c5a2a48282a072df98  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t10.flac
+b61a599fafe74b0e2ad6db17b921ebba  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t11.flac
+e3faf4cf0ee1b2be41ff9404ca6d0427  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t12.flac
+5e69639ba7d3142e348539ceb7b1fc52  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t13.flac
+355ef933e94c8429a4c9a288245e1f8e  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t2.flac
+bcc33c03d35a60d4343360a383fada46  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t3.flac
+e678600cc66342a56cbb32fa325c88c0  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t4.flac
+654508b131a4e0a44060e49e90ef25d8  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t5.flac
+eb3525dbc13a640c3e248762292ae03e  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t6.flac
+e8ac1e052e01cab878a3f556f4a5e2e4  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t7.flac
+f4f227c07fe0bf985873824baa4d76be  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t8.flac
+11e105b0dbcb012f0c0fa4cbdbaa96d6  bd.2000-11-12.jman.d1\bd.2000-11-12.jmand1t9.flac
+05fe65f64587c5ff73d7fd96715e967c  bd.2000-11-12.jman.d2\bd.2000-11-12.jmand2t1.flac
+f6f48a53fa427c9c2f29c9e54fdd2de9  bd.2000-11-12.jman.d2\bd.2000-11-12.jmand2t2.flac
+13e82eec40c93c868f319b738ee8a472  bd.2000-11-12.jman.d2\bd.2000-11-12.jmand2t3.flac
+bbbd360a4835bc4db0c5c5e8633f59a8  bd.2000-11-12.jman.d2\bd.2000-11-12.jmand2t4.flac
+069f631ef484dd84528e935790267cdb  bd.2000-11-12.jman.d2\bd.2000-11-12.jmand2t5.flac
+069fae6346e460f66fff5832925dc4b8  bd.2000-11-12.jman.d2\bd.2000-11-12.jmand2t6.flac
+4734102a48ee6b922bf73dc2ecc9c2ad  bd.2000-11-12.jman.d2\bd.2000-11-12.jmand2t7.flac
+dbdd0ec0459a3fbe56d59c3c4d637759  bd00-11-12-jman-LB-3763.txt
+f19b8fd7ebf5530eb7f109d82f4eb873  bd2000-11-12.jman.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-12-jman.flacf\bd.2000-11-12.jman.d1 
+=================== 
+=================== 
+=================== 
+bd.2000-11-12.jmand1t1.flac:383ab5bacdaa003a134a109f609b426a
+bd.2000-11-12.jmand1t10.flac:5ff091cda24e11c7981dd27308fb580f
+bd.2000-11-12.jmand1t11.flac:3adf7afc5c3bbafb0c6c4f2bcfc816e8
+bd.2000-11-12.jmand1t12.flac:83f6f7e01b19b3984a1e72f07c05d867
+bd.2000-11-12.jmand1t13.flac:25fd740c2bf821e6fa7f5cc8bcce9727
+bd.2000-11-12.jmand1t2.flac:86918a919a2e34023af86fb90e91915b
+bd.2000-11-12.jmand1t3.flac:5bac64510ec0fd5db381171db78607bf
+bd.2000-11-12.jmand1t4.flac:3a7922bbd40698526dbc315a4afbf5c9
+bd.2000-11-12.jmand1t5.flac:4cf5e6c09d35d8dfd9681b0ba5609459
+bd.2000-11-12.jmand1t6.flac:3f8bbd2dd328b309b04f3536a807eeba
+bd.2000-11-12.jmand1t7.flac:59d58b1bee7ea2263e9b125326b7f075
+bd.2000-11-12.jmand1t8.flac:be2114a3f5af422f361ffcd04d419428
+bd.2000-11-12.jmand1t9.flac:51b225d2a48307cd448d5bd03e3d531d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-12-jman.flacf\bd.2000-11-12.jman.d2 
+=================== 
+=================== 
+=================== 
+bd.2000-11-12.jmand2t1.flac:fbf97490febc3e622c858c0ae465c4bf
+bd.2000-11-12.jmand2t2.flac:ffa1d894aa88ac7470448b798584e5e9
+bd.2000-11-12.jmand2t3.flac:db170d6fc24224a27f89a46ad931d796
+bd.2000-11-12.jmand2t4.flac:7da6f42bd8d6b814a4cea8076428cf02
+bd.2000-11-12.jmand2t5.flac:efee654fe3a25e5a49acf8c84507c298
+bd.2000-11-12.jmand2t6.flac:c50a502196d42b4cb0a0992561eb9d63
+bd.2000-11-12.jmand2t7.flac:f1347271dc052d64732db1640a6dc68d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-12-jman.flacf\bd.2000-11-12.jman.d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:35.28       37991900 B   ---   --   ---xx   flac  0.6351  bd.2000-11-12.jmand1t1.flac
+     6:16.18       66368780 B   ---   --   ---xx   flac  0.6363  bd.2000-11-12.jmand1t10.flac
+     4:55.09       52059212 B   ---   --   ---xx   flac  0.6428  bd.2000-11-12.jmand1t11.flac
+     7:47.01       82381196 B   ---   --   ---xx   flac  0.5912  bd.2000-11-12.jmand1t12.flac
+     6:05.58       64522460 B   ---   --   ---xx   flac  0.6479  bd.2000-11-12.jmand1t13.flac
+     5:57.35       63057164 B   ---   --   ---xx   flac  0.6068  bd.2000-11-12.jmand1t2.flac
+    10:08.49      107366492 B   ---   --   ---xx   flac  0.6100  bd.2000-11-12.jmand1t3.flac
+     4:05.66       43373276 B   ---   --   ---xx   flac  0.5579  bd.2000-11-12.jmand1t4.flac
+     7:52.62       83406668 B   ---   --   ---xx   flac  0.6441  bd.2000-11-12.jmand1t5.flac
+     3:12.28       33934700 B   ---   --   ---xx   flac  0.5824  bd.2000-11-12.jmand1t6.flac
+     3:11.48       33805340 B   ---   --   ---xx   flac  0.6188  bd.2000-11-12.jmand1t7.flac
+     5:47.70       61375484 B   ---   --   ---xx   flac  0.6413  bd.2000-11-12.jmand1t8.flac
+     4:13.21       44678636 B   ---   --   ---xx   flac  0.6128  bd.2000-11-12.jmand1t9.flac
+    73:09.43      774321308 B                            0.6192  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-11-12-jman.flacf\bd.2000-11-12.jman.d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.51       61683596 B   ---   --   ---xx   flac  0.6399  bd.2000-11-12.jmand2t1.flac
+     7:15.35       76816364 B   ---   --   ---xx   flac  0.6548  bd.2000-11-12.jmand2t2.flac
+     3:54.05       41289404 B   ---   --   ---xx   flac  0.5544  bd.2000-11-12.jmand2t3.flac
+     4:52.11       51534716 B   ---   --   ---xx   flac  0.6536  bd.2000-11-12.jmand2t4.flac
+     6:51.00       72500444 B   ---   --   ---xx   flac  0.5382  bd.2000-11-12.jmand2t5.flac
+     6:05.48       64498940 B   ---   --   ---xx   flac  0.6472  bd.2000-11-12.jmand2t6.flac
+     7:03.55       74746604 B   ---   --   ---xx   flac  0.5632  bd.2000-11-12.jmand2t7.flac
+    41:51.55      443070068 B                            0.6076  (7 files)
+=================== 
+=================== 
+=================== 

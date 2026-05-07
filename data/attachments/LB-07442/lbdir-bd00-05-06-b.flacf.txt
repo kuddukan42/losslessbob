@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-06-b.flacf 
+=================== 
+=================== 
+=================== 
+cb7d7534cf57a8e950f912aa311c1926  BobDylanZurich2000Alternate.md5
+385c7d80721a56aa8550a5b6bfffd624  BobDylanZurich2000Alternate.txt
+4b16d3d9ba508afb1f52c5640bde881a  Zurich2000d1t-01.flac
+f5e0eb05fb2072d3ec3ea7242a2becbe  Zurich2000d1t-02.flac
+356725f49d2a8d64a5952fe0bd076af0  Zurich2000d1t-03.flac
+021a324de26a70a754e7aef2560d9b31  Zurich2000d1t-04.flac
+402268d4c2cc5829f420716537ab5af3  Zurich2000d1t-05.flac
+a1959cce555c7679bad4a0cbd458f2c7  Zurich2000d1t-06.flac
+6e3b8e28eb8f993a42d85a12d0568f3a  Zurich2000d1t-07.flac
+7640b7bb07ca0b8285e8bff3d3530de5  Zurich2000d1t-08.flac
+91f92edc35fbc32f8f04246cd67f60e7  Zurich2000d1t-09.flac
+7ef21aa77ccb8323f1e789ae0dbc6bc6  Zurich2000d1t-10.flac
+d3505b7bc4a60ef9dfcb6cdfb6604916  Zurich2000d2t-01.flac
+785a0ed7718b2b06b095c020b2a2fdd7  Zurich2000d2t-02.flac
+e8af6e0e0e309279cde9ada3d2228458  Zurich2000d2t-03.flac
+edb4d8d7d0cc8e6e19964ca173b63229  Zurich2000d2t-04.flac
+57cbdabd9bb0844088364058d534a234  Zurich2000d2t-05.flac
+e77e9c92827d223a656cd0a0c3a0f143  Zurich2000d2t-06.flac
+1f76f48612bb1831ecf9b41a3fc51148  Zurich2000d2t-07.flac
+3cd972c8d1493cd07fb7bfde71ee3b90  Zurich2000d2t-08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-06-b.flacf 
+=================== 
+=================== 
+=================== 
+Zurich2000d1t-01.flac:56b0021c56e7afce2481de34d452cd47
+Zurich2000d1t-02.flac:34fa2948a97fd03fe488b57d9c5b602c
+Zurich2000d1t-03.flac:90f0be0a96d6898fd4cbcc34a1d3fece
+Zurich2000d1t-04.flac:ab961bf588e64de46b83fabb5dace029
+Zurich2000d1t-05.flac:f7f48f5cdf5f1e50228371c0a7abd455
+Zurich2000d1t-06.flac:9e161f1a5ceae0f9d0e16fc7da8b329b
+Zurich2000d1t-07.flac:32ee52ed7a56c8f5f28d6960046e8542
+Zurich2000d1t-08.flac:75bd320be6b717e259d9b0a72500f0d4
+Zurich2000d1t-09.flac:a654751bd2dd06020a28c6b7e4934975
+Zurich2000d1t-10.flac:8ca2e102f33623403aca5ca18f84b58a
+Zurich2000d2t-01.flac:982c0967df0acf6e35aee99fb30c773f
+Zurich2000d2t-02.flac:936baca8d2662f2cc5e9c51ff01ab8f3
+Zurich2000d2t-03.flac:2492c53e202aa3157391e037fda0aa2f
+Zurich2000d2t-04.flac:bc0639ad6f4090d916733dfa0331f385
+Zurich2000d2t-05.flac:6c3add15e0b5ffe67551f39e78d656a5
+Zurich2000d2t-06.flac:6525624f2042b981902e5a687c99df38
+Zurich2000d2t-07.flac:10324824e24c95615e91de6c3f85e561
+Zurich2000d2t-08.flac:9d756b82c02f982621c474c46e236b6e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-06-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.61       40186316 B   ---   --   ---xx   flac  0.5142  Zurich2000d1t-01.flac
+     6:08.49       65030492 B   ---   --   ---xx   flac  0.4540  Zurich2000d1t-02.flac
+     8:04.48       85490540 B   ---   --   ---xx   flac  0.4639  Zurich2000d1t-03.flac
+     5:10.51       54803996 B   ---   --   ---xx   flac  0.4703  Zurich2000d1t-04.flac
+     7:23.16       78182876 B   ---   --   ---xx   flac  0.5452  Zurich2000d1t-05.flac
+     7:02.32       74516108 B   ---   --   ---xx   flac  0.3872  Zurich2000d1t-06.flac
+     3:10.23       33570140 B   ---   --   ---xx   flac  0.5078  Zurich2000d1t-07.flac
+     5:06.61       54121916 B   ---   --   ---xx   flac  0.4307  Zurich2000d1t-08.flac
+     7:06.49       75261692 B   ---   --   ---xx   flac  0.5459  Zurich2000d1t-09.flac
+     5:59.62       63473468 B   ---   --   ---xx   flac  0.5310  Zurich2000d1t-10.flac
+     7:00.18       74130380 B   ---   --   ---xx   flac  0.3781  Zurich2000d2t-01.flac
+     6:45.22       71493788 B   ---   --   ---xx   flac  0.5188  Zurich2000d2t-02.flac
+     5:57.61       63118316 B   ---   --   ---xx   flac  0.4561  Zurich2000d2t-03.flac
+     7:03.73       74788940 B   ---   --   ---xx   flac  0.5381  Zurich2000d2t-04.flac
+     6:45.35       71524364 B   ---   --   ---xx   flac  0.4279  Zurich2000d2t-05.flac
+     4:36.38       48775820 B   ---   --   ---xx   flac  0.5378  Zurich2000d2t-06.flac
+     6:45.38       71531420 B   ---   --   ---xx   flac  0.4667  Zurich2000d2t-07.flac
+     7:33.14       79942172 B   ---   --   ---xx   flac  0.5181  Zurich2000d2t-08.flac
+   111:29.01     1179942744 B                            0.4814  (18 files)
+=================== 
+=================== 
+=================== 

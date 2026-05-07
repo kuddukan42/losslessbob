@@ -1,0 +1,74 @@
+===================
+===================
+===================
+=== md5 for: bd04-08-27-e.flacf
+===================
+===================
+===================
+572cd98f78e3b02b90798b633c4e4f48 *01 Drifter's escape.flac
+7ae4d7088e40ed7fc43f37e9a48cb94a *02 The times they are a-changin'.flac
+da52d43c762591f20f12749e23480fe4 *03 Seeing the real you at last.flac
+53081b77f15eb64b0be5db9d6d0cd26b *04 Heartland [w Willie Nelson].flac
+6a29c6b4757d5e17c7302d52d97549fd *05 It's alright, ma (I'm only bleeding).flac
+f1f141948f0a98aac0f9ec300daf972f *06 If dogs run free.flac
+c21e9229d1dc6255ae2169c800c23a84 *07 High water (for Charley Patton).flac
+974a6920bc3990d6432b0c5e4de7992d *08 Mr. Tambourine Man.flac
+f5f81f5ca6536c34d957fd1709d54fcf *09 Love sick.flac
+5a51fca6b9e3f8a544c066629f558986 *10 Honest with me.flac
+554176350ef47095ce8118730bee3d17 *11 Sugar baby.flac
+ad6a9c189b0af610a5ee27f9fe72b4e0 *12 Summer days.flac
+bf7c82e5662dcd789af01267f0945042 *13 Like a rolling stone.flac
+dbfc23af3fe9917a3ca7b7a629ecc17b *14 (band intro).flac
+ea4ed239fd2fd2bbe5396cbfd9f4d850 *14 All along the watchtower.flac
+55425f8e57fe117d0c9ff8ca877b0cdf *2004-08-27 Warner Park, Madison, Wisconsin, USA [derived f. LB-2512 'Travelin' Man'].txt
+5902ffc87a68c2cf5b3c3cb9acd13d43 *Bob Dylan 2004-08-27 Warner Park, Madison, Wisconsin, USA [derived f. LB-2512 'Travelin' Man'].ffp
+07b1f9093922c91a3ac737d3f8b9d5d2 *ORIGINAL Bob Dylan 08-27-2004.txt
+===================
+===================
+===================
+=== ffp for: bd04-08-27-e.flacf
+===================
+===================
+===================
+01 Drifter's escape.flac:b327c1627d1033c9371e89b425745e22
+02 The times they are a-changin'.flac:cd9bd21722bc1628a29bd246144b8639
+03 Seeing the real you at last.flac:85974e24c0aad41eff44c4a9b1e307c8
+04 Heartland [w Willie Nelson].flac:f041d5a628413967fa76d73e7f3569ef
+05 It's alright, ma (I'm only bleeding).flac:7e1a5bd57130a53fb2a578e498ab11d3
+06 If dogs run free.flac:bd507dc732f240cec60390d0bba41f5f
+07 High water (for Charley Patton).flac:b5233a21f4d9e0d1597aec10dfc82123
+08 Mr. Tambourine Man.flac:f1599990b5e1e8880095aee1ac3296c0
+09 Love sick.flac:9cf2233e88a6984f2836a1a1ccf68120
+10 Honest with me.flac:12a8d209183295097ad5b80ae9a6bc1a
+11 Sugar baby.flac:dc8dc50b46145963c63086a182d91bd0
+12 Summer days.flac:24a28614c3eb030c951136181b11e98f
+13 Like a rolling stone.flac:7b3f041ac3193cf705ce6cf91c985b0f
+14 (band intro).flac:17d0bd18884099a01fa2e4f2a4f72a1e
+14 All along the watchtower.flac:112b57b548b41f6f9abff7722247d6f1
+===================
+===================
+===================
+=== shntool len for: bd04-08-27-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.65       63304124 B   ---   --   ---xx   flac  0.5566  01 Drifter's escape.flac
+     6:32.46       69257036 B   ---   --   ---xx   flac  0.5055  02 The times they are a-changin'.flac
+     5:47.23       61264940 B   ---   --   ---xx   flac  0.5787  03 Seeing the real you at last.flac
+     4:17.57       45468908 B   ---   --   ---xx   flac  0.4993  04 Heartland [w Willie Nelson].flac
+     7:07.52       75445148 B   ---   --   ---xx   flac  0.5539  05 It's alright, ma (I'm only bleeding).flac
+     5:22.72       56970188 B   ---   --   ---xx   flac  0.4712  06 If dogs run free.flac
+     6:02.00       63856844 B   ---   --   ---xx   flac  0.5546  07 High water (for Charley Patton).flac
+     6:27.16       68304476 B   ---   --   ---xx   flac  0.4962  08 Mr. Tambourine Man.flac
+     5:14.66       55544876 B   ---   --   ---xx   flac  0.5013  09 Love sick.flac
+     7:02.38       74530220 B   ---   --   ---xx   flac  0.5698  10 Honest with me.flac
+     7:33.05       79921004 B   ---   --   ---xx   flac  0.4402  11 Sugar baby.flac
+    10:12.56      108088556 B   ---   --   ---xx   flac  0.5272  12 Summer days.flac
+     6:28.21       68492636 B   ---   --   ---xx   flac  0.5809  13 Like a rolling stone.flac
+     0:47.20        8337884 B   ---   --   ---xx   flac  0.4687  14 (band intro).flac
+     8:00.60       84813164 B   ---   --   ---xx   flac  0.5272  14 All along the watchtower.flac
+    92:55.72      983600004 B                            0.5258  (15 files)
+===================
+===================
+===================

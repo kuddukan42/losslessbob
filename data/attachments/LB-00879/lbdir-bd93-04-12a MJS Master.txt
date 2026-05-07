@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-04-12a MJS Master 
+=================== 
+=================== 
+=================== 
+8c8ea34c1e46cda814e364ce0493b86f  bd93-04-12a.txt
+1c601cf22445b064aa0f5152dfc21da3  bd930412-1.md5
+b4fabd817e6e18c03bc085fd7b681e21  bd930412-2.md5
+32ae9507dc0e17670c028f549f6ac127  Track101.shn
+86d4c55b40336f09f783046eb6bae40e  Track102.shn
+de75a7a78cfdde72e63d849819ac31ba  Track103.shn
+6d492fabdd7b5c478e2e0f54ba1589fc  Track104.shn
+5e63e65c0de0db9ff1a833adbec0060c  Track105.shn
+8de5ab332103d6b2fafbfbb712631c49  Track106.shn
+fa2856fcbbbacb551f51ddcb36f3e468  Track107.shn
+aaf00b335930419c85c686098b973296  Track108.shn
+360d616c82c6dfdcd85f0263279ccfa3  Track109.shn
+648129f5647c541e5a3048573619383c  Track110.shn
+7b29cab8ea34546bdc5d1c770009514b  Track201.shn
+b05de197f0be3a523c92e1c83d61fc83  Track202.shn
+26120b1b1b5cde92206880e2ee05fd1a  Track203.shn
+0b84de24ea2e804b90dee973621b09fc  Track204.shn
+879bf37479258d85a203e875f10ee605  Track205.shn
+210d4ede177f316bd0de1c5fb0bc3dea  Track206.shn
+7148ebb005029295f430f9f2545cacd9  Track207.shn
+1db33dbce1db9381a62e165a393a77a6  Track208.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-04-12a MJS Master 
+=================== 
+=================== 
+=================== 
+c67d96f547efaac7c907d8a9bc5d6955  [shntool]  Track101.wav
+f24d437d844972ffea365c343b4396a6  [shntool]  Track102.wav
+eb230cf7fd3e25577a19144d40eca3f1  [shntool]  Track103.wav
+e9e669561b4557ba6deabf2eae18a29c  [shntool]  Track104.wav
+242e0492be9ca55257b9cd42f1cf37ec  [shntool]  Track105.wav
+ec659aad444df091d819c1a4c3be2275  [shntool]  Track106.wav
+32c14bf1ca69e86605d4a2b2e377f29a  [shntool]  Track107.wav
+04ba423267b3f72a382af64e43acf309  [shntool]  Track108.wav
+28697dd5a33a20d380b88a21fff3a6bb  [shntool]  Track109.wav
+d846d38ab8ef2757f9085505a34132e1  [shntool]  Track110.wav
+16252dd440bcddf41e50ce8e82b6fb20  [shntool]  Track201.wav
+fe3c76ef4c520e3ffa5c74e936f1617d  [shntool]  Track202.wav
+8a18af74a97fb04fa35eff662966b0b8  [shntool]  Track203.wav
+bc73239b7ec45f97352919abcb6928cc  [shntool]  Track204.wav
+d97b5ec53702f6fbce31fa303e4f02cb  [shntool]  Track205.wav
+32f70f9281196f8342cf9ecff2e26ebf  [shntool]  Track206.wav
+59848b03cdbf728aeb534c931c2ddf19  [shntool]  Track207.wav
+676962c2e2f13f612e3dc6bee16e786a  [shntool]  Track208.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-04-12a MJS Master 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:24.53       57278300 B   ---   --   ---xx    shn  0.6312  Track101.shn
+     4:17.66       45490076 B   ---   --   ---xx    shn  0.6188  Track102.shn
+     4:38.58       49175660 B   ---   --   ---xx    shn  0.6517  Track103.shn
+     5:14.51       55509596 B   ---   --   ---xx    shn  0.6585  Track104.shn
+     7:53.13       83467820 B   ---   --   ---xx    shn  0.7064  Track105.shn
+     6:41.74       70910492 B   ---   --   ---xx    shn  0.5442  Track106.shn
+     5:46.08       61053260 B   ---   --   ---xx    shn  0.6248  Track107.shn
+     8:00.62       84817868 B   ---   --   ---xx    shn  0.5697  Track108.shn
+     5:49.30       61634204 B   ---   --   ---xx    shn  0.6190  Track109.shn
+     7:36.13       80469020 B   ---   --   ---xx    shn  0.5912  Track110.shn
+     9:05.20       96185084 B   ---   --   ---xx    shn  0.6251  Track201.shn
+     6:03.74       64207292 B   ---   --   ---xx    shn  0.7017  Track202.shn
+     8:16.69       87656732 B   ---   --   ---xx    shn  0.7041  Track203.shn
+     9:38.52      102081548 B   ---   --   ---xx    shn  0.6414  Track204.shn
+     6:22.41       67481276 B   ---   --   ---xx    shn  0.7382  Track205.shn
+     8:24.11       88931516 B   ---   --   ---xx    shn  0.6686  Track206.shn
+     5:56.69       62960732 B   ---   --   ---xx    shn  0.7460  Track207.shn
+    10:42.29      113317052 B   ---   --   ---xx    shn  0.6046  Track208.shn
+   125:54.43     1332627528 B                            0.6452  (18 files)
+=================== 
+=================== 
+=================== 

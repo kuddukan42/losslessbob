@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-19-sbd 
+=================== 
+=================== 
+=================== 
+bc05889667250c2ed589deeb05b2c928  88 10 19 sbd d1 t01.shn
+ad94c258bcd05192494f10f99749ef8b  88 10 19 sbd d1 t02.shn
+ddb667ee24e7e6121891e771ad85465a  88 10 19 sbd d1 t03.shn
+f361a9099f455fc0f888d1e247a7cd4c  88 10 19 sbd d1 t04.shn
+23e460917cd7ebe50f0e98b7a8bec6ef  88 10 19 sbd d1 t05.shn
+127cf57fa22766c2f037c70f0d6176d0  88 10 19 sbd d1 t06.shn
+76f9eceb9a61470cca6defe6d1aed05c  88 10 19 sbd d1 t07.shn
+584e60da7def63f136de8450d63b4ec2  88 10 19 sbd d1 t08.shn
+6717e0f5a16b0744b7f03b23ef8ed963  88 10 19 sbd d1 t09.shn
+bca39cbedf5374d05ebdacb716253b22  88 10 19 sbd d2 t01.shn
+681b1f775e9bd4547f494c53108efe76  88 10 19 sbd d2 t02.shn
+6fb0471fee511321695cfca61a558757  88 10 19 sbd d2 t03.shn
+c0c64d36a3bdc95a953df0528c70b4f0  88 10 19 sbd d2 t04.shn
+6ef7b5f142d5640ef62043ce0a33fdc5  88 10 19 sbd d2 t05.shn
+20b811efb410b27aa2e276b3c43f1e7a  88 10 19 sbd d2 t06.shn
+62a2e70bb2da63e2cc7cb42a3bcf8418  88 10 19 sbd d2 t07.shn
+79bf64e54aa6c85f38ac15dc1d4a7689  88 10 19 sbd d2 t08.shn
+2a417bba3a421dbb7678aaceed0a8f16  88 10 19 sbd d2 t09.shn
+5368eb71b683f0c68a00215253990240  88 10 19 sbd.md5
+a2e900c37e9ca3b8c0a236049488d97f  bd88-10-19-sbd-LB-3163.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-10-19-sbd 
+=================== 
+=================== 
+=================== 
+ffee023364000fea914aba320ebd3d74  [shntool]  88_10_19_sbd_d1_t01.wav
+99fb992705175f2969bd106128e2cbda  [shntool]  88_10_19_sbd_d1_t02.wav
+81d4bb2960788bcdd7ff6e19eafa2c8b  [shntool]  88_10_19_sbd_d1_t03.wav
+d44e1ad49e747d67b4b6a2fbe0507904  [shntool]  88_10_19_sbd_d1_t04.wav
+ac025ba6068c58f779359605af28334c  [shntool]  88_10_19_sbd_d1_t05.wav
+0dc0ec82b44a63bc616e9b08cef1670b  [shntool]  88_10_19_sbd_d1_t06.wav
+ab46747482b858ec17d22a41314dc653  [shntool]  88_10_19_sbd_d1_t07.wav
+1be9948eaf1eb7d932ea3a39ecdfe813  [shntool]  88_10_19_sbd_d1_t08.wav
+eb9ab26f652ab5359a9eee5a1413edb3  [shntool]  88_10_19_sbd_d1_t09.wav
+f9724e0f83f1feff771953f1a65578ab  [shntool]  88_10_19_sbd_d2_t01.wav
+0e56074a75370d697880b2f111aeda5a  [shntool]  88_10_19_sbd_d2_t02.wav
+6d1a961a1928b1502a04603b4acf74df  [shntool]  88_10_19_sbd_d2_t03.wav
+b0b458318bde10ecafb43d79b717ca6f  [shntool]  88_10_19_sbd_d2_t04.wav
+b6236b9ab30fca5b81516d89d19f35ee  [shntool]  88_10_19_sbd_d2_t05.wav
+e2dda4edb306c264af6f2592ffccfb81  [shntool]  88_10_19_sbd_d2_t06.wav
+06c066b0e73be22ea87ffa3ab3792b1d  [shntool]  88_10_19_sbd_d2_t07.wav
+cb97d7067e0987b29ddf89f4922e9a9d  [shntool]  88_10_19_sbd_d2_t08.wav
+f224ab690dc1890843f6e46ba2ce1a75  [shntool]  88_10_19_sbd_d2_t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-19-sbd 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:51.23       40802540 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t01.wav
+     4:19.38       45777020 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t02.wav
+     5:51.72       62085788 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t03.wav
+     6:52.34       72756812 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t04.wav
+     6:10.03       65275100 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t05.wav
+     6:18.29       66747452 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t06.wav
+     4:28.22       47326988 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t07.wav
+     7:41.06       81334556 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t08.wav
+     5:24.69       57315932 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d1_t09.wav
+     4:34.65       48486524 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t01.wav
+     4:30.70       47792684 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t02.wav
+     3:56.10       41653964 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t03.wav
+     5:27.30       57753404 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t04.wav
+     6:53.51       72973196 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t05.wav
+     4:19.42       45786428 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t06.wav
+     5:31.28       58454300 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t07.wav
+     5:17.14       55951772 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t08.wav
+     1:12.12       12729068 B   ---   --   -----    wav  1.0000  88_10_19_sbd_d2_t09.wav
+    92:41.18      981003528 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,18 @@
+c7d91cd6f531e4ca8a66062b65f9f52f  01 -intro-.flac
+c81bd99693fe6b7d7d06349120abf82a  02 Down In The Flood.flac
+0d6819c3902ae2a5d555dfa2d5875f52  03 I Want You.flac
+f46ba31c5060106e9d64402c6f4ffd4f  04 All Along The Watchtower.flac
+75bdf217d4f0d95fe7d344ebd923a1f6  05 Just Like A Woman.flac
+33713f42e1792ad0bbd8a26e9f593fa1  06 Silvio.flac
+ad39a4e6e21ae067e67374f7b296b845  07 Shooting Star.flac
+2dd62975b03b089554504fa66142a955  08 Mr. Tambourine Man.flac
+2c2ca77381569aa317a4592d8a3b3b9c  09 Boots Of Spanish Leather.flac
+31b643794762220f3f79a9dfa8b83589  10 Don't Think Twice It's Alright.flac
+acd2ce61f2852ea57f52f96343fefda6  11 Seeing The Real You At Last.flac
+07e0a9bf1fdc687c30d2d7e73f856bc8  12 Man In The Long Black Coat.flac
+ba93b37380b578ad618a33e3b8bb1d57  13 Highway 61 Revisited.flac
+6c77bfebc8a167b3bad4ea01bf756a65  14 Like A Rolling Stone.flac
+656311e8ea13ddc095f48cab8ec8501c  15 It Ain't Me Babe.flac
+febb39bfbe47729f5ea65366911809c2  Bob Dylan San Diego May 10 1995.md5
+af63904a6f29950997f369d897f550be  FINGERPRINT.txt
+e2d6e66ecb6b0deab93a31d2e80b83f3  info.txt

@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-02-14-b.flacf 
+=================== 
+=================== 
+=================== 
+3690026d5d7ea63ae86e420d15da475d  1994-02-14-Kokura-info.txt
+125e93b5197e5138a4e4d5d833809f82  1994-02-14-Kokura-source.txt
+b405259ccfaf8c014d7ea6290a38bf29  1994-02-14-Kokura.pdf
+00ebdc9e6647e129f828eeebe9568576  1994-02-14-Kokura.txt
+73e4b39ebc4194a660d09c622fe44954  bd1994-02-14d1t01.flac
+93f9927c0f7d532a43baef2059f4fa3d  bd1994-02-14d1t02.flac
+38ba96ddc8c929c909295f6031953cd8  bd1994-02-14d1t03.flac
+5d81362c66f4d6525ff87a55cda045a1  bd1994-02-14d1t04.flac
+c5c3c894391524af65e92625c26ef80e  bd1994-02-14d1t05.flac
+eba6ac21f91fd8f66a7da0cc751950a2  bd1994-02-14d1t06.flac
+ec8cfe84d6cacd6a9964ea6e74710135  bd1994-02-14d1t07.flac
+1a55e838081d0184f52c8be6b9ab9713  bd1994-02-14d1t08.flac
+276faa9db08005f8f9f2e3f43aeef14f  bd1994-02-14d2t01.flac
+396b240e24cb181c4513faaf49b5b3c2  bd1994-02-14d2t02.flac
+ae91b6d7c5faff9eacd47aa3a2fe57a9  bd1994-02-14d2t03.flac
+57541dfbfd4f646f62147b05e30db912  bd1994-02-14d2t04.flac
+bea0d18520d6ccbbdac08c20af295034  bd1994-02-14d2t05.flac
+29dce7c5763d9f34ac7d75c680dc32fc  bd1994-02-14d2t06.flac
+4c288fe5fc7094ad7466e5e18c021c95  fingerprint.ffp
+efa52a1b1387cb240b1efd762f9c069d  md5sum.md5
+e4a9f930a4fccdb9f8785bb0b7c41c07  Original\bd94-02-14-d1-fingerprints.txt
+aee12379fe75acfca766a685148f31d4  Original\bd94-02-14-d1.md5
+b170feacad3561cdc539ac25cd75a67f  Original\bd94-02-14-d2-fingerprints.txt
+9ea991278202db5e0c1965b47762cfed  Original\bd94-02-14-d2.md5
+a0f3d4034f7b885ea32a536edfd1aac5  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-02-14-b.flacf 
+=================== 
+=================== 
+=================== 
+bd1994-02-14d1t01.flac:8ad2f6cdf5fe0e46686f5ea656e18a50
+bd1994-02-14d1t02.flac:b7511a01d7df59a3425dc04a0e49e056
+bd1994-02-14d1t03.flac:070874df41665a64f279329da410ec22
+bd1994-02-14d1t04.flac:53c5688d13a2fbc1fec44fb113937909
+bd1994-02-14d1t05.flac:facf92ef4fa96188b9a4dadb17805fb0
+bd1994-02-14d1t06.flac:8071016804436b3816b9eca7b4c0fde6
+bd1994-02-14d1t07.flac:1a956b041b38999239aadab58910eb8d
+bd1994-02-14d1t08.flac:3334c5987949d61bd81a1b016319e8bb
+bd1994-02-14d2t01.flac:daf9face10664e34a5026640f3c8dff9
+bd1994-02-14d2t02.flac:71e49190d035a0a1f645134fd997c4c1
+bd1994-02-14d2t03.flac:26724607a44445cc6e4dd7898529b013
+bd1994-02-14d2t04.flac:9277e237ae1f25561707ffae235c1aee
+bd1994-02-14d2t05.flac:319fdeb0d915550d31f01fb868f33357
+bd1994-02-14d2t06.flac:97316a29516f8220591c0589f7dc4709
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-02-14-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:26.69       89420732 B   ---   --   ---xx   flac  0.5476  bd1994-02-14d1t01.flac
+     6:46.69       71780732 B   ---   --   ---xx   flac  0.5128  bd1994-02-14d1t02.flac
+     4:58.26       52628396 B   ---   --   ---xx   flac  0.5872  bd1994-02-14d1t03.flac
+     8:26.72       89427788 B   ---   --   ---xx   flac  0.5305  bd1994-02-14d1t04.flac
+    10:30.42      111230828 B   ---   --   ---xx   flac  0.5074  bd1994-02-14d1t05.flac
+     5:34.25       58976444 B   ---   --   ---xx   flac  0.4761  bd1994-02-14d1t06.flac
+     4:23.68       46553180 B   ---   --   ---xx   flac  0.4408  bd1994-02-14d1t07.flac
+     7:03.64       74767772 B   ---   --   ---xx   flac  0.4494  bd1994-02-14d1t08.flac
+     7:45.49       82141292 B   ---   --   ---xx   flac  0.4462  bd1994-02-14d2t01.flac
+     5:55.01       62624396 B   ---   --   ---xx   flac  0.5354  bd1994-02-14d2t02.flac
+     8:03.70       85365884 B   ---   --   ---xx   flac  0.5552  bd1994-02-14d2t03.flac
+     9:33.39      101168972 B   ---   --   ---xx   flac  0.5716  bd1994-02-14d2t04.flac
+     8:30.22       90015788 B   ---   --   ---xx   flac  0.5160  bd1994-02-14d2t05.flac
+     9:42.67      102822428 B   ---   --   ---xx   flac  0.4732  bd1994-02-14d2t06.flac
+   105:43.08     1118924632 B                            0.5123  (14 files)
+=================== 
+=================== 
+=================== 

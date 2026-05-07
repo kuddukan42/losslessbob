@@ -1,0 +1,66 @@
+Bob Dylan
+Live at the Marquee 2006
+The Docklands
+Cork, Ireland
+June 25, 2006
+ 
+Source: soomlos
+center ga floor (25-30ft in front of stage)
+neumann km140's > sound devices mp-2 > sony sbm-1(toddmod) > sony d8
+sony d8 > tascam cd-rw700 > eac > cool edit > cd wave > flac frontend
+
+Disc 1:
+01. Introduction [00:59] 
+02. Maggie's Farm [04:56]
+03. She Belongs To Me [05:17]
+04. Tweedle Dee & Tweedle Dum [05:32]
+05. Just Like A Woman [08:44]
+06. Stuck Inside Of Mobile With The Memphis Blues Again [07:03]
+07. Blind Willie Mctell [06:37]
+08. Watching The River Flow [06:14]
+09. Ballad Of A Thin Man [07:06]
+10. Absolutely Sweet Marie [06:31]
+11. Boots Of Spanish Leather [06:46]
+Total time: [65:52]
+
+Disc 2:
+01. Cold Irons Bound [06:31]
+02. Don't Think Twice, It's All Right [07:26]
+03. Summer Days [09:15]
+     (encore) 
+04. Like A Rolling Stone [06:40]
+05. Band Introduction [00:59]
+06. All Along The Watchtower [07:15]
+Total time: [38:10]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - pedal steel, lap steel, mandolin, violin, banjo
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint:
+bd2006-06-25d1t01.flac:9c90e6f7cf1747fdc58d2b605f96c03a
+bd2006-06-25d1t02.flac:b773894312919ce5a977033f22a38599
+bd2006-06-25d1t03.flac:be356d0b0a5fa65ab81d83cd14b18621
+bd2006-06-25d1t04.flac:e59334d14590a05339576b1c183c5232
+bd2006-06-25d1t05.flac:239d594dd184d17bb15385f439c779ab
+bd2006-06-25d1t06.flac:8f49d1d650a26f07e45a6b6263c5c3a3
+bd2006-06-25d1t07.flac:b7a5761312ec61ecf1678e685284dc2e
+bd2006-06-25d1t08.flac:0fa5dd9821c3054c7dde4a3d1d5d1495
+bd2006-06-25d1t09.flac:f2e49fec52c4806157281cd0950fa1b4
+bd2006-06-25d1t10.flac:2948a79cfe57d6e40ab2c974de9b045d
+bd2006-06-25d1t11.flac:d15df326ce21b923ade6bc79c46e6c8b
+bd2006-06-25d2t01.flac:27b57f84df40609a14eb1ed2741ba58d
+bd2006-06-25d2t02.flac:17e32151259502c272c3b672440f6d63
+bd2006-06-25d2t03.flac:0a0d01f3f2cceca280d699b4fb389dac
+bd2006-06-25d2t04.flac:0abebbaf762088abf1a8da33c5073fa5
+bd2006-06-25d2t05.flac:59828fc6e97ffdd3a8e31365786ad77e
+bd2006-06-25d2t06.flac:7375cf80d0399e97cd583facd447264f
+
+
+
+ 
+

@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-27-Olav-ASM.flacf 
+=================== 
+=================== 
+=================== 
+14f3fc1478cd48b03f9453f41c9b4688  bd99-06-27-Olav-ASM-LB-3411.txt
+ae9e0f5c5b218800e4372aaca74f5c37  CD1\01 Cocaine blues.flac
+3f63730ba361465f8fc8c6665509a705  CD1\02 Mr. Tambourine Man.flac
+fef0e1b35cc765e5ea8ac37b7a59e967  CD1\03 Desolation Row.flac
+a302c44eb6bb2b023c60d20176099741  CD1\04 One too many mornings.flac
+3e4214e4dd8a2eb5a82e4f34ec8c0984  CD1\05 Tangled up in blue.flac
+a3789c07153a82d6853d6643fb4255cf  CD1\06 All along the watchtower.flac
+cdf3f5ccf93a6b749f31bb5536b9febe  CD1\07 Make you feel my love.flac
+d16d987846b0a6e7c8183eaf96f3be40  CD1\08 Watching the river flow.flac
+73a9a12982cd297e9c85ae8ecadf3692  CD1\09 Not dark yet.flac
+ecf298d83a797293b74b50cccce08b84  CD1\10 (band intro).flac
+35d9e7c70a5ad67c02cbc25d8bc10f14  CD1\11 Highway 61 revisited.flac
+a2a26e2d2e86a7b382d8e1610ad88279  CD2\12 Like a rolling stone.flac
+1307f26c0034d79083972038ca8b1c2d  CD2\13 Don't think twice, it's all right.flac
+cf48b4180e9893e59d6a295d8990d538  CD2\14 The sound of silence.flac
+16751d5a5f81ac530f0c34b3f74da20a  CD2\15 I walk the line.flac
+c5e21c66eb56602f016235ea7e6c3dd5  CD2\16 Blue moon of Kentucy.flac
+5d1897dab130faf32be50963d80e4afc  CD2\17 Knockin' on heaven's door.flac
+07055cf67ff5da7504de89f626740f91  Info\1999-06-27 Blockbuster Desert Sky Pavillion, Phoenix, Arizona, USA.txt
+81b459ab49353dde02950a4355422e23  Info\ffp d1.txt
+440647be4538f433774fd4acae6d2bf2  Info\ffp d2.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-27-Olav-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Cocaine blues.flac:503d172a7f1d889042d7ef650e11c00f
+02 Mr. Tambourine Man.flac:d9213878fb416b5c45ee952c843601c6
+03 Desolation Row.flac:44255cc0ec0a597c4ced39ce2646caff
+04 One too many mornings.flac:fbf9fbdd66e6fae132db312083d8b489
+05 Tangled up in blue.flac:2c7a8e4a3cfeb0ca2a7a7185a10e3381
+06 All along the watchtower.flac:50638a6d8ec720ba49488414a5f835b2
+07 Make you feel my love.flac:e93b2156889f8444fa05d4067a075241
+08 Watching the river flow.flac:88a2462d2c596bdf9a379c6b175b4309
+09 Not dark yet.flac:ebe6d5949a9d85ff1cac06a78b63c0cc
+10 (band intro).flac:0f5941df5f90d62c6b98847e3029fe1c
+11 Highway 61 revisited.flac:06325efa4e2505d92367217e68697ddc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-27-Olav-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+12 Like a rolling stone.flac:51193ae7732f39a5f6ce05f96cf9b8c8
+13 Don't think twice, it's all right.flac:77a6f946d5b6c2bf7e39d2f7631613f5
+14 The sound of silence.flac:68af9089bad28c94484d0927efb747eb
+15 I walk the line.flac:3eee5fd115f75bd22bca26a94728be6f
+16 Blue moon of Kentucy.flac:15fe7e81ef54eed642200cd17f3c4ffe
+17 Knockin' on heaven's door.flac:6beb18c52e5fd27cbcf15d03d9457a33
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-27-Olav-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.52       47044748 B   ---   --   ---xx   flac  0.5669  01 Cocaine blues.flac
+     7:53.59       83576012 B   ---   --   ---xx   flac  0.5513  02 Mr. Tambourine Man.flac
+     8:24.30       88976204 B   ---   --   ---xx   flac  0.5580  03 Desolation Row.flac
+     4:59.43       52844780 B   ---   --   ---xx   flac  0.5233  04 One too many mornings.flac
+     7:28.11       79053116 B   ---   --   ---xx   flac  0.6057  05 Tangled up in blue.flac
+     4:31.62       47950268 B   ---   --   ---xx   flac  0.5944  06 All along the watchtower.flac
+     4:04.01       43043996 B   ---   --   ---xx   flac  0.5192  07 Make you feel my love.flac
+     5:53.24       62325692 B   ---   --   ---xx   flac  0.5755  08 Watching the river flow.flac
+     5:56.72       62967788 B   ---   --   ---xx   flac  0.4916  09 Not dark yet.flac
+     0:32.53        5769500 B   ---   --   ---xx   flac  0.5618  10 (band intro).flac
+     7:08.49       75614492 B   ---   --   ---xx   flac  0.6148  11 Highway 61 revisited.flac
+    61:20.06      649166596 B                            0.5628  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-27-Olav-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:41.06       81334556 B   ---   --   ---xx   flac  0.5923  12 Like a rolling stone.flac
+     7:56.48       84079340 B   ---   --   ---xx   flac  0.5558  13 Don't think twice, it's all right.flac
+     7:13.30       76451804 B   ---   --   ---xx   flac  0.5204  14 The sound of silence.flac
+     1:44.16       18383276 B   ---   --   ---xx   flac  0.5994  15 I walk the line.flac
+     1:44.10       18369164 B   ---   --   ---xx   flac  0.6111  16 Blue moon of Kentucy.flac
+     5:45.45       60963884 B   ---   --   ---xx   flac  0.5929  17 Knockin' on heaven's door.flac
+    32:05.05      339582024 B                            0.5686  (6 files)
+=================== 
+=================== 
+=================== 

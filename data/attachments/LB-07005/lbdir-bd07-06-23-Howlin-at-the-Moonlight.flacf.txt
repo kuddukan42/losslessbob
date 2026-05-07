@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-06-23-Howlin-at-the-Moonlight.flacf 
+=================== 
+=================== 
+=================== 
+2164c6572094cb5a2ff4a477ebe6b9e6  bd-howlin' at the moonlight-d1\bd-howlin' at the moonlight-d1.md5
+49260147c48d7bb715d25d47c5281590  bd-howlin' at the moonlight-d1\Track01.flac
+b8288e553533218fce50a5cba40adde8  bd-howlin' at the moonlight-d1\Track02.flac
+721a1814e9dce14aa05300351138e160  bd-howlin' at the moonlight-d1\Track03.flac
+ec79183bf684bb3a761ede3cbdf8e4d2  bd-howlin' at the moonlight-d1\Track04.flac
+ec6d877c6b4869455931b5ebd79115aa  bd-howlin' at the moonlight-d1\Track05.flac
+64e779ddee3e8da157ff6c833ac9a4bb  bd-howlin' at the moonlight-d1\Track06.flac
+bcdc6bcc78fc267c659310e08b03dc0d  bd-howlin' at the moonlight-d1\Track07.flac
+0977a686694f42884ff7e0310bc23ffe  bd-howlin' at the moonlight-d1\Track08.flac
+d7ba1378862f6d2944ed0f97df66ad3d  bd-howlin' at the moonlight-d1\Track09.flac
+fe8e49a414e62cd223b3131353d09a26  bd-howlin' at the moonlight-d1\Track10.flac
+ecce793843943ea79f3b4a9eae36bf9d  bd-howlin' at the moonlight-d1\Track11.flac
+58c15ea8ee60be4951929438bffc366d  bd-howlin' at the moonlight-d1\Track12.flac
+593269a4970b87d0bfdc7bbdd4f1ff76  bd-Howlin' at the Moonlight.txt
+f72fb8d78f64a5c2b9f699b0f0671968  bd-howlin' aty the moonlight-d2\bd-howlin' aty the moonlight-d2.md5
+24f6d58c68b95e87ba2c833d49e91984  bd-howlin' aty the moonlight-d2\Track01.flac
+928bbc77aa74ab2e81c0fd5063303825  bd-howlin' aty the moonlight-d2\Track02.flac
+b3fee76ce471c29f696432d12fae39c4  bd-howlin' aty the moonlight-d2\Track03.flac
+ac5c0d21a35e524744dbc8dffd2f4220  bd-howlin' aty the moonlight-d2\Track04.flac
+3ecff871e460318c8b5b419514f9d0ee  bd-howlin' aty the moonlight-d2\Track05.flac
+1130bc177d738d977903c0a05bf48c07  bd-howlin' aty the moonlight-d2\Track06.flac
+00777b99942ef66978ee4800ff9bfc44  bd-howlin' aty the moonlight-d2\Track07.flac
+48936236010666be851cbffbfadd8685  bd-howlin' aty the moonlight-d2\Track08.flac
+d07d007087605366a36287bfb484228f  bd-howlin' aty the moonlight-d2\Track09.flac
+572f9cb05b4459c83a1ec15f04ea5f16  bd-howlin' aty the moonlight-d2\Track10.flac
+cd7a47b64ab0630e5a469804d3668533  bd-howlin' aty the moonlight-d2\Track11.flac
+c496a2e68295b609aff3b2782e939fc6  bdylan-howlin-back.jpg
+0a4d65cca14256289ffe8e5cc2936fd0  bdylan-howlin-front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-06-23-Howlin-at-the-Moonlight.flacf\bd-howlin' at the moonlight-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:1d0fcad7c14052f17ff2ea172b3d0a40
+Track02.flac:b9973921eb9c23a42f8c15d099f37eb1
+Track03.flac:9dd9c7c21daf15ad041805e81bba7ed3
+Track04.flac:7cb52858b7526f002ebc5533f5b617df
+Track05.flac:2af106af4558957b0cc54669a36d2922
+Track06.flac:aa068f6a64fa2d644b8174c36656c3ef
+Track07.flac:153be5741093111d98021859de57acee
+Track08.flac:da3de42b8db8682258b182666b7ebb0b
+Track09.flac:0a0126d394686680ff9ea1a82fbd0017
+Track10.flac:2336549aee0724803777daa225580edc
+Track11.flac:66f588f4caa4a721afa7b28305761c4f
+Track12.flac:64f427da4c7a806d62cc22487cf71317
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-06-23-Howlin-at-the-Moonlight.flacf\bd-howlin' aty the moonlight-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:c80c65785bd79e5cbc0032716fe2aaf5
+Track02.flac:2aebea7194815d9a6d00d913f14d203c
+Track03.flac:77d1b0611cab64fb7ddf8db88811ae07
+Track04.flac:7be6d40a5184e26478d6c87e610b7bd7
+Track05.flac:02331bb59b82edd871ed18191fdee31c
+Track06.flac:d0c77d7421f38095fb432445efc0b891
+Track07.flac:5ae13016a238ceede4d0d9d9b659e74f
+Track08.flac:67b2337d7d48057cfe1e046fb79d3ec6
+Track09.flac:422acd1aafecc0442e9acafb765aa237
+Track10.flac:9235bfab4088f13530c00a3db1de1415
+Track11.flac:b75696b6979276d12d3f0ec0ac7b98e3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-06-23-Howlin-at-the-Moonlight.flacf\bd-howlin' at the moonlight-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.60        6315164 B   ---   --   ---xx   flac  0.4331  Track01.flac
+     3:56.18       41672780 B   ---   --   ---xx   flac  0.5547  Track02.flac
+     5:09.37       54594668 B   ---   --   ---xx   flac  0.5215  Track03.flac
+     5:27.07       57699308 B   ---   --   ---xx   flac  0.5316  Track04.flac
+     6:58.56       73866956 B   ---   --   ---xx   flac  0.5655  Track05.flac
+     5:36.29       59338652 B   ---   --   ---xx   flac  0.4979  Track06.flac
+     6:07.57       64872908 B   ---   --   ---xx   flac  0.5567  Track07.flac
+     6:13.00       65797244 B   ---   --   ---xx   flac  0.4155  Track08.flac
+     5:48.07       61403708 B   ---   --   ---xx   flac  0.5039  Track09.flac
+     7:12.25       76263644 B   ---   --   ---xx   flac  0.4504  Track10.flac
+     4:59.12       52771868 B   ---   --   ---xx   flac  0.5717  Track11.flac
+     7:28.28       79093100 B   ---   --   ---xx   flac  0.5177  Track12.flac
+    65:32.36      693690000 B                            0.5134  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-06-23-Howlin-at-the-Moonlight.flacf\bd-howlin' aty the moonlight-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:07.27       85970348 B   ---   --   ---xx   flac  0.4061  Track01.flac
+     6:36.03       69861500 B   ---   --   ---xx   flac  0.5450  Track02.flac
+     7:35.38       80351420 B   ---   --   ---xx   flac  0.4323  Track03.flac
+     5:30.26       58273196 B   ---   --   ---xx   flac  0.5499  Track04.flac
+     6:30.14       68828972 B   ---   --   ---xx   flac  0.4885  Track05.flac
+     5:17.64       56069372 B   ---   --   ---xx   flac  0.5028  Track06.flac
+     5:17.68       56078780 B   ---   --   ---xx   flac  0.5434  Track07.flac
+     6:08.12       64943468 B   ---   --   ---xx   flac  0.4267  Track08.flac
+     7:38.66       80946476 B   ---   --   ---xx   flac  0.4259  Track09.flac
+     7:16.20       76957484 B   ---   --   ---xx   flac  0.4989  Track10.flac
+     7:54.45       83719484 B   ---   --   ---xx   flac  0.5248  Track11.flac
+    73:53.08      782000500 B                            0.4815  (11 files)
+=================== 
+=================== 
+=================== 

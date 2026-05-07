@@ -1,0 +1,127 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-13-lk.flacf 
+=================== 
+=================== 
+=================== 
+8fa2dd4536677f5182ea6064c31080fc  D1\bd78-10-13 Detriot 101.flac
+836dd336ff27fd2d8460762653938ac5  D1\bd78-10-13 Detriot 102.flac
+0dd393e525c509990f4a7e0d1783502c  D1\bd78-10-13 Detriot 103.flac
+3e602f3a36c1aa346675f24dfb587402  D1\bd78-10-13 Detriot 104.flac
+365370efe28b1ea06b697f8b8e95843a  D1\bd78-10-13 Detriot 105.flac
+3e36063e33936bf708d7d0bee1f81f28  D1\bd78-10-13 Detriot 106.flac
+797383441d21773f72100ce756214ee5  D1\bd78-10-13 Detriot 107.flac
+9c9c0d71c3de44cd47cb92d1d108381a  D1\bd78-10-13 Detriot 108.flac
+7bb5a57f95c4e0571f5b04bf916add0a  D1\bd78-10-13 Detriot 109.flac
+1ae6b297607cb17d7ce8fc04b3ea7ea6  D1\bd78-10-13 Detriot 110.flac
+1993e763555c2aaaa5a86ddd798d8b2c  D1\bd78-10-13 Detriot 111.flac
+75f2df6bf22081c23ef45bf7e8c5f8a6  D1\bd78-10-13 Detriot 112.flac
+ece3809003e823f9480709083d8854ba  D1\bd78-10-13 Detriot 113.flac
+6c7f8fac2f7ba1c1acd2e5333e6a4fad  D1\bd78-10-13 Detriot 114.flac
+e3615680f81ad529a65e50203b95eb38  D1\D1.md5
+557627b2f82913b4941a38d62f88b395  D2\bd78-10-13 Detriot 201.flac
+a3e2745abc257d0cd8ad215ee953b1be  D2\bd78-10-13 Detriot 202.flac
+72f3d4d8cd4d107af350972866cd709f  D2\bd78-10-13 Detriot 203.flac
+2b4f82dd9ad6b0ba3f7980985c08b9d3  D2\bd78-10-13 Detriot 204.flac
+649967456243fe33a99aaead4c79a5b1  D2\bd78-10-13 Detriot 205.flac
+d9102894c478c8630f8bee27c7abe03c  D2\bd78-10-13 Detriot 206.flac
+d6032f981c31d4a95f6630a32d7d5a2e  D2\bd78-10-13 Detriot 207.flac
+a1a3c960bd070ef419bfe81c6eb1d418  D2\bd78-10-13 Detriot 208.flac
+6f31b4b550a93656d8cafcf9937b4c54  D2\bd78-10-13 Detriot 209.flac
+132a4546e42eeeb13ebf44c2fc3b51a5  D2\bd78-10-13 Detriot 210.flac
+2d6704f8a6d9902d88f32dd26a85bee1  D2\bd78-10-13 Detriot 211.flac
+561fd8ef256763fc89a5c386c2e67eea  D2\bd78-10-13 Detriot 212.flac
+dc9ce9e5f59234659c9382973a6174ec  D2\bd78-10-13 Detriot 213.flac
+2751cb7b6cb3a130a118453d60a42a95  D2\D2.md5
+d87cf4206b278c2c27ff2545eb12f0c2  info.txt
+872513e546c4bbc6887097f57cb6795a  LK 1978 Leg 3 DVD 4.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-13-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+bd78-10-13 Detriot 101.flac:f50f2e26059771df3bc00c5abf1b4f0e
+bd78-10-13 Detriot 102.flac:4f2eeab8aa5d371d906cbd7d6c1c122c
+bd78-10-13 Detriot 103.flac:7874d299ef73c6d53ef54c8c40918c07
+bd78-10-13 Detriot 104.flac:9d0ab7c57ada6938e8b9d265d412c28a
+bd78-10-13 Detriot 105.flac:469b41189c56210f7e23e9d22a467a05
+bd78-10-13 Detriot 106.flac:0ddfd5e8773395484651b48ed9c5166c
+bd78-10-13 Detriot 107.flac:aeed43eafbf7b533b8c1d19b87280792
+bd78-10-13 Detriot 108.flac:bbdbafaceba584afb870fa35b0b0bade
+bd78-10-13 Detriot 109.flac:ee094b864eeb84cb4c8fb54d7657e2a8
+bd78-10-13 Detriot 110.flac:58ddddb29751ea8600e9275d64c8ba4c
+bd78-10-13 Detriot 111.flac:6c2a2dd9bd2e975eddefc61e8af2bfc7
+bd78-10-13 Detriot 112.flac:c0bfedf346ddfe871fadab67508052d4
+bd78-10-13 Detriot 113.flac:d8b34a706181e6c96c0e2c88114a084a
+bd78-10-13 Detriot 114.flac:2580ce32bdcd70e9a82ea73e23aa8a93
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-13-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+bd78-10-13 Detriot 201.flac:cc396df48eb803ac98f5605f5695ccb0
+bd78-10-13 Detriot 202.flac:8d8b5f3d8851d710b6c7ff4b674cb373
+bd78-10-13 Detriot 203.flac:daa2e671e17f42fb3c9bb02cdc0da23f
+bd78-10-13 Detriot 204.flac:52839c629b9a5cd6689e419414daca95
+bd78-10-13 Detriot 205.flac:c01c406a34684c717cca90537dc25594
+bd78-10-13 Detriot 206.flac:4d2d7f0b31b7e24e03e8b2e4789ffe51
+bd78-10-13 Detriot 207.flac:103564955979295fa1f8e23e36e4d64e
+bd78-10-13 Detriot 208.flac:e9ac4724ef3c3b661099c670c68c66be
+bd78-10-13 Detriot 209.flac:171f03d257b442cbcdebd8a544aae50f
+bd78-10-13 Detriot 210.flac:d2573797e9cdce90652e180b869ff5d6
+bd78-10-13 Detriot 211.flac:6ffeadef355481d451f4c7224254be5d
+bd78-10-13 Detriot 212.flac:7dae636f2d783246a7cbcfe8334171c5
+bd78-10-13 Detriot 213.flac:3522f32b62c5d922dfe92d088f573e77
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-13-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:37.52       38401148 B   ---   --   ---xx   flac  0.4712  bd78-10-13 Detriot 101.flac
+     4:45.67       50431628 B   ---   --   ---xx   flac  0.4921  bd78-10-13 Detriot 102.flac
+     4:34.42       48432428 B   ---   --   ---xx   flac  0.4883  bd78-10-13 Detriot 103.flac
+     5:04.19       53670332 B   ---   --   ---xx   flac  0.4789  bd78-10-13 Detriot 104.flac
+     8:23.49       88844492 B   ---   --   ---xx   flac  0.4625  bd78-10-13 Detriot 105.flac
+     4:51.19       51377132 B   ---   --   ---xx   flac  0.4748  bd78-10-13 Detriot 106.flac
+     5:18.61       56238716 B   ---   --   ---xx   flac  0.4745  bd78-10-13 Detriot 107.flac
+     4:19.56       45819356 B   ---   --   ---xx   flac  0.4670  bd78-10-13 Detriot 108.flac
+     8:11.71       86779436 B   ---   --   ---xx   flac  0.5136  bd78-10-13 Detriot 109.flac
+     4:37.26       48923996 B   ---   --   ---xx   flac  0.4797  bd78-10-13 Detriot 110.flac
+     4:49.19       51024332 B   ---   --   ---xx   flac  0.4749  bd78-10-13 Detriot 111.flac
+     5:13.00       55213244 B   ---   --   ---xx   flac  0.4980  bd78-10-13 Detriot 112.flac
+     5:57.16       63012476 B   ---   --   ---xx   flac  0.4916  bd78-10-13 Detriot 113.flac
+     3:00.09       31773212 B   ---   --   ---xx   flac  0.5022  bd78-10-13 Detriot 114.flac
+    72:44.56      769941928 B                            0.4838  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-13-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.72       53618588 B   ---   --   ---xx   flac  0.4938  bd78-10-13 Detriot 201.flac
+     5:15.61       55709516 B   ---   --   ---xx   flac  0.4909  bd78-10-13 Detriot 202.flac
+     5:11.12       54888668 B   ---   --   ---xx   flac  0.3880  bd78-10-13 Detriot 203.flac
+     6:10.68       65427980 B   ---   --   ---xx   flac  0.4455  bd78-10-13 Detriot 204.flac
+     4:34.19       48378332 B   ---   --   ---xx   flac  0.4855  bd78-10-13 Detriot 205.flac
+     5:49.05       61575404 B   ---   --   ---xx   flac  0.4881  bd78-10-13 Detriot 206.flac
+     3:59.03       42166700 B   ---   --   ---xx   flac  0.4755  bd78-10-13 Detriot 207.flac
+     4:14.15       44840924 B   ---   --   ---xx   flac  0.4791  bd78-10-13 Detriot 208.flac
+     3:23.60       35950364 B   ---   --   ---xx   flac  0.4744  bd78-10-13 Detriot 209.flac
+     2:22.69       25211132 B   ---   --   ---xx   flac  0.4664  bd78-10-13 Detriot 210.flac
+     6:34.03       69508700 B   ---   --   ---xx   flac  0.4822  bd78-10-13 Detriot 211.flac
+     6:46.11       71644316 B   ---   --   ---xx   flac  0.4891  bd78-10-13 Detriot 212.flac
+     7:39.06       80981756 B   ---   --   ---xx   flac  0.5104  bd78-10-13 Detriot 213.flac
+    67:04.29      709902380 B                            0.4762  (13 files)
+=================== 
+=================== 
+=================== 

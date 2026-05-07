@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd92-05-07-LTD-Rem.flacf
+===================
+===================
+===================
+bc0feb1148d15b8beef2069b223114a9 *bd1992-05-07-d1t01(r)e.flac
+a3df4be7191ba438a577bcd85063a351 *bd1992-05-07-d1t02(r)e+dc.flac
+155011b365a9d66a5f1937db40d56b5c *bd1992-05-07-d1t03(r)e+dc.flac
+872faa6d6e1c1ca85ca9bf85ab18f486 *bd1992-05-07-d1t04(r)e+dc.flac
+dc1e6f7033738ecaac4d6832976bfff6 *bd1992-05-07-d1t05(r)e+dc.flac
+a814ee07ec5e8b010c4e3720d0604f8d *bd1992-05-07-d1t06(r)e+dc.flac
+157d7b29eee896397d24a37a8eb4e0f2 *bd1992-05-07-d1t07(r)e+dc-fixed.flac
+1a1abd0387b6fb8c6a86d8781d9dc1fb *bd1992-05-07-d1t08(r)e+dc-fixed.flac
+45eec4b0edff74a574840621647b793d *bd1992-05-07-d1t09(r)e+dc-fixed.flac
+bb66c4c291f1e1187bfcd84349395c01 *bd1992-05-07-d1t10(r)e+dc.flac
+431de1a878f8755e39f9ac4bb7e7c99c *bd1992-05-07-d1t11(r)e+dc.flac
+111dee921eb04e5ffac350f509c43d70 *bd1992-05-07-d1t12(r)e+dc.flac
+bdeebb39e5a7405c47b43dc167f2bd6c *bd1992-05-07-d2t01(r)e+dc.flac
+cc2b00c675393ecfa6c404423ca3adc5 *bd1992-05-07-d2t02(r)e+dc.flac
+0c3ee4d4b185a9d8c83d4ddb07823742 *bd1992-05-07-d2t03(r)e+dc.flac
+8997632e302ab89dd4e162430ef1f054 *bd1992-05-07-d2t04(r)e+dc.flac
+0a0960bc6676bb001fd72daaf81adb31 *bd1992-05-07-d2t05(r)e+dc.flac
+f83beb1223c08c43ca5fb1e778100c94 *bd1992-05-07-d2t06(r)e+dc.flac
+9cdbd2d134f90997f667df2dcba03479 *bd1992-05-07-d2t07(r)e+dc.flac
+ee9c6cb33ce208631dbeacc7e1560aa3 *bd1992-05-07-info.txt
+8bd7d45f3ed0bda642863eca6a1dbdb4 *Bob Dylan_Berkeley Community Theatre_Berkeley,Ca_1992-05-07(LTD)(Rem).md5
+===================
+===================
+===================
+=== ffp for: bd92-05-07-LTD-Rem.flacf
+===================
+===================
+===================
+bd1992-05-07-d1t01(r)e.flac:b10eef3b8ffc705b8ec1055a181e40ae
+bd1992-05-07-d1t02(r)e+dc.flac:338505842039ceb561897a0acca3e9ca
+bd1992-05-07-d1t03(r)e+dc.flac:acb09009307627c63caed00aca9f44ba
+bd1992-05-07-d1t04(r)e+dc.flac:50b555aca61a229df36386e42442321c
+bd1992-05-07-d1t05(r)e+dc.flac:303a985be3535b36e316ae318db30f05
+bd1992-05-07-d1t06(r)e+dc.flac:2d7cd28cf14d753bdafaa713138b50f6
+bd1992-05-07-d1t07(r)e+dc-fixed.flac:f3977bce911a75bea90e9ea0f82bdd4f
+bd1992-05-07-d1t08(r)e+dc-fixed.flac:3b2a06e6f1fbe5f8fe1b30d8d6e6133b
+bd1992-05-07-d1t09(r)e+dc-fixed.flac:0f85bf026d3b967ea0f38e5b543807a9
+bd1992-05-07-d1t10(r)e+dc.flac:7d8915f10e6e5eab29350bf361b0eb58
+bd1992-05-07-d1t11(r)e+dc.flac:b8ab141ea34a62b8a4f4a0aa2c54d7d8
+bd1992-05-07-d1t12(r)e+dc.flac:e5d3eb8db86c7faaf70acc0821d3a812
+bd1992-05-07-d2t01(r)e+dc.flac:f91d543349fd55d13d439bfd72d649dc
+bd1992-05-07-d2t02(r)e+dc.flac:4d3f43457351ea4ffd91a8f889ab3e8c
+bd1992-05-07-d2t03(r)e+dc.flac:349345e79630245658029d658dd7bb23
+bd1992-05-07-d2t04(r)e+dc.flac:00da412626b33a4c0a990a7b0273a5d8
+bd1992-05-07-d2t05(r)e+dc.flac:c2f65d0f8760dd0fd717fee36af5f621
+bd1992-05-07-d2t06(r)e+dc.flac:261a562540ec55d1d9adcaf0b3d22efd
+bd1992-05-07-d2t07(r)e+dc.flac:40726ccfd99a9ec92a2de70287be5998
+===================
+===================
+===================
+=== shntool len for: bd92-05-07-LTD-Rem.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:08.63        1559420 B   ---   --   ---xx   flac  0.5689  bd1992-05-07-d1t01(r)e.flac
+     4:34.14       48366572 B   ---   --   ---xx   flac  0.7054  bd1992-05-07-d1t02(r)e+dc.flac
+     4:43.24       49977692 B   ---   --   ---xx   flac  0.6593  bd1992-05-07-d1t03(r)e+dc.flac
+     4:38.55       49168604 B   ---   --   ---xx   flac  0.6842  bd1992-05-07-d1t04(r)e+dc.flac
+     7:04.68       74953580 B   ---   --   ---xx   flac  0.6623  bd1992-05-07-d1t05(r)e+dc.flac
+     3:15.28       34463900 B   ---   --   ---xx   flac  0.6651  bd1992-05-07-d1t06(r)e+dc.flac
+     4:15.29       45050252 B   ---   --   ---xx   flac  0.6692  bd1992-05-07-d1t07(r)e+dc-fixed.flac
+     6:37.46       70139036 B   ---   --   ---xx   flac  0.6490  bd1992-05-07-d1t08(r)e+dc-fixed.flac
+     3:05.10       32657564 B   ---   --   ---xx   flac  0.5937  bd1992-05-07-d1t09(r)e+dc-fixed.flac
+     3:45.15       39725324 B   ---   --   ---xx   flac  0.5872  bd1992-05-07-d1t10(r)e+dc.flac
+     6:22.34       67464812 B   ---   --   ---xx   flac  0.6377  bd1992-05-07-d1t11(r)e+dc.flac
+     7:03.62       74763068 B   ---   --   ---xx   flac  0.6451  bd1992-05-07-d1t12(r)e+dc.flac
+     4:30.60       47769164 B   ---   --   ---xx   flac  0.6798  bd1992-05-07-d2t01(r)e+dc.flac
+     9:49.55      104029004 B   ---   --   ---xx   flac  0.6355  bd1992-05-07-d2t02(r)e+dc.flac
+     7:43.35       81755564 B   ---   --   ---xx   flac  0.6445  bd1992-05-07-d2t03(r)e+dc.flac
+     7:46.02       82207148 B   ---   --   ---xx   flac  0.6824  bd1992-05-07-d2t04(r)e+dc.flac
+     6:16.48       66439340 B   ---   --   ---xx   flac  0.7112  bd1992-05-07-d2t05(r)e+dc.flac
+     5:42.58       60465260 B   ---   --   ---xx   flac  0.6477  bd1992-05-07-d2t06(r)e+dc.flac
+     3:47.70       40207484 B   ---   --   ---xx   flac  0.5843  bd1992-05-07-d2t07(r)e+dc.flac
+   101:12.26     1071162788 B                            0.6545  (19 files)
+===================
+===================
+===================

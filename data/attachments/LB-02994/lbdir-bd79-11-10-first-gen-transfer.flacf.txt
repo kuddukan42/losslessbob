@@ -1,0 +1,122 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-10-first-gen-transfer.flacf 
+=================== 
+=================== 
+=================== 
+5fa87a93d708c895fcce1b3e835fa75f  bd79-11-10-first-gen-transfer-LB-2994.txt
+1ec4eacc5f04ce3efe59aad7f591c26a  Disc_1\11_10_79_flac.txt
+5fc60e7490c2e67f4fd68d7b092d91b5  Disc_1\Track  1.flac
+d0d99ac5527224c4cb6f065da41a6e9b  Disc_1\Track  2.flac
+d49033be745df6c238d62cba4758084f  Disc_1\Track  3.flac
+11ff495f2f9c14b0c788c2a5cc448920  Disc_1\Track  4.flac
+0019219c5735a14f253b52dd1c37b0c0  Disc_1\Track  5.flac
+3ba4de0181f81bdb5a706c3f829d5947  Disc_1\Track  6.flac
+de98ef8c756cd5be2e6f05d6b0273eaf  Disc_1\Track  7.flac
+932d4e33a2e5cd1033d4be28b91e4d95  Disc_1\Track  8.flac
+ffb85e9ea6ef70025946b78350527f2a  Disc_1\Track  9.flac
+a1fc3e5466da3c249c7547aad1880cb2  Disc_1\Track 10.flac
+98c61d8155d00723789f726d2795f3cd  Disc_1\Track 11.flac
+bce0065ee1556ff89d6692450a4443c3  Disc_1\Track 12.flac
+086ba800eb2ff2d4728fa7730b6e19b7  Disc_1\Track 13.flac
+c999fe679d4da5b41aed794222bd4dc7  Disc_1\Track 14.flac
+f57d9e87c1d4ad60ce92789d18c1301c  Disc_2\11_10_79_flac.txt
+e18be5fd76196516558478eea8938c79  Disc_2\Track  1.flac
+e7f26252c362e4a418190ac7c7ace6cc  Disc_2\Track  2.flac
+28170281f9bd97d13f137f13a2b35147  Disc_2\Track  3.flac
+d12ff40012f5d890a5cac200a0adcf82  Disc_2\Track  4.flac
+4a094c279a1a5a5d749dbed9e7a87bba  Disc_2\Track  5.flac
+81188de7824d5c3bf254ea45266f629d  Disc_2\Track  6.flac
+a2a3fff43d72f04ce953637915691d51  Disc_2\Track  7.flac
+4a1c7d79b40665dabdbcb9823d37bf69  Disc_2\Track  8.flac
+47588e5658ae85d6d87ad055cee518ec  Disc_2\Track  9.flac
+4008bdb07952cd058733134a246fdfd5  Disc_2\Track 10.flac
+e252dc1b1a3adece5e14bb0ee293550a  Inside_Disc_One.jpg
+1df0794b859fb18425a2ef81a3ae7fb6  Inside_Disc_Two.jpg
+5fa7b64d67787c78c660c4a91b9f7486  track_listing_info.txt
+2cdfd88bea9f3f7a82a22fa2ba91d41d  Warfield_11_10_79_Disc1.jpg
+b59b76a38a51e9a622345b71f3149f4a  with_Regina_Havis_79_Disc2.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-10-first-gen-transfer.flacf\Disc_2 
+=================== 
+=================== 
+=================== 
+Track  1.flac:76fffc3649e032ab1558a58d3089f266
+Track  2.flac:c86d6f1baf5a6c2449608e192aceac21
+Track  3.flac:a51b8fa7cf9a5c079442db4f6eeb1c0e
+Track  4.flac:e94442250b1d0492e62560dad616a075
+Track  5.flac:323b995af14b1bc1ad36740b63bcc720
+Track  6.flac:d00229b63a3bc5cb1ddcd5e6a3db5aab
+Track  7.flac:33bbe3d8d932ca4124ad2c28c98291d6
+Track  8.flac:3673f1fbb1f4ec103a64ac8f70fc3c13
+Track  9.flac:4ff70edac525d3752edf6cbc35487c37
+Track 10.flac:62f4739b93a5df95029ba2335b23b159
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-10-first-gen-transfer.flacf\Disc_1 
+=================== 
+=================== 
+=================== 
+Track  1.flac:3854079e4dbbe9874913f52c3d8bb521
+Track  2.flac:b3e6caf03dc92d7f1dca9a30356fbcb7
+Track  3.flac:338a70bd2a64f7afbf48b1c027f6f92b
+Track  4.flac:567cb9dd6f1a625e1468fedf37f868b6
+Track  5.flac:6710ab1c68163b9adc49fb8bb00ce053
+Track  6.flac:1593a1a4d19e48526c60aea0949310ce
+Track  7.flac:b2848b4fad3e5ffa422fcca90b41fcef
+Track  8.flac:b1b3591d97764cdb7d94d3e9da4efedb
+Track  9.flac:113b9c38803d4a083a6d3e9043036d2f
+Track 10.flac:66f062a334975ab76991ac84deef3e28
+Track 11.flac:e747787d11aa4f68835c836fffc2c732
+Track 12.flac:d60ce73f60dbc7b3c58bcf575845493e
+Track 13.flac:567e85d99b9611cf7077e98465a4c84f
+Track 14.flac:dd3d0cc31da4756f9c885053e836aaa1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-10-first-gen-transfer.flacf\Disc_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.58       35240060 B   ---   --   ---xx   flac  0.5815  Track  1.flac
+     5:23.17       57017228 B   ---   --   ---xx   flac  0.6016  Track  2.flac
+     4:39.59       49354412 B   ---   --   ---xx   flac  0.5949  Track  3.flac
+     4:53.04       51694652 B   ---   --   ---xx   flac  0.6204  Track  4.flac
+     4:40.08       49410860 B   ---   --   ---xx   flac  0.5767  Track  5.flac
+     4:32.27       48044348 B   ---   --   ---xx   flac  0.6199  Track  6.flac
+     6:00.01       63506396 B   ---   --   ---xx   flac  0.5926  Track  7.flac
+     6:53.33       72930860 B   ---   --   ---xx   flac  0.5854  Track  8.flac
+     6:05.74       64560092 B   ---   --   ---xx   flac  0.6216  Track  9.flac
+     7:27.67       79008428 B   ---   --   ---xx   flac  0.5780  Track 10.flac
+    53:55.48      570767336 B                            0.5968  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-10-first-gen-transfer.flacf\Disc_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:08.59       75638012 B   ---   --   ---xx   flac  0.5672  Track  1.flac
+     4:01.47       42622988 B   ---   --   ---xx   flac  0.5949  Track  2.flac
+     4:37.46       48971036 B   ---   --   ---xx   flac  0.5813  Track  3.flac
+     3:21.42       35555228 B   ---   --   ---xx   flac  0.5819  Track  4.flac
+     5:03.41       53545676 B   ---   --   ---xx   flac  0.6049  Track  5.flac
+     3:45.71       39857036 B   ---   --   ---xx   flac  0.5867  Track  6.flac
+     7:13.74       76555292 B   ---   --   ---xx   flac  0.5835  Track  7.flac
+     5:23.33       57054860 B   ---   --   ---xx   flac  0.5587  Track  8.flac
+     5:56.14       62831372 B   ---   --   ---xx   flac  0.5858  Track  9.flac
+     5:08.42       54430028 B   ---   --   ---xx   flac  0.5385  Track 10.flac
+     5:47.38       61300220 B   ---   --   ---xx   flac  0.5665  Track 11.flac
+     6:06.70       64727084 B   ---   --   ---xx   flac  0.5812  Track 12.flac
+     6:57.32       73634108 B   ---   --   ---xx   flac  0.5938  Track 13.flac
+     6:32.09       69170012 B   ---   --   ---xx   flac  0.5204  Track 14.flac
+    77:05.18      815892952 B                            0.5735  (14 files)
+=================== 
+=================== 
+=================== 

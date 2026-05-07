@@ -1,0 +1,52 @@
+Bob Dylan
+Jahrhunderthalle
+Frankfurt, Germany
+October 18, 2024
+
+
+missing	All Along the Watchtower
+missing	It Ain't Me, Babe
+missing	I Contain Multitudes
+1.inc	False Prophet
+2.	When I Paint My Masterpiece
+3.	Black Rider
+4.	My Own Version Of You
+5.	To Be Alone With You
+6.	Crossing the Rubicon
+7.	Desolation Row
+8.	Key West
+9.	It's All Over Now, Baby Blue
+10.	I've Made Up My Mind To Give Myself To You
+11.	Watching the River Flow
+12.	Mother of Muses
+13.	Goodbye Jimmy Reed
+14.	Every Grain of Sand
+ 	 
+
+Band Members:
+Bob Dylan - guitar, piano, Nord Electro 6 keyboard, harp
+Tony Garnier - electric and standup bass
+Jim Keltner - drums
+Bob Britt - acoustic guitar, electric guitar
+Doug Lancio - acoustic guitar, electric guitar
+
+
+Taper: "Vito"
+Lineage: Zoom Q3HD (internal mics)> 48kHz/24bit> Soundforge16 (tracking)> foobar2000 (tagging)> TLH
+
+ffp:
+20241018-tr01.flac:0ad48fe82cce5ec5b0e0006e92e5bc8f
+20241018-tr02.flac:080bfcf46569418333f2ebfc72811a25
+20241018-tr03.flac:3078bff2d5e84c4158823c0ec209a08c
+20241018-tr04.flac:6a9d28bcf065f7f01bf9d8f366278cab
+20241018-tr05.flac:b3733d9bb9c2d5fedeaac7c52471f014
+20241018-tr06.flac:10dcfd16de89989f3669675c425d423b
+20241018-tr07.flac:2a83649af4c2dd905b77cddbf469ecd2
+20241018-tr08.flac:4fcecb13cffb6816d7f843d133926695
+20241018-tr09.flac:1fd7b36219c98dd439e22a55e775544d
+20241018-tr10.flac:5edd99ab11da64ecf06116fce052d18b
+20241018-tr11.flac:415733ad413ab1e9d57f0ce38b010261
+20241018-tr12.flac:d25e60d9cb7162a852762dd6911ae1a6
+20241018-tr13.flac:9cf158600f2e272986e84d9176e341b3
+20241018-tr14.flac:b03b756fa73b25eae1a195bdcfabdfdc
+

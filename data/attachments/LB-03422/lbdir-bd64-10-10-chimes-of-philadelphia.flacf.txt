@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd64-10-10-chimes-of-philadelphia.flacf 
+=================== 
+=================== 
+=================== 
+0fca21c7199f2e4b680cb9d04b0a4a2e  bd64-10-10-chimes-of-philadelphia-LB-3422.txt
+f9ccd3fdfeaa731aff3f1e6e8c642782  BobDylanChimesOfPhiladelphia.md5
+fd8821d75d692924a64631d727f8374f  BobDylanChimesOfPhiladelphia.txt
+3618a2b925c9a01ecf42ad27e7c4edcd  DylanChimesOfBack.jpg
+f0cf38ac9b02dc7e98cd1fc4da2a969c  DylanChimesOfFront.jpg
+262f5f3b581d06fe4da6bb1b654daadc  Track101.flac
+d8010f0032cb32631fe1e5b2458404a8  Track102.flac
+a01a4a10e5902b144eae95ba65a39358  Track103.flac
+643d011cd59336a1e66997403fd30ca6  Track104.flac
+d01cee6e5e14b0c3e068e6f77d2e064f  Track105.flac
+6c986c07a292a44e854d0c2ffe3a8045  Track106.flac
+4e0716a8467de17009afea3a9add8185  Track107.flac
+58be7543f0d21a33f3f709397102dbf3  Track108.flac
+d82fdd714405fce9095e397db1e3791e  Track201.flac
+0b502774085e8462599c558b417d704b  Track202.flac
+ea3bb0e8498b66d7ba0d996b29acb6cf  Track203.flac
+a169ede6e8c1f4454d446e3880a27c17  Track204.flac
+987e251f5029120076a060df73a8912a  Track205.flac
+80e5cfaef6d798d155f5cfd26106e506  Track206.flac
+c798008cfc62190320a21aeeab6d1422  Track207.flac
+83af9da387874b66f9d82ddf745141f8  Track208.flac
+1e425954b555800e3668779cd25bdea3  Track209.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd64-10-10-chimes-of-philadelphia.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:186303063f40051c764279b00bf0f79d
+Track102.flac:3b12987ab5c0a56fdfb5a5ded45a6107
+Track103.flac:128e933fc0aea169296c54848843ea20
+Track104.flac:5a34240f9b39b152cdfbfdf915412d07
+Track105.flac:295efb48482fba62aeff8a54a5b83fa0
+Track106.flac:5f1a4193c45794ffb1d03a145ecdd6c2
+Track107.flac:122cbf3568d82599c6e3bce1cf4ca5e6
+Track108.flac:b7bfa678c51c6e2363a9a88a59823234
+Track201.flac:0b5db720fa4466153ea704f6ce0720a6
+Track202.flac:4773a5b861d693aaaeb6c41e1de271bf
+Track203.flac:6b52dbfa702484e17051326a7617e2e8
+Track204.flac:7213385a00b0fcbee165c40d8d6484c8
+Track205.flac:e045c92c44765463a97627c7b5bb9b96
+Track206.flac:efaf48ad777342d51572f822692ffe5a
+Track207.flac:91bb78b48579fe87b4651ecbdf0df85c
+Track208.flac:7787dae30ac3971a3d35e4a88bfe2502
+Track209.flac:a9faa627490886375db53fdd8e289247
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd64-10-10-chimes-of-philadelphia.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:50.11       40597916 B   ---   --   ---xx   flac  0.6094  Track101.flac
+     4:18.61       45654716 B   ---   --   ---xx   flac  0.6061  Track102.flac
+     4:06.21       43443836 B   ---   --   ---xx   flac  0.6095  Track103.flac
+     4:22.48       46329740 B   ---   --   ---xx   flac  0.6152  Track104.flac
+     6:13.10       65820764 B   ---   --   ---xx   flac  0.6074  Track105.flac
+     5:51.60       62057564 B   ---   --   ---xx   flac  0.6124  Track106.flac
+     8:00.28       84737900 B   ---   --   ---xx   flac  0.6136  Track107.flac
+     5:10.03       54691100 B   ---   --   ---xx   flac  0.6159  Track108.flac
+    11:11.29      118432652 B   ---   --   ---xx   flac  0.6077  Track201.flac
+     7:05.65       75122924 B   ---   --   ---xx   flac  0.6001  Track202.flac
+     7:06.34       75226412 B   ---   --   ---xx   flac  0.6019  Track203.flac
+     7:54.62       83759468 B   ---   --   ---xx   flac  0.6272  Track204.flac
+     5:00.35       53002364 B   ---   --   ---xx   flac  0.6272  Track205.flac
+     7:08.71       75666236 B   ---   --   ---xx   flac  0.6246  Track206.flac
+     7:18.37       77350268 B   ---   --   ---xx   flac  0.6249  Track207.flac
+     5:23.38       57066620 B   ---   --   ---xx   flac  0.6260  Track208.flac
+     7:55.54       83917052 B   ---   --   ---xx   flac  0.6252  Track209.flac
+   107:58.67     1142877532 B                            0.6151  (17 files)
+=================== 
+=================== 
+=================== 

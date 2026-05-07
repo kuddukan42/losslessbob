@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-04-b.flacf 
+=================== 
+=================== 
+=================== 
+9c13506b7af99b0fbddcebf9b131a9eb  1997-08-04 Tanglewood Music Shed, Lenox, Massachusetts, USA.md5
+2e10ec9f5413367c9d7cbe705de4f222  CD1\01 Absolutely sweet Marie.flac
+ddf70e29878b952388dd3519c4208774  CD1\02 Señor (Tales of Yankee Power).flac
+f13c2e6313197114c7765ac1d39452d3  CD1\03 Tough mama.flac
+fca7b3bba0dec4e0390d8ceb38169a87  CD1\04 You ain't goin' nowhere.flac
+cf82edb661c5ceda9d3e3aca40196449  CD1\05 Silvio.flac
+b2651499055ecc4ae8d59c0cd7e36294  CD1\06 Roving gambler.flac
+9ef9e07a430e9a8bea343d4d4be41cef  CD1\07 Tangled up in blue.flac
+08fd7621d0b95f931ecb16b4f297356d  CD1\08 Cocaine blues.flac
+2f78101ef333205cc300748c159bfd28  CD1\CD1 ffp txt file.txt
+8df99658ec82142a7c5df27e048c7da8  CD1\CD1.ffp
+abce895e71fc79365f49b94fec0bd43e  CD1\CD1.shntool_len.txt
+6d1c2fdff047dbd228b06457da7c8887  CD2\09 Seeing the real you at last.flac
+3f75d55851694e4962c0bdd2d93f63fc  CD2\10 This wheel's on fire.flac
+4062f0a8dbc0acc887a01fb12c13f7cb  CD2\11 Like a rolling stone.flac
+5cf2141471df246ec8ce5635834de388  CD2\12 My back pages.flac
+6fe060d52eb7ca055696cd3a2e5ec25a  CD2\13 Rainy day women # 12 & 35.flac
+b59a8c4cb2a4067f5167d3edf304d975  CD2\CD2 ffp txt file.txt
+36c1c75b48d618c1c387925c22f1ebe9  CD2\CD2.ffp
+f443de07b1252465d0df00bcb5bd8533  CD2\CD2.shntool_len.txt
+1ee0a3eb093334ddb6d1e2f69a7c1a8f  Info\1997-08-04 Tanglewood Music Shed, Lenox, Massachusetts, USA.txt
+7920c3912248b9f07d78a76573684f71  Info\ticket.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-04-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 absolutely sweet marie.flac:ee4c39814a659c274d726cb8f18a1f9c
+02 señor (tales of yankee power).flac:a52895005f48f513234a5997fdf7adae
+03 tough mama.flac:fb463a37acac4b35c1cb4d0b3a91e2a0
+04 you ain't goin' nowhere.flac:c6379a14ea900884e25c0b94c4343634
+05 silvio.flac:789169e7e8aca618691d948dd3e24804
+06 roving gambler.flac:1565228bd7e8f2cb600830f64feb10b9
+07 tangled up in blue.flac:d3d514379a38f8082b86cb331e86e631
+08 cocaine blues.flac:b04bf6338743fbea8a0d41e255ea339c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-04-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+09 seeing the real you at last.flac:f4037ab21f024ee854e3b01adfe7dfa5
+10 this wheel's on fire.flac:cf8a39f13fc4a83ed107a00f87025d79
+11 like a rolling stone.flac:26b632699340c3da8c1c44f47d27be6e
+12 my back pages.flac:a1eaeb2afde976b7f41135a27625ff00
+13 rainy day women # 12 & 35.flac:aaa300d7cc58353d8e12b4e69a9af5a5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-04-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.46       57438236 B   ---   --   ---xx   flac  0.6960  01 Absolutely sweet Marie.flac
+     4:52.20       51555884 B   ---   --   ---xx   flac  0.6901  02 Señor (Tales of Yankee Power).flac
+     5:15.37       55653068 B   ---   --   ---xx   flac  0.7066  03 Tough mama.flac
+     4:36.49       48801692 B   ---   --   ---xx   flac  0.7119  04 You ain't goin' nowhere.flac
+     7:30.29       79448252 B   ---   --   ---xx   flac  0.7289  05 Silvio.flac
+     4:09.09       43944812 B   ---   --   ---xx   flac  0.6956  06 Roving gambler.flac
+     8:27.01       89437196 B   ---   --   ---xx   flac  0.7437  07 Tangled up in blue.flac
+     5:06.62       54124268 B   ---   --   ---xx   flac  0.6778  08 Cocaine blues.flac
+    45:23.28      480403408 B                            0.7104  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-04-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:13.43       76482380 B   ---   --   ---xx   flac  0.7061  09 Seeing the real you at last.flac
+     7:53.58       83573660 B   ---   --   ---xx   flac  0.7034  10 This wheel's on fire.flac
+     8:46.17       92826428 B   ---   --   ---xx   flac  0.7169  11 Like a rolling stone.flac
+     7:35.08       80280860 B   ---   --   ---xx   flac  0.7037  12 My back pages.flac
+     5:00.62       53065868 B   ---   --   ---xx   flac  0.7239  13 Rainy day women # 12 & 35.flac
+    36:29.38      386229196 B                            0.7100  (5 files)
+=================== 
+=================== 
+=================== 

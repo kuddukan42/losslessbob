@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76 05 19 wichita master v2 
+=================== 
+=================== 
+=================== 
+765b42f65892ae3af34b5178198e50d0  76 05 19 d1 t01.shn
+9c26e09f6cc66681633960447844794b  76 05 19 d1 t02.shn
+3647e708825a6abf9c2b4e2badcf4200  76 05 19 d1 t03.shn
+58868e8d37bb4588eda56d4bb9e823ea  76 05 19 d1 t04.shn
+389f3e14aeceea1362c8075e28f22d68  76 05 19 d1 t05.shn
+a9d3c1e92dd8be2f6866be3da3ede4ec  76 05 19 d1 t06.shn
+748c47de0b21d73af37ececd014e5a27  76 05 19 d1 t07.shn
+f8a5f56006b5da1419d8819e1e939ed5  76 05 19 d1 t08.shn
+168e4833e929ff16cc49c8a81817adda  76 05 19 d1 t09.shn
+c423d2b77fa143c3ec64fba369fb9112  76 05 19 d1 t10.shn
+a4bb72e92882c4414182f173a687dbbb  76 05 19 d1 t11.shn
+d6da18c61237f976bec85a26728f90d8  76 05 19 d2 t01.shn
+1654b6a652eb10852a1d0e7f98268a5b  76 05 19 d2 t02.shn
+e11c6b4f5556c58090a7a716f83996db  76 05 19 d2 t03.shn
+3a6a1dd68e9d0e312d8a7457d9905158  76 05 19 d2 t04.shn
+e75c173211ff03c4048b74d21600d530  76 05 19 d2 t05.shn
+356036db10746dcf11cca5e3e38233ec  76 05 19 d2 t06.shn
+aeddd3e2726ba9664ed2a4ece1e39711  76 05 19 d2 t07.shn
+fcdce4d98ca1f22b7608c9106aba814c  76 05 19 d2 t08.shn
+b77d3d84d4a1d0f33e113b5d1aca2e93  76 05 19 d2 t09.shn
+41b1bb0f93b2c685b3560278fc13eba6  76 05 19 d2 t10.shn
+f15149e71f938ff2ee4a6f6ddb62fee1  76 05 19 d2 t11.shn
+699890ab7d11e5e4899d5ea22414e72f  76 05 19.md5
+068342adb20918a8e65b15b0607c54b8  bd76-05-19a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd76 05 19 wichita master v2 
+=================== 
+=================== 
+=================== 
+419452885768a28c82cf1c3e0c837ab9  [shntool]  76_05_19_d1_t01.wav
+5061d5466e60e5aeae257c2e16340029  [shntool]  76_05_19_d1_t02.wav
+f7d2745695c0cb036c0b0d669977d6b3  [shntool]  76_05_19_d1_t03.wav
+fb620003e0ec7af8c0ebd47c7b12289b  [shntool]  76_05_19_d1_t04.wav
+a8797866c77ee201c00afce74c017c1e  [shntool]  76_05_19_d1_t05.wav
+51e018731c671e1c059554b05ce9f84e  [shntool]  76_05_19_d1_t06.wav
+23f2f3910c5ac061f60e4488c2e8ee28  [shntool]  76_05_19_d1_t07.wav
+2185eb136a96bd84a9127f2b95d8d75a  [shntool]  76_05_19_d1_t08.wav
+d701854b12b9ffea6c977e769df14ba8  [shntool]  76_05_19_d1_t09.wav
+7df264b0d3f4ada76f730bb514257fcf  [shntool]  76_05_19_d1_t10.wav
+f27113cee6d1cff8492b5f7a9bcb0505  [shntool]  76_05_19_d1_t11.wav
+3ec3475cfa5b674741cb449e5b6694e3  [shntool]  76_05_19_d2_t01.wav
+ae09161409a825680928ffde99b31332  [shntool]  76_05_19_d2_t02.wav
+d7999a1986661588c820f73960f3a7a7  [shntool]  76_05_19_d2_t03.wav
+041315c8d794474078f387294726f371  [shntool]  76_05_19_d2_t04.wav
+0936e17f6979daae7fdff39b8c95ee25  [shntool]  76_05_19_d2_t05.wav
+b0f3fd681db0de45eb8f5703c8683c31  [shntool]  76_05_19_d2_t06.wav
+59631a88350fffd8a75384542f2eb157  [shntool]  76_05_19_d2_t07.wav
+01fcefb7c2a594b450d02a27b63875c9  [shntool]  76_05_19_d2_t08.wav
+2cefab20f78ada21509fa052867c9f0f  [shntool]  76_05_19_d2_t09.wav
+0e6015f300921619846fd861694539d6  [shntool]  76_05_19_d2_t10.wav
+bbf902afbfaa972d96a55d01879f5abb  [shntool]  76_05_19_d2_t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76 05 19 wichita master v2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.65       61187324 B   ---   --   ---xx    shn  0.5715  76 05 19 d1 t01.shn
+     4:27.24       47155292 B   ---   --   ---xx    shn  0.5500  76 05 19 d1 t02.shn
+     3:20.45       35385884 B   ---   --   ---xx    shn  0.5372  76 05 19 d1 t03.shn
+     5:17.62       56064668 B   ---   --   ---xx    shn  0.5834  76 05 19 d1 t04.shn
+     4:01.45       42618284 B   ---   --   ---xx    shn  0.5591  76 05 19 d1 t05.shn
+     3:51.06       40762556 B   ---   --   ---xx    shn  0.6410  76 05 19 d1 t06.shn
+     6:49.69       72309932 B   ---   --   ---xx    shn  0.6066  76 05 19 d1 t07.shn
+     3:47.51       40162796 B   ---   --   ---xx    shn  0.5928  76 05 19 d1 t08.shn
+     2:33.32       27064508 B   ---   --   ---xx    shn  0.6059  76 05 19 d1 t09.shn
+     3:41.49       39099692 B   ---   --   ---xx    shn  0.5640  76 05 19 d1 t10.shn
+     4:31.27       47867948 B   ---   --   ---xx    shn  0.6147  76 05 19 d1 t11.shn
+     4:56.63       52362620 B   ---   --   ---xx    shn  0.5905  76 05 19 d2 t01.shn
+     4:39.30       49286204 B   ---   --   ---xx    shn  0.5884  76 05 19 d2 t02.shn
+     5:02.22       53324588 B   ---   --   ---xx    shn  0.5729  76 05 19 d2 t03.shn
+     6:02.44       63960332 B   ---   --   ---xx    shn  0.5964  76 05 19 d2 t04.shn
+     6:51.21       72549836 B   ---   --   ---xx    shn  0.5141  76 05 19 d2 t05.shn
+     2:59.11       31601516 B   ---   --   ---xx    shn  0.5591  76 05 19 d2 t06.shn
+     2:08.66       22734476 B   ---   --   ---xx    shn  0.6015  76 05 19 d2 t07.shn
+     4:36.52       48808748 B   ---   --   ---xx    shn  0.6024  76 05 19 d2 t08.shn
+     6:43.18       71131580 B   ---   --   ---xx    shn  0.5117  76 05 19 d2 t09.shn
+     4:54.18       51903980 B   ---   --   ---xx    shn  0.5802  76 05 19 d2 t10.shn
+     0:48.74        8641292 B   ---   --   ---xx    shn  0.5563  76 05 19 d2 t11.shn
+    97:52.69     1035984056 B                            0.5754  (22 files)
+=================== 
+=================== 
+=================== 

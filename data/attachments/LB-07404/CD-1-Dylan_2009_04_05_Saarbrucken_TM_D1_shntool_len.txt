@@ -1,0 +1,16 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:42.38        7497644 B   -b-   --   ---xx   flac  0.6244  Dylan_2009_04_05_Saarbrücken_TM_D1_01.flac
+     3:54.44       41381164 B   -b-   --   ---xx   flac  0.6371  Dylan_2009_04_05_Saarbrücken_TM_D1_02.flac
+     5:20.01       56450284 B   -b-   --   ---xx   flac  0.5812  Dylan_2009_04_05_Saarbrücken_TM_D1_03.flac
+     7:00.23       74141804 B   -b-   --   ---xx   flac  0.6140  Dylan_2009_04_05_Saarbrücken_TM_D1_04.flac
+     6:56.42       73481804 B   -b-   --   ---xx   flac  0.5564  Dylan_2009_04_05_Saarbrücken_TM_D1_05.flac
+     4:50.22       51208332 B   -b-   --   ---xx   flac  0.5768  Dylan_2009_04_05_Saarbrücken_TM_D1_06.flac
+     6:15.45       66256940 B   -b-   --   ---xx   flac  0.5030  Dylan_2009_04_05_Saarbrücken_TM_D1_07.flac
+     7:25.20       78545512 B   -b-   --   ---xx   flac  0.6178  Dylan_2009_04_05_Saarbrücken_TM_D1_08.flac
+     5:25.55       57458896 B   -b-   --   ---xx   flac  0.5100  Dylan_2009_04_05_Saarbrücken_TM_D1_09.flac
+     7:29.06       79218136 B   -b-   --   ---xx   flac  0.5441  Dylan_2009_04_05_Saarbrücken_TM_D1_10.flac
+     4:13.49       44744712 B   -b-   --   ---xx   flac  0.5391  Dylan_2009_04_05_Saarbrücken_TM_D1_11.flac
+     6:04.62       64356396 B   -b-   --   ---xx   flac  0.6198  Dylan_2009_04_05_Saarbrücken_TM_D1_12.flac
+     5:11.46       54968364 B   -b-   --   ---xx   flac  0.5499  Dylan_2009_04_05_Saarbrücken_TM_D1_13.flac
+     6:04.38       64299052 B   -b-   --   ---xx   flac  0.6250  Dylan_2009_04_05_Saarbrücken_TM_D1_14.flac
+    76:54.42      814009040 B                            0.5755  (14 files)

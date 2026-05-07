@@ -1,0 +1,61 @@
+BOB DYLAN 
+
+March 10, 2001
+Kosei-Nenkin Hall, Hiroshima, Japan
+
+Source:
+"Hide" recording
+
+Equipment: 
+COS-11PTs > CSP161(Pre Amp) > TCD-D100 (16bit/44.1kHz) 
+
+Lineage: 
+DAT master > DTC-ZE700 > RPD-500 > CD-Rs 
+> PC(WAV) > TLH > FLAC (level 6) 
+
+
+Disc1: 
+Roving Gambler (acoustic)
+To Ramona (acoustic)
+It's Alright,Ma (I'm Only Bleeding) (acoustic)
+'Til I Fell In Love With You 
+Positively 4th Street 
+Seeing The Real You At Last 
+Masters Of War (acoustic)
+Tomorrow Is A Long Time (acoustic)
+Tangled Up In Blue (acoustic)
+
+Disc2: 
+You're A Big Girl Now 
+The Wicked Messenger (Bob on harp) 
+Leopard-Skin Pill-Box Hat 
+(encore)
+Love Sick 
+Like A Rolling Stone 
+If Dogs Run Free (acoustic)
+All Along The Watchtower 
+I Shall Be Released (acoustic)
+Highway 61 Revisited 
+Blowin' In The Wind (acoustic)
+
+
+Fingerprints:
+bd-2001-3-10-d1001.flac:b370ade09ae7d60f1e5671fd49602786
+bd-2001-3-10-d1002.flac:b978952981d9523dd52711a272fd9c86
+bd-2001-3-10-d1003.flac:a0907cbbf6c29ada708717d6269aa9eb
+bd-2001-3-10-d1004.flac:dd8e4ad37b48ae920687f1741ce1e6e3
+bd-2001-3-10-d1005.flac:0ec70d165f5811c8bccfab6930f5ab15
+bd-2001-3-10-d1006.flac:007f0d305005f019aba66f2716677d6a
+bd-2001-3-10-d1007.flac:c1ee683df29d1e11d2de86e8c0dbbf3f
+bd-2001-3-10-d1008.flac:4cee2bf5183b9a22498558650362e7a3
+bd-2001-3-10-d1009.flac:f8120bacaf71689f97b9f1d75ebbaa58
+bd-2001-3-10-d2001.flac:c92b87d6d3505a517664f36f63282113
+bd-2001-3-10-d2002.flac:47979ca573c90385ee786e337741cca8
+bd-2001-3-10-d2003.flac:00a1d7b6881563160ae471ad3b215025
+bd-2001-3-10-d2004.flac:8aa684cb0edb14fb726dc3e0e907830d
+bd-2001-3-10-d2005.flac:24df06159b7d2812a242e630e4834e25
+bd-2001-3-10-d2006.flac:4de70b245f290f4ae28a91a2a243f9c8
+bd-2001-3-10-d2007.flac:b76d6861fc638f3e0d693e52cf15268c
+bd-2001-3-10-d2008.flac:6e64256bfd5fbf4b5433db7a437c6b3c
+bd-2001-3-10-d2009.flac:20d6fc353a953479cbf9fe05b6fcaabf
+bd-2001-3-10-d2010.flac:713ad29af6728f9e8d02b3f38709f5ab

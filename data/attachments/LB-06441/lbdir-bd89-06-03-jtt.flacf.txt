@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-03-jtt.flacf 
+=================== 
+=================== 
+=================== 
+05b1f1e56ce784911b96105d5e0707d6  Disc One\Disc01Track01 BD_Dublin 03.06.1989.flac
+d4164aa1e0705a184862ec295fc53aa4  Disc One\Disc01Track02 BD_Dublin 03.06.1989.flac
+fd45ca99fa5b42abfe8261009d9437b4  Disc One\Disc01Track03 BD_Dublin 03.06.1989.flac
+dc34f44be05752bf8677ddd0eaa7dd87  Disc One\Disc01Track04 BD_Dublin 03.06.1989.flac
+a19b5e1e84d814c4236c750eb21351da  Disc One\Disc01Track05 BD_Dublin 03.06.1989.flac
+38b50b7fec42ea380addf754f29e1a7f  Disc One\Disc01Track06 BD_Dublin 03.06.1989.flac
+a5e77ca90f027f67871a2e0a435d9271  Disc One\Disc01Track07 BD_Dublin 03.06.1989.flac
+91436533fca367be3054ae55d0ab7458  Disc One\Disc01Track08 BD_Dublin 03.06.1989.flac
+aeb6a629ecd059a8eb5ba8d41bd37acd  Disc One\Disc01Track09 BD_Dublin 03.06.1989.flac
+b0ea341f50b51d445d519eea4587f9c2  Disc One\Disc01Track10 BD_Dublin 03.06.1989.flac
+db7e4ca872b223236d8ba9912a251f23  Disc Two\Disc02Track01 BD_Dublin 03.06.1989.flac
+7ade6fc45943116ed4cfd8d3ab40ce5c  Disc Two\Disc02Track02 BD_Dublin 03.06.1989.flac
+98261186be6b041c7c8ac185a0a26fb3  Disc Two\Disc02Track03 BD_Dublin 03.06.1989.flac
+0b1dcabcbb097ef6fb52cde27c3005d0  Disc Two\Disc02Track04 BD_Dublin 03.06.1989.flac
+b00bd8b4ac0be28f1d09321f43aeba55  Disc Two\Disc02Track05 BD_Dublin 03.06.1989.flac
+bc35f8a31cf7903d3ab5f61e8fb2119f  Disc Two\Disc02Track06 BD_Dublin 03.06.1989.flac
+50deff7e18c1973aa64545562727a54f  Disc Two\Disc02Track07 BD_Dublin 03.06.1989.flac
+a795f80c30bfe8c1cc904848df28279b  Dylan - Dublin 03.06.1989_Info.txt
+eec44a19e865dd72d074bee17fd8b9ce  Dylan - Dublin June 3rd 1989 (JTT).md5
+0d36a50bb141d6267d743d04d25a31c6  Dylan - Dublin June 3rd 1989 (JTT).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-03-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 BD_Dublin 03.06.1989.flac:442087f9a28d704f441917486462d480
+Disc01Track02 BD_Dublin 03.06.1989.flac:3b487d3838a24b55002bfffb13f467ee
+Disc01Track03 BD_Dublin 03.06.1989.flac:ab1f576c19b8e1844debb8027ed27943
+Disc01Track04 BD_Dublin 03.06.1989.flac:fe1daec09930904c3960ddd915630000
+Disc01Track05 BD_Dublin 03.06.1989.flac:4cf7e50304fc16b6708ad4aff703dd2b
+Disc01Track06 BD_Dublin 03.06.1989.flac:2e510c3dd65630b55f7c17c456190d47
+Disc01Track07 BD_Dublin 03.06.1989.flac:6bbffcf24363a2ce5a1e4493fb8521c5
+Disc01Track08 BD_Dublin 03.06.1989.flac:40fce54021a325473270b6611c4c10c5
+Disc01Track09 BD_Dublin 03.06.1989.flac:df923b7ff858116f162a1b667298c855
+Disc01Track10 BD_Dublin 03.06.1989.flac:361581ef70bcd4154a34ae81d9028224
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-03-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 BD_Dublin 03.06.1989.flac:68fc84454e3f45eae8fc92063f0fc8ae
+Disc02Track02 BD_Dublin 03.06.1989.flac:3629d97d73a8f28875ed56bc1cdc37cc
+Disc02Track03 BD_Dublin 03.06.1989.flac:354f88c067031fa040a85bef417f618e
+Disc02Track04 BD_Dublin 03.06.1989.flac:990e69f2fc651c01e26d31fb1852535a
+Disc02Track05 BD_Dublin 03.06.1989.flac:01792697fa10488c13d5fcb020b1b4a7
+Disc02Track06 BD_Dublin 03.06.1989.flac:8a10db5d410823cb22b31c921715f37a
+Disc02Track07 BD_Dublin 03.06.1989.flac:6b34a52f58b1bafb3eabc8df46ad410c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-03-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:35.22       37977788 B   ---   --   ---xx   flac  0.6304  Disc01Track01 BD_Dublin 03.06.1989.flac
+     4:17.62       45480668 B   ---   --   ---xx   flac  0.6252  Disc01Track02 BD_Dublin 03.06.1989.flac
+     4:56.70       52379084 B   ---   --   ---xx   flac  0.6318  Disc01Track03 BD_Dublin 03.06.1989.flac
+     4:34.14       48366572 B   ---   --   ---xx   flac  0.6267  Disc01Track04 BD_Dublin 03.06.1989.flac
+     6:00.42       63602828 B   ---   --   ---xx   flac  0.6228  Disc01Track05 BD_Dublin 03.06.1989.flac
+     4:29.12       47479868 B   ---   --   ---xx   flac  0.6311  Disc01Track06 BD_Dublin 03.06.1989.flac
+     5:54.47       62556188 B   ---   --   ---xx   flac  0.6295  Disc01Track07 BD_Dublin 03.06.1989.flac
+     6:19.72       67024988 B   ---   --   ---xx   flac  0.6492  Disc01Track08 BD_Dublin 03.06.1989.flac
+     5:53.38       62358620 B   ---   --   ---xx   flac  0.6041  Disc01Track09 BD_Dublin 03.06.1989.flac
+     5:05.30       53872604 B   ---   --   ---xx   flac  0.6203  Disc01Track10 BD_Dublin 03.06.1989.flac
+    51:07.34      541099208 B                            0.6271  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-03-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.27       30227948 B   ---   --   ---xx   flac  0.6232  Disc02Track01 BD_Dublin 03.06.1989.flac
+     4:30.21       47677436 B   ---   --   ---xx   flac  0.6147  Disc02Track02 BD_Dublin 03.06.1989.flac
+     5:35.01       59096396 B   ---   --   ---xx   flac  0.6059  Disc02Track03 BD_Dublin 03.06.1989.flac
+     5:53.38       62358620 B   ---   --   ---xx   flac  0.6273  Disc02Track04 BD_Dublin 03.06.1989.flac
+     3:39.70       38796284 B   ---   --   ---xx   flac  0.5935  Disc02Track05 BD_Dublin 03.06.1989.flac
+     5:33.47       58851788 B   ---   --   ---xx   flac  0.6175  Disc02Track06 BD_Dublin 03.06.1989.flac
+     4:34.01       48335996 B   ---   --   ---xx   flac  0.6287  Disc02Track07 BD_Dublin 03.06.1989.flac
+    32:37.55      345344468 B                            0.6163  (7 files)
+=================== 
+=================== 
+=================== 

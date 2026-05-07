@@ -1,0 +1,19 @@
+53ae09f1f8fbbf67d44ad0b396e41db5  disc 1\disc 1 eac.LOG
+1814dbede7f249fb4c1aeed3c798db00  disc 1\Track01.flac
+ed563207517ac69156ea30ff393895b1  disc 1\Track02.flac
+86de1b0edaa59f455fa873efc4967e0a  disc 1\Track03.flac
+9012b9d196f1923a200577d12f28814e  disc 1\Track04.flac
+724b41ffaad743050ce62894d4711acb  disc 1\Track05.flac
+4d7c80b236284ae817c8269e487f660a  disc 1\Track06.flac
+c55d975670c299c6eb40fbd752f3ec3d  disc 1\Track07.flac
+47aeea1d8a4b364685788a000ef2969b  disc 1\Track08.flac
+d6d02abc87fd27acfbe7029223d970ae  disc 1\Track09.flac
+4714697370bc8681da3c3fabacd26d0c  disc 1\Track10.flac
+514d7b16c20072a6c06125b4585e8494  disc 2\disc 2 eac.LOG
+8c353f80c87d2f34bad00b639824da5e  disc 2\Track01.flac
+70257d8b9d445cb08f4ad0e9f5b4ac15  disc 2\Track02.flac
+0ee0ada1995011da09e853ff81be913d  disc 2\Track03.flac
+e46f16af6ae0be70860a5722536c933c  disc 2\Track04.flac
+5262372c03282882d91774e5a7f51074  disc 2\Track05.flac
+db705e88d033cfcf9fc1b8d22032f8ea  Dylan1998-06-30.md5
+230861103a5e7d5c3af3b3b87c6bfd30  Dylan1998-06-30.txt

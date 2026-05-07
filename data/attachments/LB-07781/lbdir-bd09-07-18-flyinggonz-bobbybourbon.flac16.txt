@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-07-18-flyinggonz-bobbybourbon.flac16 
+=================== 
+=================== 
+=================== 
+4d03856853f5aa773f29b728e907d0ff  bd2009-07-18.flyinggonz.bobbybourbon.flac16.ffp
+6f3c4d525915e97d21fb59e5f97bbb57  bd2009-07-18.flyinggonz.bobbybourbon.flac16.md5
+8a609568e99097aba19eb9ecb78eeda0  bd2009-07-18.flyinggonz.bobbybourbon.flac16.txt
+d2c1324aa2fc022ec1e6723875418c3f  bd2009-07-18d1t01.flac
+5b3056d7241c191b4c22587db17f3d26  bd2009-07-18d1t02.flac
+9bcc73ad632a8eef0cd76de7e663d3a3  bd2009-07-18d1t03.flac
+e07b6f17b28514efe463d9eda372017f  bd2009-07-18d1t04.flac
+2f1edfa60b625592bff7ed8b428b2067  bd2009-07-18d1t05.flac
+464301fe7e636b757b3fac743106b38a  bd2009-07-18d1t06.flac
+f83d9fb3c3039d04b1d9b0506722e8e0  bd2009-07-18d1t07.flac
+46d9fa54207fd30ead9ae25392935d3d  bd2009-07-18d1t08.flac
+f2b82230619363e0d4135ca58d911903  bd2009-07-18d2t01.flac
+641c5fa3a8a9c4bbe059b2acdb6165ec  bd2009-07-18d2t02.flac
+8b8be45044467d1656299c98f3ce0332  bd2009-07-18d2t03.flac
+0dfde57a222c58092364073d9ab4d779  bd2009-07-18d2t04.flac
+e6067eec0d390bf291986bfbbd8ce612  bd2009-07-18d2t05.flac
+bd313011796f7fc1dd750ba8f8e568b5  bd2009-07-18d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-07-18-flyinggonz-bobbybourbon.flac16 
+=================== 
+=================== 
+=================== 
+bd2009-07-18d1t01.flac:66febc37ac5715eef1cedaaa6507beeb
+bd2009-07-18d1t02.flac:6549c5c254c936f866c400c3d0b275da
+bd2009-07-18d1t03.flac:1b738c64bdb11722f28eea92f3f2d7a8
+bd2009-07-18d1t04.flac:689de68fc678c0cc0aef0a22676b8e65
+bd2009-07-18d1t05.flac:68a2402284787b5802a0d1065bd123ac
+bd2009-07-18d1t06.flac:18c6d6d5a776dc2f84afdaaef12382f0
+bd2009-07-18d1t07.flac:574c6f9c4aa122b850438f251667dee1
+bd2009-07-18d1t08.flac:e3756fd486a52de2b605fccd9b826c74
+bd2009-07-18d2t01.flac:e7dc8526a588e98fa9601ab9eae213e7
+bd2009-07-18d2t02.flac:5cbd2976fd03db27bc51e070a7f45075
+bd2009-07-18d2t03.flac:70f413c6db0d5a53eff4b2c87be99883
+bd2009-07-18d2t04.flac:346a7dfa8da0cab687038294d1ed3ce2
+bd2009-07-18d2t05.flac:52ba8fedb5e031b682a20bb00c7c0956
+bd2009-07-18d2t06.flac:b7481038aaf9858faf4f4dbcef6417bc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-07-18-flyinggonz-bobbybourbon.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:10.38       65357420 B   ---   --   ---xx   flac  0.5040  bd2009-07-18d1t01.flac
+     5:36.26       59331596 B   ---   --   ---xx   flac  0.4731  bd2009-07-18d1t02.flac
+     7:26.53       78799100 B   ---   --   ---xx   flac  0.5294  bd2009-07-18d1t03.flac
+     6:37.59       70169612 B   ---   --   ---xx   flac  0.4251  bd2009-07-18d1t04.flac
+     5:12.13       55067420 B   ---   --   ---xx   flac  0.4710  bd2009-07-18d1t05.flac
+     5:27.61       57826316 B   ---   --   ---xx   flac  0.4667  bd2009-07-18d1t06.flac
+     7:44.71       82016636 B   ---   --   ---xx   flac  0.5266  bd2009-07-18d1t07.flac
+     7:13.63       76529420 B   ---   --   ---xx   flac  0.4815  bd2009-07-18d1t08.flac
+     6:49.11       72173516 B   ---   --   ---xx   flac  0.5595  bd2009-07-18d2t01.flac
+     4:42.16       49782476 B   ---   --   ---xx   flac  0.3975  bd2009-07-18d2t02.flac
+     8:53.62       94167068 B   ---   --   ---xx   flac  0.5141  bd2009-07-18d2t03.flac
+     8:09.68       86419580 B   ---   --   ---xx   flac  0.5383  bd2009-07-18d2t04.flac
+     4:08.62       43893068 B   ---   --   ---xx   flac  0.5407  bd2009-07-18d2t05.flac
+     5:23.74       57151292 B   ---   --   ---xx   flac  0.5476  bd2009-07-18d2t06.flac
+    89:38.02      948684520 B                            0.5014  (14 files)
+=================== 
+=================== 
+=================== 

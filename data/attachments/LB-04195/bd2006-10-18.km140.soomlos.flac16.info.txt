@@ -1,0 +1,62 @@
+Bob Dylan
+Arco Arena
+Sacramento, California
+October 18, 2006
+ 
+source: soomlos
+18th row center
+neumann km140's > lunatec v3 > microtrack 24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+Disc 1:
+01. introduction [01:40] 
+02. Maggie's Farm [05:03]
+03. Just Like Tom Thumb's Blues [06:31]
+04. High Water (For Charley Patton) [06:41]
+05. When The Deal Goes Down [05:34]
+06. Tweedle Dee & Tweedle Dum [05:28]
+07. Tangled Up In Blue [07:54] 
+08. To Ramona [05:51]
+09. It's Alright, Ma (I'm Only Bleeding) [07:48] 
+10. Rollin' And Tumblin' [06:39] 
+11. Ballad Of Hollis Brown [06:09] 
+Total time: [65:25]
+
+Disc 2:
+01. Highway 61 Revisited [06:16]
+02. Nettie Moore [07:18]
+03. Summer Days [10:31] 
+04. Thunder On The Mountain [05:55]
+05. Like A Rolling Stone [06:29]
+06. band intoduction [00:36] 
+07. All Along The Watchtower [06:29]
+Total time: [43:39]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2006-10-18d1t01.flac:33b7324f13efc361bddf4d319fa39da7
+bd2006-10-18d1t02.flac:f247d42cf4ff9dedf683a3aba4994fde
+bd2006-10-18d1t03.flac:1ae2ca7c62ea1c1ac36ccd47ac2c3aa8
+bd2006-10-18d1t04.flac:1801a6aae985c1cf01987adaa1bbb9d1
+bd2006-10-18d1t05.flac:ca9fdaabc5b67491668b73fccb3b62d0
+bd2006-10-18d1t06.flac:e265673af1c9effd26dfaa1d3bab2e45
+bd2006-10-18d1t07.flac:e9d91562c3e20bb408bb9d62f683a16c
+bd2006-10-18d1t08.flac:8a886ac97e479b3c45dafd128542159f
+bd2006-10-18d1t09.flac:c01d1935094b6ca0feb96c6cf84385fc
+bd2006-10-18d1t10.flac:50c9eb7eade95f464aeb38b790d9bcde
+bd2006-10-18d1t11.flac:84a3674ff0625887c31134331eff0419
+bd2006-10-18d2t01.flac:44f90c2c58c9cf2cfcfc9a5f2fe61f40
+bd2006-10-18d2t02.flac:fb54a6545c89e4e8020c51cdc718b366
+bd2006-10-18d2t03.flac:018a48d34ee15e9badb0d8b5ad053cb0
+bd2006-10-18d2t04.flac:2d93396c7b4c30f9f6da57d5971dd24a
+bd2006-10-18d2t05.flac:ff6ecd0693f7ec06ffc291128f908e62
+bd2006-10-18d2t06.flac:cd247ce81a1e5a26815dfcf413e5d988
+bd2006-10-18d2t07.flac:21e0bb2b26da7b8e89033b6e54e3c493
+

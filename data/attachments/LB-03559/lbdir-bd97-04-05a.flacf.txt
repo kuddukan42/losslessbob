@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-05a.flacf 
+=================== 
+=================== 
+=================== 
+bc5c0337e6ca0187d160732e2f2fef47  bd97-04-05a-LB-3559.txt
+a855c1adb81564e0633c081bf042f0a4  d1t1.flac
+d10f27644de66c9231aaa0471d61bb49  d1t2.flac
+e3cc336b267a5ee3264e2b5cb4270f7f  d1t3.flac
+7fccf9c219e49392bb8ecfd0ba48b4a9  d1t4.flac
+1d8bdec0eb82b3f77689b4c44b3fb558  d1t5.flac
+68cc68eed1862692f17eb7794c4fe6ab  d1t6.flac
+9678389bd445f6887046f52f46fb0d65  d1t7.flac
+fe52ad6b05325de0e215b5a1cc5ccff4  d1t8.flac
+ef13bc7ee8992fa597cac8d2cd09c7b9  d1t9.flac
+e3c8c48318d7d4b82464af561175fd5c  d2t1.flac
+73ccaa1053bd18166959e3a0a3981d4c  d2t2.flac
+53e444a9449d690d7f88f7a0b2552f85  d2t3.flac
+0370712206c216058f594260b5295927  d2t4.flac
+3a8cc3979f95b9900beee4854289bbe1  d2t5.flac
+659256ec40daac4acbe9b53f388360be  d2t6.flac
+21140977109e6faf28987e2013e6ad83  Dylan 4-5-97.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-05a.flacf 
+=================== 
+=================== 
+=================== 
+d1t1.flac:fb85e4123f4f3ff762a82e1ec32e0127
+d1t2.flac:97acd056a4a26735879c18eb66552638
+d1t3.flac:e1b4de33eaf3d517b2c1dceddddc9e0e
+d1t4.flac:58ad1ec07422314844244b00b99c632c
+d1t5.flac:62da000ac9d56f68597e4911fbbd5813
+d1t6.flac:db8445fdddde46201ede044c4fdba097
+d1t7.flac:60e6618a8815ce1125466427ea095176
+d1t8.flac:e673c9b77d038d60598e8b85179bd17e
+d1t9.flac:5acf78105e0f49bf88db51410d998cda
+d2t1.flac:91111057a6589b0de0f0a8beb1ad3ad0
+d2t2.flac:76b1b14671f537eccf385fcc1936bbdb
+d2t3.flac:37d11ab953eaa671a77edcf075702dd3
+d2t4.flac:6d0a1e5d8a8ad538227d543cf73dea5f
+d2t5.flac:bbed1c461f90526ccb26731cd6bd9123
+d2t6.flac:1aa6ec943b4415c7b67030b7fc73b967
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-05a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.32       48938108 B   ---   --   ---xx   flac  0.5642  d1t1.flac
+     6:46.48       71731340 B   ---   --   ---xx   flac  0.5508  d1t2.flac
+     6:33.42       69424028 B   ---   --   ---xx   flac  0.5980  d1t3.flac
+     8:44.60       92574764 B   ---   --   ---xx   flac  0.5239  d1t4.flac
+     8:17.00       87670844 B   ---   --   ---xx   flac  0.5289  d1t5.flac
+     7:51.00       83084444 B   ---   --   ---xx   flac  0.5745  d1t6.flac
+     5:39.00       59799644 B   ---   --   ---xx   flac  0.5144  d1t7.flac
+    10:33.74      111835292 B   ---   --   ---xx   flac  0.4787  d1t8.flac
+     9:29.39      100463372 B   ---   --   ---xx   flac  0.5391  d1t9.flac
+     6:49.66       72302876 B   ---   --   ---xx   flac  0.5297  d2t1.flac
+     8:30.00       89964044 B   ---   --   ---xx   flac  0.5399  d2t2.flac
+     9:50.00      104076044 B   ---   --   ---xx   flac  0.5457  d2t3.flac
+     9:20.00       98784044 B   ---   --   ---xx   flac  0.5616  d2t4.flac
+     8:49.00       93315644 B   ---   --   ---xx   flac  0.4134  d2t5.flac
+     7:01.54       74391452 B   ---   --   ---xx   flac  0.5712  d2t6.flac
+   118:53.40     1258355940 B                            0.5324  (15 files)
+=================== 
+=================== 
+=================== 

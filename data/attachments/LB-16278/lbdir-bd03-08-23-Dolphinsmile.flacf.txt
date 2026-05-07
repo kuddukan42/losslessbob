@@ -1,0 +1,127 @@
+===================
+===================
+===================
+=== md5 for: bd03-08-23-Dolphinsmile.flacf
+===================
+===================
+===================
+eb3dcf5b01a104957010e85795189285 *Bob Dylan_2003-08-23_Oakes Garden Theatre, Niagara Falls, Ontario, Canada.md5
+ee3acebb7dc0678e48bc53620071acc3 *Bob Dylan_2003-08-23_Oakes Garden Theatre, Niagara Falls, Ontario, Canada.txt
+8ad8614da04b5ad89cd36e4cefa886d0 *Booklet 1.jpg
+9b88ac89144d078ca4fcdc6b0092cab5 *Booklet 2.jpg
+083d6bfc624a53eb7c31b98ff6400c70 *Booklet 3.jpg
+bad8ae745acb4ed317dd89ca124f3079 *Booklet 4.jpg
+663a2f11fe68a118a76150e61d82728a *Booklet 5.jpg
+855d834730f3dea03fd0194c6a9213b1 *Booklet 6.jpg
+3cf838336022682f6867ef9752df4e4d *Booklet 7.jpg
+3a1dac2ccd207493d29befab6dd4a175 *Booklet 8.jpg
+40a0b9dc39c0895df6dadedb779c02b2 *Booklet 9.jpg
+55d73d3113ba771b0745e5b20162ac20 *Booklet outer.jpg
+2fa08cd2af0d48c030c4864a6c926e36 *cover inner.jpg
+49670c21f1ffc6570cd6115075941fde *cover.jpg
+1ce903b940436fbc2cddc8225f31e521 *Disc 1\01 Intro.flac
+f0a2e97982cc0d1de49d80d233e8e099 *Disc 1\02 Tombstone Blues.flac
+6876f412576d6d9c8bdafdd5a4005138 *Disc 1\03 Lay Lady Lay.flac
+38ef13848b8d7400c6bf84d736b7a4f6 *Disc 1\04 Tweedle Dee And Tweedle Dum.flac
+d9bf16fc85b1835f797b4594d262f9cb *Disc 1\05 Make You Feel My Love.flac
+c27147d3718637ada4576a261177775c *Disc 1\06 Dignity.flac
+4ca82e2f7301dc1f2d1a349df10b1093 *Disc 1\07 Highway 61 Revisited.flac
+c0df3688267f00e25b43af3b4b239abb *Disc 1\08 Shooting Star.flac
+4f12ce8265d20492492b20becb5dc0fd *Disc 1\09 Most Likely You Go Your Way And I Go Mine.flac
+4ce7c30c9fa2319701e42674716df7c9 *Disc 1\10 Cry A While.flac
+4a4c11184cef13fe9bfde7f22ad93351 *Disc 1\11 Mr Tambourine Man.flac
+bf61448c4475ca3f8cb50618805747a9 *Disc 1\12 High Water (For Charley Patton).flac
+69b4c210b0a51db338213440c223fa57 *Disc 2\01 Honest With Me.flac
+56a9bb101440a629af898294d15d89d8 *Disc 2\02 Forever Young.flac
+8e2c9291fe4653f1fd53484e56eabaa3 *Disc 2\03 Band Introductions.flac
+b15fde58a5559db47e149c396e9b3e1e *Disc 2\04 Summerdays.flac
+02f8c1d60a8bf375dc0cc4485b3235fc *Disc 2\05 Like A Rolling Stone.flac
+8fb21a7c879901f6cdd233f76fc55bda *Disc 2\06 All Along The Watchtower.flac
+8144f714c74f60a6c5496e30aa92c8c6 *Disc 2\07 Masters Of War.flac
+4dba66c552d9c0450c08adca21715c7b *Disc 2\08 Boots Of Spanish Leather.flac
+b2243383dafa00f9c314be5c7f2a800d *Disc 2\09 You Ain't Goin' Nowhere.flac
+cdefdc2fdc3eed6286c342b2281cf789 *Disc 2\10 Can't Wait.flac
+1245572423fd83c92c3e328db58cf852 *Disc 2\11 Band Introductions.flac
+db931b534c297e29ac4d7ebd6ea5f3a9 *Disc 2\12 If Not For You.flac
+69bbd9da54a7843ab8a85eb7b035f972 *Disc 2\13 Floater (Too Much To Ask).flac
+1a051b59a6e6bd232aa825b9b536c46b *Disc 2\14 Band Introductions.flac
+===================
+===================
+===================
+=== ffp for: bd03-08-23-Dolphinsmile.flacf
+===================
+===================
+===================
+Disc 1\01 Intro.flac:44ba900c2d91b69cefae4d80b4ab2b62
+Disc 1\02 Tombstone Blues.flac:85043169bedaffd19564876790724cdd
+Disc 1\03 Lay Lady Lay.flac:1101a19ea244ebbcbaee31872f1e047d
+Disc 1\04 Tweedle Dee And Tweedle Dum.flac:0534fee1297d926f0299260eb317d208
+Disc 1\05 Make You Feel My Love.flac:219b2d7b49c3b70dcb2d0d72cebc44d2
+Disc 1\06 Dignity.flac:06d8ffd245a148898e675a1cd1e416f8
+Disc 1\07 Highway 61 Revisited.flac:b75a41d45fd05dc3bcb0633116fced8f
+Disc 1\08 Shooting Star.flac:defac991340a166b52e787920d440022
+Disc 1\09 Most Likely You Go Your Way And I Go Mine.flac:500d0a570a9dbec9c700d4af0fb93c33
+Disc 1\10 Cry A While.flac:0aceb08654b0ba254487045b2f0f510a
+Disc 1\11 Mr Tambourine Man.flac:044b736cffa9d2c7a44a65a4a0cf1d81
+Disc 1\12 High Water (For Charley Patton).flac:83d51fddf48ac78f3e1a020e8d0b4873
+Disc 2\01 Honest With Me.flac:85a9c0d7194c1f71e4a6db1a219fe324
+Disc 2\02 Forever Young.flac:028d1ced17b4e3169b9a1980383f23b3
+Disc 2\03 Band Introductions.flac:3989696c62b19545300d01fb384562a3
+Disc 2\04 Summerdays.flac:ff410fac3f6f3d281f4cabfc61a90b56
+Disc 2\05 Like A Rolling Stone.flac:eb52930512979fe7269c50a1af0d945e
+Disc 2\06 All Along The Watchtower.flac:066c58e8b0e3f981fb5e7b15f595722f
+Disc 2\07 Masters Of War.flac:72eb1afca5bb215dde8def08b3930ccf
+Disc 2\08 Boots Of Spanish Leather.flac:35dfb464bb0c740de14549fc747ab80a
+Disc 2\09 You Ain't Goin' Nowhere.flac:47281e00890960e8c363097f71e6342f
+Disc 2\10 Can't Wait.flac:ebf8104c1218ac6e7a072ec3812a4eb1
+Disc 2\11 Band Introductions.flac:e9039206b1451b2e7a42fc40f9e02011
+Disc 2\12 If Not For You.flac:99bc95c6bad11f1ff1c7e194ddce9eab
+Disc 2\13 Floater (Too Much To Ask).flac:b46761b76c14fd3d96b6850d4fe1c94a
+Disc 2\14 Band Introductions.flac:b32872da5b06e677d75dcff393b7c646
+===================
+===================
+===================
+=== shntool len for: bd03-08-23-Dolphinsmile.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:22.70       14629484 B   ---   --   ---xx   flac  0.5903  01 Intro.flac
+     5:40.34       60056012 B   ---   --   ---xx   flac  0.6479  02 Tombstone Blues.flac
+     4:52.09       51530012 B   ---   --   ---xx   flac  0.6254  03 Lay Lady Lay.flac
+     5:30.50       58329644 B   ---   --   ---xx   flac  0.6030  04 Tweedle Dee And Tweedle Dum.flac
+     5:08.60       54472364 B   ---   --   ---xx   flac  0.6200  05 Make You Feel My Love.flac
+     5:56.48       62911340 B   ---   --   ---xx   flac  0.6534  06 Dignity.flac
+     7:02.63       74589020 B   ---   --   ---xx   flac  0.6452  07 Highway 61 Revisited.flac
+     5:21.16       56662076 B   ---   --   ---xx   flac  0.6155  08 Shooting Star.flac
+     8:28.40       89705324 B   ---   --   ---xx   flac  0.6308  09 Most Likely You Go Your Way And I Go Mine.flac
+     5:22.42       56899628 B   ---   --   ---xx   flac  0.6380  10 Cry A While.flac
+     7:43.59       81812012 B   ---   --   ---xx   flac  0.6213  11 Mr Tambourine Man.flac
+     6:48.26       72032396 B   ---   --   ---xx   flac  0.5869  12 High Water (For Charley Patton).flac
+    69:18.67      733629312 B                            0.6254  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd03-08-23-Dolphinsmile.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:08.72       75668588 B   ---   --   ---xx   flac  0.6445  01 Honest With Me.flac
+     7:25.55       78627404 B   ---   --   ---xx   flac  0.6126  02 Forever Young.flac
+     0:38.66        6858476 B   ---   --   ---xx   flac  0.6000  03 Band Introductions.flac
+    11:06.40      117576524 B   ---   --   ---xx   flac  0.6270  04 Summerdays.flac
+     7:10.60       75993164 B   ---   --   ---xx   flac  0.6411  05 Like A Rolling Stone.flac
+     7:36.61       80581916 B   ---   --   ---xx   flac  0.6259  06 All Along The Watchtower.flac
+     4:57.01       52393196 B   ---   --   ---xx   flac  0.6274  07 Masters Of War.flac
+     7:40.25       81202844 B   ---   --   ---xx   flac  0.5882  08 Boots Of Spanish Leather.flac
+     5:16.25       55801244 B   ---   --   ---xx   flac  0.6625  09 You Ain't Goin' Nowhere.flac
+     5:34.48       59030540 B   ---   --   ---xx   flac  0.6467  10 Can't Wait.flac
+     1:12.46       12809036 B   ---   --   ---xx   flac  0.5724  11 Band Introductions.flac
+     4:57.72       52560188 B   ---   --   ---xx   flac  0.5908  12 If Not For You.flac
+     7:43.47       81783788 B   ---   --   ---xx   flac  0.5380  13 Floater (Too Much To Ask).flac
+     0:34.63        6145820 B   ---   --   ---xx   flac  0.5514  14 Band Introductions.flac
+    79:05.06      837032728 B                            0.6159  (14 files)
+===================
+===================
+===================

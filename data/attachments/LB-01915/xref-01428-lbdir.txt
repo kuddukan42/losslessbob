@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== md5 for: bd95-05-13-e.flacf
+===================
+===================
+===================
+0597d7b6f920e60553d51523ada0d83a *CD1\00 Announcement.flac
+fe40e981b98cae37c53a3aa00460d95f *CD1\01 Crash on the levee (down in the flood).flac
+1965ab7338e8b94440c47fe7598ee589 *CD1\02 Lay lady lay.flac
+5dc2fc2612e60f966062dc8aa64459bb *CD1\03 All along the watchtower.flac
+29925fb89cf22d5930a3e4c03d6b2cc6 *CD1\04 Just like a woman.flac
+c691ea645886482dc4a46db7d8d2c6bb *CD1\05 Silvio.flac
+c4ff39ffed3cb00200f06c1a6bbd79c4 *CD1\06 Tombstone blues.flac
+ef841c1b61fc7fdcea2911a32e4a8f2d *CD1\FLAC CD1.md5
+c50a22fa934e89d1e5d27b5f28094ce5 *CD2\07 Mr. Tambourine Man.flac
+b085d6496677d1b30ae020de73c607eb *CD2\08 Gates of Eden.flac
+d75e896c81f5453e86ddf43ff5982c9f *CD2\09 Don't think twice, it's all right.flac
+b3dc9bf9879d1970e8d76ad547110b40 *CD2\10 Seeing the real you at last.flac
+173dd7725a0923109b10151e4b635f77 *CD2\11 I shall be released.flac
+4cb63588dd2cea84638102344de28d0e *CD2\12 (band intro).flac
+2495f16c6363c027284129838130c85f *CD2\12 Ballad of a thin man.flac
+006d46907fd9c3c330606a9c7f9296cb *CD2\13 (audience wait).flac
+db4cff5952018f686336ee500ce11090 *CD2\13 Like a rolling stone.flac
+d3f070d746378f02b3594bcb584472d2 *CD2\14 It ain't me, babe.flac
+0ecd379c31caefb4ef9d4dfee26294c7 *CD2\FLAC CD2.md5
+6cacba66217ae77d850a569078cf18d6 *Info\1995-05-13 The Joint, Hard Rock Hotel, Las Vegas, Nevada, USA [IAR083].txt
+1dc883ff6cac86bd2d02029829f16f8b *Las Vegas 13-5-1995 [IAR083].md5
+===================
+===================
+===================
+=== ffp for: bd95-05-13-e.flacf
+===================
+===================
+===================
+CD1\00 Announcement.flac:e24ec1dbadaab9581c134bb034e35791
+CD1\01 Crash on the levee (down in the flood).flac:510854dd2e0fb24c25ef57cf8d1d2886
+CD1\02 Lay lady lay.flac:eee31de9904f3980ec9ba2450fda261b
+CD1\03 All along the watchtower.flac:ded878ab34d1f2a6aee96798bfd5ee05
+CD1\04 Just like a woman.flac:51e18459c01b2c45328d48af50561edc
+CD1\05 Silvio.flac:c5e029ae6bd26215e0b26cda5da84ac1
+CD1\06 Tombstone blues.flac:337d3ce9f9568fd8aad877486a69fcbd
+CD2\07 Mr. Tambourine Man.flac:34296348781b2304d37a72d3369d6fc2
+CD2\08 Gates of Eden.flac:edf63ca9615e92bac2993a45c94c10f2
+CD2\09 Don't think twice, it's all right.flac:e24a35fb8fc6266702b19f38d7fc8dcb
+CD2\10 Seeing the real you at last.flac:bb475be21e3ca6d63b731e46c2e98cfe
+CD2\11 I shall be released.flac:57dc46688fe6405801f11c8b6138e5b9
+CD2\12 (band intro).flac:ba1b5965345430f3565524cc6ee55a43
+CD2\12 Ballad of a thin man.flac:7d6be39269e8babf581538b2f246017f
+CD2\13 (audience wait).flac:967159c9137505cb79fb62c8e361496d
+CD2\13 Like a rolling stone.flac:a67325289b5441f328dc2b540f38055c
+CD2\14 It ain't me, babe.flac:5c110b7990ef1558a3d3110c4d454861
+===================
+===================
+===================
+=== shntool len for: bd95-05-13-e.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:14.47        2580188 B   ---   --   ---xx   flac  0.4334  00 Announcement.flac
+     4:50.58       51292460 B   ---   --   ---xx   flac  0.6836  01 Crash on the levee (down in the flood).flac
+     5:11.17       54900428 B   ---   --   ---xx   flac  0.6112  02 Lay lady lay.flac
+     5:59.10       63351164 B   ---   --   ---xx   flac  0.6460  03 All along the watchtower.flac
+     6:20.36       67116716 B   ---   --   ---xx   flac  0.5901  04 Just like a woman.flac
+     7:01.15       74299724 B   ---   --   ---xx   flac  0.6577  05 Silvio.flac
+     7:37.32       80690108 B   ---   --   ---xx   flac  0.6540  06 Tombstone blues.flac
+    37:14.65      394230788 B                            0.6390  (7 files)
+===================
+===================
+===================
+=== shntool len for: bd95-05-13-e.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.65       77945324 B   ---   --   ---xx   flac  0.4832  07 Mr. Tambourine Man.flac
+     6:03.73       64204940 B   ---   --   ---xx   flac  0.5120  08 Gates of Eden.flac
+     6:25.12       67942268 B   ---   --   ---xx   flac  0.5785  09 Don't think twice, it's all right.flac
+     5:49.62       61709468 B   ---   --   ---xx   flac  0.6539  10 Seeing the real you at last.flac
+     7:27.19       78895532 B   ---   --   ---xx   flac  0.6115  11 I shall be released.flac
+     0:25.12        4438268 B   ---   --   ---xx   flac  0.5373  12 (band intro).flac
+     7:56.49       84081692 B   ---   --   ---xx   flac  0.6382  12 Ballad of a thin man.flac
+     1:13.37       12964268 B   ---   --   ---xx   flac  0.5457  13 (audience wait).flac
+     7:41.39       81412172 B   ---   --   ---xx   flac  0.6251  13 Like a rolling stone.flac
+     9:06.65       96467324 B   ---   --   ---xx   flac  0.5281  14 It ain't me, babe.flac
+    59:31.58      630061256 B                            0.5767  (10 files)
+===================
+===================
+===================

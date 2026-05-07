@@ -1,0 +1,532 @@
+Below is information from shntool on the FLAC files in this directory.
+
+First is the output of  shntool len  in column form.
+In the table, a - means OK; an x means not applicable or not determined. 
+Other letters indicate potential problems.
+
+A b in the CDR column indicates an SBE (sector boundary error)
+An h in the WAVE column indicates a non-canonical header
+An e in the WAVE column indicates extra RIFF chunks
+A c in the CDR column indicates audio is not CD quality
+
+An s in the CDR column indicates audio is too short to burn
+A 3 in the problems column indicates the file contains an ID3v2 tag
+An a in the problems column indicates the audio data is not block-aligned
+An i in the problems column indicates an inconsistent header
+
+    length     expanded size   cdr  WAVE problems filename
+     4:29.00       47451644    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 01)-fixed.flac
+     5:42.36       60413516    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 02).flac
+     6:16.15       66361724    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 03).flac
+     5:36.63       59418620    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 04).flac
+     5:58.41       63247676    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 05).flac
+     7:24.35       78403964    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 06).flac
+     4:26.50       47040044    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 07).flac
+     6:52.32       72752108    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 08).flac
+     9:57.18      105353180    ---   --   ---xx   bd-04-19-97-hartford-HG-d1 (Track 09).flac
+     6:41.12       70764668    ---   --   ---xx   bd-04-19-97-hartford-HG-d2 (Track 01)-fixed.flac
+     5:16.19       55787132    ---   --   ---xx   bd-04-19-97-hartford-HG-d2 (Track 02).flac
+     8:52.43       93945980    ---   --   ---xx   bd-04-19-97-hartford-HG-d2 (Track 03).flac
+     8:17.59       87809612    ---   --   ---xx   bd-04-19-97-hartford-HG-d2 (Track 04).flac
+     9:50.54      104203052    ---   --   ---xx   bd-04-19-97-hartford-HG-d2 (Track 05).flac
+     6:11.42       65543228    ---   --   ---xx   bd-04-19-97-hartford-HG-d2 (Track 06).flac
+   101:53.69     1078496148 B                     (totals for 15 files, 0.7244 overall compression ratio)
+
+*******************************************************************************
+*******************************************************************************
+Next is the output of  shntool info  (long form), one file at a time.
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 01)-fixed.flac
+handled by:                   flac format module
+length:                       4:29.00
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    47451600 bytes
+chunk size:                   47451636 bytes
+total size (chunk size + 8):  47451644 bytes
+actual file size:             32259551
+file is compressed:           yes
+compression ratio:            0.6798
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 02).flac
+handled by:                   flac format module
+length:                       5:42.36
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    60413472 bytes
+chunk size:                   60413508 bytes
+total size (chunk size + 8):  60413516 bytes
+actual file size:             43672191
+file is compressed:           yes
+compression ratio:            0.7229
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 03).flac
+handled by:                   flac format module
+length:                       6:16.15
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    66361680 bytes
+chunk size:                   66361716 bytes
+total size (chunk size + 8):  66361724 bytes
+actual file size:             51523868
+file is compressed:           yes
+compression ratio:            0.7764
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 04).flac
+handled by:                   flac format module
+length:                       5:36.63
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    59418576 bytes
+chunk size:                   59418612 bytes
+total size (chunk size + 8):  59418620 bytes
+actual file size:             42826453
+file is compressed:           yes
+compression ratio:            0.7208
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 05).flac
+handled by:                   flac format module
+length:                       5:58.41
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    63247632 bytes
+chunk size:                   63247668 bytes
+total size (chunk size + 8):  63247676 bytes
+actual file size:             45635209
+file is compressed:           yes
+compression ratio:            0.7215
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 06).flac
+handled by:                   flac format module
+length:                       7:24.35
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    78403920 bytes
+chunk size:                   78403956 bytes
+total size (chunk size + 8):  78403964 bytes
+actual file size:             61390474
+file is compressed:           yes
+compression ratio:            0.7830
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 07).flac
+handled by:                   flac format module
+length:                       4:26.50
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    47040000 bytes
+chunk size:                   47040036 bytes
+total size (chunk size + 8):  47040044 bytes
+actual file size:             31833734
+file is compressed:           yes
+compression ratio:            0.6767
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 08).flac
+handled by:                   flac format module
+length:                       6:52.32
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    72752064 bytes
+chunk size:                   72752100 bytes
+total size (chunk size + 8):  72752108 bytes
+actual file size:             49625694
+file is compressed:           yes
+compression ratio:            0.6821
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d1 (Track 09).flac
+handled by:                   flac format module
+length:                       9:57.18
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    105353136 bytes
+chunk size:                   105353172 bytes
+total size (chunk size + 8):  105353180 bytes
+actual file size:             78155290
+file is compressed:           yes
+compression ratio:            0.7418
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d2 (Track 01)-fixed.flac
+handled by:                   flac format module
+length:                       6:41.12
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    70764624 bytes
+chunk size:                   70764660 bytes
+total size (chunk size + 8):  70764668 bytes
+actual file size:             51738661
+file is compressed:           yes
+compression ratio:            0.7311
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d2 (Track 02).flac
+handled by:                   flac format module
+length:                       5:16.19
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    55787088 bytes
+chunk size:                   55787124 bytes
+total size (chunk size + 8):  55787132 bytes
+actual file size:             40103660
+file is compressed:           yes
+compression ratio:            0.7189
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d2 (Track 03).flac
+handled by:                   flac format module
+length:                       8:52.43
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    93945936 bytes
+chunk size:                   93945972 bytes
+total size (chunk size + 8):  93945980 bytes
+actual file size:             68445022
+file is compressed:           yes
+compression ratio:            0.7286
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d2 (Track 04).flac
+handled by:                   flac format module
+length:                       8:17.59
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    87809568 bytes
+chunk size:                   87809604 bytes
+total size (chunk size + 8):  87809612 bytes
+actual file size:             60774529
+file is compressed:           yes
+compression ratio:            0.6921
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d2 (Track 05).flac
+handled by:                   flac format module
+length:                       9:50.54
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    104203008 bytes
+chunk size:                   104203044 bytes
+total size (chunk size + 8):  104203052 bytes
+actual file size:             72008859
+file is compressed:           yes
+compression ratio:            0.6910
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+file name:                    bd-04-19-97-hartford-HG-d2 (Track 06).flac
+handled by:                   flac format module
+length:                       6:11.42
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    65543184 bytes
+chunk size:                   65543220 bytes
+total size (chunk size + 8):  65543228 bytes
+actual file size:             51232772
+file is compressed:           yes
+compression ratio:            0.7817
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a

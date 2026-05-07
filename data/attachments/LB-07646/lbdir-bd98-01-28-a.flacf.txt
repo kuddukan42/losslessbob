@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-28-a.flacf 
+=================== 
+=================== 
+=================== 
+a432903744e8bcb9a34e69167f95e8c7  1998-01-28 Landmark Theater, Syracuse, New York, USA [ut].md5
+a9c39b7f847329610aed1d24bf3c0dc8  CD1\01 Absolutely sweet Marie.flac
+f5f49cae3b251e8ffd734c2f4abc2d57  CD1\02 The man in me.flac
+2f6a7535e60123c85a56130cf97cc3fd  CD1\03 Can't wait.flac
+6725aeee70a4d915f767ddee9638f61e  CD1\04 I don't believe you (she acts like we never have met).flac
+f5a4a011d27923d07c16d5b659776247  CD1\05 Silvio.flac
+8915bb8f1d0ada52a2fa3c2b2e5d9d3a  CD1\06 Cocaine blues.flac
+c9835a30af52051901b9a764da22f76b  CD1\07 Masters of war.flac
+043fc13fb91718d85b88b6ce98ffcd32  CD1\08 Tangled up in blue.flac
+f1e96cf00607b0f5de552caddd03ac63  CD1\FLAC CD1.md5
+fffb2486cb72b63e8bd6783947d99b4f  CD2\09 Million miles.flac
+58f81db58e82b66b14e63bbefaefc466  CD2\10 Stuck inside of Mobile with the Memphis blues again.flac
+88bbc1eeb123316c2f25f37c1b355209  CD2\11 Ballad of a thin man.flac
+ba20a9305ac71e128478f62395bc5472  CD2\12 Like a rolling stone.flac
+5883e34fdd07a025495efe2adc035e61  CD2\13 It ain't me, babe.flac
+5fb0a3b51a7cb425dc513b5dfd7f0349  CD2\14 Love sick.flac
+d7af66bc6b219a3515cd989005a054fe  CD2\15 Rainy day women # 12 & 35.flac
+5b52fb094a166e7ef976bf9b0914534f  CD2\FLAC CD2.md5
+02551b88a8d0ddf2b35f66658762762a  Info\1998-01-28 Landmark Theater, Syracuse, New York, USA [ut].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-28-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Absolutely sweet Marie.flac:f9e1cde5be7b4774c516a34f017cd2db
+02 The man in me.flac:ec913fb3a8a0bd9f8d8be748e9a4a01d
+03 Can't wait.flac:93c727ec5d933ff7ae075e8a2d629f5b
+04 I don't believe you (she acts like we never have met).flac:0dde6af89672fd4dfc17fe5870a44505
+05 Silvio.flac:04510d471d353e7b50ce76df5213572e
+06 Cocaine blues.flac:19bfef7d88aeb3f2059ca0739e99b7fc
+07 Masters of war.flac:199d4c95c7dca1e4d0cb716d25ba8aee
+08 Tangled up in blue.flac:18b9d7befcf733692575220bdf317e6c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-28-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+09 Million miles.flac:3dafb3723f1a5ce25c97bb67f12efae9
+10 Stuck inside of Mobile with the Memphis blues again.flac:8224554766206c7002cc773fab0f6975
+11 Ballad of a thin man.flac:688b126a9c9d653007185a13d7e180fa
+12 Like a rolling stone.flac:30df391cc569a440edebd0b85aeff78d
+13 It ain't me, babe.flac:b8d34df6734f8b219e1045a93b29fd5c
+14 Love sick.flac:c1da76985d70853f8ba0d674812c4de0
+15 Rainy day women # 12 & 35.flac:dc3911a9829b03514be295496f48c9e8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-28-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.28       46282700 B   ---   --   ---xx   flac  0.5832  01 Absolutely sweet Marie.flac
+     4:24.54       46696652 B   ---   --   ---xx   flac  0.5501  02 The man in me.flac
+     5:51.73       62088140 B   ---   --   ---xx   flac  0.5764  03 Can't wait.flac
+     5:36.26       59331596 B   ---   --   ---xx   flac  0.5519  04 I don't believe you (she acts like we never have met).flac
+     6:56.19       73427132 B   ---   --   ---xx   flac  0.5817  05 Silvio.flac
+     4:20.19       45908732 B   ---   --   ---xx   flac  0.4879  06 Cocaine blues.flac
+     4:35.07       48526508 B   ---   --   ---xx   flac  0.4560  07 Masters of war.flac
+     7:26.60       78815564 B   ---   --   ---xx   flac  0.5763  08 Tangled up in blue.flac
+    43:33.61      461077024 B                            0.5506  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-28-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.23       62146940 B   ---   --   ---xx   flac  0.5418  09 Million miles.flac
+     8:27.05       89446604 B   ---   --   ---xx   flac  0.5797  10 Stuck inside of Mobile with the Memphis blues again.flac
+     7:24.66       78476876 B   ---   --   ---xx   flac  0.5791  11 Ballad of a thin man.flac
+     6:52.49       72792092 B   ---   --   ---xx   flac  0.6029  12 Like a rolling stone.flac
+     6:32.34       69228812 B   ---   --   ---xx   flac  0.5428  13 It ain't me, babe.flac
+     5:17.23       55972940 B   ---   --   ---xx   flac  0.5633  14 Love sick.flac
+     4:37.70       49027484 B   ---   --   ---xx   flac  0.6415  15 Rainy day women # 12 & 35.flac
+    45:04.45      477091748 B                            0.5773  (7 files)
+=================== 
+=================== 
+=================== 

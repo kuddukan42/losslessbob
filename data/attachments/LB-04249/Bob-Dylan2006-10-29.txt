@@ -1,0 +1,43 @@
+Bob Dylan
+10/29/06
+Xcel Energy Center
+Saint Paul, MN
+
+
+Source: DPA 4061 > DPA MMA6000 > MT24/96 @ 24/48
+Transfer: MT24/96 > USB 2.0 > PC
+Location: Left lower mezzanine
+
+
+Fades & Resample to 44.1Hz Soundforge 8.0
+Dither to 16 bits Izotope Ozone 3 MBIT+
+Split Tracks using CD Wave Editor
+WAV > FLAC Frontend level 8
+
+taped & transferred by dactylus
+
+
+
+Disc 1
+
+01. Maggie's Farm
+02. She Belongs To Me
+03. Tweedle Dum and Tweedle Dee
+04. When the Deal Goes Down
+05. It's Alright Ma (I'm Only Bleeding)
+06. Simple Twist of Fate
+07. Rollin' and Tumblin'
+08. Masters of War
+09. Tangled Up in Blue
+10. Don't Think Twice, It's Alright
+
+
+Disc 2
+
+01. Highway 61 Revisited
+02. Nettie Moore
+03. Summer Days
+Encore
+04. Thunder on the Mountain
+05. Like a Rolling Stone
+06. All Along the Watchtower

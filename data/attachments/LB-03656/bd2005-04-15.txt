@@ -1,0 +1,58 @@
+Bob Dylan
+Orpheum Theatre
+Boston, Massachusetts
+April 15, 2005
+
+Disc 1:
+01. Introduction [00:25]
+02. To Be Alone With You [04:38]
+03. Hazel [05:13]
+04. It's Alright, Ma (I'm Only Bleeding) [07:19]
+05. If Dogs Run Free [05:30]
+06. Tough Mama [06:38]
+07. Shelter From The Storm [06:46]
+08. Cold Irons Bound [05:33]
+09. Tomorrow Is A Long Time [05:01]
+10. Highway 61 Revisited [06:07]
+Total time: [53:18]
+
+Disc 2:
+01. Chimes Of Freedom [08:21]
+02. Summer Days [08:41]
+03. Mr. Tambourine Man [10:08]
+04. Mississippi [05:40]
+05. Band Introduction [00:26]
+06. All Along The Watchtower [05:42]
+Total time: [39:02]
+
+Band Members:
+Bob Dylan - vocals, keyboard, harp
+Don Herron - violin, banjo, guitar, pedal steel
+Denny Freeman - guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Source:
+10th row orch right ctr
+akg 391's > denecke ps-2 > denecke ad-20 > sony d8
+sony d8 > tascam cd-rw700 eac > cd wave > flac
+
+Flac Fingerprint
+bd2005-04-15d1t01.flac:d573a38b2cc882e88c8df5042355c25d
+bd2005-04-15d1t02.flac:5f5c5117e4e87e0adf06a6f1aaa7cc33
+bd2005-04-15d1t03.flac:a6033c99c018e92f2a578f78d60d31b2
+bd2005-04-15d1t04.flac:109289912695f4096b7e49ec19ea06a3
+bd2005-04-15d1t05.flac:67a712e22df82564afcf2b196f73af68
+bd2005-04-15d1t06.flac:e607b975bed90a72145abd2b93018922
+bd2005-04-15d1t07.flac:fca3b19c7c1c548a0850b4ee20e836bb
+bd2005-04-15d1t08.flac:f9dca6e6ed7f29edff185e08a6441fce
+bd2005-04-15d1t09.flac:aee82d4d0066f994cb3a6df51dd07c05
+bd2005-04-15d1t10.flac:d9596b4ef552e9cd24913d0accb0c703
+bd2005-04-15d2t01.flac:5dfd79c9e182f69b097f9d5ad370d5e6
+bd2005-04-15d2t02.flac:51ca8520bd8c39444464df8abfdc9d73
+bd2005-04-15d2t03.flac:82039a2f38beb7a2148cee0e8b64087f
+bd2005-04-15d2t04.flac:6b5778b2dd9039e47d01696a25e273e0
+bd2005-04-15d2t05.flac:de137e2bb978a26b500d0c7666a46563
+bd2005-04-15d2t06.flac:8220dfd99446ba99e9bdff4a7b6a4f59
+

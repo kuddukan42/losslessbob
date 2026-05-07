@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-05-07.flacf 
+=================== 
+=================== 
+=================== 
+77d04f401d26e8e5eabf35e9d2afe332  bd1996-05-07.aud.sbeok.flac16.md5
+678a1fde16cfeebfee5e6180aaa1aab5  bd1996-05-07d1.ffp
+0d9d91615b837454d3d90be3558595a0  bd1996-05-07d1t01.flac
+1f20ccc852186cb6577e8a66314608e8  bd1996-05-07d1t02.flac
+d6a8edc7a8a012843c99a2ab4f29adfd  bd1996-05-07d1t03.flac
+ade5054b097dfc9c76cf029b83362a16  bd1996-05-07d1t04.flac
+abe957a484914292b4bac0d6b33c5129  bd1996-05-07d1t05.flac
+c29ccf8d317ac85af50e9c0a23ec60ae  bd1996-05-07d1t06.flac
+b0423139fe36c35ab11a23585a79f8bc  bd1996-05-07d1t07.flac
+b622440050de29a6e467025e479c04f0  bd1996-05-07d1t08.flac
+2b56fa5b4c6d5c546c4b9f8af984a263  bd1996-05-07d2.ffp
+64c92aac5b2a21d76751b6f531ed9e13  bd1996-05-07d2t01.flac
+fb2dce18aa87f00a78ac2a059756cb8b  bd1996-05-07d2t02.flac
+1d2d2fe3d9863cfd7e12f88cf14c1379  bd1996-05-07d2t03.flac
+8a87445047637f070c205e7676a362df  bd1996-05-07d2t04.flac
+fd25fe6c84372f83403eda040b3d0f52  bd1996-05-07d2t05.flac
+e59dcf5c9499681ad8d9e20a5102cada  bd1996-05-07d2t06.flac
+039786708eae145c2be8ef349951bade  bd1996-05-07d2t07.flac
+46b8c9c26c0c87597265d487e4bedace  bd1996-05-07info.txt
+d535eeb11b383342d94bfd3ff1648a15  bd96-05-07-LB-3503.txt
+349212ac033856823ecb0b30171d514a  d1.LOG
+eb35180b3817c7738c18d0a7bbac2b52  d2.LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-07.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-05-07d1t01.flac:dd1b2a2834433abeec872497f7ac9432
+bd1996-05-07d1t02.flac:d8eb84a42c01f955b3e6207e0a335b0b
+bd1996-05-07d1t03.flac:34db3b880dd00f15f728ca4aee86eb89
+bd1996-05-07d1t04.flac:117ec47043028f64bd402d1e10251c2f
+bd1996-05-07d1t05.flac:546ea0eb6e495be51fd3b911491f8b21
+bd1996-05-07d1t06.flac:78389430e8791deb2df5b1f78b031401
+bd1996-05-07d1t07.flac:4489b3fd956446a2d62b1263f1e553d3
+bd1996-05-07d1t08.flac:e6efb37d2e3316b75c7e224576c274b5
+bd1996-05-07d2t01.flac:007d45fedb2ed851973a1fcfad359c5f
+bd1996-05-07d2t02.flac:ebc00b34537894911c50b27f2d12373f
+bd1996-05-07d2t03.flac:69bdb163db698a5427359e1b8166952a
+bd1996-05-07d2t04.flac:c3a9cf4b7a35bb19ae272c6e87484b30
+bd1996-05-07d2t05.flac:902669fd648514af36c135f5adc4a99f
+bd1996-05-07d2t06.flac:4b3bec4fb30298025df1bf673b932ecd
+bd1996-05-07d2t07.flac:b97d5bed3aa48e816d5a5bb6cb0b17b8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-07.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.45       48968684 B   ---   --   ---xx   flac  0.5976  bd1996-05-07d1t01.flac
+     6:00.10       63527564 B   ---   --   ---xx   flac  0.5795  bd1996-05-07d1t02.flac
+     6:03.70       64197884 B   ---   --   ---xx   flac  0.6208  bd1996-05-07d1t03.flac
+     7:58.65       84472124 B   ---   --   ---xx   flac  0.5750  bd1996-05-07d1t04.flac
+     7:14.50       76675244 B   ---   --   ---xx   flac  0.5923  bd1996-05-07d1t05.flac
+     7:28.15       79062524 B   ---   --   ---xx   flac  0.6002  bd1996-05-07d1t06.flac
+     9:32.30      100971404 B   ---   --   ---xx   flac  0.5869  bd1996-05-07d1t07.flac
+     6:26.61       68233916 B   ---   --   ---xx   flac  0.5541  bd1996-05-07d1t08.flac
+     8:22.25       88611644 B   ---   --   ---xx   flac  0.5681  bd1996-05-07d2t01.flac
+     9:10.70       97184684 B   ---   --   ---xx   flac  0.5843  bd1996-05-07d2t02.flac
+     8:24.30       88976204 B   ---   --   ---xx   flac  0.5426  bd1996-05-07d2t03.flac
+     9:48.55      103852604 B   ---   --   ---xx   flac  0.6125  bd1996-05-07d2t04.flac
+     9:55.05      104969804 B   ---   --   ---xx   flac  0.5386  bd1996-05-07d2t05.flac
+    12:39.65      134040524 B   ---   --   ---xx   flac  0.5764  bd1996-05-07d2t06.flac
+     5:17.31       55991756 B   ---   --   ---xx   flac  0.6017  bd1996-05-07d2t07.flac
+   119:01.27     1259736564 B                            0.5802  (15 files)
+=================== 
+=================== 
+=================== 

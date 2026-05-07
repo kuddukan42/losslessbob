@@ -1,0 +1,52 @@
+Bob Dylan
+Sporthalle
+St. Jakob
+Basel, Switzerland
+23 July 1981
+
+1 Saved (Bob Dylan/Tim Drummond)
+2 I Believe In You
+3 Like A Rolling Stone
+4 Till I Get It Right (Red Lane/Larry Henley)
+5 Man Gave Names To All The Animals
+6 Maggie's Farm
+7 Girl From The North Country
+8 Ballad Of A Thin Man
+9 In The Summertime
+10 Shot Of Love
+11 Forever Young
+12 Carolyn Dennis: Walk Around Heaven All Day (Rev. James Cleveland/Cassietta George)
+13 The Times They Are A-Changin'
+
+1 Let's Begin (Jim Webb)
+2 Lenny Bruce
+3 Slow Train
+4 Mr. Tambourine Man
+5 Unidentified Instrumental
+6 Solid Rock
+7 Just Like A Woman
+8 Saved By The Grace Of Your Love (Willie Smith/David Palmer)
+9 What Can I Do For You?
+10 Heart Of Mine
+11 When You Gonna Wake Up
+12 In The Garden
+13 Blowin' In The Wind
+14 It Ain't Me, Babe
+15  Knockin' On Heaven's Door
+
+Bob Dylan (vocal & guitar)
+Fred Tackett (guitar)
+Steve Ripley (guitar)
+Willie Smith (keyboards)
+Tim Drummond (bass)
+Jim Keltner (drums)
+Clydie King, Carolyn Dennis, Regina Havis, Madelyn Quebec (background vocals)
+
+further info www.bjorner.com
+
+cut before In The Summertime, Let's Begin, When You Gonna Wake Up
+
+? -> master -> reel -> ASC AS 4504 -> Sony PCM-M10 -> WAV -> TLH, FLAC
+tlh, wav -> Wavelab, fades -> cdwave, tracking -> tlh, flac -> foobar, tagging
+
+I did not harm the sound of the recording in any way

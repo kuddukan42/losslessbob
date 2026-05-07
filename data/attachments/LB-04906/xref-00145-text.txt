@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== CD1.md5
+===================
+===================
+===================
+516b56d6433b3aaf482c6a7d3f833dcb *CD1\Track01.flac
+5bb96716e80ee63d04d1388aafcbf076 *CD1\Track02.flac
+bd35586131edd717eb48cc0a8c092b60 *CD1\Track03.flac
+3340cc17d195857e5216cb61682ac475 *CD1\Track04.flac
+e65c49213f1313160812bf32fda14cbd *CD1\Track05.flac
+1af562140a3373a94e942f862549daec *CD1\Track06.flac
+02b3f3565ccd1e49de9ac669ca4fe770 *CD1\Track07.flac
+1b06103037bfdb89a2f1c714d311b3a8 *CD1\Track08.flac
+6c8a84068875bd906bf4bc7e6d926633 *CD1\Track09.flac
+badcf6e3dd405cf113ba95db5f682fcb *CD2\Track01.flac
+c9031110070f88dbc6acd81434b80ab2 *CD2\Track02.flac
+266e586b423d11702aeb49c035ed7ba1 *CD2\Track03.flac
+793bfcd9dd7bcfe12cfaaea82ce45bf2 *CD2\Track04.flac
+decf0e86a7d9ab4c2a52926769b70e61 *CD2\Track05.flac
+fac23d23f52dfa32d4fcaba8e961299e *CD2\Track06.flac
+272807b0e04f2e7c379e7a98d5a9d88c *CD2\Track07.flac
+cc0dfdcbbb35e2a2176be9b0745921f5 *CD2\Track08.flac
+6e6872cfa0f90d4e1f20b978d7109bfa *CD2\Track09.flac
+fbdc360e66f2769ea042f6a3975f171d *Sioux Info.txt
+===================
+===================
+===================
+=== Sioux Info.txt
+===================
+===================
+===================
+BOB DYLAN
+2000-04-01
+Sioux Falls Arena
+Sioux Falls, SD
+
+MH-2007 remaster
+This is for "Yassou" DVD-project
+
+I've lost all info of this origin, in a hd-crash
+But it lasted over a year and 400+ dl's on dime
+Its a full spectrum recording, no loudness war.
+Only some original very high moments "Highway, Watchtower"
+A great concert !
+
+cd-r>EAC>EF CheckSum Manager>btcompletedir>HC>you
+
+CD1 49:03
+
+1 Roving Gambler
+2 My Back Pages
+3 Masters of War
+4 This World Can't Stand Long
+5 Tangled Up in Blue
+6 Gates of Eden
+7 Country Pie
+8 Tell Me That it Isn't True
+9 All Along the Watchtower
+
+CD2 59:40
+
+10 Watching the River Flow
+11 Make You Feel My Love
+12 Highway 61 Revisited
+13 Love Sick
+14 Like a Rolling Stone
+15 It Ain't Me, Babe
+16 Not Fade Away
+17 Blowin' in the Wind
+18 Rainy Day Women #12 & 35
+===================
+===================
+===================

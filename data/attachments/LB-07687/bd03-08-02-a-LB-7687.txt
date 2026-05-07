@@ -1,0 +1,10 @@
+Bob Dylan, 8/2/03, Joliet, Illinois, 2CDR
+
+LB-7687, (78min+53min), version "a"; mis-described as LB-1206 and with that one's info; bittorrent download 06/09; this is a sort of close eac match on d1t1 to LB-1206; the dead tracks are also similar in wav and spectral view to those on LB-1206;  this does not have the drops noted on that ones d2t1; this also has the first 4 songs of the dead set before dylan came out; (did not listen to all of this)
+
+has drops between tracks
+
+t, 01. Silvio (Bob Dylan & Robert Hunter), 02. If You See Her, Say Hello, 03. Tweedle Dee & Tweedle Dum, 04. Joey (Bob Dylan, Jacques Levy/Bob Dylan), 05. Highway 61 Revisited, 06. Don't Think Twice, It's All Right, 07. Cold Irons Bound, 08. A Hard Rain's A-Gonna Fall, 09. Honest With Me, 10. Summer Days, 11. All Along The Watchtower, 01. Goin' Down The Road Feelin' Bad (trad.), 02. Senor (Tales Of Yankee Power), 03. Around And Around (Chuck Berry)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

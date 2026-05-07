@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-15-bandridge.shnf 
+=================== 
+=================== 
+=================== 
+b826a62b1d9347f883ce625ca4f4d0a7  bd-wembleyma-2003-11-15.txt
+efa8230bc6831e55aa0beed0734d4806  bd03-11-15-bandridge.txt
+a6145d5c9f1843c1e4234a0dd1b16070  cd1\01 - Track 1.shn
+1b3749fd2f7cd558364286d8dd70a464  cd1\02 - Track 2.shn
+87ca818ad38cef7fdb92b31d2be88c9a  cd1\03 - Track 3.shn
+c0b5226ce21b7ff7641987d18eb8794d  cd1\04 - Track 4.shn
+822b28ba2f404ceff796cd3142345006  cd1\05 - Track 5.shn
+24d1b11783e3f3688d0b35112348d873  cd1\06 - Track 6.shn
+c72dab47af794e2811dc8075f8f78f0d  cd1\07 - Track 7.shn
+96f74342ae708d0ab2ac6e26bbb5c401  cd1\08 - Track 8.shn
+37ac55e67bf4d7fa4e1f70545ecca7dc  cd1\09 - Track 9.shn
+a4e3e031ccc85c17c1e81168cdc90940  cd1\noname.md5
+6132f4443527d3a1120d67bc83859ab2  cd2\01 - Track 1.shn
+816a6e8951ab675ba99524896fab85f3  cd2\02 - Track 2.shn
+372f93dc513b7a9a5e202173aa9dd693  cd2\03 - Track 3.shn
+1e00d38c227defd25d4ed787955516f7  cd2\04 - Track 4.shn
+eb056af917c45d26e46483cda3d4d42a  cd2\05 - Track 5.shn
+ae4e66cb6ecfed144915e5936f9f5c49  cd2\06 - Track 6.shn
+f84c8916726fa9500bc26dd2c151fab7  cd2\07 - Track 7.shn
+12587a9887d36ae90c3c9af6c7ddcf6a  cd2\08 - Track 8.shn
+3b8675d160af06cc31df52fa2f281277  cd2\09 - Track 9.shn
+e9144f0921de11304f34569cb2bf0655  cd2\10 - Track 10.shn
+3b337224a619d9111e7064a5ee362cde  cd2\cd2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-15-bandridge.shnf\cd1 
+=================== 
+=================== 
+=================== 
+cc9db5354cd9dc6f450818bc9b6cdf8f  [shntool]  01_-_Track_1.wav
+7757cfa6ff6d0118f7bcf7fe899a2323  [shntool]  02_-_Track_2.wav
+b57d8676690799a1a4992cba4ad8b3fe  [shntool]  03_-_Track_3.wav
+b29d369f93cfec7c12b73f8c828341d9  [shntool]  04_-_Track_4.wav
+55dad047715d95800032658f950bd102  [shntool]  05_-_Track_5.wav
+e5879cd4c28a52daed2ced51b1b58be0  [shntool]  06_-_Track_6.wav
+5be55f138e8a187e704c1baf2f8d7ca0  [shntool]  07_-_Track_7.wav
+80d7eabfe8ab127b8871f8ea60198db9  [shntool]  08_-_Track_8.wav
+3cc1ecb2f9b95844214a449f74ca2b3f  [shntool]  09_-_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-15-bandridge.shnf\cd2 
+=================== 
+=================== 
+=================== 
+1bb1b5b81fca56d6f37b1e0f94e0abf8  [shntool]  01_-_Track_1.wav
+ecbf1de6c33622b60980bb8610ff619f  [shntool]  02_-_Track_2.wav
+55e7ed272516909915cf539977e55261  [shntool]  03_-_Track_3.wav
+b886b07a2f521a0b0f3476abddbc4c75  [shntool]  04_-_Track_4.wav
+b08bc033c100e15c4c8b391c72682235  [shntool]  05_-_Track_5.wav
+244f2bb69cbca9c1bfb03786310f86e3  [shntool]  06_-_Track_6.wav
+e3948ea9da251f26b3377872a5c46c40  [shntool]  07_-_Track_7.wav
+55fd66a37b556bb0391114e13edc0137  [shntool]  08_-_Track_8.wav
+1f691cdfaf43edd8b0779fdc84ae5500  [shntool]  09_-_Track_9.wav
+478b31bbadea9237d7cc597aa203637d  [shntool]  10_-_Track_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-15-bandridge.shnf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.20       63551084 B   ---   --   ---xx    shn  0.6308  01 - Track 1.shn
+     7:06.07       75162908 B   ---   --   ---xx    shn  0.5934  02 - Track 2.shn
+     5:54.53       62570300 B   ---   --   ---xx    shn  0.6520  03 - Track 3.shn
+     8:24.62       89051468 B   ---   --   ---xx    shn  0.6558  04 - Track 4.shn
+     7:52.45       83366684 B   ---   --   ---xx    shn  0.6808  05 - Track 5.shn
+     6:16.28       66392300 B   ---   --   ---xx    shn  0.5733  06 - Track 6.shn
+     5:35.66       59249276 B   ---   --   ---xx    shn  0.6334  07 - Track 7.shn
+     8:14.54       87268652 B   ---   --   ---xx    shn  0.6351  08 - Track 8.shn
+     6:52.52       72799148 B   ---   --   ---xx    shn  0.6723  09 - Track 9.shn
+    62:18.12      659411820 B                            0.6379  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-15-bandridge.shnf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.25       71324444 B   ---   --   ---xx    shn  0.7029  01 - Track 1.shn
+     7:01.42       74363228 B   ---   --   ---xx    shn  0.5681  02 - Track 2.shn
+     7:05.12       74998268 B   ---   --   ---xx    shn  0.6990  03 - Track 3.shn
+     6:17.26       66563996 B   ---   --   ---xx    shn  0.5395  04 - Track 4.shn
+     7:15.37       76821068 B   ---   --   ---xx    shn  0.6832  05 - Track 5.shn
+     3:57.61       41950316 B   ---   --   ---xx    shn  0.5580  06 - Track 6.shn
+     4:47.73       50798540 B   ---   --   ---xx    shn  0.6874  07 - Track 7.shn
+     7:22.58       78105260 B   ---   --   ---xx    shn  0.6731  08 - Track 8.shn
+     6:06.12       64590668 B   ---   --   ---xx    shn  0.6708  09 - Track 9.shn
+     1:17.58       13719260 B   ---   --   ---xx    shn  0.5454  10 - Track 10.shn
+    57:56.29      613235048 B                            0.6440  (10 files)
+=================== 
+=================== 
+=================== 

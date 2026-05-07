@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== BD1998-01-20.txt
+===================
+===================
+===================
+Bob Dylan Opened, Van Morrison Closed.
+
+Bob Dylan
+January 20, 1998
+The Theater At Madison Square Garden
+New York, New York
+
+
+Recorded by Bobby Bourbon
+Schoeps MK4V's>Sonosax SX-M2>Sony SBM-1>Sony TCD-D7
+
+
+
+1 Absolutely Sweet Marie 
+2 Tonight I'll Be Staying Here With You 
+3 Cold Irons Bound 
+4 Born In Time 
+5 Silvio 
+6 A Hard Rain's A-Gonna Fall (acoustic) 
+7 Girl Of The North Country (acoustic) 
+8 Tangled Up In Blue (acoustic) 
+9 Million Miles 
+10 Positively 4th Street 
+11 'Til I Fell In Love With You 
+
+12 Highway 61 Revisited 
+13 Don't Think Twice, It's All Right (acoustic) 
+14 Love Sick 
+15 Rainy Day Women #12 & 35 
+
+
+
+
+File names & tags edited by Chopen, December 2009
+===================
+===================
+===================
+=== Bob Dylan 1998.01.20 Madison Square Garden, New York City, NY (Bobby Bourbon).md5
+===================
+===================
+===================
+c95a88146df6a1357e2831d15969fbaa *01 Absolutely sweet Marie.flac
+39c29ef4841681f27bd6454f151b3698 *02 Tonight I'll be staying here with you.flac
+3986014dcc1a08c7c3d29c666694b964 *03 Cold irons bound.flac
+6b0ebec70a5f428afd65c09f50854f8e *04 Born in time.flac
+c9d6f622653d3269ca3f52a0900c9a69 *05 Silvio.flac
+c52a3d10dca6438b1b0212ccbaf4d403 *06 A hard rain's a-gonna fall.flac
+8b2669e8da452b64ad027e1ae9a403c3 *07 Girl of the North Country.flac
+7503a0c05228662f7fb02e10f1c43bea *08 Tangled up in blue.flac
+a2e159e7b3d9f64773343a3ff100d835 *09 Million miles.flac
+94f18d8d75bbb98250c3ae161239b86e *10 Positively 4th Street.flac
+7592d8d95498ff96093b84fb7c95142a *11 'Til I fell in love with you.flac
+9944148c02c1a1eaf1796343a467bbf8 *12 Highway 61 revisited.flac
+af601ebdb55f6530fe4aca3e97884377 *13 Don't think twice, it's all right.flac
+2548b4fc5ac524dfb2ba1e5b89a3b512 *14 Love sick.flac
+52c850be4d60ca2a44f9da2f8c8a2642 *15 Rainy day women #12 & 35.flac
+48e1ca5d17fbbdaa64c071a264167037 *BD1998-01-20.txt
+===================
+===================
+===================

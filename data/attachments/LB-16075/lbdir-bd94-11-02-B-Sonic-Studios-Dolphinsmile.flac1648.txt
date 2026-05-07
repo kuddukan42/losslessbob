@@ -1,0 +1,72 @@
+===================
+===================
+===================
+=== md5 for: bd94-11-02-B-Sonic-Studios-Dolphinsmile.flac1648
+===================
+===================
+===================
+625ab384fa03f4e13edbc99a24deb24b *01 Jokerman.flac
+a1a832f6e0b4c21f847025932aa7f16e *02 Senor.flac
+a183544e71fbe639492f78b93b3262ec *03 All Along The Watchtower.flac
+3699ffd6a1e97aecfb233cb0640e5491 *04 I Dont Believe You.flac
+b901f19be1aa7f1091b735449f20fa46 *05 Tangled Up in Blue.flac
+d06e71135f7b2062c3662df5031ef117 *06 Man In Long Black Coat.flac
+a8417c8fc145e68b0d7a3dc174559314 *07 Tamborine Man.flac
+e4340de33de9f17439d0287685e26d9b *08 Gates Of Eden.flac
+cc5a378ae0c0ed8f9273a6d381bc3aa8 *09 Dont Think Twice.flac
+23e74ac23eb77198d46d9d13d5da6815 *10 God Knows.flac
+fff566bf67ef5a9f14718294646d2406 *11 I and I.flac
+e8652d58e0b8d19bde11a62b06f04b99 *12 Maggies Farm.flac
+4822fee265fad19cae16c2d569bf22b6 *13 What Good Am I.flac
+cf7c93f570658172029d000c41f25165 *14 It Aint Me Babe.flac
+b35cec88f1fcdcdc9fada9b7f8e12e8c *Bob Dylan  Civic Center Aud  Roanoke 1994-11-2 Dolphinsmile Archive.ffp
+091662c855765557a39cadc5317cc0b3 *Bob Dylan  Civic Center Aud  Roanoke 1994-11-2 Dolphinsmile Archive.md5
+b35cec88f1fcdcdc9fada9b7f8e12e8c *Bob Dylan  Civic Center Aud  Roanoke 1994-11-2 Dolphinsmile Archive.txt
+8d9d806445c601073ac2d820d803a414 *info.txt
+===================
+===================
+===================
+=== ffp for: bd94-11-02-B-Sonic-Studios-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Jokerman.flac:05eb4135709a9de7429cf9de9703fbe8
+02 Senor.flac:f10c4b956427ba5c84fdb4384c136a7c
+03 All Along The Watchtower.flac:5d7f02f0fd7dd19da4ad2c092cc9103e
+04 I Dont Believe You.flac:7505a65d60889706e56472243857f6f8
+05 Tangled Up in Blue.flac:d6eed69d3e2431aa14dd0f8907f52146
+06 Man In Long Black Coat.flac:5deb009f1f91b57aaab58b41fe966be3
+07 Tamborine Man.flac:4e83f30bd33518b214beda335f892763
+08 Gates Of Eden.flac:50b5f0708b7ea48ab48df7993b152c24
+09 Dont Think Twice.flac:ddb999703222ba0d6d40830ee5642f97
+10 God Knows.flac:9af93ca7bffd8a0ffbc9c31975062da8
+11 I and I.flac:fa77c354a251c4a839b11b1aed30d4f3
+12 Maggies Farm.flac:8cf945fa112c5fecb02362d8a3205ea8
+13 What Good Am I.flac:3d6594833d8b5a7e9e13021b31d64f5b
+14 It Aint Me Babe.flac:c67ded129cfd0e4309708f3f3b703b4b
+===================
+===================
+===================
+=== shntool len for: bd94-11-02-B-Sonic-Studios-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:13.123      94679752 B   cxx   --   ---xx   flac  0.5264  01 Jokerman.flac
+     6:23.229      73580036 B   cxx   --   ---xx   flac  0.5199  02 Senor.flac
+     5:58.572      68845852 B   cxx   --   ---xx   flac  0.5691  03 All Along The Watchtower.flac
+     8:41.729     100171960 B   cxx   --   ---xx   flac  0.5080  04 I Dont Believe You.flac
+     9:15.937     106739988 B   cxx   --   ---xx   flac  0.5375  05 Tangled Up in Blue.flac
+     8:38.673      99585188 B   cxx   --   ---xx   flac  0.4528  06 Man In Long Black Coat.flac
+     6:33.188      75492088 B   cxx   --   ---xx   flac  0.3787  07 Tamborine Man.flac
+     7:12.821      83101648 B   cxx   --   ---xx   flac  0.3512  08 Gates Of Eden.flac
+     7:20.367      84550524 B   cxx   --   ---xx   flac  0.4432  09 Dont Think Twice.flac
+     6:39.429      76690504 B   cxx   --   ---xx   flac  0.5436  10 God Knows.flac
+     8:36.953      99255028 B   cxx   --   ---xx   flac  0.5436  11 I and I.flac
+     8:05.333      93184008 B   cxx   --   ---xx   flac  0.5480  12 Maggies Farm.flac
+     7:21.755      84816972 B   cxx   --   ---xx   flac  0.4565  13 What Good Am I.flac
+     9:51.662     113599124 B   cxx   --   ---xx   flac  0.4435  14 It Aint Me Babe.flac
+   108:52.771    1254292672 B                            0.4877  (14 files)
+===================
+===================
+===================

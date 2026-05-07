@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd99-10-31-e.flacf
+===================
+===================
+===================
+118c220f7a1e486571d323f2b720fc83 *BD 1999-10-31 Chicago.md5
+048107bc2eab5d9411f739f6d21e6377 *BD 1999-10-31 Chicago.txt
+6442ea4afa4440ccc0d68ee1b72c79bf *flac 1\01 Track01.flac
+45d14b796601aca28f32c80a60f3dcdd *flac 1\02 Track02.flac
+b3d95ea8cc30f98ee3ac21bf483ba299 *flac 1\03 Track03.flac
+312d95282f29f49838abfc7d92312606 *flac 1\04 Track04.flac
+9035e9f3fb3ed3c7a1cfd3f773f73b79 *flac 1\05 Track05.flac
+ea1e8eb92364d72bc071eac4bb9c43e0 *flac 1\06 Track06.flac
+bd9e093e76268f183661c243cc3e2b35 *flac 1\07 Track07.flac
+09dd9d5674d4160b1802af4795914de2 *flac 1\08 Track08.flac
+74aee12138f973c311a83d8295c99d75 *flac 1\09 Track09.flac
+c693b7519b35a27df99decbe8758dc91 *flac 1\10 Track10.flac
+9f590ca6569f26939dba9ec2907a9550 *flac 1\Unknown Artist - Unknown Title.log
+d167bd37e5fe808650e0a840366f016d *flac 2\01 Track01.flac
+d23b1cc99870ef4838356c9f7ef621c0 *flac 2\02 Track02.flac
+0d5e36d62e890c17c6f4b34fe968fc7a *flac 2\03 Track03.flac
+d7aaa903092451a32485a8a56961e36d *flac 2\04 Track04.flac
+116e14b93d5b3116db8e3d1b8bd3bca1 *flac 2\Unknown Artist - Unknown Title.log
+===================
+===================
+===================
+=== ffp for: bd99-10-31-e.flacf
+===================
+===================
+===================
+flac 1\01 Track01.flac:92f56124e5d113f6eb5357dc02700dbb
+flac 1\02 Track02.flac:b0ecc3acdbefcf7805df4497faea67e5
+flac 1\03 Track03.flac:be505fcd8c3504ae93878b1ea9ca8f62
+flac 1\04 Track04.flac:d2ab607abaeea298d13bb29e6911e824
+flac 1\05 Track05.flac:bbddc4b8819e6bb501e5c66d4d48c6a4
+flac 1\06 Track06.flac:4fccb9923d13328de80a4c19deb62fce
+flac 1\07 Track07.flac:6e6516e66e2c66dfb2aa7570dd8c5ed8
+flac 1\08 Track08.flac:ef810acb4b2b6f22d07432359acb9390
+flac 1\09 Track09.flac:49512fc7f3609b4f114ffa806fc23f9a
+flac 1\10 Track10.flac:73e609560badc20462672bbc2ecc8325
+flac 2\01 Track01.flac:e7c081c1a89242e2fc90640c83485958
+flac 2\02 Track02.flac:53ff4c0fe19a72af38f1f1752f4bb68d
+flac 2\03 Track03.flac:af979758c24fa7f2c2eced3d569e78f0
+flac 2\04 Track04.flac:4c376b231384864c7c0abfb201a97fa2
+===================
+===================
+===================
+=== shntool len for: bd99-10-31-e.flacf\flac 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:52.31       30413756 B   ---   --   ---xx   flac  0.5230  01 Track01.flac
+     5:46.67       61192028 B   ---   --   ---xx   flac  0.5049  02 Track02.flac
+     7:29.30       79274204 B   ---   --   ---xx   flac  0.4820  03 Track03.flac
+     6:18.10       66702764 B   ---   --   ---xx   flac  0.4511  04 Track04.flac
+     7:48.48       82668140 B   ---   --   ---xx   flac  0.5382  05 Track05.flac
+     4:18.26       45572396 B   ---   --   ---xx   flac  0.5134  06 Track06.flac
+     8:22.17       88592828 B   ---   --   ---xx   flac  0.4189  07 Track07.flac
+     7:23.07       78161708 B   ---   --   ---xx   flac  0.5079  08 Track08.flac
+     6:42.14       70945772 B   ---   --   ---xx   flac  0.3758  09 Track09.flac
+     9:39.19      102180332 B   ---   --   ---xx   flac  0.5154  10 Track10.flac
+    66:40.44      705703928 B                            0.4806  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd99-10-31-e.flacf\flac 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:26.64       68240972 B   ---   --   ---xx   flac  0.4425  01 Track01.flac
+     7:59.48       84608540 B   ---   --   ---xx   flac  0.5158  02 Track02.flac
+     7:56.51       84086396 B   ---   --   ---xx   flac  0.4579  03 Track03.flac
+     4:23.62       46539068 B   ---   --   ---xx   flac  0.5701  04 Track04.flac
+    26:47.00      283474976 B                            0.4899  (4 files)
+===================
+===================
+===================

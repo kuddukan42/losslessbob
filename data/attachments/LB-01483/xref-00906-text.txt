@@ -1,0 +1,179 @@
+===================
+===================
+===================
+=== bd1999-09-12_lafayette.ffp
+===================
+===================
+===================
+disc one\Track01.flac:526091a2c0643b0f746299ca41988d19
+disc one\Track02.flac:a58f0a8d4c1a568321bfb74797dc4629
+disc one\Track03.flac:c1cd52b1e0ca46451a0cbd65077acf11
+disc one\Track04.flac:152a5fd76208d7e933e6e9a6104fc52c
+disc one\Track05.flac:7dc3ce025e5700da2987811c686c9892
+disc one\Track06.flac:b898ca087ec564a41dd41a57b42f23ad
+disc one\Track07.flac:fdf5f876ddf2d45f901cf8eca4b4b947
+disc one\Track08.flac:b6f07f878d1d28b6beef3a6eab740da9
+disc one\Track09.flac:8fac157417bf7c3bef51ccfb098db7bb
+disc one\Track10.flac:a6b3b2ec5b0385c9ded014912021984c
+disc three\Track01.flac:c2fef08abde2689e6082e25f3f7a4951
+disc three\Track02.flac:6f7a9c6e9c26439c35d64c3468786867
+disc three\Track03.flac:855bbd98abc83002b878a5ddb544f92b
+disc three\Track04.flac:82d2451c44876bf16382b70c382f467f
+disc three\Track05.flac:35c433dd2f94fbde730e32b2864dea1a
+disc three\Track06.flac:80176809b24841809d13f1a640aae17a
+disc three\Track07.flac:e028a47374329616854c63137f7cea99
+disc three\Track08.flac:63fcbb1864c482eae617aeebd883c159
+disc three\Track09.flac:7526645ba0fc7d2111488d5d2763532f
+disc three\Track10.flac:090d36aeb60c6ebcd8b16a01114768e7
+disc two\Track01.flac:ea5875c8669f8f93f29115ca09c39196
+disc two\Track02.flac:2041b2c847b527970daf946be854ac2c
+disc two\Track03.flac:88b08bf68bec5cd8e39b1ae40440f7fc
+disc two\Track04.flac:037ade88885c0064a25f9bedad15d384
+disc two\Track05.flac:de039640bd5da5390dcdb59de940ee75
+disc two\Track06.flac:90e4d3120500018c460066d368f07b32
+disc two\Track07.flac:aa3ebbc645584b71139a2031aa9c74ab
+disc two\Track08.flac:493e63dc152c4e81539d0e7430467a96
+disc two\Track09.flac:2892404cae3b174e6219dd08cfcf35c6
+disc two\Track10.flac:4945535944a723d126db739ea8278e3c
+disc two\Track11.flac:ebf7e8797a63be053a6d7bc4942241be
+disc two\Track12.flac:c24ab69cfc099df6d65612cdc78aea67
+===================
+===================
+===================
+=== bd1999-09-12_lafayette.md5
+===================
+===================
+===================
+74c8d0404987fd7d30d3d88fc3a1afce *bd1999-09-12_lafayette.ffp
+c40850a2d1e8e60d1e27b8f2659137a1 *bd1999-09-12_lafayette.txt
+bfc543ddbee9efd543802dc7706e54b2 *bd1999-09-12_lafayette_back.jpg
+c99f317fa94980b185bb0fee9eb43090 *bd1999-09-12_lafayette_back_inside.jpg
+4936bdd886d622a9198e84b94cf986a1 *bd1999-09-12_lafayette_front.jpg
+2ab373cf8192468eb880b965904fe699 *bd1999-09-12_lafayette_front_inside.jpg
+229e19dc71f8e404351916cd95173921 *disc one\log_d1.log
+a6005bf6f34e4c9807edb41a8031ac7b *disc one\Track01.flac
+a280723c8181822be61f763fdde62110 *disc one\Track02.flac
+e84e4c225dd0bf3977f048d48677c147 *disc one\Track03.flac
+01a178341b307e3af62f4d0c64dfe34d *disc one\Track04.flac
+bb32b5a096b7818babe2123d4ab8c3e4 *disc one\Track05.flac
+18f8f12dd2b877285d8d7f3df5920495 *disc one\Track06.flac
+d8ea325984287e398459bac2dd616d09 *disc one\Track07.flac
+59ae6a1707a710943d7e40edc4f9e4ce *disc one\Track08.flac
+1cb9e9979be0b1b0f84c5dd36bf2338f *disc one\Track09.flac
+d027109f298152af51ef5560c275ef31 *disc one\Track10.flac
+e2dd7f5ac3d14a899920c722d55ff3cb *disc three\log_d3.log
+77f98a871627e443883e304e4794916b *disc three\Track01.flac
+0a257dfe27144030488e6522f4cc80e8 *disc three\Track02.flac
+195a57ba46188470c6b951b28836af51 *disc three\Track03.flac
+f3fe06b4bd1acfbb778e644d6e552290 *disc three\Track04.flac
+08f171c917135f9186f09f36e7497507 *disc three\Track05.flac
+855e44dcd0758a2bbbb4724d64bd20ec *disc three\Track06.flac
+04ceffc5d21126a53ee9ffeafa5e366d *disc three\Track07.flac
+5604e54ffdb3bcf5c29eba1bf1bfaa4e *disc three\Track08.flac
+00ff792f5e2155c4d293f298d6713cc8 *disc three\Track09.flac
+7104dc3eb49ce39411baf6b00aaf0dae *disc three\Track10.flac
+1d557a6982c89b98fd568fffea4d3afa *disc two\log_d2.log
+12272b4d1299d9fb035ce3b43734a341 *disc two\Track01.flac
+2232c7dedc5fee5f43108a9c7d6f2944 *disc two\Track02.flac
+95bf3045e555a299ad133817eb715cdf *disc two\Track03.flac
+53e871981e3b8f30aa80138dfd6317be *disc two\Track04.flac
+262a033ce116d37fec0b00b2d65bee2d *disc two\Track05.flac
+edf213d9de80dd42bba8c013f560be88 *disc two\Track06.flac
+6a1b8ee0f430b463406457baa375f856 *disc two\Track07.flac
+8bae37d2252ae148c3b28cbd5e05338a *disc two\Track08.flac
+8389ba8346eca153fc3fb2469b3f22c9 *disc two\Track09.flac
+a35288391b35dba4d941d8418d48d218 *disc two\Track10.flac
+62f210c419c5360804d9530224af3d2d *disc two\Track11.flac
+a0dcb763bee23239b7a952515b4b1915 *disc two\Track12.flac
+===================
+===================
+===================
+=== bd1999-09-12_lafayette.txt
+===================
+===================
+===================
+The Cajundome - University Of Southwestern Louisiana, Lafayette, Louisiana, 12/09/99:
+
+I received this 3 CD-set in a trade in late 1999 or early 2000. CD-Rs -> FLAC (with EAC) ->TLH
+
+The Paul Simon set here is tracked differently than the only entry in llb (and this set corresponds better to other setlist than that), but I have no further information to make further comparisons.
+
+Disc 1: (60:35.58)
+@ I Am The Man Thomas (Ralph Stanley/Larry Sparks) 
+@ Mr. Tambourine Man
+@ It's Alright, Ma (I'm Only Bleeding)
+@ To Ramona
+@ Tangled Up In Blue 
+All Along The Watchtower 
+Positively 4th Street
+Silvio (Bob Dylan/Robert Hunter)
+Not Dark Yet
+Highway 61 Revisited 
+
+Disc 2: (66:43.38)
+Like A Rolling Stone 
+@ It Ain't Me, Babe (with harp)
+The Boxer (Paul Simon) (with harp and Paul Simon on vocal and acoustic guitar) 
+That'll Be The Day (Jerry Allison/Buddy Holly/Norman Petty) /The Wanderer (Ernie Maresca) (with Paul Simon on vocal and acoustic guitar)
+@ Knockin' On Heaven's Door (with Paul Simon on vocal and acoustic guitar, Larry on bouzouki)
+
+Paul Simon:
+Bridge Over Troubled Water
+Can't Run But
+The Boy In The Bubble
+The Coast
+Trailway Bus
+Mrs. Robinson
+Me And Julio Down By The Schoolyard
+
+Disc 3: (56:16.47)
+Further To Fly 
+Graceland 
+The Cool, Cool River 
+Slip Slidin' Away 
+Diamonds On The Soles Of Her Shoes 
+You Can Call Me Al 
+Late In The Evening 
+Still Crazy After All These Years 
+That Was Your Mother  
+The Sound Of Silence
+
+I modified some artwork that was made for a Schubert-recording (but only for the Dylan-part).I have no information on who recorded this set.
+
+disc one\Track01.flac:526091a2c0643b0f746299ca41988d19
+disc one\Track02.flac:a58f0a8d4c1a568321bfb74797dc4629
+disc one\Track03.flac:c1cd52b1e0ca46451a0cbd65077acf11
+disc one\Track04.flac:152a5fd76208d7e933e6e9a6104fc52c
+disc one\Track05.flac:7dc3ce025e5700da2987811c686c9892
+disc one\Track06.flac:b898ca087ec564a41dd41a57b42f23ad
+disc one\Track07.flac:fdf5f876ddf2d45f901cf8eca4b4b947
+disc one\Track08.flac:b6f07f878d1d28b6beef3a6eab740da9
+disc one\Track09.flac:8fac157417bf7c3bef51ccfb098db7bb
+disc one\Track10.flac:a6b3b2ec5b0385c9ded014912021984c
+disc two\Track01.flac:ea5875c8669f8f93f29115ca09c39196
+disc two\Track02.flac:2041b2c847b527970daf946be854ac2c
+disc two\Track03.flac:88b08bf68bec5cd8e39b1ae40440f7fc
+disc two\Track04.flac:037ade88885c0064a25f9bedad15d384
+disc two\Track05.flac:de039640bd5da5390dcdb59de940ee75
+disc two\Track06.flac:90e4d3120500018c460066d368f07b32
+disc two\Track07.flac:aa3ebbc645584b71139a2031aa9c74ab
+disc two\Track08.flac:493e63dc152c4e81539d0e7430467a96
+disc two\Track09.flac:2892404cae3b174e6219dd08cfcf35c6
+disc two\Track10.flac:4945535944a723d126db739ea8278e3c
+disc two\Track11.flac:ebf7e8797a63be053a6d7bc4942241be
+disc two\Track12.flac:c24ab69cfc099df6d65612cdc78aea67
+disc three\Track01.flac:c2fef08abde2689e6082e25f3f7a4951
+disc three\Track02.flac:6f7a9c6e9c26439c35d64c3468786867
+disc three\Track03.flac:855bbd98abc83002b878a5ddb544f92b
+disc three\Track04.flac:82d2451c44876bf16382b70c382f467f
+disc three\Track05.flac:35c433dd2f94fbde730e32b2864dea1a
+disc three\Track06.flac:80176809b24841809d13f1a640aae17a
+disc three\Track07.flac:e028a47374329616854c63137f7cea99
+disc three\Track08.flac:63fcbb1864c482eae617aeebd883c159
+disc three\Track09.flac:7526645ba0fc7d2111488d5d2763532f
+disc three\Track10.flac:090d36aeb60c6ebcd8b16a01114768e7
+
+roberts - Hungercity - October 2011
+===================
+===================
+===================

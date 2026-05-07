@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-04-19-hg.flac16 
+=================== 
+=================== 
+=================== 
+14c91f8299b7f108f44b8d3241871821  bd1996-04-19.aud.sbeok.flac16 Portland (Holy Grail).ffp
+d6e800f1f0ac9af8775bc61f0dc74f6c  bd1996-04-19.aud.sbeok.flac16 Portland (Holy Grail).md5
+bccb0b13411f18ab0ba238e612543a40  bd1996-04-19.aud.sbeok.flac16 Portland (Holy Grail).st5
+6e5475fb7f26c1a4b78e3efc2deacbb6  bd96-04-19-hg-LB-4489.txt
+134582677c72774b6f6398657fee204a  cd1\bd1996-04-19d1.log
+6354febe74f566444b73b164bf1b7123  cd1\bd1996-04-19d1t01.flac
+82178d6277d99d155d136c0aa8bcd8d6  cd1\bd1996-04-19d1t02.flac
+03f5fc05f7fdf1b6644b6a2883230517  cd1\bd1996-04-19d1t03.flac
+90146c959b520ac750650627367c0a30  cd1\bd1996-04-19d1t04.flac
+6f6f9262dd5cae37342af663bccc5091  cd1\bd1996-04-19d1t05.flac
+f1991e1ac56934b2822868155ef0aea2  cd1\bd1996-04-19d1t06.flac
+76a0465767e7ac5ffad2a94f39d3f860  cd1\bd1996-04-19d1t07.flac
+8815eff2ad8842e7b0296564f7931820  cd1\bd1996-04-19d1t08.flac
+0f86a570be2c2d1b12da9a5d35c44555  cd1\bd1996-04-19d1t09.flac
+3dac094e0d3d8daa5fa74234ce5f7670  cd1\cd1.shntool.txt
+ca9f1caff9063a84e890a4b404d7d45d  cd2\bd1996-04-19d2.log
+569371d205f510c73cf27e2ee3af70ef  cd2\bd1996-04-19d2t01.flac
+1dcac988c3839b0ed919e689bb2880fa  cd2\bd1996-04-19d2t02.flac
+efba48e05a7ab807ed13afb9c72b5584  cd2\bd1996-04-19d2t03.flac
+0db6313a7e685528045eefa40e76e083  cd2\bd1996-04-19d2t04.flac
+f280022b4194eb57897e1da0bbd9652d  cd2\bd1996-04-19d2t05.flac
+ce95af0864981df6c4918ea9943290c2  cd2\bd1996-04-19d2t06.flac
+2976ba7eb28e56d55633bc0b1a793634  cd2\cd2.shntool.txt
+750d662653434693f0cfe8254dab9adb  d1t03.PNG
+3c2eee461ccc720917a96fefee84d0c0  d2t04.PNG
+b39c2888c83ccdf8bf78c2f6ba51add1  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-04-19-hg.flac16\cd1 
+=================== 
+=================== 
+=================== 
+bd1996-04-19d1t01.flac:0bda2a674b7ec3f8486a0f79bf886cef
+bd1996-04-19d1t02.flac:f4aa8faeef1d6943be13af578715cea0
+bd1996-04-19d1t03.flac:c5956fe7a06a8751d2482382b1f3d1ff
+bd1996-04-19d1t04.flac:cd8be7adf38a5eb35d1d70b0f6155973
+bd1996-04-19d1t05.flac:2b9b27b9dfd4dd16badf89876ecf0aba
+bd1996-04-19d1t06.flac:87e4d0cba4ed1da72ea2748ad5c9b554
+bd1996-04-19d1t07.flac:91e9f45b103658c71ce00f4429aafd4a
+bd1996-04-19d1t08.flac:d54ef9e5922c6ebad451e23c2f3b1da3
+bd1996-04-19d1t09.flac:21eb1c0af2f679ed3890c7e7726eceb9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-04-19-hg.flac16\cd2 
+=================== 
+=================== 
+=================== 
+bd1996-04-19d2t01.flac:95458fdc52f7e92b0a9ecf5e4e8b4010
+bd1996-04-19d2t02.flac:65589cf75ed20e60cced94c325fa571d
+bd1996-04-19d2t03.flac:37a70fc36b0e6c102d9f342efdfe7e74
+bd1996-04-19d2t04.flac:dd89a95713593fb0551dc458e6c272c1
+bd1996-04-19d2t05.flac:f02834771f98028103f3834708786ea7
+bd1996-04-19d2t06.flac:0277cef248c7ccaee5c13a20ac8334fa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-19-hg.flac16\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.04       53987852 B   ---   --   ---xx   flac  0.6567  bd1996-04-19d1t01.flac
+     6:10.15       65303324 B   ---   --   ---xx   flac  0.5890  bd1996-04-19d1t02.flac
+     7:28.20       79074284 B   ---   --   ---xx   flac  0.6495  bd1996-04-19d1t03.flac
+     6:47.25       71853644 B   ---   --   ---xx   flac  0.5318  bd1996-04-19d1t04.flac
+     6:41.03       70743500 B   ---   --   ---xx   flac  0.5976  bd1996-04-19d1t05.flac
+     8:09.07       86276108 B   ---   --   ---xx   flac  0.6265  bd1996-04-19d1t06.flac
+     9:22.22       99188588 B   ---   --   ---xx   flac  0.5561  bd1996-04-19d1t07.flac
+     9:35.65      101582924 B   ---   --   ---xx   flac  0.4586  bd1996-04-19d1t08.flac
+     8:15.44       87421532 B   ---   --   ---xx   flac  0.5367  bd1996-04-19d1t09.flac
+    67:35.55      715431756 B                            0.5710  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-19-hg.flac16\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:55.52      105080348 B   ---   --   ---xx   flac  0.5978  bd1996-04-19d2t01.flac
+     8:48.41       93235676 B   ---   --   ---xx   flac  0.4940  bd1996-04-19d2t02.flac
+     8:49.34       93395612 B   ---   --   ---xx   flac  0.6026  bd1996-04-19d2t03.flac
+     7:01.57       74398508 B   ---   --   ---xx   flac  0.6254  bd1996-04-19d2t04.flac
+    11:02.72      116946188 B   ---   --   ---xx   flac  0.5361  bd1996-04-19d2t05.flac
+     5:28.22       57910988 B   ---   --   ---xx   flac  0.5836  bd1996-04-19d2t06.flac
+    51:06.53      540967320 B                            0.5697  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,64 @@
+Bob Dylan
+Sydney Entertainment Centre
+Sydney, Australia
+August 15, 2007
+ 
+Disc 1:
+01. introduction [00:46]
+02. Cat's In The Well [03:56]  
+03. The Times They Are A-Changin' [04:44]  
+04. Watching The River Flow [04:44]  
+05. It's Alright, Ma (I'm Only Bleeding) [07:16] 
+06. When I Paint My Masterpiece [06:30] 
+07. Rollin' And Tumblin' [06:39]  
+08. Workingman's Blues #2 [07:00]  
+09. 'Til I Fell In Love With You [08:26]  
+10. A Hard Rain's A-Gonna Fall [07:05]  
+11. Tangled Up In Blue [08:05]  
+12. Spirit On The Water [07:01]  
+Total time: [72:20]
+
+Disc 2:
+01. Highway 61 Revisited [06:11]  
+02. Nettie Moore [07:56]  
+03. Summer Days [06:30] 
+04. Masters Of War [08:09]  
+    (encore) 
+05. Thunder On The Mountain [05:57]
+06. band introduction [00:39]
+07. All Along The Watchtower [05:45]
+Total time: [41:13]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, Steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+15th row center
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-08-15d1t01.flac:1a26e82f0305cbb170b9893fe6843024
+bd2007-08-15d1t02.flac:61910a425f67f6bac712a25bc7b891b7
+bd2007-08-15d1t03.flac:f599e3df03b6862f5686d0230d204f00
+bd2007-08-15d1t04.flac:ebbf59f0b2a408d1b9735685f64e63e1
+bd2007-08-15d1t05.flac:3d95fe12f011564b0b55c85a4f2f4143
+bd2007-08-15d1t06.flac:e2a8e13d69e3142c962a184ad049e2e4
+bd2007-08-15d1t07.flac:80547614a3a3b8536b0a49e0afc9d937
+bd2007-08-15d1t08.flac:dfeb8bf2faffbf446b6778af154eba7f
+bd2007-08-15d1t09.flac:dac54fea092333b366efe1fe254be7a7
+bd2007-08-15d1t10.flac:fb623833cd4f5ae962df3a31cd631f35
+bd2007-08-15d1t11.flac:b237c857213a55214188a920ff9a64f8
+bd2007-08-15d1t12.flac:fcf632617e0eb8a2fcfc4ceba54df3db
+bd2007-08-15d2t01.flac:e8c9e7940fa8053a02bfc02d9037bb68
+bd2007-08-15d2t02.flac:de4b87df5d37f04bb49f1249a60653ec
+bd2007-08-15d2t03.flac:196749f83b6cb4be6f2aed6b5b5ec526
+bd2007-08-15d2t04.flac:311682ab8c19a72bf573306010aabe0b
+bd2007-08-15d2t05.flac:97fc73c68b4f972c7abc0303e9aa55d5
+bd2007-08-15d2t06.flac:da5a2289eb79a4d5ba0f852bc3185293
+bd2007-08-15d2t07.flac:297c30946174a2ecbdc74df2027f5490

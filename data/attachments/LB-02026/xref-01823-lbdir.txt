@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd04-08-24-a.flacf
+===================
+===================
+===================
+b7962c4f40092142f0261828665dc5ef *00 (announcement).flac
+3d19ea8ad63c147884ff52debdf2f00a *01 Down Along The Cove.flac
+7b9fb6ebd277ab90213a9d054e3af474 *02 I'll Be Your Baby Tonight.flac
+ef1850ddc9ea76f3fde4415937ca0158 *03 Cold Irons Bound.flac
+caf5bdc8ce30e27c8b4cffb940a2180d *04 I Shall Be Released.flac
+11eae01a5f20660e5e7f04c9dde2bfbf *05 Highway 61 Revisited.flac
+f6465b658d0c5d7740b19cd4ddd0e91f *06 Mr. Tambourine Man.flac
+2282d897b132dfd3f9688d56532073a8 *07 Tweedle Dee & Tweedle Dum.flac
+4044c1df9faa9eafa37f80bb6c175679 *08 Girl From The North Country.flac
+e35ead3d9a5d0522d2f49cc76c68fff9 *09 This Wheel's On Fire.flac
+f35785853eab8333826a1e7f4541ec5b *10 Honest With Me.flac
+535905ddd20878b537cc4be854de941f *11 Masters Of War.flac
+e02bcd7ab7cdb1515c3022c8b2b266e9 *12 Summer Days.flac
+6acdba92b6c0b2a7e8dac1a80fb97612 *13 (crowd pleasure).flac
+52425480b60d49b352b79c2f5daedb4b *13 Like A Rolling Stone.flac
+754d1227f9f07be3d65417fe7419f379 *14 (band intro).flac
+a76dbdd82fad2dc31a0559fad2f8d44a *14 All Along The Watchtower.flac
+b36109504da36e8d22d9b929f4acae2f *2004-08-24 Fifth Third Ballpark, Comstock Park, Michigan, USA [derived f. LB-2026 DAT master].txt
+f40c4a75a36bfb722e9aaba391afcd8d *Bob Dylan 2004-08-24 Fifth Third Ballpark, Comstock Park, Michigan, USA [derived f. LB-2026 DAT master].ffp
+df3c91e59a9d661c8245349147965f46 *ORIGINAL bd_04-08-24-fixed_encode_notes.txt
+e37160dacd94c89a13a805bc9b0b6380 *ORIGINAL comstock_park.txt
+===================
+===================
+===================
+=== ffp for: bd04-08-24-a.flacf
+===================
+===================
+===================
+00 (announcement).flac:ba2c546e02cfec136f4eebe793b3a7db
+01 Down Along The Cove.flac:f43bc31f758103dce76a1bcfd6a4acb3
+02 I'll Be Your Baby Tonight.flac:9f63b5bb483fda1d41b6d56178f9cb9c
+03 Cold Irons Bound.flac:07682920df40565ca7babc194d3781bb
+04 I Shall Be Released.flac:b9f1f2b7cc987ac21346822db82deeef
+05 Highway 61 Revisited.flac:67077afe9700c548f209a04ba4baadf5
+06 Mr. Tambourine Man.flac:3292707b6b330a5f744693906f75befe
+07 Tweedle Dee & Tweedle Dum.flac:0aaad46ccc5e9b81d055e0a5c16cc108
+08 Girl From The North Country.flac:bb2a9f1145ec00461202778b029f2e0b
+09 This Wheel's On Fire.flac:b29df8e6eb69840d1dcaeaedd72f87cb
+10 Honest With Me.flac:8c5fc67f68b6a3eb4d04de7af361a5ad
+11 Masters Of War.flac:279ba27effb9f97c5681d62cf90be9b0
+12 Summer Days.flac:70013c290f2b30f47ee3944f879aae59
+13 (crowd pleasure).flac:dd4904be2cabd0a8888c178637aa97a9
+13 Like A Rolling Stone.flac:2dc67e3cfe9e05d1018157bd1300e7aa
+14 (band intro).flac:b3ad78543dec5c9e01f8e69780b6c416
+14 All Along The Watchtower.flac:c64732a29de6ee44431215662940aeab
+===================
+===================
+===================
+=== shntool len for: bd04-08-24-a.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:40.01       17642396 B   ---   --   ---xx   flac  0.3871  00 (announcement).flac
+     6:19.36       66940316 B   ---   --   ---xx   flac  0.4904  01 Down Along The Cove.flac
+     5:55.42       62720828 B   ---   --   ---xx   flac  0.4638  02 I'll Be Your Baby Tonight.flac
+     5:35.40       59188124 B   ---   --   ---xx   flac  0.4808  03 Cold Irons Bound.flac
+     6:15.16       66187676 B   ---   --   ---xx   flac  0.4567  04 I Shall Be Released.flac
+     6:08.36       64999916 B   ---   --   ---xx   flac  0.5007  05 Highway 61 Revisited.flac
+     7:18.43       77364380 B   ---   --   ---xx   flac  0.4397  06 Mr. Tambourine Man.flac
+     5:47.17       61250828 B   ---   --   ---xx   flac  0.4311  07 Tweedle Dee & Tweedle Dum.flac
+     5:53.04       62278652 B   ---   --   ---xx   flac  0.3893  08 Girl From The North Country.flac
+     6:34.55       69631004 B   ---   --   ---xx   flac  0.4791  09 This Wheel's On Fire.flac
+     6:34.74       69675692 B   ---   --   ---xx   flac  0.5107  10 Honest With Me.flac
+     5:04.58       53762060 B   ---   --   ---xx   flac  0.4631  11 Masters Of War.flac
+     7:11.06       76042556 B   ---   --   ---xx   flac  0.4978  12 Summer Days.flac
+     2:07.02       22407548 B   ---   --   ---xx   flac  0.4099  13 (crowd pleasure).flac
+     6:33.50       69442844 B   ---   --   ---xx   flac  0.5251  13 Like A Rolling Stone.flac
+     0:52.39        9264572 B   ---   --   ---xx   flac  0.4212  14 (band intro).flac
+     5:31.71       58555436 B   ---   --   ---xx   flac  0.5215  14 All Along The Watchtower.flac
+    91:23.65      967354828 B                            0.4718  (17 files)
+===================
+===================
+===================

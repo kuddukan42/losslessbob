@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-12-LTD.flacf 
+=================== 
+=================== 
+=================== 
+7518fbda5ee56f05738af1f3ca48e742  1993-07-12-Merida.md5
+d0464ea1bd150cc5b09763acaa3b01ac  1993-07-12-Merida.txt
+27ad46eaccc8abc717d0ed4609f58214  Track101.flac
+a91088bb77a0c857658351b735528667  Track102.flac
+224907c3e3ed420c1d290612923ec58c  Track103.flac
+80f49003606aee7c95f4fe8ccb895a7d  Track104.flac
+48cba9ef395ff4996a0cb2e442c8433f  Track105.flac
+ad5c973f0d69b028d019fd7c22dab62f  Track106.flac
+9537cb75c0e191e763f5715d3e44d256  Track107.flac
+3132d9449d828746cedb591063f0501e  Track108.flac
+1ad60ead628db90afcceeec8f8c0a0b3  Track109.flac
+293f18fe651d95795e53da81e7cbb4da  Track201.flac
+ee9e5e0185ec67a33a388b7145bc7f2e  Track202.flac
+742e731a8dc490059a2212db568fdd59  Track203.flac
+b07932a4626f5fe8fdaf7844e7959fab  Track204.flac
+483a379370776f7ca805ec9a2e66a69c  Track205.flac
+316d44b92ac1f34c76c2e846ffee3188  Track206.flac
+b678e968ff258cad615a1756b616f5e7  Track207.flac
+7df0014c63ddfe981e901a764c0ab95d  Track208.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-12-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:72b09510486416e7fe960799654d31b6
+Track102.flac:15aa20137ee34676c70f1250a3eb130e
+Track103.flac:3c60532a17df353a55a6df4ecd48e0f8
+Track104.flac:d908971c905ce278c552435c8d4152f2
+Track105.flac:6e186de3d11d5039a8498a2865dfebf1
+Track106.flac:49875f1711b850534e4a19da9af71165
+Track107.flac:4b2b2e6e5492450f85ea433f17da8455
+Track108.flac:64a3b35b72400aacab42637423f9f3c0
+Track109.flac:07f808fea196356d49ca702a6066c3eb
+Track201.flac:0b2d3d31054e13e31b40261ed1185679
+Track202.flac:d3b6e5fe84c68bb39c0aa0295ae0da6c
+Track203.flac:16e29bd33a8ab39eb13aadee87f55252
+Track204.flac:9aeb5345334e0bf1aaf1d8cf4d750471
+Track205.flac:da68800496f0340d2a7ec11ceeb6090f
+Track206.flac:314455afafbc6c4533879cc27a950c53
+Track207.flac:806c62cc637b552558d15b50ab20170b
+Track208.flac:bf3e8d88443451916ae3e7e1fd527384
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-07-12-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.74       57151292 B   ---   --   ---xx   flac  0.3882  Track101.flac
+     9:06.64       96464972 B   ---   --   ---xx   flac  0.4876  Track102.flac
+     7:28.49       79142492 B   ---   --   ---xx   flac  0.5103  Track103.flac
+     7:41.09       81341612 B   ---   --   ---xx   flac  0.4990  Track104.flac
+    13:43.14      145210172 B   ---   --   ---xx   flac  0.5020  Track105.flac
+     9:16.13       98109020 B   ---   --   ---xx   flac  0.4554  Track106.flac
+     7:01.42       74363228 B   ---   --   ---xx   flac  0.4274  Track107.flac
+     6:05.68       64545980 B   ---   --   ---xx   flac  0.3494  Track108.flac
+     5:34.73       59089340 B   ---   --   ---xx   flac  0.3690  Track109.flac
+     9:36.06      101620556 B   ---   --   ---xx   flac  0.4048  Track201.flac
+     9:29.27      100435148 B   ---   --   ---xx   flac  0.4248  Track202.flac
+     7:49.39       82823372 B   ---   --   ---xx   flac  0.5115  Track203.flac
+     9:57.55      105440204 B   ---   --   ---xx   flac  0.5273  Track204.flac
+     7:49.30       82802204 B   ---   --   ---xx   flac  0.4731  Track205.flac
+     9:14.09       97746812 B   ---   --   ---xx   flac  0.5010  Track206.flac
+     8:12.26       86849996 B   ---   --   ---xx   flac  0.4704  Track207.flac
+    12:20.53      130660700 B   ---   --   ---xx   flac  0.3935  Track208.flac
+   145:51.51     1543797100 B                            0.4574  (17 files)
+=================== 
+=================== 
+=================== 

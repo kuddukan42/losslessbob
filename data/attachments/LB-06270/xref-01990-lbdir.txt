@@ -1,0 +1,39 @@
+===================
+===================
+===================
+=== md5 for: bd84-07-08-bono.flacf
+===================
+===================
+===================
+ccdc94374eb183e35fbd24bf795f43d3 *01. Leopard Skin Pillbox Hat.flac
+1f22e884b0b736cb2cb43dffcd9a6efe *02. Blowing in the Wind.flac
+ccdb7238987b14ec383e974189f5d0c6 *1984-07-08 Dublin - Live In Slane - FLAC.md5
+0da58dc04f1f99f5088e689bf9117ae7 *Dublin July 8 1984 fa.JPG
+8b7949d1079c66e5cf7fbe3131fd17ee *Dublin July 8 1984 spectral view.JPG
+7356e2b5b304c7cc18747591849d31be *fingerprint.txt
+06a095018030413976f88bfb6f995f72 *info.txt
+bf09958e9458953a93ac1fbebc28a09f *Live In Slane Back.jpg
+942f32579a92ce5b72c483d63cbe2be8 *Live In Slane Front.jpg
+===================
+===================
+===================
+=== ffp for: bd84-07-08-bono.flacf
+===================
+===================
+===================
+01. Leopard Skin Pillbox Hat.flac:8e05c82dde0bcc421c9003b9274471c7
+02. Blowing in the Wind.flac:d9e28ed6a69109c8c68c17c48d62ff4d
+===================
+===================
+===================
+=== shntool len for: bd84-07-08-bono.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.27       55453148 B   ---   --   ---xx   flac  0.7114  01. Leopard Skin Pillbox Hat.flac
+     4:36.41       48782876 B   ---   --   ---xx   flac  0.6962  02. Blowing in the Wind.flac
+     9:50.68      104236024 B                            0.7043  (2 files)
+===================
+===================
+===================

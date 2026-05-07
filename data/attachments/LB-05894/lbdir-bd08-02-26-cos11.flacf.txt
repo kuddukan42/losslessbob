@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-02-26-cos11.flacf 
+=================== 
+=================== 
+=================== 
+cf6d7bae6a209657d5c09a056bed90f7  a01.flac
+919f7e034d56e2053edd6cfd51378277  a02.flac
+374a5a8be4eaefbc7a01b5e0d540d04a  a03.flac
+a1d478d5257af6c96a01ca6584878daa  a04.flac
+0f72e36a0ab8b5a41406027bf1ddcceb  a05.flac
+acf82ae6b767625754260f2eca8f5fd3  a06.flac
+4a9eb14f3734e21506697c7a1ff9af0f  a07.flac
+d933b24e4006b6655f490871ac186509  a08.flac
+3be499bedc3ab6ee3ef1a48b945c414c  a09.flac
+1df84df9bb64ce9e692124f0cb1f51b0  a10.flac
+16cd93c75816975a5b1df294b306ef48  a11.flac
+b70e568cfeaa91503c736b8280e2252e  b01.flac
+b717444c1e7c6fcdc8054e4dff1ced72  b02.flac
+0075db6e2f1ecf4d9c4be7386e5d7a96  b03.flac
+7678b75142e3b27f5195acbc7e0ea157  b04.flac
+a692fa45a86ced90bd9e017f58cad441  b05.flac
+67d76429cacb0d11eaa50ccb359d8f66  b06.flac
+85e32b499dc9ab31a206692afabc5537  b07.flac
+6c0b41a4921a13fc5486e1d12d8f324a  b08.flac
+cba1fb320d6902e79fea70794c159308  BD2008-02-26.txt
+60b37802198dff6e5bc27d3c21a9f59a  BD2008-02-26MexicoCity.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-02-26-cos11.flacf 
+=================== 
+=================== 
+=================== 
+a01.flac:87a6fefd246a4c9ad6b9b5b48154ef5a
+a02.flac:dd99c7b90b4dbef3c258dcc7d7e29d88
+a03.flac:ba856cba70c52708c8cd9d0f75e63b3c
+a04.flac:f62aefae35731327f63ef868608900b3
+a05.flac:4bbd17ce4f57c65945ed9e37f984da7f
+a06.flac:f7e35c18e215b9083c013c1f198a24b4
+a07.flac:c30dd963be9c7e8c501be6c4de06e07f
+a08.flac:c3789fb834741607126ceff0459cf2c7
+a09.flac:40a17629b5c7bd92aafd9ef6afa9730c
+a10.flac:b29cd144710d49cdd47697bf6d5b1507
+a11.flac:6cb496bf71c500282a8284bd07b40e86
+b01.flac:37fbd1c0042a9d72f90b874f3e95e565
+b02.flac:84dc22d568ebc6ed854001c46a72f1fc
+b03.flac:3346c7b6b53fb59dc3d84ecf96df5d52
+b04.flac:5548686c7ecf9a55d2adb023ebd15a0c
+b05.flac:533c6194274b927d1d1bd8baf1c9a1ef
+b06.flac:8c734cfe6047efa7e6f0e3cc0a9e434d
+b07.flac:7fe8d9bf9fb348b54035cb0690076edb
+b08.flac:436208f735db8b92fb19e725b186a607
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-02-26-cos11.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.00        9525644 B   ---   --   ---xx   flac  0.4078  a01.flac
+     4:20.00       45864044 B   ---   --   ---xx   flac  0.5476  a02.flac
+     5:30.00       58212044 B   ---   --   ---xx   flac  0.4725  a03.flac
+     4:58.00       52567244 B   ---   --   ---xx   flac  0.5039  a04.flac
+     5:36.00       59270444 B   ---   --   ---xx   flac  0.4864  a05.flac
+     6:46.00       71618444 B   ---   --   ---xx   flac  0.5303  a06.flac
+     7:06.00       75146444 B   ---   --   ---xx   flac  0.4452  a07.flac
+     6:30.00       68796044 B   ---   --   ---xx   flac  0.5152  a08.flac
+     6:24.00       67737644 B   ---   --   ---xx   flac  0.4224  a09.flac
+     5:50.00       61740044 B   ---   --   ---xx   flac  0.5366  a10.flac
+     6:46.00       71618444 B   ---   --   ---xx   flac  0.5235  a11.flac
+     7:26.00       78674444 B   ---   --   ---xx   flac  0.4726  b01.flac
+     6:42.00       70912844 B   ---   --   ---xx   flac  0.5608  b02.flac
+     8:26.00       89258444 B   ---   --   ---xx   flac  0.4321  b03.flac
+     6:24.00       67737644 B   ---   --   ---xx   flac  0.5448  b04.flac
+     7:52.00       83260844 B   ---   --   ---xx   flac  0.5426  b05.flac
+     6:24.00       67737644 B   ---   --   ---xx   flac  0.5692  b06.flac
+     0:42.00        7408844 B   ---   --   ---xx   flac  0.4984  b07.flac
+     8:00.00       84672044 B   ---   --   ---xx   flac  0.5036  b08.flac
+   112:36.00     1191759236 B                            0.5038  (19 files)
+=================== 
+=================== 
+=================== 

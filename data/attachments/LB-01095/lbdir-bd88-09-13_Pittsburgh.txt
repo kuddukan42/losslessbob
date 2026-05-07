@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-13_Pittsburgh 
+=================== 
+=================== 
+=================== 
+01883d7db2371110165d5a63a60a6dd9  88-09-13_cd1.shnf\88-09-13_cd1.shnf.md5
+44f4f141a5060665c0af05f7e98a5325  88-09-13_cd1.shnf\88-09-13_cd1_Track01.shn
+dde74a3f68172c743b0797a59e4dbe58  88-09-13_cd1.shnf\88-09-13_cd1_Track02.shn
+12a6c8520e29553877dc3def177eba2a  88-09-13_cd1.shnf\88-09-13_cd1_Track03.shn
+7ba338498bdfc4ec4d7226e38efd839a  88-09-13_cd1.shnf\88-09-13_cd1_Track04.shn
+15150ee9aee40e703a819bf1337d1fec  88-09-13_cd1.shnf\88-09-13_cd1_Track05.shn
+8f8190f640e353374be480a9e0b93999  88-09-13_cd1.shnf\88-09-13_cd1_Track06.shn
+79e6cc3067fba56a62532b68fa6fb9fc  88-09-13_cd1.shnf\88-09-13_cd1_Track07.shn
+4638e1bf7a0f40f4f9f7c1861f828d24  88-09-13_cd1.shnf\88-09-13_cd1_Track08.shn
+a2cc4cc0c9ee24c63915a0ad946ef178  88-09-13_cd1.shnf\88-09-13_cd1_Track09.shn
+00b95d28bdcc3bb5627c5a0d0cf31d6c  88-09-13_cd2.shnf\88-09-13_cd2.shnf.md5
+7515fa9ce6b8bbd7d721e0356827a24f  88-09-13_cd2.shnf\88-09-13_cd2_Track01.shn
+bac0365388ee11606b009245cb1ec66b  88-09-13_cd2.shnf\88-09-13_cd2_Track02.shn
+93cbbb1fe5c94d312cc405e7c465463a  88-09-13_cd2.shnf\88-09-13_cd2_Track03.shn
+c20ee424d51dc53bf2deb714fb7a94fa  88-09-13_cd2.shnf\88-09-13_cd2_Track04.shn
+7440b405a09df2a8f6d4f5541a3ff6d8  88-09-13_cd2.shnf\88-09-13_cd2_Track05.shn
+b72498bb18aa9aed2d9201b961a3c98a  88-09-13_cd2.shnf\88-09-13_cd2_Track06.shn
+bb8edd5d35556deb16884e627a739ca4  88-09-13_cd2.shnf\88-09-13_cd2_Track07.shn
+89190686658f78cb9901cf7ca7062e9c  88-09-13_cd2.shnf\88-09-13_cd2_Track08.shn
+4bad2d457f0a06638259893198de95ae  bd88-09-13.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-09-13_Pittsburgh\88-09-13_cd1.shnf 
+=================== 
+=================== 
+=================== 
+b993018794fccc77eee6be09d94bbdc5  [shntool]  88-09-13_cd1_Track01.wav
+2cbb415a2843d97f12c0669c8a587a55  [shntool]  88-09-13_cd1_Track02.wav
+e3d10447e15a785d9a20b943f8f2825f  [shntool]  88-09-13_cd1_Track03.wav
+94001a8c6f4ba24ab4eda1f89504a376  [shntool]  88-09-13_cd1_Track04.wav
+80358cc7e7c75d66f748da102cb0e936  [shntool]  88-09-13_cd1_Track05.wav
+4728a11c5bc079f60f99071d29341047  [shntool]  88-09-13_cd1_Track06.wav
+20aeff6b6e29985800780f73bd47cb38  [shntool]  88-09-13_cd1_Track07.wav
+e8bf7bdd6a8f1e35f6405ee293adfcf7  [shntool]  88-09-13_cd1_Track08.wav
+7bbcd18e341c0ccc4928da1afd5a8988  [shntool]  88-09-13_cd1_Track09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-09-13_Pittsburgh\88-09-13_cd2.shnf 
+=================== 
+=================== 
+=================== 
+1d246dbdc73161e816761bd37687fde1  [shntool]  88-09-13_cd2_Track01.wav
+fc8614e4dea1be3e300f2e37694b87ba  [shntool]  88-09-13_cd2_Track02.wav
+cc9aabdd5c88e06caf15d0363baa50d4  [shntool]  88-09-13_cd2_Track03.wav
+fd0a73bc1dd6a2d7ba40dd24382d45f2  [shntool]  88-09-13_cd2_Track04.wav
+9280d47e8065c7ac20275c2be7763a5b  [shntool]  88-09-13_cd2_Track05.wav
+fbb0bee3ef05a3bd26f9e1f8dd53fdc8  [shntool]  88-09-13_cd2_Track06.wav
+fb32651c460496f9bc72c401782d50cd  [shntool]  88-09-13_cd2_Track07.wav
+68b50014d14048dfcc84ca7d83a44a38  [shntool]  88-09-13_cd2_Track08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-13_Pittsburgh\88-09-13_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:18.54       35054266 B   ---   h-   ---xx    shn  0.7192  88-09-13_cd1_Track01.shn
+     5:12.41       55133290 B   ---   h-   ---xx    shn  0.6841  88-09-13_cd1_Track02.shn
+     6:50.59       72462826 B   ---   h-   ---xx    shn  0.7034  88-09-13_cd1_Track03.shn
+     6:19.32       66930922 B   ---   h-   ---xx    shn  0.6554  88-09-13_cd1_Track04.shn
+     4:35.24       48566506 B   ---   h-   ---xx    shn  0.6745  88-09-13_cd1_Track05.shn
+     5:34.45       59023498 B   ---   h-   ---xx    shn  0.6618  88-09-13_cd1_Track06.shn
+     4:10.16       44137690 B   ---   h-   ---xx    shn  0.6769  88-09-13_cd1_Track07.shn
+     4:11.26       44337610 B   ---   h-   ---xx    shn  0.5536  88-09-13_cd1_Track08.shn
+     6:06.09       64583626 B   ---   h-   ---xx    shn  0.6090  88-09-13_cd1_Track09.shn
+    46:19.06      490230234 B                            0.6596  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-13_Pittsburgh\88-09-13_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.68       52550794 B   ---   h-   ---xx    shn  0.6124  88-09-13_cd2_Track01.shn
+     4:56.17       52254442 B   ---   h-   ---xx    shn  0.6213  88-09-13_cd2_Track02.shn
+     4:47.43       50727994 B   ---   h-   ---xx    shn  0.6450  88-09-13_cd2_Track03.shn
+     3:54.49       41392906 B   ---   h-   ---xx    shn  0.6890  88-09-13_cd2_Track04.shn
+     6:17.13       66533434 B   ---   h-   ---xx    shn  0.6910  88-09-13_cd2_Track05.shn
+     5:39.49       59914906 B   ---   h-   ---xx    shn  0.6026  88-09-13_cd2_Track06.shn
+     3:30.33       37121660 B   ---   --   ---xx    shn  0.7250  88-09-13_cd2_Track07.shn
+     5:00.45       53025898 B   ---   h-   ---xx    shn  0.7264  88-09-13_cd2_Track08.shn
+    39:04.17      413522034 B                            0.6611  (8 files)
+=================== 
+=================== 
+=================== 

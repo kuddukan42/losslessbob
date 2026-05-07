@@ -1,0 +1,33 @@
+Bob Dylan
+05-14- 1998 
+General Motors Place
+Vancouver, British Columbia
+
+aud>?>cdr(x)>flac
+md5 checked with TLH
+
+LB-2534 reports lots of "statics like beep" which are not present on this version. 
+There are occasional statics such as d1tr3@3:10 or d1tr5@2:13.  
+Levels are reduced at d1tr3 to prevent clipping.
+
+disc1:
+
+1. Absolutely Sweet Marie 
+2. Señor (Tales Of Yankee Power) 
+3. Cold Irons Bound 
+4. You're A Big Girl Now 
+5. Silvio 
+6. Cocaine Blues (acoustic) 
+7. Mr. Tambourine Man (acoustic) 
+8. Tangled Up In Blue
+                                            (46:39.68)
+
+disc2:
+
+1. Stuck Inside Of Mobile With The Memphis Blues Again 
+2. I Shall Be Released 
+3. Highway 61 Revisited 
+4. Forever Young (acoustic) 
+5. Love Sick 
+6. Rainy Day Women #12 & 35 
+                                             (39:12.33)

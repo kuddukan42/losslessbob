@@ -1,0 +1,12 @@
+Bob Dylan, 3/11/95, Prague, Czech Republic, 2CDR
+
+LB-3539, (44min+50min), Olav remaster, Off master, Taper: no info, Olav remaster:, 1st step: Lineage pre-work:, FLAC DVD-R > WAV > CoolEdit2000 (checking all files: finding that all tracks were just fine, except for Mr. Tambourine Man, d1t7, having long serious/harsh diginoise in several places throughout. Remark: these can be very hard to remove without destroying underlying audio and after cautiously removing/smoothing those parts, regrettably there is ONE spot left where this is quite audible. Sorry that I'm not skilled enough to fix that!), For your convenience I have added samples of Tambourine Man, named (BEFORE) and (AFTER) in order for you to judge for yourself., 2nd step: T-RackS v2.0 (fixed by boosting the left channel 2.8dB (a 2.7dB boost would be perfect but T-RackS wouldn't allow that), 3rd step: originally, overall volume level on all tracks was too low; a much needed boost of 5.5dB was implemented. Overall output level is not boosted., 4th step; back to CoolEdit: As with the Brixton 03/29/1995 set, originally, all tracks on this one also were chopped up in the wrong places, resulting in long applause parts at the start of some of the songs; So I took the liberty of taking all the now T-Racks (re)mastered tracks from both CDs and loaded these into CoolEdit, each CD as ONE long track and chopped them into, i.m.o., more correctly spots so that the songs starts with the beginning of the song > FLAC frontend (sector alignment) > FLACs > DIME; bittorrent download 02/06; ; not a lot above 17k; seems to be same recording as LB-1921 with higher levels and with clipping and the wavs turn fuzzy as they limit and compress; (did not listen to all of this)
+
+CD1
+00. Announcement, 01. Crash On The Levee (Down In The Flood), 02. If Not For You, 03. All Along The Watchtower, 04. Just Like A Woman, 05. Tangled Up In Blue, 06. Watching The River Flow, 07. Mr. Tambourine Man, 
+
+CD2
+08. Boots Of Spanish Leather, 09. It's All Over Now, Baby Blue, 10. Man In The Long Black Coat, 11. God Knows, 12. Maggie's Farm, 13. (encore), 14. Shelter From The Storm, 15. It Ain't Me, Babe
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

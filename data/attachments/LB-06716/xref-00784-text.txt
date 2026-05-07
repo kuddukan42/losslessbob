@@ -1,0 +1,31 @@
+===================
+===================
+===================
+=== Audiochecker Log..txt
+===================
+===================
+===================
+AUDIOCHECKER v2.0 beta (build 457) - by Dester - opdester@freemail.hu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Started at: Monday, 31. 01. 2011. - 22:35.40
+1 file found
+
+1 -===- D:\Documents and Settings\My Documents\Downloads\Bob Dylan-Plymouth Rock-Flac)\Bob Dylan - Plymouth Rock.flac
+  Extracted successfully
+  Conclusion: this track is CDDA with probability 86%
+  Tempfile successfully deleted.
+
+
+Finished at: Monday, 31. 01. 2011. - 22:45.16 (operation time: 0:09.35)
+===================
+===================
+===================
+=== Torrent downloaded from Demonoid.me.txt
+===================
+===================
+===================
+Torrent downloaded from http://www.Demonoid.me
+===================
+===================
+===================

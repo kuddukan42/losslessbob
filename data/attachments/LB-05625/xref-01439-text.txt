@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== 1999.10.31 Chicago Recording Info.txt
+===================
+===================
+===================
+Bob Dylan And His Band, University Of Illinois Conference Center Pavilion
+Chicago, Illinois Oct 31, 1999 -
+
+
+Received as aud CD-R, extracted by EAC with glitch removal, then FLAC frontend with sector boundary alignment option.
+No taper or lineage info. Excellent sound quality, and outstanding performance.
+
+
+Disc 1 (30:14):
+
+1  I Am The Man, Thomas
+2  Mr. Tambourine Man
+3  It's Alright, Ma (I'm Only Bleeding)
+4  Love Minus Zero/No Limit
+5  Tangled Up In Blue
+
+Disc 2 (64:01):
+
+1  All Along The Watchtower
+2  Simple Twist Of Fate
+3  Stuck Inside Of Mobile With The Memphis Blues Again
+4  Not Dark Yet
+5  Highway 61 Revisited
+6  Love Sick
+7  Like A Rolling Stone
+8  Don't Think Twice, It's All Right
+9  Not Fade Away
+
+
+Enjoy the music!
+
+-ts-
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+76c23d0e4275e3ac0a0f71bfd3c625e5 *d1t01 I Am The Man, Thomas.flac
+3d271fbb4c4f1a9466cd88c57b5b166c *d1t02 Mr. Tambourine Man.flac
+40a8f294b3893046803722c54aebaeed *d1t03 It's Alright, Ma (I'm Only Bleeding).flac
+9bcf00719591b9e040b5a7e1655fa1f0 *d1t04 Love Minus Zero.flac
+40438479c60eff8fbbdaa7af71e7840e *d1t05 Tangled Up In Blue.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+76c23d0e4275e3ac0a0f71bfd3c625e5 *d1t01 I Am The Man, Thomas.flac
+3d271fbb4c4f1a9466cd88c57b5b166c *d1t02 Mr. Tambourine Man.flac
+40a8f294b3893046803722c54aebaeed *d1t03 It's Alright, Ma (I'm Only Bleeding).flac
+9bcf00719591b9e040b5a7e1655fa1f0 *d1t04 Love Minus Zero.flac
+40438479c60eff8fbbdaa7af71e7840e *d1t05 Tangled Up In Blue.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+eaab9797177657b314af040fc57cab9d *d2t01 All Along The Watchtower.flac
+8d2b73becf858c675d257ffb75b2e692 *d2t02 Simple Twist Of Fate.flac
+bccf5f84d0dbbb242f16cf3fdabe4c08 *d2t03 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+7a44b120e611aa3d42bb763d02424df4 *d2t04 Not Dark Yet.flac
+ad0484f86c8a75ee8c59b5b9ba025f4b *d2t05 Highway 61 Revisited.flac
+6c779ae982fbefabf30c8cd30d5a89e3 *d2t06 Love Sick.flac
+118b3625a9d9bca499d14ad04455f00e *d2t07 Like A Rolling Stone.flac
+de87d707583480f947640a22798b1d3d *d2t08 Don't Think Twice, It's All Right.flac
+96fabc6a68ebef642cea10079f1dd722 *d2t09 Not Fade Away.flac
+
+===================
+===================
+===================

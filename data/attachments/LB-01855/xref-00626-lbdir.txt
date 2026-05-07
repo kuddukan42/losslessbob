@@ -1,0 +1,37 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-07-a.flacf 
+=================== 
+=================== 
+=================== 
+4683f0ba2e9621b355195cbb1c68727b  01 Intro.flac
+b31ef7237160849c86e15e8d94728e41  02 It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+c842043a3ca07c0a194079b55c0f7c4a  03 Don't Think Twice, It's All Right.flac
+340e85059317a80ff09610a0e6472c49  Bob Dylan - Apollo Theatre 2004.md5
+e649b9226207892f3ee661456dd9c9af  Dylan.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-07-a.flacf 
+=================== 
+=================== 
+=================== 
+01 intro.flac:b5f22b0a62d990128938f419a3e70c07
+02 it takes a lot to laugh, it takes a train to cry.flac:4f8aac295830da00b906a6493fde6149
+03 don't think twice, it's all right.flac:46fabf0ff73e597e64588e7731f593f0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-07-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:46.632       9404972 B   cxx   --   ---xx   flac  0.4387  01 Intro.flac
+     4:44.604      25102124 B   cxx   --   ---xx   flac  0.5132  02 It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+     5:01.767      26615852 B   cxx   --   ---xx   flac  0.5208  03 Don't Think Twice, It's All Right.flac
+    11:33.002      61122948 B                            0.5050  (3 files)
+=================== 
+=================== 
+=================== 

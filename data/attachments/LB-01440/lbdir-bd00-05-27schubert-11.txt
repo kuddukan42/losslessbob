@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-27schubert-11 
+=================== 
+=================== 
+=================== 
+845205667fd4fa4d7d2e810bdd5f6f50  2000_05_27_MODENA_CD1\NONAME.MD5
+568ea49a633293da62ff0c721fa43379  2000_05_27_MODENA_CD1\TRACK01.SHN
+4cdfe98a37d57cf5755f420333328d6f  2000_05_27_MODENA_CD1\TRACK02.SHN
+9d71e0d6af095e5a68edb8817b38b678  2000_05_27_MODENA_CD1\TRACK03.SHN
+cdd69c3ea09b6f8be1a96608e6232213  2000_05_27_MODENA_CD1\TRACK04.SHN
+69571daa670c051375fe6b30441c3879  2000_05_27_MODENA_CD1\TRACK05.SHN
+a61ece7bfdd3507421e516ab9654daef  2000_05_27_MODENA_CD1\TRACK06.SHN
+b24df914420e3af71217d282f87e32ed  2000_05_27_MODENA_CD1\TRACK07.SHN
+94dc5751bc89ac42c9cc198994a169a3  2000_05_27_MODENA_CD1\TRACK08.SHN
+9e889e20df7e7ac80c1e2f66510c7670  2000_05_27_MODENA_CD1\TRACK09.SHN
+2d7ca4120d31a0d4be3e4b249aa09e60  2000_05_27_MODENA_CD1\TRACK10.SHN
+4ff056efbb4269910c7c729799d027b3  2000_05_27_MODENA_CD1\TRACK11.SHN
+9a1c25fb6f79e23bc90de8f480121196  2000_05_27_MODENA_CD2\NONAME.MD5
+512f356faf93e8a5ed16dc494efc66e5  2000_05_27_MODENA_CD2\TRACK01.SHN
+ddd89a92e1694e0d4e695c6b77d81913  2000_05_27_MODENA_CD2\TRACK02.SHN
+8e9aa8153eb1115f1e8b31451f0c071a  2000_05_27_MODENA_CD2\TRACK03.SHN
+cbe2381a6289678105f9ad679fb66237  2000_05_27_MODENA_CD2\TRACK04.SHN
+303c6b7c96d09bf30a4840b78843de6b  2000_05_27_MODENA_CD2\TRACK05.SHN
+06939af6159d6e828c57d3825dc3cdd0  2000_05_27_MODENA_CD2\TRACK06.SHN
+68203fefb06702b832028099abafbba7  2000_05_27_MODENA_CD2\TRACK07.SHN
+285f1bc881c0c0f687f34ebd260fe825  2000_05_27_MODENA_CD2\TRACK08.SHN
+3d29e5bdd67f8df5f6c971d03d9f9c27  2000_05_27_MODENA_CD2\TRACK09.SHN
+60d2dd02394f7b5a551d4acbdd55f340  bd00-05-27schubert.txt
+3a4d06f17b5dfe4de0854497020e8983  MODENA\2000_05_27_F.JPG
+977b6a84c0c0bdcaf7a30d98abc58dee  MODENA\2000_05_27_R.JPG
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-27schubert-11\2000_05_27_MODENA_CD1 
+=================== 
+=================== 
+=================== 
+6e0d41ba22719cad3b909bd1cd36ff85  [shntool]  TRACK01.wav
+2b55d3d92c45228ec074e11db52e16da  [shntool]  TRACK02.wav
+ea99a89bb7a04bda5a07ab48e8b275c4  [shntool]  TRACK03.wav
+eeb7976b5442af1096b4df762690ef34  [shntool]  TRACK04.wav
+4a41bff9da4b1334434a9fa3dd9e8f18  [shntool]  TRACK05.wav
+82a421c7c34e9582396c237b46231316  [shntool]  TRACK06.wav
+c73dc375398451873330d29ddb14133d  [shntool]  TRACK07.wav
+813cd68ad2225585d272ece596a01e32  [shntool]  TRACK08.wav
+0fc3dafbac308f0586af7ba191d19aaf  [shntool]  TRACK09.wav
+e819edefebaa21a12fead74daa92fe9f  [shntool]  TRACK10.wav
+769d1acb7dc4eb7d019dee35eab5ca42  [shntool]  TRACK11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-27schubert-11\2000_05_27_MODENA_CD2 
+=================== 
+=================== 
+=================== 
+92918d41f3a950c86c5224c98c15858e  [shntool]  TRACK01.wav
+0a9d86c4ae389ac47d5cfd958325f43a  [shntool]  TRACK02.wav
+a8ee9dbb586aa5c62ef2d9b6527a7e50  [shntool]  TRACK03.wav
+b00ab773a7c5688fc5eda9de44399122  [shntool]  TRACK04.wav
+58fb389a0732da76c1873b54658661d6  [shntool]  TRACK05.wav
+acf40a6243103bcec5bc226792871b74  [shntool]  TRACK06.wav
+4dd96b6abb7f849e0f99922aa46da05c  [shntool]  TRACK07.wav
+7e8cf250182fce5084481b2dd867165c  [shntool]  TRACK08.wav
+70cbb7134d5cbd5cc3d919bff670e3f2  [shntool]  TRACK09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-27schubert-11\2000_05_27_MODENA_CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:09.69        1749932 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     3:11.20       33739484 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     6:42.14       70945772 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     5:15.68       55725980 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     6:35.21       69727436 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     8:17.45       87776684 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     6:38.09       70228412 B   ---   --   -----    wav  1.0000  TRACK07.wav
+     2:44.39       29021372 B   ---   --   -----    wav  1.0000  TRACK08.wav
+     6:20.23       67086140 B   ---   --   -----    wav  1.0000  TRACK09.wav
+     8:06.14       85763372 B   ---   --   -----    wav  1.0000  TRACK10.wav
+     5:13.40       55307324 B   ---   --   -----    wav  1.0000  TRACK11.wav
+    59:14.62      627071908 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-27schubert-11\2000_05_27_MODENA_CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:15.58       55702460 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     8:38.67       91532828 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     5:52.58       62229260 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     7:28.06       79041356 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     6:23.21       67610636 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     4:31.64       47954972 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     6:57.50       73676444 B   ---   --   -----    wav  1.0000  TRACK07.wav
+     6:12.62       65766668 B   ---   --   -----    wav  1.0000  TRACK08.wav
+     6:16.46       66434636 B   ---   --   -----    wav  1.0000  TRACK09.wav
+    57:37.57      609949260 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

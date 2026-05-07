@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-02-09-eve-b 
+=================== 
+=================== 
+=================== 
+beb35faa8818f5e0f748c8c6c4ecc9e4  bd74-02-09-eve-b.txt
+bbe1f64fdace207ccea76922467bfbd1  info.txt
+6defdfbf478f671ad6c97ceff5205a4b  Seattle2Track01.shn
+f44cb05922baa288e588758b3db2ef8a  Seattle2Track02.shn
+f5408f058d047f57f75cee6ce57d498d  Seattle2Track03.shn
+2450418ff8351f09a074f36a008ed86f  Seattle2Track04.shn
+f88cea768d23ca053b8925da798e663f  Seattle2Track05.shn
+ca230768871878f48ed7fa3035afbd98  Seattle2Track06.shn
+a8d69d64f1fd6167c045c5d9a12d8689  Seattle2Track07.shn
+6a8dcf2ac1f0548d9da7c66c9b407d24  Seattle2Track08.shn
+6ce38b067e1b7d6c678d817bc4a845f9  Seattle2Track09.shn
+f8b523118848d27ef68c4306dd1c4d41  Seattle2Track10.shn
+27f9db2cdc7688962103a2f0f75393fd  Seattle2Track11.shn
+bc29be6bf6d559abf211134bb21b270f  Seattle2Track12.shn
+e71a4b18adacdf798590c44ec67d9acb  Seattle2Track13.shn
+4bf8e376d5c636a02414e77a1de2eee1  Seattle2Track14.shn
+37681e8b044e43d5ed5e0cb2c39b7a22  Seattle2Track15.shn
+aaaf8c56f60d2f13af3459aaf59056b6  Seattle2Track16.shn
+766c93678e233ff1621dabd429ef8408  Seattle2Track17.shn
+38af6f16829d3dfc91ad440b29171eaa  Seattle2Track18.shn
+b83e2751f869c58e2aee66f568c7211f  Seattle2Track19.shn
+7aa5f32c91382aa1b4ae8573cd7daa38  shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-02-09-eve-b 
+=================== 
+=================== 
+=================== 
+b323ff0f4ff509a2b739d5e33efd8b5b  [shntool]  Seattle2Track01.wav
+6557fe678781876114c1990e2079ad27  [shntool]  Seattle2Track02.wav
+1a9edf3711f066066a25c158864ae280  [shntool]  Seattle2Track03.wav
+5386bb2de43cb34c244d4c5e2c4e6495  [shntool]  Seattle2Track04.wav
+7e21ebaae60e8923692906c9945a3548  [shntool]  Seattle2Track05.wav
+9838f10bbb7eeab785dda8f41ec779a4  [shntool]  Seattle2Track06.wav
+6e191a7d4a556047f3d9c0b332cf4e62  [shntool]  Seattle2Track07.wav
+ef84ffb493aa65491e38e6a2bdfced05  [shntool]  Seattle2Track08.wav
+57899b90fd015e2603b53f853101c7ae  [shntool]  Seattle2Track09.wav
+3e522a23a135c8d11920de57fad75a6b  [shntool]  Seattle2Track10.wav
+b6c87dd31c36526d68661796f8bd339a  [shntool]  Seattle2Track11.wav
+b862f41844ea875aee175ac14f98135b  [shntool]  Seattle2Track12.wav
+446b7889d83e845f35db625558f9c917  [shntool]  Seattle2Track13.wav
+7ca14b2908a31a4814ab84aee8b758c1  [shntool]  Seattle2Track14.wav
+6f046514bcb78d3a1bca99e71e3d3026  [shntool]  Seattle2Track15.wav
+7d13af2ca7d985f70aab5a9d4ff8338b  [shntool]  Seattle2Track16.wav
+c7dfde919914fb2f5de641ea89f64f5d  [shntool]  Seattle2Track17.wav
+08e824f29d2a418493907e30cbb26ac9  [shntool]  Seattle2Track18.wav
+a177a00db8164bd6a1d0ce6508ef9b26  [shntool]  Seattle2Track19.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-09-eve-b 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.24       39393692 B   ---   --   -----    wav  1.0000  Seattle2Track01.wav
+     3:20.52       35402348 B   ---   --   -----    wav  1.0000  Seattle2Track02.wav
+     5:43.61       60648716 B   ---   --   -----    wav  1.0000  Seattle2Track03.wav
+     3:35.71       38093036 B   ---   --   -----    wav  1.0000  Seattle2Track04.wav
+     3:41.36       39069116 B   ---   --   -----    wav  1.0000  Seattle2Track05.wav
+     3:55.62       41599868 B   ---   --   -----    wav  1.0000  Seattle2Track06.wav
+     3:03.05       32293004 B   ---   --   -----    wav  1.0000  Seattle2Track07.wav
+     4:16.60       45299564 B   ---   --   -----    wav  1.0000  Seattle2Track08.wav
+     3:55.74       41628092 B   ---   --   -----    wav  1.0000  Seattle2Track09.wav
+     3:35.71       38093036 B   ---   --   -----    wav  1.0000  Seattle2Track10.wav
+     4:15.42       45080828 B   ---   --   -----    wav  1.0000  Seattle2Track11.wav
+     3:25.13       36192620 B   ---   --   -----    wav  1.0000  Seattle2Track12.wav
+     4:16.59       45297212 B   ---   --   -----    wav  1.0000  Seattle2Track13.wav
+     5:12.34       55116812 B   ---   --   -----    wav  1.0000  Seattle2Track14.wav
+     5:07.60       54295964 B   ---   --   -----    wav  1.0000  Seattle2Track15.wav
+     4:49.44       51083132 B   ---   --   -----    wav  1.0000  Seattle2Track16.wav
+     5:48.60       61528364 B   ---   --   -----    wav  1.0000  Seattle2Track17.wav
+     3:44.73       39685340 B   ---   --   -----    wav  1.0000  Seattle2Track18.wav
+     3:44.05       39525404 B   ---   --   -----    wav  1.0000  Seattle2Track19.wav
+    79:18.06      839326148 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

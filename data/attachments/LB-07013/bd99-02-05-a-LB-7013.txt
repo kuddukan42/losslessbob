@@ -1,0 +1,12 @@
+Bob Dylan, 2/5/99, Memphis, Tennessee, New Daisy Theater, 2CDR
+
+LB-7013, (70min+31min), version "a";Taper: Unidentified, Source: audio disks > (dBpowerAMP set to compression level 6) flac; bittorrent download 11/08; this is a sort of close eac match to LB-4462 on d1t4; eac differences are that has discontinuities near track boundaries and this does not; this has a gap before d1t12 not on that one; both have gaps where the cdr changes; excellent sound [A]
+
+CD1
+1. Gotta Serve Somebody, 2. Million Miles, 3. Maggie's Farm, 4. Make You Feel My Love, 5. Silvio, 6. My Blue Eyed Jane, 7. It's All Over Now, Baby Blue, 8. Friend Of The Devil, 9. Tangled Up In Blue, 10. It Takes A Lot To Laugh, It Takes A Train To Cry, 11. Can't Wait 12. band intros, 
+
+CD2
+13. Highway 61 Revisited, 14. Love Sick, 15. Everything Is Broken, 16. Don't Think Twice, It's All Right, 17. Not Fade Away
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

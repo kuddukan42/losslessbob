@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-08-24 
+=================== 
+=================== 
+=================== 
+042c62406f94ca2156a72a1a040e535b  bd90-08-24.txt
+e366921e6cc05b7e0b8da480a7fc04d1  d1t01.shn
+dfa211369628f84942c0d6110cf0469f  d1t02.shn
+b7fecb5d2229b7f980ffcedb2e2c2f7f  d1t03.shn
+cb901bf0aec41c074ef148136e4a8a81  d1t04.shn
+41d9165cd9ad0cfceb13a70bffaab7ba  d1t05.shn
+a513fa61a61562e2e4ba6051b98cacb8  d1t06.shn
+8e0eb1dbf34ee1d85e1be77a7d9bf8e5  d1t07.shn
+a3ea2c5608af443160b0389d400c6b3b  d1t08.shn
+bb8e0f21699cc3bc47e7becbd5115b9f  d1t09.shn
+d8e7f62d5b978cc24b801f5aeb045519  d1t10.shn
+283ca012f964eeab81e83e9a313deab3  d1t11.shn
+3a95fe0693ff1ba3ffc7fe1d6406f191  d1t12.shn
+71a47fc4d5bba98ee00e0c897ca968c9  d1t13.shn
+45f8034c833db2834fd7fd5c96c06636  d1t14.shn
+60b6189a5754595886c35e6dfeaf6a5e  d1t15.shn
+7e82d5b803af9eeb6f8dc1c512c8626e  d2t01.shn
+ff6069a98910de2d37357d47cab12fb0  d2t02.shn
+9fbffa3d0ac6ee7add55dbb6d88e3bae  d2t03.shn
+498917371c7769857fae55f3ae3ef4f1  dylan240890info.md5
+1e981c386ad3cc0645d51ee3775edecf  dylan240890info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-08-24 
+=================== 
+=================== 
+=================== 
+9e518c7c150fa9dbdf9cb193b0e7e68c  [shntool]  d1t01.wav
+86b2201da8679119fab9d1f1c74b422f  [shntool]  d1t02.wav
+2bdf0126e9e7d7039dfbfb3121cc0498  [shntool]  d1t03.wav
+4d1ac6ce888126349c3602049da0cf94  [shntool]  d1t04.wav
+071ed50d99cc0b54b3af6cda3e1217bb  [shntool]  d1t05.wav
+2b5aadfe5e0a9159e608da9efa0fcc1b  [shntool]  d1t06.wav
+74637b3735278a73b45fc9e963e558d8  [shntool]  d1t07.wav
+ab569c3aa42033c815527ed9699fa745  [shntool]  d1t08.wav
+e78eee963c446e7e4d3a9a8ed2dbdcdd  [shntool]  d1t09.wav
+1845eabcfa0fe6a98b435d849843a59a  [shntool]  d1t10.wav
+a042e9dedce32c8b30e1bffc51c5ca1c  [shntool]  d1t11.wav
+15381adc47ef356f2071f1049b300ecc  [shntool]  d1t12.wav
+5f542a00ffe79575b5558fb1ac96d3c1  [shntool]  d1t13.wav
+ef523fd32e8512bbf7d51f03feed2a35  [shntool]  d1t14.wav
+15d10e88fa89ff497f683366be9204ad  [shntool]  d1t15.wav
+18c4a96e859e7d2fa386349122acb308  [shntool]  d2t01.wav
+62a70afbe0e23dacebfad27a68a77222  [shntool]  d2t02.wav
+c378ccdaf508f85008dc283ae5f41874  [shntool]  d2t03.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-08-24 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:10.20       33563084 B   ---   --   -----    wav  1.0000  d1t01.wav
+     4:05.53       43342700 B   ---   --   -----    wav  1.0000  d1t02.wav
+     4:21.47       46150988 B   ---   --   -----    wav  1.0000  d1t03.wav
+     6:37.51       70150796 B   ---   --   -----    wav  1.0000  d1t04.wav
+     4:22.55       46346204 B   ---   --   -----    wav  1.0000  d1t05.wav
+     4:39.42       49314428 B   ---   --   -----    wav  1.0000  d1t06.wav
+     5:14.20       55436684 B   ---   --   -----    wav  1.0000  d1t07.wav
+     5:36.31       59343356 B   ---   --   -----    wav  1.0000  d1t08.wav
+     5:35.17       59134028 B   ---   --   -----    wav  1.0000  d1t09.wav
+     5:18.32       56170508 B   ---   --   -----    wav  1.0000  d1t10.wav
+     3:26.46       36446636 B   ---   --   -----    wav  1.0000  d1t11.wav
+     5:13.11       55239116 B   ---   --   -----    wav  1.0000  d1t12.wav
+     3:23.28       35875100 B   ---   --   -----    wav  1.0000  d1t13.wav
+     3:45.54       39817052 B   ---   --   -----    wav  1.0000  d1t14.wav
+     4:08.44       43850732 B   ---   --   -----    wav  1.0000  d1t15.wav
+     6:54.03       73036700 B   ---   --   -----    wav  1.0000  d2t01.wav
+     4:57.32       52466108 B   ---   --   -----    wav  1.0000  d2t02.wav
+     5:02.10       53296364 B   ---   --   -----    wav  1.0000  d2t03.wav
+    85:52.71      908980584 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

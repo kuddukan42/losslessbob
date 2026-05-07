@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-05-23-dirty-lies.flacf 
+=================== 
+=================== 
+=================== 
+b3a1d2258b1a4d362f3b91adee407315  bd84-05-23-dirty-lies-d1t01.flac
+7c5e66fa32641065e14282c4f72f5ffb  bd84-05-23-dirty-lies-d1t02.flac
+9b503e0104e9a6fc53afa1b9d5f1eede  bd84-05-23-dirty-lies-d1t03.flac
+e8fe4e00ae5d540b404be88aa29c42ca  bd84-05-23-dirty-lies-d1t04.flac
+e48f12ee4a54486943940c2e3973395b  bd84-05-23-dirty-lies-d1t05.flac
+4e9532bebe2dec476ebba3739af40428  bd84-05-23-dirty-lies-d1t06.flac
+ac94cf1a98e33fc897d11898cbc6e3e8  bd84-05-23-dirty-lies-d1t07.flac
+80b7076a6c306993143e51f44459db23  bd84-05-23-dirty-lies-d1t08.flac
+7015e803f6eab05260b20ae7a6cfad68  bd84-05-23-dirty-lies-d1t09.flac
+128da4daf9bee21d85c78cc4114e8452  bd84-05-23-dirty-lies-d1t10.flac
+73198f65baf5576e5ef0922f6b4a37f1  bd84-05-23-dirty-lies-d1t11.flac
+ceb8fb5ce7da53f19a08fde854c1f742  bd84-05-23-dirty-lies-d1t12.flac
+4ef3884dff43ddf197dc3d4be932b4ef  bd84-05-23-dirty-lies-d2t01.flac
+00f35fda5fee26a0b0949ab6f3c49097  bd84-05-23-dirty-lies-d2t02.flac
+1eb1ad598118137662804c710a47e157  bd84-05-23-dirty-lies-d2t03.flac
+977b7fc4abdf3c589f9b21bd5660f6e9  bd84-05-23-dirty-lies-d2t04.flac
+c9b4a2b87c053e98d149aa27ee32855a  bd84-05-23-dirty-lies-d2t05.flac
+b1c59a75f295062bac46678d23c0b9c2  bd84-05-23-dirty-lies-d2t06.flac
+a6307492fcb62088b085d954b6af67c0  bd84-05-23-dirty-lies-d2t07.flac
+7db59418a6037e81a76fca114d5d3e2e  bd84-05-23-dirty-lies-d2t08.flac
+73ddb4ea6250599d7ba3190a132eb553  bd84-05-23-dirty-lies-d2t09.flac
+2092c98e0ddc230eab82cb1ec9c62d78  bd84-05-23-dirty-lies-d2t10.flac
+8480bf4eb29a7fce39e01bd5035f42de  bd84-05-23-dirty-lies-d2t11.flac
+d99cace7615433481ec5d55ff9f99dd5  bd84-05-23-dirty-lies-d2t12.flac
+509ed9af8afc17e867260404f5babf39  bd84-05-23-dirty-lies-d2t13.flac
+87e635679e6f0a64e68cd289564507f0  bd84-05-23-dirty-lies-d2t14.flac
+5d07cd32375d9dcf3fe3b544cdc9a744  bd84-05-23-dirty-lies-d2t15.flac
+9037b742bef5174034da61a451ff1a2c  bd84-05-23-dirty-lies-d2t16.flac
+4a9840cffe854380476d3ee94cdb017f  bd84-05-23-dirty-lies.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-05-23-dirty-lies.flacf 
+=================== 
+=================== 
+=================== 
+bd84-05-23-dirty-lies-d1t01.flac:ca2148123a4c3c3e3be84eedb33a4463
+bd84-05-23-dirty-lies-d1t02.flac:30b40bd14e4c491f30bf94e69be2ceee
+bd84-05-23-dirty-lies-d1t03.flac:06a84d19fdab47b3493fa20ebd4dd241
+bd84-05-23-dirty-lies-d1t04.flac:24bae07b88dc41224890462fefa4b21a
+bd84-05-23-dirty-lies-d1t05.flac:769b148fa60bc1a78505d1b9ce6b69b9
+bd84-05-23-dirty-lies-d1t06.flac:43d91772dcf221ecb0ab59eb4739a071
+bd84-05-23-dirty-lies-d1t07.flac:0cc7e28d6a7210080d6566c3ccd031e4
+bd84-05-23-dirty-lies-d1t08.flac:47e1d70b33e28a8f162e395b39ecd7a1
+bd84-05-23-dirty-lies-d1t09.flac:0c78f20ff4f4a27ec0d787c87224ace4
+bd84-05-23-dirty-lies-d1t10.flac:8be084ced1850966a1392accbf2e844f
+bd84-05-23-dirty-lies-d1t11.flac:0dd744be44aad49d0d7127dcc02d5be1
+bd84-05-23-dirty-lies-d1t12.flac:da74b81d25e01df94db16f0ce308fb91
+bd84-05-23-dirty-lies-d2t01.flac:919062c9813a1a9426a9b0439f5b7152
+bd84-05-23-dirty-lies-d2t02.flac:729f8b5395861d197d01459fe0e9bc39
+bd84-05-23-dirty-lies-d2t03.flac:023597186a3a4d2d0a93fe97d776cba8
+bd84-05-23-dirty-lies-d2t04.flac:680add62f832791b1c52d225d4e1bc92
+bd84-05-23-dirty-lies-d2t05.flac:90be745f0119375323ad249463d83d2b
+bd84-05-23-dirty-lies-d2t06.flac:b00665c575c27a726257fa7a6aa8b99b
+bd84-05-23-dirty-lies-d2t07.flac:21dc18edf3e003ebbd184edbf7c81987
+bd84-05-23-dirty-lies-d2t08.flac:1cae74d40ac2a21a174b1c03db9d4cc4
+bd84-05-23-dirty-lies-d2t09.flac:bf4b2eba8c5a4b5a7f8cbe49e31ce277
+bd84-05-23-dirty-lies-d2t10.flac:fda9159d2a663dea5510624ec0d383f7
+bd84-05-23-dirty-lies-d2t11.flac:7e7cb9299e90a9c8ab2aa7f9b31275cc
+bd84-05-23-dirty-lies-d2t12.flac:eadf6367fa5ace27a99c6fef7e61dd34
+bd84-05-23-dirty-lies-d2t13.flac:6ea63f7568dd09810b6e15da3e1af740
+bd84-05-23-dirty-lies-d2t14.flac:dab9374027e2e6339945f79805f82e43
+bd84-05-23-dirty-lies-d2t15.flac:064b23e0d059d33e2e120f93e7fc1d0e
+bd84-05-23-dirty-lies-d2t16.flac:2748e42364e99c0f50c0d96050d9a631
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-05-23-dirty-lies.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.07       56464508 B   ---   --   ---xx   flac  0.5500  bd84-05-23-dirty-lies-d1t01.flac
+     3:40.65       38960924 B   ---   --   ---xx   flac  0.5370  bd84-05-23-dirty-lies-d1t02.flac
+     5:51.28       61982300 B   ---   --   ---xx   flac  0.4987  bd84-05-23-dirty-lies-d1t03.flac
+     3:08.45       33269084 B   ---   --   ---xx   flac  0.5604  bd84-05-23-dirty-lies-d1t04.flac
+     1:48.27       19114748 B   ---   --   ---xx   flac  0.3815  bd84-05-23-dirty-lies-d1t05.flac
+     4:53.10       51708764 B   ---   --   ---xx   flac  0.4785  bd84-05-23-dirty-lies-d1t06.flac
+     1:39.13       17494220 B   ---   --   ---xx   flac  0.3796  bd84-05-23-dirty-lies-d1t07.flac
+     4:45.20       50321084 B   ---   --   ---xx   flac  0.4626  bd84-05-23-dirty-lies-d1t08.flac
+     3:20.40       35374124 B   ---   --   ---xx   flac  0.5010  bd84-05-23-dirty-lies-d1t09.flac
+     3:40.17       38848028 B   ---   --   ---xx   flac  0.4997  bd84-05-23-dirty-lies-d1t10.flac
+     3:14.38       34311020 B   ---   --   ---xx   flac  0.5062  bd84-05-23-dirty-lies-d1t11.flac
+     3:27.42       36613628 B   ---   --   ---xx   flac  0.4369  bd84-05-23-dirty-lies-d1t12.flac
+     7:17.60       77227964 B   ---   --   ---xx   flac  0.4798  bd84-05-23-dirty-lies-d2t01.flac
+     1:36.45       17040284 B   ---   --   ---xx   flac  0.4668  bd84-05-23-dirty-lies-d2t02.flac
+     3:16.47       34684988 B   ---   --   ---xx   flac  0.4675  bd84-05-23-dirty-lies-d2t03.flac
+     2:08.20       22626284 B   ---   --   ---xx   flac  0.4110  bd84-05-23-dirty-lies-d2t04.flac
+     6:02.50       63974444 B   ---   --   ---xx   flac  0.4531  bd84-05-23-dirty-lies-d2t05.flac
+     1:55.40       20380124 B   ---   --   ---xx   flac  0.3774  bd84-05-23-dirty-lies-d2t06.flac
+     1:25.25       15052844 B   ---   --   ---xx   flac  0.4450  bd84-05-23-dirty-lies-d2t07.flac
+     1:37.45       17216684 B   ---   --   ---xx   flac  0.4584  bd84-05-23-dirty-lies-d2t08.flac
+     1:05.70       11630684 B   ---   --   ---xx   flac  0.4069  bd84-05-23-dirty-lies-d2t09.flac
+     2:53.20       30564284 B   ---   --   ---xx   flac  0.3808  bd84-05-23-dirty-lies-d2t10.flac
+     4:44.55       50227004 B   ---   --   ---xx   flac  0.5363  bd84-05-23-dirty-lies-d2t11.flac
+     1:56.60       20603564 B   ---   --   ---xx   flac  0.3514  bd84-05-23-dirty-lies-d2t12.flac
+     3:46.53       39991100 B   ---   --   ---xx   flac  0.4814  bd84-05-23-dirty-lies-d2t13.flac
+     4:10.25       44158844 B   ---   --   ---xx   flac  0.4767  bd84-05-23-dirty-lies-d2t14.flac
+     1:49.57       19361708 B   ---   --   ---xx   flac  0.4350  bd84-05-23-dirty-lies-d2t15.flac
+     0:39.68        7039580 B   ---   --   ---xx   flac  0.3858  bd84-05-23-dirty-lies-d2t16.flac
+    91:17.42      966242816 B                            0.4738  (28 files)
+=================== 
+=================== 
+=================== 

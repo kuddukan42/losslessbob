@@ -1,0 +1,57 @@
+Bob Dylan
+Bogart's
+Cincinnati, OH
+7.11.99
+
+Source:
+Oade Micro Mics > D8 (44.1)
+Transfer:
+DA-P1 > Audiophile 2496 > Wavelab 4 > CDWave > FLAC
+Transfer by Doug N.
+
+CD 1:
+01. Somebody Touched Me
+02. My Back Pages
+03. Desolation Row
+04. To Ramona
+05. Tangled Up In Blue
+06. Girl From The North Country
+07. Seeing The Real You At Last
+08. Lay Lady Lay
+09. Most Likely You Go Your Way (And I'll Go Mine)
+10. You Ain't Goin' Nowhere
+11. Not Dark Yet
+12. Band Intros
+13. Highway 61 Revisited
+14. Crowd
+
+CD 2/Encore 1:
+01. Love Sick
+02. Like A Rolling Stone
+03. It Ain't Me Babe
+04. Not Fade Away
+05. Crowd
+Encore 2:
+06. Blowin' In The Wind
+
+
+bd1999-07-11d1t01.flac:72979d497bc157b8630af345a1e1db59
+bd1999-07-11d1t02.flac:4c0a6747c24cb4f67a9e9f1b65b3c65d
+bd1999-07-11d1t03.flac:73de323975ade0342db5d25e7c5284eb
+bd1999-07-11d1t04.flac:481fa3da44034e6544fb358bdb590641
+bd1999-07-11d1t05.flac:fbc35bb61b7bc4cbc6747a2a24144440
+bd1999-07-11d1t06.flac:b53608cd20aacacf306a497d9aba0aef
+bd1999-07-11d1t07.flac:d6a4c8ec942f2d8beb492df7b827dd7f
+bd1999-07-11d1t08.flac:ba25a9691749bc42cf880e30ba2ceee3
+bd1999-07-11d1t09.flac:26e62b116aedf4fbea665d3606228d87
+bd1999-07-11d1t10.flac:1d285867ccd6e1f6d9160978f1367d41
+bd1999-07-11d1t11.flac:ba2073ed3828ca3b1b2a39ba87307ec6
+bd1999-07-11d1t12.flac:13eb7be0495ad7469f94fc8ea33e4abe
+bd1999-07-11d1t13.flac:bf3128bf27e3ddc758211eb461e58b91
+bd1999-07-11d1t14.flac:9e9eff5000254411f55635fb89b9a04e
+bd1999-07-11d2t01.flac:e9257ff1ddc5163d5a31af0f3b740a4d
+bd1999-07-11d2t02.flac:67fb44440689fadad8a7b0db4bf69b1a
+bd1999-07-11d2t03.flac:1f41ca608946bab3edb199527dc31b6a
+bd1999-07-11d2t04.flac:5cf57c602594a0c180b75aa05044578d
+bd1999-07-11d2t05.flac:52c8aa7e8ff454b4e8b3a23dc45dd089
+bd1999-07-11d2t06.flac:16d3b00fd720533cee0ac3168e4201a5

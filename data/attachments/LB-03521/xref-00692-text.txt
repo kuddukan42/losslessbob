@@ -1,0 +1,63 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+The Cameo Theatre
+Miami Beach FL USA
+March 31 1998
+master dat akg 391 sony dat
+
+
+# To Be Alone With You
+# Seor (Tales Of Yankee Power)
+# Can't Wait
+# You're A Big Girl Now
+# Silvio
+# Cocaine Blues (acoustic)
+# One Too Many Mornings (acoustic)
+# Tangled Up In Blue (acoustic)
+# Million Miles
+# Jokerman
+# Stuck Inside Of Mobile With The Memphis Blues Again
+
+(encore)
+# 'Til I Fell In Love With You
+# It Ain't Me, Babe (acoustic)
+# Love Sick
+# Rainy Day Women #12 & 35 
+===================
+===================
+===================
+=== 1.ffp
+===================
+===================
+===================
+Track01.flac:8d120b8ac44dcdd228c18a537921a24f
+Track02.flac:639813222d55c51b30c11235961554d2
+Track03.flac:6b09178b351eee266be0684848527bd4
+Track04.flac:4386016a8b7990d380a9121a93fb5464
+Track05.flac:98bbfcec9de06ed213bea97abb02442a
+Track06.flac:48d62639ca384ae237048263eb257fbc
+Track07.flac:0b3e1e76602d84ffe3782563e2bbe3a0
+Track08.flac:2647882dd33c07fee552ffd92de0f469
+===================
+===================
+===================
+=== 2.ffp
+===================
+===================
+===================
+Track01.flac:e78f90fdb18417b7b083958de12e57dd
+Track02.flac:b8899d78e90cf743559ae77012510777
+Track03.flac:edf410eb1ef12cf93a3636cdab33692a
+Track04.flac:f975a351c6b4869bcb50191359fc4419
+Track05.flac:3765ef257652e11ab6ea4be800c49f4d
+Track06.flac:ba4c795751de306aa2af630f0610681f
+Track07.flac:6a1c25188bb105f4abf00e6f222f6482
+===================
+===================
+===================

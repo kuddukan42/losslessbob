@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-10.flacf 
+=================== 
+=================== 
+=================== 
+ebc6b44965a3f015afb64b83c83d22af  bd - 1996-07-10-tambach-d1\1 Crash On The Levee (Down In The Flood).flac
+4cfa00aaac44cf8ca9d9797a4984370b  bd - 1996-07-10-tambach-d1\2 If Not For You.flac
+9c0b2a95b133b38300861e2391e671c5  bd - 1996-07-10-tambach-d1\3 All Along The Watchtower.flac
+8e2d59d2a15eb0e9ccf83b93cc60856c  bd - 1996-07-10-tambach-d1\4 Tears Of Rage.flac
+dd7eedf3225a3a0e693e553a574f1cdb  bd - 1996-07-10-tambach-d1\5 I'll Be Your Baby Tonight.flac
+0df1081e805378b8f674394a6802c59a  bd - 1996-07-10-tambach-d1\6 Silvio.flac
+6b0d5df7c1d280c2f1a6c1564746e843  bd - 1996-07-10-tambach-d1\7 Mr. Tambourine Man.flac
+7d1fad041241e5c6d7cfd76192fb4dac  bd - 1996-07-10-tambach-d1\8 Desolation Row.flac
+59e825222a93e652a1fe5cd5c12737c0  bd - 1996-07-10-tambach-d2\1 Don't Think Twice, It's All Right.flac
+32ff4710924430ed98950bec8559974a  bd - 1996-07-10-tambach-d2\2 Absolutely Sweet Marie.flac
+9e78a02aef410883776d68c2bcfeb863  bd - 1996-07-10-tambach-d2\3 In The Garden.flac
+b7c41186cb3a945aadc063287692940f  bd - 1996-07-10-tambach-d2\4 Obviously Five Believers.flac
+0e22317c5ff0e49c05fb0c5dd5bc2c3a  bd - 1996-07-10-tambach-d2\5 My Back Pages.flac
+e4b56894455f7cc6e81db45f4aa6ad91  bd - 1996-07-10-tambach-d2\6 Rainy Day Women # 12 & 35.flac
+2771e2f3f0267a6bbc7ef82304244163  bd96-07-10.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-10.flacf\bd - 1996-07-10-tambach-d1 
+=================== 
+=================== 
+=================== 
+1 Crash On The Levee (Down In The Flood).flac:abbd4160f11089b32eda04fca5c56760
+2 If Not For You.flac:11a116594cd85605ccd7fdc59ee325d7
+3 All Along The Watchtower.flac:36af1d74eccfc98ae8ba66634c67ff43
+4 Tears Of Rage.flac:cb3c5387c62a162aa6624fa7c40e43b8
+5 I'll Be Your Baby Tonight.flac:1da5ff5b1735273eb9e4860a539b3bb8
+6 Silvio.flac:8a4696b75adc261e7bb471c381ddb1bb
+7 Mr. Tambourine Man.flac:0ad80788d93f7d51e8e957d3e4ba371c
+8 Desolation Row.flac:db593d8840c1e535531984f66f766e47
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-10.flacf\bd - 1996-07-10-tambach-d2 
+=================== 
+=================== 
+=================== 
+1 Don't Think Twice, It's All Right.flac:397b03e8cf234471d236f9f15e85d1cc
+2 Absolutely Sweet Marie.flac:8dafa20b4cce8ea69242310c101f0321
+3 In The Garden.flac:ce9a4793f1a27fb2a560489ee2e029f8
+4 Obviously Five Believers.flac:575cb59eca53b7f73c8852fce01c6624
+5 My Back Pages.flac:ccd443c8994115aca08a876d4bc9ab8b
+6 Rainy Day Women # 12 & 35.flac:0c3636e6ae9cce20120e3bbb2f9dd790
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-10.flacf\bd - 1996-07-10-tambach-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.42       50549228 B   ---   --   ---xx   flac  0.5850  1 Crash On The Levee (Down In The Flood).flac
+     5:10.42       54782828 B   ---   --   ---xx   flac  0.5009  2 If Not For You.flac
+     6:59.00       73911644 B   ---   --   ---xx   flac  0.5536  3 All Along The Watchtower.flac
+     7:59.58       84632060 B   ---   --   ---xx   flac  0.5056  4 Tears Of Rage.flac
+     6:39.70       70548284 B   ---   --   ---xx   flac  0.4991  5 I'll Be Your Baby Tonight.flac
+     7:54.38       83703020 B   ---   --   ---xx   flac  0.5427  6 Silvio.flac
+     9:46.23      103424540 B   ---   --   ---xx   flac  0.4893  7 Mr. Tambourine Man.flac
+    11:14.35      118975964 B   ---   --   ---xx   flac  0.4802  8 Desolation Row.flac
+    60:31.08      640527568 B                            0.5138  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-10.flacf\bd - 1996-07-10-tambach-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:51.18       72542780 B   ---   --   ---xx   flac  0.5150  1 Don't Think Twice, It's All Right.flac
+     6:34.58       69638060 B   ---   --   ---xx   flac  0.5474  2 Absolutely Sweet Marie.flac
+     7:26.49       78789692 B   ---   --   ---xx   flac  0.5081  3 In The Garden.flac
+     9:11.37       97283468 B   ---   --   ---xx   flac  0.5146  4 Obviously Five Believers.flac
+     9:40.00      102312044 B   ---   --   ---xx   flac  0.5214  5 My Back Pages.flac
+     7:18.55       77392604 B   ---   --   ---xx   flac  0.5712  6 Rainy Day Women # 12 & 35.flac
+    47:02.67      497958648 B                            0.5284  (6 files)
+=================== 
+=================== 
+=================== 

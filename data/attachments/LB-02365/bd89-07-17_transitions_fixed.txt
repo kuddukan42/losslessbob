@@ -1,0 +1,26 @@
+Bob Dylan, 7/17/89, Stanhope, 2CDR
+
+(72min+14min), very good to excellent sound [A-]
+
+at beginning of d1t1 has occasional static; small gaps between tracks
+
+CD1
+1 Most Likely You Go Your Way (And I'll Go Mine) 2 Early Morning Rain 3 BalladOf Hollis Brown 4 Stuck Inside Of Mobile With The Memphis Blues Again 5 SimpleTwist Of Fate 6 Rainy Day Women # 12 & 35 7 Mr. Tambourine Man (acoustic) 8 She Belongs To Me (acoustic) 9 Gates Of Eden (acoustic) 10 Gotta Serve Somebody 11 Silvio 12 I Shall Be Released 13 Like A Rolling Stone 
+
+CD2
+1 The Times They Are A-Changin' (acoustic) 2 Maggie's Farm
+
+
+>>>>>>>>
+update 1/05:
+
+Transition gaps fixed between tracks using careful digital editing.
+
+Repaired the worst of the spikes during opening - three slivers of static were removed during intro.
+
+Track markers moved to be more better.
+
+First ~7 seconds of d1 track 1 has been attenuated 8.0dB to compensate for the tapers record volume adjust - this is only on crowd noise during intro.
+
+There is a break in the source between d1 track 7 and 8.  no change made.
+>>>>>>>>

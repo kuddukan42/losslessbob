@@ -1,0 +1,127 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-08-03-unwanted-man.flacf 
+=================== 
+=================== 
+=================== 
+b08a7fb27135abfe8747e855abd51118  bd-I Sure Wish He'd Get That Off his Head-UMM.txt
+693d116edb3eed80e5d662580ce4f421  bd02-08-03-unwanted-man-LB-3194.txt
+ffea097e1e1ab9144ea4e60fe2945720  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 01.flac
+12e3338ca373cb2bff204f2237508455  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 02.flac
+8fd4e95633fc073b90fc43b00eb0c41f  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 03.flac
+3ea5ba982355f5c6ec3135437acdafe5  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 04.flac
+935d721039597f53080d1b54737c1a6a  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 05.flac
+0bfa00996d5ed4028b9c0ff76d1ef97a  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 06.flac
+32f81c5de5cccb432c00a95d544d126a  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 07.flac
+4a3e533f257df25cba6b0608c9d8f95b  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 08.flac
+4375b94f3847f9dd143b17a153c04c1d  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 09.flac
+634ac506b735612685ba727f5c1b8a26  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 10.flac
+2f11a7e028426d4bfac549d07038c635  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 11.flac
+f42cab069cfe04fadab02c785c501cf6  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 12.flac
+5e5e133231f7ab5863ea49cfc6454d39  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 13.flac
+2d5532ad1d5e9128b51aab3e53cd0c85  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 14.flac
+4c3c28215dd53f7f8802ce6b5a7c29a3  I Sure Wish He'd Ged That Off d2\Bob Dylan - Track 15.flac
+a38189782c3ca754ef910a1fe00764f4  I Sure Wish He'd Ged That Off d2\I SUre Wish He'd d2 fingerprints.txt
+4e3e2d624c9e119e650ad528cc8bc2e3  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 01.flac
+71fa755ce9ee384bcff1e46e91a484c5  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 02.flac
+eb4f899eb7bbb0c8471c6bd43147a542  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 03.flac
+40be7d5ff3fd3ef6175ad9fa93266464  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 04.flac
+8a641888493fb21cbc45c3fd4372dbd5  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 05.flac
+82a6ac1bf3eae62bd2726c1d01e78db8  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 06.flac
+d39706c15436cd055c6d267e33c352c3  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 07.flac
+d9bc60101b5cb68347e50a25f7e7e9c8  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 08.flac
+d60533492fa3ea9dfd456cf0031a6166  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 09.flac
+e5ee64693e161e0b8755b8c2ac2749f8  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 10.flac
+e36aff6e1e6cb327cba8cf0f420ed623  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 11.flac
+cfbe4289d4017dd22e1a995f50f75ff0  I Sure Wish He'd Get That Off d1\Bob Dylan - Track 12.flac
+72733b7e2da3e591b3db131a100d43be  I Sure Wish He'd Get That Off d1\I Sure Wish He'd Get That.. d1 fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-03-unwanted-man.flacf\I Sure Wish He'd Get That Off d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:2056671f40838b64efc7ce138c704d1f
+Bob Dylan - Track 02.flac:16f7bc649dc8fcb7e76d084b103f5eb3
+Bob Dylan - Track 03.flac:4ba43237bc8bceef1685454d3aad7bb0
+Bob Dylan - Track 04.flac:4be7cbe3b99a7f70403cef7752a65c43
+Bob Dylan - Track 05.flac:9ef97cc26ad44edeba90451c72cc6e37
+Bob Dylan - Track 06.flac:3cc550b4d24b8cf59dbe67f7e389d0b7
+Bob Dylan - Track 07.flac:6c43ddfe0ba11036e9c92df6f34707ba
+Bob Dylan - Track 08.flac:0f8f48f24f8842f213aefb9bdec5ff81
+Bob Dylan - Track 09.flac:647aa0ecd340b6840271e83c38a9cf92
+Bob Dylan - Track 10.flac:37b3859c7d60291a7ac161a9e00ab620
+Bob Dylan - Track 11.flac:977f792794eee79406e6c75273d1dca2
+Bob Dylan - Track 12.flac:404c3a0e8b1b2733df1c3ad5bc6040d0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-03-unwanted-man.flacf\I Sure Wish He'd Ged That Off d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:fd1b2896f3acc846706fe5e1beeee75d
+Bob Dylan - Track 02.flac:37ebccd7f4392123647f98dfaa5f817f
+Bob Dylan - Track 03.flac:c9ff510f2cc7f762ad6f2505744a59d2
+Bob Dylan - Track 04.flac:fea08952774be2f9c42a3aeebf71972e
+Bob Dylan - Track 05.flac:4dec1aada61085904376950069b4d1ca
+Bob Dylan - Track 06.flac:2f7df003593483096ad31339f13b3a03
+Bob Dylan - Track 07.flac:6b29910e33e15b585207e2817e269489
+Bob Dylan - Track 08.flac:c4b7c6446ed09534f735e1cffe71a658
+Bob Dylan - Track 09.flac:754865a4c108ed8e3d02b0f052e4627e
+Bob Dylan - Track 10.flac:a8942a5525a7c0e60ca0ad9cb3d47c93
+Bob Dylan - Track 11.flac:a84ce8c83dd0be12b67cc33ef1aaee18
+Bob Dylan - Track 12.flac:6ce5680a49ea115604e95de05b053072
+Bob Dylan - Track 13.flac:9b14c98e8ece0115c56839f2dfab41eb
+Bob Dylan - Track 14.flac:f9bb27983737abfbdd6fcfcc21f94861
+Bob Dylan - Track 15.flac:467584400a9ffc51ab13f9b1d24d302b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-03-unwanted-man.flacf\I Sure Wish He'd Get That Off d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.18       43965980 B   ---   --   ---xx   flac  0.5603  Bob Dylan - Track 01.flac
+     5:47.73       61382540 B   ---   --   ---xx   flac  0.5499  Bob Dylan - Track 02.flac
+    10:09.30      107498204 B   ---   --   ---xx   flac  0.5490  Bob Dylan - Track 03.flac
+     5:35.53       59218700 B   ---   --   ---xx   flac  0.5165  Bob Dylan - Track 04.flac
+     4:39.45       49321484 B   ---   --   ---xx   flac  0.5248  Bob Dylan - Track 05.flac
+     7:49.65       82884524 B   ---   --   ---xx   flac  0.5248  Bob Dylan - Track 06.flac
+     4:32.59       48119612 B   ---   --   ---xx   flac  0.5559  Bob Dylan - Track 07.flac
+     5:30.49       58327292 B   ---   --   ---xx   flac  0.5502  Bob Dylan - Track 08.flac
+     5:59.42       63426428 B   ---   --   ---xx   flac  0.5380  Bob Dylan - Track 09.flac
+     7:52.53       83385500 B   ---   --   ---xx   flac  0.5519  Bob Dylan - Track 10.flac
+     6:46.70       71783084 B   ---   --   ---xx   flac  0.5104  Bob Dylan - Track 11.flac
+     6:12.64       65771372 B   ---   --   ---xx   flac  0.5542  Bob Dylan - Track 12.flac
+    75:07.21      795084720 B                            0.5401  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-03-unwanted-man.flacf\I Sure Wish He'd Ged That Off d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.55       55519004 B   ---   --   ---xx   flac  0.5114  Bob Dylan - Track 01.flac
+     4:57.61       52534316 B   ---   --   ---xx   flac  0.5439  Bob Dylan - Track 02.flac
+     8:27.12       89463068 B   ---   --   ---xx   flac  0.5229  Bob Dylan - Track 03.flac
+     4:09.19       43968332 B   ---   --   ---xx   flac  0.5246  Bob Dylan - Track 04.flac
+     7:50.24       82964492 B   ---   --   ---xx   flac  0.5254  Bob Dylan - Track 05.flac
+     5:13.46       55321436 B   ---   --   ---xx   flac  0.5014  Bob Dylan - Track 06.flac
+     5:20.74       56622092 B   ---   --   ---xx   flac  0.5226  Bob Dylan - Track 07.flac
+     1:32.18       16271180 B   ---   --   ---xx   flac  0.4864  Bob Dylan - Track 08.flac
+     6:05.60       64527164 B   ---   --   ---xx   flac  0.5698  Bob Dylan - Track 09.flac
+     6:55.19       73250732 B   ---   --   ---xx   flac  0.5834  Bob Dylan - Track 10.flac
+     3:54.33       41355260 B   ---   --   ---xx   flac  0.6033  Bob Dylan - Track 11.flac
+     4:02.43       42789980 B   ---   --   ---xx   flac  0.5190  Bob Dylan - Track 12.flac
+     7:09.72       75844988 B   ---   --   ---xx   flac  0.5810  Bob Dylan - Track 13.flac
+     0:36.59        6489212 B   ---   --   ---xx   flac  0.5570  Bob Dylan - Track 14.flac
+     6:21.29       67276652 B   ---   --   ---xx   flac  0.5882  Bob Dylan - Track 15.flac
+    77:52.24      824197908 B                            0.5454  (15 files)
+=================== 
+=================== 
+=================== 

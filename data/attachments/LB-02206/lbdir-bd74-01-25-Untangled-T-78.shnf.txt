@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-25-Untangled-T-78.shnf 
+=================== 
+=================== 
+=================== 
+ad296ae69f6f8bcfdbaab5d073e1d6b7  bd1974-01-25 (T-78) t01.shn
+54032b33577bea69090b9f50cf115fc1  bd1974-01-25 (T-78) t02.shn
+c3f54a99bad96fea6ab1edd566be6982  bd1974-01-25 (T-78) t03.shn
+006b737a5f36903464867d5c0ad368d9  bd1974-01-25 (T-78) t04.shn
+1bbe82f8cce4d09b7c40174447267b73  bd1974-01-25 (T-78) t05.shn
+c373b6e769e42b2a8af048a02e135462  bd1974-01-25 (T-78) t06.shn
+b395c16c20063f6bc4b71bfd5d946e40  bd1974-01-25 (T-78) t07.shn
+64b8392746dd4cb81c910297c315b83f  bd1974-01-25 (T-78) t08.shn
+4628b2647aa341297c43da1c65dcf705  bd1974-01-25 (T-78) t09.shn
+1ba61c52c623b136f3e458e24d9da233  bd1974-01-25 (T-78) t10.shn
+dd3ec1e3ff3df9ca79c3a48c7df46bc2  bd1974-01-25 (T-78) t11.shn
+beea8cfae3bde4e153b8acf133d6adc4  bd1974-01-25 (T-78) t12.shn
+88d8714be073c442c60549c9cd9346fb  bd1974-01-25 (T-78) t13.shn
+b223f6835e94b3354f023b8ad87f8f7e  bd1974-01-25 (T-78) t14.shn
+d738349753f77105162ec14ba93695dc  bd1974-01-25 (T-78) t15.shn
+d502788aa685746ac06425ecf4e9e3dc  bd1974-01-25 (T-78) t16.shn
+2301a7d361b152af6bd98d27875aa640  bd1974-01-25 (T-78) t17.shn
+9d6d28b76ea3111831389353e56264e2  bd1974-01-25 (T-78) t18.shn
+9c2a1b9852dfe43f9aea83724111b9a1  bd74-01-25-T-78.shnf.txt
+9fd0e6a2b5a5ea656481f95c8581ebd5  Bob Dylan 1974-01-25 Fort Worth TX (Untangled) (T-78) DISC.JPG
+366c38c482e1cdf770b34101b893745e  Bob Dylan 1974-01-25 Fort Worth TX (Untangled) (T-78) FRONT.JPG
+79249ba4c0adfe0765e48abf56ace14a  Bob Dylan 1974-01-25 Fort Worth TX (Untangled) (T-78) INSIDE.JPG
+b1f4a34db4cf032afbc2fd761193b599  Bob Dylan 1974-01-25 Fort Worth TX (Untangled) (T-78).md5
+a128c9cb0616fa2503acfa0e6bda5d63  Bob Dylan 1974-01-25 Fort Worth TX (Untangled) (T-78).txt
+507b5f51ec27b38af6c9c648f73cd538  Thumbs.db
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-01-25-Untangled-T-78.shnf 
+=================== 
+=================== 
+=================== 
+1c16b40a0624446733f2baeb91b52509  [shntool]  bd1974-01-25__T-78__t01.wav
+87d910160fc572b03495bf453bde7252  [shntool]  bd1974-01-25__T-78__t02.wav
+20980b94c221d74fde4b47965aa1c391  [shntool]  bd1974-01-25__T-78__t03.wav
+806494c1f88e9be043e1b1cb9330af79  [shntool]  bd1974-01-25__T-78__t04.wav
+0a304b18ec220f543c9f784f6210ba77  [shntool]  bd1974-01-25__T-78__t05.wav
+9d2f992ddd189c908fa12b2cc8d70c59  [shntool]  bd1974-01-25__T-78__t06.wav
+844478d30aa4ceb63e11de50396042dd  [shntool]  bd1974-01-25__T-78__t07.wav
+cdf53d233f80117d7e84057a5f1567f9  [shntool]  bd1974-01-25__T-78__t08.wav
+2b552fe31c823c63405e69634e88449e  [shntool]  bd1974-01-25__T-78__t09.wav
+c419f52b17f4cfd1e5964e762106e2ee  [shntool]  bd1974-01-25__T-78__t10.wav
+9ff20372b7b9b5f16a7d88aac4d544d4  [shntool]  bd1974-01-25__T-78__t11.wav
+986d186d57b4712d83c55e648299c5ba  [shntool]  bd1974-01-25__T-78__t12.wav
+dafde9d24095eedd490a1d830e376228  [shntool]  bd1974-01-25__T-78__t13.wav
+8c4a582e17c44fcbdde1bb74541063e9  [shntool]  bd1974-01-25__T-78__t14.wav
+b1858a5c0dc734ee5878635c52cf1387  [shntool]  bd1974-01-25__T-78__t15.wav
+906df0093d092f8083250ac13b961930  [shntool]  bd1974-01-25__T-78__t16.wav
+bf23533949035e6023b9f13cd3d3a9f2  [shntool]  bd1974-01-25__T-78__t17.wav
+3c633264f9f801bfc52ae8a5e33e47a2  [shntool]  bd1974-01-25__T-78__t18.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-25-Untangled-T-78.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:48.51       40339310 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t01.wav
+     2:53.63       30665534 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t02.wav
+     5:15.12       55594382 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t03.wav
+     3:35.20       37973198 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t04.wav
+     3:41.72       39153902 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t05.wav
+     3:34.35       37832078 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t06.wav
+     3:03.33       32358974 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t07.wav
+     3:43.34       39417326 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t08.wav
+     4:11.71       44443550 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t09.wav
+     3:10.13       33546734 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t10.wav
+     3:36.37       38189582 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t11.wav
+     4:12.60       44594078 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t12.wav
+     5:16.27       55806062 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t13.wav
+     5:53.20       62316398 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t14.wav
+     4:45.41       50370590 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t15.wav
+     4:35.61       48653630 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t16.wav
+     5:40.50       60093758 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t17.wav
+     4:16.33       45236174 B   ---   -e   -----    wav  1.0000  bd1974-01-25__T-78__t18.wav
+    75:15.58      796585260 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

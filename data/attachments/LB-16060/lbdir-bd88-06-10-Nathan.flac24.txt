@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd88-06-10-Nathan.flac24
+===================
+===================
+===================
+7bb42fb5d98f523828e35fb86ad75d42 *01 Intro - Subterranean Homesick Blues.flac
+410b7220a2773ae6644b694c0af33e23 *02. Joey (Bob Dylan & Jacques Levy).flac
+f2487c6ce91781a7a4ada02116afd387 *03. Absolutely Sweet Marie.flac
+094c481582203de5310b5b5252ee8cc3 *04. Watching The River Flow.flac
+88ef4be25c41bf0edb126bb1c81fe08c *05. Tangled Up In Blue.flac
+44c9f15b744f3bf0d3fa5a760b640a9d *06. Masters Of War.flac
+8bc53e7e517776bb64270ed2464ce021 *07. San Francisco Bay Blues (Jesse Fuller).flac
+22fb88833a557b983b95610fc8fdabfa *08. Boots Of Spanish Leather.flac
+5262dcb7b22a81bb70ada478b900f6f6 *09. Lakes Of Pontchartrain (Traditional).flac
+c50ca42fc1ede313459009be010297d0 *10. The Times They Are A-Changin'.flac
+2e12e1bf35bdc8a738dd2d7c3bbbf3d0 *11. It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+44e249952500287e195863f685d137fb *12. In The Garden.flac
+7fa9bc858a32221fd5c1c26921cdc99c *13. Gates Of Eden.flac
+3b1bdb22b1b9777355daac6e0431c346 *14. Like A Rolling Stone (cut at 6min50).flac
+217824243c9ae5186bbd9ec6a42c1fb7 *15 encore break.flac
+d3b59e201e9fbc26ab07e91153144ce1 *16. Rank Strangers To Me (A. Brumley).flac
+a91131b0a12f4ee44898cec434af794a *17. Everybody's Movin' (Glen Trout).flac
+2e432763d75e95919a6f268f81d8b637 *18. Maggie's Farm.flac
+c1ae0175094c4166803d65c9fa111f43 *info.txt
+f88e6f7d6cbba34e8a10d30ebe835ccd *md5.md5
+===================
+===================
+===================
+=== ffp for: bd88-06-10-Nathan.flac24
+===================
+===================
+===================
+01 Intro - Subterranean Homesick Blues.flac:38c62f69e59f751f02cd400a6a9f4695
+02. Joey (Bob Dylan & Jacques Levy).flac:6ec81a399ba98fb4f1bc7b3047eaf160
+03. Absolutely Sweet Marie.flac:20af8e25b0850f7250766cf6eb10abba
+04. Watching The River Flow.flac:378b75d2f0a33bb11e41d3bf18204f16
+05. Tangled Up In Blue.flac:7ff8d01ed3454c94615b989df15b7da7
+06. Masters Of War.flac:5a4d7a05f6da911fe870e9e697c5b9a0
+07. San Francisco Bay Blues (Jesse Fuller).flac:16277a4448fb1b1560605746f79afa5e
+08. Boots Of Spanish Leather.flac:d1bff4ff9d7f10ec8ce09b5fcbc48752
+09. Lakes Of Pontchartrain (Traditional).flac:52842f21d65652f944479f6fd038beeb
+10. The Times They Are A-Changin'.flac:243871ed0ee13fd05f7c5c25cb5f55a4
+11. It Takes A Lot To Laugh, It Takes A Train To Cry.flac:8a57317495e4129c0b3a2cd54039ac69
+12. In The Garden.flac:0a80aa462edc0f37d42dda93991606de
+13. Gates Of Eden.flac:bc1c91aec037f1bde0be84814b70770a
+14. Like A Rolling Stone (cut at 6min50).flac:1075aa97e346e03ca9c74eaac062bd6d
+15 encore break.flac:6fabf87240265cfe023bf8b28737fd34
+16. Rank Strangers To Me (A. Brumley).flac:fd023a1074e55ddc22248ecc64dabea4
+17. Everybody's Movin' (Glen Trout).flac:c1819769da520300d462055b6f35eeae
+18. Maggie's Farm.flac:36edc77b483d177f65e22500e776c5b4
+===================
+===================
+===================
+=== shntool len for: bd88-06-10-Nathan.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.029      74888300 B   cxx   --   ---xx   flac  0.6895  01 Intro - Subterranean Homesick Blues.flac
+     9:00.665     155711576 B   cxx   --   ---xx   flac  0.6880  02. Joey (Bob Dylan & Jacques Levy).flac
+     5:33.102      95933378 B   cxx   --   ---xx   flac  0.6897  03. Absolutely Sweet Marie.flac
+     3:59.107      68862998 B   cxx   --   ---xx   flac  0.6864  04. Watching The River Flow.flac
+     7:23.211     127644776 B   cxx   --   ---xx   flac  0.6857  05. Tangled Up In Blue.flac
+     4:54.162      84718700 B   cxx   --   ---xx   flac  0.6893  06. Masters Of War.flac
+     4:35.284      79281884 B   cxx   --   ---xx   flac  0.6615  07. San Francisco Bay Blues (Jesse Fuller).flac
+     5:06.376      88236242 B   cxx   --   ---xx   flac  0.6528  08. Boots Of Spanish Leather.flac
+     6:17.905     108836618 B   cxx   --   ---xx   flac  0.6491  09. Lakes Of Pontchartrain (Traditional).flac
+     5:07.479      88553894 B   cxx   --   ---xx   flac  0.6578  10. The Times They Are A-Changin'.flac
+     5:13.957      90419660 B   cxx   --   ---xx   flac  0.6865  11. It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+     5:39.557      97792460 B   cxx   --   ---xx   flac  0.6865  12. In The Garden.flac
+     5:50.958     101075948 B   cxx   --   ---xx   flac  0.6833  13. Gates Of Eden.flac
+     7:03.996     122111000 B   cxx   --   ---xx   flac  0.6927  14. Like A Rolling Stone (cut at 6min50).flac
+     3:40.241      63429530 B   cxx   --   ---xx   flac  0.6647  15 encore break.flac
+     4:20.911      75142418 B   cxx   --   ---xx   flac  0.6559  16. Rank Strangers To Me (A. Brumley).flac
+     3:52.559      66977168 B   cxx   --   ---xx   flac  0.6851  17. Everybody's Movin' (Glen Trout).flac
+     4:49.404      83348306 B   cxx   --   ---xx   flac  0.6906  18. Maggie's Farm.flac
+    96:48.903    1672964856 B                            0.6783  (18 files)
+===================
+===================
+===================

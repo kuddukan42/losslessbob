@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-15-LTB.flacf 
+=================== 
+=================== 
+=================== 
+612b1a9492b03955551c848ac110bbcb  bd-19950315-Aschaffenburg.ffp
+a7347b8307bacd70e3b278cbed1d3f6d  bd-19950315-Aschaffenburg.md5
+e3ab2efb0f14fbb051835d15206c0008  bd1995-03-15-d1t01.flac
+5fba0000a551655036fbbda79ae84d54  bd1995-03-15-d1t02.flac
+2222f3f6d881c5339a421ebd1fa3ba0e  bd1995-03-15-d1t03.flac
+4e40ee1a06672edb962d2961eedf0353  bd1995-03-15-d1t04.flac
+7be2665a719ea18a122b752279378539  bd1995-03-15-d1t05.flac
+145184bbbc0975c3bae74efab43581bc  bd1995-03-15-d1t06.flac
+a316f1db2b3ea6238f878453cf0bd17d  bd1995-03-15-d1t07.flac
+27daba3223722b31350cb21a889e7b6b  bd1995-03-15-d1t08.flac
+10a17ad8e490ab66100a5b7eddf81061  bd1995-03-15-d1t09.flac
+1722602cfae6ae9b9862b90fcdd748e1  bd1995-03-15-d1t10.flac
+382cb21d64ca59576148facb5b86d13e  bd1995-03-15-d2t01.flac
+e355ffc9f54939e0e56d28cbaa787284  bd1995-03-15-d2t02.flac
+8b325fa59962124a81b1a9f689ccd5b2  bd1995-03-15-d2t03.flac
+6abf73ae98b76ca94cb3d656d4d55a75  bd1995-03-15-d2t04.flac
+0bb2eac27ca0684ef2afa01a80233d93  bd1995-03-15-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-15-LTB.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-03-15-d1t01.flac:e292720fb1f170b85d7c7d5765c91020
+bd1995-03-15-d1t02.flac:e38f4f37fe13237f240cd84838a5e58b
+bd1995-03-15-d1t03.flac:9b252d0b8202c91a9054f879c1b2b1d9
+bd1995-03-15-d1t04.flac:9efc4eba3af4823d216eef4d19c08f60
+bd1995-03-15-d1t05.flac:497fe09dafa176c5528d82c7eb97b1db
+bd1995-03-15-d1t06.flac:71dffd94514f0d5170bb31a74a1fd866
+bd1995-03-15-d1t07.flac:c90bfdb8ce94545a09810415413749bf
+bd1995-03-15-d1t08.flac:7f76c6bfdd279e4b5990edb426627c65
+bd1995-03-15-d1t09.flac:9a2ad45d8e412aab1c64ed88d2487e7c
+bd1995-03-15-d1t10.flac:0e842cc1831f8a5cb77bacbe450d5a61
+bd1995-03-15-d2t01.flac:1e5fb61b19af4a9fd2e82daf894c28dc
+bd1995-03-15-d2t02.flac:4fee3ada37ef9d2f0dd7e76a3182366e
+bd1995-03-15-d2t03.flac:6b9a26d9ed6b94691d64c9aa9fce54e5
+bd1995-03-15-d2t04.flac:00dc834743ee64d05e8b4aa655ef688a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-15-LTB.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:45.57        8072108 B   ---   --   ---xx   flac  0.4838  bd1995-03-15-d1t01.flac
+     5:00.27       52983548 B   ---   --   ---xx   flac  0.6836  bd1995-03-15-d1t02.flac
+     5:25.03       57337100 B   ---   --   ---xx   flac  0.5976  bd1995-03-15-d1t03.flac
+     5:44.46       60789836 B   ---   --   ---xx   flac  0.6435  bd1995-03-15-d1t04.flac
+     5:48.19       61431932 B   ---   --   ---xx   flac  0.5886  bd1995-03-15-d1t05.flac
+     7:32.16       79770476 B   ---   --   ---xx   flac  0.6107  bd1995-03-15-d1t06.flac
+     6:01.25       63739244 B   ---   --   ---xx   flac  0.6309  bd1995-03-15-d1t07.flac
+     6:41.74       70910492 B   ---   --   ---xx   flac  0.4766  bd1995-03-15-d1t08.flac
+     4:56.11       52240316 B   ---   --   ---xx   flac  0.4889  bd1995-03-15-d1t09.flac
+     8:15.06       87332156 B   ---   --   ---xx   flac  0.4678  bd1995-03-15-d1t10.flac
+     9:16.13       98109020 B   ---   --   ---xx   flac  0.6424  bd1995-03-15-d2t01.flac
+     6:19.59       66994412 B   ---   --   ---xx   flac  0.5578  bd1995-03-15-d2t02.flac
+    11:40.22      123531788 B   ---   --   ---xx   flac  0.6231  bd1995-03-15-d2t03.flac
+     7:25.55       78627404 B   ---   --   ---xx   flac  0.6153  bd1995-03-15-d2t04.flac
+    90:52.58      961869832 B                            0.5869  (14 files)
+=================== 
+=================== 
+=================== 

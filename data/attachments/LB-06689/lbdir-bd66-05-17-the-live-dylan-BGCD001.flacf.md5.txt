@@ -1,0 +1,8 @@
+58046b4b38dc7136512c038247b257f1  bd66-05-17-the-live-dylan-BGCD001-t01.flac
+2c6f988ef60515ea3122e5db76e9f422  bd66-05-17-the-live-dylan-BGCD001-t02.flac
+cc9fc970bbfbe314df9354278e3cb2d4  bd66-05-17-the-live-dylan-BGCD001-t03.flac
+27bc6cf6abf3a5706515ef2bbb6fc95a  bd66-05-17-the-live-dylan-BGCD001-t04.flac
+23f9a5c14e837aa0f2f9cad60dfb3a21  bd66-05-17-the-live-dylan-BGCD001-t05.flac
+6e2eb7b6f666d62e792680a25ff17998  bd66-05-17-the-live-dylan-BGCD001-t06.flac
+81b24f5236124d69500908c3cb270237  bd66-05-17-the-live-dylan-BGCD001-t07.flac
+58cd2f555ec567921be2c20702d2ed4b  bd66-05-17-the-live-dylan-BGCD001-t08.flac

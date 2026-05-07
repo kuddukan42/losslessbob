@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-21-b.flacf 
+=================== 
+=================== 
+=================== 
+3d9e5e1c7c4ed5333a0cb8a492c758ce  CD1\01 Wait for the light to shine.flac
+e281b4981930013e8da5c403a154bcf5  CD1\02 Don't think twice, it's all right.flac
+b9125232a8991f82e296e9d4533ff84c  CD1\03 Visions of Johanna.flac
+c2d6472747ffdeba2ea01ab10089c2f6  CD1\04 Searching for a soldier's grave.flac
+2b3ba551f1d85fbb7cbb055d15e78529  CD1\05 Tweedle Dee & Tweedle Dum.flac
+d50fbdbf8aa4e17286a1cb1ffb227367  CD1\06 If not for you.flac
+86350cc722a4e61c9aed78218ff659c0  CD1\07 Tonight I'll be staying here with you.flac
+dbee9f5f31c57e7f9ad4db40aefb0f01  CD1\08 High water (for Charley Patton).flac
+51a8ec53c1be94af13f9ec0d911cfe41  CD1\09 Mama, you been on my mind.flac
+a7e26ee048e06d4300af58777363a778  CD1\10 Tangled up in blue.flac
+910f5b9ad8d06f03c4833972b50eafae  CD1\11 Masters of war.flac
+8e778675f248e5473425eb673c7e130e  CD1\FLAC CD1.md5
+f90453ab7b67a9e9363f63343487cda2  CD2\12 Summer days.flac
+74fbb7606e9d4540d9c07e72bcce1e48  CD2\13 Sugar baby.flac
+bc7bf453218ee0ada45659bf785adac0  CD2\14 The wicked messenger.flac
+e0a8d7c1375c4d215239dfeed1b248f0  CD2\15 Everything is broken.flac
+1e9800176d4176fa85ce6ae13d61c151  CD2\16 Country Pie.flac
+88a02ad57c0459e1c71cb66ca19ad2e2  CD2\17 Like a rolling stone.flac
+0420d41825e8d5b357cc59cf310e0922  CD2\18 I shall be released.flac
+ed9f7af0d3c9c8333ed91a32b26aa09f  CD2\19 Honest with me.flac
+1f8a91cf8bcc1897db02855e9852e3dd  CD2\20 Blowin' in the wind.flac
+6c8a4a9db1f8d6873caa2cc99cd73cfe  CD2\FLAC CD2.md5
+74e9d7a6e230d79a1859b223e66dc477  Info\2001-10-21 Denver Coliseum, Denver, Colorado, USA [uT].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-21-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Wait for the light to shine.flac:cd8e115cfdcea536e85d908920497cb6
+02 Don't think twice, it's all right.flac:0843b6cd7083a0e530df965e1a8b7cf8
+03 Visions of Johanna.flac:1c5f6c14bc30c3cef2abde6ca467ff41
+04 Searching for a soldier's grave.flac:b69fc11aa3eef1bea79c9719c3bc0afd
+05 Tweedle Dee & Tweedle Dum.flac:a115465b1357ab2ef202e0f9e604d575
+06 If not for you.flac:589f836fc447817c961f296bad9f3611
+07 Tonight I'll be staying here with you.flac:a7f9da3098f01d5febc34447046bff18
+08 High water (for Charley Patton).flac:f64076634f9a2ce4bf82a1d7be6e19c4
+09 Mama, you been on my mind.flac:5148130012c17e517a6095e8e4e92afd
+10 Tangled up in blue.flac:d05c8073d87b3ceb7d7f832e017ee147
+11 Masters of war.flac:b8a3e86ece535c2b728d18c0d814f530
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-21-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+12 Summer days.flac:0a59b78b4ebed8e4600d24b9eee5e13a
+13 Sugar baby.flac:32da377eeb1e0ebaf083afc10b789284
+14 The wicked messenger.flac:db6592a7186359e5b27a99dbe43864bd
+15 Everything is broken.flac:e8a17c2459626f66e91c249ce0a5969d
+16 Country Pie.flac:de48f0fad4e80c5fec59a6edf28027ce
+17 Like a rolling stone.flac:3e2dba2315985fec46755778bd083d2c
+18 I shall be released.flac:105ef9bdc8db344c3c8ff539f9720d76
+19 Honest with me.flac:01dff1f58ce1449d9ce12974ba2ae2a6
+20 Blowin' in the wind.flac:7e9007123b205b4630c7b08c0ee6a5cf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-21-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:55.45       30975884 B   ---   --   ---xx   flac  0.5163  01 Wait for the light to shine.flac
+     6:36.05       69866204 B   ---   --   ---xx   flac  0.4765  02 Don't think twice, it's all right.flac
+     9:06.35       96396764 B   ---   --   ---xx   flac  0.4740  03 Visions of Johanna.flac
+     3:16.20       34621484 B   ---   --   ---xx   flac  0.4296  04 Searching for a soldier's grave.flac
+     4:55.70       52202684 B   ---   --   ---xx   flac  0.4483  05 Tweedle Dee & Tweedle Dum.flac
+     4:51.25       51391244 B   ---   --   ---xx   flac  0.4735  06 If not for you.flac
+     5:36.15       59305724 B   ---   --   ---xx   flac  0.4477  07 Tonight I'll be staying here with you.flac
+     5:46.25       61093244 B   ---   --   ---xx   flac  0.4650  08 High water (for Charley Patton).flac
+     6:06.15       64597724 B   ---   --   ---xx   flac  0.3956  09 Mama, you been on my mind.flac
+     8:01.45       84954284 B   ---   --   ---xx   flac  0.5114  10 Tangled up in blue.flac
+     5:05.60       53943164 B   ---   --   ---xx   flac  0.4406  11 Masters of war.flac
+    62:17.60      659348404 B                            0.4631  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-21-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.10       61939964 B   ---   --   ---xx   flac  0.4872  12 Summer days.flac
+     7:46.43       82303580 B   ---   --   ---xx   flac  0.3229  13 Sugar baby.flac
+     5:51.25       61975244 B   ---   --   ---xx   flac  0.5209  14 The wicked messenger.flac
+     9:31.00      100724444 B   ---   --   ---xx   flac  0.4656  15 Everything is broken.flac
+     3:16.55       34703804 B   ---   --   ---xx   flac  0.4911  16 Country Pie.flac
+     7:31.40       79650524 B   ---   --   ---xx   flac  0.4868  17 Like a rolling stone.flac
+     5:01.15       53131724 B   ---   --   ---xx   flac  0.4563  18 I shall be released.flac
+     7:06.30       75217004 B   ---   --   ---xx   flac  0.5133  19 Honest with me.flac
+     5:48.26       61448396 B   ---   --   ---xx   flac  0.4673  20 Blowin' in the wind.flac
+    57:44.19      611094684 B                            0.4636  (9 files)
+=================== 
+=================== 
+=================== 

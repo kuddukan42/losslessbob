@@ -1,0 +1,63 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-05-08-from-broadway-to-the-milkyway.flacf 
+=================== 
+=================== 
+=================== 
+468ffd6f564094946ff561fbc81075db  bd92-05-08-from-broadway-to-the-milkyway-d1t01.flac
+1169b9bcb4bd921ef35646e45b832514  bd92-05-08-from-broadway-to-the-milkyway-d1t02.flac
+be325ade3480fe68de4fd906051516e3  bd92-05-08-from-broadway-to-the-milkyway-d1t03.flac
+67c7a4c6dc22e8fb9d492010c6d82300  bd92-05-08-from-broadway-to-the-milkyway-d1t04.flac
+f1024562da986a81521de62de2223038  bd92-05-08-from-broadway-to-the-milkyway-d1t05.flac
+3b17d08cfc0021148f76760252af72f3  bd92-05-08-from-broadway-to-the-milkyway-d1t06.flac
+6a9ebbd02e35e48ead3bba27c147553c  bd92-05-08-from-broadway-to-the-milkyway-d1t07.flac
+2847be0a11d10e47f511225c4545e4ab  bd92-05-08-from-broadway-to-the-milkyway-d1t08.flac
+5deec2db4b2a2e968fe34033fe983e59  bd92-05-08-from-broadway-to-the-milkyway-d1t09.flac
+8949f202f0bdcdbf001430f2f69974af  bd92-05-08-from-broadway-to-the-milkyway-d1t10.flac
+605feb1567707ae88959d58bf352a847  bd92-05-08-from-broadway-to-the-milkyway-d1t11.flac
+666fdd3821052d8f074f4ea99f9f9ff8  bd92-05-08-from-broadway-to-the-milkyway-d1t12.flac
+e36aac06256cbc887a83fc146f662f38  bd92-05-08-from-broadway-to-the-milkyway.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-05-08-from-broadway-to-the-milkyway.flacf 
+=================== 
+=================== 
+=================== 
+bd92-05-08-from-broadway-to-the-milkyway-d1t01.flac:616bfecedfee9039b04d3229bcb27b13
+bd92-05-08-from-broadway-to-the-milkyway-d1t02.flac:c500afbd78541aa902e85004478cfcf9
+bd92-05-08-from-broadway-to-the-milkyway-d1t03.flac:02c3c6b7f5f96fa3d83efb2a05c57d1a
+bd92-05-08-from-broadway-to-the-milkyway-d1t04.flac:fc3c2a8ae9e2e349403438327e63c45f
+bd92-05-08-from-broadway-to-the-milkyway-d1t05.flac:7b12162bb98461bf5a756647379c56e8
+bd92-05-08-from-broadway-to-the-milkyway-d1t06.flac:2506acc494448d1eb0a4418cb4e29afc
+bd92-05-08-from-broadway-to-the-milkyway-d1t07.flac:abc5ebc6f02e5aa2c603d0d2abb7c840
+bd92-05-08-from-broadway-to-the-milkyway-d1t08.flac:ada52e8698f380437c7214379b1dfcf6
+bd92-05-08-from-broadway-to-the-milkyway-d1t09.flac:4377461afca117d54d741e57ab30779c
+bd92-05-08-from-broadway-to-the-milkyway-d1t10.flac:23c22045be30eea34409f1d391241b9d
+bd92-05-08-from-broadway-to-the-milkyway-d1t11.flac:2b091eb0433470fe6ea54c406a22d286
+bd92-05-08-from-broadway-to-the-milkyway-d1t12.flac:127301d6bc1395c7fd0b0fa8d627897f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-05-08-from-broadway-to-the-milkyway.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:55.65       41606924 B   ---   --   ---xx   flac  0.5119  bd92-05-08-from-broadway-to-the-milkyway-d1t01.flac
+     4:19.58       45824060 B   ---   --   ---xx   flac  0.5818  bd92-05-08-from-broadway-to-the-milkyway-d1t02.flac
+     7:22.07       77985308 B   ---   --   ---xx   flac  0.5281  bd92-05-08-from-broadway-to-the-milkyway-d1t03.flac
+     3:00.00       31752044 B   ---   --   ---xx   flac  0.5635  bd92-05-08-from-broadway-to-the-milkyway-d1t04.flac
+     9:08.28       96733100 B   ---   --   ---xx   flac  0.6104  bd92-05-08-from-broadway-to-the-milkyway-d1t05.flac
+     3:27.00       36514844 B   ---   --   ---xx   flac  0.4529  bd92-05-08-from-broadway-to-the-milkyway-d1t06.flac
+     3:56.25       41689244 B   ---   --   ---xx   flac  0.4261  bd92-05-08-from-broadway-to-the-milkyway-d1t07.flac
+     7:24.70       78486284 B   ---   --   ---xx   flac  0.5204  bd92-05-08-from-broadway-to-the-milkyway-d1t08.flac
+     5:28.07       57875708 B   ---   --   ---xx   flac  0.5259  bd92-05-08-from-broadway-to-the-milkyway-d1t09.flac
+     9:40.13      102342620 B   ---   --   ---xx   flac  0.5750  bd92-05-08-from-broadway-to-the-milkyway-d1t10.flac
+     6:18.00       66679244 B   ---   --   ---xx   flac  0.6931  bd92-05-08-from-broadway-to-the-milkyway-d1t11.flac
+     5:56.02       62803148 B   ---   --   ---xx   flac  0.5192  bd92-05-08-from-broadway-to-the-milkyway-d1t12.flac
+    69:56.50      740292528 B                            0.5529  (12 files)
+=================== 
+=================== 
+=================== 

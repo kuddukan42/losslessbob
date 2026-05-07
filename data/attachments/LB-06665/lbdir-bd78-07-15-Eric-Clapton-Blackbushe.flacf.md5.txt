@@ -1,0 +1,21 @@
+083377a8288262ad652a1e7c350f2233  Artwork\EC - 1978-07-15blackbushe-back-inside.jpg
+2bf9c53bf765af08766d8f3fb2e412cf  Artwork\EC - 1978-07-15blackbushe-back.jpg
+7a3e7bf7945332bf89f2ed2e9e725c38  Artwork\EC - 1978-07-15blackbushe-front-inside.jpg
+179e21a17e2e085efadf9bec55d3fa4f  Artwork\EC - 1978-07-15blackbushe-front.jpg
+0d5cd4633353e9765f1ae97b75f9d5e2  CD1\101-The Core.flac
+78fb2f27f98aa32e1b8a8954ec52140c  CD1\102-Worried Life Blues.flac
+2ea2589f3945ddd46f222a0770abc291  CD1\103-Wonderful Tonight.flac
+3304a4f9c935a15e22234880a1c29011  CD1\104-Lay Down Sally.flac
+3ae96b5b3021ba7e8e01d6b188750878  CD1\105-Rodeo Man.flac
+9d61ef8166849bbffca10c1515e650f0  CD1\106-Fool's Paradise.flac
+35a097479e90dd1a27335e882cb1d949  CD1\107-Cocaine.flac
+b04a97edad9f767cd11b248ebde3e1d0  CD1\108-Double Trouble.flac
+7e3a970af3a270484623ec2f2c79910e  CD2\201-Nobody Knows You When You're Down And Out.flac
+d580aa7deac16e5c604f7334eaa1b9e3  CD2\202-Badge.flac
+56d88b3bb0b9e3aed3986ec697ea9c79  CD2\203-Knockin' On Heaven's Door.flac
+8259cfdadb4a4526643a46935c3c4b3a  CD2\204-Key To The Highway.flac
+177290a3db069163c75e364a8ed1360a  CD2\205-Layla.flac
+9f624d5ecb69831da4d1e5d7e3b5e42a  CD2\206-Bottle Of Red Wine.flac
+5672929a14ba8a0c05700299b450227a  CD2\207-Forever Young with Dylan.flac
+b4da85a8ea552a059362cd4746fdf9e4  EC - Blackbushe July 15, 1978_fp.txt
+4bfe1729d241e2aad4284708a8cc202c  EC - Blackbushe July 15, 1978_info.txt

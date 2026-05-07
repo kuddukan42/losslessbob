@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-21-hg-munich.flacf 
+=================== 
+=================== 
+=================== 
+11015a75e9cdf049d00cbad00339c354  bd-1991-06-21-d1 (Track 01).flac
+ba6b335f8d9de37a247fb3a8f4eb8032  bd-1991-06-21-d1 (Track 02).flac
+8d8da2d5d23ae99580173c66188563e5  bd-1991-06-21-d1 (Track 03).flac
+a6dd585e84d6fa4d861525041ac2732a  bd-1991-06-21-d1 (Track 04).flac
+232f18e9a59e138da66866248697fccf  bd-1991-06-21-d1 (Track 05).flac
+d7a12a24f3cfda0ef2742b07d778d699  bd-1991-06-21-d1 (Track 06).flac
+19df7f711f73b3a9d7b4ea3e7db1d7e2  bd-1991-06-21-d1 (Track 07).flac
+4df815ee5064371cd57f44debfb5f793  bd-1991-06-21-d1 (Track 08).flac
+c31f1647349aea0e37cab5f8890738be  bd-1991-06-21-d1 (Track 09).flac
+65697bb9c608e661681d3b85ee04e192  bd-1991-06-21-d1 (Track 10).flac
+df8adbf31f2a980052802c7248783194  bd-1991-06-21-d1 (Track 11).flac
+8c6d46a31d672d01959f0052658fffc2  bd-1991-06-21-d1 (Track 12).flac
+12fb26187e9a906fb7a94d3abf58f9ea  bd-1991-06-21-d2 (Track 01).flac
+903692e7a528a272e4824e6d9c7c851c  bd-1991-06-21-d2 (Track 02).flac
+0a62aa7c99ba0f8cc2c7aacc39cbce4c  bd-1991-06-21-d2 (Track 03).flac
+cd0f09c62bc3d1a37f6867695581a957  bd-1991-06-21-d2 (Track 04).flac
+b8e6e2039a9d06f4ffff2aab725ea58f  bd-1991-06-21-d2 (Track 05).flac
+cca7f9a0460bcad04e8bc1b2bbe0cea9  bd-1991-06-21-d2 (Track 06).flac
+804aeabe1a112eb9b1e08e9c1a1dbf1f  bd91-06-21-hg.txt
+a0b59a88a45647651bb86fbc864ef027  info.txt
+d41d8cd98f00b204e9800998ecf8427e  md5 file created by aaadbell.txt
+322fbf3f22fdf7c6e54df2414b43d3e7  noname.md5
+60e1022064d326e411d1b06f9b40ef9a  README.txt
+e96f956eb200629bdf836b992f35df75  shntool-info-OK.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-21-hg-munich.flacf 
+=================== 
+=================== 
+=================== 
+bd-1991-06-21-d1 (Track 01).flac:8eb817b5993245dd9679894564d3a6f1
+bd-1991-06-21-d1 (Track 02).flac:2a37868c410429b4fb8db035efbc9a28
+bd-1991-06-21-d1 (Track 03).flac:7ba07b9666808665777e1e149b14280c
+bd-1991-06-21-d1 (Track 04).flac:44da2b60a6971411aac09363a7349b64
+bd-1991-06-21-d1 (Track 05).flac:1c5c51671d5751e40a86f1f0ce053227
+bd-1991-06-21-d1 (Track 06).flac:95a7d325c69d1da29779a81ed08f3078
+bd-1991-06-21-d1 (Track 07).flac:798c07a3af03b30f9b9ff230a40edf38
+bd-1991-06-21-d1 (Track 08).flac:e68b0ccc6043a1c2b3b0aa1c251c34cc
+bd-1991-06-21-d1 (Track 09).flac:d6cd5d4e1b501e716fdb9436c1ec655c
+bd-1991-06-21-d1 (Track 10).flac:638bb1ea44a10266447247de02eee169
+bd-1991-06-21-d1 (Track 11).flac:22c405f0ad6754e8c721615cc5c658f7
+bd-1991-06-21-d1 (Track 12).flac:8a0c4caf0af05670936d15d058ff8cd5
+bd-1991-06-21-d2 (Track 01).flac:ddb54cac1980d17f852071b51beadc44
+bd-1991-06-21-d2 (Track 02).flac:fad1478b6f860dbe84739d40c2120e7b
+bd-1991-06-21-d2 (Track 03).flac:ef5cbd0e777b01906f632d384f772740
+bd-1991-06-21-d2 (Track 04).flac:161b2c74e3c3045170e08261deb9ee46
+bd-1991-06-21-d2 (Track 05).flac:0da76e2bac864d5c55e20c2519ebe783
+bd-1991-06-21-d2 (Track 06).flac:3a4d5ccfdf29a36f0376e4c9d1c32756
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-21-hg-munich.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.14       59479772 B   ---   --   ---xx   flac  0.6580  bd-1991-06-21-d1 (Track 01).flac
+     4:23.17       46433228 B   ---   --   ---xx   flac  0.6837  bd-1991-06-21-d1 (Track 02).flac
+     5:38.72       59792588 B   ---   --   ---xx   flac  0.6807  bd-1991-06-21-d1 (Track 03).flac
+     4:54.55       51991004 B   ---   --   ---xx   flac  0.6981  bd-1991-06-21-d1 (Track 04).flac
+     7:02.36       74525516 B   ---   --   ---xx   flac  0.7007  bd-1991-06-21-d1 (Track 05).flac
+     3:00.68       31911980 B   ---   --   ---xx   flac  0.7179  bd-1991-06-21-d1 (Track 06).flac
+     4:09.40       44017724 B   ---   --   ---xx   flac  0.6626  bd-1991-06-21-d1 (Track 07).flac
+     5:08.10       54354764 B   ---   --   ---xx   flac  0.6662  bd-1991-06-21-d1 (Track 08).flac
+     4:31.36       47889116 B   ---   --   ---xx   flac  0.6043  bd-1991-06-21-d1 (Track 09).flac
+     5:05.17       53842028 B   ---   --   ---xx   flac  0.6770  bd-1991-06-21-d1 (Track 10).flac
+     8:42.72       92250188 B   ---   --   ---xx   flac  0.6958  bd-1991-06-21-d1 (Track 11).flac
+     7:35.71       80429036 B   ---   --   ---xx   flac  0.6831  bd-1991-06-21-d1 (Track 12).flac
+     6:04.12       64237868 B   ---   --   ---xx   flac  0.6476  bd-1991-06-21-d2 (Track 01).flac
+     3:44.11       39539516 B   ---   --   ---xx   flac  0.7245  bd-1991-06-21-d2 (Track 02).flac
+     5:04.72       53794988 B   ---   --   ---xx   flac  0.6905  bd-1991-06-21-d2 (Track 03).flac
+     7:32.00       79732844 B   ---   --   ---xx   flac  0.7001  bd-1991-06-21-d2 (Track 04).flac
+     5:16.68       55902380 B   ---   --   ---xx   flac  0.6401  bd-1991-06-21-d2 (Track 05).flac
+     5:30.57       58346108 B   ---   --   ---xx   flac  0.6864  bd-1991-06-21-d2 (Track 06).flac
+    99:03.53     1048470648 B                            0.6790  (18 files)
+=================== 
+=================== 
+=================== 

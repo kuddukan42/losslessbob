@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-09-06-ss6p-pdub.flac16 
+=================== 
+=================== 
+=================== 
+e65c3eb7c86c82f59a8f0e5ccef5e9da  bd1992-09-06.info.txt
+6d8fd55074981b4af49407e103c8fa40  bd1992-09-06.ss6p.pdub.sbeok.flac16 Kansas City d1.shntool.txt
+f41741036dea60457b138cb006b5cbec  bd1992-09-06.ss6p.pdub.sbeok.flac16 Kansas City d2.shntool.txt
+81a071b9de642f610648b259ffc1ab0b  bd1992-09-06.ss6p.pdub.sbeok.flac16 Kansas City.ffp
+afd19301739e48651430826105a897d2  bd1992-09-06.ss6p.pdub.sbeok.flac16 Kansas City.md5
+5b2904fba4812a07a4fe91d48c70c66c  bd1992-09-06.ss6p.pdub.sbeok.flac16 Kansas City.st5
+99d35b5191cf09cddad362308eaaf19f  bd1992-09-06d1t01.flac
+15c5baca1a8ff5fa3eaddff4b7d336f2  bd1992-09-06d1t02.flac
+337d2fa24a0e7f734d5efe8e613e8b1a  bd1992-09-06d1t03.flac
+c61ec2661a40c23cedcde5056504fb6c  bd1992-09-06d1t03.PNG
+8c3c11d3d7d2fcdaef78c7d1d72625cd  bd1992-09-06d1t04.flac
+cb622f671b23841d00edfe3855e90390  bd1992-09-06d1t05.flac
+423051ce48d9b84097201d39988c4bbd  bd1992-09-06d1t06.flac
+2e6e39433914da00a1311c6f1421a4fb  bd1992-09-06d1t07.flac
+1ba291663586bff15d72f322d457ebe1  bd1992-09-06d1t08.flac
+00d3c54571e9d7823a11ae1d5e0fc2d6  bd1992-09-06d1t09.flac
+b40d35331665b0a0b63d8f8573725019  bd1992-09-06d2t01.flac
+b6584e4460f93acfe4ef9578dbdd995f  bd1992-09-06d2t02.flac
+b1f7ab8716c6a6053063bc39d82b2312  bd1992-09-06d2t03.flac
+86cd334de350cc755a9fe4243c4eb161  bd1992-09-06d2t04.flac
+c7cb1d76eb50375e567ec4e26bd392f9  bd1992-09-06d2t05.flac
+3b2a9dea2690de799ace8c2e13f3b720  bd1992-09-06d2t06.flac
+8d0a41ce5951b2c6104df9d870827c8d  bd1992-09-06d2t07.flac
+4bdecab4714844a1d2ab3538eebf5741  bd1992-09-06d2t08.flac
+8da72f8cbe6d5466f5457e43f2824912  bd1992-09-06d2t09.flac
+87dcfb6f3aff696816b91e2aa2a836eb  bd1992-09-06d2t09.PNG
+877dbd0db138523bdd5d538a0764a3c7  bd1992-09-06d2t10.flac
+39e4d2a7f540ba6356afae51035d71e1  bd92-09-06-ss6p-pdub-LB-4495.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-09-06-ss6p-pdub.flac16 
+=================== 
+=================== 
+=================== 
+bd1992-09-06d1t01.flac:52b861d9d0a9d3e1eff7e519602278a5
+bd1992-09-06d1t02.flac:18d7696d4307fdf16f7c8ed153a804d4
+bd1992-09-06d1t03.flac:493d36c1e817805e89f366cb7490d0d3
+bd1992-09-06d1t04.flac:29ee8a3ff8d3419e6d758704a961d45d
+bd1992-09-06d1t05.flac:28b23dd4a1dedb1c26155bad2b908884
+bd1992-09-06d1t06.flac:5ffa1eb6cb1a3a911e46ece00722a6e0
+bd1992-09-06d1t07.flac:e05d6781297d2d5126abb1571cbcdb11
+bd1992-09-06d1t08.flac:aee7fe7f691ddcd2cf054f6c821cdd9e
+bd1992-09-06d1t09.flac:4a34842efdd1c4fb97aa184064be46be
+bd1992-09-06d2t01.flac:ef63966d6e719bdc68f7d19e5e558fdc
+bd1992-09-06d2t02.flac:93a53efcb552ac9ca72aa0df494a3af6
+bd1992-09-06d2t03.flac:843d3bc5b477fd2b8e51496b7f7f2e5d
+bd1992-09-06d2t04.flac:e72584c58d24357a5badbddb49545e1a
+bd1992-09-06d2t05.flac:7b27526016a5e66f67155d95efc1dd99
+bd1992-09-06d2t06.flac:a0dfb60f1c5ee08d11fd20d91572fbf4
+bd1992-09-06d2t07.flac:ea246078b584a73d580ff57dc160587f
+bd1992-09-06d2t08.flac:8fe7581bfbe398e7fb45293944895b39
+bd1992-09-06d2t09.flac:86549490dbb6fc0862d6753b53609c6e
+bd1992-09-06d2t10.flac:7ff3aedc5e2555ae2fa9eeb99d05eb1a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-09-06-ss6p-pdub.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.69       50612732 B   ---   --   ---xx   flac  0.5897  bd1992-09-06d1t01.flac
+     5:28.53       57983900 B   ---   --   ---xx   flac  0.5708  bd1992-09-06d1t02.flac
+     4:59.28       52809500 B   ---   --   ---xx   flac  0.5733  bd1992-09-06d1t03.flac
+     6:15.60       66291164 B   ---   --   ---xx   flac  0.5778  bd1992-09-06d1t04.flac
+    10:23.58      110033660 B   ---   --   ---xx   flac  0.5931  bd1992-09-06d1t05.flac
+     6:19.60       66996764 B   ---   --   ---xx   flac  0.5818  bd1992-09-06d1t06.flac
+     9:11.43       97297580 B   ---   --   ---xx   flac  0.5513  bd1992-09-06d1t07.flac
+     4:06.34       43474412 B   ---   --   ---xx   flac  0.4718  bd1992-09-06d1t08.flac
+     4:52.58       51645260 B   ---   --   ---xx   flac  0.4746  bd1992-09-06d1t09.flac
+     5:23.70       57141884 B   ---   --   ---xx   flac  0.4771  bd1992-09-06d2t01.flac
+     7:28.68       79187180 B   ---   --   ---xx   flac  0.5237  bd1992-09-06d2t02.flac
+     6:01.29       63748652 B   ---   --   ---xx   flac  0.5594  bd1992-09-06d2t03.flac
+     7:11.26       76089596 B   ---   --   ---xx   flac  0.5717  bd1992-09-06d2t04.flac
+     8:16.60       87635564 B   ---   --   ---xx   flac  0.6008  bd1992-09-06d2t05.flac
+     7:31.37       79643468 B   ---   --   ---xx   flac  0.5881  bd1992-09-06d2t06.flac
+     1:18.44       13862732 B   ---   --   ---xx   flac  0.4421  bd1992-09-06d2t07.flac
+     7:16.69       77072732 B   ---   --   ---xx   flac  0.5190  bd1992-09-06d2t08.flac
+     6:09.47       65202188 B   ---   --   ---xx   flac  0.6006  bd1992-09-06d2t09.flac
+     7:41.61       81463916 B   ---   --   ---xx   flac  0.4699  bd1992-09-06d2t10.flac
+   120:45.74     1278192884 B                            0.5518  (19 files)
+=================== 
+=================== 
+=================== 

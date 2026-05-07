@@ -1,0 +1,99 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+Track No01.flac:4c1f3d7e343c5282ab7011dbca2d0116Track No02.flac:b82c811304657885143f1787c1f61b99Track No03.flac:7aee936d12c4c515f874ca467ceb1572Track No04.flac:f23b75931cc52546fd35cbf3b3cffe0eTrack No05.flac:0f2b548ff651a0abed5bc57c1916254eTrack No06.flac:1a24bec3f6679b2a1a59cf4f7aebc591Track No07.flac:584bada21f39a451f59c421022dcf4c0Track No08.flac:f7a37f88d8baf99d64fa9cea36175f9eTrack No01.flac:e20eadfbe4821b9ca841f0bf8ddf4603Track No02.flac:25b6e19a91fe0e203a6fdd2a24da333eTrack No03.flac:d47f0658476f97b8fcdfe324315b8959Track No04.flac:22eaf7bbfaa38561c951478b2191de7eTrack No05.flac:a7b5e87b7aa5e1c2a67ca47a117b98d2Track No06.flac:37a6066c0e161224c0f83506cf2ce0beTrack No07.flac:1dcdb449bef2e9213ed59dcb2b549452Track No08.flac:448a8e528242134bc1c6e38bec76a866
+===================
+===================
+===================
+=== Infos.txt
+===================
+===================
+===================
+Le Theatre Saint-Denis
+Montreal, Quebec, Canada
+ 
+25 April 1980
+ 
+1.Gotta Serve Somebody
+2.I Believe In You
+3.When You Gonna Wake Up
+4.Ain't Gonna Go To Hell For Anybody
+5.Cover Down, Break Through
+6.Precious Angel
+7.Man Gave Names To All The Animals
+8.Slow Train
+ 
+9.Do Right To Me Baby (Do Unto Others)
+10.Solid Rock
+11.Saving Grace
+12.Saved (Bob Dylan/Tim Drummond)
+13.What Can I Do For You?
+14.In The Garden
+
+15.Are You Ready?
+16.Pressing On
+
+Omitted:
+Mary Elizabeth Bridges:
+Walk Around Heaven All Day (Rev. James Cleveland/Cassietta George)
+Gwen Evans:
+Lord Don't Move That Mountain (Mahalia Jackson)
+ 
+ 
+Concert # 8 of the Third Gospel Tour. Gospel concert # 58. 1980 concert # 32.
+Concert # 8 with the Third Gospel Band: Bob Dylan (vocal & guitar), Fred Tackett (guitar), Spooner Oldham (keyboards), Tim Drummond (bass), Terry Young (keyboards), Jim Keltner (drums), Clydie King, Gwen Evans, Mary Elizabeth Bridges, Regina Havis, Mona Lisa Young (background vocals).
+ 
+13 Bob Dylan (harmonica).
+16 Bob Dylan (piano).
+ 
+BobTalk
+Well, good evening. (after I Believe In You)
+Thank you. I Aint Gonna Go To Hell For Anybody. Like a vision of whats coming. Anyway, in this liberated world I wanna offer you this song. (after Aint Gonna Go To Hell For Anybody)
+Thank you. Thank you. I wanna introduce a couple of young ladies to you. The first one, Mary Bridges. I wanna introduce you to Mary Bridges. Shes gonna sing a song called Walking Around Heaven All Day. Mary? Ladies and gentlemen, Mary Bridges.
+Mary Bridges. I wanna bring Gwen Evans out here. Gwen Evans gonna sing a song called Lord Dont Move This Mountain.
+Thank you. Hanging on to a solid rock. Jesus is that solid rock. There's a form of levity they call (..). They got a way of (..) all around. Make what's good seem bad and what's bad seem good. I saw a young girl the other day who just lives from orgasm to orgasm. I know that's a strange thing, but that's what she had to do because of these so called modern times. Well, she's not satisfied. (before Solid Rock)
+Thank you. Thanks very much. We're gonna play one more. I guess we have to leave town tomorrow, yeah? If you want us to come back you write us some letters. Write us some letters anyway. (after What Can I Do For You).
+On the keyboards tonight, give him a warm hand, Spooner Oldham. Come on, you can do better than that. Spooner Oldham. On the other set of keyboards, Terry Young. Lead guitar tonight, Fred Tackett. On the drums Jim Keltner. Playing bass guitar, Tim Drummond. On the far left, a legend in her own time, Clydie King. Standing next to her is Gwen Evans. Next to her is Mary Bridges. The young girl shaking the tambourine, that's Mona Lisa Young. Standing next to her is the young lady that told you about Jesus before, remember? You got to remember that now because you might never hear that name again. But you remember you heard it right here. From Nashville, Tennessee, Regina McCreary. (before Are You Ready?)
+ 
+Stereo audience recording, 90 minutes.
+
+from www.bjorner.com
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+23dd227f93611080922d54de373fccb0 *Track No01.flac
+3591ac8b668798d28bd689d201708b55 *Track No02.flac
+2c777ba32a72cf0607dd7ae63915abfd *Track No03.flac
+297c2df1d977d110ce36fbbf1f05ba03 *Track No04.flac
+891dd655d4ff976b4b60ae29bf093e95 *Track No05.flac
+ed42d9582e6ab2dfb2326c051c8775e7 *Track No06.flac
+e0899412c7a7c6c18343a4a3f202dcb1 *Track No07.flac
+8bf0eefe42d136f8bc537336203f744f *Track No08.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+f6dc2a38e28114c26948cd6c27cb4171 *Track No01.flac
+f36e7e39bde6fe3558f75ebb0c287e68 *Track No02.flac
+392887ed8a0015da69a8255c28c3715d *Track No03.flac
+fcfdac6fe30169dd566a228f925533ca *Track No04.flac
+c0895686bc68850a0f4145754668eee2 *Track No05.flac
+95eefccf564e1832f2db0b117ed8f300 *Track No06.flac
+6e8314519018c2deab2d670a011d2af6 *Track No07.flac
+bdb069d8719a359f2644cb6cb922f0ba *Track No08.flac
+
+===================
+===================
+===================

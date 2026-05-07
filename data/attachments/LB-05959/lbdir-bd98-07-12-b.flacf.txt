@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-07-12-b.flacf 
+=================== 
+=================== 
+=================== 
+73dfb4f3d572171f19c6d04bd7ba4177  120798-Out In The Green Festival-Zurich, Switzerland.md5
+cc2134c05e99b54a539da9e54bc3deb9  bd98-07-12-b-LB-5959.txt
+94b6cab4da4d9241220267ba9e87708d  D_1\Track 01.flac
+8c55dc4335750b66e222e4af4cd09cd1  D_1\Track 02.flac
+3f69bd1a9606f2422dd87e9c5537f962  D_1\Track 03.flac
+f2bdf3cb443ece8110bef95f1b373cb9  D_1\Track 04.flac
+6089de15e9ad4130415b4742c5dbf5fe  D_1\Track 05.flac
+95577ede126fe96835e892c7b46d2706  D_1\Track 06.flac
+ec34e5dcc1ab180d764a39d6af1095c8  D_1\Track 07.flac
+0138dab3a1c1cf473af6afa1629ac87d  D_2\Track 01.flac
+bce8bb784900c5c073dabdbcddf09169  D_2\Track 02.flac
+f804828e6064d03d53e0cce04a296b39  D_2\Track 03.flac
+373fe2e2743cc2f4025e5d32dba2eb46  D_2\Track 04.flac
+b2f6a03d0d3cef7f308cca8a643954ee  D_2\Track 05.flac
+c4d4885cae38624f923897f33b83dc17  D_2\Track 06.flac
+8cccc35c6e415ed5681d1e242bcf2382  D_2\Track 07.flac
+18105af8c3c373e454cfbf8f4b54671b  D_2\Track 08.flac
+48b662ccf0b9bf77eb8d69ca80192c5d  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-07-12-b.flacf\D_1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:cd2603ad170a0e096f89277b79bd6af0
+Track 02.flac:5df4f269c103b8b4b743e009cc38880a
+Track 03.flac:727801650948776d9882bd59b607f45d
+Track 04.flac:836906a4c6e92071d6e82523836b8fdc
+Track 05.flac:dc8f9e922a7d1a5b64e3a032c4c1f00c
+Track 06.flac:a145f6b90b487cc9654c48bb12a9ec1e
+Track 07.flac:5d5715daaf5c7786c4cf1071fad4555e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-07-12-b.flacf\D_2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:6c12d3cb9c767a47aa0dcc4676fa9910
+Track 02.flac:d6e685ce24552c61f0f0f25384b3a58d
+Track 03.flac:7dd4730bc85615f6e1d163bad98db67c
+Track 04.flac:7a3d4d5da174e61b392266935b0cd4a2
+Track 05.flac:ec5f5e159962ba883494890b8161325f
+Track 06.flac:40d2996131dae36c100ae3ef24a2b8d8
+Track 07.flac:125ce31328c68dd21fcebc4e5ed815f0
+Track 08.flac:0df6c93dcbf73c2e27b7a2f4833ca2ea
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-12-b.flacf\D_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:33.56       48288956 B   ---   --   ---xx   flac  0.6232  Track 01.flac
+     4:49.74       51153692 B   ---   --   ---xx   flac  0.6199  Track 02.flac
+     6:24.25       67796444 B   ---   --   ---xx   flac  0.6228  Track 03.flac
+     5:16.51       55862396 B   ---   --   ---xx   flac  0.5705  Track 04.flac
+     6:03.74       64207292 B   ---   --   ---xx   flac  0.6136  Track 05.flac
+     6:49.74       72321692 B   ---   --   ---xx   flac  0.6376  Track 06.flac
+     6:27.64       68417372 B   ---   --   ---xx   flac  0.5750  Track 07.flac
+    40:26.43      428047844 B                            0.6092  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-12-b.flacf\D_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.54       76684652 B   ---   --   ---xx   flac  0.6350  Track 01.flac
+     5:53.00       62269244 B   ---   --   ---xx   flac  0.5793  Track 02.flac
+     6:46.00       71618444 B   ---   --   ---xx   flac  0.6129  Track 03.flac
+     6:11.00       65444444 B   ---   --   ---xx   flac  0.5959  Track 04.flac
+     5:18.00       56095244 B   ---   --   ---xx   flac  0.6621  Track 05.flac
+     5:16.55       55871804 B   ---   --   ---xx   flac  0.6034  Track 06.flac
+     4:36.00       48686444 B   ---   --   ---xx   flac  0.6688  Track 07.flac
+     6:06.00       64562444 B   ---   --   ---xx   flac  0.5463  Track 08.flac
+    47:21.34      501232720 B                            0.6112  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-18-rm.flacf 
+=================== 
+=================== 
+=================== 
+71d97e1140afae042f3eab5610953d22  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI01.flac
+c3869cd328bea18f63be976966a26963  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI02.flac
+12d717d7197a49a3afea7aab8a46afa8  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI03.flac
+085d2b246736be66de502570a3ba29cd  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI04.flac
+9849e73b0e2b24eeb023d7f762c18437  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI05.flac
+f2ec8175081d9dc74aac3362817af939  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI06.flac
+d80ab80917d221130f97aeb4a95cef8f  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI07.flac
+e68357c348dcc204daa5ab114580695b  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI08.flac
+f4520abfc8b67bacbb052dd86d9085fd  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI09.flac
+f3b91721db2102a792197e73f4241806  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI10.flac
+9a9bb7236d4daeceee7cce9b1067b8da  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI11.flac
+a4fd08eee9917af2536cc2b29833f77a  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI12.flac
+1b47f56972631c4173d7a02a528ce2b6  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI13.flac
+5acd45e9aab2c777216be1fa4bdd53bf  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI14.flac
+231c9f512d8fc200d988f14b3859cd1e  info.txt
+196393a5f4cb47f935ff43969657159c  md5.md5
+8575d7f060413efc551e3cae35769481  st5.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-18-rm.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI01.flac:0af02f3e98728ce9b7b2fbfe69c0e1ec
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI02.flac:5ed06c5f0c4f805d2d6af703b42e2186
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI03.flac:3e765d65c390ce2539af9db7ad3f301c
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI04.flac:7e106ab761f714a41cbed9e9c15b3e7c
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI05.flac:ef98f96209fabb55c14e9296bf01bb8d
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI06.flac:c3953f8de3d9206d1efe9a19568eab6f
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI07.flac:fbd1eb3aa03797655ebdabb913243244
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI08.flac:5b254e35a69009cbe6c6e2782ea63e8d
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI09.flac:7eca6676b40ebbef1e91831859ce1b23
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI10.flac:3bbd4212fcc99c06e51351b1d0cfd000
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI11.flac:240ad8e93ac97f2aded52ca685dfd934
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI12.flac:238f3892e0ca4ccc6d5a354df8b83d1e
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI13.flac:fe89ae46919341114b7fd5a40428f8b3
+Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI14.flac:b6d8c575923acc199832e4c18ad9fe6b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-18-rm.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:26.44       36441932 B   ---   --   ---xx   flac  0.6604  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI01.flac
+     4:10.29       44168252 B   ---   --   ---xx   flac  0.6541  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI02.flac
+     4:22.43       46317980 B   ---   --   ---xx   flac  0.6658  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI03.flac
+     6:21.68       67368380 B   ---   --   ---xx   flac  0.6631  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI04.flac
+     6:17.61       66646316 B   ---   --   ---xx   flac  0.6599  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI05.flac
+     5:13.63       55361420 B   ---   --   ---xx   flac  0.6477  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI06.flac
+     5:55.49       62737292 B   ---   --   ---xx   flac  0.6476  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI07.flac
+     6:31.59       69111212 B   ---   --   ---xx   flac  0.6210  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI08.flac
+     4:01.10       42535964 B   ---   --   ---xx   flac  0.6275  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI09.flac
+     4:14.11       44831516 B   ---   --   ---xx   flac  0.6476  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI10.flac
+     4:48.66       50958476 B   ---   --   ---xx   flac  0.6356  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI11.flac
+     6:36.39       69946172 B   ---   --   ---xx   flac  0.6519  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI12.flac
+     5:26.17       57546428 B   ---   --   ---xx   flac  0.6285  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI13.flac
+     4:44.36       50182316 B   ---   --   ---xx   flac  0.6494  Bob Dylan-1988-7-18 Meadowbrooke Music Theater Rochester MI14.flac
+    72:11.70      764153656 B                            0.6469  (14 files)
+=================== 
+=================== 
+=================== 

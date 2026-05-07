@@ -1,0 +1,52 @@
+Bob Dylan
+The Classic Center Theatre
+Athens, Georgia
+March 14, 2024
+
+01. Watching The River Flow
+02. Most Likely You Go Your Way (And I'll Go Mine)
+03. I Contain Multitudes
+04. False Prophet
+05. When I Paint My Masterpiece
+06. Black Rider
+07. My Own Version Of You
+08. Crossing The Rubicon
+09. To Be Alone With You
+10. Key West (Philosopher Pirate)
+11. I'll Be Your Baby Tonight
+12. I've Made Up My Mind To Give Myself To You
+13. Walking By Myself
+14. Mother Of Muses
+15. Goodbye Jimmy Reed
+16. Every Grain Of Sand
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Jerry Pentecost - drums
+Doug Lancio - guitar
+Bob Britt - guitar
+Donnie Herron - steel guitar, mandolin, violin
+Tony Garnier - bass
+
+Recorded by: soomlos
+schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3 (24-bit / 48000 Hz)
+sound devices mixpre-3 > usb > pc > poly wav (24-bit / 48000 Hz)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24-bit / 48000 Hz)
+
+ffp
+bd2024-03-14-soomlos-t01.flac:5ffa7bd0a24800103244a9da4fc7c6f4
+bd2024-03-14-soomlos-t02.flac:aa1d70813727f2ae77207ca1c0c81b75
+bd2024-03-14-soomlos-t03.flac:aac6288c92f41822f073c722066d8c1e
+bd2024-03-14-soomlos-t04.flac:887fa419fddbd37cef221069a78b82a6
+bd2024-03-14-soomlos-t05.flac:67df95abf3eae8091a7a564af003191b
+bd2024-03-14-soomlos-t06.flac:44ff05164f1682c8691dc750146f19eb
+bd2024-03-14-soomlos-t07.flac:b6af0f42cc2014032cdea91b651aa8fb
+bd2024-03-14-soomlos-t08.flac:58c115b01004a790549ed9a651bf8403
+bd2024-03-14-soomlos-t09.flac:827383ee6f9fc7902680e9b9ad1079af
+bd2024-03-14-soomlos-t10.flac:9b4387ed39a9956af2d6f0b3d961a596
+bd2024-03-14-soomlos-t11.flac:551a1af5e02d73a910919884f5ea43ae
+bd2024-03-14-soomlos-t12.flac:4941eb384a280c34144b2e23f49af239
+bd2024-03-14-soomlos-t13.flac:83e12ffc1092629333b15793f5bbc633
+bd2024-03-14-soomlos-t14.flac:dc0bc506b5b66c936efaa4ae5d945c2b
+bd2024-03-14-soomlos-t15.flac:e6447fa23acb78dc2ca1151c919b7f39
+bd2024-03-14-soomlos-t16.flac:cb3edab1b5599b7a7739e710da7f0e6c

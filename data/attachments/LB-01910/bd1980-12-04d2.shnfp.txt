@@ -1,0 +1,12 @@
+b8295710d41ff0f98d3ef65bb1a426bd  [shntool]  bd1980-12-04d2t01.shn
+c071441265cfb4e5877bf908ee3360e6  [shntool]  bd1980-12-04d2t02.shn
+e4e4dec79a1f1dd04c5e77cc7528edae  [shntool]  bd1980-12-04d2t03.shn
+7fc912e67e489a8605740aef8a056916  [shntool]  bd1980-12-04d2t04.shn
+ae6a8f5743dfd4203c14ee0deb6eab6f  [shntool]  bd1980-12-04d2t05.shn
+65fa317cfacc298b847ab4a94bdf6241  [shntool]  bd1980-12-04d2t06.shn
+656c5084de614291388d6045af995e0e  [shntool]  bd1980-12-04d2t07.shn
+051ea5bed8b5d23afcfa25b4e509b6ff  [shntool]  bd1980-12-04d2t08.shn
+d222aeb188726764761df4d21e8f5cdd  [shntool]  bd1980-12-04d2t09.shn
+48f3c932b8530f353c9d5a9bdfad65c7  [shntool]  bd1980-12-04d2t10.shn
+4f7560cd9361e05d980ecb687bce48dc  [shntool]  bd1980-12-04d2t11.shn
+f813c0ce5d43a36d21172e5f175da8dd  [shntool]  bd1980-12-04d2t12.shn

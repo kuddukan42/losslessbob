@@ -1,0 +1,60 @@
+Information ripping to FLAC, 'Track 1' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\01. Stuck Inside of Mobile With the Memphis Blues Again.flac'
+   Track 1:  Ripped LBA 0 to 48425 (10:45) in 1:03. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\01. Stuck Inside of Mobile With the Memphis Blues Again.flac
+     Secure  [Pass 1 & 2]
+     CRC32: B838E876     AccurateRip CRC: D7FB848F     [DiscID: 012-0023dd19-0146eb7d-bc12130c-1]
+   
+Information ripping to FLAC, 'Track 2' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\02. Knockin' on Heaven's Door.flac'
+   Track 2:  Ripped LBA 48425 to 83722 (7:50) in 0:39. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\02. Knockin' on Heaven's Door.flac
+     Secure  [Pass 1 & 2]
+     CRC32: C8509507     AccurateRip CRC: B2EE7008     [DiscID: 012-0023dd19-0146eb7d-bc12130c-2]
+   
+Information ripping to FLAC, 'Track 3' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\03. I Want You.flac'
+   Track 3:  Ripped LBA 83722 to 102675 (4:12) in 0:19. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\03. I Want You.flac
+     Secure  [Pass 1 & 2]
+     CRC32: 1E9F0127     AccurateRip CRC: EE761F69     [DiscID: 012-0023dd19-0146eb7d-bc12130c-3]
+   
+Information ripping to FLAC, 'Track 4' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\04. Just Like a Woman.flac'
+   Track 4:  Ripped LBA 102675 to 131542 (6:24) in 0:27. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\04. Just Like a Woman.flac
+     Secure  [Pass 1 & 2]
+     CRC32: 83B055D4     AccurateRip CRC: 31CA56E4     [DiscID: 012-0023dd19-0146eb7d-bc12130c-4]
+   
+Information ripping to FLAC, 'Track 5' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\05. Shooting Star.flac'
+   Track 5:  Ripped LBA 131542 to 156517 (5:33) in 0:22. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\05. Shooting Star.flac
+     Secure  [Pass 1 & 2]
+     CRC32: B5FAA995     AccurateRip CRC: 4453D441     [DiscID: 012-0023dd19-0146eb7d-bc12130c-5]
+   
+Information ripping to FLAC, 'Track 6' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\06. Obviously Five Believers.flac'
+   Track 6:  Ripped LBA 156517 to 179690 (5:08) in 0:19. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\06. Obviously Five Believers.flac
+     Secure  [Pass 1 & 2]
+     CRC32: 1EA1C23B     AccurateRip CRC: 83223AC4     [DiscID: 012-0023dd19-0146eb7d-bc12130c-6]
+   
+Information ripping to FLAC, 'Track 7' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\07. Shelter from the Storm.flac'
+   Track 7:  Ripped LBA 179690 to 204027 (5:24) in 0:20. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\07. Shelter from the Storm.flac
+     Secure  [Pass 1 & 2]
+     CRC32: CADBF1CE     AccurateRip CRC: 5EAC6123     [DiscID: 012-0023dd19-0146eb7d-bc12130c-7]
+   
+Information ripping to FLAC, 'Track 8' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\08. Love Minus Zero-No Limit.flac'
+   Track 8:  Ripped LBA 204027 to 231957 (6:12) in 0:22. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\08. Love Minus Zero-No Limit.flac
+     Secure  [Pass 1 & 2]
+     CRC32: 83171D43     AccurateRip CRC: F4F6E150     [DiscID: 012-0023dd19-0146eb7d-bc12130c-8]
+   
+Information ripping to FLAC, 'Track 9' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\09. If Not for You.flac'
+   Track 9:  Ripped LBA 231957 to 252847 (4:38) in 0:15. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\09. If Not for You.flac
+     Secure  [Pass 1 & 2]
+     CRC32: AB0B2A93     AccurateRip CRC: 0A17F160     [DiscID: 012-0023dd19-0146eb7d-bc12130c-9]
+   
+Information ripping to FLAC, 'Track 10' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\10. License to Kill.flac'
+   Track 10:  Ripped LBA 252847 to 291232 (8:31) in 0:27. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\10. License to Kill.flac
+     Secure  [Pass 1 & 2]
+     CRC32: 5DD5C01B     AccurateRip CRC: F581D1A1     [DiscID: 012-0023dd19-0146eb7d-bc12130c-10]
+   
+Information ripping to FLAC, 'Track 11' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\11. Never Gonna Be the Same Again.flac'
+   Track 11:  Ripped LBA 291232 to 320640 (6:32) in 0:20. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\11. Never Gonna Be the Same Again.flac
+     Secure  [Pass 1 & 2]
+     CRC32: 5378A295     AccurateRip CRC: 7A6BDCF8     [DiscID: 012-0023dd19-0146eb7d-bc12130c-11]
+   
+Information ripping to FLAC, 'Track 12' to 'C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\12. Unbelievable.flac'
+   Track 12:  Ripped LBA 320640 to 347087 (5:52) in 0:17. Filename: C:\Users\Georg\Music\FlacAlben\Bob Dylan (1995) Guided by the Eternal Light 2-2\12. Unbelievable.flac
+     Secure  [Pass 1 & 2]
+     CRC32: 04844922     AccurateRip CRC: D3862641     [DiscID: 012-0023dd19-0146eb7d-bc12130c-12]
+   

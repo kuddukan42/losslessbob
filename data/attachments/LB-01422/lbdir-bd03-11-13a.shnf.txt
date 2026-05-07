@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-13a.shnf 
+=================== 
+=================== 
+=================== 
+89afeb7cc251f6a5c604659195fee00d  bd03-11-13a.txt
+b0f6abf3676970c1416a3a6b0bc82a42  Bob Dylan - 13.11.2003, Paris CD1- 01 - Maggie's Farm.shn
+960025eb797eda56f9098ac7fb236ab5  Bob Dylan - 13.11.2003, Paris CD1- 02 - Senor (Tales Of Yank.shn
+27ee1d1d4c1415a85f17425b3d355eda  Bob Dylan - 13.11.2003, Paris CD1- 03 - Tweedle Dee & Tweedl.shn
+c19e6440cf0dce25385cc6e092e851c3  Bob Dylan - 13.11.2003, Paris CD1- 04 - Visions Of Johanna.shn
+4630b85d334e2a6bcf81f2885938c827  Bob Dylan - 13.11.2003, Paris CD1- 05 - It's Alright, Ma (I'.shn
+57181c90dd09c7047aebedfb26a961ee  Bob Dylan - 13.11.2003, Paris CD1- 06 - Boots Of Spanish Lea.shn
+d4e1014b6488cf222f9568cba50c4969  Bob Dylan - 13.11.2003, Paris CD1- 07 - Things Have Changed.shn
+9cd68df42fdc35568ffede852018c01b  Bob Dylan - 13.11.2003, Paris CD1- 08 - Highway 61 Revisited.shn
+979f43a046b969cf7ea5113ffbf7f161  Bob Dylan - 13.11.2003, Paris CD1.md5
+e5981b4e7498a9e207ce579c9c3e2606  Bob Dylan - 13.11.2003, Paris CD2- 01 - Down Along The Cove.shn
+177668f8b983445c703b69d570e67f0a  Bob Dylan - 13.11.2003, Paris CD2- 02 - Mr. Tambourine Man.shn
+d6c2de42fc35a37bdd5c072226b9e7b5  Bob Dylan - 13.11.2003, Paris CD2- 03 - Cold Irons Bound.shn
+8ec5b67e23bbf3ee287b8c176f900acd  Bob Dylan - 13.11.2003, Paris CD2- 04 - Most Likely You Go Y.shn
+e099559ff8cb690e08ebb5695092a027  Bob Dylan - 13.11.2003, Paris CD2- 05 - The Lonesome Death O.shn
+85580b359cfafbd3a6d81432bc91a249  Bob Dylan - 13.11.2003, Paris CD2- 06 - Honest With Me.shn
+dfbfceaaad55086f677460f8d1aafa12  Bob Dylan - 13.11.2003, Paris CD2- 07 - Every Grain Of Sand.shn
+d21d902e8e8e6d1e81cb885c0485b02f  Bob Dylan - 13.11.2003, Paris CD2- 08 - Summer Days.shn
+c41bc850937f5ef6b0a298732297c3d4  Bob Dylan - 13.11.2003, Paris CD2- 09 - Cat's In The Well.shn
+a84ac7e4eaa1f5f35f215ebeff3cafd6  Bob Dylan - 13.11.2003, Paris CD2- 10 - Like A Rolling Stone.shn
+40a85996532a80aa73de9dc44dc1040c  Bob Dylan - 13.11.2003, Paris CD2- 11 - All Along The Watcht.shn
+0aab56c234b50a83d13afd14665518ee  Bob Dylan - 13.11.2003, Paris CD2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-13a.shnf 
+=================== 
+=================== 
+=================== 
+339727d284401db2d93b1d50cb33a429  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD1-_01_-_Maggie_s_Farm.wav
+4c809c39164801928c570a6917aaa502  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD1-_02_-_Senor__Tales_Of_Yank.wav
+4fa44aecd145920f0975dffb2b73ed31  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD1-_03_-_Tweedle_Dee___Tweedl.wav
+d32be2419546f7de8389835b4e1f4509  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD1-_04_-_Visions_Of_Johanna.wav
+c69b141c853d6a8fb4cd1d2d7f51bf28  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD1-_05_-_It_s_Alright,_Ma__I_.wav
+978cfed329a43ce8989c57aa3f9fd02a  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD1-_06_-_Boots_Of_Spanish_Lea.wav
+e424db9b7d5ef02797289de60eda8439  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD1-_07_-_Things_Have_Changed.wav
+3b7b26ff5af74948c585650930f2be07  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD1-_08_-_Highway_61_Revisited.wav
+674f17d2ae9fb7b4741bdf357fc9a25e  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_01_-_Down_Along_The_Cove.wav
+d70bc1739dad618cc9841336bc7569a5  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_02_-_Mr._Tambourine_Man.wav
+72ef6d6ab744f0a134beda667912fba8  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_03_-_Cold_Irons_Bound.wav
+0238641182889a9b8241bb43d03c4f51  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_04_-_Most_Likely_You_Go_Y.wav
+c4629f83b5dab083ef6c8e42acbaf105  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_05_-_The_Lonesome_Death_O.wav
+19a0b88dc9bee7ed4b6dcf9d845be194  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_06_-_Honest_With_Me.wav
+81c0b1b9c7d9977e6451e56b20eaaa22  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_07_-_Every_Grain_Of_Sand.wav
+0bd614cf8346b00ee231da9f8d03a318  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_08_-_Summer_Days.wav
+55f13ee6040d6ac55631e9379d3fa945  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_09_-_Cat_s_In_The_Well.wav
+b396036c7b9083051e43eb54e0b4b7a4  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_10_-_Like_A_Rolling_Stone.wav
+01edc378d8efedf51b45719a02bde58f  [shntool]  Bob_Dylan_-_13.11.2003,_Paris_CD2-_11_-_All_Along_The_Watcht.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-13a.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:16.00       66326446 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD1-_01_-_Maggie_s_Farm.wav
+     5:20.04       56457454 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD1-_02_-_Senor__Tales_Of_Yank.wav
+     5:19.17       56311630 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD1-_03_-_Tweedle_Dee___Tweedl.wav
+     5:53.55       62398606 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD1-_04_-_Visions_Of_Johanna.wav
+     7:28.40       79121326 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD1-_05_-_It_s_Alright,_Ma__I_.wav
+     6:09.40       65185726 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD1-_06_-_Boots_Of_Spanish_Lea.wav
+     7:01.69       74426734 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD1-_07_-_Things_Have_Changed.wav
+     6:38.30       70277806 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD1-_08_-_Highway_61_Revisited.wav
+     6:29.41       68716078 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_01_-_Down_Along_The_Cove.wav
+     6:36.64       70004974 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_02_-_Mr._Tambourine_Man.wav
+     5:38.63       59771422 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_03_-_Cold_Irons_Bound.wav
+     7:57.44       84246334 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_04_-_Most_Likely_You_Go_Y.wav
+     6:04.40       64303726 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_05_-_The_Lonesome_Death_O.wav
+     6:56.03       73389502 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_06_-_Honest_With_Me.wav
+     8:19.01       88025998 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_07_-_Every_Grain_Of_Sand.wav
+    11:17.41      119519278 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_08_-_Summer_Days.wav
+     6:33.22       69376990 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_09_-_Cat_s_In_The_Well.wav
+     5:25.55       57459406 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_10_-_Like_A_Rolling_Stone.wav
+     6:31.15       69007726 B   ---   h-   -----    wav  1.0000  Bob_Dylan_-_13.11.2003,_Paris_CD2-_11_-_All_Along_The_Watcht.wav
+   127:57.44     1354327162 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

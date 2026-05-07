@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-03-sonic.flacf 
+=================== 
+=================== 
+=================== 
+9a136599f1675d1fb19035a138d15197  01 Silvio.flac
+165e8b384596096b917606551fdeba3d  02 If You See Her, Say Hello.flac
+ac5b72fad1f7371a00e0083e12884d92  03 Twiddle Dum and Twiddle Dee.flac
+34e22d360718bf8d032ae339a1db8ba7  04 Watching the River Flow.flac
+5525987224508cae1b97d691293a0176  05 Highway 61 revisisted.flac
+48feb657f00c699ceb5196fdd7394d81  06 Most Likely You'll Go Your Way (and I'll Go Mine).flac
+7e862940958a872d002facf11c08ad19  07 The Drifter's Escape.flac
+30278d27628dba2ebd6d8602c45c21d9  08 Bye and Bye pt. 1.flac
+0b88c4db0d1fbfec42ed14dd7b7642bf  09 Bye and Bye pt. 2.flac
+95f4601df2475671f9a1692396faaa9f  10 Be Honest With Me.flac
+42d70bd78396cde9af5fb5cb929ca1ec  11 Band Intros.flac
+9e75a32036e822d07f565331c6cbc374  12 Summer Days.flac
+2e72448fd511be0ce6ecfea089dafe82  13 encore noise.flac
+7afb8155859d364a9daa36770fd4034b  14 Rainy Day Women #12 & #35.flac
+1033f142a9a44390431b938ff9db5eae  15 Big River.flac
+a2f214bad686e509bf71a1500a00acd5  16 Desolation Row.flac
+66fdef45bf1c2a802e59572cc6d0ff51  17 Johnny B Goode.flac
+6a499c46b271f9d745dfa61e73c13c9c  Flac files Dylan_08032003.md5
+a9002d9133eb4e8f286542cf261e4ab2  flac fingerprint.txt
+fba7421368df9738f37d3917edcaf12d  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-08-03-sonic.flacf 
+=================== 
+=================== 
+=================== 
+01 Silvio.flac:95bb1872817df50bfed262a087ca9340
+02 If You See Her, Say Hello.flac:c791da437567d41981a0632b094ec50a
+03 Twiddle Dum and Twiddle Dee.flac:6e8f9e00192090bb873c53b58e4ad927
+04 Watching the River Flow.flac:3725e5ff02b558dc09cc09215c39bfa9
+05 Highway 61 revisisted.flac:41c23b74b8e943beedbe46fc36c30f5c
+06 Most Likely You'll Go Your Way (and I'll Go Mine).flac:39a61c7ab980cf6697d88effcf843571
+07 The Drifter's Escape.flac:54348c23977ceb5ff683b430f2dec300
+08 Bye and Bye pt. 1.flac:273c5f51fa39f432c6f8b5a620374afc
+09 Bye and Bye pt. 2.flac:bdf707d9ce55b2fcf1013e7ec8316f44
+10 Be Honest With Me.flac:7a46ff9e595ca9156dea2aeb6fce3871
+11 Band Intros.flac:085c34aea5c1dae19c9ed1e8344083d5
+12 Summer Days.flac:f9ce55c021b6358d39f9e101ab4e1fb5
+13 encore noise.flac:44006c96c0a555c569e3087aabe4a8fe
+14 Rainy Day Women #12 & #35.flac:5cd8340cae6e8427ef0015fdb09431e4
+15 Big River.flac:6ad5f221517d0077405bd4bb335892f5
+16 Desolation Row.flac:1dc03166cf6a576538161580dea42910
+17 Johnny B Goode.flac:753824eeb9a2103672087919a79b66db
+=================== 
+=================== 
+=================== 
+=== shntool for: bd03-08-03-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:23.20       67608284 B   ---   --   ---xx   flac  0.6537  01 Silvio.flac
+     5:39.53       59924300 B   ---   --   ---xx   flac  0.6485  02 If You See Her, Say Hello.flac
+     5:39.17       59839628 B   ---   --   ---xx   flac  0.6290  03 Twiddle Dum and Twiddle Dee.flac
+     6:42.36       70997516 B   ---   --   ---xx   flac  0.6568  04 Watching the River Flow.flac
+     6:37.13       70061420 B   ---   --   ---xx   flac  0.6573  05 Highway 61 revisisted.flac
+     7:12.24       76261292 B   ---   --   ---xx   flac  0.6598  06 Most Likely You'll Go Your Way (and I'll Go Mine).flac
+     4:47.70       50791484 B   ---   --   ---xx   flac  0.6751  07 The Drifter's Escape.flac
+     3:43.53       39461900 B   ---   --   ---xx   flac  0.5728  08 Bye and Bye pt. 1.flac
+     1:38.25       17346044 B   ---   --   ---xx   flac  0.5850  09 Bye and Bye pt. 2.flac
+     6:40.25       70618844 B   ---   --   ---xx   flac  0.6564  10 Be Honest With Me.flac
+     0:39.57        7013708 B   ---   --   ---xx   flac  0.5816  11 Band Intros.flac
+     7:06.01       75148796 B   ---   --   ---xx   flac  0.6458  12 Summer Days.flac
+     2:22.00       25048844 B   ---   --   ---xx   flac  0.5623  13 encore noise.flac
+     6:21.00       67208444 B   ---   --   ---xx   flac  0.6581  14 Rainy Day Women #12 & #35.flac
+     5:54.45       62551484 B   ---   --   ---xx   flac  0.6632  15 Big River.flac
+     9:52.04      104438252 B   ---   --   ---xx   flac  0.6728  16 Desolation Row.flac
+     5:01.60       53236928 B   -b-   --   ---xx   flac  0.7042  17 Johnny B Goode.flac
+    92:21.53      977557168 B                            0.6519  (17 files)
+=================== 
+=================== 
+=================== 

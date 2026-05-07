@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-15-the-picnic.flacf 
+=================== 
+=================== 
+=================== 
+4b96816d7fa9362f8274940518d38882  bd78-07-15-the-picnic-d1t01.flac
+b9f0c1c5308dbf84bd2fcd68a5b18cfa  bd78-07-15-the-picnic-d1t02.flac
+d59c37009c99521b5f6c25e017b0a2f5  bd78-07-15-the-picnic-d1t03.flac
+42cc8cd9f09bf4cd096781f764c243c6  bd78-07-15-the-picnic-d1t04.flac
+bbd6cb7aa67f8a7e120645c78d51f46f  bd78-07-15-the-picnic-d1t05.flac
+4ec113a80bccead893817f1c010030fb  bd78-07-15-the-picnic-d1t06.flac
+66f60f3e6a740f490e6909ec066a9eca  bd78-07-15-the-picnic-d1t07.flac
+150431a6bbd798134c76785d31bd7de8  bd78-07-15-the-picnic-d1t08.flac
+4652884edccffd737fd26750219c83bd  bd78-07-15-the-picnic-d1t09.flac
+ecbff8fc3ea9d4be35f019dcfa1378c8  bd78-07-15-the-picnic-d1t10.flac
+9ced7c27df6b038209bcbc363cc3a1d8  bd78-07-15-the-picnic-d1t11.flac
+17033467edc485ceb93715dd2ca3101d  bd78-07-15-the-picnic-d1t12.flac
+586d417fd15594acc19aa5720f9929b3  bd78-07-15-the-picnic-d1t13.flac
+d189c921c3273fadc46af66348ee8592  bd78-07-15-the-picnic-d1t14.flac
+826f09e3fbf9c78b4a02b8a6a3a70b8e  bd78-07-15-the-picnic-d1t15.flac
+b463ac0c0f21a58221c721aeefe45226  bd78-07-15-the-picnic-d2t01.flac
+b55a531eadbeae382981126ee6e28d44  bd78-07-15-the-picnic-d2t02.flac
+c55f9933bd663382b3c11fbab040b743  bd78-07-15-the-picnic-d2t03.flac
+2892b9009a4651a974eb39fca6921d8c  bd78-07-15-the-picnic-d2t04.flac
+cfb2a061499e3aa3cf238e6c30b70630  bd78-07-15-the-picnic-d2t05.flac
+1614ca2292a7f942ebc0df7a99dac4fa  bd78-07-15-the-picnic-d2t06.flac
+89dcaa9ce6364d709e3854d8ce7c55c1  bd78-07-15-the-picnic-d2t07.flac
+cf152aa51ba49424f16fe25220845375  bd78-07-15-the-picnic-d2t08.flac
+158be7a08b9e102edc453111331952ad  bd78-07-15-the-picnic-d2t09.flac
+5ea12a0499688b087c7c8ad756a45209  bd78-07-15-the-picnic-d2t10.flac
+5ed89cb20a616f16634a6eca0b7d056b  bd78-07-15-the-picnic-d2t11.flac
+cb446c13a71186d21b6e280884dc5529  bd78-07-15-the-picnic-d2t12.flac
+2454524c849a9ae671e0118c595a15cc  bd78-07-15-the-picnic-d2t13.flac
+2a9e9a496b889b66e3dfb8ad48d19824  bd78-07-15-the-picnic-d2t14.flac
+d8e8b31b318ad748ef8b8a923984cc70  bd78-07-15-the-picnic-d2t15.flac
+50a2bd7b27ba62aa9197059273c094e0  bd78-07-15-the-picnic.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-15-the-picnic.flacf 
+=================== 
+=================== 
+=================== 
+bd78-07-15-the-picnic-d1t01.flac:f8d67738deed2f059f926e1816567913
+bd78-07-15-the-picnic-d1t02.flac:240b96a7c5f04fd89dd9744264f451d7
+bd78-07-15-the-picnic-d1t03.flac:51c1c7ed2d40a9220b596d35347d308f
+bd78-07-15-the-picnic-d1t04.flac:62219d024f585370e988ec58a29c7027
+bd78-07-15-the-picnic-d1t05.flac:393ed7a148e19cf629ee019419360ab7
+bd78-07-15-the-picnic-d1t06.flac:d48694608f441cbf3fe3dec4d1204dfa
+bd78-07-15-the-picnic-d1t07.flac:fdce5113a626d9075e2a6791d0c74f43
+bd78-07-15-the-picnic-d1t08.flac:8500857a9e690fdeece9e064935c5e86
+bd78-07-15-the-picnic-d1t09.flac:23c206143ccf7c5f4ca548939ea613f3
+bd78-07-15-the-picnic-d1t10.flac:2593fb4a9a531b209919dacf5d98fbc3
+bd78-07-15-the-picnic-d1t11.flac:8347e50b0a021dacbec4df11e5b5c43c
+bd78-07-15-the-picnic-d1t12.flac:2960c12b47de218bafedd7cad009adf1
+bd78-07-15-the-picnic-d1t13.flac:1f7134aa70340d3c05177f62359ae5f4
+bd78-07-15-the-picnic-d1t14.flac:5bd8759946075187ac8c338aa648b048
+bd78-07-15-the-picnic-d1t15.flac:2c07c170cd87f12a00b41acefac2dab9
+bd78-07-15-the-picnic-d2t01.flac:704d083301e310723c656398594a997e
+bd78-07-15-the-picnic-d2t02.flac:142ceeb285c4638c0d17e39840ea3ac7
+bd78-07-15-the-picnic-d2t03.flac:92191f9950b859257c1fa1164e511e33
+bd78-07-15-the-picnic-d2t04.flac:40eca4b6d6e344dbbbe9b8f8af5b6796
+bd78-07-15-the-picnic-d2t05.flac:8f5ef4ec27ed6d4c0a61500b53c27136
+bd78-07-15-the-picnic-d2t06.flac:063b78d71f8d37c2f4425fd2348aff95
+bd78-07-15-the-picnic-d2t07.flac:1c2789dd78e47161256a70f7dc18aafb
+bd78-07-15-the-picnic-d2t08.flac:86cd8b6c85165e23b10a9897166cf514
+bd78-07-15-the-picnic-d2t09.flac:3545cc42aa4572fe7d440475c8744b63
+bd78-07-15-the-picnic-d2t10.flac:30279fbdb4631c1ca29f04e17baf152c
+bd78-07-15-the-picnic-d2t11.flac:a28d65178c098131527025c56faf92b2
+bd78-07-15-the-picnic-d2t12.flac:9652545c8d4b66b78bb98b68e4078d01
+bd78-07-15-the-picnic-d2t13.flac:ce1a7b521f9fa51aec450d8333e82788
+bd78-07-15-the-picnic-d2t14.flac:becd7b3b3b17a31dd8639ff81fdfbafc
+bd78-07-15-the-picnic-d2t15.flac:6a189856ecedefe9f87307d0acd6be99
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-15-the-picnic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:25.72       36331388 B   ---   --   ---xx   flac  0.6450  bd78-07-15-the-picnic-d1t01.flac
+     2:30.60       26601164 B   ---   --   ---xx   flac  0.6436  bd78-07-15-the-picnic-d1t02.flac
+     5:27.10       57706364 B   ---   --   ---xx   flac  0.6536  bd78-07-15-the-picnic-d1t03.flac
+     4:14.10       44829164 B   ---   --   ---xx   flac  0.6438  bd78-07-15-the-picnic-d1t04.flac
+     4:43.08       49940060 B   ---   --   ---xx   flac  0.6418  bd78-07-15-the-picnic-d1t05.flac
+     4:52.70       51673484 B   ---   --   ---xx   flac  0.6371  bd78-07-15-the-picnic-d1t06.flac
+     5:15.22       55617788 B   ---   --   ---xx   flac  0.5685  bd78-07-15-the-picnic-d1t07.flac
+     4:29.33       47529260 B   ---   --   ---xx   flac  0.6408  bd78-07-15-the-picnic-d1t08.flac
+     4:42.25       49803644 B   ---   --   ---xx   flac  0.6428  bd78-07-15-the-picnic-d1t09.flac
+     4:04.05       43053404 B   ---   --   ---xx   flac  0.6264  bd78-07-15-the-picnic-d1t10.flac
+     7:07.32       75398108 B   ---   --   ---xx   flac  0.6489  bd78-07-15-the-picnic-d1t11.flac
+     4:34.08       48352460 B   ---   --   ---xx   flac  0.6317  bd78-07-15-the-picnic-d1t12.flac
+     3:54.20       41324684 B   ---   --   ---xx   flac  0.6400  bd78-07-15-the-picnic-d1t13.flac
+     7:14.47       76668188 B   ---   --   ---xx   flac  0.6240  bd78-07-15-the-picnic-d1t14.flac
+     6:11.20       65491484 B   ---   --   ---xx   flac  0.5664  bd78-07-15-the-picnic-d1t15.flac
+     4:18.05       45523004 B   ---   --   ---xx   flac  0.6213  bd78-07-15-the-picnic-d2t01.flac
+     3:25.45       36267884 B   ---   --   ---xx   flac  0.5917  bd78-07-15-the-picnic-d2t02.flac
+     4:35.15       48545324 B   ---   --   ---xx   flac  0.5555  bd78-07-15-the-picnic-d2t03.flac
+     3:19.17       35143628 B   ---   --   ---xx   flac  0.5481  bd78-07-15-the-picnic-d2t04.flac
+     5:29.30       58106204 B   ---   --   ---xx   flac  0.5767  bd78-07-15-the-picnic-d2t05.flac
+     4:18.48       45624140 B   ---   --   ---xx   flac  0.6158  bd78-07-15-the-picnic-d2t06.flac
+     5:49.45       61669484 B   ---   --   ---xx   flac  0.5750  bd78-07-15-the-picnic-d2t07.flac
+     4:47.30       50697404 B   ---   --   ---xx   flac  0.5639  bd78-07-15-the-picnic-d2t08.flac
+     4:54.30       51932204 B   ---   --   ---xx   flac  0.5781  bd78-07-15-the-picnic-d2t09.flac
+     3:29.32       36942908 B   ---   --   ---xx   flac  0.6027  bd78-07-15-the-picnic-d2t10.flac
+     4:15.60       45123164 B   ---   --   ---xx   flac  0.5918  bd78-07-15-the-picnic-d2t11.flac
+     7:28.20       79074284 B   ---   --   ---xx   flac  0.5910  bd78-07-15-the-picnic-d2t12.flac
+     6:30.60       68937164 B   ---   --   ---xx   flac  0.5902  bd78-07-15-the-picnic-d2t13.flac
+     6:20.23       67086140 B   ---   --   ---xx   flac  0.5863  bd78-07-15-the-picnic-d2t14.flac
+     4:09.50       44041244 B   ---   --   ---xx   flac  0.5681  bd78-07-15-the-picnic-d2t15.flac
+   145:58.52     1545034824 B                            0.6061  (30 files)
+=================== 
+=================== 
+=================== 

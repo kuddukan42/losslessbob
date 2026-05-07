@@ -1,0 +1,20 @@
+fe7e4dbce74dd368de073803563578f0  bd2007-04-09-condor.txt
+292db84d07baeaf1315b3e23f45d0df8  Disc 1\Disc 1.md5
+0ca081646576337ed7e959c64cce8171  Disc 1\Track01.flac
+1d80af992e59517fa48dbf66143608db  Disc 1\Track02.flac
+cecd66773014a4f4b2e5738399429f30  Disc 1\Track03.flac
+6b66a9e136a8cb787f00be5ac98f8cc5  Disc 1\Track04.flac
+de135f3c52f78c9f68889e00f27c3aca  Disc 1\Track05.flac
+dc838afb148cb2245e6a64f3687d01b4  Disc 1\Track06.flac
+d0289de1eb963a4687a6d14c540c6e49  Disc 1\Track07.flac
+0de43f211a7f40daa36177d316359396  Disc 1\Track08.flac
+3dcbeb753c1303fba0a4fc658869f75e  Disc 1\Track09.flac
+8a79324211edcfb4356714a16c8dda11  Disc 2\Disc 2.md5
+b3d8c67b88eac357a22473eb1df25af6  Disc 2\Track01.flac
+5b9be4a0c07d974f39e74e0a7aabfe6e  Disc 2\Track02.flac
+efb64beebafac7ea35c3495db95ea5c4  Disc 2\Track03.flac
+34516c61de9c073c965233bd671596d1  Disc 2\Track04.flac
+b59c034d1d866bb0a477f33bdfed2ee1  Disc 2\Track05.flac
+18880ce8ac92e37cf554906c77be6277  Disc 2\Track06.flac
+7f439818cc32ca66c355cf15f89130ad  Disc 2\Track07.flac
+a196a57ad9368cb883691e59dc1b1dcb  Disc 2\Track08.flac

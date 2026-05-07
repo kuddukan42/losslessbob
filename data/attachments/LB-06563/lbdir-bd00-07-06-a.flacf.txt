@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-06-a.flacf 
+=================== 
+=================== 
+=================== 
+8ed14ab3a89176038984b88ec9325406  bd2000-07-06-Olkahoma City-d1\bd2000-07-06-Olkahoma City-d1.md5
+d58b21810561eef42ec3556917e174b0  bd2000-07-06-Olkahoma City-d1\Track01.flac
+feced9c50160f92bb8360cc2fe34816d  bd2000-07-06-Olkahoma City-d1\Track02.flac
+caf819b59814e12413d15ab644334173  bd2000-07-06-Olkahoma City-d1\Track03.flac
+0c5327ff12c0c342516861f3cb536de3  bd2000-07-06-Olkahoma City-d1\Track04.flac
+c6617f871d880e0daf27f91558a42997  bd2000-07-06-Olkahoma City-d1\Track05.flac
+490349a2c687ce5c3f13f3c268605f21  bd2000-07-06-Olkahoma City-d1\Track06.flac
+55dfa54e17bd66a3f6b788c5945f3cf8  bd2000-07-06-Olkahoma City-d1\Track07.flac
+e19720f05d016a5a6049020c1e4e7c8d  bd2000-07-06-Olkahoma City-d1\Track08.flac
+654e9023aa28a04aa50fc5f4239025e4  bd2000-07-06-Olkahoma City-d2\bd2000-07-06-Olkahoma City-d2.md5
+8469dae0df1223f8d20b50dcf5dc0e98  bd2000-07-06-Olkahoma City-d2\Track01.flac
+4305ab4aa1cb9ebf8dcae0e43c6d5237  bd2000-07-06-Olkahoma City-d2\Track02.flac
+6219e2664a27bfb5033a05d152a9d305  bd2000-07-06-Olkahoma City-d2\Track03.flac
+c810ba1829708f1a4584855849a8580f  bd2000-07-06-Olkahoma City-d2\Track04.flac
+80b3d45b47199693f5c8ab7dae45f8b6  bd2000-07-06-Olkahoma City-d2\Track05.flac
+9dcadfabacee1108e338591e4c670808  bd2000-07-06-Olkahoma City-d2\Track06.flac
+fef5620c9e8bb653372a808bdced3379  bd2000-07-06-Olkahoma City-d2\Track07.flac
+9f5a8a520914731758008352e5bcc0c7  bd2000-07-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-06-a.flacf\bd2000-07-06-Olkahoma City-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:7a581a889e19c8bb97e90796c3187082
+Track02.flac:f28b66dca82a4e9e27aac52d0821a549
+Track03.flac:e08dedce2d1190bcc289bed726ba4989
+Track04.flac:0c4313c20a5e97a63703aabd76ada1ad
+Track05.flac:ea541d1b332405d10f2976aedf196713
+Track06.flac:397516789538225c66b8a57b41693631
+Track07.flac:791d3fe91e6c03c3760337ae1112c55b
+Track08.flac:32c6c648bbb1e7909e3243bf4d54c2de
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-06-a.flacf\bd2000-07-06-Olkahoma City-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:3dfa30ac3e93a7eaf78cdf4f97a6e7f9
+Track02.flac:14dda7a1f3eb7807fc2c618d3a766e71
+Track03.flac:191f9b32f68125a7defec6d028599035
+Track04.flac:2351409d055e584e8531b08abb8c312b
+Track05.flac:3419a52703af0feebb0ce6fd3ea4c32e
+Track06.flac:df623b1a5927a15eb899a338b63fd1ed
+Track07.flac:71605218423ee85ecbfb448bcaba6de3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-06-a.flacf\bd2000-07-06-Olkahoma City-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.15       36550124 B   ---   --   ---xx   flac  0.6016  Track01.flac
+     3:46.18       39908780 B   ---   --   ---xx   flac  0.4956  Track02.flac
+     7:02.02       74445548 B   ---   --   ---xx   flac  0.5728  Track03.flac
+     7:10.68       76011980 B   ---   --   ---xx   flac  0.6078  Track04.flac
+     2:56.58       31182860 B   ---   --   ---xx   flac  0.5055  Track05.flac
+     2:51.56       30296156 B   ---   --   ---xx   flac  0.5617  Track06.flac
+     4:34.56       48465356 B   ---   --   ---xx   flac  0.5646  Track07.flac
+     4:59.42       52842428 B   ---   --   ---xx   flac  0.5870  Track08.flac
+    36:49.15      389703232 B                            0.5691  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-06-a.flacf\bd2000-07-06-Olkahoma City-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.12       61944668 B   ---   --   ---xx   flac  0.5452  Track01.flac
+     4:20.18       45906380 B   ---   --   ---xx   flac  0.6032  Track02.flac
+     6:07.01       64741196 B   ---   --   ---xx   flac  0.5967  Track03.flac
+     6:21.22       67260188 B   ---   --   ---xx   flac  0.5940  Track04.flac
+     6:35.65       69830924 B   ---   --   ---xx   flac  0.5880  Track05.flac
+     6:29.03       68626700 B   ---   --   ---xx   flac  0.4781  Track06.flac
+     6:09.24       65148092 B   ---   --   ---xx   flac  0.6143  Track07.flac
+    41:53.70      443458148 B                            0.5726  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-25-sbd-lk.flacf 
+=================== 
+=================== 
+=================== 
+4d6973801c875bc62b6e66a5e5cc23fa  01 Saved.flac
+15f50e8a0efa59a68f685f7de6b91c96  02 I believe in you.flac
+5ff4130f92e38bc8541eaa0ca1971e29  03 Like a rolling stone.flac
+6bac9bf48f1ed6c885ac8d1cfb506524  04 'Till I get it right.flac
+ebf1cd1055d2be622e0dab84ab7d2b46  05 Man gave names to all the animals.flac
+6b4b285db9405f43ba178ac2764e318a  06 Maggie's farm.flac
+9228f06924607e5708d7a3ff21d63e7f  07 Girl of the North Country.flac
+3511b494b5ba46b7f6e3c168fca3b3b3  08 Ballad of a thin man.flac
+9f74732625942daf925197110f45bc67  09 In the summertime.flac
+f4ba7b3680d10236c24a1a3c57332465  10 Shot of love.flac
+6010aa3e6dcc204f78efe39af86ce6e2  11 Walk around heaven all day.flac
+77de2f6b2fee2aad46743faa0393a21c  12 The times they are a-changin'.flac
+e827fd57008dfcba594a3d22a1852dd7  13 Let's begin.flac
+89327dc06258578ec7d65b1687a26442  14 Lenny Bruce.flac
+073d46e07d8d029af2e8c237246185c4  15 Slow train.flac
+185f3aeca304a8d15fc0e8a3a6b1d7b8  16 Solid rock.flac
+28664d465e4a5f46bfbc1b664febbbe2  17 Just like a woman.flac
+5f9c6c48df3d026b02ec8654e8302baa  18 Saved by the grace of your love.flac
+561b5509c6e19a50a744d927bd35add5  19 Watered-down love.flac
+af1d9a43e4b491ba54d37721f446c67a  20 Jesus is the one.flac
+a8b16398b5f3e83953c58d652db3e53c  21 Heart of mine.flac
+8fce0038caf68a4fabca7d31874c817c  22 When you gonna wake up.flac
+e1e6c59b2fd69ac34323b4e042e81a36  23 Forever young.flac
+84ece08f96f15a9b9b67be4ec0d3d159  24 In the garden.flac
+4611ef1ec3076d2a2e6e7bf19e3b9f1c  25 Blowin' in the wind.flac
+d41d8cd98f00b204e9800998ecf8427e  26 It ain't me, babe.flac
+1ca0ba0aacab7e2e4ef77b1fe37193e3  27 Knockin' on heaven's door.flac
+ced65639a4358104a2e978159e1fc226  Avignon 25.07.1981 (Moonlight) - F In.jpg
+0744dd695b8c4a995e36b8d4400faf21  Avignon 25.07.1981 (Moonlight) - F.jpg
+2e3b7802b18af661e8f976f0574a83ea  Avignon 25.07.1981 (Moonlight) - Liner.jpg
+d95d762b7dc9c842d537b2e9604a4aff  Avignon 25.07.1981 (Moonlight) - R.jpg
+b71362111e7f81b83603860179c56b96  BOB DYLAN - Avignon July 25th 1981_Info.txt
+d41d8cd98f00b204e9800998ecf8427e  Dylan - Avignon July 25th 1981.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-25-sbd-lk.flacf 
+=================== 
+=================== 
+=================== 
+01 saved.flac:1efb5bb5fdbce99ca6a3b2cf5f3a1d44
+02 i believe in you.flac:bdc57776959f85d8406b2b089a56388f
+03 like a rolling stone.flac:af6e0b2ee8571c75c875534e1363062a
+04 'till i get it right.flac:70e7909862b4db5c4a5ddda012214886
+05 man gave names to all the animals.flac:dfabeb728b75ab480349d4dacc0a9c1e
+06 maggie's farm.flac:7a1b043dc1786941990b63b4c8af5696
+07 girl of the north country.flac:b34034ca41b101f0b6528b98cb8f6b26
+08 ballad of a thin man.flac:4a63421d6aeb11fa32a07c2bf6d3733f
+09 in the summertime.flac:516763ac623bc0f5304fa97a9ed13a9d
+10 shot of love.flac:40563e7bde9f132c788bd002356bc36f
+11 walk around heaven all day.flac:2f055ad951f7f4f91bc69e822bcdfd10
+12 the times they are a-changin'.flac:f063ccdf9eda1d26aacfd5d3ac2f8283
+13 let's begin.flac:7d9582356b0f5f547cce128d470e84e5
+14 lenny bruce.flac:7af3a4e5300f1433efc04535865e30e9
+15 slow train.flac:4832840182521a0e210e0d8e24d04c90
+16 solid rock.flac:185b2bdf30933eb4dfb9cad3b211083e
+17 just like a woman.flac:1ccdb78d89250d2ede11f61aa34969e6
+18 saved by the grace of your love.flac:fa6c6c7576ebc473c70946cd73e7ec4d
+19 watered-down love.flac:1a52a6d1949ca0a31cf650908f72a18a
+20 jesus is the one.flac:53c305125175bb46f547f44238592d74
+21 heart of mine.flac:2821ff721f122bc494573fe37332081f
+22 when you gonna wake up.flac:638a12e4ce5b8b5b1a47ac231147145e
+23 forever young.flac:d99600f2efbecb27a42a3131761c0262
+24 in the garden.flac:ecab1b525617d8ebb3a96677cfd5cb52
+25 blowin' in the wind.flac:37350941da13198a633bb0e004c005e8
+27 knockin' on heaven's door.flac:b7f4b65ef0dfb93e4521e0d9dd7769a7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-25-sbd-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:49.35       40477964 B   ---   --   ---xx   flac  0.6426  01 Saved.flac
+     4:37.65       49015724 B   ---   --   ---xx   flac  0.6110  02 I believe in you.flac
+     5:41.40       60246524 B   ---   --   ---xx   flac  0.6398  03 Like a rolling stone.flac
+     3:16.60       34715564 B   ---   --   ---xx   flac  0.5577  04 'Till I get it right.flac
+     4:27.15       47134124 B   ---   --   ---xx   flac  0.6146  05 Man gave names to all the animals.flac
+     3:25.00       36162044 B   ---   --   ---xx   flac  0.6473  06 Maggie's farm.flac
+     4:24.25       46628444 B   ---   --   ---xx   flac  0.6149  07 Girl of the North Country.flac
+     3:24.25       36044444 B   ---   --   ---xx   flac  0.5964  08 Ballad of a thin man.flac
+     4:31.70       47969084 B   ---   --   ---xx   flac  0.5622  09 In the summertime.flac
+     4:54.00       51861644 B   ---   --   ---xx   flac  0.6246  10 Shot of love.flac
+     4:17.45       45440684 B   ---   --   ---xx   flac  0.5495  11 Walk around heaven all day.flac
+     4:42.35       49827164 B   ---   --   ---xx   flac  0.6060  12 The times they are a-changin'.flac
+     3:12.00       33868844 B   ---   --   ---xx   flac  0.5689  13 Let's begin.flac
+     4:21.10       46063964 B   ---   --   ---xx   flac  0.5660  14 Lenny Bruce.flac
+     3:21.60       35597564 B   ---   --   ---xx   flac  0.6418  15 Slow train.flac
+     4:11.25       44335244 B   ---   --   ---xx   flac  0.6667  16 Solid rock.flac
+     4:03.00       42865244 B   ---   --   ---xx   flac  0.6316  17 Just like a woman.flac
+     2:55.50       30987644 B   ---   --   ---xx   flac  0.6127  18 Saved by the grace of your love.flac
+     4:14.05       44817404 B   ---   --   ---xx   flac  0.6474  19 Watered-down love.flac
+     3:30.15       37079324 B   ---   --   ---xx   flac  0.6059  20 Jesus is the one.flac
+     4:06.70       43559084 B   ---   --   ---xx   flac  0.6192  21 Heart of mine.flac
+     4:56.55       52343804 B   ---   --   ---xx   flac  0.6302  22 When you gonna wake up.flac
+     4:33.65       48310124 B   ---   --   ---xx   flac  0.6378  23 Forever young.flac
+     9:21.45       99066284 B   ---   --   ---xx   flac  0.6106  24 In the garden.flac
+     4:59.15       52778924 B   ---   --   ---xx   flac  0.6204  25 Blowin' in the wind.flac
+     7:55.50       83907644 B   ---   --   ---xx   flac  0.6333  27 Knockin' on heaven's door.flac
+   117:15.55     1241104504 B                            0.6151  (26 files)
+=================== 
+=================== 
+=================== 

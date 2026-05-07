@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== bd-1996-04-20-Portland-HG.md5
+===================
+===================
+===================
+8a23224c646c23cfdf4ca16a7123c713 *Disc1\bd-1996-04-20-HG-d1t01.flac
+71466f5000af24100422105f7cd8c634 *Disc1\bd-1996-04-20-HG-d1t02.flac
+09b0850d36c1a02d228fcc239e918704 *Disc1\bd-1996-04-20-HG-d1t03.flac
+8172ffe301d1a717738a97db4e4e3972 *Disc1\bd-1996-04-20-HG-d1t04.flac
+a7a0c96a5f8d9917bfcac9fa3db8d225 *Disc1\bd-1996-04-20-HG-d1t05.flac
+98429a474ae2456ef407c0151c887b33 *Disc1\bd-1996-04-20-HG-d1t06.flac
+214e32bde8a8c1aa491c161056b018c8 *Disc1\bd-1996-04-20-HG-d1t07.flac
+a06ca5d99c5859216fefbc2e52530ec9 *Disc1\bd-1996-04-20-HG-d1t08.flac
+da936b0f5ee8a1a79d09d1f20d999460 *Disc1\bd-1996-04-20-HG-d1t09.flac
+60c06c47b23cec249b854e79f861445f *Disc2\bd-1996-04-20-HG-d2t01.flac
+17d27959cb8f23010640a0fd07dab242 *Disc2\bd-1996-04-20-HG-d2t02.flac
+6510568ce3928c7ab5d329979d60aeed *Disc2\bd-1996-04-20-HG-d2t03.flac
+90b2f38342de9b2be91461adb74c6d60 *Disc2\bd-1996-04-20-HG-d2t04.flac
+4a5acc5763bc03b07fd2ed30c6a338e9 *Disc2\bd-1996-04-20-HG-d2t05.flac
+4b9f9e7b129863bf89aaf5ec599e1d48 *Port04-20-96(HG)-B.JPG
+79575c0e84e8b8acf1a35639063d10dd *Port04-20-96(HG)-F.JPG
+===================
+===================
+===================
+=== bd-1996-04-20-Portland-HG.txt
+===================
+===================
+===================
+Bob Dylan
+State Theater
+Portland, Maine
+April 20, 1996
+
+Holy Grail Series: What Good Am I?
+
+Sound Quality: Excellent
+
+
+This set is based on the same recording as LB-0877 but is in flac format as opposed to the shn version.
+
+
+Disk 1
+
+01 Crash On The Levee (Down In The Flood)
+02 Man In The Long Black Coat
+03 All Along The Watchtower
+04 Positively 4th Street
+05 Pledging My Time
+06 Silvio
+07 Mr. Tambourine Man (Acoustic W Band)
+08 Desolation Row (Acoustic W Band)
+09 Friend Of The Devil (Acoustic W Band)
+
+Disc 2
+
+01 Maggie's Farm
+02 What Good Am I?
+03 Seven Days
+04 Alabama Getaway
+05 The Times They Are A-Changin' (Acoustic W Band)
+
+
+============================
+============================
+============================
+=== md5 for bd-1996-04-20-Portland-HG
+============================
+============================
+============================
+
+
+8a23224c646c23cfdf4ca16a7123c713 *Disc1/bd-1996-04-20-HG-d1t01.flac
+71466f5000af24100422105f7cd8c634 *Disc1/bd-1996-04-20-HG-d1t02.flac
+09b0850d36c1a02d228fcc239e918704 *Disc1/bd-1996-04-20-HG-d1t03.flac
+8172ffe301d1a717738a97db4e4e3972 *Disc1/bd-1996-04-20-HG-d1t04.flac
+a7a0c96a5f8d9917bfcac9fa3db8d225 *Disc1/bd-1996-04-20-HG-d1t05.flac
+98429a474ae2456ef407c0151c887b33 *Disc1/bd-1996-04-20-HG-d1t06.flac
+214e32bde8a8c1aa491c161056b018c8 *Disc1/bd-1996-04-20-HG-d1t07.flac
+a06ca5d99c5859216fefbc2e52530ec9 *Disc1/bd-1996-04-20-HG-d1t08.flac
+da936b0f5ee8a1a79d09d1f20d999460 *Disc1/bd-1996-04-20-HG-d1t09.flac
+60c06c47b23cec249b854e79f861445f *Disc2/bd-1996-04-20-HG-d2t01.flac
+17d27959cb8f23010640a0fd07dab242 *Disc2/bd-1996-04-20-HG-d2t02.flac
+6510568ce3928c7ab5d329979d60aeed *Disc2/bd-1996-04-20-HG-d2t03.flac
+90b2f38342de9b2be91461adb74c6d60 *Disc2/bd-1996-04-20-HG-d2t04.flac
+4a5acc5763bc03b07fd2ed30c6a338e9 *Disc2/bd-1996-04-20-HG-d2t05.flac
+4b9f9e7b129863bf89aaf5ec599e1d48 *Port04-20-96(HG)-B.JPG
+79575c0e84e8b8acf1a35639063d10dd *Port04-20-96(HG)-F.JPG
+
+
+===================
+===================
+===================

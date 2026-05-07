@@ -1,0 +1,68 @@
+===================
+===================
+===================
+=== md5 for: bd25-05-13-gravenb.flac24
+===================
+===================
+===================
+81207453e5125eebab05a5f54470d720 *Bob 051325 101 I'll Be Your Baby Tonight.flac
+ae676077ac02345f10bd1191a943c4f3 *Bob 051325 102 It Ain't Me, Babe.flac
+cb0ecf52e5541a58f876dc512a2ce463 *Bob 051325 103 Forgetful Heart.flac
+da3994e8087df7280de84fd18eb9c0b4 *Bob 051325 104 Axe and the Wind.flac
+e63c0ef4d88e729ec6bda914d0ae2597 *Bob 051325 105 To Ramona.flac
+5fe78cd28fce654abdf4d43928058bca *Bob 051325 106 Route 66.flac
+d4cbe374fe5aaf01a19467cb1f044f00 *Bob 051325 107 All Along the Watchtower.flac
+660292723760412aea542ef3562551c5 *Bob 051325 108 I'll Make It All Up To You.flac
+f3b2c1977bd73fa24299ba0093847a0e *Bob 051325 109 It Takes a Lot to Laugh, It Takes a Train to Cry.flac
+5f77e1e312f012a524065f0bac7a4869 *Bob 051325 110 Mr. Tambourine Man.flac
+d4cfa3100b749f86ace7abf73a008410 *Bob 051325 110 Under the Red Sky.flac
+9f0b0a7dd22112a285afa89501fd6295 *Bob 051325 112 Scarlet Town.flac
+03a2200f5daa1b14013c6a6304052acc *Bob 051325 113 A Rainy Night in Soho.flac
+9c71675d6b49f4f562643215608d9d0d *Bob 2025-05-13 Phoenix.txt
+29fde87566d6e1a7f93e8c5e5c3e807f *fingerprint.ffp.txt
+cd3550b5ff4b0d8c5ec99ce55d8b8c19 *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd25-05-13-gravenb.flac24
+===================
+===================
+===================
+Bob 051325 101 I'll Be Your Baby Tonight.flac:e53d6ebfbf9a97948ea16287919055fe
+Bob 051325 102 It Ain't Me, Babe.flac:a26d7005059ac1eef01f9147ffbff58b
+Bob 051325 103 Forgetful Heart.flac:b67742184caefa91135f54db837766ff
+Bob 051325 104 Axe and the Wind.flac:88d16344f797513a98f860c6c72a1cda
+Bob 051325 105 To Ramona.flac:534eb743baa4cfa3e8553e7a9ebfc91e
+Bob 051325 106 Route 66.flac:651d5c9fb3f8f66220733df2dbfc0049
+Bob 051325 107 All Along the Watchtower.flac:e93788d518afb74b9b3668c3fd2c84a0
+Bob 051325 108 I'll Make It All Up To You.flac:ed16ab4d2d6e4a43f88f9de00882241d
+Bob 051325 109 It Takes a Lot to Laugh, It Takes a Train to Cry.flac:1ff677bd429b4eacd476b47de4fd6db4
+Bob 051325 110 Mr. Tambourine Man.flac:a0f7df84f69c91b67630a08df9f9714d
+Bob 051325 110 Under the Red Sky.flac:5636d360249c6c9417af53d5a94d1c04
+Bob 051325 112 Scarlet Town.flac:c60e3648e53b6accd1b25c681e4db5e5
+Bob 051325 113 A Rainy Night in Soho.flac:ee9408fad7bf9d9931a74d073ea0cce4
+===================
+===================
+===================
+=== shntool len for: bd25-05-13-gravenb.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.429      79611674 B   cxx   --   ---xx   flac  0.6444  Bob 051325 101 I'll Be Your Baby Tonight.flac
+     6:33.179     113235620 B   cxx   --   ---xx   flac  0.6539  Bob 051325 102 It Ain't Me, Babe.flac
+     4:30.041      77771792 B   cxx   --   ---xx   flac  0.6086  Bob 051325 103 Forgetful Heart.flac
+     3:30.003      60480920 B   cxx   --   ---xx   flac  0.6294  Bob 051325 104 Axe and the Wind.flac
+     6:22.404     110132402 B   cxx   --   ---xx   flac  0.6281  Bob 051325 105 To Ramona.flac
+     4:08.675      71618498 B   cxx   --   ---xx   flac  0.6594  Bob 051325 106 Route 66.flac
+     4:46.093      82394732 B   cxx   --   ---xx   flac  0.6479  Bob 051325 107 All Along the Watchtower.flac
+     3:25.538      59194994 B   cxx   --   ---xx   flac  0.6326  Bob 051325 108 I'll Make It All Up To You.flac
+     4:19.561      74753594 B   cxx   --   ---xx   flac  0.6423  Bob 051325 109 It Takes a Lot to Laugh, It Takes a Train to Cry.flac
+     4:59.635      86295014 B   cxx   --   ---xx   flac  0.6158  Bob 051325 110 Mr. Tambourine Man.flac
+     4:52.772      84318308 B   cxx   --   ---xx   flac  0.6539  Bob 051325 110 Under the Red Sky.flac
+     7:01.427     121370948 B   cxx   --   ---xx   flac  0.6084  Bob 051325 112 Scarlet Town.flac
+     5:01.240      86757308 B   cxx   --   ---xx   flac  0.6260  Bob 051325 113 A Rainy Night in Soho.flac
+    64:06.997    1107935804 B                            0.6340  (13 files)
+===================
+===================
+===================

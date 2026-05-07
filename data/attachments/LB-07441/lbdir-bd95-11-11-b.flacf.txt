@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-11-11-b.flacf 
+=================== 
+=================== 
+=================== 
+595520eaba657ec2a22f53f7f1330363  CD1\01 Crash on the levee (down in the flood).flac
+07c43ad9de7f8343a51f331783c171f1  CD1\02 If you see her, say hello.flac
+4b33cf48674490a460d2bf7ac33b27f5  CD1\03 All along the watchtower.flac
+d292fa204b3a707490dafbd4fadef41a  CD1\04 I don't believe you (she acts like we never have met).flac
+5660df576237e569d9e5a02408a1dbe0  CD1\05 West L.A. Fadeaway.flac
+1342248629bb1bae2e42dd220569f71a  CD1\06 Silvio.flac
+437fc9c9471bace5447d006100369431  CD1\07 Tangled up in blue.flac
+e29b05b2d1fd7d4f7cad9a2a876b3781  CD1\08 Masters of war.flac
+444d7e7673b3f7ed8a270871c6884220  CD1\FLAC CD1.md5
+24008c6818c5fd60d0b7f00b17f53355  CD2\09 To Ramona.flac
+43182b0af60f5d647a136287aad94243  CD2\10 Tombstone blues.flac
+f56fea68cb669e97db8511b20a81de85  CD2\11 It's too late.flac
+d84265a8387f9b994cf704825cbc9428  CD2\12 Highway 61 revisited.flac
+e4ce1671c40f4416fa36069df82bd3da  CD2\13 Alabama getaway.flac
+0e2b26fbada73ae4e30cb642a375e631  CD2\14 Girl from The North Country.flac
+a5cd487602d14446173aa167d6f5284a  CD2\15 Rainy day women # 12 & 35.flac
+d48168704734bc80347c5ae9011369b8  CD2\FLAC CD2.md5
+40708b474e95cee0553e68ad2f8b50cd  Info\1995-11-11 The Joint, Hard Rock Hotel, Las Vegas, Nevada, USA [uT].txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-11-11-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the levee (down in the flood).flac:e9c3c31fcae7eafb854be0b219ffbbff
+02 If you see her, say hello.flac:d020d894fc1fded7e4f694aa01284676
+03 All along the watchtower.flac:7c7f55cfe8adf5124a219a8e5ee10df1
+04 I don't believe you (she acts like we never have met).flac:2a712eb5dbbfafc13438c36d4dc32391
+05 West L.A. Fadeaway.flac:ebe4df9d564c2bb8c265aea5e965d623
+06 Silvio.flac:6a4b0da0bc5a74b24017827de7db5bff
+07 Tangled up in blue.flac:d9f1188cea7f2a8fe862fa1945b8440a
+08 Masters of war.flac:6d86a87c986e2253c074deac60221490
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-11-11-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+09 To Ramona.flac:8156de63eec8c9bbac98685a9f1ffb2e
+10 Tombstone blues.flac:705b8423300b4d28ff5338effaa77375
+11 It's too late.flac:be5a83b4426acaa0237029d526fa81cf
+12 Highway 61 revisited.flac:b389d05360a540c7ccb18620db9b99c8
+13 Alabama getaway.flac:fddcd0fd5c13817be0f9d6504bb52296
+14 Girl from The North Country.flac:233dc1b425797f76ab65be613776bebe
+15 Rainy day women # 12 & 35.flac:99dba8d24cd5dbbd60c12e992fe8fd75
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-11-11-b.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.35       55295564 B   ---   --   ---xx   flac  0.6120  01 Crash on the levee (down in the flood).flac
+     7:05.73       75141740 B   ---   --   ---xx   flac  0.5989  02 If you see her, say hello.flac
+     6:18.36       66763916 B   ---   --   ---xx   flac  0.6270  03 All along the watchtower.flac
+     7:57.58       84279260 B   ---   --   ---xx   flac  0.5974  04 I don't believe you (she acts like we never have met).flac
+     8:46.38       92875820 B   ---   --   ---xx   flac  0.6142  05 West L.A. Fadeaway.flac
+     7:59.47       84606188 B   ---   --   ---xx   flac  0.6418  06 Silvio.flac
+    10:22.72      109890188 B   ---   --   ---xx   flac  0.5280  07 Tangled up in blue.flac
+     5:49.04       61573052 B   ---   --   ---xx   flac  0.5062  08 Masters of war.flac
+    59:33.63      630425728 B                            0.5894  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-11-11-b.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:00.45       74193884 B   ---   --   ---xx   flac  0.5213  09 To Ramona.flac
+     7:07.33       75400460 B   ---   --   ---xx   flac  0.5794  10 Tombstone blues.flac
+     7:10.43       75953180 B   ---   --   ---xx   flac  0.5593  11 It's too late.flac
+     8:11.09       86633612 B   ---   --   ---xx   flac  0.6026  12 Highway 61 revisited.flac
+     6:24.70       67902284 B   ---   --   ---xx   flac  0.6007  13 Alabama getaway.flac
+     9:04.03       95968700 B   ---   --   ---xx   flac  0.5396  14 Girl from The North Country.flac
+     5:24.71       57320636 B   ---   --   ---xx   flac  0.6209  15 Rainy day women # 12 & 35.flac
+    50:23.49      533372756 B                            0.5722  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-11-12-pdub.flacf 
+=================== 
+=================== 
+=================== 
+63b9c3628e013c3e0386167216ea349d  bd1997-11-12.txt
+adb7bf2910b61a1667697c6537552aa2  bd97-11-12-d1\bd97-11-12-d1-fingerprints.txt
+9c44cce75f8d6167b2b8125f89bc54c8  bd97-11-12-d1\bd97-11-12-d1.md5
+52d8e3f2aae525ba5ad97cee1ada9b94  bd97-11-12-d1\Bob Dylan - Track01.flac
+32416f6fdd81cbcdb53e2940d6c076f7  bd97-11-12-d1\Bob Dylan - Track02.flac
+0c71797a2861a59b37bf4954c3593ca0  bd97-11-12-d1\Bob Dylan - Track03.flac
+0520911ecb606d258e11d3639e628bd1  bd97-11-12-d1\Bob Dylan - Track04.flac
+ae7f12a72177ffd2645a0c921f1330fc  bd97-11-12-d1\Bob Dylan - Track05.flac
+e56de965afc67c5bbc474828a995aaf5  bd97-11-12-d1\Bob Dylan - Track06.flac
+28a4a0e02d26009059706d64b040aed7  bd97-11-12-d1\Bob Dylan - Track07.flac
+db4df72c5e393c49b3f492d3d986f252  bd97-11-12-d1\Bob Dylan - Track08.flac
+40bdd27e125cf70122332561d09bd2c0  bd97-11-12-d1\Bob Dylan - Track09.flac
+bcecf5b05e49636e81904e22a55e49e7  bf97-11-12-d2\bd97-11-12-d2-fingerprints.txt
+92248b793822514a6859d1a5243b9afb  bf97-11-12-d2\bf97-11-12-d2.md5
+0b11b3d26cc487fd539e23cff5801f68  bf97-11-12-d2\Bob Dylan - Track01.flac
+c0186325f881ff94e632826ee477838e  bf97-11-12-d2\Bob Dylan - Track02.flac
+b66871d59ce839251ccf7891d6acefca  bf97-11-12-d2\Bob Dylan - Track03.flac
+79efb3401e9ee31c31cad8fc36343a9c  bf97-11-12-d2\Bob Dylan - Track04.flac
+b00714e4ea81c9178a07af4115860302  bf97-11-12-d2\Bob Dylan - Track05.flac
+04005d87e5da4ef092467033c91e1581  bf97-11-12-d2\Bob Dylan - Track06.flac
+0c19b4b4d883d2d40e8515524162712b  bf97-11-12-d2\Bob Dylan - Track07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-11-12-pdub.flacf\bf97-11-12-d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track01.flac:270a3d88889b81b29650277ffa287eb6
+Bob Dylan - Track02.flac:2632b7a515e9c52e257be7987e24cb45
+Bob Dylan - Track03.flac:8b26d32036db3d808c942f8b7acb0a19
+Bob Dylan - Track04.flac:b2c1f28e9a7b6c5f1544fa872fb65c70
+Bob Dylan - Track05.flac:d0d85cfc7e887cd8e0548c696cc13c24
+Bob Dylan - Track06.flac:b8e78217c8844d3b179581843fb18561
+Bob Dylan - Track07.flac:32d82d16d91ecbfbb7c5ffb01902c33b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-11-12-pdub.flacf\bd97-11-12-d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track01.flac:5b2888e9fef59f35a090b9271dd9f469
+Bob Dylan - Track02.flac:c0225a1b29902105976be91cd405da95
+Bob Dylan - Track03.flac:b996e46a69b65383a359cbdbeac9c068
+Bob Dylan - Track04.flac:9d2a6504fda9862e25504eaaf2c777b2
+Bob Dylan - Track05.flac:df3cf135f5e0db1eb8e2f0e543c251b0
+Bob Dylan - Track06.flac:450c1dfa657fa5ca5bc5c2d93b9b80f7
+Bob Dylan - Track07.flac:fca3286afee6167e10e589e82d30a172
+Bob Dylan - Track08.flac:bd3e2874154238779a28148cb113b143
+Bob Dylan - Track09.flac:29db8918d831ecf6f725fb3117b5106f
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-11-12-pdub.flacf\bf97-11-12-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.24       61090892 B   ---   --   ---xx   flac  0.5931  Bob Dylan - Track01.flac
+     6:39.00       70383644 B   ---   --   ---xx   flac  0.5519  Bob Dylan - Track02.flac
+     8:41.01       91906796 B   ---   --   ---xx   flac  0.6366  Bob Dylan - Track03.flac
+    10:22.04      109730252 B   ---   --   ---xx   flac  0.6284  Bob Dylan - Track04.flac
+     7:42.49       81612092 B   ---   --   ---xx   flac  0.6118  Bob Dylan - Track05.flac
+     5:59.11       63353516 B   ---   --   ---xx   flac  0.5607  Bob Dylan - Track06.flac
+     5:22.32       56876108 B   ---   --   ---xx   flac  0.6438  Bob Dylan - Track07.flac
+    50:32.46      534953300 B                            0.6068  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-11-12-pdub.flacf\bd97-11-12-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:42.63       71061020 B   ---   --   ---xx   flac  0.6017  Bob Dylan - Track01.flac
+     5:54.57       62579708 B   ---   --   ---xx   flac  0.5394  Bob Dylan - Track02.flac
+     7:00.28       74153900 B   ---   --   ---xx   flac  0.5717  Bob Dylan - Track03.flac
+     5:23.18       57019580 B   ---   --   ---xx   flac  0.5779  Bob Dylan - Track04.flac
+     6:20.67       67189628 B   ---   --   ---xx   flac  0.5829  Bob Dylan - Track05.flac
+     7:28.68       79187180 B   ---   --   ---xx   flac  0.6251  Bob Dylan - Track06.flac
+     5:03.66       53604476 B   ---   --   ---xx   flac  0.5031  Bob Dylan - Track07.flac
+     4:53.66       51840476 B   ---   --   ---xx   flac  0.4994  Bob Dylan - Track08.flac
+     8:25.16       89119676 B   ---   --   ---xx   flac  0.6085  Bob Dylan - Track09.flac
+    57:13.74      605755644 B                            0.5738  (9 files)
+=================== 
+=================== 
+=================== 

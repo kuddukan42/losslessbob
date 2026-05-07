@@ -1,0 +1,151 @@
+===================
+===================
+===================
+=== bd92-03-23 - Sydney - MK.md5
+===================
+===================
+===================
+f19625feadddb6284089b928aed82f9f *bd92-03-23 - Sydney - MK.st5
+7ff9ecfd107786b85e2d61c750c1fa81 *bd92-03-23 - Sydney - MK.txt
+d89e0a5a49f32cf92716be37b4444e7a *bd92-03-23d1t01.shn
+2500a3a728d632349205a482a50aa4ec *bd92-03-23d1t02.shn
+521f4f7aa86bf75f6fc5903609b191ef *bd92-03-23d1t03.shn
+9d4642140af68e4e56e757d4def02f35 *bd92-03-23d1t04.shn
+73980b99ca05214679920206bac01e1f *bd92-03-23d1t05.shn
+67594fbbb663650f371098aa77733e16 *bd92-03-23d1t06.shn
+bf77c4546d1cc8a492b26003ae950537 *bd92-03-23d1t07.shn
+47f8611acc36ac35f8d00d985fde13c1 *bd92-03-23d1t08.shn
+cf23b9a7c3e7978617c1cfb1a869676f *bd92-03-23d1t09.shn
+184ebab90f0a5140d5bb9723cc07ae74 *bd92-03-23d1t10.shn
+faa3485dc2221393abd4b453f0d0f4cb *bd92-03-23d2t01.shn
+7329cf57543567f9b81dc1038efd92de *bd92-03-23d2t02.shn
+556666f856c3d6b45e1395b842eec256 *bd92-03-23d2t03.shn
+985f3151db66af7017e70214857162ee *bd92-03-23d2t04.shn
+dee325861cb065daa512bf36f2119957 *bd92-03-23d2t05.shn
+c998f053b2294ab53c1d4efb3d41c7b0 *bd92-03-23d2t06.shn
+b63f6b4249ba18dc9c60b470c66d0b8d *bd92-03-23d2t07.shn
+02c88321edccd63ff54810ec4df4b48f *bd92-03-23d2t08.shn
+17f014644a77b95588ae28e15fc1be4d *noname.md5
+===================
+===================
+===================
+=== bd92-03-23 - Sydney - MK.st5
+===================
+===================
+===================
+00006279869dbbc4373283d91963a36e  [shntool]  bd92-03-23d1t01.shn
+effd7a0c66b028ebdbc7f04a8235d1b4  [shntool]  bd92-03-23d1t02.shn
+2be2992cb66f9aaec4ff83ce176a238a  [shntool]  bd92-03-23d1t03.shn
+2c22f9ed2f4e6fae58c1b69a8f3d3b15  [shntool]  bd92-03-23d1t04.shn
+1084d2f02bd18a30c8b505cb43dca324  [shntool]  bd92-03-23d1t05.shn
+e6bd1beda65131d1b816f2043487a420  [shntool]  bd92-03-23d1t06.shn
+db4492320d5bee9fa90caac3070aa6c2  [shntool]  bd92-03-23d1t07.shn
+10812c7f113036ef0b4f62bd5c3a538b  [shntool]  bd92-03-23d1t08.shn
+3516d116bb352e40eedf8c56917f131a  [shntool]  bd92-03-23d1t09.shn
+d9d59f888295900d8ca56afa61c95d66  [shntool]  bd92-03-23d1t10.shn
+22acb4a79ab59669c4c4b108d7d82146  [shntool]  bd92-03-23d2t01.shn
+721df47389b7013e9e31c8e81347ab0d  [shntool]  bd92-03-23d2t02.shn
+fb8f2703bd09ad3498bf7185a95cbd37  [shntool]  bd92-03-23d2t03.shn
+6cbd9474465d1d5d511b112d03d5bd3a  [shntool]  bd92-03-23d2t04.shn
+2756ac0ba761a84e95ea7771ca9722cd  [shntool]  bd92-03-23d2t05.shn
+625576b9c622ff14749a5a78a6be0e6c  [shntool]  bd92-03-23d2t06.shn
+a07692bbb690a86d32b23a00fa4c91e6  [shntool]  bd92-03-23d2t07.shn
+95ccf18b6e2775ec2eb869bdd91d02b6  [shntool]  bd92-03-23d2t08.shn
+===================
+===================
+===================
+=== bd92-03-23 - Sydney - MK.txt
+===================
+===================
+===================
+#3 - 1992 Australian Tour - MK/LK Series - May 2015
+
+xxxxx
+
+State Theatre
+Sydney, New South Wales, Australia
+23 March 1992
+
+1.  Most Likely You Go Your Way (And I'll Go Mine)
+2.  Most Of The Time
+3.  All Along The Watchtower
+4.  Just Like A Woman
+5.  Stuck Inside Of Mobile With The Memphis Blues Again
+6.  I'll Be Your Baby Tonight
+7.  Maggie's Farm
+8.  Love Minus Zero/No Limit
+9.  Little Moses (Bert A. Williams/Earle C. Jones)
+10.  Trail Of The Buffalo (trad. arr. Woody Guthrie)
+11.  Desolation Row
+12.  Cat's In The Well
+13.  I'll Remember You
+14.  The Times They Are A-Changin'
+15.  Highway 61 Revisited
+
+16.  Ballad Of A Thin Man
+17.  Rainy Day Women # 12 & 35
+18.  Blowin' In The Wind
+
+Concert # 367 of The Never-Ending Tour.  Third concert of the 1992 Tour Of Australia. Third 1992 concert.
+Third concert with the 6th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+8, 9, 18  Bob Dylan (acoustic guitar & vocal).
+4, 8, 11, 14, 17, 18  Bob Dylan harmonica.
+10  Bob Dylan (acoustic guitar & vocal) & John Jackson (guitar).
+11  Bucky Baxter (dobro).
+14  Bucky Baxter (mandolin).
+15  Bucky Baxter (electric slide guitar).
+11, 14  acoustic with the band.
+
+BobTalk:
+Thanks everybody! That was a song about one of those contemporary subjects, buffalo!
+1 new song (5%) compared to previous concert. 1 new song for this tour.
+
+xxxxx
+
+00006279869dbbc4373283d91963a36e  [shntool]  bd92-03-23d1t01.shn
+effd7a0c66b028ebdbc7f04a8235d1b4  [shntool]  bd92-03-23d1t02.shn
+2be2992cb66f9aaec4ff83ce176a238a  [shntool]  bd92-03-23d1t03.shn
+2c22f9ed2f4e6fae58c1b69a8f3d3b15  [shntool]  bd92-03-23d1t04.shn
+1084d2f02bd18a30c8b505cb43dca324  [shntool]  bd92-03-23d1t05.shn
+e6bd1beda65131d1b816f2043487a420  [shntool]  bd92-03-23d1t06.shn
+db4492320d5bee9fa90caac3070aa6c2  [shntool]  bd92-03-23d1t07.shn
+10812c7f113036ef0b4f62bd5c3a538b  [shntool]  bd92-03-23d1t08.shn
+3516d116bb352e40eedf8c56917f131a  [shntool]  bd92-03-23d1t09.shn
+d9d59f888295900d8ca56afa61c95d66  [shntool]  bd92-03-23d1t10.shn
+22acb4a79ab59669c4c4b108d7d82146  [shntool]  bd92-03-23d2t01.shn
+721df47389b7013e9e31c8e81347ab0d  [shntool]  bd92-03-23d2t02.shn
+fb8f2703bd09ad3498bf7185a95cbd37  [shntool]  bd92-03-23d2t03.shn
+6cbd9474465d1d5d511b112d03d5bd3a  [shntool]  bd92-03-23d2t04.shn
+2756ac0ba761a84e95ea7771ca9722cd  [shntool]  bd92-03-23d2t05.shn
+625576b9c622ff14749a5a78a6be0e6c  [shntool]  bd92-03-23d2t06.shn
+a07692bbb690a86d32b23a00fa4c91e6  [shntool]  bd92-03-23d2t07.shn
+95ccf18b6e2775ec2eb869bdd91d02b6  [shntool]  bd92-03-23d2t08.shn
+
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+67594fbbb663650f371098aa77733e16 *d1t06.shn
+2500a3a728d632349205a482a50aa4ec *d1t02.shn
+521f4f7aa86bf75f6fc5903609b191ef *d1t03.shn
+9d4642140af68e4e56e757d4def02f35 *d1t04.shn
+73980b99ca05214679920206bac01e1f *d1t05.shn
+d89e0a5a49f32cf92716be37b4444e7a *d1t01.shn
+bf77c4546d1cc8a492b26003ae950537 *d1t07.shn
+47f8611acc36ac35f8d00d985fde13c1 *d1t08.shn
+cf23b9a7c3e7978617c1cfb1a869676f *d1t09.shn
+184ebab90f0a5140d5bb9723cc07ae74 *d1t10.shn
+faa3485dc2221393abd4b453f0d0f4cb *d2t01.shn
+7329cf57543567f9b81dc1038efd92de *d2t02.shn
+556666f856c3d6b45e1395b842eec256 *d2t03.shn
+985f3151db66af7017e70214857162ee *d2t04.shn
+dee325861cb065daa512bf36f2119957 *d2t05.shn
+c998f053b2294ab53c1d4efb3d41c7b0 *d2t06.shn
+b63f6b4249ba18dc9c60b470c66d0b8d *d2t07.shn
+02c88321edccd63ff54810ec4df4b48f *d2t08.shn
+===================
+===================
+===================

@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd04-04-02-d.flacf
+===================
+===================
+===================
+8c6f11fcd8c68268806d52ec5d0206db *2004-04-02 - 930 Club.md5
+1274d19435edafae23df1719c9810148 *April 2, 2004 - 930 Club.txt
+40cda0f6cc1fb7e145034946c07962f1 *EAC Report disc 1.LOG
+f57a0f0403bdcfc10d3cae111a09a5eb *EAC Report disc 2.log
+cf2af22a019c623e356a168eba660fd9 *Track D1-01.shn
+10ac6c0135ef82c005671d4e5773acce *Track D1-02.shn
+51a590d010c4fd304f0983716c4a9076 *Track D1-03.shn
+bbf6965c24c1eb32b235b196e5274aee *Track D1-04.shn
+940423f585b70bb7f11a91ac862775c6 *Track D1-05.shn
+0827126e49aaa040d0439893b6d24395 *Track D1-06.shn
+935adac4eeb9f5fc5fe717f4fcc316cb *Track D1-07.shn
+4e30c58aa960bfc720f786f9c697ff4b *Track D1-08.shn
+ab18b515cb3a058050faa592615108af *Track D1-09.shn
+d8d81b68d53aa5d5c0f123e3217afe7e *Track D1-10.shn
+a12538e9911397bfa9e722edb2791450 *Track D2-01.shn
+2cbfcb44bd80a9c68eceac28fc7a93cf *Track D2-02.shn
+dbacfa9a1c27237fda8d3dfdb8ee7a13 *Track D2-03.shn
+177a5f283d2c88c8eb324fa4d5338278 *Track D2-04.shn
+548e03d0b51dfe7558843256e7a3e5a9 *Track D2-05.shn
+0bc691880b70c40ee4db30a7aa20715b *Track D2-06.shn
+58cbc23328fb899e16c90da920ebd0a1 *Track D2-07.shn
+===================
+===================
+===================
+=== shntool md5/hash for: bd04-04-02-d.flacf
+===================
+===================
+===================
+7ac01c5bfa461306197fd4bafce22930  [shntool]  Track D1-01.shn
+69f571dd2b431a12474a025bfc9990c8  [shntool]  Track D1-02.shn
+8806e5fcf6f089c1a3d2282d236070f7  [shntool]  Track D1-03.shn
+729042ddd402e7129e164e3ef570a934  [shntool]  Track D1-04.shn
+90fde0c8f08c53d63d4a7c4f7fc0b82e  [shntool]  Track D1-05.shn
+ba9bce33d7ab028352c6f65a6b407acd  [shntool]  Track D1-06.shn
+846fcded06184ccdc905584238bde57d  [shntool]  Track D1-07.shn
+c065186d5692ff6d2206efffd58154dc  [shntool]  Track D1-08.shn
+b6fc98670817eff66c313535cdf12d86  [shntool]  Track D1-09.shn
+0bdbc886efae91fe9f15d7f27cbfca41  [shntool]  Track D1-10.shn
+6766b49ff37b6b49b3de57bc21855d7f  [shntool]  Track D2-01.shn
+e7216fa70896c25c1c4b554fbcb66e08  [shntool]  Track D2-02.shn
+2d9a88eced4b1617528a918fee5aba47  [shntool]  Track D2-03.shn
+a7c121b3e989e51b23de181ff2880acf  [shntool]  Track D2-04.shn
+1f4f52405aa41c6949d5b25e7ffc45eb  [shntool]  Track D2-05.shn
+2c5189f1acfd5970b72f7321b6cfd343  [shntool]  Track D2-06.shn
+3c03367560bb1ba526ff4cc95a3430ca  [shntool]  Track D2-07.shn
+===================
+===================
+===================
+=== shntool len for: bd04-04-02-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:51.34        9076412 B   ---   --   ---xx    shn  0.5723  Track D1-01.shn
+     4:48.57       50937308 B   ---   --   ---xx    shn  0.6645  Track D1-02.shn
+     5:14.09       55410812 B   ---   --   ---xx    shn  0.6044  Track D1-03.shn
+     5:30.49       58327292 B   ---   --   ---xx    shn  0.6075  Track D1-04.shn
+     7:12.61       76348316 B   ---   --   ---xx    shn  0.6177  Track D1-05.shn
+     7:38.13       80821820 B   ---   --   ---xx    shn  0.6459  Track D1-06.shn
+     7:47.49       82494092 B   ---   --   ---xx    shn  0.6117  Track D1-07.shn
+     6:20.40       67126124 B   ---   --   ---xx    shn  0.6343  Track D1-08.shn
+     6:11.53       65569100 B   ---   --   ---xx    shn  0.5816  Track D1-09.shn
+     5:51.21       61965836 B   ---   --   ---xx    shn  0.5521  Track D1-10.shn
+     8:41.69       92066732 B   ---   --   ---xx    shn  0.6343  Track D2-01.shn
+     5:56.23       62852540 B   ---   --   ---xx    shn  0.5467  Track D2-02.shn
+     6:54.60       73170764 B   ---   --   ---xx    shn  0.6116  Track D2-03.shn
+    13:40.30      144718604 B   ---   --   ---xx    shn  0.5894  Track D2-04.shn
+     5:23.30       57047804 B   ---   --   ---xx    shn  0.6276  Track D2-05.shn
+     6:35.25       69736844 B   ---   --   ---xx    shn  0.6189  Track D2-06.shn
+     8:20.27       88263548 B   ---   --   ---xx    shn  0.6189  Track D2-07.shn
+   112:59.50     1195933948 B                            0.6097  (17 files)
+===================
+===================
+===================

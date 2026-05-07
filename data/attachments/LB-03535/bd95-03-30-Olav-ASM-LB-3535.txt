@@ -1,0 +1,12 @@
+Bob Dylan, 3/30/95, London, England, Brixton Academy, 2CDR
+
+LB-3535, (53min+54min), Olav ASM; NET Taper Series #6, Offmaster audience recording, Unidentified taper, Olav ASM:, Lineage: FLAC DVD-R > WAV > CoolEdit (checking: a few statics removed; no other faults) > T-RackS v2.0 (overall volume boost 2.8dB) > FLAC frontend (sector alignment) > DIME; bittorrent download 02/06; same recording as LB-1866 with higher levels and bad clipping on loud songs such as d1t1 and d1t3 which is not on previous; (did not listen to all of this)
+
+CD1
+00. Announcement, 01. Crash On The Levee (Down In The Flood), 02. If You See Her, Say Hello, 03. All Along The Watchtower, 04. Jokerman, 05. Every Grain Of Sand, 06. Positively 4th Street, 07. Mr. Tambourine Man, 08. Masters Of War, 
+
+CD2
+09. Love Minus Zero/No Limit, 10. God Knows, 11. Stuck Inside Of Mobile With The Memphis Blues Again, 12. (band intro), 13. I Believe In You, 14. Like A Rolling Stone, 15. The Times They Are A-Changin', 16. I Shall Be Released
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-07-26a.flacf 
+=================== 
+=================== 
+=================== 
+5016842063c255d9c6fa11822f1c71ed  bd1991-07-26_d1t01.flac
+27d90b254940e135243ff7f0a6b2dbd2  bd1991-07-26_d1t02.flac
+00acc6f3912606e5e3113300d90265ad  bd1991-07-26_d1t03.flac
+6483eb1057411b04f82c0a88eefdabf2  bd1991-07-26_d1t04.flac
+3fa2fa21b9c46b7cbd1449c55e882964  bd1991-07-26_d1t05.flac
+a864bb0fbb9881ea1d0b287e5635e88a  bd1991-07-26_d1t06.flac
+6c26fe4b51a8b77fc6b2f70e85dff5c4  bd1991-07-26_d1t07.flac
+733712a6b2b584af2adbda4def790346  bd1991-07-26_d1t08.flac
+4ed2a007e84cad09d00a9d971c811ff8  bd1991-07-26_d1t09.flac
+ab0d24615620434190c54c31b0a79c7c  bd1991-07-26_d1t10.flac
+d0a5291a020f5329cc55c0aa9ebec401  bd1991-07-26_d1t11.flac
+f372ede6c800176bf48568ed3ed4fc62  bd1991-07-26_d2t01.flac
+c2eb0f42047a949ec4eb9c87c71b081d  bd1991-07-26_d2t02.flac
+149e8f0fb87af8add016503a690300b6  bd1991-07-26_d2t03.flac
+e7b96317aa237f31e6aaf93901aa650d  bd1991-07-26_d2t04.flac
+f0aed5878b6f0afa28e22717ffd31db1  bd1991-07-26_d2t05.flac
+26c42913be836b0add6121ca39f0f950  bd1991-07-26_d2t06.flac
+1fd25307247f042346c4a6d633eb485f  bd1991-07-26_d2t07.flac
+f40de9977daab7f8767266856594a36f  bd1991-07-26_FLACfingerprint.txt
+18858642e59ebf468078524d1d3a903e  bd1991-07-26_Maple, Ontario.md5
+a4a076424b0ae99cb6ca806431d11681  bd1991-07-26_Maple, Ontario.txt
+03cbe3211333fad0e51c9b5cbb7cd51a  bd91-07-26a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-07-26a.flacf 
+=================== 
+=================== 
+=================== 
+bd1991-07-26_d1t01.flac:7aa62fdd1a3a8a5d598128b9bf526a6b
+bd1991-07-26_d1t02.flac:11ad1aa510fe58b24fbf745d1d2f7d4e
+bd1991-07-26_d1t03.flac:62cc31e06abc0a44077b46886104850e
+bd1991-07-26_d1t04.flac:f0fc593e9ef2ca3c5b537b269eea0e02
+bd1991-07-26_d1t05.flac:1879feab2863dbbd913170c869f6caf2
+bd1991-07-26_d1t06.flac:de397e1c2f6af6ab8ac43d344f8ec12b
+bd1991-07-26_d1t07.flac:92fa4448119cd5c7702c9c0cb51d90b6
+bd1991-07-26_d1t08.flac:4c4ab5d6dd73793f7d8d0d3264392fc2
+bd1991-07-26_d1t09.flac:2adda1b9d05df3f6e588c64b89ad5320
+bd1991-07-26_d1t10.flac:4ef1a4becf5b50a134c7ce03cf732f3d
+bd1991-07-26_d1t11.flac:1d7432b949c614dac5f262e6b9465921
+bd1991-07-26_d2t01.flac:751c50b444d2f58a7fb36aff85a16241
+bd1991-07-26_d2t02.flac:ad220fea53a2e9e199a02efe15edb58c
+bd1991-07-26_d2t03.flac:de56ecfa31b941bcc23da8de69b7826f
+bd1991-07-26_d2t04.flac:6955ddb183bdd244d61f217131a00d95
+bd1991-07-26_d2t05.flac:fea8afc159a2177186f6829ddc378b2f
+bd1991-07-26_d2t06.flac:f649e0a70ca63fe68dcfbd513f685b12
+bd1991-07-26_d2t07.flac:6041092b76c8dbb83133a690c093b816
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-07-26a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.63       60477020 B   ---   --   ---xx   flac  0.4690  bd1991-07-26_d1t01.flac
+     4:37.02       48867548 B   ---   --   ---xx   flac  0.4749  bd1991-07-26_d1t02.flac
+     4:33.68       48317180 B   ---   --   ---xx   flac  0.4719  bd1991-07-26_d1t03.flac
+     5:31.72       58557788 B   ---   --   ---xx   flac  0.4909  bd1991-07-26_d1t04.flac
+     4:51.51       51452396 B   ---   --   ---xx   flac  0.4808  bd1991-07-26_d1t05.flac
+     3:06.72       32979788 B   ---   --   ---xx   flac  0.4990  bd1991-07-26_d1t06.flac
+     5:28.37       57946268 B   ---   --   ---xx   flac  0.4721  bd1991-07-26_d1t07.flac
+     4:29.10       47475164 B   ---   --   ---xx   flac  0.4812  bd1991-07-26_d1t08.flac
+     5:14.23       55443740 B   ---   --   ---xx   flac  0.4000  bd1991-07-26_d1t09.flac
+     7:08.08       75518060 B   ---   --   ---xx   flac  0.4490  bd1991-07-26_d1t10.flac
+     6:16.13       66357020 B   ---   --   ---xx   flac  0.4839  bd1991-07-26_d1t11.flac
+     7:42.42       81595628 B   ---   --   ---xx   flac  0.4601  bd1991-07-26_d2t01.flac
+     4:19.09       45708812 B   ---   --   ---xx   flac  0.4656  bd1991-07-26_d2t02.flac
+     3:52.34       41004812 B   ---   --   ---xx   flac  0.4968  bd1991-07-26_d2t03.flac
+     5:15.17       55606028 B   ---   --   ---xx   flac  0.4441  bd1991-07-26_d2t04.flac
+     7:09.15       75710924 B   ---   --   ---xx   flac  0.5059  bd1991-07-26_d2t05.flac
+     4:22.07       46233308 B   ---   --   ---xx   flac  0.4482  bd1991-07-26_d2t06.flac
+     6:45.19       71486732 B   ---   --   ---xx   flac  0.5165  bd1991-07-26_d2t07.flac
+    96:26.37     1020738216 B                            0.4727  (18 files)
+=================== 
+=================== 
+=================== 

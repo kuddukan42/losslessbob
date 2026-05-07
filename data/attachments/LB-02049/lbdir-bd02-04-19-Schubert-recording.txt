@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-04-19-Schubert-recording 
+=================== 
+=================== 
+=================== 
+e423360683e4d6bde9aaab6274df5259  bd02-04-19-Schubert-recording.txt
+500e50be3b9637e1bb5536c45e6fddbd  bd_02-04-19_cd1.shnf\VERIFY_bd_02-04-19_cd1.bat
+d403e28f870ccbf00c482180efc292e9  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 1.shn
+6006adb0ef562668123e7d0292d0d18f  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 10.shn
+d08d356223b5a61d149e8cde1fe40a81  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 11.shn
+4f50ed98073d5edfc8e45e53236fcd82  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 2.shn
+ae61dbd62f1342ae34e859ea5ff727f1  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 3.shn
+c55e9759d643cb90a16c6697ced3937d  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 4.shn
+eb29f4e77706117e91f13dbf3ba4aaff  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 5.shn
+93154d08279ead720e07ecb8d828500c  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 6.shn
+9aacf7692fe801849d1bf2ce5d01ad55  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 7.shn
+7a802588ab7b2efcadf5905ac6d6a7ae  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 8.shn
+19e862a9c2e065b40b089fce774b9f7c  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_00 - Track_ 9.shn
+9135611fa8027fbb9109966aaaf890e2  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_encode_notes.txt
+87b0563960bc1c94b426b253b53d8cc5  bd_02-04-19_cd1.shnf\bd_02-04-19_cd1_shn.md5
+7e0388e5f84e434996321daf4401174f  bd_02-04-19_cd2.shnf\VERIFY_bd_02-04-19_cd2.bat
+08c0ef6d585b91482ab44aeb8e118942  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 1.shn
+59a8a23df7d766972fa7ab41e5ff831e  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 2.shn
+661cd3067b5a3f3662c87aa4c210a3dd  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 3.shn
+7394fc404e628603011d154c0cdf9767  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 4.shn
+e1a33d00532128411d0ba8e4f31ffd30  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 5.shn
+5360e1b56e8a778ea526f0de6a3802ee  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 6.shn
+2120fe255360b7cbcb13fc52c69bc836  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 7.shn
+e11e1230b47f6370223eda5d9786de21  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 8.shn
+706a3f5231b5e77e47c0dd3dcfefffb0  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_00 - Track_ 9.shn
+51d1ddb2296a46852776d0fb7a196599  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_encode_notes.txt
+50ea9ac11c1cff9f32c0b0a6a3817f87  bd_02-04-19_cd2.shnf\bd_02-04-19_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-04-19-Schubert-recording\bd_02-04-19_cd1.shnf 
+=================== 
+=================== 
+=================== 
+d9a219b9853f6c18ea0528e435d08314  [shntool]  bd_02-04-19_cd1_00_-_Track__1.wav
+f21f0275f4dc07e34b6793db874e6188  [shntool]  bd_02-04-19_cd1_00_-_Track__2.wav
+64b5dea2a3d6fd85414f8d05eb083f2e  [shntool]  bd_02-04-19_cd1_00_-_Track__3.wav
+37e4738491373685724f62840fb0e06f  [shntool]  bd_02-04-19_cd1_00_-_Track__4.wav
+85e8c6c435e88d78fb74237664226176  [shntool]  bd_02-04-19_cd1_00_-_Track__5.wav
+907ff327d9ad19d28c91c839af23c9ec  [shntool]  bd_02-04-19_cd1_00_-_Track__6.wav
+ebb9c655ca5ee3595430e812e96d6b22  [shntool]  bd_02-04-19_cd1_00_-_Track__7.wav
+52b498eea04cdbea02794caf6be0fc99  [shntool]  bd_02-04-19_cd1_00_-_Track__8.wav
+9f06954f9764ed94c41565bc52647820  [shntool]  bd_02-04-19_cd1_00_-_Track__9.wav
+130b898652cc6501955b9092b349a211  [shntool]  bd_02-04-19_cd1_00_-_Track__10.wav
+19517367c568a1908bb0a874d7614705  [shntool]  bd_02-04-19_cd1_00_-_Track__11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-04-19-Schubert-recording\bd_02-04-19_cd2.shnf 
+=================== 
+=================== 
+=================== 
+eabd8ad3e85bbc6d8f0c9f5044e87cd0  [shntool]  bd_02-04-19_cd2_00_-_Track__1.wav
+bce0bc4d42fc566f26580facf928e37c  [shntool]  bd_02-04-19_cd2_00_-_Track__2.wav
+568dd6edfb56dc96c83ed29741f9519d  [shntool]  bd_02-04-19_cd2_00_-_Track__3.wav
+767b4fd91c12e67d718fcf950790d233  [shntool]  bd_02-04-19_cd2_00_-_Track__4.wav
+0bbe0d6affb667cd69557365bdb79f62  [shntool]  bd_02-04-19_cd2_00_-_Track__5.wav
+9357c553a4f9f642b7ba720885e58f56  [shntool]  bd_02-04-19_cd2_00_-_Track__6.wav
+43c6661fb4d8f2709b1e2c3032fe4354  [shntool]  bd_02-04-19_cd2_00_-_Track__7.wav
+d73266137fe2e088d34f9e4d465a9066  [shntool]  bd_02-04-19_cd2_00_-_Track__8.wav
+447a623fb7a355a22ebca051cd4183a8  [shntool]  bd_02-04-19_cd2_00_-_Track__9.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-19-Schubert-recording\bd_02-04-19_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.60       37537532 B   -b-   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__1.wav
+     8:26.27       89321948 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__10.wav
+     6:55.13       73235532 B   -b-   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__11.wav
+     6:43.67       71246828 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__2.wav
+     6:35.53       69802700 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__3.wav
+     7:57.69       84305132 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__4.wav
+     4:40.70       49556684 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__5.wav
+     7:01.04       74273852 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__6.wav
+     5:00.59       53058812 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__7.wav
+     5:20.47       56558588 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__8.wav
+     8:45.57       92744108 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd1_00_-_Track__9.wav
+    71:01.00      751641716 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-19-Schubert-recording\bd_02-04-19_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:18.22       77314556 B   -b-   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__1.wav
+     7:22.51       78088796 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__2.wav
+     5:33.10       58764764 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__3.wav
+    13:28.27      142594748 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__4.wav
+     5:45.15       60893324 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__5.wav
+     8:44.43       92534780 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__6.wav
+     6:10.43       65369180 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__7.wav
+     6:57.66       73714076 B   ---   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__8.wav
+     9:13.69       97712244 B   -b-   --   -----    wav  1.0000  bd_02-04-19_cd2_00_-_Track__9.wav
+    70:34.46      746986468 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

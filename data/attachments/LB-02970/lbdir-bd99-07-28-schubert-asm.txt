@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-28-schubert-asm 
+=================== 
+=================== 
+=================== 
+4c98847dcf90b7d6362e82ef801cc3b1  bd-holm28799d1-shn.md5
+8e2304076d9af6a5f8eeecf10e3789d7  bd-holm28799d1-t01.shn
+414e9b1a8f9c13617804937ece79659d  bd-holm28799d1-t02.shn
+ef637cb610b0ca0449dc54ab8f2fd5be  bd-holm28799d1-t03.shn
+c127862c0fa04035e13587bc6b5aecda  bd-holm28799d1-t04.shn
+4c66207ad5a7d509074b41df48826c85  bd-holm28799d1-t05.shn
+b5fc2d49a9109d99e6e9aa964076a70b  bd-holm28799d1-t06.shn
+f4e1c83270cf76925cb888d28cf440ec  bd-holm28799d1-t07.shn
+5d1f86e372e1fa61c69ba1f0f84ddcde  bd-holm28799d1-t08.shn
+0102501c407b742e7c77c10fe3a3f72a  bd-holm28799d1-t09.shn
+03059121f8bbf7f8d1a5db5880ae318e  bd-holm28799d1-t10.shn
+84cde69b3086ae73c0d501c235a2b114  bd-holm28799d1-t11.shn
+774203779c451e33c1af3dffb789c21d  bd-holm28799d1-wav.md5
+58a193fb2c38449b6e22b3a6a8382140  bd-holm28799d1.LOG
+e37b4c1145605e7f3e831908efb36680  bd-holm28799d2-shn.md5
+80c077e29be95d86afc291d30932841a  bd-holm28799d2-t01.shn
+bda59838d083f981f82943fa39bd3156  bd-holm28799d2-t02.shn
+353f514ded32a54122ae96a4796fd802  bd-holm28799d2-t03.shn
+ce2c9bed5e12a633e14606bead3786b3  bd-holm28799d2-t04.shn
+955ece4e0cb26c84ff868fb4be729cff  bd-holm28799d2-t05.shn
+4bb5a3ae4a497e0d9a1969e532429623  bd-holm28799d2-t06.shn
+267cfe25eb89377a10b79059a0ace809  bd-holm28799d2-t07.shn
+7cd4a9592f2299ad7d8fcb3d5ffbf95a  bd-holm28799d2-t08.shn
+71289fbcd49037cf15371e5aa53ffd25  bd-holm28799d2-wav.md5
+f2bbda6230f4c26323c5800cd8b51eda  bd-holm28799d2.LOG
+f609ad0c8328c8c32269734d84ef9ddf  bd99-07-28-schubert-asm-LB-2970.txt
+a5360c7bc8681f7ed6c789b9baa491e0  holmdel_1999_schubert_back.jpg
+950b6e340e6c24ba2e958d6b506040fc  holmdel_1999_schubert_front.jpg
+c805ccb06d7a5e7eee2d7a4f47f29e9d  lineage.txt
+1a37a593984fe94014142ebcee7287f1  set list.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-07-28-schubert-asm 
+=================== 
+=================== 
+=================== 
+49e65b4e908077b5bdc91fab2ee75da1  [shntool]  bd-holm28799d1-t01.wav
+e5e09211c4c3c218ee4eec2d244f9a8c  [shntool]  bd-holm28799d1-t02.wav
+1a69f8163ebb265014185e668622b3d3  [shntool]  bd-holm28799d1-t03.wav
+d89c5245a4a986911e6538281299eee4  [shntool]  bd-holm28799d1-t04.wav
+a1006bdb5695cb162bae788fc666a013  [shntool]  bd-holm28799d1-t05.wav
+3346530f2361fb02e9e9d7e75bb6c9e6  [shntool]  bd-holm28799d1-t06.wav
+237f55e68e3080adbcb23f9403aa4f79  [shntool]  bd-holm28799d1-t07.wav
+af8ca7d1de7e9e94e29f120fa9ba59c1  [shntool]  bd-holm28799d1-t08.wav
+94eaf84e7037faad592a178eb5ee6fd9  [shntool]  bd-holm28799d1-t09.wav
+f71eef6f378cf646cf7403ba17813209  [shntool]  bd-holm28799d1-t10.wav
+1c6e60c6addc859142ccba298af04c2a  [shntool]  bd-holm28799d1-t11.wav
+380686785104168339cce1143719aedc  [shntool]  bd-holm28799d2-t01.wav
+ba7bd83958bdf7929abfd41c539a4c0c  [shntool]  bd-holm28799d2-t02.wav
+18f83dad536e06636e5106733b62b85b  [shntool]  bd-holm28799d2-t03.wav
+04dfed31b2fe917b1f4650201389e9e0  [shntool]  bd-holm28799d2-t04.wav
+1e6417bdabcfceb674103ca31ecceda9  [shntool]  bd-holm28799d2-t05.wav
+97706b998d25dd5706d8542583f4ad44  [shntool]  bd-holm28799d2-t06.wav
+b775addc15840fb1f9527e67d02cd090  [shntool]  bd-holm28799d2-t07.wav
+a5ff0e13e3f0a0e6bda10c365a828fca  [shntool]  bd-holm28799d2-t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-28-schubert-asm 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:03.24       11169692 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t01.wav
+     4:26.01       46924796 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t02.wav
+     7:07.02       75327548 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t03.wav
+     5:56.18       62840780 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t04.wav
+     5:41.16       60190076 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t05.wav
+     8:52.55       93974204 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t06.wav
+     4:03.45       42971084 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t07.wav
+     6:20.21       67081436 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t08.wav
+     7:59.34       84575612 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t09.wav
+     6:37.32       70106108 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t10.wav
+     8:49.13       93346220 B   ---   --   -----    wav  1.0000  bd-holm28799d1-t11.wav
+     7:55.04       83799452 B   ---   --   -----    wav  1.0000  bd-holm28799d2-t01.wav
+     9:33.54      101204252 B   ---   --   -----    wav  1.0000  bd-holm28799d2-t02.wav
+     4:43.68       50081180 B   ---   --   -----    wav  1.0000  bd-holm28799d2-t03.wav
+     5:53.60       62410364 B   ---   --   -----    wav  1.0000  bd-holm28799d2-t04.wav
+     7:05.13       75000620 B   ---   --   -----    wav  1.0000  bd-holm28799d2-t05.wav
+     1:50.22       19455788 B   ---   --   -----    wav  1.0000  bd-holm28799d2-t06.wav
+     2:30.29       26528252 B   ---   --   -----    wav  1.0000  bd-holm28799d2-t07.wav
+     5:06.15       54013724 B   ---   --   -----    wav  1.0000  bd-holm28799d2-t08.wav
+   111:35.01     1181001188 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

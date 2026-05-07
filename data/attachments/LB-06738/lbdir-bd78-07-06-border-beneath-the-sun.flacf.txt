@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-06-border-beneath-the-sun.flacf 
+=================== 
+=================== 
+=================== 
+6443bfadce2c34238fc8e8bc3542319c  bd78-07-06-border-beneath-the-sun-d1t01.flac
+e0b426139b8c26556bcead6cc3ce4af2  bd78-07-06-border-beneath-the-sun-d1t02.flac
+db692ed5760e95ae07ac34d2e3dc0596  bd78-07-06-border-beneath-the-sun-d1t03.flac
+a2b9a69eca88e84ee6ebffa08bc9fb2b  bd78-07-06-border-beneath-the-sun-d1t04.flac
+cddcf41418f16205ebd9ad18192aefa4  bd78-07-06-border-beneath-the-sun-d1t05.flac
+60c5818d79b5afc43ba45154f9c30b5b  bd78-07-06-border-beneath-the-sun-d1t06.flac
+a33a6bad1e4d47fb81c1d4dc9a0040e7  bd78-07-06-border-beneath-the-sun-d1t07.flac
+4a5e811bb836f6ed06ad152ba0e68200  bd78-07-06-border-beneath-the-sun-d1t08.flac
+21fc1c615768e8cc247d218c1408d036  bd78-07-06-border-beneath-the-sun-d1t09.flac
+ad1b06fc50cda6d28179e65554caf0db  bd78-07-06-border-beneath-the-sun-d1t10.flac
+dacd31a17f9a51975ad58b1e2b42bef1  bd78-07-06-border-beneath-the-sun-d1t11.flac
+65e25f6329c7dda414967295d779ed1b  bd78-07-06-border-beneath-the-sun-d1t12.flac
+239e10ffd9a21b0213ff0f947be635fc  bd78-07-06-border-beneath-the-sun-d1t13.flac
+1f4d8248e2233790e485669f25af5e37  bd78-07-06-border-beneath-the-sun-d1t14.flac
+8c5d537722d8e4e60562b54d41f5c4d4  bd78-07-06-border-beneath-the-sun-d1t15.flac
+2e2be3b6db5acb3f1e877fcdb104fee0  bd78-07-06-border-beneath-the-sun-d1t16.flac
+5d5addbbfe0157f62ecefce7f0a6a054  bd78-07-06-border-beneath-the-sun-d2t01.flac
+7e33eae261f80cdc1feb77e4d35b7968  bd78-07-06-border-beneath-the-sun-d2t02.flac
+4990f7f904157bb45e3acecfd2edc11c  bd78-07-06-border-beneath-the-sun-d2t03.flac
+c96086070d66ac48f46e80a0a1627122  bd78-07-06-border-beneath-the-sun-d2t04.flac
+153e63b6059bd6c9f5f43b41a145343c  bd78-07-06-border-beneath-the-sun-d2t05.flac
+4e127fabd87009ecded18e67f301379e  bd78-07-06-border-beneath-the-sun-d2t06.flac
+d05bad3b3fd14c8d5c17222f9d4d15ce  bd78-07-06-border-beneath-the-sun-d2t07.flac
+7fbae96a2b0b439a81dc0f7801412f91  bd78-07-06-border-beneath-the-sun-d2t08.flac
+f718ac9fc0c69106f033f4c46e90524c  bd78-07-06-border-beneath-the-sun-d2t09.flac
+289026f2f08987a8bc4d99afc4e3452d  bd78-07-06-border-beneath-the-sun-d2t10.flac
+52f44876251b949894893b2423213fdc  bd78-07-06-border-beneath-the-sun-d2t11.flac
+1180f12c0843be36222dbe4b1445dd94  bd78-07-06-border-beneath-the-sun-d2t12.flac
+60eb452cf29e3360c6e342d4988faf9d  bd78-07-06-border-beneath-the-sun-d2t13.flac
+14034923fb6d1485dd3bda917411967a  bd78-07-06-border-beneath-the-sun-d2t14.flac
+4720c7f9dc9b3df827b3c5e751d73d02  bd78-07-06-border-beneath-the-sun.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-06-border-beneath-the-sun.flacf 
+=================== 
+=================== 
+=================== 
+bd78-07-06-border-beneath-the-sun-d1t01.flac:c43c509139a49aa7f3555bbd76aeebd3
+bd78-07-06-border-beneath-the-sun-d1t02.flac:8c307f8d03547c9a596cbddd948fde69
+bd78-07-06-border-beneath-the-sun-d1t03.flac:a406828655880ce5c6992f97a1f3888f
+bd78-07-06-border-beneath-the-sun-d1t04.flac:ac172e053bd7e3b47ae3d5730fb0cfef
+bd78-07-06-border-beneath-the-sun-d1t05.flac:9d6f53c5adf5bfdcd8a4a78b2dbada6f
+bd78-07-06-border-beneath-the-sun-d1t06.flac:a0c4ebfc46b3d8dd55385d7fd8a841d1
+bd78-07-06-border-beneath-the-sun-d1t07.flac:e02d1f61741ab69b1f4fd33d1ca8709e
+bd78-07-06-border-beneath-the-sun-d1t08.flac:edc8a81d42ff88b9a4196976e6e30d0d
+bd78-07-06-border-beneath-the-sun-d1t09.flac:5d073d223a3f6d3171f39c970f72460b
+bd78-07-06-border-beneath-the-sun-d1t10.flac:7d00c9e5d202503ac6fa2ee9eecd2e13
+bd78-07-06-border-beneath-the-sun-d1t11.flac:bc7ab7905bfcd456b601f856cb3cf1b0
+bd78-07-06-border-beneath-the-sun-d1t12.flac:c1bbaae33a979859db7ae156a349474a
+bd78-07-06-border-beneath-the-sun-d1t13.flac:90b401739bbd903fec8e4e67bafda333
+bd78-07-06-border-beneath-the-sun-d1t14.flac:23f55fd1873b5645cc3967f7b6bbb100
+bd78-07-06-border-beneath-the-sun-d1t15.flac:103d69db5c7042f586fd98b9055839e5
+bd78-07-06-border-beneath-the-sun-d1t16.flac:e65579e7dd307e33e3f1a119b9dd8e02
+bd78-07-06-border-beneath-the-sun-d2t01.flac:68db27c1fbf8e020955a185bdf875596
+bd78-07-06-border-beneath-the-sun-d2t02.flac:9128172477935c4919391e27161811f6
+bd78-07-06-border-beneath-the-sun-d2t03.flac:e03a92ddaf1a736a990e3ed80c2ad90c
+bd78-07-06-border-beneath-the-sun-d2t04.flac:f52fd2e25212d5360c397b9dc08b9066
+bd78-07-06-border-beneath-the-sun-d2t05.flac:eca3bbf4ecd58429e4818c79597a88b0
+bd78-07-06-border-beneath-the-sun-d2t06.flac:7610e0849b49f1524fab6c2fe4ad1adf
+bd78-07-06-border-beneath-the-sun-d2t07.flac:7ea7bf2af433f018597dffa37c4fb697
+bd78-07-06-border-beneath-the-sun-d2t08.flac:48ab6039496255d3056458d0931914ea
+bd78-07-06-border-beneath-the-sun-d2t09.flac:7f48012c07b8ffb1f91bac3bee2c59f0
+bd78-07-06-border-beneath-the-sun-d2t10.flac:a9743bff2e8fb4e4cd91d73a8d7fd811
+bd78-07-06-border-beneath-the-sun-d2t11.flac:11bac761d451357c9dcb133926321c9e
+bd78-07-06-border-beneath-the-sun-d2t12.flac:a77774546ef5a1b785dbf23dd320dc9c
+bd78-07-06-border-beneath-the-sun-d2t13.flac:182edd8d906cf87d68c250241871d36d
+bd78-07-06-border-beneath-the-sun-d2t14.flac:ee8fc259301d859faa122398bee4dd0b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-06-border-beneath-the-sun.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:01.07       31944908 B   ---   --   ---xx   flac  0.5834  bd78-07-06-border-beneath-the-sun-d1t01.flac
+     2:05.65       22202924 B   ---   --   ---xx   flac  0.5929  bd78-07-06-border-beneath-the-sun-d1t02.flac
+     5:26.03       57513500 B   ---   --   ---xx   flac  0.6165  bd78-07-06-border-beneath-the-sun-d1t03.flac
+     5:22.35       56883164 B   ---   --   ---xx   flac  0.6126  bd78-07-06-border-beneath-the-sun-d1t04.flac
+     4:45.30       50344604 B   ---   --   ---xx   flac  0.6029  bd78-07-06-border-beneath-the-sun-d1t05.flac
+     4:53.60       51826364 B   ---   --   ---xx   flac  0.6087  bd78-07-06-border-beneath-the-sun-d1t06.flac
+     7:04.25       74852444 B   ---   --   ---xx   flac  0.5885  bd78-07-06-border-beneath-the-sun-d1t07.flac
+     4:38.30       49109804 B   ---   --   ---xx   flac  0.6124  bd78-07-06-border-beneath-the-sun-d1t08.flac
+     5:03.65       53602124 B   ---   --   ---xx   flac  0.6317  bd78-07-06-border-beneath-the-sun-d1t09.flac
+     4:19.00       45687644 B   ---   --   ---xx   flac  0.5961  bd78-07-06-border-beneath-the-sun-d1t10.flac
+     6:59.37       73998668 B   ---   --   ---xx   flac  0.6343  bd78-07-06-border-beneath-the-sun-d1t11.flac
+     4:35.43       48611180 B   ---   --   ---xx   flac  0.5868  bd78-07-06-border-beneath-the-sun-d1t12.flac
+     5:15.55       55695404 B   ---   --   ---xx   flac  0.5846  bd78-07-06-border-beneath-the-sun-d1t13.flac
+     1:03.72       11282588 B   ---   --   ---xx   flac  0.5899  bd78-07-06-border-beneath-the-sun-d1t14.flac
+     4:20.65       46016924 B   ---   --   ---xx   flac  0.6017  bd78-07-06-border-beneath-the-sun-d1t15.flac
+     5:53.33       62346860 B   ---   --   ---xx   flac  0.5258  bd78-07-06-border-beneath-the-sun-d1t16.flac
+     3:43.20       39384284 B   ---   --   ---xx   flac  0.5941  bd78-07-06-border-beneath-the-sun-d2t01.flac
+     3:29.68       37027580 B   ---   --   ---xx   flac  0.6086  bd78-07-06-border-beneath-the-sun-d2t02.flac
+     4:41.10       49591964 B   ---   --   ---xx   flac  0.5635  bd78-07-06-border-beneath-the-sun-d2t03.flac
+     3:01.40       32022524 B   ---   --   ---xx   flac  0.5595  bd78-07-06-border-beneath-the-sun-d2t04.flac
+     4:59.12       52771868 B   ---   --   ---xx   flac  0.5936  bd78-07-06-border-beneath-the-sun-d2t05.flac
+     4:51.63       51480620 B   ---   --   ---xx   flac  0.6395  bd78-07-06-border-beneath-the-sun-d2t06.flac
+     5:59.50       63445244 B   ---   --   ---xx   flac  0.6077  bd78-07-06-border-beneath-the-sun-d2t07.flac
+     5:21.27       56687948 B   ---   --   ---xx   flac  0.6187  bd78-07-06-border-beneath-the-sun-d2t08.flac
+     4:12.68       44612780 B   ---   --   ---xx   flac  0.6520  bd78-07-06-border-beneath-the-sun-d2t09.flac
+     5:34.20       58964684 B   ---   --   ---xx   flac  0.6227  bd78-07-06-border-beneath-the-sun-d2t10.flac
+     6:17.60       66643964 B   ---   --   ---xx   flac  0.6462  bd78-07-06-border-beneath-the-sun-d2t11.flac
+     7:01.42       74363228 B   ---   --   ---xx   flac  0.6303  bd78-07-06-border-beneath-the-sun-d2t12.flac
+     5:59.08       63346460 B   ---   --   ---xx   flac  0.6489  bd78-07-06-border-beneath-the-sun-d2t13.flac
+     4:55.40       52132124 B   ---   --   ---xx   flac  0.6142  bd78-07-06-border-beneath-the-sun-d2t14.flac
+   144:58.28     1534394376 B                            0.6080  (30 files)
+=================== 
+=================== 
+=================== 

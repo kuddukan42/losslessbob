@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd6x-telephone-tape.flacf 
+=================== 
+=================== 
+=================== 
+2a9f6eb971688dac64026325b4bade10  bd-tttamp-t01.flac
+d4d3f61ea1eb0396f320f4357bbf7843  bd-tttamp-t02.flac
+780fc030a4951078f293f64b596061fe  bd-tttamp-t03.flac
+efc43521b78a4dff205cbc01f6134a34  bd-tttamp-t04.flac
+fd64c6aaf331f26035b004f0047c9ab4  bd-tttamp-t05.flac
+3015b4c1991b7e13624626f589bef058  bd-tttamp-t06.flac
+721798e3238fbb6c54a02a0d00171ffd  bd-tttamp-t07.flac
+6f135bc43e2a8e9a8826c06d139cc962  bd-tttamp-t08.flac
+ab91c8878673fbf9264308900c6520b1  bd-tttamp-t09.flac
+b627665ae9dbab3cb95dabfa2ac6a4f0  bd-tttamp-t10.flac
+6239a98e7879b0637e5978ba3806c073  bd-tttamp-t11.flac
+9c984f2c76febd8d4fb9593bff71cd46  bd-tttamp-t12.flac
+69e110299f887ca4ba7f9cf1b3661482  bd-tttamp-t13.flac
+a717664f2e87a5556b21a692c8431d36  bd-tttamp-t14.flac
+a84cc4c2581b6659ee2232710f79eb60  bd-tttamp-t15.flac
+30f95745d7dcae451f501d0bbbf8bf26  bd-tttamp-t16.flac
+7a3a1aa5ef56c1493dcf1debf20276bd  bd-tttamp-t17.flac
+d695f35fc92d5763071a8769999da4a1  bd-tttamp-t18.flac
+6a0ad204a186409528768641b5e8245a  bd-tttamp-t19.flac
+f6e388b5e437ac7bc9494d96e67df7be  bd-tttamp-t20.flac
+8a03be0b8e6b7af4f9f6ecf6c57e4cd1  bd-tttamp-t21.flac
+fc090194c87cebf04f6ca8a05ebcdc30  bd6x-telephone-tape-LB-3004.txt
+a49c7d073a7be06795f0729abcabc5a8  telephone tape.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd6x-telephone-tape.flacf 
+=================== 
+=================== 
+=================== 
+bd-tttamp-t01.flac:2445a07d2466e0b78813193001714230
+bd-tttamp-t02.flac:3b091bdd017160a13b75e9d75171c746
+bd-tttamp-t03.flac:8f1dc6bed520544d576eb4b7c3dcff98
+bd-tttamp-t04.flac:1fb4854e4c92592ef9abb9feac174b45
+bd-tttamp-t05.flac:fa986d7dcda216a122cd50fb63b71bae
+bd-tttamp-t06.flac:045800d84920658ffdc1b80bcacd146b
+bd-tttamp-t07.flac:1a43dcc8bb6a0119c61128e43a8363ef
+bd-tttamp-t08.flac:1a4f5974f1aad132cd16edf9b4a1d167
+bd-tttamp-t09.flac:c5da065e91ae6f23c6ba981ad5afcc5c
+bd-tttamp-t10.flac:e9a7ca62c1b7f55155be54dead579f66
+bd-tttamp-t11.flac:6168d26b5663e1be1eaf6c1201899ab3
+bd-tttamp-t12.flac:ab49aa5c16030f2a08f9aefe1b343216
+bd-tttamp-t13.flac:a0b8c54299c64fc852d6bb373cfb45ad
+bd-tttamp-t14.flac:1a9d1ddebe5f37ca63e5474c10cada8a
+bd-tttamp-t15.flac:9774258d647bc89e17f695793e8fb1a3
+bd-tttamp-t16.flac:de795361fc3f6c589a6c46a4bcee192e
+bd-tttamp-t17.flac:358ecc1b67ba1a27a17ec7cfda6a28d3
+bd-tttamp-t18.flac:82a877ed8e2fd8684915eb9a756dd104
+bd-tttamp-t19.flac:3a2a21e1d76ca05674003eeb0856e4dd
+bd-tttamp-t20.flac:5b19b805d7fa3c011bc1de2b38a430ad
+bd-tttamp-t21.flac:3ceece77e5a2c840f0374a2731c55f7b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd6x-telephone-tape.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:11.72       12693788 B   ---   --   ---xx   flac  0.3933  bd-tttamp-t01.flac
+     2:21.16       24910076 B   ---   --   ---xx   flac  0.3970  bd-tttamp-t02.flac
+     2:35.01       27344396 B   ---   --   ---xx   flac  0.3994  bd-tttamp-t03.flac
+     1:45.22       18573788 B   ---   --   ---xx   flac  0.4932  bd-tttamp-t04.flac
+     0:47.07        8307308 B   ---   --   ---xx   flac  0.4972  bd-tttamp-t05.flac
+     3:41.52       39106748 B   ---   --   ---xx   flac  0.4320  bd-tttamp-t06.flac
+     0:58.48       10344140 B   ---   --   ---xx   flac  0.4505  bd-tttamp-t07.flac
+     0:25.21        4459436 B   ---   --   ---xx   flac  0.4296  bd-tttamp-t08.flac
+     0:52.40        9266924 B   ---   --   ---xx   flac  0.4334  bd-tttamp-t09.flac
+     0:20.49        3643292 B   ---   --   ---xx   flac  0.4224  bd-tttamp-t10.flac
+     1:10.39       12439772 B   ---   --   ---xx   flac  0.4319  bd-tttamp-t11.flac
+     1:23.37       14728268 B   ---   --   ---xx   flac  0.4388  bd-tttamp-t12.flac
+     3:29.12       36895868 B   ---   --   ---xx   flac  0.4613  bd-tttamp-t13.flac
+     5:55.45       62727884 B   ---   --   ---xx   flac  0.4606  bd-tttamp-t14.flac
+     2:46.40       29376524 B   ---   --   ---xx   flac  0.4857  bd-tttamp-t15.flac
+     8:41.12       91932668 B   ---   --   ---xx   flac  0.4722  bd-tttamp-t16.flac
+     5:20.11       56473916 B   ---   --   ---xx   flac  0.4890  bd-tttamp-t17.flac
+     3:57.31       41879756 B   ---   --   ---xx   flac  0.4785  bd-tttamp-t18.flac
+     3:07.04       32996252 B   ---   --   ---xx   flac  0.4755  bd-tttamp-t19.flac
+    12:59.20      137462684 B   ---   --   ---xx   flac  0.3742  bd-tttamp-t20.flac
+     1:56.00       20462444 B   ---   --   ---xx   flac  0.4437  bd-tttamp-t21.flac
+    65:45.54      696025932 B                            0.4417  (21 files)
+=================== 
+=================== 
+=================== 

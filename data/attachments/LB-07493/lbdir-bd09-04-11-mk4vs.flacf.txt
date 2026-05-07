@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-11-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+1cbb214797bdb4f3b7a80155a1eb0eaa  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final01.flac
+f90797230ecb54e761609fb830918dc3  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final02.flac
+7de54f7b45dd939e39f388962b8b58dd  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final03.flac
+a6bf9b282f7f314c9f12357b1bb3591a  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final04.flac
+46ac0752156b422e414043bc6bde3478  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final05.flac
+ee3f063cd82b0b34984c3af56c900489  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final06.flac
+3d264896a7b7a4b7addecdcea3cbffc2  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final07.flac
+594d14464962ff344d4585b78b1e5504  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final08.flac
+67fe37e845cfaa962e55d86c29a72df6  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final09.flac
+2ec38a7e349b3693ad73644230504627  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final10.flac
+8bf5e3e5359c5b0dde33ab4e69f375ec  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final11.flac
+60e71fb1f33a6cf8855c518f94dcfb11  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final12.flac
+0667dc00853da51594ab1c67f19fb56a  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final13.flac
+d018b06e396622333015d05f40261ae7  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final14.flac
+1e5590a3f6522cc2043465bc95df12e8  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final15.flac
+97543cad916616387c5249fa6a0ef4bb  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final16.flac
+a7a1cc566c9b661d690e9b5bdd35e876  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final17.flac
+1c978d69db6a3c0a22803fa1b5ecc4e1  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final18.flac
+e1481745f9fa930a13dcba97beff8584  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final19.flac
+2bd1104d10fb2200e94a0f7553fc2ee6  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final20.flac
+b440931fa627ae4f18a87878a7a3ef2c  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final21.flac
+63802884ad320f477cdca784d8f91517  Bob Dylan  Amsterdam  4-11-09 mk4v.txt
+85296a35f1e40bbaeeabb34ae608ff00  Bob Dylan  Amsterdam  4-11-09.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-11-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final01.flac:0e826d5cf31d6c7db2c786d91be6c525
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final02.flac:fdfbd70c0d384f957ee8d94fb972d8e6
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final03.flac:a2210024b9dc063a8a85d0b2052ad9a8
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final04.flac:38d0cdbbeb071634d2429891026ba521
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final05.flac:1ca327e05f97d09b42b4fa4c30eb9cff
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final06.flac:02324adc199c58ec9ed0186cb254b09d
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final07.flac:0481e61bc9aaf1bd8e6d7ca4e0deefa9
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final08.flac:013abd4a59287dfc31d880d8a89fd97b
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final09.flac:7f5f58765e02febff49185ff8928aaf7
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final10.flac:ebf51f35bd416abf30388461033150e2
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final11.flac:342b4fee7464badb4afbecbf5ad44285
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final12.flac:cf5914fd50ed3eb94741690bf603c562
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final13.flac:e9d92c65d32a170bbc33f6e962344c0a
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final14.flac:481c8037dadd40c968491d2a9b41b513
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final15.flac:a1bd3eab6d2e938fd02faecd36f767a9
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final16.flac:753b10dc5f5e00aeabf6ce4000c3f612
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final17.flac:e0cc34a87917b0de30107963fb2cd114
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final18.flac:c7b6a035882f2a2c3413743678207e31
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final19.flac:1a52ad9a486e30aedb351b2de93fe9f0
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final20.flac:019a116801d410bf16181704f76fc777
+Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final21.flac:7a8a515b1e17e6ac917a6244a6097ddb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-11-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.41        6623276 B   ---   --   ---xx   flac  0.4098  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final01.flac
+     4:15.69       45144332 B   ---   --   ---xx   flac  0.4678  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final02.flac
+     5:40.01       59978396 B   ---   --   ---xx   flac  0.4281  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final03.flac
+     4:46.69       50612732 B   ---   --   ---xx   flac  0.4182  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final04.flac
+     7:27.41       78947276 B   ---   --   ---xx   flac  0.4517  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final05.flac
+     5:47.59       61349612 B   ---   --   ---xx   flac  0.3670  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final06.flac
+     6:30.66       68951276 B   ---   --   ---xx   flac  0.4508  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final07.flac
+     6:07.13       64769420 B   ---   --   ---xx   flac  0.3777  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final08.flac
+     5:13.63       55361420 B   ---   --   ---xx   flac  0.4604  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final09.flac
+     6:56.24       73438892 B   ---   --   ---xx   flac  0.4127  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final10.flac
+     7:50.45       83013884 B   ---   --   ---xx   flac  0.4506  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final11.flac
+     6:03.17       64073228 B   ---   --   ---xx   flac  0.4164  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final12.flac
+     6:59.08       73930460 B   ---   --   ---xx   flac  0.4722  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final13.flac
+     8:43.34       92337212 B   ---   --   ---xx   flac  0.3836  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final14.flac
+     6:14.74       66147692 B   ---   --   ---xx   flac  0.4822  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final15.flac
+     6:32.25       69207644 B   ---   --   ---xx   flac  0.4729  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final16.flac
+     3:26.69       36500732 B   ---   --   ---xx   flac  0.4507  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final17.flac
+     4:41.30       49639004 B   ---   --   ---xx   flac  0.4751  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final18.flac
+     7:03.52       74739548 B   ---   --   ---xx   flac  0.3977  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final19.flac
+     0:44.52        7883948 B   ---   --   ---xx   flac  0.4748  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final20.flac
+     5:25.48       57442940 B   ---   --   ---xx   flac  0.4413  Bob Dylan  Amsterdam  4-11-09  24-44 EQ-final21.flac
+   117:10.00     1240092924 B                            0.4339  (21 files)
+=================== 
+=================== 
+=================== 

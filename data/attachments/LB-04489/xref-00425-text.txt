@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== bd1996.04.19 Portland, ME (Holy Grail, LB-4489) ('Everything's been returned which was owed').md5
+===================
+===================
+===================
+d870d0df0b44b7e7bc95b4f6dc20a216 *fingerprint.txt
+4b2ddead5be91761b39927777920b873 *info.txt
+7e49fa537644fae6c2651319ffc6b5f8 *Track101.flac
+1f66159148c997e86056eca7760aedf9 *Track102.flac
+e7045eb2b76bf8d411d0ec69d1342a8b *Track103.flac
+c3ae775cdc3e74ffa6a3cabddd713fd8 *Track104.flac
+cfb3cf0554e20fb7452f746c3f35508e *Track105.flac
+39892c04de29ddf2b32ed6e071b2d13d *Track106.flac
+05ca5055b375879f69ef8200c0c42f78 *Track107.flac
+5c7d899ab4e1d1a5447b83bc89e1910a *Track108.flac
+1ef1d6046e0208e90601726c30034ae3 *Track109.flac
+0c491645b91be43ef9a3c179719faa8d *Track201.flac
+8438a78ccc2c8c5250e6d7f6c7060b9e *Track202.flac
+2669df0a03b3ec858774f30083bf825c *Track203.flac
+6fc957b885419ae1aeb05dd769be4eb3 *Track204.flac
+3beec0ea638544ad688f6cba57886e50 *Track205.flac
+001a751982edf3dfeb26507c6ad58c53 *Track206.flac
+===================
+===================
+===================
+=== fingerprint.txt
+===================
+===================
+===================
+Track101.flac:4749a2483e2d976d48435093962466b6
+Track102.flac:00e6f06810c964d1caa75424a483ee8a
+Track103.flac:351ace0fa43a9f15c7eef44c8cd83131
+Track104.flac:d67f7dadaca4b2b53ed4c1174c20a971
+Track105.flac:b00a1fc3785687f7f8a4dbb1a1dbed3d
+Track106.flac:7a40a8256a3733f1a2ca2d9d8ba02e71
+Track107.flac:071b7d75febc272bcfbffdea0c49d3dd
+Track108.flac:5cc471c92f623291fb7be30bf4cb15d3
+Track109.flac:259b228941a20d6ffc0b6ff6e38bc5e2
+Track201.flac:6ef96cfb227288e51f9814cd7dc6604f
+Track202.flac:b4ec97554eba8badd4f4acab12184e9e
+Track203.flac:f00da24be9298401361f90ba29be28cc
+Track204.flac:af35736fa28e58b68852066f57481df7
+Track205.flac:0bad078d2cab9ba2cd335b5f336dd6a2
+Track206.flac:58ea4a5b505429815f47464b9121debc
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan, 
+4/19/96, 
+State Theater, 
+Portland, Maine 
+
+
+2CDR 
+
+This is LB-4489, is the Holy Grail, 
+and is called "Everything's Been Returned Which Was Owed". 
+
+I have been told that my CD-R came from FLACs taken directly from the masters... 
+The full generation on this one would be Audience recording (Full spectrum) 
+> Unknown transfer > CDR(x) > EAC (Secure/Offset) > FLAC > Trade DVD > CD-R > EAC 
+> Torrent HD > Torrent, 
+
+Lossless Bob notes:
+Volume adjustment d1t01@0:21-0:24. 
+Excellent sound, A.; 
+bittorrent download 02/07; 
+levels too high until d1t1 0:23 then comes down; 
+a little harsh; 
+
+excellent sound [A]
+
+
+CD1 67:35, 
+1. Drifter's Escape, 
+2. Tonight I'll Be Staying Here With You, 
+3. All Along The Watchtower, 
+4. You're A Big Girl Now, 
+5. This Wheel's On Fire, 
+6. Silvio, 
+7. Tangled Up In Blue, 
+8. Visions Of Johanna, 
+9. John Brown, 
+
+
+CD2 51:06, 
+10. Stuck Inside Of Mobile With The Memphis Blues Again, 
+11. Simple Twist Of Fate, 
+12. Seven Days, 
+13. Alabama Getaway, 
+14. Forever Young, 
+15. Rainy Day Women # 12 & 35 
+
+===================
+===================
+===================

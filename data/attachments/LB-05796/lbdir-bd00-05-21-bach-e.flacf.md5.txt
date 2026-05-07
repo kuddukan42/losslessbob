@@ -1,0 +1,23 @@
+33e30818b215220226438cc90d8c8681  101 Introduction.flac
+6332f41c66495fda972b7a5049bf1bfd  102 Hallelujah, I'm Ready To Go.flac
+f42e5c0ae645ef50ecedd82ee0848e14  103 My Back Pages.flac
+4e4e48539b83338ee22ae7d42f794fe8  104 Masters Of War.flac
+7187f1df405009364601d9543b2f3aac  105 Tomorrow Is A Long Time.flac
+2ee36f618181524ad08a73effa38d559  106 A Hard Rain's A-Gonna Fall.flac
+9429d1976748ae1d22f865eba25897f9  107 Tangled Up In Blue.flac
+2ebbe7b90b41d1789fd91fd74cc132f5  108 The Lonesome Death Of Hattie Carroll.flac
+4557b8c3102dd66d3ec97125a41370b8  109 Gotta Serve Somebody.flac
+317d530cc336fab44b4f0f3f73361138  110 You're A Big Girl Now.flac
+5b94d39cee145b98c6c7e580232c2b17  111 All Along The Watchtower.flac
+86f813c72eb62a78634c561f63281635  2000 Horsens, May 21 (flac).md5
+e27c63f8f6369060846511a387d2d7d4  2000 Horsens, May 21 (wav).md5
+cf0683bb1aeaf1f98008895ebfb5bafa  201 Tryin' To Get To Heaven.flac
+cda58f181730b58647cc8d5401f62760  202 To Be Alone With You.flac
+74c7ef68b3d3555702d178d4a00d1a60  203 Ballad Of A Thin Man.flac
+e2300867b6dd4b7c9305d3dc798b2404  204 Like A Rolling Stone.flac
+ddf9a582d02434c1a91d20895aa8457a  205 Forever Young.flac
+87dd92c21ce6fc3b16541d183236975f  206 Maggie's Farm.flac
+14d8d0b4e3295d70ac2682d6e9361129  207 It Ain't Me, Babe.flac
+94e1c1fe309e6ae4f734045611ff6fd6  208 Rainy Day Women #12 & #35.flac
+c360f0e81ecefa4444205fa6c206c156  209 Blowin' In The Wind.flac
+68bbe257272cd03aa235a426823a7a60  bd2000-05-21.horsens.bach.reseed.txt

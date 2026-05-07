@@ -1,0 +1,135 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-08-getting-harder-and-harder.flacf 
+=================== 
+=================== 
+=================== 
+c8611ab57e59afa633aa682314228c84  bd90-08-getting-harder-and-harder-d1t01.flac
+57f06e006e1cea6aec5e6b19a921406e  bd90-08-getting-harder-and-harder-d1t02.flac
+69d89a179caea03de954876872b51825  bd90-08-getting-harder-and-harder-d1t03.flac
+168b2c00364139001d5b94c32fa52ea3  bd90-08-getting-harder-and-harder-d1t04.flac
+c6ee87cdc533b87ce9ba50140dbc2187  bd90-08-getting-harder-and-harder-d1t05.flac
+8e1d923c56ee37612bbe278cd8ee6a26  bd90-08-getting-harder-and-harder-d1t06.flac
+0cfcc11ae3f47881927bd345d137822d  bd90-08-getting-harder-and-harder-d1t07.flac
+0cfe3e7e06cf6eaee0d0be7ff8e673a6  bd90-08-getting-harder-and-harder-d1t08.flac
+dfe8b5783f19dafe8c7bf1ded9553ba3  bd90-08-getting-harder-and-harder-d1t09.flac
+a5766a9332dbcb44ecc9ef49a8d2258f  bd90-08-getting-harder-and-harder-d1t10.flac
+9b320cf229dc35593dcfd15a04d21ceb  bd90-08-getting-harder-and-harder-d1t11.flac
+0680b68e044ce2cfe3cb00660ea38a3b  bd90-08-getting-harder-and-harder-d1t12.flac
+1db0e3e91195e8fa262b0a7becbb7314  bd90-08-getting-harder-and-harder-d1t13.flac
+2a5b6760ef02cf9c85bf66c0295f8763  bd90-08-getting-harder-and-harder-d1t14.flac
+43bd759c68cbe9210f7250f9fc4346c0  bd90-08-getting-harder-and-harder-d1t15.flac
+ccada22e8ae4f7ccfac80b4a8cbdf94f  bd90-08-getting-harder-and-harder-d1t16.flac
+203907bd5f8c1f827ae33a994843727e  bd90-08-getting-harder-and-harder-d1t17.flac
+e026eb4224e7cec83aae665de31a2a10  bd90-08-getting-harder-and-harder-d2t01.flac
+eb11794d8278d4f4b491faa4988d3486  bd90-08-getting-harder-and-harder-d2t02.flac
+4c17c9830a93a82bec0fb33e9c19dc5a  bd90-08-getting-harder-and-harder-d2t03.flac
+fed0999c08b1dd8a2e61d64f0a4abc5f  bd90-08-getting-harder-and-harder-d2t04.flac
+46acc409cfe5b32f00b578252f07a674  bd90-08-getting-harder-and-harder-d2t05.flac
+40a30f992247fe27956356b2c6e3bb25  bd90-08-getting-harder-and-harder-d2t06.flac
+c8ef7700b18b5f847e0a001a83a09b85  bd90-08-getting-harder-and-harder-d2t07.flac
+ec516fc4c0105a2c5025e31fac6d07e0  bd90-08-getting-harder-and-harder-d2t08.flac
+b1eb555b2867f2f8b9616ff3dca91e48  bd90-08-getting-harder-and-harder-d2t09.flac
+550869f75fd3f1d9a99c1f3ca4bce218  bd90-08-getting-harder-and-harder-d2t10.flac
+79da7bb68bc6ff5602e06ed333140f67  bd90-08-getting-harder-and-harder-d2t11.flac
+b46978ffb4fb25828e1957bcc23115f4  bd90-08-getting-harder-and-harder-d2t12.flac
+48e450967ee93e18d0098318f8e1491e  bd90-08-getting-harder-and-harder-d2t13.flac
+54ac3f2995e8667b8831421520f302fa  bd90-08-getting-harder-and-harder-d2t14.flac
+e6d95f541cfe56531a729756da9129ce  bd90-08-getting-harder-and-harder-d2t15.flac
+eede93d7a692f93414347d270272c932  bd90-08-getting-harder-and-harder-d2t16.flac
+27348de7025e262a235938a16a248611  bd90-08-getting-harder-and-harder-d2t17.flac
+77837f1cfaf509fc66629fa4aff84939  bd90-08-getting-harder-and-harder-d2t18.flac
+309140a1da190ea9e106525bdf5827f4  bd90-08-getting-harder-and-harder-d2t19.flac
+072268cf31ac53f24d0c3db1071ed3da  bd90-08-getting-harder-and-harder.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-08-getting-harder-and-harder.flacf 
+=================== 
+=================== 
+=================== 
+bd90-08-getting-harder-and-harder-d1t01.flac:8cac0a643e5e042dd55079e53b471028
+bd90-08-getting-harder-and-harder-d1t02.flac:7d2468d9054e1cb15cb04e8833ee3021
+bd90-08-getting-harder-and-harder-d1t03.flac:b9267a0804cf52b0251d2841cf33790d
+bd90-08-getting-harder-and-harder-d1t04.flac:a6e6b72c9f25e343acaf8b05035761d2
+bd90-08-getting-harder-and-harder-d1t05.flac:8ead966e97ce36d5a0096f062c6d0db7
+bd90-08-getting-harder-and-harder-d1t06.flac:d598208dd741e4d493b62d37f8ff2f88
+bd90-08-getting-harder-and-harder-d1t07.flac:7f50fc835c390d5b66e42a467d897031
+bd90-08-getting-harder-and-harder-d1t08.flac:13ed78dfcdef5901938f3388ce3e4793
+bd90-08-getting-harder-and-harder-d1t09.flac:f150e86a10f19184cc7791cd5248d86e
+bd90-08-getting-harder-and-harder-d1t10.flac:7f9c8f4339b03f01b800756542889d7b
+bd90-08-getting-harder-and-harder-d1t11.flac:782ddd46945a405f51d3845406e5d3a2
+bd90-08-getting-harder-and-harder-d1t12.flac:86a2393292dc7fae6a1f77812dec85c8
+bd90-08-getting-harder-and-harder-d1t13.flac:d68970c2a945ac8911e37b91c8f83959
+bd90-08-getting-harder-and-harder-d1t14.flac:70a345f19588848edc3ae8e50e3bedfc
+bd90-08-getting-harder-and-harder-d1t15.flac:ab5634c5de1b35ed230e59535cd3cb60
+bd90-08-getting-harder-and-harder-d1t16.flac:cdc766eba55baac6ca44cb384066f6c8
+bd90-08-getting-harder-and-harder-d1t17.flac:40be961a3559825794caee32500d385a
+bd90-08-getting-harder-and-harder-d2t01.flac:49a796b25f98773bd65b7b483872c247
+bd90-08-getting-harder-and-harder-d2t02.flac:e181662f9c4b3d78d05ca8f629039fe7
+bd90-08-getting-harder-and-harder-d2t03.flac:442bf26588abb311f7e45346ab293c12
+bd90-08-getting-harder-and-harder-d2t04.flac:a033a9e208c1582074a5da6aac54ec94
+bd90-08-getting-harder-and-harder-d2t05.flac:4b3aaf246cd1c9cd1311359ce58e28f6
+bd90-08-getting-harder-and-harder-d2t06.flac:248a5a163b47b385c0e176f20907ec51
+bd90-08-getting-harder-and-harder-d2t07.flac:efb1d223dbbbdf5db4174362427922ba
+bd90-08-getting-harder-and-harder-d2t08.flac:1c77d98e15da3920110ab08c78986fdd
+bd90-08-getting-harder-and-harder-d2t09.flac:a8581b58bc98c6b73e099fb1182f5d95
+bd90-08-getting-harder-and-harder-d2t10.flac:7547e3ef09b878e382e0a1e6540e4c19
+bd90-08-getting-harder-and-harder-d2t11.flac:3265e93ef3214b835f8d62b0a89d4c8a
+bd90-08-getting-harder-and-harder-d2t12.flac:acbf4dd6af2ba6f4535d9793e3b5d61c
+bd90-08-getting-harder-and-harder-d2t13.flac:3bbd2542654aad3b5665fa9145c648b0
+bd90-08-getting-harder-and-harder-d2t14.flac:5debdf0bbaae401183bb3d8b41821fbd
+bd90-08-getting-harder-and-harder-d2t15.flac:49cb6a7820dc45d4c34c4a4b9ca2615e
+bd90-08-getting-harder-and-harder-d2t16.flac:3ae5536695ea69b5b7a7f5eb6f302831
+bd90-08-getting-harder-and-harder-d2t17.flac:1d37e17cef0aa124961944e99615248a
+bd90-08-getting-harder-and-harder-d2t18.flac:273ee1b5f3a454238ad067a0302baf65
+bd90-08-getting-harder-and-harder-d2t19.flac:fe09cc0f449e6a36efac859f283735f9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-08-getting-harder-and-harder.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:09.20       33386684 B   ---   --   ---xx   flac  0.7032  bd90-08-getting-harder-and-harder-d1t01.flac
+     4:07.35       43653164 B   ---   --   ---xx   flac  0.7013  bd90-08-getting-harder-and-harder-d1t02.flac
+     5:06.50       54096044 B   ---   --   ---xx   flac  0.6673  bd90-08-getting-harder-and-harder-d1t03.flac
+     5:08.57       54465308 B   ---   --   ---xx   flac  0.6465  bd90-08-getting-harder-and-harder-d1t04.flac
+     3:02.58       32241260 B   ---   --   ---xx   flac  0.6258  bd90-08-getting-harder-and-harder-d1t05.flac
+     5:42.52       60451148 B   ---   --   ---xx   flac  0.6281  bd90-08-getting-harder-and-harder-d1t06.flac
+     4:16.65       45311324 B   ---   --   ---xx   flac  0.6398  bd90-08-getting-harder-and-harder-d1t07.flac
+     3:35.50       38043644 B   ---   --   ---xx   flac  0.6709  bd90-08-getting-harder-and-harder-d1t08.flac
+     3:26.73       36510140 B   ---   --   ---xx   flac  0.6429  bd90-08-getting-harder-and-harder-d1t09.flac
+     3:30.40       37138124 B   ---   --   ---xx   flac  0.6837  bd90-08-getting-harder-and-harder-d1t10.flac
+     5:42.67       60486428 B   ---   --   ---xx   flac  0.6441  bd90-08-getting-harder-and-harder-d1t11.flac
+     6:27.53       68391500 B   ---   --   ---xx   flac  0.6670  bd90-08-getting-harder-and-harder-d1t12.flac
+     3:00.17       31792028 B   ---   --   ---xx   flac  0.6078  bd90-08-getting-harder-and-harder-d1t13.flac
+     4:18.65       45664124 B   ---   --   ---xx   flac  0.6702  bd90-08-getting-harder-and-harder-d1t14.flac
+     4:31.65       47957324 B   ---   --   ---xx   flac  0.6717  bd90-08-getting-harder-and-harder-d1t15.flac
+     5:03.35       53531564 B   ---   --   ---xx   flac  0.6458  bd90-08-getting-harder-and-harder-d1t16.flac
+     3:40.23       38862140 B   ---   --   ---xx   flac  0.6238  bd90-08-getting-harder-and-harder-d1t17.flac
+     3:50.55       40701404 B   ---   --   ---xx   flac  0.6563  bd90-08-getting-harder-and-harder-d2t01.flac
+     3:52.32       41000108 B   ---   --   ---xx   flac  0.6712  bd90-08-getting-harder-and-harder-d2t02.flac
+     4:12.05       44464604 B   ---   --   ---xx   flac  0.6412  bd90-08-getting-harder-and-harder-d2t03.flac
+     3:35.35       38008364 B   ---   --   ---xx   flac  0.6817  bd90-08-getting-harder-and-harder-d2t04.flac
+     3:56.38       41719820 B   ---   --   ---xx   flac  0.6472  bd90-08-getting-harder-and-harder-d2t05.flac
+     6:41.00       70736444 B   ---   --   ---xx   flac  0.5994  bd90-08-getting-harder-and-harder-d2t06.flac
+     1:48.52       19173548 B   ---   --   ---xx   flac  0.6314  bd90-08-getting-harder-and-harder-d2t07.flac
+     4:49.25       51038444 B   ---   --   ---xx   flac  0.6100  bd90-08-getting-harder-and-harder-d2t08.flac
+     4:29.08       47470460 B   ---   --   ---xx   flac  0.6316  bd90-08-getting-harder-and-harder-d2t09.flac
+     4:20.72       46033388 B   ---   --   ---xx   flac  0.6577  bd90-08-getting-harder-and-harder-d2t10.flac
+     2:21.48       24985340 B   ---   --   ---xx   flac  0.5944  bd90-08-getting-harder-and-harder-d2t11.flac
+     3:44.25       39572444 B   ---   --   ---xx   flac  0.6341  bd90-08-getting-harder-and-harder-d2t12.flac
+     5:25.32       57405308 B   ---   --   ---xx   flac  0.6276  bd90-08-getting-harder-and-harder-d2t13.flac
+     2:15.00       23814044 B   ---   --   ---xx   flac  0.6064  bd90-08-getting-harder-and-harder-d2t14.flac
+     4:21.35       46122764 B   ---   --   ---xx   flac  0.6329  bd90-08-getting-harder-and-harder-d2t15.flac
+     3:57.28       41872700 B   ---   --   ---xx   flac  0.6284  bd90-08-getting-harder-and-harder-d2t16.flac
+     2:36.72       27687788 B   ---   --   ---xx   flac  0.6172  bd90-08-getting-harder-and-harder-d2t17.flac
+     4:12.35       44535164 B   ---   --   ---xx   flac  0.6486  bd90-08-getting-harder-and-harder-d2t18.flac
+     5:15.03       55573100 B   ---   --   ---xx   flac  0.5970  bd90-08-getting-harder-and-harder-d2t19.flac
+   149:39.00     1583897184 B                            0.6434  (36 files)
+=================== 
+=================== 
+=================== 

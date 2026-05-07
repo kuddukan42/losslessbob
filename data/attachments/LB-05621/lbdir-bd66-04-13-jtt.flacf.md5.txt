@@ -1,0 +1,22 @@
+4acae473f2adde4c41708ceaa1990a0f  Disc One\Dylan - Sydney April 13th 1966_Disc 01Track01.flac
+a9be30e031c4bda87095b197d222433f  Disc One\Dylan - Sydney April 13th 1966_Disc 01Track02.flac
+515e58b58de7b893ad623aa8d6d3c405  Disc One\Dylan - Sydney April 13th 1966_Disc 01Track03.flac
+48efde39ed9407295a81ee17368409df  Disc One\Dylan - Sydney April 13th 1966_Disc 01Track04.flac
+c8149978569dbd2ae1d176ae3d902978  Disc One\Dylan - Sydney April 13th 1966_Disc 01Track05.flac
+b68ff36ef8665e1d9b08d85a2ddfd4ae  Disc One\Dylan - Sydney April 13th 1966_Disc 01Track06.flac
+fac5c378ff38a8e38cec73b71cb152e9  Disc One\Dylan - Sydney April 13th 1966_Disc 01Track07.flac
+d7993a9ec0f71361432cbbc67eb7a947  Disc One\Dylan - Sydney April 13th 1966_Disc 01Track08.flac
+a0cb2c1b48d4c15d41fcf99012cdec53  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track01.flac
+2514caefe1be244eb1fc37cb7551b4d6  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track02.flac
+40c8ded5c42ecec9b916825e75027171  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track03.flac
+1198fe4c63bab87af8b18d55f4e8699e  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track04.flac
+a16521c16edc9e28384cdad72dae6d45  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track05.flac
+dd91f18cacecaf65b893cab5d70a422e  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track06.flac
+9a42f53dc790c8ad42926f797fb9cd3f  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track07.flac
+0d7cba0a0f6f15a7bea9388598d6f288  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track08.flac
+bd2d73fa45a01fcc57d74f94053e646b  Disc Two\Dylan - Sydney April 13th 1966_Disc 02Track09.flac
+301f7632e28033502b46ae7b3595bcf4  Dylan - Sydney April 13th 1966 Master Reel.md5
+9758999afa658c4d8dc0cdcebb8e5ccf  Dylan - Sydney April 13th 1966 Master Reel_Info.txt
+2c11274a4160b219c0cdcba2b75a653d  Sydney 13.04.1966 (Off Master) - F.jpg
+b5cb3468a61cfdb318edc7142daeab91  Sydney 13.04.1966 (Off Master) - Liner.jpg
+e7604944d2732f49cd4e5cc05404d822  Sydney 13.04.1966 (Off Master) - R.jpg

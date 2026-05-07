@@ -1,0 +1,140 @@
+===================
+===================
+===================
+=== bd 1990-01-18 Sao Paolo.ffp
+===================
+===================
+===================
+d1\track 01.flac:572364a5b4bf5725d6209f6a4f3886b3
+d1\track 02.flac:8e531a6007ef45c0768f8e2f08886a16
+d1\track 03.flac:caf38a508c072f0e0603ecbe4f0b83d8
+d1\track 04.flac:7899705bb08f9561121e0712935f42e1
+d1\track 05.flac:7d8ec4a44dcb572d50871d42095ae278
+d1\track 06.flac:1d9b07512e2e3a0b3f133a4192fbe697
+d1\track 07.flac:695566f455683d6a7a6de33a746a7a62
+d1\track 08.flac:6253436caded31635ecc0ec3ce08906a
+d1\track 09.flac:09446d298c44e747f28e742881cbf9d3
+d1\track 10.flac:7653753c1ecb830f12745789fdcdc0f1
+d1\track 11.flac:e7d0b6eb45fbcab51bc5986576c0ed21
+d2\track 01.flac:29f95b4e5077eeb06085d504fa2e3223
+d2\track 02.flac:c9030ac810b0a5d75fa94138a588ff5d
+d2\track 03.flac:9abf2fb477c388cca31d92e7a848a94b
+d2\track 04.flac:a2c2c9eb06951f2d232e899d89c2ea24
+d2\track 05.flac:140ab5c764047b74c3fdbd569f302968
+d2\track 06.flac:d94bff7f6094f342f921151c9855b012
+d2\track 07.flac:437e5c54ea06d19703fb0546cd44c2dd
+d2\track 08.flac:d280f3aa6319f4ba44f6d919418e299d
+===================
+===================
+===================
+=== bd 1990-01-18 Sao Paolo.md5
+===================
+===================
+===================
+aed486dc9c739fb88b69c58b892dc529 *d1\track 01.flac
+db52e78c7b368216c1017520b1c3a79a *d1\track 02.flac
+92b8c4cccae3fb96d51f76afdf509b4d *d1\track 03.flac
+1c084fff940b7b0b3cc0467e6a10d38e *d1\track 04.flac
+5fa5bdd77767d99f53975d867eff0eb3 *d1\track 05.flac
+8997c7097eb585d18bc82e09afa595b5 *d1\track 06.flac
+8f927d98b06c436922ad5513ddff6767 *d1\track 07.flac
+bbb00617abfffc8eee50820ed06e5742 *d1\track 08.flac
+52a7a4e736e113dcfc1d04ddaa48b893 *d1\track 09.flac
+3006068438f7ec1320ee2b608c8e213c *d1\track 10.flac
+ae31127c3fc7e18dec8aeb5b52181737 *d1\track 11.flac
+6838fd9802270035c8c61f64fa6f718d *d2\track 01.flac
+65b366ed1aa6b26796146c7c042db41a *d2\track 02.flac
+c02876ac0856e34afe41e33b78aa3510 *d2\track 03.flac
+74ec4f9e5fdc2804443922a5a19a5473 *d2\track 04.flac
+febc291654556998066df1edf194da95 *d2\track 05.flac
+db67a803abbc3759a62d1126a4f609f9 *d2\track 06.flac
+22170e061cc2dce16ecbf979491de171 *d2\track 07.flac
+6781b4bb6aac88077f751077aff8d569 *d2\track 08.flac
+===================
+===================
+===================
+=== bd 1990-01-18 Sao Paolo.txt
+===================
+===================
+===================
+Bob Dylan
+Estadio Cicero Pompeu de Toledo
+Morumbi Stadium
+Sao Paolo, Brazil
+18 January 1990
+ 
+Lineage: cdr trade > EAC > Wave Repair 4.9.3 to fix index clicks. Fixed pop d2t4 4:54 > FLAC
+N.B. Probably same source/ed from LosslessBob LB-89 which notes: good sound, much of recording is down in the crowd noise. pop d2t4 4:54, d2t8 missing end and missing last song Knockin' On Heaven's Door
+
+d1
+ 
+01.  Most Likely You Go Your Way (And I'll Go Mine)
+02.  Forever Young
+03.  Political World
+04.  I'll Be Your Baby Tonight
+05.  All Along The Watchtower
+06.  I Want You
+07.  Ballad Of A Thin Man
+08.  Everything Is Broken
+09.  Just Like A Woman
+10.  What Was It You Wanted
+11.  Gotta Serve Somebody
+ 
+d2
+
+01.  Mr. Tambourine Man
+02.  Blowin' In The Wind
+03.  Don't Think Twice, It's All Right
+04.  A Hard Rain's A-Gonna Fall
+05.  Lay Lady Lay
+06.  Tight Connection To My Heart (Has Anybody Seen My Love)
+07.  I Shall Be Released
+08.  Like A Rolling Stone //
+-
+--.  Knockin' On Heaven's Door
+
+ffp
+d1\track 01.flac:572364a5b4bf5725d6209f6a4f3886b3
+d1\track 02.flac:8e531a6007ef45c0768f8e2f08886a16
+d1\track 03.flac:caf38a508c072f0e0603ecbe4f0b83d8
+d1\track 04.flac:7899705bb08f9561121e0712935f42e1
+d1\track 05.flac:7d8ec4a44dcb572d50871d42095ae278
+d1\track 06.flac:1d9b07512e2e3a0b3f133a4192fbe697
+d1\track 07.flac:695566f455683d6a7a6de33a746a7a62
+d1\track 08.flac:6253436caded31635ecc0ec3ce08906a
+d1\track 09.flac:09446d298c44e747f28e742881cbf9d3
+d1\track 10.flac:7653753c1ecb830f12745789fdcdc0f1
+d1\track 11.flac:e7d0b6eb45fbcab51bc5986576c0ed21
+d2\track 01.flac:29f95b4e5077eeb06085d504fa2e3223
+d2\track 02.flac:c9030ac810b0a5d75fa94138a588ff5d
+d2\track 03.flac:9abf2fb477c388cca31d92e7a848a94b
+d2\track 04.flac:a2c2c9eb06951f2d232e899d89c2ea24
+d2\track 05.flac:140ab5c764047b74c3fdbd569f302968
+d2\track 06.flac:d94bff7f6094f342f921151c9855b012
+d2\track 07.flac:437e5c54ea06d19703fb0546cd44c2dd
+d2\track 08.flac:d280f3aa6319f4ba44f6d919418e299d
+
+
+md5
+aed486dc9c739fb88b69c58b892dc529 *d1\track 01.flac
+db52e78c7b368216c1017520b1c3a79a *d1\track 02.flac
+92b8c4cccae3fb96d51f76afdf509b4d *d1\track 03.flac
+1c084fff940b7b0b3cc0467e6a10d38e *d1\track 04.flac
+5fa5bdd77767d99f53975d867eff0eb3 *d1\track 05.flac
+8997c7097eb585d18bc82e09afa595b5 *d1\track 06.flac
+8f927d98b06c436922ad5513ddff6767 *d1\track 07.flac
+bbb00617abfffc8eee50820ed06e5742 *d1\track 08.flac
+52a7a4e736e113dcfc1d04ddaa48b893 *d1\track 09.flac
+3006068438f7ec1320ee2b608c8e213c *d1\track 10.flac
+ae31127c3fc7e18dec8aeb5b52181737 *d1\track 11.flac
+6838fd9802270035c8c61f64fa6f718d *d2\track 01.flac
+65b366ed1aa6b26796146c7c042db41a *d2\track 02.flac
+c02876ac0856e34afe41e33b78aa3510 *d2\track 03.flac
+74ec4f9e5fdc2804443922a5a19a5473 *d2\track 04.flac
+febc291654556998066df1edf194da95 *d2\track 05.flac
+db67a803abbc3759a62d1126a4f609f9 *d2\track 06.flac
+22170e061cc2dce16ecbf979491de171 *d2\track 07.flac
+6781b4bb6aac88077f751077aff8d569 *d2\track 08.flac
+===================
+===================
+===================

@@ -1,0 +1,31 @@
+86c09abb53d24c09bf66d2406c082f04  Disk 1\Track01.flac
+8e78636f9ca4d547f325033a3fd569bb  Disk 1\Track02.flac
+8b31c47609968b4bfc5da59149ffaeab  Disk 1\Track03.flac
+5c4683adc6b40f63fa40d086df9cfe24  Disk 1\Track04.flac
+fc658e50b12c311b15e5a947674eb6bb  Disk 1\Track05.flac
+66fdd0f53453cb93225ec59f2b286cb3  Disk 1\Track06.flac
+0865a55f832d0d2a5c0dc52854d7f2f5  Disk 1\Track07.flac
+77230f1d7193d13d042794fc3a268f74  Disk 1\Track08.flac
+28e93585de6efe384c9a6bed5a0ddc57  Disk 1\Track09.flac
+2ee3651ab7f9718f28e5d9eee14ffe37  Disk 1\Track10.flac
+a93d2800ef724f07081201c287516426  Disk 1\Track11.flac
+a2a1a81388e777ea2f38baab9560a2d3  Disk 1\Track12.flac
+48c07e592c1f387ad27e6258134c9417  Disk 1\Track13.flac
+a4ab43efdcab07f713c4bc9fb136ffc9  Disk 1\Track14.flac
+fe34f6427076d782ede61337f27ad1f2  Disk 1\Track15.flac
+a743daf5f32f59602b7294947bbcb25d  Disk 2\Track01.flac
+3dfba9e01802ca72b027981f76584b21  Disk 2\Track02.flac
+46614ef37451a79ec20f73a3b9e2fd4a  Disk 2\Track03.flac
+9fa0dfc3335bd98377a3be5d76d9e4d6  Disk 2\Track04.flac
+0af1bac06d8ba571d02baa80d4cae9cf  Disk 2\Track05.flac
+56459deb9d7e8c387a2547cc2ad0838c  Disk 2\Track06.flac
+625ccbe30c29387612bfe94ef1fbb68a  Disk 2\Track07.flac
+9efdcb0d4add2d3fdd27f6ea9091219d  Disk 2\Track08.flac
+a9edae72fdab76a3340ac9c6138b76a6  Disk 2\Track09.flac
+a7063c2be819cbd8fe97e482a1b124c4  Disk 2\Track10.flac
+2848350d8677ad008bf2ecba4a92f53a  Disk 2\Track11.flac
+e0e0de75fd1cddf73d635bf8238c87c6  Disk 2\Track12.flac
+35a8d37c11eda99f7a85251d2c381b85  Disk 2\Track13.flac
+3e28f46d978d9b509b8caab08688e134  Disk 2\Track14.flac
+ef00f47e5746a3540ac7432de29076ba  info.sfv
+35ff551d9211b28389c70a22c40c14d5  info.txt

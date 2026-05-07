@@ -1,0 +1,44 @@
+===================
+===================
+===================
+=== bd-95-04-10-belfast.txt
+===================
+===================
+===================
+Bob Dylan
+95-04-10
+Belfast
+Offmaster audience recording, unidentified taper.
+
+Disk One
+Crash On The Levee (Down In The Flood) / I Want You / All Along The Watchtower / 
+Just Like A Woman / Silvio / What Good Am I? / Mr. Tambourine Man (acoustic w band) / 
+Boots Of Spanish Leather (acoustic w band) / 
+
+Disk Two
+Don't Think Twice, It's All Right (acoustic w band) / God Knows / Ring Them Bells / 
+Highway 61 Revisited / Like A Rolling Stone / The Times They Are A-Changin' 
+(acoustic w band) / Rainy Day Women # 12 & 35
+
+Disk One
+Track 01.flac:3d784a33c919d82d507021793b00c9fd
+Track 02.flac:585d1478836b4d0a027901c744192528
+Track 03.flac:2b0ad092e7b099f6a83c2a6c192e379a
+Track 04.flac:b7703c32dc38f8122e03eca5c4852f1c
+Track 05.flac:650b33498ca352269907b045bb7937e4
+Track 06.flac:65bd667fc7d6ccc60f74bdffbda5fefe
+Track 07.flac:a75dea96eb1bff5ce1d4a2b0da2ec5d2
+Track 08.flac:0ac16608eecf539d797244ac4e40dd71
+
+Disk Two
+Track 01.flac:257573593bdd697f67fe03b6aa47a30a
+Track 02.flac:b763120cad33ee10dcb1484cceafcbff
+Track 03.flac:0bb10c03e52c97cd6593d010a1e6b03b
+Track 04.flac:4b1a32ea131b9e4d0bed84783d9b4543
+Track 05.flac:b7c08bc9510cc3eab96af47fb35bd8a3
+Track 06.flac:304893fd005916e180f7937b49ac4b2b
+Track 07.flac:a4db3b8fb486b53096c9c153d1d803eb
+
+===================
+===================
+===================

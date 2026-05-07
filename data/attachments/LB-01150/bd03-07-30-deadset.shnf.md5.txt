@@ -1,0 +1,3 @@
+a80c9caf080487fab97e76d91c537344 *bd03-07-30deadset-t03.shn
+7275fe4a17a56eea12d6ed3124f135bf *bd03-07-30deadset-t01.shn
+4043aed008d4717c029b1114bb83f00b *bd03-07-30deadset-t02.shn

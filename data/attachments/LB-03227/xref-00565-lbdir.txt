@@ -1,0 +1,66 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-06-01-j.flacf 
+=================== 
+=================== 
+=================== 
+4e1c7da0beb35811e5516a51a4e74004  bob dylan - 1 June 1965 BBCshow.md5
+88dcdc83a105d6356f29ffe937bca435  fingerprint.ffp
+88dcdc83a105d6356f29ffe937bca435  fingerprint.txt
+a278d2f2c36bdac004600b8c1b2fbfc1  README.txt
+28981fcab96a859f066ce56df47e481a  TrackNo01.flac
+4b75caf578333f6ee58dcad78ecb9724  TrackNo02.flac
+6a3f2cec6ff0c3476b1a381ee834c0af  TrackNo03.flac
+55c2fb719f51551cef036d8269c3e2f5  TrackNo04.flac
+fc1c97314843a630b9b3e2be970c46d8  TrackNo05.flac
+66fc985e6751ff5865f3aac75992b14f  TrackNo06.flac
+61f583eceba4d6fdd068dcc39f6a4752  TrackNo07.flac
+4396b24a394838dba1a319c895adb1d1  TrackNo08.flac
+2535f338542e7583d691a10b9a5b3163  TrackNo09.flac
+341c06ab9282ce4b06789dff204f782f  TrackNo10.flac
+8211cf296f82431661b25952b1c2b4f1  TrackNo11.flac
+2c1df23f47a77632a52448e4fec89ba8  TrackNo12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-06-01-j.flacf 
+=================== 
+=================== 
+=================== 
+trackno01.flac:d6e4b2170c0c12c00e717025077e77d2
+trackno02.flac:4e862515d4c187e384623aa2c73d5fa4
+trackno03.flac:c3439659dd205884650a9cf9f5d34330
+trackno04.flac:15cf5523fab783a74ecee6e5e68d1fdb
+trackno05.flac:aa3a2732b0cafc23439a63cd2c882b1a
+trackno06.flac:39aa954637e2861f20a8b7ca084a93d5
+trackno07.flac:703316d41ef30a9d93d7ecc71585077d
+trackno08.flac:403a494a5822497642eb169775fb1495
+trackno09.flac:3d88e639b4f472df17d9eb8974cd8fba
+trackno10.flac:151d20b0537a3485b056c2259498362c
+trackno11.flac:ccb7b8bc847ada1b553ee58eacb232e1
+trackno12.flac:14dd8fc5dc4b564668c265bc8419c027
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd65-06-01-j.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.15       55424924 B   ---   --   ---xx   flac  0.3857  TrackNo01.flac
+     6:09.57       65225708 B   ---   --   ---xx   flac  0.4214  TrackNo02.flac
+     7:05.71       75137036 B   ---   --   ---xx   flac  0.3928  TrackNo03.flac
+     2:44.35       29011964 B   ---   --   ---xx   flac  0.4194  TrackNo04.flac
+     6:13.68       65957180 B   ---   --   ---xx   flac  0.3934  TrackNo05.flac
+     4:03.18       42907580 B   ---   --   ---xx   flac  0.4170  TrackNo06.flac
+     4:00.38       42425420 B   ---   --   ---xx   flac  0.4075  TrackNo07.flac
+     4:13.06       44643356 B   ---   --   ---xx   flac  0.3782  TrackNo08.flac
+     6:41.23       70790540 B   ---   --   ---xx   flac  0.3704  TrackNo09.flac
+     9:01.35       95514764 B   ---   --   ---xx   flac  0.3765  TrackNo10.flac
+     4:45.19       50318732 B   ---   --   ---xx   flac  0.3843  TrackNo11.flac
+     5:08.13       54361820 B   ---   --   ---xx   flac  0.3939  TrackNo12.flac
+    65:21.23      691719024 B                            0.3925  (12 files)
+=================== 
+=================== 
+=================== 

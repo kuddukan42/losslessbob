@@ -1,0 +1,38 @@
+Bob Dylan
+Amphitheatre Regency Park
+Cary, North Carolina
+May 13, 2003
+
+From Section 4, Row F > Sony MZ-R55 with Sony ECM-MS907 mic >
+CDR with optical line > WAV with EAC in secure mode w/ correct
+offset > Quick filter with CE2000 to adjust bass, treble and
+master gain > CD Wave to cut tracks > CE2000 to fade in/out
+each disc > shntool to fix sector boundaries > shorten > shn
+
+DISC ONE
+01 Intro					00:58.67
+02 Maggie's Farm				05:48.61
+03 Tonight I'll Be Staying Here With You	04:58.48
+04 Tweedle Dee & Tweedle Dum			05:30.63
+05 Just Like A Woman				07:46.04
+06 Things Have Changed				07:00.47
+07 Don't Think Twice, It's All Right		07:20.70
+08 Cold Irons Bound				06:00.36
+09 Watching The River Flow			05:55.40
+10 Love Sick					06:19.74
+11 Highway 61 Revisited				05:59.14
+						--------
+						63:39.74
+
+
+DISC TWO
+01 Knockin' On Heaven's Door			06:03.38
+02 Honest With Me				07:03.70
+03 Floater					06:24.68
+04 Summer Days					07:24.41
+05 <crowd>					03:27.29
+06 Like A Rolling Stone				06:39.73
+07 All Along The Watchtower			07:05.46
+08 <crowd>					03:01.57
+						--------
+						47:11.47

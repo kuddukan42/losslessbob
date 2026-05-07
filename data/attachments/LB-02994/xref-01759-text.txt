@@ -1,0 +1,284 @@
+===================
+===================
+===================
+=== Bob Dylan 1979-11-10 Fox Warfield Theatre, San Francisco, California, USA [derived from LB-2994].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Fox Warfield Theatre
+San Francisco, California
+November 10, 1979
+
+LB-2994, (77min +54min), AUD, complete, very good to excellent sound
+
+Taper: Identified, but prefers to remain 'masked and anonymous'
+Source: first gen. tape>wave>CD-R (Audio Catalyst)>FLAC (8)
+
+CD1:
+01 Monologue [by Regina McCreary Havis] [03:53]
+02 If I've Got My Ticket, Lord (McCoy/Dennis) [perf. by Havis-Springs-Young] [03:12]
+03 It's Gonna Rain [perf. by Havis-Springs-Young] (C. Johnson) [04:01]
+04 Look Up And Live By Faith [perf. by Havis-Springs-Young] (?)[04:37]
+05 Hold My Hand, Oh Lord [perf. by Havis-Springs-Young] (?)[03:21]
+06 Oh Freedom (?) [perf. by Havis-Springs-Young] [05:03]
+07 This Train Is Bound For Glory (This Train) (Big Bill Broonzy) [perf. by Havis-Springs-Young] [03:45]
+08 Gotta Serve Somebody [07:13]
+09 I Believe In You [05:23]
+10 When You Gonna Wake Up [05:53]
+11 When He Returns [05:08]
+12 Man Gave Names To All The Animals [05:47]
+13 Precious Angel [06:06]
+14 Slow Train [06:57]
+15 Covenant Woman [06:32]
+Total time: [77:00]
+
+CD2:
+16 What Are You Doing With Your Heart? (Helena Springs) [perf. by Helena Springs] [03:17]
+17 Gonna Change My Way Of Thinking [05:23]
+18 Do Right To Me Baby (Do Unto Others) [04:37]
+19 Solid Rock [04:53]
+20 Saving Grace [04:40]
+21 Saved (Bob Dylan/Tim Drummond) [04:32]
+22 What Can I Do For You? [06:00]
+23 In The Garden [06:53]
+24 Blessed Be The Name [06:04]
+25 Pressing On [07:27]
+Total time: [53:51]
+
+Concert # 9 of the First Gospel Tour
+
+Concert # 9 with the First Gospel Band:
+Bob Dylan (vocal & guitar)
+Fred Tackett (guitar)
+Spooner Oldham (keyboards)
+Tim Drummond (bass) 
+Terry Young (keyboards)
+Jim Keltner (drums)
+Regina Havis
+Helena Springs
+Mona Lisa Young (background vocals)
+
+When He Returns: first Bob Dylan solo (vocal & guitar) with Spooner Oldham (piano)
+Saved: Bob Dylan (harmonica)
+Pressing On: Bob Dylan (piano)
+
+BobTalk:
+The rabble says the preaching of the cross is foolishness. To those who perish, 
+but to those who are saved it is the power of God. The name of this is 
+"Hanging On To A Solid Rock, Made Before The Foundation Of The World
+
+On the keyboards tonight, give him a warm hand, Spooner Oldham. On the lead guitar, 
+Fred Tackett. On the other set of keyboards, Terry Young. And on bass guitar, Tim Drummond. Playing drums tonight, Jim Keltner 
+
+All right, singing on bottom tonight is Helena Springs. 
+Singing in the middle is Regina Havis. And on the top is Mona Lisa Young. 
+We're here tonight by the power of God - that's the only power (.....). 
+(before Blessed Be The Name)
+
+REFERENCE: Watt Alexander: The Gospel Project
+
+CD1 .ffp:
+01 Monologue [by Regina McCreary Havis].flac:3569e294a841591d2d42c1ae78599b14
+02 If I've got my ticket, Lord [perf. by Havis-Springs-Young].flac:0e520a638f6d602c8d2a008cb482dca0
+03 It's gonna rain [perf. by Havis-Springs-Young].flac:b3e6caf03dc92d7f1dca9a30356fbcb7
+04 Look up and live by faith [perf. by Havis-Springs-Young].flac:338a70bd2a64f7afbf48b1c027f6f92b
+05 Hold my hand, oh Lord [perf. by Havis-Springs-Young].flac:567cb9dd6f1a625e1468fedf37f868b6
+06 Oh freedom [perf. by Havis-Springs-Young].flac:6710ab1c68163b9adc49fb8bb00ce053
+07 This train is bound for glory (this train) [perf. by Havis-Springs-Young].flac:1593a1a4d19e48526c60aea0949310ce
+08 Gotta serve somebody.flac:b2848b4fad3e5ffa422fcca90b41fcef
+09 I believe in you.flac:b1b3591d97764cdb7d94d3e9da4efedb
+10 When you gonna wake up.flac:b89b03bd8fe25cac1d93a8748dc86503
+11 When he returns.flac:66f062a334975ab76991ac84deef3e28
+12 Man gave names to all the animals.flac:e747787d11aa4f68835c836fffc2c732
+13 Precious angel.flac:d60ce73f60dbc7b3c58bcf575845493e
+14 Slow train.flac:567e85d99b9611cf7077e98465a4c84f
+15 Covenant woman.flac:dd3d0cc31da4756f9c885053e836aaa1
+
+CD2 .ffp:
+16 What are you doing with your heart [perf. by Helena Springs].flac:b008852c69ed8b4dc54f56d06333b49b
+17 Gonna change my way of thinking.flac:c86d6f1baf5a6c2449608e192aceac21
+18 Do right to me baby (do unto others).flac:62d01a5ebda9395ac4c81cfa8560faae
+19 Solid rock.flac:e94442250b1d0492e62560dad616a075
+20 Saving grace.flac:323b995af14b1bc1ad36740b63bcc720
+21 Saved.flac:d00229b63a3bc5cb1ddcd5e6a3db5aab
+22 What can I do for you.flac:33bbe3d8d932ca4124ad2c28c98291d6
+23 In the garden.flac:3673f1fbb1f4ec103a64ac8f70fc3c13
+24 Blessed be the name.flac:175575f9903edc095c807f0d03043c65
+25 Pressing on.flac:62f4739b93a5df95029ba2335b23b159
+
+* * *  Enjoy your Bobby Hobby  * * *
+===================
+===================
+===================
+=== ORIGINAL track_listing_info.txt
+===================
+===================
+===================
+NOTE: I received this directly from the person who transferred it 
+from the taper's master tape. It's truly glorious! - Charlespoet
+
+Bob Dylan
+Fox Warfield Theatre
+San Francisco, California
+November 10, 1979
+ 
+Taper: Identified, but prefers to remain masked and anonymous
+Source: first gen. tape>wave>CD-R(Audio Catalyst)>flac(8)
+
+Disc One (76:57):
+
+1. Regina McCreary Havis:  Monologue
+   Havis-Springs-Young:    If I've Got My Ticket, Lord (McCoy/Dennis)
+2. It's Gonna Rain (C Johnson)
+3. Look Up And Live By Faith (?)
+4. Hold My Hand, Oh Lord (?)
+5. Oh Freedom (?)
+6. This Train Is Bound For Glory (This Train) (Big Bill Broonzy)
+7. Gotta Serve Somebody
+8. I Believe In You
+9. When You Gonna Wake Up
+10. When He Returns
+11. Man Gave Names To All The Animals
+12. Precious Angel
+13. Slow Train
+14. Covenant Woman
+
+Disc Two (53:51):
+  
+1. Helena Springs: What Are You Doing With Your Heart ? (Helena Springs)
+2. Gonna Change My Way Of Thinking
+3. Do Right To Me Baby (Do Unto Others)
+4. Solid Rock
+5. Saving Grace
+6. Saved (Bob Dylan/Tim Drummond)
+7. What Can I Do For You?
+8. In The Garden
+9. Blessed Be The Name
+10. Pressing On
+
+Concert # 9 of the First Gospel Tour.
+
+Concert # 9 with the First Gospel Band: 
+Bob Dylan (vocal & guitar) 
+Fred Tackett (guitar)
+Spooner Oldham (keyboards)
+Tim Drummond (bass) 
+Terry Young (keyboards) 
+Jim Keltner (drums)
+
+Regina Havis 
+Helena Springs 
+Mona Lisa Young (background vocals).
+
+When He Returns: (first Bob Dylan solo (vocal & guitar) with Spooner Oldham (piano).
+
+Saved: Bob Dylan (harmonica).
+
+Pressing On: Bob Dylan (piano).
+
+BobTalk
+
+The rabble says the preaching of the cross is foolishness. To those who perish, 
+but to those who are saved it is the power of God. The name of this is 
+"Hanging On To A Solid Rock, Made Before The Foundation Of The World.
+
+On the keyboards tonight, give him a warm hand, Spooner Oldham. On the lead guitar, 
+Fred Tackett. On the other set of keyboards, Terry Young. 
+And on bass guitar, Tim Drummond. Playing drums tonight, Jim Keltner 
+All right, singing on bottom tonight is Helena Springs. 
+Singing in the middle is Regina Havis. And on the top is Mona Lisa Young. 
+We're here tonight by the power of God - that's the only power (.....). 
+(before Blessed Be The Name)
+
+Reference. Watt Alexander: The Gospel Project.
+
+Thanks Olof!
+
+ENJOY!
+Charlespoet
+
+
+
+===================
+===================
+===================
+=== CD1.ffp
+===================
+===================
+===================
+01 Monologue [by Regina McCreary Havis].flac:3569e294a841591d2d42c1ae78599b14
+02 If I've got my ticket, Lord [perf. by Havis-Springs-Young].flac:0e520a638f6d602c8d2a008cb482dca0
+03 It's gonna rain [perf. by Havis-Springs-Young].flac:b3e6caf03dc92d7f1dca9a30356fbcb7
+04 Look up and live by faith [perf. by Havis-Springs-Young].flac:338a70bd2a64f7afbf48b1c027f6f92b
+05 Hold my hand, oh Lord [perf. by Havis-Springs-Young].flac:567cb9dd6f1a625e1468fedf37f868b6
+06 Oh freedom [perf. by Havis-Springs-Young].flac:6710ab1c68163b9adc49fb8bb00ce053
+07 This train is bound for glory (this train) [perf. by Havis-Springs-Young].flac:1593a1a4d19e48526c60aea0949310ce
+08 Gotta serve somebody.flac:b2848b4fad3e5ffa422fcca90b41fcef
+09 I believe in you.flac:b1b3591d97764cdb7d94d3e9da4efedb
+10 When you gonna wake up.flac:b89b03bd8fe25cac1d93a8748dc86503
+11 When he returns.flac:66f062a334975ab76991ac84deef3e28
+12 Man gave names to all the animals.flac:e747787d11aa4f68835c836fffc2c732
+13 Precious angel.flac:d60ce73f60dbc7b3c58bcf575845493e
+14 Slow train.flac:567e85d99b9611cf7077e98465a4c84f
+15 Covenant woman.flac:dd3d0cc31da4756f9c885053e836aaa1
+===================
+===================
+===================
+=== CD1.txt
+===================
+===================
+===================
+01 Monologue [by Regina McCreary Havis].flac:3569e294a841591d2d42c1ae78599b14
+02 If I've got my ticket, Lord [perf. by Havis-Springs-Young].flac:0e520a638f6d602c8d2a008cb482dca0
+03 It's gonna rain [perf. by Havis-Springs-Young].flac:b3e6caf03dc92d7f1dca9a30356fbcb7
+04 Look up and live by faith [perf. by Havis-Springs-Young].flac:338a70bd2a64f7afbf48b1c027f6f92b
+05 Hold my hand, oh Lord [perf. by Havis-Springs-Young].flac:567cb9dd6f1a625e1468fedf37f868b6
+06 Oh freedom [perf. by Havis-Springs-Young].flac:6710ab1c68163b9adc49fb8bb00ce053
+07 This train is bound for glory (this train) [perf. by Havis-Springs-Young].flac:1593a1a4d19e48526c60aea0949310ce
+08 Gotta serve somebody.flac:b2848b4fad3e5ffa422fcca90b41fcef
+09 I believe in you.flac:b1b3591d97764cdb7d94d3e9da4efedb
+10 When you gonna wake up.flac:b89b03bd8fe25cac1d93a8748dc86503
+11 When he returns.flac:66f062a334975ab76991ac84deef3e28
+12 Man gave names to all the animals.flac:e747787d11aa4f68835c836fffc2c732
+13 Precious angel.flac:d60ce73f60dbc7b3c58bcf575845493e
+14 Slow train.flac:567e85d99b9611cf7077e98465a4c84f
+15 Covenant woman.flac:dd3d0cc31da4756f9c885053e836aaa1
+===================
+===================
+===================
+=== CD2.ffp
+===================
+===================
+===================
+16 What are you doing with your heart [perf. by Helena Springs].flac:b008852c69ed8b4dc54f56d06333b49b
+17 Gonna change my way of thinking.flac:c86d6f1baf5a6c2449608e192aceac21
+18 Do right to me baby (do unto others).flac:62d01a5ebda9395ac4c81cfa8560faae
+19 Solid rock.flac:e94442250b1d0492e62560dad616a075
+20 Saving grace.flac:323b995af14b1bc1ad36740b63bcc720
+21 Saved.flac:d00229b63a3bc5cb1ddcd5e6a3db5aab
+22 What can I do for you.flac:33bbe3d8d932ca4124ad2c28c98291d6
+23 In the garden.flac:3673f1fbb1f4ec103a64ac8f70fc3c13
+24 Blessed be the name.flac:175575f9903edc095c807f0d03043c65
+25 Pressing on.flac:62f4739b93a5df95029ba2335b23b159
+===================
+===================
+===================
+=== CD2.txt
+===================
+===================
+===================
+16 What are you doing with your heart [perf. by Helena Springs].flac:b008852c69ed8b4dc54f56d06333b49b
+17 Gonna change my way of thinking.flac:c86d6f1baf5a6c2449608e192aceac21
+18 Do right to me baby (do unto others).flac:62d01a5ebda9395ac4c81cfa8560faae
+19 Solid rock.flac:e94442250b1d0492e62560dad616a075
+20 Saving grace.flac:323b995af14b1bc1ad36740b63bcc720
+21 Saved.flac:d00229b63a3bc5cb1ddcd5e6a3db5aab
+22 What can I do for you.flac:33bbe3d8d932ca4124ad2c28c98291d6
+23 In the garden.flac:3673f1fbb1f4ec103a64ac8f70fc3c13
+24 Blessed be the name.flac:175575f9903edc095c807f0d03043c65
+25 Pressing on.flac:62f4739b93a5df95029ba2335b23b159
+===================
+===================
+===================

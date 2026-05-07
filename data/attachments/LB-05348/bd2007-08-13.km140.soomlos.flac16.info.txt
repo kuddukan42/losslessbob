@@ -1,0 +1,64 @@
+Bob Dylan
+Brisbane Entertainment Centre
+Brisbane, Australia
+August 13, 2007
+
+Disc 1:
+01. introduction [00:42] 
+02. Cat's In The Well [03:54]  
+03. It Ain't Me, Babe [06:05]  
+04. Just Like Tom Thumb's Blues [07:04]  
+05. Lay, Lady, Lay [05:27]  
+06. Rollin' And Tumblin' [06:21]  
+07. When The Deal Goes Down [06:37]  
+08. High Water (For Charlie Patton) [06:19]  
+09. The Lonesome Death Of Hattie Carroll [06:48]  
+10. Honest With Me [06:33]  
+11. Spirit On The Water [07:16]  
+12. Highway 61 Revisited [05:33] 
+Total time: [68:45]
+
+Disc 2:
+01. Tangled Up In Blue [08:58]  
+02. Nettie Moore [07:49]  
+03. Summer Days [05:41]  
+04. Ballad Of A Thin Man [09:56]  
+    (encore) 
+05. Thunder On The Mountain [6:00]  
+06. band introduction [00:39]
+07. All Along The Watchtower [06:33]  
+Total time: [45:41]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, steel guitar, banjo
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+5th row right side floor
+neumann km140's lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-08-13d1t01.flac:cb45bc07661810316fc55e69a9ef572e
+bd2007-08-13d1t02.flac:c7e36243a89f99c5f503f403bee5854d
+bd2007-08-13d1t03.flac:68e33574707e5e87c8d2c017b0371004
+bd2007-08-13d1t04.flac:2cc7e58e6c2596099c60b9ef8de1f5cb
+bd2007-08-13d1t05.flac:c1dd40634a44d5de0d528d0d519e852f
+bd2007-08-13d1t06.flac:7bbbe8b7523109010c9a2277e3d6aed7
+bd2007-08-13d1t07.flac:b90c49efa1d3fa18134ddd3f57b14932
+bd2007-08-13d1t08.flac:d201db1c6fa0659a77015a19f5df6cce
+bd2007-08-13d1t09.flac:56ca9325b2f3bde2347a960929109034
+bd2007-08-13d1t10.flac:20892586f9aa7a4d08f54601feb02376
+bd2007-08-13d1t11.flac:1a9f749c59df2cdff5932348e8905ab0
+bd2007-08-13d1t12.flac:893239c7bbbe8a352a71eb8f0b19a333
+bd2007-08-13d2t01.flac:dc74450273ea67195e276af47724470e
+bd2007-08-13d2t02.flac:13f12e69d10fb1ca452d99491b212daf
+bd2007-08-13d2t03.flac:dc101b02d2860859afe84c1cb435f84d
+bd2007-08-13d2t04.flac:026b3c44ce90958353b4b7cca4958152
+bd2007-08-13d2t05.flac:9ccf5a94b25642ced9ea6c8d54181d43
+bd2007-08-13d2t06.flac:6567c970d0157ab1b85814918755a346
+bd2007-08-13d2t07.flac:2e1fe6a67d21029f2f6d9b154efed49d

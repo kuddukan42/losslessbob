@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd67-safety-master-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+2fcbe0431bf17b562fd122dff7bf0e75  all.md5
+c75a5e62a0ae2b7bb70085cabba33e1c  BsmtTrack01.flac
+a030f3191c4d454e1185939c0a7cab08  BsmtTrack02.flac
+fba4fdc3bd60269fc44f25a10e67dc60  BsmtTrack03.flac
+9c91616870eccebb77dc59c667bf3f09  BsmtTrack04.flac
+5bbba25a3d38641db2dbcc51b815b377  BsmtTrack05.flac
+575c92348136686a154d5941175ee2dd  BsmtTrack06.flac
+ce36232c97d737ef1e347022a5fe1ea2  BsmtTrack07.flac
+b4f9814178459d79f38f403558510c21  BsmtTrack08.flac
+1a1f77ccd40598e3707b472ba645d39e  BsmtTrack09.flac
+dde4497204241d001c08cfd1ffded41b  BsmtTrack10.flac
+c1c5e4d03c0d016844f04444316edb7a  BsmtTrack11.flac
+b725d9fd4443411877ab7ffde95da4ee  BsmtTrack12.flac
+27fb3cd07b9fb703cfa02ec2ef96f072  BsmtTrack13.flac
+9df55fdc9912acc547ecdcfcf87c28e1  BsmtTrack14.flac
+789bd0a63d4cedcba31bcf80146e8baf  BsmtTrack15.flac
+2660061f36d1b42a1f0a4f63cef16f08  BsmtTrack16.flac
+03143ddb37cd82a0443c654f0e406acb  BsmtTrack17.flac
+5073ade36776a86906ddd859f9d5f30e  BsmtTrack18.flac
+a75ea967914b0df947dad46c008dbed8  BsmtTrack19.flac
+253dd88e59affb52e99d7768f6b59712  BsmtTrack20.flac
+9dbf053145c6032c23c57e307252a33e  BsmtTrack21.flac
+0398b64a0734b34a3bbb947764a6dfeb  BsmtTrack22.flac
+3856187201da340e58cab13fca2d4a0f  BsmtTrack23.flac
+c8440ff37f06ae38b712f0f417bb1ef8  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-safety-master-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+BsmtTrack01.flac:73a88e2d64ec908d1b22c36cd358c36c
+BsmtTrack02.flac:e5614d76226cf405dfada9de3a01a9cb
+BsmtTrack03.flac:ceb39be8e99b6cac8283b5542b8c90a1
+BsmtTrack04.flac:2a34d7609ce0c6774440852ec293fd07
+BsmtTrack05.flac:afe04b5cd22445a3def50eafe30de2ce
+BsmtTrack06.flac:42951958c1e7b7963a3af773c336efcb
+BsmtTrack07.flac:6aee62bbac58ab8eaa94bb18e08aad51
+BsmtTrack08.flac:ac34da9b8fa8ec44fbe152fac8bdcb81
+BsmtTrack09.flac:aa8476dcea407b22f1cc975ae6809b37
+BsmtTrack10.flac:eaade03eb77b09286066d62a71cfd2ea
+BsmtTrack11.flac:5bc61d8720ee75fcf56c1f4485a61935
+BsmtTrack12.flac:1e09238b6e83e2ffb572cedddcb19edf
+BsmtTrack13.flac:da31f26eda79648d0bd70a2965555f0f
+BsmtTrack14.flac:a22e84d70fe02a8e57dcca97bb0fd063
+BsmtTrack15.flac:62a96e95195f3051dfeb5f1a8a3cafc9
+BsmtTrack16.flac:0e216dc6474ad1c63d3106343a10cc4a
+BsmtTrack17.flac:60d24394e4f303be7df15de123e749b0
+BsmtTrack18.flac:1721820bb4dec4fb3f95402d81fdc818
+BsmtTrack19.flac:a71856b03927a7922306dca88fa020ad
+BsmtTrack20.flac:c09f2f07921c76cce8d8a647442b488b
+BsmtTrack21.flac:bceca7e1e74371d4e52d69002ea76d65
+BsmtTrack22.flac:92b0b696b1e3183eeebbef9ed1481a6e
+BsmtTrack23.flac:feb2c00804a7c8e30302902923631a64
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-safety-master-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:32.48       26925740 B   ---   --   ---xx   flac  0.5103  BsmtTrack01.flac
+     2:12.23       23338940 B   ---   --   ---xx   flac  0.5224  BsmtTrack02.flac
+     5:08.34       54411212 B   ---   --   ---xx   flac  0.4992  BsmtTrack03.flac
+     2:31.70       26801084 B   ---   --   ---xx   flac  0.4942  BsmtTrack04.flac
+     2:03.46       21805436 B   ---   --   ---xx   flac  0.5083  BsmtTrack05.flac
+     2:44.24       28986092 B   ---   --   ---xx   flac  0.5053  BsmtTrack06.flac
+     3:52.44       41028332 B   ---   --   ---xx   flac  0.5708  BsmtTrack07.flac
+     2:43.64       28903772 B   ---   --   ---xx   flac  0.5468  BsmtTrack08.flac
+     3:55.43       41555180 B   ---   --   ---xx   flac  0.5042  BsmtTrack09.flac
+     2:52.61       30484316 B   ---   --   ---xx   flac  0.4957  BsmtTrack10.flac
+     0:31.56        5600156 B   ---   --   ---xx   flac  0.5155  BsmtTrack11.flac
+     1:47.66       19030076 B   ---   --   ---xx   flac  0.5528  BsmtTrack12.flac
+     3:43.69       39499532 B   ---   --   ---xx   flac  0.4813  BsmtTrack13.flac
+     3:20.63       35428220 B   ---   --   ---xx   flac  0.4848  BsmtTrack14.flac
+     2:38.46       27979436 B   ---   --   ---xx   flac  0.5812  BsmtTrack15.flac
+     2:45.17       29146028 B   ---   --   ---xx   flac  0.5554  BsmtTrack16.flac
+     4:14.08       44824460 B   ---   --   ---xx   flac  0.5501  BsmtTrack17.flac
+     4:07.04       43580252 B   ---   --   ---xx   flac  0.6036  BsmtTrack18.flac
+     2:16.08       24009260 B   ---   --   ---xx   flac  0.5765  BsmtTrack19.flac
+     2:57.09       31244012 B   ---   --   ---xx   flac  0.6056  BsmtTrack20.flac
+     7:22.57       78102908 B   ---   --   ---xx   flac  0.5351  BsmtTrack21.flac
+     5:30.21       58261436 B   ---   --   ---xx   flac  0.6169  BsmtTrack22.flac
+     3:38.00       38455244 B   ---   --   ---xx   flac  0.4934  BsmtTrack23.flac
+    75:31.56      799401124 B                            0.5377  (23 files)
+=================== 
+=================== 
+=================== 

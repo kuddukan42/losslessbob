@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd04-04-12-c.flacf
+===================
+===================
+===================
+cedc36d168189c941185c257f2200cc7 *01 Drifter's escape.flac
+8fde9d55f7ad06b991c44e5dcd78d2d1 *02 Just like Tom Thumb's blues.flac
+917b6f7736e1e85636dc07f4bd28681d *03 Unbelievable.flac
+edb8c0e67907ba8be4945e12fb4ea24f *04 I'll be your baby tongiht.flac
+a815f5d47e327dd8c1ac34b832de3551 *05 It's all right, ma (I'm only bleeding).flac
+d6f708bdc2c28ff29c26cc51ba51babe *06 Moonlight.flac
+09b2ef02b73b85617a8ce803ae3a94bc *07 Don't think twice, it's all right.flac
+7e8a431c6bc6ee4683297205432295ee *08 Stuck inside of Mobile with the Memphis blues again.flac
+40410b01fa0e0067564561ad552e1b78 *09 Man in the long black coat.flac
+6843160b5a2f1f6079f187fd72a0fa17 *10 Highway 61 revisited.flac
+f5a1d434b9fd722b875caf2f12b2555f *11 Standing in the doorway.flac
+e7f10ca889067879a473e3de48c9e507 *12 Honest with me.flac
+35acabffc16dc63465342668eeb548d9 *13 I believe in you.flac
+205fbec99b7b920670e6175da90739cd *14 Summer days.flac
+8d7dc1aa7564f36b19845869b90c40af *15 Cat's in the well.flac
+e7d5a5053b49601d634eea362b666cd9 *16 Like a rolling stone.flac
+9e559029a571f64be95a018056e67666 *17 All along the watchtower.flac
+e24c19de0ff10edddc76ee279488d0cc *Bob Dylan 2004-04-12 Tabernacle, Atlanta, Georgia, USA [m. likely LB-1745 'pb master'].ffp
+e7757443929c2d5411aa4fb182ba49c4 *Info\Bob Dylan 2004-04-12 Tabernacle, Atlanta, Georgia, USA [m. likely LB-1745 'pb master'].txt
+1155edbd0e6079a1d6e367ecb2075eb7 *Info\EAC extraction info CD1.LOG
+af2b123ea5cb4498cdabbbf77cae4858 *Info\EAC extraction info CD2.LOG
+===================
+===================
+===================
+=== ffp for: bd04-04-12-c.flacf
+===================
+===================
+===================
+01 Drifter's escape.flac:ded1fe47b6fa2c6e09009de9cc4716d5
+02 Just like Tom Thumb's blues.flac:22c413fcb4bd9302d6da701f7382c280
+03 Unbelievable.flac:9e217d438efd9389eb95bad31ad4c550
+04 I'll be your baby tongiht.flac:f0b358957d8d3e3f7b7e8dbbe40796e5
+05 It's all right, ma (I'm only bleeding).flac:10f04d5681b55ef9b536eeb733316423
+06 Moonlight.flac:74e76e6154b30e048a82f933d236f054
+07 Don't think twice, it's all right.flac:1d628c7c61a6537c3bed48d3e7755698
+08 Stuck inside of Mobile with the Memphis blues again.flac:fe33152154663218478fc71a19a40262
+09 Man in the long black coat.flac:f427c1a09879eb3bc3fb3ce0e71ed297
+10 Highway 61 revisited.flac:e0783315dfc03d2ed96b8c875322c6f4
+11 Standing in the doorway.flac:ae0b2d3b367ae9f66dc1d6f257ce1f47
+12 Honest with me.flac:8c31e5266934d837195b2da1c018dc10
+13 I believe in you.flac:61f7db12a1904756c7974c25b0ed8b56
+14 Summer days.flac:88c0e268541b1e309fb798b816daca90
+15 Cat's in the well.flac:cc7ba814e26a1adc5924aca7b9a2f3f7
+16 Like a rolling stone.flac:11fa579b3f95f67e6a49cea03872b202
+17 All along the watchtower.flac:8677165d5d67fc1bc5689f6dfe9f6eb9
+===================
+===================
+===================
+=== shntool len for: bd04-04-12-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:54.52       62567948 B   ---   --   ---xx   flac  0.5801  01 Drifter's escape.flac
+     6:59.53       74036300 B   ---   --   ---xx   flac  0.5519  02 Just like Tom Thumb's blues.flac
+     4:32.28       48046700 B   ---   --   ---xx   flac  0.5687  03 Unbelievable.flac
+     6:26.52       68212748 B   ---   --   ---xx   flac  0.5574  04 I'll be your baby tongiht.flac
+     7:22.74       78142892 B   ---   --   ---xx   flac  0.5780  05 It's all right, ma (I'm only bleeding).flac
+     6:59.25       73970444 B   ---   --   ---xx   flac  0.5187  06 Moonlight.flac
+     7:32.28       79798700 B   ---   --   ---xx   flac  0.5522  07 Don't think twice, it's all right.flac
+     8:04.73       85549340 B   ---   --   ---xx   flac  0.5914  08 Stuck inside of Mobile with the Memphis blues again.flac
+     5:32.36       58649516 B   ---   --   ---xx   flac  0.5635  09 Man in the long black coat.flac
+     8:35.46       90954236 B   ---   --   ---xx   flac  0.5707  10 Highway 61 revisited.flac
+     7:40.55       81273404 B   ---   --   ---xx   flac  0.5128  11 Standing in the doorway.flac
+     7:12.52       76327148 B   ---   --   ---xx   flac  0.5739  12 Honest with me.flac
+     6:12.26       65681996 B   ---   --   ---xx   flac  0.5148  13 I believe in you.flac
+    12:15.54      129781052 B   ---   --   ---xx   flac  0.5521  14 Summer days.flac
+     5:10.08       54702860 B   ---   --   ---xx   flac  0.5870  15 Cat's in the well.flac
+     7:54.19       83658332 B   ---   --   ---xx   flac  0.5723  16 Like a rolling stone.flac
+     7:51.46       83192636 B   ---   --   ---xx   flac  0.5655  17 All along the watchtower.flac
+   122:18.52     1294546252 B                            0.5590  (17 files)
+===================
+===================
+===================

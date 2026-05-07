@@ -1,0 +1,138 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-04-01-lk.flacf 
+=================== 
+=================== 
+=================== 
+8bb00ce4be91cf1b0d019f02bf32944a  1978 Leg 1 Disc 5.md5
+f0ec41ea19e0731b54cb0aa436c8c95c  Bob Dylan Sydney 1978.txt
+f4364298ca1f41b46867c11c48d526a9  Disk 1\Disk 1.md5
+d6521799ee94cec5e6394af64ff1b1d7  Disk 1\Sydney 1 Apr 78 - 101.flac
+7123e3f5669dc84121b4bc8d8d7638c8  Disk 1\Sydney 1 Apr 78 - 102.flac
+50d08b52c0ab0e9d2fffe34cc5f4c209  Disk 1\Sydney 1 Apr 78 - 103.flac
+b420bef9c5af6fba0353331088663133  Disk 1\Sydney 1 Apr 78 - 104.flac
+ce3d4186bd7c36eea978352027575910  Disk 1\Sydney 1 Apr 78 - 105.flac
+7b584ac681b487c52933c8bbb1ac3f76  Disk 1\Sydney 1 Apr 78 - 106.flac
+5b89834c17b793630658c50476ff4fe3  Disk 1\Sydney 1 Apr 78 - 107.flac
+8d5e79d573782d2d45eb4e8f90c6dc89  Disk 1\Sydney 1 Apr 78 - 108.flac
+e41870169d056b56f8220c9e95b4ac20  Disk 1\Sydney 1 Apr 78 - 109.flac
+e27fe786016b94de3ccbf2d451dca0ae  Disk 1\Sydney 1 Apr 78 - 110.flac
+b680ed238607aa0e441ede4c4d9affaa  Disk 1\Sydney 1 Apr 78 - 111.flac
+d79a6dd3cbd120ae24f251ef74db9445  Disk 1\Sydney 1 Apr 78 - 112.flac
+eeca7bcac7265c1dd7ad2f556d066f1a  Disk 1\Sydney 1 Apr 78 - 113.flac
+62704263590cc9257e5fc8ad4d059d8b  Disk 1\Sydney 1 Apr 78 - 114.flac
+40fe4d92257209bde2ffc24746e5830e  Disk 1\Sydney 1 Apr 78 - 115.flac
+c9e134016d8bb14c334cad7112a12378  Disk 2\Sydney 1 Apr 78 - 201.flac
+1d2b3bd2706447c02ecef63f69ee454c  Disk 2\Sydney 1 Apr 78 - 202.flac
+89f2721b2963d50775991e8e31810def  Disk 2\Sydney 1 Apr 78 - 203.flac
+08107826f21648d7fecfc52ba7c847ea  Disk 2\Sydney 1 Apr 78 - 204.flac
+3fb688a48cec9f4fa020754c405491b4  Disk 2\Sydney 1 Apr 78 - 205.flac
+2e29febd917d4c7c57609333393feeb3  Disk 2\Sydney 1 Apr 78 - 206.flac
+3fdad3f7f4041fdfeab918c5e87d6678  Disk 2\Sydney 1 Apr 78 - 207.flac
+937f5b1fa32121cd687a1e010b23c0eb  Disk 2\Sydney 1 Apr 78 - 208.flac
+bed176a429e0e23a0505d73d7e0a5450  Disk 2\Sydney 1 Apr 78 - 209.flac
+92f539e84efb493cf8c82fd77e57e52f  Disk 2\Sydney 1 Apr 78 - 210.flac
+d1549e44514e4e46140804d1e3811325  Disk 2\Sydney 1 Apr 78 - 211.flac
+375229fd5b3542735dfc1a475c811b7f  Disk 2\Sydney 1 Apr 78 - 212.flac
+a97015e2a18b03f6cd7a2d9f8a7cc0cc  Disk 2\Sydney 1 Apr 78 - 213.flac
+1d5105856e3393a21179d01f0985f6da  Disk 2\Sydney 1 Apr 78 - 214.flac
+6833a2681b3164e5f098c9c0a1f8cee1  Disk 2\Sydney 1 Apr 78 - 215.flac
+a66495c234eaf759156e6dc349c32b36  Disk 2\Sydney 1 Apr 78 - 216.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-04-01-lk.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+Sydney 1 Apr 78 - 101.flac:07ca531a09c00c8dc1209b85b63e5fcf
+Sydney 1 Apr 78 - 102.flac:6022b1f15167ec23217100e5a397d409
+Sydney 1 Apr 78 - 103.flac:8fbcc673464363fe7d6809d7eef9caeb
+Sydney 1 Apr 78 - 104.flac:863c57eef4a65eb754be845c5c17317e
+Sydney 1 Apr 78 - 105.flac:f7334645e7a12aaf616dbb3dc7a872e0
+Sydney 1 Apr 78 - 106.flac:651469023ba12d5b9ea011439831aa73
+Sydney 1 Apr 78 - 107.flac:8626c3875e9a0d6caa4bbf76d2519ada
+Sydney 1 Apr 78 - 108.flac:cd3c88a8f6f9644146f3f1893b45d4e3
+Sydney 1 Apr 78 - 109.flac:3d63be6b7ff03c643d439d9b023be2a2
+Sydney 1 Apr 78 - 110.flac:d677c72f3eb935117daf57b66947fe86
+Sydney 1 Apr 78 - 111.flac:50ecf39dcc60fa6b456a9622f035d798
+Sydney 1 Apr 78 - 112.flac:b825a17ac26d55aaf8acf98c02780242
+Sydney 1 Apr 78 - 113.flac:08a7ebbc29758a0bab103452f1e282e6
+Sydney 1 Apr 78 - 114.flac:4bdbf3ec7bca674d352deae7bddf31b6
+Sydney 1 Apr 78 - 115.flac:e8b46528bba3ee17c46a616e81d1533a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-04-01-lk.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+Sydney 1 Apr 78 - 201.flac:2896f409c5536d4e9052c83e129e12d9
+Sydney 1 Apr 78 - 202.flac:f40c0aba592bd8aca756e56a93a57722
+Sydney 1 Apr 78 - 203.flac:0033b345cd88a36ebe7fdd2888b1a0a5
+Sydney 1 Apr 78 - 204.flac:01dd73d3e18f1f86c600b8c9e1268434
+Sydney 1 Apr 78 - 205.flac:96d83b1e43487dc7e5443f4ca502c3f2
+Sydney 1 Apr 78 - 206.flac:b41a8be616280bb52a0ff7bf543f46a7
+Sydney 1 Apr 78 - 207.flac:bc07137bed23d3c52ff2779b8c88cf95
+Sydney 1 Apr 78 - 208.flac:8595c1240fc68de8e6bcaf7e39d0c67c
+Sydney 1 Apr 78 - 209.flac:85ca9ad747d5bdb914b4067991428951
+Sydney 1 Apr 78 - 210.flac:d732d421722060844f2c000d701d93d3
+Sydney 1 Apr 78 - 211.flac:73159b8d37c52ee8136a14e3b54b1eb4
+Sydney 1 Apr 78 - 212.flac:12f19b731127a3036af397d04921582c
+Sydney 1 Apr 78 - 213.flac:d7b1b180c3b98cab18f5426d16dd445a
+Sydney 1 Apr 78 - 214.flac:ececc9787ee39fa3a8ddd2877d895701
+Sydney 1 Apr 78 - 215.flac:6f8dfc45aa2c10b3443cdfe4f83a638a
+Sydney 1 Apr 78 - 216.flac:3c5757cd577c514d9ce37f3988858368
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-04-01-lk.flacf\Disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.21       41150636 B   ---   --   ---xx   flac  0.6034  Sydney 1 Apr 78 - 101.flac
+     2:31.53       26761100 B   ---   --   ---xx   flac  0.6136  Sydney 1 Apr 78 - 102.flac
+     5:02.51       53392796 B   ---   --   ---xx   flac  0.6470  Sydney 1 Apr 78 - 103.flac
+     5:00.45       53025884 B   ---   --   ---xx   flac  0.6262  Sydney 1 Apr 78 - 104.flac
+     4:45.30       50344604 B   ---   --   ---xx   flac  0.6324  Sydney 1 Apr 78 - 105.flac
+     3:29.38       36957020 B   ---   --   ---xx   flac  0.6261  Sydney 1 Apr 78 - 106.flac
+     5:46.22       61086188 B   ---   --   ---xx   flac  0.4916  Sydney 1 Apr 78 - 107.flac
+     4:44.68       50257580 B   ---   --   ---xx   flac  0.6408  Sydney 1 Apr 78 - 108.flac
+     4:57.02       52395548 B   ---   --   ---xx   flac  0.6518  Sydney 1 Apr 78 - 109.flac
+     4:14.03       44812700 B   ---   --   ---xx   flac  0.6131  Sydney 1 Apr 78 - 110.flac
+     6:17.01       66505196 B   ---   --   ---xx   flac  0.6246  Sydney 1 Apr 78 - 111.flac
+     4:18.39       45602972 B   ---   --   ---xx   flac  0.5927  Sydney 1 Apr 78 - 112.flac
+     4:31.67       47962028 B   ---   --   ---xx   flac  0.5995  Sydney 1 Apr 78 - 113.flac
+     4:48.52       50925548 B   ---   --   ---xx   flac  0.5980  Sydney 1 Apr 78 - 114.flac
+     5:11.34       54940412 B   ---   --   ---xx   flac  0.5782  Sydney 1 Apr 78 - 115.flac
+    69:33.01      736120212 B                            0.6078  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-04-01-lk.flacf\Disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.38       42601820 B   ---   --   ---xx   flac  0.5957  Sydney 1 Apr 78 - 201.flac
+     4:57.27       52454348 B   ---   --   ---xx   flac  0.5600  Sydney 1 Apr 78 - 202.flac
+     2:54.53       30818300 B   ---   --   ---xx   flac  0.5037  Sydney 1 Apr 78 - 203.flac
+     5:01.21       53145836 B   ---   --   ---xx   flac  0.6075  Sydney 1 Apr 78 - 204.flac
+     5:18.42       56194028 B   ---   --   ---xx   flac  0.6345  Sydney 1 Apr 78 - 205.flac
+     3:53.14       41134172 B   ---   --   ---xx   flac  0.6386  Sydney 1 Apr 78 - 206.flac
+     4:44.38       50187020 B   ---   --   ---xx   flac  0.6162  Sydney 1 Apr 78 - 207.flac
+     3:40.74       38982092 B   ---   --   ---xx   flac  0.6172  Sydney 1 Apr 78 - 208.flac
+     3:54.31       41350556 B   ---   --   ---xx   flac  0.5376  Sydney 1 Apr 78 - 209.flac
+     3:24.38       36075020 B   ---   --   ---xx   flac  0.5636  Sydney 1 Apr 78 - 210.flac
+     3:08.34       33243212 B   ---   --   ---xx   flac  0.3892  Sydney 1 Apr 78 - 211.flac
+     6:25.66       68069276 B   ---   --   ---xx   flac  0.5462  Sydney 1 Apr 78 - 212.flac
+     6:02.53       63981500 B   ---   --   ---xx   flac  0.5591  Sydney 1 Apr 78 - 213.flac
+     5:50.58       61876460 B   ---   --   ---xx   flac  0.5512  Sydney 1 Apr 78 - 214.flac
+     4:18.74       45685292 B   ---   --   ---xx   flac  0.5834  Sydney 1 Apr 78 - 215.flac
+     4:15.26       45043196 B   ---   --   ---xx   flac  0.5821  Sydney 1 Apr 78 - 216.flac
+    71:53.12      760842128 B                            0.5716  (16 files)
+=================== 
+=================== 
+=================== 

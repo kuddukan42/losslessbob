@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-17-hg-a.flacf 
+=================== 
+=================== 
+=================== 
+992d80734236062c4ba2f05be1e23788  Bob dylan 1997.02.17 Festival Hall, Osaka, Japan [Holy Grail].ffp
+fee628cf2dfd248aff7ec7a447707c4d  CD1\01 Crash on the levee (down in the flood).flac
+2c3949e108d7a07755247ff5a44c6264  CD1\02 Señor (Tales of Yankee Power).flac
+4383f771fd6075097250ca474f36e40b  CD1\03 All along the watchtower.flac
+c6f52cbca1e6d6542b4bc63d3f6b4ebe  CD1\04 Under the red sky.flac
+3fa08ab2c9ce36768737165f012710b3  CD1\05 It takes a lot to laugh, it takes a train to cry.flac
+2eb6d93e707c706602ea4357f6f5cef7  CD1\06 Silvio.flac
+23ff77a7fb3455ba6048b96928bcfdeb  CD1\07 Oh baby it ain't no lie.flac
+86325467e990ee93b172272fcb49f1be  CD1\08 Tangled up in blue.flac
+dfd2e4f1b376517f1629b88d641d5ae4  CD1\09 To Ramona.flac
+3d64ee2212781e769a01f4614a4489a6  CD2\10 Seeing the real you at last.flac
+a65d2c137c0b6282b9ee11388c5bcdbf  CD2\11 I shall be released.flac
+dd988630355332055784ba5d05fa7079  CD2\12 Maggie's farm.flac
+2be56222a0a7b971e5541b5e14a11b3a  CD2\13 (audience wait).flac
+404a62ae167e4e281ca86e08a6480674  CD2\13 Like a rolling stone.flac
+a57d9b27c73f13b9f516e35a302b8e47  CD2\14 My back pages.flac
+1665dc34462735e7ccde20ae69606a48  CD2\15 Rainy day women # 12 & 35.flac
+eeaf3b3d0ce3578a9cbe2874a1a4ee4f  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-17-hg-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the levee (down in the flood).flac:a9eeca833cce6d04ce48bc7ae8249db0
+02 Señor (Tales of Yankee Power).flac:2ba4aa23230eaa8c2a156649e439b57c
+03 All along the watchtower.flac:867a425efd081d9b9da37dfd4bea68b6
+04 Under the red sky.flac:f088e96b5a5ac1fe03fa35d129e3b4e0
+05 It takes a lot to laugh, it takes a train to cry.flac:a81c9b0001d99e03ba17b7cc04baf899
+06 Silvio.flac:e8e885c8b49d4c039d06634bc6b67dfb
+07 Oh baby it ain't no lie.flac:f28a1c8815f2846874f8a66b2d924252
+08 Tangled up in blue.flac:ddc2416465c9f68b5aa364ebfc17212e
+09 To Ramona.flac:2354b2bb55531cf07659382094a17a50
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-17-hg-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Seeing the real you at last.flac:279131601de67d2f27e184153f7098e4
+11 I shall be released.flac:38e2d77cf0c2fbef8b8bcf12979235d9
+12 Maggie's farm.flac:a8d97bc54366458209dcc353080eb75d
+13 (audience wait).flac:e6fca0ef8ee81f474972f08b65175343
+13 Like a rolling stone.flac:563faa8e60475f4dea75fb9c2c89548d
+14 My back pages.flac:1a8d83937aea9736ac2696e7ac634e6b
+15 Rainy day women # 12 & 35.flac:797c36e5aacaf7362e195edb50eb8243
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-17-hg-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.08       54350060 B   ---   --   ---xx   flac  0.6806  01 Crash on the levee (down in the flood).flac
+     6:34.12       69529868 B   ---   --   ---xx   flac  0.6542  02 Señor (Tales of Yankee Power).flac
+     6:34.32       69576908 B   ---   --   ---xx   flac  0.6790  03 All along the watchtower.flac
+     6:19.20       66902684 B   ---   --   ---xx   flac  0.6506  04 Under the red sky.flac
+     8:48.12       93167468 B   ---   --   ---xx   flac  0.6462  05 It takes a lot to laugh, it takes a train to cry.flac
+     8:12.51       86908796 B   ---   --   ---xx   flac  0.6855  06 Silvio.flac
+     6:36.44       69957932 B   ---   --   ---xx   flac  0.6560  07 Oh baby it ain't no lie.flac
+     8:37.67       91356428 B   ---   --   ---xx   flac  0.6628  08 Tangled up in blue.flac
+     6:32.11       69174716 B   ---   --   ---xx   flac  0.6208  09 To Ramona.flac
+    63:23.32      670924860 B                            0.6594  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-17-hg-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:18.48       66792140 B   ---   --   ---xx   flac  0.6540  10 Seeing the real you at last.flac
+     6:20.72       67201388 B   ---   --   ---xx   flac  0.6310  11 I shall be released.flac
+     7:19.17       77479628 B   ---   --   ---xx   flac  0.6984  12 Maggie's farm.flac
+     1:22.60       14605964 B   ---   --   ---xx   flac  0.6641  13 (audience wait).flac
+    11:06.37      117569468 B   ---   --   ---xx   flac  0.6691  13 Like a rolling stone.flac
+     9:22.34       99216812 B   ---   --   ---xx   flac  0.6500  14 My back pages.flac
+     7:18.39       77354972 B   ---   --   ---xx   flac  0.6776  15 Rainy day women # 12 & 35.flac
+    49:09.07      520220372 B                            0.6641  (7 files)
+=================== 
+=================== 
+=================== 

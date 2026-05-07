@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-08-15-MA.flacf 
+=================== 
+=================== 
+=================== 
+56a57cd097249c13189e256110205129  bd06-08-15-MA-LB-3989.txt
+ab1a286ef5dfd5d5e2980b9baa3595d2  bob dylan 8-15-06  disc 201.flac
+96d89a6b5900d5096f9ddeaf85abf936  bob dylan 8-15-06  disc 202.flac
+a354add8b0eefe751e08671e3fa047c5  bob dylan 8-15-06  disc 203.flac
+a9cc66bdeca2b7c38203ea76faf0c4b7  bob dylan 8-15-06  disc 204.flac
+8017a569ae8b6f72301fff34057fa01b  bob dylan 8-15-06  disc 205.flac
+2a54fa4c6b541c76ba9e3b40fe4eff93  bob dylan 8-15-06  disc 206.flac
+bf39e0fcff42e670d67c07ff73cdee2c  bob dylan 8-15-06  disc 207.flac
+5b7080c824adc7faa86b89cf098a8a1f  bob dylan 8-15-06 disc 101.flac
+6f34a258557e7ca43aa561fffe2020ec  bob dylan 8-15-06 disc 102.flac
+4f3a698e18180db905e71a4fd0e96cad  bob dylan 8-15-06 disc 103.flac
+9d671bb17ad70c057a22f6ff82f04bc3  bob dylan 8-15-06 disc 104.flac
+7deedcebae90f69c545461a32d9687f8  bob dylan 8-15-06 disc 105.flac
+e1b01ac61650b524f8612319f4eecab7  bob dylan 8-15-06 disc 106.flac
+4c50259a4851a4ac39ad134a137c4c57  bob dylan 8-15-06 disc 107.flac
+538f430a84ddbd95b1984b8f2157f377  bob dylan 8-15-06 disc 108.flac
+86ea51da9d0b1278d992dfd41fa8f8d2  bob dylan 8-15-06 disc 109.flac
+cc551c492aa6d05297cdae3119c20e70  bob dylan 8-15-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-08-15-MA.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 8-15-06  disc 201.flac:9b656509b2aadc402176d086cefac762
+bob dylan 8-15-06  disc 202.flac:d5e3f28fdba673932b3a8e49bc8fe685
+bob dylan 8-15-06  disc 203.flac:9c901ae261b01a929f95c837a841d671
+bob dylan 8-15-06  disc 204.flac:8a43cc18496be8d50491aace85aa74a8
+bob dylan 8-15-06  disc 205.flac:bf8e418d8f20646e548920be3c2929f4
+bob dylan 8-15-06  disc 206.flac:7785d8799e165dbc46183528cc52945c
+bob dylan 8-15-06  disc 207.flac:453dedba878e2ffa5aa3b3ec57f055d0
+bob dylan 8-15-06 disc 101.flac:adfa6a23b9f7feadaf4c92baa6bcf3d0
+bob dylan 8-15-06 disc 102.flac:de7195677a4230d3802603c7c25b5d00
+bob dylan 8-15-06 disc 103.flac:7d4d6db068e1263a0b0070879c423566
+bob dylan 8-15-06 disc 104.flac:303615dac6e94d22622b48e23d567e00
+bob dylan 8-15-06 disc 105.flac:324b6843a74aa31b18169bd5f1942490
+bob dylan 8-15-06 disc 106.flac:8f777cc7148edd9e52a4adc88f65753f
+bob dylan 8-15-06 disc 107.flac:6e983cc02c1fbe9bfc75d7c16cdf29b2
+bob dylan 8-15-06 disc 108.flac:0ffe01c085063e515fbbadcf0da23ac5
+bob dylan 8-15-06 disc 109.flac:381c202b86a0e68b9b6377fb69d7857a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-08-15-MA.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:04.52       74915948 B   ---   --   ---xx   flac  0.5395  bob dylan 8-15-06  disc 201.flac
+     7:46.63       82350620 B   ---   --   ---xx   flac  0.6073  bob dylan 8-15-06  disc 202.flac
+     7:27.42       78949628 B   ---   --   ---xx   flac  0.5386  bob dylan 8-15-06  disc 203.flac
+     6:59.01       73913996 B   ---   --   ---xx   flac  0.6088  bob dylan 8-15-06  disc 204.flac
+     4:34.71       48500636 B   ---   --   ---xx   flac  0.4797  bob dylan 8-15-06  disc 205.flac
+     6:46.09       71639612 B   ---   --   ---xx   flac  0.6288  bob dylan 8-15-06  disc 206.flac
+     6:08.03       64922300 B   ---   --   ---xx   flac  0.6214  bob dylan 8-15-06  disc 207.flac
+     2:11.34       23188412 B   ---   --   ---xx   flac  0.3949  bob dylan 8-15-06 disc 101.flac
+     5:09.18       54549980 B   ---   --   ---xx   flac  0.5331  bob dylan 8-15-06 disc 102.flac
+     6:19.51       66975596 B   ---   --   ---xx   flac  0.5349  bob dylan 8-15-06 disc 103.flac
+     7:26.63       78822620 B   ---   --   ---xx   flac  0.5633  bob dylan 8-15-06 disc 104.flac
+     8:42.36       92165516 B   ---   --   ---xx   flac  0.5253  bob dylan 8-15-06 disc 105.flac
+     5:52.62       62238668 B   ---   --   ---xx   flac  0.5038  bob dylan 8-15-06 disc 106.flac
+     5:21.41       56720876 B   ---   --   ---xx   flac  0.5512  bob dylan 8-15-06 disc 107.flac
+    11:57.74      126652892 B   ---   --   ---xx   flac  0.4994  bob dylan 8-15-06 disc 108.flac
+     7:12.43       76305980 B   ---   --   ---xx   flac  0.5297  bob dylan 8-15-06 disc 109.flac
+   107:01.63     1132813280 B                            0.5471  (16 files)
+=================== 
+=================== 
+=================== 

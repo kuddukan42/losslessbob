@@ -1,0 +1,37 @@
+Bob Dylan
+ 
+Princeton, New Jersey
+Princeton University
+Dillon Gym
+November 17, 2000
+
+CD1 68:03
+
+01. Duncan And Brady (acoustic) 
+02. My Back Pages (acoustic) (Larry on fiddle and Bob on harp) 
+03. Desolation Row (acoustic) 
+04. The Ballad Of Frankie Lee And Judas Priest (acoustic) 
+05. Tangled Up In Blue (acoustic) 
+06. Searching For A Soldier's Grave (acoustic) (Larry on mandolin)
+07. Country Pie 
+08. Blind Willie McTell (Larry on bouzouki) 
+09. Tombstone Blues 
+10. Tryin' To Get To Heaven 
+11. The Wicked Messenger (Bob on harp) 
+12. Leopard-Skin Pill-Box Hat 
+
+CD2 43:06
+
+  (encore) 
+
+13. Things Have Changed 
+14. Like A Rolling Stone 
+15. If Dogs Run Free (acoustic) (Larry and Charlie on electric guitars) 
+16. All Along The Watchtower 
+17. The Times They Are A-Changin' (acoustic) (Bob on harp) 
+18. Highway 61 Revisited 
+19. Blowin' In The Wind (acoustic)
+ 
+Trade CDR > EAC (Secure) > WAV > Audacity > WAV > FLAC (Aligned, Level 8)
+
+I used Audacity to remove silence at the beginning and end of the first 2 tracks. There is a CEDAR-type fingerprint towards the end of d1t6@2.55; a conversation between a male and female, "he's jammin' out now ... even the bass player", which goes on for a couple more songs. Sound is good to excellent.

@@ -1,0 +1,21 @@
+Studio A
+Columbia Recording Studios
+New York Studio, New York
+6 December 1962
+
+The 7th Freewheelin’ Bob Dylan session, produced by John Hammond.
+
+1 Hero Blues
+2 Whatcha Gonna Do
+3 Oxford Town
+4 I Shall Be Free
+5 I Shall Be Free
+6 I Shall Be Free
+7 I Shall Be Free
+8 I Shall Be Free
+9 Hero Blues
+10 Hero Blues
+11 Hero Blues
+12 A Hard Rain's A-Gonna Fall
+
+DAT -> (digital transfer) m-audio delta audiophile 2496 -> Wavelab -> ssrc -> wavelab,levels raised -> cdwave, tracking -> tlh

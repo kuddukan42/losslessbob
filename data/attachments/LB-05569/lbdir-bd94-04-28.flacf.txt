@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-04-28.flacf 
+=================== 
+=================== 
+=================== 
+31b440e667be904cbdf4772bb20e3159  bd94-04-28-LB-5569.txt
+9b1faa9ab3fa5038581060431957f229  Bob Dylan 1994-04-28 Topeka.txt
+617710aab7560797bbdd838a129d8a9f  D1\D1T01 Jokerman.flac
+c71df74969cf4abc19b0d3bd6f67eccc  D1\D1T02 Senor.flac
+f0e95fb6285a91912d409d942f22502d  D1\D1T03 All Along The Watchtower.flac
+f9d2713fd22f79136f3add67ca19d22e  D1\D1T04 Born In Time.flac
+e649ae1113107c57b2fb3e738201a310  D1\D1T05 Tangled Up In Blue.flac
+4e5e7998f7aa818e1c417e33a9789a9c  D1\D1T06 I Dont Believe In You.flac
+f09e8359f41573dd7249c536de8c3fe8  D1\D1T07 Master Of War.flac
+d59b989d475be50639ef5e783641cad2  D1\D1T08 Mama You've Been On My Mind.flac
+716304a59633b466f795ffa2e1eec895  D1\D1T09 Mr. Tambourine Man.flac
+0dccddb3687fb7c13d31fe23621986d9  D1\D1T10 Silvio.flac
+f2dc90722ec383f6f6ade4b591ad82f8  D1\D1T11 I And I.flac
+bbadae5fd02886f75695a922ee71fb82  D2\D2T1 Tears Of Rage.flac
+712e8de31f8f321a572fcf7e0054bc20  D2\D2T2 Maggie's Farm.flac
+ee34293028368e454840a6cccb5b9941  D2\D2T3 Ballad Of A Thin Man.flac
+ad1f1e90d74f13925abce2ffc1c84f81  D2\D2T4 It Ain't Me, Babe.flac
+c9489ec6abc9e76a5258c76302007b39  fingerprintD1.ffp
+3ad3037622e605810375f77809ac6007  fingerprintD2.ffp
+6cfa230ee91322c5dc07b2976ecbc833  lbdir-bd94-04-28.flacf.md5
+82c6e0f34276f19fcb1f8fadf609739b  lbdir-bd94-04-28.flacf.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-04-28.flacf\D1 
+=================== 
+=================== 
+=================== 
+D1T01 Jokerman.flac:0a168cef48fc6c54965219d74ae7873b
+D1T02 Senor.flac:75a9eb522048795ebf33ac855a0b11c3
+D1T03 All Along The Watchtower.flac:c03eb33162a239a5c16c6d6d51c337d5
+D1T04 Born In Time.flac:359b8058ea4f349a6a4fff45804c01ce
+D1T05 Tangled Up In Blue.flac:80985aa3a9e9a6d39612cfbd2e6d2f1e
+D1T06 I Dont Believe In You.flac:79b626aef6c71992bcfe7c9ce0976a88
+D1T07 Master Of War.flac:2c230a6962ab4da4fe70ac9cd1c5bb6e
+D1T08 Mama You've Been On My Mind.flac:a15dcaa24cf69dfd8bcd550538790d5e
+D1T09 Mr. Tambourine Man.flac:3cd93e35646c6735e6c2b273c3b4f947
+D1T10 Silvio.flac:e98a4c40c73b75a4c2c4cc3c3c1fa041
+D1T11 I And I.flac:cd2ac1252e855a41cc9616ce588fe650
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-04-28.flacf\D2 
+=================== 
+=================== 
+=================== 
+D2T1 Tears Of Rage.flac:31fb1ba651f710a87a4c4b58a5ba9b3c
+D2T2 Maggie's Farm.flac:e3afdd14082c0eedbf20bf8b5eeb2e62
+D2T3 Ballad Of A Thin Man.flac:ac2200a682d5a7cc8c1bcc435bd1a97b
+D2T4 It Ain't Me, Babe.flac:9a1d1537b4e8757dbac010b20ce774d8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-04-28.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:32.57       79866908 B   ---   --   ---xx   flac  0.6380  D1T01 Jokerman.flac
+     6:01.60       63821564 B   ---   --   ---xx   flac  0.6483  D1T02 Senor.flac
+     5:41.23       60206540 B   ---   --   ---xx   flac  0.6658  D1T03 All Along The Watchtower.flac
+     6:37.00       70030844 B   ---   --   ---xx   flac  0.6407  D1T04 Born In Time.flac
+     9:01.12       95460668 B   ---   --   ---xx   flac  0.6627  D1T05 Tangled Up In Blue.flac
+     7:39.13       80998220 B   ---   --   ---xx   flac  0.6561  D1T06 I Dont Believe In You.flac
+     5:13.12       55241468 B   ---   --   ---xx   flac  0.5691  D1T07 Master Of War.flac
+     4:33.20       48204284 B   ---   --   ---xx   flac  0.6008  D1T08 Mama You've Been On My Mind.flac
+     6:13.15       65832524 B   ---   --   ---xx   flac  0.6226  D1T09 Mr. Tambourine Man.flac
+     6:02.33       63934460 B   ---   --   ---xx   flac  0.6701  D1T10 Silvio.flac
+     6:56.65       73535324 B   ---   --   ---xx   flac  0.6480  D1T11 I And I.flac
+    71:32.10      757132804 B                            0.6413  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-04-28.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:43.12       81701468 B   ---   --   ---xx   flac  0.6104  D2T1 Tears Of Rage.flac
+     5:57.73       63146540 B   ---   --   ---xx   flac  0.6415  D2T2 Maggie's Farm.flac
+     8:15.53       87442700 B   ---   --   ---xx   flac  0.6275  D2T3 Ballad Of A Thin Man.flac
+     8:49.40       93409724 B   ---   --   ---xx   flac  0.5972  D2T4 It Ain't Me, Babe.flac
+    30:46.28      325700432 B                            0.6172  (4 files)
+=================== 
+=================== 
+=================== 

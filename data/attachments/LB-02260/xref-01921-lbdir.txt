@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== md5 for: bd97-10-26-c.flacf
+===================
+===================
+===================
+140918ea304d135b34c391b74bd820d5 *19971026.txt
+337d31d89294787a5b99fa35aad41958 *bd971026_d1t01.flac
+093d1494875f63c97fd6ba48f9b2bdf4 *bd971026_d1t02.flac
+87ea1ab865f6d0e09d2979aaa64ea29d *bd971026_d1t03.flac
+162720f70dab2915db3aec0a4460d143 *bd971026_d1t04.flac
+3405827e7ad7bae3923c4213aa3a344e *bd971026_d1t05.flac
+3c67ec91b15551f793725a22ca83e8fd *bd971026_d1t06.flac
+ba8d2cb147b43202db292cecccf0505b *bd971026_d1t07.flac
+426200eb45aef4c7859ac30533e92d2e *bd971026_d1t08.flac
+28396565ba2188b939d118d77c76979b *bd971026_d1t09.flac
+15b31fb509184755c8125339b572edbf *bd971026_d1t10.flac
+356979ee16a82abe45e42471595bc593 *bd971026_d1t11.flac
+31a290cd4accac2a5e12dffe1fce8a73 *bd971026_d2t01.flac
+f7eebe20835c8dea22bdf120c9f01bf6 *bd971026_d2t02.flac
+d9b94be196e0fb1eaa05da2be2419815 *bd971026_d2t03.flac
+5a54e05f13ec8eae4146cdcb037d96c3 *bd971026_d2t04.flac
+ad57545240bc1548b9c049d39ce40179 *bd971026_d2t05.flac
+1090eefab3b0c55438ce2bcf82ef5a15 *Bob Dylan- 1997 10 26 Mobile AL (FLAC).md5
+510cb49f4b48971c0e68c14be06e35df *Bob Dylan- 1997 10 26 Mobile AL.ffp
+===================
+===================
+===================
+=== ffp for: bd97-10-26-c.flacf
+===================
+===================
+===================
+bd971026_d1t01.flac:535317e08215e549c4e3ec58e95f23c1
+bd971026_d1t02.flac:9091bc134681de6fd3dd76e9c2f9e5ad
+bd971026_d1t03.flac:07ea146e41a4a116ce946d6154621c8a
+bd971026_d1t04.flac:bb6445dc30cc3658e8a1990318b72c86
+bd971026_d1t05.flac:4a7934ece4d90493770c8f5cccf40172
+bd971026_d1t06.flac:a417ca85fb3bcb3339cd8f62589d0748
+bd971026_d1t07.flac:754adc6eee2efe905965694031c10fbb
+bd971026_d1t08.flac:acac155bfcd9419a44d4191bde9114d3
+bd971026_d1t09.flac:261586adaad3633afdd798743403aa1a
+bd971026_d1t10.flac:f36ccb49b5b876b80972ba4d0b5cc291
+bd971026_d1t11.flac:cdb18202706f751660e4b272d173c99e
+bd971026_d2t01.flac:226ae1b26a699499038d0b4fa79368c1
+bd971026_d2t02.flac:de061dbf9b9461644ec72bb93efb049a
+bd971026_d2t03.flac:91f99f19538e559ae3c40ff26ea9f2dc
+bd971026_d2t04.flac:66be5fc3d9455623e140461f242cdcb4
+bd971026_d2t05.flac:f047d97a03441cc27581884dd27fd525
+===================
+===================
+===================
+=== shntool len for: bd97-10-26-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.08       54350060 B   ---   --   ---xx   flac  0.6006  bd971026_d1t01.flac
+     5:34.53       59042300 B   ---   --   ---xx   flac  0.5699  bd971026_d1t02.flac
+     6:38.19       70251932 B   ---   --   ---xx   flac  0.5937  bd971026_d1t03.flac
+     5:32.38       58654220 B   ---   --   ---xx   flac  0.5847  bd971026_d1t04.flac
+     6:29.05       68631404 B   ---   --   ---xx   flac  0.5805  bd971026_d1t05.flac
+     7:39.03       80974700 B   ---   --   ---xx   flac  0.6268  bd971026_d1t06.flac
+     3:54.68       41437580 B   ---   --   ---xx   flac  0.5337  bd971026_d1t07.flac
+     7:39.15       81002924 B   ---   --   ---xx   flac  0.6066  bd971026_d1t08.flac
+     6:42.43       71013980 B   ---   --   ---xx   flac  0.5638  bd971026_d1t09.flac
+     5:59.43       63428780 B   ---   --   ---xx   flac  0.6014  bd971026_d1t10.flac
+     6:21.59       67347212 B   ---   --   ---xx   flac  0.6003  bd971026_d1t11.flac
+     9:53.67      104762828 B   ---   --   ---xx   flac  0.5964  bd971026_d2t01.flac
+    10:00.01      105842396 B   ---   --   ---xx   flac  0.5856  bd971026_d2t02.flac
+     5:13.34       55293212 B   ---   --   ---xx   flac  0.5368  bd971026_d2t03.flac
+     5:27.50       57800444 B   ---   --   ---xx   flac  0.5409  bd971026_d2t04.flac
+     5:55.20       62669084 B   ---   --   ---xx   flac  0.6329  bd971026_d2t05.flac
+   104:10.01     1102503056 B                            0.5876  (16 files)
+===================
+===================
+===================

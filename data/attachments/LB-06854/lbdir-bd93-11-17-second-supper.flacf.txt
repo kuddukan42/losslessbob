@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-11-17-second-supper.flacf 
+=================== 
+=================== 
+=================== 
+052fec924bde4aa8be33c3734fd73e1e  bd93-11-17-second-supper-d1t01.flac
+a6b863113b6e002f7166c1e143b1a8da  bd93-11-17-second-supper-d1t02.flac
+99ff5b4c71327ee4106457812cab0059  bd93-11-17-second-supper-d1t03.flac
+0a84a2497137922a9c95560b3c7508f2  bd93-11-17-second-supper-d1t04.flac
+a651e0a640e9b36dda4a75fbece735f6  bd93-11-17-second-supper-d1t05.flac
+65328760bd0a7c397cb22bcb41437a46  bd93-11-17-second-supper-d1t06.flac
+9fb01c9fd593e682b0c12a035c74bf4c  bd93-11-17-second-supper-d1t07.flac
+b978e3636c513c206c8c7af131f001cd  bd93-11-17-second-supper-d1t08.flac
+27038948cf2bc197ff124e5ddb0b41ef  bd93-11-17-second-supper-d1t09.flac
+c9fd53d9f896b32f60c8978dc0e576ce  bd93-11-17-second-supper-d1t10.flac
+528ffcb3ba16a352488535fdd5817d9c  bd93-11-17-second-supper-d2t01.flac
+f6dacbae8a13c1b2e8c90fc5185bf9e9  bd93-11-17-second-supper-d2t02.flac
+f766aefc0efbb11c1d7969953fc8b389  bd93-11-17-second-supper-d2t03.flac
+31e4fae348dc0fc3e90c373a2b3b9b9c  bd93-11-17-second-supper-d2t04.flac
+153eaba219d3b0235d9e6bb6cf998e1b  bd93-11-17-second-supper-d2t05.flac
+c9d2221eb231ae3d3d5669cfac41c772  bd93-11-17-second-supper-d2t06.flac
+37780a9a455316e074ae5ee53fbb7903  bd93-11-17-second-supper-d2t07.flac
+1c65e604d9e1c3ccf013c77e16e320b8  bd93-11-17-second-supper-d2t08.flac
+8ff9827fe7373c496503faa1f9139852  bd93-11-17-second-supper-d2t09.flac
+60b1b0f8411e3b3dcaf77751c0cb47a7  bd93-11-17-second-supper-d2t10.flac
+f83574a5db945203b08f0f52d75ac63a  bd93-11-17-second-supper-d2t11.flac
+fd1f2b8ab532eebaae63a92e5fcbb083  bd93-11-17-second-supper.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-11-17-second-supper.flacf 
+=================== 
+=================== 
+=================== 
+bd93-11-17-second-supper-d1t01.flac:4018076e4f4d906e4a42b8bb4983f0d0
+bd93-11-17-second-supper-d1t02.flac:eb2aa7bd6f82e645573f40e0f6d6c938
+bd93-11-17-second-supper-d1t03.flac:849c5a454646f7ebf433b3a53234482f
+bd93-11-17-second-supper-d1t04.flac:7b84afa74cca8289bc1a619501a662d7
+bd93-11-17-second-supper-d1t05.flac:17fb405f2c2904ec60fc2245ecc748ab
+bd93-11-17-second-supper-d1t06.flac:3eb4e62d9f27b66ea99d2165b67cb1cf
+bd93-11-17-second-supper-d1t07.flac:67bbed95917eb8e8ed9a0d06b9f26d00
+bd93-11-17-second-supper-d1t08.flac:41001f0e6e5528aabb79d9433ce00e65
+bd93-11-17-second-supper-d1t09.flac:be15707025bbaab872aa3dd27b70a728
+bd93-11-17-second-supper-d1t10.flac:7097c533b728963527eff304a0d92f88
+bd93-11-17-second-supper-d2t01.flac:86d54966ceba58dcfd34f4f27b5f7dfb
+bd93-11-17-second-supper-d2t02.flac:0270026056fd07c111efc900b1805dc6
+bd93-11-17-second-supper-d2t03.flac:485c9b8a0006065518511fbc44fbb230
+bd93-11-17-second-supper-d2t04.flac:821dff0251a823551fa384ea40d91cc8
+bd93-11-17-second-supper-d2t05.flac:56a8654fce69c0639fcd714c0970bc96
+bd93-11-17-second-supper-d2t06.flac:b6faef809d1d31912c0932db5a033722
+bd93-11-17-second-supper-d2t07.flac:22230ea097588eedf1cd7cfb92c9d8af
+bd93-11-17-second-supper-d2t08.flac:5d967340b70bdfa7d464531ad54a359e
+bd93-11-17-second-supper-d2t09.flac:4ffbca6fce97d2811655aa74fdf2099b
+bd93-11-17-second-supper-d2t10.flac:ee6176d66ba829468ac84d53b18a8d19
+bd93-11-17-second-supper-d2t11.flac:c70d0e8efc37e991c62427e04777f629
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-17-second-supper.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:25.57       46880108 B   ---   --   ---xx   flac  0.6773  bd93-11-17-second-supper-d1t01.flac
+     6:33.70       69489884 B   ---   --   ---xx   flac  0.6717  bd93-11-17-second-supper-d1t02.flac
+     5:11.38       54949820 B   ---   --   ---xx   flac  0.6853  bd93-11-17-second-supper-d1t03.flac
+     8:38.32       91450508 B   ---   --   ---xx   flac  0.6301  bd93-11-17-second-supper-d1t04.flac
+     5:12.10       55060364 B   ---   --   ---xx   flac  0.6367  bd93-11-17-second-supper-d1t05.flac
+     5:40.68       60135980 B   ---   --   ---xx   flac  0.6109  bd93-11-17-second-supper-d1t06.flac
+     5:50.02       61744748 B   ---   --   ---xx   flac  0.6639  bd93-11-17-second-supper-d1t07.flac
+     4:57.43       52491980 B   ---   --   ---xx   flac  0.6141  bd93-11-17-second-supper-d1t08.flac
+     6:06.65       64715324 B   ---   --   ---xx   flac  0.6750  bd93-11-17-second-supper-d1t09.flac
+     6:37.15       70066124 B   ---   --   ---xx   flac  0.6315  bd93-11-17-second-supper-d1t10.flac
+     4:41.57       49702508 B   ---   --   ---xx   flac  0.6245  bd93-11-17-second-supper-d2t01.flac
+     4:59.10       52767164 B   ---   --   ---xx   flac  0.6316  bd93-11-17-second-supper-d2t02.flac
+     7:12.45       76310684 B   ---   --   ---xx   flac  0.6481  bd93-11-17-second-supper-d2t03.flac
+     4:17.10       45358364 B   ---   --   ---xx   flac  0.5712  bd93-11-17-second-supper-d2t04.flac
+     7:20.15       77651324 B   ---   --   ---xx   flac  0.5603  bd93-11-17-second-supper-d2t05.flac
+     5:30.43       58313180 B   ---   --   ---xx   flac  0.5600  bd93-11-17-second-supper-d2t06.flac
+     7:42.67       81654428 B   ---   --   ---xx   flac  0.6421  bd93-11-17-second-supper-d2t07.flac
+     4:58.28       52633100 B   ---   --   ---xx   flac  0.5746  bd93-11-17-second-supper-d2t08.flac
+     5:39.47       59910188 B   ---   --   ---xx   flac  0.6275  bd93-11-17-second-supper-d2t09.flac
+     9:00.43       95357180 B   ---   --   ---xx   flac  0.5951  bd93-11-17-second-supper-d2t10.flac
+     5:37.70       59611484 B   ---   --   ---xx   flac  0.5964  bd93-11-17-second-supper-d2t11.flac
+   126:15.10     1336254444 B                            0.6250  (21 files)
+=================== 
+=================== 
+=================== 

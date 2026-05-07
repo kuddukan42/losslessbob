@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== md5 for: bd00-03-24-b.flacf
+===================
+===================
+===================
+88bd8df04749a7b64e158d863dfe7fa8 *CD1\1-01 Halleluiah.flac
+aa8ee8e181d9c5f446d31de332615d15 *CD1\1-02 Mr. Tambourine Man.flac
+be6e7c94cec8243d75729b458ad899dc *CD1\1-03 It's Alright, Ma (I'm Only Blee.flac
+3a7aef5ccdad01b3533ddc5b8252ab49 *CD1\1-04 Girl From The North Country.flac
+20f385f6a08395594142299e74f5a03d *CD1\1-05 Tangled Up In Blue.flac
+8b139718d16c0df51d7fdc2f46f4b5e5 *CD1\1-06 Rock Of Ages.flac
+6e0584d95b9d688e63a84c36a0b39616 *CD1\1-07 Country Pie.flac
+fb38b5c53ff82d28299256d2a08f6cbc *CD1\1-08 All Along The Watchtower.flac
+169f4fbe40cb7aeb3de0c130e0e7f008 *CD1\1-09 Just Like A Woman.flac
+08c2b966a4c93e179f07334aad864b82 *CD2\01 Track 01.flac
+4207a901fc634eb693de6a21a1041bf1 *CD2\02 Track 02.flac
+22c8d7624cef838d75338f8e8f502645 *CD2\03 Track 03.flac
+b482746eeca8f72f85f8168691813d63 *CD2\04 Track 04.flac
+263e8a9fd25db68d3ea95f8cd3263dde *CD2\05 Track 05.flac
+a906b090b53ca95fada788e79dbc23db *CD2\06 Track 06.flac
+66fe84d4d6fa5f4961793456a72ce745 *CD2\07 Track 07.flac
+e6298ca414dd81b941ea761f82787dfd *CD2\08 Track 08.flac
+9524a0739d0aae68072d59bb65da53c0 *CD2\09 Track 09.flac
+98951566de14a12f1d2d041a53246d33 *CD2\10 Track 10.flac
+1f8acbeb88141cbde5020f0d45d36a2f *info.txt
+dcfb22bfe92556b3eff8eb3f708c6743 *md5.md5
+===================
+===================
+===================
+=== ffp for: bd00-03-24-b.flacf
+===================
+===================
+===================
+CD1\1-01 Halleluiah.flac:e2603fab4bd3182e621802068b84a995
+CD1\1-02 Mr. Tambourine Man.flac:a60165780b320044f5d25abe5a5a5bde
+CD1\1-03 It's Alright, Ma (I'm Only Blee.flac:1d80d620a4ac6674975bdbb3fcc6550c
+CD1\1-04 Girl From The North Country.flac:0357fd15cdd1db3247244f7ffb90becf
+CD1\1-05 Tangled Up In Blue.flac:f88c807bcab1e701f8d62ba14d24dc95
+CD1\1-06 Rock Of Ages.flac:8e1b3e839e272ffcd0431b74e51babd8
+CD1\1-07 Country Pie.flac:30fb7f2943acba688634c6af06774940
+CD1\1-08 All Along The Watchtower.flac:2b8e4546636dfe798b1ed755bbb96936
+CD1\1-09 Just Like A Woman.flac:fbcc451088f334579d4585e75ecc4a07
+CD2\01 Track 01.flac:d0f081e1a3be90037f74011518458f89
+CD2\02 Track 02.flac:50ad350929401dc05c67c52dfe8302ea
+CD2\03 Track 03.flac:52121210e91dc28e98fe10a0c70852eb
+CD2\04 Track 04.flac:7f48cd3357fdd0c21a22cef09f4bd2e3
+CD2\05 Track 05.flac:eea70061ca228cf8931a60846158dd1c
+CD2\06 Track 06.flac:931ed38f47cf38d800bef5475cc530fb
+CD2\07 Track 07.flac:6287983aceb087343cc737a939bfdfcf
+CD2\08 Track 08.flac:5358193f2f8ba1b4035cf5be84606a50
+CD2\09 Track 09.flac:363d72017392667aa04e465647c821bf
+CD2\10 Track 10.flac:79a98706403e00698ace861de4484f3e
+===================
+===================
+===================
+=== shntool len for: bd00-03-24-b.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:37.15       27730124 B   ---   --   ---xx   flac  0.6114  1-01 Halleluiah.flac
+     6:15.52       66272348 B   ---   --   ---xx   flac  0.6023  1-02 Mr. Tambourine Man.flac
+     7:36.56       80570156 B   ---   --   ---xx   flac  0.5970  1-03 It's Alright, Ma (I'm Only Blee.flac
+     6:51.67       72658028 B   ---   --   ---xx   flac  0.5455  1-04 Girl From The North Country.flac
+     8:10.16       86473676 B   ---   --   ---xx   flac  0.6058  1-05 Tangled Up In Blue.flac
+     3:59.72       42328988 B   ---   --   ---xx   flac  0.5822  1-06 Rock Of Ages.flac
+     3:05.15       32669324 B   ---   --   ---xx   flac  0.5726  1-07 Country Pie.flac
+     4:33.70       48321884 B   ---   --   ---xx   flac  0.5648  1-08 All Along The Watchtower.flac
+     6:34.04       69511052 B   ---   --   ---xx   flac  0.5197  1-09 Just Like A Woman.flac
+    49:44.67      526535580 B                            0.5769  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd00-03-24-b.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:57.05       84154604 B   ---   --   ---xx   flac  0.5930  01 Track 01.flac
+     6:27.00       68266844 B   ---   --   ---xx   flac  0.5474  02 Track 02.flac
+     0:33.51        5941196 B   ---   --   ---xx   flac  0.5037  03 Track 03.flac
+     6:26.44       68193932 B   ---   --   ---xx   flac  0.5906  04 Track 04.flac
+     6:23.32       67636508 B   ---   --   ---xx   flac  0.5711  05 Track 05.flac
+     6:44.38       71355020 B   ---   --   ---xx   flac  0.5874  06 Track 06.flac
+     9:18.09       98452412 B   ---   --   ---xx   flac  0.5863  07 Track 07.flac
+     4:57.20       52437884 B   ---   --   ---xx   flac  0.5801  08 Track 08.flac
+     6:25.33       67991660 B   ---   --   ---xx   flac  0.5596  09 Track 09.flac
+     5:41.02       60157148 B   ---   --   ---xx   flac  0.5799  10 Track 10.flac
+    60:54.09      644587208 B                            0.5773  (10 files)
+===================
+===================
+===================

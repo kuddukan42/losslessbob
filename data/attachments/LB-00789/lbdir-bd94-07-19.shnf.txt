@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-19.shnf 
+=================== 
+=================== 
+=================== 
+0328b88e9b394c7d0b9d99e61719c4ff  1994_warsaw94B.jpg
+56cebe4844c3627ea4b1d6033c2422e7  1994_warsaw94F.jpg
+f5ebaa2540fb51f83d69e7ca79ebdbe9  bd07-19-94 disc one.md5
+1093c67ad7d03a9fbe3d5b41ac1a60f2  bd07-19-94 disc two.md5
+6f26c962dda98708231aab198383ef5e  bd07-19-94d1t01.shn
+68b57f65681878e45d276f3a6075c0dc  bd07-19-94d1t02.shn
+6f64d9db3e0a3ea8da4f7edf03d96a58  bd07-19-94d1t03.shn
+d79a41a2e7473859054978258d98c048  bd07-19-94d1t04.shn
+b8a6027b43b78c633101e2268a36a9c1  bd07-19-94d1t05.shn
+35a9d8c74da805c44534b0462a54d199  bd07-19-94d1t06.shn
+fde2875230e3a0d3058e47d43658727a  bd07-19-94d1t07.shn
+03a7439ff8bc15e024801d8f7359d6bb  bd07-19-94d1t08.shn
+0673db171532a9ae1475105a973494cd  bd07-19-94d1t09.shn
+06d68ce5d2ff3f1db1d41b21df0c1c1a  bd07-19-94d1t10.shn
+e2371654ea35a9bfc6d788c73ec0c204  bd07-19-94d1t11.shn
+f815ae8759659087fbf9510047941611  bd07-19-94d2t01.shn
+0902e5db4c98727437b7be4928cd63cb  bd07-19-94d2t02.shn
+a8c58e2538fc774920576e11c8544094  bd07-19-94d2t03.shn
+cdb26c6a0ff38b5470d65c49469c27e2  bd07-19-94d2t04.shn
+489291ddf00fc69d0c9c1d07d9d34cb3  bd07-19-94d2t05.shn
+ba1a845346bf5f6e753ecd3bbd0d8b88  bd07-19-94d2t06.shn
+e807f6b73d12bc8c4fdb33858962f0e1  bd07-19-94d2t07.shn
+4a9d629f8649e86849f668782f94a5c1  bd07-19-94d2t08.shn
+bb0679cd55b8ff395a2c37d9a594fdae  bd07-19-94d2t09.shn
+ad0a7f84dd3c6bfdf5011d0549ea5406  bd07-19-94d2t10.shn
+73c1260237265787d4dd6093ba042133  bd07-19-94d2t11.shn
+84a9ebe3b333d9d4f09fca86a8b59373  bd94-07-19.txt
+705886aefc92716fae11dacc5e80bd56  Dylan_Bob Dylan In Warszawa.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-07-19.shnf 
+=================== 
+=================== 
+=================== 
+27988d902f22e2951b30f185cc5045e8  [shntool]  bd07-19-94d1t01.wav
+5435a4fa0948d717dba8583aeca4e65d  [shntool]  bd07-19-94d1t02.wav
+9a1c11d9b658c0bc1e4af1518f13ec74  [shntool]  bd07-19-94d1t03.wav
+17fdd62ec25b2ce806eac738a74524f1  [shntool]  bd07-19-94d1t04.wav
+96b93e2dc85180ff0e4b581ad6e4f26d  [shntool]  bd07-19-94d1t05.wav
+3b0a2896673209ea3cac7861e78c16c8  [shntool]  bd07-19-94d1t06.wav
+560492ba96a77cb36a367af5756e44b5  [shntool]  bd07-19-94d1t07.wav
+004d08beddfca80d378a2d498ac34c08  [shntool]  bd07-19-94d1t08.wav
+1170b5e620ecccd250b021b94a19c908  [shntool]  bd07-19-94d1t09.wav
+14dbe0153ba0d19c659af4829f0b5d86  [shntool]  bd07-19-94d1t10.wav
+d2f8d30e792cd83d929412865c87bf37  [shntool]  bd07-19-94d1t11.wav
+71e313570a3ca25414bf24446983a74e  [shntool]  bd07-19-94d2t01.wav
+6b9d555413e6243ca7e3d3a1cd7c5f48  [shntool]  bd07-19-94d2t02.wav
+01c9389472679a486afffc7a3ba48ce1  [shntool]  bd07-19-94d2t03.wav
+53491574b9188e892242b89d20db4efb  [shntool]  bd07-19-94d2t04.wav
+bbaad05d583a3c1004cb88a389f93815  [shntool]  bd07-19-94d2t05.wav
+742389651bbd4e2c2dc81f5879c1801f  [shntool]  bd07-19-94d2t06.wav
+07b0dd758d8981b6896bed607a5cdfca  [shntool]  bd07-19-94d2t07.wav
+ce39b32f53ac8881da1209bed103566b  [shntool]  bd07-19-94d2t08.wav
+12d0126abfe5b04cf268ce3f324eda6c  [shntool]  bd07-19-94d2t09.wav
+3f5b32cab2a7bfaf1acfca03141b5f19  [shntool]  bd07-19-94d2t10.wav
+d83cd9480428d6594fb7421e660d15ed  [shntool]  bd07-19-94d2t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-19.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:58.68       84479180 B   ---   --   ---xx    shn  0.6436  bd07-19-94d1t01.shn
+     6:24.11       67763516 B   ---   --   ---xx    shn  0.6261  bd07-19-94d1t02.shn
+     5:36.69       59432732 B   ---   --   ---xx    shn  0.6570  bd07-19-94d1t03.shn
+     7:00.40       74182124 B   ---   --   ---xx    shn  0.5594  bd07-19-94d1t04.shn
+     9:57.12      105339068 B   ---   --   ---xx    shn  0.6199  bd07-19-94d1t05.shn
+     6:42.23       70966940 B   ---   --   ---xx    shn  0.5723  bd07-19-94d1t06.shn
+     4:41.60       49709564 B   ---   --   ---xx    shn  0.4872  bd07-19-94d1t07.shn
+     5:55.60       62763164 B   ---   --   ---xx    shn  0.4409  bd07-19-94d1t08.shn
+     5:32.20       58611884 B   ---   --   ---xx    shn  0.4366  bd07-19-94d1t09.shn
+     5:56.71       62965436 B   ---   --   ---xx    shn  0.6430  bd07-19-94d1t10.shn
+     8:28.08       89630060 B   ---   --   ---xx    shn  0.6154  bd07-19-94d1t11.shn
+     9:18.33       98508860 B   ---   --   ---xx    shn  0.6156  bd07-19-94d2t01.shn
+     7:27.47       78961388 B   ---   --   ---xx    shn  0.6229  bd07-19-94d2t02.shn
+     8:29.39       89879372 B   ---   --   ---xx    shn  0.5539  bd07-19-94d2t03.shn
+     5:31.21       58437836 B   ---   --   ---xx    shn  0.4810  bd07-19-94d2t04.shn
+    10:01.50      106134044 B   ---   --   ---xx    shn  0.6503  bd07-19-94d2t05.shn
+     8:01.71       85015436 B   ---   --   ---xx    shn  0.6391  bd07-19-94d2t06.shn
+     5:49.64       61714172 B   ---   --   ---xx    shn  0.6493  bd07-19-94d2t07.shn
+     5:44.64       60832172 B   ---   --   ---xx    shn  0.6362  bd07-19-94d2t08.shn
+     6:55.57       73340108 B   ---   --   ---xx    shn  0.5942  bd07-19-94d2t09.shn
+     6:41.57       70870508 B   ---   --   ---xx    shn  0.5760  bd07-19-94d2t10.shn
+     5:51.09       61937612 B   ---   --   ---xx    shn  0.5655  bd07-19-94d2t11.shn
+   154:08.54     1631475176 B                            0.5919  (22 files)
+=================== 
+=================== 
+=================== 

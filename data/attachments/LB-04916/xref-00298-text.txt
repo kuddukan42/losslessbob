@@ -1,0 +1,246 @@
+===================
+===================
+===================
+=== Bob Dylan - Brando - Info.txt
+===================
+===================
+===================
+Bob Dylan
+"Just Like Marlon Brando"
+
+
+DISC ONE: 
+
+GASLIGHT CAFE, NEW YORK, 9-6-61: 
+
+1 MAN ON THE STREET
+2 HE WAS A FRIEND OF MINE
+3 TALKIN BEAR MOUNTAIN MASSACRE
+4 SONG TO WOODY
+5 PRETTY POLLY
+6 RIDING IN MY CAR
+
+CARNEGIE RECITAL HALL, NEW YORK, 11-4-61: 
+
+7 PRETTY PEGGY-O
+8 IN THE PINES
+9 GOSPEL PLOW
+10 1913 MASSACRE
+11 BACKWATER BLUES
+12 YOUNG BUT DAILY GROWING
+13 FIXIN TO DIE 
+
+CARNEGIE HALL HOOTENANNY, NEW YORK, 9-22-62: 
+
+14 SALLY GIRL
+15 HIGHWAY 51 BLUES
+16 BALLAD OF HOLLIS BROWN 
+
+BONNIE BEECHERS APARTMENT, MINNEAPOLIS, 12-22-61: 
+
+17 THE STORY OF EAST ORANGE 
+
+DISC TWO:
+BONNIE BEECHER'S APARTMENT, MINNEAPOLIS, 12-22-61: 
+
+1 CANDY MAN
+2 BABY PLEASE DONT GO
+3 HARD TIMES IN NEW YORK TOWN
+4 STEALIN
+5 POOR LAZARUS
+6 I AINT GOT NO HOME
+7 ITS HARD TO BE BLIND
+8 DINKS SONG
+9 MAN OF CONSTANT SORROW
+10 NAOMI WISE *
+11 WADE IN THE WATER
+12 I WAS YOUNG WHEN I LEFT HOME
+13 IN THE EVENING
+14 BABY LET ME FOLLOW YOU DOWN
+15 SALLY GIRL
+16 GOSPEL PLOW
+17 LONG JOHN
+18 COCAINE
+19 VD BLUES
+20 VD WALTZ
+21 VD CITY
+22 VD GUNNERS BLUES
+23 SEE THAT MY GRAVE IS KEPT CLEAN *
+24 RAMBLIN ROUND
+25 BLACK CROSS
+
+* One slight glitch in each of these tracks. These are present on the original
+
+ 
+
+===================
+===================
+===================
+=== Disc 1-FLAC.md5
+===================
+===================
+===================
+26f4c6e4d36776f46d832676f4157f87 *Track01.flac
+f37498989fc5ab809ab8f6beecec6d5d *Track02.flac
+93cb18e2c6371f5348e658715ec6e2bd *Track03.flac
+653f70e929f7f3e5c9946636ac4d7262 *Track04.flac
+be986c93ba10ea4544a3a7041d97f5de *Track05.flac
+3483da21b60f799617f555521461ae47 *Track06.flac
+fea015cad9371007772279e34d44453c *Track07.flac
+ec81c8d4e7e7f3d1924157bb9e698484 *Track08.flac
+09797b3a8f92bf5fd9d445a231dec2ce *Track09.flac
+a1d4e8b1f834f6fe106924439a9b3d36 *Track10.flac
+9847e3ed31c73f2dca069f53b1f46cb5 *Track11.flac
+48b07b76559444af6292729e3e8f0a91 *Track12.flac
+e3adc62e0e66527a63fd3d5f60f575c7 *Track13.flac
+4821ee4ebe5bf1b70b54d80a2715227f *Track14.flac
+d617b8c51508a9c1a760e90ce430c695 *Track15.flac
+f1532a111e966c300dfb5b23c63817f4 *Track16.flac
+ebac791d293a7dfd798d57e4c1f5abf8 *Track17.flac
+===================
+===================
+===================
+=== Disc 1-WAV.md5
+===================
+===================
+===================
+4612b742e11ba5fa8c6510949e3e9754 *Track01.wav
+cc4aaeffcf45852dd4c37716fd0cff57 *Track02.wav
+fc0220050793c6962bca49a9d701153c *Track03.wav
+7dfa88d62998d60e004d0694e0849bee *Track04.wav
+e7ef0ec509b873cf6345e4d7085cfe05 *Track05.wav
+9ec05246daf67da6478c58818247d47e *Track06.wav
+e86c32a9476f9b8c3fec39066c141d01 *Track07.wav
+aae939cdb3831fac0e4dce9ab60f068d *Track08.wav
+a2a16c010c07bebc0941c9d4450a3e4b *Track09.wav
+5d3e0b37b16bcc200fd19c66c46411bb *Track10.wav
+e549af4d15e39b7be7d7525aac59380a *Track11.wav
+1502ebfc8979b23b569164d2bcdbeea8 *Track12.wav
+52b1f7893f5cf6826afd48ffbcee123f *Track13.wav
+381e77d36ae02e6933741fb7f2b59adb *Track14.wav
+18cc178e089b0f8fe4ef8cba330d40bc *Track15.wav
+0cbe5e364b3ea62c2cf7bdde6f7f68df *Track16.wav
+e43280f8888aeeed317f92f8984d4a71 *Track17.wav
+===================
+===================
+===================
+=== Disc 2-FLAC.md5
+===================
+===================
+===================
+afbaf695d505afa6d38042f76584498f *Track01.flac
+d1c651f391f11f1ff31b40e901b29e86 *Track02.flac
+5c22c89adf348553c9e6ffe4c327d3ea *Track03.flac
+b81619dcad4b776d2445c6c4042daac2 *Track04.flac
+3e4d31a263e2a7395f12ccd624389039 *Track05.flac
+de1ddac5edf02739e5a6584f160120d7 *Track06.flac
+8d3115e9bd6ab58df5ddbb163b4dbd84 *Track07.flac
+0c977bd9b915a144d1df1853322aca78 *Track08.flac
+bf08d18eae7571f5b6f4388becf63105 *Track09.flac
+4c20848aa1bdf7fb2fa46e898139d3a5 *Track10.flac
+c6f96b361a2b905633bf5526c79670a5 *Track11.flac
+3b980643552e58843009b26c761ae9b4 *Track12.flac
+db358a54192e84b66375a0a397eea66f *Track13.flac
+59642de54e3f3500574dd2757fe48fa2 *Track14.flac
+7f79d50aed1e3c0a7aa3ce93d904ba5b *Track15.flac
+316059e212ee87a5af4aef45d53f5f8e *Track16.flac
+88da61923b5b069106f48b716f8da34f *Track17.flac
+e16bed2303664694b29f36a94ff70ab2 *Track18.flac
+0d79b44c45287ead7ed6985bed857690 *Track19.flac
+a38cd0bf1cb4657557e162c2c461c42a *Track20.flac
+2c482493c9991d8465bbe85b2f47ac8a *Track21.flac
+15dbe19456c325e5ef99753ddc22bad4 *Track22.flac
+142a7c9c8b6f63ff019a6d376c61a49d *Track23.flac
+6185ba2d9e5ef110b6a1e47851493ea7 *Track24.flac
+330a9daacc15661423e9c3ba11dec329 *Track25.flac
+===================
+===================
+===================
+=== Disc 2-WAV.md5
+===================
+===================
+===================
+2619f447f1ac671923d42e39500ab3cd *Track01.wav
+6aa5413d3de6e1af0da3c6b5c97f83c7 *Track02.wav
+ccdeeaa8878ff34104974c56eedb853a *Track03.wav
+fd40eaeec3130e765ae3638bcb06ce2a *Track04.wav
+15021131bc9e5950ee3191223e3f2d33 *Track05.wav
+0c5d4d4e274730549ccb9f528a278398 *Track06.wav
+ab31c997e2d28c224779bbb2ac476f09 *Track07.wav
+702ee1ee5a593fa8f129cf2e1df4af11 *Track08.wav
+dce6bad467a3099c25397cb2bf7dc435 *Track09.wav
+efd1a70474bf180da1cd9dbbd14ca493 *Track10.wav
+4eba914d2d8e3e10ef35cf23ef7d414f *Track11.wav
+80dee0a3b61b4a4f9025c0551b8ee834 *Track12.wav
+0cb889447bb7a1f93070220a5cf1406f *Track13.wav
+47a0ec9b072439d5146fafcf77dc1681 *Track14.wav
+7d963a64f3538e13027a8df147f22054 *Track15.wav
+22867e9b7c5eb066aac225bce717b826 *Track16.wav
+f967d6a3b82de9bcda559c1735a08d4d *Track17.wav
+5707bb11278f036a3eb989c53348217f *Track18.wav
+22eec5adca48230a88ee5c4fb5ac4fc2 *Track19.wav
+ccb5c872d1bc4c4a509ccd78f3efd14e *Track20.wav
+2f62a693e11e33ad4e264c4b06fad654 *Track21.wav
+5d673e989f84e0d812b4350ac088aad1 *Track22.wav
+a2f0c18616f655d3dcd0b3fb4aa75662 *Track23.wav
+af3bacca0a5d936184aa85ef49ea2ab6 *Track24.wav
+ffb0239443d3a78dc51429f0059e1594 *Track25.wav
+===================
+===================
+===================
+=== Flac fingerprint.txt
+===================
+===================
+===================
+Track01.flac:d3ea00d505ea0a86db3ebd1c80183e8e
+Track02.flac:d74c173ac7082445c040bc44abd24ddc
+Track03.flac:2333eea85f224124653d7f7320782c44
+Track04.flac:a850d073562c1310a49f592ca5052a1b
+Track05.flac:ea41ece2879a0339667a3d164f0a757b
+Track06.flac:012eb6db0ddc5fb0d27f24b3468d5aaa
+Track07.flac:3963d298aaef856e95fb2ff32c6bba42
+Track08.flac:d4a2748a5ece63b0d0b4c93db25932eb
+Track09.flac:f5d384497a4a7961e65261356ee7dd73
+Track10.flac:7c97d974cea86b701ddda9db71ec4cd6
+Track11.flac:ae642ce3beca6228419d4f86ed90ccdc
+Track12.flac:74f306472ab2e09bebbddee5d13a5313
+Track13.flac:0b8af1096854d3c02a7bc7d65f865e9d
+Track14.flac:dd2db431f2c5e5c7ec3c3479a1a8c809
+Track15.flac:983f37a2d894ab5671991f38b7ac7e6f
+Track16.flac:fce06b597c6044b4c5ca9bfcf5b5b36f
+Track17.flac:dd918c28c738e8f58a9b41ec25eb433b
+Track18.flac:efe6f58e3b679a09c1587d7e11415ca3
+Track19.flac:f69c3c6054ae760fec83764459ab9ce9
+Track20.flac:0a1694e84aedc45b61d0ba1cb5c608ec
+Track21.flac:c9160b9331460321915925ea3bb00259
+Track22.flac:e334a36c61a6c75c32c4cd8d7083e3a5
+Track23.flac:97c609495079b995ae49b950e4f0cd09
+Track24.flac:d4b6aac64ebaf83ea5a24c8f8a31586e
+Track25.flac:5c4adecb84bee56ca6390e07e658b664
+===================
+===================
+===================
+=== Flac fingerprint.txt
+===================
+===================
+===================
+Track01.flac:1a5b4812b7d3b10903beb9b38ff9e9e9
+Track02.flac:22c2f57cb693d9d22c264d16adb60a64
+Track03.flac:78cdb55655e3e2a2ea550b697507be20
+Track04.flac:bb83e26b2045e9dd6c1be8e2a3210f15
+Track05.flac:b7464605a65b15d40339c960fe3fe474
+Track06.flac:828872abe3d30b768f3d8d5252f86263
+Track07.flac:fda6581b8464c136a1d25bbe2336e1c4
+Track08.flac:03c03a78825a420b7d27cbcbdc58f746
+Track09.flac:cc4fdc32a4cd0605a5d750e924edb218
+Track10.flac:cfceaf29dd67cd2a08acf2d6f11a747d
+Track11.flac:3f9846f97f40f6995a370b6709c019a6
+Track12.flac:58e5699e124baaca30ff0e1e87811c5a
+Track13.flac:3f394cf4be945c82d2bbcb98de8629bc
+Track14.flac:ca76ba5b980a8aefeb3253d35a1bdd1b
+Track15.flac:2b6ddd116e0e5c721b3b540006d6b0a2
+Track16.flac:282b7661f4dd3acb79f785871d3540ff
+Track17.flac:cd1ee7b18e43ce87515c7f1019c91d60
+===================
+===================
+===================

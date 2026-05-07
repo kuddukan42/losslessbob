@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-30-d.flacf 
+=================== 
+=================== 
+=================== 
+728a7681d8469e31df91ca481c84feaf  dylan2004-10-30-flac.ffp
+4b4ba2de59387871742775e54cc7c2aa  dylan2004-10-30-flac.md5
+6bb9429f52a8cb84c42bdecb4db25883  dylan2004-10-30-info.txt
+866613a8ed855bbc379346f68609a89c  dylan2004-10-30d1t01.flac
+8a28c1b051263a356ee666189cec5477  dylan2004-10-30d1t02.flac
+9a8a019da7efbe264f71fd4656531999  dylan2004-10-30d1t03.flac
+64a8585c41c791690c67f61f6b3d4add  dylan2004-10-30d1t04.flac
+762a7f74268ab9bc63f0cdeb535dae6f  dylan2004-10-30d1t05.flac
+6eb2f2c8484d06aa7c858841f768bc7d  dylan2004-10-30d1t06.flac
+332ab6f61703625ee82efd1e139e5b2d  dylan2004-10-30d1t07.flac
+4c67a955cdd3496c99499fd129a4832f  dylan2004-10-30d1t08.flac
+701ed80669de419741cac1640492369a  dylan2004-10-30d1t09.flac
+4e76fc81cf4607f50b28937c92ff12e9  dylan2004-10-30d1t10.flac
+6330e293bb3998c0f3284fe605948a46  dylan2004-10-30d2t01.flac
+a57043977e03276a7e31d7f412efea99  dylan2004-10-30d2t02.flac
+ef2edcd8c2dabf3b2927b1e5820f1281  dylan2004-10-30d2t03.flac
+177a44321d12ba922bd732ea7560aa21  dylan2004-10-30d2t04.flac
+510b4af330e1387cb97da94c22a7637f  dylan2004-10-30d2t05.flac
+c9d6ae474e92b1ee7ff20b0a905e257e  dylan2004-10-30d2t06.flac
+ea009e32b87c52f92a6decbe413588a1  dylan2004-10-30tix.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-30-d.flacf 
+=================== 
+=================== 
+=================== 
+dylan2004-10-30d1t01.flac:1f507083761919ba47af07170f63c2e5
+dylan2004-10-30d1t02.flac:84cc40d09220c617e115bd098d31e720
+dylan2004-10-30d1t03.flac:05a02fd9d53be27a9d1835fa887f41c4
+dylan2004-10-30d1t04.flac:9d225a55c87e53f48e1ca861be1ba5fc
+dylan2004-10-30d1t05.flac:aec5ea53cf44e03db045363a6072696c
+dylan2004-10-30d1t06.flac:3105d05c917e047ab6a9bb09b3b903e7
+dylan2004-10-30d1t07.flac:11c8f2bbfb643d60194c254ff436b442
+dylan2004-10-30d1t08.flac:417ece4bdde9c95f1948b4e11147fa70
+dylan2004-10-30d1t09.flac:1a62139dd274785806e0a2408c58548a
+dylan2004-10-30d1t10.flac:62b5a76a4cb457cc2c73a42ab1c4c57c
+dylan2004-10-30d2t01.flac:d1242b7775c70f62496235235204d965
+dylan2004-10-30d2t02.flac:58d754412e284560effbe5ca379ae9e4
+dylan2004-10-30d2t03.flac:1dbd1326fe59db556c8c9cb26cebcf3a
+dylan2004-10-30d2t04.flac:5d84c8646ada55e51c69af72a71db6f9
+dylan2004-10-30d2t05.flac:af4d9c91e16d4ac787fb2f0297db46b1
+dylan2004-10-30d2t06.flac:5585e51301c10a216ea96e2bf4e2478d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-30-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.05       61751804 B   ---   --   ---xx   flac  0.6239  dylan2004-10-30d1t01.flac
+     6:55.56       73337756 B   ---   --   ---xx   flac  0.5907  dylan2004-10-30d1t02.flac
+     6:10.74       65442092 B   ---   --   ---xx   flac  0.6429  dylan2004-10-30d1t03.flac
+     7:37.52       80737148 B   ---   --   ---xx   flac  0.5454  dylan2004-10-30d1t04.flac
+     5:28.32       57934508 B   ---   --   ---xx   flac  0.5841  dylan2004-10-30d1t05.flac
+     6:57.27       73622348 B   ---   --   ---xx   flac  0.5966  dylan2004-10-30d1t06.flac
+     7:58.30       84389804 B   ---   --   ---xx   flac  0.6092  dylan2004-10-30d1t07.flac
+     5:17.65       56071724 B   ---   --   ---xx   flac  0.4756  dylan2004-10-30d1t08.flac
+     6:26.25       68149244 B   ---   --   ---xx   flac  0.5154  dylan2004-10-30d1t09.flac
+     6:56.70       73547084 B   ---   --   ---xx   flac  0.6400  dylan2004-10-30d1t10.flac
+     6:36.49       69969692 B   ---   --   ---xx   flac  0.5670  dylan2004-10-30d2t01.flac
+     6:40.07       70576508 B   ---   --   ---xx   flac  0.5813  dylan2004-10-30d2t02.flac
+     5:44.52       60803948 B   ---   --   ---xx   flac  0.4673  dylan2004-10-30d2t03.flac
+     9:38.32      102034508 B   ---   --   ---xx   flac  0.5292  dylan2004-10-30d2t04.flac
+     8:13.27       87028748 B   ---   --   ---xx   flac  0.5731  dylan2004-10-30d2t05.flac
+     7:05.41       75066476 B   ---   --   ---xx   flac  0.5624  dylan2004-10-30d2t06.flac
+   109:38.44     1160463392 B                            0.5698  (16 files)
+=================== 
+=================== 
+=================== 

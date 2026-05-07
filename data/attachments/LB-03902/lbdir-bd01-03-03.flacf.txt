@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-03-03.flacf 
+=================== 
+=================== 
+=================== 
+3335f8f8b54b9317f92857f773042ac3  bd01-03-03-LB-3902.txt
+1e3fa9868ac3419a444250bb4618c8f8  bd2001-03-03 Tokyo.txt
+4d862abbf3d3640fdf36100e93bf5625  bd2001-03-03.flac Tokyo.ffp
+b435b414505ad99dab794c471eeca100  bd2001-03-03d1 Tokyo.shntool.txt
+53c468dfc77293a227649a74f3af4fad  bd2001-03-03d1t01.flac
+e80dfa9ff113acf1fd9d65df62a40a94  bd2001-03-03d1t02.flac
+7169d0645ac7780cf52bc1c0c0e2ab4d  bd2001-03-03d1t03.flac
+83b04dfa548a61e60afb2708fbfe3f39  bd2001-03-03d1t04.flac
+1360316fa611b6aa2879ce6f97f04c81  bd2001-03-03d1t05.flac
+f584b6b04f35e8ab65962950416f1475  bd2001-03-03d1t06.flac
+91ad6881053154ab4d2aee806ef63941  bd2001-03-03d1t07.flac
+29f5e1d422e5485172b4aac0cb718d46  bd2001-03-03d1t08.flac
+3a91f477f2ab9338595b387ea11c172a  bd2001-03-03d1t09.flac
+f9c67c245ae2303dbcc85ba8d5c0ac22  bd2001-03-03d1t10.flac
+993093314751fc5895d4152d5facea8b  bd2001-03-03d1t11.flac
+c0eec400be607c59b86fe71e2c54b7bc  bd2001-03-03d1t12.flac
+e145f6dc8f3af147aadf6b2c81977e63  bd2001-03-03d2 Tokyo.shntool.txt
+59fb5557f20e152ea214e6e75598001b  bd2001-03-03d2t01.flac
+3d89f199a125bf72a1bb12616a3eb9a0  bd2001-03-03d2t02.flac
+3f2a6535b4f9b7aac442f843ffe14cf1  bd2001-03-03d2t03.flac
+588965dfc8e5b22dd98bb6dd852433f4  bd2001-03-03d2t04.flac
+a19538d687d1e762e60d49d062211664  bd2001-03-03d2t05.flac
+7e17b8c496df0d068fccf392ae24d3e2  bd2001-03-03d2t06.flac
+8ca5aa198be82dd07ffef051999f3f36  bd2001-03-03d2t07.flac
+cc25e782958b16e61c5c343a082906c4  info.txt
+9868b37373273e30ecc1614cabb75d92  Tokyo_Mar_3_2001_back.jpg
+745abc760af26fad36f8434ff4418d7b  Tokyo_Mar_3_2001_front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-03.flacf 
+=================== 
+=================== 
+=================== 
+bd2001-03-03d1t01.flac:91eeface0410a60a82fc46c06f852396
+bd2001-03-03d1t02.flac:00a4347b434e5d0066a4510272f0db21
+bd2001-03-03d1t03.flac:6cfaa5ec6e704299f509842d46ea534f
+bd2001-03-03d1t04.flac:4b8c98052151cc6c839cbb72f3195cb9
+bd2001-03-03d1t05.flac:44e173428af985ea72b8a576d3d42d7c
+bd2001-03-03d1t06.flac:d801c7b886cf40dd69fb160bf3f838bd
+bd2001-03-03d1t07.flac:3f7b3e6ee0742052919b541a93c5058f
+bd2001-03-03d1t08.flac:857135f07e88dc4c58d35819fc7fb08b
+bd2001-03-03d1t09.flac:7d12ef6268734ffc5fdb59c1316b2066
+bd2001-03-03d1t10.flac:18d05a48e71ab077691de4d1c94271da
+bd2001-03-03d1t11.flac:3877e4e16ebc5e7f687807c4bf10d1a6
+bd2001-03-03d1t12.flac:3051d4b2f3efcfe7a1088104f5645e9a
+bd2001-03-03d2t01.flac:74c43eb473efa625b5ea6612cc284e4b
+bd2001-03-03d2t02.flac:41f1e4ed35dd0f2448a89a36527d5f1b
+bd2001-03-03d2t03.flac:69f52990db21470c9c2adc4aaa54324d
+bd2001-03-03d2t04.flac:bffa664caee0765b1f4d61d26b541246
+bd2001-03-03d2t05.flac:f88518685b221b1d2347bc615f5f9c2a
+bd2001-03-03d2t06.flac:9047b03091b20f7dcae8d2b8d976ba56
+bd2001-03-03d2t07.flac:980dfd802cef2be28072c01ca34f4564
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-03.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.13       39367820 B   ---   --   ---xx   flac  0.6257  bd2001-03-03d1t01.flac
+     6:11.65       65597324 B   ---   --   ---xx   flac  0.5747  bd2001-03-03d1t02.flac
+     8:30.57       90098108 B   ---   --   ---xx   flac  0.6005  bd2001-03-03d1t03.flac
+     5:47.09       61232012 B   ---   --   ---xx   flac  0.5341  bd2001-03-03d1t04.flac
+     4:50.14       51188972 B   ---   --   ---xx   flac  0.6375  bd2001-03-03d1t05.flac
+     5:12.16       55074476 B   ---   --   ---xx   flac  0.5831  bd2001-03-03d1t06.flac
+     6:03.66       64188476 B   ---   --   ---xx   flac  0.6442  bd2001-03-03d1t07.flac
+     4:14.34       44885612 B   ---   --   ---xx   flac  0.5301  bd2001-03-03d1t08.flac
+     5:28.15       57894524 B   ---   --   ---xx   flac  0.5591  bd2001-03-03d1t09.flac
+     6:05.63       64534220 B   ---   --   ---xx   flac  0.5489  bd2001-03-03d1t10.flac
+     4:16.24       45214892 B   ---   --   ---xx   flac  0.6589  bd2001-03-03d1t11.flac
+     5:26.34       57586412 B   ---   --   ---xx   flac  0.6541  bd2001-03-03d1t12.flac
+     6:06.59       64701212 B   ---   --   ---xx   flac  0.5878  bd2001-03-03d2t01.flac
+     7:20.73       77787740 B   ---   --   ---xx   flac  0.6496  bd2001-03-03d2t02.flac
+     4:18.39       45602972 B   ---   --   ---xx   flac  0.5309  bd2001-03-03d2t03.flac
+     4:37.46       48971036 B   ---   --   ---xx   flac  0.6793  bd2001-03-03d2t04.flac
+     6:45.58       71578460 B   ---   --   ---xx   flac  0.5010  bd2001-03-03d2t05.flac
+     5:10.25       54742844 B   ---   --   ---xx   flac  0.6632  bd2001-03-03d2t06.flac
+     5:28.28       57925100 B   ---   --   ---xx   flac  0.5932  bd2001-03-03d2t07.flac
+   105:38.63     1118172212 B                            0.5964  (19 files)
+=================== 
+=================== 
+=================== 

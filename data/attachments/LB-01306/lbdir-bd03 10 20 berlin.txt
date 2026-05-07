@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03 10 20 berlin 
+=================== 
+=================== 
+=================== 
+7bbef1a4e3636cf250cf84da1101e059  03 10 20 d1 t01.shn
+4742c412c3c5a0a95035e2ca27721273  03 10 20 d1 t02.shn
+a73c16bf166a809da8b228f94e839578  03 10 20 d1 t03.shn
+9c70bd1cf94bf1164ca4904f1d1cd4e2  03 10 20 d1 t04.shn
+0755550122ca3492d8c5c24c41998ef7  03 10 20 d1 t05.shn
+1ae6d740f09f7e27e25f9bc8da275791  03 10 20 d1 t06.shn
+8863078cb163a7747ff210cdf4282fb8  03 10 20 d1 t07.shn
+f3aa88dd5cd021d1078d6a6d1f890d0e  03 10 20 d1 t08.shn
+bacc4f35592d3129ebade16e0c361785  03 10 20 d1 t09.shn
+308f907568199a5efbfb655e06445393  03 10 20 d2 t01.shn
+88db638494c2485793e43e013f33290f  03 10 20 d2 t02.shn
+f287f2a7209824ee24b64c062c1edb5e  03 10 20 d2 t03.shn
+7976254ccf8b4f9a1aac00985a7275c1  03 10 20 d2 t04.shn
+ebacb84ba0b9363f2ce2827eae30149b  03 10 20 d2 t05.shn
+1c72eeede3b304d39763e82ecc39d30b  03 10 20 d2 t06.shn
+b8f63d8e3d36bed0738de52a6d4f850b  03 10 20 d2 t07.shn
+42044d7b6c388620f2ff615bb2ad204b  03 10 20 d2 t08.shn
+0a692e6b90533b1b96994115c3b7cc7b  03 10 20 d2 t09.shn
+34e657f65e8324fe1ee89dc588f20726  03 10 20.md5
+79031895451efeece31cb629fecc2255  bd03-10-20-Schubert.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03 10 20 berlin 
+=================== 
+=================== 
+=================== 
+67be264744017292719dca5baa69facc  [shntool]  03_10_20_d1_t01.wav
+6a3662076a6199827f02941c42926881  [shntool]  03_10_20_d1_t02.wav
+92f9a9de0941315b2e7e880ee89c2d0f  [shntool]  03_10_20_d1_t03.wav
+aabdca077ea1b655d9afbb0c9e0702e5  [shntool]  03_10_20_d1_t04.wav
+a2d6bea3dd3ed7f24cdf97d2e5069a26  [shntool]  03_10_20_d1_t05.wav
+89007ef53964febb5d97f62ab49f23a7  [shntool]  03_10_20_d1_t06.wav
+3398c7f3cfce5135c1d8fc8dd6af27ed  [shntool]  03_10_20_d1_t07.wav
+7e2efa4a11265c83edf213e9d3be998f  [shntool]  03_10_20_d1_t08.wav
+87b02ac51cab6a9da24ce19f236424f0  [shntool]  03_10_20_d1_t09.wav
+14fee1c395800f118714582dcfc5c5a7  [shntool]  03_10_20_d2_t01.wav
+c8b696da07875a757ff248b4ae59cf8b  [shntool]  03_10_20_d2_t02.wav
+88cf9e98fcff285052f9e9e5ca3d9e5d  [shntool]  03_10_20_d2_t03.wav
+203dfdde39e414a35b0f370ec9fb03a5  [shntool]  03_10_20_d2_t04.wav
+7e9601e3de490dcd7aaa01bfaeb36c3e  [shntool]  03_10_20_d2_t05.wav
+609e431f14e588c837122dbe8bffac0d  [shntool]  03_10_20_d2_t06.wav
+f3033d599f644d9cd270fddcce6d1294  [shntool]  03_10_20_d2_t07.wav
+1d8c5fcc98d94e1dc422cb5044e51684  [shntool]  03_10_20_d2_t08.wav
+e5b328e10024c27007a079db41bfeed5  [shntool]  03_10_20_d2_t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03 10 20 berlin 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:34.68       16741580 B   ---   --   ---xx    shn  0.5603  03 10 20 d1 t01.shn
+     4:49.44       51083132 B   ---   --   ---xx    shn  0.7260  03 10 20 d1 t02.shn
+     7:16.38       76999820 B   ---   --   ---xx    shn  0.6755  03 10 20 d1 t03.shn
+     5:56.63       62946620 B   ---   --   ---xx    shn  0.7206  03 10 20 d1 t04.shn
+     8:46.64       92936972 B   ---   --   ---xx    shn  0.7125  03 10 20 d1 t05.shn
+     7:46.51       82322396 B   ---   --   ---xx    shn  0.7142  03 10 20 d1 t06.shn
+     7:23.00       78145244 B   ---   --   ---xx    shn  0.6475  03 10 20 d1 t07.shn
+     7:10.43       75953180 B   ---   --   ---xx    shn  0.6873  03 10 20 d1 t08.shn
+     7:25.36       78582716 B   ---   --   ---xx    shn  0.6940  03 10 20 d1 t09.shn
+     5:44.50       60799244 B   ---   --   ---xx    shn  0.6488  03 10 20 d2 t01.shn
+     6:42.40       71006924 B   ---   --   ---xx    shn  0.7262  03 10 20 d2 t02.shn
+     7:15.32       76809308 B   ---   --   ---xx    shn  0.6072  03 10 20 d2 t03.shn
+     6:59.33       73989260 B   ---   --   ---xx    shn  0.7298  03 10 20 d2 t04.shn
+     8:29.68       89947580 B   ---   --   ---xx    shn  0.6024  03 10 20 d2 t05.shn
+    12:20.65      130688924 B   ---   --   ---xx    shn  0.6660  03 10 20 d2 t06.shn
+     5:15.28       55631900 B   ---   --   ---xx    shn  0.6944  03 10 20 d2 t07.shn
+     6:51.48       72613340 B   ---   --   ---xx    shn  0.6978  03 10 20 d2 t08.shn
+     8:12.70       86953484 B   ---   --   ---xx    shn  0.6832  03 10 20 d2 t09.shn
+   126:03.16     1334151624 B                            0.6804  (18 files)
+=================== 
+=================== 
+=================== 

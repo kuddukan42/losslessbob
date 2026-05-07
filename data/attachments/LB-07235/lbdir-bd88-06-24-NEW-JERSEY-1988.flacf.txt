@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-24-NEW JERSEY-1988.flacf 
+=================== 
+=================== 
+=================== 
+517363837a57ea19fb6802fa252822ec  Bob Dylan - NEW JERSEY 1988.md5
+6860a49ff161b6df71590bb890e47e99  info.txt
+c4459ecb048a6f67f3d6f8c4f2655294  Track01.flac
+be42324e48c10eb98d7adc19c64a56a9  Track02.flac
+ad02af6b89df64c80d55c82b88c39ade  Track03.flac
+e5455373e4a46e989578cb3e7e5717c4  Track04.flac
+18ad59da1139b6857cb4f26c2a07b434  Track05.flac
+86f9005b67d1e8c4bfce73e5b45be4fc  Track06.flac
+05f75ef10d982e1b2f7d7644061a2518  Track07.flac
+0e8f149f468b5f29aa18b0e1d9ad0281  Track08.flac
+a5dab22bfe50af0889024751c45d1afe  Track09.flac
+cff7b8379519573bed56c42f10c4ca25  Track10.flac
+4f2bcee7a22cad36c0c8a3b3eef323df  Track11.flac
+0cfe87e09fa99b374d155dc34e0d1e2e  Track12.flac
+992923ab28d080a7e2a9d96fe9396a6f  Track13.flac
+1f071336f8ec957f04a57f504dc97173  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-24-NEW JERSEY-1988.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:52754440ccca739ffc46558c1ee82228
+Track02.flac:e3530469fe4e25ca0f76e49ca166e5bb
+Track03.flac:a8ccc34343fe8ee3bc2b5efe6a558c72
+Track04.flac:2b4d26737d58b2f91c38205235c12086
+Track05.flac:e750d495f559dbed36970ab1f94151fd
+Track06.flac:a0b527d2f3f2f1fb28cf01362be94ed9
+Track07.flac:43a592576ec8159fdf33d8b0b5a8fc70
+Track08.flac:2ca625a1c540baf9f8ef127bce227c67
+Track09.flac:6c9f267bdfffb66a8d289919c0416cc7
+Track10.flac:70d2e7a731dafcee0545afa86766200c
+Track11.flac:7692d63352fc9ac97b9c9288ee136f71
+Track12.flac:57d1d204fea3a9c1bbf7a0193f8386e4
+Track13.flac:f414f1e1147395553f8d07af2c73717e
+Track14.flac:75e4e02db1e59e20b2812348729d8b89
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-24-NEW JERSEY-1988.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.61       44067116 B   ---   --   ---xx   flac  0.5965  Track01.flac
+     6:04.22       64261388 B   ---   --   ---xx   flac  0.5987  Track02.flac
+     4:38.34       49119212 B   ---   --   ---xx   flac  0.6200  Track03.flac
+     6:15.67       66307628 B   ---   --   ---xx   flac  0.5497  Track04.flac
+     4:57.47       52501388 B   ---   --   ---xx   flac  0.5955  Track05.flac
+     5:07.67       54312428 B   ---   --   ---xx   flac  0.5410  Track06.flac
+     5:19.14       56304572 B   ---   --   ---xx   flac  0.5295  Track07.flac
+     4:22.01       46219196 B   ---   --   ---xx   flac  0.5540  Track08.flac
+     8:09.45       86365484 B   ---   --   ---xx   flac  0.5393  Track09.flac
+     3:34.45       37855484 B   ---   --   ---xx   flac  0.5817  Track10.flac
+     4:11.43       44377580 B   ---   --   ---xx   flac  0.5515  Track11.flac
+     6:21.70       67373084 B   ---   --   ---xx   flac  0.5901  Track12.flac
+     4:44.36       50182316 B   ---   --   ---xx   flac  0.5415  Track13.flac
+     5:29.39       58127372 B   ---   --   ---xx   flac  0.5845  Track14.flac
+    73:26.66      777374248 B                            0.5682  (14 files)
+=================== 
+=================== 
+=================== 

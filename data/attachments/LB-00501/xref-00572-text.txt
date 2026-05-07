@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== bd 1996-04-17 Burlington [Fixed LB-501 xref-00424].txt
+===================
+===================
+===================
+Bob Dylan
+Patrick Gymnasium, 
+University Of Vermont, 
+Burlington, Vermont
+1996-04-17
+
+Fix LB-501 xref-0042
+
+
+Losslessbob LB-501 entry = 
+
+very good sound; NOTE d2t7 & dt28 are identical shn files so only use one of them in making your cdr, At this show, Jewel (Kilcher), who is one of the the opening act during this tour joins Dylan on I Shall Be Released., The lyrics to Man In The Long Black Coat contains an interesting variation:, There's a smoke on the water, smoke over you, some say the devil is a woman and maybe it's true.; has tv bands on d2t7 
+
+
+Losslessbob LB-501 xref-00424 entry =
+
+a bittorrent from 06/10 is same recording based on same clapping wavs at end of d1t1 with similar wav and spectral view and tv bands and levels except in spectral view this has a little less noise and on listening a little less hiss but still looks and sounds like cassette and has more hiss and less fidelity than sg LB-5420; had more digital flaws like drops between tracks and discontinuities; described as "Lineage: Jantemp: cdr > EAC > data disc (with extraction logs, without md5 or info file) > me > md5 & info file, created > files renamed (Jan had the discs reversed) > torrent, Does not match either LB number. Likely same recording, but this one is the quality of LB-5420 but apparently, without the problems described there." with filenames like "bd-1996-04-17d1t01.flac"; xref-00424
+
+
+Fix of LB-501 xref-00424 =
+
+Wave Repair 44.9.3 to fix index gaps and many digi clicks (refer to attached DigiFlawfinder before and after) > FLAC lvl8, verify
+
+
+01 Crash On The Levee (Down In The Flood) 
+02 Man In The Long Black Coat 
+03 All Along The Watchtower 
+04 Positively 4th Street 
+05 It Takes A Lot To Laugh, It Takes A Train To Cry 
+06 Silvio 
+07 Mr. Tambourine Man (acoustic w band) 
+08 Boots Of Spanish Leather (acoustic w band) 
+09 Don't Think Twice, It's All Right (acoustic w band) 
+10 Maggie's Farm 
+11 This Wheel's On Fire 
+12 Obviously Five Believers 
+13 Alabama Getaway 
+14 I Shall Be Released (acoustic w band) 
+15 Rainy Day Women # 12 & 35 
+===================
+===================
+===================
+=== bd 1996-04-17 Burlington.ffp
+===================
+===================
+===================
+Track 01.flac:e31ad4059fc40991566936058761552a
+Track 02.flac:5fa1b11a96bc1c967077bea509d886b6
+Track 03.flac:52d38cb40e929090b29e4d53bc1f3f17
+Track 04.flac:664f482fb922c8f31c649e51e462c9ab
+Track 05.flac:2c45cc6203417a29615a20f162b7102e
+Track 06.flac:ed3be2745d5ec65fc85f0688fe2690f1
+Track 07.flac:aedbe356b49b21a087764b3205947c5f
+Track 08.flac:75f9c100c0ee9354fd24753a949522ee
+Track 09.flac:a9ea4cbe24d81561ed7e3dab2ac1cf5e
+Track 10.flac:e1ee3ef1a0176a19136adc2b98c42175
+Track 11.flac:0748236500621ef7ca19f4af31989918
+Track 12.flac:6286b21a3353e6a7deadb00e43d90edc
+Track 13.flac:d20b9e6fe392ae4ed2e3b04ddec2d189
+Track 14.flac:fc1a46afa6daa32c64b65da399c07d58
+Track 15.flac:5c1e09eac46c57ad0012dc319ac20cb3
+===================
+===================
+===================
+=== bd 1996-04-17 Burlington.md5
+===================
+===================
+===================
+67b579a21462c06ce458cf8cc00d4b8d *Track 01.flac
+c6d00d3bfb7002aa9627b353eb53b8b4 *Track 02.flac
+d88621b24c52bc5ccd497df5d6177532 *Track 03.flac
+be379a535b21fc0c76d1d62b9758126b *Track 04.flac
+cf08be59e8f3403846503352cb6d58c3 *Track 05.flac
+12a634a08df6812188805d19b994a02c *Track 06.flac
+48a8cf44b7d2f99c596e8c73531e9a9b *Track 07.flac
+ee35b2aad3d4eac76dc1881dd0398c05 *Track 08.flac
+8ed5a639b52da759f43cd57db6c07038 *Track 09.flac
+b5ab19a9ca24807f674e1b5625888a55 *Track 10.flac
+3790c22be3b51adee51f2aa954133e3d *Track 11.flac
+da0b28dd3c4dfaa8062455ea94d268bf *Track 12.flac
+3a9abb833d2b5e869ffee86e5726ea9f *Track 13.flac
+d1b4c4eaadc4848f41d8a41eb394f8f4 *Track 14.flac
+1b2eb473204422845348e69cdca4bea9 *Track 15.flac
+===================
+===================
+===================

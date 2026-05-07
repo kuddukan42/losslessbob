@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-10-22-naughtyknightland.shnf 
+=================== 
+=================== 
+=================== 
+62a0f4c69c5e9b070eba3bed9b71b72f  ART\Bob Dylan_Leipzig_2003-10-22_back.jpg
+0fe0ee2ecac2885316a55f23943282a5  ART\Bob Dylan_Leipzig_2003-10-22_front.jpg
+947be573a80fa477c7cef6e8b84ba47f  ART\Thumbs.db
+a2d6e466d7163444339146794e53aa4b  bd03-10-22-naughtyknightland.txt
+e7a768c4f905cb209d319b5e400825d7  CD 1\01-Maggie's Farm.shn
+ebf13ab74b5ae04107544558a792ebb3  CD 1\02-Señor.shn
+ea796944d72eb35bde9f4cf59d804480  CD 1\03-Cry A While.shn
+73947f3dfa6cd9e9c0b54ed4c32300cd  CD 1\04-Just Like Tom Thumb's Blues.shn
+20ba360012b8e8452806bb3884204984  CD 1\05-It's Alright, Ma (I'm Only Bleeding).shn
+8ad589f642d556d95a24c08c6c05e099  CD 1\06-To Ramona.shn
+c2312e676570ab980ae21b47287d0abf  CD 1\07-Things Have Changed.shn
+f4592437ca9080f14d50629a92eb3731  CD 1\08-Highway 61 Revisited.shn
+8acfcfb27d70973d29b803772795b43b  CD 1\09-Man In The Long Black Coat.shn
+bc2c58eaefbe9b6938b4fe9c6e03e152  CD 1\CD1_checksum.md5
+34cbfc69d71b6c34cdf4e4f16b0d19e8  CD 2\10-Stuck Inside Of Mobile With The Memphis Blues Again.shn
+b879835cd2c1b5f32b8b86e2d2c1fa4a  CD 2\11-Mr. Tambourine Man.shn
+b6babf05a47416fe1f0161e7efb44c35  CD 2\12-Honest With Me.shn
+02eae6a29aa5d237b90f7e593390444f  CD 2\13-Every Grain Of Sand.shn
+b6bdbe96407452cd06234c7fe5cce275  CD 2\14-Summer Days.shn
+2e507a4bc0aa7699e47a06f4df18c97e  CD 2\15-Cat's In The Well.shn
+f7cfb510df924acde51f1db0a6cd28bd  CD 2\16-Like A Rolling Stone.shn
+9b9e59c8a05f0b00ba3240e96c772070  CD 2\17-All Along The Watchtower.shn
+b943255696cd0669fe2437e3fe099649  CD 2\CD2_checksum.md5
+837e614b5e0455fd8b75925e52f8560c  Note.txt
+5d0e0f870e4e5a882321600692016222  review.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-10-22-naughtyknightland.shnf\CD 1  - manually corrected for Senor's nonstandard filename
+=================== 
+=================== 
+=================== 
+0d28a0b6d1b7ab273e8d5371ff515983  [shntool]  01-Maggie's_Farm.wav
+56935b5bb8ed768ac10489192333aaf6  [shntool]  02-Senor.wav
+c14e2d9359f058ff56e259a6d9f623b9  [shntool]  03-Cry_A_While.wav
+a40dbd60b440af808c036a74e8592ca5  [shntool]  04-Just_Like_Tom_Thumb's_Blues.wav
+323641fd500c57b5d51deae7ca7a298f  [shntool]  05-It's_Alright,_Ma_(I'm_Only_Bleeding).wav
+d825725d126d96274666b69317062f71  [shntool]  06-To_Ramona.wav
+58350f996f571026625c3e42e0d60c49  [shntool]  07-Things_Have_Changed.wav
+fc50d08e6619bac03adbaed2b14d499c  [shntool]  08-Highway_61_Revisited.wav
+d10fd9b2bea8c91b4e18f888b3672632  [shntool]  09-Man_In_The_Long_Black_Coat.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-10-22-naughtyknightland.shnf\CD 2 
+=================== 
+=================== 
+=================== 
+aac72a79e006f5f45aa17d79e14800af  [shntool]  10-Stuck_Inside_Of_Mobile_With_The_Memphis_Blues_Again.wav
+7573fd38ef36e001c7211a02c68054b0  [shntool]  11-Mr._Tambourine_Man.wav
+b1289974095b24a1e6620596d2dbd336  [shntool]  12-Honest_With_Me.wav
+b87ddada5492335f1e0bea057482e66d  [shntool]  13-Every_Grain_Of_Sand.wav
+e71029c0edac8498302c0a8c7477c37d  [shntool]  14-Summer_Days.wav
+eb1e4b2e037d2c9e6fbd8830d954bebb  [shntool]  15-Cat's_In_The_Well.wav
+a6a8360628dd3b038aa85d294d5a4152  [shntool]  16-Like_A_Rolling_Stone.wav
+0ee8f2715d5e65c4d669ffee6a7867d6  [shntool]  17-All_Along_The_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-22-naughtyknightland.shnf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.46       77195584 B   -b-   --   ---xx    shn  0.6399  01-Maggie's Farm.shn
+     6:46.03       71625128 B   -b-   --   ---xx    shn  0.6327  02-Señor.shn
+     6:04.34       64290192 B   -b-   --   ---xx    shn  0.6346  03-Cry A While.shn
+     7:57.66       84298836 B   -b-   --   ---xx    shn  0.6216  04-Just Like Tom Thumb's Blues.shn
+     8:29.08       89806108 B   -b-   --   ---xx    shn  0.6222  05-It's Alright, Ma (I'm Only Bleeding).shn
+     5:57.04       62984980 B   -b-   --   ---xx    shn  0.5603  06-To Ramona.shn
+     8:03.29       85269912 B   -b-   --   ---xx    shn  0.6299  07-Things Have Changed.shn
+     7:44.57       81984724 B   -b-   --   ---xx    shn  0.6669  08-Highway 61 Revisited.shn
+     7:09.09       75697896 B   -b-   --   ---xx    shn  0.6008  09-Man In The Long Black Coat.shn
+    65:29.33      693153360 B                            0.6246  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-22-naughtyknightland.shnf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:01.66       95587640 B   -b-   --   ---xx    shn  0.6345  10-Stuck Inside Of Mobile With The Memphis Blues Again.shn
+     7:59.53       84619296 B   -b-   --   ---xx    shn  0.5899  11-Mr. Tambourine Man.shn
+     7:11.43       76128752 B   -b-   --   ---xx    shn  0.6632  12-Honest With Me.shn
+     8:25.06       89096412 B   -b-   --   ---xx    shn  0.5609  13-Every Grain Of Sand.shn
+    11:30.49      121832224 B   -b-   --   ---xx    shn  0.6319  14-Summer Days.shn
+     5:13.64       55363168 B   -b-   --   ---xx    shn  0.6551  15-Cat's In The Well.shn
+     7:33.28       79975680 B   -b-   --   ---xx    shn  0.6564  16-Like A Rolling Stone.shn
+     7:49.18       82773516 B   -b-   --   ---xx    shn  0.6575  17-All Along The Watchtower.shn
+    64:45.27      685376688 B                            0.6292  (8 files)
+=================== 
+=================== 
+=================== 

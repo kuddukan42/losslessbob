@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-08-Wario.shnf 
+=================== 
+=================== 
+=================== 
+061af905da633dda950df75dfb52fa9f  bd04-03-08-Wario-d1t01.shn
+2c37ff25de6b046f75484e73983dbb46  bd04-03-08-Wario-d1t02.shn
+43a51803be60ba0035b69682b7fa65db  bd04-03-08-Wario-d1t03.shn
+0213f2a378583cc72a61ec1f973ddd31  bd04-03-08-Wario-d1t04.shn
+3d166031dbd529ee73a84b0cfed81aee  bd04-03-08-Wario-d1t05.shn
+999d68837e9e6187012334d7dad5e313  bd04-03-08-Wario-d1t06.shn
+c957540d8f7df6c3eccb0e7f7475a04f  bd04-03-08-Wario-d1t07.shn
+3163a6e3a6465fd36b35dc478034d785  bd04-03-08-Wario-d1t08.shn
+e1eb8d4f16c8cdfc8ddb6f9b208aaba0  bd04-03-08-Wario-d1t09.shn
+d4dd2c80f3a9b569b8b5abd105e7bccc  bd04-03-08-Wario-d1t10.shn
+ece36629de1a40658cc06a2518a3ad11  bd04-03-08-Wario-d2t01.shn
+6098bcf4a49363c341258abab3a24672  bd04-03-08-Wario-d2t02.shn
+8d1fef6ae8a4674e0d7af6ac9fdac482  bd04-03-08-Wario-d2t03.shn
+5186e2b7516fdb4779f2581bc92e73ff  bd04-03-08-Wario-d2t04.shn
+5864c38fb361a70db3c6db8ea166db32  bd04-03-08-Wario-d2t05.shn
+ebdf89b8d58d545919444017b412634f  bd04-03-08-Wario-d2t06.shn
+f2301372f097e4dac861e50dcf31d8e8  bd04-03-08-Wario-d2t07.shn
+83971d4856ad0cabada8ccc44606a9cc  bd04-03-08-Wario-d2t08.shn
+032e2414580d127592322c8baeebf1b4  bd04-03-08-Wario-d2t09.shn
+be4488a3fa859685ea5fac1007e7df53  bd04-03-08-Wario.md5
+c4ab368eb53654aed64d4e88fc2354fc  bd04-03-08-Wario.txt
+deacf38d5fe8684723ab3684cd78179a  Bob Dylan 3-8-04 Back.jpg
+47d018224fb23b0e18a4885dfd6eddc6  Bob Dylan 3-8-04 CD1.jpg
+e424af71d363f6f12afd6967f8aa0973  Bob Dylan 3-8-04 CD2.jpg
+f5afd29ce7b4db15d19af5bdbb5988a7  Bob Dylan 3-8-04 Chicago (Wario).txt
+9f3f2210c159a094ea93e4e26645861f  Bob Dylan 3-8-04 Front.jpg
+fcc4c61c4cb3456c37e58ee64e4a819c  Chicago Tribune Review.pdf
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-08-Wario.shnf 
+=================== 
+=================== 
+=================== 
+256a976464535c14d03800a326bef0ba  [shntool]  bd04-03-08-Wario-d1t01.wav
+83d828f92c6fcc2f120f36484de54c9c  [shntool]  bd04-03-08-Wario-d1t02.wav
+7358b66aaaec9edc7d70a0c1401e77f4  [shntool]  bd04-03-08-Wario-d1t03.wav
+c40477c6b9dfc71bd423269df3058b1e  [shntool]  bd04-03-08-Wario-d1t04.wav
+a384f190cc84dd642f4f85e042249f8b  [shntool]  bd04-03-08-Wario-d1t05.wav
+e174fdf72e029de674343ff8e3508df6  [shntool]  bd04-03-08-Wario-d1t06.wav
+e3e76eb9e45455a950afe46bbf0fe7bf  [shntool]  bd04-03-08-Wario-d1t07.wav
+1c4c35ce7730282aff3e7bca4c34c1c2  [shntool]  bd04-03-08-Wario-d1t08.wav
+72d77d5060576189d946c0c032752c4c  [shntool]  bd04-03-08-Wario-d1t09.wav
+4dbb0c11d474eaadd10523867ca6376c  [shntool]  bd04-03-08-Wario-d1t10.wav
+211d8a0c6521845b887004118a241089  [shntool]  bd04-03-08-Wario-d2t01.wav
+6a3069efbc1464fff20e8351853fd885  [shntool]  bd04-03-08-Wario-d2t02.wav
+deee1ad9b769f9ac4a2aec981dc9ea0e  [shntool]  bd04-03-08-Wario-d2t03.wav
+33244fa52f4337bc74f32218fd7837ee  [shntool]  bd04-03-08-Wario-d2t04.wav
+5a4716f86ae25569f929e34644a170f1  [shntool]  bd04-03-08-Wario-d2t05.wav
+b0684da5bba9144bea7fd080038441dc  [shntool]  bd04-03-08-Wario-d2t06.wav
+39bd28ae11a20252f93b876e6f0a1fdf  [shntool]  bd04-03-08-Wario-d2t07.wav
+67123abb1678b9b56fab20e1ba001215  [shntool]  bd04-03-08-Wario-d2t08.wav
+19396c1032d74e614fb66373a238f9be  [shntool]  bd04-03-08-Wario-d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-08-Wario.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:49.16        8681276 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t01.wav
+     5:47.04       61220252 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t02.wav
+     6:29.11       68645516 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t03.wav
+     6:38.62       70353068 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t04.wav
+     5:34.19       58962332 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t05.wav
+     6:53.04       72862652 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t06.wav
+     5:52.13       62123420 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t07.wav
+     5:39.28       59865500 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t08.wav
+     6:08.29       64983452 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t09.wav
+     7:14.08       76576460 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d1t10.wav
+     6:03.63       64181420 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t01.wav
+     6:07.40       64832924 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t02.wav
+     7:34.01       80087996 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t03.wav
+     5:18.67       56252828 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t04.wav
+    11:59.53      126956300 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t05.wav
+     5:47.26       61271996 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t06.wav
+     4:54.11       51887516 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t07.wav
+     8:15.19       87362732 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t08.wav
+     6:05.33       64463660 B   ---   --   -----    wav  1.0000  bd04-03-08-Wario-d2t09.wav
+   119:11.57     1261571300 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

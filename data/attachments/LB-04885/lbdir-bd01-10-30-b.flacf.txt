@@ -1,0 +1,118 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-30-b.flacf 
+=================== 
+=================== 
+=================== 
+2c653bfbc4f740bd8bafaea082bc61e7  bd2001-10-30.flac Green Bay, WI.ffp
+ed8ec3d78e08779416dbf70b8ec77c2b  bd2001-10-30.flac Green Bay, WI.md5
+42f9a2f9f40e8c4408cf1ce6a506836f  bd2001-10-30.flac Green Bay, WI.st5
+a327ddac825eb2ab448bcb4bf5cfc5a6  bd2001-10-30.info.r9453.txt
+1347e7bbd4827ab8ce4d6530a5f2f9aa  d1\bd2001-10-30d1.LOG
+b8cb813bee507d7537ae1af62a776e02  d1\bd2001-10-30d1t01.flac
+d69caf0df71adc9dc020b2c307bedbc9  d1\bd2001-10-30d1t02.flac
+d0d92137a1c74ef12771802642151d7f  d1\bd2001-10-30d1t03.flac
+85017dee807d6b681cb80feba19bcb07  d1\bd2001-10-30d1t04.flac
+86a5d2c5e81a00816887b53ca40db17c  d1\bd2001-10-30d1t05.flac
+a630d9c2cc2bad9a37332d3a9cb2f06b  d1\bd2001-10-30d1t06.flac
+42da04941358cbb55048cc9f0944706d  d1\bd2001-10-30d1t07.flac
+92e7ec86a83381b5a199e16d847cbaba  d1\bd2001-10-30d1t08.flac
+948b2382cc69f2b2ee5c6564fbb195a2  d1\bd2001-10-30d1t09.flac
+6355454f676bc114afd02d5a079ff331  d1\bd2001-10-30d1t10.flac
+a62bfc845faa23e51858082a05408fca  d1\bd2001-10-30d1t11.flac
+03cdcd19580ba89b0743a61658775ae8  d1\bd2001-10-30d1t12.flac
+736a5f4b87263614930a1dd02429802d  d1\bd2001-10-30d1t13.flac
+69a302b5a5245bec6ef782b68725f6df  d1\d1.shntool.txt
+0d40e490a8bb7c4517929979f538a662  d1t03.PNG
+dd4a455ca5080891435324b154bd1f9c  d2\bd2001-10-30d2.LOG
+c3d550f8b50a92ef2ac9f0df12aa8f9b  d2\bd2001-10-30d2t01.flac
+ce561a646bdd0606ba416acf00d18baa  d2\bd2001-10-30d2t02.flac
+e318b587e795e3e5ef2ee6e6d93d6d32  d2\bd2001-10-30d2t03.flac
+2234e50d5882b03bbbd187f194a55992  d2\bd2001-10-30d2t04.flac
+3204f8ddaf374f3f35ae2bc73aacec97  d2\bd2001-10-30d2t05.flac
+c297102db1d490874c6ad55e5c475694  d2\bd2001-10-30d2t06.flac
+590a671f27aadc781f6a6bf23b00a8d1  d2\bd2001-10-30d2t07.flac
+856653158052a348131137b35bf558d9  d2\bd2001-10-30d2t08.flac
+3b01f8a347a125f66e79af8c6bf63d67  d2\bd2001-10-30d2t09.flac
+fde0261d3e51a601acddb09d40e591b7  d2\d2.shntool.txt
+a0040e5173aa12238040a1b5fe29179b  d2t09.PNG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-30-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd2001-10-30d1t01.flac:85612dfe1e59ba72870aabb9832dee15
+bd2001-10-30d1t02.flac:d0a8b67966f8efcc45dd65f0e6e8ac47
+bd2001-10-30d1t03.flac:0ffb72fea6f063039b8389aca23b3f33
+bd2001-10-30d1t04.flac:a0f24aa831f8d5094131837e0e0bee09
+bd2001-10-30d1t05.flac:2178c9f9a343a56033ba7fd4850ec6fb
+bd2001-10-30d1t06.flac:bfddf97925920f5800d295e12b79c332
+bd2001-10-30d1t07.flac:40ba2cca8a678a1b290846aa63b70536
+bd2001-10-30d1t08.flac:c712a6d4baa2d9cbe5ad99bbbc420028
+bd2001-10-30d1t09.flac:723859450a58bd4827738286df4cd14f
+bd2001-10-30d1t10.flac:c92d0528b2e47cc0c1fa1bc30865446b
+bd2001-10-30d1t11.flac:30cc9acdd3d3ca2e7a321cb19f80540f
+bd2001-10-30d1t12.flac:a50bd21a52351bd501d8a3eea7b18e05
+bd2001-10-30d1t13.flac:dbeeb545461f94bf386f2f5879acc4a3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-30-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd2001-10-30d2t01.flac:085808f0d8ecdefd0b6c342b4c1890c5
+bd2001-10-30d2t02.flac:9ef25ccbd33b6648daa7b43f871ca114
+bd2001-10-30d2t03.flac:6388c4c6eaa2dd7a400114dd19d9cecb
+bd2001-10-30d2t04.flac:5715380d5b7d12be0e3216e7584c5379
+bd2001-10-30d2t05.flac:96ae1ed8a940db0fa9ea8f69455c6f3a
+bd2001-10-30d2t06.flac:1d03a19aca504e18c9317546e1784adb
+bd2001-10-30d2t07.flac:b0deb0f3ad7fca3da2b8b330d9302029
+bd2001-10-30d2t08.flac:2612d174cf8a5d76f8770bd7c504fd4e
+bd2001-10-30d2t09.flac:10161e2de4eb1494807b8aa993f0e4e7
+=================== 
+=================== 
+=================== 
+=== shntool for: bd01-10-30-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.27       42046748 B   ---   --   ---xx   flac  0.5789  bd2001-10-30d1t01.flac
+     3:42.65       39313724 B   ---   --   ---xx   flac  0.4686  bd2001-10-30d1t02.flac
+     7:54.37       83700668 B   ---   --   ---xx   flac  0.4763  bd2001-10-30d1t03.flac
+     3:11.45       33798284 B   ---   --   ---xx   flac  0.5173  bd2001-10-30d1t04.flac
+     6:14.18       66015980 B   ---   --   ---xx   flac  0.5718  bd2001-10-30d1t05.flac
+     6:43.39       71180972 B   ---   --   ---xx   flac  0.5605  bd2001-10-30d1t06.flac
+     5:42.21       60378236 B   ---   --   ---xx   flac  0.5847  bd2001-10-30d1t07.flac
+     5:40.56       60107756 B   ---   --   ---xx   flac  0.4425  bd2001-10-30d1t08.flac
+     7:29.09       79224812 B   ---   --   ---xx   flac  0.4884  bd2001-10-30d1t09.flac
+     4:03.61       43008716 B   ---   --   ---xx   flac  0.4983  bd2001-10-30d1t10.flac
+     5:13.52       55335548 B   ---   --   ---xx   flac  0.5633  bd2001-10-30d1t11.flac
+     6:09.56       65223356 B   ---   --   ---xx   flac  0.6226  bd2001-10-30d1t12.flac
+     6:17.37       66589868 B   ---   --   ---xx   flac  0.5983  bd2001-10-30d1t13.flac
+    72:21.73      765924668 B                            0.5371  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd01-10-30-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:24.65       57306524 B   ---   --   ---xx   flac  0.6438  bd2001-10-30d2t01.flac
+     7:18.00       77263244 B   ---   --   ---xx   flac  0.6431  bd2001-10-30d2t02.flac
+     6:54.21       73079036 B   ---   --   ---xx   flac  0.6179  bd2001-10-30d2t03.flac
+     7:04.57       74927708 B   ---   --   ---xx   flac  0.6643  bd2001-10-30d2t04.flac
+     4:31.25       47863244 B   ---   --   ---xx   flac  0.5046  bd2001-10-30d2t05.flac
+     7:12.07       76221308 B   ---   --   ---xx   flac  0.6469  bd2001-10-30d2t06.flac
+     5:43.39       60596972 B   ---   --   ---xx   flac  0.5647  bd2001-10-30d2t07.flac
+     6:33.69       69487532 B   ---   --   ---xx   flac  0.6400  bd2001-10-30d2t08.flac
+     6:39.47       70494188 B   ---   --   ---xx   flac  0.6187  bd2001-10-30d2t09.flac
+    57:22.30      607239756 B                            0.6213  (9 files)
+=================== 
+=================== 
+=================== 

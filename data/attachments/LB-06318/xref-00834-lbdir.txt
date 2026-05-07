@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-10-28-c.flacf 
+=================== 
+=================== 
+=================== 
+3d735f135151e69130f04a7f41f11a60  10-28-97 Athens shn disk 1\10-28-97 Athens shn disk 1.md5
+c21846c8cb4bff1662610a4ce86f9982  10-28-97 Athens shn disk 1\shntoolresults.txt
+c2aa36fb7ec50d4a9663f49e6744edde  10-28-97 Athens shn disk 1\Track01-fixed.shn
+f927b817df1d372dda6974b48c25acc0  10-28-97 Athens shn disk 1\Track02-fixed.shn
+c058609948fe28bf5339ec579db6af4c  10-28-97 Athens shn disk 1\Track03-fixed.shn
+54c2b0e9746be79dc59d74a9332fae85  10-28-97 Athens shn disk 1\Track04-fixed.shn
+39c4fd1d1e4d750b3dd391d72e5bd3ba  10-28-97 Athens shn disk 1\Track05-fixed.shn
+54ae920eb0dd924ddfe6873d3df57854  10-28-97 Athens shn disk 1\Track06-fixed.shn
+860d070591b9714fb493440598afadef  10-28-97 Athens shn disk 1\Track07-fixed.shn
+52644c5ade22c5588042dd6490d7dfa8  10-28-97 Athens shn disk 1\Track08-fixed.shn
+602e5fb9abbee201281d0b1be003fa2c  10-28-97 Athens shn disk 1\Track09-fixed.shn
+96cbc93aa59415976fe25b1da4454b80  10-28-97 Athens shn disk 1\Track10-fixed.shn
+b9e9ec3bad5723c20aea64c6adefa0c9  10-28-97 Athens shn disk 1\Track11-fixed.shn
+9f42d5a22e83849978634416ec7daae4  10-28-97 Athens shn disk 2\10-28-97 Athens shn disk 2.md5
+46f3e44e305ce8a9470176f91c52474f  10-28-97 Athens shn disk 2\shntoolresults.txt
+bb1e3215b8c4d8af6e325878a9cea9b7  10-28-97 Athens shn disk 2\Track01.shn
+87d95f262f3ceabd5e728b3a3c936f2b  10-28-97 Athens shn disk 2\Track02.shn
+d5ec8a3235b53d83ba668c93ceeea4f5  10-28-97 Athens shn disk 2\Track03.shn
+602793d0a773a1e13ee4cae5bab831b8  10-28-97 Athens shn disk 2\Track04.shn
+28e6534f0ec4f9b96f8f16cbc63e8d3e  10-28-97 Athens shn disk 2\Track05.shn
+84c46564356d1feba627c32c4cf98371  1997-10-28-Athens-info.txt
+a18cfb024239211e8a6f82c659120baa  1997-10-28-Athens.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-10-28-c.flacf\10-28-97 Athens shn disk 1 
+=================== 
+=================== 
+=================== 
+f0a9ce731b90c6e65a852d7519850de0  [shntool]  Track01-fixed.wav
+c397672f0e6c94afd9b629f64d807a20  [shntool]  Track02-fixed.wav
+3c3e24aa744d2cb34680bf9540a46e30  [shntool]  Track03-fixed.wav
+2a13aa7d2592fee9100e0187c3fb305f  [shntool]  Track04-fixed.wav
+0cb6b46d2d2353d3e668f1c7a0f35e73  [shntool]  Track05-fixed.wav
+dcaf65a4a593b53a790d755d9337c67e  [shntool]  Track06-fixed.wav
+63242df19e8a658a8a2d2fc03098ac4e  [shntool]  Track07-fixed.wav
+b88252a870d3626e8329a5325d914da7  [shntool]  Track08-fixed.wav
+6056abb9e9ca7f5777be93c858d9ebf0  [shntool]  Track09-fixed.wav
+1879cd0d02f442367a9b506ae22bcfcf  [shntool]  Track10-fixed.wav
+9f9ff04c24e8cbd26c800523052b6701  [shntool]  Track11-fixed.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-10-28-c.flacf\10-28-97 Athens shn disk 2 
+=================== 
+=================== 
+=================== 
+6c06ae7611e31ed6cde30799eaaac802  [shntool]  Track01.wav
+7a8a5bda910c7b38c74007fbf4ae2f67  [shntool]  Track02.wav
+e62693776abe8d6de236b82e4b7a10ec  [shntool]  Track03.wav
+1c93a52d66f40f4527736a8527a0056f  [shntool]  Track04.wav
+3b77c09445506e225988ec96e2a65a7d  [shntool]  Track05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-10-28-c.flacf\10-28-97 Athens shn disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:32.20       58611884 B   ---   --   ---xx    shn  0.7946  Track01-fixed.shn
+     5:26.03       57513500 B   ---   --   ---xx    shn  0.7626  Track02-fixed.shn
+     6:48.14       72004172 B   ---   --   ---xx    shn  0.7758  Track03-fixed.shn
+     8:07.56       86038556 B   ---   --   ---xx    shn  0.7584  Track04-fixed.shn
+     6:28.27       68506748 B   ---   --   ---xx    shn  0.7905  Track05-fixed.shn
+     7:39.45       81073484 B   ---   --   ---xx    shn  0.8352  Track06-fixed.shn
+     3:46.64       40016972 B   ---   --   ---xx    shn  0.7246  Track07-fixed.shn
+     7:58.58       84455660 B   ---   --   ---xx    shn  0.8231  Track08-fixed.shn
+     5:46.72       61203788 B   ---   --   ---xx    shn  0.7510  Track09-fixed.shn
+     7:07.53       75447500 B   ---   --   ---xx    shn  0.7692  Track10-fixed.shn
+     6:31.53       69097100 B   ---   --   ---xx    shn  0.7802  Track11-fixed.shn
+    71:14.15      753969364 B                            0.7823  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-10-28-c.flacf\10-28-97 Athens shn disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:30.08       68814860 B   ---   --   ---xx    shn  0.8439  Track01.shn
+     9:55.41      105054476 B   ---   --   ---xx    shn  0.8024  Track02.shn
+     6:40.74       70734092 B   ---   --   ---xx    shn  0.7438  Track03.shn
+     5:27.13       57713420 B   ---   --   ---xx    shn  0.7262  Track04.shn
+     5:32.48       58677740 B   ---   --   ---xx    shn  0.8080  Track05.shn
+    34:06.34      360994588 B                            0.7876  (5 files)
+=================== 
+=================== 
+=================== 

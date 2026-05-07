@@ -1,0 +1,8 @@
+Bob Dylan, 3/12/01, Nagoya, Japan, Civic Assembly Hall, 2CDR
+
+LB-5337, (57min+61min), Source:, "Hide" recording, Equipment:, COS-11PTs > CSP161(Pre Amp) > TCD-D100 (16bit/44.1kHz), Lineage:, DAT master > DTC-ZE700 > RPD-500 > CD-Rs, > PC(WAV) > TLH > FLAC (level 6); bittorrent download 08/07; levels low; same recording as LB-2602 with similar wav and spectral views except levels lower on this; (did not listen to all of this)
+
+Disc1:, 01.Somebody Touched Me (acoustic), 02.The Lonesome Death Of Hattie Carroll (acoustic), 03.Mama, You Been On My Mind (acoustic), 04.Maggie's Farm, 05.I Don't Believe You, 06.I'll Be Your Baby Tonight, 07.Visions Of Johanna (acoustic), 08.One Too Many Mornings (acoustic), 09.Tangled Up In Blue (acoustic)(Bob on harp), Disc2:, 01.I'll Remember You, 02.Cold Irons Bound, 03.Rainy Day Women #12 & 35, (encore), 04.Love Sick, 05.Like A Rolling Stone, 06.If Dogs Run Free (acoustic), 07.All Along The Watchtower, 08.Knockin' On Heaven's Door (acoustic), 09.Highway 61 Revisited, 10.Blowin' In The Wind (acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

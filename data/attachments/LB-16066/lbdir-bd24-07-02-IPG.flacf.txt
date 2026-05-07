@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== md5 for: bd24-07-02-IPG.flacf
+===================
+===================
+===================
+9b68475d6aa44f0fdac5ea9a5d74beaf *01 - [introduction].flac
+4be6a369d70340b7d8320500adc90da5 *02 - Highway 61 Revisited.flac
+70ddb32a84235dc760a23a9a016df84c *03 - Shooting Star.flac
+6e242c528b653dc38a1e241f84784f69 *04 - Love Sick.flac
+b472bb8574e5dd66dd2958d9fe6d134a *05 - Little Queenie.flac
+951a330cec851290e85a831cde1ffa08 *06 - Mr. Blue.flac
+d20a3eb43697a5c6ce080ab5bcad4861 *07 - Early Roman Kings.flac
+0890c5783da7811e047592146721f0c3 *08 - Can't Wait.flac
+522428d08a2004a0ae618656d1a02fbb *09 - Under The Red Sky.flac
+9ada6c12cbc2e784fc95a00ef2367e8c *10 - Things Have Changed.flac
+5dd298f468c444203cb55672d7980c2a *11 - Stella Blue.flac
+ed02a5745a9eab9909e7d565b0f138ad *12 - Six Days On The Road.flac
+3d1b8ac06dd60f195ea7e2b79d89160c *13 - Soon After Midnight.flac
+445e4c7c0d144ec8bb3368613cfd4c04 *14 - Ballad Of A Thin Man.flac
+c8c53d041a4135267102c4c2c1a0a2e3 *15 - Simple Twist Of Fate.flac
+9f8844c5a89f777d5595864022975dad *16 - I'll Be Your Baby Tonight.flac
+a69a7a41e8c5faed4716d97ab8225e34 *Bob Dylan - Mansfield, MA - July 2, 2024 (IPG-450).ffp
+5720880d52f4bd0c1da92d9d86d50c4a *Bob Dylan - Mansfield, MA - July 2, 2024 (IPG-450).md5
+2c4b860b57dfda6b752f6cd73485d5a7 *Bob Dylan - Mansfield, MA - July 2, 2024 (IPG-450).txt
+===================
+===================
+===================
+=== ffp for: bd24-07-02-IPG.flacf
+===================
+===================
+===================
+01 - [introduction].flac:f5fbfaf40f511b7e9fc26d8c1065d101
+02 - Highway 61 Revisited.flac:2734113bd5d1970afa435b888f6ae7ba
+03 - Shooting Star.flac:2ce6b9b1b04cf110b4d26121b065a455
+04 - Love Sick.flac:303446442910d2338a9fb4235ba380a9
+05 - Little Queenie.flac:bfbbe02f4f8cf197085977cc3f2d5418
+06 - Mr. Blue.flac:1146f787bb69379cc348339fa71207df
+07 - Early Roman Kings.flac:7c5cadc0cdd0eedf95bd283f05eef1f2
+08 - Can't Wait.flac:b21d4a21181f6ec2c2991bdd07e57aa7
+09 - Under The Red Sky.flac:b9afffdcff1f05e4e478ba1bc6b0951c
+10 - Things Have Changed.flac:5a5ccef5080ebd7d2661428202c1e282
+11 - Stella Blue.flac:c293b81a344e744cbcb3e085109c5bc1
+12 - Six Days On The Road.flac:16842d9238082f221dd4fc722ac17f9d
+13 - Soon After Midnight.flac:c94748587354056b0e2c9fbb3e48444a
+14 - Ballad Of A Thin Man.flac:56062e472fc548dd0dfe7ce27aed0e53
+15 - Simple Twist Of Fate.flac:7245f4f02fd2e9fb87c6cb6602efa31b
+16 - I'll Be Your Baby Tonight.flac:a69d9748c24dc5d4243332a0ae264475
+===================
+===================
+===================
+=== shntool len for: bd24-07-02-IPG.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:50.38        8909420 B   ---   --   ---xx   flac  0.6106  01 - [introduction].flac
+     4:57.11       52416716 B   ---   --   ---xx   flac  0.6761  02 - Highway 61 Revisited.flac
+     4:39.58       49352060 B   ---   --   ---xx   flac  0.6285  03 - Shooting Star.flac
+     4:58.65       52720124 B   ---   --   ---xx   flac  0.6059  04 - Love Sick.flac
+     3:34.03       37756700 B   ---   --   ---xx   flac  0.6586  05 - Little Queenie.flac
+     2:59.05       31587404 B   ---   --   ---xx   flac  0.5668  06 - Mr. Blue.flac
+     5:43.06       60519356 B   ---   --   ---xx   flac  0.5933  07 - Early Roman Kings.flac
+     3:53.63       41249420 B   ---   --   ---xx   flac  0.5704  08 - Can't Wait.flac
+     4:42.03       49751900 B   ---   --   ---xx   flac  0.6017  09 - Under The Red Sky.flac
+     6:13.73       65968940 B   ---   --   ---xx   flac  0.6299  10 - Things Have Changed.flac
+     5:25.28       57395900 B   ---   --   ---xx   flac  0.5812  11 - Stella Blue.flac
+     5:09.25       54566444 B   ---   --   ---xx   flac  0.6357  12 - Six Days On The Road.flac
+     4:43.20       49968284 B   ---   --   ---xx   flac  0.5959  13 - Soon After Midnight.flac
+     6:13.65       65950124 B   ---   --   ---xx   flac  0.6198  14 - Ballad Of A Thin Man.flac
+     4:42.10       49768364 B   ---   --   ---xx   flac  0.5966  15 - Simple Twist Of Fate.flac
+     4:47.16       50664476 B   ---   --   ---xx   flac  0.6297  16 - I'll Be Your Baby Tonight.flac
+    73:33.39      778545632 B                            0.6137  (16 files)
+===================
+===================
+===================

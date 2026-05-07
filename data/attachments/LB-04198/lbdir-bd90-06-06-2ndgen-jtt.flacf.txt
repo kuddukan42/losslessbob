@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-06-06-2ndgen-jtt.flacf 
+=================== 
+=================== 
+=================== 
+70728526b7c4aeb84b8be30d67305e2f  bd90-06-06-2ndgen-jtt-LB-4198.txt
+cdfc75152f39de6b12f50a11f153737a  Disc One\BD_Toronto060690_Disc01Track01.flac
+67a24327be636e135ae910240ce9c253  Disc One\BD_Toronto060690_Disc01Track02.flac
+2d9c20471360423fb8ffe707d5804b7a  Disc One\BD_Toronto060690_Disc01Track03.flac
+e5ae66f7c7c54a6629dc6045e9c67717  Disc One\BD_Toronto060690_Disc01Track04.flac
+48c12f6c12d8bf971cbdeabbb188d32e  Disc One\BD_Toronto060690_Disc01Track05.flac
+0c387d62afc8eb112f620bfc038ac09e  Disc One\BD_Toronto060690_Disc01Track06.flac
+790a7595fe23a9ec5f56402ae63b788d  Disc One\BD_Toronto060690_Disc01Track07.flac
+555b23a3d4b4bb6b6a27107f05e079be  Disc One\BD_Toronto060690_Disc01Track08.flac
+8bd0fda02383738a7a50c28901af2411  Disc One\BD_Toronto060690_Disc01Track09.flac
+eca8d0ef7fd59665fc2478b65961857b  Disc One\BD_Toronto060690_Disc01Track10.flac
+c9059c89a0bafdad87eee02e09a607ff  Disc One\BD_Toronto060690_Disc01Track11.flac
+05821e59ad3d7ca099b3574dda723497  Disc One\BD_Toronto060690_Disc01Track12.flac
+b39509ed011da25891a47c2b9b4ae60f  Disc Two\BD_Toronto060690_Disc02Track01.flac
+370497f2c7ef4de67ed4a4fd72523239  Disc Two\BD_Toronto060690_Disc02Track02.flac
+4f8acfbd3888b05d5b85b97baf96f855  Disc Two\BD_Toronto060690_Disc02Track03.flac
+d31cc89861a18d4784157471bec3656a  Disc Two\BD_Toronto060690_Disc02Track04.flac
+39875161e3e05ec435e95d8aa7b03676  Disc Two\BD_Toronto060690_Disc02Track05.flac
+3941ba2e674fc0a62cbc77fac039b3c4  Disc Two\BD_Toronto060690_Disc02Track06.flac
+ff37b90630ca1674c43a773486a8068e  Disc Two\BD_Toronto060690_Disc02Track07.flac
+cb9a39911556ff3efc3881015b870147  Disc Two\BD_Toronto060690_Disc02Track08.flac
+8957dc5b8ca459e9bf7e05ddc12cd353  Disc Two\BD_Toronto060690_Disc02Track09.flac
+e8fb0641a2f8ce5b9836b6abff876181  Dylan - Toronto 06.06.1990 Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-06-2ndgen-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+BD_Toronto060690_Disc01Track01.flac:65ae21d44eecd1d682932788834d6e45
+BD_Toronto060690_Disc01Track02.flac:e5ba109e8af360ebc7ed7fa40903f03b
+BD_Toronto060690_Disc01Track03.flac:b59b5fcdb2de29eaf0c13af39ca65f68
+BD_Toronto060690_Disc01Track04.flac:4e89147bc7f12ccc8f6dd2f749984edf
+BD_Toronto060690_Disc01Track05.flac:73f9f25f2672225f85d66fa1fb0093b8
+BD_Toronto060690_Disc01Track06.flac:e671a26055f9b89bcf88809480ba68fd
+BD_Toronto060690_Disc01Track07.flac:6ae7f14fb70becc4caa92fd4a0eb78a6
+BD_Toronto060690_Disc01Track08.flac:a3833b108d39ee2f3d62d186e2f7318e
+BD_Toronto060690_Disc01Track09.flac:7a9caf6571c06206e96c1fa176ba1db1
+BD_Toronto060690_Disc01Track10.flac:3c68625b816e3ac777c58a37486fdd7b
+BD_Toronto060690_Disc01Track11.flac:cdd99ec6c6964da553511f3fdbdffb87
+BD_Toronto060690_Disc01Track12.flac:abbec12734a17750e8be7ce235000d82
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-06-2ndgen-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+BD_Toronto060690_Disc02Track01.flac:205c0e32f19509a7da4dd9877931e5ee
+BD_Toronto060690_Disc02Track02.flac:48054084082cb395ed15130eba33b492
+BD_Toronto060690_Disc02Track03.flac:b0edd90baa72c4432bbd5f87f57d941f
+BD_Toronto060690_Disc02Track04.flac:c8e9b0c2440e8a0ca0230a07ba9ed2aa
+BD_Toronto060690_Disc02Track05.flac:92c53875781687d31bc219658469a840
+BD_Toronto060690_Disc02Track06.flac:1d7dae11c445ed0ef4bf82e5107b31e3
+BD_Toronto060690_Disc02Track07.flac:ba747bfc1029989998cc499791c66649
+BD_Toronto060690_Disc02Track08.flac:dd58f9d2fa7bef7eee339494c68bf172
+BD_Toronto060690_Disc02Track09.flac:9d089bb14a5fa01e4d73d6d7317dd30a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-06-2ndgen-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.69       45497132 B   ---   --   ---xx   flac  0.6197  BD_Toronto060690_Disc01Track01.flac
+     4:11.32       44351708 B   ---   --   ---xx   flac  0.5945  BD_Toronto060690_Disc01Track02.flac
+     5:34.35       58999964 B   ---   --   ---xx   flac  0.6252  BD_Toronto060690_Disc01Track03.flac
+     7:16.33       76988060 B   ---   --   ---xx   flac  0.6348  BD_Toronto060690_Disc01Track04.flac
+     5:22.15       56836124 B   ---   --   ---xx   flac  0.6163  BD_Toronto060690_Disc01Track05.flac
+     4:02.03       42695900 B   ---   --   ---xx   flac  0.6394  BD_Toronto060690_Disc01Track06.flac
+     5:21.63       56772620 B   ---   --   ---xx   flac  0.6279  BD_Toronto060690_Disc01Track07.flac
+     4:13.49       44744492 B   ---   --   ---xx   flac  0.6018  BD_Toronto060690_Disc01Track08.flac
+     5:46.19       61079132 B   ---   --   ---xx   flac  0.5989  BD_Toronto060690_Disc01Track09.flac
+     3:58.52       42105548 B   ---   --   ---xx   flac  0.5690  BD_Toronto060690_Disc01Track10.flac
+     4:46.62       50596268 B   ---   --   ---xx   flac  0.5529  BD_Toronto060690_Disc01Track11.flac
+     5:59.33       63405260 B   ---   --   ---xx   flac  0.5445  BD_Toronto060690_Disc01Track12.flac
+    60:51.15      644072208 B                            0.6028  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-06-2ndgen-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:36.45       38208284 B   ---   --   ---xx   flac  0.5891  BD_Toronto060690_Disc02Track01.flac
+     5:31.43       58489580 B   ---   --   ---xx   flac  0.5719  BD_Toronto060690_Disc02Track02.flac
+     2:30.49       26575292 B   ---   --   ---xx   flac  0.5478  BD_Toronto060690_Disc02Track03.flac
+     3:25.34       36242012 B   ---   --   ---xx   flac  0.5984  BD_Toronto060690_Disc02Track04.flac
+     5:01.50       53214044 B   ---   --   ---xx   flac  0.5270  BD_Toronto060690_Disc02Track05.flac
+     5:10.10       54707564 B   ---   --   ---xx   flac  0.5665  BD_Toronto060690_Disc02Track06.flac
+     6:32.45       69254684 B   ---   --   ---xx   flac  0.5879  BD_Toronto060690_Disc02Track07.flac
+     6:08.00       64915244 B   ---   --   ---xx   flac  0.5742  BD_Toronto060690_Disc02Track08.flac
+     4:43.07       49937708 B   ---   --   ---xx   flac  0.5834  BD_Toronto060690_Disc02Track09.flac
+    42:39.58      451544412 B                            0.5721  (9 files)
+=================== 
+=================== 
+=================== 

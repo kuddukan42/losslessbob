@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-04-alternate-lk.flacf 
+=================== 
+=================== 
+=================== 
+febf74b7353de75c4b80ac4bc96b1c83  79 11 04 d1 t01.shn
+3a6d13e77f11ca5ac407ec5c340a23e3  79 11 04 d1 t02.shn
+b441c0349abd2d3301b0bb98fbdfb914  79 11 04 d1 t03.shn
+c4d8cb64ea95375cc038b534f04db1fd  79 11 04 d1 t04.shn
+cb6c2e869ac9e2559b16258ed6c4fbd7  79 11 04 d1 t05.shn
+e01d40c95a74b77b3504b670e28f114e  79 11 04 d1 t06.shn
+b0f4025e45cdcebbc7d994e21d73e97a  79 11 04 d1 t07.shn
+3ccdf65b9462f52b76fd22ef4e46312c  79 11 04 d1 t08.shn
+0e850a6d4e54d53f797a94124616315d  79 11 04 d1 t09.shn
+d9aeb8506adde093bb748bbdfbabf4a7  79 11 04 d1 t10.shn
+f92ac4fe059fb7a18241f6935a1e46a8  79 11 04 d2 t01.shn
+ae1ccef2fd88573f79147be57276057a  79 11 04 d2 t02.shn
+0282b2aad01a06c3b28619197ef457fb  79 11 04 d2 t03.shn
+e8c4edec17d3a7f5604dae3b92cb4e11  79 11 04 d2 t04.shn
+b21266ef1475a274ad2a0eb6cc25ddd0  79 11 04 d2 t05.shn
+f1c00f55118154af0338d9d86557c7c4  79 11 04 d2 t06.shn
+ea75c76dd2472154735d44e206db467a  79 11 04 d2 t07.shn
+fb58e49c32cd6c949ba8679ed67bca2b  79 11 04 d2 t08.shn
+ca3f419be2d15a42eaed1996c71f328a  79 11 04.md5
+47abf070f2c6c9f1de51139e497df486  Info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd79-11-04-alternate-lk.flacf 
+=================== 
+=================== 
+=================== 
+302a3e6edbc3f46671907b67441ce0cf  [shntool]  79_11_04_d1_t01.wav
+92e6cb6a257f3efc9dae7776915d0aab  [shntool]  79_11_04_d1_t02.wav
+db60f94b568d4dc6ba136194e381d7b7  [shntool]  79_11_04_d1_t03.wav
+d6a737de2cb02e4cd5c36d5eed81107d  [shntool]  79_11_04_d1_t04.wav
+2b1267e96680339ae9caeefb1e0b16d7  [shntool]  79_11_04_d1_t05.wav
+cd9a7a6bf2b641334fbe2de4f370b276  [shntool]  79_11_04_d1_t06.wav
+620cb1448f1daa6f3fbdc46aeb4e0d0b  [shntool]  79_11_04_d1_t07.wav
+832c8a11f2652a939c12b99fccdcc93c  [shntool]  79_11_04_d1_t08.wav
+525c1e3033b449b8d5a33d39672f066c  [shntool]  79_11_04_d1_t09.wav
+b66605d7d60c7e2d55394b30bb553554  [shntool]  79_11_04_d1_t10.wav
+3ca5842acfe0c500f9eae9fc0928ce69  [shntool]  79_11_04_d2_t01.wav
+c3d511fe75f61b05ee1a026f714b5ef3  [shntool]  79_11_04_d2_t02.wav
+9f0a138448eca5e2f0018a395894f3a1  [shntool]  79_11_04_d2_t03.wav
+69be28a1a99b0027916cbef03d0745c2  [shntool]  79_11_04_d2_t04.wav
+70197cb1ccbcd71f308af5b2d1e8aa7e  [shntool]  79_11_04_d2_t05.wav
+0293475c379cb36aad1e3ba832c2ea83  [shntool]  79_11_04_d2_t06.wav
+df0d64a6619b6f67926fb72303b69952  [shntool]  79_11_04_d2_t07.wav
+1fa3771fad516e851225407ff222ed4e  [shntool]  79_11_04_d2_t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-04-alternate-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:35.24       69734492 B   ---   --   ---xx    shn  0.6144  79 11 04 d1 t01.shn
+     5:11.05       54872204 B   ---   --   ---xx    shn  0.5079  79 11 04 d1 t02.shn
+     5:52.14       62125772 B   ---   --   ---xx    shn  0.6051  79 11 04 d1 t03.shn
+     4:58.20       52614284 B   ---   --   ---xx    shn  0.4814  79 11 04 d1 t04.shn
+     5:40.68       60135980 B   ---   --   ---xx    shn  0.5362  79 11 04 d1 t05.shn
+     5:56.27       62861948 B   ---   --   ---xx    shn  0.5954  79 11 04 d1 t06.shn
+     6:44.33       71343260 B   ---   --   ---xx    shn  0.5985  79 11 04 d1 t07.shn
+     5:51.38       62005820 B   ---   --   ---xx    shn  0.5116  79 11 04 d1 t08.shn
+     4:51.74       51506492 B   ---   --   ---xx    shn  0.5024  79 11 04 d1 t09.shn
+     4:58.19       52611932 B   ---   --   ---xx    shn  0.5928  79 11 04 d1 t10.shn
+     4:22.18       46259180 B   ---   --   ---xx    shn  0.5327  79 11 04 d2 t01.shn
+     4:31.63       47952620 B   ---   --   ---xx    shn  0.6448  79 11 04 d2 t02.shn
+     4:30.59       47766812 B   ---   --   ---xx    shn  0.5147  79 11 04 d2 t03.shn
+     5:28.50       57976844 B   ---   --   ---xx    shn  0.5466  79 11 04 d2 t04.shn
+     6:33.54       69452252 B   ---   --   ---xx    shn  0.6014  79 11 04 d2 t05.shn
+     4:20.22       45915788 B   ---   --   ---xx    shn  0.5609  79 11 04 d2 t06.shn
+     5:41.23       60206540 B   ---   --   ---xx    shn  0.6446  79 11 04 d2 t07.shn
+     7:26.34       78754412 B   ---   --   ---xx    shn  0.5392  79 11 04 d2 t08.shn
+    99:35.45     1054096632 B                            0.5649  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-25-Avignon-d.flacf 
+=================== 
+=================== 
+=================== 
+ced65639a4358104a2e978159e1fc226  Avignon 25.07.1981 (Moonlight) - F In.jpg
+0744dd695b8c4a995e36b8d4400faf21  Avignon 25.07.1981 (Moonlight) - F.jpg
+2e3b7802b18af661e8f976f0574a83ea  Avignon 25.07.1981 (Moonlight) - Liner.jpg
+d95d762b7dc9c842d537b2e9604a4aff  Avignon 25.07.1981 (Moonlight) - R.jpg
+72aa6b09a86f299e789b2db3d1183441  BOB DYLAN - Avignon July 25th 1981_Info.txt
+67790b7f8cdace501706c19f4f0a019a  Disc One\Dylan - Avignon Disc01Track01.flac
+22c8aa18c677200616018a983dc14c18  Disc One\Dylan - Avignon Disc01Track02.flac
+d9a80e6b4cbedbca380614aa94321832  Disc One\Dylan - Avignon Disc01Track03.flac
+e9f7c9fe5b8a122b2c71b6b3a074335c  Disc One\Dylan - Avignon Disc01Track04.flac
+cbc5b926c6e321f5d4255292127c69b9  Disc One\Dylan - Avignon Disc01Track05.flac
+ef79ca119c7560936cb3bd20d7a99c07  Disc One\Dylan - Avignon Disc01Track06.flac
+632abdd0248e3c504192a8601a9d31a9  Disc One\Dylan - Avignon Disc01Track07.flac
+e15206e8272452746385971388818fa2  Disc One\Dylan - Avignon Disc01Track08.flac
+a7d7f97173f119fba3524f076c2ac9ad  Disc One\Dylan - Avignon Disc01Track09.flac
+5f82f37d74f9e92f65ee4d885b935587  Disc One\Dylan - Avignon Disc01Track10.flac
+d0f0f1fd33b9e291234b3711f2e6b2da  Disc One\Dylan - Avignon Disc01Track11.flac
+0a03b767cc329871d74334db01dca4dc  Disc One\Dylan - Avignon Disc01Track12.flac
+cba39c8992293efab8f9f98ec76f25e6  Disc One\Dylan - Avignon Disc01Track13.flac
+b179f995e4cdb601b881952a82740d00  Disc One\Dylan - Avignon Disc01Track14.flac
+7379892121250f485fa05766d0f9db27  Disc Two\Dylan - Avignon Disc02Track01.flac
+8f3e86cddab956c54237f5ddf4a68a66  Disc Two\Dylan - Avignon Disc02Track02.flac
+345c0776146018bda7016a873c9d7c1b  Disc Two\Dylan - Avignon Disc02Track03.flac
+5087abe076907f7fe37837ad10cc8fb5  Disc Two\Dylan - Avignon Disc02Track04.flac
+82c12340cd5136a6b39ed9dc3cd67962  Disc Two\Dylan - Avignon Disc02Track05.flac
+d8bf2d7fc15bbbee98080f7d3b0b7527  Disc Two\Dylan - Avignon Disc02Track06.flac
+fd5a03afb7ec24528fa2b0672f9e6b0c  Disc Two\Dylan - Avignon Disc02Track07.flac
+3808418910270e4a55f7a795fb5b8226  Disc Two\Dylan - Avignon Disc02Track08.flac
+2e363d93aa5921d5a90ec2251b036dd8  Disc Two\Dylan - Avignon Disc02Track09.flac
+09b8fd097257a6f42d8fe45c7d2d28da  Disc Two\Dylan - Avignon Disc02Track10.flac
+7d5dd4fe73c57c6e16d48b79598397e1  Disc Two\Dylan - Avignon Disc02Track11.flac
+597b982ec0e68e2a6c351d1af029e2ea  Disc Two\Dylan - Avignon Disc02Track12.flac
+8a7460c296d2a2afc861108910917794  Disc Two\Dylan - Avignon Disc02Track13.flac
+abec0cc39cc337da697d177d8cbf5c5c  Dylan - Avignon July 25th 1981.md5
+e503588974f8e7bce95af0fd1144b919  Dylan - Avignon July 25th 1981.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-25-Avignon-d.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - Avignon Disc01Track01.flac:1efb5bb5fdbce99ca6a3b2cf5f3a1d44
+Dylan - Avignon Disc01Track02.flac:bdc57776959f85d8406b2b089a56388f
+Dylan - Avignon Disc01Track03.flac:af6e0b2ee8571c75c875534e1363062a
+Dylan - Avignon Disc01Track04.flac:70e7909862b4db5c4a5ddda012214886
+Dylan - Avignon Disc01Track05.flac:dfabeb728b75ab480349d4dacc0a9c1e
+Dylan - Avignon Disc01Track06.flac:7a1b043dc1786941990b63b4c8af5696
+Dylan - Avignon Disc01Track07.flac:b34034ca41b101f0b6528b98cb8f6b26
+Dylan - Avignon Disc01Track08.flac:4a63421d6aeb11fa32a07c2bf6d3733f
+Dylan - Avignon Disc01Track09.flac:516763ac623bc0f5304fa97a9ed13a9d
+Dylan - Avignon Disc01Track10.flac:40563e7bde9f132c788bd002356bc36f
+Dylan - Avignon Disc01Track11.flac:2f055ad951f7f4f91bc69e822bcdfd10
+Dylan - Avignon Disc01Track12.flac:f063ccdf9eda1d26aacfd5d3ac2f8283
+Dylan - Avignon Disc01Track13.flac:7d9582356b0f5f547cce128d470e84e5
+Dylan - Avignon Disc01Track14.flac:7af3a4e5300f1433efc04535865e30e9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-25-Avignon-d.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - Avignon Disc02Track01.flac:4832840182521a0e210e0d8e24d04c90
+Dylan - Avignon Disc02Track02.flac:185b2bdf30933eb4dfb9cad3b211083e
+Dylan - Avignon Disc02Track03.flac:1ccdb78d89250d2ede11f61aa34969e6
+Dylan - Avignon Disc02Track04.flac:fa6c6c7576ebc473c70946cd73e7ec4d
+Dylan - Avignon Disc02Track05.flac:1a52a6d1949ca0a31cf650908f72a18a
+Dylan - Avignon Disc02Track06.flac:53c305125175bb46f547f44238592d74
+Dylan - Avignon Disc02Track07.flac:2821ff721f122bc494573fe37332081f
+Dylan - Avignon Disc02Track08.flac:638a12e4ce5b8b5b1a47ac231147145e
+Dylan - Avignon Disc02Track09.flac:d99600f2efbecb27a42a3131761c0262
+Dylan - Avignon Disc02Track10.flac:ecab1b525617d8ebb3a96677cfd5cb52
+Dylan - Avignon Disc02Track11.flac:37350941da13198a633bb0e004c005e8
+Dylan - Avignon Disc02Track12.flac:c6c09face6921202aececc1dc9eed23c
+Dylan - Avignon Disc02Track13.flac:b7f4b65ef0dfb93e4521e0d9dd7769a7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-25-Avignon-d.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:49.35       40477964 B   ---   --   ---xx   flac  0.6425  Dylan - Avignon Disc01Track01.flac
+     4:37.65       49015724 B   ---   --   ---xx   flac  0.6109  Dylan - Avignon Disc01Track02.flac
+     5:41.40       60246524 B   ---   --   ---xx   flac  0.6398  Dylan - Avignon Disc01Track03.flac
+     3:16.60       34715564 B   ---   --   ---xx   flac  0.5576  Dylan - Avignon Disc01Track04.flac
+     4:27.15       47134124 B   ---   --   ---xx   flac  0.6145  Dylan - Avignon Disc01Track05.flac
+     3:25.00       36162044 B   ---   --   ---xx   flac  0.6472  Dylan - Avignon Disc01Track06.flac
+     4:24.25       46628444 B   ---   --   ---xx   flac  0.6149  Dylan - Avignon Disc01Track07.flac
+     3:24.25       36044444 B   ---   --   ---xx   flac  0.5963  Dylan - Avignon Disc01Track08.flac
+     4:31.70       47969084 B   ---   --   ---xx   flac  0.5622  Dylan - Avignon Disc01Track09.flac
+     4:54.00       51861644 B   ---   --   ---xx   flac  0.6245  Dylan - Avignon Disc01Track10.flac
+     4:17.45       45440684 B   ---   --   ---xx   flac  0.5494  Dylan - Avignon Disc01Track11.flac
+     4:42.35       49827164 B   ---   --   ---xx   flac  0.6060  Dylan - Avignon Disc01Track12.flac
+     3:12.00       33868844 B   ---   --   ---xx   flac  0.5689  Dylan - Avignon Disc01Track13.flac
+     4:21.10       46063964 B   ---   --   ---xx   flac  0.5659  Dylan - Avignon Disc01Track14.flac
+    59:05.50      625456216 B                            0.6015  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-25-Avignon-d.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.60       35597564 B   ---   --   ---xx   flac  0.6418  Dylan - Avignon Disc02Track01.flac
+     4:11.25       44335244 B   ---   --   ---xx   flac  0.6667  Dylan - Avignon Disc02Track02.flac
+     4:03.00       42865244 B   ---   --   ---xx   flac  0.6315  Dylan - Avignon Disc02Track03.flac
+     2:55.50       30987644 B   ---   --   ---xx   flac  0.6127  Dylan - Avignon Disc02Track04.flac
+     4:14.05       44817404 B   ---   --   ---xx   flac  0.6473  Dylan - Avignon Disc02Track05.flac
+     3:30.15       37079324 B   ---   --   ---xx   flac  0.6058  Dylan - Avignon Disc02Track06.flac
+     4:06.70       43559084 B   ---   --   ---xx   flac  0.6191  Dylan - Avignon Disc02Track07.flac
+     4:56.55       52343804 B   ---   --   ---xx   flac  0.6302  Dylan - Avignon Disc02Track08.flac
+     4:33.65       48310124 B   ---   --   ---xx   flac  0.6378  Dylan - Avignon Disc02Track09.flac
+     9:21.45       99066284 B   ---   --   ---xx   flac  0.6105  Dylan - Avignon Disc02Track10.flac
+     4:59.15       52778924 B   ---   --   ---xx   flac  0.6204  Dylan - Avignon Disc02Track11.flac
+     4:46.40       50544524 B   ---   --   ---xx   flac  0.6171  Dylan - Avignon Disc02Track12.flac
+     7:55.50       83907644 B   ---   --   ---xx   flac  0.6333  Dylan - Avignon Disc02Track13.flac
+    62:56.45      666192812 B                            0.6278  (13 files)
+=================== 
+=================== 
+=================== 

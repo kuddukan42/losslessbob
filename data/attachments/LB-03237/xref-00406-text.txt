@@ -1,0 +1,718 @@
+===================
+===================
+===================
+=== dylan_-_76-rehearsals.nfo
+===================
+===================
+===================
+9 cds worth of rehersals.. well it's not all great but a hell of a lot of it is
+
+This is for the Dylan completists...
+
+Follow the file names (MD5 files will help you) as I put the date
+of each set in the filename, if there is no date in the filename
+that track is from the previous "dated" track.
+
+WARNING! Keep an eye on the subject lines for disc changes. The
+files are not labeled 101, 102 before the track name etc. they are label 01, 02 before the track name
+Heck, it's better than track01, track02.shn and noname.md5 the lazy folks use :>)
+
+Read the repost information please.. my finger gets tired hitting the delete key in my email :>)
+
+If you feel the need to repost this please repost it in the repost group.
+
+Please don't convert this to vinyl
+
+Please keep in mind, this is a boot, not an official release.. it's not gonna be perfect.. 
+If you want perfect don't download this.. sorry to be a pain with all the "rules"
+in this message...I'm tired of all the complainers.
+
+REPOST INFORMATION
+
+If you're missing parts of the show let me know by 2 p.m. pst otherwise it will have to wait till I get to work the next day.
+
+Email me at robertonthis@hotmail.com as I do not check the yahoo account anymore. 
+
+If you want a repost of segments email me (take out the AT before the @ out of the email address).. 
+I may not see any text posted in this group
+
+With my posts please keep in mind (this applies to all my posts)
+
+I DO NOT do full song reposts.. I will happily repost missing segments 
+within reason (not 100 segments of a 130 segment post for example)
+
+Not my fault if you have a crummy server.. attbi is a crummy server so it doesn't count. I know, I use it too. I make sure the post is complete on Giganews before I delete the files.
+===================
+===================
+===================
+=== dylan_-_76-rehearsalsdisc1.md5
+===================
+===================
+===================
+219310e978ffbbb9ee70cac41d1a90a9 *07 Just Like A Woman 02.shn
+0c2da319c37dfbac80b0502d0cf17cb7 *02 One More Cup Of Coffee.shn
+a93950e5ebfe2c63c2437d4eedb0597d *03 Oh Sister.shn
+0ef467e096e93c448e55130e53f43c6e *04 Sara.shn
+46dfb14d2ef6f4aefc29b402e50b94f0 *05 Mozambique.shn
+82c1346d5457e88d5c8ecdab16b77388 *06 Just Like A Woman 01 76-01-23.shn
+eb3c314b35f27e5f573473b57135c2c7 *01 You Ain't Goin' Nowhere 76-01-22.shn
+27c1e30a3a0ec7f96666446d34e320ea *08 Just Like A Woman 03.shn
+f455eb5bbde45da56c24a2fab7265d2d *09 Just Like A Woman 04.shn
+02989f036c9b74b794153ff28c4d5ad1 *10 Just Like A Woman 05.shn
+a9aa55a211bcf5370a99bdc57a74f5b0 *11 Just Like A Woman 06.shn
+9c7b7396ebb577b3e7bc2bf49b3e93a4 *12 Loving You Is Sweeter Than Ever (Danko).shn
+54142cb9d31c6f52dabce9e1adec4225 *13 Mad Man (Soles).shn
+fba75daef6041cc4788cdf2d28dc7197 *14 It Makes No Difference (Danko).shn
+7c2742b8c0926e1a828b987eff4551a5 *15 Unidentified 01.shn
+67be8f4ccf3c3b0997c01cd0053a409a *16 Unidentified 02.shn
+584bdb4bcc31f4406d738153983828b7 *17 Unidentified 03.shn
+91956ab47f8abd0940e0ff4b3dc3988b *18 Silver Mantis (Burnette).shn
+bad7d33d9ff0432e023f5a5403ce798e *19 When I Paint My Masterpiece.shn
+eca3e393249dbe61328c796186c6ef65 *20 Maggie's Farm 01.shn
+812b25d24969b7f81c613677ab0f6476 *21 Maggie's Farm 02.shn
+43c73547e8bd820818a6e3403dadc31f *22 Maggie's Farm 03.shn
+536fac5463f00ed1c41801c0ff86eead *23 One Too Many Mornings.shn
+9c52e33f5afd943ec662bb378c748a74 *24 Romance In Durango.shn
+===================
+===================
+===================
+=== dylan_-_76-rehearsalsdisc2.md5
+===================
+===================
+===================
+ef07f62e6540d0e73ad1e5cff59cfeb8 *05 Positively 4th Street.shn
+4a2cce35d525f74015c2a5e31c978fb0 *02 Isis 02.shn
+4644f2c795f6f54f04bd9a3ccd61da3c *03 Isis 03.shn
+fd9e66935c8eb9a9ead481f7d8450c0c *04 Isis 04.shn
+b12a8b6985e8580e1692c6070d1a53ca *01 Isis 01 76-01-23.shn
+3513cfdf9ef474a6539c045cae6c58d7 *06 Oh Sister 01.shn
+0a5897fdde78faaec3c0989e6e297aa1 *07 One More Cup Of Coffee.shn
+9dcc113d6df9d825ae65f2713311d00a *08 Sara.shn
+dd4edea10a7173df3f67e862d96f4f43 *09 Just Like A Woman 07.shn
+2f4e08a1e65ff03ac95f0dedaaef352b *10 Hurricane.shn
+3e54e3d2635996a48712adad4ffd8130 *11 Lay Lady Lay 01.shn
+6c2395326411a26177bd350841af626a *12 Lay Lady Lay 02.shn
+9c2bd01926e8516e589295dffd85ddf1 *13 Oh Sister 02.shn
+===================
+===================
+===================
+=== Dylan_-_76-rehearsalsDisc3.md5
+===================
+===================
+===================
+2578419bdfcf9efe894ced81b7adcec7 *04 I Pity The Poor Immigrant 01.shn
+8cfed5d1a9d6c82e8753e448cd027435 *02 I'll Be Your Baby Tonight 02.shn
+9165cd190faf3b3456fd6870c897d05e *03 Vincent Van Gogh.shn
+364d4c90b4bc760543ebcbbe35bf6ae8 *01 I'll Be Your Baby Tonight 01 76-04-12.shn
+9b529a08bb611cb38649535af0219dd0 *05 I Pity The Poor Immigrant 02.shn
+b80742b2e47519d6eaaaf7f04738e799 *06 I Pity The Poor Immigrant 03.shn
+9a4d628e79a10718cf1f1360a2ff6ead *07 Blowin' In The Wind 01.shn
+e6e6132d5c64b5a103df9c6748a7190b *08 I Pity The Poor Immigrant 04.shn
+353732b665bb32ae7541574d87c7136c *09 Blowin' In The Wind 02.shn
+19a00e638d284c488a8a5a12a1e46551 *10 I Pity The Poor Immigrant 05.shn
+d830c294d55405474155c5be8d1f202d *11 Blowin' In The Wind 03.shn
+60d309fc9c7b9d6e96438adbcf8073aa *12 I Pity The Poor Immigrant 06.shn
+3629c372854f730f4cd2d94b2d6a5f57 *13 Blowin' In The Wind 04.shn
+===================
+===================
+===================
+=== Dylan_-_76-rehearsalsDisc4.md5
+===================
+===================
+===================
+8351638f2829ff210709916bece1e63f *06 One More Cup Of Coffee 01.shn
+64f4731512c56e97c73625e607396460 *02 Just Like Tom Thumb's Blues 02.shn
+eb3c987e5c626f496c6e1d7839ba3a9c *03 Just Like Tom Thumb's Blues 03.shn
+21d4c1e927e17c11a2604c7b2b66b563 *04 The Sun Is Shining.shn
+b7feb83219b6963b27a63b3362aa65b2 *05 Lay Lady Lay.shn
+9da5fc82a32b70675b132827cd249508 *01 Just Like Tom Thumb's Blues 01 76-04-15.shn
+139e5dacd297f178347de7e8ed792a2b *07 One More Cup Of Coffee 02.shn
+22a0ed6635bc5c645b89be37fc329f3e *08 It Takes A Lot To Laugh.shn
+661c686c55f21d8358c6da76c25bb420 *09 The Ballad Of Hollis Brown.shn
+d8442a9dd64f5d0e18bc2353e5156016 *10 Hold Me In Your Arms.shn
+fce2c4c079600dd7095f1d199bf66e03 *11 Mozambique.shn
+===================
+===================
+===================
+=== Dylan_-_76-rehearsalsDisc5.md5
+===================
+===================
+===================
+577a0bdb3307ecb7f287378e9dda1557 *02 One More Cup Of Coffee 03.shn
+827f5840eff73b9c4ce5a71881606f27 *01 Idiot Wind 76-04-15.shn
+5e48575c80fe043d4278c238c64cca2e *03 Shelter From The Storm.shn
+d8b95ad48d0035328e0cf408cd80e94e *04 Just Like Tom Thumb's Blues 04.shn
+eb0ceae695c1d578e35a86cb891930d5 *05 Isis.shn
+558a783f99c7e0e1508f4d90db3791e9 *06 Rita May 01.shn
+e11ab7c1a3714fab04dcb1d054aa7d50 *07 I Threw It All Away01.shn
+ddb61df5aa91fb734cdafc838c9f9d83 *08 Instrumental 01.shn
+===================
+===================
+===================
+=== Dylan_-_76-rehearsalsDisc6.md5
+===================
+===================
+===================
+8e9e1e36add506feaf3433005363f603 *08 Going Going Gone 04.shn
+252266c66697abbd79ff93c6cd694cfb *02 Going Going Gone 01.shn
+89a14afdc4bfdfdde8324161af73bc46 *03 Just Like A Woman 01.shn
+46f12922a40b69687fa3f69d33b5b49e *04 Just Like A Woman 02.shn
+06ebc7e6a391d728ef10958c507a5a90 *05 I Threw It All Away.shn
+dd71685dfb3e1c736318d45ce811cee3 *06 Going Going Gone 02.shn
+3244f09fbe8f104d0aa8ec1e53c7626d *07 Going Going Gone 03.shn
+6f6e3f3a2af86f6087936924c60b7379 *01 Stuck Inside Of Mobile 76-04-17.shn
+5b6dea16c663b163d81db346c7aefb3c *09 Going Going Gone 05.shn
+7a15f289761886a6c7bf1bf9a8e8cb93 *10 Going Going Gone 06.shn
+fa99414987599f996b635281d577688c *11 One More Cup Of Coffee 01.shn
+e6c19f4a42478bc32cd6b91e7ed8c556 *12 One More Cup Of Coffee 02.shn
+169b596a55e5676dfb8185b1c9b6d617 *13 Tomorrow Is A Long Time.shn
+29f84e2a1b3e8fef806e026522a51ec1 *14 Mozambique 01.shn
+ac66d0af1208d1c34ecf18063afe6999 *15 Mozambique 02.shn
+a1ad97b5e835654e664e86f61b79c0d3 *16 Mozambique 03.shn
+36deace89141d627c4ab4e4a7118b1ef *17 Mozambique 04.shn
+25a8859e78fba18e2d232bbde090495a *18 Unidentified 01.shn
+6f4cd528ed5f56d1d1a6fc429d7115c4 *19 Lay Lady Lay.shn
+ec4633274648292608c5fbdbb254c37e *20 Unidentified 02.shn
+d4bc7cfc768854037ad69a10b70fd8e6 *21 Idiot Wind.shn
+0c3081e10d4585ecee5c977ed6310f22 *22 I'll Be Your Baby Tonight 01.shn
+d94dac77fa121e09394a8b5644370326 *23 I'll Be Your Baby Tonight 02.shn
+412f9c5a1a6de0872c6a048ef279d488 *24 I'll Be Your Baby Tonight 03.shn
+831c09f6cbab6cba5771a82d19ca937a *25 I'll Be Your Baby Tonight 04.shn
+===================
+===================
+===================
+=== Dylan_-_76-rehearsalsDisc7.md5
+===================
+===================
+===================
+d6455fac741b09a869a34cd8b108ba4b *04 Going Going Gone 07.shn
+58ce26d4352f2e3b59938b55e51df8de *02 One Too Many Mornings.shn
+7cef10adf4f01e3e22c91878daaaa077 *03 Seven Days.shn
+6a45bbeef95d56bcd6f857ac2f6288dc *01 Maggie's Farm 76-04-17.shn
+d1c40d7b0ae08da16dc8f011d5fc712f *05 Going Going Gone 08.shn
+a3dd390aa64db7aab3fed7db1c31a15e *06 Sara.shn
+84b73ea9c7c9a0a04ad4661306b31514 *07 Just Like Tom Thumb's Blues.shn
+13b341c51f6c07ffbd988d78ead2d8b5 *08 It Takes A Lot To Laugh.shn
+a2f5d4c3624167d1952df0d5269de52d *09 You Angel You 01.shn
+b64beefb9b9503facb9eda1632a7ab4f *10 You Angel You 02.shn
+===================
+===================
+===================
+=== Dylan_-_76-rehearsalsDisc8.md5
+===================
+===================
+===================
+d0168b1e41e262481707bf226ca68699 *10 Stuck Inside Of Mobile 10.shn
+67abd625e956b6fc79f32ed9b6117b5b *02 Stuck Inside Of Mobile 02.shn
+0beeb7262e934842c3137c21d64f706d *03 Stuck Inside Of Mobile 03.shn
+5a148a8e42022b4d550ab7204a2264f3 *04 Stuck Inside Of Mobile 04.shn
+7a32ae2bb1b9e65759aa4cd45cedaf65 *05 Stuck Inside Of Mobile 05.shn
+5e0e6265e3cf37e9c0fbb578a65380ff *06 Stuck Inside Of Mobile 06.shn
+1fd4ce194f202b20043d38a6c5f00891 *07 Stuck Inside Of Mobile 07.shn
+7ad02be6d1194fdd045c8dcf5bc7239d *08 Stuck Inside Of Mobile 08.shn
+ec5dcc2fbd9b1ef875208dbdb0996260 *09 Stuck Inside Of Mobile 09.shn
+3a89f410f7a6f6f886e8d73a960def30 *01 Stuck Inside Of Mobile 01 76-04-00.shn
+1b7c0e0336ae9e4a984a82b98815b201 *11 Stuck Inside Of Mobile 11.shn
+deef71fb25fac8180178257930ed6984 *12 Stuck Inside Of Mobile 12.shn
+e77bb17e8d5b77734227d928605c864c *13 Stuck Inside Of Mobile 13.shn
+680326ed178855905ae9d729d2d45f9a *14 Stuck Inside Of Mobile 14.shn
+17cb511ed5e3e99e1677432f4aee0e10 *19 I Threw It All Away 02.shn
+63c12ede8e7e030e0256666411070d09 *16 Stuck Inside Of Mobile 16.shn
+a667e6bf7c083df77b8964ef83d1f33c *17 Stuck Inside Of Mobile 17.shn
+88bdf20efaa0a2586cfe5956510cb4c5 *18 Rita May 02 76-04-15.shn
+4eb9bf3e5ed5e741af0d4bb21ddcff0e *15 Stuck Inside Of Mobile 15.shn
+8e7c13602852e5ea22a6258201938e61 *20 Instrumental 02.shn
+c695a273363661ddd546228818e772fb *21 Instrumental 03.shn
+===================
+===================
+===================
+=== Dylan_-_76-rehearsalsDisc9.md5
+===================
+===================
+===================
+5f9415a530287db46721acc267dd301c *03 Just Like A Woman 03.shn
+48a7e5088961e4f66971141c5d5fa48a *02 Just Like A Woman 02.shn
+e2b273f75191e955c21099ceb2f0224b *01 Just Like A Woman 01 76-05-22.shn
+b1157de4b7b1f61f22ef0a62c5bf46cd *04 Just Like A Woman 04.shn
+92842b4919cade786b84f197421dc3fd *05 Just Like A Woman 05.shn
+66eb07e9c7261c32c40b2d06a070ff1d *06 Just Like A Woman 06.shn
+dfe418958ba87684ef5a485b274c8699 *07 Tangled Up In Blue 01.shn
+c0e1ab72c714624318ed380098293bf4 *08 Tangled Up In Blue 02.shn
+32017283932c6eda5f6b7c7edbd216f6 *09 Tangled Up In Blue 03.shn
+c80ad6d3beea21624a2dace3e4d8b0c3 *10 Tangled Up In Blue 04.shn
+1417a118d2a1d64dd136a6f26c56ef80 *11 Tangled Up In Blue 05.shn
+4c10f1d7fd12bedf64d682299582ef35 *12 Tangled Up In Blue 06.shn
+0441ff74dfda429cdf26cfed8a66e567 *13 Tangled Up In Blue 07.shn
+ea17babc0980c09cb85a7d48acb03d94 *14 Just Like A Woman 07.shn
+304d465cf64c83dd249400bc7af0e07e *15 Just Like A Woman 08.shn
+a7f3778a9cccda54f5d0fbfdf1abeac6 *16 Just Like A Woman 09.shn
+543b9f3ca0de899d4099e7c7b34f5b23 *17 Just Like A Woman 10.shn
+59f9dd8e66f57be23fd9237ce0245365 *18 Just Like A Woman 11.shn
+c863b9863ba178c3044fc115574f546a *19 Tangled Up In Blue 08.shn
+72957b6e290476d10b704ea375d65eba *20 Tangled Up In Blue 09.shn
+1df2f857413ff3535c905be26e7772ef *21 Tangled Up In Blue 10.shn
+edde3e84714a2448f6c87b55670cf5d8 *22 Tangled Up In Blue 11.shn
+247743a3d8c74c2d9d9d03f6842387e7 *23 Just Like A Woman 12.shn
+4c0b2bde75e8539ee9ef6f86f786dcbf *24 Just Like A Woman 13.shn
+42c3e5737ed7d5377f252e162e09e6e0 *25 Tangled Up In Blue 12.shn
+7893926242099383cc031cd8b7b08eaa *26 Spanish Is The Loving Tongue 76-03-30.shn
+b4089308877afb164f3804e58a99a0e0 *27 Idiot Wind 76-03-30.shn
+242248afcc32949296fa42b9562859b6 *28 Seven Days (demo) 76-04-17.shn
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Bob Dylan
+1976 the guam rehearsals Los Angeles
+
+DISC1
+01 you ain't goin' nowhere 76-01-22
+02 one more cup of coffee03 oh sister04 sara05 mozambique06 just like a woman 01 76-01-2307 just like a woman 0208 just like a woman 0309 just like a woman 0410 just like a woman 0511 just like a woman 0612 loving you is sweeter than ever (danko)13 mad man (soles).shn14 it makes no difference (danko)
+15 unidentified 0116 unidentified 0217 unidentified 0318 silver mantis (burnette)19 when i paint my masterpiece20 maggie's farm 0121 maggie's farm 0222 maggie's farm 0323 one too many mornings
+24 Romance In Durango
+DISC2
+01 isis 01 76-01-2302 isis 0203 isis 0304 isis 0405 Positively 4th Street06 oh sister 0107 One More Cup Of Coffee08 sara09 just like a woman 0710 hurricane11 lay lady lay 0112 lay lady lay 0213 oh sister 02
+
+DISC3
+01 I'll Be Your Baby Tonight 01 76-04-12
+02 I'll Be Your Baby Tonight 0203 Vincent Van Gogh04 I Pity The Poor Immigrant 0105 I Pity The Poor Immigrant 0206 I Pity The Poor Immigrant 0307 Blowin' In The Wind 0108 I Pity The Poor Immigrant 0409 Blowin' In The Wind 02
+10 I Pity The Poor Immigrant 0511 Blowin' In The Wind 0312 I Pity The Poor Immigrant 0613 Blowin' In The Wind 04
+
+DISC4
+01 Just Like Tom Thumb's Blues 01 76-04-1502 Just Like Tom Thumb's Blues 0203 Just Like Tom Thumb's Blues 0304 The Sun Is Shining05 Lay Lady Lay06 One More Cup Of Coffee 0107 One More Cup Of Coffee 0208 It Takes A Lot To Laugh09 The Ballad Of Hollis Brown10 Hold Me In Your Arms11 Mozambique
+
+DISC5
+01 Idiot Wind 76-04-1502 One More Cup Of Coffee 0
+03 Shelter From The Storm04 Just Like Tom Thumb's Blues 0405 Isis06 Rita May 01
+07 I Threw It All Away0108 Instrumental 01
+
+DISC6
+01 Stuck Inside Of Mobile 76-04-1702 Going Going Gone 0103 Just Like A Woman 0104 Just Like A Woman 0205 I Threw It All Away06 Going Going Gone 0207 Going Going Gone 0308 Going Going Gone 0409 Going Going Gone 0510 Going Going Gone 0611 One More Cup Of Coffee 0112 One More Cup Of Coffee 0213 Tomorrow Is A Long Time
+14 Mozambique 0115 Mozambique 0216 Mozambique 03
+17 Mozambique 0418 Unidentified 0119 Lay Lady Lay20 Unidentified 0221 Idiot Wind22 I'll Be Your Baby Tonight 0123 I'll Be Your Baby Tonight 0224 I'll Be Your Baby Tonight 0325 I'll Be Your Baby Tonight 04
+
+DISC701 Maggie's Farm 76-04-1702 One Too Many Mornings
+03 Seven Days04 Going Going Gone 0705 Going Going Gone 08
+06 Sara.shn07 Just Like Tom Thumb's Blues08 It Takes A Lot To Laugh09 You Angel You 0110 You Angel You 02
+
+DISC8
+01 Stuck Inside Of Mobile 01 76-04-0002 Stuck Inside Of Mobile 0203 Stuck Inside Of Mobile 0304 Stuck Inside Of Mobile 0405 Stuck Inside Of Mobile 0506 Stuck Inside Of Mobile 0607 Stuck Inside Of Mobile 0708 Stuck Inside Of Mobile 0809 Stuck Inside Of Mobile 0910 Stuck Inside Of Mobile 1011 Stuck Inside Of Mobile 1112 Stuck Inside Of Mobile 1213 Stuck Inside Of Mobile 1314 Stuck Inside Of Mobile 14
+15 Stuck Inside Of Mobile 1516 Stuck Inside Of Mobile 1617 Stuck Inside Of Mobile 1718 Rita May 02 76-04-1519 I Threw It All Away 0220 Instrumental 02
+21 Instrumental 03
+
+DISC9
+01 Just Like A Woman 01 76-05-22
+02 Just Like A Woman 0203 Just Like A Woman 0304 Just Like A Woman 0405 Just Like A Woman 0506 Just Like A Woman 0607 Tangled Up In Blue 0108 Tangled Up In Blue 0209 Tangled Up In Blue 0310 Tangled Up In Blue 0411 Tangled Up In Blue 0512 Tangled Up In Blue 0613 Tangled Up In Blue 0714 Just Like A Woman 0715 Just Like A Woman 0816 Just Like A Woman 0917 Just Like A Woman 1018 Just Like A Woman 1119 Tangled Up In Blue 0820 Tangled Up In Blue 0921 Tangled Up In Blue 1022 Tangled Up In Blue 1123 Just Like A Woman 1224 Just Like A Woman 1325 Tangled Up In Blue 1226 Spanish Is The Loving Tongue 76-03-3027 Idiot Wind 76-03-3028 Seven Days (demo) 76-04-17
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+3414844948ecac1415a47d016147c792  [shntool]  01 Stuck Inside Of Mobile 01 76-04-00.shn
+7e4d6dd13097c485bcb308edea20e331  [shntool]  02 Stuck Inside Of Mobile 02.shn
+8435841069e46ed3e1549146273ea095  [shntool]  03 Stuck Inside Of Mobile 03.shn
+426a8a95e2c5a253a548b602b2464ca8  [shntool]  04 Stuck Inside Of Mobile 04.shn
+dc72126096da01fc0d97dcaef58eff26  [shntool]  05 Stuck Inside Of Mobile 05.shn
+7d72bd192aff1f03d77bdeda35e8df69  [shntool]  06 Stuck Inside Of Mobile 06.shn
+0084353c9c1ff047e2d7089a8bdce0b1  [shntool]  07 Stuck Inside Of Mobile 07.shn
+2eac0c6c1b0c5ff61ae6327d84cacf88  [shntool]  08 Stuck Inside Of Mobile 08.shn
+96caac947d3d7baec0ce1ae6f9352ca6  [shntool]  09 Stuck Inside Of Mobile 09.shn
+2c7ea0fd14a436e2f534e21cb14d3be7  [shntool]  10 Stuck Inside Of Mobile 10.shn
+00fd1deeb16d9a3249b6e639f73276cf  [shntool]  11 Stuck Inside Of Mobile 11.shn
+e07a7dd921523242310fcc5a8120c6ba  [shntool]  12 Stuck Inside Of Mobile 12.shn
+d98b402d3289d0d0dd8dbca08f4c3c2d  [shntool]  13 Stuck Inside Of Mobile 13.shn
+918dbf6942403ddc548dff56a08f748d  [shntool]  14 Stuck Inside Of Mobile 14.shn
+369834ffe0cd91e891af2d7a21ff7bf5  [shntool]  15 Stuck Inside Of Mobile 15.shn
+e2d869e8045bf9688c977e9c20a04940  [shntool]  16 Stuck Inside Of Mobile 16.shn
+0e3e288a3cac00f1c2e08887c6a7a393  [shntool]  17 Stuck Inside Of Mobile 17.shn
+48b533c21af95e4336a82267b9d4ce27  [shntool]  18 Rita May 02 76-04-15.shn
+da16579aed284fc0117285290898dce7  [shntool]  19 I Threw It All Away 02.shn
+81209dbdbd2352cf26540fc98c07c7c4  [shntool]  20 Instrumental 02.shn
+59e1e79633e9309fc2b8a546b84019c2  [shntool]  21 Instrumental 03.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+f2b7458ce0460ea900817d202e029b5d  [shntool]  01 Stuck Inside Of Mobile 76-04-17.shn
+34a4d2d5d6995efe11d1b3019434845b  [shntool]  02 Going Going Gone 01.shn
+fa875bcb7fa7943c516735c5d72da81f  [shntool]  03 Just Like A Woman 01.shn
+894977afbedeafd549842aa87c10d6f2  [shntool]  04 Just Like A Woman 02.shn
+50a83137198cfd7efac7a0314309e428  [shntool]  05 I Threw It All Away.shn
+fbb957c25241352328c083ed22cfc817  [shntool]  06 Going Going Gone 02.shn
+84c91cc44c74370dbd8336b89acb707e  [shntool]  07 Going Going Gone 03.shn
+8807547aa414ee5718d5e40bbadd5cb8  [shntool]  08 Going Going Gone 04.shn
+54203eecaa6427ee7e4b41c2c789bb5e  [shntool]  09 Going Going Gone 05.shn
+dcfd1598567b31e9cf5efc21bf39c747  [shntool]  10 Going Going Gone 06.shn
+857d70afa01d5047313b1a9b11304600  [shntool]  11 One More Cup Of Coffee 01.shn
+3edf3920dda2ffc947a2212d87e44839  [shntool]  12 One More Cup Of Coffee 02.shn
+43ac84636c2edfbfe3183ab95ac79756  [shntool]  13 Tomorrow Is A Long Time.shn
+851c58330ba413b13b277670e5f95ab4  [shntool]  14 Mozambique 01.shn
+04fbd72e75368be78536e3f0870324ce  [shntool]  15 Mozambique 02.shn
+841d3eb3b83166b98d590fc48c651e6b  [shntool]  16 Mozambique 03.shn
+d6923a8b4eee6e66fa8da5b8862ddd30  [shntool]  17 Mozambique 04.shn
+fbfbb8066b3c7d9bd17697a0230b6de5  [shntool]  18 Unidentified 01.shn
+22716dc5de4a1e82b3c06d51acdf88f3  [shntool]  19 Lay Lady Lay.shn
+662dd1577a73ed42feb6b686f96f7d3a  [shntool]  20 Unidentified 02.shn
+785df137e949263a9372e914c10d630d  [shntool]  21 Idiot Wind.shn
+493f2d50ea441a180616258a823328ea  [shntool]  22 I'll Be Your Baby Tonight 01.shn
+ddfbd1a56c6a09818799dec98ff6056c  [shntool]  23 I'll Be Your Baby Tonight 02.shn
+9fc8f59b133b3b95bd8f35d428b1e31a  [shntool]  24 I'll Be Your Baby Tonight 03.shn
+ab69caca51eb9598b6a82c1c6321eb74  [shntool]  25 I'll Be Your Baby Tonight 04.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+9995a9b6fa8a36bf8234d518c441f852  [shntool]  01 Maggie's Farm 76-04-17.shn
+c6a5c7937bae0563dd1d04d39cc45ca7  [shntool]  02 One Too Many Mornings.shn
+7f706e1dafdf0399c250a40542867d8b  [shntool]  03 Seven Days.shn
+aa82bab29282890118fda584ac319ccc  [shntool]  04 Going Going Gone 07.shn
+c082a93fc3cd3596dd43f0b55ab9dd55  [shntool]  05 Going Going Gone 08.shn
+965009fa392cc89b3dea0709faa844d6  [shntool]  06 Sara.shn
+b848b2c16c4f27bf18e9f53b1cec5b13  [shntool]  07 Just Like Tom Thumb's Blues.shn
+bcd8cef3024b76171857a63da67b2fe6  [shntool]  08 It Takes A Lot To Laugh.shn
+768167c5b5467ec80f89c3eaddd2d430  [shntool]  09 You Angel You 01.shn
+996a5d78425968941ca7d088a51e39b1  [shntool]  10 You Angel You 02.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+8754a466e89ecb61225e80fdb91b8a29  [shntool]  01 Just Like Tom Thumb's Blues 01 76-04-15.shn
+51888f54280f55fab4d623294a89c453  [shntool]  02 Just Like Tom Thumb's Blues 02.shn
+51e36c400a648f8fd84eb6f1184b4a9a  [shntool]  03 Just Like Tom Thumb's Blues 03.shn
+5b1f27dae2100da13ca1c5377f662b65  [shntool]  04 The Sun Is Shining.shn
+3406267ddcc2355005c110451a13e9bd  [shntool]  05 Lay Lady Lay.shn
+27e86f2e8b039ec609690176d16d7664  [shntool]  06 One More Cup Of Coffee 01.shn
+8912e92b553ef62c8d73ad3cdf54761c  [shntool]  07 One More Cup Of Coffee 02.shn
+4254eacc28d932005e9a4683ba4663ee  [shntool]  08 It Takes A Lot To Laugh.shn
+81aa4880a8e3f3e273188e256fb5b7af  [shntool]  09 The Ballad Of Hollis Brown.shn
+2654e6333d089f6f41892aa0e16ceef8  [shntool]  10 Hold Me In Your Arms.shn
+a3c9a3d3e2012044a27b6d2622e58d3f  [shntool]  11 Mozambique.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+6a42e0e59eaf2cdba1ac05f752ac7030  [shntool]  01 Just Like A Woman 01 76-05-22.shn
+3f812afe47fef8853e68758744f42c11  [shntool]  02 Just Like A Woman 02.shn
+c08fbeecc6a47e66d2f64dbdad2226f3  [shntool]  03 Just Like A Woman 03.shn
+e275469a255cb1188b2c8656749a396d  [shntool]  04 Just Like A Woman 04.shn
+0501b4008df6a227da42a910f7b3d0e2  [shntool]  05 Just Like A Woman 05.shn
+3987fab5dca2a1e0a18c9da3ef5ddc0a  [shntool]  06 Just Like A Woman 06.shn
+2068ff72c8a79563623ac5f41b8a62b5  [shntool]  07 Tangled Up In Blue 01.shn
+27a5cebb70683e961a3f4c17fbf630a9  [shntool]  08 Tangled Up In Blue 02.shn
+c36910b692850391c2cda799ad9ec612  [shntool]  09 Tangled Up In Blue 03.shn
+e7054cd55906bdd34d9245928f222215  [shntool]  10 Tangled Up In Blue 04.shn
+9becfc8e3f851b87e9656ed41452e55e  [shntool]  11 Tangled Up In Blue 05.shn
+b731584e705f083774c8dff9da0f33c4  [shntool]  12 Tangled Up In Blue 06.shn
+deda3c10992196db29efd82e3bb13cad  [shntool]  13 Tangled Up In Blue 07.shn
+ba1e5534f56b0e194844658c636a6d5e  [shntool]  14 Just Like A Woman 07.shn
+c88793bdbe200225677f0b746bdce749  [shntool]  15 Just Like A Woman 08.shn
+71d81cbdcaefbbc48f2f070f3aaa7bc7  [shntool]  16 Just Like A Woman 09.shn
+1c743cf5fcb4473910a19997604119bb  [shntool]  17 Just Like A Woman 10.shn
+ec3a097ba9f7d5078856cd49df0efeb6  [shntool]  18 Just Like A Woman 11.shn
+3f7b4684481ab038b6610416eae45bd3  [shntool]  19 Tangled Up In Blue 08.shn
+613f627f700291d91116cd2a2811d189  [shntool]  20 Tangled Up In Blue 09.shn
+2c4355a0ef70f645e27eed5d2d18e5c4  [shntool]  21 Tangled Up In Blue 10.shn
+cd3081db622dccab1badec84bf0b3024  [shntool]  22 Tangled Up In Blue 11.shn
+88f585847427d42259e8353da515a1be  [shntool]  23 Just Like A Woman 12.shn
+9f4f361fe3afe07fffcc579e832c94a7  [shntool]  24 Just Like A Woman 13.shn
+f794aadfc0c2cb3a585ebdda6a9c008a  [shntool]  25 Tangled Up In Blue 12.shn
+ae837fe6d9766f541f416da4c75295a3  [shntool]  26 Spanish Is The Loving Tongue 76-03-30.shn
+57e78c4b3822e15035193920d73357c4  [shntool]  27 Idiot Wind 76-03-30.shn
+c3a3f6f6b20e83d7801d428333512dfa  [shntool]  28 Seven Days (demo) 76-04-17.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+9d8bf5cdd7bdc4872ea47fb4ac8634ad  [shntool]  01 you ain't goin' nowhere 76-01-22.shn
+ab869435dd1cfbf283b85999a28f4e55  [shntool]  02 one more cup of coffee.shn
+e1d61b6fc30542ebe3845dd0bd99eb5f  [shntool]  03 oh sister.shn
+dc7c51cb3159de48bec395e40da83564  [shntool]  04 sara.shn
+387bc2bc20e52bdaee643f9391576897  [shntool]  05 mozambique.shn
+14cd3381bd708f72241fad7549c2b2fe  [shntool]  06 just like a woman 01 76-01-23.shn
+94989cf2da0b201ac242395151440aa0  [shntool]  07 just like a woman 02.shn
+888f9008077a90e800ac1bef84c4fcf6  [shntool]  08 just like a woman 03.shn
+c8e834aa15298fe559f361fcee83c19b  [shntool]  09 just like a woman 04.shn
+cb91cab33ecc054bc2f40cee069b0534  [shntool]  10 just like a woman 05.shn
+c583c3f66b4e06dd73daaac3432c1e6d  [shntool]  11 just like a woman 06.shn
+53565a720d8cda56355310be46e43ec2  [shntool]  12 loving you is sweeter than ever (danko).shn
+9871023e48245f4a19712fe1b7ae90bc  [shntool]  13 mad man (soles).shn
+d3394aa4b3e03ab2022c0841d0d94fad  [shntool]  14 it makes no difference (danko).shn
+105e1b9b567d3ead49eb52b54ffa2785  [shntool]  15 unidentified 01.shn
+9dd2c86999151e7493286439d256a321  [shntool]  16 unidentified 02.shn
+30da4c08b5c2ab820c5d9ff374ddb871  [shntool]  17 unidentified 03.shn
+8027de0fcf4587ba01570aa55619913d  [shntool]  18 silver mantis (burnette).shn
+031d95c4b853d502b559816f72e373c0  [shntool]  19 when i paint my masterpiece.shn
+0310f5b9e57796030b6ca57a51fea4e2  [shntool]  20 maggie's farm 01.shn
+a86db22b274cc26d5a27181838404458  [shntool]  21 maggie's farm 02.shn
+ed5ceaec9e5dab460c603c7dc87b920d  [shntool]  22 maggie's farm 03.shn
+12d8759402cea777ac78e49763eb9ba7  [shntool]  23 one too many mornings.shn
+0de049452327938f11b0dd0d02a268ca  [shntool]  24 Romance In Durango.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+7bc29f3b4484a7e3de85dc42c9f6e70b  [shntool]  01 isis 01 76-01-23.shn
+30613e4b700dea7dcb55fa41255e4ee5  [shntool]  02 isis 02.shn
+36022056ac97f1a8a4d0af319739d7e7  [shntool]  03 isis 03.shn
+808e4704e12e0d473156317f39c9872e  [shntool]  04 isis 04.shn
+29eb812881d2fba0b9e9049d84fed9a0  [shntool]  05 Positively 4th Street.shn
+af6ecc35422bb02b1192624b8f238ded  [shntool]  06 oh sister 01.shn
+f6e451246469adf1a2aaa026a853015a  [shntool]  07 One More Cup Of Coffee.shn
+e22e0d1171412218abe367f332d6e7c1  [shntool]  08 sara.shn
+5ffb256e0495eb96746e6d1c40ab1473  [shntool]  09 just like a woman 07.shn
+22176104d8dd2d79644628b6fde610f6  [shntool]  10 hurricane.shn
+c89cc7434beff388d764fd5852ef99c6  [shntool]  11 lay lady lay 01.shn
+5230eb9e8c60f31f9dd99d5a7bdc939c  [shntool]  12 lay lady lay 02.shn
+84b5ddb685e22b12b218f839b4b4af65  [shntool]  13 oh sister 02.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+7ceb5af0287a1a433d02af02fe92721b  [shntool]  01 I'll Be Your Baby Tonight 01 76-04-12.shn
+708fb99a9702d592be9f5021da8356a7  [shntool]  02 I'll Be Your Baby Tonight 02.shn
+368a125b118c00b5bdf764d4c0c9eaa8  [shntool]  03 Vincent Van Gogh.shn
+19ab31ed7e7c5cc5c5b6a98fb528cb9f  [shntool]  04 I Pity The Poor Immigrant 01.shn
+ff0ee454ae2b76654df0d3f2f3ac7bce  [shntool]  05 I Pity The Poor Immigrant 02.shn
+530e0edbd5f09d4db05062e18d69eb93  [shntool]  06 I Pity The Poor Immigrant 03.shn
+0beff8ef91fdd4f61e76dff41d931590  [shntool]  07 Blowin' In The Wind 01.shn
+51308cc29bd98bd9d4d03f3fb9c1b04c  [shntool]  08 I Pity The Poor Immigrant 04.shn
+1c5e48ae64b0748578e799fafe4eff10  [shntool]  09 Blowin' In The Wind 02.shn
+9c868092932b04924f10546fd27bea28  [shntool]  10 I Pity The Poor Immigrant 05.shn
+f1d12d67ebd37e25e4e27e453434e6f1  [shntool]  11 Blowin' In The Wind 03.shn
+ca1bb3a6ac0a106817292c4871120d38  [shntool]  12 I Pity The Poor Immigrant 06.shn
+99e4b888ea266e7e613804942437b503  [shntool]  13 Blowin' In The Wind 04.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+7b2cc69cf12fd1497ef57b3dbd4dba20  [shntool]  01 Idiot Wind 76-04-15.shn
+ac749d040d7a8b4c4759d254579efd97  [shntool]  02 One More Cup Of Coffee 03.shn
+b582cbe7e42ece53e7420cdea6a6dcc6  [shntool]  03 Shelter From The Storm.shn
+d82180dd454f9c0125fc9e824a89c7ef  [shntool]  04 Just Like Tom Thumb's Blues 04.shn
+f418011d05b237920858448c10f3666a  [shntool]  05 Isis.shn
+534b693fd00908e52709ba42d8dcfae3  [shntool]  06 Rita May 01.shn
+f974fa530f79b29570325ddc7bd1d7ae  [shntool]  07 I Threw It All Away01.shn
+7a0ece1d2d1e7b3b8b56546d09dc5be0  [shntool]  08 Instrumental 01.shn
+
+===================
+===================
+===================
+=== shntoolmd5sum.txt
+===================
+===================
+===================
+DISC1
+9d8bf5cdd7bdc4872ea47fb4ac8634ad  [shntool]  01 you ain't goin' nowhere 76-01-22.shn
+ab869435dd1cfbf283b85999a28f4e55  [shntool]  02 one more cup of coffee.shn
+e1d61b6fc30542ebe3845dd0bd99eb5f  [shntool]  03 oh sister.shn
+dc7c51cb3159de48bec395e40da83564  [shntool]  04 sara.shn
+387bc2bc20e52bdaee643f9391576897  [shntool]  05 mozambique.shn
+14cd3381bd708f72241fad7549c2b2fe  [shntool]  06 just like a woman 01 76-01-23.shn
+94989cf2da0b201ac242395151440aa0  [shntool]  07 just like a woman 02.shn
+888f9008077a90e800ac1bef84c4fcf6  [shntool]  08 just like a woman 03.shn
+c8e834aa15298fe559f361fcee83c19b  [shntool]  09 just like a woman 04.shn
+cb91cab33ecc054bc2f40cee069b0534  [shntool]  10 just like a woman 05.shn
+c583c3f66b4e06dd73daaac3432c1e6d  [shntool]  11 just like a woman 06.shn
+53565a720d8cda56355310be46e43ec2  [shntool]  12 loving you is sweeter than ever (danko).shn
+9871023e48245f4a19712fe1b7ae90bc  [shntool]  13 mad man (soles).shn
+d3394aa4b3e03ab2022c0841d0d94fad  [shntool]  14 it makes no difference (danko).shn
+105e1b9b567d3ead49eb52b54ffa2785  [shntool]  15 unidentified 01.shn
+9dd2c86999151e7493286439d256a321  [shntool]  16 unidentified 02.shn
+30da4c08b5c2ab820c5d9ff374ddb871  [shntool]  17 unidentified 03.shn
+8027de0fcf4587ba01570aa55619913d  [shntool]  18 silver mantis (burnette).shn
+031d95c4b853d502b559816f72e373c0  [shntool]  19 when i paint my masterpiece.shn
+0310f5b9e57796030b6ca57a51fea4e2  [shntool]  20 maggie's farm 01.shn
+a86db22b274cc26d5a27181838404458  [shntool]  21 maggie's farm 02.shn
+ed5ceaec9e5dab460c603c7dc87b920d  [shntool]  22 maggie's farm 03.shn
+12d8759402cea777ac78e49763eb9ba7  [shntool]  23 one too many mornings.shn
+0de049452327938f11b0dd0d02a268ca  [shntool]  24 Romance In Durango.shn
+
+DISC2
+7bc29f3b4484a7e3de85dc42c9f6e70b  [shntool]  01 isis 01 76-01-23.shn
+30613e4b700dea7dcb55fa41255e4ee5  [shntool]  02 isis 02.shn
+36022056ac97f1a8a4d0af319739d7e7  [shntool]  03 isis 03.shn
+808e4704e12e0d473156317f39c9872e  [shntool]  04 isis 04.shn
+29eb812881d2fba0b9e9049d84fed9a0  [shntool]  05 Positively 4th Street.shn
+af6ecc35422bb02b1192624b8f238ded  [shntool]  06 oh sister 01.shn
+f6e451246469adf1a2aaa026a853015a  [shntool]  07 One More Cup Of Coffee.shn
+e22e0d1171412218abe367f332d6e7c1  [shntool]  08 sara.shn
+5ffb256e0495eb96746e6d1c40ab1473  [shntool]  09 just like a woman 07.shn
+22176104d8dd2d79644628b6fde610f6  [shntool]  10 hurricane.shn
+c89cc7434beff388d764fd5852ef99c6  [shntool]  11 lay lady lay 01.shn
+5230eb9e8c60f31f9dd99d5a7bdc939c  [shntool]  12 lay lady lay 02.shn
+84b5ddb685e22b12b218f839b4b4af65  [shntool]  13 oh sister 02.shn
+
+DISC3
+7ceb5af0287a1a433d02af02fe92721b  [shntool]  01 I'll Be Your Baby Tonight 01 76-04-12.shn
+708fb99a9702d592be9f5021da8356a7  [shntool]  02 I'll Be Your Baby Tonight 02.shn
+368a125b118c00b5bdf764d4c0c9eaa8  [shntool]  03 Vincent Van Gogh.shn
+19ab31ed7e7c5cc5c5b6a98fb528cb9f  [shntool]  04 I Pity The Poor Immigrant 01.shn
+ff0ee454ae2b76654df0d3f2f3ac7bce  [shntool]  05 I Pity The Poor Immigrant 02.shn
+530e0edbd5f09d4db05062e18d69eb93  [shntool]  06 I Pity The Poor Immigrant 03.shn
+0beff8ef91fdd4f61e76dff41d931590  [shntool]  07 Blowin' In The Wind 01.shn
+51308cc29bd98bd9d4d03f3fb9c1b04c  [shntool]  08 I Pity The Poor Immigrant 04.shn
+1c5e48ae64b0748578e799fafe4eff10  [shntool]  09 Blowin' In The Wind 02.shn
+9c868092932b04924f10546fd27bea28  [shntool]  10 I Pity The Poor Immigrant 05.shn
+f1d12d67ebd37e25e4e27e453434e6f1  [shntool]  11 Blowin' In The Wind 03.shn
+ca1bb3a6ac0a106817292c4871120d38  [shntool]  12 I Pity The Poor Immigrant 
+06.shn
+99e4b888ea266e7e613804942437b503  [shntool]  13 Blowin' In The Wind 04.shn
+
+DISC4
+8754a466e89ecb61225e80fdb91b8a29  [shntool]  01 Just Like Tom Thumb's Blues 01 76-04-15.shn
+51888f54280f55fab4d623294a89c453  [shntool]  02 Just Like Tom Thumb's Blues 02.shn
+51e36c400a648f8fd84eb6f1184b4a9a  [shntool]  03 Just Like Tom Thumb's Blues 03.shn
+5b1f27dae2100da13ca1c5377f662b65  [shntool]  04 The Sun Is Shining.shn
+3406267ddcc2355005c110451a13e9bd  [shntool]  05 Lay Lady Lay.shn
+27e86f2e8b039ec609690176d16d7664  [shntool]  06 One More Cup Of Coffee 01.shn
+8912e92b553ef62c8d73ad3cdf54761c  [shntool]  07 One More Cup Of Coffee 02.shn
+4254eacc28d932005e9a4683ba4663ee  [shntool]  08 It Takes A Lot To Laugh.shn
+81aa4880a8e3f3e273188e256fb5b7af  [shntool]  09 The Ballad Of Hollis Brown.shn
+2654e6333d089f6f41892aa0e16ceef8  [shntool]  10 Hold Me In Your Arms.shn
+a3c9a3d3e2012044a27b6d2622e58d3f  [shntool]  11 Mozambique.shn
+
+DISC5
+7b2cc69cf12fd1497ef57b3dbd4dba20  [shntool]  01 Idiot Wind 76-04-15.shn
+ac749d040d7a8b4c4759d254579efd97  [shntool]  02 One More Cup Of Coffee 03.shn
+b582cbe7e42ece53e7420cdea6a6dcc6  [shntool]  03 Shelter From The Storm.shn
+d82180dd454f9c0125fc9e824a89c7ef  [shntool]  04 Just Like Tom Thumb's Blues 04.shn
+f418011d05b237920858448c10f3666a  [shntool]  05 Isis.shn
+534b693fd00908e52709ba42d8dcfae3  [shntool]  06 Rita May 01.shn
+f974fa530f79b29570325ddc7bd1d7ae  [shntool]  07 I Threw It All Away01.shn
+7a0ece1d2d1e7b3b8b56546d09dc5be0  [shntool]  08 Instrumental 01.shn
+
+DISC6
+f2b7458ce0460ea900817d202e029b5d  [shntool]  01 Stuck Inside Of Mobile 76-04-17.shn
+34a4d2d5d6995efe11d1b3019434845b  [shntool]  02 Going Going Gone 01.shn
+fa875bcb7fa7943c516735c5d72da81f  [shntool]  03 Just Like A Woman 01.shn
+894977afbedeafd549842aa87c10d6f2  [shntool]  04 Just Like A Woman 02.shn
+50a83137198cfd7efac7a0314309e428  [shntool]  05 I Threw It All Away.shn
+fbb957c25241352328c083ed22cfc817  [shntool]  06 Going Going Gone 02.shn
+84c91cc44c74370dbd8336b89acb707e  [shntool]  07 Going Going Gone 03.shn
+8807547aa414ee5718d5e40bbadd5cb8  [shntool]  08 Going Going Gone 04.shn
+54203eecaa6427ee7e4b41c2c789bb5e  [shntool]  09 Going Going Gone 05.shn
+dcfd1598567b31e9cf5efc21bf39c747  [shntool]  10 Going Going Gone 06.shn
+857d70afa01d5047313b1a9b11304600  [shntool]  11 One More Cup Of Coffee 01.shn
+3edf3920dda2ffc947a2212d87e44839  [shntool]  12 One More Cup Of Coffee 02.shn
+43ac84636c2edfbfe3183ab95ac79756  [shntool]  13 Tomorrow Is A Long Time.shn
+851c58330ba413b13b277670e5f95ab4  [shntool]  14 Mozambique 01.shn
+04fbd72e75368be78536e3f0870324ce  [shntool]  15 Mozambique 02.shn
+841d3eb3b83166b98d590fc48c651e6b  [shntool]  16 Mozambique 03.shn
+d6923a8b4eee6e66fa8da5b8862ddd30  [shntool]  17 Mozambique 04.shn
+fbfbb8066b3c7d9bd17697a0230b6de5  [shntool]  18 Unidentified 01.shn
+22716dc5de4a1e82b3c06d51acdf88f3  [shntool]  19 Lay Lady Lay.shn
+662dd1577a73ed42feb6b686f96f7d3a  [shntool]  20 Unidentified 02.shn
+785df137e949263a9372e914c10d630d  [shntool]  21 Idiot Wind.shn
+493f2d50ea441a180616258a823328ea  [shntool]  22 I'll Be Your Baby Tonight 01.shn
+ddfbd1a56c6a09818799dec98ff6056c  [shntool]  23 I'll Be Your Baby Tonight 02.shn
+9fc8f59b133b3b95bd8f35d428b1e31a  [shntool]  24 I'll Be Your Baby Tonight 03.shn
+ab69caca51eb9598b6a82c1c6321eb74  [shntool]  25 I'll Be Your Baby Tonight 04.shn
+
+DISC7
+9995a9b6fa8a36bf8234d518c441f852  [shntool]  01 Maggie's Farm 76-04-17.shn
+c6a5c7937bae0563dd1d04d39cc45ca7  [shntool]  02 One Too Many Mornings.shn
+7f706e1dafdf0399c250a40542867d8b  [shntool]  03 Seven Days.shn
+aa82bab29282890118fda584ac319ccc  [shntool]  04 Going Going Gone 07.shn
+c082a93fc3cd3596dd43f0b55ab9dd55  [shntool]  05 Going Going Gone 08.shn
+965009fa392cc89b3dea0709faa844d6  [shntool]  06 Sara.shn
+b848b2c16c4f27bf18e9f53b1cec5b13  [shntool]  07 Just Like Tom Thumb's Blues.shn
+bcd8cef3024b76171857a63da67b2fe6  [shntool]  08 It Takes A Lot To Laugh.shn
+768167c5b5467ec80f89c3eaddd2d430  [shntool]  09 You Angel You 01.shn
+996a5d78425968941ca7d088a51e39b1  [shntool]  10 You Angel You 02.shn
+
+DISC8
+3414844948ecac1415a47d016147c792  [shntool]  01 Stuck Inside Of Mobile 01 76-04-00.shn
+7e4d6dd13097c485bcb308edea20e331  [shntool]  02 Stuck Inside Of Mobile 02.shn
+8435841069e46ed3e1549146273ea095  [shntool]  03 Stuck Inside Of Mobile 03.shn
+426a8a95e2c5a253a548b602b2464ca8  [shntool]  04 Stuck Inside Of Mobile 04.shn
+dc72126096da01fc0d97dcaef58eff26  [shntool]  05 Stuck Inside Of Mobile 05.shn
+7d72bd192aff1f03d77bdeda35e8df69  [shntool]  06 Stuck Inside Of Mobile 06.shn
+0084353c9c1ff047e2d7089a8bdce0b1  [shntool]  07 Stuck Inside Of Mobile 07.shn
+2eac0c6c1b0c5ff61ae6327d84cacf88  [shntool]  08 Stuck Inside Of Mobile 08.shn
+96caac947d3d7baec0ce1ae6f9352ca6  [shntool]  09 Stuck Inside Of Mobile 09.shn
+2c7ea0fd14a436e2f534e21cb14d3be7  [shntool]  10 Stuck Inside Of Mobile 10.shn
+00fd1deeb16d9a3249b6e639f73276cf  [shntool]  11 Stuck Inside Of Mobile 11.shn
+e07a7dd921523242310fcc5a8120c6ba  [shntool]  12 Stuck Inside Of Mobile 12.shn
+d98b402d3289d0d0dd8dbca08f4c3c2d  [shntool]  13 Stuck Inside Of Mobile 13.shn
+918dbf6942403ddc548dff56a08f748d  [shntool]  14 Stuck Inside Of Mobile 14.shn
+369834ffe0cd91e891af2d7a21ff7bf5  [shntool]  15 Stuck Inside Of Mobile 
+15.shn
+e2d869e8045bf9688c977e9c20a04940  [shntool]  16 Stuck Inside Of Mobile 16.shn
+0e3e288a3cac00f1c2e08887c6a7a393  [shntool]  17 Stuck Inside Of Mobile 17.shn
+48b533c21af95e4336a82267b9d4ce27  [shntool]  18 Rita May 02 76-04-15.shn
+da16579aed284fc0117285290898dce7  [shntool]  19 I Threw It All Away 02.shn
+81209dbdbd2352cf26540fc98c07c7c4  [shntool]  20 Instrumental 02.shn
+59e1e79633e9309fc2b8a546b84019c2  [shntool]  21 Instrumental 03.shn
+
+DISC9
+6a42e0e59eaf2cdba1ac05f752ac7030  [shntool]  01 Just Like A Woman 01 76-05-22.shn
+3f812afe47fef8853e68758744f42c11  [shntool]  02 Just Like A Woman 02.shn
+c08fbeecc6a47e66d2f64dbdad2226f3  [shntool]  03 Just Like A Woman 03.shn
+e275469a255cb1188b2c8656749a396d  [shntool]  04 Just Like A Woman 04.shn
+0501b4008df6a227da42a910f7b3d0e2  [shntool]  05 Just Like A Woman 05.shn
+3987fab5dca2a1e0a18c9da3ef5ddc0a  [shntool]  06 Just Like A Woman 06.shn
+2068ff72c8a79563623ac5f41b8a62b5  [shntool]  07 Tangled Up In Blue 01.shn
+27a5cebb70683e961a3f4c17fbf630a9  [shntool]  08 Tangled Up In Blue 02.shn
+c36910b692850391c2cda799ad9ec612  [shntool]  09 Tangled Up In Blue 03.shn
+e7054cd55906bdd34d9245928f222215  [shntool]  10 Tangled Up In Blue 04.shn
+9becfc8e3f851b87e9656ed41452e55e  [shntool]  11 Tangled Up In Blue 05.shn
+b731584e705f083774c8dff9da0f33c4  [shntool]  12 Tangled Up In Blue 06.shn
+deda3c10992196db29efd82e3bb13cad  [shntool]  13 Tangled Up In Blue 07.shn
+ba1e5534f56b0e194844658c636a6d5e  [shntool]  14 Just Like A Woman 07.shn
+c88793bdbe200225677f0b746bdce749  [shntool]  15 Just Like A Woman 08.shn
+71d81cbdcaefbbc48f2f070f3aaa7bc7  [shntool]  16 Just Like A Woman 09.shn
+1c743cf5fcb4473910a19997604119bb  [shntool]  17 Just Like A Woman 10.shn
+ec3a097ba9f7d5078856cd49df0efeb6  [shntool]  18 Just Like A Woman 11.shn
+3f7b4684481ab038b6610416eae45bd3  [shntool]  19 Tangled Up In Blue 08.shn
+613f627f700291d91116cd2a2811d189  [shntool]  20 Tangled Up In Blue 09.shn
+2c4355a0ef70f645e27eed5d2d18e5c4  [shntool]  21 Tangled Up In Blue 10.shn
+cd3081db622dccab1badec84bf0b3024  [shntool]  22 Tangled Up In Blue 11.shn
+88f585847427d42259e8353da515a1be  [shntool]  23 Just Like A Woman 12.shn
+9f4f361fe3afe07fffcc579e832c94a7  [shntool]  24 Just Like A Woman 13.shn
+f794aadfc0c2cb3a585ebdda6a9c008a  [shntool]  25 Tangled Up In Blue 12.shn
+ae837fe6d9766f541f416da4c75295a3  [shntool]  26 Spanish Is The Loving Tongue 76-03-30.shn
+57e78c4b3822e15035193920d73357c4  [shntool]  27 Idiot Wind 76-03-30.shn
+c3a3f6f6b20e83d7801d428333512dfa  [shntool]  28 Seven Days (demo) 76-04-17.shn
+
+
+
+===================
+===================
+===================

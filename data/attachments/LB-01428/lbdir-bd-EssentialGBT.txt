@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-EssentialGBT 
+=================== 
+=================== 
+=================== 
+a0d437366ef5e2c007052e8e5760e1ad  Essential BasementB.jpg
+64f8261924d7f174b7420019e5c863a0  Essential BasementF.jpg
+5cb953cf7b1e2719cd0d8a98a16eeb27  noname.md5
+1df5cc080315c246c235cc28201d3c58  The Essential Genuine Basement Tapes.txt
+1db49cf0cc3f9623c49d3d9073126ea0  Track01.shn
+369e97e4cffc16531bc334fe1fdba7b6  Track02.shn
+a48b55df9abba44e959b17d2104d3900  Track03.shn
+6d263bc45edc4f044b10ff39d03d7a14  Track04.shn
+5d4132ce8beb73bbcfbaf76cd40f56ce  Track05.shn
+948cecdb2e3cc6400fc54e08c7c3d436  Track06.shn
+90489e8d17d3e53919d7d2a7abe6f2ff  Track07.shn
+3f9524b213fd5067dd2ecd0a84c55f97  Track08.shn
+4daa40f2b28ea108e82df133de726bd7  Track09.shn
+6568f2cbc66bb32a1b0d526a3cc45b96  Track10.shn
+a096442c1f59ae08f0717dc99ecf1eff  Track11.shn
+aae3779d5f8dabf376cba1a3766bc888  Track12.shn
+40adf74868de2b29e207eef080ba7aca  Track13.shn
+2332a337c0d90fc850d24a946e1d4efd  Track14.shn
+307b4a00e7b18f2a30b6d422ea718093  Track15.shn
+999b0d4fdf628a6f14edf2d0226ca405  Track16.shn
+7f6d146df6410da040f8a89fdc417dbc  Track17.shn
+434631e3ff4491c8d2b0dfa0e1adc837  Track18.shn
+20347f7af30181e3f603743ff9016533  Track19.shn
+58a1459d4a0ca1c8e6440fbcc10ce636  Track20.shn
+539e8e4425621d943ad50a54991a42eb  Track21.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-EssentialGBT 
+=================== 
+=================== 
+=================== 
+1d81feed022bd4b5e668ff6540f22c05  [shntool]  Track01.wav
+8b4f93bec3cd05ab857ee3df1c350acc  [shntool]  Track02.wav
+e8ed3f7e694a32eda1faff11ac7a0c51  [shntool]  Track03.wav
+1de1a7730f9e0bd6ac0f49746ac05464  [shntool]  Track04.wav
+64f4d017ce7132da8d26ba2fed49cdb7  [shntool]  Track05.wav
+2fce84df2b64fdcf91f68cfb153ec416  [shntool]  Track06.wav
+c4b8b82d3ae3e148603dfdb05211af48  [shntool]  Track07.wav
+72601ee17270c4edf079b2443b102621  [shntool]  Track08.wav
+1ca25ecb2f0f8ee21a0b00d159f10cdb  [shntool]  Track09.wav
+0a83d0d45d39bfb0c2ba4c0b7ce23770  [shntool]  Track10.wav
+09e692e7153b0451906bfb77fadd93bd  [shntool]  Track11.wav
+7ccf12f2744295b8ee1267c0cf220914  [shntool]  Track12.wav
+9f3b99331c5a9097e22429a859093297  [shntool]  Track13.wav
+0fd91246fbef772ec417d89fb247181d  [shntool]  Track14.wav
+8db56da6c751acc814947a128f61e075  [shntool]  Track15.wav
+96f64cb4eb880a291b3c81151295e138  [shntool]  Track16.wav
+9fb1b9ff2992b3fc199b4d7be1b2f3aa  [shntool]  Track17.wav
+db49dfc136a5e45a2e41e0bf2089c419  [shntool]  Track18.wav
+c8a50fcdb56b19afd1ead17a843d2d79  [shntool]  Track19.wav
+8fdeece55676c85ec08f409b71531070  [shntool]  Track20.wav
+18e992feb9cf65b8bb3fe1e62882c5b2  [shntool]  Track21.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-EssentialGBT 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.21       30213836 B   ---   --   -----    wav  1.0000  Track01.wav
+     4:01.71       42679436 B   ---   --   -----    wav  1.0000  Track02.wav
+     2:57.42       31321628 B   ---   --   -----    wav  1.0000  Track03.wav
+     1:54.66       20264876 B   ---   --   -----    wav  1.0000  Track04.wav
+     3:53.52       41223548 B   ---   --   -----    wav  1.0000  Track05.wav
+     2:57.06       31236956 B   ---   --   -----    wav  1.0000  Track06.wav
+     4:10.21       44149436 B   ---   --   -----    wav  1.0000  Track07.wav
+     3:51.16       40786076 B   ---   --   -----    wav  1.0000  Track08.wav
+     3:42.54       39287852 B   ---   --   -----    wav  1.0000  Track09.wav
+     5:37.19       59491532 B   ---   --   -----    wav  1.0000  Track10.wav
+     2:50.01       29990396 B   ---   --   -----    wav  1.0000  Track11.wav
+     3:18.62       35073068 B   ---   --   -----    wav  1.0000  Track12.wav
+     3:40.42       38906828 B   ---   --   -----    wav  1.0000  Track13.wav
+     2:17.39       24258572 B   ---   --   -----    wav  1.0000  Track14.wav
+     5:12.59       55175612 B   ---   --   -----    wav  1.0000  Track15.wav
+     3:06.06       32824556 B   ---   --   -----    wav  1.0000  Track16.wav
+     2:10.20       22979084 B   ---   --   -----    wav  1.0000  Track17.wav
+     5:39.07       59816108 B   ---   --   -----    wav  1.0000  Track18.wav
+     4:00.31       42408956 B   ---   --   -----    wav  1.0000  Track19.wav
+     3:43.57       39471308 B   ---   --   -----    wav  1.0000  Track20.wav
+     7:19.21       77489036 B   ---   --   -----    wav  1.0000  Track21.wav
+    79:16.38      839048700 B                            1.0000  (21 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,7 @@
+238f4d768710d7188d1159132681456f *bd_04-03-01_BD_cd2_Track 01.shn
+145e96ec39e081889577553af208117a *bd_04-03-01_BD_cd2_Track 02.shn
+470d582e2f76039f3770800da5d1d18a *bd_04-03-01_BD_cd2_Track 03.shn
+a55f69c0efa257ef2e8de9d0235fba57 *bd_04-03-01_BD_cd2_Track 04.shn
+8e75c8fb924e3ca6f6e1fc4f386d523a *bd_04-03-01_BD_cd2_Track 05.shn
+d70142037f8cec691e33d8637e600cec *bd_04-03-01_BD_cd2_Track 06.shn
+a40d9d1415daeabf34730bbbc3a564ad *bd_04-03-01_BD_cd2_Track 07.shn

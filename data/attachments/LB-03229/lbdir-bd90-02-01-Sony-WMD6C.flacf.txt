@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-01-Sony-WMD6C.flacf 
+=================== 
+=================== 
+=================== 
+97247dc223345116b2246659a7015151  01 - Dylan - Paris 01 02 90 - Most Likely You Go Your Way.flac
+6e1229e0fc0bf6686ca6c7b7f50d9556  02 - Dylan - Paris 01 02 90 - Ballad Of Hollis Brown.flac
+63b3992afda6f37b4366d71f46edf5bc  03 - Dylan - Paris 01 02 90 - Political World.flac
+dcad58563c47f1e8b94b149ccfb1240b  04 - Dylan - Paris 01 02 90 - What Was It You Wanted.flac
+992c20a51aa284f9ee8eef4c95a9e179  05 - Dylan - Paris 01 02 90 - Tears Of Rage.flac
+9df9b69b4abc3bff311881661b836af1  06 - Dylan - Paris 01 02 90 - Stuck Inside Of Mobile With The Memphis Blues Again.flac
+dc9524d187fbc52f4ef918ff238afc5e  07 - Dylan - Paris 01 02 90 - All Along The Watchtower.flac
+cafd9a8468ebe108f2dac900e533f3e4  08 - Dylan - Paris 01 02 90 - Visions Of Johanna.flac
+2575322381327a5744c2ccaf9a9ca219  09 - Dylan - Paris 01 02 90 - Mama  You Been On My Mind.flac
+5b06130cf464ef9abc24fc5b94b85e79  10 - Dylan - Paris 01 02 90 - Gates Of Eden.flac
+c2c356431299c280b76ac8ec2d063c9e  11 - Dylan - Paris 01 02 90 - It Ain't Me, Babe.flac
+ef2260f50ceabdfd281ff754119afcc2  12 - Dylan - Paris 01 02 90 - It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+303fcc8a6caab1a74eb7f3ae98994f07  13 - Dylan - Paris 01 02 90 - Everything Is Broken.flac
+5aefeda2fca2603fd368b2509150146d  14 - Dylan - Paris 01 02 90 - Lenny Bruce.flac
+552bb7cde9118da6cd7bbdcb0e63bb2c  15 - Dylan - Paris 01 02 90 - Man Of Peace.flac
+61cb303bb4ce1d76c74fb720f81e4efa  16 - Dylan - Paris 01 02 90 - You're A Big Girl Now.flac
+f90219bd14fa7954eb272d81e3d2c029  17 - Dylan - Paris 01 02 90 - Like A Rolling Stone.flac
+2267e12f6c89123e626ed06be589aecf  18 - Dylan - Paris 01 02 90 - Barbara Allen.flac
+cade46b525294bd9e2a256bdeffcc0b1  19 - Dylan - Paris 01 02 90 - Forever Young.flac
+0f23b45376446795e6c54b2d8423ad35  20 - Dylan - Paris 01 02 90 - Maggie's Farm.flac
+1e970116132970688f7c1857f96fecdd  bd90-02-01-Sony-WMD6C-LB-3229.txt
+5c9120152978723a4390d3ffea70f1d4  Dylan Paris 01 02 90 Cover.jpg
+19215d02ac843aeff28dcfb5042cc138  Dylan Paris 01.02.90 aud.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-01-Sony-WMD6C.flacf 
+=================== 
+=================== 
+=================== 
+01 - Dylan - Paris 01 02 90 - Most Likely You Go Your Way.flac:f83a8f94a5a37e8110a534a5588baad9
+02 - Dylan - Paris 01 02 90 - Ballad Of Hollis Brown.flac:2cb2a6bd55c62c9b1c13856dc674dcf3
+03 - Dylan - Paris 01 02 90 - Political World.flac:e202e031ad2b1a38098c726f54c646d7
+04 - Dylan - Paris 01 02 90 - What Was It You Wanted.flac:3f7ead7b2d05e472920c4a9960eb4dfd
+05 - Dylan - Paris 01 02 90 - Tears Of Rage.flac:358079051c566bff2a60ff5c8669a092
+06 - Dylan - Paris 01 02 90 - Stuck Inside Of Mobile With The Memphis Blues Again.flac:39c45d680cf44ca28cbd0941058a9e9e
+07 - Dylan - Paris 01 02 90 - All Along The Watchtower.flac:df8703175c9206a1e9366944fa8d587d
+08 - Dylan - Paris 01 02 90 - Visions Of Johanna.flac:537f7b0cfca3cbf2be220301073debd1
+09 - Dylan - Paris 01 02 90 - Mama  You Been On My Mind.flac:4529ccbef91d9be415eadd88d6b978a6
+10 - Dylan - Paris 01 02 90 - Gates Of Eden.flac:ae6c0607fd898f7da1bb709732090182
+11 - Dylan - Paris 01 02 90 - It Ain't Me, Babe.flac:39a2a04044b5e0ac9544a6064912fa48
+12 - Dylan - Paris 01 02 90 - It Takes A Lot To Laugh, It Takes A Train To Cry.flac:933fa7ffb062d8efaad9a759c88f0bdb
+13 - Dylan - Paris 01 02 90 - Everything Is Broken.flac:3b07c033fec6155db4eeb28eaff93a57
+14 - Dylan - Paris 01 02 90 - Lenny Bruce.flac:51f890b4d64a979c2bdb1b6ea5f57c96
+15 - Dylan - Paris 01 02 90 - Man Of Peace.flac:63aecadf17b2ac1af1469c477ab86675
+16 - Dylan - Paris 01 02 90 - You're A Big Girl Now.flac:102f4ccb4ecae169f37128db820d5d91
+17 - Dylan - Paris 01 02 90 - Like A Rolling Stone.flac:d5a521d80dbe173f81e2d54e3b667d51
+18 - Dylan - Paris 01 02 90 - Barbara Allen.flac:f3752bf94ee73b0c330fc3167d9c4c23
+19 - Dylan - Paris 01 02 90 - Forever Young.flac:9f0d13a89cbe7115e6aa504a46f639f0
+20 - Dylan - Paris 01 02 90 - Maggie's Farm.flac:3ea64a1e942191ddcf2f98bbd8aa55e4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-01-Sony-WMD6C.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.37       52124452 B   -b-   --   ---xx   flac  0.6060  01 - Dylan - Paris 01 02 90 - Most Likely You Go Your Way.flac
+     4:52.74       51682924 B   -b-   --   ---xx   flac  0.5928  02 - Dylan - Paris 01 02 90 - Ballad Of Hollis Brown.flac
+     2:49.52       29933564 B   -b-   --   ---xx   flac  0.6200  03 - Dylan - Paris 01 02 90 - Political World.flac
+     5:05.71       53968060 B   -b-   --   ---xx   flac  0.6035  04 - Dylan - Paris 01 02 90 - What Was It You Wanted.flac
+     5:45.66       61012400 B   -b-   --   ---xx   flac  0.5931  05 - Dylan - Paris 01 02 90 - Tears Of Rage.flac
+     6:04.42       64309508 B   -b-   --   ---xx   flac  0.6311  06 - Dylan - Paris 01 02 90 - Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     3:42.34       39241880 B   -b-   --   ---xx   flac  0.6197  07 - Dylan - Paris 01 02 90 - All Along The Watchtower.flac
+     6:47.02       71800176 B   -b-   --   ---xx   flac  0.5932  08 - Dylan - Paris 01 02 90 - Visions Of Johanna.flac
+     3:33.10       37596984 B   -b-   --   ---xx   flac  0.5788  09 - Dylan - Paris 01 02 90 - Mama  You Been On My Mind.flac
+     5:18.20       56142568 B   -b-   --   ---xx   flac  0.5627  10 - Dylan - Paris 01 02 90 - Gates Of Eden.flac
+     6:09.46       65200432 B   -b-   --   ---xx   flac  0.5932  11 - Dylan - Paris 01 02 90 - It Ain't Me, Babe.flac
+     4:47.01       50628380 B   -b-   --   ---xx   flac  0.6071  12 - Dylan - Paris 01 02 90 - It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+     3:33.69       37735988 B   -b-   --   ---xx   flac  0.6346  13 - Dylan - Paris 01 02 90 - Everything Is Broken.flac
+     5:20.20       56495424 B   -b-   --   ---xx   flac  0.5793  14 - Dylan - Paris 01 02 90 - Lenny Bruce.flac
+     3:35.35       38009276 B   -b-   --   ---xx   flac  0.6367  15 - Dylan - Paris 01 02 90 - Man Of Peace.flac
+     5:12.25       55096120 B   -b-   --   ---xx   flac  0.5585  16 - Dylan - Paris 01 02 90 - You're A Big Girl Now.flac
+     6:44.67       71423404 B   -b-   --   ---xx   flac  0.6483  17 - Dylan - Paris 01 02 90 - Like A Rolling Stone.flac
+     3:50.63       40720144 B   -b-   --   ---xx   flac  0.4884  18 - Dylan - Paris 01 02 90 - Barbara Allen.flac
+     5:15.53       55689940 B   -b-   --   ---xx   flac  0.5777  19 - Dylan - Paris 01 02 90 - Forever Young.flac
+     4:50.33       51232940 B   -b-   --   ---xx   flac  0.6115  20 - Dylan - Paris 01 02 90 - Maggie's Farm.flac
+    98:15.70     1040044564 B                            0.5972  (20 files)
+=================== 
+=================== 
+=================== 

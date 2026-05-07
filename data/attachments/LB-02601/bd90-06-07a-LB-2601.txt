@@ -1,0 +1,11 @@
+Bob Dylan, 6/7/90, Toronto, Ontario, Canada, O'Keefe Centre For The Performing Arts, 2CDR
+
+LB-2601, (41min+49min), version "a"; Source: aud mono, Data processing: CD-Rs > EAC > CoolEdit Pro (see below) > shntool w/ foobar200 bit comparison > bt, Notes: All files pitch corrected. Also, right channel superior to left channel. Since this is a mono recording, I created a new file from right channel data for all files except last 2, which did not have this problem. Finally, d1t03 had 3 different volume levels. I evened it out, which required that I lower the volume on first two tracks for consistency; bittorrent download 04/05; brief talking d1t1 0:25, d1t6 0:00; not much above 21k; good to very good sound [B-]; different recording than previous one; previous one sounds a little better as this one is sort of altered sounding but this one is complete
+
+disc 1, 1. Most Likely You Go Your Way (And I'll Go Mine), 2. I'll Remember You, 3. Stuck Inside Of Mobile With The Memphis Blues Again, 4. I Believe In You, 5. Masters Of War, 6. Gotta Serve Somebody, 7. It's Alright, Ma (I'm Only Bleeding), 8. Love Minus Zero/No Limit, 
+
+disc 2, 1. Ballad Of Hollis Brown, 2. Gates Of Eden, 3. Desolation Row, 4. What Was It You Wanted, 5. What Good Am I?, 6. All Along The Watchtower, 7. I Shall Be Released, 8. Like A Rolling Stone, ---------------, 9. I've Been All Around This World (trad.), 10. Maggie's Farm
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates
+

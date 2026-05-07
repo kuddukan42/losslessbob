@@ -1,0 +1,97 @@
+===================
+===================
+===================
+=== Bob Dylan 1999-02-09 Ervin J. Nutter Center, Wright State University, Dayton, Ohio, USA [derived f. LB-4719].md5
+===================
+===================
+===================
+3261a429f25471d8192a3345200117cf *01 Gotta Serve Somebody.flac
+ae52dd3f1cc293880e58c536f8da01e8 *02 Million Miles.flac
+5032b1415adbb27c331e428f8ab88a26 *03 Watching The River Flow.flac
+017b42dc9aca294e5aab8f3f71024b71 *04 Blind Willie McTell.flac
+f00a731c992f0cd2ac8945e02189523f *05 Silvio.flac
+ad9eca7b12086554e5c605fc96268152 *06 Mr. Tambourine Man.flac
+75a46e2af9ea8b49316be8bcc8d4b45d *07 Friend Of The Devil.flac
+5e48e918c60cf88d9c893ff3832334db *08 Desolation Row.flac
+55a23190910ea93ac5f12355f50ef4da *09 Tangled Up In Blue.flac
+ad7af4254d78a2e5d75722236f6dee4c *10 Make You Feel My Love.flac
+58ce9ef3d2be7519e4de35fc0ab342a9 *11 'Til I Fell In Love With You.flac
+4d68974380f4f2e25bc6984b7a4242e6 *12 Highway 61 Revisited.flac
+21d050c1b707320bc666e74156dcbdfe *13 Love Sick.flac
+17c05996cae9b119a9d4a9a1100e4e29 *14 Rainy Day Women # 12 & 35.flac
+3e746f499e03b66fbac02367454791af *15 Don't Think Twice, It's All Right.flac
+7e830c83ecfbf0465831c8b4016827f5 *16 Not Fade Away.flac
+3775ff7ea8aa0fd54cbc03473f0e78bd *Bob Dylan 1999-02-09 Ervin J. Nutter Center, Wright State University, Dayton, Ohio, USA [derived f. LB-4719].txt
+===================
+===================
+===================
+=== Bob Dylan 1999-02-09 Ervin J. Nutter Center, Wright State University, Dayton, Ohio, USA [derived f. LB-4719].txt
+===================
+===================
+===================
+Ervin J. Nutter Center
+Wright State University
+Dayton, Ohio
+February 9, 1999
+
+Taper: unidentified
+Rating: A
+Derived from LB-4917, based on http://jokerman.org.uk/lb/files/LBF-04719-bd99-02-09-LB-4719.txt: "levels start loud at begin of d1t1 with limiting/clipping and then start to come down at d1t1 0:20"
+
+01 Gotta Serve Somebody
+02 Million Miles
+03 Watching The River Flow
+04 Blind Willie McTell
+05 Silvio (Bob Dylan & Robert Hunter)
+06 Mr. Tambourine Man
+07 Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson)
+08 Desolation Row
+09 Tangled Up In Blue
+10 Make You Feel My Love
+11 'Til I Fell In Love With You
+12 Highway 61 Revisited
+13 Love Sick
+14 Rainy Day Women # 12 & 35
+15 Don't Think Twice, It's All Right
+16 Not Fade Away (Norman Petty/Charles Hardin)
+
+Concert # 1057 of The Never-Ending Tour
+Concert # 11 of the 1999 US Winter Tour
+1999 concert # 11
+
+Concert # 204 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+69, 15 acoustic with the band
+1, 5, 14, 16 Bucky Baxter and Larry Campbell backup vocal
+4 Larry Campbell (bouzouki)
+
+6 new songs (37%) compared to previous concert
+No new songs for this tour
+
+Stereo audience recording, 100 minutes
+
+3261a429f25471d8192a3345200117cf *01 Gotta Serve Somebody.flac
+ae52dd3f1cc293880e58c536f8da01e8 *02 Million Miles.flac
+5032b1415adbb27c331e428f8ab88a26 *03 Watching The River Flow.flac
+017b42dc9aca294e5aab8f3f71024b71 *04 Blind Willie McTell.flac
+f00a731c992f0cd2ac8945e02189523f *05 Silvio.flac
+ad9eca7b12086554e5c605fc96268152 *06 Mr. Tambourine Man.flac
+75a46e2af9ea8b49316be8bcc8d4b45d *07 Friend Of The Devil.flac
+5e48e918c60cf88d9c893ff3832334db *08 Desolation Row.flac
+55a23190910ea93ac5f12355f50ef4da *09 Tangled Up In Blue.flac
+ad7af4254d78a2e5d75722236f6dee4c *10 Make You Feel My Love.flac
+58ce9ef3d2be7519e4de35fc0ab342a9 *11 'Til I Fell In Love With You.flac
+4d68974380f4f2e25bc6984b7a4242e6 *12 Highway 61 Revisited.flac
+21d050c1b707320bc666e74156dcbdfe *13 Love Sick.flac
+17c05996cae9b119a9d4a9a1100e4e29 *14 Rainy Day Women # 12 & 35.flac
+3e746f499e03b66fbac02367454791af *15 Don't Think Twice, It's All Right.flac
+7e830c83ecfbf0465831c8b4016827f5 *16 Not Fade Away.flac
+3775ff7ea8aa0fd54cbc03473f0e78bd *Bob Dylan 1999-02-09 Ervin J. Nutter Center, Wright State University, Dayton, Ohio, USA [derived f. LB-4719].txt
+===================
+===================
+===================

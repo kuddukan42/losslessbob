@@ -1,0 +1,52 @@
+Bob Dylan 
+1963-02-08 
+Gerdes Folk City 
+Banjo Tape [neuthorduo remaster]
+
+original info:
+
+The Banjo Tape 1963
+
+Yellow Dog Record YD 058
+
+EAC...Flac.Frontend... Flac
+
+Tracks:  
+
+Lonesome River Edge (Trad) 
+Back Door Blues (Trad) 
+Bob Dylan's Dream 
+You Can Get Her (Trad) 
+Farewell 
+All Over You 
+Masters Of War 
+Instrumental (Fragment) 
+Keep Your Hands Off Her (Leadbelly) 
+Honey Babe (Trad) 
+Goin' Back To Rome 
+Stealin' (Trad. Memphis Jug Band arr.) 
+
+
+flac > wav > remaster > wav > flac
+
+remaster info: I did some pitch correction, EQ and noise reduction. 
+
+I'd rate the sound A-, if you consider the age it's a solid A.
+
+************************************************
+DO NOT SELL OR CONVERT THIS TO ANY LOSSY FORMAT!
+************************************************
+
+
+01.flac:2c0a957a5751337072696f0e1171f675
+02.flac:e55951b96eb3005b1b81473b95eaa7f4
+03.flac:56857f13ad91c112a706a881ce2fda29
+04.flac:b228083937878747c9ee64407514896e
+05.flac:a505e1080a484b2a5860daa48c019286
+06.flac:c7c5655bc5c638033c4850ef13d0de42
+07.flac:23e0df0be85a71e04c7427fb944e8d12
+08.flac:5a9a24a7227404a57df9732cb0776f44
+09.flac:d0eeab594f43a8dc4eb2ce926e23daeb
+10.flac:78f4d5c9a5eb5caf151b1366ac8a374a
+11.flac:c49a4a64683ae0cac220fabc2a31a24f
+12.flac:faa85db11e95862d3e2ec95ef1e795cd

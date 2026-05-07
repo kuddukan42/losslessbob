@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-08-ma 
+=================== 
+=================== 
+=================== 
+5912df7b3a326ecbf5f0384ae8068c88  bd04-08-08-ma.txt
+2e2ac3e887aacfedbae6229e254f5ded  bd2004-08-08_d1t01.shn
+9bb3d199c665a705ea90ee660e68740a  bd2004-08-08_d1t02.shn
+081b924a4b23a00e76e639016f146a30  bd2004-08-08_d1t03.shn
+1244afa5a17f594f2e70b85d59f8f2bf  bd2004-08-08_d1t04.shn
+2607ff892050db1c25b7e48b3bd55399  bd2004-08-08_d1t05.shn
+5ce992dc4be1c0ac83fb990590127fa5  bd2004-08-08_d1t06.shn
+9d6fb0cd9357f7af5895cf5a12f457a7  bd2004-08-08_d1t07.shn
+9516de637f1f827b39d9be96a065cd26  bd2004-08-08_d1t08.shn
+4b33b90436bad111415a966383f14ccf  bd2004-08-08_d1t09.shn
+3ac40407dfed3e8a17580ab1e51c7ccb  bd2004-08-08_d1t10.shn
+7b8d8e4ac57cbf69639ec532d6fc3856  bd2004-08-08_d2t01.shn
+70bd9ed44485343d0a3dc8f95d7fad94  bd2004-08-08_d2t02.shn
+b2c5773f6aa14ff20a3a8b302f79950c  bd2004-08-08_d2t03.shn
+713991e757c329fc8c7f3353bd76b33c  bd2004-08-08_d2t04.shn
+f9a5633c5a000d8035e840f0543aa748  bd2004-08-08_d2t05.shn
+953a2fce623c06fa37db4c1d67ceb260  bd2004-08-08_d2t06.shn
+4600c95cd13ab99c78b561cda9d68d28  bd2004-08-08_d2t07.shn
+d00b0caa80c57b1915adb4406dec5a22  bd_2004-08-08_Brockton_shns_M&A.md5
+2a4a3a4762fb71c923e2465ad168b1fb  brockton.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-08-ma 
+=================== 
+=================== 
+=================== 
+7d0226ac29f5edfcea09fde921b0934e  [shntool]  bd2004-08-08_d1t01.wav
+841b59d131583426acd39f014ea72a77  [shntool]  bd2004-08-08_d1t02.wav
+b018987c808eec377c13e83ea23e27b4  [shntool]  bd2004-08-08_d1t03.wav
+13b01ff66af5dc959b1dde2b968dd4ef  [shntool]  bd2004-08-08_d1t04.wav
+ef0b569519db147e74d0a15cd680e191  [shntool]  bd2004-08-08_d1t05.wav
+f01333cdcd2c36767b6d93c85628ddd1  [shntool]  bd2004-08-08_d1t06.wav
+37fba7ddccdf820adaa186e3441d6cb9  [shntool]  bd2004-08-08_d1t07.wav
+6997f35049353f63693ed898c01080c8  [shntool]  bd2004-08-08_d1t08.wav
+cdb79f0f8e81717327e139242d464fcc  [shntool]  bd2004-08-08_d1t09.wav
+7bd47cf23ef26422baffd15e4c5b039b  [shntool]  bd2004-08-08_d1t10.wav
+5c9ce6a9fa6f2a31d2e8bb2c19fc5e48  [shntool]  bd2004-08-08_d2t01.wav
+86a6a02e18a49d6f42bf39fce787ffb0  [shntool]  bd2004-08-08_d2t02.wav
+cff1ab3f30124fba29cdbc0053e4c968  [shntool]  bd2004-08-08_d2t03.wav
+7f4842a7ce10c3bdd2f9f40321c2dc39  [shntool]  bd2004-08-08_d2t04.wav
+ef9aeef067a9022c3b9681ce3ed07d19  [shntool]  bd2004-08-08_d2t05.wav
+63ef1425b49c407fbabbd853e5e8176a  [shntool]  bd2004-08-08_d2t06.wav
+d5fb5f4e5cebf8a9b80599ee181a5390  [shntool]  bd2004-08-08_d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-08-ma 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.55       13888604 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t01.wav
+     4:05.51       43337996 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t02.wav
+     4:06.29       43462652 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t03.wav
+     5:34.69       59079932 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t04.wav
+     6:16.46       66434636 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t05.wav
+     6:16.65       66479324 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t06.wav
+     5:01.31       53169356 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t07.wav
+     5:52.64       62243372 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t08.wav
+     5:04.08       53644460 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t09.wav
+     6:25.31       67986956 B   ---   --   -----    wav  1.0000  bd2004-08-08_d1t10.wav
+     6:53.30       72923804 B   ---   --   -----    wav  1.0000  bd2004-08-08_d2t01.wav
+     6:06.11       64588316 B   ---   --   -----    wav  1.0000  bd2004-08-08_d2t02.wav
+     9:12.00       97372844 B   ---   --   -----    wav  1.0000  bd2004-08-08_d2t03.wav
+     6:46.39       71710172 B   ---   --   -----    wav  1.0000  bd2004-08-08_d2t04.wav
+     6:20.69       67194332 B   ---   --   -----    wav  1.0000  bd2004-08-08_d2t05.wav
+     0:53.05        9361004 B   ---   --   -----    wav  1.0000  bd2004-08-08_d2t06.wav
+     5:49.28       61629500 B   ---   --   -----    wav  1.0000  bd2004-08-08_d2t07.wav
+    92:04.31      974507260 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

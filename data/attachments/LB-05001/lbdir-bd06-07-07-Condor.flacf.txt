@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-07-Condor.flacf 
+=================== 
+=================== 
+=================== 
+343595ddc2d4ba85bdb263033e5dab29  bd2006-07-07-Valencia-Condor.txt
+2eabf62e02308366639c1c04b8b9304f  Disc 1\Disc 1.md5
+534b5e3f30377cef7af7df69b23c8be8  Disc 1\Track01.flac
+ac7476903ba4127a4453e3e1c43c9fd8  Disc 1\Track02.flac
+8f094a64f1ff3e4020675c778f4aae48  Disc 1\Track03.flac
+3a0011bab847b0d40d299e4870772de3  Disc 1\Track04.flac
+7af0f6da29e35a190c55a8d728e8bbcc  Disc 1\Track05.flac
+08714142639e27859ab6fb686bc82075  Disc 1\Track06.flac
+6ee45ac6c18439c40df1cd08734e8b73  Disc 1\Track07.flac
+967f056943140c20e3c7c887045636a0  Disc 1\Track08.flac
+b3b992f845c9af26bdec1367dfb1e0a1  Disc 2\Disc 2.md5
+e222ad16472e4f356c9e10edea915a74  Disc 2\Track01.flac
+6f14f7fd9e22aede175a45d5e2189ba4  Disc 2\Track02.flac
+9a168e6837a650386b85961003eafee1  Disc 2\Track03.flac
+8290f60d2780f020631a5f72f39723cc  Disc 2\Track04.flac
+c919a609a4bce541985cb909d6d99619  Disc 2\Track05.flac
+7c7472dfc7888a4b8aad4a2f0d245790  Disc 2\Track06.flac
+71079a62fb5b4f88de3b69b760642fb8  Disc 2\Track07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-07-Condor.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:4ee46e4046a7c0f19187321b4cffb2cc
+Track02.flac:f9f10853e84726037e3e270e7ae0d58b
+Track03.flac:d77fd87bc6d3d09ff1f149e85f421eec
+Track04.flac:e6dd7edf5a8b2a3307cbb40000cd83a3
+Track05.flac:9c30dd89ca710bd50726cbe8124075b1
+Track06.flac:ea45f5d1c4791eadbb91e4b227d17482
+Track07.flac:1eb29182c55b4efcdd3c7c6e43ad3cb9
+Track08.flac:8547f5ed36b03abeefc7ce21791383e4
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-07-Condor.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:50caa838bebfeebb5197650e4baafd20
+Track02.flac:dc7684eafbb413ee7b3c43df81b3410d
+Track03.flac:951ca92d621681f868d1e7437ea62188
+Track04.flac:5341a66b30c25702af872d335db853ba
+Track05.flac:db78472d1f082bf8c60b542241561afb
+Track06.flac:019a9b509c9e9aff17947d493cca43d0
+Track07.flac:445260003b3c161712ad46b1ada2d712
+=================== 
+=================== 
+=================== 
+=== shntool for: bd06-07-07-Condor.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.68       61723580 B   ---   --   ---xx   flac  0.6155  Track01.flac
+     7:20.56       77747756 B   ---   --   ---xx   flac  0.5999  Track02.flac
+     6:35.10       69701564 B   ---   --   ---xx   flac  0.6224  Track03.flac
+     7:18.69       77425532 B   ---   --   ---xx   flac  0.5838  Track04.flac
+     7:22.04       77978252 B   ---   --   ---xx   flac  0.6274  Track05.flac
+     8:36.15       91057724 B   ---   --   ---xx   flac  0.6213  Track06.flac
+     6:07.51       64858796 B   ---   --   ---xx   flac  0.5353  Track07.flac
+     6:35.16       69715676 B   ---   --   ---xx   flac  0.6155  Track08.flac
+    55:45.64      590208880 B                            0.6038  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd06-07-07-Condor.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.32       67283708 B   ---   --   ---xx   flac  0.5856  Track01.flac
+     5:50.50       61857644 B   ---   --   ---xx   flac  0.5950  Track02.flac
+     7:00.05       74099804 B   ---   --   ---xx   flac  0.6165  Track03.flac
+     5:23.41       57073676 B   ---   --   ---xx   flac  0.6071  Track04.flac
+     9:07.52       96613148 B   ---   --   ---xx   flac  0.6359  Track05.flac
+     7:39.02       80972348 B   ---   --   ---xx   flac  0.6381  Track06.flac
+     6:08.54       65042252 B   ---   --   ---xx   flac  0.6264  Track07.flac
+    47:31.11      502942580 B                            0.6171  (7 files)
+=================== 
+=================== 
+=================== 

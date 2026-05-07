@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-09-17.shnf 
+=================== 
+=================== 
+=================== 
+597ff302380e2c823457493adc84c4a8  09-17-99 Disc 1- 1.shn
+6eda9c0d58c82033022efd590d4b7f36  09-17-99 Disc 1- 10.shn
+d67ea42c885bccdc20d3a78abbce36ce  09-17-99 Disc 1- 11.shn
+72e5859435fa77d809430be6cbe3012f  09-17-99 Disc 1- 2.shn
+08880dc7ba8b03d3e2e092715f48a666  09-17-99 Disc 1- 3.shn
+beed492db5be0d9a315e65566c2ab150  09-17-99 Disc 1- 4.shn
+c7196b777c00b01d12c58aade6ec925b  09-17-99 Disc 1- 5.shn
+a222b84d7d7cc8f2c7991bd20dde9c93  09-17-99 Disc 1- 6.shn
+76fa44c1aff4e2aabefa71e1f5ce35a3  09-17-99 Disc 1- 7.shn
+01521278646849549e14776c4b1ece23  09-17-99 Disc 1- 8.shn
+0949eb8fa28a8518bd9ee7afa0078ce8  09-17-99 Disc 1- 9.shn
+0862553eb0ecbfb6e9f97695a9a20409  09-17-99 Disc 1.md5
+b4f790ab8d7793eb682f35ed930ed6ac  09-17-99 Disc 2- 1.shn
+205c3bb0374b8bc2f4ca22e8fe8e790b  09-17-99 Disc 2- 2.shn
+43bc687229c10ac498f397daa6b4801f  09-17-99 Disc 2- 3.shn
+8a97eb73e63289a54a7c187c815a730d  09-17-99 Disc 2- 4.shn
+1a406fbef981595b25d6af198c2f4192  09-17-99 Disc 2- 5.shn
+78dab1770dfe0d78171d63473c181c71  09-17-99 Disc 2- 6.shn
+cbb844bfbbdc19c08b445d04f12c0b0d  09-17-99 Disc 2- 7.shn
+8a71f5c34d5341889f441dca5c704b82  09-17-99 Disc 2.md5
+96d9f53b5be1a89356d7df593258fce4  09-17-99.nfo
+ec3a65710f60382dc958ce3029f6cd8e  bd99-09-17.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-09-17.shnf 
+=================== 
+=================== 
+=================== 
+6076f5500f6962143293c2a3d2c41034  [shntool]  09-17-99_Disc_1-_1.wav
+e0748b19f8ef0f35f3ae8591db77c4c9  [shntool]  09-17-99_Disc_1-_2.wav
+ba7472bc85058a20304b6f8a37ebc106  [shntool]  09-17-99_Disc_1-_3.wav
+5e0c993d0eea2d139bf6469d9d7dbfa7  [shntool]  09-17-99_Disc_1-_4.wav
+f6503a160a412a1f358f49b9c94500dc  [shntool]  09-17-99_Disc_1-_5.wav
+c91bdd98697f2cdf10ae5b5b00f453eb  [shntool]  09-17-99_Disc_1-_6.wav
+d8a473c3206fec9d7b031782c422cac3  [shntool]  09-17-99_Disc_1-_7.wav
+27c0ab9b916b8f94c5f518ed1714df97  [shntool]  09-17-99_Disc_1-_8.wav
+522bcebfe74123ff0e2713b430362a14  [shntool]  09-17-99_Disc_1-_9.wav
+3bed06b1982af742dc788ae7c90754c4  [shntool]  09-17-99_Disc_1-_10.wav
+741d532ed055a6d1a547e09ea74481ef  [shntool]  09-17-99_Disc_1-_11.wav
+8ba836a0460234255c84a39b8f49dd8f  [shntool]  09-17-99_Disc_2-_1.wav
+d33119024662c9db0e2ff97be8b061ea  [shntool]  09-17-99_Disc_2-_2.wav
+985c6239fe0a1cceb641524544e3faeb  [shntool]  09-17-99_Disc_2-_3.wav
+81f6726939d0d3457b8d0c351e562978  [shntool]  09-17-99_Disc_2-_4.wav
+5c6432fbccd86f5a0a10cc52d35f631c  [shntool]  09-17-99_Disc_2-_5.wav
+800dcbd1d79521e70bec96fd92911768  [shntool]  09-17-99_Disc_2-_6.wav
+0065998d05f3cf67b3183719a8023595  [shntool]  09-17-99_Disc_2-_7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-17.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.42       62720828 B   ---   --   ---xx    shn  0.6717  09-17-99 Disc 1- 1.shn
+     6:53.66       73008476 B   ---   --   ---xx    shn  0.6656  09-17-99 Disc 1- 10.shn
+     8:14.30       87212204 B   ---   --   ---xx    shn  0.6843  09-17-99 Disc 1- 11.shn
+     4:34.58       48470060 B   ---   --   ---xx    shn  0.7280  09-17-99 Disc 1- 2.shn
+     5:42.59       60467612 B   ---   --   ---xx    shn  0.7008  09-17-99 Disc 1- 3.shn
+     2:37.43       27795980 B   ---   --   ---xx    shn  0.6523  09-17-99 Disc 1- 4.shn
+     8:08.69       86245532 B   ---   --   ---xx    shn  0.6404  09-17-99 Disc 1- 5.shn
+     7:24.12       78349868 B   ---   --   ---xx    shn  0.6285  09-17-99 Disc 1- 6.shn
+     5:59.48       63440540 B   ---   --   ---xx    shn  0.6172  09-17-99 Disc 1- 7.shn
+     7:50.68       83067980 B   ---   --   ---xx    shn  0.6998  09-17-99 Disc 1- 8.shn
+     4:02.04       42698252 B   ---   --   ---xx    shn  0.6812  09-17-99 Disc 1- 9.shn
+     7:09.43       75776780 B   ---   --   ---xx    shn  0.6520  09-17-99 Disc 2- 1.shn
+     6:44.03       71272700 B   ---   --   ---xx    shn  0.6639  09-17-99 Disc 2- 2.shn
+     7:28.18       79069580 B   ---   --   ---xx    shn  0.6467  09-17-99 Disc 2- 3.shn
+     8:07.19       85951532 B   ---   --   ---xx    shn  0.6290  09-17-99 Disc 2- 4.shn
+     4:54.05       51873404 B   ---   --   ---xx    shn  0.6078  09-17-99 Disc 2- 5.shn
+     5:33.19       58785932 B   ---   --   ---xx    shn  0.5941  09-17-99 Disc 2- 6.shn
+     5:06.10       54001964 B   ---   --   ---xx    shn  0.6000  09-17-99 Disc 2- 7.shn
+   112:27.16     1190209224 B                            0.6535  (18 files)
+=================== 
+=================== 
+=================== 

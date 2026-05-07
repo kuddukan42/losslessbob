@@ -1,0 +1,12 @@
+Bob Dylan, 4/28/05, Beacon Theater, New York, NY, 2CDR
+
+LB-2659, (51min+52min), Taper: scb, Source: DPA (B&K) 4022s > Sound Devices 722 @ 24/96. 722 > PowerBookG4 > Spark XL 2.8.2* > xACT 1.4b25 > shn, Location: Dead center balcony, *Resampled to 44.1khz using the highest setting and dithered to 16 bit using MegaBitMax Ultra Noise Shaping, notes: The 722 ran into 2 issues when splitting files at the 2GB mark. there is a less than half second spot of repeating samples in d107 (06:32 mark) and d2t07 (01:14 mark). I tried to edit it out but it was either leave as is or edit and have it still sound like there was a bad glitch, compiled by scb on 4-30-05; bittorrent download 05/05; excellent sound [A]
+
+discontinuity/cut pop d1t7 6:32, d2t7 1:14, 1:15
+
+Disc 1, 01 Intro 00:25.03, 02 Drifter's Escape 05:21.31, 03 Se, or (Tales Of Yankee Power) 05:34.47, 04 Down Along The Cove 07:32.68, 05 Girl Of The North Country 06:27.42, 06 High Water (For Charley Patton) 07:41.67, 07 I'll Remember You 07:28.02, 08 Tangled Up In Blue 10:14.23, Disc 1 Total: 50:45.58, 
+
+Disc 2, 01 Tough Mama 06:36.41, 02 Floater (Too Much To Ask) 07:41.23, 03 Blind Willie McTell 07:14.58, 04 Honest With Me 06:35.11, 05 A Hard Rain's A-Gonna Fall 11:15.39, Encore:, 06 Mississippi 05:52.02, 07 All Along The Watchtower 05:47.45, Disc 2 Total: 51:02.69
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

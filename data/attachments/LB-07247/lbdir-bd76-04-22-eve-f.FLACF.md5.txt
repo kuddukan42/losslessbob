@@ -1,0 +1,20 @@
+411a64fad0cba0cde3b6fac87438b928  bd76-04-22-eve.md5
+35f23c00225027c2adeda4beb9bcfd03  Clearwater 76 Alternate.txt
+3f6de8f1d0c7752559c40183d44c6911  Track01.flac
+436045f2eb024d261ee56df5cc5075f3  Track02.flac
+362aa0cfafbda24d2329de9f0ff8cd6f  Track03.flac
+6e1ad3bf325d83d0bb92fb34aef9ecf7  Track04.flac
+90fdc52ad7f7d2cdf808fa980a1e18e5  Track05.flac
+b466fd2855eae17915eaa4bb74576817  Track06.flac
+39902efdaa5f2caf74a1b26ff3a3e4ad  Track07.flac
+b79de04f71c298e4359fdcac03f79479  Track08.flac
+1d3ddfa6ec1a1796b4fe2dd9a8d099cd  Track09.flac
+2156e136aab73beca49c5fe2e569d227  Track10.flac
+b4faab816784e972c6c0dd294b7c7738  Track11.flac
+2feb32aa4bd9b6e51ed5b2d364ab2b31  Track12.flac
+48cbe1c06322a941a8ba31c01868d46d  Track13.flac
+a80749481b776303e0d61f1d87ec04c2  Track14.flac
+080e487312ccba406664c90eb0bf6155  Track15.flac
+52ff4624339cb99be1e436d1d6e9edc7  Track16.flac
+265268c4d7b008e8a46487800a670195  Track17.flac
+fce0281b1e50eaedb64c417d49b82d22  Track18.flac

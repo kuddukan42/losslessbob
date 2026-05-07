@@ -1,0 +1,50 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-04-20-csc-eac-d2.flacf 
+=================== 
+=================== 
+=================== 
+5b1faef6957052d08d7939653c9c3c9e  bd01-04-20-csc-eac-d2t01.flac
+7d07f3d85c9115a3f64cf83756a48498  bd01-04-20-csc-eac-d2t02.flac
+27b646f9f8d6a7b26f3aacac64982fac  bd01-04-20-csc-eac-d2t03.flac
+ba9fbb3ebafd1db179b827e1eeb7ccf1  bd01-04-20-csc-eac-d2t04.flac
+e14598cf69c5c9acb2d1df612adeffaf  bd01-04-20-csc-eac-d2t05.flac
+b872e802f1d57b6024c7451cb32ff451  bd01-04-20-csc-eac-d2t06.flac
+d78fee92e48127ddf1cd9057d4b842c2  bd01-04-20-csc-eac-d2t07.flac
+ee5077b8c696017a9551bfae51251f8e  bd01-04-20-csc-eac-d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-04-20-csc-eac-d2.flacf 
+=================== 
+=================== 
+=================== 
+bd01-04-20-csc-eac-d2t01.flac:b225b923bf460f280c77bc24be172cc8
+bd01-04-20-csc-eac-d2t02.flac:f5a4560d14a1d2509c707df66376c416
+bd01-04-20-csc-eac-d2t03.flac:989a9412b8d833c829fef0835e71b7b6
+bd01-04-20-csc-eac-d2t04.flac:23109792efe95dc4e3701013d3e9ce33
+bd01-04-20-csc-eac-d2t05.flac:0990ab82da8cb870d40091852d993954
+bd01-04-20-csc-eac-d2t06.flac:e02f1a477aea8c275e6a03603654a53a
+bd01-04-20-csc-eac-d2t07.flac:8fbb897d5543ab5cfd43253d0aee8529
+bd01-04-20-csc-eac-d2t08.flac:56058d682261bcfa44b8c8e4da65a51d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-04-20-csc-eac-d2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.03       62099900 B   ---   --   ---xx   flac  0.6569  bd01-04-20-csc-eac-d2t01.flac
+     8:22.73       88724540 B   ---   --   ---xx   flac  0.7262  bd01-04-20-csc-eac-d2t02.flac
+     4:02.02       42693548 B   ---   --   ---xx   flac  0.5941  bd01-04-20-csc-eac-d2t03.flac
+     5:17.05       55930604 B   ---   --   ---xx   flac  0.7124  bd01-04-20-csc-eac-d2t04.flac
+     5:53.72       62438588 B   ---   --   ---xx   flac  0.6836  bd01-04-20-csc-eac-d2t05.flac
+     6:14.73       66145340 B   ---   --   ---xx   flac  0.7245  bd01-04-20-csc-eac-d2t06.flac
+     6:28.22       68494988 B   ---   --   ---xx   flac  0.6537  bd01-04-20-csc-eac-d2t07.flac
+     5:19.66       56426876 B   ---   --   ---xx   flac  0.7246  bd01-04-20-csc-eac-d2t08.flac
+    47:31.16      502954384 B                            0.6893  (8 files)
+=================== 
+=================== 
+=================== 

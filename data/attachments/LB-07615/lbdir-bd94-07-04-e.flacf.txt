@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-04-e.flacf 
+=================== 
+=================== 
+=================== 
+2088b3d0ba92a181d3b62d11b352f6e3  bd1994-07-04-besancon.flac16.md5
+28713280499f419eebac1c3c7f5eb870  bd1994-07-04-besancon.txt
+fa292736f2f42ac84aabde43fb867581  Besancon-1994-07-04.log
+c8cb84070c13c46dd5622b8fdc444b54  d1\bd1994-07-04d1t01.flac
+e92a95b7a1abebd1af00ab0cbcd50581  d1\bd1994-07-04d1t02.flac
+09d1f08b64a53b89425b6177a05ae965  d1\bd1994-07-04d1t03.flac
+fdfb8627ddd8f9ff84ade1b8ae1e27bf  d1\bd1994-07-04d1t04.flac
+0f18b776de13608da15a9fbd3fe20e05  d1\bd1994-07-04d1t05.flac
+d7b56803756bc81d33f69cb6683e1edf  d1\bd1994-07-04d1t06.flac
+392f1fdc676b5e233649800a64d0f754  d1\bd1994-07-04d1t07.flac
+cc7f439ede8273ba8ff43d9081aae884  d1\bd1994-07-04d1t08.flac
+906b293d3a8278c1d49b9a36a379c5ba  d1\bd1994-07-04d1t09.flac
+17d900feacdb158e08a327e9bcf5b6a5  d1\bd1994-07-04d1t10.flac
+853254b775efd4e90e8143daee45ebbe  d1\bd1994-07-04d1t11.flac
+0961206e22f2688b72047fc89da3bebd  d1\bd1994-07-04d1t12.flac
+79f0f1eaeb6db34b90c3d911fc44594f  d1\d1.ffp.txt
+2967e8dc9f29f61eeb982f0f28d4d129  d1t05.sa_fa.JPG
+29d9e77d1353173a4dbf03cc4734fa40  d2\bd1994-07-04d2t01.flac
+de5bc934607af3dcdb099f9354a6cbc2  d2\bd1994-07-04d2t02.flac
+a01deed9f62a4025067f4c9a01f7b6cd  d2\bd1994-07-04d2t03.flac
+37cfc343bdef70fcc18b458c64a15b28  d2\d2.ffp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-04-e.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd1994-07-04d1t01.flac:95110e8db43c8f84a301888570a491fd
+bd1994-07-04d1t02.flac:2d4ea911b40219e9ff7d853200267efa
+bd1994-07-04d1t03.flac:6bb0d9533b15123b8cb14aa4c8da9ed4
+bd1994-07-04d1t04.flac:f34a51ffd6d54e483d874937ba6903df
+bd1994-07-04d1t05.flac:605bc2ae26d9b6ae68207fdc87cc9272
+bd1994-07-04d1t06.flac:01d3bc394e20031d09f8614962b72393
+bd1994-07-04d1t07.flac:11d1276275f16732cbfacb9a14e1dcc0
+bd1994-07-04d1t08.flac:024a0108629f32d720e204c1c2851f8a
+bd1994-07-04d1t09.flac:b8d11e152caf7a9dab27b05504e8f5bf
+bd1994-07-04d1t10.flac:09028d2de37f778929479829baa0bf77
+bd1994-07-04d1t11.flac:98c315be377cf7880e248c7c9f536bd2
+bd1994-07-04d1t12.flac:6998460a542ae33284ef625d20a9cce5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-04-e.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd1994-07-04d2t01.flac:2460bb2e4baad9c6436414b32d17e8c5
+bd1994-07-04d2t02.flac:8e24230af0d0c9f330813b73178f3249
+bd1994-07-04d2t03.flac:d4ebb69aed7e53df3cd90a481be1ef78
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-04-e.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:17.51       77206796 B   ---   --   ---xx   flac  0.5872  bd1994-07-04d1t01.flac
+     5:58.57       63285308 B   ---   --   ---xx   flac  0.6009  bd1994-07-04d1t02.flac
+     5:20.67       56605628 B   ---   --   ---xx   flac  0.5933  bd1994-07-04d1t03.flac
+     5:46.49       61149692 B   ---   --   ---xx   flac  0.5866  bd1994-07-04d1t04.flac
+     8:53.45       94127084 B   ---   --   ---xx   flac  0.5825  bd1994-07-04d1t05.flac
+     5:39.40       59893724 B   ---   --   ---xx   flac  0.6021  bd1994-07-04d1t06.flac
+     3:20.09       35301212 B   ---   --   ---xx   flac  0.5732  bd1994-07-04d1t07.flac
+     5:21.67       56782028 B   ---   --   ---xx   flac  0.5533  bd1994-07-04d1t08.flac
+     4:06.72       43563788 B   ---   --   ---xx   flac  0.5870  bd1994-07-04d1t09.flac
+     5:40.43       60077180 B   ---   --   ---xx   flac  0.5884  bd1994-07-04d1t10.flac
+     7:30.53       79504700 B   ---   --   ---xx   flac  0.5785  bd1994-07-04d1t11.flac
+     6:23.34       67641212 B   ---   --   ---xx   flac  0.5743  bd1994-07-04d1t12.flac
+    71:20.62      755138352 B                            0.5842  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-04-e.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:39.29       59867852 B   ---   --   ---xx   flac  0.6147  bd1994-07-04d2t01.flac
+     5:43.14       60538172 B   ---   --   ---xx   flac  0.5655  bd1994-07-04d2t02.flac
+     8:56.68       94710380 B   ---   --   ---xx   flac  0.5733  bd1994-07-04d2t03.flac
+    20:19.36      215116404 B                            0.5827  (3 files)
+=================== 
+=================== 
+=================== 

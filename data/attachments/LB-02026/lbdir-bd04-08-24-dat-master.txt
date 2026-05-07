@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-24-dat-master 
+=================== 
+=================== 
+=================== 
+322e3a3d25fafcfc02bd892b0a88ad2e  bd04-08-24-dat-master.txt
+130ab7ce162e1aabce56e0621818c5b9  bd_04-08-24_d1.shnf\VERIFY_bd_04-08-24_d1.bat
+80823ec96de7355b2018745a81fe6cb4  bd_04-08-24_d1.shnf\bd_04-08-24_d1_Dylan - Track01.shn
+d73b6e5f2dd86d21062408ebe095490a  bd_04-08-24_d1.shnf\bd_04-08-24_d1_Dylan - Track02.shn
+4819a1d88ad3a32973c4c55bd2480768  bd_04-08-24_d1.shnf\bd_04-08-24_d1_Dylan - Track03.shn
+ff0546bb8762d77819a1eedc3ada8893  bd_04-08-24_d1.shnf\bd_04-08-24_d1_Dylan - Track04.shn
+a8f9700d2f41f81f3b977d868adf8716  bd_04-08-24_d1.shnf\bd_04-08-24_d1_Dylan - Track05.shn
+63e6a5bbf118a526fe6ef62943bc91d2  bd_04-08-24_d1.shnf\bd_04-08-24_d1_encode_notes.txt
+912da619c722bad73ddf31b2e760585b  bd_04-08-24_d1.shnf\bd_04-08-24_d1_shn.md5
+18f8903d5604dcb11dc863c361e109aa  bd_04-08-24_d2.shnf\VERIFY_bd_04-08-24_d2.bat
+3e1ae7d704eb73cd1fc4eb83c3895c06  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track01.shn
+a26b5ecdbfe799d21bcfd9c206324994  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track02.shn
+8bbafbc3dfaddfca62df725d45df6a70  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track03.shn
+f5f7002abc28cf435462906d876f0671  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track04.shn
+36911157524bebcdfc390dbc204819f3  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track05.shn
+82fe571f715ad46db4d276a30734cba9  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track06.shn
+c34ff1bed9ce5a05666756ea2e4e8196  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track07.shn
+bf9170d51754814a18fa754a0283ce91  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track08.shn
+68ccf633348e09850e488de3484054c3  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track09.shn
+08edc28db9f844183f89c36ac5639673  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track10.shn
+fd7df075b07bc5cbde2a8d86280aa368  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track11.shn
+5e821e48cf0c78f726571a2d60f86dd9  bd_04-08-24_d2.shnf\bd_04-08-24_d2_Dylan - Track12.shn
+7ad476615357cdc7404693503a5c2959  bd_04-08-24_d2.shnf\bd_04-08-24_d2_encode_notes.txt
+3d97415fb865df03e961997de806331d  bd_04-08-24_d2.shnf\bd_04-08-24_d2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-24-dat-master\bd_04-08-24_d1.shnf 
+=================== 
+=================== 
+=================== 
+68ebc75c237cb06bb12e9e00f6da2c0b  [shntool]  bd_04-08-24_d1_Dylan_-_Track01.wav
+b815c60d45165903b5ebc4cf08e13c22  [shntool]  bd_04-08-24_d1_Dylan_-_Track02.wav
+506f5ea9cc175bb7ad05fd913222cca3  [shntool]  bd_04-08-24_d1_Dylan_-_Track03.wav
+33ceddf12e1f55dc69718e6ca85124b3  [shntool]  bd_04-08-24_d1_Dylan_-_Track04.wav
+a56fcc2df81d1f5330a9e0745256ef29  [shntool]  bd_04-08-24_d1_Dylan_-_Track05.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-24-dat-master\bd_04-08-24_d2.shnf 
+=================== 
+=================== 
+=================== 
+b3d6c7721cb71d81e534385e784f8229  [shntool]  bd_04-08-24_d2_Dylan_-_Track01.wav
+dcc608cb0b7ef8dba908150ae3acaa27  [shntool]  bd_04-08-24_d2_Dylan_-_Track02.wav
+620010a67939484593b59e9129da5191  [shntool]  bd_04-08-24_d2_Dylan_-_Track03.wav
+4476d4e8b68f586a74a1c08724f7b0ee  [shntool]  bd_04-08-24_d2_Dylan_-_Track04.wav
+384beaecd00c9f804adef1823794c91b  [shntool]  bd_04-08-24_d2_Dylan_-_Track05.wav
+06421e7b6e4710cfe5ca22fbe1b83e78  [shntool]  bd_04-08-24_d2_Dylan_-_Track06.wav
+bbb924aa04b357d2c29dd49ab99ec41b  [shntool]  bd_04-08-24_d2_Dylan_-_Track07.wav
+9f53e170d37378b616112f55ab20f569  [shntool]  bd_04-08-24_d2_Dylan_-_Track08.wav
+bf3882117e8df925838f0765ddb55b85  [shntool]  bd_04-08-24_d2_Dylan_-_Track09.wav
+9cd0025ec8f04deb9d4b434c2c67c68c  [shntool]  bd_04-08-24_d2_Dylan_-_Track10.wav
+d4b6f854c69961d0679ce7935a4931be  [shntool]  bd_04-08-24_d2_Dylan_-_Track11.wav
+7d0d91cb38610aa660e7b255d6d5afb6  [shntool]  bd_04-08-24_d2_Dylan_-_Track12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-24-dat-master\bd_04-08-24_d1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:40.01       17643516 B   -b-   --   -----    wav  1.0000  bd_04-08-24_d1_Dylan_-_Track01.wav
+     6:19.36       66940316 B   ---   --   -----    wav  1.0000  bd_04-08-24_d1_Dylan_-_Track02.wav
+     5:55.42       62720828 B   ---   --   -----    wav  1.0000  bd_04-08-24_d1_Dylan_-_Track03.wav
+     5:35.40       59188124 B   ---   --   -----    wav  1.0000  bd_04-08-24_d1_Dylan_-_Track04.wav
+     6:15.16       66186736 B   -b-   --   -----    wav  1.0000  bd_04-08-24_d1_Dylan_-_Track05.wav
+    25:45.60      272679520 B                            1.0000  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-24-dat-master\bd_04-08-24_d2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.36       65001044 B   -b-   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track01.wav
+     7:18.43       77364380 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track02.wav
+     5:47.17       61250828 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track03.wav
+     5:53.04       62278652 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track04.wav
+     6:34.55       69631004 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track05.wav
+     6:34.74       69675692 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track06.wav
+     5:04.58       53762060 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track07.wav
+     7:11.06       76042556 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track08.wav
+     2:07.02       22407548 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track09.wav
+     6:33.50       69442844 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track10.wav
+     0:52.39        9264572 B   ---   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track11.wav
+     5:31.70       58552696 B   -b-   --   -----    wav  1.0000  bd_04-08-24_d2_Dylan_-_Track12.wav
+    65:38.04      694673876 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

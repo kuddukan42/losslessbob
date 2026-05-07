@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-19-g.flacf 
+=================== 
+=================== 
+=================== 
+ee142bf4a8a5e2a4327a9681cd74cb63  Bob Dylan 2003.04.19 Austin.Texas,The Backyard.md5
+92928b2f24961dd444a4e9d90bd6ec68  cd1\bd2003-04-19d1.log
+bbfc2f416593aff6b4481f6786d849b1  cd1\bd2003-04-19d1t01.flac
+7561a1f0774f18c0c1ef47e40347195a  cd1\bd2003-04-19d1t02.flac
+45aca0c02fbb09cc1bb7ca0377dad441  cd1\bd2003-04-19d1t03.flac
+0d4778c853e8513c8a3db5f41c6c991d  cd1\bd2003-04-19d1t04.flac
+0d2dee9fe221baa9131d34bf0c63fc9a  cd1\bd2003-04-19d1t05.flac
+103af4817cbf39d368d3007f220dbfc3  cd1\bd2003-04-19d1t06.flac
+c00d9cbf81da5b1ddb5fcc7a58c9f6cc  cd1\bd2003-04-19d1t07.flac
+98728830373a651ee80bbb0cefc41760  cd1\bd2003-04-19d1t08.flac
+65078726dc3abee6d3c9bc6d5d1aa4aa  cd1\bd2003-04-19d1t09.flac
+cb4c7c1b4fcbfb445fc003ca2c7ea101  cd1\bd2003-04-19d1t10.flac
+af425458fe28c41d023da3a3650bd6cf  cd1.shntool.txt
+bbcfbec52ef592425e6c6c4c27b3ce7f  cd2\bd2003-04-19d2.log
+a0caad1debe0c18490b2338412ff6871  cd2\bd2003-04-19d2t01.flac
+bd3b2946dd18a1669bcd0cfb6748623b  cd2\bd2003-04-19d2t02.flac
+9e793c69d19b2a83b9d5310e851bfde3  cd2\bd2003-04-19d2t03.flac
+80f779f6a2145ee2491beb4ff8444f8d  cd2\bd2003-04-19d2t04.flac
+ebdacf40d02b5482d7d464dba85ab970  cd2\bd2003-04-19d2t05.flac
+c263bb9e085b342f8a1db03093f7bc2a  cd2\bd2003-04-19d2t06.flac
+4362a5337ed4bec4832b89bcf2ee2787  cd2\bd2003-04-19d2t07.flac
+8709cfd816b515a61c965507158105c8  cd2.shntool.txt
+2aadf647e16a23860ab663d4690877bf  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-04-19-g.flacf\cd1 
+=================== 
+=================== 
+=================== 
+bd2003-04-19d1t01.flac:e4c227169028bbf1cdb18bd8f03e8db1
+bd2003-04-19d1t02.flac:5e988ab6fabb7fe41d1108f7a8eef726
+bd2003-04-19d1t03.flac:acf203561c4471d6bc47fa217b99772c
+bd2003-04-19d1t04.flac:f42c068a7355ba2fbf1db4eda52d7d01
+bd2003-04-19d1t05.flac:0faf2e51d2e789394c6b748e8ba64b4e
+bd2003-04-19d1t06.flac:589951d67093d1efdf403c5fedea5496
+bd2003-04-19d1t07.flac:55810e3d4349b3c967aca6e710f2b181
+bd2003-04-19d1t08.flac:2aa76a6d4d7d4fccd986a327f2969d0c
+bd2003-04-19d1t09.flac:43abcca86ebcf1c478dd0c76ccc37608
+bd2003-04-19d1t10.flac:6622b9946485fb1fd20b1c9416ab7765
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-04-19-g.flacf\cd2 
+=================== 
+=================== 
+=================== 
+bd2003-04-19d2t01.flac:c6eef7c772f3de812aa3199912785af5
+bd2003-04-19d2t02.flac:c75a8d98f05bb97f87f290e7134f2c89
+bd2003-04-19d2t03.flac:11f70394ed24f8cbe153996df5328f69
+bd2003-04-19d2t04.flac:448ff9e3f7bb89c1aaef5560994780e4
+bd2003-04-19d2t05.flac:e0317dbeb780146d12083dc5ae25239e
+bd2003-04-19d2t06.flac:edf4c25395d3391e31fbd0a18c358328
+bd2003-04-19d2t07.flac:d1f8e4e5d2458a35204ea62d146f1d31
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-19-g.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:07.36       11903516 B   ---   --   ---xx   flac  0.5449  bd2003-04-19d1t01.flac
+     5:21.14       56657372 B   ---   --   ---xx   flac  0.6249  bd2003-04-19d1t02.flac
+     3:29.30       36938204 B   ---   --   ---xx   flac  0.6105  bd2003-04-19d1t03.flac
+     4:56.20       52261484 B   ---   --   ---xx   flac  0.6643  bd2003-04-19d1t04.flac
+     4:13.52       44751548 B   ---   --   ---xx   flac  0.5815  bd2003-04-19d1t05.flac
+     6:24.68       67897580 B   ---   --   ---xx   flac  0.6378  bd2003-04-19d1t06.flac
+     6:28.39       68534972 B   ---   --   ---xx   flac  0.6137  bd2003-04-19d1t07.flac
+     5:17.20       55965884 B   ---   --   ---xx   flac  0.6576  bd2003-04-19d1t08.flac
+     6:48.18       72013580 B   ---   --   ---xx   flac  0.5731  bd2003-04-19d1t09.flac
+     7:14.72       76726988 B   ---   --   ---xx   flac  0.6299  bd2003-04-19d1t10.flac
+    51:21.69      543651128 B                            0.6198  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-19-g.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.23       54914540 B   ---   --   ---xx   flac  0.5895  bd2003-04-19d2t01.flac
+     5:25.43       57431180 B   ---   --   ---xx   flac  0.5415  bd2003-04-19d2t02.flac
+     6:36.38       69943820 B   ---   --   ---xx   flac  0.6492  bd2003-04-19d2t03.flac
+     6:40.08       70578860 B   ---   --   ---xx   flac  0.5629  bd2003-04-19d2t04.flac
+     6:49.05       72159404 B   ---   --   ---xx   flac  0.6262  bd2003-04-19d2t05.flac
+     7:02.28       74506700 B   ---   --   ---xx   flac  0.6350  bd2003-04-19d2t06.flac
+     6:11.19       65489132 B   ---   --   ---xx   flac  0.6427  bd2003-04-19d2t07.flac
+    43:56.14      465023636 B                            0.6090  (7 files)
+=================== 
+=================== 
+=================== 

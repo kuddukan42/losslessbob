@@ -1,0 +1,33 @@
+87a6a41246cf3184c588cb9d38b8fc1f  Artwork\t-23b.jpg
+f11b525fe3a5442f01bc1e7d29f34704  Artwork\t-23cd.jpg
+1750f1fa441ce46b8f85453923067f1a  Artwork\t-23cd2.jpg
+7561ebf9819308f0860175e50e8f42e6  Artwork\t-23f.jpg
+5c06c1440bff2f4af72f03a0eef09c33  Artwork\t-23ib.jpg
+bc360c30d2712c32ef513782f2c8ab27  Artwork\t-23l.jpg
+1d24ce4d44befbae8b1d4c85c68288d9  bd-Think I'll Call It a Man.txt
+cf8f469bf05120cb9d3c10e39dc80251  disk one\disk one.md5
+26a7aa3bdff89f040914699752c55290  disk one\Track01.flac
+e5906b873407f3a66efc6ae27b69ad8e  disk one\Track02.flac
+53bc97b51b30ef149e56e5c36b0e48a9  disk one\Track03.flac
+eab91a7178fb793d87927815a4477f76  disk one\Track04.flac
+173667174d7139455afe6bff654c5e99  disk one\Track05.flac
+88be80e74d27b462365cae5d3355da50  disk one\Track06.flac
+f4b63a05edbd6123b162d243022f411e  disk one\Track07.flac
+431ebdafe5a8b8de23828b886739fdb1  disk one\Track08.flac
+22019cb66fcd5fdd4f6928a47a6deca1  disk one\Track09.flac
+9a4469b940b2d9b282bee2f73a192c7d  disk one\Track10.flac
+34fcfc6bc2b582c402e0108697d171f1  disk one\Track11.flac
+9b954257e9cba95bcb5611b6506812e5  disk one\Track12.flac
+8cec122b581ef09bf0bb7d72544a01dc  disk two\disk two.md5
+95e7e05cd0e80bd57b33c2021dad8f91  disk two\Track01.flac
+c53bd86435f7b06bcc1e5b6e16b7cbb9  disk two\Track02.flac
+8b0fbeecf6d7ea75b1a726777f70dead  disk two\Track03.flac
+e589c51a715fdafec7d9ec813ebef546  disk two\Track04.flac
+1dd5c16bebf677acd9877cbf7cfa0f64  disk two\Track05.flac
+cadd2ebf8248eac36b5a8598bbbddeca  disk two\Track06.flac
+aec35e4b4e108eed21295727c4cdaf4f  disk two\Track07.flac
+fa5f5a4bfa460055f3a37d548e50367a  disk two\Track08.flac
+3dc9d5a9fdecdaecb64d4ff8000e14dc  disk two\Track09.flac
+a73e185b9897040b5d9d1f59d025ba9f  disk two\Track10.flac
+d8d308d64985243a97e0355b5f20b04d  disk two\Track11.flac
+efedf1368d12e6bd7f409cb632b0335f  disk two\Track12.flac

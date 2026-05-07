@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== md5 for: bd91-06-08-g.flacf
+===================
+===================
+===================
+71c92c54a17418d9dd69137f48fd3b6d *bd-1991-06-08-Milan-HG.md5
+ee4690e0354f83012c5783685dc15c14 *bd-1991-06-08-Milan-HG.txt
+7c13a1cb1ad1bbd74077c952b70decf1 *Disc1\bd-1991-06-08-HG-d1t01.flac
+c951c33f54aa862a836544f725586da2 *Disc1\bd-1991-06-08-HG-d1t02.flac
+8a2a18fb50131aca7ea260faa0e878a0 *Disc1\bd-1991-06-08-HG-d1t03.flac
+044323ff4b1947af8cb021d3da37dc3f *Disc1\bd-1991-06-08-HG-d1t04.flac
+1f51226b656182d471cec5d89c1061d6 *Disc1\bd-1991-06-08-HG-d1t05.flac
+6c147c11ef985dd6aedc81147af25ac2 *Disc1\bd-1991-06-08-HG-d1t06.flac
+518b7cb2f5b5087a39b2aba20642ef50 *Disc1\bd-1991-06-08-HG-d1t07.flac
+8a2a08ff4218a01595c38cb0756a345b *Disc1\bd-1991-06-08-HG-d1t08.flac
+26bec30d9e26674dd50ce0989ccf03e8 *Disc1\bd-1991-06-08-HG-d1t09.flac
+8daf374f096b7e7da11d4c802687c563 *Disc1\bd-1991-06-08-HG-d1t10.flac
+cbd0b8a29d36cb0d3807f36cf84cbf81 *Disc2\bd-1991-06-08-HG-d2t01.flac
+7e03253efbb78d8ff75306c1a98eaded *Disc2\bd-1991-06-08-HG-d2t02.flac
+f81a162782a6738272f61be77ee9c252 *Disc2\bd-1991-06-08-HG-d2t03.flac
+c661de003df723d84e2bb3161c10fd60 *Disc2\bd-1991-06-08-HG-d2t04.flac
+baad9994bf526e800126b4706b50b414 *Disc2\bd-1991-06-08-HG-d2t05.flac
+9c58161c39385f4924a1e669e8a17564 *Disc2\bd-1991-06-08-HG-d2t06.flac
+a39975692ac2e8af444c56dd52b07dc1 *Disc2\bd-1991-06-08-HG-d2t07.flac
+8ae486925d23512ff920e77c138b577e *Mil06-08-91(HG)-B.JPG
+7bddad7dca25a63ba93f29e1da312cfe *Mil06-08-91(HG)-F.JPG
+===================
+===================
+===================
+=== ffp for: bd91-06-08-g.flacf
+===================
+===================
+===================
+Disc1\bd-1991-06-08-HG-d1t01.flac:2f840d0aaaa9893c68a66e6f4694e437
+Disc1\bd-1991-06-08-HG-d1t02.flac:618fe9017cfdfcf605fe3b303bbf4a6e
+Disc1\bd-1991-06-08-HG-d1t03.flac:e5d90870f16274ce67e4facf9fe34ed5
+Disc1\bd-1991-06-08-HG-d1t04.flac:fd598397e9d8b88e69d9aeaa4f669ceb
+Disc1\bd-1991-06-08-HG-d1t05.flac:58fb29cf8ca226aca950c4ba80b12fd3
+Disc1\bd-1991-06-08-HG-d1t06.flac:2fc891b4df62eacaf2a6a38a74e3894d
+Disc1\bd-1991-06-08-HG-d1t07.flac:707dd5355c516009622c6b79a9635541
+Disc1\bd-1991-06-08-HG-d1t08.flac:151ed0794b8c2088761860c453d5c2e5
+Disc1\bd-1991-06-08-HG-d1t09.flac:29a4ed1776c8558cfeaaa4509beb03c2
+Disc1\bd-1991-06-08-HG-d1t10.flac:748f3b32e88a51c91547b6aca56fcc98
+Disc2\bd-1991-06-08-HG-d2t01.flac:5fa68225ca6b3e8aa56e3f4f7700c6e0
+Disc2\bd-1991-06-08-HG-d2t02.flac:17fc0a2131aedb3d69f13369f6a196da
+Disc2\bd-1991-06-08-HG-d2t03.flac:f21ad29f712ec2775bb4c56559ddc6b8
+Disc2\bd-1991-06-08-HG-d2t04.flac:5910afbbf9221d8326f9ff7ee66ebf45
+Disc2\bd-1991-06-08-HG-d2t05.flac:722de445226f30f78eb887faac96adbf
+Disc2\bd-1991-06-08-HG-d2t06.flac:68320ecc725467cb9842551dd6c4924a
+Disc2\bd-1991-06-08-HG-d2t07.flac:e485eb63ae6108c2542f2a1b7c96f86e
+===================
+===================
+===================
+=== shntool len for: bd91-06-08-g.flacf\Disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:28.19       79071932 B   ---   --   ---xx   flac  0.5879  bd-1991-06-08-HG-d1t01.flac
+     3:49.62       40541468 B   ---   --   ---xx   flac  0.6258  bd-1991-06-08-HG-d1t02.flac
+     5:04.29       53693852 B   ---   --   ---xx   flac  0.6046  bd-1991-06-08-HG-d1t03.flac
+     4:57.70       52555484 B   ---   --   ---xx   flac  0.6123  bd-1991-06-08-HG-d1t04.flac
+     3:18.17       34967228 B   ---   --   ---xx   flac  0.6169  bd-1991-06-08-HG-d1t05.flac
+     4:42.64       49895372 B   ---   --   ---xx   flac  0.5742  bd-1991-06-08-HG-d1t06.flac
+     5:54.33       62523260 B   ---   --   ---xx   flac  0.5928  bd-1991-06-08-HG-d1t07.flac
+     5:28.73       58030940 B   ---   --   ---xx   flac  0.5950  bd-1991-06-08-HG-d1t08.flac
+     4:40.26       49453196 B   ---   --   ---xx   flac  0.5332  bd-1991-06-08-HG-d1t09.flac
+     4:39.10       49239164 B   ---   --   ---xx   flac  0.5828  bd-1991-06-08-HG-d1t10.flac
+    50:04.28      529971896 B                            0.5913  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd91-06-08-g.flacf\Disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:15.21       55615436 B   ---   --   ---xx   flac  0.6178  bd-1991-06-08-HG-d2t01.flac
+     5:40.62       60121868 B   ---   --   ---xx   flac  0.5846  bd-1991-06-08-HG-d2t02.flac
+     5:23.39       57068972 B   ---   --   ---xx   flac  0.6581  bd-1991-06-08-HG-d2t03.flac
+     3:31.56       37352156 B   ---   --   ---xx   flac  0.6054  bd-1991-06-08-HG-d2t04.flac
+     5:53.67       62426828 B   ---   --   ---xx   flac  0.6363  bd-1991-06-08-HG-d2t05.flac
+     4:36.74       48860492 B   ---   --   ---xx   flac  0.5527  bd-1991-06-08-HG-d2t06.flac
+     5:44.60       60822764 B   ---   --   ---xx   flac  0.6378  bd-1991-06-08-HG-d2t07.flac
+    36:07.04      382268516 B                            0.6153  (7 files)
+===================
+===================
+===================

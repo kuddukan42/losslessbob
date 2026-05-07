@@ -1,0 +1,64 @@
+Bob Dylan
+The United Palace
+New York, New York
+November 21, 2008
+
+Disc 1:
+01. intro
+02. Gotta Serve Somebody
+03. The Times They Are A-Changin'
+04. The Levee's Gonna Break 
+05. Tomorrow Is A Long Time 
+06. Things Have Changed 
+07. Desolation Row 
+08. It's Alright, Ma (I'm Only Bleeding) 
+09. Beyond The Horizon
+10. 'Til I Fell In Love With You
+11. Make You Feel My Love 
+12. Honest With Me
+
+Disc 2:
+01. Spirit On The Water
+02. Highway 61 Revisited
+03. Ain't Talkin' 
+04. Thunder On The Mountain
+05. -encore break-
+06. Like A Rolling Stone
+07. band intros
+08. All Along The Watchtower
+09. Blowin' In The Wind 
+
+Band Members
+Bob Dylan - vocals, keyboard, guitar, harp
+Denny Freeman - guitar
+Stu Kimball - guitar
+Donnie Herron - violin, viola, banjo, mandolin, steel guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann km140's > sound devices mixpre > edirol r-09hr (24/44.1)
+edirol r-09hr > usb > hdd > audacity > cd wave > flac
+
+ffp
+bd2008-11-21d1t01.flac:dcc32d7f26d120260d3bfbd14f7e50d0
+bd2008-11-21d1t02.flac:3291076f7d3eb4ed3922664630bb47c6
+bd2008-11-21d1t03.flac:c94bde4cef15d748d2cc839948503b38
+bd2008-11-21d1t04.flac:70f892e3c256c049c51f80aba500dbb0
+bd2008-11-21d1t05.flac:36f039cf46ed8605f0201826e353211a
+bd2008-11-21d1t06.flac:a15a9ae7b304b5d62b112d06af4d50bb
+bd2008-11-21d1t07.flac:fe081c899b0b977a91e8a73272133ded
+bd2008-11-21d1t08.flac:de7efe5942125be70532d5dda502cf6d
+bd2008-11-21d1t09.flac:c084b55a3a7ea40a61eb8c0beeeda8a3
+bd2008-11-21d1t10.flac:94900524de1130e7c7f24e0a1b127050
+bd2008-11-21d1t11.flac:124221ebf195ed1b007581b098a12169
+bd2008-11-21d1t12.flac:2c1f53e65db75a4cc5a97ee76ab83ce4
+bd2008-11-21d2t01.flac:f93f2e66a2b243d602d7409f34c14482
+bd2008-11-21d2t02.flac:44ef2d53beb5f56bc52644acb86dc279
+bd2008-11-21d2t03.flac:c30d9d669d10714e4ad2b1d439a4397a
+bd2008-11-21d2t04.flac:36df9ff49c665f01ec10fb2263594fca
+bd2008-11-21d2t05.flac:a8b7a1a20638555f15fc53fe1fdc9eca
+bd2008-11-21d2t06.flac:4b315fbd08c6ad6bdb00a6896921c178
+bd2008-11-21d2t07.flac:5859a2c4b8613ba1b2a14afc3f57c37a
+bd2008-11-21d2t08.flac:a7b1dfe014b514bacc47957159db9af8
+bd2008-11-21d2t09.flac:76fa74b2b95bbe87d4cfe90755d9382d

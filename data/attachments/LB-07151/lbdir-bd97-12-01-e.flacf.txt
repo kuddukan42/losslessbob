@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-01-e.flacf 
+=================== 
+=================== 
+=================== 
+d41d8cd98f00b204e9800998ecf8427e  Icon_
+de8e0a2682b808510ac76f0d1695ad6f  zimi97-12-01d1t01.shn
+2fb5b432aeee8ad07f26c24309093d39  zimi97-12-01d1t02.shn
+e878ecd41b9fd9ba0f080ff22311c3a8  zimi97-12-01d1t03.shn
+37efef40e5e19756e2607c8766c0ea69  zimi97-12-01d1t04.shn
+f048b162a870e02ad97256db539a869a  zimi97-12-01d1t05.shn
+198e7ab8cfc37d7058ce8c0f66860bf1  zimi97-12-01d1t06.shn
+2d8ebe13bb9c84077eb952cf72d44e8d  zimi97-12-01d1t07.shn
+20569b2f18460c9a4e1b8666a3397f62  zimi97-12-01d1t08.shn
+d29d9aafb3ab33ea4c774a4baf3e2c6d  zimi97-12-01d1t09.shn
+f5ebe71063d2af156fd12ec87ea732a4  zimi97-12-01d2t01.shn
+265febb88ca59a8fd58593afa6c79932  zimi97-12-01d2t02.shn
+644d72772bc055b8d00d71ce7e70c687  zimi97-12-01d2t03.shn
+20a6530ef12dffefae8b8052abf29a58  zimi97-12-01d2t04.shn
+e4bcde144464373277e18bb2a7e14ee2  zimi97-12-01d2t05.shn
+14f249c15e2cb40c399f14e0eebbefc1  zimi97-12-01d2t06.shn
+fa3d3a308b8938096ca32e4de164744c  zimi97-12-01info.txt
+fe68ba0f6690eae3301628ab606bae43  zimi97-12-01shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-12-01-e.flacf 
+=================== 
+=================== 
+=================== 
+a48a756c1c5e14496600db7ee4bba6d8  [shntool]  zimi97-12-01d1t01.wav
+b02e93f7de72526b054d891160c3a88c  [shntool]  zimi97-12-01d1t02.wav
+1a8ee6db7ae49b2154930c0cb6dbfc50  [shntool]  zimi97-12-01d1t03.wav
+42c433d80a9e63a2d3d614be24684398  [shntool]  zimi97-12-01d1t04.wav
+5d9d7250b64711d0f59d44936b47be1f  [shntool]  zimi97-12-01d1t05.wav
+6e42ea25e3504cd0ad36f5f3de6578d7  [shntool]  zimi97-12-01d1t06.wav
+28281e3f276ac41244224f2f4bf72475  [shntool]  zimi97-12-01d1t07.wav
+63f0ac3398cd957ac43a3dc2e932afe3  [shntool]  zimi97-12-01d1t08.wav
+ea763d2d1d64808db7f90544342c6df0  [shntool]  zimi97-12-01d1t09.wav
+a7634ae6e5bd48869c39b881e8e81995  [shntool]  zimi97-12-01d2t01.wav
+3defa452af51ad491b99a8cae6cccc14  [shntool]  zimi97-12-01d2t02.wav
+b6e2ebaed045f76b516845dc90556884  [shntool]  zimi97-12-01d2t03.wav
+246e4e8e0bc7a0b1db662ad9efe96ea6  [shntool]  zimi97-12-01d2t04.wav
+82d3cf4699527c0f0c328afd22f6ddf8  [shntool]  zimi97-12-01d2t05.wav
+ffbcf31cf0936b710d2dcbf9f8f49e89  [shntool]  zimi97-12-01d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-01-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.44       62019944 B   ---   h-   ---xx    shn  0.5821  zimi97-12-01d1t01.shn
+     5:42.10       60352376 B   ---   h-   ---xx    shn  0.5668  zimi97-12-01d1t02.shn
+     6:32.42       69247640 B   ---   h-   ---xx    shn  0.5791  zimi97-12-01d1t03.shn
+     7:18.20       77310296 B   ---   h-   ---xx    shn  0.5508  zimi97-12-01d1t04.shn
+     6:05.01       64388408 B   ---   h-   ---xx    shn  0.5799  zimi97-12-01d1t05.shn
+     7:07.54       75449864 B   ---   h-   ---xx    shn  0.6183  zimi97-12-01d1t06.shn
+     4:55.48       52150952 B   ---   h-   ---xx    shn  0.5628  zimi97-12-01d1t07.shn
+     7:48.27       82618760 B   ---   h-   ---xx    shn  0.6360  zimi97-12-01d1t08.shn
+     6:39.45       70489496 B   ---   h-   ---xx    shn  0.5674  zimi97-12-01d1t09.shn
+     6:23.26       67622408 B   ---   h-   ---xx    shn  0.5879  zimi97-12-01d2t01.shn
+     6:28.74       68617304 B   ---   h-   ---xx    shn  0.5765  zimi97-12-01d2t02.shn
+     9:34.74      101427704 B   ---   h-   ---xx    shn  0.5989  zimi97-12-01d2t03.shn
+     8:50.09       93513224 B   ---   h-   ---xx    shn  0.5862  zimi97-12-01d2t04.shn
+     6:34.21       69551048 B   ---   h-   ---xx    shn  0.5870  zimi97-12-01d2t05.shn
+    10:55.62      115687880 B   ---   h-   ---xx    shn  0.5348  zimi97-12-01d2t06.shn
+   106:48.32     1130447304 B                            0.5807  (15 files)
+=================== 
+=================== 
+=================== 

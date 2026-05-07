@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-03-27-stewART-MATRIX.flacf 
+=================== 
+=================== 
+=================== 
+f43750b913e72351be5758d1024c2ecd  101 Intro.flac
+acbcf051efb6938c423799f6274ce4e6  102 Most Likely.flac
+c9ae83d5a4ccca7bc3a429fe481dfdaa  103 Not Dark Yet.flac
+3c40a1151a1e9e6affe4f5aece2cfde7  104 Illl Be Your Baby Tonight.flac
+07aa861b4d0f655c1c18a289923ab245  105 Its Alright Ma.flac
+7e5a766bcef6fdcfc82259dd30f11604  106 Tears of Rage.flac
+d7f4dff937b2038c37cb5b84b2f7a45b  107 Highway 61 Revisited.flac
+1918764f67475cf42424d3148c357dd6  108 Lay Lady Lay.flac
+207ac0efd6dd2f81319e455d170be349  109 Rollin And Tumblin.flac
+fe6f4b648f2568e0b4d33be3d6b624ea  110 To Ramona.flac
+a3d86d20fc9d81b9b7a56dfa837ccbf3  111 Country Pie.flac
+8129722ea6dd4f7387fceb3d20991092  2007-03-27_MATRIX info.txt
+30fac9ce9030b8a494c80dfb0e5b657d  201 Tangled Up in Blue.flac
+c1d37f0f9b79db25759de4aa4eec6373  202 A Hard Rain.flac
+812779fb573e393ce718f20e7db8df1e  203 Summer Days.flac
+238aea0e91dd0c69c323774368ec7323  204 encore interval.flac
+7c19e9dbb239b6fe70bb1334b8503980  205 Like A Rolling Stone.flac
+d6481668c171a73b8df686846d31e6c3  206 Thunder On The Mountain.flac
+939fe737db4d9d6baec6c45be66c6869  207 All Along The Watchtower.flac
+428d07dc14a730b04f4817c9edcea356  Stockholm_Debaser_07_matrix_B.jpg
+04189e3df252b5641570a1d512127221  Stockholm_Debaser_07_matrix_F.jpg
+d1279af12a492ce2fb486ad332685f38  STOCKHOLM_debaser_2007_tray.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-03-27-stewART-MATRIX.flacf 
+=================== 
+=================== 
+=================== 
+101 Intro.flac:aa49f2a2e2d6fff54b39a0a0304e8e58
+102 Most Likely.flac:147690e85c2a3f5d0b2142189e8e53f7
+103 Not Dark Yet.flac:76ede33c59c240c1d8249a72c8f7f178
+104 Illl Be Your Baby Tonight.flac:f8cff85d900bd1e3ff8f500f82acfd1b
+105 Its Alright Ma.flac:952634a890940b28e8f6109b183fae88
+106 Tears of Rage.flac:da13ea861e37237475dccf5cc2ae07dc
+107 Highway 61 Revisited.flac:6cb556f3d7348fdf8c9bfd3b71b48a84
+108 Lay Lady Lay.flac:924148a201192a3ae5d90998ed46f3c6
+109 Rollin And Tumblin.flac:d1cabd67318103b9e52a744592ab909c
+110 To Ramona.flac:049879a54aa9148a83aff15f295a5e8f
+111 Country Pie.flac:23627e553eb945fa2488c448411ff8b5
+201 Tangled Up in Blue.flac:f3b60a00a3a59901de1f0611c75cad21
+202 A Hard Rain.flac:a7bc840748e59ae44e741cbb2f4879c8
+203 Summer Days.flac:c606edd5375b400a413a22c81c8915a5
+204 encore interval.flac:850785d293b4505f219304757110267a
+205 Like A Rolling Stone.flac:930f160a1f17853aa40ddd27dcdf6c9f
+206 Thunder On The Mountain.flac:8f5593a8839cc2100ad2e7866f024f9d
+207 All Along The Watchtower.flac:07275a052ad6cb4b1003390007ca6011
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-03-27-stewART-MATRIX.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.25        8349840 B   -b-   --   ---xx   flac  0.6153  101 Intro.flac
+     6:10.25       65326648 B   -b-   --   ---xx   flac  0.6522  102 Most Likely.flac
+     5:52.01       62095240 B   -b-   --   ---xx   flac  0.5972  103 Not Dark Yet.flac
+     6:04.39       64300736 B   -b-   --   ---xx   flac  0.6197  104 Illl Be Your Baby Tonight.flac
+     7:42.30       81567404 B   ---   --   ---xx   flac  0.5999  105 Its Alright Ma.flac
+     7:13.15       76416524 B   ---   --   ---xx   flac  0.5697  106 Tears of Rage.flac
+     6:44.69       71427932 B   ---   --   ---xx   flac  0.6279  107 Highway 61 Revisited.flac
+     7:05.60       75110596 B   -b-   --   ---xx   flac  0.5860  108 Lay Lady Lay.flac
+     6:00.13       63534212 B   -b-   --   ---xx   flac  0.6345  109 Rollin And Tumblin.flac
+     6:36.72       70023788 B   ---   --   ---xx   flac  0.5859  110 To Ramona.flac
+     3:06.17       32850428 B   ---   --   ---xx   flac  0.6445  111 Country Pie.flac
+     7:11.10       76051964 B   ---   --   ---xx   flac  0.6151  201 Tangled Up in Blue.flac
+     7:15.68       76893980 B   ---   --   ---xx   flac  0.5899  202 A Hard Rain.flac
+     6:31.53       69096684 B   -b-   --   ---xx   flac  0.6429  203 Summer Days.flac
+     4:12.73       44624956 B   -b-   --   ---xx   flac  0.5153  204 encore interval.flac
+     6:54.31       73102556 B   ---   --   ---xx   flac  0.6180  205 Like A Rolling Stone.flac
+     6:23.14       67594172 B   ---   --   ---xx   flac  0.6328  206 Thunder On The Mountain.flac
+     8:38.52       91498684 B   -b-   --   ---xx   flac  0.5871  207 All Along The Watchtower.flac
+   110:31.67     1169866344 B                            0.6067  (18 files)
+=================== 
+=================== 
+=================== 

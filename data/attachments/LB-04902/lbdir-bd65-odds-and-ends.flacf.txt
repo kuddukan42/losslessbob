@@ -1,0 +1,281 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-odds-and-ends.flacf 
+=================== 
+=================== 
+=================== 
+3ee06fda37b02885988f03247fe35e55  bd1965 - odd and ends.txt
+8a630bfc87b6cc91bd1b94b6b5a3d08d  bd1965-04-26 London Airport\bd1965-04-26 London Airport.md5
+44aa72054c80f4095906033084397a99  bd1965-04-26 London Airport\bd1965-04-26 London Airport.txt
+04c137b0ca2fbb8801e9d406f273ce6d  bd1965-04-26 London Airport\bd1965-04-26t01.flac
+2e7cca1a7f33549c633ea2bfe2fbd51b  bd1965-04-26 London Airport\bd1965-04-26t02.flac
+e38052606cfcb7718f414d4a160199c9  bd1965-04-26 London Airport\bd1965-04-26t03.flac
+5692a5ac2fcd39b69c3d7581688ddb44  bd1965-04-26 London Airport\bd1965-04-26t04.flac
+1f96c3ef5036c9b9f796147fe5fbd00a  bd1965-04-27 Savoy Hotel\bd1965-04-27 Savoy Hotel.md5
+1fafec70728173337a1242741ae8b979  bd1965-04-27 Savoy Hotel\bd1965-04-27 Savoy Hotel.txt
+aaad50d62ed8d4165861aa82a4a85c9d  bd1965-04-27 Savoy Hotel\bd1965-04-27t01.flac
+27e7c60d11312cacdb879f4233cd0419  bd1965-04-27 Savoy Hotel\bd1965-04-27t02.flac
+f37a5b0ee6cdb2980357dbd5fb64f5cb  bd1965-04-27 Savoy Hotel\bd1965-04-27t03.flac
+1eed4ba18d0294df4b3ecc58da0343bd  bd1965-04-27 Savoy Hotel\bd1965-04-27t04.flac
+7f69f7c172bdc3617e442890213fe951  bd1965-04-27 Savoy Hotel\bd1965-04-27t05.flac
+afbfe07765cb1060ecf40e74410ac010  bd1965-05-03 Savoy Hotel\bd1965-05-03 Savoy Hotel.md5
+07f8dab57961cce2425b049ca7d77200  bd1965-05-03 Savoy Hotel\bd1965-05-03 Savoy Hotel.txt
+6be3c3642d3d2065b4dc8bfa7439a8a0  bd1965-05-03 Savoy Hotel\bd1965-05-03t01.flac
+00e3d7544187a46126dace52b7462a83  bd1965-05-03 Savoy Hotel\bd1965-05-03t02.flac
+b56536691f108a58038a9cd36cd14257  bd1965-05-03 Savoy Hotel\bd1965-05-03t03.flac
+69ae58e7293b69b7aa971374971498a2  bd1965-05-05 Birmingham Backstage\bd1965-05-05 Birmingham Backstage.md5
+5215903d1aa647f53e1cac1925d3932c  bd1965-05-05 Birmingham Backstage\bd1965-05-05 Birmingham.txt
+45cd4680b5d17204cb2e52b03f555bc4  bd1965-05-05 Birmingham Backstage\bd1965-05-05t01.flac
+289dc40118988e05c1344c7f5e50fa63  bd1965-05-05 Birmingham Backstage\bd1965-05-05t02.flac
+d56b6c6616e3eaddc0824af248192e32  bd1965-05-05 Birmingham Backstage\bd1965-05-05t03.flac
+8fd5da88e0a3fe16ca5700198ddde1bc  bd1965-05-06 Newcastle Hotel Room\bd1965-05-06 Newcastle Hotel Room.md5
+dea5427a63bec7f4c599578fc3175b4b  bd1965-05-06 Newcastle Hotel Room\bd1965-05-06 Newcastle Hotel Room.txt
+9ad47d57921974708c8c3650586e870b  bd1965-05-06 Newcastle Hotel Room\bd1965-05-06Hotelt01.flac
+ca02aabc817085faac71f8c2e2341362  bd1965-05-06 Newcastle Hotel Room\bd1965-05-06Hotelt02.flac
+adb4a6c2408cdf7227c16eedbc572dff  bd1965-05-06 Newcastle Hotel Room\bd1965-05-06Hotelt03.flac
+9527ba58c165301f12b177ae6ae9d8c2  bd1965-05-07 Manchester Soundcheck\bd1965-05-07 Manchester Soundcheck.md5
+cc4f93b09e2e6b254eabee14c9c9c182  bd1965-05-07 Manchester Soundcheck\bd1965-05-07 Manchester Soundcheck.txt
+00c3f1e18245725e4af04cbdb693f690  bd1965-05-07 Manchester Soundcheck\bd1965-05-07Soundcheckt01.flac
+41f964e0873e257f1fef69af439075b9  bd1965-05-07 Manchester Soundcheck\bd1965-05-07Soundcheckt02.flac
+2d9336933f92eb9e8e447d693891b079  bd1965-05-08 Savoy Hotel\bd1965-05-08 Savoy Hotel.md5
+12942ed1b88f1a262e1c10a95abd5a6a  bd1965-05-08 Savoy Hotel\bd1965-05-08 Savoy Hotel.txt
+032d5a7c70c0f63fea742ca6254ec459  bd1965-05-08 Savoy Hotel\bd1965-05-08t01.flac
+5ab27720a79f41d3be8b0bcea5326883  bd1965-05-08 Savoy Hotel\bd1965-05-08t02.flac
+70bba41c23c586ffa0b7a223c43db0ca  bd1965-05-08 Savoy Hotel\bd1965-05-08t03.flac
+8ee5038ddae00e85a7b481c9928d1bd0  bd1965-05-09 Horace Judson Interview\bd1965-05-09 Horace Judson Interview.md5
+5cdbaa34edb555466ca9c665d2c01f60  bd1965-05-09 Horace Judson Interview\bd1965-05-09 Horace Judson Interview.txt
+27fba54ed1a1e3ddccf95505ccc26b31  bd1965-05-09 Horace Judson Interview\bd1965-05-09Interviewt01.flac
+56dae6c2ca4cc809632093196a4481f1  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09 Royal Albert Hall Backstage.md5
+39e32dab988a21d28c0a9b044475841c  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09 Royal Albert Hall Backstage.txt
+07ba091a798543c68de5e0ad6b2e7b3c  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget01.flac
+ef888f3d2d31328e85aaca4d96aea8a4  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget02.flac
+d2f7e1a4fd6b5e72c9e7b63561e01847  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget03.flac
+fbcd1b0b41b40cc7c8b5a90445e6598a  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget04.flac
+d68274e6c176c63ec63528e5c663ca33  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget05.flac
+49e651c76c03049d867b8d1348b0c9c6  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget06.flac
+e66f282bb19c68cb78be885891e059b0  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget07.flac
+0aad80e6a120945c59f220ced568389c  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget08.flac
+89a13c3627041dcc422a71e579c2e863  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget09.flac
+a6ada3913b7f29a573d8e5da883ca03e  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget10.flac
+f4b600ca055b3be189b10184e6f045f0  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget11.flac
+8a2cc42d99abaada045a5bdf2b290525  bd1965-05-09 Royal Albert Hall Backstage\bd1965-05-09Backstaget12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-04-26 London Airport 
+=================== 
+=================== 
+=================== 
+bd1965-04-26t01.flac:bd191abf9ad2f09f6c5eb98c2a3097a7
+bd1965-04-26t02.flac:0092fd4db19aa6a21153b6d62043ad81
+bd1965-04-26t03.flac:b07b7748968e3e163c546586f3ae76c9
+bd1965-04-26t04.flac:55f8a65e1c832bb28beda9f1e8819961
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-04-27 Savoy Hotel 
+=================== 
+=================== 
+=================== 
+bd1965-04-27t01.flac:31435c3191461f552a30243e54061f78
+bd1965-04-27t02.flac:1177ffde5d5448a4ba8dc8ffccc9368e
+bd1965-04-27t03.flac:583d07eb01052cdebd986bf38f72d2d3
+bd1965-04-27t04.flac:3cb55bd8ab5ff0793b31be1f81b150ec
+bd1965-04-27t05.flac:c608068a86c19e2d32c0572138081932
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-05-03 Savoy Hotel 
+=================== 
+=================== 
+=================== 
+bd1965-05-03t01.flac:bcd3c9ec37d0d091f24b72c4668974ac
+bd1965-05-03t02.flac:2337eaa65abaef5b9eb4bb527d15b284
+bd1965-05-03t03.flac:1074f975828f2d20de005d8f41c0f2f1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-05-05 Birmingham Backstage 
+=================== 
+=================== 
+=================== 
+bd1965-05-05t01.flac:8c7e3c7b11603028de7780514245e624
+bd1965-05-05t02.flac:280c0a0701dd457348c40671b7bd14c1
+bd1965-05-05t03.flac:323d598fb20b65c0b8a0ac7541a4610e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-05-06 Newcastle Hotel Room 
+=================== 
+=================== 
+=================== 
+bd1965-05-06Hotelt01.flac:29792c8694ca5736565a826956562422
+bd1965-05-06Hotelt02.flac:4c2809da8a862e0f0ca5fae2fbda981c
+bd1965-05-06Hotelt03.flac:7b87415a9f4478cc0e70a8c80dea1c1b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-05-07 Manchester Soundcheck 
+=================== 
+=================== 
+=================== 
+bd1965-05-07Soundcheckt01.flac:40a445e3d5490f3ddc88ed769cabc6e2
+bd1965-05-07Soundcheckt02.flac:63fc899a884e4154b7e7b495ede76e00
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-05-08 Savoy Hotel 
+=================== 
+=================== 
+=================== 
+bd1965-05-08t01.flac:18dbc710cb3a7904dc244d9bb10d75d6
+bd1965-05-08t02.flac:d4a844622385dcfb0aada23b2a69155b
+bd1965-05-08t03.flac:4c162a04fbaf5828b53676ab4c6ce177
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-05-09 Royal Albert Hall Backstage 
+=================== 
+=================== 
+=================== 
+bd1965-05-09Backstaget01.flac:9b8eeb81e61c9e6f45420e827815e70c
+bd1965-05-09Backstaget02.flac:a25563aa5dd14009d5058ba6813cba89
+bd1965-05-09Backstaget03.flac:12d7cd9ecd92b22447665d723242eb09
+bd1965-05-09Backstaget04.flac:64e5663024740f054724081a4a273dae
+bd1965-05-09Backstaget05.flac:9f9ec5febad0cf326582a94dd5a67b78
+bd1965-05-09Backstaget06.flac:a2835bd06acfb7df618aa52674fd8153
+bd1965-05-09Backstaget07.flac:9f269953839af5930a4d5624321081ed
+bd1965-05-09Backstaget08.flac:812c48ce18235457b59e45f9b2aa4479
+bd1965-05-09Backstaget09.flac:0457009d56037ad98d637971dc65aec1
+bd1965-05-09Backstaget10.flac:5c84131c5c8708c87eaf0779fdb9604a
+bd1965-05-09Backstaget11.flac:d3fae25093a7cbb4337976455c69ac2a
+bd1965-05-09Backstaget12.flac:0c77b9a2504653ad9c65018fe6e25eae
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-odds-and-ends.flacf\bd1965-05-09 Horace Judson Interview 
+=================== 
+=================== 
+=================== 
+bd1965-05-09Interviewt01.flac:593a8a2e5533554011b10e843fe7a323
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-04-26 London Airport 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:28.66        5094476 B   ---   --   ---xx   flac  0.5206  bd1965-04-26t01.flac
+     0:46.56        8246156 B   ---   --   ---xx   flac  0.4834  bd1965-04-26t02.flac
+     1:25.00       14994044 B   ---   --   ---xx   flac  0.4818  bd1965-04-26t03.flac
+     0:46.00        8114444 B   ---   --   ---xx   flac  0.4070  bd1965-04-26t04.flac
+     3:26.47       36449120 B                            0.4709  (4 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-04-27 Savoy Hotel 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:55.45       20391884 B   ---   --   ---xx   flac  0.5831  bd1965-04-27t01.flac
+     2:05.59       22188812 B   ---   --   ---xx   flac  0.4836  bd1965-04-27t02.flac
+     0:45.08        7955684 B   -b-   --   ---xx   flac  0.3713  bd1965-04-27t03.flac
+     0:48.53        8591900 B   ---   --   ---xx   flac  0.5412  bd1965-04-27t04.flac
+     1:35.42       16856828 B   ---   --   ---xx   flac  0.3684  bd1965-04-27t05.flac
+     7:10.57       75985108 B                            0.4795  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-05-03 Savoy Hotel 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:38.38       17376620 B   ---   --   ---xx   flac  0.5183  bd1965-05-03t01.flac
+     0:23.67        4214828 B   ---   --   ---xx   flac  0.4761  bd1965-05-03t02.flac
+     1:14.00       13053644 B   ---   --   ---xx   flac  0.4198  bd1965-05-03t03.flac
+     3:16.30       34645092 B                            0.4761  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-05-05 Birmingham Backstage 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:38.58       17423660 B   ---   --   ---xx   flac  0.5174  bd1965-05-05t01.flac
+     1:39.56       17595356 B   ---   --   ---xx   flac  0.3832  bd1965-05-05t02.flac
+     1:17.19       13627532 B   ---   --   ---xx   flac  0.4250  bd1965-05-05t03.flac
+     4:35.58       48646548 B                            0.4430  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-05-06 Newcastle Hotel Room 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:50.37        8907068 B   ---   --   ---xx   flac  0.4938  bd1965-05-06Hotelt01.flac
+     0:45.61        8081516 B   ---   --   ---xx   flac  0.4739  bd1965-05-06Hotelt02.flac
+     1:09.24       12228092 B   ---   --   ---xx   flac  0.4984  bd1965-05-06Hotelt03.flac
+     2:45.47       29216676 B                            0.4902  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-05-07 Manchester Soundcheck 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:20.07        3544508 B   ---   --   ---xx   flac  0.4789  bd1965-05-07Soundcheckt01.flac
+     1:54.06       20124088 B   -b-   --   ---xx   flac  0.5977  bd1965-05-07Soundcheckt02.flac
+     2:14.13       23668596 B                            0.5799  (2 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-05-08 Savoy Hotel 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:46.32       18773708 B   ---   --   ---xx   flac  0.3421  bd1965-05-08t01.flac
+     2:04.23       21927740 B   ---   --   ---xx   flac  0.5141  bd1965-05-08t02.flac
+     4:11.12       44304668 B   ---   --   ---xx   flac  0.5925  bd1965-05-08t03.flac
+     8:01.67       85006116 B                            0.5170  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-05-09 Royal Albert Hall Backstage 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.52        6296348 B   ---   --   ---xx   flac  0.4152  bd1965-05-09Backstaget01.flac
+     0:25.17        4450028 B   ---   --   ---xx   flac  0.4054  bd1965-05-09Backstaget02.flac
+     1:19.58       14072060 B   ---   --   ---xx   flac  0.3982  bd1965-05-09Backstaget03.flac
+     0:19.04        3361052 B   ---   --   ---xx   flac  0.5031  bd1965-05-09Backstaget04.flac
+     0:25.35        4492364 B   ---   --   ---xx   flac  0.5038  bd1965-05-09Backstaget05.flac
+     0:29.56        5247356 B   ---   --   ---xx   flac  0.4867  bd1965-05-09Backstaget06.flac
+     0:17.33        3076460 B   ---   --   ---xx   flac  0.5356  bd1965-05-09Backstaget07.flac
+     0:07.31        1307756 B   ---   --   ---xx   flac  0.4866  bd1965-05-09Backstaget08.flac
+     1:02.67       11094428 B   ---   --   ---xx   flac  0.4911  bd1965-05-09Backstaget09.flac
+     0:21.12        3732668 B   ---   --   ---xx   flac  0.4496  bd1965-05-09Backstaget10.flac
+     1:55.20       20333084 B   ---   --   ---xx   flac  0.4541  bd1965-05-09Backstaget11.flac
+     1:17.42       13682576 B   -b-   --   ---xx   flac  0.4220  bd1965-05-09Backstaget12.flac
+     8:36.52       91146180 B                            0.4493  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-odds-and-ends.flacf\bd1965-05-09 Horace Judson Interview 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.07       67224908 B   ---   --   ---xx   flac  0.5124  bd1965-05-09Interviewt01.flac
+     6:21.07       67224908 B                            0.5124  (1 file)
+=================== 
+=================== 
+=================== 

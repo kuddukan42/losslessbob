@@ -1,0 +1,17 @@
+169cfb9ab9d7bfe195d8c18d3c659e7e  1993-07-09 La Coruna remaster.md5
+3206d01e18cb2c659cab12103909e94f  cd1\bd 1993-07-09 La Coruna remaster d1.log
+b6a13ee6ade32ca47f099bcf828ae0a6  cd1\bd 1993-07-09 La Coruna remaster d1t01.flac
+1d6d23dab27ba12876f2e9a036c2fcd4  cd1\bd 1993-07-09 La Coruna remaster d1t02.flac
+06a7af0205c02ff4385223cc16a909bb  cd1\bd 1993-07-09 La Coruna remaster d1t03.flac
+0db3431e2e0408635b5de6562162750f  cd1\bd 1993-07-09 La Coruna remaster d1t04.flac
+4e32c81621ee2cb4e361f14ffc84f970  cd1\bd 1993-07-09 La Coruna remaster d1t05.flac
+3895830aa28c0c1b123caef02f33fc9f  cd1\bd 1993-07-09 La Coruna remaster d1t06.flac
+e5900913bfce0c3676c7121fada03506  cd2\bd 1993-07-09 La Coruna remaster d2.log
+a455920d8f144f61bb3f2bb98dabf08b  cd2\bd 1993-07-09 La Coruna remaster d2t01.flac
+23704681e6b1ab82216faa51b76873ba  cd2\bd 1993-07-09 La Coruna remaster d2t02.flac
+bf60121a7bd7651967c58a8332b954bd  cd2\bd 1993-07-09 La Coruna remaster d2t03.flac
+6abc1d1e73781a7bb749fce82e69d6e0  cd2\bd 1993-07-09 La Coruna remaster d2t04.flac
+1f40711633df6590791984932e6fdc6a  cd2\bd 1993-07-09 La Coruna remaster d2t05.flac
+2d4600dc045e21d3fe4d2565385e176a  cd2\bd 1993-07-09 La Coruna remaster d2t06.flac
+7f243dce4d5559467963b7bd122ae2f5  cd2\bd 1993-07-09 La Coruna remaster d2t07.flac
+ae7f414214fd362b2d091b718691ec98  info.txt

@@ -1,0 +1,250 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd58-Ten-Million-In-A-Week-Vol1-b.flacf 
+=================== 
+=================== 
+=================== 
+6a9b00a10267fdb84b43f8c7401c5631  Disc 1\10MillionInAWeekDisc1.fpp
+b0cc476d283cda66635372dc76b668f1  Disc 1\10MillionInAWeekDisc1.md5
+d9dfba30b652fa14beaaad1686e17754  Disc 1\10MillionWeekD1T01.flac
+e13ddeb5a176f1d516248495cca29c38  Disc 1\10MillionWeekD1T02.flac
+c3951bbf9d6b253ec8b20ffb9654ef5d  Disc 1\10MillionWeekD1T03.flac
+7456a8b8bdb884b946c547dc41430d8c  Disc 1\10MillionWeekD1T04.flac
+0c946d910bf3c28d808bde5edeecfc02  Disc 1\10MillionWeekD1T05.flac
+adcc9a551f1faa2f929ac2b64f0e989e  Disc 1\10MillionWeekD1T06.flac
+98ba8d3c8e8e9b74833b7bacfb5c7e4c  Disc 1\10MillionWeekD1T07.flac
+b361195e85085de553be3b718ac26a6d  Disc 1\10MillionWeekD1T08.flac
+a373d5c4713278a83262182967bed5a5  Disc 1\10MillionWeekD1T09.flac
+f452575f8655f9959bf332af775ccd74  Disc 1\10MillionWeekD1T10.flac
+69f3e49c06f5e8af97b2d91adcb5a5bd  Disc 1\10MillionWeekD1T11.flac
+8f083d6be950f93af0432d432a9a86b9  Disc 1\10MillionWeekD1T12.flac
+a27b329bd22076e392256ecdea216a5c  Disc 1\10MillionWeekD1T13.flac
+5e3612160744d2bd9cef4c8006bb1554  Disc 1\10MillionWeekD1T14.flac
+2b7445244b03352f913a55745797dc66  Disc 1\10MillionWeekD1T15.flac
+de9df66f803275f339a822036b8c1fd0  Disc 1\10MillionWeekD1T16.flac
+cd5e94768eee41edaac4230710942d1d  Disc 1\10MillionWeekD1T17.flac
+55a95f8ce46218d86a3fdf881353b6e7  Disc 1\10MillionWeekD1T18.flac
+d44c51f3dc537da6acb0c8f0418de5f9  Disc 1\10MillionWeekD1T19.flac
+59595b847307832e2cb2579c8874ea7e  Disc 1\10MillionWeekD1T20.flac
+4003c0fe0dfc83a57821bc8f1ac2a4e5  Disc 1\10MillionWeekD1T21.flac
+70147029de68ed08a01d52ed61044080  Disc 1\10MillionWeekD1T22.flac
+20dfd663f71e0e6c43f9d6557a378d57  Disc 1\10MillionWeekD1T23.flac
+30914bc221e6ba08857df560d3136e47  Disc 1\10MillionWeekD1T24.flac
+752607f4d97ff8aae24e3127732cafba  Disc 1\10MillionWeekD1T25.flac
+0f08e4f70a14e06cc2eea0f82ffff9e5  Disc 1\10MillionWeekD1T26.flac
+976021a09a4106d9df38023e0f1267da  Disc 1\10MillionWeekD1T27.flac
+a088cd0509f92decc3a021d2af380be4  Disc 1\10MillionWeekD1T28.flac
+65b6ad30899c10b7eeb1d2907c5da833  Disc 1\10MillionWeekD1T29.flac
+b74a350c53cf51ee3dd56a2a425496ea  Disc 1\10MillionWeekD1T30.flac
+e7c080a02b2cde2cf3ea43bf943ac2b0  Disc 1\10MillionWeekD1T31.flac
+b5a7b0570626088e1d9b42313da17659  Disc 1\10MillionWeekD1T32.flac
+97e3621ef95aedc6fc7257f3d9dd3c46  Disc 1\10MillionWeekD1T33.flac
+b6912b7635da876770417575c64ae0f6  Disc 1\10MillionWeekD1T34.flac
+71b8daf438831818f25fbbda612fa6b6  Disc 1\10MillionWeekD1T35.flac
+5e1b1ec930cb2a289db4ad49405733d0  Disc 1\10MillionWeekD1T36.flac
+b5ac50e30a1a00c5aa8dcd478e132e11  Disc 1\10MillionWeekD1T37.flac
+19231d13e4447a2b4856cac63abf5b7c  Disc 1\10MillionWeekD1T38.flac
+d3d6388194799b9fa24c39c789536eb0  Disc 1\10MillionWeekD1T39.flac
+6b60ec027dde139f81f70b437a79b288  Disc 1\10MillionWeekD1T40.flac
+48eb4901f9dc95d1e6c4a9522b2e8e41  Disc 1\10MillionWeekD1T41.flac
+8aeb59e18e7f50c34a17628319189e40  Disc 1\10MillionWeekD1T42.flac
+083aba91e62417ee31681321f3227867  Disc 2\10MillionInAWeekDisc2.fpp
+9094b13aafc2fdcb09b42ebf6fa4e107  Disc 2\10MillionInAWeekDisc2.md5
+7c0190965fb8e5a16bd88509f7c756c4  Disc 2\10MillionWeekD2T01.flac
+50034f1156145842dcd3fa59f55339bb  Disc 2\10MillionWeekD2T02.flac
+e3fa2087746fbfa13bf9e715b864d76c  Disc 2\10MillionWeekD2T03.flac
+8a3e71d26467ed156022b205d2cc073f  Disc 2\10MillionWeekD2T04.flac
+41e0ba916f36110f551e898f2025e2a5  Disc 2\10MillionWeekD2T05.flac
+669464216d6b8e6fa21d5e6a05135ecb  Disc 2\10MillionWeekD2T06.flac
+bc89fa3072f496741424d487fdff005e  Disc 2\10MillionWeekD2T07.flac
+3020979d7b29b98acb7896f1afec937a  Disc 2\10MillionWeekD2T08.flac
+1bf9af0fe7aefda3791fbf2e674d346c  Disc 2\10MillionWeekD2T09.flac
+1ab457fc9cc8ac7d855652310db5dd4c  Disc 2\10MillionWeekD2T10.flac
+4235f8837cef2ce3de569d5abc22c703  Disc 2\10MillionWeekD2T11.flac
+2fcf190974e9172dc7e5c95e6d77bf78  Disc 2\10MillionWeekD2T12.flac
+898126a57def6b1600b6d29cc4bfaf45  Disc 2\10MillionWeekD2T13.flac
+a66e611559bdc893bd543c616f1cc1aa  Disc 2\10MillionWeekD2T14.flac
+86f6964354e731792bd00f8e203e2a96  Disc 2\10MillionWeekD2T15.flac
+a15e763fd7d935d9760d33f7df008775  Disc 2\10MillionWeekD2T16.flac
+275ef139d96a02133e48823f7cc504be  Disc 2\10MillionWeekD2T17.flac
+bfc023d7e48c3ee87aef68cb47a7677f  Disc 2\10MillionWeekD2T18.flac
+4b2600832358f7a257bdbb37d558a21c  Disc 2\10MillionWeekD2T19.flac
+88679833ed591e7891f33c5def2a546d  Disc 2\10MillionWeekD2T20.flac
+08a879a1bcf22b12fc11ae6d290e76a4  Disc 2\10MillionWeekD2T21.flac
+498fa360b6c346bbf1e9fbee13fb1046  Disc 2\10MillionWeekD2T22.flac
+1d36ef39a1de99220fcffeffccb2d3f8  Disc 2\10MillionWeekD2T23.flac
+12b325ee9927df61aad143871c6d744b  Disc 2\10MillionWeekD2T24.flac
+66f83be96d69018fa87ffdb0ba88c37b  Disc 2\10MillionWeekD2T25.flac
+0f1384903e8a284c608b3ca0dba516cb  HollowHornPerformingArtistVol1.txt
+cce2be28ec5bc0c070caa97366d6e2d3  TenMillionInsideCover.jpg
+3ec533b474395846f7d6d087efddfe97  TenMillionOutsideCover.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd58-Ten-Million-In-A-Week-Vol1-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+10millionweekd1t01.flac:331c95439fa9fd386f89f32595b017a0
+10millionweekd1t02.flac:c5550d5b30196a2ac9f6e73c8d7b2b1c
+10millionweekd1t03.flac:4e2eb849a2658ade0106610ce8cfa74f
+10millionweekd1t04.flac:929f7bea0cbddf460b978935dc2609cf
+10millionweekd1t05.flac:415f9c62d92eff94ca3c157466f14b18
+10millionweekd1t06.flac:4fb657c528fb4a373e1f56200c9b00fe
+10millionweekd1t07.flac:3e86fea5c219a47e47174586ef943d60
+10millionweekd1t08.flac:a9306fd4d30727b99bd1f3bd01e18989
+10millionweekd1t09.flac:3b5bb796f5f73b70a860d2e86b8469a5
+10millionweekd1t10.flac:e9ef306e4ddeb5d5c6d903efca317c70
+10millionweekd1t11.flac:ff85515ab8e4814ca03d13c3ee9516a8
+10millionweekd1t12.flac:b7e8aeced7e45d40a0c4a7a9a5200298
+10millionweekd1t13.flac:a79626d2c954f7b722928a21044d3829
+10millionweekd1t14.flac:2f46b12662ddcbe0107e2b8289914c38
+10millionweekd1t15.flac:6ab5a0fe6768f2dd9c9ba89dc33aacb0
+10millionweekd1t16.flac:346d314e60c5de77d52e8fb300239a1e
+10millionweekd1t17.flac:89cc10eafa8fb8be7bae846c83172fe6
+10millionweekd1t18.flac:350f89d2eafcfc188bdb251c076d0d99
+10millionweekd1t19.flac:a0ae6797d16e4ce61fb329b60ee67b81
+10millionweekd1t20.flac:a3b360ec23e850ee2e3ef17d76369e5f
+10millionweekd1t21.flac:bcf1fbb480c4acb8fc4d1b7c6599015d
+10millionweekd1t22.flac:2facc461dbebe5b8ea4e80d2e6b25f65
+10millionweekd1t23.flac:fa620dc91d2136daa2ea452cd87c5c9e
+10millionweekd1t24.flac:3769ddb1a7220730f817071cadc979bd
+10millionweekd1t25.flac:94b238cc5a87610ff7af9c5ec1af9e26
+10millionweekd1t26.flac:2ae862935c03e485bab5be9941ea1d9e
+10millionweekd1t27.flac:3d4719c9e80ac8484ecbf78856a6db5e
+10millionweekd1t28.flac:a436d5655511f2ca76dea307fa58c9e4
+10millionweekd1t29.flac:d7084690dc29d28a27912dfe169197f7
+10millionweekd1t30.flac:37f9d3c9cb3bcb97ce779c906421f378
+10millionweekd1t31.flac:e0b53bcb10ece013866f30cecfd27995
+10millionweekd1t32.flac:0cdf9ced589f5c969651be41b1493482
+10millionweekd1t33.flac:aee80802f7eba2310858314c57d110e5
+10millionweekd1t34.flac:574a7e828be86d7eb72797588c5b2461
+10millionweekd1t35.flac:cba5d738dcaf24a19c58ba73bf665bee
+10millionweekd1t36.flac:11abfd3905bf157121a3376778dfcf5d
+10millionweekd1t37.flac:ab6c5ed93dc9c54ca09e0349e09298aa
+10millionweekd1t38.flac:5f03a662229d6ac46bcb1148910b6ae6
+10millionweekd1t39.flac:14d38ecc0a4dc653c44b662933f6a074
+10millionweekd1t40.flac:458a8e955f5f236cc0f6e5c9176e5bc6
+10millionweekd1t41.flac:5b60512fb4f39a5d8174f40e72ee689a
+10millionweekd1t42.flac:8d81e0b6ec6f13972eeb1c811197fd4b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd58-Ten-Million-In-A-Week-Vol1-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+10millionweekd2t01.flac:5a54e0a5e856f0f1c9f980d44f4ecdc0
+10millionweekd2t02.flac:059cffdb53d2ac866370c62bf48d0a91
+10millionweekd2t03.flac:8c555d5a5cdc5a481265e134906215e3
+10millionweekd2t04.flac:5547637e755ad2c17e05698f9f7371ad
+10millionweekd2t05.flac:a167f5de03608fe5bbf7ed422d71d178
+10millionweekd2t06.flac:df11059a3564db50d6ec9bd774535d39
+10millionweekd2t07.flac:da5a524d97bbc5e53eef10b2399f5f7c
+10millionweekd2t08.flac:c9ca039008a6f4c7e6bf17369a99a571
+10millionweekd2t09.flac:4e7e8a1ce18a010beb4e14c97a733fde
+10millionweekd2t10.flac:8d0e92206fb4d1cf5c93976447e9f1e5
+10millionweekd2t11.flac:0f6ed7d0f6b66c3112a88e2de94fd958
+10millionweekd2t12.flac:d130637dc7735b4e0631d676083c5ba3
+10millionweekd2t13.flac:517556472cf8ec4ce95b4b2a2d112304
+10millionweekd2t14.flac:e80834eb1d029e1a1dbdcadb0e8ce398
+10millionweekd2t15.flac:bc04a74e2326b4311d5eba8e4493d4b8
+10millionweekd2t16.flac:677b3d651825a972b7b9e50bfc040d16
+10millionweekd2t17.flac:92d9e0732da7c2335c00bb071a1945a6
+10millionweekd2t18.flac:918be0f0b1924c5e7e1d741c942760e6
+10millionweekd2t19.flac:b4e6a41a0b005629c5d6676961fdf45f
+10millionweekd2t20.flac:d18383297e2d373ccb643ab5891d6459
+10millionweekd2t21.flac:a08783834389d4ff5174a80d9ff3fc44
+10millionweekd2t22.flac:73a88e96d3226dd51ecb475663ba1ccc
+10millionweekd2t23.flac:e6ba3b328327090a881c64a44c05be6c
+10millionweekd2t24.flac:96c90b7040143617d918b503e35d9597
+10millionweekd2t25.flac:0b2eace74342eff8f33f568a308b5ea6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd58-Ten-Million-In-A-Week-Vol1-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.03        9532700 B   ---   --   ---xx   flac  0.4492  10MillionWeekD1T01.flac
+     1:03.67       11270828 B   ---   --   ---xx   flac  0.4550  10MillionWeekD1T02.flac
+     1:46.15       18733724 B   ---   --   ---xx   flac  0.4711  10MillionWeekD1T03.flac
+     0:22.49        3996092 B   ---   --   ---xx   flac  0.3596  10MillionWeekD1T04.flac
+     1:07.11       11844716 B   ---   --   ---xx   flac  0.4272  10MillionWeekD1T05.flac
+     0:35.22        6225788 B   ---   --   ---xx   flac  0.4309  10MillionWeekD1T06.flac
+     1:02.07       10953308 B   ---   --   ---xx   flac  0.4014  10MillionWeekD1T07.flac
+     0:39.00        6879644 B   ---   --   ---xx   flac  0.4301  10MillionWeekD1T08.flac
+     1:17.71       13749836 B   ---   --   ---xx   flac  0.4416  10MillionWeekD1T09.flac
+     0:44.15        7796924 B   ---   --   ---xx   flac  0.4237  10MillionWeekD1T10.flac
+     0:45.22        7989788 B   ---   --   ---xx   flac  0.4111  10MillionWeekD1T11.flac
+     0:35.15        6209324 B   ---   --   ---xx   flac  0.4151  10MillionWeekD1T12.flac
+     0:21.67        3862028 B   ---   --   ---xx   flac  0.4212  10MillionWeekD1T13.flac
+     0:38.52        6825548 B   ---   --   ---xx   flac  0.4213  10MillionWeekD1T14.flac
+     0:24.64        4384172 B   ---   --   ---xx   flac  0.4168  10MillionWeekD1T15.flac
+     3:18.07       34943708 B   ---   --   ---xx   flac  0.3928  10MillionWeekD1T16.flac
+     3:32.56       37528556 B   ---   --   ---xx   flac  0.3841  10MillionWeekD1T17.flac
+     2:01.11       21370316 B   ---   --   ---xx   flac  0.4331  10MillionWeekD1T18.flac
+     0:51.56        9128156 B   ---   --   ---xx   flac  0.4155  10MillionWeekD1T19.flac
+     2:16.71       24157436 B   ---   --   ---xx   flac  0.4030  10MillionWeekD1T20.flac
+     0:52.03        9179900 B   ---   --   ---xx   flac  0.3916  10MillionWeekD1T21.flac
+     2:05.67       22207628 B   ---   --   ---xx   flac  0.3601  10MillionWeekD1T22.flac
+     0:26.37        4673468 B   ---   --   ---xx   flac  0.3787  10MillionWeekD1T23.flac
+     2:16.18       24032780 B   ---   --   ---xx   flac  0.3984  10MillionWeekD1T24.flac
+     1:31.22       16104188 B   ---   --   ---xx   flac  0.3821  10MillionWeekD1T25.flac
+     2:27.53       26055500 B   ---   --   ---xx   flac  0.4026  10MillionWeekD1T26.flac
+     1:48.37       19138268 B   ---   --   ---xx   flac  0.5607  10MillionWeekD1T27.flac
+     3:10.00       33516044 B   ---   --   ---xx   flac  0.5060  10MillionWeekD1T28.flac
+     4:27.45       47204684 B   ---   --   ---xx   flac  0.4905  10MillionWeekD1T29.flac
+     5:50.67       61897628 B   ---   --   ---xx   flac  0.4875  10MillionWeekD1T30.flac
+     5:52.37       62179868 B   ---   --   ---xx   flac  0.5369  10MillionWeekD1T31.flac
+     1:05.52       11588348 B   ---   --   ---xx   flac  0.5367  10MillionWeekD1T32.flac
+     0:18.52        3297548 B   ---   --   ---xx   flac  0.4921  10MillionWeekD1T33.flac
+     0:18.45        3281084 B   ---   --   ---xx   flac  0.4881  10MillionWeekD1T34.flac
+     0:28.33        5016860 B   ---   --   ---xx   flac  0.4589  10MillionWeekD1T35.flac
+     2:40.33       28301660 B   ---   --   ---xx   flac  0.4699  10MillionWeekD1T36.flac
+     4:40.48       49504940 B   ---   --   ---xx   flac  0.3239  10MillionWeekD1T37.flac
+     3:15.26       34459196 B   ---   --   ---xx   flac  0.3418  10MillionWeekD1T38.flac
+     2:56.45       31152284 B   ---   --   ---xx   flac  0.3163  10MillionWeekD1T39.flac
+     2:54.30       30764204 B   ---   --   ---xx   flac  0.3113  10MillionWeekD1T40.flac
+     1:26.33       15248060 B   ---   --   ---xx   flac  0.2967  10MillionWeekD1T41.flac
+     3:11.48       33805340 B   ---   --   ---xx   flac  0.3031  10MillionWeekD1T42.flac
+    78:25.12      829992072 B                            0.4197  (42 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd58-Ten-Million-In-A-Week-Vol1-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.60       43711964 B   ---   --   ---xx   flac  0.4634  10MillionWeekD2T01.flac
+     2:16.33       24068060 B   ---   --   ---xx   flac  0.4753  10MillionWeekD2T02.flac
+     3:08.03       33170300 B   ---   --   ---xx   flac  0.4754  10MillionWeekD2T03.flac
+     2:51.03       30171500 B   ---   --   ---xx   flac  0.4775  10MillionWeekD2T04.flac
+     3:51.18       40790780 B   ---   --   ---xx   flac  0.4886  10MillionWeekD2T05.flac
+     5:58.56       63282956 B   ---   --   ---xx   flac  0.4715  10MillionWeekD2T06.flac
+     6:00.18       63546380 B   ---   --   ---xx   flac  0.4598  10MillionWeekD2T07.flac
+     3:47.11       40068716 B   ---   --   ---xx   flac  0.4609  10MillionWeekD2T08.flac
+     3:18.52       35049548 B   ---   --   ---xx   flac  0.4592  10MillionWeekD2T09.flac
+     2:30.41       26556476 B   ---   --   ---xx   flac  0.4464  10MillionWeekD2T10.flac
+     1:44.22       18397388 B   ---   --   ---xx   flac  0.4481  10MillionWeekD2T11.flac
+     2:05.37       22137068 B   ---   --   ---xx   flac  0.4819  10MillionWeekD2T12.flac
+     1:58.63       20963420 B   ---   --   ---xx   flac  0.4589  10MillionWeekD2T13.flac
+     2:08.60       22720364 B   ---   --   ---xx   flac  0.4698  10MillionWeekD2T14.flac
+     2:59.22       31627388 B   ---   --   ---xx   flac  0.4974  10MillionWeekD2T15.flac
+     2:05.00       22050044 B   ---   --   ---xx   flac  0.5137  10MillionWeekD2T16.flac
+     4:38.26       49100396 B   ---   --   ---xx   flac  0.4750  10MillionWeekD2T17.flac
+     1:38.15       17322524 B   ---   --   ---xx   flac  0.5267  10MillionWeekD2T18.flac
+     4:09.15       43958924 B   ---   --   ---xx   flac  0.5077  10MillionWeekD2T19.flac
+     1:00.56       10715756 B   ---   --   ---xx   flac  0.5175  10MillionWeekD2T20.flac
+     3:12.67       34026428 B   ---   --   ---xx   flac  0.5168  10MillionWeekD2T21.flac
+     5:29.45       58141484 B   ---   --   ---xx   flac  0.5056  10MillionWeekD2T22.flac
+     2:43.30       28823804 B   ---   --   ---xx   flac  0.4953  10MillionWeekD2T23.flac
+     3:50.03       40579100 B   ---   --   ---xx   flac  0.4817  10MillionWeekD2T24.flac
+     1:31.03       16059500 B   ---   --   ---xx   flac  0.5020  10MillionWeekD2T25.flac
+    79:05.09      837040268 B                            0.4811  (25 files)
+=================== 
+=================== 
+=================== 

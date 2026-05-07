@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-19-sbd-c.flac16 
+=================== 
+=================== 
+=================== 
+4bdf222afba4276c1c14d82dc1d4236f  Bob Dylan1984-06-19d1Track01.flac
+31e89b6b1bb794a69188efd29d4872cb  Bob Dylan1984-06-19d1Track02.flac
+545ccb01368c8c8c26b19494f5855614  Bob Dylan1984-06-19d1Track03.flac
+2acd8857ad691be24c3d9f55e765911d  Bob Dylan1984-06-19d1Track04.flac
+6c122d7acbcd924c97128c32126e5308  Bob Dylan1984-06-19d1Track05.flac
+6d2c6fc959e857e23abed26d173464d3  Bob Dylan1984-06-19d1Track06.flac
+7d7d010a152940afe27277ad6daaba91  Bob Dylan1984-06-19d1Track07.flac
+c948c0ea0ac6b74b33992923f6fa6e98  Bob Dylan1984-06-19d1Track08.flac
+d162bdd391857af49c49127500f37171  Bob Dylan1984-06-19d1Track09.flac
+2374247c48040c0df8469146935e59de  Bob Dylan1984-06-19d1Track10.flac
+c1a2eecd92e32ade0e6becda031dde76  Bob Dylan1984-06-19d2Track01.flac
+2ddf1c9e4e50de38bc9138b6726938d1  Bob Dylan1984-06-19d2Track02.flac
+af3cf314f1a9ed1d80fead73793b5333  Bob Dylan1984-06-19d2Track03.flac
+0bc7d798e3fc87d04293bc4f633fdb4a  Bob Dylan1984-06-19d2Track04.flac
+bf45b38cb636dd633867fa8156f884d5  Bob Dylan1984-06-19d2Track05.flac
+4fb8b9921196bd44120328df626a20c3  Bob Dylan1984-06-19d2Track06.flac
+433767625824cae2266bfc2b92c9a2a5  Bob Dylan1984-06-19d2Track07.flac
+09135a61b037103740d2b1f45bb23164  Bob Dylan1984-06-19d2Track08.flac
+872ba6667c887c73f841ea7a126c57fb  Bob Dylan1984-06-19d2Track09.flac
+55a162a2dc34a0046b106c20bdbb05b7  Bob Dylan1984-06-19d2Track10.flac
+4eadf622bb40502262bf0a84998f383f  Bob Dylan1984-06-19d2Track11.flac
+de3fe3a3c34466a1797e1d47da421c4b  Bob Dylan1984-06-19d2Track12.flac
+ddacbe83bbd167c64c2046a19b53c6b0  BobDylan1984-06-19fingerprint.ffp
+39b8fcd79eaad3c0345aaeb4f8da9aec  BobDylan1984-06-19infofile.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-19-sbd-c.flac16 
+=================== 
+=================== 
+=================== 
+Bob Dylan1984-06-19d1Track01.flac:2fa34464f66598db2d8f4bdcb7a4a38b
+Bob Dylan1984-06-19d1Track02.flac:edf24bc8dfb846ea3a9abff46e5272ec
+Bob Dylan1984-06-19d1Track03.flac:fd14482cec22a2f16493c22be796b25a
+Bob Dylan1984-06-19d1Track04.flac:15599473baa798b98a05278756762455
+Bob Dylan1984-06-19d1Track05.flac:202bd02e2e5e950b7aa2bb202424e8b5
+Bob Dylan1984-06-19d1Track06.flac:222de4598f69f20ce0231d215be9083c
+Bob Dylan1984-06-19d1Track07.flac:02c5664b79b82d06fa7b5607be29ace1
+Bob Dylan1984-06-19d1Track08.flac:6d5466fef6e68745b6df00b8bd31d839
+Bob Dylan1984-06-19d1Track09.flac:e57e57e95be09182d11d3c811276a3b0
+Bob Dylan1984-06-19d1Track10.flac:7e093d8d6b4a5aac5935fc2bf789b345
+Bob Dylan1984-06-19d2Track01.flac:8b9953cf9d3bdfcd39ca688181e12621
+Bob Dylan1984-06-19d2Track02.flac:c1805cc6ebfa339ee8072406cbe97112
+Bob Dylan1984-06-19d2Track03.flac:2d3388eb6614056caf3de9f66e2f8204
+Bob Dylan1984-06-19d2Track04.flac:deaf7e585765a370d47b786231ed023d
+Bob Dylan1984-06-19d2Track05.flac:e4bfa3a67b2a7084a6e3a9be4561fbd9
+Bob Dylan1984-06-19d2Track06.flac:83384157fd22b24f798d57221327bf76
+Bob Dylan1984-06-19d2Track07.flac:589b8da7a1cf57bb584ac09218cd34ee
+Bob Dylan1984-06-19d2Track08.flac:2f00066ae2293028a11edfacf58fab6e
+Bob Dylan1984-06-19d2Track09.flac:e00824c68fffd1022a9b16b0095a28c9
+Bob Dylan1984-06-19d2Track10.flac:a04eeec8eb8df1f1d7e8f1c66438a228
+Bob Dylan1984-06-19d2Track11.flac:a74cd529ed9df848f44a27d9e4d9632e
+Bob Dylan1984-06-19d2Track12.flac:0a932ee3296fe3368378cfd5847498fc
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-06-19-sbd-c.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.60       53061164 B   ---   --   ---xx   flac  0.5952  Bob Dylan1984-06-19d1Track01.flac
+     7:31.15       79591724 B   ---   --   ---xx   flac  0.5905  Bob Dylan1984-06-19d1Track02.flac
+     4:14.00       44805644 B   ---   --   ---xx   flac  0.6031  Bob Dylan1984-06-19d1Track03.flac
+     6:51.00       72500444 B   ---   --   ---xx   flac  0.6017  Bob Dylan1984-06-19d1Track04.flac
+     4:27.00       47098844 B   ---   --   ---xx   flac  0.6088  Bob Dylan1984-06-19d1Track05.flac
+     6:11.00       65444444 B   ---   --   ---xx   flac  0.5957  Bob Dylan1984-06-19d1Track06.flac
+     3:43.63       39485420 B   ---   --   ---xx   flac  0.5956  Bob Dylan1984-06-19d1Track07.flac
+     6:06.00       64562444 B   ---   --   ---xx   flac  0.5707  Bob Dylan1984-06-19d1Track08.flac
+     7:53.00       83437244 B   ---   --   ---xx   flac  0.5801  Bob Dylan1984-06-19d1Track09.flac
+     6:22.59       67523612 B   ---   --   ---xx   flac  0.5863  Bob Dylan1984-06-19d1Track10.flac
+     6:28.00       68443244 B   ---   --   ---xx   flac  0.5832  Bob Dylan1984-06-19d2Track01.flac
+     5:38.40       59717324 B   ---   --   ---xx   flac  0.6057  Bob Dylan1984-06-19d2Track02.flac
+     4:42.35       49827164 B   ---   --   ---xx   flac  0.5969  Bob Dylan1984-06-19d2Track03.flac
+     3:25.00       36162044 B   ---   --   ---xx   flac  0.5928  Bob Dylan1984-06-19d2Track04.flac
+     6:21.00       67208444 B   ---   --   ---xx   flac  0.5842  Bob Dylan1984-06-19d2Track05.flac
+     7:11.10       76051964 B   ---   --   ---xx   flac  0.6043  Bob Dylan1984-06-19d2Track06.flac
+     7:41.00       81320444 B   ---   --   ---xx   flac  0.5696  Bob Dylan1984-06-19d2Track07.flac
+     6:42.00       70912844 B   ---   --   ---xx   flac  0.5797  Bob Dylan1984-06-19d2Track08.flac
+     6:34.00       69501644 B   ---   --   ---xx   flac  0.5814  Bob Dylan1984-06-19d2Track09.flac
+     4:49.00       50979644 B   ---   --   ---xx   flac  0.5830  Bob Dylan1984-06-19d2Track10.flac
+     4:52.00       51508844 B   ---   --   ---xx   flac  0.6023  Bob Dylan1984-06-19d2Track11.flac
+     4:10.16       44137676 B   ---   --   ---xx   flac  0.5773  Bob Dylan1984-06-19d2Track12.flac
+   126:54.73     1343282264 B                            0.5894  (22 files)
+=================== 
+=================== 
+=================== 

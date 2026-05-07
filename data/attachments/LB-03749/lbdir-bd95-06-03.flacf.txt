@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-03.flacf 
+=================== 
+=================== 
+=================== 
+46dbf7df1101f4569a5b9efc3739f293  bd95-06-03-LB-3749.txt
+bc9c554688ca9fb8b8769b69ed666734  Bob Dylan 3 june 1995 Seattle.Jpg
+69d5bfb0cafd14dc1a3480a064e853e5  Bob Dylan 3 june 1995 Seattle.txt
+2d15deaff06e5c4403f44c3c458145db  Bob Dylan 3 june 1995 Seattle2.jpg
+45c30f5c1e8380a4a4f94b1d180166e2  fingerprint.ffp.txt
+bea65ee11fb6763e4e9a41dfbbd1976f  Flacs\BD 1995-06-03D1T01.flac
+78a47d96e5b2718939ef1de61debb8e7  Flacs\BD 1995-06-03D1T02.flac
+82b21ed9879cf930292f5efe13f0366c  Flacs\BD 1995-06-03D1T03.flac
+aeaf6f5efb1e0d6fe0486277cdc03f4b  Flacs\BD 1995-06-03D1T04.flac
+38268040c5ac1660b8ef7b95b093c48c  Flacs\BD 1995-06-03D1T05.flac
+df704bbb1336aa8657bfb9a576b03908  Flacs\BD 1995-06-03D1T06.flac
+5bb8e6cfb8552b669543fa0aa22c2541  Flacs\BD 1995-06-03D1T07.flac
+690f19477be69fb9fbc5888fe7016a22  Flacs\BD 1995-06-03D1T08.flac
+28a5af29d44310c33a34cfea51ddc771  Flacs\BD 1995-06-03D1T09.flac
+23899449d0d1efc55637f4d688416e70  Flacs\BD 1995-06-03D1T10.flac
+d944f62144ab21808521fab43faef90c  Flacs\BD 1995-06-03D2T01.flac
+d572a88b6d89c4fb96e5d567f2c7e53a  Flacs\BD 1995-06-03D2T02.flac
+8b0161a25a6d653ccadb34c36eec0a9c  Flacs\BD 1995-06-03D2T03.flac
+e541368b99e02f6160c7b0e4a9574309  Flacs\BD 1995-06-03D2T04.flac
+bc05ffa86b85b3f321ca9a25273f27ad  Flacs\BD 1995-06-03D2T05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-03.flacf\Flacs 
+=================== 
+=================== 
+=================== 
+BD 1995-06-03D1T01.flac:dcde4c0654bcb8855df7570f9ec87bea
+BD 1995-06-03D1T02.flac:851cd630676261cdee87d401d6a7c5ad
+BD 1995-06-03D1T03.flac:18569e722ed09a97ebde816a4056c60b
+BD 1995-06-03D1T04.flac:0156103b45e6d020b5aa94712179bbd6
+BD 1995-06-03D1T05.flac:3eef83b8ea15e61a4cdca2f3345b35c2
+BD 1995-06-03D1T06.flac:843fa3971746216671da32e80a0a1a7b
+BD 1995-06-03D1T07.flac:690684f1282d633988def2405cb7526f
+BD 1995-06-03D1T08.flac:bd5fa9ee8cfeb4e631a6bb92620dd553
+BD 1995-06-03D1T09.flac:47ca54e8647e42a32841cb16c868773b
+BD 1995-06-03D1T10.flac:c5096e6e5fb89e0f8504df159c945900
+BD 1995-06-03D2T01.flac:80c957329df38bae143ad61181b8b4dc
+BD 1995-06-03D2T02.flac:11ff0c4acb786d2f829d814ed35974d2
+BD 1995-06-03D2T03.flac:257f3d696459803d8eff4d0653b73ddf
+BD 1995-06-03D2T04.flac:1db932dad39f6214c3f7bd9429170298
+BD 1995-06-03D2T05.flac:61820e85a276873e8776eebd1bf815e6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-06-03.flacf\Flacs 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:17.07       55935308 B   ---   --   ---xx   flac  0.5666  BD 1995-06-03D1T01.flac
+     4:58.69       52729532 B   ---   --   ---xx   flac  0.4965  BD 1995-06-03D1T02.flac
+     6:29.22       68671388 B   ---   --   ---xx   flac  0.5668  BD 1995-06-03D1T03.flac
+     8:00.09       84693212 B   ---   --   ---xx   flac  0.4847  BD 1995-06-03D1T04.flac
+     5:24.00       57153644 B   ---   --   ---xx   flac  0.5813  BD 1995-06-03D1T05.flac
+     7:28.39       79118972 B   ---   --   ---xx   flac  0.5301  BD 1995-06-03D1T06.flac
+     7:58.52       84441548 B   ---   --   ---xx   flac  0.3628  BD 1995-06-03D1T07.flac
+     6:21.74       67382492 B   ---   --   ---xx   flac  0.4181  BD 1995-06-03D1T08.flac
+     7:27.35       78933164 B   ---   --   ---xx   flac  0.3752  BD 1995-06-03D1T09.flac
+     6:19.14       66888572 B   ---   --   ---xx   flac  0.5493  BD 1995-06-03D1T10.flac
+     7:28.19       79071932 B   ---   --   ---xx   flac  0.4821  BD 1995-06-03D2T01.flac
+    10:00.24      105896492 B   ---   --   ---xx   flac  0.5429  BD 1995-06-03D2T02.flac
+     9:22.57       99270908 B   ---   --   ---xx   flac  0.5297  BD 1995-06-03D2T03.flac
+     8:56.30       94621004 B   ---   --   ---xx   flac  0.4968  BD 1995-06-03D2T04.flac
+     7:13.60       76522364 B   ---   --   ---xx   flac  0.5503  BD 1995-06-03D2T05.flac
+   108:46.61     1151330532 B                            0.4998  (15 files)
+=================== 
+=================== 
+=================== 

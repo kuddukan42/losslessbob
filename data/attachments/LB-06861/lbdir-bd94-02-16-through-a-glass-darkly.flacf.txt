@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-02-16-through-a-glass-darkly.flacf 
+=================== 
+=================== 
+=================== 
+1fcc3a9af6384bf1f49aaab859696656  bd94-02-16-through-a-glass-darkly-d1t01.flac
+8fc423f330dca70421f4b7bf296557e7  bd94-02-16-through-a-glass-darkly-d1t02.flac
+9e205425a410c5c3154bbad251ced7f0  bd94-02-16-through-a-glass-darkly-d1t03.flac
+b4d799bf5168ac98591652f9f362d7e8  bd94-02-16-through-a-glass-darkly-d1t04.flac
+648ff643a2cd505662466dc56fe992c1  bd94-02-16-through-a-glass-darkly-d1t05.flac
+ce7c9ef4ec92d9a5270e0171a18682e3  bd94-02-16-through-a-glass-darkly-d1t06.flac
+fabe10d106cdf0c460b5760b3a35eacb  bd94-02-16-through-a-glass-darkly-d1t07.flac
+fde87be31f3a2671493c074f226b6375  bd94-02-16-through-a-glass-darkly-d1t08.flac
+0c95c47cd57b00b8923ab19172e8a986  bd94-02-16-through-a-glass-darkly-d1t09.flac
+b14c440236eab9efaaeeab7903ee5105  bd94-02-16-through-a-glass-darkly-d1t10.flac
+7f022266cd78354e24ce2f6bdcb414c8  bd94-02-16-through-a-glass-darkly-d1t11.flac
+dd2ef9e075ff5839633e04f62b3ec031  bd94-02-16-through-a-glass-darkly-d2t01.flac
+6f0aa264347f7097e6e3180bb5d44d8a  bd94-02-16-through-a-glass-darkly-d2t02.flac
+f946f20c92f5c8bf02f918e6b3e19e89  bd94-02-16-through-a-glass-darkly-d2t03.flac
+14def741f735e883dc86a1d93eca6cdd  bd94-02-16-through-a-glass-darkly-d2t04.flac
+105f80330228f68bc11336e634f9a602  bd94-02-16-through-a-glass-darkly-d2t05.flac
+489f84f07794b842f0f397e103c75dd0  bd94-02-16-through-a-glass-darkly-d2t06.flac
+2576048781e9fdc18863824c54eb08d8  bd94-02-16-through-a-glass-darkly-d2t07.flac
+419a26d6a18b5022b6a81528427ad8b6  bd94-02-16-through-a-glass-darkly-d2t08.flac
+6f32cde2df48fe499056d42ce8c12dc4  bd94-02-16-through-a-glass-darkly-d2t09.flac
+e4d36ca4f782a17b3283913b213c1da2  bd94-02-16-through-a-glass-darkly-d2t10.flac
+4a3eccd77e3bacc229b6d39768075a6a  bd94-02-16-through-a-glass-darkly-d2t11.flac
+e2df7a3c51a0dd090e4882dba9dd2bf2  bd94-02-16-through-a-glass-darkly.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-02-16-through-a-glass-darkly.flacf 
+=================== 
+=================== 
+=================== 
+bd94-02-16-through-a-glass-darkly-d1t01.flac:76b5dc16383ceca24637c03255f14023
+bd94-02-16-through-a-glass-darkly-d1t02.flac:3c9f3e4ff295a01a138b5c5c9a335251
+bd94-02-16-through-a-glass-darkly-d1t03.flac:66eef7cd6da97e4c419c4c8c1b4ea406
+bd94-02-16-through-a-glass-darkly-d1t04.flac:92de556d043493ef7d2d746747321fc4
+bd94-02-16-through-a-glass-darkly-d1t05.flac:fbac6d3eba5b552e67e42b16d7e49def
+bd94-02-16-through-a-glass-darkly-d1t06.flac:5b0b779bee791bad12821e916c8f2d47
+bd94-02-16-through-a-glass-darkly-d1t07.flac:2d24dbcce6b2e3da6bf00809e5abea8f
+bd94-02-16-through-a-glass-darkly-d1t08.flac:63af00f6b91f44b7fa6e781d5e29cd0c
+bd94-02-16-through-a-glass-darkly-d1t09.flac:2e725a0939dd6b55337862122c3b864b
+bd94-02-16-through-a-glass-darkly-d1t10.flac:e508836313f2a774d4dd0e626bf309c1
+bd94-02-16-through-a-glass-darkly-d1t11.flac:836c6e6aa923de0caaea78325fc3a74c
+bd94-02-16-through-a-glass-darkly-d2t01.flac:fc7e9155c932ee7be9d6d91f599f82f6
+bd94-02-16-through-a-glass-darkly-d2t02.flac:af965fbfd25302a8352844acc8667cd0
+bd94-02-16-through-a-glass-darkly-d2t03.flac:ae1eff3303c81a92428be4daa90cb8a9
+bd94-02-16-through-a-glass-darkly-d2t04.flac:7958f8298a8efa4c36503f91fa35212c
+bd94-02-16-through-a-glass-darkly-d2t05.flac:d3141be2611289ac5a2ee6fb2ae0edb4
+bd94-02-16-through-a-glass-darkly-d2t06.flac:54edad19c6e9b0a0687abe19327f1039
+bd94-02-16-through-a-glass-darkly-d2t07.flac:bcce3f4a5aba87375fcd231741f476ce
+bd94-02-16-through-a-glass-darkly-d2t08.flac:4b2ea9197a6402ec74ce772dec89723b
+bd94-02-16-through-a-glass-darkly-d2t09.flac:b9bba2e629d98cf4880dd0720921c23c
+bd94-02-16-through-a-glass-darkly-d2t10.flac:8de59bb7a214f46f2132d11f57c2d835
+bd94-02-16-through-a-glass-darkly-d2t11.flac:666e0bb322d1f4b1a78fe66a978acd18
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-02-16-through-a-glass-darkly.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:19.00       88023644 B   ---   --   ---xx   flac  0.5909  bd94-02-16-through-a-glass-darkly-d1t01.flac
+     7:41.40       81414524 B   ---   --   ---xx   flac  0.5717  bd94-02-16-through-a-glass-darkly-d1t02.flac
+     5:17.02       55923548 B   ---   --   ---xx   flac  0.6230  bd94-02-16-through-a-glass-darkly-d1t03.flac
+     7:46.28       82268300 B   ---   --   ---xx   flac  0.5666  bd94-02-16-through-a-glass-darkly-d1t04.flac
+     9:44.62      103163468 B   ---   --   ---xx   flac  0.5827  bd94-02-16-through-a-glass-darkly-d1t05.flac
+     5:12.65       55189724 B   ---   --   ---xx   flac  0.5601  bd94-02-16-through-a-glass-darkly-d1t06.flac
+     4:08.68       43907180 B   ---   --   ---xx   flac  0.5373  bd94-02-16-through-a-glass-darkly-d1t07.flac
+     5:03.17       53489228 B   ---   --   ---xx   flac  0.5307  bd94-02-16-through-a-glass-darkly-d1t08.flac
+     6:22.45       67490684 B   ---   --   ---xx   flac  0.5888  bd94-02-16-through-a-glass-darkly-d1t09.flac
+     6:38.00       70207244 B   ---   --   ---xx   flac  0.6013  bd94-02-16-through-a-glass-darkly-d1t10.flac
+     6:55.65       73358924 B   ---   --   ---xx   flac  0.6257  bd94-02-16-through-a-glass-darkly-d1t11.flac
+     6:55.07       73222508 B   ---   --   ---xx   flac  0.6306  bd94-02-16-through-a-glass-darkly-d2t01.flac
+     7:18.53       77387900 B   ---   --   ---xx   flac  0.5947  bd94-02-16-through-a-glass-darkly-d2t02.flac
+     7:49.37       82818668 B   ---   --   ---xx   flac  0.5558  bd94-02-16-through-a-glass-darkly-d2t03.flac
+     6:22.23       67438940 B   ---   --   ---xx   flac  0.5473  bd94-02-16-through-a-glass-darkly-d2t04.flac
+     5:58.45       63257084 B   ---   --   ---xx   flac  0.5258  bd94-02-16-through-a-glass-darkly-d2t05.flac
+     6:00.50       63621644 B   ---   --   ---xx   flac  0.5812  bd94-02-16-through-a-glass-darkly-d2t06.flac
+     6:51.40       72594524 B   ---   --   ---xx   flac  0.5804  bd94-02-16-through-a-glass-darkly-d2t07.flac
+     7:24.07       78338108 B   ---   --   ---xx   flac  0.6001  bd94-02-16-through-a-glass-darkly-d2t08.flac
+     6:33.65       69478124 B   ---   --   ---xx   flac  0.5597  bd94-02-16-through-a-glass-darkly-d2t09.flac
+     6:19.03       66862700 B   ---   --   ---xx   flac  0.6107  bd94-02-16-through-a-glass-darkly-d2t10.flac
+     6:39.52       70505948 B   ---   --   ---xx   flac  0.5381  bd94-02-16-through-a-glass-darkly-d2t11.flac
+   147:23.24     1559962616 B                            0.5789  (22 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,14 @@
+Bob Dylan, 8/12/01, Springfield, Illinois, Illinois State Fair, 2CDR
+
+LB-5062, (70min+43min), Audience recording (Full spectrum) > Unknown transfer > CDR(x) > EAC (Secure/Offset) > FLAC (Level 8); bittorrent download 06/07;; has asymetrical wav on d1t5 with top at -6db while bottom goes to 0db; excellent sound [A-]
+
+drops d2t5 2:18, 2:19, 2:38, 2;48; d2t6 2:27, 2:28, 2:49
+
+CD1
+69:41, 1. Roving Gambler (trad.), 2. The Times They Are A-Changin', 3. Don't Think Twice, It's All Right, 4. I Don't Believe You (She Acts Like We Never Have Met), 5. I'll Be Your Baby Tonight, 6. Tombstone Blues, 7. It's All Over Now, Baby Blue, 8. Masters Of War, 9. It Ain't Me, Babe, 10. Blind Willie McTell, 11. Most Likely You Go Your Way (And I'll Go Mine), 
+
+CD2
+42:27, 12. Cold Irons Bound, 13. Everything Is Broken, 14. Love Sick, 15. Like A Rolling Stone, 16. Knockin' On Heaven's Door, 17. All Along The Watchtower, 18. Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

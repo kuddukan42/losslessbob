@@ -1,0 +1,137 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-06-14-MP.flacf 
+=================== 
+=================== 
+=================== 
+d9b936f11ee76cc3765e0eff3c7c9529  bd86-06-14-MP-LB-2784.txt
+184abca35f52495e44fd936f0d808757  dylan-1986-06-14-MP-d1-FFP.txt
+ead02504a384b8581727a78744738065  dylan-1986-06-14-MP-d1-FLAC.md5
+3303d76c1b179f18f5bcb9483a7ee063  dylan-1986-06-14-MP-d1.log
+ef3fcc6d45f3b32abfb13889f0b636d8  dylan-1986-06-14-MP-d1t01.flac
+275aefd17d90d838f9ba0d3a7426d156  dylan-1986-06-14-MP-d1t02.flac
+550f1ffa604249372ed7b9fc9f61f864  dylan-1986-06-14-MP-d1t03.flac
+489e210620ab45d88ab6f1746c939917  dylan-1986-06-14-MP-d1t04.flac
+8b01e9401a4adfdc4853762ff9745401  dylan-1986-06-14-MP-d1t05.flac
+9bb88ef158e6e1a0e417b0f5991e891b  dylan-1986-06-14-MP-d1t06.flac
+06c5c84e42b27fd364732dbb34c2a135  dylan-1986-06-14-MP-d1t07.flac
+360a0b77f13456d8759c2b970a397def  dylan-1986-06-14-MP-d1t08.flac
+1fe6ac1ec55ffa42b41f33d69db34af9  dylan-1986-06-14-MP-d1t09.flac
+a94f7da1801e92b1f1d0554bb27c4b97  dylan-1986-06-14-MP-d1t10.flac
+d782d9b13f5b67a45e7ee1f943890f49  dylan-1986-06-14-MP-d1t11.flac
+5b46cfd42dc8c93785bc034f34d251de  dylan-1986-06-14-MP-d1t12.flac
+f51aa0dd4a14a9a42d2656a6aaf9c69c  dylan-1986-06-14-MP-d1t13.flac
+95a83d33181e56628d09877af4efe5ae  dylan-1986-06-14-MP-d1t14.flac
+83af5fd674eaa43ff2c4c8bf4d9bd95d  dylan-1986-06-14-MP-d1t15.flac
+4fe4266d128103f8d22f8df3d6cad949  dylan-1986-06-14-MP-d1t16.flac
+a2f6f6781cbd018488cc7736412007f9  dylan-1986-06-14-MP-d1t17.flac
+d492a13b8425449c2c7e0b6e5fa38136  dylan-1986-06-14-MP-d1t18.flac
+1b783f6946ba94a1b046b86aefa9298f  dylan-1986-06-14-MP-d2-FFP.txt
+139664a53a2d315b42349c576bb5ac76  dylan-1986-06-14-MP-d2-FLAC.md5
+918d7fbdf5f98b50eacd2b8d91b59fee  dylan-1986-06-14-MP-d2.log
+6bcb9c3093a0266b3374fb9554e3aae6  dylan-1986-06-14-MP-d2t01.flac
+228c99777702ba64fa3efcde7186a9f3  dylan-1986-06-14-MP-d2t02.flac
+662eec958cbb2b069ff9e5c141f08d90  dylan-1986-06-14-MP-d2t03.flac
+0bb525b642b0dcba408dda5388493702  dylan-1986-06-14-MP-d2t04.flac
+a54b16126e09fe69be307886b7afe7e0  dylan-1986-06-14-MP-d2t05.flac
+7fa0226835bef75d4336c841ccdabf14  dylan-1986-06-14-MP-d2t06.flac
+1d82062fffd7697064b8871458702857  dylan-1986-06-14-MP-d2t07.flac
+fc4f64cb046a2372c39648fdbe503e5c  dylan-1986-06-14-MP-d2t08.flac
+748076b8cfc52f40db0b87b7432f68f3  dylan-1986-06-14-MP-d2t09.flac
+1b1a7fdbe42fea3a13ac73a47c5587ad  dylan-1986-06-14-MP-d2t10.flac
+d65cb376ca764a775162564023540e27  dylan-1986-06-14-MP-d2t11.flac
+377ff6c9ba3233c2bf5787afbf02f50f  dylan-1986-06-14-MP-d2t12.flac
+2d1dc15f9f97e2e6b08fcff27183f42e  dylan-1986-06-14-MP-d2t13.flac
+a3a290c0cd67fd9ca2dc6133bfcba08f  dylan-1986-06-14-MP-d2t14.flac
+2e1387215bbb977e190d71f2724eed25  dylan-1986-06-14-MP-d2t15.flac
+de31f0cdf13ef80741b5c23a89bfb363  dylan-1986-06-14-MP-d2t16.flac
+656b8e49019d629b541910a4c49ab196  Extras_dylan-1986-06-14-MP.zip
+b304312d9d31c844ce816bd2ba72e4a3  README-dylan-1986-06-14-MP-Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-06-14-MP.flacf 
+=================== 
+=================== 
+=================== 
+dylan-1986-06-14-MP-d1t01.flac:2592afe5409a9b27f815b0aec5dbdbfb
+dylan-1986-06-14-MP-d1t02.flac:11de3356b7c098ed7953099f46a8e89e
+dylan-1986-06-14-MP-d1t03.flac:c52b9102e3e550e6e9079619ffc39691
+dylan-1986-06-14-MP-d1t04.flac:a5e76f75c23bf1cc6a42877c3f69176f
+dylan-1986-06-14-MP-d1t05.flac:28727c9e2645d57dbff3c45cc25ebf76
+dylan-1986-06-14-MP-d1t06.flac:e34b4760e0acc23a8f6aa79c89049275
+dylan-1986-06-14-MP-d1t07.flac:ca1286dfb859cddade6c3532ae13742d
+dylan-1986-06-14-MP-d1t08.flac:2643e2e428acef99d9c3ccf11f99ee7f
+dylan-1986-06-14-MP-d1t09.flac:a8534646fa3db3b3ed111cb66f571d9f
+dylan-1986-06-14-MP-d1t10.flac:9a483d93fc80b5d12ad51c4e9dff34e4
+dylan-1986-06-14-MP-d1t11.flac:9b762d5332dd9bab955791e9463e0802
+dylan-1986-06-14-MP-d1t12.flac:ea3ac5d53ac76d5e402f1d27937f45ba
+dylan-1986-06-14-MP-d1t13.flac:4c980a13a0f3d06cc49b36911cb3d82d
+dylan-1986-06-14-MP-d1t14.flac:82efe84cdca8d3b39978067d1901a37c
+dylan-1986-06-14-MP-d1t15.flac:594939e0e4063208fe59a2beb6a2d273
+dylan-1986-06-14-MP-d1t16.flac:081d276b14f6e36763cc5abc5f6161c9
+dylan-1986-06-14-MP-d1t17.flac:532b42252f863d9a19169e54a840e321
+dylan-1986-06-14-MP-d1t18.flac:5d307a1bc161b53a2f521c200319b355
+dylan-1986-06-14-MP-d2t01.flac:64f392d48817eb897066ca5b40a5ba63
+dylan-1986-06-14-MP-d2t02.flac:0d15394e0255dc7c748a09d1e3924896
+dylan-1986-06-14-MP-d2t03.flac:02e0ad39b63c8aced61e5d16fc0713b6
+dylan-1986-06-14-MP-d2t04.flac:a6fc221cf7d7a5b6c596ab537cd24d64
+dylan-1986-06-14-MP-d2t05.flac:9b8c0bac64c0aabf521c46be60f2ef1e
+dylan-1986-06-14-MP-d2t06.flac:ca0e91c15d8143aae492468f91a7eca1
+dylan-1986-06-14-MP-d2t07.flac:9f632c13fa15e61de32e52f1f46143fd
+dylan-1986-06-14-MP-d2t08.flac:117b687833db273abebe36cfd97350d1
+dylan-1986-06-14-MP-d2t09.flac:9b5ff06721cc8fa690a91d2002d25bf7
+dylan-1986-06-14-MP-d2t10.flac:e5764ade4070537ca839e2adc20568d3
+dylan-1986-06-14-MP-d2t11.flac:3b6ce71637d6fa9c634e774863a493c0
+dylan-1986-06-14-MP-d2t12.flac:4ec70367ea6b3032190551672131b3be
+dylan-1986-06-14-MP-d2t13.flac:629553de70b06e49f15fe19a929d55f7
+dylan-1986-06-14-MP-d2t14.flac:c0d4ec495ed35d2b0191e6ad0aee6481
+dylan-1986-06-14-MP-d2t15.flac:fbad99e86b270988c6cf6c4405f6541b
+dylan-1986-06-14-MP-d2t16.flac:a40bc237d5c483fd4d045b7ee063554c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-06-14-MP.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:45.64       39840572 B   ---   --   ---xx   flac  0.6070  dylan-1986-06-14-MP-d1t01.flac
+     3:56.34       41710412 B   ---   --   ---xx   flac  0.5937  dylan-1986-06-14-MP-d1t02.flac
+     2:51.63       30312620 B   ---   --   ---xx   flac  0.6064  dylan-1986-06-14-MP-d1t03.flac
+     4:55.62       52183868 B   ---   --   ---xx   flac  0.5829  dylan-1986-06-14-MP-d1t04.flac
+     3:31.18       37262780 B   ---   --   ---xx   flac  0.6343  dylan-1986-06-14-MP-d1t05.flac
+     2:56.63       31194620 B   ---   --   ---xx   flac  0.5987  dylan-1986-06-14-MP-d1t06.flac
+     4:48.69       50965532 B   ---   --   ---xx   flac  0.6051  dylan-1986-06-14-MP-d1t07.flac
+     0:21.54        3831452 B   ---   --   ---xx   flac  0.5316  dylan-1986-06-14-MP-d1t08.flac
+     5:00.72       53089388 B   ---   --   ---xx   flac  0.6138  dylan-1986-06-14-MP-d1t09.flac
+     4:53.20       51732284 B   ---   --   ---xx   flac  0.6334  dylan-1986-06-14-MP-d1t10.flac
+     5:09.66       54662876 B   ---   --   ---xx   flac  0.6159  dylan-1986-06-14-MP-d1t11.flac
+     3:46.38       39955820 B   ---   --   ---xx   flac  0.5935  dylan-1986-06-14-MP-d1t12.flac
+     3:58.66       42138476 B   ---   --   ---xx   flac  0.6404  dylan-1986-06-14-MP-d1t13.flac
+     7:15.05       76745804 B   ---   --   ---xx   flac  0.6068  dylan-1986-06-14-MP-d1t14.flac
+     4:24.09       46590812 B   ---   --   ---xx   flac  0.6048  dylan-1986-06-14-MP-d1t15.flac
+     3:26.38       36427820 B   ---   --   ---xx   flac  0.6303  dylan-1986-06-14-MP-d1t16.flac
+     4:49.66       51134876 B   ---   --   ---xx   flac  0.7043  dylan-1986-06-14-MP-d1t17.flac
+     4:43.56       50052956 B   ---   --   ---xx   flac  0.6870  dylan-1986-06-14-MP-d1t18.flac
+     3:54.46       41385836 B   ---   --   ---xx   flac  0.6207  dylan-1986-06-14-MP-d2t01.flac
+     5:03.61       53592716 B   ---   --   ---xx   flac  0.6430  dylan-1986-06-14-MP-d2t02.flac
+     3:38.63       38603420 B   ---   --   ---xx   flac  0.6562  dylan-1986-06-14-MP-d2t03.flac
+     6:31.61       69115916 B   ---   --   ---xx   flac  0.5501  dylan-1986-06-14-MP-d2t04.flac
+     3:01.23       31982540 B   ---   --   ---xx   flac  0.6598  dylan-1986-06-14-MP-d2t05.flac
+     5:22.05       56812604 B   ---   --   ---xx   flac  0.6330  dylan-1986-06-14-MP-d2t06.flac
+     4:09.01       43925996 B   ---   --   ---xx   flac  0.6607  dylan-1986-06-14-MP-d2t07.flac
+     4:56.74       52388492 B   ---   --   ---xx   flac  0.6375  dylan-1986-06-14-MP-d2t08.flac
+     4:53.02       51689948 B   ---   --   ---xx   flac  0.6153  dylan-1986-06-14-MP-d2t09.flac
+     4:26.26       46983596 B   ---   --   ---xx   flac  0.6567  dylan-1986-06-14-MP-d2t10.flac
+     1:09.66       12326876 B   ---   --   ---xx   flac  0.5323  dylan-1986-06-14-MP-d2t11.flac
+     6:21.59       67347212 B   ---   --   ---xx   flac  0.6287  dylan-1986-06-14-MP-d2t12.flac
+     6:46.63       71766620 B   ---   --   ---xx   flac  0.6159  dylan-1986-06-14-MP-d2t13.flac
+     4:11.29       44344652 B   ---   --   ---xx   flac  0.5801  dylan-1986-06-14-MP-d2t14.flac
+     3:23.50       35926844 B   ---   --   ---xx   flac  0.6314  dylan-1986-06-14-MP-d2t15.flac
+     7:12.55       76334204 B   ---   --   ---xx   flac  0.6153  dylan-1986-06-14-MP-d2t16.flac
+   149:41.47     1584360440 B                            0.6216  (34 files)
+=================== 
+=================== 
+=================== 

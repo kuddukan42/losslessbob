@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd99-09-04-Dolphinsmile.flac1648
+===================
+===================
+===================
+3603b855f40b1be808d3fe1fdbc8537c *01 The Boxer.flac
+0660b42047a627f60c7f7ff604c10996 *02 Thatll Be The Day-The Wanderer.flac
+3864a250376a97dba5f116949f92e7d6 *03 Knockin On Heavens Door.flac
+94e05e223bd8f9f95ab3fc124842812a *04 I Am The Man Thomas.flac
+b8a8aef64f2d799b709fa58e1184c990 *05 Tamborine Man.flac
+4de18b4dc6d8186977ce855d1eed894c *06 Desolation Row.flac
+b85b3608684695d7ff39bac470418e61 *07 Baby Blue.flac
+8cbc227007907a6ad3a62794e6e8def2 *08 Tangled Up In Blue.flac
+937d6b131f69d1ea29ec0e0dc0d016bf *09 All Along the Watchtower.flac
+8e201c24ec036e22213e99d7ba88c686 *10 Lay Lady Lay.flac
+7320fab5ca7b607db4cef5a86bf27795 *11 Stuck Inside Of Mobile.flac
+6a274bae670fb18ae8bac291f6675723 *12 Not Dark Yet.flac
+f6d02f97817734c054b6fda7a7b56ee8 *13 Highway 61.flac
+47e213273d6bb438b6e934d3a9ca4419 *14 Like A Rolling Stone.flac
+c36677378d8d470504f50114a72d5ce7 *15 Blowin InThe Wind.flac
+7f049ce8cc3b5e58bba7a30f6c20e5c8 *16 NFA.flac
+9a51dc3508667497ea602f37a08fda62 *Bob Dylan  Chastain Park Amphitheater Atlanta 1999-09-04 Dolphinsmile Archive.ffp
+d4382511b671db72172e48227673307f *Bob Dylan  Chastain Park Amphitheater Atlanta 1999-09-04 Dolphinsmile Archive.md5
+9a51dc3508667497ea602f37a08fda62 *Bob Dylan  Chastain Park Amphitheater Atlanta 1999-09-04 Dolphinsmile Archive.txt
+dde54935464a006e57b849163df4c45e *info.txt
+===================
+===================
+===================
+=== ffp for: bd99-09-04-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 The Boxer.flac:8f3d14e0de2d7aadb0d89ee1ceef6b34
+02 Thatll Be The Day-The Wanderer.flac:2d27d555669ee550d3668f40210f37e0
+03 Knockin On Heavens Door.flac:6a6ca35232bf8af5847898e49a864b2a
+04 I Am The Man Thomas.flac:0a6a82c9e1d92b4e8e9f4f6892433f62
+05 Tamborine Man.flac:b705867e1e32510b6c590e2c656fad0b
+06 Desolation Row.flac:b1a5ab99da280ef416fee9a1eb821c48
+07 Baby Blue.flac:30bb3c07ab9c1d2ab210448237590723
+08 Tangled Up In Blue.flac:ad5b47f5ec19a2ba67ae8890effe0897
+09 All Along the Watchtower.flac:7299950ab3d41c35682d9e7c92db6288
+10 Lay Lady Lay.flac:07a005c7f7873e068e6e36e962fd83c0
+11 Stuck Inside Of Mobile.flac:726f62ee79a0ca35fc8c230cc84580dc
+12 Not Dark Yet.flac:2c28685562c94bc2266501f912556220
+13 Highway 61.flac:1131a07de6cf3d5dbfbfeb3a64ccb2d5
+14 Like A Rolling Stone.flac:8636fd45e270351496e2b85fdcd820ed
+15 Blowin InThe Wind.flac:e52f659c5c73ae8644812ea0091a131c
+16 NFA.flac:286e2c87240c31e6d49950c3567d1d3a
+===================
+===================
+===================
+=== shntool len for: bd99-09-04-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.212      61480760 B   cxx   --   ---xx   flac  0.4718  01 The Boxer.flac
+     4:49.435      55571604 B   cxx   --   ---xx   flac  0.5750  02 Thatll Be The Day-The Wanderer.flac
+     5:44.351      66115340 B   cxx   --   ---xx   flac  0.5296  03 Knockin On Heavens Door.flac
+     3:14.542      37352132 B   cxx   --   ---xx   flac  0.4891  04 I Am The Man Thomas.flac
+     6:43.119      77398840 B   cxx   --   ---xx   flac  0.4950  05 Tamborine Man.flac
+     8:09.783      94038352 B   cxx   --   ---xx   flac  0.4761  06 Desolation Row.flac
+     7:41.211      88552496 B   cxx   --   ---xx   flac  0.4737  07 Baby Blue.flac
+     8:56.331     102975572 B   cxx   --   ---xx   flac  0.5283  08 Tangled Up In Blue.flac
+     4:14.463      48856864 B   cxx   --   ---xx   flac  0.5168  09 All Along the Watchtower.flac
+     4:34.727      52747708 B   cxx   --   ---xx   flac  0.4576  10 Lay Lady Lay.flac
+     8:46.865     101158092 B   cxx   --   ---xx   flac  0.5215  11 Stuck Inside Of Mobile.flac
+     6:57.162      80095056 B   cxx   --   ---xx   flac  0.3956  12 Not Dark Yet.flac
+     7:56.375      91464116 B   cxx   --   ---xx   flac  0.5186  13 Highway 61.flac
+     9:14.417     106448152 B   cxx   --   ---xx   flac  0.5171  14 Like A Rolling Stone.flac
+     5:59.788      69079384 B   cxx   --   ---xx   flac  0.4474  15 Blowin InThe Wind.flac
+     4:32.351      52291488 B   cxx   --   ---xx   flac  0.5518  16 NFA.flac
+   102:55.132    1185625956 B                            0.4974  (16 files)
+===================
+===================
+===================

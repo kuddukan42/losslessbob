@@ -1,0 +1,23 @@
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.02        6355148 B   ---   --   ---xx   flac  0.3587  01 Track01 - Bob Dylan.flac
+     2:48.01       29637596 B   ---   --   ---xx   flac  0.2276  02 Track02 - Bob Dylan.flac
+     3:06.69       32972732 B   ---   --   ---xx   flac  0.2264  03 Track03 - Bob Dylan.flac
+     4:34.32       48408908 B   ---   --   ---xx   flac  0.2415  04 Track04 - Bob Dylan.flac
+     3:06.50       32928044 B   ---   --   ---xx   flac  0.2200  05 Track05 - Bob Dylan.flac
+     3:18.02       34931948 B   ---   --   ---xx   flac  0.2178  06 Track06 - Bob Dylan.flac
+     2:19.10       24543164 B   ---   --   ---xx   flac  0.2170  07 Track07 - Bob Dylan.flac
+     3:36.54       38229452 B   ---   --   ---xx   flac  0.2204  08 Track08 - Bob Dylan.flac
+     3:19.17       35143628 B   ---   --   ---xx   flac  0.2280  09 Track09 - Bob Dylan.flac
+     3:39.70       38796284 B   ---   --   ---xx   flac  0.2253  10 Track10 - Bob Dylan.flac
+     3:38.62       38601068 B   ---   --   ---xx   flac  0.2533  11 Track11 - Bob Dylan.flac
+     2:26.36       25839116 B   ---   --   ---xx   flac  0.2412  12 Track12 - Bob Dylan.flac
+     3:44.71       39680636 B   ---   --   ---xx   flac  0.2399  13 Track13 - Bob Dylan.flac
+     4:56.08       52233260 B   ---   --   ---xx   flac  0.2537  14 Track14 - Bob Dylan.flac
+     3:16.19       34619132 B   ---   --   ---xx   flac  0.2515  15 Track15 - Bob Dylan.flac
+     2:53.03       30524300 B   ---   --   ---xx   flac  0.2614  16 Track16 - Bob Dylan.flac
+     3:19.38       35193020 B   ---   --   ---xx   flac  0.2311  17 Track17 - Bob Dylan.flac
+     3:05.33       32711660 B   ---   --   ---xx   flac  0.4734  18 Track18 - Bob Dylan.flac
+    57:45.52      611349096 B                            0.2497  (18 files)

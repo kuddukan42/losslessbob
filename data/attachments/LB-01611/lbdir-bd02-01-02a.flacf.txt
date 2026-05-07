@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-01-02a.flacf 
+=================== 
+=================== 
+=================== 
+47256f62b540317f4667b60d2719e699  01. I Am The Man, Thomas.flac
+fcde7d77ec4bed51bbdf63d2668f9c21  02. To Ramona.flac
+d058917639db6ba5556c01453f66cff7  03. It's Alright, Ma (I'm Only Bleeding).flac
+cbec81bd9d4206a4be3a8c07f4a538f9  04. Searching For A Soldier's Grave.flac
+558040815aaf16de7f671ad69d32c950  05. Gotta Serve Somebody.flac
+cbf9530bd1f045df64d9a296827cd2d4  06. Tell Me That It Isn't True.flac
+7518edbb16f675d2d627fd3fe7844886  07. High Water (for Charlie Patton).flac
+1aeb251bf783487d70f5c370904dc88a  08. Lonesome Day Blues.flac
+c8a8276558d7b467ba71b3370ca7d90d  09. It Ain't Me, Babe.flac
+8d88384d8748021a31284fdec48854b6  10. John Brown.flac
+80adc99e1ffe7136f9d93b5fbb822c8e  11. Tangled Up In Blue.flac
+4ad97ed0143d2329307b9902992a2492  12. Summer Days.flac
+fcc66f05e18bb48cc124076e083f032e  13. Sugar Baby.flac
+4abc81c6a0c3efc18d48e989f9749b4a  14. The Wicked Messenger.flac
+e9002a693ff6eebba45cb92407a2aa9a  15. Rainy Day Women # 12 & 35.flac
+252309cc37523d3b21dc09ea837b1acc  16. Things Have Changed.flac
+3b98f73e5127691e7ffcd3bb2ec490e7  17. Like A Rolling Stone.flac
+35ec608f47d1fa4d7e62ee1f8628814a  18. Knockin' On Heaven's Door.flac
+bddae177c7c54746336d8210014f7797  19. Honest With Me.flac
+1198c619c4914e47af2e482072ed7f38  20. Blowin' In The Wind.flac
+68136e5c1026750c5d36c30f6ed1fc3c  bd02-01-02a.txt
+96501872281222eb7e6653dcde869ec5  BD_2002-02-01_Sunrise.txt
+3809fc49616bd405f80cf80ca4344a08  Fingerprint.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-01-02a.flacf 
+=================== 
+=================== 
+=================== 
+01. I Am The Man, Thomas.flac:084699707b897d2d5245c4c046ad181a
+02. To Ramona.flac:c8106946d521b1b71271f4862358732e
+03. It's Alright, Ma (I'm Only Bleeding).flac:529316aa153be893854aa35f5a7024a0
+04. Searching For A Soldier's Grave.flac:a76bec662ccdeb84794ce4edef1c87db
+05. Gotta Serve Somebody.flac:d1ffc075846937ad83383423351b0e76
+06. Tell Me That It Isn't True.flac:771425a0a888e88270e90701a73066cb
+07. High Water (for Charlie Patton).flac:680f12baf305b3975eb57a2cc8a0c841
+08. Lonesome Day Blues.flac:a550489aa928d79fdf3f2ae3e600d684
+09. It Ain't Me, Babe.flac:ee4075b812697027082fdc367edf9bac
+10. John Brown.flac:4b2feb108328e0a69d7992d9c5b4b2ad
+11. Tangled Up In Blue.flac:541a2525eb7eeb3ba52203a966b34f49
+12. Summer Days.flac:b5509b29e39b84a2292dbf8626b9936d
+13. Sugar Baby.flac:0f9cd35ef704f23f809eeafc5ed48018
+14. The Wicked Messenger.flac:005a1b4f554b025ba65ed3ae4fd1dbd2
+15. Rainy Day Women # 12 & 35.flac:54d5dea85f285622d13b537c18d7f3c7
+16. Things Have Changed.flac:fcddf9ba27c3c7a8346af07c53cacd48
+17. Like A Rolling Stone.flac:f67a49110843e32e95e14aae2699c147
+18. Knockin' On Heaven's Door.flac:181c13d865ddf7b8d1a930843e7d323f
+19. Honest With Me.flac:b67b68ac1856d3c2f1b726cadd028675
+20. Blowin' In The Wind.flac:035be06642c70dcde3874366469e996a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-01-02a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:27.66       26086076 B   ---   --   ---xx   flac  0.5634  01. I Am The Man, Thomas.flac
+     4:58.20       52614284 B   ---   --   ---xx   flac  0.4970  02. To Ramona.flac
+     7:32.11       79758716 B   ---   --   ---xx   flac  0.4851  03. It's Alright, Ma (I'm Only Bleeding).flac
+     3:57.39       41898572 B   ---   --   ---xx   flac  0.4807  04. Searching For A Soldier's Grave.flac
+     5:09.15       54542924 B   ---   --   ---xx   flac  0.5448  05. Gotta Serve Somebody.flac
+     4:34.46       48441836 B   ---   --   ---xx   flac  0.4862  06. Tell Me That It Isn't True.flac
+     6:28.42       68542028 B   ---   --   ---xx   flac  0.5399  07. High Water (for Charlie Patton).flac
+     7:45.25       82084844 B   ---   --   ---xx   flac  0.5751  08. Lonesome Day Blues.flac
+     7:32.31       79805756 B   ---   --   ---xx   flac  0.4094  09. It Ain't Me, Babe.flac
+     5:17.21       55968236 B   ---   --   ---xx   flac  0.4280  10. John Brown.flac
+     8:09.63       86407820 B   ---   --   ---xx   flac  0.5388  11. Tangled Up In Blue.flac
+     5:54.33       62523260 B   ---   --   ---xx   flac  0.5480  12. Summer Days.flac
+     7:30.43       79481180 B   ---   --   ---xx   flac  0.4301  13. Sugar Baby.flac
+     4:54.47       51972188 B   ---   --   ---xx   flac  0.6065  14. The Wicked Messenger.flac
+     7:03.09       74638412 B   ---   --   ---xx   flac  0.5668  15. Rainy Day Women # 12 & 35.flac
+     6:47.67       71952428 B   ---   --   ---xx   flac  0.5268  16. Things Have Changed.flac
+     7:26.33       78752060 B   ---   --   ---xx   flac  0.5746  17. Like A Rolling Stone.flac
+     5:52.58       62229260 B   ---   --   ---xx   flac  0.5026  18. Knockin' On Heaven's Door.flac
+     7:09.59       75814412 B   ---   --   ---xx   flac  0.5708  19. Honest With Me.flac
+     6:38.28       70273100 B   ---   --   ---xx   flac  0.5158  20. Blowin' In The Wind.flac
+   123:11.06     1303787392 B                            0.5189  (20 files)
+=================== 
+=================== 
+=================== 

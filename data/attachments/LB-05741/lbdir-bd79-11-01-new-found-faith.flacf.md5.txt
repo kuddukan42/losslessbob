@@ -1,0 +1,17 @@
+8e205d76a4e0f229b4445c0171741cac  bd79-11-01-new-found-d1t01.flac
+98f2ab62abd1dea2c523673024d9bc0d  bd79-11-01-new-found-d1t02.flac
+8bd1b42f5ae91aadbd110367091d1cff  bd79-11-01-new-found-d1t03.flac
+c85ab95b6d0bc1ba31dde44fa37fd907  bd79-11-01-new-found-d1t04.flac
+7df2f6114131e415abfd467f7e13724d  bd79-11-01-new-found-d1t05.flac
+aa8c201b725cabda1f48044b31ad188d  bd79-11-01-new-found-d1t06.flac
+3f133b7a0de5e858afcadb041bd6c0c1  bd79-11-01-new-found-d1t07.flac
+0bf6466a66e0abc0758fd119dc2fc427  bd79-11-01-new-found-d1t08.flac
+8f750f34f8cb1e04beb85f7bf58a56bb  bd79-11-01-new-found-d2t01.flac
+9b52787be677501cc17b3eed5f8691f2  bd79-11-01-new-found-d2t02.flac
+bf7442ec47c28f2e50678f199f7fbb53  bd79-11-01-new-found-d2t03.flac
+e169d17d1210318188e11d5525fa4132  bd79-11-01-new-found-d2t04.flac
+326770879c8b930c569ef50dd2937ce2  bd79-11-01-new-found-d2t05.flac
+b906ed53faeacd25918fb91d17392dbc  bd79-11-01-new-found-d2t06.flac
+b5474c431bb5f4569a6d74d76a8536ae  bd79-11-01-new-found-d2t07.flac
+6f9acf3ff4c6c8ffd437c3af0cd9b159  bd79-11-01-new-found-d2t08.flac
+297e5c781d169e7e97e96dc0d0ee8573  bd79-11-01-new-found-d2t09.flac

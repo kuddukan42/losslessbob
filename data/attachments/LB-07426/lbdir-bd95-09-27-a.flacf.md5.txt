@@ -1,0 +1,22 @@
+90cf65db24e4a283855d3ded0f2d27ac  CD1\01 Crash on the levee (down in the flood).flac
+a21f71d54424e34f6b487f9c6d57cec8  CD1\02 Tonight I'll be staying here with you.flac
+020f1c786fb2b82ea3c756c3c09a5393  CD1\03 All along the watchtower.flac
+881e933e3aafef32700859734eda1606  CD1\04 Just like a woman.flac
+cfea53f7106415d405d8379a63fba3ee  CD1\05 It takes a lot to laugh, it takes a train to cry.flac
+aa62e7e9cfdf1eb6e628d65ae2161849  CD1\06 Watching the river flow.flac
+18dd204a8331c7d73ffdb78a3ddc186b  CD1\07 Tangled up in blue.flac
+f6e7147eb4839667ec5128ab48409c5a  CD1\08 Masters of war.flac
+fa39795d375df00e06a4a96e71c2ba9f  CD1\09 Don't think twice, it's all right.flac
+c8a64e97e56034e02cebdd3acb19690e  CD1\FLAC CD1.md5
+134da6e62067459b431bee9712e65183  CD2\10 God knows.flac
+68c64d4e56349be425e9d3fb178dfc9f  CD2\11 She belongs to me.flac
+8cbee99c0ed4181e3df3467b1d9b8ecf  CD2\12 (band intro).flac
+039cc038e7b3a7f1ecca3482efb570dc  CD2\12 Obviously five believers.flac
+f275b7e66be9ab7499afbc94fe55c229  CD2\13 (audience cheer).flac
+af5aa5a38918ee4a4979192e694c5093  CD2\13 Highway 61 revisited.flac
+90e78fa3ec0f18a2a4ef680f3ba7a017  CD2\14 (audience cheer).flac
+fbd507f2f66e224c57a0b810b89ecd19  CD2\14 It ain't me, babe.flac
+8df12cd05e85815872eb5de00deb21ca  CD2\15 (audience cheer).flac
+25afe3bcf01ac62946bbed3df259d03d  CD2\15 Rainy day women # 12 & 35.flac
+16284e03bf0e8ba56e3d4950f9bfe54b  CD2\FLAC CD2.md5
+9b7d2ce92e3f5980f8d4a2a9e88e3f5c  Info\1995-09-27 Lee Civic Center, Ft. Myers, Florida, USA [uT].txt

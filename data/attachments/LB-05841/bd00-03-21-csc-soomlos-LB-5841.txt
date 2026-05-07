@@ -1,0 +1,8 @@
+Bob Dylan, 3/21/00, Pullman, Washington, Washington State University, Beasley Performing Arts Coliseum, 2CDR
+
+LB-5841, (72min+38min), source: soomlos, 16th row center, core-sound cardioids > sony tcd-d8, sony tcd-d8 > m-audio mt1 > usb > hd, sound forge 7.0 > audacity > cd wave > flac; bittorrent download 02/08; different recording than LB-4065 based on different crowd at d1t3 1:0x; in comparison this is harsher but makes that one a little too warm and suppresed; background talking d1t3; excellent sound [A-]
+
+Disc 1:, 01. Hallelujah, I'm Ready To Go [03:05], 02. Mr. Tambourine Man [06:05], 03. Desolation Row [08:41], 04. The Times They Are A'Changin [06:50], 05. Tangled Up In Blue [07:23], 06. Pass Me Not, O Gentle Savior [04:58], 07. Country Pie [03:10], 08. Stuck Inside Of Mobile With The Memphis Blues Again [06:52], 09. Born In Time [05:47], 10. Watching The River Flow [05:02], 11. Not Dark Yet [06:01], 12. band introduction [00:32], 13. Highway 61 Revisited [07:05], Total time: [71:41], Disc 2: (encores), 01. Love Sick [06:21], 02. Like A Rolling Stone [07:42], 03. Girl Of The North Country [06:49], 04. Not Fade Away [04:38], 05. Blowin' In The Wind [06:06], 06. Rainy Day Women #12 & 35 [05:48], Total time: [37:29]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

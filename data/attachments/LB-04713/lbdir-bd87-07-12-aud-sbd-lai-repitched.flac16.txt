@@ -1,0 +1,137 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-12-aud-sbd-lai-repitched.flac16 
+=================== 
+=================== 
+=================== 
+98d8f014dd8948e4811f800dd1ee7dc3  bd87-07-12-aud-sbd-lai-repitched-LB-4713.txt
+0142770e52e18068ea3b7cab2daad5f8  gd87-07-12.aud-sbd.lai-repitched.xxxxx.sbeok.txt
+f008e2dd641275fcb4404162d66f1e7e  gd87-07-12.ffp
+caf85fcddf21ea87aaf04e886ce7638a  gd87-07-12.md5
+7b4a872144fe38015c39a4b6445d7f78  gd87-07-12d1t01.flac
+cba0b527f2ec46e8a0c3cf212102b6a1  gd87-07-12d1t02.flac
+18953fafa23ae7bb7527e82a064b1b4a  gd87-07-12d1t03.flac
+3cf1ef8253dc9f9ae9e2c660d15b14b5  gd87-07-12d1t04.flac
+809a2914c9ac982a76249118335c2921  gd87-07-12d1t05.flac
+b0cd0b9d1df40811f157a9736fafac70  gd87-07-12d1t06.flac
+01591924d4db0b848398dccb3385d258  gd87-07-12d1t07.flac
+20449c2c00e966bca5e9aaed5f23fb2c  gd87-07-12d1t08.flac
+4d3740e6057bda49748aad94d9403e51  gd87-07-12d1t09.flac
+50a39edd26df26d1110c01121020f996  gd87-07-12d1t10.flac
+2581ecec1ba3fdf60443e0f9859569ca  gd87-07-12d1t11.flac
+0928cf35afa1ecc82a4e94d6b7567b90  gd87-07-12d2t01.flac
+d8b25a7d836f614691715c1276db08b5  gd87-07-12d2t02.flac
+13899ed859af311858e673de8a12bf75  gd87-07-12d2t03.flac
+9b07e913962c321657620d140847c1d3  gd87-07-12d2t04.flac
+91df89d1a81e905ebfcc05d01231898c  gd87-07-12d2t05.flac
+015c336bbab58a8ad5b77669dc4735bf  gd87-07-12d2t06.flac
+aae14ed0a4f499f084bf0e43a5843ad5  gd87-07-12d2t07.flac
+8cf23f257f45caed622ca687d11bb605  gd87-07-12d2t08.flac
+029917fbabfd3f1f7e8805f899c9a54a  gd87-07-12d2t09.flac
+b0fe832f2b5826e3f88d8f7bba08da37  gd87-07-12d2t10.flac
+80257d5e742b4fea9d987152f1936cf9  gd87-07-12d2t11.flac
+614ffe22a95353d2bcfaf443c941be6e  gd87-07-12d2t12.flac
+56fa8dc6f27d9daa9e266a4d2c8f9386  gd87-07-12d2t13.flac
+4aaf8fb546918765a51bfe20c86246a2  gd87-07-12d3t01.flac
+ba37dcafe46c0bde7ce67a95f5fb557b  gd87-07-12d3t02.flac
+8860f9fd477a453c579a7a1c4e0db850  gd87-07-12d3t03.flac
+f78b9498043d5ab8ffbc5d57f43fc039  gd87-07-12d3t04.flac
+aa0ec7f9e8cedd0234bae3ec54bdf529  gd87-07-12d3t05.flac
+36dc0515ff15b1aa5c7242aaaebe40e3  gd87-07-12d3t06.flac
+53eba41fdc54a928314337ba6b89fb39  gd87-07-12d3t07.flac
+557fcf14ed283371a47075484ed76379  gd87-07-12d3t08.flac
+a29de583641f14806ddcfc9903b30246  gd87-07-12d3t09.flac
+af9fd22d94cd8bc71df6df00ce45fef2  gd87-07-12d3t10.flac
+85a5cbb5876b453ed37665eec54dd47a  gd87-07-12d3t11.flac
+766df3dea41811dfecd9704162e74347  lbdir-bd87-07-12-aud-sbd-lai-repitched.flac16.md5
+fcee437554efb8da1634e5359c602e3e  shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-07-12-aud-sbd-lai-repitched.flac16 
+=================== 
+=================== 
+=================== 
+gd87-07-12d1t01.flac:420ef2900cd0269a563f61c91ce3003e
+gd87-07-12d1t02.flac:54204f4af8f89761611412bf3c65fcc2
+gd87-07-12d1t03.flac:9ab77b5e7aa8cd66cc3f23ece0581536
+gd87-07-12d1t04.flac:1322b996c90269466a4f37d906d69d5e
+gd87-07-12d1t05.flac:751fd994c65fd802cb603a64fd763981
+gd87-07-12d1t06.flac:d96eb9c4d10cd728dc287ae9f073a4a4
+gd87-07-12d1t07.flac:3847ae8c37ae4cce96746f3d3d86a280
+gd87-07-12d1t08.flac:5d05971b00509e0c3aa4ab5c4af88e90
+gd87-07-12d1t09.flac:6491f5f17284c616663bae945ff059cc
+gd87-07-12d1t10.flac:a7e6ca8bb048ef78686a3ecea8cca16a
+gd87-07-12d1t11.flac:531e8aaa03b1a6b160e6df9a648bf237
+gd87-07-12d2t01.flac:656abc4d9024d8c5c1b03e3768c53d4a
+gd87-07-12d2t02.flac:1425edb667dca4adb1454e5876a0432a
+gd87-07-12d2t03.flac:f08f82dc6379df114035f3af3cccbd5f
+gd87-07-12d2t04.flac:713cc323b0de672da9f8af60b5c0776a
+gd87-07-12d2t05.flac:83ecec79854a6696840e3d4b92161cb8
+gd87-07-12d2t06.flac:2b876dc829261400deb8a903653e2af1
+gd87-07-12d2t07.flac:6ba2ccfd03fd584e2b356eb1a904e554
+gd87-07-12d2t08.flac:1d2234281edd3f01a5ca2ac857699b22
+gd87-07-12d2t09.flac:533337eff9222e803d8e7fec0199f7cb
+gd87-07-12d2t10.flac:a587dce31e1205d64c69131fdd85e2ad
+gd87-07-12d2t11.flac:bf3a7bafdb26e681c3e44e86a6f7fa70
+gd87-07-12d2t12.flac:fb4d2498dae33edbe399d0498deae8e6
+gd87-07-12d2t13.flac:0baa36fdff2cff4eb3f2cb327392465f
+gd87-07-12d3t01.flac:70364df90631d7512ef3755d3e05713b
+gd87-07-12d3t02.flac:c91269906742b64fc36e2eab6f342b69
+gd87-07-12d3t03.flac:3f5aea5d4205d1472a09169629434491
+gd87-07-12d3t04.flac:d0a462f9f22d93bc5d5fb2694e8e8c01
+gd87-07-12d3t05.flac:2b2a2dd0a1b4d7ac152bc0197e75e86b
+gd87-07-12d3t06.flac:80fe44cd46853f63a593655bfc026b33
+gd87-07-12d3t07.flac:1537539ad5f3f1be7b7157c450ced9a8
+gd87-07-12d3t08.flac:f4c0cb0888701cc67a95f94a1c3a2ef8
+gd87-07-12d3t09.flac:2c5d9957f5045aed3d15e1214fdc5f3f
+gd87-07-12d3t10.flac:889f14ad196c408670d1fe3eaa63b964
+gd87-07-12d3t11.flac:36dd592bfaf4180148f55ac6b49e8eb7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-12-aud-sbd-lai-repitched.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.22       64966988 B   ---   --   ---xx   flac  0.6470  gd87-07-12d1t01.flac
+     7:52.55       83390204 B   ---   --   ---xx   flac  0.6385  gd87-07-12d1t02.flac
+     4:46.66       50605676 B   ---   --   ---xx   flac  0.6286  gd87-07-12d1t03.flac
+     7:19.10       77463164 B   ---   --   ---xx   flac  0.6207  gd87-07-12d1t04.flac
+     5:49.14       61596572 B   ---   --   ---xx   flac  0.6449  gd87-07-12d1t05.flac
+     0:53.43        9450380 B   ---   --   ---xx   flac  0.6401  gd87-07-12d1t06.flac
+     6:20.37       67119068 B   ---   --   ---xx   flac  0.6492  gd87-07-12d1t07.flac
+     4:57.62       52536668 B   ---   --   ---xx   flac  0.6320  gd87-07-12d1t08.flac
+     5:36.10       59293964 B   ---   --   ---xx   flac  0.6455  gd87-07-12d1t09.flac
+     3:55.48       41566940 B   ---   --   ---xx   flac  0.6652  gd87-07-12d1t10.flac
+     6:52.19       72721532 B   ---   --   ---xx   flac  0.6782  gd87-07-12d1t11.flac
+     1:06.59       11781212 B   ---   --   ---xx   flac  0.5558  gd87-07-12d2t01.flac
+     9:26.37       99929468 B   ---   --   ---xx   flac  0.6279  gd87-07-12d2t02.flac
+     9:15.42       98000828 B   ---   --   ---xx   flac  0.6486  gd87-07-12d2t03.flac
+     7:37.06       80628956 B   ---   --   ---xx   flac  0.6095  gd87-07-12d2t04.flac
+     1:29.08       15718460 B   ---   --   ---xx   flac  0.5571  gd87-07-12d2t05.flac
+     6:28.47       68553788 B   ---   --   ---xx   flac  0.6047  gd87-07-12d2t06.flac
+     7:36.14       80471372 B   ---   --   ---xx   flac  0.5926  gd87-07-12d2t07.flac
+     9:14.21       97775036 B   ---   --   ---xx   flac  0.6380  gd87-07-12d2t08.flac
+     6:51.52       72622748 B   ---   --   ---xx   flac  0.6268  gd87-07-12d2t09.flac
+     5:05.24       53858492 B   ---   --   ---xx   flac  0.5701  gd87-07-12d2t10.flac
+     6:45.02       71446748 B   ---   --   ---xx   flac  0.6124  gd87-07-12d2t11.flac
+     5:27.49       57798092 B   ---   --   ---xx   flac  0.5783  gd87-07-12d2t12.flac
+     4:21.69       46202732 B   ---   --   ---xx   flac  0.5377  gd87-07-12d2t13.flac
+     6:23.12       67589468 B   ---   --   ---xx   flac  0.5140  gd87-07-12d3t01.flac
+     5:25.01       57332396 B   ---   --   ---xx   flac  0.5150  gd87-07-12d3t02.flac
+     6:12.55       65750204 B   ---   --   ---xx   flac  0.5039  gd87-07-12d3t03.flac
+     4:12.01       44455196 B   ---   --   ---xx   flac  0.5347  gd87-07-12d3t04.flac
+     4:28.02       47279948 B   ---   --   ---xx   flac  0.5523  gd87-07-12d3t05.flac
+     7:53.66       83592476 B   ---   --   ---xx   flac  0.5524  gd87-07-12d3t06.flac
+     9:37.21      101832236 B   ---   --   ---xx   flac  0.6031  gd87-07-12d3t07.flac
+     5:14.62       55535468 B   ---   --   ---xx   flac  0.5909  gd87-07-12d3t08.flac
+     4:52.74       51682892 B   ---   --   ---xx   flac  0.6694  gd87-07-12d3t09.flac
+     6:24.21       67787036 B   ---   --   ---xx   flac  0.6933  gd87-07-12d3t10.flac
+     6:04.02       64214348 B   ---   --   ---xx   flac  0.6489  gd87-07-12d3t11.flac
+   208:06.08     2202550756 B                            0.6104  (35 files)
+=================== 
+=================== 
+=================== 

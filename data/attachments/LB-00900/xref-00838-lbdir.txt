@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-19-Even-After-All-These-Years-g.flacf 
+=================== 
+=================== 
+=================== 
+8802daf5352e55494d85688672479ca0  Bob Dylan 1997.12.19 Even After All These Years-Los Angeles,Ca.ffp
+7d63d283e7b4f9e7159d8117897dbd3b  DISK_1\Track 01.flac
+8ad11bc0fb7c46375e36bd5d3142fd08  DISK_1\Track 02.flac
+62f2e3f90ee78b647c8e8b2e3995154a  DISK_1\Track 03.flac
+774e81b49a0ee401ccfde17bea72d33c  DISK_1\Track 04.flac
+61bcc18a5afacfd76871ace0f1b2977e  DISK_1\Track 05.flac
+2f2f9bbbc38d8d0364a4d563dd7c6cb1  DISK_1\Track 06.flac
+da35689a048396b6d9f2457e8f5f967b  DISK_1\Track 07.flac
+c9ea584356e021c911ee90ddeb04174d  DISK_1\Track 08.flac
+c9c352b0982b90f00df8a4327ed100a3  DISK_1\Track 09.flac
+3bdc003116c95bfdd490b3ffa7601bb5  DISK_1\Track 10.flac
+c8d4820e0b950857fd93a64663d60490  DISK_1\Track 11.flac
+a0115b37e7cf3a915fd75707a6639812  DISK_2\Track 01.flac
+e92503da0b64bc225b29a47e412e7b13  DISK_2\Track 02.flac
+eca02547f2bb7fa863e5402553ff9985  DISK_2\Track 03.flac
+876250b68a1fbd027bffead36df90de2  DISK_2\Track 04.flac
+3b1bedf98d248e01a0a1b525e1420d4d  DISK_2\Track 05.flac
+1d3d67ae3322c6d049d08e158279fb3e  DISK_2\Track 06.flac
+a6a5ee1fa8e76e972520cecc3cd59333  DISK_2\Track 07.flac
+62c2388dda40e50d28370bf61d6f063a  DISK_2\Track 08.flac
+c38511aaa4b15f466e42778b837a804d  DISK_2\Track 09.flac
+3dd00c8bf705df5393d997ff8840b97e  DISK_2\Track 10.flac
+58275836932a95e1ffc112ed17f9a2f9  DISK_2\Track 11.flac
+e9d2944e0060b4330bb0d79d7d7d4157  e-14b.JPG
+d2da430a2bd4246ea5f8b9fa30c67839  e-14f.JPG
+0680ad0cf69252cf86f67381dc4f98e3  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-19-Even-After-All-These-Years-g.flacf\DISK_1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:b93a5ce5e4a4ae8d07e953d8d7682e74
+Track 02.flac:acf05b01d89de3d58688c20a751a0ecb
+Track 03.flac:f13e9a69d30ba9217054a6c680de3d96
+Track 04.flac:6fb4e0509160fa8a5a2cdc341a82050b
+Track 05.flac:8166e5fdca05d327bcb018d2a035925a
+Track 06.flac:53adb816a442d65ef8cca725282e654a
+Track 07.flac:82ccc45d8155ea0ad02090a20922e072
+Track 08.flac:26fa427bce8ef4a9c2e4c3e21db8a72c
+Track 09.flac:e99cab98386ea6a211ca533c3d0120e6
+Track 10.flac:4b6653fba365fe8f8e8be4ec152836e7
+Track 11.flac:dec848684ffdf8b63bb170673a189cab
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-19-Even-After-All-These-Years-g.flacf\DISK_2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:bfd96ff5e0b310f758d3e2b20ab86f10
+Track 02.flac:937e05cb05d1d1072d4856e0b3fc7ae1
+Track 03.flac:73fdc2a0d882cecce6761768cebafa0c
+Track 04.flac:aa1e22a10f7c0ce3752974f9ad0c1962
+Track 05.flac:80302d9fbc2aa268d34c239aecf9decc
+Track 06.flac:ac4538a2f645035a6e684692a4f9e0bd
+Track 07.flac:fbe382267295cf7aa5b3e531661e9030
+Track 08.flac:b735bd9081a575ee70fa29010cf83555
+Track 09.flac:5ffeada447b2fe1ce611856f75254560
+Track 10.flac:a4afc367c404c035e075fb8c69f93601
+Track 11.flac:94209b89dd283275cec5df1b04e55ac3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-19-Even-After-All-These-Years-g.flacf\DISK_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.55       61869404 B   ---   --   ---xx   flac  0.7691  Track 01.flac
+     6:08.22       64966988 B   ---   --   ---xx   flac  0.7595  Track 02.flac
+     7:01.50       74382044 B   ---   --   ---xx   flac  0.7731  Track 03.flac
+     5:39.15       59834924 B   ---   --   ---xx   flac  0.7445  Track 04.flac
+     6:02.08       63875660 B   ---   --   ---xx   flac  0.7749  Track 05.flac
+     6:47.60       71935964 B   ---   --   ---xx   flac  0.7962  Track 06.flac
+     4:22.37       46303868 B   ---   --   ---xx   flac  0.7366  Track 07.flac
+     6:09.68       65251580 B   ---   --   ---xx   flac  0.7221  Track 08.flac
+     8:42.17       92120828 B   ---   --   ---xx   flac  0.7654  Track 09.flac
+     4:21.73       46212140 B   ---   --   ---xx   flac  0.7235  Track 10.flac
+     8:35.32       90921308 B   ---   --   ---xx   flac  0.7722  Track 11.flac
+    69:41.62      737674708 B                            0.7607  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-19-Even-After-All-These-Years-g.flacf\DISK_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.00       61916444 B   ---   --   ---xx   flac  0.7851  Track 01.flac
+     6:54.55       73159004 B   ---   --   ---xx   flac  0.8076  Track 02.flac
+     6:23.42       67660028 B   ---   --   ---xx   flac  0.7636  Track 03.flac
+     5:42.55       60458204 B   ---   --   ---xx   flac  0.7172  Track 04.flac
+     4:27.03       47105900 B   ---   --   ---xx   flac  0.7669  Track 05.flac
+     9:41.72      102657788 B   ---   --   ---xx   flac  0.7548  Track 06.flac
+     7:52.70       83425484 B   ---   --   ---xx   flac  0.6640  Track 07.flac
+     5:55.60       62763164 B   ---   --   ---xx   flac  0.7291  Track 08.flac
+     3:58.33       42060860 B   ---   --   ---xx   flac  0.7777  Track 09.flac
+     5:41.25       60211244 B   ---   --   ---xx   flac  0.7332  Track 10.flac
+     6:10.17       65308028 B   ---   --   ---xx   flac  0.7544  Track 11.flac
+    68:39.57      726726148 B                            0.7480  (11 files)
+=================== 
+=================== 
+=================== 

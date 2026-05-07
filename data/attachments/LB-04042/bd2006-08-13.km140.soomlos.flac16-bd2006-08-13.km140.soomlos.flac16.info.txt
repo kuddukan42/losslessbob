@@ -1,0 +1,56 @@
+Bob Dylan
+Cooper Stadium
+Columbus, Ohio
+August 13, 2006
+
+Source: soomlos
+neumann km140's > sound devices mp-2 > sony sbm-1(tmod) > microtrack 24/96 (16/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+Disc 1:
+01. Introduction [02:26]
+02. Maggie's Farm [04:56]
+03. I'll Be Your Baby Tonight [05:33]
+04. Stuck Inside Of Mobile With The Memphis Blues Again [09:32]
+05. Blind Willie McTell [06:07]
+06. New Morning [05:17]
+07. It's Alright, Ma (I'm Only Bleeding) [06:58]
+08. Tweedle Dee & Tweedle Dum [05:42]
+09. Shelter From The Storm [06:32]
+10. Masters Of War [05:39]
+Total time: [58:48]
+
+Disc 2:
+01. Highway 61 Revisited [06:42]
+02. Sugar Baby [07:26] 
+03. Summer Days [08:27]
+04. Like A Rolling Stone [06:48]
+05. Band Introduction [00:49]
+06. All Along The Watchtower [06:52]
+Total time: [37:09]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, banjo, pedal steel, lap steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2006-08-13d1t01.flac:1a781649940383418145aaf5859d3d53
+bd2006-08-13d1t02.flac:18bfeba9dd910642af4f0d92f6455a74
+bd2006-08-13d1t03.flac:a38bf4757b09afab99f97729f267c148
+bd2006-08-13d1t04.flac:8e0bcc79ff43df03ca0b9fd3ff3ed12f
+bd2006-08-13d1t05.flac:b2da70ae668f7ac12372380d5a3dc1b5
+bd2006-08-13d1t06.flac:cabc42a45f2d16b12651eabdfe2595bd
+bd2006-08-13d1t07.flac:7a30809773428f083e643b169af9dd0a
+bd2006-08-13d1t08.flac:97fedec7bb2840d0e6c27ac96ee2e563
+bd2006-08-13d1t09.flac:4803f9dcf6e20cd826603d1c083efaf1
+bd2006-08-13d1t10.flac:a8d22a899bb820432275c3f073328c94
+bd2006-08-13d2t01.flac:5791e801b5f33b60623ea329930062a6
+bd2006-08-13d2t02.flac:b133c1ec8be7266670e683bc1389ff44
+bd2006-08-13d2t03.flac:5d6123a9c399dabe216139d1c6434377
+bd2006-08-13d2t04.flac:1008aa9d17360b87f91748fee79af507
+bd2006-08-13d2t05.flac:6b12ce342ce33400cb71922ad1ffc16f
+bd2006-08-13d2t06.flac:80eca23620cae33edab284a94136e7a8

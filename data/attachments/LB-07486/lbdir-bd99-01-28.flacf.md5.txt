@@ -1,0 +1,18 @@
+7a3b88b00b8aa0b2635c8860a9fe5d2d  CD1\01 Gotta serve somebody.flac
+159181222e607524fddd924411d3a3a5  CD1\02 Senor (Tales of Yankee Power).flac
+4250e80a8e7dd4b561ffc988ec664d99  CD1\03 Silvio.flac
+7f4c336be5c04c73dc9f6bbb5e03ffff  CD1\04 Just like a woman.flac
+b38094efcfbfc4d20679733e0fb92384  CD1\05 Can't wait.flac
+d4657dbcfc07e0b7cb3ef501c77f0b8c  CD1\06 Stone walls and steel bars.flac
+536d523f0dba2ae85b1f3fddd6f11058  CD1\07 Don't think twice, it's all right.flac
+38d81fe8225c540eeeb6cacc139521ef  CD1\08 The times they are a-changin'.flac
+b0977b01a5aa0a8f2af9ef71e8e41ea8  CD1\09 Tangled up in blue.flac
+4026135b9a0a4f32d2bebb01b86c7d1e  CD1\FLAC CD1.md5
+1f3b4540ab3bf482acc8ce6641f699ad  CD2\10 Make you feel my love.flac
+3d1b5f53b0cd9bbadbca223375453971  CD2\11 Highway 61 revisited.flac
+7f7ea9accc5c71ab8571ad481284f9ab  CD2\12 Love sick.flac
+c30b7e7194a031a16637911f09b43988  CD2\13 Leopard-skin pill-box hat.flac
+2ce402df467a23b8e247372b5e5ab446  CD2\14 Blowin' in the wind.flac
+a69b2f3adef57ad65fb7102a556d2005  CD2\15 Not fade away.flac
+548c4aecd0f558193eb3e8ac99fb237f  CD2\FLAC CD2.md5
+a76c507e6a255859a48613ebb47c2fa2  Info\1999-01-28 National Car Rental Center, Sunrise, Fort Lauderdale, Florida, USA [uT].txt

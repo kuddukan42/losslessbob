@@ -1,0 +1,45 @@
+Bob Dylan
+1995-06-29
+Oslo
+Offmaster audience recording.
+Taper unidentified.
+
+Tracking corrections made to D1 - flac fingerprints will no longer be correct
+
+Disk One
+Crash On The Levee (Down In The Flood)
+The Man In Me
+All Along The Watchtower
+Just Like A Woman
+You're A Big Girl Now
+Silvio
+Tangled Up In Blue (acoustic w band) 
+Masters Of War (acoustic w band) 
+
+Disk Two
+Don't Think Twice, It's All Right (acoustic w band)
+Stuck Inside Of Mobile With The Memphis Blues Again 
+I And I
+Highway 61 Revisited
+Ballad Of A Thin Man
+It Ain't Me, Babe (acoustic w band)
+Rainy Day Women # 12 & 35
+
+Disk One
+bd1995-06-29d1t01.flac:ec46d7a4e92291a6c57d2e4ac6259f87
+bd1995-06-29d1t02.flac:0b57122f60b998facea848d0614ceeb6
+bd1995-06-29d1t03.flac:3c2baa889c2a9cbddde63525983cc419
+bd1995-06-29d1t04.flac:8ff2166bd1010bb83faf22f8a825e757
+bd1995-06-29d1t05.flac:91325e34423ed5f54a1ec885cf5cb402
+bd1995-06-29d1t06.flac:1fd3ab9cf6e2a692a5c66e6c182ffc1e
+bd1995-06-29d1t07.flac:9abde22b7c0a9cef1387b1ed3ad8457e
+bd1995-06-29d1t08.flac:9eb491c898b31759580a4a19503808bf
+
+Disk Two
+bd1995-06-29d2t01.flac:f6f4a2c530868f4e4132b8ad2b77d25a
+bd1995-06-29d2t02.flac:e48e298920228c08f74ef366c1612da6
+bd1995-06-29d2t03.flac:a7fc02a690d396ba0159c976f941ffa2
+bd1995-06-29d2t04.flac:11745e3195f1a98c4f2207c5a8a30ce7
+bd1995-06-29d2t05.flac:4a878f0f7b8ff3c3ab50aa0955828072
+bd1995-06-29d2t06.flac:c45adcb5f2988d73827be69120701c51
+bd1995-06-29d2t07.flac:73bb6b7b432f09924aa704788193e4e1

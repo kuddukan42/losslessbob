@@ -1,0 +1,181 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-12-08-dp-remaster-by-pb 
+=================== 
+=================== 
+=================== 
+e3f93b35c4a2a48027afaf55651948c0  bd75 12 08 d1 t01.shn
+60e043e273fe2733e5d8f1e3dbcfe78d  bd75 12 08 d1 t02.shn
+e28578139970278a27efcd88d2d58d90  bd75 12 08 d1 t03.shn
+281493c832432abfb3acb87b6723d2d3  bd75 12 08 d1 t04.shn
+eb30700511f5631a7812bd6b2047fb21  bd75 12 08 d1 t05.shn
+dda7aa1dc65289d61bdae8f9628c8aee  bd75 12 08 d1 t06.shn
+75e3793e51cf4ab1fb35f35000aa8902  bd75 12 08 d1 t07.shn
+89e9052260666056158276c5e6b49edd  bd75 12 08 d1 t08.shn
+94d1e4342132eaf899f9ca18363a91a9  bd75 12 08 d1 t09.shn
+ef5cf97bca6e0cc773181f313f60db26  bd75 12 08 d1 t10.shn
+e8c404cbe5c4b4e4ddbe00751811a822  bd75 12 08 d1 t11.shn
+a8ae98101d6f7a3f35e2a3078668339d  bd75 12 08 d1 t12.shn
+655a2952a7d14c06c673103488190aee  bd75 12 08 d1 t13.shn
+9d885719394017a24cf68af314f910da  bd75 12 08 d1 t14.shn
+2a3d27e8d0c28ed72c3338870f520ec8  bd75 12 08 d1 t15.shn
+9d708d2150d0251734d34ce736989d22  bd75 12 08 d1 t16.shn
+bca406d9587f89aecfa54140f0b64bae  bd75 12 08 d1 t17.shn
+7442d2c1c1d488133ffd72c6fd99801b  bd75 12 08 d2 t01.shn
+1281e5728c5ba4e3bd8d6dccac6ddd93  bd75 12 08 d2 t02.shn
+1dd03d5fb48931c142698e191de51c07  bd75 12 08 d2 t03.shn
+fc3215cb75f378f39cbbfc29b3011aab  bd75 12 08 d2 t04.shn
+fa774e32fa5e1d92bdfdfb492a2d0d4e  bd75 12 08 d2 t05.shn
+885b3048e6d175cc982d7ac2a046b29a  bd75 12 08 d2 t06.shn
+5cd2aeecd289178aa89b60ad060df2ab  bd75 12 08 d2 t07.shn
+d7a5aa4582a2404c4e973ab8fc45d060  bd75 12 08 d2 t08.shn
+f30b7bda3dd756574744dd3daa098932  bd75 12 08 d2 t09.shn
+0f377e1db32c0fe7226e072eabe486c7  bd75 12 08 d2 t10.shn
+8eeb043809b77c2a334cbe78d0af7ed8  bd75 12 08 d2 t11.shn
+9422e3505360f3dacfa7149f097a4bec  bd75 12 08 d2 t12.shn
+884240ee2d7f5847eaf106d5fbc6f258  bd75 12 08 d2 t13.shn
+288412dfee54608af8142368465eeaf9  bd75 12 08 d2 t14.shn
+41f11f2d7a3956762fb5072b72ab8172  bd75 12 08 d2 t15.shn
+fff3c6f028cffcb3e912e91338e710e7  bd75 12 08 d2 t16.shn
+ff0b2c2fa3ceeed99b49504f5ae29c26  bd75 12 08 d2 t17.shn
+2a52746f1ed09d931d0e7a2acc253657  bd75 12 08 d2 t18.shn
+ac26a1ca9d058ec2a20c8021d5bf0b3c  bd75 12 08 d2 t19.shn
+f1618f136ca52d1f3324cc1582a31c0a  bd75 12 08 d3 t01.shn
+38984009be8b452d15b4e8d23bf1bb00  bd75 12 08 d3 t02.shn
+33a49362d461ee750b0dac4355b788d5  bd75 12 08 d3 t03.shn
+0020108549d34bba49ca291093078610  bd75 12 08 d3 t04.shn
+44605c424fdcb16133699f6c33fee560  bd75 12 08 d3 t05.shn
+4d64ef616d16c8626a998335ab8f7447  bd75 12 08 d3 t06.shn
+29f897700ceacf17359fa44a2522ea5f  bd75 12 08 d3 t07.shn
+1b211c1b455e228b5137f63bedb2b5e6  bd75 12 08 d3 t08.shn
+143ba0ae4b5e2786d2b42ce203de9bf9  bd75 12 08 d3 t09.shn
+2a83d628442206c0d85e17d68d66772e  bd75 12 08 d3 t10.shn
+8eadb59cca93b4f939f7fcd815145528  bd75 12 08 d3 t11.shn
+2167aec80870b5d592ba236fc661a411  bd75 12 08 d3 t12.shn
+6adb23af04d6948156f8343242738ac6  bd75 12 08 d3 t13.shn
+900ecded742b41975067b7e8e4b8e7ed  bd75 12 08 d3 t14.shn
+352bd17427a35e0c501a076584e61289  bd75 12 08 d3 t15.shn
+e02ed3eaffd9f8090ae28f66c0d23cd8  bd75 12 08.md5
+3eb00e2afa71ace6f7b5e9d11f8bbbcd  bd75-12-08-dp-remaster-by-pb-LB-2800.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd75-12-08-dp-remaster-by-pb 
+=================== 
+=================== 
+=================== 
+5080145bb195a8b42d1725cfee2fb4e9  [shntool]  bd75_12_08_d1_t01.wav
+6d0b39019c76dc3f64d698ae35988d73  [shntool]  bd75_12_08_d1_t02.wav
+a48c68a8ea616efbc992679a0e6a43a2  [shntool]  bd75_12_08_d1_t03.wav
+731b96f19a2c3d8f3144802d2a6a3a93  [shntool]  bd75_12_08_d1_t04.wav
+21d781335b96c4469f543013598146a2  [shntool]  bd75_12_08_d1_t05.wav
+248c03b959c3af6edb870eed806180e6  [shntool]  bd75_12_08_d1_t06.wav
+1fab7ae8824e985e356c579f22ab58af  [shntool]  bd75_12_08_d1_t07.wav
+100d4304d88b3ef021487e6e2e1686cd  [shntool]  bd75_12_08_d1_t08.wav
+bf0db288b1701d3dfb4e83da72a116f3  [shntool]  bd75_12_08_d1_t09.wav
+b53e95f735b776bbe89539b50ca2a559  [shntool]  bd75_12_08_d1_t10.wav
+1947e1ef6bb612da0c6a581b97db9e65  [shntool]  bd75_12_08_d1_t11.wav
+841f788c01414ae04228c6b2976d9856  [shntool]  bd75_12_08_d1_t12.wav
+50acf06931b5051deab0e6af90f2c406  [shntool]  bd75_12_08_d1_t13.wav
+c267809244e4ddb96beaf47ac62b7a10  [shntool]  bd75_12_08_d1_t14.wav
+affe73fbe917742f00fa69c8a417701c  [shntool]  bd75_12_08_d1_t15.wav
+d0586ab5040e6e3b1012bd557bce8c59  [shntool]  bd75_12_08_d1_t16.wav
+aeb3705b4954550b0ec63170a32d1d0f  [shntool]  bd75_12_08_d1_t17.wav
+41df8fea479b364c160d655ad55be5b0  [shntool]  bd75_12_08_d2_t01.wav
+fd77bbb8f31e6a48388c47447d457b15  [shntool]  bd75_12_08_d2_t02.wav
+c40bb9bae063c11bd58ea9f32c96c1d3  [shntool]  bd75_12_08_d2_t03.wav
+5ca9f38b8ef531dc070fc3b221be6796  [shntool]  bd75_12_08_d2_t04.wav
+d6a937f36c29aaa0d3e8bf6b4a2e2795  [shntool]  bd75_12_08_d2_t05.wav
+f2e6d12168d41d74a0805316bb35d312  [shntool]  bd75_12_08_d2_t06.wav
+dae7b247cd8bbaa31fe9f8e09cb58d6c  [shntool]  bd75_12_08_d2_t07.wav
+78e80b2b38531a5b234eb436b0224cfe  [shntool]  bd75_12_08_d2_t08.wav
+c7f96171b47cd68d8e85237f783975ef  [shntool]  bd75_12_08_d2_t09.wav
+24f126867ab7349fb94b27d9d550ba31  [shntool]  bd75_12_08_d2_t10.wav
+c657508208bd37fb904c0985df0394b4  [shntool]  bd75_12_08_d2_t11.wav
+8fffc097250d02a29d38b2030f743b2b  [shntool]  bd75_12_08_d2_t12.wav
+139035e1c6a10b4ffafbdd783bc23c95  [shntool]  bd75_12_08_d2_t13.wav
+3e510965d315bbc9af3515b10057029f  [shntool]  bd75_12_08_d2_t14.wav
+d72b189ca01d93c6df06c3306d461a06  [shntool]  bd75_12_08_d2_t15.wav
+4c10a485c29fa351bc4c0071dbf370bd  [shntool]  bd75_12_08_d2_t16.wav
+bc632680ce29241d2655446b0922de52  [shntool]  bd75_12_08_d2_t17.wav
+2a2768613713127c2b14ab00f32a62af  [shntool]  bd75_12_08_d2_t18.wav
+008061c3c36e757d05ff09136c6d388b  [shntool]  bd75_12_08_d2_t19.wav
+ee847c60e6d52b713213cfa9df93b622  [shntool]  bd75_12_08_d3_t01.wav
+fdde41d74dc55c97e0a7ffa73dca3bf0  [shntool]  bd75_12_08_d3_t02.wav
+5f84046581710b397473d361cb34eadc  [shntool]  bd75_12_08_d3_t03.wav
+0fa5dde91ea101b5cb717a3fb2c212c9  [shntool]  bd75_12_08_d3_t04.wav
+b068203c38710d60f57ac9ffb967e308  [shntool]  bd75_12_08_d3_t05.wav
+34a3e8d60dfdcdaabbbb06147fae0e0a  [shntool]  bd75_12_08_d3_t06.wav
+fb4e66aa49ca02711e7c894fff235b8e  [shntool]  bd75_12_08_d3_t07.wav
+df7289a70dbf40286b879166588d3989  [shntool]  bd75_12_08_d3_t08.wav
+5c01e4530c93b8b70d012f795a7380e5  [shntool]  bd75_12_08_d3_t09.wav
+66b4500d82851b8554bdfd0f0253e3c9  [shntool]  bd75_12_08_d3_t10.wav
+d529e0ab42da49f9956242bb6e926325  [shntool]  bd75_12_08_d3_t11.wav
+1d1dda1809b9ac833cf1606da7ab4245  [shntool]  bd75_12_08_d3_t12.wav
+8586f23ae7f922677179c8659314e53c  [shntool]  bd75_12_08_d3_t13.wav
+d174ef57cba41ecb95440f40c73a1ca5  [shntool]  bd75_12_08_d3_t14.wav
+5d3e56e0199bd56b6c9740adb1b346d9  [shntool]  bd75_12_08_d3_t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-12-08-dp-remaster-by-pb 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.58       51998060 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t01.wav
+     3:34.35       37831964 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t02.wav
+     5:08.12       54359468 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t03.wav
+     3:58.66       42138476 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t04.wav
+     5:14.31       55462556 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t05.wav
+     6:03.44       64136732 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t06.wav
+     3:42.31       39233756 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t07.wav
+     4:25.12       46774268 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t08.wav
+     3:48.09       40240412 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t09.wav
+     3:40.39       38899772 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t10.wav
+     4:41.04       49577852 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t11.wav
+     5:21.49       56739692 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t12.wav
+     4:20.14       45896972 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t13.wav
+     4:09.72       44092988 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t14.wav
+     8:05.22       85605788 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t15.wav
+     2:51.42       30263228 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t16.wav
+     4:56.21       52263836 B   ---   --   -----    wav  1.0000  bd75_12_08_d1_t17.wav
+     1:19.60       14076764 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t01.wav
+     2:03.56       21828956 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t02.wav
+     3:06.33       32888060 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t03.wav
+     5:15.70       55730684 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t04.wav
+     2:57.65       31375724 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t05.wav
+     3:35.31       37998956 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t06.wav
+     4:18.03       45518300 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t07.wav
+     5:19.55       56401004 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t08.wav
+     5:43.48       60618140 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t09.wav
+     4:16.70       45323084 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t10.wav
+     3:35.38       38015420 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t11.wav
+     5:38.00       59623244 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t12.wav
+     5:08.02       54335948 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t13.wav
+     3:28.14       36724172 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t14.wav
+     3:36.31       38175356 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t15.wav
+     3:15.03       34405100 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t16.wav
+     2:54.68       30853580 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t17.wav
+     3:08.32       33238508 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t18.wav
+     4:52.43       51609980 B   ---   --   -----    wav  1.0000  bd75_12_08_d2_t19.wav
+     5:02.10       53296364 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t01.wav
+     3:49.08       40414460 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t02.wav
+     4:20.14       45896972 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t03.wav
+     4:14.62       44951468 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t04.wav
+     4:34.07       48350108 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t05.wav
+     7:58.21       84368636 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t06.wav
+     6:09.36       65176316 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t07.wav
+     4:44.32       50172908 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t08.wav
+     4:02.37       42775868 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t09.wav
+     5:35.39       59185772 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t10.wav
+     4:04.07       43058108 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t11.wav
+     4:07.02       43575548 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t12.wav
+     4:32.65       48133724 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t13.wav
+     4:19.61       45831116 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t14.wav
+     8:15.63       87466220 B   ---   --   -----    wav  1.0000  bd75_12_08_d3_t15.wav
+   228:21.22     2416910388 B                            1.0000  (51 files)
+=================== 
+=================== 
+=================== 

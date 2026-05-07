@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-11-10-b.flacf 
+=================== 
+=================== 
+=================== 
+f93b596f90a9b298e2806f333da113a8  disc1\891110_Atlanta_disc1-Track01.flac
+1faad31642e2627d0d16728651caef7e  disc1\891110_Atlanta_disc1-Track02.flac
+9bf8adced7f1633bd5454a9745e0ea76  disc1\891110_Atlanta_disc1-Track03.flac
+a8152cd5823ca8fed80cff006b38c21d  disc1\891110_Atlanta_disc1-Track04.flac
+16d0f8aee78fec633590ac70279efdc1  disc1\891110_Atlanta_disc1-Track05.flac
+84aca7a7cb8cc3864c085d4ee8e0de6a  disc1\891110_Atlanta_disc1-Track06.flac
+51a91ca7753a25ec63c3d4478909b0cd  disc1\891110_Atlanta_disc1-Track07.flac
+7024caf51396e20cf68a46b4b8f702ba  disc1\891110_Atlanta_disc1-Track08.flac
+7758ff48f09849ab34fff9a4baafc36d  disc1\891110_Atlanta_disc1-Track09.flac
+04ac77678f14a0d7f5a44e8aa25110d2  disc1\891110_Atlanta_disc1-Track10.flac
+0b40f5a793fd8e058942d62d520e089d  disc1\fingerprint.ffp.txt
+6a95bbe518bdcfd52b0df49c2b8d85d5  disc1\Len.txt
+4e6dbeb3857a201ffddf636f641b6ade  disc2\891110_Atlanta_disc2-Track01.flac
+8a16a8632fbaa219dd261a2d06fe3940  disc2\891110_Atlanta_disc2-Track02.flac
+ccc2fd0911c6bbd51d75d2c165c7245f  disc2\891110_Atlanta_disc2-Track03.flac
+cc7b207c6f0df8ff20a88b214bf14839  disc2\891110_Atlanta_disc2-Track04.flac
+4c32c1bbe26bea157c6c586c6b2e68ef  disc2\891110_Atlanta_disc2-Track05.flac
+54e39971a0ba91e20ef3287534f96462  disc2\891110_Atlanta_disc2-Track06.flac
+2c8afdf599b0b351612adf345e047629  disc2\891110_Atlanta_disc2-Track07.flac
+e6bc26d252e314444b82e3275a3bf2a7  disc2\891110_Atlanta_disc2-Track08.flac
+78520c5607b4d6c7193cd6a5d8148e67  disc2\891110_Atlanta_disc2-Track09.flac
+26b1f74cec7eb89aaf71c11674ceba9a  disc2\fingerprint.ffp.txt
+fbec721cf4bfa65266c6315e9f78482c  disc2\Leng.txt
+c733d1f8d624135426921b12fef0fb04  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-11-10-b.flacf\disc1 
+=================== 
+=================== 
+=================== 
+891110_Atlanta_disc1-Track01.flac:3483a8275986db58e4dc3275f702760a
+891110_Atlanta_disc1-Track02.flac:e932f01628aca66ad6f4c6dedae16ab9
+891110_Atlanta_disc1-Track03.flac:1dff8e1879a1d7ba156a1665969676a4
+891110_Atlanta_disc1-Track04.flac:71c7e8663decd1c99a3c29c3c9613f1a
+891110_Atlanta_disc1-Track05.flac:032882c641cb468ac038f8ae6b7272b1
+891110_Atlanta_disc1-Track06.flac:2936bc7318f784a01dd0e3498e1e54c4
+891110_Atlanta_disc1-Track07.flac:13883b5b56a5d4e6abfe872b4392c531
+891110_Atlanta_disc1-Track08.flac:3e36f4523e3176e6f69a94746d9a2a9a
+891110_Atlanta_disc1-Track09.flac:497c3ebe99f3aa20e9bd1016e13f48c1
+891110_Atlanta_disc1-Track10.flac:b001e814888159696a88121cbf668913
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-11-10-b.flacf\disc2 
+=================== 
+=================== 
+=================== 
+891110_Atlanta_disc2-Track01.flac:47562fdff0f4e11c6df70549249bec08
+891110_Atlanta_disc2-Track02.flac:435a974f246a76241f8b5c309735e6ab
+891110_Atlanta_disc2-Track03.flac:12ca17f2df623f6fec5522623de14415
+891110_Atlanta_disc2-Track04.flac:ff0fa86f41ee8c65185d81534633d983
+891110_Atlanta_disc2-Track05.flac:8040e9704b4d5bdcf787b410b99754da
+891110_Atlanta_disc2-Track06.flac:65aaec39919c058b03b532d3b107e04e
+891110_Atlanta_disc2-Track07.flac:e1e3a8a15173a5e1e6afdc808bdc4384
+891110_Atlanta_disc2-Track08.flac:6371cad39203f2a9355e5fc7c436dacf
+891110_Atlanta_disc2-Track09.flac:e26001aabff26eeafe796c3a110aa6a0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-11-10-b.flacf\disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.33       61994060 B   ---   --   ---xx   flac  0.6897  891110_Atlanta_disc1-Track01.flac
+     3:17.13       34781420 B   ---   --   ---xx   flac  0.7234  891110_Atlanta_disc1-Track02.flac
+     4:42.70       49909484 B   ---   --   ---xx   flac  0.7102  891110_Atlanta_disc1-Track03.flac
+     5:26.12       57534668 B   ---   --   ---xx   flac  0.6613  891110_Atlanta_disc1-Track04.flac
+     4:37.21       48912236 B   ---   --   ---xx   flac  0.6639  891110_Atlanta_disc1-Track05.flac
+     3:04.12       32485868 B   ---   --   ---xx   flac  0.7114  891110_Atlanta_disc1-Track06.flac
+     5:52.50       62210444 B   ---   --   ---xx   flac  0.6333  891110_Atlanta_disc1-Track07.flac
+     7:12.18       76247180 B   ---   --   ---xx   flac  0.6322  891110_Atlanta_disc1-Track08.flac
+     6:43.45       71195084 B   ---   --   ---xx   flac  0.6409  891110_Atlanta_disc1-Track09.flac
+     4:56.42       52313228 B   ---   --   ---xx   flac  0.5841  891110_Atlanta_disc1-Track10.flac
+    51:44.16      547583672 B                            0.6589  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-11-10-b.flacf\disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.00       34750844 B   ---   --   ---xx   flac  0.7074  891110_Atlanta_disc2-Track01.flac
+     4:53.55       51814604 B   ---   --   ---xx   flac  0.6887  891110_Atlanta_disc2-Track02.flac
+     4:56.66       52369676 B   ---   --   ---xx   flac  0.6340  891110_Atlanta_disc2-Track03.flac
+     4:56.34       52294412 B   ---   --   ---xx   flac  0.6661  891110_Atlanta_disc2-Track04.flac
+     4:55.72       52207388 B   ---   --   ---xx   flac  0.7079  891110_Atlanta_disc2-Track05.flac
+     7:50.06       82922156 B   ---   --   ---xx   flac  0.7263  891110_Atlanta_disc2-Track06.flac
+     4:04.51       43161596 B   ---   --   ---xx   flac  0.6429  891110_Atlanta_disc2-Track07.flac
+     4:28.03       47282300 B   ---   --   ---xx   flac  0.6647  891110_Atlanta_disc2-Track08.flac
+     5:41.45       60258284 B   ---   --   ---xx   flac  0.6911  891110_Atlanta_disc2-Track09.flac
+    45:04.32      477061260 B                            0.6840  (9 files)
+=================== 
+=================== 
+=================== 

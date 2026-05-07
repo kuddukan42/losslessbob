@@ -1,0 +1,23 @@
+159b0abed7155af5dc617781c4fc3db3  Disc One\Disc01Track01 Hartford 07.05.1980.flac
+313419177a1084b8ecc775891303d8d5  Disc One\Disc01Track02 Hartford 07.05.1980.flac
+d8fbd51a63ed2e7f2006470028337ece  Disc One\Disc01Track03 Hartford 07.05.1980.flac
+c90e25b6a48ced6d0528e7db3b6355dc  Disc One\Disc01Track04 Hartford 07.05.1980.flac
+acace8996dceff6091175d10067742ae  Disc One\Disc01Track05 Hartford 07.05.1980.flac
+777c4c3661379e2ae7ee237ec3e60e23  Disc One\Disc01Track06 Hartford 07.05.1980.flac
+6c5eaa2886b6896edec416c142fc62c2  Disc One\Disc01Track07 Hartford 07.05.1980.flac
+0a46dad8a19027a8104f61f08c702323  Disc One\Disc01Track08 Hartford 07.05.1980.flac
+9970291bef5ecc5baa61f72af788ae98  Disc One\Disc01Track09 Hartford 07.05.1980.flac
+293b1c17a7a2bf51cb981c53bd0157e1  Disc One\Disc01Track10 Hartford 07.05.1980.flac
+ce314273e916989bc743add5b85e3839  Disc Two\Disc02Track01 Hartford 07.05.1980.flac
+a5cba70da33cdceb826c1019493f0e25  Disc Two\Disc02Track02 Hartford 07.05.1980.flac
+625038fdc1f743f791da1e4012145c8b  Disc Two\Disc02Track03 Hartford 07.05.1980.flac
+394165328b03bd33a1641d8492faf73f  Disc Two\Disc02Track04 Hartford 07.05.1980.flac
+6bc5c607b3862021dd7a1962f3ff8e81  Disc Two\Disc02Track05 Hartford 07.05.1980.flac
+68faa8dd942f57911171d6a2687b4245  Disc Two\Disc02Track06 Hartford 07.05.1980.flac
+07ba7dbfbbd88f1ac5c4a60b44f6efab  Disc Two\Disc02Track07 Hartford 07.05.1980.flac
+6fcd9772ee6c95eaec2191e474c4f925  Disc Two\Disc02Track08 Hartford 07.05.1980.flac
+21734dabb8d6fdb11f3270e1b36c0eb0  Dylan - Hartford May 7th 1980.md5
+1b685093949159908e263ead357f2941  Dylan - Hartford May 7th 1980.txt
+f8fb3620438d4859474d1a6799876225  Dylan - Hartford May 7th 1980_Info.txt
+6233776594cb56b0e05661cab3bf3ce2  Hartford, Conecticutt -  07.05.1980 - F.jpg
+2ed6ff7d161cb16a5728a2363d041825  Hartford, Conecticutt -  07.05.1980 - R.jpg

@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-19-IAR001.flacf 
+=================== 
+=================== 
+=================== 
+4ca059010e3f0a5f1035f62addd2f200  IA001 - Warsaw, July 19 ,1994(WAV).md5
+d23a9baf4477c18029516c01e04942a0  IAR 001 disc 1\01 Jokerman.flac
+7d04fc221681209ca0c9712bad9dcde9  IAR 001 disc 1\02 Just Like A Woman.flac
+a9294fcfe1ef835a8def62dc137fd689  IAR 001 disc 1\03 All Along The Watchtower.flac
+db415903ddff1b4b46ff87186cee73cf  IAR 001 disc 1\04 You're A Big Girl Now.flac
+827ff71f4e156fc56d3853f24eac4bde  IAR 001 disc 1\05 Tangled Up In Blue.flac
+f0ab0a134bb63e8fc96201e408dcc2e2  IAR 001 disc 1\06 Under The Red Sky.flac
+ea25a02c03bff2cb65fb5f935dbeb4fa  IAR 001 disc 1\07 Mama, You Been On My Mind.flac
+8a50985125ca87306801008d729c9ad3  IAR 001 disc 1\08 Masters Of War.flac
+83990f372566eeb4d15d8dae3f5b7f93  IAR 001 disc 1\09 Love Minus Zero-No Limit.flac
+d9fc333d5ffee5f72068d99cb197015c  IAR 001 disc 1\10 God Knows.flac
+1bf65e444a4b3e5aae6b3576a7a0fc75  IAR 001 disc 1\11 In The Garden.flac
+8c1b04d7c5f2ac8cda089f8370d0a147  IAR 001 disc 1\IAR 001 disc 1.log
+fb8cffc68c78165db710f51786f678cb  IAR 001 disc 2\01 Maggie's Farm.flac
+3fde8c1b8d6d12345f5de66eb112e384  IAR 001 disc 2\02 Ballad Of A Thin Man.flac
+bf947944d876f26d6263bf58eb86e85f  IAR 001 disc 2\03 It Ain't Me, Babe.flac
+118b3d93cf58e3bb7be558967a903bcf  IAR 001 disc 2\04 Blowin' In The Wind.flac
+4fb4c4eab3d25cf67da38af151d54130  IAR 001 disc 2\05 Knockin' On Heaven's Door - July 23, 1994.flac
+e3dd86d643c609cbc298e1640926c814  IAR 001 disc 2\06 I And I - July 14, 1994.flac
+f4dc2b8d580f5c8bc67e3c46f0f18e29  IAR 001 disc 2\07 Shooting Star - July 12, 1994.flac
+a94e17d1f10fa600a72d05727e6f7f4f  IAR 001 disc 2\08 Lay Lady Lay - July 16, 1994.flac
+9cbfe7fec1e1a07bb5185f5adef6c27b  IAR 001 disc 2\09 One Too Many Mornings - July 24, 1994.flac
+62efb7dc553f6429af8caa48147475d6  IAR 001 disc 2\10 The Lonesome Death Of Hattie Carroll - July16.flac
+9c0ac48041f54041a8bbb2c85183a305  IAR 001 disc 2\11 Mr. Tambourine Man - July 21, 1994.flac
+fef949cc2ce91a53c525b9edd5ef7a6d  IAR 001 disc 2\IAR 001 disc 2.log
+9d69553733c5724882bc2f5cdd194fb0  Iar 001 WARSAW JULY 19, 1994.txt
+b7b3c6d6856ab8bc47c65152cff23e4e  Improved AIR Remasters.rtf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-19-IAR001.flacf\IAR 001 disc 1 
+=================== 
+=================== 
+=================== 
+01 Jokerman.flac:4be26faa6271953a787df21fd2215a7a
+02 Just Like A Woman.flac:b30e7fdee6e473f848f6bf23f8a1ad36
+03 All Along The Watchtower.flac:c881e40cfd747773dfc542fcdd8e6aef
+04 You're A Big Girl Now.flac:e866d6a0be0cacde191262027f5793ca
+05 Tangled Up In Blue.flac:0c61b56b114ade4984fab192a72a803f
+06 Under The Red Sky.flac:f36d2f334d52dde1d6467ff915609d93
+07 Mama, You Been On My Mind.flac:bd06f8e9eda3ef2c554ca2a835ed67b3
+08 Masters Of War.flac:f873969c07b2e52e2a745bf3dd134023
+09 Love Minus Zero-No Limit.flac:81c479a95a01d62ceaed73b0266cc35f
+10 God Knows.flac:4b23cb01e154c9c4765535d6e8d61d31
+11 In The Garden.flac:297d04ccb7c9fd2cceb74ef3afd10c21
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-19-IAR001.flacf\IAR 001 disc 2 
+=================== 
+=================== 
+=================== 
+01 Maggie's Farm.flac:e7b3ab36d9d83d406b69fd6e2e431435
+02 Ballad Of A Thin Man.flac:f5a2768599cb8365385c50f622fc7358
+03 It Ain't Me, Babe.flac:2e3dbd749a63c264acbc69262e7bc133
+04 Blowin' In The Wind.flac:6c1ed1cac1a6c8df2f8ead9ca30710e7
+05 Knockin' On Heaven's Door - July 23, 1994.flac:76d5c81215a8c9acfa6fbb8c8a24c094
+06 I And I - July 14, 1994.flac:7d071abab58ccbb8524048ce2b6efdb9
+07 Shooting Star - July 12, 1994.flac:a1a7591a5778fd292320675a9faf196a
+08 Lay Lady Lay - July 16, 1994.flac:926c2e49e0a17e89eaad336ba0382d92
+09 One Too Many Mornings - July 24, 1994.flac:94edd949b2f4c7fbf48ffccfcb7d60e3
+10 The Lonesome Death Of Hattie Carroll - July16.flac:d9e614a1aeee809ad1e7f90cb526f212
+11 Mr. Tambourine Man - July 21, 1994.flac:928419f41f9b46d54d0ecd490b11b998
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-19-IAR001.flacf\IAR 001 disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:59.44       84599132 B   ---   --   ---xx   flac  0.6488  01 Jokerman.flac
+     6:26.10       68113964 B   ---   --   ---xx   flac  0.6093  02 Just Like A Woman.flac
+     5:36.68       59430380 B   ---   --   ---xx   flac  0.6484  03 All Along The Watchtower.flac
+     7:00.26       74149196 B   ---   --   ---xx   flac  0.6010  04 You're A Big Girl Now.flac
+     9:57.10      105334364 B   ---   --   ---xx   flac  0.6207  05 Tangled Up In Blue.flac
+     6:40.18       70602380 B   ---   --   ---xx   flac  0.6100  06 Under The Red Sky.flac
+     4:41.64       49718972 B   ---   --   ---xx   flac  0.5817  07 Mama, You Been On My Mind.flac
+     5:55.58       62758460 B   ---   --   ---xx   flac  0.5566  08 Masters Of War.flac
+     5:35.41       59190476 B   ---   --   ---xx   flac  0.5349  09 Love Minus Zero-No Limit.flac
+     5:56.45       62904284 B   ---   --   ---xx   flac  0.6208  10 God Knows.flac
+     8:38.39       91466972 B   ---   --   ---xx   flac  0.6088  11 In The Garden.flac
+    74:28.48      788268580 B                            0.6066  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-19-IAR001.flacf\IAR 001 disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:08.47       96777788 B   ---   --   ---xx   flac  0.6195  01 Maggie's Farm.flac
+     7:29.47       79314188 B   ---   --   ---xx   flac  0.6435  02 Ballad Of A Thin Man.flac
+     8:28.37       89698268 B   ---   --   ---xx   flac  0.6094  03 It Ain't Me, Babe.flac
+     5:31.00       58388444 B   ---   --   ---xx   flac  0.5781  04 Blowin' In The Wind.flac
+    10:01.49      106131692 B   ---   --   ---xx   flac  0.6596  05 Knockin' On Heaven's Door - July 23, 1994.flac
+     8:01.71       85015436 B   ---   --   ---xx   flac  0.6529  06 I And I - July 14, 1994.flac
+     5:49.63       61711820 B   ---   --   ---xx   flac  0.6474  07 Shooting Star - July 12, 1994.flac
+     5:44.63       60829820 B   ---   --   ---xx   flac  0.6347  08 Lay Lady Lay - July 16, 1994.flac
+     6:55.56       73337756 B   ---   --   ---xx   flac  0.6224  09 One Too Many Mornings - July 24, 1994.flac
+     6:41.57       70870508 B   ---   --   ---xx   flac  0.6140  10 The Lonesome Death Of Hattie Carroll - July16.flac
+     5:51.24       61972892 B   ---   --   ---xx   flac  0.5729  11 Mr. Tambourine Man - July 21, 1994.flac
+    79:44.64      844048612 B                            0.6257  (11 files)
+=================== 
+=================== 
+=================== 

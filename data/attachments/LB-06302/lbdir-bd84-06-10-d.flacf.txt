@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-10-d.flacf 
+=================== 
+=================== 
+=================== 
+348000f79d376e5b19dd4fc7cd4bd2ac  bd1984-06-10 Copenhagen, Denmark (Fendert conversion).md5
+a1dad851771872cb7eefb141a3c0989a  bd1984-06-10-d1\701 Highway 61 Revisited.flac
+c6184850aa9d02ea089d09d5e348ebcc  bd1984-06-10-d1\702 Jokerman.flac
+6338e213e82304d070860f750c1e0c53  bd1984-06-10-d1\703 All Along the Watchtower.flac
+2acb218423a683c8203461ebadb5a546  bd1984-06-10-d1\704 Just Like A Woman.flac
+359119c6dfed9fba3a13981361b115a7  bd1984-06-10-d1\705 Maggie's Farm.flac
+c42d6bf14c314acd0a807f7d804d4f48  bd1984-06-10-d1\706 I and I.flac
+59a93d9eda2e4e48001d241adde6c436  bd1984-06-10-d1\707 License To Kill.flac
+61f244c4085588f5581fa9371897b657  bd1984-06-10-d1\708 Mr Tambourine Man.flac
+c6d3b50837ff1c8f8f8e55e49e79957e  bd1984-06-10-d1\709 It Ain't Me, Babe.flac
+a57c94f16fa6b5b6d050c1b18a662305  bd1984-06-10-d1\710 It's Alright, Ma (I'm Only Bleeding).flac
+88cdc210a9db3a69d061203969e361a3  bd1984-06-10-d1\711 It's All Over Now, Baby Blue.flac
+475a926b0a058e010f5c92d50c8e4208  bd1984-06-10-d1\bd1984-06-10-d1.ffp
+e296ddcc64235ae549acc36bd6b0c578  bd1984-06-10-d2\801 Masters of War.flac
+6e253e2531ae82c3950c4a62d7455b7b  bd1984-06-10-d2\802 Ballad of A Thin Man.flac
+d53b9868ce5fff234c8b1030c43617fa  bd1984-06-10-d2\803 Simple Twist of Fate.flac
+676eb16fdbb0339ff49ce5861a597076  bd1984-06-10-d2\804 Every Grain of Sand.flac
+e1a43f9a21b1b2fdf707585848709714  bd1984-06-10-d2\805 Like A Rolling Stone.flac
+241f2644cdabd9d8f031f4dd48439a2f  bd1984-06-10-d2\806 Tangled Up in Blue.flac
+e53a27081022dd285129019e4b41d327  bd1984-06-10-d2\807 Girl From the North Country.flac
+89eac84eba9b54c20d671224719e9815  bd1984-06-10-d2\808 Blowin' in the Wind.flac
+fd54281c8fd9f3500ec52cee97234156  bd1984-06-10-d2\809 Tombstone Blues.flac
+de848d86f9ceab4b6ce1c0dad91d143c  bd1984-06-10-d2\810 Why Do I Have To Choose.flac
+137e887da0d6532e13527539877a127b  bd1984-06-10-d2\811 Love Minus Zero - No Limit.flac
+64d7ddd4e009c68fd5c61fbd96405f21  bd1984-06-10-d2\812 The Times, They Are A Changin.flac
+300fe821da4da482f08261fa2b760327  bd1984-06-10-d2\bd1984-06-10-d2.ffp
+f6c0c1681893978601615f06162545c6  Copenhagen 06.10.84..txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-10-d.flacf\bd1984-06-10-d1 
+=================== 
+=================== 
+=================== 
+701 Highway 61 Revisited.flac:5fb13bdfcd314fbebb1331a334ee3da5
+702 Jokerman.flac:17f26c5087655023dad9de18841c0f7d
+703 All Along the Watchtower.flac:bc433a1b525ed1a38c1fb5214c58183c
+704 Just Like A Woman.flac:d7aee15eeddd575bf5242e7baa6518dc
+705 Maggie's Farm.flac:57ef7724582cf6682be3c1892f39bb00
+706 I and I.flac:84f66733e4459c26856e93a92c9060e8
+707 License To Kill.flac:1c765f684c6ab124a428f0915cdcbee7
+708 Mr Tambourine Man.flac:0f15c02d44e708df5b8210e5ec47f5e8
+709 It Ain't Me, Babe.flac:56b426ad50944cfb2f01c2f6b99ced5f
+710 It's Alright, Ma (I'm Only Bleeding).flac:4b51c46cd486746cdb61846c92e8e8a5
+711 It's All Over Now, Baby Blue.flac:199c5653176c540cd7ac786c8c756326
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-10-d.flacf\bd1984-06-10-d2 
+=================== 
+=================== 
+=================== 
+801 Masters of War.flac:6548aca4427b3ce2c450c935137e46d6
+802 Ballad of A Thin Man.flac:0452c8a1973559e8d111d99a671972ba
+803 Simple Twist of Fate.flac:1ad76d236af00498b20d86c678abcf35
+804 Every Grain of Sand.flac:f378f6f938d6d4faf8a9352003bf1ce4
+805 Like A Rolling Stone.flac:9f94e2c1ecb761018f99115ddd56e517
+806 Tangled Up in Blue.flac:0351ee9164083423c0db8cca0b7f69b9
+807 Girl From the North Country.flac:20922d21a89994e9a3f21fd728ac22d9
+808 Blowin' in the Wind.flac:0508906a5c869602fb77d37c621eca20
+809 Tombstone Blues.flac:ad050d2d86eaf8fdddacfcbcf984f637
+810 Why Do I Have To Choose.flac:a9961ea23a4e03f79cae1fccbca08a6a
+811 Love Minus Zero - No Limit.flac:54c5864a32befdf81988f471d529feed
+812 The Times, They Are A Changin.flac:5c2866793e908178f668d1c7630486cf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-10-d.flacf\bd1984-06-10-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.23       54561740 B   ---   --   ---xx   flac  0.6233  701 Highway 61 Revisited.flac
+     6:43.24       71145692 B   ---   --   ---xx   flac  0.6203  702 Jokerman.flac
+     5:19.22       56323388 B   ---   --   ---xx   flac  0.6212  703 All Along the Watchtower.flac
+     6:30.39       68887772 B   ---   --   ---xx   flac  0.6193  704 Just Like A Woman.flac
+     4:39.08       49234460 B   ---   --   ---xx   flac  0.6291  705 Maggie's Farm.flac
+     6:58.10       73758764 B   ---   --   ---xx   flac  0.6042  706 I and I.flac
+     3:48.00       40219244 B   ---   --   ---xx   flac  0.6060  707 License To Kill.flac
+     5:53.63       62417420 B   ---   --   ---xx   flac  0.6246  708 Mr Tambourine Man.flac
+     5:23.60       57118364 B   ---   --   ---xx   flac  0.6280  709 It Ain't Me, Babe.flac
+     7:14.66       76712876 B   ---   --   ---xx   flac  0.6293  710 It's Alright, Ma (I'm Only Bleeding).flac
+     5:50.64       61890572 B   ---   --   ---xx   flac  0.6302  711 It's All Over Now, Baby Blue.flac
+    63:31.04      672270292 B                            0.6215  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-10-d.flacf\bd1984-06-10-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:16.40       66420524 B   ---   --   ---xx   flac  0.6155  801 Masters of War.flac
+     4:20.69       46026332 B   ---   --   ---xx   flac  0.6258  802 Ballad of A Thin Man.flac
+     4:31.50       47922044 B   ---   --   ---xx   flac  0.6128  803 Simple Twist of Fate.flac
+     5:34.46       59025836 B   ---   --   ---xx   flac  0.6118  804 Every Grain of Sand.flac
+     6:45.65       71594924 B   ---   --   ---xx   flac  0.6212  805 Like A Rolling Stone.flac
+     7:34.50       80203244 B   ---   --   ---xx   flac  0.5790  806 Tangled Up in Blue.flac
+     4:06.15       43429724 B   ---   --   ---xx   flac  0.5727  807 Girl From the North Country.flac
+     5:09.05       54519404 B   ---   --   ---xx   flac  0.5981  808 Blowin' in the Wind.flac
+     4:54.53       51986300 B   ---   --   ---xx   flac  0.6224  809 Tombstone Blues.flac
+     5:03.03       53456300 B   ---   --   ---xx   flac  0.6017  810 Why Do I Have To Choose.flac
+     3:35.02       37930748 B   ---   --   ---xx   flac  0.6322  811 Love Minus Zero - No Limit.flac
+     5:16.17       55782428 B   ---   --   ---xx   flac  0.6134  812 The Times, They Are A Changin.flac
+    63:08.40      668297808 B                            0.6079  (12 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-08-28-a-REMASTERED.flacf 
+=================== 
+=================== 
+=================== 
+f003cdc185911726a519fe33cbabb86d  d1\Track01.flac
+aabdd19a962945f2083431e327736895  d1\Track02.flac
+f93527f06d03e924d21a1a9239bdfeff  d1\Track03.flac
+137511ac7d7d120753f1e9fd6dddf9bf  d1\Track04.flac
+d425c6ee7c7da0777f0a46fe3bba26f4  d1\Track05.flac
+fc083e7bb612bdb5814b762402813e19  d1\Track06.flac
+6650816d7f456958d5d59a159ee98bf4  d1\Track07.flac
+398d9bae66d51cc503dfb3de6c7f7718  d1\Track08.flac
+33377b1095315678f1c643503fc6bd32  d1\Track09.flac
+7402fc012a38a6deda1371d7a4a05bd8  d2\Track01.flac
+8adf1354de646e45a077ad6a681b2656  d2\Track02.flac
+a1d41c1752579724a6fa6dab6a1a5c93  info.txt
+ad927ef66c057f094ce676f928fbb596  Milwaukee 28-08-1993 (REMASTERED).md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-08-28-a-REMASTERED.flacf\d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:e54a8e026914f55e6769190aaae49560
+Track02.flac:c16511c1186419230e8a06e22fa1827d
+Track03.flac:add528c2115179b176d2ed56a5d26e1f
+Track04.flac:087de0b0459bbf598b1091d75d9238d4
+Track05.flac:ac779c503e6928d14b8d516840b463e7
+Track06.flac:3ad3f93246b1508775bef1cef8263e1d
+Track07.flac:25a1ab309977512c835acef2adfda5fc
+Track08.flac:6f7e9fe4c12380720c96407094c368e4
+Track09.flac:14638cdc3e1264deb3fdc91d42ffa33c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-08-28-a-REMASTERED.flacf\d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:d491b5fbd715ea7898ab709f50eb67bb
+Track02.flac:60379edbf9b851a84fce2b90a1ceeac6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-08-28-a-REMASTERED.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:14.26       44866796 B   ---   --   ---xx   flac  0.4870  Track01.flac
+     8:44.49       92548892 B   ---   --   ---xx   flac  0.5561  Track02.flac
+     6:24.66       67892876 B   ---   --   ---xx   flac  0.5662  Track03.flac
+    11:03.53      117077900 B   ---   --   ---xx   flac  0.5524  Track04.flac
+    11:50.48      125356940 B   ---   --   ---xx   flac  0.5718  Track05.flac
+     7:00.63       74236220 B   ---   --   ---xx   flac  0.5073  Track06.flac
+     5:47.22       61262588 B   ---   --   ---xx   flac  0.4319  Track07.flac
+    11:11.72      118533788 B   ---   --   ---xx   flac  0.4816  Track08.flac
+     8:30.27       90027548 B   ---   --   ---xx   flac  0.5021  Track09.flac
+    74:48.51      791803548 B                            0.5235  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-08-28-a-REMASTERED.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:18.21       66728636 B   ---   --   ---xx   flac  0.5535  Track01.flac
+     6:52.56       72808556 B   ---   --   ---xx   flac  0.5881  Track02.flac
+    13:11.02      139537192 B                            0.5715  (2 files)
+=================== 
+=================== 
+=================== 

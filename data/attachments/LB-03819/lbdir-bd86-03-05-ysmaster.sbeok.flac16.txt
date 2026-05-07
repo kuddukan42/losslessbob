@@ -1,0 +1,126 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-03-05-ysmaster.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+b69bf9e5365ad7a715580520616214b9  bd1986-03-05.master.sbeok.flac16.ffp
+bc86a6965023da2f2f64b6813f8fc8c1  bd1986-03-05.ysmaster.sbeok.flac16.md5
+bbf13419f3b7591a6329a26fb598eded  bd1986-03-05_info.html
+c0e0dd60954abf887b800b9926403713  bd1986-03-05_info.txt
+c9c2db84c3d35829a1ac317a8eb230c8  bd1986-03-05d1.LOG
+80bb65994e8e2ed23db9cbee1be0534a  bd1986-03-05d2.LOG
+511b7398805d841017a0bc3bdc4ca5ed  bd1986-03-05d3.LOG
+71c0f3f733a59615f16cb33d7da2a963  bd1986-03-05t01.flac
+ac9b6a81616975888b9db3468a3dbfd8  bd1986-03-05t02.flac
+ec10bb295e0178c543f41ddc70e875ea  bd1986-03-05t03.flac
+8c6b0cec09e7e3ec140877282fe8af22  bd1986-03-05t04.flac
+629d8433887d0084d496819dc7e57220  bd1986-03-05t05.flac
+29ecdd1910bdb07d131cbe9b0986fe85  bd1986-03-05t06.flac
+8551272aaa96b9fdadf157556e766aa3  bd1986-03-05t07.flac
+bddab272be9aca8b48bbab39b5d76fef  bd1986-03-05t08.flac
+8ddfcf9a26e2e13040957b521501b600  bd1986-03-05t09.flac
+92a5ee9fd779ff3c5fbc961fa36a5009  bd1986-03-05t10.flac
+1dddc0e8e018a9e9941be07e0a328a13  bd1986-03-05t11.flac
+15835bb261615d39c4960d04035b9930  bd1986-03-05t12.flac
+4de9a1838bb8c1f410331bca429232b8  bd1986-03-05t13.flac
+0cdc408e2f2f7b3a0af0f6ac2ba689a4  bd1986-03-05t14.flac
+8372340f35a5fb7b6152b349bc664aba  bd1986-03-05t15.flac
+764216f37a43aff5867607f9c115d9a6  bd1986-03-05t16.flac
+f596463d52d2124b96ca4df99d13fc0e  bd1986-03-05t17.flac
+c3d78a454013c10fc889caed34cc825a  bd1986-03-05t18.flac
+5b1768fe5283132cbd09ae36f3b1e421  bd1986-03-05t19.flac
+c0c5db1f78b4b32f26c1df4d4f19091c  bd1986-03-05t20.flac
+35c34e11378e14621e1730a4dd5b82cf  bd1986-03-05t21.flac
+7d5403d2301871c785cd8a547542b380  bd1986-03-05t22.flac
+24a5480b3332dd07992a575a536b2701  bd1986-03-05t23.flac
+f5a54c793ceba7a84ea72eb33fba4d62  bd1986-03-05t24.flac
+09d685a62ad7df2fcb9603159345b40a  bd1986-03-05t25.flac
+22b98d13138154e669f8d1953b7f88e7  bd1986-03-05t26.flac
+ff9b395e497aca80c4af502b0a5d96e8  bd1986-03-05t27.flac
+16e926fc410b676629be2ed3be4ca0d6  bd1986-03-05t28.flac
+753cd9c6214e53565516088ab2466482  bd1986-03-05t29.flac
+5ac253d4f9d9b42920eb5f234196e96f  bd1986-03-05t30.flac
+32c492d51bd4578207133062deadfd94  bd86-03-05-ysmaster-LB-3819.txt
+7f111bb35fe8e50f07be01e928fbeb7b  FA.jpg
+80d7a001f888ba7326b03bdae3873f64  SA.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-03-05-ysmaster.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+bd1986-03-05t01.flac:604a8d52ca3dd531c64ece76132646db
+bd1986-03-05t02.flac:8d834e0e30c1aaccb10ff7608b67d167
+bd1986-03-05t03.flac:bf37fcaeb399977fe7e88bf821a7b0d0
+bd1986-03-05t04.flac:f07918764379835e2c1ca7671b99199c
+bd1986-03-05t05.flac:f41f811b22c3164a1ceea54f05c75c37
+bd1986-03-05t06.flac:d811c2af34027cac4983ef9f3cd2a48d
+bd1986-03-05t07.flac:23e14583edbe8f6c516f48116e980a5e
+bd1986-03-05t08.flac:398fa3b382961b8bebdad719e3737cb7
+bd1986-03-05t09.flac:fd372600b622455c6578909723eb60e1
+bd1986-03-05t10.flac:b4dcf7c039214570f7a8bb41cea7600c
+bd1986-03-05t11.flac:4070e680b874d08c9500951f31e2ea8e
+bd1986-03-05t12.flac:1b301db485fbf9a68217f4850866600b
+bd1986-03-05t13.flac:7c6119fbbd4d722006e331e6c75a9aea
+bd1986-03-05t14.flac:f3cde09a5b48cc2265ff045651bc1989
+bd1986-03-05t15.flac:6f133674465c4ad78bc0964f0c1f9d76
+bd1986-03-05t16.flac:b8e4e4b49cf35758d88b732d98e6e05d
+bd1986-03-05t17.flac:ddf0f6ad52860a620162a3c4e619a504
+bd1986-03-05t18.flac:924e081d087c794df2bf544662e06677
+bd1986-03-05t19.flac:9cb4d51aebe9adc1d5de2487c230badc
+bd1986-03-05t20.flac:ec2b5041915816d67d9b334c21de390b
+bd1986-03-05t21.flac:10022ca3cf613ef580b640d7a932ad39
+bd1986-03-05t22.flac:c7aceb7f7a3d657c0bc55a7f994d8c30
+bd1986-03-05t23.flac:8f1861a966172b9dcb7a462f1d516293
+bd1986-03-05t24.flac:a40388aabfa33fcebf42541975f69ab3
+bd1986-03-05t25.flac:bc4defe47129e3f16000861a63003adb
+bd1986-03-05t26.flac:b4eef79b7f978a4f1c6df510629f4541
+bd1986-03-05t27.flac:78e6cbf7fbc64c5e1aa72bb64f8c9c32
+bd1986-03-05t28.flac:5eeb3eb81400c614ff85ba02e04bd8e2
+bd1986-03-05t29.flac:219c2f41fc726d384419a3d7ecfb30eb
+bd1986-03-05t30.flac:4a68646a2d648af26e69c2ab86c76858
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-03-05-ysmaster.sbeok.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.35       47004764 B   ---   --   ---xx   flac  0.6057  bd1986-03-05t01.flac
+     4:36.28       48752300 B   ---   --   ---xx   flac  0.5778  bd1986-03-05t02.flac
+     3:08.29       33231452 B   ---   --   ---xx   flac  0.5940  bd1986-03-05t03.flac
+     4:23.57       46527308 B   ---   --   ---xx   flac  0.5552  bd1986-03-05t04.flac
+     3:07.10       33010364 B   ---   --   ---xx   flac  0.6002  bd1986-03-05t05.flac
+     2:57.49       31338092 B   ---   --   ---xx   flac  0.5448  bd1986-03-05t06.flac
+     5:13.60       55354364 B   ---   --   ---xx   flac  0.5691  bd1986-03-05t07.flac
+     5:22.09       56822012 B   ---   --   ---xx   flac  0.5564  bd1986-03-05t08.flac
+     4:30.40       47722124 B   ---   --   ---xx   flac  0.5137  bd1986-03-05t09.flac
+     5:31.21       58437836 B   ---   --   ---xx   flac  0.5338  bd1986-03-05t10.flac
+     4:12.38       44542220 B   ---   --   ---xx   flac  0.5143  bd1986-03-05t11.flac
+     6:19.63       67003820 B   ---   --   ---xx   flac  0.5500  bd1986-03-05t12.flac
+     4:03.14       42898172 B   ---   --   ---xx   flac  0.5581  bd1986-03-05t13.flac
+     4:39.34       49295612 B   ---   --   ---xx   flac  0.5969  bd1986-03-05t14.flac
+     2:30.44       26563532 B   ---   --   ---xx   flac  0.6377  bd1986-03-05t15.flac
+     6:33.55       69454604 B   ---   --   ---xx   flac  0.5590  bd1986-03-05t16.flac
+     4:23.70       46557884 B   ---   --   ---xx   flac  0.5944  bd1986-03-05t17.flac
+     3:30.04       37053452 B   ---   --   ---xx   flac  0.4988  bd1986-03-05t18.flac
+     5:08.18       54373580 B   ---   --   ---xx   flac  0.5313  bd1986-03-05t19.flac
+     4:03.65       43018124 B   ---   --   ---xx   flac  0.5694  bd1986-03-05t20.flac
+     5:30.07       58228508 B   ---   --   ---xx   flac  0.5603  bd1986-03-05t21.flac
+     3:21.03       35463500 B   ---   --   ---xx   flac  0.5951  bd1986-03-05t22.flac
+     5:55.35       62704364 B   ---   --   ---xx   flac  0.5787  bd1986-03-05t23.flac
+     4:49.46       51087836 B   ---   --   ---xx   flac  0.5392  bd1986-03-05t24.flac
+     3:52.16       40962476 B   ---   --   ---xx   flac  0.5745  bd1986-03-05t25.flac
+     7:07.02       75327548 B   ---   --   ---xx   flac  0.5906  bd1986-03-05t26.flac
+    11:14.32      118968908 B   ---   --   ---xx   flac  0.5488  bd1986-03-05t27.flac
+     4:17.59       45473612 B   ---   --   ---xx   flac  0.5600  bd1986-03-05t28.flac
+     2:42.57       28710908 B   ---   --   ---xx   flac  0.6085  bd1986-03-05t29.flac
+     7:30.50       79497644 B   ---   --   ---xx   flac  0.5865  bd1986-03-05t30.flac
+   145:04.00     1535386920 B                            0.5645  (30 files)
+=================== 
+=================== 
+=================== 

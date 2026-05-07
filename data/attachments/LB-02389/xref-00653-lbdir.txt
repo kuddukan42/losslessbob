@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-05-28-IAR021.flacf 
+=================== 
+=================== 
+=================== 
+f9f80e428c3afa0007dbe747a5ef12b7  01 Times They Are A-Changin'.flac
+7cc5cbde9bf1f35c3ce7adf96ef3ec98  02 Hey La La.flac
+2b74d6a9f4211242d582ea1de0714673  03 All Along The Watchtower.flac
+fb582609b171e8556bfa3848fc0d3ce7  04 Simple Twist Of Fate.flac
+6934e7c24f249d2a47f83b79dad7166b  05 Ballad Of A Thin Man.flac
+9a42729338abcc4fe3520381123f665c  06 Highway 61 Revisited.flac
+1e55ec4aabf0a766dcfdd42b27f94535  07 Mr. Tambourine Man.flac
+8b357af2a77d0df39c0e24ed3c3669af  08 It Ain't Me Babe.flac
+64ffe18553665fd4bd9f5f6213120bb1  09 Eileen Aroon.flac
+c33d7261f5d4b4f921c03434a7973ec5  10 Knockin' On Heaven's Door.flac
+e5ac4f658135bb2db13f0c189a1dad1f  11 Silvio.flac
+e6b1003472370ecf70c693cb2dd2f20c  12 When Did You Leave Heaven.flac
+cba150eb5353470088373835f9dce538  13 Like A Rolling Stone.flac
+faed030069a46dad06aa3e89b22d2c6a  14 Boots Of Spanish Leather.flac
+4073bff9d57a1d24c45bda5ef6093b59  15 Maggie's Farm.flac
+cd5a64f44a04013ecfb3771bf8d98dc0  IAR 021 - Stockholm, May 28, 1989.md5
+b1d6db5cc5c71a4799f61515c6cce083  IAR 021 - Stockholm, May 28, 1989.txt
+c3c4912abf67b3071039db2758076e5e  Live In Stockholm, May 28, 1989.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-05-28-IAR021.flacf 
+=================== 
+=================== 
+=================== 
+01 Times They Are A-Changin'.flac:da295c9a8125b33cab918290f251eef8
+02 Hey La La.flac:ec193c895a49f0caa2378b81ac36b5d0
+03 All Along The Watchtower.flac:8256cc0bba9a99b1ee681f1bf5c7ba99
+04 Simple Twist Of Fate.flac:245acdbeaca52676b2e9d3f1c474471c
+05 Ballad Of A Thin Man.flac:be67777de1c99563e39d78d90b31a2c3
+06 Highway 61 Revisited.flac:12ff8f109edc5668a10d326de07f1fd3
+07 Mr. Tambourine Man.flac:f8f36b6d7d5173d8e777f043bab1c0d4
+08 It Ain't Me Babe.flac:3e91f98477a863f508c86858f3099e1d
+09 Eileen Aroon.flac:a4dc4a396ec52163df88f0dfd98f6ec5
+10 Knockin' On Heaven's Door.flac:ac9917e85cf3a55349c73109afddbe52
+11 Silvio.flac:3094015483078fbf540e0648a6ec778a
+12 When Did You Leave Heaven.flac:fa44e430f0ea823fc49808bae881eaef
+13 Like A Rolling Stone.flac:083c7f2195590234cc23fde942222891
+14 Boots Of Spanish Leather.flac:8dd945a3af6cef86641a67d7b5a965f4
+15 Maggie's Farm.flac:dfbedd4f774a5bdb8d77c25983c6e078
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-05-28-IAR021.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:37.72       38448188 B   ---   --   ---xx   flac  0.6281  01 Times They Are A-Changin'.flac
+     3:56.50       41748044 B   ---   --   ---xx   flac  0.6511  02 Hey La La.flac
+     4:08.72       43916588 B   ---   --   ---xx   flac  0.6895  03 All Along The Watchtower.flac
+     6:14.26       66034796 B   ---   --   ---xx   flac  0.6550  04 Simple Twist Of Fate.flac
+     5:31.07       58404908 B   ---   --   ---xx   flac  0.6809  05 Ballad Of A Thin Man.flac
+     5:10.19       54728732 B   ---   --   ---xx   flac  0.6692  06 Highway 61 Revisited.flac
+     5:17.19       55963532 B   ---   --   ---xx   flac  0.6406  07 Mr. Tambourine Man.flac
+     3:54.71       41444636 B   ---   --   ---xx   flac  0.6470  08 It Ain't Me Babe.flac
+     2:50.27       30051548 B   ---   --   ---xx   flac  0.6098  09 Eileen Aroon.flac
+     5:53.38       62358620 B   ---   --   ---xx   flac  0.7057  10 Knockin' On Heaven's Door.flac
+     3:41.37       39071468 B   ---   --   ---xx   flac  0.7171  11 Silvio.flac
+     3:17.69       34913132 B   ---   --   ---xx   flac  0.6555  12 When Did You Leave Heaven.flac
+     7:45.46       82134236 B   ---   --   ---xx   flac  0.6996  13 Like A Rolling Stone.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.5985  14 Boots Of Spanish Leather.flac
+     4:30.42       47726828 B   ---   --   ---xx   flac  0.7047  15 Maggie's Farm.flac
+    70:47.70      749336100 B                            0.6667  (15 files)
+=================== 
+=================== 
+=================== 

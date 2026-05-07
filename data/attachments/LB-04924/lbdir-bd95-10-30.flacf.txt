@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-30.flacf 
+=================== 
+=================== 
+=================== 
+6250b69d9a1267d43c26110b4124921c  CD1\01 Crash on the levee (down in the flood).flac
+596b98400537c6f38aeb51703bca7a8b  CD1\02 If you see her, say hello.flac
+d12a7da5ab048bbc939957874685faaa  CD1\03 All along the watchtower.flac
+568c4deba183f7fb9b539963df896442  CD1\04 Simple twist of fate.flac
+0aa996b7ea111646171ae9b3dd6bf2ee  CD1\05 Pledging my time.flac
+481df682e01cfdd838b1af3a0c74047a  CD1\06 Silvio.flac
+a1ffdb0ed2558cbe48ca39fa81c0df55  CD1\07 Mr. Tambourine Man.flac
+dfb8c46c3e937abf5414f69042b67de2  CD1\08 Masters of war.flac
+29de03ba96dc49ba9bc100cf0cdfd38b  CD1\09 Don't think twice, it's all right.flac
+060ca8bead700e29ea85be651419c27e  CD1\FLAC CD1.md5
+b36f3d6347eb5a287592733c701aed6a  CD2\10 God knows.flac
+9d63959f007aa4f9ab2f086b1261e4c8  CD2\11 I'll remember you.flac
+638af27ba8f38a4ea814e8839f0843e6  CD2\12 Maggie's farm.flac
+999b7df17c96e96fba7b4d96444c570f  CD2\13 Alabama getaway.flac
+7bcd5ef1df1847225cc175afb396ee17  CD2\14 It ain't me, babe.flac
+13b0b8daa4f93552f5e0b51c9fd7724c  CD2\15 Rainy day women # 12 & 35.flac
+21494ac1f0d1b1be920f69b511ba5826  CD2\FLAC CD2.md5
+64e8d3bb5e910ec24ccc3b6345c0aec5  Info\1995-10-30 Robinson Auditorium, Little Rock, Arkansas, USA.txt
+6a1aa02fb368f26dd9502d929c2b3d31  Info\WAV CD1.md5
+67d10eb240012ca175cfe34cc6ae6b70  Info\WAV CD2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-30.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the levee (down in the flood).flac:1a847acb5bf248ca7e49fd3f071b4f1b
+02 If you see her, say hello.flac:2d38e9952f853450f9f39ad35e6404c9
+03 All along the watchtower.flac:30d877a3aabbbfbdae911033e2e16e50
+04 Simple twist of fate.flac:7d14170d829e1c42fdfc430407820531
+05 Pledging my time.flac:6a8ca375b4338b1661d814774c885bf3
+06 Silvio.flac:6e15fa4a4e4d1d478deb43274f38053b
+07 Mr. Tambourine Man.flac:434cd303f738537d62ec6d7fa51a507f
+08 Masters of war.flac:0996332e6316fad5f13e39989d5497a5
+09 Don't think twice, it's all right.flac:5a482c38e05f4361105d0bb7c2ec681b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-30.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 God knows.flac:68bd6bc80e8ede95f6b370075a603091
+11 I'll remember you.flac:15a20b6506c3013d3758bef207129641
+12 Maggie's farm.flac:061a9e3ba0dd10fddb8cd6d1f7c91d26
+13 Alabama getaway.flac:4fe83a7dd6b801d5368b515725cba824
+14 It ain't me, babe.flac:01d54b8111f7ecf61c6036b68e99f2bb
+15 Rainy day women # 12 & 35.flac:31c72b641f33493e261a9751030a5b35
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-10-30.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.60       53943164 B   ---   --   ---xx   flac  0.5653  01 Crash on the levee (down in the flood).flac
+     6:43.58       71225660 B   ---   --   ---xx   flac  0.5156  02 If you see her, say hello.flac
+     6:43.41       71185676 B   ---   --   ---xx   flac  0.5803  03 All along the watchtower.flac
+     9:38.38      102048620 B   ---   --   ---xx   flac  0.5043  04 Simple twist of fate.flac
+     6:52.06       72690956 B   ---   --   ---xx   flac  0.5576  05 Pledging my time.flac
+     8:19.15       88058924 B   ---   --   ---xx   flac  0.5889  06 Silvio.flac
+    10:54.21      115415036 B   ---   --   ---xx   flac  0.4541  07 Mr. Tambourine Man.flac
+     6:52.20       72723884 B   ---   --   ---xx   flac  0.4358  08 Masters of war.flac
+     8:46.47       92896988 B   ---   --   ---xx   flac  0.4586  09 Don't think twice, it's all right.flac
+    69:56.06      740188908 B                            0.5121  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-10-30.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:09.31       86332556 B   ---   --   ---xx   flac  0.5422  10 God knows.flac
+     6:49.58       72284060 B   ---   --   ---xx   flac  0.5282  11 I'll remember you.flac
+    10:45.11      113803916 B   ---   --   ---xx   flac  0.5886  12 Maggie's farm.flac
+     6:20.26       67093196 B   ---   --   ---xx   flac  0.5803  13 Alabama getaway.flac
+    10:52.20      115059884 B   ---   --   ---xx   flac  0.4721  14 It ain't me, babe.flac
+     8:03.26       85262396 B   ---   --   ---xx   flac  0.5535  15 Rainy day women # 12 & 35.flac
+    51:00.22      539836008 B                            0.5417  (6 files)
+=================== 
+=================== 
+=================== 

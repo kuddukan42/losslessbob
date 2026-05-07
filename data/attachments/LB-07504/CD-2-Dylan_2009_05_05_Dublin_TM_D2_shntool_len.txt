@@ -1,0 +1,7 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:23.64       88879148 B   -b-   --   ---xx   flac  0.5856  Dylan_2009_05_05_Dublin_TM_D2_01.flac
+     9:56.27      105197612 B   -b-   --   ---xx   flac  0.5755  Dylan_2009_05_05_Dublin_TM_D2_02.flac
+     5:03.35       53530668 B   -b-   --   ---xx   flac  0.5775  Dylan_2009_05_05_Dublin_TM_D2_03.flac
+     5:39.23       59854892 B   -b-   --   ---xx   flac  0.5616  Dylan_2009_05_05_Dublin_TM_D2_04.flac
+     6:01.63       63827956 B   -b-   --   ---xx   flac  0.5502  Dylan_2009_05_05_Dublin_TM_D2_05.flac
+    35:04.61      371290276 B                            0.5716  (5 files)

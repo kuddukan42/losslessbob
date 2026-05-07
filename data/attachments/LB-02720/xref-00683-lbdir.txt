@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-12-05-IAR037.flacf 
+=================== 
+=================== 
+=================== 
+4fefbd14828be12588ebac6363192cff  Disc 1\Track01.flac
+ed69d3bf63f0dc50aa05b0e0dec36e5b  Disc 1\Track02.flac
+015ed967dc58c4681fba0100af8d5a31  Disc 1\Track03.flac
+a778c9c58239f0ad6c6dc7a4113d5d15  Disc 1\Track04.flac
+5ce450d99d27d15eee4a26ecba952ac9  Disc 1\Track05.flac
+2aa0cfcbf753ecaaa91459e618653df9  Disc 1\Track06.flac
+6ad5cfb1f2f6fa366273dec92d6d1cf4  Disc 1\Track07.flac
+2d9c2fd448bcfde56275d5b4b5ef4242  Disc 1\Track08.flac
+eed0c6c66782bdfa62c27170b84ae140  Disc 1\Track09.flac
+3073611dbc68a1ea1294fd6357d58702  Disc 1\Track10.flac
+f29216756761de6ce5580e4b71e9d5e1  Disc 1\Track11.flac
+73a02c6b7d4e5601e16b68eae3fcdc7f  Disc 1\Track12.flac
+67101ce19482d9171a09668b8d3cd06c  Disc 1\Track13.flac
+478ab30a7e1dcf474af02f99ee07905c  Disc 2\Track01.flac
+20f5e07eaf05c38cd8b77d489c1d9345  Disc 2\Track02.flac
+73ac79dea5dd4d42d0a5acbf4a03059c  Disc 2\Track03.flac
+f33468c569e848fb1f575da20a7b4c62  Disc 2\Track04.flac
+7d7a01efe7fd7ea13d3b990f6a8c29ff  Disc 2\Track05.flac
+518c03abcbcfb3bd82bbc9c766e42511  Disc 2\Track06.flac
+7b4e974c48838a4f595065455c0c657a  Disc 2\Track07.flac
+34bd22a4d029e3e3f1c25ea4bcccd353  Disc 2\Track08.flac
+108bb6b60518b32517e96e1bed7818f2  Disc 2\Track09.flac
+467ed4522104d6399df7194e9e1ab5d0  Disc 2\Track10.flac
+a189a21c369d4249113ca0df6f9290a4  Disc 2\Track11.flac
+aaa6e1d7c1b7cea05def305d0501c476  IAR 037 -  Right Turn At Albuquerque , Albuquerque , New Mexico , Dec . 5 , 1979.md5
+422369db2d4b0f650760782aa053fb38  IAR 037 -  Right Turn At Albuquerque , Albuquerque , New Mexico , Dec . 5 , 1979.rtf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-12-05-IAR037.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:abc5e21a171860dac054603fd78afb29
+Track02.flac:54f8f64420fb6e6a2874598bb03d0a2d
+Track03.flac:20abce2a5fcc15f6339c5557a93604ca
+Track04.flac:dcd53dd94850daccf468502dfc57de9a
+Track05.flac:77c22263e09f3c3ca01ef4bb236cb54e
+Track06.flac:30166c4696af473d044c0804f1364c00
+Track07.flac:b134f50032da74211142555f0f38170d
+Track08.flac:4d47361fb01158eba0f8559183dd484d
+Track09.flac:a7769d94218d414599166ae36950d9df
+Track10.flac:0dfe7459575cf557cc8d0b4eead892c4
+Track11.flac:5e9f856163d480085895463d4538aeb3
+Track12.flac:ac4b3c6b46baaae485f8b8e019276b4c
+Track13.flac:0b14eaeb0b483bc63d659a5131d48457
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-12-05-IAR037.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:994613740ab25fec9817c06f91e4c628
+Track02.flac:2efbb66bfd2e680b363dc2891b909e5b
+Track03.flac:7c1c50f944e6d7471429e96383eda81f
+Track04.flac:c68b7081c623967f716adcf5cd82a66c
+Track05.flac:54520ce1df9b52ee7d020331a70331be
+Track06.flac:fc20db6e5203e78116b9a9ea82b9d5db
+Track07.flac:19a1bee7744bcc14bc0bb40b6c316896
+Track08.flac:5d9d3d046d9dc4db089abce393cc55b8
+Track09.flac:6d03beb6df2af0bbde54babbce493586
+Track10.flac:323ea2b98d6bbdc86090078009759ff1
+Track11.flac:f526260c90ae0ded5a36344df4aa9745
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-12-05-IAR037.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:38.37       70294268 B   ---   --   ---xx   flac  0.3562  Track01.flac
+     3:41.44       39087932 B   ---   --   ---xx   flac  0.3661  Track02.flac
+     2:42.42       28675628 B   ---   --   ---xx   flac  0.3744  Track03.flac
+     4:38.18       49081580 B   ---   --   ---xx   flac  0.3621  Track04.flac
+     5:18.36       56179916 B   ---   --   ---xx   flac  0.3761  Track05.flac
+     3:52.63       41073020 B   ---   --   ---xx   flac  0.3834  Track06.flac
+     6:47.07       71811308 B   ---   --   ---xx   flac  0.3938  Track07.flac
+     4:54.64       52012172 B   ---   --   ---xx   flac  0.3728  Track08.flac
+     5:31.16       58426076 B   ---   --   ---xx   flac  0.3876  Track09.flac
+     5:04.08       53644460 B   ---   --   ---xx   flac  0.3565  Track10.flac
+     5:36.12       59298668 B   ---   --   ---xx   flac  0.3681  Track11.flac
+     7:39.19       81012332 B   ---   --   ---xx   flac  0.3601  Track12.flac
+     6:31.66       69127676 B   ---   --   ---xx   flac  0.3859  Track13.flac
+    68:56.57      729725036 B                            0.3725  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-12-05-IAR037.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:27.72       89604188 B   ---   --   ---xx   flac  0.3620  Track01.flac
+     4:39.25       49274444 B   ---   --   ---xx   flac  0.3725  Track02.flac
+     4:53.40       51779324 B   ---   --   ---xx   flac  0.3903  Track03.flac
+     4:40.46       49500236 B   ---   --   ---xx   flac  0.3871  Track04.flac
+     4:30.42       47726828 B   ---   --   ---xx   flac  0.4038  Track05.flac
+     5:26.43       57607580 B   ---   --   ---xx   flac  0.3715  Track06.flac
+     4:15.68       45141980 B   ---   --   ---xx   flac  0.4023  Track07.flac
+     6:13.37       65884268 B   ---   --   ---xx   flac  0.3839  Track08.flac
+     8:38.72       91544588 B   ---   --   ---xx   flac  0.3812  Track09.flac
+     5:05.39       53893772 B   ---   --   ---xx   flac  0.3978  Track10.flac
+     6:18.61       66822716 B   ---   --   ---xx   flac  0.3745  Track11.flac
+    63:11.20      668779924 B                            0.3823  (11 files)
+=================== 
+=================== 
+=================== 

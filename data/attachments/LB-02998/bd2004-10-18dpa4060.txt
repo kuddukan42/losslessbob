@@ -1,0 +1,39 @@
+BOB DYLAN
+University of California
+The Pavilion at the ARC - Davis, CA
+October 18, 2004
+
+***DO NOT ENCODE TO MP3!***
+
+-source- 
+DPA 4060's > MPS6020 > Sony SBM-1 > Sony TCD-D100 (~4m from left stack)
+
+-conversion-
+Sony TCD-D100 > coax > M-Audio Audiophile USB > Adobe Audition v1.5 > T-Racks 24 v2.0 > CDWave v1.7 > FLAC frontend > flac
+
+-genealogy-
+dat-m>dEdit>dEQ>flac
+
+-tracklist-
+*CD1*
+01. Introduction
+02. To Be Alone with You
+03. Señor (Tales of Yankee Power)
+04. Tweedle Dee & Tweedle Dum
+05. Under the Red Sky
+06. It's Alright, Ma (I'm Only Bleeding)
+07. Moonlight
+08. Cold Irons Bound
+09. Just Like Tom Thumb's Blues
+10. Man in the Long Black Coat
+11. Highway 61 Revisited
+
+*CD2*
+01. Saving Grace
+02. Honest with Me
+03. Don't Think Twice, It's All Right 
+04. Summer Days
+(encore)
+05. Like a Rolling Stone
+06. (band introductions)
+07. All along the Watchtower

@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-12_Hannover 
+=================== 
+=================== 
+=================== 
+158ab10888ff56777d01b468b3120079  bd00-05-12.txt
+8fa8b4b739d5f1c73a2c9347dd43cda1  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 01.shn
+e91c396f499d6cfa882b7deff8aa6f21  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 02.shn
+8ca144b5103e824c0269e9515b10c397  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 03.shn
+1368473d36ab36bf01a54a8b68b05421  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 04.shn
+f87f22ab14bfa27fd26b1c0c38ce5a82  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 05.shn
+f659fb57b2fe1d148246e66d0ee99214  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 06.shn
+ffecde10a1732eb9a7853b5dd2304d19  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 07.shn
+e4d31210f6ab1639c96af8ed0cb78c4f  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 08.shn
+8e92f772c8bb567874ae5aba4b162fa2  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 09.shn
+409c9bf19f252ab5e61cc3020c99490a  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 10.shn
+54006df166c00fed92d99823392cf93c  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_Track 11.shn
+39e0dd420b402403765cd4ac156baa73  bd_00-05-12_cd1.shnf\bd_00-05-12_cd1_shn.md5
+626a840c3f5847f5970ae246e8772e1d  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_Track 1.shn
+805de82f842cea89a2266328c5e0ce9d  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_Track 2.shn
+d5d5f0cdce4b97a8061cc75d78cbfb29  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_Track 3.shn
+bd5524bedc559212823c42734587b19a  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_Track 4.shn
+784fd1ec4979a7cc94939b8245c581f2  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_Track 5.shn
+53eb2b53a8d6fb06f032678977463798  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_Track 6.shn
+2b87d0de0c9c59323191175f0f180db8  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_Track 7.shn
+53346c7b1e5a7b725b6359d176ee87f3  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_Track 8.shn
+d5224877dfda277bb2d3a55979c61a52  bd_00-05-12_cd2.shnf\bd_00-05-12_cd2_shn.md5
+462ebd6285554955345b1c38c61a6718  readme.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-12_Hannover\bd_00-05-12_cd1.shnf 
+=================== 
+=================== 
+=================== 
+5b2a42c58bb3ffc25b4fa9b7ad98ec71  [shntool]  bd_00-05-12_cd1_Track_01.wav
+a1bda3ea33ec27516963e56fb98e5d84  [shntool]  bd_00-05-12_cd1_Track_02.wav
+da1c4b62eabce17776c334d6bcbe03a2  [shntool]  bd_00-05-12_cd1_Track_03.wav
+68f907411197a5bf9c2a012d78dcbc37  [shntool]  bd_00-05-12_cd1_Track_04.wav
+4e6e71f72799c0ecbb3c7c6ca2daf1b1  [shntool]  bd_00-05-12_cd1_Track_05.wav
+62664fe42b06caace9504495f7f2b7b8  [shntool]  bd_00-05-12_cd1_Track_06.wav
+e897ba1a4f987739a2cfcc4894b51e26  [shntool]  bd_00-05-12_cd1_Track_07.wav
+d7167956804a0d35756ac2c9767b0fb9  [shntool]  bd_00-05-12_cd1_Track_08.wav
+d1834926c5e7b1f84f2f9603b24060a0  [shntool]  bd_00-05-12_cd1_Track_09.wav
+65ac0c4019eb39a3ad56cf5058f8b57d  [shntool]  bd_00-05-12_cd1_Track_10.wav
+feac1314db6598c0ca33b5871bf11267  [shntool]  bd_00-05-12_cd1_Track_11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-12_Hannover\bd_00-05-12_cd2.shnf 
+=================== 
+=================== 
+=================== 
+69ded9f2d56663360be15941d7594684  [shntool]  bd_00-05-12_cd2_Track_1.wav
+a0571b6eb9449793e304afe6762434ed  [shntool]  bd_00-05-12_cd2_Track_2.wav
+c42d339387c3017e228023950e747a87  [shntool]  bd_00-05-12_cd2_Track_3.wav
+fba281470d6d05d9a247306e9afc6710  [shntool]  bd_00-05-12_cd2_Track_4.wav
+2e51fb9d400bcd3924ec88ff3b6bb930  [shntool]  bd_00-05-12_cd2_Track_5.wav
+1a19bba509a3d4e1be7bf8b9beff8f59  [shntool]  bd_00-05-12_cd2_Track_6.wav
+a9676fed073032d15adef4f251b4dc81  [shntool]  bd_00-05-12_cd2_Track_7.wav
+7d67013ff60524cbc39e5169418d652e  [shntool]  bd_00-05-12_cd2_Track_8.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-12_Hannover\bd_00-05-12_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:23.05        4069086 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_01.wav
+     3:55.32       41529390 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_02.wav
+     6:53.53       72977982 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_03.wav
+     9:23.34       99393294 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_04.wav
+     5:06.09       53999694 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_05.wav
+     7:40.69       81306414 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_06.wav
+     5:30.42       58310910 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_07.wav
+     2:40.23       28278222 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_08.wav
+     5:47.30       61281486 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_09.wav
+     6:16.28       66392382 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_10.wav
+     6:03.12       64061550 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd1_Track_11.wav
+    59:40.37      631600410 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-12_Hannover\bd_00-05-12_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.15       59482206 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd2_Track_1.wav
+     8:35.40       90940206 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd2_Track_2.wav
+     5:56.31       62871438 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd2_Track_3.wav
+     7:51.22       83136270 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd2_Track_4.wav
+     8:12.47       86899470 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd2_Track_5.wav
+     4:29.20       47498766 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd2_Track_6.wav
+     5:30.50       58329726 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd2_Track_7.wav
+     6:33.64       69475854 B   ---   -e   -----    wav  1.0000  bd_00-05-12_cd2_Track_8.wav
+    52:46.64      558633936 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

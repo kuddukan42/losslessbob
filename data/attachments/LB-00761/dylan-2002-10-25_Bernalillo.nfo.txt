@@ -1,0 +1,40 @@
+BOB DYLAN
+Santa Ana Star Casino, Bernalillo, NM, October 25, 2002
+
+Lineage info: this copy is a couple of downloads away from the
+taper (thanks Bob) and the editor (thanks Dean) of the show
+(hence presumably is a perfect copy of the edited version)
+
+NOTE: The last song on disc 2 (Watchtower) fades out early at 1:41 -
+  the taper ran out of tape
+
+Tracklist:
+Disc 1
+01. Intro + To Be Alone With You
+02. In The Summertime
+03. Tombstone Blues
+04. The End Of The Innocence
+05. Watching The River Flow
+06. Brown Sugar
+07. It Ain't Me, Babe
+08. It's Alright, Ma (I'm Only Bleeding)
+09. Mr. Tambourine Man
+10. Drifter's Escape
+
+Disc 2
+01. Tell Me That It Isn't True
+02. Old Man
+03. Honest With Me
+04. Blowin' In The Wind
+05. High Water (For Charley Patton)
+06. Mutineer
+07. Bye And Bye
+08. Summer Days
+09. Knockin' On Heaven's Door
+10. All Along The Watchtower [ends early at 1:41]
+
+There are only MD5 files for the SHN files this time
+(none for the WAVs)
+
+The SHN files do not have the SKT (seek) files appended;
+you'll have to create your own if you want them

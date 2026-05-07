@@ -1,0 +1,161 @@
+===================
+===================
+===================
+=== 1999-02-10 - Columbus, Ohio (LB-02437 sourced, flac).ffp
+===================
+===================
+===================
+1-01 - Gotta Serve Somebody.flac:8437ce1e2999ef598944cd400d9817e8
+1-02 - Million Miles.flac:f4b6e81a0db0a179c53a4a6e2ba7c361
+1-03 - Stuck Inside Of Mobile With The Memphis Blues Again.flac:4316593bbb6289b73895c4de5331c1a7
+1-04 - Simple Twist Of Fate.flac:8e233f90dbf93b406ff029e945897dc8
+1-05 - Silvio.flac:d78eddb8b4454cc228ec74825495d25e
+1-06 - Mr. Tambourine Man.flac:c51ff4da798e543ee3517121faf045fb
+1-07 - Friend Of The Devil.flac:9e39ed789b90f6df02bbedd41ef088d1
+1-08 - Girl From The North Country.flac:2a390433a68ed9a99dfae0f9be6b0671
+1-09 - Tangled Up In Blue.flac:cf4314cf38be0c60435847a76958c4b3
+1-10 - Honky Tonk Blues.flac:84fb898b7a881a60fc22889555c2d52f
+1-11 - Can't Wait.flac:f9ee092773f15c17bfcdf4e5c1a5eab8
+2-12 - Highway 61 Revisited.flac:d9969187223883148681c486003c32de
+2-13 - Love Sick.flac:613697c0832fe6e3a34905fcfac66b53
+2-14 - Maggie's Farm.flac:2b64c1b0d2e96aae00b33beef1fe7598
+2-15 - My Back Pages.flac:1e5a454278ba46b3bd3005f44a72299e
+2-16 - Not Fade Away.flac:b57ff64c34d672a68d248c47f3835486
+===================
+===================
+===================
+=== 1999-02-10 - Columbus, Ohio (LB-02437 sourced, flac).md5
+===================
+===================
+===================
+; Using hkSFV (http://www.big-o-software.com)
+;
+;/----
+;     1999-02-10 - Columbus, Ohio (flac)
+;\----
+;
+a31bf933d072724705ae6775cf86c655 *1-01 - Gotta Serve Somebody.flac
+49cd5b79fff95513b28238f4feaba44b *1-02 - Million Miles.flac
+885a38e87a784e7baf041e8f539569c2 *1-03 - Stuck Inside Of Mobile With The Memphis Blues Again.flac
+b88ff5b7f8b9c95c7c87e93590b5f964 *1-04 - Simple Twist Of Fate.flac
+0089903fde3cb3590634a77a5ef84012 *1-05 - Silvio.flac
+04745405b40f932009cc4d0202185bae *1-06 - Mr. Tambourine Man.flac
+6c6bb0d8c6a6b90cb93e291453671284 *1-07 - Friend Of The Devil.flac
+a291d2989039bedeaddc6bb973e3c7f3 *1-08 - Girl From The North Country.flac
+3ea7d5d5825dbf5a0b92a7c6d951aea4 *1-09 - Tangled Up In Blue.flac
+331b8a03cecae14fb26a65a8b73de36f *1-10 - Honky Tonk Blues.flac
+b27792bd6f5375de78e9cc6de8efb5b2 *1-11 - Can't Wait.flac
+c128d4d9d1f2bfea7a057befbf4fdc58 *2-12 - Highway 61 Revisited.flac
+ef24e74a2dbff1662c994b70c20f3bbb *2-13 - Love Sick.flac
+74bb26f9514100903d061e5db4da6f73 *2-14 - Maggie's Farm.flac
+5b2588537534bda069f69c53d06f9437 *2-15 - My Back Pages.flac
+5e9db6faf75446efd834368ab32bc0de *2-16 - Not Fade Away.flac
+f71f580dd4a18d88bff78377b8796170 *Columbus_10_02_99_B.jpg
+8e8a0aa9897b9d634264c961f020a04d *Columbus_10_02_99_F.jpg
+f750319d0c52acb9e603d3c83a03ad1f *shntool_len.txt
+45e52e179a699f9f00f23aa257caa9e8 *1999-02-10 - Columbus, Ohio (flac).ffp
+c5385bdd299e8c183bd7fd40a07577d6 *1999-02-10 - Columbus, Ohio.txt
+===================
+===================
+===================
+=== 1999-02-10 - Columbus, Ohio.txt
+===================
+===================
+===================
+Columbus, Ohio
+Veterans Memorial Auditorium
+
+10 February 1999 
+
+ 
+
+01 - Gotta Serve Somebody
+02 - Million Miles
+03 - Stuck Inside Of Mobile With The Memphis Blues Again
+04 - Simple Twist Of Fate
+05 - Silvio (Bob Dylan & Robert Hunter)
+ 
+06 - Mr. Tambourine Man
+07 - Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson)
+08 - Girl From The North Country
+09 - Tangled Up In Blue
+ 
+10 - Honky Tonk Blues (Al Dexter/James B. Paris)
+11 - Can't Wait
+12 - Highway 61 Revisited
+ 
+        (encore)
+ 
+13 - Love Sick
+14 - Maggie's Farm
+15 - My Back Pages
+16 - Not Fade Away (Norman Petty/Charles Hardin)
+ 
+
+Concert # 1058 of The Never-Ending Tour. 
+Concert # 12 of the 1999 US Winter Tour. 1999 concert # 12
+Concert # 205 with the 11th Never-Ending Tour Band: 
+        Bob Dylan (vocal & guitar), 
+        Bucky Baxter (pedal steel guitar & electric slide guitar), 
+        Larry Campbell (guitar), 
+        Tony Garnier (bass), 
+        David Kemper (drums & percussion).
+
+6-9, 15  acoustic with the band.
+9, 15  Bob Dylan harmonica.
+1, 5, 7, 16  Bucky Baxter and Larry Campbell backup vocal. 
+
+7 new songs (43%) compared to previous concert. 1 new song for this tour.
+
+Stereo audience recording, 100 minutes.
+
+
+derived from LB-02437 ; 72min+34min ; 2CDR ; Rating: A
+some track bounderies have been edited
+ 
+2/10/99 Veterans Memorial, columbus, OH
+
+Complete Show, Excellent Audience from CD Master, 
+SchoepsCMC64 > Sonosax SX-M2 > Panasonic SV 255 >, 
+Master DAT > CDR > CDWAVE > FLAC
+--------------------------------------------------------------------------------
+bittorrent download 02/05; excellent sound [A]
+--------------------------------------------------------------------------------
+drop/cut between cdrs, d2t3 0:00, d2t4 0:00, d2t5 0:00
+--------------------------------------------------------------------------------
+CD1
+1)Serve Somebody, 2)Million Miles, 3)Memphis, 4)Simple Twist, 5)Silvio, 6)Tambourine, 7)Friend of the Devil, 8)North country, 9)Tangled, 10)Honky Tonk, 11)I can't wait, 
+
+CD2
+1)Highway, 2)Lovesick, 3)Maggie's, 4)Back Pages, 5)Not Fade Away 
+--------------------------------------------------------------------------------
+
+ 
+===================
+===================
+===================
+=== shntool_len.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     4:18.29       45579452    ---   --   ---xx   1-01 - Gotta Serve Somebody.flac
+     5:26.16       57544076    ---   --   ---xx   1-02 - Million Miles.flac
+     7:01.09       74286564    -b-   --   ---xx   1-03 - Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:59.60       74051812    -b-   --   ---xx   1-04 - Simple Twist Of Fate.flac
+     6:06.08       64581260    ---   --   ---xx   1-05 - Silvio.flac
+     6:26.24       68146848    -b-   --   ---xx   1-06 - Mr. Tambourine Man.flac
+     6:30.66       68951320    -b-   --   ---xx   1-07 - Friend Of The Devil.flac
+     6:03.41       64129676    ---   --   ---xx   1-08 - Girl From The North Country.flac
+    11:15.04      119079452    ---   --   ---xx   1-09 - Tangled Up In Blue.flac
+     4:26.68       47082380    ---   --   ---xx   1-10 - Honky Tonk Blues.flac
+     6:52.56       72808556    ---   --   ---xx   1-11 - Can't Wait.flac
+     9:11.25       97255244    ---   --   ---xx   2-12 - Highway 61 Revisited.flac
+     5:47.13       61241420    ---   --   ---xx   2-13 - Love Sick.flac
+     6:34.41       69598076    ---   --   ---xx   2-14 - Maggie's Farm.flac
+     7:08.54       75626252    ---   --   ---xx   2-15 - My Back Pages.flac
+     4:28.26       47336396    ---   --   ---xx   2-16 - Not Fade Away.flac
+   104:37.15     1107298784 B                     (totals for 16 files, 0.5876 overall compression ratio)
+===================
+===================
+===================

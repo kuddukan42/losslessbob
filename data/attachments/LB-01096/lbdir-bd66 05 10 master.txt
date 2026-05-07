@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66 05 10 master 
+=================== 
+=================== 
+=================== 
+e031d08ff7dfadc62dda86771c2aa662  66 05 10 d1 t01.shn
+ec1e039039dd2732f0cd691fa800a6ee  66 05 10 d1 t02.shn
+bf7d2678ba2940b1c4eafecb695afdee  66 05 10 d1 t03.shn
+5599ae7b34124c68e899e3a8edb2651e  66 05 10 d1 t04.shn
+08053fda8cede59f0c0936ff66932a64  66 05 10 d1 t05.shn
+e6a767a5b4c075ae8612f6413f47219c  66 05 10 d1 t06.shn
+7f08c0d0a96b8a54be6e07f0123a1c6c  66 05 10 d1 t07.shn
+88b2c7d95e27cf1a9c2745a8881e4ff5  66 05 10 d2 t01.shn
+2e6f5711ef67355f4281ba7ff6e69062  66 05 10 d2 t02.shn
+3bb4616d54ee3534cc99a526edad1aba  66 05 10 d2 t03.shn
+2e52766581b389809ee4c3cd8bf7a964  66 05 10 d2 t04.shn
+6a5d4a1c41cdf23d45a5436a3a620d85  66 05 10 d2 t05.shn
+b435530e6d0fecb99e9886e5ad5c924c  66 05 10 d2 t06.shn
+5ddc99afa45b11d85473cba503e6ade4  66 05 10 d2 t07.shn
+18dcdff69962541e8cdaf79517547a9f  66 05 10 d2 t08.shn
+721753795cfd89b06bdd5cc818d6101b  66 05 10 master.md5
+50680401691e1eec545dc24bc01d27a7  bd66-05-10.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd66 05 10 master 
+=================== 
+=================== 
+=================== 
+66288ba4dd2d99a1a09e657693e62e2c  [shntool]  66_05_10_d1_t01.wav
+cce92dc2dd5bdd5df1044f5276f35345  [shntool]  66_05_10_d1_t02.wav
+08905ea5baab9f2c1c4c4df7f77d9982  [shntool]  66_05_10_d1_t03.wav
+a7b885ec4e41ac7056f7293844d9ce5c  [shntool]  66_05_10_d1_t04.wav
+94e25b50f4fab182778f7f561c49952e  [shntool]  66_05_10_d1_t05.wav
+90ca9429dbb076fcea770f99e36af44c  [shntool]  66_05_10_d1_t06.wav
+c57b3cceab0b3ad527e3dfc25dbaf99a  [shntool]  66_05_10_d1_t07.wav
+4066dc6a0243c2c071b69e89b32f7003  [shntool]  66_05_10_d2_t01.wav
+57f69f93a43976da1d9d847b66ae2713  [shntool]  66_05_10_d2_t02.wav
+29a4d8038a953227856bead7100d3def  [shntool]  66_05_10_d2_t03.wav
+71278c72f657ff977a0f98a993360ee9  [shntool]  66_05_10_d2_t04.wav
+f827d4c87ec4ab150b98f410b1b10a07  [shntool]  66_05_10_d2_t05.wav
+24c56868e59dc9f8875fe61f17876bb5  [shntool]  66_05_10_d2_t06.wav
+1383371838d5e6abbfdc700156572cbc  [shntool]  66_05_10_d2_t07.wav
+5bab41ac2d385eeeead61a3f567f321e  [shntool]  66_05_10_d2_t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66 05 10 master 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.15       40078124 B   ---   --   ---xx    shn  0.4744  66 05 10 d1 t01.shn
+     4:38.34       49119212 B   ---   --   ---xx    shn  0.4676  66 05 10 d1 t02.shn
+     7:53.60       83578364 B   ---   --   ---xx    shn  0.4480  66 05 10 d1 t03.shn
+     5:29.07       58052108 B   ---   --   ---xx    shn  0.4634  66 05 10 d1 t04.shn
+    10:28.09      110800412 B   ---   --   ---xx    shn  0.4441  66 05 10 d1 t05.shn
+     5:22.03       56807900 B   ---   --   ---xx    shn  0.4714  66 05 10 d1 t06.shn
+     8:25.20       89129084 B   ---   --   ---xx    shn  0.4822  66 05 10 d1 t07.shn
+     5:32.64       58715372 B   ---   --   ---xx    shn  0.5184  66 05 10 d2 t01.shn
+     5:50.23       61794140 B   ---   --   ---xx    shn  0.5243  66 05 10 d2 t02.shn
+     3:58.12       42011468 B   ---   --   ---xx    shn  0.5319  66 05 10 d2 t03.shn
+     5:42.08       60347660 B   ---   --   ---xx    shn  0.5399  66 05 10 d2 t04.shn
+     3:42.11       39186716 B   ---   --   ---xx    shn  0.5419  66 05 10 d2 t05.shn
+     3:38.12       38483468 B   ---   --   ---xx    shn  0.5323  66 05 10 d2 t06.shn
+     7:23.52       78267548 B   ---   --   ---xx    shn  0.5258  66 05 10 d2 t07.shn
+     7:39.01       80969996 B   ---   --   ---xx    shn  0.5731  66 05 10 d2 t08.shn
+    89:30.31      947341572 B                            0.4986  (15 files)
+=================== 
+=================== 
+=================== 

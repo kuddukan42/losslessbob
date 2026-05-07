@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-02-02-b.flacf 
+=================== 
+=================== 
+=================== 
+da249045bd5a71b4c280089c27b7795e  d1\1 Piste audio.flac
+42add4c5fc527b9da3bd40060ea89bb1  d1\10 Piste audio.flac
+b9392d3efc2f14ea750ca96ea1a3743f  d1\2 Piste audio.flac
+fc23b601009835424aafd8ee929d3443  d1\3 Piste audio.flac
+784b86a68cc2bdc283254bd52f7e2cd0  d1\4 Piste audio.flac
+364cf659484bd9a969e722c22e858680  d1\5 Piste audio.flac
+83fd2d466890defd24086505ae0e059d  d1\6 Piste audio.flac
+50d01c5d1c8922693b42be184e3e66dc  d1\7 Piste audio.flac
+1e917e6654893d3e50feb72a256a177b  d1\8 Piste audio.flac
+2aa121589a4604a752dad36c96fa0cd3  d1\9 Piste audio.flac
+559ae54ba65200045b0df1c9815f10d4  d1\md5sum.md5
+951447ac495e3d6e660cef7ac368a625  d2\1 Piste audio.flac
+65a7383d9bdce9dd46bdfad9149b0bcf  d2\2 Piste audio.flac
+2fd1e7bebef4b5c928179346c18fca17  d2\3 Piste audio.flac
+7ea9ffd35d353e859340c7ea1bece2cf  d2\4 Piste audio.flac
+c0348ba10a3f8a84449731735015f531  d2\5 Piste audio.flac
+2c29d0b557136b43b68076ed7c2c7789  d2\6 Piste audio.flac
+fce594a2f7ac4e143b43d0abe2e45d14  d2\7 Piste audio.flac
+7f3e13281ae617e33dfa0ebe3d92a128  d2\8 Piste audio.flac
+7b911a8bb7cfddcf29c118e5f0f109ee  d2\md5sum.md5
+bcaaebaaafb8fef298040469443630a2  fingerprint.ffp.txt
+b4fa08146038309e4857c1f007ffdf31  text.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-02-02-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+1 piste audio.flac:5e3e502fba64114cd25edd01a2d7c08c
+10 piste audio.flac:1e223db139ace977571904080328dd5f
+2 piste audio.flac:d12b4e8c8908acada38fb59db4fdf83e
+3 piste audio.flac:e9a907e598daeb54ce0efb6fa0b7c5cd
+4 piste audio.flac:88b77ad0374e81c5ba048fcfafe2dc82
+5 piste audio.flac:315357e9ba55ce623acba9ce3e1b0768
+6 piste audio.flac:84f7f3a0018ecf1e7118480c992bb6f4
+7 piste audio.flac:4cf2c9946e4e217cc5faf41de53deb3f
+8 piste audio.flac:484eee2619310bda1d4ec733368b1ab4
+9 piste audio.flac:05e59c15293abde1a5fe83f34835ad96
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-02-02-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+1 piste audio.flac:975face8c8bc74504e2328acbacd51fc
+2 piste audio.flac:1de1772f85663159c707dca538676615
+3 piste audio.flac:9ec97cfd376cb136ebac9ac3a512e9ac
+4 piste audio.flac:e9be4a74ba98a9ff30e5be75d4df14a2
+5 piste audio.flac:c3f12a71578ab447d442623e31a225ca
+6 piste audio.flac:3bac2095072d43faed3ecdd94cdbc484
+7 piste audio.flac:bb31f07255d8be3d41077d6abaf3ebc0
+8 piste audio.flac:525119255ad9efb70c4d77b3d00d36fc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-02-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.68       47082380 B   ---   --   ---xx   flac  0.6467  1 Piste audio.flac
+     5:03.06       53463356 B   ---   --   ---xx   flac  0.6727  10 Piste audio.flac
+     3:54.63       41425820 B   ---   --   ---xx   flac  0.6142  2 Piste audio.flac
+     3:22.40       35726924 B   ---   --   ---xx   flac  0.6648  3 Piste audio.flac
+     7:11.30       76099004 B   ---   --   ---xx   flac  0.6523  4 Piste audio.flac
+     6:17.44       66606332 B   ---   --   ---xx   flac  0.6048  5 Piste audio.flac
+     3:04.40       32551724 B   ---   --   ---xx   flac  0.6798  6 Piste audio.flac
+     3:57.61       41950316 B   ---   --   ---xx   flac  0.6218  7 Piste audio.flac
+     5:55.39       62713772 B   ---   --   ---xx   flac  0.6184  8 Piste audio.flac
+     5:28.57       57993308 B   ---   --   ---xx   flac  0.6335  9 Piste audio.flac
+    48:42.73      515612936 B                            0.6386  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-02-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.39       43309772 B   ---   --   ---xx   flac  0.6518  1 Piste audio.flac
+     5:45.01       60860396 B   ---   --   ---xx   flac  0.6478  2 Piste audio.flac
+     5:14.34       55469612 B   ---   --   ---xx   flac  0.6697  3 Piste audio.flac
+     3:15.68       34557980 B   ---   --   ---xx   flac  0.5890  4 Piste audio.flac
+     5:31.07       58404908 B   ---   --   ---xx   flac  0.6321  5 Piste audio.flac
+     5:10.02       54688748 B   ---   --   ---xx   flac  0.6537  6 Piste audio.flac
+     5:22.15       56836124 B   ---   --   ---xx   flac  0.6191  7 Piste audio.flac
+     6:00.58       63640460 B   ---   --   ---xx   flac  0.6373  8 Piste audio.flac
+    40:24.74      427768000 B                            0.6395  (8 files)
+=================== 
+=================== 
+=================== 

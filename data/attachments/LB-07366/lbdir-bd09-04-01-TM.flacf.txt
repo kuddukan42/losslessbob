@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-01-TM.flacf 
+=================== 
+=================== 
+=================== 
+b103ee0a08ce20fd187d4b831a6f90b7  CD 1\Dylan_2009_04_01_Berlin_TM_D1_01.flac
+c073910cbbdb09c31b64fe3a8cbf7ff5  CD 1\Dylan_2009_04_01_Berlin_TM_D1_02.flac
+66a5be9e7b0f036a2834d1ed6abb58f9  CD 1\Dylan_2009_04_01_Berlin_TM_D1_03.flac
+e5ee327ae11054a0cf4ea728b6fbbffc  CD 1\Dylan_2009_04_01_Berlin_TM_D1_04.flac
+14a574942e504e09e98ef75d6ecd2106  CD 1\Dylan_2009_04_01_Berlin_TM_D1_05.flac
+7b1de965afeaa82d4c292ad3c586a9d0  CD 1\Dylan_2009_04_01_Berlin_TM_D1_06.flac
+0b6d96edb4d98ef1904eb18559c3781a  CD 1\Dylan_2009_04_01_Berlin_TM_D1_07.flac
+3aecaf8ef2653ad85d255fdba204fb15  CD 1\Dylan_2009_04_01_Berlin_TM_D1_08.flac
+831ce31ac1fa62cbbc421836547bc069  CD 1\Dylan_2009_04_01_Berlin_TM_D1_09.flac
+9ee9ea1f324359f34720353d41f701c2  CD 1\Dylan_2009_04_01_Berlin_TM_D1_10.flac
+bc753114736eeb06e6c1bc63c2c79ab5  CD 1\Dylan_2009_04_01_Berlin_TM_D1_11.flac
+997ee26a614f83522a60d18095d76cdf  CD 1\Dylan_2009_04_01_Berlin_TM_D1_12.flac
+595367451e07bc96b07c38ca48a1c355  CD 1\Dylan_2009_04_01_Berlin_TM_D1_13.flac
+862de98eb79c8bc851efdd3e85ad2fd6  CD 1\Dylan_2009_04_01_Berlin_TM_shntool_len_1.txt
+d6be1afd16a30d50e10e7486d9d2a333  CD 2\Dylan_2009_04_01_Berlin_TM_D2_01.flac
+9ed07ed5d829788bdb0721e8f1a64680  CD 2\Dylan_2009_04_01_Berlin_TM_D2_02.flac
+5413fc6efb873971615b42d9f0dd03e6  CD 2\Dylan_2009_04_01_Berlin_TM_D2_03.flac
+279ee2232330e4d4a17aac4d1b8887c9  CD 2\Dylan_2009_04_01_Berlin_TM_D2_04.flac
+2784b67e7077ff806288e9e09999cf48  CD 2\Dylan_2009_04_01_Berlin_TM_D2_05.flac
+745cd3657aeb34a6f4f1a78b347fc535  CD 2\Dylan_2009_04_01_Berlin_TM_D2_06.flac
+14d7ef069b0d62f16176697c210e2cd0  CD 2\Dylan_2009_04_01_Berlin_TM_shntool_len_2.txt
+970c794492133d7e425aef3274178490  CD 2\Dylan_2009_04_04_Munchen_TM_D1_08.flac
+0c4e2042ab6fd0f83e390df2de380ea4  CD 2\Dylan_2009_04_04_Munchen_TM_D1_09.flac
+e34e716df0372e690787d18a251d6b47  CD 2\Dylan_2009_04_04_Munchen_TM_D1_10.flac
+b202ecf097216aac7b3336558f5e9c91  Dylan_2009_04_01_Berlin_TM.md5
+1e40e7e0a0e8675d47698c58eba5977b  Dylan_2009_04_01_Berlin_TM_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-01-TM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+Dylan_2009_04_01_Berlin_TM_D1_01.flac:2ed84cf10194742827ed060417773df4
+Dylan_2009_04_01_Berlin_TM_D1_02.flac:9ca9cc1393c495d1d88298fd310d72b7
+Dylan_2009_04_01_Berlin_TM_D1_03.flac:696129c58240986b98e40b4f2f8cc2a8
+Dylan_2009_04_01_Berlin_TM_D1_04.flac:e7761abbc952163a694b44b3b4cbe038
+Dylan_2009_04_01_Berlin_TM_D1_05.flac:758abc0a5f1418b65c9648a170ae3a12
+Dylan_2009_04_01_Berlin_TM_D1_06.flac:0a020552d5156e008a03770114b860b2
+Dylan_2009_04_01_Berlin_TM_D1_07.flac:77b132f1a4e40142073db96cd4251a81
+Dylan_2009_04_01_Berlin_TM_D1_08.flac:8375825ba36660b1c2fc9c5a079fa09e
+Dylan_2009_04_01_Berlin_TM_D1_09.flac:202d5c1a25a1f8d84e8769b9b0c9d43d
+Dylan_2009_04_01_Berlin_TM_D1_10.flac:1b525c0e9be095a714403e3612c2336e
+Dylan_2009_04_01_Berlin_TM_D1_11.flac:0d520c8e4a3e2772f3626f4c6c7b5edf
+Dylan_2009_04_01_Berlin_TM_D1_12.flac:9eb7b30b8998ac9a307811a75c9a9cb4
+Dylan_2009_04_01_Berlin_TM_D1_13.flac:ce485e005a32b00577321508fb0cb20e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-01-TM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+Dylan_2009_04_01_Berlin_TM_D2_01.flac:aaf39af65e3888d96cfd1c7e5f14e105
+Dylan_2009_04_01_Berlin_TM_D2_02.flac:d5ad4125b5f86e8f0cae2857860b77a4
+Dylan_2009_04_01_Berlin_TM_D2_03.flac:9530d9f169c3ccee1575c9f5a00bcc34
+Dylan_2009_04_01_Berlin_TM_D2_04.flac:9a34c5a0bba0cbb442eb94925ec602fa
+Dylan_2009_04_01_Berlin_TM_D2_05.flac:940224c561a59b638624c7892d8c2d03
+Dylan_2009_04_01_Berlin_TM_D2_06.flac:e3d6e15ef959d4666c83e3daa6f244a6
+Dylan_2009_04_04_Munchen_TM_D1_08.flac:d17025a8464632dd24070141a03a7baa
+Dylan_2009_04_04_Munchen_TM_D1_09.flac:5921e741a919095461e296a94abf8085
+Dylan_2009_04_04_Munchen_TM_D1_10.flac:03a6178210afc229544627f23c9b37fa
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-01-TM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.74       10758924 B   -b-   --   ---xx   flac  0.6090  Dylan_2009_04_01_Berlin_TM_D1_01.flac
+     3:18.25       34987084 B   -b-   --   ---xx   flac  0.6075  Dylan_2009_04_01_Berlin_TM_D1_02.flac
+     6:25.04       67923724 B   -b-   --   ---xx   flac  0.6163  Dylan_2009_04_01_Berlin_TM_D1_03.flac
+     4:03.01       42866604 B   -b-   --   ---xx   flac  0.6109  Dylan_2009_04_01_Berlin_TM_D1_04.flac
+     7:36.20       80484844 B   -b-   --   ---xx   flac  0.6286  Dylan_2009_04_01_Berlin_TM_D1_05.flac
+     6:14.62       66119724 B   -b-   --   ---xx   flac  0.5957  Dylan_2009_04_01_Berlin_TM_D1_06.flac
+     6:38.03       70215244 B   -b-   --   ---xx   flac  0.6230  Dylan_2009_04_01_Berlin_TM_D1_07.flac
+     4:57.19       52435724 B   -b-   --   ---xx   flac  0.6134  Dylan_2009_04_01_Berlin_TM_D1_08.flac
+     5:58.17       63191084 B   -b-   --   ---xx   flac  0.5279  Dylan_2009_04_01_Berlin_TM_D1_09.flac
+     6:40.13       70590124 B   -b-   --   ---xx   flac  0.6333  Dylan_2009_04_01_Berlin_TM_D1_10.flac
+     5:51.62       62061164 B   -b-   --   ---xx   flac  0.6076  Dylan_2009_04_01_Berlin_TM_D1_11.flac
+     6:42.74       71087948 B   -b-   --   ---xx   flac  0.6475  Dylan_2009_04_01_Berlin_TM_D1_12.flac
+     7:03.00       74616876 B   -b-   --   ---xx   flac  0.5837  Dylan_2009_04_01_Berlin_TM_D1_13.flac
+    72:29.74      767339068 B                            0.6087  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-01-TM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:22.74       67559468 B   -b-   --   ---xx   flac  0.6352  Dylan_2009_04_01_Berlin_TM_D2_01.flac
+    12:01.03      127191076 B   -b-   --   ---xx   flac  0.6198  Dylan_2009_04_01_Berlin_TM_D2_02.flac
+     4:55.62       52183084 B   -b-   --   ---xx   flac  0.6257  Dylan_2009_04_01_Berlin_TM_D2_03.flac
+     6:47.63       71942228 B   -b-   --   ---xx   flac  0.5545  Dylan_2009_04_01_Berlin_TM_D2_04.flac
+     0:41.74        7405572 B   -b-   --   ---xx   flac  0.6471  Dylan_2009_04_01_Berlin_TM_D2_05.flac
+     5:56.03       62804692 B   -b-   --   ---xx   flac  0.6020  Dylan_2009_04_01_Berlin_TM_D2_06.flac
+     6:17.16       66541632 B   -b-   --   ---xx   flac  0.5398  Dylan_2009_04_04_Munchen_TM_D1_08.flac
+     5:05.73       53973036 B   -b-   --   ---xx   flac  0.6120  Dylan_2009_04_04_Munchen_TM_D1_09.flac
+     5:36.59       59408428 B   -b-   --   ---xx   flac  0.5347  Dylan_2009_04_04_Munchen_TM_D1_10.flac
+    53:45.51      569009216 B                            0.5933  (9 files)
+=================== 
+=================== 
+=================== 

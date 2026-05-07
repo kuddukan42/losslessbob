@@ -1,0 +1,60 @@
+Bob Dylan
+Wahconah Park
+Pittsfield, Massachusetts
+2005-06-23
+
+01. introduction
+02. Drifter's Escape
+03. Just Like Tom Thumb's Blues
+04. It's Alright, Ma (I'm Only Bleeding)
+05. Moonlight
+06. Down Along The Cove
+07. Girl Of The North Country
+08. High Water (For Charley Patton)
+09. Every Grain Of Sand
+10. Highway 61 Revisited
+11. Blind Willie McTell
+12. Chimes Of Freedom
+13. Summer Days
+14. crowd
+15. It Ain't Me, Babe
+16. band introduction
+17. Like A Rolling Stone	 
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Donnie Herron - mandolin, steel guitar, banjo
+Denny Freeman - guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+akg391's > denecke ps-2/ad-20 > sony tcd-d8
+sony tcd-d8 > tascam cd-rw700 > cdr > eac > hdd
+sound forge 9.0 > cd wave > foobar > tlh
+
+suggested CD split:
+CD 1 - tracks 01 - 11
+CD 2 - tracks 12 - 17
+
+ffp
+bd2005-06-23t01.flac:890ef733f06cb84195280b9cc772a9a4
+bd2005-06-23t02.flac:3acf811c9dd443111b574bae531d2e6e
+bd2005-06-23t03.flac:8cde8e30345f2598d7e3e819d50ed120
+bd2005-06-23t04.flac:b27e72a027e86d383ff7a4adcc578870
+bd2005-06-23t05.flac:95c043da21c26adc4948d73e43e2b4d7
+bd2005-06-23t06.flac:317adaa6c4ac5172a1ee79529f23f61c
+bd2005-06-23t07.flac:1540ff7edc13820f7b332e0a507d3d90
+bd2005-06-23t08.flac:96a66ff6d4bf59ffe585cf0f028a5daf
+bd2005-06-23t09.flac:4247e49227ffa57a4eec0b009f023e7b
+bd2005-06-23t10.flac:f6fcc590188fb84ecb92ce8244b9f7a9
+bd2005-06-23t11.flac:240a5a19ad2b0585aefb8a3e58788a01
+bd2005-06-23t12.flac:16a4c7eedbc59517d45fd1c7440029d7
+bd2005-06-23t13.flac:eecfcc604ff87586ffd4ca017fcbef7d
+bd2005-06-23t14.flac:bde1c06ad1796d22ac567b8ec7ce38ed
+bd2005-06-23t15.flac:6d4cb33fead706e2efae17a523b4e0fe
+bd2005-06-23t16.flac:ab06780c8d30f1f08e87049d5990edc6
+bd2005-06-23t17.flac:24a979b895bc0ee04bedb1f37cdb9672
+
+bd2005-06-23.akg391.soomlos.flac16 created 2009-03-10 v1.02

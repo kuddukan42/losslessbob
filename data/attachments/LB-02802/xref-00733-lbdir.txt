@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-01-27-street-tape-b.flacf 
+=================== 
+=================== 
+=================== 
+ea7c730d28b1a32261e3eb7305763ced  1978 The Street Tape.txt
+9ae28157ab44bbca680cd38134c5b3c9  bd 1978 'street' tape.ffp
+51e66c510f26704a10b217855f95ff45  bd 1978 'street' tape.md5
+875de8c311fe0a3566fb53dc976fe62d  dylan-1978-01-StreetTape-t01.flac
+9a823038f6da215deed562a06c73176f  dylan-1978-01-StreetTape-t02.flac
+c72c7fb4a9c30851004a29782b554db3  dylan-1978-01-StreetTape-t03.flac
+08c835956fe327c58d367c03659a52bf  dylan-1978-01-StreetTape-t04.flac
+0e06364e6cb551eb4a764fb7442e6e85  dylan-1978-01-StreetTape-t05.flac
+b4b969524244490be6624353ded806b3  dylan-1978-01-StreetTape-t06.flac
+6e8d95fb7ba7a6eb5f008ac76a360722  dylan-1978-01-StreetTape-t07.flac
+6b75deb9676dbf01f2642bb6d275bb0a  dylan-1978-01-StreetTape-t08.flac
+8d8667c317bbdfd5b4e4d90d7814963f  dylan-1978-01-StreetTape-t09.flac
+6af04608e0f16f2f5b6a8a5f82672cf9  dylan-1978-01-StreetTape-t10.flac
+17910f3ecabafe833871173cca1b8f4c  dylan-1978-01-StreetTape-t11.flac
+a2e8d2f473b319bfeb3447ccd958d7c6  dylan-1978-01-StreetTape-t12.flac
+1311d14390b6fd1b10182d3e9aea8def  dylan-1978-01-StreetTape-t13.flac
+21965f45f1dc410b7422657c85b28e44  dylan-1978-01-StreetTape-t14.flac
+afd3e8cb7e41843149415eaad595264f  dylan-1978-01-StreetTape-t15.flac
+2b62a73b3e48d07629a16e0d7c5b059e  dylan-1978-01-StreetTape-t16.flac
+7120e6d35ab6be2aea810c67781acc50  dylan-1978-01-StreetTape-t17.flac
+377aceea00623a55607a3557d6cf2407  dylan-1978-01-StreetTape-t18.flac
+a1eefc209a756682e924f9681e4db47a  dylan-1978-01-StreetTape-t19.flac
+1f4a4e885d5b1bc9e946e5e2953d57cc  dylan-1978-01-StreetTape-t20.flac
+b90fc4e5afb055ad2238c767eb1fd109  dylan-1978-01-StreetTape-t21.flac
+a18767fd1cc0cc2098476d00995731a4  dylan-1978-01-StreetTape-t22.flac
+768a3187f2b78441275237e658f6ff3b  dylan-1978-01-StreetTape-t23.flac
+fa0f58ed6bd405d79eab5005970ebbcb  dylan-1978-01-StreetTape-t24.flac
+b9c4958c971c5634cf495ce1d1993e74  dylan-1978-01-StreetTape-t25.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-01-27-street-tape-b.flacf 
+=================== 
+=================== 
+=================== 
+dylan-1978-01-StreetTape-t01.flac:919d056345f07962f7acff865189049e
+dylan-1978-01-StreetTape-t02.flac:0297b62f2e9d211bc503a83f15221775
+dylan-1978-01-StreetTape-t03.flac:74dc6bb117c17e9f934fe765b8afa2ec
+dylan-1978-01-StreetTape-t04.flac:9439eb7278ad3bcad761dafdd7b94f5e
+dylan-1978-01-StreetTape-t05.flac:ce93b24ece76d660e1912e011e1f7303
+dylan-1978-01-StreetTape-t06.flac:f821093895fb6d27f0b396c37dfe08e2
+dylan-1978-01-StreetTape-t07.flac:fff07f862e04b4e13601051d8288c282
+dylan-1978-01-StreetTape-t08.flac:048664636214e90157c98d1a32961795
+dylan-1978-01-StreetTape-t09.flac:f557b92d681ad6f5338b4a2b56aba9e9
+dylan-1978-01-StreetTape-t10.flac:b11876b8d9abb7fd6d50996143dabbbe
+dylan-1978-01-StreetTape-t11.flac:e21d7737972343019143df547a684d67
+dylan-1978-01-StreetTape-t12.flac:0f621cafb35981274fdfa3ecbfca600d
+dylan-1978-01-StreetTape-t13.flac:97cafd350c5f5e905d983dab6222cc4a
+dylan-1978-01-StreetTape-t14.flac:447ed7497d797e324902b712f3f48780
+dylan-1978-01-StreetTape-t15.flac:71b2e2ee1d44e04b67e3cf0bb4993a58
+dylan-1978-01-StreetTape-t16.flac:9e0f1f834b923fe926acb8371ce3545e
+dylan-1978-01-StreetTape-t17.flac:5f5095efc45e6c90af013842f0670506
+dylan-1978-01-StreetTape-t18.flac:09dc971d61d75d159c140b4f2d00014a
+dylan-1978-01-StreetTape-t19.flac:1e3be3732d0fdffb3ed14ab9f901b868
+dylan-1978-01-StreetTape-t20.flac:3eaa25c8a0c351efa0ba53f3ba22220b
+dylan-1978-01-StreetTape-t21.flac:3198015935369f8181e55288305e4bd3
+dylan-1978-01-StreetTape-t22.flac:e4db3bc4ce67f8825f7ae902ea2c40e4
+dylan-1978-01-StreetTape-t23.flac:8f60d807458bb18e9e5163a521513747
+dylan-1978-01-StreetTape-t24.flac:d6f71c56358769dcafc1ade6390f7581
+dylan-1978-01-StreetTape-t25.flac:1d83c0f3288cc68ee8ce22484e6c01d8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-01-27-street-tape-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:25.66       15149276 B   ---   --   ---xx   flac  0.5009  dylan-1978-01-StreetTape-t01.flac
+     1:37.16       17148476 B   ---   --   ---xx   flac  0.4943  dylan-1978-01-StreetTape-t02.flac
+     2:40.62       28369868 B   ---   --   ---xx   flac  0.5015  dylan-1978-01-StreetTape-t03.flac
+     3:50.44       40675532 B   ---   --   ---xx   flac  0.4938  dylan-1978-01-StreetTape-t04.flac
+     1:14.05       13065404 B   ---   --   ---xx   flac  0.5125  dylan-1978-01-StreetTape-t05.flac
+     2:06.73       22398140 B   ---   --   ---xx   flac  0.5044  dylan-1978-01-StreetTape-t06.flac
+     0:53.21        9398636 B   ---   --   ---xx   flac  0.4986  dylan-1978-01-StreetTape-t07.flac
+     1:05.06       11480156 B   ---   --   ---xx   flac  0.4952  dylan-1978-01-StreetTape-t08.flac
+     0:51.11        9022316 B   ---   --   ---xx   flac  0.5099  dylan-1978-01-StreetTape-t09.flac
+     0:30.42        5390828 B   ---   --   ---xx   flac  0.5101  dylan-1978-01-StreetTape-t10.flac
+     3:09.39       33431372 B   ---   --   ---xx   flac  0.5169  dylan-1978-01-StreetTape-t11.flac
+     2:41.47       28510988 B   ---   --   ---xx   flac  0.5093  dylan-1978-01-StreetTape-t12.flac
+     0:51.72        9165788 B   ---   --   ---xx   flac  0.5089  dylan-1978-01-StreetTape-t13.flac
+     4:03.60       43006364 B   ---   --   ---xx   flac  0.5461  dylan-1978-01-StreetTape-t14.flac
+     6:00.28       63569900 B   ---   --   ---xx   flac  0.5100  dylan-1978-01-StreetTape-t15.flac
+     3:16.71       34741436 B   ---   --   ---xx   flac  0.5617  dylan-1978-01-StreetTape-t16.flac
+     6:50.16       72361676 B   ---   --   ---xx   flac  0.5785  dylan-1978-01-StreetTape-t17.flac
+     0:55.13        9732620 B   ---   --   ---xx   flac  0.5951  dylan-1978-01-StreetTape-t18.flac
+     7:04.32       74868908 B   ---   --   ---xx   flac  0.5619  dylan-1978-01-StreetTape-t19.flac
+     2:50.03       29995100 B   ---   --   ---xx   flac  0.5582  dylan-1978-01-StreetTape-t20.flac
+     3:19.18       35145980 B   ---   --   ---xx   flac  0.5207  dylan-1978-01-StreetTape-t21.flac
+     4:45.51       50393996 B   ---   --   ---xx   flac  0.5043  dylan-1978-01-StreetTape-t22.flac
+     4:07.09       43592012 B   ---   --   ---xx   flac  0.5166  dylan-1978-01-StreetTape-t23.flac
+     4:05.25       43276844 B   ---   --   ---xx   flac  0.5098  dylan-1978-01-StreetTape-t24.flac
+     1:18.44       13862732 B   ---   --   ---xx   flac  0.5106  dylan-1978-01-StreetTape-t25.flac
+    71:35.49      757754348 B                            0.5276  (25 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-14-c.flacf 
+=================== 
+=================== 
+=================== 
+fa7840b2854cd8050893a7b50ed3fca0  94-07-14 - 101-corr-fixed.flac
+641d211a76d989f58738e0cdf74fccf7  94-07-14 - 102-fixed.flac
+844023dd4f3dce7654834976343b5e6f  94-07-14 - 103-fixed.flac
+88d6e5039b9d13056aee67012fb0962a  94-07-14 - 104-fixed.flac
+b5a790b5f7f3aa474fec4973d29b46da  94-07-14 - 105-fixed.flac
+164b41f3841d33d068c4e20608fc095a  94-07-14 - 106-fixed.flac
+c5d372cbcbc0c20c4e9fe21e4d777504  94-07-14 - 107-fixed.flac
+71ab67b57ea802f2d6d539d4716059bd  94-07-14 - 201-fixed.flac
+4de5e972b2fcab5e4489fd7b9f1ca202  94-07-14 - 202-fixed.flac
+6670684b4efb4703dd079397d342061b  94-07-14 - 203-fixed.flac
+104087c96f664ee36b02f73b1ebb0893  94-07-14 - 204-fixed.flac
+0b8b205869d9045da6f18d7eb4ddd47f  94-07-14 - 205-fixed.flac
+ed81bc30a7931710f6b9582e333926e3  94-07-14 - 206-fixed.flac
+7e910e1990e5cf6140d38d8aecc51aa9  94-07-14 - 207-fixed.flac
+88e8172d732feb719480de79dbd7d49d  bd1994-07-14_graz_back.jpg
+ec8d5b8c8db0e7cbd2c5afc151d4ac47  bd1994-07-14_graz_front.jpg
+1fdcb4c04a39e1f0869a7dd544ec6b49  bd94-07-14 raw.ffp
+9ad76c2db15b62cf044c879038e17117  bd94-07-14 raw.md5
+2c6b605c30c5f533e662a0940e64ffd3  bd94-07-14-raw.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-14-c.flacf 
+=================== 
+=================== 
+=================== 
+94-07-14 - 101-corr-fixed.flac:16ae590f84a29f3f617919ee22f1ebf9
+94-07-14 - 102-fixed.flac:9608fc90cfde3dbf6b33650a2ed63591
+94-07-14 - 103-fixed.flac:d8eff74b7bb2961d3a11c97c842b99a8
+94-07-14 - 104-fixed.flac:dadd8f308757ab3b3dab5d896b144539
+94-07-14 - 105-fixed.flac:dca4ea893157a571e48d4456e558accd
+94-07-14 - 106-fixed.flac:ee68a54e637c7dbe881e8f93bf5e142f
+94-07-14 - 107-fixed.flac:af09378b5296da28c60aef40ecabeda4
+94-07-14 - 201-fixed.flac:278e5b764dcfcfbb386c2d768b89b4c6
+94-07-14 - 202-fixed.flac:2577a5f07cf1aaab52232df5b4fa1ed0
+94-07-14 - 203-fixed.flac:cbf15ce681ba194151e8f09d88ef0adc
+94-07-14 - 204-fixed.flac:725b74c145beb1e2f136c069ec226eff
+94-07-14 - 205-fixed.flac:b58b6c8803c650242d69979f0e704330
+94-07-14 - 206-fixed.flac:c1ed80aa2c6a67e3b17e6258a54b1800
+94-07-14 - 207-fixed.flac:964a51e1eb78dda69d25904018b24782
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-14-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:40.09       81165212 B   ---   --   ---xx   flac  0.5730  94-07-14 - 101-corr-fixed.flac
+     5:52.01       62095196 B   ---   --   ---xx   flac  0.5495  94-07-14 - 102-fixed.flac
+     8:16.60       87635564 B   ---   --   ---xx   flac  0.5981  94-07-14 - 103-fixed.flac
+     9:39.70      102300284 B   ---   --   ---xx   flac  0.5284  94-07-14 - 104-fixed.flac
+     9:18.14       98464172 B   ---   --   ---xx   flac  0.5366  94-07-14 - 105-fixed.flac
+     8:26.02       89263148 B   ---   --   ---xx   flac  0.5986  94-07-14 - 106-fixed.flac
+     5:20.66       56603276 B   ---   --   ---xx   flac  0.4982  94-07-14 - 107-fixed.flac
+     5:48.59       61526012 B   ---   --   ---xx   flac  0.4292  94-07-14 - 201-fixed.flac
+     6:59.68       74071580 B   ---   --   ---xx   flac  0.4362  94-07-14 - 202-fixed.flac
+     5:42.45       60434684 B   ---   --   ---xx   flac  0.6199  94-07-14 - 203-fixed.flac
+     8:08.52       86205548 B   ---   --   ---xx   flac  0.5934  94-07-14 - 204-fixed.flac
+     7:13.33       76458860 B   ---   --   ---xx   flac  0.6189  94-07-14 - 205-fixed.flac
+     5:53.56       62400956 B   ---   --   ---xx   flac  0.6370  94-07-14 - 206-fixed.flac
+    10:47.06      114144956 B   ---   --   ---xx   flac  0.4819  94-07-14 - 207-fixed.flac
+   105:08.16     1112769448 B                            0.5491  (14 files)
+=================== 
+=================== 
+=================== 

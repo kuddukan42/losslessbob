@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-earls-court-lk-vinyl-boot.flacf 
+=================== 
+=================== 
+=================== 
+e57c882a64f963a691a162400073d9d6  1978 EC.rtf
+7df81aaeedff1b94df253a173176bc86  bd78-earls-court-lk-vinyl-boot-LB-4734.txt
+04ab530237cefa3469c81cedbc817fc5  Earls Court Vinyl Boot.md5
+12334abb26a3d1e652b737ce91fd3a19  EC 2001.flac
+7cc34513ceab8f2c1021c1da4c0071b7  EC 2002.flac
+f83b45fab1a0d4fb90ad7c983f5a7309  EC 2003.flac
+c28b30f3c09dcac284b2d246c29fd41b  EC 2004.flac
+6c946e296515574c9f5a7b0125a988bf  EC 2005.flac
+1673e28598c8f5544275a87e7c19efb5  EC 2006.flac
+bea3edca5f3d6a9098347b7328ad2f7f  EC 2007.flac
+18fa7a029fe243a6d359603f3511cdcd  EC 2008.flac
+f1f72007d79c93e51a293f450c2c5638  EC 2009.flac
+84a3a3fa4980cd243e8895562fb78376  EC 2010.flac
+a623a3b82984c2f05a1f22eef0807960  lbdir-bd78-06-lk-vinyl-boot.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-earls-court-lk-vinyl-boot.flacf 
+=================== 
+=================== 
+=================== 
+EC 2001.flac:d16fefbbe29cbd5c1fc45447de1f7f78
+EC 2002.flac:f643559817cb3de574c02b4f53814b03
+EC 2003.flac:6bb4452c5280c71df9d6b77a797a3837
+EC 2004.flac:619fad70245ca551110e1f874e0433e9
+EC 2005.flac:1829513f03f5dc873a6148ca8e8d6fd9
+EC 2006.flac:d861fd5c312e0edc1c90e9413ef9a95d
+EC 2007.flac:5c1bcc0c71e7e2db6cdf47a29cc86175
+EC 2008.flac:6a10ce307c85a070b3c291112beb56b9
+EC 2009.flac:0c4e5e0ed97d06302276eb4fec166307
+EC 2010.flac:f0c445c289ae4c7770312981541659fb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-earls-court-lk-vinyl-boot.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:39.09       49236812 B   ---   --   ---xx   flac  0.6368  EC 2001.flac
+     4:59.30       52814204 B   ---   --   ---xx   flac  0.6368  EC 2002.flac
+     4:07.04       43580252 B   ---   --   ---xx   flac  0.6169  EC 2003.flac
+     6:21.03       67215500 B   ---   --   ---xx   flac  0.6383  EC 2004.flac
+     4:55.38       52127420 B   ---   --   ---xx   flac  0.5939  EC 2005.flac
+     5:04.20       53672684 B   ---   --   ---xx   flac  0.6157  EC 2006.flac
+     4:08.73       43918940 B   ---   --   ---xx   flac  0.6393  EC 2007.flac
+     5:38.10       59646764 B   ---   --   ---xx   flac  0.6376  EC 2008.flac
+     4:58.32       52642508 B   ---   --   ---xx   flac  0.6180  EC 2009.flac
+     6:22.30       67455404 B   ---   --   ---xx   flac  0.5993  EC 2010.flac
+    51:14.24      542310488 B                            0.6230  (10 files)
+=================== 
+=================== 
+=================== 

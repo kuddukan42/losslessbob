@@ -1,0 +1,67 @@
+Bob Dylan
+Houston Fieldhouse
+Rensselaer Polytechnic Institute
+Troy, New York
+27 October 1989
+
+Musicians:  Bob Dylan (vocal, guitar, piano & harmonica), G. E. Smith (guitar), Tony Garnier (bass), Christopher Parker (drums).
+Source: Aud
+Lineage: Aud > ? > CD-Rs > EAC > CoolEdit Pro > CD Wave > FLAC Frontend > .flac
+Taped by: ?
+Transfered by: ?
+Sound Quality: A-
+Bootleg Title: n/a
+File Size: 657 megs .flac
+Note: Live debut of Disease Of Conceit.  d1t01 cut at start.  Mic bump @ d1t01 00:30.  Fade out/in @ d1t09 > d1t10, d1t11 > d1t12 & d2t02 6:27
+
+disk 1
+
+1. Gotta Serve Somebody
+2. What Good Am I?
+3. Ballad Of Hollis Brown
+4. Lenny Bruce
+5. I Want You
+6. I'll Be Your Baby Tonight
+7. Highway 61 Revisited
+8. Mama, You Been On My Mind
+9. A Hard Rain's A-Gonna Fall
+10. To Ramona
+11. It Ain't Me, Babe
+12. Everything Is Broken
+13. It Takes A Lot To Laugh, It Takes A Train To Cry
+14. My Back Pages
+15. I'll Remember You
+
+disk 2
+
+1. I Shall Be Released
+2. Like A Rolling Stone
+3. Disease Of Conceit
+4. Maggie's Farm
+
+disk 1 .flac fingerprints
+
+bd1989-10-27d1t01.flac:6d0989322f7bd464f3fbe65ebfb3ebd1
+bd1989-10-27d1t02.flac:5d1d2b4b791643279ad10bd287648df6
+bd1989-10-27d1t03.flac:ddd383159f7a23b9db690a8de7f1b613
+bd1989-10-27d1t04.flac:1addb29318669562ef3f2d8b12b7ed29
+bd1989-10-27d1t05.flac:f5d32ff9f0899529abbdce9eb78dda9c
+bd1989-10-27d1t06.flac:6ef85a265f1e4383446aa677b03e9067
+bd1989-10-27d1t07.flac:c27ab4edf027e363c064153ac44aab0e
+bd1989-10-27d1t08.flac:78ed174af64b5e68ab64ef4f48e82786
+bd1989-10-27d1t09.flac:edb4a059fc059fc1da19256debd94181
+bd1989-10-27d1t10.flac:5181899b0027df8bba0c31f039f3a1ba
+bd1989-10-27d1t11.flac:03d25dd2005e8dd0761955dec3be0e2e
+bd1989-10-27d1t12.flac:c4d0f83e2a8abf968d4617f84704b236
+bd1989-10-27d1t13.flac:9c8446b3c5b4e3972b6c61d31e932d24
+bd1989-10-27d1t14.flac:ee2f4809c511d66edeb78a5d79dd154a
+bd1989-10-27d1t15.flac:44f0045a6ad4aba0898b7e5f93ceb591
+
+disk 2 .flac fingerprints
+
+bd1989-10-27d2t01.flac:d9cb570b3ca5010f4b030cf80c393743
+bd1989-10-27d2t02.flac:a9ea88ec8f455f2552d04a3cac09c4a8
+bd1989-10-27d2t03.flac:5bfcf819bc17a873131d4f381f328c0d
+bd1989-10-27d2t04.flac:773c256205a70614ca274e7fcef658cc
+
+

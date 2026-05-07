@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-12-22-Minnesota-Hotel-Tape-HH.flacf 
+=================== 
+=================== 
+=================== 
+e6d052c46525c966d0987160f1fae18e  Bob Dylan Minnesota Hotel Tape dec 22 1961.md5
+8e16fb767015f9628ba8730a41d32174  The Home Of Dave Whittaker.doc
+4049bd09158104746aa788f33339b498  The Home Of Dave Whittaker.txt
+c347d69b388abbabaf2f894c4200465c  Torrent downloaded from Demonoid.com.txt
+70747d72bf2b448bf334711c6ee653fa  Unknown Artist -  - 01 - Track 1.flac
+950115c7459d73f1faef9a7d2eed5609  Unknown Artist -  - 02 - Track 2.flac
+22e0601d97d2786cb05bff7c7a8635fc  Unknown Artist -  - 03 - Track 3.flac
+ac9a0eadb4d46102298b57c7c7999f33  Unknown Artist -  - 04 - Track 4.flac
+ec7ebcbf3d7bacafe929cc81e6958886  Unknown Artist -  - 05 - Track 5.flac
+aec9d08faab8c0ba8cb615b16cc9478c  Unknown Artist -  - 06 - Track 6.flac
+ba362abebd00d19054a0baea32465925  Unknown Artist -  - 07 - Track 7.flac
+00a819c949fddbc34b150feecc7af7d1  Unknown Artist -  - 08 - Track 8.flac
+b2e644b12f46c86f4b8ddbc68a4395e6  Unknown Artist -  - 09 - Track 9.flac
+279c8006aa10166a041a3d2bf4aeb075  Unknown Artist -  - 10 - Track 10.flac
+f246ae0b3e2686d26f54f31ae905fd7a  Unknown Artist -  - 11 - Track 11.flac
+785eac9c0a9d082bb903e47b28d39440  Unknown Artist -  - 12 - Track 12.flac
+b7663c41acdf99794bf3a403c6c3dae2  Unknown Artist -  - 13 - Track 13.flac
+955f96d4340120a3b1cc5bdad615658a  Unknown Artist -  - 14 - Track 14.flac
+7a3fd42c856041b9d89b2051a5f7a160  Unknown Artist -  - 15 - Track 15.flac
+7079e7590ad32bf466bbeb0b9ee9a642  Unknown Artist -  - 16 - Track 16.flac
+0d160677a61fa1bc96d7e028c003213b  Unknown Artist -  - 17 - Track 17.flac
+146b2ba9c78f442b42ab345e51282423  Unknown Artist -  - 18 - Track 18.flac
+2a852c84cd21b450c6105267739b5de1  Unknown Artist -  - 19 - Track 19.flac
+973025d70a0cd3573c1e2bdc61fa1ac2  Unknown Artist -  - 20 - Track 20.flac
+289c095624eb63ad732ee8fac7c4eade  Unknown Artist -  - 21 - Track 21.flac
+de85e574e97dfe835c00f5635a4430c4  Unknown Artist -  - 22 - Track 22.flac
+22d327e27371a49fa9fe20cc22c56a9d  Unknown Artist -  - 23 - Track 23.flac
+2c6b1058e0ab14b107c1e7c00d19d5fd  Unknown Artist -  - 24 - Track 24.flac
+afdd862768eb00346602bf42ea16a69e  Unknown Artist -  - 25 - Track 25.flac
+8b02e643164cecd321c58ca3ea8b37cd  Unknown Artist -  - 26 - Track 26.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-12-22-Minnesota-Hotel-Tape-HH.flacf 
+=================== 
+=================== 
+=================== 
+unknown artist -  - 01 - track 1.flac:2039fe58f105539b9b2b545497c5a294
+unknown artist -  - 02 - track 2.flac:76c2d8f6f282c8b6243ddc06af76d415
+unknown artist -  - 03 - track 3.flac:72309f422d77e3eacd189231176cc940
+unknown artist -  - 04 - track 4.flac:d6da2fc79d84ffbee99edd0b2e565690
+unknown artist -  - 05 - track 5.flac:beff793501c48f1e509fc2c92cdb693a
+unknown artist -  - 06 - track 6.flac:36994dcb338144b2b90d9cdd3a9ec619
+unknown artist -  - 07 - track 7.flac:0df5013549cdb54089738da7151e4c6c
+unknown artist -  - 08 - track 8.flac:7098c34d32feb57fdd03bac6f4c0da37
+unknown artist -  - 09 - track 9.flac:eb0525ed5c959d5aadf10598d36a9f6f
+unknown artist -  - 10 - track 10.flac:e3d6f62425b4f603300e2675d2821943
+unknown artist -  - 11 - track 11.flac:c7a028950fa7d537c4ff3a33fbd4e3aa
+unknown artist -  - 12 - track 12.flac:f1a0e800cfe8480309227ee1dd4699ee
+unknown artist -  - 13 - track 13.flac:9591fae5c6537d91954ce93c89ba79c7
+unknown artist -  - 14 - track 14.flac:6a91d249a7b2ea50c3650503844d545b
+unknown artist -  - 15 - track 15.flac:c2236291e8cb56daa6ae92d49b6f3790
+unknown artist -  - 16 - track 16.flac:e06026c8628d55e0c7d2d339d199d8f0
+unknown artist -  - 17 - track 17.flac:b5856534ba717299580f9a627c65232e
+unknown artist -  - 18 - track 18.flac:cb7273c12068e8c0d753a98b251b7e13
+unknown artist -  - 19 - track 19.flac:bf6f4d3351b8490aac74979a92725a85
+unknown artist -  - 20 - track 20.flac:aa026fef7f3adb9bc1dd8da5f423642f
+unknown artist -  - 21 - track 21.flac:9107c419689072d66ea8ee2f406d91b6
+unknown artist -  - 22 - track 22.flac:3eeaeeecab5a21fb5533e8d4340d0094
+unknown artist -  - 23 - track 23.flac:899e426396bd375ff9e716f48b8bdb39
+unknown artist -  - 24 - track 24.flac:b040ff6af1a687e422010e74ffeb2d0b
+unknown artist -  - 25 - track 25.flac:c7646e25727e1eaa96a6bbb868d13152
+unknown artist -  - 26 - track 26.flac:e33c3bca0a0fcd30f8fa9db275b5366c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-12-22-Minnesota-Hotel-Tape-HH.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:11.66       33847676 B   ---   --   ---xx   flac  0.6502  Unknown Artist -  - 01 - Track 1.flac
+     4:18.02       45515948 B   ---   --   ---xx   flac  0.6656  Unknown Artist -  - 02 - Track 2.flac
+     2:21.29       24940652 B   ---   --   ---xx   flac  0.6560  Unknown Artist -  - 03 - Track 3.flac
+     2:18.04       24352652 B   ---   --   ---xx   flac  0.6595  Unknown Artist -  - 04 - Track 4.flac
+     4:27.73       47270540 B   ---   --   ---xx   flac  0.6671  Unknown Artist -  - 05 - Track 5.flac
+     2:08.02       22583948 B   ---   --   ---xx   flac  0.6610  Unknown Artist -  - 06 - Track 6.flac
+     3:04.44       32561132 B   ---   --   ---xx   flac  0.6506  Unknown Artist -  - 07 - Track 7.flac
+     4:59.34       52823612 B   ---   --   ---xx   flac  0.6476  Unknown Artist -  - 08 - Track 8.flac
+     3:36.41       38198876 B   ---   --   ---xx   flac  0.6764  Unknown Artist -  - 09 - Track 9.flac
+     1:29.71       15866636 B   ---   --   ---xx   flac  0.6612  Unknown Artist -  - 10 - Track 10.flac
+     3:06.70       32975084 B   ---   --   ---xx   flac  0.6470  Unknown Artist -  - 11 - Track 11.flac
+     3:02.58       32241260 B   ---   --   ---xx   flac  0.6599  Unknown Artist -  - 12 - Track 12.flac
+     5:57.64       63125372 B   ---   --   ---xx   flac  0.6639  Unknown Artist -  - 13 - Track 13.flac
+     4:01.59       42651212 B   ---   --   ---xx   flac  0.6419  Unknown Artist -  - 14 - Track 14.flac
+     3:09.39       33431372 B   ---   --   ---xx   flac  0.6704  Unknown Artist -  - 15 - Track 15.flac
+     1:36.32       17009708 B   ---   --   ---xx   flac  0.6316  Unknown Artist -  - 16 - Track 16.flac
+     1:32.61       16372316 B   ---   --   ---xx   flac  0.6225  Unknown Artist -  - 17 - Track 17.flac
+     6:25.12       67942268 B   ---   --   ---xx   flac  0.6736  Unknown Artist -  - 18 - Track 18.flac
+     2:20.56       24827756 B   ---   --   ---xx   flac  0.6510  Unknown Artist -  - 19 - Track 19.flac
+     1:55.34       20366012 B   ---   --   ---xx   flac  0.6926  Unknown Artist -  - 20 - Track 20.flac
+     0:51.36        9081116 B   ---   --   ---xx   flac  0.6798  Unknown Artist -  - 21 - Track 21.flac
+     1:53.53       20057900 B   ---   --   ---xx   flac  0.6550  Unknown Artist -  - 22 - Track 22.flac
+     2:41.31       28473356 B   ---   --   ---xx   flac  0.6862  Unknown Artist -  - 23 - Track 23.flac
+     3:43.17       39377228 B   ---   --   ---xx   flac  0.6783  Unknown Artist -  - 24 - Track 24.flac
+     4:03.37       42952268 B   ---   --   ---xx   flac  0.6995  Unknown Artist -  - 25 - Track 25.flac
+     4:25.43       46847180 B   ---   --   ---xx   flac  0.6584  Unknown Artist -  - 26 - Track 26.flac
+    82:44.18      875693080 B                            0.6631  (26 files)
+=================== 
+=================== 
+=================== 

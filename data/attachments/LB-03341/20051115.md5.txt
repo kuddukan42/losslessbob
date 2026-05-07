@@ -1,0 +1,17 @@
+7f2051ec998b73a6a514666a7175e9bd *bd20051115_d2t07-stripped-fixed.shn
+3332ce045a7c4a16cb083c2eb3c8a125 *bd20051115_d1t01-stripped-fixed.shn
+2ec9e22eee3dda883356a69040f44428 *bd20051115_d1t02-stripped-fixed.shn
+53bf1f4c96e948d522bfed45aa0db0f0 *bd20051115_d1t03-stripped-fixed.shn
+a74662958b3d811430452a750111e36a *bd20051115_d1t04-stripped-fixed.shn
+7618ed729c92f34fd33a7a519db6dec7 *bd20051115_d1t05-stripped-fixed.shn
+c8b69e716aeb4795a71b67a590c298d8 *bd20051115_d1t06-stripped-fixed.shn
+bb48cc9fe2b79b09b53e603f669a2ede *bd20051115_d1t07-stripped-fixed.shn
+2525ce776cd7876778bad4a7bafb7068 *bd20051115_d1t08-stripped-fixed.shn
+620028b702ff0e33dce539a48ea68055 *bd20051115_d1t09-stripped-fixed.shn
+dcea4f84dcdffab8032586b5f60fdf1f *bd20051115_d1t10-stripped-fixed.shn
+10b81cec229e06cb1789cbc2ec3af2f4 *bd20051115_d2t01-stripped-fixed.shn
+a70456f114565c7e994410c2df856d16 *bd20051115_d2t02-stripped-fixed.shn
+6878125ae8394781fb89bdcbc55b7bf2 *bd20051115_d2t03-stripped-fixed.shn
+e41a9d82e8f475c277345b2068f13283 *bd20051115_d2t04-stripped-fixed.shn
+7437cb8cef04ab02e784f0d6b501206d *bd20051115_d2t05-stripped-fixed.shn
+583916d5193d8209b3ef5e285a3ab437 *bd20051115_d2t06-stripped-fixed.shn

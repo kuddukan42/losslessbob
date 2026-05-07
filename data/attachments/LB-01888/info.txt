@@ -1,0 +1,9 @@
+Clarification concerning 11-9 and 11-10-1979 torrents
+  
+Thanks to Roberto's prodding, I have been able to clear up a critical aspect of the 11-09-79 and 11-10-79 seeds. An examination of disk 2 in each of these seeds will show that in fact the disks are the same. The reason for this (which I did not understand at the time of posting) is that apparently the taper put the final four tracks of 11-9 and the final four tracks on 11-10 on the same disk. Thus if you look at d2 for the 11-9 seed, you will find that in ends in four extraneous tracks (which I did recognize at the time were simply the tracks from 11-10). And if you look at disk two of 11-10, you will see it begins with four extraneous tracks (as indicated in my textfile), which at the time I did not recognize were the conclusion of the the 11-9 show! 
+
+Confused? Well, all you need to understand is that burning the shows you can simply omit the tracks that are listed in the text files as extraneous. If I had understood what was going on, I would not have included them. At the time, I thought they were "bonus" tracks added by the taper and decided not to do any fiddling. 
+
+Sorry for including the extraneous tracks -- I should know better than try to rush to get material on the internet. I am not sure how much longer (in the immediate future) I will be able to seed, and I wanted to try to complete the Warfield/Santa Monica residencies before taking a sabbatical leave from seeding. 
+
+Chuck

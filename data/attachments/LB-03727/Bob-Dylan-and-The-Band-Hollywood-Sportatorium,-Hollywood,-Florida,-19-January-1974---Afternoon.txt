@@ -1,0 +1,37 @@
+Bob Dylan and The Band
+Hollywood Sportatorium, Hollywood, Florida, 1974-01-19 - Afternoon show
+
+01 Bill Graham intro
+02 Most Likely You Go Your Way (And I'll Go Mine)
+03 Lay Lady Lay
+04 Just Like Tom Thumb's Blues
+05 Leopard Skin Pill Box Hat
+06 It Ain't Me Babe
+07 Ballad of a Thin Man
+08 Stage Fright
+09 The Night They Drove Old Dixie Down
+10 King Harvest
+11 This Wheel's on Fire
+12 I Shall be Released
+13 Up on Cripple Creek
+14 All Along the Watchtower
+15 Ballad of Hollis Brown
+16 Knockin' on Heaven's Door
+17 The Times They Are a Changing
+18 Don't Think Twice, It's All Right
+19 Gates of Eden
+20 Just Like a Woman
+21 It's All Right Ma
+22 Rag Mama Rag
+23 Loving You is Sweeter than Ever
+24 The Shape I'm In
+25 The Weight
+26 Forever Young
+27 Something There is About You
+28 Like a Rolling Stone
+29 Most Likely You Go Your Way (And I'll Go Mine)
+
+d1=01-16
+d2=17-29
+
+master audience cassettes > 3-3/4 ips reel > Ampex ATR-102 reel machine > 96/24 wav > SoundForge 6.0 conversion to 44.1/16 > flac (level 8, sector align)

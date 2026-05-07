@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-17-cb-master.shnf 
+=================== 
+=================== 
+=================== 
+0e2475008f2110b15239a53864612903  bd87-09-17.txt
+dd056b08cc42c757c662a97925226a2e  noname.md5
+1fa625ace52259c64ee6b568dc44c1f3  Track01.shn
+7fbb02c6c3aa680732fc7c34f10160b6  Track02.shn
+b20b3c1a42dd315205216569b397daf6  Track03.shn
+eb1348f2e5fa2a0fdd7dd1756f3fc675  Track04.shn
+15bc181f8e483b1f2bf0912c55e98176  Track05.shn
+c08c6ebfadac045b1bf9dd1f599a4918  Track06.shn
+0aa1d39c902041b1dda5f983c017894b  Track07.shn
+b7659bf991c92a314d1dcaaf4599398e  Track08.shn
+5818f7384d0abea805d91c1c230b2f78  Track09.shn
+e0c733d749a170af4f130f94b924de53  Track10.shn
+56cf8cb9146577a88d18dd993d52eeca  Track11.shn
+a9de0a865d92d89960dd180e81248c29  Track12.shn
+4d31b5ada66aa7907b41e095d82cf992  Track13.shn
+369e83c85d50e2f68b79fc8a26cbbc73  Track14.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-09-17-cb-master.shnf 
+=================== 
+=================== 
+=================== 
+75689f6ab208867f22b06133a399b7b7  [shntool]  Track01.wav
+21e97be8e32333be4b6353b023835638  [shntool]  Track02.wav
+f997ce080e3c6239ecb7e77a73412e3e  [shntool]  Track03.wav
+0a411fc6fe154dd69dc2a89d93a35736  [shntool]  Track04.wav
+bb971a790a2db7a18326e94c18c0b1e8  [shntool]  Track05.wav
+ddffb09ed4323b85b6621f876afefdec  [shntool]  Track06.wav
+e5d549474dad5c5f6771c4882ce0bfd3  [shntool]  Track07.wav
+b07d8f3479ee6cee8bfe77172c5a16a6  [shntool]  Track08.wav
+826d0bdb632a7882a8f114a8214afc16  [shntool]  Track09.wav
+20f8a4b9491b5b31889e0aa10de740f5  [shntool]  Track10.wav
+5f54d96aa36289f03d1617a88411ffe1  [shntool]  Track11.wav
+fc43e4764c60b414c8c4579eea3cbcf2  [shntool]  Track12.wav
+44a3370d7f2b957313b78db1e0bf2c16  [shntool]  Track13.wav
+851657c3636c671a1478d250fc2ce5bf  [shntool]  Track14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-17-cb-master.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.19       55257932 B   ---   --   ---xx    shn  0.6848  Track01.shn
+     4:13.51       44749196 B   ---   --   ---xx    shn  0.6525  Track02.shn
+     3:54.52       41399948 B   ---   --   ---xx    shn  0.6694  Track03.shn
+     6:00.15       63539324 B   ---   --   ---xx    shn  0.5860  Track04.shn
+     4:38.03       49046300 B   ---   --   ---xx    shn  0.6918  Track05.shn
+     5:33.58       58877660 B   ---   --   ---xx    shn  0.6797  Track06.shn
+     5:27.70       57847484 B   ---   --   ---xx    shn  0.6081  Track07.shn
+     4:01.52       42634748 B   ---   --   ---xx    shn  0.6683  Track08.shn
+     4:33.54       48284252 B   ---   --   ---xx    shn  0.5911  Track09.shn
+     3:37.63       38427020 B   ---   --   ---xx    shn  0.6878  Track10.shn
+     4:34.24       48390092 B   ---   --   ---xx    shn  0.6617  Track11.shn
+     5:17.45       56024684 B   ---   --   ---xx    shn  0.6394  Track12.shn
+     4:11.06       44290556 B   ---   --   ---xx    shn  0.5940  Track13.shn
+     6:03.56       64164956 B   ---   --   ---xx    shn  0.6367  Track14.shn
+    67:21.43      712934152 B                            0.6446  (14 files)
+=================== 
+=================== 
+=================== 

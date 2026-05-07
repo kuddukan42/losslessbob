@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-02-15-a-knife-a-fork-a-bottle-a-cork.flacf 
+=================== 
+=================== 
+=================== 
+9759c8a94fff858074100a480978d4d6  bd98-02-15-a-knife-a-fork-a-bottle-a-cork.flacf.md5
+6bdc7482d43ca5b1d910b882fff32baa  bd98-02-15-knife-fork-bottle-cork-d1t01.flac
+e9ef874044a8b7935c8e63b278489e4e  bd98-02-15-knife-fork-bottle-cork-d1t02.flac
+aa1976d9d3eb2c05af7dd7ba0abd2a21  bd98-02-15-knife-fork-bottle-cork-d1t03.flac
+5a0441e8dcbdb6fd7e74c616e17ee569  bd98-02-15-knife-fork-bottle-cork-d1t04.flac
+801aaf34b44eb2fc2a66ae059b811c4a  bd98-02-15-knife-fork-bottle-cork-d1t05.flac
+b51cabcbb9cd7188741331b2ed076888  bd98-02-15-knife-fork-bottle-cork-d1t06.flac
+261b9a41e37fbada69a2f85af97b977a  bd98-02-15-knife-fork-bottle-cork-d1t07.flac
+ac2c4b2484fffb83e76097a4c9d80d6a  bd98-02-15-knife-fork-bottle-cork-d1t08.flac
+c43a6260753ff42bc2b021c0465118a1  bd98-02-15-knife-fork-bottle-cork-d1t09.flac
+8489ea845711a1413739481361a66584  bd98-02-15-knife-fork-bottle-cork-d1t10.flac
+3c524229ed8b0d6ce303bf29c06183ae  bd98-02-15-knife-fork-bottle-cork-d1t11.flac
+e78be717b56dc8b9f5b08148e5f5c790  bd98-02-15-knife-fork-bottle-cork-d1t12.flac
+b002e482784dcb8e2f733d6e1f0813af  bd98-02-15-knife-fork-bottle-cork-d2t01.flac
+e4db151a00d3c1ff41bd82ed68c6b0fa  bd98-02-15-knife-fork-bottle-cork-d2t02.flac
+757ff560f2242b443683c762de5d117d  bd98-02-15-knife-fork-bottle-cork-d2t03.flac
+1ef3742f6607ca8185c65e388850c696  bd98-02-15-knife-fork-bottle-cork-d2t04.flac
+06ec5ee7eed89f8c5725c3eafff3686c  bd98-02-15-knife-fork-bottle-cork-d2t05.flac
+c5f02218c9353e13493a87c4490a0e1a  bd98-02-15-knife-fork-bottle-cork-d2t06.flac
+1c66c91ccade654eff40da4f9f493915  bd98-02-15-knife-fork-bottle-cork-d2t07.flac
+c6094cb2ba6bd1e70139af2d0f9c1efb  bd98-02-15-knife-fork-bottle-cork-d2t08.flac
+eafa8f5fd0e5fee43178771a510666d8  bd98-02-15-knife-fork-bottle-cork-d2t09.flac
+f4ec5b7e401c1f07d46420cda161b282  bd98-02-15-knife-fork-bottle-cork-d2t10.flac
+4dde730738a5aee1e86e5a7af72b2540  bd98-02-15-knife-fork-bottle-cork-d2t11.flac
+f2d11bd1ee47b595c80055148d3fb131  bd98-02-15-knife-fork-bottle-cork-d2t12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-02-15-a-knife-a-fork-a-bottle-a-cork.flacf 
+=================== 
+=================== 
+=================== 
+bd98-02-15-knife-fork-bottle-cork-d1t01.flac:d80b290a00a48ae51199559646a77aa3
+bd98-02-15-knife-fork-bottle-cork-d1t02.flac:5f0c90c5ff104764b52a315b1244714f
+bd98-02-15-knife-fork-bottle-cork-d1t03.flac:f7d4b42a24a4d580d6e2c5e393e4ee55
+bd98-02-15-knife-fork-bottle-cork-d1t04.flac:ac37d95d637a8ccb75a3bf859d14b8d7
+bd98-02-15-knife-fork-bottle-cork-d1t05.flac:4f6121c6ffb30e5ab3f4dce4e5db12ac
+bd98-02-15-knife-fork-bottle-cork-d1t06.flac:411576f8ae1fc4ecfd658d92324d570d
+bd98-02-15-knife-fork-bottle-cork-d1t07.flac:970e2c6c74d958e75cd99e340b78972b
+bd98-02-15-knife-fork-bottle-cork-d1t08.flac:4653468e2b3a0ea2b20aa88871dd6539
+bd98-02-15-knife-fork-bottle-cork-d1t09.flac:61811ada870d699892bd04371a717b53
+bd98-02-15-knife-fork-bottle-cork-d1t10.flac:f04832c7787465d87242a83828e0d86b
+bd98-02-15-knife-fork-bottle-cork-d1t11.flac:dbfd4ebff38e3d18d2f15fb997e51f0a
+bd98-02-15-knife-fork-bottle-cork-d1t12.flac:d2b73b4b6dec7f68dac402d1c3155f41
+bd98-02-15-knife-fork-bottle-cork-d2t01.flac:46711cad016ba37d18003ed6f35ea943
+bd98-02-15-knife-fork-bottle-cork-d2t02.flac:180d5c9e8addcbf2dd9fdc7fb232256a
+bd98-02-15-knife-fork-bottle-cork-d2t03.flac:c14cbe42d8d1f17707ba3eac71c24cb4
+bd98-02-15-knife-fork-bottle-cork-d2t04.flac:73c3a5bf6bef7669bea1318bc8f73f6d
+bd98-02-15-knife-fork-bottle-cork-d2t05.flac:891d0c963eb465a38a4f1ac19bbdd9e9
+bd98-02-15-knife-fork-bottle-cork-d2t06.flac:e3b241280e295b0de29fc914490a72a6
+bd98-02-15-knife-fork-bottle-cork-d2t07.flac:0bb1198d9523785e3c4141b6668e34f5
+bd98-02-15-knife-fork-bottle-cork-d2t08.flac:1d1bcdcc752ac0eacc846fc27bae4131
+bd98-02-15-knife-fork-bottle-cork-d2t09.flac:39f344192dcff541cbaa688d157c03d1
+bd98-02-15-knife-fork-bottle-cork-d2t10.flac:33dcbdcfb1ce6343b3ebdbc5ff2e4e92
+bd98-02-15-knife-fork-bottle-cork-d2t11.flac:77664e5bdd37333b1918c75800f07589
+bd98-02-15-knife-fork-bottle-cork-d2t12.flac:8d839d9d3a3139aa573f7c6a689f2296
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-15-a-knife-a-fork-a-bottle-a-cork.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.32       45410108 B   ---   --   ---xx   flac  0.6219  bd98-02-15-knife-fork-bottle-cork-d1t01.flac
+     5:17.60       56059964 B   ---   --   ---xx   flac  0.5827  bd98-02-15-knife-fork-bottle-cork-d1t02.flac
+     6:04.19       64254332 B   ---   --   ---xx   flac  0.6038  bd98-02-15-knife-fork-bottle-cork-d1t03.flac
+     6:22.62       67530668 B   ---   --   ---xx   flac  0.5646  bd98-02-15-knife-fork-bottle-cork-d1t04.flac
+     6:44.72       71434988 B   ---   --   ---xx   flac  0.6191  bd98-02-15-knife-fork-bottle-cork-d1t05.flac
+     4:08.42       43846028 B   ---   --   ---xx   flac  0.5095  bd98-02-15-knife-fork-bottle-cork-d1t06.flac
+     4:39.63       49363820 B   ---   --   ---xx   flac  0.5023  bd98-02-15-knife-fork-bottle-cork-d1t07.flac
+     7:25.46       78606236 B   ---   --   ---xx   flac  0.6252  bd98-02-15-knife-fork-bottle-cork-d1t08.flac
+     5:43.05       60517004 B   ---   --   ---xx   flac  0.5604  bd98-02-15-knife-fork-bottle-cork-d1t09.flac
+     6:19.21       66905036 B   ---   --   ---xx   flac  0.5814  bd98-02-15-knife-fork-bottle-cork-d1t10.flac
+     6:40.63       70708220 B   ---   --   ---xx   flac  0.6096  bd98-02-15-knife-fork-bottle-cork-d1t11.flac
+     5:37.26       59507996 B   ---   --   ---xx   flac  0.6191  bd98-02-15-knife-fork-bottle-cork-d1t12.flac
+     6:57.36       73643516 B   ---   --   ---xx   flac  0.5282  bd98-02-15-knife-fork-bottle-cork-d2t01.flac
+     5:27.58       57819260 B   ---   --   ---xx   flac  0.5381  bd98-02-15-knife-fork-bottle-cork-d2t02.flac
+     4:31.21       47853836 B   ---   --   ---xx   flac  0.6161  bd98-02-15-knife-fork-bottle-cork-d2t03.flac
+     5:49.60       61704764 B   ---   --   ---xx   flac  0.5357  bd98-02-15-knife-fork-bottle-cork-d2t04.flac
+     6:29.38       68709020 B   ---   --   ---xx   flac  0.5707  bd98-02-15-knife-fork-bottle-cork-d2t05.flac
+     5:35.61       59237516 B   ---   --   ---xx   flac  0.6056  bd98-02-15-knife-fork-bottle-cork-d2t06.flac
+     5:42.13       60359420 B   ---   --   ---xx   flac  0.6137  bd98-02-15-knife-fork-bottle-cork-d2t07.flac
+     6:20.52       67154348 B   ---   --   ---xx   flac  0.5758  bd98-02-15-knife-fork-bottle-cork-d2t08.flac
+     5:08.06       54345356 B   ---   --   ---xx   flac  0.6262  bd98-02-15-knife-fork-bottle-cork-d2t09.flac
+     6:57.73       73730540 B   ---   --   ---xx   flac  0.6463  bd98-02-15-knife-fork-bottle-cork-d2t10.flac
+     5:31.01       58390796 B   ---   --   ---xx   flac  0.5261  bd98-02-15-knife-fork-bottle-cork-d2t11.flac
+     9:27.53      100143500 B   ---   --   ---xx   flac  0.5393  bd98-02-15-knife-fork-bottle-cork-d2t12.flac
+   143:21.08     1517236272 B                            0.5806  (24 files)
+=================== 
+=================== 
+=================== 

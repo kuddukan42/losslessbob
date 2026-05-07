@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-16-shadows-in-the-sound.flacf 
+=================== 
+=================== 
+=================== 
+d005977e61fadddf0727bd6f38779640  bd93-02-16-shadows-in-the-sound-d1t01.flac
+f3325e9fdc66f63095c587596af6101d  bd93-02-16-shadows-in-the-sound-d1t02.flac
+6fc44fcdf8e73fd1799b0b42ef442a2e  bd93-02-16-shadows-in-the-sound-d1t03.flac
+6715a4c6e616677fb397e905fff9ea05  bd93-02-16-shadows-in-the-sound-d1t04.flac
+d6862dee6e44ad5cfb7382227df22751  bd93-02-16-shadows-in-the-sound-d1t05.flac
+b0074d4d0ab52f34b2a3cedcb3d318df  bd93-02-16-shadows-in-the-sound-d1t06.flac
+10608eac319c61dc89a20e88312be297  bd93-02-16-shadows-in-the-sound-d1t07.flac
+2befd36d58cd59df6ae3c48c4eb2e4a1  bd93-02-16-shadows-in-the-sound-d1t08.flac
+a017aef58091fc09a02e5176f10fd89c  bd93-02-16-shadows-in-the-sound-d1t09.flac
+fca53202d82a22c7ab5cb3c37a0c6e8c  bd93-02-16-shadows-in-the-sound-d1t10.flac
+d0e03e651e8c50cbe698f636aa4674d1  bd93-02-16-shadows-in-the-sound-d1t11.flac
+5c97d5e051d02f334bf0ded7e2ac3432  bd93-02-16-shadows-in-the-sound-d2t01.flac
+cc4ec307d54c517741b43934b5a7e47f  bd93-02-16-shadows-in-the-sound-d2t02.flac
+a95e50589ef6d2ce3f20938e523a3312  bd93-02-16-shadows-in-the-sound-d2t03.flac
+14bab88124a11a42d6519a23185281cd  bd93-02-16-shadows-in-the-sound-d2t04.flac
+ce5ef52f39677a99895d09f06798e44b  bd93-02-16-shadows-in-the-sound-d2t05.flac
+d91904bedaa6b3786b9785b80e394021  bd93-02-16-shadows-in-the-sound-d2t06.flac
+08b5c18a6ebbe4088ca77cb8ec7cde9f  bd93-02-16-shadows-in-the-sound-d2t07.flac
+8368f810cef5e469e08542f530b20659  bd93-02-16-shadows-in-the-sound-d2t08.flac
+35829b5bc80fa4920e96b93129d2d215  bd93-02-16-shadows-in-the-sound-d2t09.flac
+91a715a411d13128850a65184a638484  bd93-02-16-shadows-in-the-sound-d2t10.flac
+0178b7710797fdbde36f6594aaf8da6c  bd93-02-16-shadows-in-the-sound-d2t11.flac
+f2b79d4ae3d0af89e2daaae37472fb9b  bd93-02-16-shadows-in-the-sound.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-16-shadows-in-the-sound.flacf 
+=================== 
+=================== 
+=================== 
+bd93-02-16-shadows-in-the-sound-d1t01.flac:d00ebedd1d596710ff2969a0b2e97975
+bd93-02-16-shadows-in-the-sound-d1t02.flac:9553ad7af5f380bd74383333884f435d
+bd93-02-16-shadows-in-the-sound-d1t03.flac:e7c1a27e1caad12704ec2fe9bb1fb013
+bd93-02-16-shadows-in-the-sound-d1t04.flac:03ec45c07ad32df597f2e782becff3bc
+bd93-02-16-shadows-in-the-sound-d1t05.flac:bdbbd9ea5cf886da0609b3ad5f0d55f0
+bd93-02-16-shadows-in-the-sound-d1t06.flac:56751e1b50c5b24c40d1393fb3d0f261
+bd93-02-16-shadows-in-the-sound-d1t07.flac:b18efb74c018892a8d1d02892ac9dbed
+bd93-02-16-shadows-in-the-sound-d1t08.flac:98bd843bf469fb38f661fca00ba2ca27
+bd93-02-16-shadows-in-the-sound-d1t09.flac:05273d6e1e2939c44580e0f39c1edf48
+bd93-02-16-shadows-in-the-sound-d1t10.flac:41503fff4d2f33394cfc74214dd6edc7
+bd93-02-16-shadows-in-the-sound-d1t11.flac:9d0b698d3bf117db39c92ce292385d31
+bd93-02-16-shadows-in-the-sound-d2t01.flac:6ed366fd8855857b9fcddfcab43c6155
+bd93-02-16-shadows-in-the-sound-d2t02.flac:ee4f068d2387d71bedcec393d6b3feb1
+bd93-02-16-shadows-in-the-sound-d2t03.flac:1c151a6c80a9a7126215b9784618f975
+bd93-02-16-shadows-in-the-sound-d2t04.flac:95618bb1376f60437522924a50a63558
+bd93-02-16-shadows-in-the-sound-d2t05.flac:39e97249aa7d92b6e00b611345af626d
+bd93-02-16-shadows-in-the-sound-d2t06.flac:0edc97c2a51fac626c18de56c1d16923
+bd93-02-16-shadows-in-the-sound-d2t07.flac:66dcc6a329ecc9d283c715891bc06f9b
+bd93-02-16-shadows-in-the-sound-d2t08.flac:1249d06e8f2da588ec67291d0de02009
+bd93-02-16-shadows-in-the-sound-d2t09.flac:360ffdabc9914f4654fabf47ad7ffa05
+bd93-02-16-shadows-in-the-sound-d2t10.flac:2be9aca09446145e55bc05dea689f0a5
+bd93-02-16-shadows-in-the-sound-d2t11.flac:5a2d714cdd42bc51923dd0b9a5e0df2d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-16-shadows-in-the-sound.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.72       45680588 B   ---   --   ---xx   flac  0.6572  bd93-02-16-shadows-in-the-sound-d1t01.flac
+     4:39.48       49328540 B   ---   --   ---xx   flac  0.6287  bd93-02-16-shadows-in-the-sound-d1t02.flac
+     6:51.00       72500444 B   ---   --   ---xx   flac  0.6474  bd93-02-16-shadows-in-the-sound-d1t03.flac
+    10:39.00      112719644 B   ---   --   ---xx   flac  0.6311  bd93-02-16-shadows-in-the-sound-d1t04.flac
+     5:01.72       53265788 B   ---   --   ---xx   flac  0.5884  bd93-02-16-shadows-in-the-sound-d1t05.flac
+     8:42.20       92127884 B   ---   --   ---xx   flac  0.6223  bd93-02-16-shadows-in-the-sound-d1t06.flac
+     7:01.45       74370284 B   ---   --   ---xx   flac  0.6141  bd93-02-16-shadows-in-the-sound-d1t07.flac
+     5:13.00       55213244 B   ---   --   ---xx   flac  0.4536  bd93-02-16-shadows-in-the-sound-d1t08.flac
+     6:57.18       73601180 B   ---   --   ---xx   flac  0.4612  bd93-02-16-shadows-in-the-sound-d1t09.flac
+     7:09.40       75769724 B   ---   --   ---xx   flac  0.5083  bd93-02-16-shadows-in-the-sound-d1t10.flac
+     8:14.70       87306284 B   ---   --   ---xx   flac  0.5313  bd93-02-16-shadows-in-the-sound-d1t11.flac
+     6:31.72       69141788 B   ---   --   ---xx   flac  0.6596  bd93-02-16-shadows-in-the-sound-d2t01.flac
+     7:53.63       83585420 B   ---   --   ---xx   flac  0.6082  bd93-02-16-shadows-in-the-sound-d2t02.flac
+     8:23.15       88764524 B   ---   --   ---xx   flac  0.5414  bd93-02-16-shadows-in-the-sound-d2t03.flac
+     6:31.40       69066524 B   ---   --   ---xx   flac  0.6364  bd93-02-16-shadows-in-the-sound-d2t04.flac
+     5:45.17       60898028 B   ---   --   ---xx   flac  0.5605  bd93-02-16-shadows-in-the-sound-d2t05.flac
+     4:39.38       49305020 B   ---   --   ---xx   flac  0.6744  bd93-02-16-shadows-in-the-sound-d2t06.flac
+     9:17.50       98372444 B   ---   --   ---xx   flac  0.4988  bd93-02-16-shadows-in-the-sound-d2t07.flac
+     4:49.40       51073724 B   ---   --   ---xx   flac  0.6098  bd93-02-16-shadows-in-the-sound-d2t08.flac
+     5:30.57       58346108 B   ---   --   ---xx   flac  0.5744  bd93-02-16-shadows-in-the-sound-d2t09.flac
+     8:01.50       84966044 B   ---   --   ---xx   flac  0.5489  bd93-02-16-shadows-in-the-sound-d2t10.flac
+     2:58.18       31441580 B   ---   --   ---xx   flac  0.5976  bd93-02-16-shadows-in-the-sound-d2t11.flac
+   145:12.20     1536844808 B                            0.5806  (22 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,62 @@
+===================
+===================
+===================
+=== bd1995-05-13 Las Vegas IAR.md5
+===================
+===================
+===================
+fe64808323b2a848fc5305f0c9c46674 *d1\Track01.flac
+94358e8ca903565818cccac5d3f4e28c *d1\Track02.flac
+47df9d16b2a0a5425337d02c9829ab9a *d1\Track03.flac
+d8393fcb036cdba618dcd1cbd291881c *d1\Track04.flac
+8b159b10f5744a0c6377467794870bcb *d1\Track05.flac
+58c8c23f525a834af08dde4cf367aadb *d1\Track06.flac
+3e68e0db8ab4ab4137f8c5c3c1777b3c *d1\Track07.flac
+cefc9b3b2c51e970e27ceeba12cc65a4 *d2\Track01.flac
+34b8b931022641fa0b8e2bb434ec9305 *d2\Track02.flac
+6ed2273f93976838653605ce751579e5 *d2\Track03.flac
+3e4fb79e57f1558d8677e772a6c03b45 *d2\Track04.flac
+fa7c898df3cca77df7614c6e53b357da *d2\Track05.flac
+c0c925a41b57a0c83e55b735fa9c2f79 *d2\Track06.flac
+da1c709f80ac7bbadaa1a12f87fd3719 *d2\Track07.flac
+c9d63733887426b1e6f9980c94232555 *d2\Track08.flac
+8894190c7d3573a5c81bbac13bf20df2 *d2\Track09.flac
+ba3b81c338ae61addb9945f389f9b056 *d2\Track10.flac
+===================
+===================
+===================
+=== note.txt
+===================
+===================
+===================
+BOB DYLAN
+Hard Rock Hotel
+Las Vegas
+Nevada
+May 13, 1995
+
+Improved Air Remaster
+
+Disk 1
+01. -intro-
+02. Down In The Flood
+03. Lay lady Lay
+04. All Along The Watchtower
+05. Just Like a Woman
+06. Silvio 
+07. Tombstone Blues
+
+Disk 2
+01. Mr. Tambourine Man
+02. Gates of Eden
+03. Don't Think Twice, It's Alright
+04. Seeing The Real You At Last
+05. I Shall be Released
+06. Band intro
+07. Ballad of a Thin Man
+08. clapping 
+09. Like A Rolling Stone
+10. It Ain't Me Babe
+===================
+===================
+===================

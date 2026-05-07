@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-11-b.flacf 
+=================== 
+=================== 
+=================== 
+1c0a8717d0f98b310f40da381bdaf380  bd-2000-03-11 d1t01.flac
+4d90e564a4e9ced7e9ce182c9f5d4987  bd-2000-03-11 d1t02.flac
+7146c0797cf9cd3cc38321d240510eb1  bd-2000-03-11 d1t03.flac
+fc215309ddeeb9c3fc44dc56339fe81d  bd-2000-03-11 d1t04.flac
+5feb7bf41f35ae492a624c4e009e3806  bd-2000-03-11 d1t05.flac
+eac7c64d8d9d7be3e87656bc7f32c4e5  bd-2000-03-11 d1t06.flac
+0b50e090b6839989d90377466992de45  bd-2000-03-11 d1t07.flac
+28a1f0fb32eaaa891eb9eb61bbe4a3a3  bd-2000-03-11 d1t08.flac
+aea1d32fb3e811983c2a942c4c07dbc3  bd-2000-03-11 d1t09.flac
+00f6cf66b2241e9b9c2c7830d46bf493  bd-2000-03-11 d1t10.flac
+db9c8b6195cb595ffd5dde9acd77c91f  bd-2000-03-11 d1t11.flac
+5064379fdfac0c731e780655b4f42133  bd-2000-03-11 d2t01.flac
+f05b791533d9059b412abc536aca2965  bd-2000-03-11 d2t02.flac
+603c399251b4a2b6b828b6fd440b3d06  bd-2000-03-11 d2t03.flac
+ea8a0fced5318af217b85c4c5e6d843c  bd-2000-03-11 d2t04.flac
+d628a171215f44430acb3105ba87d37a  bd-2000-03-11 d2t05.flac
+c0a0f6411f451d54fbd93d9f031b1d36  bd-2000-03-11 San Luis Obispo, CA.txt
+026d773abca6a12ada76cee59b5cc996  Bob Dylan, San Luis Obispo, CA 3-11-00.md5
+59875d01865ad0a70b73567a15471890  San Luis Obispo Carine 03-11-00-B.jpg
+63030400eb6ef35d787c5775e5c333e3  San Luis Obispo Carine 03-11-00-F.jpg
+bc4a2f724bec3d6be48174e35e2e1568  San Luis Obispo Scouser 03-11-00(SA)-B.jpg
+2f3da6ffd8ed65cd3a66a85a70fb9136  San Luis Obispo Scouser 03-11-00(SA)-F.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-11-b.flacf 
+=================== 
+=================== 
+=================== 
+bd-2000-03-11 d1t01.flac:a08b2ba8f981d8f0c7fa371e25218e1b
+bd-2000-03-11 d1t02.flac:9e1c89cf793a76ff85815012ec6e94bf
+bd-2000-03-11 d1t03.flac:b693566a3d5381d94c8a2304d7250030
+bd-2000-03-11 d1t04.flac:7f54a82957b6e507e5e69dbd1d63fc92
+bd-2000-03-11 d1t05.flac:f6885982f835fc9a98b387eb93e1d04b
+bd-2000-03-11 d1t06.flac:cc125b95e3e4c5dc90515a8c5f8ac8e7
+bd-2000-03-11 d1t07.flac:ac90781eca0434ae4380908da54f3237
+bd-2000-03-11 d1t08.flac:eed6e9c3c66d566020a67b02933a7ec1
+bd-2000-03-11 d1t09.flac:5fce306767b63b52d1d87bcb5e140d0a
+bd-2000-03-11 d1t10.flac:3780d77bcf180095b6452214387b181e
+bd-2000-03-11 d1t11.flac:a828b95a3f9a02107300f589421f3c7c
+bd-2000-03-11 d2t01.flac:6a0ef73645edab4c4a2e119a13274ba3
+bd-2000-03-11 d2t02.flac:7852f22e19aec67d7b74b9afa520b0e5
+bd-2000-03-11 d2t03.flac:886632fa71c3df3828a8689d1051d5b7
+bd-2000-03-11 d2t04.flac:562f7120c0eb37c74fe739be65df0de2
+bd-2000-03-11 d2t05.flac:82d83c7b3f1139306ad5d8c81d4a6749
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-11-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:31.45       37326284 B   ---   --   ---xx   flac  0.5069  bd-2000-03-11 d1t01.flac
+     4:01.65       42665324 B   ---   --   ---xx   flac  0.4780  bd-2000-03-11 d1t02.flac
+     7:35.02       80266748 B   ---   --   ---xx   flac  0.4945  bd-2000-03-11 d1t03.flac
+     6:57.61       73702316 B   ---   --   ---xx   flac  0.5497  bd-2000-03-11 d1t04.flac
+     4:20.55       45993404 B   ---   --   ---xx   flac  0.4854  bd-2000-03-11 d1t05.flac
+     5:10.06       54698156 B   ---   --   ---xx   flac  0.5265  bd-2000-03-11 d1t06.flac
+     2:24.28       25467500 B   ---   --   ---xx   flac  0.5563  bd-2000-03-11 d1t07.flac
+     4:00.36       42420716 B   ---   --   ---xx   flac  0.5328  bd-2000-03-11 d1t08.flac
+     5:21.32       56699708 B   ---   --   ---xx   flac  0.5577  bd-2000-03-11 d1t09.flac
+     6:48.74       72145292 B   ---   --   ---xx   flac  0.4771  bd-2000-03-11 d1t10.flac
+     7:40.40       81238124 B   ---   --   ---xx   flac  0.5966  bd-2000-03-11 d1t11.flac
+     6:09.44       65195132 B   ---   --   ---xx   flac  0.5267  bd-2000-03-11 d2t01.flac
+     8:04.59       85516412 B   ---   --   ---xx   flac  0.5927  bd-2000-03-11 d2t02.flac
+     7:08.53       75623900 B   ---   --   ---xx   flac  0.4918  bd-2000-03-11 d2t03.flac
+     4:32.21       48030236 B   ---   --   ---xx   flac  0.5849  bd-2000-03-11 d2t04.flac
+     8:03.65       85354124 B   ---   --   ---xx   flac  0.5112  bd-2000-03-11 d2t05.flac
+    91:52.11      972343376 B                            0.5305  (16 files)
+=================== 
+=================== 
+=================== 

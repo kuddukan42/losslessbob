@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-17a.flacf 
+=================== 
+=================== 
+=================== 
+91d6cc7e8d618b4a5d54c9da2a1f30d3  bd97-04-17a-LB-3357.txt
+1bc763040a84e40c7f39cd56fa01f005  Disc 1\Track01.flac
+2000421e4499cf294478fe60b70636b9  Disc 1\Track02.flac
+3e1104941cf09a01254bbc1487ecc377  Disc 1\Track03.flac
+58d6b773bcce0af166fefeaa32b69af7  Disc 1\Track04.flac
+49f2a4cdae10b95b1db331d3358e8757  Disc 1\Track05.flac
+e0b3b115156ab93339e2adf9e555533d  Disc 1\Track06.flac
+cdc7f602676f2c1d487d7d7cf3b51e48  Disc 1\Track07.flac
+4b45f05adcaa09d7b94f0ae98df88964  Disc 1\Track08.flac
+8de8bdb7df7231abd0162353e895bc6e  Disc 2\Track01.flac
+ed0553bc812225e5a20545c24816ed67  Disc 2\Track02.flac
+35144204b2ae07a9fdc6fe9ece3d141e  Disc 2\Track03.flac
+d92fd0590d125b44b3fcf9272259c778  Disc 2\Track04.flac
+f9dc391e0dd5592520d80adf5e03850d  Disc 2\Track05.flac
+7758ed7ee00dcc8a9f2fd498531c21de  Disc 2\Track06.flac
+8852fd615a9cdd898ac755c079d9c333  Disc 2\Track07.flac
+fdf58ec8703301e650f08d3a9b225096  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-17a.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:b878d95b0a6e923e6653dd147855e4ab
+Track02.flac:f50db64f138d1b6f4c8b914cfc2516cf
+Track03.flac:4dd21bc97203d30223f0e8029110a5e6
+Track04.flac:3fe4dc470d92850cb3dbb003927eb41d
+Track05.flac:3d48aa82b6c17d89f62aabafb3b88a54
+Track06.flac:2750de1384077f4358603acceb8ca5d5
+Track07.flac:9523fe2aef0bd62735e5a1a1162ff134
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-17a.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:1111aa18d45838a2c89ea2124b56c7b8
+Track02.flac:651fe9d7c5f777e67f574cb836fff6d5
+Track03.flac:d2ce40ae10f35e3384cf7e9c72e80a68
+Track04.flac:fa2da486ab6d61ef95781a887cbe960f
+Track05.flac:51d0d789afb84f0c9d56ba67177a4e12
+Track06.flac:ceb993c12be12acc50681f99bcd2f486
+Track07.flac:8499e620f54686a256f3ce170185a994
+Track08.flac:ce2bad591587ed052877d281b1c030d4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-17a.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:46.30      103441004 B   ---   --   ---xx   flac  0.6817  Track01.flac
+     7:40.33       81221660 B   ---   --   ---xx   flac  0.6341  Track02.flac
+     6:47.50       71912444 B   ---   --   ---xx   flac  0.5702  Track03.flac
+     7:43.74       81847292 B   ---   --   ---xx   flac  0.6554  Track04.flac
+     8:43.01       92259596 B   ---   --   ---xx   flac  0.5928  Track05.flac
+     8:49.19       93360332 B   ---   --   ---xx   flac  0.5946  Track06.flac
+     6:48.10       71994764 B   ---   --   ---xx   flac  0.6510  Track07.flac
+    56:18.67      596037092 B                            0.6270  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-17a.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.35       50532764 B   ---   --   ---xx   flac  0.6122  Track01.flac
+     6:14.54       66100652 B   ---   --   ---xx   flac  0.5862  Track02.flac
+     7:03.49       74732492 B   ---   --   ---xx   flac  0.6482  Track03.flac
+     7:47.10       82402364 B   ---   --   ---xx   flac  0.5669  Track04.flac
+     7:16.74       77084492 B   ---   --   ---xx   flac  0.6076  Track05.flac
+     8:38.33       91452860 B   ---   --   ---xx   flac  0.6141  Track06.flac
+     7:47.44       82482332 B   ---   --   ---xx   flac  0.5997  Track07.flac
+     9:21.56       99092156 B   ---   --   ---xx   flac  0.5649  Track08.flac
+    58:56.55      623880112 B                            0.5983  (8 files)
+=================== 
+=================== 
+=================== 

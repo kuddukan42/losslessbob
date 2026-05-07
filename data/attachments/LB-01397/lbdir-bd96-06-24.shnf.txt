@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-24.shnf 
+=================== 
+=================== 
+=================== 
+743f11f9e70b5e2a6037eff56af231b4  bd96-06-24.txt
+40042aca81fc4cb579fca04711d04454  bd96-06-24d1t01.shn
+989679e4e565e5e4c9a2bad2a0284f81  bd96-06-24d1t02.shn
+7a160d3da359c15307c8dd2c24fe35ab  bd96-06-24d1t03.shn
+7c150620c59fc95626ffe3f7dbe3d1a9  bd96-06-24d1t04.shn
+ba81d866de637de44ca1972a81824eea  bd96-06-24d1t05.shn
+769659f21c5beb351469193b2b3f0dba  bd96-06-24d1t06.shn
+141d00c1b9e1a3eb754574f2d880313e  bd96-06-24d1t07.shn
+5f1083294f1caae2188be4e65fb74d60  bd96-06-24d1t08.shn
+58f3ba9ed5912be4f069c8b835e6c492  bd96-06-24d2t01.shn
+a33e8423ef19ba9ad7987226755807f1  bd96-06-24d2t02.shn
+97cd660148495074c03d3652c13eba3d  bd96-06-24d2t03.shn
+382de1cd9cff10a97df65f05b1303f20  bd96-06-24d2t04.shn
+a8bf8691aea9f41fae4080555e4f04c1  bd96-06-24d2t05.shn
+a9c976aa768cc05b65885509d254d13f  bd96-06-24d2t06.shn
+c834336d5fd0f6ca20394a02011c1a7a  bd96-06-24d2t07.shn
+636a1e36c8ee30396b4f6a66155535ee  bd96-06-24zimmy21.txt
+c9e849800c8f487766ebef4df5ee4b7f  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-06-24.shnf 
+=================== 
+=================== 
+=================== 
+0be4df12008ce9622e21e0b23992c3af  [shntool]  bd96-06-24d1t01.wav
+2aab2feaacb6623b6b3e0c501ed8c09a  [shntool]  bd96-06-24d1t02.wav
+9334607637797ae3104f3557e2d018b4  [shntool]  bd96-06-24d1t03.wav
+ecab8fb5430c8072d076a3a5bbeca30f  [shntool]  bd96-06-24d1t04.wav
+02cd81cd5551715a50fa6b7dd60a99a5  [shntool]  bd96-06-24d1t05.wav
+acb0328bef727e713aff9ef9dca6fce3  [shntool]  bd96-06-24d1t06.wav
+51bd5b6d6c4d73e31acc59c054691c37  [shntool]  bd96-06-24d1t07.wav
+60d4d87395dac00d070bbbd6e7107215  [shntool]  bd96-06-24d1t08.wav
+77c11cfe8d51218ab0163e0741750f1b  [shntool]  bd96-06-24d2t01.wav
+c4f4b27638250d350221cf6207dcfdeb  [shntool]  bd96-06-24d2t02.wav
+ee26062f5b1461d844650b56651b1b6b  [shntool]  bd96-06-24d2t03.wav
+c5c4f7395010b76284667cc3bca544cc  [shntool]  bd96-06-24d2t04.wav
+a08fe528d1f75098c6ead7e53e3b0a79  [shntool]  bd96-06-24d2t05.wav
+8e03ebcc169137742252d579cdfec118  [shntool]  bd96-06-24d2t06.wav
+4da1b0b7c2c7d49dcb12e41d6101c7be  [shntool]  bd96-06-24d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-24.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:17.34       55998812 B   ---   --   -----    wav  1.0000  bd96-06-24d1t01.wav
+     4:53.45       51791084 B   ---   --   -----    wav  1.0000  bd96-06-24d1t02.wav
+     6:10.18       65310380 B   ---   --   -----    wav  1.0000  bd96-06-24d1t03.wav
+     9:09.17       96883628 B   ---   --   -----    wav  1.0000  bd96-06-24d1t04.wav
+     7:45.36       82110716 B   ---   --   -----    wav  1.0000  bd96-06-24d1t05.wav
+     7:08.40       75593324 B   ---   --   -----    wav  1.0000  bd96-06-24d1t06.wav
+     8:16.59       87633212 B   ---   --   -----    wav  1.0000  bd96-06-24d1t07.wav
+     6:11.06       65458556 B   ---   --   -----    wav  1.0000  bd96-06-24d1t08.wav
+     8:58.30       94973804 B   ---   --   -----    wav  1.0000  bd96-06-24d2t01.wav
+     4:56.26       52275596 B   ---   --   -----    wav  1.0000  bd96-06-24d2t02.wav
+     6:45.51       71561996 B   ---   --   -----    wav  1.0000  bd96-06-24d2t03.wav
+     7:15.56       76865756 B   ---   --   -----    wav  1.0000  bd96-06-24d2t04.wav
+     6:11.15       65479724 B   ---   --   -----    wav  1.0000  bd96-06-24d2t05.wav
+     8:27.23       89488940 B   ---   --   -----    wav  1.0000  bd96-06-24d2t06.wav
+     7:10.15       75887324 B   ---   --   -----    wav  1.0000  bd96-06-24d2t07.wav
+   104:37.21     1107312852 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

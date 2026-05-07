@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-11-fendert-v2.flacf 
+=================== 
+=================== 
+=================== 
+90f0880c5cf069bb3e02cf531036d251  1001 Ballad of a Thin Man.flac
+7d9b5082c1d1e5c124aeea4b321fd02d  1002 Man of Peace.flac
+ddefa7fbc5834a0aca424b667600a51e  1003 Every Grain of Sand.flac
+f7f2da5301ab8caafe2f273c925c1e18  1004 Like a Rolling Stone.flac
+3d37fb2addef2c05d165c331862ad09b  1005 It Ain't Me Babe.flac
+b089f1372b3f226654643362fb78e5a1  1006 Mr Tamborine Man.flac
+82ca87634bb06ae0182b5a6633f67ad6  1007 Love minus Zero - No Limit.flac
+f09c2d565131e28826fb458cf9259856  1008 Tombstone Blues.flac
+1962bca4578b513416e5a539016051a0  1009 Why Do I Have To Choose.flac
+4f5be52cd28b5e37b878009094e3ce45  1010 The Times They Are A Changin.flac
+5906a4697d3479da4c46c5ff9b8963ac  1011 All Along The Watchtower 2.flac
+576688250aed74e270243b106a8f37cf  901 Highway 61 Revisited.flac
+240e0a0e6e277b6e2593a2fd59240131  902 Jokerman.flac
+44375fd4ba1301f0deb2c122002490c9  903 All Along the Watchtower.flac
+b3f2decf0bddd847098820a8076d1512  904 Just Like a Woman.flac
+1f27f3b20e679d8b08424eff5c281ec3  905 Maggies Farm.flac
+cdc2ec1d4b4b08ceade1ce9890e80992  906 I and I.flac
+ef2f78fd21ffffa59ef78132eedf2a35  907 License to Kill.flac
+f96922d59ce41eb166e3623ea792e769  908 Just My Imagination.flac
+68664e86688cdcd7122f98f5bdd77dd2  909 Dont Think Twice, It's Alright.flac
+158972cf831f3e1738773557a8756349  910 Tangled Up In Blue.flac
+1d7eaec74d0105f05a78908f8e1a12cf  911 It's Alright Ma.flac
+7c7aeb78f408b25087095845eb396fdc  912 It's All Over Now Baby Blue.flac
+1fffcada3e0ef73b3457a8c8ed9aad35  913 Masters of War.flac
+01beb2b228d2ab7c5f5dfbecfe66ff5e  Bob Dylan - 06.11.84. Offenbach.ffp
+13d1fa8f218190439d7bec3c76b72cba  Offenbach  06.11. 84..txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-11-fendert-v2.flacf 
+=================== 
+=================== 
+=================== 
+1001 Ballad of a Thin Man.flac:95b042556fc82cd55fe4c163ee95a5a2
+1002 Man of Peace.flac:530e8ccb8392953a340c50e13a99b26e
+1003 Every Grain of Sand.flac:a37bfc4eb08416b5333b2c0d01e8b1fb
+1004 Like a Rolling Stone.flac:8538de69a2a8d95e79265000464b5259
+1005 It Ain't Me Babe.flac:ea1f828c8e30af4cc191aeca2b32fdf3
+1006 Mr Tamborine Man.flac:7a1890186b3f5e2c3d0948d37cc0a455
+1007 Love minus Zero - No Limit.flac:d3cd27b63d249d41b5243b26652d9473
+1008 Tombstone Blues.flac:736d45f3bb1dd28da800968bb28edb1c
+1009 Why Do I Have To Choose.flac:308bed864eaee8fd29ba435561a6c0f4
+1010 The Times They Are A Changin.flac:55db852c09fbcf75c9d654d49db468b5
+1011 All Along The Watchtower 2.flac:c4cbc838f2fc90444da9049e18fe086f
+901 Highway 61 Revisited.flac:47549e9da21c0e80a9da0eb0679f3fc1
+902 Jokerman.flac:b326a230e752c83240f80b897933572c
+903 All Along the Watchtower.flac:68d98efae0023f43b042fb2a9ffd1b01
+904 Just Like a Woman.flac:e31ad339e28ba6297946c1abcf2da475
+905 Maggies Farm.flac:c034c86386db40aa623e1f28bc55eadd
+906 I and I.flac:d6fb640236a04684184c797c246276f3
+907 License to Kill.flac:8772755a15753442454b2fd575566b20
+908 Just My Imagination.flac:e983e2f9ea2d3107b797118316045c79
+909 Dont Think Twice, It's Alright.flac:83d625476b570ac572338c0d7836295e
+910 Tangled Up In Blue.flac:f9be724e3f97fa3e4e6f12989cbd5828
+911 It's Alright Ma.flac:c6b268c15dd378348098c40fd1048606
+912 It's All Over Now Baby Blue.flac:f16f1c2159d0d2f18e3c0837d332605e
+913 Masters of War.flac:964e106fefcc86e098b2707f7c63a5e7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-11-fendert-v2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.74       44450492 B   ---   --   ---xx   flac  0.6189  1001 Ballad of a Thin Man.flac
+     4:36.11       48712316 B   ---   --   ---xx   flac  0.6236  1002 Man of Peace.flac
+     5:48.41       61483676 B   ---   --   ---xx   flac  0.6017  1003 Every Grain of Sand.flac
+     6:00.09       63525212 B   ---   --   ---xx   flac  0.6307  1004 Like a Rolling Stone.flac
+     6:16.03       66333500 B   ---   --   ---xx   flac  0.6232  1005 It Ain't Me Babe.flac
+     5:01.08       53115260 B   ---   --   ---xx   flac  0.6277  1006 Mr Tamborine Man.flac
+     4:40.20       49439084 B   ---   --   ---xx   flac  0.6319  1007 Love minus Zero - No Limit.flac
+     5:05.43       53903180 B   ---   --   ---xx   flac  0.6241  1008 Tombstone Blues.flac
+     5:01.04       53105852 B   ---   --   ---xx   flac  0.5980  1009 Why Do I Have To Choose.flac
+     4:36.58       48822860 B   ---   --   ---xx   flac  0.6200  1010 The Times They Are A Changin.flac
+     5:03.17       53489228 B   ---   --   ---xx   flac  0.6268  1011 All Along The Watchtower 2.flac
+     4:38.45       49145084 B   ---   --   ---xx   flac  0.5903  901 Highway 61 Revisited.flac
+     5:48.42       61486028 B   ---   --   ---xx   flac  0.6106  902 Jokerman.flac
+     5:04.72       53794988 B   ---   --   ---xx   flac  0.6181  903 All Along the Watchtower.flac
+     6:12.52       65743148 B   ---   --   ---xx   flac  0.6148  904 Just Like a Woman.flac
+     4:31.69       47966732 B   ---   --   ---xx   flac  0.6316  905 Maggies Farm.flac
+     5:39.40       59893724 B   ---   --   ---xx   flac  0.6047  906 I and I.flac
+     3:45.19       39734732 B   ---   --   ---xx   flac  0.6131  907 License to Kill.flac
+     5:11.35       54942764 B   ---   --   ---xx   flac  0.6381  908 Just My Imagination.flac
+     4:38.24       49095692 B   ---   --   ---xx   flac  0.6454  909 Dont Think Twice, It's Alright.flac
+     7:10.66       76007276 B   ---   --   ---xx   flac  0.6223  910 Tangled Up In Blue.flac
+     6:38.23       70261340 B   ---   --   ---xx   flac  0.6183  911 It's Alright Ma.flac
+     4:57.26       52451996 B   ---   --   ---xx   flac  0.6215  912 It's All Over Now Baby Blue.flac
+     5:56.51       62918396 B   ---   --   ---xx   flac  0.6230  913 Masters of War.flac
+   126:35.27     1339822560 B                            0.6198  (24 files)
+=================== 
+=================== 
+=================== 

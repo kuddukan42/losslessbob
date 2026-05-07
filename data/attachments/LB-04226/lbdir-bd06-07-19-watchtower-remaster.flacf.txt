@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-19-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+6caa3a8dc67255de8bba91f00df669f7  01  Maggies Farm.flac
+5c0056b95af436a616da13ec28ca0914  02  The Times They Are A-Changin.flac
+52bf5178f1a14e7726cf793c003dcd82  03  Tweedle Dee & Tweedle Dum.flac
+1927627922b35ac5e5d2481bd3b2923f  04  Mr. Tambourine Man.flac
+6e0dec496e0b0947389a0bb15bfd0764  05  Stuck Inside Of Mobile.flac
+76088af907b460df53258949de709db4  06  Love Sick.flac
+6527e1d4f2def589832a6083f51c15a4  07  Ill Be Your Baby Tonight.flac
+118f517eea47ac995399fa544924a276  08  A Hard Rains A-Gonna Fall.flac
+77267d502ddc7415bef54bea2e382e8e  09  Highway 61 Revisited.flac
+614c808e0b6ffac02356c9f20b8f36c8  101  Girl Of The North Country.flac
+1e4d8f07b291a59fa60d9a85619291af  102  Its Alright.flac
+91f181caa2c00f4ae5603d168a7abe04  103  Every Grain Of Sand.flac
+48b6709b1cb4a03ec1185964551195c7  104  Summer Days.flac
+b13d2cb368c216d4cc7c72cdaa4bf4de  105  Like A Rolling Stone.flac
+9d36879b33fb2d0291c89c6e2cd1f2cd  106  All Along The Watchtower.flac
+ea6b43788a3a7291dab0935496bd4a7b  2006-07-19-Foggia-flac.txt
+d30d4ad34536eb102e094f69757612a3  bd06-07-19-watchtower-remaster-LB-4226.txt
+89aa764ac49a45a85e76426db338d639  fing.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-19-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+01  Maggies Farm.flac:7dddff5dcbd4ec7e278353b48ec3f640
+02  The Times They Are A-Changin.flac:b860e1a5af9eb4da335e6a8d64e3dbd2
+03  Tweedle Dee & Tweedle Dum.flac:040560796dbe57ab0e7fed5c2124e0c2
+04  Mr. Tambourine Man.flac:a12588dd204b4e8b699e010e1e2bf416
+05  Stuck Inside Of Mobile.flac:fa44cdfa6a88feda4df7860bd00faefe
+06  Love Sick.flac:cb306fa7a076ed6e4bb4036b17efca82
+07  Ill Be Your Baby Tonight.flac:6d741715d734a65826b1c07e839708b0
+08  A Hard Rains A-Gonna Fall.flac:d47801931f28b593be87feadd2676740
+09  Highway 61 Revisited.flac:977e95b5b32b935d9fe3be1c9ab056db
+101  Girl Of The North Country.flac:7ff23f7efbf390b77561c6e0a9b577f2
+102  Its Alright.flac:eb8c5dea7706d858188d8c1a3c36567e
+103  Every Grain Of Sand.flac:c476e60740fcb3ae06142b59f52fb07a
+104  Summer Days.flac:a64fe740b5f5790065a18080febe6a06
+105  Like A Rolling Stone.flac:e6c2745d00abc67dccee9542013b2b08
+106  All Along The Watchtower.flac:65f8c9f1eb8d637a9c0cb2052cf14621
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-19-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:51.24       72556892 B   ---   --   ---xx   flac  0.5784  01  Maggies Farm.flac
+     7:22.74       78142892 B   ---   --   ---xx   flac  0.5694  02  The Times They Are A-Changin.flac
+     5:45.28       60923900 B   ---   --   ---xx   flac  0.5785  03  Tweedle Dee & Tweedle Dum.flac
+     7:25.41       78594476 B   ---   --   ---xx   flac  0.5628  04  Mr. Tambourine Man.flac
+     8:49.56       93447356 B   ---   --   ---xx   flac  0.5832  05  Stuck Inside Of Mobile.flac
+     6:19.72       67024988 B   ---   --   ---xx   flac  0.5855  06  Love Sick.flac
+     6:11.02       65449148 B   ---   --   ---xx   flac  0.5875  07  Ill Be Your Baby Tonight.flac
+     6:46.05       71630204 B   ---   --   ---xx   flac  0.5923  08  A Hard Rains A-Gonna Fall.flac
+     5:19.33       56349260 B   ---   --   ---xx   flac  0.6709  09  Highway 61 Revisited.flac
+     6:27.71       68433836 B   ---   --   ---xx   flac  0.4918  101  Girl Of The North Country.flac
+     7:33.33       79986860 B   ---   --   ---xx   flac  0.6338  102  Its Alright.flac
+     7:50.25       82966844 B   ---   --   ---xx   flac  0.5349  103  Every Grain Of Sand.flac
+     9:06.26       96375596 B   ---   --   ---xx   flac  0.5921  104  Summer Days.flac
+     7:44.09       81870812 B   ---   --   ---xx   flac  0.6453  105  Like A Rolling Stone.flac
+     5:24.54       57280652 B   ---   --   ---xx   flac  0.6127  106  All Along The Watchtower.flac
+   104:58.28     1111033716 B                            0.5869  (15 files)
+=================== 
+=================== 
+=================== 

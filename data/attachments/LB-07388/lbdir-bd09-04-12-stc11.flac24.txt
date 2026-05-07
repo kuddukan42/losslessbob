@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-12-stc11.flac24 
+=================== 
+=================== 
+=================== 
+1a472ba4c8e05edccb74248816be63b4  bd2009-04-12.stc11.flac24.md5
+48d3c0c847c0881a2e3ee2aecd364cf1  bd2009-04-12_2496_t01 (introduction).flac
+d96a543056556fa531771be98b4215fa  bd2009-04-12_2496_t02 Gotta Serve Somebody.flac
+814593a670718e720e709ff1d6e572a0  bd2009-04-12_2496_t03 Don't Think Twice, It's All Right.flac
+1e865eed93868c1591542944cccdd670  bd2009-04-12_2496_t04 Most Likely You Go Your Way (And I'll Go Mine).flac
+9ea7db50db780df95ab9dcf8268298ff  bd2009-04-12_2496_t05 Million Miles.flac
+0259c6ea6390cb901dd460ac43100700  bd2009-04-12_2496_t06 Stuck Inside of Mobile with the Memphis Blues Again.flac
+67e909d8242b138a472cc31315791413  bd2009-04-12_2496_t07 Sugar Baby.flac
+72f183f50d420d44df2267df97923ede  bd2009-04-12_2496_t08 Tweedle Dee & Tweedle Dum.flac
+ac0b84416ab7a487fb3e3a5db020c46b  bd2009-04-12_2496_t09 Beyond the Horizon.flac
+78b58c1b5b68da7d66a30077c0cb3245  bd2009-04-12_2496_t10 Desolation Row.flac
+0b6b6fc525975c9b7c58028ec2c65bb9  bd2009-04-12_2496_t11 Tough Mama.flac
+07ae543db88dd7a34f16a67df799db85  bd2009-04-12_2496_t12 Highway 61 Revisited.flac
+aedcd85992f4e8816a5561ed5020d65a  bd2009-04-12_2496_t13 Ain't Talkin'.flac
+e4a966e7d70769f659fe9a422943a5aa  bd2009-04-12_2496_t14 Thunder on the Mountain.flac
+84fcb5257f9a6aef8b3304af0b707c5a  bd2009-04-12_2496_t15 Like a Rolling Stone.flac
+690b09dfa60aaa27c94c165cd5f76cee  bd2009-04-12_2496_t16 All Along the Watchtower.flac
+8d98a73a7c486cf3ce5ec4024dbb1945  bd2009-04-12_2496_t17 Spirit on the Water.flac
+bfecda6175fc03cb0e6f78a79dad9e14  bd2009-04-12_2496_t18 Blowin' in the Wind.flac
+6c2085353d307ad3d253f09adf891e13  bd2009-04-12info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-12-stc11.flac24 
+=================== 
+=================== 
+=================== 
+bd2009-04-12_2496_t01 (introduction).flac:6fd84519d02907723c47f36b98d3dfc3
+bd2009-04-12_2496_t02 Gotta Serve Somebody.flac:3baff7638a094ace85996efbf85bf995
+bd2009-04-12_2496_t03 Don't Think Twice, It's All Right.flac:e5d6256aa35a3bf713afbc8509158cfe
+bd2009-04-12_2496_t04 Most Likely You Go Your Way (And I'll Go Mine).flac:5672c9320c23613fe0b4c9ed9c739b3d
+bd2009-04-12_2496_t05 Million Miles.flac:ddaf3008ed799b3fc6cbb6d0fe49a5a1
+bd2009-04-12_2496_t06 Stuck Inside of Mobile with the Memphis Blues Again.flac:bc66062d101e8e6526a4041b79f32916
+bd2009-04-12_2496_t07 Sugar Baby.flac:75862e5056c92dba4a3977253bb6bbe8
+bd2009-04-12_2496_t08 Tweedle Dee & Tweedle Dum.flac:e555cefe3734f79aa9294454f65460d0
+bd2009-04-12_2496_t09 Beyond the Horizon.flac:2134baf7d199f5902ff76231d6fc8bc0
+bd2009-04-12_2496_t10 Desolation Row.flac:efe227c81fdd436b4fcc1d3c5778aa18
+bd2009-04-12_2496_t11 Tough Mama.flac:a4f74b8d3e2523c064a5ac7e6283ea1b
+bd2009-04-12_2496_t12 Highway 61 Revisited.flac:88bd187086b9a16fdf4eeba171b266a4
+bd2009-04-12_2496_t13 Ain't Talkin'.flac:c9e2d40c043a88f4b16405201e1734c0
+bd2009-04-12_2496_t14 Thunder on the Mountain.flac:026df2b85b109d1c0969ae0a01c1fc45
+bd2009-04-12_2496_t15 Like a Rolling Stone.flac:5d4067236df4013c78b80473a7d814b4
+bd2009-04-12_2496_t16 All Along the Watchtower.flac:d524cd635028b9a7dfa17c7626fdbff9
+bd2009-04-12_2496_t17 Spirit on the Water.flac:43cbb11f6a24534b7f322be0e4145dbc
+bd2009-04-12_2496_t18 Blowin' in the Wind.flac:e347afb0bcbab00def958379cb33aa88
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-12-stc11.flac24 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:51.925      29909036 B   cxx   --   ---xx   flac  0.5717  bd2009-04-12_2496_t01 (introduction).flac
+     3:56.191     136045958 B   cxx   --   ---xx   flac  0.5929  bd2009-04-12_2496_t02 Gotta Serve Somebody.flac
+     5:14.471     181135448 B   cxx   --   ---xx   flac  0.5742  bd2009-04-12_2496_t03 Don't Think Twice, It's All Right.flac
+     6:58.251     240912728 B   cxx   --   ---xx   flac  0.5875  bd2009-04-12_2496_t04 Most Likely You Go Your Way (And I'll Go Mine).flac
+     7:21.346     254215136 B   cxx   --   ---xx   flac  0.5798  bd2009-04-12_2496_t05 Million Miles.flac
+     7:32.876     260856632 B   cxx   --   ---xx   flac  0.5877  bd2009-04-12_2496_t06 Stuck Inside of Mobile with the Memphis Blues Again.flac
+     5:11.550     179452748 B   cxx   --   ---xx   flac  0.5637  bd2009-04-12_2496_t07 Sugar Baby.flac
+     4:45.555     164479604 B   cxx   --   ---xx   flac  0.5817  bd2009-04-12_2496_t08 Tweedle Dee & Tweedle Dum.flac
+     5:52.977     203314514 B   cxx   --   ---xx   flac  0.5682  bd2009-04-12_2496_t09 Beyond the Horizon.flac
+    10:02.269     346906946 B   cxx   --   ---xx   flac  0.5800  bd2009-04-12_2496_t10 Desolation Row.flac
+     5:30.878     190585616 B   cxx   --   ---xx   flac  0.5903  bd2009-04-12_2496_t11 Tough Mama.flac
+     7:04.967     244781156 B   cxx   --   ---xx   flac  0.5973  bd2009-04-12_2496_t12 Highway 61 Revisited.flac
+     8:08.132     281163896 B   cxx   --   ---xx   flac  0.5711  bd2009-04-12_2496_t13 Ain't Talkin'.flac
+     7:17.704     252117368 B   cxx   --   ---xx   flac  0.5948  bd2009-04-12_2496_t14 Thunder on the Mountain.flac
+    10:17.740     355818188 B   cxx   --   ---xx   flac  0.5828  bd2009-04-12_2496_t15 Like a Rolling Stone.flac
+     5:04.702     175508288 B   cxx   --   ---xx   flac  0.5907  bd2009-04-12_2496_t16 All Along the Watchtower.flac
+     8:06.676     280325294 B   cxx   --   ---xx   flac  0.5740  bd2009-04-12_2496_t17 Spirit on the Water.flac
+     7:41.792     265992236 B   cxx   --   ---xx   flac  0.5788  bd2009-04-12_2496_t18 Blowin' in the Wind.flac
+   117:00.000    4043520792 B                            0.5819  (18 files)
+=================== 
+=================== 
+=================== 

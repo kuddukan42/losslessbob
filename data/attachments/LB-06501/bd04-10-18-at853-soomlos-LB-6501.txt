@@ -1,0 +1,8 @@
+Bob Dylan, 10/18/04, Davis, California, 2CDR
+
+LB-6501, (64min+39min), source: soomlos, center ga floor, at853's > sp-spsb-1 > denecke ad-20 > sony tcd-d8 (16bit/44.1kHz), sony tcd-d8 > m-audio mt1 > usb > hdd, audacity > sony sound forge 9.0 > cd wave > flac; bittorrent download 09/08; same recording as LB-2393 based on same clapping wavs at end of d1t3 with same wav and spectral view except levels are a little higher on this one; (did not listen to all of this)
+
+Disc 1:, 01. introduction, 02. To Be Alone With You, 03. Senor (Tales Of Yankee Power), 04. Tweedle Dee & Tweedle Dum, 05. Under The Red Sky, 06. It's Alright, Ma (I'm Only Bleeding), 07. Moonlight, 08. Cold Irons Bound, 09. Just Like Tom Thumb's Blues, 10. Man In The Long Black Coat, 11. Highway 61 Revisited, 12. Saving Grace, Disc 2:, 01. Honest With Me, 02. Don't Think Twice, It's All Right, 03. Summer Days, (encore), 04. Like A Rolling Stone, 05. band introduction, 06. All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

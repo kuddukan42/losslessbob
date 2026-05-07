@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-10.flacf 
+=================== 
+=================== 
+=================== 
+32750d832708244d99eb0a37a8f61763  101 intro.flac
+55e7aff4f04da2dd5ff9e16c2df5d8ea  102 new morning.flac
+34c0201a8b2ba72e82e887b58eef6f34  103 ballad of a thin man.flac
+927f8d5ff1cd7af6e43bd0b025239237  104 all along the watchtower.flac
+d342eefc9fe162597d684e3dbd1aa10a  105 shelter from the storm.flac
+f3064e8175b493b09832ea013222160b  106 gotta serve somebody.flac
+5736a4a42db5ad2c9b2bc7a9a8640e64  107 wiggle wiggle.flac
+af308c8079bab9c1ee7ed26787c191e4  108 love minus zero.flac
+8e08606327f785d732900babf50e3830  109 gates of eden.flac
+10e897bee455fd33578c551d7027236b  110 don`t think twice it`s all right.flac
+26043c80745e894efba936e11cbd4d16  111 it ain`t me babe.flac
+daec5633a94920146388d3275d0c2b54  201 rainy day women #12 &35.flac
+a0b17989e28c1fcd01803bf2857e4c44  202 just like a woman.flac
+996659406c9fad7cbf5a96e1cdee29e7  203 knockin` on heavens door.flac
+0b1a21890ceb3e2aa0de606b51d0406d  204 highway 61 revisited.flac
+0f16d0f10372844b59b66122bec5e320  205 i shall be released.flac
+7354cece2eb508e3d5e2e95c275010b5  206 like a rolling stone.flac
+860962eb53cb0b46b68827afcf31ea54  207 the times they are a- changin`.flac
+712e7d4c88f4a31b625ccc5797c25975  208 maggies farm.flac
+92760107fb9e0af97f89392313632b85  bd91-06-10.txt
+919ece39f82d4b5ddcd6fdd6e23375c5  bob dylan ljubljana 1991-06-10.md5
+e7573c00821f3951f900b3a001e302a8  ljubjana 1991-06-10.txt
+457003d22d4f6540baf31fc981aada88  Ljubljana info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-10.flacf 
+=================== 
+=================== 
+=================== 
+101 intro.flac:fa6c191800cadbc8c26df0cab85b24e4
+102 new morning.flac:67dc1d864d0ca9f8e6ddcabd94d7d076
+103 ballad of a thin man.flac:af97246df7f5e54723dc58098c2b0cb4
+104 all along the watchtower.flac:7bfcaccdf7513d5dd031f98be0e2b15a
+105 shelter from the storm.flac:49d070a4ee54b705122d9430496520e9
+106 gotta serve somebody.flac:fcb9d8826211043054b11381fcb9ddc3
+107 wiggle wiggle.flac:f6a893c7b90e2966e12b91c8705ee496
+108 love minus zero.flac:208c1de671472a08accea6af5aae0a26
+109 gates of eden.flac:a3308fca9101ec7d6ce518192f3af5cf
+110 don`t think twice it`s all right.flac:2fee1ef3032de9d478eed0df1736607b
+111 it ain`t me babe.flac:6bd6c4146bdde3f9dc2d516d9e4ef3f2
+201 rainy day women #12 &35.flac:cca88dee988131ddef876ce5760b9d20
+202 just like a woman.flac:23380f969dddb24d8a11b56ed6074714
+203 knockin` on heavens door.flac:a51bba45fd337b1a797efd62e03f21dd
+204 highway 61 revisited.flac:98c2dc93d47567875761e6fe1e28ec46
+205 i shall be released.flac:33da83a8db3a24fc0efb858d75b74af9
+206 like a rolling stone.flac:5e7bab6f0cae7076965ef329e712915c
+207 the times they are a- changin`.flac:d35ab667884f828c164c828eeda867d5
+208 maggies farm.flac:a366097e5580cb5ee5431d948f043dcc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-10.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:29.44        5219132 B   ---   --   ---xx   flac  0.5875  101 intro.flac
+     2:49.24       29868092 B   ---   --   ---xx   flac  0.6394  102 new morning.flac
+     5:17.52       56041148 B   ---   --   ---xx   flac  0.6515  103 ballad of a thin man.flac
+     3:44.32       39588908 B   ---   --   ---xx   flac  0.6593  104 all along the watchtower.flac
+     4:16.22       45210188 B   ---   --   ---xx   flac  0.6511  105 shelter from the storm.flac
+     7:58.42       84418028 B   ---   --   ---xx   flac  0.6611  106 gotta serve somebody.flac
+     2:46.26       29343596 B   ---   --   ---xx   flac  0.6736  107 wiggle wiggle.flac
+     4:36.44       48789932 B   ---   --   ---xx   flac  0.6542  108 love minus zero.flac
+     5:00.09       52941212 B   ---   --   ---xx   flac  0.6617  109 gates of eden.flac
+     4:53.08       51704060 B   ---   --   ---xx   flac  0.6769  110 don`t think twice it`s all right.flac
+     6:01.66       63835676 B   ---   --   ---xx   flac  0.6833  111 it ain`t me babe.flac
+     3:46.32       39941708 B   ---   --   ---xx   flac  0.6635  201 rainy day women #12 &35.flac
+     5:09.31       54580556 B   ---   --   ---xx   flac  0.6337  202 just like a woman.flac
+     6:26.02       68095148 B   ---   --   ---xx   flac  0.6272  203 knockin` on heavens door.flac
+     4:44.52       50219948 B   ---   --   ---xx   flac  0.6684  204 highway 61 revisited.flac
+     4:31.32       47879708 B   ---   --   ---xx   flac  0.6281  205 i shall be released.flac
+     6:13.17       65837228 B   ---   --   ---xx   flac  0.6573  206 like a rolling stone.flac
+     5:58.40       63245324 B   ---   --   ---xx   flac  0.6153  207 the times they are a- changin`.flac
+     5:05.63       53950220 B   ---   --   ---xx   flac  0.6627  208 maggies farm.flac
+    89:49.38      950709812 B                            0.6529  (19 files)
+=================== 
+=================== 
+=================== 

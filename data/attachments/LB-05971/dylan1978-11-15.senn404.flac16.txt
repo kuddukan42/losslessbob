@@ -1,0 +1,140 @@
+Bob Dylan - 1978-11-15 - Fabulous Forum - Audience.
+
+Bob Dylan
+
+1978-November-15
+
+At the Fabulous Forum in Inglewood , CA. , USA.
+
+Equipment used : Teac PC-10 and Sennheiser MKH-404 Microphones
+
+Lineage : 1st Gen. Cass. > CD > CDWave > Flac8
+ 
+CDWave for re-tracking. TLH for Flac 8 - Verified / Aligned / Tested. 
+
+New Source to Circulation ?
+
+Well , if you happened upon my torrent of Larry Carlton at the Santa Monica Civic , then this "Gem" is what my partners recorded earlier that same evening. I don't remember the location of their seats , but this sure did turn out Excellent! 
+
+As to a new source ? , I know this show has been out there , but from my research that one looks like a "B" quality rating with some distortion.
+
+Known flaws:
+d1tr01 - Recording level adjustment at 0:17.
+d1tr13 - Recording level adj. at 0:30 and 1:05.
+
+Samples provided as always. 
+
+Please never convert to "Lossy" , or Remaster and Repost ! 
+ 
+Trade Freely , Never For Sale ! 
+
+
+deadbman , March 2008
+
+
+Disc - 1
+
+01 My Back Pages
+02 She's Love Crazy
+03 Mr. Tambourine Man
+04 Shelter From The Storm
+05 It's All Over Now, Baby Blue
+06 Tangled Up In Blue
+07 Ballad Of A Thin Man
+08 Maggie's Farm
+09 I Don't Believe You
+10 Like A Rolling Stone
+11 I Shall Be Released
+12 Senor (Tales Of Yankee Power)
+---Set Break---
+13 The Times They Are A-Changing
+14 Rainy Day Women #12 & #35
+15 It Ain't Me Babe
+16 Am I Your StepChild ?
+
+
+Disc - 2
+
+01 One More Cup Of Coffee
+02 Blowin' In The Wind
+03 Girl From The North Country
+04 We Better Talk This Over
+05 Masters Of War
+06 Just Like A Woman
+07 To Ramona
+08 All Along The Watchtower
+09 All I Really Want To Do
+10 Band Introductions
+11 It's Alright, Ma  (I'm Only Bleeding)
+12 Forever Young
+13 Changing Of The Guards
+
+
+5c06ffe086373b32a8abd44c81e1969e *d1tr01.flac
+b2d4b54b73d0c93c7c47a42957c0c2c1 *d1tr02.flac
+b12cbebe62fd84c4d5091ab782e44fb2 *d1tr03.flac
+9d89b53ff3d4948e55cef294025d1542 *d1tr04.flac
+22498d1cc688f16368365e8fc2487400 *d1tr05.flac
+c455dee0576724cb2b014cfe76481808 *d1tr06.flac
+602ae24999b5327513df1bea3b7cf917 *d1tr07.flac
+f554858826d073a6c9e7c1a3003681cf *d1tr08.flac
+f77f05b81e4a9be6882db1d4d9d573ba *d1tr09.flac
+3184c35974b6fe6515123f7c2ee31bbe *d1tr10.flac
+9983b461cffdad8498ef3286d96620b4 *d1tr11.flac
+f455bd127a834c73281331ae4272466b *d1tr12.flac
+257309649fac3a84a786475c732ca297 *d1tr13.flac
+771482d6da523459fdedadf7f2db839c *d1tr14.flac
+4a03fc24ed8d86cd67f0eb0496bcbf80 *d1tr15.flac
+2e180ac202d6ad1e286ce040187c5a89 *d1tr16.flac
+
+bed91ab6c03fcd4770636a036f3fddf3 *d2tr01.flac
+3f171447bbf9ad718ebd9520eea08026 *d2tr02.flac
+c3bef92fc1ec521ff9a815e846d24095 *d2tr03.flac
+1664d5664cd2e3661d3b03f773ecd680 *d2tr04.flac
+7cf1fc983060cb1034219d88d5040dea *d2tr05.flac
+bcd1755bc13e1e456b4e56c57c896057 *d2tr06.flac
+ff554bd71240e63200ee4505bbb6530c *d2tr07.flac
+0460012e9568176d4fe4785e7a4e6b45 *d2tr08.flac
+6fb4d42792d5f891738890b40c821546 *d2tr09.flac
+eec11a0f85f632f0ae83421793caef02 *d2tr10.flac
+ea57d54740bd19bd1a9b7d4380a9d05c *d2tr11.flac
+9167bc65152157c996321660cac715ce *d2tr12.flac
+fb7857f49862ab97d21f4ab2a7366d85 *d2tr13.flac
+
+
+length     expanded size   cdr  WAVE problems filename
+ 3:08.42       33262028    ---   --   ---xx   d1tr01.flac
+ 2:08.14       22612172    ---   --   ---xx   d1tr02.flac
+ 4:43.72       50090588    ---   --   ---xx   d1tr03.flac
+ 4:08.45       43853084    ---   --   ---xx   d1tr04.flac
+ 4:50.47       51266588    ---   --   ---xx   d1tr05.flac
+ 7:14.41       76654076    ---   --   ---xx   d1tr06.flac
+ 4:45.16       50311676    ---   --   ---xx   d1tr07.flac
+ 5:13.13       55243820    ---   --   ---xx   d1tr08.flac
+ 4:06.66       43549676    ---   --   ---xx   d1tr09.flac
+ 7:30.11       79405916    ---   --   ---xx   d1tr10.flac
+ 4:21.08       46059260    ---   --   ---xx   d1tr11.flac
+ 6:12.24       65677292    ---   --   ---xx   d1tr12.flac
+ 4:37.25       48921644    ---   --   ---xx   d1tr13.flac
+ 3:19.59       35242412    ---   --   ---xx   d1tr14.flac
+ 6:29.64       68770172    ---   --   ---xx   d1tr15.flac
+ 3:42.57       39294908    ---   --   ---xx   d1tr16.flac
+76:33.04      810215312 B                     
+(totals for 16 files, 0.6254 overall compression ratio)
+
+length     expanded size   cdr  WAVE problems filename
+ 5:56.13       62829020    ---   --   ---xx   d2tr01.flac
+ 5:22.45       56906684    ---   --   ---xx   d2tr02.flac
+ 4:48.63       50951420    ---   --   ---xx   d2tr03.flac
+ 4:16.07       45174908    ---   --   ---xx   d2tr04.flac
+ 5:39.69       59961932    ---   --   ---xx   d2tr05.flac
+ 5:32.54       58691852    ---   --   ---xx   d2tr06.flac
+ 3:55.56       41585756    ---   --   ---xx   d2tr07.flac
+ 4:22.32       46292108    ---   --   ---xx   d2tr08.flac
+ 3:07.66       33142076    ---   --   ---xx   d2tr09.flac
+ 2:28.35       26189564    ---   --   ---xx   d2tr10.flac
+ 6:48.48       72084140    ---   --   ---xx   d2tr11.flac
+ 7:04.04       74803052    ---   --   ---xx   d2tr12.flac
+ 7:42.28       81562700    ---   --   ---xx   d2tr13.flac
+67:05.70      710175212 B                     
+(totals for 13 files, 0.6398 overall compression ratio)

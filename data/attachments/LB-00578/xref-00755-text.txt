@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== Dylan 2001-08-15 Oklahoma City Zoo.txt
+===================
+===================
+===================
+Bob Dylan
+Oklahoma City Zoo Ampitheatre
+Oklahoma City, Ok
+2001-08-15
+
+Lineage:CDR->EAC->WAV->Mkw V.0.97B1->SHN
+Source: Unknown Audience
+Quality: A
+
+
+Disk 1
+Humming Bird (acoustic) (Larry on electric guitar)
+(song by Johnnie Wright, Jim Anglin and Jack Anglin) 
+My Back Pages (acoustic) (Larry on violin and Bob on harp) 
+It's Alright, Ma (I'm Only Bleeding) (acoustic) (Charlie on dobro) 
+Gotta Serve Somebody 
+You're A Big Girl Now (Larry on pedal steel) 
+Maggie's Farm 
+Ballad Of Hollis Brown (acoustic) 
+A Hard Rain's A-Gonna Fall (acoustic) (Larry on bouzouki) 
+Don't Think Twice, It's All Right (acoustic) 
+'Til I Fell In Love With You 
+I Want You (Larry on pedal steel) 
+Watching The River Flow (Larry on steel guitar) 
+
+Disk 2
+The Wicked Messenger (Bob on harp) 
+Leopard-Skin Pill-Box Hat 
+(encore) 
+Country Pie 
+Like A Rolling Stone 
+Knockin' On Heaven's Door (acoustic) (Charlie on electric guitar) 
+All Along The Watchtower 
+Blowin' In The Wind (acoustic) 
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+5eddda7ee5180e3b70d07afb0e5797b5 *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T07.shn
+8a4719a6526027be84e8d06392a214ad *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T08.shn
+d43577884dd229e2484d53eb04d17842 *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T09.shn
+5fc295b5e4ef8bf1a19e09c7259c0e0c *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T10.shn
+94b8e18d8abb7c17961a34095ce21eab *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T11.shn
+80918f48e4c1bd21ba7d5f96b2b5e50e *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T12.shn
+ab85224f4a833e1cf7beecd75f06412d *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T01.shn
+8865e4e0a609ff9ee4128a29f8a3df5e *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T02.shn
+48af93f5b3c46d34c59ad9cea1c742fa *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T03.shn
+9218fa3b5e1f395cf3dce666c4edc2f2 *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T04.shn
+43a7bf94c73371afcbff3f1325b7c189 *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T05.shn
+73595d04086589e390d922feef9f3f0a *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD1T06.shn
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+8a2a6d01b715971ab0619d6ae859fc6c *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD2T04.shn
+287dc130f2f6ddc84995522828a728f2 *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD2T05.shn
+1972379a4d6ea9a39f02bc3bdc864f1e *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD2T06.shn
+b4f27a135661d5c95995a4b25876026e *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD2T07.shn
+1e90c6174c76e4d537b2a008b057bac5 *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD2T01.shn
+2e85b0d78c1933dfdbf42e84979bd0ec *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD2T02.shn
+41d48aa95f71dfb419d3f9e5409553e0 *Bob Dylan2001-08-15 Oklahoma City Zoo AmpitheatreD2T03.shn
+===================
+===================
+===================

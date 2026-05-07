@@ -1,0 +1,76 @@
+===================
+===================
+===================
+=== Bob Dylan 1996-05-04 Richmond, VA (IA025, source for LB-1754).md5
+===================
+===================
+===================
+491e640f129fd1ebd7d5a4211a8b94b4 *CD1\01. Bob Dylan - Drifter's Escape.flac
+4ab47c310f47016ba9efa37b5d5f2c3c *CD1\02. Bob Dylan - The Man In Me.flac
+9be8c3552d6f128ada223c7e6e420f28 *CD1\03. Bob Dylan - All Along The Watchtower.flac
+0a23b829377c997b970e35b0a610e4c5 *CD1\04. Bob Dylan - I Don't Believe You.flac
+e79dcc0c2b2edcb3d87e01c1c32e8f89 *CD1\05. Bob Dylan - Watching The River Flow.flac
+538769920ed472425f82474d4bea80ad *CD1\06. Bob Dylan - Silvio.flac
+0039d1a92a6e80b8630cdb594ce90d30 *CD1\07. Bob Dylan - Mr. Tambourine Man.flac
+4191744ad2ade861005a66871ad2c5b3 *CD1\08. Bob Dylan - Master's Of War.flac
+979cf172c115dc7e04864c29ef74de46 *CD1\09. Bob Dylan - Mama You've Been On My Mind.flac
+c652cdf976da4d7338024e146ab4a718 *CD1\Bob Dylan - Richmond, May 4, 1996, CD1.log
+89a71a21b12e922bdaa163f02937eea9 *CD2\01. Bob Dylan - Seein' The Real You At Last.flac
+e06ffb1a7399512363ccbbeca86bdd7a *CD2\02. Bob Dylan - This Wheel's On Fire.flac
+d3a205b541aa1fb7ca163e1863ed2fe3 *CD2\03. Bob Dylan - Maggie's Farm.flac
+35a73884283adbdabf6200dedc934795 *CD2\04. Bob Dylan - Alabama Getaway.flac
+c2e9221f487029ab8713d74f54379830 *CD2\05. Bob Dylan - Times They Are A-Changin.flac
+2a3b226ec7e5981c0e6417b021a56776 *CD2\06. Bob Dylan - Rainy Day Women #12 & 35.flac
+685cd14dffb4e34d25cef39ed8949e29 *CD2\Bob Dylan - Richmond, May 4, 1996, CD2.log
+daba81758c3e44174487674295bead7c *Bob Dylan 1996-05-04 Richmond, VA (IA025, source for LB-1754).txt
+===================
+===================
+===================
+=== Bob Dylan 1996-05-04 Richmond, VA (IA025, source for LB-1754).txt
+===================
+===================
+===================
+Classic Amphitheater
+Fairground At Strawberry Hill
+Richmond, Virginia
+1996-05-04
+
+"Strawberry Hill"
+Improved Air Remasters 025
+First circulated in 2002.
+
+This is original source for LB-1754. 
+This is a copy of original audio CDs made by Remasterman of IAR 2017-04-24 and transferred to .flac.
+ 
+CD1:
+01. Drifter's Escape
+02. The Man In Me
+03. All Along The Watchtower
+04. I Don't Believe You (She Acts Like We Never Have Met)
+05. Watching The River Flow
+06. Silvio (Bob Dylan & Robert Hunter)
+07. Mr. Tambourine Man
+08. Masters Of War
+09. Mama, You Been On My Mind
+
+CD2:
+10. Seeing The Real You At Last
+11. This Wheel's On Fire (Bob Dylan/Rick Danko)
+12. Maggie's Farm
+13. Alabama Getaway (Robert Hunter/Jerry Garcia)
+14. The Times They Are A-Changin'
+15. Rainy Day Women # 12 & 35
+
+Concert # 774 of The Never-Ending Tour. 
+Concert # 17 of the 1996 US and Canada Spring Tour.
+1996 concert # 18.
+
+Concert # 318 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion).
+===================
+===================
+===================

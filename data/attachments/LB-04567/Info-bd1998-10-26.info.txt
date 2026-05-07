@@ -1,0 +1,55 @@
+Bob Dylan
+
+Market Square Arena
+Indianapolis, Indiana
+Monday October 26, 1998
+ 
+CD1 60:01
+ 
+1. Gotta Serve Somebody
+2. I'll Remember You
+3. Cold Irons Bound
+4. Positively 4th Street
+5. Watching The River Flow
+6. Can't Wait
+7. Tomorrow Is A Long Time
+8. Desolation Row
+9. Tangled Up In Blue
+
+CD2 40:42
+
+10. She Belongs To Me
+11. Highway 61 Revisited
+12. Love Sick
+13. Rainy Day Women # 12 & 35
+14. Blowin' In The Wind
+15. Like A Rolling Stone
+
+Audience recording (Full spectrum) > Unknown transfer > CDR(x) >  Unknown DAE > WAV > SHN > Trade DVD > HD > HungerCity
+
+Volume adjustment d1t01@0:26. Audience involvement is a bit much at times. Excellent sound, [A-].
+
+Please retain this info file as an indicator for this particular lossless set of files. If you happen to pass it on in trades, then please list it as such in your description, thereby reducing the possibility of others getting duplicates.
+
+MD5 checksums:
+
+CD1
+1a6cb0cbecb202d9444f60516534bb2a *09 Tangled up in blue.shn
+32f418154acd4ffc83296e0d66f51ee4 *01 Gotta serve somebody.shn
+c7587a66f73d97d1bac3b4c6e4b3c2ff *02 I'll remember you.shn
+f9914b455e1c0aa544449c0aa45fee38 *03 Cold irons bound.shn
+5adfdcead86e2c8c4c41d20ff7a40b6d *04 Positively 4th Street.shn
+7bba159124bcbb6fed2ab0f8cdac2170 *05 Watching the river flow.shn
+d5c7f2cfbd166df801eca0dd5a78511c *06 Can't wait.shn
+287738f71705703977c1a2a92389b6c5 *07 Tomorrow is a long time.shn
+a8199f76d8fee44d418477885d1d007a *08 Desolation Row.shn
+
+CD2
+88810e97dac8976352bae402d0cbe18c *06 Like a rolling stone.shn
+9595f8d705ba96ad5c2cca14455eb394 *01 She belongs to me.shn
+5386974d5dabe6173070a67bf329a679 *02 Highway 61 revisited.shn
+e8484a0a497a0e2014f96f336045a5f5 *03 Love sick.shn
+05c4fcfe2ace6b0fbbf18aa636ec556b *04 Rainy day women # 12 & 35.shn
+db5507f161d502e3b91032997e512b3f *05 Blowin' in the wind.shn
+
+ 

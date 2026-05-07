@@ -1,0 +1,6 @@
+f1a4a6bc312b83f366120dfdced44c99 *Traccia 01.shn
+9e4e45f511c6893dd91284c5ceb17f21 *Traccia 02.shn
+da6abd810503170df372fe29c601762c *Traccia 03.shn
+5f21d3990c93ac70c4e4c1fdd33cdefc *Traccia 04.shn
+a1932b36dea510b2e35e0a8d573475ca *Traccia 05.shn
+c09bfe9031ab18c4bbbeaf89995d6100 *Traccia 06.shn

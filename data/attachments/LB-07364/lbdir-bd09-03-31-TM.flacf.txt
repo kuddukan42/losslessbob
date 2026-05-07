@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-03-31-TM.flacf 
+=================== 
+=================== 
+=================== 
+af2201ae24293f881dc97017384bf979  CD 1\Dylan_2009_03_31_Hannover_TM_D1_01.flac
+53a9ab415c220a64bb2b6be2898107b8  CD 1\Dylan_2009_03_31_Hannover_TM_D1_02.flac
+b1c8f436fc018ab6e7f83104fbd68042  CD 1\Dylan_2009_03_31_Hannover_TM_D1_03.flac
+c154f71b3708502d4ee4d34daca927d6  CD 1\Dylan_2009_03_31_Hannover_TM_D1_04.flac
+32f06b7ef5f159f210d9bd88d023882f  CD 1\Dylan_2009_03_31_Hannover_TM_D1_05.flac
+d831ba6b23cb742b82812a945f3fe3c2  CD 1\Dylan_2009_03_31_Hannover_TM_D1_06.flac
+7f42c9636c0bb92ba35ade8c40676c50  CD 1\Dylan_2009_03_31_Hannover_TM_D1_07.flac
+8f6f233097e9958369ff13a087227305  CD 1\Dylan_2009_03_31_Hannover_TM_D1_08.flac
+efe087f1b44c72780bfaa8d5af20a2f1  CD 1\Dylan_2009_03_31_Hannover_TM_D1_09.flac
+e5899ea038544094254f0633f0de05a5  CD 1\Dylan_2009_03_31_Hannover_TM_D1_10.flac
+710601b44377b55f7fe82d286ddaa593  CD 1\Dylan_2009_03_31_Hannover_TM_D1_11.flac
+6bbf5d10b076826256438626ba270378  CD 1\Dylan_2009_03_31_Hannover_TM_D1_12.flac
+4b417afd6e2b381f5bccf1921de41fd8  CD 1\Dylan_2009_03_31_Hannover_TM_D1_13.flac
+7ff67acb24ab510ebf335992cb5cdf3a  CD 1\Dylan_2009_03_31_Hannover_TM_D1_shntool_len.txt
+b6a1dff20f1cde9667aaa846e9fe6be9  CD 2\Dylan_2009_03_31_Hannover_TM_D2_01.flac
+003dd1ef4b125f3028560522b0125976  CD 2\Dylan_2009_03_31_Hannover_TM_D2_02.flac
+efcd7a6f4560c1eadbcd6762b3c9d029  CD 2\Dylan_2009_03_31_Hannover_TM_D2_03.flac
+1992e476f09621883d0a6446291f1d4f  CD 2\Dylan_2009_03_31_Hannover_TM_D2_04.flac
+751b486b7493a292266c35954d1e49f1  CD 2\Dylan_2009_03_31_Hannover_TM_D2_05.flac
+0818d9fd115a50528cb5bdc1e2ec00e2  CD 2\Dylan_2009_03_31_Hannover_TM_D2_06.flac
+35583a3554b071b4f9d8b93911f70d91  CD 2\Dylan_2009_03_31_Hannover_TM_D2_shntool_len.txt
+a6c82a1b9ed39450a9eeea040d568e43  CD 2\Dylan_2009_04_04_Munchen_TM_D1_05.flac
+bd95c8f00f695f867608c105ae66e305  CD 2\Dylan_2009_04_04_Munchen_TM_D1_06.flac
+70ed8b37fef17b044db7875d66d89636  CD 2\Dylan_2009_04_04_Munchen_TM_D1_07.flac
+5450df666be9f63c75bb3d471a468350  DigiFlawFinder-bd09-03-31-TM.flacf.wavf.html
+f0a8084fa43bca6dcf6b6c24a54d6665  Dylan_2009_03_31_Hannover_TM.md5
+26d19912da4e402a6aacc274a653ee24  Dylan_2009_03_31_Hannover_TM_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-03-31-TM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+Dylan_2009_03_31_Hannover_TM_D1_01.flac:4051f45048e18cb3911ccac2d369cbae
+Dylan_2009_03_31_Hannover_TM_D1_02.flac:a9c46f5c3c88b01e3ca7899540056c35
+Dylan_2009_03_31_Hannover_TM_D1_03.flac:8876f744f0374136bd2eededd3bbb897
+Dylan_2009_03_31_Hannover_TM_D1_04.flac:522f7e007924af3260ffff61d90629b1
+Dylan_2009_03_31_Hannover_TM_D1_05.flac:f46b477115ba14a80d1c73ebb29bd10e
+Dylan_2009_03_31_Hannover_TM_D1_06.flac:dc90a617ea140d489476a243fc0d11db
+Dylan_2009_03_31_Hannover_TM_D1_07.flac:9ec995dbba39157459a13579aa340d2a
+Dylan_2009_03_31_Hannover_TM_D1_08.flac:967c154cd198bed52e6f2177adf21f20
+Dylan_2009_03_31_Hannover_TM_D1_09.flac:15d57db197cec38fdbe7dfece0f2ed5a
+Dylan_2009_03_31_Hannover_TM_D1_10.flac:e569ad944f0c320f01761199feb3f9da
+Dylan_2009_03_31_Hannover_TM_D1_11.flac:fa92c7edf198493d92db7604422848fd
+Dylan_2009_03_31_Hannover_TM_D1_12.flac:769424866f3306d9920cff3640bd34d1
+Dylan_2009_03_31_Hannover_TM_D1_13.flac:19cbc9af7063e5d2b43d0b1904183581
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-03-31-TM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+Dylan_2009_03_31_Hannover_TM_D2_01.flac:1591a671d7eebaeea3e78c308feea9c6
+Dylan_2009_03_31_Hannover_TM_D2_02.flac:dc5da9d621da7e6f7c956e34821ff2a7
+Dylan_2009_03_31_Hannover_TM_D2_03.flac:0f49a188da7b494469e7196ca1e8a2b1
+Dylan_2009_03_31_Hannover_TM_D2_04.flac:46d17102863403370e0bc322ba1be1ee
+Dylan_2009_03_31_Hannover_TM_D2_05.flac:cf2ec7d6d07e3bf40933b916dad22645
+Dylan_2009_03_31_Hannover_TM_D2_06.flac:17707ea8cb467173a3848501b25adc59
+Dylan_2009_04_04_Munchen_TM_D1_05.flac:8b5b144c8156f0e6fe0b75c887a16f15
+Dylan_2009_04_04_Munchen_TM_D1_06.flac:169b80cc07500eb10ca9703c485ab7d2
+Dylan_2009_04_04_Munchen_TM_D1_07.flac:4afe1b9c613657f7bdab9a8e19a74883
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-03-31-TM.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.71        9338924 B   -b-   --   ---xx   flac  0.5841  Dylan_2009_03_31_Hannover_TM_D1_01.flac
+     4:23.03       46399532 B   -b-   --   ---xx   flac  0.6349  Dylan_2009_03_31_Hannover_TM_D1_02.flac
+     4:10.51       44220460 B   -b-   --   ---xx   flac  0.6150  Dylan_2009_03_31_Hannover_TM_D1_03.flac
+     5:48.22       61440044 B   -b-   --   ---xx   flac  0.6277  Dylan_2009_03_31_Hannover_TM_D1_04.flac
+     8:22.50       88670252 B   -b-   --   ---xx   flac  0.6212  Dylan_2009_03_31_Hannover_TM_D1_05.flac
+     7:27.58       78987308 B   -b-   --   ---xx   flac  0.6186  Dylan_2009_03_31_Hannover_TM_D1_06.flac
+     5:17.35       56000556 B   -b-   --   ---xx   flac  0.5437  Dylan_2009_03_31_Hannover_TM_D1_07.flac
+     5:14.44       55492652 B   -b-   --   ---xx   flac  0.5696  Dylan_2009_03_31_Hannover_TM_D1_08.flac
+     6:27.30       68337708 B   -b-   --   ---xx   flac  0.6322  Dylan_2009_03_31_Hannover_TM_D1_09.flac
+     5:07.46       54263852 B   -b-   --   ---xx   flac  0.6057  Dylan_2009_03_31_Hannover_TM_D1_10.flac
+     5:22.22       56852524 B   -b-   --   ---xx   flac  0.6086  Dylan_2009_03_31_Hannover_TM_D1_11.flac
+     6:12.20       65667116 B   -b-   --   ---xx   flac  0.6372  Dylan_2009_03_31_Hannover_TM_D1_12.flac
+     8:35.68       91004972 B   -b-   --   ---xx   flac  0.5654  Dylan_2009_03_31_Hannover_TM_D1_13.flac
+    73:22.69      776675900 B                            0.6060  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-03-31-TM.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.59       50237484 B   -b-   --   ---xx   flac  0.6487  Dylan_2009_03_31_Hannover_TM_D2_01.flac
+     9:29.65      100524076 B   -b-   --   ---xx   flac  0.6243  Dylan_2009_03_31_Hannover_TM_D2_02.flac
+     5:07.66       54308908 B   -b-   --   ---xx   flac  0.6140  Dylan_2009_03_31_Hannover_TM_D2_03.flac
+     4:57.34       52469804 B   -b-   --   ---xx   flac  0.6095  Dylan_2009_03_31_Hannover_TM_D2_04.flac
+     0:39.13        6909996 B   -b-   --   ---xx   flac  0.6472  Dylan_2009_03_31_Hannover_TM_D2_05.flac
+     9:00.05       95268884 B   -b-   --   ---xx   flac  0.6411  Dylan_2009_03_31_Hannover_TM_D2_06.flac
+     6:36.60       69996588 B   -b-   --   ---xx   flac  0.6336  Dylan_2009_04_04_Munchen_TM_D1_05.flac
+     6:27.61       68411436 B   -b-   --   ---xx   flac  0.6051  Dylan_2009_04_04_Munchen_TM_D1_06.flac
+     7:01.11       74289196 B   -b-   --   ---xx   flac  0.6283  Dylan_2009_04_04_Munchen_TM_D1_07.flac
+    54:04.74      572416372 B                            0.6266  (9 files)
+=================== 
+=================== 
+=================== 

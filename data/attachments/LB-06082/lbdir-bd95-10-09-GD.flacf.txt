@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-09-GD.flacf 
+=================== 
+=================== 
+=================== 
+a4fc20abd6ec0a772f1ff8db7c38fdc7  bd-19951009-Savannah.ffp
+24984420c56dad0fa360c4ecab0183ae  bd-19951009-Savannah.md5
+fef260667af9c2e11d7323a4ec05c9ed  bd1995-10-09-d1t01.flac
+d84972968d0e5918f206fc0accac5cb6  bd1995-10-09-d1t02.flac
+1b9cd40632582404271c84e25bcf5e53  bd1995-10-09-d1t03.flac
+0d0028c72b66e42a35cd90c367bb0f96  bd1995-10-09-d1t04.flac
+59762c7780193c0bf7197e682b4fb52a  bd1995-10-09-d1t05.flac
+b0e5b7298ad2a77c36c8aae017b1ee61  bd1995-10-09-d1t06.flac
+d08942ef4624a359523c15ddc083096d  bd1995-10-09-d1t07.flac
+3a3a2623dbf943501fa8997d133a91e8  bd1995-10-09-d1t08.flac
+d0074240a552f44ed3ba73f6126945e7  bd1995-10-09-d1t09.flac
+b10c0ab7eb657bd7546c9d919abff6b5  bd1995-10-09-d1t10.flac
+8c3e02f73edf101249c6b49ba1ac9b74  bd1995-10-09-d2t01.flac
+f0f3481e18af74a993fe488dcf300fa4  bd1995-10-09-d2t02.flac
+97cc1bc5e811a401db812b638ec8fee1  bd1995-10-09-d2t03.flac
+8615fc729eed091d6bbb36d218922896  bd1995-10-09-d2t04.flac
+cb2bdfdd38ef926fd7c221f11afa57ca  bd1995-10-09-d2t05.flac
+dd2a56c62a58544865f58e045d38e1a5  bd1995-10-09-d2t06.flac
+ba490a4c31dc8f9608eb6e2edc80f50e  bd1995-10-09-d2t07.flac
+2fca7af8fce5d323f1436345618c398f  bd1995-10-09-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-09-GD.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-10-09-d1t01.flac:8407e86debb1c9a9486b78c295995d63
+bd1995-10-09-d1t02.flac:5630a5ae0ebcdda908a9d19c7c2e957c
+bd1995-10-09-d1t03.flac:8c7461dcf36211eeb1eaaed1c3a7abb4
+bd1995-10-09-d1t04.flac:bb5da8fd102172f6f4f56a24c4daf255
+bd1995-10-09-d1t05.flac:37cd020d7badd16b1d4c07929e03d6c4
+bd1995-10-09-d1t06.flac:d007c415ea6038def47b7cb3962d6a1e
+bd1995-10-09-d1t07.flac:393eb198d335ab940d8e5a1625082e2a
+bd1995-10-09-d1t08.flac:104ad30cdf028b6901917331306ab194
+bd1995-10-09-d1t09.flac:2f6e1b565acfc2af0b1f8772ef9f13a8
+bd1995-10-09-d1t10.flac:f3a6f309078065738ba4363c5997616c
+bd1995-10-09-d2t01.flac:cf29a218dc0fa2de144d1b46ad0ce0f9
+bd1995-10-09-d2t02.flac:23f21bd2a071fc7c1b527164dc7a1a31
+bd1995-10-09-d2t03.flac:7efaad5e2ef898ea78574eecb14189f1
+bd1995-10-09-d2t04.flac:4036ca5553c2733469ee5d5a6cbfa424
+bd1995-10-09-d2t05.flac:dd5b8a8d6bfe22f959ec7fbf55959632
+bd1995-10-09-d2t06.flac:ac61efe991bcf3abf3536adc67a95213
+bd1995-10-09-d2t07.flac:5dfe785105f25d39dc6e9f20954f1737
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-09-GD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.00        6526844 B   ---   --   ---xx   flac  0.4612  bd1995-10-09-d1t01.flac
+     6:31.35       69054764 B   ---   --   ---xx   flac  0.6070  bd1995-10-09-d1t02.flac
+     6:24.65       67890524 B   ---   --   ---xx   flac  0.5627  bd1995-10-09-d1t03.flac
+     7:28.16       79064876 B   ---   --   ---xx   flac  0.5882  bd1995-10-09-d1t04.flac
+     8:46.27       92849948 B   ---   --   ---xx   flac  0.5195  bd1995-10-09-d1t05.flac
+     7:56.49       84081692 B   ---   --   ---xx   flac  0.5881  bd1995-10-09-d1t06.flac
+     8:15.36       87402716 B   ---   --   ---xx   flac  0.5938  bd1995-10-09-d1t07.flac
+    10:23.66      110052476 B   ---   --   ---xx   flac  0.4471  bd1995-10-09-d1t08.flac
+     6:22.68       67544780 B   ---   --   ---xx   flac  0.4514  bd1995-10-09-d1t09.flac
+     8:27.02       89439548 B   ---   --   ---xx   flac  0.3926  bd1995-10-09-d1t10.flac
+     7:02.48       74553740 B   ---   --   ---xx   flac  0.6014  bd1995-10-09-d2t01.flac
+     7:11.17       76068428 B   ---   --   ---xx   flac  0.5255  bd1995-10-09-d2t02.flac
+     0:36.01        6352796 B   ---   --   ---xx   flac  0.4480  bd1995-10-09-d2t03.flac
+     9:28.32      100270508 B   ---   --   ---xx   flac  0.5504  bd1995-10-09-d2t04.flac
+    10:18.10      109038764 B   ---   --   ---xx   flac  0.5535  bd1995-10-09-d2t05.flac
+    10:49.17      114523628 B   ---   --   ---xx   flac  0.5297  bd1995-10-09-d2t06.flac
+     4:36.23       48740540 B   ---   --   ---xx   flac  0.4308  bd1995-10-09-d2t07.flac
+   121:15.62     1283456572 B                            0.5289  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-08-rem.shnf 
+=================== 
+=================== 
+=================== 
+4d2f938b9a43e9f0b139681b0de1fbed  bd1988-07-08.info.txt
+5e6e898dd981fae16c31c3372f208ef5  bd1988-07-08.shns.md5
+91e8430998760f8e965ca6422df9d5c9  bd1988-07-08.shntoolfp.txt
+719fff4e70bba467e181e1bb2c891faa  bd1988-07-08.shntoolresults.txt
+470d7cccbd0b1afc226579f207534ce2  bd1988-07-08.waves.md5
+bdd7a33c8c6be63bfe86ddf38d6ba55d  bd1988-07-08t01.shn
+595283152f9202a6582ee001b6890a68  bd1988-07-08t02.shn
+a8e12335ebac465c51068f6ddf099b6e  bd1988-07-08t03.shn
+8bfb9915bac798a8733c87c27297a725  bd1988-07-08t04.shn
+9e198069c147fc9dcbef85ef4e8df781  bd1988-07-08t05.shn
+154bad68bcc6d214b8a543e797a8effa  bd1988-07-08t06.shn
+e02a349b86b0b53761f2196bdc1da2e5  bd1988-07-08t07.shn
+012cca2d64cabff55f3cce824a2ef7b7  bd1988-07-08t08.shn
+5fc34fea897253cbb7bf86a3dba65191  bd1988-07-08t09.shn
+de573d2dd9093bb7e537daf54d5f914f  bd1988-07-08t10.shn
+79e5fe1c781f015d7d9e7345fea0df94  bd1988-07-08t11.shn
+92f03b157e6598494104caa4b0feb4ee  bd1988-07-08t12.shn
+c2e52f17bdfa895d2333e7faaaa7747d  bd1988-07-08t13.shn
+c3c4ccacec4ee7f153bb04dd308234eb  bd1988-07-08t14.shn
+d3dca9eb9ec9a3f56c58096c97699e06  bd88-07-08-rem.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-07-08-rem.shnf 
+=================== 
+=================== 
+=================== 
+21a7794cf0358aa0d25c6c39e6a38056  [shntool]  bd1988-07-08t01.wav
+25791f5350079a62719b3a415129e699  [shntool]  bd1988-07-08t02.wav
+f01936fc357131cbced5eb52e4c61776  [shntool]  bd1988-07-08t03.wav
+af4fefa55de5787bebac662694783ad3  [shntool]  bd1988-07-08t04.wav
+9ec7761810a4485cbb15ea3ceaf8d9bb  [shntool]  bd1988-07-08t05.wav
+26b2b213f79b3103bdaf73f2637428fd  [shntool]  bd1988-07-08t06.wav
+615d9f793d99657cb71e99f8325370e9  [shntool]  bd1988-07-08t07.wav
+bd6db0ce92e7fbe3a88198a3083322ff  [shntool]  bd1988-07-08t08.wav
+51fcff658000aa8c135d4b8a31db86d1  [shntool]  bd1988-07-08t09.wav
+a5d3d7b7527afb3da68bf056af6e71df  [shntool]  bd1988-07-08t10.wav
+d6849476311f09b907b7b170b05d027d  [shntool]  bd1988-07-08t11.wav
+11e115f32cea43ffd8c5d17662a8714e  [shntool]  bd1988-07-08t12.wav
+c5ea985d41902a70980dd385b2b21729  [shntool]  bd1988-07-08t13.wav
+39a57698b2212d41b28a67efc3929d7a  [shntool]  bd1988-07-08t14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-08-rem.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:25.26       36223196 B   ---   --   -----    wav  1.0000  bd1988-07-08t01.wav
+     4:30.24       47684492 B   ---   --   -----    wav  1.0000  bd1988-07-08t02.wav
+     6:16.03       66333500 B   ---   --   -----    wav  1.0000  bd1988-07-08t03.wav
+     5:48.14       61420172 B   ---   --   -----    wav  1.0000  bd1988-07-08t04.wav
+     5:04.19       53670332 B   ---   --   -----    wav  1.0000  bd1988-07-08t05.wav
+     5:05.01       53804396 B   ---   --   -----    wav  1.0000  bd1988-07-08t06.wav
+     5:25.13       57360620 B   ---   --   -----    wav  1.0000  bd1988-07-08t07.wav
+     8:47.18       93005180 B   ---   --   -----    wav  1.0000  bd1988-07-08t08.wav
+     4:56.27       52277948 B   ---   --   -----    wav  1.0000  bd1988-07-08t09.wav
+     6:41.57       70870508 B   ---   --   -----    wav  1.0000  bd1988-07-08t10.wav
+     5:46.28       61100300 B   ---   --   -----    wav  1.0000  bd1988-07-08t11.wav
+     6:40.13       70590620 B   ---   --   -----    wav  1.0000  bd1988-07-08t12.wav
+     5:06.04       53987852 B   ---   --   -----    wav  1.0000  bd1988-07-08t13.wav
+     4:05.39       43309772 B   ---   --   -----    wav  1.0000  bd1988-07-08t14.wav
+    77:37.61      821638888 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

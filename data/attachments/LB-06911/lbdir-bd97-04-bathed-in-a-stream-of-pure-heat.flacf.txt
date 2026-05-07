@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-bathed-in-a-stream-of-pure-heat.flacf 
+=================== 
+=================== 
+=================== 
+72c011969586df1ce3b756c4bad8c19a  bd97-04-bathed-in-a-stream-of-pure-heat-d1t01.flac
+a9d236c0038915bdf17f81740d43e539  bd97-04-bathed-in-a-stream-of-pure-heat-d1t02.flac
+2e47330d948cc0f0013156541780be54  bd97-04-bathed-in-a-stream-of-pure-heat-d1t03.flac
+53bf057a2448768ad96a0e1c6eb84c58  bd97-04-bathed-in-a-stream-of-pure-heat-d1t04.flac
+b13305ad1f65619a6904e51cfe03b5ee  bd97-04-bathed-in-a-stream-of-pure-heat-d1t05.flac
+19e7719c88e0dd254f9b095aa3fc6617  bd97-04-bathed-in-a-stream-of-pure-heat-d1t06.flac
+f859d58109433a11802e36382d467a0e  bd97-04-bathed-in-a-stream-of-pure-heat-d1t07.flac
+f5b676bd394e84e5ef28824462d48cd4  bd97-04-bathed-in-a-stream-of-pure-heat-d1t08.flac
+69e1e3ad311a7959a0bf0a2759d776fd  bd97-04-bathed-in-a-stream-of-pure-heat-d1t09.flac
+239304e61f23a8d5950dec1530662152  bd97-04-bathed-in-a-stream-of-pure-heat-d1t10.flac
+70be52a47a7447caa16827af32677e75  bd97-04-bathed-in-a-stream-of-pure-heat-d1t11.flac
+0d250475238ddd61792e704f408f8d7b  bd97-04-bathed-in-a-stream-of-pure-heat-d2t01.flac
+07872a25ab7a62ecb7a2a2123c86d86f  bd97-04-bathed-in-a-stream-of-pure-heat-d2t02.flac
+f8e6b5200afc33d88cb7a765c0f42fc7  bd97-04-bathed-in-a-stream-of-pure-heat-d2t03.flac
+c572666d231f33fcb4a6ac06154b08bf  bd97-04-bathed-in-a-stream-of-pure-heat-d2t04.flac
+12b4aef0a0905937a14d9c7c0c4e1b84  bd97-04-bathed-in-a-stream-of-pure-heat-d2t05.flac
+ed49d2560071f22ae6d13eb8a0abe9fb  bd97-04-bathed-in-a-stream-of-pure-heat-d2t06.flac
+5508185f92e93c0b2da975732f881852  bd97-04-bathed-in-a-stream-of-pure-heat-d2t07.flac
+c690b62f31bd14153e1d0e645e0efed9  bd97-04-bathed-in-a-stream-of-pure-heat-d2t08.flac
+1bb4e083ec807644d09688f9d2129872  bd97-04-bathed-in-a-stream-of-pure-heat-d2t09.flac
+9e93fc9971bbab9f4f0f412694068f68  bd97-04-bathed-in-a-stream-of-pure-heat-d2t10.flac
+07c0e2c4b61623d37ebba5d730be745c  bd97-04-bathed-in-a-stream-of-pure-heat.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-bathed-in-a-stream-of-pure-heat.flacf 
+=================== 
+=================== 
+=================== 
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t01.flac:2c104e9e810eebd5a22faf09f2afb372
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t02.flac:0e602c48676b7a70e034f90b49b78b17
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t03.flac:b8fe694a68c1c75563b02aded65f5b39
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t04.flac:b9aea0ae7eae787e97399edcaeeb28bc
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t05.flac:92042540cf0911cb45ab05ffdbb1a382
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t06.flac:26e80bbee1c066e6e08d7c3a1564b3f6
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t07.flac:7bb480d8fbc2f5001e2e8653bfa0f359
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t08.flac:189747022b13c802625238da4c1478f7
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t09.flac:905f76992f9daeda7ae112832526c017
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t10.flac:9dda09269bbd8354981f6ffe906d5409
+bd97-04-bathed-in-a-stream-of-pure-heat-d1t11.flac:a00194c70e3790565d5e3de91fb65e9f
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t01.flac:69177aed3e7748df33679ce2a1f2ecbe
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t02.flac:ba5f1cb2031f365cb940642aeefbbec0
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t03.flac:00e1888f3c22e4fc23fce8f667ab8e40
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t04.flac:62d150d3e650b31bcfee0b3da698bd2b
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t05.flac:af198b710ecd9ec95fc003647464df13
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t06.flac:9849264fc42c42805856dab54b49e9a6
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t07.flac:afdaceda8f992d2ae14d1835c90337ae
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t08.flac:f164331baa5c0593788ce05b35be3780
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t09.flac:f2cdd3531700f7ec6110da797399ead3
+bd97-04-bathed-in-a-stream-of-pure-heat-d2t10.flac:2cf1c3e6d625a70e01b693bab4c03e5f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-bathed-in-a-stream-of-pure-heat.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.62       47950268 B   ---   --   ---xx   flac  0.6003  bd97-04-bathed-in-a-stream-of-pure-heat-d1t01.flac
+     6:41.65       70889324 B   ---   --   ---xx   flac  0.5869  bd97-04-bathed-in-a-stream-of-pure-heat-d1t02.flac
+     4:48.15       50838524 B   ---   --   ---xx   flac  0.6167  bd97-04-bathed-in-a-stream-of-pure-heat-d1t03.flac
+     9:46.20      103417484 B   ---   --   ---xx   flac  0.5566  bd97-04-bathed-in-a-stream-of-pure-heat-d1t04.flac
+     6:43.15       71124524 B   ---   --   ---xx   flac  0.6393  bd97-04-bathed-in-a-stream-of-pure-heat-d1t05.flac
+     6:05.10       64409564 B   ---   --   ---xx   flac  0.5695  bd97-04-bathed-in-a-stream-of-pure-heat-d1t06.flac
+     7:39.05       80979404 B   ---   --   ---xx   flac  0.6568  bd97-04-bathed-in-a-stream-of-pure-heat-d1t07.flac
+     8:03.38       85290620 B   ---   --   ---xx   flac  0.5583  bd97-04-bathed-in-a-stream-of-pure-heat-d1t08.flac
+     4:44.65       50250524 B   ---   --   ---xx   flac  0.5769  bd97-04-bathed-in-a-stream-of-pure-heat-d1t09.flac
+     4:21.32       46115708 B   ---   --   ---xx   flac  0.6542  bd97-04-bathed-in-a-stream-of-pure-heat-d1t10.flac
+    10:00.30      105910604 B   ---   --   ---xx   flac  0.5992  bd97-04-bathed-in-a-stream-of-pure-heat-d1t11.flac
+     3:35.07       37942508 B   ---   --   ---xx   flac  0.5118  bd97-04-bathed-in-a-stream-of-pure-heat-d2t01.flac
+     7:25.30       78568604 B   ---   --   ---xx   flac  0.5799  bd97-04-bathed-in-a-stream-of-pure-heat-d2t02.flac
+     5:25.30       57400604 B   ---   --   ---xx   flac  0.6327  bd97-04-bathed-in-a-stream-of-pure-heat-d2t03.flac
+     6:33.62       69471068 B   ---   --   ---xx   flac  0.5896  bd97-04-bathed-in-a-stream-of-pure-heat-d2t04.flac
+     6:19.16       66893276 B   ---   --   ---xx   flac  0.5850  bd97-04-bathed-in-a-stream-of-pure-heat-d2t05.flac
+     7:41.05       81332204 B   ---   --   ---xx   flac  0.5814  bd97-04-bathed-in-a-stream-of-pure-heat-d2t06.flac
+     7:30.62       79525868 B   ---   --   ---xx   flac  0.5825  bd97-04-bathed-in-a-stream-of-pure-heat-d2t07.flac
+     5:13.65       55366124 B   ---   --   ---xx   flac  0.6338  bd97-04-bathed-in-a-stream-of-pure-heat-d2t08.flac
+    11:41.58      123792860 B   ---   --   ---xx   flac  0.6329  bd97-04-bathed-in-a-stream-of-pure-heat-d2t09.flac
+     9:10.37       97107068 B   ---   --   ---xx   flac  0.6244  bd97-04-bathed-in-a-stream-of-pure-heat-d2t10.flac
+   144:02.54     1524576732 B                            0.5995  (21 files)
+=================== 
+=================== 
+=================== 

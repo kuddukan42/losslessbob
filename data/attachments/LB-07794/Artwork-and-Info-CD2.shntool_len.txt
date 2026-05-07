@@ -1,0 +1,12 @@
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:35.05       59105684 B   -b-   --   -----    wav  1.0000  07 Blackjack Davey.wav
+     7:29.27       79267148 B   ---   --   -----    wav  1.0000  08 Gates of Eden.wav
+     7:00.71       74255036 B   ---   --   -----    wav  1.0000  09 Don't think twice, it's all right.wav
+     5:52.01       62095196 B   ---   --   -----    wav  1.0000  10 Shooting star.wav
+     6:34.02       69506348 B   ---   --   -----    wav  1.0000  11 Maggie's Farm.wav
+     7:40.64       81294572 B   ---   --   -----    wav  1.0000  12 Man in the long black coat.wav
+     9:27.07      100035428 B   -b-   --   -----    wav  1.0000  13 It ain't me, babe.wav
+    49:39.27      525559412 B                            1.0000  (7 files)

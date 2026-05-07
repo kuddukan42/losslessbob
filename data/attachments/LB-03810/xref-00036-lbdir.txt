@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-18-cc-b.flacf 
+=================== 
+=================== 
+=================== 
+111e067728494fdd2a27438479b3d09d  101-Intro.flac
+4f048e11765064c61c75a3f6dffb874f  102-Maggies Farm.flac
+f743bef32c7716903661085bddd9993e  103-Tell Me That It Isn't True.flac
+5e3d04d952f6723eb9a50332e3f00af7  104-Watching The River Flow.flac
+ae89598f063a5a132544b2a397a27a78  105-Just Like Tom Thumbs Blues.flac
+8d48bcff47c5dab3e74b35d2b0a46e43  106-Ballad Of A Thin Man.flac
+14533dd3ac965fba3cbb94a18952316b  107-Highway 61 Revisited.flac
+9c6184045b2f42a5623aa9549e877e28  108-Mr Tambourine Man.flac
+333cccf3fd22194eb54248d2911cc1f8  109-Stuck Inside Of Mobile.flac
+0f74b3df5576dc1d30578b0b3e2600d8  110-Chimes Of Freedom.flac
+b1eb4ffe27a45097520fa71fc59dc772  111-'Til I Fell In Love With You.flac
+68e316409885aec8dc4730f9d5853a83  112-Visions Of Johanna.flac
+bd057472c20d4588e0b67861173d8ab3  113-Honest With Me.flac
+791ccc38e5df8b26003ab0e1d193b232  201-The Lonesome Death Of Hattie Carroll.flac
+ccab28b54b15594296d491e00e21377a  202-Summer Days.flac
+682290af83406961694a12dc8af92868  203-Like A Rolling Stone.flac
+ef589a50cdd07c7f650f1fc65c876329  204-All Along The Watchtower.flac
+903824b8e5268bd14825b8476dad144c  205-The Man In Me.flac
+3269e30c49354fd78e021e93ccd203e8  206-Bye And Bye.flac
+c63824170c7c8592a55255791a73132e  207-Absolutly Sweet Marie.flac
+320cc4b082d370dead5dc232c4c2c9f3  208-If You See Her Say Hello.flac
+f9a33525953109941e422e38419d10f6  209-I Shall Be Released.flac
+97e4f93be7d8b95ccab880e270137d27  210-I Dreamed I Saw St. Augustine.flac
+fc4aa4425bb1840167ab1ea7071174ff  211-Ballad Of Hollies Brown.flac
+977ec975418d5a82fb42e1669a0373e2  212-Forever Young.flac
+936ee9fbbcf17313bde54722162bc7b9  213-New Morning.flac
+0ad9efbf959139e2601af428921d12c8  Birmingham 2005 Back.jpg
+1fd5b9c023a273f0d200425e7b837fa7  Birmingham 2005 disc 01 flac.md5
+85c74ef7e144337a5d91fb33a3cc958e  Birmingham 2005 Disc 01 waw.md5
+20d6c7aa2108dbb93f1793786f47dbf1  Birmingham 2005 Disc 01.jpg
+727bb8422c55924b9e3068d33301b345  Birmingham 2005 Disc 01.log
+00f5260693a35e0fa66e4d0969f6ad39  Birmingham 2005 Disc 02 flac.md5
+628c3b53ab0ad68a2925c4344f8c9026  Birmingham 2005 Disc 02 waw.md5
+b89fb27ad39bdf3f2b3faafef87263b4  Birmingham 2005 Disc 02.jpg
+e3416435680772f767e8765c911b71e3  Birmingham 2005 Disc 02.log
+f01b0b2c2984c3ebd1cb092302054f49  Birmingham 2005 Front.jpg
+3a36b815820a8ca4c25f1765bd57b561  Birmingham 2005.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-18-cc-b.flacf 
+=================== 
+=================== 
+=================== 
+101-Intro.flac:57a1cfd93bd48f433a36a77bb8e245c9
+102-Maggies Farm.flac:88392edb53d863b206750186c85cff1f
+103-Tell Me That It Isn't True.flac:709aa109a640ba0cd7677c0afdbe3459
+104-Watching The River Flow.flac:ff9ec1c14698ba50e3a7b847b8c46b6e
+105-Just Like Tom Thumbs Blues.flac:242d1f18e6aa117612ba589300827654
+106-Ballad Of A Thin Man.flac:2af7b64172e38a585f37fd2773413dd1
+107-Highway 61 Revisited.flac:5b9b1784d49a3fd539f906573bb5ad28
+108-Mr Tambourine Man.flac:9836dc0eade8ed025ea65d04bfa02b37
+109-Stuck Inside Of Mobile.flac:c367595f399796869c739f332f59a240
+110-Chimes Of Freedom.flac:a7ea6535e7ebfd5739e3a36acc5f70c9
+111-'Til I Fell In Love With You.flac:a4bdec41225e9ba49b4536d4fc1df122
+112-Visions Of Johanna.flac:582f5f014efe2a0c7697c8d5a33a30a3
+113-Honest With Me.flac:c084cc745db28f6792efac19e5229f86
+201-The Lonesome Death Of Hattie Carroll.flac:8a0df6fdef0242bb802af8ba77939a3e
+202-Summer Days.flac:b48f4429bd0864d650acd3c0eec7c084
+203-Like A Rolling Stone.flac:289764de1ff04088d7ac953934e7c6e9
+204-All Along The Watchtower.flac:4e2be9d02eb9082dcbf97bacefed1fc6
+205-The Man In Me.flac:9dae19ea2a6c7122c6f0a25b1c165e7d
+206-Bye And Bye.flac:6793d637dd310e03f2ec557e9452c3dc
+207-Absolutly Sweet Marie.flac:fdbfe91def954a79379be9f81ce14213
+208-If You See Her Say Hello.flac:18369cab17eb87f5a248fc5cb0818d2a
+209-I Shall Be Released.flac:911b81e0035f63bd9881acc9fbdc55a8
+210-I Dreamed I Saw St. Augustine.flac:ea4828d22e66994ecd77fa8b26f58c34
+211-Ballad Of Hollies Brown.flac:4d543eb455d254c3455e891eaeb5b258
+212-Forever Young.flac:fcc2fd7a0e2a3d36250940c6ceee5dd5
+213-New Morning.flac:ddf3d36c85c0fc8826d7ff8e0eefd839
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-18-cc-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.21       10809836 B   ---   --   ---xx   flac  0.6100  101-Intro.flac
+     5:20.14       56480972 B   ---   --   ---xx   flac  0.7546  102-Maggies Farm.flac
+     4:33.53       48281900 B   ---   --   ---xx   flac  0.7283  103-Tell Me That It Isn't True.flac
+     6:02.48       63969740 B   ---   --   ---xx   flac  0.7316  104-Watching The River Flow.flac
+     6:29.36       68704316 B   ---   --   ---xx   flac  0.7024  105-Just Like Tom Thumbs Blues.flac
+     7:05.43       75071180 B   ---   --   ---xx   flac  0.7045  106-Ballad Of A Thin Man.flac
+     7:08.38       75588620 B   ---   --   ---xx   flac  0.7112  107-Highway 61 Revisited.flac
+     5:35.39       59185772 B   ---   --   ---xx   flac  0.6461  108-Mr Tambourine Man.flac
+     7:52.43       83361980 B   ---   --   ---xx   flac  0.7216  109-Stuck Inside Of Mobile.flac
+     6:21.45       67314284 B   ---   --   ---xx   flac  0.7047  110-Chimes Of Freedom.flac
+     5:48.55       61516604 B   ---   --   ---xx   flac  0.6808  111-'Til I Fell In Love With You.flac
+     9:16.29       98146652 B   ---   --   ---xx   flac  0.6687  112-Visions Of Johanna.flac
+     6:41.41       70832876 B   ---   --   ---xx   flac  0.7407  113-Honest With Me.flac
+     6:18.17       66719228 B   ---   --   ---xx   flac  0.6455  201-The Lonesome Death Of Hattie Carroll.flac
+     8:08.20       86130284 B   ---   --   ---xx   flac  0.7182  202-Summer Days.flac
+     7:06.45       75252284 B   ---   --   ---xx   flac  0.7243  203-Like A Rolling Stone.flac
+     6:44.14       71298572 B   ---   --   ---xx   flac  0.7056  204-All Along The Watchtower.flac
+     4:34.55       48463004 B   ---   --   ---xx   flac  0.6890  205-The Man In Me.flac
+     6:18.14       66712172 B   ---   --   ---xx   flac  0.6080  206-Bye And Bye.flac
+     5:53.08       62288060 B   ---   --   ---xx   flac  0.6642  207-Absolutly Sweet Marie.flac
+     6:00.04       63513452 B   ---   --   ---xx   flac  0.6490  208-If You See Her Say Hello.flac
+     4:42.69       49907132 B   ---   --   ---xx   flac  0.6230  209-I Shall Be Released.flac
+     6:04.71       64376636 B   ---   --   ---xx   flac  0.6925  210-I Dreamed I Saw St. Augustine.flac
+     5:55.00       62622044 B   ---   --   ---xx   flac  0.6736  211-Ballad Of Hollies Brown.flac
+     6:51.23       72554540 B   ---   --   ---xx   flac  0.6846  212-Forever Young.flac
+     4:54.13       51892220 B   ---   --   ---xx   flac  0.6928  213-New Morning.flac
+   158:49.33     1680994360 B                            0.6911  (26 files)
+=================== 
+=================== 
+=================== 

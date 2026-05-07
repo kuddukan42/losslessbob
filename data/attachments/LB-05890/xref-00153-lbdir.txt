@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd95-09-28-c.flacf
+===================
+===================
+===================
+f302efef7b8f7b5880a8af0d6f8db2cf *bd1995-09-28.txt
+002df1e2ebaf5ed272dce260ca8b0fb2 *flacs\d1t01crash.flac
+c1d5e1b71a8ba4413aabaec0695ebab8 *flacs\d1t02senor.flac
+6ba8f2c0cc3f503b55e024c70afc7f74 *flacs\d1t03watchtower.flac
+5d3e6458d139d934fd58e3344ed66ed9 *flacs\d1t04you're a big girl now.flac
+85046b48f81e123c8765c6314ede449c *flacs\d1t05i'll be your baby tonight.flac
+a0a90b061958a7d335ef0e941f09dfa2 *flacs\d1t06silvio.flac
+e65457d23c818bf03a8056f1fb77416a *flacs\d2t01mr. tambourine man fix.flac
+0fa5ea6a6f68fd4991f31329d9104e76 *flacs\d2t02boots fix.flac
+b5df04aec8aea43c5819c85c8286e168 *flacs\d2t03mama fix.flac
+9f889c4295f443b9821c65345a5078a0 *flacs\d2t04.flac
+59d95d101af1796c79f670f1d214be20 *flacs\d2t05.flac
+ab6c4773a3210098ecffb3e75f0dec39 *flacs\d2t06.flac
+c5143b2eb20579c628fee6d3b3eea6f6 *flacs\d2t07.flac
+4c31a1fd1f61875beaea309231dbfe18 *flacs\d2t08.flac
+7d51c39c34a4240b0f556a9798903be5 *flacs\d2t09.flac
+51d5d65ef07824e7e76e556d224c7139 *flacs\flacs.md5
+4d112e6952e84b78c63417495b2c793a *flacs.ffp
+8362c59073a16fb9b046d677c8d30da6 *LBF-05890-bd95-09-28-LTH-LB-5890.txt
+===================
+===================
+===================
+=== ffp for: bd95-09-28-c.flacf
+===================
+===================
+===================
+flacs\d1t01crash.flac:d04b58797923332a57136f30c4a6bcec
+flacs\d1t02senor.flac:a06cf8849aaa64eb37583663a7f7d2e2
+flacs\d1t03watchtower.flac:d33da1fbbd0cade63031aaf26b062bf4
+flacs\d1t04you're a big girl now.flac:10ecbb6168bc62e63cd79d3bde85928e
+flacs\d1t05i'll be your baby tonight.flac:436b271dac03f5149b20ac7c61569704
+flacs\d1t06silvio.flac:99fc912788223063a4088d1e5ae13ec2
+flacs\d2t01mr. tambourine man fix.flac:b1aa1e253b3597ce6950769998f71319
+flacs\d2t02boots fix.flac:4694876d5d8e2df9aa51df08c8449721
+flacs\d2t03mama fix.flac:b6ad16f5f64e588865f90c988ae3c549
+flacs\d2t04.flac:d1b79cdb4c01c77a6a12bc681a89a7fe
+flacs\d2t05.flac:4d33288284e56efec9e3990774b34367
+flacs\d2t06.flac:e9b2a799d8c972bf73091a4af31beaed
+flacs\d2t07.flac:734a7428b39d5e339f1e640150a951c4
+flacs\d2t08.flac:1ca0e7dfd138e99c4243d2f55758cae0
+flacs\d2t09.flac:6e70fa89eee69add6035cfc21f8a5bbc
+===================
+===================
+===================
+=== shntool len for: bd95-09-28-c.flacf\flacs
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:17.30       55989404 B   ---   --   ---xx   flac  0.6559  d1t01crash.flac
+     5:12.45       55142684 B   ---   --   ---xx   flac  0.5882  d1t02senor.flac
+     5:58.62       63297068 B   ---   --   ---xx   flac  0.6046  d1t03watchtower.flac
+     5:42.63       60477020 B   ---   --   ---xx   flac  0.5586  d1t04you're a big girl now.flac
+     5:59.10       63351164 B   ---   --   ---xx   flac  0.5990  d1t05i'll be your baby tonight.flac
+     6:30.04       68805452 B   ---   --   ---xx   flac  0.6254  d1t06silvio.flac
+     8:35.59       90984812 B   ---   --   ---xx   flac  0.5860  d2t01mr. tambourine man fix.flac
+     7:42.72       81665304 B   -b-   --   ---xx   flac  0.4794  d2t02boots fix.flac
+     5:11.13       54891848 B   -b-   --   ---xx   flac  0.5296  d2t03mama fix.flac
+     6:03.72       64202588 B   ---   --   ---xx   flac  0.5246  d2t04.flac
+     6:02.20       63903884 B   ---   --   ---xx   flac  0.5184  d2t05.flac
+     6:19.60       66996764 B   ---   --   ---xx   flac  0.5451  d2t06.flac
+    10:50.59      114798812 B   ---   --   ---xx   flac  0.5289  d2t07.flac
+     9:58.38      105576620 B   ---   --   ---xx   flac  0.5384  d2t08.flac
+     6:18.65       66832124 B   ---   --   ---xx   flac  0.5268  d2t09.flac
+   101:44.72     1076915548 B                            0.5570  (15 files)
+===================
+===================
+===================

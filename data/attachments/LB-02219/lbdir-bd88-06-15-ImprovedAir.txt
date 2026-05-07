@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-15-ImprovedAir 
+=================== 
+=================== 
+=================== 
+1b538f6612a2bc6e885c3debac6234e0  01 Subterranean Homesick Blues.shn
+b71d33ce034c19b5367f2dc7bf3a2aa9  02 One More Cup Of Coffee.shn
+776164ebf70add53aef8e0d901779281  03 It's All Over Now, Baby Blue.shn
+9c952cde06b0a9c06788ed7368f56bfb  04 Stuck Inside Of Mobile.shn
+ff573e21d8a437b8cd8c9275d36bfaf4  05 You're A Big Girl Now.shn
+97a59bd8915bf706e133f7a853f3c056  06 Ballad Of A Thin Man.shn
+3607150f83d9a7877aa20c8a9a4c139a  07 Mama You Been On My Mind.shn
+58f42eaa4eed2cb0e58c51f33189297a  08 Eileen Aroon.shn
+26870b6e8650cf6718fcdeb06286b82b  09 Don't Think Twice, It's Alright.shn
+cb7c0bddf8448829d11cd54bb99013b4  10 Just Like A Woman.shn
+77789bda1fc475149553270e0534d08d  11 Seeing The Real You At Last.shn
+7c796730dcc897067ee0b2ea2d617593  12 Simple Twist Of Fate.shn
+9c0a9eef394d9211052734451a14da0d  13 Like A Rolling Stone.shn
+ff901054c5f6e40b18d9f06262a63921  14 A Hard Rain's A-Gonna Fall.shn
+308d010b5a5189ccf2ffca9ee85fc9ed  15 Maggie's Farm.shn
+86fb6324b178adf98615b0c6b41a318c  bd 1988-06-15.md5
+d59842755fb0c37d8767e487bf4d5665  bd1988.06.15.log
+5817a640d8068a91883a93204c611719  bd1988.06.15.txt
+6c74a7c3191b8d0a4314be9e2ed556d4  shntool.md5.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-06-15-ImprovedAir 
+=================== 
+=================== 
+=================== 
+d2a0650650187637d25bafe16f01473a  [shntool]  01_Subterranean_Homesick_Blues.wav
+e91de42fd16a25add49fdb1ade59b4d4  [shntool]  02_One_More_Cup_Of_Coffee.wav
+cbefdbe0a84e180ffb14cd8cf0a54a32  [shntool]  03_It_s_All_Over_Now,_Baby_Blue.wav
+2c05b33309561f09b57fa13ab9bb0a85  [shntool]  04_Stuck_Inside_Of_Mobile.wav
+3f3a06869eb590c1e3ee309150ed09e7  [shntool]  05_You_re_A_Big_Girl_Now.wav
+1c85d0e970858568ff83c529fd801fc5  [shntool]  06_Ballad_Of_A_Thin_Man.wav
+441cac6ec9aec1bd003017ffb510f656  [shntool]  07_Mama_You_Been_On_My_Mind.wav
+0c374d39420ab0aeac4866b70f14603d  [shntool]  08_Eileen_Aroon.wav
+6feebfbdcf7485b4793892a35c7a6971  [shntool]  09_Don_t_Think_Twice,_It_s_Alright.wav
+fc6e279b24b8d6f6ffe9151a0aa3ae22  [shntool]  10_Just_Like_A_Woman.wav
+01572c6bf5893f42e227c8ab13469c03  [shntool]  11_Seeing_The_Real_You_At_Last.wav
+b1c53c8ca8dea84a01481fc6c2eb9bd7  [shntool]  12_Simple_Twist_Of_Fate.wav
+4fa343a8655bbae2b8f6014cdc104237  [shntool]  13_Like_A_Rolling_Stone.wav
+59f8097fcf6aa87f6046b6e579354f0e  [shntool]  14_A_Hard_Rain_s_A-Gonna_Fall.wav
+e1f4accc08aed1abc69ecdc4587ef7bd  [shntool]  15_Maggie_s_Farm.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-15-ImprovedAir 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:06.57       43528508 B   ---   --   -----    wav  1.0000  01_Subterranean_Homesick_Blues.wav
+     5:27.03       57689900 B   ---   --   -----    wav  1.0000  02_One_More_Cup_Of_Coffee.wav
+     5:59.14       63360572 B   ---   --   -----    wav  1.0000  03_It_s_All_Over_Now,_Baby_Blue.wav
+     6:29.02       68624348 B   ---   --   -----    wav  1.0000  04_Stuck_Inside_Of_Mobile.wav
+     5:29.74       58209692 B   ---   --   -----    wav  1.0000  05_You_re_A_Big_Girl_Now.wav
+     5:24.72       57322988 B   ---   --   -----    wav  1.0000  06_Ballad_Of_A_Thin_Man.wav
+     3:26.05       36350204 B   ---   --   -----    wav  1.0000  07_Mama_You_Been_On_My_Mind.wav
+     4:54.42       51960428 B   ---   --   -----    wav  1.0000  08_Eileen_Aroon.wav
+     3:29.27       36931148 B   ---   --   -----    wav  1.0000  09_Don_t_Think_Twice,_It_s_Alright.wav
+     4:59.28       52809500 B   ---   --   -----    wav  1.0000  10_Just_Like_A_Woman.wav
+     4:06.42       43493228 B   ---   --   -----    wav  1.0000  11_Seeing_The_Real_You_At_Last.wav
+     7:09.02       75680348 B   ---   --   -----    wav  1.0000  12_Simple_Twist_Of_Fate.wav
+     6:50.08       72342860 B   ---   --   -----    wav  1.0000  13_Like_A_Rolling_Stone.wav
+     7:40.61       81287516 B   ---   --   -----    wav  1.0000  14_A_Hard_Rain_s_A-Gonna_Fall.wav
+     5:21.28       56690300 B   ---   --   -----    wav  1.0000  15_Maggie_s_Farm.wav
+    80:54.15      856281540 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

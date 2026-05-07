@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-17.flacf 
+=================== 
+=================== 
+=================== 
+d2ecfffd54084e3ba5ccf7e344e20c98  bd1997-08-17WantaghFLAC.md5
+c87c5571ae6fca6b27b181a60bfc0cc3  bd97-08-17.txt
+7a94218481bcd30302986c85355c2419  Bob Dylan - Wantagh 8-17-97.txt
+1bea4ced87723070522ac8ef0545695b  D101.flac
+f409fb49dc323e920d14ece1c7daa35d  D102.flac
+58f8fa2621b88c59bdb3401896f7e173  D103.flac
+3244ba5a6fb387f2cfcfa93ce3ef3345  D104.flac
+55f6333d823544ce179c7d66fc5861c3  D105.flac
+046bc2ab98da4a8f5160da28b414ba82  D106.flac
+25affbfaffe7765f885f3e12fac4dd90  D107.flac
+208c96808e05cd0057c4b5eb29722c4f  D108.flac
+dd0bec0b7c0db423ac73820cc9841f82  D201.flac
+59d6fbcb3b1e75682d21cdfcd92f1ac3  D202.flac
+0223824692e77d9b87fce5a7d802fcf8  D203.flac
+9aa14496c119f9898569fd91bb667976  D204.flac
+5a7e94e4bca5af6512b540d3e34fe05d  D205.flac
+66f9aa4a45511381198dc843835bbfa9  D206.flac
+873fe7eeecf1b25c6aabbb42707045f8  Thumbs.db
+1602c5def890d0db28c9c317e539ec52  Wantagh 97B.jpg
+a5c2c849c0c6ed9aa35cc5f0fdaa2179  Wantagh 97F.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-17.flacf 
+=================== 
+=================== 
+=================== 
+D101.flac:05d81ffc403eedaf40fe8d42f4960f6c
+D102.flac:6ec325bce890b012084532d816509fbe
+D103.flac:021f68b7e42fcc27d6f245d9073eb6e6
+D104.flac:9bb245f8ac485d7240f195245c44442b
+D105.flac:33ea09d297f4ccb48f9e8a84946599b8
+D106.flac:102231adee16e52bbb1323749a3584b4
+D107.flac:3f68d5e41af4a4e1ff69f01c7e61105b
+D108.flac:ac544c838fe751726eca9618f4c2837c
+D201.flac:d223db1598e33bf0afa39fcca9792ae3
+D202.flac:35d5647faec9a84606ee8264d12cba21
+D203.flac:fbe241ab9b8e4e42be8e67a0a7f1612f
+D204.flac:81af84cacf524dc7d1bde54ff716e530
+D205.flac:6fa59c398e4805bf5f40080f3fb383a0
+D206.flac:e7e0ccd9f61bb759bbff5b01e0c3a458
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-17.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.31       52287356 B   ---   --   ---xx   flac  0.5320  D101.flac
+     4:54.42       51960428 B   ---   --   ---xx   flac  0.5024  D102.flac
+     5:18.69       56257532 B   ---   --   ---xx   flac  0.5203  D103.flac
+     5:48.62       61533068 B   ---   --   ---xx   flac  0.4903  D104.flac
+     7:15.35       76816364 B   ---   --   ---xx   flac  0.5305  D105.flac
+     7:50.35       82990364 B   ---   --   ---xx   flac  0.4577  D106.flac
+     8:42.55       92210204 B   ---   --   ---xx   flac  0.5242  D107.flac
+     5:35.66       59249276 B   ---   --   ---xx   flac  0.4067  D108.flac
+     6:10.29       65336252 B   ---   --   ---xx   flac  0.5191  D201.flac
+     7:13.65       76534124 B   ---   --   ---xx   flac  0.4701  D202.flac
+     6:15.17       66190028 B   ---   --   ---xx   flac  0.5451  D203.flac
+     9:33.34      101157212 B   ---   --   ---xx   flac  0.5063  D204.flac
+     6:22.07       67401308 B   ---   --   ---xx   flac  0.4817  D205.flac
+     5:39.30       59870204 B   ---   --   ---xx   flac  0.5542  D206.flac
+    91:37.52      969793720 B                            0.5026  (14 files)
+=================== 
+=================== 
+=================== 

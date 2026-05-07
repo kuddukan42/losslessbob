@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-10-01-Schubert-20 
+=================== 
+=================== 
+=================== 
+382f4aaa845e8af1e69affaf45f1cfa4  2000_10_01_MUENSTER_CD1\NONAME.MD5
+053d436db9f6f6017ce14013b52d2198  2000_10_01_MUENSTER_CD1\TRACK01.SHN
+1a1d46821ab7dd8e49794008697fa411  2000_10_01_MUENSTER_CD1\TRACK02.SHN
+494050313e556aee58cfbb38e1d6dc57  2000_10_01_MUENSTER_CD1\TRACK03.SHN
+2c38ea26429487625b9f892cb26e47ea  2000_10_01_MUENSTER_CD1\TRACK04.SHN
+8b36bfe83e1caf2eb875c03b629bcdab  2000_10_01_MUENSTER_CD1\TRACK05.SHN
+3d2ec818ae2c71d0aecafc930c95187d  2000_10_01_MUENSTER_CD1\TRACK06.SHN
+1bda47e3b07a12a480755cab8e08bc9f  2000_10_01_MUENSTER_CD1\TRACK07.SHN
+12ecb53270550330a6f378990d67aa88  2000_10_01_MUENSTER_CD1\TRACK08.SHN
+89cbe23ea96cbc7ac768d245cd384cd6  2000_10_01_MUENSTER_CD1\TRACK09.SHN
+7ed7c4518d01137b201976d5a5a0aed6  2000_10_01_MUENSTER_CD1\TRACK10.SHN
+0df35ee85f116ee978f417e297d3ecb7  2000_10_01_MUENSTER_CD1\TRACK11.SHN
+a90bfda8a25be490d2bbd9bb89212335  2000_10_01_MUENSTER_CD1\TRACK12.SHN
+8e67a009399a3590c68dc5c1e10fe9f8  2000_10_01_MUENSTER_CD2\NONAME.MD5
+d8bde1eb8ca027b02bc0483431835462  2000_10_01_MUENSTER_CD2\TRACK01.SHN
+4a37394896d07bb2602741b5d1b1b678  2000_10_01_MUENSTER_CD2\TRACK02.SHN
+2d55b658d49c8f48c8506b1bf7a4bdfa  2000_10_01_MUENSTER_CD2\TRACK03.SHN
+9d071538da911e1b9ef1a98ae55396f9  2000_10_01_MUENSTER_CD2\TRACK04.SHN
+28e7e36bb09cfb4bf7c77ea796e029a8  2000_10_01_MUENSTER_CD2\TRACK05.SHN
+a4ac3dc34ecbe1dc06b294ee9fa020fb  2000_10_01_MUENSTER_CD2\TRACK06.SHN
+44341925e62201863e68027ca71c1b19  2000_10_01_MUENSTER_CD2\TRACK07.SHN
+56f43e15b2509d0d000e8284915607df  2000_10_01_MUENSTER_CD2\TRACK08.SHN
+cfd366521c58c9540020ce20e75713ec  2000_10_01_MUENSTER_CD2\TRACK09.SHN
+07671d16b454a447f191cfcaeb423061  ART__MUENSTER\2000_10_01_MUENSTER.DOC
+7e72902578c80216b006ecd75d87d5db  ART__MUENSTER\MUENSTER2000_1.JPG
+b436f6b7512a50ed22434a73c1675ece  ART__MUENSTER\MUENSTER2000_3.JPG
+4b4d2e388541924268d79cd89827eaf0  ART__MUENSTER\Thumbs.db
+814efe5b73c197c3e270bae16ea1773a  bd00-10-01-Schubert.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-10-01-Schubert-20\2000_10_01_MUENSTER_CD1 
+=================== 
+=================== 
+=================== 
+8cf13938adf3278ad4d473f40e0795f8  [shntool]  TRACK01.wav
+bf4649e6ac52ba69bea671f3ed15d1ef  [shntool]  TRACK02.wav
+9e579fa8b1d156593ac0eb777796683d  [shntool]  TRACK03.wav
+4ab6403ef06fe801fa67ce3245647abb  [shntool]  TRACK04.wav
+bca50e3954db06250f1db789cf639302  [shntool]  TRACK05.wav
+616e85b4d740b135aba90a1fd0df710e  [shntool]  TRACK06.wav
+d32bda8adc0056c2fe58ec88b52f8c50  [shntool]  TRACK07.wav
+e7c9736b4bf987dd71bddc18ed4c3c2e  [shntool]  TRACK08.wav
+09d553d7d46d4395553e6e457a2454d8  [shntool]  TRACK09.wav
+3988d661d9ac32dd90012266733d705a  [shntool]  TRACK10.wav
+78d04b11ac539fd126b88d5fae95963f  [shntool]  TRACK11.wav
+fa1e9d69dc7a7cab5e95709ec683100f  [shntool]  TRACK12.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-10-01-Schubert-20\2000_10_01_MUENSTER_CD2 
+=================== 
+=================== 
+=================== 
+184b7c4637eb52e32361c932f8a6d901  [shntool]  TRACK01.wav
+fddd583a8ab33d3a7dd673831aab029b  [shntool]  TRACK02.wav
+4001c978011c5f0e1cb8230c90973123  [shntool]  TRACK03.wav
+0f9b74f3c9b2e475c58aa565c1f2643d  [shntool]  TRACK04.wav
+baff8921ee5c76ac5dca77b3f97c2a7b  [shntool]  TRACK05.wav
+4eb8a58524e48fc9185c304fca4795f1  [shntool]  TRACK06.wav
+d10fc3673e9ebc32728e407acb4b89cb  [shntool]  TRACK07.wav
+9c97ff9637e241339b542d186039d80f  [shntool]  TRACK08.wav
+d971587728f390674d49625a97aeb437  [shntool]  TRACK09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-10-01-Schubert-20\2000_10_01_MUENSTER_CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:28.23        4993340 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     3:21.57       35590508 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     5:46.39       61126172 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     8:48.17       93179228 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     7:16.60       77051564 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     8:19.72       88192988 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     3:34.58       37886060 B   ---   --   -----    wav  1.0000  TRACK07.wav
+     3:05.54       32761052 B   ---   --   -----    wav  1.0000  TRACK08.wav
+     7:41.12       81348668 B   ---   --   -----    wav  1.0000  TRACK09.wav
+     5:03.73       53620940 B   ---   --   -----    wav  1.0000  TRACK10.wav
+     5:49.61       61707116 B   ---   --   -----    wav  1.0000  TRACK11.wav
+     6:45.40       71536124 B   ---   --   -----    wav  1.0000  TRACK12.wav
+    66:02.41      698993760 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-10-01-Schubert-20\2000_10_01_MUENSTER_CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.01       50981996 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     9:47.15      103582124 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     5:48.70       61551884 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     8:04.63       85525820 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     4:13.58       44765660 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     6:12.34       65700812 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     5:17.62       56064668 B   ---   --   -----    wav  1.0000  TRACK07.wav
+     6:18.19       66723932 B   ---   --   -----    wav  1.0000  TRACK08.wav
+     5:57.71       63141836 B   ---   --   -----    wav  1.0000  TRACK09.wav
+    56:30.18      598038732 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

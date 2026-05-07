@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-18a.flacf 
+=================== 
+=================== 
+=================== 
+30fbd2e0de78749207e3cfbede262a6d  bd95-06-18a-LB-3552.txt
+1a1571c89434d67df0fda580a25bb3f2  Bob Dylan East Rutherford 18 juni 1995.jpg
+0747a6a17b5c8b10421197fa8ed5121b  Bob Dylan East Rutherford 18 juni 1995.txt
+a5446d408280bfc0c894c0ee759e5a60  fingerprint.ffp.txt
+ad97c36423e347c1ccbf31e89d50ad8c  Tracks\Track01.flac
+c07bd31328de5f085f251819522cc572  Tracks\Track02.flac
+f442331715fc8cd04605c6672ee7a3d4  Tracks\Track03.flac
+1eb625a3ddc53ca7869ba4d1c25389c6  Tracks\Track04.flac
+b95f45ccf65864b03ce11f0e3afa0db2  Tracks\Track05.flac
+e3b0db771bce717a2da91b29dd54ec0e  Tracks\Track06.flac
+e769d14a73c073b94035636b13b85320  Tracks\Track07.flac
+6f36bea661c2e0aa5963796280d9a06e  Tracks\Track08.flac
+a0e6e0aa2f59e080d5190a2d7a93fbd0  Tracks\Track09.flac
+cf33f6c9bf33b369003347524ad64edc  Tracks\Track10.flac
+78a89fe9024e31c4fbf916d7086c6ad4  Tracks\Track11.flac
+10c4c9d65e2612db45535ad50939278d  Tracks\Track12.flac
+74f48edda486944cff98ca87771e5eea  Tracks\Track13.flac
+24f762d718016db937c259b55e82b952  Tracks\Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-18a.flacf\Tracks 
+=================== 
+=================== 
+=================== 
+Track01.flac:a60bf393bdac7e17c4cd5b7284f53fe2
+Track02.flac:83760c80ed556ff6661abf52a5010faa
+Track03.flac:8059782d15e4d17e063d7f05d9c88bb6
+Track04.flac:8caf4719acd444d1f7b2f35ae2952ebf
+Track05.flac:ab9db74ac9c0dcfaf2b6be98de15f8ad
+Track06.flac:6eff83e257ed214abe8543c2ace7541a
+Track07.flac:5852af154b3aa7bfe2ce034a27f78a5b
+Track08.flac:344b6b7ccdee723c059345857705a3c8
+Track09.flac:43cb1e571168a455e740c3746d434d44
+Track10.flac:61f518f2b6a83750c0e8d224b7164dfa
+Track11.flac:f7a02573c2377af1909d6c7dc0a08808
+Track12.flac:9e92df82fe877535939d55707b942cec
+Track13.flac:6bfa980f5ba41b3cd3a906106e6cd14e
+Track14.flac:e1a3be08bb2e6b5283ea5d19d85d24f0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-06-18a.flacf\Tracks 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:05.45         987884 B   ---   --   ---xx   flac  0.5883  Track01.flac
+     4:45.39       50365772 B   ---   --   ---xx   flac  0.5929  Track02.flac
+     5:23.56       57108956 B   ---   --   ---xx   flac  0.5859  Track03.flac
+     5:19.25       56330444 B   ---   --   ---xx   flac  0.5933  Track04.flac
+     5:11.15       54895724 B   ---   --   ---xx   flac  0.5802  Track05.flac
+     5:36.49       59385692 B   ---   --   ---xx   flac  0.6042  Track06.flac
+     7:29.44       79307132 B   ---   --   ---xx   flac  0.5263  Track07.flac
+     6:24.39       67829372 B   ---   --   ---xx   flac  0.5426  Track08.flac
+     6:07.16       64776476 B   ---   --   ---xx   flac  0.5187  Track09.flac
+     5:06.41       54074876 B   ---   --   ---xx   flac  0.5722  Track10.flac
+     5:31.08       58407260 B   ---   --   ---xx   flac  0.5628  Track11.flac
+     0:25.04        4419452 B   ---   --   ---xx   flac  0.5017  Track12.flac
+     6:30.66       68951276 B   ---   --   ---xx   flac  0.5563  Track13.flac
+     8:04.55       85507004 B   ---   --   ---xx   flac  0.5666  Track14.flac
+    72:01.52      762347320 B                            0.5641  (14 files)
+=================== 
+=================== 
+=================== 

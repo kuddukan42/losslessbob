@@ -1,0 +1,8 @@
+8f6b3029638ec935e1a1a8db7ddae2cc *01 - Track 01.flac
+32f20b6f2f3b311920af673e716e9358 *02 - Track 02.flac
+477279ca68221a49b699a0b1f1dedc24 *03 - Track 03.flac
+712cde560a7d6a8c45b2fcc28aa2045e *04 - Track 04.flac
+ff3ea581afaaeea3385377dbdb12797e *05 - Track 05.flac
+e1e8fa5dbcb7cf97d3dc1517b9d96ba6 *06 - Track 06.flac
+dbaa26c712a00675464220b0673a7727 *07 - Track 07.flac
+e43d7152ca10218d32c6c301220a284a *08 - Track 08.flac

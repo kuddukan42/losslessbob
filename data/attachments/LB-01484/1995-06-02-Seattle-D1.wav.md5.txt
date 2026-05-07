@@ -1,0 +1,14 @@
+44367b5861f69e930bd5fd98846115ce *1995-06-02 Seattle D1.CUE
+8accadc93ed05b7a584e621cf606c3e6 *00 - Seattle, WA 1995-06-02.txt
+4528cd396cac57cde6287229b31f880e *1-01-Crash On The Levee.wav
+3489d399456c1cce87f798e0e4ebfd35 *1-02-I Want You.wav
+2c32692b1f2519305e2314fa56039096 *1-03-All Along The Watchtower.wav
+2246586403841d300681bd77af24a33e *1-04-Just Like A Woman.wav
+4745d07857728f968159e39743512047 *1-05-Silvio.wav
+146ea56be67fd7164af1e3850a41c1e4 *1-06-Just Like Tom Thumb's Blues.wav
+60847e022e607acd12ac2b3226502162 *1-07-Mr. Tambourine Man.wav
+814e071be60b42af894a3680cb8640db *1-08-Masters Of War.wav
+6a2e16c01a5ae1761eecd219608e23b0 *1-09-Love Minus Zero - No Limit.wav
+4a34d2151e63e87b132dc0ba15c9fc15 *1-10-God Knows.wav
+ae550f97bb03b0082b40f71ffdd192d8 *1-11-I'll Remember You.wav
+7ce8b7169890dab1414b2b83e858e929 *1995-06-02 Seattle D1.LOG

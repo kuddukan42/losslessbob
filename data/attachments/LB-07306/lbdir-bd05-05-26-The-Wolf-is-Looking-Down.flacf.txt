@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-05-26-The-Wolf-is-Looking-Down.flacf 
+=================== 
+=================== 
+=================== 
+08a489d6f27f3bf254e355e974c1e18b  Artwork\w-40b.jpg
+c6bda9aa9b1dfc6cb04922efa9fa2c95  Artwork\w-40cd.jpg
+48123010e2c71c537088b8afa46faae2  Artwork\w-40f.jpg
+bed0777c8c6b9345e14bf6fcd2d63bc9  Artwork\w-40ib.jpg
+97b52070ceb206bece1bd46be3f23c90  Artwork\w-40l.jpg
+32f6a37e24dd14862a30b7ff82bcfa52  bd-The Wolf is Looking Down\bd-The Wolf is Looking Down.md5
+ceafc7c6e25b5ca56a171987199f2e23  bd-The Wolf is Looking Down\Track01.flac
+0f69a51ae9ed5c3a10673fbe2bb0f583  bd-The Wolf is Looking Down\Track02.flac
+6de6130b378be239a9b4faf2befe1639  bd-The Wolf is Looking Down\Track03.flac
+d3b4459bc881f1c24a20b7132d4023af  bd-The Wolf is Looking Down\Track04.flac
+5cb3d5b1f895c305c9584ccd15b1bfb8  bd-The Wolf is Looking Down\Track05.flac
+375a5d9d13d5c1e8027ba6a0e25873a5  bd-The Wolf is Looking Down\Track06.flac
+ea4fc1e3cb18b424cd224122899000c5  bd-The Wolf is Looking Down\Track07.flac
+36eab82eeadc1b4b766f631eeeb1dcdd  bd-The Wolf is Looking Down\Track08.flac
+4b58f1db3f0629687081c23e02a370c7  bd-The Wolf is Looking Down\Track09.flac
+e8ac06ea96661e346812776d3bbdc959  bd-The Wolf is Looking Down\Track10.flac
+d9e96fe3a976bbb3c7e03ef6b1252526  bd-The Wolf is Looking Down\Track11.flac
+1fce48f73dae74c9bc9732f27c0024fd  bd-The Wolf is Looking Down\Track12.flac
+32d44744c4f7cb561c9878d05f6e217c  bd-The Wolf is Looking Down\Track13.flac
+3c67ea8702ea88332298189dff10d201  bd-The Wolf is Looking Down\Track14.flac
+319dd30c22d3a5ccdc8cae8d454025d9  bd-The Wolf is Looking Down.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-05-26-The-Wolf-is-Looking-Down.flacf\bd-The Wolf is Looking Down 
+=================== 
+=================== 
+=================== 
+Track01.flac:8644c30b0d22f23d7431701983cacb49
+Track02.flac:52603bb338c1b4422d1e37521ba3f414
+Track03.flac:0c236ee17bd960bbbf2f08defbb3d940
+Track04.flac:5f0ed1f3e100bdf9d75c0f4582a86fe2
+Track05.flac:51d3075b0ff3dbfbd81c1db5e7ee35ac
+Track06.flac:841103eeeed40e3ffb75b02b3dd898d8
+Track07.flac:28bc12cd42f9663938a3ed2bd53a6231
+Track08.flac:c88ce86284ad965acb09854bd5f63646
+Track09.flac:4b225ad7059572d8bdbcfc5593bb5e22
+Track10.flac:d10ca11f40f0a2296f18a26f2a44769c
+Track11.flac:d6dc8f3e437d01454717c8cf12700039
+Track12.flac:820e055642ae2bbcd008d6e779529bad
+Track13.flac:fd683429120ca5d2d79ab8cafd5811e3
+Track14.flac:f7b64e83532e384d9b5aa528ffe9cada
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-05-26-The-Wolf-is-Looking-Down.flacf\bd-The Wolf is Looking Down 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:43.09        7606412 B   ---   --   ---xx   flac  0.4215  Track01.flac
+     5:17.26       55979996 B   ---   --   ---xx   flac  0.5728  Track02.flac
+     5:47.14       61243772 B   ---   --   ---xx   flac  0.5051  Track03.flac
+     5:51.20       61963484 B   ---   --   ---xx   flac  0.5344  Track04.flac
+     7:14.13       76588220 B   ---   --   ---xx   flac  0.4900  Track05.flac
+     7:16.41       77006876 B   ---   --   ---xx   flac  0.5198  Track06.flac
+     6:29.00       68619644 B   ---   --   ---xx   flac  0.4749  Track07.flac
+     4:44.52       50219948 B   ---   --   ---xx   flac  0.5520  Track08.flac
+     7:14.06       76571756 B   ---   --   ---xx   flac  0.5081  Track09.flac
+     5:29.29       58103852 B   ---   --   ---xx   flac  0.5028  Track10.flac
+     9:14.26       97786796 B   ---   --   ---xx   flac  0.5530  Track11.flac
+     8:01.51       84968396 B   ---   --   ---xx   flac  0.4770  Track12.flac
+     0:32.14        5677772 B   ---   --   ---xx   flac  0.4567  Track13.flac
+     5:51.21       61965836 B   ---   --   ---xx   flac  0.5444  Track14.flac
+    79:46.22      844302760 B                            0.5167  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,58 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-04-partial.flacf 
+=================== 
+=================== 
+=================== 
+c7e64296f6e41cefeb12a3af1a056c6b  bd1994-07-04_partial_ffp.txt
+5ffb9358a1481443c6060f895c7f2a85  bd1994-07-04_partial_info.txt
+af327d38d0edef7c3b5b114eeb911d56  bd1994-07-04_partial_md5.md5
+e66a97abf03c8bdee485bb1ed6730bd1  bd1994-07-04_partial_t01.flac
+2d0ef208be9f38b0a5e4806669af0355  bd1994-07-04_partial_t02.flac
+fe4c5160272992ef60f8bd0b6c7288a3  bd1994-07-04_partial_t03.flac
+cdce5dc2e28517f1bd874a1bc7c13fd2  bd1994-07-04_partial_t04.flac
+f2e6da9937709336cbd9079f78cdacc4  bd1994-07-04_partial_t05.flac
+a8b220247f24a91439dfe986d35fdd98  bd1994-07-04_partial_t06.flac
+b7b42009b7beb1d4ee115f31babf1a77  bd1994-07-04_partial_t07.flac
+d4cb92dc108c743f8c450afeaa542650  bd1994-07-04_partial_t08.flac
+e4c3a69f946517137382ae3afea93ad8  bd1994-07-04_partial_t09.flac
+06f8fa6ce7a0abd2975c1a734ce38aa8  bd94-07-04-partial-LB-4361.txt
+ca67f8865920bc1295d85dcc1c85a445  update.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-04-partial.flacf 
+=================== 
+=================== 
+=================== 
+bd1994-07-04_partial_t01.flac:368eb4711a7b1b7fadb249efd229b7e5
+bd1994-07-04_partial_t02.flac:71193507549f2199aa299352fc1c2bac
+bd1994-07-04_partial_t03.flac:fb7e8ad777261a5ecedb433c9afb4670
+bd1994-07-04_partial_t04.flac:34019a2ab7d003dfe1795c66d4c759ae
+bd1994-07-04_partial_t05.flac:ead45d1e2a7ba2d420f6ba4a95f226cd
+bd1994-07-04_partial_t06.flac:0a538c306773d09bc78d091de3037884
+bd1994-07-04_partial_t07.flac:2fa1fbbcafbac667a02ef07eb9d6f8fb
+bd1994-07-04_partial_t08.flac:1046d455107ebc428328c810af76f191
+bd1994-07-04_partial_t09.flac:db94cc05c006efd5299ecc044b640703
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-04-partial.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:46.39       39958172 B   ---   --   ---xx   flac  0.4846  bd1994-07-04_partial_t01.flac
+     6:01.44       63783932 B   ---   --   ---xx   flac  0.4491  bd1994-07-04_partial_t02.flac
+     4:38.51       49159196 B   ---   --   ---xx   flac  0.5285  bd1994-07-04_partial_t03.flac
+     5:40.44       60079532 B   ---   --   ---xx   flac  0.5995  bd1994-07-04_partial_t04.flac
+     7:51.18       83126780 B   ---   --   ---xx   flac  0.5785  bd1994-07-04_partial_t05.flac
+     6:31.16       69010076 B   ---   --   ---xx   flac  0.5650  bd1994-07-04_partial_t06.flac
+     8:10.33       86513660 B   ---   --   ---xx   flac  0.5810  bd1994-07-04_partial_t07.flac
+     6:06.56       64694156 B   ---   --   ---xx   flac  0.5181  bd1994-07-04_partial_t08.flac
+     9:35.60      101571164 B   ---   --   ---xx   flac  0.5058  bd1994-07-04_partial_t09.flac
+    58:22.61      617896668 B                            0.5377  (9 files)
+=================== 
+=================== 
+=================== 

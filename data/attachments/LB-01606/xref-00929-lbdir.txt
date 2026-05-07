@@ -1,0 +1,179 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-07-22-b.flacf 
+=================== 
+=================== 
+=================== 
+cfbf2697c81a75124a187e7afae49bf6  19860722 Mansfield.md5
+1569337d56e3c2d2cefe16587b0ed120  bd1986-07-22-mansfield.txt
+ec8a004317d6feedccc5bdbeb347efae  d1\22.7.86 Mansfield.log
+e47253a3f128059deb90ced3fb23f3e5  d1\BD-22.7.86 Mansfield-d1-Track01.flac
+2bcfcebf45d9464e8e625a1b3e963c1f  d1\BD-22.7.86 Mansfield-d1-Track02.flac
+f1029a8834db2cb0f0a861d1e1ad7a3c  d1\BD-22.7.86 Mansfield-d1-Track03.flac
+d749b9544bb4cf9eabe53ad390088d24  d1\BD-22.7.86 Mansfield-d1-Track04.flac
+ef24b37b8d445fc367f33ab6f89088f3  d1\BD-22.7.86 Mansfield-d1-Track05.flac
+e6fdc9a652d59a07910290b31343283b  d1\BD-22.7.86 Mansfield-d1-Track06.flac
+08f9ddc5620977c0778e96b933a27234  d1\BD-22.7.86 Mansfield-d1-Track07.flac
+8f88bf30c91415af218aaea8dab4b4cc  d1\BD-22.7.86 Mansfield-d1-Track08.flac
+46155280737cf9c86be925d3eaa5f558  d1\BD-22.7.86 Mansfield-d1-Track09.flac
+b59fa6d6390b66268968131caaef05d7  d1\BD-22.7.86 Mansfield-d1-Track10.flac
+b4ea69a3db7e766062bf5ba09d29bd50  d2\22.7.86 Mansfield.log
+d16d0d3a3de2427eb870b03f8ea2bc65  d2\BD-22.7.86 Mansfield-d2-Track01.flac
+159bd36118c6e8322954768f6a274f33  d2\BD-22.7.86 Mansfield-d2-Track02.flac
+5b65b5b7051b373b8a604de4ad76319d  d2\BD-22.7.86 Mansfield-d2-Track03.flac
+e1f23510c03ce5952315e17804369731  d2\BD-22.7.86 Mansfield-d2-Track04.flac
+5a4262445a2ad7a5738ca8a52036b38f  d2\BD-22.7.86 Mansfield-d2-Track05.flac
+e762a33d3cd3ab4e8e3f44da286ca087  d2\BD-22.7.86 Mansfield-d2-Track06.flac
+b7425d44396bcc70d2b935ffb164218f  d2\BD-22.7.86 Mansfield-d2-Track07.flac
+7d7e09b1bcadb4763978e41ba46c38ad  d2\BD-22.7.86 Mansfield-d2-Track08.flac
+1531f7cf3b95342ed41602ba3fde6c81  d3\22.7.86 Mansfield.log
+9d09b077920aac6b95fba3a01872dc63  d3\bd-22.7.86 Mansfield-d3-Track01.flac
+21367de61ded95c99ffd88c16b426e40  d3\bd-22.7.86 Mansfield-d3-Track02.flac
+d8eb9a300610e376458febaebbb20e12  d3\bd-22.7.86 Mansfield-d3-Track03.flac
+cfc83401d016982278423b3c12cfcabb  d3\bd-22.7.86 Mansfield-d3-Track04.flac
+583289e9276feb50d6e85e49685e518c  d3\bd-22.7.86 Mansfield-d3-Track05.flac
+3916a07d3b76730dac2ab7c6e98bc8e0  d3\bd-22.7.86 Mansfield-d3-Track06.flac
+b786d31538ae57454ec9d2832ab5039e  d3\bd-22.7.86 Mansfield-d3-Track07.flac
+ab220ed662c5991628a24976bb0ae568  d3\bd-22.7.86 Mansfield-d3-Track08.flac
+acf9ae831ecd1fdc8f5d987f52d6cee8  d3\bd-22.7.86 Mansfield-d3-Track09.flac
+e59025e6bccf64e6d0a4aeee854ba0bc  d4\22.7.86 Mansfield.log
+d630bc9886cd81534748b79ecab273f1  d4\bd-22.7.86 Mansfield-d4-Track01.flac
+fe21e23f8703423119b812eb1e61fa1b  d4\bd-22.7.86 Mansfield-d4-Track02.flac
+0ad80c0a43fdb547cdea31cb80f7cdfe  d4\bd-22.7.86 Mansfield-d4-Track03.flac
+2a4c633c56ed0695c0e83f73d4cab3cd  d4\bd-22.7.86 Mansfield-d4-Track04.flac
+89593e390af2a8c65aae251f9891fc54  d4\bd-22.7.86 Mansfield-d4-Track05.flac
+46b4ea0653e23c744e6cb412d0132bc3  d4\bd-22.7.86 Mansfield-d4-Track06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-07-22-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+BD-22.7.86 Mansfield-d1-Track01.flac:c2a0889c88be4394d4bb43ebd6f1fc35
+BD-22.7.86 Mansfield-d1-Track02.flac:680331488d23cb5125191425aa26b98b
+BD-22.7.86 Mansfield-d1-Track03.flac:3c5f61f85eec930cf303c3e04b811370
+BD-22.7.86 Mansfield-d1-Track04.flac:34a98d772b8d99367b7e80d5709a2a79
+BD-22.7.86 Mansfield-d1-Track05.flac:9794c1f276e9266f317801d7c5f63abd
+BD-22.7.86 Mansfield-d1-Track06.flac:b8dbf27b13195e0f968e0b911979e379
+BD-22.7.86 Mansfield-d1-Track07.flac:39dea83c70b7c1a97abfc454f40f3e57
+BD-22.7.86 Mansfield-d1-Track08.flac:61c4d410470df5038608a2281daafef0
+BD-22.7.86 Mansfield-d1-Track09.flac:f24bee463c0d06daf200b51abb413724
+BD-22.7.86 Mansfield-d1-Track10.flac:0ec2a209b6dc698c2284288a0662b18d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-07-22-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+BD-22.7.86 Mansfield-d2-Track01.flac:f21a2b004c8a6ff0b3f7b2c2f57ac1c4
+BD-22.7.86 Mansfield-d2-Track02.flac:fd2612c8b1bd62483c51828e7f6e1cca
+BD-22.7.86 Mansfield-d2-Track03.flac:bb47531a832b56f1fc38a87850fab5f5
+BD-22.7.86 Mansfield-d2-Track04.flac:8b42669bfee71fcc85a4834a328e0417
+BD-22.7.86 Mansfield-d2-Track05.flac:c8fa27e64e7dd733c2bc468c6258002e
+BD-22.7.86 Mansfield-d2-Track06.flac:00ad8ba1a458b01e7d8d4afcb76d0fd5
+BD-22.7.86 Mansfield-d2-Track07.flac:ff7d6062d4569d4a86b60676189ee852
+BD-22.7.86 Mansfield-d2-Track08.flac:2ea3976599bb1543d72db64772e12ed7
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-07-22-b.flacf\d3 
+=================== 
+=================== 
+=================== 
+bd-22.7.86 Mansfield-d3-Track01.flac:737c593063143cecd22100ec4541719d
+bd-22.7.86 Mansfield-d3-Track02.flac:a812947f4d655cab719fd70c57be22c0
+bd-22.7.86 Mansfield-d3-Track03.flac:fbc745326b8060d2371c359878adc31a
+bd-22.7.86 Mansfield-d3-Track04.flac:829ca6d8521a30066c782d9e7db3ceca
+bd-22.7.86 Mansfield-d3-Track05.flac:5059f652fe1e92116d3d148956356a1f
+bd-22.7.86 Mansfield-d3-Track06.flac:d2574779dc0fefd175ebb00d84cea732
+bd-22.7.86 Mansfield-d3-Track07.flac:5b455df4303a0d30d82a5fd89e6fc5aa
+bd-22.7.86 Mansfield-d3-Track08.flac:7c60844787e56df82512aeae2a8e3117
+bd-22.7.86 Mansfield-d3-Track09.flac:6f4d0223ac6da83b80d3141d03549303
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-07-22-b.flacf\d4 
+=================== 
+=================== 
+=================== 
+bd-22.7.86 Mansfield-d4-Track01.flac:03527d9299298da57de2f75bc5267b8a
+bd-22.7.86 Mansfield-d4-Track02.flac:d8bf78ee1ec885165234802428d58f7c
+bd-22.7.86 Mansfield-d4-Track03.flac:e33d363372d63d34e35ee7a7e95e8434
+bd-22.7.86 Mansfield-d4-Track04.flac:e1b48990c53be922e22884aef69ee032
+bd-22.7.86 Mansfield-d4-Track05.flac:dba35e56f303f659ff6bf0d5ea0f6f2e
+bd-22.7.86 Mansfield-d4-Track06.flac:ba0a0aa0a88893208476d4b933ea7b00
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-22-b.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:42.71       39327836 B   ---   --   ---xx   flac  0.7016  BD-22.7.86 Mansfield-d1-Track01.flac
+     4:24.35       46651964 B   ---   --   ---xx   flac  0.7010  BD-22.7.86 Mansfield-d1-Track02.flac
+     3:19.05       35115404 B   ---   --   ---xx   flac  0.7003  BD-22.7.86 Mansfield-d1-Track03.flac
+     4:56.68       52374380 B   ---   --   ---xx   flac  0.6889  BD-22.7.86 Mansfield-d1-Track04.flac
+     5:27.20       57729884 B   ---   --   ---xx   flac  0.7097  BD-22.7.86 Mansfield-d1-Track05.flac
+     4:33.00       48157244 B   ---   --   ---xx   flac  0.6884  BD-22.7.86 Mansfield-d1-Track06.flac
+     5:24.00       57153644 B   ---   --   ---xx   flac  0.7070  BD-22.7.86 Mansfield-d1-Track07.flac
+     3:46.60       40007564 B   ---   --   ---xx   flac  0.6976  BD-22.7.86 Mansfield-d1-Track08.flac
+     4:11.05       44288204 B   ---   --   ---xx   flac  0.7020  BD-22.7.86 Mansfield-d1-Track09.flac
+     5:54.67       62603228 B   ---   --   ---xx   flac  0.6745  BD-22.7.86 Mansfield-d1-Track10.flac
+    45:40.31      483409352 B                            0.6966  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-22-b.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:17.14       87703772 B   ---   --   ---xx   flac  0.6593  BD-22.7.86 Mansfield-d2-Track01.flac
+     5:18.24       56151692 B   ---   --   ---xx   flac  0.6900  BD-22.7.86 Mansfield-d2-Track02.flac
+     4:06.32       43469708 B   ---   --   ---xx   flac  0.6772  BD-22.7.86 Mansfield-d2-Track03.flac
+     7:00.50       74205644 B   ---   --   ---xx   flac  0.6792  BD-22.7.86 Mansfield-d2-Track04.flac
+     3:53.61       41244716 B   ---   --   ---xx   flac  0.6867  BD-22.7.86 Mansfield-d2-Track05.flac
+     5:42.32       60404108 B   ---   --   ---xx   flac  0.7078  BD-22.7.86 Mansfield-d2-Track06.flac
+     5:51.61       62059916 B   ---   --   ---xx   flac  0.7076  BD-22.7.86 Mansfield-d2-Track07.flac
+     3:54.35       41359964 B   ---   --   ---xx   flac  0.6838  BD-22.7.86 Mansfield-d2-Track08.flac
+    44:05.09      466599520 B                            0.6851  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-22-b.flacf\d3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:41.62       60298268 B   ---   --   ---xx   flac  0.6984  bd-22.7.86 Mansfield-d3-Track01.flac
+     4:10.18       44142380 B   ---   --   ---xx   flac  0.7252  bd-22.7.86 Mansfield-d3-Track02.flac
+     4:34.22       48385388 B   ---   --   ---xx   flac  0.6601  bd-22.7.86 Mansfield-d3-Track03.flac
+     3:30.50       37161644 B   ---   --   ---xx   flac  0.6751  bd-22.7.86 Mansfield-d3-Track04.flac
+     6:05.23       64440140 B   ---   --   ---xx   flac  0.7213  bd-22.7.86 Mansfield-d3-Track05.flac
+     5:43.57       60639308 B   ---   --   ---xx   flac  0.7192  bd-22.7.86 Mansfield-d3-Track06.flac
+     4:25.70       46910684 B   ---   --   ---xx   flac  0.7221  bd-22.7.86 Mansfield-d3-Track07.flac
+     5:00.58       53056460 B   ---   --   ---xx   flac  0.7230  bd-22.7.86 Mansfield-d3-Track08.flac
+     4:04.43       43142780 B   ---   --   ---xx   flac  0.6871  bd-22.7.86 Mansfield-d3-Track09.flac
+    43:17.28      458177052 B                            0.7052  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-07-22-b.flacf\d4 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:01.31       63753356 B   ---   --   ---xx   flac  0.6952  bd-22.7.86 Mansfield-d4-Track01.flac
+     7:44.71       82016636 B   ---   --   ---xx   flac  0.7137  bd-22.7.86 Mansfield-d4-Track02.flac
+    13:18.50      140884844 B   ---   --   ---xx   flac  0.6938  bd-22.7.86 Mansfield-d4-Track03.flac
+     5:39.16       59837276 B   ---   --   ---xx   flac  0.6942  bd-22.7.86 Mansfield-d4-Track04.flac
+     4:06.28       43460300 B   ---   --   ---xx   flac  0.7120  bd-22.7.86 Mansfield-d4-Track05.flac
+     7:23.52       78267548 B   ---   --   ---xx   flac  0.7247  bd-22.7.86 Mansfield-d4-Track06.flac
+    44:14.23      468219960 B                            0.7044  (6 files)
+=================== 
+=================== 
+=================== 

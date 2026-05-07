@@ -1,0 +1,72 @@
+Bob Dylan
+July 1, 1992
+Reims, Parc Des Expositions, Hall 1
+
+AUD DAT Master [Sennheiser Mics]>DAT>WAV>Soundforge 6.0>CD Wave>CD>EAC>WAV>FLAC
+
+LB-2683
+Please retain this info file and its LB number as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+
+CD 1  [73:08]
+
+01 A Hazy Shade Of Winter 
+02 You're A Big Girl Now
+03 All Along The Watchtower
+04 Simple Twist Of Fate
+05 Watching The River Flow
+06 I And I
+07 Stuck Inside Of Mobile With The Memphis Blues Again
+08 Love Minus Zero / No Limit
+09 The Roving Blade 
+10 Desolation Row
+11 Don't Think Twice, It's All Right
+
+CD 2  [48:16]
+
+01 Everything Is Broken
+02 I'll Remember You
+03 The Times They Are A-Changin'
+04 Maggie's Farm
+05 Rainy Day Women # 12 & 35
+06 Ballad Of A Thin Man
+07 It Ain't Me, Babe
+
+
+Bob Dylan - vocal & guitar
+Bucky Baxter - pedal steel guitar & electric slide guitar, electric guitar
+John Jackson - guitar
+Tony Garnier - bass 
+Ian Wallace - drums
+Charlie Quintana - drums & percussion
+
+further info:
+http://www.bjorner.com/DSN13270%20-%201992%20Europe%20Summer%20Festival%20Tour.htm#DSN13300
+
+I did not harm the sound of the recording in any way.
+
+
+
+
+bd920701 d1t01.flac:cd51b61ec3e10cbadd4ff9717e6df9ac
+bd920701 d1t02.flac:011d381c7e3cf0650145400781ce258a
+bd920701 d1t03.flac:5e88b9e5b1f8216c25bcc37353bf9d55
+bd920701 d1t04.flac:263c3878c478b0182ce40c8d60396948
+bd920701 d1t05.flac:f2d9881e046c1061b280a808d4632d00
+bd920701 d1t06.flac:5074f4db3aada1176af6fc76d09b5adf
+bd920701 d1t07.flac:9b8d92b690d5994f775beee552f33e77
+bd920701 d1t08.flac:429f2b6a26c58a1335f9a1ad3407b47e
+bd920701 d1t09.flac:ece469b3a4a1ea7840b2ca423b2109bf
+bd920701 d1t10.flac:9e04b58f6358e4a95edf7693c80564ff
+bd920701 d1t11.flac:81ab57e124e4643da686a9eace0c1851
+bd920701 d2t01.flac:c4b2b74ace46ab8c2ef2cc44b4aa8c1f
+bd920701 d2t02.flac:418a0f5c412a1bfac2ad0e6d57ea5c09
+bd920701 d2t03.flac:96b6892ef7bd091c0eb430e19de8ef9b
+bd920701 d2t04.flac:3bfde9141bb9f6b5541c763e04fad497
+bd920701 d2t05.flac:32e42c58d48e2f218338cf71eb7f8e3b
+bd920701 d2t06.flac:47656a2a4bf83d98bb1e9383b4f08a48
+bd920701 d2t07.flac:1dcd2b6f3d53834062fcdf3b473f8701
+
+
+

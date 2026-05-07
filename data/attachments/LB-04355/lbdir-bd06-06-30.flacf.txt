@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-06-30.flacf 
+=================== 
+=================== 
+=================== 
+ec4f6546a788803ad6133fd7ac15b24c  101 Maggies Farm.flac
+24f3f50e78678bc7a6a6be0312933066  102 The Times.flac
+9be0146d134b147a27343210f0aa1262  103 Down Along The Cove.flac
+9311bd61bd27020dd35fe768514045e7  104 This Wheels On Fire.flac
+8ff96a530b96723b4827885b1a6fd1dd  105 Stuck Inside of Mobile.flac
+08b5dd7319ccd38bace37091a2e5e67c  106 Positively 4th.flac
+dd9f77700806b278954ede9d8b3399dd  107 Highway 61.flac
+24096a63c6c459c3afb937648239dd4a  201 Blind Willie McTell.flac
+e2d7d2ccc007c9c1560dd8ca6ca47a7b  202 Dont Think Twice.flac
+9067daa9936ff133c306813db6d7643a  203 Watching the River Flow.flac
+55b6298fad8f10949f73a5bdfe14fd39  204 Masters of War.flac
+b8d2dee5663a2b0763eb04c72154b9ad  205 Summer Days.flac
+6fd78c87bad0b03e9081fab3b0b48bbe  206 Like a Rolling Stone.flac
+bdf03b390b5faf7fe28f04176bd20f62  207 Band Intros.flac
+3c5fa2824587c8ed254c9e781e06ccbd  208 All Along the Watchtower.flac
+ffed8e935c6b2ac9be54acb80a17c363  bd06-06-30-LB-4355.txt
+95e2ed65aa68f3f9ddf9d4956aa6181f  bd2006-06-30-Roskilde.rtf
+671eb75bbb5d59ad3ae9374b3554f259  bd2006-06-30-Roskilde.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-06-30.flacf 
+=================== 
+=================== 
+=================== 
+101 Maggies Farm.flac:2fce3bcedce64fe85409e0ecf060988b
+102 The Times.flac:f603d346c7122fc95ae2994cc30bc17c
+103 Down Along The Cove.flac:455b74edcd1ecb2ab47a20492a1d49c0
+104 This Wheels On Fire.flac:0f2b588f835adfbe382ae19eb3006963
+105 Stuck Inside of Mobile.flac:38aeadcb9f4e0c71df69af7610704a42
+106 Positively 4th.flac:373832df19fcb018cae91ecc45c19f3b
+107 Highway 61.flac:dfa7d4b3fbda9151b0278e6c453def5a
+201 Blind Willie McTell.flac:742947028ae2781fd1a81724737a0b6c
+202 Dont Think Twice.flac:8cec79e10c2384414bccfc3197c33143
+203 Watching the River Flow.flac:37f1bbef022662dfb486221557b6e164
+204 Masters of War.flac:4fe5ebb447dfb68b94ec2338ec3b13c1
+205 Summer Days.flac:967f7fe889df8eafc1df26ab4d29d833
+206 Like a Rolling Stone.flac:0267b4e2791937f6c2627d3211a64010
+207 Band Intros.flac:ac0a201624dcfc431e2482e694d2150e
+208 All Along the Watchtower.flac:b00861488d7815214bcb29d0d66d8351
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-06-30.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.44       57433532 B   ---   --   ---xx   flac  0.5772  101 Maggies Farm.flac
+     7:12.28       76270696 B   -b-   --   ---xx   flac  0.5521  102 The Times.flac
+     7:07.49       75438088 B   -b-   --   ---xx   flac  0.5629  103 Down Along The Cove.flac
+     6:22.60       67525960 B   -b-   --   ---xx   flac  0.5765  104 This Wheels On Fire.flac
+     8:41.03       91911496 B   -b-   --   ---xx   flac  0.5617  105 Stuck Inside of Mobile.flac
+     7:05.60       75111160 B   -b-   --   ---xx   flac  0.5218  106 Positively 4th.flac
+     7:33.21       79958548 B   -b-   --   ---xx   flac  0.5573  107 Highway 61.flac
+     7:21.50       77909244 B   -b-   --   ---xx   flac  0.5528  201 Blind Willie McTell.flac
+     7:22.35       78051164 B   ---   --   ---xx   flac  0.5127  202 Dont Think Twice.flac
+     6:22.73       67556540 B   ---   --   ---xx   flac  0.5521  203 Watching the River Flow.flac
+     5:22.25       56859644 B   ---   --   ---xx   flac  0.5173  204 Masters of War.flac
+     6:44.46       71373836 B   ---   --   ---xx   flac  0.5503  205 Summer Days.flac
+     7:20.13       77646620 B   ---   --   ---xx   flac  0.5501  206 Like a Rolling Stone.flac
+     0:39.13        6910220 B   ---   --   ---xx   flac  0.4820  207 Band Intros.flac
+     5:29.60       58176760 B   -b-   --   ---xx   flac  0.5596  208 All Along the Watchtower.flac
+    96:11.55     1018133508 B                            0.5497  (15 files)
+=================== 
+=================== 
+=================== 

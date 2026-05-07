@@ -1,0 +1,10 @@
+Bob Dylan, 6/29/90, Roskilde, 2CDR
+
+LB-7169, (45min+51min), Taper: NET Taper B, Sennheiser MKE-2002 Binaural Microphones >, Uher CR 240 AV >, Master cassette >, Maxell XL II-S 90/Maxell XL II 90 (last track) >, JVC TD-W501 >, iMac Intel Core 2 Duo >, Amadeus II 3.8.7 >, Side 1 @ + 1.00 db left channel, Side 2 @ + 0.76 db right channel, 2nd cassette (h61) @ 1.00 db left channel, slight EQ to match sound, tracking >, xACT 1.64 >, FLAC (lvl 6) 0.5971 (20 files), FLAC tags, md5, st5, ffp, 2009-01-27; bittorrent download 01/09; different recording than LB-7072 based on different crowd at beginning of d1t1; in comparison that is harsher and clearer with noise reduction type sound and this has a little hiss and and is more muffled; this runs 2% slower on d2t1 than that one and sounds a little slow; background talking d1t7; very good sound [B]
+
+end of d2t2 cut
+
+CD 1, 01 Introduction >, Absolutely Sweet Marie 04:08, 02 Ballad of a Thin Man 05:16, 03 Stuck Inside of Mobile with the, Memphis Blues Again 06:00, 04 Queen Jane Approximately 07:25, 05 Masters of War 04:30, 06 Gotta Serve Somebody 05:20, 07 It's Alright, Ma (I'm only Bleeding) 05:44, 08 It's All over now, Baby Blue 06:03, 44:29, CD 2, 01 One Too Many Mornings 04:14, 02 Don't Think Twice, It's All Right // 03:45, 03 Mr. Tambourine Man 06:37, 04 Leopard-Skin Pill-Box Hat 04:05, 05 Political World 03:17, 06 Shooting Star 03:45, 07 All along the Watchtower 03:32, 08 I Shall Be Released 03:48, 09 Like a Rolling Stone 06:03, 10 -audience- 01:17, (encore), 11 Blowin' in the Wind 04:52, 12 Highway 61 Revisited 04:57, 50:26, 2CD 94:56, cassette flip after It's All over now, Baby Blue, end of Don't Think Twice cut (1:38 missing)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

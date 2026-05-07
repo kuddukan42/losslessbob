@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-07-05-IAR.flacf 
+=================== 
+=================== 
+=================== 
+c2d782fc3d09085c166fda82d06bb327  bd-1998-07-05-rome-IAR-AUD-d1 (Track 01).flac
+873084fb71da9df652ee829466c03720  bd-1998-07-05-rome-IAR-AUD-d1 (Track 02).flac
+9bdd33b6bcfe59414dc4a9214854d280  bd-1998-07-05-rome-IAR-AUD-d1 (Track 03).flac
+2399f5d73168506012425508a8f93ecf  bd-1998-07-05-rome-IAR-AUD-d1 (Track 04).flac
+2008aaad2534de4eac319c3283aa01f5  bd-1998-07-05-rome-IAR-AUD-d1 (Track 05).flac
+201134a1cd1de591fdac9adb5d05227c  bd-1998-07-05-rome-IAR-AUD-d1 (Track 06).flac
+7f3affd644b66eb8beecdd7304b6ad77  bd-1998-07-05-rome-IAR-AUD-d1 (Track 07).flac
+b30388aa052d8bef1b5cbad2c8efd93a  bd-1998-07-05-rome-IAR-AUD-d1 (Track 08).flac
+803556e5a8d8ea05a1f03733f10cd0ac  bd-1998-07-05-rome-IAR-AUD-d1 (Track 09).flac
+648d95c3327d57a174c8bbb062c4e822  bd-1998-07-05-rome-IAR-AUD-d1 (Track 10).flac
+2f9fd07dadc523b5cda0ff5e366d2574  bd-1998-07-05-rome-IAR-AUD-d2 (Track 01).flac
+46db38e7a93f784328b57b5a527e9512  bd-1998-07-05-rome-IAR-AUD-d2 (Track 02).flac
+0f6f09332b9e188c1d63d46b11ad2efd  bd-1998-07-05-rome-IAR-AUD-d2 (Track 03).flac
+acc4f2a008efd099f6587ab59a09297a  bd-1998-07-05-rome-IAR-AUD-d2 (Track 04).flac
+3906042c0e2888d226be326b67657d02  bd-1998-07-05-rome-IAR-AUD-d2 (Track 05).flac
+494a78c28481ae843aa6aeb7c1d627d4  bd-1998-07-05-rome-IAR-AUD-d2 (Track 06).flac
+11081afbc6e7c28ba8a296805b8b62ca  bd-1998-07-05-rome-IAR-AUD-d2 (Track 07).flac
+8611d523dba90d19d3e9e2d89931cd87  bd-1998-07-05-Rome-IAR.txt
+88d3e0f8b35afb3876971fe97e8a4119  bd98-07-05-IAR.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-07-05-IAR.flacf 
+=================== 
+=================== 
+=================== 
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 01).flac:90b61e577c49a12998d32d153a0c4057
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 02).flac:0c5e72728b6d89a03865a12d40bc08f7
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 03).flac:ac56fd2ef38f2c0bd4127e1446aa6e2a
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 04).flac:2d34923f981b35c9bc81fcccdbd9d43d
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 05).flac:68b6910d7abdffe6fba2e005b0afadbd
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 06).flac:3708a3614b0dc6e6b21f7eec7b07ce98
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 07).flac:d7882849f0a96b279df6a29e94fd7522
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 08).flac:417bf74110bea7b37ad2a6e16ebd4612
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 09).flac:8c851cfdd47f8680e58ab7be14ab73cb
+bd-1998-07-05-rome-IAR-AUD-d1 (Track 10).flac:88d3d4d80cd05e300b9a5b6ce32bd81b
+bd-1998-07-05-rome-IAR-AUD-d2 (Track 01).flac:5eb21eee04b154681f338a09cd724780
+bd-1998-07-05-rome-IAR-AUD-d2 (Track 02).flac:75fbcc6902d2657e5e0e5a1689903349
+bd-1998-07-05-rome-IAR-AUD-d2 (Track 03).flac:2376a9693d60116d97dd626835b2b000
+bd-1998-07-05-rome-IAR-AUD-d2 (Track 04).flac:7d54b53d1e32612050414c1b03f85951
+bd-1998-07-05-rome-IAR-AUD-d2 (Track 05).flac:1d18a5b6e72a1db5ccafd61ec9b3c300
+bd-1998-07-05-rome-IAR-AUD-d2 (Track 06).flac:a1a7f5049bc360780d532c2234c2fb9a
+bd-1998-07-05-rome-IAR-AUD-d2 (Track 07).flac:418d255e02f00d2a55a0ec715fe07913
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-05-IAR.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.49        6465392 B   -b-   --   ---xx   flac  0.4992  bd-1998-07-05-rome-IAR-AUD-d1 (Track 01).flac
+     4:16.13       45189020 B   ---   --   ---xx   flac  0.6898  bd-1998-07-05-rome-IAR-AUD-d1 (Track 02).flac
+     5:50.18       61782380 B   ---   --   ---xx   flac  0.6233  bd-1998-07-05-rome-IAR-AUD-d1 (Track 03).flac
+     6:35.38       69767420 B   ---   --   ---xx   flac  0.6845  bd-1998-07-05-rome-IAR-AUD-d1 (Track 04).flac
+     5:16.64       55892972 B   ---   --   ---xx   flac  0.6463  bd-1998-07-05-rome-IAR-AUD-d1 (Track 05).flac
+     5:54.45       62551484 B   ---   --   ---xx   flac  0.6705  bd-1998-07-05-rome-IAR-AUD-d1 (Track 06).flac
+     6:43.51       71209196 B   ---   --   ---xx   flac  0.6959  bd-1998-07-05-rome-IAR-AUD-d1 (Track 07).flac
+     3:28.43       36792380 B   ---   --   ---xx   flac  0.5893  bd-1998-07-05-rome-IAR-AUD-d1 (Track 08).flac
+     8:32.11       90342716 B   ---   --   ---xx   flac  0.6292  bd-1998-07-05-rome-IAR-AUD-d1 (Track 09).flac
+     5:13.35       55295412 B   -b-   --   ---xx   flac  0.5728  bd-1998-07-05-rome-IAR-AUD-d1 (Track 10).flac
+    10:00.19      105885828 B   -b-   --   ---xx   flac  0.6910  bd-1998-07-05-rome-IAR-AUD-d2 (Track 01).flac
+     4:27.63       47247004 B   -b-   --   ---xx   flac  0.5969  bd-1998-07-05-rome-IAR-AUD-d2 (Track 02).flac
+     6:46.37       71705456 B   -b-   --   ---xx   flac  0.6675  bd-1998-07-05-rome-IAR-AUD-d2 (Track 03).flac
+     8:01.00       84848428 B   -b-   --   ---xx   flac  0.5924  bd-1998-07-05-rome-IAR-AUD-d2 (Track 04).flac
+     5:27.26       57743996 B   ---   --   ---xx   flac  0.6211  bd-1998-07-05-rome-IAR-AUD-d2 (Track 05).flac
+     5:50.28       61805900 B   ---   --   ---xx   flac  0.6855  bd-1998-07-05-rome-IAR-AUD-d2 (Track 06).flac
+     6:18.41       66776848 B   -b-   --   ---xx   flac  0.5909  bd-1998-07-05-rome-IAR-AUD-d2 (Track 07).flac
+    99:19.57     1051301832 B                            0.6427  (17 files)
+=================== 
+=================== 
+=================== 

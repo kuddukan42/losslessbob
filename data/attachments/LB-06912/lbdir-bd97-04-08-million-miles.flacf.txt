@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-08-million-miles.flacf 
+=================== 
+=================== 
+=================== 
+0970dff70f3bd321f5724a2f7eae9163  bd97-04-08-million-miles-d1t01.flac
+16bee813a0bc87cdacb60257e16186f4  bd97-04-08-million-miles-d1t02.flac
+83dc3a506ed8219536ac9486d76e67a8  bd97-04-08-million-miles-d1t03.flac
+df129cb2c6c119b4a23a8785a2f747ad  bd97-04-08-million-miles-d1t04.flac
+5b46a7f5c1f095b1fa6f1ccc0f944683  bd97-04-08-million-miles-d1t05.flac
+1baaf5b9128924493b7cb4bf1cbdd030  bd97-04-08-million-miles-d1t06.flac
+e56e6ab2fe872df55189ea2a93e70e78  bd97-04-08-million-miles-d1t07.flac
+fc8b50e54b1a4c01124823d6ae76a72d  bd97-04-08-million-miles-d1t08.flac
+25a695cac1c188b54b2a22cc05c20944  bd97-04-08-million-miles-d1t09.flac
+2db87a8f364e3b4f72b92ada8e2052aa  bd97-04-08-million-miles-d1t10.flac
+42e57a3631b163655330728f6861fc63  bd97-04-08-million-miles-d2t01.flac
+fa6982fad07086b65eeedd5e70a9434a  bd97-04-08-million-miles-d2t02.flac
+a8e161463619c1c09bcbfa52907d17d9  bd97-04-08-million-miles-d2t03.flac
+6fcb3d27d3cb0661c4d135c0fe7834b1  bd97-04-08-million-miles-d2t04.flac
+9e7c9fe6225d87234a34485e3942ad00  bd97-04-08-million-miles-d2t05.flac
+20617ff844e9dad4c1435f0f1cd46904  bd97-04-08-million-miles-d2t06.flac
+4eb6dd8fc42d216e9c755adecebb8284  bd97-04-08-million-miles-d2t07.flac
+6849ea3a3485bed9d684bd64b2b083f6  bd97-04-08-million-miles-d2t08.flac
+48b3d3b0be67471dd50e7c531430b92a  bd97-04-08-million-miles-d2t09.flac
+d1ff8cde64096bac67be45a845cb9041  bd97-04-08-million-miles.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-08-million-miles.flacf 
+=================== 
+=================== 
+=================== 
+bd97-04-08-million-miles-d1t01.flac:ff1feb580d3afa0f30194c5838e44228
+bd97-04-08-million-miles-d1t02.flac:343557b6930d2c9f588810ce652316b3
+bd97-04-08-million-miles-d1t03.flac:6b1688905dc5d305048c3166adb83646
+bd97-04-08-million-miles-d1t04.flac:eadbd5eae66e7944e8da7b9533b0c105
+bd97-04-08-million-miles-d1t05.flac:e62538aed707682b97ba2e283b78f9b6
+bd97-04-08-million-miles-d1t06.flac:5ec7fa87e1b776ab8a022f70d6a5b575
+bd97-04-08-million-miles-d1t07.flac:0fea7005feb077be65526668aa03cafa
+bd97-04-08-million-miles-d1t08.flac:2bd7b52dc99bf512619093e67a04acbc
+bd97-04-08-million-miles-d1t09.flac:5addb66007204eeba08b7fe24cd5d4c6
+bd97-04-08-million-miles-d1t10.flac:b05c4796c885b53a4e6a9485b1a3f16c
+bd97-04-08-million-miles-d2t01.flac:2c1d200ccf3584f0bb4717fe54649cfe
+bd97-04-08-million-miles-d2t02.flac:beb8f832ccb4ffaa74ae9126bba6abf2
+bd97-04-08-million-miles-d2t03.flac:356682c3e4adbd84f0308b964d8771a7
+bd97-04-08-million-miles-d2t04.flac:d5c923037441babc2a9060557b1485de
+bd97-04-08-million-miles-d2t05.flac:e384b62ba081a18d7e88d3325b039b63
+bd97-04-08-million-miles-d2t06.flac:4bb08e47a5775660cc66b6e5d09db058
+bd97-04-08-million-miles-d2t07.flac:1e0e18ff89225948805f8d1c1fb30fba
+bd97-04-08-million-miles-d2t08.flac:a0d43fcb5c9375011410bfebe482389d
+bd97-04-08-million-miles-d2t09.flac:aab3418d17441ada540bbfd1251d7eba
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-08-million-miles.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:41.36       49653116 B   ---   --   ---xx   flac  0.5663  bd97-04-08-million-miles-d1t01.flac
+     4:45.31       50346956 B   ---   --   ---xx   flac  0.5822  bd97-04-08-million-miles-d1t02.flac
+     6:05.53       64510700 B   ---   --   ---xx   flac  0.5976  bd97-04-08-million-miles-d1t03.flac
+     8:10.50       86553644 B   ---   --   ---xx   flac  0.5317  bd97-04-08-million-miles-d1t04.flac
+     6:45.09       71463212 B   ---   --   ---xx   flac  0.5489  bd97-04-08-million-miles-d1t05.flac
+     8:01.20       84895484 B   ---   --   ---xx   flac  0.5742  bd97-04-08-million-miles-d1t06.flac
+     5:58.44       63254732 B   ---   --   ---xx   flac  0.5437  bd97-04-08-million-miles-d1t07.flac
+     7:42.26       81557996 B   ---   --   ---xx   flac  0.5816  bd97-04-08-million-miles-d1t08.flac
+     7:37.16       80652476 B   ---   --   ---xx   flac  0.5166  bd97-04-08-million-miles-d1t09.flac
+     9:02.52       95731148 B   ---   --   ---xx   flac  0.5603  bd97-04-08-million-miles-d1t10.flac
+     6:11.34       65524412 B   ---   --   ---xx   flac  0.5647  bd97-04-08-million-miles-d2t01.flac
+     7:49.58       82868060 B   ---   --   ---xx   flac  0.5895  bd97-04-08-million-miles-d2t02.flac
+     8:21.61       88519916 B   ---   --   ---xx   flac  0.5540  bd97-04-08-million-miles-d2t03.flac
+     9:47.74      103720892 B   ---   --   ---xx   flac  0.5424  bd97-04-08-million-miles-d2t04.flac
+     9:46.62      103516268 B   ---   --   ---xx   flac  0.5465  bd97-04-08-million-miles-d2t05.flac
+     6:09.25       65150444 B   ---   --   ---xx   flac  0.5497  bd97-04-08-million-miles-d2t06.flac
+     7:18.41       77359676 B   ---   --   ---xx   flac  0.5753  bd97-04-08-million-miles-d2t07.flac
+     8:37.32       91274108 B   ---   --   ---xx   flac  0.5639  bd97-04-08-million-miles-d2t08.flac
+     6:30.58       68932460 B   ---   --   ---xx   flac  0.5744  bd97-04-08-million-miles-d2t09.flac
+   139:24.32     1475485700 B                            0.5600  (19 files)
+=================== 
+=================== 
+=================== 

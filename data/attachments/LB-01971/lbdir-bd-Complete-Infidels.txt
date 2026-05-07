@@ -1,0 +1,424 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-Complete-Infidels 
+=================== 
+=================== 
+=================== 
+fab464886cf162b673c68f6cfb00f8f2  Artwork & Notes\Complete Infidels Back 1.jpg
+cb5b7a562ccdf58225e721452453d43e  Artwork & Notes\Complete Infidels Back 2.jpg
+f61308a4a7c0e14a4e239b87abf64889  Artwork & Notes\Complete Infidels Back 3.jpg
+2a038ca6aeb2683c7f46d9e1bbb0d76a  Artwork & Notes\Complete Infidels Back 4.jpg
+aff98923295943c2c10624a73caa975d  Artwork & Notes\Complete Infidels Inside.jpg
+be92a369850cec04967a7ac93841e872  Artwork & Notes\Complete Infidels vol 1 front.jpg
+ae8876f6acf5c9417ae367efe82e776a  Artwork & Notes\Complete Infidels vol 2 front.jpg
+abd69fa2d6d6353befb8a66fa75f58ec  Artwork & Notes\Complete Infidels vol 3 front.jpg
+34b03d153a3b184d35b91fa3b2f69741  Artwork & Notes\Complete Infidels vol 4 front.jpg
+787df61c5f850d8957127a7593ca19d0  Artwork & Notes\Infidels track details.txt
+b0c5caaa8d4ce224a092cd68d219745b  Artwork & Notes\infidels track lists.txt
+9622b59f2f316f89cfcff7d7b8d3505a  D1\01 Angel RW D4t6.shn
+7f178f34fe0022671f1454244136f177  D1\01 Angel RW D4t6.skt
+05227e22a997efaa2fdb860a47f11f0b  D1\02 Angel RW D4t7.shn
+4be96c53ad1d8e62c94cb4a82bbb7289  D1\02 Angel RW D4t7.skt
+49504ef06e66a4d07fdcabd79f8eee29  D1\03 Angel RW D4t8.shn
+5194893cff6bbb95cc96bee72eea1a47  D1\03 Angel RW D4t8.skt
+85d99f710fb2424a63cc5742507638d7  D1\04 BlindW A D-M D1t3.shn
+183f27bc4dbd0d99968b13cf9915db45  D1\04 BlindW A D-M D1t3.skt
+ebe7509c3b35b06dccdef6bca39b426b  D1\05 BlindW a O.shn
+eeda349da4c91bbd70a8b3f558c600a0  D1\05 BlindW a O.skt
+0a709c231b9de76964a2db5feb7ea4c1  D1\06 BlindW E D-M D1t11.shn
+2cad2eadaf1553f644efaff327f7cdd7  D1\06 BlindW E D-M D1t11.skt
+c5cef9b2f59c23b62196a1899bffd25b  D1\07 Bully D-M D2t3.shn
+b61aa7bc7b4139d507d1cc9ccd9e9f11  D1\07 Bully D-M D2t3.skt
+061b6993532d83b782442706bf63b74a  D1\08 Bully I1.shn
+cfe0141d2ae52b48e87ac2341b1599ba  D1\08 Bully I1.skt
+432be6067f38f8e12a1e4694400a03ea  D1\09 Bully MT.shn
+adca5fd6e297ecfd97c72baf2399d13b  D1\09 Bully MT.skt
+e60ecfe839370de1f8a700183c2f056b  D1\10 Bully O t3.shn
+f51b477dc8327833e5e8229e058a426b  D1\10 Bully O t3.skt
+3291d8454ece603d4b69580cd9ca3c44  D1\11 Bully RW (mono) D3t2.shn
+d8c9c2d7f3f89b1e176e2034aa47fca3  D1\11 Bully RW (mono) D3t2.skt
+9c7605f95cdc2e284738682698c0d06e  D1\12 Bully W t10.shn
+a1f2a57fae197aa1f0201b1eb9ad51e7  D1\12 Bully W t10.skt
+e51f50b61b7f0af978b0edc89c4c2659  D1\13 CCKid D-M D1t14.shn
+32180d471b7ca895f848b8d686579538  D1\13 CCKid D-M D1t14.skt
+d054859eb1325c23757aa42953db5f99  D1\14 Dark D-M D1t16.shn
+2d3fd3302d7cb70023fadc699627988a  D1\14 Dark D-M D1t16.skt
+7f5c58cb5ae49c3c944b1ad08cb4db30  D1\14 Dark MT.shn
+4bebdef1470d58c8fceef780a5cce9a3  D1\14 Dark MT.skt
+5a7e55365eb1cd35ff72823e69276581  D1\15 Don't Fly D-M D1t15.shn
+25d78777edb121429992f5e6c8fe089e  D1\15 Don't Fly D-M D1t15.skt
+8169b28bbe72fdfa18db441eb7bbdffa  D1\16 Don't Fly MT.shn
+059ad849e39aae6514012464b1790e89  D1\16 Don't Fly MT.skt
+b8d91eddb8711583e54533af4d308d75  D1\FPT.txt
+1a690948ef29cd313b5136f5a51c9b4d  D1\noname.md5
+9fd6e8502553e660db1fefd2e30510d2  D1\shntool-info-ORIG-OK-needSKT.txt
+fbf32d78f557d53722ad8f9252850f67  D2\01 Death D-M D1t8.shn
+e5b329d45a742b6439d68540d7815cc0  D2\01 Death D-M D1t8.skt
+d1871d65f9b54342c8dcb95691862f1d  D2\02 Death D-M D2t13.shn
+2e818f5580769d270862b47747b80ba6  D2\02 Death D-M D2t13.skt
+0a1da4693ce932d39ba00ea96b5e2734  D2\03 Death O.shn
+10b15049ed2f0577f315223f82eb776c  D2\03 Death O.skt
+d1bfa41265647938be4eb3fb019092f3  D2\04 FallApart (maybe) RW D1t1.shn
+8e953459d7fce1fee3181ee2a9a1742c  D2\04 FallApart (maybe) RW D1t1.skt
+c92b6908d966ccbbd122df2f73d5fc05  D2\05 FallApart (maybe) RC D1t13.shn
+ff3c322cb8067a4ecc1d8c763d52e954  D2\05 FallApart (maybe) RC D1t13.skt
+c69d159dc5f5140bf85723f8fe256b03  D2\06 FallApart (maybe) I1.shn
+536d0512585da6b64c602a50015201e4  D2\06 FallApart (maybe) I1.skt
+b814f0f1fc4d591eb1ef1424a8f2bba8  D2\07 FallApart (maybe) D-M D2t8.shn
+4820b58c6d808fcb5352dd8dfa5be503  D2\07 FallApart (maybe) D-M D2t8.skt
+19f646fcd90845bd0b57bc2c70e7ffc3  D2\08 FallApart (do you) O t8.shn
+fbfaa7f315014441c3f2d70957db8bcc  D2\08 FallApart (do you) O t8.skt
+0a90894e77731ca7ee893ca28952fb52  D2\09 FallApart (do you) W t15.shn
+f58b65bd6b45a29bc70ed29c4c1e2881  D2\09 FallApart (do you) W t15.skt
+01aaf59e278c4aaa95d43bbbefac41eb  D2\10 FallApart (do you) RW (mono) D4t12.shn
+bff83163f375982f7a29f761284618d7  D2\10 FallApart (do you) RW (mono) D4t12.skt
+6ec2e57ba33459a495c498a942a4b075  D2\11 Foot D-M D2t9.shn
+ae58737294bcd28ecb3585cf21346b4d  D2\11 Foot D-M D2t9.skt
+07ce8c029d9459aefe9adc5d3dd5a711  D2\12 Foot O.shn
+c9a63d41ade7ed55c0244570b92bb611  D2\12 Foot O.skt
+ab47ebebd0557ace0ae76be014ba2bd7  D2\13 Julius D-M D1t9.shn
+98b62077ac04744740e95b0753213658  D2\13 Julius D-M D1t9.skt
+d58c2caa3be32b876d43ae073091776e  D2\14 Julius D-M D2t16.shn
+0b70854a125e52be6052ef63737deef6  D2\14 Julius D-M D2t16.skt
+a829145fa39dbdccc3ee594cde8cf9ed  D2\FPT.txt
+ef718d1c18a404c9abde31c448f3870b  D2\noname.md5
+76b8e97f55c1c99cd56d33b90189b1d9  D2\shntool-info-ORIG-OK-needSKT.txt
+b37b4ac859f10bc9886f853488253e66  D3\01 I&I D-M D2t7.shn
+4f1cf868ce7210e662958836237804bd  D3\01 I&I D-M D2t7.skt
+cee6eefac41ec53471f62d824841a1d8  D3\02 I&I e I1.shn
+fa1ae178a48e1c91fb92d62d5deda858  D3\02 I&I e I1.skt
+cd5520c5e582a486f437065a88e6a715  D3\03 I&I O t7.shn
+575493e10fb4cd6c36a00d9ece7b66a6  D3\03 I&I O t7.skt
+8e14b7658388680c6c57d1ff17c54ee7  D3\04 I&I RW (mono) D3t11.shn
+6a178cc4a8b95e96ea2b68101c0a237c  D3\04 I&I RW (mono) D3t11.skt
+66cf62b4332ac81720d4f4235a3c4e0b  D3\05 I&I W t14.shn
+d7e5a9e32c9e9e5fec3858dae38304a5  D3\05 I&I W t14.skt
+befe7d4af7fe6f15d19391c2e8103404  D3\06 Jokerman D-M D2t1.shn
+3e20111588aa9bcbda59b073a703711e  D3\06 Jokerman D-M D2t1.skt
+5b6fcb05ad7a754e0bf37a98e67bd9ae  D3\07 Jokerman I1.shn
+e737d0c28a39274633e406a37013bde9  D3\07 Jokerman I1.skt
+c98fec5aa37bb7993b073cb010fba1fc  D3\08 Jokerman O t1.shn
+62661e0bad52463088eaa6cae5e91e0e  D3\08 Jokerman O t1.skt
+7693e534bfcea0b6337d56e54602d129  D3\09 Jokerman RW (mono) D4t10.shn
+070395ce66382fcebb52c2cd3ba04d7b  D3\09 Jokerman RW (mono) D4t10.skt
+6e2c188972297a2a2e8208137f19a08a  D3\10 Jokerman W t8.shn
+fca60f8804d05483be204b0eaea84259  D3\10 Jokerman W t8.skt
+16c6fe372b94ddbecd7a7a3a984cc058  D3\11 License D-M D2t4.shn
+13142d5ca61058acd5614db53cfc4c81  D3\11 License D-M D2t4.skt
+65c458f36671af9c1b46eebf4767cfb4  D3\12 License I1.shn
+d6b8911a502910894fed96803e5610de  D3\12 License I1.skt
+0aa414d698c5b61b2a6e9dde0179ea74  D3\13 License O t4.shn
+850226a72c9d1a81dee0f8a37e446f1b  D3\13 License O t4.skt
+02a872110864426bd8c53a610f9d22f5  D3\14 License RW (mono) D1t3.shn
+e39edc9b2d1933ac9c1db40b746c6647  D3\14 License RW (mono) D1t3.skt
+414cfcffa0795360295762212fc3806a  D3\15 License W t11.shn
+09c1ecc6f68025d4b1a674d8469f9b65  D3\15 License W t11.skt
+7b4c15ef7022caae2a5b5f58b502af6a  D3\FPT.txt
+2ee5c00eaf1f9d3b209f2a16cee6d573  D3\noname.md5
+95e4e8af40e4b61762be766fdb02a908  D3\shntool-info-ORIG-OK-needSKT.txt
+2adef12196dc0dd6944a433e40f64286  D4\01 Lord D-M D2t12.shn
+6c9e5b69ae570393da0d728fedc85121  D4\01 Lord D-M D2t12.skt
+4a3c3eae5e1b062c98189a2d11f8f71d  D4\02 Lord O.shn
+3837a2855da0877637020023185dee3a  D4\02 Lord O.skt
+314ddf48e797ded319360181f9aa7d8d  D4\03 Peace D-M D2t5.shn
+efa66e107860f7dc1468ad7d19779b37  D4\03 Peace D-M D2t5.skt
+78aa8e8c28a0ba4c9de9350d9004b232  D4\04 Peace I1.shn
+f6ad0c7c30f01f8bb32e48a51d1cd964  D4\04 Peace I1.skt
+b69174496214320e7f1cf703eb648828  D4\05 Peace O t5.shn
+428c00e338089b8e6aa70e0aedb85da7  D4\05 Peace O t5.skt
+4303d4bb4aff09c3acc6f9e132f1e654  D4\06 Peace RW (mono) D1t5.shn
+d4fe18d5f8825eca1ffe114ae16aa252  D4\06 Peace RW (mono) D1t5.skt
+52670c8ff725a7f7f7d0ad80b27bd2fc  D4\07 Peace W t12.shn
+bddca79bcc6ab7c337243c6630b9ccfd  D4\07 Peace W t12.skt
+cb41e89a7481a234e81c1afb1742d018  D4\08 Someone b O.shn
+da4eee9c0612decdd645db6d81585c4a  D4\08 Someone b O.skt
+6050bff3b7693d830ec94b92b7098b48  D4\09 Someone r RW D3t7.shn
+368aea1f8f731972ddfa89e6d68f3f73  D4\09 Someone r RW D3t7.skt
+275190655e0d1d37952e0f6b4cbadb62  D4\10 Sweetheart (later) D-M D2t2.shn
+36f34c2f19f13b371287d3deea22ecdd  D4\10 Sweetheart (later) D-M D2t2.skt
+0af711083c982d904da7c7f4c18db399  D4\11 Sweetheart (lighthouse) I1.shn
+3da1082d76bcb55265ce73cbbaa2b345  D4\11 Sweetheart (lighthouse) I1.skt
+93eef16d233d4d83019db1d1eb0bb9c0  D4\12 Sweetheart O t2.shn
+0121e285e0e9051092d5aec14a4cdc6d  D4\12 Sweetheart O t2.skt
+e3d1ba501ef8c356f9cbae5f6246dbff  D4\13 Sweetheart RW (mono) D4 t11.shn
+411b5c5d3e862e122c4ae57e4dc1a799  D4\13 Sweetheart RW (mono) D4 t11.skt
+85ed75e6c167e762115c0e798dcf6e4b  D4\14 Sweetheart W t9.shn
+c9c5da0307b1ea47534a2f6b989cead7  D4\14 Sweetheart W t9.skt
+5a703764e8ef0f085942aadff2640388  D4\FPT.txt
+2baac15c1afe9a6be2c9e95664fd3c34  D4\noname.md5
+ce4daeaae68aac3eaf904266baadc239  D4\shntool-info-ORIG-OK-needSKT.txt
+c25adfb6e0f51c07991e404d3bfa6df3  D5\01 TellMe D-M D2t11.shn
+fe9dec71540dc990e685fbe4f2af4ba2  D5\01 TellMe D-M D2t11.skt
+dbec5e2b3cf18c3d4333ab4cc6f8571b  D5\02 TellMe O.shn
+7865265f6f0d10ba77621da76d4d4a10  D5\02 TellMe O.skt
+b37bacc7f005c95a58fd932a5c3b265a  D5\03 ThisWas (what) D-M D1t10.shn
+dbbb9f90d6555799fde8c24d355ddaa3  D5\03 ThisWas (what) D-M D1t10.skt
+83114f27a30a9fac86616e3fddc66b42  D5\04 ThisWas D-M D2t15.shn
+b72f5bfa81c7499b0eafbf1f5e451aa7  D5\04 ThisWas D-M D2t15.skt
+6cefd9c41e98372b6e3d1e77598cbe2f  D5\05 Union (fs) D-M D3t3.shn
+8ef9b6a5c42730472ce312918f3f89ee  D5\05 Union (fs) D-M D3t3.skt
+857eebc81a973dc64d098614b865ab16  D5\06 Union (hum) D-M D2t6.shn
+2e3c32e0e334e6b18855fc86123e1b56  D5\06 Union (hum) D-M D2t6.skt
+9f0b3c45da40eeb8c84cbf743615cfae  D5\07 Union O t6.shn
+4ce87fea3d427e0ae95086f21ea22bba  D5\07 Union O t6.skt
+af47fb9af8217519cca75e3e2e1428c6  D5\08 Union RW (mono) D4t13.shn
+900da84f0276ad4447cf422b19e028b9  D5\08 Union RW (mono) D4t13.skt
+5848dd995a348bb174123bbf8f7f14d7  D5\09 Union W t13.shn
+411aa52ef3790b7f14fd243b63f79bbf  D5\09 Union W t13.skt
+bc8802a852f304a3862bf3fbc69f2500  D5\FPT.txt
+bdba1321bb2ba067749c46e3e84ddc96  D5\noname.md5
+265f1b0349e0aae54ce7feeb1822821c  D5\shntool-info-ORIG-OK-needSKT.txt
+b022979d33d294ca8618b7f6cbdf55ad  Rehearsals\FPT.txt
+352d3426d518c956ac5ad9e07f16f287  Rehearsals\Sweetheart Rehearsals 1.shn
+9568b09ea51b758b069eb3f860ae5e26  Rehearsals\Sweetheart Rehearsals 1.skt
+b2287ce64ed78f0e0bcdf1afa654be7f  Rehearsals\Sweetheart Rehearsals 2.shn
+569c759980071becf956206793a1baf5  Rehearsals\Sweetheart Rehearsals 2.skt
+0b4250324be827d6c75621fb5c98ada3  Rehearsals\Sweetheart Rehearsals 3 (clock tape).shn
+3a24c3e3961e983c288f4652c602a192  Rehearsals\Sweetheart Rehearsals 3 (clock tape).skt
+ec2eb951a4949aa224ca5f0fdfeb10e3  Rehearsals\noname.md5
+dccff2180339167abf668fba34e81743  Rehearsals\shntool-info-ORIG-OK-needSKT.txt
+0aa8ef9f64532d68654c5fb002833d4f  Vine 669 - Complete Infidels - Info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Complete-Infidels\D1 
+=================== 
+=================== 
+=================== 
+c65f5a169ff81b270cc98921e15f1d0a  [shntool]  01_Angel_RW_D4t6.wav
+520f91332b5e10103fc4d20f0484531c  [shntool]  02_Angel_RW_D4t7.wav
+d8d2f9959690784950f36069c5efca98  [shntool]  03_Angel_RW_D4t8.wav
+fc201c3aa937fd0c25aabcc869b5b1e2  [shntool]  04_BlindW_A_D-M_D1t3.wav
+f32c91fb7a91377e4a41026d059631db  [shntool]  05_BlindW_a_O.wav
+03008ef7736938553494124881847a30  [shntool]  06_BlindW_E_D-M_D1t11.wav
+ecce78316c18aec820405464b4a2cb45  [shntool]  07_Bully_D-M_D2t3.wav
+d6f64f7fe8aff921cb2b92fe36b8cc30  [shntool]  08_Bully_I1.wav
+376b546bd3f8f3d4988c0cd3ed11fec9  [shntool]  09_Bully_MT.wav
+93e8292720fd33213e059f7ba5039ff4  [shntool]  10_Bully_O_t3.wav
+5b127e7ed0e23fcf0c0555bf307831f0  [shntool]  11_Bully_RW__mono__D3t2.wav
+5b099ec3eb0afe019cdadce374bd6445  [shntool]  12_Bully_W_t10.wav
+751fb79145f0b0b197eb2a32b87bfcca  [shntool]  13_CCKid_D-M_D1t14.wav
+c36ba67fd1ef94c46b4af0c68dc83df1  [shntool]  14_Dark_D-M_D1t16.wav
+b2512f400746468f79a8f51adff925f1  [shntool]  14_Dark_MT.wav
+3d9ce752d8a070b3452be41ec372934c  [shntool]  15_Don_t_Fly_D-M_D1t15.wav
+3b470a5e5cc474df5d5e4ae98a027fa1  [shntool]  16_Don_t_Fly_MT.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Complete-Infidels\D2 
+=================== 
+=================== 
+=================== 
+19d13589d46d960706c210eed65a1629  [shntool]  01_Death_D-M_D1t8.wav
+7bac430336f9cf1ccb177e4359794668  [shntool]  02_Death_D-M_D2t13.wav
+9b484b3eccda5525706b180075a81f16  [shntool]  03_Death_O.wav
+c0e60e31b746ccf0a7fd3673acc5127f  [shntool]  04_FallApart__maybe__RW_D1t1.wav
+dbb416a95c57e0c53612cc9f158f3df6  [shntool]  05_FallApart__maybe__RC_D1t13.wav
+aa7c5c7b3dc95828d9cf6b10a40bf22f  [shntool]  06_FallApart__maybe__I1.wav
+e79ad2254210229fa4c78f286a256b4e  [shntool]  07_FallApart__maybe__D-M_D2t8.wav
+e481c3cc31934cb8123753e1c5eb4beb  [shntool]  08_FallApart__do_you__O_t8.wav
+61370ab3650a5bb2acf39f452c005bf5  [shntool]  09_FallApart__do_you__W_t15.wav
+7d5b49ca8a4b15045507bf273d4a2492  [shntool]  10_FallApart__do_you__RW__mono__D4t12.wav
+dfcebdd39bac70aa40ca9a889ccb8a25  [shntool]  11_Foot_D-M_D2t9.wav
+a4af8c735f4f0714b9da3e68f5c1c2f1  [shntool]  12_Foot_O.wav
+31cfa5100d8d03d5b51b7bf31bd6cbe2  [shntool]  13_Julius_D-M_D1t9.wav
+f3811e3fbc4f66d387b3f340f3de36d4  [shntool]  14_Julius_D-M_D2t16.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Complete-Infidels\D3 
+=================== 
+=================== 
+=================== 
+c2d8d7b4666aeb0f408c5bb36b2a57fd  [shntool]  01_I_I_D-M_D2t7.wav
+e1e6c547c4b07edcb18554f50c6e32e0  [shntool]  02_I_I_e_I1.wav
+074d9b7e6a44ddffdff2c1081176dc4e  [shntool]  03_I_I_O_t7.wav
+debebd158f3224489aa19b06e749a430  [shntool]  04_I_I_RW__mono__D3t11.wav
+0e74be7b7d7660feb612716ce3678fe4  [shntool]  05_I_I_W_t14.wav
+a8c1168a8c2795e9d149ab4e0d2a13e1  [shntool]  06_Jokerman_D-M_D2t1.wav
+623a10193a5ad55ee665ebacd82f875c  [shntool]  07_Jokerman_I1.wav
+e941e0be4d2c2eb5185c11648d79844a  [shntool]  08_Jokerman_O_t1.wav
+e6ec469ec90a90d3204d8b21f37adfcc  [shntool]  09_Jokerman_RW__mono__D4t10.wav
+97b9ad5b92211680bdec88448e23ed7b  [shntool]  10_Jokerman_W_t8.wav
+78d628fe5e3f1a42a5ab9306b8835cfb  [shntool]  11_License_D-M_D2t4.wav
+06a52323e79508a7d51cc3674a6baa06  [shntool]  12_License_I1.wav
+a0c748a5e310c487ee092952f8578d4f  [shntool]  13_License_O_t4.wav
+d5465d6560c88b0c1bb327446152e6fd  [shntool]  14_License_RW__mono__D1t3.wav
+dbf435c865ebbe71b3a2ed67a991ddf6  [shntool]  15_License_W_t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Complete-Infidels\D4 
+=================== 
+=================== 
+=================== 
+cd8d5234e0053b91beef0570d640421b  [shntool]  01_Lord_D-M_D2t12.wav
+075b6e6dcf42fc095bac068708fcdba5  [shntool]  02_Lord_O.wav
+b88cb4e39eb27563c8c9e3d2fd3d8582  [shntool]  03_Peace_D-M_D2t5.wav
+391a2b70631c0506c90260aa8ec768e1  [shntool]  04_Peace_I1.wav
+518ef4a311b20e171eccaf61a80349d3  [shntool]  05_Peace_O_t5.wav
+3372baf089a9c23a45de7b0f2b49dba1  [shntool]  06_Peace_RW__mono__D1t5.wav
+a4a7314b2b80a99a5129ecb0ae003599  [shntool]  07_Peace_W_t12.wav
+6128c0615648a2bab539180521d4a6f3  [shntool]  08_Someone_b_O.wav
+0168fb4f102b8c28b364de8a4fd21511  [shntool]  09_Someone_r_RW_D3t7.wav
+653cf3f9ffc9d448527ee52aa60e5407  [shntool]  10_Sweetheart__later__D-M_D2t2.wav
+cb2487317da64769a42d6e549e53e6d2  [shntool]  11_Sweetheart__lighthouse__I1.wav
+c2b0ec1fe29a370ce61c26a176185497  [shntool]  12_Sweetheart_O_t2.wav
+a0c413b5e4c5d6dfedace490fb3ac493  [shntool]  13_Sweetheart_RW__mono__D4_t11.wav
+bd56d7cfed0dad37ceeede171f717499  [shntool]  14_Sweetheart_W_t9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Complete-Infidels\D5 
+=================== 
+=================== 
+=================== 
+5a4709f7e998c4c9d41f21f2d1bc0d97  [shntool]  01_TellMe_D-M_D2t11.wav
+df4c708d3bc6cce4de8d2591f794e204  [shntool]  02_TellMe_O.wav
+3eebf8ed4fc62131cde8afd985ede1d1  [shntool]  03_ThisWas__what__D-M_D1t10.wav
+9b9093d5b1936ba9a84b6091adc0ee2a  [shntool]  04_ThisWas_D-M_D2t15.wav
+e96f0915979a317b267928a3868c66b5  [shntool]  05_Union__fs__D-M_D3t3.wav
+e855994096025007c60347f836f2f9cf  [shntool]  06_Union__hum__D-M_D2t6.wav
+7f06bb10a678e7dda0d2e6dabdffede5  [shntool]  07_Union_O_t6.wav
+1eeb796621afd1739efed627cae95a02  [shntool]  08_Union_RW__mono__D4t13.wav
+847f3d67cf09020e48b61ea69e77b883  [shntool]  09_Union_W_t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-Complete-Infidels\Rehearsals 
+=================== 
+=================== 
+=================== 
+935c3ae4d0d7e9041c78c47728c60328  [shntool]  Sweetheart_Rehearsals_1.wav
+f0c036b9d32e4aa74da5268c44a627aa  [shntool]  Sweetheart_Rehearsals_2.wav
+e4e788fe5ff4f7f9143180a90faef3d1  [shntool]  Sweetheart_Rehearsals_3__clock_tape_.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Complete-Infidels\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.73       44624540 B   ---   --   -----    wav  1.0000  01_Angel_RW_D4t6.wav
+     4:39.12       49243868 B   ---   --   -----    wav  1.0000  02_Angel_RW_D4t7.wav
+     4:31.66       47959676 B   ---   --   -----    wav  1.0000  03_Angel_RW_D4t8.wav
+     5:52.38       62182220 B   ---   --   -----    wav  1.0000  04_BlindW_A_D-M_D1t3.wav
+     5:52.40       62186924 B   ---   --   -----    wav  1.0000  05_BlindW_a_O.wav
+     4:55.73       52209740 B   ---   --   -----    wav  1.0000  06_BlindW_E_D-M_D1t11.wav
+     4:38.38       49128620 B   ---   --   -----    wav  1.0000  07_Bully_D-M_D2t3.wav
+     4:44.14       50130572 B   ---   --   -----    wav  1.0000  08_Bully_I1.wav
+     4:37.38       48952220 B   ---   --   -----    wav  1.0000  09_Bully_MT.wav
+     4:37.40       48956924 B   ---   --   -----    wav  1.0000  10_Bully_O_t3.wav
+     4:34.06       48347756 B   ---   --   -----    wav  1.0000  11_Bully_RW__mono__D3t2.wav
+     4:26.47       47032988 B   ---   --   -----    wav  1.0000  12_Bully_W_t10.wav
+     6:48.08       71990060 B   ---   --   -----    wav  1.0000  13_CCKid_D-M_D1t14.wav
+     2:47.18       29501180 B   ---   --   -----    wav  1.0000  14_Dark_D-M_D1t16.wav
+     2:47.04       29468252 B   ---   --   -----    wav  1.0000  14_Dark_MT.wav
+     3:16.13       34605020 B   ---   --   -----    wav  1.0000  15_Don_t_Fly_D-M_D1t15.wav
+     3:15.26       34459196 B   ---   --   -----    wav  1.0000  16_Don_t_Fly_MT.wav
+    76:37.29      810979756 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Complete-Infidels\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.38       54773420 B   ---   --   -----    wav  1.0000  01_Death_D-M_D1t8.wav
+     5:02.53       53397500 B   ---   --   -----    wav  1.0000  02_Death_D-M_D2t13.wav
+     5:10.37       54771068 B   ---   --   -----    wav  1.0000  03_Death_O.wav
+     5:54.11       62471516 B   ---   --   -----    wav  1.0000  04_FallApart__maybe__RW_D1t1.wav
+     5:53.50       62386844 B   ---   --   -----    wav  1.0000  05_FallApart__maybe__RC_D1t13.wav
+     5:56.26       62859596 B   ---   --   -----    wav  1.0000  06_FallApart__maybe__I1.wav
+     5:48.43       61488380 B   ---   --   -----    wav  1.0000  07_FallApart__maybe__D-M_D2t8.wav
+     5:56.52       62920748 B   ---   --   -----    wav  1.0000  08_FallApart__do_you__O_t8.wav
+     5:52.40       62186924 B   ---   --   -----    wav  1.0000  09_FallApart__do_you__W_t15.wav
+     5:55.46       62730236 B   ---   --   -----    wav  1.0000  10_FallApart__do_you__RW__mono__D4t12.wav
+     6:01.08       63699260 B   ---   --   -----    wav  1.0000  11_Foot_D-M_D2t9.wav
+     5:57.42       63073628 B   ---   --   -----    wav  1.0000  12_Foot_O.wav
+     4:47.08       50645660 B   ---   --   -----    wav  1.0000  13_Julius_D-M_D1t9.wav
+     4:46.60       50591564 B   ---   --   -----    wav  1.0000  14_Julius_D-M_D2t16.wav
+    78:13.64      827996344 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Complete-Infidels\D3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:30.43       47729180 B   ---   --   -----    wav  1.0000  01_I_I_D-M_D2t7.wav
+     4:59.22       52795388 B   ---   --   -----    wav  1.0000  02_I_I_e_I1.wav
+     5:12.58       55173260 B   ---   --   -----    wav  1.0000  03_I_I_O_t7.wav
+     5:08.65       54484124 B   ---   --   -----    wav  1.0000  04_I_I_RW__mono__D3t11.wav
+     5:04.11       53651516 B   ---   --   -----    wav  1.0000  05_I_I_W_t14.wav
+     6:22.33       67462460 B   ---   --   -----    wav  1.0000  06_Jokerman_D-M_D2t1.wav
+     6:32.33       69226460 B   ---   --   -----    wav  1.0000  07_Jokerman_I1.wav
+     6:19.02       66860348 B   ---   --   -----    wav  1.0000  08_Jokerman_O_t1.wav
+     6:15.34       66230012 B   ---   --   -----    wav  1.0000  09_Jokerman_RW__mono__D4t10.wav
+     6:06.73       64734140 B   ---   --   -----    wav  1.0000  10_Jokerman_W_t8.wav
+     3:31.38       37309820 B   ---   --   -----    wav  1.0000  11_License_D-M_D2t4.wav
+     3:50.03       40579100 B   ---   --   -----    wav  1.0000  12_License_I1.wav
+     3:34.48       37862540 B   ---   --   -----    wav  1.0000  13_License_O_t4.wav
+     3:31.08       37239260 B   ---   --   -----    wav  1.0000  14_License_RW__mono__D1t3.wav
+     3:26.49       36453692 B   ---   --   -----    wav  1.0000  15_License_W_t11.wav
+    74:25.70      787791300 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Complete-Infidels\D4 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.38       49481420 B   ---   --   -----    wav  1.0000  01_Lord_D-M_D2t12.wav
+     3:57.18       41849180 B   ---   --   -----    wav  1.0000  02_Lord_O.wav
+     6:34.73       69673340 B   ---   --   -----    wav  1.0000  03_Peace_D-M_D2t5.wav
+     6:41.35       70818764 B   ---   --   -----    wav  1.0000  04_Peace_I1.wav
+     6:32.10       69172364 B   ---   --   -----    wav  1.0000  05_Peace_O_t5.wav
+     6:26.30       68161004 B   ---   --   -----    wav  1.0000  06_Peace_RW__mono__D1t5.wav
+     6:19.55       66985004 B   ---   --   -----    wav  1.0000  07_Peace_W_t12.wav
+     4:33.25       48216044 B   ---   --   -----    wav  1.0000  08_Someone_b_O.wav
+     5:11.11       54886316 B   ---   --   -----    wav  1.0000  09_Someone_r_RW_D3t7.wav
+     4:15.23       45036140 B   ---   --   -----    wav  1.0000  10_Sweetheart__later__D-M_D2t2.wav
+     4:12.46       44561036 B   ---   --   -----    wav  1.0000  11_Sweetheart__lighthouse__I1.wav
+     4:35.60       48651164 B   ---   --   -----    wav  1.0000  12_Sweetheart_O_t2.wav
+     4:32.07       47997308 B   ---   --   -----    wav  1.0000  13_Sweetheart_RW__mono__D4_t11.wav
+     4:22.73       46388540 B   ---   --   -----    wav  1.0000  14_Sweetheart_W_t9.wav
+    72:55.54      771877624 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Complete-Infidels\D5 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.53       48458300 B   ---   --   -----    wav  1.0000  01_TellMe_D-M_D2t11.wav
+     4:24.42       46668428 B   ---   --   -----    wav  1.0000  02_TellMe_O.wav
+     4:09.18       43965980 B   ---   --   -----    wav  1.0000  03_ThisWas__what__D-M_D1t10.wav
+     3:49.43       40496780 B   ---   --   -----    wav  1.0000  04_ThisWas_D-M_D2t15.wav
+     6:48.48       72084140 B   ---   --   -----    wav  1.0000  05_Union__fs__D-M_D3t3.wav
+     5:06.13       54009020 B   ---   --   -----    wav  1.0000  06_Union__hum__D-M_D2t6.wav
+     5:25.57       57464108 B   ---   --   -----    wav  1.0000  07_Union_O_t6.wav
+     5:21.16       56662076 B   ---   --   -----    wav  1.0000  08_Union_RW__mono__D4t13.wav
+     5:13.09       55234412 B   ---   --   -----    wav  1.0000  09_Union_W_t13.wav
+    44:52.74      475043244 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Complete-Infidels\Rehearsals 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    20:31.42      217247228 B   ---   --   -----    wav  1.0000  Sweetheart_Rehearsals_1.wav
+    28:41.11      303610316 B   ---   --   -----    wav  1.0000  Sweetheart_Rehearsals_2.wav
+    73:59.33      783117260 B   ---   --   -----    wav  1.0000  Sweetheart_Rehearsals_3__clock_tape_.wav
+   123:12.11     1303974804 B                            1.0000  (3 files)
+=================== 
+=================== 
+=================== 

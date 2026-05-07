@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-10-29-schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+69e486c46db01d8c3bbf8c95b8de7643  1999-10-29 Oxford, Ohio (ASM by Schubert).txt
+bd140ebbe80606237ff32464c09dcec8  1999-10-29 Oxford, Ohio_disc 1\101 Anouncement.flac
+de9321a9aaac1ee51ecce9643e9dca17  1999-10-29 Oxford, Ohio_disc 1\102 I Am The Man, Thomas.flac
+64b4c2a296c2347a6b6833a2b127f6eb  1999-10-29 Oxford, Ohio_disc 1\103 Mr. Tambourine Man.flac
+ec187c1051bab734c372d376f642cc0a  1999-10-29 Oxford, Ohio_disc 1\104 Masters Of War.flac
+c05b09f865295f3948d99fefce54c23a  1999-10-29 Oxford, Ohio_disc 1\105 It's All Over Now, Baby Blue.flac
+15fec1abfdac16cf98cd3162694c2145  1999-10-29 Oxford, Ohio_disc 1\106 Tangled Up In Blue.flac
+7c3b3bc41ae536af7359f626b007c428  1999-10-29 Oxford, Ohio_disc 1\107 Watching The River Flow.flac
+ad202a68dec5b6f0b9a6e42830989de8  1999-10-29 Oxford, Ohio_disc 1\108 When I Paint My Masterpiece.flac
+56cebd88676a327efd5138386f375bbd  1999-10-29 Oxford, Ohio_disc 1\1999-10-29 Oxford, Ohio_disc 1.md5
+d16c922b38733ce745ee88a4e75a93ef  1999-10-29 Oxford, Ohio_disc 2\1999-10-29 Oxford, Ohio_disc 2.md5
+d970adbd27fbb05d6c03e0cb535d8df9  1999-10-29 Oxford, Ohio_disc 2\201 Stuck Inside Of Mobile.flac
+7cff9e376f93914ca8d0cf9df2a6a3ee  1999-10-29 Oxford, Ohio_disc 2\202 Not Dark Yet.flac
+a84e860b0090ff7adc964d2b488b0d01  1999-10-29 Oxford, Ohio_disc 2\203 Highway 61 Revisited.flac
+98d0cf4f98edefdc9766d5dd5cd861ae  1999-10-29 Oxford, Ohio_disc 2\204 Love Sick.flac
+16e7c50eeaf87262f05e1d259b9c97e6  1999-10-29 Oxford, Ohio_disc 2\205 Like A Rolling Stone.flac
+9530290490391f3729a6fc5655e2cae4  1999-10-29 Oxford, Ohio_disc 2\206 Blowin' In The Wind.flac
+2de87207fcca8af4a25a25d967b5f996  1999-10-29 Oxford, Ohio_disc 2\207 Not Fade Away.flac
+1a40211f91bd718ffcf2a98dd10127da  DigiFlawFinder-bd99-10-29-schubert-remaster.flacf.wavf.html
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-10-29-schubert-remaster.flacf\1999-10-29 Oxford, Ohio_disc 1 
+=================== 
+=================== 
+=================== 
+101 Anouncement.flac:4acd8f92e5c8eeab93b6f048c98a4f42
+102 I Am The Man, Thomas.flac:658af14722eb61c225ce035dbbede971
+103 Mr. Tambourine Man.flac:1392b3bcc3089b86772a29675679460e
+104 Masters Of War.flac:3607cfe4eb3794086d2453ec9482302d
+105 It's All Over Now, Baby Blue.flac:890594b46af6a9edb0c4078f0dfe4ba2
+106 Tangled Up In Blue.flac:e5dc9e50d30893f4a49199433ad1a4ff
+107 Watching The River Flow.flac:674a36b16961781a0c1b6f84d5338559
+108 When I Paint My Masterpiece.flac:2592cd11fd6e63294f608b314693101e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-10-29-schubert-remaster.flacf\1999-10-29 Oxford, Ohio_disc 2 
+=================== 
+=================== 
+=================== 
+201 Stuck Inside Of Mobile.flac:35b434e2a42b4ae898b16763b2337645
+202 Not Dark Yet.flac:b6211d1a7c4cf0ec5cf4b06aad1b0cae
+203 Highway 61 Revisited.flac:977d980ff01c4a86c5847217d8ae4a5f
+204 Love Sick.flac:77fcc6d559630cb764035aa3338596d8
+205 Like A Rolling Stone.flac:1549697fc7cfaa60834306cf126895ac
+206 Blowin' In The Wind.flac:1b3bc543883f71b9f8e51e2a37befb0c
+207 Not Fade Away.flac:6378cacd7e8910a9e0006fdca48a44ba
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-10-29-schubert-remaster.flacf\1999-10-29 Oxford, Ohio_disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:47.37        8377868 B   ---   --   ---xx   flac  0.4310  101 Anouncement.flac
+     2:27.62       26076668 B   ---   --   ---xx   flac  0.5396  102 I Am The Man, Thomas.flac
+     6:22.69       67547132 B   ---   --   ---xx   flac  0.5141  103 Mr. Tambourine Man.flac
+     5:44.52       60803948 B   ---   --   ---xx   flac  0.4792  104 Masters Of War.flac
+     7:16.73       77082140 B   ---   --   ---xx   flac  0.4809  105 It's All Over Now, Baby Blue.flac
+     8:58.11       94929116 B   ---   --   ---xx   flac  0.5566  106 Tangled Up In Blue.flac
+     5:34.45       59023484 B   ---   --   ---xx   flac  0.5407  107 Watching The River Flow.flac
+     6:16.66       66481676 B   ---   --   ---xx   flac  0.4956  108 When I Paint My Masterpiece.flac
+    43:29.40      460322032 B                            0.5134  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-10-29-schubert-remaster.flacf\1999-10-29 Oxford, Ohio_disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:57.63       84291020 B   ---   --   ---xx   flac  0.5283  201 Stuck Inside Of Mobile.flac
+     6:52.15       72712124 B   ---   --   ---xx   flac  0.3972  202 Not Dark Yet.flac
+     8:29.59       89926412 B   ---   --   ---xx   flac  0.5307  203 Highway 61 Revisited.flac
+     5:59.04       63337052 B   ---   --   ---xx   flac  0.4453  204 Love Sick.flac
+     7:33.57       80043308 B   ---   --   ---xx   flac  0.5213  205 Like A Rolling Stone.flac
+     5:30.21       58261436 B   ---   --   ---xx   flac  0.4275  206 Blowin' In The Wind.flac
+     4:40.53       49516700 B   ---   --   ---xx   flac  0.5228  207 Not Fade Away.flac
+    47:03.47      498088052 B                            0.4856  (7 files)
+=================== 
+=================== 
+=================== 

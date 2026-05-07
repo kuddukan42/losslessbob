@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-23-local-taper-DK-A-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+494b7e4cd8f7db2300efe79dedb080be  bd-19960723-Kopenhagen.ffp
+fb552c8281bfa76a142aa0a612ce917f  bd-19960723-Kopenhagen.md5
+ba2a9f8030a105d3e0bc38319f87c7d3  bd1996-07-23-d1t01.flac
+1378256fe8a3d157ed346ffb790f5f99  bd1996-07-23-d1t02.flac
+64c75a29d56dced4f5ddcafd1bc054db  bd1996-07-23-d1t03.flac
+05b8ffa6091c610448ba6e5f63342216  bd1996-07-23-d1t04.flac
+477246df8c036d6a0fbc2dc7a00a59e1  bd1996-07-23-d1t05.flac
+9122c5c573c2d7e6f3b6a75ed5531eb1  bd1996-07-23-d1t06.flac
+6e587c71128efd2f062cbb3b2c19ecc3  bd1996-07-23-d1t07.flac
+4184677863019de670dd96d35298cc70  bd1996-07-23-d1t08.flac
+5f8c2657aac7913706c51fca4d5b6ebf  bd1996-07-23-d1t09.flac
+f05fbc08a40e21b9ae493a4c88d63757  bd1996-07-23-d1t10.flac
+7b504e10c7ea03651a25f65e1c22e8df  bd1996-07-23-d2t01.flac
+786381acdc7ee51b54b898c770204c47  bd1996-07-23-d2t02.flac
+bc5e55637b7421c9d8d2d489bf50883c  bd1996-07-23-d2t03.flac
+684b703920946ba530a84a8de9145bdf  bd1996-07-23-d2t04.flac
+fb1c1eb810baa8116d2eee309a8cec50  bd1996-07-23-d2t05.flac
+bddb2beecad82532662b55d1a26352b1  bd1996-07-23-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-23-local-taper-DK-A-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-07-23-d1t01.flac:080f8e9fe06b9a97ddea8ce691b7a41e
+bd1996-07-23-d1t02.flac:70a1517b3b259cec88ed158d1e486df1
+bd1996-07-23-d1t03.flac:59b84ae6240e0ca707821845441c0339
+bd1996-07-23-d1t04.flac:30cdd9b24311f9f1276e8997dda49394
+bd1996-07-23-d1t05.flac:94466173299454cf571f0c624940a885
+bd1996-07-23-d1t06.flac:8231c5a9983d9d4acedddcc2780f61d9
+bd1996-07-23-d1t07.flac:8b24548aff21cd1aec73a4c520ceea30
+bd1996-07-23-d1t08.flac:2f3f80d6c56757b0c43bd0502faa48ce
+bd1996-07-23-d1t09.flac:42becb2c11214b856adbecc1224cd64e
+bd1996-07-23-d1t10.flac:278bbcd6e88462a62c6db2f8e9c488c3
+bd1996-07-23-d2t01.flac:e3137082c6d9e5883d40376c5752556d
+bd1996-07-23-d2t02.flac:3d83a7679a7ffbd781ca12167ef85a93
+bd1996-07-23-d2t03.flac:944700b91805e2ec0bc32f112879e8bd
+bd1996-07-23-d2t04.flac:b1e36b419e8aaafce15de47c18ec3bd6
+bd1996-07-23-d2t05.flac:d8bab978edb63bf57b5e85db66ae53b8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-23-local-taper-DK-A-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:31.37        5555468 B   ---   --   ---xx   flac  0.3642  bd1996-07-23-d1t01.flac
+     4:50.42       51254828 B   ---   --   ---xx   flac  0.5936  bd1996-07-23-d1t02.flac
+     6:18.45       66785084 B   ---   --   ---xx   flac  0.5697  bd1996-07-23-d1t03.flac
+     6:35.14       69710972 B   ---   --   ---xx   flac  0.6244  bd1996-07-23-d1t04.flac
+     8:13.18       87007580 B   ---   --   ---xx   flac  0.5487  bd1996-07-23-d1t05.flac
+     7:30.43       79481180 B   ---   --   ---xx   flac  0.5582  bd1996-07-23-d1t06.flac
+     7:56.65       84119324 B   ---   --   ---xx   flac  0.6175  bd1996-07-23-d1t07.flac
+     8:36.18       91064780 B   ---   --   ---xx   flac  0.5061  bd1996-07-23-d1t08.flac
+     6:17.62       66648668 B   ---   --   ---xx   flac  0.5154  bd1996-07-23-d1t09.flac
+     7:18.56       77394956 B   ---   --   ---xx   flac  0.5330  bd1996-07-23-d1t10.flac
+     8:37.20       91245884 B   ---   --   ---xx   flac  0.6221  bd1996-07-23-d2t01.flac
+     7:58.44       84422732 B   ---   --   ---xx   flac  0.5128  bd1996-07-23-d2t02.flac
+     9:12.01       97375196 B   ---   --   ---xx   flac  0.6070  bd1996-07-23-d2t03.flac
+    14:15.58      150958460 B   ---   --   ---xx   flac  0.5297  bd1996-07-23-d2t04.flac
+     6:59.67       74069228 B   ---   --   ---xx   flac  0.6495  bd1996-07-23-d2t05.flac
+   111:12.65     1177094340 B                            0.5666  (15 files)
+=================== 
+=================== 
+=================== 

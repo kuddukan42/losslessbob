@@ -1,0 +1,30 @@
+7143b071b7d9a4fba6148d700dd9caca *CD1\01 Wait for the light to shine.flac
+7bea69a962a6901e012c6abfad46aa45 *CD1\02 The times they are a-changin'.flac
+03bb710fc547e98f4ffb500a5e0c29ab *CD1\03 It's alright, ma (I'm only bleeding).flac
+9bd13a7b4b74d3dbff7213881f12caba *CD1\04 Searching for a soldier's grave.flac
+572d94ed894ce64d60fc999b3e8cc6bc *CD1\05 Gotta serve somebody.flac
+19e113fb235d746b330d1ec2cdfd458d *CD1\06 Mississippi.flac
+9a1ee239a7f8a0450afe5185635394eb *CD1\07 Tell me that it isn't true.flac
+797595bd29eceada9c1e67897cc73070 *CD1\08 High water (for Charley Patton).flac
+e92a89645c51e2276cc7f10b2b52a2b1 *CD1\09 Don't think twice, it's all right.flac
+d2ec0f68e3054b59ce1d6e56e3984bd3 *CD1\10 Visions of Johanna.flac
+4a431df484161263823e1b3bba563403 *CD1\11 Masters of war.flac
+1303399a00bfe0413dbf71270c184495 *CD1\12 Summer days.flac
+4fd2f36688ea219e0a3c2a4436d9bc21 *CD1\13 Sugar baby.flac
+782f5b71b8df7855865f2f9b5ee58adb *CD1\CD1.ffp
+514fb589c0a54fda9228f31152dbf8b4 *CD1\CD1.txt
+b13d6006163c67f12f74b6ac581e5b41 *CD2\14 Cold irons bound.flac
+1644015d6cb25539abc0b57007a28969 *CD2\15 Cat's in the well.flac
+971a53a13e367e2b8af66bfdbf87648e *CD2\16 Love sick.flac
+13d92c3d2c2649af27d01a8e98d3ae63 *CD2\17 Like a rolling stone.flac
+b986732a77f71734e6b459facf3b8bb5 *CD2\18 Forever young.flac
+5f9ed60ef491cae481a95487df016ef4 *CD2\19 Honest with me.flac
+5513deeecfb6b5fecb9158dfbccb2ce4 *CD2\20 Blowin' in the wind.flac
+f1dd820562e89851db3f71577bc8f8f3 *CD2\21 All along the watchtower.flac
+961d60de220e1b61e49e1e125f5961cf *CD2\22 Knockin' on heaven's door.flac
+8b367db581e4b8bdd55a980df23b15b0 *CD2\23 Rainy day women # 12 & 35.flac
+03b21a971f848937921ece004d1ab949 *CD2\CD2.ffp
+001ca5cde297854bfddade6ad973bbdb *CD2\CD2.txt
+1dccfb1a0083aa1eeec61742226c0d4a *Info\2001-10-27 United Center, Chicago, Illinois, USA.txt
+5eb6aaa2638cf6a56b96f5ba7c9d7818 *Info\CD1.shntool_len.txt
+7a752fb23849ac83778f77a413323338 *Info\CD2.shntool_len.txt

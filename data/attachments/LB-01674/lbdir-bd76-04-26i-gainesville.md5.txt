@@ -1,0 +1,28 @@
+182c64b8333fb619d27272b32119221c  bd1976-04-25 Gainesville (incomplete).txt
+9a381c731527bd162ae350db8d527d65  bd76-04-26i.txt
+34ab5571c3fa962692ff26a33d2c0c79  Gainesville Material.asc
+04d0d713ef59e7050dde9784426cf155  k-d\dylan01.shn
+b31f1552c9b4403c25af065cd6704899  k-d\dylan01.skt
+6b7d48f4fd7fd3c65fc3bab615c37e0b  k-d\dylan02.shn
+cbc046f49f12fa4ea9476f6c966af8e3  k-d\dylan02.skt
+b5be79c0fc273cdc36dbd7041cba35f6  k-d\friedman01.shn
+b80f32aecec66ccf12f5f4e0ddb5bd4f  k-d\friedman01.skt
+7f924f6b2522aa29c802bf8c51caf698  k-d\friedman02.shn
+290e36f7db0f2d042e85359a34355d21  k-d\friedman02.skt
+cd00469d92e9ce9d648020fd64cfffe5  k-d\friedman03.shn
+22022d317c22515d6d6d343486733ae6  k-d\friedman03.skt
+7a0981e0e768e6035f688e2e5e025c5e  k-d\friedman04.shn
+ee3f2da35694c58ddaa81df52e13d0d3  k-d\friedman04.skt
+ca98c10781075209491b49395ee5b55b  k-d\friedman05.shn
+2276783d0a744bb4f9e3167ed1aa0a82  k-d\friedman05.skt
+570a89c6a61b70649b0246a05ac9ec80  k-d\friedman06.shn
+875679f0df6aff9759d2ff2d3374003b  k-d\friedman06.skt
+c2eccbcd0e5ae1a0e6526b86420d0f16  k-d\friedman07.shn
+c9b1a414399b9a6439940c027d42cbe1  k-d\friedman07.skt
+76e5f2cffac31bdccf8893eda08d7f9b  k-d\friedman08.shn
+ff4c4dff4d7ba01efb8a3d6106c0e6fd  k-d\friedman08.skt
+b74e3a976d069e870ce4f7275d2bd56d  k-d\friedman09.shn
+3b2a542808ccc5a24af9d320221ddf6b  k-d\friedman09.skt
+41146daf89eebd8b70b9067bed8242de  k-d\friedman10.shn
+da903d5cf507e467219fa14158c64dbb  k-d\friedman10.skt
+2dea5cb51a36dc7603ad1152d7088a1e  k-d\noname.md5

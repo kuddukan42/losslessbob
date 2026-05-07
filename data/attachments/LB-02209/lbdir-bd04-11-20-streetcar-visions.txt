@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-20-streetcar-visions 
+=================== 
+=================== 
+=================== 
+435a26b9e5ebf6749b9a3ca6a62ddff9  bd04-11-20-streetcar-visions.txt
+b3b16f36f3c930c7b204a1cceeb8ef42  bd04-11-20.md5
+c480e64911542892ac5d379fa0f4e9b9  bd04-11-20.txt
+ca35c359a6daa9f274cad0ab3ce3cee7  bd04-11-20d1t01.shn
+a23d4269c2e8036474278cae167c2d90  bd04-11-20d1t02.shn
+a571e01da539823de57956999be19d7c  bd04-11-20d1t03.shn
+31d83bbb2b8e9292c02939024930a546  bd04-11-20d1t04.shn
+9835c8178e814ec30be8ee1ae454142d  bd04-11-20d1t05.shn
+21b2ef9a976d674d45a56c8fe2bfbf07  bd04-11-20d1t06.shn
+d625766fd31d2c994e4113faa3afce29  bd04-11-20d1t07.shn
+9a0e7c239ce8ead1af9201ad005ed471  bd04-11-20d1t08.shn
+f15b902b777130438bb9486acc9f1d67  bd04-11-20d1t09.shn
+5d25bd89856ade4dbdcad5600b24301b  bd04-11-20d1t10.shn
+acfa2ad0024bccf88114570ca856d680  bd04-11-20d1t11.shn
+1bd86688050a7a4f45c820a886469ebd  bd04-11-20d2t01.shn
+9e75cbb6b804ed29496ac49cd206cf14  bd04-11-20d2t02.shn
+939e335d3a38673e070b9305b8541b1e  bd04-11-20d2t03.shn
+c96a1f969312f554ca368c3542bc0ea4  bd04-11-20d2t04.shn
+4496fe7209de977a65a7f3d0d160576b  bd04-11-20d2t05.shn
+48a3cbeee2ba0e05e7331af86aa62778  bd04-11-20d2t06.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-11-20-streetcar-visions 
+=================== 
+=================== 
+=================== 
+507827d0ad9e933f89e1598d48530a14  [shntool]  bd04-11-20d1t01.wav
+1884dd290d8d0389bcec82e08847afe5  [shntool]  bd04-11-20d1t02.wav
+db09e0434e25aebbca01ec2573944f1d  [shntool]  bd04-11-20d1t03.wav
+f410bb5d3312aaaf849f161e0f05fc68  [shntool]  bd04-11-20d1t04.wav
+9959455066e7f66f98c282e0a127cc9c  [shntool]  bd04-11-20d1t05.wav
+3f8789ff80bfd622c3fd8561edec30a2  [shntool]  bd04-11-20d1t06.wav
+980515c6fa50143cb1f26e5b3393c810  [shntool]  bd04-11-20d1t07.wav
+cda0b1c07a6d97d0a7a899956ea5a5a7  [shntool]  bd04-11-20d1t08.wav
+95e3b6ad1a3b50a2be67e6d32a0f5678  [shntool]  bd04-11-20d1t09.wav
+048427506018c6c5c36f3b5fe7f370c0  [shntool]  bd04-11-20d1t10.wav
+a96d42380b354684189ba430dd34cfe4  [shntool]  bd04-11-20d1t11.wav
+73157b4806752f145b393fafa116b5b1  [shntool]  bd04-11-20d2t01.wav
+2f4e57a4cf7d3ebfe7553ae3df3b2784  [shntool]  bd04-11-20d2t02.wav
+5785149ae5ee4d91f1a1c37200a1ca3c  [shntool]  bd04-11-20d2t03.wav
+93bfb4c52f756f7d905578a66cad5449  [shntool]  bd04-11-20d2t04.wav
+8d1591ef244c26c3ab81c32ac818c8d7  [shntool]  bd04-11-20d2t05.wav
+deb4a0dd73c1e4d557f2ad65007399d2  [shntool]  bd04-11-20d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-20-streetcar-visions 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:08.31       12068156 B   ---   --   -----    wav  1.0000  bd04-11-20d1t01.wav
+     5:14.48       55502540 B   ---   --   -----    wav  1.0000  bd04-11-20d1t02.wav
+     5:26.05       57518204 B   ---   --   -----    wav  1.0000  bd04-11-20d1t03.wav
+     6:09.36       65176316 B   ---   --   -----    wav  1.0000  bd04-11-20d1t04.wav
+     6:33.29       69393452 B   ---   --   -----    wav  1.0000  bd04-11-20d1t05.wav
+     6:20.14       67064972 B   ---   --   -----    wav  1.0000  bd04-11-20d1t06.wav
+     5:36.40       59364524 B   ---   --   -----    wav  1.0000  bd04-11-20d1t07.wav
+     5:53.73       62440940 B   ---   --   -----    wav  1.0000  bd04-11-20d1t08.wav
+     7:32.22       79784588 B   ---   --   -----    wav  1.0000  bd04-11-20d1t09.wav
+     7:23.38       78234620 B   ---   --   -----    wav  1.0000  bd04-11-20d1t10.wav
+     6:50.29       72392252 B   ---   --   -----    wav  1.0000  bd04-11-20d1t11.wav
+     5:39.54       59926652 B   ---   --   -----    wav  1.0000  bd04-11-20d2t01.wav
+     6:32.27       69212348 B   ---   --   -----    wav  1.0000  bd04-11-20d2t02.wav
+     7:38.45       80897084 B   ---   --   -----    wav  1.0000  bd04-11-20d2t03.wav
+     7:12.27       76268348 B   ---   --   -----    wav  1.0000  bd04-11-20d2t04.wav
+     7:41.19       81365132 B   ---   --   -----    wav  1.0000  bd04-11-20d2t05.wav
+     5:35.63       59242220 B   ---   --   -----    wav  1.0000  bd04-11-20d2t06.wav
+   104:29.00     1105852348 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

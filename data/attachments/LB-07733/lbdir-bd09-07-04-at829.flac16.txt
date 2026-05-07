@@ -1,0 +1,65 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-07-04-at829.flac16 
+=================== 
+=================== 
+=================== 
+a4115fc149b8ad38cad4e93c5bd92a08  bd2009-07-04t01.flac
+ddbafc11cf42f458ce57dda066f443ca  bd2009-07-04t02.flac
+6d5df6d7ec4e9893e47c7a929e1d9989  bd2009-07-04t03.flac
+4fcc47c4a57f17e009e1cb35a0b1fe89  bd2009-07-04t04.flac
+98dfa0fd8c378e4a649886d66d2cd5aa  bd2009-07-04t05.flac
+e9a9f5702fbdcd9f475f10f4ef204ea1  bd2009-07-04t06.flac
+b811773f6ec281da1f913bcafcfff84d  bd2009-07-04t07.flac
+652ab2e723e28439e6b33f2b8d6287d7  bd2009-07-04t08.flac
+369a0adbd5f073e8d550a362b4fcaf2b  bd2009-07-04t09.flac
+37a5d11f9c1e66cd6364836867c45ee7  bd2009-07-04t10.flac
+e82d99e07911687c7f228feb8d65c367  bd2009-07-04t11.flac
+2c44c3f95ad701711af2b18c9292f481  bd2009-07-04t12.flac
+7e03a980da8d7e1b1f39bf31166baa4c  fingerprint.ffp.txt
+faff41959c30a81426c3afdb638ad6f4  info.txt
+0a7ff5b5fcaf89bc059efdd3f34f3836  md5sum.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-07-04-at829.flac16 
+=================== 
+=================== 
+=================== 
+bd2009-07-04t01.flac:efd525883396e497d9917964f5b61ae8
+bd2009-07-04t02.flac:3ee333b098a012adc5ca6dcb07bb2cad
+bd2009-07-04t03.flac:2d0a06acbaa4fe5904435bb0a0e51b0b
+bd2009-07-04t04.flac:ef7d989a24eaae3e49b7b0567f974ee6
+bd2009-07-04t05.flac:58a33919c81bf3af5c90e9b8143e2e4f
+bd2009-07-04t06.flac:3d640d6adc5f608929f051aa5f1b82a8
+bd2009-07-04t07.flac:f20f2ebdf594324e561a13ba3d6804b8
+bd2009-07-04t08.flac:bf6ced2c3f9d457a2274e2508a8e9d04
+bd2009-07-04t09.flac:a029b592b5185d226e8ea39afa1e0e54
+bd2009-07-04t10.flac:de86500dfbdfa0140af9de3a075e0319
+bd2009-07-04t11.flac:81982f485733e96eb4cf457565158f75
+bd2009-07-04t12.flac:390e54f4378fd4a3b0d2adc18d4487ce
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-07-04-at829.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:25.37       68001556 B   -b-   --   ---xx   flac  0.4611  bd2009-07-04t01.flac
+     5:06.56       54110380 B   -b-   --   ---xx   flac  0.4711  bd2009-07-04t02.flac
+     5:04.34       53705024 B   -b-   --   ---xx   flac  0.4487  bd2009-07-04t03.flac
+     5:59.01       63329720 B   -b-   --   ---xx   flac  0.4762  bd2009-07-04t04.flac
+     7:12.16       76243648 B   -b-   --   ---xx   flac  0.4708  bd2009-07-04t05.flac
+     5:59.61       63470356 B   -b-   --   ---xx   flac  0.4067  bd2009-07-04t06.flac
+     7:07.57       75457720 B   -b-   --   ---xx   flac  0.5030  bd2009-07-04t07.flac
+     5:55.11       62647772 B   -b-   --   ---xx   flac  0.4441  bd2009-07-04t08.flac
+     6:48.03       71979116 B   -b-   --   ---xx   flac  0.5151  bd2009-07-04t09.flac
+     6:28.20       68489848 B   -b-   --   ---xx   flac  0.5011  bd2009-07-04t10.flac
+     2:22.66       25204432 B   -b-   --   ---xx   flac  0.4288  bd2009-07-04t11.flac
+     5:16.26       55803532 B   -b-   --   ---xx   flac  0.5030  bd2009-07-04t12.flac
+    69:46.14      738443104 B                            0.4724  (12 files)
+=================== 
+=================== 
+=================== 

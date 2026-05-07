@@ -1,0 +1,136 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-11-21-lk.flacf 
+=================== 
+=================== 
+=================== 
+ec714996dd429b622ae1664750ac411c  d1\d1.md5
+fb726155a3e408078fa16b9810ddf04b  d1\El Paso 21nov78 101.flac
+620b8a3caf4a2639457a5c8a85dc3412  d1\El Paso 21nov78 102.flac
+1c8511c4307ead7a4e53481fc07f8374  d1\El Paso 21nov78 103.flac
+61a0e877573b763769c3b27d2da720e6  d1\El Paso 21nov78 104.flac
+9934138bffd2561363ddb49c40b63c27  d1\El Paso 21nov78 105.flac
+f387176ea6974948f487bd6ff4ff622c  d1\El Paso 21nov78 106.flac
+4e65f704b75be993a8ae35126aa35e85  d1\El Paso 21nov78 107.flac
+7d859e3169f4b1051a311035a5a4a2e7  d1\El Paso 21nov78 108.flac
+64ffb568269b5e09a053c6d613b4cea6  d1\El Paso 21nov78 109.flac
+c5783a7d3d6c3404049c084d97712468  d1\El Paso 21nov78 110.flac
+d2c6243cd5655d1f4bcbb58836467df0  d1\El Paso 21nov78 111.flac
+9ebe1e1bcc198aee16cef0f0e12e1ff4  d1\El Paso 21nov78 112.flac
+63ca343357e3ba7c2d70a5fc74762b7f  d1\El Paso 21nov78 113.flac
+15dc37d4296221289702bc0375ac89c0  d1\El Paso 21nov78 114.flac
+ca428304ee292a68e2813bbff151d7a2  d1\El Paso 21nov78 115.flac
+dfcd92d76d8c9a5e9e3fa57f0ced94c3  d2\d2.md5
+bdec7d2997edf1d4c0fd87ecd8fa8592  d2\El Paso 21nov78 201.flac
+4b16c5b88d1a4de75f9473b6cdaea63b  d2\El Paso 21nov78 202.flac
+46a8d6dda0dcc9c6644a392d8c1895a0  d2\El Paso 21nov78 203.flac
+c4ec68b125924908edd936f04210fc01  d2\El Paso 21nov78 204.flac
+570b4c36b405d690c740286a1b301319  d2\El Paso 21nov78 205.flac
+6ca5aec9c82813da4228a9832aa0e588  d2\El Paso 21nov78 206.flac
+a23365d3ead324052d1a95e5c58b38b1  d2\El Paso 21nov78 207.flac
+91347ed8df88da0facbfd71038c66226  d2\El Paso 21nov78 208.flac
+ffe8d6e1fc61877f9aee280b66c37312  d2\El Paso 21nov78 209.flac
+872b4d5e114d0d0e410108a27959e99c  d2\El Paso 21nov78 210.flac
+9edbe18741fcce45c6064a2c6ab4bb22  d2\El Paso 21nov78 211.flac
+652daf772e0c999a83fdceb24f6592ae  d2\El Paso 21nov78 212.flac
+b9c9fda83f2d72bf486730cec83a54a1  d2\El Paso 21nov78 213.flac
+e536694ddd3de6bb30ad57900dd6fe31  d2\El Paso 21nov78 214.flac
+126aed4a701a2cf8967fa33249419a82  d2\El Paso 21nov78 215.flac
+146b50870c47fd09f87379d2f371c549  Info.txt
+9f17f2c565ea1af56f78d8ff262a1840  LK 1978 Leg 3 DVD 9.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-21-lk.flacf\d1 
+=================== 
+=================== 
+=================== 
+El Paso 21nov78 101.flac:daa7479acf7010a4b51cc0e975a42723
+El Paso 21nov78 102.flac:4900346b86f4b42da21b41aa30042622
+El Paso 21nov78 103.flac:85df461c7112a91b1840426d551a4cf3
+El Paso 21nov78 104.flac:01f260f420dda43bd6ad8e1d66b5faa1
+El Paso 21nov78 105.flac:4c9277cc47daed246786bfea779826c1
+El Paso 21nov78 106.flac:769c73fd1b65c9b15bd65264a07e13a2
+El Paso 21nov78 107.flac:78199f5aadb6f722d04c98d4b9574621
+El Paso 21nov78 108.flac:468d755378b3df1b6f5c7c365ecab384
+El Paso 21nov78 109.flac:8d4160bb195f478610cbcfcf426b8a2e
+El Paso 21nov78 110.flac:6df454bd8d82a5b406250c4c532b219b
+El Paso 21nov78 111.flac:5274afccc7ca75f5cff9772fed809a8c
+El Paso 21nov78 112.flac:37e7ca412a903b8a5996cd585db9acd0
+El Paso 21nov78 113.flac:cd9a236f9906825fbd54b691dfe85ddf
+El Paso 21nov78 114.flac:976844e5c08bec777abca5ebc67236df
+El Paso 21nov78 115.flac:0c4ea36940a768d87cbe7c70e6bc1eb9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-11-21-lk.flacf\d2 
+=================== 
+=================== 
+=================== 
+El Paso 21nov78 201.flac:46ed168d8a685bbb6cbaf56e509949f9
+El Paso 21nov78 202.flac:f23599a8fa9f83e9ffdd72edb87a6802
+El Paso 21nov78 203.flac:589ee3df3737b96e5fb7e96fed4a7b6e
+El Paso 21nov78 204.flac:80da1e21a408e95043a2ec1811d3df0b
+El Paso 21nov78 205.flac:be1148d34fb8d3d5a74bdd7df918c6ab
+El Paso 21nov78 206.flac:fea5425e5af5f4fe5c4f977e329fbf13
+El Paso 21nov78 207.flac:5d769c11e134403a395bcc6aafc387af
+El Paso 21nov78 208.flac:09f0f17027888097de57937d47c4bba9
+El Paso 21nov78 209.flac:9bbdc52bda7d6504828af89e9d73a5ee
+El Paso 21nov78 210.flac:494a4114f31d84e33715e50a2f355186
+El Paso 21nov78 211.flac:b14583c5ab22c58d77529bc8f94f949e
+El Paso 21nov78 212.flac:7c6adfbe6ecd55a32859a2a031385801
+El Paso 21nov78 213.flac:cbe3e2a3f8cec0b073c65ad3becde3e0
+El Paso 21nov78 214.flac:748d6d7ce21f11f228aaa86d4ff68fb6
+El Paso 21nov78 215.flac:e4a81dc394efa70a5773a74ca4ba096a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-21-lk.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:05.41       32730476 B   ---   --   ---xx   flac  0.5278  El Paso 21nov78 101.flac
+     2:42.23       28630940 B   ---   --   ---xx   flac  0.5374  El Paso 21nov78 102.flac
+     5:10.68       54843980 B   ---   --   ---xx   flac  0.5144  El Paso 21nov78 103.flac
+     4:24.07       46586108 B   ---   --   ---xx   flac  0.5448  El Paso 21nov78 104.flac
+     4:39.14       49248572 B   ---   --   ---xx   flac  0.5493  El Paso 21nov78 105.flac
+     8:30.61       90107516 B   ---   --   ---xx   flac  0.5050  El Paso 21nov78 106.flac
+     5:35.18       59136380 B   ---   --   ---xx   flac  0.5271  El Paso 21nov78 107.flac
+     5:18.41       56191676 B   ---   --   ---xx   flac  0.5026  El Paso 21nov78 108.flac
+     3:46.33       39944060 B   ---   --   ---xx   flac  0.5457  El Paso 21nov78 109.flac
+     7:38.62       80937068 B   ---   --   ---xx   flac  0.5555  El Paso 21nov78 110.flac
+     4:34.44       48437132 B   ---   --   ---xx   flac  0.5427  El Paso 21nov78 111.flac
+     6:25.46       68022236 B   ---   --   ---xx   flac  0.5436  El Paso 21nov78 112.flac
+     3:09.55       33469004 B   ---   --   ---xx   flac  0.5425  El Paso 21nov78 113.flac
+     5:28.57       57993308 B   ---   --   ---xx   flac  0.5433  El Paso 21nov78 114.flac
+     2:53.47       30627788 B   ---   --   ---xx   flac  0.5410  El Paso 21nov78 115.flac
+    73:24.17      776906244 B                            0.5335  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-21-lk.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:33.39       58832972 B   ---   --   ---xx   flac  0.5369  El Paso 21nov78 201.flac
+     3:44.50       39631244 B   ---   --   ---xx   flac  0.5386  El Paso 21nov78 202.flac
+     5:44.40       60775724 B   ---   --   ---xx   flac  0.5285  El Paso 21nov78 203.flac
+     5:00.05       52931804 B   ---   --   ---xx   flac  0.5298  El Paso 21nov78 204.flac
+     5:43.36       60589916 B   ---   --   ---xx   flac  0.4983  El Paso 21nov78 205.flac
+     4:33.03       48164300 B   ---   --   ---xx   flac  0.5373  El Paso 21nov78 206.flac
+     4:53.42       51784028 B   ---   --   ---xx   flac  0.5387  El Paso 21nov78 207.flac
+     5:45.08       60876860 B   ---   --   ---xx   flac  0.5365  El Paso 21nov78 208.flac
+     4:09.64       44074172 B   ---   --   ---xx   flac  0.5384  El Paso 21nov78 209.flac
+     3:50.29       40640252 B   ---   --   ---xx   flac  0.5487  El Paso 21nov78 210.flac
+     3:22.73       35804540 B   ---   --   ---xx   flac  0.5390  El Paso 21nov78 211.flac
+     2:26.16       25792076 B   ---   --   ---xx   flac  0.5134  El Paso 21nov78 212.flac
+     7:07.37       75409868 B   ---   --   ---xx   flac  0.5224  El Paso 21nov78 213.flac
+     5:57.24       63031292 B   ---   --   ---xx   flac  0.5398  El Paso 21nov78 214.flac
+     7:36.48       80551340 B   ---   --   ---xx   flac  0.5361  El Paso 21nov78 215.flac
+    75:28.64      798890388 B                            0.5319  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-10-09-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+6a028e4d99555632bcd8c603937b3032  Bob Dylan Shoreline Oct 9 1993.md5
+f9fe75eea703c0188b3b970f2ddfba6f  D1\Bob Dylan Shoreline Oct 9 1993 D1 - Track 1.flac
+5c9bb0ec8f8a7c88ce6714935c32fbd6  D1\Bob Dylan Shoreline Oct 9 1993 D1 - Track 2.flac
+0322fa7290e9d839df9f82b30384d53a  D1\Bob Dylan Shoreline Oct 9 1993 D1 - Track 3.flac
+65136b64b7a848019223310710b9e05d  D1\Bob Dylan Shoreline Oct 9 1993 D1 - Track 4.flac
+71854f5a6836e455e2658fa604518fe7  D1\Bob Dylan Shoreline Oct 9 1993 D1 - Track 5.flac
+c691966e75bf0362f19a060097f85af0  D1\Bob Dylan Shoreline Oct 9 1993 D1 - Track 6.flac
+c305a54fc69e1aaee2d6b6a28a7c21ff  D1\Bob Dylan Shoreline Oct 9 1993 D1 - Track 7.flac
+979140e907d98d01baaac57c0b073ebf  D1\Bob Dylan Shoreline Oct 9 1993 D1 - Track 8.flac
+a9583d2dd6142582f0ea9d465ee8c29d  D2\Bob Dylan Shoreline Oct 9 1993 D2 - Track 1.flac
+fd31ef0b2b23f3f60b60924e89984b7c  D2\Bob Dylan Shoreline Oct 9 1993 D2 - Track 2.flac
+b61997424882cf1c6b9af0241d5268b5  D2\Bob Dylan Shoreline Oct 9 1993 D2 - Track 3.flac
+eac35fa6d059943204aa8ca6ec9e752a  D2\Bob Dylan Shoreline Oct 9 1993 D2 - Track 4.flac
+885348b93388cf15691147e30ea95e46  D2\Bob Dylan Shoreline Oct 9 1993 D2 - Track 5.flac
+2805ea239feff8f8c527856666701c43  D2\Bob Dylan Shoreline Oct 9 1993 D2 - Track 6.flac
+8b80568802935b0b1fb06fc3deb5f8f5  D2\Bob Dylan Shoreline Oct 9 1993 D2 - Track 7.flac
+a08cadd4e5bfd04ebb9da18168036312  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-10-09-schoeps.flacf\D1 
+=================== 
+=================== 
+=================== 
+Bob Dylan Shoreline Oct 9 1993 D1 - Track 1.flac:dabe15fb9d5a98dc089b819f4cd0c444
+Bob Dylan Shoreline Oct 9 1993 D1 - Track 2.flac:92c1bf0643b1751e2b565653cd27a525
+Bob Dylan Shoreline Oct 9 1993 D1 - Track 3.flac:1810b396980dd7676178bdb136d88dfb
+Bob Dylan Shoreline Oct 9 1993 D1 - Track 4.flac:100120a87d1d058a5db097dcd5330677
+Bob Dylan Shoreline Oct 9 1993 D1 - Track 5.flac:b65c1bcc52c4ab1aac13d811389adfd5
+Bob Dylan Shoreline Oct 9 1993 D1 - Track 6.flac:fb5aae9a55970789f4742a1d95eb1399
+Bob Dylan Shoreline Oct 9 1993 D1 - Track 7.flac:8f9b2a82dc759c05ff92386b937dcac0
+Bob Dylan Shoreline Oct 9 1993 D1 - Track 8.flac:36a14a2541e46cc214d1c0b53b22b47f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-10-09-schoeps.flacf\D2 
+=================== 
+=================== 
+=================== 
+Bob Dylan Shoreline Oct 9 1993 D2 - Track 1.flac:02098c64f36a4604ccc2334fbcde4cc3
+Bob Dylan Shoreline Oct 9 1993 D2 - Track 2.flac:493fc0d2a0f68ee7ff105e80fef32422
+Bob Dylan Shoreline Oct 9 1993 D2 - Track 3.flac:eba4318bafdbbb05f2ec9322bcb80c83
+Bob Dylan Shoreline Oct 9 1993 D2 - Track 4.flac:451bf56d7f45b2ffde7683b8f8662521
+Bob Dylan Shoreline Oct 9 1993 D2 - Track 5.flac:c442fdaa762b18bef41fd0ccf6a20404
+Bob Dylan Shoreline Oct 9 1993 D2 - Track 6.flac:65d060bd0e506c3dbceee96f12372f04
+Bob Dylan Shoreline Oct 9 1993 D2 - Track 7.flac:02b2b96766d0a1768b4a94f7a95ef3c1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-10-09-schoeps.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.43       44553980 B   ---   --   ---xx   flac  0.5857  Bob Dylan Shoreline Oct 9 1993 D1 - Track 1.flac
+     8:55.68       94533980 B   ---   --   ---xx   flac  0.6057  Bob Dylan Shoreline Oct 9 1993 D1 - Track 2.flac
+     6:42.60       71053964 B   ---   --   ---xx   flac  0.6064  Bob Dylan Shoreline Oct 9 1993 D1 - Track 3.flac
+    11:02.27      116840348 B   ---   --   ---xx   flac  0.5496  Bob Dylan Shoreline Oct 9 1993 D1 - Track 4.flac
+    10:57.60      116035964 B   ---   --   ---xx   flac  0.5787  Bob Dylan Shoreline Oct 9 1993 D1 - Track 5.flac
+     7:45.13       82056620 B   ---   --   ---xx   flac  0.4908  Bob Dylan Shoreline Oct 9 1993 D1 - Track 6.flac
+     7:16.25       76969244 B   ---   --   ---xx   flac  0.4492  Bob Dylan Shoreline Oct 9 1993 D1 - Track 7.flac
+     8:14.42       87240428 B   ---   --   ---xx   flac  0.4703  Bob Dylan Shoreline Oct 9 1993 D1 - Track 8.flac
+    65:07.38      689284528 B                            0.5421  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-10-09-schoeps.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.46       71373836 B   ---   --   ---xx   flac  0.5103  Bob Dylan Shoreline Oct 9 1993 D2 - Track 1.flac
+     6:27.59       68405612 B   ---   --   ---xx   flac  0.5864  Bob Dylan Shoreline Oct 9 1993 D2 - Track 2.flac
+     7:20.26       77677196 B   ---   --   ---xx   flac  0.6345  Bob Dylan Shoreline Oct 9 1993 D2 - Track 3.flac
+     0:20.01        3530396 B   ---   --   ---xx   flac  0.5593  Bob Dylan Shoreline Oct 9 1993 D2 - Track 4.flac
+     2:16.34       24070412 B   ---   --   ---xx   flac  0.4978  Bob Dylan Shoreline Oct 9 1993 D2 - Track 5.flac
+     8:34.50       90787244 B   ---   --   ---xx   flac  0.5839  Bob Dylan Shoreline Oct 9 1993 D2 - Track 6.flac
+     5:59.24       63384092 B   ---   --   ---xx   flac  0.6002  Bob Dylan Shoreline Oct 9 1993 D2 - Track 7.flac
+    37:43.15      399228788 B                            0.5782  (7 files)
+=================== 
+=================== 
+=================== 

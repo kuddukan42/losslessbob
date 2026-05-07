@@ -1,0 +1,17 @@
+    length     expanded size   cdr  WAVE problems filename
+     2:57.57       31356908    ---   --   ---xx   2-01 Abraham, Martin & John.flac
+     3:43.52       39459548    ---   --   ---xx   2-02 Rise Again.flac
+     3:55.48       41566940    ---   --   ---xx   2-03 Let's Keep It Between Us.flac
+     4:29.44       47555132    ---   --   ---xx   2-04 Mary Of The Wild Moor.flac
+     4:05.46       43326236    ---   --   ---xx   2-05 Solid Rock.flac
+     3:44.59       39652412    ---   --   ---xx   2-06 Just Like A Woman.flac
+     3:56.55       41759804    ---   --   ---xx   2-07 Senor (Tales Of Yankee Power).flac
+     4:54.12       51889868    ---   --   ---xx   2-08 What Can I Do For You .flac
+     4:47.68       50786780    ---   --   ---xx   2-09 When You Gonna Wake Up .flac
+     4:51.09       51353612    ---   --   ---xx   2-10 In The Garden.flac
+     2:18.38       24432620    ---   --   ---xx   2-11 Band Introductions.flac
+     4:34.69       48495932    ---   --   ---xx   2-12 Blowin' In The Wind.flac
+     3:09.73       33511340    ---   --   ---xx   2-13 City Of Gold.flac
+     4:44.59       50236412    ---   --   ---xx   2-14 Don't Think Twice, It's All Right.flac
+     5:35.52       59216348    ---   --   ---xx   2-15 Like A Rolling Stone.flac
+    61:50.66      654599892 B                     (totals for 15 files, 0.6167 overall compression ratio)

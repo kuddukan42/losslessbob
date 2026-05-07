@@ -1,0 +1,10 @@
+Bob Dylan, 5/16/96, Clarkston, Michigan, 2CDR
+
+LB-7823, (67min+53min), version "e"; ***** Unidentifiable LB-number *****, Beats me if there is one at all..!, Taper: unidentified, Source: unknown, Lineage: when received; no accompanying info provided from trader as SHN files; now renamed song titles, UploaderRating: A, UploaderFrequencyAnalyzer: full spectrum; bittorrent download 07/09; same recording as ltg LB-7544 based on same clapping wavs at end of t9 with similar spectral view; this has lower levels and does not seem to have the limiting/clipping on that one although not sure one can hear it; this has more other digital flaws; shorter versions of this recording like LB-821 and LB-3429 cut out crowd waiting for encore (did not listen to all of this)
+
+drop end of d1t4, d1t7, between cdrs,
+
+01. Leopard-Skin Pill-Box Hat [05:06], 02. I Want You [06:49], 03. All Along The Watchtower [06:45], 04. Positively 4th Street [08:02], 05. Watching The River Flow [05:56], 06. Silvio (Bob Dylan & Robert Hunter) [07:11], 07. Tangled Up In Blue [10:55], 08. It's All Over Now, Baby Blue [08:47], 09. Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson) [07:01], Total time [66:35], 10. Stuck Inside Of Mobile With The Memphis Blues Again [09:31], 11. This Wheel's On Fire (Bob Dylan/Rick Danko) [06:51], 12. Highway 61 Revisited [13:35], 13. Alabama Getaway (Robert Hunter/Jerry Garcia) [07:42], 14. Girl From The North Country [09:51], 15. Rainy Day Women # 12 & 35 [05:26], Total time [52:59]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

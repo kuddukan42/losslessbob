@@ -1,0 +1,218 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-04-early-d.flacf 
+=================== 
+=================== 
+=================== 
+1fd86237a800c98843892ad06535df58  1975-11-04 Providence.early.txt
+d970e92ba88cd1c2bd4fad2c0d0ca995  bd75-11-04-early-d-LB-4439.txt
+95e9aab1121a52ce5fb229d256a11d83  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t01.flac
+df07241fa145a2db15c9d5e331c2ae26  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t02.flac
+f061aceaeca4bb231f3a049325384b57  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t03.flac
+0e1e26ddb6f99a23fda18fdd1f8cd1c8  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t04.flac
+c1c905c94be5993c89d283842b024065  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t05.flac
+d14998e4460a94695c9f90085853cce9  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t06.flac
+8a2e8b74dea26b7cadf39ddd9f28e692  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t07.flac
+7206fe8fe24b74a6b928733c380f7d21  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t08.flac
+047a5f9b2725ac369339dbdb77950626  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t09.flac
+af559c41e6f73f6feb569dccd17f2e68  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t10.flac
+c66a62b9ebf5d62be2a2f2c869902d07  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t11.flac
+9d8b092b3e6ba45525f1446b4d5f312c  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t12.flac
+28cf9148166a2278d02468eef7e41cfa  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t13.flac
+9255610f02097658ffe6dd2be93dd307  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d1t14.flac
+1209900fb891654ea9b02631896ce1ad  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t01.flac
+e379d03e26858b9efbe0eb0710d50018  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t02.flac
+c9863aaac73decb7094868f2b73b602b  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t03.flac
+a96fe02cc67bf3226e2a7a6c13856c5d  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t04.flac
+574bb68c3db87dc8745b9bc561495cf6  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t05.flac
+b4b66591ef4b5fb42e1f7997193e5fdb  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t06.flac
+5414a2a01a29236dbc0061c094c132ab  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t07.flac
+399cc09dc1409a88273d944b1fe52c19  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t08.flac
+ad061d96256b3a0efeadbf7b63ecf7b0  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t09.flac
+5c7952fc213ea5e40f94c7f56fbdbeb5  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t10.flac
+bb5c064bd5d950beb03a9e1a8713f92e  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d2t11.flac
+7ec37e895acb2d3edc5b180372fa7f31  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t01.flac
+5c5176ecc088aa61963763c540d919c0  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t02.flac
+1780990557b4f48f8c2ad71f687c7582  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t03.flac
+078a4db6d7822f194ef8789c94a7f267  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t04.flac
+1c9a658448d0e9d185ca616c0f8e3c37  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t05.flac
+21766828b0f490cf3211866452c12205  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t06.flac
+bcab41371220b26acd8edb8d3e77ce30  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t07.flac
+cbc890d62099eb7ac6fc0f53c1281ea5  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t08.flac
+35dc64416ef9bcf034086f10f6dfb43f  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t09.flac
+4146ea86a161765056094cdda8df4988  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t10.flac
+fdf517d449da03ea631eb8e031c9e6a2  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t11.flac
+af14c7a68ed32751a9a772be44a8bf2f  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t12.flac
+ca1233f270676798c7cb1778600d8408  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t13.flac
+c81ee49a102409079d5c72eb8a8b3016  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.d3t14.flac
+4ab5e9f55efac37e35b2676eebc189fb  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.flac.ffp
+a9def1c78938f01c1c7e9638768f4e9a  Source 1 - complete (Les Kokay remaster)\bd1975-11-04.early.complete.wav.md5
+76c6f1d29e2d8d73e373a23295b78040  Source 2 - Dylan only (speed corrected)\Prov751104aft.txt
+ecf718b1dd6ada47b04779e470c2aa6a  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t01.flac
+f1fe9edd457249b9b89e677d0e581208  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t02.flac
+bc245da5effc5d00075a5d68c1f3f5e2  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t03.flac
+558140e8af4a122e0d1d2673c71985f5  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t04.flac
+48f82e9d4317439cea98cc79fc0db654  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t05.flac
+e51c62d13059bb2ec47cdf55b900afbb  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t06.flac
+ee17bc62d3f70d23545c2dce3e3abdf1  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t07.flac
+e60e4c92022a29d77871a078dd961e62  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t08.flac
+8f19e230978d9c056fbf6895249eec9c  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t09.flac
+07b60d1eb43d07ade8cbe87ba671bd14  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t10.flac
+0e5fa7aef9cb89bfb56eb6f7e47dd6b5  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t11.flac
+f76d74f74478b7ba940721089e16b7c3  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t12.flac
+fc343a102867ea5f1b13f84e9edf1308  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d1t13.flac
+a30c26d905e6a7d18cd94f1188a904ba  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d2t01.flac
+2daa600ce94c76702d4a54fb2bbb4487  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d2t02.flac
+2a76510543aa4f79a954f48130c941a0  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d2t03.flac
+4af85b6e9f45b1a8c924bc20921e0339  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.d2t04.flac
+b365dde111afd6c89b28422acd943236  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.flac.ffp
+2fd9acaa59c59704b7dd7a80af6ff743  Source 2 - Dylan only (speed corrected)\bd1975-11-04.early.alt.wav.md5
+ac5be829fa62f9d9047c29d7a4d0e70d  Source 2 - Dylan only (speed corrected)\bd75-11-04aft-a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-04-early-d.flacf\Source 2 - Dylan only (speed corrected) 
+=================== 
+=================== 
+=================== 
+bd1975-11-04.early.alt.d1t01.flac:44894ad97ada9c312ba86f219b2b7b49
+bd1975-11-04.early.alt.d1t02.flac:22f31e1794991845ec8647d735090170
+bd1975-11-04.early.alt.d1t03.flac:686d5fe9e74c78a53c347a406ead0b10
+bd1975-11-04.early.alt.d1t04.flac:0c58fcee717dd1d494e571e95a440bf3
+bd1975-11-04.early.alt.d1t05.flac:074eb5bb3d2f9360c6de5d9f56f0011f
+bd1975-11-04.early.alt.d1t06.flac:c5781d1a0784b312c3d8756170515473
+bd1975-11-04.early.alt.d1t07.flac:3eb61de8594c4d4c44b0fd5e6b28ace9
+bd1975-11-04.early.alt.d1t08.flac:92446f452e50ab31b6256b1464f96f65
+bd1975-11-04.early.alt.d1t09.flac:30688b20fb8a4b818edc940521b34cb5
+bd1975-11-04.early.alt.d1t10.flac:ae028bdc084eb69b99adef8b7b604fa9
+bd1975-11-04.early.alt.d1t11.flac:1f93261ff9ece729807a139fd8b96ed8
+bd1975-11-04.early.alt.d1t12.flac:92077d48667a38360eeb2a04a23176cc
+bd1975-11-04.early.alt.d1t13.flac:bd772805d962b6bf463ca3951e81e74a
+bd1975-11-04.early.alt.d2t01.flac:25c3ccb93f2a0f9953534bdb56c99a71
+bd1975-11-04.early.alt.d2t02.flac:bd5bf2c543feb9e3bf3e9decb184a69e
+bd1975-11-04.early.alt.d2t03.flac:8b7f534f8e5c3433883873d080e04183
+bd1975-11-04.early.alt.d2t04.flac:b57cb8a7ecd12d5daab029fee821dab2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-04-early-d.flacf\Source 1 - complete (Les Kokay remaster) 
+=================== 
+=================== 
+=================== 
+bd1975-11-04.early.complete.d1t01.flac:53d6c95c652ad1ffeb77b17e13135a36
+bd1975-11-04.early.complete.d1t02.flac:8e875c6b277306cfb2673813f8812475
+bd1975-11-04.early.complete.d1t03.flac:56190f0e45124d6c646183619f3d4468
+bd1975-11-04.early.complete.d1t04.flac:793bcd3a9db8fe0d8505290403fa630a
+bd1975-11-04.early.complete.d1t05.flac:ae25662ed62804255851042fc5b1b219
+bd1975-11-04.early.complete.d1t06.flac:9fa5cd0f08fc412954a7bac225c09c18
+bd1975-11-04.early.complete.d1t07.flac:9f210fa5f92d5cb2389ad4bb760529f4
+bd1975-11-04.early.complete.d1t08.flac:f00572b1c029939bc1fcdbc4685080b1
+bd1975-11-04.early.complete.d1t09.flac:145877577e346156ff6bcbcf8e2c65ac
+bd1975-11-04.early.complete.d1t10.flac:423a2df4f8ae7e707da7b9369bb18698
+bd1975-11-04.early.complete.d1t11.flac:238a200505ddefc3b021454c1a5b6e94
+bd1975-11-04.early.complete.d1t12.flac:243ab409c33f20d4889cb77e627708bd
+bd1975-11-04.early.complete.d1t13.flac:b51b56e070c479a1ff832245b04c381b
+bd1975-11-04.early.complete.d1t14.flac:4a8d48435d37d41b68deb0fa23f9c922
+bd1975-11-04.early.complete.d2t01.flac:5e332b177c50ea479bb5add59eb424fc
+bd1975-11-04.early.complete.d2t02.flac:b5c9c6311c3764ffd8548b80ca0a96d7
+bd1975-11-04.early.complete.d2t03.flac:6c23cbf151f5a33bd5c70e855ee0dc20
+bd1975-11-04.early.complete.d2t04.flac:730e74c67d5ae81955f538298a2ee44b
+bd1975-11-04.early.complete.d2t05.flac:2fbc9ab59a06298b8a92037b470894f6
+bd1975-11-04.early.complete.d2t06.flac:daafc4dddb7159bdd3014d77865dcb56
+bd1975-11-04.early.complete.d2t07.flac:0c8a69b6b340a81fe61aed9377266647
+bd1975-11-04.early.complete.d2t08.flac:b32ed89b2ce36be681de27a46111af56
+bd1975-11-04.early.complete.d2t09.flac:c90741a1235dbf9502e2dfb3be27c5fc
+bd1975-11-04.early.complete.d2t10.flac:145cfdc3c64a7b5baa0eb0b9789cfb70
+bd1975-11-04.early.complete.d2t11.flac:ad6f8a89522b8872b04bef009b144857
+bd1975-11-04.early.complete.d3t01.flac:2892b0c94e65885408ad15458c50fdee
+bd1975-11-04.early.complete.d3t02.flac:391767757863c6c3a17fb714889f6714
+bd1975-11-04.early.complete.d3t03.flac:1fa068089b9239be6e41b6d6e7cb23b2
+bd1975-11-04.early.complete.d3t04.flac:423e841696b255344153633f274576a5
+bd1975-11-04.early.complete.d3t05.flac:b143d7d629a102036b7195ded0cd68e6
+bd1975-11-04.early.complete.d3t06.flac:3fe6a46fba73772d488123d2cff6a010
+bd1975-11-04.early.complete.d3t07.flac:963f77ce3a8e131ef0a2b6033a4f0423
+bd1975-11-04.early.complete.d3t08.flac:d640cbc867d614cba0ed4730c12a8348
+bd1975-11-04.early.complete.d3t09.flac:a33f160a8234f5b65b807b60504754d6
+bd1975-11-04.early.complete.d3t10.flac:06a0d3c8c4305b3080aff7982b37d5b9
+bd1975-11-04.early.complete.d3t11.flac:8f19d729b0540b6d993321a7f6ad6293
+bd1975-11-04.early.complete.d3t12.flac:d15cbbe1544a0b4be25da6137a243390
+bd1975-11-04.early.complete.d3t13.flac:e453735880b376b75de1ab57b1b6f130
+bd1975-11-04.early.complete.d3t14.flac:daacda289928012cd29e87ae6fbfb5e4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-04-early-d.flacf\Source 2 - Dylan only (speed corrected) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.04       53458652 B   ---   --   ---xx   flac  0.4392  bd1975-11-04.early.alt.d1t01.flac
+     5:44.10       60705164 B   ---   --   ---xx   flac  0.4347  bd1975-11-04.early.alt.d1t02.flac
+     5:35.20       59141084 B   ---   --   ---xx   flac  0.4283  bd1975-11-04.early.alt.d1t03.flac
+     6:14.36       66058316 B   ---   --   ---xx   flac  0.4504  bd1975-11-04.early.alt.d1t04.flac
+     6:35.68       69837980 B   ---   --   ---xx   flac  0.4439  bd1975-11-04.early.alt.d1t05.flac
+     3:01.14       31961372 B   ---   --   ---xx   flac  0.4488  bd1975-11-04.early.alt.d1t06.flac
+     4:41.67       49726028 B   ---   --   ---xx   flac  0.4440  bd1975-11-04.early.alt.d1t07.flac
+     5:59.41       63424076 B   ---   --   ---xx   flac  0.4449  bd1975-11-04.early.alt.d1t08.flac
+     4:53.49       51800492 B   ---   --   ---xx   flac  0.4485  bd1975-11-04.early.alt.d1t09.flac
+     6:25.05       67925804 B   ---   --   ---xx   flac  0.4501  bd1975-11-04.early.alt.d1t10.flac
+     4:33.39       48248972 B   ---   --   ---xx   flac  0.4641  bd1975-11-04.early.alt.d1t11.flac
+     8:57.36       94811516 B   ---   --   ---xx   flac  0.4689  bd1975-11-04.early.alt.d1t12.flac
+     3:51.24       40804892 B   ---   --   ---xx   flac  0.4654  bd1975-11-04.early.alt.d1t13.flac
+     5:37.37       59533868 B   ---   --   ---xx   flac  0.4559  bd1975-11-04.early.alt.d2t01.flac
+     4:08.35       43829564 B   ---   --   ---xx   flac  0.4575  bd1975-11-04.early.alt.d2t02.flac
+     5:41.49       60267692 B   ---   --   ---xx   flac  0.4749  bd1975-11-04.early.alt.d2t03.flac
+     5:03.52       53571548 B   ---   --   ---xx   flac  0.4933  bd1975-11-04.early.alt.d2t04.flac
+    92:07.61      975107020 B                            0.4538  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-04-early-d.flacf\Source 1 - complete (Les Kokay remaster) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.01       34753196 B   ---   --   ---xx   flac  0.6062  bd1975-11-04.early.complete.d1t01.flac
+     4:33.26       48218396 B   ---   --   ---xx   flac  0.5721  bd1975-11-04.early.complete.d1t02.flac
+     2:25.17       25618028 B   ---   --   ---xx   flac  0.5640  bd1975-11-04.early.complete.d1t03.flac
+     3:53.31       41174156 B   ---   --   ---xx   flac  0.5479  bd1975-11-04.early.complete.d1t04.flac
+     2:28.23       26161340 B   ---   --   ---xx   flac  0.5756  bd1975-11-04.early.complete.d1t05.flac
+     5:08.00       54331244 B   ---   --   ---xx   flac  0.5634  bd1975-11-04.early.complete.d1t06.flac
+     4:34.50       48451244 B   ---   --   ---xx   flac  0.5743  bd1975-11-04.early.complete.d1t07.flac
+     3:31.37       37307468 B   ---   --   ---xx   flac  0.5774  bd1975-11-04.early.complete.d1t08.flac
+     5:02.55       53402204 B   ---   --   ---xx   flac  0.5608  bd1975-11-04.early.complete.d1t09.flac
+     1:59.25       21050444 B   ---   --   ---xx   flac  0.5671  bd1975-11-04.early.complete.d1t10.flac
+     3:12.48       33981740 B   ---   --   ---xx   flac  0.5588  bd1975-11-04.early.complete.d1t11.flac
+     6:13.35       65879564 B   ---   --   ---xx   flac  0.5517  bd1975-11-04.early.complete.d1t12.flac
+     4:07.42       43669628 B   ---   --   ---xx   flac  0.5604  bd1975-11-04.early.complete.d1t13.flac
+     3:59.39       42251372 B   ---   --   ---xx   flac  0.6040  bd1975-11-04.early.complete.d1t14.flac
+     4:56.68       52374380 B   ---   --   ---xx   flac  0.6008  bd1975-11-04.early.complete.d2t01.flac
+     5:44.33       60759260 B   ---   --   ---xx   flac  0.5990  bd1975-11-04.early.complete.d2t02.flac
+     5:43.42       60604028 B   ---   --   ---xx   flac  0.5885  bd1975-11-04.early.complete.d2t03.flac
+     6:11.26       65505596 B   ---   --   ---xx   flac  0.6088  bd1975-11-04.early.complete.d2t04.flac
+     7:02.33       74518460 B   ---   --   ---xx   flac  0.6054  bd1975-11-04.early.complete.d2t05.flac
+     2:55.26       30931196 B   ---   --   ---xx   flac  0.6164  bd1975-11-04.early.complete.d2t06.flac
+     5:17.08       55937660 B   ---   --   ---xx   flac  0.5959  bd1975-11-04.early.complete.d2t07.flac
+     5:23.69       57139532 B   ---   --   ---xx   flac  0.6005  bd1975-11-04.early.complete.d2t08.flac
+     5:14.18       55431980 B   ---   --   ---xx   flac  0.6003  bd1975-11-04.early.complete.d2t09.flac
+     4:32.23       48034940 B   ---   --   ---xx   flac  0.5911  bd1975-11-04.early.complete.d2t10.flac
+     3:41.73       39156140 B   ---   --   ---xx   flac  0.5914  bd1975-11-04.early.complete.d2t11.flac
+     3:19.13       35134220 B   ---   --   ---xx   flac  0.5954  bd1975-11-04.early.complete.d3t01.flac
+     4:49.38       51069020 B   ---   --   ---xx   flac  0.5510  bd1975-11-04.early.complete.d3t02.flac
+     4:12.06       44466956 B   ---   --   ---xx   flac  0.5996  bd1975-11-04.early.complete.d3t03.flac
+     4:18.73       45682940 B   ---   --   ---xx   flac  0.5893  bd1975-11-04.early.complete.d3t04.flac
+     4:29.50       47569244 B   ---   --   ---xx   flac  0.6087  bd1975-11-04.early.complete.d3t05.flac
+     3:51.31       40821356 B   ---   --   ---xx   flac  0.6046  bd1975-11-04.early.complete.d3t06.flac
+     5:57.60       63115964 B   ---   --   ---xx   flac  0.5778  bd1975-11-04.early.complete.d3t07.flac
+     4:48.47       50913788 B   ---   --   ---xx   flac  0.5976  bd1975-11-04.early.complete.d3t08.flac
+     9:00.15       95291324 B   ---   --   ---xx   flac  0.5995  bd1975-11-04.early.complete.d3t09.flac
+     4:20.44       45967532 B   ---   --   ---xx   flac  0.5886  bd1975-11-04.early.complete.d3t10.flac
+     5:33.55       58870604 B   ---   --   ---xx   flac  0.5858  bd1975-11-04.early.complete.d3t11.flac
+     4:05.41       43314476 B   ---   --   ---xx   flac  0.5928  bd1975-11-04.early.complete.d3t12.flac
+     5:49.07       61580108 B   ---   --   ---xx   flac  0.5978  bd1975-11-04.early.complete.d3t13.flac
+     5:35.68       59253980 B   ---   --   ---xx   flac  0.6055  bd1975-11-04.early.complete.d3t14.flac
+   181:22.46     1919694708 B                            0.5877  (39 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-04-Elliot.flac16 
+=================== 
+=================== 
+=================== 
+3c7f4e933fd8ec8279ca858f2c262711  bd2009-04-04.Elliot.aud.txt
+94524e7e170461076d0ef83182c91b2a  bd2009-04-04.Elliot.ffp
+efb76afc0bd1ad3fb27f194b6e2462e8  bd2009-04-04.Elliot.t01.flac
+4fed4798cf1a25bc6b70a42a9cc84c46  bd2009-04-04.Elliot.t02.flac
+ac090b87d68e44a39c5ba2688ae99bf2  bd2009-04-04.Elliot.t03.flac
+7ac400a60442ed748175654a0d0a24c2  bd2009-04-04.Elliot.t04.flac
+a04baa9f2cc85bc68105e5c630e0a1a9  bd2009-04-04.Elliot.t05.flac
+41652a7b63b5d72cf5dd4c73b97b13a0  bd2009-04-04.Elliot.t06.flac
+90a199954ca82d52cfdef0c08384061b  bd2009-04-04.Elliot.t07.flac
+3ac8d447c1058f78ed4fd01b9d940e59  bd2009-04-04.Elliot.t08.flac
+5fd682dc5f0afe2160d7bb9c30f93c2d  bd2009-04-04.Elliot.t09.flac
+ea06278acbdf29520c82849a07576131  bd2009-04-04.Elliot.t10.flac
+6ebec324582bb6133fdd9243c956d90a  bd2009-04-04.Elliot.t11.flac
+da7870fb435aa2a9efc53683c959ce5a  bd2009-04-04.Elliot.t12.flac
+97b450690737ff5b5de868ec194f90d8  bd2009-04-04.Elliot.t13.flac
+b4db6ca7ce795b66355f90f8e68bef42  bd2009-04-04.Elliot.t14.flac
+75ce2b16cb69d1d753abb4c882e79d07  bd2009-04-04.Elliot.t15.flac
+66aaf3b48f2355799e9b1f3a88d86bf4  bd2009-04-04.Elliot.t16.flac
+d98859c2f5fb50784095adbcb9e8570e  bd2009-04-04.Elliot.t17.flac
+b40333f3672e3ce4dc22389783da0e54  bd2009-04-04.Elliot.t18.flac
+00f7c85c3abac0b56d8afc4519ccf739  bd2009-04-04.Elliot.t19.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-04-Elliot.flac16 
+=================== 
+=================== 
+=================== 
+bd2009-04-04.Elliot.t01.flac:3f81d3bca5befa422f18ccc2c8b87887
+bd2009-04-04.Elliot.t02.flac:ccd3dca9e66e0b74f9a0f7dd78366867
+bd2009-04-04.Elliot.t03.flac:7e91b76e97693846219caf608be2bc30
+bd2009-04-04.Elliot.t04.flac:86619e3b1f787831b0c7e9cd08e04cea
+bd2009-04-04.Elliot.t05.flac:c33657c26c02ffed791a4e4fbdf87081
+bd2009-04-04.Elliot.t06.flac:db6f947ec6e0241edcdb08ac91833ea1
+bd2009-04-04.Elliot.t07.flac:f6d9fa5101b5614422326604b9b03156
+bd2009-04-04.Elliot.t08.flac:bf83999a84d64d31b7f16877e82ad849
+bd2009-04-04.Elliot.t09.flac:5742434dc1cef81c8eccabecf99f849b
+bd2009-04-04.Elliot.t10.flac:bc5ba85152aa355292a0a7ffeeefb2b4
+bd2009-04-04.Elliot.t11.flac:84ccf5b55e8218b3d16ddb78a90efc67
+bd2009-04-04.Elliot.t12.flac:be99952d9762ad571349fbe831fd1091
+bd2009-04-04.Elliot.t13.flac:97d449131fcbc1a40bd499090264db08
+bd2009-04-04.Elliot.t14.flac:283cede0e9274fe1ba4a2dbee15fab9c
+bd2009-04-04.Elliot.t15.flac:b28b1bbc73c4919d073c4727c5117bf7
+bd2009-04-04.Elliot.t16.flac:e008e8d82aa29e46f2868fb83795235c
+bd2009-04-04.Elliot.t17.flac:df50034d1535ae04ab39aee52e12cd96
+bd2009-04-04.Elliot.t18.flac:7f2aa7359d493bb3f44e7a6e3db21832
+bd2009-04-04.Elliot.t19.flac:c12e3c16db6294213d6632d0c7a66c15
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-04-Elliot.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:04.16       11327516 B   -b-   --   ---xx   flac  0.5381  bd2009-04-04.Elliot.t01.flac
+     4:28.48       47387884 B   -b-   --   ---xx   flac  0.5729  bd2009-04-04.Elliot.t02.flac
+     5:31.29       58456352 B   -b-   --   ---xx   flac  0.5779  bd2009-04-04.Elliot.t03.flac
+     3:26.34       36418024 B   -b-   --   ---xx   flac  0.5487  bd2009-04-04.Elliot.t04.flac
+     6:36.52       69977252 B   -b-   --   ---xx   flac  0.5656  bd2009-04-04.Elliot.t05.flac
+     6:25.57       68048656 B   -b-   --   ---xx   flac  0.5376  bd2009-04-04.Elliot.t06.flac
+     7:05.13       75001544 B   -b-   --   ---xx   flac  0.5594  bd2009-04-04.Elliot.t07.flac
+     6:11.46       65551512 B   -b-   --   ---xx   flac  0.4801  bd2009-04-04.Elliot.t08.flac
+     4:57.06       52404196 B   -b-   --   ---xx   flac  0.5449  bd2009-04-04.Elliot.t09.flac
+     5:37.60       59588496 B   -b-   --   ---xx   flac  0.4673  bd2009-04-04.Elliot.t10.flac
+     6:38.02       70211584 B   -b-   --   ---xx   flac  0.6089  bd2009-04-04.Elliot.t11.flac
+     5:01.00       53096444 B   ---   --   ---xx   flac  0.4970  bd2009-04-04.Elliot.t12.flac
+     6:59.38       74000868 B   -b-   --   ---xx   flac  0.5532  bd2009-04-04.Elliot.t13.flac
+     6:34.60       69642036 B   -b-   --   ---xx   flac  0.6030  bd2009-04-04.Elliot.t14.flac
+     6:35.00       69678044 B   ---   --   ---xx   flac  0.6090  bd2009-04-04.Elliot.t15.flac
+     3:53.28       41168188 B   -b-   --   ---xx   flac  0.5609  bd2009-04-04.Elliot.t16.flac
+     4:53.73       51857244 B   -b-   --   ---xx   flac  0.6151  bd2009-04-04.Elliot.t17.flac
+     7:56.06       83981400 B   -b-   --   ---xx   flac  0.5171  bd2009-04-04.Elliot.t18.flac
+     7:40.34       81223400 B   -b-   --   ---xx   flac  0.5738  bd2009-04-04.Elliot.t19.flac
+   107:37.02     1139020640 B                            0.5553  (19 files)
+=================== 
+=================== 
+=================== 

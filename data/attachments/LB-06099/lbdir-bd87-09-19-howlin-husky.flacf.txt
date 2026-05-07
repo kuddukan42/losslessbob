@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-19-howlin-husky.flacf 
+=================== 
+=================== 
+=================== 
+bdad4b5c6d8e20d373778427a9f53f56  01 the times they are a-changin'.flac
+40add55501b8d9f098a0546a40140e5a  02 highway 61 revisited.flac
+6e6d148103c6aff39181f6b67ad3ff6b  03 ballad of a thin man.flac
+fabb6ce2b90ea4411c56b9a3f1ad8246  04 shot of love.flac
+f7398631f8dd942ad67071456a171560  05 queen Jane approximately.flac
+3cd225b58b1d867f96581a2296802283  06 dead man, dead man.flac
+dc61efe670d7a83a668ee8c55db04840  07 I shall be released.flac
+5f729037810af6426c7a3b5bfbd3706a  08 cleab cut kid.flac
+5211994ecfa700e05b0ec0c62064b1e2  09 I want you.flac
+46aafdafa253270a3750da887cab3476  10 John Brown.flac
+3bb56854d437eb1683f90d9adeef8f58  11 watching the river flow.flac
+bef32e7ec960610ef523af56bcadf8b0  12 slow train.flac
+799411ceb84ceb2e3f8ed71cc637a22d  13 chimes of freedom.flac
+f2c0f345d8402de1748c72561036c8f7  14 gotta serve somebody.flac
+9bf2930e736d0b5162ec34c39cac7669  Bob Dylan Rotterdam September 19  1987.md5
+23e623b8c62798bc1bc28a535160abfa  content.txt
+26a46264d7352620b71a50746b5517fa  Rotterdam 1987 sept 19.doc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-19-howlin-husky.flacf 
+=================== 
+=================== 
+=================== 
+01 the times they are a-changin'.flac:0d7934d23173250d2095212186185686
+02 highway 61 revisited.flac:736c7ad0311d3c17d7753a45053c0a80
+03 ballad of a thin man.flac:df87f77506ce35b9538b9ab501da80e7
+04 shot of love.flac:16777bdb12c1af32916e20058e1b15c1
+05 queen Jane approximately.flac:1e6b6fee56b457b58b4aa916713faba3
+06 dead man, dead man.flac:c2d7f3d12da9bb8ed6c53caa07babfb1
+07 I shall be released.flac:73dba76054f2dcaf3626c16e2c20a7bb
+08 cleab cut kid.flac:5d2f2bbe137fc08975758c1f8698f5aa
+09 I want you.flac:7760b25fe37c0544ef542150c13e9649
+10 John Brown.flac:e883d9425e9ea214526e79bdbad92f63
+11 watching the river flow.flac:7c0655430c143ac8fcf2858db3a395ee
+12 slow train.flac:556d336c9fac340ce9ac9dc00b0a56d0
+13 chimes of freedom.flac:16ba3ddbd1ca825e01ea790c43762474
+14 gotta serve somebody.flac:79fdf8c1edee3f431c096a9a5d79c766
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-19-howlin-husky.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.63       47953516 B   -b-   --   ---xx   flac  0.6695  01 the times they are a-changin'.flac
+     2:39.28       28113004 B   -b-   --   ---xx   flac  0.7216  02 highway 61 revisited.flac
+     4:50.22       51206788 B   -b-   --   ---xx   flac  0.7107  03 ballad of a thin man.flac
+     4:26.08       46941100 B   -b-   --   ---xx   flac  0.7125  04 shot of love.flac
+     4:27.56       47230728 B   -b-   --   ---xx   flac  0.6966  05 queen Jane approximately.flac
+     4:21.15       46075980 B   -b-   --   ---xx   flac  0.7058  06 dead man, dead man.flac
+     4:13.25       44689208 B   -b-   --   ---xx   flac  0.6689  07 I shall be released.flac
+     2:25.13       25608168 B   -b-   --   ---xx   flac  0.7107  08 cleab cut kid.flac
+     4:34.26       48395028 B   -b-   --   ---xx   flac  0.6686  09 I want you.flac
+     4:23.01       46395852 B   -b-   --   ---xx   flac  0.6506  10 John Brown.flac
+     2:39.33       28125716 B   -b-   --   ---xx   flac  0.7220  11 watching the river flow.flac
+     7:30.05       79392964 B   -b-   --   ---xx   flac  0.6714  12 slow train.flac
+     4:22.50       46333500 B   -b-   --   ---xx   flac  0.7085  13 chimes of freedom.flac
+     4:11.45       44381996 B   -b-   --   ---xx   flac  0.6987  14 gotta serve somebody.flac
+    59:36.16      630843548 B                            0.6907  (14 files)
+=================== 
+=================== 
+=================== 

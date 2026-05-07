@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-04-07-LTD.flacf 
+=================== 
+=================== 
+=================== 
+027c085bf48b4ae7039be6d4b0836ac4  1995-04-07-Edinburgh-CB.md5
+d222a72825233ba8be4bb5400b9c74c1  1995-04-07-Edinburgh.txt
+eb29c0f814b3f9f34b2ca79529c5d078  Track101.flac
+9aac8d0cf35ae10294fc647cbce1fa79  Track102.flac
+0ab62191690b550df12847aa8377c969  Track103.flac
+97b2097c8741a01d8caf0feeea24fb36  Track104.flac
+c32491c649278c79d95ec79853c0c9cb  Track105.flac
+b5428716444e2321d44307fe5978d4db  Track106.flac
+0f43e0cd71eb715ade976d626a41ed0d  Track107.flac
+77c5ef7749c8bc0074b71e74150aa842  Track108.flac
+ae99eaa84f1fa87730da0e74eb62f806  Track109.flac
+6d21ab256df91d94cf2af05fb53a0f63  Track110.flac
+980f49514c11f3f4a5e134503a45e5bd  Track201.flac
+aa18d405e289c0a9e9c68d83aaf0bafb  Track202.flac
+977dc153ec80e827a40693c7d6c2d012  Track203.flac
+0e356aab26773459a1031129bb8f84ef  Track204.flac
+74b56b52067fa2884cdf40cba0868743  Track205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-04-07-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:fc351f2687a826c7c2d7322a729073c2
+Track102.flac:fec0c9fca4452ae64cbb11ef4094a2a7
+Track103.flac:71c14334fe5307486fd67e88853db596
+Track104.flac:4f6b4bd83e8928f747f6013f0a4ed571
+Track105.flac:92c254aed33e2079ebe4cd79017dcc1a
+Track106.flac:57fbab481756c63e5b74c85af07ef40c
+Track107.flac:6f3830da8fad103e9d30df2da24055d7
+Track108.flac:e197f71e315733f7352edb43f1bdef31
+Track109.flac:76428f4caf976a3e9ab37157c72f5536
+Track110.flac:838e288909c6cb9ea85196275f29d699
+Track201.flac:bf12ee12dbfa9b6869c0cb8e59258759
+Track202.flac:1f017b62178b63ffa69212bab6c067f4
+Track203.flac:1d0a8773ffe79bd1f6d835a2b8abdf5a
+Track204.flac:d0d126cb82b0ca148dd9a2bf7911e723
+Track205.flac:4f1edc6a0ef06ec877c134f73dd17900
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-04-07-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:09.56        1719356 B   ---   --   ---xx   flac  0.5731  Track101.flac
+     5:24.21       57203036 B   ---   --   ---xx   flac  0.6112  Track102.flac
+     6:08.12       64943468 B   ---   --   ---xx   flac  0.5796  Track103.flac
+     6:02.41       63953276 B   ---   --   ---xx   flac  0.6088  Track104.flac
+     5:52.42       62191628 B   ---   --   ---xx   flac  0.5406  Track105.flac
+     7:49.25       82790444 B   ---   --   ---xx   flac  0.6044  Track106.flac
+     7:38.11       80817116 B   ---   --   ---xx   flac  0.5665  Track107.flac
+     7:03.45       74723084 B   ---   --   ---xx   flac  0.4853  Track108.flac
+     9:05.10       96161564 B   ---   --   ---xx   flac  0.4828  Track109.flac
+     6:11.70       65609084 B   ---   --   ---xx   flac  0.4884  Track110.flac
+     5:59.50       63445244 B   ---   --   ---xx   flac  0.6201  Track201.flac
+     8:24.24       88962092 B   ---   --   ---xx   flac  0.5600  Track202.flac
+     8:30.27       90027548 B   ---   --   ---xx   flac  0.6169  Track203.flac
+     8:32.46       90425036 B   ---   --   ---xx   flac  0.6044  Track204.flac
+     7:39.36       81052316 B   ---   --   ---xx   flac  0.5606  Track205.flac
+   100:31.66     1064024292 B                            0.5653  (15 files)
+=================== 
+=================== 
+=================== 

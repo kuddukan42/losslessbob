@@ -1,0 +1,24 @@
+472b5904a7922456e38a3f8d6a66bd67  1-01 Intro.flac
+1565275e25c233fef79f61f416c45b6e  1-02 Rainy Day Women #12 & 35.flac
+4fddc4b4d200c70583ccd85ed71f7968  1-03 It Ain't Me, Babe.flac
+7451d0b30d183a27cb1f2b18ed21e596  1-04 Watching The River Flow.flac
+143955d521b51e6ef93dbe5856c0c241  1-05 Tangled Up In Blue.flac
+2f7bfee0f95342e5209e6b34737d48ce  1-06 John Brown.flac
+a96105e607123b98993cc5e4303ccfc2  1-07 The Levee's Gonna Break.flac
+4ca61abcea612d3c85663c7bd45640d0  1-08 When The Deal Goes Down.flac
+334be19793c1759a0ad95683599226c6  1-09 Things Have Changed.flac
+98abb807512f9279ecb6b4219e3454cc  1-10 Desolation Row.flac
+acfaa69c429deaaabbadf99b37850e7d  2-01 Honest With Me.flac
+34bf2313c6e7a0a11323697f5d22b7ab  2-02 Spirit On The Water.flac
+0c5cfe2123b6d485cd1402132b91ce21  2-03 Highway 61 Revisited.flac
+f6608b6c460d45f349000b353f87ef34  2-04 Nettie Moore.flac
+964f14c5f1bb0c32c4d22b613f44edba  2-05 Summer Days.flac
+4085a671f14fa4aaacdbfc42612b3dc0  2-06 Ballad Of A Thin Man.flac
+3e42b951f167381eee57a8bc25c537dd  2-07 Encore Break.flac
+13bc350bc1734bca3461a5be52642494  2-08 Thunder On The Mountain.flac
+d3d85850ecf8db44dd21d3bebeaffb09  2-09 Like A Rolling Stone.flac
+029e5ec677ff7fb025158bc483c43c5a  2-10 Outro.flac
+fedaddc2a4bb6bc67d33132314fe2271  art_back.jpg
+893cc46e0157e372681b6179f4d2d365  art_front.jpg
+2267303dcca72af320e2427b5da57fb6  checksum.md5
+5a12416d72b9911afaccab8c4e27eee7  info.txt

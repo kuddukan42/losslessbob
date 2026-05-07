@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-22a.flacf 
+=================== 
+=================== 
+=================== 
+ccd03d128b3de7abb6679df5298b98ff  bd93-09-22a-LB-3629.txt
+d68d026ca0b04d6e79463282a5fa635f  d1\D1T01.shn
+57765b49c76e0dea24ef5bff4034e827  d1\D1T02.shn
+37df3574f90ca6c3b0d198a247a9b205  d1\D1T03.shn
+1ee25de43bbd4050c7527646f496027e  d1\D1T04.shn
+0069faa15b9b57c5e946680aaa953812  d1\D1T05.shn
+cd62601ab7ec4d85dc906543773a7360  d1\D1T06.shn
+318925a796f6ade09ace26f25a285686  d1\D1T07.shn
+1a6ec68880415298c6521a3830572a12  d1\D1T08.shn
+26b7c63881aa7391b1cd3978b1672c03  d1\D1T09.shn
+0108d87bce59c574730e6d87af7a9681  d1\D1T10.shn
+0375c0d62ecddaf445a3ee089ff03fbb  d2\D2T01.shn
+a07ce13106dbef2a03d1ae07cc4347b9  d2\D2T02.shn
+ae8256569978390847a17406da8c032d  md5sumD1.md5
+376e1c1463706003ced6a05c5130e50f  md5sumD2.md5
+b74b3cb7f7898977ea8f3bec16e9ce2f  September 22 1993.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-09-22a.flacf\d1 
+=================== 
+=================== 
+=================== 
+e4b2204614b92bafa89b92de4c6a1742  [shntool]  D1T01.wav
+480eec51f2ec24ccf9e424c41abc3ebc  [shntool]  D1T02.wav
+ef12488da7fb99adea580776f0a91b8c  [shntool]  D1T03.wav
+24bc07425e11a1f769b7fd3a47ab681c  [shntool]  D1T04.wav
+899c98724afb7c72d61352a8e28732ab  [shntool]  D1T05.wav
+5c3233291e0656f0cc75f56bcb3c32cb  [shntool]  D1T06.wav
+95306e79d1dcbfb87e760dbb4e0f8be9  [shntool]  D1T07.wav
+4ac325c37ac411cee599fbd0c6872181  [shntool]  D1T08.wav
+d16f614ffc5c9fb9a9b623c63e894201  [shntool]  D1T09.wav
+0c0884645150f83faf4292893694bdd3  [shntool]  D1T10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-09-22a.flacf\d2 
+=================== 
+=================== 
+=================== 
+c20bf968e2454bc1820021c99bf11ddf  [shntool]  D2T01.wav
+d2ef93c0891dd63e5d6b5b8a370a656a  [shntool]  D2T02.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-22a.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:23.55       35938604 B   ---   --   -----    wav  1.0000  D1T01.wav
+     8:53.04       94030652 B   ---   --   -----    wav  1.0000  D1T02.wav
+     5:52.08       62111660 B   ---   --   -----    wav  1.0000  D1T03.wav
+     7:11.02       76033148 B   ---   --   -----    wav  1.0000  D1T04.wav
+     5:12.37       55123868 B   ---   --   -----    wav  1.0000  D1T05.wav
+     8:17.52       87793148 B   ---   --   -----    wav  1.0000  D1T06.wav
+     6:17.19       66547532 B   ---   --   -----    wav  1.0000  D1T07.wav
+     6:35.20       69725084 B   ---   --   -----    wav  1.0000  D1T08.wav
+     9:34.13      101284220 B   ---   --   -----    wav  1.0000  D1T09.wav
+     8:33.71       90660236 B   ---   --   -----    wav  1.0000  D1T10.wav
+    69:50.56      739248152 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-22a.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:47.07       71811308 B   ---   --   -----    wav  1.0000  D2T01.wav
+     7:33.59       80048012 B   ---   --   -----    wav  1.0000  D2T02.wav
+    14:20.66      151859320 B                            1.0000  (2 files)
+=================== 
+=================== 
+=================== 

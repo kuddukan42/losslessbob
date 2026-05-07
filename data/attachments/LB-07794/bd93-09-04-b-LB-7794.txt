@@ -1,0 +1,10 @@
+Bob Dylan, 9/4/93, Saratoga Springs, New York, 2CDR
+
+LB-7794, (53min+36min), version "b"; * This recording is the same as LB-0516; renamed song titles *, NOTE: Based on exact track lengths, Taper: unidentified, Lineage: received in a trade as 2x AUDIO; now converted to FLAC, LB Rating: A, Frequency analysis: full spectrum; bittorrent download 07/09; d1 has flac fingerprints that match shntool md5 hash of LB-516 and d2t1 is a sort of close eac match to LB-516; this does not have the digi-pops on d2t3 noted on that one; (did not listen to all of this)
+
+drop/cut between cdrs
+
+01. You're Gonna Quit Me (Mance Lipscomb) [04:02], 02. Stuck Inside Of Mobile With The Memphis Blues Again [08:26], 03. All Along The Watchtower [05:32], 04. Positively 4th Street [09:21], 05. Tangled Up In Blue [11:09], 06. Born In Time [06:07], Total time [44:39], 07. Blackjack Davey (trad. arr. by Bob Dylan) [05:35], 08. Gates Of Eden [07:29], 09. Don't Think Twice, It's All Right [07:00], 10. Shooting Star [05:52], 11. Maggie's Farm [06:34], 12. Man In The Long Black Coat [07:40], 13. It Ain't Me, Babe [09:27], Total time [49:39]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

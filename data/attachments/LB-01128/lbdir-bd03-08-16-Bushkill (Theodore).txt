@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-16-Bushkill (Theodore) 
+=================== 
+=================== 
+=================== 
+dcccaf19d93426aeff02673fa1a90c23  bd03-08-16-bushkill.md5
+69caef227aaa751e2469e744bf904560  bd03-08-16-bushkill.txt
+88c9c498a66c0021855d91e532ce5fb2  bd03-08-16-d1t01.shn
+ff8f776ecef873fa1196bb12ac10f399  bd03-08-16-d1t02.shn
+dda899e1874a8383de1c93b5a6c7f2e2  bd03-08-16-d1t03.shn
+c0c88622acbc177bc14e21c183326339  bd03-08-16-d1t04.shn
+23b1e17957ac05ebd30dd8832721b170  bd03-08-16-d1t05.shn
+912554417cc829778534427edc769cbe  bd03-08-16-d1t06.shn
+573469c0273e1f93114b09217b68b934  bd03-08-16-d1t07.shn
+f6be30ef175fc63aae8da495a0089d77  bd03-08-16-d1t08.shn
+6ebe7ac20a031faa707b5878c81148b1  bd03-08-16-d1t09.shn
+4fd9fe252ec78cc16fa18cf152bab039  bd03-08-16-d1t10.shn
+aff7cf77fcc0c09b01c27b651da797ee  bd03-08-16-d1t11.shn
+b3b81120414b6be20eceda484ec05652  bd03-08-16-d1t12.shn
+b4288dc76e8b8cf69b1d6db25e186014  bd03-08-16-d1t13.shn
+0bf4ae1f3aca86361118398ea3e4ad24  bd03-08-16-d2t01.shn
+227c3e483a53bc61231c1703fdcafb7a  bd03-08-16-d2t02.shn
+0aae36a77e28cab37c5e00847e82c5aa  bd03-08-16-d2t03.shn
+7a3b25fb8f92e2265c3616386e7aeef5  bd03-08-16-d2t04.shn
+bf0bf19d81242ab21fd520bf43b53fcb  bd03-08-16-d2t05.shn
+da9e365ce984831a604760a3d4ab382f  bd03-08-16th.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-16-Bushkill (Theodore) 
+=================== 
+=================== 
+=================== 
+a14ada893ce9e8949112b19d7a9b8b7f  [shntool]  bd03-08-16-d1t01.wav
+b65d3ed66936caf0ecc5e29acaa2a412  [shntool]  bd03-08-16-d1t02.wav
+8c6363b2c00eae9f60225a95d79964b5  [shntool]  bd03-08-16-d1t03.wav
+4059524120a290c8b446e354e841ccf3  [shntool]  bd03-08-16-d1t04.wav
+06c96a57b45279e68dd65eb19478fc97  [shntool]  bd03-08-16-d1t05.wav
+661984b397b704f17d1bdff8ce9162fe  [shntool]  bd03-08-16-d1t06.wav
+a421cd8439458eb3df40c5d2899d18ac  [shntool]  bd03-08-16-d1t07.wav
+d3ab394fc346a3e5afb4508ae02fe3ce  [shntool]  bd03-08-16-d1t08.wav
+be5d1a392cc8202a1c574fd5d6cb3b29  [shntool]  bd03-08-16-d1t09.wav
+e3d2123e7336db8d1b9847d2b0d71197  [shntool]  bd03-08-16-d1t10.wav
+2ae6abfc2efffc4475217b177f4804a2  [shntool]  bd03-08-16-d1t11.wav
+d8f3c505506d7ff917116f42d8c0ba7d  [shntool]  bd03-08-16-d1t12.wav
+03c3868974c2ad3c2d14c819586b6bdc  [shntool]  bd03-08-16-d1t13.wav
+3fc2fccf57ed7516646d9c83b5d4ce74  [shntool]  bd03-08-16-d2t01.wav
+2beaf7fc5985640ed2344cdd753994c0  [shntool]  bd03-08-16-d2t02.wav
+de99da65f603ae884c5f1ebfdd27b1d7  [shntool]  bd03-08-16-d2t03.wav
+d3445ab866b882d923fe25ab48a7a758  [shntool]  bd03-08-16-d2t04.wav
+e191137559afbb62523282b04c44e547  [shntool]  bd03-08-16-d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-16-Bushkill (Theodore) 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.51        7175996 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t01.wav
+     5:59.24       63384334 B   ---   -e   -----    wav  1.0000  bd03-08-16-d1t02.wav
+     4:46.51       50570396 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t03.wav
+     5:28.16       57896876 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t04.wav
+     5:17.11       55944716 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t05.wav
+     7:54.47       83724188 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t06.wav
+     7:33.22       79960988 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t07.wav
+     5:46.54       61161452 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t08.wav
+     7:39.00       80967644 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t09.wav
+     6:23.70       67725884 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t10.wav
+     7:34.13       80116220 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t11.wav
+     5:44.57       60815708 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t12.wav
+     6:33.48       69438140 B   ---   --   -----    wav  1.0000  bd03-08-16-d1t13.wav
+     7:27.41       78947276 B   ---   --   -----    wav  1.0000  bd03-08-16-d2t01.wav
+     0:34.65        6150524 B   ---   --   -----    wav  1.0000  bd03-08-16-d2t02.wav
+    11:54.62      126095468 B   ---   --   -----    wav  1.0000  bd03-08-16-d2t03.wav
+     6:50.08       72342860 B   ---   --   -----    wav  1.0000  bd03-08-16-d2t04.wav
+     6:46.22       71670188 B   ---   --   -----    wav  1.0000  bd03-08-16-d2t05.wav
+   110:55.62     1174088858 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

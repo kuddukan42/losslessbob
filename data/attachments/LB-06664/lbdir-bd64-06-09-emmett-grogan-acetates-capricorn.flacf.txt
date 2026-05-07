@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd64-06-09-emmett-grogan-acetates-capricorn.flacf 
+=================== 
+=================== 
+=================== 
+1a25434902f564176f1413a852e8ded8  bd64-06-09-emmett-grogan-acetates-capricorn-t01.flac
+63adfef59455323dbcc4130824116253  bd64-06-09-emmett-grogan-acetates-capricorn-t02.flac
+95d7451d7d587188c9040044245514ba  bd64-06-09-emmett-grogan-acetates-capricorn-t03.flac
+28473c44c45863bab7be728bd78ad82e  bd64-06-09-emmett-grogan-acetates-capricorn-t04.flac
+8b4cc18aa54755a67611e350f331ffaa  bd64-06-09-emmett-grogan-acetates-capricorn-t05.flac
+13d74a45e2d4c807bb8a41ded219d198  bd64-06-09-emmett-grogan-acetates-capricorn-t06.flac
+5190f2a3c1e3e7168adc4312620333d9  bd64-06-09-emmett-grogan-acetates-capricorn-t07.flac
+c938e82a95dc95fa54a6bf6967a60dc8  bd64-06-09-emmett-grogan-acetates-capricorn-t08.flac
+75be6f7b5bed6ee88711851637a00037  bd64-06-09-emmett-grogan-acetates-capricorn-t09.flac
+5fcb88876de39b7f7a48b5ab09c7fafd  bd64-06-09-emmett-grogan-acetates-capricorn-t10.flac
+9c9566bdd437bc22acf0a36d0c6f1460  bd64-06-09-emmett-grogan-acetates-capricorn-t11.flac
+5f808819ea662b9170f072f81725d8aa  bd64-06-09-emmett-grogan-acetates-capricorn-t12.flac
+87be1f4a0f7816b802831f190cd468ac  bd64-06-09-emmett-grogan-acetates-capricorn-t13.flac
+f13ffa187565cbe97e91d3f28bb6f1bd  bd64-06-09-emmett-grogan-acetates-capricorn-t14.flac
+d6ed64044846877f261fd22f47b06dd7  bd64-06-09-emmett-grogan-acetates-capricorn-t15.flac
+d5ca9ceb7c244d21f0b6acf1ecc0b51d  bd64-06-09-emmett-grogan-acetates-capricorn.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd64-06-09-emmett-grogan-acetates-capricorn.flacf 
+=================== 
+=================== 
+=================== 
+bd64-06-09-emmett-grogan-acetates-capricorn-t01.flac:0b9d83c3c534961f7ddb5a2f98c34561
+bd64-06-09-emmett-grogan-acetates-capricorn-t02.flac:a5024062b0b8e34107bf545e36838f4d
+bd64-06-09-emmett-grogan-acetates-capricorn-t03.flac:ec3d5c612d246a286bb51ad166a4c363
+bd64-06-09-emmett-grogan-acetates-capricorn-t04.flac:32922f7df9199b79ba411f6c2597f2db
+bd64-06-09-emmett-grogan-acetates-capricorn-t05.flac:d8959b96ceb679b5b86a7d426e192b4e
+bd64-06-09-emmett-grogan-acetates-capricorn-t06.flac:afaa5180a2028cb9357b89b89c60d933
+bd64-06-09-emmett-grogan-acetates-capricorn-t07.flac:cb3916e62c4bce2e35abe1feae073689
+bd64-06-09-emmett-grogan-acetates-capricorn-t08.flac:93a926aa9d152c775e595bdc7876ebd3
+bd64-06-09-emmett-grogan-acetates-capricorn-t09.flac:d57d00762a01c673220d25b0bcf019c4
+bd64-06-09-emmett-grogan-acetates-capricorn-t10.flac:acfc5367da5637f7d8f69bedba884e36
+bd64-06-09-emmett-grogan-acetates-capricorn-t11.flac:ec6e985a4774ee189b5516d8b07fcfcd
+bd64-06-09-emmett-grogan-acetates-capricorn-t12.flac:ea405ec7161b46c43ec9a75aaf2dccd7
+bd64-06-09-emmett-grogan-acetates-capricorn-t13.flac:9884f7a32d0cf8cfd26de757c777f5e8
+bd64-06-09-emmett-grogan-acetates-capricorn-t14.flac:e010b1a6a3342a4411277a3184ab2db2
+bd64-06-09-emmett-grogan-acetates-capricorn-t15.flac:b9509aa1e12cd253ebca12f5e245ba86
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd64-06-09-emmett-grogan-acetates-capricorn.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.12       47479868 B   ---   --   ---xx   flac  0.4341  bd64-06-09-emmett-grogan-acetates-capricorn-t01.flac
+     7:18.05       77275004 B   ---   --   ---xx   flac  0.4144  bd64-06-09-emmett-grogan-acetates-capricorn-t02.flac
+     4:37.20       48909884 B   ---   --   ---xx   flac  0.4519  bd64-06-09-emmett-grogan-acetates-capricorn-t03.flac
+     6:52.45       72782684 B   ---   --   ---xx   flac  0.4338  bd64-06-09-emmett-grogan-acetates-capricorn-t04.flac
+     4:39.10       49239164 B   ---   --   ---xx   flac  0.4443  bd64-06-09-emmett-grogan-acetates-capricorn-t05.flac
+     3:42.20       39207884 B   ---   --   ---xx   flac  0.4468  bd64-06-09-emmett-grogan-acetates-capricorn-t06.flac
+     5:20.30       56518604 B   ---   --   ---xx   flac  0.4230  bd64-06-09-emmett-grogan-acetates-capricorn-t07.flac
+     4:03.45       42971084 B   ---   --   ---xx   flac  0.5199  bd64-06-09-emmett-grogan-acetates-capricorn-t08.flac
+     2:59.05       31587404 B   ---   --   ---xx   flac  0.5429  bd64-06-09-emmett-grogan-acetates-capricorn-t09.flac
+     3:06.33       32888060 B   ---   --   ---xx   flac  0.4686  bd64-06-09-emmett-grogan-acetates-capricorn-t10.flac
+     1:05.70       11630684 B   ---   --   ---xx   flac  0.4603  bd64-06-09-emmett-grogan-acetates-capricorn-t11.flac
+     3:10.22       33567788 B   ---   --   ---xx   flac  0.4534  bd64-06-09-emmett-grogan-acetates-capricorn-t12.flac
+     3:14.38       34311020 B   ---   --   ---xx   flac  0.4455  bd64-06-09-emmett-grogan-acetates-capricorn-t13.flac
+     3:23.57       35943308 B   ---   --   ---xx   flac  0.5039  bd64-06-09-emmett-grogan-acetates-capricorn-t14.flac
+     3:44.50       39631244 B   ---   --   ---xx   flac  0.5655  bd64-06-09-emmett-grogan-acetates-capricorn-t15.flac
+    61:47.12      653943684 B                            0.4601  (15 files)
+=================== 
+=================== 
+=================== 

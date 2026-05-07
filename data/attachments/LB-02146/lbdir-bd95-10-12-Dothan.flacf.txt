@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-12-Dothan.flacf 
+=================== 
+=================== 
+=================== 
+f3ce839ac229f337288dc796fb0d79c8  bd1995-10-12_d1t01.flac
+bb7850eb4d76a7d3ba84340aee1a524a  bd1995-10-12_d1t02.flac
+fa5a7176cd43b1e35a598ca4f3f4c7b2  bd1995-10-12_d1t03.flac
+73ead69f39a99c24e9a6bab4d2fa6397  bd1995-10-12_d1t04.flac
+dcb123108528c9a3e40ebf8b360337cc  bd1995-10-12_d1t05.flac
+078c5f015268854ffcc72e0c09d7b41d  bd1995-10-12_d1t06.flac
+c9f1f089a55576a8fc2fc6cae22d209f  bd1995-10-12_d1t07.flac
+bafbd1b540d9469177c1fed4fe2d7279  bd1995-10-12_d1t08.flac
+4d3ed8963b9e21dfde26514a0c683d95  bd1995-10-12_d1t09.flac
+039ec1e26ca3a9b8dd2e541ba419238e  bd1995-10-12_d2t01.flac
+9af7c317927ae7502720c0594507e49c  bd1995-10-12_d2t02.flac
+00e3b58e0ae3c0899686c7e9f1ad001e  bd1995-10-12_d2t03.flac
+6e516f80cf6f8ab26d5709cbe67e19d6  bd1995-10-12_d2t04.flac
+9a9d56d167b2e0bf832414b15e30dde6  bd1995-10-12_d2t05.flac
+6b8085d5e0f99b5c1639e34261fbaa23  bd1995-10-12_d2t06.flac
+2a7fd185950578f5b69d6bd226ccd205  bd1995-10-12_Dothan, AL.txt
+a11f71c2a3a2622f97cdeb411dc251b1  bd1995-10-12_Dothan.md5
+1e28704c5d627a41710fae51755e784a  bd1995-10-12_Dothan_FLACfingerprint.txt
+fd22824b8e12da9904683bd61b7fc57b  bd95-10-12.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-12-Dothan.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-10-12_d1t01.flac:c85a19d5ce9871a1a67805d249dd6685
+bd1995-10-12_d1t02.flac:97b31b2121675ebc8b5471349ea03dbd
+bd1995-10-12_d1t03.flac:16f83b00b09e0975fddbc54b47a31280
+bd1995-10-12_d1t04.flac:04ea31efffdd2f4abca2d29fec210767
+bd1995-10-12_d1t05.flac:93f396a5686a023bd7b136fbe374bbaf
+bd1995-10-12_d1t06.flac:1218999443c32eff00bd15278d1a372e
+bd1995-10-12_d1t07.flac:45bfade368cad991131778f2e5167943
+bd1995-10-12_d1t08.flac:e344a0e2c336a5af6406bcf45fbcef35
+bd1995-10-12_d1t09.flac:bde3507f186a4b489febd4aca009e652
+bd1995-10-12_d2t01.flac:13010766aa247ff04acb562f8c5d6869
+bd1995-10-12_d2t02.flac:8f5e685ac17f82549d5dbc5b76160365
+bd1995-10-12_d2t03.flac:7474a48ea32f4c13e9c3f659e58cadf2
+bd1995-10-12_d2t04.flac:1e31c271544da7cfa7e7367490753612
+bd1995-10-12_d2t05.flac:3387d4a4590f6e7e9fe8f05199ac635a
+bd1995-10-12_d2t06.flac:5c7a32c53ab57cab71bc04cbe46e401b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-12-Dothan.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:12.60       65761964 B   ---   --   ---xx   flac  0.6124  bd1995-10-12_d1t01.flac
+     5:48.22       61438988 B   ---   --   ---xx   flac  0.5751  bd1995-10-12_d1t02.flac
+     6:57.18       73601180 B   ---   --   ---xx   flac  0.6099  bd1995-10-12_d1t03.flac
+     7:06.50       75264044 B   ---   --   ---xx   flac  0.5811  bd1995-10-12_d1t04.flac
+     5:58.17       63191228 B   ---   --   ---xx   flac  0.5545  bd1995-10-12_d1t05.flac
+     7:05.16       75007676 B   ---   --   ---xx   flac  0.6224  bd1995-10-12_d1t06.flac
+    10:00.61      105983516 B   ---   --   ---xx   flac  0.4967  bd1995-10-12_d1t07.flac
+     6:29.54       68746652 B   ---   --   ---xx   flac  0.4599  bd1995-10-12_d1t08.flac
+     7:06.27       75209948 B   ---   --   ---xx   flac  0.4898  bd1995-10-12_d1t09.flac
+     6:34.45       69607484 B   ---   --   ---xx   flac  0.5980  bd1995-10-12_d2t01.flac
+     8:33.51       90613196 B   ---   --   ---xx   flac  0.5411  bd1995-10-12_d2t02.flac
+     8:50.00       93492044 B   ---   --   ---xx   flac  0.5961  bd1995-10-12_d2t03.flac
+     9:56.16      105172076 B   ---   --   ---xx   flac  0.5640  bd1995-10-12_d2t04.flac
+     8:45.67       92767628 B   ---   --   ---xx   flac  0.4311  bd1995-10-12_d2t05.flac
+     7:24.40       78415724 B   ---   --   ---xx   flac  0.5784  bd1995-10-12_d2t06.flac
+   112:50.19     1194273348 B                            0.5510  (15 files)
+=================== 
+=================== 
+=================== 

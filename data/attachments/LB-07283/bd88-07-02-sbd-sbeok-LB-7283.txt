@@ -1,0 +1,8 @@
+Bob Dylan, 7/2/88, Mansfield, Massachusetts, 1CDR
+
+LB-7283, (75min), Lineage:, SBD > cass a? > DAT > CD-R > EAC > SoundForge 9.0e > Trader's Little Helper 2.4.1 > .flac16, AUD master patch:, t10 [0:19-3:47], t11 [0:00-0:11], ---, TT: 74:20.01; bittorrent download 03/09; sound quality flucutates on t1 back and forth to muffled for a few songs; crackling buzz on t2 and continues with a scratchiness for a few songs; the muffled back and forth starts up again on t11 and continues as muffled; very good to excellent sound [B+]
+
+01. [3:09.64] SUBTERRANEAN HOMESICK BLUES, 02. [4:58.45] PRETTY PEGGY-O (trad. arr. Bob Dylan), 03. [3:11.58] HAD A DREAM ABOUT YOU, BABY, 04. [5:09.20] BALLAD OF A THIN MAN, 05. [6:38.47] STUCK INSIDE OF MOBILE WITH THE MEMPHIS BLUES AGAIN, 06. [6:36.14] TANGLED UP IN BLUE, 07. [5:10.50] MR TAMBOURINE MAN, 08. [3:57.17] LOVE MINUS ZERO/NO LIMIT, 09. [5:00.19] IT AIN'T ME, BABE, 10. [4:07.11] I Shall Be Released, 11. [3:42.28] SILVIO (Bob Dylan & Robert Hunter), ---tape break---, 12. [7:07.54] ALL ALONG THE WATCHTOWER, Encore:, 13. [4:22.05] THE TIMES THEY ARE A-CHANGIN', 14. [4:53.29] MAGGIE'S FARM, 15. [6:14.65] LIKE A ROLLING STONE
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

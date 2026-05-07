@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-16 
+=================== 
+=================== 
+=================== 
+5bd37c26f6db2a63e5e5a9dc4d5ab083  bd92-04-16.txt
+8129b37e71b5f3d9fa4d09bbed663df4  d1\Track01.shn
+65a472a8f2b0ca00f420c94eb8474d8f  d1\Track02.shn
+79f003d7b0a8f3bebd327af69e1fd922  d1\Track03.shn
+c7789172ff96fbb61194d82e5650fb79  d1\Track04.shn
+f1690db2b65ae316be382fc96889cc39  d1\Track05.shn
+902334f18cf0956d8fec906014b85956  d1\Track06.shn
+2a891ac760e57054ed4cc94d65397655  d1\Track07.shn
+a050f08763f460666d067e62170c6867  d1\Track08.shn
+512a036ee737bb148f0be1db2cd386eb  d1\Track09.shn
+ac153a297072922ecbce5398adf5e050  d1\Track10.shn
+3a0b32c155727ad261132ce3b2f7f109  d1\Track11.shn
+154eca3da5a959544e9ee8fb80b495be  d1\noname.md5
+7a2e1f07fe41e1aa8ebd406a0acbba49  d2\Track01.shn
+edd28e2322ebca837335443ebc219905  d2\Track02.shn
+c2ff873aea0ccbbfea0599a26dde346e  d2\Track03.shn
+93168ca307013348e37d0e23689a1511  d2\Track04.shn
+37d2f943f6e864f78a5b4a515f24409d  d2\Track05.shn
+74a7a4ff80a9ee2fa5016a40b8f8e829  d2\Track06.shn
+ea8062346c4f6ba4e7f08a209f2bb49f  d2\Track07.shn
+bed40a25805a8c918e6264f6290238e5  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-04-16\d2 
+=================== 
+=================== 
+=================== 
+d1babaa25d8aed2dc3b62e73a13b586a  [shntool]  Track01.wav
+7f56219639ca3dbd22d8278711bfcb69  [shntool]  Track02.wav
+fb15ae5615d23ac2f5b81b0ec747e4d4  [shntool]  Track03.wav
+ae72d60eda7d553d07f8b3e25c0906f2  [shntool]  Track04.wav
+f273c9e3fb237cb44a15de06cf5c1f9e  [shntool]  Track05.wav
+f5efc7dcbfd04b94aefec3dc4b526914  [shntool]  Track06.wav
+6a2e133aa9f85db7e90148214d4302ae  [shntool]  Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-04-16\d1 
+=================== 
+=================== 
+=================== 
+179685c767930f5e634239bf0c319a42  [shntool]  Track01.wav
+a8c5b6f9ef1127c076118593f068b7d2  [shntool]  Track02.wav
+5c3256c1d6214dcaf3736d0dc22ee842  [shntool]  Track03.wav
+5708dc970cb62ffa145a4ca0612af44f  [shntool]  Track04.wav
+8a14281199f22b3cdc676f26ecaa1f47  [shntool]  Track05.wav
+ae6fdece56ab6385b21b8e8ebea950ff  [shntool]  Track06.wav
+6538edaad3bb281dce692cf56e88c387  [shntool]  Track07.wav
+3a19d9857bea76da45a05118474be20f  [shntool]  Track08.wav
+4494e2f2be5e9271ecf9381fb9878ce9  [shntool]  Track09.wav
+21077e08760fc3540cb224a1aebcd100  [shntool]  Track10.wav
+2acb4ee593d1d2cac564b58a59ec0dc2  [shntool]  Track11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:27.06       36528956 B   ---   --   ---xx    shn  0.7012  Track01.shn
+     8:57.06       94740956 B   ---   --   ---xx    shn  0.7310  Track02.shn
+     5:05.66       53957276 B   ---   --   ---xx    shn  0.7255  Track03.shn
+     5:22.34       56880812 B   ---   --   ---xx    shn  0.7529  Track04.shn
+     4:37.29       48931052 B   ---   --   ---xx    shn  0.7590  Track05.shn
+     4:27.24       47155292 B   ---   --   ---xx    shn  0.7495  Track06.shn
+     2:55.36       30954716 B   ---   --   ---xx    shn  0.6956  Track07.shn
+    34:52.51      369149060 B                            0.7337  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.28       34816700 B   ---   --   ---xx    shn  0.7238  Track01.shn
+     2:36.20       27565484 B   ---   --   ---xx    shn  0.7317  Track02.shn
+     3:54.74       41451692 B   ---   --   ---xx    shn  0.7332  Track03.shn
+     5:40.59       60114812 B   ---   --   ---xx    shn  0.7338  Track04.shn
+     9:01.62       95578268 B   ---   --   ---xx    shn  0.7377  Track05.shn
+     4:13.61       44772716 B   ---   --   ---xx    shn  0.7291  Track06.shn
+     5:26.29       57574652 B   ---   --   ---xx    shn  0.7201  Track07.shn
+     3:08.10       33186764 B   ---   --   ---xx    shn  0.6953  Track08.shn
+     3:29.30       36938204 B   ---   --   ---xx    shn  0.6774  Track09.shn
+     4:42.16       49782476 B   ---   --   ---xx    shn  0.7051  Track10.shn
+     6:07.22       64790588 B   ---   --   ---xx    shn  0.7309  Track11.shn
+    51:38.36      546572356 B                            0.7228  (11 files)
+=================== 
+=================== 
+=================== 

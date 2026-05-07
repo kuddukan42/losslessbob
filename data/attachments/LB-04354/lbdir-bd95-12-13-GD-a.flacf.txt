@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-13-GD-a.flacf 
+=================== 
+=================== 
+=================== 
+34be549aa73ca75452d60b6785c5265d  bd1995-12-13-Bethlehem-d1\Track01.flac
+e78edc7775af37205e8dbd82fab17f96  bd1995-12-13-Bethlehem-d1\Track02.flac
+8842a5b1042db727d7485468c3dfde85  bd1995-12-13-Bethlehem-d1\Track03.flac
+76b7a0037bec86ea59ec741f43164c96  bd1995-12-13-Bethlehem-d1\Track04.flac
+ccfeee0989100436fc4f03eebf64d7f6  bd1995-12-13-Bethlehem-d1\Track05.flac
+41d677583a41c7c0acef989d88845702  bd1995-12-13-Bethlehem-d1\Track06.flac
+469f7c91ac003038fcb24ed4853abd3a  bd1995-12-13-Bethlehem-d1\Track07.flac
+68d016ad90e012b25d2360a3f230e2fd  bd1995-12-13-Bethlehem-d1\Track08.flac
+f797beb907c4ee856016c40453f595e2  bd1995-12-13-Bethlehem-d1\Track09.flac
+a729de7e386a78fac4d2a8b4965d6b2d  bd1995-12-13-Bethlehem-d1\bd1995-12-13-Bethlehem-d1.md5
+9b067f877386e9429a56cc253ecb23e6  bd1995-12-13-Bethlehem-d2\Track01.flac
+69bf0e682a5eb907c5d8f2c501736c3c  bd1995-12-13-Bethlehem-d2\Track02.flac
+cd76b914d8fdb5b6290e4467dceb5958  bd1995-12-13-Bethlehem-d2\Track03.flac
+2c93494557f57df564a062cbc46c26c3  bd1995-12-13-Bethlehem-d2\Track04.flac
+a0ac5499a5cc4108c6fb95cbb5e0c822  bd1995-12-13-Bethlehem-d2\Track05.flac
+b64c07eebe75eb483998066ed06d9fee  bd1995-12-13-Bethlehem-d2\Track06.flac
+91d2b8c90dfc85f66b87208918a7bee9  bd1995-12-13-Bethlehem-d2\bd1995-12-13-Bethlehem-d2.md5
+2a348e7f9e9ad0620a7a4a36d9ef4c27  bd1995-12-13-GD.txt
+56d2f9e0dfaef3383d8565cc8d04c885  bd95-12-13-GD-a-LB-4354.txt
+1da016a495694b0a620bf6dcac9009ff  torrent-description.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-13-GD-a.flacf\bd1995-12-13-Bethlehem-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:ac73e32247eb5d2d9f5d36cdd095aec6
+Track02.flac:48e75f2401c8c81312029098fcf09dcd
+Track03.flac:5c53e703e402bcd191455584e8f1b4e5
+Track04.flac:398457e826ec98b01ee834c57a2882b9
+Track05.flac:629c89bc21de8e1724c546587cbb3ab1
+Track06.flac:6bffb4a35fb1257c2e4b8176a3300f95
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-13-GD-a.flacf\bd1995-12-13-Bethlehem-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:b738dd1629fbefc7eb6dca82a00f666a
+Track02.flac:b2d7506aadde669e537d5a60a8541a15
+Track03.flac:1c65f1f4e3907512dc0a4610eea097ad
+Track04.flac:9ce09092759cfb4c93bafc5757a389bb
+Track05.flac:d5a50c6c5a100894cb144f74f087763e
+Track06.flac:a499d469063739996c5368fa4f8aafca
+Track07.flac:9f89e002f4af16b8fbd73d06956a4cd8
+Track08.flac:9ef92606675148b93b1b02ca2b9246e5
+Track09.flac:bd279be596050bfe1dcd7de8bc55af49
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-13-GD-a.flacf\bd1995-12-13-Bethlehem-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:02.14       63889772 B   ---   --   ---xx   flac  0.4028  Track01.flac
+     7:39.55       81097004 B   ---   --   ---xx   flac  0.5375  Track02.flac
+     9:59.69      105825932 B   ---   --   ---xx   flac  0.5177  Track03.flac
+     7:38.27       80854748 B   ---   --   ---xx   flac  0.5663  Track04.flac
+    12:14.05      129489404 B   ---   --   ---xx   flac  0.5069  Track05.flac
+     6:28.07       68459708 B   ---   --   ---xx   flac  0.5606  Track06.flac
+    50:02.27      529616568 B                            0.5172  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-13-GD-a.flacf\bd1995-12-13-Bethlehem-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.71       56615036 B   ---   --   ---xx   flac  0.5740  Track01.flac
+     5:35.60       59235164 B   ---   --   ---xx   flac  0.5048  Track02.flac
+     7:22.15       78004124 B   ---   --   ---xx   flac  0.5642  Track03.flac
+     6:09.68       65251580 B   ---   --   ---xx   flac  0.4525  Track04.flac
+     6:08.09       64936412 B   ---   --   ---xx   flac  0.5302  Track05.flac
+     8:18.68       88007180 B   ---   --   ---xx   flac  0.5498  Track06.flac
+     9:26.10       99865964 B   ---   --   ---xx   flac  0.4544  Track07.flac
+    11:25.59      120972812 B   ---   --   ---xx   flac  0.4366  Track08.flac
+     5:28.07       57875708 B   ---   --   ---xx   flac  0.5182  Track09.flac
+    65:15.67      690763980 B                            0.5023  (9 files)
+=================== 
+=================== 
+=================== 

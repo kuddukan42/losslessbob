@@ -1,0 +1,177 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-Just-Like-Marlon-Brando-a.flacf 
+=================== 
+=================== 
+=================== 
+3e5bcbcc3adb73c2844deda780fa76d3  Bob Dylan - Brando - Info.txt
+e9582a86d83bb3208922298ba50b3303  Disc 1\Disc 1-FLAC.md5
+5f4ae5d9d836f8b8f0dce5ec12148976  Disc 1\Disc 1-WAV.md5
+ffc4c9104f7f9969b01b9f93f1acf541  Disc 1\Flac fingerprint.txt
+26f4c6e4d36776f46d832676f4157f87  Disc 1\Track01.flac
+f37498989fc5ab809ab8f6beecec6d5d  Disc 1\Track02.flac
+93cb18e2c6371f5348e658715ec6e2bd  Disc 1\Track03.flac
+653f70e929f7f3e5c9946636ac4d7262  Disc 1\Track04.flac
+be986c93ba10ea4544a3a7041d97f5de  Disc 1\Track05.flac
+3483da21b60f799617f555521461ae47  Disc 1\Track06.flac
+fea015cad9371007772279e34d44453c  Disc 1\Track07.flac
+ec81c8d4e7e7f3d1924157bb9e698484  Disc 1\Track08.flac
+09797b3a8f92bf5fd9d445a231dec2ce  Disc 1\Track09.flac
+a1d4e8b1f834f6fe106924439a9b3d36  Disc 1\Track10.flac
+9847e3ed31c73f2dca069f53b1f46cb5  Disc 1\Track11.flac
+48b07b76559444af6292729e3e8f0a91  Disc 1\Track12.flac
+e3adc62e0e66527a63fd3d5f60f575c7  Disc 1\Track13.flac
+4821ee4ebe5bf1b70b54d80a2715227f  Disc 1\Track14.flac
+d617b8c51508a9c1a760e90ce430c695  Disc 1\Track15.flac
+f1532a111e966c300dfb5b23c63817f4  Disc 1\Track16.flac
+ebac791d293a7dfd798d57e4c1f5abf8  Disc 1\Track17.flac
+c84500e4c330779280816c67ea85a3dc  Disc 2\Disc 2-FLAC.md5
+765b7c734627ec1622b81aa1023e8f01  Disc 2\Disc 2-WAV.md5
+cfc0007f7180a86713b1a8bd787c03d7  Disc 2\Flac fingerprint.txt
+afbaf695d505afa6d38042f76584498f  Disc 2\Track01.flac
+d1c651f391f11f1ff31b40e901b29e86  Disc 2\Track02.flac
+5c22c89adf348553c9e6ffe4c327d3ea  Disc 2\Track03.flac
+b81619dcad4b776d2445c6c4042daac2  Disc 2\Track04.flac
+3e4d31a263e2a7395f12ccd624389039  Disc 2\Track05.flac
+de1ddac5edf02739e5a6584f160120d7  Disc 2\Track06.flac
+8d3115e9bd6ab58df5ddbb163b4dbd84  Disc 2\Track07.flac
+0c977bd9b915a144d1df1853322aca78  Disc 2\Track08.flac
+bf08d18eae7571f5b6f4388becf63105  Disc 2\Track09.flac
+4c20848aa1bdf7fb2fa46e898139d3a5  Disc 2\Track10.flac
+c6f96b361a2b905633bf5526c79670a5  Disc 2\Track11.flac
+3b980643552e58843009b26c761ae9b4  Disc 2\Track12.flac
+db358a54192e84b66375a0a397eea66f  Disc 2\Track13.flac
+59642de54e3f3500574dd2757fe48fa2  Disc 2\Track14.flac
+7f79d50aed1e3c0a7aa3ce93d904ba5b  Disc 2\Track15.flac
+316059e212ee87a5af4aef45d53f5f8e  Disc 2\Track16.flac
+88da61923b5b069106f48b716f8da34f  Disc 2\Track17.flac
+e16bed2303664694b29f36a94ff70ab2  Disc 2\Track18.flac
+0d79b44c45287ead7ed6985bed857690  Disc 2\Track19.flac
+a38cd0bf1cb4657557e162c2c461c42a  Disc 2\Track20.flac
+2c482493c9991d8465bbe85b2f47ac8a  Disc 2\Track21.flac
+15dbe19456c325e5ef99753ddc22bad4  Disc 2\Track22.flac
+142a7c9c8b6f63ff019a6d376c61a49d  Disc 2\Track23.flac
+6185ba2d9e5ef110b6a1e47851493ea7  Disc 2\Track24.flac
+330a9daacc15661423e9c3ba11dec329  Disc 2\Track25.flac
+a1cbf2371d939652bacd86fb03b1b31b  DYLAN HHL2 Brando1.jpg
+a807ecf1fd3d6968d454146886350d6e  DYLAN HHL2 Brando2.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-Just-Like-Marlon-Brando-a.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+track01.flac:1a5b4812b7d3b10903beb9b38ff9e9e9
+track02.flac:22c2f57cb693d9d22c264d16adb60a64
+track03.flac:78cdb55655e3e2a2ea550b697507be20
+track04.flac:bb83e26b2045e9dd6c1be8e2a3210f15
+track05.flac:b7464605a65b15d40339c960fe3fe474
+track06.flac:828872abe3d30b768f3d8d5252f86263
+track07.flac:fda6581b8464c136a1d25bbe2336e1c4
+track08.flac:03c03a78825a420b7d27cbcbdc58f746
+track09.flac:cc4fdc32a4cd0605a5d750e924edb218
+track10.flac:cfceaf29dd67cd2a08acf2d6f11a747d
+track11.flac:3f9846f97f40f6995a370b6709c019a6
+track12.flac:58e5699e124baaca30ff0e1e87811c5a
+track13.flac:3f394cf4be945c82d2bbcb98de8629bc
+track14.flac:ca76ba5b980a8aefeb3253d35a1bdd1b
+track15.flac:2b6ddd116e0e5c721b3b540006d6b0a2
+track16.flac:282b7661f4dd3acb79f785871d3540ff
+track17.flac:cd1ee7b18e43ce87515c7f1019c91d60
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-Just-Like-Marlon-Brando-a.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+track01.flac:d3ea00d505ea0a86db3ebd1c80183e8e
+track02.flac:d74c173ac7082445c040bc44abd24ddc
+track03.flac:2333eea85f224124653d7f7320782c44
+track04.flac:a850d073562c1310a49f592ca5052a1b
+track05.flac:ea41ece2879a0339667a3d164f0a757b
+track06.flac:012eb6db0ddc5fb0d27f24b3468d5aaa
+track07.flac:3963d298aaef856e95fb2ff32c6bba42
+track08.flac:d4a2748a5ece63b0d0b4c93db25932eb
+track09.flac:f5d384497a4a7961e65261356ee7dd73
+track10.flac:7c97d974cea86b701ddda9db71ec4cd6
+track11.flac:ae642ce3beca6228419d4f86ed90ccdc
+track12.flac:74f306472ab2e09bebbddee5d13a5313
+track13.flac:0b8af1096854d3c02a7bc7d65f865e9d
+track14.flac:dd2db431f2c5e5c7ec3c3479a1a8c809
+track15.flac:983f37a2d894ab5671991f38b7ac7e6f
+track16.flac:fce06b597c6044b4c5ca9bfcf5b5b36f
+track17.flac:dd918c28c738e8f58a9b41ec25eb433b
+track18.flac:efe6f58e3b679a09c1587d7e11415ca3
+track19.flac:f69c3c6054ae760fec83764459ab9ce9
+track20.flac:0a1694e84aedc45b61d0ba1cb5c608ec
+track21.flac:c9160b9331460321915925ea3bb00259
+track22.flac:e334a36c61a6c75c32c4cd8d7083e3a5
+track23.flac:97c609495079b995ae49b950e4f0cd09
+track24.flac:d4b6aac64ebaf83ea5a24c8f8a31586e
+track25.flac:5c4adecb84bee56ca6390e07e658b664
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-Just-Like-Marlon-Brando-a.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:23.55       25354796 B   -b-   --   ---xx   flac  0.4265  Track01.flac
+     4:33.56       48288956 B   ---   --   ---xx   flac  0.4421  Track02.flac
+     6:11.26       65505596 B   ---   --   ---xx   flac  0.4435  Track03.flac
+     3:09.56       33471356 B   ---   --   ---xx   flac  0.4128  Track04.flac
+     6:32.48       69261740 B   ---   --   ---xx   flac  0.4399  Track05.flac
+     2:27.56       26062556 B   ---   --   ---xx   flac  0.4449  Track06.flac
+     3:32.56       37528556 B   ---   --   ---xx   flac  0.5560  Track07.flac
+     7:31.07       79572908 B   ---   --   ---xx   flac  0.5203  Track08.flac
+     4:21.26       46101596 B   ---   --   ---xx   flac  0.5359  Track09.flac
+     6:29.52       68741948 B   ---   --   ---xx   flac  0.4974  Track10.flac
+     5:11.18       54902780 B   ---   --   ---xx   flac  0.5408  Track11.flac
+     7:32.18       79775180 B   ---   --   ---xx   flac  0.4731  Track12.flac
+     3:43.45       39443084 B   ---   --   ---xx   flac  0.5156  Track13.flac
+     2:43.56       28884956 B   ---   --   ---xx   flac  0.5341  Track14.flac
+     3:45.22       39741788 B   ---   --   ---xx   flac  0.4736  Track15.flac
+     5:22.33       56878460 B   ---   --   ---xx   flac  0.4676  Track16.flac
+     1:33.72       16574396 B   -b-   --   ---xx   flac  0.5560  Track17.flac
+    77:06.27      816090652 B                            0.4854  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-Just-Like-Marlon-Brando-a.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:06.55       32939996 B   -b-   --   ---xx   flac  0.6162  Track01.flac
+     4:14.26       44866796 B   ---   --   ---xx   flac  0.6081  Track02.flac
+     2:17.33       24244460 B   ---   --   ---xx   flac  0.6041  Track03.flac
+     2:14.48       23750540 B   ---   --   ---xx   flac  0.6440  Track04.flac
+     4:24.33       46647260 B   ---   --   ---xx   flac  0.5873  Track05.flac
+     2:06.26       22287404 B   -b-   --   ---xx   flac  0.6192  Track06.flac
+     3:04.25       32516636 B   -b-   --   ---xx   flac  0.6219  Track07.flac
+     4:51.26       51393596 B   ---   --   ---xx   flac  0.5954  Track08.flac
+     3:32.26       37457996 B   ---   --   ---xx   flac  0.5880  Track09.flac
+     3:02.26       32165996 B   ---   --   ---xx   flac  0.6108  Track10.flac
+     2:58.52       31521548 B   ---   --   ---xx   flac  0.6397  Track11.flac
+     5:52.71       62259836 B   ---   --   ---xx   flac  0.6083  Track12.flac
+     3:57.37       41893868 B   ---   --   ---xx   flac  0.6067  Track13.flac
+     3:07.30       33057404 B   ---   --   ---xx   flac  0.6273  Track14.flac
+     1:33.36       16489724 B   -b-   --   ---xx   flac  0.6332  Track15.flac
+     1:28.54       15650444 B   -b-   --   ---xx   flac  0.6201  Track16.flac
+     6:21.48       67321340 B   ---   --   ---xx   flac  0.6139  Track17.flac
+     2:15.63       23962220 B   ---   --   ---xx   flac  0.5998  Track18.flac
+     1:54.03       20116700 B   ---   --   ---xx   flac  0.6167  Track19.flac
+     0:49.52        8765948 B   ---   --   ---xx   flac  0.6050  Track20.flac
+     1:47.22       18926588 B   ---   --   ---xx   flac  0.5919  Track21.flac
+     2:35.45       27447884 B   ---   --   ---xx   flac  0.6099  Track22.flac
+     3:38.03       38462300 B   ---   --   ---xx   flac  0.5960  Track23.flac
+     4:00.48       42448940 B   ---   --   ---xx   flac  0.5864  Track24.flac
+     4:18.71       45678044 B   -b-   --   ---xx   flac  0.5770  Track25.flac
+    79:34.59      842273468 B                            0.6068  (25 files)
+=================== 
+=================== 
+=================== 

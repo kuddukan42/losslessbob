@@ -1,0 +1,12 @@
+Bob Dylan, 1/19/74, Hollywood, Florida, Hollywood Sportatorium, 2CDR
+
+LB-2665, (51min+56min), (Evening), from lk aud set; Low gen tape > CD > EAC > Flac,  background talking d1t2 1:xx; d2t1, d2t2, d2t4, d2t6; similar to previous reported "master" but without the popping flaws; the previous also has a slightly rougher sound; good sound [C+]
+
+begin of d1t1 missing, some light distortion on d1t10-12 making sound poor; d2t9 tape problems 3:xx; d1t10 d1t12 d1t13 cut early
+
+1. Most Likely You Go Your Way (And I'll Go Mine), 2. Lay Lady Lay, 3. Just Like Tom Thumb's Blues, 4. Rainy Day Women # 12 & 35, 5. It Ain't Me Babe, 6. Ballad Of A Thin Man, 7. Stage Fright (the Band), 8. The Night they Drove Old Dixie Down (the Band), 9. King Harvest (has surely come)(the Band), 10. When you Awake (the Band), 11. I shall be Released (the Band), 12. Up on Cripple Creek (the Band), 13. All Along The Watchtower, 14. Ballad Of Hollis Brown, 15. Knockin' On Heaven's Door, 
+
+< disk2 >, 16. The Times They Are A-Changin', (solo), 17. Don't Think Twice, It's All Right, (solo), 18. Gates Of Eden - (solo), 19. Just Like A Woman, (solo), 20. It's Alright Ma (I'm Only Bleeding), (solo), 21. Rag Mama Rag (the Band), 22. This Wheel's on Fire (the Band), 23. The Shape I'm in (the Band), 24. The Weight (the Band), 25. Forever Young, 26. Something There Is About You, 27. Like A Rolling Stone, 28. Most Likely You Go Your Way (And I'll Go Mine)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

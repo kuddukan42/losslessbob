@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-08-31.flacf 
+=================== 
+=================== 
+=================== 
+3a9985c9646df2e8990406f778f89b2c  artwork\Clarkston_310893.jpg
+5aae3d232a72491b4daca2ddf18b09ef  artwork\DylanClarkston93_B.jpg
+b8cedb4d4b6fc59950f7cb0575139596  artwork\DylanClarkston93_F.jpg
+fd8bafbfffe556c17763cce6094f05a5  bd1993-08-31-clarkston.monicasdude-info.txt
+ab6c9c6505a1739a9f205ee799d9ee62  bd1993-08-31.d1t04.sa_fa.JPG
+3112ccdbc7e3a15ce4e96b46e0d46abf  bd1993-08-31.d2t05.sa_fa.JPG
+f40789e51cdfa388db4a0d1bfb487e9b  bd1993-08-31.info.txt
+69da6123115de9859d0bb283833203b2  d1\bd1993-08-31.d1.flac.md5
+8033260f9d79e0b71d7f322b64ac0f94  d1\bd1993-08-31.d1.LOG
+752cdda04ceddf4220744f7c019f66ae  d1\bd1993-08-31.d1.wav.md5
+ddb07dfe16f605d6300151ea6eb34d87  d1\bd1993-08-31.d1t01.flac
+d644138def451eba2edaafa9c9416591  d1\bd1993-08-31.d1t02.flac
+4dd81e8735a2fb4a42d6ed88c4d0c4ae  d1\bd1993-08-31.d1t03.flac
+db6b7800f27fc4445447050ed11518c5  d1\bd1993-08-31.d1t04.flac
+08bedc11945925e1f4e79057cb35857a  d1\bd1993-08-31.d1t05.flac
+918981a2a116228ad70dfc2dcb1518cd  d1\bd1993-08-31.d1t06.flac
+ad95eaf8df14b91f743e5c9afffbb387  d1\bd1993-08-31.d1t07.flac
+485fce6cebb2f9887efbb7599ba21ab4  d1\bd1993-08-31.d1t08.flac
+826ad8c7d5e29ee80890023df933248c  d1\bd1993-08-31.d1t09.flac
+0b81bc5e469195b8759131cab1f7c96a  d1\bd1993-08-31.d1t10.flac
+783efd3b3838fc0d564cfdc2a2ab4f40  d2\bd1993-08-31.d2.flac.md5
+269148d99dcdc567d0d06a74d714e784  d2\bd1993-08-31.d2.LOG
+d8eb00024925c51da51673a3b5d1a85c  d2\bd1993-08-31.d2.wav.md5
+ddd464763444c49d1271f5e397e8a4fd  d2\bd1993-08-31.d2t01.flac
+e357d671e21c33f84c9d571dd5b6992a  d2\bd1993-08-31.d2t02.flac
+798475696f66d74bcfb279e1ed7b6142  d2\bd1993-08-31.d2t03.flac
+34291b4a7f20001cd99e65648f248b2a  d2\bd1993-08-31.d2t04.flac
+79be894f96c5f9b5dde49637b1e40d02  d2\bd1993-08-31.d2t05.flac
+0b9748e3bfe4e4f94107ebb9ed795124  d2\bd1993-08-31.d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-08-31.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd1993-08-31.d1t01.flac:a9638c37ab98b1ba1cdd411cd47af43e
+bd1993-08-31.d1t02.flac:374824adce20fa4ae3acbc285f4488c2
+bd1993-08-31.d1t03.flac:9bac3fa2b65a0bfc99cb1a0d4ec80509
+bd1993-08-31.d1t04.flac:8fe809dbe8d4673cf8ed926101a59b0b
+bd1993-08-31.d1t05.flac:7ffaed2be1e3ab33f0d6f6434b40347e
+bd1993-08-31.d1t06.flac:449ed3e26e9dcfa11d6ea0121574773d
+bd1993-08-31.d1t07.flac:3d5be141ccb7b1c2b45bcdc45fb0d787
+bd1993-08-31.d1t08.flac:770292b9151c248682e673da023dfb0e
+bd1993-08-31.d1t09.flac:5e1afe13df27b67ecdc373a06001c462
+bd1993-08-31.d1t10.flac:4b63f88f3b86aa9d0316c72f24c30b10
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-08-31.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd1993-08-31.d2t01.flac:3c62252222401672c842408405cdca70
+bd1993-08-31.d2t02.flac:bdab0b92ffe4849d52c188d1c0bd38ef
+bd1993-08-31.d2t03.flac:6661376fe4ab52e6bdab935f500cf034
+bd1993-08-31.d2t04.flac:f98107f73e75c67c0d51fa7ab8395496
+bd1993-08-31.d2t05.flac:344a62f04ff7fde8bbcf91c1721240a6
+bd1993-08-31.d2t06.flac:784de2669f02b2706d723599b2bbba06
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-08-31.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:05.71       85721036 B   ---   --   ---xx   flac  0.5427  bd1993-08-31.d1t01.flac
+     7:40.19       81188732 B   ---   --   ---xx   flac  0.5615  bd1993-08-31.d1t02.flac
+     5:52.68       62252780 B   ---   --   ---xx   flac  0.5705  bd1993-08-31.d1t03.flac
+     6:54.05       73041404 B   ---   --   ---xx   flac  0.5182  bd1993-08-31.d1t04.flac
+     5:17.18       55961180 B   ---   --   ---xx   flac  0.5726  bd1993-08-31.d1t05.flac
+     6:00.61       63647516 B   ---   --   ---xx   flac  0.5107  bd1993-08-31.d1t06.flac
+     5:54.71       62612636 B   ---   --   ---xx   flac  0.4320  bd1993-08-31.d1t07.flac
+     7:09.53       75800300 B   ---   --   ---xx   flac  0.4804  bd1993-08-31.d1t08.flac
+     7:47.31       82451756 B   ---   --   ---xx   flac  0.4921  bd1993-08-31.d1t09.flac
+     5:43.31       60578156 B   ---   --   ---xx   flac  0.5388  bd1993-08-31.d1t10.flac
+    66:26.53      703255496 B                            0.5214  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-08-31.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.31       60401756 B   ---   --   ---xx   flac  0.5979  bd1993-08-31.d2t01.flac
+     8:55.59       94512812 B   ---   --   ---xx   flac  0.5642  bd1993-08-31.d2t02.flac
+     9:25.19       99710732 B   ---   --   ---xx   flac  0.5007  bd1993-08-31.d2t03.flac
+     6:20.60       67173164 B   ---   --   ---xx   flac  0.4559  bd1993-08-31.d2t04.flac
+     6:46.65       71771324 B   ---   --   ---xx   flac  0.5399  bd1993-08-31.d2t05.flac
+     8:25.54       89209052 B   ---   --   ---xx   flac  0.5426  bd1993-08-31.d2t06.flac
+    45:36.63      482778840 B                            0.5326  (6 files)
+=================== 
+=================== 
+=================== 

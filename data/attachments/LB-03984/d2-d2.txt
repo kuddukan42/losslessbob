@@ -1,0 +1,22 @@
+bd2000-05-16d2t01.flac:  successfully decoded to 'bd2000-05-16d2t01.wav'
+bd2000-05-16d2t02.flac:  successfully decoded to 'bd2000-05-16d2t02.wav'
+bd2000-05-16d2t03.flac:  successfully decoded to 'bd2000-05-16d2t03.wav'
+bd2000-05-16d2t04.flac:  successfully decoded to 'bd2000-05-16d2t04.wav'
+bd2000-05-16d2t05.flac:  successfully decoded to 'bd2000-05-16d2t05.wav'
+bd2000-05-16d2t06.flac:  successfully decoded to 'bd2000-05-16d2t06.wav'
+bd2000-05-16d2t07.flac:  successfully decoded to 'bd2000-05-16d2t07.wav'
+bd2000-05-16d2t08.flac:  successfully decoded to 'bd2000-05-16d2t08.wav'
+
+No errors occured.
+
+
+bd2000-05-16d2t01.wav:  track looks like MPEG with probability 95%
+bd2000-05-16d2t02.wav:  track looks like MPEG with probability 95%
+bd2000-05-16d2t03.wav:  track looks like MPEG with probability 95%
+bd2000-05-16d2t04.wav:  track looks like MPEG with probability 95%
+bd2000-05-16d2t05.wav:  track looks like MPEG with probability 95%
+bd2000-05-16d2t06.wav:  source of track can not be qualified
+bd2000-05-16d2t07.wav:  source of track can not be qualified
+bd2000-05-16d2t08.wav:  track looks like MPEG with probability 95%
+
+No errors occured.

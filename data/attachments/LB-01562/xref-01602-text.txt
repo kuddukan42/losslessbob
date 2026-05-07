@@ -1,0 +1,127 @@
+===================
+===================
+===================
+=== Bob Dylan - 1992-04-05 Melbourne (JLT - shn) info.txt
+===================
+===================
+===================
+Bob Dylan - 1992-04-05 Melbourne (JLT - shn)
+
+JLT/LK TAPES
+COMPLETE SET
+I'm sharing some concerts from the 1992 Australian Tour that I have received from a friend. He received them straight from Les Kokay, who has agreed to openly publish them. The only information that came to me was:
+
+"These files are exactly as I received them, no changes made in any form.
+Thanks to the taper, to LK for making them available, and to my friend Marcos for sharing them with me."
+
+I've added the info file and a new .md5
+Setlist below from the Olof Bjorner Page: http://bjorner.com/still.htm
+
+Palais Theatre Melbourne, Victoria, Australia 
+5 April 1992 
+
+1. All Along The Watchtower 
+2. What Good Am I? 
+3. I Don't Believe You (She Acts Like We Never Have Met) 
+4. Just Like A Woman 
+5. Tangled Up In Blue 
+6. It Takes A Lot To Laugh, It Takes A Train To Cry 
+7. Maggie's Farm 
+8. Love Minus Zero/No Limit 
+9. Little Moses (Bert A. Williams/Earle C. Jones) 
+10. Female Rambling Sailor (trad.) 
+11. Desolation Row 
+12. Cat's In The Well 
+13. Idiot Wind 
+14. The Times They Are A-Changin' 
+15. Highway 61 Revisited 
+16. Absolutely Sweet Marie 
+17. Rainy Day Women # 12 & 35 
+18. Blowin' In The Wind 
+
+Concert # 375 of The Never-Ending Tour. Concert # 11 of the 1992 Tour Of Australia. 1992 concert # 11. Concert # 11 with the 6th Never-Ending Tour band: 
+Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums). 
+8, 9, 18 Bob Dylan (acoustic guitar & vocal). 
+10 Bob Dylan (acoustic guitar & vocal) & Tony Garnier (upright bass). 
+11, 14 acoustic with the band. 
+2, 4, 5, 8, 14, 18 Bob Dylan harmonica. 
+5, 14 Bucky Baxter electric mandolin. 
+
+Note. 
+There is strong evidence that Bob Dylan almost started crying during the last two lines of the "Einstein verse" in Desolation Row. Members in the front row in the audience report that they saw tears pouring out of his eyes and that he stepped back and spoke briefly with Jackson and Garnier and then retreated to the back of the stage while the band went into a lengthy instrumental. He then came back and finished the song. Desolation Row was not played until April 14, when the same thing happened again! 
+
+BobTalk: 
+Thank you! That was a recent song [sic], here's one of my older. (after Idiot Wind). 
+
+5 new songs (27%) compared to previous concert. 2 new songs for this tour. 
+Stereo audience recording 95 minutes. Session info updated 18 April 1993.
+
+Thanks to everybody involved!!
+
+
+1.md5
+7c0dede98f55940f708d8b337e5771a1 *1 All Along The Watchtower.shn
+6ed9e3ff0f6013457b3a4da3176dbcd5 *2 What Good Am I.shn
+949aa3898902fca5dc8215caa6953328 *3 I Don't Believe You.shn
+ef1f492412db11327514015e2895ff96 *4 Just Like A Woman.shn
+75164f4bdc6a686dd89196b5e430df10 *5 Tangled Up In Blue.shn
+e9e6471075ee19eb5e6c627f12c96306 *6 It Takes A Lot To Laugh It Takes A Train To Cry.shn
+bdb0db47d85c941e780dd02d7125c6b8 *7 Maggie's Farm.shn
+57f0e94b4db5b7fb00291ea5e7229e96 *8 Love Minus Zero - No Limit.shn
+ffb5546412cac60a2a2ff94f93a70a6a *9 Little Moses.shn
+
+2.md5
+45af0b710cc9baff28d45add2dc9741a *1 Female Rambling Sailor.shn
+1b0d40261c78c74e9af0bfde8c9796a7 *2 Desolation Row.shn
+0e8ce61f70c24f15f020d9f1926a9377 *3 Cat's In The Well.shn
+442027bffe1da0a29e6117bdcbf315ba *4 Idiot Wind.shn
+be5e50c7cf5ccb824c8f0aaaee320b13 *5 The Times They Are A-Changin'.shn
+fbb3a9b34e26d980baac680302ff2d59 *6 Highway 61 Revisited.shn
+03600b74eb82633f38cc881f66b9289d *7 Absolutely Sweet Marie.shn
+f5a195adf04b9dda9f65367eade992be *8 Rainy Day Women # 12 & 35.shn
+cc2aa3a103201454916b4e26b788499e *9 Blowin' In The Wind.shn
+
+
+===================
+===================
+===================
+=== Bob Dylan - 1992-04-05 Melbourne (JLT - shn) info.txt.md5
+===================
+===================
+===================
+36f61a144fd0ffe713b24f644ee437d9 *Bob Dylan - 1992-04-05 Melbourne (JLT - shn) info.txt
+===================
+===================
+===================
+=== 1.md5
+===================
+===================
+===================
+7c0dede98f55940f708d8b337e5771a1 *1 All Along The Watchtower.shn
+6ed9e3ff0f6013457b3a4da3176dbcd5 *2 What Good Am I.shn
+949aa3898902fca5dc8215caa6953328 *3 I Don't Believe You.shn
+ef1f492412db11327514015e2895ff96 *4 Just Like A Woman.shn
+75164f4bdc6a686dd89196b5e430df10 *5 Tangled Up In Blue.shn
+e9e6471075ee19eb5e6c627f12c96306 *6 It Takes A Lot To Laugh It Takes A Train To Cry.shn
+bdb0db47d85c941e780dd02d7125c6b8 *7 Maggie's Farm.shn
+57f0e94b4db5b7fb00291ea5e7229e96 *8 Love Minus Zero - No Limit.shn
+ffb5546412cac60a2a2ff94f93a70a6a *9 Little Moses.shn
+===================
+===================
+===================
+=== 2.md5
+===================
+===================
+===================
+45af0b710cc9baff28d45add2dc9741a *1 Female Rambling Sailor.shn
+1b0d40261c78c74e9af0bfde8c9796a7 *2 Desolation Row.shn
+0e8ce61f70c24f15f020d9f1926a9377 *3 Cat's In The Well.shn
+442027bffe1da0a29e6117bdcbf315ba *4 Idiot Wind.shn
+be5e50c7cf5ccb824c8f0aaaee320b13 *5 The Times They Are A-Changin'.shn
+fbb3a9b34e26d980baac680302ff2d59 *6 Highway 61 Revisited.shn
+03600b74eb82633f38cc881f66b9289d *7 Absolutely Sweet Marie.shn
+f5a195adf04b9dda9f65367eade992be *8 Rainy Day Women # 12 & 35.shn
+cc2aa3a103201454916b4e26b788499e *9 Blowin' In The Wind.shn
+===================
+===================
+===================

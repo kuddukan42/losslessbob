@@ -1,0 +1,37 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd70-12-scruggs.flacf 
+=================== 
+=================== 
+=================== 
+78c044a57404acb9b35949634447a285  1-East Virginia Blues.flac
+2c28f57274439f5539891e5297396f0d  2-Nashville Skyline Rag.flac
+ea5559adc97152dabf1c75f883132c07  3-Nashville Skyline Rag-rel ver.flac
+bbe93ca22576ca7d23b5abd6d35a70cd  bd70-12-scruggs-LB-3277.txt
+25ccb6fa4c30d76065ccf6ecea888a4b  December 1970.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd70-12-scruggs.flacf 
+=================== 
+=================== 
+=================== 
+1-East Virginia Blues.flac:5a302f916c3cd737d8d5c13a19905e81
+2-Nashville Skyline Rag.flac:0342d777370166d4f6d8cc447886f213
+3-Nashville Skyline Rag-rel ver.flac:51672be17f693fd4409d59ef268a58f5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd70-12-scruggs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:47.16       29496476 B   ---   --   ---xx   flac  0.2943  1-East Virginia Blues.flac
+     1:46.19       18743132 B   ---   --   ---xx   flac  0.2883  2-Nashville Skyline Rag.flac
+     1:51.44       19683932 B   ---   --   ---xx   flac  0.3293  3-Nashville Skyline Rag-rel ver.flac
+     6:25.04       67923540 B                            0.3028  (3 files)
+=================== 
+=================== 
+=================== 

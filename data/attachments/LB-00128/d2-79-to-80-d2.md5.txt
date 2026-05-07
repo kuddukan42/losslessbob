@@ -1,0 +1,3 @@
+b2a3f1792bba1c8bf5fb19e989a24cea *79 to 80 bits d2 t03.shn
+c6b399765ac3a426b5afe3ecb91c09da *79 to 80 bits d2 t02.shn
+035dcbee2b5ccc75c1c3427ccb40c9d6 *79 to 80 bits d2 t01.shn

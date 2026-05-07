@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-05-d.shnf 
+=================== 
+=================== 
+=================== 
+9923fa32914c70069b11118427d692a2  05-05-03 Disc 1- 1.shn
+84f822b6f74119a34d44236e8414e844  05-05-03 Disc 1- 2.shn
+cc98d99eb39c50530086941fd491cd33  05-05-03 Disc 1- 3.shn
+fecece78a5873bc345ff1517b394728c  05-05-03 Disc 1- 4.shn
+e5be55186349b8ce200652d39f1464e9  05-05-03 Disc 1- 5.shn
+474e45ed38bfca13e2436565f265c8a0  05-05-03 Disc 1- 6.shn
+5328aeede096d569c5848b24aec9b1a5  05-05-03 Disc 1- 7.shn
+9d9bd58ce6025402cac8c94646b8d2c6  05-05-03 Disc 2- 1.shn
+5cbf2a547cb7e05ad58b24b04390b3ac  05-05-03 Disc 2- 2.shn
+c1f3b9b21def72909a8cf5d3e831ba85  05-05-03 Disc 2- 3.shn
+6c3ca1b7488d1a3ab488d286c98c3b6b  05-05-03 Disc 2- 4.shn
+75c489b54d331d9c84f526547e38679f  05-05-03 Disc 2- 5.shn
+21df82eec653c9fec3740b0f1ab9c115  05-05-03 Disc 2- 6.shn
+c02848a63d8873f7936c977212d7bc37  05-05-03 Disc 2- 7.shn
+e9e4b422be09b4ad3ccbdffc0fb0b6c4  05-05-03 Disc 2- 8.shn
+7703ec59476645d0094e58dc90874db2  05-05-03 Disc 2- 9.shn
+e991dfa9e051724ff9293e96d871406f  05-05-03.NFO
+c75e4f996da61eaef0a6c18c6c881130  bd-05-05-03.orlando.shn.ffp
+ef81da1899119ec395335443f7387486  bd-05-05-03.orlando.shn.md5
+d11a130e3891b915fcc84ccf1c227621  bd-05-05-03.orlando.shn.st5
+00e5ea72c95406ee90c498412ac62732  bd-05-05-03.orlando.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-05-05-d.shnf 
+=================== 
+=================== 
+=================== 
+e776c1bd9bc4be0a54135c855f3c70ce  [shntool]  05-05-03_disc_1-_1.wav
+5fd0522703f50d410c81fec611a7e42f  [shntool]  05-05-03_disc_1-_2.wav
+cd2284b463985a85a5115f6e558d6cf9  [shntool]  05-05-03_disc_1-_3.wav
+8fd0749c94b25f2f2f3d2ac020739bfc  [shntool]  05-05-03_disc_1-_4.wav
+0a840b4248864818de36460c0d7f7d9f  [shntool]  05-05-03_disc_1-_5.wav
+2e015494fa47fa8f17d4d147e3e01aa5  [shntool]  05-05-03_disc_1-_6.wav
+0f0143ede4b011563c59abeb029d63b5  [shntool]  05-05-03_disc_1-_7.wav
+e55ad65862bb4d6220328c9dcee0f418  [shntool]  05-05-03_disc_2-_1.wav
+22bb26958fe2c44c2da6f3030da341dd  [shntool]  05-05-03_disc_2-_2.wav
+676620c8f39e9865b138d90fb0168f5e  [shntool]  05-05-03_disc_2-_3.wav
+3f2b3875e4881754addaffccb1473030  [shntool]  05-05-03_disc_2-_4.wav
+58146c7bb3df56896e4bde0a7206e849  [shntool]  05-05-03_disc_2-_5.wav
+36bd4a90827b96062d932fe1ae12b0b9  [shntool]  05-05-03_disc_2-_6.wav
+d3eef2114af91f079d0a9fa0dc89ee33  [shntool]  05-05-03_disc_2-_7.wav
+eb736c66019508e6b79c4af7f4b5fb8e  [shntool]  05-05-03_disc_2-_8.wav
+81d202ea39ed8defe2d9136adc7eb300  [shntool]  05-05-03_disc_2-_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-05-d.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.47       45445388 B   ---   --   ---xx    shn  0.6566  05-05-03 Disc 1- 1.shn
+     5:05.45       53907884 B   ---   --   ---xx    shn  0.6015  05-05-03 Disc 1- 2.shn
+     6:53.34       72933212 B   ---   --   ---xx    shn  0.5947  05-05-03 Disc 1- 4.shn
+     7:38.07       80807708 B   ---   --   ---xx    shn  0.6292  05-05-03 Disc 1- 5.shn
+     6:33.47       69435788 B   ---   --   ---xx    shn  0.6487  05-05-03 Disc 1- 6.shn
+     5:33.36       58825916 B   ---   --   ---xx    shn  0.7279  05-05-03 Disc 1- 7.shn
+     8:48.16       93176876 B   ---   --   ---xx    shn  0.5060  05-05-03 Disc 2- 1.shn
+     7:36.08       80457260 B   ---   --   ---xx    shn  0.6206  05-05-03 Disc 2- 2.shn
+     6:35.53       69802700 B   ---   --   ---xx    shn  0.5972  05-05-03 Disc 2- 3.shn
+     4:47.05       50638604 B   ---   --   ---xx    shn  0.4758  05-05-03 Disc 2- 4.shn
+     6:54.54       73156652 B   ---   --   ---xx    shn  0.6557  05-05-03 Disc 2- 5.shn
+     6:18.02       66683948 B   ---   --   ---xx    shn  0.4477  05-05-03 Disc 2- 6.shn
+     6:50.33       72401660 B   ---   --   ---xx    shn  0.6514  05-05-03 Disc 2- 7.shn
+     7:18.64       77413772 B   ---   --   ---xx    shn  0.6326  05-05-03 Disc 2- 8.shn
+     5:28.30       57929804 B   ---   --   ---xx    shn  0.6558  05-05-03 Disc 2- 9.shn
+    96:39.31     1023017172 B                            0.6052  (15 files)
+=================== 
+=================== 
+=================== 

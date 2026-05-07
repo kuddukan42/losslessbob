@@ -1,0 +1,20 @@
+; Using hkSFV on 06.14.2005 at 14:55:10
+; http://www.big-o-software.com
+;
+;/----
+;     11854792 13:20.06 2005-06-14 Bob Dylan - 1985-06 - Rockline Interview 01.flac
+;     32682164 13:20.10 2005-06-14 Bob Dylan - 1985-06 - Rockline Interview 02.flac
+;     55818542 13:20.19 2005-06-14 Bob Dylan - 1985-06 - Rockline Interview 03.flac
+;     53778244 13:20.25 2005-06-14 Bob Dylan - 1985-06 - Rockline Interview 04.flac
+;     37314692 13:20.29 2005-06-14 Bob Dylan - 1985-06 - Rockline Interview 05.flac
+;      4202478 13:20.30 2005-06-14 Bob Dylan - 1985-06 - Rockline Interview 06.flac
+;     18466338 13:20.32 2005-06-14 Bob Dylan - 1985-06 - Rockline Interview 07.flac
+;\----
+;
+c76882c0c4005dd67ccdb4ec19930a98 *Bob Dylan - 1985-06 - Rockline Interview 01.flac
+997edcecf0be14ec980304ecef5aac6e *Bob Dylan - 1985-06 - Rockline Interview 02.flac
+235af3cf077be0ea718cf63c9e191dd8 *Bob Dylan - 1985-06 - Rockline Interview 03.flac
+cdbacf07feac8f1f7b35ac294de36408 *Bob Dylan - 1985-06 - Rockline Interview 04.flac
+afe211794d2237509e9b9ce1f85f7ae1 *Bob Dylan - 1985-06 - Rockline Interview 05.flac
+a059d6fe39787b8dab7d7b4b712ac648 *Bob Dylan - 1985-06 - Rockline Interview 06.flac
+0fdbe56e90cd74be65668346fbab8349 *Bob Dylan - 1985-06 - Rockline Interview 07.flac

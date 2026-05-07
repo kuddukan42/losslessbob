@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-08-14-aud 
+=================== 
+=================== 
+=================== 
+bee29d0c5a7cc7b07fc681e896ca5742  bd 91 08 14 aud d1t01.shn
+905904f11153b801aafaaf2cabde56ce  bd 91 08 14 aud d1t02.shn
+f811a59a7c10693ab1bdde153ee4f8bb  bd 91 08 14 aud d1t03.shn
+9fd29426e69ed5578ff37550b366b758  bd 91 08 14 aud d1t04.shn
+0818965ed6d6bd10f7d6c73d31792ea0  bd 91 08 14 aud d1t05.shn
+b5dc6b2dbc7ef4f9902f1ee5206c8052  bd 91 08 14 aud d1t06.shn
+8027d79d37f3fcbc111f3ca1f4a6544b  bd 91 08 14 aud d1t07.shn
+618dbd77436d4c577860807a6208cdc2  bd 91 08 14 aud d1t08.shn
+9a8f09b8fb957ea6b4af69d88180041b  bd 91 08 14 aud d1t09.shn
+4836861fd480c8fcdcc46cc3f6c67f49  bd 91 08 14 aud d2t01.shn
+39b4866cfd7ee83b6bd8c47d713cf232  bd 91 08 14 aud d2t02.shn
+2e67b5ceb22d67205e7e43073fb41b52  bd 91 08 14 aud d2t03.shn
+7da10b99835ea10999fa69e14144d34d  bd 91 08 14 aud d2t04.shn
+2d757c3eb9b78d1b6bc3cde485d30b9a  bd 91 08 14 aud d2t05.shn
+9b348febb40c0e61c4ff55104df0a7dc  bd 91 08 14 aud d2t06.shn
+7de0c5a58ddb967c0ad5ea7e0d6fcffa  bd91 08 14 aud.md5
+3bb452a24da52d5e909029beadcd9bce  bd91-08-14a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-08-14-aud 
+=================== 
+=================== 
+=================== 
+f719975c7fe7d88c681088166fbcf1e6  [shntool]  bd_91_08_14_aud_d1t01.wav
+38179a577c9b0cdafa47cff3b5aa9b7b  [shntool]  bd_91_08_14_aud_d1t02.wav
+bdd5f9803f2cc69187fc311178773256  [shntool]  bd_91_08_14_aud_d1t03.wav
+7a2cdd05a55fb5dcf1b0e857c1be203e  [shntool]  bd_91_08_14_aud_d1t04.wav
+ff3bf5e06c8a5adb9f6de968402c51ef  [shntool]  bd_91_08_14_aud_d1t05.wav
+2b66a52907b1c616ffbd2f011a9b6437  [shntool]  bd_91_08_14_aud_d1t06.wav
+392bb2f28dae1435658083943cd804be  [shntool]  bd_91_08_14_aud_d1t07.wav
+a504a81868d5d270046365831613d671  [shntool]  bd_91_08_14_aud_d1t08.wav
+4152fab59e21411b43c1d9e34c733aa8  [shntool]  bd_91_08_14_aud_d1t09.wav
+2bf00c0044f82b9b214181eb2ecf5942  [shntool]  bd_91_08_14_aud_d2t01.wav
+bc333e41096f7d3ff15c5c7fea148998  [shntool]  bd_91_08_14_aud_d2t02.wav
+c5dfd07cc6ef270cb894e71d808344d3  [shntool]  bd_91_08_14_aud_d2t03.wav
+5383ddec7bb0ac2c4f2cac8dac8fd823  [shntool]  bd_91_08_14_aud_d2t04.wav
+9f1e84d131c016611b37726aa0a9b331  [shntool]  bd_91_08_14_aud_d2t05.wav
+1985ed6aa37d70322a1e8e1cb6a2b9f9  [shntool]  bd_91_08_14_aud_d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-08-14-aud 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:39.53       70508300 B   ---   --   ---xx    shn  0.6346  bd 91 08 14 aud d1t01.shn
+     4:43.46       50029436 B   ---   --   ---xx    shn  0.6005  bd 91 08 14 aud d1t02.shn
+     4:15.69       45144332 B   ---   --   ---xx    shn  0.5948  bd 91 08 14 aud d1t03.shn
+     5:50.18       61782380 B   ---   --   ---xx    shn  0.5633  bd 91 08 14 aud d1t04.shn
+     3:40.23       38862140 B   ---   --   ---xx    shn  0.5755  bd 91 08 14 aud d1t05.shn
+     5:11.24       54916892 B   ---   --   ---xx    shn  0.5700  bd 91 08 14 aud d1t06.shn
+     5:06.59       54117212 B   ---   --   ---xx    shn  0.5440  bd 91 08 14 aud d1t07.shn
+     5:08.44       54434732 B   ---   --   ---xx    shn  0.5087  bd 91 08 14 aud d1t08.shn
+     4:11.19       44321132 B   ---   --   ---xx    shn  0.5030  bd 91 08 14 aud d1t09.shn
+     4:59.69       52905932 B   ---   --   ---xx    shn  0.3542  bd 91 08 14 aud d2t01.shn
+     6:43.22       71140988 B   ---   --   ---xx    shn  0.3380  bd 91 08 14 aud d2t02.shn
+     6:06.69       64724732 B   ---   --   ---xx    shn  0.3295  bd 91 08 14 aud d2t03.shn
+     3:41.37       39071468 B   ---   --   ---xx    shn  0.3367  bd 91 08 14 aud d2t04.shn
+     5:19.11       56297516 B   ---   --   ---xx    shn  0.5833  bd 91 08 14 aud d2t05.shn
+     5:24.27       57217148 B   ---   --   ---xx    shn  0.5980  bd 91 08 14 aud d2t06.shn
+    77:02.65      815474340 B                            0.5075  (15 files)
+=================== 
+=================== 
+=================== 

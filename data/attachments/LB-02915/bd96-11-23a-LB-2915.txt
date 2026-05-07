@@ -1,0 +1,10 @@
+Bob Dylan, 11/23/96, Akron,OH, EJ Thomas Hall, University of Akron, 2CDR
+
+LB-2915, (69min+34min), version "a", Source:AUD>D>C>CDR>EAC>CDWav>FLAC, Transfer:Unknown mics>D>Sony ES cass. deck>Tascam CDRW4U>EAC(secure mode)>FLAC(level 7 w/SB aligned), CE-P 2 was used to smooth out tape flips, mkwACT was used to make MD5's for wav and flac files; bittorrent download 07/05; different recording than previous; in comparisom this one has more bass but is a little distorted while the previous is tinny in comparisom but a little better; very good to excellent sound [B+]
+
+drop d1t7 2:48
+
+Disc 1:___68:05___, 1)Crash on the Levee(Down in the Flood), 2)I Want You, 3)All Along the Watchtower, 4)Simple Twist of Fate, 5)Watching the River Flow, 6)Silvio, 7)Mr. Tambourine Man, 8)Masters of War, 9)One Too Many Mornings, 10)God Knows, 11)Born in Time, Disc 2:___33:30___, 1)Tuning, 2)Highway 61 Revisited *, 3)E1:Like a Rolling Stone, 4)E2:It Ain't Me Babe, 5)E3:Rainy Day Women #12 and 35 *, *with Kenny Wayne Sheppard on guitar
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

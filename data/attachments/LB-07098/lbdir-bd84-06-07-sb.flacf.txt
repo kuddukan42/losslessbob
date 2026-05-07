@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-07-sb.flacf 
+=================== 
+=================== 
+=================== 
+f332d128683d69acd0139cb51239353b  Butcherart.doc
+fd17f929bb9a5a90cec6015bdd0c2f53  June 7, 1984.txt
+515a26710599141180ea9992d7b6df96  Southside ButchersDVDs.xls
+cfba1d28e8392909e5629fba87f40d8c  SSB Still Walking Towards The Sun (1984-06-07 Brussels, Belgium).md5
+bc3e617fde1b430db1bebb5e9abf59ad  Still Walking Towards The Sun [CD1]\1984-06-07_101.flac
+ee9b3190fd16a36c3d9ce7b25cf46352  Still Walking Towards The Sun [CD1]\1984-06-07_102.flac
+b8a38e5f12a12be5a7185620063842c1  Still Walking Towards The Sun [CD1]\1984-06-07_103.flac
+dd5bedf672a8e19b64a669b1b0896ea2  Still Walking Towards The Sun [CD1]\1984-06-07_104.flac
+3e12809306a478e5328cc247cecd88ab  Still Walking Towards The Sun [CD1]\1984-06-07_105.flac
+76ed70dd870943790b422df2ea6f049d  Still Walking Towards The Sun [CD1]\1984-06-07_106.flac
+0d235eabbcb6153e08abbebba4f2f1e5  Still Walking Towards The Sun [CD1]\1984-06-07_107.flac
+630f5c267df2c4c12e39d09841116750  Still Walking Towards The Sun [CD1]\1984-06-07_108.flac
+98b6dbc1c46c3824cb919d04b12fb41c  Still Walking Towards The Sun [CD1]\1984-06-07_109.flac
+9f37fbcd6b03fc1ab7e196eadff3853d  Still Walking Towards The Sun [CD1]\1984-06-07_110.flac
+e36795e34e59e3ce4338b0dc8c6b66e0  Still Walking Towards The Sun [CD1]\1984-06-07_111.flac
+7d94ffb98d66d45cbd393ce8606df377  Still Walking Towards The Sun [CD1]\1984-06-07_112.flac
+849e3b2b4bb738617969d7b4a7c074f8  Still Walking Towards The Sun [CD1]\Still Walking Towards The Sun [CD1].LOG
+7746f5fa382d37ca4ee7763e02895fd5  Still Walking Towards The Sun [CD1]\Still Walking Towards The Sun [CD1].md5
+d074dfe10ad5f99baa354d2b8854d578  Still Walking Towards The Sun [CD2]\1984-06-07_201.flac
+fc746940f7d5d7c4bef491ab4fd47c9c  Still Walking Towards The Sun [CD2]\1984-06-07_202.flac
+57b8bb63df259e570d768e6bca5e486d  Still Walking Towards The Sun [CD2]\1984-06-07_203.flac
+ba9c2dbf3ae9e0230a6b6e8a7d254465  Still Walking Towards The Sun [CD2]\1984-06-07_204.flac
+38e2eccd429f8347ea6270140eb0cddb  Still Walking Towards The Sun [CD2]\1984-06-07_205.flac
+72a34ca553d4aea274a20f501d827073  Still Walking Towards The Sun [CD2]\1984-06-07_206.flac
+50ef72a30a0c09dfde46887d0d67fe4b  Still Walking Towards The Sun [CD2]\1984-06-07_207.flac
+ebfd5304a935cd811372a6c1159d3028  Still Walking Towards The Sun [CD2]\1984-06-07_208.flac
+cae59424cd20e5236e43b7b9b9170c4d  Still Walking Towards The Sun [CD2]\1984-06-07_209.flac
+39d9db543f0011cc1b30a24e6d46f89f  Still Walking Towards The Sun [CD2]\1984-06-07_210.flac
+d151406a56c5ccd7a1cbc933f49199af  Still Walking Towards The Sun [CD2]\Still Walking Towards The Sun [CD2].LOG
+341b81ec55f6750e7e2fa98c13323f5a  Still Walking Towards The Sun [CD2]\Still Walking Towards The Sun [CD2].md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-07-sb.flacf\Still Walking Towards The Sun [CD1] 
+=================== 
+=================== 
+=================== 
+1984-06-07_101.flac:03d44f7419bdc2fb4c3340897afea931
+1984-06-07_102.flac:f50cc65ca3c69fe92cc4fac674302717
+1984-06-07_103.flac:377039681adcb6a83af06d7cb047a8e9
+1984-06-07_104.flac:09a1db0e8745c9600081fa61533ec71c
+1984-06-07_105.flac:ae10c1ad335a7e9aef22fdb9c5aa49e9
+1984-06-07_106.flac:e57eac159f07027725bf8262f5abd59d
+1984-06-07_107.flac:9c1bc125520cefd6468e7c62632565c0
+1984-06-07_108.flac:481d7e68623dd284e1abb3725d755374
+1984-06-07_109.flac:d0d298f2dfbf25161dc18aa868870945
+1984-06-07_110.flac:cd1c7f0fc9b324edcfffdae2d02d0c35
+1984-06-07_111.flac:d1a7d88b107beeb9b64afb9550eb6744
+1984-06-07_112.flac:599834ecb1d5d17cb3d590639eb485bc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-07-sb.flacf\Still Walking Towards The Sun [CD2] 
+=================== 
+=================== 
+=================== 
+1984-06-07_201.flac:f6a7c64deaf223a82e854f3c78e45619
+1984-06-07_202.flac:35773d9f89fd378cc0d359e7ccddca6f
+1984-06-07_203.flac:238a7e0fe1758b0ea14d9f105054251d
+1984-06-07_204.flac:a79668735d2c24d314115642a803ae49
+1984-06-07_205.flac:a30c6303061694602a6a96ee4b4d95e3
+1984-06-07_206.flac:88d12aee7d43242735fc3ba2f5008e9c
+1984-06-07_207.flac:68104f0ec6c84a5bab4255621c71f226
+1984-06-07_208.flac:2672bba30152989ee6cd60ba08a419bb
+1984-06-07_209.flac:2093febdcf601f60091e74ebbdc69b91
+1984-06-07_210.flac:a19683250f8acb438bdac3dd9e8f6f85
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-07-sb.flacf\Still Walking Towards The Sun [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.67       55370828 B   ---   --   ---xx   flac  0.6435  1984-06-07_101.flac
+     6:22.73       67556540 B   ---   --   ---xx   flac  0.6413  1984-06-07_102.flac
+     7:04.68       74953580 B   ---   --   ---xx   flac  0.6461  1984-06-07_103.flac
+     6:20.56       67163756 B   ---   --   ---xx   flac  0.6361  1984-06-07_104.flac
+     5:25.39       57421772 B   ---   --   ---xx   flac  0.6310  1984-06-07_105.flac
+     7:07.44       75426332 B   ---   --   ---xx   flac  0.6277  1984-06-07_106.flac
+     4:13.44       44732732 B   ---   --   ---xx   flac  0.6301  1984-06-07_107.flac
+     5:59.28       63393500 B   ---   --   ---xx   flac  0.6269  1984-06-07_108.flac
+     5:59.39       63419372 B   ---   --   ---xx   flac  0.5887  1984-06-07_109.flac
+     6:31.17       69012428 B   ---   --   ---xx   flac  0.5958  1984-06-07_110.flac
+     6:12.42       65719628 B   ---   --   ---xx   flac  0.6084  1984-06-07_111.flac
+     6:22.27       67448348 B   ---   --   ---xx   flac  0.6271  1984-06-07_112.flac
+    72:54.19      771618816 B                            0.6251  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-07-sb.flacf\Still Walking Towards The Sun [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:32.64       69299372 B   ---   --   ---xx   flac  0.6342  1984-06-07_201.flac
+     4:39.00       49215644 B   ---   --   ---xx   flac  0.6279  1984-06-07_202.flac
+     5:09.21       54557036 B   ---   --   ---xx   flac  0.6338  1984-06-07_203.flac
+     5:45.02       60862748 B   ---   --   ---xx   flac  0.6187  1984-06-07_204.flac
+     7:02.67       74598428 B   ---   --   ---xx   flac  0.6513  1984-06-07_205.flac
+     7:36.57       80572508 B   ---   --   ---xx   flac  0.6137  1984-06-07_206.flac
+     3:21.44       35559932 B   ---   --   ---xx   flac  0.6003  1984-06-07_207.flac
+     4:17.35       45417164 B   ---   --   ---xx   flac  0.6327  1984-06-07_208.flac
+     6:37.19       70075532 B   ---   --   ---xx   flac  0.6671  1984-06-07_209.flac
+     5:38.39       59714972 B   ---   --   ---xx   flac  0.6327  1984-06-07_210.flac
+    56:40.48      599873336 B                            0.6330  (10 files)
+=================== 
+=================== 
+=================== 

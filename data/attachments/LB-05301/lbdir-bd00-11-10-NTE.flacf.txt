@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-11-10-NTE.flacf 
+=================== 
+=================== 
+=================== 
+b12f0438e675b5654ec6ee7f69ecc432  bd2000-11-10-Boston-d1\bd2000-11-10-Boston-d1.md5
+2543c52af50f6b93777f7c488a6e9a1b  bd2000-11-10-Boston-d1\Track01.flac
+54e2553d9f0aa4ebc0639da2ebe9a19d  bd2000-11-10-Boston-d1\Track02.flac
+ca92ed6decb0a86683868185aaaef38e  bd2000-11-10-Boston-d1\Track03.flac
+0410315a28e8c9da3cb275d4a0112496  bd2000-11-10-Boston-d1\Track04.flac
+cbbc2df8a60d08b9cc0fbc5f51133f16  bd2000-11-10-Boston-d1\Track05.flac
+41c9607ac1dfd5cadafe6b8167d27307  bd2000-11-10-Boston-d1\Track06.flac
+9a58364ae80364a546608f2bad72ae4d  bd2000-11-10-Boston-d1\Track07.flac
+0f49169d0cc11ce0540833f717bf8779  bd2000-11-10-Boston-d1\Track08.flac
+16fa83cd50155aab5131998acc16bfe5  bd2000-11-10-Boston-d1\Track09.flac
+9a382344b94091c524cac082c71c0cbc  bd2000-11-10-Boston-d1\Track10.flac
+2ed6610730a8bc23abc37f89f7bd1669  bd2000-11-10-Boston-d1\Track11.flac
+f9fd677a0f2ad58a0f0c653381daba99  bd2000-11-10-Boston-d1\Track12.flac
+3d4c54ced6574adcec1dafa0a18c5b70  bd2000-11-10-Boston-d2\bd2000-11-10-Boston-d2.md5
+f7a51e6da1cd4a52ba264b59035e1c45  bd2000-11-10-Boston-d2\Track01.flac
+660445878fe736d27ec174449a012626  bd2000-11-10-Boston-d2\Track02.flac
+bd9cf97680bea6e7fdc5d34446159c70  bd2000-11-10-Boston-d2\Track03.flac
+b9f98eb8bed5dd559ef7a9887a607117  bd2000-11-10-Boston-d2\Track04.flac
+06649add209a9dfa96be2f7fec5a5324  bd2000-11-10-Boston-d2\Track05.flac
+fd5a1734f8f7eea4fda9ced1285ca32f  bd2000-11-10-Boston-d2\Track06.flac
+1d9410df3924a2c0dbeae52044adeec5  bd2000-11-10-Boston-d2\Track07.flac
+0a4c62695414ebf73277ad036cb7dfcc  bd2000-11-10-Boston-NTE.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-10-NTE.flacf\bd2000-11-10-Boston-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:5705c1e5aad0cf1f9dca0ec2c8933502
+Track02.flac:791cedaadbfaec8c55c92fea4e5c5474
+Track03.flac:fe92f525d695f2f49fb09c0410ddef49
+Track04.flac:09ad7b2407e13202ade3dcb8bdbab8c0
+Track05.flac:e3e2e3b658bd58fa2ec8cb4b4ab7846d
+Track06.flac:4b3b42f145dfdec09745ee785435cf59
+Track07.flac:2b55b4137e0730a8a4b8a70d5d76b4a2
+Track08.flac:0f77d496c51b60b05139571c659043f0
+Track09.flac:c9ea7237e95802495cc9fb454fa8ef7a
+Track10.flac:05e46a2dd425d7563243234d1e82b34a
+Track11.flac:45d21d94915f3b5225f11343ee2002c6
+Track12.flac:40450c43d596b7aaeccda4fc24e18988
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-11-10-NTE.flacf\bd2000-11-10-Boston-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:6944a7385ce99321ecd8d782587950c9
+Track02.flac:76d7c69d4ad936a94071f0a1cdd656ab
+Track03.flac:696c1a321bdf3793b55949464f4a958c
+Track04.flac:fc7bb17c8ddb64e2d08a73b08c7551bb
+Track05.flac:a6c9f0353792d1ccbaed0f36196a4c5c
+Track06.flac:d84adbb6c9aa96fed6ff421e95f4f652
+Track07.flac:9eba9c2bb5d93e9c2b1cb0a374d34705
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-11-10-NTE.flacf\bd2000-11-10-Boston-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:22.34       35712812 B   ---   --   ---xx   flac  0.5667  Track01.flac
+     4:57.62       52536668 B   ---   --   ---xx   flac  0.5048  Track02.flac
+     7:59.56       84627356 B   ---   --   ---xx   flac  0.5068  Track03.flac
+     4:21.26       46101596 B   ---   --   ---xx   flac  0.4482  Track04.flac
+     7:46.36       82287116 B   ---   --   ---xx   flac  0.5663  Track05.flac
+     3:21.23       35510540 B   ---   --   ---xx   flac  0.4757  Track06.flac
+     3:10.00       33516044 B   ---   --   ---xx   flac  0.5425  Track07.flac
+     7:09.07       75692108 B   ---   --   ---xx   flac  0.4909  Track08.flac
+     7:04.29       74861852 B   ---   --   ---xx   flac  0.5545  Track09.flac
+     5:12.39       55128572 B   ---   --   ---xx   flac  0.4390  Track10.flac
+     6:53.63       73001420 B   ---   --   ---xx   flac  0.5432  Track11.flac
+     6:31.19       69017132 B   ---   --   ---xx   flac  0.5607  Track12.flac
+    67:50.19      717993216 B                            0.5198  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-11-10-NTE.flacf\bd2000-11-10-Boston-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:01.00       63680444 B   ---   --   ---xx   flac  0.5518  Track01.flac
+     7:32.09       79754012 B   ---   --   ---xx   flac  0.5453  Track02.flac
+     3:57.47       41917388 B   ---   --   ---xx   flac  0.4845  Track03.flac
+     4:40.12       49420268 B   ---   --   ---xx   flac  0.5615  Track04.flac
+     5:23.49       57092492 B   ---   --   ---xx   flac  0.5067  Track05.flac
+     5:17.48       56031740 B   ---   --   ---xx   flac  0.5642  Track06.flac
+     4:56.02       52219148 B   ---   --   ---xx   flac  0.5028  Track07.flac
+    37:48.17      400115492 B                            0.5336  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-17-GD.flacf 
+=================== 
+=================== 
+=================== 
+5692c67b5692df3e6589e36fca4e69e4  bd97-08-17-wantaugh-d1\bd97-08-17-wantaugh-d1.md5
+68f4eb2d80cb57a87fda1856e7b5ba07  bd97-08-17-wantaugh-d1\Track01.flac
+c128a21a67a1aebb4606f15de12e6318  bd97-08-17-wantaugh-d1\Track02.flac
+38dc90a19eac1733c5abc0c1495ef7a1  bd97-08-17-wantaugh-d1\Track03.flac
+a4603598f2d28194852e2398178076b1  bd97-08-17-wantaugh-d1\Track04.flac
+c6ade1deea6ba0672f8b7852d790ca24  bd97-08-17-wantaugh-d1\Track05.flac
+11c6f31b88dee83e18f4f93cbabaec24  bd97-08-17-wantaugh-d1\Track06.flac
+18cb5c42f9dc876434f41c5e504481fc  bd97-08-17-wantaugh-d1\Track07.flac
+b53dc2c14935978f45eebb56b4eeba17  bd97-08-17-wantaugh-d1\Track08.flac
+95fec8f7639038818e07143ee6948cd1  bd97-08-17-wantaugh-d2\bd97-08-17-wantaugh-d2.md5
+50c5e88735efa4d3da887c51161a8f1c  bd97-08-17-wantaugh-d2\Track01.flac
+60baadb664d2f9aba232a40c5d3980a5  bd97-08-17-wantaugh-d2\Track02.flac
+016ecfb06f6ce38601eef1535d7112c3  bd97-08-17-wantaugh-d2\Track03.flac
+58a9f01e551a3614b2bc96e86b553f99  bd97-08-17-wantaugh-d2\Track04.flac
+799622d7c5303367e730f4b4802413a2  bd97-08-17-wantaugh-d2\Track05.flac
+c8d15eb7f847c6ae3e05c593902c9098  bd97-08-17-wantaugh-d2\Track06.flac
+0874834930e08ee4a08fd944029ccc2b  bd97-09-17-Wantaugh-GD.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-17-GD.flacf\bd97-08-17-wantaugh-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:935f5807568c7cbd5816abf565d92911
+Track02.flac:fc2581a4494c8793524640f846b0776d
+Track03.flac:059974dc00a08b0cf61429544bf3c6b6
+Track04.flac:61e4300f6b72fd38902954ca6a7021c7
+Track05.flac:5aedc1613f25212d8c0841d2a80aef6a
+Track06.flac:0b2a4171fc4c3b68720a62f0257b3911
+Track07.flac:ce46d23fb5c16fd5efbf797ab6ca87da
+Track08.flac:ffe62e97eb4f0c5f43c886b08677affd
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-17-GD.flacf\bd97-08-17-wantaugh-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:7a66a23b8bab41da5eede62c22247f75
+Track02.flac:bcffe3d0277ced6af48dc2020f6fe02b
+Track03.flac:e94f521fb8588db2ca032c2450649b54
+Track04.flac:4a46ad55d6c1528d65c7e59c9254c292
+Track05.flac:fdf1e8a63a2eff6c027449ba7c4bc55d
+Track06.flac:ec839ec251d69d3947be48b327f1ffcd
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-08-17-GD.flacf\bd97-08-17-wantaugh-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:42.58       49881260 B   ---   --   ---xx   flac  0.5114  Track01.flac
+     5:04.66       53780876 B   ---   --   ---xx   flac  0.4389  Track02.flac
+     5:28.66       58014476 B   ---   --   ---xx   flac  0.4388  Track03.flac
+     5:40.65       60128924 B   ---   --   ---xx   flac  0.4105  Track04.flac
+     7:05.57       75104108 B   ---   --   ---xx   flac  0.4942  Track05.flac
+     8:07.16       85944476 B   ---   --   ---xx   flac  0.3938  Track06.flac
+     8:36.10       91045964 B   ---   --   ---xx   flac  0.4663  Track07.flac
+     5:22.16       56838476 B   ---   --   ---xx   flac  0.3581  Track08.flac
+    50:08.54      530738560 B                            0.4391  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd97-08-17-GD.flacf\bd97-08-17-wantaugh-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:25.10       67937564 B   ---   --   ---xx   flac  0.4613  Track01.flac
+     7:47.21       82428236 B   ---   --   ---xx   flac  0.4234  Track02.flac
+     8:56.08       94569260 B   ---   --   ---xx   flac  0.4454  Track03.flac
+    11:10.11      118213916 B   ---   --   ---xx   flac  0.3952  Track04.flac
+     7:20.69       77778332 B   ---   --   ---xx   flac  0.3878  Track05.flac
+     7:48.74       82729292 B   ---   --   ---xx   flac  0.4384  Track06.flac
+    49:28.43      523656600 B                            0.4230  (6 files)
+=================== 
+=================== 
+=================== 

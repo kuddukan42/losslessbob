@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-12-b.flacf 
+=================== 
+=================== 
+=================== 
+4f7ac152f0fabd607eb836d6089b3700  BD 1995-05-12 Las Vegas.txt
+0d2e8be7d7c5414843ad38b804041ce0  disc 1\12.5.95 Las Vegas.log
+98e3f6a814089feb2b6e6c1bf4c071e6  disc 1\Bob Dylan - 12.5.95 Las Vegas.m3u
+a33dee0776ce768822735f27cd4fc63f  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t01.flac
+5251b3d9c053cf5a36ec00bf5b23ec2f  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t02.flac
+33f866ce8fd3af98ebc309ac0e2054f6  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t03.flac
+e59e6fbe1df47099250e9b203fae6fd9  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t04.flac
+24c38fc1452faba2697db0e7fd9a6258  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t05.flac
+c3d5fab0d5449a5240d3affd6c7eb6c0  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t06.flac
+3da590aaa9b6cacd4d7a6fd3aab8d8f6  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t07.flac
+8a0ad3fd0b04cd0deee37df7f9a96453  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t08.flac
+8010f0dcb3540dfd44a367f4bdb6e75a  disc 1\Bob Dylan- 12.5.95 Las Vegas-d1-t09.flac
+849a7d6ca7fbecc87f5130384140dbf4  disc 2\12.5.95 Las Vegas.log
+dbba1de5aa9fcf517da921c0c69f0f98  disc 2\Bob Dylan - 12.5.95 Las Vegas.m3u
+427d34365e01cb156c4ef7bb527ef549  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t01.flac
+9f1674ad96b0c69f5e27d5ade1d355c6  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t02.flac
+774c143478edd68c2bb751c3539273d6  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t03.flac
+b66dcc23089bc04948d580bcafe52094  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t04.flac
+337753918567364ede1e4d1c1a4c0010  disc 2\Bob Dylan- 12.5.95 Las Vegas-d2-t05.flac
+23a09009959ba8793acf639cadf7f4cd  fingerprintD1.ffp
+1d0e5ea858e9d829e62e91f2db376a9a  fingerprintD2.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-12-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Bob Dylan- 12.5.95 Las Vegas-d1-t01.flac:8b70001b0cddc745dde931078a66d9b0
+Bob Dylan- 12.5.95 Las Vegas-d1-t02.flac:fc3c38e711d908a50232324ff9ce0adb
+Bob Dylan- 12.5.95 Las Vegas-d1-t03.flac:c02e5e97b023eeb2c80a0dbce99c4344
+Bob Dylan- 12.5.95 Las Vegas-d1-t04.flac:1225698373a1029ae61fa98e8c8db184
+Bob Dylan- 12.5.95 Las Vegas-d1-t05.flac:6c2e240da95d252ea76343c3b2d940a2
+Bob Dylan- 12.5.95 Las Vegas-d1-t06.flac:4e8cbbb9e0f8200760cd2b1bba5c8796
+Bob Dylan- 12.5.95 Las Vegas-d1-t07.flac:d5bbf207978ae7b66c8ab60b8f3ba666
+Bob Dylan- 12.5.95 Las Vegas-d1-t08.flac:b2158ad2879d1ed200af031d5799ad70
+Bob Dylan- 12.5.95 Las Vegas-d1-t09.flac:d9ba5035736ac8fe4aedd3d8bb0c9d27
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-05-12-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Bob Dylan- 12.5.95 Las Vegas-d2-t01.flac:a4f6342b3ebef03f9d37e8b7bc1efbe7
+Bob Dylan- 12.5.95 Las Vegas-d2-t02.flac:662518bed647c72cffad86212732bc16
+Bob Dylan- 12.5.95 Las Vegas-d2-t03.flac:746fa5ccdd89139cb1af61cd5690b73f
+Bob Dylan- 12.5.95 Las Vegas-d2-t04.flac:efe8080c555208c7ed0351f37059c663
+Bob Dylan- 12.5.95 Las Vegas-d2-t05.flac:5a45028520be95e731fd397301867093
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-12-b.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.49       54622892 B   ---   --   ---xx   flac  0.5921  Bob Dylan- 12.5.95 Las Vegas-d1-t01.flac
+     4:23.72       46562588 B   ---   --   ---xx   flac  0.5427  Bob Dylan- 12.5.95 Las Vegas-d1-t02.flac
+     5:13.64       55363772 B   ---   --   ---xx   flac  0.5946  Bob Dylan- 12.5.95 Las Vegas-d1-t03.flac
+     7:27.11       78876716 B   ---   --   ---xx   flac  0.5197  Bob Dylan- 12.5.95 Las Vegas-d1-t04.flac
+     8:10.05       86447804 B   ---   --   ---xx   flac  0.5890  Bob Dylan- 12.5.95 Las Vegas-d1-t05.flac
+     5:16.29       55810652 B   ---   --   ---xx   flac  0.4943  Bob Dylan- 12.5.95 Las Vegas-d1-t06.flac
+     6:52.36       72761516 B   ---   --   ---xx   flac  0.4400  Bob Dylan- 12.5.95 Las Vegas-d1-t07.flac
+     8:10.48       86548940 B   ---   --   ---xx   flac  0.4097  Bob Dylan- 12.5.95 Las Vegas-d1-t08.flac
+     6:55.01       73208396 B   ---   --   ---xx   flac  0.4342  Bob Dylan- 12.5.95 Las Vegas-d1-t09.flac
+    57:39.15      610203276 B                            0.5069  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-12-b.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:40.38       70649420 B   ---   --   ---xx   flac  0.6131  Bob Dylan- 12.5.95 Las Vegas-d2-t01.flac
+    10:26.52      110548748 B   ---   --   ---xx   flac  0.6019  Bob Dylan- 12.5.95 Las Vegas-d2-t02.flac
+     9:15.13       97932620 B   ---   --   ---xx   flac  0.5912  Bob Dylan- 12.5.95 Las Vegas-d2-t03.flac
+     7:09.43       75776780 B   ---   --   ---xx   flac  0.5381  Bob Dylan- 12.5.95 Las Vegas-d2-t04.flac
+     9:36.06      101620556 B   ---   --   ---xx   flac  0.4814  Bob Dylan- 12.5.95 Las Vegas-d2-t05.flac
+    43:08.02      456528124 B                            0.5639  (5 files)
+=================== 
+=================== 
+=================== 

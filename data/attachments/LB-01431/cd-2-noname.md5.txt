@@ -1,0 +1,8 @@
+519227a3aa61d20f005f50251b95f225 *Track 01.shn
+6a0e753182e279dfdf8897ac92f5d394 *Track 02.shn
+3002f7cdf38248130f0e7dbae9beddd0 *Track 03.shn
+30faadd7675606314e199bd6d2efcc13 *Track 04.shn
+3be5fec2ca5dba7ca4e29bdc2efc032c *Track 05.shn
+d4743f046760ff97f7e43bdfb1bf98a7 *Track 06.shn
+ab9994f6535645807696191d70662908 *Track 07.shn
+fad4d2a9dc36a8e156d5905ca3ecb52a *Track 08.shn

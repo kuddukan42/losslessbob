@@ -1,0 +1,31 @@
+Bob Dylan Live At The Adler Theatre, Davenport, Iowa 1996-11-16 DAUD master clone (mp3 sample included)
+
+Thanks to Dime Member TheDolphinSmile for the source DAT! A really nice show, with long, long versions of favorite tracks.
+
+CD1
+Intro-Crash On The Levee
+I Want You
+All Along The Watchtower
+Shelter From The Storm
+I'll Be Your Baby Tonight
+Silvio
+Tangled Up In Blue
+It's All Over Now, Baby Blue
+
+CD2
+Friend Of The Devil
+Cat's In The Well
+Never Gonna Be The Same Again
+Highway 61 Revisited
+Encore Applause
+Like A Rolling Stone
+Encore Applause
+One Too Many Mornings
+Encore Applause
+Rainy Day Women #12 & 35
+
+Lineage: D7 DAT w/Sonic Studio mics ->DAT clone ->Tascam DA-40 ->Echo Audio Layla 3G digital inputs 16 bit 44.1K->Sound Forge 6.0 ->track splitup ->Flac via Flac Frontend, level 6 Sectors aligned and verified
+
+Enjoy!
+
+A DoinkerTape

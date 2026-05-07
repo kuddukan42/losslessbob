@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-08-04-unwanted-man.flacf 
+=================== 
+=================== 
+=================== 
+4686acb35354f38b0091ecbd6763b618  bd-Hot Augusta Night-UMM.txt
+ac479707e66fb5eeef5ce1619f395668  bd02-08-04-unwanted-man-LB-3171.txt
+928503039f019dce634826f5267ee6ba  Hot Augusta Night d1\Bob Dylan - Track 01.flac
+fe66cf1c8c3213fe3d13f53ac751332a  Hot Augusta Night d1\Bob Dylan - Track 02.flac
+1a65d6006b47adb4c605698d8a6d13f2  Hot Augusta Night d1\Bob Dylan - Track 03.flac
+5441fa9c4345baaae0685cea68995eee  Hot Augusta Night d1\Bob Dylan - Track 04.flac
+83021c0b0f76410ebe81148dc0172d71  Hot Augusta Night d1\Bob Dylan - Track 05.flac
+f7dcd16fdc1e5f964f5053214414bd5b  Hot Augusta Night d1\Bob Dylan - Track 06.flac
+a2120dd48832efeb360b7492ba850190  Hot Augusta Night d1\Bob Dylan - Track 07.flac
+72e9fe469007eeaf022aaa550d541bdf  Hot Augusta Night d1\Bob Dylan - Track 08.flac
+9ad31e1d8a6221c14551009d05416338  Hot Augusta Night d1\Bob Dylan - Track 09.flac
+f6e9306f0e8ae637fb2d6b2600389ca8  Hot Augusta Night d1\Bob Dylan - Track 10.flac
+d1e2971c1dcc3618341a4a5b1c56f1e2  Hot Augusta Night d1\Bob Dylan - Track 11.flac
+dee2c5cb28051e010bb905d10e1f9122  Hot Augusta Night d1\Bob Dylan - Track 12.flac
+1e3fb0639e6c2f770c865896984d5515  Hot Augusta Night d1\Hot Augusta Night d1 fingerprints.txt
+14428747ce3809987936a3bcc6b6a871  Hot Augusta Night d2\Bob Dylan - Track 01.flac
+9fd664788737556686d2e7ffcdf6b13a  Hot Augusta Night d2\Bob Dylan - Track 02.flac
+09ab1028ac77cffc1a2f6d0aa773ac19  Hot Augusta Night d2\Bob Dylan - Track 03.flac
+4973c8d8390e79a239ef1fbb3f955775  Hot Augusta Night d2\Bob Dylan - Track 04.flac
+63bda73c062d801b387f05eac0f82311  Hot Augusta Night d2\Bob Dylan - Track 05.flac
+7752a48974ce38f314eb8932fa29cb11  Hot Augusta Night d2\Bob Dylan - Track 06.flac
+dd44cc23ccf357f05598dc99aaa6e69a  Hot Augusta Night d2\Bob Dylan - Track 07.flac
+bc02b092b7a07b2e94dd3d47b5a212d0  Hot Augusta Night d2\Hot Augusta Night d2 fingerprints.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-04-unwanted-man.flacf\Hot Augusta Night d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:bc24cb430bf3ba6b3485b78aba7aa54b
+Bob Dylan - Track 02.flac:a728c62279e65053628b3c46bc35c333
+Bob Dylan - Track 03.flac:a6606df1c245b26b63f45b7929cbc7c5
+Bob Dylan - Track 04.flac:662001d4cc25b6c9cf6860d80340486e
+Bob Dylan - Track 05.flac:9aad745ab508f08dd192dcc3373349c2
+Bob Dylan - Track 06.flac:86bcbfdb109a14a565c397910a3cc34b
+Bob Dylan - Track 07.flac:badb64c7a979cb2f966bd7a6f6407ca9
+Bob Dylan - Track 08.flac:00d7249bdd80453446d7c543b1a1bdfd
+Bob Dylan - Track 09.flac:7d398ebb32505d3b75a2b0f5801d6638
+Bob Dylan - Track 10.flac:cbf1f671df6e7d7171c7a70b731281de
+Bob Dylan - Track 11.flac:160489dfc7b5fd3956b1a186bef29ee9
+Bob Dylan - Track 12.flac:7f7a81be43f57547831c04af1dcd041f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-04-unwanted-man.flacf\Hot Augusta Night d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:202e9db6445d9c3b9ce30adb8b126c72
+Bob Dylan - Track 02.flac:00a34d9a7d52886f278b8284f0a44a81
+Bob Dylan - Track 03.flac:9a9f3dd686df44e46df91c2ac9c917e6
+Bob Dylan - Track 04.flac:e02b65e4f8aea9159959874db791c61c
+Bob Dylan - Track 05.flac:b85cab07805a9c7caf28843eaee3eb9a
+Bob Dylan - Track 06.flac:c9d73a5a8ae6856edf8c4e13b75a81ac
+Bob Dylan - Track 07.flac:d4b7118c49f2c03990dbecd0d41933b3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-04-unwanted-man.flacf\Hot Augusta Night d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.31       42056156 B   ---   --   ---xx   flac  0.6137  Bob Dylan - Track 01.flac
+     5:01.49       53211692 B   ---   --   ---xx   flac  0.6259  Bob Dylan - Track 02.flac
+     6:55.03       73213100 B   ---   --   ---xx   flac  0.6215  Bob Dylan - Track 03.flac
+     5:59.31       63400556 B   ---   --   ---xx   flac  0.6379  Bob Dylan - Track 04.flac
+     5:49.62       61709468 B   ---   --   ---xx   flac  0.6183  Bob Dylan - Track 05.flac
+     8:19.57       88157708 B   ---   --   ---xx   flac  0.5931  Bob Dylan - Track 06.flac
+     6:26.43       68191580 B   ---   --   ---xx   flac  0.5934  Bob Dylan - Track 07.flac
+     6:38.74       70381292 B   ---   --   ---xx   flac  0.6224  Bob Dylan - Track 08.flac
+     6:32.57       69282908 B   ---   --   ---xx   flac  0.6264  Bob Dylan - Track 09.flac
+     7:58.25       84378044 B   ---   --   ---xx   flac  0.6456  Bob Dylan - Track 10.flac
+     5:39.09       59820812 B   ---   --   ---xx   flac  0.5995  Bob Dylan - Track 11.flac
+     6:40.43       70661180 B   ---   --   ---xx   flac  0.6459  Bob Dylan - Track 12.flac
+    76:00.34      804464496 B                            0.6205  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-04-unwanted-man.flacf\Hot Augusta Night d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:25.72       68083388 B   ---   --   ---xx   flac  0.5754  Bob Dylan - Track 01.flac
+     6:23.15       67596524 B   ---   --   ---xx   flac  0.6128  Bob Dylan - Track 02.flac
+     8:37.46       91307036 B   ---   --   ---xx   flac  0.6359  Bob Dylan - Track 03.flac
+     7:53.47       83547788 B   ---   --   ---xx   flac  0.6229  Bob Dylan - Track 04.flac
+     7:10.37       75939068 B   ---   --   ---xx   flac  0.6388  Bob Dylan - Track 05.flac
+     6:20.13       67062620 B   ---   --   ---xx   flac  0.6150  Bob Dylan - Track 06.flac
+    12:38.65      133864124 B   ---   --   ---xx   flac  0.6339  Bob Dylan - Track 07.flac
+    55:29.70      587400548 B                            0.6219  (7 files)
+=================== 
+=================== 
+=================== 

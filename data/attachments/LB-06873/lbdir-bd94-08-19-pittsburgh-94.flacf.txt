@@ -1,0 +1,57 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-08-19-pittsburgh-94.flacf 
+=================== 
+=================== 
+=================== 
+1a0e8b73afc14174dd9c14c6ce530c45  bd94-08-19-pittsburgh-94-d1t01.flac
+a9af5e948167aaa24f37bc156ec3b467  bd94-08-19-pittsburgh-94-d1t02.flac
+827004628ef1eb1f020af331fa2fa2e8  bd94-08-19-pittsburgh-94-d1t03.flac
+076106d4d58c0086019bfa5b1efaad4e  bd94-08-19-pittsburgh-94-d1t04.flac
+2702cc0c8dcc4a06b2862cc518d51804  bd94-08-19-pittsburgh-94-d1t05.flac
+956004a530c60ddc1dade2f05f8cd964  bd94-08-19-pittsburgh-94-d1t06.flac
+934c19ac33d75de19f7cef7cd14bb229  bd94-08-19-pittsburgh-94-d1t07.flac
+5dffdb0e00c76203fa8a460fbeda5123  bd94-08-19-pittsburgh-94-d1t08.flac
+439c6e52b7b01578d8982ed049acd53e  bd94-08-19-pittsburgh-94-d1t09.flac
+6498472f61ab927e32ca6d40bd02a85e  bd94-08-19-pittsburgh-94-d1t10.flac
+7d5e121498fb0e6218716775ec35c910  bd94-08-19-pittsburgh-94.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-08-19-pittsburgh-94.flacf 
+=================== 
+=================== 
+=================== 
+bd94-08-19-pittsburgh-94-d1t01.flac:eb3c72a876acfdd1ac037390852330aa
+bd94-08-19-pittsburgh-94-d1t02.flac:ac4208b12802eb05870f4ef457a77be0
+bd94-08-19-pittsburgh-94-d1t03.flac:c6d5ce1b60d7fc9cfbd4cfe03c7688f3
+bd94-08-19-pittsburgh-94-d1t04.flac:7f20b49263a7bf765d9d4f1464b3b46a
+bd94-08-19-pittsburgh-94-d1t05.flac:269834d03da2b7c15fa7a490cb831ac6
+bd94-08-19-pittsburgh-94-d1t06.flac:59620cc4ee7bfed6665af04c9504cb85
+bd94-08-19-pittsburgh-94-d1t07.flac:55522a3bc835c536169f5d1f35667500
+bd94-08-19-pittsburgh-94-d1t08.flac:add3f5f9f5a18344488ec1527f6c4301
+bd94-08-19-pittsburgh-94-d1t09.flac:93ac9d9184d21e4ac84378a085ad5d3c
+bd94-08-19-pittsburgh-94-d1t10.flac:a546ad8dee8aeb7ea52d303293166f95
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-08-19-pittsburgh-94.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:32.00       79732844 B   ---   --   ---xx   flac  0.6534  bd94-08-19-pittsburgh-94-d1t01.flac
+     6:31.07       68988908 B   ---   --   ---xx   flac  0.6537  bd94-08-19-pittsburgh-94-d1t02.flac
+     5:45.25       60916844 B   ---   --   ---xx   flac  0.6880  bd94-08-19-pittsburgh-94-d1t03.flac
+     8:51.60       93809564 B   ---   --   ---xx   flac  0.6732  bd94-08-19-pittsburgh-94-d1t04.flac
+     7:24.33       78399260 B   ---   --   ---xx   flac  0.7216  bd94-08-19-pittsburgh-94-d1t05.flac
+     9:15.12       97930268 B   ---   --   ---xx   flac  0.6968  bd94-08-19-pittsburgh-94-d1t06.flac
+     7:33.15       79944524 B   ---   --   ---xx   flac  0.7034  bd94-08-19-pittsburgh-94-d1t07.flac
+     9:14.63       97873820 B   ---   --   ---xx   flac  0.6200  bd94-08-19-pittsburgh-94-d1t08.flac
+     7:52.20       83307884 B   ---   --   ---xx   flac  0.7149  bd94-08-19-pittsburgh-94-d1t09.flac
+     7:00.10       74111564 B   ---   --   ---xx   flac  0.6447  bd94-08-19-pittsburgh-94-d1t10.flac
+    77:00.20      815015480 B                            0.6765  (10 files)
+=================== 
+=================== 
+=================== 

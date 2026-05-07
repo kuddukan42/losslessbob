@@ -1,0 +1,8 @@
+c479ca2ce1fd3fdb01594037b68d1c0f *d1t1.shn
+3798c8c6c1c420f1c6937bd5dfd3fc10 *d1t2.shn
+9fcc40f1196afa2d09008a14e16ed4a7 *d1t3.shn
+d3dc00b1dfd09cac49def2177f7db293 *d1t4.shn
+a0a7a4118524d51cdb36001ccc79eab8 *d1t5.shn
+fb257dcc549d6285b739bfae3933941a *d1t6.shn
+9c1d716eae07ca3a631dd63ddb111d71 *d1t7.shn
+d4d4e59e4a6ac26b5f76dfc6379b3cf9 *d1t8.shn

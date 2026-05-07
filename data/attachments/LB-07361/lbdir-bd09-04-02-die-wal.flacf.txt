@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-02-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+f4926cd580852a7862123b0dd6f60eba  B.Dylan_Apr-2-09 ffp.txt
+cdaed926cc0874c04639f697c3d3dcc1  B.Dylan_Apr-2-09-flac-.md5
+176b622525a458c3f8b411cfc2526ba0  B.Dylan_Apr-2-09-wav-.md5
+9a572cec07f560aa114d18a4c2e98f18  B.Dylan_Apr-2-09.txt
+06ae24d6c378a68b77a5d36e195a5cb4  B.Dylan_Apr-2-09_d1t01.flac
+d8cfa3883a6ea5a8b6d2a036c1ccff5d  B.Dylan_Apr-2-09_d1t02.flac
+0ba88a0d6e2e0550a788ce19b66ef880  B.Dylan_Apr-2-09_d1t03.flac
+4182e2d00833cff1ef8605e48fc350d9  B.Dylan_Apr-2-09_d1t04.flac
+e65da83c9e430d1f33c5db82c23f496f  B.Dylan_Apr-2-09_d1t05.flac
+47a181b7d50439ae96ed870385a2856c  B.Dylan_Apr-2-09_d1t06.flac
+dd848d4c3094d7883b394e80d5b42227  B.Dylan_Apr-2-09_d1t07.flac
+e899fae2b8c53fe7990abacacc59a4b4  B.Dylan_Apr-2-09_d1t08.flac
+bc3586279f68c544b1d669f8934e1ca3  B.Dylan_Apr-2-09_d1t09.flac
+176d39ffc25b9aae37cff448505cd85f  B.Dylan_Apr-2-09_d1t10.flac
+ee2b44679ca601e6287e84c0ac81bf3d  B.Dylan_Apr-2-09_d1t11.flac
+cd97f7ab9747105b1dc08e54bf72f460  B.Dylan_Apr-2-09_d1t12.flac
+436041c70782e4616fd920d24664691a  B.Dylan_Apr-2-09_d2t01.flac
+ec66f3bb3c6b78f40a3c9b61ad2d57ca  B.Dylan_Apr-2-09_d2t02.flac
+8c5405524195d8e8b38521d78f35900e  B.Dylan_Apr-2-09_d2t03.flac
+1864a9000425b29e9e5c77c9811d224c  B.Dylan_Apr-2-09_d2t04.flac
+a6004fa36b00683f627841c4307807dc  B.Dylan_Apr-2-09_d2t05.flac
+18667cd37afa4c8cb306a5d1d75f882a  B.Dylan_Apr-2-09_d2t06.flac
+58c594275abc1f5544c9385bf74c39a0  B.Dylan_Apr-2-09_d2t07.flac
+51fdf7566698b5b82ff1759b5ac5d62a  B.Dylan_Apr-2-09_d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-02-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+B.Dylan_Apr-2-09_d1t01.flac:3413020e96d7a3eb1114bddd0d86a4c7
+B.Dylan_Apr-2-09_d1t02.flac:d5fb9d260b0aa73fd97168d63404ae69
+B.Dylan_Apr-2-09_d1t03.flac:e8ddca9f8a81ea34f4fde559c579b84c
+B.Dylan_Apr-2-09_d1t04.flac:825e971e04f75ee6a33aeb14eb8cdf95
+B.Dylan_Apr-2-09_d1t05.flac:7980a8c5ef18e019721e21c0aeb976b6
+B.Dylan_Apr-2-09_d1t06.flac:b891f9c8169f945961ec03756626e974
+B.Dylan_Apr-2-09_d1t07.flac:d26df83d3e9993d9bfda03404f9dfc8c
+B.Dylan_Apr-2-09_d1t08.flac:a6e7c31f8f9609379d79aaf3de442d58
+B.Dylan_Apr-2-09_d1t09.flac:7b7936918ffd339f8cae20147ef81856
+B.Dylan_Apr-2-09_d1t10.flac:3d50c1c19398624aaba7f9d3c3aee035
+B.Dylan_Apr-2-09_d1t11.flac:f41d404a4a49f5571631dcbaa549ef5b
+B.Dylan_Apr-2-09_d1t12.flac:2810dd0de803009a1e33b58ccf661d0e
+B.Dylan_Apr-2-09_d2t01.flac:93b2d81a4dd4e2eff36d5583b87aa593
+B.Dylan_Apr-2-09_d2t02.flac:7db62edac62d6eceae26d910974d4503
+B.Dylan_Apr-2-09_d2t03.flac:7c4a0fe5d4a85af7b7ce0cc560289b0c
+B.Dylan_Apr-2-09_d2t04.flac:635f5ed542ac5dd9c0124c8fec5a1b7f
+B.Dylan_Apr-2-09_d2t05.flac:0d1987b6c880345c7806b276212aebe4
+B.Dylan_Apr-2-09_d2t06.flac:47f3cf32df7d6f0b8c9bb6dedde58c23
+B.Dylan_Apr-2-09_d2t07.flac:a73975ed401c14064da73123ca609998
+B.Dylan_Apr-2-09_d2t08.flac:8c86c286193850099350fa5466164578
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-02-die-wal.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:50.72        8989388 B   ---   --   ---xx   flac  0.4634  B.Dylan_Apr-2-09_d1t01.flac
+     4:28.29       47343452 B   ---   --   ---xx   flac  0.5194  B.Dylan_Apr-2-09_d1t02.flac
+     4:14.63       44953820 B   ---   --   ---xx   flac  0.4868  B.Dylan_Apr-2-09_d1t03.flac
+     5:03.32       53524508 B   ---   --   ---xx   flac  0.4936  B.Dylan_Apr-2-09_d1t04.flac
+     4:58.10       52590764 B   ---   --   ---xx   flac  0.4817  B.Dylan_Apr-2-09_d1t05.flac
+     7:08.61       75642716 B   ---   --   ---xx   flac  0.4948  B.Dylan_Apr-2-09_d1t06.flac
+     6:01.71       63847436 B   ---   --   ---xx   flac  0.4015  B.Dylan_Apr-2-09_d1t07.flac
+     5:59.49       63442892 B   ---   --   ---xx   flac  0.4705  B.Dylan_Apr-2-09_d1t08.flac
+     5:47.25       61269644 B   ---   --   ---xx   flac  0.4029  B.Dylan_Apr-2-09_d1t09.flac
+     7:33.64       80059772 B   ---   --   ---xx   flac  0.5169  B.Dylan_Apr-2-09_d1t10.flac
+     6:42.66       71068076 B   ---   --   ---xx   flac  0.4655  B.Dylan_Apr-2-09_d1t11.flac
+     7:12.39       76296572 B   ---   --   ---xx   flac  0.5192  B.Dylan_Apr-2-09_d1t12.flac
+     8:36.54       91149452 B   ---   --   ---xx   flac  0.4429  B.Dylan_Apr-2-09_d2t01.flac
+     6:53.55       72982604 B   ---   --   ---xx   flac  0.5130  B.Dylan_Apr-2-09_d2t02.flac
+     6:43.04       71098652 B   ---   --   ---xx   flac  0.5136  B.Dylan_Apr-2-09_d2t03.flac
+     5:03.00       53449244 B   ---   --   ---xx   flac  0.5072  B.Dylan_Apr-2-09_d2t04.flac
+     5:11.52       54982748 B   ---   --   ---xx   flac  0.4998  B.Dylan_Apr-2-09_d2t05.flac
+     7:19.71       77606636 B   ---   --   ---xx   flac  0.4284  B.Dylan_Apr-2-09_d2t06.flac
+     1:03.06       11127356 B   ---   --   ---xx   flac  0.4986  B.Dylan_Apr-2-09_d2t07.flac
+     5:11.07       54875844 B   -b-   --   ---xx   flac  0.4812  B.Dylan_Apr-2-09_d2t08.flac
+   112:05.05     1186301576 B                            0.4789  (20 files)
+=================== 
+=================== 
+=================== 

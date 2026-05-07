@@ -1,0 +1,20 @@
+5c2091f1cc38e0bdd1ae42e4120b6b2f  Bob Dylan 1990-10-26 Tuscaloosa.txt
+c408b8bc3304ed028d8e3755db00f371  Disc 1\Track 01.flac
+01dd63ed49c3e499b50fb555418ba0d3  Disc 1\Track 02.flac
+319cc9e9245f82a09a2c284e30f68056  Disc 1\Track 03.flac
+68eb7c4859b820433df9975bda9ac62d  Disc 1\Track 04.flac
+5a84d262bb60a685043ba41fcb31aefd  Disc 1\Track 05.flac
+07181391139cebfba07e46f49dc0a912  Disc 1\Track 06.flac
+586bc546ed1c511917df651ab46bd84f  Disc 1\Track 07.flac
+3ca59493952be08fa06c3678bccb0d7c  Disc 1\Track 08.flac
+506576610098e1d3197f73e38cec9e5e  Disc 1\Track 09.flac
+d1609acfb7c2f06f5e9af172445bb185  Disc 1\Track 10.flac
+a485559ecdcb8881196b90ad523bb57f  Disc 1\Track 11.flac
+56129803fd7c7098049a0136e635b06a  Disc 2\Track 01.flac
+bf5fcc85e6b9e808187e0bb8e379f585  Disc 2\Track 02.flac
+43c54c2e1661b78315fa9286c0789cf7  Disc 2\Track 03.flac
+7dfeb60ec63901bd82b6b2cb036e952f  Disc 2\Track 04.flac
+7d2a8cbc9b99a0d4a790aecd0fad2e88  Disc 2\Track 05.flac
+2818b45215464524a5809c3d79d2e820  Disc 2\Track 06.flac
+54f0206222cdbdf79a261555d4030f9b  Disc 2\Track 07.flac
+d5ed727c4ad2f40eab018235a67f0dcc  fingerprint.ffp

@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-19-hg 
+=================== 
+=================== 
+=================== 
+342f8b8a93009d02ad46b956b5604a00  bd91-06-19-hg.txt
+c479ca2ce1fd3fdb01594037b68d1c0f  Disk 1\d1t1.shn
+3798c8c6c1c420f1c6937bd5dfd3fc10  Disk 1\d1t2.shn
+9fcc40f1196afa2d09008a14e16ed4a7  Disk 1\d1t3.shn
+d3dc00b1dfd09cac49def2177f7db293  Disk 1\d1t4.shn
+a0a7a4118524d51cdb36001ccc79eab8  Disk 1\d1t5.shn
+fb257dcc549d6285b739bfae3933941a  Disk 1\d1t6.shn
+9c1d716eae07ca3a631dd63ddb111d71  Disk 1\d1t7.shn
+d4d4e59e4a6ac26b5f76dfc6379b3cf9  Disk 1\d1t8.shn
+c95906fb2e74801189fc03246d933942  Disk 1\noname.md5
+18ddd55a1614e76b15de2611f4f1bd5f  Disk 2\d2t1.shn
+6d756dcb19223ada39686423b75a5814  Disk 2\d2t10.shn
+256ef932e55120a4c6781b3bada3790c  Disk 2\d2t2.shn
+62f1b0198085031e869bf4e6d11834d5  Disk 2\d2t3.shn
+52c49917e40444a16765279fbe3162d6  Disk 2\d2t4.shn
+1e267ab5fd8567f9942094c8cb153b6a  Disk 2\d2t5.shn
+530f46b8c15818ba0b73f16dae0d05ad  Disk 2\d2t6.shn
+bdf95cb8356a8121a10c8afae6a76de8  Disk 2\d2t7.shn
+bda616fc31043234f0a5d7e2fe05e378  Disk 2\d2t8.shn
+05f2089c2db1a348b5fdfe6fd90a297b  Disk 2\d2t9.shn
+12bb189079d88359921bcec11bea45d2  Disk 2\noname.md5
+3701a4688e8e6e7e3196fbe71f55fb70  offenbach91.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-06-19-hg\Disk 1 
+=================== 
+=================== 
+=================== 
+dcd1c6b7168ba23e478c458be0ab38be  [shntool]  d1t1.wav
+a53edea959ce5ea90836f9174ec20413  [shntool]  d1t2.wav
+e25a858d1215e66b96585264e61f00f0  [shntool]  d1t3.wav
+ab82486573d947ad5b4c7312fd139cdb  [shntool]  d1t4.wav
+a320ff88989e5912351571223392424c  [shntool]  d1t5.wav
+6fb85cd5e93dea7df7a6a194dab65408  [shntool]  d1t6.wav
+268c9330fe9bc2d4c74224d56e104831  [shntool]  d1t7.wav
+dac0d802f43759c737fe4ec137c8a5b7  [shntool]  d1t8.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-06-19-hg\Disk 2 
+=================== 
+=================== 
+=================== 
+fbf70fb14d3eeb3d41721ecfd1b1ebcd  [shntool]  d2t1.wav
+b1ba14a2d04dc05641d75a51f652f4b2  [shntool]  d2t2.wav
+3becb4da10c066631db8466df723d2d7  [shntool]  d2t3.wav
+f6135a6a4bf9f20fc94429417abcde85  [shntool]  d2t4.wav
+b56e7efb31d22514ed13d3d19e5f3d33  [shntool]  d2t5.wav
+2aff6ec1953353d77435424f77cde6e7  [shntool]  d2t6.wav
+d282a7ac6c6ddde2940e17592e27ef71  [shntool]  d2t7.wav
+bd3eea690ca629bc264bc2850f541196  [shntool]  d2t8.wav
+39c80a9c1fd89162272e12d231451c13  [shntool]  d2t9.wav
+46804537f2b9f9b370989d6de78abd4c  [shntool]  d2t10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-19-hg\Disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.43       59547980 B   ---   --   -----    wav  1.0000  d1t1.wav
+     4:26.43       47023580 B   ---   --   -----    wav  1.0000  d1t2.wav
+     5:28.72       58028588 B   ---   --   -----    wav  1.0000  d1t3.wav
+     4:58.69       52729532 B   ---   --   -----    wav  1.0000  d1t4.wav
+     8:16.00       87494444 B   ---   --   -----    wav  1.0000  d1t5.wav
+     3:14.47       34332188 B   ---   --   -----    wav  1.0000  d1t6.wav
+     5:53.71       62436236 B   ---   --   -----    wav  1.0000  d1t7.wav
+     5:48.31       61460156 B   ---   --   -----    wav  1.0000  d1t8.wav
+    43:45.01      463052704 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-19-hg\Disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.19       47496332 B   ---   --   -----    wav  1.0000  d2t1.wav
+     5:42.12       60357068 B   ---   --   -----    wav  1.0000  d2t10.wav
+     6:45.54       71569052 B   ---   --   -----    wav  1.0000  d2t2.wav
+     7:10.22       75903788 B   ---   --   -----    wav  1.0000  d2t3.wav
+     5:57.10       62998364 B   ---   --   -----    wav  1.0000  d2t4.wav
+     6:02.70       64021484 B   ---   --   -----    wav  1.0000  d2t5.wav
+     4:21.63       46188620 B   ---   --   -----    wav  1.0000  d2t6.wav
+     6:46.27       71681948 B   ---   --   -----    wav  1.0000  d2t7.wav
+     4:48.39       50894972 B   ---   --   -----    wav  1.0000  d2t8.wav
+     5:41.29       60220652 B   ---   --   -----    wav  1.0000  d2t9.wav
+    57:45.45      611332280 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 

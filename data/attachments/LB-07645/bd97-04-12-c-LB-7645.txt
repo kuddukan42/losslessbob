@@ -1,0 +1,10 @@
+Bob Dylan, 4/12/97, Waltham, Massachusetts, 2CDR
+
+LB-7645, (69min+41min), version "c"; Source: Version "B" (LB-3385) but without reported static on D-1, T-2, Taper & Equipment: unknown, Lineage: trade CDRs > wav (EAC) > FLAC (TLH) > HC, Sound Quality: very good to excellent, (Uploaded by mjs820 on June 16, 2009); bittorrent download 06/09; this is a close eac match on d1t1 to LB-3385; this does not have the big static on d1t2 on that one; (did not listen to all of this)
+
+drop end of d1t7, between cdrs, end of d2t3,
+
+Disc One (68:26), 101. Crash On The Levee (Down In The Flood), 102. Pretty Peggy-O, 103. All Along The Watchtower, 104. Just Like A Woman, 105. It Takes A Lot To Laugh, It Takes A Train To Cry, 106. Silvio, 107. Friend Of The Devil, 108. Masters Of War, 109. Don't Think Twice, It's All Right, 110. [audience], 111. Obviously Five Believers, Disc Two (41:01), 201. Shooting Star, 202. Leopard-Skin Pill-Box Hat, 203. Like A Rolling Stone, 204. My Back Pages, 205. [audience], 206. Rainy Day Women #12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-22-AT853.flacf 
+=================== 
+=================== 
+=================== 
+180d3cd1e9999966f3e8e7b6e698faf6  bd05-11-22-AT853-LB-3339.txt
+cbbd751efec1bc5f6e4d49c9c7c3f018  Dylan101.flac
+e1cc91d389437b364f76c9e6e3b062db  Dylan102.flac
+d510876a52341f23bb24871fbaf55f7c  Dylan103.flac
+ab15f512ffeb673cfd086c421f255551  Dylan104.flac
+54c186de98b75c5df5efda3a7ab78832  Dylan105.flac
+a7088343b59a703112e06f59b017e130  Dylan106.flac
+57f00e3dc45434d3607a6b93370b60fb  Dylan107.flac
+50a91d7cea157654ca03cf588f079db8  Dylan108.flac
+c1bf688dc3bf01e994447dd30aea8ba8  Dylan109.flac
+223ce2c3e20e6e15aeed39e7cdbe9a8c  Dylan110.flac
+2b7035f989cc874ad7df216659b5b9f4  Dylan201.flac
+43b4a5b936b82904a364906237a4e612  Dylan202.flac
+ef844eda5c7af9d242f9d38cef64aada  Dylan203.flac
+755b1a6796dc1506351418c7e5691df4  Dylan204.flac
+919eb6933e6e5441a0dfaea424a937f4  Dylan205.flac
+0f85709d7f856d1d1feff54842529d67  Dylan206.flac
+4638c27b652c9f2cb43667c68617a5cb  Dylan207.flac
+4bdf85bea0aaeed0bb86e7870607d9ac  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-22-AT853.flacf 
+=================== 
+=================== 
+=================== 
+Dylan101.flac:8945104e5b9c1de509a7394ff2806f88
+Dylan102.flac:53b4f1c0198fb20a81f65644ea04edcd
+Dylan103.flac:05f70f5df0238f61962f0a10cbf2c3c3
+Dylan104.flac:6138b966b8920e5f1a8d3153b554a20b
+Dylan105.flac:ca45c5a0143bf78bc9ac11d5e0cb906e
+Dylan106.flac:55e404ab8e23fe34740aab7b91f91316
+Dylan107.flac:5160f4c5b9740930208959f8c946245c
+Dylan108.flac:af110826e3ac467a10ef6c737b2f7fb3
+Dylan109.flac:f0376c89d59262b492125614e322b32f
+Dylan110.flac:7aead50044a21285003a629908c1de44
+Dylan201.flac:3dfc5802c871340ea548e418b4a19a1a
+Dylan202.flac:402f5cecd51d98f608284bc85c79b381
+Dylan203.flac:9ff1901b3f388d35d0b4f72cfa70148c
+Dylan204.flac:ee418cb0b5554ddd8af78378adb6dfeb
+Dylan205.flac:6261f7072c6d9ff2620246c761ea1eeb
+Dylan206.flac:5dfaa135d39a2fbbd456de0879f5944f
+Dylan207.flac:0dbada1b8fbf45071bd67c962f00cf07
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-22-AT853.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:15.54       13357052 B   ---   --   ---xx   flac  0.5622  Dylan101.flac
+     4:46.01       50452796 B   ---   --   ---xx   flac  0.6073  Dylan102.flac
+     4:48.64       50953772 B   ---   --   ---xx   flac  0.4905  Dylan103.flac
+     7:08.02       75503948 B   ---   --   ---xx   flac  0.6027  Dylan104.flac
+     6:18.18       66721580 B   ---   --   ---xx   flac  0.4925  Dylan105.flac
+     7:01.68       74424380 B   ---   --   ---xx   flac  0.5882  Dylan106.flac
+     5:47.09       61232012 B   ---   --   ---xx   flac  0.5805  Dylan107.flac
+     6:02.31       63929756 B   ---   --   ---xx   flac  0.4644  Dylan108.flac
+     5:57.35       63057164 B   ---   --   ---xx   flac  0.5767  Dylan109.flac
+     6:09.69       65253932 B   ---   --   ---xx   flac  0.4865  Dylan110.flac
+     8:10.26       86497196 B   ---   --   ---xx   flac  0.5759  Dylan201.flac
+     5:21.71       56791436 B   ---   --   ---xx   flac  0.5648  Dylan202.flac
+     8:09.37       86346668 B   ---   --   ---xx   flac  0.5926  Dylan203.flac
+     4:38.25       49098044 B   ---   --   ---xx   flac  0.4733  Dylan204.flac
+     8:59.55       95209004 B   ---   --   ---xx   flac  0.5621  Dylan205.flac
+     7:20.66       77771276 B   ---   --   ---xx   flac  0.5965  Dylan206.flac
+     5:37.52       59569148 B   ---   --   ---xx   flac  0.5769  Dylan207.flac
+   103:34.08     1096169164 B                            0.5558  (17 files)
+=================== 
+=================== 
+=================== 

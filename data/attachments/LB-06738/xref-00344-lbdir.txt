@@ -1,0 +1,121 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-06-border-beneath-the sum-e.flacf 
+=================== 
+=================== 
+=================== 
+56915d51fd7c8062708c1a8d0a021a29  Border Beneath The Sun.md5
+5510ad1c421043db5d6ebda376691f99  Border Beneath The Sun.txt
+c2ab3f4a069d25bc99039d48c739ce49  BORDER_BENEATH_T (E).txt
+28a754c09f23b4bea1673ef11bc5fc82  D101.shn
+ed1216f672c54322b5752a4e3ffefb61  D102.shn
+550141dcc0a3ae78b6ce3c96c1be1a10  D103.shn
+a7af1a7bce5b0c2dfb831821f85b02d6  D104.shn
+afeb0f9626d8629b400c1405453ebcb2  D105.shn
+c25aad29714fd89f969ef33c8f2c8c6e  D106.shn
+9677789e9e5cb91fe85dd6f5b1b9d1ec  D107.shn
+5eb6c1e21724aca9a910e7cdbcc219e2  D108.shn
+970904f353b4daa86f4bf789019d7c41  D109.shn
+5740b89bcdb88a1132724feddb8471b1  D110.shn
+0ea783f3e255e9fa2af6374d71e9f982  D111.shn
+f1c7c27ecd077035f4a2913a5177b822  D112.shn
+4d0f41967013de305ffc0f726c52c380  D113.shn
+308f31a2d8a8b570f286712a1a64fc64  D114.shn
+ef6209f1c7fea68637ce1acde79ac001  D115.shn
+64c7a5a21e7241e07d90ba62a6608d40  D116.shn
+6fdfc8d8fbc9c297d3d8c7a44492b0c3  D201.shn
+6531a8ed2ccd5a02eed2041741adf31a  D202.shn
+4cb52e6abff833411a4be0ac531f0f10  D203.shn
+11c94f3e89e25ac79c76d00f82fb8732  D204.shn
+d82c5dc67096fb2c07fa9258b46b39c5  D205.shn
+4ba5845f88d11de1f0e86c12d6f37e23  D206.shn
+4453e7d882dc89355132541f2952f024  D207.shn
+283b5596bcdfc29be4597bc3d3526f8f  D208.shn
+68b88fc4d31a691197b00f9750369fcf  D209.shn
+c5f2f153c104c690acbc93eea078cc1a  D210.shn
+40c6797224ebba48a4a3faabe5e126ed  D211.shn
+e68db8441486c0dbc1a3c144361ae5b4  D212.shn
+4a9af284ec1ebd190660b9791fafadf5  D213.shn
+06fa1624179a8f087fb665e1289c79ef  D214.shn
+5fed17c294c4819d609e3b8cef033069  DylanBorderBack.jpg
+daa85cb76024c8490fb52af6716476c5  DylanBorderFront.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-07-06-border-beneath-the sum-e.flacf 
+=================== 
+=================== 
+=================== 
+6565a7daf30f42b297af7be89a9af804  [shntool]  d101.wav
+c423ea0ac9e69dce9f4db2659bb0d3aa  [shntool]  d102.wav
+b441eb1c19495d628a1bbddaeb304f41  [shntool]  d103.wav
+b91967af9c3474a306abbb654cfb9be5  [shntool]  d104.wav
+fef356a6f3b994f71ee84c7fb53f01fe  [shntool]  d105.wav
+522d810b1360f726849210026314ee54  [shntool]  d106.wav
+9775678d0e36f487750ff675e968e7fd  [shntool]  d107.wav
+52ab90a40a28c8f5b3809a6599aae2d1  [shntool]  d108.wav
+7c168669412175f353763fd5ac796b3c  [shntool]  d109.wav
+1d14c62ce577b60ba0cd7ded9bb80d15  [shntool]  d110.wav
+5cdcaebad03f6aa47a2219d2175efa70  [shntool]  d111.wav
+12b8fa7af5da5784c46ec3e91f2d53df  [shntool]  d112.wav
+6a68a8910f86862c0c92d0c2bccd8d72  [shntool]  d113.wav
+d5ff5a5baacd56f9d2f4dcf95868bee7  [shntool]  d114.wav
+b5fc01186095de83e3750dd6fefe159c  [shntool]  d115.wav
+504e1ec7304bef5ff1cebf00ca23b812  [shntool]  d116.wav
+7c53164ec283cf6a39ee34cabc611cc8  [shntool]  d201.wav
+e5f6cc28dac76ea813081253488a20f3  [shntool]  d202.wav
+8931919a709b5ca962dc5c1a4dc373af  [shntool]  d203.wav
+f646b2c023475b08db112a786cfe6544  [shntool]  d204.wav
+a222928953098f84588a000174eef9e5  [shntool]  d205.wav
+0396fe089b783644d5f44b5d62da0295  [shntool]  d206.wav
+21b95cc4d5364014e3d22665d5c12793  [shntool]  d207.wav
+823ff7669ed1674d207b9c214e50b529  [shntool]  d208.wav
+9b1a8d0314a5f0368308c632ae97df7b  [shntool]  d209.wav
+5d7f9d1e048a560cdb882771265ecfb0  [shntool]  d210.wav
+ffa09a277354db95791dc2a6f78694a6  [shntool]  d211.wav
+ebd77733379ba60df6f068c7905efe08  [shntool]  d212.wav
+0dbdf02afbba9c1c3937065bf745fb4b  [shntool]  d213.wav
+ef9f6099248d7220b5e850e14b17e6b4  [shntool]  d214.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-06-border-beneath-the sum-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:01.07       31944908 B   ---   --   ---xx    shn  0.6267  D101.shn
+     2:05.65       22202924 B   ---   --   ---xx    shn  0.6442  D102.shn
+     5:26.03       57513500 B   ---   --   ---xx    shn  0.6809  D103.shn
+     5:22.35       56883164 B   ---   --   ---xx    shn  0.6728  D104.shn
+     4:45.30       50344604 B   ---   --   ---xx    shn  0.6598  D105.shn
+     4:53.60       51826364 B   ---   --   ---xx    shn  0.6728  D106.shn
+     7:04.25       74852444 B   ---   --   ---xx    shn  0.6440  D107.shn
+     4:38.30       49109804 B   ---   --   ---xx    shn  0.6735  D108.shn
+     5:03.65       53602124 B   ---   --   ---xx    shn  0.6976  D109.shn
+     4:19.00       45687644 B   ---   --   ---xx    shn  0.6480  D110.shn
+     6:59.37       73998668 B   ---   --   ---xx    shn  0.7053  D111.shn
+     4:35.43       48611180 B   ---   --   ---xx    shn  0.6419  D112.shn
+     5:15.55       55695404 B   ---   --   ---xx    shn  0.6396  D113.shn
+     1:03.72       11282588 B   ---   --   ---xx    shn  0.6514  D114.shn
+     4:20.65       46016924 B   ---   --   ---xx    shn  0.6695  D115.shn
+     5:53.33       62346860 B   ---   --   ---xx    shn  0.5636  D116.shn
+     3:43.20       39384284 B   ---   --   ---xx    shn  0.6518  D201.shn
+     3:29.68       37027580 B   ---   --   ---xx    shn  0.6661  D202.shn
+     4:41.10       49591964 B   ---   --   ---xx    shn  0.6026  D203.shn
+     3:01.40       32022524 B   ---   --   ---xx    shn  0.6057  D204.shn
+     4:59.12       52771868 B   ---   --   ---xx    shn  0.6513  D205.shn
+     4:51.63       51480620 B   ---   --   ---xx    shn  0.7131  D206.shn
+     5:59.50       63445244 B   ---   --   ---xx    shn  0.6734  D207.shn
+     5:21.27       56687948 B   ---   --   ---xx    shn  0.6774  D208.shn
+     4:12.68       44612780 B   ---   --   ---xx    shn  0.7254  D209.shn
+     5:34.20       58964684 B   ---   --   ---xx    shn  0.6855  D210.shn
+     6:17.60       66643964 B   ---   --   ---xx    shn  0.7196  D211.shn
+     7:01.42       74363228 B   ---   --   ---xx    shn  0.7002  D212.shn
+     5:59.08       63346460 B   ---   --   ---xx    shn  0.7152  D213.shn
+     4:55.40       52132124 B   ---   --   ---xx    shn  0.6736  D214.shn
+   144:58.28     1534394376 B                            0.6683  (30 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,51 @@
+Bob Dylan
+Nationwide Arena
+Columbus, Ohio, USA
+November 10, 2001
+  
+Disc 1:
+01. Wait For The Light To Shine [03:06]
+02. Mr. Tambourine Man [07:21] 
+03. It's Alright, Ma (I'm Only Bleeding) [07:41]
+04. Searching For A Soldier's Grave [03:28]
+05. Tweedle Dee & Tweedle Dum [04:43]  
+06. Positively 4th Street [07:57] 
+07. Floater (Too Much To Ask) [06:49] 
+08. High Water (For Charley Patton) [06:18]
+09. Don't Think Twice, It's All Right [07:25]
+10. John Brown [06:06]
+11. Tangled Up In Blue [09:57]
+Total time: [70:58]
+
+Disc 2:
+01. Summer Days [06:32]
+02. Mississippi [06:11]
+03. Drifter's Escape [05:29]
+04. Rainy Day Women #12 & 35 [08:55]
+    (encore) 
+05. Love Sick [05:51] 
+06. Like A Rolling Stone [08:17] 
+07. I Shall Be Released [05:35]
+08. Honest With Me [07:00] 
+09. Blowin' In The Wind [06:28]
+10. All Along The Watchtower [05:55]
+Total time: [66:19] 
+
+Band Members:
+Bob Dylan - vocals, guitar, harp
+Charlie Sexton - guitars, vocals
+David Kemper - drums & percussion
+Larry Campbell - guitars, mandolin, banjo, bouzouki, steel guitars, vocals
+Tony Garnier - electric & Stand-up bass
+
+source: soomlos
+fob, center, ga floor
+core-sound cardioids > denecke ad-20 > sony d8
+sony d8 > m-audio mt24/96 (16/44.1)
+sound forge 7.0 > audacity > cd wave > flac frontend
+
+alternate source: NTG
+
+comments:
+The first verse of "Love Sick" and approximately 30 seconds before the song begins is
+missing from the master tape. So I used an alternate source to make a seamless patch.

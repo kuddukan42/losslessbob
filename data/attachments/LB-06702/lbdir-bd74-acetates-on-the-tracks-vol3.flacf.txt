@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-acetates-on-the-tracks-vol3.flacf 
+=================== 
+=================== 
+=================== 
+97561fc4db9f450e063a64aee6ed1c1a  bd74-acetates-on-the-tracks-vol3-t01.flac
+666675f260531db005896b263d182b58  bd74-acetates-on-the-tracks-vol3-t02.flac
+5b945518f5a2545871459efa38775952  bd74-acetates-on-the-tracks-vol3-t03.flac
+79284d2669a7b625d8b4b69172b46c0a  bd74-acetates-on-the-tracks-vol3-t04.flac
+2ffceef6fd056ca9b553815ab189e7a4  bd74-acetates-on-the-tracks-vol3-t05.flac
+419c8dcd904958975fcb98688c934ed7  bd74-acetates-on-the-tracks-vol3-t06.flac
+4f1fe8db199f798f8da3d912aba49163  bd74-acetates-on-the-tracks-vol3-t07.flac
+e69a7047836c1c668a1931fe8fb17796  bd74-acetates-on-the-tracks-vol3-t08.flac
+78237d5c95ab2f9df3b8d715a19175e3  bd74-acetates-on-the-tracks-vol3-t09.flac
+74741138f3454f130eb89da1210f4344  bd74-acetates-on-the-tracks-vol3-t10.flac
+189e4fa823e047d104164fd60e02a7d3  bd74-acetates-on-the-tracks-vol3-t11.flac
+04075897d91951ba35f0d58fd97ec676  bd74-acetates-on-the-tracks-vol3-t12.flac
+34ef06211898a5b0d2cc12a45beafa4f  bd74-acetates-on-the-tracks-vol3-t13.flac
+03670bd07cc116b44c1a81d40340c2d0  bd74-acetates-on-the-tracks-vol3-t14.flac
+ba86a304d80007e43a3214834a7844b3  bd74-acetates-on-the-tracks-vol3-t15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-acetates-on-the-tracks-vol3.flacf 
+=================== 
+=================== 
+=================== 
+bd74-acetates-on-the-tracks-vol3-t01.flac:3b604dc0e7ab0389414df9ea2fed2e4e
+bd74-acetates-on-the-tracks-vol3-t02.flac:90208799395aabfcb259f8700ed0cc69
+bd74-acetates-on-the-tracks-vol3-t03.flac:280aa830e95cd7a4d6f467eee8669a42
+bd74-acetates-on-the-tracks-vol3-t04.flac:ace5057da08adc517a380cbe02bcaa3b
+bd74-acetates-on-the-tracks-vol3-t05.flac:3f0b5e340e30cbf256919298c1e53617
+bd74-acetates-on-the-tracks-vol3-t06.flac:8bcf24c3775e122705c3ba8a5606bb30
+bd74-acetates-on-the-tracks-vol3-t07.flac:b5ad89130482ee5eda719c19f1c13685
+bd74-acetates-on-the-tracks-vol3-t08.flac:96f6e22eaa2960647cd25395f762fc4b
+bd74-acetates-on-the-tracks-vol3-t09.flac:0492ba3a9063f8bcd75317072fdb99a2
+bd74-acetates-on-the-tracks-vol3-t10.flac:2b039b7d9d91af45b5ebfa7094d69b79
+bd74-acetates-on-the-tracks-vol3-t11.flac:f7a2d07812842f3acc004cb5d8d0e63a
+bd74-acetates-on-the-tracks-vol3-t12.flac:989317007c7ba57ba2fd0dc23b73c659
+bd74-acetates-on-the-tracks-vol3-t13.flac:ae575ed7932ecf8bf2dc773da0ae3316
+bd74-acetates-on-the-tracks-vol3-t14.flac:81173a2920330d7d3a44b11a82eb06a1
+bd74-acetates-on-the-tracks-vol3-t15.flac:d43dc05ac6beae64b30acd90c08d91a4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-acetates-on-the-tracks-vol3.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:44.05      103029404 B   ---   --   ---xx   flac  0.5351  bd74-acetates-on-the-tracks-vol3-t01.flac
+     3:45.52       39812348 B   ---   --   ---xx   flac  0.5265  bd74-acetates-on-the-tracks-vol3-t02.flac
+     3:32.05       37408604 B   ---   --   ---xx   flac  0.5728  bd74-acetates-on-the-tracks-vol3-t03.flac
+     3:42.25       39219644 B   ---   --   ---xx   flac  0.6491  bd74-acetates-on-the-tracks-vol3-t04.flac
+     5:37.25       59505644 B   ---   --   ---xx   flac  0.6754  bd74-acetates-on-the-tracks-vol3-t05.flac
+     3:52.40       41018924 B   ---   --   ---xx   flac  0.5549  bd74-acetates-on-the-tracks-vol3-t06.flac
+     5:25.18       57372380 B   ---   --   ---xx   flac  0.5996  bd74-acetates-on-the-tracks-vol3-t07.flac
+     3:57.10       41830364 B   ---   --   ---xx   flac  0.5684  bd74-acetates-on-the-tracks-vol3-t08.flac
+     7:39.12       80995868 B   ---   --   ---xx   flac  0.6555  bd74-acetates-on-the-tracks-vol3-t09.flac
+     4:13.13       44659820 B   ---   --   ---xx   flac  0.6853  bd74-acetates-on-the-tracks-vol3-t10.flac
+     4:50.37       51243068 B   ---   --   ---xx   flac  0.6382  bd74-acetates-on-the-tracks-vol3-t11.flac
+     4:46.45       50556284 B   ---   --   ---xx   flac  0.5727  bd74-acetates-on-the-tracks-vol3-t12.flac
+     6:08.70       65079884 B   ---   --   ---xx   flac  0.6492  bd74-acetates-on-the-tracks-vol3-t13.flac
+     5:35.40       59188124 B   ---   --   ---xx   flac  0.6611  bd74-acetates-on-the-tracks-vol3-t14.flac
+     6:47.03       71801900 B   ---   --   ---xx   flac  0.6346  bd74-acetates-on-the-tracks-vol3-t15.flac
+    79:37.25      842722260 B                            0.6128  (15 files)
+=================== 
+=================== 
+=================== 

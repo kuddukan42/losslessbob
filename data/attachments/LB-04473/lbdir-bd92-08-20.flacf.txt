@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-08-20.flacf 
+=================== 
+=================== 
+=================== 
+dd9196f51d809acf7e0a429d9abc87a3  bd92-08-20-LB-4473.txt
+5a41f1400db81531dd787b14e3a97259  Bob Dylan 20 aug 1992 Meadville.txt
+b5814fe5b171e1475c48d527feda9406  d1\01 - Traccia Audio.shn
+c06507be7a333830d1debe575d102f57  d1\02 - Traccia Audio.shn
+269955f7b7c4a8e63b3848970d40bc08  d1\03 - Traccia Audio.shn
+d2759bdcfed425417faf50d67b1f5732  d1\04 - Traccia Audio.shn
+9ada1c4d75912c73fd59f19a5b849945  d1\05 - Traccia Audio.shn
+9dbc4da6b228ba692f2343bafac20ffa  d1\06 - Traccia Audio.shn
+2912aeb2a66fd85254330073a5874665  d1\07 - Traccia Audio.shn
+189d43db0a1cf075c9155c77bea5f83c  d1\08 - Traccia Audio.shn
+780988a43a98afad73bcb2305d3e43cf  d1\09 - Traccia Audio.shn
+44ea8a557d72c6ce0b3c1e47f1e0ec4b  d1\10 - Traccia Audio.shn
+d3d6721da18439f7246e60436aa49368  d1\11 - Traccia Audio.shn
+7d6f739dab4b05f772ab6083553b8352  d1\noname.md5
+291dc684cee772bfa13298b462ef0cc3  d2\01 - Traccia Audio.shn
+fadb2f502b6245b4f9f4ef25c6e9f62e  d2\02 - Traccia Audio.shn
+f84a886d448032459b271fbc55d67ae8  d2\03 - Traccia Audio.shn
+6c57357545567cdca3e8d480479c6108  d2\04 - Traccia Audio.shn
+5a9249073db2da5200ac9485e7a3d2e0  d2\05 - Traccia Audio.shn
+946ce0499d9b7275d86c3977ea1cf3ff  d2\06 - Traccia Audio.shn
+64c68e4dd7148788813886319d62cffa  d2\07 - Traccia Audio.shn
+ae4a184062dce025b01e1ceeac84ba63  d2\noname.md5
+e380c9e84481c43b3c41e6e52c8324d0  meadville_200892.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-08-20.flacf\d2 
+=================== 
+=================== 
+=================== 
+1cbd2913a963136a26525dc06281c7a5  [shntool]  01_-_Traccia_Audio.wav
+7586da5ddd9a4ab5681c601fca6a344a  [shntool]  02_-_Traccia_Audio.wav
+1ff989b173cc25961512e70b66f9f286  [shntool]  03_-_Traccia_Audio.wav
+3782622f723f68de09fa506aca82e59a  [shntool]  04_-_Traccia_Audio.wav
+094c1cdd5364f7a0b463a54b832fdd61  [shntool]  05_-_Traccia_Audio.wav
+2fa19720a7919db2040211d814ed5ab4  [shntool]  06_-_Traccia_Audio.wav
+d91a22e81e4b9927fc9b2140ba6e7524  [shntool]  07_-_Traccia_Audio.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-08-20.flacf\d1 
+=================== 
+=================== 
+=================== 
+e6479e396aa097e8666459ed94dd56ea  [shntool]  01_-_Traccia_Audio.wav
+af1c089eb6190fbec7569939d519e2ae  [shntool]  02_-_Traccia_Audio.wav
+0e2cda578a97a2bf4f4908cab1d2c927  [shntool]  03_-_Traccia_Audio.wav
+6c0f3388b1601a3de2d4ee49f3fc8942  [shntool]  04_-_Traccia_Audio.wav
+caff7f126814cfe1c79d826372327535  [shntool]  05_-_Traccia_Audio.wav
+aadaee6df18e351f32a9036be4279c78  [shntool]  06_-_Traccia_Audio.wav
+c498520c2dd133e320c6cb6dbe1e4f30  [shntool]  07_-_Traccia_Audio.wav
+8038570b6015bac497d3b50cfb1f18af  [shntool]  08_-_Traccia_Audio.wav
+d238c8759e0961bc361447114cde64c8  [shntool]  09_-_Traccia_Audio.wav
+54d52b53607b7c5e90c34c0486cd7843  [shntool]  10_-_Traccia_Audio.wav
+1c61efd6f43ffa1b6adfa49b8cc50f5e  [shntool]  11_-_Traccia_Audio.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-08-20.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:02.43       63957980 B   ---   --   -----    wav  1.0000  01_-_Traccia_Audio.wav
+     8:53.16       94058876 B   ---   --   -----    wav  1.0000  02_-_Traccia_Audio.wav
+     6:32.37       69235868 B   ---   --   -----    wav  1.0000  03_-_Traccia_Audio.wav
+    11:15.69      119232332 B   ---   --   -----    wav  1.0000  04_-_Traccia_Audio.wav
+     7:59.10       84519164 B   ---   --   -----    wav  1.0000  05_-_Traccia_Audio.wav
+     6:28.73       68614940 B   ---   --   -----    wav  1.0000  06_-_Traccia_Audio.wav
+     6:55.16       73243676 B   ---   --   -----    wav  1.0000  07_-_Traccia_Audio.wav
+    54:07.39      572862836 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-08-20.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.64       62066972 B   ---   --   -----    wav  1.0000  01_-_Traccia_Audio.wav
+     5:47.39       61302572 B   ---   --   -----    wav  1.0000  02_-_Traccia_Audio.wav
+     6:11.30       65515004 B   ---   --   -----    wav  1.0000  03_-_Traccia_Audio.wav
+     9:11.72       97365788 B   ---   --   -----    wav  1.0000  04_-_Traccia_Audio.wav
+     5:19.03       56278700 B   ---   --   -----    wav  1.0000  05_-_Traccia_Audio.wav
+     8:59.61       95223116 B   ---   --   -----    wav  1.0000  06_-_Traccia_Audio.wav
+     5:21.74       56798492 B   ---   --   -----    wav  1.0000  07_-_Traccia_Audio.wav
+     4:24.25       46628444 B   ---   --   -----    wav  1.0000  08_-_Traccia_Audio.wav
+     5:15.32       55641308 B   ---   --   -----    wav  1.0000  09_-_Traccia_Audio.wav
+     5:11.62       55006268 B   ---   --   -----    wav  1.0000  10_-_Traccia_Audio.wav
+     8:05.03       85561100 B   ---   --   -----    wav  1.0000  11_-_Traccia_Audio.wav
+    69:40.15      737387764 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 

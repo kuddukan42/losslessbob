@@ -1,0 +1,64 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+Los Angeles, California
+Wiltern Theater
+
+October 15, 2002
+
+dat clone from master>upload
+recorded with scheops mic
+
+ 
+ 	
+Seeing The Real You At Last (Bob on piano)
+Tell Me That It Isn't True (Bob on piano and harp and Larry on pedal steel)
+Tombstone Blues (Bob on piano)
+The End Of The Innocence (Song by Don Henley and Bruce Hornsby) (Bob on piano)
+Things Have Changed (Bob on piano)
+Brown Sugar
+One Too Many Mornings (acoustic) (Larry on pedal steel)
+It's Alright, Ma (I'm Only Bleeding) (acoustic)
+(Bob on piano, Larry on cittern, Charlie on electric and Tony on standup bass)
+I Shall Be Released (acoustic)
+Drifter's Escape (Bob on harp)
+Don't Think Twice, It's All Right (acoustic)
+Old Man (acoustic) (Song by Neil Young)
+(Bob and Larry on acoustic guitars, Charlie on electric guitar and Tony on electric bass)
+Honest With Me (Bob on piano and Larry on slide guitar)
+Mr. Tambourine Man (acoustic)
+High Water (For Charley Patton) (Bob on piano)
+Mutineer (Song by Warren Zevon) (Bob on piano and Larry on pedal steel)
+Floater (Too Much To Ask) (Bob on piano)
+Summer Days
+(encore)
+
+Knockin' On Heaven's Door (acoustic) (Charlie on electric guitar)
+All Along The Watchtower
+===================
+===================
+===================
+=== disc 1.ffp
+===================
+===================
+===================
+01 Track01.flac:622afd17dac17b11f6f3a045f0356165
+02 Track02.flac:799bd050456c43a74fdadcf11d48ab7f
+03 Track03.flac:e7b8c49ead2ca0a3ab7a8fcdfd1d0cb6
+04 Track04.flac:58c5c9d0171032163421384dcbdd6353
+05 Track05.flac:81ea413eaf1197211bc9451a30f10330
+06 Track06.flac:f2e5c89b0d8964b734bc2e76d6a5dc30
+07 Track07.flac:db32746919c3be70e14587c63929ecbb
+08 Track08.flac:a7a1c03f0d0201d0e51ed23ee2ee5064
+09 Track09.flac:9cfe3a8b54f5ad5e510e3a7e0ec45f82
+10 Track10.flac:65b1218219ff4b095408c2a3ee8fdcb8
+11 Track11.flac:5b005395242a7cb757f4120b6d8c29d0
+12 Track12.flac:5672be2a9650ae62587cf2e1d207a8ca
+===================
+===================
+===================

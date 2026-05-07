@@ -1,0 +1,74 @@
+===================
+===================
+===================
+=== md5 for: bd97-02-14-d.flac1648
+===================
+===================
+===================
+059ca44c8ef81d0ae8cd9bab826879d8 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\01 Crash On The Levee (Down In The Flood).flac
+769b89d72cd16586b61fdc8ac6bdd920 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\02 If Not For You.flac
+eb3da6d453a42cbb56f4ec32c0759bbb *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\03 All Along The Watchtower.flac
+0b0a3d745a6494fdef2fc732b00a3a7c *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\04 Positively 4th Street.flac
+ac93e5a9d7753447ae037105876837bf *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\05 I'll Be Your Baby Tonight.flac
+2b7750f40603f30a017044f7c15243d3 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\06 Silvio.flac
+17c27f605b9ba0c3e86deb0f825bb532 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\07 Friend Of The Devil.flac
+bc988a8a8c7d022e9aac77b1c713135c *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\08 Masters Of War.flac
+f4189fd55a02a24d9635c1dfd722cd98 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\09 One Too Many Mornings.flac
+663e347fce731ee4cfbb7d1c498d852c *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\10 Seeing The Real You At Last.flac
+b4080706306309ad27add5c7398aa669 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\11 Shooting Star.flac
+840c712f0ef7f0b02872b083475792f6 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\12 Maggie's Farm.flac
+23025834d7844bd00d4eccc38b6eb487 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\13 Like A Rolling Stone.flac
+2a01e693e99e911eccb91a5076f29eea *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\14 It Ain't Me, Babe.flac
+69908758cf5d39a3a0e41e560142287a *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\15 Rainy Day Women # 12 & 35.flac
+b099746283faaeb5fe9422aa47e8bc89 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\1997-02-14 Fukuoka (D from D master) (VERY saturated).ffp
+efc5d1a80ac6ce0624036663e0a1cb40 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\1997-02-14 Fukuoka (D from D master) (VERY saturated).md5
+31ab3e2b2d9f4bfc08128c5b641314e7 *1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\BD1997-02-14 Fukuoka, Japan (2016-10-26 DAT transfer).txt
+===================
+===================
+===================
+=== ffp for: bd97-02-14-d.flac1648
+===================
+===================
+===================
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\01 Crash On The Levee (Down In The Flood).flac:a642820669168084f3c67fcf9d293424
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\02 If Not For You.flac:db6f1a92a7012face51419469b6a2aa3
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\03 All Along The Watchtower.flac:181d6b0e47fbf802d1ee4508dbd642ee
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\04 Positively 4th Street.flac:7ef043de218ae841c39ca6b72d7367e8
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\05 I'll Be Your Baby Tonight.flac:d12d3642ef4be0fd52525969470d3f39
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\06 Silvio.flac:7c5edd31021654888a59e0487362b14c
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\07 Friend Of The Devil.flac:67ef2aa18c936d24c2ff01d8e7ebf141
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\08 Masters Of War.flac:419e5b17fa0aa2451808e329b7833006
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\09 One Too Many Mornings.flac:7fd4a05f88c429f57d6122996fa5356a
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\10 Seeing The Real You At Last.flac:e11e60f9fa9311fad0489816c5919df9
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\11 Shooting Star.flac:0eb7e0e6065976e4ef64a08caade7cba
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\12 Maggie's Farm.flac:d95c41add73502cfc0a869ad274e3a3e
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\13 Like A Rolling Stone.flac:fbb139ff92627f60bf2ff0713e60d14d
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\14 It Ain't Me, Babe.flac:9257e0bb5c80a0156aa168e93f351b1c
+1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)\15 Rainy Day Women # 12 & 35.flac:f98ab9dd5deeffd584d085ddfdff4652
+===================
+===================
+===================
+=== shntool len for: bd97-02-14-d.flac1648\1997-02-14 - Fukuoka, Japan (2016-10-26 DAT transfer)
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.080      57999404 B   cxx   --   ---xx   flac  0.6222  01 Crash On The Levee (Down In The Flood).flac
+     6:10.688      71172144 B   cxx   --   ---xx   flac  0.5800  02 If Not For You.flac
+     6:37.995      76415024 B   cxx   --   ---xx   flac  0.6201  03 All Along The Watchtower.flac
+     8:46.677     101122092 B   cxx   --   ---xx   flac  0.5668  04 Positively 4th Street.flac
+     7:47.627      89784364 B   cxx   --   ---xx   flac  0.5856  05 I'll Be Your Baby Tonight.flac
+     7:46.261      89522220 B   cxx   --   ---xx   flac  0.6230  06 Silvio.flac
+     8:02.987      92733484 B   cxx   --   ---xx   flac  0.5819  07 Friend Of The Devil.flac
+     6:52.075      79118380 B   cxx   --   ---xx   flac  0.5138  08 Masters Of War.flac
+     6:45.077      77774892 B   cxx   --   ---xx   flac  0.5221  09 One Too Many Mornings.flac
+     7:05.643      81723436 B   cxx   --   ---xx   flac  0.5945  10 Seeing The Real You At Last.flac
+     6:49.259      78577708 B   cxx   --   ---xx   flac  0.4663  11 Shooting Star.flac
+     9:03.403     104333356 B   cxx   --   ---xx   flac  0.6092  12 Maggie's Farm.flac
+    11:33.931     133234732 B   cxx   --   ---xx   flac  0.6293  13 Like A Rolling Stone.flac
+    12:58.240     149422124 B   cxx   --   ---xx   flac  0.5879  14 It Ain't Me, Babe.flac
+     7:50.393      90315460 B   cxx   --   ---xx   flac  0.6671  15 Rainy Day Women # 12 & 35.flac
+   119:12.334    1373248820 B                            0.5872  (15 files)
+===================
+===================
+===================

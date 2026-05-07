@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-11-25-jtt.flacf 
+=================== 
+=================== 
+=================== 
+73e2c8d66cde27183f8804b6ba7b7da1  Audience\Disc03Track10_JTT.flac
+f740134bfe1821154044ecdbf7996e96  Audience\Disc03Track11_JTT.flac
+47fa21781ddd09b534a62a8430fec702  Audience\Disc03Track12_JTT.flac
+e2951f5d1af352e70b3e0bf3830a73a1  Audience\Disc03Track13_JTT.flac
+b2d9341260a71d2a3832182857f5ce52  Audience\Disc03Track14_JTT.flac
+d2f13c66d157532dd3c720449f18efd5  Audience\Disc03Track15_JTT.flac
+d5340f871d16a3e7acb0ad496f281234  Dylan & Band - Winterland_November 25th 1976.md5
+aa99baa99cc2fe1ea98fafa1828392af  Dylan & Band - Winterland_November 25th 1976.txt
+2b4f91dd563f2f5680dde991b90b2fb9  Dylan & Band - Winterland_November 25th 1976_Info.txt
+ff5adf53fdec79a3cc6c224d75f3dfff  Soundboard\LW_Disc04Track01.flac
+4281190f7d5be4f5e9b0e675375f6f66  Soundboard\LW_Disc04Track02.flac
+cf3ec80e262de97649f01c0ee258299e  Soundboard\LW_Disc04Track03.flac
+895ea0277b1bbbdb6c55c3660be03c7a  Soundboard\LW_Disc04Track04.flac
+d907619d17b29728d36ecd1629d0a844  Soundboard\LW_Disc04Track05.flac
+77a466f8fb137c5a1c921be08c71fa55  Soundboard\LW_Disc04Track06.flac
+0d6eca74d4bd345abf20a3ddba1f708c  Soundboard\LW_Disc04Track07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-11-25-jtt.flacf\Audience 
+=================== 
+=================== 
+=================== 
+Disc03Track10_JTT.flac:fec043d0ec0bcc9cc7d1ebd7f4a797cc
+Disc03Track11_JTT.flac:0701c671df0d6b044d5a32ddd1e58c1a
+Disc03Track12_JTT.flac:a75aa9455052c8d161f708a1c559c7b8
+Disc03Track13_JTT.flac:d45a7e4c1ed422049d63ddb90ac53e16
+Disc03Track14_JTT.flac:0e90e5a2462f27457db57174d0ba16e9
+Disc03Track15_JTT.flac:9200428c395c19a4ccea6f20e07a1197
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-11-25-jtt.flacf\Soundboard 
+=================== 
+=================== 
+=================== 
+LW_Disc04Track01.flac:5c5e9d171597c59aa488aab95b80e925
+LW_Disc04Track02.flac:06ee045b5b7992cba72c74802a575891
+LW_Disc04Track03.flac:cb97b6da95c276d5d2e5e331ea3bf3c4
+LW_Disc04Track04.flac:2d8606fc7a23015d74a100e32359756e
+LW_Disc04Track05.flac:f01f1815987f3ff4c0abce4651b1a6ec
+LW_Disc04Track06.flac:5ca31f3fad66eee0651ed17f0d9e53fb
+LW_Disc04Track07.flac:e5c04109d168fd1fe95282dfb3202a15
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-11-25-jtt.flacf\Audience 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:18.49       35041692 B   -b-   --   ---xx   flac  0.6843  Disc03Track10_JTT.flac
+     3:46.39       39958172 B   ---   --   ---xx   flac  0.6651  Disc03Track11_JTT.flac
+     4:57.38       52480220 B   ---   --   ---xx   flac  0.6728  Disc03Track12_JTT.flac
+     5:49.54       61690652 B   ---   --   ---xx   flac  0.6638  Disc03Track13_JTT.flac
+     5:59.55       63457004 B   ---   --   ---xx   flac  0.6663  Disc03Track14_JTT.flac
+     4:41.41       49664876 B   ---   --   ---xx   flac  0.6434  Disc03Track15_JTT.flac
+    28:33.51      302292616 B                            0.6651  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-11-25-jtt.flacf\Soundboard 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.20        6221084 B   ---   --   ---xx   flac  0.3927  LW_Disc04Track01.flac
+     2:45.62       29251868 B   ---   --   ---xx   flac  0.4092  LW_Disc04Track02.flac
+     3:48.52       40341548 B   ---   --   ---xx   flac  0.4014  LW_Disc04Track03.flac
+     5:00.44       53023532 B   ---   --   ---xx   flac  0.4062  LW_Disc04Track04.flac
+     5:24.56       57285356 B   ---   --   ---xx   flac  0.3931  LW_Disc04Track05.flac
+     6:08.15       64950524 B   ---   --   ---xx   flac  0.3886  LW_Disc04Track06.flac
+     4:41.23       49622540 B   ---   --   ---xx   flac  0.4014  LW_Disc04Track07.flac
+    28:24.47      300696452 B                            0.3985  (7 files)
+=================== 
+=================== 
+=================== 

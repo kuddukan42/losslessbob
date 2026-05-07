@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd80-05-08-f.flacf
+===================
+===================
+===================
+6901a7e160662303e293ae1921b04a41 *1980-05-08 Hartford, CT 101.flac
+6424008079621590674e2d83a942635e *1980-05-08 Hartford, CT 102.flac
+a16714e2968a3465ae4b8e15cd160a6c *1980-05-08 Hartford, CT 103.flac
+41d3977d0917762cae5696391e503058 *1980-05-08 Hartford, CT 104.flac
+0988b5e1970628d657258f6490f430a1 *1980-05-08 Hartford, CT 105.flac
+414a4405ca9130031938c79ac5300034 *1980-05-08 Hartford, CT 106.flac
+a71b07ba4b16e9a4a207e60f3a38cdd5 *1980-05-08 Hartford, CT 107.flac
+054919954d5d6bf3f2aafb42b59a10e1 *1980-05-08 Hartford, CT 108.flac
+003c8222120ae737e893dc78eb414e69 *1980-05-08 Hartford, CT 109.flac
+0f0163c3641fd4165dfc5d07c1c88318 *1980-05-08 Hartford, CT 110.flac
+8086f6434c90049fc565de414b9e91c3 *1980-05-08 Hartford, CT 111.flac
+df32a9d7c7d48013bda52dd154cd7ad5 *1980-05-08 Hartford, CT 112.flac
+16419e3e1a3634b7ce5b6322d3ee7cfb *1980-05-08 Hartford, CT 201.flac
+7018f0c143cefcf790708d5afa32d776 *1980-05-08 Hartford, CT 202.flac
+ca5a05094ff81b78643bdc0faf575702 *1980-05-08 Hartford, CT 203.flac
+f039f7e863279af6d2e5851d763db529 *1980-05-08 Hartford, CT 204.flac
+8aac974938e0d5d6a09e549214230406 *CD1.LOG
+552de91613705881d2e3ec5a1d3328c3 *CD2.LOG
+0107c6ce2c395fd7ce46ef0eb0bf0277 *dylan.1980-05-08.Hartford.CT.flac.ffp
+ecc08cfb8579960867b33eaa720b79ff *Hartford, CT 080580.txt
+3d5cb7f7976ab4738b9475f0d3196325 *hartford_080580.jpg
+85d310eeabe23d902fdb1126dd4f2dcc *Info.txt
+3fa7a867b02f6db95d7ab0f64f448046 *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd80-05-08-f.flacf
+===================
+===================
+===================
+1980-05-08 Hartford, CT 101.flac:e6bf322303504250bf448caa6fdad107
+1980-05-08 Hartford, CT 102.flac:6f8d81f7e831beb495e8b32853a441ba
+1980-05-08 Hartford, CT 103.flac:b6d7c42a0a06dac983a6a4a3f24131b6
+1980-05-08 Hartford, CT 104.flac:8324461419d95bb3d4c028219952be81
+1980-05-08 Hartford, CT 105.flac:d66454ee580764f32a88d674c22c3cfc
+1980-05-08 Hartford, CT 106.flac:c8e9f7a9e74e90bb80281d76e59556dc
+1980-05-08 Hartford, CT 107.flac:386ab16a4f0c3bf8bff4c447b1357d52
+1980-05-08 Hartford, CT 108.flac:5a403b875f237ef4c2e6c4607f697f59
+1980-05-08 Hartford, CT 109.flac:9a2cec19aaad7553ec0799cca83e4c59
+1980-05-08 Hartford, CT 110.flac:948c8a66c914c893612d05d46fd0f1d4
+1980-05-08 Hartford, CT 111.flac:0d3a49bd7e4859fa1b839d681baecbc3
+1980-05-08 Hartford, CT 112.flac:36b268cfa755f70f6246ba3d80e489c1
+1980-05-08 Hartford, CT 201.flac:caf9a4f21f31379e48c01489f3e4ceb6
+1980-05-08 Hartford, CT 202.flac:7d5d86edcb1281364961a6de24d50843
+1980-05-08 Hartford, CT 203.flac:dac901c6114106d54bcfc2b81b6c4310
+1980-05-08 Hartford, CT 204.flac:a9c079de44dadd7f7037c6b445cc46e5
+===================
+===================
+===================
+=== shntool len for: bd80-05-08-f.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:01.41       74360876 B   ---   --   ---xx   flac  0.2884  1980-05-08 Hartford, CT 101.flac
+     5:46.72       61203788 B   ---   --   ---xx   flac  0.2793  1980-05-08 Hartford, CT 102.flac
+     5:47.73       61382540 B   ---   --   ---xx   flac  0.3044  1980-05-08 Hartford, CT 103.flac
+     5:45.74       61032092 B   ---   --   ---xx   flac  0.3029  1980-05-08 Hartford, CT 104.flac
+     4:17.30       45405404 B   ---   --   ---xx   flac  0.3027  1980-05-08 Hartford, CT 105.flac
+     5:28.23       57913340 B   ---   --   ---xx   flac  0.3053  1980-05-08 Hartford, CT 106.flac
+     6:01.52       63802748 B   ---   --   ---xx   flac  0.3057  1980-05-08 Hartford, CT 107.flac
+     7:24.52       78443948 B   ---   --   ---xx   flac  0.3260  1980-05-08 Hartford, CT 108.flac
+     7:59.26       84556796 B   ---   --   ---xx   flac  0.3052  1980-05-08 Hartford, CT 109.flac
+     3:49.17       40435628 B   ---   --   ---xx   flac  0.3256  1980-05-08 Hartford, CT 110.flac
+     4:42.32       49820108 B   ---   --   ---xx   flac  0.2975  1980-05-08 Hartford, CT 111.flac
+     4:49.45       51085484 B   ---   --   ---xx   flac  0.3227  1980-05-08 Hartford, CT 112.flac
+     7:01.61       74407916 B   ---   --   ---xx   flac  0.3035  1980-05-08 Hartford, CT 201.flac
+     7:57.50       84260444 B   ---   --   ---xx   flac  0.3089  1980-05-08 Hartford, CT 202.flac
+     4:52.16       51546476 B   ---   --   ---xx   flac  0.3081  1980-05-08 Hartford, CT 203.flac
+     5:03.26       53510396 B   ---   --   ---xx   flac  0.3003  1980-05-08 Hartford, CT 204.flac
+    93:50.15      993167984 B                            0.3051  (16 files)
+===================
+===================
+===================

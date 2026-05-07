@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-05-08-NET-Taper-A.flacf 
+=================== 
+=================== 
+=================== 
+c0a4df99fa0cb5bfa943380654d36c55  1996 An American Spring v.1.txt
+24917696d12e4ce3cada7e68235f4488  bd1996-05-08-d1\Track01.flac
+8aefaf3932cdc36eea7a635d49fcc035  bd1996-05-08-d1\Track02.flac
+68bf7fcd36cac19a1bb545b4225ee9b0  bd1996-05-08-d1\Track03.flac
+bedf2bd9c9ef88aaa3665638ffe7d329  bd1996-05-08-d1\Track04.flac
+d5f215bb29cfb9ebbb0ce555f4109701  bd1996-05-08-d1\Track05.flac
+d2bf29f4ecf94f0d8894dd06ee9b90be  bd1996-05-08-d1\Track06.flac
+da2097deb2457f761147714b84dc0c03  bd1996-05-08-d1\Track07.flac
+9e8d5e8cfc491bc238b3d89b0cc41010  bd1996-05-08-d1\Track08.flac
+4bfa59c5e4467ca03fbdf8cced9b98a5  bd1996-05-08-d1\bd1996-05-08-d1-EAClog.LOG
+e583341c29b046bdf8f1851eb9f8fdb6  bd1996-05-08-d1\bd1996-05-08-d1-fingerprints.txt
+4e3aabef61a0bce6c51fbc52ad3214b4  bd1996-05-08-d2\Track01.flac
+decd0b78bc5aa8ee4eaf903a6f6af3a6  bd1996-05-08-d2\Track02.flac
+ab1bfb4b588a64713b560535cb670256  bd1996-05-08-d2\Track03.flac
+c4989817a7d14d43218cfce72aeea222  bd1996-05-08-d2\Track04.flac
+d4481335ec3ab5ec2510ca8a7fd42845  bd1996-05-08-d2\Track05.flac
+fe740dcbcb499ec7fba62ee7a78d5f25  bd1996-05-08-d2\Track06.flac
+7890452a0c4352f053669c0d48cc6898  bd1996-05-08-d2\Track07.flac
+91692052287d37bc1c476b5f372cc7b2  bd1996-05-08-d2\bd1996-05-08-d2 EAC log.LOG
+41df7447af18cba294814122282cff7f  bd1996-05-08-d2\bd1996=05-08-d2-fingerprints.txt
+9084d7260ddd3bca5b622198868fc15e  bd1996-05-08.txt
+c0ff580aaea2f3d91f1ac1b34310832e  bd96-05-08-NET-Taper-A.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-08-NET-Taper-A.flacf\bd1996-05-08-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:fa4ed6853026511fc05b586f2af24e2d
+Track02.flac:5e4c6347d5e57cb4a6e2915cc73a2277
+Track03.flac:bc459cfe3af50b8c5a1150f045aff14c
+Track04.flac:4547c9114af6d8add22917a724f0cf63
+Track05.flac:8a610fcf025da09ccf2740845b204fac
+Track06.flac:7cd1f786c96cea150d4d806083302ad2
+Track07.flac:86691d5f77862e8746031cfa50c8b221
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-05-08-NET-Taper-A.flacf\bd1996-05-08-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:04beaf085bedb590177a3f7023353f3d
+Track02.flac:e1caf63ef296b6477b367c1fba65ee6a
+Track03.flac:39a824514d054a75de0ff289561c712e
+Track04.flac:86fea707761b98217b46ed128b73d3f9
+Track05.flac:75f61f3748ae2eff7b32f7fc296218d4
+Track06.flac:b47188b3a9eacf0ca6d42dc5174a1d57
+Track07.flac:61749f769950b0b894af0e5224b35371
+Track08.flac:c35c5fbb869b607ca8ac05586531c38b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-08-NET-Taper-A.flacf\bd1996-05-08-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:15.36       76818716 B   ---   --   ---xx   flac  0.4722  Track01.flac
+     7:48.26       82616396 B   ---   --   ---xx   flac  0.5307  Track02.flac
+     8:25.53       89206700 B   ---   --   ---xx   flac  0.5364  Track03.flac
+     8:53.42       94120028 B   ---   --   ---xx   flac  0.5966  Track04.flac
+     8:27.40       89528924 B   ---   --   ---xx   flac  0.5639  Track05.flac
+    12:24.38      131331020 B   ---   --   ---xx   flac  0.4785  Track06.flac
+     7:45.38       82115420 B   ---   --   ---xx   flac  0.5259  Track07.flac
+    61:00.48      645737204 B                            0.5275  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-05-08-NET-Taper-A.flacf\bd1996-05-08-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.23       47505740 B   ---   --   ---xx   flac  0.5706  Track01.flac
+     5:16.36       55827116 B   ---   --   ---xx   flac  0.4908  Track02.flac
+     6:35.04       69687452 B   ---   --   ---xx   flac  0.5593  Track03.flac
+     8:06.33       85808060 B   ---   --   ---xx   flac  0.4634  Track04.flac
+     8:08.22       86134988 B   ---   --   ---xx   flac  0.5200  Track05.flac
+     7:04.64       74944172 B   ---   --   ---xx   flac  0.5482  Track06.flac
+    11:04.16      117167276 B   ---   --   ---xx   flac  0.5077  Track07.flac
+     8:55.32       94449308 B   ---   --   ---xx   flac  0.3947  Track08.flac
+    59:40.05      631524112 B                            0.5002  (8 files)
+=================== 
+=================== 
+=================== 

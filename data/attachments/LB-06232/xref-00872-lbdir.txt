@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-13-d.flacf 
+=================== 
+=================== 
+=================== 
+3c2a003afb3d5bfc1f2cdc42557a4666  01 Down in the Flood.flac
+96e50ceb92b6d6c5c1798b1fc7fb57fb  02 Lay Lady Lay.flac
+beb5390b161311a07a8a81e75d908e61  03 All Along the Watchtower.flac
+fc1e17a61262aef1afbf4829c9c32c96  04 You're a Big Girl Now.flac
+83fbbf1335675acfd4285bdba4d5836e  05 I'll Be Your Baby Tonight.flac
+e96bdb86620aa71ef89588cdfef9a4bb  06 Silvio.flac
+0057304014516b677430cd903ebfddb7  07 Mr Tambourine Man.flac
+9eba52c8c5080f072ea0e535c14f6dd0  08 Desolation Row.flac
+f70542dbeb01540ebdeb6cfe2f2e7d7d  09 Mama, You Been on My Mind.flac
+adf6bdde74e72f0a94cdf2e93a77471c  10 Dark Eyes (w Patti Smith).flac
+4931fb049b24bde9ed8a87252bf9ef20  11 Seeing the Real You at Last _.flac
+40d1c69a058f2a4adaa713206ce093ef  12 Ballad of a Thin Man.flac
+3b52fbc5e291fccc5dcc68492681ffd6  13 Alabama Getaway.flac
+472e975bc14ea05f5dbd391142075a98  14 The Times They Are A'Changin'.flac
+845f22d1bb232c2cc9c7dc9ddb29a7f8  15 Rainy Day Women #12 & 35.flac
+07a0b221138e886d647bed00d6b4b55a  BOB DYLAN - 1995-12-13 BETHLEHEM PA (AUD from CDRs).ffp
+ca63bc69e38062be4178926bc7800201  BOB DYLAN - 1995-12-13 BETHLEHEM PA (AUD from CDRs).md5
+b9fdc7034029ecdf601dd5e9672bffb2  BOB DYLAN - 1995-12-13 BETHLEHEM PA (AUD from CDRs).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-13-d.flacf 
+=================== 
+=================== 
+=================== 
+01 Down in the Flood.flac:7bdc0c5734c273c6eb971402647f7692
+02 Lay Lady Lay.flac:991bcd81dbdb5460cc148ea801cd9cc3
+03 All Along the Watchtower.flac:2448183a40a66b8d67d5c70f6f4c2d9c
+04 You're a Big Girl Now.flac:f6e2bd67ba7e11bf1c606edcab765f61
+05 I'll Be Your Baby Tonight.flac:57393e1cac9b08ca80884f4895920257
+06 Silvio.flac:48808c5d97c587f27e203772c58a0a7d
+07 Mr Tambourine Man.flac:4cbbd982f8c81c0965a4bcafbccb8e45
+08 Desolation Row.flac:a345af23a5cef5a61e062c93855f9778
+09 Mama, You Been on My Mind.flac:447b32ed82e2178ed42e9d7a85fb6e2f
+10 Dark Eyes (w Patti Smith).flac:44cb0a54199398261921357f8f823b98
+11 Seeing the Real You at Last _.flac:d63174c7add89f448fcd65288ddac41c
+12 Ballad of a Thin Man.flac:f82cda2d68440645f5c3980676196c1e
+13 Alabama Getaway.flac:bf6cd1fdec8064f8e455e8556947af0a
+14 The Times They Are A'Changin'.flac:b27e8531d4760aa6f5c58c171f23e3bf
+15 Rainy Day Women #12 & 35.flac:589a9bf89fb2fe779e4b093433d3ac37
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-13-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.72       53089388 B   ---   --   ---xx   flac  0.5950  01 Down in the Flood.flac
+     5:28.14       57892172 B   ---   --   ---xx   flac  0.5287  02 Lay Lady Lay.flac
+     7:25.19       78542732 B   ---   --   ---xx   flac  0.5867  03 All Along the Watchtower.flac
+     6:08.27       64978748 B   ---   --   ---xx   flac  0.4984  04 You're a Big Girl Now.flac
+     6:05.51       64505996 B   ---   --   ---xx   flac  0.5658  05 I'll Be Your Baby Tonight.flac
+     8:13.00       86965244 B   ---   --   ---xx   flac  0.5793  06 Silvio.flac
+     9:29.62      100517468 B   ---   --   ---xx   flac  0.4905  07 Mr Tambourine Man.flac
+    11:29.24      121596092 B   ---   --   ---xx   flac  0.4805  08 Desolation Row.flac
+     5:42.34       60408812 B   ---   --   ---xx   flac  0.5344  09 Mama, You Been on My Mind.flac
+     5:22.70       56965484 B   ---   --   ---xx   flac  0.4507  10 Dark Eyes (w Patti Smith).flac
+     7:53.49       83552492 B   ---   --   ---xx   flac  0.5750  11 Seeing the Real You at Last _.flac
+     9:48.03      103730300 B   ---   --   ---xx   flac  0.5561  12 Ballad of a Thin Man.flac
+     7:56.15       84001724 B   ---   --   ---xx   flac  0.5959  13 Alabama Getaway.flac
+    11:52.61      125740316 B   ---   --   ---xx   flac  0.5399  14 The Times They Are A'Changin'.flac
+     5:43.53       60629524 B   -b-   --   ---xx   flac  0.6129  15 Rainy Day Women #12 & 35.flac
+   113:40.29     1203116492 B                            0.5436  (15 files)
+=================== 
+=================== 
+=================== 

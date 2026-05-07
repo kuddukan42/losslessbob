@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-13-g.flacf 
+=================== 
+=================== 
+=================== 
+0a87d60487cf1e5854e932709b0f18db  Disc1\01- Intro.flac
+8b89a2728e4ab3dde647fcd2d8a9333f  Disc1\02- Seeing The Real You At Last.flac
+1aeff542ed2bb562ff4e6d061718aedf  Disc1\03- Carrying A Torch.flac
+9b82cd064c197730c4b357eb8ecc54f2  Disc1\04- Tombstone Blues.flac
+aec279f384107f5f7b298e7eb512df32  Disc1\05- You Ain't Goin' Nowhere.flac
+028578e839bbff55bb87c5ccb1878c6d  Disc1\06- Things Have Changed.flac
+a2529f55b86ac89b69e71338cc0f559d  Disc1\07- Brown Sugar.flac
+f93e51e0056d1adfbf29d0414057581f  Disc1\08- Forever Young.flac
+cf671b546c8964db3769ebe19637959a  Disc1\09- It's Alright, Ma (I'm Only Bleeding).flac
+e8217e887349c36659918bd89ed0bb7b  Disc1\10- One Too Many Mornings.flac
+f52fa952de309220d51f62349ba8f5ec  Disc1\11- Cold Irons Bound.flac
+05f63a740760f2ffefc8cd8f6679de42  Disc1\12- Shelter From The Storm.flac
+3e65bf76847b53b6272a6c4fb4c528ec  Disc1\13- Old Man.flac
+e72aa12a8a69f25361b46aa6d322e9f3  Disc2\01- Honest With Me.flac
+6c1c958092d581d5c522155ce8a992bd  Disc2\02- The Times They Are A-Changin'.flac
+2b68866a4f087da88736d84d18c598c7  Disc2\03- High Water (for Charley Patton).flac
+e00dfa05ee67144d177d483445d0830b  Disc2\04- Mutineer.flac
+ca63b43f9eeeef87b0eadc0e96b2b083  Disc2\05- Floater (Too Much To Ask).flac
+ce49e51ebc7f5c7104dd3b5e2e5fcb0a  Disc2\06- Summer Days.flac
+f33a766768c8a21256604c5ee4fdcfdc  Disc2\07- Blowin' In The Wind.flac
+7dd4fe51e74607a3a26c0bde9a5c1dcd  Disc2\08- All Along The Watchtower.flac
+0ab319288cd543793c42de7011436731  Disc2\09- Something.flac
+f1662e54cb0e6148e957b8ce6d01cec6  EAC1.log
+c702141f7b4ebeaa2c1db898092d0e86  EAC2.log
+56ab533f0a77b4c736574253996545ad  FLAC.ffp
+111f0da9b6f322870fd2c6d5de7bc0bf  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-13-g.flacf\Disc1 
+=================== 
+=================== 
+=================== 
+01- Intro.flac:6d6f48dda59b10979703c1e2a8a51679
+02- Seeing The Real You At Last.flac:f3535479b6f527ac40727bb6a1bd71a6
+03- Carrying A Torch.flac:c9323aa6264504bf11a89cebee90ee32
+04- Tombstone Blues.flac:15018f5794c9e859e4f7224d6e1bef34
+05- You Ain't Goin' Nowhere.flac:13285d61825c643fef24e12fc7657c8a
+06- Things Have Changed.flac:33d55b62a65b989699dfdaab05a8e499
+07- Brown Sugar.flac:d98c70117fc3675a7b7cdcb7e42fe436
+08- Forever Young.flac:331867ba8ec0205d148c00b660b88f3f
+09- It's Alright, Ma (I'm Only Bleeding).flac:a22adcca6e580c0b9d2fad95d23b5d1e
+10- One Too Many Mornings.flac:097dbe895552b154a3c1d4e78f315f18
+11- Cold Irons Bound.flac:8a88fd7f18444eb238aadb4bdba2c905
+12- Shelter From The Storm.flac:0bc3c4d37a3dedb85889fbe4b53d1ba5
+13- Old Man.flac:5b98c55a07a23fca4111ba76c7e5bd50
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-13-g.flacf\Disc2 
+=================== 
+=================== 
+=================== 
+01- Honest With Me.flac:b183adf86f6582f1e9196c861ed143ec
+02- The Times They Are A-Changin'.flac:b7657e00a1f3084cd7dc71e3da01e91c
+03- High Water (for Charley Patton).flac:0f155c823a2f5542335d49d04474a508
+04- Mutineer.flac:a0d6118c0552ac6abb2a95d1dcca19c6
+05- Floater (Too Much To Ask).flac:9108f2a47fb860dd3023ba7bafda2ef7
+06- Summer Days.flac:8c8d7b6f960942a1b815377963db14ce
+07- Blowin' In The Wind.flac:db5edfee41038f2068e47f8c43d29e45
+08- All Along The Watchtower.flac:cb9d05836f6fe8f74b040e424f19848c
+09- Something.flac:33edde163e86ab75990a3f2358121704
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-13-g.flacf\Disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.72        6343388 B   ---   --   ---xx   flac  0.4132  01- Intro.flac
+     5:33.71       58908236 B   ---   --   ---xx   flac  0.5246  02- Seeing The Real You At Last.flac
+     5:03.38       53538620 B   ---   --   ---xx   flac  0.4373  03- Carrying A Torch.flac
+     6:10.25       65326844 B   ---   --   ---xx   flac  0.5010  04- Tombstone Blues.flac
+     5:20.30       56518604 B   ---   --   ---xx   flac  0.4943  05- You Ain't Goin' Nowhere.flac
+     6:23.47       67671788 B   ---   --   ---xx   flac  0.4948  06- Things Have Changed.flac
+     4:14.12       44833868 B   ---   --   ---xx   flac  0.5588  07- Brown Sugar.flac
+     6:33.13       69355820 B   ---   --   ---xx   flac  0.4987  08- Forever Young.flac
+     7:59.50       84613244 B   ---   --   ---xx   flac  0.5061  09- It's Alright, Ma (I'm Only Bleeding).flac
+     6:08.49       65030492 B   ---   --   ---xx   flac  0.4280  10- One Too Many Mornings.flac
+     6:08.61       65058716 B   ---   --   ---xx   flac  0.5372  11- Cold Irons Bound.flac
+     6:24.45       67843484 B   ---   --   ---xx   flac  0.5066  12- Shelter From The Storm.flac
+     3:44.54       39640652 B   ---   --   ---xx   flac  0.5467  13- Old Man.flac
+    70:21.42      744683756 B                            0.5000  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-13-g.flacf\Disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:03.28       74683100 B   ---   --   ---xx   flac  0.5368  01- Honest With Me.flac
+     6:02.13       63887420 B   ---   --   ---xx   flac  0.4941  02- The Times They Are A-Changin'.flac
+     7:15.14       76766972 B   ---   --   ---xx   flac  0.5263  03- High Water (for Charley Patton).flac
+     3:10.58       33652460 B   ---   --   ---xx   flac  0.4013  04- Mutineer.flac
+     7:13.25       76440044 B   ---   --   ---xx   flac  0.4046  05- Floater (Too Much To Ask).flac
+     8:09.02       86264348 B   ---   --   ---xx   flac  0.5606  06- Summer Days.flac
+     5:01.49       53211692 B   ---   --   ---xx   flac  0.5022  07- Blowin' In The Wind.flac
+     6:19.34       66935612 B   ---   --   ---xx   flac  0.5687  08- All Along The Watchtower.flac
+     3:55.64       41604572 B   ---   --   ---xx   flac  0.4732  09- Something.flac
+    54:10.62      573446220 B                            0.5045  (9 files)
+=================== 
+=================== 
+=================== 

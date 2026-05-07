@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-24-b.flacf 
+=================== 
+=================== 
+=================== 
+bda7c4afcf47fd573e3d21158fcce769  dylan2001-10-24-flac.ffp
+2f60141b9a072fd26c3f16b1c5c6b5ef  dylan2001-10-24-flac.md5
+60d6a00aed0f218169b077c9ccaaf1f4  dylan2001-10-24-info.txt
+a3306dc72e0a9330f65512c7192b4dc2  dylan2001-10-24-poster.jpg
+822061a178cd8f6680d12d2d8e3e9e44  dylan2001-10-24d1t01.flac
+8ea91c3efc290d3522236ea248d249c0  dylan2001-10-24d1t02.flac
+177779f40859f01fac16815691bb5c75  dylan2001-10-24d1t03.flac
+45b3393ad2d4a21deeeb6a45f9d65b81  dylan2001-10-24d1t04.flac
+b5475a231c7fb7e66ddfaf3a4d515ef0  dylan2001-10-24d1t05.flac
+ff38aeb838030beff56f69b43c1a99fc  dylan2001-10-24d1t06.flac
+d4bc3ca151e254a2d3a24efd831a9f01  dylan2001-10-24d1t07.flac
+9433d5d63758c428c7b0320e2c03a5c9  dylan2001-10-24d1t08.flac
+1822330069899a171b818c6d23788d8e  dylan2001-10-24d1t09.flac
+7ffaea95cc7a9b5710269667f68f7194  dylan2001-10-24d1t10.flac
+e5f15c49111775addfc03b2cfe4b85d1  dylan2001-10-24d1t11.flac
+58bad3397d208c46c8b1dedfbf30f0d3  dylan2001-10-24d1t12.flac
+6473b5a1199a7cd0eade5eb8f93cffb8  dylan2001-10-24d1t13.flac
+5b0d4ea3e43656b5a33536ac51e1b973  dylan2001-10-24d2t01.flac
+f7167377f83b256707e69eda7a755763  dylan2001-10-24d2t02.flac
+10ed9ecaaadafd451c066d37823d4431  dylan2001-10-24d2t03.flac
+e62e936a430192fe0dc492bda6625525  dylan2001-10-24d2t04.flac
+29e993e1593380b77bfa7abe180dd857  dylan2001-10-24d2t05.flac
+4589da990d074c191d9252394fd16a37  dylan2001-10-24d2t06.flac
+e1d71d3da536ddef5314759e99625a3a  dylan2001-10-24d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-24-b.flacf 
+=================== 
+=================== 
+=================== 
+dylan2001-10-24d1t01.flac:79e194292e088e67ab7b165cfb241386
+dylan2001-10-24d1t02.flac:bdc2b7f45b1dc6b2a257885d5ccae93d
+dylan2001-10-24d1t03.flac:bfe32429682201d212f1addaebe00707
+dylan2001-10-24d1t04.flac:e7874f79fae8d203653442b0ddae62b7
+dylan2001-10-24d1t05.flac:807bc5aea644876764aa930244a0a92b
+dylan2001-10-24d1t06.flac:eabc8de867e72a1c58ad76470af09ac1
+dylan2001-10-24d1t07.flac:631ca9a268a188c9e9c859c5a7a8bc67
+dylan2001-10-24d1t08.flac:90992bddb3b5bd0cc5f36c324de07464
+dylan2001-10-24d1t09.flac:528f4812cadd99ab28b2e69b91e34978
+dylan2001-10-24d1t10.flac:e791bcfa6455ec965b58ff2b5747332c
+dylan2001-10-24d1t11.flac:5d766f5504548c54204ceb8667c952b4
+dylan2001-10-24d1t12.flac:06e6ccdd5fbd849008f55d86f080f7f4
+dylan2001-10-24d1t13.flac:9f83923b1d9f26729a1538b839c973ad
+dylan2001-10-24d2t01.flac:0a475cdc533eba7445ae365592938bfa
+dylan2001-10-24d2t02.flac:f0a7a5d25fba0f9deb8c4253f2bf4906
+dylan2001-10-24d2t03.flac:203ea66819b06866afecb4d37bbefa2d
+dylan2001-10-24d2t04.flac:9689226ca9c5454139aa369153da50fa
+dylan2001-10-24d2t05.flac:ad811e67e0db59901fa9c64adbe0f397
+dylan2001-10-24d2t06.flac:946a12a31aa5b0730d735719d2550162
+dylan2001-10-24d2t07.flac:7fcfad9b42de6c710fae66c2f6b12705
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-24-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:05.07       32650508 B   ---   --   ---xx   flac  0.5864  dylan2001-10-24d1t01.flac
+     7:05.47       75080588 B   ---   --   ---xx   flac  0.5759  dylan2001-10-24d1t02.flac
+     4:53.72       51854588 B   ---   --   ---xx   flac  0.4776  dylan2001-10-24d1t03.flac
+     3:11.74       33866492 B   ---   --   ---xx   flac  0.5296  dylan2001-10-24d1t04.flac
+     6:23.23       67615340 B   ---   --   ---xx   flac  0.5913  dylan2001-10-24d1t05.flac
+     7:21.52       77914748 B   ---   --   ---xx   flac  0.4980  dylan2001-10-24d1t06.flac
+     4:42.55       49874204 B   ---   --   ---xx   flac  0.5451  dylan2001-10-24d1t07.flac
+     5:29.42       58134428 B   ---   --   ---xx   flac  0.5429  dylan2001-10-24d1t08.flac
+     8:18.73       88018940 B   ---   --   ---xx   flac  0.4578  dylan2001-10-24d1t09.flac
+     9:25.27       99729548 B   ---   --   ---xx   flac  0.5133  dylan2001-10-24d1t10.flac
+     5:12.26       55097996 B   ---   --   ---xx   flac  0.5190  dylan2001-10-24d1t11.flac
+     6:01.16       63718076 B   ---   --   ---xx   flac  0.5968  dylan2001-10-24d1t12.flac
+     7:38.13       80821820 B   ---   --   ---xx   flac  0.4121  dylan2001-10-24d1t13.flac
+     5:17.66       56074076 B   ---   --   ---xx   flac  0.6300  dylan2001-10-24d2t01.flac
+     8:22.61       88696316 B   ---   --   ---xx   flac  0.5930  dylan2001-10-24d2t02.flac
+     6:28.44       68546732 B   ---   --   ---xx   flac  0.5178  dylan2001-10-24d2t03.flac
+     8:04.64       85528172 B   ---   --   ---xx   flac  0.5905  dylan2001-10-24d2t04.flac
+     6:28.39       68534972 B   ---   --   ---xx   flac  0.5434  dylan2001-10-24d2t05.flac
+     6:32.27       69212348 B   ---   --   ---xx   flac  0.6319  dylan2001-10-24d2t06.flac
+     8:19.56       88155356 B   ---   --   ---xx   flac  0.4932  dylan2001-10-24d2t07.flac
+   128:24.59     1359125248 B                            0.5389  (20 files)
+=================== 
+=================== 
+=================== 

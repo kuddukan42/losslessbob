@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-10-28-alt-master.flacf 
+=================== 
+=================== 
+=================== 
+f3c29b4790f9e00344d3dc628dd89f13  2005-10-28-Rotterdam.md5
+9eab8cb941efa171ce52bee436d8d382  bd05-10-28 alt master.txt
+d794397b2218aede35b20619ec820761  bd05-10-28-alt-master-LB-3374.txt
+236b118887d16471f88ba4a2b40df13b  Titel 101.flac
+1781bb20495304817b609fdb9c21b818  Titel 102.flac
+dfb86738bda8a7f853350986d7d602ff  Titel 103.flac
+9b79ae9a0f90e33316532221a7fb0b5b  Titel 104.flac
+415d10b9c6e15773eb6a0f395c01c1e6  Titel 105.flac
+4543131b48374d363560c77726991b1a  Titel 106.flac
+54f785d901680f7e88f4751af4fb7880  Titel 107.flac
+51a90f04bcda13d4caa102fada2a6766  Titel 108.flac
+139dae92fdd982227120bb40218b60e6  Titel 109.flac
+59ff27ac0d1fbd0dc30db35419c05215  Titel 110.flac
+5004dadc16b2507a3c81763f63ebea9f  Titel 111.flac
+d246389461387a39bfca55ccc0581ceb  Titel 201.flac
+f3e54395da246b83846f24d79ededc71  Titel 202.flac
+1eb175f3c67972799e7f02bededa1389  Titel 203.flac
+4b8fac66cc5147aedbfa66095d984780  Titel 204.flac
+06d43432218343c8c64e18f4442d2ec1  Titel 205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-10-28-alt-master.flacf 
+=================== 
+=================== 
+=================== 
+Titel 101.flac:7facc9454958430dabf0531873d14ed3
+Titel 102.flac:0137e18277ffda602ee30b365e921976
+Titel 103.flac:3b119be6372f20f835bfa702192326c1
+Titel 104.flac:7c40e0a66f26e2c6ae9c8f4ecdddfe97
+Titel 105.flac:4b14a4441bf0ab66dcc5f9e6b6d880ad
+Titel 106.flac:8988c9b0563f5a74e8a7edf87116374e
+Titel 107.flac:71f58491f44100af5609392eae2fcdb8
+Titel 108.flac:588dbb99dd56105156a65e2f013e4338
+Titel 109.flac:5387d63125b0ee967873dacafa7e5297
+Titel 110.flac:6436a703b66b5a16bcf3d971394138d5
+Titel 111.flac:adc4023bf08909bd36b05f99869be3a1
+Titel 201.flac:911e51d75490d2c7f6e78831c32a3783
+Titel 202.flac:687f0b6db912c6bc55f3c319fd5b9dfb
+Titel 203.flac:444c7c8c48c01dd3702ae183c39ee7a7
+Titel 204.flac:06b08fce1a76fd83b746c336d279c1c1
+Titel 205.flac:eec0aff1d57bc9b46890cf8e428522c6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-10-28-alt-master.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.13       59653820 B   ---   --   ---xx   flac  0.5174  Titel 101.flac
+     5:59.23       63381740 B   ---   --   ---xx   flac  0.4776  Titel 102.flac
+     5:36.63       59418620 B   ---   --   ---xx   flac  0.5020  Titel 103.flac
+     5:43.64       60655772 B   ---   --   ---xx   flac  0.4582  Titel 104.flac
+     8:53.20       94068284 B   ---   --   ---xx   flac  0.5274  Titel 105.flac
+     7:05.60       75111164 B   ---   --   ---xx   flac  0.4827  Titel 106.flac
+     6:52.28       72742700 B   ---   --   ---xx   flac  0.4769  Titel 107.flac
+     8:05.61       85697516 B   ---   --   ---xx   flac  0.4994  Titel 108.flac
+     5:59.64       63478172 B   ---   --   ---xx   flac  0.4883  Titel 109.flac
+     5:58.02       63155948 B   ---   --   ---xx   flac  0.4613  Titel 110.flac
+     8:22.34       88632812 B   ---   --   ---xx   flac  0.5215  Titel 111.flac
+     7:13.69       76543532 B   ---   --   ---xx   flac  0.5032  Titel 201.flac
+     7:17.36       77171516 B   ---   --   ---xx   flac  0.4781  Titel 202.flac
+    11:27.37      121273868 B   ---   --   ---xx   flac  0.5106  Titel 203.flac
+     7:20.35       77698364 B   ---   --   ---xx   flac  0.5271  Titel 204.flac
+     5:59.62       63473468 B   ---   --   ---xx   flac  0.5306  Titel 205.flac
+   113:34.71     1202157296 B                            0.4995  (16 files)
+=================== 
+=================== 
+=================== 

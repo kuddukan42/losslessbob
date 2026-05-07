@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-25-a.flacf 
+=================== 
+=================== 
+=================== 
+4809e56b0cae69c745511beee504a3ec  bd1999-06-25 Chula Vista.md5
+6487b1694ff3274bcc817b95902deb4a  bd1999-06-25.d1t02.sa_fa.JPG
+e18551c527717287440c4a1482d74085  bd1999-06-25.info.lbp51.txt
+c526726db55564832ff0bffc4c5a14e4  bd1999-06-25d1\bd1999-06-25d1.ffp.txt
+14df9507439321b2e5f9633a27181c4e  bd1999-06-25d1\bd1999-06-25d1.log
+030551840ba92929424956bb2de7386c  bd1999-06-25d1\bd1999-06-25d1.md5
+44aa3cf888da68b6c644155e50bf4c51  bd1999-06-25d1\bd1999-06-25d1t01.flac
+c6bbfb062460c8e09302c4fbd2265ff3  bd1999-06-25d1\bd1999-06-25d1t02.flac
+120ab1ab2c8a16a90e3fb0b2a890f87e  bd1999-06-25d1\bd1999-06-25d1t03.flac
+88560e1f350e453ce4f145ed14a6e64f  bd1999-06-25d1\bd1999-06-25d1t04.flac
+bf19a5832f21dea5a66b3977b3185129  bd1999-06-25d1\bd1999-06-25d1t05.flac
+3721150529e78c154cab40dc022084ac  bd1999-06-25d1\bd1999-06-25d1t06.flac
+45f50d26d44697c13d988ccf9c3a0bb4  bd1999-06-25d1\bd1999-06-25d1t07.flac
+fc83e2b8c9dd3d18d965ccbedd108a62  bd1999-06-25d1\bd1999-06-25d1t08.flac
+f0f17b41e16428131e228600b06bf998  bd1999-06-25d1\bd1999-06-25d1t09.flac
+a8bc078f0e76fff693f9bc462c796684  bd1999-06-25d1\Unknown Artist - bd1999-06-25d1.m3u
+dbbdd812c84fa1fc976992b7ececedc8  bd1999-06-25d2\bd1999-06-25d2.ffp.txt
+170d6be693c3edb4a4a23aa276d913cd  bd1999-06-25d2\bd1999-06-25d2.log
+47d97d57da0c177f6b7724b3d91aeee0  bd1999-06-25d2\bd1999-06-25d2.md5
+e7e1788d9ae0fa1cbcb7eb7a7a587dc8  bd1999-06-25d2\bd1999-06-25d2t01.flac
+791d103addef3fa947aad2134b28be5e  bd1999-06-25d2\bd1999-06-25d2t02.flac
+67ae3d9d25b864af7d17090a6334d47b  bd1999-06-25d2\bd1999-06-25d2t03.flac
+0e0454e20c6c64cce881312d94c19787  bd1999-06-25d2\bd1999-06-25d2t04.flac
+b5618ead056de0f57552dca0125628ea  bd1999-06-25d2\bd1999-06-25d2t05.flac
+2141a55fe05969fd887b0f228297be53  bd1999-06-25d2\Unknown Artist - bd1999-06-25d2.m3u.txt
+8233116c4ccd4117f1aa875bd1936dee  d1t01&03.fixed.flac (level8)\bd1999-06-25d1t01.fixed.flac
+5b28293cf4acc97f26d69f5c99ed508b  d1t01&03.fixed.flac (level8)\bd1999-06-25d1t03.fixed.flac
+ba821d88a36de868ffb7d6399f5ee99d  d1t01&03.fixed.flac (level8)\d1t01&03-fixed.ffp.txt
+295a1cea88f81ec7c901bcf56174f006  d1t01&03.fixed.flac (level8)\d1t01&03.fixed.flac(level8).md5
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+bd1999-06-25d1t01.fixed.flac:9c0503c21167c8e36bbfdefbe3980a4f
+bd1999-06-25d1t03.fixed.flac:b81fd71fde1818bc428e346c74446879
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-25-a.flacf\bd1999-06-25d1 
+=================== 
+=================== 
+=================== 
+bd1999-06-25d1t01.flac:cc6a9be5c44a9b07787f8c81b06ab614
+bd1999-06-25d1t02.flac:3bfb8c5330025c8b18db05ccf53ee4ca
+bd1999-06-25d1t03.flac:88a434bb47ee8026bf986508a01927d2
+bd1999-06-25d1t04.flac:f4d81049386a85b33bb3872f1f2d1aaf
+bd1999-06-25d1t05.flac:209e24bdd982c59e2ae93e6d6838dcca
+bd1999-06-25d1t06.flac:f0003236fa6ee3ccd38dc48313323316
+bd1999-06-25d1t07.flac:51658a74a4929a7163744742cdd206ce
+bd1999-06-25d1t08.flac:f31f23265c68e2808e1191172c9358df
+bd1999-06-25d1t09.flac:a5cccfc1b55564989370d34f5f512b14
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-25-a.flacf\bd1999-06-25d2 
+=================== 
+=================== 
+=================== 
+bd1999-06-25d2t01.flac:62658d22ec05f7c37b7400f2360495c9
+bd1999-06-25d2t02.flac:c08132f8552240e6aae99fb6bdb869aa
+bd1999-06-25d2t03.flac:e15088aa283669f0202e3ce0c8721648
+bd1999-06-25d2t04.flac:4d83927884114a373c693fb8fb17fb27
+bd1999-06-25d2t05.flac:395dabe38c33dcd54eefab49ae7732d1
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:54.38       41367020 B   ---   --   ---xx   flac  0.4921  bd1999-06-25d1t01.fixed.flac
+     6:56.52       73504748 B   ---   --   ---xx   flac  0.5222  bd1999-06-25d1t03.fixed.flac
+    10:51.15      114871768 B                            0.5114  (2 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-25-a.flacf\bd1999-06-25d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:54.39       41369372 B   ---   --   ---xx   flac  0.4922  bd1999-06-25d1t01.flac
+     6:33.39       69416972 B   ---   --   ---xx   flac  0.5260  bd1999-06-25d1t02.flac
+     6:56.51       73502396 B   ---   --   ---xx   flac  0.5218  bd1999-06-25d1t03.flac
+     8:29.13       89818220 B   ---   --   ---xx   flac  0.5662  bd1999-06-25d1t04.flac
+    10:08.41      107347676 B   ---   --   ---xx   flac  0.5141  bd1999-06-25d1t05.flac
+     5:16.32       55817708 B   ---   --   ---xx   flac  0.5833  bd1999-06-25d1t06.flac
+     6:12.33       65698460 B   ---   --   ---xx   flac  0.5304  bd1999-06-25d1t07.flac
+     6:24.16       67775276 B   ---   --   ---xx   flac  0.5518  bd1999-06-25d1t08.flac
+     5:58.20       63198284 B   ---   --   ---xx   flac  0.5962  bd1999-06-25d1t09.flac
+    59:53.59      633944364 B                            0.5423  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-25-a.flacf\bd1999-06-25d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.59       76343612 B   ---   --   ---xx   flac  0.5650  bd1999-06-25d2t01.flac
+     8:21.00       88376444 B   ---   --   ---xx   flac  0.4736  bd1999-06-25d2t02.flac
+     7:01.41       74360876 B   ---   --   ---xx   flac  0.4521  bd1999-06-25d2t03.flac
+     3:20.34       35360012 B   ---   --   ---xx   flac  0.5399  bd1999-06-25d2t04.flac
+     5:20.47       56558588 B   ---   --   ---xx   flac  0.5202  bd1999-06-25d2t05.flac
+    31:16.31      330999532 B                            0.5049  (5 files)
+=================== 
+=================== 
+=================== 

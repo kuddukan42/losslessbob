@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-31-full-house.flacf 
+=================== 
+=================== 
+=================== 
+595618e308c383b635fe9ecdc451d993  bd95-03-31-full-house-d1t01.flac
+5aaaf165530e1e404fdfa65d3af849eb  bd95-03-31-full-house-d1t02.flac
+2e62c250a3f4547c2262f37d33af03b5  bd95-03-31-full-house-d1t03.flac
+fbd66b855a11a903d8787dc6368bf215  bd95-03-31-full-house-d1t04.flac
+b77d9ad31cd1568456c4f69085685aa1  bd95-03-31-full-house-d1t05.flac
+954f459909ef877a26b55e58caa99697  bd95-03-31-full-house-d1t06.flac
+9fe627e0d6dee7af6d70622fcbe962e1  bd95-03-31-full-house-d1t07.flac
+5506de08b350c35a5acbab17107caac1  bd95-03-31-full-house-d1t08.flac
+f5bb721555e8562411a20b4a5aeeb9a2  bd95-03-31-full-house-d1t09.flac
+850400d52680064dcbc9205e53e51b16  bd95-03-31-full-house-d1t10.flac
+44677cec39a6d47bc74ed7aea2b2a821  bd95-03-31-full-house-d1t11.flac
+1e46869c0ce4730c844f8f3fd5d008de  bd95-03-31-full-house-d2t01.flac
+9f43895a31fd71f0fd03bb3ce96c9e41  bd95-03-31-full-house-d2t02.flac
+082423798575936c84cb7f0aa72ac97c  bd95-03-31-full-house-d2t03.flac
+4c5bacc87d7a394cdcf5c78242e05acf  bd95-03-31-full-house-d2t04.flac
+e5859ef1d8c1bbe849906b0a1a98d239  bd95-03-31-full-house-d2t05.flac
+a1a28313a8d5be8a6b2985b807cfc869  bd95-03-31-full-house-d2t06.flac
+9f4a80e48765439c5a8fc94469a98ce1  bd95-03-31-full-house-d2t07.flac
+0da4afa0431c923020440e2c16bfce8e  bd95-03-31-full-house-d2t08.flac
+70afa8fa94e49c11fe4ef4963be81056  bd95-03-31-full-house-d2t09.flac
+71572dc187d98b16cb2cda2ec21f4c31  bd95-03-31-full-house-d2t10.flac
+31ce04823d4a1653a8f61350f99ed129  bd95-03-31-full-house-d2t11.flac
+f312c0e68e20f1f64d62b65477d09e50  bd95-03-31-full-house-d2t12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-31-full-house.flacf 
+=================== 
+=================== 
+=================== 
+bd95-03-31-full-house-d1t01.flac:845ea955e4c0e100d1e9bec9765dcdfe
+bd95-03-31-full-house-d1t02.flac:1faf3b384f2716ca5a7a50515f8a1367
+bd95-03-31-full-house-d1t03.flac:29037546b13f2f3f1506c182a9928ead
+bd95-03-31-full-house-d1t04.flac:78aed2cf994ad42b187b0c191d4b1cbd
+bd95-03-31-full-house-d1t05.flac:53cb66cdf72cf95fca81e19dd27ac521
+bd95-03-31-full-house-d1t06.flac:d15fccd50937918d4b463eb22fad79da
+bd95-03-31-full-house-d1t07.flac:6a78a593749f33b17769a48e9766562e
+bd95-03-31-full-house-d1t08.flac:25771a548faf52e13875be5faa1057d3
+bd95-03-31-full-house-d1t09.flac:88e518bb170d57bbd733a36864e8e51d
+bd95-03-31-full-house-d1t10.flac:ad890e68e9a6d9d967796ec9b76f8a59
+bd95-03-31-full-house-d1t11.flac:c6b24efdfb7a7d97d5fc8c6dab677e83
+bd95-03-31-full-house-d2t01.flac:59dfd4295421a10af2dcffd8bb3f86f0
+bd95-03-31-full-house-d2t02.flac:6cf1d69ac0cb82c9dcc332c23f2a1464
+bd95-03-31-full-house-d2t03.flac:364ee60eb8b74feebb0f1f5593780718
+bd95-03-31-full-house-d2t04.flac:8a7ca76fc9a421aeb5cb56e5e156c90c
+bd95-03-31-full-house-d2t05.flac:1446470e8b7048adc16b930c9ed62c3c
+bd95-03-31-full-house-d2t06.flac:e5581cea8fa1dfdd770c8826ff6476bd
+bd95-03-31-full-house-d2t07.flac:3fe2b85e887949d2e5d2ddc0ffd74fa7
+bd95-03-31-full-house-d2t08.flac:957b6d82609510c7eac5e821a63793b7
+bd95-03-31-full-house-d2t09.flac:1d5744ebdf7691bf41a78a8f86f797dd
+bd95-03-31-full-house-d2t10.flac:58205d12807fdd64f6991968be52877f
+bd95-03-31-full-house-d2t11.flac:fcb7028db55e86593cd1d90de1887590
+bd95-03-31-full-house-d2t12.flac:dc99fb597d79407939a39597c1b4577f
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-03-31-full-house.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.65       54660524 B   ---   --   ---xx   flac  0.7476  bd95-03-31-full-house-d1t01.flac
+     5:15.27       55629548 B   ---   --   ---xx   flac  0.7042  bd95-03-31-full-house-d1t02.flac
+     6:12.15       65656124 B   ---   --   ---xx   flac  0.7190  bd95-03-31-full-house-d1t03.flac
+     6:22.58       67521260 B   ---   --   ---xx   flac  0.6831  bd95-03-31-full-house-d1t04.flac
+     7:54.25       83672444 B   ---   --   ---xx   flac  0.7282  bd95-03-31-full-house-d1t05.flac
+     6:39.55       70513004 B   ---   --   ---xx   flac  0.6434  bd95-03-31-full-house-d1t06.flac
+     6:54.50       73147244 B   ---   --   ---xx   flac  0.5764  bd95-03-31-full-house-d1t07.flac
+     6:34.30       69572204 B   ---   --   ---xx   flac  0.5776  bd95-03-31-full-house-d1t08.flac
+     7:53.50       83554844 B   ---   --   ---xx   flac  0.5582  bd95-03-31-full-house-d1t09.flac
+     6:44.00       71265644 B   ---   --   ---xx   flac  0.7059  bd95-03-31-full-house-d1t10.flac
+     8:20.50       88317644 B   ---   --   ---xx   flac  0.6825  bd95-03-31-full-house-d1t11.flac
+     9:36.20      101653484 B   ---   --   ---xx   flac  0.7415  bd95-03-31-full-house-d2t01.flac
+     7:13.42       76480028 B   ---   --   ---xx   flac  0.6970  bd95-03-31-full-house-d2t02.flac
+     7:05.00       74970044 B   ---   --   ---xx   flac  0.6854  bd95-03-31-full-house-d2t03.flac
+     4:35.63       48658220 B   ---   --   ---xx   flac  0.7144  bd95-03-31-full-house-d2t04.flac
+     4:07.37       43657868 B   ---   --   ---xx   flac  0.7364  bd95-03-31-full-house-d2t05.flac
+     7:34.63       80233820 B   ---   --   ---xx   flac  0.7153  bd95-03-31-full-house-d2t06.flac
+     6:22.10       67408364 B   ---   --   ---xx   flac  0.6209  bd95-03-31-full-house-d2t07.flac
+     0:39.12        6907868 B   ---   --   ---xx   flac  0.6181  bd95-03-31-full-house-d2t08.flac
+     6:54.28       73095500 B   ---   --   ---xx   flac  0.7317  bd95-03-31-full-house-d2t09.flac
+     7:40.20       81191084 B   ---   --   ---xx   flac  0.7040  bd95-03-31-full-house-d2t10.flac
+     8:11.15       86647724 B   ---   --   ---xx   flac  0.6367  bd95-03-31-full-house-d2t11.flac
+     7:01.27       74327948 B   ---   --   ---xx   flac  0.6754  bd95-03-31-full-house-d2t12.flac
+   151:03.12     1598742436 B                            0.6791  (23 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,18 @@
+51cf49fa0a36a4de76d3e0f45c9f1ccd  Dylan AUD master\Track No01.flac
+56ab5d99ceae3002595e76a06c8eb31a  Dylan AUD master\Track No02.flac
+2a9cbfc4eefb1fe083f062e86716f72f  Dylan AUD master\Track No03.flac
+40fedd12871f710a484d50cfdfea54a3  Dylan AUD master\Track No04.flac
+d38e109d7386322bbd6ad0665d843f0f  Dylan AUD master\Track No05.flac
+489f10fc09ae8e049ea6d51b0386dec0  Dylan AUD master\Track No06.flac
+f64aab0f5fc75b2ced7573c4b094d85d  Dylan AUD master\Track No07.flac
+9ed7c5e383439cffd19d85f55e24079b  Dylan AUD master\Track No08.flac
+f5afff258282885766361c5ccf45312e  Dylan AUD master\Track No09.flac
+7aab10a58030a0c028398c48e1ce3147  Dylan AUD master\Track No10.flac
+e38ac2b834a747b1a30bb14631b65629  Dylan AUD master\Track No11.flac
+f02cc5f2a630bd9f4144b218926d74eb  Dylan AUD master\Track No12.flac
+2ad3e4afa929d7a92ae402a6cddfc2a0  Dylan AUD master\Track No13.flac
+6aa426b79cb71bed0b6c91dfa64b2265  Paul Simon Bob Dylan Jones Beach 1999-07-30 SBD.md5
+fc3815c2580adb5c443974842a75b60a  Simon AUD fragments master\01 - Mrs Robinson.flac
+21b3178e5f8ecd44368e62401f054f74  Simon AUD fragments master\02 - Me and Julio.flac
+235ac7f653dc56a6651caf74867e73aa  Simon AUD fragments master\03 - Graceland.flac
+2a4c1ece629447729120d03f15142bec  Simon Dylan JB 1999.txt

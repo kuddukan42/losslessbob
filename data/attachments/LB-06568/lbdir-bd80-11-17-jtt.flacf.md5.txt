@@ -1,0 +1,30 @@
+da0c54b25e651d6890dc0524d9a9b0ba  Disc One\Disc01Track01 Dylan Warfield 17.11.80.flac
+7b505f21a301ccfe42865c847271429b  Disc One\Disc01Track02 Dylan Warfield 17.11.80.flac
+42a01b714f9d5a83a8882846b3125074  Disc One\Disc01Track03 Dylan Warfield 17.11.80.flac
+faff29edeaf09d60ebaf9b103394e76d  Disc One\Disc01Track04 Dylan Warfield 17.11.80.flac
+b56eed45799ab63046e62fc0531d0d79  Disc One\Disc01Track05 Dylan Warfield 17.11.80.flac
+8cefa948bab7d394f9bb470b3fdf7fd7  Disc One\Disc01Track06 Dylan Warfield 17.11.80.flac
+2ad00bea8a25ffeb78f306ec15f57a04  Disc One\Disc01Track07 Dylan Warfield 17.11.80.flac
+e22eaaf7e49c0611c5e65040ac3d8c2d  Disc One\Disc01Track08 Dylan Warfield 17.11.80.flac
+01f12bc3642afd5f2cb85046cd11b40f  Disc One\Disc01Track09 Dylan Warfield 17.11.80.flac
+5df4521104b397b3a6b23f194cd1cc55  Disc One\Disc01Track10 Dylan Warfield 17.11.80.flac
+fec1d2fcae3df3b0f79a300a4ce2ba09  Disc One\Disc01Track11 Dylan Warfield 17.11.80.flac
+16d8e43cac973ac659474814e543cc7b  Disc One\Disc01Track12 Dylan Warfield 17.11.80.flac
+fab2d86280d739c5d6a4c1898cb0570f  Disc One\Disc01Track13 Dylan Warfield 17.11.80.flac
+6444bc5d4465cf1614042761b3a8232f  Disc Two\Disc02Track01 Dylan Warfield 17.11.80.flac
+6354c7324c2d0016aae3fe606af032ec  Disc Two\Disc02Track02 Dylan Warfield 17.11.80.flac
+322c1f6ab3ba411f8e2c81f26e3a8fb0  Disc Two\Disc02Track03 Dylan Warfield 17.11.80.flac
+186c3b483bae067300bd4ed1e141528e  Disc Two\Disc02Track04 Dylan Warfield 17.11.80.flac
+14f8e648bae7d6fa63c38f271babdc12  Disc Two\Disc02Track05 Dylan Warfield 17.11.80.flac
+22ec9ae66d8c0003ed76f68f4a1201fb  Disc Two\Disc02Track06 Dylan Warfield 17.11.80.flac
+b91bb04a721da6a60a9de006d65c0cd3  Disc Two\Disc02Track07 Dylan Warfield 17.11.80.flac
+f70e553a8c894d16d7f8efbd4a071106  Disc Two\Disc02Track08 Dylan Warfield 17.11.80.flac
+533bdf94614b4946c45e34836b599a41  Disc Two\Disc02Track09 Dylan Warfield 17.11.80.flac
+4bc395a8af6f1fccd8fc8d87593b9aaa  Disc Two\Disc02Track10 Dylan Warfield 17.11.80.flac
+ddb0d5bbb09c65ef21f8daad7df42646  Disc Two\Disc02Track11 Dylan Warfield 17.11.80.flac
+575bbf91864883aa5a943df8767901cf  Dylan - Fox Warfield November 17th 1980.md5
+197fcccf7ae6716c6f0eb26ecd05dd86  Dylan - Fox Warfield November 17th 1980.txt
+03f1a06804cf532742da3ae8e9223b32  Dylan - Fox Warfield November 17th 1980_Info.txt
+50113d76111509d5217e657711fcd78c  Fox Warfield - 17.11.1980 - F.jpg
+d74f0ab69c39398df58e220b7b77d57d  Fox Warfield - 17.11.1980 - Liner.jpg
+aa422315c1183462d70823b9ac4ba483  Fox Warfield - 17.11.1980 - R.jpg

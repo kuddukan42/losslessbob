@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd24-11-13-spot.flacf
+===================
+===================
+===================
+bd2643a835579c3693bf03ecf4664a7d *01 bd2024-11-13 RAH.flac
+771d70c74db2c889026a8868985171bf *02 Royal Albert Hall.flac
+d09e8cdefdfbd92fda8f9f47222ac0cd *03 Royal Albert Hall.flac
+91a6debe8fb52e314699314f7a375f27 *04 Royal Albert Hall.flac
+3af394bd67e4f301edff25a700bf177b *05 Royal Albert Hall.flac
+5b9d47fd25edb5f08367b32f68da69bb *06 Royal Albert Hall.flac
+45637c7f714630642b4546b3f057d725 *07 Royal Albert Hall.flac
+b679fc5ceda867b6ecef7550e016e26b *08 Royal Albert Hall.flac
+a36bb8fc924f908548f5669e8a7a5abc *09 Royal Albert Hall.flac
+9831a8ec5fd2388c00c8e0e046bc301d *10 Royal Albert Hall.flac
+77697df34bc89991039b7c6edc6726e5 *11 Royal Albert Hall.flac
+d9e62a36a4c255074521960f2bb27c01 *12 Royal Albert Hall.flac
+9776c2d23ab9b2f993c17225cc863e39 *13 Royal Albert Hall.flac
+1022a0ae3ea1b7fac3996b3ec3776fa5 *14 Royal Albert Hall.flac
+bba3ce81b135efdfed83997059a43d41 *15 Royal Albert Hall.flac
+8cbb04cbc2500747b8849abdaa3b5844 *16 Royal Albert Hall.flac
+99bb9237114b40256734b9447c302669 *17 Royal Albert Hall.flac
+d4b4b587572f1bf635c5b9cbcffcf4cc *2024-11-13 RAH London (Spot).md5
+9c94f211c4a3cb23210df3d3a8406e7b *info.txt
+===================
+===================
+===================
+=== ffp for: bd24-11-13-spot.flacf
+===================
+===================
+===================
+01 bd2024-11-13 RAH.flac:382b61a72060859a8799aafca921ca47
+02 Royal Albert Hall.flac:9ecbff34f917e438a1508e6008ea6306
+03 Royal Albert Hall.flac:3464450bb016bc62cf67a58fa2eb481b
+04 Royal Albert Hall.flac:f4ce9f52b00519ae2e3b1cdb5d715c1f
+05 Royal Albert Hall.flac:a34d0f296478ca0ade36e2a269a64e0d
+06 Royal Albert Hall.flac:90af0502aad58003f025efdcc54f1bb5
+07 Royal Albert Hall.flac:7b916c3f4e3e93923e88b09f265a74de
+08 Royal Albert Hall.flac:d8afa63c1968a1549979579ef28af202
+09 Royal Albert Hall.flac:fa6bfe9b398ef969c1e6326596a17d72
+10 Royal Albert Hall.flac:c1c0410bc8e0ed4be4ae56d30554dd2b
+11 Royal Albert Hall.flac:34dc8356cb06a51b0d6b48404e2a9722
+12 Royal Albert Hall.flac:105692196b800e0b3431943d4d689a8e
+13 Royal Albert Hall.flac:c7e98811eda659d12e46d9937d7d5f09
+14 Royal Albert Hall.flac:de82af170cbd9b021def575bc6b49d55
+15 Royal Albert Hall.flac:d55e534c507b955985da3e69491f1f84
+16 Royal Albert Hall.flac:12995c01310e826396d8d856a4c46091
+17 Royal Albert Hall.flac:b77db06dd56ff9784ce3d3c0ab856b28
+===================
+===================
+===================
+=== shntool len for: bd24-11-13-spot.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.841      88370216 B   cxx   --   ---xx   flac  0.6359  01 bd2024-11-13 RAH.flac
+     6:59.734     120883502 B   cxx   --   ---xx   flac  0.6494  02 Royal Albert Hall.flac
+     5:55.828     102478376 B   cxx   --   ---xx   flac  0.6100  03 Royal Albert Hall.flac
+     7:02.761     121755182 B   cxx   --   ---xx   flac  0.6235  04 Royal Albert Hall.flac
+     5:14.041      90443816 B   cxx   --   ---xx   flac  0.5949  05 Royal Albert Hall.flac
+     5:10.574      89445416 B   cxx   --   ---xx   flac  0.5731  06 Royal Albert Hall.flac
+     6:11.974     107128616 B   cxx   --   ---xx   flac  0.5556  07 Royal Albert Hall.flac
+     4:02.254      69769256 B   cxx   --   ---xx   flac  0.6127  08 Royal Albert Hall.flac
+     8:09.748     141047336 B   cxx   --   ---xx   flac  0.5979  09 Royal Albert Hall.flac
+     6:45.734     116851502 B   cxx   --   ---xx   flac  0.6127  10 Royal Albert Hall.flac
+     7:48.628     134964776 B   cxx   --   ---xx   flac  0.5405  11 Royal Albert Hall.flac
+     5:16.961      91284776 B   cxx   --   ---xx   flac  0.6060  12 Royal Albert Hall.flac
+     4:20.481      75018536 B   cxx   --   ---xx   flac  0.5620  13 Royal Albert Hall.flac
+     6:17.254     108649256 B   cxx   --   ---xx   flac  0.5661  14 Royal Albert Hall.flac
+     5:33.294      95988776 B   cxx   --   ---xx   flac  0.5515  15 Royal Albert Hall.flac
+     5:37.748      97271336 B   cxx   --   ---xx   flac  0.6111  16 Royal Albert Hall.flac
+     7:12.093     124442852 B   cxx   --   ---xx   flac  0.5749  17 Royal Albert Hall.flac
+   102:45.947    1775793526 B                            0.5925  (17 files)
+===================
+===================
+===================

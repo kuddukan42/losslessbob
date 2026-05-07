@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== md5 for: bd79-12-08-g.flacf
+===================
+===================
+===================
+a0e764c60688fb51d20d10d933d90f11 *CD1\01 Gotta serve somebody.flac
+6d625c8e44b271919429a77582ad4c8d *CD1\02 I believe in you.flac
+dcc282602d0f758ac12cda44a3dcc37c *CD1\03 When you gonna wake up.flac
+ee54398abe637c627562be380a0967f6 *CD1\04 When He returns.flac
+d0910758d6c9f69de4b08397c5e75906 *CD1\05 Man gave names to all the animals.flac
+50b9423c0bfa0399240e420a61f74c37 *CD1\06 Precious angel.flac
+dc67129c001c579fe9ad54b3f3b41858 *CD1\07 Slow train.flac
+611c4c58276e717553f7fc43d2547880 *CD1\08 Covenant woman.flac
+6c23593ee5a079ffd97059165d8fa799 *CD1\09 What are you doing with your heart [Helena Springs].flac
+6f0db53c4656e9a1ae31779ece3c99f7 *CD1\CD1.ffp
+6f0db53c4656e9a1ae31779ece3c99f7 *CD1\CD1.txt
+e197df6c1c3fe9026f14b20c511e66a5 *CD2\10 Gonna change my way of thinking.flac
+3d935058f88ffc7c5c01d1c206a4eebe *CD2\11 Do right to me baby (do unto others).flac
+649aa30488c80aca4cb53c237b6be719 *CD2\12 Solid rock.flac
+2e2fd2004f9c8fad436b6669bb08dfbd *CD2\13 Saving grace.flac
+d714cdd336b75cbb5a0dd4ca07a3e5ac *CD2\14 Saved.flac
+a1838597c99c0d950f7fdef5352bb7f9 *CD2\15 What can I do for you.flac
+516481759e7cdf68675b9521f641c27b *CD2\16 In the garden.flac
+e5383e42d1da81fd4c24ecc78f7cb300 *CD2\17 Blessed be the name.flac
+9f190173d63fd48757603c47f7a46de6 *CD2\18 Pressing on.flac
+0461d243920a18e138217cfdc064ee6d *CD2\CD2.ffp
+0461d243920a18e138217cfdc064ee6d *CD2\CD2.txt
+f176d3f76adc6876d5357b0dcd3bb27e *Info\Bob Dylan 1979-12-08 Music Hall, Community Center, Tucson, Arizona, USA [derived from LB-4127].txt
+===================
+===================
+===================
+=== ffp for: bd79-12-08-g.flacf
+===================
+===================
+===================
+CD1\01 Gotta serve somebody.flac:a8200ae317750f1fa77db6604107ea16
+CD1\02 I believe in you.flac:923d0acef56fe6270b5a822e613995f1
+CD1\03 When you gonna wake up.flac:268ab16739de34b95d1fc0e045397fa1
+CD1\04 When He returns.flac:c6427432f3636cc3afa1640dbc1a86a4
+CD1\05 Man gave names to all the animals.flac:908fc4354f0aa9697f6992087677962d
+CD1\06 Precious angel.flac:a2016aa8738d21a62a6b875eed1830ba
+CD1\07 Slow train.flac:2f6279e37aca0c9512b052491b5cdd18
+CD1\08 Covenant woman.flac:0761ba7b05079975be06807d16cb6db2
+CD1\09 What are you doing with your heart [Helena Springs].flac:c1d9555e46ad0e106cef5de4b9122722
+CD2\10 Gonna change my way of thinking.flac:59a685119e9810eb8c7d90284313ab7a
+CD2\11 Do right to me baby (do unto others).flac:3cbd4beb61f14496b571a73dde1e4be5
+CD2\12 Solid rock.flac:37bfba24171e78a9a20666a0d7ad1a53
+CD2\13 Saving grace.flac:aa41cb6a1300ac9265db9f08e1c6f56d
+CD2\14 Saved.flac:739da8dc31ef1608cafcd6a8724b39fe
+CD2\15 What can I do for you.flac:ac6ae718f6527da516926d305ef3ac1c
+CD2\16 In the garden.flac:ae5af09991548a4d8bb178b2bf9a6bd7
+CD2\17 Blessed be the name.flac:1c2e52ac17e05fe0eee31d8c2337c6ed
+CD2\18 Pressing on.flac:c0091b23fa896e03565829ed4a7125c2
+===================
+===================
+===================
+=== shntool len for: bd79-12-08-g.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:03.41       74713676 B   ---   --   ---xx   flac  0.3685  01 Gotta serve somebody.flac
+     5:02.62       53418668 B   ---   --   ---xx   flac  0.3489  02 I believe in you.flac
+     5:56.73       62970140 B   ---   --   ---xx   flac  0.3745  03 When you gonna wake up.flac
+     5:05.34       53882012 B   ---   --   ---xx   flac  0.3406  04 When He returns.flac
+     5:43.73       60676940 B   ---   --   ---xx   flac  0.3564  05 Man gave names to all the animals.flac
+     5:49.00       61563644 B   ---   --   ---xx   flac  0.3699  06 Precious angel.flac
+     6:58.41       73831676 B   ---   --   ---xx   flac  0.3816  07 Slow train.flac
+     6:12.33       65698460 B   ---   --   ---xx   flac  0.3479  08 Covenant woman.flac
+     3:38.21       38504636 B   ---   --   ---xx   flac  0.3500  09 What are you doing with your heart [Helena Springs].flac
+    51:31.03      545259852 B                            0.3613  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd79-12-08-g.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.51       55156796 B   ---   --   ---xx   flac  0.3574  10 Gonna change my way of thinking.flac
+     5:01.63       53244620 B   ---   --   ---xx   flac  0.3359  11 Do right to me baby (do unto others).flac
+     4:48.16       50840876 B   ---   --   ---xx   flac  0.3563  12 Solid rock.flac
+     4:36.55       48815804 B   ---   --   ---xx   flac  0.3329  13 Saving grace.flac
+     4:54.69       52023932 B   ---   --   ---xx   flac  0.3506  14 Saved.flac
+     6:40.35       70642364 B   ---   --   ---xx   flac  0.3365  15 What can I do for you.flac
+     6:34.15       69536924 B   ---   --   ---xx   flac  0.3355  16 In the garden.flac
+     5:30.41       58308476 B   ---   --   ---xx   flac  0.3336  17 Blessed be the name.flac
+     8:28.17       89651228 B   ---   --   ---xx   flac  0.3327  18 Pressing on.flac
+    51:47.62      548221020 B                            0.3403  (9 files)
+===================
+===================
+===================

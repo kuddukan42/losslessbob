@@ -1,0 +1,15 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.71        9338924 B   -b-   --   ---xx   flac  0.5841  Dylan_2009_03_31_Hannover_TM_D1_01.flac
+     4:23.03       46399532 B   -b-   --   ---xx   flac  0.6349  Dylan_2009_03_31_Hannover_TM_D1_02.flac
+     4:10.51       44220460 B   -b-   --   ---xx   flac  0.6150  Dylan_2009_03_31_Hannover_TM_D1_03.flac
+     5:48.22       61440044 B   -b-   --   ---xx   flac  0.6277  Dylan_2009_03_31_Hannover_TM_D1_04.flac
+     8:22.50       88670252 B   -b-   --   ---xx   flac  0.6212  Dylan_2009_03_31_Hannover_TM_D1_05.flac
+     7:27.58       78987308 B   -b-   --   ---xx   flac  0.6186  Dylan_2009_03_31_Hannover_TM_D1_06.flac
+     5:17.35       56000556 B   -b-   --   ---xx   flac  0.5437  Dylan_2009_03_31_Hannover_TM_D1_07.flac
+     5:14.44       55492652 B   -b-   --   ---xx   flac  0.5696  Dylan_2009_03_31_Hannover_TM_D1_08.flac
+     6:27.30       68337708 B   -b-   --   ---xx   flac  0.6322  Dylan_2009_03_31_Hannover_TM_D1_09.flac
+     5:07.46       54263852 B   -b-   --   ---xx   flac  0.6057  Dylan_2009_03_31_Hannover_TM_D1_10.flac
+     5:22.22       56852524 B   -b-   --   ---xx   flac  0.6086  Dylan_2009_03_31_Hannover_TM_D1_11.flac
+     6:12.20       65667116 B   -b-   --   ---xx   flac  0.6372  Dylan_2009_03_31_Hannover_TM_D1_12.flac
+     8:35.68       91004972 B   -b-   --   ---xx   flac  0.5654  Dylan_2009_03_31_Hannover_TM_D1_13.flac
+    73:22.69      776675900 B                            0.6060  (13 files)

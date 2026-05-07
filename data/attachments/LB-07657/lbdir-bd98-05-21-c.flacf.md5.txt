@@ -1,0 +1,18 @@
+e4b66b904fb3487fb019fdab7f7c92bf  1998-05-21 Pauley Pavilion, UCLA, Los Angeles, California, USA.md5
+c3ee723a0c2f483bf3b5b0bdb7f5c2d9  CD1\01 Absolutely sweet Marie.flac
+0c51956aaa108a69ca0890456c1eef0d  CD1\02 The man in me.flac
+8cdd88d4c2abd1c0c5ec8fbf32cb2331  CD1\03 Cold irons bound.flac
+2163d7979472b353730207c46ae6fb7d  CD1\04 Just like a woman.flac
+4b70a422079f300d5bb228c4c13c13a7  CD1\05 Silvio.flac
+e047097a75a8a40b84e1d3d531a96dad  CD1\06 Rank strangers to me.flac
+312cbf219a71e5abeb40769a7e700fae  CD1\07 Masters of war.flac
+58711f299e02086a5e0dc7c544e5cf6b  CD1\08 Tangled up in blue.flac
+f256c064bf263b2a581e2030c227c25b  CD1\09 Make you feel my love.flac
+0cbc075e9ebe8027463eb3c8b4bdcf22  CD1\10 Highway 61 revisited.flac
+758f75003574803a09db8b395e67bdff  CD1\11 Forever young.flac
+fd293803a3e730464475b3ea13f18224  CD1\FLAC CD1.md5
+866718416f6a7e7cca8b3b6ff6e7da12  CD2\12 Love sick.flac
+384c052a29c13c16366a2b9e5037545e  CD2\13 Rainy day women # 12 & 35.flac
+d23936271dfa8e3a522385d29e9d40b3  CD2\14 Restless farewell.flac
+ddf29cd4f43120d8a7a97ac6c5263da0  CD2\FLAC CD2.md5
+e4597f0b9a6e4701974ec6de99c9a31c  Info\1998-05-21 Pauley Pavilion, UCLA, Los Angeles, California, USA.txt

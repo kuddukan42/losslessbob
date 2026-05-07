@@ -1,0 +1,33 @@
+Set 1 (Disc 1)
+
+    length     expanded size   cdr  WAVE problems filename
+     4:46.54       50577452    ---   --   ---xx   gd1986-07-02.motb.0005.d1t01.flac
+     5:07.46       54263036    ---   --   ---xx   gd1986-07-02.motb.0005.d1t02.flac
+     6:46.56       71750156    ---   --   ---xx   gd1986-07-02.motb.0005.d1t03.flac
+     8:05.01       85556396    ---   --   ---xx   gd1986-07-02.motb.0005.d1t04.flac
+     3:35.31       37998956    ---   --   ---xx   gd1986-07-02.motb.0005.d1t05.flac
+     6:57.36       73643516    ---   --   ---xx   gd1986-07-02.motb.0005.d1t06.flac
+     7:03.70       74781884    ---   --   ---xx   gd1986-07-02.motb.0005.d1t07.flac
+     2:54.00       30693644    ---   --   ---xx   gd1986-07-02.motb.0005.d1t08.flac
+     4:13.52       44751548    ---   --   ---xx   gd1986-07-02.motb.0005.d1t09.flac
+     3:06.33       32888060    ---   --   ---xx   gd1986-07-02.motb.0005.d1t10.flac
+    52:37.04      556904648 B                     (totals for 10 files, 0.6191 overall compression ratio)
+
+There were no sector boundary errors.
+
+
+
+Set 2 (Disc 2)
+
+    length     expanded size   cdr  WAVE problems filename
+     5:11.65       55013324    ---   --   ---xx   gd1986-07-02.motb.0005.d2t01.flac
+     5:09.67       54665228    ---   --   ---xx   gd1986-07-02.motb.0005.d2t02.flac
+     7:34.48       80198540    ---   --   ---xx   gd1986-07-02.motb.0005.d2t03.flac
+     9:42.04      102674252    ---   --   ---xx   gd1986-07-02.motb.0005.d2t04.flac
+     9:03.32       95860508    ---   --   ---xx   gd1986-07-02.motb.0005.d2t05.flac
+     6:53.63       73001420    ---   --   ---xx   gd1986-07-02.motb.0005.d2t06.flac
+     6:23.35       67643564    ---   --   ---xx   gd1986-07-02.motb.0005.d2t07.flac
+     8:10.24       86492492    ---   --   ---xx   gd1986-07-02.motb.0005.d2t08.flac
+     7:17.59       77225612    ---   --   ---xx   gd1986-07-02.motb.0005.d2t09.flac
+     4:59.33       52821260    ---   --   ---xx   gd1986-07-02.motb.0005.d2t10.flac
+    70:26.55      745596200 B                     (totals for 10 files, 0.5917 overall compression ratio)

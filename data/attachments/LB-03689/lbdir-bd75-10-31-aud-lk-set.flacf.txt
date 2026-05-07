@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-10-31-aud-lk-set.flacf 
+=================== 
+=================== 
+=================== 
+e48c02c8c5feaf28c86c7a09b973b892  1037_RTR_1975.txt
+46572fb1c93576bc2066d9077c810a0c  1975-10-31 (aud).md5
+834bb48bd89090b573ec66216c25f740  31oct7501.flac
+c5d8143b0328f56a190203284eee0210  31oct7502.flac
+afad9f42ff7c6ed7dfc70b19f97af2c8  31oct7503.flac
+9ef111d0a7d6b62b67dde3bc85f4132a  31oct7504.flac
+288e54bbad9cb23f6b07ff5805cd37c7  31oct7505.flac
+b9f51831547cba7a8588af36de5e491f  31oct7506.flac
+62cde57ae6e3cfbef204f7ce7b256911  31oct7507.flac
+f3df2689225519ef1bb2657aa30227a3  31oct7508.flac
+44df0e8119e5cee3878d6e66e9c3dc8f  31oct7509.flac
+e2270435b02524f284dd01a847d9d7d0  31oct7510.flac
+be9dfd62deb2dd833ba92bd7e7a129d7  31oct7511.flac
+f139b9f4a760ec532b22bc5372c5cc35  31oct7512.flac
+3fe5fe72323bbb517e4e34796c136b6e  31oct7513.flac
+7c33d21dd345a4412fe5048776668d16  31oct7514.flac
+4557f1823e00ee836902ddfc9f525790  31oct7515.flac
+b05b5fbe71e9036b739501bf2c0487ce  31oct7516.flac
+84295909eee1f25ee6568e32e66b0cd4  bd75-10-31-aud-lk-set-LB-3689.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-10-31-aud-lk-set.flacf 
+=================== 
+=================== 
+=================== 
+31oct7501.flac:32ffdfca8985de82221ca3f704a25957
+31oct7502.flac:5145f4a0791e9390405873398767a022
+31oct7503.flac:334c90dfdc7bc877b704ba29d918781a
+31oct7504.flac:f76bc7b9ce7c69ba7d62455ed214ae3d
+31oct7505.flac:23683b099dbcc614547af14efdfa3fdb
+31oct7506.flac:1a163d4808d6a1c4d34b59b521287ff9
+31oct7507.flac:e08b8d587c799d7a0338b69bce75727c
+31oct7508.flac:ce71e72142e96590b62f1c49f215ba9c
+31oct7509.flac:af8dde2f131a8ab0b7189ff993c71532
+31oct7510.flac:16ab29c6353720d30fefed8374560cc9
+31oct7511.flac:1b2a3cf69c510d32ea1d79c527ffdd10
+31oct7512.flac:7e3cd34df8e27c464a93fe9e398aaadd
+31oct7513.flac:9207722f1394fdb9d96a7615a694083f
+31oct7514.flac:ceffbf2af730038dbfd624aa07d67363
+31oct7515.flac:b1cb6d587a9b61d657269af3c3a90d8f
+31oct7516.flac:1ff0a7ff484e0817dd240f4fef01055c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-10-31-aud-lk-set.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.54       48813452 B   ---   --   ---xx   flac  0.5381  31oct7501.flac
+     5:33.26       58802396 B   ---   --   ---xx   flac  0.5297  31oct7502.flac
+     5:56.34       62878412 B   ---   --   ---xx   flac  0.5392  31oct7503.flac
+     5:27.55       57812204 B   ---   --   ---xx   flac  0.5367  31oct7504.flac
+     6:24.39       67829372 B   ---   --   ---xx   flac  0.5416  31oct7505.flac
+     3:39.13       38662220 B   ---   --   ---xx   flac  0.5344  31oct7506.flac
+     3:47.09       40064012 B   ---   --   ---xx   flac  0.5190  31oct7507.flac
+     3:31.40       37314524 B   ---   --   ---xx   flac  0.5214  31oct7508.flac
+     4:19.57       45821708 B   ---   --   ---xx   flac  0.5138  31oct7509.flac
+     3:51.65       40901324 B   ---   --   ---xx   flac  0.5284  31oct7510.flac
+     8:11.60       86753564 B   ---   --   ---xx   flac  0.5356  31oct7511.flac
+     4:48.53       50927900 B   ---   --   ---xx   flac  0.5127  31oct7512.flac
+     4:11.62       44422268 B   ---   --   ---xx   flac  0.5193  31oct7513.flac
+     4:49.10       51003164 B   ---   --   ---xx   flac  0.5057  31oct7514.flac
+     4:29.74       47625692 B   ---   --   ---xx   flac  0.5163  31oct7515.flac
+     4:08.60       43888364 B   ---   --   ---xx   flac  0.5433  31oct7516.flac
+    77:48.36      823520576 B                            0.5282  (16 files)
+=================== 
+=================== 
+=================== 

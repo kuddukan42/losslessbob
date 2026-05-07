@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-01-RTM-c.flacf 
+=================== 
+=================== 
+=================== 
+32a1460a81a24ffa733cf5ae0e68f765  19930701_barcelona_rtm.txt
+a26229c11874bbc2041cdc04f9d20057  bd900701_d1t01.flac
+b0b5e32f0707c391b5ba30baafbf2292  bd900701_d1t02.flac
+300458e5066a5ed21049352c8e642c1c  bd900701_d1t03.flac
+c638ea13e38bd8ce26f358eafb0215b6  bd900701_d1t04.flac
+dee2b8ce130b28d1efe2273fd1f1fa33  bd900701_d1t05.flac
+23af29d964e4d268622000c0ead01af2  bd900701_d1t06.flac
+67743aadc8c3fc3d0e8d46c73c98559c  bd900701_d1t07.flac
+c6bcaaa8a5f3a2bc6d16f0ad7c9bfc11  bd900701_d1t08.flac
+2711f1006eb47319cad645828e7f2429  bd900701_d1t09.flac
+141c65cc5c27a4a83699cbb15e7bbeb8  bd930701_barcelona_rtm.md5
+8606d402f1da1cebac28e76970f8005d  bd930701_d2t01.flac
+bd8853912aa5bd3f8ccc0beae1476903  bd930701_d2t02.flac
+2da8c3e9e934c37bd6b525bfb2227432  bd930701_d2t03.flac
+2d66d4e141b781961122a4d230c86cc4  bd930701_d2t04.flac
+a6075b901074ea85dda319e423ce976e  bd930701_d2t05.flac
+79e46a8cf9875757b7cefaab9e10f8fa  bd930701_d2t06.flac
+183e85e16d4fd6821f87728a30fac754  bd930701_d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-01-RTM-c.flacf 
+=================== 
+=================== 
+=================== 
+bd900701_d1t01.flac:903f2f6b010ceeb7b67cea5a0f093a59
+bd900701_d1t02.flac:f1b7a956bc820d10feded20393eaa3f5
+bd900701_d1t03.flac:4ab490418ef115a460b87e751d49940c
+bd900701_d1t04.flac:4274422b8aa9e5ad2881aaf7d4d2f3ee
+bd900701_d1t05.flac:4fda3c3169227e55b250142b4ea6841b
+bd900701_d1t06.flac:120bd7ea0aa77b7e7cdd502c090917bf
+bd900701_d1t07.flac:c526ea2460d85d7fcbf7159d98a22729
+bd900701_d1t08.flac:386f700706c7115e0ada5ff98de67c55
+bd900701_d1t09.flac:6423b7243f045f2d8ade794316f56ba8
+bd930701_d2t01.flac:6c4bd73b4a3e2fdfb4dc70e42258c625
+bd930701_d2t02.flac:f13d2fc39aa06d9d669d9f3bcfc365fc
+bd930701_d2t03.flac:e02d98916a8aacabf19097f0debd24db
+bd930701_d2t04.flac:e06d66992f7978b1d1cde118e1945788
+bd930701_d2t05.flac:5c89c5002bf9d2c529e47ea2d4f89695
+bd930701_d2t06.flac:e9449ec7094097800c91fa75213d5e0b
+bd930701_d2t07.flac:f51c0cf5fff695ae9aee235bdd646d47
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-01-RTM-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.13       55067420 B   ---   --   ---xx   flac  0.4783  bd900701_d1t01.flac
+     9:07.68       96650780 B   ---   --   ---xx   flac  0.5771  bd900701_d1t02.flac
+     7:49.52       82853948 B   ---   --   ---xx   flac  0.5873  bd900701_d1t03.flac
+     7:39.36       81052316 B   ---   --   ---xx   flac  0.5887  bd900701_d1t04.flac
+    10:40.17      112936028 B   ---   --   ---xx   flac  0.6104  bd900701_d1t05.flac
+     7:05.60       75111164 B   ---   --   ---xx   flac  0.5484  bd900701_d1t06.flac
+     7:04.42       74892428 B   ---   --   ---xx   flac  0.5003  bd900701_d1t07.flac
+     6:26.72       68259788 B   ---   --   ---xx   flac  0.4423  bd900701_d1t08.flac
+     4:35.33       48587660 B   ---   --   ---xx   flac  0.4420  bd900701_d1t09.flac
+    10:58.25      116130044 B   ---   --   ---xx   flac  0.5144  bd930701_d2t01.flac
+    11:11.04      118373852 B   ---   --   ---xx   flac  0.4964  bd930701_d2t02.flac
+     7:29.20       79250684 B   ---   --   ---xx   flac  0.5995  bd930701_d2t03.flac
+     9:27.66      100174076 B   ---   --   ---xx   flac  0.5969  bd930701_d2t04.flac
+     9:34.12      101281868 B   ---   --   ---xx   flac  0.5659  bd930701_d2t05.flac
+    10:00.43      105941180 B   ---   --   ---xx   flac  0.5496  bd930701_d2t06.flac
+    12:20.24      130592492 B   ---   --   ---xx   flac  0.4778  bd930701_d2t07.flac
+   136:43.62     1447155728 B                            0.5400  (16 files)
+=================== 
+=================== 
+=================== 

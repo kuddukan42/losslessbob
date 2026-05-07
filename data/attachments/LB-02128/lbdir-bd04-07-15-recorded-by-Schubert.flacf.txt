@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-07-15-recorded-by-Schubert.flacf 
+=================== 
+=================== 
+=================== 
+944ce61edbd8e8e029f6714e01c73201  bd04-07-15-recorded-by-Schubert.txt
+4cf8f98fc8fe33a3acc5719d15ce386a  disk 1\101 Announcement.flac
+93adf2e477fbf41188a5238d7b414114  disk 1\102 Drifter's Escape.flac
+30e22e2e98552c2594062e0adf9fe16c  disk 1\103 It's All Over Now, Baby Blue.flac
+5fcccbc5fe6ab18130e209c88abd33a9  disk 1\104 Seeing The Real You At Last.flac
+fe4868e5e320878246f63b37177f4410  disk 1\105 Just Like A Woman.flac
+13a9103a5c224aa138b1195d3c9d61de  disk 1\106 It's Alright, Ma (I'm Only Bleeding).flac
+b7e27b1ff263987ac18e59553500b6b5  disk 1\107 Moonlight.flac
+aaecb1e0f4e8e9582245198a11b5a898  disk 1\108 Cold Irons Bound.flac
+805635ff51dfc73af54485e173cdad6b  disk 1\109 It Ain't Me, Babe.flac
+8289d6cdfcef645374426723fca28e54  disk 1\110 Tweedle Dee & Tweedle Dum.flac
+0a56c788960d69ca31d13e97ad12c1f7  disk 1\20040715leon_bearb1_d1_flacs.md5
+937c1998802a6f5e121a87febde96c9d  disk 1\20040715leon_bearb1_d1_wavs.md5
+1cddae0d04faba48a4768564946c9464  disk 2\20040715leon_bearb1_d2_flacs.md5
+684018896dd83d41fb30baa735fde04b  disk 2\20040715leon_bearb1_d2_wavs.md5
+e2bf6c12a48c59b1ee56061ace9c649a  disk 2\201 Things Have Changed.flac
+b4d26bc712e7916248269937e67347fe  disk 2\202 A Hard Rain's A-Gonna Fall.flac
+95e9e4a421617abf4031396282fb0f08  disk 2\203 Honest With Me.flac
+58ce8bfeaa203978663d14d16273b3d1  disk 2\204 Masters Of War.flac
+1bb898f44448483c34f419a7e327f004  disk 2\205 Summer Days.flac
+746b779a188ca48dadcbdbd6b704187e  disk 2\206 Forever Young.flac
+121d41c2de64d8e52fb314feb3772ca0  disk 2\207 Like A Rolling Stone.flac
+05d7e2c9856d3255005b725122a739be  disk 2\208 All Along The Watchtower.flac
+29132890aa767f5b68dc34bca4c651bc  md5-failure-note.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-15-recorded-by-Schubert.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:b1070eb0d56121cd088e0cbe1dc1aeff
+102 Drifter's Escape.flac:68b2f0b5d71a11b85bfbf7503a25090f
+103 It's All Over Now, Baby Blue.flac:ae4c2c16fb914bbec945d012dd89bb78
+104 Seeing The Real You At Last.flac:304a1927c56223f76c46b2401025e976
+105 Just Like A Woman.flac:170319605290fdaac164b17fb8c7b0e1
+106 It's Alright, Ma (I'm Only Bleeding).flac:e14b4ae4fb50884f7ad0528dd9cad016
+107 Moonlight.flac:650bbe9c49e5bdfc25dfa09ef1fb96c9
+108 Cold Irons Bound.flac:d9741b82fa478f48d7153ccd80522ba2
+109 It Ain't Me, Babe.flac:21ea6fada9d8254f1b16f7a2b33995ba
+110 Tweedle Dee & Tweedle Dum.flac:d41a41db89f0c99bc2dbca269962b01a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-15-recorded-by-Schubert.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+201 Things Have Changed.flac:a2c6cdb7746ceb43e769eca239d824e8
+202 A Hard Rain's A-Gonna Fall.flac:a9b8f14c5cac73ec33b9b95ad908b0af
+203 Honest With Me.flac:da2d8ae596254194cd227d3467f3698f
+204 Masters Of War.flac:cc55bcc22c293d240363d1cbd980e12e
+205 Summer Days.flac:0902d6c6aadbb0ede99b4f35bb5cd665
+206 Forever Young.flac:4fd1ea25730b8d125ba6bab88464fb2c
+207 Like A Rolling Stone.flac:776c8976e2cf98baf259a6b0689575d8
+208 All Along The Watchtower.flac:6e6f40d4bfcca5dd2016b2fd28aada93
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-15-recorded-by-Schubert.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:15.71       13397036 B   ---   --   ---xx   flac  0.4512  101 Announcement.flac
+     4:35.45       48615884 B   ---   --   ---xx   flac  0.6209  102 Drifter's Escape.flac
+     6:10.72       65437388 B   ---   --   ---xx   flac  0.5716  103 It's All Over Now, Baby Blue.flac
+     6:31.28       69038300 B   ---   --   ---xx   flac  0.6209  104 Seeing The Real You At Last.flac
+     6:19.09       66876812 B   ---   --   ---xx   flac  0.5605  105 Just Like A Woman.flac
+     7:30.26       79441196 B   ---   --   ---xx   flac  0.6075  106 It's Alright, Ma (I'm Only Bleeding).flac
+     6:48.09       71992412 B   ---   --   ---xx   flac  0.5434  107 Moonlight.flac
+     5:56.54       62925452 B   ---   --   ---xx   flac  0.5959  108 Cold Irons Bound.flac
+     6:40.39       70651772 B   ---   --   ---xx   flac  0.5825  109 It Ain't Me, Babe.flac
+     5:44.34       60761612 B   ---   --   ---xx   flac  0.5777  110 Tweedle Dee & Tweedle Dum.flac
+    57:33.12      609137864 B                            0.5830  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-15-recorded-by-Schubert.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:44.61       81993116 B   ---   --   ---xx   flac  0.5981  201 Things Have Changed.flac
+     6:43.29       71157452 B   ---   --   ---xx   flac  0.6229  202 A Hard Rain's A-Gonna Fall.flac
+     6:56.14       73415372 B   ---   --   ---xx   flac  0.6286  203 Honest With Me.flac
+     5:41.15       60187724 B   ---   --   ---xx   flac  0.5715  204 Masters Of War.flac
+    11:01.26      116661596 B   ---   --   ---xx   flac  0.5969  205 Summer Days.flac
+     5:55.72       62791388 B   ---   --   ---xx   flac  0.5902  206 Forever Young.flac
+     7:01.54       74391452 B   ---   --   ---xx   flac  0.6519  207 Like A Rolling Stone.flac
+     8:03.23       85255340 B   ---   --   ---xx   flac  0.5974  208 All Along The Watchtower.flac
+    59:07.69      625853440 B                            0.6072  (8 files)
+=================== 
+=================== 
+=================== 

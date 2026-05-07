@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-14-Jokerman In Europe.flacf 
+=================== 
+=================== 
+=================== 
+9cffdb2c2ee66530abc849e83eaa8d57  1\Track01.flac
+03c41eff9665d0cf61fc1578541352e7  1\Track02.flac
+70e0bddd67b8e72a4543fbd61dfe2ce6  1\Track03.flac
+15ef8a0652811eecd865e40270b51faf  1\Track04.flac
+5c78576fce68e2b8eabe4c39005fdef9  1\Track05.flac
+108a813845fe6018e6469d2aba253084  1\Track06.flac
+6d491dfff0cb1b1eea1c337f026c50c7  1\Track07.flac
+3d2dbb1320edaa50a3592f5ab341465b  1\Track08.flac
+3f3fab3f51698bc72c671fd729688440  1\Track09.flac
+ba23d79b80794251d99483caf46dddec  1\Track10.flac
+e828cbc1de4c8024c9063880a1dd7e3e  1\Track11.flac
+ba97a0d0a494eba8693df2100307742b  1984 06-14 BD Jokerman In Europe backs.jpg
+aee4dcc4c290b6796912eef786ddb989  1984 06-14 BD Jokerman In Europe front.jpg
+9e860ceea6d36f39393d589ff1f694e4  2\Track01.flac
+b33e8dbc9f1fef32d4c525c828320af0  2\Track02.flac
+8e41e872a98ce7572d3bd707922bbfef  2\Track03.flac
+39e5583d926b15348f4f7629055783ea  2\Track04.flac
+81ee89698f9a91c19e5399e5c8fb551c  2\Track05.flac
+df0eeff1120177d6e88427f0937a63c9  2\Track06.flac
+72c490644cd9da206f3bbb53fcd6ce1b  2\Track07.flac
+8542a3d2d3f20346aa59dbccd0c4e42c  2\Track08.flac
+2cd86b850d13441d866a02468575a58e  2\Track09.flac
+ae247f8439e61415c25db858f3282cdc  2\Track10.flac
+9db6ac3a9865bf3fea8cb7d6cf1e0b49  2\Track11.flac
+bc397aad9b534012b65a2d00c0ba1dc0  bd84-06-14-Jokerman In Europe.txt
+e7a607ed9dbf58c951a2a85f8ca0d40f  Bob Dylan - Jokerman In Europe - 14JUN84.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-14-Jokerman In Europe.flacf\2 
+=================== 
+=================== 
+=================== 
+Track01.flac:fd6f5e546284f1714c4c379a22773b49
+Track02.flac:cc0b0031694e104f5b4fe7a5875edc9b
+Track03.flac:80dbfe0df5a8b5a4dd11e0daa45eafc1
+Track04.flac:592d640bbcfcf48db0edca0207a84fa5
+Track05.flac:0e454158761b5c6be10c481e9457f2b0
+Track06.flac:96fdb35789af929fad06037e0233703b
+Track07.flac:d67d6c7b10402ec4b2baf9055c7a7263
+Track08.flac:1f36222310f062942197ca8b10907efb
+Track09.flac:bdf5f2b72f55712f5fb6a5d554647629
+Track10.flac:d187e4161554f7f83e0d3b5fdeaf58e4
+Track11.flac:920c43e1affdfcf173cc26aec05f028a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-14-Jokerman In Europe.flacf\1 
+=================== 
+=================== 
+=================== 
+Track01.flac:6edf4b0dc1f8851b2045c3c3edd56077
+Track02.flac:8c096a3ad638913b319a77360509840a
+Track03.flac:1d3cd04fd05e54a51ac2085ec600b8e2
+Track04.flac:84a873d22b4befe5b6f47549e9d1362b
+Track05.flac:0b92d9f593d8e4ae79917a72c087fd45
+Track06.flac:e2998369d48c805393c1e18570593359
+Track07.flac:b058da3dc6d3c6bae0f70b6b087e6106
+Track08.flac:3f316185c59b32a10fa92bafef75365e
+Track09.flac:08c09cd5d753aee7945754165c642619
+Track10.flac:43ec35bd51923d232a6423e99022624a
+Track11.flac:ef445f08817a0e5cfd2bc5b80650baf0
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-06-14-Jokerman In Europe.flacf\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.00       48686444 B   ---   --   ---xx   flac  0.6541  Track01.flac
+     6:09.36       65176316 B   ---   --   ---xx   flac  0.6790  Track02.flac
+     3:59.19       42204332 B   ---   --   ---xx   flac  0.6942  Track03.flac
+     3:36.10       38125964 B   ---   --   ---xx   flac  0.6765  Track04.flac
+     6:20.46       67140236 B   ---   --   ---xx   flac  0.6540  Track05.flac
+     7:38.66       80946476 B   ---   --   ---xx   flac  0.7120  Track06.flac
+     6:02.55       63986204 B   ---   --   ---xx   flac  0.6886  Track07.flac
+     5:36.69       59432732 B   ---   --   ---xx   flac  0.6996  Track08.flac
+     7:22.64       78119372 B   ---   --   ---xx   flac  0.7591  Track09.flac
+     5:10.57       54818108 B   ---   --   ---xx   flac  0.7725  Track10.flac
+     5:42.01       60331196 B   ---   --   ---xx   flac  0.7430  Track11.flac
+    62:15.48      658967380 B                            0.7054  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-06-14-Jokerman In Europe.flacf\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.44       60432332 B   ---   --   ---xx   flac  0.7229  Track01.flac
+     6:52.36       72761516 B   ---   --   ---xx   flac  0.6879  Track02.flac
+     5:09.53       54632300 B   ---   --   ---xx   flac  0.6855  Track03.flac
+     6:30.69       68958332 B   ---   --   ---xx   flac  0.6811  Track04.flac
+     4:54.44       51965132 B   ---   --   ---xx   flac  0.6746  Track05.flac
+     6:26.07       68106908 B   ---   --   ---xx   flac  0.6535  Track06.flac
+     3:48.38       40308620 B   ---   --   ---xx   flac  0.6622  Track07.flac
+     5:25.74       57504092 B   ---   --   ---xx   flac  0.6830  Track08.flac
+     7:05.59       75108812 B   ---   --   ---xx   flac  0.6360  Track09.flac
+     7:52.20       83307884 B   ---   --   ---xx   flac  0.6337  Track10.flac
+     6:46.38       71707820 B   ---   --   ---xx   flac  0.6392  Track11.flac
+    66:35.32      704793748 B                            0.6670  (11 files)
+=================== 
+=================== 
+=================== 

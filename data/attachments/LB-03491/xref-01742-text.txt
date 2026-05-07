@@ -1,0 +1,104 @@
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+d3424402337f06ea013cbf34a8c1488c *01 Crash on the levee (down in the flood).flac
+d2065eb15580c89ba229c102027a6665 *02 If not for you.flac
+40d8e7b4fc1398c74e8db4f549feb3f7 *03 All along the watchtower.flac
+36563bfff567f97b436ee68891bcf4b0 *04 Just like a woman.flac
+56289835037eb9d141ed7af35ee43429 *05 Tangled up in blue.flac
+a7cd3051c158df8617b2a9d5591f5d93 *06 Positively 4th street.flac
+de14bf248880a538526d14fbc744bfd5 *07 Mr. Tambourine man.flac
+ecfe4b26e10fd0057bed6846336e71d8 *08 Masters of war.flac
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+945b24aebd3b503ccf5535efbb4699d1 *09 Boots of Spanish leather.flac
+09d534d4e19c6bf51129799cc9a3ca96 *10 Dignity.flac
+70e310cd80f1a50bec922b7cc7291ee5 *11 Man in the long black coat.flac
+e96965b3acdf6a9688dbdcf70528601d *12 Maggie's farm.flac
+e938d92d43d3431e3c573f041e7c1690 *13 (audience wait).flac
+919e4e834d2f9148d54813acaf79873e *13 Like a rolling stone.flac
+===================
+===================
+===================
+=== Bob Dylan 1995-03-16 Stadthalle, Bielefeld, Germany [off master + Olav ASM].txt
+===================
+===================
+===================
+Bob Dylan
+
+Stadthalle
+Bielefeld, Germany
+March 16, 1995
+
+Off Master + Olav ASM
+Taper: no info
+Source/Lineage: no info
+
+CD1:
+01 Crash On The Levee (Down In The Flood) [05:10]
+02 If Not For You [04:44]
+03 All Along The Watchtower [05:42]
+04 Just Like A Woman [05:46]
+05 Tangled Up In Blue [09:46]
+06 Positively 4th Street [07:33]
+07 Mr. Tambourine Man [06:45]
+08 Masters Of War [05:43]
+Total time [51:13]
+
+CD2:
+09 Boots Of Spanish Leather [07:38]
+10 Dignity [08:03]
+11 Man In The Long Black Coat [08:05]
+12 Maggies Farm [07:53]
+13 (audience wait) [02:35]
+14 Like A Rolling Stone [07:39]
+Total time [41:55]
+
+Concert # 646 of The Never-Ending Tour
+Concert # 6 of the 1995 European Spring Tour
+Concert # 6 in 1995
+
+Concert # 190 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+79 acoustic with the band
+1, 2, 4, 6, 7, 9 Bob Dylan harmonica
+
+5 new songs (38%) compared to previous concert
+2 new songs for this tour
+
+Stereo audience recording, 95 minutes
+
+CD1 .md5:
+d3424402337f06ea013cbf34a8c1488c *01 Crash on the levee (down in the flood).flac
+d2065eb15580c89ba229c102027a6665 *02 If not for you.flac
+40d8e7b4fc1398c74e8db4f549feb3f7 *03 All along the watchtower.flac
+36563bfff567f97b436ee68891bcf4b0 *04 Just like a woman.flac
+56289835037eb9d141ed7af35ee43429 *05 Tangled up in blue.flac
+a7cd3051c158df8617b2a9d5591f5d93 *06 Positively 4th street.flac
+de14bf248880a538526d14fbc744bfd5 *07 Mr. Tambourine man.flac
+ecfe4b26e10fd0057bed6846336e71d8 *08 Masters of war.flac
+
+CD2 .md5:
+945b24aebd3b503ccf5535efbb4699d1 *09 Boots of Spanish leather.flac
+09d534d4e19c6bf51129799cc9a3ca96 *10 Dignity.flac
+70e310cd80f1a50bec922b7cc7291ee5 *11 Man in the long black coat.flac
+e96965b3acdf6a9688dbdcf70528601d *12 Maggie's farm.flac
+e938d92d43d3431e3c573f041e7c1690 *13 (audience wait).flac
+919e4e834d2f9148d54813acaf79873e *13 Like a rolling stone.flac
+===================
+===================
+===================

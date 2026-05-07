@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-28 
+=================== 
+=================== 
+=================== 
+f53b6b3331a9a4acbd5671993fb8b671  bd1988-06-28 Canandaigua.md5
+a2f7b7e3e8a87bff961ac2858b4c6bda  bd1988-06-28 Canandaigua.txt
+e660eec0980fdd190a63e092715ec78a  bd1988-06-28 d1t01.shn
+f890f7a6ba7651cd708a6ecf51b4c641  bd1988-06-28 d1t02.shn
+4fda4ed0f5859bd591174ba1888df4f8  bd1988-06-28 d1t03.shn
+ce55eb496baab6c61edaea44086e3f86  bd1988-06-28 d1t04.shn
+eeaff9619cd47eb71909d53baace53f5  bd1988-06-28 d1t05.shn
+a866ab95913de9567bfeb978b016f6a3  bd1988-06-28 d1t06.shn
+63f4ecf34a337997fe53e3c6dea877eb  bd1988-06-28 d1t07.shn
+62145a8a7b983562543d9ba5e188da0a  bd1988-06-28 d1t08.shn
+41a05215aa5d2688b7e11a0feeef30e5  bd1988-06-28 d2t01.shn
+32bb70d8f99f3afeb7243c5dab0d277d  bd1988-06-28 d2t02.shn
+8e49ed836a3f49b15e13bec14aaeee96  bd1988-06-28 d2t03.shn
+ec3350db25652ac5a2c4387e3af362ca  bd1988-06-28 d2t04.shn
+5684b576ba01aaf31cbea795a58b6aa2  bd1988-06-28 d2t05.shn
+a1e095f48f8e9742f413c39ca69be29b  bd1988-06-28 d2t06.shn
+23679b0ff0739e5c6b18373f8630a9bf  bd1988-06-28 d2t07.shn
+dd8064b6501c1392783cec0badf37955  bd1988-06-28 d2t08.shn
+3741ae97db475d039c332384831c123e  bd1988-06-28_d1t01&02clean.md5
+ed257064c4783dc8fdf6e7e723e677c0  bd1988-06-28_d1t01clean.shn
+077d7323f9fdfcd6d3595f297743115d  bd1988-06-28_d1t02clean.shn
+fe796fbd1e4dfba1a63e0a69f131e132  bd88-06-28.txt
+405e64ed31219d8564a6d5cc12b2f552  bd88-06-28_Canandaigua_fixed tracks.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-06-28 
+=================== 
+=================== 
+=================== 
+07831799f4a290276bdf8a4e361519e7  [shntool]  bd1988-06-28_d1t01.wav
+8110fe0867f185117123228ce996ec40  [shntool]  bd1988-06-28_d1t01clean.wav
+1f8a0125ae34f43a637de5ad5d7ef428  [shntool]  bd1988-06-28_d1t02.wav
+2ea4bd01eabbed39f556035779aaff79  [shntool]  bd1988-06-28_d1t02clean.wav
+bc6aab3af01c1b087391c100419b0419  [shntool]  bd1988-06-28_d1t03.wav
+79d93cd9c4abc20fe7c717a0b4b53d25  [shntool]  bd1988-06-28_d1t04.wav
+a1894da5517702a836ba619ba722e5d5  [shntool]  bd1988-06-28_d1t05.wav
+1eabf3fe532f4210af4c444189b91345  [shntool]  bd1988-06-28_d1t06.wav
+d88c8c6beebf132f2e3168547443bfe5  [shntool]  bd1988-06-28_d1t07.wav
+8fd178dd28aff0380021350d51734716  [shntool]  bd1988-06-28_d1t08.wav
+7dd6f3c9fd87297d392aabfa14ea35ea  [shntool]  bd1988-06-28_d2t01.wav
+4b4f60d35e8305a13104c8bee65cb837  [shntool]  bd1988-06-28_d2t02.wav
+5b6df986189e33f1a8e6b7db4d277904  [shntool]  bd1988-06-28_d2t03.wav
+5e8347bda51e0da76964415ce6a33d14  [shntool]  bd1988-06-28_d2t04.wav
+ff27354aedea78decea8deb74359a812  [shntool]  bd1988-06-28_d2t05.wav
+c615d762ce8205118f7f6f6510ab6fe5  [shntool]  bd1988-06-28_d2t06.wav
+15dd37ad252fdba5b466633d873fae0b  [shntool]  bd1988-06-28_d2t07.wav
+ab19a87907524b6809256b9db7fbf0c1  [shntool]  bd1988-06-28_d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-28 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.61       44596316 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t01.wav
+     4:12.59       44591612 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t01clean.wav
+     4:25.27       46809548 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t02.wav
+     4:25.25       46804844 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t02clean.wav
+     6:20.66       67187276 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t03.wav
+     5:14.72       55558988 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t04.wav
+     5:00.61       53063516 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t05.wav
+     4:45.33       50351660 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t06.wav
+     4:50.49       51271292 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t07.wav
+     7:31.51       79676396 B   ---   --   -----    wav  1.0000  bd1988-06-28_d1t08.wav
+     3:11.09       33713612 B   ---   --   -----    wav  1.0000  bd1988-06-28_d2t01.wav
+     4:27.14       47131772 B   ---   --   -----    wav  1.0000  bd1988-06-28_d2t02.wav
+     4:16.27       45221948 B   ---   --   -----    wav  1.0000  bd1988-06-28_d2t03.wav
+     5:36.18       59312780 B   ---   --   -----    wav  1.0000  bd1988-06-28_d2t04.wav
+     6:00.54       63631052 B   ---   --   -----    wav  1.0000  bd1988-06-28_d2t05.wav
+     6:25.23       67968140 B   ---   --   -----    wav  1.0000  bd1988-06-28_d2t06.wav
+     3:45.27       39753548 B   ---   --   -----    wav  1.0000  bd1988-06-28_d2t07.wav
+     3:45.39       39781772 B   ---   --   -----    wav  1.0000  bd1988-06-28_d2t08.wav
+    88:28.40      936426072 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

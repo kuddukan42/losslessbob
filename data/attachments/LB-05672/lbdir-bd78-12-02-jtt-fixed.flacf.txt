@@ -1,0 +1,162 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-12-02-jtt-fixed.flacf 
+=================== 
+=================== 
+=================== 
+61bf299adf2410143bbbe33871715586  1978-12-02 Nashville (fixed LB-4087).md5
+85a2c5c8e7449fd6390b836b9299ebb9  Info.txt
+ecd7e74e2787e048fb47a4733f4b0547  Nashville 02.12.1978 - F.jpg
+f830be45e52f860990546475bf4abdac  Nashville 02.12.1978 - R.jpg
+9d213e38950ed3494e3948c6f2cf846f  Nashville Disc 1\Track 01.flac
+692a76a28975e6f828aa526d32c3fa8e  Nashville Disc 1\Track 02.flac
+8b0686f2a256653fbff770925743273f  Nashville Disc 1\Track 03.flac
+20f360c4fd828d897ee61a68b1f4b0ed  Nashville Disc 1\Track 04.flac
+ece796e1bf095f939f615415f0b688c2  Nashville Disc 1\Track 05.flac
+b2ba20e75edc9d062088ab04d5e38e5c  Nashville Disc 1\Track 06.flac
+76efe148f155c79e7f8a2408271b6faf  Nashville Disc 1\Track 07.flac
+e3dcce30b6848de2ac5887b06ca4713b  Nashville Disc 1\Track 08.flac
+58b5bfc3225b9de46737028ffc674558  Nashville Disc 1\Track 09.flac
+d7a5f0c7b7366368e49e756d60cf96fa  Nashville Disc 1\Track 10.flac
+fa3c9249f33be3e1482abf239ead128e  Nashville Disc 1\Track 11.flac
+6ff6446d241b6e3a9d7e32ecc01c9477  Nashville Disc 1\Track 12.flac
+29f9b5a184fb550a71f96fb46262cb5b  Nashville Disc 1\Track 13.flac
+cdf54f3b734362c44d07c05f39ff1c45  Nashville Disc 1\Track 14.flac
+8c07d34b6344fb42f0ac96decbf50b3e  Nashville Disc 2\Track 01.flac
+5bad614685e9ca5870f0472303d45db8  Nashville Disc 2\Track 02.flac
+0e1f4e0062624d0d77376556ab495f86  Nashville Disc 2\Track 03.flac
+509e49870b653219403bf01263a53342  Nashville Disc 2\Track 04.flac
+31a7ec2254a70df8aad4ffaafb47a9ec  Nashville Disc 2\Track 05.flac
+c7acdc4a219259db206f5e6c5e0e4908  Nashville Disc 2\Track 06.flac
+60b64ca23d982f0d8e65500d5f42b444  Nashville Disc 2\Track 07.flac
+71b46571c1b211ddd019a011994f6924  Nashville Disc 2\Track 08.flac
+29ddabc159978c0f40291a14c86774db  Nashville Disc 2\Track 09.flac
+6ffa2766a1c3c7ac41fe4f326d3103fe  Nashville Disc 2\Track 10.flac
+f4d9de088c37ff2831b75600f220c40e  Nashville Disc 2\Track 11.flac
+0f93f4396d8f699c1c2cfb7b804fd1da  Nashville Disc 2\Track 12.flac
+08c936302d5ce7e828af92535ed47446  Nashville Disc 2\Track 13.flac
+9ee067d65c19e1beb9a48f89c947284b  Nashville Disc 2\Track 14.flac
+7f6fda6b5d8c658b1dc8fabc99a5ecfa  Nashville Disc 3\Track 01.flac
+73195a7a4a58d2302149b4d34e861de0  Nashville Disc 3\Track 02.flac
+940fb2d6eb541b582b6f37aa8dce8aa0  Nashville Disc 3\Track 03.flac
+2d8815b9bfcc534826cec6eba3cb5b03  Nashville Disc 3\Track 04.flac
+0bb4f6030a4ef630217f47c8354ae662  Nashville Disc 3\Track 05.flac
+fde928c55fc2441485b495c7b36431bb  original LB-4087 entry.mht
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-12-02-jtt-fixed.flacf\Nashville Disc 3 
+=================== 
+=================== 
+=================== 
+Track 01.flac:c983e960f93ad49a723e02ba758994c4
+Track 02.flac:1562f91d7f15e8bc77546e2b8454ddbe
+Track 03.flac:6f3ba35ac2e50de168ebca1dd9b017ca
+Track 04.flac:f485b89f1dbccba95862b4a4597035e2
+Track 05.flac:74ac2c5cdd489727e1b58bd643307907
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-12-02-jtt-fixed.flacf\Nashville Disc 2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:713ae51c26dd2f9330096f0dec3c0e2d
+Track 02.flac:1bf575c83fb2aceff31ba63996861ce2
+Track 03.flac:0ce42e8caaa967b072c7c59037e3e580
+Track 04.flac:c033ba21fb6529aa604a2f9cfa1fa32b
+Track 05.flac:29200c285ba3840692f5ce5cd98ff570
+Track 06.flac:6a1333d4f5aa21a972ee118911f779e4
+Track 07.flac:dc920651bc404c9f2373f29781c8b364
+Track 08.flac:6a2a585b2bf9511ba75bc9db030365c0
+Track 09.flac:999d05194b0725842788066052403abf
+Track 10.flac:1a0c11fd30af97a28606337b5c09d98d
+Track 11.flac:18ff52d170e6d42eb1148ad43a75b7bc
+Track 12.flac:3feb4b2acc8a2377a7190e07a2c0f983
+Track 13.flac:65bbcd9da29dbb8080d664e69ce87f4a
+Track 14.flac:4502775e72e18ebbe5563de19258abd2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-12-02-jtt-fixed.flacf\Nashville Disc 1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:23a3e683c493c04b89968ed115026591
+Track 02.flac:493ffffac08b1022301c370b9183287d
+Track 03.flac:17b3bf354def7329bf2ebe7b7fc5450b
+Track 04.flac:d8e4c1458431eb111c03dfd16c9811e6
+Track 05.flac:0ae80aeaa25998f415d3bbeb9a458cf3
+Track 06.flac:e0dfdff0dcbc7fe33eafcaf2dc2126a8
+Track 07.flac:ee5b10070bb4706d808c73fe064c1bc6
+Track 08.flac:af8b92d758b9b19a215ddf6057eb0a73
+Track 09.flac:579c5ca33b67578710b4f552d8c3598e
+Track 10.flac:00b310968fb3c50b67470b232461a090
+Track 11.flac:0774e179c116c61b0445579693bbd0fd
+Track 12.flac:6be5d9ee6eab274238b0301aec7a1a0e
+Track 13.flac:b09d631c7416b55366af4b52f898d497
+Track 14.flac:c14c949f993e26f869fa8e9a62c08096
+=================== 
+=================== 
+=================== 
+=== shntool for: bd78-12-02-jtt-fixed.flacf\Nashville Disc 3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:52.21       30390236 B   ---   --   ---xx   flac  0.5230  Track 01.flac
+     7:05.54       75097052 B   ---   --   ---xx   flac  0.5717  Track 02.flac
+     8:38.63       91523420 B   ---   --   ---xx   flac  0.5645  Track 03.flac
+     9:46.54      103497452 B   ---   --   ---xx   flac  0.5782  Track 04.flac
+     4:56.22       52266188 B   ---   --   ---xx   flac  0.5706  Track 05.flac
+    33:19.64      352774348 B                            0.5674  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd78-12-02-jtt-fixed.flacf\Nashville Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.73       53620940 B   ---   --   ---xx   flac  0.5814  Track 01.flac
+     3:15.22       34449788 B   ---   --   ---xx   flac  0.5930  Track 02.flac
+     6:01.00       63680444 B   ---   --   ---xx   flac  0.5211  Track 03.flac
+     3:46.34       39946412 B   ---   --   ---xx   flac  0.5855  Track 04.flac
+     1:34.48       16694540 B   ---   --   ---xx   flac  0.4990  Track 05.flac
+     5:50.03       61747100 B   ---   --   ---xx   flac  0.5675  Track 06.flac
+     5:27.05       57694604 B   ---   --   ---xx   flac  0.5213  Track 07.flac
+     6:00.12       63532268 B   ---   --   ---xx   flac  0.4636  Track 08.flac
+     4:00.68       42495980 B   ---   --   ---xx   flac  0.5491  Track 09.flac
+     5:27.59       57821612 B   ---   --   ---xx   flac  0.5701  Track 10.flac
+     6:02.04       63866252 B   ---   --   ---xx   flac  0.5434  Track 11.flac
+     4:22.07       46233308 B   ---   --   ---xx   flac  0.5579  Track 12.flac
+     4:03.55       42994604 B   ---   --   ---xx   flac  0.5838  Track 13.flac
+     3:20.05       35291804 B   ---   --   ---xx   flac  0.5786  Track 14.flac
+    64:15.20      680069656 B                            0.5491  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd78-12-02-jtt-fixed.flacf\Nashville Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:10.27       33579548 B   ---   --   ---xx   flac  0.5683  Track 01.flac
+     2:44.48       29042540 B   ---   --   ---xx   flac  0.5810  Track 02.flac
+     4:44.50       50215244 B   ---   --   ---xx   flac  0.5397  Track 03.flac
+     4:11.56       44408156 B   ---   --   ---xx   flac  0.5631  Track 04.flac
+     4:40.41       49488476 B   ---   --   ---xx   flac  0.5821  Track 05.flac
+     7:50.29       82976252 B   ---   --   ---xx   flac  0.5404  Track 06.flac
+     1:35.48       16870940 B   ---   --   ---xx   flac  0.4855  Track 07.flac
+     4:39.42       49314428 B   ---   --   ---xx   flac  0.5741  Track 08.flac
+     5:26.03       57513500 B   ---   --   ---xx   flac  0.5675  Track 09.flac
+     4:31.59       47943212 B   ---   --   ---xx   flac  0.5628  Track 10.flac
+     7:41.49       81435692 B   ---   --   ---xx   flac  0.6088  Track 11.flac
+     4:20.42       45962828 B   ---   --   ---xx   flac  0.5758  Track 12.flac
+     1:17.47       13693388 B   ---   --   ---xx   flac  0.4822  Track 13.flac
+     5:52.14       62125772 B   ---   --   ---xx   flac  0.5786  Track 14.flac
+    62:47.30      664569976 B                            0.5664  (14 files)
+=================== 
+=================== 
+=================== 

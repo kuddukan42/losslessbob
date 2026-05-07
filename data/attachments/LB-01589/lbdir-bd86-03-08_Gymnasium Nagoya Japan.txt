@@ -1,0 +1,142 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-03-08_Gymnasium Nagoya Japan 
+=================== 
+=================== 
+=================== 
+88ba5b9fc8d0a2ee591ee62ee3f2c40a  bd86-03-08.txt
+a793bbfed3a519a2a91d766ee41c363e  Improved Air Remaster.txt
+d472289716c410d1475c9625f478750e  nagoya 2\Track01.shn
+cccd0d5b9b4ca36060fefae9cf525e41  nagoya 2\Track02.shn
+b1cc22b8906b4f01fbe31e9c0e2c0392  nagoya 2\Track03.shn
+b3d320b9e2be7992ea697b60f7646596  nagoya 2\Track04.shn
+0d20a9aa000a31e40f3374da95614062  nagoya 2\Track05.shn
+3025af4325b0885c11a97de793fe9c39  nagoya 2\Track06.shn
+038e1e758f5ac3b0907310b28764324b  nagoya 2\Track07.shn
+0b09050e0ac45d6805a5c885b23c6013  nagoya 2\Track08.shn
+ad66534831bb96b00977ff9a1d0da063  nagoya 2\Track09.shn
+45a0c06aa7fb5afe324244ff9955ae9e  nagoya 2\Track10.shn
+acd8c477a1fb83c4a7102cc40b49335e  nagoya 2\Track11.shn
+ff4c4a1cb9d13395f615db8d7ddd0d4d  nagoya 2\Track12.shn
+09450cd08caa28de13c1179c0bab7ae1  nagoya 2\Track13.shn
+601a50db9eb372e590f8d95b387c2473  nagoya 2\nagoya 2.md5
+6daf0d643a954bf88ae6564e17117a96  nagoya1\Track01.shn
+9f54c65ee3c0bb36083bac18aacf37dd  nagoya1\Track02.shn
+06a0c320894ccd9f30981dfd388f1e80  nagoya1\Track03.shn
+b610fc5b3e945f69fd6a55efbd43f745  nagoya1\Track04.shn
+c082748e2fcbc2d8fef1b18754ff8135  nagoya1\Track05.shn
+bd69b7856be05139c8d8fd52e1c34e67  nagoya1\Track06.shn
+a2433787339fbeddab7d74cb87e541fd  nagoya1\Track07.shn
+0e2e8817d22b472ac312caf05590cd58  nagoya1\Track08.shn
+c47885b0e97dafe4b604e08cff27e7e6  nagoya1\Track09.shn
+4bd8bea9dc037cf43ea09d9b0eae1c38  nagoya1\Track10.shn
+cd146f256e7caf89d25e94780866d757  nagoya1\Track11.shn
+085eaa6f6b48ddc86f29e328e4668140  nagoya1\Track12.shn
+46b271d8f27add97b4576307b8cc1be0  nagoya1\Track13.shn
+9d6bfe628f602b2eb917504e742cf3d7  nagoya1\Track14.shn
+b98a4086fcf3e1801517e42b13af9142  nagoya1\Track15.shn
+a78da5d1e9a1a07aa91c63c7e1d12ba0  nagoya1\Track16.shn
+ffbf11bd592a2e1e48413586216d566b  nagoya1\Track17.shn
+8bacc256762b334afacb99d70eeaf799  nagoya1\Track18.shn
+2dc3847eba4b991c62396c79ffcca536  nagoya1\Track19.shn
+75effaefdfe96cde2180f13ba981b419  nagoya1\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-03-08_Gymnasium Nagoya Japan\nagoya 2 
+=================== 
+=================== 
+=================== 
+0611d59468a5474c256c50e201822d0b  [shntool]  Track01.wav
+aecfaf490dc6f6165b1a291d6c92b67e  [shntool]  Track02.wav
+12aeff9ba4899002334580c2edf78210  [shntool]  Track03.wav
+7178c49f9cb62caff546d08e69c81df5  [shntool]  Track04.wav
+e51259055377a7b579171436a0672c50  [shntool]  Track05.wav
+466d34f9651a65d5ec0433496b897dbd  [shntool]  Track06.wav
+0554bb3190fd83623f9fd3b64ab99cfa  [shntool]  Track07.wav
+45cd9a9fd2d86a26e145ca2196b1ef71  [shntool]  Track08.wav
+eca5a50f60e2f7d4724ac72ae4e05b7b  [shntool]  Track09.wav
+80d5b3fd62633d78d3ccb56952362290  [shntool]  Track10.wav
+a96dcb5aab24c4013f47112afd2a7d23  [shntool]  Track11.wav
+bdbb3d585a1838778438dc9e9ef683db  [shntool]  Track12.wav
+84c865d14b48d68d96247588f8d2115e  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd86-03-08_Gymnasium Nagoya Japan\nagoya1 
+=================== 
+=================== 
+=================== 
+89c91cb337e671a1fe8c10ab94c099ba  [shntool]  Track01.wav
+267bb84c208bcc767a1a74b1ee70d141  [shntool]  Track02.wav
+d3ee854e152e5bda30822fb0f7e384b0  [shntool]  Track03.wav
+90843985e0b05d5495a28e49ed360616  [shntool]  Track04.wav
+1385ceb959d66c160236d59a6cc8072c  [shntool]  Track05.wav
+55a5642471cc2ebc9d71c6a9c2c26428  [shntool]  Track06.wav
+0606626494a46d582288ccf1000ed99d  [shntool]  Track07.wav
+f1f31fefe5b33b24d7451529e2f1c16f  [shntool]  Track08.wav
+2ce02ceddf31498e9a07c73ff7931a93  [shntool]  Track09.wav
+515b0a4eae2293b712b7e6a525ab025a  [shntool]  Track10.wav
+72d9f12761b43127f42818acf9975a9c  [shntool]  Track11.wav
+a6a7d20d72877a08381a7ef32e3a52fc  [shntool]  Track12.wav
+e8c4d3c994a9bb69c54c12ec6721afc1  [shntool]  Track13.wav
+a86fa7d943bd60a106fdf299d58fc3d6  [shntool]  Track14.wav
+bcb336e0f0bce7026180e6058611ba8b  [shntool]  Track15.wav
+8867a9489648f89e0e81b818726f22e1  [shntool]  Track16.wav
+c8f6254e00998e27c0fb458245094c4f  [shntool]  Track17.wav
+8785803f2222ddafa56e1043aed8086d  [shntool]  Track18.wav
+6aa7329717f1ca1d9340793b22e20096  [shntool]  Track19.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-03-08_Gymnasium Nagoya Japan\nagoya 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:37.63       38427020 B   ---   --   -----    wav  1.0000  Track01.wav
+     4:29.74       47625692 B   ---   --   -----    wav  1.0000  Track02.wav
+     4:44.65       50250524 B   ---   --   -----    wav  1.0000  Track03.wav
+     8:40.37       91815068 B   ---   --   -----    wav  1.0000  Track04.wav
+     1:01.19       10805132 B   ---   --   -----    wav  1.0000  Track05.wav
+     5:56.15       62833724 B   ---   --   -----    wav  1.0000  Track06.wav
+     0:26.59        4725212 B   ---   --   -----    wav  1.0000  Track07.wav
+     6:39.22       70435388 B   ---   --   -----    wav  1.0000  Track08.wav
+     4:24.74       46743692 B   ---   --   -----    wav  1.0000  Track09.wav
+     2:59.37       31662668 B   ---   --   -----    wav  1.0000  Track10.wav
+     0:18.15        3210524 B   ---   --   -----    wav  1.0000  Track11.wav
+     2:13.53       23585900 B   ---   --   -----    wav  1.0000  Track12.wav
+     6:58.44       73838732 B   ---   --   -----    wav  1.0000  Track13.wav
+    52:31.52      555959276 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-03-08_Gymnasium Nagoya Japan\nagoya1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.18       43965980 B   ---   --   -----    wav  1.0000  Track01.wav
+     4:21.57       46174508 B   ---   --   -----    wav  1.0000  Track02.wav
+     3:00.14       31784972 B   ---   --   -----    wav  1.0000  Track03.wav
+     4:07.65       43723724 B   ---   --   -----    wav  1.0000  Track04.wav
+     3:11.70       33857084 B   ---   --   -----    wav  1.0000  Track05.wav
+     3:32.50       37514444 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:06.13       54009020 B   ---   --   -----    wav  1.0000  Track07.wav
+     5:19.74       56445692 B   ---   --   -----    wav  1.0000  Track08.wav
+     3:43.33       39414860 B   ---   --   -----    wav  1.0000  Track09.wav
+     6:04.68       64369580 B   ---   --   -----    wav  1.0000  Track10.wav
+     3:47.28       40108700 B   ---   --   -----    wav  1.0000  Track11.wav
+     4:38.06       49053356 B   ---   --   -----    wav  1.0000  Track12.wav
+     2:13.08       23480060 B   ---   --   -----    wav  1.0000  Track13.wav
+     1:03.12       11141468 B   ---   --   -----    wav  1.0000  Track14.wav
+     5:48.41       61483676 B   ---   --   -----    wav  1.0000  Track15.wav
+     5:12.13       55067420 B   ---   --   -----    wav  1.0000  Track16.wav
+     3:34.03       37756700 B   ---   --   -----    wav  1.0000  Track17.wav
+     1:07.25       11877644 B   ---   --   -----    wav  1.0000  Track18.wav
+     4:19.01       45689996 B   ---   --   -----    wav  1.0000  Track19.wav
+    74:20.74      786918884 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-03mk 
+=================== 
+=================== 
+=================== 
+91565269801e7c9c1096649be3ca3608  1-SHN\01 All Along The Watchtower.shn
+e9e5f98f2047ea1fefb5de45b9227373  1-SHN\02 Most Of The Time.shn
+b33f7af36be69bdbdb7eb0580afbe176  1-SHN\03 I Don't Believe You.shn
+db3e1b264b3680eed06243343e9d3a11  1-SHN\04 Just Like A Woman.shn
+c971bf1b44f2b1fc90a8371c500590d4  1-SHN\05 Tangled Up In Blue.shn
+2716e3615f656d5a39e0fd98a7bc49b7  1-SHN\06 She Belongs To Me.shn
+52a70b6f6120fa7da263053e6a533f41  1-SHN\07 I'll Be Your Baby Tonight.shn
+22e76b4674cac1d556238456a2353c2a  1-SHN\08 Love Minus Zero - No Limit.shn
+8427fff5c6507f004e52e26300947e3b  1-SHN\09 Little Moses.shn
+e25136329ceb165274371fee7169d909  1-SHN\10 Female Rambling Sailor.shn
+3ab2fd1b4125befccd645d823d4f8ae4  1-SHN\noname.md5
+14f32fee4b8cf41c8cec4ae6a4d8cd67  1992_04_03_Melbourne_back.jpg
+f4095b061252567d5560417bb11e8b2a  1992_04_03_Melbourne_front.jpg
+2a09cb2e5a0a2acf3bc98e64b4596896  2-SHN\1 Mr. Tambourine Man.shn
+d446b6a5db01964641651081392638e1  2-SHN\2 Cat's In The Well.shn
+4cb097104739f9206c623bf1ac8ccedf  2-SHN\3 Idiot Wind.shn
+d17733579895598a7568588c7bce6487  2-SHN\4 The Times They Are A-Changin'.shn
+5b95d142c47d81b2c8854ec7a11685f4  2-SHN\5 Highway 61 Revisited.shn
+dab47af0dff6116ad552e7ca2397d37c  2-SHN\6 Absolutely Sweet Marie.shn
+7b4ccd3067d6041d6244fd2b5d00dd60  2-SHN\7 Watching The River Flow.shn
+c92f4388978c8f36dae8360a1586c8c0  2-SHN\8 Blowin' In The Wind.shn
+6006dc02552bc2cccf372a5547199348  2-SHN\noname.md5
+3cb3164f5ae2de36e7d3c94c9516d671  bd92-04-03mk.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-04-03mk\1-SHN 
+=================== 
+=================== 
+=================== 
+e8b76aaf5ee86ef1cc6057bb0c8084b1  [shntool]  01_All_Along_The_Watchtower.wav
+0cdfa81af930f5d9c2c13881c93d4a09  [shntool]  02_Most_Of_The_Time.wav
+e7ff095480c6d514b2e7c3f30a28bb30  [shntool]  03_I_Don_t_Believe_You.wav
+6975d35582043506f056917ded18dc46  [shntool]  04_Just_Like_A_Woman.wav
+00f9ace2bc586811c97d3b5dbbcc718a  [shntool]  05_Tangled_Up_In_Blue.wav
+b816300d6dad7a1c6d15d294f5df4e6d  [shntool]  06_She_Belongs_To_Me.wav
+9e1fe3ed921b57807a3c7cb3c94fc333  [shntool]  07_I_ll_Be_Your_Baby_Tonight.wav
+1e0f2c6562636b247cb2cb7da51233f2  [shntool]  08_Love_Minus_Zero_-_No_Limit.wav
+40e862877794e69ebee2ec4559cd3e5b  [shntool]  09_Little_Moses.wav
+e3fc7de5c0a3317a08ff57594dfb240c  [shntool]  10_Female_Rambling_Sailor.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-04-03mk\2-SHN 
+=================== 
+=================== 
+=================== 
+7de093585e7ae89f965d9199856c7dd9  [shntool]  1_Mr._Tambourine_Man.wav
+ca0f8f15fbb7a19722aba434c9a05f1e  [shntool]  2_Cat_s_In_The_Well.wav
+b0545d6e43a7519d61c504114205f84a  [shntool]  3_Idiot_Wind.wav
+c533d289cdc2755f46290042d999579a  [shntool]  4_The_Times_They_Are_A-Changin_.wav
+4deeb01a6157ca887d11af4ba316f5f9  [shntool]  5_Highway_61_Revisited.wav
+06f5ba0bf4c039024cd8a8294036a441  [shntool]  6_Absolutely_Sweet_Marie.wav
+53c074ba24dccc35dc9b696d6382beae  [shntool]  7_Watching_The_River_Flow.wav
+ad610adae16048e2569f1d9638d90c3d  [shntool]  8_Blowin__In_The_Wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-03mk\1-SHN 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:52.51       41044796 B   ---   --   -----    wav  1.0000  01_All_Along_The_Watchtower.wav
+     4:56.29       52282652 B   ---   --   -----    wav  1.0000  02_Most_Of_The_Time.wav
+     4:19.09       45708812 B   ---   --   -----    wav  1.0000  03_I_Don_t_Believe_You.wav
+     5:24.73       57325340 B   ---   --   -----    wav  1.0000  04_Just_Like_A_Woman.wav
+     7:10.53       75976700 B   ---   --   -----    wav  1.0000  05_Tangled_Up_In_Blue.wav
+     4:43.29       49989452 B   ---   --   -----    wav  1.0000  06_She_Belongs_To_Me.wav
+     5:24.10       57177164 B   ---   --   -----    wav  1.0000  07_I_ll_Be_Your_Baby_Tonight.wav
+     3:40.10       38831564 B   ---   --   -----    wav  1.0000  08_Love_Minus_Zero_-_No_Limit.wav
+     3:43.46       39445436 B   ---   --   -----    wav  1.0000  09_Little_Moses.wav
+     3:47.10       40066364 B   ---   --   -----    wav  1.0000  10_Female_Rambling_Sailor.wav
+    47:02.20      497848280 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-03mk\2-SHN 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.72       60498188 B   ---   --   -----    wav  1.0000  1_Mr._Tambourine_Man.wav
+     3:33.34       37653212 B   ---   --   -----    wav  1.0000  2_Cat_s_In_The_Well.wav
+     6:28.42       68542028 B   ---   --   -----    wav  1.0000  3_Idiot_Wind.wav
+     5:42.72       60498188 B   ---   --   -----    wav  1.0000  4_The_Times_They_Are_A-Changin_.wav
+     5:39.65       59952524 B   ---   --   -----    wav  1.0000  5_Highway_61_Revisited.wav
+     5:02.41       53369276 B   ---   --   -----    wav  1.0000  6_Absolutely_Sweet_Marie.wav
+     4:37.12       48891068 B   ---   --   -----    wav  1.0000  7_Watching_The_River_Flow.wav
+     4:46.10       50473964 B   ---   --   -----    wav  1.0000  8_Blowin__In_The_Wind.wav
+    41:33.48      439878448 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

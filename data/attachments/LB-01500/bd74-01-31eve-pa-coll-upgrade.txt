@@ -1,0 +1,9 @@
+Bob Dylan, 1/31/74, Madison Square Garden, NYC, 2CDR
+
+(58min+66min), & THE BAND, evening, The 1974 PA tape collection upgrade, PA recording (compiled by Les Kokay), Source/lineage information: PA recording, best known sources, Lossless transmission from compiler; received as SHN files, There were sector boundary errors on disc 1, which I, fixed with shntool. The SHN files included here are the, fixed files; the MD5 file corresponds to these files, so it is not the same as the original MD5; excellent sound
+
+see tracklist for flaws
+
+Disc 1, 1 Dylan & The Band, Most Likely You Go Your Way And I'll Go Mine, 2 Lay, Lady, Lay, 3 Just Like Tom Thumb's Blues, 4 Rainy Day Women #12 & 35, 5 It Ain't Me, Babe, 6 Ballad Of A Thin Man, 7 The Band, Stage Fright, 8 The Night They Drove Old Dixie Down, 9 King Harvest (Has Surely Come), 10 When You Awake start cut, 11 Up On Cripple Creek, 12 Dylan & The Band, All Along The Watchtower start cut, 13 Ballad Of Hollis Brown, 14 Knockin' On Heaven's Door, 
+
+Disc 2, 1 Dylan solo, The Times They Are A-Changin', 2 Don't Think Twice, It's All Right, 3 Gates Of Eden, 4 Just Like A Woman, 5 It's Alright, Ma (I'm Only Bleeding), 6 The Band, Rag Mama Rag, 7 This Wheel's On Fire, 8 The Shape I'm In glitch at 3:22, then song ends early at 3:28, 9 The Weight not certain this was performed; this version from the rough mix of Before The Flood, 10 Dylan & The Band, Forever Young tape skip/cut at 0:12, 11 Highway 61 Revisited, 12 Like A Rolling Stone, 13 Most Likely You Go Your Way And I'll Go Mine, 14 Blowin' In The Wind

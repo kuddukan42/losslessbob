@@ -1,0 +1,26 @@
+Bob Dylan
+London, UK  Hammersmith Apollo
+2011-11-19
+
+01. Introduction
+02. Leopard-Skin Pill-Box Hat  		(Mark Knopfler on Guitar) 
+03. Don't Think Twice, It's All Right 	(Mark Knopfler on Guitar) 
+04. Things Have Changed 		(Mark Knopfler on Guitar) 
+05. Mississippi 			(Mark Knopfler on Guitar) 
+06. Honest With Me
+07. The Lonesome Death Of Hattie Carroll 
+08. Ballad Of Hollis Brown 
+09. Make You Feel My Love 
+10. Highway 61 Revisited 
+11. A Hard Rain's A-Gonna Fall 
+12. Thunder On The Mountain 
+13. Ballad Of A Thin Man 
+14. All Along The Watchtower 
+15. Jolene 
+16. Like A Rolling Stone 
+
+Taper:   "Bach"
+Lineage: Neumann AK40  >Neumann MTX 191 A 
+	 >Marantz PMD 661 (48 kHz-16bit) > 
+	 USB 2.0 >PC > ssrc >WaveLab 6.10 >tagging 	 
+	 Foobar >TotalCommander (md5) >µTorrent 2.0

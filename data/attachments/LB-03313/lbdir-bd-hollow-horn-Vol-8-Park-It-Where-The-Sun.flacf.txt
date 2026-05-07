@@ -1,0 +1,203 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-hollow-horn-Vol-8-Park-It-Where-The-Sun.flacf 
+=================== 
+=================== 
+=================== 
+64add8b71e44ccd2c85ec3c74ed8f9bc  bd-hollow-horn-Vol-8-Park-It-Where-The-Sun-LB-3313.txt
+5564dcca9a886fea0e7ff7d64dba91e3  vol 8 - Park It Back.jpg
+831171307ba7bd9d54ce690ee9df5f15  vol 8 - Park It Front.jpg
+a1fff50614e67f2121af16aa900dfac8  vol 8-1\hollow horn 8-1 - Track 01.flac
+2d40bf59f40fc838df4db8f15ce61ccb  vol 8-1\hollow horn 8-1 - Track 02.flac
+97ee1540a34b342c5d04e3a01fb85e5b  vol 8-1\hollow horn 8-1 - Track 03.flac
+5424baae0893e624ca5ca1b7bb3503eb  vol 8-1\hollow horn 8-1 - Track 04.flac
+ab8456b69bba9b74aa56b65f44e551cf  vol 8-1\hollow horn 8-1 - Track 05.flac
+24d06c8d89a59789888e907016df866b  vol 8-1\hollow horn 8-1 - Track 06.flac
+6c6da2dcc66d8cacae85bdacd4e30008  vol 8-1\hollow horn 8-1 - Track 07.flac
+4287f2142493489a34de68758fc5e898  vol 8-1\hollow horn 8-1 - Track 08.flac
+3566e9cacfa5afaa44f965c5ac1f96b4  vol 8-1\hollow horn 8-1 - Track 09.flac
+4b84dd1e1bbd2b0cbd52f20569f702c0  vol 8-1\hollow horn 8-1 - Track 10.flac
+0b1a2064f7e807e79cf6f2ed4824d176  vol 8-1\hollow horn 8-1 - Track 11.flac
+09ae2715aaa9b25ab70b71c38533ca10  vol 8-1\hollow horn 8-1 - Track 12.flac
+f6aa355b83993088e676d7ea042f9291  vol 8-1\hollow horn 8-1 - Track 13.flac
+93ad70e2cd2abe9668ec1b3343154a4a  vol 8-1\hollow horn 8-1 - Track 14.flac
+1fbf08d6d0b9ac938f233b03f8bc1633  vol 8-1\hollow horn 8-1 - Track 15.flac
+1c22bb1ebae4f8be1731e2ba145a58c3  vol 8-1\hollow horn 8-1 - Track 16.flac
+17f1229cb50c0991c2ac90509ea044f2  vol 8-1\hollow horn 8-1 - Track 17.flac
+4f9cd01bc91222cef6dd709fdee61cda  vol 8-1\hollow horn 8-1 - Track 18.flac
+637f1c6488d6333c3a1a05a070320fb0  vol 8-1\hollow horn 8-1 - Track 19.flac
+8d5a83f2a89001aaa4fc0fcc052142db  vol 8-1\hollow horn 8-1 - Track 20.flac
+f489846b0b7a27b21b0c0bf6a083694d  vol 8-1\hollow horn 8-1 - Track 21.flac
+5b8278f41c959734d2e2e97b9409deaa  vol 8-1\hollow horn 8-1 - Track 22.flac
+90c8aed307930f60dd31d88f9abffff9  vol 8-1\hollow horn 8-1 - Track 23.flac
+99ff89eb72e8a641df184ee1f4cf7e52  vol 8-1\hollow horn 8-1 - Track 24.flac
+55861293473d890fcfe403e9c1a47c86  vol 8-1\hollow horn 8-1 - Track 25.flac
+5575fc2d0c442fa7adfe2ef5b2adbb43  vol 8-1\hollow horn 8-1 - Track 26.flac
+050376caf44b96b22b9c109b01194aac  vol 8-1\hollow horn 8-1 - Track 27.flac
+642d1ba0dcd118ea99f1d1549f092964  vol 8-1\hollow horn 8-1 - Track 28.flac
+174e22c521ff14d69b7f039ee68907d4  vol 8-1\vol 8-1.md5
+9b58dcc9b01dbc6517b23506f0df9102  vol 8-2\hollow horn 8-2 - Track 01.flac
+1589205b661c11537285673861a17c6e  vol 8-2\hollow horn 8-2 - Track 02.flac
+5fba61535d70991b4c485af8b2136be9  vol 8-2\hollow horn 8-2 - Track 03.flac
+9e6992d48a4fa108aba8a6e929df56f4  vol 8-2\hollow horn 8-2 - Track 04.flac
+2e9c0f1eb7767cd3013e117730edeb43  vol 8-2\hollow horn 8-2 - Track 05.flac
+c02c357994d8d8bd564cd99402ed38aa  vol 8-2\hollow horn 8-2 - Track 06.flac
+92365325638ecda1d2c7f99a952d71f1  vol 8-2\hollow horn 8-2 - Track 07.flac
+deddcf11c40ea1832ae45ce0de3e2f5c  vol 8-2\hollow horn 8-2 - Track 08.flac
+090396e2c481a094e1e59ec859a693c0  vol 8-2\hollow horn 8-2 - Track 09.flac
+8313fe41f6c2177f4bfd5c8f18066080  vol 8-2\hollow horn 8-2 - Track 10.flac
+49554681fc7cb096a3bcf847e24d9b0c  vol 8-2\hollow horn 8-2 - Track 11.flac
+60b07e2fda5ab10573393101e8b560be  vol 8-2\hollow horn 8-2 - Track 12.flac
+dd17e7f17eed7bde4a773b16d67954c0  vol 8-2\hollow horn 8-2 - Track 13.flac
+dd6cbdec587fb7be00f82ba1ef8c9f23  vol 8-2\hollow horn 8-2 - Track 14.flac
+1025b42fbbcd385793b73a12f07df69a  vol 8-2\hollow horn 8-2 - Track 15.flac
+bba9a3ae4724a58c32f8eeaad5f36a0b  vol 8-2\hollow horn 8-2 - Track 16.flac
+5dd4001b53156cc414b4e427e6cbe4dc  vol 8-2\hollow horn 8-2 - Track 17.flac
+a925f2e094975413303c76deafdf9ff3  vol 8-2\hollow horn 8-2 - Track 18.flac
+b959bc186dbd2332520754e31d5402b5  vol 8-2\hollow horn 8-2 - Track 19.flac
+75dfe720a6bf3ad7ff8d6d602f399c76  vol 8-2\hollow horn 8-2 - Track 20.flac
+e427e47c8b260eba0159bb9d76936c26  vol 8-2\hollow horn 8-2 - Track 21.flac
+0a0c29deeb29cbfd5eef916ad5132455  vol 8-2\hollow horn 8-2 - Track 22.flac
+de5b4f9d7e6aa3996ffcfc456e1c5c36  vol 8-2\hollow horn 8-2 - Track 23.flac
+cc7d60816ce88ca0b80766ad9ddffc9a  vol 8-2\hollow horn 8-2 - Track 24.flac
+2537f077a8666b887f49138b85210ca5  vol 8-2\vol 8-2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-hollow-horn-Vol-8-Park-It-Where-The-Sun.flacf\vol 8-1 
+=================== 
+=================== 
+=================== 
+hollow horn 8-1 - Track 01.flac:525b1387d531ce7aded30d3bd3a027e1
+hollow horn 8-1 - Track 02.flac:365f0490303a0f2e84b4566d6ae5ebe0
+hollow horn 8-1 - Track 03.flac:0799f05ec90af1149cc14cd4e8c48b18
+hollow horn 8-1 - Track 04.flac:3a11d8ca2fe81f7192d60eb7dc279236
+hollow horn 8-1 - Track 05.flac:1d81b7364d163b0a668c35068251374b
+hollow horn 8-1 - Track 06.flac:78030c9abe317f82261cca00660fd7c6
+hollow horn 8-1 - Track 07.flac:037224ce159ec0e828b91dad61639551
+hollow horn 8-1 - Track 08.flac:f0efc9d6480e0eea764dca6428271db9
+hollow horn 8-1 - Track 09.flac:ac51a39020dafbaeec5e1b51cfd76a13
+hollow horn 8-1 - Track 10.flac:e55ef84fc36851d9bee1158ba4b20116
+hollow horn 8-1 - Track 11.flac:1f77893ee2fd4abfdff9cf5a30f24a98
+hollow horn 8-1 - Track 12.flac:d4d0ac3aaad26b4ad351d414a39b0124
+hollow horn 8-1 - Track 13.flac:dcfd969203984a110f9ed5bc08d07b9c
+hollow horn 8-1 - Track 14.flac:4ffa797d70184e4038a93e37715805cf
+hollow horn 8-1 - Track 15.flac:9c6c29f44e1c6b65c59e1ff4b2cf3707
+hollow horn 8-1 - Track 16.flac:2e4c7db174e4498a74d8956efbc5919b
+hollow horn 8-1 - Track 17.flac:e8543fd25f8e00fbc80f7955cf1e8f4e
+hollow horn 8-1 - Track 18.flac:4107edd92650ccccccacd5c145125201
+hollow horn 8-1 - Track 19.flac:e76c0c10ba86a69b71a7d79f39211eb5
+hollow horn 8-1 - Track 20.flac:929bd5e92c642512685a27d1a89b6eef
+hollow horn 8-1 - Track 21.flac:3a66c369a3ea667afcb44eb9d999cce5
+hollow horn 8-1 - Track 22.flac:4e6bc9991da01bb1ad6531ce33b147ca
+hollow horn 8-1 - Track 23.flac:0a5abfe0decca5b681d55988ecf36e31
+hollow horn 8-1 - Track 24.flac:cbdae8ba9218f3260e3892139ac4f3c7
+hollow horn 8-1 - Track 25.flac:bcc47f18ad273f8d3a388ffa848e05c2
+hollow horn 8-1 - Track 26.flac:ec17b450594a2272523cfbbbcba5a03a
+hollow horn 8-1 - Track 27.flac:37372915a50aec4e68e415bff1911a72
+hollow horn 8-1 - Track 28.flac:0317fc2c37eace34cffb544121c05cb5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-hollow-horn-Vol-8-Park-It-Where-The-Sun.flacf\vol 8-2 
+=================== 
+=================== 
+=================== 
+hollow horn 8-2 - Track 01.flac:b0dabae0e8e181ba941d5a54eecc358f
+hollow horn 8-2 - Track 02.flac:5dc0cb5aa58357e63cdb4cad090b66ff
+hollow horn 8-2 - Track 03.flac:243bc4e9fb7bb4e53e9cf4e256480a2f
+hollow horn 8-2 - Track 04.flac:b40f23a00556fddd52383f8764d3577a
+hollow horn 8-2 - Track 05.flac:94bd279127fed8493049cbe53217272a
+hollow horn 8-2 - Track 06.flac:ff199b00a5d566568230207e8479ed70
+hollow horn 8-2 - Track 07.flac:f861482f2fac255d416470d37d41d743
+hollow horn 8-2 - Track 08.flac:398e3c803bd6e760079d3d8d61ae150b
+hollow horn 8-2 - Track 09.flac:36e9c9ab47ab5ff0668a72e88777e998
+hollow horn 8-2 - Track 10.flac:13444455aab56c70231713c2c064dc08
+hollow horn 8-2 - Track 11.flac:27b41a54d02baccec86b8eed0af41b10
+hollow horn 8-2 - Track 12.flac:037a90211e6eedd48cf0ff2c508b1208
+hollow horn 8-2 - Track 13.flac:26803f9d7e3ee1b771844306fcf5d766
+hollow horn 8-2 - Track 14.flac:59a9e8ac76b5ba280dab5ff187ed1211
+hollow horn 8-2 - Track 15.flac:71cecfd5dae446dc37216865b5cf262e
+hollow horn 8-2 - Track 16.flac:c21de5016dcb97d21c2b97fdd4f8a513
+hollow horn 8-2 - Track 17.flac:f367227a619f10c62b8a72387f14f462
+hollow horn 8-2 - Track 18.flac:5611e849e1cba3e99c83d929128bde38
+hollow horn 8-2 - Track 19.flac:4ad51c2590f6fbf97e23a7dcc93ceb84
+hollow horn 8-2 - Track 20.flac:b6ba84335ed220bd508c40db50bca63a
+hollow horn 8-2 - Track 21.flac:975f289779608cb151eb8b989384389e
+hollow horn 8-2 - Track 22.flac:e2f27d6b2dbd35da17d67180fa6e225b
+hollow horn 8-2 - Track 23.flac:ce779a2bf1de1592365d5d2f298567e1
+hollow horn 8-2 - Track 24.flac:9c28da533b7c253b312ce0fa58ad2c81
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-hollow-horn-Vol-8-Park-It-Where-The-Sun.flacf\vol 8-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:21.12       14316668 B   ---   --   ---xx   flac  0.5689  hollow horn 8-1 - Track 01.flac
+     3:15.01       34400396 B   ---   --   ---xx   flac  0.6336  hollow horn 8-1 - Track 02.flac
+     2:30.08       26478860 B   ---   --   ---xx   flac  0.6032  hollow horn 8-1 - Track 03.flac
+     2:58.17       31439228 B   ---   --   ---xx   flac  0.6204  hollow horn 8-1 - Track 04.flac
+     3:47.06       40056956 B   ---   --   ---xx   flac  0.5945  hollow horn 8-1 - Track 05.flac
+     3:04.00       32457644 B   ---   --   ---xx   flac  0.6002  hollow horn 8-1 - Track 06.flac
+     3:45.12       39718268 B   ---   --   ---xx   flac  0.5972  hollow horn 8-1 - Track 07.flac
+     3:09.10       33363164 B   ---   --   ---xx   flac  0.5946  hollow horn 8-1 - Track 08.flac
+     0:22.26        3941996 B   ---   --   ---xx   flac  0.5149  hollow horn 8-1 - Track 09.flac
+     3:17.03       34757900 B   ---   --   ---xx   flac  0.6939  hollow horn 8-1 - Track 10.flac
+     3:34.71       37916636 B   ---   --   ---xx   flac  0.6772  hollow horn 8-1 - Track 11.flac
+     3:09.27       33403148 B   ---   --   ---xx   flac  0.6683  hollow horn 8-1 - Track 12.flac
+     3:17.37       34837868 B   ---   --   ---xx   flac  0.6581  hollow horn 8-1 - Track 13.flac
+     3:16.37       34661468 B   ---   --   ---xx   flac  0.6573  hollow horn 8-1 - Track 14.flac
+     3:10.29       33584252 B   ---   --   ---xx   flac  0.6883  hollow horn 8-1 - Track 15.flac
+     2:57.25       31281644 B   ---   --   ---xx   flac  0.6709  hollow horn 8-1 - Track 16.flac
+     3:35.60       38067164 B   ---   --   ---xx   flac  0.6462  hollow horn 8-1 - Track 17.flac
+     3:19.12       35131868 B   ---   --   ---xx   flac  0.6708  hollow horn 8-1 - Track 18.flac
+     3:11.55       33821804 B   ---   --   ---xx   flac  0.6657  hollow horn 8-1 - Track 19.flac
+     2:52.41       30437276 B   ---   --   ---xx   flac  0.6884  hollow horn 8-1 - Track 20.flac
+     3:16.46       34682636 B   ---   --   ---xx   flac  0.6902  hollow horn 8-1 - Track 21.flac
+     3:37.71       38445836 B   ---   --   ---xx   flac  0.6580  hollow horn 8-1 - Track 22.flac
+     2:29.74       26457692 B   ---   --   ---xx   flac  0.6755  hollow horn 8-1 - Track 23.flac
+     3:24.34       36065612 B   ---   --   ---xx   flac  0.6811  hollow horn 8-1 - Track 24.flac
+     0:29.08        5134460 B   ---   --   ---xx   flac  0.6487  hollow horn 8-1 - Track 25.flac
+     2:49.64       29962172 B   ---   --   ---xx   flac  0.5681  hollow horn 8-1 - Track 26.flac
+     0:48.53        8591900 B   ---   --   ---xx   flac  0.5557  hollow horn 8-1 - Track 27.flac
+     0:29.04        5125052 B   ---   --   ---xx   flac  0.5728  hollow horn 8-1 - Track 28.flac
+    77:20.18      818539568 B                            0.6446  (28 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-hollow-horn-Vol-8-Park-It-Where-The-Sun.flacf\vol 8-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:05.48       11578940 B   ---   --   ---xx   flac  0.5152  hollow horn 8-2 - Track 01.flac
+     2:24.34       25481612 B   ---   --   ---xx   flac  0.6117  hollow horn 8-2 - Track 02.flac
+     2:47.71       29625836 B   ---   --   ---xx   flac  0.5566  hollow horn 8-2 - Track 03.flac
+     2:57.15       31258124 B   ---   --   ---xx   flac  0.6142  hollow horn 8-2 - Track 04.flac
+     2:49.47       29922188 B   ---   --   ---xx   flac  0.6276  hollow horn 8-2 - Track 05.flac
+     2:35.56       27473756 B   ---   --   ---xx   flac  0.5990  hollow horn 8-2 - Track 06.flac
+     2:53.58       30653660 B   ---   --   ---xx   flac  0.5712  hollow horn 8-2 - Track 07.flac
+     2:09.27       22819148 B   ---   --   ---xx   flac  0.6015  hollow horn 8-2 - Track 08.flac
+     2:20.44       24799532 B   ---   --   ---xx   flac  0.5397  hollow horn 8-2 - Track 09.flac
+     2:34.56       27297356 B   ---   --   ---xx   flac  0.5280  hollow horn 8-2 - Track 10.flac
+     2:20.73       24867740 B   ---   --   ---xx   flac  0.5783  hollow horn 8-2 - Track 11.flac
+     3:43.18       39379580 B   ---   --   ---xx   flac  0.6840  hollow horn 8-2 - Track 12.flac
+     7:14.53       76682300 B   ---   --   ---xx   flac  0.5116  hollow horn 8-2 - Track 13.flac
+     3:18.70       35091884 B   ---   --   ---xx   flac  0.5276  hollow horn 8-2 - Track 14.flac
+     2:37.07       27711308 B   ---   --   ---xx   flac  0.5888  hollow horn 8-2 - Track 15.flac
+     2:32.17       26852828 B   ---   --   ---xx   flac  0.6066  hollow horn 8-2 - Track 16.flac
+     4:03.17       42905228 B   ---   --   ---xx   flac  0.6509  hollow horn 8-2 - Track 17.flac
+     3:03.58       32417660 B   ---   --   ---xx   flac  0.3219  hollow horn 8-2 - Track 18.flac
+     5:05.14       53834972 B   ---   --   ---xx   flac  0.3154  hollow horn 8-2 - Track 19.flac
+     6:28.26       68504396 B   ---   --   ---xx   flac  0.3244  hollow horn 8-2 - Track 20.flac
+     3:19.00       35103644 B   ---   --   ---xx   flac  0.3709  hollow horn 8-2 - Track 21.flac
+     3:05.65       32786924 B   ---   --   ---xx   flac  0.5160  hollow horn 8-2 - Track 22.flac
+     3:00.27       31815548 B   ---   --   ---xx   flac  0.5726  hollow horn 8-2 - Track 23.flac
+     2:54.13       30724220 B   ---   --   ---xx   flac  0.4393  hollow horn 8-2 - Track 24.flac
+    77:26.14      819588384 B                            0.5154  (24 files)
+=================== 
+=================== 
+=================== 

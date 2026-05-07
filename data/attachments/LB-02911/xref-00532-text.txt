@@ -1,0 +1,208 @@
+===================
+===================
+===================
+=== 1997-04-12 The Charles A. Dana Center, Bentley College, Waltham, Massachusetts, USA.md5
+===================
+===================
+===================
+87fba4e2b6a1535c44acfb6766be260f *1997-04-12 Waltham d1\01 Titel 01.flac
+11e9102d6667ee5cae47e61eafc7292d *1997-04-12 Waltham d1\02 Titel 02.flac
+ae91cd376f689473ec366efe84a942d3 *1997-04-12 Waltham d1\03 Titel 03.flac
+864b0b13d40f1202e38d250f90187dbc *1997-04-12 Waltham d1\04 Titel 04.flac
+510b1c45a2d10709e949da588085c5f4 *1997-04-12 Waltham d1\05 Titel 05.flac
+7b0604e16e768f3b1179012538a425f8 *1997-04-12 Waltham d1\06 Titel 06.flac
+87470ec3141dc5f08cee6d11ead4fad8 *1997-04-12 Waltham d1\07 Titel 07.flac
+0a8beb192668e9c2a2f8905d482b8c36 *1997-04-12 Waltham d1\08 Titel 08.flac
+849ceb4a38f430f8ce5e510437e04a62 *1997-04-12 Waltham d1\09 Titel 09.flac
+2e4459ef2bcf2e9ad958141181ff85d8 *1997-04-12 Waltham d1\10 Titel 10.flac
+4d0272a38ced54f63e7a928045c2f32d *1997-04-12 Waltham d1\1997-04-12 Waltham d1.ffp.txt
+ac04e1be2c77f8a3c73e4a9a43049d58 *1997-04-12 Waltham d1\1997-04-12 Waltham d1.shntool_len.txt
+4d0272a38ced54f63e7a928045c2f32d *1997-04-12 Waltham d1\ffp CD1.ffp
+b511cc7cc2bd2550cec7da44b1cfb850 *1997-04-12 Waltham d2\01 Titel 01.flac
+2c382ae11bc179a329737a67bc8c377f *1997-04-12 Waltham d2\02 Titel 02.flac
+2c9b884641080f44d9ea2804db0a3c98 *1997-04-12 Waltham d2\03 Titel 03.flac
+359be4fe854a73209e66ebbb7165c204 *1997-04-12 Waltham d2\04 Titel 04.flac
+f2ea1ebaa2b2a52920e9c317495560aa *1997-04-12 Waltham d2\05 Titel 05.flac
+39376e0699ca4c65ce49f7094d3a3365 *1997-04-12 Waltham d2\1997-04-12 Waltham d2.shntool_len.txt
+8c01421131e8a84079cc263014f40f8e *1997-04-12 Waltham d2\ffp CD2.ffp
+8c01421131e8a84079cc263014f40f8e *1997-04-12 Waltham d2\ffp CD2.txt
+89fe0e3aeaeb28612926bf9da23d2f8a *Info.txt
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+The Charles A. Dana Center, Bentley College
+Waltham, Massachusetts
+April 12, 1997
+
+No LB-reference, but I might be wrong...
+
+Taper: no info
+Source/Lineage: no info
+
+01. Crash On The Levee (Down In The Flood)
+02. Pretty Peggy-O (trad.)
+03. All Along The Watchtower
+04. Just Like A Woman
+05. It Takes A Lot To Laugh, It Takes A Train To Cry
+06. Silvio (Bob Dylan & Robert Hunter)
+07. Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson)
+08. Masters Of War
+09. Don't Think Twice, It's All Right
+10. Obviously Five Believers
+
+
+11. Shooting Star
+12. Leopard-Skin Pill-Box Hat
+13. Like A Rolling Stone
+14. My Back Pages
+15. Rainy Day Women # 12 & 35
+
+Concert # 863 of The Never-Ending Tour. Concert # 10 of the 1997
+Spring Tour of Canada and USA. 1997 concert # 21.
+Concert # 10 with the 11th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), Larry Campbell (guitar), Tony Garnier (bass), David Kemper (drums & percussion).
+7-9, 14 acoustic with the band.
+14 Bob Dylan harmonica.
+7, 14 Larry Campbell (fiddle).
+
+10 new songs (66%) compared to previous concert. 2 new songs for this tour.
+Stereo audience recording, 115 minutes.
+
+ffp CD1:
+01 Titel 01.flac:b72429694d70477313f1eeee8ca28b0d
+02 Titel 02.flac:cae82e92833fbb5f8283ff548d1516c6
+03 Titel 03.flac:9c52e12654bd4ce284154ebd20681122
+04 Titel 04.flac:2255382a1d93388ac2b060c5a95ce037
+05 Titel 05.flac:da132cabaf05005f7d495cd262e6f8a3
+06 Titel 06.flac:bcdf82013ff568804e32435973fc7361
+07 Titel 07.flac:ca91ee6ad9ce04e5628878209950313b
+08 Titel 08.flac:e37438eef0e4eed02b71e06c7df56e37
+09 Titel 09.flac:54030fdf8e70265f090ec76f61e631e3
+10 Titel 10.flac:3dab7a0f7ff1e8b50653521cb1c56f51
+
+ffp CD2:
+01 Titel 01.flac:b107b7083f38e58a01883742448217f0
+02 Titel 02.flac:a193ced72a47ef6dd750d51a209869fb
+03 Titel 03.flac:cbc60399e151b2189b875c9da95f7cca
+04 Titel 04.flac:61a5640d7707f733c34717536aadc00a
+05 Titel 05.flac:c71cc2bcfa247cdcbbd9279a40546207
+
+shntool_len CD1:
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.02       45163148 B   ---   --   ---xx   flac  0.5196  01 Titel 01.flac
+     5:38.68       59783180 B   ---   --   ---xx   flac  0.5092  02 Titel 02.flac
+     6:12.02       65625548 B   ---   --   ---xx   flac  0.5595  03 Titel 03.flac
+     7:24.56       78453356 B   ---   --   ---xx   flac  0.5261  04 Titel 04.flac
+     7:59.51       84615596 B   ---   --   ---xx   flac  0.4811  05 Titel 05.flac
+     7:29.05       79215404 B   ---   --   ---xx   flac  0.4684  06 Titel 06.flac
+     7:08.42       75598028 B   ---   --   ---xx   flac  0.4420  07 Titel 07.flac
+     7:05.24       75026492 B   ---   --   ---xx   flac  0.4632  08 Titel 08.flac
+     7:27.74       79024892 B   ---   --   ---xx   flac  0.5099  09 Titel 09.flac
+     6:56.72       73551788 B   ---   --   ---xx   flac  0.5152  10 Titel 10.flac
+    67:39.21      716057432 B                            0.4973  (10 files)
+
+shntool_len CD2:
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:02.53       74565500 B   ---   --   ---xx   flac  0.4741  01 Titel 01.flac
+     6:15.49       66265292 B   ---   --   ---xx   flac  0.5450  02 Titel 02.flac
+     9:19.09       98628812 B   ---   --   ---xx   flac  0.5372  03 Titel 03.flac
+     7:26.66       78829676 B   ---   --   ---xx   flac  0.4846  04 Titel 04.flac
+     5:30.20       58259084 B   ---   --   ---xx   flac  0.5149  05 Titel 05.flac
+    35:34.47      376548364 B                            0.5116  (5 files)
+===================
+===================
+===================
+=== 1997-04-12 Waltham d1.ffp.txt
+===================
+===================
+===================
+01 Titel 01.flac:b72429694d70477313f1eeee8ca28b0d
+02 Titel 02.flac:cae82e92833fbb5f8283ff548d1516c6
+03 Titel 03.flac:9c52e12654bd4ce284154ebd20681122
+04 Titel 04.flac:2255382a1d93388ac2b060c5a95ce037
+05 Titel 05.flac:da132cabaf05005f7d495cd262e6f8a3
+06 Titel 06.flac:bcdf82013ff568804e32435973fc7361
+07 Titel 07.flac:ca91ee6ad9ce04e5628878209950313b
+08 Titel 08.flac:e37438eef0e4eed02b71e06c7df56e37
+09 Titel 09.flac:54030fdf8e70265f090ec76f61e631e3
+10 Titel 10.flac:3dab7a0f7ff1e8b50653521cb1c56f51
+===================
+===================
+===================
+=== 1997-04-12 Waltham d1.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.02       45163148 B   ---   --   ---xx   flac  0.5196  01 Titel 01.flac
+     5:38.68       59783180 B   ---   --   ---xx   flac  0.5092  02 Titel 02.flac
+     6:12.02       65625548 B   ---   --   ---xx   flac  0.5595  03 Titel 03.flac
+     7:24.56       78453356 B   ---   --   ---xx   flac  0.5261  04 Titel 04.flac
+     7:59.51       84615596 B   ---   --   ---xx   flac  0.4811  05 Titel 05.flac
+     7:29.05       79215404 B   ---   --   ---xx   flac  0.4684  06 Titel 06.flac
+     7:08.42       75598028 B   ---   --   ---xx   flac  0.4420  07 Titel 07.flac
+     7:05.24       75026492 B   ---   --   ---xx   flac  0.4632  08 Titel 08.flac
+     7:27.74       79024892 B   ---   --   ---xx   flac  0.5099  09 Titel 09.flac
+     6:56.72       73551788 B   ---   --   ---xx   flac  0.5152  10 Titel 10.flac
+    67:39.21      716057432 B                            0.4973  (10 files)
+===================
+===================
+===================
+=== ffp CD1.ffp
+===================
+===================
+===================
+01 Titel 01.flac:b72429694d70477313f1eeee8ca28b0d
+02 Titel 02.flac:cae82e92833fbb5f8283ff548d1516c6
+03 Titel 03.flac:9c52e12654bd4ce284154ebd20681122
+04 Titel 04.flac:2255382a1d93388ac2b060c5a95ce037
+05 Titel 05.flac:da132cabaf05005f7d495cd262e6f8a3
+06 Titel 06.flac:bcdf82013ff568804e32435973fc7361
+07 Titel 07.flac:ca91ee6ad9ce04e5628878209950313b
+08 Titel 08.flac:e37438eef0e4eed02b71e06c7df56e37
+09 Titel 09.flac:54030fdf8e70265f090ec76f61e631e3
+10 Titel 10.flac:3dab7a0f7ff1e8b50653521cb1c56f51
+===================
+===================
+===================
+=== 1997-04-12 Waltham d2.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:02.53       74565500 B   ---   --   ---xx   flac  0.4741  01 Titel 01.flac
+     6:15.49       66265292 B   ---   --   ---xx   flac  0.5450  02 Titel 02.flac
+     9:19.09       98628812 B   ---   --   ---xx   flac  0.5372  03 Titel 03.flac
+     7:26.66       78829676 B   ---   --   ---xx   flac  0.4846  04 Titel 04.flac
+     5:30.20       58259084 B   ---   --   ---xx   flac  0.5149  05 Titel 05.flac
+    35:34.47      376548364 B                            0.5116  (5 files)
+===================
+===================
+===================
+=== ffp CD2.ffp
+===================
+===================
+===================
+01 Titel 01.flac:b107b7083f38e58a01883742448217f0
+02 Titel 02.flac:a193ced72a47ef6dd750d51a209869fb
+03 Titel 03.flac:cbc60399e151b2189b875c9da95f7cca
+04 Titel 04.flac:61a5640d7707f733c34717536aadc00a
+05 Titel 05.flac:c71cc2bcfa247cdcbbd9279a40546207
+===================
+===================
+===================
+=== ffp CD2.txt
+===================
+===================
+===================
+01 Titel 01.flac:b107b7083f38e58a01883742448217f0
+02 Titel 02.flac:a193ced72a47ef6dd750d51a209869fb
+03 Titel 03.flac:cbc60399e151b2189b875c9da95f7cca
+04 Titel 04.flac:61a5640d7707f733c34717536aadc00a
+05 Titel 05.flac:c71cc2bcfa247cdcbbd9279a40546207
+===================
+===================
+===================

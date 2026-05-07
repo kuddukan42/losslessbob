@@ -1,0 +1,226 @@
+===================
+===================
+===================
+=== bd2002-11-05 early.md5
+===================
+===================
+===================
+df37d557c150b8c8ed4aa0274f96b287 *bd_2002-11-05_early_t01.shn
+919c1b8c3bc2433617453d327438923d *bd_2002-11-05_early_t02.shn
+3c65d6ccb0bf10a24ec49b5e55218d4f *bd_2002-11-05_early_t03.shn
+691414103c5c32a382242265bab0f096 *bd_2002-11-05_early_t04.shn
+8e8ebeef9738cf76c105515cb1308f65 *bd_2002-11-05_early_t05.shn
+68aeff609c415dd767621ea8a69227af *bd_2002-11-05_early_t06.shn
+0507d09effcbc60064ed24f104b43ac5 *bd_2002-11-05_early_t07.shn
+278e0b9de05871c7a7cbf4b73843798b *bd_2002-11-05_early_t08.shn
+a6852e7e58edd623d8c7b7e3854a433f *bd_2002-11-05_early_t09.shn
+70a20e158ac3a114a6e0c3de344ff668 *bd_2002-11-05_early_t10.shn
+f9207401d681269addb6f6be618db7f4 *bd_2002-11-05_early_t11.shn
+31cb5462be07a14a6f355eaa611d4a1b *bd_2002-11-05_early_t12.shn
+80e51ef5b713a7996f5f486897f184c7 *bd_2002-11-05_early_t13.shn
+86ff3d3e0b86429807497a051066a952 *bd_2002-11-05_early_t14.shn
+a11d7c6c39f295add830bb63aa30e38d *bd_2002-11-05_early_t15.shn
+ced615706fd4d32eb25e207be6a91165 *bd_2002-11-05_early_t16.shn
+ea592b3ec22ad54c58d3682af20543b3 *bd_2002-11-05_early_t17.shn
+===================
+===================
+===================
+=== bd2002-11-05 late.md5
+===================
+===================
+===================
+ad1a4644f30e4a50e92df4fea73cb20a *bd_2002-11-05_late_t01-fixed.shn
+0539fd0cf7f61c47dec303f2871733cd *bd_2002-11-05_late_t02-fixed.shn
+217f86fb889de6e43515d0a2d3ace146 *bd_2002-11-05_late_t03-fixed.shn
+2d935976b7586a514e6f0f0d1de64130 *bd_2002-11-05_late_t04-fixed.shn
+c92e0d1eb1c4473e14b5f961a4c43604 *bd_2002-11-05_late_t05-fixed.shn
+4734f4a46821c15b2acf7d1a1f3c77ad *bd_2002-11-05_late_t06-fixed.shn
+1f8de4b46d672ff7f0a6074312b3ec18 *bd_2002-11-05_late_t07-fixed.shn
+07930470b0b99026b038b0c20ebfc4c5 *bd_2002-11-05_late_t08-fixed.shn
+cdd07c26cd514d36e4ce4162e3bd0760 *bd_2002-11-05_late_t09-fixed.shn
+98d5f17c683f3b2444347e34d555543a *bd_2002-11-05_late_t10-fixed.shn
+40fbce83a6defdac509651888d5773ab *bd_2002-11-05_late_t11-fixed.shn
+f27d3596e75f291769be86f89f19fe89 *bd_2002-11-05_late_t12-fixed.shn
+44b6c00690ac289a7726f58b599098b0 *bd_2002-11-05_late_t13-fixed.shn
+71cd43a38c0e29ac5f1c9262e280c90a *bd_2002-11-05_late_t14-fixed.shn
+9201fb5830f7cb4ba4a0b2c056c3200e *bd_2002-11-05_late_t15-fixed.shn
+050444b879f8aa7fa72f13bf9c2cf6b7 *bd_2002-11-05_late_t16-fixed.shn
+===================
+===================
+===================
+=== Setlist.txt
+===================
+===================
+===================
+Bob Dylan
+Murat Egyptian Room
+Murat Centre
+Indianapolis, Indiana  USA
+November 5, 2002 - early show
+
+Source:  [LB-793](74 min. + 25 min.). From download from a.b.m.s.d., early show, alternate upgrade, version a, excellent sound, D. Dopp version, same recording as previous version but does not have the discontinuity flaw at d2t4 6:42; it still has the other versions other flaws, has lots of occasional very light popping such as d1t2 0:49, d1t3 2:59, d1t6 3:40.
+
+CD 1:
+01. (intro)
+02. Maggie's Farm (Bob on piano)
+03. I'll Remember You (Bob on piano)
+04. Tombstone Blues (Bob on piano)
+05. The End Of The Innocence (song by Don Henley and Bruce Hornsby)(Bob on piano)
+06. Watching The River Flow (Bob on piano and harp)
+07. Brown Sugar (song by Mick Jagger and Keith Richards)
+08. Mr. Tambourine Man (acoustic)
+09. Highway 61 Revisited
+10. Sugar Baby (Bob on piano)
+11. The Times They Are A-Changin' (acoustic)
+12. Old Man (acoustic)(song by Neil Young)(Bob and Larry on acoustic guitars, Charlie on electric guitar and Tony on electric bass)
+13. Honest With Me (Bob on piano and Larry on slide guitar), 
+
+CD 2:
+01. Bye And Bye (Bob on piano and Tony on standup bass) 
+02. Summer Days (Tony on standup bass)
+
+Encore:
+03. (encore)
+04. Knockin' On Heaven's Door (acoustic)(Charlie on electric guitar)
+
+Bob Dylan
+Murat Egyptian Room
+Murat Centre
+Indianapolis, Indiana  USA
+November 5, 2002 - late show
+
+Source:  [fixed LB-734](68 min. + 36 min.), late show, excellent sound, background talking on d1t10, d2t2.
+
+My part:
+
+SHN > TLH > WAV > shntool > WAV (fixed) > TLH > SHN.
+
+CD 1:
+01. (intro) > Tweedle Dee & Tweedle Dum (Bob on piano)
+02. Carrying A Torch (song by Van Morrison)(Bob on piano) 
+03. Tombstone Blues (Bob on piano)
+04. You Ain't Goin' Nowhere (Bob on piano)
+05. Things Have Changed (Bob on piano)
+06. Brown Sugar (song by Mick Jagger and Keith Richards)
+07. My Back Pages (acoustic)(Larry on violin)
+08. Drifter's Escape (Bob on harp)
+09. High Water (For Charley Patton)(Bob on piano)
+10. Tears Of Rage (Bob on acoustic guitar)
+11. Old Man (acoustic)(Song by Neil Young)(Bob and Larry on acoustic guitars, Charlie on electric guitar and Tony on electric bass) 
+
+CD 2:
+01. Honest With Me (Bob on piano and Larry on slide guitar) 
+02. Floater (Too Much To Ask)(Bob on piano)
+03. Summer Days (Tony on standup bass)
+
+Encore:
+04. Blowin' In The Wind (acoustic)
+05. All Along The Watchtower
+
+
+
+
+===================
+===================
+===================
+=== shntool_fix (late).txt
+===================
+===================
+===================
+bd_2002-11-05_late_t01.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t01-fixed.wav'.
+bd_2002-11-05_late_t02.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t02-fixed.wav'.
+bd_2002-11-05_late_t03.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t03-fixed.wav'.
+bd_2002-11-05_late_t04.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t04-fixed.wav'.
+bd_2002-11-05_late_t05.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t05-fixed.wav'.
+bd_2002-11-05_late_t06.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t06-fixed.wav'.
+bd_2002-11-05_late_t07.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t07-fixed.wav'.
+bd_2002-11-05_late_t08.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t08-fixed.wav'.
+bd_2002-11-05_late_t09.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t09-fixed.wav'.
+bd_2002-11-05_late_t10.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t10-fixed.wav'.
+bd_2002-11-05_late_t11.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t11-fixed.wav'.
+bd_2002-11-05_late_t12.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t12-fixed.wav'.
+bd_2002-11-05_late_t13.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t13-fixed.wav'.
+bd_2002-11-05_late_t14.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t14-fixed.wav'.
+bd_2002-11-05_late_t15.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t15-fixed.wav'.
+bd_2002-11-05_late_t16.wav:  successfully fixed/rewritten to 'bd_2002-11-05_late_t16-fixed.wav'.
+
+Padded last file with 1004 zero-bytes.
+===================
+===================
+===================
+=== shntool_len (early).txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.52        6472748 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t01.wav
+     5:20.45       56553884 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t02.wav
+     5:25.63       57478220 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t03.wav
+     6:43.32       71164508 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t04.wav
+     5:03.12       53477468 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t05.wav
+     6:05.25       64444844 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t06.wav
+     4:13.28       44695100 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t07.wav
+     6:52.01       72679196 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t08.wav
+     7:52.05       83272604 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t09.wav
+     7:45.40       82120124 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t10.wav
+     5:50.26       61801196 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t11.wav
+     4:17.62       45480668 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t12.wav
+     6:59.72       74080988 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t13.wav
+     5:24.70       57318284 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t14.wav
+     8:38.33       91452860 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t15.wav
+     2:27.17       25970828 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t16.wav
+     7:52.14       83293772 B   ---   --   -----    wav  1.0000  bd_2002-11-05_early_t17.wav
+    97:28.72     1031757292 B                            1.0000  (17 files)
+===================
+===================
+===================
+=== shntool_len (late fixed).txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.73       65263340 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t01-fixed.wav
+     5:49.04       61573052 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t02-fixed.wav
+     6:40.10       70583564 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t03-fixed.wav
+     5:14.42       55488428 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t04-fixed.wav
+     6:28.02       68447948 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t05-fixed.wav
+     3:57.03       41813900 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t06-fixed.wav
+     7:20.68       77775980 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t07-fixed.wav
+     6:31.47       69082988 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t08-fixed.wav
+     7:35.63       80410220 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t09-fixed.wav
+     7:31.40       79650524 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t10-fixed.wav
+     4:25.69       46908332 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t11-fixed.wav
+     6:53.05       72865004 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t12-fixed.wav
+     6:57.52       73681148 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t13-fixed.wav
+     9:09.35       96925964 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t14-fixed.wav
+     5:39.17       59839628 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t15-fixed.wav
+     6:32.39       69240572 B   ---   --   -----    wav  1.0000  bd_2002-11-05_late_t16-fixed.wav
+   102:56.44     1089550592 B                            1.0000  (16 files)
+===================
+===================
+===================
+=== shntool_len (late unfixed).txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.74       65264936 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t01.wav
+     5:49.04       61573016 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t02.wav
+     6:40.10       70583696 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t03.wav
+     5:14.41       55486860 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t04.wav
+     6:28.03       68449592 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t05.wav
+     3:57.03       41812764 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t06.wav
+     7:20.68       77776444 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t07.wav
+     6:31.47       69081932 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t08.wav
+     7:35.63       80411164 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t09.wav
+     7:31.40       79650636 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t10.wav
+     4:25.69       46907260 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t11.wav
+     6:53.05       72866084 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t12.wav
+     6:57.52       73680048 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t13.wav
+     9:09.35       96926296 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t14.wav
+     5:39.17       59839372 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t15.wav
+     6:32.39       69239488 B   -b-   --   -----    wav  1.0000  bd_2002-11-05_late_t16.wav
+   102:56.44     1089549588 B                            1.0000  (16 files)
+===================
+===================
+===================

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-10-sfbay-blues.flacf 
+=================== 
+=================== 
+=================== 
+2d8aa23efe696144d64c1f3e7862b520  bd88-06-10-sfbay-blues-d1t01.flac
+65fc7bc8020ca5184c30d674d4891ef2  bd88-06-10-sfbay-blues-d1t02.flac
+827dfe50169d86ef8de4dc4e47561f29  bd88-06-10-sfbay-blues-d1t03.flac
+c92be3b96cede85d336e633934aa5ab8  bd88-06-10-sfbay-blues-d1t04.flac
+efb89789d5f6e62fa67e3d8790a3d5d4  bd88-06-10-sfbay-blues-d1t05.flac
+e00b7bf3e90c45b37f6c6d6e40a7625d  bd88-06-10-sfbay-blues-d1t06.flac
+dfe8a4da83cd065f2265b8c5d40dc176  bd88-06-10-sfbay-blues-d1t07.flac
+5dd31134dc0e0f894d568d5466b71066  bd88-06-10-sfbay-blues-d1t08.flac
+ab89dab4623b82212493477735d2a7b9  bd88-06-10-sfbay-blues-d2t01.flac
+c0605de40174708ddf45d2cbdae6bd4b  bd88-06-10-sfbay-blues-d2t02.flac
+f741cba0270d3d091a564ddd4e8259e9  bd88-06-10-sfbay-blues-d2t03.flac
+7819817911433cf58dcffbe2c6ec763e  bd88-06-10-sfbay-blues-d2t04.flac
+620519c3ac78519f34bed752c14a086f  bd88-06-10-sfbay-blues-d2t05.flac
+158a9683cfcaf4d4d1f90c36fc28a51e  bd88-06-10-sfbay-blues-d2t06.flac
+a148227aed4c080089d837cd4060392f  bd88-06-10-sfbay-blues-d2t07.flac
+748e4f3079bdd20c66a7bc26e0a4ed2a  bd88-06-10-sfbay-blues-d2t08.flac
+6c2eb651aa792d759083d63111557903  bd88-06-10-sfbay-blues-d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-10-sfbay-blues.flacf 
+=================== 
+=================== 
+=================== 
+bd88-06-10-sfbay-blues-d1t01.flac:a43817693c731ab63baf3c5418e696c0
+bd88-06-10-sfbay-blues-d1t02.flac:ca4d7f21775805e3904301f48d6455b5
+bd88-06-10-sfbay-blues-d1t03.flac:e7824cca8c96e5df368eb0312ce9c253
+bd88-06-10-sfbay-blues-d1t04.flac:8ff1585a0e7eb99d4bff197b5aaccaf6
+bd88-06-10-sfbay-blues-d1t05.flac:77a020dc680978ad48ed3c432e596b0f
+bd88-06-10-sfbay-blues-d1t06.flac:594944f0f104d2fae3c4f3c56dca64e7
+bd88-06-10-sfbay-blues-d1t07.flac:310811c016b78d193c8be47b6a28cb5c
+bd88-06-10-sfbay-blues-d1t08.flac:28b103ec93ecec6f62bc81de68d59366
+bd88-06-10-sfbay-blues-d2t01.flac:7ac46aa5a48685216639ca53d7aa1960
+bd88-06-10-sfbay-blues-d2t02.flac:c049f32e29345276f5e77ae021dad075
+bd88-06-10-sfbay-blues-d2t03.flac:cad781b7533d4123176ee0e024fbee4a
+bd88-06-10-sfbay-blues-d2t04.flac:3b743f48530682da8924abe4fbd9126b
+bd88-06-10-sfbay-blues-d2t05.flac:cd8019757589411c436c25530c0d6b77
+bd88-06-10-sfbay-blues-d2t06.flac:8a6552e948010a6179a7c10bba04f1cd
+bd88-06-10-sfbay-blues-d2t07.flac:477d46bf5c0db6d4b55e2c2fb98070c9
+bd88-06-10-sfbay-blues-d2t08.flac:0e0dd3fbc0efa547d9da6fad0dec8124
+bd88-06-10-sfbay-blues-d2t09.flac:a50dae9a0001b759f2c0c21dc249280b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-10-sfbay-blues.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.37       39424268 B   ---   --   ---xx   flac  0.5950  bd88-06-10-sfbay-blues-d1t01.flac
+     8:51.08       93687260 B   ---   --   ---xx   flac  0.5830  bd88-06-10-sfbay-blues-d1t02.flac
+     5:25.70       57494684 B   ---   --   ---xx   flac  0.6093  bd88-06-10-sfbay-blues-d1t03.flac
+     3:53.37       41188268 B   ---   --   ---xx   flac  0.6015  bd88-06-10-sfbay-blues-d1t04.flac
+     6:59.05       73923404 B   ---   --   ---xx   flac  0.5839  bd88-06-10-sfbay-blues-d1t05.flac
+     4:27.48       47211740 B   ---   --   ---xx   flac  0.5658  bd88-06-10-sfbay-blues-d1t06.flac
+     4:30.25       47686844 B   ---   --   ---xx   flac  0.5097  bd88-06-10-sfbay-blues-d1t07.flac
+     4:42.47       49855388 B   ---   --   ---xx   flac  0.5219  bd88-06-10-sfbay-blues-d1t08.flac
+     6:04.30       64280204 B   ---   --   ---xx   flac  0.5103  bd88-06-10-sfbay-blues-d2t01.flac
+     4:03.45       42971084 B   ---   --   ---xx   flac  0.5432  bd88-06-10-sfbay-blues-d2t02.flac
+     6:00.52       63626348 B   ---   --   ---xx   flac  0.5231  bd88-06-10-sfbay-blues-d2t03.flac
+     5:22.48       56913740 B   ---   --   ---xx   flac  0.4968  bd88-06-10-sfbay-blues-d2t04.flac
+     5:51.12       61944668 B   ---   --   ---xx   flac  0.5345  bd88-06-10-sfbay-blues-d2t05.flac
+     6:59.38       74001020 B   ---   --   ---xx   flac  0.5532  bd88-06-10-sfbay-blues-d2t06.flac
+     4:43.15       49956524 B   ---   --   ---xx   flac  0.5199  bd88-06-10-sfbay-blues-d2t07.flac
+     4:09.07       43940108 B   ---   --   ---xx   flac  0.5484  bd88-06-10-sfbay-blues-d2t08.flac
+     4:56.03       52221500 B   ---   --   ---xx   flac  0.6677  bd88-06-10-sfbay-blues-d2t09.flac
+    90:44.02      960327052 B                            0.5569  (17 files)
+=================== 
+=================== 
+=================== 

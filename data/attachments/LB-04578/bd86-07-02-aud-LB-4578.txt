@@ -1,0 +1,10 @@
+Bob Dylan, 7/2/86, Akron OH, Rubber Bowl, University of Akron, 2CDR
+
+LB-4578, (54min+71min), joining the Grateful Dead; AUD>DAT>CDR, d2t05 - tape flip @ 9:02, Conversion Notes:, DAE (EAC: High, Secure, Offset Corrected) all track quality 100%, Show recut with CDWav., All sector boundaries verified using SHNTOOL., SHN(seekable) using mkwACT0.97 via eD - 11-05-02, Another installment of The Music Never Stopped Project!, Thanks to the Doodah Man for the seed discs.; dylan on lead vocals for Don't Think Twice, It's Alright (1) and shared vocals for It's All Over Now, Baby Blue
+---------------------------------------------------
+very good sound [B]
+---------------------------------------------------
+Disc 1: Set 1:, Alabama Getaway >, Greatest Story Ever Told, They Love Each Other, Little Red Rooster (1), Don't Think Twice, It's Alright (1), It's All Over Now, Baby Blue (2), Candyman, Me And My Uncle >, Mexicali Blues >, Don't Ease Me In, Disc 2: Set 2:, China Cat Sunflower >, I Know You Rider, Playing In The Band (3)>, Desolation Row (4)>, Drums >, Space >, Truckin' >, Black Peter >, Sugar Magnolia, E: Box Of Rain, Comments(with help from Deadlists):, (1) with Bob Dylan, (2) Dlayn & Jerry split vocal duties, (3) the jam is for the most part without Jerry, (4) without Jerry
+---------------------------------------------------
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

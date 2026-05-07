@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-11-akg393-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+6e281012ea3453377ebeb2aa73f2cffa  bd04-06-11-akg393-watchtower-remaster.txt
+9bf57550abc47b78fe06af77f4c356dc  dylan2004-06-11.txt
+4005d5a89ddb958641796019bee6bd48  dylan2004-06-11d1t01.flac
+1526ea4942df5e43a9350d67101f0634  dylan2004-06-11d1t02.flac
+9308223e5f02730af6b4f7a6bf0377e3  dylan2004-06-11d1t03.flac
+fbaa91aede5127c26bd79eaa2106a39a  dylan2004-06-11d1t04.flac
+da804600bc5df9f36fc4ab189eca044b  dylan2004-06-11d1t05.flac
+8a9b578abf92ee840f9f0ab0ce1b4d47  dylan2004-06-11d1t06.flac
+e6f0c4076e0b69579aeed8b9a86b317d  dylan2004-06-11d1t07.flac
+c5469e52af03f19a97cfe001a2bbd373  dylan2004-06-11d1t08.flac
+df328beece5b2fa68326950c55b62dcd  dylan2004-06-11d1t09.flac
+2ac6b9ceaea355738f56b32962ef2a75  dylan2004-06-11d1t10.flac
+c322939530db1bc09ed06440f4295645  dylan2004-06-11d1t11.flac
+b6a490e7856b6f54b97bd849d5a26f18  dylan2004-06-11d1t12.flac
+1bcdc4defaf984e000cc0defa84281a3  dylan2004-06-11d1t13.flac
+049849282add3a96b9c15991f6411be9  dylan2004-06-11d2t01.flac
+9a9cc442ce70a43be6040da05e7a4224  dylan2004-06-11d2t02.flac
+4d7bb53a412871474f709addbce54c60  dylan2004-06-11d2t03.flac
+b1120a983989a6d10083d8171dcef9d4  dylan2004-06-11d2t04.flac
+3afbfcb181fbbab37ca15414e39b2a94  dylan2004-06-11d2t05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-11-akg393-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+dylan2004-06-11d1t01.flac:bce9366e67860f21ca153d67eac4c569
+dylan2004-06-11d1t02.flac:feaa717d1cff2e0eea69a4fcf998aca7
+dylan2004-06-11d1t03.flac:eeeca6c46b052d2bbffdb0ac21273136
+dylan2004-06-11d1t04.flac:8239e38c2b0dfed861c10804e874740c
+dylan2004-06-11d1t05.flac:7ec22c0a41c28be9168f12c95188d950
+dylan2004-06-11d1t06.flac:387c2f9c07161a27036c1e95edcc34b6
+dylan2004-06-11d1t07.flac:0ccec88cdcc43126021ac6d5fb6faa01
+dylan2004-06-11d1t08.flac:7c0f58cc387ea70705f9fba4ac3e5178
+dylan2004-06-11d1t09.flac:24269a6458ccf400c76632924bfd7ca8
+dylan2004-06-11d1t10.flac:95f8d7197c6c25712ea790806862e3dc
+dylan2004-06-11d1t11.flac:06927685e4dd6dee3e7a8483befe4ed1
+dylan2004-06-11d1t12.flac:e5a8e8825bb5bbbac291f751d9701958
+dylan2004-06-11d1t13.flac:d3cc0fb7d3bef08235324904c95038db
+dylan2004-06-11d2t01.flac:e33aa8eddf1127d658323ef6e0634144
+dylan2004-06-11d2t02.flac:84e610eb5b1d6ab8d882154c80a22de7
+dylan2004-06-11d2t03.flac:24de0ddf24e0b9be760975a5f20dcbe8
+dylan2004-06-11d2t04.flac:e57dd88170c9572110368f8a2f1a8432
+dylan2004-06-11d2t05.flac:e1e5110defb63d8d806654edaa7971d1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-11-akg393-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:16.08       13425260 B   ---   --   ---xx   flac  0.4667  dylan2004-06-11d1t01.flac
+     6:17.49       66618092 B   ---   --   ---xx   flac  0.5594  dylan2004-06-11d1t02.flac
+     4:24.63       46717820 B   ---   --   ---xx   flac  0.5005  dylan2004-06-11d1t03.flac
+     6:10.49       65383292 B   ---   --   ---xx   flac  0.5279  dylan2004-06-11d1t04.flac
+     6:07.73       64910540 B   ---   --   ---xx   flac  0.5537  dylan2004-06-11d1t05.flac
+     4:44.19       50142332 B   ---   --   ---xx   flac  0.4772  dylan2004-06-11d1t06.flac
+     6:06.39       64654172 B   ---   --   ---xx   flac  0.5572  dylan2004-06-11d1t07.flac
+     4:53.29       51753452 B   ---   --   ---xx   flac  0.4955  dylan2004-06-11d1t08.flac
+     7:22.49       78084092 B   ---   --   ---xx   flac  0.5525  dylan2004-06-11d1t09.flac
+     6:16.41       66422876 B   ---   --   ---xx   flac  0.5634  dylan2004-06-11d1t10.flac
+     7:07.54       75449852 B   ---   --   ---xx   flac  0.4435  dylan2004-06-11d1t11.flac
+     6:29.14       68652572 B   ---   --   ---xx   flac  0.5645  dylan2004-06-11d1t12.flac
+     6:31.37       69059468 B   ---   --   ---xx   flac  0.5186  dylan2004-06-11d1t13.flac
+     7:17.58       77223260 B   ---   --   ---xx   flac  0.5684  dylan2004-06-11d2t01.flac
+     7:44.44       81953132 B   ---   --   ---xx   flac  0.4851  dylan2004-06-11d2t02.flac
+    10:00.42      105938828 B   ---   --   ---xx   flac  0.5445  dylan2004-06-11d2t03.flac
+     6:01.60       63821564 B   ---   --   ---xx   flac  0.5645  dylan2004-06-11d2t04.flac
+     7:28.59       79166012 B   ---   --   ---xx   flac  0.5704  dylan2004-06-11d2t05.flac
+   112:22.37     1189376616 B                            0.5331  (18 files)
+=================== 
+=================== 
+=================== 

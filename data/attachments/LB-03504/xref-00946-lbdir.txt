@@ -1,0 +1,52 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd71-08-01-aft-aud-FM.flacf 
+=================== 
+=================== 
+=================== 
+6d5bef6c9142ec2a3c7897b66c7e617c  01. A Hard Rains A Gonna Fall.flac
+0b66e0753043371d3809bdff461382ab  02. Blowin In The Wind.flac
+6ed5fe7b64597a78a2a7b95a76a3a47d  03. It Takes A Lot To Laugh.flac
+44cdb4e6edac196329d9ad4267dbddaa  04. Love Minus Zero.flac
+24bba1051c23ec92a96864a465138770  05. Just Like A Woman.flac
+c01af96e1dc115cdddd89757f9aee4f9  06. interview with Phil Spector.flac
+48cee5b92eae3e79b3aa810f2715a7dd  07. Love Minus Zero No Limit  FM.flac
+c1d067afb9ce3bc4742b56b76e6d6959  08. A Hard Rains a-Gonna Fall FM.flac
+1e0dc1b0e345dc6d8cc007109229247b  1971-08-01 NYC, The Concert For Bangladesh aft (aud & FM).md5
+c94ce024f1fb2d4926be9a174705a6ba  detail.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd71-08-01-aft-aud-FM.flacf 
+=================== 
+=================== 
+=================== 
+01. A Hard Rains A Gonna Fall.flac:bfa9028a0e6e5bef7b7b5f7fd9472748
+02. Blowin In The Wind.flac:379fe9f7ff49df7cf4ebc6406e436008
+03. It Takes A Lot To Laugh.flac:3692a78c5ff27a39651095fdb7cae430
+04. Love Minus Zero.flac:4aa1311bf5d06e28275d9bc48c5fd678
+05. Just Like A Woman.flac:54d714ce7b97c969b2d47a7a95280212
+06. interview with Phil Spector.flac:9afc7e261cd94c9d5e02cad13e892075
+07. Love Minus Zero No Limit  FM.flac:09f97a07d48c35823c9b4a8a2107203f
+08. A Hard Rains a-Gonna Fall FM.flac:82797b04a15e7141a3e939c3cbf9c884
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd71-08-01-aft-aud-FM.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:41.00       70736444 B   ---   --   ---xx   flac  0.4400  01. A Hard Rains A Gonna Fall.flac
+     4:15.71       45149036 B   ---   --   ---xx   flac  0.4317  02. Blowin In The Wind.flac
+     3:56.03       41637500 B   ---   --   ---xx   flac  0.4310  03. It Takes A Lot To Laugh.flac
+     4:29.42       47550428 B   ---   --   ---xx   flac  0.4243  04. Love Minus Zero.flac
+     4:40.48       49504940 B   ---   --   ---xx   flac  0.4205  05. Just Like A Woman.flac
+     0:23.62        4203068 B   ---   --   ---xx   flac  0.5551  06. interview with Phil Spector.flac
+     5:50.71       61907036 B   ---   --   ---xx   flac  0.5810  07. Love Minus Zero No Limit  FM.flac
+     5:42.74       60502892 B   ---   --   ---xx   flac  0.5843  08. A Hard Rains a-Gonna Fall FM.flac
+    36:00.71      381191344 B                            0.4806  (8 files)
+=================== 
+=================== 
+=================== 

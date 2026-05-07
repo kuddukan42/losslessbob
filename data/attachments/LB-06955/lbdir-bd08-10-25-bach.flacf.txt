@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-10-25-bach.flacf 
+=================== 
+=================== 
+=================== 
+2b77ff8de3dc4679a70b7738a3d5137d  2008-10-25-Kamloops.md5
+d9791427b9692e72e86ff9bfdba29527  2008-10-25-Kamloops.txt
+366faead4fe4d5531816e1e909b571c7  Track101.flac
+f351fae4a4286a8e17d2655e25214911  Track102.flac
+ab08e1da52c042fcab4a8abaa1f28b54  Track103.flac
+94e56da027a309b052ede577e316cfb3  Track104.flac
+9eee50615c342fea2730d548ae13551c  Track105.flac
+86c1afb59d955be2bbf44717fb69d505  Track106.flac
+49c84dcca9dc8f59baddea10f0646754  Track107.flac
+0d70c9a436afdc62c1e33d8d6c005df1  Track108.flac
+c0c3cd6f97e594923b4f0c21919a28e4  Track109.flac
+9dc5973c98e47edbc0119b7089cba1fb  Track110.flac
+54180c1cdc5a63d87a2446b450d8463b  Track111.flac
+75620cf35525a91db60ba28beb36591a  Track201.flac
+456f1c7f52c7366191a495e8c45adf2b  Track202.flac
+8f81c07ea25ca6efde4f25dff31a37da  Track203.flac
+40264385f9bc7de4c56d375f04520c68  Track204.flac
+4c6864a7fe807ecae580074cc83533c0  Track205.flac
+99f8f8f7e32f9991331de858eaba4e91  Track206.flac
+18f912f624423641b2f623201087b9f4  Track207.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-10-25-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:2b6d0e63169ecad7d669ffd98496bd6b
+Track102.flac:125a17946456156fbde75de593e3f1fd
+Track103.flac:9735231426c34be3a69018c83a50c2a5
+Track104.flac:844450f8e5ea3f8b3b6c0428ee0a9d34
+Track105.flac:d9fa8afc72127c4210c23bbb167a8ab5
+Track106.flac:497e34b948f22fa8db28ae9d5e8aa6eb
+Track107.flac:040aff76f9c07023b55482be13dbb505
+Track108.flac:45711b3dbb3d3ec897475d4bc2eb059f
+Track109.flac:95abc4f58f27113c8babdeafdebcad4d
+Track110.flac:9c38029a6cdafdc1627259887f7a0166
+Track111.flac:d527906a647cd9ee3ea5169e5986b69d
+Track201.flac:f7d5797c743dce3a89f3e2faac0e850e
+Track202.flac:669059e551574031bc211b4f02f39a82
+Track203.flac:841c42e3d9b86b7bda87fa1ae9b0f027
+Track204.flac:40909048b54d0606fc106c5a5512191f
+Track205.flac:b1c993986052e0b2a17368a7cdeb0883
+Track206.flac:5634cac644b7533a7a10c3f4beb88f7f
+Track207.flac:c213d058e4cf58e86bd0ba846bf92ce2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-10-25-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:03.33       11190860 B   ---   --   ---xx   flac  0.3977  Track101.flac
+     4:13.28       44695100 B   ---   --   ---xx   flac  0.5436  Track102.flac
+     5:33.71       58908236 B   ---   --   ---xx   flac  0.5308  Track103.flac
+     7:21.31       77865356 B   ---   --   ---xx   flac  0.5641  Track104.flac
+     6:39.04       70393052 B   ---   --   ---xx   flac  0.5145  Track105.flac
+     4:42.72       49914188 B   ---   --   ---xx   flac  0.5114  Track106.flac
+     6:38.40       70301324 B   ---   --   ---xx   flac  0.5114  Track107.flac
+     7:17.05       77098604 B   ---   --   ---xx   flac  0.5513  Track108.flac
+     7:20.01       77618396 B   ---   --   ---xx   flac  0.5057  Track109.flac
+     6:03.47       64143788 B   ---   --   ---xx   flac  0.5536  Track110.flac
+     8:04.55       85507004 B   ---   --   ---xx   flac  0.5137  Track111.flac
+     7:22.63       78117020 B   ---   --   ---xx   flac  0.5602  Track201.flac
+     7:10.39       75943772 B   ---   --   ---xx   flac  0.4366  Track202.flac
+     6:50.57       72458108 B   ---   --   ---xx   flac  0.5714  Track203.flac
+     8:33.47       90603788 B   ---   --   ---xx   flac  0.5025  Track204.flac
+     9:42.58      102801260 B   ---   --   ---xx   flac  0.5239  Track205.flac
+     7:33.48       80022140 B   ---   --   ---xx   flac  0.5659  Track206.flac
+     5:15.04       55575452 B   ---   --   ---xx   flac  0.5871  Track207.flac
+   117:27.28     1243157448 B                            0.5296  (18 files)
+=================== 
+=================== 
+=================== 

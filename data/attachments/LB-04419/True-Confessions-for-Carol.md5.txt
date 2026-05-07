@@ -1,0 +1,33 @@
+a503c7343ce6a5ddd0ef82c14c4802c5 *disc 1\Track01.flac
+87af7848d500dbd3004ec4b145233cf2 *disc 1\Track02.flac
+5413f3722107d12121a9bc0d40915e9a *disc 1\Track03.flac
+bf4a0ca32167e3b74713023b1663871f *disc 1\Track04.flac
+9c26144f261dccd252a9bf88c180d972 *disc 1\Track05.flac
+9655af967ea34388bda3ad5a712f13f8 *disc 1\Track06.flac
+cc8e1e7730821b0200dd6c2766bc72c0 *disc 1\Track07.flac
+86c65bd539aa73b40895c5f544bf917e *disc 1\Track08.flac
+4b8050fbfa4a537fe69f362889150169 *disc 1\Track09.flac
+60db8e592773e1640481669237870e4d *disc 1\Track10.flac
+1f55a1224f610379b851a7d1c03d0628 *disc 1\Track11.flac
+d3c2a17523f014606fae2577da177ccc *disc 1\Track12.flac
+99de5db46b912158178613e48297ef2c *disc 1\Track13.flac
+a5ce430015bd6e674c79816453ebdac2 *disc 1\Track14.flac
+0f604ee816f50f66b10d97cc227b6f46 *disc 1\Track15.flac
+77e0668b765591a7d5224e3c469d2b61 *disc 1\Track16.flac
+b2473738a2039b93bf9ae31c763c5766 *disc 1 eac.LOG
+d2285f98bc5658fc0776a9207feeb941 *disc 2\Track01.flac
+af2327673a829fe915ce2f38c420bfa5 *disc 2\Track02.flac
+0023340636a4f63dd077830681464a5a *disc 2\Track03.flac
+5d95e0ff56d309af90ce1c9191befa6a *disc 2\Track04.flac
+0fe085835462c2678717cd60ab69b9b6 *disc 2\Track05.flac
+1bb3e2fca3e1529e05c160cc0c26322c *disc 2\Track06.flac
+ae282661c36d6278c5bea576dca7637f *disc 2\Track07.flac
+1356e3cf0df34f15598112692a6277d8 *disc 2\Track08.flac
+6cca27a76c445335388975e3a117a413 *disc 2\Track09.flac
+4960da54e315e999d88016d94a49d866 *disc 2\Track10.flac
+ea4c4f16fd2890046c4dfc1b42762f76 *disc 2\Track11.flac
+6458c4050c76e3f3640ee35c69840a30 *disc 2\Track12.flac
+a5fd6fed2455080e4bf92f89d86ff841 *disc 2\Track13.flac
+99e9e96a68e85599f182788dadea79f4 *disc 2\Track14.flac
+89d311b5ba2cd4c24d3a6ece8fd5e2ba *disc 2 eac.LOG
+b9b15da49859f951e5c16a4586143e7a *True Confessions For Carol.txt

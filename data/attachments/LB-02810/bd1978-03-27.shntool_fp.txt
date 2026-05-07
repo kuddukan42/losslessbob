@@ -1,0 +1,15 @@
+c4c3e905b5d1162d8e580c2545b5f93a  [shntool]  bd1978-03-27t01.shn
+e21136af13f82e4839f62c80dce7ee58  [shntool]  bd1978-03-27t02.shn
+4e45f73e0a836cfc14f2abf4fcc81b4c  [shntool]  bd1978-03-27t03.shn
+a63b87f2ae764136cf95a9fff30468de  [shntool]  bd1978-03-27t04.shn
+e11b181f1b3a9ca651d523f75018e22f  [shntool]  bd1978-03-27t05.shn
+62fbd4930d09972c164de79dbfbef3f6  [shntool]  bd1978-03-27t06.shn
+8df6e5704d6c2627ddc0def36060ff7e  [shntool]  bd1978-03-27t07.shn
+ddf709afe9b0f797c154e63baf9084b9  [shntool]  bd1978-03-27t08.shn
+c296ad832fc8b5971ac6af27d696355f  [shntool]  bd1978-03-27t09.shn
+59111e0d0e6f9ed1d20caa079b9f2867  [shntool]  bd1978-03-27t10.shn
+0f3a4ddef819880b1d5ed1795caf1ae9  [shntool]  bd1978-03-27t11.shn
+84f04065993c0a466baac53f76409223  [shntool]  bd1978-03-27t12.shn
+63309b12081bd4e58adce110111e5dd3  [shntool]  bd1978-03-27t13.shn
+fb317c692cf002c6b403ab7885edc35b  [shntool]  bd1978-03-27t14.shn
+ed8003a6c82cef3cb8ce641d2e230cb1  [shntool]  bd1978-03-27t15.shn

@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-02-sonic-studio.flacf 
+=================== 
+=================== 
+=================== 
+23b796a117260f25697fbe49e44ed05b  cd 1\cd 1.ffp
+cdcbb931f7f3606ea73a9d144a238c90  cd 1\Track01.flac
+c0e227830781645b1403335e60098877  cd 1\Track02.flac
+d07e425245c3d29ecee1629b8b6d7b2a  cd 1\Track03.flac
+92572f872ab855050cce6e8193771839  cd 1\Track04.flac
+42f39dc7d082fcf19f4484a8ed2f1a64  cd 1\Track05.flac
+fe2346d54e5d2a13bd8d75ac4dcd8e8b  cd 1\Track06.flac
+c7bb585c8eab649b727323cfe8d32f4d  cd 1\Track07.flac
+e95f4b9cada156a48c0fb3abfc1cb9b9  cd 1\Track08.flac
+a8d65c4e44d6fbc5de54b859b0fd5805  cd 1\Track09.flac
+2f3783899777dc40cc6c8a64ab27f952  cd 2\cd 2.ffp
+7b62af9aa33a514106850c3e9dd49f23  cd 2\Track01.flac
+78fbcdde09c929ecca92397b359bb33a  cd 2\Track02.flac
+73a541ba9edaf0a3c661748cd8636ac2  cd 2\Track03.flac
+d861ca8663df718bace317f356edb820  cd 2\Track04.flac
+f937544117cb8630f7ccf523ab375065  cd 2\Track05.flac
+eda0c22fabcf2f1b2b80e7da23757acf  cd 2\Track06.flac
+d588c7051fa10da2af394e189fb2fa51  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-02-sonic-studio.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:f6890dd3e36fd0b1c419852056d7f03b
+Track02.flac:603de8c810bb191bcd537febb80a936e
+Track03.flac:028ead8c9aea2a9c395d118a6945e0de
+Track04.flac:702a37a833523594ed6662925439bb08
+Track05.flac:e1856dabe587a3c5546dba66b406e49e
+Track06.flac:7fb82f013f34a2a26703b9384369d922
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-02-sonic-studio.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:b2a3969c67f559d46826a94cb18a6ec0
+Track02.flac:574cfaaa62b71014eeb21a4a7e16e7c7
+Track03.flac:6ea056ed8f3aa16224afd59c6151f159
+Track04.flac:2a6ba5e09574068303062536e3d7681c
+Track05.flac:ac18a9ab0dbbb5e988cbdd3b592c08bf
+Track06.flac:60bf57c395405c6afd460a62233fbe31
+Track07.flac:60268f2f599fa7598a31fce45a8ed2dd
+Track08.flac:17855627e6ca828e50c269e14e850893
+Track09.flac:c223fdf42de9be6ea6a67f70940cff86
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-02-sonic-studio.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.01       71267996 B   ---   --   ---xx   flac  0.5641  Track01.flac
+     7:40.36       81228716 B   ---   --   ---xx   flac  0.5292  Track02.flac
+    11:06.61      117625916 B   ---   --   ---xx   flac  0.5600  Track03.flac
+    10:02.21      106242236 B   ---   --   ---xx   flac  0.5668  Track04.flac
+    10:29.70      111120284 B   ---   --   ---xx   flac  0.5308  Track05.flac
+     7:00.11       74113916 B   ---   --   ---xx   flac  0.5938  Track06.flac
+    53:03.50      561599064 B                            0.5560  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-02-sonic-studio.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.32       57758108 B   ---   --   ---xx   flac  0.5969  Track01.flac
+     5:00.20       52967084 B   ---   --   ---xx   flac  0.5478  Track02.flac
+     5:53.07       62285708 B   ---   --   ---xx   flac  0.5810  Track03.flac
+     8:21.61       88519916 B   ---   --   ---xx   flac  0.5174  Track04.flac
+     6:08.67       65072828 B   ---   --   ---xx   flac  0.5930  Track05.flac
+     6:51.67       72658028 B   ---   --   ---xx   flac  0.5973  Track06.flac
+     9:32.64      101051372 B   ---   --   ---xx   flac  0.5423  Track07.flac
+     6:42.57       71046908 B   ---   --   ---xx   flac  0.4666  Track08.flac
+     6:17.68       66662780 B   ---   --   ---xx   flac  0.4052  Track09.flac
+    60:16.68      638022732 B                            0.5367  (9 files)
+=================== 
+=================== 
+=================== 

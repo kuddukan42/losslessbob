@@ -1,0 +1,118 @@
+===================
+===================
+===================
+=== md5 for: bd81-07-01-e.flacf
+===================
+===================
+===================
+bea6d917b50ceb388438b152ae37d7e7 *bd81-07-01-London.master.ffp
+0281fb68831921e86986646c409f231d *bd81-07-01.txt
+887b08179b88b3cc42bd3a83ed271ae7 *bd81-07-01d1tr01.flac
+a3e08efe237f6ba8fe7eeef9b0892394 *bd81-07-01d1tr02.flac
+4923a02f982b58eb107891f9a1975b38 *bd81-07-01d1tr03.flac
+97efac45e16417e6de3a75dd97a2db4e *bd81-07-01d1tr04.flac
+699de1315bdeeac8575722aefb3da0bf *bd81-07-01d1tr05.flac
+c05ef0793d4bb14de30b324a25b0d59f *bd81-07-01d1tr06.flac
+afb072e297a3bb8b24e7678c0320cf42 *bd81-07-01d1tr07.flac
+1d68c3b3a4786e66d75a2f513970dca9 *bd81-07-01d1tr08.flac
+ca6685588aeaf4acb8e4d98ff0b69f6a *bd81-07-01d1tr09.flac
+053954f7510a061e0fe1e649952c2e3a *bd81-07-01d1tr10.flac
+f61cadbbf7a04d85f88d873786be7a75 *bd81-07-01d1tr11.flac
+d47ad2058205c1d19ef17a8c2a75ab44 *bd81-07-01d1tr12.flac
+8320806f5b99071f2465946bcdd8d707 *bd81-07-01d1tr13.flac
+902d9cc7711e2528049d1530c3b0d857 *bd81-07-01d1tr14.flac
+9a6c6bbdbe8b0d3d6617c5759454d1dd *bd81-07-01d1tr15.flac
+b84eefa9a80425b30fc9fde8678e5c9b *bd81-07-01d1tr16.flac
+59fc0b79b3f2fba2d963df71d9a313f5 *bd81-07-01d2tr01.flac
+1cae3579a4d00b09c6247659d1d238b7 *bd81-07-01d2tr02.flac
+c8aaeef84f916dba8bf29237055c35cf *bd81-07-01d2tr03.flac
+0d2aa4457063a96bb6da4e74dce44ff0 *bd81-07-01d2tr04.flac
+980f9b4286ce2d235f338bc5326ed935 *bd81-07-01d2tr05.flac
+7e842f619c1848f7f2d8e1d77f0636e2 *bd81-07-01d2tr06.flac
+21940b4f073f18a830e00d930c25f25d *bd81-07-01d2tr07.flac
+96c43d69a6d73c0d4d5cd8ace2e4667b *bd81-07-01d2tr08.flac
+fb36b5e678a1b69fd65196d22ba7a84b *bd81-07-01d2tr09.flac
+9cae79f23339e26e89f28fb0eae463b9 *bd81-07-01d2tr10.flac
+52c0b6fb73773ba83998816d30d4c03e *bd81-07-01d2tr11.flac
+1c0df94d1a13cd814973d854824ffca1 *bd81-07-01d2tr12.flac
+cbe357389d7fad23d72a078cfe7ef124 *bd81-07-01d2tr13.flac
+6457c9410b7a123a02e042c675564916 *bd81-07-01d2tr14.flac
+===================
+===================
+===================
+=== ffp for: bd81-07-01-e.flacf
+===================
+===================
+===================
+bd81-07-01d1tr01.flac:2113e1cd8404e2854f62e7247bb75545
+bd81-07-01d1tr02.flac:0f5d8d5fc751c353aa8ea71cba062a00
+bd81-07-01d1tr03.flac:5fc8f59d9fc1ef4941faf05c1ee0eed3
+bd81-07-01d1tr04.flac:69701c3d6520b02ec7c84fd8302b197c
+bd81-07-01d1tr05.flac:ff5492d58beb0908f6c37640d8fefa32
+bd81-07-01d1tr06.flac:0d479a7196de35cd666a83aa4f3f0697
+bd81-07-01d1tr07.flac:d897ee36a0561114d806a40977e6d01b
+bd81-07-01d1tr08.flac:aeb49f0131250cfa46a75259ffd91df7
+bd81-07-01d1tr09.flac:225a94626706b90def37087c6c4198f4
+bd81-07-01d1tr10.flac:1c1b6abe099e1d84b53f34644ca2c735
+bd81-07-01d1tr11.flac:d653c620d41ea6e958160258a70ab612
+bd81-07-01d1tr12.flac:f2aec1b8595baed2164e6881496455e2
+bd81-07-01d1tr13.flac:8e4842ed240e2d3ce2fe7baf115b2cc7
+bd81-07-01d1tr14.flac:b7463676d685da9368a9baa22c9b6649
+bd81-07-01d1tr15.flac:5a54b152b8dc9af59139cf50ae67adfe
+bd81-07-01d1tr16.flac:eceb06aaf989af2a5e766605a668fcd3
+bd81-07-01d2tr01.flac:2a4bbd5db23d15ba5cf815264c1ce00e
+bd81-07-01d2tr02.flac:ae9ca8177f7c78a63ecb1093e1aac075
+bd81-07-01d2tr03.flac:162c9313498c22ebec58c50fb09d8150
+bd81-07-01d2tr04.flac:60509ed1343311eb923a34d2c243b84d
+bd81-07-01d2tr05.flac:f3bc99512e0590364950b9406ed3f987
+bd81-07-01d2tr06.flac:8cac699de7037120123bfa75ca4836d0
+bd81-07-01d2tr07.flac:7ead5c89bfaa40ebcaef74fc6dd4877a
+bd81-07-01d2tr08.flac:6dd45dbc24f257338135c3d1d6fb6ff1
+bd81-07-01d2tr09.flac:4a3f0516d46d9671327394723a5acd7f
+bd81-07-01d2tr10.flac:30cd3793e10824a76c88ec2f8acf7878
+bd81-07-01d2tr11.flac:43d7c6bb0f2b72c898262ce62f6b8bbb
+bd81-07-01d2tr12.flac:74f84237371ac3ab295021d94875e85e
+bd81-07-01d2tr13.flac:00cc7d633fbd233d575c9716b07b296a
+bd81-07-01d2tr14.flac:9c7afcaffce39ea9306882795baa756d
+===================
+===================
+===================
+=== shntool len for: bd81-07-01-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:13.60       44770364 B   ---   --   ---xx   flac  0.6523  bd81-07-01d1tr01.flac
+     4:57.33       52468460 B   ---   --   ---xx   flac  0.6347  bd81-07-01d1tr02.flac
+     5:57.34       63054812 B   ---   --   ---xx   flac  0.6704  bd81-07-01d1tr03.flac
+     3:44.53       39638300 B   ---   --   ---xx   flac  0.6107  bd81-07-01d1tr04.flac
+     4:47.09       50648012 B   ---   --   ---xx   flac  0.6429  bd81-07-01d1tr05.flac
+     4:10.70       44264684 B   ---   --   ---xx   flac  0.6559  bd81-07-01d1tr06.flac
+     1:24.31       14890556 B   ---   --   ---xx   flac  0.6145  bd81-07-01d1tr07.flac
+     4:14.57       44939708 B   ---   --   ---xx   flac  0.6274  bd81-07-01d1tr08.flac
+     4:56.37       52301468 B   ---   --   ---xx   flac  0.6640  bd81-07-01d1tr09.flac
+     4:46.09       50471612 B   ---   --   ---xx   flac  0.6451  bd81-07-01d1tr10.flac
+     3:21.31       35529356 B   ---   --   ---xx   flac  0.6521  bd81-07-01d1tr11.flac
+     4:41.51       49688396 B   ---   --   ---xx   flac  0.6644  bd81-07-01d1tr12.flac
+     5:09.07       54524108 B   ---   --   ---xx   flac  0.6171  bd81-07-01d1tr13.flac
+     3:44.13       39544220 B   ---   --   ---xx   flac  0.6248  bd81-07-01d1tr14.flac
+     5:24.50       57271244 B   ---   --   ---xx   flac  0.6565  bd81-07-01d1tr15.flac
+     4:13.57       44763308 B   ---   --   ---xx   flac  0.6111  bd81-07-01d1tr16.flac
+     5:22.05       56812604 B   ---   --   ---xx   flac  0.6758  bd81-07-01d2tr01.flac
+     4:16.26       45219596 B   ---   --   ---xx   flac  0.6646  bd81-07-01d2tr02.flac
+     4:16.65       45311324 B   ---   --   ---xx   flac  0.6387  bd81-07-01d2tr03.flac
+     2:41.10       28423964 B   ---   --   ---xx   flac  0.6129  bd81-07-01d2tr04.flac
+     3:13.54       34172252 B   ---   --   ---xx   flac  0.6527  bd81-07-01d2tr05.flac
+     4:28.22       47326988 B   ---   --   ---xx   flac  0.6365  bd81-07-01d2tr06.flac
+     4:52.17       51548828 B   ---   --   ---xx   flac  0.6250  bd81-07-01d2tr07.flac
+     4:33.16       48194876 B   ---   --   ---xx   flac  0.6635  bd81-07-01d2tr08.flac
+     4:56.01       52216796 B   ---   --   ---xx   flac  0.6669  bd81-07-01d2tr09.flac
+    11:26.71      121177436 B   ---   --   ---xx   flac  0.6393  bd81-07-01d2tr10.flac
+     0:14.54        2596652 B   ---   --   ---xx   flac  0.6065  bd81-07-01d2tr11.flac
+     4:59.14       52776572 B   ---   --   ---xx   flac  0.6712  bd81-07-01d2tr12.flac
+     6:07.34       64818812 B   ---   --   ---xx   flac  0.6477  bd81-07-01d2tr13.flac
+     6:01.47       63790988 B   ---   --   ---xx   flac  0.6685  bd81-07-01d2tr14.flac
+   137:17.63     1453156296 B                            0.6469  (30 files)
+===================
+===================
+===================

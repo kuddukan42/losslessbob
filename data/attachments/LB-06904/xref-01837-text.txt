@@ -1,0 +1,144 @@
+===================
+===================
+===================
+=== 1996-07-01 Halle Muensterland, Muenster, Germany [unknown source].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Halle Mnsterland
+Mnster, Germany
+July 1, 1996
+
+Unknown source; unknown lineage
+LosslessBobInfo: unlisted; none of the LB-#s mentioned has the 2 fillers; hence a possible new source
+
+01 Drifter's Escape
+02 Shake Sugaree (Elizabeth Cotton)
+03 All Along The Watchtower
+04 Simple Twist Of Fate
+05 It Takes A Lot To Laugh, It Takes A Train To Cry
+06 Silvio (Bob Dylan & Robert Hunter)
+07 Boots Of Spanish Leather
+08 John Brown
+09 Mama, You Been On My Mind
+
+10 Maggie's Farm
+11 Ballad Of A Thin Man
+12 Obviously Five Believers
+13 Alabama Getaway (Robert Hunter/Jerry Garcia)
+14 It Ain't Me, Babe
+15 Rainy Day Women # 12 & 35
+
+Fillers:
+16 To Ramona [venue & date unknown]
+17 What Good Am I? [venue & date unknown]
+
+Concert # 795 of The Never-Ending Tour
+Concert # 11 of the 1996 Europe Summer Tour
+1996 concert # 39
+
+Concert # 339 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+07-09, 14 acoustic with the band
+01, 07, 09, 14 Bob Dylan harmonica
+08 John Jackson (banjo)
+01, 02, 06, 10, 13, 15 John Jackson, Bucky Baxter (backup vocals)
+
+13 new songs (86%) compared to previous concert
+2 new songs for this tour.
+
+Stereo audience recording, 120 minutes
+
+.ffp:
+01 Drifter's Escape.flac:da7dd003326f45e29776076257a903b2
+02 Shake Sugaree.flac:07c87c3d2c9425cad9e2e855b4ad0a38
+03 All Along The Watchtower.flac:4bfcc8a9aebc965bcccfaa1c1d70d447
+04 Simple Twist Of Fate.flac:3466ae4dbb49d18c4a2dbbf69db94e2f
+05 It Takes A Lot To Laugh, It Takes A Train To Cry.flac:cdb5290a606981824466baec19a4f7bb
+06 Silvio.flac:17e3c7bd9389cdfde0cde60fad44747b
+07 Boots Of Spanish Leather.flac:c7c8559345e267d510d6bc37ee0cde91
+08 John Brown.flac:85b605342b2bcbe7c235722d03f58956
+09 Mama, You Been On My Mind.flac:c7cf69ae651ce8c22de189771d606d93
+10 Maggie's Farm.flac:3cd140d96d7ad7751ca32290ddbea92e
+11 Ballad Of A Thin Man.flac:e103525df2a9d8b68f012394bce6f8b9
+12 Obviously Five Believers.flac:57bcacc0282389bedc1ab0a1623b7130
+13 Alabama Getaway.flac:ae695bf5bbf205f17f7199bd998bec57
+14 It Ain't Me, Babe.flac:c12525918d0936e63a10de9eef3ddaa8
+15 Rainy Day Women # 12 & 35.flac:77bbbcfd2f5583d2b39a2c5220522841
+16 To Ramona [filler].flac:f5ad34e4cca870f579ed2ed0e62971b0
+17 What Good Am I [filler].flac:6608d58821b502c58f72421e4e1b4c68
+===================
+===================
+===================
+=== 1996-07-01 Munster.ffp
+===================
+===================
+===================
+01 Drifter's Escape.flac:da7dd003326f45e29776076257a903b2
+02 Shake Sugaree.flac:07c87c3d2c9425cad9e2e855b4ad0a38
+03 All Along The Watchtower.flac:4bfcc8a9aebc965bcccfaa1c1d70d447
+04 Simple Twist Of Fate.flac:3466ae4dbb49d18c4a2dbbf69db94e2f
+05 It Takes A Lot To Laugh, It Takes A Train To Cry.flac:cdb5290a606981824466baec19a4f7bb
+06 Silvio.flac:17e3c7bd9389cdfde0cde60fad44747b
+07 Boots Of Spanish Leather.flac:c7c8559345e267d510d6bc37ee0cde91
+08 John Brown.flac:85b605342b2bcbe7c235722d03f58956
+09 Mama, You Been On My Mind.flac:c7cf69ae651ce8c22de189771d606d93
+10 Maggie's Farm.flac:3cd140d96d7ad7751ca32290ddbea92e
+11 Ballad Of A Thin Man.flac:e103525df2a9d8b68f012394bce6f8b9
+12 Obviously Five Believers.flac:57bcacc0282389bedc1ab0a1623b7130
+13 Alabama Getaway.flac:ae695bf5bbf205f17f7199bd998bec57
+14 It Ain't Me, Babe.flac:c12525918d0936e63a10de9eef3ddaa8
+15 Rainy Day Women # 12 & 35.flac:77bbbcfd2f5583d2b39a2c5220522841
+16 To Ramona [filler].flac:f5ad34e4cca870f579ed2ed0e62971b0
+17 What Good Am I [filler].flac:6608d58821b502c58f72421e4e1b4c68
+===================
+===================
+===================
+=== ORIGINAL Info.txt
+===================
+===================
+===================
+Halle Mnsterland
+Mnster, Germany
+1 July 1996
+
+1.	Drifter's Escape
+2.	Shake Sugaree (Elizabeth Cotton)
+3.	All Along The Watchtower
+4.	Simple Twist Of Fate
+5.	It Takes A Lot To Laugh, It Takes A Train To Cry
+6.	Silvio (Bob Dylan & Robert Hunter)
+7.	Boots Of Spanish Leather
+8.	John Brown
+9.	Mama, You Been On My Mind
+10.	Maggie's Farm
+11.	Ballad Of A Thin Man
+12.	Obviously Five Believers
+13.	Alabama Getaway (Robert Hunter/Jerry Garcia)
+14.	It Ain't Me, Babe
+15.	Rainy Day Women # 12 & 35
+
+Concert # 795 of The Never-Ending Tour. Concert # 11 of the 1996 Europe Summer Tour. 1996 concert # 39.
+
+Concert # 339 with the 9th Never-Ending Tour Band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Winston Watson (drums & percussion).
+
+7-9, 14 acoustic with the band.
+1, 7, 9, 14 Bob Dylan harmonica.
+8 John Jackson (banjo).
+1, 2, 6, 10, 13, 15 John Jackson, Bucky Baxter (backup vocals).
+13 new songs (86%) compared to previous concert. 2 new songs for this tour.
+
+Stereo audience recording, 120 minutes.
+Session info updated 15 August 1998.
+
+
+===================
+===================
+===================

@@ -1,0 +1,119 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-06-23a 
+=================== 
+=================== 
+=================== 
+b7ee1fa57a0f9442ec564ea088a91dae  back.jpg
+71801a4aac926bf9d1ad7b59ca57467d  Dylan 1978.jpg
+67627501aa771df66e7b8dc243c3aee1  flac.md5
+2e380d0590f609a2297a4b984b4f6025  Front.jpg
+3f39529dd706f87b48f015194f61f8c1  InsertBack.jpg
+802a8c8553e99604629a5d1a664c1456  rotterdam 1978 d2-01.shn
+2e1814630153f3ed2e8a1f325fb85c0a  rotterdam 1978 d2-02.shn
+8f132c51d75732e1f063f2e37328a7d8  rotterdam 1978 d2-03.shn
+bbd8f711065cedfbb97c2cdfee585430  rotterdam 1978 d2-04.shn
+4f4c9ab88d28620c9f48ae0dd908b2b6  rotterdam 1978 d2-05.shn
+c933718c26f70a42f02160c69c922bc8  rotterdam 1978 d2-06.shn
+9582cd7793f0d0861922a11e115d16d2  rotterdam 1978 d2-07.shn
+7e8ffe5451eadfd55ceb95b14ff6b717  rotterdam 1978 d2-08.shn
+585e6003a175c59de6ce789cc2994ccb  rotterdam 1978 d2-09.shn
+f75402eae004e35dfc5841c1a10524ff  rotterdam 1978 d2-10.shn
+6486b2eccf094f7cd560181d97d94253  rotterdam 1978 d2-11.shn
+02e2c449849ff19e00c07d97d89adfa7  rotterdam 1978 d2-12.shn
+ab78c032cc2725038a5af96ed7789298  rotterdam 1978 d2-13.shn
+55f86ea251e1d53c2e40afba8e7cf544  rotterdam 1978 d2-14.shn
+3f46d4a663291d43c4d73499f30b728f  rotterdam 1978 d2-15.flac
+efbac3d483857c3d5bce09bc2c194b6e  rotterdam 1978d1-t01.shn
+01c55fa57462a35df5cba43681743e6f  rotterdam 1978d1-t02.shn
+bce39d23889c39aa77555faa5d795672  rotterdam 1978d1-t03.shn
+782bb4fc38cde253a5c2217aa5e70c02  rotterdam 1978d1-t04.shn
+dac12c35203b40ad1c685c39e46a3714  rotterdam 1978d1-t05.shn
+57f48267136e097f5827fd2ae5695856  rotterdam 1978d1-t06.shn
+220ec5eb1c448212c7aa3175347337a3  rotterdam 1978d1-t07.shn
+0abf9c106305e600b1deb9975e89f5a5  rotterdam 1978d1-t08.shn
+015b9edf7b58cb4f6a32f6476dc91a3e  rotterdam 1978d1-t09.shn
+763e31f637cc2296091c2bc1ddfab727  rotterdam 1978d1-t10.shn
+78f5ea524bfc6c07b4a8bc73c35be08c  rotterdam 1978d1-t11.shn
+df79cc7b51550a7d9977c4f0cb8f8c74  rotterdam 1978d1-t12.shn
+db8826a359af5c4a84ae41205ade88f5  rotterdam 1978d1-t13.shn
+324496c00e189aeb7f2bb0e349f0da46  rotterdam 1978d1-t14.shn
+rotterdam 1978 d2-15.flac:8a6e1216c6462b5b79c884dd2143916f
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-06-23a 
+=================== 
+=================== 
+=================== 
+cb5c94231c758bc7a34999c9d49d13db  [shntool]  rotterdam 1978 d2-01.wav
+0208c161c05e2bfdc27869b0ac47b1b6  [shntool]  rotterdam 1978 d2-02.wav
+4e8b7d8938683062327af26bb26ca21d  [shntool]  rotterdam 1978 d2-03.wav
+bf9ce9a4287eb417bdac9e3310929f8a  [shntool]  rotterdam 1978 d2-04.wav
+1bb775623f347e2851ad5ce3deca2e99  [shntool]  rotterdam 1978 d2-05.wav
+07834b3f408d8139eb6eb3f2f3c360b3  [shntool]  rotterdam 1978 d2-06.wav
+8cc0d63da428647ad587977871c5f16e  [shntool]  rotterdam 1978 d2-07.wav
+03e242ab7c989d134f714db8072314c9  [shntool]  rotterdam 1978 d2-08.wav
+2d7162b98ef72d31184c7a1555a348c3  [shntool]  rotterdam 1978 d2-09.wav
+73655a000f3cead442d7ca6d417c9111  [shntool]  rotterdam 1978 d2-10.wav
+a5e56db7279fbb99f4804c65d1e5e498  [shntool]  rotterdam 1978 d2-11.wav
+da58d8ba50dcdb09932735a9b1917acc  [shntool]  rotterdam 1978 d2-12.wav
+c1ceb5260f407323998a7f07acbe3ff1  [shntool]  rotterdam 1978 d2-13.wav
+b4f940d9272cdb8f13cd78f1845f8458  [shntool]  rotterdam 1978 d2-14.wav
+8a6e1216c6462b5b79c884dd2143916f  [shntool]  rotterdam 1978 d2-15.wav
+72f337e939da2d943a65a66825086e91  [shntool]  rotterdam 1978d1-t01.wav
+a605f28bd640b54409ccf272e2691c0a  [shntool]  rotterdam 1978d1-t02.wav
+be80eca61908fc172e4d98944cd2ea63  [shntool]  rotterdam 1978d1-t03.wav
+4c46bbdb5ac279688dedbb139371f379  [shntool]  rotterdam 1978d1-t04.wav
+66134a553bbf0af6057564acd594b8e1  [shntool]  rotterdam 1978d1-t05.wav
+eb475d6aa275c6ab991611289be105da  [shntool]  rotterdam 1978d1-t06.wav
+efc263356e091ba31cdd80099ab7a54a  [shntool]  rotterdam 1978d1-t07.wav
+1c43e24ea946c68ddf889a8d0504337c  [shntool]  rotterdam 1978d1-t08.wav
+5f5d37d8f74428b223cdd6df37677351  [shntool]  rotterdam 1978d1-t09.wav
+064335592f585f9c9dd04d56dba3a297  [shntool]  rotterdam 1978d1-t10.wav
+2c826d52b53a1eeae6584fbe771af5e7  [shntool]  rotterdam 1978d1-t11.wav
+14db6fb9ae3ecb4ed52844d64f299fda  [shntool]  rotterdam 1978d1-t12.wav
+fa200314376a039cbd74f3b1152b0ef2  [shntool]  rotterdam 1978d1-t13.wav
+9246f8b7e5c7294c0441c869efad1f91  [shntool]  rotterdam 1978d1-t14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-06-23a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:50.36       51240716 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-01.wav
+     3:37.37       38365868 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-02.wav
+     4:52.72       51678188 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-03.wav
+     3:11.56       33824156 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-04.wav
+     4:59.00       52743644 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-05.wav
+     4:18.37       45598268 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-06.wav
+     5:32.51       58684796 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-07.wav
+     5:21.71       56791436 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-08.wav
+     3:58.17       42023228 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-09.wav
+     3:33.00       37573244 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-10.wav
+     2:35.37       27429068 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-11.wav
+     6:47.21       71844236 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-12.wav
+     7:45.67       82183628 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-13.wav
+     3:38.01       38457596 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-14.wav
+     7:34.35       80167964 B   ---   --   -----    wav  1.0000  rotterdam 1978 d2-15.wav
+     4:11.20       44323484 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t01.wav
+     2:25.73       25749740 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t02.wav
+     5:29.42       58134428 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t03.wav
+     5:03.65       53602124 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t04.wav
+     4:36.19       48731132 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t05.wav
+     3:30.31       37116956 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t06.wav
+     7:19.54       77566652 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t07.wav
+     4:43.49       50036492 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t08.wav
+     5:03.68       53609180 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t09.wav
+     4:30.22       47679788 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t10.wav
+     6:41.64       70886972 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t11.wav
+     4:22.48       46329740 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t12.wav
+     4:34.61       48477116 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t13.wav
+     4:55.31       52110956 B   ---   --   -----    wav  1.0000  rotterdam 1978d1-t14.wav
+   140:06.60     1482960796 B                            1.0000  (29 files)
+=================== 
+=================== 
+=================== 

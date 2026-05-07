@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-07jlt-lk-Melbourne 
+=================== 
+=================== 
+=================== 
+fe41bc4bdfb741e2faa1d273ddebf94d  bd92-04-07jlt-lk.txt
+fe1669497f914d285d0f0a2bcbf7e2de  d1t01.shn
+9a94cb68e56367d9c38d1930816b024c  d1t02.shn
+8d35ca31b67ba8e165466fc324037a9b  d1t03.shn
+1912e07005229392c1fc16a2addf05b4  d1t04.shn
+ebac691ff50ced9bfc322ce3ffccddfd  d1t05.shn
+7524f76d73c015299c3ccd4c789cd81b  d1t06.shn
+3f88dfd08efb65df2eb6748cf01a15f8  d1t07.shn
+cbd7f2e5e10e029d76e1433256632247  d1t08.shn
+564bde652d36721ff76a58ad6706e4f3  d1t09.shn
+3c1658f00519a9495c2e26b1f15e86cc  d1t10.shn
+df1802eb13671252507a141ea9825fc0  d2t01.shn
+5bc058b0fbfe05ff8468f57de864d303  d2t02.shn
+c11f4920e4f2fe46bb2f737cbd75deb4  d2t03.shn
+267537a42848a55d75e5deb3158ddcc6  d2t04.shn
+6b3b2e29b4eea07472c9d5f54e1a5f35  d2t05.shn
+05340859f3a02a8a2bba3508a112f0cb  d2t06.shn
+d1cc117dd9fb4897d6607cac879c2fe1  d2t07.shn
+a50c9f7bf683a4fb2d8ea75be1c6db6c  d2t08.shn
+e077b017f5749a357870fcad49c10d2b  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-04-07jlt-lk-Melbourne 
+=================== 
+=================== 
+=================== 
+82fb1c3e7abdf55cadd9b98d0fa440ef  [shntool]  d1t01.wav
+2a7184af5193b8cf7555fbe076e51aed  [shntool]  d1t02.wav
+1ed3aa6a395647d45ba22b4326c42b4d  [shntool]  d1t03.wav
+38a78e0555cfd8572b71eab1b130fe69  [shntool]  d1t04.wav
+21151bd076fe02d6c72a2ac4df36769f  [shntool]  d1t05.wav
+9c816f1aeee59038fadafb061ac6385e  [shntool]  d1t06.wav
+fcbbaa3ded31ad09c084482262f42115  [shntool]  d1t07.wav
+42a2b442ea1d327f0205350d79460dbd  [shntool]  d1t08.wav
+ab4f68d6661b6e6a659757ec94ea72d1  [shntool]  d1t09.wav
+f9e6691f690a871e55392e8fb37dab8c  [shntool]  d1t10.wav
+640c79ab0eafd5eed3dcbc16b2d5b9f7  [shntool]  d2t01.wav
+cf618b9d67f7e9432a9d26743db08095  [shntool]  d2t02.wav
+d8c6d2e3c98adfe69f1cf59c98104881  [shntool]  d2t03.wav
+03076a78c2b93d3a730ac3b831e217b6  [shntool]  d2t04.wav
+b02c6653fa9bdbe4b40f71c2821aeb43  [shntool]  d2t05.wav
+2dd1c223fe438e8410eae9c1cd6c62cf  [shntool]  d2t06.wav
+760fc3dd11f3afc1963e63aec8cc465d  [shntool]  d2t07.wav
+4a5e3013e22a9095ece38093699c8c17  [shntool]  d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-07jlt-lk-Melbourne 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.50       41747932 B   -b-   --   -----    wav  1.0000  d1t01.wav
+     6:23.39       67654068 B   -b-   --   -----    wav  1.0000  d1t02.wav
+     5:35.74       59267500 B   -b-   --   -----    wav  1.0000  d1t03.wav
+     5:22.58       56937412 B   -b-   --   -----    wav  1.0000  d1t04.wav
+     6:07.51       64858400 B   -b-   --   -----    wav  1.0000  d1t05.wav
+     4:47.68       50787052 B   -b-   --   -----    wav  1.0000  d1t06.wav
+     5:41.60       60293008 B   -b-   --   -----    wav  1.0000  d1t07.wav
+     2:58.42       31498152 B   -b-   --   -----    wav  1.0000  d1t08.wav
+     3:31.63       37368140 B   -b-   --   -----    wav  1.0000  d1t09.wav
+     5:52.61       62236316 B   ---   --   -----    wav  1.0000  d1t10.wav
+     7:24.06       78335276 B   -b-   --   -----    wav  1.0000  d2t01.wav
+     4:53.73       51857112 B   -b-   --   -----    wav  1.0000  d2t02.wav
+     5:39.30       59869304 B   -b-   --   -----    wav  1.0000  d2t03.wav
+     6:22.22       67436844 B   -b-   --   -----    wav  1.0000  d2t04.wav
+     5:29.54       58163228 B   -b-   --   -----    wav  1.0000  d2t05.wav
+     6:05.30       64455960 B   -b-   --   -----    wav  1.0000  d2t06.wav
+     5:16.53       55867000 B   -b-   --   -----    wav  1.0000  d2t07.wav
+     3:48.19       40263160 B   -b-   --   -----    wav  1.0000  d2t08.wav
+    95:19.27     1008895864 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

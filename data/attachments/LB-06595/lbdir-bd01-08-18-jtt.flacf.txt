@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-08-18-jtt.flacf 
+=================== 
+=================== 
+=================== 
+9047cbdf61451ab3b8c27ada29bee2b4  Disc One\Disc01Track01 Pueblo 18.08.01.flac
+b374dbcc9c1f712590a929a621cdd3b9  Disc One\Disc01Track02 Pueblo 18.08.01.flac
+84dcddc7254e85e09aa8e40dc11d0a9b  Disc One\Disc01Track03 Pueblo 18.08.01.flac
+4beda3b33a57082dd0bc1c7d950081c1  Disc One\Disc01Track04 Pueblo 18.08.01.flac
+64149d5de648aae29aebf649f9055832  Disc One\Disc01Track05 Pueblo 18.08.01.flac
+e82148ceaf169cbbe532dd70b5134fbc  Disc One\Disc01Track06 Pueblo 18.08.01.flac
+e66f821515433f0efcc1ae6a25ceabfd  Disc One\Disc01Track07 Pueblo 18.08.01.flac
+c5366993038bda735c3b48f62063ecbe  Disc One\Disc01Track08 Pueblo 18.08.01.flac
+0d4af2d39f926a11cbe046b0c701d544  Disc One\Disc01Track09 Pueblo 18.08.01.flac
+06f2e6f28d377c59f3b4560aa02c9f90  Disc One\Disc01Track10 Pueblo 18.08.01.flac
+073ece6ad53426e86055290e9ab7f9c0  Disc One\Disc01Track11 Pueblo 18.08.01.flac
+4ba19975bd3dd88b7fa2d69a64f3370c  Disc One\Disc01Track12 Pueblo 18.08.01.flac
+d57e37187303d8cdafd5b198a1a19efd  Disc One\Disc01Track13 Pueblo 18.08.01.flac
+9d6425ac05ebb97151f79d47c130bd79  Disc Two\Disc02Track01 Pueblo 18.08.01.flac
+1b6ffacd99c83a0e7c1e83fe5090f54f  Disc Two\Disc02Track02 Pueblo 18.08.01.flac
+bd5327a59c0c0ca6909ba3df01073bf1  Disc Two\Disc02Track03 Pueblo 18.08.01.flac
+49b5626061840c603e40b0d397988506  Disc Two\Disc02Track04 Pueblo 18.08.01.flac
+3d7f085fd2108fcee5c5a8d5298fe30c  Disc Two\Disc02Track05 Pueblo 18.08.01.flac
+eab65c960071baa074b50e891c09f32e  Dylan - Pueblo August 18th 2001.md5
+bb7b778e8a95a5376e66953bf20ab97a  Dylan - Pueblo August 18th 2001.txt
+b54890120eaa7d0c6335e0b504e69e37  Dylan - Pueblo August 18th 2001_Info.txt
+dba0940c5079e1d9a897b21236be1c3c  Pueblo, Colorado 18.08.2001 - F.jpg
+ea3b0a79ae18c9291c21e26a42484c76  Pueblo, Colorado 18.08.2001 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-08-18-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Pueblo 18.08.01.flac:c36de58318b35ffbdd5d271b34a59e2d
+Disc01Track02 Pueblo 18.08.01.flac:5f5763f07a962941722372724b64412b
+Disc01Track03 Pueblo 18.08.01.flac:e6bcfb5d06e1f0cd797e650bda843ea2
+Disc01Track04 Pueblo 18.08.01.flac:62943d976ae56fbe3f54c842737ea95b
+Disc01Track05 Pueblo 18.08.01.flac:f0b5a8b9a20f525477b1d86946df1a6a
+Disc01Track06 Pueblo 18.08.01.flac:4e371ee2fd48fa32528355a0a64390d3
+Disc01Track07 Pueblo 18.08.01.flac:dcae3ba13849777c5f31a45e4bf836b8
+Disc01Track08 Pueblo 18.08.01.flac:94d62f4c3374f22d757d1daa41daf08d
+Disc01Track09 Pueblo 18.08.01.flac:e5e2b3248966d6b97f1b916c03400cb6
+Disc01Track10 Pueblo 18.08.01.flac:18ded289c875d1b91e4fb79ec649c177
+Disc01Track11 Pueblo 18.08.01.flac:6bd5e38d383e183ba04e00ccefdea482
+Disc01Track12 Pueblo 18.08.01.flac:947157e8f948cc6551072ee57fd95bff
+Disc01Track13 Pueblo 18.08.01.flac:b3aa22ae4fcfc053f99469a5823f1b21
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-08-18-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Pueblo 18.08.01.flac:6130a1d63a280577dc9f4af26c0d04c6
+Disc02Track02 Pueblo 18.08.01.flac:3f9894cb8eab4f4b456d4ba37e058327
+Disc02Track03 Pueblo 18.08.01.flac:5abd9957dfe9fd5e6fc7b97d4a61f7bc
+Disc02Track04 Pueblo 18.08.01.flac:f244218725b6bc4dd8821c2acb6c40c9
+Disc02Track05 Pueblo 18.08.01.flac:690386210463c4fc7ca8522eb584b02a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-18-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.20       43088684 B   ---   --   ---xx   flac  0.6062  Disc01Track01 Pueblo 18.08.01.flac
+     5:04.49       53740892 B   ---   --   ---xx   flac  0.5710  Disc01Track02 Pueblo 18.08.01.flac
+     8:20.14       88232972 B   ---   --   ---xx   flac  0.5440  Disc01Track03 Pueblo 18.08.01.flac
+     4:52.68       51668780 B   ---   --   ---xx   flac  0.5785  Disc01Track04 Pueblo 18.08.01.flac
+     4:13.36       44713916 B   ---   --   ---xx   flac  0.5346  Disc01Track05 Pueblo 18.08.01.flac
+     5:34.12       58945868 B   ---   --   ---xx   flac  0.5600  Disc01Track06 Pueblo 18.08.01.flac
+     8:43.58       92393660 B   ---   --   ---xx   flac  0.5384  Disc01Track07 Pueblo 18.08.01.flac
+     4:28.32       47350508 B   ---   --   ---xx   flac  0.5155  Disc01Track08 Pueblo 18.08.01.flac
+     5:18.50       56212844 B   ---   --   ---xx   flac  0.5272  Disc01Track09 Pueblo 18.08.01.flac
+     8:30.63       90112220 B   ---   --   ---xx   flac  0.5741  Disc01Track10 Pueblo 18.08.01.flac
+     4:04.14       43074572 B   ---   --   ---xx   flac  0.4926  Disc01Track11 Pueblo 18.08.01.flac
+     5:18.50       56212844 B   ---   --   ---xx   flac  0.5866  Disc01Track12 Pueblo 18.08.01.flac
+     6:42.35       70995164 B   ---   --   ---xx   flac  0.5648  Disc01Track13 Pueblo 18.08.01.flac
+    75:16.51      796742924 B                            0.5540  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-18-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.27       60921548 B   ---   --   ---xx   flac  0.5241  Disc02Track01 Pueblo 18.08.01.flac
+     8:09.21       86309036 B   ---   --   ---xx   flac  0.5509  Disc02Track02 Pueblo 18.08.01.flac
+     5:40.58       60112460 B   ---   --   ---xx   flac  0.5558  Disc02Track03 Pueblo 18.08.01.flac
+     4:32.08       47999660 B   ---   --   ---xx   flac  0.5916  Disc02Track04 Pueblo 18.08.01.flac
+     5:05.70       53966684 B   ---   --   ---xx   flac  0.5747  Disc02Track05 Pueblo 18.08.01.flac
+    29:13.34      309309388 B                            0.5570  (5 files)
+=================== 
+=================== 
+=================== 

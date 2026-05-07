@@ -1,0 +1,60 @@
+===================
+===================
+===================
+=== md5 for: bd93-06-12-sbd-jtt.flacf
+===================
+===================
+===================
+0862bd2caefea2e588d0858d19e5cd99 *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 01.flac
+f07376ca198c449c95f88c4cfc090728 *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 02.flac
+032f21bd83ea6a0ea8c6182ad351c40a *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 03.flac
+d7afc7f46bb643306d3413c009df7e5b *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 04.flac
+6d5118868efd52717795327ddd402924 *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 05.flac
+a75c34e271dabc62dd74e51b5e787b0b *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 06.flac
+2cdb9c24ab67d1281b71518a3e3f9d9f *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 07.flac
+3de8e6dd522b12e6ef20368c4afba856 *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 08.flac
+d2a8b3154c3731c339ab36a0e007dbac *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 09.flac
+741e1b578afbc7871fae8b56ad636e6b *BOB DYLAN - Fleadh Festival  June 12th 1993_Track 10.flac
+f44f8df890bc0de31f595acd45bea4b3 *BOB DYLAN - Fleadh Festival, Finsbury Park, London June 12th 1993.ffp
+972a720598b662b19d14f64e61eed3df *BOB DYLAN - Fleadh Festival, Finsbury Park, London June 12th 1993.md5
+9c154dc5d829fc98f8ac3a6cb59dafe7 *BOB DYLAN - Fleadh Festival, Finsbury Park, London June 12th 1993.txt
+27fb0aca3d348d84812020bb80e6a257 *BOB DYLAN - Fleadh Festival, Finsbury Park, London June 12th 1993_Info.txt
+===================
+===================
+===================
+=== ffp for: bd93-06-12-sbd-jtt.flacf
+===================
+===================
+===================
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 01.flac:495633405e4f64ada7130c2a16c85ac1
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 02.flac:42163535f1a1cfb5f636268c220397ea
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 03.flac:1ba6a040e95a0d90d83c155a9d7cfab9
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 04.flac:024e9e571e22cf688cbbc4abf11980e4
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 05.flac:956cbd9291a5427d385af4af6b058e76
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 06.flac:a431bfd9f66f7f992e6a26bfcceff861
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 07.flac:38dfcd9ae5065b9b8118ba035babcc1d
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 08.flac:a085333b4e06c6170a4a9bd7d45a78af
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 09.flac:68bd5196e4f84c6b698352c50a0c4cd6
+BOB DYLAN - Fleadh Festival  June 12th 1993_Track 10.flac:77b45f968a6dd0da4c1012a5f2d800c1
+===================
+===================
+===================
+=== shntool len for: bd93-06-12-sbd-jtt.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.69       43380332 B   ---   --   ---xx   flac  0.4039  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 01.flac
+     8:39.11       91577516 B   ---   --   ---xx   flac  0.4980  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 02.flac
+     5:35.44       59197532 B   ---   --   ---xx   flac  0.4996  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 03.flac
+     6:12.42       65719628 B   ---   --   ---xx   flac  0.4254  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 04.flac
+    10:40.66      113051276 B   ---   --   ---xx   flac  0.4990  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 05.flac
+     8:03.74       85375292 B   ---   --   ---xx   flac  0.4292  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 06.flac
+     6:07.07       64755308 B   ---   --   ---xx   flac  0.3953  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 07.flac
+     5:32.58       58701260 B   ---   --   ---xx   flac  0.3365  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 08.flac
+     7:18.63       77411420 B   ---   --   ---xx   flac  0.3963  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 09.flac
+     6:31.65       69125324 B   ---   --   ---xx   flac  0.5117  BOB DYLAN - Fleadh Festival  June 12th 1993_Track 10.flac
+    68:48.49      728294888 B                            0.4464  (10 files)
+===================
+===================
+===================

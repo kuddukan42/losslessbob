@@ -1,0 +1,57 @@
+Bob Dylan
+Auditorio Kursaal
+San Sebastian, Spain
+June 20, 2023
+
+01. Watching The River Flow
+02. Most Likely You Go Your Way (And I'll Go Mine)
+03. I Contain Multitudes
+04. False Prophet
+05. When I Paint My Masterpiece
+06. Black Rider
+07. My Own Version Of You
+08. I'll Be Your Baby Tonight
+09. Crossing The Rubicon
+10. To Be Alone With You
+11. Key West (Philosopher Pirate)
+12. Gotta Serve Somebody
+13. I've Made Up My Mind To Give Myself To You
+14. That Old Black Magic
+15. Mother Of Muses
+16. Goodbye Jimmy Reed
+17. Every Grain Of Sand 	 
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Jerry Pentecost - drums
+Doug Lancio - guitar
+Bob Britt - guitar
+Donnie Herron - steel guitar, mandolin, violin
+Tony Garnier - bass
+
+Comment
+Band introduction after Crossing The Rubicon
+
+Recorded by: soomlos
+schoeps mk4v > nbob actives > sound devices mixpre-3 (24/48)
+sound devices mixpre-3 > usb > pc > poly wav (24/48)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24/48)
+
+ffp
+bd2023-06-20-soomlos-t01.flac:682a5cab7364f9bfcb675a114bb65ae1
+bd2023-06-20-soomlos-t02.flac:2676bcd50afffcb5642d09d991227f07
+bd2023-06-20-soomlos-t03.flac:b9a914d16d8dabf8e92940b4bd3b538e
+bd2023-06-20-soomlos-t04.flac:cfc8bdb63bd3890fbdc4b709603e30e1
+bd2023-06-20-soomlos-t05.flac:a29701ccc60d5cc48675769abc919158
+bd2023-06-20-soomlos-t06.flac:1d198ef4c70f9d23b06ad0961a3b6eba
+bd2023-06-20-soomlos-t07.flac:8dde246ff2524cf1b1398f9a4c158e7f
+bd2023-06-20-soomlos-t08.flac:a9a31065b7a090b65f5b31bda81d6d3d
+bd2023-06-20-soomlos-t09.flac:4c4c656ed9d7780ce01efcecd8d1933a
+bd2023-06-20-soomlos-t10.flac:ef4a79351aea9323106b7fd30adbedf5
+bd2023-06-20-soomlos-t11.flac:12d67b1de174e0448adb4cdf26b7d208
+bd2023-06-20-soomlos-t12.flac:b8f86969a5f84fb2e1f84b8d9defb98a
+bd2023-06-20-soomlos-t13.flac:b8570211bd3c802038aaa0d4ac9b4e54
+bd2023-06-20-soomlos-t14.flac:3b591ba210bad0ac823818ba0b209096
+bd2023-06-20-soomlos-t15.flac:e86414e61ff238f48eaecf850355bbbd
+bd2023-06-20-soomlos-t16.flac:2b0fcd2426095e33eb5733dfd2b8db2a
+bd2023-06-20-soomlos-t17.flac:76321b0e667bf5563c811415abc10da7

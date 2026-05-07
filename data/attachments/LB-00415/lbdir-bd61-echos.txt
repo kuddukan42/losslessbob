@@ -1,0 +1,144 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-echos 
+=================== 
+=================== 
+=================== 
+537fd79e3a9b6e2bade7fbceef0fe88a  bd-echoes.txt
+685d473d3a0111536840bf9a03d388c7  d1\bd_echo1.md5
+ec17612a48738820db5fc61acb8dddc7  d1\track01.shn
+09bb29bfebcbe285cbe2ff72ea99d534  d1\track02.shn
+fac6a3563878f004a3794f18e24235ff  d1\track03.shn
+70b47811825a7f8a4d67bcf13d870206  d1\track04.shn
+36ef205021c1c6a276873afd0156cc80  d1\track05.shn
+3f5939ac35d5efcb6ac4552a6492ca78  d1\track06.shn
+cadf766ebce4543faa34aa5b333fd3e1  d1\track07.shn
+8aa2338f0e74293d020c7466a68b2799  d1\track08.shn
+6359fd11ffe8e0b9495a15d6439d5079  d1\track09.shn
+20b0fe1f5d713d94f400b8a6d64c1732  d1\track10.shn
+ffa878482d1226bf86c93fc2941b6d35  d1\track11.shn
+29d4b17c1a7bed8ab84ddc4d32404989  d1\track12.shn
+4f330842fd2f4cc4b5f0afa12859130b  d1\track13.shn
+789c1265ae39e12041513449feb6496c  d1\track14.shn
+6c10f732af9b7e6288ecfc4a8f5d2151  d1\track15.shn
+a5f6d1ec9a158b806edc97c20723df52  d1\track16.shn
+2abcb2d67011f5aa32ffe50b4d17a35c  d2\bd_echo2.md5
+4530f99b8cf2c87d09c34a5cc5f3ec67  d2\track01.shn
+a6403ba0c8349a12660d4f2228609efa  d2\track02.shn
+b0169797fd6d2840d7fd7757237b2e48  d2\track03.shn
+577697d012d9a6bcd63ee2c88076e8c9  d2\track04.shn
+95f3b29f5241fb01ac30e11f479645e8  d2\track05.shn
+776ded0c8ed86abb0c0954460c4e027e  d2\track06.shn
+67213d2b4316f7df9bc3923f4d52966e  d2\track07.shn
+d44a2871fe6d0c9b3c97c7e45d4c72e0  d2\track08.shn
+946904a0d5e7708a6aa8a946ca528e9e  d2\track09.shn
+318c533142a017002e59cd30b92876d3  d2\track10.shn
+41caffd7153281034e683c9f92970f56  d2\track11.shn
+3d9e7cafd67f74b58457738981564fc1  d2\track12.shn
+50e43ad3f1e7edfb0005da0e1f460fae  d2\track13.shn
+0f4666607441eab35ef07cec94430623  d2\track14.shn
+cf994ed5be817805f540421ace6f6fe6  d2\track15.shn
+1a2f32dbf045a2c7efced8e8e4195f2e  d2\track16.shn
+dc2af796f63d58470703ae4e1b28f0a4  d2\track17.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd61-echos\d1 
+=================== 
+=================== 
+=================== 
+ab8411f8b5b8fd2c3520cae0733414fe  [shntool]  track01.wav
+12ae95b29caf8e463123a7eebe7ab658  [shntool]  track02.wav
+99950b5d789e5c741727a77de076d05b  [shntool]  track03.wav
+fbc7fe2fa2b5709657f38c737abc8035  [shntool]  track04.wav
+2cb22c1eafb62d0ec8d1014a1ab446d0  [shntool]  track05.wav
+590bb60818c6f663e97e6e49e0633552  [shntool]  track06.wav
+ba842e5f3643923318713d8a80b262fd  [shntool]  track07.wav
+9e8fc7b09b59686166da81b2f55ac0d0  [shntool]  track08.wav
+eb953eff0c2fdac4a413106f8a2d3c3a  [shntool]  track09.wav
+cc48e71241e4ea28e53bb9297bac266a  [shntool]  track10.wav
+ab80ff1fa43f6b0d3d7672eb79662f7e  [shntool]  track11.wav
+4d0738da1bb9c28f38a394758bac81ec  [shntool]  track12.wav
+7b602404e76829d0e1d27c1b10359da4  [shntool]  track13.wav
+46191ee8d112aa4d1102d0caa20d8f9e  [shntool]  track14.wav
+f172b43c7a3ab03b94ff8f998855ee47  [shntool]  track15.wav
+1431aff86d11bbcb176bb469b8bf8196  [shntool]  track16.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd61-echos\d2 
+=================== 
+=================== 
+=================== 
+8cbb69b8d1eaad966eb4a54539c493ed  [shntool]  track01.wav
+a5dce3f661d4d9ee79a2f9f54ccac8f1  [shntool]  track02.wav
+eaca8deea5d3928c87d84fecb988b8f2  [shntool]  track03.wav
+812519baf27f5517dee65791ae73540b  [shntool]  track04.wav
+861685ec44c20b25f4e9038e890355cc  [shntool]  track05.wav
+1e0beabb751b20e3b0ec5c4452d2b58d  [shntool]  track06.wav
+7c03494490c006a542a523f28cc46aa0  [shntool]  track07.wav
+bc3485e17a914d1ffb00b90969b0a83c  [shntool]  track08.wav
+aeaa1adceca72efe1f147b9253a7e805  [shntool]  track09.wav
+14af7ece544f610bf196da95484323c8  [shntool]  track10.wav
+17070b493fcb96010a0ae7756841e66e  [shntool]  track11.wav
+2e19ff9cba8c593aefa22437a0a11046  [shntool]  track12.wav
+f57cc0b30502e31968c7e17878faffd1  [shntool]  track13.wav
+b12045e64b755f7917def01565ecbea4  [shntool]  track14.wav
+b1e8a57d417c9a3895304a1ac1abd6c6  [shntool]  track15.wav
+5e866fc692844217e6a566e39b983960  [shntool]  track16.wav
+0de07dd80e61c7d1c6caf97103e7433a  [shntool]  track17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-echos\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.02       56452748 B   ---   --   ---xx    shn  0.4149  track01.shn
+     8:30.10       89987564 B   ---   --   ---xx    shn  0.3746  track02.shn
+     5:26.56       57638156 B   ---   --   ---xx    shn  0.3762  track03.shn
+     4:17.56       45466556 B   ---   --   ---xx    shn  0.4558  track04.shn
+     2:48.34       29715212 B   ---   --   ---xx    shn  0.4470  track05.shn
+     2:41.36       28485116 B   ---   --   ---xx    shn  0.5673  track06.shn
+     4:24.22       46621388 B   ---   --   ---xx    shn  0.5102  track07.shn
+     5:00.54       53047052 B   ---   --   ---xx    shn  0.4917  track08.shn
+     3:51.65       40901324 B   ---   --   ---xx    shn  0.5668  track09.shn
+     2:47.18       29501180 B   ---   --   ---xx    shn  0.5202  track10.shn
+     2:34.56       27297356 B   ---   --   ---xx    shn  0.6125  track11.shn
+     4:51.74       51506492 B   ---   --   ---xx    shn  0.6125  track12.shn
+     5:24.68       57313580 B   ---   --   ---xx    shn  0.6111  track13.shn
+     3:18.06       34941356 B   ---   --   ---xx    shn  0.5925  track14.shn
+     6:02.62       64002668 B   ---   --   ---xx    shn  0.5825  track15.shn
+     5:03.27       53512748 B   ---   --   ---xx    shn  0.5691  track16.shn
+    72:24.46      766390496 B                            0.5077  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-echos\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:24.65       25554524 B   ---   --   ---xx    shn  0.6633  track01.shn
+     3:39.58       38768060 B   ---   --   ---xx    shn  0.6880  track02.shn
+     3:59.43       42260780 B   ---   --   ---xx    shn  0.6262  track03.shn
+     5:15.70       55730684 B   ---   --   ---xx    shn  0.6466  track04.shn
+     5:41.70       60317084 B   ---   --   ---xx    shn  0.6611  track05.shn
+     8:19.26       88084796 B   ---   --   ---xx    shn  0.6379  track06.shn
+     4:23.56       46524956 B   ---   --   ---xx    shn  0.6345  track07.shn
+     1:19.28       14001500 B   ---   --   ---xx    shn  0.4518  track08.shn
+     4:39.28       49281500 B   ---   --   ---xx    shn  0.5135  track09.shn
+     1:34.61       16725116 B   ---   --   ---xx    shn  0.5821  track10.shn
+     6:18.21       66728636 B   ---   --   ---xx    shn  0.5182  track11.shn
+     4:50.57       51290108 B   ---   --   ---xx    shn  0.5324  track12.shn
+     5:33.54       58868252 B   ---   --   ---xx    shn  0.5072  track13.shn
+     3:19.23       35157740 B   ---   --   ---xx    shn  0.5260  track14.shn
+     3:15.30       34468604 B   ---   --   ---xx    shn  0.4370  track15.shn
+     3:23.04       35818652 B   ---   --   ---xx    shn  0.4166  track16.shn
+     3:37.20       38325884 B   ---   --   ---xx    shn  0.3887  track17.shn
+    71:36.39      757906876 B                            0.5650  (17 files)
+=================== 
+=================== 
+=================== 

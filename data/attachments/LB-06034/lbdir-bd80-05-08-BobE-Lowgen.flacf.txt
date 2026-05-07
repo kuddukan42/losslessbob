@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-05-08-BobE-Lowgen.flacf 
+=================== 
+=================== 
+=================== 
+b3ec71daf32b52aa16f9d14977a7bc3d  800508aTrack01.flac
+041e87939556771e2a9bd4c02f9229ee  800508aTrack02.flac
+2dff0c5520b32f17fb681f4b0c480f35  800508aTrack03.flac
+a565c56948f0487ca6dc5f5b7e561ce2  800508aTrack04.flac
+9143a18ed932bba893cc305dd30d47f3  800508aTrack05.flac
+4c2222eb641e3075610c6c77d66dc215  800508aTrack06.flac
+fc0fd08ab4497abf8a6c3731a075bc09  800508aTrack07.flac
+6fed4900b3017ed0dfdd8be142a959e3  800508aTrack08.flac
+434c1b597baec58822166ab6df9f4c41  800508aTrack09.flac
+28ab4536d2b129488c8c2dbf8531880e  800508aTrack10.flac
+cbaa00610a8e629352c77918eaf0f2a5  800508aTrack11.flac
+55e76309f4003a21e93c314cdc5e72f3  800508aTrack12.flac
+1f83d7baa61cf30c94edecb71f836fbd  800508bTrack01.flac
+bc26fa1800645813e2dda242769f5bc6  800508bTrack02.flac
+327c1217dc46451347692cda63652748  800508bTrack03.flac
+88994e843deee0031ea4f01e64d8466c  800508bTrack04.flac
+9ffd31333721b975a8d4f9eeb120caa6  all.md5
+12322a5e4ed085764894ca57d42bd723  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-05-08-BobE-Lowgen.flacf 
+=================== 
+=================== 
+=================== 
+800508aTrack01.flac:3ce4ee49d57db24074fada2ce521e354
+800508aTrack02.flac:08ecae25f2f021df39f7fd2d07e1efcd
+800508aTrack03.flac:38fcac9b028c8b13bc1af06755edb7c0
+800508aTrack04.flac:e6428f337156bd03fe49e875a82c4439
+800508aTrack05.flac:6a05229861111600b4e1c8d9b6d08493
+800508aTrack06.flac:7d60447a14f9372d5143f1de01e86db6
+800508aTrack07.flac:718e2eea603385e115044aae2cebc54e
+800508aTrack08.flac:2c730534666e3c85635b2eda3ac48a2c
+800508aTrack09.flac:2757a670d3099d587954d15a0a3b3b04
+800508aTrack10.flac:c1bd9601b8d9df456b0f220f4b6c9ffa
+800508aTrack11.flac:0b5e95455461648fc6a67a4ab2f02c0f
+800508aTrack12.flac:7f427e507d8a1ea1e023a832ccae585e
+800508bTrack01.flac:355504930d5f711ccacf5bab462987f2
+800508bTrack02.flac:c7b83bb33d11963db43a79b18bc36d38
+800508bTrack03.flac:76b34ea20333d26747a072e4a268701e
+800508bTrack04.flac:bf4c79dde90a7b4fb73064644c9f47d3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-05-08-BobE-Lowgen.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:04.05       74805404 B   ---   --   ---xx   flac  0.3548  800508aTrack01.flac
+     5:49.03       61570700 B   ---   --   ---xx   flac  0.3458  800508aTrack02.flac
+     5:50.05       61751804 B   ---   --   ---xx   flac  0.3707  800508aTrack03.flac
+     5:48.04       61396652 B   ---   --   ---xx   flac  0.3693  800508aTrack04.flac
+     4:18.71       45678236 B   ---   --   ---xx   flac  0.3690  800508aTrack05.flac
+     5:30.21       58261436 B   ---   --   ---xx   flac  0.3716  800508aTrack06.flac
+     6:03.64       64183772 B   ---   --   ---xx   flac  0.3721  800508aTrack07.flac
+     7:27.27       78914348 B   ---   --   ---xx   flac  0.3923  800508aTrack08.flac
+     8:02.17       85064828 B   ---   --   ---xx   flac  0.3715  800508aTrack09.flac
+     3:50.45       40677884 B   ---   --   ---xx   flac  0.3920  800508aTrack10.flac
+     4:44.09       50118812 B   ---   --   ---xx   flac  0.3638  800508aTrack11.flac
+     4:51.26       51393596 B   ---   --   ---xx   flac  0.3890  800508aTrack12.flac
+     7:04.25       74852444 B   ---   --   ---xx   flac  0.3698  800508bTrack01.flac
+     8:00.40       84766124 B   ---   --   ---xx   flac  0.3753  800508bTrack02.flac
+     4:53.72       51854588 B   ---   --   ---xx   flac  0.3744  800508bTrack03.flac
+     5:05.14       53834972 B   ---   --   ---xx   flac  0.3667  800508bTrack04.flac
+    94:23.73      999125600 B                            0.3715  (16 files)
+=================== 
+=================== 
+=================== 

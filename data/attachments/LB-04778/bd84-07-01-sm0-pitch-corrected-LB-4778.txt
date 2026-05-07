@@ -1,0 +1,14 @@
+Bob Dylan, 7/1/84, Sceaux, France, Parc de Sceaux, 2CDR
+
+LB-4778, (78min+61min), sm0-pitch-corrected; Audience cassette master>DAT>CD-R>.wav>SoundForge 8>TLH>.flac, 1) pitch corrected, 2) taper's/transferer's "watermark" (a loop in audience before a set one song) removed, ---, TT: 138:05.00; bittorrent download 04/07; cdr splits not specified; same recording as LB-1056 and LB-3023 based on same clapping at begin of d1t1; based on wav and spectral view, it appears that LB-1056 or very similar was used before picth change to make about 2 seconds per minute slower on d1t1; in comparison to LB-3023 this one has slightly more hiss which was more distracting; (did not listen to all of this)
+
+drop d1t1 0:54; missing last 70 seconds of d1t8
+
+CD1
+Set One, 01. [5:26.16] Highway 61 Revisited, 02. [6:15.62] Jokerman, 03. [4:04.09] All Along the Watchtower, 04. [5:48.74] Just Like a Woman, 05. [4:33.61] Maggie's Farm, 06. [5:58.53] I And I, 07. [3:40.02] Licence to Kill, 08. [5:53.07] Just My Imagination// (a), --- tape flip ---, Set Two, 09. [6:02.03] A Hard Rain's A-Gonna Fall (solo), 10. [7:29.47] Tangled up in Blue (solo), 11. [6:10.14] It's Alright, Ma (I'm Only Bleeding) (solo), 12. [5:43.10] Simple Twist of Fate, 13. [6:24.45] Masters of War, --- tape flip ---, 14. [4:20.09] //Ballad of a Thin Man, 
+
+CD2
+15. [3:26.55] Enough Is Enough, 16. [6:02.35] Every Grain of Sand, 17. [6:56.60] Like a Rolling Stone, --- tape flip ---, Encore:, 18. [5:34.10] Mr Tambourine Man (solo), 19. [5:58.59] It Ain't Me Babe (solo), 20. [6:21.19] Les Temps Changent > The Times They Are A-Changin' (b) (c), 21. [5:37.73] It's All Over Now, Baby Blue (c) (d), --- tape flip ---, 22. [3:17.61] Leopard Skin Pill-Box Hat (c), --- tape cut ---, 23. [4:42.30] Tombstone Blues (c), 24. [6:19.13] Blowin' in the Wind (c), 25. [5:56.73] Knockin' on Heaven's Door (c), (a) Greg Sutton vocal, (b) Hugues Aufray shared vocals, (c) Carlos Santana guitar, (d) Van Morrison shared vocals, Complete show.
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

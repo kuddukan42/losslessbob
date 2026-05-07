@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-05-01-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+5967852a17fc10b4c8a3297cddd6bc5c  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final01.flac
+8935ba16b5cc88c9198a64efa6fdb607  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final02.flac
+84bbe0cd9f99a52638517e463e0c8010  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final03.flac
+22c327fd195c8b59aa0e7daaac56c120  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final04.flac
+3cd619e83b5a6acdda2eb26c5352edf8  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final05.flac
+8d45ae8e704c8f7ce735395a8568a701  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final06.flac
+f008fff71d436ec53e532574904626d5  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final07.flac
+685ccd23cf6eb647dda8c4ddae72c3e9  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final08.flac
+18b4cb4121f49a15c86e7c49e90de4cb  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final09.flac
+f05c4a3c632f9bf0b42d9182b347bcc0  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final10.flac
+e19b6ca37b998ab096fd34da543abc43  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final11.flac
+12b1cf69cbce8c89c04a35bb58cc5211  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final12.flac
+d2c3ab61edb43f20e477cb82ab200f83  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final13.flac
+0ab17a8599f497d0a08702ccc3d3141d  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final14.flac
+c26988b155fc8d4f8c8d65dd19ac4e36  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final15.flac
+380fc5d36466a047471735fca4c547b9  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final16.flac
+7b603637f8e875c73b2b90975937305e  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final17.flac
+b49acd05f3d572ca4ff5d5980dab53db  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final18.flac
+08e39ecaeb21317d766d7ffd3b67515c  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final19.flac
+97e5c4a690f89a71a0fb442b74947479  Bob Dylan  Liverpool  5-01-09.md5
+9296bd5b6017a20d95f5252555aa7f99  Bob Dylan  Liverpool  5-01-09.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-05-01-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final01.flac:db83324150a6e95eb6f1b17d922e7a6b
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final02.flac:31ad4a11da7f05bd56d37b364ef44c3e
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final03.flac:b8c76e73ead41192cdedb471732d290f
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final04.flac:28ffc52b339d46a2d1fd7efaa61fb457
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final05.flac:94d274bdf40191423307e2d0aeb12197
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final06.flac:e92c0b09cf4f53908db73d90975a7bc4
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final07.flac:dad66954ef182a832a1fe13a3d409db7
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final08.flac:7818cbcfe9ea7c914bb868fb64dc5feb
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final09.flac:3bb5e09881b4affebf0d8fdb9b8fa7fb
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final10.flac:49ad53b71e6b4fde1b26d6d610e6a4de
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final11.flac:a6f801cc9e4c2eeaef20962358cc3891
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final12.flac:50bc60bd2e4fc67205a272ff284f1352
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final13.flac:943bf68d23f2c76cd353538c19d8d178
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final14.flac:92e15005036597e20adbfe5a707e23f6
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final15.flac:2873cafaea6fb96e4036048585f829d9
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final16.flac:cf603a83197ca49008f816ec19d421f1
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final17.flac:f4fd3dac59e13f6d2e4f2cbe637b7ec1
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final18.flac:a2266967583b404fdb5e2d38e3b38d77
+Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final19.flac:9ffd4f5750eb1a63ca4bc2f14a218ac5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-05-01-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.43       56372780 B   ---   --   ---xx   flac  0.5138  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final01.flac
+     6:29.52       68741948 B   ---   --   ---xx   flac  0.4751  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final02.flac
+     6:47.22       71846588 B   ---   --   ---xx   flac  0.5180  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final03.flac
+     5:39.13       59830220 B   ---   --   ---xx   flac  0.4405  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final04.flac
+     7:49.44       82835132 B   ---   --   ---xx   flac  0.5193  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final05.flac
+     5:10.55       54813404 B   ---   --   ---xx   flac  0.4531  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final06.flac
+     4:42.67       49902428 B   ---   --   ---xx   flac  0.4851  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final07.flac
+     4:50.61       51299516 B   ---   --   ---xx   flac  0.4611  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final08.flac
+     7:27.16       78888476 B   ---   --   ---xx   flac  0.5153  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final09.flac
+     6:00.12       63532268 B   ---   --   ---xx   flac  0.4703  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final10.flac
+     6:07.39       64830572 B   ---   --   ---xx   flac  0.5211  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final11.flac
+     3:22.56       35764556 B   ---   --   ---xx   flac  0.4986  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final12.flac
+     8:48.19       93183932 B   ---   --   ---xx   flac  0.5333  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final13.flac
+     6:54.16       73067276 B   ---   --   ---xx   flac  0.5328  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final14.flac
+     3:09.38       33429020 B   ---   --   ---xx   flac  0.4331  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final15.flac
+     5:08.50       54448844 B   ---   --   ---xx   flac  0.5261  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final16.flac
+     6:41.12       70764668 B   ---   --   ---xx   flac  0.4583  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final17.flac
+     0:53.42        9448028 B   ---   --   ---xx   flac  0.4750  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final18.flac
+     5:28.06       57873356 B   ---   --   ---xx   flac  0.4970  Bob Dylan  Liverpool  5-01-09  24-44  w AA EQ-final19.flac
+   106:50.63     1130873012 B                            0.4956  (19 files)
+=================== 
+=================== 
+=================== 

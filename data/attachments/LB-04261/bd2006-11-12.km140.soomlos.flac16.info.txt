@@ -1,0 +1,62 @@
+Bob Dylan
+Agganis Arena
+Boston, Massachusetts
+November 12, 2006
+ 
+source: soomlos
+13th row center
+neumann km140's > lunatec v3 > microtrack 24/96 (24/44.1)
+audacity > cd wave > flac (16/44.1)
+
+Disc 1:
+01. introduction [00:45] 
+02. Absolutely Sweet Marie [04:39]
+03. Señor (Tales Of Yankee Power) [05:38]
+04. Honest With Me [06:42]
+05. Positively 4th Street [06:31]
+06. Masters Of War [05:22]
+07. 'Til I Fell In Love With You [06:39]
+08. When The Deal Goes Down [05:55]
+09. Cold Irons Bound [06:28]
+10. Every Grain Of Sand [06:53] 
+11. Rollin' And Tumblin' [07:28] 
+Total time: [63:07]
+
+Disc 2:
+01. Tangled Up In Blue [08:07]
+02. Nettie Moore [07:29]
+03. Highway 61 Revisited [09:08] 
+04. Thunder On The Mountain [06:26]
+05. Like A Rolling Stone [06:45]
+06. band introduction [00:37] 
+07. All Along The Watchtower [05:50]
+Total time: [44:28]
+    
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - lead guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2006-11-12d1t01.flac:89fc9c73c8edd04e9ce5c600a79c141b
+bd2006-11-12d1t02.flac:7c6c1344fafdd4b32768d4ed5c9a6820
+bd2006-11-12d1t03.flac:43d3907b1b849be4ff22faad9b58b936
+bd2006-11-12d1t04.flac:a25d7cbe1135478836aa2d5609d41acb
+bd2006-11-12d1t05.flac:1c574ea907408989ec8ac2994dfe7082
+bd2006-11-12d1t06.flac:af9ed7823dbbd5923475f8441dc49c74
+bd2006-11-12d1t07.flac:6b4962993645f07a757f869ce5aba4dd
+bd2006-11-12d1t08.flac:7ccbcb0908ba3c7f6f577c4eec4781e3
+bd2006-11-12d1t09.flac:9ec0ac2f4416d19c7627a21d5f361ea8
+bd2006-11-12d1t10.flac:bc403843124f0f948893f821156455e8
+bd2006-11-12d1t11.flac:1a6a52aa3fbedae8953e08e36149ade6
+bd2006-11-12d2t01.flac:5b9a72917f6bdb9cea7eb321e2cdbb5a
+bd2006-11-12d2t02.flac:27089032dfafecefb01e85bd8db06911
+bd2006-11-12d2t03.flac:08decf67cea1ad70f6625f567c729b98
+bd2006-11-12d2t04.flac:8cd3d5b42f0c466ff2bd1f0cfd01817a
+bd2006-11-12d2t05.flac:399d36504d972794abd557bf3c7382f9
+bd2006-11-12d2t06.flac:192381eef24010064b992ef284912f1d
+bd2006-11-12d2t07.flac:6ae201e35ea2c713e7255fe3fd246d54
+

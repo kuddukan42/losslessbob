@@ -1,0 +1,46 @@
+===================
+===================
+===================
+=== 93 02 07.md5
+===================
+===================
+===================
+d1e25185d52aa5227292b1b4b05e9005 *93 02 07  t04.shn
+fb5c2ba0fdfc39ae4a3e211b27b35413 *93 02 07  t01.shn
+f86ea094f7a6e2782cfaf42e0990612f *93 02 07  t02.shn
+bcf53658dd72b77c5a78a1090dc86e3b *93 02 07  t03.shn
+===================
+===================
+===================
+=== bd93-02-07-sbd.txt
+===================
+===================
+===================
+Bob Dylan
+1993 feb 07
+London UK
+
+(30min), sbd; incomplete, partial
+Good sound [A-]
+
+
+LINEAGE : ? > flacs > Dime > you
+
+1 Maggie's Farm
+2 Lenny Bruce
+3 All Along The Watchtower
+4 Stuck inside of Mobile*
+
+*Digital noice 2:20
+
+
+Line 001:  file '93 02 07  t04.shn' verified ok (checksum does match).
+Line 002:  file '93 02 07  t01.shn' verified ok (checksum does match).
+Line 003:  file '93 02 07  t02.shn' verified ok (checksum does match).
+Line 004:  file '93 02 07  t03.shn' verified ok (checksum does match).
+
+No errors occured.
+
+===================
+===================
+===================

@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-03-02-ccm4.flacf 
+=================== 
+=================== 
+=================== 
+8fd218639cf62aec30ec20567c1dca84  bd99-03-02-ccm4-LB-4597.txt
+73d8b459ce43e289444f0457c71a4d7a  bd99-03-03-ccm4-d1t01.flac
+5a73f6ef39902ce9f35b4117f62bec4f  bd99-03-03-ccm4-d1t02.flac
+036aaab09bdb7359364e8e206fab19d4  bd99-03-03-ccm4-d1t03.flac
+16ee9167e46166d199479c530b5858d9  bd99-03-03-ccm4-d1t04.flac
+7dfabf58a22ae30baf949fc2720cca4f  bd99-03-03-ccm4-d1t05.flac
+e2b8327f6ad9a9b9f690362bf9bb46d3  bd99-03-03-ccm4-d1t06.flac
+6e0463f229e55f821f9faf0ccc1c00ab  bd99-03-03-ccm4-d1t07.flac
+3db08d4829cdf275ca6109decaf943e9  bd99-03-03-ccm4-d2t01.flac
+c36169e274ec457feef56a8de639ee2d  bd99-03-03-ccm4-d2t02.flac
+3df3d4b668dc4a6677971833a8e7915b  bd99-03-03-ccm4-d2t03.flac
+99c5ff4f34bd6b81fd3bef7c5827d3d3  bd99-03-03-ccm4-d2t04.flac
+c222f2e0f4ef33e5225198a2f85f9d8f  bd99-03-03-ccm4-d2t05.flac
+08c4cb38a35afb08fc6b7d0728d1811b  bd99-03-03-ccm4-d2t06.flac
+fe219aed1d94f9eddba9a3182b01de44  bd99-03-03-ccm4-d2t07.flac
+37c6e88ebb823f4976efb3f0a2922b63  noname.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-03-02-ccm4.flacf 
+=================== 
+=================== 
+=================== 
+bd99-03-03-ccm4-d1t01.flac:88c182bb22b6a432cfe4bcf338bc570d
+bd99-03-03-ccm4-d1t02.flac:88ef6776230d2058914306b069b54e13
+bd99-03-03-ccm4-d1t03.flac:549e4304cc802407070d4c2aa4fb796a
+bd99-03-03-ccm4-d1t04.flac:ec5ee2508dadd7fe15ac8f667c245f49
+bd99-03-03-ccm4-d1t05.flac:3c29011a045b0ea0ac3784467be1e3b5
+bd99-03-03-ccm4-d1t06.flac:34ae28b3a06f89d3099b910beaac88dc
+bd99-03-03-ccm4-d1t07.flac:c9654eb3c4ff50b4fd87561389a4b036
+bd99-03-03-ccm4-d2t01.flac:9961b784caca0ab7f53127df19c316f7
+bd99-03-03-ccm4-d2t02.flac:242befa8f403a60e840a16156f886cd6
+bd99-03-03-ccm4-d2t03.flac:e0c2a288edb3c0bbf9132c13ebc75cf4
+bd99-03-03-ccm4-d2t04.flac:634198164e090c5e1f440a02dc96c52e
+bd99-03-03-ccm4-d2t05.flac:b8337afebe662295ce0e81596c25660f
+bd99-03-03-ccm4-d2t06.flac:ceac957bb1f9854a6e8037e871434d6c
+bd99-03-03-ccm4-d2t07.flac:cce3bc79129464ba8947125e8a5a6c46
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-03-02-ccm4.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.09       43592012 B   ---   --   ---xx   flac  0.5670  bd99-03-03-ccm4-d1t01.flac
+     4:55.07       52054508 B   ---   --   ---xx   flac  0.5205  bd99-03-03-ccm4-d1t02.flac
+     8:11.04       86621852 B   ---   --   ---xx   flac  0.5596  bd99-03-03-ccm4-d1t03.flac
+     5:59.60       63468764 B   ---   --   ---xx   flac  0.5191  bd99-03-03-ccm4-d1t04.flac
+     5:44.17       60721628 B   ---   --   ---xx   flac  0.5843  bd99-03-03-ccm4-d1t05.flac
+     7:42.67       81654428 B   ---   --   ---xx   flac  0.4966  bd99-03-03-ccm4-d1t06.flac
+     5:03.38       53538620 B   ---   --   ---xx   flac  0.4909  bd99-03-03-ccm4-d1t07.flac
+     7:10.45       75957884 B   ---   --   ---xx   flac  0.5401  bd99-03-03-ccm4-d2t01.flac
+     6:37.35       70113164 B   ---   --   ---xx   flac  0.4940  bd99-03-03-ccm4-d2t02.flac
+     6:57.63       73707020 B   ---   --   ---xx   flac  0.5364  bd99-03-03-ccm4-d2t03.flac
+     5:19.22       56323388 B   ---   --   ---xx   flac  0.5581  bd99-03-03-ccm4-d2t04.flac
+     6:27.69       68429132 B   ---   --   ---xx   flac  0.5205  bd99-03-03-ccm4-d2t05.flac
+     3:55.24       41510492 B   ---   --   ---xx   flac  0.5778  bd99-03-03-ccm4-d2t06.flac
+     3:50.38       40661420 B   ---   --   ---xx   flac  0.4528  bd99-03-03-ccm4-d2t07.flac
+    82:02.48      868354312 B                            0.5299  (14 files)
+=================== 
+=================== 
+=================== 

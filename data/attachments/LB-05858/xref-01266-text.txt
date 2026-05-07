@@ -1,0 +1,111 @@
+===================
+===================
+===================
+=== BD 1993-02-11 London, GB  - Bob Dylan.txt
+===================
+===================
+===================
+BOB DYLAN 
+
+Hammersmith Apollo
+London, England
+
+11 February 1993
+1. Maggie's Farm
+2. If Not For You
+3. All Along The Watchtower
+4. Tangled Up In Blue
+5. Watching The River Flow
+6. Stuck Inside Of Mobile With The Memphis Blues Again
+7. She Belongs To Me
+8. Tomorrow Night (Sam Coslow/Will Grosz)
+9. Jim Jones (trad. arr. by Bob Dylan)
+10. Desolation Row
+11. Girl From The North Country
+12. Cat's In The Well
+13. I And I
+14. Simple Twist Of Fate
+15. Highway 61 Revisited
+ 
+16. What Good Am I?
+17. Everything Is Broken
+18. It Ain't Me, Babe
+
+Concert # 461 of The Never-Ending Tour. 
+Concert # 5 of the 1993 Winter Tour Of Europe. 
+1993 concert # 5.Concert # 5 with the 9th Never-Ending Tour Band:
+
+Bob Dylan (vocal & guitar), 
+Bucky Baxter (pedal steel guitar & electric slide guitar), 
+John Jackson (guitar), 
+Tony Garnier (bass), 
+Winston Watson (drums & percussion).
+
+2, 4-6, 11, 13, 14, 18 Bob Dylan harmonica.
+1 Bucky Baxter backup vocal.
+8-11, 18 acoustic with the band.
+9, 18 without Winston Watson.
+11, 18 Bucky Baxter electric mandolin.
+
+6 new songs (33%) compared to previous concert. 
+5 new songs for this tour.
+Stereo audience recording, 130 minutes.
+Session info updated 28 March 1993.
+===================
+===================
+===================
+=== BD 1993-02-11 London, GB.ffp
+===================
+===================
+===================
+101 Maggie's farm - Bob Dylan.flac:1931f802132e3d8e4b8b02d00f56af14
+102 If Not For You - Bob Dylan.flac:30743b08a14c2baad0e50a656689511b
+103 All Along The Watchtower - Bob Dylan.flac:597bd424d5169612a096003a3c32420a
+104 Tangled Up In Blue - Bob Dylan.flac:ba34f446eac82bbcde8a08f2ecae8823
+105 Watching The River Flow - Bob Dylan.flac:2fa159893a66f8b99be84c25b27b20ac
+106 Stuck Inside Of Mobile With The Mephis Blues Again - Bob Dylan.flac:8dab92971d1cad66840ae61f9a9c197f
+107 She Belongs To Me - Bob Dylan.flac:626e6ada110d60a5d80038f45f268137
+108 Tomorrow Night - Bob Dylan.flac:3fe37e01004fc3bbb2d2de96d918708e
+201 Jim Jones - Live - Bob Dylan.flac:a2096c8c74c2d55576145642df7e46b8
+202 Desolation Row - Live - Bob Dylan.flac:faa512d962f372087620f0a96e88c479
+203 Girl From The North Country - Live - Bob Dylan.flac:a4093d46e056485c668c89f64199d6cb
+204 Cats In The Well - Live - Bob Dylan.flac:b3d3e9d8edf4327829ad2632f7b4e688
+205 I And I - Live - Bob Dylan.flac:1c0e88a373a1630c8f0a1e11949d1637
+206 Highway 61 Revisited - Live - Bob Dylan.flac:cf1bec41b9f19d71436d06bf2f90be00
+206 Simple Twist Of Fate - Live - Bob Dylan.flac:765df945d24ce0f89496864fd94033c8
+207 What Good Am I - Live - Bob Dylan.flac:e8ac2f3ed522a49d55941abf96f77057
+209 Everything Is Broken - Live - Bob Dylan.flac:255d5345c026981cacd6719f6da3624e
+210 It Ain't Me Babe - Live - Bob Dylan.flac:ffa377d3a3ceafbed16675fbe04377e4
+===================
+===================
+===================
+=== BD 1993-02-11 London, GB.md5
+===================
+===================
+===================
+803a1055ee1fde27f5352e61c4b16986 *101 Maggie's farm - Bob Dylan.flac
+014ee4745fb5b286595fb1ed0f8c7f68 *102 If Not For You - Bob Dylan.flac
+c8f191b0dcdf5b29b71acce62763bb49 *103 All Along The Watchtower - Bob Dylan.flac
+8b1454a46fa2d399d71ba7f72c969f22 *104 Tangled Up In Blue - Bob Dylan.flac
+354805241dd6236c6584e4d7e12beccf *105 Watching The River Flow - Bob Dylan.flac
+6a07da3d460a4647cc01f8a674ad4ebe *106 Stuck Inside Of Mobile With The Mephis Blues Again - Bob Dylan.flac
+7284495b5a25d2f7bf623e93404f6e24 *107 She Belongs To Me - Bob Dylan.flac
+13e7d2d568104ad24a97241443613e1c *108 Tomorrow Night - Bob Dylan.flac
+856eff20fc117869cb0de1f3d8a9cdda *201 Jim Jones - Live - Bob Dylan.flac
+1fd57fb0aa2df676d354a134a858e955 *202 Desolation Row - Live - Bob Dylan.flac
+958888b2f207e530ad7b5636f14fb508 *203 Girl From The North Country - Live - Bob Dylan.flac
+a1fe0cb4e6aaea8860b408710fad8e0f *204 Cats In The Well - Live - Bob Dylan.flac
+defcad4416beb0bee964ec1c5a7420cf *205 I And I - Live - Bob Dylan.flac
+0ee4bc85315f82639e2044e303298944 *206 Highway 61 Revisited - Live - Bob Dylan.flac
+dec1cbe0df80d1524f2828a01ae18f4d *206 Simple Twist Of Fate - Live - Bob Dylan.flac
+a08e622409e2270fc2730db416e38794 *207 What Good Am I - Live - Bob Dylan.flac
+3f8ea01f6499cd77c328b0880e95e7aa *209 Everything Is Broken - Live - Bob Dylan.flac
+f7542d21806c8ebeb35880bacbf18275 *210 It Ain't Me Babe - Live - Bob Dylan.flac
+866993172ae5dba4cfdfb8165e035ad7 *BD 1993-02-11 London, GB  - Bob Dylan.txt
+619359accdb6007474f164f930a2d322 *BD 1993-02-11 London, GB #1 - Bob Dylan.log
+2aa51d6c966cef474939cc25bb5e276a *BD 1993-02-11 London, GB #2 - Bob Dylan.log
+799b4611f4499801783ab8ef7aaa24cd *BD 1993-02-11 London, GB.ffp
+609df676ff0bd17b4747b510a154fc23 *BD 1993-02-11 London, GB.md5
+===================
+===================
+===================

@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-16-b.flacf 
+=================== 
+=================== 
+=================== 
+25a4a3aae8e27d9d253c4ebc38c36049  1-01 Duncan And Brady.flac
+7e076e7f05c17e3e001671a28bac9436  1-02 Song To Woody.flac
+26b988c5e2610ae5f502013e8171d1d2  1-03 Desolation Row.flac
+93249e24bc524eca7efb1d5850be6713  1-04 Girl Of The North Country.flac
+c7c0d24b31622ed92afa8b1bc5bc503f  1-05 Tangled Up In Blue.flac
+81ac4db5dd0eab042de7e17c7cea506e  1-06 Searching For A Soldier's Grave.flac
+3810dc5f7a8111e93105ff586df93005  1-07 Country Pie.flac
+b723fbb58be67bfe33e36bd06be923b3  1-08 Positively 4th Street.flac
+f765a79e840c1aa4355945bee2d55c53  1-09 I'll Be Your Baby Tonight.flac
+31ca7db657dd918066e04bdc93c1078f  1-10 Tonight I'll Be Staying Here With You.flac
+f36bccc9869f091fb63020d87cf0ccae  1-11 Drifter's Escape.flac
+f3bbdb82d7b0ac4ec8b8f4489307eea2  1-12 Leopard-Skin Pill-Box Hat.flac
+94f0a9284fea274c37ea6ce5bdc45e6a  2-01 Things Have Changed.flac
+301b5b4c949eb1cd16571d77d9cf6365  2-02 Like A Rolling Stone.flac
+0bf362a184ace22e886ea34ac2e58f49  2-03 One Too Many Mornings.flac
+e948ff0e727bfd4e14a8641cd5c19d72  2-04 Highway 61 Revisited.flac
+949a31836e47f23eb5220b0861918878  2-05 Blowin' In The Wind.flac
+e10e55ce5f40ffca3267c70f52868ed5  2000.7.16_Clarkston.md5
+565c5cbe449eebcd3c6a4664f245e722  Dylan_Clarkston_July_16_2000.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-16-b.flacf 
+=================== 
+=================== 
+=================== 
+1-01 Duncan And Brady.flac:9e622d34bfaff856c8c13821fde670c8
+1-02 Song To Woody.flac:0b055a0c29ce396835d78cab836f5095
+1-03 Desolation Row.flac:cea757b1148b653ac34b7dc936d10274
+1-04 Girl Of The North Country.flac:a7824f7361010fb6a2c35350dd72dc14
+1-05 Tangled Up In Blue.flac:e71d8e93a61e9d3af808c27495a63e87
+1-06 Searching For A Soldier's Grave.flac:cf0d5c3ddb2e47539765effed3d8d5da
+1-07 Country Pie.flac:05677725497992db0e9daa3fc297b317
+1-08 Positively 4th Street.flac:2c7e37c41c4f224d9f5cac64ea3c1cc3
+1-09 I'll Be Your Baby Tonight.flac:180d4c939f4a8f1ec0d5c321c4360cc2
+1-10 Tonight I'll Be Staying Here With You.flac:239828c44a97d2d8f984e5e633e00eb1
+1-11 Drifter's Escape.flac:d3512af435e7a8052cc5c920dc588d66
+1-12 Leopard-Skin Pill-Box Hat.flac:f9b784bc6706b4ed3ae834ba21471932
+2-01 Things Have Changed.flac:9b2992fd51dbc01d38e7d8d0263431f5
+2-02 Like A Rolling Stone.flac:f0c520749baf040ff0f5c0e5042d6c39
+2-03 One Too Many Mornings.flac:e2dd8b89bfbd2b725de311ab611f0434
+2-04 Highway 61 Revisited.flac:333d9f9510d51a9c6bb4a05a3b6effff
+2-05 Blowin' In The Wind.flac:e8e58e96c3be3f35595d7b033c60c5d2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-16-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.55       34880204 B   ---   --   ---xx   flac  0.5600  1-01 Duncan And Brady.flac
+     4:14.36       44890316 B   ---   --   ---xx   flac  0.4830  1-02 Song To Woody.flac
+     9:26.62       99988268 B   ---   --   ---xx   flac  0.5556  1-03 Desolation Row.flac
+     5:16.58       55878860 B   ---   --   ---xx   flac  0.4606  1-04 Girl Of The North Country.flac
+     7:30.18       79422380 B   ---   --   ---xx   flac  0.5787  1-05 Tangled Up In Blue.flac
+     3:11.71       33859436 B   ---   --   ---xx   flac  0.5096  1-06 Searching For A Soldier's Grave.flac
+     2:34.65       27318524 B   ---   --   ---xx   flac  0.5427  1-07 Country Pie.flac
+     7:13.34       76461212 B   ---   --   ---xx   flac  0.5229  1-08 Positively 4th Street.flac
+     5:48.29       61455452 B   ---   --   ---xx   flac  0.5388  1-09 I'll Be Your Baby Tonight.flac
+     5:29.64       58186172 B   ---   --   ---xx   flac  0.5164  1-10 Tonight I'll Be Staying Here With You.flac
+     4:13.45       44735084 B   ---   --   ---xx   flac  0.5477  1-11 Drifter's Escape.flac
+     8:15.74       87492092 B   ---   --   ---xx   flac  0.5225  1-12 Leopard-Skin Pill-Box Hat.flac
+     6:00.23       63558140 B   ---   --   ---xx   flac  0.5339  2-01 Things Have Changed.flac
+     7:40.04       81153452 B   ---   --   ---xx   flac  0.5305  2-02 Like A Rolling Stone.flac
+     6:44.42       71364428 B   ---   --   ---xx   flac  0.4799  2-03 One Too Many Mornings.flac
+     6:15.22       66201788 B   ---   --   ---xx   flac  0.5448  2-04 Highway 61 Revisited.flac
+     5:48.35       61469564 B   ---   --   ---xx   flac  0.5155  2-05 Blowin' In The Wind.flac
+    99:02.62     1048315372 B                            0.5274  (17 files)
+=================== 
+=================== 
+=================== 

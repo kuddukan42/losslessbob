@@ -1,0 +1,61 @@
+Bob Dylan
+University Of Toledo
+John F. Savage Hall
+Toledo, Ohio
+November 10, 2004  	
+
+Disc 1:
+01. introduction
+02. Leopard-Skin Pill-Box Hat
+03. Tonight I'll Be Staying Here With You
+04. Tweedle Dee & Tweedle Dum
+05. Visions Of Johanna
+06. Highway 61 Revisited
+07. Tryin' To Get To Heaven
+08. Most Likely You Go Your Way (And I'll Go Mine)
+09. Million Miles
+10. I'll Be Your Baby Tonight
+11. Love Sick
+12. Bye And Bye
+
+Disc 2:
+01. Honest With Me
+02. Every Grain Of Sand
+03. Summer Days
+(encore)
+04. Like A Rolling Stone
+05. band introduction
+06. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+16th row, right side floor
+akg391's > denecke ps-2/ad-20 > sony tcd-d8 (16bit/44.1kHz)
+sony tcd-d8 > m-audio mt1 > usb > hdd
+sony sound forge 9.0 > cd wave > flac
+
+ffp
+bd2004-11-10d1t01.flac:f50871eb950b4c46780dfd6344926305
+bd2004-11-10d1t02.flac:d678674e079c44d72652e2f9e0f76bba
+bd2004-11-10d1t03.flac:d5728f91be2e535e272be7f60ddda190
+bd2004-11-10d1t04.flac:095b5d5b7b0b1d35c554b8424597545b
+bd2004-11-10d1t05.flac:922b6cbfa79e51ce9a9d1497ee28d511
+bd2004-11-10d1t06.flac:e562d6fec4971832729e44af9fb0ec1b
+bd2004-11-10d1t07.flac:98a36c86d3b878df19e0d0531373d8d8
+bd2004-11-10d1t08.flac:b02ebb9f4a565a6237694371e2020cde
+bd2004-11-10d1t09.flac:41962a7d1aab3067a2b9ddc532bd1e56
+bd2004-11-10d1t10.flac:23cccd72a6cd30d95e4e690e656fb557
+bd2004-11-10d1t11.flac:26b9d2a5feddf2ce26e4043c8b69a111
+bd2004-11-10d1t12.flac:bb88a6d457d4012839fb5bab18f58d0e
+bd2004-11-10d2t01.flac:91ecbfd866ca333d1074e004515e2ff3
+bd2004-11-10d2t02.flac:e182286930ccf5978fba8b6aef4ea531
+bd2004-11-10d2t03.flac:af9a28d156b7ea371b3d5c7948395ac4
+bd2004-11-10d2t04.flac:1a506313e1601d95a3395c76872876ca
+bd2004-11-10d2t05.flac:109a2670fe7933a6d044e65a502de4cc
+bd2004-11-10d2t06.flac:3fb347821fba05910e549a8978555436

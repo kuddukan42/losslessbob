@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== 2005-11-21 (24-bit).ffp
+===================
+===================
+===================
+01 -  introduction .flac:6d63c9cf6484e9137640f0face3ed98c
+02 - Rumble (incomplete)Maggie's Farm.flac:6c3a064f58a2c3616e0f36b5290fc9bc
+03 - The Times They Are A-Changin'.flac:470584dcd276f8a711dc22d0137a0847
+04 - Million Dollar Bash.flac:20c086bdb9816b14e5aa4d6ba4d683de
+05 - It's Alright, Ma.flac:d11f2e191ba9b0742048afac54833859
+06 - Moonlight.flac:931e9a682d8c1e447d1504f495359806
+07 - Down Along The Cove.flac:015500fea366d9b50564650817309382
+08 - Boots Of Spanish Leather.flac:4f7d2996b309fca371a2ca5f83eb05ff
+09 - Cold Irons Bound.flac:fdd3df7d23d1c0394457416a75f497dd
+10 - Mr. Tambourine Man.flac:23210d17f0b097ef3dd81330b0e305a7
+11 - Tweedle Dee & Tweedle Dum.flac:d79d137e147c9a57033760b6c85976f8
+12 - Visions Of Johanna.flac:67ce3049e0d800d7a9d5c458580ba713
+13 - Honest With Me.flac:19213955f85dd4a84ea7ceb4549edfb3
+14 - Waiting For You.flac:82c16dccaae8505d91cfcc054926ef95
+15 - Highway 61 Revisited.flac:00aa8ea3f82f9436b0414ce9ee143daa
+16 - encore break.flac:88e37666d34cc30b603668378066df9c
+17 - London Calling.flac:17493c6905d29d5b7e8e6977638a716e
+18 - Like A Rolling Stone.flac:9f3a9c95ff54a462d1c0b63fdfaad919
+19 - All Along The Watchtower.flac:43797446c0d15ce7b466a099bf415551
+===================
+===================
+===================
+=== BD 2005-11-21 London (24-bit).md5
+===================
+===================
+===================
+7125d6f7df3179a6b6db30d5cdeb94a9 *01 -  introduction .flac
+0eaf6039742b4f2db7096bc35244f8ec *02 - Rumble (incomplete)Maggie's Farm.flac
+fea05c1e92c071b858747c770b1fc551 *03 - The Times They Are A-Changin'.flac
+e4f331b511c714eed7b7202e57b75017 *04 - Million Dollar Bash.flac
+dbd5a672ed29f4e0b9a31eb0780a51fd *05 - It's Alright, Ma.flac
+ceba51f554f711bc47ebf64168f6c2b1 *06 - Moonlight.flac
+17c88c7001b5868ecbda5ea205cf85cb *07 - Down Along The Cove.flac
+ab2728a69f63c93cebc6d07f2dba6bf2 *08 - Boots Of Spanish Leather.flac
+fa63d251bba3ad7ca9c017ddbe010744 *09 - Cold Irons Bound.flac
+0d213116b91a274aab9f27a3c2a15cd3 *10 - Mr. Tambourine Man.flac
+0f8b6c8383852cac822019b22f240617 *11 - Tweedle Dee & Tweedle Dum.flac
+fbf1e5ac7ee62d28ceb9faf992df1e0a *12 - Visions Of Johanna.flac
+720777479f6328b3854d9e3340d68b7c *13 - Honest With Me.flac
+e0b3296db48c98f5a5037af65b8429dd *14 - Waiting For You.flac
+5e46f7a251fe8a02ea99d8a2b50b4412 *15 - Highway 61 Revisited.flac
+d3644da1adda9c5154a26d6027461d5a *16 - encore break.flac
+49dc09f8ac5bbfb9eafdaeb726f6e21c *17 - London Calling.flac
+b4d6e3d081fbffc3e09127440ac43f54 *18 - Like A Rolling Stone.flac
+f8b76e32c1aa6924168e0707bcba0db5 *19 - All Along The Watchtower.flac
+e5a1cbe41a831bf4b23a0459fd0cf070 *2005-11-21 (24-bit).ffp
+4bc836808251a0bceb3ee32916b4af1e *bd05-11-21 (24-bit).txt
+===================
+===================
+===================
+=== bd05-11-21 (24-bit).txt
+===================
+===================
+===================
+BOB DYLAN
+Brixton Academy
+London
+November 21, 2005
+
+24-bit/96khz version
+
+Source: DPA 4021 > SD 722 (96k/24)
+Peak 4.14 > xACT
+
+ 1.  introduction 
+ 2.  Rumble (incomplete)/Maggie's Farm
+ 3.  The Times They Are A-Changin'
+ 4.  Million Dollar Bash
+ 5.  It's Alright, Ma (I'm Only Bleeding)
+ 6.  Moonlight
+ 7.  Down Along The Cove
+ 8.  Boots Of Spanish Leather
+ 9.  Cold Irons Bound
+10.  Mr. Tambourine Man
+11.  Tweedle Dee & Tweedle Dum
+12.  Visions Of Johanna (acoustic)
+13.  Honest With Me
+14.  Waiting For You
+15.  Highway 61 Revisited
+16   encore break
+17.  London Calling (incomplete - 1 verse)
+18.  Like A Rolling Stone
+19.  All Along The Watchtower
+--
+
+setlist from bobdates
+
+http://my.execpc.com/~billp61/112105s.html
+===================
+===================
+===================

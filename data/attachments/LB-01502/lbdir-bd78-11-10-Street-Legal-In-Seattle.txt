@@ -1,0 +1,123 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-11-10-Street-Legal-In-Seattle 
+=================== 
+=================== 
+=================== 
+8cccb478073822dec1ff411a03736950  bd78-11-10-Street-Legal-In-Seattle.txt
+a1c3e6a8dbfbb197eb6fb1da24bfa1c2  cd 1\Track 01.shn
+f64f58cacbc85f3069b3320743d8c26e  cd 1\Track 02.shn
+000321ed5803fd566c71ef0424e7c365  cd 1\Track 03.shn
+7b2ae5578d40d1b14238e1ebeaf612e8  cd 1\Track 04.shn
+115083fc6916ad334034b28680b09d64  cd 1\Track 05.shn
+32bd67990dab21ec18cb47d9c48a2995  cd 1\Track 06.shn
+953fdc2134f56a462b62b4349c6da52f  cd 1\Track 07.shn
+8a5cbb3dec7b17f77145688646b17305  cd 1\Track 08.shn
+687c0b2cc75ffcee9cf6bd7db3a55725  cd 1\Track 09.shn
+179c8350507b5b09ac4701e73618accb  cd 1\Track 10.shn
+08161e73559e19703e57b781553379d1  cd 1\Track 11.shn
+ad2d57cecd150dcfb20042c8933a2cda  cd 1\Track 12.shn
+a3136bd3a8385239d6d252cfffc164d6  cd 1\noname.md5
+16b22103f78d0d0f18d22b1bd8e6adaa  cd 2\Track 01.shn
+4837999fb0a9c79daae27deffee0cf90  cd 2\Track 02.shn
+f5a40ebb2f37fac78e0eba8b9de170d0  cd 2\Track 03.shn
+09f8aa72ca3975a1dac89251a813045b  cd 2\Track 04.shn
+062dec944884ea5055d0809d3c7ad43b  cd 2\Track 05.shn
+41df219f1700071df8345b1652c5fd2c  cd 2\Track 06.shn
+f1c3ead60d4f2c0f6e135465364cdc78  cd 2\Track 07.shn
+7f8c30ae38be7727b9f236e888ba5da8  cd 2\Track 08.shn
+846fa4ef62cad1649295bb03c49bb932  cd 2\Track 09.shn
+a496f809122117b63f635972ebc8e75f  cd 2\Track 10.shn
+568020a97a8fc041777b5be148dc69d6  cd 2\Track 11.shn
+5118a6eaae49c08a81bad8d0db759fbc  cd 2\Track 12.shn
+f5af298947edc540aec58c790435ac70  cd 2\Track 13.shn
+d9acff5e04269a8565a921bb38c9e667  cd 2\noname.md5
+5d7721b1eaeb7bbb020a3d793148e721  STREETLEGALINSEATTLEBACK.jpg
+3ba7e2b5da5e94910381e7a66d7054ec  STREETLEGALINSEATTLEFRONT.jpg
+ed27817499623cd5c34e4e0bf81e060a  Thumbs.db
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-11-10-Street-Legal-In-Seattle\cd 1 
+=================== 
+=================== 
+=================== 
+6492e23edd842e8a4c87dda4f93e85dd  [shntool]  Track_01.wav
+4bba4fa5d787ff9a38038fcf481bc6da  [shntool]  Track_02.wav
+b1f931114d9613cc7e3a2610c8f2cff2  [shntool]  Track_03.wav
+92f08da2ccb00934b34e0975e6984381  [shntool]  Track_04.wav
+840cfccc1708b3c992296392460d6223  [shntool]  Track_05.wav
+6f7c26483bee3ac913e3b8e7f9abba2d  [shntool]  Track_06.wav
+c203e82ecda00ab44f98062c8f4d9278  [shntool]  Track_07.wav
+862fdfc7ce20ce288d0896bc61edc324  [shntool]  Track_08.wav
+6ab942cc957f0bd3d7e7777928e62714  [shntool]  Track_09.wav
+8e8f0594591d12f2ae7cb5803cf09bd0  [shntool]  Track_10.wav
+46a3bf6ec266d2e6a0f311bcceb386c7  [shntool]  Track_11.wav
+d10efb42904e05634e548480f779e2f1  [shntool]  Track_12.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-11-10-Street-Legal-In-Seattle\cd 2 
+=================== 
+=================== 
+=================== 
+1ffd131992980780d99177879dc83298  [shntool]  Track_01.wav
+4db40aebcddc8d891f6456676a100be8  [shntool]  Track_02.wav
+b5c6fc793a153200ae7e8e96cc1ba246  [shntool]  Track_03.wav
+a90ad2d2368581b798975c9a9e9d44a3  [shntool]  Track_04.wav
+61796741bbc52ecd9db09531d58511a1  [shntool]  Track_05.wav
+5950dd2c9525bc051005a39cfd156298  [shntool]  Track_06.wav
+85092de0e77425606d05144b0f877423  [shntool]  Track_07.wav
+d58e77b95f4226e9fc0bbbf38e1c4dbd  [shntool]  Track_08.wav
+075316bfe7b871cb7ad133bfddd8d33d  [shntool]  Track_09.wav
+0d123036e80612bbf6b63263347a0af5  [shntool]  Track_10.wav
+136d3c1879cf4b220d74795a3e28afc1  [shntool]  Track_11.wav
+f075088934c40f4827b8d529d192e7ac  [shntool]  Track_12.wav
+bbb67bee882af37223408502d45ae305  [shntool]  Track_13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-10-Street-Legal-In-Seattle\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:52.57       41058992 B   -b-   --   -----    wav  1.0000  Track_01.wav
+     2:35.70       27506684 B   ---   --   -----    wav  1.0000  Track_02.wav
+     4:52.65       51661724 B   ---   --   -----    wav  1.0000  Track_03.wav
+     4:15.24       45038492 B   ---   --   -----    wav  1.0000  Track_04.wav
+     4:40.64       49542572 B   ---   --   -----    wav  1.0000  Track_05.wav
+     7:56.51       84086396 B   ---   --   -----    wav  1.0000  Track_06.wav
+     4:27.00       47098844 B   ---   --   -----    wav  1.0000  Track_07.wav
+     5:21.15       56659724 B   ---   --   -----    wav  1.0000  Track_08.wav
+     4:40.33       49469660 B   ---   --   -----    wav  1.0000  Track_09.wav
+     6:56.31       73455356 B   ---   --   -----    wav  1.0000  Track_10.wav
+     4:20.67       46021628 B   ---   --   -----    wav  1.0000  Track_11.wav
+     5:23.06       56990408 B   -b-   --   -----    wav  1.0000  Track_12.wav
+    59:23.33      628590480 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-11-10-Street-Legal-In-Seattle\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.74       35631180 B   -b-   --   -----    wav  1.0000  Track_01.wav
+     6:01.31       63753356 B   ---   --   -----    wav  1.0000  Track_02.wav
+    10:04.62      106691468 B   ---   --   -----    wav  1.0000  Track_03.wav
+     5:22.19       56845532 B   ---   --   -----    wav  1.0000  Track_04.wav
+     5:44.72       60850988 B   ---   --   -----    wav  1.0000  Track_05.wav
+     4:40.66       49547276 B   ---   --   -----    wav  1.0000  Track_06.wav
+     5:47.66       61366076 B   ---   --   -----    wav  1.0000  Track_07.wav
+     4:07.46       43679036 B   ---   --   -----    wav  1.0000  Track_08.wav
+     3:41.56       39116156 B   ---   --   -----    wav  1.0000  Track_09.wav
+     3:23.01       35811596 B   ---   --   -----    wav  1.0000  Track_10.wav
+     7:17.28       77152700 B   ---   --   -----    wav  1.0000  Track_11.wav
+     6:19.12       66883868 B   ---   --   -----    wav  1.0000  Track_12.wav
+     7:35.29       80331096 B   -b-   --   -----    wav  1.0000  Track_13.wav
+    73:28.38      777660328 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

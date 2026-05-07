@@ -1,0 +1,52 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-07-03-inc-mp3.flacf 
+=================== 
+=================== 
+=================== 
+4806d77447dc03a5ef43291f5c9a0f7c  03-Don't Think Twice, It's All Right.flac
+7692f0558900176be322599ae4e4ab8a  05-It's Alright, Ma (I'm Only Bleeding).flac
+d80116dd2ebacb1eb7646fad3bb3a058  09-Highway 61 Revisited.flac
+5cece22b83399e5e36db43ee82b7ccc5  10-Spirit On The Water.flac
+8b038d94ced8be3ffad5171a49e26494  13-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+5cfc7342c6ab8fafd604fa6eb29e4981  14-When The Deal Goes Down.flac
+38957d3013a19c4a043f01abb9cfe252  16-Blowin' In The Wind.flac
+93c800358f034a00d8ea0ec9857f691a  17-Thunder On The Mountain.flac
+39227cae70b9753863a5b31aaef7159a  bd07 07 03 inc.md5
+dfa0a4bf8871724e4dde4be07123f078  bd07 07 03 inc.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-07-03-inc-mp3.flacf 
+=================== 
+=================== 
+=================== 
+03-Don't Think Twice, It's All Right.flac:7fbf77f9a887c45fba64f1be234d4730
+05-It's Alright, Ma (I'm Only Bleeding).flac:9ad00b25913824ac3d7216a8daf3d666
+09-Highway 61 Revisited.flac:4e8dc7dea7ec6e085e25d7b760f01cf2
+10-Spirit On The Water.flac:c47622914d1e22ca0a6ce0c084373f1e
+13-Stuck Inside Of Mobile With The Memphis Blues Again.flac:4dfbaaf70d5f3f901645241b636e9c22
+14-When The Deal Goes Down.flac:b770566203b4197e32e70ac7de1c3fa7
+16-Blowin' In The Wind.flac:cd1126d0fdde4ba230a95fbb7d2b674a
+17-Thunder On The Mountain.flac:d944da1c862aa3158fcf1cb134e3ea8a
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-07-03-inc-mp3.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.73       62793260 B   -b-   --   ---xx   flac  0.4927  03-Don't Think Twice, It's All Right.flac
+     7:13.08       76400684 B   -b-   --   ---xx   flac  0.5546  05-It's Alright, Ma (I'm Only Bleeding).flac
+     5:18.17       56134700 B   -b-   --   ---xx   flac  0.5750  09-Highway 61 Revisited.flac
+     7:05.58       75105836 B   -b-   --   ---xx   flac  0.4406  10-Spirit On The Water.flac
+     8:14.43       87243308 B   -b-   --   ---xx   flac  0.5193  13-Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:37.38       70119980 B   -b-   --   ---xx   flac  0.4142  14-When The Deal Goes Down.flac
+     4:37.04       48872492 B   -b-   --   ---xx   flac  0.5230  16-Blowin' In The Wind.flac
+     5:52.47       62203436 B   -b-   --   ---xx   flac  0.5590  17-Thunder On The Mountain.flac
+    50:54.63      538873696 B                            0.5073  (8 files)
+=================== 
+=================== 
+=================== 

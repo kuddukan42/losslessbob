@@ -1,0 +1,33 @@
+Remember:
+
+*** bd1978-07-12d1t15-d2t01.merge.shn replaces BOTH bd1978-07-12d1t15.shn AND bd1978-07-12d2t01.shn ****
+
+In other words, you have two choices here.  You can go either with the unmerged version or the merged version.  Below is what the two version should look like:
+-----------------------------------------------------------
+
+unmerged version
+
+disc 1
+
+13. Going, Going, Gone
+14. Rainy Day Women # 12 & 35  - alt. "patch" source (bd1978-07-12d1t14.shn)
+15. True Love Tends To Forget - alt. "patch" source (bd1978-07-12d1t15.shn)
+
+disc 2
+1. True Love Tends To Forget (bd1978-07-12d2t01.shn)
+2. Gates Of Eden (bd1978-07-12d2t02.shn)
+3. The Man In Me
+---------------------------------------------------------
+
+merged version
+
+disk 1 
+
+13. Going, Going, Gone
+14. Rainy Day Women # 12 & 35  - alt. "patch" source (bd1978-07-12d1t14.shn)
+15. True Love Tends To Forget (bd1978-07-12d1t15-d2t01.merge.shn)
+
+disc 2
+
+2. Gates Of Eden  (bd1978-07-12d2t02.shn)
+3. The Man In Me

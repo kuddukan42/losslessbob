@@ -1,0 +1,16 @@
+3fc3071852bb385eabd2f39963292d15 *bd87-09-05-visit-to-islael-d1t01.flac
+13ba8eec2ee3c46f48c59966e8f67b98 *bd87-09-05-visit-to-islael-d1t02.flac
+474ce3c5a25717b8b229cd73c06525f2 *bd87-09-05-visit-to-islael-d1t03.flac
+f8fde3f31aaf00cc5eed85a7d7b34d27 *bd87-09-05-visit-to-islael-d1t04.flac
+cab5bd4b6fbeaa475f8e8fe95cba5583 *bd87-09-05-visit-to-islael-d1t05.flac
+9c916eb1d3bd56e2ff24dce821a16215 *bd87-09-05-visit-to-islael-d1t06.flac
+49db44c7c0b9f379401b26068f3716e8 *bd87-09-05-visit-to-islael-d1t07.flac
+019ccdc0620c395a2fe6d70f86538b62 *bd87-09-05-visit-to-islael-d1t08.flac
+6233fdac38723c9ceddc817ea4f4f3e4 *bd87-09-05-visit-to-islael-d2t01.flac
+dd1b9a12f4a32daf627f03fe436e56b5 *bd87-09-05-visit-to-islael-d2t02.flac
+f755a7a2a1c50a5145fddacbad8c0092 *bd87-09-05-visit-to-islael-d2t03.flac
+a6e240ca3ded3f45d7a3b9de24af743f *bd87-09-05-visit-to-islael-d2t04.flac
+d237fad26a3422636c40d52d9c6a0312 *bd87-09-05-visit-to-islael-d2t05.flac
+fcea516a75b26a1139d9034ecd550a96 *bd87-09-05-visit-to-islael-d2t06.flac
+6d4ba39a5ab10bee74b1faf602c924eb *bd87-09-05-visit-to-islael-d2t07.flac
+4c9929c3116db865f317ead9b5bb3442 *bd87-09-05-visit-to-islael-d2t08.flac

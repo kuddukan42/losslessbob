@@ -1,0 +1,75 @@
+2005, November 13
+Zurich, Switzerland	
+Hallenstadion
+
+Audience recording
+
+Disc One
+1	Drifter's Escape
+2	Señor (Tales Of Yankee Power)
+3	God Knows
+4	The Times They Are A-Changin'
+5	Watching The River Flow
+6	Standing In The Doorway
+7	High Water (For Charley Patton) 
+8	Every Grain Of Sand
+9	New Morning
+10	Highway 61 Revisited
+11	My Back Pages
+
+Disc Two
+1	'Til I Fell In Love With You
+2	Visions Of Johanna
+3	Summer Days
+4	Like A Rolling Stone
+5	All Along The Watchtower
+
+Bob Dylan - keyboard, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - violin, banjo, electric mandolin, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+
+CDR > EAC > removed 2 pops with Cool Edit >FLAC
+
+
+
+FLAC fingerprint
+bd2005-11-13d1t01.flac:a70daf1cf4bfbd085b56b0c02c59e362
+bd2005-11-13d1t02.flac:5544fbd871e7e4c28a00016411d560dc
+bd2005-11-13d1t03.flac:0babc902a2ef4505bf2bcd9db4c2bb70
+bd2005-11-13d1t04.flac:323a508d45f888788009f463fe1218a6
+bd2005-11-13d1t05.flac:9618942e6b31e61ff13763ca43389c26
+bd2005-11-13d1t06.flac:7bd1d3cb03d423a7748cca8c368a17c9
+bd2005-11-13d1t07.flac:1d32cedc30f2f2d12da42c4ac26f0580
+bd2005-11-13d1t08.flac:e34ed54d2d2eb20603e4dd011ba6d49c
+bd2005-11-13d1t09.flac:3bd95a90162dc9e65f00d2ad15b8fffe
+bd2005-11-13d1t10.flac:d4a8a4390207704a7c5ba7b6a75413b3
+bd2005-11-13d1t11.flac:4d050e7dd3edb83027ff70437c3adc02
+bd2005-11-13d2t01.flac:dba0ef4e1fd9d96367c808a40d14c34e
+bd2005-11-13d2t02.flac:aa86ae29c6e907e65e702885c1e434df
+bd2005-11-13d2t03.flac:bbdc2ae379044a9ccf9effacd16a2ac7
+bd2005-11-13d2t04.flac:3770931c623b1e0f2ccb51cc191ba864
+bd2005-11-13d2t05.flac:7082ffd306df2d760186a55ee0b700dc
+
+
+md5
+6fc8bc8a6852838a3312304495da0d45 *bd2005-11-13d1t01.flac
+975afc95fe67a27530143a91cba342ed *bd2005-11-13d1t02.flac
+c803230ded73c4eba937eadebf0cf3f9 *bd2005-11-13d1t03.flac
+cd06f7fb2c70d02e76bf5d44d87dc680 *bd2005-11-13d1t04.flac
+cd6324f1560d485dad2f478923b9bf4d *bd2005-11-13d1t05.flac
+bda21247e1af1e3a4e67741f19913f7c *bd2005-11-13d1t06.flac
+448728730d62700317fc9bf678ee3887 *bd2005-11-13d1t07.flac
+cd2cc0c8a9561a925f80022d89e5a472 *bd2005-11-13d1t08.flac
+602838cadd689c0c7f7d3f18fba2bedc *bd2005-11-13d1t09.flac
+018e8ea37d0b405b1c46ac4c798a48bc *bd2005-11-13d1t10.flac
+43b7a53b3ddbecb3b2412e91076baff7 *bd2005-11-13d1t11.flac
+8f478475e66e62735a85d1fc40e5f7d3 *bd2005-11-13d2t01.flac
+c53fe96a38a9a9fb71b54469b7dc1580 *bd2005-11-13d2t02.flac
+1012b54256393b8395ab01746da7b01a *bd2005-11-13d2t03.flac
+b0883eb1ab7a8ae020b35f55eb6ff320 *bd2005-11-13d2t04.flac
+32c9213f1a2b5eb59248b396b5d9dd45 *bd2005-11-13d2t05.flac
+

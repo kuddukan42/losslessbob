@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-17-jtt-e.flacf 
+=================== 
+=================== 
+=================== 
+a5d5060babec8df84e3630d8b32c8a84  Disc One\BD_October 17th 1987_Disc01Track01.flac
+ae119666d29fa6f8ebf29613ce051a25  Disc One\BD_October 17th 1987_Disc01Track02.flac
+c5b77b4dbdd20b60ba96c555585ee000  Disc One\BD_October 17th 1987_Disc01Track03.flac
+c20d5fbf8eb32445b9d7a65d320284ff  Disc One\BD_October 17th 1987_Disc01Track04.flac
+d832f5898b6322dd5b10615675434130  Disc One\BD_October 17th 1987_Disc01Track05.flac
+21bc015a010d07e9d13fa3f88c2ce239  Disc One\BD_October 17th 1987_Disc01Track06.flac
+49d5ece587d53f800769350070cb9d27  Disc One\BD_October 17th 1987_Disc01Track07.flac
+d8fbafd2b73c72c11f2b47a7d5213117  Disc One\BD_October 17th 1987_Disc01Track08.flac
+2440deb8e81a9472887646881c844918  Disc One\BD_October 17th 1987_Disc01Track09.flac
+7793678af54ae5dcc795c8580a1652d0  Disc One\BD_October 17th 1987_Disc01Track10.flac
+f7eab09f72649122d405fa61468f0d36  Disc Two\BD_October 17th 1987_Disc02Track01.flac
+d4ecbf1319aefab2296f45ba95aad326  Disc Two\BD_October 17th 1987_Disc02Track02.flac
+c0f49d70a46512a95ba4be981ce4e2ab  Disc Two\BD_October 17th 1987_Disc02Track03.flac
+0e8deb194dfda899639cd0e93b90d989  Disc Two\BD_October 17th 1987_Disc02Track04.flac
+f055ce5c5e260de58e8d13e035874e1a  Disc Two\BD_October 17th 1987_Disc02Track05.flac
+391759666645fe0c77b9d90f6aa69b16  Disc Two\BD_October 17th 1987_Disc02Track06.flac
+bfba6765a215050059df5bd8a91a1103  Disc Two\BD_October 17th 1987_Disc02Track07.flac
+480fe133f57109a55f1d31fec0f96821  Disc Two\BD_October 17th 1987_Disc02Track08.flac
+d92ae188fd9faf41eca6f2196cef1666  Disc Two\BD_October 17th 1987_Disc02Track09.flac
+904b032098f3351c04339646556aad5f  Dylan - Wembley Arena Oct. 17th 1987 2nd Gen.md5
+7e08dd08c416d51eafde1cac405c4cdb  Dylan - Wembley Oct. 17th 1987_Info.txt
+4e8105244ef781ac301872fb74289acc  Wembley Arena 17.10.1897 2nd Gen - F.jpg
+538ec38d9d89d04e5afa12e822f9cc68  Wembley Arena 17.10.1897 2nd Gen - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-17-jtt-e.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+BD_October 17th 1987_Disc01Track01.flac:b61237e063aa72ffbd058bd1d0a82465
+BD_October 17th 1987_Disc01Track02.flac:fe3564ca65e47a8e9e3ffdc505853101
+BD_October 17th 1987_Disc01Track03.flac:8eda945e22aca725480fd069645ddccc
+BD_October 17th 1987_Disc01Track04.flac:fb24168b87cd04f1bb4def2a4019df56
+BD_October 17th 1987_Disc01Track05.flac:56eac7a24e84559e52c72f3cd533400d
+BD_October 17th 1987_Disc01Track06.flac:26866c04f6e1402e6c7bb333e400ff80
+BD_October 17th 1987_Disc01Track07.flac:e7e0cf6edc672e91dc388bff6ccaa0aa
+BD_October 17th 1987_Disc01Track08.flac:57015a883e667b7c88330e2e7013d895
+BD_October 17th 1987_Disc01Track09.flac:5cd17b13f1f19bc2fb03c140ba4dd945
+BD_October 17th 1987_Disc01Track10.flac:106137f558f19fba46a377a4dc6a8430
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-17-jtt-e.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+BD_October 17th 1987_Disc02Track01.flac:f1012b5528b323048dcf4bb678607386
+BD_October 17th 1987_Disc02Track02.flac:8fff3f5b8371e9fcc792578604c79e02
+BD_October 17th 1987_Disc02Track03.flac:3161b910bb13facc56370ea9c03ce5df
+BD_October 17th 1987_Disc02Track04.flac:92eed8161fb4a201ebef5f77b58cbfdd
+BD_October 17th 1987_Disc02Track05.flac:63e0989a80c5b3c2527c4500327dc724
+BD_October 17th 1987_Disc02Track06.flac:5106eeff3bd5541ddec16b4791a6247f
+BD_October 17th 1987_Disc02Track07.flac:e4f323b0545dadbc358ff8fc28653b6c
+BD_October 17th 1987_Disc02Track08.flac:f1ec5efdadb5ea88102af22dc2f84b9b
+BD_October 17th 1987_Disc02Track09.flac:f77f3f0c391936c1d76cdcd1bf285fa9
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-10-17-jtt-e.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.09       49413212 B   ---   --   ---xx   flac  0.4865  BD_October 17th 1987_Disc01Track01.flac
+     5:13.14       55246172 B   ---   --   ---xx   flac  0.5095  BD_October 17th 1987_Disc01Track02.flac
+     4:14.02       44810348 B   ---   --   ---xx   flac  0.5045  BD_October 17th 1987_Disc01Track03.flac
+     6:49.45       72253484 B   ---   --   ---xx   flac  0.5046  BD_October 17th 1987_Disc01Track04.flac
+     4:39.08       49234460 B   ---   --   ---xx   flac  0.5209  BD_October 17th 1987_Disc01Track05.flac
+     5:06.24       54034892 B   ---   --   ---xx   flac  0.4930  BD_October 17th 1987_Disc01Track06.flac
+     5:54.04       62455052 B   ---   --   ---xx   flac  0.4850  BD_October 17th 1987_Disc01Track07.flac
+     5:00.07       52936508 B   ---   --   ---xx   flac  0.5313  BD_October 17th 1987_Disc01Track08.flac
+     3:05.71       32801036 B   ---   --   ---xx   flac  0.5456  BD_October 17th 1987_Disc01Track09.flac
+     3:33.27       37636748 B   ---   --   ---xx   flac  0.5143  BD_October 17th 1987_Disc01Track10.flac
+    48:15.61      510821912 B                            0.5074  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-10-17-jtt-e.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.74       46038092 B   ---   --   ---xx   flac  0.5055  BD_October 17th 1987_Disc02Track01.flac
+     4:33.12       48185468 B   ---   --   ---xx   flac  0.5299  BD_October 17th 1987_Disc02Track02.flac
+     3:21.13       35487020 B   ---   --   ---xx   flac  0.4884  BD_October 17th 1987_Disc02Track03.flac
+     4:02.38       42778220 B   ---   --   ---xx   flac  0.4636  BD_October 17th 1987_Disc02Track04.flac
+     3:56.43       41731580 B   ---   --   ---xx   flac  0.5259  BD_October 17th 1987_Disc02Track05.flac
+     4:59.26       52804796 B   ---   --   ---xx   flac  0.5260  BD_October 17th 1987_Disc02Track06.flac
+     5:29.06       58049756 B   ---   --   ---xx   flac  0.5229  BD_October 17th 1987_Disc02Track07.flac
+     4:04.69       43203932 B   ---   --   ---xx   flac  0.5357  BD_October 17th 1987_Disc02Track08.flac
+     3:39.16       38669276 B   ---   --   ---xx   flac  0.5419  BD_October 17th 1987_Disc02Track09.flac
+    38:26.72      406948140 B                            0.5164  (9 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,11 @@
+01-Gotta Serve Somebody.flac:0c7fd2cde54cacf6724f86a152d4bffb
+02-Million Miles.flac:d945dc51097ce65ed437b6ff94ddf0d4
+03-Just Like Tom Thumbs Blues.flac:1c0a582777c41d4b0de2057059ef75b9
+04-I'm Not Supposed To Care.flac:b9787b5d5e010b3002b658f9010d4e05
+05-Cold Irons Bound.flac:e263b87e774915fc8a26fd432ee9e916
+06-Tomorrow Is A Long Time.flac:3ef03eec4aed2d79bbe6648327b54f0b
+07-Masters Of War.flac:4f684898dfc382099df828a39707dbad
+08-My Back Pages.flac:ce54b733c1f56f383f1ca308db7db50d
+09-Tangled Up In Blue.flac:91c63f4a62db1612aced37058b7c06a6
+10-Every Grain Of Sand.flac:42b0513f32b0b8de37247cbfff16818a
+11-Highway 61 Revisited.flac:d7b721e801c248b8add33182c6a1981c

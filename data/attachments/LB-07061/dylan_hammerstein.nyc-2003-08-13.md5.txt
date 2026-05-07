@@ -1,0 +1,32 @@
+7b61547ed90a893573f00a49a5e7d066 *d1\guitar boogie shuffle.LOG
+5166d01f99b87d3af170cb80ef318147 *d1\Track01.flac
+3ec52c88e47196fd8046a4834f8ba837 *d1\Track02.flac
+a4167afd9062fc9e0c38543ac6d5c079 *d1\Track03.flac
+86669747bc6b5feef0c6318de22a2a9a *d1\Track04.flac
+6478c0eaee8f7a583687e7504b8fa668 *d1\Track05.flac
+0abba17f50fb7b834d4c36aada241a10 *d1\Track06.flac
+b9ece342c0768f7503a68ffc25acf236 *d1\Track07.flac
+4a3c0f0a0cf241e5eaecc66207708bb4 *d1\Track08.flac
+070582f60f92820627d5730df746626e *d1\Track09.flac
+0018d4a9218cafff14d20c1cc181dc1c *d1\Track10.flac
+631117965f36939cb8d780ee979e5a9e *d1\Track11.flac
+c2d0ab3dd6b6ec4afcbf1f1eac89aa76 *d1\Track12.flac
+e5e15eca9377182a0042cea3e5e0cf8f *d1\d1.md5
+cb12d50a0e10a18b3a85b8a0a1e9ea05 *d2\gbs d2.LOG
+7a6a891a310f94db14690715ca12099a *d2\Track01.flac
+82e5593170129a34b5e9ecf236b5c935 *d2\Track02.flac
+ccb3ac984540204d48a2e9eb486ab3f3 *d2\Track03.flac
+c4cddeb1f2ea36e08754beaf65942785 *d2\Track04.flac
+afa73e5201c08b07968d4959e36a9925 *d2\Track05.flac
+e914790b78879e80d6a65ee27c12db93 *d2\Track06.flac
+285cca87a4a5f55d90cfa09af3316613 *d2\Track07.flac
+36e810542a9f28a849f4e4b54133a565 *d2\Track08.flac
+edb891651e64c7345c73c6e11137245b *d2\Track09.flac
+71c07eb6789764ef3aff6ac6acc611b5 *d2\Track10.flac
+b4ebac33f56488079ef3e2a27d38eaa9 *d2\Track11.flac
+e7ff74255d0946c1e6b61bc955f93f6a *d2\d2.md5
+4dda84bf0fe60d6faeda9d09e77bb55e *guitar boogie shuffle.txt
+025339d9b7d5ef6a3b4e24676b0b3f2d *artwork\inside front 600 dpi.jpg
+e5e76f94837fc2905674c7aa800d0e6e *artwork\inside back 600 dpi.jpg
+3e324addc64508b992efef29a42f4f67 *artwork\back 600 dpi.jpg
+e94a6570d1d5c8bd2c26755fc6c1f515 *artwork\front 600 dpi.jpg

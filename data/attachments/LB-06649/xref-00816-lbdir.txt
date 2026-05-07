@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-04-05-Songs-Of-Darkness-c.flacf 
+=================== 
+=================== 
+=================== 
+04096b2964c15863cd9cd3c782992db4  Bob Dylan_Songs Of Darkness Songs Of Light_ Liberated Boot.txt
+b889e4f3870cea91348d9a13fa4be995  CD1\CD1.md5
+91adce39e5a74a9761c530dd5aaf2996  CD1\Track01.flac
+a5b1475a5b216a98eea30ce664b63333  CD1\Track02.flac
+c9708f88086d53fda5d7ca9664997880  CD1\Track03.flac
+eeb06f238814b4908448672987341144  CD1\Track04.flac
+7e6af69ce2dc932f270e623ce128d299  CD1\Track05.flac
+196bc3c4f07ebac6dd2efbf64e9b3f53  CD1\Track06.flac
+c4661096cea61aa0e55a88100482d178  CD1\Track07.flac
+98125be48119173a1037403bc43269f1  CD1\Track08.flac
+7069322c928b8045a6676cc577974834  CD1\Track09.flac
+f70eb1ab9dd0a980cad35fdf0b87bb2f  CD1\Track10.flac
+5332e3b383c3820155af3e917a8687b6  CD1\Track11.flac
+06b9c26b6c184bafbd3e740b47c2a015  CD2\CD2.md5
+5b843ac3e143c392109aedd3a9f38f89  CD2\Track01.flac
+7db3346ba5627587ed90f8546da761c0  CD2\Track02.flac
+67139ba49d4c068b81632758af381285  CD2\Track03.flac
+16aedab0d0cf5202ac988e73702d99bd  CD2\Track04.flac
+1feb58017f2b233ac88c37e136f0c0aa  CD2\Track05.flac
+5a0432fb184f501a911ba9b95d1065b6  CD2\Track06.flac
+b19005539084dda1c6b0eee7217bb974  CD2\Track07.flac
+78b429eac4f78212ad0f99712a37d106  CD2\Track08.flac
+0f70344884d2346b9901c6eb7d9349bb  CD2\Track09.flac
+1d598de0ab35d89f8a1ce884acfd73c7  CD2\Track10.flac
+cf33a6ed5e0b7aaf1d941e2b55b0aacc  CD2\Track11.flac
+b20d71df1e69a62433a3dad165cab457  Dylan_Songs Of Dark_Back.jpg
+d8e235643835b35f0aec5b1f14897c8b  Dylan_Songs Of Dark_Front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-04-05-Songs-Of-Darkness-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+Track01.flac:e2166d1959418180858a62ee13f98562
+Track02.flac:b320be84484c5ffaf6dd7e4d91b7dff6
+Track03.flac:ae1f9fed2a581a3a7b8cb880b080edcd
+Track04.flac:7fa1ef1ab2f4bd2b4b7b80e9d7c3a1c8
+Track05.flac:b8f7684fa55fef26448edb11b0f02397
+Track06.flac:12a21bc5a06bbcc9460b44235f411a5e
+Track07.flac:6333d69344f53ae0cdcf94dca48a22c0
+Track08.flac:a25b81e885885900f2ff77acdabac2b7
+Track09.flac:9e96d950921a87033c139447440bbf21
+Track10.flac:41ebd7dd0bdaf86fc0d7619cb3aabf1b
+Track11.flac:2d78788c80836369c91902e414beb94a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-04-05-Songs-Of-Darkness-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+Track01.flac:feeff7116ddfc4a3a605559f6d8d3c56
+Track02.flac:bb9bd05ed3cf6701fc88f0c335161991
+Track03.flac:ac3f5819fb0bf819bcc69d31972fc714
+Track04.flac:2d5fc2a1aa11b1c66056f2e2d5baa1d8
+Track05.flac:dd285d84d460c557fbdc83c07e83c782
+Track06.flac:810500162f0251592d14e0a04bab7613
+Track07.flac:82a654cb0575767a60b62265070bc9e2
+Track08.flac:5768196c7d192ea16f2474fad1dc0f3c
+Track09.flac:782fee536ea80f7a7c9bd0fdb2859f01
+Track10.flac:59a7527a1bd7bf5d04a0cfb86bb0dea8
+Track11.flac:6c34031e032356ed0431d4b2b4ea465d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-04-05-Songs-Of-Darkness-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.25       53155244 B   ---   --   ---xx   flac  0.7592  Track01.flac
+     4:36.50       48804044 B   ---   --   ---xx   flac  0.7000  Track02.flac
+     5:55.50       62739644 B   ---   --   ---xx   flac  0.7561  Track03.flac
+     8:52.37       93931868 B   ---   --   ---xx   flac  0.6978  Track04.flac
+     4:59.63       52891820 B   ---   --   ---xx   flac  0.6869  Track05.flac
+     8:12.50       86906444 B   ---   --   ---xx   flac  0.7286  Track06.flac
+     7:12.12       76233068 B   ---   --   ---xx   flac  0.6044  Track07.flac
+     7:53.13       83467820 B   ---   --   ---xx   flac  0.6053  Track08.flac
+     9:27.25      100077644 B   ---   --   ---xx   flac  0.6630  Track09.flac
+     7:05.37       75057068 B   ---   --   ---xx   flac  0.7718  Track10.flac
+     7:08.25       75558044 B   ---   --   ---xx   flac  0.6248  Track11.flac
+    76:25.12      808822708 B                            0.6865  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-04-05-Songs-Of-Darkness-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:45.43       82127180 B   ---   --   ---xx   flac  0.6570  Track01.flac
+     7:41.57       81454508 B   ---   --   ---xx   flac  0.6297  Track02.flac
+     7:50.15       82943324 B   ---   --   ---xx   flac  0.5536  Track03.flac
+     6:28.15       68478524 B   ---   --   ---xx   flac  0.6860  Track04.flac
+     4:35.08       48528860 B   ---   --   ---xx   flac  0.5636  Track05.flac
+     5:47.50       61328444 B   ---   --   ---xx   flac  0.5692  Track06.flac
+     6:59.17       73951628 B   ---   --   ---xx   flac  0.6378  Track07.flac
+     7:54.48       83726540 B   ---   --   ---xx   flac  0.5580  Track08.flac
+     5:48.30       61457804 B   ---   --   ---xx   flac  0.4624  Track09.flac
+     7:47.50       82496444 B   ---   --   ---xx   flac  0.6371  Track10.flac
+     8:13.70       87129884 B   ---   --   ---xx   flac  0.6346  Track11.flac
+    76:52.28      813623140 B                            0.6029  (11 files)
+=================== 
+=================== 
+=================== 

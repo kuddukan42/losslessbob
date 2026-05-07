@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-10-25-Nice-To-Be-Up-Here-In-Texas.flacf 
+=================== 
+=================== 
+=================== 
+05fe55c0f771434ab873ac2c177dda1c  Artwork\Nice To Be Up Here In Texas (Back Cover).jpg
+713b25891664dc0a43402e77d55d3181  Artwork\Nice To Be Up Here In Texas (Front Cover).jpg
+13c12b458c23fc2a3505fc0da7934860  Bob Dylan - Nice To Be Up Here In Texas.md5
+e21cc6f472a94800e3a3132ac6beebd4  Bob Dylan - Nice To Be Up Here In Texas.txt
+c6702a350e867e3671ee13e8688765e3  Disc 1\Disc1Track01.flac
+03b0e7c28daf07edd23bf3e7f4572bc2  Disc 1\Disc1Track02.flac
+9009ce2f8ce45fbdc2b50bff4db20ca4  Disc 1\Disc1Track03.flac
+bc9bcbf2498c89fa1f274946e696260f  Disc 1\Disc1Track04.flac
+09c05b0db3bf696cc61cca826795bebb  Disc 1\Disc1Track05.flac
+6291e2b2ce4b24f90ab7de52b9d7e560  Disc 1\Disc1Track06.flac
+8af84bae6b53c7819a3e6c358620c555  Disc 1\Disc1Track07.flac
+d257233b8337adaca7e9fcc0b3eec2af  Disc 1\Disc1Track08.flac
+14c081eba8a6f42e6dcec825306d7256  Disc 2\Disc2Track01.flac
+c8232bfa84b22e702862234bdded8f60  Disc 2\Disc2Track02.flac
+a0f96b8c35ecbad525d6c9980b6ae662  Disc 2\Disc2Track03.flac
+258701c8805e3439f52b357218e9848d  Disc 2\Disc2Track04.flac
+101d3c1ae19c0d6e051817eecffc7e5d  Disc 2\Disc2Track05.flac
+956d7e387328155156424dce6b7e3fa0  Disc 2\Disc2Track06.flac
+91e782e03fb7611a4047f65810eac987  Disc 2\Disc2Track07.flac
+eaaa80fb8ca918648bb1b43183227c9e  Disc 2\Disc2Track08.flac
+deead13eec76d8dd506d6a98ac70622c  Disc 2\Disc2Track09.flac
+c8e92e2e457a1764513b0fbbbd022fcc  Disc 2\Disc2Track10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-10-25-Nice-To-Be-Up-Here-In-Texas.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+Disc1Track01.flac:45efcddce303dc09e8a72d2448056d65
+Disc1Track02.flac:1891ca554dc3f142b9db629a22ca4703
+Disc1Track03.flac:f5b6d40a52403fedaa7b94af43a004f1
+Disc1Track04.flac:ea4e71182936bc557d04be1f6f1579c2
+Disc1Track05.flac:7c955da4d11d80fb519621a74d1c94fd
+Disc1Track06.flac:191fd5008ff66827aeca77533104b52f
+Disc1Track07.flac:47c4927beab610aaaf628626175739ec
+Disc1Track08.flac:da1ed1a6c4aea304df1420ecaf5efb19
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-10-25-Nice-To-Be-Up-Here-In-Texas.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+Disc2Track01.flac:0ffa2e77f825474a9eae8e2ba1180ddd
+Disc2Track02.flac:62d0692999cbac95fa7a0a9e86c2427e
+Disc2Track03.flac:933d4d55b98f9a05b655e59120005d76
+Disc2Track04.flac:c0f428cac0a3f68b562d31dff120f629
+Disc2Track05.flac:939192e2ddf6bdc110a228e0fc09701a
+Disc2Track06.flac:e0dc4d96860384ecc6f789ffde21965c
+Disc2Track07.flac:28c47223a4e923bb1e143a2bdf784ca4
+Disc2Track08.flac:bea8e3806319d7055782d2f32aa7b523
+Disc2Track09.flac:707157020b881ab080ccbdb07d209c73
+Disc2Track10.flac:43e442778a0f6387a08e7d3698338d94
+=================== 
+=================== 
+=================== 
+=== shntool for: bd91-10-25-Nice-To-Be-Up-Here-In-Texas.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:45.68       29265980 B   ---   --   ---xx   flac  0.5549  Disc1Track01.flac
+     5:41.37       60239468 B   ---   --   ---xx   flac  0.6769  Disc1Track02.flac
+     4:48.21       50852636 B   ---   --   ---xx   flac  0.6228  Disc1Track03.flac
+     7:03.44       74720732 B   ---   --   ---xx   flac  0.5676  Disc1Track04.flac
+     5:48.01       61389596 B   ---   --   ---xx   flac  0.6244  Disc1Track05.flac
+     7:03.52       74739548 B   ---   --   ---xx   flac  0.6482  Disc1Track06.flac
+     6:54.49       73144892 B   ---   --   ---xx   flac  0.6310  Disc1Track07.flac
+     4:53.10       51708764 B   ---   --   ---xx   flac  0.6248  Disc1Track08.flac
+    44:58.57      476061616 B                            0.6225  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd91-10-25-Nice-To-Be-Up-Here-In-Texas.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.39       67300172 B   ---   --   ---xx   flac  0.6113  Disc2Track01.flac
+     6:15.31       66222956 B   ---   --   ---xx   flac  0.5267  Disc2Track02.flac
+     3:27.19       36559532 B   ---   --   ---xx   flac  0.6055  Disc2Track03.flac
+     8:01.51       84968396 B   ---   --   ---xx   flac  0.6393  Disc2Track04.flac
+     3:48.73       40390940 B   ---   --   ---xx   flac  0.6767  Disc2Track05.flac
+     4:59.08       52762460 B   ---   --   ---xx   flac  0.6539  Disc2Track06.flac
+     5:00.43       53021180 B   ---   --   ---xx   flac  0.6410  Disc2Track07.flac
+     6:43.68       71249180 B   ---   --   ---xx   flac  0.6586  Disc2Track08.flac
+     6:12.02       65625548 B   ---   --   ---xx   flac  0.6359  Disc2Track09.flac
+     7:30.28       79445900 B   ---   --   ---xx   flac  0.6387  Disc2Track10.flac
+    58:20.62      617546264 B                            0.6278  (10 files)
+=================== 
+=================== 
+=================== 

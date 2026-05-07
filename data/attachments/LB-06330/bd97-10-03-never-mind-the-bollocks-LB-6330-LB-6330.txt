@@ -1,0 +1,12 @@
+Bob Dylan, 10/3/97, Cardiff, Wales, 2CDR
+
+LB-6330, (68min+75min), BOOTLEG: Never Mind the Bollocks; cd > ultraplex > eac > wav > flac;
+---------------------------------------------------
+has tv band on d1t5; this was eaced twice in secure mode and did not get any eac errors but got same digital flaws each time; 9/27/97 filler rates A-; 
+
+(a bittorrent from 06/10 has same digital flaws; described as "Lineage My Cd Silver Bootleg > EAC > TLH > flac 8 > Dime, Extracted from Silver on 5 May 2008" with filenames like "CD1\Track01.flac"; xref-00426 )
+---------------------------------------------------
+drop/cut between cdrs; has clipping and limiting; small drop d1t9 3:49, d1t10 2:19, 3:59, 4:01, d1t11 1:01, 2:56, 3:51 plus more like this
+---------------------------------------------------
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

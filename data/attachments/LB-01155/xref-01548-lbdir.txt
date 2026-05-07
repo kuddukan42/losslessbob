@@ -1,0 +1,95 @@
+===================
+===================
+===================
+=== md5 for: bd00-05-12-f.flacf
+===================
+===================
+===================
+dac8ae270580b8d6507fd39f06233916 *2000_05_12_1.PDF
+f4e81710a0d7e3bbd5cebe318a651693 *2000_05_12_HANNOVER_CD1\NONAME.MD5
+c1017b9251d63cb3c72f5f61536311c5 *2000_05_12_HANNOVER_CD1\TRACK01.SHN
+fe092c63c25dfef7539c1bbce7849182 *2000_05_12_HANNOVER_CD1\TRACK02.SHN
+0003260863b1130d62506afc30f89e50 *2000_05_12_HANNOVER_CD1\TRACK03.SHN
+10d484d3751da45c4d098b977482d315 *2000_05_12_HANNOVER_CD1\TRACK04.SHN
+f85d5bb535307af320f19910db4107a8 *2000_05_12_HANNOVER_CD1\TRACK05.SHN
+382cba719921734af2b32c8a4211b395 *2000_05_12_HANNOVER_CD1\TRACK06.SHN
+a97ef78063c72fb32c789f1b471d269d *2000_05_12_HANNOVER_CD1\TRACK07.SHN
+bc306b5690b5bd2586dfaba9193370fa *2000_05_12_HANNOVER_CD1\TRACK08.SHN
+ccc9504daa29bd775fe29824f79290de *2000_05_12_HANNOVER_CD1\TRACK09.SHN
+d525a31b7526ac54846a9afb53839e41 *2000_05_12_HANNOVER_CD1\TRACK10.SHN
+f00e9b5f1edddecda0c323fa864bb45e *2000_05_12_HANNOVER_CD1\TRACK11.SHN
+9eec8c01b1f1aea8828d7c757290dffe *2000_05_12_HANNOVER_CD2\NONAME.MD5
+a3bcfd8baac1dab0eaf440999f88f321 *2000_05_12_HANNOVER_CD2\TRACK01.SHN
+e3473c32e68d10b3f5a2b33a119b0c95 *2000_05_12_HANNOVER_CD2\TRACK02.SHN
+693ff9770450a28d365906ff87e6ed41 *2000_05_12_HANNOVER_CD2\TRACK03.SHN
+8409b1df5f3584f77fa44a48044f75d9 *2000_05_12_HANNOVER_CD2\TRACK04.SHN
+310b1647dada58dc9d84a98cb67a5890 *2000_05_12_HANNOVER_CD2\TRACK05.SHN
+95d0d3835efc36904dc5c54340fd29b3 *2000_05_12_HANNOVER_CD2\TRACK06.SHN
+d3c2e11b6e73656c5400a84042c6f868 *2000_05_12_HANNOVER_CD2\TRACK07.SHN
+7ca989d9f5190c4d662272122f5482b6 *2000_05_12_HANNOVER_CD2\TRACK08.SHN
+===================
+===================
+===================
+=== shntool md5/hash for: bd00-05-12-f.flacf
+===================
+===================
+===================
+e5378d8cb4e24ebbc4b0e5f4cf7252f3  [shntool]  2000_05_12_HANNOVER_CD1\TRACK01.SHN
+adab2858a66ec9b7d2c24d4374716e75  [shntool]  2000_05_12_HANNOVER_CD1\TRACK02.SHN
+a175249d95089e5dc1ea708508a2dd45  [shntool]  2000_05_12_HANNOVER_CD1\TRACK03.SHN
+fcf0e3e7e24e6610d6ebc2cfb4959bde  [shntool]  2000_05_12_HANNOVER_CD1\TRACK04.SHN
+dbb54f7399bf928cb20357b86e40fa2a  [shntool]  2000_05_12_HANNOVER_CD1\TRACK05.SHN
+351cb23831843428a8ea16a23484a8f0  [shntool]  2000_05_12_HANNOVER_CD1\TRACK06.SHN
+6958113795977f12264570a01d5d24c3  [shntool]  2000_05_12_HANNOVER_CD1\TRACK07.SHN
+2ee39bf14b2c413415849f8a23d2b0ee  [shntool]  2000_05_12_HANNOVER_CD1\TRACK08.SHN
+2d83a7420771e964692fac23bb95f4e5  [shntool]  2000_05_12_HANNOVER_CD1\TRACK09.SHN
+b50a693a28df4a9f861c04e9428e57f6  [shntool]  2000_05_12_HANNOVER_CD1\TRACK10.SHN
+49b26394061110917b6779f000f880c0  [shntool]  2000_05_12_HANNOVER_CD1\TRACK11.SHN
+91eeffdcf3dbaacf2934b96b6099fcc5  [shntool]  2000_05_12_HANNOVER_CD2\TRACK01.SHN
+6ba992e8c19b48d122dd430864dfb46e  [shntool]  2000_05_12_HANNOVER_CD2\TRACK02.SHN
+943458ea99503f6a5e020e11e2192911  [shntool]  2000_05_12_HANNOVER_CD2\TRACK03.SHN
+b34287a40587706c97c22b53d785336f  [shntool]  2000_05_12_HANNOVER_CD2\TRACK04.SHN
+15736305ac72f3f0ebdbb5c20aa1395c  [shntool]  2000_05_12_HANNOVER_CD2\TRACK05.SHN
+e27d4d0a46cf252dcfff29e0c2a5633f  [shntool]  2000_05_12_HANNOVER_CD2\TRACK06.SHN
+beb486f975e7e61a2979f597f924e172  [shntool]  2000_05_12_HANNOVER_CD2\TRACK07.SHN
+94090d8594924c3842b867c173caebea  [shntool]  2000_05_12_HANNOVER_CD2\TRACK08.SHN
+===================
+===================
+===================
+=== shntool len for: bd00-05-12-f.flacf\2000_05_12_HANNOVER_CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:23.43        4158380 B   ---   --   ---xx    shn  0.5362  TRACK01.SHN
+     3:55.32       41529308 B   ---   --   ---xx    shn  0.5954  TRACK02.SHN
+     6:53.53       72977900 B   ---   --   ---xx    shn  0.5404  TRACK03.SHN
+     9:23.34       99393212 B   ---   --   ---xx    shn  0.5474  TRACK04.SHN
+     5:06.09       53999612 B   ---   --   ---xx    shn  0.4411  TRACK05.SHN
+     7:40.69       81306332 B   ---   --   ---xx    shn  0.6229  TRACK06.SHN
+     5:30.42       58310828 B   ---   --   ---xx    shn  0.5284  TRACK07.SHN
+     2:40.23       28278140 B   ---   --   ---xx    shn  0.6227  TRACK08.SHN
+     5:47.30       61281404 B   ---   --   ---xx    shn  0.5765  TRACK09.SHN
+     6:16.28       66392300 B   ---   --   ---xx    shn  0.5509  TRACK10.SHN
+     6:04.11       64235516 B   ---   --   ---xx    shn  0.6100  TRACK11.SHN
+    59:41.74      631862932 B                            0.5615  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd00-05-12-f.flacf\2000_05_12_HANNOVER_CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.56       59578556 B   ---   --   ---xx    shn  0.5148  TRACK01.SHN
+     8:35.40       90940124 B   ---   --   ---xx    shn  0.6322  TRACK02.SHN
+     5:56.31       62871356 B   ---   --   ---xx    shn  0.5387  TRACK03.SHN
+     7:51.22       83136188 B   ---   --   ---xx    shn  0.6341  TRACK04.SHN
+     8:12.47       86899388 B   ---   --   ---xx    shn  0.4949  TRACK05.SHN
+     4:29.20       47498684 B   ---   --   ---xx    shn  0.6310  TRACK06.SHN
+     5:30.50       58329644 B   ---   --   ---xx    shn  0.5302  TRACK07.SHN
+     6:34.73       69673340 B   ---   --   ---xx    shn  0.6353  TRACK08.SHN
+    52:48.39      558927280 B                            0.5777  (8 files)
+===================
+===================
+===================

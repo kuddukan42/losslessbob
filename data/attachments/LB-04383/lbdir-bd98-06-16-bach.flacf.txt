@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+f8104aac3eb1175ca6ed9aaeb019423f  bd98-06-16-bach-LB-4383.txt
+4d0589a2d5c5740382a70b98bc1e2e62  Essen-1998-06-16.md5
+9f6ae7f17dcf2b141c9db48616a8bc72  Essen-1998-06-16.txt
+dd71408620ed9036299ffa1a7d36c7f6  Track101.flac
+f3ef125ad89500baee819dd83cf06a55  Track102.flac
+2ce04e2c26b78111dd0fb900aff10e5e  Track103.flac
+33f1c43cc3ea5eeb872bd6f55ddbfc75  Track104.flac
+f4ba40c302c042617c8e88401276b7a6  Track105.flac
+09c6025a5494adf2d9ddba1a28ce17d5  Track106.flac
+0f2016f94dfe8c3dd22f46d6d38ca1b3  Track107.flac
+e55403ef88d6bad1c091364acd692cbc  Track108.flac
+229b90fcc62dac4d525dec719032a324  Track109.flac
+dffc93baf48220d6a06800b321c0b632  Track110.flac
+710ed0860a767358fa897f847be5ebf9  Track111.flac
+9ca7e4e1653955622abf913178b3798a  Track112.flac
+642f5efadccadf3fd2dbcc2541ee8cdf  Track113.flac
+1888b7509517bf02e13e4870deb6b0e4  Track114.flac
+12dbcfe42bcd4c7e744c452679698493  Track201.flac
+18acb26830474c32f0629ab8a58d1b91  Track202.flac
+477dfab8ecdc86c0fb7dc4ae5d0eb015  Track203.flac
+65c1b7b8d68e008b1893e79ed13b4427  Track204.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:dee8488c1d0b32a95ac1657c6059315a
+Track102.flac:2e4c3b9b2a5db54adf05eb988e83d853
+Track103.flac:bdc3db4f41c1b1c8a250829610f4887d
+Track104.flac:496f34111d4e36f5f4404726b399ee82
+Track105.flac:d97448edb1a3fafd3037486de51586fc
+Track106.flac:e29d905fe6cda239be8fdfdd43877b01
+Track107.flac:4f79b7093924ce6daf55f51f5c0bcd60
+Track108.flac:7d97a710f37912d3b4bfa9a84463c5f4
+Track109.flac:22735076e5e771ea2fdef990833f6949
+Track110.flac:49b4a6823b05d6d0e6948385a698bd38
+Track111.flac:0e2bae443e4c53ca93a19c53cbe7ae35
+Track112.flac:3b3e59dc0811392e43dd174c5eaa59e2
+Track113.flac:058c4e0b5e33cecde3eac13b10183c3c
+Track114.flac:df6b1f1a73e22821f399f809570c9a62
+Track201.flac:5fcf7c1fd90c1586d8f94f96489ae338
+Track202.flac:6f546a19522120714fb1f90e6010d0c8
+Track203.flac:972e15a6adf742c465ddab31efe3537a
+Track204.flac:94ab32b5273207b3af172b3eb8223017
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.37        6261068 B   ---   --   ---xx   flac  0.4626  Track101.flac
+     3:48.35       40301564 B   ---   --   ---xx   flac  0.5865  Track102.flac
+     4:42.04       49754252 B   ---   --   ---xx   flac  0.5619  Track103.flac
+     6:55.07       73222508 B   ---   --   ---xx   flac  0.5737  Track104.flac
+     5:20.41       56544476 B   ---   --   ---xx   flac  0.5681  Track105.flac
+     7:28.42       79126028 B   ---   --   ---xx   flac  0.5942  Track106.flac
+     5:33.64       58891772 B   ---   --   ---xx   flac  0.4872  Track107.flac
+     4:58.70       52731884 B   ---   --   ---xx   flac  0.4540  Track108.flac
+     6:21.73       67380140 B   ---   --   ---xx   flac  0.5088  Track109.flac
+     7:49.34       82811612 B   ---   --   ---xx   flac  0.5976  Track110.flac
+     6:08.27       64978748 B   ---   --   ---xx   flac  0.5863  Track111.flac
+     6:06.31       64635356 B   ---   --   ---xx   flac  0.5266  Track112.flac
+     6:43.42       71188028 B   ---   --   ---xx   flac  0.5375  Track113.flac
+     7:44.44       81953132 B   ---   --   ---xx   flac  0.5505  Track114.flac
+    10:21.35      109626764 B   ---   --   ---xx   flac  0.5050  Track201.flac
+     5:22.56       56932556 B   ---   --   ---xx   flac  0.5111  Track202.flac
+     6:10.03       65275100 B   ---   --   ---xx   flac  0.5817  Track203.flac
+     4:28.08       47294060 B   ---   --   ---xx   flac  0.5001  Track204.flac
+   106:39.53     1128909048 B                            0.5436  (18 files)
+=================== 
+=================== 
+=================== 

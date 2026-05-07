@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-04-Lake-Compounce-Festival-Park-f.flacf 
+=================== 
+=================== 
+=================== 
+e758ffad51f03e60a2282d5776a78c71  Bob Dylan - Lake Compounce Festival Park Artwork\Lake Compounce FP CD Case Insert Back.jpg
+a5ee5ec63ab1791479b3e9e3ffdd6680  Bob Dylan - Lake Compounce Festival Park Artwork\Lake Compounce FP CD Case Insert Front Reverse.jpg
+4785724633e9820174d4cf4f83b61994  Bob Dylan - Lake Compounce Festival Park Artwork\Lake Compounce FP CD Case Insert Front.jpg
+5a8802e6e87b49498e7e2e79677f08ae  Bob Dylan - Lake Compounce Festival Park Artwork\Lake Compounce FP CD.jpg
+99139229dd92a03df3e5556cabde92c2  Bob Dylan - Lake Compounce Festival Park Missing Track KTS\08 To Ramona.flac
+057133c2077fe954afe5ee1baf0eb15f  Bob Dylan - Lake Compounce Festival Park Missing Track KTS\08 To Ramona.flac.md5
+127bad7d345dda994cca52745edd2994  Bob Dylan - Lake Compounce Festival Park Missing Track KTS\info.txt
+61e79a9ba8725aa3d243114946e504f4  Bob Dylan - Lake Compounce Festival Park Soundboard\01. Subteranean Homesick Blues.flac
+fe2bd607548261ecc93c29ea0772eb24  Bob Dylan - Lake Compounce Festival Park Soundboard\02. I Don't Belive You.flac
+fbac69e634022252ed4eb13cddef5f94  Bob Dylan - Lake Compounce Festival Park Soundboard\03. Just Like Tom Thumbs Blues.flac
+fda0caca3db281e8d0871550089cf242  Bob Dylan - Lake Compounce Festival Park Soundboard\04. Ballad of a Thin Man.flac
+9c238c28b02585748a65c6e29024deeb  Bob Dylan - Lake Compounce Festival Park Soundboard\05. Had a Dream About You Baby.flac
+94b8b8ca391e19cb471f75989ac42fd3  Bob Dylan - Lake Compounce Festival Park Soundboard\06. Simple Twist of Faith.flac
+b42c7f7bfad04d95af6463c598db6cbb  Bob Dylan - Lake Compounce Festival Park Soundboard\07. Highway 61 Revisited.flac
+14e48153debcff842c38052f4dd453fd  Bob Dylan - Lake Compounce Festival Park Soundboard\08. Rank Strangers to Me.flac
+beee3e8526f29cb81ec422825097fc2b  Bob Dylan - Lake Compounce Festival Park Soundboard\09. Don't Think Twice It's Alright.flac
+33f9faa4304556c2d988141a7fb871b5  Bob Dylan - Lake Compounce Festival Park Soundboard\10. Knockin' On Heaven's Door.flac
+a0337ec091aded460e1b96900a47dd8e  Bob Dylan - Lake Compounce Festival Park Soundboard\11. Silvio.flac
+57265c872f7542a76df164f941db353d  Bob Dylan - Lake Compounce Festival Park Soundboard\12. I Shaall Be Released.flac
+8235e38d676c32c91c836ad2e0ade873  Bob Dylan - Lake Compounce Festival Park Soundboard\13. Like a Rolling Stone.flac
+491430a821ce554488437d36d5dabc5e  Bob Dylan - Lake Compounce Festival Park Soundboard\14. It Ain't Me Babe.flac
+432b878802b478093a2f9e84e7a558a4  Bob Dylan - Lake Compounce Festival Park Soundboard\15. Masters Of War.flac
+e19467ca43d0bbe5f47d4c520846e8e1  Bob Dylan - Lake Compounce Festival Park Soundboard\16. Maggie's Farm.flac
+cb99e9af42221699b738e03b126c92bb  Bob Dylan - Lake Compounce Festival Park Soundboard\Bob Dylan - Lake Compounce Festival Park.md5
+1629b45f11b7a5171040524db3c49d42  LCFP.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-04-Lake-Compounce-Festival-Park-f.flacf\bob dylan - lake compounce festival park missing track kts 
+=================== 
+=================== 
+=================== 
+08 to ramona.flac:bc8a22d0fea55dcdd002ef498e5a8ca0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-04-Lake-Compounce-Festival-Park-f.flacf\bob dylan - lake compounce festival park soundboard 
+=================== 
+=================== 
+=================== 
+01. subteranean homesick blues.flac:54042f2bcaa73f31ec81dbda12a69901
+02. i don't belive you.flac:4ec1337f723c6c2395859ef09dd591ab
+03. just like tom thumbs blues.flac:39d33519b5352933518dafb76ab82380
+04. ballad of a thin man.flac:c6d3bcf3dc916c050589abe0875a7078
+05. had a dream about you baby.flac:03da3535631003a54c5d4aa9cbf4f3b5
+06. simple twist of faith.flac:dd8317986fb4cf9e9e82e82e19672896
+07. highway 61 revisited.flac:6657538aec49231641ac463b2a5855ad
+08. rank strangers to me.flac:ce5361bc7568f6599c01756f8e072243
+09. don't think twice it's alright.flac:5e489a601bac5700e0f1124d2b284d77
+10. knockin' on heaven's door.flac:37250bc914e783f372899ab38556b203
+11. silvio.flac:f4b6620e0ba751d9036fc5fa8d106e74
+12. i shaall be released.flac:16e44e5f78e051d993301b1f98027c4f
+13. like a rolling stone.flac:25374f690440812cb4f7a555481d5ee4
+14. it ain't me babe.flac:20eb03b0b0cb18036d60f65b16ebd03b
+15. masters of war.flac:2e998ba47469e34a440881c81314891f
+16. maggie's farm.flac:8346e4e498290f1a952992ae8d248535
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-04-Lake-Compounce-Festival-Park-f.flacf\bob dylan - lake compounce festival park missing track kts 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:06.12       43422796 B   -b-   --   ---xx   flac  0.5463  08 To Ramona.flac
+     4:06.12       43422796 B                            0.5463  (1 file)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-04-Lake-Compounce-Festival-Park-f.flacf\bob dylan - lake compounce festival park soundboard 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:31.50       37338044 B   ---   --   ---xx   flac  0.7140  01. Subteranean Homesick Blues.flac
+     3:43.00       39337244 B   ---   --   ---xx   flac  0.6830  02. I Don't Belive You.flac
+     5:05.25       53860844 B   ---   --   ---xx   flac  0.6716  03. Just Like Tom Thumbs Blues.flac
+     4:49.37       51066668 B   ---   --   ---xx   flac  0.6690  04. Ballad of a Thin Man.flac
+     3:05.50       32751644 B   ---   --   ---xx   flac  0.6895  05. Had a Dream About You Baby.flac
+     6:28.63       68591420 B   ---   --   ---xx   flac  0.6518  06. Simple Twist of Faith.flac
+     3:59.25       42218444 B   ---   --   ---xx   flac  0.6961  07. Highway 61 Revisited.flac
+     4:10.00       44100044 B   ---   --   ---xx   flac  0.6355  08. Rank Strangers to Me.flac
+     4:32.62       48126668 B   ---   --   ---xx   flac  0.7134  09. Don't Think Twice It's Alright.flac
+     5:04.25       53684444 B   ---   --   ---xx   flac  0.6859  10. Knockin' On Heaven's Door.flac
+     4:00.00       42336044 B   ---   --   ---xx   flac  0.6631  11. Silvio.flac
+     4:28.30       47345804 B   ---   --   ---xx   flac  0.6361  12. I Shaall Be Released.flac
+     6:10.28       65333900 B   ---   --   ---xx   flac  0.6836  13. Like a Rolling Stone.flac
+     5:35.55       59223404 B   ---   --   ---xx   flac  0.5734  14. It Ain't Me Babe.flac
+     4:42.67       49902428 B   ---   --   ---xx   flac  0.7010  15. Masters Of War.flac
+     4:59.08       52762460 B   ---   --   ---xx   flac  0.6884  16. Maggie's Farm.flac
+    74:27.00      787979504 B                            0.6699  (16 files)
+=================== 
+=================== 
+=================== 

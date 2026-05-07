@@ -1,0 +1,20 @@
+57d1ed511bc0477835f4af014e0ea798  Bob Dylan - Knoxville, Tennessee - November 4, 1997.ffp
+a2ed1f28bdef5532a775cef1ce374e6a  D-1 extraction log.LOG
+9f8bb52456aea77291b75526abfc8f40  D-2 extraction log.LOG
+f20c83276971ab935776ed943a4f90ae  info file.txt
+1ccd4f3ff84007fa96355f33884dd315  Track 101.flac
+d3d13825761473e05d29f015bcbd6917  Track 102.flac
+99747d2f340fbd2ffe9b3298b0ea6b07  Track 103.flac
+e8c00c145a034f3a88ddc7444e12c48c  Track 104.flac
+3662287bb9e7a241e1c1d8decc3bf870  Track 105.flac
+edbafc5971cbbc1fb0cff9fea31b0cef  Track 106.flac
+41c751362d75b0da2a4541e24a75052f  Track 107.flac
+eae11cdf08a59399099f8d43f42100d6  Track 108.flac
+6b538c932a1367fa661b82376fec4a8c  Track 109.flac
+94a0505d3fab671890f77489af72e0d9  Track 110.flac
+248aa12e6a39deac3f59de5925fb6495  Track 111.flac
+5240b4522847c045446b747de02bec9c  Track 201.flac
+21db74f2b83886cbec413df563574113  Track 202.flac
+3b6ed6d775391dd53d68d2669375259d  Track 203.flac
+bd37387e4cbd7e8551bad342f14345ee  Track 204.flac
+da12f75e13566913a562ac6c8104d319  Track 205.flac

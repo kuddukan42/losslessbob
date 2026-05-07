@@ -1,0 +1,132 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-18-lk.flacf 
+=================== 
+=================== 
+=================== 
+e0f0ed825ca9ef1cee195b0c10c940bd  D1\01 G Ride.flac
+d31c5561522d985a4d21c7bb424b49b4  D1\02 G Rain.flac
+7d83860d28c08193479d3f29fc4cd40a  D1\03 G House.flac
+16c98d85364109500af1e11bcef532d5  D1\04 G Grace.flac
+5f5f1cfe8b82703abb5942263b219cc5  D1\05 Gotta Serve.flac
+f1fd620aa175de7a5a0df5e55ecfa290  D1\06 Believe.flac
+c6edf6c46fd7451d8498a24ddad0b809  D1\07 LRS.flac
+0c173a64577805573aba5f54e3904b53  D1\08 G Right.flac
+d1b7de8f5ed8d331d1dec4a31ea03fe3  D1\09 Animals.flac
+cc63cf8adc03ccf58170fd38383897ae  D1\10 Watchtower.flac
+2096f7eb3ef68c207d763929940e31fc  D1\11 Ramona.flac
+c505f6cbbbcf51c8be9a441b885d86df  D1\12 Hell.flac
+45b7c4aa0a90967c05ee87a57ea0c9b5  D1\13 GirlNC.flac
+f171aa58d6f10ca820a320dd1651546e  D1\14 Slow Train.flac
+038044534b483144c0d7931bd4f69b1e  D1\15 G Heaven.flac
+1bc7b3e0a8a6efb13d01bae188cd661d  D1\16 Rise.flac
+0cccdae4e37410c3b4db82a1ecc9ff70  D1\17 Between.flac
+1f50fc5424d4a440daea0364ff148786  D1\D1.md5
+ef028b6cf2731d181f1b1a9004a36cf5  D2\18 Do Right.flac
+89a2687132013dd8b665b548c5eef25a  D2\19 Moor.flac
+d9a851698951cff7084b362fb3948b38  D2\20 Solid Rock.flac
+7a36e9b9620d85fde55876def9eab3ce  D2\21 JLAW.flac
+1394faa74c5eb6dcc37543a5b601c818  D2\22 Senor.flac
+33030a85308905575533704fe2db5c65  D2\23 Do for you.flac
+0295ae0204986af78a3dea9940fa3501  D2\24 Wake up.flac
+92f13d657c6c3c2c2fefdaae9f53bb75  D2\25 Garden.flac
+3ab5975c82c947eeabd97910d6c2a48c  D2\26 Blowin.flac
+3254d26eddbead7bcf1c7a02eb84f08e  D2\27 City of Gold.flac
+3ac21a2ea5795dff36f9b2b6f829f320  D2\28 Baby Blue.flac
+6b4b8de343f10f84b9287cf8b5e575fb  D2\29 Hard Rain.flac
+89a96ca1ff98f9c08788d31ce2f84f6d  D2\D2.md5
+508963245ebf87439859c7591bc98c77  Disc 2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-18-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+01 G Ride.flac:cdb53f9701124e7eb46a45a426fb179e
+02 G Rain.flac:c39c03a416c07aa35b1b6492b146aa7c
+03 G House.flac:59cb64112a2abc54b6cdbbbdd356cdd2
+04 G Grace.flac:439021e36b8d27b7fd61f79b91ad9dee
+05 Gotta Serve.flac:1c65e2db2be0221dbb72237768a4a948
+06 Believe.flac:ff45207e72ec03559c324d7031a7b285
+07 LRS.flac:f1c2f00db9c999c69e5b4faf9b426850
+08 G Right.flac:d2827d7078935457a03a2d2aca3abddd
+09 Animals.flac:1c49141c855e0a33df99af8d36f76595
+10 Watchtower.flac:527af1b4fc1263fafcd52c07ad588af6
+11 Ramona.flac:8c10a8f3857c5544adf866efd73768a9
+12 Hell.flac:880687ec23c56ceabb32d5f0f0a7831c
+13 GirlNC.flac:f31416ecdb5468f2ea42863bca64c764
+14 Slow Train.flac:53579de30d842957965c8053c5c1e038
+15 G Heaven.flac:349e5fa6a9392688054804101e0af639
+16 Rise.flac:8e5918a77ac5c1baff4c56ae74dd34fe
+17 Between.flac:6988e4b870cb1b18c72e7c3f00b6f665
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-18-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+18 Do Right.flac:b5f5cbb565145c6de46e583189212153
+19 Moor.flac:ed0853e0f8967806961304b28560482c
+20 Solid Rock.flac:0d090ec11c08be911966d2ad625c0417
+21 JLAW.flac:79abdcf83cc7a0ea28402583504a7df0
+22 Senor.flac:eeacbab455e2ea267592f53ecd2d099a
+23 Do for you.flac:6886a3ab07e4d74669a55ddf169df982
+24 Wake up.flac:b21eb1702b2f16e85bfde3f7d61d4280
+25 Garden.flac:432a8d5bb324a044f14586a5a10b66ad
+26 Blowin.flac:88efa51b706f4f5fcbdb9e8d8e482bca
+27 City of Gold.flac:dca950fe680b90a8ae65ba2bf1d22e47
+28 Baby Blue.flac:cd6256371ea3787a5dc73430dc7fbaf7
+29 Hard Rain.flac:a76cbb4f7eba7cad80242f9210f4cba0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-18-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:26.65       36491324 B   ---   --   ---xx   flac  0.4115  01 G Ride.flac
+     4:01.67       42670028 B   ---   --   ---xx   flac  0.4256  02 G Rain.flac
+     4:06.07       43410908 B   ---   --   ---xx   flac  0.4678  03 G House.flac
+     3:04.51       32577596 B   ---   --   ---xx   flac  0.4464  04 G Grace.flac
+     4:52.39       51600572 B   ---   --   ---xx   flac  0.4688  05 Gotta Serve.flac
+     4:27.31       47171756 B   ---   --   ---xx   flac  0.4390  06 Believe.flac
+     5:49.54       61690652 B   ---   --   ---xx   flac  0.4593  07 LRS.flac
+     3:10.49       33631292 B   ---   --   ---xx   flac  0.4060  08 G Right.flac
+     5:14.60       55530764 B   ---   --   ---xx   flac  0.4302  09 Animals.flac
+     2:30.20       26507084 B   ---   --   ---xx   flac  0.4528  10 Watchtower.flac
+     3:34.16       37787276 B   ---   --   ---xx   flac  0.4340  11 Ramona.flac
+     4:09.61       44067116 B   ---   --   ---xx   flac  0.4865  12 Hell.flac
+     7:19.50       77557244 B   ---   --   ---xx   flac  0.4363  13 GirlNC.flac
+     5:30.42       58310828 B   ---   --   ---xx   flac  0.4737  14 Slow Train.flac
+     4:37.09       48884012 B   ---   --   ---xx   flac  0.4377  15 G Heaven.flac
+     3:17.35       34833164 B   ---   --   ---xx   flac  0.4351  16 Rise.flac
+     3:54.20       41324684 B   ---   --   ---xx   flac  0.4455  17 Between.flac
+    73:08.01      774046300 B                            0.4458  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-18-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:52.61       51652316 B   ---   --   ---xx   flac  0.4440  18 Do Right.flac
+     3:32.14       37429772 B   ---   --   ---xx   flac  0.4541  19 Moor.flac
+     4:20.40       45958124 B   ---   --   ---xx   flac  0.4790  20 Solid Rock.flac
+     3:41.00       38984444 B   ---   --   ---xx   flac  0.4561  21 JLAW.flac
+     3:50.04       40581452 B   ---   --   ---xx   flac  0.4609  22 Senor.flac
+     4:37.36       48947516 B   ---   --   ---xx   flac  0.4655  23 Do for you.flac
+     5:02.50       53390444 B   ---   --   ---xx   flac  0.4973  24 Wake up.flac
+     6:28.49       68558492 B   ---   --   ---xx   flac  0.4733  25 Garden.flac
+     3:55.59       41592812 B   ---   --   ---xx   flac  0.4917  26 Blowin.flac
+     3:23.01       35811596 B   ---   --   ---xx   flac  0.4767  27 City of Gold.flac
+     5:26.02       57511148 B   ---   --   ---xx   flac  0.4798  28 Baby Blue.flac
+     1:46.64       18848972 B   ---   --   ---xx   flac  0.4902  29 Hard Rain.flac
+    50:57.05      539267088 B                            0.4721  (12 files)
+=================== 
+=================== 
+=================== 

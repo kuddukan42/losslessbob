@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-18-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+f6ed2ee9507fd8d8c2651c16e1dcc6ef  bd-19950318-Groningen.ffp
+d77acfef7bc5a1050ed2a8f31117e7b6  bd-19950318-Groningen.md5
+360ae34fcc80a5feffb61e63e13ac52c  bd1995-03-18-d1t01.flac
+18dac0dd27a7747bdef03f9c2cd55a4e  bd1995-03-18-d1t02.flac
+d03aba2225b633e40b62ed4b2937af91  bd1995-03-18-d1t03.flac
+85691f7a03fdea946040d50b00c5e6ef  bd1995-03-18-d1t04.flac
+0eb928c6a3fb857ee5c231a7f1aa1492  bd1995-03-18-d1t05.flac
+fa385656272984421f051879cae2b460  bd1995-03-18-d1t06.flac
+763374fdd94f02033efa1b5dccd09f34  bd1995-03-18-d1t07.flac
+8655b2dd61b8d5b82d4a7bb83428a47d  bd1995-03-18-d1t08.flac
+d5a833e81c9f971bade0e77755757d1e  bd1995-03-18-d1t09.flac
+3083818318fcd917a73a90dac7125539  bd1995-03-18-d1t10.flac
+f73f4158a3fb77c8dca852e436fb898b  bd1995-03-18-d2t01.flac
+9fb545773d1d0cb3eb9ff7571911f0c1  bd1995-03-18-d2t02.flac
+5e934fc7e56eda7d2709c3269ae5237a  bd1995-03-18-d2t03.flac
+0d8ae70339c26706c31be8544458c96f  bd1995-03-18-d2t04.flac
+56ade93ced636bc5de5528a59c2e3fcf  bd1995-03-18-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-18-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-03-18-d1t01.flac:38281a0b9ad82212b58a8a42ba5715eb
+bd1995-03-18-d1t02.flac:a5a07c6c83361b18b2e28cb3a19bc7d4
+bd1995-03-18-d1t03.flac:73f56e6c5bab4a598973b981d046ae01
+bd1995-03-18-d1t04.flac:a004dd412d7f4cad2ab52cd7d63fafea
+bd1995-03-18-d1t05.flac:3b1f4c6172ec4828aca213b425bf7edf
+bd1995-03-18-d1t06.flac:96048ed9b69319208f9fe6efd8e206bb
+bd1995-03-18-d1t07.flac:3900dab983abcc20225e018e6d682bda
+bd1995-03-18-d1t08.flac:596c25b6a2ab3c2b35b30e77018c1db5
+bd1995-03-18-d1t09.flac:cee62cd8cb33fa8ec38d97e7be712a28
+bd1995-03-18-d1t10.flac:a4fc3dd62099e6f17c778efbe80d615f
+bd1995-03-18-d2t01.flac:3133b08fa91c2fb8fd0d5b7300a9a9c4
+bd1995-03-18-d2t02.flac:5b479a329d08e7709f1bff5e47a1e667
+bd1995-03-18-d2t03.flac:4b806719830381c8e60ea02d512f99bd
+bd1995-03-18-d2t04.flac:9df3ea4e0f7f47872cadf646cc4a0cab
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-18-LTJ.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:26.71        4753436 B   ---   --   ---xx   flac  0.4748  bd1995-03-18-d1t01.flac
+     4:56.39       52306172 B   ---   --   ---xx   flac  0.6748  bd1995-03-18-d1t02.flac
+     5:58.51       63271196 B   ---   --   ---xx   flac  0.6093  bd1995-03-18-d1t03.flac
+     6:06.06       64576556 B   ---   --   ---xx   flac  0.6322  bd1995-03-18-d1t04.flac
+     6:59.37       73998668 B   ---   --   ---xx   flac  0.5525  bd1995-03-18-d1t05.flac
+     8:40.04       91737452 B   ---   --   ---xx   flac  0.5880  bd1995-03-18-d1t06.flac
+     5:51.18       61958780 B   ---   --   ---xx   flac  0.5771  bd1995-03-18-d1t07.flac
+     6:44.44       71369132 B   ---   --   ---xx   flac  0.4834  bd1995-03-18-d1t08.flac
+     5:00.30       52990604 B   ---   --   ---xx   flac  0.5077  bd1995-03-18-d1t09.flac
+     6:39.60       70524764 B   ---   --   ---xx   flac  0.5002  bd1995-03-18-d1t10.flac
+     7:33.11       79935116 B   ---   --   ---xx   flac  0.5894  bd1995-03-18-d2t01.flac
+     6:15.73       66321740 B   ---   --   ---xx   flac  0.4915  bd1995-03-18-d2t02.flac
+     9:18.71       98598236 B   ---   --   ---xx   flac  0.6035  bd1995-03-18-d2t03.flac
+     7:32.64       79883372 B   ---   --   ---xx   flac  0.5805  bd1995-03-18-d2t04.flac
+    88:04.54      932225224 B                            0.5683  (14 files)
+=================== 
+=================== 
+=================== 

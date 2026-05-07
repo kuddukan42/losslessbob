@@ -1,0 +1,60 @@
+Bob Dylan
+Orpheum Theatre
+Boston, Massachusetts
+April 16, 2005
+
+Disc 1:
+01. Introduction [00:25]
+02. Maggie's Farm [04:42]
+03. Forever Young [06:06]
+04. Cry A While [05:59]
+05. Bye And Bye [05:52]
+06. Ballad Of Hollis Brown [05:25]
+07. If You See Her, Say Hello [06:07]
+08. Lenny Bruce [06:06]
+09. Honest With Me [06:44]
+10. The Lonesome Death Of Hattie Carroll [06:02]
+Total time: [53:34]
+
+Disc 2:
+01. High Water (For Charley Patton) [07:37]
+02. Every Grain Of Sand [07:47]
+03. Highway 61 Revisited [10:21]
+     (encore)
+04. Blind Willie McTell [06:33]
+05. Band Introduction [00:24]
+06. Like A Rolling Stone [07:16]
+Total time: [40:03]
+
+Band Members:
+Bob Dylan - vocals, keyboard, harp
+Don Herron - violin, banjo, guitar, pedal steel
+Denny Freeman - guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Source:
+7th row orch right
+akg 391's > denecke ps-2 > denecke ad-20 > sony d8
+sony d8 > tascam cd-rw700 > eac > cool edit > cd wave > flac
+
+Flac Fingerprint
+bd2005-04-16d1t01.flac:9e25796e5e35c5b434fcfa002373c9a1
+bd2005-04-16d1t02.flac:e5ca34ff5d5155007b44809ab210454f
+bd2005-04-16d1t03.flac:af620ed616bb8b8ea5b31f56a7f739ef
+bd2005-04-16d1t04.flac:b1ee44d77190282879c5f212ecc8feb0
+bd2005-04-16d1t05.flac:610f735af194180febcac40baf8b99ab
+bd2005-04-16d1t06.flac:cdcbf661e2842244696e128cddf8e949
+bd2005-04-16d1t07.flac:6ea9662aa831db3d9b869630679be41d
+bd2005-04-16d1t08.flac:dc1b935fa8ab234b9ae152c750b96c44
+bd2005-04-16d1t09.flac:8c764e6089d54a73a1e426e168f6c569
+bd2005-04-16d1t10.flac:4d182e5506a1a2f62b9d00e5f8f038d5
+bd2005-04-16d2t01.flac:38b1cb7bfe26a31885e833f456e18733
+bd2005-04-16d2t02.flac:efc0a530f1653f023589fc2533ab4786
+bd2005-04-16d2t03.flac:23594e9359faee018a055914ea6fb892
+bd2005-04-16d2t04.flac:e91392ab0516f321650af566b4277a6d
+bd2005-04-16d2t05.flac:eb0ea231782c7cd3b8ee109db935a5dd
+bd2005-04-16d2t06.flac:d4ddacd9f52f605622d900d68c1bcb70
+ 
+

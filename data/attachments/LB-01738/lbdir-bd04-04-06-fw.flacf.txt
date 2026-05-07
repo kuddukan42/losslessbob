@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-04-06-fw.flacf 
+=================== 
+=================== 
+=================== 
+2d9ef928b339a516835f63d208c39a3f  bd04-04-06-fw.txt
+1424fb265392d95ac56e8fd3496aa78f  Bob Dylan - Norfolk 04-06-2004 Fine Wine.md5
+d6c45af4047090bdee94184f64987eda  d1Track01.flac
+f0009613dfe76fe8691bfce4e46f09f8  d1Track02.flac
+987cb4c8cf76b05083a72772765d8c11  d1Track03.flac
+f10897ae9d049d7e212300d15f32bc41  d1Track04.flac
+dc253c32fbfa2415cff233dc1b835f2f  d1Track05.flac
+b325f70bcd3bd98761a8b1a701cf6c2c  d1Track06.flac
+5eabc2641fd5e33b05e9e53fb9a0828f  d1Track07.flac
+59cc5c7035db327929bb1a5109d81e85  d1Track08.flac
+042ac316a8bdbafed6ba7b32c53ba0bd  d1Track09.flac
+d27992f59780649990f31b0c29ec0dec  d1Track10.flac
+df5aebdd2e36e0a1106dca08194826c1  d1Track11.flac
+b939882c841e8b3e820d16d788e900c3  d1Track12.flac
+e557d34f158b2570e29c31294cacb6d7  d2Track01.flac
+8ce096e963844d22734c86caf73a82d3  d2Track02.flac
+78b7f36678525ee7631466db8aadf3c0  d2Track03.flac
+6990c7dbe4c14b9f7c880444d8d7a352  d2Track04.flac
+bf8a375799473712bc2ab72dacf1f9a7  d2Track05.flac
+bc0e13d23e2efd4d83e3aa45a8175c02  d2Track06.flac
+36e88df68579ff28715562b7d0781c37  d2Track07.flac
+d2a2cce30a340721ee9622dc3ed1826a  Norfolk 04-06-2004 Fine Wine.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-04-06-fw.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:59350a024d0c8c5e6c02ba93bbc0deff
+d1Track02.flac:d820cdfd986a4f0a11ee59dc7d3992d9
+d1Track03.flac:a7bebc0d45556a9b3827c46f396a01cf
+d1Track04.flac:f50503213f66026ca9bbc7ae30734d92
+d1Track05.flac:2dab0ecd7d8869f4840f429549b623ec
+d1Track06.flac:64d6aa96e2f40dc482a30388965a6d92
+d1Track07.flac:706adc77f7bdc736b08dbc3c2c879f1e
+d1Track08.flac:3f80fd32818e587020b8a00a7dee4084
+d1Track09.flac:8da0596d731acdc92b7ac91d353b047c
+d1Track10.flac:f1bd3d14a8cb58946ddaecd1ab9c9c87
+d1Track11.flac:a41e77a863de35b8b56a5514b81bd9ce
+d1Track12.flac:9cc707226b4cd6249ca74ef155d6dae1
+d2Track01.flac:b1e0cd008c26f035dff60984db07f3ba
+d2Track02.flac:ef446f34c5acf24ccd03790829672f55
+d2Track03.flac:ce48d00d28f4fb758889abcc6c3258a3
+d2Track04.flac:ebf9990f751a152627b5011a5c57e166
+d2Track05.flac:6bc31ed8363092c61d13c115cf3f19c3
+d2Track06.flac:b84684c7c3aac30eea6c0e979c7be491
+d2Track07.flac:1fbabe9297a18c4b904f0d01a6cad0c5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-04-06-fw.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:56.36        9963116 B   ---   --   ---xx   flac  0.5000  d1Track01.flac
+     5:24.56       57285356 B   ---   --   ---xx   flac  0.5989  d1Track02.flac
+     5:01.06       53110556 B   ---   --   ---xx   flac  0.5723  d1Track03.flac
+     7:06.00       75146444 B   ---   --   ---xx   flac  0.6141  d1Track04.flac
+     6:38.49       70322492 B   ---   --   ---xx   flac  0.5811  d1Track05.flac
+     5:30.34       58292012 B   ---   --   ---xx   flac  0.5668  d1Track06.flac
+     4:20.20       45911084 B   ---   --   ---xx   flac  0.5125  d1Track07.flac
+     7:21.68       77952380 B   ---   --   ---xx   flac  0.6225  d1Track08.flac
+     5:19.37       56358668 B   ---   --   ---xx   flac  0.5765  d1Track09.flac
+     7:11.74       76202492 B   ---   --   ---xx   flac  0.6102  d1Track10.flac
+     6:07.28       64804700 B   ---   --   ---xx   flac  0.5366  d1Track11.flac
+     6:08.02       64919948 B   ---   --   ---xx   flac  0.5543  d1Track12.flac
+     7:10.50       75969644 B   ---   --   ---xx   flac  0.6207  d2Track01.flac
+     6:05.17       64426028 B   ---   --   ---xx   flac  0.5181  d2Track02.flac
+    11:43.66      124164476 B   ---   --   ---xx   flac  0.5385  d2Track03.flac
+     4:52.12       51537068 B   ---   --   ---xx   flac  0.6132  d2Track04.flac
+     6:24.30       67808204 B   ---   --   ---xx   flac  0.6081  d2Track05.flac
+     0:36.55        6479804 B   ---   --   ---xx   flac  0.5759  d2Track06.flac
+     6:30.23       68850140 B   ---   --   ---xx   flac  0.6034  d2Track07.flac
+   110:29.63     1169504612 B                            0.5789  (19 files)
+=================== 
+=================== 
+=================== 

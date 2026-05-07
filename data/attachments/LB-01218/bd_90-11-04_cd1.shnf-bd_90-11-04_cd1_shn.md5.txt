@@ -1,0 +1,16 @@
+75db15f3423ebd9534657a7e9466be2d *bd_90-11-04_cd1_Track 01.shn
+4b49c9c842145cb94621111c40ed7270 *bd_90-11-04_cd1_Track 10.shn
+f8a4b2e0b279b230b2119c8a5e404d6d *bd_90-11-04_cd1_Track 11.shn
+44cf1bbf49140e00ab14792c834372ec *bd_90-11-04_cd1_Track 12.shn
+49b6fe1f2163623b0e7bd7a44ba560a7 *bd_90-11-04_cd1_Track 13.shn
+a3361eef09b0a583ea8f5f7130c9adf0 *bd_90-11-04_cd1_Track 14.shn
+762ad98f9dc90c280ffacbbbb0f98ada *bd_90-11-04_cd1_Track 15.shn
+df9643476db9873548bff553e6d66a88 *bd_90-11-04_cd1_Track 16.shn
+93956977be4fee9dcb0270862b367800 *bd_90-11-04_cd1_Track 2.shn
+b25d8f70b2098175e982cf34bdb4dedb *bd_90-11-04_cd1_Track 3.shn
+15712eceab84c293a90b9ca68a29df9c *bd_90-11-04_cd1_Track 4.shn
+2e9be391ffce07fc0978d24dffeaef76 *bd_90-11-04_cd1_Track 5.shn
+bf9786b31dceea2f29cb0327f99275e5 *bd_90-11-04_cd1_Track 6.shn
+502045dedb94d7a792e3a5739a7e28a1 *bd_90-11-04_cd1_Track 7.shn
+f3b217655a90edc40a9aa62a44a68dae *bd_90-11-04_cd1_Track 8.shn
+5e29251244f8a10883b141c8d8a3af15 *bd_90-11-04_cd1_Track 9.shn

@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03 02 08 melbourne alt 
+=================== 
+=================== 
+=================== 
+c99f48fd285d8f85614bb335ced285d6  03 02 08 alt d1 t01.shn
+81d4c533bbe9504ef4a2a56855699b86  03 02 08 alt d1 t02.shn
+5ea4259077105bcb13a680a703a414d2  03 02 08 alt d1 t03.shn
+0c83706b86141853a59df6ea17dfcbc1  03 02 08 alt d1 t04.shn
+38e0dc1b31daed8292078208a0d7e0ab  03 02 08 alt d1 t05.shn
+77e8a7ae4d8f930f4df24453895edb23  03 02 08 alt d1 t06.shn
+dbde8509052a71cd69d7a79b1950d277  03 02 08 alt d1 t07.shn
+63bcd3df3edf7f5393e3bed44fa64221  03 02 08 alt d1 t08.shn
+cc0dc569d8f76ed8903e27d2404457e8  03 02 08 alt d1 t09.shn
+78fa486e9f82431d0c5048090710540e  03 02 08 alt d1 t10.shn
+00bc6a3a2f0401b6613acd6523982e35  03 02 08 alt d2 t01.shn
+3353f2a0b0bf8005a78252da031f1cb8  03 02 08 alt d2 t02.shn
+08fa3cb1251de254d08180ae557ba5ab  03 02 08 alt d2 t03.shn
+187c210ade3c6019d8c30d9f4e6161f5  03 02 08 alt d2 t04.shn
+711f67930d8d26e121c2abe4f9fcb8cb  03 02 08 alt d2 t05.shn
+5207cfc5f42dd6ddd8797e1b37996dbc  03 02 08 alt.md5
+0d0a676a8c8aedeec0031761e6594aef  bd03-02-08a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03 02 08 melbourne alt 
+=================== 
+=================== 
+=================== 
+eed4b8a14b42edd1a1d285518d38e828  [shntool]  03_02_08_alt_d1_t01.wav
+e73384d4d166ceeb0f4f03df42dc2550  [shntool]  03_02_08_alt_d1_t02.wav
+2967e9bf87b80dd0834b70421f653b90  [shntool]  03_02_08_alt_d1_t03.wav
+81ec6573f95ce9f79b2c90a6a2431c9c  [shntool]  03_02_08_alt_d1_t04.wav
+40721bb3677ab760e54380fbc126b260  [shntool]  03_02_08_alt_d1_t05.wav
+b79209ce1b9fedb3e9315872ff6e38e2  [shntool]  03_02_08_alt_d1_t06.wav
+8e30fe008895004526a3b0361af81745  [shntool]  03_02_08_alt_d1_t07.wav
+f905d6ecb094dfd765de9f4ce1963bd0  [shntool]  03_02_08_alt_d1_t08.wav
+b8e4edc6b51553dfd9065636de9e41da  [shntool]  03_02_08_alt_d1_t09.wav
+87ab0b0819f93aa37a8c4296ce77f935  [shntool]  03_02_08_alt_d1_t10.wav
+5069579092545c5450c054d6aeddd671  [shntool]  03_02_08_alt_d2_t01.wav
+6fcce98e05040288121645df750a3339  [shntool]  03_02_08_alt_d2_t02.wav
+368fb5d2693e7d80b8fb9de25758f017  [shntool]  03_02_08_alt_d2_t03.wav
+db0b30c66200e52b4a4029cde8f563b1  [shntool]  03_02_08_alt_d2_t04.wav
+f038b94d894db834f2ad442afff3d53e  [shntool]  03_02_08_alt_d2_t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03 02 08 melbourne alt 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:21.51       56744396 B   ---   --   ---xx    shn  0.5174  03 02 08 alt d1 t01.shn
+     5:47.54       61337852 B   ---   --   ---xx    shn  0.4717  03 02 08 alt d1 t02.shn
+     5:47.34       61290812 B   ---   --   ---xx    shn  0.4942  03 02 08 alt d1 t03.shn
+     4:09.29       43991852 B   ---   --   ---xx    shn  0.5063  03 02 08 alt d1 t04.shn
+     6:44.16       71303276 B   ---   --   ---xx    shn  0.4917  03 02 08 alt d1 t05.shn
+     5:57.19       63019532 B   ---   --   ---xx    shn  0.5345  03 02 08 alt d1 t06.shn
+     7:34.58       80222060 B   ---   --   ---xx    shn  0.4877  03 02 08 alt d1 t07.shn
+     6:50.55       72453404 B   ---   --   ---xx    shn  0.5264  03 02 08 alt d1 t08.shn
+     6:04.09       64230812 B   ---   --   ---xx    shn  0.4888  03 02 08 alt d1 t09.shn
+     9:19.46       98715836 B   ---   --   ---xx    shn  0.5245  03 02 08 alt d1 t10.shn
+     5:46.52       61156748 B   ---   --   ---xx    shn  0.4676  03 02 08 alt d2 t01.shn
+     5:37.38       59536220 B   ---   --   ---xx    shn  0.4647  03 02 08 alt d2 t02.shn
+    10:48.49      114422492 B   ---   --   ---xx    shn  0.5499  03 02 08 alt d2 t03.shn
+     5:57.07       62991308 B   ---   --   ---xx    shn  0.5322  03 02 08 alt d2 t04.shn
+     9:12.60       97513964 B   ---   --   ---xx    shn  0.5517  03 02 08 alt d2 t05.shn
+   100:59.52     1068930564 B                            0.5113  (15 files)
+=================== 
+=================== 
+=================== 

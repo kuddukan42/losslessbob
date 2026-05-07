@@ -1,0 +1,19 @@
+8b5b99547fecd71d782232308b5c7c44 *bd2024-03-23 Louisville_sway_01.flac
+9ba9aef7c95a986aefdcc98f107bd3dc *bd2024-03-23 Louisville_sway_02.flac
+61e1abb9c6678d90a71763368ed22a7a *bd2024-03-23 Louisville_sway_03.flac
+0f617edb04485a14cee1972b071d93c5 *bd2024-03-23 Louisville_sway_04.flac
+d916a851be399df8e82e51696d9746a7 *bd2024-03-23 Louisville_sway_05.flac
+524328b0419687aff45a60c970686eec *bd2024-03-23 Louisville_sway_06.flac
+867d6b3230e2d11d25c23d0ddb256b57 *bd2024-03-23 Louisville_sway_07.flac
+4f60450b14787b387cfb807fc5662727 *bd2024-03-23 Louisville_sway_08.flac
+bfdb4e8f2b137659ff3347740dba2c58 *bd2024-03-23 Louisville_sway_09.flac
+2599d2699a67b005a7f2413e8c7d4366 *bd2024-03-23 Louisville_sway_10.flac
+94f60e64446426f666fc399cce1c1b75 *bd2024-03-23 Louisville_sway_11.flac
+bb3c8580a168d7ad7705ee588a6d51e2 *bd2024-03-23 Louisville_sway_12.flac
+66b9593f8b6f5a7a462e751fe25694e0 *bd2024-03-23 Louisville_sway_13.flac
+4d6f635f204b3f0bfc75ab00d0f3f2a8 *bd2024-03-23 Louisville_sway_14.flac
+f61e6f27922a7d80e4691c071a56a88a *bd2024-03-23 Louisville_sway_15.flac
+b87c5eb7e5b6774c5db1132d639e4d16 *bd2024-03-23 Louisville_sway_16.flac
+5bf05c3c74a396b156d48bbeeb3c9389 *bd2024-03-23 Louisville_sway_17.flac
+7f4f87a43e368262666f4ce0e855ad35 *bd2024-03-23 Louisville_sway_18.flac
+ebbfd4b5ab0ecbcae83118f87a4b2b08 *louisville.txt

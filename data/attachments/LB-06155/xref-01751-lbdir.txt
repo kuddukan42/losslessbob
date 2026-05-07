@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== md5 for: bd95-10-25-NTA.flacf
+===================
+===================
+===================
+befa985d69096a96e677f11075f0d7d1 *CD1\00 Announcement.flac
+76a6e7b192caa99d4247d5625f957d5b *CD1\01 Crash on the levee (down in the flood).flac
+314ba6db5eb3e23889c44cfbadcff57d *CD1\02 Lay lady lay.flac
+51a2c9cd98d81b143988cd5fe47dc55f *CD1\03 All along the watchtower.flac
+f3feb2b4b83c2bc574c5f3d8f113ff11 *CD1\04 Under the red sky.flac
+fc136f71a9fbae65d63a145e991d65e7 *CD1\05 I'll be your baby tonight.flac
+f6eaa0a1d585eb8d8f3fa7ca29cf20c7 *CD1\06 Silvio.flac
+c33c3077631b8da776fca7e0cc9291f5 *CD1\07 Mr. Tambourine Man.flac
+00ee1cd0af98244376c547f93ccf4930 *CD1\08 Gates of Eden.flac
+cf22317e8e33f66dc14281c5e6d6a481 *CD1\09 To Ramona.flac
+4057395d3762c7a15debe0f2b9930aad *CD1\FLAC CD1.md5
+6362e06c0bbcb5cb6a8b81654739fcef *CD2\10 Jokerman.flac
+682a5c4511be97310cab247a67a601cc *CD2\11 Shooting star.flac
+f87856429b767c03558cf8dff374427d *CD2\12 (band intro).flac
+1f2f0f9a4f97df7d80e0952dbbca645c *CD2\12 Obviously five believers.flac
+c0bec46634737cfb4f841c814b065cef *CD2\13 West L.A. fadeaway.flac
+4f25d9e18f677cbabf43473d3949ce17 *CD2\14 The times they are a-changin'.flac
+803313865e965ac3acdf0be4745e9b32 *CD2\15 Rainy day women # 12 & 35.flac
+8a4f87eb435a2fc4f26631ae6fa67b1a *CD2\FLAC CD2.md5
+1cf7e22223b777e58c8e0b2a152cd8b9 *Info\Bob Dylan 1995-10-25 Coronado Theater, Rockford, Illinois, USA [NTA].txt
+===================
+===================
+===================
+=== ffp for: bd95-10-25-NTA.flacf
+===================
+===================
+===================
+CD1\00 Announcement.flac:92a832566c8ea7a9746c4215072167a7
+CD1\01 Crash on the levee (down in the flood).flac:3be5f1c3bf0e20774263dd6dcb932cc6
+CD1\02 Lay lady lay.flac:7313f6be71127bca21f22146897bc5ca
+CD1\03 All along the watchtower.flac:398ac359e07a195242cd3ce207814a4c
+CD1\04 Under the red sky.flac:de133a6620fb47246c8fdd224b2bff42
+CD1\05 I'll be your baby tonight.flac:58660213649186513d2cb43c95b66ef9
+CD1\06 Silvio.flac:6c0f4e192be7853185c8790ff5b8317f
+CD1\07 Mr. Tambourine Man.flac:cb4b9cf07a4cd5b37a598af652c55bc8
+CD1\08 Gates of Eden.flac:ee2134c6b9829f1846733a5b1dea3bd7
+CD1\09 To Ramona.flac:92a225fded805c6eba66dbfa3900b6f6
+CD2\10 Jokerman.flac:53ddaa7241f519478d7526865711896d
+CD2\11 Shooting star.flac:bec80b201da6f63bfc04c57c6e72d20f
+CD2\12 (band intro).flac:ced65445b69ae00a6ac7b248cf0d14bf
+CD2\12 Obviously five believers.flac:ff4617a0934e0f203616ef4ea7b97d34
+CD2\13 West L.A. fadeaway.flac:cd887be627b3046fca2ad4b83c65275b
+CD2\14 The times they are a-changin'.flac:42c4a2cc8aa9e66931f3d14bd5e2816c
+CD2\15 Rainy day women # 12 & 35.flac:ed6b65864eaf86def1f94b6c3ad8bd1c
+===================
+===================
+===================
+=== shntool len for: bd95-10-25-NTA.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.28        6945500 B   ---   --   ---xx   flac  0.4726  00 Announcement.flac
+     4:54.72       52030988 B   ---   --   ---xx   flac  0.6178  01 Crash on the levee (down in the flood).flac
+     5:32.61       58708316 B   ---   --   ---xx   flac  0.5377  02 Lay lady lay.flac
+     6:21.45       67314284 B   ---   --   ---xx   flac  0.5891  03 All along the watchtower.flac
+     6:06.37       64649468 B   ---   --   ---xx   flac  0.5382  04 Under the red sky.flac
+     7:32.20       79779884 B   ---   --   ---xx   flac  0.5623  05 I'll be your baby tonight.flac
+     7:53.06       83451356 B   ---   --   ---xx   flac  0.6045  06 Silvio.flac
+    10:16.22      108714188 B   ---   --   ---xx   flac  0.4835  07 Mr. Tambourine Man.flac
+     8:04.66       85532876 B   ---   --   ---xx   flac  0.4749  08 Gates of Eden.flac
+     6:30.06       68810156 B   ---   --   ---xx   flac  0.4537  09 To Ramona.flac
+    63:51.63      675937016 B                            0.5343  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd95-10-25-NTA.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:25.70       89246684 B   ---   --   ---xx   flac  0.5633  10 Jokerman.flac
+     7:04.31       74866556 B   ---   --   ---xx   flac  0.5037  11 Shooting star.flac
+     0:42.67        7566428 B   ---   --   ---xx   flac  0.4522  12 (band intro).flac
+     7:59.08       84514460 B   ---   --   ---xx   flac  0.5857  12 Obviously five believers.flac
+     8:14.44       87245132 B   ---   --   ---xx   flac  0.5688  13 West L.A. fadeaway.flac
+    12:27.24      131827292 B   ---   --   ---xx   flac  0.5177  14 The times they are a-changin'.flac
+     5:16.59       55881212 B   ---   --   ---xx   flac  0.5805  15 Rainy day women # 12 & 35.flac
+    50:11.03      531147764 B                            0.5483  (7 files)
+===================
+===================
+===================

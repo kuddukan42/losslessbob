@@ -1,0 +1,60 @@
+Bob Dylan
+Heymann Performing Arts Center
+Lafayette, Louisiana
+April 2, 2024
+
+01. Watching The River Flow 
+02. Most Likely You Go Your Way (And I'll Go Mine)
+03. I Contain Multitudes 
+04. False Prophet 
+05. When I Paint My Masterpiece 
+06. Black Rider 
+07. I'll Be Your Baby Tonight 
+08. My Own Version Of You 
+09. Crossing The Rubicon 
+10. To Be Alone With You 
+11. Key West (Philosopher Pirate) 
+12. Gotta Serve Somebody 
+13. Jambalaya (On The Bayou)
+14. I've Made Up My Mind To Give Myself To You
+15. Big River
+16. Mother Of Muses
+17. Goodbye Jimmy Reed
+18. Every Grain Of Sand
+
+Band Members
+Bob Dylan - vocals, piano, harp
+Jerry Pentecost - drums
+Doug Lancio - guitar 
+Bob Britt - guitar
+Donnie Herron - steel guitar, violin
+Tony Garnier - bass
+
+Comment
+First known live performance of 
+Jambalaya (On The Bayou) (song by Hank Williams)
+
+Recorded by: soomlos
+schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3 (24-bit / 48000 Hz)
+sound devices mixpre-3 > usb > pc > poly wav (24-bit / 48000 Hz)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24-bit / 48000 Hz)
+
+ffp
+bd2024-04-02-soomlos-t01.flac:b55d511b586f67a427c7b0b663436235
+bd2024-04-02-soomlos-t02.flac:7baabb03c4ff51d3c71b6ee081c6ee64
+bd2024-04-02-soomlos-t03.flac:7c69e7484c4d5a0013e0f22d52f62ee3
+bd2024-04-02-soomlos-t04.flac:b434efe0ccc1150a19635c489bec5fc5
+bd2024-04-02-soomlos-t05.flac:c8a326fbcd024552540b371101bf23cc
+bd2024-04-02-soomlos-t06.flac:715631c47bf109b353d8bbad2f401936
+bd2024-04-02-soomlos-t07.flac:a90a4483fb88d1c2b1987fb629a16910
+bd2024-04-02-soomlos-t08.flac:95b4b50b58e02b87158ecbbe081658f5
+bd2024-04-02-soomlos-t09.flac:c93984eac3c02d6f464f36e728db1184
+bd2024-04-02-soomlos-t10.flac:e65d0773ff42ceb9203233d45e6a7728
+bd2024-04-02-soomlos-t11.flac:38141162d776a3d91e4f77fd8d6b7df8
+bd2024-04-02-soomlos-t12.flac:356af946cceccad6ae066fb9d3ab234b
+bd2024-04-02-soomlos-t13.flac:c986c4e29473c18eb9f61749747b4a9c
+bd2024-04-02-soomlos-t14.flac:ba9e04cf1e9d68a2eee0edd1733df51b
+bd2024-04-02-soomlos-t15.flac:95aba1678f79d575fe0603f15bd5d71d
+bd2024-04-02-soomlos-t16.flac:8b979cec73a882679afae68a544f32d7
+bd2024-04-02-soomlos-t17.flac:4c1a0d715a328035ebcbd03683ccf687
+bd2024-04-02-soomlos-t18.flac:654d64a44bf468f60b5825fc876bc5b3

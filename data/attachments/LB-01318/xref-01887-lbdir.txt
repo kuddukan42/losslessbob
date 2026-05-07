@@ -1,0 +1,88 @@
+===================
+===================
+===================
+=== md5 for: bd03-10-16-MM-remaster.flacf
+===================
+===================
+===================
+8018a517f97afa553439aecda227b96f *1Track 01.flac
+bd0856fd954c121c8a0e2d7af9aa0926 *1Track 02.flac
+3684bbf729ae56bbd861817eef99c856 *1Track 03.flac
+e623dd397ca3ca7452c0c632d96b3546 *1Track 04.flac
+1b40c05a6b8a93cf1d11da502d489a2a *1Track 05.flac
+47c34c7e89d8ce2b11fd2ff909fa1e87 *1Track 06.flac
+a751c696a020b90821e5f4b5778b3d2b *1Track 07.flac
+0694da6779fb661f7e0dd516a99c6684 *1Track 08.flac
+a594ec52194e5c27f5c01b44ab07c079 *1Track 09.flac
+fe720d89ccb24d5c46f07a4c46369a1c *1Track 10.flac
+8fe8f7e69f4abd9bc5fdb20eb8a51ba5 *1Track 11.flac
+9b7be4c21bc7e7238cab141fa4505a8f *1Track 12.flac
+cc9b659a9eec65ccfd66c7fee76d3f38 *2Track 1.flac
+a10598c53664b1a5434365b697251f64 *2Track 2.flac
+dc88b6a682ef56a3a4c8e4d09a35dc07 *2Track 3.flac
+b12ac7ef36a255f1f65109a38c1bf387 *2Track 4.flac
+07db8f576eaf1be20606b99843004b60 *2Track 5.flac
+ce02a8414ea2ac4005ca742ee79b87bf *2Track 6.flac
+aa7cb29a1e4aa48c2c8f1582f01378a3 *2Track 7.flac
+0cfd4d321f8a298fe8f67c3fed75a29c *2Track 8.flac
+036faeb2becb074ab702806eeb16a471 *Bob Dylan- 2003 10 16 Copenhagen Denmark - 2CD (FLAC).ffp
+5ad1a1a35980d541b6731d04cb136e26 *set_info.txt
+===================
+===================
+===================
+=== ffp for: bd03-10-16-MM-remaster.flacf
+===================
+===================
+===================
+1Track 01.flac:7be61fe3eb3f4bad65a8c7d5e33f6174
+1Track 02.flac:d64b66fb825e7f45792fecad9e313b0a
+1Track 03.flac:281eab9c8b74073a204fdaa69b6666ae
+1Track 04.flac:b08cf7765f2495b0f7703fffa64b8dc5
+1Track 05.flac:87c2e1227180abf279c659ec2619da59
+1Track 06.flac:50a3d294ded0d0d20a1f5c743d9e4106
+1Track 07.flac:3cb4c5b3e466d60290fdc7fc485f993d
+1Track 08.flac:8b21d73bf4fece8b6d0bdce5933ef851
+1Track 09.flac:2425ccbc6861d5a8c583328e196cc1aa
+1Track 10.flac:4793fd5d4f747dfb8c73bcd220ebf322
+1Track 11.flac:e035b84470a21506a7a5edb15cb823ef
+1Track 12.flac:7a94127254ef8657e71da4444e8ba11f
+2Track 1.flac:9b13cc8393d4ce53637f8376a31caaea
+2Track 2.flac:07b87173b1022823f48553c3df5fff0f
+2Track 3.flac:ce11bc3842ca2f6c5fabcc2ebbc493f0
+2Track 4.flac:8551848d521f5c2b575b5a037268cc88
+2Track 5.flac:1a3c63a5e1abb3758fc9c02fb7868fca
+2Track 6.flac:fbb452bb75269c81ab22f1677f57015a
+2Track 7.flac:ba530a7f9c56d7fd19a356264b8f13b5
+2Track 8.flac:6585a22c8e51b6cc939410c1f8a313cf
+===================
+===================
+===================
+=== shntool len for: bd03-10-16-MM-remaster.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:48.08        8486060 B   ---   --   ---xx   flac  0.6031  1Track 01.flac
+     4:27.03       47105900 B   ---   --   ---xx   flac  0.7531  1Track 02.flac
+     7:02.18       74483180 B   ---   --   ---xx   flac  0.7038  1Track 03.flac
+     5:46.11       61060316 B   ---   --   ---xx   flac  0.7282  1Track 04.flac
+     6:19.39       66947372 B   ---   --   ---xx   flac  0.6659  1Track 05.flac
+     7:26.22       78726188 B   ---   --   ---xx   flac  0.7086  1Track 06.flac
+     6:22.54       67511852 B   ---   --   ---xx   flac  0.6855  1Track 07.flac
+     6:50.02       72328748 B   ---   --   ---xx   flac  0.7147  1Track 08.flac
+     7:46.26       82263596 B   ---   --   ---xx   flac  0.7277  1Track 09.flac
+     5:45.50       60975644 B   ---   --   ---xx   flac  0.5902  1Track 10.flac
+     8:14.43       87242780 B   ---   --   ---xx   flac  0.7191  1Track 11.flac
+     7:56.64       84116972 B   ---   --   ---xx   flac  0.6464  1Track 12.flac
+     7:13.65       76534124 B   ---   --   ---xx   flac  0.7327  2Track 1.flac
+     6:25.29       67982252 B   ---   --   ---xx   flac  0.6417  2Track 2.flac
+     8:12.26       86849996 B   ---   --   ---xx   flac  0.7141  2Track 3.flac
+     4:03.73       43036940 B   ---   --   ---xx   flac  0.6350  2Track 4.flac
+     4:39.69       49377932 B   ---   --   ---xx   flac  0.7137  2Track 5.flac
+     0:33.61        5964716 B   ---   --   ---xx   flac  0.6630  2Track 6.flac
+     7:23.53       78269900 B   ---   --   ---xx   flac  0.7154  2Track 7.flac
+     8:41.35       91986764 B   ---   --   ---xx   flac  0.7007  2Track 8.flac
+   122:00.01     1291251232 B                            0.6950  (20 files)
+===================
+===================
+===================

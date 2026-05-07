@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-05-c.flacf 
+=================== 
+=================== 
+=================== 
+0644db4903f41c96d4b61199a019463d  Bob Dylan 1997.04.05 Moncton Coliseum, Moncton, New Brunswick, Canada.ffp
+7d665861b87492b764a77eb787ffc9a4  CD1\01 Crash on the Levee (down in the flood).flac
+6bf73c31dc180bc1946b04a60d9ca75e  CD1\02 I want you.flac
+0caa29d54b44bc68b62b650571771c9d  CD1\03 All along the watchtower.flac
+d83ad7bc59da77deb844b0c8b47f89f1  CD1\04 Positively 4th Street.flac
+6c7a644ae7d8c521b44eaba70c5b7e77  CD1\05 Watching the river flow.flac
+abef50461fd0ba45071362b705baf1ca  CD1\06 Silvio.flac
+2eebf39f29c66f5329c90e5bf2d56c2a  CD1\07 Oh baby it ain't no lie.flac
+d001b9c149779f387b071cc4d387556e  CD1\08 Desolation Row.flac
+5400a5657da241bc7d00646acb78582b  CD1\09 Don't think twice, it's all right.flac
+0fef76c9d240ec011572e418aaff3866  CD2\10 God knows.flac
+4b5f5a31bd1d179f88b685a5a1550b1a  CD2\11 She belongs to me.flac
+17e826b242c420a0ef69c1e0d57fc349  CD2\12 Highway 61 revisited.flac
+3995efc48747b1fe68bf6a7252c5eb3c  CD2\13 Like a rolling stone.flac
+a6c9755c1178c37c2c6a28a5de4cc2a4  CD2\14 It ain't me, babe.flac
+95676c817b301fa1b0dfe2f46bf05fa5  CD2\15 Rainy day women # 12 & 35.flac
+7faa9be86917c97623c48f4ec55222e5  text.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-05-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the Levee (down in the flood).flac:092c0d690da28ba591f0f191e2584d68
+02 I want you.flac:b0c99d55ad9e37f883f4d3d63e8e89f6
+03 All along the watchtower.flac:dd6e6df8a85dc67214552225ce48b3e3
+04 Positively 4th Street.flac:048c4f691056f2ae4db368c75fbab7f6
+05 Watching the river flow.flac:c335ad0b3d43f8ce54be0823a1c095f7
+06 Silvio.flac:40428d5c03f151e5198b704b01ec8a79
+07 Oh baby it ain't no lie.flac:902370df08c2e879297e62e5cd0125dd
+08 Desolation Row.flac:2d31cafa37d17f0110083749a0671afc
+09 Don't think twice, it's all right.flac:60b3b7c91575d6c6ed73e93af7c78f62
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-05-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 God knows.flac:645af4968284ed5218137eeec58d596a
+11 She belongs to me.flac:e34cd19fed1410ebbdd3797e3c484671
+12 Highway 61 revisited.flac:8949101852c93ec590eb0a01d6535cf6
+13 Like a rolling stone.flac:bbf6a4961235ed87cd07f3b9eae8c349
+14 It ain't me, babe.flac:d74dc2d7f9b8eef4c670e37f7d70d45d
+15 Rainy day women # 12 & 35.flac:4b2aa1d3ee2b0e5dee5e1cebdc8c7321
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-05-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:47.01       50629196 B   ---   --   ---xx   flac  0.5930  01 Crash on the Levee (down in the flood).flac
+     6:46.01       71620796 B   ---   --   ---xx   flac  0.6329  02 I want you.flac
+     6:36.00       69854444 B   ---   --   ---xx   flac  0.6797  03 All along the watchtower.flac
+     8:42.00       92080844 B   ---   --   ---xx   flac  0.6025  04 Positively 4th Street.flac
+     8:19.00       88023644 B   ---   --   ---xx   flac  0.6073  05 Watching the river flow.flac
+     7:52.58       83397260 B   ---   --   ---xx   flac  0.6551  06 Silvio.flac
+     5:46.00       61034444 B   ---   --   ---xx   flac  0.5905  07 Oh baby it ain't no lie.flac
+    10:27.00      110602844 B   ---   --   ---xx   flac  0.5532  08 Desolation Row.flac
+     9:22.00       99136844 B   ---   --   ---xx   flac  0.6194  09 Don't think twice, it's all right.flac
+    68:37.60      726380316 B                            0.6127  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-05-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:47.08       71813660 B   ---   --   ---xx   flac  0.5307  10 God knows.flac
+     8:30.00       89964044 B   ---   --   ---xx   flac  0.5404  11 She belongs to me.flac
+     9:50.00      104076044 B   ---   --   ---xx   flac  0.5460  12 Highway 61 revisited.flac
+     9:20.00       98784044 B   ---   --   ---xx   flac  0.5618  13 Like a rolling stone.flac
+     8:49.00       93315644 B   ---   --   ---xx   flac  0.4137  14 It ain't me, babe.flac
+     7:01.55       74393804 B   ---   --   ---xx   flac  0.5828  15 Rainy day women # 12 & 35.flac
+    50:17.63      532347240 B                            0.5279  (6 files)
+=================== 
+=================== 
+=================== 

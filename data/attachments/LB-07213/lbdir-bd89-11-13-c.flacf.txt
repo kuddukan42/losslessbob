@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-11-13-c.flacf 
+=================== 
+=================== 
+=================== 
+fbf787da431d0cd846bbbb12f5adc1b7  CD1\01 Subterranean homesick blues.shn
+24e4eba880c0fd372964f3b79be52031  CD1\02 Shelter from the storm.shn
+5b24d09713eda8d04911e27440bb8771  CD1\03 I don't believe you (she acts like we never have met).shn
+11c13df9c1f8d26a1f6e15a01ad9f2c3  CD1\04 Man of peace.shn
+0675f9ddb4f6b316636e017c846124c6  CD1\05 Lay lady lay.shn
+072497339069c4f613300bb1b2ba33ff  CD1\06 Leopard-skin pill-box hat.shn
+365c719f3f48f6615521693000360e37  CD1\07 Tangled up in blue.shn
+638a281acda82b9b91f59df84baaf787  CD1\08 It's alright, ma (I'm only bleeding).shn
+908285f721a3fe226c43547088df27fe  CD1\09 One too many mornings.shn
+dced5afea18af3a183b0907a4acf6dc7  CD1\1989-11-13 Miami, Florida d1.md5
+c475d78d5157f339534d84e2a53c62cf  CD2\01 Everything is broken.shn
+1020fcaa72803ab2b6d8e5380e40d9b6  CD2\02 Most of the time.shn
+617ef33d3af910f154880c87a9f16b85  CD2\03 What good am I.shn
+2c9f645a43abb59df7e10da488911fc1  CD2\04 I'll remember you.shn
+805db5a8fbb4fa9a4a2f2e20b2e8e4d1  CD2\05 I shall be released.shn
+a2f95fc7c0cfbc77b67b0c6006578839  CD2\06 Like a rolling stone.shn
+6e07d165813c0f75eeb7f694c3eb2286  CD2\07 (audience cheer).shn
+8c8f5e18b3ef0459a8b33699ebe247c1  CD2\08 Disease of conceit.shn
+e1e20d0fa142df05586f7b18b1f42ff6  CD2\09 Maggie's farm.shn
+9c37d196e6ff621166263f00955c71a5  CD2\1989-11-13 Miami, Florida d2.md5
+cc036dd2e6cb972cdf913b888338ed7b  Info\1989-11-13 Sunrise Musical Theater, Miami, Florida.doc
+5a2249b5f7046c4f6964a9479dadfecb  the harder they come.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-11-13-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+d63842c455384d0e8133e0d1ad5a0d90  [shntool]  01_Everything_is_broken.wav
+886574d95c34a15b5bd4d81d217beb54  [shntool]  02_Most_of_the_time.wav
+f89da80baf1ccf53b9056fc8929b3225  [shntool]  03_What_good_am_I.wav
+73882c763e1e2038de314289ea761bcd  [shntool]  04_I'll_remember_you.wav
+31f0f1203c8775adf55c19efa027f68a  [shntool]  05_I_shall_be_released.wav
+2760df41ac7777bc30cb094abc81cedc  [shntool]  06_Like_a_rolling_stone.wav
+47fcae3ff0194e1c0f186d2a58e7b88f  [shntool]  07_(audience_cheer).wav
+b4ded6f89a83cf313571b5836807fc16  [shntool]  08_Disease_of_conceit.wav
+e58f55e8ed50c1f83ebb40f47262e404  [shntool]  09_Maggie's_farm.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-11-13-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+abc95a39c190705cf26a009bb16ca591  [shntool]  01_Subterranean_homesick_blues.wav
+446f45ed7056ab44d0d019c44ed2512d  [shntool]  02_Shelter_from_the_storm.wav
+10f4ee02ac2fda11bb68efd85c24a767  [shntool]  03_I_don't_believe_you_(she_acts_like_we_never_have_met).wav
+fb088664094d9db22e950796253039f3  [shntool]  04_Man_of_peace.wav
+f403def96cd580b878d7764583154832  [shntool]  05_Lay_lady_lay.wav
+74e02820e6ea030df008e8cb889bb813  [shntool]  06_Leopard-skin_pill-box_hat.wav
+da76373b3778fce66e9f63c867a8bb0a  [shntool]  07_Tangled_up_in_blue.wav
+a4d5ff982654eba4096ceac24d2b273e  [shntool]  08_It's_alright,_ma_(I'm_only_bleeding).wav
+a2d80bff5ce0ebba5b3121eb95fdbb06  [shntool]  09_One_too_many_mornings.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-11-13-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.48       39450140 B   ---   --   ---xx    shn  0.6189  01 Everything is broken.shn
+     5:27.29       57751052 B   ---   --   ---xx    shn  0.5669  02 Most of the time.shn
+     5:19.63       56419820 B   ---   --   ---xx    shn  0.5262  03 What good am I.shn
+     4:41.23       49622540 B   ---   --   ---xx    shn  0.5799  04 I'll remember you.shn
+     3:57.57       41940908 B   ---   --   ---xx    shn  0.5823  05 I shall be released.shn
+     7:07.62       75468668 B   ---   --   ---xx    shn  0.6138  06 Like a rolling stone.shn
+     0:05.42         980828 B   ---   --   ---xx    shn  0.5041  07 (audience cheer).shn
+     4:22.18       46259180 B   ---   --   ---xx    shn  0.5559  08 Disease of conceit.shn
+     6:43.46       71197436 B   ---   --   ---xx    shn  0.5848  09 Maggie's farm.shn
+    41:29.13      439090572 B                            0.5789  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-11-13-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:08.26       33224396 B   ---   --   ---xx    shn  0.6551  01 Subterranean homesick blues.shn
+     4:58.45       52673084 B   ---   --   ---xx    shn  0.6446  02 Shelter from the storm.shn
+     5:37.08       59465660 B   ---   --   ---xx    shn  0.6461  03 I don't believe you (she acts like we never have met).shn
+     4:40.72       49561388 B   ---   --   ---xx    shn  0.6458  04 Man of peace.shn
+     4:26.68       47082380 B   ---   --   ---xx    shn  0.6214  05 Lay lady lay.shn
+     4:01.53       42637100 B   ---   --   ---xx    shn  0.6554  06 Leopard-skin pill-box hat.shn
+     6:04.36       64294316 B   ---   --   ---xx    shn  0.6363  07 Tangled up in blue.shn
+     6:56.23       73436540 B   ---   --   ---xx    shn  0.6039  08 It's alright, ma (I'm only bleeding).shn
+     5:51.32       61991708 B   ---   --   ---xx    shn  0.5544  09 One too many mornings.shn
+    45:45.63      484366572 B                            0.6255  (9 files)
+=================== 
+=================== 
+=================== 

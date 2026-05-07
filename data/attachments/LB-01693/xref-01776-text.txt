@@ -1,0 +1,291 @@
+===================
+===================
+===================
+=== CD1.ffp
+===================
+===================
+===================
+01 A Hard Rain's A-Gonna Fall (instrumental).flac:79308abae5d76ef2c4673c9ef3574030
+02 Love Her With A Feeling (Tampa Red).flac:46a9fa8c95f6c017dfff3b1e50a4d04a
+03 Baby Stop Crying.flac:6cc441f84e5cf40f056052561ec515c8
+04 Mr. Tambourine Man.flac:8b52ae7d43079b05e8c6781e9c56d4aa
+05 Shelter From The Storm.flac:4e8fc2ab654eead29e2a5603d6f01a66
+06 Love Minus Zero No Limit.flac:5075174ff721e3b49d27709d74150dd1
+07 Tangled Up In Blue.flac:84cbe9994c4e71e60d3c5815dfb0dc4e
+08 Ballad Of A Thin Man.flac:0a0fc8b94b49c9b40ba6ed8a834566c0
+09 Maggie's Farm.flac:1171cdcbdf27a44006531a6496e37021
+10 I Dont Believe You (She Acts Like We Never Have Met).flac:226c9ef25fc672ca2999a9c17016d51b
+11 Like A Rolling Stone.flac:b200fddc5e991c40fec6303d29ea2d7b
+12 I Shall Be Released.flac:b68dfcb9cecd7b30966537215dd15dd3
+13 Going, Going, Gone.flac:c00616e22ac51952c80a6162b812a097
+===================
+===================
+===================
+=== CD1.txt
+===================
+===================
+===================
+01 A Hard Rain's A-Gonna Fall (instrumental).flac:79308abae5d76ef2c4673c9ef3574030
+02 Love Her With A Feeling (Tampa Red).flac:46a9fa8c95f6c017dfff3b1e50a4d04a
+03 Baby Stop Crying.flac:6cc441f84e5cf40f056052561ec515c8
+04 Mr. Tambourine Man.flac:8b52ae7d43079b05e8c6781e9c56d4aa
+05 Shelter From The Storm.flac:4e8fc2ab654eead29e2a5603d6f01a66
+06 Love Minus Zero No Limit.flac:5075174ff721e3b49d27709d74150dd1
+07 Tangled Up In Blue.flac:84cbe9994c4e71e60d3c5815dfb0dc4e
+08 Ballad Of A Thin Man.flac:0a0fc8b94b49c9b40ba6ed8a834566c0
+09 Maggie's Farm.flac:1171cdcbdf27a44006531a6496e37021
+10 I Dont Believe You (She Acts Like We Never Have Met).flac:226c9ef25fc672ca2999a9c17016d51b
+11 Like A Rolling Stone.flac:b200fddc5e991c40fec6303d29ea2d7b
+12 I Shall Be Released.flac:b68dfcb9cecd7b30966537215dd15dd3
+13 Going, Going, Gone.flac:c00616e22ac51952c80a6162b812a097
+===================
+===================
+===================
+=== CD2.ffp
+===================
+===================
+===================
+14 (crowd noise).flac:46e5a22d126d480a97210349759974f8
+14 Rainy Day Women # 12 & 35.flac:8de0553c990662b66419e26909269651
+15 One Of Us Must Know (Sooner Or Later).flac:bb34097303b4e85a5d524a2445b57ba5
+16 You're A Big Girl Now.flac:a6088f1b227e9b3261ed91840e07ec61
+17 One More Cup Of Coffee (Valley Below).flac:e646cfa3bfedec47f4fd7673c3d87e0f
+18 Blowin' In The Wind.flac:8418996f7d7c718c3b4f746773efcd93
+19 I Want You.flac:1f4eb7f8db945032569f6127fd3ad2a3
+20 Seor (Tales Of Yankee Power).flac:5632457252badd74e444abaf57194eb6
+21 Masters Of War.flac:ab0d1c0afa32190b0bfc13091e80efb2
+22 Just Like A Woman.flac:b9484d2d7cf91d391fd8e5866ab17b25
+23 Simple Twist Of Fate.flac:eaf7ce13c0d25fa4d2db9ef1fa739e24
+24 All Along The Watchtower.flac:edc14577a61590e17a7f611200321a53
+25 All I Really Want To Do.flac:ff03a33d43a08b989807cc221f0f3835
+26 (band intro).flac:93a2a2fff61b069345061124db207be1
+26 It's Alright, Ma (I'm Only Bleeding).flac:0a564de20f5b9a25c40ba4d85f30960f
+27 Forever Young.flac:118a5d7f769bc72b53b363baae031a23
+28 The Times They Are A-Changin'.flac:8a48e60dad6b11b9ed1335641a62b51e
+===================
+===================
+===================
+=== CD2.txt
+===================
+===================
+===================
+14 (crowd noise).flac:46e5a22d126d480a97210349759974f8
+14 Rainy Day Women # 12 & 35.flac:8de0553c990662b66419e26909269651
+15 One Of Us Must Know (Sooner Or Later).flac:bb34097303b4e85a5d524a2445b57ba5
+16 You're A Big Girl Now.flac:a6088f1b227e9b3261ed91840e07ec61
+17 One More Cup Of Coffee (Valley Below).flac:e646cfa3bfedec47f4fd7673c3d87e0f
+18 Blowin' In The Wind.flac:8418996f7d7c718c3b4f746773efcd93
+19 I Want You.flac:1f4eb7f8db945032569f6127fd3ad2a3
+20 Seor (Tales Of Yankee Power).flac:5632457252badd74e444abaf57194eb6
+21 Masters Of War.flac:ab0d1c0afa32190b0bfc13091e80efb2
+22 Just Like A Woman.flac:b9484d2d7cf91d391fd8e5866ab17b25
+23 Simple Twist Of Fate.flac:eaf7ce13c0d25fa4d2db9ef1fa739e24
+24 All Along The Watchtower.flac:edc14577a61590e17a7f611200321a53
+25 All I Really Want To Do.flac:ff03a33d43a08b989807cc221f0f3835
+26 (band intro).flac:93a2a2fff61b069345061124db207be1
+26 It's Alright, Ma (I'm Only Bleeding).flac:0a564de20f5b9a25c40ba4d85f30960f
+27 Forever Young.flac:118a5d7f769bc72b53b363baae031a23
+28 The Times They Are A-Changin'.flac:8a48e60dad6b11b9ed1335641a62b51e
+===================
+===================
+===================
+=== Bob Dylan 1978-06-17 Earls Court, London, England (NS Master).txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Earls Court
+London, England
+June 17, 1978
+
+LB-1693
+from Nigel Simms' master cassette recording; cassette transfer and remastering by pb 4/04; remastering consisted of balancing and optimizing levels;
+reported to be an upgrade over previous circulating version; good to very good sound; (this is a close eac match to NS version on lk Earls Court 78 set)
+
+CD1:
+01 A Hard Rain's A-Gonna Fall (instrumental)
+02 Love Her With A Feeling (Tampa Red)
+03 Baby Stop Crying
+04 Mr. Tambourine Man
+05 Shelter From The Storm
+06 Love Minus Zero/No Limit
+07 Tangled Up In Blue
+08 Ballad Of A Thin Man
+09 Maggie's Farm
+10 I Dont Believe You (She Acts Like We Never Have Met)
+11 Like A Rolling Stone
+12 I Shall Be Released
+13 Going, Going, Gone
+
+CD2:
+14 (crowd)
+14 Rainy Day Women # 12 & 35
+15 One Of Us Must Know (Sooner Or Later)
+16 You're A Big Girl Now
+17 One More Cup Of Coffee (Valley Below)
+18 Blowin' In The Wind
+19 I Want You
+20 Seor (Tales Of Yankee Power)
+21 Masters Of War
+22 Just Like A Woman
+23 Simple Twist Of Fate
+24 All Along The Watchtower
+25 All I Really Want To Do
+26 (band intro)
+26 It's Alright, Ma (I'm Only Bleeding)
+27 Forever Young
+28 The Times They Are A-Changin'
+
+Third concert of the 1978 European Tour
+1978 concert # 33
+
+Concert # 10 with the 1978 World Tour Band:
+Bob Dylan (vocal & guitar)
+Billy Cross (lead guitar)
+Alan Pasqua (keyboards)
+Steven Soles (rhythm guitar, backup vocals)
+David Mansfield (violin & mandolin)
+Steve Douglas (horns)
+Jerry Scheff (bass)
+Bobbye Hall (percussion)
+Ian Wallace (drums)
+Helena Springs, Jo Ann Harris, Carolyn Dennis (background vocals).
+
+1, 14 instrumental without Bob Dylan.
+6, 22, 23 Bob Dylan (harmonica).
+
+BobTalk:
+All right, thank you! This is a new song just recorded a few weeks ago. (before Baby Stop Crying)
+
+Thank you! This is the story of my life, this next song. (Shelter From The Storm)
+
+Thank you. This is one of the finest bands I've ever worked with and I wanna introduce 'em to you now. On the drums, Ian Wallace. On the bass guitar, Jerry Scheff. Keyboards, Alan Pasqua. Lead guitar, Billy Cross. On the rhythm guitar, Mr. Steve Soles. On the conga drums, Bobbye Hall. All right, on the violin, and he also plays the mandolin, and a lot of other things, David Mansfield. Slow down, on the tenor saxophone, Steve Douglas. On the background vocals, three young ladies break my heart every night, Carolyn Dennis. My cousin, Jo Ann Harris. And my very good friend, Helena Springs.
+
+I wrote and recorded this in New York a few years back called, It's Alright Ma, I'm Only Bleeding.
+
+< ... > A private present to a friend of mine in the back. All right we're gonna get on down the road, and play you this last song before we go. It was a pleasure to be here tonight. Yes it was. I'm glad to say this song means as much to me as it does to you. So, till we meet again. (before Forever Young)
+
+Thank you very much! I've been singing this one for fifteen years, so one more time. (before The Times They Are A-Changin)
+
+1 new song (3%) compared to previous concert
+1 new song for this tour
+
+Stereo audience recording, 135 minutes
+
+CD1 .ffp:
+01 A Hard Rain's A-Gonna Fall (instrumental).flac:79308abae5d76ef2c4673c9ef3574030
+02 Love Her With A Feeling (Tampa Red).flac:46a9fa8c95f6c017dfff3b1e50a4d04a
+03 Baby Stop Crying.flac:6cc441f84e5cf40f056052561ec515c8
+04 Mr. Tambourine Man.flac:8b52ae7d43079b05e8c6781e9c56d4aa
+05 Shelter From The Storm.flac:4e8fc2ab654eead29e2a5603d6f01a66
+06 Love Minus Zero No Limit.flac:5075174ff721e3b49d27709d74150dd1
+07 Tangled Up In Blue.flac:84cbe9994c4e71e60d3c5815dfb0dc4e
+08 Ballad Of A Thin Man.flac:0a0fc8b94b49c9b40ba6ed8a834566c0
+09 Maggie's Farm.flac:1171cdcbdf27a44006531a6496e37021
+10 I Dont Believe You (She Acts Like We Never Have Met).flac:226c9ef25fc672ca2999a9c17016d51b
+11 Like A Rolling Stone.flac:b200fddc5e991c40fec6303d29ea2d7b
+12 I Shall Be Released.flac:b68dfcb9cecd7b30966537215dd15dd3
+13 Going, Going, Gone.flac:c00616e22ac51952c80a6162b812a097
+
+CD2 .ffp:
+14 (crowd noise).flac:46e5a22d126d480a97210349759974f8
+14 Rainy Day Women # 12 & 35.flac:8de0553c990662b66419e26909269651
+15 One Of Us Must Know (Sooner Or Later).flac:bb34097303b4e85a5d524a2445b57ba5
+16 You're A Big Girl Now.flac:a6088f1b227e9b3261ed91840e07ec61
+17 One More Cup Of Coffee (Valley Below).flac:e646cfa3bfedec47f4fd7673c3d87e0f
+18 Blowin' In The Wind.flac:8418996f7d7c718c3b4f746773efcd93
+19 I Want You.flac:1f4eb7f8db945032569f6127fd3ad2a3
+20 Seor (Tales Of Yankee Power).flac:5632457252badd74e444abaf57194eb6
+21 Masters Of War.flac:ab0d1c0afa32190b0bfc13091e80efb2
+22 Just Like A Woman.flac:b9484d2d7cf91d391fd8e5866ab17b25
+23 Simple Twist Of Fate.flac:eaf7ce13c0d25fa4d2db9ef1fa739e24
+24 All Along The Watchtower.flac:edc14577a61590e17a7f611200321a53
+25 All I Really Want To Do.flac:ff03a33d43a08b989807cc221f0f3835
+26 (band intro).flac:93a2a2fff61b069345061124db207be1
+26 It's Alright, Ma (I'm Only Bleeding).flac:0a564de20f5b9a25c40ba4d85f30960f
+27 Forever Young.flac:118a5d7f769bc72b53b363baae031a23
+28 The Times They Are A-Changin'.flac:8a48e60dad6b11b9ed1335641a62b51e
+
+* * *  Enjoy your Bobby Hobby  * * *
+===================
+===================
+===================
+=== setlist.txt
+===================
+===================
+===================
+Earls Court
+London, England
+17 June 1978
+  
+The NS-Master 
+
+1. 
+  A Hard Rain's A-Gonna Fall
+2.
+  Love Her With A Feeling (Tampa Red)
+3.
+  Baby Stop Crying
+4.
+  Mr. Tambourine Man
+5.
+  Shelter From The Storm
+6.
+  Love Minus Zero/No Limit
+7.
+  Tangled Up In Blue
+8.
+  Ballad Of A Thin Man
+9.
+  Maggie's Farm
+10.
+  I Dont Believe You (She Acts Like We Never Have Met)
+11.
+  Like A Rolling Stone
+12.
+  I Shall Be Released
+13.
+  Going, Going, Gone
+
+disk2  
+1.
+  Noise
+2.
+  Rainy Day Women # 12 & 35
+3.
+  One Of Us Must Know (Sooner Or Later)
+4.
+  You're A Big Girl Now
+5.
+  One More Cup Of Coffee (Valley Below)
+6.
+  Blowin' In The Wind
+7.
+  I Want You
+8.
+  Seor (Tales Of Yankee Power)
+9.
+  Masters Of War
+10.
+  Just Like A Woman
+11.
+  Simple Twist Of Fate
+12.
+  All Along The Watchtower
+13.
+  All I Really Want To Do
+14.
+  Band intro
+15.
+  It's Alright, Ma (I'm Only Bleeding)
+16.
+  Forever Young
+  
+  
+17.
+  The Times They Are A-Changin'
+ 
+===================
+===================
+===================

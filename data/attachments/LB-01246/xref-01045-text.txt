@@ -1,0 +1,162 @@
+===================
+===================
+===================
+=== flac.ffp
+===================
+===================
+===================
+Disc1\01 1-00-intro.flac:b5f6fdef96dd00ae93aa0f04f82c771d
+Disc1\02 1-01-To Be Alone With You.flac:adcab28676ce4c1b1dc3009547422509
+Disc1\03 1-02-It's All Over Now, Baby Blue.flac:4469bc9594252b3bbb902702d165bb59
+Disc1\04 1-03-Cry A While.flac:7c2f61e72453970e80c7035ff86ed5a6
+Disc1\05 1-04-If You See Her, Say Hello.flac:afbfc4108dc652eec2b8de7dc077cdce
+Disc1\06 1-05-It's Alright, Ma (I'm Only Bleeding).flac:9878b0681e05647c176331643a7a3745
+Disc1\07 1-06-Boots Of Spanish Leather.flac:af3a35dafe06146afe9bc0ad3917d49a
+Disc1\08 1-07-Things Have Changed.flac:8467bcd636244bf4c75a3970fb2c7ed0
+Disc1\09 1-08-Highway 61 Revisited.flac:5a41f65cebad82666fe1b74a6b3a4b3b
+Disc1\10 1-09-Make You Feel My Love.flac:8b5e552d04924907f609574c7162ac33
+Disc2\01 2-01-Tweedle Dee & Tweedle Dum.flac:52e738e2ab1df133aca58fc05c9f3346
+Disc2\02 2-02-Every Grain Of Sand.flac:7269ced0700929ce21dc8a5522458796
+Disc2\03 2-03-Honest With Me.flac:ad6764aed6cda533bcfe97aeb8c5c8b1
+Disc2\04 2-04-Mr. Tambourine Man.flac:6c2cc16f4194b13f1ea7e17ee3950078
+Disc2\05 2-05-Summer Days.flac:73ac495b59a6ada3d0e4d245f4bf7b5d
+Disc2\06 2-06-Cat's In The Well.flac:8b777763a9deac6e0caa64b8c80a5c51
+Disc2\07 2-07-band intros.flac:7e5d0f0691ca5aecded32824695e323e
+Disc2\08 2-08-Like A Rolling Stone.flac:67cab8e2e7d5bf4b68f2d9d1e078df42
+Disc2\09 2-09-All Along The Watchtower.flac:d80748c1999bd0d30cd50d63eaef46d5
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+         **** This recording is derived from LB-1246 ****
+
+Bob Dylan
+Hartwall Areena
+Helsinki, Finland
+Oct 9 2003
+
+
+Lineage: Audio CDR's  ->  EAC (secure/offset correct)  ->  WAV  ->  TLH - FLAC Level 8
+
+
+CD 1:
+1. intro
+2. To Be Alone With You
+3. It's All Over Now, Baby Blue
+4. Cry A While
+5. If You See Her, Say Hello
+6. It's Alright, Ma (I'm Only Bleeding)
+7. Boots Of Spanish Leather
+8. Things Have Changed
+9. Highway 61 Revisited
+10. Make You Feel My Love
+
+CD 2:
+1. Tweedle Dee & Tweedle Dum
+2. Every Grain Of Sand
+3. Honest With Me
+4. Mr. Tambourine Man
+5. Summer Days
+6. Cat's In The Well
+7. band intros
+8. Like A Rolling Stone
+9. All Along The Watchtower
+
+===============================================================
+Bob Dylan (vocal)
+Freddie Koella (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+George Recile (drums & percussion)
+
+===============================================================
+Disc:1
+TOC of the extracted CD
+
+     Track |   Start  |  Length  | Start sector | End sector 
+    ---------------------------------------------------------
+        1  |  0:00.00 |  1:03.46 |         0    |     4770   
+        2  |  1:03.46 |  4:24.69 |      4771    |    24639   
+        3  |  5:28.40 |  7:16.25 |     24640    |    57364   
+        4  | 12:44.65 |  5:41.47 |     57365    |    82986   
+        5  | 18:26.37 |  5:48.45 |     82987    |   109131   
+        6  | 24:15.07 |  7:45.18 |    109132    |   144024   
+        7  | 32:00.25 |  6:08.40 |    144025    |   171664   
+        8  | 38:08.65 |  7:00.30 |    171665    |   203194   
+        9  | 45:09.20 |  7:34.38 |    203195    |   237282   
+       10  | 52:43.58 |  5:02.52 |    237283    |   259984 
+
+Disc:2 
+ Track |   Start  |  Length  | Start sector | End sector 
+    ---------------------------------------------------------
+        1  |  0:00.00 |  5:55.64 |         0    |    26688   
+        2  |  5:55.64 |  8:50.04 |     26689    |    66442   
+        3  | 14:45.68 |  6:55.34 |     66443    |    97601   
+        4  | 21:41.27 |  7:42.55 |     97602    |   132306   
+        5  | 29:24.07 |  9:40.16 |    132307    |   175822   
+        6  | 39:04.23 |  4:41.38 |    175823    |   196935   
+        7  | 43:45.61 |  0:33.21 |    196936    |   199431   
+        8  | 44:19.07 |  7:57.50 |    199432    |   235256   
+        9  | 52:16.57 |  6:43.54 |    235257    |   265535   
+ 
+
+
+
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+753e85ab465b85fe99adf217b4940b10 *Disc1\01 1-00-intro.flac
+ffbd4b9f913c742f95c31c9f0b4873a5 *Disc1\02 1-01-To Be Alone With You.flac
+d374880a02b1c1da7956b987096be354 *Disc1\03 1-02-It's All Over Now, Baby Blue.flac
+699890c813b75af8c35e33562013d0ff *Disc1\04 1-03-Cry A While.flac
+2254d32e8e53ebf021d29e14a7dd777e *Disc1\05 1-04-If You See Her, Say Hello.flac
+808130b7120e31c9a36a5bf095d79df7 *Disc1\06 1-05-It's Alright, Ma (I'm Only Bleeding).flac
+897896d8d36cf39a749ad55f4d512b55 *Disc1\07 1-06-Boots Of Spanish Leather.flac
+d60533553b9bd458ea32c93353f3684d *Disc1\08 1-07-Things Have Changed.flac
+a2cfcbac9e0a45e51c0a174450665f73 *Disc1\09 1-08-Highway 61 Revisited.flac
+b1875d62dceea3f2a68592af3c67d048 *Disc1\10 1-09-Make You Feel My Love.flac
+2485b7981aafdfc916ede6cc12d05460 *Disc2\01 2-01-Tweedle Dee & Tweedle Dum.flac
+a441e64a6c1aac95bd638703ae75ca41 *Disc2\02 2-02-Every Grain Of Sand.flac
+ace179b2f51008a6fb0acd7ce87fecb7 *Disc2\03 2-03-Honest With Me.flac
+34aa79aad62a3b7a336a1024d367883e *Disc2\04 2-04-Mr. Tambourine Man.flac
+2b7bbb0b066b47b60a783391f1300ee4 *Disc2\05 2-05-Summer Days.flac
+42c93745d6de170d72777aa01500d314 *Disc2\06 2-06-Cat's In The Well.flac
+3c618ac044aa107ca9e90ff49738468a *Disc2\07 2-07-band intros.flac
+239c298d6640f9f8f6b6eceba9b990b9 *Disc2\08 2-08-Like A Rolling Stone.flac
+d0846c58e4011f58c6080859be8d8c12 *Disc2\09 2-09-All Along The Watchtower.flac
+===================
+===================
+===================
+=== wav.md5
+===================
+===================
+===================
+0b45b080d63cabe930793607e7bb93b6 *Disc1\01 1-00-intro.wav
+be3395cdc5f66456c9e23977201ad416 *Disc1\02 1-01-To Be Alone With You.wav
+7107191f04e031131755889aab5632d7 *Disc1\03 1-02-It's All Over Now, Baby Blue.wav
+537b89bc4c8605273f59521a1731f093 *Disc1\04 1-03-Cry A While.wav
+6fb2c2f42daf9d52fe64e6a8554cab59 *Disc1\05 1-04-If You See Her, Say Hello.wav
+12b21a4325197c49cdd9fa1685ee4dd9 *Disc1\06 1-05-It's Alright, Ma (I'm Only Bleeding).wav
+3653d09f4cd802018b901c37a141ba73 *Disc1\07 1-06-Boots Of Spanish Leather.wav
+41bb05102b8ff515d83711caea8eb4f0 *Disc1\08 1-07-Things Have Changed.wav
+a43fd240e2efff528b347d7ac1fd185f *Disc1\09 1-08-Highway 61 Revisited.wav
+2574332448e0a8dce616c83f127f1d00 *Disc1\10 1-09-Make You Feel My Love.wav
+01b802c4ab153a83bc7427ba8db81017 *Disc2\01 2-01-Tweedle Dee & Tweedle Dum.wav
+ccaad706ed45aba00f2ef63430cdd030 *Disc2\02 2-02-Every Grain Of Sand.wav
+48210616e9843ed7d267b2d64cf4534c *Disc2\03 2-03-Honest With Me.wav
+c9c0a997f402c12daba2effdef061e29 *Disc2\04 2-04-Mr. Tambourine Man.wav
+ca466493744739fc48eabc87affab5f5 *Disc2\05 2-05-Summer Days.wav
+787fead03302af4b49def5cc11da745a *Disc2\06 2-06-Cat's In The Well.wav
+c0155fe2d35b79c6a83ee927a49bc4d0 *Disc2\07 2-07-band intros.wav
+f508bfe4982c6a91cade5a3572f7f176 *Disc2\08 2-08-Like A Rolling Stone.wav
+5eb609e80aecd1bdb0224e379c153e29 *Disc2\09 2-09-All Along The Watchtower.wav
+===================
+===================
+===================

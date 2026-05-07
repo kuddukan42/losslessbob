@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-21-a.flacf 
+=================== 
+=================== 
+=================== 
+7e91c98aed19f781e096ef11d4e95e75  CD1\01 To be alone with you.flac
+9c2936bde75cccdfd9d38acc2de58969  CD1\02 Shake Sugaree.flac
+d268d571487d3f8950da8b0128416c23  CD1\03 All along the watchtower.flac
+91dbb1fa878ebc72bd090696e7651b0f  CD1\04 Just like a woman.flac
+14129e0b7ae65e3d07821b94c089f204  CD1\05 Silvio.flac
+d83f07cb4a523e615869749efee57ccd  CD1\FLAC CD1.md5
+04ff78e3313142150fa9867a72f59bc3  CD2\06 Love minus zero - no limit.flac
+ddeb6daec0cca74053dbc962aa9f9952  CD2\07 Tangled up in blue.flac
+0a9f3f1fdeac31eea2e32cc0242ccafa  CD2\08 Mr. Tambourine Man.flac
+a4e5d6488ca6cfed603b48a082d9ff46  CD2\09 Ballad of Hollis Brown.flac
+1a14e73161b4029d9c75226365624950  CD2\10 Ballad of a thin man.flac
+4dafd44020e50ad72d33e5a01b4e71ee  CD2\11 Maggie's farm.flac
+717a5dd783f0bb922efccb8f57ee5f0c  CD2\12 It ain't me, babe.flac
+8cac2cc7a3010615def682a516b47712  CD2\FLAC CD2.md5
+f219f884dcb9c7be6abaf4858c446e09  Info\1996-07-21 Kirjurinluoto, Pori, Finland.txt
+6b380955898c5ce38d424549bd9b8cd7  Info\Info.txt
+66dc3855456295f4ada2485310548626  Info\WAV CD1.md5
+c5778b729b267d1443813398ebc4c1d0  Info\WAV CD2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-21-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 To be alone with you.flac:fec6f535e3d23e1457de60b39c702f09
+02 Shake Sugaree.flac:a41ef28795c2cb68451258d1d49dd664
+03 All along the watchtower.flac:0586728ab837f60941c0f4e63b58407b
+04 Just like a woman.flac:b16acdd06ae7727804ea33c34e6f8e4b
+05 Silvio.flac:bbf135f0bc5b13fa6f35f18e7b740039
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-21-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+06 Love minus zero - no limit.flac:d8b40b635fa404ffa53e557d2d3093f4
+07 Tangled up in blue.flac:02296796f5ed7244e56515b598083906
+08 Mr. Tambourine Man.flac:e565cbe584af2846e8f80686c205f91a
+09 Ballad of Hollis Brown.flac:2b19f1a53cce83bd30011308f6b5f854
+10 Ballad of a thin man.flac:dbfee3898c493f929f72072162ec9b60
+11 Maggie's farm.flac:040d88ed9146f6c016393b213548f41d
+12 It ain't me, babe.flac:5b031b063dd62dbf91987a1cd13449e9
+=================== 
+=================== 
+=================== 
+=== shntool for: bd96-07-21-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.64       47602172 B   ---   --   ---xx   flac  0.6108  01 To be alone with you.flac
+     5:58.20       63198284 B   ---   --   ---xx   flac  0.5882  02 Shake Sugaree.flac
+     5:56.09       62819612 B   ---   --   ---xx   flac  0.6153  03 All along the watchtower.flac
+     6:56.14       73415372 B   ---   --   ---xx   flac  0.5909  04 Just like a woman.flac
+     6:59.25       73970444 B   ---   --   ---xx   flac  0.6190  05 Silvio.flac
+    30:19.57      321005884 B                            0.6046  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd96-07-21-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:54.05       62457404 B   ---   --   ---xx   flac  0.5763  06 Love minus zero - no limit.flac
+     9:47.22      103598588 B   ---   --   ---xx   flac  0.6374  07 Tangled up in blue.flac
+     8:31.18       90182780 B   ---   --   ---xx   flac  0.6012  08 Mr. Tambourine Man.flac
+     7:20.22       77667788 B   ---   --   ---xx   flac  0.5587  09 Ballad of Hollis Brown.flac
+     8:08.29       86151452 B   ---   --   ---xx   flac  0.5957  10 Ballad of a thin man.flac
+     8:16.74       87668492 B   ---   --   ---xx   flac  0.6146  11 Maggie's farm.flac
+    10:04.09      106566812 B   ---   --   ---xx   flac  0.6203  12 It ain't me, babe.flac
+    58:02.29      614293316 B                            0.6038  (7 files)
+=================== 
+=================== 
+=================== 

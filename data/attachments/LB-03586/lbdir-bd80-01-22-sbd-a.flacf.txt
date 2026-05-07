@@ -1,0 +1,58 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-01-22-sbd-a.flacf 
+=================== 
+=================== 
+=================== 
+31990f013c3938ebdd69249b012b48d8  01 When He Returns.flac
+a73ad07cf3cb86fd76be6fca26e057b9  02 Man Gave Names to All the Animals.flac
+e6aa4be585a9ad49f047ff5a23ca6563  03 Precious Angel.flac
+c06ca747d6f9c9fa2b0f14a762f00db3  04 Slow Train#.flac
+21d3a655fcf5a0467b7a657c757e1e3b  05 #Walk around Heaven.flac
+bc343df2ae21ba319205b80894fac61c  06 Gonna Change My Way of Thinking.flac
+76aaf1f827002fdd6d44c798d688e48b  07 Do Right to Me Baby (Do unto Others).flac
+91c5dfc9fe2082370f61efbc5889ab04  08 Solid Rock.flac
+d788af487a20e1498c038a2e7e653ce2  09 Saving Grace.flac
+353b1f6ee8289a521bb240b16e6c0d21  bd1980-01-22sbd.txt
+809a1ab37613aefef22a0b0a1441fd8e  bd80-01-22-sbd-a-LB-3586.txt
+534814668388c18d637b1a7bdb6f931e  fingerprint.ffp
+534814668388c18d637b1a7bdb6f931e  fingerprint.ffp.txt
+fb35621e844e82067ed11d2196cbf8a8  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-01-22-sbd-a.flacf 
+=================== 
+=================== 
+=================== 
+01 When He Returns.flac:41cd714a27d0b531cc7c09464955ecea
+02 Man Gave Names to All the Animals.flac:0bf408c3284dfcb22d5d874ddab1de58
+03 Precious Angel.flac:8763755a195494fd662048914dc809b0
+04 Slow Train#.flac:977e20d378a5da7e9fea8c3176fe64b2
+05 #Walk around Heaven.flac:dec56df4795497b45875402ce20ce374
+06 Gonna Change My Way of Thinking.flac:f43beb67c20091682bfb3deb1eb37305
+07 Do Right to Me Baby (Do unto Others).flac:af69db46920bdbd055d9b9a65b82c46d
+08 Solid Rock.flac:ee33cbf3126b9b4bd5bae06bf0615d96
+09 Saving Grace.flac:dd3f5f6cfa7f026bb42840caaae0f156
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-01-22-sbd-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:52.05       51520608 B   -b-   --   ---xx   flac  0.5166  01 When He Returns.flac
+     5:46.36       61119116 B   ---   --   ---xx   flac  0.5099  02 Man Gave Names to All the Animals.flac
+     6:23.37       67648268 B   ---   --   ---xx   flac  0.5461  03 Precious Angel.flac
+     3:35.51       38045996 B   ---   --   ---xx   flac  0.5689  04 Slow Train#.flac
+     3:51.33       40826060 B   ---   --   ---xx   flac  0.4176  05 #Walk around Heaven.flac
+     4:41.16       49606076 B   ---   --   ---xx   flac  0.5305  06 Gonna Change My Way of Thinking.flac
+     5:05.60       53943164 B   ---   --   ---xx   flac  0.4596  07 Do Right to Me Baby (Do unto Others).flac
+     4:49.43       51080780 B   ---   --   ---xx   flac  0.5249  08 Solid Rock.flac
+     2:50.58       30124660 B   -b-   --   ---xx   flac  0.4135  09 Saving Grace.flac
+    41:56.39      443914728 B                            0.5041  (9 files)
+=================== 
+=================== 
+=================== 

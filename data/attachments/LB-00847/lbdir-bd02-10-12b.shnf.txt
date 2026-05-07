@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-12b.shnf 
+=================== 
+=================== 
+=================== 
+9f0641df3a9fffbdada33abdcc5a33af  bd02-10-12b.md5
+0ccdf81a356905f59c3b4382e83b7762  bd02-10-12b.txt
+0a2821f63037911d44ba19fd68bfc3d4  bd02-10-12d1t01.shn
+a2f41a5c385c3e7fe0d25fa86e1b6da6  bd02-10-12d1t02.shn
+359b2aea84630c3dfc3e4ab1cd8132a4  bd02-10-12d1t03.shn
+0924f04814099b6a2b2612ed9daa296d  bd02-10-12d1t04.shn
+09d919c44261cabf97cf9ec8266aa1d1  bd02-10-12d1t05.shn
+8de7dffe38cb0844bb5d6c8b57aa3124  bd02-10-12d1t06.shn
+8e6ddf5471c7a40f52de6b87e9c59b22  bd02-10-12d1t07.shn
+5ef28fc36ffaf5db7c25ad3cb7a1acad  bd02-10-12d1t08.shn
+75c2f3feadc628632b4f53bb9fc25ffb  bd02-10-12d1t09.shn
+d597a906305c55f759270f1cbefc9045  bd02-10-12d1t10.shn
+f0fdcd8eebbe85c4369dfe2a83f00d14  bd02-10-12d1t11.shn
+130a9fa24126a6d71ef5a0fcd1697918  bd02-10-12d2t01.shn
+6d62976c2450fed82b38410970935213  bd02-10-12d2t02.shn
+8ee9887bf77c25879ad97f5051d49075  bd02-10-12d2t03.shn
+72143d02cbc0338d1e32a2618a9a2c48  bd02-10-12d2t04.shn
+cc4ff2ae0deff14122f95a1201d9725d  bd02-10-12d2t05.shn
+db6891d29439b7a7a4d38f13863f60e5  bd02-10-12d2t06.shn
+1bb5cd291eae2d8ceec0ed12a999c5a9  bd02-10-12d2t07.shn
+99412f1e7f3722d8a2e50909eeaee660  bd02-10-12d2t08.shn
+91929865c9f79279f8cf24744109a30c  bd02-10-12d2t09.shn
+006f1b2a6a75431adf10361c8e6e53c0  bd02-10-12d2t10.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-12b.shnf 
+=================== 
+=================== 
+=================== 
+2b36e986c4a01404c9df8975d5b179ce  [shntool]  bd02-10-12d1t01.wav
+94786a72e8bc3fc60618e801898b4955  [shntool]  bd02-10-12d1t02.wav
+570cf6b7573e4fa3f589a8b5c5a0fbc5  [shntool]  bd02-10-12d1t03.wav
+f7f7bdc8d19dde3420e66d4c6c5043e0  [shntool]  bd02-10-12d1t04.wav
+76bc953522dedaf38dd35fe88d549f0f  [shntool]  bd02-10-12d1t05.wav
+6f5caac3caf8aa185ffad6c484d76ef0  [shntool]  bd02-10-12d1t06.wav
+cd63a4be52fe4252885eeca4347dea1d  [shntool]  bd02-10-12d1t07.wav
+4ac46126062aa3803da576b47a94be4a  [shntool]  bd02-10-12d1t08.wav
+dcacbc738c5ec4e2050c26374839ee42  [shntool]  bd02-10-12d1t09.wav
+2388ec1de4300a67c864683c8ee3e491  [shntool]  bd02-10-12d1t10.wav
+a1b9940b134d5ddf35aa0c05196ce257  [shntool]  bd02-10-12d1t11.wav
+492580a42359c6274d4bbd605930f6a0  [shntool]  bd02-10-12d2t01.wav
+0bb815493738ee5402b8e4e2b0d76b59  [shntool]  bd02-10-12d2t02.wav
+5d76ce0de9fb4214f8e67e5a3304b632  [shntool]  bd02-10-12d2t03.wav
+0102950063130d5499b7e4d38908a968  [shntool]  bd02-10-12d2t04.wav
+03af07e70ee3fc1be6e56365c52254fb  [shntool]  bd02-10-12d2t05.wav
+75d0ce8dc5e6922e970ee79e5cee5201  [shntool]  bd02-10-12d2t06.wav
+e073df2414bfa0c8a103bd14144f1542  [shntool]  bd02-10-12d2t07.wav
+01a4656f82c9a5f812fcd6d0b1933c09  [shntool]  bd02-10-12d2t08.wav
+83ff13d422357c998f363fcff5408745  [shntool]  bd02-10-12d2t09.wav
+410633811a14429ecb8ab24af045e86a  [shntool]  bd02-10-12d2t10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-12b.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.00       67208444 B   ---   --   ---xx    shn  0.5627  bd02-10-12d1t01.shn
+     5:29.48       58148540 B   ---   --   ---xx    shn  0.5497  bd02-10-12d1t02.shn
+     8:11.64       86762972 B   ---   --   ---xx    shn  0.5771  bd02-10-12d1t03.shn
+     4:06.60       43535564 B   ---   --   ---xx    shn  0.5298  bd02-10-12d1t04.shn
+     8:00.19       84716732 B   ---   --   ---xx    shn  0.5615  bd02-10-12d1t05.shn
+     4:31.36       47889116 B   ---   --   ---xx    shn  0.5510  bd02-10-12d1t06.shn
+     6:46.22       71670188 B   ---   --   ---xx    shn  0.5239  bd02-10-12d1t07.shn
+     7:35.10       80285564 B   ---   --   ---xx    shn  0.5488  bd02-10-12d1t08.shn
+     6:28.02       68447948 B   ---   --   ---xx    shn  0.5531  bd02-10-12d1t09.shn
+     5:38.18       59665580 B   ---   --   ---xx    shn  0.5881  bd02-10-12d1t10.shn
+     6:17.20       66549884 B   ---   --   ---xx    shn  0.4971  bd02-10-12d1t11.shn
+     4:24.44       46673132 B   ---   --   ---xx    shn  0.5106  bd02-10-12d2t01.shn
+     7:38.64       80941772 B   ---   --   ---xx    shn  0.5202  bd02-10-12d2t02.shn
+     7:33.58       80045660 B   ---   --   ---xx    shn  0.4865  bd02-10-12d2t03.shn
+     7:09.55       75805004 B   ---   --   ---xx    shn  0.4950  bd02-10-12d2t04.shn
+     3:23.21       35858636 B   ---   --   ---xx    shn  0.3892  bd02-10-12d2t05.shn
+     5:21.60       56765564 B   ---   --   ---xx    shn  0.3674  bd02-10-12d2t06.shn
+    11:54.37      126036668 B   ---   --   ---xx    shn  0.5376  bd02-10-12d2t07.shn
+     8:00.74       84846092 B   ---   --   ---xx    shn  0.5360  bd02-10-12d2t08.shn
+     7:29.39       79295372 B   ---   --   ---xx    shn  0.4979  bd02-10-12d2t09.shn
+     6:07.06       64752956 B   ---   --   ---xx    shn  0.5857  bd02-10-12d2t10.shn
+   138:30.07     1465901388 B                            0.5269  (21 files)
+=================== 
+=================== 
+=================== 

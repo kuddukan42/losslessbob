@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-revisting-autobahn-96.flacf 
+=================== 
+=================== 
+=================== 
+5a76c77d83844b59dadeb496177fb0aa  bd95-07-revisting-autobahn-96-d1t01.flac
+ca7c9404507ac5399539681201a42e54  bd95-07-revisting-autobahn-96-d1t02.flac
+39aecc0d6853ef07e68a177fc246c3d1  bd95-07-revisting-autobahn-96-d1t03.flac
+0c0b97904d96d7f4e9f6b3bd2ffca2cd  bd95-07-revisting-autobahn-96-d1t04.flac
+f1532a6fe1b9e3e5ae776d09eac04171  bd95-07-revisting-autobahn-96-d1t05.flac
+b3a5574d788b0d010d941f979913353c  bd95-07-revisting-autobahn-96-d1t06.flac
+ba04d684d0def97359f374e20afea32e  bd95-07-revisting-autobahn-96-d1t07.flac
+131e9e98206d87154e1467f4a461a7c2  bd95-07-revisting-autobahn-96-d1t08.flac
+8e9fbd76f65bf7139af64a57d3fb9b54  bd95-07-revisting-autobahn-96-d1t09.flac
+c935dc773356756c299b4d6191102dea  bd95-07-revisting-autobahn-96-d1t10.flac
+cb72b4c76ca61486daae7e6bd8791762  bd95-07-revisting-autobahn-96-d1t11.flac
+237a26e073c4b37bb80b9587bc8ee4e9  bd95-07-revisting-autobahn-96.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-revisting-autobahn-96.flacf 
+=================== 
+=================== 
+=================== 
+bd95-07-revisting-autobahn-96-d1t01.flac:3e0cc293990268fc3e757b5d4f7e17cb
+bd95-07-revisting-autobahn-96-d1t02.flac:3ca756d726211b0db837e6fc673725ac
+bd95-07-revisting-autobahn-96-d1t03.flac:1ee34dbe900b99cee6a8ecb5b5c52344
+bd95-07-revisting-autobahn-96-d1t04.flac:8de19ffe30d031743fa31b747c9c6d17
+bd95-07-revisting-autobahn-96-d1t05.flac:ec5d078a96f737feebb55a3b8f0dbce1
+bd95-07-revisting-autobahn-96-d1t06.flac:b4c5cc6d6b6fb9d0b02a2fa522158c20
+bd95-07-revisting-autobahn-96-d1t07.flac:7b9badf3eb677cb422963318a3411d11
+bd95-07-revisting-autobahn-96-d1t08.flac:2def78ae645d9f2a0991618cb311d88a
+bd95-07-revisting-autobahn-96-d1t09.flac:152db606ba6c8fce2001d2c8b25add66
+bd95-07-revisting-autobahn-96-d1t10.flac:f4b5366bd9cad06f36b81ae370d03127
+bd95-07-revisting-autobahn-96-d1t11.flac:9de83a03190b3cd6e3f63de1789e3c47
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-revisting-autobahn-96.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:45.67       71599628 B   ---   --   ---xx   flac  0.6308  bd95-07-revisting-autobahn-96-d1t01.flac
+     6:16.25       66385244 B   ---   --   ---xx   flac  0.6294  bd95-07-revisting-autobahn-96-d1t02.flac
+     8:38.53       91499900 B   ---   --   ---xx   flac  0.6622  bd95-07-revisting-autobahn-96-d1t03.flac
+     6:01.40       63774524 B   ---   --   ---xx   flac  0.6727  bd95-07-revisting-autobahn-96-d1t04.flac
+     6:52.22       72728588 B   ---   --   ---xx   flac  0.6529  bd95-07-revisting-autobahn-96-d1t05.flac
+     9:50.25      104134844 B   ---   --   ---xx   flac  0.6109  bd95-07-revisting-autobahn-96-d1t06.flac
+     6:25.73       68085740 B   ---   --   ---xx   flac  0.5458  bd95-07-revisting-autobahn-96-d1t07.flac
+     9:15.42       98000828 B   ---   --   ---xx   flac  0.6327  bd95-07-revisting-autobahn-96-d1t08.flac
+     5:06.55       54107804 B   ---   --   ---xx   flac  0.5894  bd95-07-revisting-autobahn-96-d1t09.flac
+     6:49.20       72194684 B   ---   --   ---xx   flac  0.6751  bd95-07-revisting-autobahn-96-d1t10.flac
+     6:30.65       68948924 B   ---   --   ---xx   flac  0.5757  bd95-07-revisting-autobahn-96-d1t11.flac
+    78:33.37      831460708 B                            0.6267  (11 files)
+=================== 
+=================== 
+=================== 

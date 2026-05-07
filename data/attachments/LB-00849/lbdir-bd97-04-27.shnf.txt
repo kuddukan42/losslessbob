@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-27.shnf 
+=================== 
+=================== 
+=================== 
+3d1b51969a59ff17aa31f9036bee1465  bd97-04-27.txt
+c04b83c83daf74f6d5bdaa4270627c05  Olean 25 April 1997 D1- 01 - Absolutely Sweet Marie.shn
+f8aed3ff6e50a25d82a24826cca4af27  Olean 25 April 1997 D1- 02 - Senor.shn
+89e8e077946f62507e6fa071c6b99ca0  Olean 25 April 1997 D1- 03 - All Along The Watchtower.shn
+39b16726900fb1e192967ccf2dd66f4b  Olean 25 April 1997 D1- 04 - You Ain't Goin' Nowhere.shn
+c228f5d6bc37f934a8bc96f8ff5346b6  Olean 25 April 1997 D1- 05 - Watching The River Flow.shn
+366a0e38afb58044e2e0c4c769dd7a54  Olean 25 April 1997 D1- 06 - Silvio.shn
+d5dda5810da423c4109021d3c7987092  Olean 25 April 1997 D1- 07 - Roving Gambler.shn
+75232dc7ca9bc63509536bbfa60e521f  Olean 25 April 1997 D1- 08 - It's All Over Now, Baby Blue.shn
+7ff4e14e98f00f1faaf94fda5674e421  Olean 25 April 1997 D1- 09 - Tangled Up In Blue.shn
+2b21bcd9cc256a14d9bf71c80c889ab4  Olean 25 April 1997 D1- 10 - Maggie's Farm.shn
+f4c7aa1c0843903f0391030d96cf1dde  Olean 25 April 1997 D2- 01 - Born In Time.shn
+77f009202b155dbb476f39bb86f318b6  Olean 25 April 1997 D2- 02 - Highway 61.shn
+cde37379a4bc6ed08e330c9020194c57  Olean 25 April 1997 D2- 03 - I Shall Be Released.shn
+cf36bdcc012ffad51649c7167f1837e2  Olean 25 April 1997 D2- 04 - Don't Think Twice.shn
+97efe123e54e366d52261fc228cf997b  Olean 25 April 1997 D2- 05 - Rainy Day Women.shn
+71af87556cee6a96d5e7ac47d4d071ab  Olean 25 April 1997.md5
+11f3d5c65d60c77679dc94e19f8273c8  Olean 25 April 1997.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-04-27.shnf 
+=================== 
+=================== 
+=================== 
+60fdb6bb0dc6fac4c4a7375c8e21ebda  [shntool]  Olean_25_April_1997_D1-_01_-_Absolutely_Sweet_Marie.wav
+68d0976dba25150da4fde5faf32808b9  [shntool]  Olean_25_April_1997_D1-_02_-_Senor.wav
+6394fce9c5310535bf8fb4ab2a6b179c  [shntool]  Olean_25_April_1997_D1-_03_-_All_Along_The_Watchtower.wav
+11567030e79df3ead45edb53dc55027a  [shntool]  Olean_25_April_1997_D1-_04_-_You_Ain't_Goin'_Nowhere.wav
+583047fc24cd074977e2c56b3cc925d7  [shntool]  Olean_25_April_1997_D1-_05_-_Watching_The_River_Flow.wav
+5c8bbe29dd9c4758c1aa670aac20bba6  [shntool]  Olean_25_April_1997_D1-_06_-_Silvio.wav
+27fb1428e5ddbda82763a85067c7839a  [shntool]  Olean_25_April_1997_D1-_07_-_Roving_Gambler.wav
+ebdec8215a09226e0507d1ad04d59308  [shntool]  Olean_25_April_1997_D1-_08_-_It's_All_Over_Now,_Baby_Blue.wav
+b6bdc2a80ffa8fd42b0f6ce03d8c941f  [shntool]  Olean_25_April_1997_D1-_09_-_Tangled_Up_In_Blue.wav
+466681d05208d238d86a38f6a5f4657c  [shntool]  Olean_25_April_1997_D1-_10_-_Maggie's_Farm.wav
+e5afb1908ab20c708f97f625f17d3bd5  [shntool]  Olean_25_April_1997_D2-_01_-_Born_In_Time.wav
+fa23477781ba57fb0a3edbd6b4785f9e  [shntool]  Olean_25_April_1997_D2-_02_-_Highway_61.wav
+936d6ffa4f17cd5a6a4bc2b95f30317a  [shntool]  Olean_25_April_1997_D2-_03_-_I_Shall_Be_Released.wav
+15ca9a390f168aa6571f6a56baa48b06  [shntool]  Olean_25_April_1997_D2-_04_-_Don't_Think_Twice.wav
+99e3d8369852a8bc6a361595d91b0250  [shntool]  Olean_25_April_1997_D2-_05_-_Rainy_Day_Women.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-27.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.03       62099900 B   ---   --   ---xx    shn  0.4803  Olean 25 April 1997 D1- 01 - Absolutely Sweet Marie.shn
+     6:16.60       66467564 B   ---   --   ---xx    shn  0.4731  Olean 25 April 1997 D1- 02 - Senor.shn
+     7:40.35       81226364 B   ---   --   ---xx    shn  0.5263  Olean 25 April 1997 D1- 03 - All Along The Watchtower.shn
+     5:05.35       53884364 B   ---   --   ---xx    shn  0.4700  Olean 25 April 1997 D1- 04 - You Ain't Goin' Nowhere.shn
+     7:00.31       74160956 B   ---   --   ---xx    shn  0.4710  Olean 25 April 1997 D1- 05 - Watching The River Flow.shn
+     6:25.32       67989308 B   ---   --   ---xx    shn  0.5136  Olean 25 April 1997 D1- 06 - Silvio.shn
+     4:26.27       46985948 B   ---   --   ---xx    shn  0.4452  Olean 25 April 1997 D1- 07 - Roving Gambler.shn
+     8:45.03       92617100 B   ---   --   ---xx    shn  0.4242  Olean 25 April 1997 D1- 08 - It's All Over Now, Baby Blue.shn
+    10:30.48      111244940 B   ---   --   ---xx    shn  0.5251  Olean 25 April 1997 D1- 09 - Tangled Up In Blue.shn
+     7:20.59       77754812 B   ---   --   ---xx    shn  0.5243  Olean 25 April 1997 D1- 10 - Maggie's Farm.shn
+     6:58.06       73749356 B   ---   --   ---xx    shn  0.4576  Olean 25 April 1997 D2- 01 - Born In Time.shn
+     9:40.33      102389660 B   ---   --   ---xx    shn  0.5204  Olean 25 April 1997 D2- 02 - Highway 61.shn
+     8:10.69       86598332 B   ---   --   ---xx    shn  0.4768  Olean 25 April 1997 D2- 03 - I Shall Be Released.shn
+     9:57.39      105402572 B   ---   --   ---xx    shn  0.4698  Olean 25 April 1997 D2- 04 - Don't Think Twice.shn
+     9:31.18      100766780 B   ---   --   ---xx    shn  0.5312  Olean 25 April 1997 D2- 05 - Rainy Day Women.shn
+   113:41.48     1203337956 B                            0.4903  (15 files)
+=================== 
+=================== 
+=================== 

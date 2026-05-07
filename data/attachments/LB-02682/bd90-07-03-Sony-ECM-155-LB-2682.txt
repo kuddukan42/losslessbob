@@ -1,0 +1,10 @@
+Bob Dylan, 7/3/90, Hamburg, Stadtpark, Freilichtbuehne, 2CDR
+
+LB-2682, (42min+59min), AUD MC [Sony ECM 155 > Sony D6]>DAT>CD>EAC>WAV>Soundforge 6.0>FLAC, * patches: AUD>?>Vinyl Boot>DAT>Soundforge 6.0>FLAC, d1t01: 0:00>0:07 (no music involved), d2t09: 0:01>0:07 (cut due to tape flip), tape flip after It's All Over Now, Baby Blue could not be repaired from alternate source, tape flip after Like A Rolling Stone neatly hidden in applause, I did not harm the sound of the recordings in any way other than performing the necessary edits and crossfades, between the two source recordings; bittorrent download 05/05; excellent sound [A]
+
+CD 1 [41:59], 01 Most Likely You Go Your Way *, 02. Ballad Of A Thin Man, 03. Stuck Inside Of Mobile With The Memphis Blues Again, 04. I Believe In You, 05. Masters Of War, 06. Gotta Serve Somebody, 07. It's Alright, Ma (I'm Only Bleeding), 08. It's All Over Now, Baby Blue, 
+
+CD 2 [58:43], 01 Desolation Row, 02 The Lonesome Death Of Hattie Carroll, 03 It Ain't Me, Babe, 04 Everything Is Broken, 05 No More One More Time, 06 Political World, 07 Old Rock & Roller, 08 All Along The Watchtower, 09 I Shall Be Released *, 10 Like A Rolling Stone, 11 Blowin' In The Wind, 12 Highway 61 Revisited
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

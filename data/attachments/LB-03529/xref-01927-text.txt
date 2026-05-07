@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan 
+Indiana University
+IU Auditorium
+Bloomington, Indiana, USA
+November 1, 2000 
+
+I'm filling in a few more gaps from the great run of Bob Dylan 2000 shows that have recently been posted.
+
+After digging around a bit, and clouds of dust, I found a box of old trades. 
+
+The source of all of these is.... Trade CDR > Wav > Flac > You
+
+
+Disc one
+========
+
+Duncan And Brady 
+To Ramona
+It's Alright, Ma (I'm Only Bleeding) 
+The Lonesome Death Of Hattie Carroll 
+Tangled Up In Blue 
+Searching For A Soldier's Grave
+Country Pie  
+Tryin' To Get To Heaven  
+Maggie's Farm  
+I Threw It All Away 
+Cold Irons Bound 
+Leopard-Skin Pill-Box Hat 
+
+
+Disc two 
+========
+
+encore: 
+
+Things Have Changed  
+Like A Rolling Stone  
+If Dogs Run Free  
+All Along The Watchtower  
+Blue Bonnet Girl 
+I Shall Be Released 
+Highway 61 Revisited  
+Blowin' In The Wind 
+
+===================
+===================
+===================
+=== md5.md5
+===================
+===================
+===================
+f4d15ecdbe4abaf8e10981bd80acecfe *info.txt
+26eab846bfa6e8afb15e008dd353dcd7 *CD1\01 Duncan And Brady.flac
+1534fe2cdb01ab062475f67c4898415e *CD1\02 To Ramona.flac
+f0ba9a5c51f46449f2810d9062015712 *CD1\03 It's All Right, Ma (I'm Only Blee.flac
+668eb16cbe36e377233fb44428c52801 *CD1\04 The Lonesome Death Of Hattie Carr.flac
+1ffeb2d3408dd2db1d31654efba74f9e *CD1\05 Tangled Up In Blue.flac
+e408378b643cc8cbd99c4181ba2dc455 *CD1\06 Searching For A Soldier's Grave.flac
+66240bed2e1b0608a1d8ecd01740f61e *CD1\07 Country Pie.flac
+a68b95308e021a803a9bb3c61cf97d05 *CD1\08 Tryin' To Get To Heaven.flac
+b35aa8cb931544d14f9527ba34c3ef6a *CD1\09 Maggie's Farm.flac
+17450b004988efefb196ca70749d0908 *CD1\10 I Threw It All Away.flac
+32d0f861cc55e84e864749f46c6a7aa5 *CD1\11 Cold Irons Bound.flac
+b19ccd10479cef44e0344584129f9b7e *CD1\12 Leopard-Skin Pill-Box Hat.flac
+06539c851d3659aa5e8fa201217f179a *CD2\01 Things Have Changed.flac
+98ff31f2626a94a968049cc21a338c96 *CD2\02 Like A Rolling Stone.flac
+8f711d469133cd57fb5878f4991cd3f3 *CD2\03 If Dogs Run Free.flac
+6f65a9bea2b81af9f17c737e814c7201 *CD2\04 All Along The Watchtower.flac
+279e3a7d0146831e0bcb50f7be8dfbf5 *CD2\05 Blue Bonnet Girl.flac
+9125bf2b076128649c124ed3d95d1466 *CD2\06 I Shall Be Released.flac
+9aefc4d67e7a2af4453f3307633feaf4 *CD2\07 Highway 61 Revisited.flac
+1f71683ac966ff1f20574f8620c63b81 *CD2\08 Blowin' In The Wind.flac
+===================
+===================
+===================

@@ -1,0 +1,103 @@
+===================
+===================
+===================
+=== md5 for: bd84-06-14-Fendert-f.flacf
+===================
+===================
+===================
+39ac0efe0e10eb547c7de8a549a6831f *1\13101 Highway 61 Revisited.flac
+e9dc277a5643a2026af7fef9bce8ad94 *1\13102 Jokerman.flac
+d5dbd580e36da3229584301eb0ecc492 *1\13103 All Along the Watchtower.flac
+02ad6e21c0ff8d2684992829b4d94509 *1\13104 Just Like a Woman.flac
+91d37100aed6f2b6007b627956a3da9d *1\13105 Maggie's Farm.flac
+f2b7e2ea9152529d5b371071296f8650 *1\13106 I and I.flac
+fba31fb5a377e67e0132f25be2806d63 *1\13107 License to Kill.flac
+302921072efdd111038b0326a0a4681d *1\13108 Imagination.flac
+b522f18f5ba711b960b2c2185c77085e *1\13109 Hard Rain.flac
+e1b02fcf666512fa31031469f95a0fb6 *1\13110 Tangled Up In Blue.flac
+b0bb1deb257d08751f3ee952128f3c98 *1\13111 It's Alright.flac
+340d3b333828ff82d6c5347e1277d147 *1\13112 Shelter From the Storm.flac
+12a9be9742393de01b1308eeb979d779 *14-june-1984.txt
+7b6f83acfdb25a51729e2bac04cc1beb *2\13201 Masters of War.flac
+75dc1c515475ba12c2bc6d8690ac1514 *2\13202 Ballad of a Thin Man.flac
+21edd3763513fdd5645523e6c57bd9de *2\13203 When You Gonna Wake Up.flac
+6c91989d4a86a9a1650e5ad5977e2a24 *2\13204 Every Grain of Sand.flac
+a4151764ff3e1b999411e1af4d67e8bd *2\13205 Like a Rolling Stone.flac
+c21b93241c8654da29a731ed6c3a5e32 *2\13206 It Aint Me Babe.flac
+9258985d255c9ad7e29dcf16b21fba27 *2\13207 Don't Think Twice.flac
+8defa7783e2f818f3d6b1601c3d47539 *2\13208 Heart of Mine.flac
+e218cdd735425f9aa5c942236c49069f *2\13209 Tombstone Blues.flac
+34069140a9284e7f6a97bfae8363f8ed *2\13210 Blowin' In the Wind.flac
+c2c4bea8c7f15870e85462cdd18f8b84 *noname.md5
+===================
+===================
+===================
+=== ffp for: bd84-06-14-Fendert-f.flacf
+===================
+===================
+===================
+1\13101 Highway 61 Revisited.flac:2734652aafe2ce6d9cbc4f8069dddae0
+1\13102 Jokerman.flac:16ee4137ffeddd0d9f768d318c3326ee
+1\13103 All Along the Watchtower.flac:b8813c648ee6227b5c03fd504db5fb3a
+1\13104 Just Like a Woman.flac:7845aff8a675aa6e2729d6b7737ac900
+1\13105 Maggie's Farm.flac:7bf9b25b4afb5f6de92fcf52b32a3f9a
+1\13106 I and I.flac:03eacc093020e0f164a6b9fc9652aafb
+1\13107 License to Kill.flac:2e4b34d5848e446f97c84b94d869a77c
+1\13108 Imagination.flac:e12256045a667b828aa310156640343e
+1\13109 Hard Rain.flac:4d3920fe73f342aaa31d47161e7d7b22
+1\13110 Tangled Up In Blue.flac:4bd09af94a49705eaf42396a7ac1278f
+1\13111 It's Alright.flac:717b6fd7fe0798b0a1f19aa4ef9427c0
+1\13112 Shelter From the Storm.flac:16d382d3309e9aa7fe9847a44e12355f
+2\13201 Masters of War.flac:1392335ff7088453c6baa5a487c3db5b
+2\13202 Ballad of a Thin Man.flac:879a28829d69d038c8a584f91964de9c
+2\13203 When You Gonna Wake Up.flac:b2172c1e56d64189ac8f6237eb0b70da
+2\13204 Every Grain of Sand.flac:117d0fbd2048b5cf2243f2ae42114644
+2\13205 Like a Rolling Stone.flac:d3058c7978a5ffb8361321dc5a5a54f4
+2\13206 It Aint Me Babe.flac:fd923edbe8f35ffb5faec8fd7867c55f
+2\13207 Don't Think Twice.flac:f0f1290bce5c46798df746337ecebe5a
+2\13208 Heart of Mine.flac:d7a02ffbdb0c9cf68c7d87c027ec6e44
+2\13209 Tombstone Blues.flac:e892b63682de986d323e2f2c154774e1
+2\13210 Blowin' In the Wind.flac:45cea24e09e924ebdb18375a644bdedf
+===================
+===================
+===================
+=== shntool len for: bd84-06-14-Fendert-f.flacf\1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.07       62109308 B   ---   --   ---xx   flac  0.6736  13101 Highway 61 Revisited.flac
+     6:37.13       70061420 B   ---   --   ---xx   flac  0.6799  13102 Jokerman.flac
+     4:42.65       49897724 B   ---   --   ---xx   flac  0.6832  13103 All Along the Watchtower.flac
+     6:32.01       69151196 B   ---   --   ---xx   flac  0.6797  13104 Just Like a Woman.flac
+     4:37.25       48921644 B   ---   --   ---xx   flac  0.6822  13105 Maggie's Farm.flac
+     5:53.08       62288060 B   ---   --   ---xx   flac  0.6735  13106 I and I.flac
+     3:46.05       39878204 B   ---   --   ---xx   flac  0.6782  13107 License to Kill.flac
+     5:36.32       59345708 B   ---   --   ---xx   flac  0.6752  13108 Imagination.flac
+     6:57.26       73619996 B   ---   --   ---xx   flac  0.6499  13109 Hard Rain.flac
+     7:23.50       78262844 B   ---   --   ---xx   flac  0.6574  13110 Tangled Up In Blue.flac
+     6:40.12       70588268 B   ---   --   ---xx   flac  0.6588  13111 It's Alright.flac
+     4:58.74       52741292 B   ---   --   ---xx   flac  0.6145  13112 Shelter From the Storm.flac
+    69:37.18      736865664 B                            0.6666  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd84-06-14-Fendert-f.flacf\2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:07.02       64743548 B   ---   --   ---xx   flac  0.6677  13201 Masters of War.flac
+     3:30.07       37060508 B   ---   --   ---xx   flac  0.6753  13202 Ballad of a Thin Man.flac
+     3:29.66       37022876 B   ---   --   ---xx   flac  0.6676  13203 When You Gonna Wake Up.flac
+     5:34.71       59084636 B   ---   --   ---xx   flac  0.6641  13204 Every Grain of Sand.flac
+    10:11.24      107836892 B   ---   --   ---xx   flac  0.6604  13205 Like a Rolling Stone.flac
+     5:50.70       61904684 B   ---   --   ---xx   flac  0.6554  13206 It Aint Me Babe.flac
+     4:46.73       50622140 B   ---   --   ---xx   flac  0.6571  13207 Don't Think Twice.flac
+     8:00.38       84761420 B   ---   --   ---xx   flac  0.6679  13208 Heart of Mine.flac
+     4:53.54       51812252 B   ---   --   ---xx   flac  0.6826  13209 Tombstone Blues.flac
+     6:43.39       71180972 B   ---   --   ---xx   flac  0.6282  13210 Blowin' In the Wind.flac
+    59:08.69      626029928 B                            0.6612  (10 files)
+===================
+===================
+===================

@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-11-LTD.flacf 
+=================== 
+=================== 
+=================== 
+e88ed1e61e5e72bb5da5799ea91551a9  1989-06-11 Brussels.md5
+14328eb98e3ad8d0bb726535aca748ac  Brussels 1989-101.flac
+a834732b0356930975c72e34ac3c01bf  Brussels 1989-102.flac
+707848ddcc87c41a11018fb6e37e27f8  Brussels 1989-103.flac
+b18acb2f8e490ce24b27f680b3ac4faf  Brussels 1989-104.flac
+f0387fe4762cf8ae93a5b19013691e72  Brussels 1989-105.flac
+e5881ad6cc1bf26e498702a842d5fd3f  Brussels 1989-106.flac
+63cf0d6cf0191ba616f0018025ff3e35  Brussels 1989-107.flac
+0ad93e5a173c7459f6ec272df225229e  Brussels 1989-108.flac
+bdc1628358d6e92e9ec0d8c6c4e922d7  Brussels 1989-109.flac
+fff6bd9292b61b4be3d457ed41d11581  Brussels 1989-110.flac
+774f754a22b15f7d859576732cb57262  Brussels 1989-201.flac
+be317e89771e3fc17c0a589fd27f2450  Brussels 1989-202.flac
+25eea13bfb9b668e1b451f3eac899998  Brussels 1989-203.flac
+30b02f10e9d2e25776cdc4ef97dfd2d3  Brussels 1989-204.flac
+83ae9677d38023a479f79fcfad85a97a  Brussels 1989-205.flac
+a48e76f4dbe99435ec6cdd8d4ff1e601  Brussels 1989-206.flac
+6b5aad84d9f831dcd9ff0a960779ccc4  Brussels-1989-06-11.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-11-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Brussels 1989-101.flac:3e61e9189cdf012abc1e0d988da5b3b8
+Brussels 1989-102.flac:5fbc31ea42d11c0062572d7e77ed12fe
+Brussels 1989-103.flac:aebfbcf0051065747747b6dee1cf7d8c
+Brussels 1989-104.flac:1504d7af3e31adc72f04e161da19c1c1
+Brussels 1989-105.flac:36752888b5d6273f2874dccb380b917b
+Brussels 1989-106.flac:66f24b5cbad1d530cbcd88f9d494d66c
+Brussels 1989-107.flac:0ff79248b1d72137507aa73a62802d25
+Brussels 1989-108.flac:e3cc9377a053327cedf1ef962bd967f4
+Brussels 1989-109.flac:d81569d087be769ce4470c3ad44ee25f
+Brussels 1989-110.flac:2cce80a8fe90964ea04973743c727c01
+Brussels 1989-201.flac:8516bd53108753f6c509550a1da502f3
+Brussels 1989-202.flac:0af3cf4e7f0080730847c4cc347301f0
+Brussels 1989-203.flac:28c19a15f8161ee898a55b958994d390
+Brussels 1989-204.flac:0c5994d3faca4a793d373a8072518d59
+Brussels 1989-205.flac:ee9c1e37b3beea09dcdf9d359f83187f
+Brussels 1989-206.flac:18b079a30e61d7e53705e9c157a83566
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-11-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.20       71311644 B   -b-   --   ---xx   flac  0.5676  Brussels 1989-101.flac
+     4:49.20       51027456 B   -b-   --   ---xx   flac  0.5893  Brussels 1989-102.flac
+     6:20.68       67191416 B   -b-   --   ---xx   flac  0.5854  Brussels 1989-103.flac
+     4:45.51       50393576 B   -b-   --   ---xx   flac  0.5776  Brussels 1989-104.flac
+     6:13.20       65844420 B   -b-   --   ---xx   flac  0.5932  Brussels 1989-105.flac
+     4:28.46       47382644 B   -b-   --   ---xx   flac  0.6059  Brussels 1989-106.flac
+     6:37.27       70094640 B   -b-   --   ---xx   flac  0.5165  Brussels 1989-107.flac
+     5:24.69       57315504 B   -b-   --   ---xx   flac  0.5263  Brussels 1989-108.flac
+     7:40.31       81216032 B   -b-   --   ---xx   flac  0.5122  Brussels 1989-109.flac
+     3:53.09       41123068 B   -b-   --   ---xx   flac  0.5346  Brussels 1989-110.flac
+     3:07.23       33041084 B   -b-   --   ---xx   flac  0.5872  Brussels 1989-201.flac
+     3:56.20       41677716 B   -b-   --   ---xx   flac  0.5628  Brussels 1989-202.flac
+     3:46.64       40016248 B   -b-   --   ---xx   flac  0.5689  Brussels 1989-203.flac
+     8:24.31       88978600 B   -b-   --   ---xx   flac  0.5967  Brussels 1989-204.flac
+     6:02.70       64022012 B   -b-   --   ---xx   flac  0.5194  Brussels 1989-205.flac
+     6:34.04       69510644 B   -b-   --   ---xx   flac  0.6046  Brussels 1989-206.flac
+    88:49.47      940146704 B                            0.5645  (16 files)
+=================== 
+=================== 
+=================== 

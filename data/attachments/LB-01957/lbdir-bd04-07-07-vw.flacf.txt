@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-07-07-vw.flacf 
+=================== 
+=================== 
+=================== 
+d83a661a24336637efc56759e7074ea3  2004-07-07_Barcelona, Spain.md5
+2c390ee6a8a783c1e677808840943cf1  2004-07-07_Barcelona, Spain.txt
+eccea441f70396ec2cd5115ffa1e91d6  2004-07-07_flacfingerprint.txt
+34a9dbc22bb87191ef06e598d783964e  bd04-07-07-vw.txt
+2290285f041d8da6064e1a9edd39cdfe  bd2004-07-07_d1t01.flac
+0324bc537f8de53bfe65ab639d430fd7  bd2004-07-07_d1t02.flac
+b0b24d4dbfcb723d0d5437b96138facb  bd2004-07-07_d1t03.flac
+fcf34ee6997051bf1a9ab7a73f370254  bd2004-07-07_d1t04.flac
+54c17d4f9e259db3524b3bc4c9c4e718  bd2004-07-07_d1t05.flac
+df128c4dc6daa931255e41dbfcfe269d  bd2004-07-07_d1t06.flac
+20926c88120292e2463f3ba81d9cc86c  bd2004-07-07_d1t07.flac
+d75e7aae56d202b203547f8c9237f0f4  bd2004-07-07_d1t08.flac
+f0d0cee15b27a575cb4b69077ddb4be9  bd2004-07-07_d2t01.flac
+131577989b14be026e1aa141b34c5bf4  bd2004-07-07_d2t02.flac
+3175d711c7e7ce4a400ba797ca1dd1c8  bd2004-07-07_d2t03.flac
+9c161bc6b48e73f9c60f2548541d8585  bd2004-07-07_d2t04.flac
+7d03e76b4afd906f848865ced9a929f4  bd2004-07-07_d2t05.flac
+bb90727d651094a352434f05e704b717  bd2004-07-07_d2t06.flac
+74dfb5eb93a0fffb2515e9a9af4c9fed  bd2004-07-07_d2t07.flac
+dd19904b7c4e97a98fec59837a210c26  bd2004-07-07_d2t08.flac
+42068644f9cfd2fdec3efd768bd9aaf3  bd2004-07-07_d2t09.flac
+5b659a6be241c4acdb7d19765dab223f  bd2004-07-07_d2t10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-07-07-vw.flacf 
+=================== 
+=================== 
+=================== 
+bd2004-07-07_d1t01.flac:71374d95f18e1f5cb4d5d25cf2c342ae
+bd2004-07-07_d1t02.flac:18c410ad1fc4612a0d2162af68a7b52e
+bd2004-07-07_d1t03.flac:be566682b29637b6bd03760fc185fa29
+bd2004-07-07_d1t04.flac:0fb1c2182ba490453e940a0208a4b664
+bd2004-07-07_d1t05.flac:5dc4f98177a0d9dd8ee3259c297ba90a
+bd2004-07-07_d1t06.flac:3dd34386d124e28dd75f2647525d59cb
+bd2004-07-07_d1t07.flac:f268d821d62ae15e136d76dcd00d8ad6
+bd2004-07-07_d1t08.flac:9010507cfd29f824ecf0057e0fbc3352
+bd2004-07-07_d2t01.flac:7cb0d91d393928f0be53ec16f0e57b36
+bd2004-07-07_d2t02.flac:d24ace6e0d7f0e1ba15227b742c672fa
+bd2004-07-07_d2t03.flac:0e5b1810598ad3e4c2a09edc49612cf1
+bd2004-07-07_d2t04.flac:11ee57dd8be5361a7d1199f70c5d7572
+bd2004-07-07_d2t05.flac:48da67f98f083bb1fce9169e4a1d379c
+bd2004-07-07_d2t06.flac:283a5f1fb6d1f5b8b0d65dbf8d4b7bd8
+bd2004-07-07_d2t07.flac:4c73730efcf989b9d35f7b108b4dc56c
+bd2004-07-07_d2t08.flac:b33dbfbccde1c1c5114c70f2e6fdc570
+bd2004-07-07_d2t09.flac:f75f33e5eac1bc4d01f07580b161efeb
+bd2004-07-07_d2t10.flac:9ae6f3cbac31f26ad57745c7afd610f8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-07-vw.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:16.59       13545212 B   ---   --   ---xx   flac  0.5985  bd2004-07-07_d1t01.flac
+     4:27.09       47120012 B   ---   --   ---xx   flac  0.6380  bd2004-07-07_d1t02.flac
+     5:55.39       62713772 B   ---   --   ---xx   flac  0.6366  bd2004-07-07_d1t03.flac
+     5:49.03       61570700 B   ---   --   ---xx   flac  0.6030  bd2004-07-07_d1t04.flac
+     7:24.33       78399260 B   ---   --   ---xx   flac  0.6149  bd2004-07-07_d1t05.flac
+     7:12.51       76324796 B   ---   --   ---xx   flac  0.6368  bd2004-07-07_d1t06.flac
+     6:06.20       64609484 B   ---   --   ---xx   flac  0.6201  bd2004-07-07_d1t07.flac
+     6:12.21       65670236 B   ---   --   ---xx   flac  0.6423  bd2004-07-07_d1t08.flac
+     6:12.53       65745500 B   ---   --   ---xx   flac  0.6208  bd2004-07-07_d2t01.flac
+     7:53.61       83580716 B   ---   --   ---xx   flac  0.6561  bd2004-07-07_d2t02.flac
+     5:58.54       63278252 B   ---   --   ---xx   flac  0.6429  bd2004-07-07_d2t03.flac
+     6:44.68       71425580 B   ---   --   ---xx   flac  0.6340  bd2004-07-07_d2t04.flac
+     7:06.65       75299324 B   ---   --   ---xx   flac  0.6554  bd2004-07-07_d2t05.flac
+     7:02.16       74478476 B   ---   --   ---xx   flac  0.6008  bd2004-07-07_d2t06.flac
+    11:38.33      123204860 B   ---   --   ---xx   flac  0.6503  bd2004-07-07_d2t07.flac
+     7:55.26       83851196 B   ---   --   ---xx   flac  0.6614  bd2004-07-07_d2t08.flac
+     7:30.04       79389452 B   ---   --   ---xx   flac  0.6655  bd2004-07-07_d2t09.flac
+     7:14.23       76611740 B   ---   --   ---xx   flac  0.6454  bd2004-07-07_d2t10.flac
+   119:41.38     1266818568 B                            0.6377  (18 files)
+=================== 
+=================== 
+=================== 

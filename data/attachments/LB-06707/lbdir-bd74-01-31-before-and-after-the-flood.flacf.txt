@@ -1,0 +1,127 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-31-before-and-after-the-flood.flacf 
+=================== 
+=================== 
+=================== 
+5c6df447e8a740ce4f3aab9664b1de60  bd74-01-31-before-and-after-the-flood-d1t01.flac
+7459b6dc6538892d08c97d0eeabf3a0f  bd74-01-31-before-and-after-the-flood-d1t02.flac
+390aa727d6153856f0d9cc13d274d5c8  bd74-01-31-before-and-after-the-flood-d1t03.flac
+af308eb0e81e56eeec069cc3a4cc021c  bd74-01-31-before-and-after-the-flood-d1t04.flac
+673b8b245ca3edc077c490af9ecd9d36  bd74-01-31-before-and-after-the-flood-d1t05.flac
+8058ffeb7b98c08a464eedf1278ee8b8  bd74-01-31-before-and-after-the-flood-d1t06.flac
+2cf7f25c47b51747b0cea0c9b2037cf8  bd74-01-31-before-and-after-the-flood-d1t07.flac
+c8390e8c0b5995585b4aeb3377e27602  bd74-01-31-before-and-after-the-flood-d1t08.flac
+97301061601ae29e2a764e4d01220980  bd74-01-31-before-and-after-the-flood-d1t09.flac
+215a9cbe67a875c8431c5c793d522ba6  bd74-01-31-before-and-after-the-flood-d1t10.flac
+d319d0a518574ce98ea0b428c6b12125  bd74-01-31-before-and-after-the-flood-d1t11.flac
+45aaddcf053b9b5d9bc3a3fdf57e6435  bd74-01-31-before-and-after-the-flood-d1t12.flac
+f498c6b5eb8412e86a6482f1ecc47af5  bd74-01-31-before-and-after-the-flood-d1t13.flac
+1a512468ffb4ec0f8382cce83d84b04f  bd74-01-31-before-and-after-the-flood-d1t14.flac
+e760d06078bc41735da7c49a29e8048c  bd74-01-31-before-and-after-the-flood-d1t15.flac
+807fc07e4018951ded9123a42cb15c28  bd74-01-31-before-and-after-the-flood-d1t16.flac
+30e05be5fd47529e02e9a91c0bd9120a  bd74-01-31-before-and-after-the-flood-d1t17.flac
+e43684500c75ed5efe400013a4a455f0  bd74-01-31-before-and-after-the-flood-d1t18.flac
+c00a2e34821e50b528bad996d718bdb2  bd74-01-31-before-and-after-the-flood-d2t01.flac
+68bd661695b7e7c944cd027c9b326ee7  bd74-01-31-before-and-after-the-flood-d2t02.flac
+ca5a6a0fe6998fc031eb9bf8edd04028  bd74-01-31-before-and-after-the-flood-d2t03.flac
+d2a2c8aa179bd154f06394000c3a7f59  bd74-01-31-before-and-after-the-flood-d2t04.flac
+035fbf414b00631392bad8bc28d1b9d3  bd74-01-31-before-and-after-the-flood-d2t05.flac
+018d691d15fe5c72b4f4626cf9a7eeae  bd74-01-31-before-and-after-the-flood-d2t06.flac
+e36fae33eee8113477dea39a702129e2  bd74-01-31-before-and-after-the-flood-d2t07.flac
+0a35cd05d2487c438936194ddc9542ee  bd74-01-31-before-and-after-the-flood-d2t08.flac
+b8ae0612127c736f95150086fefe77e4  bd74-01-31-before-and-after-the-flood-d2t09.flac
+60b30999af80b6a80b677d11e6d69206  bd74-01-31-before-and-after-the-flood-d2t10.flac
+635ac4450aac3ce8422419303ce575ac  bd74-01-31-before-and-after-the-flood-d2t11.flac
+b01b770bdb802968cc8af8c11ee9907f  bd74-01-31-before-and-after-the-flood-d2t12.flac
+b7d4f485251881fcf1b09816256be718  bd74-01-31-before-and-after-the-flood-d2t13.flac
+4735f2ac498c3e878c47040be947026a  bd74-01-31-before-and-after-the-flood-d2t14.flac
+6ae6ddd96d24af7090b102e4c15b06ae  bd74-01-31-before-and-after-the-flood-d2t15.flac
+b4e646fe2e5decbfce60ce3034fa1b4e  bd74-01-31-before-and-after-the-flood-LB-6707.txt
+a7ae5255e51b398cddc3e9342f372c57  bd74-01-31-before-and-after-the-flood.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-31-before-and-after-the-flood.flacf 
+=================== 
+=================== 
+=================== 
+bd74-01-31-before-and-after-the-flood-d1t01.flac:3aab97c4794e94577fb44fd1f0cb997b
+bd74-01-31-before-and-after-the-flood-d1t02.flac:84714854bd657f98230b4f934dad314d
+bd74-01-31-before-and-after-the-flood-d1t03.flac:d1eec841cb375748b800463126d2f07e
+bd74-01-31-before-and-after-the-flood-d1t04.flac:778e9d73997d8e2ae26f8cab525b79dc
+bd74-01-31-before-and-after-the-flood-d1t05.flac:5aa011c1d9c92b0a12a6933b294441df
+bd74-01-31-before-and-after-the-flood-d1t06.flac:9ff84bdd07ce7a2e5e6b040102044fea
+bd74-01-31-before-and-after-the-flood-d1t07.flac:b67a5836c9d4a71591af4b87d84fe444
+bd74-01-31-before-and-after-the-flood-d1t08.flac:dd7780ed551d5a15f35f684da137c990
+bd74-01-31-before-and-after-the-flood-d1t09.flac:533e739e35c606d018462fabac65dd08
+bd74-01-31-before-and-after-the-flood-d1t10.flac:98c40a38e0ab78b803a6b645e9b2a3d7
+bd74-01-31-before-and-after-the-flood-d1t11.flac:989208aed08b6fa82e41a855a1a37441
+bd74-01-31-before-and-after-the-flood-d1t12.flac:a2dfa1cdb652391408aa5ca9e2197d69
+bd74-01-31-before-and-after-the-flood-d1t13.flac:7e27e18f815ba2dc26b0403552bd1d50
+bd74-01-31-before-and-after-the-flood-d1t14.flac:248aeae4b0cc032c0668c7136bfa32e4
+bd74-01-31-before-and-after-the-flood-d1t15.flac:1776f42ac0644b99f927d8d02700f7e3
+bd74-01-31-before-and-after-the-flood-d1t16.flac:68f80ccc6b4c4c12d5ee8d40e2d11c4c
+bd74-01-31-before-and-after-the-flood-d1t17.flac:64b870ea730af6f5804f1dad26445790
+bd74-01-31-before-and-after-the-flood-d1t18.flac:2c25c7ca4b56e3ab2ddcdfde7f560825
+bd74-01-31-before-and-after-the-flood-d2t01.flac:7a4c70d2652d00e4782521686a2e3012
+bd74-01-31-before-and-after-the-flood-d2t02.flac:48f3a1e1963f1687bb589520e7487010
+bd74-01-31-before-and-after-the-flood-d2t03.flac:7d7250a7b06ca39758acd681563749ef
+bd74-01-31-before-and-after-the-flood-d2t04.flac:f469e421dae6f6d1b535f653650c50c0
+bd74-01-31-before-and-after-the-flood-d2t05.flac:06e1cd72f58aa2b4ede77e416a7c627c
+bd74-01-31-before-and-after-the-flood-d2t06.flac:ef35e06de0a4fca5917b90611c55ff06
+bd74-01-31-before-and-after-the-flood-d2t07.flac:72fd09ac482474ea8f9d2056ca0baa69
+bd74-01-31-before-and-after-the-flood-d2t08.flac:b48165c0fe03b25e699cdf35722ddb8e
+bd74-01-31-before-and-after-the-flood-d2t09.flac:c8bb0a06793e61c3928bffb213a380c3
+bd74-01-31-before-and-after-the-flood-d2t10.flac:24faa8ef779401d5204cd4eed4fc4a1b
+bd74-01-31-before-and-after-the-flood-d2t11.flac:499d593e74bda25600d04a0f92706a52
+bd74-01-31-before-and-after-the-flood-d2t12.flac:a2174d17ecb4339494c0b683fe7fe39d
+bd74-01-31-before-and-after-the-flood-d2t13.flac:33e836f7826f436af69ce433ac0e6366
+bd74-01-31-before-and-after-the-flood-d2t14.flac:fafdfbd42411dc7545eb366fdddbf90f
+bd74-01-31-before-and-after-the-flood-d2t15.flac:3b070ba1499977bfa60058011caa4829
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-31-before-and-after-the-flood.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.68       39497180 B   ---   --   ---xx   flac  0.7012  bd74-01-31-before-and-after-the-flood-d1t01.flac
+     3:08.00       33163244 B   ---   --   ---xx   flac  0.7208  bd74-01-31-before-and-after-the-flood-d1t02.flac
+     5:57.45       63080684 B   ---   --   ---xx   flac  0.7240  bd74-01-31-before-and-after-the-flood-d1t03.flac
+     3:25.67       36319628 B   ---   --   ---xx   flac  0.7305  bd74-01-31-before-and-after-the-flood-d1t04.flac
+     3:17.63       34899020 B   ---   --   ---xx   flac  0.7278  bd74-01-31-before-and-after-the-flood-d1t05.flac
+     4:09.42       44022428 B   ---   --   ---xx   flac  0.7274  bd74-01-31-before-and-after-the-flood-d1t06.flac
+     4:49.03       50986700 B   ---   --   ---xx   flac  0.7291  bd74-01-31-before-and-after-the-flood-d1t07.flac
+     4:35.65       48662924 B   ---   --   ---xx   flac  0.7213  bd74-01-31-before-and-after-the-flood-d1t08.flac
+     3:37.57       38412908 B   ---   --   ---xx   flac  0.7314  bd74-01-31-before-and-after-the-flood-d1t09.flac
+     3:03.50       32398844 B   ---   --   ---xx   flac  0.7241  bd74-01-31-before-and-after-the-flood-d1t10.flac
+     4:31.08       47823260 B   ---   --   ---xx   flac  0.7220  bd74-01-31-before-and-after-the-flood-d1t11.flac
+     4:30.07       47644508 B   ---   --   ---xx   flac  0.7489  bd74-01-31-before-and-after-the-flood-d1t12.flac
+     3:57.65       41959724 B   ---   --   ---xx   flac  0.7534  bd74-01-31-before-and-after-the-flood-d1t13.flac
+     3:01.10       31951964 B   ---   --   ---xx   flac  0.7291  bd74-01-31-before-and-after-the-flood-d1t14.flac
+     3:54.00       41277644 B   ---   --   ---xx   flac  0.7296  bd74-01-31-before-and-after-the-flood-d1t15.flac
+     5:19.38       56361020 B   ---   --   ---xx   flac  0.7368  bd74-01-31-before-and-after-the-flood-d1t16.flac
+     4:47.32       50702108 B   ---   --   ---xx   flac  0.7337  bd74-01-31-before-and-after-the-flood-d1t17.flac
+     5:14.03       55396700 B   ---   --   ---xx   flac  0.7379  bd74-01-31-before-and-after-the-flood-d1t18.flac
+     4:25.45       46851884 B   ---   --   ---xx   flac  0.6757  bd74-01-31-before-and-after-the-flood-d2t01.flac
+     3:37.38       38368220 B   ---   --   ---xx   flac  0.7180  bd74-01-31-before-and-after-the-flood-d2t02.flac
+     5:17.07       55935308 B   ---   --   ---xx   flac  0.6892  bd74-01-31-before-and-after-the-flood-d2t03.flac
+     4:59.35       52825964 B   ---   --   ---xx   flac  0.7144  bd74-01-31-before-and-after-the-flood-d2t04.flac
+     4:29.03       47458700 B   ---   --   ---xx   flac  0.7044  bd74-01-31-before-and-after-the-flood-d2t05.flac
+     6:49.32       72222908 B   ---   --   ---xx   flac  0.7124  bd74-01-31-before-and-after-the-flood-d2t06.flac
+     4:41.73       49740140 B   ---   --   ---xx   flac  0.5654  bd74-01-31-before-and-after-the-flood-d2t07.flac
+     4:49.50       51097244 B   ---   --   ---xx   flac  0.5645  bd74-01-31-before-and-after-the-flood-d2t08.flac
+     3:48.22       40270988 B   ---   --   ---xx   flac  0.5588  bd74-01-31-before-and-after-the-flood-d2t09.flac
+     5:16.25       55801244 B   ---   --   ---xx   flac  0.5546  bd74-01-31-before-and-after-the-flood-d2t10.flac
+     3:38.63       38603420 B   ---   --   ---xx   flac  0.5526  bd74-01-31-before-and-after-the-flood-d2t11.flac
+     5:16.62       55888268 B   ---   --   ---xx   flac  0.5554  bd74-01-31-before-and-after-the-flood-d2t12.flac
+     5:41.15       60187724 B   ---   --   ---xx   flac  0.5547  bd74-01-31-before-and-after-the-flood-d2t13.flac
+     4:09.43       44024780 B   ---   --   ---xx   flac  0.5444  bd74-01-31-before-and-after-the-flood-d2t14.flac
+     5:40.30       60046604 B   ---   --   ---xx   flac  0.5428  bd74-01-31-before-and-after-the-flood-d2t15.flac
+   147:45.41     1563883884 B                            0.6733  (33 files)
+=================== 
+=================== 
+=================== 

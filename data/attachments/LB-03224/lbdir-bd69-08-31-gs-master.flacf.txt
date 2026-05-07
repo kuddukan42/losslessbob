@@ -1,0 +1,35 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-08-31-gs-master.flacf 
+=================== 
+=================== 
+=================== 
+4c05b1e1ddcde1fd404fbb3d58686d9b  bd69-08-31-gs-master-LB-3224.txt
+5ed3a8af7d59925f6f8e5ed3ddbf60d8  IOW FFP.txt
+ec364e69d06e4eaf5cda1212ab21cb45  IOW notes.TXT
+f04d70cf7064b4e4a35247c3309ada7f  IOW part 1.flac
+669185eae551cc980da17c058afb4e1f  IOW part 2.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-08-31-gs-master.flacf 
+=================== 
+=================== 
+=================== 
+IOW part 1.flac:19e825bc988a99824104c6c05a406462
+IOW part 2.flac:da34e3be58750c9e4047825b59a52875
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-08-31-gs-master.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    51:35.38      546047420 B   ---   --   ---xx   flac  0.4101  IOW part 1.flac
+    11:58.29      126723452 B   ---   --   ---xx   flac  0.3948  IOW part 2.flac
+    63:33.67      672770872 B                            0.4072  (2 files)
+=================== 
+=================== 
+=================== 

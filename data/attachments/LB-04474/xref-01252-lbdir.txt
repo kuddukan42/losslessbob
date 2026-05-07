@@ -1,0 +1,92 @@
+===================
+===================
+===================
+=== md5 for: bd92-07-05-b.flacf
+===================
+===================
+===================
+8321d0b9cfe966c72c67c94d8a7164b8 *BD 1992-07-05 Corregio, Italy.ffp
+e241ac9ccec998a47c77c0387d553e6e *BD 1992-07-05 Corregio, Italy.md5
+a595244fc9826938f918e1abe8849977 *Shows (uploaded on Dime).rtf
+07d3fa7121493ae0ec6f4647592118d1 *The Answer is blowing in italy (CD1)\01 bd1992-07-05_101.flac
+65329069824e6836b51dfd1bad3d6299 *The Answer is blowing in italy (CD1)\02 bd1992-07-05_102.flac
+1723f556c2e23bd2802ced6c0de3291e *The Answer is blowing in italy (CD1)\03 bd1992-07-05_103.flac
+1801dccb61ff1de0ea7bc9b118d32f57 *The Answer is blowing in italy (CD1)\04 bd1992-07-05_104.flac
+a9f19454a1f2e8080b984cdef1440a6a *The Answer is blowing in italy (CD1)\05 bd1992-07-05_105.flac
+d975935336f6858d09f519e9def13005 *The Answer is blowing in italy (CD1)\06 bd1992-07-05_106.flac
+398bcf663a804a79c45b52e7a4eb4fae *The Answer is blowing in italy (CD1)\07 bd1992-07-05_107.flac
+b1069086cc5101e61b58db292182b808 *The Answer is blowing in italy (CD1)\08 bd1992-07-05_108.flac
+136ab62f050e2bde3fdbce4b27de7d72 *The Answer is blowing in italy (CD1)\09 bd1992-07-05_109.flac
+238efdbead0bb7f0c5ef41221eae94c9 *The Answer is blowing in italy (CD1)\The answer is blowing in italy (CD1) - Bob Dylan.log
+3bee6e584681be9efd4dbc2f3d9f5ae3 *The Answer is blowing in italy (CD2)\01 1993-07-05_201.flac
+27417f6ed17a18cdd33786a7e767746b *The Answer is blowing in italy (CD2)\02 1993-07-05_202.flac
+ada84af5d8a414be6f92c863b3c80bad *The Answer is blowing in italy (CD2)\03 1993-07-05_203.flac
+f37886f1d47b7b82eb43a6d6ba307286 *The Answer is blowing in italy (CD2)\04 1993-07-05_204.flac
+09c95fc0cba74b32b8ab170e09871dd4 *The Answer is blowing in italy (CD2)\05 1993-07-05_205.flac
+c4a5666d862c9534cc7a9c3f2194b73b *The Answer is blowing in italy (CD2)\06 1993-07-05_206.flac
+945ba04af5a6348c244e7d45dd5e191c *The Answer is blowing in italy (CD2)\07 1993-07-05_207.flac
+72d5bfa66a0b84f87e175fb5198eb716 *The Answer is blowing in italy (CD2)\08 1993-07-05_208.flac
+9d522d6feff42c54a735f5b437c25656 *The Answer is blowing in italy (CD2)\The Answer is blowing in italy (CD2) - Bob Dylan.log
+5a3900f1b4776cc39f44a2d44b1917e6 *The answer is blowing in italy - Bob Dylan.txt
+===================
+===================
+===================
+=== ffp for: bd92-07-05-b.flacf
+===================
+===================
+===================
+The Answer is blowing in italy (CD1)\01 bd1992-07-05_101.flac:9da8a2007ac361d6b250f9845dbac947
+The Answer is blowing in italy (CD1)\02 bd1992-07-05_102.flac:7efacc2b47f88e57b1a061915c8e035f
+The Answer is blowing in italy (CD1)\03 bd1992-07-05_103.flac:c58c14c72ad4195b8c9165ac99ea0a81
+The Answer is blowing in italy (CD1)\04 bd1992-07-05_104.flac:f3fb2e99735f3b641c7fe93c4e132324
+The Answer is blowing in italy (CD1)\05 bd1992-07-05_105.flac:46b0a3d5d4fe783c18945ac8b785cd60
+The Answer is blowing in italy (CD1)\06 bd1992-07-05_106.flac:65ca3cfc9e6e9e951c98363b52921eb6
+The Answer is blowing in italy (CD1)\07 bd1992-07-05_107.flac:86e5b886d100e5ec90349584c15ad9cc
+The Answer is blowing in italy (CD1)\08 bd1992-07-05_108.flac:2f10d9a72f3ae121925a047c7d2f2617
+The Answer is blowing in italy (CD1)\09 bd1992-07-05_109.flac:decbb5339ee38a78e64b7a2d0571258d
+The Answer is blowing in italy (CD2)\01 1993-07-05_201.flac:81fa1efad2ea370f480e890999711778
+The Answer is blowing in italy (CD2)\02 1993-07-05_202.flac:b92c71e865c5da29c5c2a90546a72732
+The Answer is blowing in italy (CD2)\03 1993-07-05_203.flac:04833dd4458664261dabec6bfe6e258b
+The Answer is blowing in italy (CD2)\04 1993-07-05_204.flac:72f88c329d4406edebf0ed54f22673e4
+The Answer is blowing in italy (CD2)\05 1993-07-05_205.flac:f62c0e488c9acbdeaae7ca8a59db52a1
+The Answer is blowing in italy (CD2)\06 1993-07-05_206.flac:7fa48e84046d61a9994444ececafb6b7
+The Answer is blowing in italy (CD2)\07 1993-07-05_207.flac:a4fa97a8921d9a574295fbf2c51d3db0
+The Answer is blowing in italy (CD2)\08 1993-07-05_208.flac:09dab22732ad350984ed97ed38d910f5
+===================
+===================
+===================
+=== shntool len for: bd92-07-05-b.flacf\The Answer is blowing in italy (CD1)
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.74       50624492 B   ---   --   ---xx   flac  0.6059  01 bd1992-07-05_101.flac
+     4:44.13       50128220 B   ---   --   ---xx   flac  0.6184  02 bd1992-07-05_102.flac
+     3:57.07       41823308 B   ---   --   ---xx   flac  0.6443  03 bd1992-07-05_103.flac
+    12:19.30      130430204 B   ---   --   ---xx   flac  0.6285  04 bd1992-07-05_104.flac
+     4:52.27       51572348 B   ---   --   ---xx   flac  0.6161  05 bd1992-07-05_105.flac
+     5:43.21       60554636 B   ---   --   ---xx   flac  0.6468  06 bd1992-07-05_106.flac
+     3:32.67       37554428 B   ---   --   ---xx   flac  0.5628  07 bd1992-07-05_107.flac
+     2:55.55       30999404 B   ---   --   ---xx   flac  0.6034  08 bd1992-07-05_108.flac
+     7:53.59       83576012 B   ---   --   ---xx   flac  0.6165  09 bd1992-07-05_109.flac
+    50:45.53      537263052 B                            0.6196  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd92-07-05-b.flacf\The Answer is blowing in italy (CD2)
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:45.41       82122476 B   ---   --   ---xx   flac  0.6374  01 1993-07-05_201.flac
+     5:20.41       56544476 B   ---   --   ---xx   flac  0.6563  02 1993-07-05_202.flac
+     6:09.51       65211596 B   ---   --   ---xx   flac  0.6424  03 1993-07-05_203.flac
+     4:39.42       49314428 B   ---   --   ---xx   flac  0.5947  04 1993-07-05_204.flac
+     7:35.60       80403164 B   ---   --   ---xx   flac  0.6746  05 1993-07-05_205.flac
+     6:48.33       72048860 B   ---   --   ---xx   flac  0.5945  06 1993-07-05_206.flac
+     6:50.08       72342860 B   ---   --   ---xx   flac  0.6707  07 1993-07-05_207.flac
+     4:27.67       47256428 B   ---   --   ---xx   flac  0.5936  08 1993-07-05_208.flac
+    49:37.43      525244288 B                            0.6365  (8 files)
+===================
+===================
+===================

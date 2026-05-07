@@ -1,0 +1,59 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd65-One-Too-Many-Mornings-In-England-Comp.flacf 
+=================== 
+=================== 
+=================== 
+6da36511f50483b048684e77587ca955  bd-one too many-65-66-back.jpg
+269e7ed97d4e18da25c9369899160c6a  bd-one too many-65-66-front.jpg
+f4f4cb415621712b3b584f322396b04d  info.txt
+4a02680e6a217cf8c1e309b7381e9f40  Track01.flac
+49bf1ba0acfd770648123dc049ade642  Track02.flac
+5dfc1441798a850b12bfd6f9ee29e61f  Track03.flac
+2cff6f738495ac73a57215d398f8d14c  Track04.flac
+b38a980c42fbd4ab70075c68e9c3551b  Track05.flac
+f589d8d1bf5383ee8885898be6f6077e  Track06.flac
+bb70d0f19d0b2b9aecaca4b421909fe8  Track07.flac
+b4c331d692220902131ec8f756319802  Track08.flac
+5424b586afa6b3e025ca8b672423ef41  Track09.flac
+ec2874b51c9f8a088459180b80228ccd  Track10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd65-One-Too-Many-Mornings-In-England-Comp.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:825b9f8348569dde59129ac232ee7c44
+Track02.flac:de4c498b8ca620fe7e542da12be8f8f2
+Track03.flac:6602877881a8f2944ce0cc8da5e88643
+Track04.flac:9478125aba2361547b3eeda5ae2ea585
+Track05.flac:4525dd4340fa9e66d277f5f9845c944e
+Track06.flac:2c2d2ea7d67ae9078db487e4c93c44d6
+Track07.flac:a9f5cb4d3cd7cf1e06395ce6063a0be8
+Track08.flac:3165c1c6d5b6168a60cd40f99fe62f70
+Track09.flac:5927f755614256b2143cdeeac882f310
+Track10.flac:010655cab0d4690aa7465b1cf25d0b41
+=================== 
+=================== 
+=================== 
+=== shntool for: bd65-One-Too-Many-Mornings-In-England-Comp.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:40.42       38906828 B   ---   --   ---xx   flac  0.5915  Track01.flac
+     3:14.14       34254572 B   ---   --   ---xx   flac  0.5742  Track02.flac
+     3:31.65       37373324 B   ---   --   ---xx   flac  0.5991  Track03.flac
+     4:51.66       51487676 B   ---   --   ---xx   flac  0.5727  Track04.flac
+     3:29.28       36933500 B   ---   --   ---xx   flac  0.6232  Track05.flac
+     7:16.36       76995116 B   ---   --   ---xx   flac  0.6050  Track06.flac
+     7:31.01       79558796 B   ---   --   ---xx   flac  0.6423  Track07.flac
+     7:29.33       79281260 B   ---   --   ---xx   flac  0.6175  Track08.flac
+     6:57.26       73619996 B   ---   --   ---xx   flac  0.5953  Track09.flac
+     4:46.19       50495132 B   ---   --   ---xx   flac  0.5063  Track10.flac
+    52:48.30      558906200 B                            0.5969  (10 files)
+=================== 
+=================== 
+=================== 

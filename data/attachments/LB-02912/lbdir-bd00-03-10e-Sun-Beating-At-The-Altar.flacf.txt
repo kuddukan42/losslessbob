@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-10e-Sun-Beating-At-The-Altar.flacf 
+=================== 
+=================== 
+=================== 
+abb1ed7e27064ddee18811c4f7421715  01 Roving Gambler.flac
+5074f65d86a2773e52d31b838162bd6d  02 Tomorrow Is A Long Time.flac
+6b5f1285438e195b32327236ffa382a9  03 It's Alright, Ma (I'm Only Bleeding).flac
+b9cdfed77a05e866fa71d2431b975fd2  04 Tangled Up In Blue.flac
+6ec6fc8375ff267f67fc5af19e09b05e  05 This World Can't Stand Long.flac
+3df861149462409906504be21e3fcc82  06 Dignity.flac
+eafdecfff7ab3fcc89c584daaee9ccbb  07 Tell Me That It Isn't True.flac
+7f80f1e1ca1a09e54d94718b00569cf6  08 Things Have Changed.flac
+ec4dc53e1dbe7ee9ef5f61d62df13cfe  09 Not Dark Yet.flac
+825a767f0c72214e49c979ad2ebc9b2a  10 Highway 61 Revisited.flac
+6d044a4064179b1561bb62338b08e864  11 Love Sick.flac
+500ed4eeefdd425416a3f63a236f5889  12 Not Fade Away.flac
+703831969237c9d82c2deea362f35ec2  13 Blowin' In The Wind.flac
+5c921649c1f76928c3e143129912c05e  bd00-03-10e-Sun-Beating-At-The-Altar-LB-2912.txt
+fcea4a76c5cdbef620d6ad1e433404a8  SunBeating.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-10e-Sun-Beating-At-The-Altar.flacf 
+=================== 
+=================== 
+=================== 
+01 Roving Gambler.flac:1aeb4ac9d616450728ada470d612dcc8
+02 Tomorrow Is A Long Time.flac:c31cad5c1759bd34bb16587e6e2df339
+03 It's Alright, Ma (I'm Only Bleeding).flac:849e928da4cdc4f950b9148b691b5a0a
+04 Tangled Up In Blue.flac:116fbbf7f9c437a24abb28b08250d8de
+05 This World Can't Stand Long.flac:3176fc9abc30f2a440e269deeb2ad848
+06 Dignity.flac:ca45d8e020bace2a1ca98ca9d50fe303
+07 Tell Me That It Isn't True.flac:4a4620a9e66165622f17afb9fd12e570
+08 Things Have Changed.flac:aa814e2bc2d608ba522a25a4d0ce1f38
+09 Not Dark Yet.flac:ddebd2b8410c74cd57ceea33a1548bf7
+10 Highway 61 Revisited.flac:b825792e0e487e3ec501a56e9de6af18
+11 Love Sick.flac:e6da6b098095017c5230d0e7030d378b
+12 Not Fade Away.flac:dc8bb195a1e9b6ff8a3b2e5aaefe0e3a
+13 Blowin' In The Wind.flac:0f027937185b368853800d3ec5926501
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-10e-Sun-Beating-At-The-Altar.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:51.57       40882508 B   ---   --   ---xx   flac  0.5856  01 Roving Gambler.flac
+     4:27.20       47145884 B   ---   --   ---xx   flac  0.5108  02 Tomorrow Is A Long Time.flac
+     7:22.70       78133484 B   ---   --   ---xx   flac  0.5528  03 It's Alright, Ma (I'm Only Bleeding).flac
+     7:05.60       75111164 B   ---   --   ---xx   flac  0.6034  04 Tangled Up In Blue.flac
+     4:08.65       43900124 B   ---   --   ---xx   flac  0.5380  05 This World Can't Stand Long.flac
+     5:01.50       53214044 B   ---   --   ---xx   flac  0.6292  06 Dignity.flac
+     4:00.12       42364268 B   ---   --   ---xx   flac  0.6310  07 Tell Me That It Isn't True.flac
+     5:48.73       61558940 B   ---   --   ---xx   flac  0.6374  08 Things Have Changed.flac
+     6:34.10       69525164 B   ---   --   ---xx   flac  0.5589  09 Not Dark Yet.flac
+     5:35.67       59251628 B   ---   --   ---xx   flac  0.6766  10 Highway 61 Revisited.flac
+     5:57.31       63047756 B   ---   --   ---xx   flac  0.6005  11 Love Sick.flac
+     4:12.15       44488124 B   ---   --   ---xx   flac  0.6729  12 Not Fade Away.flac
+     6:30.52       68918348 B   ---   --   ---xx   flac  0.5658  13 Blowin' In The Wind.flac
+    70:37.57      747541436 B                            0.5957  (13 files)
+=================== 
+=================== 
+=================== 

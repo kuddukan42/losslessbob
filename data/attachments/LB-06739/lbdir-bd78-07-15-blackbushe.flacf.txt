@@ -1,0 +1,132 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-15-blackbushe.flacf 
+=================== 
+=================== 
+=================== 
+be5ee86b54b0a67a1593422db1449b36  bd78-07-15-blackbushe-d1t01.flac
+693d800ac55c60b5d3beb8da0069cb86  bd78-07-15-blackbushe-d1t02.flac
+ff84c0a3c290d562a5e2d2da9a1ebead  bd78-07-15-blackbushe-d1t03.flac
+d0ca62d57e277d817ee93bd17d5414c8  bd78-07-15-blackbushe-d1t04.flac
+20c9baa54994467cdfcb1eb875fa7355  bd78-07-15-blackbushe-d1t05.flac
+ea1f8b40d55dc3f13ea978c4b171b5ce  bd78-07-15-blackbushe-d1t06.flac
+df08bd1a5ae19aa152e0720c3fe16e7e  bd78-07-15-blackbushe-d1t07.flac
+f465242186abe9ed444ec8e68fc3213e  bd78-07-15-blackbushe-d1t08.flac
+70f9fdc0e1c05f1169b878b1bfdd0472  bd78-07-15-blackbushe-d1t09.flac
+928382ff5c8da2d90912478bcc22ed7c  bd78-07-15-blackbushe-d1t10.flac
+43b173283a81a36dc37aad47dad80c39  bd78-07-15-blackbushe-d1t11.flac
+a43dc5ecd0012f2b1153bf59f1d39425  bd78-07-15-blackbushe-d1t12.flac
+a9812a1ac72cc2ff2422c4d2511a95a2  bd78-07-15-blackbushe-d1t13.flac
+806eddf31056ca93850725c47bcfd878  bd78-07-15-blackbushe-d1t14.flac
+23357c4816ae09e4cbf43a61e1edf82c  bd78-07-15-blackbushe-d2t01.flac
+c412c43de86c7c9e118c14d8dec5103b  bd78-07-15-blackbushe-d2t02.flac
+c1db1cec3a9ccf4e3c662da2ad112962  bd78-07-15-blackbushe-d2t03.flac
+64034b1de58bebf7a376137662c75e13  bd78-07-15-blackbushe-d2t04.flac
+fbe85f9007a888cf53d6d0b6794c55b4  bd78-07-15-blackbushe-d2t05.flac
+fcfa46f42e0397643bbf4c5c8bb184ff  bd78-07-15-blackbushe-d2t06.flac
+d6d29c1582df15efb7748cd50f08660e  bd78-07-15-blackbushe-d2t07.flac
+e57295ca1d7c61690d224b32e46a6a20  bd78-07-15-blackbushe-d2t08.flac
+3fc430f757c453d2f3174153dad90636  bd78-07-15-blackbushe-d2t09.flac
+aa80adc38b0cdb40b566b0ee56fea8ec  bd78-07-15-blackbushe-d2t10.flac
+c8fab623778fd676f12260c08d73dc50  bd78-07-15-blackbushe-d2t11.flac
+40ea4def3d8c0363f78c72ce1ff88620  bd78-07-15-blackbushe-d3t01.flac
+ecadb7f93706f88c757bbb43e90e2681  bd78-07-15-blackbushe-d3t02.flac
+9be2bf3eadb262bc7ecddc588e17cc5f  bd78-07-15-blackbushe-d3t03.flac
+481d8c99af7241f2194c49ac4d5aceb0  bd78-07-15-blackbushe-d3t04.flac
+16c6d17444d47ddb458f037474eb2cc3  bd78-07-15-blackbushe-d3t05.flac
+0befc2b854111bfac831b5f7a6410d40  bd78-07-15-blackbushe-d3t06.flac
+7c234a210a6770f35441815e083cf8a1  bd78-07-15-blackbushe-d3t07.flac
+949db91fbfd3146d64a7f0174fa0e514  bd78-07-15-blackbushe-d3t08.flac
+37c579f509342429ad130dfac4d7e398  bd78-07-15-blackbushe-d3t09.flac
+c3ea3775ad1147dfd6b1b2f9082ee12e  bd78-07-15-blackbushe-d3t10.flac
+ddbfdd30be480ad0ed993fd549669226  bd78-07-15-blackbushe.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-15-blackbushe.flacf 
+=================== 
+=================== 
+=================== 
+bd78-07-15-blackbushe-d1t01.flac:dd365fbeca1c09d9e7e2dbba3f903f51
+bd78-07-15-blackbushe-d1t02.flac:c807112e918b9ef1c050625298b93f97
+bd78-07-15-blackbushe-d1t03.flac:d1ea57662f87f6b3fc0a9e24f39d2cd7
+bd78-07-15-blackbushe-d1t04.flac:d7c4dc8b5ca0f95f6c4316f52b2ba0f0
+bd78-07-15-blackbushe-d1t05.flac:6af9a7699f519f4019773fda72fb6e1a
+bd78-07-15-blackbushe-d1t06.flac:c7abdb582a27df92ed2f08026f42fb18
+bd78-07-15-blackbushe-d1t07.flac:bde65c44a565c89e01d9c27c62c9587c
+bd78-07-15-blackbushe-d1t08.flac:05eed45561948f7be70d0a43deb8ec3f
+bd78-07-15-blackbushe-d1t09.flac:ad9771b848e6abf56bf7b141f75fb633
+bd78-07-15-blackbushe-d1t10.flac:d8837aea5fcca1d2445d1c5700b4f512
+bd78-07-15-blackbushe-d1t11.flac:5a529b5f89e4fd8ade55b5cea22e798b
+bd78-07-15-blackbushe-d1t12.flac:b1dc43ba2ad470bcb1b8c76c4736c2e7
+bd78-07-15-blackbushe-d1t13.flac:6edd7aeefacca686a7ee848c0e66e1d5
+bd78-07-15-blackbushe-d1t14.flac:17f35b794cb373e2a81f5a29afbb2892
+bd78-07-15-blackbushe-d2t01.flac:d611e3935215fe127389d2821d0c0631
+bd78-07-15-blackbushe-d2t02.flac:ee9192fcbf5b2e081bb2ad486d1f70f2
+bd78-07-15-blackbushe-d2t03.flac:61688fe7f34f1b033974608aee2527ef
+bd78-07-15-blackbushe-d2t04.flac:4b19c3a6ca33b6c6a6b7f5ae49b56207
+bd78-07-15-blackbushe-d2t05.flac:411c8d1a9d89e00376116d1ccc4f0d9b
+bd78-07-15-blackbushe-d2t06.flac:6525be3f562c570b29a5cdd633437352
+bd78-07-15-blackbushe-d2t07.flac:af941a38c0e7c01cf59f93eacd767c3e
+bd78-07-15-blackbushe-d2t08.flac:2fe889195c914a1201c842d669b06d9d
+bd78-07-15-blackbushe-d2t09.flac:97781e435e0694fa32ebf44595790689
+bd78-07-15-blackbushe-d2t10.flac:1b812090ac87377838f8d57b58617a9c
+bd78-07-15-blackbushe-d2t11.flac:a108f43e61dd0f91850e4654c26bf8e7
+bd78-07-15-blackbushe-d3t01.flac:1279db9f31cabbd92ce5c8e5b25da45c
+bd78-07-15-blackbushe-d3t02.flac:740998196a27c2610eb816d1a13ce61a
+bd78-07-15-blackbushe-d3t03.flac:25411ad9a2c8c458909ba7cc1c5e6092
+bd78-07-15-blackbushe-d3t04.flac:42b616a94ee92cb274aa865085ae1761
+bd78-07-15-blackbushe-d3t05.flac:e0d2b2f5dff72b55e6da6fc0f02f9978
+bd78-07-15-blackbushe-d3t06.flac:860022aac90a9badc222c27e125784bd
+bd78-07-15-blackbushe-d3t07.flac:aa563ce43aac9c0d7f6f3532394aa9f0
+bd78-07-15-blackbushe-d3t08.flac:6151f54bd9755e7c23390cc4c2e61728
+bd78-07-15-blackbushe-d3t09.flac:b566d8729f1fa465b000d52dbcfb2ff6
+bd78-07-15-blackbushe-d3t10.flac:657d18230b5df61aa908c482bf823e60
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-15-blackbushe.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:15.25       34456844 B   ---   --   ---xx   flac  0.6133  bd78-07-15-blackbushe-d1t01.flac
+     1:44.52       18467948 B   ---   --   ---xx   flac  0.6239  bd78-07-15-blackbushe-d1t02.flac
+     5:26.43       57607580 B   ---   --   ---xx   flac  0.6260  bd78-07-15-blackbushe-d1t03.flac
+     4:15.45       45087884 B   ---   --   ---xx   flac  0.6181  bd78-07-15-blackbushe-d1t04.flac
+     4:44.15       50132924 B   ---   --   ---xx   flac  0.6193  bd78-07-15-blackbushe-d1t05.flac
+     4:49.35       51061964 B   ---   --   ---xx   flac  0.6279  bd78-07-15-blackbushe-d1t06.flac
+     5:17.42       56017628 B   ---   --   ---xx   flac  0.5736  bd78-07-15-blackbushe-d1t07.flac
+     4:25.50       46863644 B   ---   --   ---xx   flac  0.6255  bd78-07-15-blackbushe-d1t08.flac
+     4:41.70       49733084 B   ---   --   ---xx   flac  0.6368  bd78-07-15-blackbushe-d1t09.flac
+     4:13.03       44636300 B   ---   --   ---xx   flac  0.6336  bd78-07-15-blackbushe-d1t10.flac
+     7:07.52       75445148 B   ---   --   ---xx   flac  0.6630  bd78-07-15-blackbushe-d1t11.flac
+     4:32.65       48133724 B   ---   --   ---xx   flac  0.6415  bd78-07-15-blackbushe-d1t12.flac
+     3:53.68       41261180 B   ---   --   ---xx   flac  0.6321  bd78-07-15-blackbushe-d1t13.flac
+     7:19.00       77439644 B   ---   --   ---xx   flac  0.6199  bd78-07-15-blackbushe-d1t14.flac
+     5:40.35       60058364 B   ---   --   ---xx   flac  0.5816  bd78-07-15-blackbushe-d2t01.flac
+     5:11.10       54883964 B   ---   --   ---xx   flac  0.6206  bd78-07-15-blackbushe-d2t02.flac
+     5:53.52       62391548 B   ---   --   ---xx   flac  0.5640  bd78-07-15-blackbushe-d2t03.flac
+     5:03.60       53590364 B   ---   --   ---xx   flac  0.5705  bd78-07-15-blackbushe-d2t04.flac
+     6:21.10       67231964 B   ---   --   ---xx   flac  0.6268  bd78-07-15-blackbushe-d2t05.flac
+     4:23.55       46522604 B   ---   --   ---xx   flac  0.6630  bd78-07-15-blackbushe-d2t06.flac
+     3:21.30       35527004 B   ---   --   ---xx   flac  0.6414  bd78-07-15-blackbushe-d2t07.flac
+     4:33.68       48317180 B   ---   --   ---xx   flac  0.6106  bd78-07-15-blackbushe-d2t08.flac
+     3:18.07       34943708 B   ---   --   ---xx   flac  0.6070  bd78-07-15-blackbushe-d2t09.flac
+     5:24.18       57195980 B   ---   --   ---xx   flac  0.6249  bd78-07-15-blackbushe-d2t10.flac
+     4:18.72       45680588 B   ---   --   ---xx   flac  0.6344  bd78-07-15-blackbushe-d2t11.flac
+     6:03.65       64186124 B   ---   --   ---xx   flac  0.6209  bd78-07-15-blackbushe-d3t01.flac
+     4:48.47       50913788 B   ---   --   ---xx   flac  0.6250  bd78-07-15-blackbushe-d3t02.flac
+     4:58.65       52720124 B   ---   --   ---xx   flac  0.6254  bd78-07-15-blackbushe-d3t03.flac
+     3:29.08       36886460 B   ---   --   ---xx   flac  0.6453  bd78-07-15-blackbushe-d3t04.flac
+     3:40.42       38906828 B   ---   --   ---xx   flac  0.6309  bd78-07-15-blackbushe-d3t05.flac
+     0:36.73        6522140 B   ---   --   ---xx   flac  0.5914  bd78-07-15-blackbushe-d3t06.flac
+     7:12.47       76315388 B   ---   --   ---xx   flac  0.6353  bd78-07-15-blackbushe-d3t07.flac
+     6:13.03       65804300 B   ---   --   ---xx   flac  0.5470  bd78-07-15-blackbushe-d3t08.flac
+     6:16.07       66342908 B   ---   --   ---xx   flac  0.6459  bd78-07-15-blackbushe-d3t09.flac
+     4:52.43       51609980 B   ---   --   ---xx   flac  0.5127  bd78-07-15-blackbushe-d3t10.flac
+   167:30.32     1772896804 B                            0.6163  (35 files)
+=================== 
+=================== 
+=================== 

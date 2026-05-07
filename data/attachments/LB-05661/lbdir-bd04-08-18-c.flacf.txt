@@ -1,0 +1,123 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-18-c.flacf 
+=================== 
+=================== 
+=================== 
+bc5a96e5f36d7a0b2899899e1d3253eb  bd-2004-06-18-sevierville-static.txt
+db34bfe027b2003048ff9b86132aba8f  bd-2004-06-18-sevierville.txt
+5e76079a31927ec231b1fb1a2ef0618d  bd04-08-18-fixed.info.lbp51.txt
+a3679166da95926594d4c68e002fdfdd  bd04-08-18-fixed.txt
+d129f50b1a341774a1cbf76ee47fada6  d1\1 Down Along The Cove.flac
+379766d5058f14433a25464aa1a61b72  d1\2 Watching The River Flow.flac
+d2687f85facceed0b26db57cd964e686  d1\3 Tweedle Dee & Tweedle Dum.flac
+3eaad934b5831b97cab4cfc24482c5c9  d1\4 Tonight I'll Be Staying Here With You.flac
+b5134880070bf7ff115fdddbf1078204  d1\5 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+d2284301a6e97daaaaa05c96eeb0819f  d1\6 Man In The Long Black Coat.flac
+19de228fc943459601719dd644672688  d1\7 Highway 61 Revisited.flac
+a1eb561e99d5f8e4a4b53d23bdf3da5b  d1\8 Ballad Of Hollis Brown.flac
+f31f24136c89199551d80a456e2a7d47  d1\9 Just Like A Woman.flac
+bd78c052f349c6ec5796ed0e0830b605  d1\d1.ffp.txt
+54c679b39ac6f9e4746e2df9a90cbd5f  d1\d1.flac.md5
+a2171197e33a241e22fa4447663d40f3  d2\1 Honest With Me.flac
+27d202d093fab796fc60ed9a56ab1424  d2\2 Every Grain of Sand.flac
+586b7e47c312bd351b42e35c01e0b3fd  d2\3 Summer Days.flac
+ed15bc292e55ea724ce21e8543254365  d2\4 Like a Rolling Stone.flac
+568706bb298abd44fe95287dff5c9c9e  d2\5 All Along the Watchtower.flac
+739236572141c2fdf5554ad9fb8f622a  d2\d2.ffp.txt
+8cfd1280c67e7f33a7e7e9b40b3ded15  d2\d2.flac.md5
+800a7f21c280521869a4affd8c62ad9f  reworked tracks\bd2004-08-18.d1t03 Tweedle Dee & Tweedle Dum.fixed.flac
+4a7bf1f9996442f47eceb38197c2155f  reworked tracks\bd2004-08-18.d1t04 Tonight I'll Be Staying Here With You.fixed.flac
+406a0ec8e8e31c71c33d605b5189ab9e  reworked tracks\bd2004-08-18.d1t06 Man In The Long Black Coat.fixed.flac
+d78d6602a750c4190ae54a07d510c5fb  reworked tracks\bd2004-08-18.d2t04 Like a Rolling Stone.fixed.flac
+fbca0084224768d6b0ff734451d859c6  reworked tracks\bd2004-08-18.d2t04 Like a Rolling Stone.fixed.sa_fa.JPG
+f3fe5f3cba38b02b69a68c594575b2b7  reworked tracks\reworked tracks.ffp.txt
+9f5acc9f7b02b9552868f81458faafc0  reworked tracks\reworked tracks.flac.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-08-18-c.flacf\d1 
+=================== 
+=================== 
+=================== 
+1 Down Along The Cove.flac:e68c218b67ef021382b33c8537234108
+2 Watching The River Flow.flac:dd6c3e2a7050d0d6ac8f29261d73d346
+3 Tweedle Dee & Tweedle Dum.flac:a2edf5c7f2cd06d294f0427cb0957e28
+4 Tonight I'll Be Staying Here With You.flac:46611601c8e743c44d63b1525c607038
+5 Stuck Inside Of Mobile With The Memphis Blues Again.flac:c74831a997e77cce0ef2606c1dce839d
+6 Man In The Long Black Coat.flac:bf1a2919908902aa04af9e4583b44b87
+7 Highway 61 Revisited.flac:46174406537901a4b20ef21ff50c05d0
+8 Ballad Of Hollis Brown.flac:caca73b8af1aa5a5c67a7608794974f4
+9 Just Like A Woman.flac:04124ec1d00756143d72ee640e27534f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-08-18-c.flacf\d2 
+=================== 
+=================== 
+=================== 
+1 Honest With Me.flac:34f7292b6b4bfdda7f3dcc9f3b5dde42
+2 Every Grain of Sand.flac:c1d6ee4dfa84352e72a959afb6909279
+3 Summer Days.flac:e8cb4f8f90b411b0df942a32fab32989
+4 Like a Rolling Stone.flac:278f2ba0f1e724367b6ea89feb75927d
+5 All Along the Watchtower.flac:a53d4c3306c8a69860a7557d4e6d5575
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-08-18-c.flacf\reworked tracks 
+=================== 
+=================== 
+=================== 
+bd2004-08-18.d1t03 Tweedle Dee & Tweedle Dum.fixed.flac:3a3e4202e5e87d419a98b94743371312
+bd2004-08-18.d1t04 Tonight I'll Be Staying Here With You.fixed.flac:744dfb05600f85b71ef9602eac9dc30c
+bd2004-08-18.d1t06 Man In The Long Black Coat.fixed.flac:ce3f0fbb7be730d84a3162d8f6616972
+bd2004-08-18.d2t04 Like a Rolling Stone.fixed.flac:8d567fe816eb32f910d988cf25e9de91
+=================== 
+=================== 
+=================== 
+=== shntool for: bd04-08-18-c.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:48.04       71980652 B   ---   --   ---xx   flac  0.6004  1 Down Along The Cove.flac
+     5:43.45       60611084 B   ---   --   ---xx   flac  0.6091  2 Watching The River Flow.flac
+     5:20.01       56450396 B   ---   --   ---xx   flac  0.5584  3 Tweedle Dee & Tweedle Dum.flac
+     5:28.62       58005068 B   ---   --   ---xx   flac  0.5640  4 Tonight I'll Be Staying Here With You.flac
+     6:51.63       72648620 B   ---   --   ---xx   flac  0.6042  5 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     5:42.45       60434684 B   ---   --   ---xx   flac  0.5635  6 Man In The Long Black Coat.flac
+     6:33.19       69369932 B   ---   --   ---xx   flac  0.6286  7 Highway 61 Revisited.flac
+     6:14.54       66100652 B   ---   --   ---xx   flac  0.5314  8 Ballad Of Hollis Brown.flac
+     6:51.08       72519260 B   ---   --   ---xx   flac  0.5649  9 Just Like A Woman.flac
+    55:34.01      588120348 B                            0.5815  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd04-08-18-c.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:54.17       73069628 B   ---   --   ---xx   flac  0.6265  1 Honest With Me.flac
+     8:09.37       86346668 B   ---   --   ---xx   flac  0.5339  2 Every Grain of Sand.flac
+    10:28.22      110830988 B   ---   --   ---xx   flac  0.6000  3 Summer Days.flac
+     7:19.61       77583116 B   ---   --   ---xx   flac  0.6163  4 Like a Rolling Stone.flac
+     5:31.54       58515452 B   ---   --   ---xx   flac  0.6177  5 All Along the Watchtower.flac
+    38:23.41      406345852 B                            0.5964  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd04-08-18-c.flacf\reworked tracks 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.01       56450396 B   ---   --   ---xx   flac  0.5586  bd2004-08-18.d1t03 Tweedle Dee & Tweedle Dum.fixed.flac
+     5:28.62       58005068 B   ---   --   ---xx   flac  0.5641  bd2004-08-18.d1t04 Tonight I'll Be Staying Here With You.fixed.flac
+     5:42.45       60434684 B   ---   --   ---xx   flac  0.5637  bd2004-08-18.d1t06 Man In The Long Black Coat.fixed.flac
+     7:19.61       77583116 B   ---   --   ---xx   flac  0.6165  bd2004-08-18.d2t04 Like a Rolling Stone.fixed.flac
+    23:51.19      252473264 B                            0.5789  (4 files)
+=================== 
+=================== 
+=================== 

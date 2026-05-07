@@ -1,0 +1,71 @@
+===================
+===================
+===================
+=== bd04-04-12.md5
+===================
+===================
+===================
+64f106c18f72376db0e9bed25f095f35 *bd04-04-12d1t09.flac
+d7aa797e41f236036b2f3340b4805acd *bd04-04-12d2t01.flac
+d334e396bce584d70f8bcec9113f93b4 *bd04-04-12d2t02.flac
+f1d564d747680f18222f114212a78048 *bd04-04-12d2t03.flac
+4c78016156741085005a1aba727c9da2 *bd04-04-12d2t04.flac
+df3e74fe86449b7e1f3ba742ac87b5b4 *bd04-04-12d2t05.flac
+685468dfbc2f16a69f66a50d28466244 *bd04-04-12d2t06.flac
+f2e4f871904569196be835f89b1de741 *bd04-04-12d2t07.flac
+14d7cbc8d4cea5caa9cf6385e0adb924 *bd04-04-12d2t08.flac
+a98d2fb71d095d497251b3bc07fa5367 *bd04-04-12d1t01.flac
+21d2084e1186ad3c43309e6e0a05c46d *bd04-04-12d1t02.flac
+fc0bdc4b3475966a36edc917e81f627c *bd04-04-12d1t03.flac
+513a6ada5da91fe965401a708fac3cd1 *bd04-04-12d1t04.flac
+2d608c0f18384af4fd3924c7c19699df *bd04-04-12d1t05.flac
+ad9642e5e438b61a973536bf3f28d17c *bd04-04-12d1t06.flac
+6f8e4f28458ceec460c0f9c91185c68a *bd04-04-12d1t07.flac
+01277a93dcfb5ce2495e973cebb7b759 *bd04-04-12d1t08.flac
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+bd04-04-12d1t01.flac:d85a4d41d972ff6655b30b19e48b92c5bd04-04-12d1t02.flac:a0c7c78cf5df497962703380e95610b8bd04-04-12d1t03.flac:2521a80ce3c750ba91ff2578b13e7c40bd04-04-12d1t04.flac:fdf12017e345b07f9523b09377be2b7dbd04-04-12d1t05.flac:0fd9b6ac0f504f5619199ad4fd796a26bd04-04-12d1t06.flac:9cb9424c81fdfafa9132d58e8a0fc30bbd04-04-12d1t07.flac:6e0665b97a7dff2c85109023f0fa5359bd04-04-12d1t08.flac:27c5f5865b391c88d21f1e0f60ec0098bd04-04-12d1t09.flac:82826abf799f4ba2f660e9eaadb2aa45bd04-04-12d2t01.flac:c523a118eb820840170b44b91646c2fcbd04-04-12d2t02.flac:ab5653ab2d3c7671d66b6002e0cd24b2bd04-04-12d2t03.flac:86889c4ffb4b4080d7baded4eb3f59f7bd04-04-12d2t04.flac:4b73518be8c5c0420b86acf9b192de01bd04-04-12d2t05.flac:f7dbed6d3d4e0f1eb66d52e2180c82f6bd04-04-12d2t06.flac:9452026069dfeda61b077c87e9ebe12dbd04-04-12d2t07.flac:33375e7a92c1efd116bdf08b25a0dfb1bd04-04-12d2t08.flac:c56e6c35935fea88c91e01c2aa3b18e3bd04-04-12d1t01.flac:d85a4d41d972ff6655b30b19e48b92c5bd04-04-12d1t02.flac:a0c7c78cf5df497962703380e95610b8bd04-04-12d1t03.flac:2521a80ce3c750ba91ff2578b13e7c40bd04-04-12d1t04.flac:fdf12017e345b07f9523b09377be2b7dbd04-04-12d1t05.flac:0fd9b6ac0f504f5619199ad4fd796a26bd04-04-12d1t06.flac:9cb9424c81fdfafa9132d58e8a0fc30bbd04-04-12d1t07.flac:6e0665b97a7dff2c85109023f0fa5359bd04-04-12d1t08.flac:27c5f5865b391c88d21f1e0f60ec0098bd04-04-12d1t09.flac:82826abf799f4ba2f660e9eaadb2aa45bd04-04-12d2t01.flac:c523a118eb820840170b44b91646c2fcbd04-04-12d2t02.flac:ab5653ab2d3c7671d66b6002e0cd24b2bd04-04-12d2t03.flac:86889c4ffb4b4080d7baded4eb3f59f7bd04-04-12d2t04.flac:4b73518be8c5c0420b86acf9b192de01bd04-04-12d2t05.flac:f7dbed6d3d4e0f1eb66d52e2180c82f6bd04-04-12d2t06.flac:9452026069dfeda61b077c87e9ebe12dbd04-04-12d2t07.flac:33375e7a92c1efd116bdf08b25a0dfb1bd04-04-12d2t08.flac:c56e6c35935fea88c91e01c2aa3b18e3
+===================
+===================
+===================
+=== LB-01745.txt
+===================
+===================
+===================
+Bob Dylan, 4/12/04, Atlanta, Georgia, Tabernacle, 2CDR
+
+LB-1745, (60min+63min), pb remaster; excellent sound; background talking
+at begin of d2t4; (a bittorrent 5/05 3 Nights in Atlanta - Vol 1 was a
+close eac match to fixed version)
+
+CD1
+
+1 Drifter's Escape (Bob on piano and harp), 2 Just Like Tom Thumb's
+Blues (Bob on piano and harp), 3 Unbelievable (Bob on piano), 4 I'll Be
+Your Baby Tonight (Bob on piano and harp, Larry on pedal steel), 5 It's
+Alright, Ma (I'm Only Bleeding) (Bob on piano, Larry on cittern), 6
+Moonlight (Bob on piano and harp, Freddy on acoustic guitar, Tony on
+standup bass), 7 Don't Think Twice, It's All Right (acoustic) (Bob on
+piano and harp, Larry on cittern, Freddy on acoustic guitar, Tony on
+standup bass), 8 Stuck Inside Of Mobile With The Memphis Blues Again
+(Bob on piano, Larry on acoustic guitar), 9 Man In The Long Black Coat
+(Bob on piano, Larry on acoustic guitar),
+
+CD2
+
+1 Highway 61 Revisited (Bob on piano, Freedy on slide guitar), 2
+Standing In The Doorway (Bob on piano), 3 Honest With Me (Bob on piano,
+Larry on slide guitar), 4 I Believe In You (Bob on piano), 5 Summer Days
+(Bob on piano, Tony on standup bass), 6 (encore), Cat's In The Well (Bob
+on piano), 7 Like A Rolling Stone (Bob on piano), 8 All Along The
+Watchtower (Bob on piano)
+
+------------------------------------------------------------------------
+===================
+===================
+===================

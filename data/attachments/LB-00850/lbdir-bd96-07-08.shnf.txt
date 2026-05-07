@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-08.shnf 
+=================== 
+=================== 
+=================== 
+ccca016c844eae5bec6825530bba3813  07-08-96 Disc 1- 1.shn
+77ee3583a295eb60abf7d7292cef2890  07-08-96 Disc 1- 2.shn
+41ef2ffd5419feac1d47b520ec8d54b2  07-08-96 Disc 1- 3.shn
+4bc4c6e9e81a8fec9f2e34e86294f866  07-08-96 Disc 1- 4.shn
+e6a72363096f52bb5462e9617d51737f  07-08-96 Disc 1- 5.shn
+2ad03fccf12012e949b14352997fb82c  07-08-96 Disc 1- 6.shn
+e71dc97e705d29951cffe1c04b4c24d8  07-08-96 Disc 1- 7.shn
+064eb343c118e5549660a85b8080f79f  07-08-96 Disc 1- 8.shn
+fe335836660a24da1e771d1ca066bb6b  07-08-96 Disc 1- 9.shn
+0b6deb81a54647d791e50e5648866a45  07-08-96 Disc 1.md5
+0e41292279d0b9d02ed6159ab9aa0901  07-08-96 Disc 2- 1.shn
+81132f905d84e26b742ebaf619311793  07-08-96 Disc 2- 2.shn
+8382fece6c72cc9c7b882048a84ebb35  07-08-96 Disc 2- 3.shn
+b1b9749aacd22b56b9846385fe91431a  07-08-96 Disc 2- 4.shn
+b201debedab3d5709bedcaa616608b86  07-08-96 Disc 2- 5.shn
+ffdc4d4ddb7a4bd7908f4f234097295d  07-08-96 Disc 2- 6.shn
+6edb3845c6188123843131c010f367ae  07-08-96 Disc 2.md5
+c553eb3cb4c917db247d0537cfe19499  07-08-96.nfo
+79b8c8941b02f2c04c23fbc8f0daec82  bd96-07-08.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-07-08.shnf 
+=================== 
+=================== 
+=================== 
+13bcbf7d300caaef50dbb9defeba4ddd  [shntool]  07-08-96_Disc_1-_1.wav
+84be9d5c12f5761fc85271c694379725  [shntool]  07-08-96_Disc_1-_2.wav
+c1992473b313254336c796686f78580c  [shntool]  07-08-96_Disc_1-_3.wav
+7cd76a53ea510d1ad476a35f289340f2  [shntool]  07-08-96_Disc_1-_4.wav
+3ddb46cbbd9924d5b05bb68f1f8fab69  [shntool]  07-08-96_Disc_1-_5.wav
+355b766820c58f0323a7a5511776ecf1  [shntool]  07-08-96_Disc_1-_6.wav
+720be30b06a210a1cb7657267eb081b4  [shntool]  07-08-96_Disc_1-_7.wav
+1902c40fa27776df717da4b6b73874e9  [shntool]  07-08-96_Disc_1-_8.wav
+7b63b2f1e77a2c91c065870618a0566c  [shntool]  07-08-96_Disc_1-_9.wav
+fcdc2af56759d1624c090a1b0c50dd4e  [shntool]  07-08-96_Disc_2-_1.wav
+71f7b2b11c54c334698390f0487b0920  [shntool]  07-08-96_Disc_2-_2.wav
+6ea9d974222c51c2b86f595032e47a2d  [shntool]  07-08-96_Disc_2-_3.wav
+9d978a7585d8671c67bcaf0f48d60d34  [shntool]  07-08-96_Disc_2-_4.wav
+52e22c101c915a8e085299f8fca1e84f  [shntool]  07-08-96_Disc_2-_5.wav
+58ff588e1893cdcbe6fa5bbd924c3fd0  [shntool]  07-08-96_Disc_2-_6.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-08.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.63       54478620 B   -b-   --   ---xx    shn  0.6634  07-08-96 Disc 1- 1.shn
+     5:58.48       63264140 B   ---   --   ---xx    shn  0.6157  07-08-96 Disc 1- 2.shn
+     7:30.70       79544684 B   ---   --   ---xx    shn  0.6567  07-08-96 Disc 1- 3.shn
+     5:45.27       60921548 B   ---   --   ---xx    shn  0.5548  07-08-96 Disc 1- 4.shn
+     7:49.43       82832780 B   ---   --   ---xx    shn  0.6414  07-08-96 Disc 1- 5.shn
+     8:05.72       85723388 B   ---   --   ---xx    shn  0.6496  07-08-96 Disc 1- 6.shn
+     9:40.27      102375548 B   ---   --   ---xx    shn  0.5718  07-08-96 Disc 1- 7.shn
+     5:42.58       60465260 B   ---   --   ---xx    shn  0.5283  07-08-96 Disc 1- 8.shn
+     6:40.17       70600028 B   ---   --   ---xx    shn  0.5901  07-08-96 Disc 1- 9.shn
+     8:30.39       90054972 B   -b-   --   ---xx    shn  0.6087  07-08-96 Disc 2- 1.shn
+     7:13.51       76501196 B   ---   --   ---xx    shn  0.5937  07-08-96 Disc 2- 2.shn
+     9:25.34       99746012 B   ---   --   ---xx    shn  0.6759  07-08-96 Disc 2- 3.shn
+     9:14.10       97749164 B   ---   --   ---xx    shn  0.6749  07-08-96 Disc 2- 4.shn
+     8:28.11       89637116 B   ---   --   ---xx    shn  0.6411  07-08-96 Disc 2- 5.shn
+     6:11.17       65484428 B   ---   --   ---xx    shn  0.7100  07-08-96 Disc 2- 6.shn
+   111:25.61     1179378884 B                            0.6272  (15 files)
+=================== 
+=================== 
+=================== 

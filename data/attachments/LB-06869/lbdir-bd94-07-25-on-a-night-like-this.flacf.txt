@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-25-on-a-night-like-this.flacf 
+=================== 
+=================== 
+=================== 
+8f5a34dc5514cf5b93687cbb9ee63166  bd94-07-25-on-a-night-like-this-d1t01.flac
+e1aee0da03dde4703f6af5bba0108131  bd94-07-25-on-a-night-like-this-d1t02.flac
+76946351b795d89f7cb07152cc37b57f  bd94-07-25-on-a-night-like-this-d1t03.flac
+24cb41c4665c58f6ec4b7e4a1bc87a50  bd94-07-25-on-a-night-like-this-d1t04.flac
+ef20f4363216e03967525d3dd73fdd0f  bd94-07-25-on-a-night-like-this-d1t05.flac
+6a3088e1f37e199b99d4b775711a12f6  bd94-07-25-on-a-night-like-this-d1t06.flac
+7b7fc2f5b3f151d870186f1cfe010dca  bd94-07-25-on-a-night-like-this-d1t07.flac
+8d262c21985c9ee8afbc9236cfb187b5  bd94-07-25-on-a-night-like-this-d1t08.flac
+878d7e21f25d867d0aa80d93b89be477  bd94-07-25-on-a-night-like-this-d1t09.flac
+fa6c09a3e9532462327d68c7e0d8dff5  bd94-07-25-on-a-night-like-this-d2t01.flac
+4191714c3a27b86b6a0c0acf8b367378  bd94-07-25-on-a-night-like-this-d2t02.flac
+3c792f9d7ede19d88d35a09f4dca308d  bd94-07-25-on-a-night-like-this-d2t03.flac
+51a862ccae7a9f62ec3cf8d12451b12d  bd94-07-25-on-a-night-like-this-d2t04.flac
+9e23cb0a3a1237a353ff6b34250aaac1  bd94-07-25-on-a-night-like-this-d2t05.flac
+c5d712188dafddaa0c1b0575bd26ad18  bd94-07-25-on-a-night-like-this-d2t06.flac
+6eb7e3f20b6a8c77f871242c6fa62e79  bd94-07-25-on-a-night-like-this-d2t07.flac
+cc394a78a4be8f2281cfe024227e9704  bd94-07-25-on-a-night-like-this-d2t08.flac
+bdea1e42e30f09d57a202fddfb2b9fe4  bd94-07-25-on-a-night-like-this-d2t09.flac
+130a1d086b455a6480b868bbbae95348  bd94-07-25-on-a-night-like-this-d2t10.flac
+3e075cd9d9f95793002eb627e7edb300  bd94-07-25-on-a-night-like-this-d2t11.flac
+8b5f9850da3c64418bec19a947ca8a88  bd94-07-25-on-a-night-like-this-d2t12.flac
+d7fb6b5f6ee6743e087ce7ab3a4afd4b  bd94-07-25-on-a-night-like-this-d2t13.flac
+cc0eb19a7fdc0e125b671849ea471a86  bd94-07-25-on-a-night-like-this-d2t14.flac
+7ca5eec2c371dbe166bf79937eb31d43  bd94-07-25-on-a-night-like-this-d2t15.flac
+0ed76655b48e32e15d5a5322ebfc55dc  bd94-07-25-on-a-night-like-this.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-25-on-a-night-like-this.flacf 
+=================== 
+=================== 
+=================== 
+bd94-07-25-on-a-night-like-this-d1t01.flac:1552c03587897a1ff72e5506b9471214
+bd94-07-25-on-a-night-like-this-d1t02.flac:df7a537d8ddd019ccde806218935db4f
+bd94-07-25-on-a-night-like-this-d1t03.flac:71190fd95338cfb713da73fdcda194b3
+bd94-07-25-on-a-night-like-this-d1t04.flac:1e104b5009adf2549d63bef7f5da521b
+bd94-07-25-on-a-night-like-this-d1t05.flac:661d6b807680659a30a7e257306cc6f7
+bd94-07-25-on-a-night-like-this-d1t06.flac:6616da3b2dd01c4882628817e84f044e
+bd94-07-25-on-a-night-like-this-d1t07.flac:61707a69c37880b140d0fcc6844538ed
+bd94-07-25-on-a-night-like-this-d1t08.flac:3c72c76dd74947371a31a5914e1aa046
+bd94-07-25-on-a-night-like-this-d1t09.flac:c10904dfc5bf7d7c4eb83752c5ce15cd
+bd94-07-25-on-a-night-like-this-d2t01.flac:9074270840f098dc9734b57e3322cbfc
+bd94-07-25-on-a-night-like-this-d2t02.flac:cfa307f840b103a6494b040ad5e9dd60
+bd94-07-25-on-a-night-like-this-d2t03.flac:efc812844893ba25830354a5e239164c
+bd94-07-25-on-a-night-like-this-d2t04.flac:f0527aa3df374c96be28c5357eda3be5
+bd94-07-25-on-a-night-like-this-d2t05.flac:f3d2ff74a8a75b8e55b71a377f430a30
+bd94-07-25-on-a-night-like-this-d2t06.flac:7818c7c5022a865d4009077517af7d15
+bd94-07-25-on-a-night-like-this-d2t07.flac:ccaf232112414e714aaff62e0e072cf9
+bd94-07-25-on-a-night-like-this-d2t08.flac:bcbc055d66204121f0236ce0f8555793
+bd94-07-25-on-a-night-like-this-d2t09.flac:72535c1cbb80b6012d7f873090100281
+bd94-07-25-on-a-night-like-this-d2t10.flac:b562ac56f3dcab83444ce90c4c071033
+bd94-07-25-on-a-night-like-this-d2t11.flac:438987cc7e67c4bda1ca54e370959669
+bd94-07-25-on-a-night-like-this-d2t12.flac:6e5e7ffecf72261119654bb52ab75737
+bd94-07-25-on-a-night-like-this-d2t13.flac:932419eff25ae4ec62ca6de460201a77
+bd94-07-25-on-a-night-like-this-d2t14.flac:d35f2991fbe20b80c5173651cc1b4c6f
+bd94-07-25-on-a-night-like-this-d2t15.flac:413d056393ff65183eb7070b14c9a47e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-25-on-a-night-like-this.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:24.12       88933868 B   ---   --   ---xx   flac  0.5659  bd94-07-25-on-a-night-like-this-d1t01.flac
+     8:20.61       88343516 B   ---   --   ---xx   flac  0.5615  bd94-07-25-on-a-night-like-this-d1t02.flac
+     6:06.52       64684748 B   ---   --   ---xx   flac  0.5924  bd94-07-25-on-a-night-like-this-d1t03.flac
+     6:38.49       70322492 B   ---   --   ---xx   flac  0.5668  bd94-07-25-on-a-night-like-this-d1t04.flac
+     9:10.17       97060028 B   ---   --   ---xx   flac  0.5719  bd94-07-25-on-a-night-like-this-d1t05.flac
+     8:51.49       93783692 B   ---   --   ---xx   flac  0.5801  bd94-07-25-on-a-night-like-this-d1t06.flac
+     9:29.41      100468076 B   ---   --   ---xx   flac  0.4801  bd94-07-25-on-a-night-like-this-d1t07.flac
+     6:31.72       69141788 B   ---   --   ---xx   flac  0.5249  bd94-07-25-on-a-night-like-this-d1t08.flac
+     6:36.31       69927356 B   ---   --   ---xx   flac  0.5444  bd94-07-25-on-a-night-like-this-d1t09.flac
+     7:50.26       82969196 B   ---   --   ---xx   flac  0.6618  bd94-07-25-on-a-night-like-this-d2t01.flac
+     8:23.59       88868012 B   ---   --   ---xx   flac  0.5831  bd94-07-25-on-a-night-like-this-d2t02.flac
+     7:33.20       79956284 B   ---   --   ---xx   flac  0.6321  bd94-07-25-on-a-night-like-this-d2t03.flac
+     3:28.04       36700652 B   ---   --   ---xx   flac  0.5503  bd94-07-25-on-a-night-like-this-d2t04.flac
+     2:36.03       27525500 B   ---   --   ---xx   flac  0.5249  bd94-07-25-on-a-night-like-this-d2t05.flac
+     4:53.38       51774620 B   ---   --   ---xx   flac  0.5158  bd94-07-25-on-a-night-like-this-d2t06.flac
+     4:23.59       46532012 B   ---   --   ---xx   flac  0.5285  bd94-07-25-on-a-night-like-this-d2t07.flac
+     4:30.08       47646860 B   ---   --   ---xx   flac  0.5064  bd94-07-25-on-a-night-like-this-d2t08.flac
+     4:16.27       45221948 B   ---   --   ---xx   flac  0.5193  bd94-07-25-on-a-night-like-this-d2t09.flac
+     4:16.27       45221948 B   ---   --   ---xx   flac  0.4480  bd94-07-25-on-a-night-like-this-d2t10.flac
+     2:24.67       25559228 B   ---   --   ---xx   flac  0.5282  bd94-07-25-on-a-night-like-this-d2t11.flac
+     4:30.08       47646860 B   ---   --   ---xx   flac  0.4875  bd94-07-25-on-a-night-like-this-d2t12.flac
+     4:29.27       47515148 B   ---   --   ---xx   flac  0.4506  bd94-07-25-on-a-night-like-this-d2t13.flac
+     2:37.68       27854780 B   ---   --   ---xx   flac  0.5222  bd94-07-25-on-a-night-like-this-d2t14.flac
+     5:52.71       62259836 B   ---   --   ---xx   flac  0.4681  bd94-07-25-on-a-night-like-this-d2t15.flac
+   142:16.71     1505918448 B                            0.5469  (24 files)
+=================== 
+=================== 
+=================== 

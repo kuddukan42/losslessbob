@@ -1,0 +1,49 @@
+Bob Dylan
+Kemper Arena
+Kansas City, Missouri
+3 November 1978
+
+Musicians: Bob Dylan (vocal, harmonica & guitar), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Jerry Scheff (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Carolyn Dennis (background vocals).
+Lineaage: mono AUD>?>unknown generation tape, but no more than 3rd gen. >DAT>Soundforge 6.0>CD Wave>CD [me] >EAC> .wav>shntool>.shn [you]
+
+notes from collector who performed pitch correction:
+ -cut after Maggie's  (first segment pitched -0,4 >>>-0,9) [i..e, "ranging from 4 semitones to 9 semitones"]
+-Blowin'   (this section, but excluding Blowin' - there was a break due to a tape flip but not a break in recording before Blowin' that could be restored-  pitched -0,5 >>> -0,9)
+-JLAW  (third section  blowin >>>JLAW  pitched -0,6)
+-rest of show beginning with ramona  -0,4 >>> -0,9
+-I did the CD split after It Ain't Me 
+-while tracking, I found an additional cut after I Want You
+-also, there is a brief left channel volume drop @ d2t07 [1:27]
+
+disc 1
+
+1. My Back Pages
+2. She’s Love Crazy (Tampa Red)
+3. Mr. Tambourine Man
+4. Shelter From The Storm
+5. It's All Over Now, Baby Blue
+6. Tangled Up In Blue
+7. Ballad Of A Thin Man
+8. Maggie's Farm
+9. I Don’t Believe You (She Acts Like We Never Have Met)
+10. Like A Rolling Stone
+11. I Shall Be Released
+12. Señor (Tales Of Yankee Power)
+13. The Times They Are A-Changin'
+14. It Ain't Me, Babe
+
+disc 2
+
+1. Am I Your Stepchild?
+2. One More Cup Of Coffee (Valley Below)
+3. Blowin' In The Wind
+4. Girl From The North Country
+5. Where Are You Tonight? (Journey Through Dark Heat)
+6. Masters Of War
+7. Just Like A Woman
+8. To Ramona
+9. All Along The Watchtower
+10. All I Really Want To Do
+11. It's Alright, Ma (I'm Only Bleeding)
+12. Forever Young
+13. Changing Of The Guards

@@ -1,0 +1,32 @@
+BOB DYLAN
+Jesse Auditorium, Columbia, MO, May 1, 1994
+Received CDR from the taper
+After I got them:
+CDR > EAC > WAV > mkwACT > SHN (with seek tables appended)
+
+Disc 1
+1. Jokerman
+2. Señor (Tales Of Yankee Power)
+3. All Along The Watchtower
+4. You're A Big Girl Now
+5. Tangled Up In Blue
+6. Simple Twist Of Fate
+7. Masters Of War
+8. Mama, You Been On My Mind
+9. Gates Of Eden 
+
+Disc 2
+1. Highway 61 Revisited
+2. In The Garden
+3. Shooting Star
+4. Maggie's Farm
+5. Applause
+6. What Good Am I?
+7. The Lonesome Death Of Hattie Carroll
+
+The LOG files are logs of the EAC extraction
+The CUE files were created by EAC and can be
+  used to burn discs in EAC
+
+The MD5 SHN file is to verify the SHN files
+The MD5 WAV file is to verify the decoded WAV files

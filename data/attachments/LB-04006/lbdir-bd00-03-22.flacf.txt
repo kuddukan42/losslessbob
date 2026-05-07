@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-22.flacf 
+=================== 
+=================== 
+=================== 
+49fbcca4bd5fbb41c7a2058f7ce6490f  bd00-03-22-LB-4006.txt
+bc82e30da2557a303e3da18364bd8a10  bd2000-03-22.flac Missoula.ffp
+0facbd188ec0b4ea48e3564d1cb3cd1e  bd2000-03-22.flac Missoula.md5
+744f563081e648c97328904b2b70457f  bd2000-03-22.flac Missoula.st5
+5ce92185178c11b762849fd30977e470  bd2000-03-22d1.flac Missoula.shntool.txt
+71029bcf3ad00598ee099f9936a8f244  bd2000-03-22d1.LOG
+c792cb3983f3445a0f8824b07f9eaa9a  bd2000-03-22d1t01.flac
+807c30310e27186467eed964f863f269  bd2000-03-22d1t02.flac
+924bd0e2acb8e8d7c67bc3b76cad32fb  bd2000-03-22d1t03.flac
+6685d54384cc03bf695ed36ad8b8fc63  bd2000-03-22d1t04.flac
+d41d8cd98f00b204e9800998ecf8427e  bd2000-03-22d1t04.pk
+0f654b372ff01aa257c6a00724b3fe6c  bd2000-03-22d1t04fa.PNG
+06b23cba1447c0c9b40563b5882fde73  bd2000-03-22d1t04sa.PNG
+820c9fb7bb5774bd0b7499c9e1e8a7d7  bd2000-03-22d1t05.flac
+5ec6ce3b233e22e0d1ac32463f4f4e2a  bd2000-03-22d1t06.flac
+90b6c7f56358d5b3de71ce09975bae35  bd2000-03-22d1t07.flac
+721e302b71a0ea0ed64072392a852c27  bd2000-03-22d1t08.flac
+1d9d699f5f0ee03be74335499dae4b59  bd2000-03-22d1t09.flac
+dad32a01ecf62686d72eef3fcee6eb8b  bd2000-03-22d1t10.flac
+c62108be80ce095fd0460afa5d76cb85  bd2000-03-22d1t11.flac
+78feb5bf5ffcb9839e507ec43b2833d0  bd2000-03-22d1t12.flac
+3067a026c19506e0d306b4f2dd6131ea  bd2000-03-22d2.flac Missoula.shntool.txt
+64c9e64490591cb5bb1e324f482ff8e9  bd2000-03-22d2.flac Missoula.txt
+cdaeb091fc6aad2544d7c58794cbeea7  bd2000-03-22d2.LOG
+594d45a27d6fa003c1f88bd2ce969e0b  bd2000-03-22d2t01.flac
+245cde84e5a02c60871ce5e7d0f1cb4f  bd2000-03-22d2t02.flac
+d8525f6c16023daff06d5021077c4c34  bd2000-03-22d2t03.flac
+77f599c531a3de355010313940be260c  bd2000-03-22d2t04.flac
+d41d8cd98f00b204e9800998ecf8427e  bd2000-03-22d2t04.pk
+539201e5807a5ec19a9d88cfa7784939  bd2000-03-22d2t04fa.PNG
+55a02af8d1876d5c0eac3e5995ed4d2a  bd2000-03-22d2t04sa.PNG
+8932b302c0ec7ce35a8f876cacb2a44d  bd2000-03-22d2t05.flac
+ba6294c6741ed647236a442ac0f7430d  bd2000-03-22d2t06.flac
+96039f6d6f801b5a4f91bafdfd3291c7  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-22.flacf 
+=================== 
+=================== 
+=================== 
+bd2000-03-22d1t01.flac:96bc60049053a2a45d0e3e234dcecd9a
+bd2000-03-22d1t02.flac:3869f272c47f01820fb7acf41f30dbcc
+bd2000-03-22d1t03.flac:acfeeabf839b44c9bd7d52ff36ee467d
+bd2000-03-22d1t04.flac:bb27fedb42942120208ced7b251d3b70
+bd2000-03-22d1t05.flac:5b54aebddfa3f4fc82deb847d0f7e6d4
+bd2000-03-22d1t06.flac:494f85df76675c6e8d21c127aaaa9d3e
+bd2000-03-22d1t07.flac:6cff0a7139f2b989ad9d31f88b3c3012
+bd2000-03-22d1t08.flac:6c2255cd5f5deaab0ace753e05d7c93f
+bd2000-03-22d1t09.flac:3a4e35487b5d20147acc2fd0dab7d474
+bd2000-03-22d1t10.flac:328b3cc9b5ca5e2e965ac4637ea983c0
+bd2000-03-22d1t11.flac:6cfe0709ab26d4e07b1693a467615388
+bd2000-03-22d1t12.flac:5d59e68b7a6c5d879d1ecde3ade90017
+bd2000-03-22d2t01.flac:eb7944b484d0e911e1780dacfabc0050
+bd2000-03-22d2t02.flac:c6493d7256a0ef83537c29dcd0de29c4
+bd2000-03-22d2t03.flac:2dcdf3a2b4a9b1a4920dc2eae02f7cf8
+bd2000-03-22d2t04.flac:7aee4064de454678ed9ea0a2775bafba
+bd2000-03-22d2t05.flac:004bde7e30093fc284b43505336e5dcd
+bd2000-03-22d2t06.flac:3268ffdb753fcc5587d8b246acc98bc4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-22.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:36.48       27631340 B   ---   --   ---xx   flac  0.6478  bd2000-03-22d1t01.flac
+     4:17.22       45386588 B   ---   --   ---xx   flac  0.5793  bd2000-03-22d1t02.flac
+     7:27.07       78867308 B   ---   --   ---xx   flac  0.6239  bd2000-03-22d1t03.flac
+     8:20.23       88254140 B   ---   --   ---xx   flac  0.6113  bd2000-03-22d1t04.flac
+     8:16.01       87496796 B   ---   --   ---xx   flac  0.6489  bd2000-03-22d1t05.flac
+     4:25.21       46795436 B   ---   --   ---xx   flac  0.5918  bd2000-03-22d1t06.flac
+     2:59.24       31632092 B   ---   --   ---xx   flac  0.6155  bd2000-03-22d1t07.flac
+     6:00.15       63539324 B   ---   --   ---xx   flac  0.6303  bd2000-03-22d1t08.flac
+     4:53.73       51856940 B   ---   --   ---xx   flac  0.6416  bd2000-03-22d1t09.flac
+     5:18.25       56154044 B   ---   --   ---xx   flac  0.6319  bd2000-03-22d1t10.flac
+     7:29.47       79314188 B   ---   --   ---xx   flac  0.5814  bd2000-03-22d1t11.flac
+     5:48.21       61436636 B   ---   --   ---xx   flac  0.6587  bd2000-03-22d1t12.flac
+     6:13.50       65914844 B   ---   --   ---xx   flac  0.5964  bd2000-03-22d2t01.flac
+     7:20.13       77646620 B   ---   --   ---xx   flac  0.6238  bd2000-03-22d2t02.flac
+     6:29.54       68746652 B   ---   --   ---xx   flac  0.6431  bd2000-03-22d2t03.flac
+     4:45.61       50417516 B   ---   --   ---xx   flac  0.6229  bd2000-03-22d2t04.flac
+     6:06.07       64578908 B   ---   --   ---xx   flac  0.6154  bd2000-03-22d2t05.flac
+     5:17.53       56043500 B   ---   --   ---xx   flac  0.6359  bd2000-03-22d2t06.flac
+   104:05.40     1101712872 B                            0.6221  (18 files)
+=================== 
+=================== 
+=================== 

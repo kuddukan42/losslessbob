@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-17-Sony-ECM-717.flacf 
+=================== 
+=================== 
+=================== 
+b30576536b4a33a64b8d7d175a81d58f  bd041705Boston.txt
+344fad006b3225f14c1ac773bb395dcc  bd041705d1t01.flac
+628afbe878f0b51f1700a8e5cb737097  bd041705d1t02.flac
+1f3932c76ff2740cb1337cfd44d96b1a  bd041705d1t03.flac
+ce62113b6564ae6d8fa44dbe1f4f3b01  bd041705d1t04.flac
+03c6e5f19c7a6883d0087174d70a2fbd  bd041705d1t05.flac
+4d653dc2c274734f0526ad0cfb94b642  bd041705d1t06.flac
+52438d24cfab85a08b79cd4ec3e480af  bd041705d1t07.flac
+d47539f346af4f96f86155cf7e4a8d29  bd041705d1t08.flac
+cbc41ad3e87146c2cbfab18ef4664f1b  bd041705d1t09.flac
+758355de53eab4c639412697ff468118  bd041705d1t10.flac
+ae4c32070bb47100e82157d0bfb19c49  bd041705d1t11.flac
+316cc7f0e822399edd0320e8c12202ae  bd041705d1t12.flac
+41ab82a78db1eb8d57e489be96f02a43  bd041705d2t01.flac
+76cd0fb63cc72b973f4681920d04805a  bd041705d2t02.flac
+96c7f9c357a6a6ff3ba10115b658edb0  bd05-04-17-Sony-ECM-717-LB-2628.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-04-17-Sony-ECM-717.flacf 
+=================== 
+=================== 
+=================== 
+bd041705d1t01.flac:ae805c55c51284ed5fad53762e18a4d7
+bd041705d1t02.flac:ec4a4e362af3b93df9679ede6d381337
+bd041705d1t03.flac:4a08e372cda8a7e9569e775899a36918
+bd041705d1t04.flac:96763c83479009b644e8a3c4ce0d382b
+bd041705d1t05.flac:8a4e786a5e86a1f800c6fc8f6c214a4f
+bd041705d1t06.flac:4ad05589d614178d48f76836f91ba921
+bd041705d1t07.flac:bc67e12a784103cef32bcdb62f3a40fb
+bd041705d1t08.flac:2e584148391fee7e7f36c5f06be61d77
+bd041705d1t09.flac:74e6ffce7e4053a819677117e3b7877d
+bd041705d1t10.flac:38102838526e8bfa16597445dbc246d5
+bd041705d1t11.flac:f970ae6802f0994df357b30aecee594d
+bd041705d1t12.flac:b38ec821a71a4ad8eb7dbd9d33940980
+bd041705d2t01.flac:76b7b571d846015ee058a431e14ef6b4
+bd041705d2t02.flac:a996a088fb1f40b88ff6a6577e70bccb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-17-Sony-ECM-717.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.26       53333996 B   ---   --   ---xx   flac  0.6251  bd041705d1t01.flac
+     7:03.46       74725436 B   ---   --   ---xx   flac  0.5377  bd041705d1t02.flac
+     5:04.27       53689148 B   ---   --   ---xx   flac  0.6217  bd041705d1t03.flac
+     5:38.10       59646764 B   ---   --   ---xx   flac  0.5196  bd041705d1t04.flac
+     8:14.21       87191036 B   ---   --   ---xx   flac  0.6063  bd041705d1t05.flac
+     4:54.46       51969836 B   ---   --   ---xx   flac  0.5233  bd041705d1t06.flac
+     8:43.18       92299580 B   ---   --   ---xx   flac  0.5963  bd041705d1t07.flac
+     5:34.71       59084636 B   ---   --   ---xx   flac  0.5210  bd041705d1t08.flac
+     5:37.03       59453900 B   ---   --   ---xx   flac  0.5465  bd041705d1t09.flac
+     5:25.59       57468812 B   ---   --   ---xx   flac  0.5428  bd041705d1t10.flac
+     6:53.48       72966140 B   ---   --   ---xx   flac  0.5755  bd041705d1t11.flac
+     6:57.25       73617644 B   ---   --   ---xx   flac  0.5672  bd041705d1t12.flac
+     7:15.03       76741100 B   ---   --   ---xx   flac  0.5793  bd041705d2t01.flac
+     5:01.60       53237564 B   ---   --   ---xx   flac  0.6266  bd041705d2t02.flac
+    87:26.13      925425592 B                            0.5716  (14 files)
+=================== 
+=================== 
+=================== 

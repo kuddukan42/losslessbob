@@ -1,0 +1,111 @@
+===================
+===================
+===================
+=== md5 for: bd78-02-24-audiowhore.flacf
+===================
+===================
+===================
+4461d2b6fbc046062065c5d1c48d50e5 *1978-02-24 Osaka, Japan (audiowhore mix and fix).ffp
+624fff180f38ce1d80efc2114b3fd350 *1978-02-24 Osaka, Japan (complete mix and fix).txt
+b65eecbb50c11cbc697ff209a34f3fbd *BOB DYLAN 1978-02-24 Osaka, Japan (audiowhore mix and fix) flacs.md5
+e518456938f6c901fbcd4dfbdbe198f1 *Bob Dylan 1978-02-24 Osaka, Japan t-01.flac
+d0b772902c5019b944881de28fb31524 *Bob Dylan 1978-02-24 Osaka, Japan t-02.flac
+7c51c05053c53c4c29819041c30b7c02 *Bob Dylan 1978-02-24 Osaka, Japan t-03.flac
+d441437c392b1dc32689c4164dd971c7 *Bob Dylan 1978-02-24 Osaka, Japan t-04.flac
+4e5a6fc74212414a45df5cced7482a00 *Bob Dylan 1978-02-24 Osaka, Japan t-05.flac
+f77b6ea6948ed3f29750b6c6782d7d76 *Bob Dylan 1978-02-24 Osaka, Japan t-06.flac
+bcc4683921af35de7dbc8a8dd2fd6fdc *Bob Dylan 1978-02-24 Osaka, Japan t-07.flac
+ab9cd7b5bf5afd314ce0d282647b71fa *Bob Dylan 1978-02-24 Osaka, Japan t-08.flac
+ee46e09aaa131d87376e7bea703efda1 *Bob Dylan 1978-02-24 Osaka, Japan t-09.flac
+2580ac9b890f6db864c8fbe5175b71f7 *Bob Dylan 1978-02-24 Osaka, Japan t-10.flac
+8ca9f7dd4c445fc172fa7b72c00d3bd5 *Bob Dylan 1978-02-24 Osaka, Japan t-11.flac
+20e5d32ba23746b014dcda40b101c20d *Bob Dylan 1978-02-24 Osaka, Japan t-12.flac
+88d791b5eb6ea432c728583c8437db8e *Bob Dylan 1978-02-24 Osaka, Japan t-13.flac
+3be2d036244ba9f0f0eaf1453de0f138 *Bob Dylan 1978-02-24 Osaka, Japan t-14.flac
+140a30629ebb6eb8d6ee7ce7f7f8e598 *Bob Dylan 1978-02-24 Osaka, Japan t-15.flac
+155a6f28e3d47e590c0329ccd60d3237 *Bob Dylan 1978-02-24 Osaka, Japan t-16.flac
+1eb16fe6fcb4dcffe6f71739cb650f8d *Bob Dylan 1978-02-24 Osaka, Japan t-17.flac
+7dd3c22377034767cef3d52b8e007d2b *Bob Dylan 1978-02-24 Osaka, Japan t-18.flac
+73f3275fd00392cafe9a82e35930de16 *Bob Dylan 1978-02-24 Osaka, Japan t-19.flac
+a7170fbbac2b9e8891db1d0cf43e2071 *Bob Dylan 1978-02-24 Osaka, Japan t-20.flac
+b48e15a9bd6e3da807df9af33a3c74f1 *Bob Dylan 1978-02-24 Osaka, Japan t-21.flac
+584a8d7daf3c4f7d8342ec8f1e23025b *Bob Dylan 1978-02-24 Osaka, Japan t-22.flac
+5532163f8a76052715225b7ab7792793 *Bob Dylan 1978-02-24 Osaka, Japan t-23.flac
+d3cf1f351b70c18c580c3249b2ef9930 *Bob Dylan 1978-02-24 Osaka, Japan t-24.flac
+10f480ea1451f745c9cbcdce99bdc062 *Bob Dylan 1978-02-24 Osaka, Japan t-25.flac
+0a4cc12136b92d4327539a4ff6c8893b *Bob Dylan 1978-02-24 Osaka, Japan t-26.flac
+991ef5f3c7defb53e6ef59ee9be96a90 *Bob Dylan 1978-02-24 Osaka, Japan t-27.flac
+7a24514a39e7de55871f41867f3763e7 *lbdir-bd78-02-24-audiowhore.flacf.txt
+===================
+===================
+===================
+=== ffp for: bd78-02-24-audiowhore.flacf
+===================
+===================
+===================
+Bob Dylan 1978-02-24 Osaka, Japan t-01.flac:f490e5750d9f5743df63712a1507dfc3
+Bob Dylan 1978-02-24 Osaka, Japan t-02.flac:e963082205dd9873d929c0f0f743c9f0
+Bob Dylan 1978-02-24 Osaka, Japan t-03.flac:7e97384e008fa227f1b8e357eae20afa
+Bob Dylan 1978-02-24 Osaka, Japan t-04.flac:63e33fceead0ce99575318b2ee70aa70
+Bob Dylan 1978-02-24 Osaka, Japan t-05.flac:bb917da22137108141f06044511ccc3f
+Bob Dylan 1978-02-24 Osaka, Japan t-06.flac:a6c1324177a51d301c2dfb65dd873f51
+Bob Dylan 1978-02-24 Osaka, Japan t-07.flac:f1f2cb265e8b024a9e932b7602466e0b
+Bob Dylan 1978-02-24 Osaka, Japan t-08.flac:ba30c1715b16e3db8d05019b8bff5b40
+Bob Dylan 1978-02-24 Osaka, Japan t-09.flac:5151d6973a24ee17bf0cc1e3ef3c4b1f
+Bob Dylan 1978-02-24 Osaka, Japan t-10.flac:2070fcc4f0f172376cda640594bb19bf
+Bob Dylan 1978-02-24 Osaka, Japan t-11.flac:5053a8888f0cdd01334ee70280079115
+Bob Dylan 1978-02-24 Osaka, Japan t-12.flac:98702f06b53381bad446cab57c952c96
+Bob Dylan 1978-02-24 Osaka, Japan t-13.flac:5565919228a6a809a4f50c2ca5a6888e
+Bob Dylan 1978-02-24 Osaka, Japan t-14.flac:d29b9882a3f5b86b683db8e95dbc62d8
+Bob Dylan 1978-02-24 Osaka, Japan t-15.flac:ce484554e99e34b93aa98ec510448b62
+Bob Dylan 1978-02-24 Osaka, Japan t-16.flac:57839af9549dd3c87d2c3162399c5381
+Bob Dylan 1978-02-24 Osaka, Japan t-17.flac:af5de9b1ca9cd96e418d31015037e161
+Bob Dylan 1978-02-24 Osaka, Japan t-18.flac:61111dd3944d56c8f035e8168653a57d
+Bob Dylan 1978-02-24 Osaka, Japan t-19.flac:f12399b31c0b439277f07ce9abaa6613
+Bob Dylan 1978-02-24 Osaka, Japan t-20.flac:644c0e73c1b55f5326837c3da52399e4
+Bob Dylan 1978-02-24 Osaka, Japan t-21.flac:4374e8469a1b81cec35489f33fee4877
+Bob Dylan 1978-02-24 Osaka, Japan t-22.flac:ef7b68c2357002614e899df075939771
+Bob Dylan 1978-02-24 Osaka, Japan t-23.flac:1551236941a98d947ab45c58e23336a4
+Bob Dylan 1978-02-24 Osaka, Japan t-24.flac:78ed436c957bddd5b65dc718e840e3c3
+Bob Dylan 1978-02-24 Osaka, Japan t-25.flac:058c2ec4b20ac0885e21babaebd8d81d
+Bob Dylan 1978-02-24 Osaka, Japan t-26.flac:52dd53ebc2f05bc035a6c6de2e0b72aa
+Bob Dylan 1978-02-24 Osaka, Japan t-27.flac:ad6581f75abf8eb8cda15c9bebc0ba38
+===================
+===================
+===================
+=== shntool len for: bd78-02-24-audiowhore.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:19.17       45727628 B   ---   --   ---xx   flac  0.6649  Bob Dylan 1978-02-24 Osaka, Japan t-01.flac
+     3:18.39       35018972 B   ---   --   ---xx   flac  0.6563  Bob Dylan 1978-02-24 Osaka, Japan t-02.flac
+     4:54.25       51920444 B   ---   --   ---xx   flac  0.6650  Bob Dylan 1978-02-24 Osaka, Japan t-03.flac
+     5:21.17       56664428 B   ---   --   ---xx   flac  0.6515  Bob Dylan 1978-02-24 Osaka, Japan t-04.flac
+     3:26.40       36432524 B   ---   --   ---xx   flac  0.6602  Bob Dylan 1978-02-24 Osaka, Japan t-05.flac
+     4:59.51       52863596 B   ---   --   ---xx   flac  0.6537  Bob Dylan 1978-02-24 Osaka, Japan t-06.flac
+     3:34.11       37775516 B   ---   --   ---xx   flac  0.6489  Bob Dylan 1978-02-24 Osaka, Japan t-07.flac
+     5:16.16       55780076 B   ---   --   ---xx   flac  0.5887  Bob Dylan 1978-02-24 Osaka, Japan t-08.flac
+     5:17.54       56045852 B   ---   --   ---xx   flac  0.6671  Bob Dylan 1978-02-24 Osaka, Japan t-09.flac
+     5:21.25       56682292 B   -b-   --   ---xx   flac  0.6397  Bob Dylan 1978-02-24 Osaka, Japan t-10.flac
+     4:38.33       49116860 B   ---   --   ---xx   flac  0.6468  Bob Dylan 1978-02-24 Osaka, Japan t-11.flac
+     6:02.26       63917996 B   ---   --   ---xx   flac  0.6539  Bob Dylan 1978-02-24 Osaka, Japan t-12.flac
+     4:57.69       52553132 B   ---   --   ---xx   flac  0.6244  Bob Dylan 1978-02-24 Osaka, Japan t-13.flac
+     4:08.25       43806044 B   ---   --   ---xx   flac  0.6479  Bob Dylan 1978-02-24 Osaka, Japan t-14.flac
+     5:19.07       56288108 B   ---   --   ---xx   flac  0.6512  Bob Dylan 1978-02-24 Osaka, Japan t-15.flac
+     5:16.12       55770668 B   ---   --   ---xx   flac  0.6223  Bob Dylan 1978-02-24 Osaka, Japan t-16.flac
+     5:23.21       57026636 B   ---   --   ---xx   flac  0.6429  Bob Dylan 1978-02-24 Osaka, Japan t-17.flac
+     5:13.15       55248524 B   ---   --   ---xx   flac  0.6370  Bob Dylan 1978-02-24 Osaka, Japan t-18.flac
+     5:39.11       59825516 B   ---   --   ---xx   flac  0.6370  Bob Dylan 1978-02-24 Osaka, Japan t-19.flac
+     3:36.20       38149484 B   ---   --   ---xx   flac  0.6701  Bob Dylan 1978-02-24 Osaka, Japan t-20.flac
+     2:38.13       27901820 B   ---   --   ---xx   flac  0.6108  Bob Dylan 1978-02-24 Osaka, Japan t-21.flac
+     3:58.02       41987948 B   ---   --   ---xx   flac  0.6639  Bob Dylan 1978-02-24 Osaka, Japan t-22.flac
+     4:27.55       47229032 B   -b-   --   ---xx   flac  0.6531  Bob Dylan 1978-02-24 Osaka, Japan t-23.flac
+     4:11.35       44359932 B   -b-   --   ---xx   flac  0.6517  Bob Dylan 1978-02-24 Osaka, Japan t-24.flac
+     8:34.23       90723740 B   ---   --   ---xx   flac  0.6506  Bob Dylan 1978-02-24 Osaka, Japan t-25.flac
+     5:30.09       58233212 B   ---   --   ---xx   flac  0.6504  Bob Dylan 1978-02-24 Osaka, Japan t-26.flac
+     5:02.74       53446372 B   -b-   --   ---xx   flac  0.6484  Bob Dylan 1978-02-24 Osaka, Japan t-27.flac
+   130:25.70     1380496352 B                            0.6464  (27 files)
+===================
+===================
+===================

@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-04-01-lk-tony.flacf 
+=================== 
+=================== 
+=================== 
+847024bce1834ccfb9358de1bc01aabb  bd92-04-01-lk-tony-LB-4738.txt
+7357f5f097c40d063911d5a6fe963ca7  lbdir-bd92-04-01-lk-tony.flacf.md5
+26624922ae74b73628eb263287a503af  Melbourne 1April92 101.flac
+5ab4743f939e4ed42759f2fd02e12ed8  Melbourne 1April92 102.flac
+80d5296d4c21de452534a2ce3dbcc52e  Melbourne 1April92 103.flac
+5bfdbd4884b7f6ef51c693a5e451d06c  Melbourne 1April92 104.flac
+d1442ce8114e71feee6bd680c3c98abe  Melbourne 1April92 105.flac
+2597e4f10898da998d8dc891246d50d9  Melbourne 1April92 106.flac
+a5107d7478402a6aa6b0e4f4ec846bc7  Melbourne 1April92 107.flac
+bcf493f1f370c8b42348e7a396e070e4  Melbourne 1April92 108.flac
+54f54b38170d42434d7460310b4188ef  Melbourne 1April92 109.flac
+07b33c5ad5a4748999f0793624e80c0b  Melbourne 1April92 110.flac
+1038b5b22a3492099b44ed7af6edc0b4  Melbourne 1April92 201.flac
+e8ee02455fba21e142db43027882c0b1  Melbourne 1April92 202.flac
+ceb3ab4823a4140fbc71b885c0a489e6  Melbourne 1April92 203.flac
+6cd9a5503ca6761f5fd4e7cf42058cb8  Melbourne 1April92 204.flac
+f8e54a0d271a5dfd7fae03a134db28bc  Melbourne 1April92 205.flac
+54f64f160aacad654f906e4204122bcb  Melbourne 1April92 206.flac
+dc2d5465454b8a43d09baf5133392a60  Melbourne 1April92 207.flac
+752a775c93eebdf36bafbfecdb35fa7f  Melbourne 1April92 208.flac
+12675ab4e1092e5cc488c948f5980257  Melbourne 1April92.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-04-01-lk-tony.flacf 
+=================== 
+=================== 
+=================== 
+Melbourne 1April92 101.flac:c21b9eb193216e4cc06fec39928d0b32
+Melbourne 1April92 102.flac:6b763d6be136e5704a24628cb106a108
+Melbourne 1April92 103.flac:2a96e225a784673aba1837351e2b3e84
+Melbourne 1April92 104.flac:2da5f0302b2d43c393bb71cc3737c680
+Melbourne 1April92 105.flac:c5826676db4d8da0190e5b3e8eae0dca
+Melbourne 1April92 106.flac:d80b18e3556e2c3b479e195e8cb7b6a6
+Melbourne 1April92 107.flac:08a8f2b68422a31d9246c2f260a032de
+Melbourne 1April92 108.flac:b1dc2d72fd22aa0b95a7118d8717cc94
+Melbourne 1April92 109.flac:a3d512cfc4bef9f7aa96281a5bd5c7ca
+Melbourne 1April92 110.flac:61f14f87cd5979073f484c4970a87363
+Melbourne 1April92 201.flac:c5889975e6dea6a0a814490ae4dde291
+Melbourne 1April92 202.flac:1ec06a4a94b7f345e5979b04f5858aa6
+Melbourne 1April92 203.flac:7558c333fb8f04f46456b42d1b1074cb
+Melbourne 1April92 204.flac:ba3af28ecb3ba2d9b88ff022691fe423
+Melbourne 1April92 205.flac:4684a3c849bf1d3a7d31036e2b43fcab
+Melbourne 1April92 206.flac:c558b4de1eb975767c44b2cebad18733
+Melbourne 1April92 207.flac:13cdb2c664a65e54c565838a5d625566
+Melbourne 1April92 208.flac:4ef652a146be19eae0e4739d5476649f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-04-01-lk-tony.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.21       42914636 B   ---   --   ---xx   flac  0.5820  Melbourne 1April92 101.flac
+     4:28.06       47289356 B   ---   --   ---xx   flac  0.6399  Melbourne 1April92 102.flac
+     3:10.19       33560732 B   ---   --   ---xx   flac  0.6792  Melbourne 1April92 103.flac
+     5:05.04       53811452 B   ---   --   ---xx   flac  0.6760  Melbourne 1April92 104.flac
+     8:02.73       85196540 B   ---   --   ---xx   flac  0.6707  Melbourne 1April92 105.flac
+     4:11.56       44408156 B   ---   --   ---xx   flac  0.6112  Melbourne 1April92 106.flac
+     5:50.47       61850588 B   ---   --   ---xx   flac  0.6930  Melbourne 1April92 107.flac
+     3:21.15       35491724 B   ---   --   ---xx   flac  0.5999  Melbourne 1April92 108.flac
+     3:41.70       39149084 B   ---   --   ---xx   flac  0.5785  Melbourne 1April92 109.flac
+     6:17.26       66563996 B   ---   --   ---xx   flac  0.5693  Melbourne 1April92 110.flac
+     5:08.43       54432380 B   ---   --   ---xx   flac  0.6009  Melbourne 1April92 201.flac
+     3:40.05       38819804 B   ---   --   ---xx   flac  0.6858  Melbourne 1April92 202.flac
+     7:38.18       80833580 B   ---   --   ---xx   flac  0.6261  Melbourne 1April92 203.flac
+     7:18.44       77366732 B   ---   --   ---xx   flac  0.6178  Melbourne 1April92 204.flac
+     4:54.69       52023932 B   ---   --   ---xx   flac  0.7204  Melbourne 1April92 205.flac
+     5:40.74       60150092 B   ---   --   ---xx   flac  0.6976  Melbourne 1April92 206.flac
+     5:47.17       61250828 B   ---   --   ---xx   flac  0.6863  Melbourne 1April92 207.flac
+     3:53.31       41174156 B   ---   --   ---xx   flac  0.4993  Melbourne 1April92 208.flac
+    92:14.38      976287768 B                            0.6383  (18 files)
+=================== 
+=================== 
+=================== 

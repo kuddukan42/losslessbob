@@ -1,0 +1,38 @@
+﻿Bob Dylan	
+Sunrise Musical Theater
+Miami, Florida
+12 November 1989
+
+Fixed LB-2466/xref-00312
+
+Lineage: AUD > ? > LB-2466 [xref-00312] "some occasional mic or wind noise; has discontinuities just after each track starts but did not hear them except for d2t5; cut/drop before d2t6; drop/cut between cdrs, d2t4 0:00, d2t6 0:00, d2t7 0:00 a close eac match on d1t1 with same digital flaws; described with a generic info file with filenames like "disc 1\BoB Dylan- 12.11.89 Miami-d1-t01.flac"; xref-00312" > Wave Repair 4.9.3 to fix index gaps and clicks. Remaining drops (as per attached DigiFlawfinder grid) are tape start/restart, edits or mic bumps > Flac lvl 8, verify.
+ 
+01.  I Want You
+02.  My Back Pages
+03.  Positively 4th Street
+04.  Man Of Peace
+05.  You're A Big Girl Now
+06.  Masters Of War
+07.  It's All Over Now, Baby Blue
+08.  A Hard Rain's A-Gonna Fall
+09.  Boots Of Spanish Leather
+10.  Don't Think Twice, It's All Right
+11.  Everything Is Broken
+12.  Tears Of Rage (Bob Dylan & Richard Manuel)
+13.  Man In The Long Black Coat
+14.  I Shall Be Released
+15.  Like A Rolling Stone                                          
+—
+16.  Mr. Tambourine Man
+17.  All Along The Watchtower
+ 
+
+Concert # 167 of The Never-Ending Tour.  Concert # 24 of the 1989 USA Fall Tour.
+Concert # 89 with the second Never-Ending Tour Band: Bob Dylan (vocal & guitar), G. E. Smith (guitar), Tony Garnier (bass), Christopher Parker (drums).
+7-10 and 16 Bob Dylan (vocal & guitar), G.E. Smith (guitar).
+1, 5, 7, 9, 10, 13, 16  Bob Dylan harmonica.
+11 new songs (64%) compared to previous concert. No new songs for this tour.
+ww.bjoner.com
+
+
+

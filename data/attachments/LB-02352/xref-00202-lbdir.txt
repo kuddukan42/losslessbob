@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-23-RTM28-b.flacf 
+=================== 
+=================== 
+=================== 
+a8986253e5417c835d1721e88a86df3c  (RTM28ATHENS)bd_93-06-23_athens.md5
+d7ed056ec3a3f0c3cc35a8723f7b445e  bd1993-06-23RTMd1t01.flac
+4d009abf59d97cd3177a569b52302eb0  bd1993-06-23RTMd1t02.flac
+335cc3d2dcbb3ab9ce2b61deb78152e6  bd1993-06-23RTMd1t03.flac
+51de22b1030e8ca21a8f8c501b75e798  bd1993-06-23RTMd1t04.flac
+7f42dbbceedd5f7e1fdb6f7657522bfc  bd1993-06-23RTMd1t05.flac
+3b08aaec3507f6a72e30babd15ef8f11  bd1993-06-23RTMd1t06.flac
+9d7c2a582bc9d883154ba32d0a2e3dc8  bd1993-06-23RTMd1t07.flac
+01a1f926f0076d0428bd59b8f8b75129  bd1993-06-23RTMd1t08.flac
+d444165743cd32a9996693347106401a  bd1993-06-23RTMd1t09.flac
+bd7918b1684cc54b7a081dda2642514c  bd1993-06-23RTMd1t10.flac
+ce8d1fe5c457c4050fcf854925f5c49e  bd1993-06-23RTMd2t01.flac
+ac2b1e9c542f770caa462832b40af239  bd1993-06-23RTMd2t02.flac
+a68943280c027ad80c6be7e48e348d4a  bd1993-06-23RTMd2t03.flac
+6fe8a632b2c4bd2658299d736b6c4590  bd1993-06-23RTMd2t04.flac
+ca6dbd74a611d15336fdac3c1777b6ab  bd1993-06-23RTMd2t05.flac
+6b6b3fde2685872892faf60d0f37b01d  bd1993-06-23RTMd2t06.flac
+72dbc17d818806e1e74b9bc3c5bf29e6  bd1993-06-23RTMd2t07.flac
+1019736ef60b8cbd9907c93bdc73e19c  bd1993-06-23RTMd2t08.flac
+89f1fb457efa2f514ef4fef0cf81e0c8  Fingerprints.txt
+dc071f587b3c936cd6256256bfc8863b  Info.txt
+4f481023bc62b34bd5967a2dc932a8f0  Shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-23-RTM28-b.flacf 
+=================== 
+=================== 
+=================== 
+bd1993-06-23rtmd1t01.flac:2d985d7642bd7ce0886f433f5edff3ab
+bd1993-06-23rtmd1t02.flac:f684a951bcdc554f3c5d89fb5543d470
+bd1993-06-23rtmd1t03.flac:fab13f65695ab2936c2a6b15cee3e348
+bd1993-06-23rtmd1t04.flac:da3beef5255c9496d4b530cda0997af1
+bd1993-06-23rtmd1t05.flac:f1241d6a9f3b72d31e920eb253c93671
+bd1993-06-23rtmd1t06.flac:5a8c311249f227d2f7c21d297669f756
+bd1993-06-23rtmd1t07.flac:f2864112c95ebbb7e5e56075af25335c
+bd1993-06-23rtmd1t08.flac:c3b588f12d8a874658c21e05e0ca1b78
+bd1993-06-23rtmd1t09.flac:90db9858c8eb3363e695c11a4420bf13
+bd1993-06-23rtmd1t10.flac:bc8d018b2ae688d82c2ce93f9e5eaccb
+bd1993-06-23rtmd2t01.flac:e9f813075f409264350beefc0b5bf1c2
+bd1993-06-23rtmd2t02.flac:4f15a52da797360ea39f234649ff4f35
+bd1993-06-23rtmd2t03.flac:068eeeae8dc21863219438bf89319686
+bd1993-06-23rtmd2t04.flac:ad451e563b89f8c6ac9e0ae4cde56fdd
+bd1993-06-23rtmd2t05.flac:2b65f7ee64b56c89660ecf56dd2c8cd3
+bd1993-06-23rtmd2t06.flac:907e0bb7a433e7925e3150214fdc35d8
+bd1993-06-23rtmd2t07.flac:b05eb096f7d4b56b9473f4a2acd0a8ea
+bd1993-06-23rtmd2t08.flac:a7742af481f16c45a2015a4c96caeee0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-06-23-RTM28-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:18.67       77420828 B   ---   --   ---xx   flac  0.4533  bd1993-06-23RTMd1t01.flac
+     9:16.54       98205452 B   ---   --   ---xx   flac  0.5532  bd1993-06-23RTMd1t02.flac
+     6:01.38       63769820 B   ---   --   ---xx   flac  0.5507  bd1993-06-23RTMd1t03.flac
+     7:43.63       81821420 B   ---   --   ---xx   flac  0.5638  bd1993-06-23RTMd1t04.flac
+    12:03.54      127664252 B   ---   --   ---xx   flac  0.5544  bd1993-06-23RTMd1t05.flac
+     7:54.39       83705372 B   ---   --   ---xx   flac  0.4793  bd1993-06-23RTMd1t06.flac
+     5:28.10       57882764 B   ---   --   ---xx   flac  0.4589  bd1993-06-23RTMd1t07.flac
+     6:25.17       67954028 B   ---   --   ---xx   flac  0.3754  bd1993-06-23RTMd1t08.flac
+     5:12.39       55128572 B   ---   --   ---xx   flac  0.3778  bd1993-06-23RTMd1t09.flac
+     7:38.13       80821820 B   ---   --   ---xx   flac  0.4007  bd1993-06-23RTMd1t10.flac
+     7:33.45       80015084 B   ---   --   ---xx   flac  0.4034  bd1993-06-23RTMd2t01.flac
+     6:35.35       69760364 B   ---   --   ---xx   flac  0.4918  bd1993-06-23RTMd2t02.flac
+     7:28.01       79029596 B   ---   --   ---xx   flac  0.4812  bd1993-06-23RTMd2t03.flac
+     8:12.13       86819420 B   ---   --   ---xx   flac  0.4176  bd1993-06-23RTMd2t04.flac
+     6:56.66       73537676 B   ---   --   ---xx   flac  0.4999  bd1993-06-23RTMd2t05.flac
+     6:01.03       63687500 B   ---   --   ---xx   flac  0.4108  bd1993-06-23RTMd2t06.flac
+     7:14.13       76588220 B   ---   --   ---xx   flac  0.5012  bd1993-06-23RTMd2t07.flac
+     9:16.66       98233676 B   ---   --   ---xx   flac  0.4070  bd1993-06-23RTMd2t08.flac
+   134:21.36     1422045864 B                            0.4705  (18 files)
+=================== 
+=================== 
+=================== 

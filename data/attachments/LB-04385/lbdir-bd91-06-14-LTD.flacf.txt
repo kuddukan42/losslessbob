@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-14-LTD.flacf 
+=================== 
+=================== 
+=================== 
+84e7ac48def06c0f965f4f3816330121  bd1991-06-14-Innsbruck-LTD-d1\Track01.flac
+51dca455c8f6b29b6f47f5c150e22ca6  bd1991-06-14-Innsbruck-LTD-d1\Track02.flac
+df202933c95ece7a41a7e4cee1f1fed6  bd1991-06-14-Innsbruck-LTD-d1\Track03.flac
+b918b42d7494167197f3bc8026ffce69  bd1991-06-14-Innsbruck-LTD-d1\Track04.flac
+6056c93403dd5f0ed87f66a721f644f7  bd1991-06-14-Innsbruck-LTD-d1\Track05.flac
+8c99a72f4306d1ead14e68ba6a5eb247  bd1991-06-14-Innsbruck-LTD-d1\Track06.flac
+039d34ae172797b77e70aa1fdbf688ce  bd1991-06-14-Innsbruck-LTD-d1\Track07.flac
+cdaf59e31b724744f11a35fe07273482  bd1991-06-14-Innsbruck-LTD-d1\Track08.flac
+66fcf403571ec2e798c3708e2f2abe58  bd1991-06-14-Innsbruck-LTD-d1\Track09.flac
+9a5eb33ffa5d286850ebb6c670ac9f8c  bd1991-06-14-Innsbruck-LTD-d1\bd1991-06-14-Innsbruck-LTD-d1.md5
+d415e07a489387020cc478d2f74c5551  bd1991-06-14-Innsbruck-LTD-d2\Track01.flac
+7cf48a3f1c330bb45f14812f18b8d71b  bd1991-06-14-Innsbruck-LTD-d2\Track02.flac
+2e0f2583b509b0288c9d9d843be1a010  bd1991-06-14-Innsbruck-LTD-d2\Track03.flac
+613ac778e2d6dd0f0e6b7165747cc09b  bd1991-06-14-Innsbruck-LTD-d2\Track04.flac
+d44456d74bdd63b71a445f168eb6c806  bd1991-06-14-Innsbruck-LTD-d2\Track05.flac
+16b9055032ab1afa3f9b1eb322652ebf  bd1991-06-14-Innsbruck-LTD-d2\Track06.flac
+97944c56415927f62f595367b4f7635c  bd1991-06-14-Innsbruck-LTD-d2\Track07.flac
+25fcffb40db133d8b09a171b5b47dcb3  bd1991-06-14-Innsbruck-LTD-d2\Track08.flac
+5eb713e858c18c1d529f2881b5c9c1ed  bd1991-06-14-Innsbruck-LTD-d2\bd1991-06-14-Innsbruck-LTD-d2.md5
+0bd629930e30ca8184d03c43b1a9b92e  bd1991-06-14-LTD.txt
+e654c8beb692c7cca9ef48be0599cef0  bd91-06-14-LTD-LB-4385.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-14-LTD.flacf\bd1991-06-14-Innsbruck-LTD-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:feb80c24f59439331f5e2f2c5403dda7
+Track02.flac:8c816a153c181d260c5940b7074e22b0
+Track03.flac:67d5a21e615e15cc0fd17354b1c288ae
+Track04.flac:566b29c56695dd1314049afab1dd13c9
+Track05.flac:b4d13ea58b243639deedbec20b2ae491
+Track06.flac:18cee75695698f3d99493a5fb8d12b3c
+Track07.flac:d3466963ae9e9e19ed1b6ef5ae899960
+Track08.flac:631315b614226abdc442f645fed99845
+Track09.flac:8932f85eca0ee669160852d8d30adc10
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-14-LTD.flacf\bd1991-06-14-Innsbruck-LTD-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:18edfd8420a9dc4f5cf177f61a697444
+Track02.flac:a77bd15d7e7d46fc163f90299e9b256f
+Track03.flac:38a7b85a025b899ea32f60c82125e6f2
+Track04.flac:3795f39f62ffa7ab7f0e22843612ebd7
+Track05.flac:b765d6514994984734bd661d15f06255
+Track06.flac:39f77b1b5429ee4257a476b4c936f522
+Track07.flac:b7d2c7416f3f282559ae6934e6e19acd
+Track08.flac:8734e220b69a0afe726527e492dd86e8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-14-LTD.flacf\bd1991-06-14-Innsbruck-LTD-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:21.48       46153340 B   ---   --   ---xx   flac  0.5696  Track01.flac
+     5:19.74       56445692 B   ---   --   ---xx   flac  0.5817  Track02.flac
+     4:47.67       50784428 B   ---   --   ---xx   flac  0.5936  Track03.flac
+     6:21.45       67314284 B   ---   --   ---xx   flac  0.5581  Track04.flac
+     6:41.15       70771724 B   ---   --   ---xx   flac  0.5756  Track05.flac
+     5:04.50       53743244 B   ---   --   ---xx   flac  0.5617  Track06.flac
+     6:18.02       66683948 B   ---   --   ---xx   flac  0.5728  Track07.flac
+     5:08.65       54484124 B   ---   --   ---xx   flac  0.5594  Track08.flac
+     7:01.65       74417324 B   ---   --   ---xx   flac  0.5614  Track09.flac
+    51:05.56      540798108 B                            0.5699  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-14-LTD.flacf\bd1991-06-14-Innsbruck-LTD-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:43.28       71155100 B   ---   --   ---xx   flac  0.5385  Track01.flac
+     5:13.52       55335548 B   ---   --   ---xx   flac  0.5523  Track02.flac
+     4:23.65       46546124 B   ---   --   ---xx   flac  0.5372  Track03.flac
+     5:21.16       56662076 B   ---   --   ---xx   flac  0.5830  Track04.flac
+     4:10.41       44196476 B   ---   --   ---xx   flac  0.5636  Track05.flac
+     7:06.20       75193484 B   ---   --   ---xx   flac  0.5868  Track06.flac
+     5:12.12       55065068 B   ---   --   ---xx   flac  0.5559  Track07.flac
+     5:43.16       60542876 B   ---   --   ---xx   flac  0.6065  Track08.flac
+    43:54.25      464696752 B                            0.5666  (8 files)
+=================== 
+=================== 
+=================== 

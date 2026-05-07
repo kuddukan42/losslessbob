@@ -1,0 +1,19 @@
+036d58c471da9b4348e8894e40f7984f  Bob Dylan - Memphis, Tennessee - May 2, 1997.ffp
+2c8f5fc90498f41c2ab344b714798958  Bob Dylan - Memphis, TN - May 2, 1997.ffp
+1720d57acc9f5aeb79e740011173013a  D-1 extraction log.LOG
+c8b1f74ab2c29a3d68376246c93da595  D-1, T-1 FIX extraction log.LOG
+719a87ac622179711a024ebbdc0f3e98  D-2 extraction log.LOG
+472c7957881af56d95d80b4b8193d774  info file.txt
+d016f26bf3386728c970daf6525a12fb  Track 101.flac
+3dda353a02358d691dcf9d81c30b3b3d  Track 102.flac
+4aaadbe54f052e7118c9b1a238978c27  Track 103.flac
+10a787b4a8749ab917ed3527dc00a65b  Track 104.flac
+6f63ed64fda1098ee1001a82c5028ff9  Track 105.flac
+8bc1ac1d91a2c0c4a695848e3be89749  Track 106.flac
+ee10c817e4f055e424f46a13a803d443  Track 107.flac
+acc056914f37698481f92fe59f7a9f32  Track 108.flac
+66c563298e41732975e71628862ec8fa  Track 109.flac
+4f677162fda12c686a4032daf3afcbe3  Track 110.flac
+3df8643fa67267d1ec7c8b14cc25818d  Track 111.flac
+153c134eb72722efaa111861a363c7be  Track 201.flac
+6420f35111939a0702b0db7ad9a960a6  Track 202.flac

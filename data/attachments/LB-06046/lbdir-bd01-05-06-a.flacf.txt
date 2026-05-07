@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-05-06-a.flacf 
+=================== 
+=================== 
+=================== 
+baa0bd63afc1e1b8c3bec1a30f80f17b  2001-05-06%20Memphis%20B_small.jpg
+e4950eab61b324ad25600b92bb42b6ad  2001-05-06%20Memphis%20F_small.jpg
+7285b909e1a45b0fbf8764b0101a40bd  MemFlac1\(01) .flac
+e88809fc2a2a2aac17d1fa2c7fbe7896  MemFlac1\(02) .flac
+ee4b1c705ce31aa2f373870170d84fb8  MemFlac1\(03) .flac
+89af0adbf82be9431eb2d14e003f262d  MemFlac1\(04) .flac
+0ed38df506cfd68e14a12f16f75a61bc  MemFlac1\(05) .flac
+aab037b7af3b35e64b0083fdb0c97d1b  MemFlac1\(06) .flac
+94f26732edf0338e390672e899ca95ac  MemFlac1\(07) .flac
+3a60b0bf2a1696ab6c181b776a64be17  MemFlac1\(08) .flac
+60cac73ae12ceaff79a575384c3868e7  MemFlac1\(09) .flac
+feeae8ef98db9b8d799609b64eb3df7d  MemFlac1\(10) .flac
+c51df7ef4bcf7f72a205e05d0334f4d5  MemFlac1\(11) .flac
+5905fa8ef1b67159d1fd3912d517908d  MemFlac2\(01) .flac
+abc469f27c4dc52f196a9700d0e9bcaf  MemFlac2\(02) .flac
+17a63948ef8335d3a349ab24b12ad24b  MemFlac2\(03) .flac
+8587e0ac6bdcbf45e2164739ad8c5754  MemFlac2\(04) .flac
+14befc9a377662aedb3fae922f47e6f3  MemFlac2\(05) .flac
+347699d24a16f6427e0cf71119803052  MemFlac2\(06) .flac
+9edd1a1a7d056d1aa2d91c3e45f620ea  Memphis 2001.md5
+cd77bffc5d911fbecf934b709478c6af  Memphis 2001.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-05-06-a.flacf\MemFlac1 
+=================== 
+=================== 
+=================== 
+(01) .flac:7ffca7e7f7db1429ee81bf3f5dcab085
+(02) .flac:480b70fe9485bf6c498bcb1096a46bd8
+(03) .flac:b3777797f79b19f4c3c9c4514d4607d8
+(04) .flac:989a4a6c4fa6188d1ff1c80013f6b040
+(05) .flac:f3349d21160b20e1cf491f4a01737761
+(06) .flac:62874c96996b01d828cc218e6e50c54f
+(07) .flac:fcd998222093aa113bd2e706ca6c75e3
+(08) .flac:28814346f643a17ee8238dd328271199
+(09) .flac:8a5e5074503b63f348b09443d90eca51
+(10) .flac:e87f41c16c865bdfe7394bf0f8d81f97
+(11) .flac:c1088a0582c978ac7395e29d0a623db6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-05-06-a.flacf\MemFlac2 
+=================== 
+=================== 
+=================== 
+(01) .flac:7137fd6bc506ee03ac56cc1aa9dcc473
+(02) .flac:fbe83c043421ed8fed056aebdd8f27f0
+(03) .flac:2077654ded0652c759f6453693f4f436
+(04) .flac:b475c948f6b3ab072c734d752b32edf7
+(05) .flac:2d55fe7c184db90dbe997bf6f00f9ca2
+(06) .flac:1b31f8aadb1ebf157e8da17818b3ef3c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-05-06-a.flacf\MemFlac1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:30.21       37093436 B   ---   --   ---xx   flac  0.6307  (01) .flac
+     6:03.47       64143788 B   ---   --   ---xx   flac  0.6056  (02) .flac
+     8:31.50       90258044 B   ---   --   ---xx   flac  0.6227  (03) .flac
+     8:24.20       88952684 B   ---   --   ---xx   flac  0.6583  (04) .flac
+     4:05.30       43288604 B   ---   --   ---xx   flac  0.6107  (05) .flac
+     5:20.54       56575052 B   ---   --   ---xx   flac  0.6185  (06) .flac
+     6:12.33       65698460 B   ---   --   ---xx   flac  0.6069  (07) .flac
+     7:15.68       76893980 B   ---   --   ---xx   flac  0.6422  (08) .flac
+     4:11.74       44450492 B   ---   --   ---xx   flac  0.5973  (09) .flac
+     6:18.16       66716876 B   ---   --   ---xx   flac  0.6202  (10) .flac
+     6:03.03       64040300 B   ---   --   ---xx   flac  0.6248  (11) .flac
+    65:57.41      698111716 B                            0.6240  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-05-06-a.flacf\MemFlac2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:31.37       69059468 B   ---   --   ---xx   flac  0.6177  (01) .flac
+     6:57.24       73615292 B   ---   --   ---xx   flac  0.6217  (02) .flac
+     5:47.34       61290812 B   ---   --   ---xx   flac  0.6349  (03) .flac
+     5:03.42       53548028 B   ---   --   ---xx   flac  0.6306  (04) .flac
+     6:32.66       69304076 B   ---   --   ---xx   flac  0.6261  (05) .flac
+     5:55.54       62749052 B   ---   --   ---xx   flac  0.6133  (06) .flac
+    36:48.32      389566728 B                            0.6237  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,49 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-06-14-soundcheck.flacf 
+=================== 
+=================== 
+=================== 
+eaababac30f6b8839940cafc0a8d8992  1981-06-14 Columbia.md5
+432128d328a895c8f52fb27956caa9f3  bd_11 & 14 June 1981 Soundchecks.txt
+840c25b2407a8280a9e80990afefa125  Track05.flac
+436079f119f7c4a1ddfe7cc8e5edcb38  Track06.flac
+216671fb4733d4e7a384b9cf76313ff9  Track07.flac
+9bbe51c08bed72d64496362ae0704a5e  Track08.flac
+d61056750e740d3dc0b1f3dcaaf14b6b  Track09.flac
+c8a22497b58f35a764188f072a5cdb8d  Track10.flac
+746747c1508fdfc8752d7b8d3c5fcadf  Track11.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-06-14-soundcheck.flacf 
+=================== 
+=================== 
+=================== 
+Track05.flac:26f210cc841abf3f3de6a17a0fd18a80
+Track06.flac:758e4a720ac774b06808f3a8c87721a8
+Track07.flac:2fb4c7762fc61190905ae10206536062
+Track08.flac:363a4fcb7886b966efac2975ecec2f85
+Track09.flac:7d3b6ba033ec553a54c7f8e8e83feaf5
+Track10.flac:31ae75804fae426ff8bce628a9a61aae
+Track11.flac:26ab3ae46019674d11f63f9622620f4c
+=================== 
+=================== 
+=================== 
+=== shntool for: bd81-06-14-soundcheck.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:43.39       60596972 B   ---   --   ---xx   flac  0.4938  Track05.flac
+     7:30.22       79431788 B   ---   --   ---xx   flac  0.5099  Track06.flac
+     9:10.59       97158812 B   ---   --   ---xx   flac  0.4923  Track07.flac
+     7:43.37       81760268 B   ---   --   ---xx   flac  0.4575  Track08.flac
+     3:27.52       36637148 B   ---   --   ---xx   flac  0.5380  Track09.flac
+     2:08.34       22659212 B   ---   --   ---xx   flac  0.5288  Track10.flac
+     5:13.45       55319084 B   ---   --   ---xx   flac  0.5314  Track11.flac
+    40:57.63      433563284 B                            0.4999  (7 files)
+=================== 
+=================== 
+=================== 

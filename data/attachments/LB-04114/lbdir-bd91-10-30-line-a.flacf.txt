@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-10-30-line-a.flacf 
+=================== 
+=================== 
+=================== 
+49a61d5407fdad122884ffca9c49b80c  bd1991-10-30 info.txt
+09d013487f35df6870dc4535821e5245  bd1991-10-30.flac Tulsa, OK.ffp
+af0f8d8c67907006d342e5af82ff7045  bd1991-10-30.flac Tulsa, OK.md5
+be8afa9766644a3ef1a68f43efb6acc9  bd1991-10-30.flac Tulsa, OK.st5
+efef8037cc8ff6d289b74b9f4aaada4f  bd1991-10-30d1t08fa.PNG
+1019bc75e3a3378e02e3beb5151ed663  bd1991-10-30d1t08sa.PNG
+482a35126c3609061430e77674a35f44  bd1991-10-30d2t04fa.PNG
+4bb324b09651b0bb1133660e5a07c843  bd1991-10-30d2t04sa.PNG
+ebf0699eb52860c098e86b2b0384861d  bd91-10-30-line-a-LB-4114.txt
+e0d0aa59db42c86f2d81724b79b5efc0  d1\bd1991-10-30d1.LOG
+a9a2502d7094f59a22bfafcb6098d333  d1\bd1991-10-30d1t01.flac
+34fd496cc1f1298c9a234e449f11eb0e  d1\bd1991-10-30d1t02.flac
+49c70c7df05e171f119ae396f17d1777  d1\bd1991-10-30d1t03.flac
+44c3c70c1b12669591151c3c79ba5905  d1\bd1991-10-30d1t04.flac
+0585f8397438c9e2a542bdef9bcb8101  d1\bd1991-10-30d1t05.flac
+ff81828f103aff1614316884fbf96906  d1\bd1991-10-30d1t06.flac
+4979a37b6e3e7e5e36afb76de4145034  d1\bd1991-10-30d1t07.flac
+07a6062a1295d53ed7ca3f4a78d0e1cb  d1\bd1991-10-30d1t08.flac
+909bc041714263af0f177cc4955bbb3e  d1\bd1991-10-30d1t09.flac
+96c9c84aec614e1006f8dd324624e688  d1\bd1991-10-30d1t10.flac
+653ffbfddece34e7dda55f4f7a3b4af8  d1\bd1991-10-30d1t11.flac
+c9390ce7f6b5a468189c1a31668e4c1b  d1\bd1991-10-30d1t12.flac
+f6a4c782d7e90481541b7625b8aa87c0  d1\d1.shntool.txt
+63b4127590201d62b008fa81cea72386  d2\bd1991-10-30d2.LOG
+f296b3ecadd6b1aab44b74c6454fa1d5  d2\bd1991-10-30d2t01.flac
+222264a941628e3caf346b201706e14d  d2\bd1991-10-30d2t02.flac
+01289555e8337de39ecf8d8f621bf590  d2\bd1991-10-30d2t03.flac
+df428932a28ff6ac5da9e5f3542e902c  d2\bd1991-10-30d2t04.flac
+b3098d4a95a7b07594e8f28c3cb26789  d2\bd1991-10-30d2t05.flac
+56a2c90dc830d1a7af15ac67b8b95d85  d2\bd1991-10-30d2t06.flac
+3f46313689ccecf6a62003c7764b28c3  d2\d2.shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-10-30-line-a.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd1991-10-30d1t01.flac:387dc3d294a257417a780c27d7bc96b0
+bd1991-10-30d1t02.flac:10773110d549a45b60894d382f340858
+bd1991-10-30d1t03.flac:446d9feda355f65c2869f80fec70204c
+bd1991-10-30d1t04.flac:1bd1c57d13176905b125b1ca2a77fdda
+bd1991-10-30d1t05.flac:043d971fb859f54f6c47a3338621a59b
+bd1991-10-30d1t06.flac:977da87a94222189495d358eba21e817
+bd1991-10-30d1t07.flac:18b70e09cf74e3b63d329a019d8c75d2
+bd1991-10-30d1t08.flac:90a5fb35867490f19365412419841f12
+bd1991-10-30d1t09.flac:33a459bc857afba984d6357a0467acbc
+bd1991-10-30d1t10.flac:d4f6e1e0f8939e56717a660bc3634031
+bd1991-10-30d1t11.flac:f72505057573cd304c384cbe4457165e
+bd1991-10-30d1t12.flac:d23469b37f3d53d987213797abceab26
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-10-30-line-a.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd1991-10-30d2t01.flac:ee72b9e0cbb15308049899876d2b0031
+bd1991-10-30d2t02.flac:0ee1c53670ce89ffe9770ac70bbbd332
+bd1991-10-30d2t03.flac:68389881ec4770e32f5bb1579d66407d
+bd1991-10-30d2t04.flac:89cd34e5635d1d46ac3be93570c5963c
+bd1991-10-30d2t05.flac:beae26a0036b9aa4b2526243276ea10d
+bd1991-10-30d2t06.flac:9d6d7e3de847adf40c8468e7f27a9725
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-10-30-line-a.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:00.12       21196268 B   ---   --   ---xx   flac  0.6008  bd1991-10-30d1t01.flac
+     5:39.12       59827868 B   ---   --   ---xx   flac  0.6200  bd1991-10-30d1t02.flac
+     4:35.51       48629996 B   ---   --   ---xx   flac  0.6185  bd1991-10-30d1t03.flac
+     4:23.09       46414412 B   ---   --   ---xx   flac  0.5870  bd1991-10-30d1t04.flac
+     5:51.58       62052860 B   ---   --   ---xx   flac  0.6093  bd1991-10-30d1t05.flac
+     4:55.04       52047452 B   ---   --   ---xx   flac  0.6047  bd1991-10-30d1t06.flac
+     8:01.49       84963692 B   ---   --   ---xx   flac  0.5935  bd1991-10-30d1t07.flac
+     4:11.51       44396396 B   ---   --   ---xx   flac  0.6465  bd1991-10-30d1t08.flac
+     5:23.39       57068972 B   ---   --   ---xx   flac  0.5764  bd1991-10-30d1t09.flac
+     7:37.61       80758316 B   ---   --   ---xx   flac  0.5823  bd1991-10-30d1t10.flac
+     4:11.23       44330540 B   ---   --   ---xx   flac  0.5650  bd1991-10-30d1t11.flac
+     6:07.40       64832924 B   ---   --   ---xx   flac  0.5953  bd1991-10-30d1t12.flac
+    62:58.34      666519696 B                            0.5988  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-10-30-line-a.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.45       73841084 B   ---   --   ---xx   flac  0.6025  bd1991-10-30d2t01.flac
+     4:13.02       44633948 B   ---   --   ---xx   flac  0.6302  bd1991-10-30d2t02.flac
+     5:30.41       58308476 B   ---   --   ---xx   flac  0.6139  bd1991-10-30d2t03.flac
+     5:23.23       57031340 B   ---   --   ---xx   flac  0.6321  bd1991-10-30d2t04.flac
+     6:57.19       73603532 B   ---   --   ---xx   flac  0.5693  bd1991-10-30d2t05.flac
+     5:28.51       57979196 B   ---   --   ---xx   flac  0.6297  bd1991-10-30d2t06.flac
+    34:31.31      365397576 B                            0.6099  (6 files)
+=================== 
+=================== 
+=================== 

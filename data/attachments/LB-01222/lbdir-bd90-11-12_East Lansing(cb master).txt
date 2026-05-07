@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-11-12_East Lansing(cb master) 
+=================== 
+=================== 
+=================== 
+a857c90934747917ec7888e70bc3ac08  bd90-11-12.txt
+3906fc0a5ea8bbd0d02f25e439822aef  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 01.shn
+2df33371ddc4b4bb89c8c424d2b6855a  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 02.shn
+c14fbe620e20ae2be71e89fc60edcc22  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 03.shn
+32b2c65de3ec9e6da93008e18b1d4665  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 04.shn
+b9620a0b4e5fa952fb1d385489476a54  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 05.shn
+d5a85edb254c31d88e2406c6a318bc84  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 06.shn
+981acccdd716daeb1e6e91b694ae23aa  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 07.shn
+29a0a92fa0ce02fa956a5308f957e3aa  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 08.shn
+3a7dd83b0e5f97706801dd421be5b5cb  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 09.shn
+d4ba2bc243c8784fcab11c7d1540a980  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 10.shn
+7cc2c83113d37129f7e325ff31dae397  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 11.shn
+f4bd09cd91d958101efb048dd9fe78a0  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 12.shn
+ddd7ef6c48ba5c303fd9b4a44c43216e  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 13.shn
+f0cb5958c483d05d74b74581afe5a5f9  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 14.shn
+53c31545c4534178277b2146e7980826  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 15.shn
+8f5237387bc8a869d8a4eb57b8ef263b  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_Track 16.shn
+9df3f9a1b7b88137d97d0474321a0362  bd_90-11-12_cd1.shnf\bd_90-11-12_cd1_shn.md5
+a19e8df2a3828141c390f001d800a383  bd_90-11-12_cd2.shnf\bd_90-11-12_cd2_Track 1.shn
+10892cb13a8818face426db2b5ab6038  bd_90-11-12_cd2.shnf\bd_90-11-12_cd2_Track 2.shn
+4ea984d45878f9ac5b9141e3dae64a97  bd_90-11-12_cd2.shnf\bd_90-11-12_cd2_Track 3.shn
+0cb82c8bfc8ae442faf95309d9fc83d3  bd_90-11-12_cd2.shnf\bd_90-11-12_cd2_Track 4.shn
+a86b18b931143e814327241fc08cbbf3  bd_90-11-12_cd2.shnf\bd_90-11-12_cd2_Track 5.shn
+07db9fff994bccd294d1e07b4b12b72d  bd_90-11-12_cd2.shnf\bd_90-11-12_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-11-12_East Lansing(cb master)\bd_90-11-12_cd1.shnf 
+=================== 
+=================== 
+=================== 
+e5b0af244098f6ba1eee05fee4da4fcb  [shntool]  bd_90-11-12_cd1_Track_01.wav
+3aac476940e12491e364146bf7197010  [shntool]  bd_90-11-12_cd1_Track_02.wav
+2297591bffb01923881fb2ca1c447e80  [shntool]  bd_90-11-12_cd1_Track_03.wav
+24648b27d9661c81c491779519ff4bbc  [shntool]  bd_90-11-12_cd1_Track_04.wav
+03775bb0e66a4762785435a802b61920  [shntool]  bd_90-11-12_cd1_Track_05.wav
+9765350d998ce12ec20e492ed01905b0  [shntool]  bd_90-11-12_cd1_Track_06.wav
+5f79a177ee8f79f9c83eaf84c612c2cd  [shntool]  bd_90-11-12_cd1_Track_07.wav
+e07dcc9378d313ed4f214346188f9479  [shntool]  bd_90-11-12_cd1_Track_08.wav
+19b71695c61577d03622a737aca97da4  [shntool]  bd_90-11-12_cd1_Track_09.wav
+1d32eb8ef05e170a26807f1305f04da4  [shntool]  bd_90-11-12_cd1_Track_10.wav
+83c2499040c48f76c2f331214f9325e6  [shntool]  bd_90-11-12_cd1_Track_11.wav
+a5c74c4af7decb51221db07e8f2aec91  [shntool]  bd_90-11-12_cd1_Track_12.wav
+c30983b25c87fe26588891aaffd7de33  [shntool]  bd_90-11-12_cd1_Track_13.wav
+5f70fa9925f3883b43ab1519fc2abc2f  [shntool]  bd_90-11-12_cd1_Track_14.wav
+2ce29a7510810b688789e4280752485a  [shntool]  bd_90-11-12_cd1_Track_15.wav
+645d6364abc357aa26d1ccd1f48e4159  [shntool]  bd_90-11-12_cd1_Track_16.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-11-12_East Lansing(cb master)\bd_90-11-12_cd2.shnf 
+=================== 
+=================== 
+=================== 
+b109137bd2a5b220e6495deeb8db1042  [shntool]  bd_90-11-12_cd2_Track_1.wav
+4165ceafe883883544d2b6d5c589aed2  [shntool]  bd_90-11-12_cd2_Track_2.wav
+fe4db7395af43e5c610160b9d75973c4  [shntool]  bd_90-11-12_cd2_Track_3.wav
+6e1a48c89a9c328bc4e9ae462478ced1  [shntool]  bd_90-11-12_cd2_Track_4.wav
+6f362f9538405b79607ffa9e5f04eb0e  [shntool]  bd_90-11-12_cd2_Track_5.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-12_East Lansing(cb master)\bd_90-11-12_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.64       34019454 B   ---   -e   ---xx    shn  0.5915  bd_90-11-12_cd1_Track 01.shn
+     4:03.71       43032318 B   ---   -e   ---xx    shn  0.7196  bd_90-11-12_cd1_Track 02.shn
+     3:54.71       41444718 B   ---   -e   ---xx    shn  0.6098  bd_90-11-12_cd1_Track 03.shn
+     4:34.04       48343134 B   ---   -e   ---xx    shn  0.6666  bd_90-11-12_cd1_Track 04.shn
+     4:20.29       45932334 B   ---   -e   ---xx    shn  0.7112  bd_90-11-12_cd1_Track 05.shn
+     6:00.54       63631134 B   ---   -e   ---xx    shn  0.7199  bd_90-11-12_cd1_Track 06.shn
+     5:28.03       57866382 B   ---   -e   ---xx    shn  0.7027  bd_90-11-12_cd1_Track 07.shn
+     5:30.17       58252110 B   ---   -e   ---xx    shn  0.6769  bd_90-11-12_cd1_Track 08.shn
+     5:06.40       54072606 B   ---   -e   ---xx    shn  0.6516  bd_90-11-12_cd1_Track 09.shn
+     4:24.24       46626174 B   ---   -e   ---xx    shn  0.6444  bd_90-11-12_cd1_Track 10.shn
+     3:40.15       38843406 B   ---   -e   ---xx    shn  0.5478  bd_90-11-12_cd1_Track 11.shn
+     2:30.55       26589486 B   ---   -e   ---xx    shn  0.6980  bd_90-11-12_cd1_Track 12.shn
+     3:34.17       37789710 B   ---   -e   ---xx    shn  0.6912  bd_90-11-12_cd1_Track 13.shn
+     5:22.38       56890302 B   ---   -e   ---xx    shn  0.5968  bd_90-11-12_cd1_Track 14.shn
+     4:21.32       46115790 B   ---   -e   ---xx    shn  0.7134  bd_90-11-12_cd1_Track 15.shn
+     5:15.32       55641390 B   ---   -e   ---xx    shn  0.6344  bd_90-11-12_cd1_Track 16.shn
+    71:20.41      755090448 B                            0.6629  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-11-12_East Lansing(cb master)\bd_90-11-12_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:37.56       38410638 B   ---   -e   ---xx    shn  0.7227  bd_90-11-12_cd2_Track 1.shn
+     4:44.30       50168286 B   ---   -e   ---xx    shn  0.6789  bd_90-11-12_cd2_Track 2.shn
+     6:07.37       64825950 B   ---   -e   ---xx    shn  0.7211  bd_90-11-12_cd2_Track 3.shn
+     5:15.11       55591998 B   ---   -e   ---xx    shn  0.6318  bd_90-11-12_cd2_Track 4.shn
+     5:10.49       54799374 B   ---   -e   ---xx    shn  0.7283  bd_90-11-12_cd2_Track 5.shn
+    24:55.33      263796246 B                            0.6960  (5 files)
+=================== 
+=================== 
+=================== 

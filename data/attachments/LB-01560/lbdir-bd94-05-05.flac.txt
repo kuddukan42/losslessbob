@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-05-05.flac 
+=================== 
+=================== 
+=================== 
+9b850b8e203a86fe890c192ebcd40e9e  bd-1994-05-05-bristol.txt
+6293e946a6e7aa8bd2a1d64529dbf8e7  bd-1994-05-05-d1 (Track 01).flac
+d2c882092c4f10389ae9ef1c5f1cf4d9  bd-1994-05-05-d1 (Track 02).flac
+89c4b2b7eb11c3dc21d300cf5578a9cc  bd-1994-05-05-d1 (Track 03).flac
+15a494b85877e9ceb221ac38940c0b30  bd-1994-05-05-d1 (Track 04).flac
+a847c0b1db012c7f981288b915e576aa  bd-1994-05-05-d1 (Track 05).flac
+e547745f33cb685c8561fe8ac4926181  bd-1994-05-05-d1 (Track 06).flac
+d516d7a2bcddb3c9f7a5d35369d6f77c  bd-1994-05-05-d1 (Track 07).flac
+69a2913fd353de2931b89c348b7783d1  bd-1994-05-05-d1 (Track 08).flac
+a511b9bfde76a48a948798a402e049a2  bd-1994-05-05-d2 (Track 01).flac
+ddf0125c9883334670d9f3e0ea245b0c  bd-1994-05-05-d2 (Track 02).flac
+8485cc01526b17d68fbb0a0a7721fb74  bd-1994-05-05-d2 (Track 03).flac
+93819107ab16d39aea3b2f01508a97c2  bd-1994-05-05-d2 (Track 04).flac
+c705501fef7d00e7096b5fc0c5782139  bd-1994-05-05-d2 (Track 05).flac
+8681bcb608d6a38b716f6912157c70a2  bd-1994-05-05-d2 (Track 06).flac
+d19b77a6a7085142f07f165bbe367dc3  bd-1994-05-05-d2 (Track 07).flac
+6e5e0e0bf01b84cf9d6c455aac6f441d  bd94-05-05.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-05-05.flac 
+=================== 
+=================== 
+=================== 
+bd-1994-05-05-d1 (Track 01).flac:6f4e30ac8c869d98074f142663c53989
+bd-1994-05-05-d1 (Track 02).flac:aa3dcd8e78fcfe3fcfc03221e1af18a3
+bd-1994-05-05-d1 (Track 03).flac:ef6697f60f149f82cce9fd993d3123a7
+bd-1994-05-05-d1 (Track 04).flac:0812b250c608c32ba81dfc80fc89275f
+bd-1994-05-05-d1 (Track 05).flac:0d531e8e2f499a31207c77035a7b69b3
+bd-1994-05-05-d1 (Track 06).flac:e808b909d79f847b6066425d98f6c739
+bd-1994-05-05-d1 (Track 07).flac:577f7df8bf58d5727fa950af2e65fecc
+bd-1994-05-05-d1 (Track 08).flac:d03900185cc9c6e8f9d8e5575d2503b4
+bd-1994-05-05-d2 (Track 01).flac:2f033dc7f121f536f1e855c5e27b825f
+bd-1994-05-05-d2 (Track 02).flac:2150a36d25d9e8af2dd8c498615d98d9
+bd-1994-05-05-d2 (Track 03).flac:037918b8b1d5b7e8899d2b2b56fc9a4c
+bd-1994-05-05-d2 (Track 04).flac:637d29c3e953809757b91128738fda1c
+bd-1994-05-05-d2 (Track 05).flac:aa8833b0d546d8abfa349edf68d399d8
+bd-1994-05-05-d2 (Track 06).flac:91b13cc54f58b4a118ccd4b20ad5bd11
+bd-1994-05-05-d2 (Track 07).flac:e303039b0d2cce60ef20a5d57ee805e6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-05-05.flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:33.14       79942756 B   -b-   --   ---xx   flac  0.6042  bd-1994-05-05-d1 (Track 01).flac
+     6:05.51       64505996 B   ---   --   ---xx   flac  0.6126  bd-1994-05-05-d1 (Track 02).flac
+     5:44.43       60782780 B   ---   --   ---xx   flac  0.6497  bd-1994-05-05-d1 (Track 03).flac
+     9:32.28      100966700 B   ---   --   ---xx   flac  0.6013  bd-1994-05-05-d1 (Track 04).flac
+     9:16.69       98240732 B   ---   --   ---xx   flac  0.5941  bd-1994-05-05-d1 (Track 05).flac
+     6:18.42       66778028 B   ---   --   ---xx   flac  0.6113  bd-1994-05-05-d1 (Track 06).flac
+     5:48.58       61523660 B   ---   --   ---xx   flac  0.4925  bd-1994-05-05-d1 (Track 07).flac
+     5:15.29       55634252 B   ---   --   ---xx   flac  0.5408  bd-1994-05-05-d1 (Track 08).flac
+     7:47.59       82518296 B   -b-   --   ---xx   flac  0.5097  bd-1994-05-05-d2 (Track 01).flac
+     5:46.21       61083836 B   ---   --   ---xx   flac  0.6322  bd-1994-05-05-d2 (Track 02).flac
+     7:55.72       83959388 B   ---   --   ---xx   flac  0.6151  bd-1994-05-05-d2 (Track 03).flac
+     5:54.45       62551484 B   ---   --   ---xx   flac  0.6159  bd-1994-05-05-d2 (Track 04).flac
+     6:00.48       63616940 B   ---   --   ---xx   flac  0.6291  bd-1994-05-05-d2 (Track 05).flac
+     8:33.34       90573212 B   ---   --   ---xx   flac  0.5959  bd-1994-05-05-d2 (Track 06).flac
+     8:55.28       94439900 B   ---   --   ---xx   flac  0.5466  bd-1994-05-05-d2 (Track 07).flac
+   106:29.42     1127117960 B                            0.5892  (15 files)
+=================== 
+=================== 
+=================== 

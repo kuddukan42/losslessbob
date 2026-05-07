@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-19-early-c.flacf 
+=================== 
+=================== 
+=================== 
+0ab38864e6a20315c5232edf22633483  11974early.txt
+b63b000e2d7d5df67fb16ca3b8403756  Track 01.flac
+7a1abd2846f24ba3640e07a782f56d93  Track 02.flac
+a1275e3b91d3157b21083e62e36cf538  Track 03.flac
+ab04b42450da27260a4eec6fb56c4e7d  Track 04.flac
+6285481b110af1371e94a75cd5db124f  Track 05.flac
+f3399d90d3f911cedbddad9551e9a5bc  Track 06.flac
+443967df120a7f78bcb0f62a6704dc26  Track 07.flac
+7709c8be2c71cffcd9d40a606a71e638  Track 08.flac
+59ce39ef2aeaeb6cf05e15ef3cd579be  Track 09.flac
+b7e7c0416bd5eb13af37674e61195fe8  Track 10.flac
+7bce37543f84ea78bdd131b5908798ed  Track 11.flac
+be36a443f3c139039893be61d84f801b  Track 12.flac
+9ea9a6000ddfddb3daa0f830479cbb24  Track 13.flac
+f838e2040e21177205403928e6dd99c0  Track 14.flac
+cf2753534cc8231b4f1b804434db3cd6  Track 15.flac
+9175351758b80f8ff0e1f1a5de073183  Track 16.flac
+a6d3bc61f43f2ee955de234cabd01e53  Track 17.flac
+cb992aba7ea831f0b9b40be8d8089977  Track 18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-19-early-c.flacf 
+=================== 
+=================== 
+=================== 
+Track 01.flac:196512117f131361f83ff7e730bc433a
+Track 02.flac:123c72b7318c30b801891ce674358818
+Track 03.flac:794c1e930054c42eeddc7df9c1173d35
+Track 04.flac:d2b1f2899f71d7fbe536815efc972afa
+Track 05.flac:4310576b5b5535407c40e9ade6bd63b5
+Track 06.flac:370264f55b2aa52e02f68661b6f205bc
+Track 07.flac:2936801bbfd7985c762969148f5a827b
+Track 08.flac:d6a8c36b8c6cbde4642dee52daf6ebc3
+Track 09.flac:c1a349d688c07aab640f1c8bb62621dc
+Track 10.flac:cf73387cf22e6501aa16883e8765a138
+Track 11.flac:ac09c5adb248f979f5cf19ce54046ac5
+Track 12.flac:dd0e1644577b367d9e11d0c60bfc5c92
+Track 13.flac:7e80b8b38867b65ccf2948171b000121
+Track 14.flac:1b11904d828e85df84dac89217635c1e
+Track 15.flac:27ad9e703d42c597c247a0b75b263d2c
+Track 16.flac:bf27d5c91ed0408c87996a6edb32e53d
+Track 17.flac:e48cfc5d6dc4ec71fb34218336e68abe
+Track 18.flac:686c4d47c63034a059283ff782c6911e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-19-early-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.69       37559132 B   ---   --   ---xx   flac  0.6077  Track 01.flac
+     3:02.00       32104844 B   ---   --   ---xx   flac  0.6044  Track 02.flac
+     5:24.74       57327692 B   ---   --   ---xx   flac  0.6172  Track 03.flac
+     4:00.01       42338396 B   ---   --   ---xx   flac  0.6049  Track 04.flac
+     3:47.74       40216892 B   ---   --   ---xx   flac  0.6130  Track 05.flac
+     3:38.01       38457596 B   ---   --   ---xx   flac  0.6203  Track 06.flac
+     2:39.74       28221692 B   ---   --   ---xx   flac  0.6453  Track 07.flac
+     3:52.00       40924844 B   ---   --   ---xx   flac  0.6488  Track 08.flac
+     3:37.00       38278844 B   ---   --   ---xx   flac  0.6184  Track 09.flac
+     3:12.01       33871196 B   ---   --   ---xx   flac  0.6168  Track 10.flac
+     3:44.00       39513644 B   ---   --   ---xx   flac  0.6171  Track 11.flac
+     4:07.00       43570844 B   ---   --   ---xx   flac  0.5977  Track 12.flac
+     4:23.74       46567292 B   ---   --   ---xx   flac  0.5636  Track 13.flac
+     4:51.02       51337148 B   ---   --   ---xx   flac  0.5761  Track 14.flac
+     4:45.00       50274044 B   ---   --   ---xx   flac  0.5885  Track 15.flac
+     4:53.72       51854588 B   ---   --   ---xx   flac  0.6192  Track 16.flac
+     5:44.02       60686348 B   ---   --   ---xx   flac  0.6256  Track 17.flac
+     3:21.65       35609324 B   ---   --   ---xx   flac  0.6171  Track 18.flac
+    72:37.59      768714360 B                            0.6100  (18 files)
+=================== 
+=================== 
+=================== 

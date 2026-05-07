@@ -1,0 +1,73 @@
+Bob Dylan
+University Of Massachusetts
+Mullins Center
+Amherst, Massachusetts
+November 20, 2004
+
+Taper: Soomlos
+Source: AKG 391's > Denecke PS-2 > Denecke AD-20 > Sony D8
+Transfer: Sony D8 > Tascam CD-RW700 > EAC > Cool Edit 96 > CD Wave > FLAC frontend
+
+Disc 1:
+01. Intro [00:37]
+02. Maggie's Farm [05:15]
+03. It's All Over Now, Baby Blue [05:26]
+04. Lonesome Day Blues [06:15]
+05. Mr. Tambourine Man [06:41]
+06. Dignity [06:25]
+07. Tweedle Dee & Tweedle Dum [05:34]
+08. Po' Boy [06:00]
+09. It's Alright, Ma (I'm Only Bleeding) [07:36]
+10. Every Grain Of Sand [07:27]
+11. Stuck Inside Of Mobile With The Memphis Blues Again [06:54]
+12. Ballad Of Hollis Brown [05:34]
+Total time: [69:45]
+
+Disc 2:
+01. Honest With Me [06:48]
+02. Standing In The Doorway [07:37]
+03. Summer Days [12:05]
+04. Like A Rolling Stone [06:44]
+05. Band Intros & Joke [00:59]
+06. All Along The Watchtower [05:56]
+Total time: [40:09]
+
+flac fingerprint
+bd2004-11-20d1t01.flac:15546c678a761038086eb37b84ac8af2
+bd2004-11-20d1t02.flac:10123a9aea9c393db063398468613d67
+bd2004-11-20d1t03.flac:c3f576982b29c6bcabde30e0584d3616
+bd2004-11-20d1t04.flac:b66007d821e30d99a42866ef8f6b9cc2
+bd2004-11-20d1t05.flac:461a56ef61dfa6317760ef27ed2b4822
+bd2004-11-20d1t06.flac:0ce0c234fa5148318257515b1348e537
+bd2004-11-20d1t07.flac:5e5dfc4b7f61ad2f61b66a1efc97383f
+bd2004-11-20d1t08.flac:762a58e60f2061bd85128b04650ab101
+bd2004-11-20d1t09.flac:90335475af99d802e39c25ade62a246f
+bd2004-11-20d1t10.flac:9c409ba8ebdf8e0a01abac301fa041a7
+bd2004-11-20d1t11.flac:c4641ef8803f0b6fcfba98ea5ee825bf
+bd2004-11-20d1t12.flac:f9de7c860e89b60aaf0e8e7e3505c83a
+bd2004-11-20d2t01.flac:f8ff07070e427ddb6fa788e936b0ed45
+bd2004-11-20d2t02.flac:0f83a5c85064efbbe46491a6fe1a3c59
+bd2004-11-20d2t03.flac:5d9899198f37c45e3bda4f580fe3c881
+bd2004-11-20d2t04.flac:2fc13c43b946d001c518b2730d2cf58a
+bd2004-11-20d2t05.flac:149374de6cd55586147cc0356612941f
+bd2004-11-20d2t06.flac:4fff6b686144c0fd8778c11d3776a769
+
+flac md5
+3f8f8eeaca783ab670d776268217905d *bd2004-11-20d1t01.flac
+3ede9369518659f8a4260d7015cc3a56 *bd2004-11-20d1t02.flac
+f7f80bf1ce536d128d71a63bc8745802 *bd2004-11-20d1t03.flac
+dcfad68acd2da4a8e4ffef184c6d7990 *bd2004-11-20d1t04.flac
+5c771e4956a96cc7a92f586771001232 *bd2004-11-20d1t05.flac
+75d888722c2e7d7b796eb02cceb0a9ff *bd2004-11-20d1t06.flac
+949e61249288623841da8ef70ebc488f *bd2004-11-20d1t07.flac
+97212267465052957bee20254c2ced4a *bd2004-11-20d1t08.flac
+2e44e461816ad676906ecadae727f95d *bd2004-11-20d1t09.flac
+1eddd54543c27afc330fcbf52cca645d *bd2004-11-20d1t10.flac
+8a6f54f83a26f3cf5eac19bf14333d0b *bd2004-11-20d1t11.flac
+40b385648616c0d6b0cc6d664ecf7145 *bd2004-11-20d1t12.flac
+6ed129d4a665bf32a57a0faae46d823e *bd2004-11-20d2t01.flac
+9e3887360d3b81fa588d754142273ef1 *bd2004-11-20d2t02.flac
+5dac825b59f5b200bcf7a8735384b01f *bd2004-11-20d2t03.flac
+76427e85815eda2d9fe0a1d3aefddde8 *bd2004-11-20d2t04.flac
+4b6f2ee50fc3c400ad03580258f509f3 *bd2004-11-20d2t05.flac
+602864116ca84b7b3aa4c5a280a888d3 *bd2004-11-20d2t06.flac

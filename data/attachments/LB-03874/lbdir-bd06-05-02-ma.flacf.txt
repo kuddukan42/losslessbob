@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-05-02-ma.flacf 
+=================== 
+=================== 
+=================== 
+a3c0dff21d7d6bce9d6e644face9cf95  bd06-05-02-ma-LB-3874.txt
+01c0f1c8b4680c226b165729461ef112  bob dylan 5-02-06 disc 1 01.flac
+5806fca1271b607142f53c49ae6909b8  bob dylan 5-02-06 disc 1 02.flac
+6e0f3409741f0528a3881d961ef987ec  bob dylan 5-02-06 disc 1 03.flac
+7d95a7827e8653246e9aeb435dbf8200  bob dylan 5-02-06 disc 1 04.flac
+84f33144818a10f27d3408b72722b598  bob dylan 5-02-06 disc 1 05.flac
+90a36fcd1a4f47d38aab18e44465abd8  bob dylan 5-02-06 disc 1 06.flac
+11c6df56cd60c04ef187eec104bab9eb  bob dylan 5-02-06 disc 1 07.flac
+bb81273d9158565be3f43136b798bf9b  bob dylan 5-02-06 disc 1 08.flac
+784e31c7d06739ec130171c108e7c883  bob dylan 5-02-06 disc 1 09.flac
+1959673810a2552eefc1f473c3ec8967  bob dylan 5-02-06 disc 2 01.flac
+f41ccf13ed012f5e9865496aabcce259  bob dylan 5-02-06 disc 2 02.flac
+88502e3b9ab4d34adacc8051074c5d5d  bob dylan 5-02-06 disc 2 03.flac
+372787e77fd37a74e02248cd9e65d547  bob dylan 5-02-06 disc 2 04.flac
+0cf8b6c33ba0d1b38b2274ca858fa91a  bob dylan 5-02-06 disc 2 05.flac
+d228b0fc7d7dfd6caf4eefa753975023  bob dylan 5-02-06 disc 2 06.flac
+727689b8280787003d88fc5d972c80cb  bob dylan 5-02-06 disc 2 07.flac
+519643d6b312c0839845033f12fc977a  bob dylan 5-02-06 disc 2 08.flac
+27be2ff95ed722f68dc8ddcce406bc0b  bob dylan 5-02-06 disc 2 09.flac
+19979d8c5f4efe76ed640fb409de3006  bob dylan 5-02-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-05-02-ma.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 5-02-06 disc 1 01.flac:aeaedc8d7178efb60c2e29aa131c1f58
+bob dylan 5-02-06 disc 1 02.flac:8caf3f41bc3e528359c071f900eb92bf
+bob dylan 5-02-06 disc 1 03.flac:25c16848383e1dc31144cfa20f0bc090
+bob dylan 5-02-06 disc 1 04.flac:00bedefd2b65874719bfb9a611d4bec4
+bob dylan 5-02-06 disc 1 05.flac:79c3395a1c0cf7ad6e333da7ae9632a2
+bob dylan 5-02-06 disc 1 06.flac:7074671ae0da65d38b1e4aaee679e362
+bob dylan 5-02-06 disc 1 07.flac:1ab6b52c1a3e3b502742ec614f547de8
+bob dylan 5-02-06 disc 1 08.flac:eec5971061eb55ebca6d36b7a32a7cdf
+bob dylan 5-02-06 disc 1 09.flac:c6468505a05f336b4242dc8945ea0d94
+bob dylan 5-02-06 disc 2 01.flac:93cf46699e3174099a044c117099c150
+bob dylan 5-02-06 disc 2 02.flac:c381c9867b72e0db329d0b12c023f123
+bob dylan 5-02-06 disc 2 03.flac:508bed04483d3ba53e7f31cadbcf1676
+bob dylan 5-02-06 disc 2 04.flac:86814890def1c4a5a84821eac6c2abdc
+bob dylan 5-02-06 disc 2 05.flac:516cd96c1be601a10f1cf73c331c86b7
+bob dylan 5-02-06 disc 2 06.flac:45f401a5a977df7e95863a29507af5e2
+bob dylan 5-02-06 disc 2 07.flac:edb8951fb29f1a23acacf4bb1ac77210
+bob dylan 5-02-06 disc 2 08.flac:53f79ca5771870727e69724f6f5a9260
+bob dylan 5-02-06 disc 2 09.flac:bf3c20d33cf8d10a156674f270134f93
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-05-02-ma.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:11.48       12637340 B   ---   --   ---xx   flac  0.4544  bob dylan 5-02-06 disc 1 01.flac
+     5:41.13       60183020 B   ---   --   ---xx   flac  0.5746  bob dylan 5-02-06 disc 1 02.flac
+     5:48.24       61443692 B   ---   --   ---xx   flac  0.5537  bob dylan 5-02-06 disc 1 03.flac
+     5:24.53       57278300 B   ---   --   ---xx   flac  0.5204  bob dylan 5-02-06 disc 1 04.flac
+     6:55.36       73290716 B   ---   --   ---xx   flac  0.5347  bob dylan 5-02-06 disc 1 05.flac
+     6:48.05       71983004 B   ---   --   ---xx   flac  0.5350  bob dylan 5-02-06 disc 1 06.flac
+     8:26.09       89279612 B   ---   --   ---xx   flac  0.5602  bob dylan 5-02-06 disc 1 07.flac
+     7:52.40       83354924 B   ---   --   ---xx   flac  0.5149  bob dylan 5-02-06 disc 1 08.flac
+     7:17.72       77256188 B   ---   --   ---xx   flac  0.5782  bob dylan 5-02-06 disc 1 09.flac
+     7:34.56       80217356 B   ---   --   ---xx   flac  0.5249  bob dylan 5-02-06 disc 2 01.flac
+     6:52.08       72695660 B   ---   --   ---xx   flac  0.5454  bob dylan 5-02-06 disc 2 02.flac
+     6:34.41       69598076 B   ---   --   ---xx   flac  0.5038  bob dylan 5-02-06 disc 2 03.flac
+     7:15.50       76851644 B   ---   --   ---xx   flac  0.5429  bob dylan 5-02-06 disc 2 04.flac
+     5:19.47       56382188 B   ---   --   ---xx   flac  0.5277  bob dylan 5-02-06 disc 2 05.flac
+     6:40.57       70694108 B   ---   --   ---xx   flac  0.5590  bob dylan 5-02-06 disc 2 06.flac
+     3:16.43       34675580 B   ---   --   ---xx   flac  0.4689  bob dylan 5-02-06 disc 2 07.flac
+     6:50.61       72467516 B   ---   --   ---xx   flac  0.5728  bob dylan 5-02-06 disc 2 08.flac
+     6:27.60       68407944 B   -b-   --   ---xx   flac  0.5660  bob dylan 5-02-06 disc 2 09.flac
+   112:18.48     1188696868 B                            0.5416  (18 files)
+=================== 
+=================== 
+=================== 

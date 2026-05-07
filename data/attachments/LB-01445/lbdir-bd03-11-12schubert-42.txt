@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-12schubert-42 
+=================== 
+=================== 
+=================== 
+7a4f0d743dcae2725b1ba37339a84a00  101 Announcement.shn
+deac5b969199b219a007f24513857f21  102 Maggie's Farm.shn
+1b99167fdcfe75859536774c0e41e88b  103 It's All Over Now, Baby Blue.shn
+fefd6aeca12f5b94abf125ede5d40f22  104 Cry A While.shn
+27bb53a9926d6d425706a4a57865c38c  105 Visions Of Johanna.shn
+b2c31da387079a9317d83fbbeba149b7  106 It's Alright, Ma (I'm Only Bleeding).shn
+a4a41f2fc4630411120502a6d1193bdc  107 Love Minus Zero_No Limit.shn
+3d52e69e066f79a8c437eded8d299837  108 Man In The Long Black Coat.shn
+7c2e12f1d5e9f7c70a6e0ead1e11df05  109 The Wicked Messenger.shn
+8adaeae552ded0bcfef6af954af1ffcb  110 Stuck Inside Of Mobile With The Memphis Blues Again.shn
+936f99700889f2fb7172a12ac747e671  2003brussels_cd1_shn.md5
+f56b88c95d9422724266a6abd2484765  2003brussels_cd1_wavs.MD5
+4de3ae8403e7d1aa6ee6c2266f082eb1  2003brussels_cd2_shn.md5
+9a60500b37fccc116f753f80823a2835  2003brussels_cd2_wavs.md5
+97f384b553d859a76f763cd838f221bc  201 Love Sick.shn
+17fcaa0fa6857441c45e521ed41f1ffe  202 Highway 61 Revisited.shn
+e9a6663da9d349a2aa85b8a2d049e690  203 Every Grain Of Sand.shn
+50efab17d74739bd89eeabd562bf559c  204 Honest With Me.shn
+266b0ac2f9f8a86b9939a998f346ae7f  205 Girl Of The North Country.shn
+a0d6e424a19e26d3edabbcdfee4b12f1  206 Summer Days.shn
+d57977ffbe45772c431f8f6795e76cf9  207 Cat's In The Well.shn
+e1c53f7c32eb2900c5d56733f05987fd  208 Like A Rolling Stone.shn
+23eb7b23f73f43447a87cb3bacedaa63  209 All Along The Watchtower.shn
+8cdb3f149894bfb926515dab17329c50  bd03-11-12schubert.txt
+a212e7cb8359c8eaca0bfcfb31dba178  Brussels 2003 Schubert.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-12schubert-42 
+=================== 
+=================== 
+=================== 
+6bab68ddb253360122fc57d9dcec45b4  [shntool]  101_Announcement.wav
+89548b3034cc14a9a9d0917adf2083a7  [shntool]  102_Maggie_s_Farm.wav
+2a32221ea02930dde4a53063fb5e09f4  [shntool]  103_It_s_All_Over_Now,_Baby_Blue.wav
+f033eff19487ac4642247173c51dba49  [shntool]  104_Cry_A_While.wav
+e9fab9a182d4ce0e8269acce6b285584  [shntool]  105_Visions_Of_Johanna.wav
+b371b6ac4b20a04b7f9900550612324e  [shntool]  106_It_s_Alright,_Ma__I_m_Only_Bleeding_.wav
+c635fc42073b4a95e326f10d48e8b952  [shntool]  107_Love_Minus_Zero_No_Limit.wav
+8cb4d1877d1e20b6518daeb551c80e7b  [shntool]  108_Man_In_The_Long_Black_Coat.wav
+610a7ce662ab91642711871ea6cc2097  [shntool]  109_The_Wicked_Messenger.wav
+004ea24f4a225a4f4447a667c080f1d6  [shntool]  110_Stuck_Inside_Of_Mobile_With_The_Memphis_Blues_Again.wav
+aaaf2ddba655d254154b862f9ce4734d  [shntool]  201_Love_Sick.wav
+db26eec3ba40114e58529422a1cbb96b  [shntool]  202_Highway_61_Revisited.wav
+56ee7fc428d492b246745370f6e94b83  [shntool]  203_Every_Grain_Of_Sand.wav
+4bb8c74e96113b2dbab56362faf670aa  [shntool]  204_Honest_With_Me.wav
+a1eaa6b707b148cceafa4f5a9d26ce46  [shntool]  205_Girl_Of_The_North_Country.wav
+59758e89e3d70fc8f9a4d74032dba3ce  [shntool]  206_Summer_Days.wav
+5371d45b3bf6631421cb0bb5060b3647  [shntool]  207_Cat_s_In_The_Well.wav
+27957ba9ca22c07203ece2132e99a4c7  [shntool]  208_Like_A_Rolling_Stone.wav
+6ccd89dc21a14190945b7069c0425107  [shntool]  209_All_Along_The_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-12schubert-42 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.27       10823948 B   ---   --   -----    wav  1.0000  101_Announcement.wav
+     5:58.38       63240620 B   ---   --   -----    wav  1.0000  102_Maggie_s_Farm.wav
+     6:09.22       65143388 B   ---   --   -----    wav  1.0000  103_It_s_All_Over_Now,_Baby_Blue.wav
+     5:52.50       62210444 B   ---   --   -----    wav  1.0000  104_Cry_A_While.wav
+     9:35.07      101446508 B   ---   --   -----    wav  1.0000  105_Visions_Of_Johanna.wav
+     8:10.08       86454860 B   ---   --   -----    wav  1.0000  106_It_s_Alright,_Ma__I_m_Only_Bleeding_.wav
+     5:53.51       62389196 B   ---   --   -----    wav  1.0000  107_Love_Minus_Zero_No_Limit.wav
+     5:53.35       62351564 B   ---   --   -----    wav  1.0000  108_Man_In_The_Long_Black_Coat.wav
+     4:44.08       50116460 B   ---   --   -----    wav  1.0000  109_The_Wicked_Messenger.wav
+     8:10.35       86518364 B   ---   --   -----    wav  1.0000  110_Stuck_Inside_Of_Mobile_With_The_Memphis_Blues_Again.wav
+     6:19.02       66860348 B   ---   --   -----    wav  1.0000  201_Love_Sick.wav
+     6:50.72       72493388 B   ---   --   -----    wav  1.0000  202_Highway_61_Revisited.wav
+     8:10.01       86438396 B   ---   --   -----    wav  1.0000  203_Every_Grain_Of_Sand.wav
+     7:10.48       75964940 B   ---   --   -----    wav  1.0000  204_Honest_With_Me.wav
+     5:29.33       58113260 B   ---   --   -----    wav  1.0000  205_Girl_Of_The_North_Country.wav
+    11:05.05      117317804 B   ---   --   -----    wav  1.0000  206_Summer_Days.wav
+     4:32.30       48051404 B   ---   --   -----    wav  1.0000  207_Cat_s_In_The_Well.wav
+     7:36.71       80605436 B   ---   --   -----    wav  1.0000  208_Like_A_Rolling_Stone.wav
+     8:44.69       92595932 B   ---   --   -----    wav  1.0000  209_All_Along_The_Watchtower.wav
+   127:28.12     1349136260 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

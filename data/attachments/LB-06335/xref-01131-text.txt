@@ -1,0 +1,151 @@
+===================
+===================
+===================
+=== fpt.txt
+===================
+===================
+===================
+8c282b688732bc9cc6f0e2bba5a5fb24 *01 Track01.flac
+d5815493fff5550664b3a5741524b390 *02 Track02.flac
+482d098a6e55430f8c00e1264cdee939 *03 Track03.flac
+d4188d3c3bdc07b78b72fbb21d3f1336 *04 Track04.flac
+3b2c7fb8f0c8f5a32a3a43b1859a500d *05 Track05.flac
+1ecba8f84f65322dd56e9608bfd7a43b *06 Track06.flac
+cef7fd37ac155c0c30094cc56b90f2a6 *07 Track07.flac
+bc8e584fb3957241f0c9aeee3a19e748 *08 Track08.flac
+db706c32eb0543dc6bb75f75621c0062 *09 Track09.flac
+cab464f0a345e89d250ddad50e287962 *10 Track10.flac
+867147ddc0fc138b92412f80ba69bae0 *11 Track11.flac
+1ea7fa8c5ad7477ef46a09a716f92eaa *12 Track12.flac
+
+
+b66e3eba056bb80f248584b5f686fabf *01 Track01.flac
+6a300ee174d6120b0610807beeba61b1 *02 Track02.flac
+6b4ade0da0f000ff3802e798db0bfd25 *03 Track03.flac
+65f265f6b77703b0c82cd7eb62a31250 *04 Track04.flac
+700e906ba800e31d634efc014fc66501 *05 Track05.flac
+b8316e76fb65481476ad928531aa5e15 *06 Track06.flac
+df0d88e9100bac128d8ed828e12812b0 *07 Track07.flac
+e146bb880fd38f4fa4b8de2465be4761 *08 Track08.flac
+06c2c9c2a1f6629711faef8ab30dcdf2 *09 Track09.flac
+30242a090667939702435aecef370675 *10 Track10.flac
+
+
+d4d8261c8dc4c4877ecba2a507aa9311 *01 Track01.flac
+bc4b8ddfa8d88171c86ece6a587746a2 *02 Track02.flac
+1f466461d44ab878d71c85c0565ada4e *03 Track03.flac
+ec081a202b0d51e4e9394e08f7f6d913 *04 Track04.flac
+a9fa306fe9db7b8dbdfa96cf8966b03e *05 Track05.flac
+1f06092eaa87141405957e651c278ce8 *06 Track06.flac
+f63e0069174c1b761b38cfbc46f1568b *07 Track07.flac
+df20837cffd692d53fabe7876ef07554 *08 Track08.flac
+318af10546eb6e0f4b51808341fc156d *09 Track09.flac
+
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+ 
+Shakopee, Minnesota
+July 2, 1999
+Canterbury Park
+
+--------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------
+
+Bridge Over Troubled Water 
+Can't Run But 
+The Boy In The Bubble 
+The Coast 
+Trailway Bus 
+Mrs. Robinson 
+Me And Julio Down By The Schoolyard 
+Further To Fly 
+Graceland 
+The Cool, Cool River 
+Slip Sliding Away 
+Diamonds On The Soles Of Her Shoes 
+You Can Call Me Al 
+(encores) 
+
+Late In The Evening 
+Still Crazy After All These years 
+The Sound Of Silence (duet with Bob Dylan - Bob on harp) 
+I Walk The Line/Blue Moon Of Kentucky (medley with Bob Dylan) 
+Knockin' On Heaven's Door (duet with Bob Dylan) 
+Hallelujah, I'm Ready To Go (acoustic) 
+Mr. Tambourine Man (acoustic) (with harp) 
+Desolation Row (acoustic) 
+Don't Think Twice, It's All Right (acoustic) 
+Tangled Up In Blue (acoustic) (with harp) 
+All Along The Watchtower 
+Make You Feel My Love 
+Stuck Inside Of Mobile With The Memphis Blues Again 
+Not Dark Yet 
+Highway 61 Revisited 
+(encore) 
+
+Like A Rolling Stone 
+It Ain't Me, Babe (acoustic) 
+===================
+===================
+===================
+=== disc 1.md5
+===================
+===================
+===================
+8c282b688732bc9cc6f0e2bba5a5fb24 *01 Track01.flac
+d5815493fff5550664b3a5741524b390 *02 Track02.flac
+482d098a6e55430f8c00e1264cdee939 *03 Track03.flac
+d4188d3c3bdc07b78b72fbb21d3f1336 *04 Track04.flac
+3b2c7fb8f0c8f5a32a3a43b1859a500d *05 Track05.flac
+1ecba8f84f65322dd56e9608bfd7a43b *06 Track06.flac
+cef7fd37ac155c0c30094cc56b90f2a6 *07 Track07.flac
+bc8e584fb3957241f0c9aeee3a19e748 *08 Track08.flac
+db706c32eb0543dc6bb75f75621c0062 *09 Track09.flac
+cab464f0a345e89d250ddad50e287962 *10 Track10.flac
+867147ddc0fc138b92412f80ba69bae0 *11 Track11.flac
+1ea7fa8c5ad7477ef46a09a716f92eaa *12 Track12.flac
+===================
+===================
+===================
+=== disc 2.md5
+===================
+===================
+===================
+b66e3eba056bb80f248584b5f686fabf *01 Track01.flac
+6a300ee174d6120b0610807beeba61b1 *02 Track02.flac
+6b4ade0da0f000ff3802e798db0bfd25 *03 Track03.flac
+65f265f6b77703b0c82cd7eb62a31250 *04 Track04.flac
+700e906ba800e31d634efc014fc66501 *05 Track05.flac
+b8316e76fb65481476ad928531aa5e15 *06 Track06.flac
+df0d88e9100bac128d8ed828e12812b0 *07 Track07.flac
+e146bb880fd38f4fa4b8de2465be4761 *08 Track08.flac
+06c2c9c2a1f6629711faef8ab30dcdf2 *09 Track09.flac
+30242a090667939702435aecef370675 *10 Track10.flac
+===================
+===================
+===================
+=== disc 3.md5
+===================
+===================
+===================
+d4d8261c8dc4c4877ecba2a507aa9311 *01 Track01.flac
+bc4b8ddfa8d88171c86ece6a587746a2 *02 Track02.flac
+1f466461d44ab878d71c85c0565ada4e *03 Track03.flac
+ec081a202b0d51e4e9394e08f7f6d913 *04 Track04.flac
+a9fa306fe9db7b8dbdfa96cf8966b03e *05 Track05.flac
+1f06092eaa87141405957e651c278ce8 *06 Track06.flac
+f63e0069174c1b761b38cfbc46f1568b *07 Track07.flac
+df20837cffd692d53fabe7876ef07554 *08 Track08.flac
+318af10546eb6e0f4b51808341fc156d *09 Track09.flac
+===================
+===================
+===================

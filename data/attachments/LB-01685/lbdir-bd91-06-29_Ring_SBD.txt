@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-29_Ring_SBD 
+=================== 
+=================== 
+=================== 
+a6a5a52e600aba124a9fccb4577f4f49  bd91-06-29.txt
+5aef0e9d94d7001ab133f9656ad2d60f  disk 1\Track01.shn
+18907f1f0ac5c752f2e6d8de7730d60c  disk 1\Track02.shn
+b63b6cd71c17c04df8bdd7a1d53039ef  disk 1\Track03.shn
+442e0c86b1e67823cc250a54a705c591  disk 1\Track04.shn
+ed01f2720c9274d88e6b11eba8270f10  disk 1\Track05.shn
+16c45dcf816616c3957945646c653508  disk 1\Track06.shn
+4f85af952e147022aa56a5273a94d93d  disk 1\Track07.shn
+ce49aa6188c335fe72bce31f546f7547  disk 1\Track08.shn
+3c49a4ae13b971732a48f7bf3e0b4c9a  disk 1\Track09.shn
+0391739bea8312816eb409213eb6b6aa  disk 1\Track10.shn
+073175a793bec7dd31850bb380269fef  disk 1\Track11.shn
+dca58e4d9a6a9b70f726876a95d4f439  disk 1\Track12.shn
+fff5be2959ff3fe5c60fd1c43a261f27  disk 1\Track13.shn
+ef32d1b13117fdb32287533675901e14  disk 1\Track14.shn
+8a8e4f5ff6c2ea735a1c6e3372946862  disk 1\Track15.shn
+e3a3e959930c63e41fbbd9b35459a199  disk 1\noname.md5
+0e6309fa41e9a150881c4b5c79a0cf29  disk 2\Track01.shn
+8d3a0cd295438d65d99f63cac8fb2a88  disk 2\Track02.shn
+a065a367609146ecc1dd52b47ac922a0  disk 2\Track03.shn
+eaaf12b960cc5f346109b59676657a00  disk 2\Track04.shn
+49a25f2f207e1dc1c1ef1cd502c797f8  disk 2\Track05.shn
+5f7a7e854cf8145d2410655b46c73be2  disk 2\Track06.shn
+7bb72af9fc679e60fc939b4fd14f71c1  disk 2\Track07.shn
+ac1fbca56196db369ce951def87816d2  disk 2\Track08.shn
+12f929e2242acb0cee00f86d935ca9c5  disk 2\noname.md5
+cc05291625ca82a14086bd15045be285  text.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-06-29_Ring_SBD\disk 2 
+=================== 
+=================== 
+=================== 
+4b1c362e6ccde8a80af7749d67a37889  [shntool]  Track01.wav
+b488cbc1717cfa3661a5ce1ae08f5f31  [shntool]  Track02.wav
+7aead0fcb3c3a13a8a14b2761e4e01ba  [shntool]  Track03.wav
+0c1c5b1b0cf64beabac6fe6fbf52eee6  [shntool]  Track04.wav
+9fbf338c0eb1326616e41e314f0bdd9e  [shntool]  Track05.wav
+a40283e560ad7b9781e6253976e33a39  [shntool]  Track06.wav
+bf8cd426529d9067716b033e1225a4d3  [shntool]  Track07.wav
+e1d3fe6e6822727ab1b98627b9e84ead  [shntool]  Track08.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-06-29_Ring_SBD\disk 1 
+=================== 
+=================== 
+=================== 
+c1d3938b2c7b048965030e18c75d3e58  [shntool]  Track01.wav
+a3fdf471ddaae0d1f171383738ad7ef2  [shntool]  Track02.wav
+edde52a2904e0b12c3a182d19a6325c4  [shntool]  Track03.wav
+85ace8a3138bb0403ae7a8c13291704c  [shntool]  Track04.wav
+2f3106ef1f0d41e984d6e7ffc438c030  [shntool]  Track05.wav
+ee0c996aa3bcd77c427992a553550d02  [shntool]  Track06.wav
+4380ef0dbef12532025bbc80bf962dde  [shntool]  Track07.wav
+847120d985a618d53a3812fe111fd9cf  [shntool]  Track08.wav
+30dbd1fe1e9342895f3366878084e775  [shntool]  Track09.wav
+118f2c1b6440aa9057e6d34a1c60e6a1  [shntool]  Track10.wav
+a85198f21306ee43d6a37863e45f43dd  [shntool]  Track11.wav
+ffcf11a6734fba84af3c26033aba5cc4  [shntool]  Track12.wav
+7725d1498d7653f4b2f4505b3e59827b  [shntool]  Track13.wav
+434901b2cf3069a44ee689fd9b07a414  [shntool]  Track14.wav
+bed3639b4f5e5edd88828f4b17d5370f  [shntool]  Track15.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-29_Ring_SBD\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.47       43328588 B   ---   --   -----    wav  1.0000  Track01.wav
+     6:26.58       68226860 B   ---   --   -----    wav  1.0000  Track02.wav
+    11:44.17      124225628 B   ---   --   -----    wav  1.0000  Track03.wav
+     4:50.35       51238364 B   ---   --   -----    wav  1.0000  Track04.wav
+    21:28.00      227203244 B   ---   --   -----    wav  1.0000  Track05.wav
+    10:03.28      106435100 B   ---   --   -----    wav  1.0000  Track06.wav
+     8:01.45       84954284 B   ---   --   -----    wav  1.0000  Track07.wav
+     5:22.37       56887868 B   ---   --   -----    wav  1.0000  Track08.wav
+    72:02.42      762499936 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-29_Ring_SBD\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.10       49944764 B   ---   --   -----    wav  1.0000  Track01.wav
+     4:57.27       52454348 B   ---   --   -----    wav  1.0000  Track02.wav
+     4:35.70       48674684 B   ---   --   -----    wav  1.0000  Track03.wav
+     6:56.10       73405964 B   ---   --   -----    wav  1.0000  Track04.wav
+     3:32.03       37403900 B   ---   --   -----    wav  1.0000  Track05.wav
+     4:38.22       49090988 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:33.65       58894124 B   ---   --   -----    wav  1.0000  Track07.wav
+     4:03.68       43025180 B   ---   --   -----    wav  1.0000  Track08.wav
+     4:29.35       47533964 B   ---   --   -----    wav  1.0000  Track09.wav
+     5:50.35       61822364 B   ---   --   -----    wav  1.0000  Track10.wav
+     6:35.42       69776828 B   ---   --   -----    wav  1.0000  Track11.wav
+     5:48.13       61417820 B   ---   --   -----    wav  1.0000  Track12.wav
+     3:42.55       39290204 B   ---   --   -----    wav  1.0000  Track13.wav
+     5:22.07       56817308 B   ---   --   -----    wav  1.0000  Track14.wav
+     4:36.50       48804044 B   ---   --   -----    wav  1.0000  Track15.wav
+    75:25.62      798356484 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,10 @@
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:39.11       70409516 B   ---   --   ---xx   flac  0.5872  10 Seeing the real you at last.flac
+     9:09.68       97003580 B   ---   --   ---xx   flac  0.5218  11 Simple twist of fate.flac
+     9:58.09      105508412 B   ---   --   ---xx   flac  0.5663  12 It takes a lot to laugh, it takes a train to cry.flac
+     7:51.21       83133836 B   ---   --   ---xx   flac  0.5652  13 Like a rolling stone.flac
+     9:25.44       99769532 B   ---   --   ---xx   flac  0.5256  14 My back pages.flac
+    43:04.03      455824876 B                            0.5510  (5 files)

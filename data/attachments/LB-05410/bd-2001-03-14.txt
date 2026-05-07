@@ -1,0 +1,62 @@
+BOB DYLAN 
+
+March 14, 2001
+Nippon Budokan, Tokyo, Japan
+
+Source:
+"Hide" recording
+
+Equipment: 
+COS-11PTs > CSP161(Pre Amp) > TCD-D100 (16bit/44.1kHz) 
+
+Lineage: 
+DAT master > DTC-ZE700 > RPD-500 > CD-Rs 
+> PC(WAV) > TLH > FLAC (level 6) 
+
+
+Disc1: 
+01.Duncan And Brady (acoustic)
+02.Mr. Tambourine Man (acoustic)(Bob on harp)
+03.Desolation Row (acoustic)
+04.Stuck Inside Of Mobile With The Memphis Blues Again
+05.Tryin' To Get To Heaven
+06.'Til I Fell In Love With You
+07.Mama, You Been On My Mind (acoustic)
+08.It's All Over Now, Baby Blue (acoustic)
+09.Tangled Up In Blue (acoustic)
+
+Disc2: 
+01.Not Dark Yet
+02.Cold Irons Bound
+03.Rainy Day Women #12 & 35
+(encore)
+04.Love Sick
+05.Like A Rolling Stone
+06.If Dogs Run Free (acoustic)
+07.All Along The Watchtower
+08.Knockin' On Heaven's Door (acoustic)
+09.Highway 61 Revisited
+10.Blowin' In The Wind (acoustic)
+
+
+Fingerprints:
+bd-2001-3-14-d1001.flac:955fdf58b3e1cb5fdc7c62d60a304843
+bd-2001-3-14-d1002.flac:61217c407de75526e9450f8e142c0f4e
+bd-2001-3-14-d1003.flac:4c141c383468e2bad3b030e00eac186f
+bd-2001-3-14-d1004.flac:80316b46d82047a9a6eaf882dae95d2a
+bd-2001-3-14-d1005.flac:64e8ac09f835ee53342a477eb13303c1
+bd-2001-3-14-d1006.flac:742cfcb664a8efbdcd63a77c9d979927
+bd-2001-3-14-d1007.flac:ccf14dc234431de52508a45ef2bc127c
+bd-2001-3-14-d1008.flac:4407f1b97062fd22cd294a0a4a0b6dd0
+bd-2001-3-14-d1009.flac:ac5e8b09248e5a05e18acb564877d7af
+bd-2001-3-14-d2001.flac:d373f0f4599e611004516381e4b48224
+bd-2001-3-14-d2002.flac:63f89727e455b0ff247ed874699a1e67
+bd-2001-3-14-d2003.flac:e9969e389bc70d7aab5e34a47a9722b7
+bd-2001-3-14-d2004.flac:14e1bfdefacaa5f04679974a6b6167ad
+bd-2001-3-14-d2005.flac:6d4f12ba6759aabb8afe7839d33d7e52
+bd-2001-3-14-d2006.flac:65fab83adf04f877756692b4553dc8c0
+bd-2001-3-14-d2007.flac:84113957726722315e99e2f018c099b9
+bd-2001-3-14-d2008.flac:5c38b28f9ba88ae3329effebb7714934
+bd-2001-3-14-d2009.flac:3b492fb696f2aae85b046a759d24883d
+bd-2001-3-14-d2010.flac:d7f4bbaf227346532e3d1006d1e884a7
+

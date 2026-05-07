@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== bd-1996-04-21-Portland-HG.md5
+===================
+===================
+===================
+86002d76da68e95356eb5db02d1d70fd *Disc1\bd-1996-04-21-HG-d1t01.flac
+2c7ef579039d1625b439105181ff2a98 *Disc1\bd-1996-04-21-HG-d1t02.flac
+16a7adf3c869bfd67c2751369fe09e36 *Disc1\bd-1996-04-21-HG-d1t03.flac
+278925ad8f841afa8de310ceb4d333e8 *Disc1\bd-1996-04-21-HG-d1t04.flac
+4842ff8868c6baca7d452b9e2e7d3bf2 *Disc1\bd-1996-04-21-HG-d1t05.flac
+e305923943694533ce2dfbfcd9897049 *Disc1\bd-1996-04-21-HG-d1t06.flac
+e8285361b57d017769efccab16711e44 *Disc1\bd-1996-04-21-HG-d1t07.flac
+0251bb0982211e10948108becfbbc6f0 *Disc1\bd-1996-04-21-HG-d1t08.flac
+ba94277ec0b910145d851a653cbd1945 *Disc1\bd-1996-04-21-HG-d1t09.flac
+34626c0ad4e27896a810adf235aeb6c8 *Disc2\bd-1996-04-21-HG-d2t01.flac
+e737ee49ad6bd05184fdfedea76104f1 *Disc2\bd-1996-04-21-HG-d2t02.flac
+e745be77b56664da3cc71622f4c93699 *Disc2\bd-1996-04-21-HG-d2t03.flac
+1d753983157b79407c227a2a0f71ec72 *Disc2\bd-1996-04-21-HG-d2t04.flac
+c52fdf16f8d42998c08926d45bf474e3 *Disc2\bd-1996-04-21-HG-d2t05.flac
+0d5c512761533bb0d437425705f60cb5 *Disc2\bd-1996-04-21-HG-d2t06.flac
+03a86ab77c5eaac247d09c54388f658b *Port04-21-96(HG)-B.JPG
+2acdc48bfc53085df00055662e2b39d2 *Port04-21-96(HG)-F.JPG
+===================
+===================
+===================
+=== bd-1996-04-21-Portland-HG.txt
+===================
+===================
+===================
+Bob Dylan
+State Theater
+Portlnd, Maine
+April 21, 1996
+
+Holy Grail Series: They Lived Under The Red Sky
+
+Sound Quality: Excellent
+
+
+This set is based on the same recording as LB-0883 but is in flac format as opposed to the shn version.
+
+
+Disk 1
+
+01 Leopard-Skin Pill-Box Hat
+02 If Not For You
+03 All Along The Watchtower
+04 Under The Red Sky
+05 This Wheel's On Fire
+06 Silvio
+07 Mama, You Been On My Mind (Acoustic W Band)
+08 Masters Of War (Acoustic W Band)
+09 Friend Of The Devil (Acoustic W Band)
+
+Disc 2
+
+01 Maggie's Farm
+02 When I Paint My Masterpiece
+03 Seven Days
+04 Alabama Getaway
+05 My Back Pages (Acoustic W Band)
+06 Rainy Day Women # 12 & 35
+
+
+============================
+============================
+============================
+=== md5 for bd-1996-04-21-Portland-HG
+============================
+============================
+============================
+
+
+86002d76da68e95356eb5db02d1d70fd *Disc1/bd-1996-04-21-HG-d1t01.flac
+2c7ef579039d1625b439105181ff2a98 *Disc1/bd-1996-04-21-HG-d1t02.flac
+16a7adf3c869bfd67c2751369fe09e36 *Disc1/bd-1996-04-21-HG-d1t03.flac
+278925ad8f841afa8de310ceb4d333e8 *Disc1/bd-1996-04-21-HG-d1t04.flac
+4842ff8868c6baca7d452b9e2e7d3bf2 *Disc1/bd-1996-04-21-HG-d1t05.flac
+e305923943694533ce2dfbfcd9897049 *Disc1/bd-1996-04-21-HG-d1t06.flac
+e8285361b57d017769efccab16711e44 *Disc1/bd-1996-04-21-HG-d1t07.flac
+0251bb0982211e10948108becfbbc6f0 *Disc1/bd-1996-04-21-HG-d1t08.flac
+ba94277ec0b910145d851a653cbd1945 *Disc1/bd-1996-04-21-HG-d1t09.flac
+34626c0ad4e27896a810adf235aeb6c8 *Disc2/bd-1996-04-21-HG-d2t01.flac
+e737ee49ad6bd05184fdfedea76104f1 *Disc2/bd-1996-04-21-HG-d2t02.flac
+e745be77b56664da3cc71622f4c93699 *Disc2/bd-1996-04-21-HG-d2t03.flac
+1d753983157b79407c227a2a0f71ec72 *Disc2/bd-1996-04-21-HG-d2t04.flac
+c52fdf16f8d42998c08926d45bf474e3 *Disc2/bd-1996-04-21-HG-d2t05.flac
+0d5c512761533bb0d437425705f60cb5 *Disc2/bd-1996-04-21-HG-d2t06.flac
+03a86ab77c5eaac247d09c54388f658b *Port04-21-96(HG)-B.JPG
+2acdc48bfc53085df00055662e2b39d2 *Port04-21-96(HG)-F.JPG
+
+
+
+===================
+===================
+===================

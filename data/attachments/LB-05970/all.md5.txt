@@ -1,0 +1,8 @@
+9f4e7ddcce76adf6e5ffa18e0e0b47fa *studs01.flac
+4d78472fa1a867237978064eff8f4987 *studs02.flac
+e368b952b976f4b0294fc3bbc5884508 *studs03.flac
+685383cc0312d4bde5385c3ad1f5e89e *studs04.flac
+aa531b83ac06e043244388179747a8b0 *studs05.flac
+1f2b9b0077c3758ff2a956111ed88203 *studs06.flac
+3d440efbb22f199e4a6ecaecaeeca81b *studs07.flac
+19be3f80c606f7dc2ae6d0fb813a3f6d *studs08.flac

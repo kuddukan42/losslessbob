@@ -1,0 +1,67 @@
+===================
+===================
+===================
+=== Bob Dylan - 1995-03-14 Furth.ffp
+===================
+===================
+===================
+01 - Bob Dylan - 03,14,95 - Crash on the Levee.flac:d589f19744b084509ebbcda4a22a6ffd
+02 - Bob Dylan - 03,14,95 - If You See Her, Say Hello.flac:8017e1669c58c283af45d8e54cfca415
+03 - Bob Dylan - 03,14,95 - All Along the Watchtower.flac:2d4d336aa164d3202322b6d515d368e1
+04 - Bob Dylan - 03,14,95 - Just Like a Woman.flac:31a8fa04e76f8b83db3ba8f59ca5009b
+05 - Bob Dylan - 03,14,95 - Unbelievable.flac:966b857192c521d4cd2ea850689efd3d
+06 - Bob Dylan - 03,14,95 - I'll Be Your Baby tonight.flac:88b6280bc2c2cb11693ce45a217fa590
+07 - Bob Dylan - 03,14,95 - Mr. Tambourine Man @.flac:83b8efd575aea82b8471186616d95021
+08 - Bob Dylan - 03,14,95 - Masters of War @.flac:3a43f7c93fcfdcef95c4d461951ee93e
+09 - Bob Dylan - 03,14,95 - Boots of Spanish Leather @.flac:235fc3c9c82eb20406c74596644992b3
+10 - Bob Dylan - 03,14,95 - Stuck Inside of Mobile With the Memphis Blues Again.flac:2e290c8634fe8827415fde87d439db72
+11 - Bob Dylan - 03,14,95 - Man in the Long Black Coat.flac:f7274c577061b5aa381dfeac6c361f84
+12 - Bob Dylan - 03,14,95 - Maggie's Farm.flac:bd3acab662a0b1e37c1e8342ec9b700b
+13 - Bob Dylan - 03,14,95 - Like a Rolling Stone.flac:2cee00d4ceedf8bee3393534d913714e
+===================
+===================
+===================
+=== Bob Dylan - 1995-03-14 Furth.md5
+===================
+===================
+===================
+537cfdd954bf7de39610695d45dd8f3e *01 - Bob Dylan - 03,14,95 - Crash on the Levee.flac
+092623103a551946dfa371631ea23e3c *02 - Bob Dylan - 03,14,95 - If You See Her, Say Hello.flac
+48e50bf488cff945445cf7dfb1088570 *03 - Bob Dylan - 03,14,95 - All Along the Watchtower.flac
+92228dad416786c25b3de293f7c6e980 *04 - Bob Dylan - 03,14,95 - Just Like a Woman.flac
+458f8588e5cf0ec034bf850eb8168dc2 *05 - Bob Dylan - 03,14,95 - Unbelievable.flac
+204377eee660cedb13d409f78cad2de4 *06 - Bob Dylan - 03,14,95 - I'll Be Your Baby tonight.flac
+f24cf0c305944e7739bd12313d41961c *07 - Bob Dylan - 03,14,95 - Mr. Tambourine Man @.flac
+ad16e76b7ed9fe9668d9630540f9ba8e *08 - Bob Dylan - 03,14,95 - Masters of War @.flac
+4719c69d5132d33cafebe7b2d8925405 *09 - Bob Dylan - 03,14,95 - Boots of Spanish Leather @.flac
+b9e7ca9c1d995f242f48181b901aa118 *10 - Bob Dylan - 03,14,95 - Stuck Inside of Mobile With the Memphis Blues Again.flac
+4bb3508c8752fcb4b03ef71829274591 *11 - Bob Dylan - 03,14,95 - Man in the Long Black Coat.flac
+4a5929be3520ea47f898d7195dc1c2af *12 - Bob Dylan - 03,14,95 - Maggie's Farm.flac
+8ddda6b1c57370f930989eb8225c4027 *13 - Bob Dylan - 03,14,95 - Like a Rolling Stone.flac
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Downloaded this from the binary newsgroup alt.binaries.shn.dylan a few years ago.  It came without any info at all.  No LB number although probably the same recording as LB-2972, LB-3483 (Olav RM) & LB-8917 (LTB).  Different track lenghts and increased volumes levels to both of these.
+
+Set List
+
+01 Crash On The Levee
+02 If You See Her, Say Hello
+03 All Along The Watchtower
+04 Just Like A Woman
+05 Unbelievable
+06 I'll Be Your Baby Tonight
+07 Mr Tambourine Man
+08 Masters Of War
+09 Boots Of Spanish Leather
+10 Stuck Inside Of Mobile With The Memphis Blues Again
+11 Man In The Long Black Coat
+12 Maggie's Farm
+13 Life A Rolling Stone
+===================
+===================
+===================

@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-30-Washington-1994.flacf 
+=================== 
+=================== 
+=================== 
+0af5ac1c5ad835f44360447f7af11853  bd94-10-30-Washington-1994.txt
+8ce7e0445791de8d033be48f0a86ecee  bddc1994 disk 1\532.jpg
+f734d1e9375900e775eb9e9ba39cb1bb  bddc1994 disk 1\Track 1.flac
+5d886841f792e27d6dbe72721ec8baac  bddc1994 disk 1\Track 10.flac
+1ef5edb48275feab78102f2500cdcbdb  bddc1994 disk 1\Track 2.flac
+e1fe1bdd23b0e52820fffdfdb61087db  bddc1994 disk 1\Track 3.flac
+a052aa8e019910ae69382efad185262d  bddc1994 disk 1\Track 4.flac
+ffdc576c48f73e2c70b4d4bbeedf19c3  bddc1994 disk 1\Track 5.flac
+6ac0dd90e32e78d700d34efe87361b66  bddc1994 disk 1\Track 6.flac
+31ebf7b7c729a4408dd8221d92ad2579  bddc1994 disk 1\Track 7.flac
+d475c271a7e37d3e5b5e13539b28a403  bddc1994 disk 1\Track 8.flac
+f6879247ca616b45676c4e370959e8b9  bddc1994 disk 1\Track 9.flac
+8ce7e0445791de8d033be48f0a86ecee  bddc1994 disk 2\532.jpg
+e0df499ed50cd8fbb30a71f048419aac  bddc1994 disk 2\Track 11.flac
+5e33c2d43fda49b2f4bf01b0d0bf910b  bddc1994 disk 2\Track 12.flac
+537405a0a5afdecf1ea0b403d035d872  bddc1994 disk 2\Track 13.flac
+198f7594de995d35283997eead28717e  bddc1994 disk 2\Track 14.flac
+0d0d4281033af948c7c2a1f19358ba0f  bddc1994 disk 2\Track 15.flac
+ce4a3d57f0e260643a29458499025ed6  bddc1994 disk 2\Track 16.flac
+28ce6596cbfe777904e141ce0136442d  bddc1994 disk 2\Track 17.flac
+a513d8037b3c8dd9a72aa1283ef6643a  bddc1994 disk 2\Track 18.flac
+7f5c984e12db88e793a7ad7de4aab75e  bddc1994 disk 2\Track 19.flac
+a534b5da66924b13a9ded5a8ed6cf2d2  bddc1994 disk 2\Track 20.flac
+d27d68955682ee1ac25b25b156b2f6f9  bddc1994 disk 2\Washington 1994.txt
+f7847a5fc8860c5197e95f7898bc8b92  Washington 1994.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-30-Washington-1994.flacf\bddc1994 disk 1 
+=================== 
+=================== 
+=================== 
+Track 1.flac:9032771bc115dabbcb0f5402e3741e0c
+Track 10.flac:9b1ea54c6b1978990a072ff74f061670
+Track 2.flac:82e30030496f82a2d7b0c9cdc8b28f8f
+Track 3.flac:cdced878da84536b38551a8c185f15fc
+Track 4.flac:b42b961730e220b29069f16906aa29b6
+Track 5.flac:381997f0353f682cfb38c29a9482b342
+Track 6.flac:b7fe99db370726c2bf0cd9fef9c7958a
+Track 7.flac:3605fd0bbc647f5c0409406aa04f00dd
+Track 8.flac:b2c653266ab589c0a2e2e142cc455d9d
+Track 9.flac:80391c30cb52d5706e7effdd92d0db2d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-30-Washington-1994.flacf\bddc1994 disk 2 
+=================== 
+=================== 
+=================== 
+Track 11.flac:07a5ef25dc08c1619b0486cd2f9b981a
+Track 12.flac:1b94bb6e00f3693335601e3e347fcc84
+Track 13.flac:94f35a4ea8458b693f33d4d1baccb9c7
+Track 14.flac:9cf6944200f7b508ca9dde82c0476b89
+Track 15.flac:a646276f3370b752ae758a9285161a83
+Track 16.flac:59581096f8a0f46b5614f4877ca39bb0
+Track 17.flac:39a031909d4ce22dc8f3810a9026e5f0
+Track 18.flac:08df345bca36069e6279e890b198d32e
+Track 19.flac:cc4b2811f1073842a35f479d1c9dde5b
+Track 20.flac:b8da843e087e1ba480cade155de474b3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-10-30-Washington-1994.flacf\bddc1994 disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:18.37       87934268 B   ---   --   ---xx   flac  0.6552  Track 1.flac
+     6:22.07       67401308 B   ---   --   ---xx   flac  0.6553  Track 10.flac
+     7:33.70       80073884 B   ---   --   ---xx   flac  0.6466  Track 2.flac
+     6:02.50       63974444 B   ---   --   ---xx   flac  0.6823  Track 3.flac
+     6:00.33       63581660 B   ---   --   ---xx   flac  0.6163  Track 4.flac
+     9:20.50       98901644 B   ---   --   ---xx   flac  0.6795  Track 5.flac
+     8:01.70       85013084 B   ---   --   ---xx   flac  0.6593  Track 6.flac
+     6:06.72       64731788 B   ---   --   ---xx   flac  0.5141  Track 7.flac
+     8:44.13       92464220 B   ---   --   ---xx   flac  0.5093  Track 8.flac
+     7:06.60       75287564 B   ---   --   ---xx   flac  0.5785  Track 9.flac
+    73:38.12      779363864 B                            0.6205  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-10-30-Washington-1994.flacf\bddc1994 disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:24.62       89051468 B   ---   --   ---xx   flac  0.5911  Track 11.flac
+     9:37.50      101900444 B   ---   --   ---xx   flac  0.6668  Track 12.flac
+     7:50.25       82966844 B   ---   --   ---xx   flac  0.6532  Track 13.flac
+     9:57.50      105428444 B   ---   --   ---xx   flac  0.5959  Track 14.flac
+     6:34.50       69619244 B   ---   --   ---xx   flac  0.6595  Track 15.flac
+     6:27.00       68266844 B   ---   --   ---xx   flac  0.5213  Track 16.flac
+     6:11.63       65592620 B   ---   --   ---xx   flac  0.5306  Track 17.flac
+     7:06.00       75146444 B   ---   --   ---xx   flac  0.6757  Track 18.flac
+     7:54.50       83731244 B   ---   --   ---xx   flac  0.6085  Track 19.flac
+     7:50.25       82966844 B   ---   --   ---xx   flac  0.6236  Track 20.flac
+    77:55.00      824670440 B                            0.6152  (10 files)
+=================== 
+=================== 
+=================== 

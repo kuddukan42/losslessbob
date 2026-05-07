@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-21 Birmingham.shnf 
+=================== 
+=================== 
+=================== 
+1dd2041f00fb1d18acc7175e0de66b79  bd03-11-21.txt
+6eb1c52630fbb2e62466d593b40b68f1  d1\01.shn
+f620c47b917da98935888238ed120f99  d1\02.shn
+efe23e8f9c80e6266f9f4dea235f2ea4  d1\03.shn
+7f6b2ab1e9170315e34813df2a7bf778  d1\04.shn
+3dd937c8f07ece6b8d6d57956c38713f  d1\05.shn
+10dfd5585db9da20250581aee4f302ac  d1\06.shn
+222c32e2110605f66e338db8d57281bb  d1\07.shn
+6bda309c073adcac2c5e1950c5c5b5a2  d1\08.shn
+363f257aeb1300aa6088e9c9c3426823  d1\09.shn
+f5316fa15c3cf23b6eb41c93dc124b79  d1\10.shn
+9a7fc55f863429efdfe0f5ad07654aea  d1\11.shn
+fa2eac7caac90958d5a30ed0386262d8  d1\noname.md5
+ca5d90a980cf6d72b003417cd67b805e  d2\01.shn
+3b2b3ad7658bf977cac31d6c01f9b148  d2\02.shn
+cc44c7e0548afa204614f4e7e09eca09  d2\03.shn
+f7b58cb53173b2edc4fcca27f1f98cf0  d2\04.shn
+028ece18c067b0000fb9e23e2866dfb2  d2\05.shn
+9d43307119b1eeb2e6d7b79cd4160db8  d2\06.shn
+5f4c4bcdb98a67602d80e3cade19abef  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-21 Birmingham.shnf\d1 
+=================== 
+=================== 
+=================== 
+26488e917e1fc4537f7c32c8c8dafc61  [shntool]  01.wav
+e253b3dcc3a107ee8e7faf97fee83f56  [shntool]  02.wav
+0c04e251318fa6dc7d5763ce359c9efd  [shntool]  03.wav
+6d3f9ead94e039c0dfe67944f6ff44c1  [shntool]  04.wav
+f6d368c5e96bd9c4e70dc92dd58c7b69  [shntool]  05.wav
+3d23a9541070f03212f15b9e8b7f86b8  [shntool]  06.wav
+c25742a8b144f6bacade6bf2bfd65a78  [shntool]  07.wav
+c3d00b01e974d5db2346f89bdc22989f  [shntool]  08.wav
+ca7eb3490f4a446724fc190c52a26a9f  [shntool]  09.wav
+e106ea9e2442fa4c259c5e7fcc926908  [shntool]  10.wav
+f0b4cf383e59d405aac5ed018238b0a4  [shntool]  11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-21 Birmingham.shnf\d2 
+=================== 
+=================== 
+=================== 
+4abf77d5eece57da68d178d3a312d5ec  [shntool]  01.wav
+7bb85b537c7691fbb67c95b5483271cd  [shntool]  02.wav
+d9673ecfed6b259df4012af0410652ee  [shntool]  03.wav
+001f7e56343bcc4e504281d2e73bd1a2  [shntool]  04.wav
+ea202f6e99cdc82fa5e7302c71e54903  [shntool]  05.wav
+841fa22c9369b62991ecda5bc10c44f3  [shntool]  06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-21 Birmingham.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:15.09       55587212 B   ---   --   -----    wav  1.0000  01.wav
+     6:59.71       74078636 B   ---   --   -----    wav  1.0000  02.wav
+     5:45.63       61006220 B   ---   --   -----    wav  1.0000  03.wav
+     6:20.16       67069676 B   ---   --   -----    wav  1.0000  04.wav
+     7:43.13       81703820 B   ---   --   -----    wav  1.0000  05.wav
+     6:24.51       67857596 B   ---   --   -----    wav  1.0000  06.wav
+     7:30.68       79539980 B   ---   --   -----    wav  1.0000  07.wav
+     5:35.44       59197532 B   ---   --   -----    wav  1.0000  08.wav
+     6:30.20       68843084 B   ---   --   -----    wav  1.0000  09.wav
+     5:50.30       61810604 B   ---   --   -----    wav  1.0000  10.wav
+     7:36.37       80525468 B   ---   --   -----    wav  1.0000  11.wav
+    71:32.47      757219828 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-21 Birmingham.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:36.11       80464316 B   ---   --   -----    wav  1.0000  01.wav
+     7:05.23       75024140 B   ---   --   -----    wav  1.0000  02.wav
+     8:09.01       86261996 B   ---   --   -----    wav  1.0000  03.wav
+     5:57.53       63099500 B   ---   --   -----    wav  1.0000  04.wav
+     6:35.38       69767420 B   ---   --   -----    wav  1.0000  05.wav
+     6:47.10       71818364 B   ---   --   -----    wav  1.0000  06.wav
+    42:10.61      446435736 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

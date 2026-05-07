@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd89-08-15-p-Dolphinsmile.flac1648
+===================
+===================
+===================
+5124c2d1224d65fa136f93cfe0858667 *01 Most Likely Youll Go Your Way.flac
+46612c3c4526279900472b29929f8090 *02 Peggy O.flac
+e00a8d25172813f17bfd13adb1d55d25 *03 Masters of War.flac
+5d4515ba6b4cdf7ae7efde434975e2cd *04 Shelter From the Storm.flac
+a6e1d1aee59df2469e4f7c9e581d51c0 *05 Ballad Of A Thin Man.flac
+9e670853da3d7c59f95e39b184a0f380 *06 Stuck Inside of Mobile.flac
+038fcda78bdc85ae9cf77b6313de7604 *07 Its All Over Now Baby Blue.flac
+c1aa95beacd4857e4a9af4a31d415f82 *08 Man of Constant Sorrow.flac
+753433d930777d4b3cfd71a9b6562a1e *09 Its Alright Ma.flac
+61d048ef2cea6265ac8a4a211aaf64d9 *10 One Too Many Mornings.flac
+506af9bedbbbb98b1a16c7468f065b6c *11 All Along the Watchtower.flac
+35e124f3e55914f4a224f0f71a4c38d6 *12 I'll Remember You.flac
+649782c36f93d8a8fc08fa08486ed546 *13 I Shall Be Released.flac
+92c3f2385930c9d16fff283a0dc5a517 *14 Like A Rolling Stone.flac
+a439f90119c515f294cc2df63682961f *15 Barbara Allen.flac
+84da011b0c2b7d7d41a01c15cabf3b0c *16 Mr Tamborine Man.flac
+c511d175dbd3a851e520db954df36830 *17 Maggies Farm.flac
+297e254b2b799bb030e5ab844720d839 *Bob Dylan Chastain Park Atlanda 1989 -08-15.ffp
+666b1c4043c0be6d5380784fe1247db6 *Bob Dylan Chastain Park Atlanda 1989 -08-15.md5
+297e254b2b799bb030e5ab844720d839 *Bob Dylan Chastain Park Atlanda 1989 -08-15.txt
+ab2243f3880edda878f0b2ea19144fef *info.txt
+===================
+===================
+===================
+=== ffp for: bd89-08-15-p-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Most Likely Youll Go Your Way.flac:88d7f0c16ec7c3577c6083ed56caa035
+02 Peggy O.flac:138eb95c3fa843d59a9f020a7cd8c917
+03 Masters of War.flac:63d7e0f93776d8656a20d76194c822fa
+04 Shelter From the Storm.flac:1e142974d4270147128d56e34e179bb5
+05 Ballad Of A Thin Man.flac:ed9206405a57e07fb3a2da0b96264e31
+06 Stuck Inside of Mobile.flac:0621daf7b47bae51772918c7f8b4d7f1
+07 Its All Over Now Baby Blue.flac:304b303d8e897479cb7ffc9938e06c99
+08 Man of Constant Sorrow.flac:a2d44293d822b7599fcae68119bd24b3
+09 Its Alright Ma.flac:c594a24a95785614205057b03b4a6641
+10 One Too Many Mornings.flac:558b7797db4c465a29b61eca7153dc71
+11 All Along the Watchtower.flac:817c1b8fb3f84b00fc404f294f33ce56
+12 I'll Remember You.flac:c104e533bb84326f38f94ffbf3fa8a0d
+13 I Shall Be Released.flac:b4ba2b807285b816c452dc6be0e87e34
+14 Like A Rolling Stone.flac:647f38bf3a3a7c8d62a978bf59912145
+15 Barbara Allen.flac:7cf430044a594e16d61f6445440d63c5
+16 Mr Tamborine Man.flac:2290f3ad6c500515227a32ecf8a7d411
+17 Maggies Farm.flac:3159b28def2552fbd3c7ae6265009698
+===================
+===================
+===================
+=== shntool len for: bd89-08-15-p-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.574      67502272 B   cxx   --   ---xx   flac  0.7242  01 Most Likely Youll Go Your Way.flac
+     5:41.152      65501324 B   cxx   --   ---xx   flac  0.7028  02 Peggy O.flac
+     4:30.467      51929788 B   cxx   --   ---xx   flac  0.7517  03 Masters of War.flac
+     6:18.211      72616504 B   cxx   --   ---xx   flac  0.7029  04 Shelter From the Storm.flac
+     5:15.293      60536392 B   cxx   --   ---xx   flac  0.7259  05 Ballad Of A Thin Man.flac
+     6:32.190      75300528 B   cxx   --   ---xx   flac  0.7356  06 Stuck Inside of Mobile.flac
+     6:48.319      78397376 B   cxx   --   ---xx   flac  0.6424  07 Its All Over Now Baby Blue.flac
+     5:05.481      58652420 B   cxx   --   ---xx   flac  0.6434  08 Man of Constant Sorrow.flac
+     5:33.130      63960924 B   cxx   --   ---xx   flac  0.6593  09 Its Alright Ma.flac
+     5:13.920      60272688 B   cxx   --   ---xx   flac  0.6115  10 One Too Many Mornings.flac
+     3:44.330      43071404 B   cxx   --   ---xx   flac  0.7341  11 All Along the Watchtower.flac
+     4:30.273      51892420 B   cxx   --   ---xx   flac  0.6934  12 I'll Remember You.flac
+     5:04.131      58393140 B   cxx   --   ---xx   flac  0.7033  13 I Shall Be Released.flac
+     8:05.815      93276604 B   cxx   --   ---xx   flac  0.7281  14 Like A Rolling Stone.flac
+     5:55.741      68302252 B   cxx   --   ---xx   flac  0.6364  15 Barbara Allen.flac
+     7:10.112      82581492 B   cxx   --   ---xx   flac  0.6712  16 Mr Tamborine Man.flac
+     6:46.636      78074208 B   cxx   --   ---xx   flac  0.7383  17 Maggies Farm.flac
+    98:06.776    1130261736 B                            0.6942  (17 files)
+===================
+===================
+===================

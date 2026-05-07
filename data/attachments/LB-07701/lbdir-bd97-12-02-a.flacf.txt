@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-02-a.flacf 
+=================== 
+=================== 
+=================== 
+0403e7e01996bd562a0970af5153e065  1997-12-02 Roxy, Atlanta, Georgia, USA.md5
+e7ec9e246876448e7e151098dff0bcc6  CD1\01 Maggie's farm.flac
+445e8e9f58da650abc4778401a164ded  CD1\02 Lay lady lay.flac
+5f1730860306518c3f1b31c5e3b42790  CD1\03 Cold irons bound.flac
+adad481fc64d1069dde54d48c47be8db  CD1\04 You're a big girl now.flac
+933f0cfc9a52e41e70399d1210c084c4  CD1\05 Can't wait.flac
+cbd599f79507dc0d6eef090a4f4cfcc4  CD1\06 Silvio.flac
+fedaaf9d3b51a2fea9f1dba66108a4a2  CD1\07 I'm a roving gambler.flac
+66bef1737478da305db80a0098ddea47  CD1\08 One too many mornings.flac
+00c067f1733182767cb99bac7791da39  CD1\09 Tangled up in blue.flac
+4e501b9d1d63fd342b6fa6f74e192b3a  CD1\10 The white dove.flac
+0d0b631cdf19c796f27ce4a730fecb0e  CD1\11 'Til I fell in love with you.flac
+28f811374f02c1804d1bf7b82074c666  CD1\12 (band intro).flac
+1fbc3e3313a56d190464ded02039c2b1  CD1\12 Highway 61 revisited.flac
+967647bc77d0cdb610600f993b048e95  CD1\FLAC CD1.md5
+b17aba52184b220d3a9adce76c947acc  CD2\13 Like a rolling stone.flac
+3a7ea004c3703779bd239f9826ac44c1  CD2\14 It ain't me, babe.flac
+32fa78531849133eb5b20ce6f96e7842  CD2\15 Love sick.flac
+b1ea6266541d7dac8fa755cc858eb64d  CD2\16 Rainy day women # 12 & 35.flac
+84a286469fcd42a53b8547637913ea0c  CD2\FLAC CD2.md5
+a0bfeb827208b14bc3132ef09305e45b  Info\1997-12-02 Roxy, Atlanta, Georgia, USA.txt
+270397abbd5ae294984c76e3ea078050  Info\Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-02-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Maggie's farm.flac:2360530739d6df843e9984d1c13068f9
+02 Lay lady lay.flac:36386ccbb6632833a294fc570d563d44
+03 Cold irons bound.flac:1b242b51d7c917b239172bc1d9aac138
+04 You're a big girl now.flac:b7e8f4fb8527862aea8f87826ec765d1
+05 Can't wait.flac:2db616de07afbcd922b7c2729163b11e
+06 Silvio.flac:f2d05453da0b13b4e8103ee0642fcc69
+07 I'm a roving gambler.flac:47a0fb21e1612c868c4a8d78d873036e
+08 One too many mornings.flac:e350edaec6bf0723005ca7db6f1e673e
+09 Tangled up in blue.flac:7ba45d64a513b6f0ec5e0719aac218a6
+10 The white dove.flac:01934e7beea2ebb77c68e69540b97d4b
+11 'Til I fell in love with you.flac:3af9ee58d2dd0379f73bc03525ad556c
+12 (band intro).flac:01b3816c32317d49f4ec71f04cb3135c
+12 Highway 61 revisited.flac:edf60ba78afbde65a34f852d883e47ea
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-02-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+13 Like a rolling stone.flac:edf4e458bbe48383f1b85a42bd216a0c
+14 It ain't me, babe.flac:8da3a4d1d4c7590ec9b781e02f0e4838
+15 Love sick.flac:396c5abc6451b81ba2595dc29a16d34e
+16 Rainy day women # 12 & 35.flac:af984a36d5de12fe94b4d924fb7cb028
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-02-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.39       61655372 B   ---   --   ---xx   flac  0.5278  01 Maggie's farm.flac
+     5:02.38       53362220 B   ---   --   ---xx   flac  0.4754  02 Lay lady lay.flac
+     6:54.59       73168412 B   ---   --   ---xx   flac  0.5003  03 Cold irons bound.flac
+     5:52.10       62116364 B   ---   --   ---xx   flac  0.4249  04 You're a big girl now.flac
+     6:09.05       65103404 B   ---   --   ---xx   flac  0.4723  05 Can't wait.flac
+     7:05.54       75097052 B   ---   --   ---xx   flac  0.5188  06 Silvio.flac
+     3:44.09       39534812 B   ---   --   ---xx   flac  0.4375  07 I'm a roving gambler.flac
+     5:41.04       60161852 B   ---   --   ---xx   flac  0.4048  08 One too many mornings.flac
+     8:35.55       90975404 B   ---   --   ---xx   flac  0.4919  09 Tangled up in blue.flac
+     4:47.34       50706812 B   ---   --   ---xx   flac  0.4242  10 The white dove.flac
+     5:41.29       60220652 B   ---   --   ---xx   flac  0.4832  11 'Til I fell in love with you.flac
+     0:29.61        5259116 B   ---   --   ---xx   flac  0.4505  12 (band intro).flac
+     6:28.03       68450300 B   ---   --   ---xx   flac  0.5134  12 Highway 61 revisited.flac
+    72:21.25      765811772 B                            0.4768  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-02-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:10.33       86513660 B   ---   --   ---xx   flac  0.5618  13 Like a rolling stone.flac
+     7:05.17       75010028 B   ---   --   ---xx   flac  0.4840  14 It ain't me, babe.flac
+     5:25.44       57433532 B   ---   --   ---xx   flac  0.4288  15 Love sick.flac
+     4:08.18       43789580 B   ---   --   ---xx   flac  0.5499  16 Rainy day women # 12 & 35.flac
+    24:49.37      262746800 B                            0.5085  (4 files)
+=================== 
+=================== 
+=================== 

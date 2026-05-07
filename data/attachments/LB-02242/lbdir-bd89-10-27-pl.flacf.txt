@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-10-27-pl.flacf 
+=================== 
+=================== 
+=================== 
+aed9218458ac036d9084bd09d848f6b9  bd1989-10-27-89d1-troy-pl (Track 01).flac
+1beec30bf8fe0e97e023336c4c9e76ee  bd1989-10-27-89d1-troy-pl (Track 02).flac
+4068d6c9201f8dbea955a7f3e6ab029d  bd1989-10-27-89d1-troy-pl (Track 03).flac
+a6ea40c91dae4c827679cc1f157299d9  bd1989-10-27-89d1-troy-pl (Track 04).flac
+2d47853d9236699d06f4b11cd25d8e81  bd1989-10-27-89d1-troy-pl (Track 05).flac
+b8e2d4c4772a540be69deb0f577e2b3e  bd1989-10-27-89d1-troy-pl (Track 06).flac
+3a8d056b720051a5da1b7f15d83f4b68  bd1989-10-27-89d1-troy-pl (Track 07).flac
+3b39e069f31b150c9f14ff211643078a  bd1989-10-27-89d1-troy-pl (Track 08).flac
+9744243abf113bd4ab931a297331ecae  bd1989-10-27-89d1-troy-pl (Track 09).flac
+22db23fbe00d85fc8906c46606c06b10  bd1989-10-27-89d1-troy-pl (Track 10).flac
+78d43cabf55ef00e3adb3378433d30af  bd1989-10-27-89d2-troy-pl (Track 01).flac
+cb8d10cceb5eaa8a069bae960ab06e84  bd1989-10-27-89d2-troy-pl (Track 02).flac
+d8d8fb764ede333a935b393e9890f335  bd1989-10-27-89d2-troy-pl (Track 03).flac
+b99bc7e6926c1ae2ba32ef7c01844fd3  bd1989-10-27-89d2-troy-pl (Track 04).flac
+847e7350328675e0a37b482d01a1f59f  bd1989-10-27-89d2-troy-pl (Track 05).flac
+5d5ccc19ee661ce9d0707b46d185603c  bd1989-10-27-89d2-troy-pl (Track 06).flac
+2ddef39135c84a051f98409a5d4231f7  bd1989-10-27-89d2-troy-pl (Track 07).flac
+b16cb087eff32977759ed092d6c71e44  bd1989-10-27-89d2-troy-pl (Track 08).flac
+ac0debb9b7ea369499a6d02490c35591  bd1989-10-27-89d2-troy-pl (Track 09).flac
+a9f18f8896e8444f6594737d809fa971  bd89-10-27-pl.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-10-27-pl.flacf 
+=================== 
+=================== 
+=================== 
+bd1989-10-27-89d1-troy-pl (Track 01).flac:3ba3d57dff0a0f292a4dd1a514dbe8cc
+bd1989-10-27-89d1-troy-pl (Track 02).flac:2fe3306c38bc3a52998e283668e8fa5c
+bd1989-10-27-89d1-troy-pl (Track 03).flac:c37df0c140316d982c66e9c01dd9eb39
+bd1989-10-27-89d1-troy-pl (Track 04).flac:c46727be4cead3e24fec1b93ac0ff45d
+bd1989-10-27-89d1-troy-pl (Track 05).flac:e7a2dd3e32859c51bfb09ef3da92727f
+bd1989-10-27-89d1-troy-pl (Track 06).flac:cf8afc722833df3f18e9f191cac64b13
+bd1989-10-27-89d1-troy-pl (Track 07).flac:a7a30361098ebc3eb30afc6d84db5b0d
+bd1989-10-27-89d1-troy-pl (Track 08).flac:106e33afe27c5ec48b5cb4c958489d87
+bd1989-10-27-89d1-troy-pl (Track 09).flac:7549bd3e06d5c9a121f71d91d714c30c
+bd1989-10-27-89d1-troy-pl (Track 10).flac:7fb24d8fd2ad8f036790bb3129ae6cc9
+bd1989-10-27-89d2-troy-pl (Track 01).flac:756779a9e59e96025b4420b43e8177a6
+bd1989-10-27-89d2-troy-pl (Track 02).flac:e88807314fd2021c13207d4938d10071
+bd1989-10-27-89d2-troy-pl (Track 03).flac:d600b77c34cc379eb1d570971aae267d
+bd1989-10-27-89d2-troy-pl (Track 04).flac:79326c370cc54d3112c79643b5101c64
+bd1989-10-27-89d2-troy-pl (Track 05).flac:758eaa5e426302e89e8fde10605564fb
+bd1989-10-27-89d2-troy-pl (Track 06).flac:04bbc266a92705fbfc9055632ffabaae
+bd1989-10-27-89d2-troy-pl (Track 07).flac:5f63dd7a59f20d414127f0efe8bbdc73
+bd1989-10-27-89d2-troy-pl (Track 08).flac:4662a9e60f933097b4a624123f965c25
+bd1989-10-27-89d2-troy-pl (Track 09).flac:fb3110158a078fb156097921892a6754
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-10-27-pl.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:35.47       59204588 B   ---   --   ---xx   flac  0.6195  bd1989-10-27-89d1-troy-pl (Track 01).flac
+     6:11.10       65467964 B   ---   --   ---xx   flac  0.5511  bd1989-10-27-89d1-troy-pl (Track 02).flac
+     6:03.21       64082636 B   ---   --   ---xx   flac  0.5977  bd1989-10-27-89d1-troy-pl (Track 03).flac
+     5:01.35       53178764 B   ---   --   ---xx   flac  0.5835  bd1989-10-27-89d1-troy-pl (Track 04).flac
+     4:56.06       52228556 B   ---   --   ---xx   flac  0.6149  bd1989-10-27-89d1-troy-pl (Track 05).flac
+     5:44.08       60700460 B   ---   --   ---xx   flac  0.6224  bd1989-10-27-89d1-troy-pl (Track 06).flac
+     4:59.66       52898876 B   ---   --   ---xx   flac  0.6476  bd1989-10-27-89d1-troy-pl (Track 07).flac
+     3:58.40       42077324 B   ---   --   ---xx   flac  0.5876  bd1989-10-27-89d1-troy-pl (Track 08).flac
+     8:30.63       90112220 B   ---   --   ---xx   flac  0.5768  bd1989-10-27-89d1-troy-pl (Track 09).flac
+     5:10.22       54735788 B   ---   --   ---xx   flac  0.6074  bd1989-10-27-89d1-troy-pl (Track 10).flac
+     7:21.03       77799500 B   ---   --   ---xx   flac  0.5925  bd1989-10-27-89d2-troy-pl (Track 01).flac
+     4:23.08       46412060 B   ---   --   ---xx   flac  0.6211  bd1989-10-27-89d2-troy-pl (Track 02).flac
+     5:12.37       55123868 B   ---   --   ---xx   flac  0.5981  bd1989-10-27-89d2-troy-pl (Track 03).flac
+     4:23.01       46395596 B   ---   --   ---xx   flac  0.5934  bd1989-10-27-89d2-troy-pl (Track 04).flac
+     5:00.15       52955324 B   ---   --   ---xx   flac  0.5614  bd1989-10-27-89d2-troy-pl (Track 05).flac
+     3:36.28       38168300 B   ---   --   ---xx   flac  0.5710  bd1989-10-27-89d2-troy-pl (Track 06).flac
+     6:53.10       72876764 B   ---   --   ---xx   flac  0.5900  bd1989-10-27-89d2-troy-pl (Track 07).flac
+     5:36.25       59329244 B   ---   --   ---xx   flac  0.5458  bd1989-10-27-89d2-troy-pl (Track 08).flac
+     8:10.37       86523068 B   ---   --   ---xx   flac  0.5967  bd1989-10-27-89d2-troy-pl (Track 09).flac
+   106:47.32     1130270900 B                            0.5929  (19 files)
+=================== 
+=================== 
+=================== 

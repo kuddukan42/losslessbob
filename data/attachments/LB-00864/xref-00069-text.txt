@@ -1,0 +1,86 @@
+===================
+===================
+===================
+=== 1992_03_29_Canberra_info.txt
+===================
+===================
+===================
+Bob Dylan
+March 29, 1992 - Canberra, Australia
+
+Disc 1
+1. All Along The Watchtower
+2. Simple Twist Of Fate
+3. Everything Is Broken
+4. Just Like A Woman
+5. Tangled Up In Blue
+6. She Belongs To Me
+7. Maggie's Farm
+8. Love Minus Zero / No Limit @
+9. Little Moses @
+10. Gates Of Eden
+
+Disc 2
+Mr. Tambourine Man @
+Cat's In The Well
+I'll Remember You
+The Times They Are A-Changin' @
+Highway 61 Revisited
+Ballad Of A Thin Man
+Watching The River Flow
+Blowin' In The Wind @
+
+From MK master tape
+
+Disc 1\01 All Along The Watchtower.flac:bbcaffcdc690339de6ead6e4b84d341c
+Disc 1\02 Simple Twist Of Fate.flac:d3841c47d1fba54854c3d64fd1a0d62c
+Disc 1\03 Everything Is Broken.flac:dc104f83ec61e0038f6083d078e7d191
+Disc 1\04 Just Like A Woman.flac:b6dc03becb6a9972c6cad4aa09401275
+Disc 1\05 Tangled Up In Blue.flac:3d5a29e60a3d878d6e8294f8292062f2
+Disc 1\06 She Belongs To Me.flac:ae21cbe123d2fa996a7afa0795643613
+Disc 1\07 Maggie's Farm.flac:f3f7250a789a29332b4cf3581950a732
+Disc 1\08 Love Minus Zero - No Limit.flac:e14ee169a470b9d02778bfe2510a9cda
+Disc 1\09 Little Moses.flac:bda6fe37a01ca4cd6a415271c2e99b41
+Disc 1\10 Gates Of Eden.flac:fd2912e50ae7805e9c25cc5109d1ff08
+Disc 2\1 Mr. Tambourine Man.flac:d94b5bf6e9d507f6730d42b198b25020
+Disc 2\2 Cat's In The Well.flac:d8fb8d4369412d28d6ddc12c68445e45
+Disc 2\3 I'll Remember You.flac:1e8a447b147ba419e3cfb4f423d64522
+Disc 2\4 The Times They Are A-Changin'.flac:dd5eb527598ef650dcc7bc95ee2cb387
+Disc 2\5 Highway 61 Revisited.flac:c1a49478045ea31635a87b06f0e8acda
+Disc 2\6 Ballad Of A Thin Man.flac:38667c46f6ae71d9a5d4b46bab77a384
+Disc 2\7 Watching The River Flow.flac:4d166a0c94d293e5a694f884ee066825
+Disc 2\8 Blowin' In The Wind.flac:4a02eb87b3976184a11c5db73ddf9114
+
+
+===================
+===================
+===================
+=== 1992_03_29_Canberra_MK.md5
+===================
+===================
+===================
+68f5ef1f771fb669126e8b3e3e4eecea *1992_03_29_Canberra_back_Ken.jpg
+870ba66d568fddde67a75ed2191173da *1992_03_29_Canberra_freq.JPG
+f20b5242cd811b54ac4a32b6e67b783f *1992_03_29_Canberra_front_Ken.jpg
+ef31dfa9d97b053e01c6719691f591af *1992_03_29_Canberra_info.txt
+77f39f7111f6a936da3ad548ff58f7e8 *Disc 1\01 All Along The Watchtower.flac
+ea8149cb37c7115f7df63314da487424 *Disc 1\02 Simple Twist Of Fate.flac
+ad49ad8d71b09775536b663a0237097d *Disc 1\03 Everything Is Broken.flac
+d394b47b5f1c8fb793c9adfff1edcc3e *Disc 1\04 Just Like A Woman.flac
+ed7d6fe6729cc3d3917df942d0c670fa *Disc 1\05 Tangled Up In Blue.flac
+d18e1430ac34557ae3bdfa9fef8cbc12 *Disc 1\06 She Belongs To Me.flac
+bd376585171683af64a73f5b5f61397a *Disc 1\07 Maggie's Farm.flac
+889d7b19c41d0c23a6ef3c3dd7340f29 *Disc 1\08 Love Minus Zero - No Limit.flac
+5099b67ed7e4337e43ac399d74b9cf56 *Disc 1\09 Little Moses.flac
+fee3d448ebed91e0b674b46500e24279 *Disc 1\10 Gates Of Eden.flac
+2cec932b78de4ddb8997ada838b8a8fd *Disc 2\1 Mr. Tambourine Man.flac
+a01fc9f1c732d1ed9b54b6c1fe0543fb *Disc 2\2 Cat's In The Well.flac
+d11f717da37399a57ae952319d546816 *Disc 2\3 I'll Remember You.flac
+096ae7d4bb72ad7f7c027438c5dc51f1 *Disc 2\4 The Times They Are A-Changin'.flac
+f640086d1c1c881405aad71930ca959a *Disc 2\5 Highway 61 Revisited.flac
+5c9ac0c9d405839e7a68bb62fbdc8a1a *Disc 2\6 Ballad Of A Thin Man.flac
+df97e1ad24e8c060070d5663cae9acd0 *Disc 2\7 Watching The River Flow.flac
+60e5a271c054f0efa41a2b820e591f5e *Disc 2\8 Blowin' In The Wind.flac
+===================
+===================
+===================

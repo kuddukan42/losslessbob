@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-07-30.flacf 
+=================== 
+=================== 
+=================== 
+79f52018fcb0a5aa5a53c41f34d11f2b  bd05-07-30-LB-3057.txt
+2068cdfae5c11c6355a27438b86e0464  d1t01.flac
+35756da3bff7712ee3a053562556ab62  d1t02.flac
+802a651a14ec71e29f19e1a4b47da1a7  d1t03.flac
+87ce61bb57b9db75d65f9629ec202b0f  d1t04.flac
+57607750b009890a852301b94e1a17ff  d1t05.flac
+8f561e636ca4e220859b463bbda75c3d  d1t06.flac
+ae2fb78d5a4c81ebaf21c91cb0ede91b  d1t07.flac
+fa8e86d5424d9d123cddaa2f50fc53ff  d1t08.flac
+3a76010e6f067f5fef4a609828d6577f  d1t09.flac
+a95ddf8144193fbdf1c1064cb97e326d  d1t10.flac
+cc02b8cd2857bf475b71d2c9f6b49829  d1t11.flac
+f3afd35410a36403c3426589455c027a  d2t01.flac
+e3640b08e0c801d3c3a2c2f7ed38dcff  d2t02.flac
+e9938367c4e9ced28122355c0928d2b0  d2t03.flac
+b5b3a5acf48ee6bcaadcfefc7d2b2511  d2t04.flac
+8a6054643bbfb6320cf9cbb722c7ec5c  d2t05.flac
+9ba2267f424c38b865719d99bdffaf76  Goldendale 30 July 05.md5
+8971c5f661dfd6ef65119b0f62ea7ad8  Goldendale.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-07-30.flacf 
+=================== 
+=================== 
+=================== 
+d1t01.flac:d54984205a33b0e741aa31984eb1362c
+d1t02.flac:31a429d0b362521c1fa1c081f888ee89
+d1t03.flac:d4a9b6608aaaef388af9f87cc0012f5e
+d1t04.flac:f31226af5f689733264e72da5df78a4b
+d1t05.flac:59cd9ea6c8822ec382da0044df2a92f7
+d1t06.flac:54b41e33716c202eb8cb1e3008b0c6f9
+d1t07.flac:abbaf828aff8a9d42fd3eefc17ff8868
+d1t08.flac:1cc21945ddfe142c90afc9c3f236a88a
+d1t09.flac:385a8e74e9b86538e3dd9af5139e7b5e
+d1t10.flac:c05f65d5c9f043216307a3039725a3ab
+d1t11.flac:055d738ce454150d8f4b08095f22eff1
+d2t01.flac:8707ffdbc830ba0807914ec5410d0984
+d2t02.flac:7c6585a592f66ce9ec9782aeaaddd32f
+d2t03.flac:dc914e7afec2f8be4a8925bcdbe0b6b3
+d2t04.flac:b6e4a93feb01afb07a8f325f67f54ebc
+d2t05.flac:ddf04646bd69d6a7b17260d6874e6ce1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-07-30.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:53.20       62316284 B   ---   --   ---xx   flac  0.5663  d1t01.flac
+     6:24.44       67841132 B   ---   --   ---xx   flac  0.4911  d1t02.flac
+     6:20.37       67119068 B   ---   --   ---xx   flac  0.5307  d1t03.flac
+     5:16.08       55761260 B   ---   --   ---xx   flac  0.4823  d1t04.flac
+     5:41.71       60319436 B   ---   --   ---xx   flac  0.5386  d1t05.flac
+     5:46.36       61119116 B   ---   --   ---xx   flac  0.4862  d1t06.flac
+     6:43.13       71119820 B   ---   --   ---xx   flac  0.5668  d1t07.flac
+     7:00.65       74240924 B   ---   --   ---xx   flac  0.4825  d1t08.flac
+     6:10.05       65279804 B   ---   --   ---xx   flac  0.4170  d1t09.flac
+     7:59.27       84559148 B   ---   --   ---xx   flac  0.5610  d1t10.flac
+     6:16.66       66481676 B   ---   --   ---xx   flac  0.4133  d1t11.flac
+     5:47.40       61304924 B   ---   --   ---xx   flac  0.4325  d2t01.flac
+     5:31.63       58536620 B   ---   --   ---xx   flac  0.3892  d2t02.flac
+     8:35.38       90935420 B   ---   --   ---xx   flac  0.4560  d2t03.flac
+     5:58.27       63214748 B   ---   --   ---xx   flac  0.4725  d2t04.flac
+     6:42.01       70915196 B   ---   --   ---xx   flac  0.5047  d2t05.flac
+   102:08.36     1081064576 B                            0.4884  (16 files)
+=================== 
+=================== 
+=================== 

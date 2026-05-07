@@ -1,0 +1,41 @@
+Bob Dylan
+S.I.U. Arena
+Southern Illinois University
+Carbondale, Illinois
+28 October 1978
+
+Musicians: Bob Dylan (vocal, guitar & harmonica), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Jerry Scheff (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Carolyn Dennis (background vocals).
+
+Notes: I used 2 versions of the same source for this seed, a low gen version, and a higher gen version.  While the low gen version had better sound, it was incomplete (missing Changing Of The Guards) and ran a bit slow.  The higher gen version was complete and ran at the correct speed, but had inferior sound.  So I speed corrected the low gen version by a factor of 98.4% and attached the missing last track.  One of the versions lists the taper as "JTT."
+
+disc 1
+
+1. My Back Pages (instrumental)/She’s Love Crazy (Tampa Red)
+2. Mr. Tambourine Man
+3. Shelter From The Storm
+4. It's All Over Now, Baby Blue
+5. Tangled Up In Blue
+6. Ballad Of A Thin Man
+7. Maggie's Farm
+8. I Don’t Believe You (She Acts Like We Never Have Met)
+9. Like A Rolling Stone
+10. I Shall Be Released
+11. Señor (Tales Of Yankee Power)
+12. The Times They Are A-Changin'
+13. It Ain't Me, Babe
+
+disc 2
+
+1. One More Cup Of Coffee (Valley Below)
+2. Blowin' In The Wind
+3. Girl From The North Country
+4. Where Are You Tonight? (Journey Through Dark Heat)
+5. Masters Of War
+6. Just Like A Woman
+7. To Ramona
+8. All Along The Watchtower
+9. All I Really Want To Do
+10. band intros
+11. It's Alright, Ma (I'm Only Bleeding)
+12. Forever Young
+13. Changing Of The Guards

@@ -1,0 +1,56 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-30-jtt.flacf 
+=================== 
+=================== 
+=================== 
+d7fba68a8b5c4d0713a267a0c854a436  Bob Dylan - Crossroads Concert June 30th 1999.md5
+4e14ce5db8e5829cc1831b2c053fa9a9  Bob Dylan - Crossroads Concert June 30th 1999.txt
+d4030f0a08823969c9acd93dc0ba844b  Crossroads_Track01.flac
+a43cb34663d5f5805d5de94fb7ab49ab  Crossroads_Track02.flac
+076eef9e1c3c3c3f75d1e3380329bc87  Crossroads_Track03.flac
+445557f8bf76127d2fa1c0ca74bf5882  Crossroads_Track04.flac
+7e79ef533858b47831885ec2b2044014  Crossroads_Track05.flac
+49e672c14508d824f04cf89a623fd2ca  Crossroads_Track06.flac
+1eefe7f84e06469df1ac30123c0712ae  Crossroads_Track07.flac
+bf47ac394c7b8d747c2137014fae4b03  Crossroads_Track08.flac
+a3aa403c5f41b4c75cfac820f301c601  Crossroads_Track09.flac
+208d07bff98f33af7b06a976813fd12a  Dylan - Crossroads Benefit_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-30-jtt.flacf 
+=================== 
+=================== 
+=================== 
+Crossroads_Track01.flac:cc5dbd91ed19420b4a42c0a0ce6a3aab
+Crossroads_Track02.flac:5becfe7d3562cd1e4fa3027f3e25f22e
+Crossroads_Track03.flac:71efec558b30b832659b5f3ea209be6e
+Crossroads_Track04.flac:b1afbcee3a39e44e232ff23117d7af45
+Crossroads_Track05.flac:471415830a92d5c50f24302204a8c38b
+Crossroads_Track06.flac:d48309fc7d1993b8d82312ad919703ae
+Crossroads_Track07.flac:911a968f7cfbf43870e41265343215d6
+Crossroads_Track08.flac:07d0dd0b39925a7acb39c99312a70ddc
+Crossroads_Track09.flac:024a53e79a35ab8ba0fdcd32a04a8bca
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-30-jtt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.04        9535052 B   ---   --   ---xx   flac  0.6066  Crossroads_Track01.flac
+     5:11.32       54935708 B   ---   --   ---xx   flac  0.6131  Crossroads_Track02.flac
+     4:32.73       48152540 B   ---   --   ---xx   flac  0.6193  Crossroads_Track03.flac
+     5:33.05       58753004 B   ---   --   ---xx   flac  0.5499  Crossroads_Track04.flac
+     5:06.44       54081932 B   ---   --   ---xx   flac  0.6018  Crossroads_Track05.flac
+     5:53.66       62424476 B   ---   --   ---xx   flac  0.5256  Crossroads_Track06.flac
+     5:55.48       62734940 B   ---   --   ---xx   flac  0.6290  Crossroads_Track07.flac
+     6:55.47       73316588 B   ---   --   ---xx   flac  0.6774  Crossroads_Track08.flac
+     5:43.61       60648716 B   ---   --   ---xx   flac  0.6013  Crossroads_Track09.flac
+    45:47.05      484582956 B                            0.6037  (9 files)
+=================== 
+=================== 
+=================== 

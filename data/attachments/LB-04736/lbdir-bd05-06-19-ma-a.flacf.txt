@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-06-19-ma-a.flacf 
+=================== 
+=================== 
+=================== 
+fbbc33025a81a75256387237beb480c4  bd05-06-19-ma-a-LB-4736.txt
+69c9a69003e3bfac3ebcf4b4ed263f58  bob dylan 6-19-05 101.flac
+70b378500a395dbd40b095bd35c62d4f  bob dylan 6-19-05 102.flac
+cba11af94904f17077066bbeadae98f9  bob dylan 6-19-05 103.flac
+a52377a2f1f80bf2ef51047fbf9ec5e8  bob dylan 6-19-05 104.flac
+d8dc5de8b11b8bab08c8cea7ba095c62  bob dylan 6-19-05 105.flac
+7b855fa46522591faebc68e1c9d28f00  bob dylan 6-19-05 106.flac
+215f3d67153f2ba8418c4c532c9da612  bob dylan 6-19-05 107.flac
+8226f8415116ca633fd6b0cd4d34a044  bob dylan 6-19-05 108.flac
+55fcaf830db442aa90212541ff137430  bob dylan 6-19-05 109.flac
+928817b3ef847367f12fe8e2c3e7a6e2  bob dylan 6-19-05 201.flac
+4f9c95a73932d3ffd6098267202df4ed  bob dylan 6-19-05 202.flac
+20e35bb136d5e74fcbc7e5e1ed88df6e  bob dylan 6-19-05 203.flac
+03a330e8e4f1a3683dc8b032f3bbe773  bob dylan 6-19-05 204.flac
+47f6d6a4c7fdb3a04c36d3090b0920cf  bob dylan 6-19-05 205.flac
+318897b356a2fc79adb90102cc85fdc0  bob dylan 6-19-05 206.flac
+e3da3844a5c78658c201d9ae8a942270  bob dylan 6-19-05.txt
+6aa5e4693e4c6a681669c89817201a87  lbdir-bd05-06-19-ma-a.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-06-19-ma-a.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 6-19-05 101.flac:4057951047e4bf89055b4027a4bef3c8
+bob dylan 6-19-05 102.flac:fa81326c68819790c1fc2ebb3a48a706
+bob dylan 6-19-05 103.flac:fbdd94588b8235df05e813281024c57c
+bob dylan 6-19-05 104.flac:dde72419973836a00926664eec22239a
+bob dylan 6-19-05 105.flac:c54f5b6df898ffe927e0d31aa43d29ba
+bob dylan 6-19-05 106.flac:4b12870a85cbd43610f44a1e6dfb2a82
+bob dylan 6-19-05 107.flac:a710c9a1b7dc5fbce810e9209289b7f1
+bob dylan 6-19-05 108.flac:f9df6a341c739972d1790afee9af1359
+bob dylan 6-19-05 109.flac:db387ab8acca18b51ce74332228130cb
+bob dylan 6-19-05 201.flac:ab81663a658d6b519157c45decc6ddf8
+bob dylan 6-19-05 202.flac:26de9f244cc4cc4e1f3b371756ff2a8d
+bob dylan 6-19-05 203.flac:1cd51a35fdec15d5c5cc84df5faad148
+bob dylan 6-19-05 204.flac:19b9d8af1aa9f47d7f275a8b37da6869
+bob dylan 6-19-05 205.flac:3b69335c131aa7da369bf7d7290e2dfd
+bob dylan 6-19-05 206.flac:33cdf941649ebcbfe916b1c2b3860030
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-06-19-ma-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:31.41        5564876 B   ---   --   ---xx   flac  0.4295  bob dylan 6-19-05 101.flac
+     5:36.31       59343356 B   ---   --   ---xx   flac  0.6065  bob dylan 6-19-05 102.flac
+     6:49.35       72229964 B   ---   --   ---xx   flac  0.5263  bob dylan 6-19-05 103.flac
+     6:07.68       64898780 B   ---   --   ---xx   flac  0.5715  bob dylan 6-19-05 104.flac
+     9:13.30       97619804 B   ---   --   ---xx   flac  0.5069  bob dylan 6-19-05 105.flac
+     8:12.33       86866460 B   ---   --   ---xx   flac  0.5696  bob dylan 6-19-05 106.flac
+     6:56.58       73518860 B   ---   --   ---xx   flac  0.5122  bob dylan 6-19-05 107.flac
+     7:52.71       83427836 B   ---   --   ---xx   flac  0.5777  bob dylan 6-19-05 108.flac
+     5:39.14       59832572 B   ---   --   ---xx   flac  0.5014  bob dylan 6-19-05 109.flac
+     5:33.13       58771820 B   ---   --   ---xx   flac  0.5328  bob dylan 6-19-05 201.flac
+     8:00.54       84799052 B   ---   --   ---xx   flac  0.5638  bob dylan 6-19-05 202.flac
+     5:30.73       58383740 B   ---   --   ---xx   flac  0.5430  bob dylan 6-19-05 203.flac
+     7:47.00       82378844 B   ---   --   ---xx   flac  0.5295  bob dylan 6-19-05 204.flac
+     8:31.06       90154556 B   ---   --   ---xx   flac  0.5116  bob dylan 6-19-05 205.flac
+     5:47.05       61222604 B   ---   --   ---xx   flac  0.5425  bob dylan 6-19-05 206.flac
+    98:10.07     1039013124 B                            0.5410  (15 files)
+=================== 
+=================== 
+=================== 

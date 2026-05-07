@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-12-hv.flacf 
+=================== 
+=================== 
+=================== 
+8a24da7e4d0627679b1ce333e13a23f5  bd05-11-12-hv-LB-3642.txt
+7e5b8c0d9afc8de85ba1abfd740abeb1  bd2005-11-12-d1\Verschiedene - Track 01.flac
+7198ff7e6fbaadbcfce358be446e36f6  bd2005-11-12-d1\Verschiedene - Track 02.flac
+0dcc1b192b92de0ac7dc294aebcef86a  bd2005-11-12-d1\Verschiedene - Track 03.flac
+c9bd6a39ab2b5d09a5249407d0076c67  bd2005-11-12-d1\Verschiedene - Track 04.flac
+658fd5f8be87ecc14aad97848385b5b8  bd2005-11-12-d1\Verschiedene - Track 05.flac
+88d2befbfa99349de8b1605bab379c4f  bd2005-11-12-d1\Verschiedene - Track 06.flac
+4761515833979d68e4bc423114fbc95a  bd2005-11-12-d1\Verschiedene - Track 07.flac
+d0f653062834b69ad3adc8d723ac5db8  bd2005-11-12-d1\Verschiedene - Track 08.flac
+5e6927c7f193612ac069740171b8e80e  bd2005-11-12-d1\Verschiedene - Track 09.flac
+b89c3c268b053ff15a2616826ba440c2  bd2005-11-12-d1\bd2005-11-12-d1.md5
+8406886b75bdf97cb0fe8d7ac5272b89  bd2005-11-12-d2\Bob Dylan - Track 01.flac
+b1cfe5d79113e70c1289a31086343cd0  bd2005-11-12-d2\Bob Dylan - Track 02.flac
+6458d8c15d03fbd58be06ffa187a1eb6  bd2005-11-12-d2\Bob Dylan - Track 03.flac
+10dd98485d7c2ab30fbd1c924662eaa4  bd2005-11-12-d2\Bob Dylan - Track 04.flac
+7cf90a0c87bc28d8cb028b6130f77742  bd2005-11-12-d2\Bob Dylan - Track 05.flac
+3905f0eb31b8bbb3d2d951118a9b0eff  bd2005-11-12-d2\Bob Dylan - Track 06.flac
+c7d0948c0bf5f530d054596b481e1338  bd2005-11-12-d2\Bob Dylan - Track 07.flac
+b8ead5a33d3abb7fb6765d695fb924af  bd2005-11-12-d2\bd2005-11-12-d2.md5
+9cebaf2cc65b53a00127ee327b3f37f8  bd2005-11-12-HV.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-12-hv.flacf\bd2005-11-12-d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:749fc165b155fae5034041910e33c87d
+Bob Dylan - Track 02.flac:88830061e27e2ae32ad629e0717a8f93
+Bob Dylan - Track 03.flac:28fe547c2c1293e5cb3576677092922f
+Bob Dylan - Track 04.flac:ca10d93db7819befb59bdc21839c87f4
+Bob Dylan - Track 05.flac:47cbb1261c69c8601e4fef58619f4b5b
+Bob Dylan - Track 06.flac:1a6a145d86feb80643af31e9b96cb11c
+Bob Dylan - Track 07.flac:1b56b3a91b7ea9a9645b4f6a5c561c6c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-12-hv.flacf\bd2005-11-12-d1 
+=================== 
+=================== 
+=================== 
+Verschiedene - Track 01.flac:fbcd4248049f16a898fe00c2a1f26f68
+Verschiedene - Track 02.flac:cf935150711f18024d4668fbecbb4618
+Verschiedene - Track 03.flac:8b2dc48711ab9d362a227f57cd1578a4
+Verschiedene - Track 04.flac:f2a4f0aca7a1a675a9ac5908d0da0046
+Verschiedene - Track 05.flac:df4a92d4fcdfcc3434e5501f04516046
+Verschiedene - Track 06.flac:dd299b8646b43305834b55f05f064a96
+Verschiedene - Track 07.flac:97e839216125832d6054b564c7d1f1e7
+Verschiedene - Track 08.flac:b3862f5743e6ea21d8d1cdb0cf5fb701
+Verschiedene - Track 09.flac:61ce11938f9dfab2d951a1b060428a63
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-12-hv.flacf\bd2005-11-12-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:42.57       71046908 B   ---   --   ---xx   flac  0.6263  Bob Dylan - Track 01.flac
+     7:46.46       82310636 B   ---   --   ---xx   flac  0.5972  Bob Dylan - Track 02.flac
+     5:38.60       59764364 B   ---   --   ---xx   flac  0.5736  Bob Dylan - Track 03.flac
+     6:22.28       67450700 B   ---   --   ---xx   flac  0.5716  Bob Dylan - Track 04.flac
+    10:45.26      113839196 B   ---   --   ---xx   flac  0.6036  Bob Dylan - Track 05.flac
+     7:03.44       74720732 B   ---   --   ---xx   flac  0.5653  Bob Dylan - Track 06.flac
+     5:22.12       56829068 B   ---   --   ---xx   flac  0.6378  Bob Dylan - Track 07.flac
+    49:41.48      525961604 B                            0.5964  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-12-hv.flacf\bd2005-11-12-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:11.72       65613788 B   ---   --   ---xx   flac  0.6406  Verschiedene - Track 01.flac
+     5:28.40       57953324 B   ---   --   ---xx   flac  0.5804  Verschiedene - Track 02.flac
+     5:27.74       57856892 B   ---   --   ---xx   flac  0.6311  Verschiedene - Track 03.flac
+     5:46.19       61079132 B   ---   --   ---xx   flac  0.6484  Verschiedene - Track 04.flac
+     6:56.05       73394204 B   ---   --   ---xx   flac  0.5044  Verschiedene - Track 05.flac
+     7:57.73       84314540 B   ---   --   ---xx   flac  0.6361  Verschiedene - Track 06.flac
+     6:49.72       72316988 B   ---   --   ---xx   flac  0.4848  Verschiedene - Track 07.flac
+     8:45.13       92640620 B   ---   --   ---xx   flac  0.6223  Verschiedene - Track 08.flac
+     5:56.42       62897228 B   ---   --   ---xx   flac  0.5444  Verschiedene - Track 09.flac
+    59:20.35      628066716 B                            0.5881  (9 files)
+=================== 
+=================== 
+=================== 

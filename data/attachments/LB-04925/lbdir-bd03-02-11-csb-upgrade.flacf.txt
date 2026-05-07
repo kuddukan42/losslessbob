@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-02-11-csb-upgrade.flacf 
+=================== 
+=================== 
+=================== 
+687d8743f002a34120635860a6b51638  BOB 2003-02-11 d1t01.flac
+42064b393bdfdc3d1c5947c862a20707  BOB 2003-02-11 d1t02.flac
+7280a07c743330027f488e5272e3a2bb  BOB 2003-02-11 d1t03.flac
+c7c363129b0a6335c7531f7161b114e8  BOB 2003-02-11 d1t04.flac
+fab712837ea822742868d554fb67281f  BOB 2003-02-11 d1t05.flac
+173a79e042b6facbc24ec3f622bfb1cf  BOB 2003-02-11 d1t06.flac
+b7a0693eb464dfb9c68b706eaccefdec  BOB 2003-02-11 d1t07.flac
+394d7a6b18919a18f4e935efbbd9fb74  BOB 2003-02-11 d1t08.flac
+0a25445b9ab109f323f3f6f28a3ae8a3  BOB 2003-02-11 d1t09.flac
+506fc269a48a017e572bfd085213c464  BOB 2003-02-11 d1t10.flac
+836aee21b148582c23d18117f94a918c  BOB 2003-02-11 d1t11.flac
+6d397a42d668fa6789d0116c7bdff698  BOB 2003-02-11 d2t01.flac
+eb9f8ac6a8e4f6e1ddab621b688488d1  BOB 2003-02-11 d2t02.flac
+09d334d31bfda42a45840a6452ccd3c1  BOB 2003-02-11 d2t03.flac
+2ba44faef1cdb18dae532a27f5dfebf3  BOB 2003-02-11 d2t04.flac
+dfdfa301668f165da44ceaa1280f500f  BOB 2003-02-11 d2t05.flac
+15440592ec8e504527f6fc0632de518a  BOB 2003-02-11 d2t06.flac
+7b8ff7ecd71dc6f79c4b0576dd5664ef  BOB 2003-02-11 d2t07.flac
+8d96a102e02006d44b4749dfca8e11a5  BOB 2003-02-11 d2t08.flac
+5e69c25a8fb713496c6074be7acfbcdd  BOB 2003-02-11 d2t09.flac
+69fdafe9cb45afcb7faec76fe97faeec  BOB 2003-02-11 d2t10.flac
+22ad34beb22b461c25047ca640db918c  Bob Brisbane 2003.txt
+103c29147a545c13a663063da2ab9237  BOB DYLAN Brisbane 2003.ffp
+13321269fdbf07f38928eb6fa40c55dd  Brisbane ticket.JPG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-02-11-csb-upgrade.flacf 
+=================== 
+=================== 
+=================== 
+BOB 2003-02-11 d1t01.flac:2f86521b9f9d92de7db195149cc7418b
+BOB 2003-02-11 d1t02.flac:32d834f091eace2a5a38933eb8e050c8
+BOB 2003-02-11 d1t03.flac:9d81aed25aa8495ac4b659b5851e8109
+BOB 2003-02-11 d1t04.flac:2cc01c6661d5d2d9cdbcb32de41c6112
+BOB 2003-02-11 d1t05.flac:8b93fed46c0d1ef65cea06b23bd7f9a2
+BOB 2003-02-11 d1t06.flac:c976a368bb5602512db222146607376f
+BOB 2003-02-11 d1t07.flac:311d217f35ad37c5f8b84c4e8c6882b3
+BOB 2003-02-11 d1t08.flac:c905297c269f4e9b0d2cccd1c6ce5ac9
+BOB 2003-02-11 d1t09.flac:303e432fe60cffaedc101c3c56024adc
+BOB 2003-02-11 d1t10.flac:7dfd5dcbbe427691f449902605ffff7e
+BOB 2003-02-11 d1t11.flac:b7836de0db67548e1aa8afad7ff13369
+BOB 2003-02-11 d2t01.flac:586b742b6e866de64e6989d34ce2e460
+BOB 2003-02-11 d2t02.flac:b05041790c79783cee3d3a7c73f72253
+BOB 2003-02-11 d2t03.flac:1ced40c754ae02a814b48cbac587a8d9
+BOB 2003-02-11 d2t04.flac:e2646bc40c47b7b3430bab54ce12833c
+BOB 2003-02-11 d2t05.flac:53d3c930097fcf0e6d9e7074bbd6e97d
+BOB 2003-02-11 d2t06.flac:989c9c5f385844b4ddfeb8268f0b8c6d
+BOB 2003-02-11 d2t07.flac:24f8f91a7dc1a3dd27872eefba34629b
+BOB 2003-02-11 d2t08.flac:5cfa1dde870a57b5841e168744059fc7
+BOB 2003-02-11 d2t09.flac:b8af7918a90e28f631849b664b90deb2
+BOB 2003-02-11 d2t10.flac:d5ae8b730134a90517a29cc861876fdf
+=================== 
+=================== 
+=================== 
+=== shntool for: bd03-02-11-csb-upgrade.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.49       13874492 B   ---   --   ---xx   flac  0.5463  BOB 2003-02-11 d1t01.flac
+     5:31.05       58400204 B   ---   --   ---xx   flac  0.6455  BOB 2003-02-11 d1t02.flac
+     7:17.11       77112716 B   ---   --   ---xx   flac  0.6329  BOB 2003-02-11 d1t03.flac
+     6:22.56       67516556 B   ---   --   ---xx   flac  0.6347  BOB 2003-02-11 d1t04.flac
+     5:31.06       58402556 B   ---   --   ---xx   flac  0.6227  BOB 2003-02-11 d1t05.flac
+     7:02.20       74487884 B   ---   --   ---xx   flac  0.6321  BOB 2003-02-11 d1t06.flac
+     6:01.50       63798044 B   ---   --   ---xx   flac  0.6526  BOB 2003-02-11 d1t07.flac
+     9:24.55       99619004 B   ---   --   ---xx   flac  0.6139  BOB 2003-02-11 d1t08.flac
+     5:14.29       55457852 B   ---   --   ---xx   flac  0.6286  BOB 2003-02-11 d1t09.flac
+     8:13.71       87132236 B   ---   --   ---xx   flac  0.6367  BOB 2003-02-11 d1t10.flac
+     6:56.02       73387148 B   ---   --   ---xx   flac  0.6035  BOB 2003-02-11 d1t11.flac
+     7:22.04       77978252 B   ---   --   ---xx   flac  0.6397  BOB 2003-02-11 d2t01.flac
+     9:02.72       95778188 B   ---   --   ---xx   flac  0.6363  BOB 2003-02-11 d2t02.flac
+     5:27.12       57711068 B   ---   --   ---xx   flac  0.6053  BOB 2003-02-11 d2t03.flac
+     7:50.04       82917452 B   ---   --   ---xx   flac  0.6264  BOB 2003-02-11 d2t04.flac
+     5:03.19       53493932 B   ---   --   ---xx   flac  0.5565  BOB 2003-02-11 d2t05.flac
+     8:14.06       87155756 B   ---   --   ---xx   flac  0.6404  BOB 2003-02-11 d2t06.flac
+     2:20.19       24740732 B   ---   --   ---xx   flac  0.5947  BOB 2003-02-11 d2t07.flac
+     9:22.09       99158012 B   ---   --   ---xx   flac  0.5655  BOB 2003-02-11 d2t08.flac
+     6:44.64       71416172 B   ---   --   ---xx   flac  0.6243  BOB 2003-02-11 d2t09.flac
+     1:41.00       17816444 B   ---   --   ---xx   flac  0.5426  BOB 2003-02-11 d2t10.flac
+   132:01.38     1397354700 B                            0.6198  (21 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-11-05.shnf 
+=================== 
+=================== 
+=================== 
+030ebd1a52ad62e04f3247469639eef0  1.md5
+da5fae3f617fb270f4ddb490e504dc8f  101 New Morning.shn
+3288be67d37ba39fb046f4f41cea9808  102 Lay Lady Lay.shn
+fff12fe99a29f1d5071ee0db939f747f  103 Watching The River Flow.shn
+83034ddd6f1a6e90fac6ec22f955d388  104 Simple Twist Of Fate.shn
+4fb898f27c371e0ca8a0e0bbe8b325ea  105 I'll Be Your Baby Tonight.shn
+fc4b1d42161869327982acbf953018dd  106 Gotta Serve Somebody.shn
+5335fa448a865937c6c9efab289a6d57  107 You Don't Know Me.shn
+d8f8ea008dff2f7251ae1f3e76832531  108 All Along The Watchtower.shn
+997012a025ab32310247351ca19aa08f  109 Trail Of The Buffalo.shn
+3d00219f6efb4fb10dc80cd01e43fa8f  110 It's All Over Now, Baby Blue.shn
+5f160ae02d0f0cdb0e0f09346b4bf52a  2.md5
+6afd2a182d8c18b7cc52f9515e0d8abf  201 Mr Tambourine Man.shn
+b9c62790daa9109155099f561ec0103d  202 That Lucky Old Sun.shn
+17347c236990e374ce2eb76af595f6ac  203 Rainy Day Womenn 12-35.shn
+f8dce41f1e64bcf350326a666eae4ad0  204 Shooting Star.shn
+4192ea33015c8435a1736cf04535bd56  205 Everything Is Broken.shn
+e6978cd741c991a75b7321d198c115bc  206 I Believe In You.shn
+78eb5a61a3ed281aafc93246da13d4a4  207 Man In The Long Black Coat.shn
+32d7f52208a811a6f566c2580ed2abc6  208 Maggie's Farm.shn
+6e03713132396aa05eb7bf057cad5063  bd91-11-05.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-11-05.shnf 
+=================== 
+=================== 
+=================== 
+52f5db6f0356fba3e53f0a820aec005b  [shntool]  101_New_Morning.wav
+1bec34941de43cf642fbdec49986180d  [shntool]  102_Lay_Lady_Lay.wav
+d2371989085b88940aa19c211cfacfe6  [shntool]  103_Watching_The_River_Flow.wav
+bf7b45952c3e7204c571864acfcc4656  [shntool]  104_Simple_Twist_Of_Fate.wav
+ca7700fe5ace6c1bfb0b1e55bfdcc99c  [shntool]  105_I_ll_Be_Your_Baby_Tonight.wav
+47a30a72c0dab213c7ff667b46172e1d  [shntool]  106_Gotta_Serve_Somebody.wav
+feb3387eeeb1d01cc39821a946c9e296  [shntool]  107_You_Don_t_Know_Me.wav
+ab36d5bf056f36e95385a1b439cc3eb9  [shntool]  108_All_Along_The_Watchtower.wav
+99319133f080815eef14514c0f3b1d97  [shntool]  109_Trail_Of_The_Buffalo.wav
+367845df269c26738225e6a63b715a9e  [shntool]  110_It_s_All_Over_Now,_Baby_Blue.wav
+e3a013b24bb223be7ef328205921bef3  [shntool]  201_Mr_Tambourine_Man.wav
+df4d6118c38c424742ac439d58cdea88  [shntool]  202_That_Lucky_Old_Sun.wav
+7de2e7584414786cd6470d22e8a86acf  [shntool]  203_Rainy_Day_Womenn_12-35.wav
+341352539343e60ae9021b48590b20b4  [shntool]  204_Shooting_Star.wav
+7d878e97c93a28e6531d98bb6323462b  [shntool]  205_Everything_Is_Broken.wav
+e711a0e4603b370fd5518fd2f7883b70  [shntool]  206_I_Believe_In_You.wav
+6a4dc043f6353d48088a4bd5f5d82069  [shntool]  207_Man_In_The_Long_Black_Coat.wav
+f60a16ce829017e88ebfb285196d4fcb  [shntool]  208_Maggie_s_Farm.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-11-05.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.52       44045948 B   ---   --   -----    wav  1.0000  101_New_Morning.wav
+     5:37.74       59620892 B   ---   --   -----    wav  1.0000  102_Lay_Lady_Lay.wav
+     4:46.45       50556284 B   ---   --   -----    wav  1.0000  103_Watching_The_River_Flow.wav
+     8:21.41       88472876 B   ---   --   -----    wav  1.0000  104_Simple_Twist_Of_Fate.wav
+     4:22.54       46343852 B   ---   --   -----    wav  1.0000  105_I_ll_Be_Your_Baby_Tonight.wav
+     5:19.67       56429228 B   ---   --   -----    wav  1.0000  106_Gotta_Serve_Somebody.wav
+     4:29.72       47620988 B   ---   --   -----    wav  1.0000  107_You_Don_t_Know_Me.wav
+     4:57.34       52470812 B   ---   --   -----    wav  1.0000  108_All_Along_The_Watchtower.wav
+     5:32.69       58727132 B   ---   --   -----    wav  1.0000  109_Trail_Of_The_Buffalo.wav
+     7:09.13       75706220 B   ---   --   -----    wav  1.0000  110_It_s_All_Over_Now,_Baby_Blue.wav
+     6:39.38       70473020 B   ---   --   -----    wav  1.0000  201_Mr_Tambourine_Man.wav
+     4:34.22       48385388 B   ---   --   -----    wav  1.0000  202_That_Lucky_Old_Sun.wav
+     6:18.39       66770972 B   ---   --   -----    wav  1.0000  203_Rainy_Day_Womenn_12-35.wav
+     4:57.34       52470812 B   ---   --   -----    wav  1.0000  204_Shooting_Star.wav
+     4:15.36       45066716 B   ---   --   -----    wav  1.0000  205_Everything_Is_Broken.wav
+     8:16.35       87576764 B   ---   --   -----    wav  1.0000  206_I_Believe_In_You.wav
+     7:03.16       74654876 B   ---   --   -----    wav  1.0000  207_Man_In_The_Long_Black_Coat.wav
+     6:15.00       66150044 B   ---   --   -----    wav  1.0000  208_Maggie_s_Farm.wav
+   103:07.66     1091542824 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

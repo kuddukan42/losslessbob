@@ -1,0 +1,542 @@
+Below is information from shntool on the FLAC files in this directory.
+First is the output of  shntool len  in column form.
+After that is the output of  shntool info,  one file at a time.
+
+In the table, a - means OK; an x means not applicable or not determined. 
+Other letters indicate potential problems.
+
+A b in the CDR column indicates an SBE (sector boundary error)
+An h in the WAVE column indicates a non-canonical header
+An e in the WAVE column indicates extra RIFF chunks
+
+A c in the CDR column indicates audio is not CD quality
+An s in the CDR column indicates audio is too short to burn
+An i in the probs column indicates an inconsistent header
+
+    length     expanded size   cdr  WAVE  probs   filename
+     0:44.13       7792220     ---   --    -xx    d1Track01.flac
+     2:45.46      29214236     ---   --    -xx    d1Track02.flac
+     7:22.27      78032348     ---   --    -xx    d1Track03.flac
+     5:24.74      57327692     ---   --    -xx    d1Track04.flac
+     8:19.09      88044812     ---   --    -xx    d1Track05.flac
+     7:51.74      83258492     ---   --    -xx    d1Track06.flac
+     3:40.06      38822156     ---   --    -xx    d1Track07.flac
+     6:59.10      73935164     ---   --    -xx    d1Track08.flac
+     3:34.11      37775516     ---   --    -xx    d1Track09.flac
+     6:18.57      66813308     ---   --    -xx    d1Track10.flac
+     9:27.35     100101164     ---   --    -xx    d1Track11.flac
+     6:57.05      73570604     ---   --    -xx    d2Track01.flac
+     8:45.48      92722940     ---   --    -xx    d2Track02.flac
+     5:14.57      55523708     ---   --    -xx    d2Track03.flac
+     7:19.16      77477276     ---   --    -xx    d2Track04.flac
+     5:13.70      55377884     ---   --    -xx    d2Track05.flac
+     5:38.50      59740844     ---   --    -xx    d2Track06.flac
+     1:08.24      12051692     ---   --    -xx    d2Track07.flac
+   102:45.32    1087582056 B                      (totals for 18 files, 0.5235 overall compression ratio)
+
+*******************************************************************************
+Next is shntool information in long form, one file at a time.
+-------------------------------------------------------------------------------
+file name:                    d1Track01.flac
+handled by:                   flac format module
+length:                       0:44.13
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    7792176 bytes
+chunk size:                   7792212 bytes
+total size (chunk size + 8):  7792220 bytes
+actual file size:             3109648 (compressed)
+compression ratio:            0.3991
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track02.flac
+handled by:                   flac format module
+length:                       2:45.46
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    29214192 bytes
+chunk size:                   29214228 bytes
+total size (chunk size + 8):  29214236 bytes
+actual file size:             16919385 (compressed)
+compression ratio:            0.5791
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track03.flac
+handled by:                   flac format module
+length:                       7:22.27
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    78032304 bytes
+chunk size:                   78032340 bytes
+total size (chunk size + 8):  78032348 bytes
+actual file size:             43041303 (compressed)
+compression ratio:            0.5516
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track04.flac
+handled by:                   flac format module
+length:                       5:24.74
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    57327648 bytes
+chunk size:                   57327684 bytes
+total size (chunk size + 8):  57327692 bytes
+actual file size:             29145069 (compressed)
+compression ratio:            0.5084
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track05.flac
+handled by:                   flac format module
+length:                       8:19.09
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    88044768 bytes
+chunk size:                   88044804 bytes
+total size (chunk size + 8):  88044812 bytes
+actual file size:             50263910 (compressed)
+compression ratio:            0.5709
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track06.flac
+handled by:                   flac format module
+length:                       7:51.74
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    83258448 bytes
+chunk size:                   83258484 bytes
+total size (chunk size + 8):  83258492 bytes
+actual file size:             41254034 (compressed)
+compression ratio:            0.4955
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track07.flac
+handled by:                   flac format module
+length:                       3:40.06
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    38822112 bytes
+chunk size:                   38822148 bytes
+total size (chunk size + 8):  38822156 bytes
+actual file size:             21242128 (compressed)
+compression ratio:            0.5472
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track08.flac
+handled by:                   flac format module
+length:                       6:59.10
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    73935120 bytes
+chunk size:                   73935156 bytes
+total size (chunk size + 8):  73935164 bytes
+actual file size:             38123714 (compressed)
+compression ratio:            0.5156
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track09.flac
+handled by:                   flac format module
+length:                       3:34.11
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    37775472 bytes
+chunk size:                   37775508 bytes
+total size (chunk size + 8):  37775516 bytes
+actual file size:             21883474 (compressed)
+compression ratio:            0.5793
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track10.flac
+handled by:                   flac format module
+length:                       6:18.57
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    66813264 bytes
+chunk size:                   66813300 bytes
+total size (chunk size + 8):  66813308 bytes
+actual file size:             29999118 (compressed)
+compression ratio:            0.4490
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d1Track11.flac
+handled by:                   flac format module
+length:                       9:27.35
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    100101120 bytes
+chunk size:                   100101156 bytes
+total size (chunk size + 8):  100101164 bytes
+actual file size:             53899671 (compressed)
+compression ratio:            0.5385
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d2Track01.flac
+handled by:                   flac format module
+length:                       6:57.05
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    73570560 bytes
+chunk size:                   73570596 bytes
+total size (chunk size + 8):  73570604 bytes
+actual file size:             40757935 (compressed)
+compression ratio:            0.5540
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d2Track02.flac
+handled by:                   flac format module
+length:                       8:45.48
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    92722896 bytes
+chunk size:                   92722932 bytes
+total size (chunk size + 8):  92722940 bytes
+actual file size:             44003934 (compressed)
+compression ratio:            0.4746
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d2Track03.flac
+handled by:                   flac format module
+length:                       5:14.57
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    55523664 bytes
+chunk size:                   55523700 bytes
+total size (chunk size + 8):  55523708 bytes
+actual file size:             30762464 (compressed)
+compression ratio:            0.5540
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d2Track04.flac
+handled by:                   flac format module
+length:                       7:19.16
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    77477232 bytes
+chunk size:                   77477268 bytes
+total size (chunk size + 8):  77477276 bytes
+actual file size:             36752846 (compressed)
+compression ratio:            0.4744
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d2Track05.flac
+handled by:                   flac format module
+length:                       5:13.70
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    55377840 bytes
+chunk size:                   55377876 bytes
+total size (chunk size + 8):  55377884 bytes
+actual file size:             32231350 (compressed)
+compression ratio:            0.5820
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d2Track06.flac
+handled by:                   flac format module
+length:                       5:38.50
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    59740800 bytes
+chunk size:                   59740836 bytes
+total size (chunk size + 8):  59740844 bytes
+actual file size:             32206754 (compressed)
+compression ratio:            0.5391
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a
+-------------------------------------------------------------------------------
+file name:                    d2Track07.flac
+handled by:                   flac format module
+length:                       1:08.24
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    12051648 bytes
+chunk size:                   12051684 bytes
+total size (chunk size + 8):  12051692 bytes
+actual file size:             3802015 (compressed)
+compression ratio:            0.3155
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  inconsistent header:        no
+  file probably truncated:    n/a
+  junk appended to file:      n/a

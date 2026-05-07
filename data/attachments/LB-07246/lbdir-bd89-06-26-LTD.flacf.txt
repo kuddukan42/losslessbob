@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-26-LTD.flacf 
+=================== 
+=================== 
+=================== 
+91a2fac763fbb488e6f28a3048109a49  1989-06-26 Patras.md5
+8b11cc82309a4b019126c84146b53cb4  Patras 89-01.flac
+e30e705be234f3a712100b97290f0ae1  Patras 89-02.flac
+b6bd8ceea95513d85391fcd143619445  Patras 89-03.flac
+f51debf0bf74522cca44198992b92383  Patras 89-04.flac
+28d0298415b60eb383b5623377488134  Patras 89-05.flac
+3b327592492901d701e42bc377df5937  Patras 89-06.flac
+8bde6379624c8281453369ddb44a58b7  Patras 89-07.flac
+17acd5d960dd01a1324d07a7d43d9637  Patras 89-08.flac
+a02bea6a885595897fb808abcf2f01b6  Patras 89-09.flac
+8a5441602875e2cc6923ca8ab1264bb7  Patras 89-10.flac
+f241aad01dd1aeb23f0d5cfccb52b0e0  Patras 89-11.flac
+5c73a553b0f4967a56d0b4b8c8affd41  Patras 89-12.flac
+bd3f205f550e1d7b7ab0c65087cac9ee  Patras 89-13.flac
+fc4f8c58cb5f980e2f14564f933bb40c  Patras 89-14.flac
+b128ac91e762b25d1874a79c13e8e068  Patras 89-15.flac
+72e796cfa3f4f17ee93f6f46d7ca13af  Patras 89-16.flac
+07df5ef25fe956af2208843bdced91e6  Patras-1989-06-26.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-26-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Patras 89-01.flac:27792b449c960a2779265634a4fb1219
+Patras 89-02.flac:665d4380bddf93c6304ce7d81676154f
+Patras 89-03.flac:a8a85cb64adbc5847ef4b3333a4760b9
+Patras 89-04.flac:6faa06ce91020b3538870b1fe88f6c00
+Patras 89-05.flac:9f7f4911e73836d2dd18c627480d62e3
+Patras 89-06.flac:befbe2355ba4ddade30845c835e788f2
+Patras 89-07.flac:39d7eed4c1084fa38e8b6657846f63b3
+Patras 89-08.flac:7b3541c2d7eac64ea1c01c66a6f8a36e
+Patras 89-09.flac:c654ea5aae8313c4861520bfc55b5687
+Patras 89-10.flac:a21698bc1442fd9a742a3db95cfd3947
+Patras 89-11.flac:32e6d0bf8f6c820b9ed80fc4fd7098a3
+Patras 89-12.flac:71d1026c3e86f8b2a52d898d15c2a4fc
+Patras 89-13.flac:9d037ca503bedc13dcdb1536f40b262c
+Patras 89-14.flac:6e7fa89f69c4d07657ce98cbf40cc349
+Patras 89-15.flac:f3d6e9d63ec1fe5b9e48c4f8b6c51418
+Patras 89-16.flac:02410dccfe8a52fd35a980c34918dcb1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-26-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:29.65       68772724 B   -b-   --   ---xx   flac  0.5766  Patras 89-01.flac
+     6:55.43       73306244 B   -b-   --   ---xx   flac  0.6043  Patras 89-02.flac
+     4:46.07       50467560 B   -b-   --   ---xx   flac  0.6338  Patras 89-03.flac
+     6:11.33       65522272 B   -b-   --   ---xx   flac  0.5971  Patras 89-04.flac
+     4:51.69       51494016 B   -b-   --   ---xx   flac  0.6178  Patras 89-05.flac
+     4:28.48       47388184 B   -b-   --   ---xx   flac  0.6164  Patras 89-06.flac
+     5:35.07       59109584 B   -b-   --   ---xx   flac  0.5606  Patras 89-07.flac
+     5:37.18       59489160 B   -b-   --   ---xx   flac  0.5708  Patras 89-08.flac
+     8:18.73       88018812 B   -b-   --   ---xx   flac  0.5482  Patras 89-09.flac
+     4:10.52       44223272 B   -b-   --   ---xx   flac  0.5646  Patras 89-10.flac
+     5:11.60       55001080 B   -b-   --   ---xx   flac  0.6224  Patras 89-11.flac
+     4:34.71       48500180 B   -b-   --   ---xx   flac  0.6231  Patras 89-12.flac
+     5:19.05       56284152 B   -b-   --   ---xx   flac  0.6000  Patras 89-13.flac
+    10:38.47      112653800 B   -b-   --   ---xx   flac  0.5337  Patras 89-14.flac
+     6:54.27       73092400 B   -b-   --   ---xx   flac  0.5577  Patras 89-15.flac
+     5:43.06       60518292 B   -b-   --   ---xx   flac  0.5612  Patras 89-16.flac
+    95:47.30     1013841732 B                            0.5814  (16 files)
+=================== 
+=================== 
+=================== 

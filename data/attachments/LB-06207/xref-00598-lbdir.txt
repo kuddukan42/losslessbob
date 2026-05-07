@@ -1,0 +1,204 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-11-16-vvr.flacf 
+=================== 
+=================== 
+=================== 
+77a5f42f42f5e532098767b359eda83c  disc 1 - november 16, early show\eac logfiles.LOG
+4e7292598142f9e2b24b3b30146afe92  disc 1 - november 16, early show\fingerprint.md5
+546a727d278422eab1b041a526698487  disc 1 - november 16, early show\Track01.flac
+73d7dccb1a4d635ebb5626c76ec48f8f  disc 1 - november 16, early show\Track02.flac
+ca992c1d9977effc31ba7a7e917a0c53  disc 1 - november 16, early show\Track03.flac
+abe63ecfb312f1831fc00e5647e78643  disc 1 - november 16, early show\Track04.flac
+f62d620633badb129406666c13e653a3  disc 1 - november 16, early show\Track05.flac
+3ac9982b605783cf41837a96306ca7f4  disc 1 - november 16, early show\Track06.flac
+93903ed6ff5a60f5916eae0eb353ca57  disc 1 - november 16, early show\Track07.flac
+a2c826705298430a848ec5653137d54e  disc 1 - november 16, early show\Track08.flac
+9d271b6c6f019cdb1755e18e16ae5de8  disc 1 - november 16, early show\Track09.flac
+390140a306dc6b61116d2a9e1a46355a  disc 1 - november 16, early show\Track10.flac
+3b710763469d1042cb0c7cfd70077393  disc 2 - november 16, late show\eac logfiles.LOG
+04f16e468379436c8c6685b04dbe2170  disc 2 - november 16, late show\fingerprint.md5
+f224ad40f707096e7f9cffc953bb62a9  disc 2 - november 16, late show\Track01.flac
+396d1cadbceba7fb0574697fcce90643  disc 2 - november 16, late show\Track02.flac
+19bb467e0db87d77fc41bdcf7f6dc863  disc 2 - november 16, late show\Track03.flac
+0ec06b186ceb6b8802375190db6363d3  disc 2 - november 16, late show\Track04.flac
+497d4622437ba1b6f6f5be8b97a3915a  disc 2 - november 16, late show\Track05.flac
+b9ceab343fc8d7940904cdec47895f2f  disc 2 - november 16, late show\Track06.flac
+e1509418ff4e0da675a3ea1697650af7  disc 2 - november 16, late show\Track07.flac
+20fd6672d2bd301e72387ac16e5d3bcf  disc 2 - november 16, late show\Track08.flac
+064620b152ba819b6dcbd49c663d506e  disc 2 - november 16, late show\Track09.flac
+80125d14570a4082ec5f148423ea445d  disc 3-november 17, early show\eac logfiles.LOG
+77384d95efe8e725bccaff10a34b213d  disc 3-november 17, early show\fingerprint.md5
+31a21f4f3093249c07769e0f94f8263e  disc 3-november 17, early show\Track01.flac
+cc19f67970c8b3cdd94b57e6b4270f8f  disc 3-november 17, early show\Track02.flac
+dc422badcf2c5c407a6d68b2d2367157  disc 3-november 17, early show\Track03.flac
+a53503efdf5174d49af43196b685c498  disc 3-november 17, early show\Track04.flac
+3772b96fe3bc8fbffee99b38f90dbee0  disc 3-november 17, early show\Track05.flac
+b5b21ed103cb01a17fc4a7a0314f70f7  disc 3-november 17, early show\Track06.flac
+27282c5ad433da9459dc195f4008f7a9  disc 3-november 17, early show\Track07.flac
+28cebaa073dfe0474df4fe321413a986  disc 3-november 17, early show\Track08.flac
+2d123a906436b5dbddb77ad95c596a63  disc 3-november 17, early show\Track09.flac
+c4984efe19cb4d9c890937b547a6829e  disc 3-november 17, early show\Track10.flac
+7b34aaafceee5f8fadd681a6b2a39312  disc 4-november 17,  late show\eac logfiles.LOG
+ab04cc97411737f65f7e2d1c6c94855d  disc 4-november 17,  late show\fingerprint.md5
+5b4bc80e1ff8ce252238eaec687bce71  disc 4-november 17,  late show\Track01.flac
+3e3a9b82445a3ec7b2bf0055143ff98b  disc 4-november 17,  late show\Track02.flac
+3736ac4a9df5fbd01cdf0680970fbb06  disc 4-november 17,  late show\Track03.flac
+f8097df00055d6f6ad32791bbc5983d2  disc 4-november 17,  late show\Track04.flac
+98753b5ecfb6f5c3147bef69d37877a7  disc 4-november 17,  late show\Track05.flac
+dd749884cb614bcacac7b3eeedc1c9a6  disc 4-november 17,  late show\Track06.flac
+afa3dbb6c0b05545f48bb3aed3a6482e  disc 4-november 17,  late show\Track07.flac
+cc9d5f7e06b18007fc4a49302f51c01d  disc 4-november 17,  late show\Track08.flac
+d30fd170f3c05c35a5320ab2c354edf5  disc 4-november 17,  late show\Track09.flac
+a384f5d531dac9288682de6a777f32a6  disc 4-november 17,  late show\Track10.flac
+0d4227e5ad50aaec4199af309af93682  disc 4-november 17,  late show\Track11.flac
+aeb8d076a09d48d9ab653d7c5cdbc6d1  text1.txt
+cf3b7279e65f57e91799ec68d375d6cc  text2.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-11-16-vvr.flacf\disc 1 - november 16, early show 
+=================== 
+=================== 
+=================== 
+track01.flac:00000000000000000000000000000000
+track02.flac:8e5ccf6dc26521ca078e3f9649589b19
+track03.flac:2bc4e968f71c28dde6c202aa62212928
+track04.flac:1d0369f00f2d68372a6932cc06104d60
+track05.flac:eaaae5b6d4aeb5b0d18b05ebce77ee1d
+track06.flac:f27dcc0d6863d60bfcd7ddd486df45ac
+track07.flac:269605471478088ef07a33da52e40a88
+track08.flac:70031456bf11af5aa4602dd882053fa4
+track09.flac:f04856517f05aba669138dc032e72740
+track10.flac:6bc4f067203d088f416c68e7d217d060
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-11-16-vvr.flacf\disc 2 - november 16, late show 
+=================== 
+=================== 
+=================== 
+track01.flac:880024bf42ab64bd71a7406b56e78c81
+track02.flac:ae8a700ee7b0b495c682f5baa2c63688
+track03.flac:a02e9c57318cfc2f47309a0467732c96
+track04.flac:907e28ce067587d8d7f91f72fa6c8bfe
+track05.flac:dc2c9a553bdb024488896439bd3f510c
+track06.flac:67b24c8d933522d78047f20b5c83077f
+track07.flac:3e2ec9cd566a90d20566a8edee2aa3ba
+track08.flac:70eaa33ee159553fa7c1b8401309fe42
+track09.flac:caa5f8f6bd7daacf3d1690deebbb0326
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-11-16-vvr.flacf\disc 3-november 17, early show 
+=================== 
+=================== 
+=================== 
+track01.flac:1d4c5c39ebe0849a94bca069ff9f4d1a
+track02.flac:478fd1451991bcd423fda57a30e4f8ce
+track03.flac:7770c4ed0de099314f17e2a8024eda81
+track04.flac:c5bea0a2db60338a709137f4c69d82f5
+track05.flac:afa1f65e219247d05f18e617528f0cd0
+track06.flac:b0d833702a1a0aab97fb22a092fed85a
+track07.flac:ebf64e2b47d9f46e2dc9a36cd9a29f0b
+track08.flac:04cb4a542a5cb67639a82ff69d0bdd6f
+track09.flac:26591030c95250b3f63aff32f750592d
+track10.flac:011088cc1f754ccf6a2e558a6f2e71ff
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-11-16-vvr.flacf\disc 4-november 17,  late show 
+=================== 
+=================== 
+=================== 
+track01.flac:26f7dd58513f3d4a5751700a1f238182
+track02.flac:8242ac9dfb6e018da005652e35173540
+track03.flac:84126cf728c559c797b5e50fe5485a0a
+track04.flac:d54cdb056fd3530dfe5cde5fd9789bca
+track05.flac:a402875ccc6fa6c208a68c6f45f02208
+track06.flac:75fef599f02c9d403760998e44190498
+track07.flac:a3471599c4b339e2d1ba9a8149106606
+track08.flac:eaa9caa0efe80a6053d368a783dbd585
+track09.flac:57580ba42aec954c7572871bc6126820
+track10.flac:ea61bebcbbe9fa3500cdd003ab2de14e
+track11.flac:4f341fbfd947ecb0fd02c9643d347dbb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16-vvr.flacf\disc 1 - november 16, early show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:50.18       51198380 B   ---   --   ---xx   flac  0.1817  Track01.flac
+     5:16.19       55787132 B   ---   --   ---xx   flac  0.6280  Track02.flac
+     4:16.18       45200780 B   ---   --   ---xx   flac  0.6183  Track03.flac
+     9:10.09       97041212 B   ---   --   ---xx   flac  0.5930  Track04.flac
+     7:59.48       84608540 B   ---   --   ---xx   flac  0.6239  Track05.flac
+     5:54.66       62600876 B   ---   --   ---xx   flac  0.5888  Track06.flac
+     6:05.57       64520108 B   ---   --   ---xx   flac  0.5970  Track07.flac
+     6:04.20       64256684 B   ---   --   ---xx   flac  0.5672  Track08.flac
+     6:06.09       64583612 B   ---   --   ---xx   flac  0.6086  Track09.flac
+     6:46.54       71745452 B   ---   --   ---xx   flac  0.5533  Track10.flac
+    62:30.18      661542776 B                            0.5645  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16-vvr.flacf\disc 2 - november 16, late show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.43       56901980 B   ---   --   ---xx   flac  0.6323  Track01.flac
+     4:47.44       50730332 B   ---   --   ---xx   flac  0.6376  Track02.flac
+     5:07.72       54324188 B   ---   --   ---xx   flac  0.6176  Track03.flac
+     8:26.15       89293724 B   ---   --   ---xx   flac  0.6241  Track04.flac
+     6:27.48       68379740 B   ---   --   ---xx   flac  0.6273  Track05.flac
+     6:10.37       65355068 B   ---   --   ---xx   flac  0.6093  Track06.flac
+     5:41.33       60230060 B   ---   --   ---xx   flac  0.5401  Track07.flac
+     6:04.40       64303724 B   ---   --   ---xx   flac  0.6020  Track08.flac
+     7:34.56       80217356 B   ---   --   ---xx   flac  0.5589  Track09.flac
+    55:43.13      589736172 B                            0.6043  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16-vvr.flacf\disc 3-november 17, early show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.54       56927852 B   ---   --   ---xx   flac  0.6432  Track01.flac
+     6:33.14       69358172 B   ---   --   ---xx   flac  0.6456  Track02.flac
+     5:11.48       54973340 B   ---   --   ---xx   flac  0.6599  Track03.flac
+     8:38.59       91514012 B   ---   --   ---xx   flac  0.6214  Track04.flac
+     5:11.27       54923948 B   ---   --   ---xx   flac  0.6268  Track05.flac
+     5:41.43       60253580 B   ---   --   ---xx   flac  0.5845  Track06.flac
+     5:47.08       61229660 B   ---   --   ---xx   flac  0.6373  Track07.flac
+     4:59.45       52849484 B   ---   --   ---xx   flac  0.5606  Track08.flac
+     6:30.29       68864252 B   ---   --   ---xx   flac  0.6265  Track09.flac
+     7:14.31       76630556 B   ---   --   ---xx   flac  0.5742  Track10.flac
+    61:10.58      647524856 B                            0.6177  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-11-16-vvr.flacf\disc 4-november 17,  late show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:21.27       56687948 B   ---   --   ---xx   flac  0.6314  Track01.flac
+     4:59.61       52887116 B   ---   --   ---xx   flac  0.6303  Track02.flac
+     7:01.50       74382044 B   ---   --   ---xx   flac  0.6495  Track03.flac
+     4:26.00       46922444 B   ---   --   ---xx   flac  0.5895  Track04.flac
+     7:18.08       77282060 B   ---   --   ---xx   flac  0.5784  Track05.flac
+     5:28.51       57979196 B   ---   --   ---xx   flac  0.5378  Track06.flac
+     7:43.35       81755564 B   ---   --   ---xx   flac  0.6311  Track07.flac
+     4:39.28       49281500 B   ---   --   ---xx   flac  0.5646  Track08.flac
+     5:58.52       63273548 B   ---   --   ---xx   flac  0.6319  Track09.flac
+     9:00.13       95286620 B   ---   --   ---xx   flac  0.5921  Track10.flac
+     5:40.44       60079532 B   ---   --   ---xx   flac  0.5957  Track11.flac
+    67:37.69      715817572 B                            0.6043  (11 files)
+=================== 
+=================== 
+=================== 

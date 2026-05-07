@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-09-fendert.flacf 
+=================== 
+=================== 
+=================== 
+cd895a8d261dd17c0e4e6ebc97518640  101 Higway 61 Rivisited.flac
+ffedd4920228209c6f137624a5d7c38d  102 Jokerman.flac
+4c8aad701d0afb96e06f56a1ebf71511  103 All Along the Watchtower.flac
+3d7b0d4ae303614ec9ad8357e2d2a0c9  104 Just Like a Woman.flac
+c673017b02e285e7ab84f3a555cf4560  105 Maggies Farm.flac
+1bcc7b717a5f03e28e9fbe9aee60af2d  106 I and I.flac
+ff60b06f55412e1eee603a83f50784d1  107 License to Kill.flac
+fd7a1beba03defa7004983f4f1ddd877  108 Mr Tambourine Man.flac
+62abfa7dbb03ffdf00dbd2848efbaf4f  109 It Ain't Me Babe.flac
+bbb7615976e28c6c12fa5bf36f3800c5  110 It's Alright Ma.flac
+b9b63e2474bde6ff441885128efd5981  111 Its All Over Now Baby Blue.flac
+9b224d8a2994ed2950f379fd34191407  112 Masters of War.flac
+136d6d2ff5287cf4e50499f88d914a01  201 Ballad of a Thin Man.flac
+c0af751c74f174452d26e8952c1bdde4  202 When You Gonna Wake Up.flac
+813eb0b0573f180fd9c4054eaabb2aa8  203 Every Grain of Sand.flac
+0a7a6d8fea9714dcf7b6dc31bdde701c  204 Simple Twist of Fate.flac
+9a838e61b7154f3e8bfe17d3fcb9384d  205 Like a Rolling Stone.flac
+e875e752a5bd57ecd9f4062da9becaf5  206 Tangled Up IN Blue.flac
+5d33d0972f2bf594d0c080d2858c378e  207 Dont Think Twice.flac
+795e1f44752aee95306739bfa434211a  208 Blowing in the Wind.flac
+a30b11ea55393389fbd0f826b83b5f23  209 Tombstone Blues.flac
+b6395479b8768aa8e9dcd8214ca65eca  210 Why Do I Have To Choose.flac
+4c4d53059915d1d30647ed065e945889  211 Love Minus Zero - No Limit.flac
+3643e145e493c975af8cd0ffd627225f  212 The Times They Are A Changing.flac
+929b0322cc1cc5c09780a1d6b10e4fcd  bd84-06-09-fendert.txt
+7c543a1dafdd44acf86b930492afbfa0  Bob Dylan 9 Gothenburg 6-9-84.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-09-fendert.flacf 
+=================== 
+=================== 
+=================== 
+101 Higway 61 Rivisited.flac:e7ed1bd5fa0615bebefc7d87e6944850
+102 Jokerman.flac:41b235dd2f78a77148a3375285c9a317
+103 All Along the Watchtower.flac:0b8872f9e482c3b0c88885ce361e0d98
+104 Just Like a Woman.flac:76bc53b85c60a2b217909e6bbde9c2b0
+105 Maggies Farm.flac:1010308706a45f4ade44a0cc6909a537
+106 I and I.flac:2fff2c5d93be44a1ba283417f8dc1be9
+107 License to Kill.flac:c5324662218b7cb2f7d114c697aa3892
+108 Mr Tambourine Man.flac:9288808eb6bf1f22f892bf63de3a297d
+109 It Ain't Me Babe.flac:7e0f283b19f24e38c8959750f3517a62
+110 It's Alright Ma.flac:77275be169080edc65f96df73be7a1c0
+111 Its All Over Now Baby Blue.flac:13873dea5bc52111206125681394e4e4
+112 Masters of War.flac:87d15cc0ba8b9a8ea5601a927ef47915
+201 Ballad of a Thin Man.flac:32e87b8533eca7ce00cd72c8f37fbe57
+202 When You Gonna Wake Up.flac:9e5663e94c08f1f7448bbd97cab380c2
+203 Every Grain of Sand.flac:e4a83030a1c77732b84fba190d4f92e4
+204 Simple Twist of Fate.flac:030007acbfc0184b40a88bbd8a01cef3
+205 Like a Rolling Stone.flac:2e6a583de003c53005b32bc233d025ab
+206 Tangled Up IN Blue.flac:58be9ef73002c7a61e60d7018e61460e
+207 Dont Think Twice.flac:cce09731b22ee8387632feb06bdce0b1
+208 Blowing in the Wind.flac:fee62ef0022f1340f8026c7686b7f711
+209 Tombstone Blues.flac:cc1d606c6057e557577401d362d9ad18
+210 Why Do I Have To Choose.flac:9c4bed0925ac8e7fe2cbb61766cccdcf
+211 Love Minus Zero - No Limit.flac:ef4fa5e6908a7f0229bb8ad9b329423b
+212 The Times They Are A Changing.flac:4bc81834b4ddfc4b199221f9b7ab8bac
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-09-fendert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:41.58       49704860 B   ---   --   ---xx   flac  0.5723  101 Higway 61 Rivisited.flac
+     6:06.42       64661228 B   ---   --   ---xx   flac  0.5479  102 Jokerman.flac
+     5:11.44       54963932 B   ---   --   ---xx   flac  0.5706  103 All Along the Watchtower.flac
+     5:59.26       63388796 B   ---   --   ---xx   flac  0.5355  104 Just Like a Woman.flac
+     3:54.30       41348204 B   ---   --   ---xx   flac  0.5649  105 Maggies Farm.flac
+     6:01.30       63751004 B   ---   --   ---xx   flac  0.5284  106 I and I.flac
+     3:24.72       36154988 B   ---   --   ---xx   flac  0.5247  107 License to Kill.flac
+     5:07.11       54180716 B   ---   --   ---xx   flac  0.4993  108 Mr Tambourine Man.flac
+     5:37.37       59533868 B   ---   --   ---xx   flac  0.5182  109 It Ain't Me Babe.flac
+     6:25.10       67937564 B   ---   --   ---xx   flac  0.5274  110 It's Alright Ma.flac
+     5:49.70       61728284 B   ---   --   ---xx   flac  0.6293  111 Its All Over Now Baby Blue.flac
+     5:26.51       57626396 B   ---   --   ---xx   flac  0.5808  112 Masters of War.flac
+     4:32.69       48143132 B   ---   --   ---xx   flac  0.5600  201 Ballad of a Thin Man.flac
+     4:00.28       42401900 B   ---   --   ---xx   flac  0.5112  202 When You Gonna Wake Up.flac
+     5:40.05       59987804 B   ---   --   ---xx   flac  0.5198  203 Every Grain of Sand.flac
+     4:18.49       45626492 B   ---   --   ---xx   flac  0.5186  204 Simple Twist of Fate.flac
+     5:57.35       63057164 B   ---   --   ---xx   flac  0.5559  205 Like a Rolling Stone.flac
+     6:54.09       73050812 B   ---   --   ---xx   flac  0.5237  206 Tangled Up IN Blue.flac
+     4:54.50       51979244 B   ---   --   ---xx   flac  0.5262  207 Dont Think Twice.flac
+     4:26.02       46927148 B   ---   --   ---xx   flac  0.5066  208 Blowing in the Wind.flac
+     4:50.16       51193676 B   ---   --   ---xx   flac  0.5688  209 Tombstone Blues.flac
+     4:22.01       46219196 B   ---   --   ---xx   flac  0.5345  210 Why Do I Have To Choose.flac
+     3:30.13       37074620 B   ---   --   ---xx   flac  0.5347  211 Love Minus Zero - No Limit.flac
+     4:31.70       47969084 B   ---   --   ---xx   flac  0.5330  212 The Times They Are A Changing.flac
+   121:45.03     1288610112 B                            0.5420  (24 files)
+=================== 
+=================== 
+=================== 

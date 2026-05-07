@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-30_Tampa 
+=================== 
+=================== 
+=================== 
+c12b2ac328dd7e5c8c31642e86d54f8e  bd03-07-30.txt
+73a3947e7203bb5ba27a8b98a9d10c8e  bd2003-07-30_01.shn
+3c9a8a5257dd2e9c55b80a550b0ea476  bd2003-07-30_02.shn
+e8de90fc738e352a6381bd8a872fbc5d  bd2003-07-30_03.shn
+61a30531c401c6765c11a3a7920a8b62  bd2003-07-30_04.shn
+483c8286f04725d40d8c2963581e613b  bd2003-07-30_05.shn
+ab232d6202af677035b6f2df2ad6ee49  bd2003-07-30_06.shn
+3069dfa4ad37fb93c9f5019302f72612  bd2003-07-30_07.shn
+df6ff5108280c9d068e6631a510bdf23  bd2003-07-30_08.shn
+d36922011d98fa9edc09f7b88a81be6b  bd2003-07-30_09.shn
+2b6194b6dac2fc4213d32c324ced8c17  bd2003-07-30_10.shn
+85bbe712fe9ac1dce6d823197c8f3b5c  bd2003-07-30_11.shn
+ac235191335fb0098615822c1afc37e0  dylan 2003-07-30 tampa.md5
+2b2a9dbd36bb7cbb6b11ffc0c31c69cf  dylan 2003-07-30 tampa.txt
+d08eed893b446b90f79b03f37408d94b  Dylan-Dead Set\01 07-30-03 Tampa Friend of the Devil.shn
+5d0e08788767b7b4661849cd3f9ba6e1  Dylan-Dead Set\02 07-30-03 Tampa Gotta Serve Somebody.shn
+c2f073074980b63eb2ea8d74491d9463  Dylan-Dead Set\03 07-30-03 Tampa  Like a Rolling Stone.shn
+75d6674b4bb01f487601a41f59d3b421  Dylan-Dead Set\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-30_Tampa\Dylan-Dead Set 
+=================== 
+=================== 
+=================== 
+1d41d7fcb745499e7934e764c80b3680  [shntool]  01_07-30-03_Tampa_Friend_of_the_Devil.wav
+522046537323feb67da29a39dca7ea9e  [shntool]  02_07-30-03_Tampa_Gotta_Serve_Somebody.wav
+ad5664926e9cd3277ce8de55175d32bc  [shntool]  03_07-30-03_Tampa__Like_a_Rolling_Stone.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-30_Tampa\ 
+=================== 
+=================== 
+=================== 
+9ba9777fbe1d5890d4c314b592eaa994  [shntool]  bd2003-07-30_01.wav
+9144c2dc8f3285ea73bf65c6b6a97d17  [shntool]  bd2003-07-30_02.wav
+f80b311bd0a242e8364bb8a73b635c16  [shntool]  bd2003-07-30_03.wav
+21c856aa0856c3670cef528c4f40a182  [shntool]  bd2003-07-30_04.wav
+ebe96344180e2566b77bf1b953b0052c  [shntool]  bd2003-07-30_05.wav
+ada7301a42b7641da28f622e27face49  [shntool]  bd2003-07-30_06.wav
+d8f8ed8811466b0d17125380cd9cbcf2  [shntool]  bd2003-07-30_07.wav
+b94a690f2f0973c8f1f8d148f600d953  [shntool]  bd2003-07-30_08.wav
+8961f4b04bf5f7ef600532e1fbf5145d  [shntool]  bd2003-07-30_09.wav
+30ef52d9ad9ff25948ce6b0ee953e4da  [shntool]  bd2003-07-30_10.wav
+fc435ef50315df450b54e9e5a1e2f616  [shntool]  bd2003-07-30_11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-30_Tampa\Dylan-Dead Set 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.07       54347708 B   ---   --   ---xx    shn  0.6115  01 07-30-03 Tampa Friend of the Devil.shn
+     6:51.04       72509852 B   ---   --   ---xx    shn  0.6305  02 07-30-03 Tampa Gotta Serve Somebody.shn
+     8:08.33       86160860 B   ---   --   ---xx    shn  0.6310  03 07-30-03 Tampa  Like a Rolling Stone.shn
+    20:07.44      213018420 B                            0.6259  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-30_Tampa\ 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.14       76590572 B   ---   --   ---xx    shn  0.5487  bd2003-07-30_01.shn
+     5:21.67       56782028 B   ---   --   ---xx    shn  0.5472  bd2003-07-30_02.shn
+     5:04.63       53773820 B   ---   --   ---xx    shn  0.5231  bd2003-07-30_03.shn
+     5:35.39       59185772 B   ---   --   ---xx    shn  0.5183  bd2003-07-30_04.shn
+     6:25.05       67925804 B   ---   --   ---xx    shn  0.5541  bd2003-07-30_05.shn
+     5:56.04       62807852 B   ---   --   ---xx    shn  0.4717  bd2003-07-30_06.shn
+     4:22.63       46365020 B   ---   --   ---xx    shn  0.5746  bd2003-07-30_07.shn
+     8:10.20       86483084 B   ---   --   ---xx    shn  0.5168  bd2003-07-30_08.shn
+     6:50.64       72474572 B   ---   --   ---xx    shn  0.5452  bd2003-07-30_09.shn
+     7:32.66       79888076 B   ---   --   ---xx    shn  0.5289  bd2003-07-30_10.shn
+     8:37.71       91365836 B   ---   --   ---xx    shn  0.4860  bd2003-07-30_11.shn
+    71:12.26      753642436 B                            0.5263  (11 files)
+=================== 
+=================== 
+=================== 

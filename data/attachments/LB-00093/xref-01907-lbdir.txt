@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd99-06-09-b.flacf
+===================
+===================
+===================
+91bc80136c426778a5fdd78e4da23bb7 *01 The sound of silence (duet w Paul Simon).flac
+a8067f58b057a054ea516935903e3f03 *02 I walk the line (duet w Paul Simon).flac
+fcc9d77bc3614d63315cab2da7f97f79 *03 Knockin' on heaven's door.flac
+008b977a900a90c1e6e6c206e4cd6c05 *04 Friend of the Devil.flac
+01c7562562d7a9f0f0e65893c3319fab *05 Mr. Tambourine Man.flac
+8c4859c913a32df085cf872a266f83eb *06 Masters of war.flac
+8ae507655a55648ece39d3a70d9f599b *07 The lonesome death of Hattie Carroll.flac
+8fd679f9402504285179d4e0fdfe7720 *08 Tangled up in blue.flac
+8716e79437b659a27ca7caee14863131 *09 All along the watchtower.flac
+38dee3afc49f9f4d1fd05e3534168f15 *10 Just like a woman.flac
+f05756c90d249329729e92b5fdc51c44 *11 Stuck inside of Mobile with the Memphis blues again.flac
+8c3898464236ad063ec43ef7e5215ea1 *12 Not dark yet.flac
+28111d5a8949560f386750329412b14c *13 Highway 61 revisited.flac
+8d1b49b7eb5df590c97e61df458d514d *14 Love sick.flac
+09d25205ebacfc70d3908d81e7b4b667 *15 Like a rolling stone.flac
+6d58985ce3a5c938ce41bbf5119f2806 *16 Blowin' in the wind.flac
+b5037bc5ea61b4881c82a87db0a0ebd1 *17 Not fade away.flac
+daf46d9c2ae01b4bb8794d7ee09dc99a *1999-06-09 Delta Center, Salt Lake City, Utah, USA.txt
+d48e494a4920fc095d7fb067172b423e *1999-06-09 Salt Lake City, Utah, USA [LB-0093 unidentified taper].ffp
+efd336058da399dba6a379f930080852 *1999-06-09 Salt Lake City, Utah, USA [LB-0093 unidentified taper].txt
+c49a72161989452a7bf645b186ed4215 *DigiFlawFinder-bd99-06-09-b.flacf.wavf.html
+32f90797915ecdeb117ebc88d65f9c7c *lbdir-bd99-06-09-b.flacf.txt
+===================
+===================
+===================
+=== ffp for: bd99-06-09-b.flacf
+===================
+===================
+===================
+01 The sound of silence (duet w Paul Simon).flac:95115b49185ee265ed73071ee412265b
+02 I walk the line (duet w Paul Simon).flac:28cd8fdd4417708a58ea8cf09c920798
+03 Knockin' on heaven's door.flac:aa7d0c421606a5aa2bcf46770215973c
+04 Friend of the Devil.flac:5a48e8504f55bf5779ebde26593dae26
+05 Mr. Tambourine Man.flac:6de9b5dd2b3de9495e99207a944a8898
+06 Masters of war.flac:e460c022e3f95e1dc93fd9a480db33ab
+07 The lonesome death of Hattie Carroll.flac:51af38dca1a5f33b9e6fcd0b76b64ee6
+08 Tangled up in blue.flac:1e1d21216ab9ae9c4deb5d0ae716dc02
+09 All along the watchtower.flac:c2b52786a42d9307466d37f500e79d0f
+10 Just like a woman.flac:97aa0999e835a3dacf643d57904124c6
+11 Stuck inside of Mobile with the Memphis blues again.flac:1397b33411b874c58d426382dbbc74ee
+12 Not dark yet.flac:c64b9c21b6758949e5af9480a8c5473a
+13 Highway 61 revisited.flac:9779da46d2cc275e8eaf02cfb24c8288
+14 Love sick.flac:696ca2e25aa2a50245ad737ec4053014
+15 Like a rolling stone.flac:038c3134fc3dcaa78e327bca0d5ed550
+16 Blowin' in the wind.flac:01900bcc75b1402b3db16a6c20e45241
+17 Not fade away.flac:5a417a3d6f0501c3eeb61bd960487ac6
+===================
+===================
+===================
+=== shntool len for: bd99-06-09-b.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:25.28       78563900 B   ---   --   ---xx   flac  0.5376  01 The sound of silence (duet w Paul Simon).flac
+     3:49.56       40527356 B   ---   --   ---xx   flac  0.5654  02 I walk the line (duet w Paul Simon).flac
+     4:59.43       52844780 B   ---   --   ---xx   flac  0.6062  03 Knockin' on heaven's door.flac
+     6:06.55       64691804 B   ---   --   ---xx   flac  0.6371  04 Friend of the Devil.flac
+     6:51.72       72669788 B   ---   --   ---xx   flac  0.6255  05 Mr. Tambourine Man.flac
+     5:15.04       55575452 B   ---   --   ---xx   flac  0.6168  06 Masters of war.flac
+     6:36.63       70002620 B   ---   --   ---xx   flac  0.6066  07 The lonesome death of Hattie Carroll.flac
+     8:08.20       86130284 B   ---   --   ---xx   flac  0.6503  08 Tangled up in blue.flac
+     4:53.60       51826364 B   ---   --   ---xx   flac  0.6395  09 All along the watchtower.flac
+     7:46.18       82244780 B   ---   --   ---xx   flac  0.6002  10 Just like a woman.flac
+     8:01.42       84947228 B   ---   --   ---xx   flac  0.6351  11 Stuck inside of Mobile with the Memphis blues again.flac
+     6:10.11       65293916 B   ---   --   ---xx   flac  0.5551  12 Not dark yet.flac
+     7:16.56       77042156 B   ---   --   ---xx   flac  0.6214  13 Highway 61 revisited.flac
+     6:09.68       65251580 B   ---   --   ---xx   flac  0.5787  14 Love sick.flac
+     7:46.01       82204796 B   ---   --   ---xx   flac  0.5993  15 Like a rolling stone.flac
+     5:12.14       55069772 B   ---   --   ---xx   flac  0.5881  16 Blowin' in the wind.flac
+     4:06.69       43556732 B   ---   --   ---xx   flac  0.6071  17 Not fade away.flac
+   106:37.05     1128443308 B                            0.6053  (17 files)
+===================
+===================
+===================

@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-12-c.flacf 
+=================== 
+=================== 
+=================== 
+2349674f763d260c90798c99f181f0c3  Bob Dylan 2003.07.12 Winter Park,Colorado,Winter Park Resort.md5
+e3802bce5e0154518bc6ae3b3e57b052  D_1\Track01.flac
+3ea4e6b0eeb15f1c8580dc422d692715  D_1\Track02.flac
+31ba50c201fa9f3c45cf110f5496cc07  D_1\Track03.flac
+76928cae089e21b14fb1043a06025a00  D_1\Track04.flac
+8d283c6f0d37b999b0880b9ca618067a  D_1\Track05.flac
+83fb730a037491c44d56b603829bca34  D_1\Track06.flac
+9796e78b60d9e0052dcd9a114a388c99  D_1\Track07.flac
+5f35d9ea635b2119cf5adf40412a80a6  D_1\Track08.flac
+ad6662b9ce707c12295c8e893addf79f  D_1\Track09.flac
+15d1e454b57142ec66d97adf48069c14  D_2\Track01.flac
+7163dbc15d6301a2a6396d62e29fdbb1  D_2\Track02.flac
+6e42644d61af209c6d1763a1125219aa  D_2\Track03.flac
+351ae4405ac5694dad4ca2a91512e7c5  D_2\Track04.flac
+779226f1603476380e24801327f9273b  D_2\Track05.flac
+ef0cb0ed3737e1d7f9ef637c009e985d  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-07-12-c.flacf\d_1 
+=================== 
+=================== 
+=================== 
+track01.flac:fbc5e2f8b8f253e9ff65add71050019c
+track02.flac:d0966d1c3fb49e46cf831ba3afd0a6f6
+track03.flac:ded4f24564de3960a5e85221872e0b5b
+track04.flac:2b618c8cb590020a24b50d1c7391cc03
+track05.flac:10a573e5968d226b1ae85422418a8767
+track06.flac:d44dcdf0f9fe9ed38844a5c8d65b1185
+track07.flac:fa5953e4e6db8f43c28dabc7177360f3
+track08.flac:0244eac79fa63db5e4d415e9d04d98d1
+track09.flac:dd682af9c4c0f41cb54cf11bb13c10d5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-07-12-c.flacf\d_2 
+=================== 
+=================== 
+=================== 
+track01.flac:81c2383b549718df0a746b22b5b04016
+track02.flac:d5cb77c7ffc7008736243ad008022004
+track03.flac:a9d647b1473a18f7f75daf4602c0a80a
+track04.flac:fe486a86ab09de51a77d9929ae8422f7
+track05.flac:b7a778736daf4b0ec712d471b75e30f3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-12-c.flacf\d_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:01.08       74283260 B   ---   --   ---xx   flac  0.4433  Track01.flac
+     5:11.04       54869852 B   ---   --   ---xx   flac  0.4307  Track02.flac
+     5:14.65       55542524 B   ---   --   ---xx   flac  0.4354  Track03.flac
+     6:00.49       63619292 B   ---   --   ---xx   flac  0.4597  Track04.flac
+     5:46.12       61062668 B   ---   --   ---xx   flac  0.4714  Track05.flac
+     7:35.50       80379644 B   ---   --   ---xx   flac  0.3783  Track06.flac
+     6:31.72       69141788 B   ---   --   ---xx   flac  0.4566  Track07.flac
+     6:36.52       69976748 B   ---   --   ---xx   flac  0.4370  Track08.flac
+     6:49.53       72272300 B   ---   --   ---xx   flac  0.4757  Track09.flac
+    56:47.65      601148076 B                            0.4420  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-12-c.flacf\d_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:03.71       95952236 B   ---   --   ---xx   flac  0.4109  Track01.flac
+     0:37.36        6611516 B   ---   --   ---xx   flac  0.3676  Track02.flac
+     6:32.45       69254684 B   ---   --   ---xx   flac  0.4643  Track03.flac
+     7:10.02       75856748 B   ---   --   ---xx   flac  0.4720  Track04.flac
+     6:11.74       65618492 B   ---   --   ---xx   flac  0.4217  Track05.flac
+    29:36.03      313293676 B                            0.4389  (5 files)
+=================== 
+=================== 
+=================== 

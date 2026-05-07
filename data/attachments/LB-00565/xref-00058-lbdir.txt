@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-10-g.flacf 
+=================== 
+=================== 
+=================== 
+f67b30c952adfeca2afb7aaf522c0e86  dylan 9-10-88.txt
+2c1349842ae44384975e6f1673a6a107  dylan1988-09-10.md5
+5cd5ce732565eeeb8c121811821ea3d6  Dylan1988091t01.flac
+d318798dc058825c61844519030cd98b  Dylan1988091t02.flac
+4623984af873eafa15bc05a3f1966832  Dylan1988091t03.flac
+891b01b6127d1423ae8a77e4aa3fb7de  Dylan1988091t04.flac
+6d4e0b798e9c6ffdf8ad06cc3d572f79  Dylan1988091t05.flac
+55e71ad58a01480feb6a3930e61e9d10  Dylan1988091t06.flac
+c16ab285278094392199db30bb9b0141  Dylan1988091t07.flac
+516c4f674c401dcd9fcaf3b97adbbecd  Dylan1988091t08.flac
+d6ba74973449c8b2c14c497280b57556  Dylan1988091t09.flac
+eb17623bd606a4ef9694a2922c51eedf  Dylan1988091t10.flac
+d71a12c6c2617d319e109a6e4047dc90  Dylan1988091t11.flac
+40751883fbd643a18e23a54aace22690  Dylan1988091t12.flac
+c869829b324acd480febd0dd490a58b2  Dylan1988091t13.flac
+76a84f54096f9ab79f5532893c560de1  Dylan1988091t14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-09-10-g.flacf 
+=================== 
+=================== 
+=================== 
+Dylan1988091t01.flac:5bd1d5fae087515c1ca00ab52388e000
+Dylan1988091t02.flac:9b58f2041370dab1eae8772eab3fe920
+Dylan1988091t03.flac:974567435bd6c22f56204926b50710ac
+Dylan1988091t04.flac:77a8648254d01a90871c76a84233bafe
+Dylan1988091t05.flac:baf24e1ce983de51e557d4e195ef081f
+Dylan1988091t06.flac:4106297c55edbc75fa5c0f91d6d30935
+Dylan1988091t07.flac:292aa0e5cb7bcdcec4b3045927d47e99
+Dylan1988091t08.flac:84e51234be5279f69d6f3a196c15b282
+Dylan1988091t09.flac:d35dc2aaec739454c268c1fa1d1b3b13
+Dylan1988091t10.flac:bf6fe47f0d5a14fcdea5a48eef67ce09
+Dylan1988091t11.flac:0ea08dbc75cd029a1a74eed62d7507fa
+Dylan1988091t12.flac:8bd6c47884da6ed17fa84df4bd20e20b
+Dylan1988091t13.flac:73cdd7c858bf2af64787511d300c714e
+Dylan1988091t14.flac:1fe48d614996c01218a2d9d653dea48d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-10-g.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:14.70       44970284 B   ---   --   ---xx   flac  0.5396  Dylan1988091t01.flac
+     4:46.53       50575100 B   ---   --   ---xx   flac  0.5493  Dylan1988091t02.flac
+     4:38.09       49060412 B   ---   --   ---xx   flac  0.5301  Dylan1988091t03.flac
+     4:12.28       44518700 B   ---   --   ---xx   flac  0.4606  Dylan1988091t04.flac
+     4:31.11       47830316 B   ---   --   ---xx   flac  0.4628  Dylan1988091t05.flac
+     5:44.14       60714572 B   ---   --   ---xx   flac  0.5168  Dylan1988091t06.flac
+     5:45.15       60893324 B   ---   --   ---xx   flac  0.4983  Dylan1988091t07.flac
+     3:37.44       38382332 B   ---   --   ---xx   flac  0.5561  Dylan1988091t08.flac
+     4:39.74       49389692 B   ---   --   ---xx   flac  0.5116  Dylan1988091t09.flac
+     6:43.17       71129228 B   ---   --   ---xx   flac  0.5573  Dylan1988091t10.flac
+     4:35.25       48568844 B   ---   --   ---xx   flac  0.4634  Dylan1988091t11.flac
+     5:12.49       55152092 B   ---   --   ---xx   flac  0.4801  Dylan1988091t12.flac
+     4:33.56       48288956 B   ---   --   ---xx   flac  0.5582  Dylan1988091t13.flac
+     4:17.29       45403052 B   ---   --   ---xx   flac  0.5541  Dylan1988091t14.flac
+    67:32.44      714876904 B                            0.5172  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,8 @@
+Bob Dylan, 7/23/96, Copenhagen, Denmark, 2CDR
+
+LB-6255, (65min+48min), ssrc; local taper DK: A, ?? -> portable Sony DATrecorder -> DAT -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 07/08; similar wav and spectral view on d1t3 to LB-5952 except levels are slightly different and this has a little more spectral density above 21k; (did not listen to all of this)
+
+1 intro, 2 To Be Alone With You, 3 If You See Her, Say Hello, 4 All Along The Watchtower, 5 Tears Of Rage (Bob Dylan & Richard Manuel), 6 I Don't Believe You (She Acts Like We Never Have Met), 7 Silvio (Bob Dylan & Robert Hunter), 8 Boots Of Spanish Leather, 9 Masters Of War, 10 Friend Of The Devil (Jerry Garcia - Robert Hunter - John Dawson), 1 Tombstone Blues, 2 She Belongs To Me, 3 Everything Is Broken, 4 It Ain't Me, Babe, 5 Rainy Day Women # 12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

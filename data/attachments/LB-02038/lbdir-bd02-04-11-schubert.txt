@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-04-11-schubert 
+=================== 
+=================== 
+=================== 
+60c476f98f7ce996ef7a63d3b29cccb3  101 intro.shn
+2fae8f44c62eb1564ed69bb824a516c8  102 i am the man, thomas.shn
+2d2617166ff8970ae8b917277aaafd27  103 the times they are.shn
+db9eec6f32c1ac9934b7d2c4fb686fff  104 it's alright, ma.shn
+5a8ab443a053b199e410ad3b9397da49  105 boots of spanish leather.shn
+7c8ed7463eca3b8a9107f04d710f4559  106 solid rock.shn
+b6c91de35827462eb12fd2bea2898e93  107 moonlight.shn
+59a53979d5541e4def17b7cadd69dded  108 lonesome day blues.shn
+aeb77d0463c6d83729d316f9613d05c2  109 all along the watchtower.shn
+d3cee0a5af99691c0ba4df9ecf2b2841  110 visions of johanna.shn
+d394203428569f40b188092fb1d36f06  111 masters of war.shn
+11be497d87f64315fcec67927c4a54a1  112 don't think twice.shn
+f629fedcefac968027a6de322e3e610c  2002-04-11 berlin (d2) schubert.md5
+5e16c84c49b289f569d1d81d83e1f086  2002-04-11 berlin_ arena (disc 1) schubert.md5
+3085cba27a18eca079929b2ad7d48deb  201 love sick.shn
+1ccb6342df5bf86062a8e321540a7c25  202 summer days.shn
+4e92f1a262b69ebcb672089ba515c2ed  203 the wicked messenger.shn
+b48d817813a68a9a46dd6dd8ebe2af55  204 leopard-skin pill-box hat.shn
+42f289c6da9a7767d00d132ac6d4364d  205 not fade away.shn
+6e7273f3ddc14c34ee2ef183f0812e07  206 like a rolling stone.shn
+57eefd135c49936af36b493a73c0df7e  207 knockin' on heaven's door.shn
+b4e70e6f44eb7afc73870978222990d5  208 honest with me.shn
+04bd25d8bd34ae8c5193a99fe425edd9  209 blowin' in the wind.shn
+22994bdbb54ead16d73e680bdf12f6a9  210 highway 61 revisited.shn
+ca4957b6db47e2a1b3788292fbe711a4  info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-04-11-schubert 
+=================== 
+=================== 
+=================== 
+e24e72d4ea57b414d19395e49ba25211  [shntool]  101_intro.wav
+bd32fb5a47f4d77855aeedc1e329498a  [shntool]  102_i_am_the_man,_thomas.wav
+08365bc039468d7c20f67aad164dbc2f  [shntool]  103_the_times_they_are.wav
+e27683e2f7714e2eca0049f95258b4ae  [shntool]  104_it_s_alright,_ma.wav
+614be0205b8bc0f5ebcdf3bc6219aeff  [shntool]  105_boots_of_spanish_leather.wav
+562de88d3ea59ec64d53453eb53aa7e6  [shntool]  106_solid_rock.wav
+206a108df6c78d65172e38c805270d12  [shntool]  107_moonlight.wav
+a67958c4dbb7ac658e09f4b1b0d385f0  [shntool]  108_lonesome_day_blues.wav
+e5bd29e1ab73e88a4537ac632dfcbcf0  [shntool]  109_all_along_the_watchtower.wav
+e971f9f5d14d4cad34d60dc3778aa26b  [shntool]  110_visions_of_johanna.wav
+920f5abb16da40f41f009247df2280b7  [shntool]  111_masters_of_war.wav
+1016946f65e31c17e4f91fc7a8f04826  [shntool]  112_don_t_think_twice.wav
+b44ab20ee46d1989db62eee35a18c6b4  [shntool]  201_love_sick.wav
+378706cb85647cb68999d0bdf68fc7a8  [shntool]  202_summer_days.wav
+4305424f3c54257270f6fe6e5652c904  [shntool]  203_the_wicked_messenger.wav
+5595695b3741394236ac790ec277a231  [shntool]  204_leopard-skin_pill-box_hat.wav
+21e1a87cd191a38fc1b178493eb728f7  [shntool]  205_not_fade_away.wav
+431cbb01a47b1be81af696fc61e2a4e7  [shntool]  206_like_a_rolling_stone.wav
+e3654e110b677023e0de571a644c221c  [shntool]  207_knockin__on_heaven_s_door.wav
+7a3df74586a00065a2c02f79e99b9f31  [shntool]  208_honest_with_me.wav
+6ca2bed4bdee7ebef9023d32197229dc  [shntool]  209_blowin__in_the_wind.wav
+1659d3315e157fae82e146bcd432c2ca  [shntool]  210_highway_61_revisited.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-11-schubert 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:45.02       18526748 B   ---   --   -----    wav  1.0000  101_intro.wav
+     2:50.66       30143276 B   ---   --   -----    wav  1.0000  102_i_am_the_man,_thomas.wav
+     7:00.51       74207996 B   ---   --   -----    wav  1.0000  103_the_times_they_are.wav
+     7:18.69       77425532 B   ---   --   -----    wav  1.0000  104_it_s_alright,_ma.wav
+     8:51.00       93668444 B   ---   --   -----    wav  1.0000  105_boots_of_spanish_leather.wav
+     4:50.34       51236012 B   ---   --   -----    wav  1.0000  106_solid_rock.wav
+     5:58.17       63191228 B   ---   --   -----    wav  1.0000  107_moonlight.wav
+     7:43.72       81842588 B   ---   --   -----    wav  1.0000  108_lonesome_day_blues.wav
+     5:36.29       59338652 B   ---   --   -----    wav  1.0000  109_all_along_the_watchtower.wav
+     9:11.09       97217612 B   ---   --   -----    wav  1.0000  110_visions_of_johanna.wav
+     5:07.69       54317132 B   ---   --   -----    wav  1.0000  111_masters_of_war.wav
+     8:06.06       85744556 B   ---   --   -----    wav  1.0000  112_don_t_think_twice.wav
+     6:21.54       67335452 B   ---   --   -----    wav  1.0000  201_love_sick.wav
+     7:18.41       77359676 B   ---   --   -----    wav  1.0000  202_summer_days.wav
+     5:01.39       53188172 B   ---   --   -----    wav  1.0000  203_the_wicked_messenger.wav
+    11:18.52      119721548 B   ---   --   -----    wav  1.0000  204_leopard-skin_pill-box_hat.wav
+     4:33.48       48270140 B   ---   --   -----    wav  1.0000  205_not_fade_away.wav
+     8:41.10       91927964 B   ---   --   -----    wav  1.0000  206_like_a_rolling_stone.wav
+     6:28.39       68534972 B   ---   --   -----    wav  1.0000  207_knockin__on_heaven_s_door.wav
+     7:04.52       74915948 B   ---   --   -----    wav  1.0000  208_honest_with_me.wav
+     7:59.44       84599132 B   ---   --   -----    wav  1.0000  209_blowin__in_the_wind.wav
+     9:26.10       99865964 B   ---   --   -----    wav  1.0000  210_highway_61_revisited.wav
+   148:34.63     1572578744 B                            1.0000  (22 files)
+=================== 
+=================== 
+=================== 

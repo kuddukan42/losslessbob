@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-12-arashi-ald-aud.flacf 
+=================== 
+=================== 
+=================== 
+cd4412b2ee65ba0fdb7c455cd965a6c4  bd-10-12-01aa.txt
+f5554c8f87e227fa591a6d3d2c39ba56  bd-2001-10-12aa-d1001.flac
+d824ea85349ef4dd3b0c07d6b0dbb460  bd-2001-10-12aa-d1002.flac
+6497082dfb26555b617bf368cb973b74  bd-2001-10-12aa-d1003.flac
+301d838fcdfa9da67094b288e72708f1  bd-2001-10-12aa-d1004.flac
+43c26df35ac5a0dff6783b45f3baeec7  bd-2001-10-12aa-d1005.flac
+f63abbb6c28e258a7d2f1dbb1f627b6c  bd-2001-10-12aa-d1006.flac
+80274b5102871f71eacedd6e28a027cd  bd-2001-10-12aa-d1007.flac
+43eb05289943895f7260d20934ccd38a  bd-2001-10-12aa-d1008.flac
+46de62dbf49a673bb3b02477aac759f4  bd-2001-10-12aa-d1009.flac
+049f749041948d5d9d1d0d439f5dea2d  bd-2001-10-12aa-d1010.flac
+5e4b1d7aa3fd40426f4a240c51a79a62  bd-2001-10-12aa-d1011.flac
+929ba2a0b85c0274836de9652a095145  bd-2001-10-12aa-d1012.flac
+54663c8eebfc9267b4562c8a8cdf2e3b  bd-2001-10-12aa-d2001.flac
+1f84573296a1ef444d630aff7e3af158  bd-2001-10-12aa-d2002.flac
+5f235ecde23e07e18a5a939396cc5e26  bd-2001-10-12aa-d2003.flac
+2d441268b43e76e7c2c6b59bcb784098  bd-2001-10-12aa-d2004.flac
+f85f132dbb648972bc1e7339a1b7cf97  bd-2001-10-12aa-d2005.flac
+67a9f8299eeefcf8940abc24d0bc3de9  bd-2001-10-12aa-d2006.flac
+ac158c51141105ca0a4c5d96f2ff88e0  bd-2001-10-12aa-d2007.flac
+58703c4c259a8be9a38eb587b2e6754a  bd-2001-10-12aa-d2008.flac
+71b006f4f0a57d8de3eca6c58227e01b  bd-2001-10-12aa-d2009.flac
+7d8888fb1e6597a4387cd93e0871a672  bd-2001-10-12aldaud.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-12-arashi-ald-aud.flacf 
+=================== 
+=================== 
+=================== 
+bd-2001-10-12aa-d1001.flac:0b3565f26e473e78ccb8dfdf064e5965
+bd-2001-10-12aa-d1002.flac:d4ed98ae4cc135672b660b78a44fe140
+bd-2001-10-12aa-d1003.flac:2440b3ed39c9c8ed31a146da57334515
+bd-2001-10-12aa-d1004.flac:a79e535f237c6bdee8fea32375021efc
+bd-2001-10-12aa-d1005.flac:8c3f391eec0309f849d8d4e854213d1d
+bd-2001-10-12aa-d1006.flac:92007dc949c7da1dd2c8b692e07e9d27
+bd-2001-10-12aa-d1007.flac:aa27ffb18c21cec121104ad7a5b98f3f
+bd-2001-10-12aa-d1008.flac:0a0c0c9afd34e8a6456671314efacccb
+bd-2001-10-12aa-d1009.flac:af68817fbce519179c0a2082df6bce7c
+bd-2001-10-12aa-d1010.flac:3ded153e7cefc5f8a68fa590eee97e40
+bd-2001-10-12aa-d1011.flac:4679e19302e7b4cba78c23546625dcdc
+bd-2001-10-12aa-d1012.flac:1bd0f99959fd49b755f21604727adce9
+bd-2001-10-12aa-d2001.flac:69dadd67c6a0010613a82b7ad3d62c57
+bd-2001-10-12aa-d2002.flac:eb2b6eafdc0c7a91e295c16d0860a9f7
+bd-2001-10-12aa-d2003.flac:288f407be008f6bfca7bd4d60dd34858
+bd-2001-10-12aa-d2004.flac:7fe599b859e66d9c9bc6f7ab766b4626
+bd-2001-10-12aa-d2005.flac:92b83104b14102ce7d543dd0556cb35f
+bd-2001-10-12aa-d2006.flac:df42a1923f285c9bb7c3d4796e15a90e
+bd-2001-10-12aa-d2007.flac:907db177ec431e351fa31a8809cbfa12
+bd-2001-10-12aa-d2008.flac:dfe2a8b6de40f3a841a15c3344995f13
+bd-2001-10-12aa-d2009.flac:141909144157b67a6d9e6216ac04a1fd
+=================== 
+=================== 
+=================== 
+=== shntool for: bd01-10-12-arashi-ald-aud.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:53.48        9462140 B   ---   --   ---xx   flac  0.4607  bd-2001-10-12aa-d1001.flac
+     2:48.51       29755196 B   ---   --   ---xx   flac  0.6380  bd-2001-10-12aa-d1002.flac
+     7:17.69       77249132 B   ---   --   ---xx   flac  0.5970  bd-2001-10-12aa-d1003.flac
+     8:18.10       87870764 B   ---   --   ---xx   flac  0.5967  bd-2001-10-12aa-d1004.flac
+     3:20.17       35320028 B   ---   --   ---xx   flac  0.5448  bd-2001-10-12aa-d1005.flac
+     4:52.03       51515900 B   ---   --   ---xx   flac  0.5745  bd-2001-10-12aa-d1006.flac
+     7:54.43       83714780 B   ---   --   ---xx   flac  0.5654  bd-2001-10-12aa-d1007.flac
+     5:53.17       62309228 B   ---   --   ---xx   flac  0.6105  bd-2001-10-12aa-d1008.flac
+     7:28.04       79036652 B   ---   --   ---xx   flac  0.5258  bd-2001-10-12aa-d1009.flac
+     5:17.52       56041148 B   ---   --   ---xx   flac  0.5472  bd-2001-10-12aa-d1010.flac
+     4:54.31       51934556 B   ---   --   ---xx   flac  0.5436  bd-2001-10-12aa-d1011.flac
+     9:01.30       95503004 B   ---   --   ---xx   flac  0.5795  bd-2001-10-12aa-d1012.flac
+     6:36.33       69932060 B   ---   --   ---xx   flac  0.5882  bd-2001-10-12aa-d2001.flac
+     7:15.15       76769324 B   ---   --   ---xx   flac  0.4695  bd-2001-10-12aa-d2002.flac
+     6:11.11       65470316 B   ---   --   ---xx   flac  0.5792  bd-2001-10-12aa-d2003.flac
+     9:13.29       97617452 B   ---   --   ---xx   flac  0.5996  bd-2001-10-12aa-d2004.flac
+     6:04.33       64287260 B   ---   --   ---xx   flac  0.6033  bd-2001-10-12aa-d2005.flac
+     7:32.31       79805756 B   ---   --   ---xx   flac  0.6074  bd-2001-10-12aa-d2006.flac
+     6:10.66       65423276 B   ---   --   ---xx   flac  0.5784  bd-2001-10-12aa-d2007.flac
+     6:59.71       74078636 B   ---   --   ---xx   flac  0.6361  bd-2001-10-12aa-d2008.flac
+     6:04.09       64230812 B   ---   --   ---xx   flac  0.5506  bd-2001-10-12aa-d2009.flac
+   130:07.73     1377327420 B                            0.5758  (21 files)
+=================== 
+=================== 
+=================== 

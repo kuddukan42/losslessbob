@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-11-04.flacf 
+=================== 
+=================== 
+=================== 
+7f264e053a87faa05c7ecaa13d7188b7  disc 1\Track01.flac
+ed1e4bd30db7ecc3e04948d365639954  disc 1\Track02.flac
+6fe9f9cb847f2275242f563d29b063f7  disc 1\Track03.flac
+85d5fb6d4707cc8caebbaee62a05f24a  disc 1\Track04.flac
+47d703ef2f1939d93fbbc7fa09be8bbc  disc 1\Track05.flac
+ba93aff81feea8718fcfff1362d08fb5  disc 1\Track06.flac
+44b6f59532599c2432d798c4d59c0739  disc 1\Track07.flac
+0aa6f60ea696ddde4e2a26feb575abdb  disc 1\Track08.flac
+1356bfda0b5bc489e71033830f32dfa6  disc 2\Track01.flac
+23276c426810bc9ad65d125986405931  disc 2\Track02.flac
+89aeed43adb832cf4b767488472511cd  disc 2\Track03.flac
+a011da9845a2c952f82cc30ac217c4ab  disc 2\Track04.flac
+bca273007844e74780f9a50a04b1872b  disc 2\Track05.flac
+785ec6d251e19ce32306f1ca03e391e4  disc 2\Track06.flac
+24ee7009c780e6ca2068ed3909e9c612  disc 2\Track07.flac
+2bfce5ef2dddb9968ef66e792c14c431  Dylan1995-11-4.md5
+2b62327b0e4e1a29332279a2a728a453  Dylan1995-11-4.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-11-04.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:4ab0eea4939662da0a4b6c804d81a67a
+Track02.flac:bf1599a0468d1e178dee5cc796404028
+Track03.flac:4580943868151d060be79c10c50d27c6
+Track04.flac:130615694c688d9119bb9e8b8b040922
+Track05.flac:a2ef51b5af2e4f1d8479cd5c55fde205
+Track06.flac:b03522f3687669ad97434414ed697197
+Track07.flac:083f089086ecd34661e341d535d300f5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-11-04.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:f97554e1c67e9fdf623e744ff22e27d6
+Track02.flac:addb279a7857bf396ee4cd31c2e9e8ce
+Track03.flac:884bd1859ef249c095c698d76d80814f
+Track04.flac:7801dd707c95deeeb1a096c29e1b04bb
+Track05.flac:fbd978a1167b55c0c1558ac533cc0b8b
+Track06.flac:6d9769d8227ccfc8351575b2b2cc2e19
+Track07.flac:b538f8712b31e09d19b51b58ae82d607
+Track08.flac:efccc8d47eb326212ec2b737b9a27259
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-11-04.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:08.58       96803660 B   ---   --   ---xx   flac  0.3612  Track01.flac
+     7:22.38       78058220 B   ---   --   ---xx   flac  0.5316  Track02.flac
+     8:30.39       90055772 B   ---   --   ---xx   flac  0.4525  Track03.flac
+     7:00.10       74111564 B   ---   --   ---xx   flac  0.5304  Track04.flac
+     7:56.04       83975852 B   ---   --   ---xx   flac  0.5305  Track05.flac
+     8:39.25       91610444 B   ---   --   ---xx   flac  0.3950  Track06.flac
+     7:41.70       81485084 B   ---   --   ---xx   flac  0.5272  Track07.flac
+    56:19.19      596100596 B                            0.4701  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-11-04.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.70       54143084 B   ---   --   ---xx   flac  0.5552  Track01.flac
+     9:20.69       98946332 B   ---   --   ---xx   flac  0.4910  Track02.flac
+     8:26.54       89385452 B   ---   --   ---xx   flac  0.5344  Track03.flac
+     5:46.25       61093244 B   ---   --   ---xx   flac  0.4944  Track04.flac
+     7:17.53       77211500 B   ---   --   ---xx   flac  0.4941  Track05.flac
+     7:53.56       83568956 B   ---   --   ---xx   flac  0.5401  Track06.flac
+    10:05.00      106722044 B   ---   --   ---xx   flac  0.4474  Track07.flac
+     5:54.05       62457404 B   ---   --   ---xx   flac  0.3776  Track08.flac
+    59:51.32      633528016 B                            0.4913  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-oh-mercy-outtakes-remaster.shnf 
+=================== 
+=================== 
+=================== 
+e1e38d61c4e88a594ff99cfef4f0de47  01-Shooting Star.shn
+2d6a0e6986b1d7e0539ef2e7a19a0d6c  02-God Knows I.shn
+7b099c63354b02714faad6eb5daf9f6f  03-God Knows II.shn
+9363b2081212f5128304c18731febd67  04-What Good Am I.shn
+26bfc84b99ae2f421d616dac9dca573a  05-Most Of the Time.shn
+3895feaf0e6f533b94c54d3169f4fbfa  06-Everything Is Broken.shn
+d7a479737622bf0b1227c3810235aed4  07-Political World.shn
+c918ea904264d86eb4e1d9c715fea558  08-Born In Time.shn
+b8c88f2405d9be768e81c654b641aec2  09-Dignity.shn
+a506a4cf2666a710d2d38732ca63d6b5  10-Shooting Star.shn
+bb79a5e26dd2d86c44f77532937f1eff  11-Disease Of Conceit.shn
+f611c954fdfd134979538f1caaaac4de  12-Ring Them Bells.shn
+c9ff675e761b9ac761ea207b56fa40c7  13-Most Of the Time II.shn
+16b206aafa06b23864bfa8be14355f13  14-What Was It You Wanted.shn
+1a340686d4bb9afa23b5daf9a81fcf70  15-Series Of Dreams I.shn
+8e5be14f22bd12d23af495260f239fd5  16-Series Of Dreams II.shn
+157485a613fae19769996ee6ee0353e8  17-Series Of Dreams III.shn
+2fd8ffb3c0437631c1061392b6ef6d07  back.jpg
+7a5a334fc515e933b22932a554992847  bd-oh-mercy-outtakes-remaster.txt
+eb5f7aab732115215d45365b4443631c  disk.jpg
+91f93045ffbe3c8871ff9471dd317d78  front.jpg
+caa4a296c63eb51e4f351e5bfdd62fb1  inside.jpg
+b4112beca4e7499415ace4bd31fe7fc6  readme.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-oh-mercy-outtakes-remaster.shnf 
+=================== 
+=================== 
+=================== 
+259803b6ef0f0ab7dbc7f526a6f82eb0  [shntool]  01-Shooting_Star.wav
+8ae52bcc46caa3f3b1fdfeca89f3e588  [shntool]  02-God_Knows_I.wav
+0de1987bec5ee9191f883dde4c474941  [shntool]  03-God_Knows_II.wav
+b52acb1346c816203ad4fbc4abf730c6  [shntool]  04-What_Good_Am_I.wav
+7da4fd02b214cab7f36f4d240530d39f  [shntool]  05-Most_Of_the_Time.wav
+e3b1f6c618d97a2f040388953bc82007  [shntool]  06-Everything_Is_Broken.wav
+a2b43763813be6e195ed1224cc7edd7c  [shntool]  07-Political_World.wav
+1473cef38908a9d62849f980ad105630  [shntool]  08-Born_In_Time.wav
+2f1eb804b97513dfb9df9ee98f26c9c8  [shntool]  09-Dignity.wav
+e7fd532c1f9a3c278c5076fbf5c60ab3  [shntool]  10-Shooting_Star.wav
+903e2b17283915c9eb1baeda936de091  [shntool]  11-Disease_Of_Conceit.wav
+d878d6c3d4ac26fc3522a7ecf730e00f  [shntool]  12-Ring_Them_Bells.wav
+0da2394dc3149b60a87e9076f9e5e689  [shntool]  13-Most_Of_the_Time_II.wav
+99fff4a248b4440c052dae55457cbf56  [shntool]  14-What_Was_It_You_Wanted.wav
+69a0bd0ca9116ad843e3695b25fbe590  [shntool]  15-Series_Of_Dreams_I.wav
+e115d96fc86959f9481a26511c6de7e0  [shntool]  16-Series_Of_Dreams_II.wav
+e40ed4e3bf26a4bbbf405576c8567ee7  [shntool]  17-Series_Of_Dreams_III.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-oh-mercy-outtakes-remaster.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:01.55       32057888 B   -b-   --   -----    wav  1.0000  01-Shooting_Star.wav
+     3:08.58       33299244 B   -b-   --   -----    wav  1.0000  02-God_Knows_I.wav
+     3:02.08       32123404 B   -b-   --   -----    wav  1.0000  03-God_Knows_II.wav
+     4:41.05       49580840 B   -b-   --   -----    wav  1.0000  04-What_Good_Am_I.wav
+     4:56.45       52320040 B   -b-   --   -----    wav  1.0000  05-Most_Of_the_Time.wav
+     2:50.26       30048040 B   -b-   --   -----    wav  1.0000  06-Everything_Is_Broken.wav
+     4:52.07       51526440 B   -b-   --   -----    wav  1.0000  07-Political_World.wav
+     4:11.08       44294444 B   -b-   --   -----    wav  1.0000  08-Born_In_Time.wav
+     5:54.16       62483240 B   -b-   --   -----    wav  1.0000  09-Dignity.wav
+     3:10.28       33580840 B   -b-   --   -----    wav  1.0000  10-Shooting_Star.wav
+     3:40.25       38867244 B   -b-   --   -----    wav  1.0000  11-Disease_Of_Conceit.wav
+     3:14.00       34220840 B   -b-   --   -----    wav  1.0000  12-Ring_Them_Bells.wav
+     5:00.02       52923604 B   -b-   --   -----    wav  1.0000  13-Most_Of_the_Time_II.wav
+     4:32.65       48134436 B   -b-   --   -----    wav  1.0000  14-What_Was_It_You_Wanted.wav
+     5:05.27       53865972 B   -b-   --   -----    wav  1.0000  15-Series_Of_Dreams_I.wav
+     5:21.58       56761640 B   -b-   --   -----    wav  1.0000  16-Series_Of_Dreams_II.wav
+     5:46.65       61187324 B   ---   --   -----    wav  1.0000  17-Series_Of_Dreams_III.wav
+    72:29.47      767275480 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,69 @@
+Bob Dylan
+MCI Center
+Washington, D.C.
+November 15, 2001
+
+source: soomlos
+fob, center, ga floor
+core-sound cardioids > denecke ad-20 > sony d8
+sony d8 > microtrack > cool edit > cd wave > flac
+
+Disc 1:
+01. Wait For The Light To Shine [03:00]
+02. Girl Of The North Country [06:07]
+03. A Hard Rain's A-Gonna Fall [09:09]
+04. Searching For A Soldier's Grave [03:08]
+05. Tweedle Dee & Tweedle Dum [05:10]
+06. Tell Me That It Isn't True [03:55]
+07. Just Like A Woman [07:42]
+08. High Water (For Charley Patton) [06:19]
+09. Floater (Too Much To Ask) [06:39]
+10. Tangled Up In Blue [10:01]
+11. John Brown [05:54]
+12. Don't Think Twice, It's All Right [06:30]
+Total time: [73:43]
+
+Disc 2:
+01. Summer Days [06:10]
+02. Mississippi [06:10]
+03. The Wicked Messenger [05:06]
+04. Rainy Day Women #12 & 35 [08:51]
+     (encore)
+05. Things Have Changed [06:24]
+06. Like A Rolling Stone [07:12]
+07. Forever Young [06:35]
+08. Honest With Me [07:10]
+09. Blowin' In The Wind [06:17]
+10. All Along The Watchtower [06:21]
+Total time: [66:23]
+
+Band Members
+Bob Dylan - vocals, guitar, harp
+Larry Campbell - guitar, mandolin, bouzouki, pedal steel, banjo
+Charlie Sexton - guitar
+David Kemper - drums
+Tony Garnier - bass
+
+Flac Fingerprint 
+bd2001-11-15d1t01.flac:b80c75590c322ced9af2a92497735143
+bd2001-11-15d1t02.flac:2b03b62df4f9c30d62d14c43c8276c8b
+bd2001-11-15d1t03.flac:05805cf7a7260109be92ca1f58a054ab
+bd2001-11-15d1t04.flac:3e576e167173ebc4a55a82cc9ec181b5
+bd2001-11-15d1t05.flac:fea56f3fd262345ecede469bf3db88cc
+bd2001-11-15d1t06.flac:e562c0172e91a467c742be3cf9d89677
+bd2001-11-15d1t07.flac:37b07f007456b53123a702578d478fd6
+bd2001-11-15d1t08.flac:cd4b2a9373d727884869775f54f15552
+bd2001-11-15d1t09.flac:e6cf0332887424f54d51e9a6bd02e134
+bd2001-11-15d1t10.flac:b60df4927659cc9abda0a685497da53a
+bd2001-11-15d1t11.flac:2cb422d0c0de06c0b045d050bcdeb4fa
+bd2001-11-15d1t12.flac:c72cd2fa020c0feac85e43929ea79c77
+bd2001-11-15d2t01.flac:4a7eb83a77abfaa838eec3f914faa4ae
+bd2001-11-15d2t02.flac:16f154a980c89cd92099aef6e6089157
+bd2001-11-15d2t03.flac:fc2bec2fa7e31c7aead071dbbbb332c9
+bd2001-11-15d2t04.flac:bc829f292a2d4c98fed7e0db0915db9e
+bd2001-11-15d2t05.flac:31bd1717d9ebb44b1427cb417727d6a0
+bd2001-11-15d2t06.flac:ec0e53a836409573f9ad61f350c39238
+bd2001-11-15d2t07.flac:339eba08af73cbcc6483885db198bbea
+bd2001-11-15d2t08.flac:3756ca6233e4d0847431abc76b6af9e5
+bd2001-11-15d2t09.flac:6eb4542b9d358d0ef33d1cd273399a48
+bd2001-11-15d2t10.flac:8dfa509f495749a5c4e47068c8badbe8

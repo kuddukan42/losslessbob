@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-15-sp-cmc-8-redo.flacf 
+=================== 
+=================== 
+=================== 
+ccd687ce0b3b6a6fa8f7ba4add9b8b7c  bd05-03-15-sp-cmc-8-redo-LB-2749.txt
+449bf1a4d058c9ed125f17ca70daa648  BD2005-03-15parapens01.flac
+b3a58f29cfd426a9dc4ee297b261252a  BD2005-03-15parapens02.flac
+0bdb576254384dd896a2fd2e653e302a  BD2005-03-15parapens03.flac
+866c352912cf9de23e72a8abdab0d30d  BD2005-03-15parapens04.flac
+9b48a446b9b4377b55a79ee597bb65f0  BD2005-03-15parapens05.flac
+d53dc644bac64154fdcd58969a82eee3  BD2005-03-15parapens06.flac
+e246af87eb361e84670640e14a1aeca0  BD2005-03-15parapens07.flac
+88b2c65597152807b894a104e9c95aa8  BD2005-03-15parapens08.flac
+0d430a5b1a9bdd03dc06b88a95dcaeec  BD2005-03-15parapens09.flac
+b0b992f1f65499828c194d732f6873f7  BD2005-03-15parapens10.flac
+3a2feea1d1e23d9ac79a8fab303e15e7  BD2005-03-15parapens11.flac
+153265852e29e1455c62b04b8221554c  BD2005-03-15parapens12.flac
+4c340e3cb1c20165e33d55645bd63419  BD2005-03-15parapens13.flac
+0457ca0cd8de2e292ff49500d215e282  BD2005-03-15parapens14.flac
+3c01fa3fb989790c930b11ef7d9e7442  BD2005-03-15parapens15.flac
+1865d16c6789c3da827e91f1630948eb  bd20050315info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-03-15-sp-cmc-8-redo.flacf 
+=================== 
+=================== 
+=================== 
+BD2005-03-15parapens01.flac:2897a9fd149ccc0498f269a294b7f5b3
+BD2005-03-15parapens02.flac:8dde2e87c449e0301369a4ea625be518
+BD2005-03-15parapens03.flac:ffe447f56d0b33c23dfd7e8898e5d5fa
+BD2005-03-15parapens04.flac:186a0c2b1d1f0e466a9c840b71131aab
+BD2005-03-15parapens05.flac:25a58ab563eb32179cce4f3a4076ca94
+BD2005-03-15parapens06.flac:af6d033ffb3b9f741064827c6567c236
+BD2005-03-15parapens07.flac:0cd21bc9f700089658d0a4160fd8279d
+BD2005-03-15parapens08.flac:518563c74308cfab16139c9b7d201a73
+BD2005-03-15parapens09.flac:92ef484cfa282c762f73bd6e51f6453e
+BD2005-03-15parapens10.flac:8ca7442b545ddb005ab6dfe4b0a9e346
+BD2005-03-15parapens11.flac:6269c5e142713f00523669d68e1dd722
+BD2005-03-15parapens12.flac:4f15c2a575652cf7d7ddcef8e6edd1ce
+BD2005-03-15parapens13.flac:4e1fe786f04726e7eabd2135f743f4cd
+BD2005-03-15parapens14.flac:011dbc1bd2a0031ea478548c6ff95884
+BD2005-03-15parapens15.flac:f99a888369ea58cf15ec823216d10d5e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-15-sp-cmc-8-redo.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.56       50582156 B   ---   --   ---xx   flac  0.5014  BD2005-03-15parapens01.flac
+     4:17.70       45499484 B   ---   --   ---xx   flac  0.4845  BD2005-03-15parapens02.flac
+     5:25.74       57504092 B   ---   --   ---xx   flac  0.4591  BD2005-03-15parapens03.flac
+     6:45.55       71571404 B   ---   --   ---xx   flac  0.4982  BD2005-03-15parapens04.flac
+     5:52.23       62146940 B   ---   --   ---xx   flac  0.5238  BD2005-03-15parapens05.flac
+     5:50.24       61796492 B   ---   --   ---xx   flac  0.4614  BD2005-03-15parapens06.flac
+     6:27.66       68422076 B   ---   --   ---xx   flac  0.4984  BD2005-03-15parapens07.flac
+     6:08.49       65030492 B   ---   --   ---xx   flac  0.4829  BD2005-03-15parapens08.flac
+     5:04.36       53710316 B   ---   --   ---xx   flac  0.4549  BD2005-03-15parapens09.flac
+     6:42.15       70948124 B   ---   --   ---xx   flac  0.5123  BD2005-03-15parapens10.flac
+     7:10.70       76016684 B   ---   --   ---xx   flac  0.4415  BD2005-03-15parapens11.flac
+     7:39.37       81054668 B   ---   --   ---xx   flac  0.4977  BD2005-03-15parapens12.flac
+     4:38.09       49060412 B   ---   --   ---xx   flac  0.3397  BD2005-03-15parapens13.flac
+     0:29.53        5240300 B   ---   --   ---xx   flac  0.3865  BD2005-03-15parapens14.flac
+     6:18.28       66745100 B   ---   --   ---xx   flac  0.3812  BD2005-03-15parapens15.flac
+    83:38.65      885328740 B                            0.4686  (15 files)
+=================== 
+=================== 
+=================== 

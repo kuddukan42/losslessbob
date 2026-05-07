@@ -1,0 +1,121 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-01 
+=================== 
+=================== 
+=================== 
+e9ed2af9a0b1c534cd84dfc41cc7efc1  bd78-07-01.md5
+7beccf66588951741aa84c20427a2028  bd78-07-01.txt
+698e7435df99d2b8c0f5aa67bd8780fd  bd78-07-01d1t01.shn
+9b0d54ad406c546834841c1633e43a0c  bd78-07-01d1t02.shn
+91aa6906a8ec21fbc77d18538f4628ef  bd78-07-01d1t03.shn
+47841d16d7430e588665cdd862740dc4  bd78-07-01d1t04.shn
+6b7dd2170d7bbb51865f3e99bbe519a6  bd78-07-01d1t05.shn
+f3789cd0ee92c94d5731ec16e176f3db  bd78-07-01d1t06.shn
+2bd28c80965bba1250348fdece74b1d3  bd78-07-01d1t07.shn
+a1f69213145fd6494cb21776d68fb974  bd78-07-01d1t08.shn
+a4dc653c311bfd57a4a02bcee20947e3  bd78-07-01d1t09.shn
+38f1f251f3e875caaa5cd5dcc36fcf4a  bd78-07-01d1t10.shn
+12bbb20329974749c8e59cf88c9d0a99  bd78-07-01d1t11.shn
+8a82e369930fcf7783e8fdd788a37e8d  bd78-07-01d1t12.shn
+8901b921d5f0fc1d4ad9705e64757ad6  bd78-07-01d1t13.shn
+1a786a2524e97352873a54f093a57b93  bd78-07-01d1t14.shn
+cc73a7b346e5bc935ea020a2139eba13  bd78-07-01d1t15.shn
+7762872a154060aefd8235da9f6c4974  bd78-07-01d2t01.shn
+4cbbbce836a9d490e4b5879400995f54  bd78-07-01d2t02.shn
+cc51818b640e54d5e48054a8e1adc7d7  bd78-07-01d2t03.shn
+00fddb49f670a3d138e5fcc2130ce375  bd78-07-01d2t04.shn
+b10e0beb05e1d8401ed61d0493eb644b  bd78-07-01d2t05.shn
+c9da8fc90639535c78d70e4d51becccc  bd78-07-01d2t06.shn
+589a4926f8c06bfc3d6344fc4ac0cc22  bd78-07-01d2t07.shn
+5d4a80a0d75ed1d5607656b1bcff0696  bd78-07-01d2t08.shn
+47b3a31eb98aa4f582c921337f84c757  bd78-07-01d2t09.shn
+ea1a9179c738b548736317010d4124a7  bd78-07-01d2t10.shn
+f43e6c1ecd01f788432195cf0ff24c17  bd78-07-01d2t11.shn
+91a01c9803b35302c4452ca7c2ea39c8  bd78-07-01d2t12.shn
+59111c6ce1fca642b04a3344142af67c  bd78-07-01d2t13.shn
+593d002b62aa48c17fab48911a9185fa  bd78-07-01d2t14.shn
+57e0ac2f7b6dd0ca49de9c890700d794  bd78-07-01d2t15.shn
+0f15e47d2b74c633e66651f1d6081b36  bd78-07-01d2t16.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-07-01 
+=================== 
+=================== 
+=================== 
+5a9786008b169be61087071f8a655dfe  [shntool]  bd78-07-01d1t01.wav
+5e4e2b7e65c0eb184900060d94c0a355  [shntool]  bd78-07-01d1t02.wav
+bd407a0873a79cb44762b5112c16d182  [shntool]  bd78-07-01d1t03.wav
+4fe659a212d8533b707b6f4a5ac63475  [shntool]  bd78-07-01d1t04.wav
+a9a5040f56a4ec0e7933120db8b673bd  [shntool]  bd78-07-01d1t05.wav
+939e98ef1a2e0510f4ef75c223e4f0ce  [shntool]  bd78-07-01d1t06.wav
+0fed16e791833ff8b79185819ca63dca  [shntool]  bd78-07-01d1t07.wav
+135b5cd03386af5575074560bb0823ac  [shntool]  bd78-07-01d1t08.wav
+e3d8821151992f054f6c9bc473a2b149  [shntool]  bd78-07-01d1t09.wav
+5ce0b56bcb2425bfe8e0583309fcc52c  [shntool]  bd78-07-01d1t10.wav
+59abacd6cad307857463bdd453129098  [shntool]  bd78-07-01d1t11.wav
+d7cbd8bbac39b8aaba5c9520a21b788d  [shntool]  bd78-07-01d1t12.wav
+10fcefb0f014ef2d611a0199603d829c  [shntool]  bd78-07-01d1t13.wav
+ca11fb842718c5a07528d0f7d741e44b  [shntool]  bd78-07-01d1t14.wav
+84a3a5020e3531cf861b8837e7c788c8  [shntool]  bd78-07-01d1t15.wav
+c192ba534b2e79d4aa486668a53f0695  [shntool]  bd78-07-01d2t01.wav
+4b9e88a8e9f27f671f57475de2633d04  [shntool]  bd78-07-01d2t02.wav
+a5a363284aab7e0c66820173b90d80c7  [shntool]  bd78-07-01d2t03.wav
+1c3e38cc494b04a635c8614ad0b049ec  [shntool]  bd78-07-01d2t04.wav
+56e8a4aba399d2ebbc65268e045eb6a2  [shntool]  bd78-07-01d2t05.wav
+17b09f957606133a701233f38cd636f6  [shntool]  bd78-07-01d2t06.wav
+c80b23b5e6c6a058fb303958a235701c  [shntool]  bd78-07-01d2t07.wav
+0e18096fab007bc902644bcfeeaba3ca  [shntool]  bd78-07-01d2t08.wav
+48f20b61ccec572ed0393d7f07c07fa2  [shntool]  bd78-07-01d2t09.wav
+b5ac3a692acfe1a5a55d2a67a2bcce65  [shntool]  bd78-07-01d2t10.wav
+c1366822e3dfef5cb6bab395eb3e9248  [shntool]  bd78-07-01d2t11.wav
+89e70f17b496f4d213cb777faa8f3510  [shntool]  bd78-07-01d2t12.wav
+6f24f2b1a0490e9931e98821968e1dbf  [shntool]  bd78-07-01d2t13.wav
+882aa2633d1ed0f70f0e44641305badc  [shntool]  bd78-07-01d2t14.wav
+de1e7b317ae1600ad51f3f2c4da9f33d  [shntool]  bd78-07-01d2t15.wav
+ceb75d337e5b2a131c3797050d5539ef  [shntool]  bd78-07-01d2t16.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:30.18       26502612 B   -b-   --   -----    wav  1.0000  bd78-07-01d1t01.wav
+     5:39.65       59952524 B   ---   --   -----    wav  1.0000  bd78-07-01d1t02.wav
+     4:28.53       47399900 B   ---   --   -----    wav  1.0000  bd78-07-01d1t03.wav
+     4:51.43       51433580 B   ---   --   -----    wav  1.0000  bd78-07-01d1t04.wav
+     4:24.58       46706060 B   ---   --   -----    wav  1.0000  bd78-07-01d1t05.wav
+     7:07.42       75421628 B   ---   --   -----    wav  1.0000  bd78-07-01d1t06.wav
+     4:35.65       48662924 B   ---   --   -----    wav  1.0000  bd78-07-01d1t07.wav
+     4:47.38       50716220 B   ---   --   -----    wav  1.0000  bd78-07-01d1t08.wav
+     4:26.49       47037692 B   ---   --   -----    wav  1.0000  bd78-07-01d1t09.wav
+     6:39.17       70423628 B   ---   --   -----    wav  1.0000  bd78-07-01d1t10.wav
+     4:13.19       44673932 B   ---   --   -----    wav  1.0000  bd78-07-01d1t11.wav
+     4:23.66       46548476 B   ---   --   -----    wav  1.0000  bd78-07-01d1t12.wav
+     4:35.01       48512396 B   ---   --   -----    wav  1.0000  bd78-07-01d1t13.wav
+     2:57.26       31283996 B   ---   --   -----    wav  1.0000  bd78-07-01d1t14.wav
+     4:54.44       51964900 B   -b-   --   -----    wav  1.0000  bd78-07-01d1t15.wav
+     5:06.14       54011604 B   -b-   --   -----    wav  1.0000  bd78-07-01d2t01.wav
+     4:18.25       45570044 B   ---   --   -----    wav  1.0000  bd78-07-01d2t02.wav
+     4:56.41       52310876 B   ---   --   -----    wav  1.0000  bd78-07-01d2t03.wav
+     3:10.43       33617180 B   ---   --   -----    wav  1.0000  bd78-07-01d2t04.wav
+     4:39.65       49368524 B   ---   --   -----    wav  1.0000  bd78-07-01d2t05.wav
+     2:57.73       31394540 B   ---   --   -----    wav  1.0000  bd78-07-01d2t06.wav
+     5:00.48       53032940 B   ---   --   -----    wav  1.0000  bd78-07-01d2t07.wav
+     4:43.37       50008268 B   ---   --   -----    wav  1.0000  bd78-07-01d2t08.wav
+     5:30.68       58371980 B   ---   --   -----    wav  1.0000  bd78-07-01d2t09.wav
+     5:33.73       58912940 B   ---   --   -----    wav  1.0000  bd78-07-01d2t10.wav
+     3:59.13       42190220 B   ---   --   -----    wav  1.0000  bd78-07-01d2t11.wav
+     5:41.74       60326492 B   ---   --   -----    wav  1.0000  bd78-07-01d2t12.wav
+     6:02.61       64000316 B   ---   --   -----    wav  1.0000  bd78-07-01d2t13.wav
+     6:51.25       72559244 B   ---   --   -----    wav  1.0000  bd78-07-01d2t14.wav
+     5:04.22       53677388 B   ---   --   -----    wav  1.0000  bd78-07-01d2t15.wav
+     5:18.64       56245540 B   -b-   --   -----    wav  1.0000  bd78-07-01d2t16.wav
+   149:33.00     1582838564 B                            1.0000  (31 files)
+=================== 
+=================== 
+=================== 

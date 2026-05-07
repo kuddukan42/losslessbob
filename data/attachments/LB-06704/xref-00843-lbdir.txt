@@ -1,0 +1,201 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-Phantoms-Of-My-Youth-jtt.flacf 
+=================== 
+=================== 
+=================== 
+5abb9574b159a52c76914eeea25ce702  Bob Dylan - Phantoms Of My Youth.md5
+0d93825890c58d30161b333edb9d1b12  Bob Dylan - Phantoms Of My Youth.txt
+37caa17cef73d28a0673ff83e4ffc563  Bob Dylan - Phantoms Of My Youth_Info.txt
+2b6beee1acaf7fc3bcff71624d2d20a5  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track01.flac
+7ae2bf24b8cdd5b893a213cf8f17b4e4  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track02.flac
+63281ebec69c5366bcbd3eda409f297e  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track03.flac
+aff55aa67110d60072cc610721a7c064  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track04.flac
+38d3e013cabac6d0a3aec2b1b3ea68ba  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track05.flac
+58787d8933fe7ad361dbb01912fc64c3  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track06.flac
+8af462eb9e2954cc7cbd346febd29dcf  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track07.flac
+ea8b06118a9a47027ccd2cbfda2b9b35  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track08.flac
+17d46029d2f8ab321f5438e41e3dd13f  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track09.flac
+b557306063d3f79c2c0bf625cf212c70  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track10.flac
+787147ff6d9b697b382c1c84d0cf44bc  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track11.flac
+7aca526d57b4844c368cdc4fd6dc6ba0  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track12.flac
+17c6b3e639c3367ccff8d9210ac48452  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track13.flac
+ac75dd7b2320b4452453323aeb00bb3c  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track14.flac
+c509ad253003f68d368f2ed124d895ec  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track15.flac
+8b01eea5a13b0562a88cee2589ba0a26  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track16.flac
+1eb4e2992d2219c4f1156787befd650a  Disc 01\Dylan - Phantoms Of My Youth_Disc01 Track17.flac
+17f01daace5f7e4ea1c1b8d2b84178bc  Disc 01\Phantoms Disc 01.ffp
+b9d10afef66da032d17fc516bc7228d9  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track01.flac
+1bf8d7a18a483fccc349b15228b1a7c1  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track02.flac
+70fc89b1ab5961efd1cccc0f3c06dac7  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track03.flac
+6ec52761e3271cbd7ffc5d48f87f3070  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track04.flac
+fe2bd213f8c8b751b207272382ad0ec3  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track05.flac
+e57ee55e732090cc881e42ae3716c916  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track06.flac
+432e472fdd6f6f32eb600181aa8b5bf7  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track07.flac
+cd86be4f8e9b292cd911c0cf5b2f1fbc  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track08.flac
+ea2f8e227aa2ccad04cae78d4d7c9de6  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track09.flac
+caec88ff2090e2517692e48972bfadae  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track10.flac
+c4b966a86950f96f886c73caf10829a0  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track11.flac
+a4e057a58082a9ff83bdc45c82225b64  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track12.flac
+aef3c2e0db1a43e9907f886f6f57cf8d  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track13.flac
+e276ca358a57ac3a6a998d71fa1e9079  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track14.flac
+d3e68bebd598baf06c4a4b3deb3e882a  Disc 02\Dylan - Phantoms Of My Youth_Disc02 Track15.flac
+3234615b56b90dde717e3605204ec48b  Disc 02\Phantoms Disc 02.ffp
+75d6528b55aa92737c7b4194579cb7e0  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track01.flac
+fe1b364094eeebb62c3169dc73494edf  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track02.flac
+4d78cf34ebe6e4415fad2c9276bc16be  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track03.flac
+2f8f985dfe4c470538f6adcaf238aec7  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track04.flac
+d60264e57566642825659288ab3d203c  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track05.flac
+1644f0685d20202eb24e0b2ac5f907b2  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track06.flac
+e5f4645218e2e28b9fe5ce91b98d7a13  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track07.flac
+639d0f0d6e446ced8dd2f4eb44d4ac60  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track08.flac
+6b355515543170562bf3f874a63c20d1  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track09.flac
+acc101fdaf179bb2d88b78382b2aa5ea  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track10.flac
+a424bf96c9822c4e0c20dc348254b681  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track11.flac
+c146acd03f5b71d6457c9a2b76c6d4e1  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track12.flac
+ccf94ff9a05bc6d3e4c8dbff07442014  Disc 03\Dylan - Phantoms Of My Youth_Disc03 Track13.flac
+fcd569dce2cb0f087fea672b1956e47c  Disc 03\Phantoms Disc 03.ffp
+b96bfbcf04f62744eda05c759d73d5cd  Phantoms of My Youth - F.jpeg
+7af061ac5d0a1038be07a6bf242cd9fa  Phantoms of My Youth - R.jpeg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-Phantoms-Of-My-Youth-jtt.flacf\Disc 01 
+=================== 
+=================== 
+=================== 
+Dylan - Phantoms Of My Youth_Disc01 Track01.flac:1c15ccec36823bcaf5fc9ddfaa509525
+Dylan - Phantoms Of My Youth_Disc01 Track02.flac:278390ee2da4ba5bdab2bedfc84475d9
+Dylan - Phantoms Of My Youth_Disc01 Track03.flac:e62944b7d5e880df63f181ec038d4998
+Dylan - Phantoms Of My Youth_Disc01 Track04.flac:572bc243ace2bbffa994767efdfb5241
+Dylan - Phantoms Of My Youth_Disc01 Track05.flac:faca3453c48464f582a14ac1d59b8d1b
+Dylan - Phantoms Of My Youth_Disc01 Track06.flac:e5ec762dc632b687bf4ac919a2d8e18f
+Dylan - Phantoms Of My Youth_Disc01 Track07.flac:63f1567297fce4c2590746b5f8736091
+Dylan - Phantoms Of My Youth_Disc01 Track08.flac:bfc92a6367de3b5eb937342d13f7b9e8
+Dylan - Phantoms Of My Youth_Disc01 Track09.flac:4342c9a4c5791b3c32ed5205b0a84d79
+Dylan - Phantoms Of My Youth_Disc01 Track10.flac:dcddce5e4353d75a6a7a67d2a5d8a60b
+Dylan - Phantoms Of My Youth_Disc01 Track11.flac:13c528f66fcec9693bb0fbfcae1d731e
+Dylan - Phantoms Of My Youth_Disc01 Track12.flac:36a7ca52d959ec97143ab64c7756fd0d
+Dylan - Phantoms Of My Youth_Disc01 Track13.flac:93b0bb72f7d0b54dbe6fc23098e89944
+Dylan - Phantoms Of My Youth_Disc01 Track14.flac:a581464bf26831fa36ce74909647ab21
+Dylan - Phantoms Of My Youth_Disc01 Track15.flac:2e96712ad52b80e8dc1701e59ece7e34
+Dylan - Phantoms Of My Youth_Disc01 Track16.flac:a7f4c10086d13f42ba4fac83877c2743
+Dylan - Phantoms Of My Youth_Disc01 Track17.flac:9176552b1494ee8cc15c1182dd35a2e2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-Phantoms-Of-My-Youth-jtt.flacf\Disc 02 
+=================== 
+=================== 
+=================== 
+Dylan - Phantoms Of My Youth_Disc02 Track01.flac:f51b57416f5997b6e9220f54000105b3
+Dylan - Phantoms Of My Youth_Disc02 Track02.flac:40ea2f682c1fb200dc89ef037e5e75b6
+Dylan - Phantoms Of My Youth_Disc02 Track03.flac:0c17248fda125e6e3e77fadc1b7d1b76
+Dylan - Phantoms Of My Youth_Disc02 Track04.flac:ffc936f78de6ed96ee081b0323358d5c
+Dylan - Phantoms Of My Youth_Disc02 Track05.flac:5783b1b915b91afff08ce2be9fdb0a77
+Dylan - Phantoms Of My Youth_Disc02 Track06.flac:f6cfa11e00d14b999a4d372e8f1cc856
+Dylan - Phantoms Of My Youth_Disc02 Track07.flac:26e560b5891699ae8298b9a49fa60cd2
+Dylan - Phantoms Of My Youth_Disc02 Track08.flac:9eb18fa0f027a872271c5c73ea811d5b
+Dylan - Phantoms Of My Youth_Disc02 Track09.flac:6e3147fa66b07884b232c9060c01437f
+Dylan - Phantoms Of My Youth_Disc02 Track10.flac:c820f8f565e2562014a3b37bd8e90bc0
+Dylan - Phantoms Of My Youth_Disc02 Track11.flac:7a46e623082e38c586be3c93c5f773d6
+Dylan - Phantoms Of My Youth_Disc02 Track12.flac:1c70fbd931f4b98d1e646ec99f01e225
+Dylan - Phantoms Of My Youth_Disc02 Track13.flac:700e2997c07c7f2336a5a4ebf3f9a0e2
+Dylan - Phantoms Of My Youth_Disc02 Track14.flac:621fbadd66dc96aa26894d29c934e6e7
+Dylan - Phantoms Of My Youth_Disc02 Track15.flac:d6a523a8450469fee3694e4233b9d32b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-Phantoms-Of-My-Youth-jtt.flacf\Disc 03 
+=================== 
+=================== 
+=================== 
+Dylan - Phantoms Of My Youth_Disc03 Track01.flac:47cd0afbf1795fda8532389a97e1b10d
+Dylan - Phantoms Of My Youth_Disc03 Track02.flac:dda952f8cafc8432f131b580f9d7ae02
+Dylan - Phantoms Of My Youth_Disc03 Track03.flac:e99dcb28f334848a6c98ced0f9eda3c1
+Dylan - Phantoms Of My Youth_Disc03 Track04.flac:335d898c73e13e547fab1086494f3ebe
+Dylan - Phantoms Of My Youth_Disc03 Track05.flac:1819585f3ddfad2b07433eb5bfef7d57
+Dylan - Phantoms Of My Youth_Disc03 Track06.flac:f5bab0810bc987f20151f450e7f59ba5
+Dylan - Phantoms Of My Youth_Disc03 Track07.flac:f125120179b5330202bc9021650c6c2d
+Dylan - Phantoms Of My Youth_Disc03 Track08.flac:c342970bbd34e88e43a28efa9af125be
+Dylan - Phantoms Of My Youth_Disc03 Track09.flac:0c4e8d6d46667aae9c8d9116fd7a75c7
+Dylan - Phantoms Of My Youth_Disc03 Track10.flac:cb82b2dfac817352d4c18711b8d09a26
+Dylan - Phantoms Of My Youth_Disc03 Track11.flac:4718652de15ff2fecf8b147fe77ea466
+Dylan - Phantoms Of My Youth_Disc03 Track12.flac:6250b1e665be4ad58a27863666ff9464
+Dylan - Phantoms Of My Youth_Disc03 Track13.flac:6b65c43057983cd20d98dd9366f2c95e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-Phantoms-Of-My-Youth-jtt.flacf\Disc 01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:22.13       35663420 B   ---   --   ---xx   flac  0.5331  Dylan - Phantoms Of My Youth_Disc01 Track01.flac
+     3:38.33       38532860 B   ---   --   ---xx   flac  0.6818  Dylan - Phantoms Of My Youth_Disc01 Track02.flac
+     2:39.43       28148780 B   ---   --   ---xx   flac  0.5751  Dylan - Phantoms Of My Youth_Disc01 Track03.flac
+     2:56.21       31095836 B   ---   --   ---xx   flac  0.6344  Dylan - Phantoms Of My Youth_Disc01 Track04.flac
+     3:18.50       35044844 B   ---   --   ---xx   flac  0.5133  Dylan - Phantoms Of My Youth_Disc01 Track05.flac
+     6:00.72       63673388 B   ---   --   ---xx   flac  0.5833  Dylan - Phantoms Of My Youth_Disc01 Track06.flac
+     4:15.65       45134924 B   ---   --   ---xx   flac  0.5992  Dylan - Phantoms Of My Youth_Disc01 Track07.flac
+     3:09.00       33339644 B   ---   --   ---xx   flac  0.6489  Dylan - Phantoms Of My Youth_Disc01 Track08.flac
+     3:17.71       34917836 B   ---   --   ---xx   flac  0.5502  Dylan - Phantoms Of My Youth_Disc01 Track09.flac
+     5:25.40       57424124 B   ---   --   ---xx   flac  0.5728  Dylan - Phantoms Of My Youth_Disc01 Track10.flac
+     4:26.04       46931852 B   ---   --   ---xx   flac  0.4994  Dylan - Phantoms Of My Youth_Disc01 Track11.flac
+     3:39.02       38636348 B   ---   --   ---xx   flac  0.6761  Dylan - Phantoms Of My Youth_Disc01 Track12.flac
+     4:02.43       42789980 B   ---   --   ---xx   flac  0.5448  Dylan - Phantoms Of My Youth_Disc01 Track13.flac
+     2:55.42       30968828 B   ---   --   ---xx   flac  0.5755  Dylan - Phantoms Of My Youth_Disc01 Track14.flac
+     4:28.20       47322284 B   ---   --   ---xx   flac  0.5570  Dylan - Phantoms Of My Youth_Disc01 Track15.flac
+     3:59.13       42190220 B   ---   --   ---xx   flac  0.6268  Dylan - Phantoms Of My Youth_Disc01 Track16.flac
+     4:09.71       44090636 B   ---   --   ---xx   flac  0.5732  Dylan - Phantoms Of My Youth_Disc01 Track17.flac
+    65:45.03      695905804 B                            0.5832  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-Phantoms-Of-My-Youth-jtt.flacf\Disc 02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:53.20       30564284 B   ---   --   ---xx   flac  0.5298  Dylan - Phantoms Of My Youth_Disc02 Track01.flac
+     2:42.05       28588604 B   ---   --   ---xx   flac  0.4802  Dylan - Phantoms Of My Youth_Disc02 Track02.flac
+     2:46.55       29411804 B   ---   --   ---xx   flac  0.3940  Dylan - Phantoms Of My Youth_Disc02 Track03.flac
+     3:42.04       39170252 B   ---   --   ---xx   flac  0.4089  Dylan - Phantoms Of My Youth_Disc02 Track04.flac
+     3:57.24       41863292 B   ---   --   ---xx   flac  0.4248  Dylan - Phantoms Of My Youth_Disc02 Track05.flac
+     6:01.38       63769820 B   ---   --   ---xx   flac  0.4263  Dylan - Phantoms Of My Youth_Disc02 Track06.flac
+     2:55.72       31039388 B   ---   --   ---xx   flac  0.4409  Dylan - Phantoms Of My Youth_Disc02 Track07.flac
+     2:58.44       31502732 B   ---   --   ---xx   flac  0.4712  Dylan - Phantoms Of My Youth_Disc02 Track08.flac
+     2:40.07       28240508 B   ---   --   ---xx   flac  0.4261  Dylan - Phantoms Of My Youth_Disc02 Track09.flac
+     4:57.26       52451996 B   ---   --   ---xx   flac  0.5238  Dylan - Phantoms Of My Youth_Disc02 Track10.flac
+     5:26.14       57539372 B   ---   --   ---xx   flac  0.4856  Dylan - Phantoms Of My Youth_Disc02 Track11.flac
+     3:48.36       40303916 B   ---   --   ---xx   flac  0.4733  Dylan - Phantoms Of My Youth_Disc02 Track12.flac
+     4:34.20       48380684 B   ---   --   ---xx   flac  0.4383  Dylan - Phantoms Of My Youth_Disc02 Track13.flac
+     5:04.50       53743244 B   ---   --   ---xx   flac  0.4479  Dylan - Phantoms Of My Youth_Disc02 Track14.flac
+     2:14.34       23717612 B   ---   --   ---xx   flac  0.4560  Dylan - Phantoms Of My Youth_Disc02 Track15.flac
+    56:42.74      600287508 B                            0.4558  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-Phantoms-Of-My-Youth-jtt.flacf\Disc 03 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.02       43046348 B   ---   --   ---xx   flac  0.5028  Dylan - Phantoms Of My Youth_Disc03 Track01.flac
+     8:30.25       90022844 B   ---   --   ---xx   flac  0.6364  Dylan - Phantoms Of My Youth_Disc03 Track02.flac
+     2:36.64       27668972 B   ---   --   ---xx   flac  0.5951  Dylan - Phantoms Of My Youth_Disc03 Track03.flac
+     3:48.71       40386236 B   ---   --   ---xx   flac  0.4642  Dylan - Phantoms Of My Youth_Disc03 Track04.flac
+     4:35.71       48677036 B   ---   --   ---xx   flac  0.5170  Dylan - Phantoms Of My Youth_Disc03 Track05.flac
+     4:52.42       51607628 B   ---   --   ---xx   flac  0.6819  Dylan - Phantoms Of My Youth_Disc03 Track06.flac
+     4:46.45       50556284 B   ---   --   ---xx   flac  0.6690  Dylan - Phantoms Of My Youth_Disc03 Track07.flac
+     4:28.36       47359916 B   ---   --   ---xx   flac  0.5901  Dylan - Phantoms Of My Youth_Disc03 Track08.flac
+     6:33.32       69400508 B   ---   --   ---xx   flac  0.6698  Dylan - Phantoms Of My Youth_Disc03 Track09.flac
+     4:28.14       47308172 B   ---   --   ---xx   flac  0.6399  Dylan - Phantoms Of My Youth_Disc03 Track10.flac
+     3:13.41       34141676 B   ---   --   ---xx   flac  0.5809  Dylan - Phantoms Of My Youth_Disc03 Track11.flac
+     3:49.25       40454444 B   ---   --   ---xx   flac  0.5259  Dylan - Phantoms Of My Youth_Disc03 Track12.flac
+     4:28.46       47383436 B   ---   --   ---xx   flac  0.5595  Dylan - Phantoms Of My Youth_Disc03 Track13.flac
+    60:16.64      638013500 B                            0.5966  (13 files)
+=================== 
+=================== 
+=================== 

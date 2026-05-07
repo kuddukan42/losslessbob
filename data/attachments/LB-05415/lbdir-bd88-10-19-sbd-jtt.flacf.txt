@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-10-19-sbd-jtt.flacf 
+=================== 
+=================== 
+=================== 
+9bd3fe4221dd8d40d4e3f6445b1eb05d  bd88-10-19-sbd-jtt-LB-5415.txt
+cce1f2925665961da7eb96845e7b64b3  Disc One\Dylan - October 19th 1988_Disc01Track01.flac
+6e09696c3404d6ea20c18efab63d2465  Disc One\Dylan - October 19th 1988_Disc01Track02.flac
+d376d34dcb3ab3bb6f088f6b5ecdfd67  Disc One\Dylan - October 19th 1988_Disc01Track03.flac
+f3346a6b0a26496ad2c021b8e5fd8092  Disc One\Dylan - October 19th 1988_Disc01Track04.flac
+4c981ff17662f932bb77581fc248c99f  Disc One\Dylan - October 19th 1988_Disc01Track05.flac
+9e0ec0cf4c370b57b6b1e54e06e21499  Disc One\Dylan - October 19th 1988_Disc01Track06.flac
+6aa5428b8bfd8470aa0adfcdd4db71a8  Disc One\Dylan - October 19th 1988_Disc01Track07.flac
+a33d25f4fc25ed2b6e160fc523c0af26  Disc One\Dylan - October 19th 1988_Disc01Track08.flac
+aca1fb434dda94699ce830cb4738cd70  Disc Two\Dylan - October 19th 1988_Disc02Track01.flac
+dc9334b1615fa4a90892ba06be07ec59  Disc Two\Dylan - October 19th 1988_Disc02Track02.flac
+108837d3cb3f6efe723ebb58233f698c  Disc Two\Dylan - October 19th 1988_Disc02Track03.flac
+d2b01ee1b000677c42c51c63f7dd0675  Disc Two\Dylan - October 19th 1988_Disc02Track04.flac
+f46e8de6cd3a4bd8a4a4913db43a4869  Disc Two\Dylan - October 19th 1988_Disc02Track05.flac
+ac86cf6aa4c3662c2a1ef0152d910a45  Disc Two\Dylan - October 19th 1988_Disc02Track06.flac
+e8fc5b789da234e9b6057899856de286  Disc Two\Dylan - October 19th 1988_Disc02Track07.flac
+cc53b1563ccc3a45d87d940208cb85d0  Disc Two\Dylan - October 19th 1988_Disc02Track08.flac
+c03cb1f50d79ce8bc31b7e1a3eccec9d  Dylan - Radio City Music Hall October 19th 1988.md5
+dd13453526b3b8bc62744195b9bb2da1  lbdir-bd88-10-19-sbd-jtt.flacf.md5
+4b895bb4fe66f4e967f077fbeaca0732  lbdir-bd88-10-19-sbd-jtt.flacf.txt
+2dc95c1e49a7d7b2d4a58621d5e81326  Radio City Music Hall October 19th 1988 Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-19-sbd-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - October 19th 1988_Disc01Track01.flac:7c1854d5e0d7c6f4011c6e32617e75ab
+Dylan - October 19th 1988_Disc01Track02.flac:d05ed284e8d5324416f036fb0ba7a859
+Dylan - October 19th 1988_Disc01Track03.flac:52dd81f138959daea41e95207cf1de37
+Dylan - October 19th 1988_Disc01Track04.flac:2c52b9c9763665e1c0b5443c25943a25
+Dylan - October 19th 1988_Disc01Track05.flac:29d333244f3c886c3c80fb6974a653b7
+Dylan - October 19th 1988_Disc01Track06.flac:d09a6c6a6b16da35c0f93a5339e161d7
+Dylan - October 19th 1988_Disc01Track07.flac:cd90aaa1c51be0357641cb487f15cec2
+Dylan - October 19th 1988_Disc01Track08.flac:7538292246ab2914b09f200ce6b51d52
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-10-19-sbd-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - October 19th 1988_Disc02Track01.flac:1da481a53eb12b983e91a271696cdb80
+Dylan - October 19th 1988_Disc02Track02.flac:b4b20b6e51107234edf0a18ba67b011f
+Dylan - October 19th 1988_Disc02Track03.flac:e9d5a63362a66af78f807bc1cccc0199
+Dylan - October 19th 1988_Disc02Track04.flac:a91a38eb8dcaf3e741cc3f9df0316cbb
+Dylan - October 19th 1988_Disc02Track05.flac:fff3224fcdcd627a1c769013d61612ac
+Dylan - October 19th 1988_Disc02Track06.flac:e27df9fce0488fe2fcaedb78b0165619
+Dylan - October 19th 1988_Disc02Track07.flac:0c392a37b43d6fa9087e8e4d0e558da7
+Dylan - October 19th 1988_Disc02Track08.flac:0873a6d43d96bd8c1b85a4f42b24d4d4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-19-sbd-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:35.08       37945388 B   -b-   --   ---xx   flac  0.5312  Dylan - October 19th 1988_Disc01Track01.flac
+     4:08.13       43778092 B   -b-   --   ---xx   flac  0.5362  Dylan - October 19th 1988_Disc01Track02.flac
+     5:39.15       59834412 B   -b-   --   ---xx   flac  0.5408  Dylan - October 19th 1988_Disc01Track03.flac
+     6:37.39       70123564 B   -b-   --   ---xx   flac  0.5573  Dylan - October 19th 1988_Disc01Track04.flac
+     6:03.12       64061484 B   -b-   --   ---xx   flac  0.5531  Dylan - October 19th 1988_Disc01Track05.flac
+     6:09.71       65257516 B   -b-   --   ---xx   flac  0.5572  Dylan - October 19th 1988_Disc01Track06.flac
+     4:37.39       48955436 B   -b-   --   ---xx   flac  0.5589  Dylan - October 19th 1988_Disc01Track07.flac
+     7:14.58       76693548 B   -b-   --   ---xx   flac  0.5317  Dylan - October 19th 1988_Disc01Track08.flac
+    44:05.30      466649440 B                            0.5465  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-10-19-sbd-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.46       46678060 B   -b-   --   ---xx   flac  0.4732  Dylan - October 19th 1988_Disc02Track01.flac
+     4:43.63       50069548 B   -b-   --   ---xx   flac  0.4756  Dylan - October 19th 1988_Disc02Track02.flac
+     3:48.50       40337452 B   -b-   --   ---xx   flac  0.5126  Dylan - October 19th 1988_Disc02Track03.flac
+     5:16.61       55885868 B   -b-   --   ---xx   flac  0.5110  Dylan - October 19th 1988_Disc02Track04.flac
+     6:51.62       72646700 B   -b-   --   ---xx   flac  0.5161  Dylan - October 19th 1988_Disc02Track05.flac
+     4:10.02       44105772 B   -b-   --   ---xx   flac  0.4909  Dylan - October 19th 1988_Disc02Track06.flac
+     5:21.41       56721452 B   -b-   --   ---xx   flac  0.4943  Dylan - October 19th 1988_Disc02Track07.flac
+     5:10.37       54771756 B   -b-   --   ---xx   flac  0.5129  Dylan - October 19th 1988_Disc02Track08.flac
+    39:47.64      421216608 B                            0.4995  (8 files)
+=================== 
+=================== 
+=================== 

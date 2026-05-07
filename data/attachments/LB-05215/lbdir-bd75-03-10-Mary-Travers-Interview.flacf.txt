@@ -1,0 +1,43 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-03-10-Mary-Travers-Interview.flacf 
+=================== 
+=================== 
+=================== 
+a4c50f995000a69ec2b54456a861c5ff  1975-03-10 Mary Travers Interview.ffp
+cf98d79f1e8ad2e33c9a783f55417471  1975-03-10 Mary Travers Interview.md5
+b7e85c6a272ef7fd28bdb14fd0e483e6  1975-03-10 Mary Travers Interview.shntool.txt
+3a3132ef9e85a79f9399ecdb0dba3543  bd1975-03-10.info.r9453.txt
+7c59610694cc859ea376d4de8d0b0861  bd1975-03-10d1.LOG
+825174d72e91e82a36bc5da070f33563  bd1975-03-10d1t01.flac
+db29c8641e87f7725cfe0b6705ec8771  bd1975-03-10d1t02.flac
+84958103eaa8e08ffbe2c9548c11419b  bd1975-03-10d1t03.flac
+d5f7797c9884740247e298b642da79d5  bd1975-03-10d1t04.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-03-10-Mary-Travers-Interview.flacf 
+=================== 
+=================== 
+=================== 
+bd1975-03-10d1t01.flac:df9737f526d4dfa0a1aaba2a4491f8fc
+bd1975-03-10d1t02.flac:a8b4f5680364a6cd735e8a089f95d3b7
+bd1975-03-10d1t03.flac:c32fa7ff51c7ae9d337aeb4d08ac1146
+bd1975-03-10d1t04.flac:cd1faeda1725f61a3600e35bc3dc6309
+=================== 
+=================== 
+=================== 
+=== shntool for: bd75-03-10-Mary-Travers-Interview.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    19:09.06      202697756 B   ---   --   ---xx   flac  0.5240  bd1975-03-10d1t01.flac
+     8:27.34       89514812 B   ---   --   ---xx   flac  0.6127  bd1975-03-10d1t02.flac
+     4:34.19       48378332 B   ---   --   ---xx   flac  0.5775  bd1975-03-10d1t03.flac
+     3:45.33       39767660 B   ---   --   ---xx   flac  0.5829  bd1975-03-10d1t04.flac
+    35:56.17      380358560 B                            0.5578  (4 files)
+=================== 
+=================== 
+=================== 

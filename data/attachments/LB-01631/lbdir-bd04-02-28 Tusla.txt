@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-02-28 Tusla 
+=================== 
+=================== 
+=================== 
+e8a3cce34426b0d5b181ed89f458b939  bd-04-02-28.txt
+054e9e9e17ab8289dee18598cff79f7c  bd-04-02-28d1t1.shn
+b4899838d50c387b2acd90a2ac201cd2  bd-04-02-28d1t10.shn
+260db2b6586323c975f87bb1ff1adb44  bd-04-02-28d1t11.shn
+a2e5c48fe98cda7f2825d272ecd22ce0  bd-04-02-28d1t12.shn
+5c96806dc2e7fe8f897efb9f30e7357b  bd-04-02-28d1t13-original.shn
+5d31bb620041af1f45634542f0fad4f5  bd-04-02-28d1t13.shn
+6a771bfd07272b1d767b367e23b36fe6  bd-04-02-28d1t2.shn
+eb4296948ecbfaea550deca4ef9dde76  bd-04-02-28d1t3.shn
+450d1a5d5d5c21e54e5d28a7bd46b12f  bd-04-02-28d1t4.shn
+e5f5fd804415e35521312cf82844bde5  bd-04-02-28d1t5.shn
+5f06a037698d6966aca2f258a0df6e78  bd-04-02-28d1t6.shn
+d2d16fec0c9f580f20ee2bd305c8468a  bd-04-02-28d1t7.shn
+40f08a95e371c42a7fc0c25ec4de5616  bd-04-02-28d1t8.shn
+db82b7aac0ad85429d97d10bd97ae957  bd-04-02-28d1t9.shn
+86c374a08049a557c48e3342a7d25972  bd-04-02-28d2t1.shn
+7b92cd2257a5f77804e9c10d544c58aa  bd-04-02-28d2t2.shn
+83df3abdc3e2f446460e6cc6084bbb86  bd-04-02-28d2t3.shn
+f40d48fc4d198963086a2bb6a2c2d338  bd-04-02-28d2t4.shn
+25ce8163792f0917e6d5d5922c37369e  bd04-02-28-corrected.md5
+4b3aa8cd556eb3f529a9e3bbc58350c1  bd04-02-28.txt
+50dd841770cc7daa34f88c1895f36275  noname-original.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-02-28 Tusla 
+=================== 
+=================== 
+=================== 
+89b6382c5f7636fcc3bc04dcbe9a30c6  [shntool]  bd-04-02-28d1t1.wav
+e36c979939620f9054a56f021ed1231a  [shntool]  bd-04-02-28d1t2.wav
+e12a26896f096d2d3547bc7b09171044  [shntool]  bd-04-02-28d1t3.wav
+080c94621c36a295cf809308af618958  [shntool]  bd-04-02-28d1t4.wav
+cf5b4d9d9a76ee3599b0e6d72a947a55  [shntool]  bd-04-02-28d1t5.wav
+977ae0348039ba6728d5e52851f3de0e  [shntool]  bd-04-02-28d1t6.wav
+1e90b20dbaaa8a615aedae2cfae203fe  [shntool]  bd-04-02-28d1t7.wav
+39716ff58876b8df8d4c32f8064a544f  [shntool]  bd-04-02-28d1t8.wav
+c1a7395d19c442fdd2638407e2157350  [shntool]  bd-04-02-28d1t9.wav
+d90c050b4467f00b63d94ffe643cb069  [shntool]  bd-04-02-28d1t10.wav
+fb790f7574c96c77e54e39780b68a606  [shntool]  bd-04-02-28d1t11.wav
+af4645ebe50248ab4163884d5ce823cb  [shntool]  bd-04-02-28d1t12.wav
+9098f175a3127a9b927d841e7f02e165  [shntool]  bd-04-02-28d1t13-original.wav
+99bb113c7de57cad7a51f601303891df  [shntool]  bd-04-02-28d1t13.wav
+71bb53a060e789593d8fe28c39b9e801  [shntool]  bd-04-02-28d2t1.wav
+8086a89f8d4a7dadf747ecd49b223aa3  [shntool]  bd-04-02-28d2t2.wav
+949d229f263c82c1fa28746dad3cb363  [shntool]  bd-04-02-28d2t3.wav
+6185cf467634a29b48bd3a642819a190  [shntool]  bd-04-02-28d2t4.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-02-28 Tusla 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:35.32       59168844 B   -b-   he   -----    wav  1.0000  bd-04-02-28d1t1.wav
+     5:40.13       60006712 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t10.wav
+     7:31.11       79582408 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t11.wav
+     6:59.53       74036392 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t12.wav
+     2:28.51       26227288 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t13-original.wav
+     4:58.49       52682588 B   -b-   he   -----    wav  1.0000  bd-04-02-28d1t13.wav
+     3:52.31       40997848 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t2.wav
+     5:56.47       62909080 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t3.wav
+     6:01.10       63704056 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t4.wav
+     8:15.68       87478072 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t5.wav
+     5:27.18       57725272 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t6.wav
+     7:19.24       77496184 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t7.wav
+     6:05.32       64461400 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t8.wav
+     4:58.62       52713160 B   ---   he   -----    wav  1.0000  bd-04-02-28d1t9.wav
+     6:18.42       66777276 B   -b-   he   -----    wav  1.0000  bd-04-02-28d2t1.wav
+     3:55.01       41456976 B   -b-   he   -----    wav  1.0000  bd-04-02-28d2t2.wav
+     7:03.45       74723380 B   -b-   he   -----    wav  1.0000  bd-04-02-28d2t3.wav
+     6:41.63       70884828 B   -b-   he   -----    wav  1.0000  bd-04-02-28d2t4.wav
+   105:09.52     1113031764 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

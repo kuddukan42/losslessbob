@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== Bob Dylan 1999-04-30 Vienna.txt
+===================
+===================
+===================
+
+
+BOB DYLAN
+April 30, 1999
+Stadthalle
+Vienna, Austria
+
+PART ONE
+1. Friend Of The Devil
+2. Mr. Tambourine Man
+3. Masters Of War
+4. A Hard Rain's A-Gonna Fall
+5. Tangled Up In Blue
+6. It's All Over Now, Baby Blue
+7. Boots Of Spanish Leather
+8. Cold Irons Bound
+9. Make You Feel My Love
+10. Stuck Inside Of Mobile With The Memphis Blues Again
+
+PART TWO
+1. Trying To Get To Heaven
+2. Highway 61 Revisited
+3. Not Dark Yet 
+4  Rainy Day Women #12 & 35
+5. It Ain't Me, Babe
+6. Not Fade Away
+7. Like A Rolling Stone
+
+
+01 Track01.flac:135e2c0ce91b6983fb606191d2e16110
+02 Track02.flac:f1d7b5676f4e4b2e07d28613ffc0c470
+03 Track03.flac:2312ed2b2ecc89c9adba2317c9dbd3cb
+04 Track04.flac:3bdd471d0acb7ece0ad6d8108e4a2346
+05 Track05.flac:fea324482e51c35b7d4f30ba6b5b5de4
+06 Track06.flac:822d79c5e25b48be4a5055ca6289ae26
+07 Track07.flac:4772ffa47607a4675274b8ef2f3d7b42
+08 Track08.flac:fd3d1dc82e0296689425a5afb30434f0
+09 Track09.flac:ab0c9dbc8ba423b29983be1ba129476c
+10 Track10.flac:d28d580ec78dbfdd8c6e08b64c75c771
+01 Track01.flac:08065145419cd269acf3e98e94e31879
+02 Track02.flac:70a2736482b6188ccfeca68e3acd94c1
+03 Track03.flac:67d662775992bbc8472da07edb91519b
+04 Track04.flac:7bc1cbcd51200455bdbfd8870b6bd754
+05 Track05.flac:9a5d6e2edf4e5e3dbaaebf901cf7dc8f
+06 Track06.flac:b250d17045bec52bd6df89ac2a1ce6c0
+07 Track07.flac:42fc87815cb2dff30f2edc5357b05cea
+===================
+===================
+===================
+=== Bob Dylan 1999-04-30 Vienna PART ONE.ffp
+===================
+===================
+===================
+01 Track01.flac:135e2c0ce91b6983fb606191d2e16110
+02 Track02.flac:f1d7b5676f4e4b2e07d28613ffc0c470
+03 Track03.flac:2312ed2b2ecc89c9adba2317c9dbd3cb
+04 Track04.flac:3bdd471d0acb7ece0ad6d8108e4a2346
+05 Track05.flac:fea324482e51c35b7d4f30ba6b5b5de4
+06 Track06.flac:822d79c5e25b48be4a5055ca6289ae26
+07 Track07.flac:4772ffa47607a4675274b8ef2f3d7b42
+08 Track08.flac:fd3d1dc82e0296689425a5afb30434f0
+09 Track09.flac:ab0c9dbc8ba423b29983be1ba129476c
+10 Track10.flac:d28d580ec78dbfdd8c6e08b64c75c771
+===================
+===================
+===================
+=== Bob Dylan 1999-04-30 Vienna PART TWO.ffp
+===================
+===================
+===================
+01 Track01.flac:08065145419cd269acf3e98e94e31879
+02 Track02.flac:70a2736482b6188ccfeca68e3acd94c1
+03 Track03.flac:67d662775992bbc8472da07edb91519b
+04 Track04.flac:7bc1cbcd51200455bdbfd8870b6bd754
+05 Track05.flac:9a5d6e2edf4e5e3dbaaebf901cf7dc8f
+06 Track06.flac:b250d17045bec52bd6df89ac2a1ce6c0
+07 Track07.flac:42fc87815cb2dff30f2edc5357b05cea
+===================
+===================
+===================

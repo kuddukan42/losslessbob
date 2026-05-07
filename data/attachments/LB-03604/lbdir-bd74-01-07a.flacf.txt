@@ -1,0 +1,122 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-07a.flacf 
+=================== 
+=================== 
+=================== 
+63fadae5ba07da698e8a25ec71e587d5  1774.txt
+22f2fd386a67ac24128d569177b93286  bd74-01-07a-LB-3604.txt
+1a7eca484a4325d41e38fcbd0d0ca192  disc 1\Track 01.flac
+ce7c4e629eebc54b76385fe7a636079d  disc 1\Track 02.flac
+bfc3fb2e5023009d72bca77053e00717  disc 1\Track 03.flac
+97828c8897ec1798e97a5af82d1fdd64  disc 1\Track 04.flac
+32be06913cfd2107058d373743b4cfe8  disc 1\Track 05.flac
+11f0eaee6c3a8e46342ae9f4546dbbc5  disc 1\Track 06.flac
+cdbf0f7c6d2003c089393a0d98e0f616  disc 1\Track 07.flac
+1c7f24eb1edf5c03d9acf56f792ed697  disc 1\Track 08.flac
+7584b5257f3d28ead4e6051de42130fc  disc 1\Track 09.flac
+dfb4c52980a88324313e7e21a48ad0d5  disc 1\Track 10.flac
+e1e8fed7db11a43306e4ea8dfea21ed2  disc 1\Track 11.flac
+ace599f8a3fa88e0a6832c11f1d459c8  disc 1\Track 12.flac
+f8f64469133603e64b620bf8d2c2f2e4  disc 1\Track 13.flac
+85947ec3c18bf185bba0c9ce695cc227  disc 2\Track 01.flac
+ddee15bb1d8e309d93f579831e222740  disc 2\Track 02.flac
+cab07401b6d1121a2897dc6dcb5db4a4  disc 2\Track 03.flac
+97ae3437232b2543842124aecd20c6be  disc 2\Track 04.flac
+7922aff4a2a2fe6fb28cbbd520b31b63  disc 2\Track 05.flac
+459f83c1c785bc63009c9db7d1a3c6fa  disc 2\Track 06.flac
+de0097329a4680cea8a1b1c89e9b129e  disc 2\Track 07.flac
+7063f810679f76d6d3a87e49212f5b88  disc 2\Track 08.flac
+9decb135f3fbbea09bbd94da2ab4ebc3  disc 2\Track 09.flac
+1bd72f7b7e187be76537ee74d9b47ccc  disc 2\Track 10.flac
+3b4601c4f5715aac94cc77defe2391d2  disc 2\Track 11.flac
+8b0a514e6145eb1c8f8fb765e560995e  disc 2\Track 12.flac
+818451770448f28cddb230dac54a9b1e  disc 2\Track 13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-07a.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:b9c94889b10e8c69ce3db7ac36d74fa8
+Track 02.flac:512a775d003c12742559d0a171edfa3b
+Track 03.flac:847869aac15d10718ddc9671fe8a8738
+Track 04.flac:fa5d06ef502ea30ccbfb357f55540600
+Track 05.flac:a06dfa66edf92f6ec196e87cf331f4f5
+Track 06.flac:bb9966332e0fc8fe16a65ead10209887
+Track 07.flac:068b8a8dc298a495ceb0257193eb3979
+Track 08.flac:94b7e31f8984105e56f335fd371a4458
+Track 09.flac:dc148e774e4abae8f78ed2be19ae2e43
+Track 10.flac:24cd3e581e5b215673f8ea1acca1d90e
+Track 11.flac:cba75bb86186af5c002fa8c0aa03c9c3
+Track 12.flac:88f03cda926147dae8978d0e9544840e
+Track 13.flac:574532732393f44d1d3b0a5d1ceaa0d2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-07a.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:6807e546171b449972e61792438e6e23
+Track 02.flac:437c7937b7d8cc1169adb70ed12c7820
+Track 03.flac:be464e967ad463cd5fed8175d7845748
+Track 04.flac:ca50090bae272c4ecc4c7cb63b292b33
+Track 05.flac:b6da43e28680ac238cef208963c5a825
+Track 06.flac:3d985dff83df7e99638495b458a8c22f
+Track 07.flac:48dd764a57625901cafbfeb1538d1f91
+Track 08.flac:7c2b3fce9ad88ac1a18c4c8b85e3d68d
+Track 09.flac:b7be0b90de6b7a8820f7ab3cedad300d
+Track 10.flac:3ece24d1416ddbfa71f079bf6b019853
+Track 11.flac:a18226066fee74ce6e2eebeafac48826
+Track 12.flac:f1b8b4505e89fd759d29f877ad89e799
+Track 13.flac:a88cd02d240a2dd3f7c8a1011301f3cd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-07a.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.53       43166300 B   ---   --   ---xx   flac  0.6050  Track 01.flac
+     3:06.17       32850428 B   ---   --   ---xx   flac  0.6016  Track 02.flac
+     4:29.64       47602172 B   ---   --   ---xx   flac  0.6142  Track 03.flac
+     2:47.52       29581148 B   ---   --   ---xx   flac  0.6123  Track 04.flac
+     5:20.04       56457452 B   ---   --   ---xx   flac  0.6153  Track 05.flac
+     3:57.33       41884460 B   ---   --   ---xx   flac  0.5315  Track 06.flac
+     3:03.17       32321228 B   ---   --   ---xx   flac  0.5177  Track 07.flac
+     4:37.16       48900476 B   ---   --   ---xx   flac  0.5251  Track 08.flac
+     4:44.43       50198780 B   ---   --   ---xx   flac  0.5267  Track 09.flac
+     5:15.63       55714220 B   ---   --   ---xx   flac  0.6071  Track 10.flac
+     5:08.73       54502940 B   ---   --   ---xx   flac  0.6028  Track 11.flac
+     7:42.70       81661484 B   ---   --   ---xx   flac  0.6036  Track 12.flac
+     4:28.08       47294060 B   ---   --   ---xx   flac  0.5970  Track 13.flac
+    58:46.63      622135148 B                            0.5839  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-07a.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:55.13       30900620 B   ---   --   ---xx   flac  0.6040  Track 01.flac
+     3:08.62       33309068 B   ---   --   ---xx   flac  0.6112  Track 02.flac
+     5:55.48       62734940 B   ---   --   ---xx   flac  0.6132  Track 03.flac
+     4:06.13       43425020 B   ---   --   ---xx   flac  0.6125  Track 04.flac
+     5:50.38       61829420 B   ---   --   ---xx   flac  0.6187  Track 05.flac
+     5:45.25       60916844 B   ---   --   ---xx   flac  0.6039  Track 06.flac
+     4:35.38       48599420 B   ---   --   ---xx   flac  0.5526  Track 07.flac
+     4:27.48       47211740 B   ---   --   ---xx   flac  0.5428  Track 08.flac
+     3:49.33       40473260 B   ---   --   ---xx   flac  0.5448  Track 09.flac
+     3:17.17       34790828 B   ---   --   ---xx   flac  0.5607  Track 10.flac
+     3:07.14       33019772 B   ---   --   ---xx   flac  0.6227  Track 11.flac
+     5:03.07       53465708 B   ---   --   ---xx   flac  0.6195  Track 12.flac
+     4:26.53       47047100 B   ---   --   ---xx   flac  0.6119  Track 13.flac
+    56:28.34      597723740 B                            0.5950  (13 files)
+=================== 
+=================== 
+=================== 

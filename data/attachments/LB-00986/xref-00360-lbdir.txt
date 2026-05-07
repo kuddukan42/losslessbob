@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-02-c.flacf 
+=================== 
+=================== 
+=================== 
+75067c771112104b4c5540ccc02cb8f9  Bob Dylan 2003.05.02 Atlanta, Georgia, 10th Annual Music Midtown Festival.md5
+a919afb757f3b874f5b9d210971f6e9d  info.txt
+329890fef775223dcd4756c2339e8952  Track01.flac
+b3129c333a83833e76d3b43fc1e20228  Track02.flac
+0c8888828b4a7fdd4111a0d6cbe34006  Track03.flac
+70bd8cc8317ba4e05b0473f0ede207d4  Track04.flac
+5ac2ec376522e7d23fb43233b36c179f  Track05.flac
+3309d5621ecc2b09627a02b80d5abd06  Track06.flac
+9bea62edb050001ab355907f0ed479c3  Track07.flac
+5281bb18c2acb139a3061441160cd14e  Track08.flac
+90d61d10eb452a6cbac54a88345e8a6d  Track09.flac
+433060c97c67ced20a6e6cc1f590bcf0  Track10.flac
+ff5b5d13c8277dc892d595ade8f4fd8d  Track11.flac
+138bb25e3c3c9e688d5fef9e9cd27315  Track12.flac
+5a818fb6ef893fdd1d159e2464a4bcc1  Track13.flac
+31d1d5aa9571d86a5c00f59b2b27d03e  Track14.flac
+5b343ba9450aa1367c85007a4dcbe375  Track15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-05-02-c.flacf 
+=================== 
+=================== 
+=================== 
+track01.flac:dca3147fa05313f0a0596d2d8216805f
+track02.flac:cbde2fd3c5102245edd8f770f88a3585
+track03.flac:fe858bd80876a11e45d59f38e681a122
+track04.flac:e1c08bdba73f37dee4fd26a355a3e322
+track05.flac:283afc0b1df2c8b9c2dddadb6cb15a08
+track06.flac:2ab8c6ea9bf2adef8e495b0681bbd78f
+track07.flac:2ae99a8e0923ed66fe5620af2f3ea3d1
+track08.flac:9936df0dab9b31f1269dba0922a30a90
+track09.flac:0d8af255b2581704314617ef9f055971
+track10.flac:adafb3025eb78a6c05ba9c934f491334
+track11.flac:2caff013e437eaf90f4b6bc4fa970e09
+track12.flac:a234f02014a30eef779f85356b669bc1
+track13.flac:aff3d249361a886c56668b500e84200b
+track14.flac:cfbd4f42d5b98e911bc824f85aaae937
+track15.flac:0193eda7b915ef413b9579ca1f15909f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-02-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.18       42025580 B   ---   --   ---xx   flac  0.4395  Track01.flac
+     6:50.24       72380492 B   ---   --   ---xx   flac  0.3770  Track02.flac
+     2:33.10       27012764 B   ---   --   ---xx   flac  0.3960  Track03.flac
+     5:57.60       63115964 B   ---   --   ---xx   flac  0.4430  Track04.flac
+     0:49.27        8707148 B   ---   --   ---xx   flac  0.3850  Track05.flac
+     3:28.32       36766508 B   ---   --   ---xx   flac  0.4044  Track06.flac
+     5:34.64       59068172 B   ---   --   ---xx   flac  0.3788  Track07.flac
+     4:55.07       52054508 B   ---   --   ---xx   flac  0.4148  Track08.flac
+     6:18.18       66721580 B   ---   --   ---xx   flac  0.3813  Track09.flac
+     5:30.28       58277900 B   ---   --   ---xx   flac  0.4134  Track10.flac
+     6:19.13       66886220 B   ---   --   ---xx   flac  0.3715  Track11.flac
+     6:54.17       73069628 B   ---   --   ---xx   flac  0.4175  Track12.flac
+     7:42.36       81581516 B   ---   --   ---xx   flac  0.4000  Track13.flac
+     6:54.35       73111964 B   ---   --   ---xx   flac  0.4057  Track14.flac
+     5:30.13       58242620 B   ---   --   ---xx   flac  0.4178  Track15.flac
+    79:16.27      839022564 B                            0.4030  (15 files)
+=================== 
+=================== 
+=================== 

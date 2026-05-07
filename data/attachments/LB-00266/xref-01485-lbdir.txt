@@ -1,0 +1,104 @@
+===================
+===================
+===================
+=== md5 for: bd02-04-24-d.flacf
+===================
+===================
+===================
+8ed792cffaef1894839cce87d9411bd3 *BOB DYLAN - 2002-04-24  Frankenhalle, Nuernberg, Germany_info.txt
+d5f8f83e802730db03901645b5cb67cd *BOB DYLAN - 2002-04-24  Frankenhalle, Nuernberg,Germany.ffp
+f6400e8cd92579939f2c7368a0194aa2 *BOB DYLAN - 2002-04-24  Frankenhalle, Nuernberg,Germany.md5
+d5e1b2254cf6e8480c0156d9cefb8250 *Disc One\01 Introduction.flac
+2e2c679a32de4afb81294b8e0a509a41 *Disc One\02 Hallelujah, I'm Ready To Go.flac
+347ec1931847fab0c9f1565689bd2b05 *Disc One\03 I'll Remember You.flac
+8fbea84eb2a694f240556ca2904746a4 *Disc One\04 It's Alright, Ma (I'm Only Bleeding).flac
+8cd67254c02ec4f4b51c5b8de110d21d *Disc One\05 It's All Over Now, Baby Blue.flac
+2528f3e5534983ef15c19ca8442dfeda *Disc One\06 Tweedle Dee & Tweedle Dum.flac
+2f801dff04cbed296b14ce9a1c22e488 *Disc One\07 Can't Wait.flac
+40c3b438a73eff1bca6f26feb7ee9e1c *Disc One\08 Subterranean Homesick Blues.flac
+2b0b4d0ac8f72492d142771511542bca *Disc One\09 Moonlight.flac
+182512a53c00d824b25d5e64904458d0 *Disc One\10 Tangled Up In Blue.flac
+09f15c80ab547b515c08d4f8f85bb627 *Disc One\11 Boots Of Spanish Leather.flac
+c7803e8a191d3d2e8dfb905e65742529 *Disc One\12 Masters Of War.flac
+ae3f47140a3b3861db4d0ce37559b919 *Disc Two\01 Summer Days.flac
+d01277412328e3ea840cc37fe50f4b1f *Disc Two\02 Standing In The Doorway.flac
+a09ce981fafd7f6f18f0b4462e389244 *Disc Two\03 The Wicked Messenger.flac
+f39866c9f48575d6152c9ac10259486c *Disc Two\04 Leopard-Skin Pill-Box Hat.flac
+165d07cab2aebbe1b10b6d39c85667e3 *Disc Two\05 Country Pie.flac
+9549c459e95bb74983232eaeafa657fc *Disc Two\06 Like A Rolling Stone.flac
+e316cb9dd5aae624d968ad4f519959bf *Disc Two\07 I Shall Be Released.flac
+57a54d91001142f0159cab0fc25cab5f *Disc Two\08 Honest With Me.flac
+6264dbfce446892dee7bc9a2085d34a9 *Disc Two\09 Blowin' In The Wind.flac
+e01e0ad5ed9aff00e67cbf21a736637b *Disc Two\10 All Along The Watchtower.flac
+===================
+===================
+===================
+=== ffp for: bd02-04-24-d.flacf
+===================
+===================
+===================
+Disc One\01 Introduction.flac:c7201f375e1a0c52213856f34abe87f3
+Disc One\02 Hallelujah, I'm Ready To Go.flac:6c87012363dd7d708607ff8eeb9b41a2
+Disc One\03 I'll Remember You.flac:326ee4ddec642dd9d6b29c88ea89f156
+Disc One\04 It's Alright, Ma (I'm Only Bleeding).flac:6e856ace9158a0c65c470e46fbe3835f
+Disc One\05 It's All Over Now, Baby Blue.flac:8b6849988456d4938d7b8d675ea60892
+Disc One\06 Tweedle Dee & Tweedle Dum.flac:f8e9871af8717175e6a7215fa8f965bb
+Disc One\07 Can't Wait.flac:7dcf98e2f924632a0dcb24f5f997b51d
+Disc One\08 Subterranean Homesick Blues.flac:717464b12018498256d2d9156ba50bcd
+Disc One\09 Moonlight.flac:7b6cf987a7aaf466fa8698f7602835fe
+Disc One\10 Tangled Up In Blue.flac:81a8f3468c961901e6372a645461d9e4
+Disc One\11 Boots Of Spanish Leather.flac:fa4559e59e39afe3d6ed64da7f2f6c9a
+Disc One\12 Masters Of War.flac:a51d277a0ec0021c1546e7d60ce3946f
+Disc Two\01 Summer Days.flac:20e64eba281017c71f457dfa0ded8de0
+Disc Two\02 Standing In The Doorway.flac:53aef88bc87de0aed2ea85fa743036a2
+Disc Two\03 The Wicked Messenger.flac:1d111e60d99dfcb1c2e2d18806658609
+Disc Two\04 Leopard-Skin Pill-Box Hat.flac:d6b18b1ccc0711bb9ae4bdedaada71f8
+Disc Two\05 Country Pie.flac:f9df9f569bc99c4cf5491321f934483d
+Disc Two\06 Like A Rolling Stone.flac:3966b0938ae614aededc34b8f1bbc3e0
+Disc Two\07 I Shall Be Released.flac:ac0567dc126817565abb41dae138d164
+Disc Two\08 Honest With Me.flac:8fd2f56389ffcc25f12e3ca9fa06ca7d
+Disc Two\09 Blowin' In The Wind.flac:35f19fd14a63e6f608e95a4efff734b8
+Disc Two\10 All Along The Watchtower.flac:c56f670a86ccae433abcdeeb90b902db
+===================
+===================
+===================
+=== shntool len for: bd02-04-24-d.flacf\Disc One
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:05.68        1041980 B   ---   --   ---xx   flac  0.6253  01 Introduction.flac
+     3:03.19       32325932 B   ---   --   ---xx   flac  0.6776  02 Hallelujah, I'm Ready To Go.flac
+     4:43.59       50060012 B   ---   --   ---xx   flac  0.6638  03 I'll Remember You.flac
+     6:43.65       71242124 B   ---   --   ---xx   flac  0.6476  04 It's Alright, Ma (I'm Only Bleeding).flac
+     8:43.48       92370140 B   ---   --   ---xx   flac  0.6331  05 It's All Over Now, Baby Blue.flac
+     6:01.28       63746300 B   ---   --   ---xx   flac  0.6150  06 Tweedle Dee & Tweedle Dum.flac
+     5:35.27       59157548 B   ---   --   ---xx   flac  0.6271  07 Can't Wait.flac
+     5:35.29       59162252 B   ---   --   ---xx   flac  0.6585  08 Subterranean Homesick Blues.flac
+     5:40.30       60046604 B   ---   --   ---xx   flac  0.6081  09 Moonlight.flac
+     9:03.30       95855804 B   ---   --   ---xx   flac  0.7147  10 Tangled Up In Blue.flac
+     6:27.41       68363276 B   ---   --   ---xx   flac  0.6175  11 Boots Of Spanish Leather.flac
+     5:22.59       56939612 B   ---   --   ---xx   flac  0.6687  12 Masters Of War.flac
+    67:06.53      710311584 B                            0.6490  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd02-04-24-d.flacf\Disc Two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:39.37       81054668 B   ---   --   ---xx   flac  0.6734  01 Summer Days.flac
+     8:26.38       89347820 B   ---   --   ---xx   flac  0.6407  02 Standing In The Doorway.flac
+     6:24.65       67890524 B   ---   --   ---xx   flac  0.7160  03 The Wicked Messenger.flac
+    10:14.71      108476636 B   ---   --   ---xx   flac  0.6713  04 Leopard-Skin Pill-Box Hat.flac
+     3:26.59       36477212 B   ---   --   ---xx   flac  0.6896  05 Country Pie.flac
+     8:20.13       88230620 B   ---   --   ---xx   flac  0.6920  06 Like A Rolling Stone.flac
+     6:37.29       70099052 B   ---   --   ---xx   flac  0.6770  07 I Shall Be Released.flac
+     7:15.00       76734044 B   ---   --   ---xx   flac  0.7243  08 Honest With Me.flac
+     6:51.05       72512204 B   ---   --   ---xx   flac  0.6229  09 Blowin' In The Wind.flac
+     5:10.11       54709916 B   ---   --   ---xx   flac  0.7051  10 All Along The Watchtower.flac
+    70:26.28      745532696 B                            0.6790  (10 files)
+===================
+===================
+===================

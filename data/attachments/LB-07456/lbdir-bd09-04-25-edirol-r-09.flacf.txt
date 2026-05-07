@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-25-edirol-r-09.flacf 
+=================== 
+=================== 
+=================== 
+f0aa9dc2086dec834c8afd8535e7fd9f  00 Introduction.flac
+d18a4c6dc1d9988ed91ba59190727068  01 Maggie's Farm.flac
+027ac9ff339d739b0d4faf74a65af082  02 The Times They Are A-Changin'.flac
+79d2898b889ce6914edc605bc9b6fc13  03 Things Have Changed.flac
+6df73a1caf7d8559f211c6c6776cbc58  04 Chimes Of Freedom.flac
+518de88a3de4d5b6801ae88125f5250b  0425 Bob Dylan.md5
+00b205a8a5d784489ac09f4784076ca1  05 Rollin' And Tumblin'.flac
+56e19f2be855c64c1249c8590346aaa9  06 The Lonesome Death Of Hattie Carroll.flac
+5bbf1f52a8233593926909014c5704fa  07 'Til I Fell In Love With You.flac
+e4167351fbb08f1e678dd4254dbc535f  08 Workingman's Blues #2.flac
+38cbc0c92dc6e96075e5d71db982c959  09 Highway 61 Revisited.flac
+3cf107bc0550a21ef1d495070da43aa7  10 The Ballad Of Hollis Brown.flac
+543e4c1833f011338a4991e26016b445  11 Po' Boy.flac
+c37f1ae853d8018597e53d61a75432e2  12 Honest With Me.flac
+92de7b70162f1ff05f0d01025a76e46a  13 When The Deal Goes Down.flac
+b39305f0ea8f8558b9248306a5e1a1a8  14 Thunder On The Mountain.flac
+62b6f21ad43f9b4cb3c8f805621d973b  15 Like A Rolling Stone.flac
+a18ebf9c6bc088c01b75b93cf17cc9f5  16 All Along The Watchtower.flac
+eed765a036eae0f45f7f7a56f5b2b7d1  17 Spirit On The Water.flac
+9d30c7688b35ef3017a6399fc850a729  18 Blowin' In The Wind.flac
+e05507a5805772f623545dc52ecb0efc  info.txt
+16511c5983d2d12d29990d5ec00ca45b  p1.jpg
+8e98ae8a1f508ccb26006173be2ea50f  p2.jpg
+80e834e964fbe42e776eccd8d74f3411  p3.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-25-edirol-r-09.flacf 
+=================== 
+=================== 
+=================== 
+00 Introduction.flac:860380706b4685e43ff729ed392e78f2
+01 Maggie's Farm.flac:45c3a45c522cd25b639ea481a8e36156
+02 The Times They Are A-Changin'.flac:83dd1dafd43db637563b77c8e0f6b7cf
+03 Things Have Changed.flac:6644c83d9569355a20eb25ba21900cf9
+04 Chimes Of Freedom.flac:324b21aa7791a37e585231ad6bcf94f6
+05 Rollin' And Tumblin'.flac:d15b96b9845dc3893d318df4f06a7f19
+06 The Lonesome Death Of Hattie Carroll.flac:dfdb7b30a0825cec35745189576521a1
+07 'Til I Fell In Love With You.flac:4acb621e402fd4b6866434dce6716e38
+08 Workingman's Blues #2.flac:2ef2becf834da1f9d01fba2ce5fc3d1d
+09 Highway 61 Revisited.flac:9f8d1fb5ca5b4c04c6cbc390cb5b0ae3
+10 The Ballad Of Hollis Brown.flac:65fbb89bb3aaf8ddc96a9b9a991621c3
+11 Po' Boy.flac:915dd6c19f9fb5f0e7aeb7126d5007b5
+12 Honest With Me.flac:d561809fd667168f14fa9d94aeafc8e4
+13 When The Deal Goes Down.flac:e03c453e68b5968165668ca9582e0d47
+14 Thunder On The Mountain.flac:85b3c28a5604adc98249b0c17b6d93e0
+15 Like A Rolling Stone.flac:4ab7e6271a4229d4e7cd9de88bd7ad03
+16 All Along The Watchtower.flac:8ee302cfa22a7654e114fb9d3dfce151
+17 Spirit On The Water.flac:cd5c2300b6467c056d5088a0054fcdf5
+18 Blowin' In The Wind.flac:a14a562d0ca6ef6b11949d472d3ec149
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-25-edirol-r-09.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:49.56        8776344 B   -b-   --   ---xx   flac  0.3433  00 Introduction.flac
+     4:16.15       45193784 B   -b-   --   ---xx   flac  0.3841  01 Maggie's Farm.flac
+     5:12.22       55088828 B   -b-   --   ---xx   flac  0.4023  02 The Times They Are A-Changin'.flac
+     6:06.30       64633988 B   -b-   --   ---xx   flac  0.3679  03 Things Have Changed.flac
+     7:07.63       75471912 B   -b-   --   ---xx   flac  0.3653  04 Chimes Of Freedom.flac
+     6:19.64       67005812 B   -b-   --   ---xx   flac  0.3885  05 Rollin' And Tumblin'.flac
+     6:21.45       67313900 B   -b-   --   ---xx   flac  0.3269  06 The Lonesome Death Of Hattie Carroll.flac
+     7:44.51       81969600 B   -b-   --   ---xx   flac  0.3749  07 'Til I Fell In Love With You.flac
+     7:05.14       75003868 B   -b-   --   ---xx   flac  0.3372  08 Workingman's Blues #2.flac
+     7:02.39       74532272 B   -b-   --   ---xx   flac  0.3876  09 Highway 61 Revisited.flac
+     5:12.10       55059304 B   -b-   --   ---xx   flac  0.3260  10 The Ballad Of Hollis Brown.flac
+     4:38.02       49043196 B   -b-   --   ---xx   flac  0.3220  11 Po' Boy.flac
+     7:08.31       75571760 B   -b-   --   ---xx   flac  0.3837  12 Honest With Me.flac
+     5:57.39       63067396 B   -b-   --   ---xx   flac  0.3037  13 When The Deal Goes Down.flac
+     6:51.48       72614372 B   -b-   --   ---xx   flac  0.3855  14 Thunder On The Mountain.flac
+    10:29.48      111067788 B   -b-   --   ---xx   flac  0.3481  15 Like A Rolling Stone.flac
+     5:04.56       53756584 B   -b-   --   ---xx   flac  0.3641  16 All Along The Watchtower.flac
+     7:34.73       80256900 B   -b-   --   ---xx   flac  0.3252  17 Spirit On The Water.flac
+     5:59.57       63462664 B   -b-   --   ---xx   flac  0.3522  18 Blowin' In The Wind.flac
+   117:03.14     1238890272 B                            0.3579  (19 files)
+=================== 
+=================== 
+=================== 

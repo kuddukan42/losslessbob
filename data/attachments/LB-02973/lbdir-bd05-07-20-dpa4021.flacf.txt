@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-07-20-dpa4021.flacf 
+=================== 
+=================== 
+=================== 
+5567baed76e7078c30d391bb51cd666a  bd05-07-20-dpa4021-LB-2973.txt
+d42170dd11b00c88af4f46324b64afc4  bd05-07-20.txt
+3acf8fbd4fc8f1c6476a574f7bfd3b76  bd05-07-20d1t01.flac
+8189fdd09b7e17fde9c35ef2f6b16d5e  bd05-07-20d1t02.flac
+d67ed017387ef0d1b169f069634e9c28  bd05-07-20d1t03.flac
+159aa87c846a5b2fec678dc10aa9fbea  bd05-07-20d1t04.flac
+a70c02a2d4c7e4b50c49c17836050172  bd05-07-20d1t05.flac
+a4bd2c33e5bfd3755a46228abb2af8d5  bd05-07-20d1t06.flac
+6619a2463635a716ac2af93568c1d292  bd05-07-20d1t07.flac
+63fce78a05747529fb306a0ab33c4b71  bd05-07-20d1t08.flac
+18f5474744fed498ac6042f44ca72688  bd05-07-20d1t09.flac
+f16bc643ffd5f1e4ad60570009a91abd  bd05-07-20d1t10.flac
+a04601b9c8d3bda58bafe3aeb55d4451  bd05-07-20d2t01.flac
+a0cdaf5314eec0dc76a448678a6a375a  bd05-07-20d2t02.flac
+5b3b70d62835a63d243a62fc10e85443  bd05-07-20d2t03.flac
+3fae9d812f2ec0284c3baa2bca394d90  bd05-07-20d2t04.flac
+a6d3d82fb428c0089bd28e2809b13068  bd05-07-20d2t05.flac
+df028be359dfb052849d9943986e526f  bd05-07-20d2t06.flac
+da7ec506c2bbc25dfcafe9a69b0985ba  bd05-07-20d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-07-20-dpa4021.flacf 
+=================== 
+=================== 
+=================== 
+bd05-07-20d1t01.flac:71abcb2036b955902023823a9b39a8e1
+bd05-07-20d1t02.flac:c9811911c4e665736bad832734989e33
+bd05-07-20d1t03.flac:2c1da48999877c9cddb3f31ed07d376f
+bd05-07-20d1t04.flac:5bb43d809281c3e28aee80d9a84a0dd2
+bd05-07-20d1t05.flac:57c32bd49b36a7b74c4153b01f43e527
+bd05-07-20d1t06.flac:52f4084af4f8d6f442f0379a0b64d092
+bd05-07-20d1t07.flac:93379290c849c928341711512ea3577f
+bd05-07-20d1t08.flac:4fba57f29b25a8726725e85e4a84740d
+bd05-07-20d1t09.flac:1c919e8eaeb7e7b6a7b7003c432ffd7c
+bd05-07-20d1t10.flac:941d33e847578abec10660fe93384c24
+bd05-07-20d2t01.flac:89e3c902a0d37cc90106431c1c546c25
+bd05-07-20d2t02.flac:c69052a5a5672947af1cfb608ffa4033
+bd05-07-20d2t03.flac:dc34aba2e435fdebd6d9b800b563e4e6
+bd05-07-20d2t04.flac:f16b7a9ed28e80c733368144c123ebf1
+bd05-07-20d2t05.flac:a3dbfa5074f88f5893d133dff301baba
+bd05-07-20d2t06.flac:774ad9afd715f6695f6abbcb240e45de
+bd05-07-20d2t07.flac:3ac8551e3cff03935a3a34995f36eabd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-07-20-dpa4021.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:31.20        5515484 B   ---   --   ---xx   flac  0.5044  bd05-07-20d1t01.flac
+     4:46.74       50624492 B   ---   --   ---xx   flac  0.5673  bd05-07-20d1t02.flac
+     5:33.22       58792988 B   ---   --   ---xx   flac  0.5083  bd05-07-20d1t03.flac
+     6:18.52       66801548 B   ---   --   ---xx   flac  0.5185  bd05-07-20d1t04.flac
+     5:47.62       61356668 B   ---   --   ---xx   flac  0.4841  bd05-07-20d1t05.flac
+     6:53.72       73022588 B   ---   --   ---xx   flac  0.5543  bd05-07-20d1t06.flac
+     6:38.20       70254284 B   ---   --   ---xx   flac  0.5032  bd05-07-20d1t07.flac
+     5:39.14       59832572 B   ---   --   ---xx   flac  0.5023  bd05-07-20d1t08.flac
+     4:46.32       50525708 B   ---   --   ---xx   flac  0.4628  bd05-07-20d1t09.flac
+     7:09.48       75788540 B   ---   --   ---xx   flac  0.5506  bd05-07-20d1t10.flac
+     7:11.71       76195436 B   ---   --   ---xx   flac  0.5053  bd05-07-20d2t01.flac
+     5:38.54       59750252 B   ---   --   ---xx   flac  0.4631  bd05-07-20d2t02.flac
+     8:17.31       87743756 B   ---   --   ---xx   flac  0.5271  bd05-07-20d2t03.flac
+    11:42.16      123870476 B   ---   --   ---xx   flac  0.4874  bd05-07-20d2t04.flac
+     7:54.64       83764172 B   ---   --   ---xx   flac  0.5243  bd05-07-20d2t05.flac
+     5:58.61       63294716 B   ---   --   ---xx   flac  0.4298  bd05-07-20d2t06.flac
+     5:21.19       56669132 B   ---   --   ---xx   flac  0.5447  bd05-07-20d2t07.flac
+   106:10.57     1123802812 B                            0.5085  (17 files)
+=================== 
+=================== 
+=================== 

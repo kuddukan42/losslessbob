@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-08-02-Cygnus02.flacf 
+=================== 
+=================== 
+=================== 
+8ebb6f6260eb0f5be2c61e995bb93e0c  bd09-08-02d1t01.flac
+941813511ce390466c7bd051f2e2a360  bd09-08-02d1t02.flac
+59664b55c9ca1ef4c03f712ad8cbdbe0  bd09-08-02d1t03.flac
+ae603722d4992cd637447bf4fe3f275e  bd09-08-02d1t04.flac
+8316c3340014d05a11a80ed2809f7d54  bd09-08-02d1t05.flac
+09dbbda66e2e4fd36fcdaaf02d038d52  bd09-08-02d1t06.flac
+534c110fce692119e66589cde4f6cc71  bd09-08-02d1t07.flac
+1a4660255f2d62c02e0b53d8c284149f  bd09-08-02d1t08.flac
+f16f690dae66ef507a271caad04f5a43  bd09-08-02d1t09.flac
+ead631675f94d28b0f7657a72fb9808a  bd09-08-02d2t01.flac
+57598b1597e870a6210f0aa021785ccb  bd09-08-02d2t02.flac
+2c9a05e2fc7fc43aa53e1e0edf852207  bd09-08-02d2t03.flac
+f05909104bd3e296f7d49448c4203ad2  bd09-08-02d2t04.flac
+77d61ced8bd5dc4fe8a48af820751457  bd09-08-02d2t05.flac
+30a521a0bcac9e12936bb4425ce183c1  bd09-08-02d2t06.flac
+977beb964fd180852724242fb374a9a9  bd09-08-02d2t07.flac
+f6682dba694118382269a67e43fcb328  bob dylan 8-02-09.txt
+b3fad350a9201c84b9799fc40467272b  flac.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-08-02-Cygnus02.flacf 
+=================== 
+=================== 
+=================== 
+bd09-08-02d1t01.flac:5ca5fc1b596234aa63e0657508b9cadf
+bd09-08-02d1t02.flac:718387b11a832e5f50b844cf2757216a
+bd09-08-02d1t03.flac:066b64f12fca2b4c796e980a1f833cc1
+bd09-08-02d1t04.flac:553b9b6b27b71409672fefe26a256180
+bd09-08-02d1t05.flac:2aad0b62f3297d1d27c14f831219ce9a
+bd09-08-02d1t06.flac:892753f4767ec8491324d13626e5f4d6
+bd09-08-02d1t07.flac:80075faa7f781f0cfa99c515d73b7e45
+bd09-08-02d1t08.flac:0f91b4ce042d874f3e86e3d1f5e18cfb
+bd09-08-02d1t09.flac:1db6ec39e1c8fac38f1a6ff5c042888f
+bd09-08-02d2t01.flac:207b9d3ddd7e456f928ff7f8c9fe10be
+bd09-08-02d2t02.flac:917e63a669f8ac106cbdebaa7128a057
+bd09-08-02d2t03.flac:43a1a932e549e184b834f1d8cf8eca28
+bd09-08-02d2t04.flac:5d53415b77c9f5008f4473e937895cf8
+bd09-08-02d2t05.flac:35317b408f7900af44a8bab264fd4508
+bd09-08-02d2t06.flac:8aeff1b80b7883d0b80def2dcc85091b
+bd09-08-02d2t07.flac:9a642565beab6d20cc1a01f1f3ba3663
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-08-02-Cygnus02.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:17.48       56031740 B   ---   --   ---xx   flac  0.5335  bd09-08-02d1t01.flac
+     5:31.60       58529564 B   ---   --   ---xx   flac  0.5043  bd09-08-02d1t02.flac
+     6:56.18       73424780 B   ---   --   ---xx   flac  0.5330  bd09-08-02d1t03.flac
+     6:20.71       67199036 B   ---   --   ---xx   flac  0.5021  bd09-08-02d1t04.flac
+     4:55.15       52073324 B   ---   --   ---xx   flac  0.5008  bd09-08-02d1t05.flac
+     6:51.04       72509852 B   ---   --   ---xx   flac  0.5221  bd09-08-02d1t06.flac
+     7:37.74       80788892 B   ---   --   ---xx   flac  0.5361  bd09-08-02d1t07.flac
+     6:48.11       71997116 B   ---   --   ---xx   flac  0.4464  bd09-08-02d1t08.flac
+     7:23.15       78180524 B   ---   --   ---xx   flac  0.5628  bd09-08-02d1t09.flac
+     8:44.45       92539484 B   ---   --   ---xx   flac  0.4596  bd09-08-02d2t01.flac
+     6:09.69       65253932 B   ---   --   ---xx   flac  0.5653  bd09-08-02d2t02.flac
+     2:52.73       30512540 B   ---   --   ---xx   flac  0.4303  bd09-08-02d2t03.flac
+     6:47.00       71794844 B   ---   --   ---xx   flac  0.5600  bd09-08-02d2t04.flac
+     4:27.23       47152940 B   ---   --   ---xx   flac  0.5631  bd09-08-02d2t05.flac
+     0:36.33        6428060 B   ---   --   ---xx   flac  0.4765  bd09-08-02d2t06.flac
+     4:48.19       50847932 B   ---   --   ---xx   flac  0.5805  bd09-08-02d2t07.flac
+    92:08.53      975264560 B                            0.5204  (16 files)
+=================== 
+=================== 
+=================== 

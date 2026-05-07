@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-09-19-sony-inc.flacf 
+=================== 
+=================== 
+=================== 
+804447bd4c0ffcdc7b3ca9983a8b276c  Bob Dylan - Ryman - 9-19-07.md5
+ff5fa895fa02331d7ada61e6aa1292e7  Bob Dylan - Ryman - 9-19-2007.txt
+405e1de12c2ae2916142d045cdf865a6  Track No01.flac
+25319c30e0b1e9b3df6b305fa154c7a0  Track No02.flac
+9150d38b4a5b6b438c52c8d77694fe17  Track No03.flac
+d538f280bb31b448c1bdcaa1a87f41af  Track No04.flac
+c1fd6eabcaee0d607790a9a30cddd8c7  Track No05.flac
+5f2024db7f0d6e8157ee0e39fc170bb9  Track No06.flac
+deeb4e0e0ce1188eae47dc52824d9adb  Track No07.flac
+a5f92e9ce75f41bc30fc12904c4cac63  Track No08.flac
+1e42f48de50fdd5862683ed0a41551f7  Track No09.flac
+ac8cacde01b55e28a565642a198fd1f2  Track No10.flac
+4cb8b8c238aa9e689d02863a0cc78cf6  Track No11.flac
+094b0282de34520a1a6963954056ccaa  Track No12.flac
+8ed483b218c6d57070716f19b3aa44de  Track No13.flac
+079e0227869b1916fc9b68cc834b1383  Track No14.flac
+109e3577dfe851ea20b6db1a4e3a0eb0  Track No15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-09-19-sony-inc.flacf 
+=================== 
+=================== 
+=================== 
+Track No01.flac:830d3dfa9908bf2305ba94cb42995d49
+Track No02.flac:d13d0c27400dcd3e4c3234a8a8a47a99
+Track No03.flac:f3e10ee8548ba1f685a3d65bf755be99
+Track No04.flac:021a888e50d5be66c6fbd23e10270b3e
+Track No05.flac:40f0fb559fb9fd6cec790aca0dcff239
+Track No06.flac:9679550d01b8f92cf9a2754e5883399e
+Track No07.flac:43d5515257e353ffdf3e8d8289c97b57
+Track No08.flac:5c68185e02ead62da90bbd890daca0d2
+Track No09.flac:5f82e79abca498cde23ee819906c8ae2
+Track No10.flac:faacc29aad01bc9d99a733b1028dbef1
+Track No11.flac:863fdc68e97beb615bf087bea5cf5c65
+Track No12.flac:1d34d01a48ca2afe66b437b098074f0e
+Track No13.flac:b19738dec274ee54cc12c5055e9434dd
+Track No14.flac:be02103da5d8b0934e88332b2a6a5ab2
+Track No15.flac:2fa18b49fe5ec0f1b5d5972e46e83ea2
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-09-19-sony-inc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:52.51       62212796 B   ---   --   ---xx   flac  0.5444  Track No01.flac
+     5:34.04       58927052 B   ---   --   ---xx   flac  0.5224  Track No02.flac
+     4:47.34       50706812 B   ---   --   ---xx   flac  0.5422  Track No03.flac
+     7:02.05       74452604 B   ---   --   ---xx   flac  0.5254  Track No04.flac
+     7:27.51       78970796 B   ---   --   ---xx   flac  0.5402  Track No05.flac
+     6:50.25       72382844 B   ---   --   ---xx   flac  0.5013  Track No06.flac
+    10:15.53      108610700 B   ---   --   ---xx   flac  0.5283  Track No07.flac
+     7:15.33       76811660 B   ---   --   ---xx   flac  0.5305  Track No08.flac
+     6:44.59       71404412 B   ---   --   ---xx   flac  0.5393  Track No09.flac
+     6:09.26       65152796 B   ---   --   ---xx   flac  0.5507  Track No10.flac
+     6:20.05       67043804 B   ---   --   ---xx   flac  0.5896  Track No11.flac
+     5:50.69       61902332 B   ---   --   ---xx   flac  0.5548  Track No12.flac
+     7:46.10       82225964 B   ---   --   ---xx   flac  0.4812  Track No13.flac
+     6:34.57       69635708 B   ---   --   ---xx   flac  0.5480  Track No14.flac
+     9:38.55      102088604 B   ---   --   ---xx   flac  0.5609  Track No15.flac
+   104:10.12     1102528884 B                            0.5366  (15 files)
+=================== 
+=================== 
+=================== 

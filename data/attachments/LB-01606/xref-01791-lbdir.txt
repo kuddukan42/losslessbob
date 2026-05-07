@@ -1,0 +1,160 @@
+===================
+===================
+===================
+=== md5 for: bd86-07-22-c.flacf
+===================
+===================
+===================
+c4bcccc1bf8f798fbd834d631ad5e495 *Art\S2606.jpg
+719237407c8b15bc4705cc717c13cc22 *Art\S2607.jpg
+7eb473c5b116a91bdcdf19a560e6718e *Art\S2608.jpg
+27258d5aaf335012bd98e7794dd700b5 *Art\S2609.jpg
+4477240708ae376f8c8f0afd917faab6 *Art\S2610.jpg
+3fb66ee728186515bbee87c836f08724 *Art\S2611.jpg
+44b9eb7c7b372917a7bb209274a9f87f *BOB DYLAN 1986 07 22 Mansfield, Massachusetts - Four Disc Set.md5
+5e511f84eaa518ecb67c3f283ff6ece3 *Disc 1\Track01.flac
+8deee801051a6931c63c649fdd2564c9 *Disc 1\Track02.flac
+fa2cb9f0b71a39fa68f9ac0d5882fe32 *Disc 1\Track03.flac
+0cb5ca7b8d9807abb63e77c8644ebafe *Disc 1\Track04.flac
+8656bf05904ea796bdb9894ac1288b3d *Disc 1\Track05.flac
+6dc01404249b0e7ae0a75fe6cacc792e *Disc 1\Track06.flac
+acbb035673ccce31e187ba7df7c0a8ed *Disc 1\Track07.flac
+fc3b5d46978101dc7e4c313c46565996 *Disc 1\Track08.flac
+0366b4002edbaa57bd9b09e0a2a276d7 *Disc 1\Track09.flac
+c9b80050eaaf5e67777e67a4cc5d5a4b *Disc 1\Track10.flac
+62d6f12a67b6dbb9fb63ff2a078604c4 *Disc 2\Track01.flac
+771029f9b07859272e5b841cc8243666 *Disc 2\Track02.flac
+a6666b7b5b16c5626717186734a21519 *Disc 2\Track03.flac
+43b6ad46fac50a3da75941224ef4dfc4 *Disc 2\Track04.flac
+6075f1da04ccebecd135f827e32c5d1b *Disc 2\Track05.flac
+67b766db436ac346f2632160cc27de18 *Disc 2\Track06.flac
+495402283af13a700dc4705a1b26a3ec *Disc 2\Track07.flac
+c735834848ed0f389cc02f1ccfb4a14d *Disc 2\Track08.flac
+04968bd1c1420fdae94d89e9a3f31cd4 *Disc 3\Track01.flac
+befbc7fd7074133b9451a4de32427029 *Disc 3\Track02.flac
+6f14476d66c0319b85211238745979de *Disc 3\Track03.flac
+709fa9c4a5b0a813551f70da3037d3db *Disc 3\Track04.flac
+7ed4a42c5130947b26556deb1dceec23 *Disc 3\Track05.flac
+9d1620d43d3be90d39a657cd74492f01 *Disc 3\Track06.flac
+87710c8aee30391e5e364a601c238a1f *Disc 3\Track07.flac
+fe7bf9213dbe583820f0dc9d5932767f *Disc 3\Track08.flac
+d9a77adc67f2b60c595928b6da8f84f9 *Disc 3\Track09.flac
+36789cc1b8ed9e72c3e6458d98b455a7 *Disc 4\Track01.flac
+49b07982efc1b708469b9023278bdfc2 *Disc 4\Track02.flac
+89444daf093bd1a28d4d1688e3beb18a *Disc 4\Track03.flac
+b64f63d7f737aa2bd1ec2d56138c6e13 *Disc 4\Track04.flac
+73949d465cefe75bc3e046b5bc7b6468 *Disc 4\Track05.flac
+5c640196b81ed923e148d18c9644bbc2 *Disc 4\Track06.flac
+876e820d7814b6c8538c756dbcc8a64b *info.txt
+===================
+===================
+===================
+=== ffp for: bd86-07-22-c.flacf
+===================
+===================
+===================
+Disc 1\Track01.flac:08f7afa8532f00b2d69fa06079ddaba3
+Disc 1\Track02.flac:d868f221b112b7f45e2f75614a52a30c
+Disc 1\Track03.flac:fb4db86474b7f5f9891da4e367061c44
+Disc 1\Track04.flac:9d2d59b0534d4aaeea9f3e12c89d2a0f
+Disc 1\Track05.flac:eea5a45ff65488c1f51cfe6a616cefb7
+Disc 1\Track06.flac:e02b5c1949dc6bdfea2fcccc12445f8c
+Disc 1\Track07.flac:635ffb33138daa05773e3768e3c09246
+Disc 1\Track08.flac:e27cc57d0d1299d96ce80e8436605040
+Disc 1\Track09.flac:3771558e8412ce9f7a5e616e25a21c96
+Disc 1\Track10.flac:502160eec93cd74f7d67bfebaaabac07
+Disc 2\Track01.flac:53c20ba9d897a04d0d1e402867df52cf
+Disc 2\Track02.flac:1b8fcc03c3980ea3766f271982834e77
+Disc 2\Track03.flac:c5651b7038c02bd2548781fef7f22bea
+Disc 2\Track04.flac:0171287623966ea193036e0752176e42
+Disc 2\Track05.flac:f8d4a9b037506ea90260fa61d0f639dc
+Disc 2\Track06.flac:8e05a6a666740b0f44fb865afede67e5
+Disc 2\Track07.flac:1f51967ce08147a8850694d2e6e54ce1
+Disc 2\Track08.flac:fbb3d59dbd6c820cc6683a7d28c87b0f
+Disc 3\Track01.flac:ea1d2582b5a6099b80f7c296fd069245
+Disc 3\Track02.flac:ddb7f2a253ccf17780c372d249f27796
+Disc 3\Track03.flac:4da91973ef5d16c62d6d62a8b260feb7
+Disc 3\Track04.flac:8227498bb3b54468e9b74d866eb028b1
+Disc 3\Track05.flac:d05ec97240ae1e9273340622d194cd72
+Disc 3\Track06.flac:b2cce151fd1476fca32a5e6b440e63c7
+Disc 3\Track07.flac:9d3b9147763017f9b2005707794f26a2
+Disc 3\Track08.flac:7d360eb41661c0f315869fda33d97be7
+Disc 3\Track09.flac:8bb2538a1784853381cf7abb953621f2
+Disc 4\Track01.flac:5cf4cedb43dcad61b6d349da47effaf7
+Disc 4\Track02.flac:52ae08375402ae7fecc8959b400cf949
+Disc 4\Track03.flac:6546bd3c5ca2f86e4ce352cff3f92a81
+Disc 4\Track04.flac:10846302d20c28c3f03c1894f0cfe208
+Disc 4\Track05.flac:2bb2d3e4e9962ab7276e1bb89ded9261
+Disc 4\Track06.flac:e99071bc07c13ecd86926af36e6ac64e
+===================
+===================
+===================
+=== shntool len for: bd86-07-22-c.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:42.38       39250988 B   -b-   --   ---xx   flac  0.6380  Track01.flac
+     4:23.71       46559276 B   -b-   --   ---xx   flac  0.6348  Track02.flac
+     3:18.50       35043884 B   -b-   --   ---xx   flac  0.6333  Track03.flac
+     4:56.23       52268588 B   -b-   --   ---xx   flac  0.6208  Track04.flac
+     5:26.48       57618476 B   -b-   --   ---xx   flac  0.6441  Track05.flac
+     4:32.34       48061484 B   -b-   --   ---xx   flac  0.6181  Track06.flac
+     5:23.28       57042476 B   -b-   --   ---xx   flac  0.6409  Track07.flac
+     3:46.28       39932972 B   -b-   --   ---xx   flac  0.6313  Track08.flac
+     4:10.44       44204588 B   -b-   --   ---xx   flac  0.6354  Track09.flac
+     5:54.13       62475308 B   -b-   --   ---xx   flac  0.6058  Track10.flac
+    45:35.02      482458040 B                            0.6296  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd86-07-22-c.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:16.15       87529004 B   -b-   --   ---xx   flac  0.5864  Track01.flac
+     5:17.53       56042540 B   -b-   --   ---xx   flac  0.6171  Track02.flac
+     4:05.71       43384364 B   -b-   --   ---xx   flac  0.6010  Track03.flac
+     6:59.63       74059820 B   ---   --   ---xx   flac  0.6044  Track04.flac
+     3:53.26       41163308 B   -b-   --   ---xx   flac  0.6147  Track05.flac
+     5:41.57       60286508 B   ---   --   ---xx   flac  0.6416  Track06.flac
+     5:51.08       61936172 B   -b-   --   ---xx   flac  0.6399  Track07.flac
+     3:54.00       41278508 B   -b-   --   ---xx   flac  0.6192  Track08.flac
+    43:59.68      465680224 B                            0.6140  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd86-07-22-c.flacf\Disc 3
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:41.12       60180524 B   -b-   --   ---xx   flac  0.6313  Track01.flac
+     4:09.57       44057132 B   -b-   --   ---xx   flac  0.6617  Track02.flac
+     4:33.57       48291884 B   -b-   --   ---xx   flac  0.5856  Track03.flac
+     3:30.18       37085228 B   -b-   --   ---xx   flac  0.6025  Track04.flac
+     6:04.44       64313900 B   -b-   --   ---xx   flac  0.6571  Track05.flac
+     5:43.07       60521516 B   -b-   --   ---xx   flac  0.6557  Track06.flac
+     4:25.30       46817324 B   -b-   --   ---xx   flac  0.6591  Track07.flac
+     5:00.13       52950572 B   -b-   --   ---xx   flac  0.6592  Track08.flac
+     4:04.07       43057196 B   -b-   --   ---xx   flac  0.6174  Track09.flac
+    43:12.20      457275276 B                            0.6387  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd86-07-22-c.flacf\Disc 4
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.52       63627308 B   -b-   --   ---xx   flac  0.6289  Track01.flac
+     7:44.03       81856556 B   -b-   --   ---xx   flac  0.6493  Track02.flac
+    13:17.08      140608556 B   -b-   --   ---xx   flac  0.6266  Track03.flac
+     5:38.41       59719724 B   -b-   --   ---xx   flac  0.6291  Track04.flac
+     4:05.67       43375148 B   -b-   --   ---xx   flac  0.6485  Track05.flac
+     7:22.62       78114860 B   -b-   --   ---xx   flac  0.6643  Track06.flac
+    44:09.08      467302152 B                            0.6395  (6 files)
+===================
+===================
+===================

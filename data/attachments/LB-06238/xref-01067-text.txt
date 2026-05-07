@@ -1,0 +1,96 @@
+===================
+===================
+===================
+=== 2004-07-06-Montauban (Schubert Rec. + ASM).ffp
+===================
+===================
+===================
+101.Introduction.flac:a8a2a6d32df20b77225b738731909b47
+102.To Be Alone With You.flac:e2ffa7a2ca7e77de97c2f252da306691
+103.It's All Over Now, Baby Blue.flac:016e6d8178e21e8142e766d5325c8370
+104.Lonesome Day Blues.flac:ecf6b701b441461217342de6cca904e1
+105.Desolation Row.flac:efa9bff415bc05b87efcd8ad63781058
+106.It's Alright, Ma (I'm Only Bleeding).flac:4e45beadad3d20873a468d54f0fdaabe
+107.Tweedle Dee & Tweedle Dum.flac:41f23a984842a140094810111bf2035d
+108.Under the Red Sky.flac:903a7bdef91449d341a26f3041efc446
+109.Highway 61 Revisited.flac:6cdf0cab4a0cb52b38c235dce3223d07
+110.It Ain't Me, Babe.flac:5a9726599308aa1899355da0870602b3
+111.Cold Irons Bound.flac:e1307f1b5e9196f0dcd57aa5751e55d8
+112.This Wheel's On Fire.flac:3617c149ee8d8b7556ec88d9de4d586f
+201.Honest With Me.flac:63de154dfce2c60e9478749ba8ed5513
+202.Masters of War.flac:f91fd09c7b6a9f60b55cc171eb99652c
+203.Summer Days.flac:a615bff7d99ef32fbebdd2b17775f834
+204.Don't Think Twice, It's All Right.flac:8333133a5a1c42c81a461f7aa36275aa
+205.Like A Rolling Stone.flac:669c5df21287f33510b5c34373a0acf2
+206.All Along the Watchtower.flac:51351838fc320ff0dcd0f5919be5f2e0
+===================
+===================
+===================
+=== 2004-07-06-Montauban (Schubert Rec. + ASM).md5
+===================
+===================
+===================
+3e8c266b51e060fdee9edc8652c80daf *101.Introduction.flac
+9e3b975fae63dfcb8c358f3215cda047 *102.To Be Alone With You.flac
+91c57dfe2a01b3b6d552684d2fac36e6 *103.It's All Over Now, Baby Blue.flac
+213e89de0b9789366c5de93a75ac5bf2 *104.Lonesome Day Blues.flac
+eee69ef762fde956a3720de3ddce957f *105.Desolation Row.flac
+aef7e3853c6d1f71477aed30be53db14 *106.It's Alright, Ma (I'm Only Bleeding).flac
+e04baa71affc5a876bfd7cc14230960e *107.Tweedle Dee & Tweedle Dum.flac
+1496d63d802d76395284884b43b66410 *108.Under the Red Sky.flac
+f8fcc279688e847106c109a6c60ef11a *109.Highway 61 Revisited.flac
+76d27d2e3e229bbc50189bcb19e18f4d *110.It Ain't Me, Babe.flac
+9ae32c9b7d7b3aaa1a8eb8fa37429667 *111.Cold Irons Bound.flac
+141824da135b2cc8f195e2243e409c33 *112.This Wheel's On Fire.flac
+7b4c9fc2a1a35f41270f86cc602d899d *2004-07-06-Montauban.txt
+4ba717c2b2d2af8e901ac8d2d5677223 *201.Honest With Me.flac
+f03b82e8a03134f7d5c091a145fa2324 *202.Masters of War.flac
+c2c27e6ae733e4ba4c323ef914239e64 *203.Summer Days.flac
+fe0c690f8a175fd2f2f1d15c379f8763 *204.Don't Think Twice, It's All Right.flac
+18a70b9f42d263d39bd716002d34c10d *205.Like A Rolling Stone.flac
+1a6b1e90bbfa0da3031eeeaab50653bb *206.All Along the Watchtower.flac
+===================
+===================
+===================
+=== 2004-07-06-Montauban.txt
+===================
+===================
+===================
+Bob Dylan
+Montauban, France
+Montauban Festival de Jazz Jardin des Plantes
+06-July-2004
+
+Recorded by: Schubert
+Lineage: Neumann SKM140 -> Neumann BS48i-2 -> Sony TDC-D100
+	>WaveLab 6.01 > dBpower AMP Music Converter > MD5summer
+
+CD1
+01.	Introduction
+02. 	To Be Alone With You
+03. 	It's All Over Now, Baby Blue
+04. 	Lonesome Day Blues
+05. 	Desolation Row
+06. 	It's Alright, Ma (I'm Only Bleeding)
+07. 	Tweedle Dee & Tweedle Dum
+08. 	Under the Red Sky
+09. 	Highway 61 Revisited
+10. 	It Ain't Me, Babe
+11. 	Cold Irons Bound
+12. 	This Wheel's On Fire
+
+
+CD2
+01. 	Honest With Me
+02. 	Masters of War
+03. 	Summer Days
+
+	encore
+04. 	Don't Think Twice, It's All Right
+05. 	Like A Rolling Stone
+06. 	All Along the Watchtower
+
+Enjoy!!
+===================
+===================
+===================

@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd96-10-19-b.flacf
+===================
+===================
+===================
+e82f9f133c91c07cf8efc09dcdd31982 *bd1996-10-19 Jean Nevada.txt
+c330032ffd9cc87aad300738e09c4476 *CD 1\Track01.flac
+e5773c39d9aa4614abb171c0f77789f4 *CD 1\Track02.flac
+259c583ebdeb90be8dc5d6d1290b9657 *CD 1\Track03.flac
+6aa0f8dc7631e50a50876d40c81894f6 *CD 1\Track04.flac
+d0ace6d1e5442041b5f1e560b3a361d0 *CD 1\Track05.flac
+50b42d81a6af47eaaf1158c431ddd40c *CD 1\Track06.flac
+01cb8a7299c4d654276fd7c2ddcf70e4 *CD 1\Track07.flac
+e7966c4a269426d89c733d0200c41b1e *CD 1\Track08.flac
+0972935f9eabe8c9284f8675d59f3dd4 *CD 1\Unknown Title.log
+ee304be156b0eb6c7b073b61417a3896 *CD 2\Track01.flac
+f9439e45e1bd35f166965815b7c30b83 *CD 2\Track02.flac
+96a46cf4b705e4b910aa606f4570f916 *CD 2\Track03.flac
+86308315984d075d2558a89d766213ca *CD 2\Track04.flac
+74e97c655e872a50f03395af2b547d34 *CD 2\Track05.flac
+96ac02773c0fa02e5de926c80c319c0c *CD 2\Track06.flac
+6fd72193942cd5afea55fe5d61cb008c *CD 2\Track07.flac
+5675c4617d87ee43f3f355f6aad3dc7a *CD 2\Unknown Title.log
+9a1f24804c30d4e7060df723c0503e84 *md5sum.md5
+===================
+===================
+===================
+=== ffp for: bd96-10-19-b.flacf
+===================
+===================
+===================
+CD 1\Track01.flac:1c66d449729445b909af186721468939
+CD 1\Track02.flac:a9b3b7da615d96a226a4fd4d226c34ab
+CD 1\Track03.flac:9279ad46a2cab96c46e6622ac92b85a4
+CD 1\Track04.flac:a3938c4f60de57d85b5324663afe9cad
+CD 1\Track05.flac:209c328f0e8c1e7a1c5ba2eea56e8b18
+CD 1\Track06.flac:81f61eff615a120827740c81589f4e5d
+CD 1\Track07.flac:8d6657e6afbced4dcf7c41b5c2d7d805
+CD 1\Track08.flac:effc6ff49872126c392ea3aa86b99a2e
+CD 2\Track01.flac:f14969263417a74c80c10b7f39f27093
+CD 2\Track02.flac:b62b5c5ef69a987311899c10da465c33
+CD 2\Track03.flac:f336e5c2950d6d9ea98066b2a1da9bf4
+CD 2\Track04.flac:d60d3a3344ffd21b82de73dfef4da74f
+CD 2\Track05.flac:13eeecc60f38b3f8a4bfe9546f65bd25
+CD 2\Track06.flac:96506474edbcbe68a2ab6e0fe85218c8
+CD 2\Track07.flac:8657465fce97a839aad94f81f700c66f
+===================
+===================
+===================
+=== shntool len for: bd96-10-19-b.flacf\CD 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.08       50116460 B   ---   --   ---xx   flac  0.5805  Track01.flac
+     5:56.46       62906636 B   ---   --   ---xx   flac  0.5461  Track02.flac
+     5:38.39       59714972 B   ---   --   ---xx   flac  0.5775  Track03.flac
+     8:53.00       94021244 B   ---   --   ---xx   flac  0.5427  Track04.flac
+     6:13.06       65811356 B   ---   --   ---xx   flac  0.5845  Track05.flac
+     8:46.51       92906396 B   ---   --   ---xx   flac  0.5788  Track06.flac
+     7:37.69       80777132 B   ---   --   ---xx   flac  0.5719  Track07.flac
+     6:39.70       70548284 B   ---   --   ---xx   flac  0.5145  Track08.flac
+    54:29.64      576802480 B                            0.5612  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd96-10-19-b.flacf\CD 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:05.22       64437788 B   ---   --   ---xx   flac  0.5138  Track01.flac
+     7:31.43       79657580 B   ---   --   ---xx   flac  0.5780  Track02.flac
+     8:02.37       85111868 B   ---   --   ---xx   flac  0.5254  Track03.flac
+     7:38.39       80882972 B   ---   --   ---xx   flac  0.5292  Track04.flac
+    11:03.17      116993228 B   ---   --   ---xx   flac  0.5675  Track05.flac
+     6:45.11       71467916 B   ---   --   ---xx   flac  0.5387  Track06.flac
+     7:57.24       84199292 B   ---   --   ---xx   flac  0.5915  Track07.flac
+    55:03.43      582750644 B                            0.5515  (7 files)
+===================
+===================
+===================

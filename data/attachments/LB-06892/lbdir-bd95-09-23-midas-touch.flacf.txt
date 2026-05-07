@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-09-23-midas-touch.flacf 
+=================== 
+=================== 
+=================== 
+5df4ca364d3d65db3d7cad565aeee983  bd95-09-23-midas-touch-d1t01.flac
+d31b213f102e5c6e020c7824d44b929f  bd95-09-23-midas-touch-d1t02.flac
+ae66732f39a35b47e3673a87a72ca213  bd95-09-23-midas-touch-d1t03.flac
+c70c38bb4222aa3847b0b6392e307434  bd95-09-23-midas-touch-d1t04.flac
+974615a733c7f8830c3b03b1f57525c8  bd95-09-23-midas-touch-d1t05.flac
+22304989b6216d39b09b6f7ff11a0cb5  bd95-09-23-midas-touch-d1t06.flac
+bafda85133e72ee2c05c656a33a05a98  bd95-09-23-midas-touch-d1t07.flac
+274583a17fbc7f413084afe9d867ca96  bd95-09-23-midas-touch-d1t08.flac
+3bc81ba0861f8a3cae62f8caa6fc3700  bd95-09-23-midas-touch-d1t09.flac
+ba2c7525bae63135f196735d2dea9b5e  bd95-09-23-midas-touch-d1t10.flac
+5d3bba671e87f10dddc040edc450e2bd  bd95-09-23-midas-touch-d1t11.flac
+1d1819376c2fdc55659e44a9897533d5  bd95-09-23-midas-touch-d1t12.flac
+9a8f3077ee9bbb6fc9deb1b960ef7b62  bd95-09-23-midas-touch-d2t01.flac
+31a0b16b2170a259ec6ec6194a945be2  bd95-09-23-midas-touch-d2t02.flac
+f20ad27bed2a7fb9103bf22352cea4e0  bd95-09-23-midas-touch-d2t03.flac
+2bbedc29e44708113c5d591e3538dfe9  bd95-09-23-midas-touch-d2t04.flac
+018553fba4db40388806b73a3b6e2910  bd95-09-23-midas-touch-d2t05.flac
+92d973c3c18f98172b24eb2b1411152a  bd95-09-23-midas-touch-d2t06.flac
+f492b4d815456b0f696ed71921896d63  bd95-09-23-midas-touch-d2t07.flac
+2498995e7e059aaef7d941ce2566de19  bd95-09-23-midas-touch-d2t08.flac
+6df785ad74ef4092df718ee8be75dcf6  bd95-09-23-midas-touch-d2t09.flac
+e230a3e92bd3bf95d208aa4fe72feed3  bd95-09-23-midas-touch-d2t10.flac
+26297211a0a882845b48ad0605ad1237  bd95-09-23-midas-touch.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-09-23-midas-touch.flacf 
+=================== 
+=================== 
+=================== 
+bd95-09-23-midas-touch-d1t01.flac:1d81e8a80807555e3cd4478b75e34560
+bd95-09-23-midas-touch-d1t02.flac:6af446610e2dba71acc58451110212f9
+bd95-09-23-midas-touch-d1t03.flac:0e464222536dded7407267bfbe54c6ef
+bd95-09-23-midas-touch-d1t04.flac:2c2cda062596ac017d48fdf28288b278
+bd95-09-23-midas-touch-d1t05.flac:d3f7fae497544beb1568293899eb98ad
+bd95-09-23-midas-touch-d1t06.flac:fbea6edbb470ac60bb530be6039c7269
+bd95-09-23-midas-touch-d1t07.flac:e7677d6ea82d58046d5f58ba65e8f245
+bd95-09-23-midas-touch-d1t08.flac:4a89867bbaf44334d0f2b26b36242680
+bd95-09-23-midas-touch-d1t09.flac:abbf6a5bd0feef54baa40b0541fb6fe8
+bd95-09-23-midas-touch-d1t10.flac:b4355fd2e93dc05e7defb22f23a90295
+bd95-09-23-midas-touch-d1t11.flac:22258d7c81690aa23aedacefcb27433f
+bd95-09-23-midas-touch-d1t12.flac:07725e7fa1844c64e22579cf726f2d80
+bd95-09-23-midas-touch-d2t01.flac:3b9b03e086717a6755044a8a23c6f8a5
+bd95-09-23-midas-touch-d2t02.flac:4a11d6a8e3f890e3181f5b882eb968d0
+bd95-09-23-midas-touch-d2t03.flac:eb20762ee0600a3ccc6fcb953f0ca4d3
+bd95-09-23-midas-touch-d2t04.flac:51fc263fb659234e15739c77c55f98c9
+bd95-09-23-midas-touch-d2t05.flac:9f1092a4341f438ecb75dfa8e9e693c0
+bd95-09-23-midas-touch-d2t06.flac:2eebd82e9bbe29b9211e44b70e8744a6
+bd95-09-23-midas-touch-d2t07.flac:807ac798d27cd490689307d812c55e5e
+bd95-09-23-midas-touch-d2t08.flac:d776f9e5bd141d83974961b7c53e018c
+bd95-09-23-midas-touch-d2t09.flac:022e89003c7998255893a0a5a2d28ab6
+bd95-09-23-midas-touch-d2t10.flac:28c5ebfe8a89f630faba4b59786a0eca
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-09-23-midas-touch.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.35       55824764 B   ---   --   ---xx   flac  0.6571  bd95-09-23-midas-touch-d1t01.flac
+     7:14.70       76722284 B   ---   --   ---xx   flac  0.6443  bd95-09-23-midas-touch-d1t02.flac
+     6:49.20       72194684 B   ---   --   ---xx   flac  0.6721  bd95-09-23-midas-touch-d1t03.flac
+     5:37.30       59517404 B   ---   --   ---xx   flac  0.6192  bd95-09-23-midas-touch-d1t04.flac
+     7:46.40       82296524 B   ---   --   ---xx   flac  0.6817  bd95-09-23-midas-touch-d1t05.flac
+     5:07.65       54307724 B   ---   --   ---xx   flac  0.5418  bd95-09-23-midas-touch-d1t06.flac
+     4:02.50       42806444 B   ---   --   ---xx   flac  0.5997  bd95-09-23-midas-touch-d1t07.flac
+     4:51.65       51485324 B   ---   --   ---xx   flac  0.5731  bd95-09-23-midas-touch-d1t08.flac
+     7:19.10       77463164 B   ---   --   ---xx   flac  0.6581  bd95-09-23-midas-touch-d1t09.flac
+     6:42.65       71065724 B   ---   --   ---xx   flac  0.6151  bd95-09-23-midas-touch-d1t10.flac
+     4:48.05       50815004 B   ---   --   ---xx   flac  0.6642  bd95-09-23-midas-touch-d1t11.flac
+     6:57.45       73664684 B   ---   --   ---xx   flac  0.6471  bd95-09-23-midas-touch-d1t12.flac
+     8:27.40       89528924 B   ---   --   ---xx   flac  0.5409  bd95-09-23-midas-touch-d2t01.flac
+     6:46.60       71759564 B   ---   --   ---xx   flac  0.6773  bd95-09-23-midas-touch-d2t02.flac
+     5:56.60       62939564 B   ---   --   ---xx   flac  0.6727  bd95-09-23-midas-touch-d2t03.flac
+     5:25.35       57412364 B   ---   --   ---xx   flac  0.6233  bd95-09-23-midas-touch-d2t04.flac
+     6:32.10       69172364 B   ---   --   ---xx   flac  0.6133  bd95-09-23-midas-touch-d2t05.flac
+     8:19.45       88129484 B   ---   --   ---xx   flac  0.5544  bd95-09-23-midas-touch-d2t06.flac
+     6:26.30       68161004 B   ---   --   ---xx   flac  0.6323  bd95-09-23-midas-touch-d2t07.flac
+     5:37.70       59611484 B   ---   --   ---xx   flac  0.6013  bd95-09-23-midas-touch-d2t08.flac
+     9:20.20       98831084 B   ---   --   ---xx   flac  0.5746  bd95-09-23-midas-touch-d2t09.flac
+     6:19.60       66996764 B   ---   --   ---xx   flac  0.5748  bd95-09-23-midas-touch-d2t10.flac
+   141:47.30     1500706328 B                            0.6190  (22 files)
+=================== 
+=================== 
+=================== 

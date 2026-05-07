@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-08a.shnf 
+=================== 
+=================== 
+=================== 
+2a84bbb2565a2a96ae98600cf894dc5d  100-intro.shn
+2ab12244ec81e5e6914aae792b1f3543  101-Maggie's Farm.shn
+d09e02501b5ea9223220e67699c55811  102-Love Minus Zero , No Limit.shn
+06c6402a80fecb152b05d29d7e9705b8  103-Tweedle Dee & Tweedle Dum.shn
+e2cf6cb7d9779af10b8878d9adc4683b  104-Mr. Tambourine Man.shn
+5b1a09e4d7eaf8f59c727ad81fe5cfe2  105-Highway 61 Revisited.shn
+324bbc705f46ce2b5cdf2f8e3a46918e  106-This Wheel's On Fire.shn
+b3661a32eeb9af10dde1189d614dd913  107-Cold Irons Bound.shn
+b4c926cf3e1bda452e630c661780bcb3  108-Positively 4th Street.shn
+2a068fed04082a1ac91198980149bf42  109-Honest With Me.shn
+d20352114a18534f64645af1c3cffe75  110-band intros.shn
+71d68eeb7e104659967478dbc3057876  111-Summer Days.shn
+9857f335b492a497c95f241ca4bcccab  2003-08-08 Darien Lake D1.CUE
+454c0175b7ad54269fd23daca236b037  2003-08-08 Darien Lake D1.LOG
+d121c15a9ac461b7044c1f674d21b364  2003-08-08 Darien Lake D1.md5
+35641e14f3d4adc64f6ae72897491658  2003-08-08 Darien Lake D1.wav.md5
+53f236c7fc8eb00370011ef73c594b87  2003-08-08 Darien Lake D2.CUE
+afca07bf14995660e48b3811a5e6fcd1  2003-08-08 Darien Lake D2.md5
+1c22ad20c559ef1ac95711dfab8ab2bb  2003-08-08 Darien Lake D2.wav.md5
+963e387633910936974be0e2c481b303  2003-08-08 Darien Lake PAC.txt
+5c488ff71533b6b7cedcf56fd1a8d725  201-Rainy Day Women #12 & 35.shn
+e0aa4afbcccc37b4128b5af6224c8b45  202-Dead set instr. intro.shn
+bc5888cd8bb2cfb16d4995d92c2d08fe  203-Music Never Stopped.shn
+d8d1dd2e6f89b23617cdc776269fdc97  204-Casey Jones.shn
+0b8d5774234756c25e26eca26b713d0b  205-Tangled Up In Blue.shn
+61a01c95825640965b44f86444406988  206-ITALTL, ITATTC.shn
+6293e5716ffe1663059dcee0dee46782  207-West LA Fadeaway.shn
+e9ca88c6dbd1816c2f9c39d30c4a8914  208-Alabama Getaway.shn
+508519446cca1ef87fc36166948e5b8c  bd03-08-08a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-08a.shnf 
+=================== 
+=================== 
+=================== 
+c6c8f3ae97702d8e0a831121fadb0871  [shntool]  100-intro.wav
+df6a924cde9a6b17ba8da2c527a8cc22  [shntool]  101-Maggie's_Farm.wav
+3f103273a448719202224c399c8e6652  [shntool]  102-Love_Minus_Zero_,_No_Limit.wav
+6542d5b9bf848a0371cc6935cb2748a8  [shntool]  103-Tweedle_Dee___Tweedle_Dum.wav
+a8534a0c3ea29601330afce5358b05b9  [shntool]  104-Mr._Tambourine_Man.wav
+8046f3fc3be3e5b0abe050c7c0a2ff36  [shntool]  105-Highway_61_Revisited.wav
+ebf2dd614ee260973dbd2975f274e451  [shntool]  106-This_Wheel's_On_Fire.wav
+30c403b19860481ed6f83a42593a8957  [shntool]  107-Cold_Irons_Bound.wav
+78e5112af6aadc0e452299961dcadca9  [shntool]  108-Positively_4th_Street.wav
+3de7921bc4c6ddd84121e0a3b267d3dd  [shntool]  109-Honest_With_Me.wav
+b64c70350c6a55f6ca28e380347a722f  [shntool]  110-band_intros.wav
+902da0e122ae9b2fbc3f49df07e06221  [shntool]  111-Summer_Days.wav
+b26ff7aee55a0b286f8ee5b70b3b57a7  [shntool]  201-Rainy_Day_Women_#12___35.wav
+dabcf861368776955b9998be0c204e1c  [shntool]  202-Dead_set_instr._intro.wav
+0258b551c953f84c8abc65ca955ad11e  [shntool]  203-Music_Never_Stopped.wav
+091e67c4197703e9b46b41d6befe6f50  [shntool]  204-Casey_Jones.wav
+66c11d38d79cce9a595458462dd2a3fe  [shntool]  205-Tangled_Up_In_Blue.wav
+26e5ef07d06a0fd512da7835208e0dc5  [shntool]  206-ITALTL,_ITATTC.wav
+6aacbd3d76111b2300fc35328a31403e  [shntool]  207-West_LA_Fadeaway.wav
+ca44b4399b281730b1528dbe34a916d1  [shntool]  208-Alabama_Getaway.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-08a.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:06.68       11802380 B   ---   --   ---xx    shn  0.5293  100-intro.shn
+     6:35.68       69837980 B   ---   --   ---xx    shn  0.6615  101-Maggie's Farm.shn
+     6:10.41       65364476 B   ---   --   ---xx    shn  0.6080  102-Love Minus Zero , No Limit.shn
+     5:47.59       61349612 B   ---   --   ---xx    shn  0.6064  103-Tweedle Dee & Tweedle Dum.shn
+     7:24.14       78354572 B   ---   --   ---xx    shn  0.6150  104-Mr. Tambourine Man.shn
+     7:19.33       77517260 B   ---   --   ---xx    shn  0.6585  105-Highway 61 Revisited.shn
+     8:05.36       85638716 B   ---   --   ---xx    shn  0.6225  106-This Wheel's On Fire.shn
+     6:17.36       66587516 B   ---   --   ---xx    shn  0.6321  107-Cold Irons Bound.shn
+     8:22.35       88635164 B   ---   --   ---xx    shn  0.6307  108-Positively 4th Street.shn
+     6:16.48       66439340 B   ---   --   ---xx    shn  0.6869  109-Honest With Me.shn
+     0:48.36        8551916 B   ---   --   ---xx    shn  0.6018  110-band intros.shn
+    10:48.31      114380156 B   ---   --   ---xx    shn  0.6040  111-Summer Days.shn
+     7:04.07       74810108 B   ---   --   ---xx    shn  0.6536  201-Rainy Day Women #12 & 35.shn
+     2:37.53       27819500 B   ---   --   ---xx    shn  0.6839  202-Dead set instr. intro.shn
+    11:39.09      123324812 B   ---   --   ---xx    shn  0.6950  203-Music Never Stopped.shn
+     6:39.13       70414220 B   ---   --   ---xx    shn  0.7141  204-Casey Jones.shn
+     8:38.69       91537532 B   ---   --   ---xx    shn  0.6973  205-Tangled Up In Blue.shn
+     6:58.22       73786988 B   ---   --   ---xx    shn  0.6460  206-ITALTL, ITATTC.shn
+     9:45.59      103332812 B   ---   --   ---xx    shn  0.6772  207-West LA Fadeaway.shn
+     7:48.28       82621100 B   ---   --   ---xx    shn  0.6743  208-Alabama Getaway.shn
+   136:15.15     1442106160 B                            0.6524  (20 files)
+=================== 
+=================== 
+=================== 

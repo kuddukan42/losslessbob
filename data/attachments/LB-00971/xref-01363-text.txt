@@ -1,0 +1,107 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Bob Dylan	
+
+Granada Theater
+Dallas, Texa 
+18 April 2003
+ 
+1.Tweedle Dee & Tweedle Dum
+2.Tell Me That It Isn't True
+3.Tombstone Bluess
+4.Saving Grace
+5.Things Have Changed
+6.Just Like A Woman
+7.Drifter's Escape
+8.Never Gonna Be The Same Again
+9.Dignity
+10.Easy Lovin' (Freddie Hart)
+11.Bye And Bye
+12.Honest With Me
+13.Standing In The Doorway
+14.Summer Days
+
+15.Like A Rolling Stone
+16.All Along The Watchtower
+ 
+Concert # 1502 of The Never-Ending Tour. First concert of the 2003 US Spring Tour. 2003 concert # 12.
+ 
+First concert with the 16th Never-Ending Tour Band: Bob Dylan (vocal), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+ 
+1-6, 9-16 Bob Dylan (piano).
+2, 4. 6, 8 Larry Campbell (pedal steel guitar).
+4, 6, 7, 9, 11 Bob Dylan (harmonica).
+7,8 Bob Dylan (guitar).
+12 Larry Campbell (slide guitar).
+ 
+http://www.bjorner.com
+
+CDr trade < XLD < flac < dime
+apa05
+===================
+===================
+===================
+=== shntool.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     0:48.58        8603660 B   ---   --   ---xx  01 Bob Dylan - Intro.flac     5:12.00       55036844 B   ---   --   ---xx  02 Bob Dylan - Tweedle Dee & Tweedle Dum.flac     3:23.07       35825708 B   ---   --   ---xx  03 Bob Dylan - Tell Me That It Isn't True.flac     6:29.06       68633756 B   ---   --   ---xx  04 Bob Dylan - Tombstone Blues.flac     4:11.15       44311724 B   ---   --   ---xx  05 Bob Dylan - Saving Grace.flac     6:06.19       64607132 B   ---   --   ---xx  06 Bob Dylan - Things Have Changed.flac     6:17.00       66502844 B   ---   --   ---xx  07 Bob Dylan - Just Like A Woman.flac     5:15.29       55634252 B   ---   --   ---xx  08 Bob Dylan - Drifter's Escape.flac     6:34.43       69602780 B   ---   --   ---xx  09 Bob Dylan - Never Gonna Be The Same Again.flac     5:59.59       63466412 B   ---   --   ---xx  10 Bob Dylan - Dignity.flac     4:26.12       46950668 B   ---   --   ---xx  01 Bob Dylan - Easy Lovin.flac     5:54.73       62617340 B   ---   --   ---xx  02 Bob Dylan - Bye And Bye.flac     7:07.19       75367532 B   ---   --   ---xx  03 Bob Dylan - Honest With Me.flac     6:56.49       73497692 B   ---   --   ---xx  04 Bob Dylan - Standing In The Doorway.flac     7:47.51       82498796 B   ---   --   ---xx  05 Bob Dylan - Summer Days.flac     2:25.34       25658012 B   ---   --   ---xx  06 Bob Dylan - Pre Encore Applause.flac     7:45.33       82103660 B   ---   --   ---xx  07 Bob Dylan - Like A Rolling Stone.flac     5:07.06       54168956 B   ---   --   ---xx  08 Bob Dylan - All Along The Watchtower.flac     0:10.14        1796972 B   ---   --   ---xx  09 Bob Dylan - Applause.flac    97:58.02     1036884740 B                            0.6073  (19 files)
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - Intro.flac:40dabccb754b2bd76d3d014f633890f102 Bob Dylan - Tweedle Dee & Tweedle Dum.flac:61cb56807f313092d4d921e765835b6803 Bob Dylan - Tell Me That It Isn't True.flac:e1569b9c13015b4b136bf5a6c542564604 Bob Dylan - Tombstone Blues.flac:8f8aa5e4d875678560b459a0131e467005 Bob Dylan - Saving Grace.flac:f688562ced89d0d86a7de235df53fb3806 Bob Dylan - Things Have Changed.flac:06295f021f906711181ab5d66c9b883407 Bob Dylan - Just Like A Woman.flac:37b7e5cf859f0ae07ba842091c09925408 Bob Dylan - Drifter's Escape.flac:67d112e895621ad2667efc394a044a4209 Bob Dylan - Never Gonna Be The Same Again.flac:58831d5a1cd57465b1d979f042cf663910 Bob Dylan - Dignity.flac:af2a9937f1958834c93b84663170ca9a
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+876ba379f4d55aebc881fad883fa4a95 *01 Bob Dylan - Intro.flac
+39a77f3ad7959d4c7810c57cd3e2c21d *02 Bob Dylan - Tweedle Dee & Tweedle Dum.flac
+2b90d18bc1513a391305bfb6f32ab195 *03 Bob Dylan - Tell Me That It Isn't True.flac
+5bf64577a35d3eca46059a80a1f75c92 *04 Bob Dylan - Tombstone Blues.flac
+2b21f7639d7f74e9c1a744f0d13cbc4f *05 Bob Dylan - Saving Grace.flac
+65a89cca91771d7044dc14c982bb206b *06 Bob Dylan - Things Have Changed.flac
+1c32f8f324f362e65fb1c94b5524fb4d *07 Bob Dylan - Just Like A Woman.flac
+39bb58e10fdc37ee547cc91fa26c36f4 *08 Bob Dylan - Drifter's Escape.flac
+7bdb9c1d891fb84564f127e267938ebb *09 Bob Dylan - Never Gonna Be The Same Again.flac
+89628165e8b783327deb75734511c8d6 *10 Bob Dylan - Dignity.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - Easy Lovin.flac:a5fcc4e729ea6cd72944e35f1093e70f02 Bob Dylan - Bye And Bye.flac:11889c673762b83079e22a104b971b7f03 Bob Dylan - Honest With Me.flac:144a05db3f694a5fb3a14bc3296af5f304 Bob Dylan - Standing In The Doorway.flac:91a585b54af57e085bd8230e66ce404805 Bob Dylan - Summer Days.flac:aa8f62bc7527f34ac40c50da296281ca06 Bob Dylan - Pre Encore Applause.flac:b6585c31d504a59400e6b5acc6ceefff07 Bob Dylan - Like A Rolling Stone.flac:5818f132a3b5af328e317a0ef7369e0508 Bob Dylan - All Along The Watchtower.flac:380e54093c66be7257318d43a8671afa09 Bob Dylan - Applause.flac:55225780beb3a72417f8efcdc94a99e2
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+196b3e9209e35a1f62278832191ac756 *01 Bob Dylan - Easy Lovin.flac
+9d8c97204916d82c607d68b417fb6d95 *02 Bob Dylan - Bye And Bye.flac
+fd513b9db225f8e4aa33e5d488bf0a1b *03 Bob Dylan - Honest With Me.flac
+98ae5125ad13961a57a91a33d6a7bc64 *04 Bob Dylan - Standing In The Doorway.flac
+a0cc1b4f34d701faf6230fa803512a84 *05 Bob Dylan - Summer Days.flac
+3e6cc737b88801cdc9a96739653f2c40 *06 Bob Dylan - Pre Encore Applause.flac
+e3ffcf4031f0879802d9199efa433840 *07 Bob Dylan - Like A Rolling Stone.flac
+8f1216b715e9c9aa33e5f2fa21d05dd7 *08 Bob Dylan - All Along The Watchtower.flac
+587cb6f52a763cde56aab80a1e6d8683 *09 Bob Dylan - Applause.flac
+
+===================
+===================
+===================

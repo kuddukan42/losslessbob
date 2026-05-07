@@ -1,0 +1,10 @@
+Bob Dylan, 11/26/79, Tempe, AZ, Grady Gammage Memorial Auditorium, 2CDR
+
+LB-7210, (67min+32min), version "b"; Label: none, Audio Source: audience recording, Lineage: CDR - XLD - FLAC 8, Number of Discs: 2, Artwork: included, Total running time: 97m 39s, Disc 1 Running time 66m 01s / Disc 2 Running Time 31m 38s, Torrent History:, Originally seeded to tangledupintorrents by WilliamLee on February 10th 2009., Rip made with XLD Version 20080926 (93.3)., - Test before copy, - Cache disabled, - Suspicious sectors verified, - AccurateRip confirmed, log, cue, m3u, ffp, md5, st5, and complete artwork as 300 dpi pngs included.; bittorrent download 02/09; very close to mono; same recording as LB-798 based on same clapping wavs at end of d1t4 and inverted from that one; in comparison this is close to that one, but that one is a little warmer and this has a little more hiss; (did not listen to all of this)
+
+drop cut d1t3 4:34; beginning of d1t10, between cdrs, discontinuities near beginning of tracks
+
+Tracklisting:, CD 1, 01 - Gotta Serve Somebody, 02 - I Believe In You, 03 - When You Gonna Wake Up, 04 - When He Returns, 05 - Man Gave Names To All The Animals, 06 - Precious Angel.flac, 07 - Slow Train, 08 - Covenant Woman, 09 - Put Your Hand In The Hand Of The Man From Galilee, 10 - Gonna Change My Way Of Thinking., 11 - Do Right To Me Baby (Do Unto Others), CD 2, 01 - Solid Rock, 02 - Saving Grace, 03 - Saved, 04 - What Can I Do For You, 05 - In The Garden
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

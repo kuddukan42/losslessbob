@@ -1,0 +1,72 @@
+Grateful Dead and Bob Dylan
+7-12-87
+Giants Stadium
+E. Rutherford, NJ
+
+Pitch fix of shnid 3860
+
+Source A (Entire GD set, last 3 tracks): likely AUD FOB CM> C> Nak DR-10 (Playback)> Midiman Flying Cow 24bit/48kHz; A/D> RME Digi96/8> Steinberg's Wavelab 3.0 (bit resolution & resampling to CDR redbook 16/44.1> CDWav beta1.57 (tracking only)> SHNv3 (MKW ACT); via Charlie Connor
+
+Source B (first 3 songs of Dylan set): Unknown AUD
+
+Source C (d2t13-d3t08): Unknown SBD
+
+Edit: SHNs > WAV > time/pitch stretching in CE Pro (see below) > FLAC
+
+CD 1
+
+1. Hell In A Bucket>
+2. West L.A. Fadeaway
+3. Greatest Story Ever Told
+4. Loser
+5. Tons Of Steel
+6. Take A Step Back
+7. Ramble On Rose
+8. When//I Paint My Masterpiece
+9. When Push Comes To Shove
+10.Promised Land >
+11.Bertha
+
+
+CD2
+
+(Set 2)
+1. Tuning >
+2. Morning Dew >
+3. Playing In The Band >
+4. Drums >
+5. Space >
+6. The Other One >
+7. Stella Blue >
+8. Throwing Stones >
+9. Not Fade Away
+
+Set 3 (Dylan backed by the Dead)
+
+10.Slow Train Coming
+11.Memphis Blues Again
+12.Tomorrow is a Long Time
+13.Highway 61 Revisited
+
+CD 3
+
+1. It's All Over Now, Baby Blue
+2. Ballad of a Thin Man
+3. John Brown
+4. Wicked Messenger
+5. Queen Jane Approximately
+6. Chimes of Freedom
+7. Joey
+8. All Along the Watchtower
+9. The Times, They Are A-Changing
+
+Encore:
+
+10. Touch of Gray >
+11. Knocking on Heaven's Door
+
+
+The entire Dead set and the last three tracks, including the encores, appear to have come from the same source.  These were definitely high in pitch, and were pitch/time stretched in CE Pro to 102.36%.  The Dylan set, including the first 3 audience sourced tracks, do not have significant pitch problems and were not pitch adjusted.  The end of d2t12 was cross-faded into the beginning of d2t13 to take care of some overlap.  Shntool was used to fix all existing SBEs and all tracks converted to FLAC.
+
+Bill Tetzeli (laptaper@gmail.com)
+4/13/2007

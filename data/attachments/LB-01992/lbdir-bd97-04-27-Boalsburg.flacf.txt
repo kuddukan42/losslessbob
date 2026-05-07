@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-27-Boalsburg.flacf 
+=================== 
+=================== 
+=================== 
+996ff4a06c4311d9fc1144e16fb85f25  bd97-04-27.txt
+825300e12abbfa603a012edcd6291523  d1\Track01.flac
+3c07b961a0e73c6d2c1565465091f86c  d1\Track02.flac
+d8dfa5671681c1df69ae4013e21eaaa3  d1\Track03.flac
+6fadf00422c82e4ea03c0091004380cb  d1\Track04.flac
+caaeed68e8ceb0525b05e53e05594c4b  d1\Track05.flac
+49778f3ff09b514933c14690e65fa4ab  d1\Track06.flac
+b544330720f62b1bb698d27356d7ae70  d1\Track07.flac
+7d9f0f379d89cf300b1f878e9268beed  d1\Track08.flac
+403451b1f1741d507318315fe13e9bbc  d2\Track01.flac
+b75a479be1028a3b55ba8e47a16c5bec  d2\Track02.flac
+b01ccbe74c5f602a2c808a31ddf956c1  d2\Track03.flac
+e1f742add2a62787fde010857caaeb3d  d2\Track04.flac
+21163feeb7822d1f298b45d18d8c3f3f  d2\Track05.flac
+87bc1833d48278d9b494aa6fb0201cd7  d2\Track06.flac
+6fb7b822fd368ed95a4c8da8c8212613  d2\Track07.flac
+67e5bc443b58cb2578419ad018d833a5  d2\Track08.flac
+0c27258e0db93aba7751094bc0724aba  d2\Track09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-27-Boalsburg.flacf\d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:9aba9db0605a90d326a9d6116016692e
+Track02.flac:5a9cf6fef0ca74dc91170d9bc9fd857c
+Track03.flac:5917b0c93d01afa9fc65071b999fff15
+Track04.flac:421ed0fb38f3d61cb368e94aea1b9ed2
+Track05.flac:b0576416bfb72186cdb54d1fc58cf53a
+Track06.flac:373dbd9e82543d39d1488782caa742b0
+Track07.flac:0b040ed42bdacd783bb13fdc53b44628
+Track08.flac:4c4c2f25af19989d884821462a6b9f53
+Track09.flac:e26e610a94c41db06417ef6dc53ff307
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-27-Boalsburg.flacf\d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:b5cfd95e755c63429c7328d23b0079cf
+Track02.flac:1341c40d6ccb4abebb9f4815c4fee88d
+Track03.flac:5024ac30267f71b3ee93e98927d2e147
+Track04.flac:3efea9a9b0bf3ce8153ded139383ea72
+Track05.flac:a6796dc213b918fc2f927e8b3abafc20
+Track06.flac:d762a2f73fa30d43555a1daa70e60078
+Track07.flac:4cb4bdf439db627c03b06acaa8c92779
+Track08.flac:4ca91f0e170056d120ec4ad83934c369
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-27-Boalsburg.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:43.70       81837884 B   ---   --   ---xx   flac  0.5029  Track01.flac
+     5:48.51       61507196 B   ---   --   ---xx   flac  0.5609  Track02.flac
+     5:38.14       59656172 B   ---   --   ---xx   flac  0.4798  Track03.flac
+     6:32.30       69219404 B   ---   --   ---xx   flac  0.5095  Track04.flac
+     1:48.04       19060652 B   ---   --   ---xx   flac  0.3564  Track05.flac
+     6:09.05       65103404 B   ---   --   ---xx   flac  0.5124  Track06.flac
+     7:28.49       79142492 B   ---   --   ---xx   flac  0.4227  Track07.flac
+     1:16.53       13531100 B   ---   --   ---xx   flac  0.3274  Track08.flac
+     7:27.36       78935516 B   ---   --   ---xx   flac  0.4764  Track09.flac
+    49:53.12      527993820 B                            0.4833  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-27-Boalsburg.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.33       54761660 B   ---   --   ---xx   flac  0.5178  Track01.flac
+     5:22.62       56946668 B   ---   --   ---xx   flac  0.4645  Track02.flac
+     5:34.15       58952924 B   ---   --   ---xx   flac  0.5469  Track03.flac
+     5:09.20       54554684 B   ---   --   ---xx   flac  0.5131  Track04.flac
+     6:18.58       66815660 B   ---   --   ---xx   flac  0.5001  Track05.flac
+     5:59.05       63339404 B   ---   --   ---xx   flac  0.5201  Track06.flac
+     7:39.70       81132284 B   ---   --   ---xx   flac  0.4363  Track07.flac
+     8:43.74       92431292 B   ---   --   ---xx   flac  0.4440  Track08.flac
+    49:58.37      528934576 B                            0.4874  (8 files)
+=================== 
+=================== 
+=================== 

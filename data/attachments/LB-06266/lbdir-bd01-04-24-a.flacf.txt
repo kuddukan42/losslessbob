@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-04-24-a.flacf 
+=================== 
+=================== 
+=================== 
+f95c6f3b4f42dba492c0e2919aaa2b21  bd-2001-04-24 Columbia, MO.txt
+6c485f708dbd61de43235fff999d0564  bd-2001-04-24-d1t01.flac
+6c9b60c43b60b615571e6594ab97b611  bd-2001-04-24-d1t02.flac
+c9410687112adcac1c07a35b7519472b  bd-2001-04-24-d1t03.flac
+2eb229e3e477a4ceff2a58b4a4a6ea56  bd-2001-04-24-d1t04.flac
+69710a2ad866d4cb22d2da17ed97c345  bd-2001-04-24-d1t05.flac
+9929ed34f4424d66f721a8047f68b835  bd-2001-04-24-d1t06.flac
+4d166237dbaccc34a1b0bdcb1625fd7d  bd-2001-04-24-d1t07.flac
+9fe72e718f84f146f63ecad5310d213e  bd-2001-04-24-d1t08.flac
+fbf3316bcd93e6853f37416c263b24b3  bd-2001-04-24-d1t09.flac
+da6679e47664b69a13be8cd4684b9b8f  bd-2001-04-24-d1t10.flac
+3cee43dcf82e1502ae3d0e0de771cde2  bd-2001-04-24-d1t11.flac
+f78d74a79d1c5a2b2af9691527690f93  bd-2001-04-24-d2t01.flac
+c7a0a024ea44e4eecc5c1cdd848d6bf7  bd-2001-04-24-d2t02.flac
+0aaa3e7285e559f274aa457240e2f814  bd-2001-04-24-d2t03.flac
+484da79cb653fbebac91eb1a8cd75057  bd-2001-04-24-d2t04.flac
+e3876917efefcd5d1f12a7df554dae0a  bd-2001-04-24-d2t05.flac
+5b693627a6d1c2f548d7397e4ee3da3b  bd-2001-04-24-d2t06.flac
+26b98a42d08cab5cad8fe49f8e887da6  bd-2001-04-24-d2t07.flac
+2ceff4aa15dfd109f168a7fd02ab56cc  bd-2001-04-24-d2t08.flac
+66e1232efd7436ef2bfd5ac8a02e0e40  Bob Dylan, Columbia, MO 4-24-01.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-04-24-a.flacf 
+=================== 
+=================== 
+=================== 
+bd-2001-04-24-d1t01.flac:65d19bc28fae394770f1ebc993474e82
+bd-2001-04-24-d1t02.flac:4185b95ba154e38019d795a9a1b65034
+bd-2001-04-24-d1t03.flac:9cbe87f8de78aa7078fa962812d0eab9
+bd-2001-04-24-d1t04.flac:17230f186bed46a0d68a94e971428c07
+bd-2001-04-24-d1t05.flac:cdd9ffacb423b5713d457d31d85e33fd
+bd-2001-04-24-d1t06.flac:8a3f54511db90c87240daba2be507bac
+bd-2001-04-24-d1t07.flac:42efc28b8f7e2944236747ee3e3be01b
+bd-2001-04-24-d1t08.flac:d8e1ad36182f0e364a952a63801c9a6e
+bd-2001-04-24-d1t09.flac:ba1cd092bb5a042a2ac5f819904f0cc9
+bd-2001-04-24-d1t10.flac:4148347014cf363768470b899f6f15f5
+bd-2001-04-24-d1t11.flac:32fd8606e83bde556052b4b112fc26d9
+bd-2001-04-24-d2t01.flac:ca5e1521ca72e2dee3a1852038f39523
+bd-2001-04-24-d2t02.flac:34c53b8ad6b6e183d3e22b58401cf4e5
+bd-2001-04-24-d2t03.flac:4512a33188919c51eddbea006a82640c
+bd-2001-04-24-d2t04.flac:07c9c026ec4ad24bff2c885c719f181a
+bd-2001-04-24-d2t05.flac:2ba449ef4ee4181a5a54b27e746ecda1
+bd-2001-04-24-d2t06.flac:31b8ca81aa917f91f58c6b329ad6becc
+bd-2001-04-24-d2t07.flac:ffc1bc1e9e99adc2f5e698324023b59a
+bd-2001-04-24-d2t08.flac:845a0c3abffbb920dfa3699335aa3a3b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-04-24-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.07       42528908 B   ---   --   ---xx   flac  0.5182  bd-2001-04-24-d1t01.flac
+     5:31.42       58487228 B   ---   --   ---xx   flac  0.5077  bd-2001-04-24-d1t02.flac
+     9:56.19      105179132 B   ---   --   ---xx   flac  0.5032  bd-2001-04-24-d1t03.flac
+     5:18.72       56264588 B   ---   --   ---xx   flac  0.5137  bd-2001-04-24-d1t04.flac
+     3:56.05       41642204 B   ---   --   ---xx   flac  0.4642  bd-2001-04-24-d1t05.flac
+     8:02.26       85085996 B   ---   --   ---xx   flac  0.5272  bd-2001-04-24-d1t06.flac
+     5:46.03       61041500 B   ---   --   ---xx   flac  0.4867  bd-2001-04-24-d1t07.flac
+     6:21.72       67377788 B   ---   --   ---xx   flac  0.4062  bd-2001-04-24-d1t08.flac
+     9:54.28      104847500 B   ---   --   ---xx   flac  0.5404  bd-2001-04-24-d1t09.flac
+     9:56.52      105256748 B   ---   --   ---xx   flac  0.4896  bd-2001-04-24-d1t10.flac
+     5:14.40       55483724 B   ---   --   ---xx   flac  0.5171  bd-2001-04-24-d1t11.flac
+     6:53.24       72909692 B   ---   --   ---xx   flac  0.5090  bd-2001-04-24-d2t01.flac
+     6:30.44       68899532 B   ---   --   ---xx   flac  0.5172  bd-2001-04-24-d2t02.flac
+     6:53.32       72928508 B   ---   --   ---xx   flac  0.5195  bd-2001-04-24-d2t03.flac
+     4:27.30       47169404 B   ---   --   ---xx   flac  0.4272  bd-2001-04-24-d2t04.flac
+     5:11.54       54987452 B   ---   --   ---xx   flac  0.5020  bd-2001-04-24-d2t05.flac
+     4:54.34       51941612 B   ---   --   ---xx   flac  0.5011  bd-2001-04-24-d2t06.flac
+     6:38.18       70249580 B   ---   --   ---xx   flac  0.5239  bd-2001-04-24-d2t07.flac
+     5:28.10       57882764 B   ---   --   ---xx   flac  0.4880  bd-2001-04-24-d2t08.flac
+   120:57.12     1280163860 B                            0.5009  (19 files)
+=================== 
+=================== 
+=================== 

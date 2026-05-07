@@ -1,0 +1,118 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-08-Sony-WMD6C.flacf 
+=================== 
+=================== 
+=================== 
+b417bf49b35de0591e2e9153c2678585  CD 01\Dylan London 080290T01.flac
+bb3c9273b6d8cd3bd0115329452831ec  CD 01\Dylan London 080290T02.flac
+4bb130a1a459d2dcfbbbc8e4b9225133  CD 01\Dylan London 080290T03.flac
+72f2bd5b786d5a9dfabdcdfe9fe4c241  CD 01\Dylan London 080290T04.flac
+45dea8b50a537aec906fe5bf2577d1d4  CD 01\Dylan London 080290T05.flac
+4778d078567dd885ac7b1dc3df905c22  CD 01\Dylan London 080290T06.flac
+c3402562b83a3e9aeda02d0966d50092  CD 01\Dylan London 080290T07.flac
+14c1fc6ecb6f051958beb5d055ae1072  CD 01\Dylan London 080290T08.flac
+84c68b583a9c127bf8291fc8961b01cd  CD 01\Dylan London 080290T09.flac
+ee2db9d805ff788306e9f8c3f182f841  CD 01\Dylan London 080290T10.flac
+e73c51c9274118a867ad73f0fd24ce25  CD 01\Dylan London 080290T11.flac
+2c32f42202358a5a87bc5fabd391e5b1  CD 01\Dylan London 080290T12.flac
+3896afc01235bec70ef44ad0b838af9a  CD 01\Dylan London 080290T13.flac
+5e7b44ba368e44084f5c38d240284efc  CD 02\Dylan London 080290T14.flac
+53d6cf4997c8ea39cc77d209a445714f  CD 02\Dylan London 080290T15.flac
+5dc33ff0e83e58b9be80b16332efd31b  CD 02\Dylan London 080290T16.flac
+bdf31be2f59db1b681e3fef6019bab89  CD 02\Dylan London 080290T17.flac
+bff65cd2b314951a735a77be3874efac  CD 02\Dylan London 080290T18.flac
+cffb73cb7a20d1d4eb41fa1d236c558a  CD 02\Dylan London 080290T19.flac
+eabdcb224b1478c6cbdb085a67777d12  CD 02\Dylan London 080290T20.flac
+06ecca8b89fafbdfe5ea42075a52dd6c  CD 02\Dylan London 080290T21.flac
+b1ea6ed02efdb387e38f63a786bf007a  CD 02\Dylan London 080290T22.flac
+94473cfae0d3aae90dc16725afe00780  CD 02\Dylan London 080290T23.flac
+9ab7ad4e705bfda49f22c43fa7e03e6b  CD 02\Dylan London 080290T24.flac
+aec8df2ea2cf522c5780d20cb7e34ff7  Dylan London 08-02-90 back.jpg
+abe0fe3f095a2f345976c711a772311a  Dylan London 08-02-90 front.jpg
+00d4c1372d918a2a2f5b696d2775f2e7  Dylan London 08.02.90 Aud.txt
+0909bb23e7abc9c9c7bb6242203cf863  Root.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-08-Sony-WMD6C.flacf\CD 01 
+=================== 
+=================== 
+=================== 
+Dylan London 080290T01.flac:a917f2851d771886f950d0588837e9eb
+Dylan London 080290T02.flac:9fa9e31c02024f9adbe60a1f90aa84eb
+Dylan London 080290T03.flac:237d8621a6f3b6b36db8c83107e2bb42
+Dylan London 080290T04.flac:43abb08454b9d1797bf1948d2e842baa
+Dylan London 080290T05.flac:af2aa7b071ca220eb35d9e03568cd5a0
+Dylan London 080290T06.flac:efa557375064d09a9643492e6589a5ef
+Dylan London 080290T07.flac:0f7ee8901e304d70918eed3b7f2833a1
+Dylan London 080290T08.flac:fe5cbf2c80ab32e8b45ed916fc41c5fe
+Dylan London 080290T09.flac:8d93158673079778f6237d019b7cde33
+Dylan London 080290T10.flac:f12209bf561df4a776a4ed1b7128bf54
+Dylan London 080290T11.flac:aa0472424aae84b344fea4ded713c3ea
+Dylan London 080290T12.flac:35cfc5992bbb616518c7a38521658abd
+Dylan London 080290T13.flac:4af3f969b8241e06c2bd8b72a7656f05
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-08-Sony-WMD6C.flacf\CD 02 
+=================== 
+=================== 
+=================== 
+Dylan London 080290T14.flac:92a86ff3c72aa339c52215a8344dea53
+Dylan London 080290T15.flac:1c4c955cdb6e90e0338f92cbb0724f21
+Dylan London 080290T16.flac:97c8b826e99faba8700632dc02b14673
+Dylan London 080290T17.flac:9d04af68b7f31a5deebb0fbfb37b2d62
+Dylan London 080290T18.flac:f74f09429d7eb1dec095c70161747165
+Dylan London 080290T19.flac:6b45f577c9332168dfa7f0073a5f967f
+Dylan London 080290T20.flac:f8c1d90e1dc7f7dffe46daa88bacbe08
+Dylan London 080290T21.flac:1f1f5506263431ffec6238a1240de264
+Dylan London 080290T22.flac:e7fe97aa186c24d7adbbeff0626caaa5
+Dylan London 080290T23.flac:d57a97a058b833eac33e95a9fdabd593
+Dylan London 080290T24.flac:22e59ecbade2d686fb961406a4b85761
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-08-Sony-WMD6C.flacf\CD 01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.60       46005164 B   ---   --   ---xx   flac  0.6721  Dylan London 080290T01.flac
+     4:14.70       44970284 B   ---   --   ---xx   flac  0.6399  Dylan London 080290T02.flac
+     4:58.04       52576652 B   ---   --   ---xx   flac  0.6591  Dylan London 080290T03.flac
+     6:02.41       63953276 B   ---   --   ---xx   flac  0.6568  Dylan London 080290T04.flac
+     3:49.72       40564988 B   ---   --   ---xx   flac  0.6574  Dylan London 080290T05.flac
+     5:44.69       60843932 B   ---   --   ---xx   flac  0.6645  Dylan London 080290T06.flac
+     3:04.25       32516444 B   ---   --   ---xx   flac  0.6726  Dylan London 080290T07.flac
+     3:15.00       34398044 B   ---   --   ---xx   flac  0.6446  Dylan London 080290T08.flac
+     3:13.48       34158140 B   ---   --   ---xx   flac  0.6366  Dylan London 080290T09.flac
+     5:03.58       53585660 B   ---   --   ---xx   flac  0.5884  Dylan London 080290T10.flac
+     4:41.42       49667228 B   ---   --   ---xx   flac  0.6015  Dylan London 080290T11.flac
+     3:53.52       41223548 B   ---   --   ---xx   flac  0.6294  Dylan London 080290T12.flac
+     7:02.23       74494940 B   ---   --   ---xx   flac  0.6005  Dylan London 080290T13.flac
+    59:25.39      628958300 B                            0.6381  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-08-Sony-WMD6C.flacf\CD 02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.26       43631996 B   ---   --   ---xx   flac  0.6022  Dylan London 080290T14.flac
+     1:00.13       10614620 B   ---   --   ---xx   flac  0.6223  Dylan London 080290T15.flac
+     4:01.43       42613580 B   ---   --   ---xx   flac  0.6445  Dylan London 080290T16.flac
+     3:22.57       35766908 B   ---   --   ---xx   flac  0.6178  Dylan London 080290T17.flac
+     4:04.10       43065164 B   ---   --   ---xx   flac  0.6446  Dylan London 080290T18.flac
+     6:25.57       68048108 B   ---   --   ---xx   flac  0.6190  Dylan London 080290T19.flac
+     3:05.67       32791628 B   ---   --   ---xx   flac  0.6374  Dylan London 080290T20.flac
+     6:20.28       67097900 B   ---   --   ---xx   flac  0.6448  Dylan London 080290T21.flac
+     6:32.46       69257036 B   ---   --   ---xx   flac  0.5848  Dylan London 080290T22.flac
+     4:24.38       46659020 B   ---   --   ---xx   flac  0.6043  Dylan London 080290T23.flac
+     4:40.19       49436732 B   ---   --   ---xx   flac  0.6606  Dylan London 080290T24.flac
+    48:05.29      508982692 B                            0.6245  (11 files)
+=================== 
+=================== 
+=================== 

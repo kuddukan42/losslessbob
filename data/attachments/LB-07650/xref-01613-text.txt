@@ -1,0 +1,110 @@
+===================
+===================
+===================
+=== Txt Infos Set List.txt
+===================
+===================
+===================
+Massey Hall
+Toronto, Ontario, Canada
+19 April 1980
+
+Pilgrim Remaster
+
+Concert Trade Flac > 
+Non Set List, No Lineage  
+
+---> Missing > Bridges-Evans-King-Havis-Young: 
+---- > Let It Ride (McCoy/Dennis)
+---- > (You've Got To) Hold On (?) 
+---- > It's Gonna Rain (C Johnson)
+---- > Show Me The Way Lord (?)
+---- > Freedom (Over Me) (?)
+---- > Freedom At The Wall (?)
+---- > This Train Is Bound For Glory (This Train) (Big Bill Broonzy)
+  
+
+1.  Gotta Serve Somebody
+2. Covenant Woman
+3. When You Gonna Wake Up
+4. Ain't Gonna Go To Hell For Anybody
+5. Cover Down, Break Through
+6. Man Gave Names To All The Animals
+7. Precious Angel
+8. Slow Train
+
+---> Missing > Clydie King: Calgary (?)
+---> Missing > Regina McCreary Havis: Put Your Hand In The Hand Of The Man From Galilee (Gene MacLellan)
+
+9. Do Right To Me Baby (Do Unto Others)
+10. Solid Rock
+11. Saving Grace
+12. What Can I Do For You?
+13. Saved (Bob Dylan/Tim Drummond)
+14. In The Garden
+ 
+Encore 
+15. Are You Ready?
+16. I Will Love Him
+
+
+Third concert of the Third Gospel Tour. Gospel concert # 53. 1980 concert # 27.
+
+Third concert with the Third Gospel Band: 
+Bob Dylan (vocal & guitar), 
+Fred Tackett (guitar), 
+Spooner Oldham (keyboards), 
+Tim Drummond (bass), 
+Terry Young (keyboards), 
+Jim Keltner (drums), 
+Clydie King, Gwen Evans, 
+---- Mary Elizabeth Bridges, Regina Havis, 
+---- Mona Lisa Young (background vocals).
+
+12 Bob Dylan (harmonica).
+
+Notes
+Live debut of I Will Love Him.
+
+1-3, 7, 8, 10, 14 available as work tape for the unreleased live album SOLID ROCK. 
+Cover Down, Break Through is on the original tape but was edited out before circulation.
+Mono audience recording, 90 minutes.
+1-3, 7, 8, 10, 14 stereo PA recording, 40 minutes
+
+
+http://www.bjorner.com/DSN05570%201980%20Third%20Gospel%20Tour.htm#DSN05600
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+aeaae3ab21a82c5fd8eb44f9791002e2 *Track01.flac
+6c81baa545f553222e247452fdcd20c7 *Track02.flac
+2755379a36c0588a5e5d86664c11820b *Track03.flac
+b127ae1f973389aa472ccc1c16870467 *Track04.flac
+d70e35659c671e0bba518591679c6a57 *Track05.flac
+aa37a0018034847a15e3001ec3fce407 *Track06.flac
+401f60b277e0e74236253dc11a289afc *Track07.flac
+dc44195828604ac6a97b9af5dff2529a *Track08.flac
+
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+51cfb9e4c1df72ee9b1ca8e11b4b3f63 *Track01.flac
+ec9de8ad791463b226f57fc93fb2a3d4 *Track02.flac
+bdf3041614408a1ca35004b49d465e91 *Track03.flac
+4b20ee7dac796f1fd38d0b5716247717 *Track04.flac
+95ae42f8218d2855afa6fd85ae7e195d *Track05.flac
+bb07e76e6c40237069421be4468054aa *Track06.flac
+753ad80814c37f841b3360108bd1353a *Track07.flac
+c12ad70094e9032db31891ff6026c230 *Track08.flac
+
+===================
+===================
+===================

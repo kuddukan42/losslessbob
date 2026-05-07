@@ -1,0 +1,58 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Bob Dylan
+Memphis, Tennessee
+September 11, 1999
+The Pyramid
+
+from DAT master -- Very nice sound.
+
+   1. I Am The Man, Thomas (acoustic) (song by Ralph Stanley and Larry Sparks)
+   2. Mr. Tambourine Man (acoustic)
+   3. It's Alright, Ma (I'm Only Bleeding) (acoustic)
+   4. One Too Many Mornings (acoustic) (Bob on harp) (Larry on pedy=ByNQ~?F7VC}"MW<q(mFQiqz-IBwt{Ki:32XI   7. Just Like A Woman (Larry on pedal steel)
+   8. Stuck Inside Of Mobile With The Memphis Blues Again
+   9. Not Dark Yet
+  10. Highway 61 Revisited
+
+      (encore)
+  11= Like  Roouh~tvIf<_Y)Imr}r:X'{[;dV%c	+bNi'[ Away 
+===================
+===================
+===================
+=== 1999-09-11 - Memphis, TN - off DAT master - Disc 1 - FLAC.md5
+===================
+===================
+===================
+97baa5a93ab986840ef274fdb5a2ffdd *1999-09-11D1Track01.flac
+61a7a042ce0afda8e5a15100832dd60c *1999-09-11D1Track02.flac
+af73de62b72f8a0a9eeb9fd06767b876 *1999-09-11D1Track03.flac
+b3ea26c78a234c193f3a6bafac8e97cf *1999-09-11D1Track04.flac
+2f67f18a90249fd48e2943553ad97188 *1999-09-11D1Track05.flac
+cf0174dec76719efa12fceb5714d4a25 *1999-09-11D1Track06.flac
+6d44f29c474fee8567f656bdebf7488f *1999-09-11D1Track07.flac
+62f190800ccaee600de8c88983acd56c *1999-09-11D1Track08.flac
+6fc62d9c14ebc6a620eee4a5b73eacbc *1999-09-11D1Track09.flac
+a378a1a9a9059e72dc43a87d4a8bdb57 *1999-09-11D1Track10.flac
+3c24613d1e10f23c8c6a9a405fd528e2 *1999-09-11D1Track11.flac
+1807c1ba1d435f58883fdc73e3fba19e *1999-09-11D1Track12.flac
+===================
+===================
+===================
+=== 1999-09-11 - Memphis, TN - off DAT master - Disc 2 - FLAC.md5
+===================
+===================
+===================
+e462e736db9b334f82af9d6d4dddc331 *1999-09-11D2Track01.flac
+a49042fc1c35765113747d62ef2def3f *1999-09-11D2Track02.flac
+ac4ce088e97e3722597187a502f5987a *1999-09-11D2Track03.flac
+dccb6f77fe1e6cd732676d2849bbf8ab *1999-09-11D2Track04.flac
+39f419d67d615931905c17372c93a3ef *1999-09-11D2Track05.flac
+===================
+===================
+===================

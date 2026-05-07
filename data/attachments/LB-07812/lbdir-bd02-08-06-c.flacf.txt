@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-08-06-c.flacf 
+=================== 
+=================== 
+=================== 
+a0eb0c390fb07b1e43fc7b3bc17d0d48  CD1\01 I am the man, Thomas.flac
+59c85568d613bec822a6a11d064d0088  CD1\02 Senor (Tales of Yankee Power).flac
+241e5fec80694340ea3a4671ed7cfe1c  CD1\03 Don't think twice, it's all right.flac
+85658e223a223eb1534a359eae1a28ea  CD1\04 Tangled up in blue.flac
+c5b2496e27bc528fcfa2dd9765509213  CD1\05 Subterranean homesick blues.flac
+d519833b8d4650f86cd0406a72cd4e4d  CD1\06 Moonlight.flac
+336be6295305fbc1b72f8155c55f72ef  CD1\07 Blind Willie McTell.flac
+68c61636815fb1bc7ee8f2216d2de3c1  CD1\08 Lonesome day blues.flac
+c77ed8fd2189a1d03faa32039d174fac  CD1\09 Mama, you been on my mind.flac
+ab28d3c4b3e909a5416b7e6264feb4d4  CD1\10 Masters of war.flac
+23c30e58cca1df8e307e2237887c8dbc  CD1\11 Forever young.flac
+1c259e62d5d1912035bbf15d418b027e  CD1\CD1.md5
+fa80b14bfc22f9252d0f48f79517c179  CD1\CD1.txt
+d22df1e50645562c09f5d5e516b1e87c  CD2\12 Summer days.flac
+67cc59ec12ddcd0e623d419953db667b  CD2\13 Make you feel my love.flac
+401ee1e012e1c48243aa13c71f11c3c5  CD2\14 Drifter's escape.flac
+e468070b53212d000a1bc2a124fd3409  CD2\15 Rainy day women # 12 & 35.flac
+6ad387875eea7fc263b6f226532028ef  CD2\16 Like a rolling stone.flac
+39b111e75c07def6671f8f970f7bfe9f  CD2\17 Honest with me.flac
+de2a46a4d4c104514ca502a47bbc1fdb  CD2\18 Blowin' in the wind.flac
+1b27ab96cb212d6b2ce7e87f1e028ca2  CD2\19 All along the watchtower.flac
+437803aa88680b153353b63be7be886b  CD2\CD2.md5
+2b5091bd36eaa940da0265ac3be534dc  CD2\CD2.txt
+3f6ed99994b3f3c109e128e53b53a4e6  Info\2002-08-06 Metro Centre, Halifax, Nova Scotia, Canada, USA.txt
+fa1d9582997b38222f81f08512051984  Info\CD1.shntool_len.txt
+1b21932d61d5fb3b950d7c84edbb324b  Info\CD2.shntool_len.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-06-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 I am the man, Thomas.flac:0b644f1b983350491d6a2e2b35965b1d
+02 Senor (Tales of Yankee Power).flac:70ad22a5b75f232c538ec8cfdda572e2
+03 Don't think twice, it's all right.flac:a36a17874f6b04e54ca12f7ae8c810e4
+04 Tangled up in blue.flac:083382d984bf7d02c47669afe0bb4813
+05 Subterranean homesick blues.flac:17cafb9f81d544395f5c9e1fd502a066
+06 Moonlight.flac:8e3acd8d0659a52b5aa50e93bdd4f049
+07 Blind Willie McTell.flac:71cf160dc760c838e3fc0248c2fba7d1
+08 Lonesome day blues.flac:7bf2162cdb2788481fe0fb5d83bd7f9d
+09 Mama, you been on my mind.flac:0006a60010be5d42317225f7d4cfd200
+10 Masters of war.flac:fd0cea624f8838524a159325a38f6e2c
+11 Forever young.flac:daee8003432db3095b55b867c98c91e3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-08-06-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+12 Summer days.flac:f050aa2af716e72204448c76195ca6e3
+13 Make you feel my love.flac:465112f68350fbbefa06e414081a3b95
+14 Drifter's escape.flac:4678eb1f267b69dae8c4185e717845be
+15 Rainy day women # 12 & 35.flac:0f467b89670d3210c97d331e2561cd93
+16 Like a rolling stone.flac:e72679d94163b9c61816789e2e386c4c
+17 Honest with me.flac:90eb0fae7142e87024c3d62e582dfbbc
+18 Blowin' in the wind.flac:a85eed207f8abb9497c29039d9aa7af7
+19 All along the watchtower.flac:c3aac64fe666a1eb98288bb5d02eb65a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-06-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.73       42507740 B   ---   --   ---xx   flac  0.7672  01 I am the man, Thomas.flac
+     4:24.73       46741340 B   ---   --   ---xx   flac  0.7665  02 Senor (Tales of Yankee Power).flac
+     6:52.73       72848540 B   ---   --   ---xx   flac  0.7584  03 Don't think twice, it's all right.flac
+     8:01.73       85020140 B   ---   --   ---xx   flac  0.7919  04 Tangled up in blue.flac
+     4:54.73       52033340 B   ---   --   ---xx   flac  0.7634  05 Subterranean homesick blues.flac
+     4:50.73       51327740 B   ---   --   ---xx   flac  0.6726  06 Moonlight.flac
+     6:52.73       72848540 B   ---   --   ---xx   flac  0.7465  07 Blind Willie McTell.flac
+     7:55.73       83961740 B   ---   --   ---xx   flac  0.7706  08 Lonesome day blues.flac
+     5:07.73       54326540 B   ---   --   ---xx   flac  0.7110  09 Mama, you been on my mind.flac
+     5:11.73       55032140 B   ---   --   ---xx   flac  0.7432  10 Masters of war.flac
+     6:53.73       73024940 B   ---   --   ---xx   flac  0.7564  11 Forever young.flac
+    65:09.53      689672740 B                            0.7527  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-08-06-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.00       72676844 B   ---   --   ---xx   flac  0.7728  12 Summer days.flac
+     4:48.00       50803244 B   ---   --   ---xx   flac  0.7030  13 Make you feel my love.flac
+     5:22.00       56800844 B   ---   --   ---xx   flac  0.7956  14 Drifter's escape.flac
+     7:17.00       77086844 B   ---   --   ---xx   flac  0.7671  15 Rainy day women # 12 & 35.flac
+     7:51.00       83084444 B   ---   --   ---xx   flac  0.7707  16 Like a rolling stone.flac
+     6:59.00       73911644 B   ---   --   ---xx   flac  0.7828  17 Honest with me.flac
+     7:20.00       77616044 B   ---   --   ---xx   flac  0.7553  18 Blowin' in the wind.flac
+     5:55.74       62796092 B   ---   --   ---xx   flac  0.7870  19 All along the watchtower.flac
+    52:24.74      554776000 B                            0.7681  (8 files)
+=================== 
+=================== 
+=================== 

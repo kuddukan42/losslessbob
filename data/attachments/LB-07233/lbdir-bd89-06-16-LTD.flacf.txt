@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-16-LTD.flacf 
+=================== 
+=================== 
+=================== 
+fe8354fef01a2e47d7fe18b73d57d964  1989-06-16 Barcelona.md5
+862ec388fcbabcb0f645d9926cb52c10  Barcelona 1989-01.flac
+b52059c7825292900b8e3ece4dc48339  Barcelona 1989-02.flac
+95c0179bf63535d22eb7676292d72134  Barcelona 1989-03.flac
+3febc71d73aa972d2c79fb5b9b556a21  Barcelona 1989-04.flac
+2131b5c4cb128af0a340c3eb9613404a  Barcelona 1989-05.flac
+b0f93c64c1f7848f48b576d933990199  Barcelona 1989-06.flac
+cc2cb9291c27a5cd9353b1ec761bf834  Barcelona 1989-07.flac
+607f24929e41f65f83b3f4dac6c28e84  Barcelona 1989-08.flac
+08c6f20a6c788a6079323802246ecb30  Barcelona 1989-09.flac
+6f25fc7b72d6200524c8aea564284530  Barcelona 1989-10.flac
+aabdaa8c0618cf3159f0afaa21f8a0c8  Barcelona 1989-11.flac
+e822aae11c102405f22b89941fe70595  Barcelona 1989-12.flac
+407171d287a2bee85805e75844b49a77  Barcelona 1989-13.flac
+6d58f497c3b6eece2dc13c20dfaf0f34  Barcelona 1989-14.flac
+214d5433a762b0188c66103e09423786  Barcelona 1989-15.flac
+871cfa3329888e71de23d3abfe9c1ecf  Barcelona-1989-06-16.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-16-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Barcelona 1989-01.flac:5e1a99f1c3f60ba8c79cf5bc53cf9de0
+Barcelona 1989-02.flac:30306c2fd71b491ff600acc0f16540ec
+Barcelona 1989-03.flac:5a90c714ee53f9af15bf017d4e6a9276
+Barcelona 1989-04.flac:af363d51dac8d977f83d59a99b8e7753
+Barcelona 1989-05.flac:f6341940ebed55fff657551d3782ffaa
+Barcelona 1989-06.flac:089d4eb49d2322e8ee37d2a990cedfdc
+Barcelona 1989-07.flac:0e537166b9f7e8bbd7c450e8127af996
+Barcelona 1989-08.flac:b469eab82d89aa67cf3f64f6193530be
+Barcelona 1989-09.flac:d7ff70a610b809c3f59eed15b3735f64
+Barcelona 1989-10.flac:8b3cb677c5cc48ccfd805e03811a3b8a
+Barcelona 1989-11.flac:0ee6f6bf1cde45fe6ae4d4ba95094188
+Barcelona 1989-12.flac:ec77c01e0833ce3882a66a6ace95a490
+Barcelona 1989-13.flac:f3028fb8068a3edd6c1de003ba6d0067
+Barcelona 1989-14.flac:060bcd9f991b8635e6c99ea318fef9c3
+Barcelona 1989-15.flac:d268582f2e498367446a136aa549b054
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-16-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:04.05       64220796 B   -b-   --   ---xx   flac  0.5496  Barcelona 1989-01.flac
+     4:38.08       49057164 B   -b-   --   ---xx   flac  0.5828  Barcelona 1989-02.flac
+     5:30.48       58324028 B   -b-   --   ---xx   flac  0.5650  Barcelona 1989-03.flac
+     5:57.55       63104252 B   -b-   --   ---xx   flac  0.5743  Barcelona 1989-04.flac
+     5:10.61       54826392 B   -b-   --   ---xx   flac  0.5894  Barcelona 1989-05.flac
+     4:30.48       47742092 B   -b-   --   ---xx   flac  0.5885  Barcelona 1989-06.flac
+     8:03.50       85319704 B   -b-   --   ---xx   flac  0.5413  Barcelona 1989-07.flac
+     4:43.72       50090692 B   -b-   --   ---xx   flac  0.4980  Barcelona 1989-08.flac
+     5:22.61       56943984 B   -b-   --   ---xx   flac  0.5098  Barcelona 1989-09.flac
+     5:12.09       55057404 B   -b-   --   ---xx   flac  0.5717  Barcelona 1989-10.flac
+     3:10.57       33650488 B   -b-   --   ---xx   flac  0.5886  Barcelona 1989-11.flac
+     4:22.59       46356032 B   -b-   --   ---xx   flac  0.5526  Barcelona 1989-12.flac
+     7:35.55       80391492 B   -b-   --   ---xx   flac  0.5634  Barcelona 1989-13.flac
+     7:03.32       74693244 B   -b-   --   ---xx   flac  0.5157  Barcelona 1989-14.flac
+     7:40.07       81161524 B   -b-   --   ---xx   flac  0.5550  Barcelona 1989-15.flac
+    85:07.27      900939288 B                            0.5543  (15 files)
+=================== 
+=================== 
+=================== 

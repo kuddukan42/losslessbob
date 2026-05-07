@@ -1,0 +1,64 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-06-19-Schoeps-MK41s-48khz.flacf 
+=================== 
+=================== 
+=================== 
+6b56dfc86c07b9d3e638682198d90e71  bd&gd1995-06-19.schoepsmk41.1648.md5
+1aada5afde16b98c83f3705722f2efa1  BD&GD1995-06-19.schoepsmk41.txt
+bde412eea153050e80c847d7ae90c550  BD1995-06-19t01.flac
+ec149c69581ff1188a19361d8a95c41a  BD1995-06-19t02.flac
+df4eb7136dedec6f8503f7db87439493  BD1995-06-19t03.flac
+f4ff998646029b0a75dd1036ec98968e  BD1995-06-19t04.flac
+4074fd2075fa6f531576b133ea3228fa  BD1995-06-19t05.flac
+293d13102952da9bea84f729cd4cc9d6  BD1995-06-19t06.flac
+e44e8757ef080d52c65ef87bf7465a11  BD1995-06-19t07.flac
+2f97bba4311bf21ebb805c778fa3b522  BD1995-06-19t08.flac
+29cc940f90cececbeca70c1a3e5f0967  BD1995-06-19t09.flac
+39d7daa0c091162f8c26dca440e1d9b0  BD1995-06-19t10.flac
+0d830bf4a40c7f3e4e0e1afc944a2041  BD1995-06-19t11.flac
+d0faba1aa794db9d808193e758a7bed5  BD1995-06-19t12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-06-19-Schoeps-MK41s-48khz.flacf 
+=================== 
+=================== 
+=================== 
+BD1995-06-19t01.flac:af5089facb2b103dce059af5ae1cb0a6
+BD1995-06-19t02.flac:6ac525758c68c3185042234ddf1d5826
+BD1995-06-19t03.flac:59930be0e586122d2c838e50fd87f06a
+BD1995-06-19t04.flac:f86d9d9914a4c36883e233399a16e70b
+BD1995-06-19t05.flac:1b1e087c93aa27e5ac56a8ca0226f749
+BD1995-06-19t06.flac:d7316bb21b3ee32153b6e7744e361b36
+BD1995-06-19t07.flac:c1b6d094862ecff662fa7c46eff4330e
+BD1995-06-19t08.flac:4b0667874cb0d09e81a0a4977222f73c
+BD1995-06-19t09.flac:5f3ea22628716b7e2567905585478de3
+BD1995-06-19t10.flac:f89d19141cfaae1fec1acc8e6cb7e7e7
+BD1995-06-19t11.flac:ca9bd40e030e1c6c2ef71ee10cdaf236
+BD1995-06-19t12.flac:786e1e027b1061184cbfabc747656814
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-06-19-Schoeps-MK41s-48khz.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.280      58805804 B   cxx   --   ---xx   flac  0.5828  BD1995-06-19t01.flac
+     5:14.493      60382764 B   cxx   --   ---xx   flac  0.5713  BD1995-06-19t02.flac
+     6:16.333      72256044 B   cxx   --   ---xx   flac  0.5758  BD1995-06-19t03.flac
+     7:43.173      88929324 B   cxx   --   ---xx   flac  0.5602  BD1995-06-19t04.flac
+     6:56.200      79910444 B   cxx   --   ---xx   flac  0.5776  BD1995-06-19t05.flac
+     7:41.373      88583724 B   cxx   --   ---xx   flac  0.3978  BD1995-06-19t06.flac
+     5:20.147      61468204 B   cxx   --   ---xx   flac  0.4410  BD1995-06-19t07.flac
+     6:41.187      77027884 B   cxx   --   ---xx   flac  0.4535  BD1995-06-19t08.flac
+     5:44.907      66222124 B   cxx   --   ---xx   flac  0.5685  BD1995-06-19t09.flac
+     7:17.627      84024364 B   cxx   --   ---xx   flac  0.5453  BD1995-06-19t10.flac
+     7:25.253      85488684 B   cxx   --   ---xx   flac  0.5401  BD1995-06-19t11.flac
+     5:05.768      58707516 B   cxx   --   ---xx   flac  0.5643  BD1995-06-19t12.flac
+    76:32.741     881806880 B                            0.5289  (12 files)
+=================== 
+=================== 
+=================== 

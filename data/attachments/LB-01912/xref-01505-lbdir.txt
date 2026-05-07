@@ -1,0 +1,69 @@
+===================
+===================
+===================
+=== md5 for: bd95-04-03-g.flacf
+===================
+===================
+===================
+3c41daa64c9d0ac7ce97e6e7e4a99356 *bd-95-04-03-manchester-master-d1 (Track 01).flac
+a3848880c6752a8a6869748b2dafb76f *bd-95-04-03-manchester-master-d1 (Track 02).flac
+2277b21ca4f85b67064f39996ec9dfeb *bd-95-04-03-manchester-master-d1 (Track 03).flac
+a2d4fb1d7e2d39e6cee5b0605c20b432 *bd-95-04-03-manchester-master-d1 (Track 04).flac
+ed2352fa71283cbe5cbbf07ab32ff03e *bd-95-04-03-manchester-master-d1 (Track 05).flac
+46d620276920a2576c3bd31d5d28e9a2 *bd-95-04-03-manchester-master-d1 (Track 06).flac
+9191e97525fd07846d602f9163441847 *bd-95-04-03-manchester-master-d1 (Track 07).flac
+babb5841cc02f1185052d29fec8188a5 *bd-95-04-03-manchester-master-d2 (Track 01).flac
+ff3c9a35429ac715f3e8507079809bba *bd-95-04-03-manchester-master-d2 (Track 02).flac
+9c1249de1bb46a4ce5ea2a7d93e63e40 *bd-95-04-03-manchester-master-d2 (Track 03).flac
+569faf27d11036f08803608659cb7314 *bd-95-04-03-manchester-master-d2 (Track 04).flac
+dc8642ef7a7a0655ab539878da54453b *bd-95-04-03-manchester-master-d2 (Track 05).flac
+6d1a6d73bf0c5a76f3fab9df03d8d044 *bd-95-04-03-manchester-master-d2 (Track 06).flac
+55e8cf8d169cb9ad191a60d51efb5259 *bd-95-04-03-manchester-master-d2 (Track 07).flac
+ee43325e0f7b7f3622415bc4735fc3c2 *Note.txt
+===================
+===================
+===================
+=== ffp for: bd95-04-03-g.flacf
+===================
+===================
+===================
+bd-95-04-03-manchester-master-d1 (Track 01).flac:8d00be0a706337695a7dec8264af61a5
+bd-95-04-03-manchester-master-d1 (Track 02).flac:47f994e4ff218df9244fdf3b3e4e9a86
+bd-95-04-03-manchester-master-d1 (Track 03).flac:8ef693b107140e6f135191134151793b
+bd-95-04-03-manchester-master-d1 (Track 04).flac:1c6e098ce01bcec00c397448c101ed48
+bd-95-04-03-manchester-master-d1 (Track 05).flac:9161b60161577428329b2ac644e1ab63
+bd-95-04-03-manchester-master-d1 (Track 06).flac:3193e9881222645220bb85dafc07d22b
+bd-95-04-03-manchester-master-d1 (Track 07).flac:21646a935ef11cd4f4cf7fea9f2e2a46
+bd-95-04-03-manchester-master-d2 (Track 01).flac:cd8220827e9a1624a68c46db4fedda9a
+bd-95-04-03-manchester-master-d2 (Track 02).flac:73089b5a8fb3e6d5a1dda9fb8098ead3
+bd-95-04-03-manchester-master-d2 (Track 03).flac:0e70dd1ec19eff43beae622649255c4a
+bd-95-04-03-manchester-master-d2 (Track 04).flac:026b97606ef46c73d923dea4eab36b7c
+bd-95-04-03-manchester-master-d2 (Track 05).flac:b6766e526ddc1d55283a19f34ad6191a
+bd-95-04-03-manchester-master-d2 (Track 06).flac:1c856e40e53f57a07dc2a532b9112a69
+bd-95-04-03-manchester-master-d2 (Track 07).flac:cbfae08eb17f9adfdc5f02aeb8d0cb5a
+===================
+===================
+===================
+=== shntool len for: bd95-04-03-g.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:59.22       52795876 B   -b-   --   ---xx   flac  0.6209  bd-95-04-03-manchester-master-d1 (Track 01).flac
+     3:43.33       39414860 B   ---   --   ---xx   flac  0.5341  bd-95-04-03-manchester-master-d1 (Track 02).flac
+     5:35.49       59209292 B   ---   --   ---xx   flac  0.5974  bd-95-04-03-manchester-master-d1 (Track 03).flac
+     7:35.20       80309084 B   ---   --   ---xx   flac  0.5010  bd-95-04-03-manchester-master-d1 (Track 04).flac
+     9:33.32      101152508 B   ---   --   ---xx   flac  0.5578  bd-95-04-03-manchester-master-d1 (Track 05).flac
+     8:43.47       92367788 B   ---   --   ---xx   flac  0.4583  bd-95-04-03-manchester-master-d1 (Track 06).flac
+     6:59.24       73968092 B   ---   --   ---xx   flac  0.4127  bd-95-04-03-manchester-master-d1 (Track 07).flac
+     7:27.11       78877228 B   -b-   --   ---xx   flac  0.3922  bd-95-04-03-manchester-master-d2 (Track 01).flac
+     7:53.07       83454356 B   -b-   --   ---xx   flac  0.4565  bd-95-04-03-manchester-master-d2 (Track 02).flac
+     8:23.66       88884476 B   ---   --   ---xx   flac  0.5355  bd-95-04-03-manchester-master-d2 (Track 03).flac
+     5:19.46       56379836 B   ---   --   ---xx   flac  0.5344  bd-95-04-03-manchester-master-d2 (Track 04).flac
+     8:48.06       93153356 B   ---   --   ---xx   flac  0.5713  bd-95-04-03-manchester-master-d2 (Track 05).flac
+     5:30.56       58343756 B   ---   --   ---xx   flac  0.5935  bd-95-04-03-manchester-master-d2 (Track 06).flac
+     7:23.55       78274476 B   -b-   --   ---xx   flac  0.4586  bd-95-04-03-manchester-master-d2 (Track 07).flac
+    97:56.25     1036584984 B                            0.5105  (14 files)
+===================
+===================
+===================

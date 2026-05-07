@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-09w.shnf 
+=================== 
+=================== 
+=================== 
+cabf5982e9ea46c7d679e5351f4fcacf  101 Maggie's Farm.shn
+20312716f7177778e6872a9370a28fda  102 Tell Me That It Isn't True.shn
+1750da016dab26b275b375b86d40febe  103 Stuck Inside Of Mobile.shn
+1d5b7644a338d20ac89771ed4ad71428  104 Accidentally Like A Martyr.shn
+a30f03c7d47bf51431e2ac300365bc64  105 You Ain't Goin' Nowhere.shn
+3881eb3893d43148466c4d375b9e119c  106 Brown Sugar.shn
+9cc74217b88a7cbcb87fb47dd134f0dc  107 To Ramona.shn
+82c9c0dcc209cc919ed3aeccf92dc9b1  108 It's Alright Ma.shn
+383f66ae0b07ab590fc855b352e14fcd  109 Blowin' In The Wind.shn
+607409c8ac600c04efeb00e167f5e7a3  110 Drifter's Escape.shn
+cfe8dc1b737a16eb535938fb663d8ca3  111 Masters Of War.shn
+842c2b4b3c8b7ba18414ebbd6b653d8b  112 Old Man.shn
+75c7774b5d5ce8cd5fcd294253ff4330  201 Honest With Me.shn
+52d07dc13cac70f8a59db2d4dae4658a  202 One Too Many Mornings.shn
+ed6f236924f0c47c785f35b42512431f  203 High Water.shn
+fb51b73ddd9f9eba65789c1f4da0c650  204 Mutineer.shn
+e04fab8f8f665ec934202a7671283e5e  205 Floater.shn
+8fffde6ba4437b273c9c43dc9b908178  206 Summer Days.shn
+d856a551614b4eefd5b3b721592e5325  207 Like A Rolling Stone.shn
+1649e05122895b8517f7937f6f69bc0c  208 Knockin' On Heaven's Door.shn
+5899997dc0e82a25ef20f3e0165ab37d  209 All Along The Watchtower.shn
+6ac9a9ae6468ac5f97f6153e8dc42baa  bd02-10-09-art-back.jpg
+27b77ba9e258e6ab6c4cb391e3907ad8  bd02-10-09-art-front.jpg
+e705472c11aa3c9f6b783d9d4ce88e9a  bd02-10-09w.txt
+671f1b44a89143e6297eaaa8f1e3f0a8  dy_an-sac.doc
+be03782ec6b7c28a1ed248ac64aa68df  Dylan_-_02-10-09 Edric Plays With His Weenie.md5
+d20cb69bb3a48dc42f0b215bbf7a28ad  Dylan_-_02-10-09 Edric Plays With His Weenie.nfo
+ec012d2253076183f0e9f4f779e3eeb4  sacramento_10_9_front.copy.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-09w.shnf 
+=================== 
+=================== 
+=================== 
+829b1c8ba0a0ca136157fe985daf2adb  [shntool]  101_Maggie_s_Farm.wav
+4885fb04abc420f0bb64c8cc49963db4  [shntool]  102_Tell_Me_That_It_Isn_t_True.wav
+a94beb53c55859c292e1f625a65f8c3a  [shntool]  103_Stuck_Inside_Of_Mobile.wav
+e2b223bc044a3397698eac8c4fd7d036  [shntool]  104_Accidentally_Like_A_Martyr.wav
+79890020ccb10989b0885621d6d17704  [shntool]  105_You_Ain_t_Goin__Nowhere.wav
+ee5444964756baf5a6018daced37a2f0  [shntool]  106_Brown_Sugar.wav
+f3a3d5d337b4c13d76e41ec2d9040772  [shntool]  107_To_Ramona.wav
+3da68a6ed9af7600495833a7173301a0  [shntool]  108_It_s_Alright_Ma.wav
+18e25feabba9ed5b9b1835d1d16a15cd  [shntool]  109_Blowin__In_The_Wind.wav
+c011d4fa46c7541f47f0fd14ee7a3dc9  [shntool]  110_Drifter_s_Escape.wav
+a5abbf1d39b458e2bae02576560a3e6d  [shntool]  111_Masters_Of_War.wav
+5e3180ba3cd7ead1d05792aba2505b43  [shntool]  112_Old_Man.wav
+77d4671afc4b099aa8b82bd9dd4af270  [shntool]  201_Honest_With_Me.wav
+f1e639f51b968db40879ba77459e986d  [shntool]  202_One_Too_Many_Mornings.wav
+e5b9fe27b8d27a117dd9eec0e6507497  [shntool]  203_High_Water.wav
+3a20928b3e6b72fd2465c1e869ecc6b5  [shntool]  204_Mutineer.wav
+963f905082481a1be152a1d4b6c1b62a  [shntool]  205_Floater.wav
+d3535ae7e6a63d132af8204d58b9ed11  [shntool]  206_Summer_Days.wav
+b1934404823d865a4b9f59fb28f07921  [shntool]  207_Like_A_Rolling_Stone.wav
+363897baff00b247243ba0fe0498d31d  [shntool]  208_Knockin__On_Heaven_s_Door.wav
+6242c6f0d85b285e484e4c154e2c6044  [shntool]  209_All_Along_The_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-09w.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:24.39       67829676 B   -b-   --   -----    wav  1.0000  101_Maggie_s_Farm.wav
+     3:58.41       42079540 B   -b-   --   -----    wav  1.0000  102_Tell_Me_That_It_Isn_t_True.wav
+     7:10.61       75994356 B   -b-   --   -----    wav  1.0000  103_Stuck_Inside_Of_Mobile.wav
+     4:03.66       43021616 B   -b-   --   -----    wav  1.0000  104_Accidentally_Like_A_Martyr.wav
+     4:28.61       47417980 B   -b-   --   -----    wav  1.0000  105_You_Ain_t_Goin__Nowhere.wav
+     3:57.49       41922524 B   -b-   --   -----    wav  1.0000  106_Brown_Sugar.wav
+     4:45.54       50401228 B   -b-   --   -----    wav  1.0000  107_To_Ramona.wav
+     7:03.51       74738252 B   -b-   --   -----    wav  1.0000  108_It_s_Alright_Ma.wav
+     6:55.51       73325132 B   -b-   --   -----    wav  1.0000  109_Blowin__In_The_Wind.wav
+     6:07.46       64846428 B   -b-   --   -----    wav  1.0000  110_Drifter_s_Escape.wav
+     5:29.25       58094868 B   -b-   --   -----    wav  1.0000  111_Masters_Of_War.wav
+     3:46.73       40038368 B   -b-   --   -----    wav  1.0000  112_Old_Man.wav
+     6:51.17       72540068 B   -b-   --   -----    wav  1.0000  201_Honest_With_Me.wav
+     6:20.72       67201624 B   -b-   --   -----    wav  1.0000  202_One_Too_Many_Mornings.wav
+     7:21.37       77878512 B   -b-   --   -----    wav  1.0000  203_High_Water.wav
+     3:32.55       37526160 B   -b-   --   -----    wav  1.0000  204_Mutineer.wav
+     6:36.07       69870848 B   -b-   --   -----    wav  1.0000  205_Floater.wav
+    10:52.33      115090600 B   -b-   --   -----    wav  1.0000  206_Summer_Days.wav
+     7:01.01       74267212 B   -b-   --   -----    wav  1.0000  207_Like_A_Rolling_Stone.wav
+     6:53.00       72854096 B   -b-   --   -----    wav  1.0000  208_Knockin__On_Heaven_s_Door.wav
+     7:43.56       81803880 B   -b-   --   -----    wav  1.0000  209_All_Along_The_Watchtower.wav
+   127:25.70     1348742968 B                            1.0000  (21 files)
+=================== 
+=================== 
+=================== 

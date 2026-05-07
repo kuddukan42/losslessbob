@@ -1,0 +1,13 @@
+b266ff13f52942132fe9ee5e856c920b *1992-10-28 Springfield D1.CUE
+c8f67f86645dead5098870a868b21b22 *1-01-I Can't Be Satisfied.wav
+b8db7f804ae45e161e1d0924d668df2d *1-02-I've Been All Around This World.wav
+d4d408753c13089c8a4fda877db804da *1-03-All Along The Watchtower.wav
+b6b16a3dd534f76960c01d07e7b10992 *1-04-Positively 4th Street.wav
+91e8ffae07fb09665a92359772e4390e *1-05-Shelter From The Storm.wav
+a67c96b886ec10fa0fe75c283782d195 *1-06-It Takes A Lot To Laugh.wav
+a7a4b10651dab8b32f50d4d49dd07561 *1-07-Silvio.wav
+5d05a54b47b21aab5e8353752aa5c8a7 *1-08-Mama, You Been On My Mind.wav
+fc08411b5ca459607cfe0dd5811d6cec *1-09-Boots Of Spanish Leather.wav
+ce9693087f7ab9e72cf5b687699c336b *1-10-Mr. Tambourine Man.wav
+ae918e56d62f77c835bcf3462885a978 *1-11-Don't Think Twice, It's All Right.wav
+44cd0479df8f4c44907e2472b3388beb *1992-10-28 Springfield D1.LOG

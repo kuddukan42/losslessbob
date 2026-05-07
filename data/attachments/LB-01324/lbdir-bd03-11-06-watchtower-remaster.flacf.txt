@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-06-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+7b88067c8d1aa4d3e7dd9adddfedddd9  bd03-11-06-watchtower-remaster.txt
+c8ebe8d97a81fd76e640eed69bbaa713  d1\01_ANNOUNCEMENT.flac
+c8042bafe9c701c4e631f7fc8aab25a3  d1\02_DOWN_ALONG_THE_COVE.flac
+6cdab27e57b72a18b53d6a1792f983e3  d1\03_IT_S_ALL_OVER_NOW__BABY_.flac
+dcda46b902dc304c7c67e3fdd298656a  d1\04_CRY_A_WHILE.flac
+73aa82fd591ab1cfcfb03173edc6230b  d1\05_LOVE_MINUS_ZERO_NO_LIMIT.flac
+bf377c9e6cf85389c5e884e8a1315ab7  d1\06_IT_S_ALRIGHT__MA__I_M_ON.flac
+28a9024da1ea3389905430357b2e11d4  d1\07_SIMPLE_TWIST_OF_FATE.flac
+03202f0399c63cdf5e1dc633c798d738  d1\08_THINGS_HAVE_CHANGED.flac
+bbb04a50fa157948128cafc26b36b5db  d1\09_MOONLIGHT.flac
+f12e7e99fe1e87f6cbe42fde025ccaaf  d1\10_MAN_IN_THE_LONG_BLACK_CO.flac
+d54ba51633fc45d5a44aba6ecddc81f0  disk2\01_HIGHWAY_61_REVISITED.flac
+c35a47fd380e1b76320300d2ace442b1  disk2\02_EVERY_GRAIN_OF_SAND.flac
+4491f1babd4315d85febb80cc6c29e3c  disk2\03_HONEST_WITH_ME.flac
+0e3e73ccc08364ed4468277ba9f98322  disk2\04_MR_TAMBOURINE_MAN.flac
+2321934e3eccca423cd74b37da5e72e3  disk2\05_SUMMER_DAYS.flac
+ba1587eb24c35b40ddb942d873089e65  disk2\06_CAT_S_IN_THE_WELL.flac
+c8c2bfb1939cab473273e187f23e52a1  disk2\07_LIKE_A_ROLLING_STONE.flac
+caea619c2354fea546915227bf0a06a9  disk2\08_ALL_ALONG_THE_WATCHTOWER.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-06-watchtower-remaster.flacf\d1 
+=================== 
+=================== 
+=================== 
+01_ANNOUNCEMENT.flac:999f4fb6ca8cbc37e668549c91c3db33
+02_DOWN_ALONG_THE_COVE.flac:36ec4a502081b428f18783e9528b74c8
+03_IT_S_ALL_OVER_NOW__BABY_.flac:540736f9b24cce0b2a609f6355c83327
+04_CRY_A_WHILE.flac:3d26d36cd7d35b173bef25b2ed32f3a4
+05_LOVE_MINUS_ZERO_NO_LIMIT.flac:f535edf703d43432c8797769de51e3a4
+06_IT_S_ALRIGHT__MA__I_M_ON.flac:bc188374af4c8e6fae91ddcd1fef9f04
+07_SIMPLE_TWIST_OF_FATE.flac:997986c9f7b72f3d2a734777a531ae33
+08_THINGS_HAVE_CHANGED.flac:ba46995294e0130282d39e032d100699
+09_MOONLIGHT.flac:b685fae8020025654a21a1c69d1c5533
+10_MAN_IN_THE_LONG_BLACK_CO.flac:d0a5af269e5bd663f1c22b2c6469ef7a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-06-watchtower-remaster.flacf\disk2 
+=================== 
+=================== 
+=================== 
+01_HIGHWAY_61_REVISITED.flac:0673da6f0861a3f321b2894084a933ec
+02_EVERY_GRAIN_OF_SAND.flac:d3aa88cc2a31bf61f129407a38ea5622
+03_HONEST_WITH_ME.flac:00fd308d6a3d28af2abb0832da601a15
+04_MR_TAMBOURINE_MAN.flac:547405a66fe43c95ad34d1531bddd5ac
+05_SUMMER_DAYS.flac:fd510425b91bd0161f4b9f7e31d76de8
+06_CAT_S_IN_THE_WELL.flac:a28bc7a00e6dee6ff4ee4271116847ff
+07_LIKE_A_ROLLING_STONE.flac:ae5982b7eadaafb7bc344e846bd0da83
+08_ALL_ALONG_THE_WATCHTOWER.flac:06478e6e998e3efbd2f7b86f4f57ca4f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-06-watchtower-remaster.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:33.70       16569884 B   ---   --   ---xx   flac  0.5043  01_ANNOUNCEMENT.flac
+     6:11.49       65559692 B   ---   --   ---xx   flac  0.5922  02_DOWN_ALONG_THE_COVE.flac
+     6:26.25       68149244 B   ---   --   ---xx   flac  0.5315  03_IT_S_ALL_OVER_NOW__BABY_.flac
+     5:59.25       63386444 B   ---   --   ---xx   flac  0.5911  04_CRY_A_WHILE.flac
+     6:07.10       64762364 B   ---   --   ---xx   flac  0.4934  05_LOVE_MINUS_ZERO_NO_LIMIT.flac
+     7:55.61       83933516 B   ---   --   ---xx   flac  0.5646  06_IT_S_ALRIGHT__MA__I_M_ON.flac
+     7:08.50       75616844 B   ---   --   ---xx   flac  0.4985  07_SIMPLE_TWIST_OF_FATE.flac
+     6:45.38       71531420 B   ---   --   ---xx   flac  0.5689  08_THINGS_HAVE_CHANGED.flac
+     4:58.34       52647212 B   ---   --   ---xx   flac  0.4385  09_MOONLIGHT.flac
+     5:44.40       60775724 B   ---   --   ---xx   flac  0.5362  10_MAN_IN_THE_LONG_BLACK_CO.flac
+    58:51.27      622932344 B                            0.5366  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-06-watchtower-remaster.flacf\disk2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.68       70014380 B   ---   --   ---xx   flac  0.5944  01_HIGHWAY_61_REVISITED.flac
+     7:39.46       81075836 B   ---   --   ---xx   flac  0.5023  02_EVERY_GRAIN_OF_SAND.flac
+     7:04.59       74932412 B   ---   --   ---xx   flac  0.5776  03_HONEST_WITH_ME.flac
+     6:57.58       73695260 B   ---   --   ---xx   flac  0.5231  04_MR_TAMBOURINE_MAN.flac
+    12:29.46      132231836 B   ---   --   ---xx   flac  0.5626  05_SUMMER_DAYS.flac
+     4:09.02       43928348 B   ---   --   ---xx   flac  0.5970  06_CAT_S_IN_THE_WELL.flac
+     7:12.20       76251884 B   ---   --   ---xx   flac  0.5943  07_LIKE_A_ROLLING_STONE.flac
+     5:48.06       61401308 B   -b-   --   ---xx   flac  0.5815  08_ALL_ALONG_THE_WATCHTOWER.flac
+    57:58.05      613531264 B                            0.5636  (8 files)
+=================== 
+=================== 
+=================== 

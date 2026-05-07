@@ -1,0 +1,14 @@
+Bob Dylan, 1/31/90, Paris, France, 2CDR
+
+LB-5730, (59min+42min), version "b"; bittorrent download 01/08; bittorrent description also included: "source : DAT MASTER => WAV, recorded by the master of recordings from the 90`s, very nice quality"; not much above 16k except lego parapets; cdr split not specified; has big digital gap between t10 and t11 so assume it is there; same recording as hg LB-1305 based on same backgound talkin d1t2 0:3x and same clapping d1t19 0:4x; in comparison this is a little warmer and that is full spectrum and they have different sets of flaws; in comparison to sony LB-3187 that one is harsher but maybe a little fuller sound; (did not listen to all of this)
+
+pop d1t2 0:33; analog drop at end of d1t9
+
+CD1
+1. To Be Alone With You, 2. Ballad Of A Thin Man, 3. Stuck Inside Of Mobile With The Memphis Blues Again, 4. John Brown, 5. Political World, 6. Shelter From The Storm, 7. Highway 61 Revisited, 8. It's All Over Now, Baby Blue, 9. A Hard Rain's A-Gonna Fall, 10. Girl From The North Country, 
+
+CD2
+11. All Along The Watchtower, 12. Lay Lady Lay, 13. Everything Is Broken, 14. I'll Remember You, 15. In The Garden, 16. Like A Rolling Stone, 17. Mr. Tambourine Man, 18. Maggie's Farm
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

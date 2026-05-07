@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-26 master 
+=================== 
+=================== 
+=================== 
+e4b0d3ba40e7602e51e7d71035a1a11a  101 drifters escape.shn
+3bc8221222c1cd0bdff41a11387946fc  102  man in a long black coat.shn
+ebbbfc15e7c2a2864f7ac9dc4e7a7531  103 all along the watchtower.shn
+20e1b47110a5402be06168c46b7acb86  104 positively 4th street.shn
+ba418a3d2a8c0429644bac3dd4b1f5c4  105 watching the river flow.shn
+ebbd45a6537d6ffe8f0108ee6724eb8a  106 silvio.shn
+4aa6c3cc338125f02f1915b39a4d245b  107 tangled up in blue.shn
+06f4f626fd861b6081949abcff7d3c73  108 masters of war.shn
+70c8d437a5c946644aa3e98cda91b76b  109 don`tthink twice it`s all right.shn
+8bf7aa27d519c174355b2a3dc01f0659  110 stuck inside of mobile with the mephis blues again.shn
+feec2b35ba87fd1e62cc9f87461c5ff1  201 she belongs to me.shn
+b3ef9282edf0ec6b3415cf7b13c6c160  202 maggies farm.shn
+a972cc2a9fde349ee9ccdf37bd71686e  203 alabama getaway.shn
+67f173591b5a194b89e6140d3ea58995  204 my back pages.shn
+e4d8c5df5468af63f7f34c3e1ea18662  205 rainy day women #12 & 35.shn
+3d7cb304a74e99890aa38ce60143aa78  206 girl from the north country.shn
+28e5e0afb5ecb16a38ed7c5d1d616698  bd96-06-26.txt
+46606c7d68c679bff3ae25c4fd9a55c6  liverpool 26th june 96 info.md5
+fa49a007b73aa8d69cee5d0e3f40a1ad  liverpool 26th june 96 info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-06-26 master 
+=================== 
+=================== 
+=================== 
+454e32a295ff373d7c1f79afc2f0e08b  [shntool]  101_drifters_escape.wav
+bfa42fc3cb92d0107ab778a758533489  [shntool]  102__man_in_a_long_black_coat.wav
+90e77bb710482d96dd9863e0c7b78aa9  [shntool]  103_all_along_the_watchtower.wav
+ba4cd16d92aced870a81d5887d513806  [shntool]  104_positively_4th_street.wav
+3dcbf1493d7d0ccaed20ef5949c7e2be  [shntool]  105_watching_the_river_flow.wav
+5ec52f024b8a9fa969837728a3e6181d  [shntool]  106_silvio.wav
+d7b8267594c85d13de4c118040c76279  [shntool]  107_tangled_up_in_blue.wav
+6081c1d161ba028d72e43231787fadbb  [shntool]  108_masters_of_war.wav
+dcbb55f43ac2dd8777fad4cb3d7cda64  [shntool]  109_don`tthink_twice_it`s_all_right.wav
+d2c845b8a8abd56708c47abc75418a27  [shntool]  110_stuck_inside_of_mobile_with_the_mephis_blues_again.wav
+0d63413df0aad9fb2416f657fbd07b5e  [shntool]  201_she_belongs_to_me.wav
+1043f6e991c3fae34eccb7eed090b483  [shntool]  202_maggies_farm.wav
+57d281ec65573d210ec9f4d96a6aec06  [shntool]  203_alabama_getaway.wav
+11c8cb02976ecc44d0b063ed89c4fe21  [shntool]  204_my_back_pages.wav
+b65f24cc6c7bd6b5ff29b16b84b8b675  [shntool]  205_rainy_day_women_#12___35.wav
+a2057ef7cff0690ed350e3e1cf7daad7  [shntool]  206_girl_from_the_north_country.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-26 master 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:24.65       67890524 B   ---   --   ---xx    shn  0.5157  101 drifters escape.shn
+     8:08.60       86224364 B   ---   --   ---xx    shn  0.5095  102  man in a long black coat.shn
+     6:20.27       67095548 B   ---   --   ---xx    shn  0.5740  103 all along the watchtower.shn
+     8:45.28       92675900 B   ---   --   ---xx    shn  0.5113  104 positively 4th street.shn
+     5:59.74       63501692 B   ---   --   ---xx    shn  0.5118  105 watching the river flow.shn
+     7:20.56       77747756 B   ---   --   ---xx    shn  0.5499  106 silvio.shn
+    10:35.20      112061084 B   ---   --   ---xx    shn  0.5116  107 tangled up in blue.shn
+     6:10.33       65345660 B   ---   --   ---xx    shn  0.4621  108 masters of war.shn
+     6:25.50       68031644 B   ---   --   ---xx    shn  0.5146  109 don`tthink twice it`s all right.shn
+     9:20.44       98887532 B   ---   --   ---xx    shn  0.5502  110 stuck inside of mobile with the mephis blues again.shn
+     6:25.46       68022236 B   ---   --   ---xx    shn  0.4906  201 she belongs to me.shn
+     9:41.16      102526076 B   ---   --   ---xx    shn  0.5503  202 maggies farm.shn
+     7:20.63       77764220 B   ---   --   ---xx    shn  0.5557  203 alabama getaway.shn
+     9:30.39      100639772 B   ---   --   ---xx    shn  0.5179  204 my back pages.shn
+     7:25.25       78556844 B   ---   --   ---xx    shn  0.5405  205 rainy day women #12 & 35.shn
+     9:22.01       99139196 B   ---   --   ---xx    shn  0.4581  206 girl from the north country.shn
+   125:17.47     1326110048 B                            0.5203  (16 files)
+=================== 
+=================== 
+=================== 

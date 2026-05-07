@@ -1,0 +1,35 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-05-29.flacf 
+=================== 
+=================== 
+=================== 
+a7df4e3fb06d95f2a869b96e37b1bd4c  bd88-05-29-LB-2728.txt
+b01333b404b6ddd8aa4d77547f00a47f  DYLAN LEVON 01.flac
+a4a5aef8d521ba8a25f74314273a42a8  DYLAN LEVON 02.flac
+a5aca683e122982ba730976cad7aaa4d  DYLAN LEVON.md5
+62817e4559a892dd0cb71171e1c863bc  DYLAN LEVON.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-05-29.flacf 
+=================== 
+=================== 
+=================== 
+DYLAN LEVON 01.flac:5cf1702304fefc3f574a5a13141d3ef7
+DYLAN LEVON 02.flac:b95fcb1830191cdd868db337fb96cb18
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-05-29.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.35       55471964 B   ---   --   ---xx   flac  0.5852  DYLAN LEVON 01.flac
+     4:59.12       52772988 B   -b-   --   ---xx   flac  0.5885  DYLAN LEVON 02.flac
+    10:13.47      108244952 B                            0.5868  (2 files)
+=================== 
+=================== 
+=================== 

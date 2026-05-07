@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-26-eve-c.flacf 
+=================== 
+=================== 
+=================== 
+74a82f60a11961b3957e85866859d8e8  01 Most Likely You Go Your Way (and I'll Go Mine).flac
+a4e933e81f57e2a6ab6312ceb5ef8c51  02 Lay Lady Lay.flac
+18f985dae2a484df1953477a10a02277  03 Just Like Tom Thumb's Blues.flac
+6e2c49cc4f478be0678ad45ddf4f2dc3  04 Rainy Day Women # 12 & 35.flac
+a7f5acda92a3431a434cd06bdc6d9bfd  05 It Ain't Me, Babe.flac
+5acbb0830c3d39c5d76aacc9913c1de8  06 Ballad of a Thin Man.flac
+412dcce07c3a11019874de514cd2414f  07 Stage Fright (fragment).flac
+607b0f91e7d5443fe5f3cb99c36538ed  08 The Night They Drove Old Dixie Down (part).flac
+61443914571f30b680add4dda0b7614b  09 Up on Cripple Creek (in progress).flac
+0efb81f5557ab13d5deb0493b97f5457  10 All Along the Watchtower.flac
+58c5d90e634bb62427a6b9ba2031cadf  11 Ballad of Hollis Brown.flac
+28238cf13f7ad42775c284ab2ec986cc  12 Knockin' on Heaven's Door.flac
+833fd43e4f652178dd6fbe4ac5d22723  13 The Times They Are A-Changin'.flac
+9431e7b2f2e7d72637507935f68aa0f8  14 Don't Think Twice, It's Alright.flac
+43ecb0f3b763c716142f4fc469a72705  15 Gates of Eden.flac
+a1306adad8be13df63a283302a0ac502  16 Just Like a Woman.flac
+6684809b0eac8c0861cc1c2b3c5df0da  17 It's Alright, Ma (I'm Only Bleeding).flac
+f679c3e936f72fedaf05e1cbd0893e92  18 The Weight (in progress).flac
+b43a886c5282e9d4766358489e6b0d39  19 Forever Young.flac
+1801a908941af8dbba47775fa34537bb  20 Something There Is About You.flac
+298c5697e0c9adc7cbaf648c5561e967  21 Like a Rolling Stone.flac
+4741d612ed71f732e8ba8561ec6dd3ba  22 Most Likely You Go Your Way (and I'll Go Mine).flac
+e598111bdfe3d9c066b236c71c504a24  bd74-01-26-eve-c-LB-3982.txt
+1942d84adccdc2e90e8ae3c4431ab3da  Bob Dylan and The Band- Hofheinz Pavillion, Houston, TX 1974-01-26b REEL FROM MASTER FLAC.md5
+cf2cf9f35cd83b68fb0ddc5b7ed1ae2b  Bob Dylan and The Band- Hofheinz Pavillion, Houston, TX 1974-01-26b REEL FROM MASTER WAV.md5
+8bd9f49090f748d20270b80eaf25d800  Bob Dylan and The Band- Hofheinz Pavillion, Houston, TX 1974-01-26b.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-26-eve-c.flacf 
+=================== 
+=================== 
+=================== 
+01 Most Likely You Go Your Way (and I'll Go Mine).flac:bd1c7e3d03c7e7c1d308f8851f4a8e93
+02 Lay Lady Lay.flac:f767787893fbfcecc5be2d643eab5de9
+03 Just Like Tom Thumb's Blues.flac:52d721dcf5d0db277ee0f7114f190774
+04 Rainy Day Women # 12 & 35.flac:f25439a263eb2e67853c745413077f26
+05 It Ain't Me, Babe.flac:8f854ad336fbf91d50840c42003d40b3
+06 Ballad of a Thin Man.flac:3c2a92c57e9a1b2280758bd15b63ad23
+07 Stage Fright (fragment).flac:83f381ef34351b31d06cffac2bba2c49
+08 The Night They Drove Old Dixie Down (part).flac:be05ef55c0daa13f0470c004484076af
+09 Up on Cripple Creek (in progress).flac:96505d406bca77703283b4749d0f8c82
+10 All Along the Watchtower.flac:e97c257e0c35447ec2bda01dce4872f0
+11 Ballad of Hollis Brown.flac:204c6ec55f2091d80e9d09a405d1da48
+12 Knockin' on Heaven's Door.flac:1fc2e8ec479f3a361fc0e295ed2f5c1d
+13 The Times They Are A-Changin'.flac:a7d328b71145e4e4f4d78753e44ba8ff
+14 Don't Think Twice, It's Alright.flac:5ce4797f58cef2062012c73a1b55889e
+15 Gates of Eden.flac:3907c1d30eb74640262a840e06940fb9
+16 Just Like a Woman.flac:d589daa68abc9fdc19489351d27c6d19
+17 It's Alright, Ma (I'm Only Bleeding).flac:49945718c2601f0c043e8ebd8385e34c
+18 The Weight (in progress).flac:60202fcc7ced8cda991c4c36fbfd4997
+19 Forever Young.flac:0b56cd14898a84099aaa34988876ba73
+20 Something There Is About You.flac:10f7067a6053b4db7dd61849e61e04a1
+21 Like a Rolling Stone.flac:9f5a7980fb0c46e3d89e79ef538b2541
+22 Most Likely You Go Your Way (and I'll Go Mine).flac:981936376d5f31462a25c694c5492d90
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-26-eve-c.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.11       45007916 B   ---   --   ---xx   flac  0.5987  01 Most Likely You Go Your Way (and I'll Go Mine).flac
+     2:53.70       30681884 B   ---   --   ---xx   flac  0.6137  02 Lay Lady Lay.flac
+     5:27.67       57840428 B   ---   --   ---xx   flac  0.6093  03 Just Like Tom Thumb's Blues.flac
+     3:19.09       35124812 B   ---   --   ---xx   flac  0.6052  04 Rainy Day Women # 12 & 35.flac
+     3:52.05       40936604 B   ---   --   ---xx   flac  0.5950  05 It Ain't Me, Babe.flac
+     3:27.01       36517196 B   ---   --   ---xx   flac  0.5937  06 Ballad of a Thin Man.flac
+     0:20.74        3702092 B   ---   --   ---xx   flac  0.5908  07 Stage Fright (fragment).flac
+     2:20.41       24792476 B   ---   --   ---xx   flac  0.5790  08 The Night They Drove Old Dixie Down (part).flac
+     4:52.04       51518252 B   ---   --   ---xx   flac  0.6004  09 Up on Cripple Creek (in progress).flac
+     2:44.34       29009612 B   ---   --   ---xx   flac  0.6035  10 All Along the Watchtower.flac
+     3:54.18       41319980 B   ---   --   ---xx   flac  0.6107  11 Ballad of Hollis Brown.flac
+     3:07.60       33127964 B   ---   --   ---xx   flac  0.6103  12 Knockin' on Heaven's Door.flac
+     3:24.34       36065612 B   ---   --   ---xx   flac  0.6077  13 The Times They Are A-Changin'.flac
+     3:38.14       38488172 B   ---   --   ---xx   flac  0.6302  14 Don't Think Twice, It's Alright.flac
+     4:19.12       45715868 B   ---   --   ---xx   flac  0.6047  15 Gates of Eden.flac
+     4:14.65       44958524 B   ---   --   ---xx   flac  0.6062  16 Just Like a Woman.flac
+     5:50.16       61777676 B   ---   --   ---xx   flac  0.6167  17 It's Alright, Ma (I'm Only Bleeding).flac
+     4:55.28       52103900 B   ---   --   ---xx   flac  0.6024  18 The Weight (in progress).flac
+     5:11.07       54876908 B   ---   --   ---xx   flac  0.6081  19 Forever Young.flac
+     4:27.11       47124716 B   ---   --   ---xx   flac  0.6250  20 Something There Is About You.flac
+     8:38.53       91499900 B   ---   --   ---xx   flac  0.6257  21 Like a Rolling Stone.flac
+     3:49.58       40532060 B   ---   --   ---xx   flac  0.6446  22 Most Likely You Go Your Way (and I'll Go Mine).flac
+    89:04.17      942722552 B                            0.6105  (22 files)
+=================== 
+=================== 
+=================== 

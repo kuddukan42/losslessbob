@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd96-05-04-IA025.flacf
+===================
+===================
+===================
+0258ce625613977952bf40ffa7481280 *Bob Dylan 1996-05-04 Richmond, VA (IA025, source for LB-1754).md5
+daba81758c3e44174487674295bead7c *Bob Dylan 1996-05-04 Richmond, VA (IA025, source for LB-1754).txt
+491e640f129fd1ebd7d5a4211a8b94b4 *CD1\01. Bob Dylan - Drifter's Escape.flac
+4ab47c310f47016ba9efa37b5d5f2c3c *CD1\02. Bob Dylan - The Man In Me.flac
+9be8c3552d6f128ada223c7e6e420f28 *CD1\03. Bob Dylan - All Along The Watchtower.flac
+0a23b829377c997b970e35b0a610e4c5 *CD1\04. Bob Dylan - I Don't Believe You.flac
+e79dcc0c2b2edcb3d87e01c1c32e8f89 *CD1\05. Bob Dylan - Watching The River Flow.flac
+538769920ed472425f82474d4bea80ad *CD1\06. Bob Dylan - Silvio.flac
+0039d1a92a6e80b8630cdb594ce90d30 *CD1\07. Bob Dylan - Mr. Tambourine Man.flac
+4191744ad2ade861005a66871ad2c5b3 *CD1\08. Bob Dylan - Master's Of War.flac
+979cf172c115dc7e04864c29ef74de46 *CD1\09. Bob Dylan - Mama You've Been On My Mind.flac
+c652cdf976da4d7338024e146ab4a718 *CD1\Bob Dylan - Richmond, May 4, 1996, CD1.log
+89a71a21b12e922bdaa163f02937eea9 *CD2\01. Bob Dylan - Seein' The Real You At Last.flac
+e06ffb1a7399512363ccbbeca86bdd7a *CD2\02. Bob Dylan - This Wheel's On Fire.flac
+d3a205b541aa1fb7ca163e1863ed2fe3 *CD2\03. Bob Dylan - Maggie's Farm.flac
+35a73884283adbdabf6200dedc934795 *CD2\04. Bob Dylan - Alabama Getaway.flac
+c2e9221f487029ab8713d74f54379830 *CD2\05. Bob Dylan - Times They Are A-Changin.flac
+2a3b226ec7e5981c0e6417b021a56776 *CD2\06. Bob Dylan - Rainy Day Women #12 & 35.flac
+685cd14dffb4e34d25cef39ed8949e29 *CD2\Bob Dylan - Richmond, May 4, 1996, CD2.log
+===================
+===================
+===================
+=== ffp for: bd96-05-04-IA025.flacf
+===================
+===================
+===================
+CD1\01. Bob Dylan - Drifter's Escape.flac:993af568d12248d9cadc51790beab592
+CD1\02. Bob Dylan - The Man In Me.flac:df8ab412024497c46ceeef1e95210ff0
+CD1\03. Bob Dylan - All Along The Watchtower.flac:2c3a11fcaa9131b8a1a0beef74864340
+CD1\04. Bob Dylan - I Don't Believe You.flac:78d4e9ef8d91a4083f18687b3e656de2
+CD1\05. Bob Dylan - Watching The River Flow.flac:b27bbe76f9db160147940cdf92c7eda4
+CD1\06. Bob Dylan - Silvio.flac:cefb8f48668fc9d995bb4fc9435e48d8
+CD1\07. Bob Dylan - Mr. Tambourine Man.flac:32f50556c85eaa45d7b9b377faf0c0b4
+CD1\08. Bob Dylan - Master's Of War.flac:565519016bec8a187d8ae640c0d402f1
+CD1\09. Bob Dylan - Mama You've Been On My Mind.flac:40a99fc9b884a6939b76538cf486521d
+CD2\01. Bob Dylan - Seein' The Real You At Last.flac:4c7afc20f11ea89d146c270bd31d2081
+CD2\02. Bob Dylan - This Wheel's On Fire.flac:a497364650c4b136e9e2ed71186ff528
+CD2\03. Bob Dylan - Maggie's Farm.flac:957d89aae73ef75f96eb26c08f991f59
+CD2\04. Bob Dylan - Alabama Getaway.flac:06e0b3c57f887eb262c082d7c4b3dbe9
+CD2\05. Bob Dylan - Times They Are A-Changin.flac:c8b264b79c40d429bdc0cacd05fc93fc
+CD2\06. Bob Dylan - Rainy Day Women #12 & 35.flac:da29882b1aea0a6080968b641f853b55
+===================
+===================
+===================
+=== shntool len for: bd96-05-04-IA025.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.27       46985948 B   ---   --   ---xx   flac  0.5834  01. Bob Dylan - Drifter's Escape.flac
+     5:24.61       57297116 B   ---   --   ---xx   flac  0.5393  02. Bob Dylan - The Man In Me.flac
+     6:06.50       64680044 B   ---   --   ---xx   flac  0.5919  03. Bob Dylan - All Along The Watchtower.flac
+     7:36.55       80567804 B   ---   --   ---xx   flac  0.5606  04. Bob Dylan - I Don't Believe You.flac
+     5:27.20       57729884 B   ---   --   ---xx   flac  0.5391  05. Bob Dylan - Watching The River Flow.flac
+     6:44.65       71418524 B   ---   --   ---xx   flac  0.5775  06. Bob Dylan - Silvio.flac
+     9:05.20       96185084 B   ---   --   ---xx   flac  0.5464  07. Bob Dylan - Mr. Tambourine Man.flac
+     5:35.44       59197532 B   ---   --   ---xx   flac  0.5313  08. Bob Dylan - Master's Of War.flac
+     6:04.14       64242572 B   ---   --   ---xx   flac  0.5440  09. Bob Dylan - Mama You've Been On My Mind.flac
+    56:31.56      598304508 B                            0.5567  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd96-05-04-IA025.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:36.34       80518412 B   ---   --   ---xx   flac  0.5823  01. Bob Dylan - Seein' The Real You At Last.flac
+     6:46.35       71700764 B   ---   --   ---xx   flac  0.5604  02. Bob Dylan - This Wheel's On Fire.flac
+     8:20.33       88277660 B   ---   --   ---xx   flac  0.5980  03. Bob Dylan - Maggie's Farm.flac
+     5:57.61       63118316 B   ---   --   ---xx   flac  0.5918  04. Bob Dylan - Alabama Getaway.flac
+    12:07.15      128278124 B   ---   --   ---xx   flac  0.5930  05. Bob Dylan - Times They Are A-Changin.flac
+     4:43.53       50045900 B   ---   --   ---xx   flac  0.5741  06. Bob Dylan - Rainy Day Women #12 & 35.flac
+    45:32.06      481939176 B                            0.5852  (6 files)
+===================
+===================
+===================

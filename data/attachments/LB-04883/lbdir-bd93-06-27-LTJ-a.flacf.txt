@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-27-LTJ-a.flacf 
+=================== 
+=================== 
+=================== 
+073aca5279f161dbd8ac0a2f45c5fcb2  bd1993-06- 27-Milano-d1\Track01.flac
+3c55957412d7ca5e6397210007bd6ed2  bd1993-06- 27-Milano-d1\Track02.flac
+37c2494524111d4d419e60306ebdf8f4  bd1993-06- 27-Milano-d1\Track03.flac
+2e2eeeec6f28673e068e0ddb60216af2  bd1993-06- 27-Milano-d1\Track04.flac
+d0315f734746b5b584aa261fcf62c93b  bd1993-06- 27-Milano-d1\Track05.flac
+d07d009af4486bb75ac715224c4738fe  bd1993-06- 27-Milano-d1\Track06.flac
+167bed98c693c5d85fa70b116dad17ef  bd1993-06- 27-Milano-d1\Track07.flac
+7ce0f78ca932d8b26dca914c1e054809  bd1993-06- 27-Milano-d1\Track08.flac
+cd4e2816f1570ea479e0db45b0257918  bd1993-06- 27-Milano-d1\Track09.flac
+c525c33d106ffacd26d20374415bb455  bd1993-06-27-Milano-d2\Track01.flac
+7d5fb0805c74fc8bc3db4fa2fb61e696  bd1993-06-27-Milano-d2\Track02.flac
+069fb3c1458f03a562e3f2c67b81207b  bd1993-06-27-Milano-d2\Track03.flac
+d2013c0a0b84c592ad97a909ca5792fc  bd1993-06-27-Milano-d2\Track04.flac
+97cc8a5d2ddc72b261964b96aeba30ae  bd1993-06-27-Milano-d2\Track05.flac
+8eb69062a945917204c95f90b08fd86e  bd1993-06-27-Milano-d2\Track06.flac
+c064f7a4f24afe743452a2bd20ed82ab  bd1993-06-27-Milano-d2\Track07.flac
+99cffdd51a0b70b2602370ac130f055b  bd1993-06-27-Milano-d2\Track08.flac
+19fed0e3721d23fdca0ec796156b47d4  bd1993-06-27-Milano.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-27-LTJ-a.flacf\bd1993-06- 27-Milano-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:908498690da361b6d878a2985bd8e631
+Track02.flac:04f24ba75b5686ab04bac9af88f0f197
+Track03.flac:f4adc01d0d821e46b46d21c475f46b84
+Track04.flac:9c6fe8f383e894127ee9ea93fdd7b65b
+Track05.flac:09e5c1efb4411caa1fd37229017a685c
+Track06.flac:2fdee1fd48b7587a05e767f061ebbea9
+Track07.flac:7d3740da796ad42de350f1375a3b24ff
+Track08.flac:72a5412ea3ef75575a92208212cf4d05
+Track09.flac:6a4b3287ba707657de30836e2471b2d3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-27-LTJ-a.flacf\bd1993-06-27-Milano-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:8954c65ef85b4190207ce365ec9192c0
+Track02.flac:48dd2380934151942583cbfec83d7e1d
+Track03.flac:3a0af4e625f28aea6ef1e0f68823015a
+Track04.flac:28cab3db9c35eda50b127753833e565f
+Track05.flac:fc22140678158eef7d0ff49b91259266
+Track06.flac:5109ec414a27f45b49781b0ad3a8985c
+Track07.flac:0329aadc7f6e2f17c43991aae9cfe62d
+Track08.flac:f9fe3dbf7a28dd152ec8ab867bf0c812
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-06-27-LTJ-a.flacf\bd1993-06- 27-Milano-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:41.04       60161852 B   ---   --   ---xx   flac  0.4114  Track01.flac
+     8:44.63       92581820 B   ---   --   ---xx   flac  0.5186  Track02.flac
+     7:01.69       74426732 B   ---   --   ---xx   flac  0.5301  Track03.flac
+     8:36.16       91060076 B   ---   --   ---xx   flac  0.5072  Track04.flac
+    11:51.47      125530988 B   ---   --   ---xx   flac  0.5342  Track05.flac
+     8:06.35       85812764 B   ---   --   ---xx   flac  0.5126  Track06.flac
+     6:13.74       65971292 B   ---   --   ---xx   flac  0.4660  Track07.flac
+     6:11.16       65482076 B   ---   --   ---xx   flac  0.3777  Track08.flac
+     4:48.73       50974940 B   ---   --   ---xx   flac  0.4038  Track09.flac
+    67:16.22      712002540 B                            0.4853  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-06-27-LTJ-a.flacf\bd1993-06-27-Milano-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:54.32      104856908 B   ---   --   ---xx   flac  0.4375  Track01.flac
+     7:10.11       75877916 B   ---   --   ---xx   flac  0.4448  Track02.flac
+     5:33.31       58814156 B   ---   --   ---xx   flac  0.5925  Track03.flac
+     9:05.57       96272108 B   ---   --   ---xx   flac  0.5695  Track04.flac
+    10:04.52      106667948 B   ---   --   ---xx   flac  0.4923  Track05.flac
+     7:27.65       79003724 B   ---   --   ---xx   flac  0.5678  Track06.flac
+     8:35.40       90940124 B   ---   --   ---xx   flac  0.4564  Track07.flac
+    12:25.61      131561516 B   ---   --   ---xx   flac  0.4428  Track08.flac
+    70:17.49      743994400 B                            0.4925  (8 files)
+=================== 
+=================== 
+=================== 

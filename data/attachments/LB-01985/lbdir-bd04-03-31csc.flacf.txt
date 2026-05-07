@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-31csc.flacf 
+=================== 
+=================== 
+=================== 
+df5ffadef52f6967a610a669afa367f0  bd04-03-31csc.txt
+9f74c51fb230077aa84c0b0cc177540c  d101.flac
+c6fe5d8150d355142fdab52a7f9b1c0a  d102.flac
+cddb54026bd76204c7d41575170497a3  d103.flac
+a71e104b6650a63593c74f7749b7ed63  d104.flac
+a0075395c283b82b064ddb48f2a3e7ac  d105.flac
+4b1556347018b5073736e105a4d8a950  d106.flac
+0a35cacb9f8abf003361e4bc9c947c8e  d107.flac
+e5e691079f231af1ecc5bec899377f7f  d108.flac
+782ddef36efa461e2e65b3062bbbc582  d109.flac
+1dedee511d9a697cc985bf940d96811c  d110.flac
+1177f20b85f918971d6df3536d9dd2de  d111.flac
+d9704f13e67449b1995aca616972df6b  d112.flac
+4cfe5c99ea24dc853d4443683d56fae7  d201.flac
+f0699970722a77ab0aef6f55605cf02a  d202.flac
+17acdff0a7921b1ec42cc83584c4c9f1  d203.flac
+7e700b0d60b82ec6930e1d8dc54d9338  d204.flac
+7ab4625c3bc30b7dfb426448bda0d93a  d205.flac
+8cf6ff4f5d17c6c8a15d8a5f4aafeabf  d206.flac
+dc0df6142b8fd27fa43ee964d2ec4af2  d207.flac
+467725b3b0c53461f93bd58433dd166b  d208.flac
+01b7c6bd10be6b6d16cdfc37e89f4004  d209.flac
+8b87c98b02aed5a4625d162cf17d44c7  DYlan Troc 33104.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-03-31csc.flacf 
+=================== 
+=================== 
+=================== 
+d101.flac:10fa967319f57a77e83507a18a81af4d
+d102.flac:d7f17919433d3bfc416ae0089c184b31
+d103.flac:b81128f773c605892fc52aa1df134c1b
+d104.flac:826bbb86b2343a439cf13f6d9cd81842
+d105.flac:16404312f48665471c973d87c1c49c68
+d106.flac:aeed4ee03935abb55f4865681b99d4da
+d107.flac:467435d5ab233ad58389fb026dd92c4f
+d108.flac:8f80e0824c8b9fd6643ca82e2d31ecfe
+d109.flac:acd567e59697e0fe55ed3411e280961e
+d110.flac:14226499d993d9e844974606d38bc55a
+d111.flac:624238bf6de0292f880420b8ee18b279
+d112.flac:873024bff4ef154fe4db21a0c965e30c
+d201.flac:36505b525f5f50f200ff240acb346439
+d202.flac:99946fb3f2d5af7edcc84c5d24d2437a
+d203.flac:8c462a9cb7597ec2e274b892654b0204
+d204.flac:0e07ecb00d7a6df2603c0b364b377f36
+d205.flac:107ca91558a6e1f14a5a7208564f44e1
+d206.flac:efbecbd321cf70ae96a5e83aa6ba64b3
+d207.flac:4a0008aaa156a8521ed8bf0f168b5dcb
+d208.flac:a178313aeeff8e7e7f62cc3f4be1c748
+d209.flac:365a237e0f07a221f9af10088d002c98
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-31csc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.11       54533516 B   ---   --   ---xx   flac  0.6644  d101.flac
+     4:58.52       52689548 B   ---   --   ---xx   flac  0.6343  d102.flac
+     5:49.17       61603628 B   ---   --   ---xx   flac  0.6461  d103.flac
+     6:52.53       72801500 B   ---   --   ---xx   flac  0.6345  d104.flac
+     6:51.51       72620396 B   ---   --   ---xx   flac  0.6378  d105.flac
+     7:57.71       84309836 B   ---   --   ---xx   flac  0.6476  d106.flac
+    10:03.34      106449212 B   ---   --   ---xx   flac  0.6464  d107.flac
+     5:57.54       63101852 B   ---   --   ---xx   flac  0.6363  d108.flac
+     5:19.22       56323388 B   ---   --   ---xx   flac  0.6329  d109.flac
+     5:34.34       58997612 B   ---   --   ---xx   flac  0.6289  d110.flac
+     7:26.42       78773228 B   ---   --   ---xx   flac  0.6452  d111.flac
+     7:12.38       76294220 B   ---   --   ---xx   flac  0.6586  d112.flac
+     5:26.31       57579356 B   ---   --   ---xx   flac  0.6302  d201.flac
+     7:22.63       78117020 B   ---   --   ---xx   flac  0.6552  d202.flac
+     3:09.33       33417260 B   ---   --   ---xx   flac  0.6722  d203.flac
+     5:05.31       53874956 B   ---   --   ---xx   flac  0.6473  d204.flac
+     6:49.65       72300524 B   ---   --   ---xx   flac  0.6482  d205.flac
+     0:54.16        9563276 B   ---   --   ---xx   flac  0.6746  d206.flac
+     7:00.62       74233868 B   ---   --   ---xx   flac  0.6535  d207.flac
+     6:45.60       71583164 B   ---   --   ---xx   flac  0.6853  d208.flac
+     6:22.11       67410716 B   ---   --   ---xx   flac  0.6693  d209.flac
+   128:10.26     1356578076 B                            0.6488  (21 files)
+=================== 
+=================== 
+=================== 

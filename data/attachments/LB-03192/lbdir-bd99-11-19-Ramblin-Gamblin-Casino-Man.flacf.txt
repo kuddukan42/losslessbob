@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-19-Ramblin-Gamblin-Casino-Man.flacf 
+=================== 
+=================== 
+=================== 
+5687f2992444a9b7422b13dfcbb615d9  bd99-11-19-Ramblin-Gamblin-Casino-Man-LB-3192.txt
+da24bfd450dcbec00f77ba6564c1080b  bdylan-RamblinGamblinCasinoMan-d1t01.flac
+43d6dc606001157c5f2fe2e236982152  bdylan-RamblinGamblinCasinoMan-d1t02.flac
+c80e8b5ed34e26c7061a25d1eb233566  bdylan-RamblinGamblinCasinoMan-d1t03.flac
+a8df71b7a1b6e7fabc249d6f5e33151f  bdylan-RamblinGamblinCasinoMan-d1t04.flac
+e68f85be21782db264a6bf84eef90c3d  bdylan-RamblinGamblinCasinoMan-d1t05.flac
+e3cd5b556de9de02bca03f879a78352f  bdylan-RamblinGamblinCasinoMan-d1t06.flac
+6b66671baa23971a3fd7c3afc8400b42  bdylan-RamblinGamblinCasinoMan-d1t07.flac
+fd6bb4950066d97f492850a5327cc15d  bdylan-RamblinGamblinCasinoMan-d1t08.flac
+b9161831adbfc6de2c347a29fe858a8f  bdylan-RamblinGamblinCasinoMan-d1t09.flac
+3e25865ec639df4dff69836260bf90a6  bdylan-RamblinGamblinCasinoMan-d1t10.flac
+333400cca36d31b07128b124611c1bb6  bdylan-RamblinGamblinCasinoMan-d1t11.flac
+177b83e0e4f8e5b9a3a14c7bed7ef906  bdylan-RamblinGamblinCasinoMan-d1t12.flac
+d7004c9f5d77f495c6af9bd0d45103e4  bdylan-RamblinGamblinCasinoMan-d2t01.flac
+880ee461c2c0987b7a5bf34f7613c410  bdylan-RamblinGamblinCasinoMan-d2t02.flac
+f90c8396defdfcce09f8e8c6844f0261  bdylan-RamblinGamblinCasinoMan-d2t03.flac
+b978a0f621a1c8d2f492c9f24750ec36  bdylan-RamblinGamblinCasinoMan-d2t04.flac
+428bc814441931d718b4cd6cac8aa1bf  bdylan-RamblinGamblinCasinoMan-d2t05.flac
+192f2fb390826d78156f06172066b1e2  bdylan-RamblinGamblinCasinoMan-d2t06.flac
+219fc68932f220a8626340796713d3af  bdylan-RamblinGamblinCasinoMan-d2t07.flac
+64051ba469f2f35f842e44bc79b322ca  bdylan-RamblinGamblinCasinoMan-d2t08.flac
+a7faab27a355d5bad926e237fc83fbce  bdylan-RamblinGamblinCasinoMan-d2t09.flac
+2f77bcaca499101352afb1c976c97cac  bdylan-RamblinGamblinCasinoMan-d2t10.flac
+563fca79c5337a0b8a47e9ede4252381  bdylan-RamblinGamblinCasinoMan-d2t11.flac
+b04c22e406ae3283daa2c491c2ab8d96  bdylan-RamblinGamblinCasinoMan-d2t12.flac
+adfdd1254a700d159f54499c54899da5  bdylan-RamblinGamblinCasinoMan.ffp.txt
+436dbed9111bdca1c310438feeab0c99  bdylan-RamblinGamblinCasinoMan.md5
+8ed12d5e7a155ec68cc0bd5c6b47328f  bdylan-RamblinGamblinCasinoMan.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-19-Ramblin-Gamblin-Casino-Man.flacf 
+=================== 
+=================== 
+=================== 
+bdylan-RamblinGamblinCasinoMan-d1t01.flac:7a1356a99c4a2b4e5cd43b0e68a42ba0
+bdylan-RamblinGamblinCasinoMan-d1t02.flac:ccc3e0de5d38a90d9946ffa27b7d837c
+bdylan-RamblinGamblinCasinoMan-d1t03.flac:6ffbfccdaf26df43e71304f4b363dbd8
+bdylan-RamblinGamblinCasinoMan-d1t04.flac:7f09ce0733b94995e2593aae6a98d09a
+bdylan-RamblinGamblinCasinoMan-d1t05.flac:d93eca808f62b4400ffcb45a66fe03c0
+bdylan-RamblinGamblinCasinoMan-d1t06.flac:04071a6b605ac2247f0a9b73a63e199f
+bdylan-RamblinGamblinCasinoMan-d1t07.flac:a1afcf320fafcc354b11021eca181d40
+bdylan-RamblinGamblinCasinoMan-d1t08.flac:dcabbeeebc469b34ff9f7af71d290687
+bdylan-RamblinGamblinCasinoMan-d1t09.flac:69839862701eafe85e693bd360327d19
+bdylan-RamblinGamblinCasinoMan-d1t10.flac:b007d4f61e7c91b8330d7e5d8e716244
+bdylan-RamblinGamblinCasinoMan-d1t11.flac:837972208d450bbe1f4c265a054be280
+bdylan-RamblinGamblinCasinoMan-d1t12.flac:e21bef7e810221bfbe1ec053cf219cb7
+bdylan-RamblinGamblinCasinoMan-d2t01.flac:80ca6c59af19a2a73f7d95832b753e2d
+bdylan-RamblinGamblinCasinoMan-d2t02.flac:1bbaf89c633f717e49e8d83e9e4daad4
+bdylan-RamblinGamblinCasinoMan-d2t03.flac:59cc47220a8b2f6a0d09227d220bc349
+bdylan-RamblinGamblinCasinoMan-d2t04.flac:8e5c2be67f7f4b1ab0bbfe2a54103a84
+bdylan-RamblinGamblinCasinoMan-d2t05.flac:0a6414530f6b116f6cfa1d4a76b69309
+bdylan-RamblinGamblinCasinoMan-d2t06.flac:1f8de2e977884e5165b59c7cf37cd904
+bdylan-RamblinGamblinCasinoMan-d2t07.flac:6832198de460195ed1f4d01f8e58aba2
+bdylan-RamblinGamblinCasinoMan-d2t08.flac:0c69e54832b850167f685d49269b2b65
+bdylan-RamblinGamblinCasinoMan-d2t09.flac:c4a98e2b6e325810b4e2ff3ab4c2e97d
+bdylan-RamblinGamblinCasinoMan-d2t10.flac:a35bf73404cf65a97fe4f0faec31585f
+bdylan-RamblinGamblinCasinoMan-d2t11.flac:393b25cdab096c090f2f089322d758be
+bdylan-RamblinGamblinCasinoMan-d2t12.flac:77649b3d234df5c88590e55732eb637f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-19-Ramblin-Gamblin-Casino-Man.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:55.62       41599868 B   ---   --   ---xx   flac  0.6789  bdylan-RamblinGamblinCasinoMan-d1t01.flac
+     6:19.13       66886220 B   ---   --   ---xx   flac  0.6619  bdylan-RamblinGamblinCasinoMan-d1t02.flac
+     3:03.30       32351804 B   ---   --   ---xx   flac  0.6595  bdylan-RamblinGamblinCasinoMan-d1t03.flac
+     7:33.15       79944524 B   ---   --   ---xx   flac  0.6722  bdylan-RamblinGamblinCasinoMan-d1t04.flac
+     5:21.12       56652668 B   ---   --   ---xx   flac  0.6270  bdylan-RamblinGamblinCasinoMan-d1t05.flac
+     7:29.13       79234220 B   ---   --   ---xx   flac  0.6440  bdylan-RamblinGamblinCasinoMan-d1t06.flac
+     5:24.62       57299468 B   ---   --   ---xx   flac  0.6041  bdylan-RamblinGamblinCasinoMan-d1t07.flac
+     5:40.18       60018380 B   ---   --   ---xx   flac  0.6438  bdylan-RamblinGamblinCasinoMan-d1t08.flac
+     5:53.52       62391548 B   ---   --   ---xx   flac  0.5889  bdylan-RamblinGamblinCasinoMan-d1t09.flac
+     5:52.68       62252780 B   ---   --   ---xx   flac  0.6490  bdylan-RamblinGamblinCasinoMan-d1t10.flac
+     9:33.60      101218364 B   ---   --   ---xx   flac  0.7090  bdylan-RamblinGamblinCasinoMan-d1t11.flac
+     4:27.27       47162348 B   ---   --   ---xx   flac  0.6416  bdylan-RamblinGamblinCasinoMan-d1t12.flac
+     3:40.50       38925644 B   ---   --   ---xx   flac  0.6737  bdylan-RamblinGamblinCasinoMan-d2t01.flac
+     5:36.07       59286908 B   ---   --   ---xx   flac  0.5968  bdylan-RamblinGamblinCasinoMan-d2t02.flac
+     8:22.63       88701020 B   ---   --   ---xx   flac  0.6560  bdylan-RamblinGamblinCasinoMan-d2t03.flac
+     3:52.22       40976588 B   ---   --   ---xx   flac  0.6059  bdylan-RamblinGamblinCasinoMan-d2t04.flac
+     9:29.55      100501004 B   ---   --   ---xx   flac  0.6496  bdylan-RamblinGamblinCasinoMan-d2t05.flac
+     6:44.73       71437340 B   ---   --   ---xx   flac  0.6829  bdylan-RamblinGamblinCasinoMan-d2t06.flac
+     5:15.62       55711868 B   ---   --   ---xx   flac  0.6418  bdylan-RamblinGamblinCasinoMan-d2t07.flac
+     5:38.58       59759660 B   ---   --   ---xx   flac  0.6741  bdylan-RamblinGamblinCasinoMan-d2t08.flac
+     4:33.02       48161948 B   ---   --   ---xx   flac  0.5767  bdylan-RamblinGamblinCasinoMan-d2t09.flac
+     5:53.43       62370380 B   ---   --   ---xx   flac  0.6870  bdylan-RamblinGamblinCasinoMan-d2t10.flac
+     5:26.02       57511148 B   ---   --   ---xx   flac  0.6002  bdylan-RamblinGamblinCasinoMan-d2t11.flac
+     7:43.30       81743804 B   ---   --   ---xx   flac  0.6815  bdylan-RamblinGamblinCasinoMan-d2t12.flac
+   142:51.74     1512099504 B                            0.6495  (24 files)
+=================== 
+=================== 
+=================== 

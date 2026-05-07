@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-14-love-songs-for-america.flacf 
+=================== 
+=================== 
+=================== 
+7f4e2edf2dc7cfcf7470c574ad929e57  bd74-01-14-love-songs-for-america-d1t01.flac
+2680ebe5d175842b281b3493a39cfa9e  bd74-01-14-love-songs-for-america-d1t02.flac
+f66b71df6add613a60398b396b698a5a  bd74-01-14-love-songs-for-america-d1t03.flac
+019cc224fc62a97763af495083ac1faf  bd74-01-14-love-songs-for-america-d1t04.flac
+7415aaad90a2c637a779b4374bbbe87d  bd74-01-14-love-songs-for-america-d1t05.flac
+ce1041f6b140adbddadaf3363a20db7e  bd74-01-14-love-songs-for-america-d1t06.flac
+b6b95fffeebcdf96029a727af35e1cfa  bd74-01-14-love-songs-for-america-d1t07.flac
+8b3372f9cbfbed988b8520dcadd72c28  bd74-01-14-love-songs-for-america-d1t08.flac
+2d9985091c473346833dd7481d5d4ced  bd74-01-14-love-songs-for-america-d1t09.flac
+dd6e8d764527fbece3baf28b5d42a71d  bd74-01-14-love-songs-for-america-d1t10.flac
+a1cdf27ab8babc31dea6f66cc48c2b28  bd74-01-14-love-songs-for-america-d2t01.flac
+150123b59ac5dbd1d719e75fdc746602  bd74-01-14-love-songs-for-america-d2t02.flac
+c7d2d4d2d1ac2a3b67612ab001c39282  bd74-01-14-love-songs-for-america-d2t03.flac
+2110ff12cddd6af2ef416872509cd276  bd74-01-14-love-songs-for-america-d2t04.flac
+9df7ea69fe55d80ba909425672728282  bd74-01-14-love-songs-for-america-d2t05.flac
+b0941c55484e3a4408afd125701b3d16  bd74-01-14-love-songs-for-america-d2t06.flac
+33dc00f8d80e27891b985ddb258ad183  bd74-01-14-love-songs-for-america-d2t07.flac
+343da1292c7215f1db6f2136ced65dc0  bd74-01-14-love-songs-for-america-d2t08.flac
+5bb16dda53d7de51306a3724f65e8cb9  bd74-01-14-love-songs-for-america-d2t09.flac
+dc62e28d16aaaa09ab6c75caaea92f14  bd74-01-14-love-songs-for-america-d2t10.flac
+2c696eba25416e6eeb476388547087cb  bd74-01-14-love-songs-for-america-LB-6705.txt
+fb944e23bb1be6b287faae58dd0322d5  bd74-01-14-love-songs-for-america.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-14-love-songs-for-america.flacf 
+=================== 
+=================== 
+=================== 
+bd74-01-14-love-songs-for-america-d1t01.flac:f2de677f711c20bdc60a3873afac6b5c
+bd74-01-14-love-songs-for-america-d1t02.flac:6ef269b3b0fc05505303800dfe9ea48b
+bd74-01-14-love-songs-for-america-d1t03.flac:bf59eebe243bd456296633606a30be39
+bd74-01-14-love-songs-for-america-d1t04.flac:102d12f9336f7eda4c121aeee39b1592
+bd74-01-14-love-songs-for-america-d1t05.flac:064528b2efb5693f6c6e358500e75c76
+bd74-01-14-love-songs-for-america-d1t06.flac:58abeae834f9df7ddbe56299ea525328
+bd74-01-14-love-songs-for-america-d1t07.flac:521784d898a84c9a185a6023c4d4ff15
+bd74-01-14-love-songs-for-america-d1t08.flac:bfb2c67139d5c327c20a5ea7613b02e0
+bd74-01-14-love-songs-for-america-d1t09.flac:bee8ca48342fd5990355ff8f40fc8c03
+bd74-01-14-love-songs-for-america-d1t10.flac:79099f5219baa6fee81bc0c8d5a3d431
+bd74-01-14-love-songs-for-america-d2t01.flac:19110b533942afd9b91b509478d680a3
+bd74-01-14-love-songs-for-america-d2t02.flac:986dd8bf393844396a71f7ff6a8082e3
+bd74-01-14-love-songs-for-america-d2t03.flac:658da750341755912adf6e66bc3ccb2e
+bd74-01-14-love-songs-for-america-d2t04.flac:9d0c08a3a288c11caa032144deed8ac1
+bd74-01-14-love-songs-for-america-d2t05.flac:1faa9eec019838354d91c91425d348d8
+bd74-01-14-love-songs-for-america-d2t06.flac:b015a677d1e2266688a6ec21cb7cdb55
+bd74-01-14-love-songs-for-america-d2t07.flac:08f59ce05bc6326ef4eb1566b5056de7
+bd74-01-14-love-songs-for-america-d2t08.flac:f5822c277d8e2385f9db9f7951da5bd7
+bd74-01-14-love-songs-for-america-d2t09.flac:6d5f0e99cb8b076d451149f199cdddcd
+bd74-01-14-love-songs-for-america-d2t10.flac:04fbb5d1804df764708cca45eecd1ec1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14-love-songs-for-america.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:46.07       29298908 B   ---   --   ---xx   flac  0.6228  bd74-01-14-love-songs-for-america-d1t01.flac
+     3:19.70       35268284 B   ---   --   ---xx   flac  0.5891  bd74-01-14-love-songs-for-america-d1t02.flac
+     6:05.15       64421324 B   ---   --   ---xx   flac  0.5735  bd74-01-14-love-songs-for-america-d1t03.flac
+     4:04.48       43154540 B   ---   --   ---xx   flac  0.5517  bd74-01-14-love-songs-for-america-d1t04.flac
+     5:47.60       61351964 B   ---   --   ---xx   flac  0.5578  bd74-01-14-love-songs-for-america-d1t05.flac
+     4:07.60       43711964 B   ---   --   ---xx   flac  0.5385  bd74-01-14-love-songs-for-america-d1t06.flac
+     4:49.57       51113708 B   ---   --   ---xx   flac  0.5476  bd74-01-14-love-songs-for-america-d1t07.flac
+     4:53.70       51849884 B   ---   --   ---xx   flac  0.5070  bd74-01-14-love-songs-for-america-d1t08.flac
+     3:52.53       41049500 B   ---   --   ---xx   flac  0.5261  bd74-01-14-love-songs-for-america-d1t09.flac
+     3:51.57       40882508 B   ---   --   ---xx   flac  0.5727  bd74-01-14-love-songs-for-america-d1t10.flac
+     3:49.73       40567340 B   ---   --   ---xx   flac  0.5295  bd74-01-14-love-songs-for-america-d2t01.flac
+     5:20.02       56452748 B   ---   --   ---xx   flac  0.5664  bd74-01-14-love-songs-for-america-d2t02.flac
+     2:52.58       30477260 B   ---   --   ---xx   flac  0.6193  bd74-01-14-love-songs-for-america-d2t03.flac
+     4:23.55       46522604 B   ---   --   ---xx   flac  0.5976  bd74-01-14-love-songs-for-america-d2t04.flac
+     4:24.25       46628444 B   ---   --   ---xx   flac  0.5791  bd74-01-14-love-songs-for-america-d2t05.flac
+     3:20.70       35444684 B   ---   --   ---xx   flac  0.5358  bd74-01-14-love-songs-for-america-d2t06.flac
+     4:05.22       43269788 B   ---   --   ---xx   flac  0.5473  bd74-01-14-love-songs-for-america-d2t07.flac
+     5:14.55       55519004 B   ---   --   ---xx   flac  0.5178  bd74-01-14-love-songs-for-america-d2t08.flac
+     4:18.05       45523004 B   ---   --   ---xx   flac  0.5077  bd74-01-14-love-songs-for-america-d2t09.flac
+     5:04.18       53667980 B   ---   --   ---xx   flac  0.5284  bd74-01-14-love-songs-for-america-d2t10.flac
+    86:33.55      916175440 B                            0.5532  (20 files)
+=================== 
+=================== 
+=================== 

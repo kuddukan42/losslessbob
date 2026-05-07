@@ -1,0 +1,60 @@
+===================
+===================
+===================
+=== IAR 021 - Stockholm, May 28, 1989.md5
+===================
+===================
+===================
+f9f80e428c3afa0007dbe747a5ef12b7 *01 Times They Are A-Changin'.flac
+7cc5cbde9bf1f35c3ce7adf96ef3ec98 *02 Hey La La.flac
+2b74d6a9f4211242d582ea1de0714673 *03 All Along The Watchtower.flac
+fb582609b171e8556bfa3848fc0d3ce7 *04 Simple Twist Of Fate.flac
+6934e7c24f249d2a47f83b79dad7166b *05 Ballad Of A Thin Man.flac
+9a42729338abcc4fe3520381123f665c *06 Highway 61 Revisited.flac
+1e55ec4aabf0a766dcfdd42b27f94535 *07 Mr. Tambourine Man.flac
+8b357af2a77d0df39c0e24ed3c3669af *08 It Ain't Me Babe.flac
+64ffe18553665fd4bd9f5f6213120bb1 *09 Eileen Aroon.flac
+c33d7261f5d4b4f921c03434a7973ec5 *10 Knockin' On Heaven's Door.flac
+e5ac4f658135bb2db13f0c189a1dad1f *11 Silvio.flac
+e6b1003472370ecf70c693cb2dd2f20c *12 When Did You Leave Heaven.flac
+cba150eb5353470088373835f9dce538 *13 Like A Rolling Stone.flac
+faed030069a46dad06aa3e89b22d2c6a *14 Boots Of Spanish Leather.flac
+4073bff9d57a1d24c45bda5ef6093b59 *15 Maggie's Farm.flac
+b1d6db5cc5c71a4799f61515c6cce083 *IAR 021 - Stockholm, May 28, 1989.txt
+c3c4912abf67b3071039db2758076e5e *Live In Stockholm, May 28, 1989.log
+===================
+===================
+===================
+=== IAR 021 - Stockholm, May 28, 1989.txt
+===================
+===================
+===================
+
+
+1989-05-28: Stockholm
+
+Musicians:
+Bob Dylan
+G. E. Smith on acoustic and electric guitar, backup vocal,
+Kenny Aaronson on bass guitar,
+Tony Garnier replaces Aaronson after the shown in London.
+Christopher Parker on drums.
+
+01 The Times They Are A-Changin'
+02 Hey La La (Hey La La)
+03 All Along The Watchtower
+04 Simple Twist Of Fate
+05 Ballad Of A Thin Man
+06 Highway 61 Revisited
+07 Mr. Tambourine Man (acoustic)
+08 It Ain't Me, Babe (acoustic)
+09 Eileen Aroon (acoustic)
+10 Knockin' On Heaven's Door (acoustic->electric)
+11 Silvio
+12 When Did You Leave Heaven?
+13 Like A Rolling Stone
+14 Boots Of Spanish Leather (acoustic)
+15 Maggie's Farm
+===================
+===================
+===================

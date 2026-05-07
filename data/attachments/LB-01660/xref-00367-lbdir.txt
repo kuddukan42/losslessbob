@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-19-d.flacf 
+=================== 
+=================== 
+=================== 
+6564e6c67ec7a5f3c022198d78c2c8fb  Artwork\Cover Back.jpg
+064ad6c8de0ce024f731a1ba68a1499b  Artwork\Cover Front.jpg
+34ffc75012cbeafbc4f7565b73c099f0  CD 1\01 - New Morning.flac
+59f66dbcf3758e0a4aa55d08452692a7  CD 1\02 - Lay Lady Lay.flac
+581ba6577a34e6faa341656919999bf2  CD 1\03 - All Along The Watchtower.flac
+7c88f54ac1e7d8e09f704f7426a0a713  CD 1\04 - Shelter From The Storm.flac
+162547a941bacb248eb69167e26c5d49  CD 1\05 - Gotta Serve Somebody.flac
+9cdabe8ffa29d5b52dfb49cb72cc9ae3  CD 1\06 - Wiggle Wiggle.flac
+311a944cbb7feb0327c4aa359f2b3e00  CD 1\07 - It Takes A Lot To Laugh.flac
+ea02195c463b6c5110177b57858d5259  CD 1\08 - Leopard-Skin Pill-Box Hat.flac
+9ae4a65ccad8b284dbf9ae5f1bc2f0c5  CD 1\CD 1.ffp
+5df4ea9034057a591c766e01dbfa9a47  CD 1\CD 1.md5
+21e4d25bc5a5c5b7b891bbce51a5cfb0  CD 2\01 - Two Soldiers.flac
+485a0d5bdaeddd726bf333cfa434d681  CD 2\02 - It Ain't Me, Babe.flac
+5338dafbb11d3a2c04e4485303d7f429  CD 2\03 - A Hard Rain's A-Gonna Fall.flac
+657c79ca2377e4f921d9e24724c77c3c  CD 2\04 - Don't Think Twice, It's All Right.flac
+f45a2c1f71c66d4fad0fb6c78fec743f  CD 2\05 - Positively 4th Street.flac
+f22920ac375c8b939b36056e8ac719bd  CD 2\06 - Everything Is Broken.flac
+98de14527a0bdc5329278d9c28284e13  CD 2\07 - I Believe In You.flac
+d41be431d4024900e07c7c586aabeb82  CD 2\08 - Highway 61 Revisited.flac
+6af361c17def332a951f24c7229fa6ad  CD 2\09 - Lenny Bruce.flac
+b18c32edd54716c5e4716e9393ccc885  CD 2\10 - Ballad Of A Thin Man.flac
+adeb575be7ef1e8a460d11541e689d7e  CD 2\CD 2.ffp
+89314b7969485cc26e7b960694d5eac9  CD 2\CD 2.md5
+e1db2aa2aa80c66e41107ed1b1757b3e  INFO.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-19-d.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+01 - new morning.flac:3b9c54b76b919a969b6622f9265983ec
+02 - lay lady lay.flac:7bbd0fd365a650525b679de27afb709c
+03 - all along the watchtower.flac:50ad76ba8749f2b57c23ad8ccecf944c
+04 - shelter from the storm.flac:0a17153d39c8265d2c24bad76c6996ce
+05 - gotta serve somebody.flac:e98d5742cf12c1068fb36d79e85f46fa
+06 - wiggle wiggle.flac:495ec941d8f882ece67a6a6c66ca3298
+07 - it takes a lot to laugh.flac:d3a342aeb1068673d6636cf31b9b608d
+08 - leopard-skin pill-box hat.flac:e2717bf8e2e2509b8e501b602a2e6d2f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-19-d.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+01 - two soldiers.flac:9505df1a33468eea08a3cceb4fc9c80a
+02 - it ain't me, babe.flac:87bfe21fe26ac5683a590953a24ed094
+03 - a hard rain's a-gonna fall.flac:7771e74ee84f76e71e83f6c4623b5a64
+04 - don't think twice, it's all right.flac:aae4af809623166367271dbfa13d6473
+05 - positively 4th street.flac:3c14368dd5a424425ef049b952f5434c
+06 - everything is broken.flac:0f15b704dbcebdfae86c50fac4e449d3
+07 - i believe in you.flac:4a844cc9b0a0899f2df3d79a87072c7d
+08 - highway 61 revisited.flac:0002bc9a0326fde9da243d6d17121c91
+09 - lenny bruce.flac:8092bab80f572678d9e2f1e1a90c9798
+10 - ballad of a thin man.flac:d4205c2dd378c5929eca846ad04b5faf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-19-d.flacf\cd 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.51       59567660 B   -b-   --   ---xx   flac  0.5112  01 - New Morning.flac
+     4:26.59       47061548 B   -b-   --   ---xx   flac  0.5271  02 - Lay Lady Lay.flac
+     5:29.11       58060844 B   -b-   --   ---xx   flac  0.5199  03 - All Along The Watchtower.flac
+     4:59.12       52770860 B   -b-   --   ---xx   flac  0.5312  04 - Shelter From The Storm.flac
+     8:16.15       87529004 B   -b-   --   ---xx   flac  0.5255  05 - Gotta Serve Somebody.flac
+     3:14.66       34375724 B   -b-   --   ---xx   flac  0.5635  06 - Wiggle Wiggle.flac
+     5:54.11       62470700 B   -b-   --   ---xx   flac  0.5232  07 - It Takes A Lot To Laugh.flac
+     5:48.36       61470764 B   -b-   --   ---xx   flac  0.5535  08 - Leopard-Skin Pill-Box Hat.flac
+    43:46.34      463307104 B                            0.5300  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-19-d.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.26       47513132 B   -b-   --   ---xx   flac  0.4748  01 - Two Soldiers.flac
+     6:45.69       71603756 B   -b-   --   ---xx   flac  0.5399  02 - It Ain't Me, Babe.flac
+     7:10.37       75939884 B   -b-   --   ---xx   flac  0.5347  03 - A Hard Rain's A-Gonna Fall.flac
+     5:57.27       63037484 B   -b-   --   ---xx   flac  0.5684  04 - Don't Think Twice, It's All Right.flac
+     6:03.10       64055852 B   -b-   --   ---xx   flac  0.5349  05 - Positively 4th Street.flac
+     4:22.05       46227500 B   -b-   --   ---xx   flac  0.5554  06 - Everything Is Broken.flac
+     6:46.43       71718956 B   -b-   --   ---xx   flac  0.5214  07 - I Believe In You.flac
+     4:48.55       50932268 B   -b-   --   ---xx   flac  0.5618  08 - Highway 61 Revisited.flac
+     5:41.43       60254252 B   -b-   --   ---xx   flac  0.5506  09 - Lenny Bruce.flac
+     5:42.17       60369452 B   -b-   --   ---xx   flac  0.5735  10 - Ballad Of A Thin Man.flac
+    57:47.31      611652536 B                            0.5418  (10 files)
+=================== 
+=================== 
+=================== 

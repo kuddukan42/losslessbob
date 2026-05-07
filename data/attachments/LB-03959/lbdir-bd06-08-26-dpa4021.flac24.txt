@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-08-26-dpa4021.flac24 
+=================== 
+=================== 
+=================== 
+535888fd518d4e02056b6351e929270e  bd06-08-26 (24-bit).txt
+973fa9851dd208c5aa2019675e9d4c59  bd06-08-26-dpa4021-LB-3959.txt
+fe9a93f8a633fd05c0ddd1e1c7c93a2e  bd2006-08-26t01.flac
+fc0828f9a0d498ff95b2fff1279b3067  bd2006-08-26t02.flac
+cead50959c0a3762c5eb40abf38b42da  bd2006-08-26t03.flac
+0edaceabbb1ac51a3424c18863ac6551  bd2006-08-26t04.flac
+48c45eff37673ad93f075b2d24898257  bd2006-08-26t05.flac
+1681b5bf117d7ef5e6789c3a334255ff  bd2006-08-26t06.flac
+abae0594f2b3ee387b328feca0cdead5  bd2006-08-26t07.flac
+228615a38a6b51ef82e645c8a6daca2b  bd2006-08-26t08.flac
+24d5308a92689383074d7dae73bc54da  bd2006-08-26t09.flac
+d6e7faa56f658cce57f7448a50f51bb5  bd2006-08-26t10.flac
+f0d4907e69058d8f8325e108672a69fe  bd2006-08-26t11.flac
+63a578d13b0772e19a503e1fd1b36aef  bd2006-08-26t12.flac
+63808537fdf12612f66b4bb8cac451be  bd2006-08-26t13.flac
+e0f8b640a36176cd68f9d782807cf27f  bd2006-08-26t14.flac
+49047e3ae06a3bb888ce2d4a2db88371  bd2006-08-26t15.flac
+064b4d1d2d9cd74f279c2eb1717ea411  bd2006-08-26t16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-08-26-dpa4021.flac24 
+=================== 
+=================== 
+=================== 
+bd2006-08-26t01.flac:25615ddbc835119781e58fc8ad5d6351
+bd2006-08-26t02.flac:c2f7a0d313a70a4779312fb81bade1d8
+bd2006-08-26t03.flac:d9d2e2817a526cf47799646442c34da4
+bd2006-08-26t04.flac:1389ff7fb3b958c1b61bdd6d821f5aac
+bd2006-08-26t05.flac:91ddb0bc8086e00c4eb91a1f12b75e6d
+bd2006-08-26t06.flac:7e833af50ec80f4bea65625f07e9f0f5
+bd2006-08-26t07.flac:fc1c9aa44da0d00e84abba559e8b5141
+bd2006-08-26t08.flac:c0cfe029f09a261b38ccb3decb96e8cf
+bd2006-08-26t09.flac:3e3027fb14529662fe1aa9eadc39eecf
+bd2006-08-26t10.flac:12fc2e5831f0ac7d33b3c1501690796a
+bd2006-08-26t11.flac:df5108bd3c54ea4138b44a093784c69d
+bd2006-08-26t12.flac:6ba34feab7e7f31c1a9af13ae2bd1a75
+bd2006-08-26t13.flac:2e81a019970e36298ce40e5a29d5d05f
+bd2006-08-26t14.flac:b27fa7b4e5032155e0f2284f428e43b0
+bd2006-08-26t15.flac:a176e606c0f8d16c0dbc2fb6a65d4b38
+bd2006-08-26t16.flac:d4bc8812a12b6741be7ad3715095dd89
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-08-26-dpa4021.flac24 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:04.212      36986090 B   cxx   --   ---xx   flac  0.4652  bd2006-08-26t01.flac
+     4:34.114     157889438 B   cxx   --   ---xx   flac  0.5358  bd2006-08-26t02.flac
+     4:26.450     153475208 B   cxx   --   ---xx   flac  0.5217  bd2006-08-26t03.flac
+     5:28.786     189380606 B   cxx   --   ---xx   flac  0.5013  bd2006-08-26t04.flac
+     8:48.758     304564466 B   cxx   --   ---xx   flac  0.4982  bd2006-08-26t05.flac
+     8:38.821     298841042 B   cxx   --   ---xx   flac  0.5000  bd2006-08-26t06.flac
+     7:22.088     254642696 B   cxx   --   ---xx   flac  0.4771  bd2006-08-26t07.flac
+     6:53.585     238225262 B   cxx   --   ---xx   flac  0.4845  bd2006-08-26t08.flac
+    11:16.148     389461352 B   cxx   --   ---xx   flac  0.4811  bd2006-08-26t09.flac
+     6:18.603     218075198 B   cxx   --   ---xx   flac  0.4932  bd2006-08-26t10.flac
+     6:33.506     226659752 B   cxx   --   ---xx   flac  0.4883  bd2006-08-26t11.flac
+     6:13.607     215197484 B   cxx   --   ---xx   flac  0.4817  bd2006-08-26t12.flac
+     6:17.311     217331186 B   cxx   --   ---xx   flac  0.5229  bd2006-08-26t13.flac
+     2:44.591      94804682 B   cxx   --   ---xx   flac  0.4509  bd2006-08-26t14.flac
+     7:20.439     253693124 B   cxx   --   ---xx   flac  0.5090  bd2006-08-26t15.flac
+     5:29.123     189575162 B   cxx   --   ---xx   flac  0.5224  bd2006-08-26t16.flac
+    99:30.142    3438802748 B                            0.4969  (16 files)
+=================== 
+=================== 
+=================== 

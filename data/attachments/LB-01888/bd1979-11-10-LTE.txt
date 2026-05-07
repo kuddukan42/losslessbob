@@ -1,0 +1,105 @@
+Legendary Tapers Series #28
+
+Bob Dylan
+1979-11-10
+Fox Warfield Theatre, San Francisco
+Offmaster audience recording. Audio cdr> (Feurio) wav > (flac frontend) flac.
+Taped by Legendary Taper E.
+
+As reported by Watt Alexander in the "Gospel Project", there appears to be a single
+master recording from which all circulating versions derive. The present offmaster
+recording is one where the "girls' songs" have been omitted. Apparently there is a 
+circulating version where these songs have been retained. (If anyone has a copy of
+this version, I would love to get it.)
+
+The recording I received is, however, somewhat jumbled in that the end of disk one is
+a fragment of applause and the first few words of "What Can I Do for YOU?", but then
+disk two starts with four clearly extraneous tracks. At this point the 11-10 concert
+resumes with a complete "What Can I Do for YOU?" (crowd noise here conforms to the 
+fragment at end of disk one) and continues through to the end of the concert. I have
+torrented this as the show was received, since I do not know whether I will be obtain
+a more straightforward version any time soon.
+
+
+The following evaluation by Watt Alexander of what he takes to be the finest sequence
+of songs in this concert is worth quoting:
+
+"The concert remains quite good, but really hits its stride with "Solid Rock," "Saving 
+Grace," "Saved" and "What Can I Do For You," which form the spiritual homestretch of 
+these concerts. This is the first night Dylan repositions "Saved" before "What Can I 
+Do For You" and the results are stunning. Were this simply a matter of arranging an 
+established setlist, it would hardly be worth remarking upon. However, these four songs 
+were, at the time, unreleased and likely completely new to the vast majority of the 
+audience. Dylan leads into these songs with a defiant rap, commenting upon the "rabble" 
+who consider the Gospel as mere "foolishness," and evoking the apparent wrath of some 
+within the audience.
+
+"Having provoked the audience, Dylan then simply overwhelms them. In these four songs, 
+Dylan alternately puts the band through quintessential rock-n-roll rave ups and 
+astonishingly intimate confessions, with the former stirring them to a lather, silencing 
+them on a whisper with the latter. Here Dylan exhibits his mastery of the live performance, 
+tearing through "Solid Rock" and, in a matter of seconds, undermining raucous applause and 
+drawing the entire theater in to the gentle prayer: "If you find it in your heart, can I 
+be forgiven?" He then reaccelerates, ripping through the double-barrelled gospel stomp, 
+Saved, then draws them all back in for the plaintive "What Can I Do For You." Each time, 
+first moving their bodies, then hanging them on each note of his circuitous guitar and 
+harp solos. The sheer audacity, or simple brazen faith, he has in his music and his message
+during these concerts is a monument to the man's artistry and his determination to bring his
+art to bear on the full scope of his experience. The audience, believer and non-believer 
+alike, are left dumbstruck and cheering for more."
+
+
+Disk One
+Gotta Serve Somebody
+I Believe In You
+When You Gonna Wake Up + When He Returns (in a single track)
+Man Gave Names To All The Animals
+Precious Angel
+Slow Train
+Covenant Woman
+Gonna Change My Way Of Thinking
+Do Right To Me Baby (Do Unto Others) + Solid Rock (joined in one track)
+Saving Grace
+Saved 
+(applause + fragment of a few words from "What Can I Do for YOU?", the complete
+version of which occurs on disk two)
+
+Disk Two
+
+extraneous tracks:
+Saved
+In the Garden [clearly from different night, as indicated by the introductions]
+Blessed Be the Name
+Pressing On
+
+completion of 11-10-79 show:
+
+What Can I Do for YOU? [crowd noise at beginning conforms to fragment at end of disk one]
+In the Garden [edit and introductions at end indicate that track is indeed from 11-10 show]
+Blessed Be the Name [the audience noise here seems to confirm that this is the track
+     that comes from the 11-10 show)
+Pressing On
+
+Disk One
+bd1979-11-10d1t01.flac:874f466172fb766b8e185dd66ef940a0
+bd1979-11-10d1t02.flac:be6016c452ff7f86ee98c314540e55d4
+bd1979-11-10d1t03.flac:49b5e97b03079bf98e25574d44f76739
+bd1979-11-10d1t04.flac:8e7c1a46ee30cd5dad6fd1c984832144
+bd1979-11-10d1t05.flac:9f1b1f6bb36f38ba4149e87577028cda
+bd1979-11-10d1t06.flac:7f8aa8eb76300fc48680d6cccf6e96c1
+bd1979-11-10d1t07.flac:0fe269e9d3da79d3b8edfccaeb56d92c
+bd1979-11-10d1t08.flac:b1cc59b928695ee38f5540ee0247e5e4
+bd1979-11-10d1t09.flac:1ff1fe06822551ae53b1158ba8137e31
+bd1979-11-10d1t10.flac:87433c48eb52dd1bbf22340e6f85f9ec
+bd1979-11-10d1t11.flac:44afaffead064554125d985eb0556199
+bd1979-11-10d1t12.flac:e32d417f9b1d018ff9b4c773b0721417
+
+Disk Two
+bd1979-11-10d2t01.flac:9601355bb20f89e040e9ebe51a69619e
+bd1979-11-10d2t02.flac:3f385caab49e6edd60b3237827c0b2e6
+bd1979-11-10d2t03.flac:34cd3da3c343f77ff791c88216c52646
+bd1979-11-10d2t04.flac:b12eeba6e9af24a5831e7b412514b785
+bd1979-11-10d2t05.flac:8100f451e6488cf10c3fce5ed6c21ea9
+bd1979-11-10d2t06.flac:d66a6536cfa899b31eb426077b8d348a
+bd1979-11-10d2t07.flac:b7730c6bf24db8da3b6a8d974ecf835a
+bd1979-11-10d2t08.flac:2efec52227ac25394519596adbd3a87c

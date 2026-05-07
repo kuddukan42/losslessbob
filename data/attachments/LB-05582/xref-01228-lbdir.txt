@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd88-07-03-old-orchard-beach-WLR-2072.flacf
+===================
+===================
+===================
+1fcf5a7737f8041609ca427cdb7ed162 *1988 July 03.txt
+6ea87b1cefa9c11f1a7ffefd24b9ff32 *back.jpg
+c476318f4403aed79c9219355da6f290 *bd-1988-july-03-sdb.md5
+561d50bde37fd2f054db21d268d5399a *front.jpg
+563c65a8147ced88bd46eeaba55b642f *Track01.flac
+d10a84cc139d858dec80825f92e64a92 *Track02.flac
+11bff3ca3877f4fc47408998efe944b7 *Track03.flac
+17b383cfe540be91de2fb20d7af63bc5 *Track04.flac
+80e47167f1af81f2424bfb6b874a02af *Track05.flac
+4296edd5cfe3c075f5dc2d4aa3d8c3fc *Track06.flac
+78b19bbb97cf861e976ee4e517226d94 *Track07.flac
+6459ceb43bbb8b778b2eafcdcfe0d3c5 *Track08.flac
+5408ce59d5648419076bee1e37dc4cb5 *Track09.flac
+be4b5cab0a902a01e014bfbd8c38a00a *Track10.flac
+4636af1f94f9035cd424ad210a9fd2ed *Track11.flac
+67d5b95a65abdaa7b1298e039df46a5e *Track12.flac
+b9873818a27d2424be0df522a2703982 *Track13.flac
+2eacbf62acd6e9d6c7668dcae2a48d73 *Track14.flac
+a2dd640797ddde767f1efe1be5e52074 *Track15.flac
+===================
+===================
+===================
+=== ffp for: bd88-07-03-old-orchard-beach-WLR-2072.flacf
+===================
+===================
+===================
+Track01.flac:7fcfc298c1d808efb42e394d577c28f4
+Track02.flac:241397992576a01d6099c0dcb8fef58f
+Track03.flac:bc4fa44129c2dbd10f1e91b595ad90d8
+Track04.flac:154f4a9f0423d86cc6992f89bf1776d6
+Track05.flac:11bd2b5f5a44b93f95db06b4565dbc9f
+Track06.flac:aca5cf135f0926661e631d65085e85ae
+Track07.flac:17554cea9af8a94a822b6e432252cf10
+Track08.flac:a4f633f3d20912fa0c2b75d6feea974e
+Track09.flac:2c4a2eb42507f0be5e01b3016fef0967
+Track10.flac:21ad45dd5ca4b94b72c70f2eaaeffd6e
+Track11.flac:56d72135e61b028b4b8060b39a8ac77b
+Track12.flac:1229ccb5fa60dd9ec68410574dd0a66b
+Track13.flac:f76212ea1e809c1f3a8abad9337de3d5
+Track14.flac:3bb0d7a5ab1900a7f6a86c8012c23fcf
+Track15.flac:0ed032c540e57719f36ca210abfaf975
+===================
+===================
+===================
+=== shntool len for: bd88-07-03-old-orchard-beach-WLR-2072.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:41.49       39099692 B   ---   --   ---xx   flac  0.6028  Track01.flac
+     6:44.69       71427932 B   ---   --   ---xx   flac  0.6144  Track02.flac
+     4:23.18       46435580 B   ---   --   ---xx   flac  0.6169  Track03.flac
+     6:40.46       70668236 B   ---   --   ---xx   flac  0.5896  Track04.flac
+     5:05.74       53976092 B   ---   --   ---xx   flac  0.5995  Track05.flac
+     4:13.53       44753900 B   ---   --   ---xx   flac  0.6138  Track06.flac
+     4:26.41       47018876 B   ---   --   ---xx   flac  0.5625  Track07.flac
+     3:54.57       41411708 B   ---   --   ---xx   flac  0.5560  Track08.flac
+     6:27.30       68337404 B   ---   --   ---xx   flac  0.5601  Track09.flac
+     4:16.63       45306620 B   ---   --   ---xx   flac  0.5910  Track10.flac
+     5:07.68       54314780 B   ---   --   ---xx   flac  0.5631  Track11.flac
+     7:33.51       80029196 B   ---   --   ---xx   flac  0.5800  Track12.flac
+     8:27.02       89439548 B   ---   --   ---xx   flac  0.5538  Track13.flac
+     3:41.52       39106748 B   ---   --   ---xx   flac  0.5979  Track14.flac
+     4:14.57       44939708 B   ---   --   ---xx   flac  0.5874  Track15.flac
+    79:00.55      836266020 B                            0.5841  (15 files)
+===================
+===================
+===================

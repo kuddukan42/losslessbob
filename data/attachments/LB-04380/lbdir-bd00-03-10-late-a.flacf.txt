@@ -1,0 +1,124 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-10-late-a.flacf 
+=================== 
+=================== 
+=================== 
+95aceacfdf0a915273be979e188d2a2f  Anaheim Late Info.txt
+6c4d857a285b6eea895117300870305f  AnaheimLate-Back.gif
+b78bb31fd311e87dd72cc4f0e1d644e8  AnaheimLate-Backalt.gif
+78966a988bed64eeeeeae54d0d27f2dd  AnaheimLate-Front.jpg
+354242dc31313fba3d9b936ecfc073d0  bd00-03-10-late-a-LB-4380.txt
+d7135377b6a27abf4c9a0c25c0b8102f  bd2000-03-10 Late Disk One Flac\01 bd2000-03-10 Late DiskOne.flac
+982fb3a7725531f8167d69fe63afbf8c  bd2000-03-10 Late Disk One Flac\02 bd2000-03-10 Late DiskOne.flac
+d72a0b283369453c549cfce395b613ff  bd2000-03-10 Late Disk One Flac\03 bd2000-03-10 Late DiskOne.flac
+72508b84f67776e2a1d36634eb84bb51  bd2000-03-10 Late Disk One Flac\04 bd2000-03-10 Late DiskOne.flac
+dd2988a21294d30cd2c415302e824dbe  bd2000-03-10 Late Disk One Flac\05 bd2000-03-10 Late DiskOne.flac
+ff1c112a519992f6ebb8e948b2013fb2  bd2000-03-10 Late Disk One Flac\06 bd2000-03-10 Late DiskOne.flac
+a3b3f6a8e9c58c76770a9c09d2d253a5  bd2000-03-10 Late Disk One Flac\07 bd2000-03-10 Late DiskOne.flac
+8816f27730a9f4f13247dde94df6324b  bd2000-03-10 Late Disk One Flac\08 bd2000-03-10 Late DiskOne.flac
+5e01f20b663eb195243f54f9857d0aa8  bd2000-03-10 Late Disk One Flac\09 bd2000-03-10 Late DiskOne.flac
+0e11eaa289bd9bac41a3615aeaeba366  bd2000-03-10 Late Disk One Flac\10 bd2000-03-10 Late DiskOne.flac
+d135f2500d3025c1894e7b9a219fed6f  bd2000-03-10 Late Disk One Flac\11 bd2000-03-10 Late DiskOne.flac
+eb90e71cbb376b560f98d349537b7878  bd2000-03-10 Late Disk One Flac\bd2000-03-10 Late DiskOne fingerprint.ffp.txt
+4b864ae30018e7fd67641a2aa6d5e8cd  bd2000-03-10 Late Disk Two Flac\01 bd2000-03-10 Late DiskTwo.flac
+c6be1ea709b74fd704f0e46269e76889  bd2000-03-10 Late Disk Two Flac\02 bd2000-03-10 Late DiskTwo.flac
+9e9fa5852d3a99f9c397f5242e755364  bd2000-03-10 Late Disk Two Flac\03 bd2000-03-10 Late DiskTwo.flac
+612b624122c5371ff95ca6a234260736  bd2000-03-10 Late Disk Two Flac\04 bd2000-03-10 Late DiskTwo.flac
+49565e0e67af08d06c095a797a398d79  bd2000-03-10 Late Disk Two Flac\05 bd2000-03-10 Late DiskTwo.flac
+4487a1ec6de13eac44a2594ef59dd87c  bd2000-03-10 Late Disk Two Flac\06 bd2000-03-10 Late DiskTwo.flac
+261d9e44b76897045c48b4c4c24663b6  bd2000-03-10 Late Disk Two Flac\07 bd2000-03-10 Late DiskTwo.flac
+4e40ae53e5d683a231aafda099376438  bd2000-03-10 Late Disk Two Flac\08 bd2000-03-10 Late DiskTwo.flac
+0fbbb3ea2f273116b23c0a24b68fc199  bd2000-03-10 Late Disk Two Flac\09 bd2000-03-10 Late DiskTwo.flac
+b13548e1166c0fed90b06ade4edfa877  bd2000-03-10 Late Disk Two Flac\10 bd2000-03-10 Late DiskTwo.flac
+2803b28a205900213293f30c12357f3f  bd2000-03-10 Late Disk Two Flac\11 bd2000-03-10 Late DiskTwo.flac
+e06f25f579440dfb2182014d600195db  bd2000-03-10 Late Disk Two Flac\12 bd2000-03-10 Late DiskTwo.flac
+eddf6f265e7d7ac3ee7c94bb7d7d01a2  bd2000-03-10 Late Disk Two Flac\13 bd2000-03-10 Late DiskTwo.flac
+05217d9b54eadd69e0680bde38a9b6b2  bd2000-03-10 Late Disk Two Flac\14 bd2000-03-10 Late DiskTwo.flac
+322bc040075ee1baf018823c1769eed3  bd2000-03-10 Late Disk Two Flac\bd2000-03-10 Late DiskTwo fingerprint.ffp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-10-late-a.flacf\bd2000-03-10 Late Disk One Flac 
+=================== 
+=================== 
+=================== 
+01 bd2000-03-10 Late DiskOne.flac:05c8ca250d45b78868b40da22ec96021
+02 bd2000-03-10 Late DiskOne.flac:560aaa321dd3456e4398760939677736
+03 bd2000-03-10 Late DiskOne.flac:1214e8e5f0a6e303b3849612971b61ea
+04 bd2000-03-10 Late DiskOne.flac:aaf55909dc78d091c7617c89c4d7648f
+05 bd2000-03-10 Late DiskOne.flac:10b0c5ed05364f13d21dea888cef7fc5
+06 bd2000-03-10 Late DiskOne.flac:1c45034e6914cef56fb8ff72543ec2d5
+07 bd2000-03-10 Late DiskOne.flac:226bacf9879a545c165847e1b97d39b4
+08 bd2000-03-10 Late DiskOne.flac:fd448a4e4286fb14bcb45a168922ec96
+09 bd2000-03-10 Late DiskOne.flac:289d0cf2d26e2b2297d27f38e1b3bb5d
+10 bd2000-03-10 Late DiskOne.flac:ae9b6d3eaeb7387422611e6bccb5abef
+11 bd2000-03-10 Late DiskOne.flac:05eff622e6df5ef9bf33b026da76592f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-10-late-a.flacf\bd2000-03-10 Late Disk Two Flac 
+=================== 
+=================== 
+=================== 
+01 bd2000-03-10 Late DiskTwo.flac:92968d713fe313d30187380a9de0f167
+02 bd2000-03-10 Late DiskTwo.flac:00d7fd08a07d6d62f081beec751f6106
+03 bd2000-03-10 Late DiskTwo.flac:f67b68bd0805024b51f58b062db52fc1
+04 bd2000-03-10 Late DiskTwo.flac:fccad288c016de6ccae47058bf4ec0f5
+05 bd2000-03-10 Late DiskTwo.flac:32caf0c8ce8ee22baf7db17002850447
+06 bd2000-03-10 Late DiskTwo.flac:db1f2d612c5de71433c096216436664f
+07 bd2000-03-10 Late DiskTwo.flac:78482eb738c73084d908f5ed491cc7c9
+08 bd2000-03-10 Late DiskTwo.flac:76bb27aa5bed1b3e15ff7a95b1a9c06d
+09 bd2000-03-10 Late DiskTwo.flac:a6140d5e9ad738c13be5a16432c77697
+10 bd2000-03-10 Late DiskTwo.flac:ce33ce8e780a6d79e2b4b3af5bcbaf8f
+11 bd2000-03-10 Late DiskTwo.flac:0b3de5fb5abb2a220d84b9a211548c13
+12 bd2000-03-10 Late DiskTwo.flac:8b19cd2e0aab1f6e0151d35384bc1aef
+13 bd2000-03-10 Late DiskTwo.flac:07a87a9f60bb2aa45a12aa3c7a6a33b2
+14 bd2000-03-10 Late DiskTwo.flac:7c8d378324a3eb9e8217fca4d8f24edf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-10-late-a.flacf\bd2000-03-10 Late Disk One Flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:33.52       27111548 B   ---   --   ---xx   flac  0.5499  01 bd2000-03-10 Late DiskOne.flac
+     5:36.26       59331596 B   ---   --   ---xx   flac  0.4903  02 bd2000-03-10 Late DiskOne.flac
+     8:32.25       90375644 B   ---   --   ---xx   flac  0.4763  03 bd2000-03-10 Late DiskOne.flac
+     5:13.69       55375532 B   ---   --   ---xx   flac  0.4731  04 bd2000-03-10 Late DiskOne.flac
+     3:50.38       40661420 B   ---   --   ---xx   flac  0.4526  05 bd2000-03-10 Late DiskOne.flac
+     5:17.37       56005868 B   ---   --   ---xx   flac  0.5519  06 bd2000-03-10 Late DiskOne.flac
+     2:25.52       25700348 B   ---   --   ---xx   flac  0.5815  07 bd2000-03-10 Late DiskOne.flac
+     3:51.59       40887212 B   ---   --   ---xx   flac  0.5281  08 bd2000-03-10 Late DiskOne.flac
+     5:43.28       60571100 B   ---   --   ---xx   flac  0.5634  09 bd2000-03-10 Late DiskOne.flac
+     6:20.14       67064972 B   ---   --   ---xx   flac  0.4380  10 bd2000-03-10 Late DiskOne.flac
+     6:11.12       65472668 B   ---   --   ---xx   flac  0.5979  11 bd2000-03-10 Late DiskOne.flac
+    55:36.37      588557908 B                            0.5127  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-10-late-a.flacf\bd2000-03-10 Late Disk Two Flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:37.45       70136684 B   ---   --   ---xx   flac  0.5597  01 bd2000-03-10 Late DiskTwo.flac
+     4:27.16       47136476 B   ---   --   ---xx   flac  0.5773  02 bd2000-03-10 Late DiskTwo.flac
+     7:45.21       82075436 B   ---   --   ---xx   flac  0.4401  03 bd2000-03-10 Late DiskTwo.flac
+     5:17.22       55970588 B   ---   --   ---xx   flac  0.5640  04 bd2000-03-10 Late DiskTwo.flac
+     4:42.00       49744844 B   ---   --   ---xx   flac  0.4906  05 bd2000-03-10 Late DiskTwo.flac
+     5:58.59       63290012 B   ---   --   ---xx   flac  0.5529  06 bd2000-03-10 Late DiskTwo.flac
+     4:35.18       48552380 B   ---   --   ---xx   flac  0.4886  07 bd2000-03-10 Late DiskTwo.flac
+     4:06.70       43559084 B   ---   --   ---xx   flac  0.5533  08 bd2000-03-10 Late DiskTwo.flac
+     7:02.65       74593724 B   ---   --   ---xx   flac  0.4886  09 bd2000-03-10 Late DiskTwo.flac
+     5:20.22       56499788 B   ---   --   ---xx   flac  0.5277  10 bd2000-03-10 Late DiskTwo.flac
+     3:33.21       37622636 B   ---   --   ---xx   flac  0.5617  11 bd2000-03-10 Late DiskTwo.flac
+     4:43.62       50067068 B   ---   --   ---xx   flac  0.5692  12 bd2000-03-10 Late DiskTwo.flac
+     4:41.64       49718972 B   ---   --   ---xx   flac  0.5575  13 bd2000-03-10 Late DiskTwo.flac
+     4:01.12       42540668 B   ---   --   ---xx   flac  0.5571  14 bd2000-03-10 Late DiskTwo.flac
+    72:53.47      771508360 B                            0.5297  (14 files)
+=================== 
+=================== 
+=================== 

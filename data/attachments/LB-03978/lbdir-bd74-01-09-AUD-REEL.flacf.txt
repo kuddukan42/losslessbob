@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-09-AUD-REEL.flacf 
+=================== 
+=================== 
+=================== 
+87c259b01d9f4c428d2b7a6f8b82b041  01 Rainy Day Women #12 & 35.flac
+15857952e17ff18a67e10cf83558901d  02 Lay Lady Lay.flac
+5e6a8146d0245eb66aeac26dc25038dc  03 Just Like Tom Thumb's Blues.flac
+ecd79aa62c717286d504978b79a67dfa  04 It Ain't Me Babe.flac
+ec8c1b6a7db64964975091390fe15a8f  05 It Takes a Lot to Laugh.flac
+4fa203c922b0c1a1231f2df4133ed730  06 Ballad of a Thin Man.flac
+1aba165d4b6d6ace9ecbc2fb522dbd43  07 All Along the Watchtower.flac
+101b2f294480f872850834d1d51dd95a  08 Ballad of Hollis Brown.flac
+067c1e785bab5f1f53e6460e32a355ec  09 Knockin' on Heaven's Door.flac
+31d5a3428971bcd1a0869cf98026d830  10 Just Like a Woman.flac
+a03c49f00819484c1ee10950b11725ff  11 Girl of the North Country.flac
+3fc5a8bc2498f2032b797e69d488cd85  12 Wedding Song.flac
+258847fe6e127122f8fd5700821a3c5a  13 Nobody 'cept You.flac
+a2056b0039f026e0127615d3a4ff40ce  14 It's Alight, Ma.flac
+36e27b6bbf309719d3485e4dfab52b1d  15 Forever Young.flac
+34b591d0e57322e25adf88f9675f44d0  16 Something There Is About You.flac
+bc64338ef78e67f9e1e3e7b0bd94aded  17 Like a Rolling Stone.flac
+ebd8e0038edd3f0bd3e600016939ca76  18 Most Likely You Go Your Way and I'll Go Mine.flac
+853e6daf3caebae1c34d26b1989e8bd4  bd74-01-09-AUD-REEL-LB-3978.txt
+1a64631b57d4d5880d1a0d9bfaf85877  Bob Dylan - Maple Leaf Gardens, Toronto 1974-01-09 FLAC.md5
+819d6834ca6b066903467f7575d2aa52  Bob Dylan - Maple Leaf Gardens, Toronto 1974-01-09 WAV.md5
+d0bd504f96cd1b4dfe4e9731a83bc2b1  tracks.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-09-AUD-REEL.flacf 
+=================== 
+=================== 
+=================== 
+01 Rainy Day Women #12 & 35.flac:9caf83d9702766f0ba95465cdb82d041
+02 Lay Lady Lay.flac:8e44cf4001a55ddb045ff92a10626a0b
+03 Just Like Tom Thumb's Blues.flac:92964c49205793d1d99c9a627beaefd2
+04 It Ain't Me Babe.flac:885f5ae9ca89b2c3bc7602df86ca9d1f
+05 It Takes a Lot to Laugh.flac:28891fe4874bf4202b9212a4ed2997c8
+06 Ballad of a Thin Man.flac:ac88e46671660e5774dc60f5e063a40d
+07 All Along the Watchtower.flac:812156d2a47ee3f5464db1d291dfc5b0
+08 Ballad of Hollis Brown.flac:de419387c770e566076c8bd91f979d07
+09 Knockin' on Heaven's Door.flac:6ed2c04db299044aa425556a0df289f7
+10 Just Like a Woman.flac:0f909a5e5dabb1000d172a5719b4f5d7
+11 Girl of the North Country.flac:649339369b70dcb8d5d873b5c85da68b
+12 Wedding Song.flac:3e9785dd102a58fbd5270b89e0487e41
+13 Nobody 'cept You.flac:29984ecd5437cefb5d49cf3f9f139ad2
+14 It's Alight, Ma.flac:eb42110f3b234f665a16d702ef851ab9
+15 Forever Young.flac:cc3cc6874c51e1a47155bdc838807a76
+16 Something There Is About You.flac:08f12ae8b5d19d95ad75c7754577a614
+17 Like a Rolling Stone.flac:3d81f166d3d8658175222db75edf1e19
+18 Most Likely You Go Your Way and I'll Go Mine.flac:cebe482aa5f7b87b56b5352a5341ecf1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-09-AUD-REEL.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:07.44       33090332 B   ---   --   ---xx   flac  0.5940  01 Rainy Day Women #12 & 35.flac
+     3:31.60       37361564 B   ---   --   ---xx   flac  0.6007  02 Lay Lady Lay.flac
+     5:39.74       59973692 B   ---   --   ---xx   flac  0.6090  03 Just Like Tom Thumb's Blues.flac
+     4:15.28       45047900 B   ---   --   ---xx   flac  0.6069  04 It Ain't Me Babe.flac
+     3:41.50       39102044 B   ---   --   ---xx   flac  0.6042  05 It Takes a Lot to Laugh.flac
+     5:35.02       59098748 B   ---   --   ---xx   flac  0.5997  06 Ballad of a Thin Man.flac
+     2:40.37       28311068 B   ---   --   ---xx   flac  0.6336  07 All Along the Watchtower.flac
+     3:44.39       39605372 B   ---   --   ---xx   flac  0.6224  08 Ballad of Hollis Brown.flac
+     3:59.17       42199628 B   ---   --   ---xx   flac  0.5927  09 Knockin' on Heaven's Door.flac
+     3:57.19       41851532 B   ---   --   ---xx   flac  0.6204  10 Just Like a Woman.flac
+     3:09.17       33379628 B   ---   --   ---xx   flac  0.5964  11 Girl of the North Country.flac
+     4:19.45       45793484 B   ---   --   ---xx   flac  0.6111  12 Wedding Song.flac
+     2:54.07       30710108 B   ---   --   ---xx   flac  0.6225  13 Nobody 'cept You.flac
+     5:01.19       53141132 B   ---   --   ---xx   flac  0.6253  14 It's Alight, Ma.flac
+     4:59.33       52821260 B   ---   --   ---xx   flac  0.6084  15 Forever Young.flac
+     4:30.05       47639804 B   ---   --   ---xx   flac  0.6153  16 Something There Is About You.flac
+     6:32.71       69315836 B   ---   --   ---xx   flac  0.6233  17 Like a Rolling Stone.flac
+     4:33.24       48213692 B   ---   --   ---xx   flac  0.6240  18 Most Likely You Go Your Way and I'll Go Mine.flac
+    76:12.66      806656824 B                            0.6119  (18 files)
+=================== 
+=================== 
+=================== 

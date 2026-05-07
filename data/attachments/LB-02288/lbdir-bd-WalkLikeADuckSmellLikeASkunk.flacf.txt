@@ -1,0 +1,195 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-WalkLikeADuckSmellLikeASkunk.flacf 
+=================== 
+=================== 
+=================== 
+6467c8c3d11098d9ef821fe63a555317  bd-WalkLikeADuckSmellLikeASkunk.txt
+144a51e27588bd5e2d466a2e24b200dd  Disc_1\WLADSLASD1.ffp
+0bf19708b7b5e9cd4d8b609d680f4fb3  Disc_1\WLADSLASD1T01.flac
+742e2a4fbfdfb4dd9832672ddd50090f  Disc_1\WLADSLASD1T02.flac
+9377f2fdb3f09997ff2af5eb7141fb70  Disc_1\WLADSLASD1T03.flac
+21a73ab9ccb04136fe1626141c7db30f  Disc_1\WLADSLASD1T04.flac
+61b72d33b8f60b177a45f86ce20a6e55  Disc_1\WLADSLASD1T05.flac
+ea0811b26db7f0512ef0d9bc78dabf13  Disc_1\WLADSLASD1T06.flac
+1937e1fcbf54ef410cabba6287c447a3  Disc_1\WLADSLASD1T07.flac
+386fabcd22276a16526479f2d307c3e3  Disc_1\WLADSLASD1T08.flac
+26b9937e349f6d8ac9266b14700c0d25  Disc_1\WLADSLASD1T09.flac
+41f71324db3d1775bb92b4f5ea1c419c  Disc_1\WLADSLASD1T10.flac
+6beb58e74378c012765b90b0d90eabaf  Disc_1\WLADSLASD1T11.flac
+e78517c077282b42548db0446d44806d  Disc_1\WLADSLASD1T12.flac
+7a65c32e80f9c9c4f5700143ba16706c  Disc_1\WLADSLASD1T13.flac
+22a50730f7f4a698ed7055383bf35bae  Disc_1\WLADSLASD1T14.flac
+9176b417d5ae7cb3c174e549e6c5a57a  Disc_1\WLADSLASD1T15.flac
+bf1c9fa3f418856ef3bff850276ca405  Disc_1\WLADSLASD1T16.flac
+e45735de54e854257628755dc52c9ee9  Disc_1\WLADSLASD1T17.flac
+cc0dc5a0fe4678f62dfa75d25e15d0fc  Disc_1\WLADSLASD1T18.flac
+2b41801606a6bd8bc7fbad8df136bb45  Disc_1\WLADSLASD1T19.flac
+670c19d96a60dc9826f614c57aae3249  Disc_1\WLADSLASD1T20.flac
+348a451e076bbf7420458872cecbd973  Disc_1\WLADSLASD1T21.flac
+fa7e518468992061ca230acc56b2f386  Disc_1\WLADSLASD1T22.flac
+70695e85c8c8cde697d5025306e448da  Disc_1\WLADSLASD1T23.flac
+f5267a77c2f15bd0482888d318ba64bc  Disc_1\WLADSLASD1T24.flac
+ca5bcb8fe8084ee8689b15397fa1cc78  Disc_1\WLADSLASD1T25.flac
+50cd437751d6db764d412998bd1c3308  Disc_1\WLADSLASD1T26.flac
+2e278fd398ea2e268e0836020b607475  Disc_2\WLADSLASD2.ffp
+74d97f23e6fcf1e9ef629178836061db  Disc_2\WLADSLASD2T01.flac
+533963396e97e4abfe04b2bc1c01f81b  Disc_2\WLADSLASD2T02.flac
+331970336eef8df7c669161770811b81  Disc_2\WLADSLASD2T03.flac
+e5945529705dbd13fa94834ec2f84fbe  Disc_2\WLADSLASD2T04.flac
+beded31fda90a49228b806f4af8706fc  Disc_2\WLADSLASD2T05.flac
+c0917759240d0a231f1e4697b5c0a4cd  Disc_2\WLADSLASD2T06.flac
+581aa4ce834f524d233418c4b0b1f55c  Disc_2\WLADSLASD2T07.flac
+5fa18cf17a26050e7049f2f25e2ac692  Disc_2\WLADSLASD2T08.flac
+c337906d4fc191dc8ddc19e8ac229798  Disc_2\WLADSLASD2T09.flac
+d4eda3963ba1d53d19b124f30b7bdfa6  Disc_2\WLADSLASD2T10.flac
+da00ad29233287955a8aac632232fd10  Disc_2\WLADSLASD2T11.flac
+81dde5cd70ee4daf2fa6d5bc83766751  Disc_2\WLADSLASD2T12.flac
+30576ed1c686e993bbc3f4b0f4dd70d2  Disc_2\WLADSLASD2T13.flac
+b4c35eef3efe2be9ced02b33fdba5402  Disc_2\WLADSLASD2T14.flac
+e89b8e538dc538987922191069827ba1  Disc_2\WLADSLASD2T15.flac
+fbb3322c2910b3ccf25af95c3c550190  Disc_2\WLADSLASD2T16.flac
+0775aa4ab3b23408dc2764025830836b  Disc_2\WLADSLASD2T17.flac
+a38d2eee2170e529373147dcbda5825c  Disc_2\WLADSLASD2T18.flac
+10689befff0bb7ba94f4a406646a9f7b  Disc_2\WLADSLASD2T19.flac
+314bf363338530d090d319381ef4109d  Disc_2\WLADSLASD2T20.flac
+818c0c3fdedef66411923350863ac086  Disc_2\WLADSLASD2T21.flac
+2ca2d28162e886540d1780b941af384c  Disc_2\WLADSLASD2T22.flac
+dadd3c1be45a2fe2aa677d7e7abce2f6  Disc_2\WLADSLASD2T23.flac
+d3a4fb28a489a654c7c666b7a3adba60  WalkLIkeADuck_Inside.jpg
+b981a63083e8d35ba1d98366b4209e8b  WalkLIkeADuck_Outside.jpg
+61a6debaff3f996d0b14d95aa155d29a  WalkLikeADuck_SmellLikeASku.doc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-WalkLikeADuckSmellLikeASkunk.flacf\Disc_1 
+=================== 
+=================== 
+=================== 
+WLADSLASD1T01.flac:99c04da215de83d6c641a71ba5d2f979
+WLADSLASD1T02.flac:31e6adc6557e46510acf5726bde466b3
+WLADSLASD1T03.flac:b79877ffcc656f2224bcf109f342c0a9
+WLADSLASD1T04.flac:89c447774eefabfa8eff7abfa951de7f
+WLADSLASD1T05.flac:bf3b4fd7a4136715fbd6ab98a9afd6b9
+WLADSLASD1T06.flac:2fb359124c23c4749104b9dafe4ca9af
+WLADSLASD1T07.flac:469e001e20650f779cbd21db02a2c54a
+WLADSLASD1T08.flac:64c2ac1c85b785bc239ccb87d3cc5bf5
+WLADSLASD1T09.flac:1cad64d6d19b89018a4c8fb35998fe2c
+WLADSLASD1T10.flac:b05c29b5122538f50a38489b56d69618
+WLADSLASD1T11.flac:55dac45de96c916555b2e1f9992cf75d
+WLADSLASD1T12.flac:07b3388c6ac84ffb00d2faac5f52d8a1
+WLADSLASD1T13.flac:a73cb646d3943a52b1d4ee325be55172
+WLADSLASD1T14.flac:d3ccf138add5ad4a74ded03f4d8baf50
+WLADSLASD1T15.flac:323bd159e550d9d3e584e5096dae0db3
+WLADSLASD1T16.flac:b33fc8688b79ee2dd055bd22dcf41a6d
+WLADSLASD1T17.flac:35a0ac4792fcb0cebc011d73c5927c63
+WLADSLASD1T18.flac:685ba3a0e698c5f8ffc4c8e11c8e29eb
+WLADSLASD1T19.flac:be1137e335e7c49c29cc13e5f60c8a84
+WLADSLASD1T20.flac:f46c4bcc8bb7ed1ff249f898676a951b
+WLADSLASD1T21.flac:db1edb0858f9f1a41eecb84460d43b87
+WLADSLASD1T22.flac:ca1656ddf52c89cad464b199f1243d75
+WLADSLASD1T23.flac:17022deeff4327d4300dcf3ea21a5ca0
+WLADSLASD1T24.flac:23b19ac2b0fcc519cb13a7d04978045e
+WLADSLASD1T25.flac:44216b2d892f163db41a46f8652529a0
+WLADSLASD1T26.flac:a62906dd2171f17c7a1f6676ca441c3d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-WalkLikeADuckSmellLikeASkunk.flacf\Disc_2 
+=================== 
+=================== 
+=================== 
+WLADSLASD2T01.flac:38b9ba3a4fff201525d789c7a6f3a009
+WLADSLASD2T02.flac:5aa5e28beb71e0468fea7f761dad7498
+WLADSLASD2T03.flac:523c7e15bb1d3b64e6ceefb612d296f0
+WLADSLASD2T04.flac:59f6f05955e16c73db69a392bfb9b07c
+WLADSLASD2T05.flac:456e7cbc5b59841483968925f3d6803e
+WLADSLASD2T06.flac:b4b6c3aa3822466d6f0836b88d04795e
+WLADSLASD2T07.flac:d61eee054a9572e3d0bc849bae6ef98b
+WLADSLASD2T08.flac:4fd6a44233c31a52d23e6a03e43083ce
+WLADSLASD2T09.flac:61c22621edf3ca9daf04065f04fa68d2
+WLADSLASD2T10.flac:6b0e206ace7396228bfcea54a45a00c5
+WLADSLASD2T11.flac:226b7769eb739e4877bc33d867627303
+WLADSLASD2T12.flac:ff66cb2e210dc99f22633ea0a14b6592
+WLADSLASD2T13.flac:48521b5b18b13ec8b611072f88e139ef
+WLADSLASD2T14.flac:e89dfb978ef1e6f9e2e231fe8d7503ed
+WLADSLASD2T15.flac:d37bc3ef678487cf7fc004cc506776ca
+WLADSLASD2T16.flac:717e9e0a2232db46b920d4f17f10ab07
+WLADSLASD2T17.flac:603d36f1cef5e52ba8602f0ad25ecd26
+WLADSLASD2T18.flac:f671b168fe34500bf6e61a70c0207b67
+WLADSLASD2T19.flac:0c7485b97149cdf466225082166eb877
+WLADSLASD2T20.flac:eb25a35e46da8cc88d886b7c42b72b1c
+WLADSLASD2T21.flac:15aa21c758aa91409c68cf50179a5901
+WLADSLASD2T22.flac:626042cc83d0f5cd90acd8a84e4cbcb7
+WLADSLASD2T23.flac:5e75907e5b891c865b7f3b3102f6bf00
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-WalkLikeADuckSmellLikeASkunk.flacf\Disc_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:27.23        4816940 B   ---   --   ---xx   flac  0.5841  WLADSLASD1T01.flac
+     4:01.49       42627692 B   ---   --   ---xx   flac  0.5482  WLADSLASD1T02.flac
+     1:52.38       19846220 B   ---   --   ---xx   flac  0.5710  WLADSLASD1T03.flac
+     4:06.31       43467356 B   ---   --   ---xx   flac  0.5908  WLADSLASD1T04.flac
+     3:14.01       34223996 B   ---   --   ---xx   flac  0.6080  WLADSLASD1T05.flac
+     4:07.55       43700204 B   ---   --   ---xx   flac  0.5636  WLADSLASD1T06.flac
+     3:13.18       34087580 B   ---   --   ---xx   flac  0.5011  WLADSLASD1T07.flac
+     4:24.09       46590812 B   ---   --   ---xx   flac  0.5724  WLADSLASD1T08.flac
+     3:47.10       40066364 B   ---   --   ---xx   flac  0.5798  WLADSLASD1T09.flac
+     2:05.50       22167644 B   ---   --   ---xx   flac  0.5908  WLADSLASD1T10.flac
+     2:55.31       30942956 B   ---   --   ---xx   flac  0.5184  WLADSLASD1T11.flac
+     4:04.01       43043996 B   ---   --   ---xx   flac  0.5514  WLADSLASD1T12.flac
+     0:49.37        8730668 B   ---   --   ---xx   flac  0.5488  WLADSLASD1T13.flac
+     3:14.22       34273388 B   ---   --   ---xx   flac  0.6017  WLADSLASD1T14.flac
+     2:00.63       21316220 B   ---   --   ---xx   flac  0.5414  WLADSLASD1T15.flac
+     2:28.64       26257772 B   ---   --   ---xx   flac  0.5644  WLADSLASD1T16.flac
+     3:04.47       32568188 B   ---   --   ---xx   flac  0.6156  WLADSLASD1T17.flac
+     3:43.06       39351356 B   ---   --   ---xx   flac  0.5739  WLADSLASD1T18.flac
+     2:55.19       30914732 B   ---   --   ---xx   flac  0.6244  WLADSLASD1T19.flac
+     2:38.50       27988844 B   ---   --   ---xx   flac  0.6077  WLADSLASD1T20.flac
+     2:36.47       27628988 B   ---   --   ---xx   flac  0.5500  WLADSLASD1T21.flac
+     3:23.15       35844524 B   ---   --   ---xx   flac  0.5981  WLADSLASD1T22.flac
+     2:28.31       26180156 B   ---   --   ---xx   flac  0.5840  WLADSLASD1T23.flac
+     5:12.28       55102700 B   ---   --   ---xx   flac  0.6052  WLADSLASD1T24.flac
+     3:27.70       36679484 B   ---   --   ---xx   flac  0.5871  WLADSLASD1T25.flac
+     3:02.35       32187164 B   ---   --   ---xx   flac  0.5516  WLADSLASD1T26.flac
+    79:25.25      840605944 B                            0.5755  (26 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-WalkLikeADuckSmellLikeASkunk.flacf\Disc_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:57.10       31246364 B   ---   --   ---xx   flac  0.5975  WLADSLASD2T01.flac
+     2:16.52       24112748 B   ---   --   ---xx   flac  0.5837  WLADSLASD2T02.flac
+     3:54.25       41336444 B   ---   --   ---xx   flac  0.5880  WLADSLASD2T03.flac
+     4:37.62       49008668 B   ---   --   ---xx   flac  0.6027  WLADSLASD2T04.flac
+     2:55.39       30961772 B   ---   --   ---xx   flac  0.5781  WLADSLASD2T05.flac
+     5:03.17       53489228 B   ---   --   ---xx   flac  0.5976  WLADSLASD2T06.flac
+     3:46.67       40024028 B   ---   --   ---xx   flac  0.5936  WLADSLASD2T07.flac
+     2:08.34       22659212 B   ---   --   ---xx   flac  0.5383  WLADSLASD2T08.flac
+     1:19.65       14088524 B   ---   --   ---xx   flac  0.6115  WLADSLASD2T09.flac
+     3:14.45       34327484 B   ---   --   ---xx   flac  0.6186  WLADSLASD2T10.flac
+     1:04.44       11393132 B   ---   --   ---xx   flac  0.6495  WLADSLASD2T11.flac
+     5:05.07       53818508 B   ---   --   ---xx   flac  0.5707  WLADSLASD2T12.flac
+     2:53.33       30594860 B   ---   --   ---xx   flac  0.6611  WLADSLASD2T13.flac
+     3:28.19       36735932 B   ---   --   ---xx   flac  0.6249  WLADSLASD2T14.flac
+     2:56.63       31194620 B   ---   --   ---xx   flac  0.5733  WLADSLASD2T15.flac
+     3:11.08       33711260 B   ---   --   ---xx   flac  0.2984  WLADSLASD2T16.flac
+     4:34.41       48430076 B   ---   --   ---xx   flac  0.6166  WLADSLASD2T17.flac
+     1:56.45       20568284 B   ---   --   ---xx   flac  0.6345  WLADSLASD2T18.flac
+     3:23.41       35905676 B   ---   --   ---xx   flac  0.6354  WLADSLASD2T19.flac
+     2:57.17       31262828 B   ---   --   ---xx   flac  0.6874  WLADSLASD2T20.flac
+     6:50.16       72361676 B   ---   --   ---xx   flac  0.5365  WLADSLASD2T21.flac
+     3:32.22       37448588 B   ---   --   ---xx   flac  0.2797  WLADSLASD2T22.flac
+     2:55.27       30933548 B   ---   --   ---xx   flac  0.5546  WLADSLASD2T23.flac
+    77:03.49      815613460 B                            0.5703  (23 files)
+=================== 
+=================== 
+=================== 

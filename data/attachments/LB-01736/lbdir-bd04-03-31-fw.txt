@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-31-fw 
+=================== 
+=================== 
+=================== 
+979f93bacd4220d1c40d86985a15bcba  bd03-31-04d1t1.shn
+3d376f71976136cafdfcc04510687517  bd03-31-04d1t10.shn
+9475e5f01dcb44dafb328cc1adb3ddbe  bd03-31-04d1t11.shn
+8891b96bcedc78192797dc6360c986e1  bd03-31-04d1t12.shn
+57841f8a5af89e962508620b5baa1ee3  bd03-31-04d1t2.shn
+9a650d8ef821171dec5391a2fa920d8c  bd03-31-04d1t3.shn
+7b7c0f6a8bae85289a4f56049f8adb64  bd03-31-04d1t4.shn
+e7bc24683d9a38737ec62a833c8646c3  bd03-31-04d1t5.shn
+c8df32151c53bf1ff8204ab9e30e3acf  bd03-31-04d1t6.shn
+fb364c9ad5964dee8bd35cb7bb8a9adc  bd03-31-04d1t7.shn
+bcb0092b593c31e277dd3aab89891cec  bd03-31-04d1t8.shn
+ec83e5d4435d2bcf6f4cf8430f07f91a  bd03-31-04d1t9.shn
+6928855e9aff73a7cfaad8ae1993adde  bd03-31-04d2t1.shn
+2b93ff776a43da415d6234f719e222c8  bd03-31-04d2t2.shn
+eb5b6a90c4c0325a189296e814a0f537  bd03-31-04d2t3.shn
+533e3fb2fe108b932341a80f8ee02dce  bd03-31-04d2t4.shn
+119e6c5f76b51215be7e88193a93f631  bd03-31-04d2t5.shn
+e13b6ae9fc6aab3861994ea7ebb6e0da  bd03-31-04d2t6.shn
+3bd511b094d97d221d0bbe318b5f5db6  bd03-31-04d2t7.shn
+9066de91d18df87c1aad9413e228050e  bd04-03-31-fw.txt
+970bef6a3f3c7680c02b2bcfc83f0462  noname.md5
+4e2cd32f516a3cc8bb49d4b589d299f2  Trocadero_Fine_Wine_Text_Torrent.doc
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-31-fw 
+=================== 
+=================== 
+=================== 
+7524f0c502c0e8a6c4cc3ad8699cb0c8  [shntool]  bd03-31-04d1t1.wav
+059863f8d3c4036377d2ebc6a1ff8523  [shntool]  bd03-31-04d1t2.wav
+d9264ce36e0233c1ade0d149c85c7230  [shntool]  bd03-31-04d1t3.wav
+035737dcd22bb55e9d236c2a39ffb714  [shntool]  bd03-31-04d1t4.wav
+860654998c7e262165b0d512e2e67529  [shntool]  bd03-31-04d1t5.wav
+ecb34b89264f258d30d2ddcc31196c94  [shntool]  bd03-31-04d1t6.wav
+9d4d2c04690b615468fd59e336d023ca  [shntool]  bd03-31-04d1t7.wav
+988c461c363f7902fb74e63f12a1637c  [shntool]  bd03-31-04d1t8.wav
+98719fdfaa218d8c5be299e3b3d744a8  [shntool]  bd03-31-04d1t9.wav
+7adc3be836aaa1b4cfbb2a03698be95c  [shntool]  bd03-31-04d1t10.wav
+2357c6fcae4e29061dfac12922689504  [shntool]  bd03-31-04d1t11.wav
+1e1e9052fa8f17c49cbc8f7dcebaf5be  [shntool]  bd03-31-04d1t12.wav
+4d44702498503e1299893c7d975f7230  [shntool]  bd03-31-04d2t1.wav
+f5d32c6f038b3c3695dc87b8a7a97dd9  [shntool]  bd03-31-04d2t2.wav
+ecef50efb64fddf478502a32ad37a11b  [shntool]  bd03-31-04d2t3.wav
+3982d46317a42c0d95837e3a1c1dc7f7  [shntool]  bd03-31-04d2t4.wav
+9266cc38dae65abc40a739f45c990ad3  [shntool]  bd03-31-04d2t5.wav
+a371d4a3c0c1dc749966fe93f5e05323  [shntool]  bd03-31-04d2t6.wav
+529a7f50cb37c69414e61c3e75ef0b9e  [shntool]  bd03-31-04d2t7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-31-fw 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.39        7876892 B   -b-   h-   -----    wav  1.0000  bd03-31-04d1t1.wav
+     5:17.44       56022332 B   ---   --   -----    wav  1.0000  bd03-31-04d1t10.wav
+     5:26.40       57600524 B   ---   --   -----    wav  1.0000  bd03-31-04d1t11.wav
+     7:29.00       79204088 B   -b-   --   -----    wav  1.0000  bd03-31-04d1t12.wav
+     4:16.21       45207836 B   ---   --   -----    wav  1.0000  bd03-31-04d1t2.wav
+     4:59.52       52865948 B   ---   --   -----    wav  1.0000  bd03-31-04d1t3.wav
+     5:51.01       61918796 B   ---   --   -----    wav  1.0000  bd03-31-04d1t4.wav
+     6:51.39       72592172 B   ---   --   -----    wav  1.0000  bd03-31-04d1t5.wav
+     6:52.17       72716828 B   ---   --   -----    wav  1.0000  bd03-31-04d1t6.wav
+     7:47.34       82458812 B   ---   --   -----    wav  1.0000  bd03-31-04d1t7.wav
+    10:15.49      108601292 B   ---   --   -----    wav  1.0000  bd03-31-04d1t8.wav
+     5:58.12       63179468 B   ---   --   -----    wav  1.0000  bd03-31-04d1t9.wav
+     6:57.05       73594124 B   -b-   h-   -----    wav  1.0000  bd03-31-04d2t1.wav
+     5:28.05       57871004 B   ---   --   -----    wav  1.0000  bd03-31-04d2t2.wav
+    10:38.10      112566764 B   ---   --   -----    wav  1.0000  bd03-31-04d2t3.wav
+     5:13.30       55283804 B   ---   --   -----    wav  1.0000  bd03-31-04d2t4.wav
+     6:40.35       70642364 B   ---   --   -----    wav  1.0000  bd03-31-04d2t5.wav
+     1:04.44       11393132 B   ---   --   -----    wav  1.0000  bd03-31-04d2t6.wav
+     6:49.03       72153584 B   -b-   --   -----    wav  1.0000  bd03-31-04d2t7.wav
+   114:40.29     1213749764 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

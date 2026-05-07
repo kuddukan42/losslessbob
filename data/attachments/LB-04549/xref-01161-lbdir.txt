@@ -1,0 +1,87 @@
+===================
+===================
+===================
+=== md5 for: bd80-04-17-c.flacf
+===================
+===================
+===================
+c5c5a4f38bd96ef9a68ea72a200d1e37 *CD1\01 Gotta serve somebody.shn
+e059a9d8cc3746794971bc1232246148 *CD1\02 I believe in you.shn
+9392c120f8e1e1aa24618ef6c22fee45 *CD1\03 When you gonna wake up.shn
+6a99a7959dd6d33a38a0e8a86ee171e7 *CD1\04 Ain't gonna go to hell for anybody.shn
+ad4f270a740f9919a636327be5896e9a *CD1\05 Cover down, break through.shn
+4cdcfab47861834cdd8890d8174945f2 *CD1\06 Precious angel.shn
+fab5ee06a676b092d046a67dc36027e6 *CD1\07 Man gave names to all the animals.shn
+547be824850d7a7fa47d0c8056d63b14 *CD1\08 Slow train.shn
+d838f9aaa9cafe287572e1910cc28ef2 *CD1\10 Do right to me baby (do unto others).shn
+6a3fa725789203f66beaf38819c1508f *CD1\11 Solid rock.shn
+4a4e540a374d0f907898b4b1b57244c7 *CD1\12 Saving grace.shn
+8157a9cfbfbb78bde75628f5fdffb963 *CD1\13 Saved.shn
+11dc33d64df3acdc1b4138c354777b54 *CD1\14 What can I do for you.shn
+abc5c55a8d7199e3b0695472a50ce6fa *CD1\1980-04-17 Toronto, Ontario, Canada d1.md5
+7317dd17b2a61ae3a2fd6ccfd27bf723 *CD2\01 In the garden.shn
+f252f67d1f25034b34adb4e8af586104 *CD2\02 Are you ready.shn
+43b9ec2f6ca9aae84ca511b691c6ee09 *CD2\03 Pressing on.shn
+0aa20d3f8d87946649ffdb56dce82e7b *CD2\1980-04-17 Toronto, Ontario, Canada d2.md5
+8a703120a3a289a8eb133af307d6cc26 *Info\1980-04-17 Massey Hall, Toronto, Ontario, Canada.doc
+279b933cde7e8f60d372023f2724adf0 *md5.txt
+===================
+===================
+===================
+=== shntool md5/hash for: bd80-04-17-c.flacf
+===================
+===================
+===================
+992db9283c3761240864de349b7a1343  [shntool]  CD1\01 Gotta serve somebody.shn
+59caa1e05f67626389b0f80ec487a7f7  [shntool]  CD1\02 I believe in you.shn
+cf041ddcd36602092474294ca66a155b  [shntool]  CD1\03 When you gonna wake up.shn
+7d8d30947d06b72c2fb3d5fca33db6f7  [shntool]  CD1\04 Ain't gonna go to hell for anybody.shn
+209285ba03efd59ae1edc55bdfadb942  [shntool]  CD1\05 Cover down, break through.shn
+70f65368375ef7f856027a6965736796  [shntool]  CD1\06 Precious angel.shn
+e28ef0bbe92aba74029acada89be7285  [shntool]  CD1\07 Man gave names to all the animals.shn
+9ebd85df9180b81b2cfa42c45ad7372b  [shntool]  CD1\08 Slow train.shn
+fc478362c9e5c02938d3644665e6b313  [shntool]  CD1\10 Do right to me baby (do unto others).shn
+2f6f16b469db8c8ccc01adfff529d8b0  [shntool]  CD1\11 Solid rock.shn
+a6ea22e3e4e01af60589b9a21e7b3a13  [shntool]  CD1\12 Saving grace.shn
+f09ccd1cd57e3d2687b484c470a290f4  [shntool]  CD1\13 Saved.shn
+0d2ec008c4340fdba65f06ef2e32f5f7  [shntool]  CD1\14 What can I do for you.shn
+dd7077ecb0e75afd80591b33d6e12251  [shntool]  CD2\01 In the garden.shn
+5770d425ddff77d68382e40927b9fa8b  [shntool]  CD2\02 Are you ready.shn
+8bae1d8a435cc1a5ba5b869e64c73ae9  [shntool]  CD2\03 Pressing on.shn
+===================
+===================
+===================
+=== shntool len for: bd80-04-17-c.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:51.18       72542780 B   ---   --   ---xx    shn  0.6629  01 Gotta serve somebody.shn
+     4:53.47       51795788 B   ---   --   ---xx    shn  0.6193  02 I believe in you.shn
+     5:38.27       59686748 B   ---   --   ---xx    shn  0.6724  03 When you gonna wake up.shn
+     5:22.06       56814956 B   ---   --   ---xx    shn  0.6368  04 Ain't gonna go to hell for anybody.shn
+     4:31.15       47839724 B   ---   --   ---xx    shn  0.6442  05 Cover down, break through.shn
+     5:50.14       61772972 B   ---   --   ---xx    shn  0.6433  06 Precious angel.shn
+     6:13.31       65870156 B   ---   --   ---xx    shn  0.5997  07 Man gave names to all the animals.shn
+     6:59.19       73956332 B   ---   --   ---xx    shn  0.6536  08 Slow train.shn
+     4:58.73       52738940 B   ---   --   ---xx    shn  0.6075  10 Do right to me baby (do unto others).shn
+     4:00.66       42491276 B   ---   --   ---xx    shn  0.6611  11 Solid rock.shn
+     4:35.63       48658220 B   ---   --   ---xx    shn  0.5961  12 Saving grace.shn
+     5:41.58       60288860 B   ---   --   ---xx    shn  0.6405  13 Saved.shn
+     6:14.12       66001868 B   ---   --   ---xx    shn  0.5946  14 What can I do for you.shn
+    71:50.74      760458620 B                            0.6337  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd80-04-17-c.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:18.25       77322044 B   ---   --   ---xx    shn  0.5941  01 In the garden.shn
+     6:46.35       71700764 B   ---   --   ---xx    shn  0.6119  02 Are you ready.shn
+     5:12.05       55048604 B   ---   --   ---xx    shn  0.6074  03 Pressing on.shn
+    19:16.65      204071412 B                            0.6039  (3 files)
+===================
+===================
+===================

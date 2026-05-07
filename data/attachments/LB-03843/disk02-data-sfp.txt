@@ -1,0 +1,6 @@
+f2b7ef3da091917b5ada8c18b2ad70e3  [shntool]  Bob Dylans - Track 01.flac
+41221c9a0169794f9ea289d713323c08  [shntool]  Bob Dylans - Track 02.flac
+3228c4509b6e25ee64495ddda2937104  [shntool]  Bob Dylans - Track 03.flac
+e797a11596bc1bd53742cb03057212f7  [shntool]  Bob Dylans - Track 04.flac
+f3aaa8079f80a296ca213d2d28f7c18c  [shntool]  Bob Dylans - Track 05.flac
+d4b6ea178e0778a95ee434d493372cd8  [shntool]  Bob Dylans - Track 06.flac

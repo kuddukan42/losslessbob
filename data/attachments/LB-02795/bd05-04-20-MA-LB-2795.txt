@@ -1,0 +1,10 @@
+Bob Dylan, 4/20/05, Verona, New York, Turning Stone Casino and Resort, Events Center, 2CDR
+
+LB-2795, (59min+38min), An M & A recording received as audio CDs > iTunes 4.7.1 > xACT 1.4b24, Encoded exactly from the audio CDs as received., Taper's notes:, MBHO603 > PS-2 > AD-20> D100; excellent sound [A-]; not much above 17k; not as warm as spyder9
+
+light static caused by clipping d1t6 3:3x, 4:4x and also a few more spots where gets loud on loud songs
+
+D1 58:46, 1. Intro 0.28, 2. The Wicked Messenger 3:53, 3. She Belongs To Me 5:19, 4. It's Alright, Ma (I'm Only Bleeding) 7:26, 5. Just Like A Woman 9:02, 6. Cold Irons Bound 5:20, 7. Desolation Row 13:09, 8. Stuck Inside Of Mobile With The Memphis Blues Again 8:52, 9. Man In The Long Black Coat 5:13, D2 37:18, 1. Cat's In The Well 5:06, 2. Ballad Of Hollis Brown (acoustic) 5:43, 3. You Ain't Goin' Nowhere 6:24, 4. Like A Rolling Stone 6:47 (cut at 6:45, dropout, 1 second gap)), 5. Just Like Tom Thumb's Blues 7:32, 6. All Along The Watchtower 5:43
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,88 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-31-off-master-Olav-ASM.flacf
+===================
+===================
+===================
+aa1988edfe606a0a540fce37a1e96a40 *Artwork and Info\1995-03-31 Bob Dylan Brixton Academy, London, England ASM.txt
+8b8f8a92813b22cdfc6e294edbb30271 *Artwork and Info\Back.jpg
+f2e9bc65d4c77947186cdc392369e498 *Artwork and Info\Front.jpg
+014ea879cd20caf9846c5f3a20de47bb *CD1\01 Crash on the levee (down in the flood).flac
+8d838f23c83d6065dc8a3e3839d56f48 *CD1\02 Señor (Tales of Yankee Power).flac
+1a0b3f1eafe528291146f7f8f81849c4 *CD1\03 All along the watchtower.flac
+faf81d09f716bfa266d9c8b36666f2c7 *CD1\04 I don't believe you (she acts like we never have met).flac
+417eb8ab2a5e6e53a883438840bd0cfd *CD1\05 Tombstone blues.flac
+02d99b92d39ec24c78e250e15fca368b *CD1\06 Shelter from the storm.flac
+46b2210ff764eb533b717a9f82ab00a1 *CD1\07 Mr. Tambourine Man.flac
+477263eed905d150e586f9b7337e18a4 *CD1\08 The lonesome death of Hattie Carroll.flac
+b6d5e7863dcfe9a4cb31d8850001102e *CD1\CD1.ffp
+ed9e79e0b4f4fcd79778014c3d264791 *CD2\09 It's all over now, baby blue.flac
+5a1893757a59a2d964507d2f985b467a *CD2\10 Highway 61 revisited.flac
+d07f0ee3e29e810d06c85a6849085f53 *CD2\11 In the garden.flac
+ba66c5db78b3e0017b3aa7462c49dd2a *CD2\12 Joey.flac
+e8beeec9293205a829210c5ae6f87169 *CD2\13 Like a rolling stone.flac
+14c17791115d66119c89e43f195700c8 *CD2\14 My back pages.flac
+c8b126b45b955257d6713cbce132472e *CD2\15 I shall be released.flac
+f4a8ef659952f90f0a379dae5074dae9 *CD2\16 Rainy day women # 12 & 35.flac
+e108dea8a1ce1a48b92ef0fd49f91a8a *CD2\CD2.ffp
+===================
+===================
+===================
+=== ffp for: bd95-03-31-off-master-Olav-ASM.flacf
+===================
+===================
+===================
+CD1\01 Crash on the levee (down in the flood).flac:19149e3a677a49ca18f6deee7f17a7ba
+CD1\02 Señor (Tales of Yankee Power).flac:61a673c2f5ccac2ca5796b5869968dca
+CD1\03 All along the watchtower.flac:0a1b4a5bc7ce437fc983fa732b5535bc
+CD1\04 I don't believe you (she acts like we never have met).flac:0e27182baba321436e966fab59d13d80
+CD1\05 Tombstone blues.flac:98609b30f4107772cb59053d4e38233c
+CD1\06 Shelter from the storm.flac:ad3846838872985962fca34a2eba08df
+CD1\07 Mr. Tambourine Man.flac:287da04d8f9facedd0902fc7beda6c84
+CD1\08 The lonesome death of Hattie Carroll.flac:c5debf3f57ec22b0176a0ab8fc200aa4
+CD2\09 It's all over now, baby blue.flac:676ed6487b6a8f14f8bde01e86998aa8
+CD2\10 Highway 61 revisited.flac:25195872e482c2b5e61e8e777fe6b830
+CD2\11 In the garden.flac:2c7288ef206dc2ad06f5081e2bfcaa29
+CD2\12 Joey.flac:60e7aec49c47474f3a3828ff0ebae8d1
+CD2\13 Like a rolling stone.flac:88bcc122ce3adde5da99ce373d611a6e
+CD2\14 My back pages.flac:9c4ac44d00d5ef3c2b85c8e5537d4586
+CD2\15 I shall be released.flac:5267b152c31ee4597d340773f7fefebc
+CD2\16 Rainy day women # 12 & 35.flac:d204ff4926ddcec2a66279c284515f8b
+===================
+===================
+===================
+=== shntool len for: bd95-03-31-off-master-Olav-ASM.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.41       55309676 B   ---   --   ---xx   flac  0.7438  01 Crash on the levee (down in the flood).flac
+     5:15.28       55631900 B   ---   --   ---xx   flac  0.7023  02 Señor (Tales of Yankee Power).flac
+     6:03.71       64200236 B   ---   --   ---xx   flac  0.7401  03 All along the watchtower.flac
+     6:28.36       68527916 B   ---   --   ---xx   flac  0.6939  04 I don't believe you (she acts like we never have met).flac
+     7:55.72       83959388 B   ---   --   ---xx   flac  0.7425  05 Tombstone blues.flac
+     6:42.39       71004572 B   ---   --   ---xx   flac  0.6559  06 Shelter from the storm.flac
+     6:45.62       71587868 B   ---   --   ---xx   flac  0.5648  07 Mr. Tambourine Man.flac
+     6:40.73       70731740 B   ---   --   ---xx   flac  0.5775  08 The lonesome death of Hattie Carroll.flac
+    51:06.47      540953296 B                            0.6756  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd95-03-31-off-master-Olav-ASM.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:01.37       84935468 B   ---   --   ---xx   flac  0.5713  09 It's all over now, baby blue.flac
+     6:35.71       69845036 B   ---   --   ---xx   flac  0.7507  10 Highway 61 revisited.flac
+     8:20.34       88280012 B   ---   --   ---xx   flac  0.7071  11 In the garden.flac
+     9:56.02      105138980 B   -b-   --   ---xx   flac  0.7238  12 Joey.flac
+     7:40.34       81224012 B   ---   --   ---xx   flac  0.7113  13 Like a rolling stone.flac
+     7:25.58       78634460 B   ---   --   ---xx   flac  0.6519  14 My back pages.flac
+     4:36.07       48702908 B   ---   --   ---xx   flac  0.7305  15 I shall be released.flac
+     4:21.01       46042796 B   ---   --   ---xx   flac  0.7444  16 Rainy day women # 12 & 35.flac
+    56:57.19      602803672 B                            0.6940  (8 files)
+===================
+===================
+===================

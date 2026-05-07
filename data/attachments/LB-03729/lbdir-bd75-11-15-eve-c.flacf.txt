@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-15-eve-c.flacf 
+=================== 
+=================== 
+=================== 
+6758787dc32ac18ecb6e8f73de422bf9  111575evening.txt
+54ae9bac01956a572c0062df1a4ab46b  bd75-11-15-eve-c-LB-3729.txt
+ff86df0f02e891dc512459f4fbf4fa3d  disc 1\Track 01.flac
+5b773415ed92829bd704606238f16076  disc 1\Track 02.flac
+ad013d51ac085b1c8225291bc0b9e8f1  disc 1\Track 03.flac
+dbd6a722a52b5b30b05affef1c9aa3f7  disc 1\Track 04.flac
+3841daba288098240d80acae7ea6700f  disc 1\Track 05.flac
+ba3dd5f9e3dd5b8ab3f2dff0bf0f2dfe  disc 1\Track 06.flac
+fd31259e854d221820a29b013e2011b5  disc 1\Track 07.flac
+412fdf03dacbdbee9b38f4f01bfa3a6f  disc 1\Track 08.flac
+581d947abf4cc87725340ef2e170efa0  disc 1\Track 09.flac
+681d52e31cd32c9ccbe94b6f377fc225  disc 1\Track 10.flac
+cffb51efbeba5b21c57fec7cf084ed81  disc 1\Track 11.flac
+32f9fb9950c11f72d86962bb05ec24b3  disc 1\Track 12.flac
+92c3cd75454d1cc2f0333932abe0e64e  disc 2\Track 01.flac
+d9929b36d6369bfb60beb9cddef2f642  disc 2\Track 02.flac
+f714869ae45a315e1e42e375d6bc05f1  disc 2\Track 03.flac
+880cb22842750c511d3d0ec708bc7ad1  disc 2\Track 04.flac
+c9af6790f1b714eec70a06ba3b122499  disc 2\Track 05.flac
+3b2f71671585a5f98cebe296e11bf521  disc 2\Track 06.flac
+39bace6cac60db5a296c9b7f11ade80a  disc 2\Track 07.flac
+d8a10acaea06e6dca64a7386d68d0bc6  disc 2\Track 08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-15-eve-c.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+Track 01.flac:daebf55ae99dc5fd6a9f10e55fbc5ae2
+Track 02.flac:cc173413c0c70008e326c8ec6809a4b5
+Track 03.flac:6e83921b4baecd9266f026671a749766
+Track 04.flac:8fbdb3962527bcdab52858d8098a58bc
+Track 05.flac:535b2c5f019d00869c40a4cc23450bec
+Track 06.flac:27939950b6624beb05974bd8ae0d7a47
+Track 07.flac:7317b23ab59debf59e70698ae6715b48
+Track 08.flac:f67e360f5be9a6eb83e1536f51b3cc05
+Track 09.flac:fa47b57fef16e927614af2d9ade527bc
+Track 10.flac:c239ada56c403fc51617ec20122d6151
+Track 11.flac:65fef42cdbb6723d4892dd6a41133369
+Track 12.flac:58ceb5e7e56ac209b52941dbb7e2b40b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-15-eve-c.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+Track 01.flac:1ab3e7863704e7a828fa5b2ded3d4dfa
+Track 02.flac:25e4d22520df947df8d91a45fcb830c8
+Track 03.flac:7f84bd297ece0a3fdbfb970629dd884f
+Track 04.flac:9362db20d9459bdefa11733d2946eea0
+Track 05.flac:c1c9eba45fe19eca45b9893a688fa707
+Track 06.flac:cffa7741b102d898e8fc3dd45c912762
+Track 07.flac:e6f471fe5ed414c3ef53f556be7ae87a
+Track 08.flac:58db5e8aec16e6c878ae9b720ddc3be8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-15-eve-c.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.69       43027532 B   ---   --   ---xx   flac  0.5763  Track 01.flac
+     5:31.31       58461356 B   ---   --   ---xx   flac  0.5839  Track 02.flac
+     6:25.59       68052812 B   ---   --   ---xx   flac  0.5788  Track 03.flac
+     3:21.35       35538764 B   ---   --   ---xx   flac  0.5838  Track 04.flac
+     5:13.42       55312028 B   ---   --   ---xx   flac  0.5840  Track 05.flac
+     5:27.68       57842780 B   ---   --   ---xx   flac  0.5901  Track 06.flac
+     2:43.56       28884956 B   ---   --   ---xx   flac  0.5783  Track 07.flac
+     2:52.57       30474908 B   ---   --   ---xx   flac  0.5775  Track 08.flac
+     2:40.50       28341644 B   ---   --   ---xx   flac  0.5751  Track 09.flac
+     2:44.53       29054300 B   ---   --   ---xx   flac  0.5780  Track 10.flac
+     4:03.06       42879356 B   ---   --   ---xx   flac  0.5784  Track 11.flac
+     2:32.36       26897516 B   ---   --   ---xx   flac  0.5968  Track 12.flac
+    47:41.37      504767952 B                            0.5820  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-15-eve-c.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:25.29       57398252 B   ---   --   ---xx   flac  0.6142  Track 01.flac
+     4:05.28       43283900 B   ---   --   ---xx   flac  0.6160  Track 02.flac
+     8:04.45       85483484 B   ---   --   ---xx   flac  0.6165  Track 03.flac
+     3:46.41       39962876 B   ---   --   ---xx   flac  0.6199  Track 04.flac
+     4:39.70       49380284 B   ---   --   ---xx   flac  0.6142  Track 05.flac
+     4:20.00       45864044 B   ---   --   ---xx   flac  0.6169  Track 06.flac
+     4:56.14       52247372 B   ---   --   ---xx   flac  0.6257  Track 07.flac
+     4:03.26       42926396 B   ---   --   ---xx   flac  0.6169  Track 08.flac
+    39:21.28      416546608 B                            0.6174  (8 files)
+=================== 
+=================== 
+=================== 

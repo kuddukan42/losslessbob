@@ -1,0 +1,69 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-10-thankyou-evrybody.flacf 
+=================== 
+=================== 
+=================== 
+00e300643b05cd873b706f7daf0782ed  bd90-10-thankyou-evrybody-d1t01.flac
+8a6570e0b20968be0b65a6bebf2cacd1  bd90-10-thankyou-evrybody-d1t02.flac
+3e60c01722210c39ff617d151c1e1cc5  bd90-10-thankyou-evrybody-d1t03.flac
+15229ec34ec601f1a2e82fff59d0d7fb  bd90-10-thankyou-evrybody-d1t04.flac
+924445f485d17defe392dde827764156  bd90-10-thankyou-evrybody-d1t05.flac
+d2cfa68d465a3b3f60d14b6b14f60812  bd90-10-thankyou-evrybody-d1t06.flac
+c49d8b53a4ad5961e7128bad0c8d9b92  bd90-10-thankyou-evrybody-d1t07.flac
+1f9b15325500ce17acb80e66de09682a  bd90-10-thankyou-evrybody-d1t08.flac
+4cb8dfdee4d711afa7ddd8e1c4b01e26  bd90-10-thankyou-evrybody-d1t09.flac
+b4f2b07ee1de60d861f572278476cead  bd90-10-thankyou-evrybody-d1t10.flac
+c3e0924985a3ed66831ba2c67da60710  bd90-10-thankyou-evrybody-d1t11.flac
+704b6ea4bac1050bc12e03f96a235705  bd90-10-thankyou-evrybody-d1t12.flac
+e971d0b4f368687b921e706ed9eb8c46  bd90-10-thankyou-evrybody-d1t13.flac
+a363c79105f00a3ae0aead23e0e2a4c5  bd90-10-thankyou-evrybody-d1t14.flac
+067e6e6297bf0f9b337b6f37c3d59069  bd90-10-thankyou-evrybody.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-10-thankyou-evrybody.flacf 
+=================== 
+=================== 
+=================== 
+bd90-10-thankyou-evrybody-d1t01.flac:aa6ba67327bbef061ca62fb8a3ecc2c9
+bd90-10-thankyou-evrybody-d1t02.flac:fb46136f307ce8401fa74f307f325781
+bd90-10-thankyou-evrybody-d1t03.flac:73767495aa3680336574c63e0184da9d
+bd90-10-thankyou-evrybody-d1t04.flac:1ee03e3d4c3a61a882f32961ba4aee8a
+bd90-10-thankyou-evrybody-d1t05.flac:73a33bc5106a127ab11ee231136cadb7
+bd90-10-thankyou-evrybody-d1t06.flac:aa3c956ef8ffb702edb4869fdc6310a1
+bd90-10-thankyou-evrybody-d1t07.flac:2e22dc6a8a937f75fa2181587b2d621d
+bd90-10-thankyou-evrybody-d1t08.flac:2ce83c06e9d63dd5ca8e27889a251ab8
+bd90-10-thankyou-evrybody-d1t09.flac:bdd4d6e47c0259810c4ebd375bdeaf82
+bd90-10-thankyou-evrybody-d1t10.flac:fe8431cc72ba840d10323761de0657bc
+bd90-10-thankyou-evrybody-d1t11.flac:642f8bd44b7cc25da79a408b4f10ae13
+bd90-10-thankyou-evrybody-d1t12.flac:475a712569899d76a85af8eeb9ab0049
+bd90-10-thankyou-evrybody-d1t13.flac:fb3dc2d35745fb036385e324e0dbb77b
+bd90-10-thankyou-evrybody-d1t14.flac:cdd5bf8b337d4f550e0b294f6a82dca5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-10-thankyou-evrybody.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.52       57099548 B   ---   --   ---xx   flac  0.5398  bd90-10-thankyou-evrybody-d1t01.flac
+     4:26.48       47035340 B   ---   --   ---xx   flac  0.5223  bd90-10-thankyou-evrybody-d1t02.flac
+     4:40.05       49403804 B   ---   --   ---xx   flac  0.5151  bd90-10-thankyou-evrybody-d1t03.flac
+     4:21.67       46198028 B   ---   --   ---xx   flac  0.5269  bd90-10-thankyou-evrybody-d1t04.flac
+     3:22.05       35644604 B   ---   --   ---xx   flac  0.5414  bd90-10-thankyou-evrybody-d1t05.flac
+     5:13.18       55255580 B   ---   --   ---xx   flac  0.5388  bd90-10-thankyou-evrybody-d1t06.flac
+     8:20.45       88305884 B   ---   --   ---xx   flac  0.5392  bd90-10-thankyou-evrybody-d1t07.flac
+     4:24.12       46597868 B   ---   --   ---xx   flac  0.5065  bd90-10-thankyou-evrybody-d1t08.flac
+     4:55.70       52202684 B   ---   --   ---xx   flac  0.5280  bd90-10-thankyou-evrybody-d1t09.flac
+     3:40.58       38944460 B   ---   --   ---xx   flac  0.5202  bd90-10-thankyou-evrybody-d1t10.flac
+     3:43.02       39341948 B   ---   --   ---xx   flac  0.5408  bd90-10-thankyou-evrybody-d1t11.flac
+     5:19.25       56330444 B   ---   --   ---xx   flac  0.5442  bd90-10-thankyou-evrybody-d1t12.flac
+     4:13.15       44664524 B   ---   --   ---xx   flac  0.5484  bd90-10-thankyou-evrybody-d1t13.flac
+     5:31.13       58419020 B   ---   --   ---xx   flac  0.5217  bd90-10-thankyou-evrybody-d1t14.flac
+    67:35.60      715443736 B                            0.5314  (14 files)
+=================== 
+=================== 
+=================== 

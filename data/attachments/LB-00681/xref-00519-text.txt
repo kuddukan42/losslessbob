@@ -1,0 +1,66 @@
+===================
+===================
+===================
+=== bd1991-08-14_FM.md5
+===================
+===================
+===================
+e57c31b0b784450e808476a73add6774 *bd1991-08-14_FM_d1t01.flac
+0c8292cae5a786decf08dd941583002b *bd1991-08-14_FM_info.TXT
+4787420e83fb64b2806c44e5209c1399 *bd1991-08-14_FM_d1t02.flac
+89fec7430d9a61e372cfd724315f0c93 *bd1991-08-14_FM_d1t03.flac
+ab82caf87f04f20aab116e3673e7942b *bd1991-08-14_FM_d1t04.flac
+6044b4e33674ff271062ff17b00a2f93 *bd1991-08-14_FM_d1t05.flac
+3c4bedf1b4b7bc47ddb119e8e8ea1814 *bd1991-08-14_FM_d1t06.flac
+ea5f9e7c1d57d986e3438b6246e68eb3 *bd1991-08-14_FM_d1t07.flac
+da3726d93a0c756459046c3795d22c42 *bd1991-08-14_FM_d1t08.flac
+ccceca2cc4ff3c1b23a099a894a82979 *bd1991-08-14_FM_d1t09.flac
+e988309d299b09b161d20c886e5079e1 *bd1991-08-14_FM_d1t10.flac
+73337e0af05f034a95f34127982eff41 *bd1991-08-14_FM_d2t01.flac
+81de9e9f8bc98340f9aa7f1c5366bb3f *bd1991-08-14_FM_d2t02.flac
+99658194a25423b01db47976c82aecc9 *bd1991-08-14_FM_d2t03.flac
+422dde39887451e463e6e03000eb5282 *bd1991-08-14_FM_d2t04.flac
+aa950c5fc3fef7af3827e8c82444f40a *bd1991-08-14_FM_d2t05.flac
+7e3274194c387241a43be61641973fd9 *bd1991-08-14_FM_d2t06.flac
+1102998991e533a5503ee4ea77015851 *bd1991-08-14_FM_d2t07.flac
+20e5b846fa89bc3a01b402d7085e2413 *bd1991-08-14_FM_d2t08.flac
+===================
+===================
+===================
+=== bd1991-08-14_FM_info.TXT
+===================
+===================
+===================
+Bob Dylan, 
+August 14, 1991
+Gigantinho
+Porto Alegre
+
+radio broadcast, has announcer talking over music many times
+drop/cut d1t3 2:52, blip d2t3 4:20, d2t4 0:21, 2:15, d2t5 3:39
+has small gaps after each track which sometimes causes click [all these were removed for this FLAC set]
+
+CD 1 
+01 New Morning 
+02 Lay Lady Lay 
+03 All Along The Watchtower 
+04 I'll Remember You 
+05 Gotta Serve Somebody 
+06 Wiggle Wiggle  
+07 I Dont Believe You 
+08 It Takes A Lot To Laugh, It Takes A Train To Cry 
+09 Trail Of The Buffalo 
+10 Blowin' In The Wind 
+
+CD 2 
+01 Don't Think Twice, It's All Right 
+02 Knockin' On Heaven's Door 
+03 Positively 4th Street 
+04 Everything Is Broken 
+05 I Believe In You 
+06 Highway 61 Revisited 
+07 The Times They Are A-Changin' 
+08 Ballad Of A Thin Man 
+===================
+===================
+===================

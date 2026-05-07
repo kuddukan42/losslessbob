@@ -1,0 +1,20 @@
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:58.02       52571948 B   ---   --   ---xx   flac  0.6293  bobdylan1996-11-23.lmpp.d1t01.flac
+     5:49.40       61657724 B   ---   --   ---xx   flac  0.5918  bobdylan1996-11-23.lmpp.d1t02.flac
+     6:13.71       65964236 B   ---   --   ---xx   flac  0.6248  bobdylan1996-11-23.lmpp.d1t03.flac
+     7:27.37       78937868 B   ---   --   ---xx   flac  0.5798  bobdylan1996-11-23.lmpp.d1t04.flac
+     6:23.63       67709420 B   ---   --   ---xx   flac  0.6072  bobdylan1996-11-23.lmpp.d1t05.flac
+     7:32.62       79878668 B   ---   --   ---xx   flac  0.6331  bobdylan1996-11-23.lmpp.d1t06.flac
+     7:16.24       76966892 B   ---   --   ---xx   flac  0.6206  bobdylan1996-11-23.lmpp.d1t07.flac
+     5:06.44       54081932 B   ---   --   ---xx   flac  0.5850  bobdylan1996-11-23.lmpp.d1t08.flac
+     6:18.55       66808604 B   ---   --   ---xx   flac  0.5599  bobdylan1996-11-23.lmpp.d1t09.flac
+     5:32.06       58578956 B   ---   --   ---xx   flac  0.5922  bobdylan1996-11-23.lmpp.d2t01.flac
+     7:10.02       75856748 B   ---   --   ---xx   flac  0.5799  bobdylan1996-11-23.lmpp.d2t02.flac
+     7:52.01       83263196 B   ---   --   ---xx   flac  0.6302  bobdylan1996-11-23.lmpp.d2t03.flac
+     9:21.14       98993372 B   ---   --   ---xx   flac  0.6037  bobdylan1996-11-23.lmpp.d2t04.flac
+     8:40.39       91819772 B   ---   --   ---xx   flac  0.6210  bobdylan1996-11-23.lmpp.d2t05.flac
+     8:34.32       90744908 B   ---   --   ---xx   flac  0.6103  bobdylan1996-11-23.lmpp.d2t06.flac
+   104:17.42     1103834244 B                            0.6055  (15 files)

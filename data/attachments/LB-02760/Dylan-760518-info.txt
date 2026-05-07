@@ -1,0 +1,103 @@
+Bob Dylan
+May 18, 1976
+Oklahoma City, State Fair Arena
+
+SBD > ? > CD > EAC > WAV > Soundforge 6.0 > CD Wave > CD > EAC > WAV > FLAC
+* AUD > ? > DAT > Soundforge 6.0 > CD Wave > CD > EAC > WAV > FLAC
+see notes below
+
+CD 1 [53:51]
+
+01 Lindy Lou (?) - T-Bone Burnett
+02 Mr.Tambourine Man *
+03 Simple Twist Of Fate *
+04 Vincent Van Gogh *
+05 Maggie's Farm
+06 One Too Many Mornings *
+07 Mozambique
+08 Isis
+09 Turn Turn Turn - Roger McGuinn
+10 Lover Of The Bayou - Roger McGuinn
+11 Blowin' In The Wind *
+12 Railroad Boy *
+13 Deportees *
+
+CD 2 [72:00]
+
+01 I Pity The Poor Immigrant
+02 Shelter From The Storm
+03 Oh, Sister
+04 Leopard-Skin Pill-Box Hat *
+05 You're A Big Girl Now *
+06 You're Gonna Make Me Lonesome When You Go
+07 Lay, Lady, Lay
+08 Silver Mantis - T-Bone Burnett *
+09 I Want You
+10 Going, Going Gone
+11 Idiot Wind *
+12 Knockin' On Heaven's Door *
+13 Gotta Travel On *
+
+
+further info:
+http://www.bjorner.com/DSN03275%201976%20Rolling%20Thunder%20Revue%20II.htm#DSN03450
+
+
+Notes:
+d1t06 crossfade from AUD to SBD @ 0:15
+d1t06 crossfade from SBD to AUD @ 0:54
+d2t11 small glitch @ 2:24
+d2t13 incomplete start
+
+I did not harm the sound of the recordings in any way other than trying to pitch correct the show and performing the necessary
+edits and crossfades between the two source recordings.
+
+The SBD recording of this show never circulated completely. The source CD I was given was described to me as taken from a
+first generation copy of the Reel or Cassette master. But although it is better than all versions I've had before, I seriously doubt
+this. Maybe someone comes up with a pristine copy ... let's hope for it.
+
+The AUD recording circulates more or less completely. The DAT I had was said to be low generation, 3rd at most, and the
+quality certainly seconds that statement. While the recording in itself is not the very best, there certainly ain't much generational loss.
+
+I haven't had any of the Bootleg CDs of this show at hand to compare the quality with. For checking I'll include a sample of the beginning
+of d1t06 One Too Many Mornings including the crossfades in a separate posting. That way you can listen to both AUD and SBD source 
+within one song. Volume adjustment between sources was somewhat tricky as the snare drum was way up in the mix of the board. 
+ 
+Musical highlights include a rare (for 1976) LSPBH, David Mansfield's wild steel on LLL and a short attempt at re-arranging Idiot Wind.
+
+Please keep this info file intact when distributing the music !
+As long as there's no commonly used sytem of identifiying Dylan shows (as e.g. Grateful Dead shows at archive.org) other than CEDAR,
+this is the best and easiest way at the moment to identify multiple versions of the same show.  Thank You.
+
+
+
+
+Track01.flac:45d41e9d3d420a797b700831f1c6f1d5
+Track02.flac:e72c538278742d62c7a2a74bce82d5e9
+Track03.flac:6a5614b3a5298ff7a48f7e5389092e33
+Track04.flac:3e165ed4cd2480108c62be4c7341de27
+Track05.flac:e172766de432315a4ee32dfb7bce3fa4
+Track06.flac:221d9ffb6e25ef7eef73d27490a90afb
+Track07.flac:69f7387a2aa94fb528496e8a1374002e
+Track08.flac:480b0fc0ead853525bb40504ab716777
+Track09.flac:6119f3296dafb034bd49d5eb93459336
+Track10.flac:317d4c36763d6eb54281fe6456953cd3
+Track11.flac:6d318d2fac55cd6ef6b89869f1021702
+Track12.flac:cf0047f270cdd9d5862999a741145712
+Track13.flac:5d8b8416765cda58057fc36f769a9af4
+
+
+Track13.flac:9deb0581c5a95bc093fda8348edf230a
+Track02.flac:2764843b54a2889f71e345105715af95
+Track03.flac:349fc998dd7b8f13a9ffae20ee90aa5a
+Track04.flac:b49a45d338ff9cb5fd698ae0fd5913ad
+Track05.flac:0723a1f6613da804e9d2e1209252cdae
+Track06.flac:21cdd1de4d8ee686f5d97a801e6e5f6c
+Track07.flac:4f32e5d0faddb78cffe19df8b16babe0
+Track08.flac:6deea09aa6bdacd36acd0ea868a5af3d
+Track09.flac:6e79324b05b872075c087a85c5c537d6
+Track10.flac:b9b22fe502c90a1310e5b52612598402
+Track11.flac:75e9106f0de623018783e96b69239e97
+Track12.flac:fc2dca517c477ade275995d1fc736228
+Track01.flac:1c45b522c93cf34dfec3bee46c1aa067
+

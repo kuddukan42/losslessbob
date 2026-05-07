@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-01-e.flacf 
+=================== 
+=================== 
+=================== 
+e1b53ea16eace39302f75d08c5d19f5f  Bob Dylan 1 Nov 2002 Rosemont IL.txt
+66b564129d0d83fa0f1d71c1362aa261  Bob Dylan 2002-11-01 Rosemont  Allstate Arena aud.md5
+c26ec3694bf973663ce696992a94de0b  flac1\01 Track01.flac
+1218439408eb2f8aa10c827f998e3c64  flac1\02 Track02.flac
+435031f5f1354878a12362698252c550  flac1\03 Track03.flac
+7b8c995273b12c301ef59421d4dd91ee  flac1\04 Track04.flac
+7327e225b5c42e06961ced23babe0b8c  flac1\05 Track05.flac
+f81baabaa9bfe690cadce598b80b115b  flac1\06 Track06.flac
+babb15b96bcb368bc47605ae2102e1b8  flac1\07 Track07.flac
+ad5975fc611ccf6084b8498c288c3d67  flac1\08 Track08.flac
+cd0364720f89f08504c0e4ed350ccfc6  flac1\09 Track09.flac
+699401579e06f09003435fd01fa86d46  flac1\10 Track10.flac
+4f74d45993b367c490a55fceff1887c5  flac1\11 Track11.flac
+64936506fd02ec80bd7defaebd459481  flac1\12 Track12.flac
+ddcd25ae79781cbd7a543159f15c0c24  flac1\13 Track13.flac
+a726b2758147af70374ee748911c5771  flac1\14 Track14.flac
+3bf0a29e5b21fe6ef742b8549849f309  flac1\Unknown Artist - Unknown Title.log
+a53232abcdcd5ee269a821382638404a  flac2\01 Track01.flac
+5bcb554549c7ff6ae1f2652226602308  flac2\02 Track02.flac
+261cc9c3b36f105232381bc53089508c  flac2\03 Track03.flac
+2a093ee1a64db2cd43613a36c2b65b44  flac2\04 Track04.flac
+b6ee9a5a017a62c1f9d14ae38b3b1509  flac2\05 Track05.flac
+48939efba0b895f8a82e7e807e359599  flac2\06 Track06.flac
+d0079281e1a757bfd356cd0270adcc6a  flac2\07 Track07.flac
+339b136c2e85dd704bfeec2b68194152  flac2\Unknown Artist - Unknown Title.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-01-e.flacf\flac1 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:edceadbd49e0057d8a70deb50df7446b
+02 Track02.flac:38d175f09f77158a0f3ad49dff768199
+03 Track03.flac:46b4d0e47d21addc52467c2195bd16ad
+04 Track04.flac:0a18341422f00f0ad7ebb91889cb8d4c
+05 Track05.flac:f52d98fd85879d7f796f21ff6ab71cf7
+06 Track06.flac:7bec3c0fe8b9b4b0e4f3a3b388d6c694
+07 Track07.flac:5ad1a69202fe39296026c55fc56c458c
+08 Track08.flac:3773ca1fd2ee01d339592e1486dc7b3c
+09 Track09.flac:81aef6e15e50f5c2916f89d64dcb8b13
+10 Track10.flac:79423db91de523d0cbd0faa15a0f5912
+11 Track11.flac:9b8dfa43b018c90bf8206fcaaf40e837
+12 Track12.flac:fbc28f8f1fdb1580f627152423eded04
+13 Track13.flac:8db3ba01223231fa63cc0b5605e183ab
+14 Track14.flac:7fb8035836ebcd054d9062d86a2adc28
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-11-01-e.flacf\flac2 
+=================== 
+=================== 
+=================== 
+01 Track01.flac:8e7078cd3a53932d29b8265bdd4c04ea
+02 Track02.flac:3a82d233b1e2e5396798249a14fa18b4
+03 Track03.flac:ad1e8ceb5daa0deba16ea8f0c9080193
+04 Track04.flac:22ca2a43785d8accce17666860f31da4
+05 Track05.flac:159285507fc0e975dbe6fd194cfded5e
+06 Track06.flac:91106df74010d62cebe8ff450caa1df7
+07 Track07.flac:b69970b25e8c4659c4ad009b2e48cc2a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-01-e.flacf\flac1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:34.32       16656908 B   ---   --   ---xx   flac  0.5195  01 Track01.flac
+     5:20.20       56495084 B   ---   --   ---xx   flac  0.6325  02 Track02.flac
+     3:38.47       38565788 B   ---   --   ---xx   flac  0.6083  03 Track03.flac
+     6:46.41       71714876 B   ---   --   ---xx   flac  0.5960  04 Track04.flac
+     4:05.07       43234508 B   ---   --   ---xx   flac  0.5365  05 Track05.flac
+     7:10.27       75915548 B   ---   --   ---xx   flac  0.5959  06 Track06.flac
+     4:02.23       42742940 B   ---   --   ---xx   flac  0.6714  07 Track07.flac
+     5:23.28       57043100 B   ---   --   ---xx   flac  0.5709  08 Track08.flac
+     8:10.31       86508956 B   ---   --   ---xx   flac  0.6251  09 Track09.flac
+     5:19.31       56344556 B   ---   --   ---xx   flac  0.5776  10 Track10.flac
+     6:34.01       69503996 B   ---   --   ---xx   flac  0.6307  11 Track11.flac
+     7:43.21       81722636 B   ---   --   ---xx   flac  0.5773  12 Track12.flac
+     4:14.55       44935004 B   ---   --   ---xx   flac  0.6707  13 Track13.flac
+     7:17.40       77180924 B   ---   --   ---xx   flac  0.6603  14 Track14.flac
+    77:20.29      818564824 B                            0.6096  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-01-e.flacf\flac2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:35.05       69689804 B   ---   --   ---xx   flac  0.5788  01 Track01.flac
+     7:26.65       78827324 B   ---   --   ---xx   flac  0.6233  02 Track02.flac
+     9:46.30      103441004 B   ---   --   ---xx   flac  0.4944  03 Track03.flac
+     7:52.44       83364332 B   ---   --   ---xx   flac  0.6720  04 Track04.flac
+     3:44.09       39534812 B   ---   --   ---xx   flac  0.5683  05 Track05.flac
+     5:27.57       57816908 B   ---   --   ---xx   flac  0.6199  06 Track06.flac
+     6:27.12       68295068 B   ---   --   ---xx   flac  0.6700  07 Track07.flac
+    47:19.72      500969252 B                            0.6002  (7 files)
+=================== 
+=================== 
+=================== 

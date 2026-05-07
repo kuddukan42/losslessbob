@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-21-b.flacf 
+=================== 
+=================== 
+=================== 
+6eaa655e0c013902a62dd7d7fa9d9bbb  md5sum.md5
+bc1002705bbea98b42ac81cfd2e99f7a  Piste  1.aif.shn
+7e3f970c4e21dfb539f704dba2953307  Piste  2.aif.shn
+041774b9dc14dd90c47e632d77e56c73  Piste  3.aif.shn
+268e07c934286e0e8f1f52f482b48c17  Piste  4.aif.shn
+a84a00612407a7da123190722dd3ec2e  Piste  5.aif.shn
+9919ee8135198adf8f78fa9370b254a6  Piste  6.aif.shn
+1f93e7143a39f0228cd5ccbdf6abde5c  Piste  7.aif.shn
+a401fc141638250961720a14bc69fb56  Piste  8.aif.shn
+edf96252322675f78efb0ef56d8ab3cb  Piste  9.aif.shn
+19b85f934ce3fa77221933bf87e48d7f  Piste 10.aif.shn
+2c422134154fa95856c5d4e1c13ec799  Piste 11.aif.shn
+dd965aa3857bf506dc36329343f0d191  Piste 12.aif.shn
+9384561165e17075e19f6de6318f6842  Piste 13.aif.shn
+b47cd813e2155f1cc0149f0f2e289d54  Piste 14.aif.shn
+df65adeb0512849f96ec2ef4279bd67c  Piste 15.aif.shn
+f93444f73913f4aba06b5c8b9707ea68  Piste 16.aif.shn
+4efa52ee8cc044bbe3bd2f8c0014391e  setlist.txt
+dc8eea37cb448a79e0cb2d7b615f504c  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-07-21-b.flacf 
+=================== 
+=================== 
+=================== 
+db6662f7271aa46549fd7aa38bf078c9  [shntool]  piste_10.aif.wav
+adbe8b21f935f5030eb3d43c710196ae  [shntool]  piste_11.aif.wav
+cbc46a4ecc445a92537def9ac2fa1def  [shntool]  piste_12.aif.wav
+568fa005efb0728df242f208a5e99db3  [shntool]  piste_13.aif.wav
+e1bc965e3a608cf841ba3a94baab4642  [shntool]  piste_14.aif.wav
+35d9d2e7549acafa5abff5567227d348  [shntool]  piste_15.aif.wav
+5aebe089e283cdc1df13e82f2e956c59  [shntool]  piste_16.aif.wav
+9f27addc5cfb27d6f650ee36a270e4fa  [shntool]  piste__1.aif.wav
+d34e6e709d76c9cffc8c5b639f216872  [shntool]  piste__2.aif.wav
+ffe5f6408f5c023d40e1e81c7fa5a9c2  [shntool]  piste__3.aif.wav
+e313d004e1e44b4fb0a4a95ae69e14c8  [shntool]  piste__4.aif.wav
+ffffbf9a728447c40e174847c71d51d8  [shntool]  piste__5.aif.wav
+1f9d7ba9d691f5cccac36d0a31582560  [shntool]  piste__6.aif.wav
+3babc790d8cab678c529ec999bd26ab4  [shntool]  piste__7.aif.wav
+7370773079b39a41d16ab01172fd5b15  [shntool]  piste__8.aif.wav
+dec00661b1462179473801398661f6bc  [shntool]  piste__9.aif.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-21-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.59       42122012 B   ---   --   ---xx    shn  0.7109  Piste  1.aif.shn
+     3:12.38       33958220 B   ---   --   ---xx    shn  0.6511  Piste  2.aif.shn
+     5:26.06       57520556 B   ---   --   ---xx    shn  0.7120  Piste  3.aif.shn
+     5:19.56       56403356 B   ---   --   ---xx    shn  0.7162  Piste  4.aif.shn
+     5:21.65       56777324 B   ---   --   ---xx    shn  0.7262  Piste  5.aif.shn
+     4:53.51       51805196 B   ---   --   ---xx    shn  0.7349  Piste  6.aif.shn
+     4:11.74       44450492 B   ---   --   ---xx    shn  0.6548  Piste  7.aif.shn
+     5:32.23       58618940 B   ---   --   ---xx    shn  0.6628  Piste  8.aif.shn
+     2:59.68       31735580 B   ---   --   ---xx    shn  0.6183  Piste  9.aif.shn
+     5:47.61       61354316 B   ---   --   ---xx    shn  0.6482  Piste 10.aif.shn
+     3:57.69       41969132 B   ---   --   ---xx    shn  0.7458  Piste 11.aif.shn
+     4:21.34       46120412 B   ---   --   ---xx    shn  0.7039  Piste 12.aif.shn
+     4:02.47       42799388 B   ---   --   ---xx    shn  0.7148  Piste 13.aif.shn
+     6:34.20       69548684 B   ---   --   ---xx    shn  0.7570  Piste 14.aif.shn
+     7:46.51       82322396 B   ---   --   ---xx    shn  0.6457  Piste 15.aif.shn
+     5:42.47       60439388 B   ---   --   ---xx    shn  0.7223  Piste 16.aif.shn
+    79:10.19      837945392 B                            0.6968  (16 files)
+=================== 
+=================== 
+=================== 

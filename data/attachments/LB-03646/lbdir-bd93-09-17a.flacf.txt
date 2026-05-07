@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-17a.flacf 
+=================== 
+=================== 
+=================== 
+685f6b7b51d3c441096ed1094082087d  bd93-09-17a-LB-3646.txt
+46b6b27fc03074cf173b625ac4176294  Bob Dylan  Charlotte 17 sept 1993.txt
+14a547da6c56dfcb25a4e51ca9912d78  Charlotte_170993.Jpg
+27d7032c1e50083babd7847efaaf7923  D1\BD17sept1993D1T01.flac
+e44a73ce93b33224ad0169663b656128  D1\BD17sept1993D1T02.flac
+874ff0531bb0dae3149333621649293b  D1\BD17sept1993D1T03.flac
+6e3b34a77b8afb7584129ba396ce1990  D1\BD17sept1993D1T04.flac
+1c22a1e0823808c6dcb99b6a963649a4  D1\BD17sept1993D1T05.flac
+99be3204aa177a994ffdf2c73d741343  D1\BD17sept1993D1T06.flac
+abdcba9fc12c11ffabe1345991867979  D1\BD17sept1993D1T07.flac
+eb303b002ed1ba8eb10a8115674207ea  D1\BD17sept1993D1T08.flac
+78fc9805002803f1f9c2b1f1ed99401f  D1\BD17sept1993D1T09.flac
+2269220b1a6ae3cd186a82891e8ca56e  D2\BD17sept1993D2T01.flac
+b19683099790d6e7df938f6d3ed8f6f5  D2\BD17sept1993D2T02.flac
+f316aef08e9db8e148d977acee679b56  D2\BD17sept1993D2T03.flac
+2bddd6cb92ec14a344caab6c3ba60590  fingerprint.ffpD1.txt
+9eafce1d9c2ed0d2c7a6dffcc24df0d8  fingerprint.ffpD2.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-17a.flacf\D1 
+=================== 
+=================== 
+=================== 
+BD17sept1993D1T01.flac:9a12fa6bac873135660ee18706e5af97
+BD17sept1993D1T02.flac:07e328edb58c5c43eb58d32656d81928
+BD17sept1993D1T03.flac:2d3667a0c906d52006ec99297f2ad253
+BD17sept1993D1T04.flac:6367e0e9d3a6ef61a986b7a147b19177
+BD17sept1993D1T05.flac:4f4fac8c21a7efc82bee161c8fcc623c
+BD17sept1993D1T06.flac:0585221eb75ac813bc1120379ceace36
+BD17sept1993D1T07.flac:7f493fb0a325fe7f58697fb352be1466
+BD17sept1993D1T08.flac:7e051379574b2f1dd7cb9596a0e2eec9
+BD17sept1993D1T09.flac:6fce2a06cefe1dbd2065053d34770585
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-09-17a.flacf\D2 
+=================== 
+=================== 
+=================== 
+BD17sept1993D2T01.flac:9cdd9844eedb1ebeb4bb5cba2162a2cf
+BD17sept1993D2T02.flac:30734750b80bf091a48985d95348878b
+BD17sept1993D2T03.flac:368281d7b06c51dea7bf82dce26f83fc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-17a.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:04.49       43156892 B   ---   --   ---xx   flac  0.6260  BD17sept1993D1T01.flac
+     8:27.31       89507756 B   ---   --   ---xx   flac  0.6327  BD17sept1993D1T02.flac
+     5:28.36       57943916 B   ---   --   ---xx   flac  0.6210  BD17sept1993D1T03.flac
+     9:50.47      104186588 B   ---   --   ---xx   flac  0.6133  BD17sept1993D1T04.flac
+     8:15.31       87390956 B   ---   --   ---xx   flac  0.6120  BD17sept1993D1T05.flac
+    10:45.45      113883884 B   ---   --   ---xx   flac  0.6228  BD17sept1993D1T06.flac
+     6:00.25       63562844 B   ---   --   ---xx   flac  0.5975  BD17sept1993D1T07.flac
+     7:05.66       75125276 B   ---   --   ---xx   flac  0.5802  BD17sept1993D1T08.flac
+     8:05.72       85723388 B   ---   --   ---xx   flac  0.5928  BD17sept1993D1T09.flac
+    68:04.27      720481500 B                            0.6112  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-17a.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:46.15       82237724 B   ---   --   ---xx   flac  0.6208  BD17sept1993D2T01.flac
+     6:47.39       71886572 B   ---   --   ---xx   flac  0.6168  BD17sept1993D2T02.flac
+     8:33.17       90533228 B   ---   --   ---xx   flac  0.5966  BD17sept1993D2T03.flac
+    23:06.71      244657524 B                            0.6107  (3 files)
+=================== 
+=================== 
+=================== 

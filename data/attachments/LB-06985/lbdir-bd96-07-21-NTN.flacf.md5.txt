@@ -1,0 +1,39 @@
+3b89796fd2d57035e8ebc53b645e9909  1996-07-21-Pori-NTN.txt
+14fddaf37ce934ed37b3633ef8c4876f  1996-07-21-Pori-ticket.jpg
+670ef7e1a87baaca4749e1e5106b553c  Artwork (LTA)\pori-back.jpg
+0e66e31d64055445b7091abeeab0434b  Artwork (LTA)\pori-front.jpg
+b7ca135a2669a5eb9d24b77832e6ebe5  Artwork (LTA)\pori-insert.jpg
+ca5fa05a08367fd28f43ca52a02cf375  bd1996-07-21-d1t01.flac
+567f930fa746af29082b257cdfde7473  bd1996-07-21-d1t02.flac
+5644a4df85324b5979a49a08b24d6f3f  bd1996-07-21-d1t03.flac
+3e8820fc9e45350afde938c2d83d2ec7  bd1996-07-21-d1t04.flac
+f4ea08ef3133b01e38c70d6d72ce9ce2  bd1996-07-21-d1t05.flac
+a190bef66b5afea6932d486c94c61a9d  bd1996-07-21-d1t06.flac
+ff4da017fd00b2e9d64f6429b36543b9  bd1996-07-21-d1t07.flac
+96948818d91671298820a2ecc6ed1545  bd1996-07-21-d1t08.flac
+410f0e83ae28d39b762cd580389b4074  bd1996-07-21-d1t09.flac
+120d2ab771be65adf056e586526d6dd6  bd1996-07-21-d1t10.flac
+02ff5dbed4792168cb13161ba9394d0e  bd1996-07-21-d2t01.flac
+645a4caea21cd9156fe2d87731dec9c8  bd1996-07-21-d2t02.flac
+c370775cf41684b8c4c254f81fb8019b  bd1996-07-21-d2t03.flac
+515e5e77647b6957cb252bcc5ffb448b  bd1996-07-21-d2t04.flac
+0244ff47682eaf1169bfef81392fe4ed  Elizabeth Cotten\Elizabeth_Cotten.jpg
+59d812239720d7d9cf2246dac2dac98c  Elizabeth Cotten\Shake_Sugaree.rtf
+4a7bfa8795d1fc3aba9606f9213c34a0  fingerprint.ffp
+4508a22770ffc233a34abf69e7a4d782  Kirjurinluoto\1996-07-21-Pori-Phonecard.jpg
+a6c9016ee380cbf46899c2dcc6fc7249  Kirjurinluoto\1996-07-21-Pori-Program.jpg
+3f78d0c3758c37bcf5e0e3497c137c51  Kirjurinluoto\Kirjurinluoto-arena.jpg
+0782652d4b9045238c863482de838863  Kirjurinluoto\Kirjurinluoto-map.jpg
+0923439a5d388c3e8fe12b8f14a8b73c  md5sum.md5
+c5568cd8c6dd1777008dd358057f7ddb  Photos\1996-07-21-Pori-01.jpg
+61c19e12476167649acbf5022f30795c  Photos\1996-07-21-Pori-02.jpg
+5b188a50598b33bb28d7321ae635e32f  Photos\1996-07-21-Pori-03.jpg
+f442f6928143b27b79a32052e3e651d3  Photos\1996-07-21-Pori-04.jpg
+0e0732538e405ef070d64be36c3cbec0  Photos\1996-07-21-Pori-05.jpg
+6e2bdb5a0e8a27be842576b121c7aa82  Photos\1996-07-21-Pori-06.jpg
+099ea748774b4cc3918737bc5d1101d0  Photos\1996-07-21-Pori-07.jpg
+c31710104d8e35a16bb20c4b2806459a  Photos\1996-07-21-Pori-08 copy.jpg
+14fd69ec0173fca521a2b642e33e8d82  Photos\1996-07-21-Pori-08.jpg
+00a94ef2f64186038948c33ade46be97  Reviews\Jyrki_Kimmel-review.rtf
+3de67f7be825e99d46e913d64d912f22  Reviews\mk504-review.rtf
+332735a0f4f865ec4348a8c9787f4fec  shntoolmd5sum.st5

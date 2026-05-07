@@ -1,0 +1,14 @@
+CD #1: shntool 3.0.4
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.73       42507740 B   ---   --   ---xx   flac  0.7672  01 I am the man, Thomas.flac
+     4:24.73       46741340 B   ---   --   ---xx   flac  0.7665  02 Señor (Tales of Yankee Power).flac
+     6:52.73       72848540 B   ---   --   ---xx   flac  0.7584  03 Don't think twice, it's all right.flac
+     8:01.73       85020140 B   ---   --   ---xx   flac  0.7919  04 Tangled up in blue.flac
+     4:54.73       52033340 B   ---   --   ---xx   flac  0.7634  05 Subterranean homesick blues.flac
+     4:50.73       51327740 B   ---   --   ---xx   flac  0.6726  06 Moonlight.flac
+     6:52.73       72848540 B   ---   --   ---xx   flac  0.7465  07 Blind Willie McTell.flac
+     7:55.73       83961740 B   ---   --   ---xx   flac  0.7706  08 Lonesome day blues.flac
+     5:07.73       54326540 B   ---   --   ---xx   flac  0.7110  09 Mama, you been on my mind.flac
+     5:11.73       55032140 B   ---   --   ---xx   flac  0.7432  10 Masters of war.flac
+     6:53.73       73024940 B   ---   --   ---xx   flac  0.7564  11 Forever young.flac
+    65:09.53      689672740 B                            0.7527  (11 files)

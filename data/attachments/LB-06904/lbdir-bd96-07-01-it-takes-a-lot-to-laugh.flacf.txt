@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-01-it-takes-a-lot-to-laugh.flacf 
+=================== 
+=================== 
+=================== 
+b40a19c4efc2d49d45eba5b0dd83e1b1  bd96-07-01-it-takes-a-lot-to-laugh-d1t01.flac
+a0dfc66e040de78f6a5ea3fd8caa3156  bd96-07-01-it-takes-a-lot-to-laugh-d1t02.flac
+365151d0f19295942b193e0db8ddda81  bd96-07-01-it-takes-a-lot-to-laugh-d1t03.flac
+b402bf5799708f2fc2129091e7647f3c  bd96-07-01-it-takes-a-lot-to-laugh-d1t04.flac
+38f7a279d6e7ec500c61b1f178cfdb12  bd96-07-01-it-takes-a-lot-to-laugh-d1t05.flac
+f0892eec6ff8be98dc5a1213c66ab3d4  bd96-07-01-it-takes-a-lot-to-laugh-d1t06.flac
+538516e49777fc9bdc604f5b6ee3b601  bd96-07-01-it-takes-a-lot-to-laugh-d1t07.flac
+27cd6f22964892e5c6cc200733ddd809  bd96-07-01-it-takes-a-lot-to-laugh-d1t08.flac
+10f83f19faecc56b18b350791e2c086d  bd96-07-01-it-takes-a-lot-to-laugh-d1t09.flac
+4e6e64e55063191ce08ddc850aceb6ff  bd96-07-01-it-takes-a-lot-to-laugh-d2t01.flac
+2073c82d786070dc301eef60431c9c0b  bd96-07-01-it-takes-a-lot-to-laugh-d2t02.flac
+0c75911fd4a4276362fa9977b3b8a557  bd96-07-01-it-takes-a-lot-to-laugh-d2t03.flac
+f3c7fca0cfa46c4353dc89c15cc365fc  bd96-07-01-it-takes-a-lot-to-laugh-d2t04.flac
+f2feecd745b2a85a25898f4f07bd0198  bd96-07-01-it-takes-a-lot-to-laugh-d2t05.flac
+733cb58f9e4a6149186b9b9d35f13b56  bd96-07-01-it-takes-a-lot-to-laugh-d2t06.flac
+babd6e95849bb5dad9b6309bef566ac0  bd96-07-01-it-takes-a-lot-to-laugh-d2t07.flac
+68aff239395b5dc5c3a83d6d0df111d6  bd96-07-01-it-takes-a-lot-to-laugh-d2t08.flac
+2fac500242d7da7e968be96104989818  bd96-07-01-it-takes-a-lot-to-laugh.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-01-it-takes-a-lot-to-laugh.flacf 
+=================== 
+=================== 
+=================== 
+bd96-07-01-it-takes-a-lot-to-laugh-d1t01.flac:dc4ffb697eefaa5c9ba37c01200d4ab2
+bd96-07-01-it-takes-a-lot-to-laugh-d1t02.flac:f2a7c1d42363a8eeced188edde7640f3
+bd96-07-01-it-takes-a-lot-to-laugh-d1t03.flac:ec31ca7ba473e3011916791cb764a3b7
+bd96-07-01-it-takes-a-lot-to-laugh-d1t04.flac:69133382f0d4f6f5d38803d4029fbac6
+bd96-07-01-it-takes-a-lot-to-laugh-d1t05.flac:a23de093a0de3c6879643fceb62b71e8
+bd96-07-01-it-takes-a-lot-to-laugh-d1t06.flac:9ea23e961ebbf021835b9acb52125adf
+bd96-07-01-it-takes-a-lot-to-laugh-d1t07.flac:be4d12566611cf8a8f17ef96d747c14f
+bd96-07-01-it-takes-a-lot-to-laugh-d1t08.flac:097f0cb7bc1715b31c02010f809f79cd
+bd96-07-01-it-takes-a-lot-to-laugh-d1t09.flac:f5b3c7dd740fcafdd1dd07d0b5fbbb06
+bd96-07-01-it-takes-a-lot-to-laugh-d2t01.flac:134ed90d3e2fcc9715add8fcb9c20604
+bd96-07-01-it-takes-a-lot-to-laugh-d2t02.flac:efb60b457998269bb99dee27ee8a08f7
+bd96-07-01-it-takes-a-lot-to-laugh-d2t03.flac:c924f1594989b55668c31e5fc1da69e0
+bd96-07-01-it-takes-a-lot-to-laugh-d2t04.flac:a6b4e075d418afe780334c7f18d63189
+bd96-07-01-it-takes-a-lot-to-laugh-d2t05.flac:4475449891b9d5023d6f16317ae06f6e
+bd96-07-01-it-takes-a-lot-to-laugh-d2t06.flac:1a62bf39f1931a3ef74cc899f5bcc5ae
+bd96-07-01-it-takes-a-lot-to-laugh-d2t07.flac:bbfeab92a8b5b6fa7fcd059eba887098
+bd96-07-01-it-takes-a-lot-to-laugh-d2t08.flac:27c173b1f75aced5bfe47518f8ddba98
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-01-it-takes-a-lot-to-laugh.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.40       46310924 B   ---   --   ---xx   flac  0.5974  bd96-07-01-it-takes-a-lot-to-laugh-d1t01.flac
+     5:54.30       62516204 B   ---   --   ---xx   flac  0.5186  bd96-07-01-it-takes-a-lot-to-laugh-d1t02.flac
+     5:58.17       63191228 B   ---   --   ---xx   flac  0.5827  bd96-07-01-it-takes-a-lot-to-laugh-d1t03.flac
+     8:34.70       90834284 B   ---   --   ---xx   flac  0.4955  bd96-07-01-it-takes-a-lot-to-laugh-d1t04.flac
+     7:25.73       78669740 B   ---   --   ---xx   flac  0.5395  bd96-07-01-it-takes-a-lot-to-laugh-d1t05.flac
+     7:25.17       78538028 B   ---   --   ---xx   flac  0.5703  bd96-07-01-it-takes-a-lot-to-laugh-d1t06.flac
+     9:22.58       99273260 B   ---   --   ---xx   flac  0.5069  bd96-07-01-it-takes-a-lot-to-laugh-d1t07.flac
+     7:40.05       81155804 B   ---   --   ---xx   flac  0.4795  bd96-07-01-it-takes-a-lot-to-laugh-d1t08.flac
+     6:33.67       69482828 B   ---   --   ---xx   flac  0.5376  bd96-07-01-it-takes-a-lot-to-laugh-d1t09.flac
+     7:53.35       83519564 B   ---   --   ---xx   flac  0.5762  bd96-07-01-it-takes-a-lot-to-laugh-d2t01.flac
+     8:11.07       86628908 B   ---   --   ---xx   flac  0.5331  bd96-07-01-it-takes-a-lot-to-laugh-d2t02.flac
+     9:08.28       96733100 B   ---   --   ---xx   flac  0.5495  bd96-07-01-it-takes-a-lot-to-laugh-d2t03.flac
+     7:52.00       83260844 B   ---   --   ---xx   flac  0.5684  bd96-07-01-it-takes-a-lot-to-laugh-d2t04.flac
+    14:04.00      148881644 B   ---   --   ---xx   flac  0.5165  bd96-07-01-it-takes-a-lot-to-laugh-d2t05.flac
+     6:11.12       65472668 B   ---   --   ---xx   flac  0.5769  bd96-07-01-it-takes-a-lot-to-laugh-d2t06.flac
+     6:33.60       69466364 B   ---   --   ---xx   flac  0.6330  bd96-07-01-it-takes-a-lot-to-laugh-d2t07.flac
+     6:42.48       71025740 B   ---   --   ---xx   flac  0.6144  bd96-07-01-it-takes-a-lot-to-laugh-d2t08.flac
+   129:54.42     1374961132 B                            0.5475  (17 files)
+=================== 
+=================== 
+=================== 

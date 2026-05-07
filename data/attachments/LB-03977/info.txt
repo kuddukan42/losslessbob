@@ -1,0 +1,39 @@
+Bob Dylan
+
+Rapid City, South Dakota
+Monday March 27, 2000
+Rushmore Plaza Civic Center
+
+CD1 68:26
+
+01. Hallelujah, I'm Ready To Go (acoustic)  
+02. Mr. Tambourine Man (acoustic)  
+03. It's Alright, Ma (I'm Only Bleeding) (acoustic)  
+04. Love Minus Zero/No Limit (acoustic)  
+05. Tangled Up In Blue (acoustic)  
+06. Rock Of Ages (acoustic)  
+07. Country Pie  
+08. All Along The Watchtower  
+09. Simple Twist Of Fate  
+10. Maggie's Farm  
+11. Not Dark Yet  
+12. Highway 61 Revisited
+      (encore)  
+
+CD2 37:24
+
+13. Love Sick  
+14. Like A Rolling Stone  
+15. Don't Think Twice, It's All Right (acoustic) (Bob on harp)  
+16. Not Fade Away  
+17. Blowin' In The Wind (acoustic)  
+18. Rainy Day Women #12 & #35
+
+Audience MD recording > MD(m) > ?unknown transfer? > CDR(x) > EAC (Secure/Offset) > WAV >  FLAC (Level 8) > DIME
+
+MD source was spotted using Spectral Analysis w/ Cool Edit Pro ("lego parapet" artifacts are apparent).
+
+CEDAR-type fingerprint d1t2@1:17 "just make sure they get security guards"; d1t9@5:13 "I know this guy, man". Background talk can be intrusive. Small glitch d1t9@3:58; and several others. Clipping d1t5; d1t8, d1t10, d1t12 etc. Sound is good, B+.
+
+Please retain this info file as an indicator for this particular lossless set of files. If you happen to pass it on in trades, then please list it as such in your description, thereby reducing the possiblity of others getting duplicates.
+

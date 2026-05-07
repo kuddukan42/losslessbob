@@ -1,0 +1,14 @@
+Bob Dylan, 6/6/99, Colorado Springs, CO, 2CDR
+
+LB-6224, (48min+54min), Lineage: cdr's received in trade>jetaudio>flac>maketorrent2>hungercity; bittorrent download 06/08; only dylan parts;  has hiss; levels fluctuate at beginning of d2t7 and end up too high with lots of clipping and accompanying harshness; more clipping on other loud songs; d3t9 has a much lower left channel; It's All Over Now Baby Blue torrented separately with this torrent comment: "Here's the missing track from disc 2 of the Colorado show. I hope this is satisfactory rather than having to re-do the entire 3 disc torrent. This is track 10, "Baby Blue." What is labeled "Baby Blue" in the original torrent is actually "Tangled Up in Blue," which will be t11., This download added to the files of the 3 disc one should give everyone the complete show."; very good sound [B]
+
+drop d1t10 0:00, d3t1 0:00;d3t8 0:00; discontinuity/analog drop d2t8 0:48
+
+CD1
+Simon and Dylan duets, 3. The Sound Of Silence (Duet with Bob Dylan - Bob on harp), 4. I Walk The Line (Duet with Bob Dylan - Larry on fiddle), 5. Blue Moon Of Kentucky (Duet with Bob Dylan - Larry on fiddle), 6. Forever Young (Duet with Bob Dylan), Beginning of Dylan set:, 7. O Babe, It Ain't No Lie (acoustic), 8. Mr. Tambourine Man (acoustic) (with harp), 9. Masters Of War (acoustic), 10. It's All Over Now, Baby Blue (acoustic), 11. Tangled Up In Blue (acoustic), 
+
+CD2
+Disc 3, conclusion of Dylan set, 1. All Along The Watchtower, 2. Just Like A Woman, 3. Stuck Inside Of Mobile With The Memphis Blues Again, 4. Not Dark Yet, 5. Highway 61 Revisited, encore, 6. Love Sick, 7. Like A Rolling Stone, 8. Don't Think Twice, It's All Right (acoustic) (with harp), 9. Not Fade Away
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

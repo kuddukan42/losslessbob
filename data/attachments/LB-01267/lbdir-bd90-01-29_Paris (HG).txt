@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-01-29_Paris (HG) 
+=================== 
+=================== 
+=================== 
+764ba8a3c2e4086aa2635acd6faae63c  bd90-01-29hg.txt
+28b37d4aa10759043626df746d5f2ddc  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 01.shn
+c5f7fca95097e626e63f503e30c370e1  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 02.shn
+a09c74692d0574f16fb2afa27d9d1bc5  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 03.shn
+a602993511f159576243f60ae5c3a4c0  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 10.shn
+4ccc47fe6c2d5f44bcdb26ca99789eac  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 11.shn
+6ad495cab1fbe1740ba3254ad526b21e  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 12.shn
+88fd4f3bfc6eaa28689bbbfa40e0af04  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 13.shn
+676956763ca383c61fab31c894457246  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 4.shn
+6fddda5d34ace3e3bfb373de7fee72ac  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 5.shn
+dc0ad124fd1aa1905205a228f2431d85  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 6.shn
+97bd79d1a7e64189269a5b5949446929  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 7.shn
+f973fd78ddcd5beb30b936e8d2840c6d  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 8.shn
+115bb73155d29beb3c5c27ea91d81e7e  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_Track 9.shn
+339c6aad695f87210efe2fa54ec84bd3  bd_90-01-29_cd1.shnf\bd_90-01-29_cd1_shn.md5
+4b6f848737775efaf4da7452662fa05f  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 1.shn
+a1365569da70a6a8e83434c41f589384  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 2.shn
+bfff520b977bc7c3c452290a47b56ff2  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 3.shn
+424d70ef91c58ed70a4cbc7f9a6d665e  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 4.shn
+130757f49893cfc1888897e4c01b87e3  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 5.shn
+f497e380181ed5f1e1883a7f649680b2  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 6.shn
+21b9a344d073c6b6ef7b0ad14a454533  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 7.shn
+0468074749bb097f5bf7d449cf7a3b10  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 8.shn
+3f68c7dfcca4ae6b7a1c2fa4dd226cf0  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_Track 9.shn
+813542fdcd5dc9f88acc1c0096de4500  bd_90-01-29_cd2.shnf\bd_90-01-29_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-01-29_Paris (HG)\bd_90-01-29_cd1.shnf 
+=================== 
+=================== 
+=================== 
+e7af02736894862eec923107ec07082c  [shntool]  bd_90-01-29_cd1_Track_01.wav
+209ae1790c35a5667443bef69049a2e8  [shntool]  bd_90-01-29_cd1_Track_02.wav
+3a764b84131f8883addd7d0d7c463043  [shntool]  bd_90-01-29_cd1_Track_03.wav
+8814fafea4193e4cad14ce3971759ba3  [shntool]  bd_90-01-29_cd1_Track_4.wav
+1a86cd5495a410fe195ec3f362e1813f  [shntool]  bd_90-01-29_cd1_Track_5.wav
+2246931427e2f1c2aef20ffe78e8c38b  [shntool]  bd_90-01-29_cd1_Track_6.wav
+4a3b81335f502685008f83ac3761c703  [shntool]  bd_90-01-29_cd1_Track_7.wav
+2837a24cc995a5ecc8218c8f3195a683  [shntool]  bd_90-01-29_cd1_Track_8.wav
+83d55746e0f4c8a47a14ef0bbd88897a  [shntool]  bd_90-01-29_cd1_Track_9.wav
+5febeb7c983b0571efa774febb860d02  [shntool]  bd_90-01-29_cd1_Track_10.wav
+6dc9e94017a183eea52b74adbfeffdd1  [shntool]  bd_90-01-29_cd1_Track_11.wav
+6255049539ed8424b0ad02f6ccc603ee  [shntool]  bd_90-01-29_cd1_Track_12.wav
+0e42ac5add9e549dab0d2adc691400c9  [shntool]  bd_90-01-29_cd1_Track_13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-01-29_Paris (HG)\bd_90-01-29_cd2.shnf 
+=================== 
+=================== 
+=================== 
+784adbd50678e81968d86506a94959b0  [shntool]  bd_90-01-29_cd2_Track_1.wav
+4104d50bf98dfcbc217f80a6e98b466c  [shntool]  bd_90-01-29_cd2_Track_2.wav
+854bd73872924bc0c107c682594558d2  [shntool]  bd_90-01-29_cd2_Track_3.wav
+57c8d81083972ac58851bcd2bffd80e5  [shntool]  bd_90-01-29_cd2_Track_4.wav
+8df594ae1fb3dbaf16ad6b2c6cacaa01  [shntool]  bd_90-01-29_cd2_Track_5.wav
+a4f7a282719bd59a93b94e7847649f45  [shntool]  bd_90-01-29_cd2_Track_6.wav
+7abb212f243b7e1a6812b76d4dcb511b  [shntool]  bd_90-01-29_cd2_Track_7.wav
+7631468abd2f07dd33f280e34503f627  [shntool]  bd_90-01-29_cd2_Track_8.wav
+3611656b6e345d2d5e6e53c1f8457be2  [shntool]  bd_90-01-29_cd2_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-29_Paris (HG)\bd_90-01-29_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:50.35        8902446 B   ---   -e   ---xx    shn  0.5714  bd_90-01-29_cd1_Track 01.shn
+     3:37.71       38445918 B   ---   -e   ---xx    shn  0.7010  bd_90-01-29_cd1_Track 02.shn
+     4:15.39       45073854 B   ---   -e   ---xx    shn  0.6634  bd_90-01-29_cd1_Track 03.shn
+     4:06.44       43498014 B   ---   -e   ---xx    shn  0.6490  bd_90-01-29_cd1_Track 10.shn
+     7:17.50       77204526 B   ---   -e   ---xx    shn  0.6502  bd_90-01-29_cd1_Track 11.shn
+     5:15.58       55702542 B   ---   -e   ---xx    shn  0.6033  bd_90-01-29_cd1_Track 12.shn
+     5:38.46       59731518 B   ---   -e   ---xx    shn  0.6910  bd_90-01-29_cd1_Track 13.shn
+     3:03.41       32377758 B   ---   -e   ---xx    shn  0.7036  bd_90-01-29_cd1_Track 4.shn
+     6:42.32       70988190 B   ---   -e   ---xx    shn  0.6899  bd_90-01-29_cd1_Track 5.shn
+     4:10.47       44210670 B   ---   -e   ---xx    shn  0.6883  bd_90-01-29_cd1_Track 6.shn
+     5:19.29       56339934 B   ---   -e   ---xx    shn  0.6366  bd_90-01-29_cd1_Track 7.shn
+     5:15.02       55570830 B   ---   -e   ---xx    shn  0.6509  bd_90-01-29_cd1_Track 8.shn
+     6:14.52       66096030 B   ---   -e   ---xx    shn  0.6448  bd_90-01-29_cd1_Track 9.shn
+    61:48.21      654142230 B                            0.6605  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-29_Paris (HG)\bd_90-01-29_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.28       61453182 B   ---   -e   ---xx    shn  0.6986  bd_90-01-29_cd2_Track 1.shn
+     3:01.38       32017902 B   ---   -e   ---xx    shn  0.7118  bd_90-01-29_cd2_Track 2.shn
+     5:17.10       55942446 B   ---   -e   ---xx    shn  0.6111  bd_90-01-29_cd2_Track 3.shn
+     3:33.00       37573326 B   ---   -e   ---xx    shn  0.6706  bd_90-01-29_cd2_Track 4.shn
+     3:02.43       32206062 B   ---   -e   ---xx    shn  0.7289  bd_90-01-29_cd2_Track 5.shn
+     3:49.64       40546254 B   ---   -e   ---xx    shn  0.6753  bd_90-01-29_cd2_Track 6.shn
+     6:33.26       69386478 B   ---   -e   ---xx    shn  0.7297  bd_90-01-29_cd2_Track 7.shn
+     6:25.54       68041134 B   ---   -e   ---xx    shn  0.6860  bd_90-01-29_cd2_Track 8.shn
+     3:43.40       39431406 B   ---   -e   ---xx    shn  0.7353  bd_90-01-29_cd2_Track 9.shn
+    41:15.03      436598190 B                            0.6923  (9 files)
+=================== 
+=================== 
+=================== 

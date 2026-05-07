@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-15b.flacf 
+=================== 
+=================== 
+=================== 
+3c055d162b4acf94515cb65c2db689c4  bd87-10-15b-LB-3481.txt
+50d70dba21e047b94c1750eae2f97291  cd 2\d2_Track03.flac
+908c777762892a4a9b71e66589f26b74  cd 2\d2_Track04.flac
+375ba965ef110f664d2f1b57082e6cc2  cd 2\d2_Track05.flac
+93c3da59cd0004f37d2aabda6c873a0b  cd 2\d2_Track06.flac
+9b9af54b3f161ae0bbe3b80afe96424c  cd 2\d2_Track07.flac
+4cddc85fcb776de2795fe642a036d861  cd 2\d2_Track08.flac
+75df9ac1e5af7f5746756c2acab19c6f  cd 2\d2_Track09.flac
+244864abd0ddd242073d5bd4dd786bce  cd 2\d2_Track10.flac
+5b46a004ecf2ef489b05c4a9fd0fa357  cd 2\d2_Track11.flac
+dd95d9f134b5678e222110f51b06ae00  cd 2\d2_Track12.flac
+de1c136e905a880c2c9de9a06e390f05  cd 2\d2_Track13.flac
+0af5a2ebd020d207281c32f7ad53eaea  cd 2\d2_Track14.flac
+f69565b6eacb8e2848bac32a44d21235  cd 2\d2_Track15.flac
+7c63ca046980ea2178228757957ca802  cd 2\d2_Track16.flac
+5784f8ce2463798c688a3052d8d20db4  cd 2\d2_Track17.flac
+ed0a45eb80481f4c4c75c3fb9f823573  ffp_d1.txt
+1e4afeac7155fae52c97daaa69c6d219  ffp_d2.txt
+c846bbac55ee2b84ff58349f0e290550  Wembley 15_10_87 complete.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-15b.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+d2_Track03.flac:7aacfed75ec4a4c84477fcba024c0ba9
+d2_Track04.flac:2dd16a54d2bfcfc7a7066145a34768fb
+d2_Track05.flac:d95b261f01f66d9432ddd98dde53329a
+d2_Track06.flac:28e6c342c6be000ea659790521a00da8
+d2_Track07.flac:5b90e6f19cf5ee9a4d4fc06505541321
+d2_Track08.flac:57a491fa2d1af23aef90dc9668cda954
+d2_Track09.flac:7e6af8c6dff169cab9580a511dc092ba
+d2_Track10.flac:5345f53e616a96acf808078e09bd939b
+d2_Track11.flac:f4e4cbf3c706bec14829af1a9cc5a215
+d2_Track12.flac:b645936345c79f2e58809fbf40c5977e
+d2_Track13.flac:a14a38aa60b54ac2c28fc8c75839aca2
+d2_Track14.flac:1e9387a91932b7144f8bfd5ebb69d6cd
+d2_Track15.flac:dba9e9f3cbaa2707838cfeaae6a8bd74
+d2_Track16.flac:57a00078e633827282e8926e839b2771
+d2_Track17.flac:5ce5cb74712b9c2740d7cac6756a2824
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-15b.flacf\cd 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:41.36       49653116 B   ---   --   ---xx   flac  0.6176  d2_Track03.flac
+     5:00.03       52927100 B   ---   --   ---xx   flac  0.6065  d2_Track04.flac
+     4:06.00       43394444 B   ---   --   ---xx   flac  0.6106  d2_Track05.flac
+     5:15.71       55733036 B   ---   --   ---xx   flac  0.6205  d2_Track06.flac
+     5:14.01       55391996 B   ---   --   ---xx   flac  0.6007  d2_Track07.flac
+     5:11.74       55034492 B   ---   --   ---xx   flac  0.5836  d2_Track08.flac
+     2:38.03       27878300 B   ---   --   ---xx   flac  0.6160  d2_Track09.flac
+     4:38.71       49206236 B   ---   --   ---xx   flac  0.5500  d2_Track10.flac
+     2:57.23       31276940 B   ---   --   ---xx   flac  0.6093  d2_Track11.flac
+     5:13.37       55300268 B   ---   --   ---xx   flac  0.5463  d2_Track12.flac
+     5:24.06       57167756 B   ---   --   ---xx   flac  0.5735  d2_Track13.flac
+     3:23.50       35926844 B   ---   --   ---xx   flac  0.5608  d2_Track14.flac
+     4:49.67       51137228 B   ---   --   ---xx   flac  0.6199  d2_Track15.flac
+     6:26.70       68255084 B   ---   --   ---xx   flac  0.6192  d2_Track16.flac
+     4:01.44       42615932 B   ---   --   ---xx   flac  0.6685  d2_Track17.flac
+    69:03.31      730898772 B                            0.5994  (15 files)
+=================== 
+=================== 
+=================== 

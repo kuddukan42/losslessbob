@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-08-03-house-of-blues.flacf 
+=================== 
+=================== 
+=================== 
+9078a73e521ced1bdd5a56c08823f298  bd96-08-03-house-of-bluesd1t01.flac
+525670880ef999531abdc819bed0bc52  bd96-08-03-house-of-bluesd1t02.flac
+f4e42384d869001bb60916aa4afeef5b  bd96-08-03-house-of-bluesd1t03.flac
+198d8787cf64dfb5c3188de05a0c6ce4  bd96-08-03-house-of-bluesd1t04.flac
+17dca9d07b625f115580f9d5897e59b5  bd96-08-03-house-of-bluesd1t05.flac
+381c2a0894f280736c055e8dbce5bc59  bd96-08-03-house-of-bluesd1t06.flac
+d23d0b163a56d4549fe0d6a8e7d41754  bd96-08-03-house-of-bluesd1t07.flac
+1f46aca12bc6c17422252b23b312879f  bd96-08-03-house-of-bluesd1t08.flac
+66b0e1aa3069b763fd287d99c5fdb159  bd96-08-03-house-of-bluesd1t09.flac
+637727e9d0c1c8b47b6bc12f470bf190  bd96-08-03-house-of-bluesd1t10.flac
+412ef15e0f241fe9068f406d61743aaf  bd96-08-03-house-of-bluesd2t01.flac
+743981878e7a13790182809b199d6873  bd96-08-03-house-of-bluesd2t02.flac
+442d0f7194f3d215856541ca6d23531a  bd96-08-03-house-of-bluesd2t03.flac
+66e225489600b3a0bc7c4d0452f7b685  bd96-08-03-house-of-bluesd2t04.flac
+e1d828b4e4e44e5faec9fd3576b17c97  bd96-08-03-house-of-bluesd2t05.flac
+b91201eb82f28e3453f57a19fd53725d  bd96-08-03-house-of-bluesd2t06.flac
+0871a51416c5d744d31a74f6fce1ee2e  bd96-08-03-house-of-bluesd2t07.flac
+bdf21538c2750e0e84d005c9bba3d95c  bd96-08-03-house-of-bluesd2t08.flac
+c7593b109c968543313de6eed9d5c0ea  bd96-08-03-house-of-bluesd2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-08-03-house-of-blues.flacf 
+=================== 
+=================== 
+=================== 
+bd96-08-03-house-of-bluesd1t01.flac:25e9d5af7bc8d6cb734130e47983a619
+bd96-08-03-house-of-bluesd1t02.flac:ae8b79c8d4e12f57c4eba6778bee941b
+bd96-08-03-house-of-bluesd1t03.flac:ca786d4f33267058ef9d423314f0a227
+bd96-08-03-house-of-bluesd1t04.flac:8407bc863fd8d901791706c7f69fe4d8
+bd96-08-03-house-of-bluesd1t05.flac:0d5d630a8a8519874abf1149ccaaf543
+bd96-08-03-house-of-bluesd1t06.flac:64509ece136551a632b4b341eb98d7c7
+bd96-08-03-house-of-bluesd1t07.flac:be7b593780bf1d079c67342400708b1d
+bd96-08-03-house-of-bluesd1t08.flac:4448aad76a660cc6dcd3871ab5688910
+bd96-08-03-house-of-bluesd1t09.flac:f8423bb97795b9a79f306e48257dcafd
+bd96-08-03-house-of-bluesd1t10.flac:ae73ac420096125dd5dacdf57b5dba17
+bd96-08-03-house-of-bluesd2t01.flac:1a2ba073046976e7a0a182ee1ec11ee4
+bd96-08-03-house-of-bluesd2t02.flac:6b03c7c3f61f17c472277ea23a15391d
+bd96-08-03-house-of-bluesd2t03.flac:d4d044bbdce0102ddecdf8058649dd80
+bd96-08-03-house-of-bluesd2t04.flac:cb219f02a3b9f206904d8b4069eba059
+bd96-08-03-house-of-bluesd2t05.flac:15f461c597ead62f2b3684c1f974e472
+bd96-08-03-house-of-bluesd2t06.flac:e061de3aa5ce0d911f77fb827c1152e5
+bd96-08-03-house-of-bluesd2t07.flac:ce917587f6e80bea3a16f856768d21f5
+bd96-08-03-house-of-bluesd2t08.flac:069651c905de468711f2b4909345ff24
+bd96-08-03-house-of-bluesd2t09.flac:ce7f65921b52b0953c595f53a6e79763
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-08-03-house-of-blues.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.32       47879708 B   ---   --   ---xx   flac  0.5351  bd96-08-03-house-of-bluesd1t01.flac
+     5:41.10       60175964 B   ---   --   ---xx   flac  0.5108  bd96-08-03-house-of-bluesd1t02.flac
+     6:37.55       70160204 B   ---   --   ---xx   flac  0.5387  bd96-08-03-house-of-bluesd1t03.flac
+     6:26.72       68259788 B   ---   --   ---xx   flac  0.5084  bd96-08-03-house-of-bluesd1t04.flac
+     9:01.21       95481836 B   ---   --   ---xx   flac  0.5393  bd96-08-03-house-of-bluesd1t05.flac
+     7:42.54       81623852 B   ---   --   ---xx   flac  0.5442  bd96-08-03-house-of-bluesd1t06.flac
+     8:06.11       85756316 B   ---   --   ---xx   flac  0.4935  bd96-08-03-house-of-bluesd1t07.flac
+     6:09.12       65119868 B   ---   --   ---xx   flac  0.4824  bd96-08-03-house-of-bluesd1t08.flac
+     8:54.48       94310540 B   ---   --   ---xx   flac  0.5187  bd96-08-03-house-of-bluesd1t09.flac
+     8:01.11       84874316 B   ---   --   ---xx   flac  0.5432  bd96-08-03-house-of-bluesd1t10.flac
+     6:38.41       70303676 B   ---   --   ---xx   flac  0.5052  bd96-08-03-house-of-bluesd2t01.flac
+     7:31.55       79685804 B   ---   --   ---xx   flac  0.5412  bd96-08-03-house-of-bluesd2t02.flac
+     6:39.46       70491836 B   ---   --   ---xx   flac  0.5476  bd96-08-03-house-of-bluesd2t03.flac
+     8:32.39       90408572 B   ---   --   ---xx   flac  0.5280  bd96-08-03-house-of-bluesd2t04.flac
+     6:27.35       68349164 B   ---   --   ---xx   flac  0.5477  bd96-08-03-house-of-bluesd2t05.flac
+     4:12.18       44495180 B   ---   --   ---xx   flac  0.4643  bd96-08-03-house-of-bluesd2t06.flac
+     8:10.46       86544236 B   ---   --   ---xx   flac  0.5308  bd96-08-03-house-of-bluesd2t07.flac
+     5:28.05       57871004 B   ---   --   ---xx   flac  0.4363  bd96-08-03-house-of-bluesd2t08.flac
+     3:14.53       34346300 B   ---   --   ---xx   flac  0.5474  bd96-08-03-house-of-bluesd2t09.flac
+   128:07.64     1356138164 B                            0.5210  (19 files)
+=================== 
+=================== 
+=================== 

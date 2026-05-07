@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== md5 for: bd02-01-31-md.flacf
+===================
+===================
+===================
+4517d4adf36231515d3fab0dc857ea3f *01 Wait For The Light To Shine.flac
+ed98337b946206138f31463be7356fee *02 Girl From The North Country.flac
+799cd9ac2959e1991428152e2d8f2e7a *03 It's Alright, Ma (I'm Only Bleeding).flac
+778b14389d4fd4ca7fe57bdafdd31d7f *04 Searching For A Soldier's Grave.flac
+da57baad6acd8ae7f9ea8b6b0a1cb134 *05 Tweedle Dee & Tweedle Dum.flac
+701cba9d8aece22e7828eb274a9564c7 *06 Just Like A Woman.flac
+aacc7291038979ff6d80e27cf9ecf4c0 *07 Lonesome Day Blues.flac
+06cda5898cca96e91ea29c2fae233fad *08 High Water (for Charlie Patton).flac
+0d97c20103c8c5f84d4aea35422cae12 *09 Don't Think Twice, It's All Right.flac
+79158470045580039c1d62b25b3253c0 *10 John Brown.flac
+e719e64e71473f42ba638079d16ef367 *11 Tangled Up In Blue.flac
+e4168daeba03c4da9e25d41af1328b4c *12 Summer Days.flac
+4e65f9c087912a7da86f448e1803446a *13 Sugar Baby.flac
+a0ea336808ac7ca37e2671d2fbb648a4 *14 Drifter's Escape.flac
+e3d287874f48d6c046515a629e26cf37 *15 Rainy Day Women # 12 & 35.flac
+0b410adcc5e60c6a74a80063e324e927 *16 Love Sick.flac
+043568aa4ccc07f42c79eb402ed40c4b *17 Like A Rolling Stone.flac
+ec2f292fdb575f7bf363393f6c908b0f *18 Forever Young.flac
+830986e42ece41ac083b0d9efcdf9c9d *19 Honest With Me.flac
+f87af4c2cd4264eaa44f174a2ac72045 *20 Blowin' In The Wind.flac
+57b9c233d6d0ed4e841d178fbb37dcc8 *2002-01-31 TD Waterhouse Centre, Orlando, Florida, USA (MD Transfer).ffp
+8683fc4bf63bdf04a82298cca7c3b39a *2002-01-31 TD Waterhouse Centre, Orlando, Florida, USA (MD Transfer).md5
+9c3713b0119563c1d8f7351c84f688e3 *Info.txt
+===================
+===================
+===================
+=== ffp for: bd02-01-31-md.flacf
+===================
+===================
+===================
+01 Wait For The Light To Shine.flac:7a108bc431524377a3590fe0e9cd4cf6
+02 Girl From The North Country.flac:bde926d6d3a1a8e00a77bbe192ff4bb0
+03 It's Alright, Ma (I'm Only Bleeding).flac:3eba90daf469ff8726f2f8c5010f4856
+04 Searching For A Soldier's Grave.flac:8ce1932ff7b82cc1a645e462fdbb6621
+05 Tweedle Dee & Tweedle Dum.flac:5348d3114ca2f8c7bbc1850451ed8ba6
+06 Just Like A Woman.flac:7e904ab8a11926c1a2df426ade9fb504
+07 Lonesome Day Blues.flac:4b74463c9e6525a6c333c5ab086664f6
+08 High Water (for Charlie Patton).flac:b4b1f6dff02df2820a0d555f65b72e55
+09 Don't Think Twice, It's All Right.flac:c3a74e057a36b5efe77360fb695a7396
+10 John Brown.flac:99e6a5c8ef72e7ba133bd8634f08062e
+11 Tangled Up In Blue.flac:e07ed25d4499b40b75383f732cbfa210
+12 Summer Days.flac:5c897140a127ccdbeaea2ede9f23aebf
+13 Sugar Baby.flac:15c9405252b887673b741fc7559fc75e
+14 Drifter's Escape.flac:b74acc6492fd20fb901956e69462fbb6
+15 Rainy Day Women # 12 & 35.flac:8dce9c0288ef29aa34fc12a7ca03e7c5
+16 Love Sick.flac:367630778b1b7bbfd476101a7cfdbbb4
+17 Like A Rolling Stone.flac:a93ff870f903436b490d386f4219fe34
+18 Forever Young.flac:6fa63487cdce88e5b95ed9e090516e2f
+19 Honest With Me.flac:9be6209f4a5f2f5a3987cd399e12bcf8
+20 Blowin' In The Wind.flac:8932eb4a25bfbb2484e12676179ae39d
+===================
+===================
+===================
+=== shntool len for: bd02-01-31-md.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:35.560      62081324 B   cxx   --   ---xx   flac  0.7276  01 Wait For The Light To Shine.flac
+     6:12.160     107182124 B   cxx   --   ---xx   flac  0.6598  02 Girl From The North Country.flac
+     7:24.147     127914284 B   cxx   --   ---xx   flac  0.7016  03 It's Alright, Ma (I'm Only Bleeding).flac
+     3:42.293      64020524 B   cxx   --   ---xx   flac  0.7284  04 Searching For A Soldier's Grave.flac
+     5:09.240      89061164 B   cxx   --   ---xx   flac  0.7091  05 Tweedle Dee & Tweedle Dum.flac
+     7:38.987     132188204 B   cxx   --   ---xx   flac  0.7167  06 Just Like A Woman.flac
+     6:38.920     114889004 B   cxx   --   ---xx   flac  0.7531  07 Lonesome Day Blues.flac
+     6:31.733     112819244 B   cxx   --   ---xx   flac  0.7148  08 High Water (for Charlie Patton).flac
+     6:16.720     108495404 B   cxx   --   ---xx   flac  0.6710  09 Don't Think Twice, It's All Right.flac
+     5:18.013      91587884 B   cxx   --   ---xx   flac  0.6744  10 John Brown.flac
+     7:48.240     134853164 B   cxx   --   ---xx   flac  0.7323  11 Tangled Up In Blue.flac
+     5:40.000      97920044 B   cxx   --   ---xx   flac  0.7325  12 Summer Days.flac
+     7:20.920     126985004 B   cxx   --   ---xx   flac  0.6533  13 Sugar Baby.flac
+     4:07.200      71193644 B   cxx   --   ---xx   flac  0.7533  14 Drifter's Escape.flac
+     7:43.867     133593644 B   cxx   --   ---xx   flac  0.7366  15 Rainy Day Women # 12 & 35.flac
+     6:03.027     104551724 B   cxx   --   ---xx   flac  0.6897  16 Love Sick.flac
+     7:52.667     136128044 B   cxx   --   ---xx   flac  0.7380  17 Like A Rolling Stone.flac
+     5:47.307     100024364 B   cxx   --   ---xx   flac  0.6884  18 Forever Young.flac
+     6:56.267     119884844 B   cxx   --   ---xx   flac  0.7386  19 Honest With Me.flac
+     6:06.293     105492524 B   cxx   --   ---xx   flac  0.7023  20 Blowin' In The Wind.flac
+   123:53.560    2140866160 B                            0.7107  (20 files)
+===================
+===================
+===================

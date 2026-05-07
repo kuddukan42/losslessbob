@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-06-16-b.flacf 
+=================== 
+=================== 
+=================== 
+1fbf5b168764a0988fa16c7c2a3a0321  01 Intro.flac
+8e4538a4b01267036076d3c0676b8e6c  02 Drifter's Escape.flac
+a22469244f1abcf1934af36c75faa68a  03 I'll Be Your Baby Tonight.flac
+9c642d1f73a11c75ee894f5b432f7054  04 Tweedle Dee & Tweedle Dum.flac
+c6636ca0315d8488b7b58076ddda257a  05 Love Minus Zero-No Limit.flac
+c4fa1f45614e8852e09045ef447ad046  06 Down Along the Cove.flac
+ed9df9d2b0c27da4725250711ad8f7a2  07 Girl from the North Country.flac
+01c08d5c1218ef4c3d00a04162107d1a  08 Highway 61 Revisited.flac
+95384756400929a48aae7a51e355bb31  09 A Hard Rain's A-Gonna Fall.flac
+b206f488f2fb6a5ba0ca0276447caeae  10 Floater (Too Much to Ask).flac
+1d42a3fe4da4ffaa1f5a6ed7a376f871  11 Honest with Me.flac
+0c69374463edd09d16d854f5554bd419  12 Forever Young.flac
+90a3c42ccc97616ad1c7024aa3a43e38  13 High Water (for Charley Patton).flac
+aa652023601789423a2d5c2b18e30a1a  14 It Ain't Me, Babe (encore).flac
+7d4613b763783faeffd70e90643418e7  15 Like a Rolling Stone (encore).flac
+084487a32f1a81d0b5a7597f300cccb9  Bob Dylan - 2005-06-16 Campbell's Field- Camden, New Jersey (AUD).md5
+164899366962ab995b8d735c5a4c8584  NOTES - 2005-06-16 Campbell's Field, Camden, NJ.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-06-16-b.flacf 
+=================== 
+=================== 
+=================== 
+01 intro.flac:22c7493660df425eaa5de49592ecb345
+02 drifter's escape.flac:a9e02cc18d33905c630c03eda077c5d5
+03 i'll be your baby tonight.flac:49cb2d9f8dfcce051ae5f54a13b4ed26
+04 tweedle dee & tweedle dum.flac:cc96727e4e53ec56657ecd289d1b1a80
+05 love minus zero-no limit.flac:95db0f0795280ceba48efc863a66afb8
+06 down along the cove.flac:d29cc4d675eb133772caca661f19de27
+07 girl from the north country.flac:2e1b3fcb6772a89b59c243e37dbc75d4
+08 highway 61 revisited.flac:4b64f91cc5809a4da1ccc3a313e24b86
+09 a hard rain's a-gonna fall.flac:96417462fcad8cbcca7aca4e1302a220
+10 floater (too much to ask).flac:0f582b58556a932de6110810934dd88e
+11 honest with me.flac:2fdba96eeebccddd3b33d90d0c22bac7
+12 forever young.flac:32023be98595d98e30acf65bacec85dd
+13 high water (for charley patton).flac:a1a6fc3b1d3c402eada4a144afb760a2
+14 it ain't me, babe (encore).flac:91dd23f16c9959b85dd8880e2b62f3eb
+15 like a rolling stone (encore).flac:00000000000000000000000000000000
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-06-16-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:32.20        5690924 B   -b-   --   ---xx   flac  0.3970  01 Intro.flac
+     4:34.37       48420908 B   -b-   --   ---xx   flac  0.6334  02 Drifter's Escape.flac
+     6:06.39       64654892 B   -b-   --   ---xx   flac  0.5755  03 I'll Be Your Baby Tonight.flac
+     5:26.46       57613868 B   -b-   --   ---xx   flac  0.5532  04 Tweedle Dee & Tweedle Dum.flac
+     6:08.60       65055788 B   -b-   --   ---xx   flac  0.5775  05 Love Minus Zero-No Limit.flac
+     8:55.30       94445612 B   -b-   --   ---xx   flac  0.6152  06 Down Along the Cove.flac
+     5:45.65       61009964 B   -b-   --   ---xx   flac  0.5135  07 Girl from the North Country.flac
+     7:14.72       76727852 B   -b-   --   ---xx   flac  0.6162  08 Highway 61 Revisited.flac
+     6:56.08       73400876 B   -b-   --   ---xx   flac  0.5699  09 A Hard Rain's A-Gonna Fall.flac
+     6:29.15       68654636 B   -b-   --   ---xx   flac  0.5067  10 Floater (Too Much to Ask).flac
+     6:40.52       70682156 B   -b-   --   ---xx   flac  0.6388  11 Honest with Me.flac
+     7:44.70       82013228 B   -b-   --   ---xx   flac  0.5278  12 Forever Young.flac
+     7:17.16       77124140 B   -b-   --   ---xx   flac  0.6376  13 High Water (for Charley Patton).flac
+     6:35.23       69732908 B   -b-   --   ---xx   flac  0.7192  14 It Ain't Me, Babe (encore).flac
+     0:00.00             44 B   --s   --   ---xx   flac  956243.4545  15 Like a Rolling Stone (encore).flac
+    86:28.27      915227796 B                            0.6367  (15 files)
+=================== 
+=================== 
+=================== 

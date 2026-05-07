@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-13a.flacf 
+=================== 
+=================== 
+=================== 
+d1a46fb8f208dff1ed6915034f854682  1993-07-13%20Cascais.jpg
+2fd1d539973add0eec3edcb2efcda26d  bd93-07-13a.txt
+955487eb5379765206a4e8bcd89cec00  D1.Track01.flac
+26231a7aacd06bc4feba5a39db44448f  D1.Track02.flac
+b10ae71839b66fc6291f711f6777d271  D1.Track03.flac
+ae98055ce47ccdc58678ac9762742bef  D1.Track04.flac
+f841a5f2dac9c960b772012e41807a9d  D1.Track05.flac
+fe57d05ba464a83229f056f177a58cee  D1.Track06.flac
+3c7e898b55c130f5af17ac1fea900f65  D1.Track07.flac
+5a30b9ace302a07f58c0d49a397624c2  D1.Track08.flac
+ef846395228c3a9eb9410ed158682cdc  D1.Track09.flac
+44043cec1ef4ffafa80e084c9d6c4190  D2.Track01.flac
+6dc4959f4f2d055c75ee14ce7a345315  D2.Track02.flac
+5c46882b4a7ea0a1910efca090d7eb5b  D2.Track03.flac
+cbdbf9e43ecc7007dd65c65470c7bc01  D2.Track04.flac
+c8dc4dce28e4fd3a77b3721be269764b  D2.Track05.flac
+db0db4ae060d1e9c21b4cf868a56e7e9  D2.Track06.flac
+03606edc8da0b38576fe0c9abe797011  D2.Track07.flac
+c784f99376b6d7e277581e13436fcb16  D2.Track08.flac
+cbae264b7ff8ee14a0df2c73ca3f2cf5  info.flac.txt
+8d77d09430a5a087912fb8d212a860a4  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-13a.flacf 
+=================== 
+=================== 
+=================== 
+D1.Track01.flac:34c3b457d3310ea38eaba1d4784ac8d8
+D1.Track02.flac:dfc256590de6490db2569e242085d5fb
+D1.Track03.flac:38d01532ba29c59c96858b04154260f1
+D1.Track04.flac:03fa028ef0cee866a8a54de1489d2d19
+D1.Track05.flac:95f64b08ac0a6dad6dbd4281e50038e2
+D1.Track06.flac:2774db58f5081ae67b111a25494b5d80
+D1.Track07.flac:1dae5ab10b5608e9c326e66c4d00ef0d
+D1.Track08.flac:1fd5b1e4e3d004af7d34282021ff7a5c
+D1.Track09.flac:54236378fd6c5d61bc62892194917cbb
+D2.Track01.flac:6c8096fe36f4281c67f9c50090841e92
+D2.Track02.flac:5b1460468c6fd09bc198fab56bdfcbe2
+D2.Track03.flac:47baff61744cba13974f7a260a5fed26
+D2.Track04.flac:5a1dce33e27836d31e186e8f4024926e
+D2.Track05.flac:2816443735e039011a43b0275d860c98
+D2.Track06.flac:5cb49a5f4be6c02cdeddf9f3053f1cae
+D2.Track07.flac:983da4ccf1ff422d1ebc2703d5b6d397
+D2.Track08.flac:5c6b6c7c11dcab566a72ae9fc7be7fab
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-13a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.69       62960732 B   ---   --   ---xx   flac  0.5801  D1.Track01.flac
+     8:40.14       91760972 B   ---   --   ---xx   flac  0.6784  D1.Track02.flac
+     7:31.23       79610540 B   ---   --   ---xx   flac  0.6780  D1.Track03.flac
+     8:33.20       90540284 B   ---   --   ---xx   flac  0.6586  D1.Track04.flac
+    11:19.01      119777996 B   ---   --   ---xx   flac  0.6705  D1.Track05.flac
+     8:17.60       87811964 B   ---   --   ---xx   flac  0.6109  D1.Track06.flac
+     5:52.20       62139884 B   ---   --   ---xx   flac  0.6133  D1.Track07.flac
+     6:24.49       67852892 B   ---   --   ---xx   flac  0.5150  D1.Track08.flac
+     6:11.47       65554988 B   ---   --   ---xx   flac  0.5910  D1.Track09.flac
+     9:27.48      100131740 B   ---   --   ---xx   flac  0.5916  D2.Track01.flac
+    11:32.12      122097068 B   ---   --   ---xx   flac  0.5975  D2.Track02.flac
+     6:51.31       72573356 B   ---   --   ---xx   flac  0.7162  D2.Track03.flac
+     9:27.35      100101164 B   ---   --   ---xx   flac  0.7239  D2.Track04.flac
+     8:36.04       91031852 B   ---   --   ---xx   flac  0.6326  D2.Track05.flac
+     7:28.58       79163660 B   ---   --   ---xx   flac  0.6812  D2.Track06.flac
+     8:27.50       89552444 B   ---   --   ---xx   flac  0.5898  D2.Track07.flac
+    11:03.16      116990876 B   ---   --   ---xx   flac  0.5600  D2.Track08.flac
+   141:41.32     1499652412 B                            0.6299  (17 files)
+=================== 
+=================== 
+=================== 

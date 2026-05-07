@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd70-05-01-yesterday.flacf 
+=================== 
+=================== 
+=================== 
+db33925eec312236c4bebd5f8429f616  01 - Ghost Riders In The Sky.flac
+c55d8a1ab78b5ccc4e9ec17687fa9e41  02 - Cupid.flac
+5c8cbb2db1047eb4b720baf254c23358  03 - All I Have To Do Is Dream.flac
+b7fc84465aca34544796182ceaf73dd7  04 - Gates Of Eden.flac
+62416d0d8f870a147c14e32c9bbd8017  05 - I Threw It All Away.flac
+71d8edc5ce289e4b3453b0980bd9b39f  06 - I Don't Believe You.flac
+b5126f8dc0d3539a329fab0b4f1536cb  07 - Matchbox.flac
+57a77796df12152ae8c48a2f60f7ab75  08 - True Love Your Love.flac
+9b666e0c8c5b6a7716d8245638260415  09 - When's My Swamp Gonna Catch Fire.flac
+5d6515e22f1caf8d2f00103e70a2c231  10 - I'm A Goin' Fishin'.flac
+a46e7fc453ac6906837745c6aabbabe4  11 - Honey Just Allow Me One More Chance.flac
+6b4881662308e61876b4b4e6796abd9f  12 - Rainy Day Women #12 & #35.flac
+d83cce8cb2de32170ea13e49f08fe27c  13 - Song To Woody.flac
+9cbe20d1487582eb80c934e1a9dd9954  14 - Mama You Been On My Mind.flac
+c1595b80eb0d415e0401969529087785  15 - Don't Think Twice It's All Right.flac
+53372b1dc58e1b5e8fb66651e4a5bd4c  16 - Yesterday.flac
+33eac1e3ab5cdeda5bae320c55faae36  17 - Just Like Tom Thumb's Blues.flac
+fd8a83f22b470f48019855b5dd1760c8  18 - Da Doo Ron Ron.flac
+6db0609dc8d5a39a5846354497b9f258  19 - One Too Many Mornings.flac
+5624407a6db16f50df2278af34d414dc  20 - One Too Many Mornings.flac
+48de9c913d4f733b3b08462cee6e26ad  Bob%20Dylan%20Yesterday.jpg
+98df5e094229d7e22970242cc766c239  fingerprint.ffp.txt
+51afde7baff15e7e8e8299114f9a1742  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd70-05-01-yesterday.flacf 
+=================== 
+=================== 
+=================== 
+01 - Ghost Riders In The Sky.flac:f19ef8e95b517b78ea21ecef53adb683
+02 - Cupid.flac:dc3255ea0e420e49f62fe0907d6a3399
+03 - All I Have To Do Is Dream.flac:cfcbef0209708786dfaf48b6c0dcf7aa
+04 - Gates Of Eden.flac:dbb7205d3434a0e5c31dc05552841718
+05 - I Threw It All Away.flac:37ecc22c8948cb975f5adf7580729092
+06 - I Don't Believe You.flac:2516af8618454a72e26809821a65c8ea
+07 - Matchbox.flac:16cee4038b1df05dc35db04c0a06772d
+08 - True Love Your Love.flac:1d7308ecfd8d8ab223385e4c5a748a7c
+09 - When's My Swamp Gonna Catch Fire.flac:67a90f754398af8980e9d164a98d14e5
+10 - I'm A Goin' Fishin'.flac:c5474319599bfcb41a75c19092d44c33
+11 - Honey Just Allow Me One More Chance.flac:412ca7a60a3bbc7c9dcb280fcf96d345
+12 - Rainy Day Women #12 & #35.flac:3b306321e367b244daf6038e7a197063
+13 - Song To Woody.flac:fd3d3dfe2334ba028b166278865e9d2b
+14 - Mama You Been On My Mind.flac:1e655a91c0791be4ef1e92d8ecde91aa
+15 - Don't Think Twice It's All Right.flac:9340adc2c6cd632a4890e8f74bbe88ea
+16 - Yesterday.flac:62028078c553e9a939924263140af6fe
+17 - Just Like Tom Thumb's Blues.flac:2aa1fb0361dbbd6f22b200c83ba9c592
+18 - Da Doo Ron Ron.flac:380f1f235392f465ed3cbb0b7cfc60c8
+19 - One Too Many Mornings.flac:284f787e95bdc04e93af1034ae69abb1
+20 - One Too Many Mornings.flac:ea9fa9995eb09380c2a676f7fa3ae9c0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd70-05-01-yesterday.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:17.52       24289148 B   ---   --   ---xx   flac  0.5906  01 - Ghost Riders In The Sky.flac
+     4:42.48       49857740 B   ---   --   ---xx   flac  0.5167  02 - Cupid.flac
+     2:43.50       28870844 B   ---   --   ---xx   flac  0.5661  03 - All I Have To Do Is Dream.flac
+     4:24.12       46597868 B   ---   --   ---xx   flac  0.5785  04 - Gates Of Eden.flac
+     2:48.58       29771660 B   ---   --   ---xx   flac  0.5475  05 - I Threw It All Away.flac
+     2:49.39       29903372 B   ---   --   ---xx   flac  0.5945  06 - I Don't Believe You.flac
+     4:01.00       42512444 B   ---   --   ---xx   flac  0.5957  07 - Matchbox.flac
+     1:26.65       15323324 B   ---   --   ---xx   flac  0.5600  08 - True Love Your Love.flac
+     2:01.72       21513788 B   ---   --   ---xx   flac  0.5523  09 - When's My Swamp Gonna Catch Fire.flac
+     0:34.49        6112892 B   ---   --   ---xx   flac  0.5217  10 - I'm A Goin' Fishin'.flac
+     2:04.16       21911276 B   ---   --   ---xx   flac  0.6001  11 - Honey Just Allow Me One More Chance.flac
+     1:30.43       15977180 B   ---   --   ---xx   flac  0.5714  12 - Rainy Day Women #12 & #35.flac
+     4:30.22       47679788 B   ---   --   ---xx   flac  0.5291  13 - Song To Woody.flac
+     2:54.69       30855932 B   ---   --   ---xx   flac  0.5424  14 - Mama You Been On My Mind.flac
+     2:03.69       21859532 B   ---   --   ---xx   flac  0.4947  15 - Don't Think Twice It's All Right.flac
+     3:01.27       31991948 B   ---   --   ---xx   flac  0.5183  16 - Yesterday.flac
+     4:09.21       43973036 B   ---   --   ---xx   flac  0.5532  17 - Just Like Tom Thumb's Blues.flac
+     3:16.73       34746140 B   ---   --   ---xx   flac  0.5619  18 - Da Doo Ron Ron.flac
+     2:20.47       24806588 B   ---   --   ---xx   flac  0.4911  19 - One Too Many Mornings.flac
+     3:48.23       40273340 B   ---   --   ---xx   flac  0.5631  20 - One Too Many Mornings.flac
+    57:31.30      608827840 B                            0.5532  (20 files)
+=================== 
+=================== 
+=================== 

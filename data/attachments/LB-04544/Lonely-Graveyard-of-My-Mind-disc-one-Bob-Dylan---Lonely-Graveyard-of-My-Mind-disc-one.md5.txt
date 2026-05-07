@@ -1,0 +1,14 @@
+0036c77d33eaa1f5a2e31d7b1b9d0a91 *Bob Dylan - Lonely Graveyard of My Mind disc one.ffp
+b7cfdb25f243e65988a97f0eee30f31b *lonely graveyard log disc one.LOG
+28ac69cab23d910e487b216991f848ff *Track01.flac
+24b2876d211880009e486d6671dc4ec2 *Track02.flac
+68ccdcc6e8dc208acee68ad06a58707f *Track03.flac
+6e48a691c87802ae3979aea31cc07d3f *Track04.flac
+fe6cec8389077badc91cfef4f5edbdf7 *Track05.flac
+66c2deab73af60089b4591fea5712e22 *Track06.flac
+671d6c85749e9ba99a701388b2d4546b *Track07.flac
+b635e86a59086678f5109646e21e844b *Track08.flac
+8e8c6f7cb04fc001231c31df6742ecd8 *Track09.flac
+d4f5863bf0a29a1ba1d9c06e1ab8e131 *Track10.flac
+3e6af0b9d5a5f3e379e9e8847d760ce9 *Track11.flac
+76071e4a64e42e0ca89db21e0c8be786 *Track12.flac

@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-08-05-edirol.flacf 
+=================== 
+=================== 
+=================== 
+dd61d80e96f8842dbab37df301a4cca0  00 intro.flac
+226158300048fc75637c8a83f0deb199  01 Watching The River Flow.flac
+2e8b596e201f359180f1486082f957dc  02 Don't Think Twice, It's All Right.flac
+8a0e9319399600f745a8d1afff09777a  03 Til I Fell In Love With You.flac
+5dc22ac77dcc3f5c04e91959cc59288f  04 Spirit On The Water.flac
+a5d8c6b326d7475e5fb8f900f075f4d4  05 Rollin And Tumblin.flac
+42bb5945ea62a4bf02cf19a3df10a5b5  06 Workingman's Blues no 2.flac
+0141456cfc25f07986bcb127362a1d18  07 Tweedle Dee and Tweedle Dum.flac
+1a80dfcb8babb30692eaf2696d03cff0  08 Ballad Of A Thin Man.flac
+80ec40c7405389db36afe4f41bd78b84  09 Highway 61 Revisited.flac
+05918cb0fa85d50dbbcfcda73080deb3  10 Nettie Moore.flac
+19dfb35d84aa467c939d71aa88051546  11 Thunder On The Mountain.flac
+0c1687760c3ffaab3f0c6829ab5e60f9  12 Like A Rolling Stone.flac
+ab52bf5e1846a4ef01f2b19fd41d6c4e  13 Jolene.flac
+7941a69a0a42f59b03d8c5f6f8b110c0  14 band introduction.flac
+15d52a498a465b76949b19c5be71bcd7  15 All Along The Watchtower.flac
+457b7947102eaba8d4d66543c9441631  BD2009-08-05 16-bit44kHz.ffp
+23b06e4c39ab135a79f65087d8f22789  BD2009-08-05.txt
+816460024f7dabe15de8d4e2deacca3e  images\0bob-dylan-marquee.jpg
+be1d2328c6c84dc447bbc4be88ee805c  images\1LARS.jpg
+3f948ded4943bd11bda6e2abece389d5  images\2jolene.jpg
+9c3efdec1c4b5c542d5d0af8b457ac1f  images\band1.jpg
+87f88b8e39ad24dcd1b400b46fbadfdb  images\band2.jpg
+bf323d87857d146c755156c00e6306e7  images\band3.jpg
+b1691d8938d4c2be753bef23a17da85b  images\band4.jpg
+16154688c05befba56adaedbab35a619  images\readme.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-08-05-edirol.flacf 
+=================== 
+=================== 
+=================== 
+00 intro.flac:fce73acfcf20fb109a6d5fce306b5b37
+01 Watching The River Flow.flac:128c0401d08c78e6749f5e12fa716106
+02 Don't Think Twice, It's All Right.flac:1dd0642d49a59841c9cf949ec0cabd40
+03 Til I Fell In Love With You.flac:a210301d40853e6beb48c95e6ae752c4
+04 Spirit On The Water.flac:c7bb7d6a63c8cb040eb1fb370660828e
+05 Rollin And Tumblin.flac:13e7a0ee19661e38e2583b5871b66c6c
+06 Workingman's Blues no 2.flac:4bce72070f66c3352050567e7e7bf498
+07 Tweedle Dee and Tweedle Dum.flac:3f14d15242efb119629e54231e1cdcd4
+08 Ballad Of A Thin Man.flac:9c5b5f2fc87b36c15f6465fbd3a93b50
+09 Highway 61 Revisited.flac:e37eb60042aa002fa30fb108924a4798
+10 Nettie Moore.flac:8243f4a15db03df20f7d5426fce658cf
+11 Thunder On The Mountain.flac:c710f49984594e89c8bed761cd5c6bfb
+12 Like A Rolling Stone.flac:9c829daa86d3967344fbd91bf5d80521
+13 Jolene.flac:a292cbd14f1c5b5e237d37517e19ec5f
+14 band introduction.flac:ec561f32938eb78953febce980603a21
+15 All Along The Watchtower.flac:a5097a513e427a52905c34e7a38236e8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-08-05-edirol.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:54.72        9696012 B   -b-   --   ---xx   flac  0.4084  00 intro.flac
+     4:40.66       49546696 B   -b-   --   ---xx   flac  0.4941  01 Watching The River Flow.flac
+     5:46.09       61054904 B   -b-   --   ---xx   flac  0.4389  02 Don't Think Twice, It's All Right.flac
+     7:27.09       78871480 B   -b-   --   ---xx   flac  0.4500  03 Til I Fell In Love With You.flac
+     7:05.67       75128036 B   -b-   --   ---xx   flac  0.3703  04 Spirit On The Water.flac
+     7:23.58       78280548 B   -b-   --   ---xx   flac  0.4323  05 Rollin And Tumblin.flac
+     7:02.14       74473652 B   -b-   --   ---xx   flac  0.4217  06 Workingman's Blues no 2.flac
+     4:57.62       52537572 B   -b-   --   ---xx   flac  0.4411  07 Tweedle Dee and Tweedle Dum.flac
+     7:05.51       75090080 B   -b-   --   ---xx   flac  0.4765  08 Ballad Of A Thin Man.flac
+     7:09.09       75696648 B   -b-   --   ---xx   flac  0.5101  09 Highway 61 Revisited.flac
+     8:24.56       89038152 B   -b-   --   ---xx   flac  0.4169  10 Nettie Moore.flac
+     9:02.31       95680604 B   -b-   --   ---xx   flac  0.5030  11 Thunder On The Mountain.flac
+     6:49.47       72257436 B   -b-   --   ---xx   flac  0.5145  12 Like A Rolling Stone.flac
+     4:27.09       47118880 B   -b-   --   ---xx   flac  0.5093  13 Jolene.flac
+     0:33.61        5963552 B   -b-   --   ---xx   flac  0.4227  14 band introduction.flac
+     5:24.11       57178540 B   -b-   --   ---xx   flac  0.5467  15 All Along The Watchtower.flac
+    94:15.30      997612792 B                            0.4627  (16 files)
+=================== 
+=================== 
+=================== 

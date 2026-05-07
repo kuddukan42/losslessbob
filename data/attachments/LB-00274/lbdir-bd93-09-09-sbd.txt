@@ -1,0 +1,64 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-09-09-sbd 
+=================== 
+=================== 
+=================== 
+db0bd1fc4400efa37479e7f962c72da5  bd93-09-09.md5
+2874ef7edf11708200a5c4f4e6d8beb0  bd93-09-09psbdt01.shn
+97993a87a19bec2aa097d2c3b512bb61  bd93-09-09psbdt02.shn
+1537def1891e1fe3595649101c04ebb7  bd93-09-09psbdt03.shn
+0f66db4a7b75d480468756ea238928fc  bd93-09-09psbdt04.shn
+6879f87a4b2e3fa992a248ae3efaac44  bd93-09-09psbdt05.shn
+4e628369961a758ea4fb072af6cf01a6  bd93-09-09psbdt06.shn
+db6729fefd30fc1aa27e5b1df85f4482  bd93-09-09psbdt07.shn
+392b5400f9cf65654098e2e2d6edf015  bd93-09-09psbdt08.shn
+48aa681962110cdbef41b0eebaeecdf5  bd93-09-09psbdt09.shn
+3a5a85f2901bf96ac5c3933fbcb773ee  bd93-09-09psbdt10.shn
+5dc2af90107ecf0b22a240ef8a5c6525  bd93-09-09psbdt11.shn
+79ee9292abb432781c381edb5ed035e9  bd93-09-09psbdt12.shn
+69a496d636c31a593763effd81ce8df4  bd93-09-09s.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-09-09-sbd 
+=================== 
+=================== 
+=================== 
+6d7ce4ebee46f6b3b9206b4969d8ee86  [shntool]  bd93-09-09psbdt01.wav
+641eefd65a7816cfae9f4e629d31ea24  [shntool]  bd93-09-09psbdt02.wav
+ad8e4b621ce2d907a82355b8cb310b77  [shntool]  bd93-09-09psbdt03.wav
+1a9c35a2373fa11986769ebd7b7958e0  [shntool]  bd93-09-09psbdt04.wav
+77d5221a0b2460d5ac93f824c98eb693  [shntool]  bd93-09-09psbdt05.wav
+5d8a42ae5ddecdd1087cc277f7a77742  [shntool]  bd93-09-09psbdt06.wav
+7fdda81ce4b3afca2078a9b3cd7b996d  [shntool]  bd93-09-09psbdt07.wav
+b7b730ebc0fe93617e9275be353881ab  [shntool]  bd93-09-09psbdt08.wav
+e50fb74101e1089561ec88a2b0710c88  [shntool]  bd93-09-09psbdt09.wav
+19646fac579ba25341d87387221e4cab  [shntool]  bd93-09-09psbdt10.wav
+11b44bbfb145e88b2f3129a85b3f67b0  [shntool]  bd93-09-09psbdt11.wav
+b3741368c9162069df0fc60966bafe8d  [shntool]  bd93-09-09psbdt12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-09-09-sbd 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.33       42942860 B   ---   --   ---xx    shn  0.5099  bd93-09-09psbdt01.shn
+     8:25.30       89152604 B   ---   --   ---xx    shn  0.6697  bd93-09-09psbdt02.shn
+     6:25.55       68043404 B   ---   --   ---xx    shn  0.5382  bd93-09-09psbdt03.shn
+     5:10.41       54780476 B   ---   --   ---xx    shn  0.6335  bd93-09-09psbdt04.shn
+     2:05.09       22071212 B   ---   --   ---xx    shn  0.6762  bd93-09-09psbdt05.shn
+     7:11.44       76131932 B   ---   --   ---xx    shn  0.5373  bd93-09-09psbdt06.shn
+     6:28.45       68549084 B   ---   --   ---xx    shn  0.5127  bd93-09-09psbdt07.shn
+     8:08.24       86139692 B   ---   --   ---xx    shn  0.6425  bd93-09-09psbdt08.shn
+     6:17.29       66571052 B   ---   --   ---xx    shn  0.6759  bd93-09-09psbdt09.shn
+     5:51.02       61921148 B   ---   --   ---xx    shn  0.6657  bd93-09-09psbdt10.shn
+     6:28.45       68549084 B   ---   --   ---xx    shn  0.6941  bd93-09-09psbdt11.shn
+     7:49.36       82816316 B   ---   --   ---xx    shn  0.6296  bd93-09-09psbdt12.shn
+    74:25.18      787668864 B                            0.6160  (12 files)
+=================== 
+=================== 
+=================== 

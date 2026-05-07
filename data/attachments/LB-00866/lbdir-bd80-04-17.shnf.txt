@@ -1,0 +1,65 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-04-17.shnf 
+=================== 
+=================== 
+=================== 
+0997d78ca3f40d319b894bc8010a8bcb  04-17-80 Snck -  1.shn
+8ded08d9f41e051e469518a3f3e4d624  04-17-80 Snck -  10.shn
+0b6ca0405a6d85520c57e61377f40275  04-17-80 Snck -  11.shn
+913572f0986599ecff2e7786e649d007  04-17-80 Snck -  12.shn
+739e252d8d952ab0e25acdb22b543fc1  04-17-80 Snck -  2.shn
+f46a47843592f614d61fdf82036a4633  04-17-80 Snck -  3.shn
+60fd043e8ae9afc13fa7762a0101acdc  04-17-80 Snck -  4.shn
+9a83a4d9cc7bda35fa3905189c4a6795  04-17-80 Snck -  5.shn
+850ea319ef62a41919eb54cd7e60e6d4  04-17-80 Snck -  6.shn
+50ac083ae9f44e408fef00bc261e23fb  04-17-80 Snck -  7.shn
+93ef12c17de3b94c7379d6399c7a76b9  04-17-80 Snck -  8.shn
+04ac57a26e55fd496a7a81da27eee087  04-17-80 Snck -  9.shn
+6df9a17d83cbe65b3e1bf1f87041094e  04-17-80 Snck .md5
+a55c6b720db9c75b1ff57bf4054fef80  04-17-80 Soundchecks.nfo
+dc05d9a914ce72090c2a52e0e480f3bb  bd80-04-17.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-04-17.shnf 
+=================== 
+=================== 
+=================== 
+ff4311c1ae5547c6146169d4e26c593e  [shntool]  04-17-80_Snck_-__1.wav
+d120a08014a5c6b38342bb2f5c1cd464  [shntool]  04-17-80_Snck_-__2.wav
+baf633075c057cdec8ca27d807ce6678  [shntool]  04-17-80_Snck_-__3.wav
+12e32aa151414c55cc50a1ea5da0182c  [shntool]  04-17-80_Snck_-__4.wav
+8a08b11caec8f0812c2d9254a5a24881  [shntool]  04-17-80_Snck_-__5.wav
+14eb4190a7cc42729cd8bc4efc3bddf2  [shntool]  04-17-80_Snck_-__6.wav
+2e10ea437ed7db1df513652248796862  [shntool]  04-17-80_Snck_-__7.wav
+c044e9dd9162e75adb97ae77096468f9  [shntool]  04-17-80_Snck_-__8.wav
+3c233760bbd68e82c9b1472dcbe4213b  [shntool]  04-17-80_Snck_-__9.wav
+f1a9c7ba2c8c5e2aec8e5fb4f8358a3d  [shntool]  04-17-80_Snck_-__10.wav
+0673c45d712fd6f007aff62532c6b97e  [shntool]  04-17-80_Snck_-__11.wav
+868a3099c8684dad47d284a41b4e2b06  [shntool]  04-17-80_Snck_-__12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-04-17.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.28       57044208 B   -b-   --   ---xx    shn  0.6217  04-17-80 Snck -  1.shn
+     2:12.60       23425964 B   ---   --   ---xx    shn  0.6430  04-17-80 Snck -  10.shn
+     0:45.37        8025068 B   ---   --   ---xx    shn  0.6417  04-17-80 Snck -  11.shn
+     3:17.44       34854332 B   ---   --   ---xx    shn  0.6651  04-17-80 Snck -  12.shn
+     5:10.42       54782828 B   ---   --   ---xx    shn  0.6376  04-17-80 Snck -  2.shn
+     1:07.10       11842364 B   ---   --   ---xx    shn  0.6405  04-17-80 Snck -  3.shn
+     4:31.35       47886764 B   ---   --   ---xx    shn  0.6451  04-17-80 Snck -  4.shn
+     0:32.13        5675420 B   ---   --   ---xx    shn  0.6352  04-17-80 Snck -  5.shn
+     1:14.53       13178300 B   ---   --   ---xx    shn  0.6252  04-17-80 Snck -  6.shn
+     4:05.35       43300364 B   ---   --   ---xx    shn  0.7000  04-17-80 Snck -  7.shn
+     2:17.43       24267980 B   ---   --   ---xx    shn  0.6372  04-17-80 Snck -  8.shn
+     1:46.65       18851324 B   ---   --   ---xx    shn  0.6407  04-17-80 Snck -  9.shn
+    32:25.15      343134916 B                            0.6469  (12 files)
+=================== 
+=================== 
+=================== 

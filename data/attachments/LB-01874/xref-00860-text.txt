@@ -1,0 +1,28 @@
+===================
+===================
+===================
+=== shntoolmd5sum.st5
+===================
+===================
+===================
+d9cacfde9c6e2da9509dbbf15d6fd069  [shntool]  20040328 01 Intro.shn
+a26b5249de0766d423248021f5ab791e  [shntool]  20040328 02 A Change Is Gonna Come.shn
+
+===================
+===================
+===================
+=== Bonus Tracks.txt
+===================
+===================
+===================
+Apollo Theater, NYC, March 28, 2004
+
+1. Introduction
+2. A Change Is Gonna Come 
+
+"Apollo Theater 70th Anniversary" show.  These are the Watchtower remaster versions.
+
+
+===================
+===================
+===================

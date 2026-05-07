@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-07-01-Sennheiser.flacf 
+=================== 
+=================== 
+=================== 
+81442e3f4f75782fd0f880ecb3554b4a  bd92-07-01-Sennheiser-LB-2683.txt
+354780d65bb265585c19d93c6d1ff95d  bd920701 d1t01.flac
+58c9fcfa98a83645967746864a14c8dd  bd920701 d1t02.flac
+db764d694eb23f1a832b80d5de4f35da  bd920701 d1t03.flac
+cc2d82543f4ffd336dbeb4441e14eb05  bd920701 d1t04.flac
+b06ba7c1d1253105ecb36da0869b6420  bd920701 d1t05.flac
+e3003fc1a76a62d4a978a07377b9ff38  bd920701 d1t06.flac
+3f052dac8a035b16a814162661c03ee7  bd920701 d1t07.flac
+4270a38f59d0b83f9bcf38963fa736f5  bd920701 d1t08.flac
+f698e81e8163dcb0c8a1a54856170353  bd920701 d1t09.flac
+07077678239b95762c73645e6cedfa4f  bd920701 d1t10.flac
+385d7fb576cbcc9583ad81c0baaf7968  bd920701 d1t11.flac
+e6c291c032ebb6defe64b4f5c390c812  bd920701 d2t01.flac
+b8cf0311040c6f2f500957f927e3a1c9  bd920701 d2t02.flac
+f4cb66357ec26df2012444330db9babc  bd920701 d2t03.flac
+58aede040f043a98967ae33546b9f309  bd920701 d2t04.flac
+a2e75b9caadc9be1c00f7ae874fea31a  bd920701 d2t05.flac
+9d51b334c2df7ca23c398008e85b5106  bd920701 d2t06.flac
+b7fe4365c2ef3b41bf825b621df47200  bd920701 d2t07.flac
+f2ac43dc780703c734929baf64e5d5ed  bd920701 ffp.txt
+ef8a34c200943db9735299191c2e9330  bd920701 flac md5.md5
+e952ab34d82cb7849ebc6ce024569748  bd920701 info LB-2683.txt
+8c09f40efe9e10708eb84947f2e80fdc  bd920701 Reims Ticket.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-07-01-Sennheiser.flacf 
+=================== 
+=================== 
+=================== 
+bd920701 d1t01.flac:cd51b61ec3e10cbadd4ff9717e6df9ac
+bd920701 d1t02.flac:011d381c7e3cf0650145400781ce258a
+bd920701 d1t03.flac:5e88b9e5b1f8216c25bcc37353bf9d55
+bd920701 d1t04.flac:263c3878c478b0182ce40c8d60396948
+bd920701 d1t05.flac:f2d9881e046c1061b280a808d4632d00
+bd920701 d1t06.flac:5074f4db3aada1176af6fc76d09b5adf
+bd920701 d1t07.flac:9b8d92b690d5994f775beee552f33e77
+bd920701 d1t08.flac:429f2b6a26c58a1335f9a1ad3407b47e
+bd920701 d1t09.flac:ece469b3a4a1ea7840b2ca423b2109bf
+bd920701 d1t10.flac:9e04b58f6358e4a95edf7693c80564ff
+bd920701 d1t11.flac:81ab57e124e4643da686a9eace0c1851
+bd920701 d2t01.flac:c4b2b74ace46ab8c2ef2cc44b4aa8c1f
+bd920701 d2t02.flac:418a0f5c412a1bfac2ad0e6d57ea5c09
+bd920701 d2t03.flac:96b6892ef7bd091c0eb430e19de8ef9b
+bd920701 d2t04.flac:3bfde9141bb9f6b5541c763e04fad497
+bd920701 d2t05.flac:32e42c58d48e2f218338cf71eb7f8e3b
+bd920701 d2t06.flac:47656a2a4bf83d98bb1e9383b4f08a48
+bd920701 d2t07.flac:1dcd2b6f3d53834062fcdf3b473f8701
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-07-01-Sennheiser.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.29       45932252 B   ---   --   ---xx   flac  0.5600  bd920701 d1t01.flac
+     7:05.33       75047660 B   ---   --   ---xx   flac  0.5578  bd920701 d1t02.flac
+     4:23.32       46468508 B   ---   --   ---xx   flac  0.5919  bd920701 d1t03.flac
+     8:10.52       86558348 B   ---   --   ---xx   flac  0.5580  bd920701 d1t04.flac
+     5:49.42       61662428 B   ---   --   ---xx   flac  0.6184  bd920701 d1t05.flac
+     7:23.47       78255788 B   ---   --   ---xx   flac  0.5679  bd920701 d1t06.flac
+     7:23.68       78305180 B   ---   --   ---xx   flac  0.6172  bd920701 d1t07.flac
+     3:35.17       37966028 B   ---   --   ---xx   flac  0.4708  bd920701 d1t08.flac
+     4:21.71       46207436 B   ---   --   ---xx   flac  0.4188  bd920701 d1t09.flac
+    11:30.59      121854812 B   ---   --   ---xx   flac  0.5400  bd920701 d1t10.flac
+     9:03.35       95867564 B   ---   --   ---xx   flac  0.5269  bd920701 d1t11.flac
+     4:15.11       45007916 B   ---   --   ---xx   flac  0.5914  bd920701 d2t01.flac
+     5:48.64       61537772 B   ---   --   ---xx   flac  0.5652  bd920701 d2t02.flac
+     7:17.29       77155052 B   ---   --   ---xx   flac  0.5355  bd920701 d2t03.flac
+     8:01.15       84883724 B   ---   --   ---xx   flac  0.6039  bd920701 d2t04.flac
+     5:39.06       59813756 B   ---   --   ---xx   flac  0.6343  bd920701 d2t05.flac
+    10:22.37      109807868 B   ---   --   ---xx   flac  0.5774  bd920701 d2t06.flac
+     6:52.50       72794444 B   ---   --   ---xx   flac  0.4941  bd920701 d2t07.flac
+   121:25.22     1285126536 B                            0.5596  (18 files)
+=================== 
+=================== 
+=================== 

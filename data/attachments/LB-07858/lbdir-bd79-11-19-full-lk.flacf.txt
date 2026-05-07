@@ -1,0 +1,124 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-19-full-lk.flacf 
+=================== 
+=================== 
+=================== 
+1f0c54e5ac89db35ab5cc00bdd86cb5d  D1\bd79-11-19 santa monica advert.flac
+6a212cf28c273110c33afff57ded71bc  D1\bd79-11-19 santa monica full 101.flac
+d60f839c50ccdf320c34da8f07f1c905  D1\bd79-11-19 santa monica full 102.flac
+c8f7e9d7a94929a4a583f52171c314b7  D1\bd79-11-19 santa monica full 103.flac
+34932f22d6ce16c5b9499f419be350d6  D1\bd79-11-19 santa monica full 104.flac
+b6c83d019841aa773cf1c6aa1fb13ff8  D1\bd79-11-19 santa monica full 105.flac
+1d139f8edc7da3983d52791e0b9c991c  D1\bd79-11-19 santa monica full 106.flac
+31dd6854b27d658c5507af5ad8e2cd51  D1\bd79-11-19 santa monica full 107.flac
+1c8e370faae7fb99c0758918c9464ada  D1\bd79-11-19 santa monica full 108.flac
+d04b16fcfbcb47c4ca5c6f5b012e6078  D1\bd79-11-19 santa monica full 109.flac
+8458366771d939c950cba03012a2f5dd  D1\bd79-11-19 santa monica full 110.flac
+b05cd8b0f947fca470c9d54292b40f7b  D1\bd79-11-19 santa monica full 111.flac
+fd377f1aa531e41f1708b7347e9aac22  D1\bd79-11-19 santa monica full 112.flac
+cd6787efc3dd2ed5a6415be72a43ede6  D1\bd79-11-19 santa monica full 113.flac
+43f17dd6d2f5fbabbf227fddcc137ee8  D1\D1.md5
+aaf7f55fd75a4b78a2f1c27764aac58e  D2\bd79-11-19 santa monica full 201.flac
+4b2f7fddd27b5e45bd98ed443ad58536  D2\bd79-11-19 santa monica full 202.flac
+da62828048139ca3847a9048d4fbe032  D2\bd79-11-19 santa monica full 203.flac
+89be46c3cecc369b81dad8a3c99afb68  D2\bd79-11-19 santa monica full 204.flac
+9f8299defacfa049fe311a1eefcbf826  D2\bd79-11-19 santa monica full 205.flac
+45dc333238d045a4f33e056acc649738  D2\bd79-11-19 santa monica full 206.flac
+683c3c3361aea000b2c4f6e87fe0d62f  D2\bd79-11-19 santa monica full 207.flac
+96c47a13e53c7a8e868e554a8a2163c7  D2\bd79-11-19 santa monica full 208.flac
+94c19f914abdb6659ed3b7184e2a620f  D2\bd79-11-19 santa monica full 209.flac
+46d74db92065f575e5af95a8598f5d48  D2\bd79-11-19 santa monica full 210.flac
+06c61c7835bd2af91d759b29679fc8c0  D2\bd79-11-19 santa monica full 211.flac
+99f9efab111064a6531483d9f5b060bc  D2\bd79-11-19 santa monica full 212.flac
+08a77c7d13a32831a44c383cbad8238f  D2\D2.md5
+647ddd772d3c1b8f4238c327a0613c0b  info.txt
+441610251989afd6dffe70c32b8cc620  LK 1979 DVD 5.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-19-full-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+bd79-11-19 santa monica advert.flac:6e558d3e24c4d77812c127105761878d
+bd79-11-19 santa monica full 101.flac:b09f54a26c0e611db97853902c8adb82
+bd79-11-19 santa monica full 102.flac:031eb42d05ab7b54e8ebb37eadfe973b
+bd79-11-19 santa monica full 103.flac:cc710b1d520530ae769003cd720decff
+bd79-11-19 santa monica full 104.flac:370926c45e7c8a62209c5c20403aed80
+bd79-11-19 santa monica full 105.flac:a315314eba5a388192d2edc19a0a6501
+bd79-11-19 santa monica full 106.flac:68f66f52cf08c4dc9433bd4a2488ef76
+bd79-11-19 santa monica full 107.flac:ac0e1887c1fd02e1bd9d15244b6e6472
+bd79-11-19 santa monica full 108.flac:0d6e06f89ee2c74bbcaba0d461ca1ca5
+bd79-11-19 santa monica full 109.flac:1d1f9e9d0d327289bf592d914e3fb010
+bd79-11-19 santa monica full 110.flac:95f22ca81fcf31d5ea554b80ae74de92
+bd79-11-19 santa monica full 111.flac:30e394c0b44fac2a16cae9eecf791169
+bd79-11-19 santa monica full 112.flac:50228cc9463edfddbadee22231a7e3c7
+bd79-11-19 santa monica full 113.flac:812e67ef5366173a4ccad73bc5430d04
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-19-full-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+bd79-11-19 santa monica full 201.flac:d161a8665a26fb19d8476a04abf08cc9
+bd79-11-19 santa monica full 202.flac:e92b6568450a6d0a66aa1e092b69db1d
+bd79-11-19 santa monica full 203.flac:2a61df3e503b04404b68ee5a7e799bd1
+bd79-11-19 santa monica full 204.flac:73f922965e0d0577fbbbd2ddbb97b4e2
+bd79-11-19 santa monica full 205.flac:174408c584058f40803e22aafcd13fb0
+bd79-11-19 santa monica full 206.flac:d562493f254ab213aa76504b58d6482e
+bd79-11-19 santa monica full 207.flac:2e90eaf8f9a2c1d4a7ceb8c2ec5bdf62
+bd79-11-19 santa monica full 208.flac:122ac21d849cf5a09999894d6ed17615
+bd79-11-19 santa monica full 209.flac:0b9ea69aaa3420576a3c1ea13a02dc34
+bd79-11-19 santa monica full 210.flac:acddea535f7978940dc8a0defad202e9
+bd79-11-19 santa monica full 211.flac:c3577f6f0bdc61de2c69354d59e3b79b
+bd79-11-19 santa monica full 212.flac:afd5419f77c9bfa298e7b9671e03396b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-19-full-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.17        7801628 B   ---   --   ---xx   flac  0.4694  bd79-11-19 santa monica advert.flac
+     3:37.13       38309420 B   ---   --   ---xx   flac  0.4378  bd79-11-19 santa monica full 101.flac
+     3:30.56       37175756 B   ---   --   ---xx   flac  0.4829  bd79-11-19 santa monica full 102.flac
+     3:44.27       39577148 B   ---   --   ---xx   flac  0.4792  bd79-11-19 santa monica full 103.flac
+     2:43.74       28927292 B   ---   --   ---xx   flac  0.4966  bd79-11-19 santa monica full 104.flac
+     4:30.00       47628044 B   ---   --   ---xx   flac  0.4590  bd79-11-19 santa monica full 105.flac
+     5:17.57       56052908 B   ---   --   ---xx   flac  0.4737  bd79-11-19 santa monica full 106.flac
+     4:03.67       43022828 B   ---   --   ---xx   flac  0.4872  bd79-11-19 santa monica full 107.flac
+     6:31.30       69043004 B   ---   --   ---xx   flac  0.5214  bd79-11-19 santa monica full 108.flac
+     5:33.72       58910588 B   ---   --   ---xx   flac  0.4709  bd79-11-19 santa monica full 109.flac
+     5:54.02       62450348 B   ---   --   ---xx   flac  0.5377  bd79-11-19 santa monica full 110.flac
+     5:07.14       54187772 B   ---   --   ---xx   flac  0.4650  bd79-11-19 santa monica full 111.flac
+     5:35.34       59174012 B   ---   --   ---xx   flac  0.5013  bd79-11-19 santa monica full 112.flac
+     5:36.37       59357468 B   ---   --   ---xx   flac  0.5289  bd79-11-19 santa monica full 113.flac
+    62:30.50      661618216 B                            0.4907  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-19-full-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:47.32       71870108 B   ---   --   ---xx   flac  0.5383  bd79-11-19 santa monica full 201.flac
+     6:00.38       63593420 B   ---   --   ---xx   flac  0.4781  bd79-11-19 santa monica full 202.flac
+     4:31.60       47945564 B   ---   --   ---xx   flac  0.5153  bd79-11-19 santa monica full 203.flac
+     4:46.04       50459852 B   ---   --   ---xx   flac  0.5294  bd79-11-19 santa monica full 204.flac
+     5:45.58       60994460 B   ---   --   ---xx   flac  0.4785  bd79-11-19 santa monica full 205.flac
+     4:35.28       48575900 B   ---   --   ---xx   flac  0.5332  bd79-11-19 santa monica full 206.flac
+     4:46.50       50568044 B   ---   --   ---xx   flac  0.4589  bd79-11-19 santa monica full 207.flac
+     4:34.23       48387740 B   ---   --   ---xx   flac  0.5266  bd79-11-19 santa monica full 208.flac
+     5:42.45       60434684 B   ---   --   ---xx   flac  0.4825  bd79-11-19 santa monica full 209.flac
+     8:11.63       86760620 B   ---   --   ---xx   flac  0.4755  bd79-11-19 santa monica full 210.flac
+     3:46.10       39889964 B   ---   --   ---xx   flac  0.5242  bd79-11-19 santa monica full 211.flac
+     7:01.38       74353820 B   ---   --   ---xx   flac  0.4725  bd79-11-19 santa monica full 212.flac
+    66:29.74      703834176 B                            0.4983  (12 files)
+=================== 
+=================== 
+=================== 

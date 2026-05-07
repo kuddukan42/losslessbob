@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd24-10-14-hhtfp.flacf
+===================
+===================
+===================
+a4ca403822b602d61a158db4c705d617 *bd2024-10-14.ccm4.hhtfp.Frankenhalle, Nuremberg, GER.txt
+05ef4a24f56a9390b66d8579f17eabc5 *bd2024-10-14.ccm4.hhtfp.sbeok.flac.ffp
+2351e3918e0845d57fe8e477d3832e86 *bd2024-10-14.ccm4.hhtfp.sbeok.flac.md5
+42f915fc6670d54ad7fddff51b24c850 *bd2024-10-14.t01.ccm4.hhtfp.flac
+7f4c3dd284d8963dc47cd962cbff9e95 *bd2024-10-14.t02.ccm4.hhtfp.flac
+07d9757a94a5fddcdb9482476faf5189 *bd2024-10-14.t03.ccm4.hhtfp.flac
+e07ca2b6ba695872383be5fd4858153b *bd2024-10-14.t04.ccm4.hhtfp.flac
+0fc3a813722f67a062eedac7cd585957 *bd2024-10-14.t05.ccm4.hhtfp.flac
+4746d5dc2b42c59236bf832e7a18cda4 *bd2024-10-14.t06.ccm4.hhtfp.flac
+431f9ac8ab9c77000c34eeb19d5e0642 *bd2024-10-14.t07.ccm4.hhtfp.flac
+6b42360642cb64170f6a8b4a7f8d99d7 *bd2024-10-14.t08.ccm4.hhtfp.flac
+77ad28f1ddb025099148e693b168f341 *bd2024-10-14.t09.ccm4.hhtfp.flac
+cfd91f48a1e94ee3897dccf8aa41ab06 *bd2024-10-14.t10.ccm4.hhtfp.flac
+e9f9f7a462015d0a5342c623d6c4a662 *bd2024-10-14.t11.ccm4.hhtfp.flac
+5417aa9d8996f9862d609bbc48a98bfa *bd2024-10-14.t12.ccm4.hhtfp.flac
+f1241cdb3390412dace820e15bef1f74 *bd2024-10-14.t13.ccm4.hhtfp.flac
+1f04d8cb8087c047fc3a847da44222e2 *bd2024-10-14.t14.ccm4.hhtfp.flac
+aa97ed42f00a18744c40620bc311d3ee *bd2024-10-14.t15.ccm4.hhtfp.flac
+ed1e1ef127d4f9290d868263fd14b80e *bd2024-10-14.t16.ccm4.hhtfp.flac
+66cf9bb501a7e09c1bd1d28210c3ece5 *bd2024-10-14.t17.ccm4.hhtfp.flac
+===================
+===================
+===================
+=== ffp for: bd24-10-14-hhtfp.flacf
+===================
+===================
+===================
+bd2024-10-14.t01.ccm4.hhtfp.flac:cdd7a81dae9ea1a5877bea859eb2e3ca
+bd2024-10-14.t02.ccm4.hhtfp.flac:d48a2bb16cd5735128bcd2b0fd4033eb
+bd2024-10-14.t03.ccm4.hhtfp.flac:09dcbe675611e12136db4cd2f501351b
+bd2024-10-14.t04.ccm4.hhtfp.flac:0f02c95a854c7ccb69c9c8468f36776c
+bd2024-10-14.t05.ccm4.hhtfp.flac:74a6bbd4c9ab30ed29b9fc693398b87b
+bd2024-10-14.t06.ccm4.hhtfp.flac:a65f64ea2e9a4b096343103638e15548
+bd2024-10-14.t07.ccm4.hhtfp.flac:b9226e49108beacfb75e44e590323840
+bd2024-10-14.t08.ccm4.hhtfp.flac:7100fac940985d6cc7fae5474d77eeaa
+bd2024-10-14.t09.ccm4.hhtfp.flac:98a7413ca3d0dea43432eab1324860fe
+bd2024-10-14.t10.ccm4.hhtfp.flac:c28752529539c5ac796dc7545ded9b50
+bd2024-10-14.t11.ccm4.hhtfp.flac:0a39fe8cc0558560ea544f85adbe5a39
+bd2024-10-14.t12.ccm4.hhtfp.flac:f1080d4831b6fd786352060c49555900
+bd2024-10-14.t13.ccm4.hhtfp.flac:260abc72c69a8e9a5ed699229fa9ac32
+bd2024-10-14.t14.ccm4.hhtfp.flac:a45642a9ac5afa695aee0beaabb2625a
+bd2024-10-14.t15.ccm4.hhtfp.flac:356e97f542bddbf55e3bc8b63ecf711a
+bd2024-10-14.t16.ccm4.hhtfp.flac:fbd1966911c9829e26e5120b509e6c3b
+bd2024-10-14.t17.ccm4.hhtfp.flac:7a6b8163b51b25e635ca795d24248b73
+===================
+===================
+===================
+=== shntool len for: bd24-10-14-hhtfp.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:43.42       71188028 B   ---   --   ---xx   flac  0.5313  bd2024-10-14.t01.ccm4.hhtfp.flac
+     9:11.73       97368140 B   ---   --   ---xx   flac  0.5381  bd2024-10-14.t02.ccm4.hhtfp.flac
+     5:42.52       60451148 B   ---   --   ---xx   flac  0.5252  bd2024-10-14.t03.ccm4.hhtfp.flac
+     6:49.32       72222908 B   ---   --   ---xx   flac  0.5235  bd2024-10-14.t04.ccm4.hhtfp.flac
+     4:40.25       49450844 B   ---   --   ---xx   flac  0.5169  bd2024-10-14.t05.ccm4.hhtfp.flac
+     5:27.32       57758108 B   ---   --   ---xx   flac  0.4909  bd2024-10-14.t06.ccm4.hhtfp.flac
+     7:51.29       83152652 B   ---   --   ---xx   flac  0.5053  bd2024-10-14.t07.ccm4.hhtfp.flac
+     5:09.48       54620540 B   ---   --   ---xx   flac  0.5060  bd2024-10-14.t08.ccm4.hhtfp.flac
+     8:15.70       87482684 B   ---   --   ---xx   flac  0.4920  bd2024-10-14.t09.ccm4.hhtfp.flac
+     8:37.59       91337612 B   ---   --   ---xx   flac  0.5075  bd2024-10-14.t10.ccm4.hhtfp.flac
+    10:33.72      111830588 B   ---   --   ---xx   flac  0.4772  bd2024-10-14.t11.ccm4.hhtfp.flac
+     6:23.66       67716476 B   ---   --   ---xx   flac  0.5357  bd2024-10-14.t12.ccm4.hhtfp.flac
+     6:44.16       71303276 B   ---   --   ---xx   flac  0.4740  bd2024-10-14.t13.ccm4.hhtfp.flac
+     5:30.61       58355516 B   ---   --   ---xx   flac  0.5284  bd2024-10-14.t14.ccm4.hhtfp.flac
+     5:28.30       57929804 B   ---   --   ---xx   flac  0.4515  bd2024-10-14.t15.ccm4.hhtfp.flac
+     8:19.27       88087148 B   ---   --   ---xx   flac  0.5064  bd2024-10-14.t16.ccm4.hhtfp.flac
+     8:17.12       87699068 B   ---   --   ---xx   flac  0.4824  bd2024-10-14.t17.ccm4.hhtfp.flac
+   119:47.71     1267954540 B                            0.5048  (17 files)
+===================
+===================
+===================

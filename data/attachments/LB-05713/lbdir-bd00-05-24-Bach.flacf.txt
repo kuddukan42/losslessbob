@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-24-Bach.flacf 
+=================== 
+=================== 
+=================== 
+ea17cf4592f8d1a6bd6e0aa4fc0aa0a7  2000-05-24-Dresden-Bach.md5
+c87951aa914147df755631897d94a1aa  2000-05-24-Dresden.txt
+9feb5469f36821a9541102d818de2a1d  Titel 101.flac
+94b559ecee9a7175cea9b70bfc1780b4  Titel 102.flac
+dde05de916ace6b9289defb9b36222e7  Titel 103.flac
+e6acbb3a43f5ba65770e5bd8a01669fc  Titel 104.flac
+b4151ed12eeff8934f407ee1a8fe7f3b  Titel 105.flac
+f5c801a25d4d359656075800a405a81d  Titel 106.flac
+6ad0e5d0721483704851d9c46795db90  Titel 107.flac
+2f20bedc240120321aeef4175087df6e  Titel 108.flac
+83e8cc22fb77ed184a1f7c12b213a197  Titel 109.flac
+697576da7a170f3c06183100b01077f2  Titel 110.flac
+7c7b1746b21d43fa5409071b6c5f9de0  Titel 111.flac
+a664d5b46a61c0cc24a15e869c99eb81  Titel 112.flac
+23681c6bb8469acc029f40f724126f30  Titel 201.flac
+5dc9e6b3af87d2a293be7494f67a7508  Titel 202.flac
+6bdf1e121bcaea68431cbb4908100a55  Titel 203.flac
+e29a822ca796e69c3346a9d194ca220b  Titel 204.flac
+26038ad6c4b0ddbf373214b73cb5d3eb  Titel 205.flac
+df6db7156a0fb41614b3e01157e793ef  Titel 206.flac
+88ecb7c96a75637ff9e71540fb318e6d  Titel 207.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-24-Bach.flacf 
+=================== 
+=================== 
+=================== 
+Titel 101.flac:152b3081a8e0b6ae8bfc85c611e30544
+Titel 102.flac:c69fa4c85ca3c7c4682ef721cbff0794
+Titel 103.flac:44c91464af32ef8a652acaa819258ce8
+Titel 104.flac:a9551b4203d8b6fa60ffbe0858f73a76
+Titel 105.flac:65194a48a3198323399f04200066fcde
+Titel 106.flac:60095bbb7692ab396e3fbf5f04eb8a17
+Titel 107.flac:41ee1f9479be83b3b3759c5e7843d066
+Titel 108.flac:a547b6a26ddba45228e43ccd07644a3f
+Titel 109.flac:c7b87a304e060b569aafc86d3ae01bc1
+Titel 110.flac:d18319784c8c7e076085b52b40c739b5
+Titel 111.flac:af41e2995ff487052a348a10081608b4
+Titel 112.flac:1a57a883b1b0cd638b413ea1eb37c896
+Titel 201.flac:d5e1f2a80f89fed094d878f0332e0ad3
+Titel 202.flac:c95b336c08fdc30ab6d5992465ef0d1b
+Titel 203.flac:ba3b5b8324071109249d6f8194c88210
+Titel 204.flac:e9520e1081ee163cc3bbdf77e7de85b8
+Titel 205.flac:c311d06de847d5fbc7c2649131407780
+Titel 206.flac:a7f182602f1ca5189c42d807300df75f
+Titel 207.flac:08bd173613dff794388b6e426c521b96
+=================== 
+=================== 
+=================== 
+=== shntool for: bd00-05-24-Bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.38       42778220 B   ---   --   ---xx   flac  0.5170  Titel 101.flac
+     4:30.60       47769164 B   ---   --   ---xx   flac  0.4006  Titel 102.flac
+     5:25.61       57473516 B   ---   --   ---xx   flac  0.4876  Titel 103.flac
+     4:26.29       46990652 B   ---   --   ---xx   flac  0.4565  Titel 104.flac
+     7:54.20       83660684 B   ---   --   ---xx   flac  0.5787  Titel 105.flac
+     6:51.27       72563948 B   ---   --   ---xx   flac  0.4599  Titel 106.flac
+     2:57.60       31363964 B   ---   --   ---xx   flac  0.5426  Titel 107.flac
+     4:56.52       52336748 B   ---   --   ---xx   flac  0.4885  Titel 108.flac
+     7:32.53       79857500 B   ---   --   ---xx   flac  0.5712  Titel 109.flac
+     6:46.33       71696060 B   ---   --   ---xx   flac  0.5107  Titel 110.flac
+     4:56.01       52216796 B   ---   --   ---xx   flac  0.5922  Titel 111.flac
+     7:52.67       83418428 B   ---   --   ---xx   flac  0.5372  Titel 112.flac
+     6:46.16       71656076 B   ---   --   ---xx   flac  0.5532  Titel 201.flac
+     6:47.38       71884220 B   ---   --   ---xx   flac  0.5897  Titel 202.flac
+     8:21.66       88531676 B   ---   --   ---xx   flac  0.4426  Titel 203.flac
+     6:10.34       65348012 B   ---   --   ---xx   flac  0.5771  Titel 204.flac
+     7:08.35       75581564 B   ---   --   ---xx   flac  0.5115  Titel 205.flac
+     7:02.51       74560796 B   ---   --   ---xx   flac  0.6167  Titel 206.flac
+     6:16.01       66328796 B   ---   --   ---xx   flac  0.5089  Titel 207.flac
+   116:46.67     1236016820 B                            0.5262  (19 files)
+=================== 
+=================== 
+=================== 

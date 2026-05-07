@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-12-FOB-PCM.flacf 
+=================== 
+=================== 
+=================== 
+555ac3f6a362dcf5e35583224eb84487  bd87-07-12-FOB-PCM-LB-2774.txt
+2a380cea4ba9089f97e5e6f1921fdf5c  bdgd1987-07-12 Giants Stadium FOB PCM Flac.md5
+3f214dfb2c65a5c0558aed176f6577b5  bdgd1987-07-12d1t01.flac
+9ddc7402e11447a99fec8fdd8afeda91  bdgd1987-07-12d1t02.flac
+b06912d3601f71be83cc822249025201  bdgd1987-07-12d1t03.flac
+5fb6e8887fc65e629a0d96c69b3f1813  bdgd1987-07-12d1t04.flac
+a8bf0b5151af7f592862ab63fe3af8ec  bdgd1987-07-12d1t05.flac
+86cd389427b68e20a1c211efe92d410f  bdgd1987-07-12d1t06.flac
+c0e69840f3350c071360d34bd7d32d7b  bdgd1987-07-12d1t07.flac
+9d374a9fefd9003fc77605d7eacd6002  bdgd1987-07-12d1t08.flac
+9dd7121451917470b70035276bb7d4d3  bdgd1987-07-12d1t09.flac
+55750ca544d4b82068af5c6e7c18f086  bdgd1987-07-12d1t10.flac
+7b353a5e12a7907d824e444495ee9468  bdgd1987-07-12d1t11.flac
+8c6b9a64cba8557b9603d98dc1b9549c  bdgd1987-07-12d1t12.flac
+f9fad65a5fdd89e7143bc39113278ee0  bdgd1987-07-12d1t13.flac
+1ba1cf948233c06a2c7260fdded35039  bdgd1987-07-12d2t01.flac
+0ffd8eab7408fe9736051c21d595c45b  bdgd1987-07-12d2t02.flac
+1d5207b9a36d20405f4fcc3bfc02d170  bdgd1987-07-12ffp.txt
+970e831e32c10a86c7c2bf51161c4864  bdgd1987-07-12info.txt
+08b6c1bbd30d7322fa811772caaf0d61  Giants_Stadium_July_87_4.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-07-12-FOB-PCM.flacf 
+=================== 
+=================== 
+=================== 
+bdgd1987-07-12d1t01.flac:595d7ee8ee59f30f760ed32ebca93187
+bdgd1987-07-12d1t02.flac:8baaf404fa4281ae1493c09922866018
+bdgd1987-07-12d1t03.flac:0088f52ac7bcd82e71cec9075dfe3d0d
+bdgd1987-07-12d1t04.flac:6d6b79c67a5cd124ae8e8750d09fd49b
+bdgd1987-07-12d1t05.flac:d7f84c561e9628f1fb282322cb4fe49e
+bdgd1987-07-12d1t06.flac:1a8bef063a1c33a99ff5da23d47f8ac8
+bdgd1987-07-12d1t07.flac:2ed3d330af7291079113f5a06d3abd11
+bdgd1987-07-12d1t08.flac:fd6637efa76370710cbc1b030c5c6363
+bdgd1987-07-12d1t09.flac:d855b6257f132cecd635b63744649eab
+bdgd1987-07-12d1t10.flac:912b0fa515c5f1fb61948801dd1a10b0
+bdgd1987-07-12d1t11.flac:16c12c0df51948ce551076f51f182afa
+bdgd1987-07-12d1t12.flac:a9a32ed171ac7d094dea8e41501f3664
+bdgd1987-07-12d1t13.flac:350515cc4098a38664d4e615159bc352
+bdgd1987-07-12d2t01.flac:8ed77d05f4a0e5ac4ab8751b5d1451b5
+bdgd1987-07-12d2t02.flac:5fae2e2759f851f862ec591a3cd0b082
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-12-FOB-PCM.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:25.61       46889516 B   ---   --   ---xx   flac  0.6449  bdgd1987-07-12d1t01.flac
+     6:59.02       73916348 B   ---   --   ---xx   flac  0.6513  bdgd1987-07-12d1t02.flac
+     5:10.01       54686396 B   ---   --   ---xx   flac  0.6329  bdgd1987-07-12d1t03.flac
+     5:24.32       57228908 B   ---   --   ---xx   flac  0.6513  bdgd1987-07-12d1t04.flac
+     6:17.22       66554588 B   ---   --   ---xx   flac  0.6345  bdgd1987-07-12d1t05.flac
+     5:35.73       59265740 B   ---   --   ---xx   flac  0.6381  bdgd1987-07-12d1t06.flac
+     5:49.04       61573052 B   ---   --   ---xx   flac  0.6399  bdgd1987-07-12d1t07.flac
+     4:03.50       42982844 B   ---   --   ---xx   flac  0.6529  bdgd1987-07-12d1t08.flac
+     4:33.45       48263084 B   ---   --   ---xx   flac  0.6246  bdgd1987-07-12d1t09.flac
+     8:17.38       87760220 B   ---   --   ---xx   flac  0.6445  bdgd1987-07-12d1t10.flac
+     9:31.05      100736204 B   ---   --   ---xx   flac  0.6540  bdgd1987-07-12d1t11.flac
+     5:05.68       53961980 B   ---   --   ---xx   flac  0.6761  bdgd1987-07-12d1t12.flac
+     4:37.57       48996908 B   ---   --   ---xx   flac  0.6477  bdgd1987-07-12d1t13.flac
+     6:18.49       66794492 B   ---   --   ---xx   flac  0.6552  bdgd1987-07-12d2t01.flac
+     6:14.55       66103004 B   ---   --   ---xx   flac  0.5852  bdgd1987-07-12d2t02.flac
+    88:24.37      935713284 B                            0.6423  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,31 @@
+c988065f031c3df80c0f24812d04cdd4 *13.11.1990.txt
+f332d128683d69acd0139cb51239353b *Butcherart.doc
+515a26710599141180ea9992d7b6df96 *Southside ButchersDVDs.xls
+9dbb092b1ec7bf86aee4185ed4e252e0 *When The Roses Fade [CD1]\1990-11-13_101.flac
+19dfe6d14d445fa5c7e93329c0989d5b *When The Roses Fade [CD1]\1990-11-13_102.flac
+3da920f16f64e1d0c3a734c024a4b3dd *When The Roses Fade [CD1]\1990-11-13_103.flac
+78f1c0010586d07cfbafc0ed18b083dd *When The Roses Fade [CD1]\1990-11-13_104.flac
+723e6f9a56872ef906103c570b678fb2 *When The Roses Fade [CD1]\1990-11-13_105.flac
+d7d53427991a349b4bdbecf17f1ee0af *When The Roses Fade [CD1]\1990-11-13_106.flac
+b117293479cafdcb50c0101f30851a77 *When The Roses Fade [CD1]\1990-11-13_107.flac
+eb2d84dd4d5d67099be6d962b0bc0aa5 *When The Roses Fade [CD1]\1990-11-13_108.flac
+eebc1e06f0f905c932db0e56c48851f1 *When The Roses Fade [CD1]\1990-11-13_109.flac
+31580a2b83c2cec95bb0c7cbb7a62184 *When The Roses Fade [CD1]\1990-11-13_110.flac
+bc30080c403551edb18aa2f20e46c555 *When The Roses Fade [CD1]\1990-11-13_111.flac
+e75777665a678ff69ec1c7f96e157f0f *When The Roses Fade [CD1]\1990-11-13_112.flac
+a9078cc27186b3005e723e079f5ee38a *When The Roses Fade [CD1]\When The Roses Fade [CD1].LOG
+846377e417982c4e0204170e8140fe12 *When The Roses Fade [CD1]\When The Roses Fade [CD1].md5
+0e6ee18aec469b69bd0d00b29da3db12 *When The Roses Fade [CD2]\1990-11-13_201.flac
+4c2a4d97ec9f34d21174a562b1cb42ad *When The Roses Fade [CD2]\1990-11-13_202.flac
+63b2a77e6d0c72dd59b68e65a2770076 *When The Roses Fade [CD2]\1990-11-13_203.flac
+f90aedf116e7997813719cfe2fc2235f *When The Roses Fade [CD2]\1990-11-13_204.flac
+16310ae24992af13ebfc5a4c49f056f4 *When The Roses Fade [CD2]\1990-11-13_205.flac
+33ea0c70e611d2dedd6198e00eddc56a *When The Roses Fade [CD2]\1990-11-13_206.flac
+d4b719d5503b892a9ae97e18e01a5cf1 *When The Roses Fade [CD2]\1990-11-13_207.flac
+ac090831c87122744096f94d3ba0b4df *When The Roses Fade [CD2]\1990-11-13_208.flac
+e953ef00f4801143da3bd3e0b5bede60 *When The Roses Fade [CD2]\1990-11-13_209.flac
+ef3ba553968c890fee49a595e1ed405d *When The Roses Fade [CD2]\1990-11-13_210.flac
+6d642fd5ede1142a08e2dbc4de9e0fbb *When The Roses Fade [CD2]\1990-11-13_211.flac
+33f2a91943a1c48e111d577627ff2f77 *When The Roses Fade [CD2]\1990-11-13_212.flac
+8b3e50eeb261ee373bda62dcbbffb31c *When The Roses Fade [CD2]\When The Roses Fade [CD2].LOG
+16bcebd27e0aa26dc2441ad1164db3be *When The Roses Fade [CD2]\When The Roses Fade [CD2].md5

@@ -1,0 +1,16 @@
+6aea08681517221163eef85437fdfe3d *11-23-96 Bob Dylan d01t01.flac
+dc1ad2841ab8ab5e7ed35097cf7e8d11 *11-23-96 Bob Dylan d01t02.flac
+a4ed9a58afa5b9bec3385a717197d70b *11-23-96 Bob Dylan d01t03.flac
+bb893b92f5d7e334fa399b9fe78b62d8 *11-23-96 Bob Dylan d01t04.flac
+6bdd770d928ed1df1d8a43673cba9e07 *11-23-96 Bob Dylan d01t05.flac
+d6d4ec69ace9da0308b41d9711872c74 *11-23-96 Bob Dylan d01t06.flac
+119740e3f2307c78184246db1160da5d *11-23-96 Bob Dylan d01t07.flac
+61a3b088ad04f4c923b44ed2ade76717 *11-23-96 Bob Dylan d01t08.flac
+15c230b5db95dd3ffec9f85d1850c670 *11-23-96 Bob Dylan d01t09.flac
+973d31e900c8c6c22bbddb8351b6b4f3 *11-23-96 Bob Dylan d01t10.flac
+2057d4ff23f6cce5055d3b02575c42e3 *11-23-96 Bob Dylan d01t11.flac
+8c9fdf2bbf09f3f9574035c5b58859e5 *11-23-96 Bob Dylan d02t01.flac
+a097345d53e81f2f1166585e6775d37a *11-23-96 Bob Dylan d02t02.flac
+9cff5ca6aac293ee5e504877aa6feddf *11-23-96 Bob Dylan d02t03.flac
+928806d3575157c513e1b0930ac2a2a9 *11-23-96 Bob Dylan d02t04.flac
+4662f3e5bdf39dff77ca9ae5006a7d3a *11-23-96 Bob Dylan d02t05.flac

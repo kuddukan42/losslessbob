@@ -1,0 +1,54 @@
+Broadside Show, WBAI-FM, New York, NY, May 1962
+
+Have never seen the May 1962 Broadside Show been torrented (nor traded, for that matter as a CD) in its entirety.
+Therefore, I decided to digitise my cassette copy, 45 years after the event...
+
+Israel "Izzy" Young (host), with Agnes "Sis" Cunningham, Pete Seeger, Gil Turner, Bob Dylan
+Track list:
+01 GIL TURNER: Benny Kid Paret
+02 Discussion
+03 BOB DYLAN: Ballad Of Donald White
+04 Discussion
+05 PETE SEEGER: I Can See A New Day; Discussion
+06 Discussion; PETE SEEGER: Billy Sol (impromptu; fragment)
+07 Discussion
+08 GIL TURNER: The Shelter Song (?); Discussion
+09 BOB DYLAN: The Death Of Emmett Till
+10 Discussion; PETE SEEGER: I Wanna Go To Andorra; Discussion
+11 Discussion; BOB DYLAN: Blowin' In The Wind (with all others); Sign-Off by Izzy Young  
+
+
+8f3e064ed71912a81b88c557bfdaa58c *01.flac
+e3819773278fbea1818e250a4cf20ecd *02.flac
+446c44cde7e0346947b7ef1a1b528662 *03.flac
+4e46e2a4eb0d0a321e6364258d2e29d7 *04.flac
+15502ddbe92de5fb3b4c0e298a9d2747 *05.flac
+cb0a83566ce35ab0ecf540817fde54d0 *06.flac
+794c26d645d8e74a4480a6449a37ccbf *07.flac
+36145e9efd8ca8ccbc984579c4ab367a *08.flac
+0f01251d667bf12e7982efac3f9b1dc3 *09.flac
+decb7956ed48ffa634e375361d66335b *10.flac
+f87ddd86e37294d2a88c47d2876464b3 *11.flac
+c6c8c7e411686ed039d534ff4645056a *6205broadside_wbai_ffp.txt
+
+
+Lineage: WBAI-FM broadcast or pre-FM reel (allegedly this show was never broadcast)->unknown (low) generation transfer(s)->cassette trade (1980s)->transfer with Terratec Phono Preamp Studio/Sony Soundforge (no noise reduction, etc. applied) by fredatwork/fred_at_work/fredgermany on May 1, 2007->tracks created with CDWave->Flac Level 8 (align on sector boundaries)
+
+Known flaws: Speed variations on first track (most likely from source, because cassette is in excellent shape), slight tape hiss, 
+audible "cut" between tracks 10 and 11 (Finale), still I'd label it a solid B+
+
+IF ANYONE HAS AN UPGRADE TO THIS, PLEASE SHARE!!!
+
+Comments:
+The three Dylan tracks from this (possibly never aired) radio show have been in circulation as far back as "Great Wide Wonder" -- most notably on "Broadside", Label: Gunsmoke Records GSR2.
+
+The complete broadcast does not offer much more of Bob Dylan (except an "I don't know" to the question why more songs have been written about badmen than "good" men, or Dylan's admittance that he has never heard of the country of Andorra...).
+
+Still, it's nice to see his contributions in context -- a radio show hosted by Israel "Izzy" Young, with Agnes "Sis" Cunningham, Pete Seeger, Gil Turner, and Bob Dylan, Interesting discussions about topical song throughout -- more on the similarities between Gil Turner's "Benny Kid Paret" and some Dylan songs from that period, the source of Dylan's "Ballad Of Donald White", etc. at http://www.bobdylanroots.com/emberl.html
+
+Some more info:
+Gil Turner (1933-1974)
+Gil Turner, born Gilbert Strunk in Bridgeport, Connecticut, was an important figure associated with Broadside. An early member of the magazine's editorial board, he was responsible for bringing artists such as Bob Dylan, Bonnie Dobson, and Mark Spoelstra to the attention of Sis and Gordon Friesen. A member of the New World Singers, Turner helped arrange the initial Broadside Folkways LP. He was actively involved in civil rights marches in the South during the early 1960s and also composed the well-known anthem "Carry it On."
+The first recording of Bob Dylan's Blowin' in the Wind was made by The New World Singers in 1962. Frequently, Dylan was not the first to record his own songs. (The New World Singers were also the first to record Dylan's "Don't Think Twice, It's Alright"). The story goes that Dylan approached Gil Turner backstage at a New World Singers' performance with the words to Blowin' in the Wind, and asked if he could sing it for him. Turner was so impressed that he asked Dylan if he could take the song upstairs to the stage and perform it with the group, and he did (Cohen, Traum personal communication, 2000).
+http://www.folkways.si.edu/projects_initiatives/broadside/artists/gil_turner.html
+

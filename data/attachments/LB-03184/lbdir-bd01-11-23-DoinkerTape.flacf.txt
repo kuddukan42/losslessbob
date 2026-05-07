@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-11-23-DoinkerTape.flacf 
+=================== 
+=================== 
+=================== 
+36c211799a526ae2655685e9243cc571  bd01-11-23-DoinkerTape-LB-3184.txt
+17606bde76b9749363a7f1eb9c759fe7  Disk1\Track No01.flac
+3f28551f104717222a01ae4814c6e8fe  Disk1\Track No02.flac
+7b962d6a874474a062d88114299bd9fd  Disk1\Track No03.flac
+fc144bea37ead9454400e01ddf942304  Disk1\Track No04.flac
+d47a373575eb04515e97ca199760aaac  Disk1\Track No05.flac
+b76e6fbb5d82e7f28e47d3852d22bdce  Disk1\Track No06.flac
+c9f6b75c82ddeb69c6b25c7580ddb6b6  Disk1\Track No07.flac
+dba646ec4133af6c07811ffcce70b2a5  Disk1\Track No08.flac
+28e96d0a4a6b928a7f7a86643c87ed33  Disk1\Track No09.flac
+73f5aa7d1b58e7bbc195044484caecc5  Disk1\Track No10.flac
+d36c8ae340af5a25f202b3a9bc1a17f7  Disk1\Track No11.flac
+32813cf6950d2c8ec00db4894672240f  Disk1\Track No12.flac
+9c3457c1975857022f9d8aed23533516  Disk2\Track No01.flac
+dfc63b2d6c895341786e94011c51a297  Disk2\Track No02.flac
+34488ccbdb8a3887ffff2e3d38e99745  Disk2\Track No03.flac
+ed9734c202b136783189cc957591b74b  Disk2\Track No04.flac
+cc03040a13a05b8ec4a16b9aa3c690dc  Disk2\Track No05.flac
+df23a49ec97e82d146a024365e3f7302  Disk2\Track No06.flac
+2d155999bd1c6f559957156899f2f49f  Disk2\Track No07.flac
+f75ab47c376105ce3305e001c0454eff  Disk2\Track No08.flac
+054f45830c1eab315e9f734b5b10a3c9  Disk2\Track No09.flac
+b6a35085575581541d545c8d7269afaa  Disk2\Track No10.flac
+3a3acbd45acd772197f9405f173058d3  Dylan Portland.txt
+e5844e79cf7a50c52efa2fd34caf00c9  MyMusic.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-11-23-DoinkerTape.flacf\Disk2 
+=================== 
+=================== 
+=================== 
+Track No01.flac:25342fd133c13a5e7483211fa6bfa020
+Track No02.flac:8921f6fd12c751cb8df32ab06756f729
+Track No03.flac:32fcd4e4ab07c9099b55a46ee1d855e0
+Track No04.flac:e1adf8eb220d065ed082e5de93037b51
+Track No05.flac:710e53b829ce04be067c9a74beb192c4
+Track No06.flac:1ccf9cfdcbdc26810fdf7e4724a8b1b0
+Track No07.flac:8297dd4822b80ffb704292c9cb4694eb
+Track No08.flac:e228b079ecd104ca21e75af29a80b407
+Track No09.flac:cafec6cc61305d3cb0ebc0505597d359
+Track No10.flac:2c5d9c8791d4b104549286372eb75c2e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-11-23-DoinkerTape.flacf\Disk1 
+=================== 
+=================== 
+=================== 
+Track No01.flac:c3313eb37fc5ddb05ee1f2f55907285e
+Track No02.flac:8c61991a8b32136e3b3cb4eb8d5cf2d8
+Track No03.flac:a693aaf414581c61984e7e90a099708c
+Track No04.flac:bcb8539ab8bcf3188ddb85771a86aab5
+Track No05.flac:dce2d1cba60c6c44d696fe9892367f1a
+Track No06.flac:87ede98d0d91f29a1c9fb17d83c330e9
+Track No07.flac:8a5399d6e29f3c6e56a26a2dc8d19e86
+Track No08.flac:c4fcf706f7664a1e157a8a379ccabad2
+Track No09.flac:5b72dbce6dee3cbd1091a4bbd5473a5d
+Track No10.flac:0c8b7b50de1f3d3f6661828e63ed0395
+Track No11.flac:8f8d0948de2c13b39b3283f5936bc9b2
+Track No12.flac:a8b5b27c293a16ec20ec06cbddc211e8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-23-DoinkerTape.flacf\Disk2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:06.65       64715324 B   ---   --   ---xx   flac  0.5810  Track No01.flac
+     5:39.50       59917244 B   ---   --   ---xx   flac  0.6038  Track No02.flac
+     9:26.65       99995324 B   ---   --   ---xx   flac  0.5760  Track No03.flac
+     6:24.25       67796444 B   ---   --   ---xx   flac  0.5841  Track No04.flac
+     7:38.40       80885324 B   ---   --   ---xx   flac  0.5831  Track No05.flac
+     4:10.30       44170604 B   ---   --   ---xx   flac  0.5068  Track No06.flac
+     7:05.50       75087644 B   ---   --   ---xx   flac  0.5996  Track No07.flac
+     6:20.00       67032044 B   ---   --   ---xx   flac  0.5439  Track No08.flac
+     5:53.60       62410364 B   ---   --   ---xx   flac  0.5836  Track No09.flac
+     5:41.27       60215948 B   ---   --   ---xx   flac  0.5566  Track No10.flac
+    64:27.37      682226264 B                            0.5745  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-11-23-DoinkerTape.flacf\Disk1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:47.20       29505884 B   ---   --   ---xx   flac  0.6136  Track No01.flac
+     6:38.05       70219004 B   ---   --   ---xx   flac  0.5505  Track No02.flac
+     8:48.60       93280364 B   ---   --   ---xx   flac  0.5844  Track No03.flac
+     4:16.35       45240764 B   ---   --   ---xx   flac  0.5560  Track No04.flac
+     5:06.60       54119564 B   ---   --   ---xx   flac  0.5444  Track No05.flac
+     5:36.65       59423324 B   ---   --   ---xx   flac  0.5114  Track No06.flac
+     8:51.20       93715484 B   ---   --   ---xx   flac  0.5921  Track No07.flac
+     7:25.10       78521564 B   ---   --   ---xx   flac  0.5919  Track No08.flac
+     6:19.60       66996764 B   ---   --   ---xx   flac  0.5668  Track No09.flac
+     6:40.00       70560044 B   ---   --   ---xx   flac  0.5403  Track No10.flac
+    10:00.10      105863564 B   ---   --   ---xx   flac  0.5973  Track No11.flac
+     6:09.72       65260988 B   ---   --   ---xx   flac  0.5705  Track No12.flac
+    78:40.42      832707312 B                            0.5702  (12 files)
+=================== 
+=================== 
+=================== 

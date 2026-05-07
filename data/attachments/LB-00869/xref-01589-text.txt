@@ -1,0 +1,152 @@
+===================
+===================
+===================
+=== bd92-04-11 - Hobart - MK.md5
+===================
+===================
+===================
+0e995a32f75f7e09a9f28395a591d93d *bd92-04-11 - Hobart - MK.st5
+d617b3edb28e84c17ca822bfa77c1471 *bd92-04-11 - Hobart - MK.txt
+12973988e0adace95756673ae1ce7a2a *bd92-04-11d1t01.shn
+bd2c50ebbda4cf9c288ceea77cfc6373 *bd92-04-11d1t02.shn
+7702a13d3b0acb84cdf6e22a49379d82 *bd92-04-11d1t03.shn
+723f435142809a4b37c85d074718a40f *bd92-04-11d1t04.shn
+c08f8eb613217a3a8482581ee422239b *bd92-04-11d1t05.shn
+d0dc7872a857a9566328cd000f10af42 *bd92-04-11d1t06.shn
+29353151bc1057088d8e0daeea2add4c *bd92-04-11d1t07.shn
+0a85b838fa7b7d5731a4b89a490e9816 *bd92-04-11d1t08.shn
+c62926073ee1019ce028d519ae6b4150 *bd92-04-11d1t09.shn
+e655d8a1a0a1321bf177294692a42036 *bd92-04-11d1t10.shn
+61406402666cdc34d9a6b6f253f82572 *bd92-04-11d2t01.shn
+a2c11cdedbf43f8d88e65cf63dbfc491 *bd92-04-11d2t02.shn
+c99a801634337af431508344151fcdf0 *bd92-04-11d2t03.shn
+343bed4d6c9052c6cd4809cee1273d48 *bd92-04-11d2t04.shn
+0109ac91c315ed8fe6ac1e8c966e721c *bd92-04-11d2t05.shn
+0195fabea13fe49d91c5531f6e1f1c4c *bd92-04-11d2t06.shn
+59032e5daaef48364d348a4fbc2879ed *bd92-04-11d2t07.shn
+934555a1ac0a9035521941845f2b6b17 *bd92-04-11d2t08.shn
+20f7e5ea5380866ff9fb19ed445b9031 *noname.md5
+===================
+===================
+===================
+=== bd92-04-11 - Hobart - MK.st5
+===================
+===================
+===================
+a38af6ef92d1c91224383f30d64f3cda  [shntool]  bd92-04-11d1t01.shn
+7887bc651af790b334eac02cb20ff4c7  [shntool]  bd92-04-11d1t02.shn
+63bb19afb0ea90d4ab978e62f029c4a3  [shntool]  bd92-04-11d1t03.shn
+94ae0ee052dc34d6209e798aa616b4f6  [shntool]  bd92-04-11d1t04.shn
+112eed6684d8e9003fd2a20f8d341175  [shntool]  bd92-04-11d1t05.shn
+6a5158b0901bf29454d8a80a71dc9458  [shntool]  bd92-04-11d1t06.shn
+8a35fa5e811a45c27f6cc48f337e05a7  [shntool]  bd92-04-11d1t07.shn
+0db1968ccb8f76f39f16bd2439ff63ee  [shntool]  bd92-04-11d1t08.shn
+53ba20ded01e733c32956763268b49f7  [shntool]  bd92-04-11d1t09.shn
+598d4dc9937ad37ead02dfdf7f471b4d  [shntool]  bd92-04-11d1t10.shn
+81a983fb1e8ef6ad170597dde516808c  [shntool]  bd92-04-11d2t01.shn
+5aff68e5cafbc0bdb1d3f1b02866dc0e  [shntool]  bd92-04-11d2t02.shn
+9f79c7dd8988375cfcfe3bf2158bf7f7  [shntool]  bd92-04-11d2t03.shn
+53ea757fa6ccb018152d0d1d5381ed5d  [shntool]  bd92-04-11d2t04.shn
+52f4c3a357ffd0ddc11142e20f238145  [shntool]  bd92-04-11d2t05.shn
+00ae1bb17e920cd3c463d6a75e132525  [shntool]  bd92-04-11d2t06.shn
+a6dc8f110945381919374dd89761da44  [shntool]  bd92-04-11d2t07.shn
+5f9c1ea17daf5d4070e96e45bf7eee1d  [shntool]  bd92-04-11d2t08.shn
+===================
+===================
+===================
+=== bd92-04-11 - Hobart - MK.txt
+===================
+===================
+===================
+#15 - 1992 Australian Tour - MK/LK Series - May 2015
+
+xxxxx
+
+Derwent Centre
+Hobart, Tasmania, Australia
+11 April 1992
+
+1.  All Along The Watchtower
+2.  Most Of The Time
+3.  John Brown
+4.  I Want You
+5.  Tangled Up In Blue
+6.  You're A Big Girl Now
+7.  Maggie's Farm
+8.  Love Minus Zero/No Limit
+9.  Little Moses (Bert A. Williams/Earle C. Jones)
+10.  Gates Of Eden
+11.  Don't Think Twice, It's All Right
+12.  Cat's In The Well
+13.  Idiot Wind
+14.  The Times They Are A-Changin'
+15.  Highway 61 Revisited
+
+16.  Absolutely Sweet Marie
+17.  Ballad Of A Thin Man
+18.  Blowin' In The Wind
+
+Concert # 379 of The Never-Ending Tour.  Concert # 15 of the 1992 Tour Of Australia. 1992 concert # 15.
+Concert # 15 with the 6th Never-Ending Tour band: Bob Dylan (vocal & guitar), Bucky Baxter (pedal steel guitar & electric slide guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+
+8, 9, 18  Bob Dylan (acoustic guitar & vocal).
+4-6, 8, 11, 13, 14, 16, 18  Bob Dylan harmonica.
+10  acoustic with the band except drums.
+11, 14  acoustic with the band.
+3, 5, 14  Bucky Baxter (mandolin).
+7, 15  Bucky Baxter (electric slide guitar).
+10  Bucky Baxter (dobro).
+
+BobTalk:
+Here's a song off a new album. Cat's In The Well.
+
+7 new songs (38%) compared to previous concert. 3 new songs for this tour.
+
+xxxxx
+
+a38af6ef92d1c91224383f30d64f3cda  [shntool]  bd92-04-11d1t01.shn
+7887bc651af790b334eac02cb20ff4c7  [shntool]  bd92-04-11d1t02.shn
+63bb19afb0ea90d4ab978e62f029c4a3  [shntool]  bd92-04-11d1t03.shn
+94ae0ee052dc34d6209e798aa616b4f6  [shntool]  bd92-04-11d1t04.shn
+112eed6684d8e9003fd2a20f8d341175  [shntool]  bd92-04-11d1t05.shn
+6a5158b0901bf29454d8a80a71dc9458  [shntool]  bd92-04-11d1t06.shn
+8a35fa5e811a45c27f6cc48f337e05a7  [shntool]  bd92-04-11d1t07.shn
+0db1968ccb8f76f39f16bd2439ff63ee  [shntool]  bd92-04-11d1t08.shn
+53ba20ded01e733c32956763268b49f7  [shntool]  bd92-04-11d1t09.shn
+598d4dc9937ad37ead02dfdf7f471b4d  [shntool]  bd92-04-11d1t10.shn
+81a983fb1e8ef6ad170597dde516808c  [shntool]  bd92-04-11d2t01.shn
+5aff68e5cafbc0bdb1d3f1b02866dc0e  [shntool]  bd92-04-11d2t02.shn
+9f79c7dd8988375cfcfe3bf2158bf7f7  [shntool]  bd92-04-11d2t03.shn
+53ea757fa6ccb018152d0d1d5381ed5d  [shntool]  bd92-04-11d2t04.shn
+52f4c3a357ffd0ddc11142e20f238145  [shntool]  bd92-04-11d2t05.shn
+00ae1bb17e920cd3c463d6a75e132525  [shntool]  bd92-04-11d2t06.shn
+a6dc8f110945381919374dd89761da44  [shntool]  bd92-04-11d2t07.shn
+5f9c1ea17daf5d4070e96e45bf7eee1d  [shntool]  bd92-04-11d2t08.shn
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+c62926073ee1019ce028d519ae6b4150 *d1t09.shn
+bd2c50ebbda4cf9c288ceea77cfc6373 *d1t02.shn
+7702a13d3b0acb84cdf6e22a49379d82 *d1t03.shn
+723f435142809a4b37c85d074718a40f *d1t04.shn
+c08f8eb613217a3a8482581ee422239b *d1t05.shn
+d0dc7872a857a9566328cd000f10af42 *d1t06.shn
+29353151bc1057088d8e0daeea2add4c *d1t07.shn
+0a85b838fa7b7d5731a4b89a490e9816 *d1t08.shn
+12973988e0adace95756673ae1ce7a2a *d1t01.shn
+e655d8a1a0a1321bf177294692a42036 *d1t10.shn
+61406402666cdc34d9a6b6f253f82572 *d2t01.shn
+a2c11cdedbf43f8d88e65cf63dbfc491 *d2t02.shn
+c99a801634337af431508344151fcdf0 *d2t03.shn
+343bed4d6c9052c6cd4809cee1273d48 *d2t04.shn
+0109ac91c315ed8fe6ac1e8c966e721c *d2t05.shn
+0195fabea13fe49d91c5531f6e1f1c4c *d2t06.shn
+59032e5daaef48364d348a4fbc2879ed *d2t07.shn
+934555a1ac0a9035521941845f2b6b17 *d2t08.shn
+===================
+===================
+===================

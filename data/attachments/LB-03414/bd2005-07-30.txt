@@ -1,0 +1,108 @@
+Bob Dylan
+Maryhill Winery Amphitheatre
+Goldendale, Washington
+July 30, 2005
+
+Lineage:
+10th row center
+AKG (ck91>mk90/3+h98>se300b) > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > Cool Edit 96 > CD Wave Editor > FLAC frontend
+
+Notes:
+Wind can be heard blowing throughout entire recording
+
+Recorded and compiled by:
+soomlos
+
+Disc 1:
+01. Introduction [00:34]
+02. Maggie's Farm [05:23]
+03. If You See Her, Say Hello [06:20]
+04. Watching The River Flow [06:30]
+05. To Ramona [05:10]
+06. Cold Irons Bound [05:35]
+07. Lay, Lady, Lay [05:55]
+08. Honest With Me [06:37]
+09. I'll Remember You [07:02]
+10. Bye And Bye [06:09]
+11. Highway 61 Revisited [08:08]
+12. Boots Of Spanish Leather [06:16]
+Total time: [69:40]
+
+Disc 2:
+01. Tweedle Dee & Tweedle Dum [05:40]
+02. Not Dark Yet [05:35]
+03. Summer Days [11:25]
+     (encore)
+04. It Ain't Me, Babe [05:18]
+05. Band Introductions [00:43]
+06. Like A Rolling Stone [06:48]
+Total time: [35:28]
+
+Band Members:
+Bob Dylan - keyboards, harp
+Stu Kimball - guitar
+Denny Freeman - guitar
+Donnie Herron - violin, electric mandolin, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-07-30d1t01.flac:368b7a37230f05919aefc81ecb8db0f5
+bd2005-07-30d1t02.flac:cba83b24e6cf757579dd364f5b722d91
+bd2005-07-30d1t03.flac:09c29b120c7f97faaee9afd0d34bd00e
+bd2005-07-30d1t04.flac:eeb69e88092e72586b1c1ad92fa5d1a8
+bd2005-07-30d1t05.flac:a8bf50d3d45f2b5d90c37df4e7768b1e
+bd2005-07-30d1t06.flac:39c0aa6ef105beadd11f07d8330d77da
+bd2005-07-30d1t07.flac:73a190a8ff5dd886526498f2ef1f6cf3
+bd2005-07-30d1t08.flac:fc8dc4192f6eae4e36081bb4a8a238df
+bd2005-07-30d1t09.flac:8cf007e767688e740aedd1785a7a78d2
+bd2005-07-30d1t10.flac:21638d97d03e9dfb41f9ff7f8de47ff6
+bd2005-07-30d1t11.flac:84f5615b7d4ca84fe3d140cea1c03cdb
+bd2005-07-30d1t12.flac:c1f06fa5fe6ca339333fb77ae136de15
+bd2005-07-30d2t01.flac:70ad15845e029e044a990579a4449617
+bd2005-07-30d2t02.flac:b3eaca3160d3c0d057d729bed4c8a115
+bd2005-07-30d2t03.flac:516cd4737124368dff42420ca17dbf3f
+bd2005-07-30d2t04.flac:a36e613c227079b65813b0f28197670d
+bd2005-07-30d2t05.flac:043c5d5fa4dcd41122854f480f2b224c
+bd2005-07-30d2t06.flac:88175cae0bf79ac33c411c216cc55989
+
+flac md5
+e9023cabba3be8b4230395901e2a3dc0 *bd2005-07-30d1t01.flac
+8035829b987c9662325f2740d633a63f *bd2005-07-30d1t02.flac
+e8dcee85f87f928d9cab117dadfa4e90 *bd2005-07-30d1t03.flac
+b4ddcd1f6f2538f212272fb99ba9341c *bd2005-07-30d1t04.flac
+e7d11442ff233809e85ab4c442f53118 *bd2005-07-30d1t05.flac
+b0ef57526282069c73436e95061f16c9 *bd2005-07-30d1t06.flac
+fbb779656964a74963b71f4bffacadf4 *bd2005-07-30d1t07.flac
+6965d576f999db5db2bdb0c71b3bc30a *bd2005-07-30d1t08.flac
+30bd85cae9fd59a7e99c5f5d915995c1 *bd2005-07-30d1t09.flac
+be61611f969418266d95d5852ca89a4c *bd2005-07-30d1t10.flac
+d02663aa5ec3bbed66b66d16ab1940f3 *bd2005-07-30d1t11.flac
+8029c495017992361e62415693eaf17a *bd2005-07-30d1t12.flac
+3b369ba38dfc133f11c782f33c47a914 *bd2005-07-30d2t01.flac
+ea0e3b612d2caa2ba3bf5b09e477d1fe *bd2005-07-30d2t02.flac
+7b96f2c723d5281d6b1041325eb55335 *bd2005-07-30d2t03.flac
+ae7afba7957f5844c8c17f59cb352588 *bd2005-07-30d2t04.flac
+aa12df59392cc5b0c906e96d116b2ab4 *bd2005-07-30d2t05.flac
+85f7daa284b4bf5138915aec18c9941f *bd2005-07-30d2t06.flac
+
+wav md5
+e836e3298a108a837c57d2eca771cb8a *bd2005-07-30d1t01.wav
+838336767d6c2068294ee7df86089419 *bd2005-07-30d1t02.wav
+7cc3efea744931fa9cc6ebb0e0772899 *bd2005-07-30d1t03.wav
+da2573ddbd61385996d6fbe0df916219 *bd2005-07-30d1t04.wav
+d947e73b01818466faf8dc1239ffd598 *bd2005-07-30d1t05.wav
+b74728a19c660185378408e47aa9768b *bd2005-07-30d1t06.wav
+dddfc6918400283f5aa13ee14ff05042 *bd2005-07-30d1t07.wav
+f66e4b609e9af924b8fcf9b72c69bf2d *bd2005-07-30d1t08.wav
+6df56dac6563a07b164ba4668cc81ee9 *bd2005-07-30d1t09.wav
+5a8f79a0d76df547354e504e564019c5 *bd2005-07-30d1t10.wav
+f4518eb940b9f9fe697c92653f564edb *bd2005-07-30d1t11.wav
+c0c9f51d7c1ad1ef0c327d137cdd2913 *bd2005-07-30d1t12.wav
+99e95f0739ddfa2e36dd627d5be19dd1 *bd2005-07-30d2t01.wav
+2ffda08dc28e0a55a5f337b2f133e343 *bd2005-07-30d2t02.wav
+8ff23b05fdf776f233fb50f472239ce9 *bd2005-07-30d2t03.wav
+38b20f5ed732eb3c2aed4ec8aa02ccd2 *bd2005-07-30d2t04.wav
+a6dd0081cf74cc7f1717ecd6e9e6b6c6 *bd2005-07-30d2t05.wav
+1e41d63034f25bd726363ea94c09430a *bd2005-07-30d2t06.wav

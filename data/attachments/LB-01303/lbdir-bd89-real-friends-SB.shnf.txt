@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-real-friends-SB.shnf 
+=================== 
+=================== 
+=================== 
+84f393ca5bfbb81c264830b538a9141b  BD - Track_ 1.shn
+de746606e6a5c471f98244fc3692a249  BD - Track_ 10.shn
+6730867f06e02fa0939d62dac169c0f4  BD - Track_ 11.shn
+f5c8b9087d72a6d5019a1fcc6c22e890  BD - Track_ 12.shn
+0cc46fcd70a5f0805f7913652238c729  BD - Track_ 13.shn
+3e8b49e2e858ec4b92c643452705db1d  BD - Track_ 2.shn
+f2081662b4a3392a50b00835dd99cd2d  BD - Track_ 3.shn
+224c47bd93394b115980ead4144e386a  BD - Track_ 4.shn
+63335584681be57ced6f7bfebec1743a  BD - Track_ 5.shn
+9939a5fd39cb8da909bfca5defef96e2  BD - Track_ 6.shn
+72cdc366fb007727fb813cf51a5ca9b3  BD - Track_ 7.shn
+4085c7f18cfe9a3f95e6a814d9d4fc23  BD - Track_ 8.shn
+dfe1c1058a48c5b056adf78b76f5d130  BD - Track_ 9.shn
+24054653e95eb07121db4d1e0755c309  bd89-real-friends-SB.txt
+bd70762b4ec61ccc9fcd79e59f2ad4df  Real Friends and Other Strangers.txt
+e2981c3cf5f38ff32c948b6b7dd7633e  realfriends.md5
+5b78c2291e904f91a6fd5cf540aa2a5b  Track 14.shn
+aa95c0ad5fad21aac4accbac6effb505  Track 15.shn
+c222327f5a0212c00735a7497f4db499  Track 16.shn
+2a0468a4fc07673ebee9c760b4246a82  Track 17.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-real-friends-SB.shnf 
+=================== 
+=================== 
+=================== 
+03282120b9c2ebd25eec8ee8339547fe  [shntool]  BD_-_Track__1.wav
+5572a2de5f887a9b61cd15f4d3a7537e  [shntool]  BD_-_Track__2.wav
+234291eea352dfc64151a8fc1f8e625b  [shntool]  BD_-_Track__3.wav
+75d1539d85f071a35e63150e87223c70  [shntool]  BD_-_Track__4.wav
+7b62a574783b59206bab378bc50c35b8  [shntool]  BD_-_Track__5.wav
+acf402433eb10d919022c86fdcd0ebb2  [shntool]  BD_-_Track__6.wav
+bf30c316a59cdf7e60c914b648f4c4b2  [shntool]  BD_-_Track__7.wav
+b9e8430ce71d7dee9b22036d018b809e  [shntool]  BD_-_Track__8.wav
+102e941db2201ff0f7275c9ba578f527  [shntool]  BD_-_Track__9.wav
+0ab3375d2ab8c0e9cfbb18b9f3f8024b  [shntool]  BD_-_Track__10.wav
+10997c6b52b026b5794a3e7965b24acb  [shntool]  BD_-_Track__11.wav
+0b0f7fcf23a7f39cb20aac0fd4cf6a94  [shntool]  BD_-_Track__12.wav
+8d3c3420d0d965cfeeb87c8d66b5616f  [shntool]  BD_-_Track__13.wav
+af149e4a43d8a30f822fa30b971c583a  [shntool]  Track_14.wav
+442b216ea75be383304a7a4aa41a69fb  [shntool]  Track_15.wav
+15b6b4277369b01fe8f15e9b16fcbf2a  [shntool]  Track_16.wav
+9f56a193a76928f51b438bad46ddc97c  [shntool]  Track_17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-real-friends-SB.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:32.00        5643908 B   -b-   --   -----    wav  1.0000  BD_-_Track__1.wav
+     5:33.59       58880408 B   -b-   --   -----    wav  1.0000  BD_-_Track__10.wav
+     4:29.13       47482740 B   -b-   --   -----    wav  1.0000  BD_-_Track__11.wav
+     3:20.24       35336568 B   -b-   --   -----    wav  1.0000  BD_-_Track__12.wav
+     2:54.36       30778312 B   -b-   --   -----    wav  1.0000  BD_-_Track__13.wav
+     4:04.27       43104472 B   -b-   --   -----    wav  1.0000  BD_-_Track__2.wav
+     4:58.41       52662616 B   -b-   --   -----    wav  1.0000  BD_-_Track__3.wav
+     3:50.40       40666124 B   ---   --   -----    wav  1.0000  BD_-_Track__4.wav
+     3:57.30       41878116 B   -b-   --   -----    wav  1.0000  BD_-_Track__5.wav
+     5:51.44       62019916 B   -b-   --   -----    wav  1.0000  BD_-_Track__6.wav
+     6:18.03       66686300 B   ---   --   -----    wav  1.0000  BD_-_Track__7.wav
+     6:08.71       65082236 B   ---   --   -----    wav  1.0000  BD_-_Track__8.wav
+     4:56.36       52299116 B   ---   --   -----    wav  1.0000  BD_-_Track__9.wav
+     6:46.71       71785436 B   ---   --   -----    wav  1.0000  Track_14.wav
+     5:45.22       60909788 B   ---   --   -----    wav  1.0000  Track_15.wav
+     5:09.41       54604076 B   ---   --   -----    wav  1.0000  Track_16.wav
+     5:06.05       53990424 B   -b-   --   -----    wav  1.0000  Track_17.wav
+    79:43.38      843810556 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-04-19-hg-d.flacf 
+=================== 
+=================== 
+=================== 
+bae4551e15e2eed5a6964d69d7953c7c  bd1996.04.19 Portland, ME (Holy Grail, LB-4489) ('Everything's been returned which was owed').md5
+d870d0df0b44b7e7bc95b4f6dc20a216  fingerprint.txt
+4b2ddead5be91761b39927777920b873  info.txt
+7e49fa537644fae6c2651319ffc6b5f8  Track101.flac
+1f66159148c997e86056eca7760aedf9  Track102.flac
+e7045eb2b76bf8d411d0ec69d1342a8b  Track103.flac
+c3ae775cdc3e74ffa6a3cabddd713fd8  Track104.flac
+cfb3cf0554e20fb7452f746c3f35508e  Track105.flac
+39892c04de29ddf2b32ed6e071b2d13d  Track106.flac
+05ca5055b375879f69ef8200c0c42f78  Track107.flac
+5c7d899ab4e1d1a5447b83bc89e1910a  Track108.flac
+1ef1d6046e0208e90601726c30034ae3  Track109.flac
+0c491645b91be43ef9a3c179719faa8d  Track201.flac
+8438a78ccc2c8c5250e6d7f6c7060b9e  Track202.flac
+2669df0a03b3ec858774f30083bf825c  Track203.flac
+6fc957b885419ae1aeb05dd769be4eb3  Track204.flac
+3beec0ea638544ad688f6cba57886e50  Track205.flac
+001a751982edf3dfeb26507c6ad58c53  Track206.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-04-19-hg-d.flacf 
+=================== 
+=================== 
+=================== 
+track101.flac:4749a2483e2d976d48435093962466b6
+track102.flac:00e6f06810c964d1caa75424a483ee8a
+track103.flac:351ace0fa43a9f15c7eef44c8cd83131
+track104.flac:d67f7dadaca4b2b53ed4c1174c20a971
+track105.flac:b00a1fc3785687f7f8a4dbb1a1dbed3d
+track106.flac:7a40a8256a3733f1a2ca2d9d8ba02e71
+track107.flac:071b7d75febc272bcfbffdea0c49d3dd
+track108.flac:5cc471c92f623291fb7be30bf4cb15d3
+track109.flac:259b228941a20d6ffc0b6ff6e38bc5e2
+track201.flac:6ef96cfb227288e51f9814cd7dc6604f
+track202.flac:b4ec97554eba8badd4f4acab12184e9e
+track203.flac:f00da24be9298401361f90ba29be28cc
+track204.flac:af35736fa28e58b68852066f57481df7
+track205.flac:0bad078d2cab9ba2cd335b5f336dd6a2
+track206.flac:58ea4a5b505429815f47464b9121debc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-04-19-hg-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.04       53987852 B   ---   --   ---xx   flac  0.6595  Track101.flac
+     6:10.15       65303324 B   ---   --   ---xx   flac  0.5916  Track102.flac
+     7:28.20       79074284 B   ---   --   ---xx   flac  0.6515  Track103.flac
+     6:47.25       71853644 B   ---   --   ---xx   flac  0.5336  Track104.flac
+     6:41.03       70743500 B   ---   --   ---xx   flac  0.6003  Track105.flac
+     8:09.07       86276108 B   ---   --   ---xx   flac  0.6287  Track106.flac
+     9:22.22       99188588 B   ---   --   ---xx   flac  0.5588  Track107.flac
+     9:35.65      101582924 B   ---   --   ---xx   flac  0.4605  Track108.flac
+     8:15.44       87421532 B   ---   --   ---xx   flac  0.5390  Track109.flac
+     9:55.52      105080348 B   ---   --   ---xx   flac  0.5995  Track201.flac
+     8:48.41       93235676 B   ---   --   ---xx   flac  0.4957  Track202.flac
+     8:49.34       93395612 B   ---   --   ---xx   flac  0.6049  Track203.flac
+     7:01.57       74398508 B   ---   --   ---xx   flac  0.6268  Track204.flac
+    11:02.72      116946188 B   ---   --   ---xx   flac  0.5381  Track205.flac
+     5:28.22       57910988 B   ---   --   ---xx   flac  0.5861  Track206.flac
+   118:42.33     1256399076 B                            0.5725  (15 files)
+=================== 
+=================== 
+=================== 

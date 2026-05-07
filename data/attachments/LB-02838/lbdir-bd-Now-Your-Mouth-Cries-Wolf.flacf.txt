@@ -1,0 +1,191 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-Now-Your-Mouth-Cries-Wolf.flacf 
+=================== 
+=================== 
+=================== 
+b618495dc88f897a3eec26bc35889b93  bd-Now-Your-Mouth-Cries-Wolf-LB-2838.txt
+194577a7e20bdcc7afbb718f502c134c  Disc 1\.DS_Store
+e988a6e7e8b7cb2606b633958813a6d6  Disc 1\NYMCWD1.ffp
+3d7dd505c5314367bc8569abd0fab9bc  Disc 1\NYMCWD1.md5
+d745b86589f17d62376f7720fd81df5b  Disc 1\NYMCWD1T01.flac
+4eece124ad079334e20a8ddcd3897d23  Disc 1\NYMCWD1T02.flac
+5166297acb12d7d1b3ebe0eb20649660  Disc 1\NYMCWD1T03.flac
+6f6afdcef81ed29eabfb4da76d03c3d4  Disc 1\NYMCWD1T04.flac
+09e2c55b62545542200a2047bf0c0102  Disc 1\NYMCWD1T05.flac
+7c866b63cadfa79c48e49950bb1ff86d  Disc 1\NYMCWD1T06.flac
+35c5b5644ebafd84e7197ec2d10325fe  Disc 1\NYMCWD1T07.flac
+a80187d17b790df69bfe5710ad89e756  Disc 1\NYMCWD1T08.flac
+ef9b75e4969022b9def2047283d3e017  Disc 1\NYMCWD1T09.flac
+7f0b7adbe48c4df44c65b486793f43ab  Disc 1\NYMCWD1T10.flac
+6693fe1bde2725a1d47414d3faeab91a  Disc 1\NYMCWD1T11.flac
+c1fcd716b1ad9490b51900dcedf5a19c  Disc 1\NYMCWD1T12.flac
+ce7b32ac8aa3f0415c33a30fde24745b  Disc 1\NYMCWD1T13.flac
+f8059152ffd385b16d1039fa75684bec  Disc 1\NYMCWD1T14.flac
+ce350704722af1112cb0139429abcaea  Disc 1\NYMCWD1T15.flac
+0382047c24b498b32d53aad4f9211455  Disc 1\NYMCWD1T16.flac
+565544c388a30d814bb19c9c4bb2bf97  Disc 1\NYMCWD1T17.flac
+58018aa2ae9af790bf2be6a0ea6f89da  Disc 1\NYMCWD1T18.flac
+ad114f4bc4851f54201ea1cb7de3bbba  Disc 1\NYMCWD1T19.flac
+27bd999a3c9919f6898d70b440cabbf2  Disc 1\NYMCWD1T20.flac
+492c533c42cab6d8503237bb833c61c7  Disc 1\NYMCWD1T21.flac
+aa0d59b01da29b4b626380f282a9e21d  Disc 1\NYMCWD1T22.flac
+e291e2aded3fa2e9050b7c098cb922ea  Disc 1\NYMCWD1T23.flac
+1b1dfa2e0060b73397357b2b36c45a52  Disc 1\NYMCWD1T24.flac
+eea5dad6fda934c5c0bf81cada1dbe5b  Disc 1\NYMCWD1T25.flac
+0bc421eb8833da3770e0e41a028c9c0e  Disc 1\NYMCWD1T26.flac
+02377125f11ca6cd0e655dddff7fa8de  Disc 1\NYMCWD1T27.flac
+d127789abdf1d04ef1c315af99d33498  Disc 2\.DS_Store
+8db1241322c05b509b0f5d73252ca6ac  Disc 2\NYMCWD2.ffp
+58de60e7b3956099d70b0b3457193f3f  Disc 2\NYMCWD2.md5
+2d1082013ef7c5d1e4ab5df959d65099  Disc 2\NYMCWD2T01.flac
+aa1c48cfa45f023d8087c95864096e6d  Disc 2\NYMCWD2T02.flac
+7021b0f6957045dc8b9826dfdbb76032  Disc 2\NYMCWD2T03.flac
+c5d77759dd305e92c57fc41e94fcf32c  Disc 2\NYMCWD2T04.flac
+04effc029e1adc3cb95508ff2d7e375f  Disc 2\NYMCWD2T05.flac
+61070b1b28a4f128b7505c39a3344796  Disc 2\NYMCWD2T06.flac
+c93f87a5c5eed404cfb3b84b21181fc5  Disc 2\NYMCWD2T07.flac
+8cd4bffda5e2415701cea18282f33114  Disc 2\NYMCWD2T08.flac
+c7f0768a85177417d5e3837908ca9161  Disc 2\NYMCWD2T09.flac
+0c0082dd431eecb99c2e7239d6aa5d9c  Disc 2\NYMCWD2T10.flac
+0890654dd9a01422ddfa600dcf9a168b  Disc 2\NYMCWD2T11.flac
+4b7eb6664acb3c968cf26abe5e3e1264  Disc 2\NYMCWD2T12.flac
+5f41ff68468c4896d4a3af8214c9475d  Disc 2\NYMCWD2T13.flac
+449384ae50166794dba64a2ba986e484  Disc 2\NYMCWD2T14.flac
+a26cbe62e57d92893041e94d55210576  Disc 2\NYMCWD2T15.flac
+9daaa3e8b015531faf9703fc9a613685  Disc 2\NYMCWD2T16.flac
+89d8df950d36db1932bdfaad6d0a63ba  Disc 2\NYMCWD2T17.flac
+b4b3e914f53e1e0fc4dc15a8cf67cb1b  Disc 2\NYMCWD2T18.flac
+7ac234ec80498abaf011ff875e700127  Disc 2\NYMCWD2T19.flac
+9b24e39cb44a1248dbc3d793a1b41e99  info.txt
+4b4324130e338b1c6fbcebfb51825c59  NowYourMouthCriesWolf.doc
+10c5f8b692301021900f4d253c81c705  NYMCW_InsideCover.jpg
+65ad410c980b4abf141c5a6186cb0311  NYMCW_OutsideCover.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-Now-Your-Mouth-Cries-Wolf.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+NYMCWD1T01.flac:33d838479b31c095941390cb4c19d07b
+NYMCWD1T02.flac:a0850971cbe1ad4e4e604995d7d30e1f
+NYMCWD1T03.flac:215e219dad942222c5d1494031acedb7
+NYMCWD1T04.flac:208594fa6f714b6eddd6bfefa57dc550
+NYMCWD1T05.flac:c1bd28aa57a6e017743a5b645c579a0d
+NYMCWD1T06.flac:4995360a208a831313af4385daefb36d
+NYMCWD1T07.flac:f10531a16e34129ec712433706d80194
+NYMCWD1T08.flac:8abf810687a59137661896dd0ad4ec9c
+NYMCWD1T09.flac:0b785019a9f7614dc941b09e6b46a903
+NYMCWD1T10.flac:2acf83116f97a7dcd4f0df53a6b51899
+NYMCWD1T11.flac:84c24818384193f3bd01f60a0e785f5c
+NYMCWD1T12.flac:f10e90d018f6fcee1baab0d2e646c744
+NYMCWD1T13.flac:a5608ba31e6c023d04c1e9c07cf0e9b6
+NYMCWD1T14.flac:eb7db0f3c546f54d847844cf639dea94
+NYMCWD1T15.flac:428b17a2ba7cbadd456d0f84a4acf7fe
+NYMCWD1T16.flac:2c5a60b3131f607671304a24e551b030
+NYMCWD1T17.flac:0059e546cfd0d91fbf8a928bab6ddac3
+NYMCWD1T18.flac:81ee4871e6936d46ce34cac2dbc05ed5
+NYMCWD1T19.flac:bd6d236c9cc617b763a553251e865561
+NYMCWD1T20.flac:c3060a8db5fbd285a840e37448e420c8
+NYMCWD1T21.flac:b80ab720ab0a67820349a879b73d9020
+NYMCWD1T22.flac:e1da64d1e7adde3e7bf59c1e7d21a853
+NYMCWD1T23.flac:9ac4f012e882dc2589a1849f2dc2ffc7
+NYMCWD1T24.flac:e2979744bc71a98288072c009a164041
+NYMCWD1T25.flac:18096525b5ff612cf5599b0544ad4875
+NYMCWD1T26.flac:74b36b2990943634c268e7f2525a9caa
+NYMCWD1T27.flac:c9b27b2977acaa0cfa7a8e6dedd6ace1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-Now-Your-Mouth-Cries-Wolf.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+NYMCWD2T01.flac:386c83a399b174f53798c39b02327d79
+NYMCWD2T02.flac:25d4e7eca7fadf9db4a708f9fa90fccf
+NYMCWD2T03.flac:0183b2705b38a56fbde0a6473329f750
+NYMCWD2T04.flac:198564676466650a0bec5ed2936e90b6
+NYMCWD2T05.flac:ef9fe6e54824a555e1f688e2d7dcf429
+NYMCWD2T06.flac:4a9f7efb5cd009eb6d99b81d38c9956d
+NYMCWD2T07.flac:4c25364f441561f3e40b618cc95eb431
+NYMCWD2T08.flac:13411731933b2009b4d271dc2552974e
+NYMCWD2T09.flac:5969d735f6d26efca53d6d4ec352118e
+NYMCWD2T10.flac:e3a8ba1a32d3911064528e9e9780f73a
+NYMCWD2T11.flac:c226fba9942433814073a043075aa072
+NYMCWD2T12.flac:0638971f077870164983ac61617c53bd
+NYMCWD2T13.flac:67cd1a29fdbda12b79577237d8b511ee
+NYMCWD2T14.flac:1a02a652654ac140be6aeac5da9d3329
+NYMCWD2T15.flac:2e4f4d2dcdbc8aebb5a973e269d05f14
+NYMCWD2T16.flac:ea9797f582cf399952ecdd20c56f9a97
+NYMCWD2T17.flac:3ccd05bd488387c7d5eb2cf3f1ae4a3a
+NYMCWD2T18.flac:9d90e255274201bd4bbda6a89821202a
+NYMCWD2T19.flac:acbf8850c8058685ed94a4dc49512186
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Now-Your-Mouth-Cries-Wolf.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:49.55       40525004 B   ---   --   ---xx   flac  0.5777  NYMCWD1T01.flac
+     4:15.54       45109052 B   ---   --   ---xx   flac  0.5386  NYMCWD1T02.flac
+     2:50.22       30039788 B   ---   --   ---xx   flac  0.6111  NYMCWD1T03.flac
+     3:32.10       37420364 B   ---   --   ---xx   flac  0.5658  NYMCWD1T04.flac
+     3:06.48       32923340 B   ---   --   ---xx   flac  0.4849  NYMCWD1T05.flac
+     2:49.13       29842220 B   ---   --   ---xx   flac  0.6265  NYMCWD1T06.flac
+     2:59.56       31707356 B   ---   --   ---xx   flac  0.5375  NYMCWD1T07.flac
+     5:25.61       57473516 B   ---   --   ---xx   flac  0.5339  NYMCWD1T08.flac
+     0:55.32        9777308 B   ---   --   ---xx   flac  0.5929  NYMCWD1T09.flac
+     2:28.15       26142524 B   ---   --   ---xx   flac  0.4005  NYMCWD1T10.flac
+     1:10.16       12385676 B   ---   --   ---xx   flac  0.6465  NYMCWD1T11.flac
+     3:55.15       41489324 B   ---   --   ---xx   flac  0.6035  NYMCWD1T12.flac
+     3:22.49       35748092 B   ---   --   ---xx   flac  0.6404  NYMCWD1T13.flac
+     1:34.52       16703948 B   ---   --   ---xx   flac  0.5460  NYMCWD1T14.flac
+     4:56.41       52310876 B   ---   --   ---xx   flac  0.6269  NYMCWD1T15.flac
+     3:53.17       41141228 B   ---   --   ---xx   flac  0.6422  NYMCWD1T16.flac
+    11:56.29      126370652 B   ---   --   ---xx   flac  0.6378  NYMCWD1T17.flac
+     3:10.40       33610124 B   ---   --   ---xx   flac  0.6488  NYMCWD1T18.flac
+     3:46.22       39918188 B   ---   --   ---xx   flac  0.6299  NYMCWD1T19.flac
+     0:59.29       10475852 B   ---   --   ---xx   flac  0.4695  NYMCWD1T20.flac
+     1:47.64       19025372 B   ---   --   ---xx   flac  0.4828  NYMCWD1T21.flac
+     2:06.26       22287596 B   ---   --   ---xx   flac  0.4579  NYMCWD1T22.flac
+     0:21.67        3862028 B   ---   --   ---xx   flac  0.4524  NYMCWD1T23.flac
+     0:20.51        3647996 B   ---   --   ---xx   flac  0.4553  NYMCWD1T24.flac
+     1:19.29       14003852 B   ---   --   ---xx   flac  0.4910  NYMCWD1T25.flac
+     1:32.31       16301756 B   ---   --   ---xx   flac  0.4708  NYMCWD1T26.flac
+     0:15.28        2711900 B   ---   --   ---xx   flac  0.4052  NYMCWD1T27.flac
+    78:41.72      832954932 B                            0.5776  (27 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-Now-Your-Mouth-Cries-Wolf.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:58.51       10351196 B   ---   --   ---xx   flac  0.5851  NYMCWD2T01.flac
+     0:53.32        9424508 B   ---   --   ---xx   flac  0.5791  NYMCWD2T02.flac
+     1:02.57       11070908 B   ---   --   ---xx   flac  0.6134  NYMCWD2T03.flac
+     1:30.05       15887804 B   ---   --   ---xx   flac  0.5777  NYMCWD2T04.flac
+     3:31.19       37265132 B   ---   --   ---xx   flac  0.6053  NYMCWD2T05.flac
+     3:29.48       36980540 B   ---   --   ---xx   flac  0.6058  NYMCWD2T06.flac
+     8:27.45       89540684 B   ---   --   ---xx   flac  0.5988  NYMCWD2T07.flac
+     8:26.44       89361932 B   ---   --   ---xx   flac  0.5142  NYMCWD2T08.flac
+     3:25.54       36289052 B   ---   --   ---xx   flac  0.6298  NYMCWD2T09.flac
+     4:05.22       43269788 B   ---   --   ---xx   flac  0.5905  NYMCWD2T10.flac
+     7:33.21       79958636 B   ---   --   ---xx   flac  0.6464  NYMCWD2T11.flac
+     3:35.67       38083628 B   ---   --   ---xx   flac  0.5757  NYMCWD2T12.flac
+     6:09.16       65129276 B   ---   --   ---xx   flac  0.6176  NYMCWD2T13.flac
+     3:13.44       34148732 B   ---   --   ---xx   flac  0.6992  NYMCWD2T14.flac
+     4:20.54       45991052 B   ---   --   ---xx   flac  0.6244  NYMCWD2T15.flac
+     3:52.20       40971884 B   ---   --   ---xx   flac  0.5836  NYMCWD2T16.flac
+     4:53.39       51776972 B   ---   --   ---xx   flac  0.5871  NYMCWD2T17.flac
+     4:34.23       48387740 B   ---   --   ---xx   flac  0.5189  NYMCWD2T18.flac
+     3:33.56       37704956 B   ---   --   ---xx   flac  0.5878  NYMCWD2T19.flac
+    77:37.42      821594420 B                            0.5945  (19 files)
+=================== 
+=================== 
+=================== 

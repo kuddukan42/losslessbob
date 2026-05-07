@@ -1,0 +1,102 @@
+===================
+===================
+===================
+=== md5 for: bd75-11-15-eve-g.flacf
+===================
+===================
+===================
+37702651bb252f29cf8bf0995af1e0ed *01. When I Paint My Masterpiece.flac
+8cc4d194d7e4a69528694e7764615176 *02. It Ain't Me, Babe.flac
+e136a6d010cbc2daa24f98b271728048 *03. The Lonesome Death of Hattie Carroll.flac
+e36a460844cdf2436846f7b173590cbb *04. It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+e735eb72f104f230f103f668c3e996e5 *05. Romance In Durango.flac
+e7190f48660552ce40a848e7d8de750b *06. Isis.flac
+f1fa16c0c886cde92084134f97ecf7e3 *07. Blowin' In The Wind.flac
+917d7d06962391184b8971120a5ce7e9 *08. I Dreamed I Saw St. Augustine.flac
+a36f682479ff7f372ef62056fddd50a0 *09. Never Let Me Go.flac
+c3c62d75600ce7bf10ec8ef4ce4b1896 *10. Mama, You Been On My Mind.flac
+09a348a47210659597fe68ed1c0b42b4 *11. I Shall Be Released.flac
+d2a4ea60fe82b2c0af6a3bb32fea6fa1 *12. Joe Hill.flac
+6a541c6d0e0307ebf9f98cef1414a049 *13. Love Song To A Stranger.flac
+fe7cdbe48b07907c045328d861d2bc31 *14. Help Me Make It Through The Night.flac
+fb10df6c184a9d5084de7207daf05ea0 *15. Chestnut Mare.flac
+f76a719e1c96879f591a512276e1798f *16. Love Minus Zero No Limit.flac
+2d04b2140379d6f67cc04c5094affe48 *17. Tangled Up In Blue.flac
+eff253d4a69e8879599882592e1058ed *18. Oh, Sister.flac
+af429d63b1a37e304086e8593f39c102 *19. Hurricane.flac
+fd5079e3e4da94ebd43b88da4a1392cd *20. One More Cup Of Coffee.flac
+6f710115ef6edd611020e5bfbea8f380 *21. Sara.flac
+05403492b8d139430a238da6e75ab0bc *22. Just Like A Woman.flac
+244c2f68a244f5dad899d16d1a200f25 *23. Knockin' On Heaven's Door.flac
+061f6a574839469d3d3ef588fba307c7 *24. This Land Is Your Land.flac
+8842a8bde6f899714c72157b2b84292d *Bob Dylan and Joan Baez - 1975-11-15 Convention Center, Niagara Falls, NY [evening show].ffp
+64a6d4e0f6a502a4693fa3da454d97f3 *Bob Dylan and Joan Baez - 1975-11-15 Convention Center, Niagara Falls, NY [evening show].md5
+9a221836b1bf5f6ffbdf52f7e5c834d0 *Bob Dylan and Joan Baez - 1975-11-15 Convention Center, Niagara Falls, NY [evening show].txt
+6df5137c9acc74bab816968345364ae3 *concert ticket.jpg
+===================
+===================
+===================
+=== ffp for: bd75-11-15-eve-g.flacf
+===================
+===================
+===================
+01. When I Paint My Masterpiece.flac:edca8e6bb21835104fe0f8d4c87729cc
+02. It Ain't Me, Babe.flac:7e8041a2e52edbfc6f5d16d1616d08f2
+03. The Lonesome Death of Hattie Carroll.flac:2eafd2c41354ea953cb2a41e389f742d
+04. It Takes A Lot To Laugh, It Takes A Train To Cry.flac:670c3549f25414884f2ec028b9aa87db
+05. Romance In Durango.flac:f6a065eaf09e2743bb963724efd6dcf5
+06. Isis.flac:fc11eb88388485967a7b67aa2e7248e7
+07. Blowin' In The Wind.flac:b5ad07cd044b675905829588b2b06418
+08. I Dreamed I Saw St. Augustine.flac:a46181c9b6819f3298586422f75f3eed
+09. Never Let Me Go.flac:bd47d3ea378d4508492ea4f565db3f45
+10. Mama, You Been On My Mind.flac:426cf13a97ec4071f4b4eb373a2276a0
+11. I Shall Be Released.flac:8fa2c20ac91884cf9d460fadc3093fbf
+12. Joe Hill.flac:c6787d0a399031e4be445bb4421ae0cc
+13. Love Song To A Stranger.flac:b3d96aaf6b8a6c50419d7febb84d67dc
+14. Help Me Make It Through The Night.flac:c11f532c00cf73f0a52144eb38bbc4e3
+15. Chestnut Mare.flac:d109dff771b280e25548957e17f4ea26
+16. Love Minus Zero No Limit.flac:ec80685e1c958460edf34ef89b9afdd1
+17. Tangled Up In Blue.flac:f5ea5a024894e4cb261b76bb3151a521
+18. Oh, Sister.flac:93ba779c0bbea15bde681908a45b88a9
+19. Hurricane.flac:5c3be98e917e36663df97156bf1ec001
+20. One More Cup Of Coffee.flac:f96917bc81a61914fa06a434498cf0bc
+21. Sara.flac:d15a7799528eaec002a9e26279963454
+22. Just Like A Woman.flac:1fefeae2da09ee4982aa07fabeed57b3
+23. Knockin' On Heaven's Door.flac:440bece9bcce889b77b47ccbe35b41b5
+24. This Land Is Your Land.flac:dde5175b7cef53aafb22329dab0588fb
+===================
+===================
+===================
+=== shntool len for: bd75-11-15-eve-g.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.27       45398348 B   ---   --   ---xx   flac  0.5869  01. When I Paint My Masterpiece.flac
+     5:42.22       60380588 B   ---   --   ---xx   flac  0.6177  02. It Ain't Me, Babe.flac
+     6:36.26       69915596 B   ---   --   ---xx   flac  0.6055  03. The Lonesome Death of Hattie Carroll.flac
+     3:30.49       37159292 B   ---   --   ---xx   flac  0.6096  04. It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+     5:28.14       57892172 B   ---   --   ---xx   flac  0.6018  05. Romance In Durango.flac
+     5:32.07       58581308 B   ---   --   ---xx   flac  0.6061  06. Isis.flac
+     2:53.15       30552524 B   ---   --   ---xx   flac  0.5842  07. Blowin' In The Wind.flac
+     2:52.59       30479612 B   ---   --   ---xx   flac  0.5827  08. I Dreamed I Saw St. Augustine.flac
+     2:52.34       30420812 B   ---   --   ---xx   flac  0.5739  09. Never Let Me Go.flac
+     2:45.57       29240108 B   ---   --   ---xx   flac  0.5798  10. Mama, You Been On My Mind.flac
+     4:10.19       44144732 B   ---   --   ---xx   flac  0.5509  11. I Shall Be Released.flac
+     2:53.73       30688940 B   ---   --   ---xx   flac  0.5418  12. Joe Hill.flac
+     4:42.17       49784828 B   ---   --   ---xx   flac  0.5387  13. Love Song To A Stranger.flac
+     3:04.67       32615228 B   ---   --   ---xx   flac  0.5823  14. Help Me Make It Through The Night.flac
+     5:32.35       58647164 B   ---   --   ---xx   flac  0.5953  15. Chestnut Mare.flac
+     3:00.50       31869644 B   ---   --   ---xx   flac  0.5927  16. Love Minus Zero No Limit.flac
+     5:40.69       60138332 B   ---   --   ---xx   flac  0.5936  17. Tangled Up In Blue.flac
+     4:04.43       43142780 B   ---   --   ---xx   flac  0.6045  18. Oh, Sister.flac
+     8:22.05       88564604 B   ---   --   ---xx   flac  0.6158  19. Hurricane.flac
+     3:56.47       41740988 B   ---   --   ---xx   flac  0.6166  20. One More Cup Of Coffee.flac
+     5:04.05       53637404 B   ---   --   ---xx   flac  0.6358  21. Sara.flac
+     4:13.06       44643356 B   ---   --   ---xx   flac  0.6453  22. Just Like A Woman.flac
+     4:57.42       52489628 B   ---   --   ---xx   flac  0.6497  23. Knockin' On Heaven's Door.flac
+     4:12.42       44551628 B   ---   --   ---xx   flac  0.6102  24. This Land Is Your Land.flac
+   106:27.05     1126679616 B                            0.6001  (24 files)
+===================
+===================
+===================

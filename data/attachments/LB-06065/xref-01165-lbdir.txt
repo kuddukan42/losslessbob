@@ -1,0 +1,89 @@
+===================
+===================
+===================
+=== md5 for: bd08-03-20-b.flacf
+===================
+===================
+===================
+6269a4474e795714dc4ebdce87ff884d *101Intro.flac
+ee5ce097e6b367a14dff606950574f38 *102Cat's in the well.flac
+32ba3a376c56cd58dd3298863696512f *103Lay lady lay.flac
+a255cb257718b18016bf86ab6fe1373a *104Watching the river flow.flac
+9b5963100093a24ff1d40802e0eb4496 *105Love sick.flac
+f44ae65d1e9ac1f32fbfd65a124cfb96 *106Thunder on the mountain.flac
+a57726592dd1f85dce4717b257efd9a2 *107A hard rain's a-gonna fall.flac
+a600cb2fe7b1ce967afcb7e2682608d3 *108High water.flac
+4ebb0147f64a35d9c06a8fca33e6a87e *109Girl from the north country.flac
+f9a5a89dcd563334ea57911e0ddf50a3 *110Spirit on the water.flac
+79afeb3276c5e34376f4e58e98f5e4c7 *111Rollin' and trumblin'.flac
+f67d158514c5b411e2b4a56520f874d0 *112Just like a woman.flac
+0403f854efbe3fc4a17d24c31392fba3 *113Highway 61 revisited.flac
+2ba4197d0ec012033d637da8df82c71b *201When the deal goes down.flac
+1fe60f1fb00a42af5d6b937539681b84 *202Summer days.flac
+53cc23bed5f0757e22ca6c0718ec88ff *203Like a rolling stone.flac
+35b5a0f1f33d652263adc21ac245a19f *204Encore break.flac
+2dfcb85885e6d4f48af6059c02d478af *205Rainy day women #12&35.flac
+a17f2dbd00f89bde52ed32eb658aa1f1 *206Band introduction.flac
+81cace160b51654550eb0bfd3e77b347 *207All along the watchtower.flac
+18064b5e7a3ce441cc66225147e532a0 *Bob Dylan_Punta del Este.md5
+2cfaf289177f100cc47dee7212d60e84 *info.txt
+7a77b1f7e20969ff6dcda487054eba32 *PuntaDelEste_2008_F.jpg
+===================
+===================
+===================
+=== ffp for: bd08-03-20-b.flacf
+===================
+===================
+===================
+101Intro.flac:4f2b63698a9fbdf902b338b97fe88cef
+102Cat's in the well.flac:977a7b529c2c809e2adf47bc1458aee3
+103Lay lady lay.flac:a0c54038cb6dc4fb9dd2e49448da75fd
+104Watching the river flow.flac:fbdd87da629826180a9e5e142c11a1ac
+105Love sick.flac:ecf47989c5146c80b030437f3d7e7155
+106Thunder on the mountain.flac:8c463772956bc6e4c0a9188971d0c14c
+107A hard rain's a-gonna fall.flac:8768e78d0dd49e45114c35994709c889
+108High water.flac:0c4e868df7dfcf0be2aa9f4fef34b725
+109Girl from the north country.flac:74cb934e4576fa053a722c24e819ea3e
+110Spirit on the water.flac:fd3b31e4b86a61185d4d6f61c6ba3192
+111Rollin' and trumblin'.flac:18fc33625fc5afa44ccabf635c781ba1
+112Just like a woman.flac:4076aa20bbb55904b05e9b145a493beb
+113Highway 61 revisited.flac:ff786bbf8225cc1c9c7e42b66e8cf922
+201When the deal goes down.flac:a75f93a6fc7f7046c145540797edebd8
+202Summer days.flac:5cded4e51c9358da900183c85c71850b
+203Like a rolling stone.flac:deaeebcbbb2e889bdd53c2a883a16772
+204Encore break.flac:d6ae6531b15d4008503f604f1de42543
+205Rainy day women #12&35.flac:fe1fdc7908cead8b5280871d99ddfce1
+206Band introduction.flac:115c8c6922aa6d49cdea49c00ca12690
+207All along the watchtower.flac:c6ca48bd9368059e9c6e7ceb3a7575c4
+===================
+===================
+===================
+=== shntool len for: bd08-03-20-b.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:16.27       13469416 B   -b-   --   ---xx   flac  0.6041  101Intro.flac
+     6:00.06       63518388 B   -b-   --   ---xx   flac  0.6129  102Cat's in the well.flac
+    15:15.10      161430260 B   -b-   --   ---xx   flac  0.3622  103Lay lady lay.flac
+     5:16.28       55807720 B   -b-   --   ---xx   flac  0.6651  104Watching the river flow.flac
+     5:19.417      61328104 B   cxx   --   ---xx   flac  0.6123  105Love sick.flac
+     6:26.07       68106472 B   -b-   --   ---xx   flac  0.6740  106Thunder on the mountain.flac
+    27:46.70      294046492 B   -b-   --   ---xx   flac  0.3281  107A hard rain's a-gonna fall.flac
+     8:48.24       93195288 B   -b-   --   ---xx   flac  0.5978  108High water.flac
+    12:48.63      135623076 B   -b-   --   ---xx   flac  0.6497  109Girl from the north country.flac
+     6:17.065      72396520 B   cxx   --   ---xx   flac  0.5689  110Spirit on the water.flac
+    16:01.11      169545560 B   -b-   --   ---xx   flac  0.3905  111Rollin' and trumblin'.flac
+    14:21.42      151979972 B   -b-   --   ---xx   flac  0.4708  112Just like a woman.flac
+     5:40.441      65364712 B   cxx   --   ---xx   flac  0.6928  113Highway 61 revisited.flac
+     6:39.53       70507240 B   -b-   --   ---xx   flac  0.5207  201When the deal goes down.flac
+     6:10.27       65332456 B   -b-   --   ---xx   flac  0.6681  202Summer days.flac
+     6:11.713      71368936 B   cxx   --   ---xx   flac  0.6727  203Like a rolling stone.flac
+    14:21.65      152033160 B   -b-   --   ---xx   flac  0.2674  204Encore break.flac
+     5:22.21       56850664 B   -b-   --   ---xx   flac  0.7160  205Rainy day women #12&35.flac
+     0:46.849       8995048 B   cxx   --   ---xx   flac  0.6126  206Band introduction.flac
+     7:50.66       83063880 B   -b-   --   ---xx   flac  0.5851  207All along the watchtower.flac
+   178:41.411    1913963364 B                            0.4987  (20 files)
+===================
+===================
+===================

@@ -1,0 +1,115 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Downtown Stage
+Corner of Lamar Street & Capitol Street
+Jackson, Mississippi
+ 
+17 May 2003
+2003 Jubilee! Jam
+ 
+1.Maggie's Farm
+2.Tonight I'll Be Staying Here With You
+3.Tweedle Dee & Tweedle Dum
+4.Don't Think Twice, It's All Right
+5.Drifter's Escape
+6.Floater (Too Much To Ask)
+7.Highway 61 Revisited
+8.Make You Feel My Love
+9.Honest With Me
+10.Summer Days
+
+11.Like A Rolling Stone
+12.All Along The Watchtower
+ 
+Concert # 1523 of The Never-Ending Tour. Concert # 22 of the 2003 US Spring Tour. 2003 concert # 33.
+ 
+Concert # 22 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+ 
+2  Larry Campbell (pedal steel guitar).
+2, 4 Bob Dylan (harmonica).
+4 acoustic with band.
+6 Freddie Koella (violin).
+9 Larry Campbell (slide guitar).
+ 
+CDR trade < XLD < flac < dime
+apa05
+
+===================
+===================
+===================
+=== notes.txt
+===================
+===================
+===================
+CEDAR notes:
+
+Male voice, on the right and slightly away from taper, says, "Go West" three seconds before "Don't Think Twice."	
+Excellent throughout -- praised as one of the best. 
+Disc 1 is the Waifs' opening set, and disc 2 is all Dylan.
+The FW recording. CEDAR #1 is just the Dylan set.
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 The Waifs - Intro.flac:26aa5a9b0a9f371813cff04e3563fd6a02 The Waifs - Three Down.flac:9fa3c02a8a411dde59ebf0701a311e8703 The Waifs - Fisherman's Daughter.flac:75e77a54b18e89ae85722081c2940e3604 The Waifs - Lies.flac:7ef01a3aea7df7f20347c8227bccc61405 The Waifs - Highway One.flac:33292b0556fb7f589fafa0158fd8acaa06 The Waifs - Bridal Train.flac:8c4a1054733686024598d234e030c7e007 The Waifs - Love Serenade.flac:aca9be374d0de5b1cb486fcc7ad1e3ec08 The Waifs - Heartbreakin'.flac:4f67c04806755addd74bdd0c8254fb5509 The Waifs - Flesh And Blood > Crazy Train.flac:ec544be3803eb4bad44b577b35ddb44110 The Waifs - Lighthouse.flac:820ccf09866a295cea4567ec193fa11d11 The Waifs - When I Die.flac:c7ef60f00402dda0ed5b5be0406ad16212 The Waifs - Take It In.flac:d369a4398c21e4dd5905dadc0dac8044
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+855f692f3e2e334e50cfbe302f5b0689 *01 The Waifs - Intro.flac
+e8a4f9c05a6fa4e07f00d792b26a366f *02 The Waifs - Three Down.flac
+0b2b4c08fbb5c608233fb6f762d4565f *03 The Waifs - Fisherman's Daughter.flac
+54cc89a511de80887c2529a5bf91fa0f *04 The Waifs - Lies.flac
+bf3f710438d8bf895b29a7d82dc5843d *05 The Waifs - Highway One.flac
+94e8389c12eea2fae5dcd3f3e5ca6773 *06 The Waifs - Bridal Train.flac
+032835c6f4eefab7831a2e4fbea7700f *07 The Waifs - Love Serenade.flac
+103303b61fdd91ea6b0cf797df078398 *08 The Waifs - Heartbreakin'.flac
+98748ca476db4c9d0c1430eafbbdcaa4 *09 The Waifs - Flesh And Blood > Crazy Train.flac
+88bc4ed03a82a8c89495d1f794f2b01d *10 The Waifs - Lighthouse.flac
+ff7a5c85a6832f61de73b0981c28ada8 *11 The Waifs - When I Die.flac
+602734ae59472d18446e2a59af8e6880 *12 The Waifs - Take It In.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Hoodoo.flac:9166bae953166373913a772e4db57f6802 Maggie's Farm.flac:e28424ff23f00433e7c943b909896e1003 Tonight I'll Be Staying Here With You.flac:18b959d6b3cb2268e0a5755d2bc2959f04 Tweedle Dee & Tweedle Dum.flac:fed3c1c373820a0729cd6fe451acc0ce05 Don't Think Twice, It's All Right.flac:9c93fcb5d769db9202507ec27b0d313906 Drifter's Escape.flac:af347bbb9ae23e6a25f5bc4bcec561ba07 Floater (Too Much To Ask).flac:01ee2c9dbe5364e25f5e678d67c7a10b08 Highway 61 Revisited.flac:edc412809271e2ef97bf39cf0b9bc12b09 Make You Feel My Love.flac:408f6d20adef39f129e9759213b0d78110 Honest With Me.flac:2b6920213da94fef58b2bd9a51bff62711 Summer Days.flac:f2677636d947b4598baf1ca7d818532912 Like A Rolling Stone.flac:138cc76822c99b16a47c2b6b5dc156b113 All Along The Watchtower.flac:09a20acac6385449e83497b9ce98bbe2
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+1317b1dc4f88bacfbd849cb5bd7dcc2e *01 Hoodoo.flac
+cd4a1264e526117c554a7f189f758839 *02 Maggie's Farm.flac
+5f38a49b3bb67f58dd6f867b98d3717d *03 Tonight I'll Be Staying Here With You.flac
+36b914c908ee96d74b816152721a1d37 *04 Tweedle Dee & Tweedle Dum.flac
+be7f6d283524241043e1795bc7ff0ffa *05 Don't Think Twice, It's All Right.flac
+c651480463c44581c400b591f6be9665 *06 Drifter's Escape.flac
+3d13dfacffc1e3c2445f64f2de65b169 *07 Floater (Too Much To Ask).flac
+7be44f1c819b92fe68b2819de6c66ee3 *08 Highway 61 Revisited.flac
+e57d51a4e2619c5e9c3f69e5e452aa4d *09 Make You Feel My Love.flac
+1022e35e3b11a798725d34e7d049834b *10 Honest With Me.flac
+beb1a172a3c6af21c33cf04475b9d73f *11 Summer Days.flac
+210686b774675b089049677f975f0061 *12 Like A Rolling Stone.flac
+aaddd5269b005a0e434980a3cac3a151 *13 All Along The Watchtower.flac
+
+===================
+===================
+===================

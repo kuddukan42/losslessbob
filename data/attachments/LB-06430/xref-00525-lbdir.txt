@@ -1,0 +1,154 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-23-jtt.flacf 
+=================== 
+=================== 
+=================== 
+166a988d14411f8fdc1035be1e3052a2  Bob Dylan - Wolf Trap August 23rd & 24th 1997_Info.txt
+56d2d54b062e7f6b321ef341e9467893  Disc 01\1.aucdtect.txt
+b8a11562ec39fea53b0b9b64cc138990  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track01.flac
+e673a864f897bd3ed8800425a95ec123  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track02.flac
+0b3f09c4a7dc222880bc6284a708c78f  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track03.flac
+cffaadf1c6ce65f1be6875a4001934eb  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track04.flac
+e5d1a5af8a214526eec6c1dabe3f7419  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track05.flac
+39c95debc89db4fac06debf0f1b87a8e  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track06.flac
+9c6d7e57b874007aff563c78b04fb528  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track07.flac
+81814331086ca32006f2899137d58b82  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track08.flac
+282917d2dc3418d265bac80892be579d  Disc 01\BD - Wolftrap 23rd & 24th_Disc01Track09.flac
+94fb1054494b64ffa841ec7903e98f72  Disc 01\Disc 01.ffp
+ff2fec0593a155b1f1f0e65ff9b84f68  Disc 02\2.aucdtect.txt
+a88225bd0cc8029883335150a7b8e51b  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track01.flac
+373dc14326fe5671ec36c292d6408417  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track02.flac
+1b08de385b9c4f0537f690ed1c8a777b  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track03.flac
+b3a851c40b99de53b134eeafb65c3ea7  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track04.flac
+15874e8ad940dfb1c5adfb8037493869  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track05.flac
+82bcde1bb28ee99e1030a1c273a53990  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track06.flac
+ff5c659544a4b091e292454fd58aa8b4  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track07.flac
+75eeda947c52e186c331c688b1718263  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track08.flac
+719715a95f6bd42cb889638ccfece7ff  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track09.flac
+b36f94575878dd37bc082abf81d7b377  Disc 02\BD - Wolftrap 23rd & 24th_Disc02Track10.flac
+e62a9a3958f9578b500ec315ab0e16e4  Disc 02\Disc 02.ffp
+214c09560014ad141c0303737e9f7c5a  Disc 03\3.aucdtect.txt
+2c3a0f85666a6e13d2570898138f9457  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track01.flac
+974b361535dccc022ba5947f8dd41d59  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track02.flac
+d2365160bdf2b7c3092fd93a8ca1e075  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track03.flac
+275bb177c44ff0a92301c896692c64b9  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track04.flac
+142f81d68d2f4494306080c85a336021  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track05.flac
+bbf4d8fc7af7b911c29c159f6ae5ce81  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track06.flac
+82ae0b0067f049a07ea44267bfec7f70  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track07.flac
+1250dad8005765ecf01a4799c06bf3c7  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track08.flac
+386e09dd020f8938dfe0ff6e045c8399  Disc 03\BD - Wolftrap 23rd & 24th_Disc03Track09.flac
+a37d5822f231fdba49beb0461eaf3227  Disc 03\Disc 03.ffp
+e9eaf37e3be3e8be2e6de185f756f83f  Dylan - Wolftrap August 23rd & 24th 1997_ALD.md5
+202820fa9b38512e2a6e7581e9758c71  Dylan - Wolftrap August 23rd & 24th 1997_ALD.txt
+7f407656f854421904ba46f68b3d612c  Live at The Wolftrap 23&24.08 1997 - F.jpeg
+eb12d133866c01262e03f79f1f7bf4c9  Live at The Wolftrap 23&24.08 1997 - Insert.jpeg
+83fd6e25c0615e0e4eacccc3c73839fd  Live at The Wolftrap 23&24.08 1997 - R.jpeg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-23-jtt.flacf\disc 01 
+=================== 
+=================== 
+=================== 
+bd - wolftrap 23rd & 24th_disc01track01.flac:8212415d1f91533be52c689d646484c7
+bd - wolftrap 23rd & 24th_disc01track02.flac:c70b9f216afa9356973983515df5232f
+bd - wolftrap 23rd & 24th_disc01track03.flac:74fb8082945953ab3112767dc61f23d6
+bd - wolftrap 23rd & 24th_disc01track04.flac:842b21fb5ed6acdfa57ee1dcc47cb2ce
+bd - wolftrap 23rd & 24th_disc01track05.flac:58363d1ddc490f61e17a5b408626cec7
+bd - wolftrap 23rd & 24th_disc01track06.flac:f3c5ebdf54dc1bf752c422f7288dab75
+bd - wolftrap 23rd & 24th_disc01track07.flac:6a1c5d6718685d6ae4575f86a20aed80
+bd - wolftrap 23rd & 24th_disc01track08.flac:17d2239e2628cf7a913975520ff5786f
+bd - wolftrap 23rd & 24th_disc01track09.flac:58ca1f6526270e043c0d2c373e446842
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-23-jtt.flacf\disc 02 
+=================== 
+=================== 
+=================== 
+bd - wolftrap 23rd & 24th_disc02track01.flac:a2b55c3dc867ca1df40b5102524d67fc
+bd - wolftrap 23rd & 24th_disc02track02.flac:7ea24196b9bcc9e8d4e1136efed924af
+bd - wolftrap 23rd & 24th_disc02track03.flac:4ab3fa12777a28b37136ece797b5fdf2
+bd - wolftrap 23rd & 24th_disc02track04.flac:26b55081f57602253f4fd93c1e4f9df6
+bd - wolftrap 23rd & 24th_disc02track05.flac:58f2a9caf0555d12afa9e474d0364aab
+bd - wolftrap 23rd & 24th_disc02track06.flac:d7575254a779aaaec112afaf79fb4472
+bd - wolftrap 23rd & 24th_disc02track07.flac:31d9b985f31b034228f38331baa91370
+bd - wolftrap 23rd & 24th_disc02track08.flac:ed25093f202aace7bc549c6cf48ec9da
+bd - wolftrap 23rd & 24th_disc02track09.flac:47f462c72d09a527c85f4be2f8bd46fd
+bd - wolftrap 23rd & 24th_disc02track10.flac:c7bb318d305f24f8efe6371aaaa0d0a3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-23-jtt.flacf\disc 03 
+=================== 
+=================== 
+=================== 
+bd - wolftrap 23rd & 24th_disc03track01.flac:0a2bdd86c54bece22afa8297b1cdb2a8
+bd - wolftrap 23rd & 24th_disc03track02.flac:ebfe91668c53550e474b30144a834f21
+bd - wolftrap 23rd & 24th_disc03track03.flac:64b573f33df094395b814dee687d7cd6
+bd - wolftrap 23rd & 24th_disc03track04.flac:d7472a2d2baa65bb178279d840268178
+bd - wolftrap 23rd & 24th_disc03track05.flac:1e472786e89ddc405763123defac2d8c
+bd - wolftrap 23rd & 24th_disc03track06.flac:0cbb58e133a67cbd7bf451c4a84d5548
+bd - wolftrap 23rd & 24th_disc03track07.flac:72380263c45b9ecfd7b97cd59f0a1303
+bd - wolftrap 23rd & 24th_disc03track08.flac:e6d85968a2e7d72f8434165b98edd6cc
+bd - wolftrap 23rd & 24th_disc03track09.flac:02820fae7148da58a3911c088de4f994
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-23-jtt.flacf\disc 01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:45.45       50379884 B   ---   --   ---xx   flac  0.5805  BD - Wolftrap 23rd & 24th_Disc01Track01.flac
+     6:05.69       64548332 B   ---   --   ---xx   flac  0.5318  BD - Wolftrap 23rd & 24th_Disc01Track02.flac
+     5:24.60       57294764 B   ---   --   ---xx   flac  0.5608  BD - Wolftrap 23rd & 24th_Disc01Track03.flac
+     5:17.69       56081132 B   ---   --   ---xx   flac  0.5404  BD - Wolftrap 23rd & 24th_Disc01Track04.flac
+     7:37.27       80678348 B   ---   --   ---xx   flac  0.5673  BD - Wolftrap 23rd & 24th_Disc01Track05.flac
+     3:27.51       36634796 B   ---   --   ---xx   flac  0.4911  BD - Wolftrap 23rd & 24th_Disc01Track06.flac
+     7:25.04       78507452 B   ---   --   ---xx   flac  0.4864  BD - Wolftrap 23rd & 24th_Disc01Track07.flac
+     8:57.39       94818572 B   ---   --   ---xx   flac  0.5605  BD - Wolftrap 23rd & 24th_Disc01Track08.flac
+     8:41.61       92047916 B   ---   --   ---xx   flac  0.5621  BD - Wolftrap 23rd & 24th_Disc01Track09.flac
+    57:43.50      610991196 B                            0.5448  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-23-jtt.flacf\disc 02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:39.13       80998220 B   ---   --   ---xx   flac  0.5268  BD - Wolftrap 23rd & 24th_Disc02Track01.flac
+     6:03.11       64059116 B   ---   --   ---xx   flac  0.5694  BD - Wolftrap 23rd & 24th_Disc02Track02.flac
+     8:41.25       91963244 B   ---   --   ---xx   flac  0.5762  BD - Wolftrap 23rd & 24th_Disc02Track03.flac
+     6:56.74       73556492 B   ---   --   ---xx   flac  0.5471  BD - Wolftrap 23rd & 24th_Disc02Track04.flac
+     5:52.73       62264540 B   ---   --   ---xx   flac  0.5939  BD - Wolftrap 23rd & 24th_Disc02Track05.flac
+     4:57.00       52390844 B   ---   --   ---xx   flac  0.5177  BD - Wolftrap 23rd & 24th_Disc02Track06.flac
+     5:54.40       62539724 B   ---   --   ---xx   flac  0.5015  BD - Wolftrap 23rd & 24th_Disc02Track07.flac
+     5:03.41       53545676 B   ---   --   ---xx   flac  0.5119  BD - Wolftrap 23rd & 24th_Disc02Track08.flac
+     4:31.11       47830316 B   ---   --   ---xx   flac  0.5056  BD - Wolftrap 23rd & 24th_Disc02Track09.flac
+     7:11.54       76155452 B   ---   --   ---xx   flac  0.5277  BD - Wolftrap 23rd & 24th_Disc02Track10.flac
+    62:51.42      665303624 B                            0.5405  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-23-jtt.flacf\disc 03 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.59       45650012 B   ---   --   ---xx   flac  0.4705  BD - Wolftrap 23rd & 24th_Disc03Track01.flac
+     8:09.34       86339612 B   ---   --   ---xx   flac  0.5187  BD - Wolftrap 23rd & 24th_Disc03Track02.flac
+     5:45.65       61010924 B   ---   --   ---xx   flac  0.4472  BD - Wolftrap 23rd & 24th_Disc03Track03.flac
+     5:58.31       63224156 B   ---   --   ---xx   flac  0.4985  BD - Wolftrap 23rd & 24th_Disc03Track04.flac
+     7:19.57       77573708 B   ---   --   ---xx   flac  0.4745  BD - Wolftrap 23rd & 24th_Disc03Track05.flac
+     6:42.15       70948124 B   ---   --   ---xx   flac  0.5200  BD - Wolftrap 23rd & 24th_Disc03Track06.flac
+     8:57.31       94799756 B   ---   --   ---xx   flac  0.5026  BD - Wolftrap 23rd & 24th_Disc03Track07.flac
+     7:14.47       76668188 B   ---   --   ---xx   flac  0.4925  BD - Wolftrap 23rd & 24th_Disc03Track08.flac
+     5:51.21       61965836 B   ---   --   ---xx   flac  0.5279  BD - Wolftrap 23rd & 24th_Disc03Track09.flac
+    60:17.60      638180316 B                            0.4965  (9 files)
+=================== 
+=================== 
+=================== 

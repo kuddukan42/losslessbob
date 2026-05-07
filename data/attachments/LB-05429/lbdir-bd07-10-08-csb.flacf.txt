@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-10-08-csb.flacf 
+=================== 
+=================== 
+=================== 
+b047e287c3db0d140a41eb454613e08a  bd07-10-08-csb-LB-5429.txt
+68bb38e0712812e53513714586451f57  d1t01.flac
+bba6c98113be9a99d665f4cc927f0a3d  d1t02.flac
+db40f2b7d678ad8da0aa2b5c43ffcd08  d1t03.flac
+8cbb1f1bd64f50a45c7e104c0fd000c3  d1t04.flac
+a54b47cb3082ff99fee3536bcbebe86f  d1t05.flac
+520e961e72971243c18e35bff1c23bb4  d1t06.flac
+447c0824714b0901929950a8537b7e8d  d1t07.flac
+f4000bcd50fa8f938cb2016278045a31  d1t08.flac
+ea6b8cf9a7e94ba39cb3b3a82bd5a044  d1t09.flac
+dad393dd515ad6bad5876699a0bd799d  d2t01.flac
+911d60018386795dc0625e029ca3a94e  d2t02.flac
+21278c716b25c32fb0bd9c65d1e4e209  d2t03.flac
+af7a86dfabbee6e1e0b7e0782749b9a1  d2t04.flac
+92b6d4ccf2bf6a185fccf56333ed5736  d2t05.flac
+5c24ae7105c9568939f2f07b30e65b1b  d2t06.flac
+c5a63a0449b314d67e38ba68f0d88753  d2t07.flac
+31ef75ea58adef29c9728f93a8c88c09  dylansyracuse.txt
+1a1498174a44c047f48e87e1d28d7e72  dylansyracuse20071008.md5
+86b22c0220a1bd6e5026de59949933dc  lbdir-bd07-10-08-csb.flacf.md5
+2a07c24f5e9120267a05e648573bb813  lbdir-bd07-10-08-csb.flacf.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-10-08-csb.flacf 
+=================== 
+=================== 
+=================== 
+d1t01.flac:5d102d1f21d827cec9f84340daac7666
+d1t02.flac:c3623690e312aee24b3569dfd8046603
+d1t03.flac:faa3acfa808b4a43c2ac826624256ce1
+d1t04.flac:aa5d6557b40d7aeef01be7ea3688b167
+d1t05.flac:c40a8bd1183c21a76f8a693e4d530d8b
+d1t06.flac:efb97b935d554e1ee46f6a49ef52e48d
+d1t07.flac:0dfa0004fa3c8ea2e54b7acb30578583
+d1t08.flac:6a168a7a352443838dea46929aa0ed10
+d1t09.flac:96d957e933cadcbb22a6672a92da7082
+d2t01.flac:a61208f8ed0a96769e6de7615bc90b50
+d2t02.flac:d21ac4218977f1de8c866008f8341afb
+d2t03.flac:e1eb9094cb0151636be312a202779337
+d2t04.flac:415ac4799af9ca1f456f4d9c1474ae1e
+d2t05.flac:a8a7780cb7514d9d10c0c6c7a00ded6b
+d2t06.flac:2200da01703de2890f282f368ade42f9
+d2t07.flac:486ae4ec55c108d9a300fd31f648458b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-10-08-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:47.25       71853644 B   ---   --   ---xx   flac  0.6432  d1t01.flac
+     6:13.33       65874860 B   ---   --   ---xx   flac  0.6265  d1t02.flac
+     5:25.32       57405308 B   ---   --   ---xx   flac  0.6296  d1t03.flac
+     6:31.24       69028892 B   ---   --   ---xx   flac  0.6220  d1t04.flac
+     7:39.02       80972348 B   ---   --   ---xx   flac  0.6502  d1t05.flac
+     7:04.74       74967692 B   ---   --   ---xx   flac  0.5796  d1t06.flac
+     7:46.43       82303580 B   ---   --   ---xx   flac  0.6059  d1t07.flac
+     9:11.31       97269356 B   ---   --   ---xx   flac  0.5615  d1t08.flac
+     6:35.65       69830924 B   ---   --   ---xx   flac  0.6405  d1t09.flac
+     7:07.32       75398108 B   ---   --   ---xx   flac  0.4879  d2t01.flac
+     6:31.24       69028892 B   ---   --   ---xx   flac  0.5868  d2t02.flac
+     8:25.55       89211404 B   ---   --   ---xx   flac  0.4709  d2t03.flac
+     5:50.16       61777676 B   ---   --   ---xx   flac  0.5652  d2t04.flac
+    10:17.59      108977612 B   ---   --   ---xx   flac  0.5391  d2t05.flac
+     6:49.08       72166460 B   ---   --   ---xx   flac  0.5883  d2t06.flac
+    18:13.59      192944012 B   ---   --   ---xx   flac  0.2525  d2t07.flac
+   126:30.57     1339010768 B                            0.5347  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-08-schoepsmk4v-bourbon.flac24 
+=================== 
+=================== 
+=================== 
+f2d820cc20b9a6103e614c4ed7cfe3fc  bd07-04-08-schoepsmk4v-bourbon-LB-4701.txt
+685cc9456063030bc10130e5b888ba80  BD2007-04-08.mk4v_2448.txt
+9924fc189a1baaa3e4e4545afd40c593  BD2007-04-08_24Bit_FLAC.md5
+7bc0f028d754e9c5e8269629c378a918  BD2007-04-08_MK4V_24bit01.flac
+6a69cc0603c2faac58cfb505f13be9c9  BD2007-04-08_MK4V_24bit02.flac
+8d5ed0d4abce40f6547400e463d35c58  BD2007-04-08_MK4V_24bit03.flac
+48978ec0f3d0fd431979ca75e61426ba  BD2007-04-08_MK4V_24bit04.flac
+033603459dabd037a71c5d8cbb475539  BD2007-04-08_MK4V_24bit05.flac
+171bf3749ed5fa2c15719da51bc02740  BD2007-04-08_MK4V_24bit06.flac
+7565bdf56ad73a7763f0b8e4398b8bb8  BD2007-04-08_MK4V_24bit07.flac
+c162d7103e249224ca3ecf03c4d23be3  BD2007-04-08_MK4V_24bit08.flac
+8e0a88c00c2bc84c53360f0d467833c0  BD2007-04-08_MK4V_24bit09.flac
+8523f21317f90d44f17dedd278d88ead  BD2007-04-08_MK4V_24bit10.flac
+3d01abaf0269cb0060e4c57381016bdf  BD2007-04-08_MK4V_24bit11.flac
+1ebb8ecc3cf2a4ca58bec42f917d728e  BD2007-04-08_MK4V_24bit12.flac
+abd060ac36a038d5f7bb2a7063c41995  BD2007-04-08_MK4V_24bit13.flac
+680bcd0ecde35d1342cf1d5f0fdf5dc7  BD2007-04-08_MK4V_24bit14.flac
+e5c12162a054f8b1c0e9fca3063f4023  BD2007-04-08_MK4V_24bit15.flac
+c723720d5bdb1f0eaf335740192aa666  BD2007-04-08_MK4V_24bit16.flac
+2a4f86adf445dea886e3d34b1e2b089e  BD2007-04-08_MK4V_24bit17.flac
+47895fe33694e3efe4996f76e49a05e8  lbdir-bd07-04-08-schoepsmk4v-bourbon.flac24.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-08-schoepsmk4v-bourbon.flac24 
+=================== 
+=================== 
+=================== 
+BD2007-04-08_MK4V_24bit01.flac:de0b0a2f7c043a7866303dae6e160700
+BD2007-04-08_MK4V_24bit02.flac:ac6d0e99fda9e4c2255c1f33a6eba8c2
+BD2007-04-08_MK4V_24bit03.flac:5ffb665d27712743f3fcabd239b7b7da
+BD2007-04-08_MK4V_24bit04.flac:634e16f0937a60073b13994feddb6baa
+BD2007-04-08_MK4V_24bit05.flac:b59fee17e87a79e4b1eeb32fec503d91
+BD2007-04-08_MK4V_24bit06.flac:a2e8f4d50b2f6d70ad1a1b3e2450c0fe
+BD2007-04-08_MK4V_24bit07.flac:d7d47a7e577fbe1178c882cfaf824c11
+BD2007-04-08_MK4V_24bit08.flac:5ee378872ca300997f6b64cdd9cec32e
+BD2007-04-08_MK4V_24bit09.flac:d2176a940bce236b393a43897b15fa9f
+BD2007-04-08_MK4V_24bit10.flac:0bd6b78da22a1280c2ed31d22cb83ccf
+BD2007-04-08_MK4V_24bit11.flac:f2516070fda51f3f24d5041fdb67617c
+BD2007-04-08_MK4V_24bit12.flac:7914d18bfb504e676943d77f12c563d3
+BD2007-04-08_MK4V_24bit13.flac:17130e24e41bc7965b7988c7304fd308
+BD2007-04-08_MK4V_24bit14.flac:c76b3f331a4f0308dd28514f3b5a3a91
+BD2007-04-08_MK4V_24bit15.flac:17cb65d13a84250c0b7d946119ccc533
+BD2007-04-08_MK4V_24bit16.flac:f687fcdf2ee5d7ffdb2c5beb96bd1de3
+BD2007-04-08_MK4V_24bit17.flac:477b2a9f0cd124a4b0aa666eb6e36d4f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-08-schoepsmk4v-bourbon.flac24 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:55.933      85228844 B   cxx   --   ---xx   flac  0.7516  BD2007-04-08_MK4V_24bit01.flac
+     6:11.267     106924844 B   cxx   --   ---xx   flac  0.7437  BD2007-04-08_MK4V_24bit02.flac
+     6:37.467     114470444 B   cxx   --   ---xx   flac  0.7473  BD2007-04-08_MK4V_24bit03.flac
+     7:21.427     127130924 B   cxx   --   ---xx   flac  0.7879  BD2007-04-08_MK4V_24bit04.flac
+     6:29.720     112239404 B   cxx   --   ---xx   flac  0.6228  BD2007-04-08_MK4V_24bit05.flac
+     5:37.213      97117484 B   cxx   --   ---xx   flac  0.7543  BD2007-04-08_MK4V_24bit06.flac
+     6:06.053     105423404 B   cxx   --   ---xx   flac  0.6645  BD2007-04-08_MK4V_24bit07.flac
+     6:25.680     111075884 B   cxx   --   ---xx   flac  0.7297  BD2007-04-08_MK4V_24bit08.flac
+     7:23.373     127691564 B   cxx   --   ---xx   flac  0.6934  BD2007-04-08_MK4V_24bit09.flac
+     5:59.147     103434284 B   cxx   --   ---xx   flac  0.7645  BD2007-04-08_MK4V_24bit10.flac
+     7:21.307     127096364 B   cxx   --   ---xx   flac  0.6316  BD2007-04-08_MK4V_24bit11.flac
+     7:07.213     123037484 B   cxx   --   ---xx   flac  0.7684  BD2007-04-08_MK4V_24bit12.flac
+     7:48.053     134799404 B   cxx   --   ---xx   flac  0.6279  BD2007-04-08_MK4V_24bit13.flac
+     6:22.187     110069804 B   cxx   --   ---xx   flac  0.7737  BD2007-04-08_MK4V_24bit14.flac
+    10:40.293     184404524 B   cxx   --   ---xx   flac  0.7511  BD2007-04-08_MK4V_24bit15.flac
+     6:13.813     107658284 B   cxx   --   ---xx   flac  0.7983  BD2007-04-08_MK4V_24bit16.flac
+     5:59.480     103530284 B   cxx   --   ---xx   flac  0.7433  BD2007-04-08_MK4V_24bit17.flac
+   114:39.627    1981333228 B                            0.7254  (17 files)
+=================== 
+=================== 
+=================== 

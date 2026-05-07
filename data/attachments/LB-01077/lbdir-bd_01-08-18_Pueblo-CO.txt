@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd_01-08-18_Pueblo-CO 
+=================== 
+=================== 
+=================== 
+0fe1b6d633cdf49ba8538307b44f013f  bd01-08-18.txt
+2aa6add1262bf2d9e4be5293bcdc7fd1  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_1 Humming Bird.shn
+d4989d9d8bf27c712ecba5dc6a13ba88  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_2 To Ramona.shn
+84198e05284a4afa0d0529ab6cc3885a  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_3 It's Alright, Ma (I'm Only Bleeding).shn
+a3528fc0b4418bb84e441f0241d74e8e  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_4 Gotta Serve Somebody.shn
+a6e526ea4827b1deb56a7fceeaa1294a  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_5 Tell Me That It Isn't True.shn
+7b86329122d94f6adc1f9551e72fe013  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_6 Tombstone Blues.shn
+85010c29adbf8a178c0bbb490f3436cd  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_7 It's All Over Now, Baby Blue.shn
+a8356596251852030c14fdf8320e5c9a  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_8 Mama, You Been On My Mind.shn
+858e50f0e7419e6d6027381ef1b6f08c  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_9 Masters Of War.shn
+16c8d0d8794bb3ae840d6b2632429b4f  bd_01-08-18_cd1.shnf\bd_01-08-18_cd1_shn.md5
+ee4d8eb4b18ac314a4538c1d8f4c630e  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_1 Stuck Inside Of Mobile With The Memphis Bl.shn
+764d90939f8162039ea0259633c092e9  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_2 Make You Feel My Love.shn
+82693be7b0fec1ad935f3ca5678780af  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_3 Drifter's Escape.shn
+249f78718855bdc1c196c9dfe046b5a4  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_4 Leopard-Skin Pill-Box Hat.shn
+a8b77267f38f22310e90060e3ae42ae7  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_5 Love Sick.shn
+0a9670faac0946dc2592ea0cff9ee368  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_6 Like A Rolling Stone.shn
+312dbf5d0da2afd5c0f33219b18371b8  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_7 Knockin' On Heaven's Door.shn
+17b95685fc936c4f760489a98bfb3130  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_8 All Along The Watchtower.shn
+bbe1c652fc1bf77855f1961191ec46e2  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_9 Blowin' In The Wind.shn
+0039513463e1c9e43087823491e7a888  bd_01-08-18_cd2.shnf\bd_01-08-18_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd_01-08-18_Pueblo-CO\bd_01-08-18_cd1.shnf 
+=================== 
+=================== 
+=================== 
+ce35b8c43d19a4c3861da92dd1ce1193  [shntool]  bd_01-08-18_cd1_1_Humming_Bird.wav
+a012516618e9c01c4fdb6b9ac78fa315  [shntool]  bd_01-08-18_cd1_2_To_Ramona.wav
+94e1186acb9fd84ca06f2e7d02e3a30c  [shntool]  bd_01-08-18_cd1_3_It's_Alright,_Ma_(I'm_Only_Bleeding).wav
+ebf263b8289a45519dbfcffe47226e67  [shntool]  bd_01-08-18_cd1_4_Gotta_Serve_Somebody.wav
+d42f7a29d3a01639bdf26bb8ecfdf4ff  [shntool]  bd_01-08-18_cd1_5_Tell_Me_That_It_Isn't_True.wav
+eebaaaf5154f94ac9a9b8ff4db456967  [shntool]  bd_01-08-18_cd1_6_Tombstone_Blues.wav
+2c848f181697ba21a276dfffb369d7af  [shntool]  bd_01-08-18_cd1_7_It's_All_Over_Now,_Baby_Blue.wav
+be7004c3bf66d9955e3a18bcbe07ad6e  [shntool]  bd_01-08-18_cd1_8_Mama,_You_Been_On_My_Mind.wav
+f870259a23db274f1d1901dc1d87e095  [shntool]  bd_01-08-18_cd1_9_Masters_Of_War.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd_01-08-18_Pueblo-CO\bd_01-08-18_cd2.shnf 
+=================== 
+=================== 
+=================== 
+368a71dedfba703093f5a6c374a6fec9  [shntool]  bd_01-08-18_cd2_1_Stuck_Inside_Of_Mobile_With_The_Memphis_Bl.wav
+e48072949ee9f7a3def8a75561803eb4  [shntool]  bd_01-08-18_cd2_2_Make_You_Feel_My_Love.wav
+1e3f33d54026e0879c8b7a6372a49906  [shntool]  bd_01-08-18_cd2_3_Drifter's_Escape.wav
+69c3fa9ff69ad9e93f4786ce317bbdbe  [shntool]  bd_01-08-18_cd2_4_Leopard-Skin_Pill-Box_Hat.wav
+dd27b61498d5602c0181b6b8c8172c34  [shntool]  bd_01-08-18_cd2_5_Love_Sick.wav
+b2f1a66d8c013505af029016d8094f6d  [shntool]  bd_01-08-18_cd2_6_Like_A_Rolling_Stone.wav
+7180a313bd4c51961b8e3ea8c5ca1fad  [shntool]  bd_01-08-18_cd2_7_Knockin'_On_Heaven's_Door.wav
+dcff73c34875117cca68a64c76e65ee3  [shntool]  bd_01-08-18_cd2_8_All_Along_The_Watchtower.wav
+7c8ad540e1e325aa7d899b4deee34789  [shntool]  bd_01-08-18_cd2_9_Blowin'_In_The_Wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd_01-08-18_Pueblo-CO\bd_01-08-18_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.35       43300446 B   ---   -e   ---xx    shn  0.5484  bd_01-08-18_cd1_1 Humming Bird.shn
+     5:01.20       53143566 B   ---   -e   ---xx    shn  0.4994  bd_01-08-18_cd1_2 To Ramona.shn
+     8:16.45       87600366 B   ---   -e   ---xx    shn  0.4758  bd_01-08-18_cd1_3 It's Alright, Ma (I'm Only Bleeding).shn
+     5:01.05       53108286 B   ---   -e   ---xx    shn  0.5074  bd_01-08-18_cd1_4 Gotta Serve Somebody.shn
+     4:11.15       44311806 B   ---   -e   ---xx    shn  0.4737  bd_01-08-18_cd1_5 Tell Me That It Isn't True.shn
+     5:31.05       58400286 B   ---   -e   ---xx    shn  0.4958  bd_01-08-18_cd1_6 Tombstone Blues.shn
+     8:47.00       92962926 B   ---   -e   ---xx    shn  0.4733  bd_01-08-18_cd1_7 It's All Over Now, Baby Blue.shn
+     4:31.30       47875086 B   ---   -e   ---xx    shn  0.4464  bd_01-08-18_cd1_8 Mama, You Been On My Mind.shn
+     4:53.10       51708846 B   ---   -e   ---xx    shn  0.4424  bd_01-08-18_cd1_9 Masters Of War.shn
+    50:18.15      532411614 B                            0.4829  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd_01-08-18_Pueblo-CO\bd_01-08-18_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:30.05       89975886 B   ---   -e   ---xx    shn  0.4980  bd_01-08-18_cd2_1 Stuck Inside Of Mobile With The Memphis Bl.shn
+     4:06.10       43418046 B   ---   -e   ---xx    shn  0.4259  bd_01-08-18_cd2_2 Make You Feel My Love.shn
+     5:21.25       56683326 B   ---   -e   ---xx    shn  0.5433  bd_01-08-18_cd2_3 Drifter's Escape.shn
+     9:01.60       95573646 B   ---   -e   ---xx    shn  0.4589  bd_01-08-18_cd2_4 Leopard-Skin Pill-Box Hat.shn
+     5:46.15       61069806 B   ---   -e   ---xx    shn  0.4481  bd_01-08-18_cd2_5 Love Sick.shn
+     8:06.60       85871646 B   ---   -e   ---xx    shn  0.5066  bd_01-08-18_cd2_6 Like A Rolling Stone.shn
+     5:46.05       61046286 B   ---   -e   ---xx    shn  0.4902  bd_01-08-18_cd2_7 Knockin' On Heaven's Door.shn
+     4:31.15       47839806 B   ---   -e   ---xx    shn  0.5184  bd_01-08-18_cd2_8 All Along The Watchtower.shn
+     6:26.50       68208126 B   ---   -e   ---xx    shn  0.4945  bd_01-08-18_cd2_9 Blowin' In The Wind.shn
+    57:36.20      609686574 B                            0.4876  (9 files)
+=================== 
+=================== 
+=================== 

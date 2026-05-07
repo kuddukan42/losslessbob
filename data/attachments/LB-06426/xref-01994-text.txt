@@ -1,0 +1,214 @@
+===================
+===================
+===================
+=== Bob Dylan - Completely Unplugged_CaptainAcidRemaster.md5
+===================
+===================
+===================
+e3d5262680d5ca3f9385ccddcbaf0aec *disc1.txt
+9aed51daac2818379422c8cd065bb0f8 *disc2.txt
+5ca506082399bc10c4cdf5cbe3a53b92 *DylanUnpluggedBack.jpg
+187a084113fb234594e529d95d268ab3 *DylanUnpluggedFront.jpg
+6f5e494954ec68ff5e0ec5c21a0fcea4 *folder.jpg
+106a37515778640388a0264a112a0581 *info.txt
+a4bfa117ecb686e274d7cebd6b348268 *inlay 2.JPG
+7d1cc608854df44c32db7ce9f08baf25 *disc1\01_Tombstone_Blues_-_Bob_Dylan.flac
+841b9abc7ae780b38b4ceae8ab1420c5 *disc1\02_I_Want_You_-_Bob_Dylan.flac
+40da24ecff02b428c9ed8532d3745af2 *disc1\03_Don't_Think_Twice,_It's_Alright_-_Bob_Dylan.flac
+15ecf8cfd8c87df3045f129e2abfa5d7 *disc1\04_Desolation_Row_-_Bob_Dylan.flac
+5e7aab7b92ab6b9590428c1767e0a55a *disc1\05_Hazel_-_Bob_Dylan.flac
+5acce6734666c51f90ebd3cf9916a3ee *disc1\06_Everything_is_Broken_-_Bob_Dylan.flac
+965267ad75cbd3be6fd68090630f1171 *disc1\07_The_Times_They_Are_A-Changing_-_Bob_Dylan.flac
+562f0373ecfee4345e6a66531fa7f4cb *disc1\08_Love_Minus_Zero,No_Limit_-_Bob_Dylan.flac
+eafcc41cc2c7b62485f887f37457956e *disc1\09_Dignity_-_Bob_Dylan.flac
+604bf86fc74b048d888e37c84bb249c4 *disc1\10_With_God_on_Our_Side_-_Bob_Dylan.flac
+6171f3ab2207cb7956a9431dfd035610 *disc1\11_Absolutely_Sweet_Marie_-_Bob_Dylan.flac
+4dba82f9790a80f938af15933615fe90 *disc1\12_Shooting_Star_-_Bob_Dylan.flac
+e3d5262680d5ca3f9385ccddcbaf0aec *disc1\disc1.ffp
+6f5e494954ec68ff5e0ec5c21a0fcea4 *disc1\folder.jpg
+5f94d1cf0d6c2130258e08910e052bd6 *disc2\01_All_Along_The_Watchtower_-_Bob_Dylan.flac
+f62e4054cffe74da02dfe2c96304aa88 *disc2\02_My_Back_Pages_-_Bob_Dylan.flac
+97a414e9698b2945d47cc010787dd9a5 *disc2\03_Rainy_Day_Women_#12_&_35_-_Bob_Dylan.flac
+bd795bbf8c2a18349b460271856bcc83 *disc2\04_John_Brown_-_Bob_Dylan.flac
+207b59128200b932f4e656fc5cc2586a *disc2\05_The_Times_They_Are_A-Changin'_-_Bob_Dylan.flac
+64e2dacd1eaeecc2c90bf7f0fdac63dc *disc2\06_Dignity_-_Bob_Dylan.flac
+4ea8e9796467124e38ff62399aca8324 *disc2\07_Knockin'_On_Heaven's_Door_-_Bob_Dylan.flac
+1b36f903d274183edc3d61295f690ed1 *disc2\08_Like_A_Rolling_Stone_(missed_take)_-_Bob_Dylan.flac
+04b934fb9809a34b70a4dd194ccb757c *disc2\09_Like_A_Rolling_Stone_-_Bob_Dylan.flac
+31e3491d3c90baa2e7e3fb206251ddc8 *disc2\10_Tonight_I'll_Be_Staying_Here_With_You_-_Bob_Dylan.flac
+723bc43584dc72b159844381ed948ec3 *disc2\11_Desolation_Row_-_Bob_Dylan.flac
+78e4dd8081e0714ac7f4777bbb16a065 *disc2\12_I_Want_You_-_Bob_Dylan.flac
+9aed51daac2818379422c8cd065bb0f8 *disc2\disc2.ffp
+6f5e494954ec68ff5e0ec5c21a0fcea4 *disc2\folder.jpg
+===================
+===================
+===================
+=== disc1.txt
+===================
+===================
+===================
+01_Tombstone_Blues_-_Bob_Dylan.flac:6057f261d037ee1861efccc3c77681ff
+02_I_Want_You_-_Bob_Dylan.flac:5e3a7491fc7ee48e9334ee13fe6b5ac9
+03_Don't_Think_Twice,_It's_Alright_-_Bob_Dylan.flac:02644034dbc8909e5d7c2d31c66163c0
+04_Desolation_Row_-_Bob_Dylan.flac:2ab2270ee1457e9d5ddd6229b307e0d4
+05_Hazel_-_Bob_Dylan.flac:584ef5524239a6a989c0c55ff074f27d
+06_Everything_is_Broken_-_Bob_Dylan.flac:631e842bf4367173e34b7a164cd14b12
+07_The_Times_They_Are_A-Changing_-_Bob_Dylan.flac:58cdcca3117a943c5b984c2963981f9b
+08_Love_Minus_Zero,No_Limit_-_Bob_Dylan.flac:25e16e75b22bb6adf2abfadea161be29
+09_Dignity_-_Bob_Dylan.flac:4d63b8fbe4a5f27ec8cb699220c9d49b
+10_With_God_on_Our_Side_-_Bob_Dylan.flac:7c054c2bd1d433bedcf2178c7d3d8504
+11_Absolutely_Sweet_Marie_-_Bob_Dylan.flac:88223505b4c33a1a58f33c1951d5ec05
+12_Shooting_Star_-_Bob_Dylan.flac:faa7c622fa0cea96e582ad590ae215d7
+===================
+===================
+===================
+=== disc2.txt
+===================
+===================
+===================
+01_All_Along_The_Watchtower_-_Bob_Dylan.flac:17679d7b89c9019b85eb415342397d4c
+02_My_Back_Pages_-_Bob_Dylan.flac:0c3ffc065844f4b0e750c9678a446ae1
+03_Rainy_Day_Women_#12_&_35_-_Bob_Dylan.flac:7a596d8edc560f49ba206d452cf208a6
+04_John_Brown_-_Bob_Dylan.flac:e6de476bbab7186e0e34a632fe5b021c
+05_The_Times_They_Are_A-Changin'_-_Bob_Dylan.flac:dfa1624fb772d2d99dc50ff6bbe938ba
+06_Dignity_-_Bob_Dylan.flac:de2c0c71c7225e8ba7632bc2be0c4e93
+07_Knockin'_On_Heaven's_Door_-_Bob_Dylan.flac:ba2eebb609d535348ea168d8fa276640
+08_Like_A_Rolling_Stone_(missed_take)_-_Bob_Dylan.flac:35892d5e1b634ecbcb583c66df9e1136
+09_Like_A_Rolling_Stone_-_Bob_Dylan.flac:6597d82f15227c358d0d3e8816e0f7eb
+10_Tonight_I'll_Be_Staying_Here_With_You_-_Bob_Dylan.flac:383d07aab43565ae30c4414582b7b975
+11_Desolation_Row_-_Bob_Dylan.flac:ac41b5de081a935d3f8d0c87be729576
+12_I_Want_You_-_Bob_Dylan.flac:b4dbfb16c1594e7413781020207e3be5
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Completely Unplugged 
+source: MTV Unplugged sessions 
+lineage: CD Silvers>EAC V0.99 Prebeta> Wav > TLH 2.0.1 > Flac 6 > you
+
+Hi Dylan gang,
+
+I have done phase and level correction. I also did new EQ, trying to make it a bit softer.
+
+Remastered By Captain Acid, April 2020
+  
+Disc one 
+01 Tombstone Blues 
+02 I Want You 
+03 Don't Think Twice 
+04 Desolation Row 
+05 Hazel 
+06 Everything Is Broken 
+07 The Times They Are A - Changin`  
+08 Love Minus Zero/No Limit 
+09 Dignity 
+10 With God On Our Side 
+11 Absolutely Sweet Marie* 
+12 Shooting Star* 
+
+Disc two 
+01 All Along The Watchtower 
+02 My Back Pages 
+03 Rainy Day Women #12 & 35 
+04 John Brown 
+05 The Times They Are A - Changin`  
+06 Dignity 
+07 Knockin' On Heaven's Door 
+08 Like A Rolling Stone 
+09 Tonight I'll Be Staying Here With You 
+10 Desolation Row 
+11 I Want You 
+
+
+ORIGINAL INFO:
+  
+Source / Venue: 
+The source is the sessions at Sony sound studio, NYC 1994 that produced the MTV Unplugged CD and video  
+Disc one:  November 17, 1994  except *Nov. 18 
+Disc two:  November 18, 1994 
+
+Manufacturer / Catalog No. 
+Monotones     /    06/007
+Review: 
+Two days in November 1994 found Dylan and the band in New York City in rare form. 
+The pressure and excitement was on as the taping began for what would be yet another milestone for the maestro. 
+This two CD set captures the raw, unedited shows right off of the mix board. 
+The sound quality aproaches that of the official release. 
+AFTER you purchase the official issue, indulge in this wonderful, complete compilation and hear the shows as they  were played. 
+This is not a substitute for the official release. It's a companion volume.
+
+ripping and uploading all my silvers lately, this is an awesome one, enjoy!
+info from Bobsboots:
+http://www.bobsboots.com/CDs/cd-c22.html
+Pottel 2008.04.08
+
+01_Tombstone_Blues_-_Bob_Dylan.flac:6057f261d037ee1861efccc3c77681ff
+02_I_Want_You_-_Bob_Dylan.flac:5e3a7491fc7ee48e9334ee13fe6b5ac9
+03_Don't_Think_Twice,_It's_Alright_-_Bob_Dylan.flac:02644034dbc8909e5d7c2d31c66163c0
+04_Desolation_Row_-_Bob_Dylan.flac:2ab2270ee1457e9d5ddd6229b307e0d4
+05_Hazel_-_Bob_Dylan.flac:584ef5524239a6a989c0c55ff074f27d
+06_Everything_is_Broken_-_Bob_Dylan.flac:631e842bf4367173e34b7a164cd14b12
+07_The_Times_They_Are_A-Changing_-_Bob_Dylan.flac:58cdcca3117a943c5b984c2963981f9b
+08_Love_Minus_Zero,No_Limit_-_Bob_Dylan.flac:25e16e75b22bb6adf2abfadea161be29
+09_Dignity_-_Bob_Dylan.flac:4d63b8fbe4a5f27ec8cb699220c9d49b
+10_With_God_on_Our_Side_-_Bob_Dylan.flac:7c054c2bd1d433bedcf2178c7d3d8504
+11_Absolutely_Sweet_Marie_-_Bob_Dylan.flac:88223505b4c33a1a58f33c1951d5ec05
+12_Shooting_Star_-_Bob_Dylan.flac:faa7c622fa0cea96e582ad590ae215d7
+
+
+01_All_Along_The_Watchtower_-_Bob_Dylan.flac:17679d7b89c9019b85eb415342397d4c
+02_My_Back_Pages_-_Bob_Dylan.flac:0c3ffc065844f4b0e750c9678a446ae1
+03_Rainy_Day_Women_#12_&_35_-_Bob_Dylan.flac:7a596d8edc560f49ba206d452cf208a6
+04_John_Brown_-_Bob_Dylan.flac:e6de476bbab7186e0e34a632fe5b021c
+05_The_Times_They_Are_A-Changin'_-_Bob_Dylan.flac:dfa1624fb772d2d99dc50ff6bbe938ba
+06_Dignity_-_Bob_Dylan.flac:de2c0c71c7225e8ba7632bc2be0c4e93
+07_Knockin'_On_Heaven's_Door_-_Bob_Dylan.flac:ba2eebb609d535348ea168d8fa276640
+08_Like_A_Rolling_Stone_(missed_take)_-_Bob_Dylan.flac:35892d5e1b634ecbcb583c66df9e1136
+09_Like_A_Rolling_Stone_-_Bob_Dylan.flac:6597d82f15227c358d0d3e8816e0f7eb
+10_Tonight_I'll_Be_Staying_Here_With_You_-_Bob_Dylan.flac:383d07aab43565ae30c4414582b7b975
+11_Desolation_Row_-_Bob_Dylan.flac:ac41b5de081a935d3f8d0c87be729576
+12_I_Want_You_-_Bob_Dylan.flac:b4dbfb16c1594e7413781020207e3be5
+===================
+===================
+===================
+=== disc1.ffp
+===================
+===================
+===================
+01_Tombstone_Blues_-_Bob_Dylan.flac:6057f261d037ee1861efccc3c77681ff
+02_I_Want_You_-_Bob_Dylan.flac:5e3a7491fc7ee48e9334ee13fe6b5ac9
+03_Don't_Think_Twice,_It's_Alright_-_Bob_Dylan.flac:02644034dbc8909e5d7c2d31c66163c0
+04_Desolation_Row_-_Bob_Dylan.flac:2ab2270ee1457e9d5ddd6229b307e0d4
+05_Hazel_-_Bob_Dylan.flac:584ef5524239a6a989c0c55ff074f27d
+06_Everything_is_Broken_-_Bob_Dylan.flac:631e842bf4367173e34b7a164cd14b12
+07_The_Times_They_Are_A-Changing_-_Bob_Dylan.flac:58cdcca3117a943c5b984c2963981f9b
+08_Love_Minus_Zero,No_Limit_-_Bob_Dylan.flac:25e16e75b22bb6adf2abfadea161be29
+09_Dignity_-_Bob_Dylan.flac:4d63b8fbe4a5f27ec8cb699220c9d49b
+10_With_God_on_Our_Side_-_Bob_Dylan.flac:7c054c2bd1d433bedcf2178c7d3d8504
+11_Absolutely_Sweet_Marie_-_Bob_Dylan.flac:88223505b4c33a1a58f33c1951d5ec05
+12_Shooting_Star_-_Bob_Dylan.flac:faa7c622fa0cea96e582ad590ae215d7
+===================
+===================
+===================
+=== disc2.ffp
+===================
+===================
+===================
+01_All_Along_The_Watchtower_-_Bob_Dylan.flac:17679d7b89c9019b85eb415342397d4c
+02_My_Back_Pages_-_Bob_Dylan.flac:0c3ffc065844f4b0e750c9678a446ae1
+03_Rainy_Day_Women_#12_&_35_-_Bob_Dylan.flac:7a596d8edc560f49ba206d452cf208a6
+04_John_Brown_-_Bob_Dylan.flac:e6de476bbab7186e0e34a632fe5b021c
+05_The_Times_They_Are_A-Changin'_-_Bob_Dylan.flac:dfa1624fb772d2d99dc50ff6bbe938ba
+06_Dignity_-_Bob_Dylan.flac:de2c0c71c7225e8ba7632bc2be0c4e93
+07_Knockin'_On_Heaven's_Door_-_Bob_Dylan.flac:ba2eebb609d535348ea168d8fa276640
+08_Like_A_Rolling_Stone_(missed_take)_-_Bob_Dylan.flac:35892d5e1b634ecbcb583c66df9e1136
+09_Like_A_Rolling_Stone_-_Bob_Dylan.flac:6597d82f15227c358d0d3e8816e0f7eb
+10_Tonight_I'll_Be_Staying_Here_With_You_-_Bob_Dylan.flac:383d07aab43565ae30c4414582b7b975
+11_Desolation_Row_-_Bob_Dylan.flac:ac41b5de081a935d3f8d0c87be729576
+12_I_Want_You_-_Bob_Dylan.flac:b4dbfb16c1594e7413781020207e3be5
+===================
+===================
+===================

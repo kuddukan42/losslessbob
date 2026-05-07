@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-04a 
+=================== 
+=================== 
+=================== 
+25a06a8af5a376681fab88f3b1d97e59  bd02-10-04a.txt
+62d8e80ab541d114974f8ccc1ec0829d  Seattle1\Track 01.shn
+892796fc4f952255ddc6942cc6b3a101  Seattle1\Track 02.shn
+7e20a3ef6ff122b959652d19ae803a89  Seattle1\Track 03.shn
+91cd94ffdd7624368e6f5208ebfa2816  Seattle1\Track 04.shn
+49125a47a1554d8577d4f6ae72bd9802  Seattle1\Track 05.shn
+325ea3d10c81ed8ec6c39d8927c10736  Seattle1\Track 06.shn
+082b71b29fba14aa428a8818cb1f2ffc  Seattle1\Track 07.shn
+441fed6fd4ecdb3912e931e9cf8686b1  Seattle1\Track 08.shn
+a20c3b838c2c2091518ebb0ef139dab2  Seattle1\Track 09.shn
+23ff1c46e469e0f9f7d2b2f30b62bdbd  Seattle1\Track 10.shn
+0dabbadb123cd8e1fd53df8fc92732e2  Seattle1\Track 11.shn
+f2c0f7f491d7906f6412aa347d1c7cf5  Seattle1\Track 12.shn
+e6bf53b6e59dffd02599d7f7057a3e99  Seattle1\Track 13.shn
+245dc45e69e82a14be2d07cbea3d5890  Seattle1\noname.md5
+e2f9c1c49c2b7ed4c14332d76148dde4  Seattle2\Track 01.shn
+4c435f7eb5a79998fa8682f53c846244  Seattle2\Track 02.shn
+7138854c1b7c30e09b2d767ccd9cd064  Seattle2\Track 03.shn
+694c9061af4e974f4b101a697f5612de  Seattle2\Track 04.shn
+2aaa0d80f85c180d9b4119e96cca480d  Seattle2\Track 05.shn
+217d271b8283a52b54c3c7541ae94911  Seattle2\Track 06.shn
+d0be3ce3f91d209e47c80ce15e4d780f  Seattle2\Track 07.shn
+62d18bb0778c32beb2e86d43352f3934  Seattle2\Track 08.shn
+9ad79ee82595156a475b13c352e93a8d  Seattle2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-04a\Seattle2 
+=================== 
+=================== 
+=================== 
+fa94ccd0be3d1541d623bd9e16172ce2  [shntool]  Track_01.wav
+f670e0d99690b32481968d15486e038a  [shntool]  Track_02.wav
+36296bc1fd33bb5cf18adceefb3c6b9a  [shntool]  Track_03.wav
+3ddd38c48029f7fdf794d2d9b46b3a14  [shntool]  Track_04.wav
+4467c6a6f89caa5fe83f9274754e700a  [shntool]  Track_05.wav
+e34c7f40192a84d3acaad3438acfb577  [shntool]  Track_06.wav
+38c8f7307fa572f080ae4d1c471763c3  [shntool]  Track_07.wav
+194c93aedf00dadf5da13e6f926a0d91  [shntool]  Track_08.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-10-04a\Seattle1 
+=================== 
+=================== 
+=================== 
+3f2ebcf97afb4836ead636b1b1c93534  [shntool]  Track_01.wav
+befde6cb2207ed397d66d1d43657b6be  [shntool]  Track_02.wav
+bb0eb08d56a4535001ed0be6376a3b32  [shntool]  Track_03.wav
+2541c7e8e2e7bf214f4100e1988666a8  [shntool]  Track_04.wav
+b2cfd18a41019519bbe3b5c91adef81e  [shntool]  Track_05.wav
+2999eddba1e10701737732d23b46653d  [shntool]  Track_06.wav
+0476fec8c60ad2502b9edb2c0b37ca36  [shntool]  Track_07.wav
+51462ea4841cdb2b27330b6d9194a8b7  [shntool]  Track_08.wav
+7bed9b6e5b3a0b04f35efc7b159ddb43  [shntool]  Track_09.wav
+de64efd6223dd1fb6ae3d6c0f0395ce5  [shntool]  Track_10.wav
+735f448f73148e61d1f0342baf915bda  [shntool]  Track_11.wav
+5381c1f5dee720770ae5196d064cf30b  [shntool]  Track_12.wav
+9328718e25d6fc2cea0ceaf3ca9dff0f  [shntool]  Track_13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-04a\Seattle2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.00       61563304 B   -b-   --   ---xx    shn  0.4573  Track 01.shn
+     7:01.37       74351468 B   ---   --   ---xx    shn  0.5640  Track 02.shn
+     3:49.52       40517948 B   ---   --   ---xx    shn  0.4263  Track 03.shn
+     6:55.57       73340768 B   -b-   --   ---xx    shn  0.4270  Track 04.shn
+    10:20.01      109370056 B   -b-   --   ---xx    shn  0.5758  Track 05.shn
+     7:12.20       76251884 B   ---   --   ---xx    shn  0.5821  Track 06.shn
+     6:04.66       64364876 B   ---   --   ---xx    shn  0.5045  Track 07.shn
+     7:29.35       79285932 B   -b-   --   ---xx    shn  0.5959  Track 08.shn
+    54:42.43      579046236 B                            0.5280  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-04a\Seattle1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:50.17       51195688 B   -b-   --   ---xx    shn  0.6288  Track 01.shn
+     5:14.41       55486076 B   ---   --   ---xx    shn  0.5207  Track 02.shn
+     4:43.63       50069420 B   ---   --   ---xx    shn  0.5884  Track 03.shn
+     3:45.64       39840572 B   ---   --   ---xx    shn  0.5293  Track 04.shn
+     5:32.49       58680092 B   ---   --   ---xx    shn  0.5651  Track 05.shn
+     4:04.26       43102796 B   ---   --   ---xx    shn  0.6265  Track 06.shn
+     6:32.48       69261740 B   ---   --   ---xx    shn  0.5238  Track 07.shn
+     6:56.22       73434188 B   ---   --   ---xx    shn  0.5649  Track 08.shn
+     6:20.13       67062620 B   ---   --   ---xx    shn  0.4888  Track 09.shn
+     3:56.02       41635148 B   ---   --   ---xx    shn  0.5894  Track 10.shn
+     3:12.44       33972332 B   ---   --   ---xx    shn  0.5007  Track 11.shn
+     7:11.28       76094300 B   ---   --   ---xx    shn  0.5152  Track 12.shn
+     6:45.09       71463212 B   ---   --   ---xx    shn  0.6203  Track 13.shn
+    69:05.51      731298184 B                            0.5571  (13 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,123 @@
+===================
+===================
+===================
+=== 2004-10-16 Save Mart Center, Fresno State University, Fresno, California, USA [derived f. LB-2157 BT].ffp
+===================
+===================
+===================
+00 (announcement).flac:583e14dccca2a31cc3e8b210ba5ac4de
+01 Maggie's farm.flac:ae92d1c24ec3802b0c80a94e64dacc97
+02 The times they are a-changin'.flac:ffbd4f220369250903525a6f9d0efd60
+03 Tweedle Dee & Tweedle Dum.flac:30e14fdc84f1d5dc1d458c5d9be96628
+04 Mr. Tambourine man.flac:bad66d6c492ef7446c044316fd832264
+05 High water (for Charley Patton).flac:ff18f9d5c03d68971c3276d5611ed22a
+06 I don't believe you (She Acts Like We Never Have Mey).flac:1e839a6dce62fc90ea3d6dc1965d153b
+07 Ballad of Hollis Brown.flac:1963f0d0f1b789e282f8cf0abbeab3b1
+08 Highway 61 revisited.flac:44389268ce5871087937a39e739d6b47
+09 Floater (too much to ask).flac:97c05a12b40cc3d3d3fe8347552c99fa
+10 Stuck inside of Mobile with the Memphis blues again.flac:7c741249b094d9f14cc25d95f3d273b6
+11 Forever young.flac:c51e9b8f56bb450473e1a37fd148a072
+12 Honest with me.flac:1941b67c20bc04989922fb6d40f59883
+13 Positively 4th Street.flac:19a8a252ca4b3b338dc565cc5de25230
+14 Summer days.flac:61889551564672a4d3464b8a96985418
+15 Like a rolling stone.flac:b8639d13fd2288fb1227b10716ff081a
+16 All along the watchtower.flac:69cd386f3d73c009dbf711c5bd31f1c7
+===================
+===================
+===================
+=== 2004-10-16 Save Mart Center, Fresno State University, Fresno, California, USA [derived f. LB-2157 BT].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Save Mart Center
+Fresno State University
+Fresno, California
+October 16, 2004
+
+Derived from LB-2157 (A-); BT
+LosslessBobNotes: taped by bt; excellent sound [A-]; background talking d1t3; levels come up and clip on d1t3 resulting in a little occasional harshness and later on loud parts
+
+00 (announcement)
+01 Maggie's Farm
+02 The Times They Are A-Changin'
+03 Tweedle Dee And Tweedle Dum
+04 Mr. Tambourine Man
+05 High Water (for Charley Patton)
+06 I Don't Believe You
+07 Ballad Of Hollis Brown
+08 Highway 61 Revisited
+09 Floater (Too Much To Ask)
+10 Stuck Inside Of Mobile With The Memphis Blues Again
+11 Forever Young
+12 Honest With Me
+13 Positively 4th Street
+14 Summer Days
+15 Like A Rolling Stone
+16 All Along The Watchtower
+
+Concert # 1673 of The Never-Ending Tour
+Third concert of the 2004 US Fall College Tour
+2004 concert # 85
+
+Concert # 52 with the 18th Never-Ending Tour Band:
+Bob Dylan (vocal & piano)
+Stu Kimball (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+George Receli (drums & percussion)
+
+02, 04, 07, 11 acoustic with the band
+02, 04, 06, 09-11, 13 Bob Dylan (harmonica)
+05, 07 Larry Campbell (cittern)
+09 Larry Campbell (violin)
+11, 15, 16 Larry Campbell (pedal steel guitar)
+12 Larry Campbell (slide guitar)
+
+NOTES:
+LB-numbers for this concert: LB-2157 (A-), LB-2298 (A)
+First Bob Dylan concert in Fresno, California
+
+10 new songs (62%) compared to previous concert
+9 new songs for this tour
+
+Stereo audience recording, 100 minutes
+
+.ffp:
+00 (announcement).flac:583e14dccca2a31cc3e8b210ba5ac4de
+01 Maggie's farm.flac:ae92d1c24ec3802b0c80a94e64dacc97
+02 The times they are a-changin'.flac:ffbd4f220369250903525a6f9d0efd60
+03 Tweedle Dee & Tweedle Dum.flac:30e14fdc84f1d5dc1d458c5d9be96628
+04 Mr. Tambourine man.flac:bad66d6c492ef7446c044316fd832264
+05 High water (for Charley Patton).flac:ff18f9d5c03d68971c3276d5611ed22a
+06 I don't believe you (She Acts Like We Never Have Mey).flac:1e839a6dce62fc90ea3d6dc1965d153b
+07 Ballad of Hollis Brown.flac:1963f0d0f1b789e282f8cf0abbeab3b1
+08 Highway 61 revisited.flac:44389268ce5871087937a39e739d6b47
+09 Floater (too much to ask).flac:97c05a12b40cc3d3d3fe8347552c99fa
+10 Stuck inside of Mobile with the Memphis blues again.flac:7c741249b094d9f14cc25d95f3d273b6
+11 Forever young.flac:c51e9b8f56bb450473e1a37fd148a072
+12 Honest with me.flac:1941b67c20bc04989922fb6d40f59883
+13 Positively 4th Street.flac:19a8a252ca4b3b338dc565cc5de25230
+14 Summer days.flac:61889551564672a4d3464b8a96985418
+15 Like a rolling stone.flac:b8639d13fd2288fb1227b10716ff081a
+16 All along the watchtower.flac:69cd386f3d73c009dbf711c5bd31f1c7
+===================
+===================
+===================
+=== ORIGINAL bd04-10-16-bt.txt
+===================
+===================
+===================
+Bob Dylan, 10/16/04, Fresno, California, Fresno State University, Save Mart Center, 2CDR
+
+(64min+45min), taped by bt; excellent sound [A-]; background talking d1t3;  levels come up and clip on d1t3 resulting in a little occasional harshness and later on loud parts
+
+CD1
+1 intro 2 Maggie's Farm, 3 The Times They Are A-Changin', 4 Tweedle Dee & Tweedle Dum, 5 Mr. Tambourine Man (acoustic), 6 High Water (For Charley Patton), 7 I Don't Believe You (She Acts Like We Never Have Met), 8 Ballad Of Hollis Brown (acoustic), 9 Highway 61 Revisited, + Floater (Too Much To Ask), 10 Stuck Inside Of Mobile With The Memphis Blues Again, 
+
+CD2
+1 Forever Young, 2 Honest With Me, 3 Positively 4th Street (acoustic), 4 Summer Days, 5 (encore), Like A Rolling Stone, 6 All Along The Watchtower
+===================
+===================
+===================

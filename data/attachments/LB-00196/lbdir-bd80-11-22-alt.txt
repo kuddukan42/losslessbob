@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-22-alt 
+=================== 
+=================== 
+=================== 
+1c61e792d79a7ec88b8534f0f5a4e831  bd80-11-22.md5
+30adb3cf8d166c005060bafff3910502  bd80-11-22a.txt
+10870e83e4bdf5e4ae84cfb717407e57  bd80-11-22d1t01.shn
+229871f58738d6c28f2dcf709dbc13b2  bd80-11-22d1t02.shn
+cf3a57b59b2cc6fc740f5baacc0dd623  bd80-11-22d1t03.shn
+812390f6689380ab85d19e4c88803d3e  bd80-11-22d1t04.shn
+982d0abc7a02658433e9e0fa479805ac  bd80-11-22d1t05.shn
+aa135a710fa6e8c11b8258d945d057f6  bd80-11-22d1t06.shn
+a7a56896f4197a271298c492cec0f815  bd80-11-22d1t07.shn
+556d464c844c258b6c0de7c6ece6e888  bd80-11-22d1t08.shn
+c0b8a75c5345f44ffc86177881e8a9ba  bd80-11-22d1t09.shn
+837fde59fa7d48fa04c461093187cf3d  bd80-11-22d1t10.shn
+55d916fd073fc5b9edec85bb81af004f  bd80-11-22d1t11.shn
+7f232416897682507f9413e4b18c165f  bd80-11-22d1t12.shn
+2d445dc08d89394a08102e3d70f4a9b7  bd80-11-22d1t13.shn
+e63074527e44c946b0e393828cb05572  bd80-11-22d1t14.shn
+5c7e9cecf57a017c542404d533c8174a  bd80-11-22d2t01.shn
+886bb494cf16895e989b84f2afbd20d5  bd80-11-22d2t02.shn
+18c700eb9f76dec5860b0c82326b88f1  bd80-11-22d2t03.shn
+2b05f04d5ddb3c9d71c666328fe79872  bd80-11-22d2t04.shn
+c834061ffe0ecfd5d588f80f62d47198  bd80-11-22d2t05.shn
+c25cb29a819b42ad9530e6de808f17d1  bd80-11-22d2t06.shn
+0cb1e4f0ba596b75d541b0e4f75ec9df  bd80-11-22d2t07.shn
+a813a095f3cc6e6b5a36a8e5120b3f41  bd80-11-22d2t08.shn
+4ba2318177ae7cc97780945609517731  bd80-11-22d2t09.shn
+ac4e17441933c7091cef8424341477b1  bd80-11-22d2t10.shn
+d70e18af409508ed77e5642a1bc01ba1  bd80-11-22d2t11.shn
+7fd5e22992e2d3cf6805e19f26b987bf  bd80-11-22d2t12.shn
+30b4272ce68da862aed640ffa0f5b875  bd80-11-22d2t13.shn
+be33dfce695fad5ed6b6da8a89bd9394  bd80-11-22d2t14.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd80-11-22-alt 
+=================== 
+=================== 
+=================== 
+1ed4740fdd7f99521323dcc949d98392  [shntool]  bd80-11-22d1t01.wav
+565a72f7d2f2290fd74569df6defdb38  [shntool]  bd80-11-22d1t02.wav
+c0d2026c044f20a4c244ed067db9ebd8  [shntool]  bd80-11-22d1t03.wav
+6a4299c4f86d479556560237a21c993e  [shntool]  bd80-11-22d1t04.wav
+01b4bb2a518618554581ad64617d53c9  [shntool]  bd80-11-22d1t05.wav
+52622c1f9c01307320bb339292cc320b  [shntool]  bd80-11-22d1t06.wav
+5d48b452751efd8f70f741a18d096c19  [shntool]  bd80-11-22d1t07.wav
+0416403f2463bb1fa3ae303ffd7dcd38  [shntool]  bd80-11-22d1t08.wav
+10f57bedca66bbf6d1c5881cb3f4fea3  [shntool]  bd80-11-22d1t09.wav
+8a55fb43557bbbb1f87f3a23e6d1f192  [shntool]  bd80-11-22d1t10.wav
+f09b2b842d6aee1aad8c7394eb4a40a9  [shntool]  bd80-11-22d1t11.wav
+414ce1b1bce516a4d6e192d1af2f7e24  [shntool]  bd80-11-22d1t12.wav
+520fdfbc969e24eb0645f3aa616b26c1  [shntool]  bd80-11-22d1t13.wav
+443cd876bda22183f47f3ccaa65355f0  [shntool]  bd80-11-22d1t14.wav
+184b106f6995c678b17b973b48016a68  [shntool]  bd80-11-22d2t01.wav
+793e08d62dab74f3c95e116b37601836  [shntool]  bd80-11-22d2t02.wav
+03ef90cac714f3285ce65361c63db12d  [shntool]  bd80-11-22d2t03.wav
+fba6bddd0f2009107233bff30e79217a  [shntool]  bd80-11-22d2t04.wav
+531e30e6adc5ba7600609f65c0fb92ea  [shntool]  bd80-11-22d2t05.wav
+eaccb9275eb239c438579d9edf76b92b  [shntool]  bd80-11-22d2t06.wav
+d837b0dd72183903e314862c10967131  [shntool]  bd80-11-22d2t07.wav
+6d8e990823f5c7bce7a8716252c9081b  [shntool]  bd80-11-22d2t08.wav
+604715e3b1130494da1a0dfb67664a01  [shntool]  bd80-11-22d2t09.wav
+a01de32aacd129e9c3c1f7186b3b346d  [shntool]  bd80-11-22d2t10.wav
+9df28d317dd9480c3bce4e8f5401eca5  [shntool]  bd80-11-22d2t11.wav
+c60526c503190ff6f5c9859b33017607  [shntool]  bd80-11-22d2t12.wav
+41213f9ed99c92b9280990e3b502fabe  [shntool]  bd80-11-22d2t13.wav
+ec5ee1857730682b9ca8b7bdc636cc1a  [shntool]  bd80-11-22d2t14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-22-alt 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:02.55       32234204 B   ---   --   ---xx    shn  0.6420  bd80-11-22d1t01.shn
+     4:42.71       49911836 B   ---   --   ---xx    shn  0.6376  bd80-11-22d1t02.shn
+     4:15.00       44982044 B   ---   --   ---xx    shn  0.6236  bd80-11-22d1t03.shn
+     5:10.51       54803996 B   ---   --   ---xx    shn  0.6470  bd80-11-22d1t04.shn
+     3:04.25       32516444 B   ---   --   ---xx    shn  0.5979  bd80-11-22d1t05.shn
+     5:18.71       56262236 B   ---   --   ---xx    shn  0.6260  bd80-11-22d1t06.shn
+     4:29.71       47618636 B   ---   --   ---xx    shn  0.6437  bd80-11-22d1t07.shn
+     2:41.73       28572140 B   ---   --   ---xx    shn  0.6455  bd80-11-22d1t08.shn
+     3:48.38       40308620 B   ---   --   ---xx    shn  0.6705  bd80-11-22d1t09.shn
+     3:59.24       42216092 B   ---   --   ---xx    shn  0.6331  bd80-11-22d1t10.shn
+     2:48.57       29769308 B   ---   --   ---xx    shn  0.5960  bd80-11-22d1t11.shn
+     4:06.06       43408556 B   ---   --   ---xx    shn  0.6233  bd80-11-22d1t12.shn
+     5:17.12       55947068 B   ---   --   ---xx    shn  0.6189  bd80-11-22d1t13.shn
+     4:10.24       44156492 B   ---   --   ---xx    shn  0.5797  bd80-11-22d1t14.shn
+     3:15.67       34555628 B   ---   --   ---xx    shn  0.5256  bd80-11-22d2t01.shn
+     3:50.20       40619084 B   ---   --   ---xx    shn  0.5684  bd80-11-22d2t02.shn
+     4:38.34       49119212 B   ---   --   ---xx    shn  0.5656  bd80-11-22d2t03.shn
+     3:53.39       41192972 B   ---   --   ---xx    shn  0.5564  bd80-11-22d2t04.shn
+     4:39.40       49309724 B   ---   --   ---xx    shn  0.6056  bd80-11-22d2t05.shn
+     4:04.04       43051052 B   ---   --   ---xx    shn  0.5887  bd80-11-22d2t06.shn
+     4:12.59       44591612 B   ---   --   ---xx    shn  0.5816  bd80-11-22d2t07.shn
+     5:08.59       54470012 B   ---   --   ---xx    shn  0.6042  bd80-11-22d2t08.shn
+     4:03.30       42935804 B   ---   --   ---xx    shn  0.6019  bd80-11-22d2t09.shn
+     7:30.55       79509404 B   ---   --   ---xx    shn  0.6139  bd80-11-22d2t10.shn
+     4:26.05       46934204 B   ---   --   ---xx    shn  0.6292  bd80-11-22d2t11.shn
+     3:07.03       32993900 B   ---   --   ---xx    shn  0.5846  bd80-11-22d2t12.shn
+     6:24.58       67874060 B   ---   --   ---xx    shn  0.5699  bd80-11-22d2t13.shn
+     6:40.43       70661180 B   ---   --   ---xx    shn  0.6357  bd80-11-22d2t14.shn
+   122:52.44     1300525520 B                            0.6087  (28 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-07-bw-e.flacf 
+=================== 
+=================== 
+=================== 
+1e5df04b7423dc75132190f4a04b1cdf  bd_04.03.07_D1-fixed.md5
+aa18364f6c130b1503eda71c7f165390  bd_04.03.07_d1_Track 01-fixed.shn
+4556e58dc4011d673a1a7c618757e770  bd_04.03.07_d1_Track 02-fixed.shn
+39542614f56461ac6c1f64575c889770  bd_04.03.07_d1_Track 03-fixed.shn
+54a6d7100bb8792d4ff0ea6dc567aeeb  bd_04.03.07_d1_Track 04-fixed.shn
+ee99c42c303c95d11cf65b440e1e8b37  bd_04.03.07_d1_Track 05-fixed.shn
+7928cb3437cad528fc97c689ccead2a2  bd_04.03.07_d1_Track 06-fixed.shn
+0b8ef3ae5cf942837b43e6349d95b248  bd_04.03.07_d1_Track 07-fixed.shn
+c8474a87301157fd7f5721968e4c94f0  bd_04.03.07_d1_Track 08-fixed.shn
+c21912418181a201a03d9f7339221649  bd_04.03.07_d1_Track 09-fixed.shn
+f7a26a45193e1e1f4254013bbc0b02f8  bd_04.03.07_d1_Track 10-fixed.shn
+258ab7830e5dab5f313fc193180da6b3  bd_04.03.07_D2-fixed.md5
+b1e1f331610fd330e9ea7e59c49fb68f  bd_04.03.07_d2_Track 11-fixed.shn
+f3ed421ef90e58fecc03e5caf234ab77  bd_04.03.07_d2_Track 12-fixed.shn
+65662aa8f14764e09baafa91ff01a193  bd_04.03.07_d2_Track 13-fixed.shn
+fa9a6e9c509add2d82f0f9ed09262433  bd_04.03.07_d2_Track 14-fixed.shn
+0ef297714ec75d457034b5dbec69ee92  bd_04.03.07_d2_Track 15-fixed.shn
+93fd3bb82615eccdacc2139c0de7859e  bd_04.03.07_d2_Track 16-fixed.shn
+e84f6bcae5c112fc9ff9cd24513b7b92  bd_04.03.07_d2_Track 17-fixed.shn
+0ab7d8cb73ae0c91247534086e883cfd  bd_04.03.07_d2_Track 18-fixed.shn
+3efea908b5c29370fac3a2528230e607  Bob Dylan 2004-03-07_Chicago Vic Theatre.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-07-bw-e.flacf 
+=================== 
+=================== 
+=================== 
+08bc6dc0a800890a8b3d427671e1ab10  [shntool]  bd_04.03.07_d1_Track_01-fixed.wav
+98cb5468aa2df285caf766ba6db1daf4  [shntool]  bd_04.03.07_d1_Track_02-fixed.wav
+25a02980fe2334dc8e40045dfdf42b63  [shntool]  bd_04.03.07_d1_Track_03-fixed.wav
+73993052b30a2c8adf5faab0cd6c0013  [shntool]  bd_04.03.07_d1_Track_04-fixed.wav
+5b73ee65400fdbcac06dd5f575635c8d  [shntool]  bd_04.03.07_d1_Track_05-fixed.wav
+1ed577045c998dcae0a5f68097f50439  [shntool]  bd_04.03.07_d1_Track_06-fixed.wav
+f9e1dec57160f4cdbb4052dc4afc09b7  [shntool]  bd_04.03.07_d1_Track_07-fixed.wav
+e8ddfefc9094fe8057ea41924129193c  [shntool]  bd_04.03.07_d1_Track_08-fixed.wav
+8f096e171b943a27b3baa0a422592423  [shntool]  bd_04.03.07_d1_Track_09-fixed.wav
+863bdaca0dcba5860ac48b501889c72f  [shntool]  bd_04.03.07_d1_Track_10-fixed.wav
+b1248b02348812979e7c07feecaa3fba  [shntool]  bd_04.03.07_d2_Track_11-fixed.wav
+dd76c45b5ec2b7356383f125773a064f  [shntool]  bd_04.03.07_d2_Track_12-fixed.wav
+c756f110af10ee2649b110202df93c98  [shntool]  bd_04.03.07_d2_Track_13-fixed.wav
+f677456a84a20259862157e0110db277  [shntool]  bd_04.03.07_d2_Track_14-fixed.wav
+4fa066bd15c97d3fe33fddfa916eece8  [shntool]  bd_04.03.07_d2_Track_15-fixed.wav
+62a4b2b9c6b0b7c3146d03ec1bcff243  [shntool]  bd_04.03.07_d2_Track_16-fixed.wav
+df465fc9f86237574bb2b73fa0381e66  [shntool]  bd_04.03.07_d2_Track_17-fixed.wav
+bc76ead0b42ae660ea7a96ea2fd3ce62  [shntool]  bd_04.03.07_d2_Track_18-fixed.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-07-bw-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:50.41       72420476 B   ---   --   ---xx    shn  0.6424  bd_04.03.07_d1_Track 01-fixed.shn
+     4:56.30       52285004 B   ---   --   ---xx    shn  0.6147  bd_04.03.07_d1_Track 02-fixed.shn
+     5:23.54       57104252 B   ---   --   ---xx    shn  0.5957  bd_04.03.07_d1_Track 03-fixed.shn
+     5:31.35       58470764 B   ---   --   ---xx    shn  0.6060  bd_04.03.07_d1_Track 04-fixed.shn
+     7:31.29       79624652 B   ---   --   ---xx    shn  0.6158  bd_04.03.07_d1_Track 05-fixed.shn
+     5:56.17       62838428 B   ---   --   ---xx    shn  0.5425  bd_04.03.07_d1_Track 06-fixed.shn
+     6:26.33       68168060 B   ---   --   ---xx    shn  0.6185  bd_04.03.07_d1_Track 07-fixed.shn
+     5:41.13       60183020 B   ---   --   ---xx    shn  0.5186  bd_04.03.07_d1_Track 08-fixed.shn
+     6:18.17       66719228 B   ---   --   ---xx    shn  0.6321  bd_04.03.07_d1_Track 09-fixed.shn
+     6:27.64       68417372 B   ---   --   ---xx    shn  0.5612  bd_04.03.07_d1_Track 10-fixed.shn
+     6:54.14       73062572 B   ---   --   ---xx    shn  0.4947  bd_04.03.07_d2_Track 11-fixed.shn
+     6:56.74       73556492 B   ---   --   ---xx    shn  0.6217  bd_04.03.07_d2_Track 12-fixed.shn
+     4:57.00       52390844 B   ---   --   ---xx    shn  0.5296  bd_04.03.07_d2_Track 13-fixed.shn
+     7:51.18       83126780 B   ---   --   ---xx    shn  0.6134  bd_04.03.07_d2_Track 14-fixed.shn
+     3:03.28       32347100 B   ---   --   ---xx    shn  0.5118  bd_04.03.07_d2_Track 15-fixed.shn
+    11:37.61      123094316 B   ---   --   ---xx    shn  0.6223  bd_04.03.07_d2_Track 16-fixed.shn
+     0:54.42        9624428 B   ---   --   ---xx    shn  0.5290  bd_04.03.07_d2_Track 17-fixed.shn
+     5:58.57       63285308 B   ---   --   ---xx    shn  0.5849  bd_04.03.07_d2_Track 18-fixed.shn
+   109:17.27     1156719096 B                            0.5888  (18 files)
+=================== 
+=================== 
+=================== 

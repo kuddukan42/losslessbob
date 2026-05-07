@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-05-JTT-a.flacf 
+=================== 
+=================== 
+=================== 
+733acd2fa58ce848784bfe911c93d764  bd90-02-05-JTT-a-LB-4360.txt
+c8c06579a2a557c8751939c68505db2a  Disc One\BD_05.02.90 JTT_Disc01Track01.flac
+eed02880b2ef6d29f599b3af02af9b95  Disc One\BD_05.02.90 JTT_Disc01Track02.flac
+c0d2369398cc76b4002b95de876bf358  Disc One\BD_05.02.90 JTT_Disc01Track03.flac
+e3d36b2dc09448bab013dc218d989f1f  Disc One\BD_05.02.90 JTT_Disc01Track04.flac
+d6b6db9ca2768f7a44466284c6c4ced3  Disc One\BD_05.02.90 JTT_Disc01Track05.flac
+001a1e30da674057c21a9c2629eb5e5c  Disc One\BD_05.02.90 JTT_Disc01Track06.flac
+b230c655faa04c49221abe9af56b9695  Disc One\BD_05.02.90 JTT_Disc01Track07.flac
+5951023b5e12eb32d5bddf1384fe962a  Disc One\BD_05.02.90 JTT_Disc01Track08.flac
+10b08d4b9c71f5fe8d4098ad3e5c5bd2  Disc One\BD_05.02.90 JTT_Disc01Track09.flac
+8d5f5495e5ad396d9a8967f71d6f9fc6  Disc One\BD_05.02.90 JTT_Disc01Track10.flac
+ae9f3ac505479ee66c8ae77fca9d46e3  Disc One\BD_05.02.90 JTT_Disc01Track11.flac
+27d8e435126876e34758b1a13ac7291d  Disc One\BD_05.02.90 JTT_Disc01Track12.flac
+52a63cc0098405148fbd381b2cf7a9dd  Disc Two\BD_05.02.90 JTT_Disc02Track01.flac
+5a91b78cce7b27c72bfd349692dacb15  Disc Two\BD_05.02.90 JTT_Disc02Track02.flac
+765658a9552ae9d653dd4af90984f2d8  Disc Two\BD_05.02.90 JTT_Disc02Track03.flac
+bc940fd6fe4e16aeee65ba53c79c5fcb  Disc Two\BD_05.02.90 JTT_Disc02Track04.flac
+acd0a909b6d5b2fda563c3cbfc57e30a  Disc Two\BD_05.02.90 JTT_Disc02Track05.flac
+f5cdb20179b880705e71ea472926608a  Disc Two\BD_05.02.90 JTT_Disc02Track06.flac
+b1f81acab834096f11fd2ec858e5ee52  Disc Two\BD_05.02.90 JTT_Disc02Track07.flac
+748b5009d9015cdde94d88ab5ccaccd3  HAMMERSMITH - 05.02.1990 - F.jpg
+8e795192abc4187f9a5a0f4498ba6f14  HAMMERSMITH - 05.02.1990 - R.jpg
+bae3232c929975c361132c3b2aa576d5  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-05-JTT-a.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+BD_05.02.90 JTT_Disc01Track01.flac:9b1f19b498672756e1e031fdf2ffef6a
+BD_05.02.90 JTT_Disc01Track02.flac:0c44474735a9d0026514672ea1f7246f
+BD_05.02.90 JTT_Disc01Track03.flac:df81ee705170b5bc4c096484b0e3eb0c
+BD_05.02.90 JTT_Disc01Track04.flac:50488e58cce7b60c0dcfc8f79774862d
+BD_05.02.90 JTT_Disc01Track05.flac:e67432a99cda1afbf32073cf1b620a76
+BD_05.02.90 JTT_Disc01Track06.flac:0a97131c5ff2c49abe3ec11080ad12c5
+BD_05.02.90 JTT_Disc01Track07.flac:ca1ed0e6055262de1a45d21acd50f5a7
+BD_05.02.90 JTT_Disc01Track08.flac:e5643259fc9b92ffea665a48ddfd559a
+BD_05.02.90 JTT_Disc01Track09.flac:78bc22b850dba0bcd7b99629aa1dc6c5
+BD_05.02.90 JTT_Disc01Track10.flac:c33196399bc07abd0b7153aaa37ab1e4
+BD_05.02.90 JTT_Disc01Track11.flac:ef949f206845818bf821d4393618f92d
+BD_05.02.90 JTT_Disc01Track12.flac:118d79c9f1a7e3629d001f4ce619b143
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-02-05-JTT-a.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+BD_05.02.90 JTT_Disc02Track01.flac:222ec485105c82df6e8a302cc0a32a8e
+BD_05.02.90 JTT_Disc02Track02.flac:f4b08143e4ba0e0fbc1cfc30467c47ac
+BD_05.02.90 JTT_Disc02Track03.flac:22c678a38e09ab8fbf29b0bdd5d143f6
+BD_05.02.90 JTT_Disc02Track04.flac:1190cab7da84294c0d6be0bcb239cfb1
+BD_05.02.90 JTT_Disc02Track05.flac:73c61ea1b8b576d548d2d0384e70d198
+BD_05.02.90 JTT_Disc02Track06.flac:843a498d9407aedcc1eed531eb8716d6
+BD_05.02.90 JTT_Disc02Track07.flac:2f2284c7e988e9e7b1f7b12b453059dc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-05-JTT-a.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:06.51       54098396 B   ---   --   ---xx   flac  0.6203  BD_05.02.90 JTT_Disc01Track01.flac
+     5:03.40       53543324 B   ---   --   ---xx   flac  0.6218  BD_05.02.90 JTT_Disc01Track02.flac
+     2:56.21       31095836 B   ---   --   ---xx   flac  0.6534  BD_05.02.90 JTT_Disc01Track03.flac
+     5:44.30       60752204 B   ---   --   ---xx   flac  0.6324  BD_05.02.90 JTT_Disc01Track04.flac
+     3:19.66       35258876 B   ---   --   ---xx   flac  0.6232  BD_05.02.90 JTT_Disc01Track05.flac
+     2:46.40       29376524 B   ---   --   ---xx   flac  0.6319  BD_05.02.90 JTT_Disc01Track06.flac
+     5:47.63       61359020 B   ---   --   ---xx   flac  0.5918  BD_05.02.90 JTT_Disc01Track07.flac
+     4:37.25       48921644 B   ---   --   ---xx   flac  0.5851  BD_05.02.90 JTT_Disc01Track08.flac
+     6:38.34       70287212 B   ---   --   ---xx   flac  0.5498  BD_05.02.90 JTT_Disc01Track09.flac
+     5:20.12       56476268 B   ---   --   ---xx   flac  0.5008  BD_05.02.90 JTT_Disc01Track10.flac
+     6:40.31       70632956 B   ---   --   ---xx   flac  0.5101  BD_05.02.90 JTT_Disc01Track11.flac
+     4:54.67       52019228 B   ---   --   ---xx   flac  0.4728  BD_05.02.90 JTT_Disc01Track12.flac
+    58:56.30      623821488 B                            0.5748  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-05-JTT-a.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.56       54639356 B   ---   --   ---xx   flac  0.5723  BD_05.02.90 JTT_Disc02Track01.flac
+     3:03.47       32391788 B   ---   --   ---xx   flac  0.6108  BD_05.02.90 JTT_Disc02Track02.flac
+     5:25.41       57426476 B   ---   --   ---xx   flac  0.5944  BD_05.02.90 JTT_Disc02Track03.flac
+     4:40.65       49544924 B   ---   --   ---xx   flac  0.5971  BD_05.02.90 JTT_Disc02Track04.flac
+     7:28.04       79036652 B   ---   --   ---xx   flac  0.6053  BD_05.02.90 JTT_Disc02Track05.flac
+     6:24.19       67782332 B   ---   --   ---xx   flac  0.5096  BD_05.02.90 JTT_Disc02Track06.flac
+     5:13.42       55312028 B   ---   --   ---xx   flac  0.5986  BD_05.02.90 JTT_Disc02Track07.flac
+    37:25.49      396133556 B                            0.5813  (7 files)
+=================== 
+=================== 
+=================== 

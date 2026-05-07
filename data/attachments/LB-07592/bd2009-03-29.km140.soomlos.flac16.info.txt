@@ -1,0 +1,60 @@
+Bob Dylan
+Forum
+Copenhagen, Denmark
+2009-03-29
+
+01. introduction
+02. Gotta Serve Somebody
+03. When I Paint My Masterpiece
+04. Watching The River Flow
+05. Simple Twist Of Fate
+06. Tweedle Dee & Tweedle Dum
+07. I Believe In You
+08. 'Til I Fell In Love With You 
+09. Tryin' To Get To Heaven
+10. It's Alright, Ma (I'm Only Bleeding)
+11. Desolation Row 
+12. Honest With Me
+13. When The Deal Goes Down
+14. Thunder On The Mountain
+15. Like A Rolling Stone
+    (encore)
+16. All Along The Watchtower
+17. Spirit On The Water
+18. band introduction
+19. Blowin' In The Wind  
+
+Band Members
+Bob Dylan - vocals, keyboard, guitar, harp
+Denny Freeman - guitar
+Stu Kimball - guitar
+Donnie Herron - violin, banjo, mandolin, steel guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann skm140 > sound devices mixpre > edirol r-09hr (24/48)
+edirol r-09hr > usb > hdd > sound forge 9.0 > cd wave > foobar > tlh
+
+ffp
+bd2009-03-29t01.flac:e1481e92c9c1770143b0136dc0d08870
+bd2009-03-29t02.flac:a4f7172561a591694c5dc840c93b5c50
+bd2009-03-29t03.flac:92c1977cc688bdaa164025af9a4e3d5d
+bd2009-03-29t04.flac:72f20181eda9af0ddfa61690a53e8bcb
+bd2009-03-29t05.flac:e15cc060cf9467e2afc813efbc51c384
+bd2009-03-29t06.flac:1377b3f0463751305968109a50f5e916
+bd2009-03-29t07.flac:142381884315d6154212f39783976451
+bd2009-03-29t08.flac:691039c30f2033202ec9ccd5a7158b16
+bd2009-03-29t09.flac:67f25d47a85ad4344814f790699030e2
+bd2009-03-29t10.flac:2425ef858ef39bc0db666832d15a8bbf
+bd2009-03-29t11.flac:0b1c395a7afc389e6bc49129b030dc8b
+bd2009-03-29t12.flac:7a78a226975482866b117bb9ce672c94
+bd2009-03-29t13.flac:0471ad65d8a693ec1217f1f70499d42e
+bd2009-03-29t14.flac:b323c4969002413a8736bd533e7cabc6
+bd2009-03-29t15.flac:4c252e33fd76941555d5ae0d76d3648b
+bd2009-03-29t16.flac:dee6bc29b96b0b07425e8f22d24c92bc
+bd2009-03-29t17.flac:b39c4b20e40fda4d01b38a50d984d3f6
+bd2009-03-29t18.flac:ad66ca711139b95727623c3e9634f9e8
+bd2009-03-29t19.flac:323a53999af831a84bdf4e11171a8b85
+
+bd2009-03-29.km140.soomlos.flac16 created 15 April 2009

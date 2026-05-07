@@ -1,0 +1,45 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: Cologne 16 june 84 PA 
+=================== 
+=================== 
+=================== 
+4589d874cf1e83b3cf1600d2a9516d28  01 jokerman.flac
+e92226289f9cd028b7cfcb26c9e3a108  02 JLAW.flac
+7e7a79ab175e9e8a07433cb77c0ebc6e  03 I & I.flac
+539d1dbb49152bd3c4b3a840c17038f7  04 tangled.flac
+183b98755945a0382a348809250e16a9  05 Love-zero.flac
+4be1b8c18a1c9ddc2043fccea2c337b0  06 simple twist.flac
+b58848636df718378c493dff47d42e46  Cologne 16 june 84 PA.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: Cologne 16 june 84 PA 
+=================== 
+=================== 
+=================== 
+01 jokerman.flac:84b2151c8b6fd8fac0ad5d89b28e2b39
+02 JLAW.flac:bffd21f9de13786296564b1bc53cf002
+03 I & I.flac:74f1d9eba6e7f8ad436224e86f204952
+04 tangled.flac:990292f1c6af7216826ca21c2c14c606
+05 Love-zero.flac:0e015d9613f27a31e358178eb678b3d5
+06 simple twist.flac:235e5c1af4acde2e029c4ba07a1c35ca
+=================== 
+=================== 
+=================== 
+=== shntool for: Cologne 16 june 84 PA 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:36.55       69983804 B   ---   --   ---xx   flac  0.7119  01 jokerman.flac
+     6:30.09       68817212 B   ---   --   ---xx   flac  0.6761  02 JLAW.flac
+     6:24.49       67852892 B   ---   --   ---xx   flac  0.6749  03 I & I.flac
+     6:57.13       73589420 B   ---   --   ---xx   flac  0.6960  04 tangled.flac
+     3:36.40       38196524 B   ---   --   ---xx   flac  0.7133  05 Love-zero.flac
+     4:29.00       47451644 B   ---   --   ---xx   flac  0.7093  06 simple twist.flac
+    34:34.16      365891496 B                            0.6949  (6 files)
+=================== 
+=================== 
+=================== 

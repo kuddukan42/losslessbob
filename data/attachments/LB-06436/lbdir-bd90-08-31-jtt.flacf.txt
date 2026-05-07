@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-08-31-jtt.flacf 
+=================== 
+=================== 
+=================== 
+daa4eb891c8ba0ced55732a24c0aa76c  Dylan - Lincoln August 31st 1990 (JTT).md5
+b1bbf0d6f1ac9cc6f2c857b5318f4db1  Dylan - Lincoln August 31st 1990 (JTT).txt
+f7886e1f46c7e4db622b1d0663036605  Dylan - Lincoln August 31st 1990_Info.txt
+946db954dfc6be3fb7d38fc0295e001f  Track01 BD_August 31st 1990.flac
+3ce54af6f78256cf2c2857ea2b830bf5  Track02 BD_August 31st 1990.flac
+d1b42976086ccf28f896aec0f4a0f050  Track03 BD_August 31st 1990.flac
+7eb2e735f834f0cdf853f24b32825231  Track04 BD_August 31st 1990.flac
+e7a1b322f0c5ab71b63e26f25628f1ab  Track05 BD_August 31st 1990.flac
+70fcfca1cb1f6a95deaad2550303691c  Track06 BD_August 31st 1990.flac
+ecc2b0608653ef9d3faa02f1909f6481  Track07 BD_August 31st 1990.flac
+34a5838fc6510d6451993cc448414b67  Track08 BD_August 31st 1990.flac
+b8af08be51caf6c1bd0a2751a5fdee29  Track09 BD_August 31st 1990.flac
+0bd7ed83a06f82e70749446d41ef4014  Track10 BD_August 31st 1990.flac
+a5dd2f29021aa8120da003d1b9cea468  Track11 BD_August 31st 1990.flac
+b48841099166605054690af5e5e5e1a0  Track12 BD_August 31st 1990.flac
+4b35b7fd48786d538b087d1151b2512c  Track13 BD_August 31st 1990.flac
+b59b6fdfd7318f885d5149feda01ee26  Track14 BD_August 31st 1990.flac
+bf2d980831030e4d5fc3afc612a5b003  Track15 BD_August 31st 1990.flac
+8469a0a04df3624e55fa4360449d7b0b  Track16 BD_August 31st 1990.flac
+d9249e83a9254743df927798e7f95980  Track17 BD_August 31st 1990.flac
+27799c696c6ad197dbe9fdef82f1c137  Track18 BD_August 31st 1990.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-08-31-jtt.flacf 
+=================== 
+=================== 
+=================== 
+Track01 BD_August 31st 1990.flac:ee91d43a767a408eeac5c25918c28f4e
+Track02 BD_August 31st 1990.flac:8647a086172b1c56fd25d8c8e83c43f4
+Track03 BD_August 31st 1990.flac:23de2584c14fc33abca4fa4b87216ac8
+Track04 BD_August 31st 1990.flac:db832bb767cc4bcd1201ed7b0ecb8fa0
+Track05 BD_August 31st 1990.flac:b3785d9d700a509ef84aef9c04088359
+Track06 BD_August 31st 1990.flac:8a1cb611c2c0c15fb055172125b99dac
+Track07 BD_August 31st 1990.flac:fb810346857dfd4e5beccc166f999517
+Track08 BD_August 31st 1990.flac:08b54dc0bcdfdbf03639027b3d43c0be
+Track09 BD_August 31st 1990.flac:4085c8f596dce0b1ac504a6400adc408
+Track10 BD_August 31st 1990.flac:20e0d67a48555d536fcf331be8f86910
+Track11 BD_August 31st 1990.flac:b2557c28b4c03ae1ec93693b39efdd0d
+Track12 BD_August 31st 1990.flac:1fad5fbcbf21d637da983ea219763baf
+Track13 BD_August 31st 1990.flac:a422ff49f36cfd0ce6a68e4582f12404
+Track14 BD_August 31st 1990.flac:085685a1eb22073626eb493805f1f654
+Track15 BD_August 31st 1990.flac:89b781dc3f178bf285c3c8be1e7c8f3f
+Track16 BD_August 31st 1990.flac:038ecac2b49d30acb96d5deb0c8300ca
+Track17 BD_August 31st 1990.flac:3b91bde07f464b1390b7448305720798
+Track18 BD_August 31st 1990.flac:76906569e8bad60afa35bdc4593101a3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-08-31-jtt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:30.07       15892508 B   ---   --   ---xx   flac  0.5493  Track01 BD_August 31st 1990.flac
+     4:55.26       52099196 B   ---   --   ---xx   flac  0.6181  Track02 BD_August 31st 1990.flac
+     2:55.13       30900620 B   ---   --   ---xx   flac  0.6387  Track03 BD_August 31st 1990.flac
+     4:30.07       47644508 B   ---   --   ---xx   flac  0.6250  Track04 BD_August 31st 1990.flac
+     5:49.03       61570700 B   ---   --   ---xx   flac  0.5984  Track05 BD_August 31st 1990.flac
+     5:05.37       53889068 B   ---   --   ---xx   flac  0.5951  Track06 BD_August 31st 1990.flac
+     4:58.10       52590764 B   ---   --   ---xx   flac  0.5585  Track07 BD_August 31st 1990.flac
+     4:33.54       48284252 B   ---   --   ---xx   flac  0.5803  Track08 BD_August 31st 1990.flac
+     3:13.42       34144028 B   ---   --   ---xx   flac  0.5729  Track09 BD_August 31st 1990.flac
+     6:04.57       64343708 B   ---   --   ---xx   flac  0.6034  Track10 BD_August 31st 1990.flac
+     3:02.38       32194220 B   ---   --   ---xx   flac  0.6368  Track11 BD_August 31st 1990.flac
+     3:50.18       40614380 B   ---   --   ---xx   flac  0.6212  Track12 BD_August 31st 1990.flac
+     3:29.55       36997004 B   ---   --   ---xx   flac  0.6561  Track13 BD_August 31st 1990.flac
+     4:13.00       44629244 B   ---   --   ---xx   flac  0.6094  Track14 BD_August 31st 1990.flac
+     4:28.39       47366972 B   ---   --   ---xx   flac  0.6330  Track15 BD_August 31st 1990.flac
+     7:23.44       78248732 B   ---   --   ---xx   flac  0.6358  Track16 BD_August 31st 1990.flac
+     4:53.17       51725228 B   ---   --   ---xx   flac  0.5982  Track17 BD_August 31st 1990.flac
+     4:17.63       45483020 B   ---   --   ---xx   flac  0.6367  Track18 BD_August 31st 1990.flac
+    79:14.05      838618152 B                            0.6105  (18 files)
+=================== 
+=================== 
+=================== 

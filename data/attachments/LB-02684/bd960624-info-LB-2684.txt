@@ -1,0 +1,72 @@
+Bob Dylan
+June 24, 1996
+Differdange, Hall Omnisports
+
+AUD DAT Master [Sennheiser Mics]>DAT>WAV>Soundforge 6.0>CD Wave>CD>EAC>WAV>FLAC
+
+
+LB-2684
+Please retain this info file and its LB number as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+
+
+CD 1 [64:04]
+
+01 Down In The Flood
+02 Lay Lady Lay
+03 All Along The Watchtower
+04 Positively 4th Street
+05 Most Likely You Go Your Way 
+06 Silvio 
+07 Visions Of Johanna
+08 Masters Of War
+09 It's All Over Now, Baby Blue
+
+
+CD 2 [40:22]
+
+01 God Knows *
+02 Ring Them Bells
+03 Seven Days
+04 New Minglewood Blues 
+05 Blowin' In The Wind *
+06 Rainy Day Women # 12 & 35
+
+*dropouts on master
+patches supplied by alternate AUD DAT Master [OKM] >DAT
+d2t01 2:51 > 3:13
+d2t05 3:59 > 4:04
+
+
+Bob Dylan - vocal & guitar
+Bucky Baxter - pedal steel guitar & electric slide guitar, mandolin, vocal
+John Jackson - guitar, vocal
+Tony Garnier - bass 
+Winston Watson - drums
+
+
+further info:
+http://www.bjorner.com/DSN17260%20-%201996%20Europe%20Summer%20Tour.htm#DSN17320
+cue sheet from Bill Pagel's page.
+
+I did not harm the sound of the recording in any way other than the two patches.
+
+
+
+bd960624 d1t01.flac:ca4f9fbb927736c9594542e565ceddc4
+bd960624 d1t02.flac:cbc7eb7c76d2ac8a5f4697ab6fbfa614
+bd960624 d1t03.flac:a0bd3d02289b7d82b3b797f9bcc08d72
+bd960624 d1t04.flac:d66e539efddc8ead1fdd96011eb65ade
+bd960624 d1t05.flac:204e8fe0f4de425da9ddfb6301bf2a21
+bd960624 d1t06.flac:135328cb186226ace718579fa9b3aab6
+bd960624 d1t07.flac:a8055cbf2ab02fdae2c58a9a655c35b5
+bd960624 d1t08.flac:ab4d3b159e27262fe52f5a944ff0fda6
+bd960624 d1t09.flac:c812ac43c3eeaa2343aca09af6ac8c06
+bd960624 d2t01.flac:9cc5ec8c3aad8c4b560ad70eba21bc5a
+bd960624 d2t02.flac:c091af3b76cbed148d29386e1d8a2cf1
+bd960624 d2t03.flac:396e888027545d9cc7a526efecb3bbfc
+bd960624 d2t04.flac:864cbd3003f9866bca2dfaae0f0cd559
+bd960624 d2t05.flac:63c96cc4f04fe493b810e8d1d3ab2c02
+bd960624 d2t06.flac:8be015e78efa98514803f739cc788c21
+

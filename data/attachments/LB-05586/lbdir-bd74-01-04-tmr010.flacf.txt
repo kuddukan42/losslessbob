@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-04-tmr010.flacf 
+=================== 
+=================== 
+=================== 
+23eebc039f9d0731427a038c2d150443  Album\01.flac
+61788395382120d46112aedb9faa73d8  Album\02.flac
+f056a984b32b188a38c0a26c9e4420f0  Album\03.flac
+21bc8db3cdcdd3e3972d633fc4952e99  Album\04.flac
+548a25e605e76c2e4962ce646be4109c  Album\05.flac
+e655dda10db19303cd8c8ec08bd60dc1  Album\06.flac
+03af5315c6ba89a900f00d0e5e713826  Album\07.flac
+82744033760012dd2523768591820fe4  Album\08.flac
+f73403ecbc1a1be54a62e241e89a7379  Album\09.flac
+ed40a08df7297d41e5bc22d07c67f3b3  Album\10.flac
+6a54576ad7b58570e78cade90af3886c  Album\11.flac
+52118cebb4081191310d6102766005bc  Album\12.flac
+e4a60160dfe6e55734f0f6effa170995  Album\13.flac
+24667dac3c43c90313508ca3b7fa92f1  Album\14.flac
+a76163a8b4238b05d053c0d6920d11e7  Album\15.flac
+6cd1a7438939e91afcdc836f0d69dbfb  Album\16.flac
+aeb4dc1f30bd05d718d7283a005b3ee7  Album\17.flac
+1c4c533d3d6b1ed26930fc8ba0cb5ad0  Album\18.flac
+29f5ed703ac22172a7879326831eb9dd  Artwork\d.bmp
+9f69c1a8d4387c9ff86795eb2492406f  Artwork\ff.bmp
+0cc722eb7df3e10d00ed0af712e98877  Artwork\fr.bmp
+078bd5d9c0aa38deb2ec6fd078c3c462  Artwork\rf.bmp
+08a8c6066b6644a706eac114fdf9e7ee  Artwork\rr.bmp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-04-tmr010.flacf\Album 
+=================== 
+=================== 
+=================== 
+01.flac:e33eead87af03e1edaad3c6e39233071
+02.flac:f9be4f3567df7563e847273dad4c1144
+03.flac:340c1c1e4a7755571668d14e58359729
+04.flac:8ed6ad21fe5c259f8c0f965450723c69
+05.flac:662eac18f7633bfd99007550018cb01a
+06.flac:535f2c4d6c21d5566e03a0eaa680f00a
+07.flac:70ec6b2720800d77ef5351cf85db0832
+08.flac:c92d5cdd61e44011f4334302fde67b63
+09.flac:1e4daa6203645f824e78b82afa1c90c2
+10.flac:88b4b297d61d4eb8819891d2130a064b
+11.flac:e95079105d49dba84b90f88f69c9506a
+12.flac:c1a915ca4e1e0cd5f0a84cdc1f833f2f
+13.flac:89093b603b1a97bbd2d8f01567db716d
+14.flac:f0b30c7510f3eae643be9407b59e5869
+15.flac:d5616c2227c0b76b13fbab1dee245d12
+16.flac:10723914b4be75214bec1f9e0b633331
+17.flac:c4943e384015930b6a0909547fc3a5fb
+18.flac:6e73f41df2ab36135cbd0600aadc75af
+=================== 
+=================== 
+=================== 
+=== shntool for: bd74-01-04-tmr010.flacf\Album 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.64       41251772 B   ---   --   ---xx   flac  0.5149  01.flac
+     3:29.16       36905276 B   ---   --   ---xx   flac  0.4757  02.flac
+     4:30.20       47675084 B   ---   --   ---xx   flac  0.5420  03.flac
+     4:04.49       43156892 B   ---   --   ---xx   flac  0.5414  04.flac
+     3:56.04       41639852 B   ---   --   ---xx   flac  0.5782  05.flac
+     6:00.33       63581660 B   ---   --   ---xx   flac  0.5196  06.flac
+     2:32.70       26977484 B   ---   --   ---xx   flac  0.5563  07.flac
+     3:25.43       36263180 B   ---   --   ---xx   flac  0.5708  08.flac
+     3:05.60       32775164 B   ---   --   ---xx   flac  0.5575  09.flac
+     3:47.69       40205132 B   ---   --   ---xx   flac  0.5470  10.flac
+     3:28.65       36844124 B   ---   --   ---xx   flac  0.4954  11.flac
+     5:00.66       53075276 B   ---   --   ---xx   flac  0.4294  12.flac
+     3:44.01       39515996 B   ---   --   ---xx   flac  0.4980  13.flac
+     6:00.17       63544028 B   ---   --   ---xx   flac  0.5048  14.flac
+     6:23.02       67565948 B   ---   --   ---xx   flac  0.5187  15.flac
+     4:30.16       47665676 B   ---   --   ---xx   flac  0.5942  16.flac
+     6:13.47       65907788 B   ---   --   ---xx   flac  0.5657  17.flac
+     3:41.65       39137324 B   ---   --   ---xx   flac  0.5936  18.flac
+    77:49.32      823687656 B                            0.5315  (18 files)
+=================== 
+=================== 
+=================== 

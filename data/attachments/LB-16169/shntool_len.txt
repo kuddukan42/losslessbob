@@ -1,0 +1,19 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.10       45005564 B   ---   --   ---xx   flac  0.4508  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t01.flac
+     4:06.73       43566140 B   ---   --   ---xx   flac  0.4423  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t02.flac
+     5:54.47       62556188 B   ---   --   ---xx   flac  0.4433  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t03.flac
+     6:30.11       68821916 B   ---   --   ---xx   flac  0.4564  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t04.flac
+     4:52.09       51530012 B   ---   --   ---xx   flac  0.4287  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t05.flac
+     4:56.04       52223852 B   ---   --   ---xx   flac  0.4014  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t06.flac
+     5:34.19       58962332 B   ---   --   ---xx   flac  0.4605  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t07.flac
+     7:18.34       77343212 B   ---   --   ---xx   flac  0.4182  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t08.flac
+     7:29.36       79288316 B   ---   --   ---xx   flac  0.4434  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t09.flac
+     8:27.48       89547740 B   ---   --   ---xx   flac  0.4121  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t10.flac
+    10:32.26      111545996 B   ---   --   ---xx   flac  0.4159  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t11.flac
+     5:47.36       61295516 B   ---   --   ---xx   flac  0.4876  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t12.flac
+     6:44.12       71293868 B   ---   --   ---xx   flac  0.3911  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t13.flac
+     5:03.12       53477468 B   ---   --   ---xx   flac  0.4221  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t14.flac
+     5:24.66       57308876 B   ---   --   ---xx   flac  0.3742  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t15.flac
+     7:58.16       84356876 B   ---   --   ---xx   flac  0.4702  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t16.flac
+     6:38.68       70366124 B   -b-   --   ---xx   flac  0.4268  Bob Dylan - Prague CZ 2024-10-05 Nightly Moth t17.flac
+   107:34.02     1138489996 B                            0.4314  (17 files)

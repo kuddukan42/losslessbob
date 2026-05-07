@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-05-02_Munchen 
+=================== 
+=================== 
+=================== 
+32c81c39b1588276db5b4fe91be57248  bd99-05-02.txt
+96f5aafd3ec49cd08087d13ef02c8250  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 1.shn
+58890dbc022efbe73f71dfb5870f7597  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 2.shn
+6c56081cad8dd98f1d614790062b74d6  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 3.shn
+f23a3919b7d0d287142c3a71508e613a  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 4.shn
+e0d8aaf660902ec0e5acd108131c3ee9  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 5.shn
+2f7cdea8b07f29f20af7d62ca241b1c8  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 6.shn
+6a28049fcb0114e49814df17b1bfb5a3  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 7.shn
+2d6cdab41a0060b2d237e365d2a6a0cb  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 8.shn
+b6210d424a791c747a7c89619f312654  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_Track 9.shn
+ef94e2d114d88b57849a3af370640a77  bd_99-05-02_cd1.shnf\bd_99-05-02_cd1_shn.md5
+abad9619b2a869cada0bbbd9dc6ec472  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 01.shn
+3822f50cadb3c164498c2f32a76ba73c  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 10.shn
+45ccc8219f5c48baf2089adbf01c5fe8  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 2.shn
+7665c01af6a742e026c45e2c503442b8  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 3.shn
+ad818e68cc79dcf789a579c54360681d  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 4.shn
+9cd77b6154e6dcee285c433b31a34813  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 5.shn
+5c34f49b03662ff29d6b1bd22b076889  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 6.shn
+039678ecf9d7ec4c22ccce64a300abc2  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 7.shn
+0e23e18535bd46a73f2787d8d32570b3  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 8.shn
+2e37401fec3a7d352aa54516b8a9a78c  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_Track 9.shn
+0cea46e6f92da3dc5c29d0edfe6cd506  bd_99-05-02_cd2.shnf\bd_99-05-02_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-05-02_Munchen\bd_99-05-02_cd1.shnf 
+=================== 
+=================== 
+=================== 
+a8ebd42b59793a31644845a22e690ca3  [shntool]  bd_99-05-02_cd1_Track_1.wav
+e3d6a99531145614637a7a91ed97e601  [shntool]  bd_99-05-02_cd1_Track_2.wav
+67ab3eba3f0d45deef0bfc8bcd37ba06  [shntool]  bd_99-05-02_cd1_Track_3.wav
+b256b4869d1b7a37b0ecfb45b06efb67  [shntool]  bd_99-05-02_cd1_Track_4.wav
+515d2ab52ea630ad7ba3820ad6e95a2b  [shntool]  bd_99-05-02_cd1_Track_5.wav
+7a55ca0d35c0e4ab0597041bdf092107  [shntool]  bd_99-05-02_cd1_Track_6.wav
+d33fc75b19d59b8b0a2a3e64b5dbbfa6  [shntool]  bd_99-05-02_cd1_Track_7.wav
+bb36c5226eb4b08ac55f7dc3c41e887a  [shntool]  bd_99-05-02_cd1_Track_8.wav
+48dafcb8384d6c76f27a593c30960bf6  [shntool]  bd_99-05-02_cd1_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-05-02_Munchen\bd_99-05-02_cd2.shnf 
+=================== 
+=================== 
+=================== 
+8bffa34945edc6b4da1215d60025d182  [shntool]  bd_99-05-02_cd2_Track_01.wav
+ec4b7e657d313680eedd328173e9388d  [shntool]  bd_99-05-02_cd2_Track_2.wav
+31391877eab988240a361bfa1f96bd6f  [shntool]  bd_99-05-02_cd2_Track_3.wav
+b58e32f2355837d4e5920b7156782d4e  [shntool]  bd_99-05-02_cd2_Track_4.wav
+4b77d0414714bed7c4b00ada5c59fd7a  [shntool]  bd_99-05-02_cd2_Track_5.wav
+99e66ee742b9b163e6f7a7430111103f  [shntool]  bd_99-05-02_cd2_Track_6.wav
+0aede9e4c6f37bcbd0d592986c525fa4  [shntool]  bd_99-05-02_cd2_Track_7.wav
+b6709dca19615ec99a8857ae647ab0d9  [shntool]  bd_99-05-02_cd2_Track_8.wav
+dcfe4bee59e97e7b5965ab80e68e905a  [shntool]  bd_99-05-02_cd2_Track_9.wav
+1e35413108f3b4ee1a17ac69a5c0bdea  [shntool]  bd_99-05-02_cd2_Track_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-05-02_Munchen\bd_99-05-02_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:40.22       60027870 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_1.wav
+     7:05.60       75111246 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_2.wav
+     5:16.70       55907166 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_3.wav
+     4:34.37       48420750 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_4.wav
+     9:32.43      101002062 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_5.wav
+     8:24.58       89042142 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_6.wav
+     7:01.31       74337438 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_7.wav
+     5:55.71       62789118 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_8.wav
+     9:02.21       95658318 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd1_Track_9.wav
+    62:34.38      662296110 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-05-02_Munchen\bd_99-05-02_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:23.21       67610718 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_01.wav
+     7:57.56       84274638 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_10.wav
+     6:44.08       71284542 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_2.wav
+     0:27.63        4911102 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_3.wav
+     6:33.03       69332382 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_4.wav
+     2:37.72       27864270 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_5.wav
+     6:06.43       64663662 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_6.wav
+     5:22.61       56944398 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_7.wav
+     4:39.25       49274526 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_8.wav
+     4:32.12       48009150 B   ---   -e   -----    wav  1.0000  bd_99-05-02_cd2_Track_9.wav
+    51:24.64      544169388 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 

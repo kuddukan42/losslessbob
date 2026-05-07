@@ -1,0 +1,295 @@
+===================
+===================
+===================
+=== bd1990-01-29.ffp
+===================
+===================
+===================
+CD 1\Track  1.flac:151766e6ce86dfaf3e177bef475d9488
+CD 1\Track  2.flac:cc1a788af46bdd3070938bc76d389e81
+CD 1\Track  3.flac:6e3dca3e5d8d9304286695355766d6c7
+CD 1\Track  4.flac:9ab6fc1290d21d6b22c3aad1643fa39a
+CD 1\Track  5.flac:91f25689174ace9cfd386d21c8c2fe4a
+CD 1\Track  6.flac:3f23eae3dce0e075be57b44ba89abf18
+CD 1\Track  7.flac:bec2d5e1a48b6c77c34a6dcf4cbe1ac8
+CD 1\Track  8.flac:90641212bd191a978b7c74d4374351b7
+CD 1\Track  9.flac:cd8e3b52e570ef84a0ad5cc870888d43
+CD 1\Track 10.flac:966d273f0b0291412a6107bf64f39338
+CD 1\Track 11.flac:1dc5105bfeffb00f6810d9bd93d2a4db
+CD 1\Track 12.flac:18457aab78de87c36e58af97498b0695
+CD 1\Track 13.flac:b13554472e807f364beae628820de037
+CD 2\Track  1.flac:341f57b4f2dea013d8670a4f085a460a
+CD 2\Track  2.flac:145773092f0c418c53cf6a86c1124c37
+CD 2\Track  3.flac:31da102e5012ef9d6ac4a3a5914a6285
+CD 2\Track  4.flac:6f2dec0090394e4c41e8934f13ea4917
+CD 2\Track  5.flac:df9de57303dc8a07bcb0aeb91ed79238
+CD 2\Track  6.flac:bb369b820b8b2519477a79669f45bb7b
+CD 2\Track  7.flac:a4488696fde4d6ad941396e6ccd38943
+CD 2\Track  8.flac:e2ad899cdf5b5fe226e02ed10977582f
+CD 2\Track  9.flac:a29cb170800bfe0b42799cd1202d118e
+===================
+===================
+===================
+=== Paris 29-1-1990 (Holy Grail series) LB-1267.md5
+===================
+===================
+===================
+dd5d2657927e9da3d6c2a708410e7990 *bd1990-01-29.ffp
+e44eeebdb96bc58d681dc7a001f0aac1 *CD 1\CD 1.shntool_len.txt
+9eaad518cbe8f3db47e02070ebe4514b *CD 1\flac.txt
+1f9a861ea2e6ba0d679683f2ec877d1f *CD 1\Track  1.flac
+c223542773f35a60dde7d74324e1556a *CD 1\Track  2.flac
+388a46b589308e666df39d37fd135a90 *CD 1\Track  3.flac
+3309ffeeb0cefc6e06650dadf5daa316 *CD 1\Track  4.flac
+c02ff720108b7005e354643c77645b9c *CD 1\Track  5.flac
+eb27cace6ccb7cdaaf5a990f35d0f505 *CD 1\Track  6.flac
+faab071216a05360183d708b72b815a8 *CD 1\Track  7.flac
+919359ef0f0dbd62430ed6c3e17065a7 *CD 1\Track  8.flac
+cc32955765c165940cc39a113cf0aba4 *CD 1\Track  9.flac
+fadfb2411e1c51be8b269ad0eff1359f *CD 1\Track 10.flac
+c84d593a54d2bde0a896556d11004af0 *CD 1\Track 11.flac
+a594676e89a0debf699ebf92fd9c7c51 *CD 1\Track 12.flac
+b2e277c3fc4b2b45d1cf485f8ab09392 *CD 1\Track 13.flac
+016db7b1aa1de79bf168d55343f6c817 *CD 2\CD 2.shntool_len.txt
+231d9a70ce01801715eef54d4ca6e94e *CD 2\flac.txt
+fee56eef2ac8d7de1f960e84be50d2da *CD 2\Track  1.flac
+c86f22506bf7b27811b35119dd175def *CD 2\Track  2.flac
+8b12f13690f15805e2fd1ab57da2101a *CD 2\Track  3.flac
+b27332b4f944c0dd38406d3020208305 *CD 2\Track  4.flac
+7310e597375b7b9ef6a171df57658e5d *CD 2\Track  5.flac
+c0c19d2c786379d41c8cc0608f6b7c89 *CD 2\Track  6.flac
+4a906e7cec42c687796e65616cb76a4e *CD 2\Track  7.flac
+19acf145ddfe536698e6743bd8697089 *CD 2\Track  8.flac
+bae105a0a648a1bdee87dead07cebf69 *CD 2\Track  9.flac
+30357d31d49c8e9e10001650a276d2da *set_info.txt
+===================
+===================
+===================
+=== set_info.txt
+===================
+===================
+===================
+This evening I found the last two shows from the '90 Hammersmith Residency (no worries I will
+be getting the rest of them and in the meantime perhaps some other beatific soul could post
+the first four Hammersmith's) plus the complete '90 Paris Residency -- all of them Holy Grails!
+I very much want to thank Chuck for sending me these explosive shows in the first place. 
+His generosity, as so many of us already know, is truly inspiring (like Bob's music!!!). 
+Anyone out there with a copy of the Bauldie article about these shows please email me a copy - 
+THANK YOU!!!!!!!  charlespoet@adelphia.net
+
+Source: All shows from the Holy Grail series.
+LINEAGE: CD-R(Audio Catalyst)wav>(flacfrontend)flac8. 
+
+Bob Dylan, 1/29/90, Paris, 2CDR 
+LB-1267, (62min+42min), from Holy Grail series; excellent sound
+
+has occasional very light background static like d1t3 1:37, d1t14 2:14 which may be caused by 
+discontinuities
+
+CD1
+
+1 intro 2 Subterranean Homesick Blues 3 Lay Lady Lay 4 All Along The Watchtower 
+5 Stuck Inside Of Mobile With The Memphis Blues Again 6 Highway 61 Revisited 
+7 You're A Big Girl Now 8 Seeing The Real You At Last 9 Gates Of Eden (acoustic) 
+10 Love Minus Zero - No Limit (acoustic) 11 Mr. Tambourine Man (acoustic) 
+12 One Too Many Mornings (acoustic) 13 Don't Think Twice, It's All Right (acoustic) 
+
+CD2
+
+1 Just Like A Woman 2 Political World 3 What Good Am I? 4 Man Gave Names To All The Animals 
+5 Everything Is Broken 6 I Shall Be Released 7 Like A Rolling Stone 
+8 Forever Young (acoustic->electric) 9 Rainy Day Women # 12 & 35 
+
+
+Bob Dylan, 1/30/90, Paris, 2CDR 
+LB-1304, (55min+48min), Holy Grail; excellent sound
+
+5 second buzz d1t9 0:5x, light static d2t9 5:55
+
+CD1
+
+1 intro 2 Subterranean Homesick Blues 3 I Want You 4 Maggie's Farm 
+5 All Along The Watchtower 6 I Believe In You 7 Where Teardrops Fall 
+8 What Was It You Wanted 9 Leopard-Skin Pill-Box Hat 
+10 The Times They Are A-Changin' (acoustic) 11 It's Alright, Ma (I'm Only Bleeding) (acoustic) 
+12 The Lonesome Death Of Hattie Carroll (acoustic) 13 Boots Of Spanish Leather (acoustic) 
+
+CD2
+
+1 Seeing The Real You At Last 2 Political World 3 Man In The Long Black Coat 
+4 Tight Connection To My Heart (Has Anybody Seen My Love) 5 Simple Twist Of Fate 
+6 Masters Of War 7 I Shall Be Released 8 Like A Rolling Stone 
+9 Forever Young (acoustic->electric) 10 Rainy Day Women # 12 & 35
+
+
+Bob Dylan, 1/31/90, Paris, 2CDR 
+LB-1305, (), Holy Grail; excellent sound
+
+small pop d1t6 2:41 corrected using cooledit2000; big digistatic plus drops d2t3 0:29; 
+small pop d2t7 5:39
+
+CD1
+
+1 intro 2 To Be Alone With You 3 Ballad Of A Thin Man 
+4 Stuck Inside Of Mobile With The Memphis Blues Again 5 John Brown 6 Political World 
+7 Shelter From The Storm 8 Highway 61 Revisited 9 It's All Over Now, Baby Blue (acoustic) 
+10 A Hard Rain's A-Gonna Fall (acoustic) 11 Girl From The North Country (acoustic) 
+
+CD2
+
+1 All Along The Watchtower 2 Lay Lady Lay 3 Everything Is Broken 4 I'll Remember You 
+5 In The Garden 6 Like A Rolling Stone 7 Mr. Tambourine Man (acoustic) 8 Maggie's Farm 
+
+
+Bob Dylan, 2/1/90, Paris, 2CDR 
+LB-1335, (56min+44min), Holy Grail; excellent sound; this has a warmer less harsh sound 
+than LB-1061
+
+small analog pop d1t5 2:31
+
+CD1
+
+1 intro 2 Most Likely You Go Your Way (And I'll Go Mine) 3 Ballad Of Hollis Brown 
+4 Political World 5 What Was It You Wanted 6 Tears Of Rage 
+7 Stuck Inside Of Mobile With The Memphis Blues Again 8 All Along The Watchtower 
+9 Visions Of Johanna (acoustic) 10 Mama, You Been On My Mind (acoustic) 
+11 Gates Of Eden (acoustic) 12 It Ain't Me, Babe (acoustic) 
+
+CD2
+
+1 It Takes A Lot To Laugh, It Takes A Train To Cry 2 Everything Is Broken 3 Lenny Bruce 
+4 Man Of Peace 5 You're A Big Girl Now 6 Like A Rolling Stone 7 Barbara Allen (acoustic) 
+8 Forever Young (acoustic->electric) 9 Maggie's Farm 
+
+
+Bob Dylan, 2/7/90, London, 2CDR 
+LB-1272, (58min+40min), from Holy Grail series; excellent sound
+
+d1t9 0:57 has light analog static; d1t9 1:57 has analog like cut
+
+CD1
+
+1 intro 2 To Be Alone With You 3 Most Of The Time 4 All Along The Watchtower 
+5 I'll Be Your Baby Tonight 6 John Brown 7 Political World 
+8 Stuck Inside Of Mobile With The Memphis Blues Again 
+9 The Times They Are A-Changin' (acoustic) 10 Mama, You Been On My Mind (acoustic) 
+11 It's Alright, Ma (I'm Only Bleeding) (acoustic) 12 Girl From The North Country (acoustic) 13 Forever Young (acoustic->electric) 
+
+CD2
+
+1 Tonight I'll Be Staying Here With You 2 Everything Is Broken 3 Just Like A Woman 
+4 It Takes A Lot To Laugh, It Takes A Train To Cry 5 Man In The Long Black Coat 
+6 Like A Rolling Stone 7 It Ain't Me, Babe (acoustic) 8 Highway 61 Revisited 
+
+
+Bob Dylan, 2/8/90, London, 2CDR 
+LB-1271, (39min+69min), from Holy Grail series; excellent sound; this is upgrade over 
+Doberman bootleg which is hissy in comparisom and is a different recording
+
+small digi pops d2t14 1:49, 2:52, 2:54 were all repaired in cooledit
+
+CD1
+
+intro 2 Absolutely Sweet Marie 3 Man In The Long Black Coat 4 Positively 4th Street 
+5 Ballad Of A Thin Man 6 Pledging My Time 7 I Want You 8 Political World 
+9 You Angel You 10 All Along The Watchtower 
+
+CD2
+
+1 Boots Of Spanish Leather (acoustic) 2 To Ramona (acoustic) 3 She Belongs To Me (acoustic) 
+4 Mr. Tambourine Man (acoustic) 5 Disease Of Conceit 6 You're A Big Girl Now 
+7 I'll Remember You 8 Where Teardrops Fall 9 Seeing The Real You At Last 
+10 Every Grain Of Sand 11 Rainy Day Women # 12 & 35 12 Like A Rolling Stone 
+13 It Ain't Me, Babe (acoustic) 14 I've Been All Around This World 15 Highway 61 Revisited 
+
+The band for these incendiary shows:
+
+Bob Dylan (vocal, guitar, harmonica)
+G.E. Smith (guitar, backup vocal)
+Tony Garnier (bass)
+Christopher Parker (drums)
+
+ 
+Thanks to Olof, Lossless Bob and Chuck!!!
+Enjoy!
+Charlespoet
+
+===================
+===================
+===================
+=== CD 1.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:50.35        8902364 B   ---   --   -----    wav  1.0000  Track  1.wav
+     3:37.71       38445836 B   ---   --   -----    wav  1.0000  Track  2.wav
+     4:15.39       45073772 B   ---   --   -----    wav  1.0000  Track  3.wav
+     3:03.41       32377676 B   ---   --   -----    wav  1.0000  Track  4.wav
+     6:42.32       70988108 B   ---   --   -----    wav  1.0000  Track  5.wav
+     4:10.47       44210588 B   ---   --   -----    wav  1.0000  Track  6.wav
+     5:19.29       56339852 B   ---   --   -----    wav  1.0000  Track  7.wav
+     5:15.02       55570748 B   ---   --   -----    wav  1.0000  Track  8.wav
+     6:14.52       66095948 B   ---   --   -----    wav  1.0000  Track  9.wav
+     4:06.44       43497932 B   ---   --   -----    wav  1.0000  Track 10.wav
+     7:17.50       77204444 B   ---   --   -----    wav  1.0000  Track 11.wav
+     5:15.58       55702460 B   ---   --   -----    wav  1.0000  Track 12.wav
+     5:38.46       59731436 B   ---   --   -----    wav  1.0000  Track 13.wav
+    61:48.21      654141164 B                            1.0000  (13 files)
+===================
+===================
+===================
+=== flac.txt
+===================
+===================
+===================
+Track  1.flac:151766e6ce86dfaf3e177bef475d9488
+Track  2.flac:cc1a788af46bdd3070938bc76d389e81
+Track  3.flac:6e3dca3e5d8d9304286695355766d6c7
+Track  4.flac:9ab6fc1290d21d6b22c3aad1643fa39a
+Track  5.flac:91f25689174ace9cfd386d21c8c2fe4a
+Track  6.flac:3f23eae3dce0e075be57b44ba89abf18
+Track  7.flac:bec2d5e1a48b6c77c34a6dcf4cbe1ac8
+Track  8.flac:90641212bd191a978b7c74d4374351b7
+Track  9.flac:cd8e3b52e570ef84a0ad5cc870888d43
+Track 10.flac:966d273f0b0291412a6107bf64f39338
+Track 11.flac:1dc5105bfeffb00f6810d9bd93d2a4db
+Track 12.flac:18457aab78de87c36e58af97498b0695
+Track 13.flac:b13554472e807f364beae628820de037
+===================
+===================
+===================
+=== CD 2.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.28       61453100 B   ---   --   -----    wav  1.0000  Track  1.wav
+     3:01.38       32017820 B   ---   --   -----    wav  1.0000  Track  2.wav
+     5:17.10       55942364 B   ---   --   -----    wav  1.0000  Track  3.wav
+     3:33.00       37573244 B   ---   --   -----    wav  1.0000  Track  4.wav
+     3:02.43       32205980 B   ---   --   -----    wav  1.0000  Track  5.wav
+     3:49.63       40543820 B   ---   --   -----    wav  1.0000  Track  6.wav
+     6:33.26       69386396 B   ---   --   -----    wav  1.0000  Track  7.wav
+     6:25.54       68041052 B   ---   --   -----    wav  1.0000  Track  8.wav
+     3:43.40       39431324 B   ---   --   -----    wav  1.0000  Track  9.wav
+    41:15.02      436595100 B                            1.0000  (9 files)
+===================
+===================
+===================
+=== flac.txt
+===================
+===================
+===================
+Track  1.flac:341f57b4f2dea013d8670a4f085a460a
+Track  2.flac:145773092f0c418c53cf6a86c1124c37
+Track  3.flac:31da102e5012ef9d6ac4a3a5914a6285
+Track  4.flac:6f2dec0090394e4c41e8934f13ea4917
+Track  5.flac:df9de57303dc8a07bcb0aeb91ed79238
+Track  6.flac:bb369b820b8b2519477a79669f45bb7b
+Track  7.flac:a4488696fde4d6ad941396e6ccd38943
+Track  8.flac:e2ad899cdf5b5fe226e02ed10977582f
+Track  9.flac:a29cb170800bfe0b42799cd1202d118e
+===================
+===================
+===================

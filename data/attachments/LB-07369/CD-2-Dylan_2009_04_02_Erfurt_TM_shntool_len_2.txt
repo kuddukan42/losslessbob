@@ -1,0 +1,11 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:48.63       72118316 B   -b-   --   ---xx   flac  0.6989  Dylan_2009_04_02_Erfurt_TM_D2_01.flac
+    11:48.40      124985292 B   -b-   --   ---xx   flac  0.6605  Dylan_2009_04_02_Erfurt_TM_D2_02.flac
+     5:19.35       56352812 B   -b-   --   ---xx   flac  0.6798  Dylan_2009_04_02_Erfurt_TM_D2_03.flac
+     7:05.36       75055148 B   -b-   --   ---xx   flac  0.6128  Dylan_2009_04_02_Erfurt_TM_D2_04.flac
+     0:58.44       10334252 B   -b-   --   ---xx   flac  0.6504  Dylan_2009_04_02_Erfurt_TM_D2_05.flac
+     6:49.65       72300368 B   -b-   --   ---xx   flac  0.6677  Dylan_2009_04_02_Erfurt_TM_D2_06.flac
+     6:49.57       72281752 B   -b-   --   ---xx   flac  0.6292  Dylan_2009_04_04_München_TM_D1_11.flac
+     4:53.69       51847212 B   -b-   --   ---xx   flac  0.5669  Dylan_2009_04_04_München_TM_D1_12.flac
+     7:05.15       75005996 B   -b-   --   ---xx   flac  0.6325  Dylan_2009_04_04_München_TM_D1_13.flac
+    57:39.48      610281148 B                            0.6465  (9 files)

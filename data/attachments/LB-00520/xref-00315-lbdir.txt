@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-11-19-d.flacf 
+=================== 
+=================== 
+=================== 
+d363bffb0197372be1e04242eb7ae8f3  1980-11-19 San Francisco, CA 101.flac
+a3591fe1052ad273f6fdc76cb1caf9f2  1980-11-19 San Francisco, CA 102.flac
+8992833b13499de62de485ec1d48ae0d  1980-11-19 San Francisco, CA 103.flac
+529b156881bd6bd435dd5f10ae347372  1980-11-19 San Francisco, CA 104.flac
+a4a89be5c08d07bf87b9b3b0f5d424dd  1980-11-19 San Francisco, CA 105.flac
+a7b5a1e8efabdb65fbd4e7240e4edaca  1980-11-19 San Francisco, CA 106.flac
+330d8fa534a03a7c4187367e0622ae20  1980-11-19 San Francisco, CA 107.flac
+d9e441683faaf7ade4eca2ecbf5b325d  1980-11-19 San Francisco, CA 108.flac
+d5c62356e115fb734ca0554d4eff4a89  1980-11-19 San Francisco, CA 109.flac
+425ea673fda4523efc05ed8e656ea68d  1980-11-19 San Francisco, CA 110.flac
+cf42ba8f5368ae92c7470a2d43e13a93  1980-11-19 San Francisco, CA 111.flac
+3235209d66df4291de25a33b3b874eee  1980-11-19 San Francisco, CA 112.flac
+ca9e7addf045c4151785c4c616103928  1980-11-19 San Francisco, CA 113.flac
+65465d0853c489fab60b67d688532b84  1980-11-19 San Francisco, CA 114.flac
+1dd14eb6b5d870e568ed6050e9ca7b29  1980-11-19 San Francisco, CA 115.flac
+e294fd71a76c8036b9d36c0f5df8ff75  1980-11-19 San Francisco, CA 116.flac
+2b59a3a91f621d3942f0829fc09dde45  1980-11-19 San Francisco, CA 201.flac
+de2b13c3d0bcb7cd225805693dda0a63  1980-11-19 San Francisco, CA 202.flac
+8aa7bdf647f2e7a60e0850017d1be8ef  1980-11-19 San Francisco, CA 203.flac
+64a067fa26f82a63b01ff6ba18143850  1980-11-19 San Francisco, CA 204.flac
+5c7df29b0c05154327c2ce92d8750526  1980-11-19 San Francisco, CA 205.flac
+87ffaf966667dfb5d7cbb1961fa0a753  1980-11-19 San Francisco, CA 206.flac
+3ecfee20d15b641d10015ab025ce9c2e  1980-11-19 San Francisco, CA 207.flac
+5b564cdf1daa3a721b5b9470f1c6a0e0  1980-11-19 San Francisco, CA 208.flac
+be123204648f6a0a2a226ce5d644f9e3  1980-11-19 San Francisco, CA 209.flac
+e197948ce2213350ad4e138d95f51630  1980-11-19 San Francisco, CA 210.flac
+7e7fc2bead5ec4e887e3bafa3b02df47  bd80-11-19.txt
+fe6da64b0e420e1417dc9bd850f3186d  CD1.LOG
+e933b204b8e4097673fd9148f13c1866  CD2.LOG
+805e90aae0dba7a2539d9f74eff83609  dylan.1980-11-19.San.Francisco.CA.ffp
+74de6a8033b988cecb6d971519e24dd8  New extraction 2007.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-11-19-d.flacf 
+=================== 
+=================== 
+=================== 
+1980-11-19 san francisco, ca 101.flac:bc8a3b3f43fa754fe727156df6bd9fe1
+1980-11-19 san francisco, ca 102.flac:8d754da3eee7b9c5b10c87b8212f6552
+1980-11-19 san francisco, ca 103.flac:98bc965445580ec2d2f449b56c7758dc
+1980-11-19 san francisco, ca 104.flac:cd56f4155d16018ded7de544341f4748
+1980-11-19 san francisco, ca 105.flac:ca26d5e666b509e96def72362deed35f
+1980-11-19 san francisco, ca 106.flac:2524c262d30f1a25bf9579fc0288da90
+1980-11-19 san francisco, ca 107.flac:c4a6fd24c821f753a2b11143a5dd565b
+1980-11-19 san francisco, ca 108.flac:a7b52a9d22705994b1d998043c63bea1
+1980-11-19 san francisco, ca 109.flac:f72e087368394461dd7ca32a5db4f143
+1980-11-19 san francisco, ca 110.flac:f716d14644ca63f545a456fae3eae97d
+1980-11-19 san francisco, ca 111.flac:bd7f8d7ffa90e94d15bea79ec1cc8a87
+1980-11-19 san francisco, ca 112.flac:8f6dc996b8da7f8510fb24352e680861
+1980-11-19 san francisco, ca 113.flac:1f8ede0a10ab0ffaf37c5603bf07dec1
+1980-11-19 san francisco, ca 114.flac:e8f1c012818e667785085ff55f9769ec
+1980-11-19 san francisco, ca 115.flac:6b4da9edbd6af6521ded326ddb83bc9f
+1980-11-19 san francisco, ca 116.flac:05119c4727d09ad3827395d06f2b4f1b
+1980-11-19 san francisco, ca 201.flac:7881f95ed1611f1bcc1a88cf7769ffe2
+1980-11-19 san francisco, ca 202.flac:f54b823ceb88db7e1053df905d9638d9
+1980-11-19 san francisco, ca 203.flac:f34642da59c1801a3a1cf6595ebea376
+1980-11-19 san francisco, ca 204.flac:e0c7906b79faed2196b21e4d3c034bde
+1980-11-19 san francisco, ca 205.flac:2172e2864444e30e1bba54fc73cd42ac
+1980-11-19 san francisco, ca 206.flac:c1a3eff4ca47ad8531f98e839faf2568
+1980-11-19 san francisco, ca 207.flac:eaf4b28411306e546cd90492af35c3b8
+1980-11-19 san francisco, ca 208.flac:75601584e4b169bb5cbc506f45786feb
+1980-11-19 san francisco, ca 209.flac:884de68fe956df10b0008645a3650006
+1980-11-19 san francisco, ca 210.flac:ad84ca6326df94045b6bfa0d04545c68
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-11-19-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.44       54611132 B   ---   --   ---xx   flac  0.4778  1980-11-19 San Francisco, CA 101.flac
+     4:30.44       47731532 B   ---   --   ---xx   flac  0.4580  1980-11-19 San Francisco, CA 102.flac
+     5:29.48       58148540 B   ---   --   ---xx   flac  0.4934  1980-11-19 San Francisco, CA 103.flac
+     2:36.58       27654860 B   ---   --   ---xx   flac  0.4569  1980-11-19 San Francisco, CA 104.flac
+     3:15.22       34449788 B   ---   --   ---xx   flac  0.4685  1980-11-19 San Francisco, CA 105.flac
+     4:18.68       45671180 B   ---   --   ---xx   flac  0.4579  1980-11-19 San Francisco, CA 106.flac
+     4:16.04       45167852 B   ---   --   ---xx   flac  0.4856  1980-11-19 San Francisco, CA 107.flac
+     5:17.51       56038796 B   ---   --   ---xx   flac  0.4660  1980-11-19 San Francisco, CA 108.flac
+     4:45.13       50304620 B   ---   --   ---xx   flac  0.4656  1980-11-19 San Francisco, CA 109.flac
+     3:33.00       37573244 B   ---   --   ---xx   flac  0.5006  1980-11-19 San Francisco, CA 110.flac
+     5:10.33       54761660 B   ---   --   ---xx   flac  0.5024  1980-11-19 San Francisco, CA 111.flac
+     4:56.58       52350860 B   ---   --   ---xx   flac  0.4478  1980-11-19 San Francisco, CA 112.flac
+     3:12.36       33953516 B   ---   --   ---xx   flac  0.4339  1980-11-19 San Francisco, CA 113.flac
+     2:54.58       30830060 B   ---   --   ---xx   flac  0.4473  1980-11-19 San Francisco, CA 114.flac
+     4:31.50       47922044 B   ---   --   ---xx   flac  0.4506  1980-11-19 San Francisco, CA 115.flac
+     5:27.34       57762812 B   ---   --   ---xx   flac  0.4552  1980-11-19 San Francisco, CA 116.flac
+     6:17.37       66589868 B   ---   --   ---xx   flac  0.4897  1980-11-19 San Francisco, CA 201.flac
+     3:38.02       38459948 B   ---   --   ---xx   flac  0.4488  1980-11-19 San Francisco, CA 202.flac
+     4:27.66       47254076 B   ---   --   ---xx   flac  0.5028  1980-11-19 San Francisco, CA 203.flac
+     3:58.59       42122012 B   ---   --   ---xx   flac  0.4781  1980-11-19 San Francisco, CA 204.flac
+     3:47.54       40169852 B   ---   --   ---xx   flac  0.4633  1980-11-19 San Francisco, CA 205.flac
+     3:00.37       31839068 B   ---   --   ---xx   flac  0.5055  1980-11-19 San Francisco, CA 206.flac
+     8:09.22       86311388 B   ---   --   ---xx   flac  0.4801  1980-11-19 San Francisco, CA 207.flac
+     4:29.60       47592764 B   ---   --   ---xx   flac  0.5020  1980-11-19 San Francisco, CA 208.flac
+     3:51.39       40840172 B   ---   --   ---xx   flac  0.4726  1980-11-19 San Francisco, CA 209.flac
+     5:38.74       59797292 B   ---   --   ---xx   flac  0.4966  1980-11-19 San Francisco, CA 210.flac
+   116:46.21     1235908936 B                            0.4748  (26 files)
+=================== 
+=================== 
+=================== 

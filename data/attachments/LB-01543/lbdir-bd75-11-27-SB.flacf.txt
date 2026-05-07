@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-27-SB.flacf 
+=================== 
+=================== 
+=================== 
+cdecae547dd1610673ed8a5c7478a233  bd-1975-11-27-SB-d1 (Track 01).flac
+8f45fd77c0a7734fbf42bceadb40e26a  bd-1975-11-27-SB-d1 (Track 02).flac
+42f09811d73d45191f7519072acff638  bd-1975-11-27-SB-d1 (Track 03).flac
+479460ddc4ae2c5ab423cd95910299c1  bd-1975-11-27-SB-d1 (Track 04).flac
+f7c90af8d22cff3fceac1b337e95a19e  bd-1975-11-27-SB-d1 (Track 05).flac
+7099e25fe0c84a7b444225112623a9d9  bd-1975-11-27-SB-d1 (Track 06).flac
+23aa6934e7b9e15ae7e90db5b7794e9a  bd-1975-11-27-SB-d1 (Track 07).flac
+c89edf4add78376a33d149e438ab5c3b  bd-1975-11-27-SB-d1 (Track 08).flac
+4bbe85a77b31737362a809438d76d157  bd-1975-11-27-SB-d1 (Track 09).flac
+0fefe1a0e12b689844f8f6a219beb70c  bd-1975-11-27-SB-d1 (Track 10).flac
+7616cbde8bb477868810552aec71773e  bd-1975-11-27-SB-d1 (Track 11).flac
+d97df904b7630dd514dcd5b995bcfd34  bd-1975-11-27-SB-d2 (Track 01).flac
+2054e3de44a8dcb468c7a37f6f65f09a  bd-1975-11-27-SB-d2 (Track 02).flac
+7d8b4f3b49f5ea8cfad51cfd5a68728c  bd-1975-11-27-SB-d2 (Track 03).flac
+3bdd73cb1dbcf4374614b4a0b60e0731  bd-1975-11-27-SB-d2 (Track 04).flac
+3db1efd6bc63e5d098474d2bf805afda  bd-1975-11-27-SB-d2 (Track 05).flac
+202a45e28f9a45ed40214d0196a26f26  bd-1975-11-27-SB-d2 (Track 06).flac
+7bfe715f70f08d769ab0830901d23d9e  bd-1975-11-27-SB-d2 (Track 07).flac
+28bd4cfa5d9076e92a679b93ed840039  bd-1975-11-27-SB-d2 (Track 08).flac
+5fb106600b9cb1d98863c1d1190322c1  bd-1975-11-27-SB-d2 (Track 09).flac
+619519dce05ff88817ef95c8aff019c8  bd-1975-11-27-SB-d2 (Track 10).flac
+cc4ee41af7305cb5f6424b355f670c41  bd-1975-11-27-SB.txt
+0632d9d7edbfec77d25d66bec3e52455  bd75-11-27-SB.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-27-SB.flacf 
+=================== 
+=================== 
+=================== 
+bd-1975-11-27-SB-d1 (Track 01).flac:6af20ab39052317855dc46f626a3c33a
+bd-1975-11-27-SB-d1 (Track 02).flac:adbdd33228e5b13d5739a63e3c62395e
+bd-1975-11-27-SB-d1 (Track 03).flac:d50014ed8e4f165c1c5c30a7b92f589a
+bd-1975-11-27-SB-d1 (Track 04).flac:e6b33ad12f9051b2a100a283142a0f74
+bd-1975-11-27-SB-d1 (Track 05).flac:31119bd1fab19b38f9a80595a2364d88
+bd-1975-11-27-SB-d1 (Track 06).flac:07f512e4555ef37be8952d922022e761
+bd-1975-11-27-SB-d1 (Track 07).flac:9f15791a2407d1428eca1c0727927bbf
+bd-1975-11-27-SB-d1 (Track 08).flac:e07e30c701212a829b078d232cc57245
+bd-1975-11-27-SB-d1 (Track 09).flac:461432c7a1a0fba9951b63de7dce91ab
+bd-1975-11-27-SB-d1 (Track 10).flac:2cabd35cc1bf0fe4144d220dbec51282
+bd-1975-11-27-SB-d1 (Track 11).flac:d2f21233999822cb0d73f4d815a25ece
+bd-1975-11-27-SB-d2 (Track 01).flac:51d9e2ee1c51362ebe81a4dc06e8a3ad
+bd-1975-11-27-SB-d2 (Track 02).flac:1ae79711849381cac73165486228105d
+bd-1975-11-27-SB-d2 (Track 03).flac:5c60df2cb972c106a03a659d78e63263
+bd-1975-11-27-SB-d2 (Track 04).flac:4cb64e623e839d4845ec24b3d4a85c54
+bd-1975-11-27-SB-d2 (Track 05).flac:539738b634fa7f34130df422f0050a7f
+bd-1975-11-27-SB-d2 (Track 06).flac:48dded60bdad0135ea6659a2c9eddfe1
+bd-1975-11-27-SB-d2 (Track 07).flac:5aabdd1d11c8c440179d30ecdf80d75d
+bd-1975-11-27-SB-d2 (Track 08).flac:c0b3bfabf2564809e3bc7f3537e02213
+bd-1975-11-27-SB-d2 (Track 09).flac:84d291a6808ca0d989b84c66ca707fdc
+bd-1975-11-27-SB-d2 (Track 10).flac:3f4aacb464551435b7fd34c3e19b28f5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-27-SB.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:21.03       46047304 B   -b-   --   ---xx   flac  0.6364  bd-1975-11-27-SB-d1 (Track 01).flac
+     5:17.71       56085836 B   ---   --   ---xx   flac  0.6378  bd-1975-11-27-SB-d1 (Track 02).flac
+     5:55.35       62704364 B   ---   --   ---xx   flac  0.6269  bd-1975-11-27-SB-d1 (Track 03).flac
+     3:56.18       41672780 B   ---   --   ---xx   flac  0.6379  bd-1975-11-27-SB-d1 (Track 04).flac
+     5:48.35       61469564 B   ---   --   ---xx   flac  0.6574  bd-1975-11-27-SB-d1 (Track 05).flac
+     5:53.63       62417420 B   ---   --   ---xx   flac  0.6281  bd-1975-11-27-SB-d1 (Track 06).flac
+     5:28.26       57920376 B   -b-   --   ---xx   flac  0.6635  bd-1975-11-27-SB-d1 (Track 07).flac
+     3:33.21       37622636 B   ---   --   ---xx   flac  0.6482  bd-1975-11-27-SB-d1 (Track 08).flac
+     3:33.40       37667324 B   ---   --   ---xx   flac  0.6572  bd-1975-11-27-SB-d1 (Track 09).flac
+     2:49.51       29931596 B   ---   --   ---xx   flac  0.6926  bd-1975-11-27-SB-d1 (Track 10).flac
+     7:59.73       84668128 B   -b-   --   ---xx   flac  0.3314  bd-1975-11-27-SB-d1 (Track 11).flac
+     5:19.39       56363596 B   -b-   --   ---xx   flac  0.6486  bd-1975-11-27-SB-d2 (Track 01).flac
+     2:59.12       31603868 B   ---   --   ---xx   flac  0.6574  bd-1975-11-27-SB-d2 (Track 02).flac
+     4:16.02       45163148 B   ---   --   ---xx   flac  0.6623  bd-1975-11-27-SB-d2 (Track 03).flac
+     5:00.37       53007068 B   ---   --   ---xx   flac  0.6872  bd-1975-11-27-SB-d2 (Track 04).flac
+     8:00.45       84777884 B   ---   --   ---xx   flac  0.7298  bd-1975-11-27-SB-d2 (Track 05).flac
+     4:23.47       46503788 B   ---   --   ---xx   flac  0.6777  bd-1975-11-27-SB-d2 (Track 06).flac
+     5:01.74       53271312 B   -b-   --   ---xx   flac  0.6740  bd-1975-11-27-SB-d2 (Track 07).flac
+     4:47.33       50704240 B   -b-   --   ---xx   flac  0.6396  bd-1975-11-27-SB-d2 (Track 08).flac
+     4:25.39       46837772 B   ---   --   ---xx   flac  0.6573  bd-1975-11-27-SB-d2 (Track 09).flac
+     3:36.40       38196092 B   -b-   --   ---xx   flac  0.6725  bd-1975-11-27-SB-d2 (Track 10).flac
+   102:28.54     1084636096 B                            0.6351  (21 files)
+=================== 
+=================== 
+=================== 

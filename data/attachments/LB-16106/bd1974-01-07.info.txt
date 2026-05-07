@@ -1,0 +1,54 @@
+Bob Dylan
+The Spectrum
+Philadelphia, Pennsylvania
+7 January 1974
+ 
+
+1   intro
+2 Rainy Day Women # 12 & 35
+3 Lay Lady Lay
+4 Just Like Tom Thumb's Blues
+5 It Ain't Me, Babe
+6 I Don't Believe You (She Acts Like We Never Have Met)
+7 Ballad Of A Thin Man
+8 The Band: Stage Fright (Robbie Robertson)
+9 The Band: The Night They Drove Old Dixie Down (Robbie Robertson)
+10 The Band: King Harvest (Has Surely Come) (Robbie Robertson)
+11 The Band: Loving You Is Sweeter Than Ever (Don Hunter - Stevie Wonder)
+12 The Band: The Band: I Shall Be Released
+13 The Band: Up On Cripple Creek (Robbie Robertson)
+14 All Along The Watchtower
+15 Ballad Of Hollis Brown
+16 Knockin' On Heaven's Door
+ 
+1 Just Like A Woman
+2 Girl From The North Country
+3 Wedding Song
+4 Nobody 'Cept You
+5 It's Alright, Ma (I'm Only Bleeding)
+6 The Band: Rag Mama Rag (Robbie Robertson)
+7 The Band: When You Awake (Richard Manuel - Robbie Robertson)
+8 The Band: The Shape I'm In (Robbie Robertson)
+9 The Band: The Weight (Robbie Robertson)
+10 Forever Young
+11 Something There Is About You
+12 Like A Rolling Stone
+13 Most Likely You Go Your Way (And I'll Go Mine)
+
+ 
+Bob Dylan (vocal, guitar, harmonica)
+Robbie Robertson (guitar)
+Garth Hudson (organ, piano and clavinette)
+Richard Manual (keyboards)
+Rick Danko (bass)
+Levon Helm (drums)
+
+
+further info www.bjorner.com
+
+SM
+
+1st gen. reel from SM > ASC 5000 > Sony PCM-M10 > WAV > TLH > FLAC
+-> tlh, wav -> wavelab, fades, levels slightly raised -> cdwave, tracking -> tlh, flac -> foobar, tagging
+
+I did not harm the sound of the recording in any way

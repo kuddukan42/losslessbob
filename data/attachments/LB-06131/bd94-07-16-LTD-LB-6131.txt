@@ -1,0 +1,10 @@
+Bob Dylan, 7/16/94, Prague, Czech Republic, 2CDR
+
+LB-6131, (67min+43min), LTD; mic problems 1st song, cut before encore, legendary taper D, Sennheiser MKE 2002 -> portable DATrecorder - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 05/08; same recording as LB-2917 based on same clapping at end of d1t10; that one has higher levels that clip on d1t2 but not on this one but otherwise simialr wav and spectral view; excellent sound [A-]
+
+big level fluctuation d1t2 0:25 and 1:12 with lesser quality and hiss in between
+
+1 intro, 2 Jokerman, 3 Lay Lady Lay, 4 All Along The Watchtower, 5 Simple Twist Of Fate, 6 Tangled Up In Blue, 7 I'll Be Your Baby Tonight, 8 Love Minus Zero/No Limit, 9 Masters Of War, 10 The Lonesome Death Of Hattie Carroll, 1 God Knows, 2 I Shall Be Released, 3 Maggie's Farm, 4 Ballad Of A Thin Man, 5 It Ain't Me, Babe, 6 Blowin' In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-07-17.flacf 
+=================== 
+=================== 
+=================== 
+edd821d7187e7eb213a1e6de5b5807e5  CD 1\Dylan_1991_07_17_Cleveland_CD1_01.flac
+8101d835d552e2f98e2df67bcfe49acb  CD 1\Dylan_1991_07_17_Cleveland_CD1_02.flac
+4bbebd7acf76fced25f57f017020b2b2  CD 1\Dylan_1991_07_17_Cleveland_CD1_03.flac
+07bbe8292feaae24af654997941ed385  CD 1\Dylan_1991_07_17_Cleveland_CD1_04.flac
+35740f3480d4a3232f07200412e17785  CD 1\Dylan_1991_07_17_Cleveland_CD1_05.flac
+d1e4045c395f9332f06881924067bdf2  CD 1\Dylan_1991_07_17_Cleveland_CD1_06.flac
+163614107c0f82a65093d0777e6943dc  CD 1\Dylan_1991_07_17_Cleveland_CD1_07.flac
+1aba1b10c3391c0201ae1fc92647b506  CD 1\Dylan_1991_07_17_Cleveland_CD1_08.flac
+164d67c07adaf96773415b8411a89d03  CD 1\Dylan_1991_07_17_Cleveland_CD1_09.flac
+28b28efb128703394a8fd98b90085964  CD 1\Dylan_1991_07_17_Cleveland_CD1_shntool_len.txt
+8bbbc104e92e70826a1e332aec9e80a7  CD 2\Dylan_1991_07_17_Cleveland_CD2_01.flac
+5b83a57c7669758c2ac67f9b2a22ce67  CD 2\Dylan_1991_07_17_Cleveland_CD2_02.flac
+03a23273de4142c5ef0efce7ca6ade13  CD 2\Dylan_1991_07_17_Cleveland_CD2_03.flac
+729e2fbc8bd38b3caa810c490beb98c5  CD 2\Dylan_1991_07_17_Cleveland_CD2_04.flac
+4a162338b1510a30b67161111ba51cf0  CD 2\Dylan_1991_07_17_Cleveland_CD2_05.flac
+873d35970b12028f14e62cac8562bef2  CD 2\Dylan_1991_07_17_Cleveland_CD2_06.flac
+b4e25344ec09b256a69c8ed865959b3b  CD 2\Dylan_1991_07_17_Cleveland_CD2_07.flac
+b33188e3086692bc9f8ff91ff7b21e2a  CD 2\Dylan_1991_07_17_Cleveland_CD2_08.flac
+bbb0ae312fd5c0dcc918f0d1f091858e  CD 2\Dylan_1991_07_17_Cleveland_CD2_09.flac
+f75f6fd8faae10634b53367bbbf03763  CD 2\Dylan_1991_07_17_Cleveland_CD2_shntool_len.txt
+dc81bc63ea3480f67ce8245fadf32712  DigiFlawFinder-bd91-07-17.flacf.wavf.html
+fe83457483a8d400789f1d3aa70f3a44  Dylan_1991_07_17_Cleveland.md5
+cb7d8565968af1d263a6c631862c6dc0  Dylan_1991_07_17_Cleveland.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-07-17.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+Dylan_1991_07_17_Cleveland_CD1_01.flac:a915ee9ba7a635b56427a8f80414aa74
+Dylan_1991_07_17_Cleveland_CD1_02.flac:b25bdc8b9ed23d327d3376c21ea36d5b
+Dylan_1991_07_17_Cleveland_CD1_03.flac:343d7c87868f21a4adbd5fd577308992
+Dylan_1991_07_17_Cleveland_CD1_04.flac:31c4713337e71966ef9db65fa52868fd
+Dylan_1991_07_17_Cleveland_CD1_05.flac:40287d5be38ccba8cac7ba83ab3b0858
+Dylan_1991_07_17_Cleveland_CD1_06.flac:cd2d86972e3743a0cd4c0a6713b6fb3d
+Dylan_1991_07_17_Cleveland_CD1_07.flac:357a670ecc826ddd9a63468a796601ef
+Dylan_1991_07_17_Cleveland_CD1_08.flac:1fd016e31d0a7e19946a983330e34868
+Dylan_1991_07_17_Cleveland_CD1_09.flac:cdf6977b9e830059d7f25eca6a237a97
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-07-17.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+Dylan_1991_07_17_Cleveland_CD2_01.flac:995f78082e85faa247f4b0d9695c70fc
+Dylan_1991_07_17_Cleveland_CD2_02.flac:ba6df4a933f04a8b154cf787fbe9be75
+Dylan_1991_07_17_Cleveland_CD2_03.flac:52abd090a5d2c80b998e5add4371c80d
+Dylan_1991_07_17_Cleveland_CD2_04.flac:954bb8cabe03a2dd917f734794d8153f
+Dylan_1991_07_17_Cleveland_CD2_05.flac:54ce580ff99e44a7df2e01cc868e89d0
+Dylan_1991_07_17_Cleveland_CD2_06.flac:b374dfc5fbd1578be8146bb9bbbb8f47
+Dylan_1991_07_17_Cleveland_CD2_07.flac:7ee0b562d7edeaf8db309d1d5ee17146
+Dylan_1991_07_17_Cleveland_CD2_08.flac:7fa55ca79673549c07e459daf9b81eb3
+Dylan_1991_07_17_Cleveland_CD2_09.flac:509d16a123f53d9a41223901366495fb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-07-17.flacf\CD 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.01       58214396 B   ---   --   ---xx   flac  0.6314  Dylan_1991_07_17_Cleveland_CD1_01.flac
+     5:02.34       53352812 B   ---   --   ---xx   flac  0.6578  Dylan_1991_07_17_Cleveland_CD1_02.flac
+     4:16.26       45219596 B   ---   --   ---xx   flac  0.6612  Dylan_1991_07_17_Cleveland_CD1_03.flac
+     5:30.52       58334348 B   ---   --   ---xx   flac  0.6530  Dylan_1991_07_17_Cleveland_CD1_04.flac
+     4:53.57       51819308 B   ---   --   ---xx   flac  0.6416  Dylan_1991_07_17_Cleveland_CD1_05.flac
+     3:20.20       35327084 B   ---   --   ---xx   flac  0.6660  Dylan_1991_07_17_Cleveland_CD1_06.flac
+     5:13.03       55220300 B   ---   --   ---xx   flac  0.6648  Dylan_1991_07_17_Cleveland_CD1_07.flac
+     5:43.57       60639308 B   ---   --   ---xx   flac  0.6700  Dylan_1991_07_17_Cleveland_CD1_08.flac
+     3:41.30       39055004 B   ---   --   ---xx   flac  0.6761  Dylan_1991_07_17_Cleveland_CD1_09.flac
+    43:11.55      457182156 B                            0.6570  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-07-17.flacf\CD 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.63       52539020 B   ---   --   ---xx   flac  0.6764  Dylan_1991_07_17_Cleveland_CD2_01.flac
+     4:30.38       47717420 B   ---   --   ---xx   flac  0.6406  Dylan_1991_07_17_Cleveland_CD2_02.flac
+     4:53.55       51814604 B   ---   --   ---xx   flac  0.6768  Dylan_1991_07_17_Cleveland_CD2_03.flac
+     4:41.03       49575500 B   ---   --   ---xx   flac  0.6568  Dylan_1991_07_17_Cleveland_CD2_04.flac
+     3:52.45       41030684 B   ---   --   ---xx   flac  0.6909  Dylan_1991_07_17_Cleveland_CD2_05.flac
+     5:20.30       56518604 B   ---   --   ---xx   flac  0.6619  Dylan_1991_07_17_Cleveland_CD2_06.flac
+     4:46.04       50459852 B   ---   --   ---xx   flac  0.6883  Dylan_1991_07_17_Cleveland_CD2_07.flac
+     4:13.67       44786828 B   ---   --   ---xx   flac  0.6608  Dylan_1991_07_17_Cleveland_CD2_08.flac
+     6:04.00       64209644 B   ---   --   ---xx   flac  0.6652  Dylan_1991_07_17_Cleveland_CD2_09.flac
+    43:20.05      458652156 B                            0.6683  (9 files)
+=================== 
+=================== 
+=================== 

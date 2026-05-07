@@ -1,0 +1,98 @@
+Bob Dylan 
+Kings Dominion Amusement Park
+Doswell, Virginia
+21 July 1991
+
+Musicians: Bob Dylan (vocal & guitar), John Jackson (guitar), Tony Garnier (bass), Ian Wallace (drums).
+Source: Aud 
+Lineage: Aud > ? > CD-Rs > EAC > CoolEdit Pro > CD Wave > FLAC Frontend > .flac
+Taped by: ?
+Transfered by: ?
+Sound quality: A (filler B > A+)
+Filler material selected & sequenced by Ronald Zavala
+Bootleg Title: n/a 
+File Size: 971 megs .flac
+Notes: tape flip d1t10 > d1t11 (start of d1t11 cut); fireworks during Everything Is Broken & I'll Remember You
+
+disk 1
+
+1. New Morning
+2. I Don't Believe You (She Acts Like We Never Have Met)
+3. All Along The Watchtower
+4. Shelter From The Storm
+5. Gotta Serve Somebody
+6. Wiggle Wiggle
+7. Simple Twist Of Fate
+8. Leopard-Skin Pill-Box Hat
+9. Trail Of The Buffalo (trad. arr. Woody Guthrie)
+10. Gates Of Eden
+11. Don't Think Twice, It's All Right
+12. Girl From The North Country
+13. Folsom Prison Blues (Johnny Cash)
+14. Everything Is Broken
+15. I'll Remember You
+
+
+disk 2
+
+01. Highway 61 Revisited
+02. What Good Am I?
+03. Ballad Of A Thin Man
+-----------
+04. Song To Woody 27 - July 1991 Corfu
+-----------
+05. Lakes Of Pontchartrain (trad.) - 06 July 1991 Nashua
+-----------
+06. Barbara Allen (trad.) - 10 July 1991 Essex Junction
+07. Love Minus Zero/No Limit - 10 July 1991 Essex Junction
+-----------
+08. When I Paint My Masterpiece - 19 July 1991 Vienna
+-----------
+09. Pancho And Lefty (Townes van Zandt) - 17 July 1991 Cleveland
+-----------
+10. I Believe In You - 10 July 1991 Essex Junction
+11. Lenny Bruce - 10 July 1991 Essex Junction
+-----------
+12. John Brown - 19 July 1991 Vienna
+-----------
+13. Man In The Long Black Coat - 11 July 1991 Wantagh
+-----------
+14. Visions Of Johanna - 26 July 1991 Maple
+-----------
+15. The Lonesome Death Of Hattie Carroll - 06 July 1991 Nashua
+
+disk 1 .flac fingerprints
+
+bd1991-07-21d1t01.flac:ede134654d8d1762c9be4284209cd595
+bd1991-07-21d1t02.flac:58aae6c710f70813c7dd5288d1c1964f
+bd1991-07-21d1t03.flac:b9a5fd92d0e6c0ff5d378d96cf18483b
+bd1991-07-21d1t04.flac:c88baca5585f96016d5a438bf49b9bf1
+bd1991-07-21d1t05.flac:bf8bb192d4119392a318628e28797c9f
+bd1991-07-21d1t06.flac:023e81a36c502b709610526b4d1d3f25
+bd1991-07-21d1t07.flac:70aca4730c0ec185930f1eabbb000398
+bd1991-07-21d1t08.flac:c41862c7728e2cb4b5707968374bfedd
+bd1991-07-21d1t09.flac:16f178690b893586fa9202516501580b
+bd1991-07-21d1t10.flac:f8e0982e86a2b6b8da1a3de7146a5736
+bd1991-07-21d1t11.flac:1ff7cf602148e353c7b0dfeb568e88b7
+bd1991-07-21d1t12.flac:3774e12f72abab74ee455bafcff70089
+bd1991-07-21d1t13.flac:c2792d574f7fe0ab006bcb6e41f4845a
+bd1991-07-21d1t14.flac:b1f34dbde849448476b27e9eb0a47643
+bd1991-07-21d1t15.flac:aaf61d78f5f2ff3b7a1ba34a9fdb2230
+
+disk 2 .flac fingerprints
+
+bd1991-07-21d2t01.flac:bf0ef1b2b436e06aeefa4f55206b1d80
+bd1991-07-21d2t02.flac:4844f2e3b9f2b3124e48e893855d0ded
+bd1991-07-21d2t03.flac:f8e71872be841c4d4f442bdd884b8a0d
+d2t04-filler-bd1991-07-27.flac:02aee1f7a7b85a67daed8b1b3feca135
+d2t05-filler-bd1991-07-06.flac:3adf8dd64aecbe6f6f002c6822c345a1
+d2t06-filler-bd1991-07-10.flac:880c6af22f0f57e8535a04e87ae47a16
+d2t07-filler-bd1991-07-10.flac:756452473a0b86db9f5704b589834462
+d2t08-filler-bd1991-07-19.flac:0c02b5fa6718de73e6717fd73554d33f
+d2t09-filler-bd1991-07-17.flac:9aaab67294aef52b817d55deba029ae1
+d2t10-filler-bd1991-07-10.flac:24d97d106f867f51f39a2ee1e267f0b9
+d2t11-filler-bd1991-07-10.flac:57fce013e8a7a9518da75e3daca57ea6
+d2t12-filler-bd1991-07-19.flac:af3761c50b46e10be073a690016ecca5
+d2t13-filler-bd1991-07-11.flac:44f9054fbe8e29a3e517da9651afd342
+d2t14-filler-bd1991-07-26.flac:7135c825862b8254358a90c0b385c8fb
+d2t15-filler-bd1991-07-06.flac:a2aba8d4ea96a8f2c5a0744718e53724

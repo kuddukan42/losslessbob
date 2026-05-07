@@ -1,0 +1,91 @@
+===================
+===================
+===================
+=== md5 for: bd02-04-23-d.flacf
+===================
+===================
+===================
+dd6b3a5ec8adf6d3ac236a97deda4963 *01 Intro.flac
+abe63c81f0d024761ae096369bcbd3c0 *02 Hummingbird.flac
+7643c4038caeb776718aa91d737d3e87 *03 Senor (Tales Of Yankee Power).flac
+58ae340165592bee7c9427e991ba5ab6 *04 Desolation Row.flac
+cea2d9b6a76ac8a580b5ad5218a9aeb8 *05 My Back Pages.flac
+a5c7dfafee910d97c805feb56fc10c74 *06 Absolutely Sweet Marie.flac
+b3e6135f9153691346d9080187d65f66 *07 Solid Rock.flac
+21060559e092e5634a2006512faaf644 *08 Sugar Baby.flac
+3927e37176914d0b4a260e683fbfd203 *09 Highway 61 Revisited.flac
+58f81b149bd62bdf975903b807be9cb6 *10 Mr. Tambourine Man.flac
+613a83234c2c964e6dd0f308827eb54b *11 Fourth Time Around.flac
+23d3acb49112d776460508eaccba810c *12 Don't Think Twice, It's Alright.flac
+f1e329708d40e7d3c88d0c949c60f64d *2-01 Summer Days.flac
+47c2a4516a97b649d955cf9826b93646 *2-02 I Believe in You.flac
+fcb5cf54149be6bc1cc912650dbcd78e *2-03 Drifter's Escape.flac
+f1d243b994cf5d476a5d4a77cb16e25e *2-04 Cat's In The Well.flac
+7f9f4499e5a9c899692bf46c1d760769 *2-05 Love Sick.flac
+14491f252dfb2f3d134fd34ebdbf0dd4 *2-06 Like A Rolling Stone.flac
+630594ef162968e0fec1bf00b902bca6 *2-07 If Dogs Run Free.flac
+9d6a4b16e9735bedbc2a805058f9c34a *2-08 Honest With Me.flac
+089fad592362e6b278a55901cce240de *2-09 Blowin' In The Wind.flac
+1eff75b9e16a6178290691320543e024 *checksums.md5
+606d02dda90b658cabfff413b8283eeb *info.txt
+===================
+===================
+===================
+=== ffp for: bd02-04-23-d.flacf
+===================
+===================
+===================
+01 Intro.flac:3c32f503743a4eae784b820f09a12678
+02 Hummingbird.flac:ce62de95fea9fefd68ee78c6f31cd99b
+03 Senor (Tales Of Yankee Power).flac:bff6ee69797a4a64d0037bae90c18139
+04 Desolation Row.flac:a3661a7208db11768bd7b96572f30f33
+05 My Back Pages.flac:80ab41849b8fdf4af784610b6301caa8
+06 Absolutely Sweet Marie.flac:dd17f5d50c468abbdc523638880a9380
+07 Solid Rock.flac:1fdd27ebcaa6056e0b54bf87e2c378df
+08 Sugar Baby.flac:c299d70278b9546be54b2c8828dc681c
+09 Highway 61 Revisited.flac:ecd28c7fb0413db305c7551783ecf7ac
+10 Mr. Tambourine Man.flac:a64868bf0b8222b41136e64e31e479b8
+11 Fourth Time Around.flac:c5eeffcc9f64546a8f045efebaed7eae
+12 Don't Think Twice, It's Alright.flac:2e02142d53521dff0cf7c7afa92f439e
+2-01 Summer Days.flac:3ab84b16b4bbdbcb58984879dddf1c48
+2-02 I Believe in You.flac:cbcae62c07c5c93156df88dd1fa89c27
+2-03 Drifter's Escape.flac:318404abe93482c1247339c94a860b78
+2-04 Cat's In The Well.flac:e89bcc1c7d954de66657101286463ccb
+2-05 Love Sick.flac:f4dd3a5dffdb6927b74c0e0017e953a6
+2-06 Like A Rolling Stone.flac:3d29a5186cfadce0429d05da07c85ee5
+2-07 If Dogs Run Free.flac:a2a99bf70a27b5f00d0dad28ec5be58d
+2-08 Honest With Me.flac:aa7691c0bd5c654014057cb7b0c0a804
+2-09 Blowin' In The Wind.flac:65e84f382083dc51705d9c61ab8ad6f0
+===================
+===================
+===================
+=== shntool len for: bd02-04-23-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:17.08        3017660 B   ---   --   ---xx   flac  0.5153  01 Intro.flac
+     3:47.40       40136924 B   ---   --   ---xx   flac  0.5673  02 Hummingbird.flac
+     5:23.05       56989004 B   ---   --   ---xx   flac  0.5292  03 Senor (Tales Of Yankee Power).flac
+    10:51.32      114911708 B   ---   --   ---xx   flac  0.5407  04 Desolation Row.flac
+     6:46.67       71776028 B   ---   --   ---xx   flac  0.5155  05 My Back Pages.flac
+     6:58.71       73902236 B   ---   --   ---xx   flac  0.5724  06 Absolutely Sweet Marie.flac
+     4:41.23       49622540 B   ---   --   ---xx   flac  0.5920  07 Solid Rock.flac
+     7:36.16       80476076 B   ---   --   ---xx   flac  0.4494  08 Sugar Baby.flac
+     7:02.63       74589020 B   ---   --   ---xx   flac  0.5974  09 Highway 61 Revisited.flac
+     6:38.06       70221356 B   ---   --   ---xx   flac  0.5411  10 Mr. Tambourine Man.flac
+     4:17.10       45358364 B   ---   --   ---xx   flac  0.4888  11 Fourth Time Around.flac
+     7:39.01       80969996 B   ---   --   ---xx   flac  0.4850  12 Don't Think Twice, It's Alright.flac
+     7:47.43       82479980 B   ---   --   ---xx   flac  0.5829  2-01 Summer Days.flac
+     6:12.01       65623196 B   ---   --   ---xx   flac  0.4990  2-02 I Believe in You.flac
+     5:39.07       59816108 B   ---   --   ---xx   flac  0.5916  2-03 Drifter's Escape.flac
+    12:33.15      132864524 B   ---   --   ---xx   flac  0.5837  2-04 Cat's In The Well.flac
+     5:55.39       62713772 B   ---   --   ---xx   flac  0.5064  2-05 Love Sick.flac
+     8:46.45       92892284 B   ---   --   ---xx   flac  0.5811  2-06 Like A Rolling Stone.flac
+     5:01.64       53246972 B   ---   --   ---xx   flac  0.4791  2-07 If Dogs Run Free.flac
+     6:54.32       73104908 B   ---   --   ---xx   flac  0.5895  2-08 Honest With Me.flac
+     7:26.51       78794396 B   ---   --   ---xx   flac  0.5471  2-09 Blowin' In The Wind.flac
+   138:16.39     1463507052 B                            0.5443  (21 files)
+===================
+===================
+===================

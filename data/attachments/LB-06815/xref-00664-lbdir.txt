@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-07-05-e.flacf 
+=================== 
+=================== 
+=================== 
+0866ce067b1b39eb2041b66efed599df  5th July 1990 Internationales Congress Centrum Berlin Germany.ffp
+db573a8af702224e05d2a4c98891c960  5th July 1990 Internationales Congress Centrum Berlin Germany.md5
+01ec9032203dfdcaba19f8b120f474d4  bd1990-07-05d1t01.flac
+05a070aaebf0c2b3d7a24e8b1aa96f9d  bd1990-07-05d1t02.flac
+cecf31be468192820e921cb9e2b90da9  bd1990-07-05d1t03.flac
+a365b2028ae53fa4e171812ef8681ef9  bd1990-07-05d1t04.flac
+7b0e47ea39d8d7c7bc15f8d00504d58d  bd1990-07-05d1t05.flac
+f2d4705fbc7bf6d47b6e9626904b960f  bd1990-07-05d1t06.flac
+b2fa3f25d5e12554c6bdd490c0f1f6e3  bd1990-07-05d1t07.flac
+a3432e575782c254aae1f92c4edcdce5  bd1990-07-05d1t08.flac
+342c686be17d8c586e151d39de07a733  bd1990-07-05d1t09.flac
+6e18a79db6f4c4daf397898d802ee907  bd1990-07-05d1t10.flac
+959846b4583aa53b770491f4836cbbf5  bd1990-07-05d1t11.flac
+a52fdf3afaee8ecbcb7a3a875da708f3  bd1990-07-05d1t12.flac
+10a6599d574dc2a57e1809a186d1a4b9  bd1990-07-05d1t13.flac
+90cf4ca989efe64bef4ed814320e79be  bd1990-07-05d1t14.flac
+ce44ca3ae1d09820dc43b96f62841c93  bd1990-07-05d1t15.flac
+aee1ec8d669df6e87aec859de6b39d3e  bd1990-07-05d1t16.flac
+e6c97c9d33936e5d986a156f9dd3b1c0  bd1990-07-05d1t17.flac
+53d2f898e9b56d15213cf60eb5b34f87  bd1990-07-05d1t18.flac
+3c9cbe0fd64f3f140f00133558a5bb32  bd1990-07-05d1t19.flac
+77feb5601128d5a9dba6311bf14e2432  info\eac.LOG
+a4ffcf1a15314e65727ea4f589e6f6ef  info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-07-05-e.flacf 
+=================== 
+=================== 
+=================== 
+bd1990-07-05d1t01.flac:f448b8bc8f3f8e52851d4dcd83097b6b
+bd1990-07-05d1t02.flac:0892a9819934b5e06a47a53b648ab1dc
+bd1990-07-05d1t03.flac:c9b6af0c52379734abb2b60eeb88e840
+bd1990-07-05d1t04.flac:c411a932a621d8e3d9891a8fd5a92221
+bd1990-07-05d1t05.flac:aac5e4f3e63027e017341b15f2b61cf0
+bd1990-07-05d1t06.flac:8a65212e8f1ffee9abe4059df3f05668
+bd1990-07-05d1t07.flac:b989ad070ad317610b83a26191226cd5
+bd1990-07-05d1t08.flac:2479e6303959ee414754885dd52b7c9d
+bd1990-07-05d1t09.flac:1a2dd377e9b07869c781ae96bc2aceb4
+bd1990-07-05d1t10.flac:edcd20c91a72f9fdbac2429a79fe6045
+bd1990-07-05d1t11.flac:a8af74dd6be2c03f13709f95bf132632
+bd1990-07-05d1t12.flac:db4ce1d653087fcf2f4948dbec71a1f0
+bd1990-07-05d1t13.flac:1d76ae51837557601118096083a6b523
+bd1990-07-05d1t14.flac:b0a8e602515174072427911ab12ad654
+bd1990-07-05d1t15.flac:49c9252e012878ca56f82bf89ba1804b
+bd1990-07-05d1t16.flac:afdb2a87b73eef31260dd2b61ad20c7f
+bd1990-07-05d1t17.flac:c0e4ef6cba472dfa0498f51e86b6803d
+bd1990-07-05d1t18.flac:6acd9e3a8f965980d35c7ed3faa21108
+bd1990-07-05d1t19.flac:a904e24daf65829c034d3cf6c702a999
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-07-05-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.71       41268236 B   ---   --   ---xx   flac  0.6771  bd1990-07-05d1t01.flac
+     4:15.51       45101996 B   ---   --   ---xx   flac  0.6649  bd1990-07-05d1t02.flac
+     3:32.16       37434476 B   ---   --   ---xx   flac  0.6906  bd1990-07-05d1t03.flac
+     4:39.34       49295612 B   ---   --   ---xx   flac  0.6815  bd1990-07-05d1t04.flac
+     4:27.68       47258780 B   ---   --   ---xx   flac  0.7309  bd1990-07-05d1t05.flac
+     5:36.38       59359820 B   ---   --   ---xx   flac  0.7151  bd1990-07-05d1t06.flac
+     5:04.69       53787932 B   ---   --   ---xx   flac  0.6383  bd1990-07-05d1t07.flac
+     3:33.17       37613228 B   ---   --   ---xx   flac  0.6484  bd1990-07-05d1t08.flac
+     5:19.49       56386892 B   ---   --   ---xx   flac  0.6929  bd1990-07-05d1t09.flac
+     4:43.65       50074124 B   ---   --   ---xx   flac  0.6174  bd1990-07-05d1t10.flac
+     5:25.48       57442940 B   ---   --   ---xx   flac  0.6164  bd1990-07-05d1t11.flac
+     4:22.35       46299164 B   ---   --   ---xx   flac  0.6552  bd1990-07-05d1t12.flac
+     3:47.37       40129868 B   ---   --   ---xx   flac  0.6598  bd1990-07-05d1t13.flac
+     4:01.57       42646508 B   ---   --   ---xx   flac  0.5958  bd1990-07-05d1t14.flac
+     3:00.73       31923740 B   ---   --   ---xx   flac  0.6698  bd1990-07-05d1t15.flac
+     3:21.26       35517596 B   ---   --   ---xx   flac  0.6320  bd1990-07-05d1t16.flac
+     5:50.60       61881164 B   ---   --   ---xx   flac  0.6820  bd1990-07-05d1t17.flac
+     3:10.66       33671276 B   ---   --   ---xx   flac  0.6591  bd1990-07-05d1t18.flac
+     4:06.38       43483820 B   ---   --   ---xx   flac  0.6865  bd1990-07-05d1t19.flac
+    82:15.18      870577172 B                            0.6648  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-06-29-d-NTB.flacf 
+=================== 
+=================== 
+=================== 
+e8f9c230fed6e111f3f43050099367ad  1990-06-29-Roskilde-NTB-info.txt
+1fe53b686b68a8830225ce67aa7c039e  1990-06-29-Roskilde-NTB.txt
+87aef1faf8b0f790152a76a953380c65  1990-06-29-Roskilde-photo-Kurt_Christensen.jpg
+10630d88baf2423abb833b23a88d6f0c  1990-06-29-Roskilde-photo.jpg
+52d6cc02a46eb3522ff77c5b996eff4f  1990-07-01-Roskilde-poster.jpg
+70e288bb4fb560db8788d72deea04a3f  Artwork (LTA)\Roskilde-LTA-B.jpg
+7b2153eb63ea4633ea8a0fae03a24c9d  Artwork (LTA)\Roskilde-LTA-F.jpg
+8dc2d79f44693beb8128014670d46268  bd1990-06-29d1t01.flac
+9e95b1e79714cec0d110e53a6ca3913c  bd1990-06-29d1t02.flac
+18af15bc1a131d79b976dc0885f97f11  bd1990-06-29d1t03.flac
+4b60b72af2f4873d00622d020de35f23  bd1990-06-29d1t04.flac
+6ae5bab3d951a73f82858f76e035771e  bd1990-06-29d1t05.flac
+665d8a79fc85b35702c5233e89affe57  bd1990-06-29d1t06.flac
+c57254b99dbc0ff8580d43c53fdf1cd0  bd1990-06-29d1t07.flac
+b2cd7dad27d5f68c127d8b2320c39c47  bd1990-06-29d1t08.flac
+a015bc1eddedd09ee7207b09266993a7  bd1990-06-29d1t09.flac
+1d51f9dd699d95e3f0d8d4e8a374933e  bd1990-06-29d1t10.flac
+d1ee79b28a440401e35a47626a3c95f3  bd1990-06-29d2t01.flac
+995bacb1b43f3721a8dfa9d58ea3b1c5  bd1990-06-29d2t02.flac
+c74d2a7600c2b2e26eaf09e1906bde17  bd1990-06-29d2t03.flac
+06c20022b219621c1fd7f8f387b36d17  bd1990-06-29d2t04.flac
+892c540e79bd918c5806d9c00e26973a  bd1990-06-29d2t05.flac
+21efb39aa072c6883d5c603f7924f724  bd1990-06-29d2t06.flac
+1c91a1e532e85c15a65cd3e8f5e5f93a  bd1990-06-29d2t07.flac
+d6cb55e017f7aae0e2d7d8f07d7ff03b  bd1990-06-29d2t08.flac
+a8fb6ae15a2d7dd08f187008b99183e4  bd1990-06-29d2t09.flac
+e5116a87dfa591491ffeac84fc256859  bd1990-06-29d2t10.flac
+11ce98963a6f7b197700b7c756b385eb  fingerprint.ffp
+b107e65b605e4e6aa676044426b514f2  md5sum.md5
+46049f67f8ee29fe438f982d9c9381bf  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-06-29-d-NTB.flacf 
+=================== 
+=================== 
+=================== 
+bd1990-06-29d1t01.flac:3ee8fe0c9c3a87fd132ef20f61f70052
+bd1990-06-29d1t02.flac:5936fba23e0382e2ea152f01ff9e40a8
+bd1990-06-29d1t03.flac:c51a7732e93d1fccac12c506c72da732
+bd1990-06-29d1t04.flac:1536f1c9060438bee93080af16a2ea44
+bd1990-06-29d1t05.flac:e8349ad9d1886ea2705de55137747dc3
+bd1990-06-29d1t06.flac:2098e90adf69515e01b669d82f500029
+bd1990-06-29d1t07.flac:906857ea516f8ce6479535577d7c592f
+bd1990-06-29d1t08.flac:f5d54ad362411512db0ca4fd4a3a842a
+bd1990-06-29d1t09.flac:643d122c80b68ed08a5284bf29c4d222
+bd1990-06-29d1t10.flac:51d80741d96aad0aea6bce04d19497ee
+bd1990-06-29d2t01.flac:8951b8229ec9a5489db32c6d4965c327
+bd1990-06-29d2t02.flac:a8cd0bf57b3049d0d632b2869e182070
+bd1990-06-29d2t03.flac:2559fbbf8a88c3bb1838eb4f89155881
+bd1990-06-29d2t04.flac:ca759f378c6042a3a4a1e2640b9d434d
+bd1990-06-29d2t05.flac:27e5a052b21df31b194b077b898ce79a
+bd1990-06-29d2t06.flac:b4b0c6ad5b2b73face846b7c3a43a38f
+bd1990-06-29d2t07.flac:c886fcb8578f40c1147b8ba91e5ccc29
+bd1990-06-29d2t08.flac:7f0c8cc8d5f92d06ae43c775ab4fbe98
+bd1990-06-29d2t09.flac:eaf3ea698ccca169079844222faf2a4b
+bd1990-06-29d2t10.flac:59ef34e4fbab00053d0ee293374b9fe2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-29-d-NTB.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.12       44481068 B   ---   --   ---xx   flac  0.5709  bd1990-06-29d1t01.flac
+     5:22.60       56941964 B   ---   --   ---xx   flac  0.5697  bd1990-06-29d1t02.flac
+     6:07.40       64832924 B   ---   --   ---xx   flac  0.5986  bd1990-06-29d1t03.flac
+     7:37.18       80657180 B   ---   --   ---xx   flac  0.5862  bd1990-06-29d1t04.flac
+     4:36.41       48782876 B   ---   --   ---xx   flac  0.6329  bd1990-06-29d1t05.flac
+     5:22.07       56817308 B   ---   --   ---xx   flac  0.6268  bd1990-06-29d1t06.flac
+     5:59.07       63344108 B   ---   --   ---xx   flac  0.6015  bd1990-06-29d1t07.flac
+     6:30.42       68894828 B   ---   --   ---xx   flac  0.6032  bd1990-06-29d1t08.flac
+     4:24.50       46687244 B   ---   --   ---xx   flac  0.5863  bd1990-06-29d1t09.flac
+     3:50.61       40715516 B   ---   --   ---xx   flac  0.6231  bd1990-06-29d1t10.flac
+     6:44.74       71439692 B   ---   --   ---xx   flac  0.5785  bd1990-06-29d2t01.flac
+     4:06.40       43488524 B   ---   --   ---xx   flac  0.6293  bd1990-06-29d2t02.flac
+     3:25.40       36256124 B   ---   --   ---xx   flac  0.6013  bd1990-06-29d2t03.flac
+     3:49.56       40527356 B   ---   --   ---xx   flac  0.6092  bd1990-06-29d2t04.flac
+     3:37.52       38401148 B   ---   --   ---xx   flac  0.6439  bd1990-06-29d2t05.flac
+     3:54.08       41296460 B   ---   --   ---xx   flac  0.6195  bd1990-06-29d2t06.flac
+     6:11.32       65519708 B   ---   --   ---xx   flac  0.6422  bd1990-06-29d2t07.flac
+     1:29.19       15744332 B   ---   --   ---xx   flac  0.5517  bd1990-06-29d2t08.flac
+     4:49.73       51151340 B   ---   --   ---xx   flac  0.5933  bd1990-06-29d2t09.flac
+     5:10.69       54846332 B   ---   --   ---xx   flac  0.6025  bd1990-06-29d2t10.flac
+    97:23.51     1030826032 B                            0.6039  (20 files)
+=================== 
+=================== 
+=================== 

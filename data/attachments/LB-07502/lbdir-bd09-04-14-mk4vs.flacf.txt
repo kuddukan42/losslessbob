@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-14-mk4vs.flacf 
+=================== 
+=================== 
+=================== 
+416d30d5005ee476d98e437fb85dab5a  Bob Dylan  Basel  4-14-09  Barry.txt
+b1eb0375ed4db3a23246888e40cafdcd  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a01.flac
+1fb9b1543e16c3797715c8dcc46d76ae  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a02.flac
+8c91d01a0ac0eec27156cb87e3848319  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a03.flac
+2833251c5f97481cc402a8f2f7c6e944  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a04.flac
+f421d1b8254550f36a8d73a52f1ed1b7  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a05.flac
+6d821bbb0bd8705372913d25fdfd978f  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a06.flac
+716a73f4837987736c00a2ea82fb96b6  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a07.flac
+e8e062ef68b010704d57679f28799f1c  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a08.flac
+4ab32d4718acb1b55b507c989fa4c8a6  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a09.flac
+2bad426e9480c966621b0e92c9239582  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a10.flac
+51a2c9f8fec043bdb43bc0dd220ec3c3  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a11.flac
+7db91cb6c8f725d0a051c97a1ced0d57  D1\Bob Dylan  Basel  4-14-09  24-44   EQ-a12.flac
+9a6de776129bc9be10fa2a91a9b03da0  D1\D1.md5
+9a6de776129bc9be10fa2a91a9b03da0  D1.md5
+01a501bb8602808f2a036a6f1488a97c  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b01.flac
+f86325168bc3dd61bb663d7ef236c026  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b02.flac
+547ed61d0ac93334d1a6fa5e21954d60  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b03.flac
+bfa5c8fb566c0257f8ab00dc840a5ab0  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b04.flac
+428ed4e02e7bdf51ec4ecd87476ed199  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b05.flac
+f418d06171163c88d0efc6efc29f5c60  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b06.flac
+91f90c760d8dfdd1c9e80b3a06d00ea4  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b07.flac
+4f22d335bddaeec76a18b6c0fcb5eedd  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b08.flac
+1accdc7f2d873873188b297fb1407015  D2\Bob Dylan  Basel  4-14-09  24-44   EQ-b09.flac
+94a3f8ee07d5ec0c723e3c076643d806  D2\D2.md5
+94a3f8ee07d5ec0c723e3c076643d806  D2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-14-mk4vs.flacf\D1 
+=================== 
+=================== 
+=================== 
+Bob Dylan  Basel  4-14-09  24-44   EQ-a01.flac:5a2577fac05c85e5af33881498988908
+Bob Dylan  Basel  4-14-09  24-44   EQ-a02.flac:18ced91999a6d30698019f1f3d80f48e
+Bob Dylan  Basel  4-14-09  24-44   EQ-a03.flac:c6b5f9167054f5999cb7e8f2c22e71a5
+Bob Dylan  Basel  4-14-09  24-44   EQ-a04.flac:c567d10e76647aad14f9d1f4106ac791
+Bob Dylan  Basel  4-14-09  24-44   EQ-a05.flac:1bf2564f9242f22a7d9dacfc13e44e12
+Bob Dylan  Basel  4-14-09  24-44   EQ-a06.flac:dacc187738b615912042a9c7131b4841
+Bob Dylan  Basel  4-14-09  24-44   EQ-a07.flac:1c52ff670554a4156631df8a44a3b08a
+Bob Dylan  Basel  4-14-09  24-44   EQ-a08.flac:75195520d282d9da44f4ad06e468fb0d
+Bob Dylan  Basel  4-14-09  24-44   EQ-a09.flac:715ba56051980b220e85fee53ccddf53
+Bob Dylan  Basel  4-14-09  24-44   EQ-a10.flac:12d891f35e91325e5dfc5986933f322b
+Bob Dylan  Basel  4-14-09  24-44   EQ-a11.flac:a12a822ff1ef6aa2321bb234d0036d3d
+Bob Dylan  Basel  4-14-09  24-44   EQ-a12.flac:4d24f42ca201322095e6f25bb907ab41
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-14-mk4vs.flacf\D2 
+=================== 
+=================== 
+=================== 
+Bob Dylan  Basel  4-14-09  24-44   EQ-b01.flac:54953ffcd0dd3ca67a7482d4e19930fe
+Bob Dylan  Basel  4-14-09  24-44   EQ-b02.flac:8e796fb1a1e0ee0acdc4ccb88e961b1f
+Bob Dylan  Basel  4-14-09  24-44   EQ-b03.flac:98c6d73f5c3881045e2bbea8f40e306f
+Bob Dylan  Basel  4-14-09  24-44   EQ-b04.flac:273a303d2be848afaff8c22fde27c6ce
+Bob Dylan  Basel  4-14-09  24-44   EQ-b05.flac:4042bf6ff299455a0dcadafd24f409d4
+Bob Dylan  Basel  4-14-09  24-44   EQ-b06.flac:52a6b20bb898a0798788fadc02a886a6
+Bob Dylan  Basel  4-14-09  24-44   EQ-b07.flac:e45d279d1ef32e5896b5df7aba8e3781
+Bob Dylan  Basel  4-14-09  24-44   EQ-b08.flac:1512e4e984e3d1768e23db08a8b70482
+Bob Dylan  Basel  4-14-09  24-44   EQ-b09.flac:e2ad2bb0b3c3a138f0c276ebc68ac062
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-14-mk4vs.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.72        6519788 B   ---   --   ---xx   flac  0.4077  Bob Dylan  Basel  4-14-09  24-44   EQ-a01.flac
+     3:56.07       41646908 B   ---   --   ---xx   flac  0.4817  Bob Dylan  Basel  4-14-09  24-44   EQ-a02.flac
+     6:22.30       67455404 B   ---   --   ---xx   flac  0.4243  Bob Dylan  Basel  4-14-09  24-44   EQ-a03.flac
+     5:02.46       53381036 B   ---   --   ---xx   flac  0.4662  Bob Dylan  Basel  4-14-09  24-44   EQ-a04.flac
+     6:24.03       67744700 B   ---   --   ---xx   flac  0.4834  Bob Dylan  Basel  4-14-09  24-44   EQ-a05.flac
+     5:49.05       61575404 B   ---   --   ---xx   flac  0.4284  Bob Dylan  Basel  4-14-09  24-44   EQ-a06.flac
+     6:58.24       73791692 B   ---   --   ---xx   flac  0.4744  Bob Dylan  Basel  4-14-09  24-44   EQ-a07.flac
+     5:22.38       56890220 B   ---   --   ---xx   flac  0.4548  Bob Dylan  Basel  4-14-09  24-44   EQ-a08.flac
+     5:05.50       53919644 B   ---   --   ---xx   flac  0.4477  Bob Dylan  Basel  4-14-09  24-44   EQ-a09.flac
+     7:56.29       84034652 B   ---   --   ---xx   flac  0.4142  Bob Dylan  Basel  4-14-09  24-44   EQ-a10.flac
+     7:09.19       75720332 B   ---   --   ---xx   flac  0.5000  Bob Dylan  Basel  4-14-09  24-44   EQ-a11.flac
+     4:27.01       47101196 B   ---   --   ---xx   flac  0.3842  Bob Dylan  Basel  4-14-09  24-44   EQ-a12.flac
+    65:10.24      689780976 B                            0.4511  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-14-mk4vs.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:45.29       71510252 B   ---   --   ---xx   flac  0.5036  Bob Dylan  Basel  4-14-09  24-44   EQ-b01.flac
+     5:46.42       61133228 B   ---   --   ---xx   flac  0.3999  Bob Dylan  Basel  4-14-09  24-44   EQ-b02.flac
+     6:55.16       73243676 B   ---   --   ---xx   flac  0.4962  Bob Dylan  Basel  4-14-09  24-44   EQ-b03.flac
+     6:20.64       67182572 B   ---   --   ---xx   flac  0.4959  Bob Dylan  Basel  4-14-09  24-44   EQ-b04.flac
+     2:28.45       26213084 B   ---   --   ---xx   flac  0.4311  Bob Dylan  Basel  4-14-09  24-44   EQ-b05.flac
+     4:57.68       52550780 B   ---   --   ---xx   flac  0.4903  Bob Dylan  Basel  4-14-09  24-44   EQ-b06.flac
+     6:47.70       71959484 B   ---   --   ---xx   flac  0.4170  Bob Dylan  Basel  4-14-09  24-44   EQ-b07.flac
+     0:48.36        8551916 B   ---   --   ---xx   flac  0.4519  Bob Dylan  Basel  4-14-09  24-44   EQ-b08.flac
+     5:01.55       53225804 B   ---   --   ---xx   flac  0.4350  Bob Dylan  Basel  4-14-09  24-44   EQ-b09.flac
+    45:52.50      485570796 B                            0.4617  (9 files)
+=================== 
+=================== 
+=================== 

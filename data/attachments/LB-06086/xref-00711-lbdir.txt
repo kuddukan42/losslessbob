@@ -1,0 +1,143 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-03-08-IAR051-c.flacf 
+=================== 
+=================== 
+=================== 
+3122079f448088a99b05b839dae4b669  Cd1\Cd1 SHN.md5
+71c16a9b3672eb79cf22932ea59032b2  Cd1\Track01.flac
+fb7ca91ce2422e4ca8792d2fb90e0808  Cd1\Track02.flac
+9ec9cbad5ca0fc73dad978a9b62711c9  Cd1\Track03.flac
+edf45efe7d6247aeae8e6b72abb08307  Cd1\Track04.flac
+628a6167c38bd522f970addc1219d6d9  Cd1\Track05.flac
+bf11436dcfa52ce3d794d8b43ba2a595  Cd1\Track06.flac
+d6239893552b6edaabe73eb56ea6e2d7  Cd1\Track07.flac
+79f69823e71980fa4db2969e5ae3bb35  Cd1\Track08.flac
+d661d26c0619fe0c751a693a1f98499f  Cd1\Track09.flac
+2b03db4ec8105584977980986843a11d  Cd1\Track10.flac
+180afbf8e50f94f6edc53d77ccff221e  Cd1\Track11.flac
+4e41070349628031299a6eff6b501fdf  Cd1\Track12.flac
+f993a0eac9afc68a68cfd105a0be912a  Cd1\Track13.flac
+40fb3d1b350d1a44561b213dde82b05d  Cd1\Track14.flac
+c666d11afc173e096d1f2848cb037a92  Cd1\Track15.flac
+7c6676183ebc6a8bad29d99bcfb69786  Cd1\Track16.flac
+f1755cc5cbb1c4c684b1fb223001a329  Cd1\Track17.flac
+70656b9fd0937790412004948506067e  Cd1\Track18.flac
+6e4d4c1368958a7d38e3b9703e68323b  Cd1\Track19.flac
+8f383a7d0eb07bfab96eb426b57f4f31  Cd2\Cd2 SHN.md5
+0d16f75a85fd03ee348179fae2b16704  Cd2\Track01.flac
+ec5c13ddd1115e5e1c6aec8907ddbb0e  Cd2\Track02.flac
+e818363974d497cf706b70ad522b4695  Cd2\Track03.flac
+991378d3bf55a30a01620dce4e309c8f  Cd2\Track04.flac
+005d9bd5fc9218f497e3cfd291511dcf  Cd2\Track05.flac
+e3af8a9f2326cd9422392a835fd5c5fe  Cd2\Track06.flac
+306a5ffed01d2f37ce17b5df32c117ff  Cd2\Track07.flac
+761fb59c0d6bf74672eeeb9e05fc115d  Cd2\Track08.flac
+d945549266f4caa6aabc9c27ff1659be  Cd2\Track09.flac
+938e255925a41dd84231d7086bcdab36  Cd2\Track10.flac
+5aed651134618f8a28f5769bfd6600cd  Cd2\Track11.flac
+968c77a1336c405767f3a543ddf9bfe9  Cd2\Track12.flac
+a2ef38f21e26be207f3dca5906012be0  Cd2\Track13.flac
+c207cde40462ea15331fa4b988ed9d3e  IAR 051 - Nagoya, March 8, 1986.md5
+8b747887bc1b687469227d5fd2143142  IAR 051 - Nagoya, March 8, 1986.txt
+031471ab3e7d29ecc0125dc2fb7f7970  IAR Uploads.xls
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-03-08-IAR051-c.flacf\Cd1 
+=================== 
+=================== 
+=================== 
+Track01.flac:86459392b692f55fdae26a895a72272f
+Track02.flac:455771c5f5932be0a8378fa784838196
+Track03.flac:2e3dcef4335438cb5b34bebbb597e7e7
+Track04.flac:ac79b47eafb6ad3128cce7f72aa77f53
+Track05.flac:e5553622ba8a4190a3701f9bdaae5c97
+Track06.flac:90251e9877b7dcb9505a5c0a8797b21e
+Track07.flac:7e800fd427612eb075fea9ab8896b3a5
+Track08.flac:b702542a2b576c36e7f170272a37e064
+Track09.flac:d7c862a6dca05ae133f41256c4f2304d
+Track10.flac:0c75bb7c2b4c6d561b3416d5edfee648
+Track11.flac:d7bc3e10b09c5adbbb260211da7019fe
+Track12.flac:067e15f0d8e7c16333210147fba18d43
+Track13.flac:496b9650025d72a12b41be44e1f3014e
+Track14.flac:a1c26f8db5ea1ca81e4a65b715fccc68
+Track15.flac:c4ddfd0ff05e2fbedd2df35b69bfad22
+Track16.flac:50c6d7a0e94eb4bce651b94a93423dc4
+Track17.flac:5d161ba0568d42d846ec98f976c2fdf7
+Track18.flac:c569c3f3a44c27fd0a9933dc586bc853
+Track19.flac:ad4f865f395b382ffadcb5a7b836c023
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-03-08-IAR051-c.flacf\Cd2 
+=================== 
+=================== 
+=================== 
+Track01.flac:74abb3986c8e8170512e4fbfa31cf38e
+Track02.flac:786f8033a10ce3650989b18465aa2f5f
+Track03.flac:f76f7c84e22b345fe945b87361aef595
+Track04.flac:f352f618001a166584944558346b9a21
+Track05.flac:a213e49bf299ee2045d85147e2883cca
+Track06.flac:53e803f57fab46356eed648a982dc976
+Track07.flac:b9de530080e6003c5eb5157fd77d3128
+Track08.flac:b2448ba61bca735ac9b4b4ca917a799a
+Track09.flac:21595971c2a11f70e8878adcf9cce4ef
+Track10.flac:fae38a0c302c0d24d43f4512f39dc847
+Track11.flac:def889eb824bf1c61a1b9e8660d05493
+Track12.flac:23039ccf27b4be95474971114235df3f
+Track13.flac:adfd8462f03ab77a428f4f33e1d44a1d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-03-08-IAR051-c.flacf\Cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.69       43909532 B   ---   --   ---xx   flac  0.6253  Track01.flac
+     4:21.57       46174508 B   ---   --   ---xx   flac  0.6452  Track02.flac
+     3:00.14       31784972 B   ---   --   ---xx   flac  0.6465  Track03.flac
+     4:07.65       43723724 B   ---   --   ---xx   flac  0.6006  Track04.flac
+     3:11.70       33857084 B   ---   --   ---xx   flac  0.6323  Track05.flac
+     3:32.50       37514444 B   ---   --   ---xx   flac  0.5830  Track06.flac
+     5:05.65       53954924 B   ---   --   ---xx   flac  0.6157  Track07.flac
+     5:19.74       56445692 B   ---   --   ---xx   flac  0.5625  Track08.flac
+     3:43.34       39417212 B   ---   --   ---xx   flac  0.5207  Track09.flac
+     6:04.67       64367228 B   ---   --   ---xx   flac  0.5640  Track10.flac
+     3:47.28       40108700 B   ---   --   ---xx   flac  0.5787  Track11.flac
+     4:38.06       49053356 B   ---   --   ---xx   flac  0.5883  Track12.flac
+     2:13.08       23480060 B   ---   --   ---xx   flac  0.6144  Track13.flac
+     1:03.12       11141468 B   ---   --   ---xx   flac  0.4496  Track14.flac
+     5:48.42       61486028 B   ---   --   ---xx   flac  0.5730  Track15.flac
+     5:12.12       55065068 B   ---   --   ---xx   flac  0.6133  Track16.flac
+     3:34.04       37759052 B   ---   --   ---xx   flac  0.5497  Track17.flac
+     1:07.24       11875292 B   ---   --   ---xx   flac  0.4721  Track18.flac
+     4:18.53       45635900 B   ---   --   ---xx   flac  0.6082  Track19.flac
+    74:20.04      786754244 B                            0.5894  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-03-08-IAR051-c.flacf\Cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:37.59       38417612 B   ---   --   ---xx   flac  0.5872  Track01.flac
+     4:29.74       47625692 B   ---   --   ---xx   flac  0.6272  Track02.flac
+     4:44.65       50250524 B   ---   --   ---xx   flac  0.5704  Track03.flac
+     8:40.37       91815068 B   ---   --   ---xx   flac  0.5658  Track04.flac
+     1:01.19       10805132 B   ---   --   ---xx   flac  0.4909  Track05.flac
+     5:56.15       62833724 B   ---   --   ---xx   flac  0.5935  Track06.flac
+     0:26.59        4725212 B   ---   --   ---xx   flac  0.4320  Track07.flac
+     6:39.22       70435388 B   ---   --   ---xx   flac  0.5733  Track08.flac
+     4:24.74       46743692 B   ---   --   ---xx   flac  0.5681  Track09.flac
+     2:59.37       31662668 B   ---   --   ---xx   flac  0.6081  Track10.flac
+     0:18.15        3210524 B   ---   --   ---xx   flac  0.4477  Track11.flac
+     2:13.53       23585900 B   ---   --   ---xx   flac  0.5288  Track12.flac
+     6:58.19       73779932 B   ---   --   ---xx   flac  0.6007  Track13.flac
+    52:31.23      555891068 B                            0.5794  (13 files)
+=================== 
+=================== 
+=================== 

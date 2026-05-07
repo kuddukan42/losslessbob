@@ -1,0 +1,10 @@
+Bob Dylan, 8/27/94, Kalamazoo, Mi, USA, 2CDR
+
+LB-7148, (69min+39min), Source: Sonic Studio Mics PA-6 > Sony D7, Transfer: DAT > Sony Standalone CD Burner > FreeRIP (FLAC) > Bulk Rename Utility (Track ID) > Trader's Little Helper (FFP) > Torrent; bittorrent download 01/09; different recording than NTA LB-6586 based on different crowd at end of d1t7; in comparison these have similar sound; excellent sound [A]
+
+square wav static d1t1 0:24; big static pops d2t4 6:49, d2t5 8:00 to 8:09 after music
+
+Disc One, 01. Jokerman, 02. Senor (Tales of Yankee Power), 03. All Along The Watchtower, 04. Shelter From The Storm, 05. Tangled Up In Blue, 06. I'll Be Your Baby Tonight, 07. Mr. Tambourine Man (Acoustic), 08. Masters of War (Acoustic), 09. Don't Think Twice, It's All Right, Disc Two, 01. God Knows, 02. Man In The Long Black Coat, 03. Maggie's Farm, 04. What Good Am I?, 05. It Ain't Me, Babe (Acoustic)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

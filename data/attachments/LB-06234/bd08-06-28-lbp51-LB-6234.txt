@@ -1,0 +1,8 @@
+Bob Dylan, 6/28/08, Hoyos del Espino (Avila), Spain, 2CDR
+
+LB-6234, (55min+65min), Audience recording, Taper: lbp51, Lineage: Edirol R09 - red (Built-in mics) > wav (44.1 Khz, 16 bits, stereo) > Adobe Audition 1.0 (tracking) > flac (Flac Frontend - align on SB option - level 8 - verify on); Luisbp51 (Hungercity July 2008); bittorrent download 06/08; a little muffled; background talking d1t3, d1t5, d1t6, d1t7, d1t8, d2t, d2t2, d2t3, d2t6; excellent sound [A-]
+
+Tracklist:, Disc 1, 01. [1:29.406] Intro, 02. [4:49.948] Rainy Day Women #12 & 35, 03. [5:17.790] Lay, Lady, Lay, 04. [6:12.753] Just Like Tom Thumb's Blues, 05. [4:55.516] Tweedle Dee & Tweedle Dum, 06. [5:04.482] Positively 4th Street, 07. [7:37.056] The Levee's Gonna Break, 08. [6:12.966] Moonlight, 09. [7:10.465] Honest With Me, 10. [6:08.577] The Lonesome Death Of Hattie Carroll, [54:58.959] Total Time, Disc 2, 01. [8:32.567] Tangled Up In Blue, 02. [6:51.531] Ballad Of Hollis Brown, 03. [6:07.054] Highway 61 Revisited, 04. [7:07.981] Mississippi, 05. [6:30.336] Summer Days, 06. [8:36.817] Ain't Talkin', 07. [3:04.573] Encore Interval, 08. [8:06.630] Thunder On The Mountain, 09. [0:44.716] Band Intros, 10. [9:02.410] Like A Rolling Stone, [64:44.615] Total Time, info taken from Bill Pagel's site (Bob Links)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

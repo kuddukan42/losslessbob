@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== md5 for: bd00-04-06-c.flacf
+===================
+===================
+===================
+2e463946652c80536133991be9a44e4d *Disc 1\01 Roving Gambler (acoustic).flac
+2393d6fcf8efc371238a0f3142e4a164 *Disc 1\02 Mr. Tambourine Man (acoustic).flac
+02b2a3acfc765ddd0dd59d07b73939ac *Disc 1\03 Desolation Row (acoustic).flac
+af577fad9b528adab1e82660ac13fcde *Disc 1\04 This World Can't Stand Long (acoustic).flac
+9d34b9ec8ef5701ddbce45cd0f6e2135 *Disc 1\05 Tangled Up In Blue (acoustic).flac
+27cb127efc66b25dc08b02da293bb1cd *Disc 1\06 Gates Of Eden (acoustic).flac
+233d2e2b402fe02a080da07c26d9e52e *Disc 1\07 Country Pie.flac
+d2c5fffbffe8f426c11369272472a9c2 *Disc 1\08 Blind Willie McTell.flac
+a525571ba6ec5d8671331fa71a143340 *Disc 1\09 Watching The River Flow.flac
+504951b24d5da164b09dad0a980fbdb2 *Disc 1\10 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+3751dfdccd58a52d66d4557cc6cdab4e *Disc 2\01 Tell Me That It Isn't True.flac
+187b8287128d3edf7bb9cd1cbae79372 *Disc 2\02 Leopard-Skin Pill-Box Hat.flac
+cbc842a9bfb659d4d45b96e3e977264a *Disc 2\03 Love Sick.flac
+4fba8bc1e2a3da30c0cef92cba136ea2 *Disc 2\04 Like A Rolling Stone.flac
+e1797efdfa81561ffed846c45cd15c91 *Disc 2\05 Forever Young (acoustic).flac
+25734118529e294ed92daf2ef8569b6c *Disc 2\06 Not Fade Away.flac
+135730b331c070dd437b0408f6e362c8 *Disc 2\07 Blowin' In The Wind (acoustic).flac
+30761cff7951b1d76c7527b4940fa308 *Disc 2\08 Rainy Day Women # 12 & 35.flac
+628e527fe6b9889a5bb145bb0abb729f *FFP.ffp
+1422ec4189824ece0b08b265fb936673 *INFO.txt
+74f7b99824fb69c4b60a8d67a630fb55 *LOG D1.log
+3f1cd6ffe7372514bf7cf670f1ef41fb *LOG D2.log
+68ea8ed781a48ec3cd654c973bb613b3 *MD5.md5
+===================
+===================
+===================
+=== ffp for: bd00-04-06-c.flacf
+===================
+===================
+===================
+Disc 1\01 Roving Gambler (acoustic).flac:8e413b678a6633f0c887740a99592d64
+Disc 1\02 Mr. Tambourine Man (acoustic).flac:6287ebd39ad49ee30b97fac5c9633d70
+Disc 1\03 Desolation Row (acoustic).flac:0df585458025ed87af9b7c0f4e2a0856
+Disc 1\04 This World Can't Stand Long (acoustic).flac:006082a4425036f0c1e030baacdd2129
+Disc 1\05 Tangled Up In Blue (acoustic).flac:3b47e066caa86672bb7516bf3915cb4c
+Disc 1\06 Gates Of Eden (acoustic).flac:efb0abdd43c0595537b5a45e8a9ba495
+Disc 1\07 Country Pie.flac:4ba7c7e8683e7eebf6d9839cc3e8b4ff
+Disc 1\08 Blind Willie McTell.flac:024dd2eff8d34e9121ee537d10918ae7
+Disc 1\09 Watching The River Flow.flac:747d30582153b15d17c8cb4cfc49fd10
+Disc 1\10 Stuck Inside Of Mobile With The Memphis Blues Again.flac:db6f93185f54bef7ffc9f3122092f146
+Disc 2\01 Tell Me That It Isn't True.flac:51d873b9112b76ef9d53862f209e876a
+Disc 2\02 Leopard-Skin Pill-Box Hat.flac:2610f24d79275333715557207ab90a22
+Disc 2\03 Love Sick.flac:44e06c4459b20c107a075b1d061bcd40
+Disc 2\04 Like A Rolling Stone.flac:69b36fe123956a8f82ed664a4011c69e
+Disc 2\05 Forever Young (acoustic).flac:410b1fd7d1b737f1cc396a40e2ea5da4
+Disc 2\06 Not Fade Away.flac:917f672442f40fadf9719deb845ac409
+Disc 2\07 Blowin' In The Wind (acoustic).flac:5c2525343ff80cfcc0dc99b8e1c069f3
+Disc 2\08 Rainy Day Women # 12 & 35.flac:5eaa4014de78e05275ee2719b110915e
+===================
+===================
+===================
+=== shntool len for: bd00-04-06-c.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.53       45459500 B   ---   --   ---xx   flac  0.5374  01 Roving Gambler (acoustic).flac
+     6:15.66       66305276 B   ---   --   ---xx   flac  0.5230  02 Mr. Tambourine Man (acoustic).flac
+    10:13.08      108152060 B   ---   --   ---xx   flac  0.5212  03 Desolation Row (acoustic).flac
+     4:16.23       45212540 B   ---   --   ---xx   flac  0.5447  04 This World Can't Stand Long (acoustic).flac
+     8:06.06       85744556 B   ---   --   ---xx   flac  0.5712  05 Tangled Up In Blue (acoustic).flac
+     6:32.28       69214700 B   ---   --   ---xx   flac  0.4941  06 Gates Of Eden (acoustic).flac
+     3:08.64       33313772 B   ---   --   ---xx   flac  0.5498  07 Country Pie.flac
+     5:56.44       62901932 B   ---   --   ---xx   flac  0.4953  08 Blind Willie McTell.flac
+     5:54.28       62511500 B   ---   --   ---xx   flac  0.5476  09 Watching The River Flow.flac
+     7:58.39       84410972 B   ---   --   ---xx   flac  0.5572  10 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+    62:39.59      663226808 B                            0.5338  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd00-04-06-c.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:14.37       44892668 B   ---   --   ---xx   flac  0.5143  01 Tell Me That It Isn't True.flac
+     6:22.35       67467164 B   ---   --   ---xx   flac  0.5493  02 Leopard-Skin Pill-Box Hat.flac
+     6:46.25       71677244 B   ---   --   ---xx   flac  0.4977  03 Love Sick.flac
+     8:45.30       92680604 B   ---   --   ---xx   flac  0.5444  04 Like A Rolling Stone.flac
+     8:36.71       91189436 B   ---   --   ---xx   flac  0.5068  05 Forever Young (acoustic).flac
+     4:24.10       46593164 B   ---   --   ---xx   flac  0.5411  06 Not Fade Away.flac
+     6:18.27       66742748 B   ---   --   ---xx   flac  0.4734  07 Blowin' In The Wind (acoustic).flac
+     6:55.27       73269548 B   ---   --   ---xx   flac  0.5305  08 Rainy Day Women # 12 & 35.flac
+    52:23.37      554512576 B                            0.5197  (8 files)
+===================
+===================
+===================

@@ -1,0 +1,10 @@
+Bob Dylan, 7/26/88, Memphis, TN, 3CDR
+
+LB-7841, (62min+59min+53min), BOOTLEG: Mudplex; version "a"; Silver cd's > EAC > WAV> FLAC > ME > YOU, source: Memphis and Dallas 1988, Starplex Amphitheater, Dallas, TX July 28, 1988, Manufacturer / Catalog No., Mudrock / 1/2/3; bittorrent download 08/09; this is a close eac match on d1t2 to bootleg LB-2813 with mostly same digital flaws; this is a sort of close eac match on d3t10 to LB-2079 with same digital flaws; (did not listen to all of this)
+
+drop end of d1t9, between cdrs, end of d2t2, d2t4, d3t3, d2t7, d1t10 2:22
+
+Tracks:, Disc one, Mud Island:, Subterranean Homesick Blues, Absolutely Sweet Marie, Highway 61 Revisited, You're A Big Girl Now, Masters Of War, Stuck Inside Of Mobile, Boots Of Spanish Leather, Hard Rain, Barbara Allen, It Ain't Me Babe, I Shall Be Released, Silvio, Disc two, In The Garden, Like A Rolling Stone, The Times, Forever Young *, Maggie's Farm *, Starplex:, Subterranean Homesick Blues, My Back Pages, Highway 61 Revisited, Every Grain Of Sand, Masters Of War, Stuck Inside Of Mobile, Disc three, Love Minus Zero/No Limit, Hard Rain, Barbara Allen, It Ain't Me Babe, I Shall Be Released, Silvio, Like A Rolling Stone, To Ramona, Blowin' In The Wind, All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

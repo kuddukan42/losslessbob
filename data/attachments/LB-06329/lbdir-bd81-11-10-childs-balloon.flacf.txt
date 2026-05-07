@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-10-childs-balloon.flacf 
+=================== 
+=================== 
+=================== 
+367c3b342a9e63f37668b81eae472667  bd81-11-10-childs-balloon-LB-6329.txt
+aaa25b2d6b1943065dc49566392fcf58  bd81-11-10-childs-balloon.flacf.md5
+9eb443fca61672815a5184e114189741  bd81-11-10-childsballoon-d1t01.flac
+b30a234db2010d02d3d010a6f8b30004  bd81-11-10-childsballoon-d1t02.flac
+c0ae01fc9aa29b14b68f2738035592cf  bd81-11-10-childsballoon-d1t03.flac
+672fe13e40cd5ab74bb54c6cb631dc06  bd81-11-10-childsballoon-d1t04.flac
+9d3b4cf332dae90b86c6cbdfb5c4d246  bd81-11-10-childsballoon-d1t05.flac
+3806f92c3e0fc4690c67c61711b400e2  bd81-11-10-childsballoon-d1t06.flac
+e271c1e9db7252449eb7990190a18de1  bd81-11-10-childsballoon-d1t07.flac
+681d3f09978cfe9f1303bc67ce4867e0  bd81-11-10-childsballoon-d1t08.flac
+8fc0a40b9076833b407d9870ef12a60d  bd81-11-10-childsballoon-d1t09.flac
+6d1783d48944a2cab01ecc5908aef439  bd81-11-10-childsballoon-d1t10.flac
+1ab50392f61939314a0a8cb23480eefa  bd81-11-10-childsballoon-d1t11.flac
+6250673710a1d09a2e32956062805696  bd81-11-10-childsballoon-d1t12.flac
+008db81247cdd2377be54a6ac65c0fc2  bd81-11-10-childsballoon-d1t13.flac
+5873db26771395fc2d4d67bad9eebc7e  bd81-11-10-childsballoon-d2t01.flac
+d52949a44ed2f82344cd68975638faf3  bd81-11-10-childsballoon-d2t02.flac
+ead94b6892728759cd77348b0a18962f  bd81-11-10-childsballoon-d2t03.flac
+2306e0fe6233e97b0b45fc76c6fa205f  bd81-11-10-childsballoon-d2t04.flac
+beddf0bdf9282fc9d2059e4060dd4d89  bd81-11-10-childsballoon-d2t05.flac
+fe3cb223cd3e98cda1e229a024142c21  bd81-11-10-childsballoon-d2t06.flac
+92e251b0214e89020337d68831ced5a0  bd81-11-10-childsballoon-d2t07.flac
+dee1a4f4d6a69602505f22f4e4537787  bd81-11-10-childsballoon-d2t08.flac
+fe379ef6c286a6fcb280e64f7df7ec1a  bd81-11-10-childsballoon-d2t09.flac
+5cedfc232ae0d896ec82d02a7ac0d0f9  bd81-11-10-childsballoon-d2t10.flac
+70857cd43749859d6e0c57213aa03b70  bd81-11-10-childsballoon-d2t11.flac
+2da70caf94e56cc489301db076449fae  bd81-11-10-childsballoon-d2t12.flac
+e8c3ade629cc50cfc441ce250782c86a  bd81-11-10-childsballoon-d2t13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-10-childs-balloon.flacf 
+=================== 
+=================== 
+=================== 
+bd81-11-10-childsballoon-d1t01.flac:38db3311807269baf02b5700adac2beb
+bd81-11-10-childsballoon-d1t02.flac:0029f371c1e54943bd420d6f301aa9cf
+bd81-11-10-childsballoon-d1t03.flac:42c45f592c46d5055e68f06b7452f64c
+bd81-11-10-childsballoon-d1t04.flac:8b08dad4a04d45cba426ec15d7d1ff13
+bd81-11-10-childsballoon-d1t05.flac:7ae25b153d45468852a6c06e82b9a44b
+bd81-11-10-childsballoon-d1t06.flac:63d3e6feaf8e0fd375c2cb56c6aba2d4
+bd81-11-10-childsballoon-d1t07.flac:50789df849341769014cedc497f7f500
+bd81-11-10-childsballoon-d1t08.flac:ae74f9dafadfeaec07263d140f1724ae
+bd81-11-10-childsballoon-d1t09.flac:a29ceae575c786351f69f464e18db2bd
+bd81-11-10-childsballoon-d1t10.flac:5dbe187364ec200552fdd971b4759323
+bd81-11-10-childsballoon-d1t11.flac:3b7ddbb1eff3fb8f95b37f9946b1e3fc
+bd81-11-10-childsballoon-d1t12.flac:996db7269ffa52f2fd7c96da394c9dee
+bd81-11-10-childsballoon-d1t13.flac:975325c45dc835a9fb53bf60bd9b75e1
+bd81-11-10-childsballoon-d2t01.flac:e9209101165da8219fc1fd01b08901fe
+bd81-11-10-childsballoon-d2t02.flac:f30bdcd8e77991ce707de5bec70a7a5b
+bd81-11-10-childsballoon-d2t03.flac:a67899cd4bc123a93f706f708031360d
+bd81-11-10-childsballoon-d2t04.flac:16efa81b41860e1bb9ece888a8814a26
+bd81-11-10-childsballoon-d2t05.flac:0549c88d876081cb9f19d8b863b9a2a6
+bd81-11-10-childsballoon-d2t06.flac:7a33bab34c655c2969fc2c9fa6de2a18
+bd81-11-10-childsballoon-d2t07.flac:0b23f90ed28be5d8bdafae441d3a1b7a
+bd81-11-10-childsballoon-d2t08.flac:2cb1d1c70dac7e8cce023ea89234ad0e
+bd81-11-10-childsballoon-d2t09.flac:78ce6c542c69814dd9e1c2e17baf5776
+bd81-11-10-childsballoon-d2t10.flac:9ac61acaf02f6284148752b5265c590a
+bd81-11-10-childsballoon-d2t11.flac:c7a398b31c98b86485c06db039da1268
+bd81-11-10-childsballoon-d2t12.flac:eac8a30fecb7f7a4c5716759cc375bfd
+bd81-11-10-childsballoon-d2t13.flac:50850f45d90204ef33d7d759c9277fcd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-10-childs-balloon.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:28.46       36799436 B   ---   --   ---xx   flac  0.6170  bd81-11-10-childsballoon-d1t01.flac
+     4:24.37       46656668 B   ---   --   ---xx   flac  0.6103  bd81-11-10-childsballoon-d1t02.flac
+     5:50.70       61904684 B   ---   --   ---xx   flac  0.6314  bd81-11-10-childsballoon-d1t03.flac
+     3:14.54       34348652 B   ---   --   ---xx   flac  0.6293  bd81-11-10-childsballoon-d1t04.flac
+     4:32.45       48086684 B   ---   --   ---xx   flac  0.6077  bd81-11-10-childsballoon-d1t05.flac
+     3:16.08       34593260 B   ---   --   ---xx   flac  0.6288  bd81-11-10-childsballoon-d1t06.flac
+     3:51.60       40889564 B   ---   --   ---xx   flac  0.6237  bd81-11-10-childsballoon-d1t07.flac
+     3:24.33       36063260 B   ---   --   ---xx   flac  0.6112  bd81-11-10-childsballoon-d1t08.flac
+     3:30.63       37192220 B   ---   --   ---xx   flac  0.6204  bd81-11-10-childsballoon-d1t09.flac
+     4:19.65       45840524 B   ---   --   ---xx   flac  0.6129  bd81-11-10-childsballoon-d1t10.flac
+     3:08.42       33262028 B   ---   --   ---xx   flac  0.6265  bd81-11-10-childsballoon-d1t11.flac
+     2:21.59       25011212 B   ---   --   ---xx   flac  0.6219  bd81-11-10-childsballoon-d1t12.flac
+     4:12.08       44471660 B   ---   --   ---xx   flac  0.6202  bd81-11-10-childsballoon-d1t13.flac
+     3:08.50       33280844 B   ---   --   ---xx   flac  0.5874  bd81-11-10-childsballoon-d2t01.flac
+     3:00.60       31893164 B   ---   --   ---xx   flac  0.5809  bd81-11-10-childsballoon-d2t02.flac
+     3:58.42       42082028 B   ---   --   ---xx   flac  0.6184  bd81-11-10-childsballoon-d2t03.flac
+     4:23.63       46541420 B   ---   --   ---xx   flac  0.6191  bd81-11-10-childsballoon-d2t04.flac
+     2:57.52       31345148 B   ---   --   ---xx   flac  0.6188  bd81-11-10-childsballoon-d2t05.flac
+     3:36.07       38118908 B   ---   --   ---xx   flac  0.6111  bd81-11-10-childsballoon-d2t06.flac
+     3:50.49       40687292 B   ---   --   ---xx   flac  0.6312  bd81-11-10-childsballoon-d2t07.flac
+     3:58.70       42147884 B   ---   --   ---xx   flac  0.6278  bd81-11-10-childsballoon-d2t08.flac
+     6:17.17       66542828 B   ---   --   ---xx   flac  0.5983  bd81-11-10-childsballoon-d2t09.flac
+     4:40.47       49502588 B   ---   --   ---xx   flac  0.5950  bd81-11-10-childsballoon-d2t10.flac
+     5:29.00       58035644 B   ---   --   ---xx   flac  0.6301  bd81-11-10-childsballoon-d2t11.flac
+     4:37.72       49032188 B   ---   --   ---xx   flac  0.6244  bd81-11-10-childsballoon-d2t12.flac
+     4:14.26       44866796 B   ---   --   ---xx   flac  0.6187  bd81-11-10-childsballoon-d2t13.flac
+   103:51.20     1099196584 B                            0.6164  (26 files)
+=================== 
+=================== 
+=================== 

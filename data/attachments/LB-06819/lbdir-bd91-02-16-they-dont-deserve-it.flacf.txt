@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-02-16-they-dont-deserve-it.flacf 
+=================== 
+=================== 
+=================== 
+5fa72aca2055cc147ac8bb8709cc3904  bd91-02-16-they-dont-deserve-it-d1t01.flac
+d25427d540e0a306d7151a9732b74f5e  bd91-02-16-they-dont-deserve-it-d1t02.flac
+abc274bee007bf1544f4c116036e3b59  bd91-02-16-they-dont-deserve-it-d1t03.flac
+87a4183028277a60dc999c95e3cad115  bd91-02-16-they-dont-deserve-it-d1t04.flac
+d04cd6ce27128e7b21447ec1a63f4540  bd91-02-16-they-dont-deserve-it-d1t05.flac
+222195d6f626ea1b2aa0fcd502a0cb6d  bd91-02-16-they-dont-deserve-it-d1t06.flac
+fb4a2aa5d0d61019e7e90650d6039802  bd91-02-16-they-dont-deserve-it-d1t07.flac
+fef85a5fae2aa068677adc5d85463e68  bd91-02-16-they-dont-deserve-it-d1t08.flac
+f67e4523ea89b6cc8a97974ed853b9bf  bd91-02-16-they-dont-deserve-it-d1t09.flac
+e2526a2b8ac5bb9277d1c4bbd5cc7e41  bd91-02-16-they-dont-deserve-it-d1t10.flac
+adc7fbbb3046e7aa8a4acbce49d2ab87  bd91-02-16-they-dont-deserve-it-d1t11.flac
+1a890ed736c01dc6fe82a13176bec034  bd91-02-16-they-dont-deserve-it-d1t12.flac
+ea2d7bd0921bc5712a47243cd029376f  bd91-02-16-they-dont-deserve-it-d1t13.flac
+3d5fbe6868d0a7c1010791fb8e970953  bd91-02-16-they-dont-deserve-it-d1t14.flac
+ba5a5587e788dbb345eeced2c0ae57a3  bd91-02-16-they-dont-deserve-it-d1t15.flac
+73305e2a1dca43de5cf6b8d2f44db401  bd91-02-16-they-dont-deserve-it-d1t16.flac
+0f4390f46458c91c5d92cd85f3960f0d  bd91-02-16-they-dont-deserve-it-d1t17.flac
+3f54d3a51603016d16970e715fd6c13a  bd91-02-16-they-dont-deserve-it-d1t18.flac
+5dcfa3df0a0ef8f3ef4af6ade6bdd3d4  bd91-02-16-they-dont-deserve-it.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-02-16-they-dont-deserve-it.flacf 
+=================== 
+=================== 
+=================== 
+bd91-02-16-they-dont-deserve-it-d1t01.flac:0f91df5bdf4909fff3bc7638276423d1
+bd91-02-16-they-dont-deserve-it-d1t02.flac:7afc19488bca9e3de662e88256d50a66
+bd91-02-16-they-dont-deserve-it-d1t03.flac:a4edfd3c32c70f1f089336b31bddb726
+bd91-02-16-they-dont-deserve-it-d1t04.flac:569e66d81ed2fc302d0a5205a3a8631c
+bd91-02-16-they-dont-deserve-it-d1t05.flac:487925c6fbe923b636b58ee7f7430d52
+bd91-02-16-they-dont-deserve-it-d1t06.flac:e8222f0add6b34f5d2038b26693ec5cf
+bd91-02-16-they-dont-deserve-it-d1t07.flac:ddfddaa456d126ef00a36ea866f7b375
+bd91-02-16-they-dont-deserve-it-d1t08.flac:825695efe9d7fd5f28af5c328434f284
+bd91-02-16-they-dont-deserve-it-d1t09.flac:bb9263ddac2a635088e420ac815fd37c
+bd91-02-16-they-dont-deserve-it-d1t10.flac:2a060d2c4ef0a9e4ec63ada12b210aa7
+bd91-02-16-they-dont-deserve-it-d1t11.flac:c2ec1621e1bf113815b6f8cdd87a5dd7
+bd91-02-16-they-dont-deserve-it-d1t12.flac:a60d17d259f2557a993fd3ce340028be
+bd91-02-16-they-dont-deserve-it-d1t13.flac:eb2077980b0b830db2fe8a7df18ac4b2
+bd91-02-16-they-dont-deserve-it-d1t14.flac:ded90ddc2293bcfb655495c44c3441a7
+bd91-02-16-they-dont-deserve-it-d1t15.flac:11adbd1336dc1944345257b306d536ab
+bd91-02-16-they-dont-deserve-it-d1t16.flac:04d226c82f340616a4f453852ed415c8
+bd91-02-16-they-dont-deserve-it-d1t17.flac:7ff28b84a446752643b00823bd16e915
+bd91-02-16-they-dont-deserve-it-d1t18.flac:b60123c1bd4d8c40734182d91944a008
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-16-they-dont-deserve-it.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.37       46303868 B   ---   --   ---xx   flac  0.4621  bd91-02-16-they-dont-deserve-it-d1t01.flac
+     4:01.23       42566540 B   ---   --   ---xx   flac  0.4408  bd91-02-16-they-dont-deserve-it-d1t02.flac
+     3:46.22       39918188 B   ---   --   ---xx   flac  0.4542  bd91-02-16-they-dont-deserve-it-d1t03.flac
+     4:43.08       49940060 B   ---   --   ---xx   flac  0.4352  bd91-02-16-they-dont-deserve-it-d1t04.flac
+     3:03.05       32293004 B   ---   --   ---xx   flac  0.4901  bd91-02-16-they-dont-deserve-it-d1t05.flac
+     4:11.55       44405804 B   ---   --   ---xx   flac  0.4253  bd91-02-16-they-dont-deserve-it-d1t06.flac
+     3:22.15       35668124 B   ---   --   ---xx   flac  0.4153  bd91-02-16-they-dont-deserve-it-d1t07.flac
+     4:54.72       52030988 B   ---   --   ---xx   flac  0.4121  bd91-02-16-they-dont-deserve-it-d1t08.flac
+     3:53.58       41237660 B   ---   --   ---xx   flac  0.4213  bd91-02-16-they-dont-deserve-it-d1t09.flac
+     3:45.00       39690044 B   ---   --   ---xx   flac  0.4717  bd91-02-16-they-dont-deserve-it-d1t10.flac
+     2:29.10       26307164 B   ---   --   ---xx   flac  0.4077  bd91-02-16-they-dont-deserve-it-d1t11.flac
+     4:19.32       45762908 B   ---   --   ---xx   flac  0.4454  bd91-02-16-they-dont-deserve-it-d1t12.flac
+     3:59.70       42324284 B   ---   --   ---xx   flac  0.4204  bd91-02-16-they-dont-deserve-it-d1t13.flac
+     3:32.60       37537964 B   ---   --   ---xx   flac  0.4012  bd91-02-16-they-dont-deserve-it-d1t14.flac
+     2:20.50       24813644 B   ---   --   ---xx   flac  0.4321  bd91-02-16-they-dont-deserve-it-d1t15.flac
+     5:49.25       61622444 B   ---   --   ---xx   flac  0.4808  bd91-02-16-they-dont-deserve-it-d1t16.flac
+     4:41.65       49721324 B   ---   --   ---xx   flac  0.4098  bd91-02-16-they-dont-deserve-it-d1t17.flac
+     4:31.63       47952620 B   ---   --   ---xx   flac  0.4539  bd91-02-16-they-dont-deserve-it-d1t18.flac
+    71:48.70      760096632 B                            0.4388  (18 files)
+=================== 
+=================== 
+=================== 

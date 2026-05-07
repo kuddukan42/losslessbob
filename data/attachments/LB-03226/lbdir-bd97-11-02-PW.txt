@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-11-02-PW 
+=================== 
+=================== 
+=================== 
+8c6773f5a9ba15965e2c5c9b897844a7  bd97-11-02-d1\Bob Dylan - 01.flac
+67bfb7428390bb7d0ad55c197ccb0596  bd97-11-02-d1\Bob Dylan - 02.flac
+39d69e829e4f505407051716bdd2c450  bd97-11-02-d1\Bob Dylan - 03.flac
+c267d75ac2527f2a05410e20b1e64304  bd97-11-02-d1\Bob Dylan - 04.flac
+7b5f95ae02893895c7e15db8196c6dca  bd97-11-02-d1\Bob Dylan - 05.flac
+25436a8326ee6b51fe2702da681721c0  bd97-11-02-d1\Bob Dylan - 06.flac
+f045ebd20ab29d0cd17ca18ad1fc16a8  bd97-11-02-d1\Bob Dylan - 07.flac
+c7c6c3a311fdfe454e08ad4e37442ea6  bd97-11-02-d1\Bob Dylan - 08.flac
+07d3d2a33d3ac38faec31938ac0a2cc9  bd97-11-02-d1\Bob Dylan - 09.flac
+dee3bf2c5fb1a8e5be3659a61ac58c35  bd97-11-02-d1\Bob Dylan - 10.flac
+d7828dabfd924be1a00140a2bd3e3233  bd97-11-02-d1\bd97-11-02-d1-fingerprints.txt
+304ef4215110fd44dd03272d6aa947de  bd97-11-02-d2\Bob Dylan - 01.flac
+02b0af038705685b7c24d8d37d73a7af  bd97-11-02-d2\Bob Dylan - 02.flac
+a3660a8d435ec9f6b950dacfb23961c6  bd97-11-02-d2\Bob Dylan - 03.flac
+ef08aa90cefa973e20dbc561ccd96a37  bd97-11-02-d2\Bob Dylan - 04.flac
+4cc6ff7039c72fa0f5a570cbc6718891  bd97-11-02-d2\Bob Dylan - 05.flac
+217047e2945633868211a0516a00e092  bd97-11-02-d2\Bob Dylan - 06.flac
+9acb93e5684076fd7af37c3c1f3743b2  bd97-11-02-d2\bd97-11-02-d2-fingerprints.txt
+af5341147881f9a08442c8c5cc6522b2  bd97-11-02-PW-LB-3226.txt
+001dba4bc2d55e2f7b3be1ad222656a5  bd97-11-02-PW.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-11-02-PW\bd97-11-02-d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - 01.flac:5b316e23043f89da7afa16e07027c794
+Bob Dylan - 02.flac:a907920900b7b88d56b945d6f2baca70
+Bob Dylan - 03.flac:fe3a4bce5f2024fc851b94322c8579c8
+Bob Dylan - 04.flac:a54b89fb68f71596b7d635efa148ad76
+Bob Dylan - 05.flac:a41437df03e3d6a1de6d98b48e28ebe0
+Bob Dylan - 06.flac:e1dddc6eea66c3009c5850595e12bba8
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-11-02-PW\bd97-11-02-d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - 01.flac:dea807d11078b2acb64660f2f78f12f0
+Bob Dylan - 02.flac:c43b0c85fca9af3a3a5f1f860a1524a4
+Bob Dylan - 03.flac:86b1a7d9f9a0f57db65ff1d17fbda6b7
+Bob Dylan - 04.flac:25400c3c7e92a7ee013773077a1246bc
+Bob Dylan - 05.flac:8c57820bac4b1c6827054af778965028
+Bob Dylan - 06.flac:200edac36c3c45a4254677e7d6ecfeb7
+Bob Dylan - 07.flac:1d1acebe2eef7c2ed0ae844623434bfa
+Bob Dylan - 08.flac:9bf6956bbf21f5c01811cd198225b8e8
+Bob Dylan - 09.flac:b005b91397a5790f23e361fdb1a0a5c9
+Bob Dylan - 10.flac:6bb5b48f5ad9603ac548f3a9a53eb8f2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-11-02-PW\bd97-11-02-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.25       48039644 B   ---   --   ---xx   flac  0.4744  Bob Dylan - 01.flac
+     7:40.17       81184028 B   ---   --   ---xx   flac  0.5876  Bob Dylan - 02.flac
+    10:29.26      111016796 B   ---   --   ---xx   flac  0.6041  Bob Dylan - 03.flac
+     7:54.52       83735948 B   ---   --   ---xx   flac  0.5672  Bob Dylan - 04.flac
+     5:45.57       60992108 B   ---   --   ---xx   flac  0.5457  Bob Dylan - 05.flac
+     5:24.22       57205388 B   ---   --   ---xx   flac  0.6462  Bob Dylan - 06.flac
+    41:46.49      442173912 B                            0.5774  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-11-02-PW\bd97-11-02-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.49       65030492 B   ---   --   ---xx   flac  0.5808  Bob Dylan - 01.flac
+     5:28.68       58019180 B   ---   --   ---xx   flac  0.5612  Bob Dylan - 02.flac
+     6:46.65       71771324 B   ---   --   ---xx   flac  0.5945  Bob Dylan - 03.flac
+     5:44.24       60738092 B   ---   --   ---xx   flac  0.5682  Bob Dylan - 04.flac
+     6:04.52       64331948 B   ---   --   ---xx   flac  0.5959  Bob Dylan - 05.flac
+     7:40.43       81245180 B   ---   --   ---xx   flac  0.6337  Bob Dylan - 06.flac
+     4:05.40       43312124 B   ---   --   ---xx   flac  0.5498  Bob Dylan - 07.flac
+     8:30.50       90081644 B   ---   --   ---xx   flac  0.6191  Bob Dylan - 08.flac
+     3:58.39       42074972 B   ---   --   ---xx   flac  0.4983  Bob Dylan - 09.flac
+     6:59.56       74043356 B   ---   --   ---xx   flac  0.5840  Bob Dylan - 10.flac
+    61:28.36      650648312 B                            0.5857  (10 files)
+=================== 
+=================== 
+=================== 

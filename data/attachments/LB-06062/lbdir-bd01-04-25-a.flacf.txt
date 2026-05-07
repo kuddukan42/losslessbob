@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-04-25-a.flacf 
+=================== 
+=================== 
+=================== 
+ff82a853233256928eecadeca29a4765  Cape Girardeau 2001 Back.Jpg
+6ef9d61ba4097c04568d4b30463f4f11  Cape Girardeau 2001 Front.Jpg
+e32127b66397652f2b9fabc6457457b0  Dylan April 25, 2001.txt
+481e4c409e318eaa465b3aafd0643433  One\01 Oh Babe, It Ain't No Lie.flac
+a0535f1e6c2239447e4cad750f71b653  One\02 To Ramona.flac
+33257374ef6accd7a32c0220483050c5  One\03 It's Alright Ma.flac
+1c7f2b145b2a612ca8060774c3e7200a  One\04 Most Likely You Go Your Way.flac
+620d6179817fce2e33552b50b5408ad3  One\05 In The Garden.flac
+e1be81cd9ae45a889ab5e030a61f09e5  One\06 To Be Alone With You.flac
+1aac10b5e54f29a19094b048af56324a  One\07 A Hard Rain.flac
+b1a6f0fff92f46c72fca8fe39bacc59c  One\08 Tangled Up In Blue.flac
+a9616d6da532342cf7f5f64324006528  One\09 Searching For A Soldier's Grave.flac
+3f95a18bd10e8ce41e982eb5e4da162d  One\10 Maggie's Farm.flac
+91c292391c86afceb695fe6466fb5589  One\11 Cold Irons Bound.flac
+df8a0378458d496d976761403c5c2320  One\fingerprint.ffp
+f4acff9e8ea1b192089fbd840aaa6dc9  One\one.md5
+1538c8cd664e9334b872698f7469be1e  Two\01 Leopard-Skin Pill-Box Hat.flac
+3ed46f601d77d081ae2c00e6871549d4  Two\02 Things Have Changed.flac
+983e1b77cc82a12751be2ea572cc2f48  Two\03 Like A Rolling Stone.flac
+54d12d20538f680e6757c026c9774cf7  Two\04 If Dogs Run Free.flac
+2ffee7231b5f669474046ed21f4388f6  Two\05 All Along The Watchtower.flac
+f685b6f41c77b5a3076793b774111d63  Two\06 Forever Young.flac
+93746770238da1d49a16eaaeda0b5293  Two\07 Highway 61 Revisited.flac
+1f0bcd1108dad7f9f3834004ab715528  Two\08 Blowin' In The Wind.flac
+16b96c87a3ee240ef4a5fe5f412e7898  Two\fingerprint.ffp
+182aeb40413749aca1dcfef83576a523  Two\two.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-04-25-a.flacf\Two 
+=================== 
+=================== 
+=================== 
+01 Leopard-Skin Pill-Box Hat.flac:9d9fba6f360ff6977aa396d2fca3de84
+02 Things Have Changed.flac:15e58b8aed9451d86e283b20e2325b30
+03 Like A Rolling Stone.flac:b35b3e98334dbf2123f2505b50743536
+04 If Dogs Run Free.flac:e99ec8b8e1799f39b6fef35221906321
+05 All Along The Watchtower.flac:a12ff0da27cb7485e6ce3354c2b505cb
+06 Forever Young.flac:31ed16d00571b20cd3f6f67ed71f2d7b
+07 Highway 61 Revisited.flac:d906380ebff488d0e34f3ac44a49c180
+08 Blowin' In The Wind.flac:aa0e42e35e47032374926b3e34cb66d0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-04-25-a.flacf\One 
+=================== 
+=================== 
+=================== 
+01 Oh Babe, It Ain't No Lie.flac:0eb2e33ffe78a18286b8192f6b1c4d4c
+02 To Ramona.flac:f0d0f237b4e4cbd23c5e53036ffc6caa
+03 It's Alright Ma.flac:beb9e31915e8df328aabb45eda9e0ce4
+04 Most Likely You Go Your Way.flac:39596fb5bd2e281689539c192432b478
+05 In The Garden.flac:6729a90dcb5241e117e8babec8f6f0ce
+06 To Be Alone With You.flac:8aadb4499c8daa852f42adc7ec2e201a
+07 A Hard Rain.flac:6278fb062db6deaeb001511759a0fa56
+08 Tangled Up In Blue.flac:bfac91089d6a1aa49de00368477bad8c
+09 Searching For A Soldier's Grave.flac:fc9be633f0811a4d8de698397e09c4dd
+10 Maggie's Farm.flac:b04b6b62d409bf3bace6df445035ef7a
+11 Cold Irons Bound.flac:faa94d27663fea642b38bed0ec39a8cc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-04-25-a.flacf\Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:18.47      109125788 B   ---   --   ---xx   flac  0.5310  01 Leopard-Skin Pill-Box Hat.flac
+     6:10.33       65345660 B   ---   --   ---xx   flac  0.5524  02 Things Have Changed.flac
+     7:10.64       76002572 B   ---   --   ---xx   flac  0.5456  03 Like A Rolling Stone.flac
+     3:58.70       42147884 B   ---   --   ---xx   flac  0.4083  04 If Dogs Run Free.flac
+     4:49.57       51113708 B   ---   --   ---xx   flac  0.5642  05 All Along The Watchtower.flac
+     6:41.11       70762316 B   ---   --   ---xx   flac  0.5159  06 Forever Young.flac
+     6:15.06       66164156 B   ---   --   ---xx   flac  0.5715  07 Highway 61 Revisited.flac
+     5:07.52       54277148 B   ---   --   ---xx   flac  0.4940  08 Blowin' In The Wind.flac
+    50:32.40      534939232 B                            0.5285  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-04-25-a.flacf\One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.23       46270940 B   ---   --   ---xx   flac  0.4235  01 Oh Babe, It Ain't No Lie.flac
+     5:55.31       62694956 B   ---   --   ---xx   flac  0.5593  02 To Ramona.flac
+     8:48.39       93230972 B   ---   --   ---xx   flac  0.5543  03 It's Alright Ma.flac
+     7:59.31       84568556 B   ---   --   ---xx   flac  0.6161  04 Most Likely You Go Your Way.flac
+     6:04.11       64235516 B   ---   --   ---xx   flac  0.5689  05 In The Garden.flac
+     5:40.15       60011324 B   ---   --   ---xx   flac  0.5951  06 To Be Alone With You.flac
+     8:59.69       95241932 B   ---   --   ---xx   flac  0.5405  07 A Hard Rain.flac
+     9:35.15      101465324 B   ---   --   ---xx   flac  0.6127  08 Tangled Up In Blue.flac
+     3:19.24       35160092 B   ---   --   ---xx   flac  0.4606  09 Searching For A Soldier's Grave.flac
+     6:07.22       64790588 B   ---   --   ---xx   flac  0.5738  10 Maggie's Farm.flac
+     6:36.21       69903836 B   ---   --   ---xx   flac  0.5576  11 Cold Irons Bound.flac
+    73:28.01      777574036 B                            0.5616  (11 files)
+=================== 
+=================== 
+=================== 

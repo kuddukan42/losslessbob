@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-10t-Atlantic-City_Stereo 
+=================== 
+=================== 
+=================== 
+3116a73fde62a8354b6f80db976648d2  bd03-05-10t-d1t01.shn
+37ed25d4f8bc56401bd7a56d072382c3  bd03-05-10t-d1t02.shn
+2398dd0a00c99fe618096cf4980a5fc0  bd03-05-10t-d1t03.shn
+982394948c59119c2361cecd2e9d2345  bd03-05-10t-d1t04.shn
+b117f9bedb5f38347b1b838e3f199300  bd03-05-10t-d1t05.shn
+049ef6dbb5844e9ad1c8d7fc922f8841  bd03-05-10t-d1t06.shn
+207c5a37038bf4e92ef1c2e1b3677c50  bd03-05-10t-d1t07.shn
+1d255ab4d1babd6a1630602f14e4ef6d  bd03-05-10t-d1t08.shn
+93c6a14378e73d3f022c15b0a2021fcb  bd03-05-10t-d1t09.shn
+53cc00218b9233ac444568adb4ad5e8c  bd03-05-10t-d1t10.shn
+868ad43b280f0e8cfa0707a4271a3867  bd03-05-10t-d1t11.shn
+aca7740f0ae2f54431459b302b5e350a  bd03-05-10t-d1t12.shn
+0b9069bf8bc789197373c4294b10b852  bd03-05-10t-d2t01.shn
+3f18cf1ba779ed8f091ad6c4283cc3a6  bd03-05-10t-d2t02.shn
+5cf40defc6ca43af6c1c222e4cfe0917  bd03-05-10t-d2t03.shn
+6620dccc01b94611c860ff1d1af8e2d2  bd03-05-10t-stereo.txt
+e6ee411db8405d751066757c8a43c7d0  bd03-05-10ts.txt
+113596eccf12ef1fb08cc7795f8b5849  noname.md5
+357343cfa5864955c82ed8d4d035a63d  tw03-05-10t-d2t04.shn
+ae19cab5e4e7d96f747fac274bb52271  tw03-05-10t-d2t05.shn
+4991ae754f4cff5e838830199290d8f0  tw03-05-10t-d2t06.shn
+c556aa5e3573b7c5e9d5dc3cd08f8667  tw03-05-10t-d2t07.shn
+60eed33cc1c94b3d67b4c68566187712  tw03-05-10t-d2t08.shn
+35ab179191895417fa7ccd7cf2a7ef2a  tw03-05-10t-d2t09.shn
+46f88184c4bd9bca544dc55f5660e7f1  tw03-05-10t-d2t10.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-05-10t-Atlantic-City_Stereo 
+=================== 
+=================== 
+=================== 
+59def0ccbd916cef0c1f7efc321831af  [shntool]  bd03-05-10t-d1t01.wav
+39d66bc9f38a4b7e31b0d27f949a7b92  [shntool]  bd03-05-10t-d1t02.wav
+4f9d2dbd5085a3fdf745c491d6ee652e  [shntool]  bd03-05-10t-d1t03.wav
+94eece38cdfd82541a194fa002b055da  [shntool]  bd03-05-10t-d1t04.wav
+544f6aebb269028af4107a81a350d910  [shntool]  bd03-05-10t-d1t05.wav
+4b4b375241270cd41caecce26ef22120  [shntool]  bd03-05-10t-d1t06.wav
+ed3d812461639ea30af3308f1ef4cacd  [shntool]  bd03-05-10t-d1t07.wav
+feb8649f8d1ef2c822c4639b2a176090  [shntool]  bd03-05-10t-d1t08.wav
+a1ccbc5357826867cc5fa1bbe1b5b309  [shntool]  bd03-05-10t-d1t09.wav
+df1907c729c05a8870781f5d4213c945  [shntool]  bd03-05-10t-d1t10.wav
+fc175f1abe9c835c8446d9dc67339da0  [shntool]  bd03-05-10t-d1t11.wav
+53a9a4a1aeb3212c383a10914445570c  [shntool]  bd03-05-10t-d1t12.wav
+c1e551a91661ffa736bf1332fe8ea01f  [shntool]  bd03-05-10t-d2t01.wav
+c0d9b2a11ade2dfd08a87c4e091303fb  [shntool]  bd03-05-10t-d2t02.wav
+13c14f9f16e38174f61387852a938e13  [shntool]  bd03-05-10t-d2t03.wav
+6d799550cdf714b10ebefec00fa9e6c3  [shntool]  tw03-05-10t-d2t04.wav
+9eab7aed01d8190830ff3baf69125291  [shntool]  tw03-05-10t-d2t05.wav
+2878d14aee4c5e18868e60bcfe202754  [shntool]  tw03-05-10t-d2t06.wav
+7f4126012081079c7bc2468043ce0538  [shntool]  tw03-05-10t-d2t07.wav
+6f8e7c5ba3e7392c5ac4f7c5ac4db4b4  [shntool]  tw03-05-10t-d2t08.wav
+8270b3aa9d595da298ef8bba31641807  [shntool]  tw03-05-10t-d2t09.wav
+85ecc14641fa6090da34ec8b9a725014  [shntool]  tw03-05-10t-d2t10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-10t-Atlantic-City_Stereo 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.35        6961964 B   ---   --   ---xx    shn  0.5234  bd03-05-10t-d1t01.shn
+     5:19.71       56438636 B   ---   --   ---xx    shn  0.6229  bd03-05-10t-d1t02.shn
+     6:23.61       67704716 B   ---   --   ---xx    shn  0.6221  bd03-05-10t-d1t03.shn
+     5:31.14       58421372 B   ---   --   ---xx    shn  0.5786  bd03-05-10t-d1t04.shn
+     4:53.58       51821660 B   ---   --   ---xx    shn  0.5708  bd03-05-10t-d1t05.shn
+     6:52.65       72829724 B   ---   --   ---xx    shn  0.6177  bd03-05-10t-d1t06.shn
+     6:16.03       66333500 B   ---   --   ---xx    shn  0.6676  bd03-05-10t-d1t07.shn
+     9:25.18       99708380 B   ---   --   ---xx    shn  0.5017  bd03-05-10t-d1t08.shn
+     5:38.70       59787884 B   ---   --   ---xx    shn  0.6574  bd03-05-10t-d1t09.shn
+     6:49.42       72246428 B   ---   --   ---xx    shn  0.6434  bd03-05-10t-d1t10.shn
+     6:57.66       73714076 B   ---   --   ---xx    shn  0.6612  bd03-05-10t-d1t11.shn
+     5:32.04       58574252 B   ---   --   ---xx    shn  0.4823  bd03-05-10t-d1t12.shn
+    11:17.39      119514572 B   ---   --   ---xx    shn  0.5888  bd03-05-10t-d2t01.shn
+     6:35.09       69699212 B   ---   --   ---xx    shn  0.6548  bd03-05-10t-d2t02.shn
+     5:31.69       58550732 B   ---   --   ---xx    shn  0.6462  bd03-05-10t-d2t03.shn
+     4:12.56       44584556 B   ---   --   ---xx    shn  0.5428  tw03-05-10t-d2t04.shn
+     4:13.07       44645708 B   ---   --   ---xx    shn  0.5897  tw03-05-10t-d2t05.shn
+     5:26.31       57579356 B   ---   --   ---xx    shn  0.5924  tw03-05-10t-d2t06.shn
+     4:35.38       48599420 B   ---   --   ---xx    shn  0.5591  tw03-05-10t-d2t07.shn
+     4:24.71       46736636 B   ---   --   ---xx    shn  0.5579  tw03-05-10t-d2t08.shn
+     6:03.28       64099100 B   ---   --   ---xx    shn  0.6707  tw03-05-10t-d2t09.shn
+     3:35.40       38020124 B   ---   --   ---xx    shn  0.6011  tw03-05-10t-d2t10.shn
+   126:16.70     1336572008 B                            0.6015  (22 files)
+=================== 
+=================== 
+=================== 

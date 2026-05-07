@@ -1,0 +1,194 @@
+===================
+===================
+===================
+=== August Sept 15th 1978 Disc1.md5
+===================
+===================
+===================
+69058fb58785a91d65ffb1963e3268c2 *01 My Back Pages.wav
+e208e6bd62e3292786db30dbf7d25398 *02 I'm Ready.wav
+bc3ba4126915a27c9910be6c45c21d06 *03 Is Your Love In Vain_.wav
+7d86a355160bcce33d4a2061b196eacb *04 Shelter From The Storm.wav
+399a075c620fd4a8cc3af7a6a2849572 *05 Love Minus Zero_No Limit.wav
+0f39ff4240484c525d26fe37fa6a88dd *06 Tangled Up In Blue.wav
+4f1facaa06049ce27404942fd70332c3 *07 Ballad Of A Thin Man.wav
+a85bd41d5af799938694aa2829a4ceca *08 Maggie's Farm.wav
+71ab7592e2f9d945caa0d25a30133cdc *09 I Don't Believe You.wav
+574e54e2586f9b202634475401030ce0 *10 Like A Rolling Stone.wav
+5f542adfb9fcec2928dd4f4bfe0ccee4 *11 I Shall Be Released.wav
+a386a235bc4b36468e190a124e96ce57 *12 Going, Going, Gone.wav
+17c27bff7195ea9155876af74783ad2f *13 Rainy Day Women # 12 & 35.wav
+2c3af51d00dabcfce2672e0a7558078d *14 True Love Tends To Forget.wav
+c8c2f3eb7530db89de3f45ee3d6533fc *15 It Ain't Me, Babe.wav
+c9423de61d09849d5bb07912e082dab7 *16 Am I Your Stepchild_.wav
+656bb4fdc03b5a3e540b4b12c455567c *17 One More Cup Of Coffee (Valley Be.wav
+===================
+===================
+===================
+=== August Sept 15th 1978 Disc2.md5
+===================
+===================
+===================
+ae40b4588537f5ef23e3ba2d01a3c441 *01 Blowin' In The Wind.wav
+a410b1b620b3876c454dfc3f1875f59d *02 I Want You.wav
+8e0141442bae6a652d07c27581890e42 *03 Senor (Tales Of Yankee Power).wav
+e0a5e33ecc0fd0259729d2f326c8624e *04 Masters Of War.wav
+2312bc392cef95d91b1dc987bd8bc021 *05 Just Like A Woman.wav
+6c53479524be9275f5725a370a40152c *06 Baby Stop Crying.wav
+77cc9704a46c0660ffee8d91d9f92ef8 *07 All Along The Watchtower.wav
+8f31bdb3346b1063570453c9ac4b7d0f *08 All I Really Want To Do.wav
+188d61fe3d6e2246ad1ad3ff68a169df *09 It's Alright, Ma (I'm Only Bleedi.wav
+85e2d5b24b3b333cbade91d733f1cca2 *10 Forever Young.wav
+be789a02cf39ad964914fe1c33e32471 *11 Changing Of The Guards.wav
+===================
+===================
+===================
+=== Disc 2 fingerprint.txt
+===================
+===================
+===================
+Track01.flac:f4105d83b29a8be41a15b50ff61dfbca
+Track02.flac:d43a72d8fbbf4d11af9d97aab23dfaa2
+Track03.flac:8afebbab605b5801fa58b5d1a927e912
+Track04.flac:8d210b5083ecace6ebb2e47d17d4d22d
+Track05.flac:1b17de5f7aeda09ee0a6594b7951c8c5
+Track06.flac:24f38bed32fa1e640df7065eb85be299
+Track07.flac:f603b04441aa242083567a0d7a598100
+Track08.flac:5f5e8a1e4076ceef61acea3807d5e66a
+Track09.flac:1aa26608ca11af53f1064219827ffd8c
+Track10.flac:1122252a2534eb21b267493ccf44b3df
+Track11.flac:dc959df7b70d5a5266e2b3436b20cd87
+===================
+===================
+===================
+=== Disc1 fingerprint.txt
+===================
+===================
+===================
+Track01.flac:3320cf80c22b65aa853b4c8ef08e7b42
+Track02.flac:7b1111b957a4354c7c617fa5c2f07e44
+Track03.flac:a2c976c4db288afced47d061b619a5f9
+Track04.flac:a6f01b19c675e101779dee5fc4c7605b
+Track05.flac:65ff29eda26a89c7b6500d907782980d
+Track06.flac:382067b3cab15df43acce74df3a89d95
+Track07.flac:b17ed926943276f733e304cf4eb9b2de
+Track08.flac:443ab0720b5557596dca07f92b433b68
+Track09.flac:94778f064adb224a42baebaced769915
+Track10.flac:09c67c70fdaeb80f65ccb7b2234bbb3d
+Track11.flac:89be065bd527a3c60471aa6da705ce06
+Track12.flac:4dc71db65f074056624931a4c322e77d
+Track13.flac:af532536900849033b1848b73ab85ea6
+Track14.flac:21b54774a5823530a53d094cf4681797
+Track15.flac:f96cf5615dd905c746c59fbc9020d267
+Track16.flac:ec942c32ffb4be25a6a900b8c02c7d10
+Track17.flac:b3180ec63222a66aa381371f4b95caed
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+Bob Dylan 
+Augusta, ME, USA
+September 15th 1978
+
+I downloaded this originally in January 2006 and having had a request for Blackbushe I thought I'd stay in 1978.
+DIME>WAV>CDRs>WAV>FLAC8>You
+
+(Original files included)
+
+Back on the road after Blackbushe and more live Street Legal - life was good in 1978 !!
+
+
+NOTES : The artwork included (from http://www.dylanimages.com/1978.htm - thank you) matches the track split across the two discs and that's all I can tell you.
+======
+
+
+Disc One
+========
+
+1.  My Back Pages
+2.  I'm Ready
+3.  Is Your Love In Vain?
+4.  Shelter From The Storm
+5.  Love Minus Zero/No Limit
+6.  Tangled Up In Blue
+7.  Ballad Of A Thin Man
+8.  Maggie's Farm
+9.  I Don't Believe You
+10. Like A Rolling Stone
+11. I Shall Be Released
+12. Going, Going, Gone
+13. Rainy Day Women #12 & 35
+14. True Love Tends To Forget
+15. It Ain't Me, Babe
+16. Am I Your Stepchild?
+17. One More Cup Of Coffee (Valley Below)
+
+Disc 2:
+
+1.  Blowin' In The Wind
+2.  I Want You
+3.  Señor (Tales Of Yankee Power)
+4.  Masters Of War
+5.  Just Like A Woman
+6.  Baby Stop Crying
+7.  All Along The Watchtower
+8.  All I Really Want To Do
+9.  It's Alright, Ma (I'm Only Bleeding)
+10. Forever Young
+11. Changing Of The Guards
+
+
+
+Enjoy !!
+
+===================
+===================
+===================
+=== setlist.txt
+===================
+===================
+===================
+Augusta
+Maine
+15 September 1978
+
+Disk 1:
+
+1. My Back Pages
+2. I'm Ready
+3. Is Your Love In Vain?
+4. Shelter From The Storm
+5. Love Minus Zero/No Limit
+6. Tangled Up In Blue
+7. Ballad Of A Thin Man
+8. Maggie's Farm
+9. I Don't Believe You
+10. Like A Rolling Stone
+11. I Shall Be Released
+12. Going, Going, Gone
+13. Rainy Day Women #12 & 35
+14. True Love Tends To Forget
+15. It Ain't Me, Babe
+16. Am I Your Stepchild?
+17. One More Cup Of Coffee (Valley Below)
+
+Disc 2:
+
+1. Blowin' In The Wind
+2. I Want You
+3. Señor (Tales Of Yankee Power)
+4. Masters Of War
+5. Just Like A Woman
+6. Baby Stop Crying
+7. All Along The Watchtower
+8. All I Really Want To Do
+9. It's Alright, Ma (I'm Only Bleeding)
+10. Forever Young
+11. Changing Of The Guards
+
+===================
+===================
+===================

@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-08-20-tyrus-schoeps 
+=================== 
+=================== 
+=================== 
+a9a37d09d62ba3ec694ba9e60364f01d  bd01-08-20-tyrus-schoeps.txt
+0246ac61c49c849314c2707ae7af72b3  bd01-08-20.md5
+924e0eee5c837b905536a085f98dc555  bd01-08-20.txt
+bba35263228e4c9a6f069611d082f1e9  bd01-08-20d1t01.shn
+0d45f0e546d41e6511e44f22d098ed6d  bd01-08-20d1t02.shn
+674fcbbfde9f91c89f7222769352aa90  bd01-08-20d1t03.shn
+ddf6f7e932917ce3261dd83e3d727c83  bd01-08-20d1t04.shn
+dbd4d965079e35aa8ed42763ebdefc9b  bd01-08-20d1t05.shn
+c34da572f09d6a47e8ae59e5de9651bb  bd01-08-20d1t06.shn
+511403787f555db4bc7971ace80f5518  bd01-08-20d1t07.shn
+1907ef0688a31cf4bfa334f24dd0d2a3  bd01-08-20d1t08.shn
+bd80904b67ece7d3103bcb8dd79f7e52  bd01-08-20d1t09.shn
+9a0d845534d8ab7a190c91acb3be9627  bd01-08-20d1t10.shn
+21163d3e4834476b903baec7c028f780  bd01-08-20d2t01.shn
+07d6f53258af1491e0f5ddf4ff646b2e  bd01-08-20d2t02.shn
+20204147cbb72c74dfc54c93cbdc8276  bd01-08-20d2t03.shn
+ab3d32fc69e1668fdffc66b3bf296ac9  bd01-08-20d2t04.shn
+a55e91f4d0ca973d93b7275a8331fe1f  bd01-08-20d2t05.shn
+176f4a39b6db5a0868f5b6e6d881cb48  bd01-08-20d2t06.shn
+1b5ed1f0002a5803520eca82c29d6d19  bd01-08-20d2t07.shn
+121e16b38ee9af8cebca02e0b001c292  bd01-08-20d2t08.shn
+2ca62d88b6aebcaeadba07263a29f74c  bd01-08-20d2t09.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-08-20-tyrus-schoeps 
+=================== 
+=================== 
+=================== 
+967da4ba436d6e81acd3cae0f71d9001  [shntool]  bd01-08-20d1t01.wav
+e4c40db1a8d755a494fd30be95b5ee51  [shntool]  bd01-08-20d1t02.wav
+1982793ac518bb1d8df7101852ae4934  [shntool]  bd01-08-20d1t03.wav
+5e326062b1492be853d1307b43cb2174  [shntool]  bd01-08-20d1t04.wav
+ff8ead92b2e4aa7dd2e32a0f62048b4e  [shntool]  bd01-08-20d1t05.wav
+909da3d2ee1bcbdbb7affa8f21614618  [shntool]  bd01-08-20d1t06.wav
+e43bc8c257b6f1696dc32073f39d6216  [shntool]  bd01-08-20d1t07.wav
+8cb22c74d55856704aa35f496a2c652e  [shntool]  bd01-08-20d1t08.wav
+60326d249f3b52f42e132219b025fb1a  [shntool]  bd01-08-20d1t09.wav
+40145da9e4e35249ef9d639577d82a4c  [shntool]  bd01-08-20d1t10.wav
+bc3a7c4565802cd1481cb629f77d498b  [shntool]  bd01-08-20d2t01.wav
+0bb5ca8a5bb0eba0e3535b03e0245f68  [shntool]  bd01-08-20d2t02.wav
+e6f9eeb10be83c598f2a91b44e47f7cd  [shntool]  bd01-08-20d2t03.wav
+2e4ca208c2d66c11897128ca759356da  [shntool]  bd01-08-20d2t04.wav
+8faa3b64b97e55eda00e0846763fc8ed  [shntool]  bd01-08-20d2t05.wav
+3d321dd3c6aa4ec4bd2d934ef7eda794  [shntool]  bd01-08-20d2t06.wav
+d64169fc50351568926f8aa0589c3f46  [shntool]  bd01-08-20d2t07.wav
+6822465dbed99aac5e51547538e1e4e3  [shntool]  bd01-08-20d2t08.wav
+cdedf8e428f98523949e86487472e454  [shntool]  bd01-08-20d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-20-tyrus-schoeps 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.56       43702556 B   ---   --   -----    wav  1.0000  bd01-08-20d1t01.wav
+     6:07.19       64783532 B   ---   --   -----    wav  1.0000  bd01-08-20d1t02.wav
+     8:18.11       87873116 B   ---   --   -----    wav  1.0000  bd01-08-20d1t03.wav
+     3:31.63       37368620 B   ---   --   -----    wav  1.0000  bd01-08-20d1t04.wav
+     6:00.19       63548732 B   ---   --   -----    wav  1.0000  bd01-08-20d1t05.wav
+     7:00.49       74203292 B   ---   --   -----    wav  1.0000  bd01-08-20d1t06.wav
+     6:41.21       70785836 B   ---   --   -----    wav  1.0000  bd01-08-20d1t07.wav
+     9:00.52       95378348 B   ---   --   -----    wav  1.0000  bd01-08-20d1t08.wav
+     7:56.33       84044060 B   ---   --   -----    wav  1.0000  bd01-08-20d1t09.wav
+     8:41.19       91949132 B   ---   --   -----    wav  1.0000  bd01-08-20d1t10.wav
+     7:00.63       74236220 B   ---   --   -----    wav  1.0000  bd01-08-20d2t01.wav
+     6:32.01       69151196 B   ---   --   -----    wav  1.0000  bd01-08-20d2t02.wav
+     4:50.02       51160748 B   ---   --   -----    wav  1.0000  bd01-08-20d2t03.wav
+     6:24.42       67836428 B   ---   --   -----    wav  1.0000  bd01-08-20d2t04.wav
+     7:22.23       78022940 B   ---   --   -----    wav  1.0000  bd01-08-20d2t05.wav
+     6:04.03       64216700 B   ---   --   -----    wav  1.0000  bd01-08-20d2t06.wav
+     8:17.41       87767276 B   ---   --   -----    wav  1.0000  bd01-08-20d2t07.wav
+     4:08.41       43843676 B   ---   --   -----    wav  1.0000  bd01-08-20d2t08.wav
+     5:09.22       54559388 B   ---   --   -----    wav  1.0000  bd01-08-20d2t09.wav
+   123:14.55     1304431796 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

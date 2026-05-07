@@ -1,0 +1,432 @@
+81731190f84487b7b5f23336658be583 *General Info.txt
+918544f53e71367b8ede8aaa48d695bf *Tracks\001 Hangknot, Slipknot 1961-05-06 Branford.flac
+6f2e664062af990631098b17df874db5 *Tracks\002 Talking Columbia 1961-05-06 Branford.flac
+e9e960446f125a99db3ec8ba4bd52876 *Tracks\003 Talking Fish Blues 1961-05-06 Branford.flac
+29cc04909ee29853938c1ad0c7397041 *Tracks\004 Mean Old Southern Railroad 1961-07-29 New York.flac
+5eaa18be873d5419738c9264475bca05 *Tracks\005 Acne 1961-07-29 New York.flac
+b075bacc8d6ec97b9abfb7904747fe16 *Tracks\006 Handsome Molly 1961-07-29 New York.flac
+d6a24017043a07bc9641bb6b7818b0cb *Tracks\007 Poor Lazerus 1961-07-29 New York.flac
+69b8fd93b2bc1372bcd4461a5fd62810 *Tracks\008 Naomi Wise 1961-08-05 New York.flac
+522521f14c3513074d7a7fdc92f667f8 *Tracks\009 Ranger's Command 1961-09 New York.flac
+8c95e27d4bcec91c81199cebb622707e *Tracks\010 Railroading On The Great Divide 1961-09 New York.flac
+512343d73d75d9de268266cb1d8d0f0c *Tracks\011 Car, Car & Dave Van Ronk1961-09-06 New York.flac
+5472e94438ae27f51c4ce6aac8db4978 *Tracks\012 He Was A Friend Of Mine 1961-09-06 New York.flac
+609cd66e79dd7adb19b1f82562d15a00 *Tracks\013 Pretty Polly 1961-09-06 New York.flac
+76b1eee3501c57d64635364d90a7b6a1 *Tracks\014 The Girl I Left Behind 1961-10-29 New York Oscar Brand’s Folk Song Festival.flac
+69eff8f6d27390e94a80d14f8b941010 *Tracks\015 1913 Massacre 1961-11-04 New York.flac
+dac2f4ec17cbe54993ceb47bb463a838 *Tracks\016 Backwater Blues 1961-11-04 New York.flac
+6db53d9579cde59c221fb159ec149136 *Tracks\017 Black Cross 1961-11-04 New York.flac
+346a6b3eb785a24b9fa7703f64fdea67 *Tracks\018 Fixin' To Die 1961-11-04 New York.flac
+04d21d7bf48e5d27cda44aeb02cb13f4 *Tracks\019 Freight Train Blues 1961-11-04 New York.flac
+1a8d6e61ec3098f7d343b5bdd96c6193 *Tracks\020 Gospel Plow 1961-11-04 New York.flac
+4111b17fa564e0dec236dbb0fd443dbe *Tracks\021 Pretty Peggy-O 1961-11-04 New York.flac
+0c832ba38fe60186dfb5b420ce74b6e6 *Tracks\022 Talking Merchant Marine 1961-11-04 New York.flac
+303551844bb333e6b1b8d11b8817ab2d *Tracks\023 Baby Please Don't Go 1962-01-13 Folksingers Choice.flac
+aa267ebc6d0a365b5faa13ab1f770fcb *Tracks\024 (I Heard That) Lonesome Whistle 1962-03 Folksingerschoice Pacifa Radio Archive WBAI.flac
+4ff8e3aac25e7c73d2f615feb917ba42 *Tracks\025 Hard Travelin' 1962-03 Folksingerschoice Pacifa Radio Archive WBAI.flac
+514f4b02312fa6e04bc4bb5a8768006b *Tracks\026 It Makes A Long Time Man Feel Bad 1962-03 Folksingerschoice Pacifa Radio Archive WBAI.flac
+10e4509601fc9ffb206aabe9ad966cc8 *Tracks\027 Smokestack Lightning 1962-03 Folksingerschoice Pacifa Radio Archive WBAI.flac
+b252c6c65dfefc4396907eec5b8e31b9 *Tracks\028 Stealin' 1962-03 Folksingerschoice Pacifa Radio Archive WBAI.flac
+d20c83977cfbb9ad61389869947a5e53 *Tracks\029 Roll On John 1962-03 Folksingerschoice Pacifa Radio Archive WBAI.flac
+607f249bc1403f17f5f1178d0979a8ab *Tracks\030 Deep Elem Blues 1962-04-16 New York.flac
+0e087dc1da0a8e0944c05a17d2a8d352 *Tracks\031 Honey, Just Allow Me One More Chance 1962-04-16 New York.flac
+ec68f6af9092b8a59a405bacececc8b0 *Tracks\032 Hiram Hubbard 1962-07-02 Montreal.flac
+dc03a4d3b6693f5a696bd047a58b9922 *Tracks\033 Muleskinner Blues 1962-07-02 Montreal.flac
+ebba5eaaac2d2189e8c283f446e514de *Tracks\034 Ramblin' On My Mind 1962-07-02 Montreal.flac
+06d8d6b50e659d730a8b419ec4fb4504 *Tracks\035 Two Trains Runnin' 1962-07-02 Montreal.flac
+abc5bc4b0983def4b248e7d97ee9b006 *Tracks\036 Make Me A Pallet On Your Floor 1962-10 New York City Billy Faier Radio Show.flac
+60a6fcd09ebbb22e4e994f490b178b80 *Tracks\037 Ain´t No More Cane (On The Brazo) 1962-10-15 New York.flac
+d18f980d071493dfba702b725a1f1a03 *Tracks\038 Barbara Allen 1962-10-15 New York.flac
+5b6a6f46ce541046f1ed74a4f34a5e40 *Tracks\039 Cocaine 1962-10-15 New York.flac
+c9865250396af345f09bd398b3c100ce *Tracks\040 Kindhearted Woman Blues 1962-10-15 New York.flac
+3e4880d092e789175eb59070a36a9861 *Tracks\041 Moonshiner 1962-10-15 New York.flac
+4438f5965f81a3bf08a61385b9a52f83 *Tracks\042 Motherless Children 1962-10-15 New York.flac
+667d1b550850a1144da544c3627fe865 *Tracks\043 No More Auction Block 1962-10-15 New York.flac
+7e81ceb87755e5ddb83933825ec8d653 *Tracks\044 The Cuckoo Is A Pretty Bird 1962-10-15 New York.flac
+8a7c38e1dd13ad9ad81922ac0877eaad *Tracks\045 West Texas 1962-10-15 New York.flac
+5e20f1abc8f2dac4383acdad3b8790de *Tracks\046 Hang Me Oh Hang Me 1962-12-30 London.flac
+a3048cde2e426f755c1227a7c5ce9aea *Tracks\047 Highway 51 1963-04-12 New York.flac
+a899cc5f3747854a3a3c641c46290a01 *Tracks\048 Glory, Glory & Eric von Schmidt & Overvoice 1963-04-21 Cambridge fragment.flac
+0a4add3fca4041015e931d4baa81fe34 *Tracks\049 We Shall Overcome & Freedom Singers 1963-07-26 Newport.flac
+b99788eb07dcf3abff22be7849c9fa8a *Tracks\050 Troubled And I Don't Know Why & Joan Baez 1963-08-17 New York.flac
+42249ada6f47752da8cc982bf56e8ee2 *Tracks\051 Keep Your Eyes On The Prize 1963-08-28  Washington.flac
+924c1fc31294b475e0b527ccf91c9002 *Tracks\052 Silver Dagger & Joan Baez 1964-10-31 New York.flac
+c52816fa24355de66b95fd07b3b7727e *Tracks\053 Baby Let Me Follow You Down 1966-05-17 Manchester.flac
+4f65085acdc39692db17067a48f0598c *Tracks\054 This Train Is Bound For Glory & Arlo Guthrie 1968-01-20 New York.flac
+5a19c9769300d5a96cd26aeac19225f2 *Tracks\055 Dear Mrs Roosevelt 1968-01-20 New York.flac
+94ea8a8f35bc31e91db2b07de978e1eb *Tracks\056 I Ain't Got No Home 1968-01-20 New York.flac
+d69820fe5e65fc48288b61b894df8a74 *Tracks\057 The Grand Coulee Dam 1968-01-20 New York.flac
+08c5d540a8f796cb9b36ca52e2c789b8 *Tracks\058 This land Is Your Land & Odetta, Arlo Guthrie and Company 1968-01-20 New York.flac
+db4ed28f27dbdf6e0731426b689e4248 *Tracks\059 East Virginia Blues & Earl Scruggs His Family 1970-05-17 Carmel Earl Scruggs His Family and Friends.flac
+cadd5c47d59bb386601b457d0f07d791 *Tracks\060 A Dream & Allan Ginsberg FREETIME On PBS-TV 1971-10-30 New York.flac
+bc6d5f103c43d274fd367c1f7d6a1758 *Tracks\061 Mantra FREETIME & Allan Ginsberg On PBS-TV 1971-10-30 New York.flac
+a5d54311358897f9dceb5ee977371145 *Tracks\062 Nurse's Song FREETIME & Allan Ginsberg On PBS-TV 1971-10-30 New York.flac
+845fdc9f6877f509ce86d4a7402f4cea *Tracks\063 September On Jessore Road & Allan Ginsberg FREETIME On PBS-TV 1971-10-30  New York.flac
+e8a67680b142c09cbc459635a7247495 *Tracks\064 Holly Cow & The Band 1974-01-03 Chicago.flac
+be09bd5c0184c3c9e4a0f8c9fc001171 *Tracks\065 King Harvest (Has Surely Come) & The Band 1974-01-03 Chicago.flac
+10643bd1747e11d3e05dcafee671e0e9 *Tracks\066 Share Your Love With Me & The Band 1974-01-03 Chicago.flac
+67f31592b86e9b789d96bce16b9538e4 *Tracks\067 Stage Fright & The Band 1974-01-03 Chicago.flac
+a54c23d6b68a27842e79dfbf84442e27 *Tracks\068 The Night They Drove Old Dixie Down & The Band 1974-01-03 Chicago.flac
+3fd22888715a2bda3defaccd2afc35e5 *Tracks\069 The Weight & The Band 1974-01-03 Chicago.flac
+88769ca339fd207e56ed26933ec713a1 *Tracks\070 Up On Cripple Creek & The Band 1974-01-03 Chicago.flac
+4d21932d84ca1cb72bce07150e2eee99 *Tracks\071 Ain't That A Lot Of Love 1975-03-23 San Francisco.flac
+cd8cd49c28b4a92a60d8900c101a0046 *Tracks\072 Are You Ready For The Country 1975-03-23 San Francisco.flac
+25773993dcd5e990d816584b2e71e808 *Tracks\073 Helpless 1975-03-23 San Francisco.flac
+f1d5b2db72a36f35baaf3e42947c7696 *Tracks\074 Looking For A Love 1975-03-23 San Francisco.flac
+3cd20291906107c6c0ffb785d3f19d1a *Tracks\075 Loving You Is Sweeter Than Ever 1975-03-23 San Francisco.flac
+c0afa831c5598df17d78a3d07e5477a4 *Tracks\076 How Long Blues 1975-07-03 New York.flac
+026ff0f8f1399a79761d6906f3595029 *Tracks\077 Pretty Boy Floyd 1975-07-03 New York.flac
+86b24e4deb23fca22d5ee8cf74131107 *Tracks\078 Never Let Me Go & Joan Baez 1975-10-31 Plymouth.flac
+39e102b6aad249a6d79189cfcf387ad3 *Tracks\079 The Water Is Wide & Joan Baez 1975-11-04 Providence.flac
+c62866b638ebb451343d1623c4b3e910 *Tracks\080 Dark As A Dungeon & Joan Baez 1975-11-13 New Haven.flac
+ab3d70f39b4f5330b18ec1916b460fb2 *Tracks\081 Ride 'Em Jewboy 1976-01-25 Houston.flac
+11e5c88e7e7d8a88587419ac619e1cbd *Tracks\082 Weary Blues From Waitin' 1976-04-18 Lakeland.flac
+ac0f0600d6143b8d28c3139ef524bc85 *Tracks\083 Wild Mountain Thyme & Joan Baez 1976-04-20 St. Petersburg.flac
+b60f7b5b7da3533bf93323ce5084650d *Tracks\084 Dink's Song & Joan Baez 1976-04-25 Gainesville.flac
+f370a20b2a28ad80d242883d7d3ee138 *Tracks\085 Silver Mantis & T. Bone Burnett  1976-05-08 Houston.flac
+cfa89801666b14bef8f772755dd8c1aa *Tracks\086 Spanish Is The Loving Tongue 1976-05-11 San Antonio.flac
+f722e62bc66fba1d9708ca622d85d458 *Tracks\087 Deportees & Joan Baez 1976-05-16 Fort Worth.flac
+378b1e5ec8f9fd8cdd5f99c93e6eb6b6 *Tracks\088 Railroad Boy & Joan Baez 1976-05-16 Fort Worth.flac
+31fd9017695c8c8bd46623c3f724947f *Tracks\089 Vincent van Gogh  & Bob Neuwirth 1976-05-16 Fort Worth.flac
+bec855c6fd5d38d261776a2fac36d7ea *Tracks\090 Gotta Travel On 1976-05-16 Fort Worth.flac
+0014ddba90538670f413d51bd5ec7f6a *Tracks\091 Lonesome Bedroom 1978-02-20 Tokyo.flac
+5f96247846f9329c9bc36d500aed91b5 *Tracks\092 Repossession Blues 1978-02-24 Osaka.flac
+79d959d123f22b8903cc348f48621e8c *Tracks\093 I'm A Steady Rollin' Man 1978-03-22 Melbourne.flac
+eb520862055127f68b091b6bb69ec307 *Tracks\094 She's Love Crazy 1978-07-08 Paris.flac
+0d28042b1f9d6b567af48aa8e5a41104 *Tracks\095 Love Her With A Feeling 1978-07-15 Camberly.flac
+80a7c923eecc742dce200614c3694520 *Tracks\096 A Change Is Gonna Come & Carolyn Dennis 1978-07-15 Camberly.flac
+0203cc9fed59a1752776473b9c8b04c2 *Tracks\097 The Long And Winding Road & Jo Ann Harris 1978-07-15 Camberly.flac
+b05b07ae78ba1aa4c340c2062d76a673 *Tracks\098 I'm Ready 1978-09-24 Binghamton.flac
+27b9b361b10ab0d8a485e2f7b2e00e0d *Tracks\099 I Will Sing, I Will Sing 1980-05-18-Akron.flac
+e8e931f8cda43aca5a3ee53467b7b411 *Tracks\100 A Couple More Years 1980-11-17 San Franciso.flac
+2ded047c5e087f8d5ac5c101739707d1 *Tracks\101 Rise Again 1980-11-18 San Francisco.flac
+37f19bfd02251cc1e0032d572b12ae41 *Tracks\102 Nobody's Fault But Mine 1980-11-19 San Francisco.flac
+0374108401a526349628d4ee1164572f *Tracks\103 Mary From The Wild Moor 1980-11-22 San Francisco.flac
+df5e3f786bc7fc367ff34120a90a7867 *Tracks\104 We Just Disagree 1980-11-22 San Francisco.flac
+4143598d41406893ca7ff7ed8c60373d *Tracks\105 Fever 1980-11-30 Seattle.flac
+0f00131d2f9059c103ef36b6989ff54e *Tracks\106 Till I Get It Right 1981-06-28  London.flac
+00983f3bb958823cc28eab2b75aa47d6 *Tracks\107 Abraham, Martin And John 1981-06-30 London.flac
+b973167a539060253c55996c00ea3f69 *Tracks\108 Here Comes The Sun (fragment) 1981-07-01 London.flac
+d29f92dc7a99d9aecb94aa6ed68b463a *Tracks\109 Let's Begin 1981-07-17 Loreley.flac
+050ce67ba08ad5705c7a6afdf23877b7 *Tracks\110 Saved By The Grace Of Your Love 1981-07-17 Loreley.flac
+ec039055639a8ec94edde6c0e8371af7 *Tracks\111 The Rose 1981-10-16 Milwaukee.flac
+9a2d6f561ec381decf30a6572d68c682 *Tracks\112 Gypsy Blood & Steve Ripley 1981-10-16 Milwaukee.flac
+e7e463e3218b4e4cd8aeeee21fae4c40 *Tracks\113 Just A Little Bit 1981-10-17 Milwaukee.flac
+d96a9cd85560e438881b16202836da52 *Tracks\114 It's All In The Game 1981-10-21 Boston.flac
+7cae8b088abda0579b12b9b9a7a8797e *Tracks\115 No Money Down-Dylan on sax 1981-10-21 Boston.flac
+1aefc24d5459e61b1dc9426328902ad0 *Tracks\116 Gamblin' Man 1981-10-25 Bethlehem.flac
+220261d04e1f28415e96f85754417ea6 *Tracks\117 Let It Be Me 1981-10-29 Toronto.flac
+bae386e171e3167ce01c96092757b26f *Tracks\118 A Pirate Looks At Forty  & Joan Baez 1982-06-06 Pasadena.flac
+34aafac43155075a56925871dc35f93f *Tracks\119 Blues Stay Away From Me 1983-02-16  New York.flac
+02148a4853bc5cecbbe2bcc2cf958752 *Tracks\120 Going Down 1983-02-16 New York.flac
+864637d1abd3c053fd35c62db3463fc6 *Tracks\121 Your Cheatin' Heart 1983-02-16 New York.flac
+d45156e3330b5fc771d1c82358935ab1 *Tracks\122 Don't Start Me Talkin' 1984-03-22 New York Letterman Show.flac
+937662723c6b6447b09cff83caae3bed *Tracks\123 Why Do I Have To Choose 1984-06-03 Munchen.flac
+c19c9db56fdd701c42e9e7a7e43cfd9b *Tracks\124 Enough Is Enough 1984-06-26 Madrid.flac
+a92d5a469c5877b0267260744627148a *Tracks\125 Tupelo Honey & Van Morrison 1984-07-08 Slane.flac
+f291c8eff8132f17a246ea5eeba4a43c *Tracks\126 We Are The World 1985-07-13  Philadelphia.flac
+c6a8afd6be3d46f7443f2714c30e3bd3 *Tracks\127 Shake 1985-09-22 Champaign Farm Aid.flac
+acd535799b9b9772d77e05ef48830fa4 *Tracks\128 The Bells Of Freedom 1986-01-20  Washington.flac
+60c57206b015e008ee8dd8c3fbb32012 *Tracks\129 Across The Borderline 1986-02-05 Wellington.flac
+aa7b6693943a74da51439460aa986c36 *Tracks\130 Train Of Pain 1986-02-07  Auckland.flac
+8944fb4dd697c02f98c54791860a9be4 *Tracks\131 Baby, Got To Go 1986-02-11 Sydney.flac
+5e3355f8b243c3801af17ed684d73908 *Tracks\132 House Of The Risin' Sun 1986-02-11 Sydney.flac
+9f9b0eedad7f095b8553fcc5145eac95 *Tracks\133 Happy Birthday 1986-02-12 Sydney.flac
+e6c6843c3f831619b32bc3326b0db3df *Tracks\134 I Forgot More Than You'll Ever Know 1986-02-24 Sydney.flac
+b5413aab6837ec5465d11c34620958f3 *Tracks\135 I'm Moving On 1986-02-24 Sydney.flac
+d080a2bada8c3468c5d30d853c509b0c *Tracks\136 Uranium Rock 1986-02-24 Sydney.flac
+5884cf89772591cf8c09d7ad7d88386f *Tracks\137 Breakdown 1986-03-01 Brisbane.flac
+683d381d1b1513e1f50d55a087b5bfc4 *Tracks\138 Sukiyaki (Ue o muite aruko) 1986-03-06 Osaka.flac
+0abdb03b449ea0970c6e119cf637fd45 *Tracks\139 That Lucky Old Sun 1986-03-06 Osaka.flac
+4b439803c4e0261e27235663c7d32895 *Tracks\140 Justine 1986-03-10 Tokyo.flac
+530448aafb0292175e5cb6b51d996046 *Tracks\141 Unchain My Heart 1986-06-09 San Diego.flac
+707b0e0fcdd02d68690c98158dbf31cd *Tracks\142 All My Tomorrows 1986-06-13 Clarkston.flac
+e68719edac0d7f650bbc4ed6fc425f40 *Tracks\143 Rock With Me Baby 1986-06-22 Dallas.flac
+47bdcc129cbbe576794e4dabe88fbba2 *Tracks\144 Let The Good Times Roll 1986-06-27 East Troy.flac
+23d8e3b2781dadc99d07e473d6aac959 *Tracks\145 Red Cadillac And A Black Mustache 1986-06-27 East Troy.flac
+7689be9fce806b57f184852f4d66cda5 *Tracks\146 I Still Miss Someone 1986-07-01 Clarkston.flac
+34dec583c3e94156d20ccef6049b1bb4 *Tracks\147 Little Red Rooster & Grateful Dead 1986-07-02 Akron.flac
+cd4734fe9d29176a0778a3f4a0b7e19d *Tracks\148 Lonesome Town 1986-07-04 Buffalo.flac
+74693b173a23a08a85ba07a09808dd75 *Tracks\149 We Had It All 1986-07-04 Buffalo.flac
+56eb4fcda9e519da4b12b4dbca8da306 *Tracks\150 Kansas City 1986-07-24 Bonner Springs.flac
+f95374c94503b29f73bb3fd6113efae9 *Tracks\151 So Long, Good Luck And Goodbye 1986-07-31 Tacoma.flac
+f58b4754002946093077856eda1566f2 *Tracks\152 Bye Bye Johnny 1986-07-31 Tacoma.flac
+593065831af79e44abf9293c45a7f61b *Tracks\153 Good Rockin' Mama & John Lee Hooker 1986-08-05 Mountain View.flac
+5ba56b4be2457b68a3a1810b88ace2f6 *Tracks\154 Shake A Hand 1986-08-06 Paso Robles.flac
+9fccb35f72fffc94140f224caa753ea1 *Tracks\155 Bacon Fat & The Silver Wilburys 1987-02-19  Hollywood.flac
+9df7db0cdd593242ef3974f207c7fd30 *Tracks\156 Dizzy Miss Lizzy & The Silver Wilburys 1987-02-19  Hollywood.flac
+16d457e86f59457879ca798c30f79dba *Tracks\157 Honey Don't & The Silver Wilburys  1987-02-19 Hollywood.flac
+c56f92b34bf9bb836f4565af81771c41 *Tracks\158 I’m Your Crosscut Saw & The Silver Wilburys 1987-02-19 Hollywood.flac
+d4f24f3d60f4d8b282909b77e5956039 *Tracks\159 In The Midnight Hour & The Silver Wilburys  1987-02-19 Hollywood.flac
+efe02b3a4748de24724f42ab67987558 *Tracks\160 Knock On Wood  & The Silver Wilburys 1987-02-19 Hollywood.flac
+50a95ea29b89fd336bd9c7604579ab03 *Tracks\161 Lucille & The Silver Wilburys 1987-02-19 Hollywood.flac
+51b0442670481bbdf7e4d525ebe8828a *Tracks\162 Matchbox & The Silver Wilburys 1987-02-19  Hollywood.flac
+c384f0f5358042a74103498ff1f41a18 *Tracks\163 Johnny B. Goode & The Silver Wilburys 1987-02-19 Hollywood.flac
+2614bd38dfb5e4d6ddfe6f496e438986 *Tracks\164 Peggy Sue & The Silver Wilburys 1987-02-19 Hollywood.flac
+873aed25c8c2a050da6771f4626fc1e5 *Tracks\165 Proud Mary & The Silver Wilburys 1987-02-19 Hollywood.flac
+68b82d13409ec094ca574150c569b142 *Tracks\166 Twist And Shout & The Silver Wilburys 1987-02-19  Hollywood.flac
+ab59fab3dded5527f4c4b4f539e27365 *Tracks\167 Willie And The Hand Jive & The Silver Wilburys 1987-02-19  Hollywood.flac
+9c29ab8b4b54099a3dd0deb9bb6e704d *Tracks\168 Soon 1987-03-11 New York.flac
+1265962c0b77d89eeceeb07e11bf6c5d *Tracks\169 Touch Of Grey & The Grateful Dead  1987-07-26 Anaheim.flac
+d0762a1140e6b457b8954260079e9dab *Tracks\170 Go Down, Moses 1987-10-17 London.flac
+3605df2b3c9616f9fcdcdaa2b5b35174 *Tracks\171 Born On The Bayou 1988-01-20 (Dylan, Ben E. King and the Rock Hall Jam Band) New York.flac
+90221aed7b25e5f4c1242bc99bcdac03 *Tracks\172 Whole Lotta Shakin’ Goin’ On 1988-01-20 [Dylan, Mick Jagger and Others] New York.flac
+41f0613c0c7b6da0298b5e16565bec83 *Tracks\173 (I Can't Get No) Satisfaction 1988-01-20 [Dylan, Mick Jagger and Others] New York.flac
+4b804269d0a672f4b0e6d973b924292e *Tracks\174 I Saw Her Standing There 1988-01-20 [Dylan, Mick Jagger and Others] New York.flac
+abb64e494c9f489f49c3c6f9e68d84a1 *Tracks\175 Stand By Me 1988-01-20 (Dylan, Ben E. King and the Rock Hall Jam Band) New York.flac
+70fa463e47953dcaca89997f239a9fcd *Tracks\176 The Two Soldiers 1988-06-09 Sacramento.flac
+757a9fc3b67af644abaf6fa4ebdc4bbf *Tracks\177 Eileen Aroon 1988-06-15 Park City.flac
+83b94f11856ba6257cd1fa4cfb868083 *Tracks\178 Give My Love To Rose 1988-06-28 Canandaigua.flac
+466b2017af228ce95fff9117e6b49b74 *Tracks\179 San Francisco Bay Blues 1988-06-26 Canandaigua.flac
+27bcb53b1fd218502dce5ea3b3f22f9d *Tracks\180 Man Of Constant Sorrow 1988-7-11 Mountain View.flac
+42245c0e5feef636a780a8802bccc5dd *Tracks\181 I'm In The Mood For Love 1988-08-03 Los Angeles.flac
+91a7ff9ada38ea2b703a3bd8de9b77bd *Tracks\182 Hallelujah 1988-08-04 Hollywood.flac
+183fa3ac35fa22f24a551f857c4f605b *Tracks\183 I'm Glad I Got To See You 1988-08-04 Los Angeles.flac
+2cdf542a0c415dd01cd6de7eb8d14c65 *Tracks\184 We Three (My Echo, My Shadow And Me) 1988-08-06 Carlsbad.flac
+3f3d8f1b64227a6f181b3745a9f7e788 *Tracks\185 Big River 1988-08-07 Santa Barbara.flac
+cdf9c0a6ec1a973ce5b5d0ac4493857e *Tracks\186 Rank Strangers 1988-09-03 Manchester.flac
+60e1fba85e3952997ef87335f4e61d9b *Tracks\187 The Wagoner's Lad 1988-10-14 Upper Darby.flac
+bdeb134dfeae927ab8eabf0be184c7f9 *Tracks\188 Dire Wolf & Grateful Dead 1989-02-12 Los Angeles.flac
+49e49e62d2b25688e8f559977b330ff2 *Tracks\189 Monkey And The Engineer & Grateful Dead 1989-02-12 Los Angeles.flac
+32ab683da732fbc0adbdd3137efff278 *Tracks\190 Cassidy & Grateful Dead 1989-02-12 Los Angeles.flac
+4456959da14465e71a56dbb2797938ee *Tracks\191 Iko Iko Monkey And The Engineer & Grateful Dead 1989-02-12 Los Angeles.flac
+bd3dc5ef59ded68b0122162088b860bd *Tracks\192 Hey La La 1989-05-28 Stockholm.flac
+b00d37c33912f4a8bd9bd2deb26be74a *Tracks\193 Confidential 1989-05-30 Helsinki.flac
+f4411fa17d5735fb158b88ed14a07ebf *Tracks\194 When Did You Leave Heaven 1989-06-08 London.flac
+5d900b2036f336797f8e1b6576012edd *Tracks\195 Trail Of The Buffalo 1989-06-10 The Hague.flac
+ab3fb9b83c0217ad54bad244ac381d62 *Tracks\196 Peace In The Valley 1989-06-13 Frejus.flac
+0bfbb5583dab9701e38c4f853f9576d8 *Tracks\197 Lakes Of Ponchatrain 1989-06-15 Madrid.flac
+ec9ae6803677dd8e9bac7521484c3f3a *Tracks\198 House Of Gold 1989-06-15 Madrid.flac
+a1f7f4c8ba508b5793131a2c3d11cd32 *Tracks\199 Pancho & Lefty 1989-06-21 Cava Dei Terreni.flac
+bd6755810f7ab6c65d01cda25c187ac5 *Tracks\200 Making Believe 1989-06-24 Istanbul.flac
+843f7c2932ef9432105fbd12cd43dc95 *Tracks\201 Foreign Window & Van Morrison 1989-06-27 Athens.flac
+d197ed15a2eb1b4aa66b173247eef2f9 *Tracks\202 Early Morning Rain 1989-07-03 Milwaukee.flac
+e2be5cc23cbd1cf302a332cacf3ff0c3 *Tracks\203 And It Stoned Me 1989-07-06 Rochester Hills.flac
+98c356c0944e9d0cdeea9e73c6b105e6 *Tracks\204 Nothin' But You 1989-07-15 Old Orchard Beach.flac
+3ee4e149d7c886662460cc7fa5dcba4f *Tracks\205 Legend In My Time 1989-07-20 Atlantic City.flac
+28b85c89aa4d04593cc97d663b0878cb *Tracks\206 Don't Pity Me 1989-07-31 Joliette.flac
+7bd3fff33111821f615423495233318a *Tracks\207 The Harder They Come 1989-08-22 Bonner Springs.flac
+35abf79aac3e2bd0c5cb3f69deefdfd1 *Tracks\208 More And More 1989-08-26 Houston.flac
+1d00b54690c3cb993a2ceef3e4fc8753 *Tracks\209 E-Thang 1989-08-27 Dallas.flac
+db228520ea7b0b922065eb6fb9c77671 *Tracks\210 El Paso 1989-08-29 Las Cruces.flac
+ef9e75c83dc08243078a93156522cbac *Tracks\211 B-Thang 1989-08-31 Englewood.flac
+e5e614a204dd7b4988d268140319f865 *Tracks\212 L'Air De La Luisiane 1989-09-03 Berkeley.flac
+26af39518f220d5323802926dfb87710 *Tracks\213 G-Thang 1989-09-05 Santa Barbara.flac
+6d84979ae4395157341ff2eb1129d23a *Tracks\214 Hava Negeilah 1989-09-24 Chabad Telethon Los Angeles.flac
+a378cf1d0bbd79b6920582eaf7c6f347 *Tracks\215 La Adelita 1989-09-24 Chabad Telethon Los Angeles.flac
+dccc5093f9500b1a9476891e8d6b39c7 *Tracks\216 Einsleipt Mein Kind Dein Eigalach 1989-09-24 Chabad Telethon Los Angeles.flac
+0ac604659337dca6f1a3b121a22f1d4c *Tracks\217 Precious Memories 1989-10-13 New York.flac
+6c55f84cacb28f6bdf1f27f60a7a1d77 *Tracks\218 When First Unto This Country 1989-11-07 Norfolk.flac
+3977010efe69f267e1bc664409c231d0 *Tracks\219 Dancing In The Dark 1990-01-12  New Haven.flac
+b9e76f6df065d71691630bcaa935a2e2 *Tracks\220 Everybody's Movin' 1990-01-12  New Haven.flac
+0b2b429c1c089d0e50a948d49e1342a7 *Tracks\221 Hang me, Oh Hang Me 1990-01-12 New Haven.flac
+386717a91e6fa26fb7c542cf77aa720b *Tracks\222 Help Me Make It Through The Night 1990-01-12 New Haven.flac
+a667f0302d8fee2cf1fefd5f7c97abc2 *Tracks\223 In The Pines 1990-01-12 New Haven.flac
+86be16bae96c14085642711d44347b40 *Tracks\224 Key To The Highway 1990-01-12  New Haven.flac
+506fe13da26125fb27292350e14fbd36 *Tracks\225 Oh Babe, It Ain't No Lie 1990-01-12 New Haven.flac
+0398968a2c2998256821c20de1263a15 *Tracks\226 Paid The Price Of Lovin` You 1990-01-12 New Haven.flac
+b321382cdb2652fd15f5e78111a52235 *Tracks\227 Trouble No More (Worried Life Blues) 1990-01-12 New Haven.flac
+551f95aca7cb287f6900846517610753 *Tracks\228 Walk A Mile In My Shoes 1990-01-12 New Haven.flac
+fa688c3a95ef136ea28a0179e5a2225e *Tracks\229 Only The Lonely 1990-02-24 Roy Orbison Tribute Los Angeles.flac
+ae8220cce2354f2624da5a994ee728cc *Tracks\230 I'm Crying & Tom Petty 1990-03-01 Los Angeles.flac
+fb48732c31a80e124663afaa7eebdeef *Tracks\231 Travelin' Band & Tom Petty 1990-03-01 Los Angeles.flac
+833f74f692577934a7a360c035bf0bac *Tracks\232 Old Rock And Roller 1990-07-03 Hamburg.flac
+e28bdbcad2af9f8126fe9812d2869f72 *Tracks\233 Let's Learn To Live And Love Again 1990-07-05 Berlin.flac
+f666e6624855440942cbf3ad20f206b8 *Tracks\234 Nowhere Man 1990-08-12 Edmonton.flac
+c6316109fa91ba11e439b7f8e4cf2a04 *Tracks\235 Sitting On The Dock Of The Bay 1990-08-18 George.flac
+cc076e3d15677ffbf676b9b372b412f1 *Tracks\236 Marines' Hymn 1990-10-15 New York.flac
+e2341b32c07098b49f6c9b257b1f0136 *Tracks\237 My Head's In Mississippi 1990-10-25 Oxford.flac
+178b1f51ba9050bd52e9017b38f8e049 *Tracks\238 Hey, Good Lookin' 1990-10-26 Tuscaloosa.flac
+fe8040d8ec585f623efe8f061ffe32e6 *Tracks\239 Shenandoah 1990-11-02 Lexington.flac
+12b8e7e81e60dc4d241f29e9e2b8b5c3 *Tracks\240 Detroit City 1990-11-12 East Lansing.flac
+c85da8d993cff3fa906635fcce4afe2e *Tracks\241 Ol' MacDonald 1990-11-14 Normal.flac
+adb5352de858eb7101896c8e8676178b *Tracks\242 Tupelo Honey-Why Must I Always Explain & Van Morrison 1991-02-06 Belfast.flac
+f77a05f8eed8ab119550eaf6ce2c830b *Tracks\243 Dixie 1991-05-11 Danbury.flac
+2c1d49020d2450570bed7c93b3880b30 *Tracks\244 Homeward Bound 1991-06-06 Rome.flac
+1ff707ec49eebefb18e38b8df324ce03 *Tracks\245 People Putting People Down 1991-06-06 Rome.flac
+a9b32be5d1075adeb7ffc06b58e219fe *Tracks\246 Whenever God Shines His Light & Van Morrison 1991-06-08 Milano.flac
+85c9e0ef00a9cf523fe6f57636f97539 *Tracks\247 Enlightenment & Van Morrison 1991-06-08 Milano.flac
+cc538e92d197318bb1a4b4dc0eceb0c4 *Tracks\248 People Get Ready 1991-08-08 Buenos Aires.flac
+3a556e4004259ad98787c3e94a3dcbb3 *Tracks\249 Sold American & Kinky Friedman 1991-09-15 Chabad telethon91 Los Angeles.flac
+66b6c63a81a0f2efbf44a9e2e68657c5 *Tracks\250 Shake, Rattle And Roll  & Keith Richards 1991-10-17 Sevilla.flac
+46460cd0feb46e8bbe122a54896e31b0 *Tracks\251 I Can't Turn You Loose & Keith Richards 1991-10-17 Sevilla.flac
+b0c3309c8c838f1241ce11ac06757e64 *Tracks\252 20-20 Vision 1991-10-25  Austin.flac
+438becd8ff218740073ce270e261f0b8 *Tracks\253 One Irish Rover 1991-11-02 Ames.flac
+05b7b4bcf5576e66d504eddedbba3ca2 *Tracks\254 Answer Me, My Love 1991-11-04 Evanston.flac
+decd7a0bed57177193c3190ee9e11599 *Tracks\255 Golden Vanity 1991-11-04 Evanston.flac
+214836e7a860ce6e8319a18c13f84ec9 *Tracks\256 You Don't Know Me 1991-11-05  Madison.flac
+f79d55df10a53cb9dfad3d09ea590bda *Tracks\257 Roving Gambler 1991-11-06 South Bend.flac
+ea042cf448cff90867fe225b53adb798 *Tracks\258 Dust My Broom 1991-11-12 Detroit.flac
+8f7099c0bfd96b98ec92de1aabbb1c92 *Tracks\259 Moondance 1991-11-19 Erie.flac
+5581bacd0982786c01f2d7e7e9f7e14f *Tracks\260 Dolly Dagger 1992-03-18 Perth.flac
+2773fb71731f0c9f4be0f834ca4cf590 *Tracks\261 Little Maggie 1992-03-18 Perth.flac
+1ec243423913052892b2f5fb9ef2f26c *Tracks\262 Female Rambling Sailor 1992-03-24 Sydney.flac
+71cd8f93b46dcadb9640e9d2603dbc78 *Tracks\263 Little Moses 1992-04-05 Melbourne.flac
+7350b22ddcdd9d9400d96f9b5910c846 *Tracks\264 Black Muddy River 1992-04-06 Melbourne.flac
+97e4ab7c1b26440a83455c476ee71da0 *Tracks\265 Lady Of Carlisle 1992-04-11 Sydney.flac
+7c950513ac2414a1d9d90e3b048d6541 *Tracks\266 Sally Sue Brown 1992-04-16 Sydney.flac
+e11724a92325f2aed0d261d290357491 *Tracks\267 West L.A. Fadeaway 1992-06-26 Lulea.flac
+68085e5de8a815296749f9c87c6992eb *Tracks\268 Don't Let Your Deal Go Down 1992-06-28 Gothenburg.flac
+f2805484bdb399d18a29f9a8765d4d71 *Tracks\269 Girl On The Green Brair Shore 1992-06-28 Gothenburg.flac
+ff9bfa2210a0e929d665179e5c59d9c8 *Tracks\270 Newlyn Town 1992-07-01 Reims.flac
+b7455d1a6bd22471a9c5c8be1770747a *Tracks\271 Hazy Shade Of Winter 1992-07-01 Reims.flac
+30eac96b1b5ee573d4a4a8fe911d3404 *Tracks\272 Around And Around 1992-07-10 Leysin.flac
+45ccc2d3bdc2160962c8153ebad9e466 *Tracks\273 Hey Joe 1992-07-12 Antibes.flac
+905f7b72d72b5358b6b5d5fc5cca1fd9 *Tracks\274 Red Hot 1992-09-08 Little Rock.flac
+5e86924b6923d181391f6c1e165c1fad *Tracks\275 Farewell To The Gold 1992-11-02 Youngstown.flac
+693bb3bbe36282eef4c2d8dc5ac512d8 *Tracks\276 I Can't Be Satisfied 1992-11-02 Youngstown.flac
+58d6a3a0ec2dcce96bc1eff9dc0684a4 *Tracks\277 I've Been All Around This World 1992-11-02 Youngstown.flac
+427d26c0c33aa06605956308fd8ce296 *Tracks\278 Tomorrow Night 1993-02-08 London.flac
+91351dfb97386a0e33e310bb16201e15 *Tracks\279 Folsom Prison Blues 1993-02-17 Eindhoven.flac
+964a560a0ad199135d54831d58cef9f4 *Tracks\280 Train Of Love 1999-04 Johnny Cash Tribute New York.flac
+dbd3a3b38aa4ea794b887ae2c7551ee7 *Tracks\281 Hard Times 1993-04-12 Louisville.flac
+105e07dad53220f4c111fb4090040eeb *Tracks\282 You're Gonna Quit Me 1993-09-08 Vienna.flac
+1de4a64dd952762bf965f8acb58765af *Tracks\283 Blackjack Davey 1993-09-08 Vienna.flac
+42581a6e0369a1acbf21693c90c68257 *Tracks\284 Ragged And Dirty 1993-11-17 Early New York.flac
+3833969cebf10a0f599898be80ee9280 *Tracks\285 Blood In My Eyes 1993-11-17 Early New York.flac
+1feaa20a3d9a381e1436fc986353da77 *Tracks\286 Jack A Roe 1993-11-17 Late New York.flac
+0d4855c323a747bd8fd979a52fb3a29d *Tracks\287 Jim Jones 1993-11-17 Late New York.flac
+b43cacfd4adec2f9738bd3d0114218b0 *Tracks\288 Weeping Willow 1993-11-17 Late New York.flac
+c20cbf73356222cac98a46ecc199c9e3 *Tracks\289 The Lady Came From Baltimore 1994-04-13 Peoria.flac
+783b4819fca35ef530ddf7fa210bec9f *Tracks\290 Willin' 1995-09-23 Fort Lauderdale.flac
+e0e2c7a426ef59f592684e0c4fd10f2b *Tracks\291 Real Real Gone 1995-09-23 Fort Lauderdale.flac
+39c30177342fc85dcfd344bcc22bcda7 *Tracks\292 Tell Me It's Not Too Late 1995-09-23 Fort Lauderdale.flac
+5fce90ff524c6912024918cd075cd6b7 *Tracks\293 Ramblin' Man & Dickey Betts 1995-09-30 Tampa.flac
+83cb1ba4bda7f8a5762d2a9c4ca280ea *Tracks\294 Alabama Getaway 195-12-16 Philadelphia.flac
+084f7e6053ba8c274d5992c482eeacad *Tracks\295 Shake Sugaree 1996-06-17 Berlin.flac
+804ce15befc7d4da9a3fd563b597b1e4 *Tracks\296 New Minglewood Blues 1996-06-24 Differdange.flac
+7a33e2b2c2832a6abc7d0e8ae1a275de *Tracks\297 Yesterday 1996-06-26 Liverpool (fragment).flac
+945776ccfd4a514875eaa7f131c6d134 *Tracks\298 Viola Lee Blues 1997-02-24  Sapporo.flac
+3929ed877237a5be33569e0759c491c8 *Tracks\299 Long Black Veil 1997-04-28  Wheeling.flac
+923eeb69896649cb904d6f195082a763 *Tracks\300 Stone Walls And Steel Bars 1997-05-21  Beverly Hills.flac
+1dd53b657e79835d7bc943338f06c445 *Tracks\301 I'll Not Be A Stranger 1997-11-07 Columbus.flac
+737882908804307fccfab5ce79775b25 *Tracks\302 America The Beautiful & Others (Clintons, Gregory Peck and many others) 1997-12-07 Washington  Lifetime Achievement Award.flac
+5940a468693de65997dbfdd4edf2ee3c *Tracks\303 White Dove 1997-12-08  New York.flac
+a0d6683f985f09d2904d040ab1f66d1a *Tracks\304 Ragtime Annie 1997-12-14 Chicago.flac
+3a2249895ff2e2a983603883fdf36983 *Tracks\305 Blue Suede Shoes 1998-01-21 New York.flac
+ffa9de24468600873c0840737a9643be *Tracks\306 I'm Not Supposed To Care 1998-05-23 Anaheim.flac
+527f7a87118c8ac0fd8ae98b4d0b8376 *Tracks\307 Roving Blade 1998-06-19 Belfast.flac
+f007fff9a3fa2d69e7972cfd6415bdcc *Tracks\308 Times We've Known 1998-11-01 New York.flac
+b27c44402196bbc6b4f382fea8fa0445 *Tracks\309 It's Too Late 1999-01-29 Daytona Beach.flac
+ed2874dbc2b6206a9224a2e5d57bbf9b *Tracks\310 My Blue Eyed Jane 1999-02-07 Birmingham.flac
+e473e6b3af3e7c72a22d695feac6fd1d *Tracks\311 Honky Tonk Blues 1999-02-15 Grand Rapids.flac
+2057de2d58bc81a0e3055fedfbf30382 *Tracks\312 Pass Me Not 1999-02-24 Amherst.flac
+faf5fa51ed5c4e5defbd8da2fb7768aa *Tracks\313 Hallelujah I'm Ready To Go 1999-06-19  Hollywood.flac
+8ab96631b539393ad0852458b25be594 *Tracks\314 Bright Lights, Big City & Eric Clapton 1999-06-30 New York.flac
+172e5894b1fe5a113c907fd9244e34a9 *Tracks\315 Crossroads & Eric Clapton 1999-06-30 New York.flac
+a6cb9edf8a6fde0a61b80b63c6dc9ae4 *Tracks\316 Sunshine Of Your Love  & Eric Clapton 1999-06-30 New York.flac
+a2c2a0b561ddd489cb10dd050e7b4558 *Tracks\317 I Walk The Line-Blue Moon Of Kentucky & Paul Simon 1999-07-03 Duluth.flac
+3abd14702fa79d60fed6a03232a9369a *Tracks\318 The Sound Of Silence  & Paul Simon 1999-07-31 Wantagh.flac
+87cb9bb77a618430b4731df14e213e99 *Tracks\319 The Heart That You Own 1999-09-02 West Palm Beach.flac
+ec6bc9ca7f97443f005f9bf6ee96758f *Tracks\320 That'll Be The Day-The Wanderer & Paul Simon 1999-09-12 Lafayette.flac
+756a79cc65514228da76e8f2cb145832 *Tracks\321 The Boxer & Paul Simon 1999-09-12 Lafayette.flac
+0fd217770e05f31dc941c55f82a4ff5e *Tracks\322 Broadway Strut-Bottleneck Polka-Hour Of The Wolf 1999-10-12 Cameo In Dharma & Greg.flac
+6b2e233958f3776361a27237f779055e *Tracks\323 Satisfied Mind 1999-11-09 Philadelphia.flac
+91ffeaa585ebdf1bef318ee6f0727aab *Tracks\324 I Am The Man Thomas 1999-11-13  East Rutherford.flac
+77c4736f4a79d5d44f738c3231e39b21 *Tracks\325 I'm Your Hoochie Coochie Man 1999-11-13 East Rutherford.flac
+f3b6c967b88317cb1ac9c3ddc91298ad *Tracks\326 Somebody Touched Me 1999-11-15 Ithaca.flac
+7e35ad5a922adfc1eb955e7d07f46e95 *Tracks\327 Money Honey 1999-11-15 Ithaca.flac
+e31c4c35eb45292abf0b67ba33dcccc5 *Tracks\328 Everybody Loves Somebody 1999-11-19 Early Atlantic City.flac
+674546ef3aa5f9a868757035e607dbaa *Tracks\329 Rock Of Ages 1999-11-19 Atlantic City.flac
+2649556e2a023041ef9ffc4b95897b7d *Tracks\330 Duncan And Brady 2000-03-17 Reno.flac
+7797bdcae85b6b3243ce74359bb665bd *Tracks\331 Searching For A Soldiers Grave 2000-06-15 Portland.flac
+ede2c2f440057281175fb5978f6f041c *Tracks\332 She's About A Mover 2000-06-15 Portland.flac
+66341c2603a4c00ec0e1f7ae0c9d3161 *Tracks\333 Blue Bonnet Girl 2000-11-01 Bloomington.flac
+fce4828acc25c7e6fcd4dd2c50f39a4d *Tracks\334 This World Can't Stand Long 2001-02-25 Omiya.flac
+a79bc634a064a46d64c86ea70d4dfdcd *Tracks\335 Searching For A Soldier's Grave 2001-03-28 Cairns.flac
+56c7cc95c6686a6f39671fd1798eeceb *Tracks\336 Humming Bird 2001-06-28 Langesund.flac
+b100b62062f38146893e4c74ca5dbbea *Tracks\337 Wait For The Light To Shine 2001-10-05 Spokane.flac
+7949023a7351dc3dbdaa5cc9a003224c *Tracks\338 The Market Town Scatter The Mud 2002-04-13 Hannover.flac
+267ef2473711615a5abc691c8d14d148 *Tracks\339 Not Fade Away 2002-04-20 Milano.flac
+4f4f1fd35d2274082b381392383c9c22 *Tracks\340 A Voice From On High 2002-10-02.flac
+a659cdff0cb2815213f5d974046ef72a *Tracks\341 Boom Boom Mancini  2002-10-04 Seattle.flac
+30176c160adc8972e285c8995d16c86a *Tracks\342 Brown Sugar 2002-10-04 Seattle.flac
+1fe99b96ffa38c1641287a23d604ebce *Tracks\343 Mutineer 2002-10-04 Seattle.flac
+183ac418938036b5f269dbcfb81ab16a *Tracks\344 Accidentally Like A Martyr 2002-10-04 Seattle.flac
+7ea782c20f58506bb1d6be062d147056 *Tracks\345 Lawyers Guns And Money 2002-10-05 Eugene.flac
+bc22720351b746ac5ec5e9f8b9e35d60 *Tracks\346 Friend Of The Devil 2002-10-05 Eugene.flac
+f1298111a704657cb414e3b11af9dc65 *Tracks\347 The End Of The Innocence 2002-10-08 Sacramento.flac
+462675a24f09fc65015b28999192ed1b *Tracks\348 Old Man 2002-10-08 Sacramento.flac
+9e94bdfc973abc6b1d17b49bf8769064 *Tracks\349 Carrying A Torch 2002-10-19 San Diego.flac
+e4be33acbe72502b768f8585d710a007 *Tracks\350 Easy Lovin' 2003-04-18 Dallas.flac
+804a623c7eb31daf02e633797f84f1e4 *Tracks\351 Goin' Down The Road Feelin' Bad  & Grateful Dead 2003-08-02 Joliet.flac
+a9116f35cbd5eb04ad8604a7ef6f3108 *Tracks\352 Oh Boy! & Grateful Dead 2003-08-05 Noblesville.flac
+899f6aca93eb3c1a2e6d4c06b7e36c27 *Tracks\353 Good Morning Little Schoolgirl  & Grateful Dead 2003-08-05 Noblesville.flac
+9108c5b34523ae7d959858191e9cb62b *Tracks\354 Big Boss Man & Grateful Dead 2003-08-06 Columbus.flac
+a0584fbb304c9960b19b48fe238fec6e *Tracks\355 Get Out Of Denver 2004-03-16 Detroit.flac
+ea92244920af04dde5c1af1f4cc21008 *Tracks\356 Ball And Biscuit  & Jack White 2004-03-17 Detroit.flac
+b45352588160bf8dac85421f5ad2178b *Tracks\357 You Win Again 2004-06-11 Manchester.flac
+3054da31fe46b105b59c2c69d38c8edf *Tracks\358 Samson and Delilah 2004-06-11 Manchester.flac
+047dd9a20c392e0af2b682ff688d7936 *Tracks\359 Sing Me Back Home 2004-06-11 Manchester.flac
+190656627cbdc5ce12f0bbaa244f1d05 *Tracks\360 Milk Cow Blues 2004-08-12 Aberdeen.flac
+9e3988f858e54be0b70bb28e379260a6 *Tracks\361 Heartland 2004-08-27 Madison.flac
+7c1bb2d58327e89b36a29ee87a7c78a7 *Tracks\362 No More One More Time 2004-10-13 San Francisco.flac
+5b7b7b468296675d6864494708d8f52f *Tracks\363 Blues Instrumental 2004-10-14 Santa Clara.flac
+7a42f300a8de7267f94bd91578cd2162 *Tracks\364 A11 2005-03-11 Portland.flac
+503736a505ac71f1c6754b3eee93e054 *Tracks\365 Rumble 2005-11-20 London.flac
+93ca711f4cc7ab9d9d7b344c8955ac54 *Tracks\366 Blue Monday 2005-11-23 London.flac
+66b5b2c945aac70317c71a267daaab39 *Tracks\367 London Calling 2005-11-24 London.flac
+fa62e556a24a0063962af0b015d5537b *Tracks\368 Return To Me 2009-04-18 Florence.flac
+0412bc1b1acbb2c6903e6133b6f56f49 *Tracks\369 Something 2009-05-01 Liverpool.flac
+6c6d068d4c96b3560c188f2b2b45b733 *Tracks\370 Yankee Doodle Boy 2009-07-04 South Bend.flac
+2b588c6560e9b3d78b33e0832bec10e8 *Tracks\371 Heartbreak Hotel 2009-08-16 Stateline.flac
+d543592e351f5afcc5410c72177d99c7 *Tracks\372 Jesus Gonna Be Here 2009-10-31 Chicago.flac
+d2dd848824ad7eff6c1827e29698e694 *Tracks\373 San Diego Serenade 2009-11-02 Bloomington.flac
+d28896a246a57bd27b0f63a2d8b4e800 *Tracks\374 Shadows 2012-10-09 Edmonton.flac
+c0179bf4eb83f98f5c17f0eb43109385 *Tracks\375 Delia 2012-10-27 Las Vegas.flac
+25057b4d98b9f130d1c1db33621e089b *Tracks\376 Sweet Home Chicago s 2012-11-09 Chicago.flac
+d66f0705ba3d9550d70476eac55e592a *Tracks\377 Instrumental 2013-07-02 Memphis.flac
+a55b12447b9f80fd00a8e302343d54ea *Tracks\378 1952 Vincent Black Lightning 2013-07-14 Clarkston.flac
+60263942430c833bcd870dc143bb44ed *Tracks\379 Twelve Gates To The City 2013-07-15 Toronto.flac
+e06a9689f037190eb3e814bb79192f86 *Tracks\380 Let Your Light Shine On Me 2013-07-19 Bridgeport.flac
+8e6ddc354be5292d3b6a2db6fd8be029 *Tracks\381 Suzie Baby 2013-10-07 St. Paul.flac
+732a4c0162e5d08a0fb8adc8554c23aa *Tracks\382 Stay With Me 2014-10-26 Hollywood.flac
+10dd6a6ebb7b15101e0545549feae387 *Tracks\383 Blueberry Hill Experiment Ensam Philadelphia 2014-11-23.flac
+389065165caa3b4c4ba086b9666e35ff *Tracks\384 Heartbeat Experiment Ensam Philadelphia 2014-11-23.flac
+5cc2d51385c30c7a28e3443d820fd883 *Tracks\385 Autumn Leaves 2015-04-26 Greenville.flac
+9a0fae496ee3c357f3e02f5fef0d7b36 *Tracks\386 Full Moon And Empty Arms 2015-06-20 Mainz.flac
+3eb78fdfb26473409a6c77039a77545b *Tracks\387 Sad Songs And Waltzes 2015-06-20 Mainz.flac
+911620f28fe90d956901339db9b78a37 *Tracks\388 Where Are You 2015-06-21 Tübingen.flac
+93823d2c85d9e911cca72852c198c1d1 *Tracks\389 I'm A Fool To Want You 2015-06-23 Bamberg.flac
+b30a4ff76e88683afd669608905c9aa2 *Tracks\390 All Or Nothing At All 2015-10-01 Oslo.flac
+a0690f03937139b78ee17895302a9a2a *Tracks\391 The Night We Called It A Day 2015-10-05 Stockholm.flac
+a8969d3e3f0f525be5413705c6f7b7bd *Tracks\392 What'll I Do 2015-10-05 Stockholm.flac
+e9985f578bc0dd0b72cce4810ac5d1d0 *Tracks\393 Why Try To Change Me Now 2015-10-05 Stockholm.flac
+8a1193c4af94ce047e104ce719676bc4 *Tracks\394 Melancholy Mood 2015-10-15 Braunschweig.flac
+2bccf85f5ba2bab97ca60ccce5af43a5 *Tracks\395 Come Rain Or Come Shine 2015-11-14 Basel.flac
+a516b9b977ecca61e22d727a7858d3f4 *Tracks\396 That Old Black Magic 2016-04-05 Tokyo.flac
+fce0158c790423d8135f3f1a55d90c32 *Tracks\397 I Could Have Told You 2016-06-04 Woodinville.flac
+2b51f91f3c35e7a9c23be722659e0c7f *Tracks\398 Freebird (Instrumental) 2016-06-09 Berkeley.flac
+202568f96c08f2f5af023c490018929e *Tracks\399 How Deep Is the Ocean (How High Is the Sky) 2016-06-28 Kettering.flac
+6d65e915dd65d4167e9075faaf994666 *Tracks\400 That Old Feeling 2016-07-03 Mashantucket.flac
+1404cee559cf8f3e4e11a8b9f52259d1 *Tracks\401 Stormy Weather 2017-04-17 Amsterdam.flac
+ada75489c2a05fbefef212673a6ca2aa *Tracks\402 This Nearly Was Mine 2017-05-07 Glasgow.flac
+0b3624526aebd3ab47824e7adb4f3724 *Tracks\403 Once Upon A Time 2017-06-20 Shelburne.flac
+c7f92a3043f13630a10d7f67e9ada7c8 *Tracks\404 Where Is The One 2017-10-13 Funner.flac
+b08a6bdb34a1df3348685587fa2805b4 *Tracks\405 Learning To Fly 2017-10-21 Broomfield (lossy).flac
+3082183424ced518bbdb38475f140f2d *Tracks\406 The September Of My Years Ames 2017-10-24.flac
+db89b5d8a301a3b7e3ef1b5232832cc3 *Tracks\407 Moon River 2018-11-06 Savanah.flac
+434194ceac9cfe80c6bebe1a41ef482b *Tracks\408 It's A Man's Man's Man's World 2018-11-07 Augusta.flac
+0c443d9e5a43e24d09e2ec473fc15727 *Tracks\409 San-Ho-Zay 2018-11-13 Youngstown.flac
+ba2f76adf5bb40e91b5c92b0ab211155 *Tracks\410 Will The Circle Be Unbroken 2019-07-14 & Neil Young  Kilkenny.flac
+caf923d901c47ee34ed40ba75be537d0 *Tracks\411 Oh! Susanna 2022-10-17 Amsterdam.flac
+ff4a68912bef4e1078a2fa49b810bfe0 *Tracks\412 Truckin' 2023-04-12 Tokyo.flac
+9c7952164344d7c5b63f03d11167837c *Tracks\413 Only A River 2023-04-20 Nagoya.flac
+28ca520ac658069c93cad5aa0b4be8e3 *Tracks\414 Brokedown Palace 2023-04-18 Nagoya.flac
+e1ca12fe02a8060de9aec296c98888c1 *Tracks\415 Into The Mystic 2023-06-15 Alicante.flac
+9080a2bc69638866eee286fb826afd8a *Tracks\416 Stella Blue 2023-06-23 Barcelona.flac
+f4c8750f4e19192146fd6c00e4bdf707 *Tracks\417 Bad Actor 2023-07-03 Milano.flac
+da977ea9d102c257bbb7569714c3bd05 *Tracks\418 Born In Chicago 2023-10-06 Chicago.flac
+f13c3c83df06a8ee0710428375b14016 *Tracks\419 Forty Days And Forty Nights 2023-10-06 Chicago.flac
+036b76c836d67d5149a55cb9187a7732 *Tracks\420 Killing Floor 2023-10-07 Chicago.flac
+d080081eb8fe5bd27a1d805526757287 *Tracks\421 Nadine 2023-10-14 Grand Rapids.flac
+23e3656b3303afbfddbe87234749deac *Tracks\422 Longest Days 2023-10-17 Indianapolis.flac
+4c68ec08db73757c5ea560366284283b *Tracks\423 South Of Cincinnati 2023-10-20 Cincinnati.flac
+ce321109e4925b0fa3b76e734df865f4 *Tracks\424 Dance Me To The End Of Love  2023-10-29 Montreal.flac
+4f521b63826961c8e249713b5bfdae65 *Tracks\425 Footlights 2023-11-05 Boston.flac
+1d3c4caa83c468c0aaf0e102e8e00224 *Tracks\426 New York State Of Mind (partial) 2023-11-16 New York City.flac
+746c645bbab4f051f23718206188da48 *Tracks\427 Walking By Myself 2024-03-01 Fort Lauderdale.flac
+0883c3a03c7fffe0175ac6ebf2de098c *Tracks\428 Roll Over Beethoven 2024-03-07 Fort Myers.flac
+20194704634f5372b49e246944d9bd9b *Tracks\429 On The Banks Of The Old Ponchartrain 2024-04-01 New Orleans.flac
+fc1910c155eb76a95cc8e5c657b888bc *Tracks\430 Jambalaya (On The Bayou) 2024-04-02 Lafayette.flac
+42632ae4c5ba4c3c1aacf0fd283ee9ed *Tracks.txt

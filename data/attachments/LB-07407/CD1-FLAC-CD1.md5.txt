@@ -1,0 +1,10 @@
+0a43ff3a91034890220c05ba89d20a11 *00 Announcement.flac
+0eaef5c23e5d4b1a70b80193aba2674b *01 Drifter's escape.flac
+f1b3d728f09d4d80d1fac663edd9d30b *02 Señor (Tales of Yankee Power).flac
+a87a8516b250c5476241e3a3f670cfa9 *03 All along the watchtower.flac
+5953dda20f80e8850dca124479f46b39 *04 I don't believe you (she acts like we never have met).flac
+cffb7b4954332644d2c202bcdf851538 *05 Watching the river flow.flac
+bcd733f793db3848a4d24786f2571d97 *06 Silvio.flac
+67d64c6dcadcf194b53b0341deb6cfd1 *07 Tangled up in blue.flac
+af3aa4ee38d3ab764ee289d32aa12921 *08 To Ramona.flac
+0332f0138ac1b87f6d7eac5093508498 *09 Friend of the Devil.flac

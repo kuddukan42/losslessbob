@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-13a 
+=================== 
+=================== 
+=================== 
+db926f1d86fb2e7a5740dd5f466dc7d8  970813.md5
+8cb2c6120ca77357ea5fda281e0aafb5  970813.txt
+e9b905159603bb898c4f13c3aae0539b  bd970813d1t01.shn
+d64ee03662b3bdebc410253ce16a4f4b  bd970813d1t02.shn
+2db776f994582b1821d2775d753f037c  bd970813d1t03.shn
+9b0a8e6840fc88fcd46d075bb11ba4fb  bd970813d1t04.shn
+733fe58fb8eb855e56a2db4e38514cef  bd970813d1t05.shn
+c3a3b0ec46616769b1cf68d3ed67da01  bd970813d1t06.shn
+b3e151ca73798c875c14001898f66b87  bd970813d1t07.shn
+95ffa46f8b4492f477658e860f74a3e4  bd970813d2t01.shn
+9f700714c4f960e3bcac74bfa8e8eada  bd970813d2t02.shn
+5d349ef388a353bab7bcf41e820f114c  bd970813d2t03.shn
+f5de30df44f6a27965ef76dcff993009  bd970813d2t04.shn
+a1a792f9a025cc3613c1d7d1d49b901c  bd970813d2t05.shn
+711f58773b780689ceb032650caf71db  bd970813d2t06.shn
+e6f860b7003ee210d9fca88373d2bcf4  bd970813d2t07.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-08-13a 
+=================== 
+=================== 
+=================== 
+47da937a526f4e00427d78b9851071c9  [shntool]  bd970813d1t01.wav
+d1312597aef3140630ec0c098f686343  [shntool]  bd970813d1t02.wav
+b04b33303e346809f3775e1b00a9d1d7  [shntool]  bd970813d1t03.wav
+dd43fbd9bda58aabaa2a9a7d568ecec0  [shntool]  bd970813d1t04.wav
+b969deeddcf588a499bb21656194d4f8  [shntool]  bd970813d1t05.wav
+afe115c655bf7d8711c59415631b2028  [shntool]  bd970813d1t06.wav
+8a93a4bb437f71136ff8ed0ed35375e2  [shntool]  bd970813d1t07.wav
+34866e6cb9353846583625ce943d9475  [shntool]  bd970813d2t01.wav
+ec8042c6059ceb5e326b1eeeac0f18d7  [shntool]  bd970813d2t02.wav
+44b5dceb3ae677c24a8943748df7b26b  [shntool]  bd970813d2t03.wav
+82db5005d354b9aea7a4536b9bed718f  [shntool]  bd970813d2t04.wav
+603c027e359b589a037173492737bfe2  [shntool]  bd970813d2t05.wav
+74cbf920bfc26ce8384cd1e2a2dd7418  [shntool]  bd970813d2t06.wav
+4065ce229eb9f751e9cff55047700367  [shntool]  bd970813d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-13a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.61       61177916 B   ---   --   -----    wav  1.0000  bd970813d1t01.wav
+     6:39.01       70385996 B   ---   --   -----    wav  1.0000  bd970813d1t02.wav
+     5:00.50       53037644 B   ---   --   -----    wav  1.0000  bd970813d1t03.wav
+     4:49.61       51123116 B   ---   --   -----    wav  1.0000  bd970813d1t04.wav
+     7:10.21       75901436 B   ---   --   -----    wav  1.0000  bd970813d1t05.wav
+     6:31.27       69035948 B   ---   --   -----    wav  1.0000  bd970813d1t06.wav
+     8:14.27       87205148 B   ---   --   -----    wav  1.0000  bd970813d1t07.wav
+     5:17.11       55944716 B   ---   --   -----    wav  1.0000  bd970813d2t01.wav
+     5:36.67       59428028 B   ---   --   -----    wav  1.0000  bd970813d2t02.wav
+     8:01.50       84966044 B   ---   --   -----    wav  1.0000  bd970813d2t03.wav
+     7:40.26       81205196 B   ---   --   -----    wav  1.0000  bd970813d2t04.wav
+     6:00.52       63626348 B   ---   --   -----    wav  1.0000  bd970813d2t05.wav
+     8:18.19       87891932 B   ---   --   -----    wav  1.0000  bd970813d2t06.wav
+     7:30.03       79387100 B   ---   --   -----    wav  1.0000  bd970813d2t07.wav
+    92:37.26      980316568 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

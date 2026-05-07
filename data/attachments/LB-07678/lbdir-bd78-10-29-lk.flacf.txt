@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-29-lk.flacf 
+=================== 
+=================== 
+=================== 
+10ba1f363e4ce5f25692262759057a22  D1\D1.md5
+abe97c33ed8171c26a1de67e9aff85d1  D1\St Louis 29Oct78 101.flac
+07c0740e4ee9e932d302452ce25b2725  D1\St Louis 29Oct78 102.flac
+cc95c4a0622bc4057c1de1b9bfbef994  D1\St Louis 29Oct78 103.flac
+e72148805bdc876436d188cda83ad863  D1\St Louis 29Oct78 104.flac
+0161f10a8a664a5f3e124775bc0729f1  D1\St Louis 29Oct78 105.flac
+fe9e388858d20e33a441bce2a9da091d  D1\St Louis 29Oct78 106.flac
+2bb671b5be7f53090f395c7ced1e0c9e  D1\St Louis 29Oct78 107.flac
+12203154c2086b45ea5288cc1f70d4c4  D1\St Louis 29Oct78 108.flac
+3506c705863a1fe29ca72a3b8605e320  D1\St Louis 29Oct78 109.flac
+0a4e1da3d93daff79ae5e7f32bfe9a2b  D1\St Louis 29Oct78 110.flac
+8ee353570c8613746a352fb9b938de8a  D1\St Louis 29Oct78 111.flac
+d5d461f96f1ea49d119177e78ad3cca6  D1\St Louis 29Oct78 112.flac
+05cd4edf4d1815a595973563a3e2c3a1  D1\St Louis 29Oct78 113.flac
+1ca0f5f14d3d6d79b96ee398614a8200  D1\St Louis 29Oct78 114.flac
+7f3ef521b12e0578b24fbff5fee5169f  D2\D2.md5
+305793a93a8904bbbc8f5ae008c48607  D2\St Louis 29Oct78 201.flac
+849246718e8aec6a9171ca4486176c5b  D2\St Louis 29Oct78 202.flac
+c4f3c830b8d5043d200925371bf6397a  D2\St Louis 29Oct78 203.flac
+f14af0495ba463c25b7747c9cd19cc11  D2\St Louis 29Oct78 204.flac
+e6942621f495a35a340bd30334dfecd9  D2\St Louis 29Oct78 205.flac
+b73532802c3cc1476dbe418849c45329  D2\St Louis 29Oct78 206.flac
+afe04864826b37fc5c04c870fb0c61f3  D2\St Louis 29Oct78 207.flac
+80c597052e97b928318110511bdb9be2  D2\St Louis 29Oct78 208.flac
+03ab9becc33cee8e23c289fc3a7f81c1  D2\St Louis 29Oct78 209.flac
+88f123586c206e930f9d0286f37ecc4f  D2\St Louis 29Oct78 210.flac
+6b6d3726c85ff3eda40c81213530f8d9  D2\St Louis 29Oct78 211.flac
+b73f5034e24bddc791001289997b6f59  D2\St Louis 29Oct78 212.flac
+4c24bc441922c4507099549b7c97fd61  D2\St Louis 29Oct78 213.flac
+51dd3eef8b1bae8e225d021250e9f8fe  D2\St Louis 29Oct78 214.flac
+96ac1a0f5f2f89c1ab1b263fc98d9a0d  info.txt
+cac047eeea7cde4ba0d0b5c3dde71c65  LK 1978 Leg 3 DVD 6.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-29-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+St Louis 29Oct78 101.flac:cf69853addac1d560a5ab53166541d0b
+St Louis 29Oct78 102.flac:fddad1dc0d8daf5edbfd4808972d3404
+St Louis 29Oct78 103.flac:9ed3c4e7e0fed555389ecef351674f09
+St Louis 29Oct78 104.flac:68fbbfc84f85f442f3bc5c4542cb5448
+St Louis 29Oct78 105.flac:760f10c08af98105359458b4a8a4800d
+St Louis 29Oct78 106.flac:17a261b9a9c9c9fcc1db33ebc924af1e
+St Louis 29Oct78 107.flac:df5c847b84cb1f1faf96d00b4baf4279
+St Louis 29Oct78 108.flac:f176b9acf2dd3120733f053861b55871
+St Louis 29Oct78 109.flac:23d6ec71bd548c0cf460b706edb6509c
+St Louis 29Oct78 110.flac:fa6dad3c1fc878d85a021f231f24a0a6
+St Louis 29Oct78 111.flac:9bde2a8dc14d939ecd86a63d0479a808
+St Louis 29Oct78 112.flac:c080ab3c456623e50e2533a2213211a4
+St Louis 29Oct78 113.flac:519d5a1c77b25b16b9b90c3174d84513
+St Louis 29Oct78 114.flac:b967eaf15f4625a1c314a0e83f0bfe14
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-29-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+St Louis 29Oct78 201.flac:fb3b4e49117feedcc8c34ce8f56e891d
+St Louis 29Oct78 202.flac:4272a6f971a01612179b5d20381e5b20
+St Louis 29Oct78 203.flac:484b024e97e0981544b38cfa1864bec5
+St Louis 29Oct78 204.flac:3daa35f70545d8b3fa251d3ceca9b67f
+St Louis 29Oct78 205.flac:355b5036025a4ff2857811fb769ca8ff
+St Louis 29Oct78 206.flac:8cc6d77f64919595a3c64a541adcc0e6
+St Louis 29Oct78 207.flac:a4433e8a90fb7fd9a3bd1dbeec7fea11
+St Louis 29Oct78 208.flac:eabef9f66fd9aeee0678c3e67f367203
+St Louis 29Oct78 209.flac:b7e82e655a9e44fc0860d88be13a63fd
+St Louis 29Oct78 210.flac:b7ac1cf081fcaf7c1e1fd2fb5040e831
+St Louis 29Oct78 211.flac:ce6d6f3dcfdfbfaaf99f21ecfb82b662
+St Louis 29Oct78 212.flac:e1c3f436090f57da43b39beb3f5a4b2f
+St Louis 29Oct78 213.flac:3e510dea644e8938f1f8e06c01de6b64
+St Louis 29Oct78 214.flac:b2e733a1c2337580ffc7f05314f283b3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-29-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:32.50       26930444 B   ---   --   ---xx   flac  0.4539  St Louis 29Oct78 101.flac
+     2:36.30       27589004 B   ---   --   ---xx   flac  0.4496  St Louis 29Oct78 102.flac
+     5:25.06       57344156 B   ---   --   ---xx   flac  0.4290  St Louis 29Oct78 103.flac
+     4:29.59       47590412 B   ---   --   ---xx   flac  0.4599  St Louis 29Oct78 104.flac
+     3:42.12       39189068 B   ---   --   ---xx   flac  0.4557  St Louis 29Oct78 105.flac
+     7:38.69       80953532 B   ---   --   ---xx   flac  0.4351  St Louis 29Oct78 106.flac
+     4:31.30       47875004 B   ---   --   ---xx   flac  0.4622  St Louis 29Oct78 107.flac
+     5:17.70       56083484 B   ---   --   ---xx   flac  0.4563  St Louis 29Oct78 108.flac
+     4:11.50       44394044 B   ---   --   ---xx   flac  0.4431  St Louis 29Oct78 109.flac
+     6:31.60       69113564 B   ---   --   ---xx   flac  0.4669  St Louis 29Oct78 110.flac
+     4:34.16       48371276 B   ---   --   ---xx   flac  0.4256  St Louis 29Oct78 111.flac
+     5:13.47       55323788 B   ---   --   ---xx   flac  0.4218  St Louis 29Oct78 112.flac
+     5:15.72       55735388 B   ---   --   ---xx   flac  0.4019  St Louis 29Oct78 113.flac
+     7:09.19       75720332 B   ---   --   ---xx   flac  0.3692  St Louis 29Oct78 114.flac
+    69:10.65      732213496 B                            0.4345  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-29-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:28.04       36700652 B   ---   --   ---xx   flac  0.4131  St Louis 29Oct78 201.flac
+     4:29.52       47573948 B   ---   --   ---xx   flac  0.4084  St Louis 29Oct78 202.flac
+     4:37.53       48987500 B   ---   --   ---xx   flac  0.3815  St Louis 29Oct78 203.flac
+     5:23.03       56984300 B   ---   --   ---xx   flac  0.3351  St Louis 29Oct78 204.flac
+     5:54.13       62476220 B   ---   --   ---xx   flac  0.4700  St Louis 29Oct78 205.flac
+     4:24.00       46569644 B   ---   --   ---xx   flac  0.4823  St Louis 29Oct78 206.flac
+     5:36.54       59397452 B   ---   --   ---xx   flac  0.4571  St Louis 29Oct78 207.flac
+     5:06.42       54077228 B   ---   --   ---xx   flac  0.4438  St Louis 29Oct78 208.flac
+     4:33.11       48183116 B   ---   --   ---xx   flac  0.4557  St Louis 29Oct78 209.flac
+     3:21.55       35585804 B   ---   --   ---xx   flac  0.4580  St Louis 29Oct78 210.flac
+     3:03.36       32365916 B   ---   --   ---xx   flac  0.4005  St Louis 29Oct78 211.flac
+     6:36.30       69925004 B   ---   --   ---xx   flac  0.4666  St Louis 29Oct78 212.flac
+     6:30.38       68885420 B   ---   --   ---xx   flac  0.4614  St Louis 29Oct78 213.flac
+     7:52.00       83260844 B   ---   --   ---xx   flac  0.5104  St Louis 29Oct78 214.flac
+    70:57.16      750973048 B                            0.4441  (14 files)
+=================== 
+=================== 
+=================== 

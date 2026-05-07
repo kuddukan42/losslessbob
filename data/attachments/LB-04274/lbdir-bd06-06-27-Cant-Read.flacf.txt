@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-06-27-Cant-Read.flacf 
+=================== 
+=================== 
+=================== 
+2b347adfcd6007063ce7bef0e13be620  Artwork and info\2006-06-27 Cardiff International Arena, Cardiff, Wales [Can't Read].txt
+77b3605ba197fec1117291ce5e7ed492  Artwork and info\SimpsBox.pdf
+ec48cc1594e3d4d2a4b3d32da75abe61  Artwork and info\SimpsLab.pdf
+d235268cb25221e43a8c52e80ff2ff32  bd06-06-27-Cant-Read-LB-4274.txt
+fd0e2a62078c9ac4b30cdc5264ea624f  CD1\00 Announcement.flac
+d0b18900d5380ef8a822218d0dd53b0e  CD1\01 Maggie's farm.flac
+6f212424f891ec006c8905f14a75569b  CD1\02 She belongs to me.flac
+656f187bb7b5407b609562c6991c4345  CD1\03 Tweedle Dee & Tweedle Dum.flac
+b8714422fad3c685bd0ce72ce9024e83  CD1\04 Positively 4th Street.flac
+ff42b0795f7bc3f5ca484f39867b2620  CD1\05 Stuck inside of Mobile with the Memphis blues again.flac
+275bcf096cb9023109ba6a71043fc12c  CD1\06 Love sick.flac
+7f4a864cddbc24c43edf823a461bc7bc  CD1\07 Watching the river flow.flac
+3ad193abc06dcab5d6dace42604b0fd9  CD1\08 Ballad of a thin man.flac
+939e657131ef0fda7535da705afe0f2b  CD1\09 Absolutely sweet Marie.flac
+cfbd2c11e0cb6e1010f065fdea993519  CD2\10 Girl of The North Country.flac
+013ded01f83ca3a148475ee148035cc6  CD2\11 Cold irons bound.flac
+4833ae4af31ac89e5f531122b50e8b95  CD2\12 Don't think twice it's all right.flac
+fccd9dbf5154ae5e400db6c2fb77ba82  CD2\13 Summer days.flac
+e1b91fa05d597cbccc0e1d3e5c325c80  CD2\14 Like a rolling stone.flac
+27c83a1160f1cdd0ac12cf540b0ca514  CD2\15 (band intro).flac
+f963882227755541621b9045c234eaeb  CD2\15 All along the watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-06-27-Cant-Read.flacf\CD1 
+=================== 
+=================== 
+=================== 
+00 Announcement.flac:63ab343b96a66111918d2bfffa60cbb0
+01 Maggie's farm.flac:cc5e097ec26ad1290fb1b620269c4702
+02 She belongs to me.flac:d7f36b8d8a3116b14c62bea463d2cd89
+03 Tweedle Dee & Tweedle Dum.flac:8b1ded6c1d86750f9da567e1eaf394e6
+04 Positively 4th Street.flac:84901aed72c782aed01edb9ed53919f7
+05 Stuck inside of Mobile with the Memphis blues again.flac:1d47b54b89541bab79f41a62b68b8761
+06 Love sick.flac:17e97f3405277f20a183a417ea17af61
+07 Watching the river flow.flac:d2abac235a4e0edf02d9902193978093
+08 Ballad of a thin man.flac:4deb068e1c406613d2ad263340fbb457
+09 Absolutely sweet Marie.flac:ba6073cf30dab2bb0a11ec9fe85a37c2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-06-27-Cant-Read.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Girl of The North Country.flac:4e3a8d2c4254b4025e32a94fdf88e427
+11 Cold irons bound.flac:bb7a414c0d141f4cf62f9cee0ede50aa
+12 Don't think twice it's all right.flac:185419743266e5e31beec9242517d1a8
+13 Summer days.flac:c91172987952b65cc48a6f240cbe21a9
+14 Like a rolling stone.flac:407cadbe6925da840a7c7f5f944122cc
+15 (band intro).flac:4e56a1e669087df1cbc40ca001bf320b
+15 All along the watchtower.flac:ad1c9d81b35eadf97cbe864f87852a90
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-06-27-Cant-Read.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:02.40       11030924 B   ---   --   ---xx   flac  0.5510  00 Announcement.flac
+     4:58.50       52684844 B   ---   --   ---xx   flac  0.6189  01 Maggie's farm.flac
+     5:15.45       55671884 B   ---   --   ---xx   flac  0.5974  02 She belongs to me.flac
+     5:32.65       58717724 B   ---   --   ---xx   flac  0.5791  03 Tweedle Dee & Tweedle Dum.flac
+     6:06.05       64574204 B   ---   --   ---xx   flac  0.5837  04 Positively 4th Street.flac
+     8:44.51       92553596 B   ---   --   ---xx   flac  0.5982  05 Stuck inside of Mobile with the Memphis blues again.flac
+     5:54.23       62499740 B   ---   --   ---xx   flac  0.5691  06 Love sick.flac
+     6:28.51       68563196 B   ---   --   ---xx   flac  0.5944  07 Watching the river flow.flac
+     7:34.30       80156204 B   ---   --   ---xx   flac  0.5563  08 Ballad of a thin man.flac
+     5:41.30       60223004 B   ---   --   ---xx   flac  0.5947  09 Absolutely sweet Marie.flac
+    57:19.15      606675320 B                            0.5864  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-06-27-Cant-Read.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:41.61       70879916 B   ---   --   ---xx   flac  0.5345  10 Girl of The North Country.flac
+     6:38.15       70242524 B   ---   --   ---xx   flac  0.5779  11 Cold irons bound.flac
+     7:29.30       79274204 B   ---   --   ---xx   flac  0.5412  12 Don't think twice it's all right.flac
+     6:53.20       72900284 B   ---   --   ---xx   flac  0.5881  13 Summer days.flac
+     6:27.42       68365628 B   ---   --   ---xx   flac  0.6233  14 Like a rolling stone.flac
+     0:50.12        8848268 B   ---   --   ---xx   flac  0.5553  15 (band intro).flac
+     5:28.17       57899228 B   ---   --   ---xx   flac  0.6177  15 All along the watchtower.flac
+    40:28.47      428410052 B                            0.5778  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-11-d.flacf 
+=================== 
+=================== 
+=================== 
+fd6762c8b36f8d30b722781b5e180d72  Bob Dylan 2003.05.11 Solomons, Maryland, Calvert Marine Museum.md5
+b9f5e65ea87876c14922165a58e06cbc  D_1\Track01.flac
+553d535d57cef270b47a7dd9ecc6fb83  D_1\Track02.flac
+295678a7e9331705ca890517dba97167  D_1\Track03.flac
+a8659fd46c92b97a8596c9bc838b1a1e  D_1\Track04.flac
+59f211f30cf87457ac05dd91f6e816f2  D_1\Track05.flac
+d8f74f6a802892b2578f77c7cbde8f82  D_1\Track06.flac
+2be4dd0ed06e569c408ca8daf0206973  D_1\Track07.flac
+193b2f15ca48a36a295ee59258364e20  D_1\Track08.flac
+2c613ebf054a3537a2e75a86abbfbc3f  D_2\Track01.flac
+9243f389eb49d3c8a5c5ad7ebee97ab6  D_2\Track02.flac
+750a360416a7c31e1f8956b0457d5d4d  D_2\Track03.flac
+fd08df699d6457780ca752693eb0774f  D_2\Track04.flac
+edd244453fdc72e7a5b705689fb5200f  D_2\Track05.flac
+b46f3c90255bccd39631d5f7a81eb273  D_2\Track06.flac
+8ac183802e5a740fa9760a89184875fb  D_2\Track07.flac
+e586b3c2ca56d78fb5f2537ed96ef3f0  D_2\Track08.flac
+b4eb18893fc88953833494e8a8e9fdc0  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-05-11-d.flacf\d_1 
+=================== 
+=================== 
+=================== 
+track01.flac:2fb85f065dc7ddcb82e49c415818a7f7
+track02.flac:6ccb1176e7d5a59f6ede437089bdcf7b
+track03.flac:949270063ba85ffc3d2f49d31e65c181
+track04.flac:bf6f92e4c616d25a3a92b7065b850a64
+track05.flac:5e417dc9dc07e57828750472bbb6b223
+track06.flac:a4e52f395b08d42a055b09ffcef944a3
+track07.flac:5cbf5fe09ee4a21dc10d93facf2aa588
+track08.flac:f345d1b335001ced609838eace446e30
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-05-11-d.flacf\d_2 
+=================== 
+=================== 
+=================== 
+track01.flac:1a5fa85c82c7ec73d75e25da59488b36
+track02.flac:045858edcd3bcfc9f710e66860f61146
+track03.flac:981f61abd6555986f4206e1078f78bda
+track04.flac:53c69b46f6d255dc5ab49516e87da523
+track05.flac:fe6c691c3397388189887eb7b78b13b4
+track06.flac:77ae92e5135df77ee849c37dcd2c8da0
+track07.flac:993575e00207f02e8fbb7df2b2bedb91
+track08.flac:875b018615c228c1b1a9f9acda2c264e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-11-d.flacf\d_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.00       64915244 B   ---   --   ---xx   flac  0.6377  Track01.flac
+     3:58.00       41983244 B   ---   --   ---xx   flac  0.6208  Track02.flac
+     5:17.00       55918844 B   ---   --   ---xx   flac  0.6323  Track03.flac
+     5:01.00       53096444 B   ---   --   ---xx   flac  0.6253  Track04.flac
+     7:11.00       76028444 B   ---   --   ---xx   flac  0.6412  Track05.flac
+     4:59.00       52743644 B   ---   --   ---xx   flac  0.6611  Track06.flac
+     7:40.00       81144044 B   ---   --   ---xx   flac  0.6270  Track07.flac
+     5:50.72       61909388 B   ---   --   ---xx   flac  0.6520  Track08.flac
+    46:04.72      487739296 B                            0.6374  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-11-d.flacf\d_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:45.00       71442044 B   ---   --   ---xx   flac  0.6408  Track01.flac
+     5:46.00       61034444 B   ---   --   ---xx   flac  0.6341  Track02.flac
+     3:57.00       41806844 B   ---   --   ---xx   flac  0.5794  Track03.flac
+     6:50.00       72324044 B   ---   --   ---xx   flac  0.6651  Track04.flac
+     5:32.00       58564844 B   ---   --   ---xx   flac  0.5619  Track05.flac
+     9:40.00      102312044 B   ---   --   ---xx   flac  0.6422  Track06.flac
+     6:50.00       72324044 B   ---   --   ---xx   flac  0.6442  Track07.flac
+     6:27.56       68398556 B   ---   --   ---xx   flac  0.6528  Track08.flac
+    51:47.56      548206864 B                            0.6324  (8 files)
+=================== 
+=================== 
+=================== 

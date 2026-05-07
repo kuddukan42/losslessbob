@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-19-in-the-heart-of-oregon.flacf 
+=================== 
+=================== 
+=================== 
+f73bfb2a045ba5ce18a9e26b57720f12  bd87-07-19-in-the-heart-of-oregon-d1t01.flac
+cd9ed50458fa4874b023da88f3e2e571  bd87-07-19-in-the-heart-of-oregon-d1t02.flac
+50cb14ee89f86b8b6cddc8a4dcad607a  bd87-07-19-in-the-heart-of-oregon-d1t03.flac
+3532825ccd26e206d13ef9bd57bda333  bd87-07-19-in-the-heart-of-oregon-d1t04.flac
+76d2d9c4343efc3dc734afc3f062ef31  bd87-07-19-in-the-heart-of-oregon-d1t05.flac
+ab18eab74ea18979e06eadc06861863f  bd87-07-19-in-the-heart-of-oregon-d1t06.flac
+f5a2d30cdf719d758cb1fbe20487aa59  bd87-07-19-in-the-heart-of-oregon-d1t07.flac
+d2243c5dab287b8fb8904d83aebadf02  bd87-07-19-in-the-heart-of-oregon-d1t08.flac
+c6ccc48b1d822a4ab023e9fe2000cce4  bd87-07-19-in-the-heart-of-oregon-d1t09.flac
+aa0c22b8079492c40b8f1f4163ea2b94  bd87-07-19-in-the-heart-of-oregon-d1t10.flac
+884ded39f89d90c2f9513384a52ff6bb  bd87-07-19-in-the-heart-of-oregon-d1t11.flac
+8668bd4c91a3ca4dfdf88dd53d0d2179  bd87-07-19-in-the-heart-of-oregon.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-07-19-in-the-heart-of-oregon.flacf 
+=================== 
+=================== 
+=================== 
+bd87-07-19-in-the-heart-of-oregon-d1t01.flac:aaadb40f2d8b54ce526306c438c39580
+bd87-07-19-in-the-heart-of-oregon-d1t02.flac:bedaefe3552cf0f7f71461e7d0ccfd48
+bd87-07-19-in-the-heart-of-oregon-d1t03.flac:fc9373d5e83f73b9db98eb38eb11231c
+bd87-07-19-in-the-heart-of-oregon-d1t04.flac:47f5b4df2af66783cca14d63470cd2e4
+bd87-07-19-in-the-heart-of-oregon-d1t05.flac:f3abb4382283615ca12f4480ceec7291
+bd87-07-19-in-the-heart-of-oregon-d1t06.flac:b6068078150bc45a099f0137d10985a3
+bd87-07-19-in-the-heart-of-oregon-d1t07.flac:8e2d98e5fd85051590a6aee8db6ce536
+bd87-07-19-in-the-heart-of-oregon-d1t08.flac:4f8fe23d00512073b4de62c6891a9385
+bd87-07-19-in-the-heart-of-oregon-d1t09.flac:6833050d74748338d54ca74ea2df0be3
+bd87-07-19-in-the-heart-of-oregon-d1t10.flac:1faef3f4899ed3c0d09995e3698ebb90
+bd87-07-19-in-the-heart-of-oregon-d1t11.flac:4047ad5e3f3b39ba95815d40b7db9e8d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-19-in-the-heart-of-oregon.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.57       42999308 B   ---   --   ---xx   flac  0.5479  bd87-07-19-in-the-heart-of-oregon-d1t01.flac
+     5:01.38       53185820 B   ---   --   ---xx   flac  0.5609  bd87-07-19-in-the-heart-of-oregon-d1t02.flac
+     4:30.05       47639804 B   ---   --   ---xx   flac  0.5517  bd87-07-19-in-the-heart-of-oregon-d1t03.flac
+     4:54.45       51967484 B   ---   --   ---xx   flac  0.5399  bd87-07-19-in-the-heart-of-oregon-d1t04.flac
+     5:25.52       57452348 B   ---   --   ---xx   flac  0.5318  bd87-07-19-in-the-heart-of-oregon-d1t05.flac
+     6:14.30       66044204 B   ---   --   ---xx   flac  0.5414  bd87-07-19-in-the-heart-of-oregon-d1t06.flac
+     4:20.63       46012220 B   ---   --   ---xx   flac  0.5231  bd87-07-19-in-the-heart-of-oregon-d1t07.flac
+     5:32.25       58623644 B   ---   --   ---xx   flac  0.5257  bd87-07-19-in-the-heart-of-oregon-d1t08.flac
+     7:16.62       77056268 B   ---   --   ---xx   flac  0.5440  bd87-07-19-in-the-heart-of-oregon-d1t09.flac
+     4:57.50       52508444 B   ---   --   ---xx   flac  0.5554  bd87-07-19-in-the-heart-of-oregon-d1t10.flac
+     6:30.38       68885420 B   ---   --   ---xx   flac  0.5387  bd87-07-19-in-the-heart-of-oregon-d1t11.flac
+    58:48.15      622374964 B                            0.5417  (11 files)
+=================== 
+=================== 
+=================== 

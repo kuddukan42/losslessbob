@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-wolfgangsvault-arturo-week-10-12.flacf 
+=================== 
+=================== 
+=================== 
+9baf6e0dedc10285b13740637afb0ed5  01 1974-01-30_awake.flac
+4c665aa068e37d33222a6a8de0ece687  02 1974-01-30_shape.flac
+408057533647d4880743195f30ef73c2  03 1974-02-13_rdw.flac
+039777b111e6a3d23b3dbc2caaeaa43c  04 1974-02-14_shape.flac
+ae0b53bebaa95f7f7a8c4cb99c41c94e  05 1974-02-14_weight.flac
+88f06e5f990a847077178aec5d474a27  06 1975-03-23_weight.flac
+03293f43f1a90b0e3064584e64e107e2  07 1975-10-31_ramblin.flac
+b714e7a4857c034716247bd9871442f2  08 1975-11-02_hank.flac
+940143309e01a9a37b0ed0e2ef47e2cc  09 1975-11-02_saltpork.flac
+c232265bd1714d57257b9ae20dfdef4c  10 1975-11-19_hurricane.flac
+9a40b6697ef649fc8a14ecee3a6a4f22  11 1975-11-21_isis.flac
+7afa09b02e34ba3955ba2128fc0a3a85  12 1975-12-04_risingsun.flac
+b9a9cccec80119a67351a205f0b60b35  13 1975-12-08_sleazy.flac
+0a7f9df442464069c70d2b87b3e983d2  14 1967-11-03_jlaw.flac
+3cc22c56409ff42a0ad570166bcfc904  15 1969-02-06_turn-mrt-8m.flac
+06e6304ce748bdd46b0db21b61e06ade  16 1969-02-06_wheel.flac
+16ad85654cf77e95737b642f4f004c3b  17 1969-02-06_chimes.flac
+74f677527dd4c96eab3709e6005e70d9  18 1975-03-23_isbr.flac
+f5c793a96465cc0cf46cd74361dacd55  bd-wolfgangsvault-arturo-week-10-12-LB-3758.txt
+dd8a10cfb86451117b17a50e79bca34c  vrw10-12.jpg
+214e09a0ed01155cb5fd2c46577e39dd  weeks10_12flac.md5
+d2a804f126928ba425f28390cfb90eee  weeks10_12wav.md5
+a7219b0fc40b1b69a08850ab358ed564  wvr_wks10-12_info.txt
+ef64cb90b778370cf438eb5929a17d3e  wvradio.weeks10_12.sbeok.flac16.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-wolfgangsvault-arturo-week-10-12.flacf 
+=================== 
+=================== 
+=================== 
+01 1974-01-30_awake.flac:b26da866e90d230de9f0a1ea0519616d
+02 1974-01-30_shape.flac:80b596e4057ed221238053c9b377433d
+03 1974-02-13_rdw.flac:3b82f892ab0c2b8f66d5955e353ccc00
+04 1974-02-14_shape.flac:9ca1baebbf1fb7f32e68f1a51ff00f8f
+05 1974-02-14_weight.flac:37fe49fc6644e61836b8656ec17d0c4f
+06 1975-03-23_weight.flac:b1523c1902179dd0737f0567efc61584
+07 1975-10-31_ramblin.flac:cb207d30779098cab538c315271ec8c0
+08 1975-11-02_hank.flac:2806ba6f3c9ecf4e7fd84f7798454e75
+09 1975-11-02_saltpork.flac:b91c515e5148ede58366df4e39f82c8e
+10 1975-11-19_hurricane.flac:eeba32bd30a8dfd8fd29685505a8568d
+11 1975-11-21_isis.flac:0321ec916cb46e59bf135b5da9e768c0
+12 1975-12-04_risingsun.flac:d87a3c805907499dd3c298e7e0a07e15
+13 1975-12-08_sleazy.flac:b500ea156bb1edab86f3fb4e6d691f63
+14 1967-11-03_jlaw.flac:d1ec53d7a4697d11e23185e754e5b00d
+15 1969-02-06_turn-mrt-8m.flac:aa49ec0d2df212116ccfd496b205611f
+16 1969-02-06_wheel.flac:9a81ea84dc0e649b7d10bf6e28d8889c
+17 1969-02-06_chimes.flac:a01501064aeada3cecd7607826435bd2
+18 1975-03-23_isbr.flac:c7fb5ef9944bf9c54266f25c8b6ac3e9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-wolfgangsvault-arturo-week-10-12.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:00.67       31909628 B   ---   --   ---xx   flac  0.6768  01 1974-01-30_awake.flac
+     3:38.29       38523452 B   ---   --   ---xx   flac  0.6467  02 1974-01-30_shape.flac
+     3:24.46       36093836 B   ---   --   ---xx   flac  0.5896  03 1974-02-13_rdw.flac
+     3:34.10       37773164 B   ---   --   ---xx   flac  0.7088  04 1974-02-14_shape.flac
+     4:23.06       46407356 B   ---   --   ---xx   flac  0.6781  05 1974-02-14_weight.flac
+     4:12.10       44476364 B   ---   --   ---xx   flac  0.6318  06 1975-03-23_weight.flac
+     1:44.08       18364460 B   ---   --   ---xx   flac  0.6509  07 1975-10-31_ramblin.flac
+     3:52.42       41023628 B   ---   --   ---xx   flac  0.6789  08 1975-11-02_hank.flac
+     2:22.03       25055900 B   ---   --   ---xx   flac  0.7016  09 1975-11-02_saltpork.flac
+     8:16.07       87510908 B   ---   --   ---xx   flac  0.6186  10 1975-11-19_hurricane.flac
+     5:17.14       55951772 B   ---   --   ---xx   flac  0.6214  11 1975-11-21_isis.flac
+     3:51.53       40873100 B   ---   --   ---xx   flac  0.6127  12 1975-12-04_risingsun.flac
+     3:08.03       33170300 B   ---   --   ---xx   flac  0.6703  13 1975-12-08_sleazy.flac
+     7:55.35       83872364 B   ---   --   ---xx   flac  0.5829  14 1967-11-03_jlaw.flac
+     9:40.60      102453164 B   ---   --   ---xx   flac  0.5993  15 1969-02-06_turn-mrt-8m.flac
+     4:18.46       45619436 B   ---   --   ---xx   flac  0.6029  16 1969-02-06_wheel.flac
+     3:16.11       34600316 B   ---   --   ---xx   flac  0.6055  17 1969-02-06_chimes.flac
+     3:30.13       37074620 B   ---   --   ---xx   flac  0.6036  18 1975-03-23_isbr.flac
+    79:26.13      840753768 B                            0.6290  (18 files)
+=================== 
+=================== 
+=================== 

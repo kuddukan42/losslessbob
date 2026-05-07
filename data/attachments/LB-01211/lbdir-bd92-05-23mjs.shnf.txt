@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-05-23mjs.shnf 
+=================== 
+=================== 
+=================== 
+6615b16b793e439ecae697040efd09f2  bd92-05-23mjs.txt
+ea78b9d3eb6d2335dbd1d384f9256d73  bd920523.md5
+6a14bd1003ef64bc28acf04dcebabb8e  bd920523.txt
+f61dd6294442d267f4903857f646980c  bd920523d1t01.shn
+421e7d080c97e4f116f0a1e1f9a753c8  bd920523d1t02.shn
+8b1f52ce90df0ac6ce214c1c5f6e18ee  bd920523d1t03.shn
+35802c72bc337f642b3957dc901d5764  bd920523d1t04.shn
+cdc3ba9dbfcca789f8a291cc497ed901  bd920523d1t05.shn
+7c44d1e8932d00375b0e9524ceb294b6  bd920523d1t06.shn
+e9e40fe5358a046c7bd05ef6f72ee349  bd920523d1t07.shn
+fd4556aab3b7ff1d8f3f71c1d4e1a0e8  bd920523d1t08.shn
+a9baa2abb4892599df1443229554a284  bd920523d1t09.shn
+3e7ea5635ade126fac6a7e1c4e351612  bd920523d1t10.shn
+8563520a4f2cb2b176ff3884b1cc6eee  bd920523d2t01.shn
+7c9a92697720a4c83eaa67636b6baba4  bd920523d2t02.shn
+2186b0e0a8cc7783bbcc8e904f5b47e5  bd920523d2t03.shn
+15ce1983bf9345d9f24530e78e6f9894  bd920523d2t04.shn
+a386f8e38393153c220ede718f721da2  bd920523d2t05.shn
+5b2d55bded2b27161f003ca27ce3b464  bd920523d2t06.shn
+201c20fe1de6e97c3a208bbf37d5cd5d  bd920523d2t07.shn
+9d7484e2c984f9a96317d79819fce63c  Bob Dylan 5-23-92 Front.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-05-23mjs.shnf 
+=================== 
+=================== 
+=================== 
+a28d244428b0b5ed7ac758c211ea954a  [shntool]  bd920523d1t01.wav
+16bc6de1fd09655fedf28f8f1848abc4  [shntool]  bd920523d1t02.wav
+ea3cf2acd9c1f8665ec4057cb33a2a23  [shntool]  bd920523d1t03.wav
+d61b2a21b7b18b6f621a20480ccbfb69  [shntool]  bd920523d1t04.wav
+8325c9501da2c114b8af341269ce9887  [shntool]  bd920523d1t05.wav
+612a14f9a35a18fdc60830d2002857a6  [shntool]  bd920523d1t06.wav
+426257cfe931cda234690d87c7171460  [shntool]  bd920523d1t07.wav
+00310200992fde39b1341a808301cd82  [shntool]  bd920523d1t08.wav
+38636f47abad8b8b6e0a349eef865b48  [shntool]  bd920523d1t09.wav
+cb75bd1fb8a623612d27436e488a3001  [shntool]  bd920523d1t10.wav
+cfda812a091cafd4c49b12973e93050a  [shntool]  bd920523d2t01.wav
+ad918e502ddf97164596c047a6aa6c13  [shntool]  bd920523d2t02.wav
+7dae35f82b3d751cbdaae7fd6fd5d491  [shntool]  bd920523d2t03.wav
+69cad70e4aaa1d88b7d751ca31ccba45  [shntool]  bd920523d2t04.wav
+44fe3d1c2985a7b29437fbb008b8d176  [shntool]  bd920523d2t05.wav
+b0eafe25db6c8020f41a61becff8a4e4  [shntool]  bd920523d2t06.wav
+f7251ce191ce0695424bdf47bcc1a104  [shntool]  bd920523d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-05-23mjs.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.23       46622876 B   -b-   --   ---xx    shn  0.6647  bd920523d1t01.shn
+     6:40.62       70705400 B   -b-   --   ---xx    shn  0.6748  bd920523d1t02.shn
+     5:00.41       53015872 B   -b-   --   ---xx    shn  0.6878  bd920523d1t03.shn
+     5:43.55       60634744 B   -b-   --   ---xx    shn  0.7122  bd920523d1t04.shn
+     4:10.11       44125696 B   -b-   --   ---xx    shn  0.6590  bd920523d1t05.shn
+    13:45.57      145663900 B   -b-   --   ---xx    shn  0.7052  bd920523d1t06.shn
+     4:10.61       44242860 B   -b-   --   ---xx    shn  0.6465  bd920523d1t07.shn
+     3:27.18       36556608 B   -b-   --   ---xx    shn  0.5930  bd920523d1t08.shn
+     7:46.68       82361668 B   -b-   --   ---xx    shn  0.6812  bd920523d1t09.shn
+     6:45.20       71488436 B   -b-   --   ---xx    shn  0.6702  bd920523d1t10.shn
+     4:10.43       44201200 B   -b-   --   ---xx    shn  0.6681  bd920523d2t01.shn
+    10:25.28      110315456 B   -b-   --   ---xx    shn  0.6732  bd920523d2t02.shn
+     7:44.11       81875628 B   -b-   --   ---xx    shn  0.6750  bd920523d2t03.shn
+     5:55.15       62656524 B   -b-   --   ---xx    shn  0.6744  bd920523d2t04.shn
+     4:45.37       50362228 B   -b-   --   ---xx    shn  0.6936  bd920523d2t05.shn
+     4:43.62       50065972 B   -b-   --   ---xx    shn  0.6893  bd920523d2t06.shn
+     4:45.06       50289362 B   -b-   -e   ---xx    shn  0.6758  bd920523d2t07.shn
+   104:25.16     1105184430 B                            0.6779  (17 files)
+=================== 
+=================== 
+=================== 

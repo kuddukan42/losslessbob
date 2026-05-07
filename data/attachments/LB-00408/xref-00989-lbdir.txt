@@ -1,0 +1,142 @@
+===================
+===================
+===================
+=== md5 for: bd75-11-20-c.flacf
+===================
+===================
+===================
+8fbb1eabecda885f3a46358eba7e7c78 *bd1975-11-20-CHECKSUM.ffp
+6e8025ff774c95454476e11bc0696b9d *bd1975-11-20-INFO.txt
+3d56fc08b595ac1431ca462497f30c9b *bd75-11-20d1t01.flac
+3e9b953cfcc16d1956ae85523dd783d2 *bd75-11-20d1t02.flac
+024e413968699d4e2834c9448a61863b *bd75-11-20d1t03.flac
+6df868e49c62bae5e2a08143a1cd888d *bd75-11-20d1t04.flac
+33b43b240ed8cdf2d353a01d96f3e683 *bd75-11-20d1t05.flac
+a52d1558e447ada9c888e7803d7778a7 *bd75-11-20d1t06.flac
+53a150e42d46765a54638712bf97e920 *bd75-11-20d1t07.flac
+d731ff5c5dabab19639ceac06cebff07 *bd75-11-20d1t08.flac
+89edb2abf15cc2dae1adb9616de32105 *bd75-11-20d1t09.flac
+64181c2b4f5592ce0ac8aa3a4280c68d *bd75-11-20d1t10.flac
+3d7d5fc0bd2daf1b386c18f4e563fb48 *bd75-11-20d1t11.flac
+d7a4c190d5e9f0aa1c2e4c501b56ebe6 *bd75-11-20d1t12.flac
+a6d71fd1481e6d44be0f0dc43e314043 *bd75-11-20d1t13.flac
+be69ec8e22506bfb8aeb12e9de1fe00d *bd75-11-20d1t14.flac
+06473dd861b34ef9aae4b9603c4be661 *bd75-11-20d1t15.flac
+6b9ca227befcdcc4e089d2ee22ceee5b *bd75-11-20d2t01.flac
+c5344b20bcb381ca3d64392a575e6549 *bd75-11-20d2t03.flac
+ac8c263274f67a0d15e60ea7e39230e0 *bd75-11-20d2t04.flac
+34cd2ab852d4cda95ca5b8eb68c46030 *bd75-11-20d2t06.flac
+565f55ca54f618e786c00d6b808823eb *bd75-11-20d2t08.flac
+3f8425cdef1c9dfbd303abd80d0b73b6 *bd75-11-20d2t09.flac
+cb2758695b1ed6027fc17fa02dd25ed0 *bd75-11-20d2t10.flac
+eb22031544ead925579897fb14a4c742 *bd75-11-20d2t11.flac
+94b3284be0215dec57687716ca4cdd48 *bd75-11-20d2t12.flac
+26f5c3c3dfd15c378df72307420bf209 *bd75-11-20d2t13.flac
+fcda00715861f464e803c29838f98953 *bd75-11-20d2t14.flac
+db91fc02f45a2105d4744efa26802e30 *bd75-11-20d2t15.flac
+f00b09c858c372e3ed5fcaafa6d09bcf *bd75-11-20d3t01.flac
+e39ff72cd6e078c7c95b9d9455c51f2d *bd75-11-20d3t02.flac
+9d603ac3f96fd8474cda6618a15b46ba *bd75-11-20d3t03.flac
+482f3b0ab191be91f07784cfb8979394 *bd75-11-20d3t04.flac
+6ee074f9c9766e86c44160bf0e05c4c7 *bd75-11-20d3t05.flac
+b3964ac8b86b700fa5d396c292aae2f6 *bd75-11-20d3t07.flac
+95b6843bf905af8099220f3d354482d5 *bd75-11-20d3t08.flac
+371d834d6dad867952dcde64cedb8ec9 *bd75-11-20d3t09.flac
+03de28cf7fb7d9105cb248a3144efaca *bd75-11-20d3t10.flac
+6004f192459a41143a3d356a10a538ee *bd75-11-20d3t11.flac
+e69f6d706eca323cd161a7e3a7a96bc8 *bd75-11-20d3t13.flac
+===================
+===================
+===================
+=== ffp for: bd75-11-20-c.flacf
+===================
+===================
+===================
+bd75-11-20d1t01.flac:226f6369c45008bf943a2bc3b1b8ca4b
+bd75-11-20d1t02.flac:492773ec686fbb7cec0e3c0c69bad73c
+bd75-11-20d1t03.flac:9593192b91f654c96a29d442412a1e4c
+bd75-11-20d1t04.flac:8c6ffb581dc0035e57cca4e0ecf01284
+bd75-11-20d1t05.flac:bc6697fc3c9d02b7fa290be3f3589bd7
+bd75-11-20d1t06.flac:5ff7e4ed601cb21b554961da494aeec4
+bd75-11-20d1t07.flac:55ca674c1c17211ff018d955718c9292
+bd75-11-20d1t08.flac:d893e7a723e43c322fb9a7e910f910db
+bd75-11-20d1t09.flac:11f0e5967890ce93ecf75e50af310aae
+bd75-11-20d1t10.flac:c280773a76c6fc3093dbf0ce317090f9
+bd75-11-20d1t11.flac:7a0b48c17ed6690cdb39236e7bd513e8
+bd75-11-20d1t12.flac:9eb52ada2b3098697e50ca9b1e79572f
+bd75-11-20d1t13.flac:b50e71b0b5fef8165d2b6403bce71055
+bd75-11-20d1t14.flac:5cd21fb9c738f1c5c58e579f0bb9679b
+bd75-11-20d1t15.flac:ed6ca26a3fab2add49fdbec8e5141b19
+bd75-11-20d2t01.flac:26090390d919ff0f328353f95150959e
+bd75-11-20d2t03.flac:96f374e6f28c33217e3ba5b5deb25d36
+bd75-11-20d2t04.flac:71feb5ea642ca6d6d11d93bbf33932d3
+bd75-11-20d2t06.flac:489df58a37862b23044e38b46b97461e
+bd75-11-20d2t08.flac:4daab3c5f256a63222da8e1cad4e35e1
+bd75-11-20d2t09.flac:87bd45dd76bfac838e08b76bc02b5674
+bd75-11-20d2t10.flac:84fbb4b0f24cb534180b0fe39b3b8564
+bd75-11-20d2t11.flac:f74b13d559c5bf3726878a8f005a291d
+bd75-11-20d2t12.flac:d9a81cd3043dd1a514dd814cff160c94
+bd75-11-20d2t13.flac:d699efe1b338d743aacce0b7d7cdd3f5
+bd75-11-20d2t14.flac:a35b3cbac59cead29e3ff59128382277
+bd75-11-20d2t15.flac:3af1c28d016279c22001e70b309a6847
+bd75-11-20d3t01.flac:f6b43918cf5f4e9a80ea4466a16b3ef0
+bd75-11-20d3t02.flac:23d91138d78ed505c3f0e9819814302d
+bd75-11-20d3t03.flac:2fd486d9476272226e3abc8747c9e2ed
+bd75-11-20d3t04.flac:30aa541fbea1d13a27d154f0d8d517ab
+bd75-11-20d3t05.flac:f4d70fad911060ee59c9baebf5344e7b
+bd75-11-20d3t07.flac:9352a2b76ba3d3a90c134ab2d7ae2e89
+bd75-11-20d3t08.flac:ac6c1e14442f05f35a896a5b20905060
+bd75-11-20d3t09.flac:ab83d8db060b7c46e77bc9f62102c8ef
+bd75-11-20d3t10.flac:3a43fa4a8fc80f3459418abe25e73888
+bd75-11-20d3t11.flac:4190e45b75296f1dbf66ffcf9e906750
+bd75-11-20d3t13.flac:9b55514c4dbc2ce61b989d5d319d1ecd
+===================
+===================
+===================
+=== shntool len for: bd75-11-20-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:22.00       14464844 B   ---   --   ---xx   flac  0.5829  bd75-11-20d1t01.flac
+     3:04.40       32551724 B   ---   --   ---xx   flac  0.5921  bd75-11-20d1t02.flac
+     3:36.73       38274140 B   ---   --   ---xx   flac  0.5735  bd75-11-20d1t03.flac
+     5:27.07       57699308 B   ---   --   ---xx   flac  0.5807  bd75-11-20d1t04.flac
+     3:55.36       41538716 B   ---   --   ---xx   flac  0.5854  bd75-11-20d1t05.flac
+     4:13.69       44791532 B   ---   --   ---xx   flac  0.5779  bd75-11-20d1t06.flac
+     4:13.32       44704508 B   ---   --   ---xx   flac  0.5820  bd75-11-20d1t07.flac
+     3:17.08       34769660 B   ---   --   ---xx   flac  0.5789  bd75-11-20d1t08.flac
+     4:16.11       45184316 B   ---   --   ---xx   flac  0.5428  bd75-11-20d1t09.flac
+     4:10.72       44269388 B   ---   --   ---xx   flac  0.5891  bd75-11-20d1t10.flac
+     1:38.55       17416604 B   ---   --   ---xx   flac  0.5685  bd75-11-20d1t11.flac
+     2:48.47       29745788 B   ---   --   ---xx   flac  0.5601  bd75-11-20d1t12.flac
+     6:50.13       72354620 B   ---   --   ---xx   flac  0.5480  bd75-11-20d1t13.flac
+     3:36.51       38222396 B   ---   --   ---xx   flac  0.6142  bd75-11-20d1t14.flac
+     4:04.58       43178060 B   ---   --   ---xx   flac  0.6277  bd75-11-20d1t15.flac
+     4:13.28       44695100 B   ---   --   ---xx   flac  0.6241  bd75-11-20d2t01.flac
+     5:32.66       58720076 B   ---   --   ---xx   flac  0.6125  bd75-11-20d2t03.flac
+     3:22.52       35755148 B   ---   --   ---xx   flac  0.6226  bd75-11-20d2t04.flac
+     5:46.37       61121468 B   ---   --   ---xx   flac  0.6199  bd75-11-20d2t06.flac
+     4:14.64       44956172 B   ---   --   ---xx   flac  0.5854  bd75-11-20d2t08.flac
+     3:20.42       35378828 B   ---   --   ---xx   flac  0.5833  bd75-11-20d2t09.flac
+     3:53.21       41150636 B   ---   --   ---xx   flac  0.5685  bd75-11-20d2t10.flac
+     4:59.31       52816556 B   ---   --   ---xx   flac  0.5688  bd75-11-20d2t11.flac
+     4:13.37       44716268 B   ---   --   ---xx   flac  0.5765  bd75-11-20d2t12.flac
+     4:23.16       46430876 B   ---   --   ---xx   flac  0.5483  bd75-11-20d2t13.flac
+     4:17.20       45381884 B   ---   --   ---xx   flac  0.5513  bd75-11-20d2t14.flac
+     5:40.49       60091292 B   ---   --   ---xx   flac  0.5431  bd75-11-20d2t15.flac
+     3:52.65       41077724 B   ---   --   ---xx   flac  0.6225  bd75-11-20d3t01.flac
+     4:33.00       48157244 B   ---   --   ---xx   flac  0.6153  bd75-11-20d3t02.flac
+     4:54.48       51974540 B   ---   --   ---xx   flac  0.6312  bd75-11-20d3t03.flac
+     4:47.07       50643308 B   ---   --   ---xx   flac  0.6345  bd75-11-20d3t04.flac
+     3:51.20       40795484 B   ---   --   ---xx   flac  0.6273  bd75-11-20d3t05.flac
+     4:32.28       48046700 B   ---   --   ---xx   flac  0.6013  bd75-11-20d3t07.flac
+     7:53.74       83611292 B   ---   --   ---xx   flac  0.6297  bd75-11-20d3t08.flac
+     4:00.72       42505388 B   ---   --   ---xx   flac  0.5976  bd75-11-20d3t09.flac
+     5:28.52       57981548 B   ---   --   ---xx   flac  0.5844  bd75-11-20d3t10.flac
+     3:58.07       41999708 B   ---   --   ---xx   flac  0.5984  bd75-11-20d3t11.flac
+     4:35.50       48627644 B   ---   --   ---xx   flac  0.6318  bd75-11-20d3t13.flac
+   163:03.33     1725800488 B                            0.5925  (38 files)
+===================
+===================
+===================

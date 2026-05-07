@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-12-Wario-48k.shnf 
+=================== 
+=================== 
+=================== 
+634daf6ab8d8ab4ba4934a2641633920  bd040312.md5
+3f5cc29b2022fcbb4103137ada21d97e  bd040312d1t01.shn
+ec2ed24c88a56ae629d1c862e9a18d54  bd040312d1t02.shn
+370a6fa5f2f73fd7ce702c87fddd9c42  bd040312d1t03.shn
+609e4c17bcfc8920c540c2748dc48a14  bd040312d1t04.shn
+bf7dd9a7660cc1af71cf135f57fddf98  bd040312d1t05.shn
+1286b53e74db6359989997a4f25f47fe  bd040312d1t06.shn
+1c7d00f7e64fb304abd085b805945c8d  bd040312d1t07.shn
+61e819a85ab6d5938074e4b2c2cb8daf  bd040312d1t08.shn
+ecc0a3bb4384676af0e57b353cfd2937  bd040312d1t09.shn
+e0c6be3a5d5b227a81adc0ab384ecea9  bd040312d1t10.shn
+4e92e671df0602b2057c908aac4fcdaf  bd040312d1t11.shn
+a6f85f56b367621b86a53b5d5ab7a911  bd040312d2t01.shn
+1ca618b8a54f461cf510e30969bb78ed  bd040312d2t02.shn
+75e8486ae9cf4fb9f2aea581072c1330  bd040312d2t03.shn
+103d093a63145b34272d992e0324bd66  bd040312d2t04.shn
+9581bf191aab41c18e3b942fe11b7ab6  bd040312d2t05.shn
+1a380a94fd90d131c2304f35df29e9d9  bd040312d2t06.shn
+e0857052fc62343e54693e242afe3457  bd040312d2t07.shn
+6ee5759f086d6fbdc9e3998852ed9808  bd040312d2t08.shn
+5f1480928df8d7ece5aa7b39abe795cf  Bob Dylan 3-12-04 Back.jpg
+d720dcb3e137fbf4d58067b572e2f2d4  Bob Dylan 3-12-04 CD1.jpg
+805b4f2ff34229994918461b795c9814  Bob Dylan 3-12-04 CD2.jpg
+7c4c19ebff43b95d95a9bdd6a899e94f  Bob Dylan 3-12-04 Front.jpg
+ed3f524fe398df1aef1abb6c6be253c7  Bob Dylan 3-12-04 Milwaukee (Wario).txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-03-12-Wario-48k.shnf 
+=================== 
+=================== 
+=================== 
+114441f39ea17b595564f1796cacf2b7  [shntool]  bd040312d1t01.wav
+68bfac262acab72ddcb4c42c29f69769  [shntool]  bd040312d1t02.wav
+9c283b38f94bf3d637dff102fb24421a  [shntool]  bd040312d1t03.wav
+3ff58fe70a70d51a3eca17cd0758b692  [shntool]  bd040312d1t04.wav
+9f62620d5ffdcebb47928dfae8a38d8d  [shntool]  bd040312d1t05.wav
+19beec9e4ec1c8d12e477298497cd656  [shntool]  bd040312d1t06.wav
+00524b3b87913ec323646acb01992814  [shntool]  bd040312d1t07.wav
+50f6e161a87d600505214ec018fed16b  [shntool]  bd040312d1t08.wav
+1ca023fd57a1c5e090683b6a362d95ab  [shntool]  bd040312d1t09.wav
+b165f5276f59db9d1fc06b798047c32e  [shntool]  bd040312d1t10.wav
+1601052ce58d86decc2d9f4d1d07b747  [shntool]  bd040312d1t11.wav
+2a31f6bd75970c22b265f4d5b2202af9  [shntool]  bd040312d2t01.wav
+88d67fe602090385bdba1f8d4fc7d15e  [shntool]  bd040312d2t02.wav
+dad1ddea540906f3c387601724fd685e  [shntool]  bd040312d2t03.wav
+0c735b368aa80a7888d42f2b0ac563a8  [shntool]  bd040312d2t04.wav
+ae273813e3f19ea6eba21aa9330eb420  [shntool]  bd040312d2t05.wav
+779aaa2e863b681776da91b7e8ce2d3b  [shntool]  bd040312d2t06.wav
+cf512e67ab36c6463295bb9ead7d9738  [shntool]  bd040312d2t07.wav
+3708380e9f94409f195aaedc0fffb043  [shntool]  bd040312d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-12-Wario-48k.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.693      11845032 B   cxx   --   -----    wav  1.0000  bd040312d1t01.wav
+     4:40.502      53856396 B   cxx   --   -----    wav  1.0000  bd040312d1t02.wav
+     4:14.464      48857072 B   cxx   --   -----    wav  1.0000  bd040312d1t03.wav
+     7:34.155      87197820 B   cxx   --   -----    wav  1.0000  bd040312d1t04.wav
+     5:28.708      63112036 B   cxx   --   -----    wav  1.0000  bd040312d1t05.wav
+     7:10.339      82625148 B   cxx   --   -----    wav  1.0000  bd040312d1t06.wav
+     6:07.616      70582256 B   cxx   --   -----    wav  1.0000  bd040312d1t07.wav
+     4:45.085      54736348 B   cxx   --   -----    wav  1.0000  bd040312d1t08.wav
+     5:21.634      61753820 B   cxx   --   -----    wav  1.0000  bd040312d1t09.wav
+     6:36.148      76060416 B   cxx   --   -----    wav  1.0000  bd040312d1t10.wav
+     6:24.834      73888192 B   cxx   --   -----    wav  1.0000  bd040312d1t11.wav
+     6:23.014      73538740 B   cxx   --   -----    wav  1.0000  bd040312d2t01.wav
+     7:22.951      85046692 B   cxx   --   -----    wav  1.0000  bd040312d2t02.wav
+     5:43.243      65902728 B   cxx   --   -----    wav  1.0000  bd040312d2t03.wav
+     9:57.072     114637956 B   cxx   --   -----    wav  1.0000  bd040312d2t04.wav
+     4:50.301      55737784 B   cxx   --   -----    wav  1.0000  bd040312d2t05.wav
+     6:40.892      76971212 B   cxx   --   -----    wav  1.0000  bd040312d2t06.wav
+     0:57.648      11068532 B   cxx   --   -----    wav  1.0000  bd040312d2t07.wav
+     5:39.812      65243884 B   cxx   --   -----    wav  1.0000  bd040312d2t08.wav
+   107:00.111    1232662064 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

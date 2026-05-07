@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-10-HG 
+=================== 
+=================== 
+=================== 
+aee8c67328b6310bcee81273ae73df93  01 - Intro.shn
+bee5aa58c1d5bd5b14a8a6cfe84aa739  02 - Most Likely You Go Your Way.shn
+e6535cc5c291227d0eafd4f1c03bed4a  03 - Ballad Of Hollis Brown.shn
+bef377e68f91f6ad947690d3fa07c452  04 - Masters Of War.shn
+cc9f39d493534ac0f85e29a7c245af15  05 - I´ll Be Your Baby Tonight.shn
+ae8c0fa4a4dfc24db28148033d45d1dc  06 - Shelter From The Storm.shn
+d87b442635aaa40df6c5098cb5536dfe  07 - Highway 61 Revisited.shn
+12693946243ebd78fe4523ee94f20827  08 - Mr. Tambourine Man.shn
+0857a109f56c66a21e9354a7b159e30b  09 - Don´t Think Twice, It´s All Right.shn
+44cb7863dd4e1efd18e68e55481cdef4  10 - Knockin´ On Heaven´s Door.shn
+2fc981dd1da699f9518ec9ee50074bbf  11 - I Don´t Believe You.shn
+d2c0bb4da2cbde6c247a84dbf5ad131b  12 - Trail Of The Buffalo.shn
+9006ad1003832566f6aef5a24c72336f  13 - I Shall Be Released.shn
+321fdfdd9f9dc0fb1ff82113766ee4c9  14 - Like A Rolling Stone.shn
+51f221de4b4283d68abc6f2cbe970716  15 - To Ramona.shn
+c15b6a54abd49b609ed01cc869519af2  16 - All Along The Watchtower.shn
+a632e9a0599799b845fca176f70e938b  1989-06-10 On The Trail Of The Buffalo.CUE
+d82a69211cdcb1a33c591f82247d594b  1989-06-10 On The Trail Of The Buffalo.doc
+d0681f20cd8703a53a44eee7b8ca7051  1989-06-10 On The Trail Of The Buffalo.md5
+21e019246dc997ba694e81f0d3cb82f9  1989-06-10 On The Trail Of The Buffalo.txt
+eafd87aaacad14a0de200c90269e85d9  1989-06-10 On The Trail Of The Buffalo.wav.md5
+ed86c68ea030116de50a075abfec0de6  bd89-06-10-HG.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-06-10-HG - files renamed to be compatible with software
+=================== 
+=================== 
+=================== 
+7944b0f534739aeb07400abf6c4b9481  [shntool]  01_-_Intro.wav
+64d9a7ce6636e52934de937758f918aa  [shntool]  02_-_Most_Likely_You_Go_Your_Way.wav
+f6a8d10f433dec20548b1a10a4361ffd  [shntool]  03_-_Ballad_Of_Hollis_Brown.wav
+ddde2e82ae1e172c9ba73a83a56e8a7a  [shntool]  04_-_Masters_Of_War.wav
+db0d4f85f40c23cf62f817876d5f1b59  [shntool]  05_-_Ill_Be_Your_Baby_Tonight.wav
+6b3bac5ca7c29d49d5620ef76266a0e8  [shntool]  06_-_Shelter_From_The_Storm.wav
+49a2b80355d7c287b7c77eecd6aea060  [shntool]  07_-_Highway_61_Revisited.wav
+091dd092b6772a6bfcff878e926865f7  [shntool]  08_-_Mr._Tambourine_Man.wav
+652a673b1d5edb6767b87e8f8b60039f  [shntool]  09_-_Dont_Think_Twice,_Its_All_Right.wav
+c04df81166cc218a1c9f0f5d4c5f858a  [shntool]  10_-_Knockin_On_Heavens_Door.wav
+1e562ab289322602fdff9f08297d7e5c  [shntool]  11_-_I_Dont_Believe_You.wav
+939949654420e4491d9f43e02e561a69  [shntool]  12_-_Trail_Of_The_Buffalo.wav
+98f98468fb3cabc85e4453303129ce01  [shntool]  13_-_I_Shall_Be_Released.wav
+13b9ad4af513a62a9dc2ce5c63b5957f  [shntool]  14_-_Like_A_Rolling_Stone.wav
+5f079fe907cb370578a4319bd0de6413  [shntool]  15_-_To_Ramona.wav
+1422e293147d1f6219db032a307aa064  [shntool]  16_-_All_Along_The_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-10-HG 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:21.36        3789116 B   ---   --   ---xx    shn  0.4673  01 - Intro.shn
+     5:03.36       53533916 B   ---   --   ---xx    shn  0.6748  02 - Most Likely You Go Your Way.shn
+     5:13.53       55337900 B   ---   --   ---xx    shn  0.7186  03 - Ballad Of Hollis Brown.shn
+     4:50.48       51268940 B   ---   --   ---xx    shn  0.7638  04 - Masters Of War.shn
+     5:21.03       56631500 B   ---   --   ---xx    shn  0.6990  05 - I´ll Be Your Baby Tonight.shn
+     3:50.58       40708460 B   ---   --   ---xx    shn  0.6938  06 - Shelter From The Storm.shn
+     4:03.22       42916988 B   ---   --   ---xx    shn  0.7053  07 - Highway 61 Revisited.shn
+     6:36.62       70000268 B   ---   --   ---xx    shn  0.6109  08 - Mr. Tambourine Man.shn
+     4:07.02       43575548 B   ---   --   ---xx    shn  0.6939  09 - Don´t Think Twice, It´s All Right.shn
+     3:55.56       41585756 B   ---   --   ---xx    shn  0.6988  10 - Knockin´ On Heaven´s Door.shn
+     5:51.34       61996412 B   ---   --   ---xx    shn  0.6751  11 - I Don´t Believe You.shn
+     6:32.26       69209996 B   ---   --   ---xx    shn  0.5957  12 - Trail Of The Buffalo.shn
+     4:03.26       42926396 B   ---   --   ---xx    shn  0.6454  13 - I Shall Be Released.shn
+     5:56.60       62939564 B   ---   --   ---xx    shn  0.7093  14 - Like A Rolling Stone.shn
+     4:26.22       46974188 B   ---   --   ---xx    shn  0.6281  15 - To Ramona.shn
+     3:46.46       39974636 B   ---   --   ---xx    shn  0.6716  16 - All Along The Watchtower.shn
+    74:00.65      783369584 B                            0.6750  (16 files)
+=================== 
+=================== 
+=================== 

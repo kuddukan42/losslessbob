@@ -1,0 +1,165 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd73-blood-on-your-saddle.flacf 
+=================== 
+=================== 
+=================== 
+04e822c809b573e25a8b7478fe72ee8f  bd73-blood-on-your-saddle-LB-2907.txt
+cc8b8c1fc881b000aae6d130abe28ca7  Blood On Your Saddle.doc
+cc8b8c1fc881b000aae6d130abe28ca7  BLOOD_ON_YOUR_SADDLE.DOC
+a4b8ad319f5e3d7315bcd2d534f59c72  BOYS_INSIDECOVER.JPG
+5de0060a33d262141ad149a5de309aa5  BOYS_OUTSIDECOVER.JPG
+194577a7e20bdcc7afbb718f502c134c  DISC_1\.DS_STORE
+99ce7f1358f9a13f31c5f8537cc837a9  DISC_1\BOYS_D1.FFP
+358ddbcb6e3ac9ff465ce314d02ec795  DISC_1\BOYS_D1.MD5
+4c24094642e68bda650ebc1483caba1d  DISC_1\BOYS_D1_T01.FLAC
+68b0e24a2974b23e849671a6aeb8f7ce  DISC_1\BOYS_D1_T02.FLAC
+d61ec4273e18ebfb4747707c84d0a331  DISC_1\BOYS_D1_T03.FLAC
+b7e416bc2576445a75e03bfd700a958b  DISC_1\BOYS_D1_T04.FLAC
+9d7d9ccb813efbd34e07071792fe9e9f  DISC_1\BOYS_D1_T05.FLAC
+0cb762c48b98ffbb8390f0c0f34c8851  DISC_1\BOYS_D1_T06.FLAC
+0ba138d4fcaafb16ecd9113eeae6f671  DISC_1\BOYS_D1_T07.FLAC
+d9a472337cf63664758ccc1cf389c991  DISC_1\BOYS_D1_T08.FLAC
+9e418a1de69644a0c58b913b4d54c80e  DISC_1\BOYS_D1_T09.FLAC
+84b8a0c1a67f700cd15d460f5430e074  DISC_1\BOYS_D1_T10.FLAC
+175ecd84fc1232f9e640f564bab24013  DISC_1\BOYS_D1_T11.FLAC
+5e5749dfdb3841a49455a18a5f0ecc81  DISC_1\BOYS_D1_T12.FLAC
+e3cf2d1db9a33964633521e4570627c2  DISC_1\BOYS_D1_T13.FLAC
+086ca1551356ec172760ef172ac4c411  DISC_1\BOYS_D1_T14.FLAC
+f01d384868b804cc980b2e93b3ba9b98  DISC_1\BOYS_D1_T15.FLAC
+1686f97a29ba682275e709a68d69e311  DISC_1\BOYS_D1_T16.FLAC
+7cad7d468717d7a753254f0352cf6c15  DISC_1\BOYS_D1_T17.FLAC
+6b3837d3030cd8bef226f17f383923a0  DISC_1\BOYS_D1_T18.FLAC
+1865d91188c47afcbb4c7964c434f87a  DISC_1\BOYS_D1_T19.FLAC
+ea4362fad1e3a2120d89fd5d03d024cf  DISC_1\BOYS_D1_T20.FLAC
+6684f71218b41fa4285ac2f060b92d69  DISC_1\BOYS_D1_T21.FLAC
+3edbfe6156c82d3c822661b58d8f8ddb  DISC_1\BOYS_D1_T22.FLAC
+bfe52eff3c8560bf773276bc9b400a48  DISC_1\BOYS_D1_T23.FLAC
+63dc71c916226c2cb0dd8939846242f3  DISC_1\BOYS_D1_T24.FLAC
+804d10f65ac31341bb341c503c218d08  DISC_1\BOYS_D1_T25.FLAC
+6445aaf06f5cf1f2e6a2b40c09c7aeeb  DISC_1\BOYS_D1_T26.FLAC
+194577a7e20bdcc7afbb718f502c134c  DISC_2\.DS_STORE
+d406ef675e3afa34215f3acc01ad0b2a  DISC_2\BOYS_D2.FFP
+9f44209bf0516fcf4e995694f4b28401  DISC_2\BOYS_D2.MD5
+43d49efdb0aec03301d95746647b9430  DISC_2\BOYS_D2_T01.FLAC
+bbcdaebe880ed9115182777b2a64bb34  DISC_2\BOYS_D2_T02.FLAC
+81fc9e33ec2351bf9c968a011b2e2767  DISC_2\BOYS_D2_T03.FLAC
+30ec29ff9a15e5c99b1645b9f26dd087  DISC_2\BOYS_D2_T04.FLAC
+265421fd20b3d7c39b834dd030ea00e9  DISC_2\BOYS_D2_T05.FLAC
+b08c0489553aa9637df000032f044be1  DISC_2\BOYS_D2_T06.FLAC
+46383a60f10ba0d00deeaed1d69d9531  DISC_2\BOYS_D2_T07.FLAC
+cfd17153c80aec443fc394ee02149d2d  DISC_2\BOYS_D2_T08.FLAC
+e825c980dfe059a6bc0cc1dfd648a7cd  DISC_2\BOYS_D2_T09.FLAC
+d870d8bb41c14d67f3824911eecbbb8b  DISC_2\BOYS_D2_T10.FLAC
+5eda3478340e01b1630290a465f71cc8  DISC_2\BOYS_D2_T11.FLAC
+f986b5946a6f891e33b71bd63e2f4e47  INFO.TXT
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd73-blood-on-your-saddle.flacf\DISC_1 
+=================== 
+=================== 
+=================== 
+BOYS_D1_T01.FLAC:a9a02f7a86cb5f561de2336b56c4687e
+BOYS_D1_T02.FLAC:a6e226c79667dac7c2624763e337e0c7
+BOYS_D1_T03.FLAC:7293e21808b29da9f7e9220a0e2842b2
+BOYS_D1_T04.FLAC:afda3a07399317a4130ba38b825beb82
+BOYS_D1_T05.FLAC:25abfb0b44d2169fa6a43d947620baa7
+BOYS_D1_T06.FLAC:41719083f1da5c4a0b2b97b399300e2c
+BOYS_D1_T07.FLAC:3f5855303318d4e6c159389b7bbd15ee
+BOYS_D1_T08.FLAC:6ec5cfbc60e6df438f6e73461f92896e
+BOYS_D1_T09.FLAC:f90c2e8f05303fab8ec0055de3837a83
+BOYS_D1_T10.FLAC:e1a94050f983ef7a85cef4f97f2824db
+BOYS_D1_T11.FLAC:f6daac20d7a7cb359a953cf0a4e51905
+BOYS_D1_T12.FLAC:92d3147a90e7866c83575bc229ad8f0a
+BOYS_D1_T13.FLAC:8ef55ae50381740bdec8250123669d2f
+BOYS_D1_T14.FLAC:f038e43624ed5e97d1910298fa8c6545
+BOYS_D1_T15.FLAC:8c3b6590f01c9a3437fc2e4bff409eee
+BOYS_D1_T16.FLAC:99804d2777b602379e5520cdb68ea71e
+BOYS_D1_T17.FLAC:6c3fc5a161c64198176d91ef0d089c9a
+BOYS_D1_T18.FLAC:9c3b4a9910473d5a8489cfd1cc9b0a59
+BOYS_D1_T19.FLAC:883de9f2c7eb26a11bc6b91acb0cf72a
+BOYS_D1_T20.FLAC:3490998f7626e07c2dcd3591bcfeae93
+BOYS_D1_T21.FLAC:76211626d6fab1cc9ffe9e6be0d28ace
+BOYS_D1_T22.FLAC:3763c76da541aa783c1a9fef038fd0f4
+BOYS_D1_T23.FLAC:aafbbff31a13eb5f73c35ae4b6a79153
+BOYS_D1_T24.FLAC:d00b483ed6a13c7a02a665bab1f81701
+BOYS_D1_T25.FLAC:d147011f78f3f8ccae83b1c1f443290f
+BOYS_D1_T26.FLAC:9c9e974d9dcdbe5d6daaaeff3b067bcb
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd73-blood-on-your-saddle.flacf\DISC_2 
+=================== 
+=================== 
+=================== 
+BOYS_D2_T01.FLAC:4a031201bca736b0d3e0307c0af8eba8
+BOYS_D2_T02.FLAC:ec01e2b5d839ffab160d9afd23c12cc1
+BOYS_D2_T03.FLAC:22e6ebe01beaff66f9e904252e1aa964
+BOYS_D2_T04.FLAC:bc7cdb7bbddf6b6e1288169efd560e52
+BOYS_D2_T05.FLAC:fe078119156ddf43d51c7afff5fee812
+BOYS_D2_T06.FLAC:afe9ff1f4b8f0339b355cfd57a4cb886
+BOYS_D2_T07.FLAC:09b4a189c2e6405101807f27f14aba5c
+BOYS_D2_T08.FLAC:4ed680ce5f4a07e9bef52bc5aab48d6c
+BOYS_D2_T09.FLAC:fc14a262fff4d25c2030bcd5651ca6ee
+BOYS_D2_T10.FLAC:d38167fa62b2e86cf24a1719cb1f1a3a
+BOYS_D2_T11.FLAC:fec14abce834c2f70a5f95421cea5d7b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd73-blood-on-your-saddle.flacf\DISC_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:57.34       20718812 B   ---   --   ---xx   flac  0.5656  BOYS_D1_T01.FLAC
+     6:43.00       71089244 B   ---   --   ---xx   flac  0.6381  BOYS_D1_T02.FLAC
+     3:51.08       40767260 B   ---   --   ---xx   flac  0.5965  BOYS_D1_T03.FLAC
+     5:49.13       61594220 B   ---   --   ---xx   flac  0.5962  BOYS_D1_T04.FLAC
+     3:26.07       36354908 B   ---   --   ---xx   flac  0.5944  BOYS_D1_T05.FLAC
+     4:12.39       44544572 B   ---   --   ---xx   flac  0.5990  BOYS_D1_T06.FLAC
+     1:28.70       15687884 B   ---   --   ---xx   flac  0.6555  BOYS_D1_T07.FLAC
+     0:38.33        6780860 B   ---   --   ---xx   flac  0.6389  BOYS_D1_T08.FLAC
+     0:52.36        9257516 B   ---   --   ---xx   flac  0.6168  BOYS_D1_T09.FLAC
+     3:57.44       41910332 B   ---   --   ---xx   flac  0.6504  BOYS_D1_T10.FLAC
+     4:55.70       52202684 B   ---   --   ---xx   flac  0.6220  BOYS_D1_T11.FLAC
+     4:18.50       45628844 B   ---   --   ---xx   flac  0.6214  BOYS_D1_T12.FLAC
+     1:13.18       12919580 B   ---   --   ---xx   flac  0.5847  BOYS_D1_T13.FLAC
+     0:56.55       10007804 B   ---   --   ---xx   flac  0.5936  BOYS_D1_T14.FLAC
+     2:30.68       26619980 B   ---   --   ---xx   flac  0.5996  BOYS_D1_T15.FLAC
+     0:50.71        8987036 B   ---   --   ---xx   flac  0.6013  BOYS_D1_T16.FLAC
+     6:58.01       73737596 B   ---   --   ---xx   flac  0.5829  BOYS_D1_T17.FLAC
+     1:31.37       16139468 B   ---   --   ---xx   flac  0.6202  BOYS_D1_T18.FLAC
+     2:00.09       21189212 B   ---   --   ---xx   flac  0.6206  BOYS_D1_T19.FLAC
+     1:30.12       15904268 B   ---   --   ---xx   flac  0.6199  BOYS_D1_T20.FLAC
+     0:55.33        9779660 B   ---   --   ---xx   flac  0.6069  BOYS_D1_T21.FLAC
+     2:14.01       23639996 B   ---   --   ---xx   flac  0.5927  BOYS_D1_T22.FLAC
+     1:52.25       19815644 B   ---   --   ---xx   flac  0.5946  BOYS_D1_T23.FLAC
+     0:50.45        8925884 B   ---   --   ---xx   flac  0.6105  BOYS_D1_T24.FLAC
+     3:26.29       36406652 B   ---   --   ---xx   flac  0.6378  BOYS_D1_T25.FLAC
+     0:29.05        5127404 B   ---   --   ---xx   flac  0.5919  BOYS_D1_T26.FLAC
+    69:30.63      735737320 B                            0.6104  (26 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd73-blood-on-your-saddle.flacf\DISC_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.41       39433676 B   ---   --   ---xx   flac  0.6667  BOYS_D2_T01.FLAC
+     9:55.73      105129740 B   ---   --   ---xx   flac  0.6231  BOYS_D2_T02.FLAC
+     4:25.41       46842476 B   ---   --   ---xx   flac  0.6139  BOYS_D2_T03.FLAC
+     9:00.50       95373644 B   ---   --   ---xx   flac  0.5936  BOYS_D2_T04.FLAC
+     6:48.37       72058268 B   ---   --   ---xx   flac  0.6427  BOYS_D2_T05.FLAC
+     4:19.49       45802892 B   ---   --   ---xx   flac  0.4998  BOYS_D2_T06.FLAC
+     5:59.65       63480524 B   ---   --   ---xx   flac  0.6392  BOYS_D2_T07.FLAC
+     3:25.08       36180860 B   ---   --   ---xx   flac  0.5633  BOYS_D2_T08.FLAC
+     6:49.23       72201740 B   ---   --   ---xx   flac  0.6066  BOYS_D2_T09.FLAC
+     6:18.37       66766268 B   ---   --   ---xx   flac  0.5417  BOYS_D2_T10.FLAC
+     8:50.40       93586124 B   ---   --   ---xx   flac  0.5787  BOYS_D2_T11.FLAC
+    69:37.14      736856212 B                            0.5991  (11 files)
+=================== 
+=================== 
+=================== 

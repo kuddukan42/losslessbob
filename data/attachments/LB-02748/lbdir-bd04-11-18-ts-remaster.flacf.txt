@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-18-ts-remaster.flacf 
+=================== 
+=================== 
+=================== 
+01f68ce492e1b93d347f4c985f8807c5  Art & Info\Durham 2004 Rec Info (New source fixed).txt
+0c58b459b88d5bd55ef9dbf4449b0c76  Art & Info\durham_2004_DV_back.jpg
+2d57933828d394db251221d7697ee0a3  Art & Info\durham_2004_DV_front.jpg
+bc920c1e1956afa396410c675b803ba7  bd04-11-18-ts-remaster-LB-2748.txt
+6d738348e40dd6f47f1457e9d093a665  Disc 1\2004.11.18 Durham New d1.LOG
+1bda1ab68e94aa5c4133b4e1145dad36  Disc 1\bd041118d1t01fixed.flac
+171c7cec39331805c7e958f5a05184a2  Disc 1\bd041118d1t02fixed.flac
+5bffe2a1522ed765425b6292c50118b6  Disc 1\bd041118d1t03fixed.flac
+148ee19370412575aa261df735afb102  Disc 1\bd041118d1t04fixed.flac
+ce6701445d7615d17a99608e300ee583  Disc 1\bd041118d1t05fixed.flac
+454b83318ceee30304beb59d0c142e3f  Disc 1\bd041118d1t06fixed.flac
+f9c78de6b8a5d7abf6d2d30f3fc4e9ac  Disc 1\bd041118d1t07fixed.flac
+0c12d2fde0ab2a44f2c56b5589614db6  Disc 1\bd041118d1t08fixed.flac
+d747b9e030ec641b2c90e9a0ab3a6bce  Disc 1\bd041118d1t09fixed.flac
+2570b38955d935b49bb32beea4fe98d1  Disc 1\bd041118d1t10fixed.flac
+920c7b99e90788110d3d024069b79db5  Disc 2\Durham 2004 cd2.LOG
+d714cc052b4e49254ec63f905e5ab7db  Disc 2\bd041118d2t01fixed.flac
+c859a62858a3d135b127ee9f8292167e  Disc 2\bd041118d2t02fixed.flac
+0d11e9b813b9b6dc2d0bcfc4be58c89f  Disc 2\bd041118d2t03fixed.flac
+b88c4e68655ce55f5a7f8b14c99373a6  Disc 2\bd041118d2t04fixed.flac
+76eb9c134d871649a50c5ad72da7b57b  Disc 2\bd041118d2t05fixed.flac
+03eeda8c42115e7ebd781ef9e8e52050  Disc 2\bd041118d2t06fixed.flac
+800cc85a3a83548826d0f46585d7e91c  Disc 2\bd041118d2t07fixed.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-11-18-ts-remaster.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+bd041118d1t01fixed.flac:41d403847064f6470135a8cd670028bf
+bd041118d1t02fixed.flac:cd01df4c85d4ff742f534ec9f1e1122a
+bd041118d1t03fixed.flac:491db1a1d602d3c2b5fed4e85eb464cf
+bd041118d1t04fixed.flac:51910b373af95eaf3bf27e099a340489
+bd041118d1t05fixed.flac:056e0418af0168543b15868d2e00cab6
+bd041118d1t06fixed.flac:93f8fb0eaf42eee501b4d7bcd910286d
+bd041118d1t07fixed.flac:a1330ad10bfbf60551740419f78b3bbe
+bd041118d1t08fixed.flac:4b537b5d2c32fb3ebaeb2eafc327ddb5
+bd041118d1t09fixed.flac:852ed6b75ed3e57bdc0c880704003729
+bd041118d1t10fixed.flac:ab9b9450cc92ea43f7a7b5c9acba817f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-11-18-ts-remaster.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+bd041118d2t01fixed.flac:f3c5f66b4cef2b94ae50259bdad5a6ba
+bd041118d2t02fixed.flac:4c9050c23d71661dd9f84fffa9bf5f5f
+bd041118d2t03fixed.flac:e0bb0055b429f934067bc26f53d9d658
+bd041118d2t04fixed.flac:702528fba802635642b5a2dbea20c08d
+bd041118d2t05fixed.flac:44e3861eb0b2639284ddf53851a57c67
+bd041118d2t06fixed.flac:4eba02df44cfb8006863ae98bf07720c
+bd041118d2t07fixed.flac:de4b9e760d5a6a7a03977164014a2cf6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-18-ts-remaster.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:13.38       12966620 B   ---   --   ---xx   flac  0.5115  bd041118d1t01fixed.flac
+     4:25.13       46776620 B   ---   --   ---xx   flac  0.6002  bd041118d1t02fixed.flac
+     6:28.18       68485580 B   ---   --   ---xx   flac  0.5968  bd041118d1t03fixed.flac
+     5:34.00       58917644 B   ---   --   ---xx   flac  0.5310  bd041118d1t04fixed.flac
+     6:21.20       67255484 B   ---   --   ---xx   flac  0.5552  bd041118d1t05fixed.flac
+     7:02.73       74612540 B   ---   --   ---xx   flac  0.5650  bd041118d1t06fixed.flac
+     6:21.23       67262540 B   ---   --   ---xx   flac  0.5552  bd041118d1t07fixed.flac
+     6:45.55       71571404 B   ---   --   ---xx   flac  0.5567  bd041118d1t08fixed.flac
+     6:20.15       67067324 B   ---   --   ---xx   flac  0.5263  bd041118d1t09fixed.flac
+     6:15.02       66154748 B   ---   --   ---xx   flac  0.5680  bd041118d1t10fixed.flac
+    56:47.32      601070504 B                            0.5597  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-18-ts-remaster.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:38.41       70303676 B   ---   --   ---xx   flac  0.5446  bd041118d2t01fixed.flac
+     6:57.21       73608236 B   ---   --   ---xx   flac  0.5770  bd041118d2t02fixed.flac
+     6:53.09       72874412 B   ---   --   ---xx   flac  0.6136  bd041118d2t03fixed.flac
+     6:13.42       65896028 B   ---   --   ---xx   flac  0.5230  bd041118d2t04fixed.flac
+     7:03.55       74746604 B   ---   --   ---xx   flac  0.5946  bd041118d2t05fixed.flac
+     6:44.60       71406764 B   ---   --   ---xx   flac  0.6046  bd041118d2t06fixed.flac
+     7:29.55       79333004 B   ---   --   ---xx   flac  0.5680  bd041118d2t07fixed.flac
+    48:00.58      508168724 B                            0.5758  (7 files)
+=================== 
+=================== 
+=================== 

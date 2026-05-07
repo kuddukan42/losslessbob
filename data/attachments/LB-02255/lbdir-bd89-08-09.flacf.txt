@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-08-09.flacf 
+=================== 
+=================== 
+=================== 
+b5b10ab281ce31add3b89776ec756a20  bd89-08-09.flacf.md5
+6345eae0e2d8bc5b435924a781c6c941  bd89-08-09.txt
+96348fdfd54d5ec1a20060d9de4a3eb6  bd89-08-09d1t01.flac
+c327992ad6eb16abd78545b14a4b7b18  bd89-08-09d1t02.flac
+5692dc9ad9d85d19f39a49c369f1b36c  bd89-08-09d1t03.flac
+2e54cca24041b93f8c8f8e456ed53bfc  bd89-08-09d1t04.flac
+8ab4a9ea301793f58dee45a58b9f325a  bd89-08-09d1t05.flac
+92822b8c6244de8f776f7c9d2c5908c1  bd89-08-09d1t06.flac
+2184196a2bd6232f9a491b03ce8bb70b  bd89-08-09d1t07.flac
+48fcef8d06f863679dac5faa56efb39f  bd89-08-09d2t01.flac
+07a86f768333b42c2f204e4094ba3347  bd89-08-09d2t02.flac
+c48eed76cfabb7a438ebb57166200f33  bd89-08-09d2t03.flac
+63f8f159220fabde075bc333599217e0  bd89-08-09d2t04.flac
+94312742c6e3be3d4dca8e6f382654c3  bd89-08-09d2t05.flac
+0e51c4f6c5e2fe9d8ef99230cd66dd78  bd89-08-09d2t06.flac
+976c26313469bf271e67328726702b7a  bd89-08-09d2t07.flac
+cab761098c27875ce1203830ced6d413  bd89-08-09d2t08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-08-09.flacf 
+=================== 
+=================== 
+=================== 
+bd89-08-09d1t01.flac:a9bc7586197d65149e68e9b85cc8ce1e
+bd89-08-09d1t02.flac:fb269026463c1a877a43ca39383840d1
+bd89-08-09d1t03.flac:3266cef3dfa90fd9b9a85a10619ce807
+bd89-08-09d1t04.flac:53f2d1f382f717bc6c8b0d06532e14c8
+bd89-08-09d1t05.flac:b476af6d3ef249b600e02dcbecc1bb2a
+bd89-08-09d1t06.flac:9ee52b0e5292a84b90c67719daab8fe9
+bd89-08-09d1t07.flac:677ba1c9236c1b9aed3294ded5ab3016
+bd89-08-09d2t01.flac:349c80d7170d1ba2291c25a40e204370
+bd89-08-09d2t02.flac:92dfdc3d18aa0179a4f6c4a26d1eaa8a
+bd89-08-09d2t03.flac:c71a3773e5065f8d90ab61dcce52742b
+bd89-08-09d2t04.flac:048844acab2319bd11a4a6139ed9400b
+bd89-08-09d2t05.flac:0c74e51927e2999708817da91bfb1a6e
+bd89-08-09d2t06.flac:c9c1063ae374fde7adbe6fa3766deb6f
+bd89-08-09d2t07.flac:b5113c763d4974a76c734c4aa19a8152
+bd89-08-09d2t08.flac:7e48389aa8932de9008710543c133272
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-08-09.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.24       59503292 B   ---   --   ---xx   flac  0.5546  bd89-08-09d1t01.flac
+     4:37.27       48926348 B   ---   --   ---xx   flac  0.5546  bd89-08-09d1t02.flac
+     5:17.25       55977644 B   ---   --   ---xx   flac  0.5558  bd89-08-09d1t03.flac
+     7:46.32       82277708 B   ---   --   ---xx   flac  0.5588  bd89-08-09d1t04.flac
+     6:11.36       65529116 B   ---   --   ---xx   flac  0.5606  bd89-08-09d1t05.flac
+     4:19.03       45694700 B   ---   --   ---xx   flac  0.5625  bd89-08-09d1t06.flac
+     7:24.11       78347516 B   ---   --   ---xx   flac  0.5652  bd89-08-09d1t07.flac
+     6:02.30       63927404 B   ---   --   ---xx   flac  0.5914  bd89-08-09d2t01.flac
+     6:25.70       68078684 B   ---   --   ---xx   flac  0.5750  bd89-08-09d2t02.flac
+     4:47.68       50786780 B   ---   --   ---xx   flac  0.5556  bd89-08-09d2t03.flac
+     4:21.31       46113356 B   ---   --   ---xx   flac  0.5495  bd89-08-09d2t04.flac
+     4:35.41       48606476 B   ---   --   ---xx   flac  0.5530  bd89-08-09d2t05.flac
+     7:31.21       79605836 B   ---   --   ---xx   flac  0.5547  bd89-08-09d2t06.flac
+     7:50.53       83032700 B   ---   --   ---xx   flac  0.5628  bd89-08-09d2t07.flac
+     4:59.61       52887116 B   ---   --   ---xx   flac  0.5580  bd89-08-09d2t08.flac
+    87:48.08      929294676 B                            0.5614  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-10-09-sonic.flacf 
+=================== 
+=================== 
+=================== 
+4994686003a052423b09210258cc33b6  bd07-10-09-sonic-LB-5422.txt
+9e848ebe6d22a77ed1dd7edbb91ca480  bd_RIT_100907_disc1_t01.flac
+50af6c340ab23f80823e5db27e8d90f8  bd_RIT_100907_disc1_t02.flac
+8b84b49d28e2792addc5e8e7d13b7c5a  bd_RIT_100907_disc1_t03.flac
+2c7c55021d20483549cf2111f6726dc0  bd_RIT_100907_disc1_t04.flac
+588ee5436f2d648b1473c8f6a92bd71c  bd_RIT_100907_disc1_t05.flac
+ca1f37f0f9fd332a137b79e46b4e4b35  bd_RIT_100907_disc1_t06.flac
+a55e4146aa0004716e0c6fb50965392b  bd_RIT_100907_disc1_t07.flac
+e2c874f4e5320c1c8b196395c26ff4ae  bd_RIT_100907_disc1_t08.flac
+6bab3cd9101257d7c4a559b637595020  bd_RIT_100907_disc1_t09.flac
+b1740c8e1838416f9b6a9ecf534c24d5  bd_RIT_100907_disc1_t10.flac
+abf8b601c9cac792a240a4621984fa2a  bd_RIT_100907_disc1_t11.flac
+3c9a496530fe3d938b33707471c2309e  bd_RIT_100907_disc2_t01.flac
+08917c4873923a1bed963948e9375dbf  bd_RIT_100907_disc2_t02.flac
+2ed8fad206c64f5b0004ceb0538a883d  bd_RIT_100907_disc2_t03.flac
+17d09435641d376685fb300b2f8824cb  bd_RIT_100907_disc2_t04.flac
+2072e9b6c158925b28c8921e5c8efcb4  bd_RIT_100907_disc2_t05.flac
+30e558a2de97ada39d48c24719db68ad  bd_RIT_100907_disc2_t06.flac
+e2d8f286bdf3e704107c3e5c680a4574  bd_rochester_100907.txt
+0cdbc96c214172a59c8d22fb23c75783  Dylan & Elvis_RIT 100907.md5
+d3de1b789292b492450c7d392e69145e  lbdir-bd07-10-09-sonic.flacf.md5
+cd921d6411f45df30f0c9823a155e93b  lbdir-bd07-10-09-sonic.flacf.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-10-09-sonic.flacf 
+=================== 
+=================== 
+=================== 
+bd_RIT_100907_disc1_t01.flac:04ab1bf483e7ec633c2b26e54de185ec
+bd_RIT_100907_disc1_t02.flac:e7534dddf2c6c31d09117ce3552e07fd
+bd_RIT_100907_disc1_t03.flac:58461259b42811ddb3ad7fb2b258aa62
+bd_RIT_100907_disc1_t04.flac:0ceb6d96d594d2785dbfe0431c230558
+bd_RIT_100907_disc1_t05.flac:871fcc1b1e901f6299d688b0e0b02872
+bd_RIT_100907_disc1_t06.flac:188370e0d0b2715c4318f0c8a9414db8
+bd_RIT_100907_disc1_t07.flac:7ae00192e88beff905630864ce238a18
+bd_RIT_100907_disc1_t08.flac:92b78429fb3397e10a452de6a3869a51
+bd_RIT_100907_disc1_t09.flac:16422ee0ea4f79336ed544be12469234
+bd_RIT_100907_disc1_t10.flac:7f6fb4e307c832cd051e71eb83077aa3
+bd_RIT_100907_disc1_t11.flac:63f1195fa8d59c87de084981077874bb
+bd_RIT_100907_disc2_t01.flac:177e22aeb372cedc6ab0a9fe3e65fd81
+bd_RIT_100907_disc2_t02.flac:8bde6e1d1d71d354da62e70e7c8deefa
+bd_RIT_100907_disc2_t03.flac:7be75f41cab980715515f7ed051eaf58
+bd_RIT_100907_disc2_t04.flac:8c076e71653f870b3db7b086bc9dca96
+bd_RIT_100907_disc2_t05.flac:b13208482b04dbef2238f3a7d716d5fa
+bd_RIT_100907_disc2_t06.flac:5a06e150ae6118194bdfad2c68af1c33
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-10-09-sonic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.24       59679692 B   ---   --   ---xx   flac  0.5796  bd_RIT_100907_disc1_t01.flac
+     6:16.21       66375836 B   ---   --   ---xx   flac  0.5534  bd_RIT_100907_disc1_t02.flac
+     6:57.44       73662332 B   ---   --   ---xx   flac  0.5576  bd_RIT_100907_disc1_t03.flac
+     5:51.14       61949372 B   ---   --   ---xx   flac  0.5366  bd_RIT_100907_disc1_t04.flac
+     7:11.46       76136636 B   ---   --   ---xx   flac  0.5690  bd_RIT_100907_disc1_t05.flac
+     7:02.19       74485532 B   ---   --   ---xx   flac  0.5246  bd_RIT_100907_disc1_t06.flac
+     6:58.45       73841084 B   ---   --   ---xx   flac  0.5605  bd_RIT_100907_disc1_t07.flac
+    11:02.60      116917964 B   ---   --   ---xx   flac  0.4965  bd_RIT_100907_disc1_t08.flac
+     6:00.50       63621644 B   ---   --   ---xx   flac  0.5669  bd_RIT_100907_disc1_t09.flac
+     6:33.15       69360524 B   ---   --   ---xx   flac  0.4734  bd_RIT_100907_disc1_t10.flac
+     6:03.34       64113212 B   ---   --   ---xx   flac  0.5826  bd_RIT_100907_disc1_t11.flac
+     8:50.16       93529676 B   ---   --   ---xx   flac  0.5203  bd_RIT_100907_disc2_t01.flac
+     7:29.17       79243628 B   ---   --   ---xx   flac  0.6024  bd_RIT_100907_disc2_t02.flac
+     5:38.13       59653820 B   ---   --   ---xx   flac  0.5452  bd_RIT_100907_disc2_t03.flac
+     2:38.21       27920636 B   ---   --   ---xx   flac  0.5359  bd_RIT_100907_disc2_t04.flac
+     7:07.31       75395756 B   ---   --   ---xx   flac  0.5950  bd_RIT_100907_disc2_t05.flac
+     6:50.23       72378140 B   ---   --   ---xx   flac  0.5480  bd_RIT_100907_disc2_t06.flac
+   114:09.43     1208265484 B                            0.5480  (17 files)
+=================== 
+=================== 
+=================== 

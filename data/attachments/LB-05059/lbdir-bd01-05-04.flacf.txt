@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-05-04.flacf 
+=================== 
+=================== 
+=================== 
+bbfa293e53b17369d1800a1c168d9a44  bd2001-05-04.flac Atlanta, GA.ffp
+e48067b6d7ec404048434f929bec1807  bd2001-05-04.flac Atlanta, GA.md5
+2b5633cb95a599e4c281b0338aac35d1  bd2001-05-04.info.r9453.txt
+8ddca7c8d3d56cbf1127f75f72c0f785  bd2001-05-04d1.flac Atlanta, GA.shntool.txt
+1d216c7fb657c70788c02a1d93f4da8f  bd2001-05-04d1.LOG
+7fd99354e9db89e9538d388f5d2c2a10  bd2001-05-04d1t01.flac
+509ee01e6421e4058fd282b177a37009  bd2001-05-04d1t02.flac
+f7d0e04df31e3e082611b1a928fde792  bd2001-05-04d1t03.flac
+04bb3a95dd434ba1a27277c191523963  bd2001-05-04d1t04.flac
+2430d457af2645d1634d8b705130cd7b  bd2001-05-04d1t05.flac
+b56c6b2f49145b3f95af9ca95365e2c3  bd2001-05-04d1t06.flac
+6545c95736dd7803b5e4451840bd7244  bd2001-05-04d1t07.flac
+f5125a6aa95fb4cb1d637d59c658e7ff  bd2001-05-04d1t08.flac
+9c420892aface0c177fcb618978063a5  bd2001-05-04d1t09.flac
+1073a9e7a95e9beff2b1f8324323de7b  bd2001-05-04d1t10.flac
+e351e49c943b1048f2b5df441c8d2f5d  bd2001-05-04d1t11.flac
+2ff97adca2217d8e44182321803d70f6  bd2001-05-04d2.flac Atlanta, GA.shntool.txt
+ae902dec4730d2b47cd733da5757d072  bd2001-05-04d2.LOG
+337495a116c7a72923099f952da4fc8d  bd2001-05-04d2t01.flac
+d070c4b12889e8b9dd4f384fef85ef8e  bd2001-05-04d2t02.flac
+fc45f047fb4932bcff8a3d201dbb8ca4  bd2001-05-04d2t03.flac
+0dcc098650401f41a447d03d02c529b9  bd2001-05-04d2t04.flac
+430dcccb3aa01944915ec5211065d263  bd2001-05-04d2t05.flac
+75032d24f70af3606ad7b6edd5ff6954  bd2001-05-04d2t06.flac
+d97a8eb2836ec348776da324e905ba5b  bd2001-05-04d2t07.flac
+1d71ce73a36757c64be2194f618f8b80  d1t03.PNG
+9cdf26c909939c5c7c2e7832dff438e5  d2t06.PNG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-05-04.flacf 
+=================== 
+=================== 
+=================== 
+bd2001-05-04d1t01.flac:686d7a992284f74348ec6fc6334e0242
+bd2001-05-04d1t02.flac:172fb854adf38555ee63990faa9f1efe
+bd2001-05-04d1t03.flac:8baab7c5fc3c19d129ba746f80f8f00e
+bd2001-05-04d1t04.flac:34ea61263e49a184ab88cc273603c204
+bd2001-05-04d1t05.flac:190631671495b71ffaabcfacd2110bf0
+bd2001-05-04d1t06.flac:3bd2803c1156486c29cbde3e3b8ae0de
+bd2001-05-04d1t07.flac:4ad687f20954349dc3c79b66f6d6e472
+bd2001-05-04d1t08.flac:a7abe10a774d518486beacd421404119
+bd2001-05-04d1t09.flac:3583976ab926022b9ee8256b2b46f164
+bd2001-05-04d1t10.flac:c16548b644879a4e7702e4f7f93ca4d6
+bd2001-05-04d1t11.flac:8673e5348f45af69a40cd6b614c902f2
+bd2001-05-04d2t01.flac:f8793fe9b3aebf88822e8f22b31b3084
+bd2001-05-04d2t02.flac:6cc9c237c2628e46f574154713cbbdf7
+bd2001-05-04d2t03.flac:cd2a8bc0e3ed3dd8d67bb32396599c72
+bd2001-05-04d2t04.flac:3b7d19633c0ec04a951073b0a37a2ebb
+bd2001-05-04d2t05.flac:cf9165eb3c13d873e7884725e04e3f42
+bd2001-05-04d2t06.flac:7993d54a5eef7993a913d088c0686014
+bd2001-05-04d2t07.flac:c99386e11cdf49dc26afc18e1756c2fd
+=================== 
+=================== 
+=================== 
+=== shntool for: bd01-05-04.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:15.10       34421564 B   ---   --   ---xx   flac  0.6191  bd2001-05-04d1t01.flac
+     6:03.74       64207292 B   ---   --   ---xx   flac  0.6402  bd2001-05-04d1t02.flac
+     8:21.55       88505804 B   ---   --   ---xx   flac  0.6567  bd2001-05-04d1t03.flac
+     9:18.50       98548844 B   ---   --   ---xx   flac  0.6407  bd2001-05-04d1t04.flac
+     4:08.33       43824860 B   ---   --   ---xx   flac  0.6066  bd2001-05-04d1t05.flac
+     6:00.14       63536972 B   ---   --   ---xx   flac  0.6475  bd2001-05-04d1t06.flac
+     6:12.47       65731388 B   ---   --   ---xx   flac  0.6103  bd2001-05-04d1t07.flac
+     7:53.51       83557196 B   ---   --   ---xx   flac  0.6482  bd2001-05-04d1t08.flac
+     4:29.61       47595116 B   ---   --   ---xx   flac  0.5974  bd2001-05-04d1t09.flac
+     4:53.73       51856940 B   ---   --   ---xx   flac  0.6645  bd2001-05-04d1t10.flac
+     6:57.34       73638812 B   ---   --   ---xx   flac  0.6410  bd2001-05-04d1t11.flac
+     6:35.65       69830924 B   ---   --   ---xx   flac  0.6263  bd2001-05-04d2t01.flac
+     6:58.04       73744652 B   ---   --   ---xx   flac  0.6513  bd2001-05-04d2t02.flac
+     4:08.20       43794284 B   ---   --   ---xx   flac  0.5923  bd2001-05-04d2t03.flac
+     5:33.39       58832972 B   ---   --   ---xx   flac  0.6524  bd2001-05-04d2t04.flac
+     4:46.05       50462204 B   ---   --   ---xx   flac  0.6188  bd2001-05-04d2t05.flac
+     7:07.26       75383996 B   ---   --   ---xx   flac  0.6574  bd2001-05-04d2t06.flac
+     5:39.06       59813756 B   ---   --   ---xx   flac  0.6067  bd2001-05-04d2t07.flac
+   108:23.67     1147287576 B                            0.6353  (18 files)
+=================== 
+=================== 
+=================== 

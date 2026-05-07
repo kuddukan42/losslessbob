@@ -1,0 +1,11 @@
+Bob Dylan, 10/26/98, Indianapolis, Indiana, Market Square Arena, 2CDR
+
+LB-6144, (67min+35min), Source: Greg Holtz's Master DAT, Show Recorded with Sonic Studio DSM Stereo Mics>Sony PCM-M1 DAT, Location: 5th row floor seating - stage right, Transfer Info:, Sony PCM-R300 Master DAT Playback>PC>CDR>EAC>FLAC Level 8; bittorrent download 05/08; same recording as LB-4567 based on same clapping at end of d1t1 with channels swapped and this has higher levels after the volume adjustment at d1t1 0:26 to make volume more consistent on track; the volume raise gives a few spots that just start to clip;  this also fades in on beginning of d1t1 where that does not; that one has fade outs between d1 and d2 with overlap while this fades out and in between d1 and d2; this has more crowd at the end of d2; they have same noted flaws except mic hits on d2t2 more severe on that one while this one's 3rd mic hit on d2t2 1:39 is more of a square wav flaw;  in comparison if turned up on dt17 this has a little more hiss; (torrenters comments: "I did an early transfer from the master DAT shortly after the show, using Soundforge on a Pentium II 400MHz PC with a special order Soundblaster Live! sound card, WITH a coax digital input...this was a pretty fat setup back in 1999. I took those original wav files and burned audio CDs, and unfortunately I did not keep those files after I burned the CDs...AND the master DATs have since become filled with digital errors, so these CDs are all I have to work with."); (did not listen to all of this)
+
+discontinuity pop d1t9 3:36; mic hit d1t10 0:04, d2t2 1:36, 1:37, 1:39
+
+1. Gotta Serve Somebody, 2. I'll Remember You, 3. Cold Irons Bound, 4. Positively 4th Street, 5. Watching The River Flow, 6. Can't Wait, 7. Tomorrow Is A Long Time (acoustic) (with harp), 8. Desolation Row (acoustic), 9. Tangled Up In Blue (acoustic) (with harp), 10. She Belongs To Me, 11 short track CD2
+1 Highway 61 Revisited, (encore), 2. Love Sick, 3. Rainy Day Women #12 & 35, 4. Blowin' In The Wind (acoustic), 5. Like A Rolling Stone
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

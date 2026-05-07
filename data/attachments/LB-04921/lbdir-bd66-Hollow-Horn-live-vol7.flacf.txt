@@ -1,0 +1,124 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-Hollow-Horn-vol7.flacf 
+=================== 
+=================== 
+=================== 
+ce969463586e71003d3658ca11761a95  artwork\hollow horn 7 back.jpg
+fc9de45cde8e0ba380413d3edeced41c  artwork\hollow horn 7 front.jpg
+e9fba741822e2567653da0ec9e0e2de2  disk 1 gap free\disk 1 gap free.md5
+7a876ad05375859735630dd23be4f494  disk 1 gap free\Various - Track 01.flac.flac
+2ba4b52a3b424af4907f414136dee291  disk 1 gap free\Various - Track 02.flac.flac
+f0951057c8d82b0395fd4b3428f9ed2a  disk 1 gap free\Various - Track 03.flac.flac
+0fbed68375fd7259eeee34ab05e74882  disk 1 gap free\Various - Track 04.flac.flac
+25ad52a66ea26dcd4f2615f4e6c92ebe  disk 1 gap free\Various - Track 05.flac.flac
+f1d7c2d4117b16d81982a4c8e1aa2281  disk 1 gap free\Various - Track 06.flac.flac
+b8459996470d549d689922ed2d325d6f  disk 1 gap free\Various - Track 07.flac.flac
+1401ea8e70e8fa2df3a1119afd3e20c9  disk 1 gap free\Various - Track 08.flac.flac
+600e15a5bd905d6d4c883e9ea7051317  disk 1 gap free\Various - Track 09.flac.flac
+43922a811c74a4c0d2bb43f8a459661d  disk 1 gap free\Various - Track 10.flac.flac
+f51e0939ccca42536787861a8b56ff16  disk 1 gap free\Various - Track 11.flac.flac
+d38d6d294cdbf5f8d03103814a3d3d53  disk 1 gap free\Various - Track 12.flac.flac
+7154c3b9043981937c6b02d1b20e9e3f  disk 1 gap free\Various - Track 13.flac.flac
+53134d3f57941adaf1017281f5ef6e89  disk 2 gap free\disk 2 gap free.md5
+4f835af9d6e212c633f6a337f09935c2  disk 2 gap free\Various - Track 01.flac
+b363bea1389ae62dfeb86c19353bbfdf  disk 2 gap free\Various - Track 02.flac
+2ffc414b012a0c8cadbb3509badcef8a  disk 2 gap free\Various - Track 03.flac
+88136a21a5544f3f4021d9f7556bce12  disk 2 gap free\Various - Track 04.flac
+1d50ff61127e53afd4a8ac9208c8b7dd  disk 2 gap free\Various - Track 05.flac
+6a4f8188d6eaeaa82b8098cc9ec40099  disk 2 gap free\Various - Track 06.flac
+278640efdf5738e9916aa3ff57bf43ce  disk 2 gap free\Various - Track 07.flac
+f3d871b7ff82688e89dd867e6261c3ec  disk 2 gap free\Various - Track 08.flac
+e73c157c2dae80354899da26a63d4e20  disk 2 gap free\Various - Track 09.flac
+dcfe7ebd55f09fdb757d8c1fccf4849c  disk 2 gap free\Various - Track 10.flac
+abeb980cebc62a787e996ef0cad8bc10  disk 2 gap free\Various - Track 11.flac
+2e7df32a22fd7a682a8cb74283ce3953  disk 2 gap free\Various - Track 12.flac
+1e3f68728639e5412297e8cff2fe4417  disk 2 gap free\Various - Track 13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-Hollow-Horn-vol7.flacf\disk 2 gap free 
+=================== 
+=================== 
+=================== 
+Various - Track 01.flac:bafa1eaf7c735c9b5ee96ea0d182c9ab
+Various - Track 02.flac:59b5389f6528be06c727c0405e72cc9c
+Various - Track 03.flac:71684c387b705e5cfd4281b682fb194d
+Various - Track 04.flac:05d663be4e17f2ad700029fce3addd76
+Various - Track 05.flac:4dc31603829ab74e33a59b032e4412d5
+Various - Track 06.flac:152f880a9aca65997df65b499d246ec8
+Various - Track 07.flac:3e050ac775e95b32a35d6875affde101
+Various - Track 08.flac:50334024ac278d3b6d1cdf58f0e44041
+Various - Track 09.flac:1c7172d1ac2e456f12bda32b636d5108
+Various - Track 10.flac:a3b2ba2b6e8b7ffc203aa89203f5dfd2
+Various - Track 11.flac:49ef1c426cf1bc32c5126fe7e8a05b0a
+Various - Track 12.flac:cb53a2003dbad2455c5760f9d569f0d1
+Various - Track 13.flac:6d53ec342f764d25cf61a88602b3bd6d
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-Hollow-Horn-vol7.flacf\disk 1 gap free 
+=================== 
+=================== 
+=================== 
+Various - Track 01.flac.flac:9249d7fec5c5b8f4c899d8572f864fd3
+Various - Track 02.flac.flac:10696e3fb4dec86e1930a9742291e68f
+Various - Track 03.flac.flac:954bb38eb2c12f8ea6ff4101bf5799ab
+Various - Track 04.flac.flac:e2113b02466c8145b5b4888541d828a4
+Various - Track 05.flac.flac:692c6ba52ba44d3eb29f0b5c6bbc4dd1
+Various - Track 06.flac.flac:d2eb75069006278f7db94edf9eb4ab00
+Various - Track 07.flac.flac:85c872be8f00e26c67b96b400da7a9c9
+Various - Track 08.flac.flac:a8e06790b57f473053bf6df619c1f4a1
+Various - Track 09.flac.flac:3d94b585f0d84ac7813dc124954b32ce
+Various - Track 10.flac.flac:414a3ce6964d863a72191152548748cc
+Various - Track 11.flac.flac:7354e22e68af13ed270ead0e30e8d903
+Various - Track 12.flac.flac:0302620cc65723b42078c23861576c00
+Various - Track 13.flac.flac:8ee0fb7f3942988eb5410dda68890d3d
+=================== 
+=================== 
+=================== 
+=== shntool for: bd66-Hollow-Horn-vol7.flacf\disk 2 gap free 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.30       36055452 B   -b-   --   ---xx   flac  0.5663  Various - Track 01.flac
+     4:40.67       49549628 B   ---   --   ---xx   flac  0.5913  Various - Track 02.flac
+     8:33.26       90554396 B   ---   --   ---xx   flac  0.5813  Various - Track 03.flac
+     5:50.18       61782380 B   ---   --   ---xx   flac  0.5217  Various - Track 04.flac
+     6:11.56       65576156 B   ---   --   ---xx   flac  0.4749  Various - Track 05.flac
+    10:15.03      108493100 B   ---   --   ---xx   flac  0.5170  Various - Track 06.flac
+     4:08.60       43888364 B   ---   --   ---xx   flac  0.5934  Various - Track 07.flac
+     5:19.63       56419820 B   ---   --   ---xx   flac  0.6369  Various - Track 08.flac
+     3:24.48       36098540 B   ---   --   ---xx   flac  0.6505  Various - Track 09.flac
+     5:38.60       59764364 B   ---   --   ---xx   flac  0.5416  Various - Track 10.flac
+     3:58.26       42044396 B   ---   --   ---xx   flac  0.6395  Various - Track 11.flac
+     7:23.45       78251084 B   ---   --   ---xx   flac  0.6399  Various - Track 12.flac
+    10:22.19      109764356 B   -b-   --   ---xx   flac  0.6504  Various - Track 13.flac
+    79:11.70      838242036 B                            0.5822  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd66-Hollow-Horn-vol7.flacf\disk 1 gap free 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.10       57000260 B   -b-   --   ---xx   flac  0.5754  Various - Track 01.flac.flac
+     9:27.45      100124684 B   ---   --   ---xx   flac  0.5666  Various - Track 02.flac.flac
+     5:43.00       60505244 B   ---   --   ---xx   flac  0.5792  Various - Track 03.flac.flac
+    11:29.60      121680764 B   ---   --   ---xx   flac  0.5645  Various - Track 04.flac.flac
+     5:50.60       61881164 B   ---   --   ---xx   flac  0.5555  Various - Track 05.flac.flac
+     4:13.56       44760956 B   ---   --   ---xx   flac  0.4758  Various - Track 06.flac.flac
+     5:41.33       60230060 B   ---   --   ---xx   flac  0.4697  Various - Track 07.flac.flac
+     3:57.15       41842124 B   ---   --   ---xx   flac  0.4637  Various - Track 08.flac.flac
+     6:37.26       70091996 B   ---   --   ---xx   flac  0.4479  Various - Track 09.flac.flac
+     4:09.00       43923644 B   ---   --   ---xx   flac  0.4708  Various - Track 10.flac.flac
+     3:15.56       34529756 B   ---   --   ---xx   flac  0.4557  Various - Track 11.flac.flac
+     6:44.15       71300924 B   ---   --   ---xx   flac  0.4564  Various - Track 12.flac.flac
+     4:16.54       45286212 B   -b-   --   ---xx   flac  0.4799  Various - Track 13.flac.flac
+    76:49.55      813157788 B                            0.5149  (13 files)
+=================== 
+=================== 
+=================== 

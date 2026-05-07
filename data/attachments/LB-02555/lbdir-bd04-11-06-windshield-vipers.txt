@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-06-windshield-vipers 
+=================== 
+=================== 
+=================== 
+6e330354b152ab7355ab06de0beda324  bd04-11-06-windshield-d1t01.shn
+931882aef6b7b333fd7f09351bcdaae7  bd04-11-06-windshield-d1t02.shn
+544545b8ffacaaf4845a3712c0f92be5  bd04-11-06-windshield-d1t03.shn
+1fd4975d352709e4d000459b2583ad51  bd04-11-06-windshield-d1t04.shn
+72eeac538aea8165dd30279998a56524  bd04-11-06-windshield-d1t05.shn
+ee26bbd55fd78a7b871838cb525ada44  bd04-11-06-windshield-d1t06.shn
+ad4047753be81b23f48b5070dc773a4b  bd04-11-06-windshield-d1t07.shn
+31edfe5fc1b29281655b0599137e9d49  bd04-11-06-windshield-d1t08.shn
+2a5bc9d3d373a164501384c4c1df37c3  bd04-11-06-windshield-d1t09.shn
+ec4f73d32ab9a3ccb905f43f69b42c79  bd04-11-06-windshield-d1t10.shn
+de2f1cbde9fa69e4326ae562d429348c  bd04-11-06-windshield-d1t11.shn
+67b9ceaeafd4085b7ad0a3dcfac96a3f  bd04-11-06-windshield-d2t01.shn
+ad2b30b2bc37a4fca299dfbb9b30595a  bd04-11-06-windshield-d2t02.shn
+c90c66ad097b344a6cc138da514d7383  bd04-11-06-windshield-d2t03.shn
+65776c5651fb03b33abf363e7dbef0f8  bd04-11-06-windshield-d2t04.shn
+a988f361078ed138d65b52d3aa13c634  bd04-11-06-windshield-d2t05.shn
+6d09f1c7ff639ef16bdc95a7f14a7149  bd04-11-06-windshield-d2t06.shn
+020061c117f3e4cff128e56ed409f5c1  bd04-11-06-windshield-d2t07.shn
+53da90c57e79e1ba00eb1ca36ea1da7b  bd04-11-06-windshield-d2t08.shn
+b3ff0db06d0ba240bc4c65d4aea48c2d  bd04-11-06-windshield-d2t09.shn
+39f0563de0991d9cb9a6ff3ca3cd90f7  bd04-11-06-windshield-d2t10.shn
+878e603a8589993d0e5707fd26c25ef0  bd04-11-06-windshield-vipers-LB-2154.txt
+b8fed2e95c4bf4b27cfc1e50ecd871a0  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-11-06-windshield-vipers 
+=================== 
+=================== 
+=================== 
+600cd5b836321fad21dd16905d09acc6  [shntool]  bd04-11-06-windshield-d1t01.wav
+41d4238bb835e3c6ffac53852185ecab  [shntool]  bd04-11-06-windshield-d1t02.wav
+a2068055e14c70c53fc0d0bbe1268a91  [shntool]  bd04-11-06-windshield-d1t03.wav
+a4c31cfee473a9da059e998675fbec78  [shntool]  bd04-11-06-windshield-d1t04.wav
+abeaaaa3d902ce2e470c3686991df041  [shntool]  bd04-11-06-windshield-d1t05.wav
+0208be7ffd637d106b32fcff55abbc53  [shntool]  bd04-11-06-windshield-d1t06.wav
+cea6276a5b2a2e74ee92c27048b72238  [shntool]  bd04-11-06-windshield-d1t07.wav
+47cf36d8e5af00f2c0ced340fedf5dc3  [shntool]  bd04-11-06-windshield-d1t08.wav
+e4f5fcbd5288f98e8aee04c763599ff6  [shntool]  bd04-11-06-windshield-d1t09.wav
+322090db08fb23d65fff78eee81c5bbf  [shntool]  bd04-11-06-windshield-d1t10.wav
+ba830f430856d07f08f7d437bb927f0d  [shntool]  bd04-11-06-windshield-d1t11.wav
+a76cf9e3b8a73c7ef759d24ca04d7219  [shntool]  bd04-11-06-windshield-d2t01.wav
+1eb81e2764c1f35ba8d909dd44332368  [shntool]  bd04-11-06-windshield-d2t02.wav
+072d0a64d3fcf3d454a776930bcf68b5  [shntool]  bd04-11-06-windshield-d2t03.wav
+9aec69c43627fe8f22bb1fb5e01e0584  [shntool]  bd04-11-06-windshield-d2t04.wav
+654cc149e7655d4f3d34561e73d174fe  [shntool]  bd04-11-06-windshield-d2t05.wav
+ccff9510b3c8fe15a864af44ae055f70  [shntool]  bd04-11-06-windshield-d2t06.wav
+0e7c180b121597d6dd9757be9ca1cbd2  [shntool]  bd04-11-06-windshield-d2t07.wav
+7cf866ed0feca3203632a31d1151a384  [shntool]  bd04-11-06-windshield-d2t08.wav
+168ab2a645d1e2f782697b6487cc87cf  [shntool]  bd04-11-06-windshield-d2t09.wav
+b207caf4dbd8fbda7f2dbb3a27e42011  [shntool]  bd04-11-06-windshield-d2t10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-06-windshield-vipers 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:06.05       11654204 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t01.wav
+     5:14.61       55533116 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t02.wav
+     6:28.30       68513804 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t03.wav
+     6:04.28       64275500 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t04.wav
+     5:54.58       62582060 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t05.wav
+     6:49.38       72237020 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t06.wav
+     5:43.13       60535820 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t07.wav
+     7:07.03       75329900 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t08.wav
+     6:52.59       72815612 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t09.wav
+     6:09.17       65131628 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t10.wav
+     5:55.74       62796092 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d1t11.wav
+     7:04.43       74894780 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t01.wav
+     6:35.63       69826220 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t02.wav
+     5:42.25       60387644 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t03.wav
+     9:04.45       96067484 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t04.wav
+     7:30.08       79398860 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t05.wav
+     5:46.38       61123820 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t06.wav
+     5:21.19       56669132 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t07.wav
+     7:31.06       79570556 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t08.wav
+     8:50.29       93560252 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t09.wav
+     7:00.41       74184476 B   ---   --   -----    wav  1.0000  bd04-11-06-windshield-d2t10.wav
+   133:53.28     1417087980 B                            1.0000  (21 files)
+=================== 
+=================== 
+=================== 

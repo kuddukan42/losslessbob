@@ -1,0 +1,72 @@
+University Of Iowa
+Carver-Hawkeye Arena
+Iowa City, Iowa
+October 29, 2004	
+
+
+Disc One
+1	To Be Alone With You 
+2	Tonight I'll Be Staying Here With You 
+3	Tweedle Dee & Tweedle Dum 
+4	Mr. Tambourine Man 
+5	Cold Irons Bound 
+6	If Dogs Run Free 
+7	Stuck Inside Of Mobile With The Memphis Blues Again 
+8	Love Sick 
+9	Highway 61 Revisited 
+
+Disc Two
+1	Make You Feel My Love 
+2	Watching The River Flow 
+3	Honest With Me 
+4	Standing In The Doorway 
+5	Summer Days 
+6	Like A Rolling Stone 
+7	All Along The Watchtower 
+
+
+Band Members
+Bob Dylan - piano, harp
+Larry Campbell - guitar, slide guitar, cittern, pedal steel
+Stu Kimball - guitar
+Tony Garnier - bass
+George Recile - drums
+
+
+
+FLAC fingerprint
+bd04-10-29_d1t01.flac:cd02e73724a1c07d289ac652fcd99c75
+bd04-10-29_d1t02.flac:21e4339ca09064606b5c996617b84730
+bd04-10-29_d1t03.flac:83efc52d6f3e528f9236146a3fa833cb
+bd04-10-29_d1t04.flac:ad7e6b85920080670185d36460215e86
+bd04-10-29_d1t05.flac:ac8df5ba8bb558034ac372981b221e47
+bd04-10-29_d1t06.flac:6ec0436ac75d479cc141f4aaf2aed2c0
+bd04-10-29_d1t07.flac:794c4a56d42e4cc6d75465f68ce8730d
+bd04-10-29_d1t08.flac:abcf9e7850d3dcd25e027e1b19d060ec
+bd04-10-29_d1t09.flac:e9b6114003016c34f22a9f9fa6ff66a1
+bd04-10-29_d2t01.flac:da91c34fdedcea0854c35b776ced3dac
+bd04-10-29_d2t02.flac:9cb09b334bc521abc57a2b5fe2646085
+bd04-10-29_d2t03.flac:625065e164e4523521594bc8a272c423
+bd04-10-29_d2t04.flac:00d1dbb49f736511c242bd15504adf30
+bd04-10-29_d2t05.flac:05cc54fd3d1758e51ded280e19f7efae
+bd04-10-29_d2t06.flac:4095d2f5c0ee5498f32ed8c70af88450
+bd04-10-29_d2t07.flac:cefaa1e637d3490f82a662336f82d6ce
+
+
+md5
+e7989edab80e4a95b6256f591550ce52 *bd04-10-29_d1t01.flac
+98a2b7e01b4285a990690a01e7fb6077 *bd04-10-29_d1t02.flac
+2435e93344a2a25a38b1ecb23bee53f7 *bd04-10-29_d1t03.flac
+7f7502093dc3cb1724b9b688c13f99fa *bd04-10-29_d1t04.flac
+f6436bb37e92c983fd5e15ece5066767 *bd04-10-29_d1t05.flac
+6f9c3ef914ed22a553f6ce36d0f9e636 *bd04-10-29_d1t06.flac
+0ab7d078b378b2d2718e60014918305e *bd04-10-29_d1t07.flac
+00994f22beb3de4eae2f0a3000b7a499 *bd04-10-29_d1t08.flac
+511504e932815a310bbc4ea7393cc307 *bd04-10-29_d1t09.flac
+d4c2ea5f81dd6872445fb854e7849eed *bd04-10-29_d2t01.flac
+77cd70ec2fa72e3939c1a9e4eed1baad *bd04-10-29_d2t02.flac
+402e085801a2dc5ee7de653f62720c08 *bd04-10-29_d2t03.flac
+ce77b3dd638b88ded0db04b0d3658f44 *bd04-10-29_d2t04.flac
+9cb12ba3bebda132827aea36be025a46 *bd04-10-29_d2t05.flac
+fdbd1c1fc349d3bfa83b7775254e34c9 *bd04-10-29_d2t06.flac
+54fc8006d48b5b095e5f98c2e113088a *bd04-10-29_d2t07.flac

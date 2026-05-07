@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-03-23-stewARTMatrix.flacf 
+=================== 
+=================== 
+=================== 
+106bedd98baacadd3394971e80c1d458  101.flac
+7956ddd7a7b0820ac063d8b14d704753  102.flac
+33b1a661c0b096d3e41ca19676bb2f9e  103.flac
+2a6b51bb5b30c2fe28c259533c10ece9  104.flac
+fecaa0c5634eee117a11f07d869c63f0  105.flac
+3dd0b8e542f361836725988b4bc4ed25  106.flac
+55ec435d9a17bcca02004e15786c5d93  107.flac
+91e175b212ba4ca6fa66251e5dc8e238  108.flac
+a771b46013931c571e359353c8560235  109.flac
+10c33d597833f87141818b45d3757b5e  110.flac
+0378473b81d9bb98f39bf67152d3e871  111.flac
+19ec4613f144d41d8d5bfd4b8d6f9644  2009-03-23 stewART Matrix.txt
+bf5d0b25bc0a70072a345859bf009b9d  2009-03-23_Globen_BD_stewARTMatrix.md5
+4d80202d7d6e3644a6ee033fd5036d2a  201.flac
+c431d6e248dda4c3df02319a9dc8391a  202.flac
+60294882dfa2c458879137b0da345165  203.flac
+35093621a6286e8271dca753e5bcc706  204.flac
+b2b9b3c1b79d903810a9ea5fc2f2785a  205.flac
+9d1d012a41ec61a5fa3dbbc5ead25b8c  206.flac
+a366dfc248c2045baa267984dfc30b21  207.flac
+31e064a3873db39b5eb865ce783464b2  208.flac
+da35325740b1fcbdef535f020faf252e  Stockholm_Globe_2009_matrix_B.jpg
+05be505f10e8275007da2a467180179b  Stockholm_Globe_2009_matrix_F.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-03-23-stewARTMatrix.flacf 
+=================== 
+=================== 
+=================== 
+101.flac:4240ce6b5aed91fcf47d8a4b8d5d473a
+102.flac:e796220eab590c6ec06a96306bf739fe
+103.flac:b2899c110ac5d6ba459be9c915daad4e
+104.flac:753b9b3ff2b847ce5f61a5395f877839
+105.flac:8895947b7f69dd0955d7628f9ed0adf8
+106.flac:002426a71929baff62e443682b33cfa1
+107.flac:5a08570c70fb5d0a646c24f8eb6030a3
+108.flac:83b1f6b4f36562704678d2a1bcb35aeb
+109.flac:b942ec882a113b9603f92646b1217132
+110.flac:4f797030384bdfa3484214d01b3b272c
+111.flac:781b35fab1a43ddc2de6b304202f429e
+201.flac:e19890dc00db362ec93a8bd6a3fc02d5
+202.flac:cf9be34ecb117ee575ee504db4dbe967
+203.flac:4b158c832f5f12c19053dccce506d64e
+204.flac:d90933319ad572da5da9b71f7bba7375
+205.flac:6738eef35aee33e7c889e515f346b989
+206.flac:6e4acb72ce3762fa5aaa18f50fd1c2b2
+207.flac:767cfd38493da812c3d2dd931652ad20
+208.flac:306fec1258a717d7284a128a525552e1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-03-23-stewARTMatrix.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.17        9213688 B   -b-   --   ---xx   flac  0.5049  101.flac
+     3:59.04       42170184 B   -b-   --   ---xx   flac  0.5945  102.flac
+     5:18.31       56167836 B   -b-   --   ---xx   flac  0.5650  103.flac
+     8:56.47       94661380 B   -b-   --   ---xx   flac  0.5850  104.flac
+     7:02.09       74462236 B   -b-   --   ---xx   flac  0.5861  105.flac
+     6:09.67       65248592 B   -b-   --   ---xx   flac  0.5727  106.flac
+     6:26.72       68260744 B   -b-   --   ---xx   flac  0.5979  107.flac
+     5:55.43       62723700 B   -b-   --   ---xx   flac  0.5671  108.flac
+    10:58.03      116078672 B   -b-   --   ---xx   flac  0.5537  109.flac
+     5:56.01       62801220 B   -b-   --   ---xx   flac  0.5669  110.flac
+     4:27.56       47231044 B   -b-   --   ---xx   flac  0.5358  111.flac
+     6:49.40       72241880 B   -b-   --   ---xx   flac  0.5817  201.flac
+     4:16.10       45182340 B   -b-   --   ---xx   flac  0.5776  202.flac
+     6:38.10       70231932 B   -b-   --   ---xx   flac  0.5809  203.flac
+     6:37.62       70176564 B   -b-   --   ---xx   flac  0.5836  204.flac
+     3:40.73       38980848 B   -b-   --   ---xx   flac  0.6344  205.flac
+     5:29.72       58205472 B   -b-   --   ---xx   flac  0.5832  206.flac
+     7:33.01       79910688 B   -b-   --   ---xx   flac  0.5205  207.flac
+     7:30.16       79417892 B   -b-   --   ---xx   flac  0.5781  208.flac
+   114:38.37     1213366912 B                            0.5732  (19 files)
+=================== 
+=================== 
+=================== 

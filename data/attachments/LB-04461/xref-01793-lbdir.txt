@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd97-02-14-Superb.flacf
+===================
+===================
+===================
+417804512ebaa01ed5421205fcb26183 *Art+info\info.txt
+845bed803e1955d66130d8ce0ed21ddc *Art+info\S6590.jpg
+8bc75e430cdf24916380bd99efde79a8 *Art+info\S6591.jpg
+e27343433e507e93d98fe1244a1cd113 *BOB DYLAN 1997 02 14 Fukuoka, Japan - Superb.md5
+e14979c5e97f776507781a48303d6983 *Disc 1\Track01.flac
+4067f6150bd7b48af261c679f318c49e *Disc 1\Track02.flac
+e452062d2c54a8574d722a53367fd37f *Disc 1\Track03.flac
+647854a745f76d610f4ceae808806717 *Disc 1\Track04.flac
+b19f71979d120d3ac0023fb4cdecd585 *Disc 1\Track05.flac
+7aa9cc3e3ecf9f030a16f15ebda5868f *Disc 1\Track06.flac
+056f2664c6ce24274636e342f14ef06a *Disc 1\Track07.flac
+87d7acdf524e67e59e1edeab7347b0ed *Disc 1\Track08.flac
+61289882b062c9bf9fe9372b0531aa92 *Disc 1\Track09.flac
+fa781f49162b90ae0e05e26f68ec9595 *Disc 2\Track01.flac
+9dea9f6144a74374b1c6db520b8171a5 *Disc 2\Track02.flac
+de348c860ed6768b017b134512745c16 *Disc 2\Track03.flac
+80b6354c33d7c7eaa079721954063ee1 *Disc 2\Track04.flac
+1b50dd6bfde5e3eadf71ac92a5c4793a *Disc 2\Track05.flac
+1a8588fac50425806f506167e96ab3de *Disc 2\Track06.flac
+===================
+===================
+===================
+=== ffp for: bd97-02-14-Superb.flacf
+===================
+===================
+===================
+Disc 1\Track01.flac:4e9aee804ed9543ba4df9a33ea8ad8ee
+Disc 1\Track02.flac:bc58093de3095eac847ac82dfcef7c00
+Disc 1\Track03.flac:f93c630a4777d7eead163c8eacbabeaa
+Disc 1\Track04.flac:1f20fb5103385ee15bbb4bbfff0af610
+Disc 1\Track05.flac:1475aa0819583b9886dbc9ae27949d6e
+Disc 1\Track06.flac:1afa1cf340006f563fc5c58336fa2421
+Disc 1\Track07.flac:acc7a75342c2d777979518615a8891de
+Disc 1\Track08.flac:6385bce938a0158d0b25825194ac10e6
+Disc 1\Track09.flac:98d87a0a0a86852c482e2f5c65cd4b2b
+Disc 2\Track01.flac:8252b6471c9dcd26217b1cf2e9c20afa
+Disc 2\Track02.flac:d083c3e005cf51f057bd2e3b52815403
+Disc 2\Track03.flac:fc38d4b2ce9cb9708f1c23ea7c32ed0e
+Disc 2\Track04.flac:85e26195e81d90307fd01b49e9a926a0
+Disc 2\Track05.flac:0d8e7f1cefdd11ce42875bab30e618f5
+Disc 2\Track06.flac:62aa0cc586da78d5feacb826cbf0d768
+===================
+===================
+===================
+=== shntool len for: bd97-02-14-Superb.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.11       51711020 B   -b-   --   ---xx   flac  0.5916  Track01.flac
+     6:11.17       65484332 B   -b-   --   ---xx   flac  0.5695  Track02.flac
+     6:39.74       70557740 B   -b-   --   ---xx   flac  0.5886  Track03.flac
+     8:44.60       92574764 B   ---   --   ---xx   flac  0.5612  Track04.flac
+     7:49.57       82865708 B   ---   --   ---xx   flac  0.5669  Track05.flac
+     7:41.10       81345068 B   -b-   --   ---xx   flac  0.5817  Track06.flac
+     8:04.66       85533740 B   -b-   --   ---xx   flac  0.5916  Track07.flac
+     6:53.49       72967724 B   -b-   --   ---xx   flac  0.5506  Track08.flac
+     6:38.14       70239788 B   -b-   --   ---xx   flac  0.5583  Track09.flac
+    63:36.58      673279884 B                            0.5728  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd97-02-14-Superb.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:22.05       77981228 B   -b-   --   ---xx   flac  0.5629  Track01.flac
+     6:44.22       71318060 B   -b-   --   ---xx   flac  0.5124  Track02.flac
+     8:59.67       95238188 B   -b-   --   ---xx   flac  0.5943  Track03.flac
+    11:37.08      122969132 B   -b-   --   ---xx   flac  0.5817  Track04.flac
+    12:59.61      137558060 B   -b-   --   ---xx   flac  0.5929  Track05.flac
+     7:23.38       78234668 B   -b-   --   ---xx   flac  0.5918  Track06.flac
+    55:06.51      583299336 B                            0.5768  (6 files)
+===================
+===================
+===================

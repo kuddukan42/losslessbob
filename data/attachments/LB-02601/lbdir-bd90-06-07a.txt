@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-06-07a 
+=================== 
+=================== 
+=================== 
+b93d402833cc027fa88b85da73ac3c99  bd1990-06-07.info.txt
+bd5dcd4509d6f3c63bfeaeb3f648a285  bd1990-06-07.shntoolfp.txt
+f57458bb9a055d40d3a3e525c25bb87d  bd1990-06-07.shntoollength.txt
+eacaf5694f40d99e9093e7cb80698b6d  bd1990-06-07.toronto.shns.md5
+bd7906f5e1e945e7dcc0c11683741ff3  bd1990-06-07.toronto.waves.md5
+6db343d23a46d2bace37ec1db6c44fb0  bd1990-06-07d1t01.shn
+ff5e88d948411739e2bb88914fff2aa6  bd1990-06-07d1t02.shn
+0717e42dbb5a3d5a58a6250cde664dc1  bd1990-06-07d1t03.shn
+63cfb8b2b554442c29fe20fe0d453f6b  bd1990-06-07d1t04.shn
+4641d62b8f54e2a425ad61ba3c1730b1  bd1990-06-07d1t05.shn
+6a1f5e609b97dfca63efc9ca4f54ba7c  bd1990-06-07d1t06.shn
+efab89331f4b96299760bfa9f4778b84  bd1990-06-07d1t07.shn
+7ee450bb49dd571081eb2c7ea423a215  bd1990-06-07d1t08.shn
+4a8cf9f82ebe042e457a5457c6fac1e6  bd1990-06-07d2t01.shn
+7b0b199bc8ead129588d5b6e925376e8  bd1990-06-07d2t02.shn
+234dff801dca1a5aea9330c4751267cd  bd1990-06-07d2t03.shn
+9b7e9f9de427b995859aac46d1cf84ac  bd1990-06-07d2t04.shn
+10707b570ab7e0366e13891ef9a6f707  bd1990-06-07d2t05.shn
+9d03d9ccd278bad157aaed52d7d29f84  bd1990-06-07d2t06.shn
+8e2e6228216b3323b14f2287b0a7183e  bd1990-06-07d2t07.shn
+d3dc6eb06a30ad5d84e2e07b5c185d35  bd1990-06-07d2t08.shn
+172e5e881d29defb60beb4b2f2bf23f0  bd1990-06-07d2t09.shn
+3068644d57d7bbbbe37f11c2a0a1f38d  bd1990-06-07d2t10.shn
+101afc5251ab0cdce61e7cfffe7c4844  bd90-06-07a-LB-2601.txt
+55680ced9132f4457246166fe4df9c64  foobar2000_wav2shn_bitcompare.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-06-07a 
+=================== 
+=================== 
+=================== 
+5f7ea96a4561e37e1aad96b609606173  [shntool]  bd1990-06-07d1t01.wav
+09d06846479c43ed086d133c529fb39c  [shntool]  bd1990-06-07d1t02.wav
+d9435ca3c640034f874f6f428db9a6dc  [shntool]  bd1990-06-07d1t03.wav
+bb93a859d3a0b243b75f271b89af101d  [shntool]  bd1990-06-07d1t04.wav
+28fc38bc1a36e204cab0c21d416a6497  [shntool]  bd1990-06-07d1t05.wav
+75f8fd81634ae6244dbca60580c0e67f  [shntool]  bd1990-06-07d1t06.wav
+db221359bbe72ca2cf416bfc564f1bcc  [shntool]  bd1990-06-07d1t07.wav
+fc0da18ca698a8b51397d12ec3c2b3cb  [shntool]  bd1990-06-07d1t08.wav
+c3de6146671d70e332094b5bbcd6656d  [shntool]  bd1990-06-07d2t01.wav
+b9efcd21019c361788df370a6c9403a1  [shntool]  bd1990-06-07d2t02.wav
+bd2026c5c25b11de4bb47b9894d508a1  [shntool]  bd1990-06-07d2t03.wav
+23e1fac398dbda42a3178da4aff805e7  [shntool]  bd1990-06-07d2t04.wav
+78b1a3059ca792b11efa6a819f12c20c  [shntool]  bd1990-06-07d2t05.wav
+3327e7904d347e21cf6de604e4f896ed  [shntool]  bd1990-06-07d2t06.wav
+0286dd906d68bac0eef8185ef980032d  [shntool]  bd1990-06-07d2t07.wav
+7f8009cdea229ae5c5669da2b8436b3a  [shntool]  bd1990-06-07d2t08.wav
+b1dd0e87252f2dd20d2eadcf638e2a8a  [shntool]  bd1990-06-07d2t09.wav
+053270d5eb091ece25b87c8423711166  [shntool]  bd1990-06-07d2t10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-06-07a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.05       44993804 B   ---   --   -----    wav  1.0000  bd1990-06-07d1t01.wav
+     3:39.72       38800988 B   ---   --   -----    wav  1.0000  bd1990-06-07d1t02.wav
+     6:31.35       69054764 B   ---   --   -----    wav  1.0000  bd1990-06-07d1t03.wav
+     6:29.04       68629052 B   ---   --   -----    wav  1.0000  bd1990-06-07d1t04.wav
+     3:50.08       40590860 B   ---   --   -----    wav  1.0000  bd1990-06-07d1t05.wav
+     5:08.47       54441788 B   ---   --   -----    wav  1.0000  bd1990-06-07d1t06.wav
+     6:19.27       66919148 B   ---   --   -----    wav  1.0000  bd1990-06-07d1t07.wav
+     3:55.12       41482268 B   ---   --   -----    wav  1.0000  bd1990-06-07d1t08.wav
+     4:43.27       49984748 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t01.wav
+     4:43.42       50020028 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t02.wav
+     6:00.04       63513452 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t03.wav
+     4:47.69       50789132 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t04.wav
+     3:40.41       38904476 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t05.wav
+     3:25.59       36300812 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t06.wav
+     4:48.10       50826764 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t07.wav
+     5:56.09       62819612 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t08.wav
+     5:03.32       53524508 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t09.wav
+     4:59.03       52750700 B   ---   --   -----    wav  1.0000  bd1990-06-07d2t10.wav
+    88:16.56      934346904 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

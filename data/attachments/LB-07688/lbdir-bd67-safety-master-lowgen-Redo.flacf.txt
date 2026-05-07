@@ -1,0 +1,182 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd67-safety-master-lowgen-Redo.flacf 
+=================== 
+=================== 
+=================== 
+bc997e60fbd2e2d5f46a1284e37878c0  all.md5
+c7dbb57fa0dcd97786f3c6d7330b0864  Boot\Boot--TK01.flac
+6f8451ba311ea6cb21339543165a51ba  Boot\Boot--TK02.flac
+0bc817bf8cdb3c6803187c72e9d0ba26  Boot\Boot--TK03.flac
+5a636a837a00323182c5129145069454  Boot\Boot--TK04.flac
+72efb43a5bf7fdaf848d2ca6dbff5682  Boot\Boot--TK05.flac
+1c5c67819f339b32c3b13bdad358e7fd  Boot\Boot--TK06.flac
+6f72c01f906c216dc33539dc480114cd  Boot\Boot--TK07.flac
+3cc627746acc8b644ef916851160bfa8  Boot\Boot--TK08.flac
+92271e80b6995d963f92f773355b769c  Boot\Boot--TK09.flac
+2776f54f224332d081e734120fce83c0  Boot\Boot--TK10.flac
+2d78209f46ac1bfa1ccdc4376e6968e4  Boot\Boot--TK11.flac
+5692894cfaf1c12cc8ef3f4504402ce3  Boot\Boot--TK12.flac
+70430967265eed944ad5c6d3f865b262  Boot\Boot--TK13.flac
+a4395cd5f3d998a10aa7689c9de88b6f  Boot\Boot--TK14.flac
+61e7f142be2778e843d16b26bde9b74f  Boot\Boot--TK15.flac
+5ebd42b40425b19027fb114d81ba9fc3  Boot\Boot--TK16.flac
+ecb1ed8b036c69ffb5d6ede48ca46f47  Boot\Boot--TK17.flac
+368ec89b4baa9e13de0e71bbab45d39d  Boot\Boot--TK18.flac
+eefa9293eb3db1e10224a9ff147e9f3e  Boot\Boot--TK19.flac
+a4fb987b827cbb9adc95a718f0973711  Boot\Boot--TK20.flac
+5340404e4c6adc13b777be7847f67f36  Boot\Boot--TK21.flac
+887b506f5ecbf9581eee33aa31d1acf5  Boot\Boot--TK22.flac
+4e94aba7b7bfa97ae9d161ae48e02b41  Boot\Boot--TK23.flac
+3b75a345359f3bf550658a4db5320a03  Info.txt
+14b26fad2daf504273ff7bd11f987f18  TreeRoots\TreeRoots--TK01.flac
+c15e6dc3394069241b7e496a832034a2  TreeRoots\TreeRoots--TK02.flac
+2c7b8b639bb86e9eca2e9872a12f349c  TreeRoots\TreeRoots--TK03.flac
+7e8e0469dfcec8e3bc1ac0b3e0ebb6b0  TreeRoots\TreeRoots--TK04.flac
+c8f32d41d0d27852cb34ecc8640ec2d9  TreeRoots\TreeRoots--TK05.flac
+041c5b827e1df50899f9893e5a77d99b  TreeRoots\TreeRoots--TK06.flac
+e98f2e4ebc9ca77b5d2339b8e2a3665e  TreeRoots\TreeRoots--TK07.flac
+9b84605a5d53d65e4714d57a98f34cef  TreeRoots\TreeRoots--TK08.flac
+ead20e08a49e27dc482f5c70b44fd7c5  TreeRoots\TreeRoots--TK09.flac
+95c3d526eab418198fc50fc78598a7e8  TreeRoots\TreeRoots--TK10.flac
+831f881502eb2fbe377e8bc51b2c5136  TreeRoots\TreeRoots--TK11.flac
+3d9f0773988b4a1a12e98d94fc92305c  TreeRoots\TreeRoots--TK12.flac
+30aea7ad8b3a95f0f565449403ccd2b0  TreeRoots\TreeRoots--TK13.flac
+3b3e0996149eb246cd035d16b88b21bb  TreeRoots\TreeRoots--TK14.flac
+2e90b1eb4310bcc8a0b43896a3b606f4  TreeRoots\TreeRoots--TK15.flac
+96f5a0c86567b78a849b5cb352199f6a  TreeRoots\TreeRoots--TK16.flac
+03509bad5e510ed961a2851c286cbee3  TreeRoots\TreeRoots--TK17.flac
+c59e42e767d643ea0ebcf34f6be716f6  TreeRoots\TreeRoots--TK18.flac
+b7663b229a370574e22a9744995ce7de  TreeRoots\TreeRoots--TK19.flac
+425f39c22bd8d3f9fdc49f203d07b61f  TreeRoots\TreeRoots--TK20.flac
+cc2cfc3001b6858d536ca6b48b0df664  TreeRoots\TreeRoots--TK21.flac
+833098aa9a70bd3685b6d79847589547  TreeRoots\TreeRoots--TK22.flac
+ed8c4526f10463b7a0fbe80eab4e1acc  TreeRoots\TreeRoots--TK23.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-safety-master-lowgen-Redo.flacf\Boot 
+=================== 
+=================== 
+=================== 
+Boot--TK01.flac:15b17b45895546372edd4b0ec43c08ae
+Boot--TK02.flac:f02ae4cfe3bbe338ac94beed9c26232b
+Boot--TK03.flac:2e3a328c61f42c9cef9eab0a3d6fd140
+Boot--TK04.flac:c1590c53f689f0f281dcfe548fe6f1ad
+Boot--TK05.flac:1f47881c73e99eab603d5b80a8799d0b
+Boot--TK06.flac:834f739c436be448ee1c652e8bc73016
+Boot--TK07.flac:ae2d781628657b1060c70af6577d8cc9
+Boot--TK08.flac:cd52795db3361a4520c1543394402079
+Boot--TK09.flac:79e5c6585e5baab8a720123ea195956d
+Boot--TK10.flac:9aa01d2aea48d9d331ae8c97a694afff
+Boot--TK11.flac:0457c98bfe9fb2d20645ab56415d9cdf
+Boot--TK12.flac:3f8f6ff5dbfb958cf64d2c363c4a8823
+Boot--TK13.flac:f6fda46adb2c923e932a0a87c9fe88a2
+Boot--TK14.flac:33f1d25c2cd8cc1b86a13d3c8ebedb2a
+Boot--TK15.flac:5b0f513921f041cda4a79b087f42030f
+Boot--TK16.flac:3500d4935e4a8ef5d302c4126becbbd9
+Boot--TK17.flac:13a98aaad27007274af18d5dae806a2c
+Boot--TK18.flac:efcae9307c9085c167136b9409597696
+Boot--TK19.flac:553cedec0f0f189e6266ddcb4a10e6cc
+Boot--TK20.flac:6e5839d67e37a9aa2644b44a32e55f25
+Boot--TK21.flac:49cc8119b6360a4b00635593a5d1e7c5
+Boot--TK22.flac:0f4a978bb57eafa0804f61c204a5b437
+Boot--TK23.flac:8df9e8cec0738fda4f29c66a7994cf4f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd67-safety-master-lowgen-Redo.flacf\TreeRoots 
+=================== 
+=================== 
+=================== 
+TreeRoots--TK01.flac:0f1a8e7bd872cc1a1074c673127356a1
+TreeRoots--TK02.flac:cbd2219ba8895282624c28954feaeeae
+TreeRoots--TK03.flac:6bf9442f19b4abaa3ffa173f859186cb
+TreeRoots--TK04.flac:1cf3727bd46c96a2590497fb561f37d9
+TreeRoots--TK05.flac:b3f36a4a2fb3248c2bfa449995bafeef
+TreeRoots--TK06.flac:27f678e97fb2a917b1fc151bce91b63b
+TreeRoots--TK07.flac:d16f0230d1195541ee43bbc5746a442d
+TreeRoots--TK08.flac:a750968103cccac6e6441c993112a1d6
+TreeRoots--TK09.flac:1f6314c41cd7168298908a890505c2a3
+TreeRoots--TK10.flac:8b325b7354cd017dd05cac55865ef4c0
+TreeRoots--TK11.flac:bb0d6bc754c71c8ed4fca7c4ed278910
+TreeRoots--TK12.flac:aaa95a0122a08b16b3508d389a366310
+TreeRoots--TK13.flac:496807b94563cb50d92abfed8ecbdb13
+TreeRoots--TK14.flac:6237ee7da166d250eabcbdf29e93a5fc
+TreeRoots--TK15.flac:58767c6bd2ae089139cec9e57a46cca8
+TreeRoots--TK16.flac:3994b1de8330e1194abde65b1f6401d6
+TreeRoots--TK17.flac:36188f61f87b03fe87ef9c1277074ab9
+TreeRoots--TK18.flac:9542da39f41ec077c7fb4a07dbee416c
+TreeRoots--TK19.flac:8eacb154700f55bffd8ba1322eafbfd4
+TreeRoots--TK20.flac:06e73471de0894800e8bb6256165f140
+TreeRoots--TK21.flac:0b2178000b80164c2ac3cf1bdfea4f77
+TreeRoots--TK22.flac:7d6c8ffb4a8186f479264d9001b705ab
+TreeRoots--TK23.flac:5f27a224c631210e3863ada6ce8683fe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-safety-master-lowgen-Redo.flacf\Boot 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:32.37       26899868 B   ---   --   ---xx   flac  0.5110  Boot--TK01.flac
+     2:14.28       23703500 B   ---   --   ---xx   flac  0.5185  Boot--TK02.flac
+     5:05.39       53893772 B   ---   --   ---xx   flac  0.5004  Boot--TK03.flac
+     2:32.52       26935148 B   ---   --   ---xx   flac  0.4929  Boot--TK04.flac
+     2:02.60       21661964 B   ---   --   ---xx   flac  0.5090  Boot--TK05.flac
+     2:42.69       28739132 B   ---   --   ---xx   flac  0.5068  Boot--TK06.flac
+     3:53.59       41240012 B   ---   --   ---xx   flac  0.5691  Boot--TK07.flac
+     2:46.00       29282444 B   ---   --   ---xx   flac  0.5434  Boot--TK08.flac
+     3:56.52       41752748 B   ---   --   ---xx   flac  0.5025  Boot--TK09.flac
+     2:52.19       30385532 B   ---   --   ---xx   flac  0.4950  Boot--TK10.flac
+     0:32.50        5762444 B   ---   --   ---xx   flac  0.5072  Boot--TK11.flac
+     1:49.72       19396988 B   ---   --   ---xx   flac  0.5506  Boot--TK12.flac
+     3:44.67       39671228 B   ---   --   ---xx   flac  0.4800  Boot--TK13.flac
+     3:21.43       35557580 B   ---   --   ---xx   flac  0.4833  Boot--TK14.flac
+     2:43.25       28812044 B   ---   --   ---xx   flac  0.5758  Boot--TK15.flac
+     2:48.09       29656412 B   ---   --   ---xx   flac  0.5543  Boot--TK16.flac
+     4:21.02       46045148 B   ---   --   ---xx   flac  0.5467  Boot--TK17.flac
+     4:14.34       44885612 B   ---   --   ---xx   flac  0.5990  Boot--TK18.flac
+     2:19.15       24554924 B   ---   --   ---xx   flac  0.5728  Boot--TK19.flac
+     2:58.23       31453340 B   ---   --   ---xx   flac  0.6016  Boot--TK20.flac
+     7:12.64       76355372 B   ---   --   ---xx   flac  0.5347  Boot--TK21.flac
+     5:32.51       58684796 B   ---   --   ---xx   flac  0.6129  Boot--TK22.flac
+     3:39.50       38749244 B   ---   --   ---xx   flac  0.4875  Boot--TK23.flac
+    75:58.20      804079252 B                            0.5359  (23 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-safety-master-lowgen-Redo.flacf\TreeRoots 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:30.56       26591756 B   ---   --   ---xx   flac  0.5648  TreeRoots--TK01.flac
+     2:10.72       23101388 B   ---   --   ---xx   flac  0.5755  TreeRoots--TK02.flac
+     5:05.25       53860844 B   ---   --   ---xx   flac  0.5192  TreeRoots--TK03.flac
+     2:31.23       26690540 B   ---   --   ---xx   flac  0.5364  TreeRoots--TK04.flac
+     2:03.37       21784268 B   ---   --   ---xx   flac  0.5195  TreeRoots--TK05.flac
+     2:44.22       28981388 B   ---   --   ---xx   flac  0.5169  TreeRoots--TK06.flac
+     3:51.27       40811948 B   ---   --   ---xx   flac  0.5854  TreeRoots--TK07.flac
+     2:42.31       28649756 B   ---   --   ---xx   flac  0.5658  TreeRoots--TK08.flac
+     3:50.43       40673180 B   ---   --   ---xx   flac  0.5312  TreeRoots--TK09.flac
+     2:50.29       30056252 B   ---   --   ---xx   flac  0.5207  TreeRoots--TK10.flac
+     0:34.54        6124652 B   ---   --   ---xx   flac  0.5856  TreeRoots--TK11.flac
+     1:49.44       19331132 B   ---   --   ---xx   flac  0.6170  TreeRoots--TK12.flac
+     3:55.71       41621036 B   ---   --   ---xx   flac  0.5257  TreeRoots--TK13.flac
+     3:17.68       34910780 B   ---   --   ---xx   flac  0.5309  TreeRoots--TK14.flac
+     2:44.14       28962572 B   ---   --   ---xx   flac  0.5981  TreeRoots--TK15.flac
+     2:48.42       29734028 B   ---   --   ---xx   flac  0.5487  TreeRoots--TK16.flac
+     4:24.34       46649612 B   ---   --   ---xx   flac  0.5656  TreeRoots--TK17.flac
+     4:30.06       47642156 B   ---   --   ---xx   flac  0.5573  TreeRoots--TK18.flac
+     2:21.47       24982988 B   ---   --   ---xx   flac  0.5560  TreeRoots--TK19.flac
+     2:55.74       31044092 B   ---   --   ---xx   flac  0.5980  TreeRoots--TK20.flac
+     7:12.01       76207196 B   ---   --   ---xx   flac  0.5147  TreeRoots--TK21.flac
+     5:36.15       59305724 B   ---   --   ---xx   flac  0.6176  TreeRoots--TK22.flac
+     3:38.25       38514044 B   ---   --   ---xx   flac  0.4816  TreeRoots--TK23.flac
+    76:10.35      806231332 B                            0.5502  (23 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-11-16-Afternoon-Acoustic.flacf 
+=================== 
+=================== 
+=================== 
+b40eac9800709a10cb4cf9c1c82c3225  01 - I Want You.flac
+9908012c72c38b94681a67d0a10a8828  02 - Tombstone Blues #1.flac
+f15fc806f7f6841ed0c24b529d7d093a  03 - Tombstone Blues #2.flac
+4779bc6c568724e219119235f3702430  04 - Tombstone Blues #3.flac
+c8ab5e164136fc148b42fd643f1d8173  05 - I Want You.flac
+a517772b9c0a10e1c94c0e8d671f1801  06 - Don't Think Twice, It's Alright.flac
+d17f81a837962c587bb5fbba32c3deb6  07 - Desolation Row.flac
+ee8cab564396a2913e166237c010c6c7  08 - Hazel.flac
+4b2142fec848e6dff24460f2a55c1c88  09 - Everything Is Broken.flac
+db8f53712464afa5055032aa34ef9780  10 - The Times They Are A Changin'.flac
+cbbc16a7923066ebf602bed58a3c47e0  11 - Love Minus Zero-No Limit #1.flac
+42a7d16275c4040160606c72bd7585e9  12 - Dignity.flac
+144ea2c328580da1e491b678d816b2c5  13 - With God On Our Side.flac
+1c3135e011273d99d9938cc442caa008  14 - Love Minus Zero-No Limit #2.flac
+1dfa8970e2fcd95506e5ca0c91176dae  Afternoon Acoustic - The Unplugged Rehearsal.cue
+b56186770b4d2cf8b4af2f0d5441a434  Afternoon Acoustic - The Unplugged Rehearsal.log
+2698e19c38d3be1f0281d9352fde6e27  Afternoon Acoustic info.txt
+274fa752cb766667c0eec4140fac44fc  Afternoon Acoustic.ffp
+f9615ed59ffecaafd0b1e260d188b870  Afternoon Acoustic.m3u
+74cf6a8c9cd218b383ac1532870c95bd  Afternoon Acoustic.md5
+6f368a995da5661f2b0e3bc37bcc9b97  Afternoon Acoustic.st5
+9252a4d6763a95e3fc01ab0d5c78f009  Artwork\Afternoon Acoustic disc.png
+56f903e0861337fc31dd80864070db23  Artwork\Afternoon Acoustic front.png
+4a7616f577a5514322fe963d582c38f2  Artwork\Afternoon Acoustic tray.png
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-11-16-Afternoon-Acoustic.flacf 
+=================== 
+=================== 
+=================== 
+01 - I Want You.flac:f754b677a8d53f0799748655bbb43b6d
+02 - Tombstone Blues #1.flac:59d12279106c77b6c2c1d6cc06cf78e1
+03 - Tombstone Blues #2.flac:ac1e22a1ed4168e5fc653ef98fc960e7
+04 - Tombstone Blues #3.flac:d270817d42fd8f37ed2b26a577bda6cc
+05 - I Want You.flac:2c7d50fc028cd7e1f3292a363dfa8703
+06 - Don't Think Twice, It's Alright.flac:b721db8ab849950060cac60f05dfc2ed
+07 - Desolation Row.flac:e7e401eea180e47a3132cdc133d16414
+08 - Hazel.flac:61a7d2452fa7fb9ff60869980b760c4f
+09 - Everything Is Broken.flac:e103f895f7272a3e4b06d05dcb78e674
+10 - The Times They Are A Changin'.flac:d8a5ac15bd45295ca3defed65160c644
+11 - Love Minus Zero-No Limit #1.flac:bf5594f47be3f463eeba6500d1cc4d98
+12 - Dignity.flac:0d5d4b5a9d576f9b705fd5060922a48e
+13 - With God On Our Side.flac:c0ab3211a1fc4add6079ca3a270da7ce
+14 - Love Minus Zero-No Limit #2.flac:767e88405038a55ad56e2a2c35573ffb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-11-16-Afternoon-Acoustic.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.30       36938204 B   ---   --   ---xx   flac  0.5233  01 - I Want You.flac
+     4:51.62       51478268 B   ---   --   ---xx   flac  0.5497  02 - Tombstone Blues #1.flac
+     0:50.18        8862380 B   ---   --   ---xx   flac  0.5208  03 - Tombstone Blues #2.flac
+     2:17.10       24190364 B   ---   --   ---xx   flac  0.4840  04 - Tombstone Blues #3.flac
+     6:02.62       64002668 B   ---   --   ---xx   flac  0.5341  05 - I Want You.flac
+     6:05.73       64557740 B   ---   --   ---xx   flac  0.5467  06 - Don't Think Twice, It's Alright.flac
+     7:37.52       80737148 B   ---   --   ---xx   flac  0.5171  07 - Desolation Row.flac
+     3:50.15       40607324 B   ---   --   ---xx   flac  0.5255  08 - Hazel.flac
+     4:37.38       48952220 B   ---   --   ---xx   flac  0.5457  09 - Everything Is Broken.flac
+     5:06.65       54131324 B   ---   --   ---xx   flac  0.5487  10 - The Times They Are A Changin'.flac
+     4:48.57       50937308 B   ---   --   ---xx   flac  0.5189  11 - Love Minus Zero-No Limit #1.flac
+     7:59.40       84589724 B   ---   --   ---xx   flac  0.5536  12 - Dignity.flac
+     7:13.35       76463564 B   ---   --   ---xx   flac  0.5311  13 - With God On Our Side.flac
+     5:23.15       57012524 B   ---   --   ---xx   flac  0.5043  14 - Love Minus Zero-No Limit #2.flac
+    70:14.47      743460760 B                            0.5320  (14 files)
+=================== 
+=================== 
+=================== 

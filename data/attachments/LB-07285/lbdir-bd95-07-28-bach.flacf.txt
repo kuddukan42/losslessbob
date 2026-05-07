@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-28-bach.flacf 
+=================== 
+=================== 
+=================== 
+ac7b3044d112213a29314913526c2207  1995-07-28-Vienne-Bach.md5
+a516c9c971e8ad34dab78ab80047f851  Track101.flac
+e5e10821988a7a742239af0a71f46ff8  Track102.flac
+07fd630809a09fefc1de373656765539  Track103.flac
+286f5f225511a011eb0d7a903d5602b3  Track104.flac
+3790d013c9bf243b0fca2182e1cb9e5e  Track105.flac
+f1c04bfe574674e208649f4912823109  Track106.flac
+34f918022aa88918484bf06085068770  Track107.flac
+567688a6ea5038d97ccc688f1ec1af32  Track108.flac
+63864bfba099e9c58f7ffcb1b42485bd  Track109.flac
+11a109ecc8cf17ad002d518bd92a2d9d  Track110.flac
+53d43033cfad3702417f02d93e7ca7fb  Track111.flac
+b42ef1c346094f7b172da885cc329310  Track201.flac
+8cbd21911a528d9a8c0f86d904e2b691  Track202.flac
+dd8903c51553712434198f39d18f6784  Track203.flac
+130597b8989e7b63911677d7ef49e351  Track204.flac
+a59f2886b5580eae301d4c8a8931f176  Track205.flac
+c19c49c76b6ce1fa6e9629d95245b3d5  Vienne, France  1995-07-28.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-28-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:81a1da552ebaedaca08c8a330bdda04e
+Track102.flac:597fdc302b344ae0c2b69ebc04ebdc6f
+Track103.flac:4089b72f706b8da0adaf8289d2fbec09
+Track104.flac:82a5bb03c00ebd8dc38e2b380b04f5f9
+Track105.flac:4073be3cb8ca624956c22267de74b711
+Track106.flac:561753027bc2c9adf34156d217727f32
+Track107.flac:7ada4d75786e9eab126f7069bd9ec65d
+Track108.flac:63c6acd17f58f129a5ecc9b32d8ba0a0
+Track109.flac:dfb4a379656a7cb0d4a7d23881c27405
+Track110.flac:182d21f6c9016d350696576ede25e7ae
+Track111.flac:7b19117a4cd09cfbfc682979ac639981
+Track201.flac:ab23d1aca1b9551449ce42c2cbe9ef07
+Track202.flac:02944ea9650e64384873c5cc7cb60cb4
+Track203.flac:137bd43ab1350b77a6b9aa39f10e7e84
+Track204.flac:0625cfe1bb0e70ae2a397c7b3412f32a
+Track205.flac:c9b7d2ad245a0389a5c933a1aed30e1b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-28-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:19.06        3365756 B   ---   --   ---xx   flac  0.3307  Track101.flac
+     5:55.51       62741996 B   ---   --   ---xx   flac  0.5285  Track102.flac
+     5:46.69       61196732 B   ---   --   ---xx   flac  0.5081  Track103.flac
+     6:33.37       69412268 B   ---   --   ---xx   flac  0.5245  Track104.flac
+     6:35.28       69743900 B   ---   --   ---xx   flac  0.4489  Track105.flac
+     7:56.43       84067580 B   ---   --   ---xx   flac  0.4926  Track106.flac
+     7:02.73       74612540 B   ---   --   ---xx   flac  0.5283  Track107.flac
+    10:20.43      109469180 B   ---   --   ---xx   flac  0.4595  Track108.flac
+     7:33.22       79960988 B   ---   --   ---xx   flac  0.3744  Track109.flac
+     8:57.56       94858556 B   ---   --   ---xx   flac  0.3944  Track110.flac
+     7:52.44       83364332 B   ---   --   ---xx   flac  0.5779  Track111.flac
+     8:28.72       89780588 B   ---   --   ---xx   flac  0.4653  Track201.flac
+    10:45.10      113801564 B   ---   --   ---xx   flac  0.5729  Track202.flac
+    10:25.03      110257100 B   ---   --   ---xx   flac  0.5301  Track203.flac
+    10:29.58      111092060 B   ---   --   ---xx   flac  0.4552  Track204.flac
+     6:37.39       70122572 B   ---   --   ---xx   flac  0.5492  Track205.flac
+   121:40.54     1287847712 B                            0.4925  (16 files)
+=================== 
+=================== 
+=================== 

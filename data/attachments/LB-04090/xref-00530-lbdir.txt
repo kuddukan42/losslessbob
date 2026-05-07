@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-02-03-JTT-d.flacf 
+=================== 
+=================== 
+=================== 
+f245cec2e3172783aadea6a75e3f918d  Bob Dylan - Glasgow February 3rd 1991 JTT.md5
+90f26f30a905517d2992ee6ac4d375fe  Bob Dylan - Glasgow February 3rd 1991 JTT.txt
+6067fbd3c67fa37d50865665317ecf8b  Bob Dylan - Glasgow February 3rd 1991 JTT_Info.txt
+370c7fb17de905a0fb4849d289796386  Disc One\Disc One.ffp
+c5e84d5d27c06e26bed264818a3dfaeb  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track01.flac
+ca8d22a4defd439ea849055d06f34ef8  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track02.flac
+09009f9dcbc0cd8954f1eb503d08a556  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track03.flac
+406ec4443228e92ba69b289e663ad2ab  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track04.flac
+8463c8773ffe0673540c015606459686  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track05.flac
+730b3afbeceac06d7f40745fdf64ca36  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track06.flac
+8575c2babff1990bb3d048e66814d0c5  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track07.flac
+5d1e47e63c341d7bf2ea99539817d7a5  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track08.flac
+a04715c20c72903b3ee8787e9f18980c  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track09.flac
+971d6adf3b6786c61227ffdd028f8924  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track10.flac
+eae35537f80586d17411b6a0ec942008  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track11.flac
+48fcea70ee40367dd1f8257d99d862aa  Disc One\Dylan - Glasgow 03.02.91 JTT_Disc01Track12.flac
+45eaca07eeb0d713daa419109f6ead88  Disc Two\Disc Two.ffp
+de8f04fe87e2ec47d5b8d3d67b58b1d5  Disc Two\Dylan - Glasgow 03.02.91 JTT_Disc02Track01.flac
+694e0b0ab53eb578c053d4da8f3ad88a  Disc Two\Dylan - Glasgow 03.02.91 JTT_Disc02Track02.flac
+06fbbcb5405eccdf4dfbd06f659c8c18  Disc Two\Dylan - Glasgow 03.02.91 JTT_Disc02Track03.flac
+c4dc789fe54e7b5a5201b42c6f3123ea  Disc Two\Dylan - Glasgow 03.02.91 JTT_Disc02Track04.flac
+202005b85318f17902dcb510a58465f4  Disc Two\Dylan - Glasgow 03.02.91 JTT_Disc02Track05.flac
+6caab3e9b9cd1e854a49f5a84c86ed9d  Disc Two\Dylan - Glasgow 03.02.91 JTT_Disc02Track06.flac
+7c33999e4fa495403a8bbfb4c91d5ec0  Disc Two\Dylan - Glasgow 03.02.91 JTT_Disc02Track07.flac
+4d891330cc3fbe86161c3abf76029d04  Glasgow - 03.02.1991 - F.jpeg
+5b2f4170f1b25f675b2bd4e7a1cc2a12  Glasgow - 03.02.1991 - R.jpeg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-02-03-JTT-d.flacf\disc one 
+=================== 
+=================== 
+=================== 
+dylan - glasgow 03.02.91 jtt_disc01track01.flac:94badef02fbfd7a04e1a5a30361654f3
+dylan - glasgow 03.02.91 jtt_disc01track02.flac:1e14a67991989d02a6a3b72d8f2d7c3d
+dylan - glasgow 03.02.91 jtt_disc01track03.flac:e91241aa1c72f91044631e5e074a2705
+dylan - glasgow 03.02.91 jtt_disc01track04.flac:71d4802850ca38af655f33b403db0997
+dylan - glasgow 03.02.91 jtt_disc01track05.flac:961f93bca1b3c70c85641d3f13386b3d
+dylan - glasgow 03.02.91 jtt_disc01track06.flac:0eef854fbdc4a7ff57206a2dc3a30a13
+dylan - glasgow 03.02.91 jtt_disc01track07.flac:3d3700100318c68f734e6f8fb48ec4b8
+dylan - glasgow 03.02.91 jtt_disc01track08.flac:d03731e43692bbf4cd0d1db4335496aa
+dylan - glasgow 03.02.91 jtt_disc01track09.flac:07231db0aad0faa172d3799513decce8
+dylan - glasgow 03.02.91 jtt_disc01track10.flac:7afd4eea73f75824ec0a5d383efcfedb
+dylan - glasgow 03.02.91 jtt_disc01track11.flac:12c493b0a3d057a07a83a665917fc005
+dylan - glasgow 03.02.91 jtt_disc01track12.flac:60a2697934f76dd533a2c73bdd9dfb1a
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-02-03-JTT-d.flacf\disc two 
+=================== 
+=================== 
+=================== 
+dylan - glasgow 03.02.91 jtt_disc02track01.flac:5895caa598515beaf15194b5fc1c1f98
+dylan - glasgow 03.02.91 jtt_disc02track02.flac:d97fc958977c8e43f7c37461628b8c2c
+dylan - glasgow 03.02.91 jtt_disc02track03.flac:47c27e5af54e0483ccfc98e3a09a6b4a
+dylan - glasgow 03.02.91 jtt_disc02track04.flac:8c09190bae3416bb6dacbcd972cddd83
+dylan - glasgow 03.02.91 jtt_disc02track05.flac:b9ded25cba2584e98fed0c5ddf3f7518
+dylan - glasgow 03.02.91 jtt_disc02track06.flac:53ee7524acec27078d364bc56a9fc674
+dylan - glasgow 03.02.91 jtt_disc02track07.flac:6661d93ec05dc2edc175432413af2e21
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-03-JTT-d.flacf\disc one 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:43.69        7747532 B   ---   --   ---xx   flac  0.5294  Dylan - Glasgow 03.02.91 JTT_Disc01Track01.flac
+     0:48.37        8554268 B   ---   --   ---xx   flac  0.5521  Dylan - Glasgow 03.02.91 JTT_Disc01Track02.flac
+     3:01.15       31963724 B   ---   --   ---xx   flac  0.5811  Dylan - Glasgow 03.02.91 JTT_Disc01Track03.flac
+     4:34.56       48465356 B   ---   --   ---xx   flac  0.5746  Dylan - Glasgow 03.02.91 JTT_Disc01Track04.flac
+     4:39.49       49330892 B   ---   --   ---xx   flac  0.5810  Dylan - Glasgow 03.02.91 JTT_Disc01Track05.flac
+     7:18.09       77284412 B   ---   --   ---xx   flac  0.5665  Dylan - Glasgow 03.02.91 JTT_Disc01Track06.flac
+     4:42.19       49789532 B   ---   --   ---xx   flac  0.5786  Dylan - Glasgow 03.02.91 JTT_Disc01Track07.flac
+     4:34.70       48498284 B   ---   --   ---xx   flac  0.5769  Dylan - Glasgow 03.02.91 JTT_Disc01Track08.flac
+     4:11.32       44351708 B   ---   --   ---xx   flac  0.5494  Dylan - Glasgow 03.02.91 JTT_Disc01Track09.flac
+     4:29.40       47545724 B   ---   --   ---xx   flac  0.5533  Dylan - Glasgow 03.02.91 JTT_Disc01Track10.flac
+     4:42.41       49841276 B   ---   --   ---xx   flac  0.5536  Dylan - Glasgow 03.02.91 JTT_Disc01Track11.flac
+     5:53.10       62292764 B   ---   --   ---xx   flac  0.5973  Dylan - Glasgow 03.02.91 JTT_Disc01Track12.flac
+    49:39.72      525665472 B                            0.5706  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-03-JTT-d.flacf\disc two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.29       42580652 B   ---   --   ---xx   flac  0.5820  Dylan - Glasgow 03.02.91 JTT_Disc02Track01.flac
+     4:39.15       49250924 B   ---   --   ---xx   flac  0.6060  Dylan - Glasgow 03.02.91 JTT_Disc02Track02.flac
+     4:57.02       52395548 B   ---   --   ---xx   flac  0.6109  Dylan - Glasgow 03.02.91 JTT_Disc02Track03.flac
+     3:43.49       39452492 B   ---   --   ---xx   flac  0.6020  Dylan - Glasgow 03.02.91 JTT_Disc02Track04.flac
+     6:31.23       69026540 B   ---   --   ---xx   flac  0.6205  Dylan - Glasgow 03.02.91 JTT_Disc02Track05.flac
+     4:28.52       47397548 B   ---   --   ---xx   flac  0.5698  Dylan - Glasgow 03.02.91 JTT_Disc02Track06.flac
+     4:22.03       46223900 B   ---   --   ---xx   flac  0.6158  Dylan - Glasgow 03.02.91 JTT_Disc02Track07.flac
+    32:43.23      346327604 B                            0.6026  (7 files)
+=================== 
+=================== 
+=================== 

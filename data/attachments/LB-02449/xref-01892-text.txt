@@ -1,0 +1,68 @@
+===================
+===================
+===================
+=== Bob Dylan- 2003 11 17 Dublin Ireland - 2CD (FLAC).ffp
+===================
+===================
+===================
+101 Track01.flac:3a261ac83a00ed63e966f5fe68c2d134
+102 Track02.flac:ef2e68a936c4afae2b1d227c79eb64bd
+103 Track03.flac:5f44c135f6bedce753b366541a55939e
+104 Track04.flac:7e4c3c79c717ce454212fa7cc1b7aa34
+105 Track05.flac:1b26e3a826c6b2725b085275126512aa
+106 Track06.flac:a2b6758e94c040ff831e197db25e447d
+107 Track07.flac:67e59510b6130cf440a650981e6a9f9f
+108 Track08.flac:89e62183aedc9cbe90ee52fe32e1069e
+109 Track09.flac:785849c12ac12a9226108dc04ae86a79
+110 Track10.flac:85fae978253b0ba3be3efbe06c63947b
+201 Track01.flac:7dadc57924668c97dfd2f78eb912d30e
+202 Track02.flac:55e218be3ef38b42e2800268b09c8b64
+203 Track03.flac:a1337fa6ea517fd1ef5e025f12e742b7
+204 Track04.flac:53d5204222972376c9268eb82ec9e734
+205 Track05.flac:aa640bdf87854dc32ae67059cef7eb7e
+206 Track06.flac:74004572a1c4c5a99678da718ade2be9
+207 Track07.flac:cc617aa83347ab65e9f0d0cf4122a29b
+208 Track08.flac:5ba9b569a95a478148b29a2bca442647
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+Bob Dylan - Live In Dublin 2003
+
+Date: 2003-11-17
+Venue: Ireland DUBLIN - The Point Theatre
+Source: Audience
+Lineage: CD1->EAC->FLAC
+Quality: Good
+
+Artwork included
+
+01. Intro
+02. Maggies Farm
+03. Its All Over Now Baby Blue
+04. Cry For A While
+05. Desolation Row
+06. Its Alright Ma
+07. Girl Of The North Country
+08. Tweedle Dee & Twedle Dum
+09. Man In The Long Black Coat
+10. Most Likely You Go Your Way
+
+
+01. Highway 61
+02. Every Grain Of Sand
+03. Honest With Me
+04. The Lonesome Death Of Hattie Carroll
+05. Summer Days
+06. Cats In The Well
+07. Like A Rolling Stone
+08. All Along The Watchtower
+
+Enjoy it!
+
+===================
+===================
+===================

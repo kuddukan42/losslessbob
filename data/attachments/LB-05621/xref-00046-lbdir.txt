@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-04-13-jtt-e.flacf 
+=================== 
+=================== 
+=================== 
+fd23a6241b856e556782d4ac6c20188e  Disc One\Disc One.ffp
+c5a9fa9da8e79618b03f670543f5c1cc  Disc One\Dylan - Sydney April 13th 1966_Disc01Track01.flac
+bf45e84df31d484d2a032f999ae3b0ef  Disc One\Dylan - Sydney April 13th 1966_Disc01Track02.flac
+c87e152cf49cec9d6c8ca654f5cdce13  Disc One\Dylan - Sydney April 13th 1966_Disc01Track03.flac
+dbdb7f8235b68e63f6cfa07803c12f67  Disc One\Dylan - Sydney April 13th 1966_Disc01Track04.flac
+e16c34403b612f12fb60d2ec29d9ddb1  Disc One\Dylan - Sydney April 13th 1966_Disc01Track05.flac
+fb935885da5cbffeff501bf7896ccedb  Disc One\Dylan - Sydney April 13th 1966_Disc01Track06.flac
+986e01110abf3cfcb3baeec765fb8461  Disc One\Dylan - Sydney April 13th 1966_Disc01Track07.flac
+bdc1a4da240820cf7d06eb0e8bce0ba1  Disc Two\Disc Two.ffp
+cef26fb91e6cd012e3537aa9ac2c1411  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track01.flac
+f66f8a347e244bf23f85b0ac090be8de  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track02.flac
+4b224ee825963b2690a65b723feb4ba4  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track03.flac
+ae92b5f8cce5ac04a9694e8a2e66480a  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track04.flac
+a191560f0823118ecb232bd9bd8fe4ea  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track05.flac
+c4dbec8b744f4c964a221c7a0f511bc2  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track06.flac
+07c4c03db06551121d5e76bb895d0c6c  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track07.flac
+8848fab690d44080376afa3bb5aad73a  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track08.flac
+4db4077d55b016b8f7029840652cbb59  Disc Two\Dylan - Sydney April 13th 1966_Disc02Track09.flac
+01b7bd9f7ba20011cd373b946bd78943  Dylan - Sydney April 13th 1966 (Low Generation).md5
+882b1d821549c646c21e8ecdd56e90d8  Dylan - Sydney April 13th 1966 (Low Generation).txt
+a6e3eba38f830646487356e74dcc9554  Dylan - Sydney April 13th 1966 Low Generation_Info.txt
+2c11274a4160b219c0cdcba2b75a653d  Sydney 13.04.1966 (Off Master) - F.jpg
+b5cb3468a61cfdb318edc7142daeab91  Sydney 13.04.1966 (Off Master) - Liner.jpg
+e7604944d2732f49cd4e5cc05404d822  Sydney 13.04.1966 (Off Master) - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-04-13-jtt-e.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Dylan - Sydney April 13th 1966_Disc01Track01.flac:30c49e14a913b6b9c49a4d82707ba906
+Dylan - Sydney April 13th 1966_Disc01Track02.flac:210fc71b5448334d51fce81203b185b1
+Dylan - Sydney April 13th 1966_Disc01Track03.flac:af41ee435395de98fd964ad283b102f1
+Dylan - Sydney April 13th 1966_Disc01Track04.flac:8e73eda8080e662a6c767c8776114ef4
+Dylan - Sydney April 13th 1966_Disc01Track05.flac:67217e7df93e7b60ba0f1c0ee2a2cb3e
+Dylan - Sydney April 13th 1966_Disc01Track06.flac:27a92860001f56dfbebcf356d88965d0
+Dylan - Sydney April 13th 1966_Disc01Track07.flac:1d51684ac2ad5902c9d6cd88f6f7ae60
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-04-13-jtt-e.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Dylan - Sydney April 13th 1966_Disc02Track01.flac:0f3fe156702aa2103f3cea02d79885c4
+Dylan - Sydney April 13th 1966_Disc02Track02.flac:2e7ef2d93622e55ed05ee8bdb68857d3
+Dylan - Sydney April 13th 1966_Disc02Track03.flac:a61049532a9894564e7235609d6d7f9a
+Dylan - Sydney April 13th 1966_Disc02Track04.flac:9e81a2dbedaa51ff209d608d8130a56d
+Dylan - Sydney April 13th 1966_Disc02Track05.flac:45e2dd03898b5724ded4fc8a0c211054
+Dylan - Sydney April 13th 1966_Disc02Track06.flac:4ced33dff174ec7be812ff78367ef8b2
+Dylan - Sydney April 13th 1966_Disc02Track07.flac:95209e00701d261768e456e728dda23b
+Dylan - Sydney April 13th 1966_Disc02Track08.flac:c482e757d5ed33036ae42b7113bfb044
+Dylan - Sydney April 13th 1966_Disc02Track09.flac:e8c2ce662fdc6172c30a50d620c0de59
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-04-13-jtt-e.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:52.63       41073020 B   ---   --   ---xx   flac  0.4642  Dylan - Sydney April 13th 1966_Disc01Track01.flac
+     5:04.56       53757356 B   ---   --   ---xx   flac  0.4605  Dylan - Sydney April 13th 1966_Disc01Track02.flac
+     8:01.74       85022492 B   ---   --   ---xx   flac  0.4617  Dylan - Sydney April 13th 1966_Disc01Track03.flac
+     6:18.39       66770972 B   ---   --   ---xx   flac  0.4766  Dylan - Sydney April 13th 1966_Disc01Track04.flac
+    11:08.09      117856412 B   ---   --   ---xx   flac  0.4677  Dylan - Sydney April 13th 1966_Disc01Track05.flac
+     6:03.25       64092044 B   ---   --   ---xx   flac  0.4473  Dylan - Sydney April 13th 1966_Disc01Track06.flac
+    25:17.22      267650588 B   ---   --   ---xx   flac  0.3845  Dylan - Sydney April 13th 1966_Disc01Track07.flac
+    65:46.63      696222884 B                            0.4332  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-04-13-jtt-e.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:18.41       24439676 B   ---   --   ---xx   flac  0.3464  Dylan - Sydney April 13th 1966_Disc02Track01.flac
+     5:29.44       58139132 B   ---   --   ---xx   flac  0.4443  Dylan - Sydney April 13th 1966_Disc02Track02.flac
+     6:13.47       65907788 B   ---   --   ---xx   flac  0.4591  Dylan - Sydney April 13th 1966_Disc02Track03.flac
+     6:00.19       63548732 B   ---   --   ---xx   flac  0.4347  Dylan - Sydney April 13th 1966_Disc02Track04.flac
+     6:02.19       63901532 B   ---   --   ---xx   flac  0.4607  Dylan - Sydney April 13th 1966_Disc02Track05.flac
+     4:46.74       50624492 B   ---   --   ---xx   flac  0.4536  Dylan - Sydney April 13th 1966_Disc02Track06.flac
+     3:37.26       38339996 B   ---   --   ---xx   flac  0.4536  Dylan - Sydney April 13th 1966_Disc02Track07.flac
+     7:20.15       77651324 B   ---   --   ---xx   flac  0.4368  Dylan - Sydney April 13th 1966_Disc02Track08.flac
+     5:36.02       59275148 B   ---   --   ---xx   flac  0.4627  Dylan - Sydney April 13th 1966_Disc02Track09.flac
+    47:24.62      501827820 B                            0.4450  (9 files)
+=================== 
+=================== 
+=================== 

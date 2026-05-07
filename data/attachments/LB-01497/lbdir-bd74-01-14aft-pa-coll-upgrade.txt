@@ -1,0 +1,143 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-14aft-pa-coll-upgrade 
+=================== 
+=================== 
+=================== 
+22e5e8d1eb749d021418473fed055ae1  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14-aft-d1.md5
+8b694e626f9dbe5774d20111eee8dc44  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t01.shn
+37692c329a316df0488fdec49c2aee84  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t02.shn
+0528d48c0a6f51c88a3649acb8c236da  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t03.shn
+eb53926a288f3b2005ed91f947aeab34  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t04.shn
+ab1478e4a55d25a9bad9b736c70b527e  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t05.shn
+a41064d4c6a1aae97d49598471bf3b67  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t06.shn
+dfc58685a6873c8a2d6557a81a9e03a1  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t07.shn
+5dec28bef5b75b494cd8c76e01c26367  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t08.shn
+1e17e3d6b3ef999672b0b4bbf9b416d3  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t09.shn
+45e5884a0518926606d7aecbe0102298  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t10.shn
+1e04fbfa8936e440d316b74f8d7a554d  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t11.shn
+b036c0e1f0d06769fe905394babc7b48  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t12.shn
+50a8d343a46c515574a72a71c034a17d  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t13.shn
+d7909fa7379d2911568377a63ec35d7c  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t14.shn
+9040eb2092018b375b8e9b7e0b0f7ad0  1974-01-14-aft Boston - Disc 1\dylan-1974-01-14aft-d1t15.shn
+06270cb599d336ddd577534e783b87cb  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14-aft-d2.md5
+aa04892d5a0c24651a40504a2196985a  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t01.shn
+32e90dd70547154da51baf421cc262f7  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t02.shn
+86d9f68d634ecd3275e40f0cf56bc0ab  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t03.shn
+97d9a6c917abaf25ad8cd3dcbb344058  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t04.shn
+fdcccfbf986a503fc88c887a030b910c  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t05.shn
+259f9dfdf5123f3f9612285063668a52  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t06.shn
+c9b6771a16be396fb16a1dfe128852c7  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t07.shn
+d56279c2aef80cd772b1baafd4594077  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t08.shn
+cc7c00f0f24c8fc3fb43853e6c13b4b8  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t09.shn
+87811bc5be65ae1d372ef32aea2eac31  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t10.shn
+43b4e4590b90d67621e79e850b357067  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t11.shn
+8d20020959b29b61475fe9a765f0cd89  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t12.shn
+8b0b0bc37dd878ef586c9e1da0381843  1974-01-14-aft Boston - Disc 2\dylan-1974-01-14aft-d2t13.shn
+272203151de3d5fb42c64f79dec02c0d  1974-01-14-aft Boston - Extras\14jana-b.jpg
+1f210514cb69aa0011e9012fb524aa2a  1974-01-14-aft Boston - Extras\14jana-f.jpg
+24e282c8bc56e1942fb23ce8d1c85420  1974-01-14-aft Boston - Extras\14jana-i.jpg
+cabb97bca3ae7af23732e35d0df8d545  1974-01-14-aft Boston - Extras\14jana2-b.jpg
+cdd2bfb43d489ccabb7cc35145b5a28c  1974-01-14-aft Boston - Extras\14jana2-f.jpg
+c4e1bd8667aca1d7b77e44de2df6d517  1974-01-14-aft Boston - Extras\14jana2-i.jpg
+1d992b0b40242582bef5eeed34aa71aa  1974-01-14-aft Boston - Extras\1974-01-14-aft Boston tracklist.html
+a89bde4ca0fad7cfc4774d3babc29903  1974-01-14-aft Boston - Extras\740114poster.jpg
+9cab02ec5d21e86bf21c9d1c5dafddf8  1974-01-14-aft Boston - Extras\README - 1974-01-14-aft Boston.txt
+2f80c2eb8c5131c51a46cc9c9c1784c4  1974-01-14-aft Boston - Extras\Thumbs.db
+e570491d59086db0843c294f68a26b5e  1974-01-14-aft Boston - Extras\dylan-1974-01-14aft-d1.cue
+d4b33fafe5158ef2bb73da8fb540c5c3  1974-01-14-aft Boston - Extras\dylan-1974-01-14aft-d2.cue
+18c363a9572bb3e5cab159bcd093e8ad  1974-01-14-aft Boston - Extras\tracklist.css
+8447216b012da2e26bfcb50c98deb5d8  bd74-01-14aft-pa-coll-upgrade.txt
+22aa8333d1bbfda454519aa6d197cae1  README_PA_Collection-fixed.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-01-14aft-pa-coll-upgrade\1974-01-14-aft Boston - Disc 1 
+=================== 
+=================== 
+=================== 
+ef3e77f2431c0eef7fc3a6b2395287ca  [shntool]  dylan-1974-01-14aft-d1t01.wav
+259b0d688033f2f85427fa70a9d73ec3  [shntool]  dylan-1974-01-14aft-d1t02.wav
+56688d5ea4061a3f67433b473e951e86  [shntool]  dylan-1974-01-14aft-d1t03.wav
+2bd6d436f6e653bd5c3eb9e814e7a7cd  [shntool]  dylan-1974-01-14aft-d1t04.wav
+0b3b7021ed3d3eca7ea5a1c910b22701  [shntool]  dylan-1974-01-14aft-d1t05.wav
+e240092c283eaeb5c5b5821f09264280  [shntool]  dylan-1974-01-14aft-d1t06.wav
+5913d2610aaac87c6e5a73f5fe9a79aa  [shntool]  dylan-1974-01-14aft-d1t07.wav
+59757631ba615b111774614317a60a0e  [shntool]  dylan-1974-01-14aft-d1t08.wav
+f8c27f7f4181d1e2d75820dda5111b3c  [shntool]  dylan-1974-01-14aft-d1t09.wav
+dc52ae5e84470d7ef1c7ffa180dc6b47  [shntool]  dylan-1974-01-14aft-d1t10.wav
+aaa70c3371405283925e60070274e3fa  [shntool]  dylan-1974-01-14aft-d1t11.wav
+ffa83f5306812f9668eabcc38e0f725d  [shntool]  dylan-1974-01-14aft-d1t12.wav
+b71e1c9d959d2c473db4597b48d1532a  [shntool]  dylan-1974-01-14aft-d1t13.wav
+1601bae3fe9090f3882f6d1604295d10  [shntool]  dylan-1974-01-14aft-d1t14.wav
+6007d2ffdeb3491dd64fcb7b705962b0  [shntool]  dylan-1974-01-14aft-d1t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-01-14aft-pa-coll-upgrade\1974-01-14-aft Boston - Disc 2 
+=================== 
+=================== 
+=================== 
+edf91fdfa84b6186cae823a733765c4f  [shntool]  dylan-1974-01-14aft-d2t01.wav
+b001737183097567ce5ec937ae7b8f16  [shntool]  dylan-1974-01-14aft-d2t02.wav
+cde652a9196feb720838c8a867449284  [shntool]  dylan-1974-01-14aft-d2t03.wav
+8ad2c0063a1f0745eaabb6736ab0a8d5  [shntool]  dylan-1974-01-14aft-d2t04.wav
+f4b4b478687b9586783b7176b452c44d  [shntool]  dylan-1974-01-14aft-d2t05.wav
+8acc2f046d2cb95b1b80f48a7c6a54db  [shntool]  dylan-1974-01-14aft-d2t06.wav
+4e0059e06b74e990a48395600bd378de  [shntool]  dylan-1974-01-14aft-d2t07.wav
+95e943edddbef79803acfb66dcca2b35  [shntool]  dylan-1974-01-14aft-d2t08.wav
+d2a4a979738c18dac423513d51775c1e  [shntool]  dylan-1974-01-14aft-d2t09.wav
+0bef857d1f569c824ee004968e493ef9  [shntool]  dylan-1974-01-14aft-d2t10.wav
+79e0c07d9f93c90c19892a440f191836  [shntool]  dylan-1974-01-14aft-d2t11.wav
+9d47dbcf737829c62480897345df6e95  [shntool]  dylan-1974-01-14aft-d2t12.wav
+dc3331416896d5dd742f5c1c9d5daec2  [shntool]  dylan-1974-01-14aft-d2t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14aft-pa-coll-upgrade\1974-01-14-aft Boston - Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:25.22       36213788 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t01.wav
+     3:25.22       36213788 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t02.wav
+     6:01.59       63819212 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t03.wav
+     4:01.14       42545372 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t04.wav
+     5:40.11       60001916 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t05.wav
+     4:08.57       43881308 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t06.wav
+     4:44.74       50271692 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t07.wav
+     4:52.42       51607628 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t08.wav
+     3:54.12       41305868 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t09.wav
+     3:49.00       40395644 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t10.wav
+     3:50.50       40689644 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t11.wav
+     5:15.12       55594268 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t12.wav
+     2:51.08       30183260 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t13.wav
+     4:24.67       46727228 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t14.wav
+     4:19.30       45758204 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d1t15.wav
+    64:44.30      685208820 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14aft-pa-coll-upgrade\1974-01-14-aft Boston - Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.62       35249468 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t01.wav
+     4:02.69       42851132 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t02.wav
+     5:12.47       55147388 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t03.wav
+     4:17.53       45459500 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t04.wav
+     5:02.35       53355164 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t05.wav
+     4:46.55       50579804 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t06.wav
+     4:01.26       42573596 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t07.wav
+     3:54.53       41402300 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t08.wav
+     4:55.44       52141532 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t09.wav
+     5:31.01       58390796 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t10.wav
+     4:37.60       49003964 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t11.wav
+     8:01.39       84940172 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t12.wav
+     3:52.16       40962476 B   ---   --   -----    wav  1.0000  dylan-1974-01-14aft-d2t13.wav
+    61:36.35      652057292 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

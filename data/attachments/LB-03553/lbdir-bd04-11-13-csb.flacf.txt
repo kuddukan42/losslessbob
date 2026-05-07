@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-13-csb.flacf 
+=================== 
+=================== 
+=================== 
+3df82c80865e41f012ce64e887341032  bd04-11-13-csb-LB-3553.txt
+3dc18dbff4197663068378fd066d9854  BOBDYLANRITDISC101.flac
+5d1ada7000507712d72219b68633cf67  BOBDYLANRITDISC102.flac
+6e39f777b5254d9405d865984af68686  BOBDYLANRITDISC103.flac
+9f1a1c4792e67b18910a50bf7e262279  BOBDYLANRITDISC104.flac
+5b620a4f77a6cf181be87b890a360e4a  BOBDYLANRITDISC105.flac
+1986c2793a92ca69ab0c706874bf8802  BOBDYLANRITDISC106.flac
+93b9461e502be0d77c731a4104b03517  BOBDYLANRITDISC107.flac
+be35a6cdcc33dabcaf4e156012f89400  BOBDYLANRITDISC108.flac
+ef6eec48d06bbd3b540ec4d590446b15  BOBDYLANRITDISC109.flac
+7aa5c5a61cc28bcb0816ac01023a421a  BOBDYLANRITDISC110.flac
+3ae0ca4f34ab79e1c2cc27d32c76d94e  BOBDYLANRITDISC201.flac
+4f9a01a85e8d1ac85991736125a50c15  BOBDYLANRITDISC202.flac
+897a212a9eb23148c68543abc9deadb8  BOBDYLANRITDISC203.flac
+8cd07b3f8473cad86fda86a36206e8d5  BOBDYLANRITDISC204.flac
+51addc5b0ea8f952c38267abfa18a2e8  BOBDYLANRITDISC205.flac
+57a380c6974181857489fd6430d9b87d  BOBDYLANRITDISC206.flac
+7bb8b32f7cf3db740f30e9ca8202e771  dylanrit.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-11-13-csb.flacf 
+=================== 
+=================== 
+=================== 
+BOBDYLANRITDISC101.flac:e8cfc788912b0179689ebf208f08c6e0
+BOBDYLANRITDISC102.flac:46a875d41cb10f35159655dbd6535051
+BOBDYLANRITDISC103.flac:8b24d54e4d7d20468f71e4f90e9c2654
+BOBDYLANRITDISC104.flac:53b2a62f7d9986ed07ff3e88292db74d
+BOBDYLANRITDISC105.flac:46eb8437534b7a6098e27dd86cc9266d
+BOBDYLANRITDISC106.flac:8556286afc79883baa4b902c93522b9d
+BOBDYLANRITDISC107.flac:514486aedeed9256cb04477facfd0fd5
+BOBDYLANRITDISC108.flac:5e86168271bec96805291514ba20a1aa
+BOBDYLANRITDISC109.flac:6d297168a6d53d94612bf511418cbd6a
+BOBDYLANRITDISC110.flac:7f71f2921b8fd32380e94f3bba18b4f8
+BOBDYLANRITDISC201.flac:1ea0ed32e199e0d3182d88f9ebd9cad4
+BOBDYLANRITDISC202.flac:94dc7da85e1b352b205569a889a55dde
+BOBDYLANRITDISC203.flac:eb898ab49d8a6bd491cdd3654080261a
+BOBDYLANRITDISC204.flac:daa0cf749cf9feca878bff2324f41e6e
+BOBDYLANRITDISC205.flac:3218082dbb7c901da4887e1703e04afd
+BOBDYLANRITDISC206.flac:876d56024bc1083aae1c93fe4db51053
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-13-csb.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.35       61822364 B   ---   --   ---xx   flac  0.5907  BOBDYLANRITDISC101.flac
+     5:49.08       61582460 B   ---   --   ---xx   flac  0.5735  BOBDYLANRITDISC102.flac
+     6:30.00       68796044 B   ---   --   ---xx   flac  0.6271  BOBDYLANRITDISC103.flac
+     7:50.22       82959788 B   ---   --   ---xx   flac  0.5127  BOBDYLANRITDISC104.flac
+     6:40.30       70630604 B   ---   --   ---xx   flac  0.6208  BOBDYLANRITDISC105.flac
+     5:37.31       59519756 B   ---   --   ---xx   flac  0.5271  BOBDYLANRITDISC106.flac
+     5:26.17       57546428 B   ---   --   ---xx   flac  0.5036  BOBDYLANRITDISC107.flac
+     6:41.18       70778780 B   ---   --   ---xx   flac  0.6125  BOBDYLANRITDISC108.flac
+     5:59.08       63346460 B   ---   --   ---xx   flac  0.4774  BOBDYLANRITDISC109.flac
+     6:53.04       72862652 B   ---   --   ---xx   flac  0.6052  BOBDYLANRITDISC110.flac
+     5:42.01       60331196 B   ---   --   ---xx   flac  0.5538  BOBDYLANRITDISC201.flac
+     6:56.49       73497692 B   ---   --   ---xx   flac  0.6300  BOBDYLANRITDISC202.flac
+     7:39.65       81120524 B   ---   --   ---xx   flac  0.5155  BOBDYLANRITDISC203.flac
+    11:17.19      119467532 B   ---   --   ---xx   flac  0.5569  BOBDYLANRITDISC204.flac
+     7:43.19       81717932 B   ---   --   ---xx   flac  0.5834  BOBDYLANRITDISC205.flac
+     5:52.51       62212796 B   ---   --   ---xx   flac  0.5713  BOBDYLANRITDISC206.flac
+   108:29.02     1148193008 B                            0.5667  (16 files)
+=================== 
+=================== 
+=================== 

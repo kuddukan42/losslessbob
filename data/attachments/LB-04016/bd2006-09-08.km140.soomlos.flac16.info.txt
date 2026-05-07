@@ -1,0 +1,61 @@
+Bob Dylan
+Sioux Falls Field
+Sioux Falls, South Dakota
+September 8, 2006
+ 
+Source: soomlos
+fob, center, ga field
+neumann km140's > edirol ua-5(bm2p+) > microtrack 24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+**16 bit version**
+
+Disc 1:
+01. introduction [00:57] 
+02. Cat's In The Well [04:17] 
+03. You Ain't Goin' Nowhere [03:51]
+04. Tweedle Dee & Tweedle Dum [05:26]
+05. Lay, Lady, Lay [05:11]
+06. Watching The River Flow [06:31]
+07. Positively 4th Street [07:26] 
+08. It's Alright, Ma (I'm Only Bleeding) [07:10]
+09. Stuck Inside Of Mobile With The Memphis Blues Again [09:03]
+10. Love Sick [06:11] 
+11. Desolation Row [10:52] 
+Total time: [67:03]
+
+Disc 2:
+01. Highway 61 Revisited [05:14]
+02. My Back Pages [07:35]
+03. Summer Days [10:04] 
+04. Like A Rolling Stone [06:43]
+05. band introduction [00:31]
+06. Rainy Day Women #12 & 35 [06:41]
+Total time: [36:52]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, pedal steel, lap steel
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2006-09-08d1t01.flac:cb129779712bc2166317791e0218fa85
+bd2006-09-08d1t02.flac:33428cbc87da81ea63f97ff3bad09fd6
+bd2006-09-08d1t03.flac:c928273781748308dd9dd345e99efbb6
+bd2006-09-08d1t04.flac:a931793184a38b4e1cef0b367561d7f4
+bd2006-09-08d1t05.flac:afb5c4afd86eab40601619c7e6e5e6fc
+bd2006-09-08d1t06.flac:427810edadbf4d268383620cb8ad5ef2
+bd2006-09-08d1t07.flac:63f75e54a3ff7389b54ea04f7642538e
+bd2006-09-08d1t08.flac:49c661d7c2b0420ca99e4be7dd020a82
+bd2006-09-08d1t09.flac:d939805d3c9f857c7c619bab2a754890
+bd2006-09-08d1t10.flac:cd47e843fe3708aeba88d8dc3cecc295
+bd2006-09-08d1t11.flac:789758a27a84ef1de21cfe934e54e782
+bd2006-09-08d2t01.flac:cb9bc1bb5b24f81d99816b2a80fcd623
+bd2006-09-08d2t02.flac:1dbf9617972aab09ac6ff50ca3cd3cbe
+bd2006-09-08d2t03.flac:ae1e9bf7cca463918fb8aa9d6eeba805
+bd2006-09-08d2t04.flac:8032d19c39b05e10c4b59070f41103e8
+bd2006-09-08d2t05.flac:a8da961ad04a7931f5af98b8f6601d55
+bd2006-09-08d2t06.flac:5ec8bd7aaf857c0ef8774991686643fe

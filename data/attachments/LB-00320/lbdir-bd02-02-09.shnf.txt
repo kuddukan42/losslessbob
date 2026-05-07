@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-02-09.shnf 
+=================== 
+=================== 
+=================== 
+ca0fff5c7d857614322367be11d97e6f  Atlanta2002back.jpg
+72c6498db62f9c5f0b05d107697a73ef  Atlanta2002front.jpg
+4c5c42f24afb2f7dda1342f67ee6d9a3  bd02-02-09.md5
+4f61f10d387b74e3863fcd936b0548ce  bd02-02-09.txt
+bc6fe7aac54d112e7537fe2233c71882  Dylan - Atlanta - 2-9-02 Disc 2 T-1.shn
+bfe61df2c2e62c6e19d9d72024f8f616  Dylan - Atlanta - 2-9-02 Disc 2 T-10.shn
+c9760893f1abaccce2cdabd4b64fc7e0  Dylan - Atlanta - 2-9-02 Disc 2 T-2.shn
+65884ae6123bc2941d216cd1d296333e  Dylan - Atlanta - 2-9-02 Disc 2 T-3.shn
+3ce9995482a84fc23e30b425da71008c  Dylan - Atlanta - 2-9-02 Disc 2 T-4.shn
+a9cf313773b980c2f6d116c72a5ef728  Dylan - Atlanta - 2-9-02 Disc 2 T-5.shn
+3a2f68cd9f7f988b5140bb28d9133efd  Dylan - Atlanta - 2-9-02 Disc 2 T-6.shn
+a9508684ab5fc1a9077b42f9b9a838ad  Dylan - Atlanta - 2-9-02 Disc 2 T-7.shn
+442e4687de442aa07866f39c5668ce7f  Dylan - Atlanta - 2-9-02 Disc 2 T-8.shn
+701d39c90532a600ef76b92a2353094d  Dylan - Atlanta - 2-9-02 Disc 2 T-9.shn
+df6e69b196feb345f6f3278e4ec5cbbd  dylan 2-9-02 d1 t01.shn
+0cb6f5376c98d4be9ee90f7990a938d8  dylan 2-9-02 d1 t02.shn
+57751b0746f7f012ebc180a0b924dda0  dylan 2-9-02 d1 t03.shn
+03c2c352e5f75adb07b865d1d14c61ee  dylan 2-9-02 d1 t04.shn
+b1fb439a051305599f72d1890602d93f  dylan 2-9-02 d1 t05.shn
+5e2b817c5442976357beadcf51631b28  dylan 2-9-02 d1 t06.shn
+c25ca6878a78f63d278536bf112a556b  dylan 2-9-02 d1 t07.shn
+c160b9dd56c2fce85e0d090080623985  dylan 2-9-02 d1 t08.shn
+83e1a214c5503e559a593ff77ad79ceb  dylan 2-9-02 d1 t09.shn
+e151137f6cd3c0fa516a8403d29f0114  dylan 2-9-02 d1 t10.shn
+6f7b37830cf7897b387da663b0a12559  dylan 2-9-02 d1 t11.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-02-09.shnf 
+=================== 
+=================== 
+=================== 
+a9c344c11e0e1ba41ec339da40f3e8b2  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-1.wav
+ac9e61404493be05740ef16777195111  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-2.wav
+c1c57d89999361a7db0272a924d2d945  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-3.wav
+38be90739e48cbc6e8770be1ac3da1c7  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-4.wav
+88b356aab3311ca2c24576221e7dd73d  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-5.wav
+421a6d9520c75abe4325744ce72b05d4  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-6.wav
+86dfe61e801650f514a8ae48fad72af2  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-7.wav
+e67092efdfd6fe5883db255274b9e6bd  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-8.wav
+1cd6ae2ea44da4460fbe1c06acb17f4d  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-9.wav
+06251495b2baa3245bb86e59a176b4d9  [shntool]  Dylan_-_Atlanta_-_2-9-02_Disc_2_T-10.wav
+cb777c2a6eed16ccbcf2c787de58b7cb  [shntool]  dylan_2-9-02_d1_t01.wav
+5c8190183ada2eae53e00c5fc9a53015  [shntool]  dylan_2-9-02_d1_t02.wav
+b15ea97661c95e3e9661ae9a8c556349  [shntool]  dylan_2-9-02_d1_t03.wav
+268b9af0880554ecf4ee4c74b2f95cc6  [shntool]  dylan_2-9-02_d1_t04.wav
+a830d976e41c3451f2471bf5db2876b4  [shntool]  dylan_2-9-02_d1_t05.wav
+8e44ca0dd6f4475ba78f4f7cebbf2da9  [shntool]  dylan_2-9-02_d1_t06.wav
+9952dd33fbd2c7b9ce9cf71ec6bac737  [shntool]  dylan_2-9-02_d1_t07.wav
+ef8c62b8d31313053b4a9ba5788806f2  [shntool]  dylan_2-9-02_d1_t08.wav
+311d192f9de6a0fc0aacf3550ad84e64  [shntool]  dylan_2-9-02_d1_t09.wav
+4e7aa518b5791d6af169f1e2a507cca8  [shntool]  dylan_2-9-02_d1_t10.wav
+0991bfca3dadf43a06aedaed81f360ff  [shntool]  dylan_2-9-02_d1_t11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-02-09.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.21       66905036 B   ---   --   ---xx    shn  0.6502  Dylan - Atlanta - 2-9-02 Disc 2 T-1.shn
+     6:31.06       68986556 B   ---   --   ---xx    shn  0.6940  Dylan - Atlanta - 2-9-02 Disc 2 T-10.shn
+     7:52.71       83427836 B   ---   --   ---xx    shn  0.4830  Dylan - Atlanta - 2-9-02 Disc 2 T-2.shn
+     6:07.74       64912892 B   ---   --   ---xx    shn  0.6896  Dylan - Atlanta - 2-9-02 Disc 2 T-3.shn
+     8:55.01       94376396 B   ---   --   ---xx    shn  0.6941  Dylan - Atlanta - 2-9-02 Disc 2 T-4.shn
+     6:21.06       67222556 B   ---   --   ---xx    shn  0.6317  Dylan - Atlanta - 2-9-02 Disc 2 T-5.shn
+     7:26.55       78803804 B   ---   --   ---xx    shn  0.6912  Dylan - Atlanta - 2-9-02 Disc 2 T-6.shn
+     7:29.36       79288316 B   ---   --   ---xx    shn  0.6091  Dylan - Atlanta - 2-9-02 Disc 2 T-7.shn
+     6:58.57       73869308 B   ---   --   ---xx    shn  0.6789  Dylan - Atlanta - 2-9-02 Disc 2 T-8.shn
+     8:58.30       94973804 B   ---   --   ---xx    shn  0.6203  Dylan - Atlanta - 2-9-02 Disc 2 T-9.shn
+     3:21.15       35491724 B   ---   --   ---xx    shn  0.6488  dylan 2-9-02 d1 t01.shn
+     6:16.52       66448748 B   ---   --   ---xx    shn  0.5989  dylan 2-9-02 d1 t02.shn
+     7:48.42       82654028 B   ---   --   ---xx    shn  0.5996  dylan 2-9-02 d1 t03.shn
+     3:44.27       39577148 B   ---   --   ---xx    shn  0.6118  dylan 2-9-02 d1 t04.shn
+     7:30.37       79467068 B   ---   --   ---xx    shn  0.6538  dylan 2-9-02 d1 t05.shn
+     6:27.06       68280956 B   ---   --   ---xx    shn  0.5635  dylan 2-9-02 d1 t06.shn
+     6:43.06       71103356 B   ---   --   ---xx    shn  0.5510  dylan 2-9-02 d1 t07.shn
+     6:20.30       67102604 B   ---   --   ---xx    shn  0.6350  dylan 2-9-02 d1 t08.shn
+     9:16.39       98170172 B   ---   --   ---xx    shn  0.5154  dylan 2-9-02 d1 t09.shn
+     5:28.25       57918044 B   ---   --   ---xx    shn  0.6204  dylan 2-9-02 d1 t10.shn
+     8:56.44       94653932 B   ---   --   ---xx    shn  0.6810  dylan 2-9-02 d1 t11.shn
+   144:54.05     1533634284 B                            0.6234  (21 files)
+=================== 
+=================== 
+=================== 

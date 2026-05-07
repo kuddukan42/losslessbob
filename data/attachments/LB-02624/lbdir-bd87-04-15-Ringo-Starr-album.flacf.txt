@@ -1,0 +1,54 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-04-15-Ringo-Starr-album.flacf 
+=================== 
+=================== 
+=================== 
+0dcd93ec6f9695253a4d644b1ac70abb  bd87-04-15-Ringo-Starr-album-LB-2624.txt
+b7e8e58622fbca88e56d00d846f43b01  ringo starr - the memphis unreleased 1987 album voxx 0004-01.md5
+c3326dd98f1cd5c29a4b07230df06a7f  ringo starr - the memphis unreleased 1987 album.txt
+62c5f219623ecf71371b849f011e6f21  the memphis unreleased 1987 album voxx 0004-01.log
+b2015f7fec94415dfa65f3054de516ce  track01.flac
+1f9c676f35bce096bc0d166636a0d37a  track02.flac
+e9e5efd74ab4abf0700ada730d26c9de  track03.flac
+0dc29d9649d121072d113c71ae1fd09b  track04.flac
+ec363987530308cb66181469645030ce  track05.flac
+a2814d55ab70b440157169e3bf31c306  track06.flac
+a3c59cd78d3631a6a5f61fafc8e86ed8  track07.flac
+ba0efb021374421dd3dc8bd7d022b90e  track08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-04-15-Ringo-Starr-album.flacf 
+=================== 
+=================== 
+=================== 
+track01.flac:addd8207cd62355c754b05b23736f49d
+track02.flac:733eb4a90ec133c0cbce73699ef63523
+track03.flac:86cc077c1868fa7ef2a6cd1fff0c9622
+track04.flac:9ac868a31459fd4801c0249c502e72b6
+track05.flac:2ab5ca2ee2cc4d4f0818227b8ab69632
+track06.flac:416e1bc5bd110fccc7d7c0ce343a305a
+track07.flac:bfecbfa1ef8868ae9c478664a88d4900
+track08.flac:dcd43ddd5a34b155388676e96215071c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-04-15-Ringo-Starr-album.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:00.65       31904924 B   ---   --   ---xx   flac  0.4946  track01.flac
+     3:01.55       32057804 B   ---   --   ---xx   flac  0.4634  track02.flac
+     3:30.01       37046396 B   ---   --   ---xx   flac  0.4599  track03.flac
+     3:39.71       38798636 B   ---   --   ---xx   flac  0.4845  track04.flac
+     4:00.19       42380732 B   ---   --   ---xx   flac  0.4544  track05.flac
+     4:26.66       47077676 B   ---   --   ---xx   flac  0.4574  track06.flac
+     4:36.39       48778172 B   ---   --   ---xx   flac  0.3699  track07.flac
+     5:29.11       58061516 B   ---   --   ---xx   flac  0.3873  track08.flac
+    31:45.27      336105856 B                            0.4397  (8 files)
+=================== 
+=================== 
+=================== 

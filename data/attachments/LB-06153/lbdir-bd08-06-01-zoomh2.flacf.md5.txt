@@ -1,0 +1,24 @@
+22ac6eccde96eb3f6ca0c4e76d747aab  Bob Dylan - In The Land Of The Midnight Sun.md5
+045fef373d99fbd08b20235bfacbca3d  bob_helsinki08_back.jpg
+de56cf16631c611aae664c9a6ed4497c  bob_helsinki08_front.jpg
+50aabf8f9f074b70f9683808c0df7e77  bob_helsinki_info.txt
+838b315c01bb1c9752c92db5ab04584d  Disc1_Track01.flac
+7c29f617e42cd06a1c810431fc307e83  Disc1_Track02.flac
+51153660015b7a9f0d28fff39d10078d  Disc1_Track03.flac
+5147bcf4989924794764a4486fade7c0  Disc1_Track04.flac
+14f973652cf9a9d47e49285938c6fb06  Disc1_Track05.flac
+11a65764ce63dff80e3a3bd4adfd616a  Disc1_Track06.flac
+ed6eb971442ba85487f78e029d1b57ef  Disc1_Track07.flac
+e7173840723aa93432e900fd1ef77a63  Disc1_Track08.flac
+3f17905a7af426927d958797ce29ad56  Disc1_Track09.flac
+4f5872bb11ed0fa7a35ac70e20a9eafa  Disc1_Track10.flac
+3c86345dbfa857f0f16199bd8315b56c  Disc2_Track01.flac
+b07dbe02a399f577719ee59a0cd42800  Disc2_Track02.flac
+1fe5dedf115eb0d3cb25eafaad906880  Disc2_Track03.flac
+875b4afeaa887a1d42c99d7c05dde091  Disc2_Track04.flac
+698f991fa80b3f123c50567a6b70437e  Disc2_Track05.flac
+9ec6e9f45e5afa73b067d6b9d227df71  Disc2_Track06.flac
+dcfd0be537ec60d53b4d864ad628bdf8  Disc2_Track07.flac
+0f009163b866114a62bbe9994373acfb  Disc2_Track08.flac
+981a303c540480e8cff9bdfaa01d7a59  Disc2_Track09.flac
+b4d3bcbb21048b4e41bedc8d6b4f5df8  Disc2_Track10.flac

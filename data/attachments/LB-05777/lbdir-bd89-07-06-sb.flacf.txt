@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-06-sb.flacf 
+=================== 
+=================== 
+=================== 
+fce12c699aa441c6a6b3d5941caf666b  1989-07-06.Half A Mile From The County Fair.md5
+c85aa15bab92b7f245e5562583e82f16  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_101.flac
+7ee39526770b49259d7fa0d01f56deac  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_102.flac
+f9fefe5a8b6b78871763ca5d855f656f  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_103.flac
+c628264a4fa053855ae90cd2906dc90d  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_104.flac
+400afb473937ce8687355f75a4d93be0  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_105.flac
+b9685088024fc92d83f5c627cb33badc  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_106.flac
+f64bb089ace1a949e09b6c9ac7a4c34f  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_107.flac
+3b19758a6ca23cb8951712e9eabea299  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_108.flac
+2b53bd858d1392add5a93ad3846e6a50  HALF A MILE FROM THE COUNTRY FAIR[CD1]\1989-07-06_109.flac
+d4d84a48a8bdf09df79164ea8aec4534  HALF A MILE FROM THE COUNTRY FAIR[CD2]\1989-07-06_201.flac
+5f5b99cc00b26aee7b9270964030217d  HALF A MILE FROM THE COUNTRY FAIR[CD2]\1989-07-06_202.flac
+3f0c054620917ee8e69ed1ea704ed54c  HALF A MILE FROM THE COUNTRY FAIR[CD2]\1989-07-06_203.flac
+7439bf1fd32b101d6a62b2ff8377b704  HALF A MILE FROM THE COUNTRY FAIR[CD2]\1989-07-06_204.flac
+6d9c944bd54ad74ec68b73a5cade1c56  HALF A MILE FROM THE COUNTRY FAIR[CD2]\1989-07-06_205.flac
+d49ca278b5a2e1e49f3c9b72ccefd14d  HALF A MILE FROM THE COUNTRY FAIR[CD2]\1989-07-06_206.flac
+1518df4a1501905193abd79b08c2bee4  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-06-sb.flacf\HALF A MILE FROM THE COUNTRY FAIR[CD1] 
+=================== 
+=================== 
+=================== 
+1989-07-06_101.flac:0c7591893db7067a0da05a49670709bc
+1989-07-06_102.flac:135d5e5d001718c5f5e6f57229531f56
+1989-07-06_103.flac:1385860efa88e01dbd0cca4b60008ead
+1989-07-06_104.flac:afa354709ab4063cfd44c54c0e736e76
+1989-07-06_105.flac:922dcde11bcea7f03619622c03e4b322
+1989-07-06_106.flac:6de082591532c59fc4bd4f6dd264532a
+1989-07-06_107.flac:95864eac2c3d85d4d9f0a4207812fd75
+1989-07-06_108.flac:7fdf41605bda222b187f5b6951c90df8
+1989-07-06_109.flac:4254355da97cff7e3a94a455fc5470db
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-06-sb.flacf\HALF A MILE FROM THE COUNTRY FAIR[CD2] 
+=================== 
+=================== 
+=================== 
+1989-07-06_201.flac:36fcb7a45a55ef29e82641682ac2b9ef
+1989-07-06_202.flac:abd3e8f2a6ab4d8380476a451eedd95b
+1989-07-06_203.flac:b21d7c1a23426fdbfabb5bfc26b0adaf
+1989-07-06_204.flac:2eebb8341132dd653046370ed465cd0b
+1989-07-06_205.flac:294f8e4ab9fd57b9681eb01aca5fce25
+1989-07-06_206.flac:f689e1c69d93c5a1d6d3af913d67cad1
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-07-06-sb.flacf\HALF A MILE FROM THE COUNTRY FAIR[CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:29.58       58172060 B   ---   --   ---xx   flac  0.6937  1989-07-06_101.flac
+     3:50.33       40649660 B   ---   --   ---xx   flac  0.6674  1989-07-06_102.flac
+     5:00.48       53032940 B   ---   --   ---xx   flac  0.6687  1989-07-06_103.flac
+     4:36.56       48818156 B   ---   --   ---xx   flac  0.6733  1989-07-06_104.flac
+     3:30.40       37138124 B   ---   --   ---xx   flac  0.7231  1989-07-06_105.flac
+     4:20.43       45965180 B   ---   --   ---xx   flac  0.7188  1989-07-06_106.flac
+     5:40.34       60056012 B   ---   --   ---xx   flac  0.6462  1989-07-06_107.flac
+     6:30.14       68828972 B   ---   --   ---xx   flac  0.6605  1989-07-06_108.flac
+     6:32.03       69155900 B   ---   --   ---xx   flac  0.6399  1989-07-06_109.flac
+    45:31.29      481817004 B                            0.6729  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd89-07-06-sb.flacf\HALF A MILE FROM THE COUNTRY FAIR[CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:58.32       73810508 B   ---   --   ---xx   flac  0.6145  1989-07-06_201.flac
+     5:10.34       54764012 B   ---   --   ---xx   flac  0.6838  1989-07-06_202.flac
+     3:42.65       39313724 B   ---   --   ---xx   flac  0.7115  1989-07-06_203.flac
+     8:00.40       84766124 B   ---   --   ---xx   flac  0.7025  1989-07-06_204.flac
+     6:20.49       67147292 B   ---   --   ---xx   flac  0.6263  1989-07-06_205.flac
+     7:25.53       78622700 B   ---   --   ---xx   flac  0.6871  1989-07-06_206.flac
+    37:38.48      398424360 B                            0.6686  (6 files)
+=================== 
+=================== 
+=================== 

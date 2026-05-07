@@ -1,0 +1,92 @@
+===================
+===================
+===================
+=== md5 for: bd01-10-12-md-transfer.flacf
+===================
+===================
+===================
+a24658a827898ea80fa00df0fc883c44 *01 Wait For The Light To Shine.flac
+962443bbe41478aa2a6af0efab0d2baf *02 The Times They Are A-Changin'.flac
+fc14daebf870644fea7f91f2a17dffe6 *03 Desolation Row.flac
+e218e68bab344f8a4b11e3eddddac88d *04 Searching For A Soldier's Grave.flac
+588653851e872af9b8bf55fe09af60eb *05 Tweedle Dee & Tweedle Dum.flac
+812e5a4d214b43d95d3132efd538b065 *06 Just Like A Woman.flac
+61fc188dc625e84cf96817c2ee259540 *07 Summer Days.flac
+52c07a6baa30440df4daba11c9ea0cbf *08 Standing In The Doorway.flac
+d20c99ce3cbe27ee8862d92ced335e11 *09 Masters Of War.flac
+d5a44f356d6a9152d3230eaa8483c001 *10 Mama, You Been On My Mind.flac
+7b4d3167a238eb41c4e28aeadb6468cd *11 A Hard Rain's A-Gonna Fall.flac
+f8bf5a0b0722941be691c985aadddc7a *12 Absolutely Sweet Marie (incomplete).flac
+d65963e7c9bf82e1f44e7f13b88d4e1a *13 Sugar Baby.flac
+c0d379ae8a6e3447e05af822930e7dcc *14 Cold Irons Bound.flac
+62cacdc4717c34a28c9d89e58ccf92a9 *15 Leopard-Skin Pill-Box Hat.flac
+7587797cd7cf68f08fcfc32c03183e17 *16 Audience.flac
+8ecdb79c5d367e7c18bb6860a31bcb79 *17 Things Have Changed.flac
+e157f30baba14c013d5cadb3d39a86a0 *18 Like A Rolling Stone.flac
+73691904836e1096f743cd9c43420f81 *19 Forever Young.flac
+902896b72f5b9dbe88f69db6c8e957d6 *20 Honest With Me.flac
+5eeacd8ec61e582be44e02a44d806d7f *2001-10-12 Compaq Center, San José, California, USA (MD Transfer).ffp
+f213d9755f1e7fc5f1812024bdebb0a6 *2001-10-12 Compaq Center, San José, California, USA (MD Transfer).md5
+dd0c717a7e9c8596ce4d0d64950d9fd0 *21 Blowin' In The Wind.flac
+8e2aeae5983176dac92bcd0290089a72 *Info.txt
+===================
+===================
+===================
+=== ffp for: bd01-10-12-md-transfer.flacf
+===================
+===================
+===================
+01 Wait For The Light To Shine.flac:5c51b302ecc1dbb6ec72313e80c54209
+02 The Times They Are A-Changin'.flac:d7aa3621105c850cad200971c963e46d
+03 Desolation Row.flac:bbaac48775eec12c74e5b14e248854d8
+04 Searching For A Soldier's Grave.flac:0e7884ae13e51c08b7da149cee31c299
+05 Tweedle Dee & Tweedle Dum.flac:26e7c4ca4c3da32871876e3fbd2a3907
+06 Just Like A Woman.flac:09bf293d5fa638856b513ce268467dac
+07 Summer Days.flac:157f87fb3c54d575fc3a487f1e455753
+08 Standing In The Doorway.flac:fdb19ee75d797603e0f8184cf42df093
+09 Masters Of War.flac:7200d376e5bb2260e1e502f123d288a2
+10 Mama, You Been On My Mind.flac:456e1f117486b9609fbd5f8fd8667389
+11 A Hard Rain's A-Gonna Fall.flac:851e0df193f3189d6393e6916364ba38
+12 Absolutely Sweet Marie (incomplete).flac:05d13914e133e665827c5c71edc5b52d
+13 Sugar Baby.flac:1b271fdf4d42538a81c7981287b0026b
+14 Cold Irons Bound.flac:19ab076a51b6da25b447f121ef9db9d0
+15 Leopard-Skin Pill-Box Hat.flac:68e5b69718409967653b369ce61e89dd
+16 Audience.flac:9299b9aa1cd215b30e3f1fbe4ae3e3cf
+17 Things Have Changed.flac:74c2e34bfaac3bb5caccaaa4c37c253b
+18 Like A Rolling Stone.flac:74850fa6a8c02946cc3f7f8ddd8e5c1d
+19 Forever Young.flac:e1fe73233d8ee1cf7b84d3a18220915f
+20 Honest With Me.flac:674098adf27f1f49bb342b9d0eae998c
+21 Blowin' In The Wind.flac:10b7eccde32eaa878edf10b031674510
+===================
+===================
+===================
+=== shntool len for: bd01-10-12-md-transfer.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:40.600      63532844 B   cxx   --   ---xx   flac  0.7278  01 Wait For The Light To Shine.flac
+     7:12.987     124700204 B   cxx   --   ---xx   flac  0.7296  02 The Times They Are A-Changin'.flac
+     8:28.653     146492204 B   cxx   --   ---xx   flac  0.7284  03 Desolation Row.flac
+     3:04.160      53038124 B   cxx   --   ---xx   flac  0.6973  04 Searching For A Soldier's Grave.flac
+     4:50.653      83708204 B   cxx   --   ---xx   flac  0.7073  05 Tweedle Dee & Tweedle Dum.flac
+     8:00.413     138359084 B   cxx   --   ---xx   flac  0.7129  06 Just Like A Woman.flac
+     6:01.360     104071724 B   cxx   --   ---xx   flac  0.7338  07 Summer Days.flac
+     7:22.960     127572524 B   cxx   --   ---xx   flac  0.6873  08 Standing In The Doorway.flac
+     5:20.747      92375084 B   cxx   --   ---xx   flac  0.6985  09 Masters Of War.flac
+     4:55.693      85159724 B   cxx   --   ---xx   flac  0.6706  10 Mama, You Been On My Mind.flac
+     9:09.520     158261804 B   cxx   --   ---xx   flac  0.7122  11 A Hard Rain's A-Gonna Fall.flac
+     2:37.067      45235244 B   cxx   --   ---xx   flac  0.7125  12 Absolutely Sweet Marie (incomplete).flac
+     7:29.813     129546284 B   cxx   --   ---xx   flac  0.6122  13 Sugar Baby.flac
+     6:06.453     105538604 B   cxx   --   ---xx   flac  0.7119  14 Cold Irons Bound.flac
+     7:05.627     122580524 B   cxx   --   ---xx   flac  0.7257  15 Leopard-Skin Pill-Box Hat.flac
+     2:04.093      35738924 B   cxx   --   ---xx   flac  0.6865  16 Audience.flac
+     6:18.320     108956204 B   cxx   --   ---xx   flac  0.7100  17 Things Have Changed.flac
+     6:55.027     119527724 B   cxx   --   ---xx   flac  0.7216  18 Like A Rolling Stone.flac
+     6:24.067     110611244 B   cxx   --   ---xx   flac  0.6943  19 Forever Young.flac
+     6:58.320     120476204 B   cxx   --   ---xx   flac  0.7367  20 Honest With Me.flac
+     6:24.507     110737964 B   cxx   --   ---xx   flac  0.6889  21 Blowin' In The Wind.flac
+   126:31.040    2186220444 B                            0.7057  (21 files)
+===================
+===================
+===================

@@ -1,0 +1,6 @@
+H:\Bob Dylan 7-23-89\Disc2_shns>shntool len *.shn
+    length     expanded size   cdr  WAVE  probs   filename
+     6:50.21      72373436     ---   --    -xx    Bob Dylan 1989-7-23d2t01.shn
+     6:03.54      64160252     ---   --    -xx    Bob Dylan 1989-7-23d2t02.shn
+     4:55.01      52040396     ---   --    -xx    Bob Dylan 1989-7-23d2t03.shn
+    17:49.01     188574084 B                      (totals for 3 files, 0.6036 overall compression ratio)

@@ -1,0 +1,64 @@
+Bob Dylan
+Androscoggin Bank Colisée
+Lewiston, Maine
+May 17, 2008
+
+Disc 1:
+01. introduction [01:09]
+02. Watching The River Flow [04:02]
+03. Lay, Lady, Lay [05:03]
+04. The Levee's Gonna Break [07:01]
+05. Shelter From The Storm [06:43]
+06. Rollin' And Tumblin' [06:29]
+07. The Lonesome Death Of Hattie Carroll [06:44]
+08. Tweedle Dee & Tweedle Dum [03:03]
+09. Mississippi [06:13]
+10. Highway 61 Revisited [06:41]
+11. Workingman's Blues #2 [07:08]
+12. It's Alright, Ma (I'm Only Bleeding) [07:08]
+Total time: [67:31]
+
+Disc 2:
+01. Spirit On The Water [07:28]
+02. Ballad Of Hollis Brown [05:53]
+03. Summer Days [06:11]
+04. Ain't Talkin' [11:23]
+(encore)
+05. Thunder On The Mountain [06:36]
+06. band introduction [00:40]
+07. Blowin' In The Wind [06:10]
+Total time: [44:26]
+
+Band Members
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - lead guitar
+Donnie Herron - viola, violin, banjo, mandolin, pedal steel, lap steel
+Stu Kimball - rhythm guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+fob center ga floor
+neumann km140's > lunatec v3 > m-audio mt1 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+ffp
+bd2008-05-17d1t01.flac:b8bb86924335212db56c3a79e42b4524
+bd2008-05-17d1t02.flac:154ec9d0cbf25ef2f581bbbaffbd85ae
+bd2008-05-17d1t03.flac:fee428570698a3b8d3fdc28a53306684
+bd2008-05-17d1t04.flac:3cff1b6e94f81701255a1f75ad316e57
+bd2008-05-17d1t05.flac:bacbe271f377fae3f86b1c237d375fa8
+bd2008-05-17d1t06.flac:9f9a8dea9f7ced6bb634f25254438065
+bd2008-05-17d1t07.flac:0e9777e47075cb9c6bcbb017edbff30c
+bd2008-05-17d1t08.flac:0345d2afaa06275fd81f363e9b13c733
+bd2008-05-17d1t09.flac:248bddccd4ae870aefe0a3cd46722841
+bd2008-05-17d1t10.flac:522dfc8a84cda2268a0377946afe88f4
+bd2008-05-17d1t11.flac:1201fe5f85dcf47e2a359e4d084435a5
+bd2008-05-17d1t12.flac:005a616cfb296c69c52f8fcad8b094bf
+bd2008-05-17d2t01.flac:5fca9521e5bf288f5a4b4e8be0bf638f
+bd2008-05-17d2t02.flac:babb798fd2b9d146b381b6c87e3fc2c5
+bd2008-05-17d2t03.flac:be4e332e8c2e510c963fc7c54a8b4e17
+bd2008-05-17d2t04.flac:945d4c6a0ef9e7b3a44c4b3d2e488d5f
+bd2008-05-17d2t05.flac:162bdd1d42e990b7c8b4e876f3857286
+bd2008-05-17d2t06.flac:8904753deaacc191e6976c87190ed8aa
+bd2008-05-17d2t07.flac:2c4187369830c8aca65227979b39171d

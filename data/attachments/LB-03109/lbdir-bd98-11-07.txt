@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-11-07 
+=================== 
+=================== 
+=================== 
+643d25485b8bd33fe5a93e7374b8c32e  BD JM.txt
+6a47f8380e0c00cb125559fe2066c7d6  bd98-11-07-LB-3109.txt
+722366fc2f26b21c461b392dee6c22de  Bob Dylan Joni Mitchell.md5
+add428a764937756854a96577f4b0a2a  D1T01.shn
+f9dd508893a685b13067de4db02bb788  D1T02.shn
+ec1487abef6b1055abc992338e238688  D1T03.shn
+d11e3b38ad5939cad5a2638bce20f9b8  D1T04.shn
+f0ba7fbf2774439d09f7b35b14dd1ea6  D1T05.shn
+d6565160e3e7e9da75a07a35073a0e7d  D1T06.shn
+9d1c9d56dfd97d9027df8863e247bea4  D1T07.shn
+275bd63b8877d3a6dcc2f26f4c68c08c  D1T08.shn
+0ffe8d064d698f631243ea51d1f7721f  D1T09.shn
+52060075f770a014a7b5dd27aa712dd9  D1T10.shn
+aeff9db3a450d26a5574ab7827811f1b  D1T11.shn
+c828c5fc148712b01afd019c9a3cfef9  D2T01.shn
+90a8394c878ec4aaed0122e3c3a68e1c  D2T02.shn
+e262211b993115a9d91a19e0d6188c7f  D2T03.shn
+16d0c3563a51bde57cb01962be1a0246  D2T04.shn
+3deafb5886a327a33c20bdbe6dba6d68  D2T05.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-11-07 
+=================== 
+=================== 
+=================== 
+397410f6acce352bef474810949708b3  [shntool]  D1T01.wav
+45a7c610ca270e1d73246198846e4ab7  [shntool]  D1T02.wav
+82cd41a48ed325b7579bf0880215046b  [shntool]  D1T03.wav
+df6e109c09ece3d2eea22e338f5bd17d  [shntool]  D1T04.wav
+5cf7deb574da3783571559365eaf579c  [shntool]  D1T05.wav
+02ecbd7769b91f156d1142f4a0090cc2  [shntool]  D1T06.wav
+6d05932a40117898f6978257a21c522d  [shntool]  D1T07.wav
+ae9dd3c681d89d04eb6653fbed81ad2b  [shntool]  D1T08.wav
+6f7b89d94ecb43d4472dd95032ff34b1  [shntool]  D1T09.wav
+da2ab5346627ac51518c3a51b3a3c4ef  [shntool]  D1T10.wav
+f9fa5996050fb4d98583e745c5862e7d  [shntool]  D1T11.wav
+1373325e5e85fa4c888d5cdf6b8b418a  [shntool]  D2T01.wav
+4288742d6514a23837df01be793d43a4  [shntool]  D2T02.wav
+91495b0ff4c5903015ef9ba02d4a9223  [shntool]  D2T03.wav
+30981b4b57341e32c07664dc08dadd18  [shntool]  D2T04.wav
+462e0e9d9bc38a8d20e9818df9970403  [shntool]  D2T05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-11-07 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:33.67       48314906 B   ---   -e   -----    wav  1.0000  D1T01.wav
+     5:16.36       55827194 B   ---   -e   -----    wav  1.0000  D1T02.wav
+     7:46.11       82228394 B   ---   -e   -----    wav  1.0000  D1T03.wav
+     5:58.12       63179546 B   ---   -e   -----    wav  1.0000  D1T04.wav
+     5:55.48       62735018 B   ---   -e   -----    wav  1.0000  D1T05.wav
+     3:10.24       33572570 B   ---   -e   -----    wav  1.0000  D1T06.wav
+     6:26.71       68257514 B   ---   -e   -----    wav  1.0000  D1T07.wav
+     5:17.74       56092970 B   ---   -e   -----    wav  1.0000  D1T08.wav
+     8:18.66       88002554 B   ---   -e   -----    wav  1.0000  D1T09.wav
+     4:29.28       47517578 B   ---   -e   -----    wav  1.0000  D1T10.wav
+     5:26.17       57546506 B   ---   -e   -----    wav  1.0000  D1T11.wav
+     5:30.33       58289738 B   ---   -e   -----    wav  1.0000  D2T01.wav
+     5:19.14       56304650 B   ---   -e   -----    wav  1.0000  D2T02.wav
+     5:57.67       63132506 B   ---   -e   -----    wav  1.0000  D2T03.wav
+     6:30.03       68803178 B   ---   -e   -----    wav  1.0000  D2T04.wav
+    10:13.55      108262682 B   ---   -e   -----    wav  1.0000  D2T05.wav
+    96:11.26     1018067504 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

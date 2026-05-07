@@ -1,0 +1,100 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-09-09-IA-RM 
+=================== 
+=================== 
+=================== 
+7c3cc6ce565bd5fe921f93c9992b464a  1992-09-09 CD1\01 Everything Is Broken.shn
+e12bcc5ec5e5aa014a20843d6ef80498  1992-09-09 CD1\02 Pretty Peggy-O.shn
+708109334cea217ae88fcd814fd2813e  1992-09-09 CD1\03 All Along The Watchtower.shn
+99868bd01f9aba5b52453b839343c36f  1992-09-09 CD1\04 Shelter From The Storm.shn
+9700fe263fc2680ab07db16b0d7dfff7  1992-09-09 CD1\05 Simple Twist Of Fate.shn
+57e9abcdf04ab4f6f4825bd0f97d2e1f  1992-09-09 CD1\06 Positively 4th Street.shn
+2db30558240a26977fc70627afd4ff0d  1992-09-09 CD1\07 Silvio.shn
+d2fcf233e7a87090ccc35808d2914f61  1992-09-09 CD1\08 Little Moses.shn
+a81b58be60952b05a6a80e13d1a3f0e8  1992-09-09 CD1\09 Boots Of Spanish Leather.shn
+b6def0dab0a04a059dc6d22fba0d43fa  1992-09-09 CD1\10 John Brown.shn
+42733afa404e915dd1686073afbfdfd2  1992-09-09 CD1\11 Mr. Tambourine Man.shn
+34fc61bc2bfea77e926f81bc3bbbcaf5  1992-09-09 CD1\CD1.md5
+206ce117188be68ca49910b7f3802577  1992-09-09 CD2\01 Unbelievable.shn
+6affd19326e5af067dd615ea59e2e8c4  1992-09-09 CD2\02 Man In The Long Black Coat.shn
+6cadd5c9c2115162386e91f27bfe014b  1992-09-09 CD2\03 Under The Red Sky.shn
+551fec80e81a17c01858d757cd0a8d0e  1992-09-09 CD2\04 Maggie's Farm.shn
+8f992c854da9539cbb5b19d22e182468  1992-09-09 CD2\05 Ballad Of A Thin Man.shn
+855fb7e0a3be01acc579452aabb3e857  1992-09-09 CD2\06 Highway 61 Revisited.shn
+c955a0806b244d0ed6c49c445656dc2f  1992-09-09 CD2\07 Blowin' In The Wind.shn
+850f3398a89806ee692b9a20a021af76  1992-09-09 CD2\CD2.md5
+8c407da179cf8af50670d098f5bfe312  1992-09-09.txt
+2135a0914ba6095a463ded30de2b40e3  bd92-09-09-IA-RM.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-09-09-IA-RM\1992-09-09 CD1 
+=================== 
+=================== 
+=================== 
+8b75c24fbf2f64a0f772e27d373206c8  [shntool]  01_Everything_Is_Broken.wav
+e53c69237ded935deb925cc528513e42  [shntool]  02_Pretty_Peggy-O.wav
+47b5d3707e791efc605fc01171828c3e  [shntool]  03_All_Along_The_Watchtower.wav
+223700e3f807c636bf0e38fb89d9db9c  [shntool]  04_Shelter_From_The_Storm.wav
+982928f61369432b5384fd0fb0b8e1b1  [shntool]  05_Simple_Twist_Of_Fate.wav
+24fa909a0fabcb01ca9e81b6e3d15232  [shntool]  06_Positively_4th_Street.wav
+a6ea5b6c05450dc2d30fa0f3d280fffa  [shntool]  07_Silvio.wav
+bba18f7e876d7bfc5db40a4471dff481  [shntool]  08_Little_Moses.wav
+3ba3b3d83a7f7ddbda2c08803f5727c9  [shntool]  09_Boots_Of_Spanish_Leather.wav
+b796f8a8cbd29d65b8f6e04a6ec8eef0  [shntool]  10_John_Brown.wav
+d11936083c03b010ea40a1d9e0da24e9  [shntool]  11_Mr._Tambourine_Man.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-09-09-IA-RM\1992-09-09 CD2 
+=================== 
+=================== 
+=================== 
+e847eaebe533a91a0bbe6da3ea08cd8e  [shntool]  01_Unbelievable.wav
+2d9933f15818f70fda0971a8672e4d48  [shntool]  02_Man_In_The_Long_Black_Coat.wav
+2610d61cb2bd1207ecd7aa782c64fab5  [shntool]  03_Under_The_Red_Sky.wav
+a3d9bf36e3689a65ad6a54ab06be9d43  [shntool]  04_Maggie_s_Farm.wav
+520201820025a6e51fe1910b4f35f808  [shntool]  05_Ballad_Of_A_Thin_Man.wav
+9d149e2a6a88f1fdc6eb641f313103d0  [shntool]  06_Highway_61_Revisited.wav
+93158abc30ff95f90d239b663ad9fa9b  [shntool]  07_Blowin__In_The_Wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-09-09-IA-RM\1992-09-09 CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.43       42789980 B   ---   --   -----    wav  1.0000  01_Everything_Is_Broken.wav
+     6:12.19       65665532 B   ---   --   -----    wav  1.0000  02_Pretty_Peggy-O.wav
+     5:00.09       52941212 B   ---   --   -----    wav  1.0000  03_All_Along_The_Watchtower.wav
+     6:45.63       71590220 B   ---   --   -----    wav  1.0000  04_Shelter_From_The_Storm.wav
+     8:14.63       87289820 B   ---   --   -----    wav  1.0000  05_Simple_Twist_Of_Fate.wav
+     6:14.20       66020684 B   ---   --   -----    wav  1.0000  06_Positively_4th_Street.wav
+     4:46.17       50490428 B   ---   --   -----    wav  1.0000  07_Silvio.wav
+     4:14.66       44960876 B   ---   --   -----    wav  1.0000  08_Little_Moses.wav
+     4:48.64       50953772 B   ---   --   -----    wav  1.0000  09_Boots_Of_Spanish_Leather.wav
+     5:41.00       60152444 B   ---   --   -----    wav  1.0000  10_John_Brown.wav
+     6:34.64       69652172 B   ---   --   -----    wav  1.0000  11_Mr._Tambourine_Man.wav
+    62:35.53      662507140 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-09-09-IA-RM\1992-09-09 CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:03.55       64162604 B   ---   --   -----    wav  1.0000  01_Unbelievable.wav
+     7:26.34       78754412 B   ---   --   -----    wav  1.0000  02_Man_In_The_Long_Black_Coat.wav
+     5:02.22       53324588 B   ---   --   -----    wav  1.0000  03_Under_The_Red_Sky.wav
+     7:18.40       77357324 B   ---   --   -----    wav  1.0000  04_Maggie_s_Farm.wav
+     7:12.08       76223660 B   ---   --   -----    wav  1.0000  05_Ballad_Of_A_Thin_Man.wav
+     5:45.29       60926252 B   ---   --   -----    wav  1.0000  06_Highway_61_Revisited.wav
+     4:32.23       48034940 B   ---   --   -----    wav  1.0000  07_Blowin__In_The_Wind.wav
+    43:20.61      458783780 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 

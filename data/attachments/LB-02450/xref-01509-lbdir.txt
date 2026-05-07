@@ -1,0 +1,74 @@
+===================
+===================
+===================
+=== md5 for: bd95-06-25-alt-h.flacf
+===================
+===================
+===================
+923150a26525f71108de11dbef762fe3 *Dylan6-25-1995.txt
+52d635f2512bcbd41154da5bf5f98be1 *Dylan6-25-1995fp.txt
+b65198bc509f4f0ff2720be639f3d894 *Dylan6-25-95CD101.flac
+1249075212b8e3ab5b019e10418b835d *Dylan6-25-95CD102.flac
+ade19624a552d1aafd97b6a96638764d *Dylan6-25-95CD103.flac
+5951ea22a5c386a36826fc4f783e63f8 *Dylan6-25-95CD104.flac
+1683da83c51492ffbd5c8f6138cbd41e *Dylan6-25-95CD105.flac
+08e82eeee7229edf3ac61c646fdda631 *Dylan6-25-95CD106.flac
+2b9ce38b17dcc7723db8dd34c135df76 *Dylan6-25-95CD201.flac
+51047aee9393acaefd47a92fd107baad *Dylan6-25-95CD202.flac
+6541139dfed6f58d7c5a48a8f6a84238 *Dylan6-25-95CD203.flac
+a545827e9cab36a1597c0ec1e05a19af *Dylan6-25-95CD204.flac
+30e1f3ad304873ce0503b8a34d8d5eaa *Dylan6-25-95CD205.flac
+c0c797f7a47e4b9fffeade5642d2dedf *Dylan6-25-95CD206.flac
+f3a9a1bbfd5fdf28d7341d42e285d6dc *Dylan6-25-95CD207.flac
+a168ff1f5ed6077a0f5d61cd54de3a01 *Dylan6-25-95CD208.flac
+d2355c6b0d9964dc5810b745153d1c59 *s-76f[1].jpg
+d4acdf005bc98fd59a0b277399fc930e *s-76i2[1].jpg
+194b241ee4cb290ac00675973329b08e *s-76i[1].jpg
+fbeb83cd54ddbd486b2ea004adc80d9e *s-76l[1].jpg
+===================
+===================
+===================
+=== ffp for: bd95-06-25-alt-h.flacf
+===================
+===================
+===================
+Dylan6-25-95CD101.flac:bb032cabaaabd059f424c2376bb6fb88
+Dylan6-25-95CD102.flac:463ce1634f1d6cfdb6afa169f2918eb3
+Dylan6-25-95CD103.flac:d5582e28901ecdd599e1a15fbf914c21
+Dylan6-25-95CD104.flac:92db318d1cd1d3d3dd62bc6a159f92f3
+Dylan6-25-95CD105.flac:a8dae4a595bf4de6df42e9a8965c65ad
+Dylan6-25-95CD106.flac:69ac547a687f153f0e8ac29ea2f8125d
+Dylan6-25-95CD201.flac:814394e554fd99166a46a11b5d6ed787
+Dylan6-25-95CD202.flac:7e0cc8f4e4d11bb687ea5764d7322597
+Dylan6-25-95CD203.flac:ada25adee7c89ac80f0a672aa4d34ea4
+Dylan6-25-95CD204.flac:49613c41f8b4bf1a2a06abc8cf9e3686
+Dylan6-25-95CD205.flac:2b2dea8eeea11c8b8d18cd938d6883a1
+Dylan6-25-95CD206.flac:03354801cbf4b445952d0d428bd836d3
+Dylan6-25-95CD207.flac:b0b08e80dd3b0c4a765814c13ac067db
+Dylan6-25-95CD208.flac:78e7832c70e0572a1fe2363aab031b26
+===================
+===================
+===================
+=== shntool len for: bd95-06-25-alt-h.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:30.66       26615852 B   -b-   --   ---xx   flac  0.6372  Dylan6-25-95CD101.flac
+     5:45.37       60945068 B   ---   --   ---xx   flac  0.6208  Dylan6-25-95CD102.flac
+     6:10.17       65308028 B   ---   --   ---xx   flac  0.6529  Dylan6-25-95CD103.flac
+     8:33.23       90547340 B   ---   --   ---xx   flac  0.6181  Dylan6-25-95CD104.flac
+     6:46.66       71773676 B   ---   --   ---xx   flac  0.6461  Dylan6-25-95CD105.flac
+     5:05.04       53811452 B   ---   --   ---xx   flac  0.5996  Dylan6-25-95CD106.flac
+     0:36.15        6385724 B   ---   --   ---xx   flac  0.4731  Dylan6-25-95CD201.flac
+    10:59.14      116280572 B   ---   --   ---xx   flac  0.5968  Dylan6-25-95CD202.flac
+     7:27.59       78989612 B   ---   --   ---xx   flac  0.5681  Dylan6-25-95CD203.flac
+     8:12.30       86859404 B   ---   --   ---xx   flac  0.6503  Dylan6-25-95CD204.flac
+     8:36.52       91144748 B   ---   --   ---xx   flac  0.5987  Dylan6-25-95CD205.flac
+    10:18.11      109041116 B   ---   --   ---xx   flac  0.5920  Dylan6-25-95CD206.flac
+     8:09.56       86391356 B   ---   --   ---xx   flac  0.6334  Dylan6-25-95CD207.flac
+     6:19.00       66855644 B   ---   --   ---xx   flac  0.6406  Dylan6-25-95CD208.flac
+    95:31.00     1010949592 B                            0.6157  (14 files)
+===================
+===================
+===================

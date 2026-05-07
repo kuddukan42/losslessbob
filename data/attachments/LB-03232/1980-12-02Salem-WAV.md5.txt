@@ -1,0 +1,29 @@
+572a509cd9c087b195dbcb894f16af76 *1-01 Crowd.wav
+654c5041ff30a8e46cdaca21379b4800 *1-02 Gotta Serve Somebody.wav
+e1bfd261ad9a934d085a4cf234ac97e1 *1-03 I Believe In You.wav
+14eb1d96ea187ec87d8aa6017bac8e62 *1-04 A Hard Rain's A-Gonna Fall.wav
+de81b516956421cc2dcb415acde5ef42 *1-05 Dylan introduces Regina McCrary.wav
+6cb1d5016fe3e485670740eaaf0b76dd *1-06 Man Gave Names To All The Animals.wav
+489a8a581c67404f7b4880723b38c45c *1-07 Simple Twist Of Fate.wav
+dffbeb27492cf6fdae09a5a4e219cd84 *1-08 We Just Disagree.wav
+79a0c5f7725a259d5d45bdd391cac414 *1-09 All Along The Watchtower.wav
+98b6b567844f0c9f2e57e2dd8c9d1ef5 *1-10 Ain't Gonna Go To Hell.wav
+8801dc2d14dc0bad55505b82043ce01c *1-11 Girl Of The North Country.wav
+52fb8c371098285877fc75926a77549d *1-12 Slow Train.wav
+3a39e11cdb147b988176dd60546fef55 *1-13 Dylan introduces Carolyn Dennis.wav
+
+4c24d45346e745745036e7d583592d37 *2-01 Abraham, Martin & John.wav
+f917881d04449ac45031a31fb3f9bdb5 *2-02 Rise Again.wav
+887d3053f0e18b7eadf19e9c257870e0 *2-03 Let's Keep It Between Us.wav
+1ba12cc5824010d7738e0e66ae5d9d8e *2-04 Mary Of The Wild Moor.wav
+79f0786d2ea21ada4c33c774cb4c373d *2-05 Solid Rock.wav
+59d567cd3add79ed8569a7eb64450c85 *2-06 Just Like A Woman.wav
+474065d04a6b2cc7685f4574ff468969 *2-07 Senor (Tales Of Yankee Power).wav
+ed9ab045fa605caa252a1e7fa9ead102 *2-08 What Can I Do For You .wav
+a727c2ad163469de34ada3a11a205cb7 *2-09 When You Gonna Wake Up .wav
+8184679a5faf9615c037da3914d9f54e *2-10 In The Garden.wav
+08845027bfb8b14c4b423a99b31addbf *2-11 Band Introductions.wav
+12636caeefefbdd65b5f7721d4f389fb *2-12 Blowin' In The Wind.wav
+ec3893f953912e9ebfb6e3a19908b838 *2-13 City Of Gold.wav
+02767a87616fc59774f65f87bd4619a0 *2-14 Don't Think Twice, It's All Right.wav
+35a80febfe9cd8d235188d986b581720 *2-15 Like A Rolling Stone.wav

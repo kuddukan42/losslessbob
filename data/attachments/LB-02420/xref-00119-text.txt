@@ -1,0 +1,293 @@
+===================
+===================
+===================
+=== bd1980-05-10.info.txt
+===================
+===================
+===================
+Bob Dylan
+City Hall
+Portland, Maine
+10 May 1980
+
+Musicians: Bob Dylan (vocal, guitar, harmonica & piano [d2t12 only]), Fred Tackett (guitar), Spooner Oldham (keyboards),
+Tim Drummond (bass), Terry Young (keyboards), Jim Keltner (drums), Clydie King, Gwen Evans, Mary Elizabeth Bridges,
+Regina Havis, Mona Lisa Young (background vocals).
+Lineage: ? > CD-Rs > me > you
+Source: Aud
+Quality: below average for the time
+
+Notes: While listed as "not in circulation" by both Olof & Dundas, this seems to have surfaced recently.  I received this set from two different traders (one source having received his copy from Dundas himself).  While the first set was more complete (both are missing "Slow Train"), the second was a lower generation and had fewer flaws.  I merged the two, with the Bridges-Evans-King-Havis-Young set coming from the higher gen set and the rest from the lower gen set (the lower is the Dundas set).  Merged at d1t06 3:23.  
+
+Note from LK: this set actually emerged in 1999, but obviously didn't get wide circulation.
+
+dsk 1
+
+[Bridges-Evans-King-Havis-Young set]
+
+1. Let It Ride (McCoy/Dennis)
+2. (You've Got To) Hold On (?)
+3. It's Gonna Rain (C Johnson)
+4. Show Me The Way Lord (?)
+5. Freedom At The Wall (?)
+6. This Train Is Bound For Glory (This Train) (Big Bill Broonzy)
+----------------
+7. Gotta Serve Somebody - edit at end
+8. I Believe In You
+9. When You Gonna Wake Up
+10. Bob sermon
+11. Ain't Gonna Go To Hell For Anybody
+12. Cover Down, Break Through
+13. Precious Angel
+14. Man Gave Names To All The Animals
+15. Bob sermon - 4 second fragment of ? at end
+[16. Slow Train (missing from both versions)]
+
+disk 2
+
+1. Mary Elizabeth Bridges: Walk Around Heaven All Day (Rev. James Cleveland/Cassietta George) - digi-flaw at 1:18
+2. Regina McCreary Havis: Ain't No Man Righteous, No Not One
+3. Do Right To Me Baby (Do Unto Others)
+4. Solid Rock - digi-smudge at 0:32 (?)
+5. Saving Grace
+6. Saved (Bob Dylan/Tim Drummond)
+7. What Can I Do For You?
+8. Bob sermon
+9. In The Garden - mic bump at 2:33 (?); edit at end
+10. band intros
+11. Are You Ready? - edit at end
+12. Pressing On - Dylan on piano
+===================
+===================
+===================
+=== bd80-05-10.txt
+===================
+===================
+===================
+Bob Dylan, 5/10/80, Portland, Maine, City Hall, 2CDR
+
+(70min+58min), Lineage: ? > CD-Rs > me > you, Source: Aud, Quality: below average for the time, Notes: While listed as "not in circulation" by both Olof & Dundas, this seems to have surfaced recently. I received this set from two different traders (one source having received his copy from Dundas himself). While the first set was more complete (both are missing "Slow Train"), the second was a lower generation and had fewer flaws. I merged the two, with the Bridges-Evans-King-Havis-Young set coming from the higher gen set and the rest from the lower gen set (the lower is the Dundas set). Merged at d1t06 3:23.; bittorrent download 02/05; good sound [C-]; not much fidelity and a little hiss; some occasional brief talking; one source has nothing above 16k
+
+Note from LK: this set actually emerged in 1999, but obviously didn't get wide circulation.
+
+dsk 1, [Bridges-Evans-King-Havis-Young set], 1. Let It Ride (McCoy/Dennis), 2. (You've Got To) Hold On (?), 3. It's Gonna Rain (C Johnson), 4. Show Me The Way Lord (?), 5. Freedom At The Wall (?), 6. This Train Is Bound For Glory (This Train) (Big Bill Broonzy), ----------------, 7. Gotta Serve Somebody - edit at end, 8. I Believe In You, 9. When You Gonna Wake Up, 10. Bob sermon, 11. Ain't Gonna Go To Hell For Anybody, 12. Cover Down, Break Through, 13. Precious Angel, 14. Man Gave Names To All The Animals, 15. Bob sermon - 4 second fragment of ? at end, [16. Slow Train (missing from both versions)], 
+
+disk 2, 1. Mary Elizabeth Bridges: Walk Around Heaven All Day (Rev. James Cleveland/Cassietta George) - digi-flaw at 1:18, 2. Regina McCreary Havis: Ain't No Man Righteous, No Not One, 3. Do Right To Me Baby (Do Unto Others), 4. Solid Rock - digi-smudge at 0:32 (?), 5. Saving Grace, 6. Saved (Bob Dylan/Tim Drummond), 7. What Can I Do For You?, 8. Bob sermon, 9. In The Garden - mic bump at 2:33 (?); edit at end, 10. band intros, 11. Are You Ready? - edit at end, 12. Pressing On - Dylan on piano
+===================
+===================
+===================
+=== D1.md5
+===================
+===================
+===================
+8bc61400fbbefe380e0637505fc21241 *bd1980-05-10d1t01.flac
+b11105e4b16f60637be17a3a70f52157 *bd1980-05-10d1t02.flac
+f0fa843691f724b9e01df4b5ade79a5d *bd1980-05-10d1t03.flac
+4234442f4d4a36e9e5f887d0de6b6c4d *bd1980-05-10d1t04.flac
+678d0322e81610d3422be5c7e9fb1912 *bd1980-05-10d1t05.flac
+ea24de5e89b4ef652abe28ba2b238896 *bd1980-05-10d1t06.flac
+109046e7299ab52e97d036cbbf38a81d *bd1980-05-10d1t07.flac
+c3a3412889f6cd78badb557c5526b04a *bd1980-05-10d1t08.flac
+c0e7beea42e45791e9410bee1f804a5d *bd1980-05-10d1t09.flac
+f5b27e512f13508c8728eef55adb3b2c *bd1980-05-10d1t10.flac
+eccb7ed8bf0eeb00393b5cad45a329fb *bd1980-05-10d1t11.flac
+2a6481ee89c06797d20cc46d4167a983 *bd1980-05-10d1t12.flac
+840474e768ce015c5181a2a637e6c0c9 *bd1980-05-10d1t13.flac
+0ec46b22041dd27f16a709768c637496 *bd1980-05-10d1t14.flac
+295528b9592cf60c564973d844ee507a *bd1980-05-10d1t15.flac
+===================
+===================
+===================
+=== D2.md5
+===================
+===================
+===================
+8d602e1442c0a1eae07a9600d105ff78 *bd1980-05-10d2t01.flac
+3909c6c19c650ced8f3d6e39edb97efb *bd1980-05-10d2t02.flac
+51b2b9b3ca789f0f068128e8e8f4c0c0 *bd1980-05-10d2t03.flac
+cd578d45c2b3c32139433806f21261bb *bd1980-05-10d2t04.flac
+cbb824088c1d0585175bd6ebc51fbb1d *bd1980-05-10d2t05.flac
+fce9ae539cee3c9fc3dcaafc17337329 *bd1980-05-10d2t06.flac
+5d6ac806c4b5b7245a3b9bd5cc44e2ee *bd1980-05-10d2t07.flac
+f148de23a918bb6f69580cc10665a09b *bd1980-05-10d2t08.flac
+d99eec9564bb44a6eea912b4c2ffcc0c *bd1980-05-10d2t09.flac
+d0ad1ff4518ef0fe416db0856d773487 *bd1980-05-10d2t10.flac
+917051b717414b745e70e70c9ec82035 *bd1980-05-10d2t11.flac
+009fb6696598203883a082ab8af76e4e *bd1980-05-10d2t12.flac
+===================
+===================
+===================
+=== Leg 2 DVD 4.md5
+===================
+===================
+===================
+; wholefile md5 checksum file generated by Trader's Little Helper
+; generated on December 22, 2009, at 9:05 am
+
+079931d4bc60d0bbfe266709cb6b6f07 *bd80-05-10 Portland Aud\bd1980-05-10.info.txt
+2ef0c90846ca862d2ac3e508d90be339 *bd80-05-10 Portland Aud\bd80-05-10.txt
+8bc61400fbbefe380e0637505fc21241 *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t01.flac
+b11105e4b16f60637be17a3a70f52157 *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t02.flac
+f0fa843691f724b9e01df4b5ade79a5d *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t03.flac
+4234442f4d4a36e9e5f887d0de6b6c4d *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t04.flac
+678d0322e81610d3422be5c7e9fb1912 *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t05.flac
+ea24de5e89b4ef652abe28ba2b238896 *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t06.flac
+109046e7299ab52e97d036cbbf38a81d *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t07.flac
+c3a3412889f6cd78badb557c5526b04a *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t08.flac
+c0e7beea42e45791e9410bee1f804a5d *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t09.flac
+f5b27e512f13508c8728eef55adb3b2c *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t10.flac
+eccb7ed8bf0eeb00393b5cad45a329fb *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t11.flac
+2a6481ee89c06797d20cc46d4167a983 *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t12.flac
+840474e768ce015c5181a2a637e6c0c9 *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t13.flac
+0ec46b22041dd27f16a709768c637496 *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t14.flac
+295528b9592cf60c564973d844ee507a *bd80-05-10 Portland Aud\D1\bd1980-05-10d1t15.flac
+81bc940c0a8088e447a7292a3e936140 *bd80-05-10 Portland Aud\D1\D1.md5
+8d602e1442c0a1eae07a9600d105ff78 *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t01.flac
+3909c6c19c650ced8f3d6e39edb97efb *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t02.flac
+51b2b9b3ca789f0f068128e8e8f4c0c0 *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t03.flac
+cd578d45c2b3c32139433806f21261bb *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t04.flac
+cbb824088c1d0585175bd6ebc51fbb1d *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t05.flac
+fce9ae539cee3c9fc3dcaafc17337329 *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t06.flac
+5d6ac806c4b5b7245a3b9bd5cc44e2ee *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t07.flac
+f148de23a918bb6f69580cc10665a09b *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t08.flac
+d99eec9564bb44a6eea912b4c2ffcc0c *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t09.flac
+d0ad1ff4518ef0fe416db0856d773487 *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t10.flac
+917051b717414b745e70e70c9ec82035 *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t11.flac
+009fb6696598203883a082ab8af76e4e *bd80-05-10 Portland Aud\D2\bd1980-05-10d2t12.flac
+20644b24d8c54451e32b9c49ac0850a3 *bd80-05-10 Portland Aud\D2\D2.md5
+734235a4fd3e9011446eb7756ab1b224 *bd80-05-11 Providence Aud\info.txt
+9b3f7f010e087ff28bb2183ce6e40bd7 *bd80-05-11 Providence Aud\D1\bd80-05-11 Providence 1 01.flac
+a15b18f22be8e5a5002ed8840385328b *bd80-05-11 Providence Aud\D1\bd80-05-11 Providence 1 02.flac
+507ff92f002ce0051ed0951264484aba *bd80-05-11 Providence Aud\D1\bd80-05-11 Providence 1 03.flac
+a8c7563c9d6ccb699e65dad4c5208b89 *bd80-05-11 Providence Aud\D1\bd80-05-11 Providence 1 04.flac
+56885d86c2fd53ac1ba4221bda41b749 *bd80-05-11 Providence Aud\D1\bd80-05-11 Providence 1 05.flac
+d77b80ebbdf20ba7e919a5c0fd2745de *bd80-05-11 Providence Aud\D1\bd80-05-11 Providence 1 06.flac
+5f2ac6e9a7b2b0b4a4b35a5245f68ccd *bd80-05-11 Providence Aud\D1\bd80-05-11 Providence 1 07.flac
+d6ab36e920ea8a767b0ee3d02c50957e *bd80-05-11 Providence Aud\D1\bd80-05-11 Providence 1 08.flac
+6d5b1050f28e336c2a5d5c4356a32f73 *bd80-05-11 Providence Aud\D1\D1.md5
+62335c5c290cfcaf5b43f318f158a025 *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 01.flac
+05ebdf774fe5e96eedebdbef678664af *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 02.flac
+15e7109c9f7b6c6747091fe09ebacf38 *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 03.flac
+de59ebed80641814a860a3a83c535deb *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 04.flac
+76c7b359b0409142325aec451ed90798 *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 05.flac
+46fd19b404aea2d88b9346a310933779 *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 06.flac
+a4047b01ad056ff56185dfbd44c96cb6 *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 07.flac
+e3b8bad917efcdd6b842b25f6bad356d *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 08.flac
+c7f97ec71d5eb9f4465151eaec2ca8e7 *bd80-05-11 Providence Aud\D2\bd80-05-11 Providence 2 09.flac
+3709c860b0a5a93010fdf7fa9955e6e0 *bd80-05-11 Providence Aud\D2\D2.md5
+c3dda6acf91499e9da83ec3993634ef4 *bd80-05-14 Pittsburg Aud\bd80-05-14-LB-4079.txt
+d0297d2dbb87f401704ce2989d370485 *bd80-05-14 Pittsburg Aud\D1\bd80-05-14d2t01.flac
+ac27ebd8064989d73e079bb175192ddd *bd80-05-14 Pittsburg Aud\D1\bd80-05-14d2t02.flac
+2cfb3723676dd7adad2a6ea642f39493 *bd80-05-14 Pittsburg Aud\D1\bd80-05-14d2t03.flac
+49be9375613e07de7e7c8915d5d5d5db *bd80-05-14 Pittsburg Aud\D1\bd80-05-14d2t04.flac
+ac1032d1a354cc8af6ff1068f7fff8fb *bd80-05-14 Pittsburg Aud\D1\bd80-05-14d2t05.flac
+03a059348fa893f946306536fa4f7d8e *bd80-05-14 Pittsburg Aud\D1\bd80-05-14d2t06.flac
+95be88e2829792a9253142c05868b848 *bd80-05-14 Pittsburg Aud\D1\bd80-05-14d2t07.flac
+c57d6940cb770529d213b9eeaf7a5121 *bd80-05-14 Pittsburg Aud\D1\bd80-05-14d2t08.flac
+4312e68c70e8d102174eed360e7fad4d *bd80-05-14 Pittsburg Aud\D1\D1.md5
+6b461c984fcb7ecb9e4085c883d485f6 *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t01.flac
+49927e8be9fe9dc699ebe8b7ae4c21e1 *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t02.flac
+c4ee64dfd57629c4df8f6798a412702b *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t03.flac
+7e3ccbd02688f9ab77d3f10b3730d51e *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t04.flac
+b93e88b75631c6befde0766735051eff *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t05.flac
+b404649ed6d187d6f9d3dcc7028cd755 *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t06.flac
+4b723166b99b9ebdb324a0da362dd9b0 *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t07.flac
+673c41831e0beebbf6dfefdbc32b4dae *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t08.flac
+b3867f8df264c8b32e1debff48464fe8 *bd80-05-14 Pittsburg Aud\D2\bd80-05-14d1t09.flac
+26d3702d2daa54366dd44a63a76dc905 *bd80-05-14 Pittsburg Aud\D2\D2.md5
+72060b93076ec4b7f658a7185f302ed3 *bd80-05-15 Pittsburg Aud\info.txt
+e756d48e2791588e5495865b2d3351f3 *bd80-05-15 Pittsburg Aud\D1\D1.md5
+bba87c2238a8070d12d75317985c7b97 *bd80-05-15 Pittsburg Aud\D1\Track00.flac
+02d8047bab1471e0c11b3d0d7b8efc05 *bd80-05-15 Pittsburg Aud\D1\Track01.flac
+e165649779b59e9c8c90b18514d70c06 *bd80-05-15 Pittsburg Aud\D1\Track02.flac
+eadfc5eb29a09acd16ec7f1e11c5a7f2 *bd80-05-15 Pittsburg Aud\D1\Track03.flac
+bce7076524efedb66214fd204ad04687 *bd80-05-15 Pittsburg Aud\D1\Track04.flac
+cd8b8e2271ce7321a92fdd4c3adde760 *bd80-05-15 Pittsburg Aud\D1\Track05.flac
+ca349fd678e41bbe1c56f79bd56b8228 *bd80-05-15 Pittsburg Aud\D1\Track06.flac
+ac1b0c9b03b8c38f5e0364f4087c4377 *bd80-05-15 Pittsburg Aud\D1\Track07.flac
+fc13a12e33d87fd611481e1d1487224a *bd80-05-15 Pittsburg Aud\D2\D2.md5
+57820d5c18eb9acfcc08ad922e76d062 *bd80-05-15 Pittsburg Aud\D2\Track01.flac
+f340cc9b16db39e8a4228e5b511909ce *bd80-05-15 Pittsburg Aud\D2\Track02.flac
+da1ea10a1aaf452515d01b905b77bb9e *bd80-05-15 Pittsburg Aud\D2\Track03.flac
+89aff6ca0ef822f502168b26ea65955e *bd80-05-15 Pittsburg Aud\D2\Track04.flac
+444a443a6e488c34c08bb85f1e7f8839 *bd80-05-15 Pittsburg Aud\D2\Track05.flac
+a7a9344b5573d23af8f48a6ff52793ef *bd80-05-15 Pittsburg Aud\D2\Track06.flac
+5a80e65360d75fd492fd56b85cee98c1 *bd80-05-15 Pittsburg Aud\D2\Track07.flac
+e549581255e21d98bf99dec8ec281c9a *bd80-05-15 Pittsburg Aud\D2\Track08.flac
+439743d2dff1f1513620796b0a331066 *bd80-05-15 Pittsburg Aud\D2\Track09.flac
+78eb4cca7d1441ce920992f0a66e6f07 *bd80-05-16 Pittsburg Aud\info.txt
+a810f693ed4473a016ffc6fc98b595af *bd80-05-16 Pittsburg Aud\D1\D1.md5
+cd919c8578479202d7d3af08ddff6817 *bd80-05-16 Pittsburg Aud\D1\Track01.flac
+1d2952c207107208613e83280f485462 *bd80-05-16 Pittsburg Aud\D1\Track02.flac
+62b837abd90352182ca633f9f5ec0f9d *bd80-05-16 Pittsburg Aud\D1\Track03.flac
+144b5d689754a5cb611d5c42d8c72510 *bd80-05-16 Pittsburg Aud\D1\Track04.flac
+0ee7c51542a550a7fca5afa72f40edd6 *bd80-05-16 Pittsburg Aud\D1\Track05.flac
+c0eb6806f483b37f632b89d54cef8770 *bd80-05-16 Pittsburg Aud\D1\Track06.flac
+0ef5ef1b8640d6f0f6cb6f6a0ef86d08 *bd80-05-16 Pittsburg Aud\D1\Track07.flac
+4c111a2f83b75e2942f491bf986febc8 *bd80-05-16 Pittsburg Aud\D2\D2.md5
+40b3d6b31cfb126035d8573b80868d2b *bd80-05-16 Pittsburg Aud\D2\Track01.flac
+8ecba864258cc49f0f77f551c7b20450 *bd80-05-16 Pittsburg Aud\D2\Track02.flac
+0b1b74e0023a8f72d530c6e5a5f1f24b *bd80-05-16 Pittsburg Aud\D2\Track03.flac
+cddfd26923c359d740d343f00a8403fc *bd80-05-16 Pittsburg Aud\D2\Track04.flac
+07249437e9a31bd896eb2035d5ca1337 *bd80-05-16 Pittsburg Aud\D2\Track05.flac
+a5cf8b09ed97e6d4081607ff55ba86cf *bd80-05-16 Pittsburg Aud\D2\Track06.flac
+87f382077725072c453e0bdbf1228bf4 *bd80-05-16 Pittsburg Aud\D2\Track07.flac
+07aae7a97e5f458f62b9dc738241a719 *bd80-05-16 Pittsburg Aud\D2\Track08.flac
+aa1d3cd76ffa07bfd36ba0afe4a75e4c *bd80-05-16 Pittsburg Aud\D2\Track09.flac
+b88955c6cfaf552793abe91339586f18 *bd80-05-16 Pittsburg Aud\D2\Track10.flac
+30784e7a7692adbe72d8c7dda7feafc1 *bd80-05-17 Akron Aud full\info.txt
+eb96ad5cf320116e4ba0dc5f2fe53b9d *bd80-05-17 Akron Aud full\D1\D1.md5
+cbc16062bddf88c565f5e221bfa77ae4 *bd80-05-17 Akron Aud full\D1\gospel101.flac
+042892bf88b76da247bba6c15f6d0bd6 *bd80-05-17 Akron Aud full\D1\gospel102.flac
+526779aa4aa465043deef54abee99c48 *bd80-05-17 Akron Aud full\D1\gospel103.flac
+ec41f144a30e8b00d19eb0b58708b264 *bd80-05-17 Akron Aud full\D1\gospel104.flac
+add8aee84dafcca3fc408afb60e55763 *bd80-05-17 Akron Aud full\D1\gospel105.flac
+7e4197f6e75b1635159b7dcaf8310409 *bd80-05-17 Akron Aud full\D1\gospel106.flac
+e32aa49f48c5f4afb535594f4a4d11f9 *bd80-05-17 Akron Aud full\D1\gospel107.flac
+64382965eee625d3a4984cca44213ae7 *bd80-05-17 Akron Aud full\D1\Track01.flac
+ed53327f33a12c56e35f4724324de404 *bd80-05-17 Akron Aud full\D1\Track02.flac
+c0566a7e3f9654d1f62f3fda8f566331 *bd80-05-17 Akron Aud full\D1\Track03.flac
+57f65993b29bbb13a151df34d346681b *bd80-05-17 Akron Aud full\D1\Track04.flac
+351d5f1bbc439f904b79368c1877ab8e *bd80-05-17 Akron Aud full\D1\Track05.flac
+e1587855c92b70cc5dabef7495b1acff *bd80-05-17 Akron Aud full\D1\Track06.flac
+ec7ee50ecf8680be0e962bd6416a95ee *bd80-05-17 Akron Aud full\D1\Track07.flac
+05ef02f975441290a393e54ccd759202 *bd80-05-17 Akron Aud full\D1\Track08.flac
+2a77dfc2094cc90c5b0cb94b8e9065ca *bd80-05-17 Akron Aud full\D2\D2.md5
+7b675f461c876a2720f750c0f753756d *bd80-05-17 Akron Aud full\D2\gospel201.flac
+3141003588d21782aad3ba6e1804148b *bd80-05-17 Akron Aud full\D2\gospel202.flac
+9d6b9fa84566f9e7179e4c5932467da5 *bd80-05-17 Akron Aud full\D2\Track01.flac
+e017c4fcfa2dfa2385c74948ade682dc *bd80-05-17 Akron Aud full\D2\Track02.flac
+257d31cc2c30780a37e47a695bca5b4f *bd80-05-17 Akron Aud full\D2\Track03.flac
+3cb585223cb90ff7570077802b4fb4a9 *bd80-05-17 Akron Aud full\D2\Track04.flac
+a71a6a2a91a1ee8bb2874fe07d0d74d1 *bd80-05-17 Akron Aud full\D2\Track05.flac
+e4c95d81630c1293573d4528fd4b3f37 *bd80-05-17 Akron Aud full\D2\Track06.flac
+ebb4b3c1ce7651b7e673c0d787a06b4d *bd80-05-17 Akron Aud full\D2\Track07.flac
+be49c6ce6656c92c59f7ff25c10c6515 *bd80-05-17 Akron Aud full\D2\Track08.flac
+4719b02f3f604be459fb78a2177ad090 *bd80-05-17 Akron Aud full\D2\Track09.flac
+2b41aa5fcc30216156d459ae45577b5c *bd80-05-18 Akron Aud\Aint no Man Rigeous RH 18May80.flac
+6a91223a8043aa9737fa49ffd74ddc87 *bd80-05-18 Akron Aud\akron_180580back.jpg
+6be4034fce2984b97bc71f0c75006787 *bd80-05-18 Akron Aud\akron_180580front.jpg
+b0087345934feb5c111e01f8949486fe *bd80-05-18 Akron Aud\bd80-05-18.txt
+1ff68e8b450e6da888f20fd8cd06b865 *bd80-05-18 Akron Aud\cd1\cd1.md5
+3ad06d2b996f16ce62b75aac7066b8c0 *bd80-05-18 Akron Aud\cd1\Track01.flac
+da60c3d40dcb58ca26d1c163d6248fc1 *bd80-05-18 Akron Aud\cd1\Track02.flac
+941137ec7c24cef005c5b3597f47b3c2 *bd80-05-18 Akron Aud\cd1\Track03.flac
+843115822229b4596ca222b7c43def6f *bd80-05-18 Akron Aud\cd1\Track04.flac
+ae9eddc05ddf45e9c3f5b388f2605ad6 *bd80-05-18 Akron Aud\cd1\Track05.flac
+1c6d58614898774da7ef6cb77575d8b6 *bd80-05-18 Akron Aud\cd1\Track06.flac
+3b38af156bbbd24ae4d307292e9143a5 *bd80-05-18 Akron Aud\cd1\Track07.flac
+39aad230992b3008c7334fb24021d792 *bd80-05-18 Akron Aud\cd1\Track08.flac
+6add6a663f6d488d4f72603ae1cb0c8e *bd80-05-18 Akron Aud\cd1\Track09.flac
+3263dabe2a1039e9d14964f0523f5262 *bd80-05-18 Akron Aud\cd2\cd2.md5
+411c2bf18371c86ca6ebbdb88b2def78 *bd80-05-18 Akron Aud\cd2\Track01.flac
+2f8310594976c35b63210a22f09a9869 *bd80-05-18 Akron Aud\cd2\Track02.flac
+be6148e60d0d2f3e5cb301735f0f5606 *bd80-05-18 Akron Aud\cd2\Track03.flac
+a801ceb4814f0b63d04ee507ca789480 *bd80-05-18 Akron Aud\cd2\Track04.flac
+c9e289fd60a151921aa526c62630b5a4 *bd80-05-18 Akron Aud\cd2\Track05.flac
+b85c8c46b3d73a5dea53c4c54f40a01e *bd80-05-18 Akron Aud\cd2\Track06.flac
+f09d7df143f12725e43a173ed77a0423 *bd80-05-18 Akron Aud\cd2\Track07.flac
+a650a882e3f6c386225fe42481a69c68 *bd80-05-18 Akron Aud\cd2\Track08.flac
+a7e731a0c0c38fbc7b38c2a8a2af51dc *bd80-05-18 Akron Aud\cd2\Track09.flac
+===================
+===================
+===================

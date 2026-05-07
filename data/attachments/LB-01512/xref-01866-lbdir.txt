@@ -1,0 +1,96 @@
+===================
+===================
+===================
+=== md5 for: bd92-10-25-IA045.flacf
+===================
+===================
+===================
+7d4419774e8ff04b3ebc6364741c1fe7 *Bob Dylan 1992-10-25 Providence, RI (IA045, source for LB-1512).md5
+8dad4d60abf6cfeb44c3423a01a1b6b9 *Bob Dylan 1992-10-25 Providence, RI (IA045, source for LB-1512).txt
+d4ad1d88d9b8814fbe780b0e9dde8c2f *CD1\01 I Can't Be Satisfied.flac
+dd3d09485b56e4af221fd76d42bb4620 *CD1\02 Dear Landlord.flac
+99b47106aba403f984dc1bc84e918a61 *CD1\03 All Along The Watchtower.flac
+a1ac2934741bf08b573352ae6ad75e20 *CD1\04 Simple Twist Of Fate.flac
+fa156f1ed66dfab7e6701f096448b00b *CD1\05 It Takes A Lot To Laugh.flac
+a2b902351366a9d6c68423699602d26c *CD1\06 Under The Red Sky.flac
+7d49338151abbf7763d0a3cd318b1c38 *CD1\07 Silvio.flac
+90ca59ec65fa390e85ae8f7d76fa95ff *CD1\08 Mama, You Been On My Mind.flac
+b5e266699e7abbaa0304ecf2aba04647 *CD1\09 Boots Of Spanish Leather.flac
+ff1fecb9cc189dcc8c1157cc3e881b2a *CD1\10 Gates Of Eden.flac
+5553b0e5def1ef451281d22869bf626b *CD1\11 Don't Think Twice, It's Alright.flac
+e8c67adba8d1b9406e70fcec9a24633d *CD1\Bob Dylan - Providence, Rhode Island, Oct. 25, 1992, CD1.log
+f3d545311c4b9faacd0fb3efc7a5fc86 *CD2\01 Unbelievable.flac
+a26234cb0031a475ef6b4edd463a2777 *CD2\02 Man In The Long Black Coat.flac
+1851564d7e46e7e08fbe17af0c741d1f *CD2\03 The Times They Are A-Changin'.flac
+bcfe3223b73f7055bde5682c69bbe603 *CD2\04 Maggie's Farm.flac
+f589fc6cef21d6a97c07a4625335d18d *CD2\05 Applause.flac
+ed28183caf6e2c03c50f6fcb4680ce74 *CD2\06 Ballad Of A Thin Man.flac
+ef54c3a5519b4f3f11ffb5f16020e99b *CD2\07 Everything Is Broken.flac
+303aa5db93dc50fd2a8a05704d9fd89b *CD2\08 It Ain't Me, Babe.flac
+57ad490ae554d49a3afe09f23b286b15 *CD2\Bob Dylan - Providence, Rhode Island, Oct. 25, 1992, CD2.log
+===================
+===================
+===================
+=== ffp for: bd92-10-25-IA045.flacf
+===================
+===================
+===================
+CD1\01 I Can't Be Satisfied.flac:08bd04e0854e3363af91956679ea92b9
+CD1\02 Dear Landlord.flac:e49243d2702f1a0060f3868c4cac7a6b
+CD1\03 All Along The Watchtower.flac:ce9a4e59035844e11533e13f4adea342
+CD1\04 Simple Twist Of Fate.flac:2ab7c5e02c303e74c609553e8827fd6a
+CD1\05 It Takes A Lot To Laugh.flac:950edd08521df02eac4d41b21d8bb874
+CD1\06 Under The Red Sky.flac:b63b5f8cfedc8e4e9150bbc38a67abb2
+CD1\07 Silvio.flac:f548f2a1361b85809e3d247f3e320c22
+CD1\08 Mama, You Been On My Mind.flac:b8d6f8ccd6d254b4a44ed9abfcfae9fc
+CD1\09 Boots Of Spanish Leather.flac:61875c8fdae4d9bb4d77c93e46d7ea91
+CD1\10 Gates Of Eden.flac:cbf15a634d7e18c3bcdbf1ab65c980db
+CD1\11 Don't Think Twice, It's Alright.flac:4a2289e05d11b9a7864f145c8c63eeed
+CD2\01 Unbelievable.flac:4a562de91f9cf815d3c00ff66d8f4b35
+CD2\02 Man In The Long Black Coat.flac:864b04523f6b7b0cb1843eaa194924cf
+CD2\03 The Times They Are A-Changin'.flac:3c1e5a5e05a04e51f84ca8e97fc1e189
+CD2\04 Maggie's Farm.flac:087bb3c43aa83bba636e0b5e1b300d94
+CD2\05 Applause.flac:50c80e08d812cf476b342ac1742a5699
+CD2\06 Ballad Of A Thin Man.flac:4c8120a5b679bc037195186a45f473ac
+CD2\07 Everything Is Broken.flac:c001cf48a165cdfc1a7f2baf3966ded0
+CD2\08 It Ain't Me, Babe.flac:969476de261cc6469431a38c9e035a44
+===================
+===================
+===================
+=== shntool len for: bd92-10-25-IA045.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.04       52929452 B   ---   --   ---xx   flac  0.5969  01 I Can't Be Satisfied.flac
+     6:19.05       66867404 B   ---   --   ---xx   flac  0.6084  02 Dear Landlord.flac
+     6:25.43       68015180 B   ---   --   ---xx   flac  0.6180  03 All Along The Watchtower.flac
+     9:08.07       96683708 B   ---   --   ---xx   flac  0.5782  04 Simple Twist Of Fate.flac
+     7:05.65       75122924 B   ---   --   ---xx   flac  0.6012  05 It Takes A Lot To Laugh.flac
+     5:20.74       56622092 B   ---   --   ---xx   flac  0.5823  06 Under The Red Sky.flac
+     6:38.45       70313084 B   ---   --   ---xx   flac  0.6149  07 Silvio.flac
+     3:12.00       33868844 B   ---   --   ---xx   flac  0.5031  08 Mama, You Been On My Mind.flac
+     5:01.25       53155244 B   ---   --   ---xx   flac  0.4635  09 Boots Of Spanish Leather.flac
+     6:19.25       66914444 B   ---   --   ---xx   flac  0.4706  10 Gates Of Eden.flac
+     6:10.18       65310380 B   ---   --   ---xx   flac  0.5406  11 Don't Think Twice, It's Alright.flac
+    66:41.11      705802756 B                            0.5668  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd92-10-25-IA045.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:10.47       65378588 B   ---   --   ---xx   flac  0.5712  01 Unbelievable.flac
+     8:09.09       86280812 B   ---   --   ---xx   flac  0.5527  02 Man In The Long Black Coat.flac
+     7:32.02       79737548 B   ---   --   ---xx   flac  0.5320  03 The Times They Are A-Changin'.flac
+     7:21.69       77954732 B   ---   --   ---xx   flac  0.5947  04 Maggie's Farm.flac
+     1:34.04       16591052 B   ---   --   ---xx   flac  0.5452  05 Applause.flac
+     7:16.18       76952780 B   ---   --   ---xx   flac  0.6059  06 Ballad Of A Thin Man.flac
+     5:20.08       56466860 B   ---   --   ---xx   flac  0.6581  07 Everything Is Broken.flac
+     6:10.38       65357420 B   ---   --   ---xx   flac  0.4987  08 It Ain't Me, Babe.flac
+    49:34.45      524719792 B                            0.5703  (8 files)
+===================
+===================
+===================

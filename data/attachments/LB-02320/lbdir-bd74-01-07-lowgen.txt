@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-07-lowgen 
+=================== 
+=================== 
+=================== 
+f6cbd727e922f6e3f7da3a79b523fb3c  aTrack01.shn
+bfcb9eb3ce139e18c2ec80f382d08684  aTrack02.shn
+a0e53e9610aee4cc7919b08ec3232b11  aTrack03.shn
+b3c1c0b9399d0f81ead69dccbda45784  aTrack04.shn
+27dc635edad90e8497df9f2d51a855d3  aTrack05.shn
+2810dcf3349395c06720521c5883d4ab  aTrack06.shn
+ac79fef730f4c6a84a1e047471ca2a4d  aTrack07.shn
+696a8a2cdabe986b558c82063780df80  aTrack08.shn
+3b3064672aa432211e1bfd5f0eca01df  aTrack09.shn
+1dbcef401dcd3efff1aceb211bd6e09b  aTrack10.shn
+0db020dbf98359bdd21cab2982556e24  aTrack11.shn
+7f98fcf81d140818d8b25866dca30513  aTrack12.shn
+b2389571c7565490a9ade192b0146c6d  aTrack13.shn
+17216e86790c45bf5dbe182ae31d3209  aTrack14.shn
+adecfae22d4c653174b08a8e75c3aa42  aTrack15.shn
+48a5e22b6024d6d779b8312521d42742  bd74-01-07-lowgen.txt
+3a2f49b45fb4f85f12720683b8f92af9  bTrack01.shn
+5462044837e888238939d8cca62bc380  bTrack02.shn
+e4531beca596f1efa45d77c7826846dc  bTrack03.shn
+3f807072fe6b6f9614a5df98d123b20b  Info.txt
+eb166c007547b3135deafbe9ebb838cb  md5.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-01-07-lowgen 
+=================== 
+=================== 
+=================== 
+77cba1abb8d75b9c461829bcff7f3f32  [shntool]  aTrack01.wav
+59f639aa5a3612f213b12096f9779abb  [shntool]  aTrack02.wav
+9d64aaa3e14918e0adf8d07dec963073  [shntool]  aTrack03.wav
+4c05c199b4300682163426bebe11a0fd  [shntool]  aTrack04.wav
+fee3625525a2d7f27704371146aa1886  [shntool]  aTrack05.wav
+3b2b9e23c0d9d8df6d7625eaa1887d5d  [shntool]  aTrack06.wav
+4b3acb2137592f8e9464886c53b6a4d9  [shntool]  aTrack07.wav
+f8c0363807d10ebe11c54508a806643b  [shntool]  aTrack08.wav
+fb28e8fc05d6281e718496b26ff63bdb  [shntool]  aTrack09.wav
+7829d1be7385e59f0a0ca6773252a88a  [shntool]  aTrack10.wav
+0246d138fc969d29ac614910f93441f1  [shntool]  aTrack11.wav
+d3fdd6b531e0eae34260797d687b9c92  [shntool]  aTrack12.wav
+c3cba4b9113d3ca55bfeae05e5bd34fa  [shntool]  aTrack13.wav
+da2c3226fd399fe08a1626b5f9dd0d72  [shntool]  aTrack14.wav
+6d648b23ffea0fd681f6589b31fe5871  [shntool]  aTrack15.wav
+9038c6c4c81f96e18fd69aa5c5707ff3  [shntool]  bTrack01.wav
+48e73aaf80829198af51ec0fbed7ddc5  [shntool]  bTrack02.wav
+b1915a71c3b9b5cd9b630333652d47dd  [shntool]  bTrack03.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-07-lowgen 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.19       30209132 B   ---   --   -----    wav  1.0000  aTrack01.wav
+     3:31.36       37305116 B   ---   --   -----    wav  1.0000  aTrack02.wav
+     5:35.56       59225756 B   ---   --   -----    wav  1.0000  aTrack03.wav
+     4:22.26       46277996 B   ---   --   -----    wav  1.0000  aTrack04.wav
+     5:39.18       59841980 B   ---   --   -----    wav  1.0000  aTrack05.wav
+     6:08.65       65068124 B   ---   --   -----    wav  1.0000  aTrack06.wav
+     3:04.60       32598764 B   ---   --   -----    wav  1.0000  aTrack07.wav
+     4:57.24       52447292 B   ---   --   -----    wav  1.0000  aTrack08.wav
+     4:58.69       52729532 B   ---   --   -----    wav  1.0000  aTrack09.wav
+     4:01.30       42583004 B   ---   --   -----    wav  1.0000  aTrack10.wav
+     3:09.24       33396092 B   ---   --   -----    wav  1.0000  aTrack11.wav
+     4:24.56       46701356 B   ---   --   -----    wav  1.0000  aTrack12.wav
+     3:03.71       32448236 B   ---   --   -----    wav  1.0000  aTrack13.wav
+     5:38.15       59658524 B   ---   --   -----    wav  1.0000  aTrack14.wav
+     4:53.68       51845180 B   ---   --   -----    wav  1.0000  aTrack15.wav
+     5:23.17       57017228 B   ---   --   -----    wav  1.0000  bTrack01.wav
+     8:17.74       87844892 B   ---   --   -----    wav  1.0000  bTrack02.wav
+     4:24.42       46668428 B   ---   --   -----    wav  1.0000  bTrack03.wav
+    84:27.20      893866632 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

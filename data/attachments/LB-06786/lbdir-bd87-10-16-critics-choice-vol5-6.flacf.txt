@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-10-16-critics-choice-vol5-6.flacf 
+=================== 
+=================== 
+=================== 
+db52dd2581583596a596966b6391be0f  bd87-10-16-critics-choice-vol5-6-d1t01.flac
+4174887a22cd0e91e4abb33c177b308e  bd87-10-16-critics-choice-vol5-6-d1t02.flac
+d1985e0898bd3b5b80cf562bdc961414  bd87-10-16-critics-choice-vol5-6-d1t03.flac
+66cc0c53130756120c3dec3d3c4505da  bd87-10-16-critics-choice-vol5-6-d1t04.flac
+fd2b496116acbf787ea12dfe519a7bda  bd87-10-16-critics-choice-vol5-6-d1t05.flac
+abb95c9edeb90c37e39843373479949c  bd87-10-16-critics-choice-vol5-6-d1t06.flac
+effe50181d21c581a4c82f254affbb96  bd87-10-16-critics-choice-vol5-6-d1t07.flac
+96fbb1f5786c8022808b3c0eb024cb16  bd87-10-16-critics-choice-vol5-6-d1t08.flac
+19f21213b12864c853abe8832669d4e4  bd87-10-16-critics-choice-vol5-6-d1t09.flac
+6c2cceef0460442e25dce2ca7e959714  bd87-10-16-critics-choice-vol5-6-d1t10.flac
+53469361f2429814ed9fa555a45fcb9b  bd87-10-16-critics-choice-vol5-6-d1t11.flac
+269607ec457f1e08c3e7fc6f7b42a9a0  bd87-10-16-critics-choice-vol5-6-d1t12.flac
+05359b665f63bb9f7338bfea774293d2  bd87-10-16-critics-choice-vol5-6-d1t13.flac
+c299f2a6e2b7c2819d3e5b4cace35032  bd87-10-16-critics-choice-vol5-6-d1t14.flac
+145e043bdcd81641bdb21ba8715c3805  bd87-10-16-critics-choice-vol5-6-d2t01.flac
+65a825b5a1f8365f2c48661c5a4c3a9e  bd87-10-16-critics-choice-vol5-6-d2t02.flac
+75fbe6e8b841261c5fe7c52b0253bb11  bd87-10-16-critics-choice-vol5-6-d2t03.flac
+20bbd68ce9482911d984bd744a8f6230  bd87-10-16-critics-choice-vol5-6-d2t04.flac
+873d4f1b9df4ca8e298171e6557cdd77  bd87-10-16-critics-choice-vol5-6-d2t05.flac
+dd16a293f801569da834002704cebd1e  bd87-10-16-critics-choice-vol5-6-d2t06.flac
+764ae6a24dd5feaa9a3997d0eef4babc  bd87-10-16-critics-choice-vol5-6-d2t07.flac
+8c4d30d724c71ed0767c57f98f273190  bd87-10-16-critics-choice-vol5-6-d2t08.flac
+3dd8fb28278405640f97006702087007  bd87-10-16-critics-choice-vol5-6-d2t09.flac
+b6827812f4807675a2c1fcc0faebe1ff  bd87-10-16-critics-choice-vol5-6-d2t10.flac
+de9dfb7c25eabf75e28763275a9e71ea  bd87-10-16-critics-choice-vol5-6-d2t11.flac
+b47659ef93c6631a0cdd53f3b19da37a  bd87-10-16-critics-choice-vol5-6-d2t12.flac
+28830fb8ff9bc52ef7c744827761264d  bd87-10-16-critics-choice-vol5-6-d2t13.flac
+763475ca0af7b59b00da64c8c7032c92  bd87-10-16-critics-choice-vol5-6-d2t14.flac
+c79fa46c7d0698c2cfac0e31934c0b26  bd87-10-16-critics-choice-vol5-6-d2t15.flac
+f9c3c66091494bb315ce1f14d39a2445  bd87-10-16-critics-choice-vol5-6.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-10-16-critics-choice-vol5-6.flacf 
+=================== 
+=================== 
+=================== 
+bd87-10-16-critics-choice-vol5-6-d1t01.flac:8ad00bd237a9a7ee2ec9fd08f5da8524
+bd87-10-16-critics-choice-vol5-6-d1t02.flac:7e97987a5c371919612aa314e213abc9
+bd87-10-16-critics-choice-vol5-6-d1t03.flac:85cb45e26d5a5902f567f69f26bbdd6e
+bd87-10-16-critics-choice-vol5-6-d1t04.flac:28349e49939a974ac3b9df9ec1182d09
+bd87-10-16-critics-choice-vol5-6-d1t05.flac:73d10644ede096e3ef5a32135b58ea04
+bd87-10-16-critics-choice-vol5-6-d1t06.flac:f0b54321a3e601eccfe36b9efa8d33dc
+bd87-10-16-critics-choice-vol5-6-d1t07.flac:9d7fb50f3307ef96b99317fbfd819bda
+bd87-10-16-critics-choice-vol5-6-d1t08.flac:9cf9d091c8d4e91f75ac05fbeedf9261
+bd87-10-16-critics-choice-vol5-6-d1t09.flac:4f922c1527c97e934060087afd8f42c3
+bd87-10-16-critics-choice-vol5-6-d1t10.flac:65052852ed4ea9ff6a6fe3fdeccea601
+bd87-10-16-critics-choice-vol5-6-d1t11.flac:45bfad5f44bb9d98f0a3991118d0d054
+bd87-10-16-critics-choice-vol5-6-d1t12.flac:14d3277bfd0f389575837acf22025fc4
+bd87-10-16-critics-choice-vol5-6-d1t13.flac:925610f64f8bf6b3ca1ffa28e886e53f
+bd87-10-16-critics-choice-vol5-6-d1t14.flac:1fd2553a7e48baf7ef7e43bf18795204
+bd87-10-16-critics-choice-vol5-6-d2t01.flac:70abbf140fd9189304c896c39721b075
+bd87-10-16-critics-choice-vol5-6-d2t02.flac:6639ba2c30729f4ce972670ebd2afb99
+bd87-10-16-critics-choice-vol5-6-d2t03.flac:ab79b943831940567a08ed5c5424a4a2
+bd87-10-16-critics-choice-vol5-6-d2t04.flac:48b77a58c99e391b72b7ccf43090aacc
+bd87-10-16-critics-choice-vol5-6-d2t05.flac:4c444f12713069dbccc44d23956f4687
+bd87-10-16-critics-choice-vol5-6-d2t06.flac:1f474f97e6317fcffaa01fcf585efee8
+bd87-10-16-critics-choice-vol5-6-d2t07.flac:9e32f5b34224ed115a26a0b8ad4fbeb4
+bd87-10-16-critics-choice-vol5-6-d2t08.flac:0d1dee05a5a55e1ce9ce6a70b6f7a211
+bd87-10-16-critics-choice-vol5-6-d2t09.flac:629a368345e502ebd402e536eadff910
+bd87-10-16-critics-choice-vol5-6-d2t10.flac:a474ff1d28f66b9c80b30501fc9c1bfe
+bd87-10-16-critics-choice-vol5-6-d2t11.flac:1e6dfde98d297a5181a0061c6dfae7ff
+bd87-10-16-critics-choice-vol5-6-d2t12.flac:85f6c98919e34234e1a1cb9bc50852c8
+bd87-10-16-critics-choice-vol5-6-d2t13.flac:b546566616f697fdd6c17efdefa44307
+bd87-10-16-critics-choice-vol5-6-d2t14.flac:cd286b361d44db587687e6b93385ca9b
+bd87-10-16-critics-choice-vol5-6-d2t15.flac:52e7c8b37068df0c032268a8a9dd306a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-10-16-critics-choice-vol5-6.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:40.67       60133628 B   ---   --   ---xx   flac  0.6409  bd87-10-16-critics-choice-vol5-6-d1t01.flac
+     4:04.00       43041644 B   ---   --   ---xx   flac  0.6395  bd87-10-16-critics-choice-vol5-6-d1t02.flac
+     6:25.15       67949324 B   ---   --   ---xx   flac  0.6428  bd87-10-16-critics-choice-vol5-6-d1t03.flac
+     4:21.28       46106300 B   ---   --   ---xx   flac  0.6767  bd87-10-16-critics-choice-vol5-6-d1t04.flac
+     5:14.62       55535468 B   ---   --   ---xx   flac  0.6110  bd87-10-16-critics-choice-vol5-6-d1t05.flac
+     3:36.00       38102444 B   ---   --   ---xx   flac  0.6340  bd87-10-16-critics-choice-vol5-6-d1t06.flac
+     5:03.63       53597420 B   ---   --   ---xx   flac  0.6656  bd87-10-16-critics-choice-vol5-6-d1t07.flac
+     4:53.22       51736988 B   ---   --   ---xx   flac  0.6318  bd87-10-16-critics-choice-vol5-6-d1t08.flac
+     4:15.05       44993804 B   ---   --   ---xx   flac  0.6696  bd87-10-16-critics-choice-vol5-6-d1t09.flac
+     4:15.18       45024380 B   ---   --   ---xx   flac  0.5967  bd87-10-16-critics-choice-vol5-6-d1t10.flac
+     4:20.27       45927548 B   ---   --   ---xx   flac  0.5867  bd87-10-16-critics-choice-vol5-6-d1t11.flac
+     5:51.60       62057564 B   ---   --   ---xx   flac  0.6523  bd87-10-16-critics-choice-vol5-6-d1t12.flac
+     4:40.35       49474364 B   ---   --   ---xx   flac  0.6434  bd87-10-16-critics-choice-vol5-6-d1t13.flac
+     4:18.50       45628844 B   ---   --   ---xx   flac  0.6731  bd87-10-16-critics-choice-vol5-6-d1t14.flac
+     4:41.00       49568444 B   ---   --   ---xx   flac  0.6271  bd87-10-16-critics-choice-vol5-6-d2t01.flac
+     5:32.57       58698908 B   ---   --   ---xx   flac  0.6428  bd87-10-16-critics-choice-vol5-6-d2t02.flac
+     5:16.03       55749500 B   ---   --   ---xx   flac  0.6346  bd87-10-16-critics-choice-vol5-6-d2t03.flac
+     5:15.15       55601324 B   ---   --   ---xx   flac  0.6588  bd87-10-16-critics-choice-vol5-6-d2t04.flac
+     5:17.65       56071724 B   ---   --   ---xx   flac  0.6424  bd87-10-16-critics-choice-vol5-6-d2t05.flac
+     5:04.32       53700908 B   ---   --   ---xx   flac  0.6257  bd87-10-16-critics-choice-vol5-6-d2t06.flac
+     3:01.68       32088380 B   ---   --   ---xx   flac  0.6417  bd87-10-16-critics-choice-vol5-6-d2t07.flac
+     5:17.57       56052908 B   ---   --   ---xx   flac  0.6272  bd87-10-16-critics-choice-vol5-6-d2t08.flac
+     5:11.45       54966284 B   ---   --   ---xx   flac  0.6446  bd87-10-16-critics-choice-vol5-6-d2t09.flac
+     5:16.13       55773020 B   ---   --   ---xx   flac  0.6231  bd87-10-16-critics-choice-vol5-6-d2t10.flac
+     5:59.72       63496988 B   ---   --   ---xx   flac  0.6121  bd87-10-16-critics-choice-vol5-6-d2t11.flac
+     4:57.23       52444940 B   ---   --   ---xx   flac  0.6842  bd87-10-16-critics-choice-vol5-6-d2t12.flac
+     4:13.57       44763308 B   ---   --   ---xx   flac  0.6564  bd87-10-16-critics-choice-vol5-6-d2t13.flac
+     4:18.03       45518300 B   ---   --   ---xx   flac  0.6642  bd87-10-16-critics-choice-vol5-6-d2t14.flac
+     3:43.67       39494828 B   ---   --   ---xx   flac  0.6418  bd87-10-16-critics-choice-vol5-6-d2t15.flac
+   140:08.54     1483299484 B                            0.6408  (29 files)
+=================== 
+=================== 
+=================== 

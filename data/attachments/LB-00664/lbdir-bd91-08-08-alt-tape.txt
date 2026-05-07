@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-08-08-alt-tape 
+=================== 
+=================== 
+=================== 
+bea788353f2ced640767e03f3e2fc63b  bd91-08-08a.txt
+2ca7fdaf2c0382eb7f65612c9e82a432  d1\Track01.shn
+96e8a331b1efaac00a09bc8f29b0d22b  d1\Track02.shn
+d49ca32fde1a5368ce65a738d3b360e9  d1\Track03.shn
+1c883716cfd1e82eceff8b0759e43deb  d1\Track04.shn
+0d62a59dde326f8994a24179555ac984  d1\Track05.shn
+812a7442c3d1051cd96e47784cc88dbc  d1\Track06.shn
+5c0197ecd58d6baebdfabc5cf73d3473  d1\Track07.shn
+759ee4c52395c94174ad80c9fb57df9b  d1\Track08.shn
+94cf3d2d3e8365bfde7f2157dcef4dc5  d1\Track09.shn
+093d23990cc30da38285b98bca6c5c4f  d1\Track10.shn
+16087853ea64b67cd70fb2f5679b6bb9  d1\Track11.shn
+227a7a9140fb9f392b5ac6c12b7637ac  d1\Track12.shn
+061d2e0da97e8ae074d703769c60a3dd  d1\Track13.shn
+7e4e5c2b9fe12465c940b6d0b77f1708  d1\Track14.shn
+e7569377cce76ad392dc815641956fd0  d1\Track15.shn
+1b1a81af668999a7fbae262084d93485  d1\noname.md5
+dc972e03997db6ac51b4c6bf8d2d5317  d2\Track01.shn
+696d06101846ec07f592b4876969b43c  d2\Track02.shn
+c7124be040d3c4169b0cbaced34dfdf8  d2\Track03.shn
+45ec929e542addb802c579e5646fc45f  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-08-08-alt-tape\d1 
+=================== 
+=================== 
+=================== 
+e0f5027598d73beecf4b660cd896fd4b  [shntool]  Track01.wav
+02b254e11a24176fb23e57078d468426  [shntool]  Track02.wav
+0cf6808f6093adcff9f0ca8132e22ec3  [shntool]  Track03.wav
+75093d9a200b3298bb214055c9ed3f18  [shntool]  Track04.wav
+c77102f5c4ebc9d6578ba4325885df75  [shntool]  Track05.wav
+e3243133c04b0c844910636f9154e2b1  [shntool]  Track06.wav
+5b5159cebf228713bc8935696ff72ff2  [shntool]  Track07.wav
+3c3dd4f042765ea652922cb9914a41f0  [shntool]  Track08.wav
+87834eb19bbda9c24c5208719fa06ed3  [shntool]  Track09.wav
+28685ee90381c1773c6ff7f0b66b755d  [shntool]  Track10.wav
+87e9fc502b7f77b5bd110d259d9369f5  [shntool]  Track11.wav
+690a4f20a06a5929b1a9b093d5f2f390  [shntool]  Track12.wav
+e15312d22c10315d0ef00755e3a4b887  [shntool]  Track13.wav
+0872f809759469d3ff54445a3ad35d23  [shntool]  Track14.wav
+ce201437084c5926fe26d8bf54a4ebf9  [shntool]  Track15.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-08-08-alt-tape\d2 
+=================== 
+=================== 
+=================== 
+973ca540518bd66d80f4e97ede619ecd  [shntool]  Track01.wav
+31929fb705758c79c5e2b04f84879db5  [shntool]  Track02.wav
+fdb3e1d76419c52fdad0927164259694  [shntool]  Track03.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-08-08-alt-tape\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:26.08       25773260 B   ---   --   ---xx    shn  0.5444  Track01.shn
+     2:47.25       29517644 B   ---   --   ---xx    shn  0.5710  Track02.shn
+     3:33.15       37608524 B   ---   --   ---xx    shn  0.5500  Track03.shn
+     3:45.33       39767660 B   ---   --   ---xx    shn  0.5300  Track04.shn
+     4:46.32       50525708 B   ---   --   ---xx    shn  0.5205  Track05.shn
+     5:20.30       56518604 B   ---   --   ---xx    shn  0.5356  Track06.shn
+     2:39.39       28139372 B   ---   --   ---xx    shn  0.5327  Track07.shn
+     5:54.41       62542076 B   ---   --   ---xx    shn  0.5053  Track08.shn
+     7:57.02       84147548 B   ---   --   ---xx    shn  0.5485  Track09.shn
+     5:11.04       54869852 B   ---   --   ---xx    shn  0.6121  Track10.shn
+     7:15.66       76889276 B   ---   --   ---xx    shn  0.5800  Track11.shn
+     6:18.38       66768620 B   ---   --   ---xx    shn  0.5771  Track12.shn
+     4:01.07       42528908 B   ---   --   ---xx    shn  0.5754  Track13.shn
+     3:35.32       38001308 B   ---   --   ---xx    shn  0.5836  Track14.shn
+     5:45.19       60902732 B   ---   --   ---xx    shn  0.5603  Track15.shn
+    71:17.16      754501092 B                            0.5559  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-08-08-alt-tape\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:01.51       84968396 B   ---   --   ---xx    shn  0.6050  Track01.shn
+     4:42.65       49897724 B   ---   --   ---xx    shn  0.5493  Track02.shn
+     4:28.57       47409308 B   ---   --   ---xx    shn  0.6127  Track03.shn
+    17:13.23      182275428 B                            0.5918  (3 files)
+=================== 
+=================== 
+=================== 

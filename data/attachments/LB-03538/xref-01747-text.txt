@@ -1,0 +1,119 @@
+===================
+===================
+===================
+=== 1995-03-31 Bob Dylan Brixton Academy, London, England ASM.txt
+===================
+===================
+===================
+Bod Dylan
+Brixton Academy
+London, England
+March 31, 1995
+
+NET Tapers Series #7
+Off master audience recording (+ Olav additional master)
+Unidentified taper
+
+ASM:
+Lineage: FLAC DVD-R > WAV > CoolEdit (checked; a major diginoise removed from My Back Pages with no audible trail, a few statics also removed from the beginning of 2 tracks) > T-RackS v2.0: (overall volume boosted 3.5dB; no eq) > FLAC frontend (sector alignment) > DIME
+
+CD 1:
+01 Crash On The Levee (Down In The Flood)
+02 Seor (Tales Of Yankee Power)
+03 All Along The Watchtower
+04 I Don't Believe You (She Acts Like We Never Have Met)
+05 Tombstone Blues
+06 Shelter From The Storm
+07 Mr. Tambourine Man
+08 The Lonesome Death Of Hattie Carroll
+
+CD2:
+09 It's All Over Now, Baby Blue
+10 Highway 61 Revisited
+11 In The Garden
+12 Joey (Bob DylanJacques Levy/Bob Dylan)
+13 Like A Rolling Stone
+14 My Back Pages
+15 I Shall Be Released
+16 Rainy Day Women # 12 & 35
+
+
+Concert # 657 of The Never-Ending Tour
+Concert # 17 of the 1995 European Spring Tour
+Concert # 17 in 1995
+
+Concert # 201 with the 9th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Winston Watson (drums & percussion)
+
+79, 14 acoustic with the band
+1, 2, 7, 14 Bob Dylan harmonica
+
+15 Elvis Costello (guitar & shared vocals), Chrissie Hynde & Carole King (backup vocals)
+16 Elvis Costello (guitar & backup vocals), Chrissie Hynde & Carole King (backup vocals)
+
+Note: First Tombstone Blues since Slane, Ireland July 8, 1984!
+
+BobTalk:
+Thank you! Forgot to introduce the band. Im not going to either! (before first encore).
+
+11 new songs (68%) compared to previous concert
+4 new songs for this tour
+
+Stereo audience recording, 110 minutes
+
+CD1 .ffp:
+01 Crash on the levee (down in the flood).flac:19149e3a677a49ca18f6deee7f17a7ba
+02 Seor (Tales of Yankee Power).flac:61a673c2f5ccac2ca5796b5869968dca
+03 All along the watchtower.flac:0a1b4a5bc7ce437fc983fa732b5535bc
+04 I don't believe you (she acts like we never have met).flac:0e27182baba321436e966fab59d13d80
+05 Tombstone blues.flac:98609b30f4107772cb59053d4e38233c
+06 Shelter from the storm.flac:ad3846838872985962fca34a2eba08df
+07 Mr. Tambourine Man.flac:287da04d8f9facedd0902fc7beda6c84
+08 The lonesome death of Hattie Carroll.flac:c5debf3f57ec22b0176a0ab8fc200aa4
+
+CD2 .ffp:
+09 It's all over now, baby blue.flac:676ed6487b6a8f14f8bde01e86998aa8
+10 Highway 61 revisited.flac:25195872e482c2b5e61e8e777fe6b830
+11 In the garden.flac:2c7288ef206dc2ad06f5081e2bfcaa29
+12 Joey.flac:60e7aec49c47474f3a3828ff0ebae8d1
+13 Like a rolling stone.flac:88bcc122ce3adde5da99ce373d611a6e
+14 My back pages.flac:9c4ac44d00d5ef3c2b85c8e5537d4586
+15 I shall be released.flac:5267b152c31ee4597d340773f7fefebc
+16 Rainy day women # 12 & 35.flac:d204ff4926ddcec2a66279c284515f8b
+===================
+===================
+===================
+=== CD1.ffp
+===================
+===================
+===================
+01 Crash on the levee (down in the flood).flac:19149e3a677a49ca18f6deee7f17a7ba
+02 Seor (Tales of Yankee Power).flac:61a673c2f5ccac2ca5796b5869968dca
+03 All along the watchtower.flac:0a1b4a5bc7ce437fc983fa732b5535bc
+04 I don't believe you (she acts like we never have met).flac:0e27182baba321436e966fab59d13d80
+05 Tombstone blues.flac:98609b30f4107772cb59053d4e38233c
+06 Shelter from the storm.flac:ad3846838872985962fca34a2eba08df
+07 Mr. Tambourine Man.flac:287da04d8f9facedd0902fc7beda6c84
+08 The lonesome death of Hattie Carroll.flac:c5debf3f57ec22b0176a0ab8fc200aa4
+===================
+===================
+===================
+=== CD2.ffp
+===================
+===================
+===================
+09 It's all over now, baby blue.flac:676ed6487b6a8f14f8bde01e86998aa8
+10 Highway 61 revisited.flac:25195872e482c2b5e61e8e777fe6b830
+11 In the garden.flac:2c7288ef206dc2ad06f5081e2bfcaa29
+12 Joey.flac:60e7aec49c47474f3a3828ff0ebae8d1
+13 Like a rolling stone.flac:88bcc122ce3adde5da99ce373d611a6e
+14 My back pages.flac:9c4ac44d00d5ef3c2b85c8e5537d4586
+15 I shall be released.flac:5267b152c31ee4597d340773f7fefebc
+16 Rainy day women # 12 & 35.flac:d204ff4926ddcec2a66279c284515f8b
+===================
+===================
+===================

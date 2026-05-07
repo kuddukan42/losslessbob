@@ -1,0 +1,129 @@
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Most likely you go your way (and I'll go mine).flac:42e13f738751604b7e5dce5996030b4d02 Most of the time.flac:61a8caac0aff0708d2ca7c2107c2370103 All along the watchtower.flac:ad390a017b0eeadbeee29af286e41e9604 Just like a woman.flac:bd47fbda5d2bd23c0f5fb85eea0989e805 Stuck inside of Mobile with the Memphis blues again.flac:56227bf89b949365a75bd290cf30b96606 I'll be your baby tonight.flac:3dc83e9b11d56b9d282064ad1a4695a207 Maggie's farm.flac:759a157e057ae9fb27b0a0a65e56f56f08 Love minus zero - no limit.flac:84efc615e98ec6ac4faff2926cd2791c09 Little Moses.flac:cd6dfdec45f3eaee908452927ef3645a10 Trail of the buffalo.flac:0b89812c284daeead21e893c2df658d511 Desolation Row.flac:a018267a725485c865c330c5e021386e01 Most likely you go your way (and I'll go mine).flac:42e13f738751604b7e5dce5996030b4d02 Most of the time.flac:61a8caac0aff0708d2ca7c2107c2370103 All along the watchtower.flac:ad390a017b0eeadbeee29af286e41e9604 Just like a woman.flac:bd47fbda5d2bd23c0f5fb85eea0989e805 Stuck inside of Mobile with the Memphis blues again.flac:56227bf89b949365a75bd290cf30b96606 I'll be your baby tonight.flac:3dc83e9b11d56b9d282064ad1a4695a207 Maggie's farm.flac:759a157e057ae9fb27b0a0a65e56f56f08 Love minus zero - no limit.flac:84efc615e98ec6ac4faff2926cd2791c09 Little Moses.flac:cd6dfdec45f3eaee908452927ef3645a10 Trail of the buffalo.flac:0b89812c284daeead21e893c2df658d511 Desolation Row.flac:a018267a725485c865c330c5e021386e01 Most likely you go your way (and I'll go mine).flac:42e13f738751604b7e5dce5996030b4d02 Most of the time.flac:61a8caac0aff0708d2ca7c2107c2370103 All along the watchtower.flac:ad390a017b0eeadbeee29af286e41e9604 Just like a woman.flac:bd47fbda5d2bd23c0f5fb85eea0989e805 Stuck inside of Mobile with the Memphis blues again.flac:56227bf89b949365a75bd290cf30b96606 I'll be your baby tonight.flac:3dc83e9b11d56b9d282064ad1a4695a207 Maggie's farm.flac:759a157e057ae9fb27b0a0a65e56f56f08 Love minus zero - no limit.flac:84efc615e98ec6ac4faff2926cd2791c09 Little Moses.flac:cd6dfdec45f3eaee908452927ef3645a10 Trail of the buffalo.flac:0b89812c284daeead21e893c2df658d511 Desolation Row.flac:a018267a725485c865c330c5e021386e
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+62657067a6657652751a59e67aa262aa *01 Most likely you go your way (and I'll go mine).flac
+06e48a63f8fc7f9b0ce6bd139d4de159 *02 Most of the time.flac
+5bf77f4fbffa6bd0611df6bc670eedc7 *03 All along the watchtower.flac
+f6e07aeb209db48426f5a20817b2ee18 *04 Just like a woman.flac
+929eb96198f426e5003d34f4b1645103 *05 Stuck inside of Mobile with the Memphis blues again.flac
+48eb78309522b4bb66886cbdb0df2055 *06 I'll be your baby tonight.flac
+458c49d81d2a5df8c856561ed5e0a253 *07 Maggie's farm.flac
+aea171a8a93aa23e0aeace4c6a55d0a0 *08 Love minus zero - no limit.flac
+e359e2d46b9f08bd9a522b6b3ec6df06 *09 Little Moses.flac
+3e048f2fd8667845b12e45868bf490ee *10 Trail of the buffalo.flac
+42ec414852534bff6c1fcf4c7f7f59f4 *11 Desolation Row.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+12 Cat's in the well.flac:25dc6718a0cf24ec4b3999f9b4d56a3e13 I'll remember you.flac:f475a8bca5637ab4901f6ee5d0c883f214 The times they are a-changin'.flac:8d52e8e68ca00649301275ff00ed5a5e15 Highway 61 revisited.flac:847ad632c3a0afa88c45b0e20f90192d16 Ballad of a thin man.flac:4f4af0a574974d1b7d195feb151fda2017 Rainy day women # 12 & 35.flac:1e3375ce0a212144e0fee2dcee215aa318 Blowin' in the wind.flac:3a158bc1ebf1226636108f032c5a11a2
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+e0f335278c407820e6c3801dd3b168fa *12 Cat's in the well.flac
+4231bbeb2cc09f221b2afcd8ccfe5008 *13 I'll remember you.flac
+1378778a0f5f7e491022c07e4f786bf0 *14 The times they are a-changin'.flac
+5f8ebdd581729fc7cb4487b6b8651519 *15 Highway 61 revisited.flac
+b9f5a326fd432eebce41451bbc1d16b2 *16 Ballad of a thin man.flac
+1b2a759546936f4733170cbb929bc5df *17 Rainy day women # 12 & 35.flac
+8335c72fb50cdb64c0113c8faa9ff276 *18 Blowin' in the wind.flac
+
+===================
+===================
+===================
+=== 1992-03-23 State Theatre, Sydney, New South Wales, Australia [JL].txt
+===================
+===================
+===================
+State Theatre
+Sydney, New South Wales, Australia
+March 23, 1992
+
+3rd 92 Aussie show
+Due to recent information (disc times) about which show was taped by whom, this most likely signifies a 'JL' recording. My copys times vary slightly... very slightly
+
+Differences:
+MK: has Desolation Row first on disc 2,
+JL: has Desolation Row last on disc 1.
+
+Losslessbob says: LB-1035, (53min+36min), JL recording, very good to excellent sound, a few background banging noises on d1t4, foghorn sound on d1t5, slightly prefer this one to MK recording.
+
+Qlty: Very good to excellent recording!
+
+WAV disc times:
+Disc # 1: [52:08]
+Disc # 2: [35:15]
+
+01. Most Likely You Go Your Way (And I'll Go Mine)
+02. Most Of The Time
+03. All Along The Watchtower
+04. Just Like A Woman
+05. Stuck Inside Of Mobile With The Memphis Blues Again
+06. I'll Be Your Baby Tonight
+07. Maggie's Farm
+08. Love Minus Zero/No Limit
+09. Little Moses (Bert A. Williams/Earle C. Jones)
+10. Trail Of The Buffalo (trad. arr. Woody Guthrie)
+11. Desolation Row
+
+12. Cat's In The Well
+13. I'll Remember You
+14. The Times They Are A-Changin'
+15. Highway 61 Revisited
+16. Ballad Of A Thin Man
+17. Rainy Day Women # 12 & 35
+18. Blowin' In The Wind
+
+
+Concert # 367 of The Never-Ending Tour
+Third concert of the 1992 Tour Of Australia
+Third 1992 concert
+
+Third concert with the 6th Never-Ending Tour band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+Ian Wallace (drums)
+
+8, 9, 18 Bob Dylan (acoustic guitar & vocal)
+4, 8, 11, 14, 17, 18 Bob Dylan harmonica
+
+10 Bob Dylan (acoustic guitar & vocal) & John Jackson (guitar)
+11 Bucky Baxter (dobro)
+14 Bucky Baxter (mandolin)
+15 Bucky Baxter (electric slide guitar)
+11, 14 acoustic with the band
+
+BobTalk:
+Thanks everybody! That was a song about one of those contemporary subjects, buffalo!
+
+1 new song (5%) compared to previous concert
+1 new song for this tour
+
+Stereo audience recording, 90 minutes
+
+* * * Fixin' a hole * * *
+===================
+===================
+===================

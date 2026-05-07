@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-19-bach.flacf 
+=================== 
+=================== 
+=================== 
+8927da3b2eccde17b2158a38887d36e1  2007-04-19-Duesseldorf.md5
+26613d83e16bc603cc3b037f7b495aac  2007-04-19-Duesseldorf.txt
+f1acbef3a38dee4d525bc28a76a4237f  bd07-04-19-bach-LB-4765.txt
+0ca9460dcd13e3102bb615cdd2d082c4  lbdir-bd07-04-19-bach.flacf.md5
+e10ebc5b4540ce0117cc06644d59214a  Track101Introduction.flac
+ce0a6c25c8c0285490b0611f3ce4bfdd  Track102Cat's In The Well.flac
+a09f1f5e085c66348f0fa11f3185ddf2  Track103Don't Think Twice, It's All Right.flac
+10df99fa1feebcfad76ce393b5767285  Track104-Watching The River Flow.flac
+e01b823cf56a3bc8ef9dc7d7b082419f  Track105-It's Alright, Ma (I'm Only Bleeding).flac
+9e164ea75aeb60cd89e10227e7236206  Track106-Just Like A Women.flac
+f506b34511c3c4288aa2d7daee6613df  Track107-The Levee's Gonna Break.flac
+0b35825a2489a02b633f223691a919de  Track108-When The Deal Goes Down.flac
+7e20e63d19fc18e84947c94f68ef66d0  Track109-High Water (For Charlie Patton).flac
+7829960cf5605272ba80ab59e802d923  Track110-I Don't Believe You (She Acts Like We Never Have Met).flac
+60231af9df2cd02d5553bffa80c0a9db  Track111-Spirit On The Water.flac
+3f6fb0b4faacde4380ec8f70e19c5f3a  Track112-Desolation Row.flac
+5b55d3a32c459bee14de7d7f598c0f66  Track201-Highway 61 Revisited.flac
+38325d2d80d7ca6f707adb0053e193b6  Track202-Nettie Moore.flac
+89ed63667e957625e2ff144edc9df251  Track203-Summer Days.flac
+f59c00e4ce54ceb6ae7efaa9e9a744cc  Track204-Like A Rolling Stone.flac
+279f05ae4c20b2fc86aea810108f737e  Track205-Thunder On The Mountain.flac
+bee161216570d3b54404771db9133bb6  Track206-All Along The Watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-19-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101Introduction.flac:4a5115ee05b0cc94cf769f4ccab026e4
+Track102Cat's In The Well.flac:d0f6e897dc17044aea50d131896fe0ad
+Track103Don't Think Twice, It's All Right.flac:ea410a867b791beaa6b8cf58ddf13ff2
+Track104-Watching The River Flow.flac:9188db9abdd38fa891aba1838cfd36d0
+Track105-It's Alright, Ma (I'm Only Bleeding).flac:554c5c071ceea17619c68184e6a4d1dd
+Track106-Just Like A Women.flac:6a093af3116a730d2a5c52419d800759
+Track107-The Levee's Gonna Break.flac:be79eae82682876689851bdbf914df9a
+Track108-When The Deal Goes Down.flac:7efca0813ac915852236551f3bc1067b
+Track109-High Water (For Charlie Patton).flac:5b45838cae6f5ef67efda99370cff354
+Track110-I Don't Believe You (She Acts Like We Never Have Met).flac:4863dee7034e1c00f2e700fb10f42232
+Track111-Spirit On The Water.flac:83f58fb2d832dc8f0c204a4133bc932d
+Track112-Desolation Row.flac:c68b058cd09e8c1eea9ff4e6829a7602
+Track201-Highway 61 Revisited.flac:1e7fdd335e9108a8f82959167516eb54
+Track202-Nettie Moore.flac:c84769c6246223db9ae0564a3e639cda
+Track203-Summer Days.flac:6ef542a0778e575756dc319c8804eb4b
+Track204-Like A Rolling Stone.flac:309e9d93e1c118671ad9e86cfe33b4b0
+Track205-Thunder On The Mountain.flac:4856144d4a3a0474ec620e85d7b67f4d
+Track206-All Along The Watchtower.flac:024d6f81cfd5d2d3d04c39d8df7c6e68
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd07-04-19-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:39.44       17567132 B   ---   --   ---xx   flac  0.3863  Track101Introduction.flac
+     4:18.10       45534764 B   ---   --   ---xx   flac  0.5187  Track102Cat's In The Well.flac
+     6:47.47       71905388 B   ---   --   ---xx   flac  0.4496  Track103Don't Think Twice, It's All Right.flac
+     5:39.14       59832572 B   ---   --   ---xx   flac  0.5193  Track104-Watching The River Flow.flac
+     6:51.56       72632156 B   ---   --   ---xx   flac  0.5485  Track105-It's Alright, Ma (I'm Only Bleeding).flac
+     7:32.06       79746956 B   ---   --   ---xx   flac  0.4629  Track106-Just Like A Women.flac
+     6:41.28       70802300 B   ---   --   ---xx   flac  0.5218  Track107-The Levee's Gonna Break.flac
+     6:19.43       66956780 B   ---   --   ---xx   flac  0.3671  Track108-When The Deal Goes Down.flac
+     6:44.60       71406764 B   ---   --   ---xx   flac  0.4988  Track109-High Water (For Charlie Patton).flac
+     6:51.42       72599228 B   ---   --   ---xx   flac  0.4898  Track110-I Don't Believe You (She Acts Like We Never Have Met).flac
+     6:54.12       73057868 B   ---   --   ---xx   flac  0.3801  Track111-Spirit On The Water.flac
+    10:58.17      116111228 B   ---   --   ---xx   flac  0.4814  Track112-Desolation Row.flac
+     4:59.12       52771868 B   ---   --   ---xx   flac  0.5437  Track201-Highway 61 Revisited.flac
+     8:07.59       86045612 B   ---   --   ---xx   flac  0.3563  Track202-Nettie Moore.flac
+     5:51.09       61937612 B   ---   --   ---xx   flac  0.5269  Track203-Summer Days.flac
+    10:16.70      108827084 B   ---   --   ---xx   flac  0.4872  Track204-Like A Rolling Stone.flac
+     7:03.73       74788940 B   ---   --   ---xx   flac  0.5147  Track205-Thunder On The Mountain.flac
+     4:44.69       50259932 B   ---   --   ---xx   flac  0.5181  Track206-All Along The Watchtower.flac
+   118:21.71     1252784184 B                            0.4761  (18 files)
+=================== 
+=================== 
+=================== 

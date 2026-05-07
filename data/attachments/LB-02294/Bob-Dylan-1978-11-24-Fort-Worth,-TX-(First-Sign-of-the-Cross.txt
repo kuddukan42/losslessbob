@@ -1,0 +1,141 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fnil\fcharset77 Verdana-Bold;\f1\fnil\fcharset77 Verdana;\f2\fnil\fcharset77 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;\red2\green2\blue2;\red215\green61\blue89;\red174\green108\blue215;
+}
+\margl1440\margr1440\vieww14940\viewh14640\viewkind0
+\deftab720
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+
+\f0\b\fs22 \cf0 Bob Dylan 1978-11-24 Fort Worth, TX (First Sign of the Cross)
+\f1\b0  
+\f0\b (Flac)
+\f1\b0  \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+
+\fs26 \cf0 Bob Dylan\
+Tarrant County Convention Center\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+\cf2 Fort Worth\cf0 , TX\
+November 24, 1978\
+\
+________________________________________________________\
+\
+Bob Dylan 1978-11-24 Fort Worth, TX (First Sign of the Cross) \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+\cf3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+\cf0 I received this show from a trader some years back.  It was on Maxell C90s, of an unknown number of generations.  When I digitized it for my own use, I definitely \'d4fixed\'d5 a few spots in the recording to make it a more pleasant listen.  (These were primarily rough transitions between songs due to awkward recording stops.)  I may have also applied a light touch of mastering via Spark XL \'d1 I don\'d5t remember \'d1 but if so, it would have been only to reduce the hiss somewhat.  There is still plenty of hiss still apparent, so little audio was lost, if any.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+\cf3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+\cf0 I gave this recording a name:  "First Sign of the Cross."  The reason for the name was that, after reading Heylin, I learned that the photos I have of Bob from that night wearing a shiny silver cross around his neck may have a certain significance.  Supposedly, at a show in San Diego someone threw a silver cross onto the stage, which Bob picked up and tucked into his pocket.  A week later, Bob appears onstage wearing a metal cross around his neck. Well, that was the Fort Worth show, and I was a 17 year old kid taking pictures.\
+\
+I traded/gave this recording out to only 3-4 people, before now.  The surfacing of T\'d5s [different] recording of this show at The Trader\'d5s Den prompted me offer this one up.  Enjoy.\
+\
+Lineage:\
+\
+AUD -> Cass[x] -> Mac via Peak -> [light remastering w/Spark XL? Maybe, maybe not - I don't remember] -> Jam -> Kodak Gold CDR -> xACT 1.4d12 -> WAV -> xACT 1.4d12 -> Flac\cf3 \
+\
+\cf0 \
+ disc 1\
+\
+ 1. My Back Pages (instrumental)  [fade-in]\
+ 2. She's Love Crazy\
+ 3. Mr. Tambourine Man [cut at very end]\
+ 4. Shelter From The Storm [abrupt start]\
+ 5. It's All Over Now, Baby Blue\
+ 6. Tangled Up In Blue\
+ 7. Ballad Of A Thin Man\
+ 8. Maggie's Farm\
+ 9. I Don't Believe You\
+ 10. Like A Rolling Stone [end cut]\
+ 11. I Shall Be Released [fadeout]\
+ 12. Senor (Tales Of Yankee Power) [cut end]\
+ 13. The Times They Are A-Changin' [fade-in to intro]\
+ 14. Rainy Day Women # 12 & 35\
+ 15. It Ain' Me, Babe\
+\
+ disc 2\
+ \
+ 1. Am I Your Stepchild?\
+ 2. One More Cup Of Coffee (Valley Below)\
+ 3. Blowin' In The Wind\
+ 4. Girl From The North Country\
+ 5. We Better Talk This Over\
+ 6. Masters Of War\
+ 7. Just Like A Woman\
+ 8. To Ramona\
+ 9. All Along The Watchtower\
+ 10. All I Really Want To Do\
+ 11. (band introductions)\
+ 12. It's Alright, Ma (I'm Only Bleeding)\
+ 13. Forever Young [fade-out at applause]\
+ 14. Changing Of The Guards [fade-in to audience before song starts]\
+\
+\
+ Bob Dylan (guitar/harmonica/vocals)\
+ Billy Cross (guitar)\
+ Steven Soles (guitar)\
+ David Mansfield (violin/mandolin)\
+ Alan Pasqua (keyboards)\
+ Steve Douglas (horns)\
+ Bobbye Hall (percussion)\
+ Ian Wallace (drums)\
+ Jerry Scheff (bass)\
+ Helena Springs (vocals)\
+ Jo Ann Harris (vocals)\
+ Caroyn Dennis (vocals)\
+\
+\
+Bob Dylan 1978-11-24 Fort Worth, TX (First Sign of the Cross)\cf4 \
+\
+\cf0 Flac Fingerprints \'d1\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+\cf4 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+
+\f2\fs20 \cf0 Disk One (Sign of the Cross) fingerprint :\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+
+\f1\fs22 \cf4 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri-3540\ql\qnatural
+\cf2 bd1978-11-24_(SignoftheCross)_d1t1.flac:c2745d453d91c9554db6da7544c082ff\
+bd1978-11-24_(SignoftheCross)_d1t10.flac:4ad97bfe91bf1a5ba24d53c52a28cb6e\
+bd1978-11-24_(SignoftheCross)_d1t11.flac:7875c46e08191ddca9fd0d5986966e35\
+bd1978-11-24_(SignoftheCross)_d1t12.flac:9f40aa3a2d7b656c2a7d80257f8b5b13\
+bd1978-11-24_(SignoftheCross)_d1t13.flac:2e910d25f61bba5569cee0efb3bc5ed6\
+bd1978-11-24_(SignoftheCross)_d1t14.flac:a5362422efefd67befe19a4d71fd28b7\
+bd1978-11-24_(SignoftheCross)_d1t15.flac:d2ffcc59489d816abc5ee3692cd01e5a\
+bd1978-11-24_(SignoftheCross)_d1t2.flac:b91471decd4c88ec18eea98bc6df0d86\
+bd1978-11-24_(SignoftheCross)_d1t3.flac:c229219b6c02a29468e50a997f487e88\
+bd1978-11-24_(SignoftheCross)_d1t4.flac:c3fb5f61d5aa9dccee2e5dd7e3997a3a\
+bd1978-11-24_(SignoftheCross)_d1t5.flac:089b8259997f4a18afe5498d59c6800e\
+bd1978-11-24_(SignoftheCross)_d1t6.flac:67b5bd11bbd16d491ba7ea8f439240fa\
+bd1978-11-24_(SignoftheCross)_d1t7.flac:57b3cf02c246ca97dd058112d3b508da\
+bd1978-11-24_(SignoftheCross)_d1t8.flac:6903731c8d2e3d7e9d7600d05ca1cbd4\
+bd1978-11-24_(SignoftheCross)_d1t9.flac:9dbcac7ce19da4c670e6531d2f98a19b
+\fs26 \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+\cf4 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+
+\f2\fs22 \cf0 Disk Two (Sign of the Cross) fingerprint :\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri-3600\ql\qnatural
+\cf0 bd1978-11-24_(SignoftheCross)_d2t1.flac:891090571839ccf558928edf71b004ca\
+bd1978-11-24_(SignoftheCross)_d2t10.flac:cab5fdb355ba561cef02b6c069a5313a\
+bd1978-11-24_(SignoftheCross)_d2t11.flac:b66b65d47c3f9ed17b7f384ab2fc355d\
+bd1978-11-24_(SignoftheCross)_d2t12.flac:86b4aa1b209b90b326d6f178231828ee\
+bd1978-11-24_(SignoftheCross)_d2t13.flac:f1af150c6082600cb3c2ae44ed56a037\
+bd1978-11-24_(SignoftheCross)_d2t14.flac:f0d66cbe3225908c67338a09df202c87\
+bd1978-11-24_(SignoftheCross)_d2t2.flac:5820cb1d1667fec268b90167e5661653\
+bd1978-11-24_(SignoftheCross)_d2t3.flac:f7ec2e176db6d9af6e733879657df4bf\
+bd1978-11-24_(SignoftheCross)_d2t4.flac:ea6582486004368f2d3d84d1610cd581\
+bd1978-11-24_(SignoftheCross)_d2t5.flac:f82883ada745ef4e1868ee84d71eda7b\
+bd1978-11-24_(SignoftheCross)_d2t6.flac:0b8e37879f35b8b11d8b1d1f574211d3\
+bd1978-11-24_(SignoftheCross)_d2t7.flac:1ca9283ecf2df0032e0390fabf9ef9a3\
+bd1978-11-24_(SignoftheCross)_d2t8.flac:8a2a38d5db30feadd75eadc95a0ae9d0\
+bd1978-11-24_(SignoftheCross)_d2t9.flac:ac4649a58e881ee2b3c06d63e8716a4f
+\fs26 \
+}

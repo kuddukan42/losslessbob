@@ -1,0 +1,34 @@
+Bob Dylan
+February 27, 2008 (Wednesday)
+
+Auditorio Nacional
+Mexico City
+
+a01 (intro)
+a02 Leopard-Skin Pill-Box Hat
+a03 Lay, Lady, Lay
+a04 I'll Be Your Baby Tonight
+a05 Love Sick
+a06 Rollin' And Tumblin'
+a07 Spirit On The water
+a08 Boots Of Spanish Leather
+a09 High Water
+a10 When The Deal Goes Down
+a11 Honest With Me
+b01 My Back Pages
+b02 Highway 61 Revisited
+b03 Ain't Talkin'
+b04 Summer Days
+b05 Like A Rolling Stone
+ - - - - e n c o r e - - - - 
+b06 Thunder On The Mountain
+b07 (band introduction)
+b08 Blowin' In The Wind
+
+average quality audience recording
+slightly better than the previous night
+
+Equipment & Linage:
+COS-11(s)PT > handmade power supply > Roland R-01 (16/44.1) > CF > PC > Soundforge 7.0 (tracking, fade-in/out, NO LEVEL CHANGE, NO EQ) > wav > TLH > flac > here
+
+a11 to b01 seamless

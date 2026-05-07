@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-13e.shnf 
+=================== 
+=================== 
+=================== 
+5c185c657b6e61e29e91d7e15d49fca4  bd75-11-13e.md5
+8513813ed755158ec846be6f463e79e8  bd75-11-13e.txt
+dec3af4fb79d0c51bae4665893a293c7  bd75-11-13et01.shn
+b8abc6b2e7de7a3f6a4e2dc805c22b37  bd75-11-13et02.shn
+c5846a8ab659546a6f31adb87d049df6  bd75-11-13et03.shn
+8b8ddd4a3a3bfbc2e1742c57154afa46  bd75-11-13et04.shn
+26f951008785b0e606af084054ab4062  bd75-11-13et05.shn
+b65a556c5b70b4bc1a938e6220fa44eb  bd75-11-13et06.shn
+9b410e57da7662b11a6b92b7f6e6e328  bd75-11-13et07.shn
+30ac574d1160b3f210916ce084bb83a2  bd75-11-13et08.shn
+f32683fe8c2ca4c0a6a6ff9a9bde78ae  bd75-11-13et09.shn
+3f3f8a0c4094ee2ce33960d6424bfb5b  bd75-11-13et10.shn
+2924afffb252864e472fd06811220c72  bd75-11-13et11.shn
+448350c459a3675d58b13b930ce13837  bd75-11-13et12.shn
+c9e7e692ba90438cf36aeb80897c9368  bd75-11-13et13.shn
+744094099d1fb8e9626d3c788c928e9e  bd75-11-13et14.shn
+8d9bf2f7b281e6aac29a2fdf370342ea  bd75-11-13et15.shn
+048fbfff0de2dd15e4c76ccdeb9bcaa7  bd75-11-13et16.shn
+1fee5998bae74e453b4a14c24e6d820f  bd75-11-13et17.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd75-11-13e.shnf 
+=================== 
+=================== 
+=================== 
+adcfacade67eb0ea1749d51833169d85  [shntool]  bd75-11-13et01.wav
+0c1b6eeb7dc0b23623e6dbd0f8f504df  [shntool]  bd75-11-13et02.wav
+4a829ccfca0729dc52e6f2d267f84e67  [shntool]  bd75-11-13et03.wav
+02373f56d7ff62f9a4628720cbca8882  [shntool]  bd75-11-13et04.wav
+4be158d9712fbd82d3425f39d570ec20  [shntool]  bd75-11-13et05.wav
+92a1ca48d7879a935be44a0171a8d011  [shntool]  bd75-11-13et06.wav
+757a5bae9a947d961cdeb7c235e5c55d  [shntool]  bd75-11-13et07.wav
+a6ec46310c2ef0df03d2bc23b91aa377  [shntool]  bd75-11-13et08.wav
+b138cf3f02b9c8a9164e4dccc6c22374  [shntool]  bd75-11-13et09.wav
+6ca39c028195cc9b237b1b18d855de53  [shntool]  bd75-11-13et10.wav
+c2b91866cc163c97d2c5adbbee94be02  [shntool]  bd75-11-13et11.wav
+4acbc7ca1e4efe8b50d0dd50ceea4f03  [shntool]  bd75-11-13et12.wav
+570b5398c0adc309d4270ca05db1bbde  [shntool]  bd75-11-13et13.wav
+273c0cbbfcd3c6dbf82e469d89fa85cc  [shntool]  bd75-11-13et14.wav
+b9bcd6dab86207027dc0bf5dc7037be7  [shntool]  bd75-11-13et15.wav
+9430fea8bc02ffdf73f455f390f4c652  [shntool]  bd75-11-13et16.wav
+11e7fe1927c7f6daba7df60fd201c4e9  [shntool]  bd75-11-13et17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-13e.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.01       50982532 B   -b-   --   ---xx    shn  0.5788  bd75-11-13et01.shn
+     5:24.41       57250620 B   -b-   --   ---xx    shn  0.5948  bd75-11-13et02.shn
+     5:59.21       63377624 B   -b-   --   ---xx    shn  0.6073  bd75-11-13et03.shn
+     5:22.51       56921480 B   -b-   --   ---xx    shn  0.5962  bd75-11-13et04.shn
+     5:00.20       52967084 B   ---   --   ---xx    shn  0.6139  bd75-11-13et05.shn
+     2:55.05       30881804 B   ---   --   ---xx    shn  0.5553  bd75-11-13et06.shn
+     2:39.25       28106444 B   ---   --   ---xx    shn  0.5599  bd75-11-13et07.shn
+     4:30.63       47775800 B   -b-   --   ---xx    shn  0.5592  bd75-11-13et08.shn
+     3:52.49       41040916 B   -b-   --   ---xx    shn  0.6501  bd75-11-13et09.shn
+     5:18.03       56102948 B   -b-   --   ---xx    shn  0.6285  bd75-11-13et10.shn
+     4:10.48       44213380 B   -b-   --   ---xx    shn  0.6569  bd75-11-13et11.shn
+     7:46.51       82323324 B   -b-   --   ---xx    shn  0.6532  bd75-11-13et12.shn
+     3:56.10       41653896 B   -b-   --   ---xx    shn  0.6404  bd75-11-13et13.shn
+     4:40.00       49392044 B   ---   --   ---xx    shn  0.6069  bd75-11-13et14.shn
+     4:14.44       44908400 B   -b-   --   ---xx    shn  0.6276  bd75-11-13et15.shn
+     4:13.64       44779820 B   -b-   --   ---xx    shn  0.6366  bd75-11-13et16.shn
+     3:26.42       36437912 B   -b-   --   ---xx    shn  0.6510  bd75-11-13et17.shn
+    78:20.15      829116028 B                            0.6150  (17 files)
+=================== 
+=================== 
+=================== 

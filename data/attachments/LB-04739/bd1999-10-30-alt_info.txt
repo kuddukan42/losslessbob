@@ -1,0 +1,47 @@
+Bob Dylan
+October 30, 1999
+Milwaukee Arena
+Milwaukee, Wisconsin
+
+AUD DAT Master [Sonic Studios 6P] > DAT clone(s) > WAV > Soundforge 6.0 > CD Wave > FLAC
+
+
+CD 1  [64:00.64]
+
+01 I Am The Man, Thomas  [03:19.67]
+02 The Times They Are A-Changin  [06:17.44]
+03 It's Alright, Ma (I'm Only Bleeding)  [07:24.40]
+04 Mama You Been On My Mind  [05:08.08]
+05 Tangled Up In Blue  [08:19.19]
+06 All Along the Watchtower  [04:43.12]
+07 Every Grain of Sand  [07:43.67]
+08 Silvio  [06:04.34]
+09 Not Dark Yet  [06:40.40]
+10 Highway 61 Revisited  [08:17.33]
+
+CD 2  [24:58.31]
+
+01 Love Sick  [06:19.72]
+02 Like A Rolling Stone  [08:18.36]
+03 Blowin' In The Wind  [05:58.73]
+04 Not Fade Away  [04:21.00]
+
+
+Bob Dylan - vocal, guitar, harmonica
+Larry Campbell - guitar, pedal steel, mandolin
+Charlie Sexton - guitar
+Tony Garnier - bass 
+David Kemper - drums 
+
+I did not harm the sound of the recording in any way.
+This is not the same recording as LB-0733 but is a fairly new transfer from my DAT clone.
+My source for the DAT lists this with 'last two tracks missing' but in fact both tracks were on the DAT,
+albeit both tracks being incomplete at the start and the sample rate changing from 44.1 kHz to 48 kHz.
+Thus it may be that these actually come from a different master - but not LB-0733.
+I have used LB-0733 to patch the missing parts @ d2t02 8:13 to d2t03 0:30 and d2t03 5:23 to d2t04 0:03
+
+Please retain this info file as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+further info:
+http://www.bjorner.com/DSN21160.htm#_Toc473349169

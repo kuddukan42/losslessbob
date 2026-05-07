@@ -1,0 +1,78 @@
+BOB DYLAN
+Franklin County Airport 
+Highgate VT
+06-15-1995 
+
+01 //Crash on the Levee 
+02 It Takes a Lot to Laugh, It Takes a Train to Cry 
+03 All Along the Watchtower 
+04 Tears of Rage 
+05 Silvio 
+06 Mister Tambourine Man 
+07 Masters of War 
+08 It's All Over Now, Baby Blue 
+09 Stuck Inside of Mobile with the Memphis Blues Again 
+10 She Belongs to Me 
+11 Highway 61 Revisited 
+12 Encore: //Like A Rolling Stone 
+
+AUD Source: Nakamichi CM-300's w/CP4 shotgun capsules > unknown 
+deck > Denon DTR-80P Dat. Mics on stand in OTS, left of sbd area. 
+
+Transfer: MAD > Sony TCD-D10Pro > Coax SPDIF > Audiophile 2496 > 
+Soundforge (at 48kHz) > CD-Wave > R8Brain (44.1kHz) > TLH > FLAC. 
+
+Notes: 
+- Beginnings of first and last songs slightly clipped. 
+- Tracks d1t06 & d2t01 can be rejoined seamlessly on longer media. 
+- Soundforge used to make fades. 
+- TLH used for SBE-OK, FLAC compression and making checksums. 
+
+md5 
+
+225754881e2b390ae75338f0fabcbd51 *bd1995-06-15d1t01.flac 
+2eebfba40afa86699dd3f8989edd6aa1 *bd1995-06-15d1t02.flac 
+72c6f460eb861c3e9e69bcabe23d93b2 *bd1995-06-15d1t03.flac 
+992005958c2776820ec0f86b8f93e3f7 *bd1995-06-15d1t04.flac 
+cd4ebd0c05c5b8b90e7381be74ce07c7 *bd1995-06-15d1t05.flac 
+cdb85e1100b1c679935d6ccd95a838c7 *bd1995-06-15d1t06.flac 
+179318194783e53f50fc6fc934950c62 *bd1995-06-15d2t01.flac 
+4d0119c4b7de5395a1ad38227d50b7af *bd1995-06-15d2t02.flac 
+21544e67d76e16047ab32c8f8e93f4fc *bd1995-06-15d2t03.flac 
+0e6a29735ca837517be2e4e048ae0315 *bd1995-06-15d2t04.flac 
+709615d29e53cb933469b8e91dbb4075 *bd1995-06-15d2t05.flac 
+dec8148ca4ae9694b9da256851dee18f *bd1995-06-15d2t06.flac 
+
+ffp 
+
+bd1995-06-15d1t01.flac:0965be1ec3aea9ae4d91fec4646a4c0f 
+bd1995-06-15d1t02.flac:41d13d4f17f8675a19f66e818728d479 
+bd1995-06-15d1t03.flac:0469c8072f05c5666f4a1279a46cd858 
+bd1995-06-15d1t04.flac:157f14dabbc443c1bf83a511aa7b44a6 
+bd1995-06-15d1t05.flac:312a049bf9cad80516dedf3d435edc99 
+bd1995-06-15d1t06.flac:2399c0aa34504cd324b48e0aec8857f4 
+bd1995-06-15d2t01.flac:6e129edf7e9db034a298b774644bec0d 
+bd1995-06-15d2t02.flac:4928656e0c6962d3f08799a24a300d2f 
+bd1995-06-15d2t03.flac:c5a7b790767c818451c29490b1da4641 
+bd1995-06-15d2t04.flac:c032b0e81e02891c72ef1d239f4c616d 
+bd1995-06-15d2t05.flac:788850bdc600f30f1cc9a7cb89fea04e 
+bd1995-06-15d2t06.flac:6f7cafe3a64f2815a371c78a1494a72d 
+
+shntool 
+
+    length     expanded size   cdr  WAVE problems filename
+     4:39.62       49361468    ---   --   ---xx   bd1995-06-15d1t01.flac 
+     6:09.22       65143388    ---   --   ---xx   bd1995-06-15d1t02.flac 
+     6:47.13       71825420    ---   --   ---xx   bd1995-06-15d1t03.flac 
+     8:44.09       92454812    ---   --   ---xx   bd1995-06-15d1t04.flac 
+     5:27.71       57849836    ---   --   ---xx   bd1995-06-15d1t05.flac 
+     7:35.53       80386700    ---   --   ---xx   bd1995-06-15d1t06.flac 
+     5:17.08       55937660    ---   --   ---xx   bd1995-06-15d2t01.flac 
+     9:06.62       96460268    ---   --   ---xx   bd1995-06-15d2t02.flac 
+     8:10.10       86459564    ---   --   ---xx   bd1995-06-15d2t03.flac 
+     7:13.02       76385948    ---   --   ---xx   bd1995-06-15d2t04.flac 
+     6:31.65       69125324    ---   --   ---xx   bd1995-06-15d2t05.flac 
+     7:19.33       77517260    ---   --   ---xx   bd1995-06-15d2t06.flac 
+    83:02.35      878907648 B                     (totals for 12 files, 0.5017 overall compression ratio) 
+
+There were no sector boundary errors. 

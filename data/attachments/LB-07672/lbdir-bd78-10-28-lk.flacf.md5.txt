@@ -1,0 +1,31 @@
+6d8a815f5aee3b073255ee5bfea5cbc9  D1\Carbondale 28oct78 101.flac
+2bc1bf397466a864aa396d8910a3eb6f  D1\Carbondale 28oct78 102.flac
+011efe7743745db697f37912ddaec512  D1\Carbondale 28oct78 103.flac
+714f9d1909566435f1171cb1b16aa0a3  D1\Carbondale 28oct78 104.flac
+e252394f7c55414a967f51b0414a5b59  D1\Carbondale 28oct78 105.flac
+92f1a081f4b7525a6fea956c8925f269  D1\Carbondale 28oct78 106.flac
+aea53614f98970d7c8345074fad9663d  D1\Carbondale 28oct78 107.flac
+b8b52f61e73e8eca44d2a9acc36c6f6b  D1\Carbondale 28oct78 108.flac
+1c97e579708275081cb4e74611888f88  D1\Carbondale 28oct78 109.flac
+d00bad70f390205dccb44ec437b582d7  D1\Carbondale 28oct78 110.flac
+9a23463cf0dccde064bc04aa6c049900  D1\Carbondale 28oct78 111.flac
+b0ad5a4d7e7a96717da4a486857d5582  D1\Carbondale 28oct78 112.flac
+f1615321e3154ef1c68947d43790d4d4  D1\Carbondale 28oct78 113.flac
+41ce39499027d200e4a69229beb9a699  D1\Carbondale 28oct78 114.flac
+acd50ef2e849732857f04ba69a792273  D1\D1.md5
+b4ad3c9e56d2c9776e5dd59747338aa9  D2\Carbondale 28oct78 201.flac
+78c05ef49c35d6d7933741f0dc84161c  D2\Carbondale 28oct78 202.flac
+842b62886710f4d8c10ea83cbf4f6994  D2\Carbondale 28oct78 203.flac
+7735224feb824bcb9ab296121a891cf6  D2\Carbondale 28oct78 204.flac
+c8b9522ededd600cf50d5508fad1b452  D2\Carbondale 28oct78 205.flac
+950b08f08f1b3d00a5c89db3537f7373  D2\Carbondale 28oct78 206.flac
+3d62b1c90557294179fa6e07edf0af41  D2\Carbondale 28oct78 207.flac
+ff51cee6352bd2905927b88a55be7467  D2\Carbondale 28oct78 208.flac
+774270765715895a7864faa56360c4f0  D2\Carbondale 28oct78 209.flac
+8fbdaea18efe4d644c93c9092e6eb8d0  D2\Carbondale 28oct78 210.flac
+bc622c8bc7c6b30688ba06fb04398413  D2\Carbondale 28oct78 211.flac
+db1c89dc292d2deb6a444bab12708fbf  D2\Carbondale 28oct78 212.flac
+e27c4d211d22a8f96b262aa89f0d5748  D2\Carbondale 28oct78 213.flac
+eddcbe587b45e49d54b66cf218ad9d9d  D2\D2.md5
+0c930adb3e5bc3f9deaaa9409c7a0186  info.txt
+cac047eeea7cde4ba0d0b5c3dde71c65  LK 1978 Leg 3 DVD 6.md5

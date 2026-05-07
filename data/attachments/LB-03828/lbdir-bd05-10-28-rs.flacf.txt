@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-10-28-rs.flacf 
+=================== 
+=================== 
+=================== 
+a9206156eb71c753119259c89c74c372  bd05-10-28-rs-LB-3828.txt
+467f7066f9b00aa73a93a7c79571cb12  bd05-11-28-rs.flacf.md5
+e3cd77b1ec68778e3a25938308be66ff  bdylan-pointed.jpeg
+f52e3ba2b03f95c28e86806fcf5cdf24  bdylan-pointed1.jpeg
+1e37c44b640c21bb0ae6d423b3962675  pointed shoes - 101.flac
+cb34841ae6567913e521c1e8d638d18a  pointed shoes - 102.flac
+8ecafe07be4e975d92acbc262f21ebee  pointed shoes - 103.flac
+80681a4f6523248bedf29a9ecd57c4c9  pointed shoes - 104.flac
+a16500b28521a5746105dd782d054cfd  pointed shoes - 105.flac
+3ccad5a1998a667a6525076c03faa078  pointed shoes - 106.flac
+a69663feb70488a20277ee081add2a34  pointed shoes - 107.flac
+68fd25d5b0ddaf504563cafe9f0aeb84  pointed shoes - 108.flac
+0c004a7487ecd1c51e3aab8836149c97  pointed shoes - 109.flac
+6393d41ef76212a80a28450f87a9a659  pointed shoes - 110.flac
+ac9643d8a4636acacaed91209a49ebe8  pointed shoes - 111.flac
+5476c4728b438563cf42b9ac7db0df40  pointed shoes - 112.flac
+77336d81b85b028ce599d6c209624bcd  pointed shoes - 201.flac
+a97ff87d807278afc0e70ad20ebc4593  pointed shoes - 202.flac
+183f0d2264b518f2a4aa92e98f638c15  pointed shoes - 203.flac
+12126e7550639929731c8e29dfb3a12d  pointed shoes - 204.flac
+5e5675c2876bb28c1768396b1efee491  pointed shoes - 205.flac
+5fa313f6e1ecd195738ec484fb87cc09  pointed shoes - 206.flac
+59c85c78913743152bbaed31443642b0  pointed shoes - 207.flac
+f0f8c65b0b1b5f0646f49834c26bbb8f  pointed shoes - 208.flac
+693da9fe0da119bf5c2f23baa3430046  pointed shoes - 209.flac
+d12c8121641c7d5c2a50a42e5192557f  pointed shoes - 210.flac
+4f9c439c00d2bc770ad7facc50a8d565  pointed shoes - 211.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-10-28-rs.flacf 
+=================== 
+=================== 
+=================== 
+pointed shoes - 101.flac:33934c146fd852cab5e25f60f046e788
+pointed shoes - 102.flac:929199ee31d5cc214e96e771f4606195
+pointed shoes - 103.flac:b48bc8358928f8799c7826a0e14e37df
+pointed shoes - 104.flac:d2a6ae8941728bc26cf798c1cca1445b
+pointed shoes - 105.flac:fc6679ccc648063925fd8d759c39d68a
+pointed shoes - 106.flac:eaba5c561e1997e7639e4a8229f612a5
+pointed shoes - 107.flac:1d9166833995ca40e213afd03ec0fc21
+pointed shoes - 108.flac:efbb506381f8c34b24eedda3eccfc790
+pointed shoes - 109.flac:5617bf39ffb73cd561a6647b96cfeb42
+pointed shoes - 110.flac:16dcaf28ea27874c478aa3e409b0d812
+pointed shoes - 111.flac:0c9b5f05e08d5e24527d5c0e66df488b
+pointed shoes - 112.flac:5fa47bfe6606f0260f3fa0b8caded1ac
+pointed shoes - 201.flac:e3d91f5b2329bed15a16af84450cb11a
+pointed shoes - 202.flac:2d5ab6fa47ffb53d50fe918fd36cb3c3
+pointed shoes - 203.flac:d23f68639578a1b28a3a638729bb66e0
+pointed shoes - 204.flac:b66b21a4dac8186f87da7aad97f6aba7
+pointed shoes - 205.flac:91de8bf15731fd7e7bd2428fc7b9a3ab
+pointed shoes - 206.flac:0bf78aefbd33511f608f183ca6129e35
+pointed shoes - 207.flac:36e5161e4788bc21e4713f826987f0f9
+pointed shoes - 208.flac:9f0ba3e9f1836dc34ec8f862e58ea8c5
+pointed shoes - 209.flac:f59425474f17321a5bb20dc9cd7a4bbd
+pointed shoes - 210.flac:5f427be3aed5d1bdf2681f5f9e5370bf
+pointed shoes - 211.flac:533d6d52bf8ed7527437dc3341e2e64b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-10-28-rs.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.55        7009004 B   ---   --   ---xx   flac  0.4943  pointed shoes - 101.flac
+     4:46.36       50535116 B   ---   --   ---xx   flac  0.6745  pointed shoes - 102.flac
+     6:00.18       63546380 B   ---   --   ---xx   flac  0.6130  pointed shoes - 103.flac
+     5:36.06       59284556 B   ---   --   ---xx   flac  0.6364  pointed shoes - 104.flac
+     5:43.04       60514652 B   ---   --   ---xx   flac  0.5952  pointed shoes - 105.flac
+     8:53.49       94136492 B   ---   --   ---xx   flac  0.6527  pointed shoes - 106.flac
+     7:05.65       75122924 B   ---   --   ---xx   flac  0.6108  pointed shoes - 107.flac
+     6:51.03       72507500 B   ---   --   ---xx   flac  0.5981  pointed shoes - 108.flac
+     8:06.33       85808060 B   ---   --   ---xx   flac  0.6186  pointed shoes - 109.flac
+     5:59.44       63431132 B   ---   --   ---xx   flac  0.6104  pointed shoes - 110.flac
+     5:57.24       63031292 B   ---   --   ---xx   flac  0.5930  pointed shoes - 111.flac
+     8:12.14       86821772 B   ---   --   ---xx   flac  0.6557  pointed shoes - 112.flac
+     6:58.10       73758764 B   ---   --   ---xx   flac  0.6330  pointed shoes - 201.flac
+     7:20.35       77698364 B   ---   --   ---xx   flac  0.5877  pointed shoes - 202.flac
+     7:41.29       81388652 B   ---   --   ---xx   flac  0.6600  pointed shoes - 203.flac
+     7:20.07       77632508 B   ---   --   ---xx   flac  0.6078  pointed shoes - 204.flac
+     5:50.39       61831772 B   ---   --   ---xx   flac  0.6075  pointed shoes - 205.flac
+     5:58.36       63235916 B   ---   --   ---xx   flac  0.6579  pointed shoes - 206.flac
+     5:27.28       57748700 B   ---   --   ---xx   flac  0.7057  pointed shoes - 207.flac
+     6:37.50       70148444 B   ---   --   ---xx   flac  0.6102  pointed shoes - 208.flac
+     8:00.59       84810812 B   ---   --   ---xx   flac  0.6363  pointed shoes - 209.flac
+     6:47.50       71912444 B   ---   --   ---xx   flac  0.7233  pointed shoes - 210.flac
+     4:51.37       51419468 B   ---   --   ---xx   flac  0.6644  pointed shoes - 211.flac
+   146:45.56     1553334724 B                            0.6329  (23 files)
+=================== 
+=================== 
+=================== 

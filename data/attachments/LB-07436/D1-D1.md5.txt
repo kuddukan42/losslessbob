@@ -1,0 +1,10 @@
+01a20b0215edbf826e28720a2150c89b *01 Gotta Serve.flac
+2a1d393e53b51a16d17bd2dbdec165ab *02 Simple Twist.flac
+598c878b5b0191f6315dae04fc2ef04b *03 Watchtower.flac
+8abac39944cc39588b2c0dbbf6f29a55 *04 LRS.flac
+b3d32aaf46332d2dbc8cebdfaa401dec *05 G Beautiful.flac
+98e29bf895a705a7866eff841578031e *06 Animals.flac
+8bd9b7bc0bb7b7256de5a4de156e64f7 *07 Ramona.flac
+58fb9c44236483db413908194895ed44 *08 Disagree.flac
+2af3632abc540e643b91efab715ab4aa *09 Hell.flac
+b30d4ec80ff845cc7bcbe2062ded1b89 *10 GirlNC.flac

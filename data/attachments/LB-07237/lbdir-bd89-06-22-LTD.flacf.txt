@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-22-LTD.flacf 
+=================== 
+=================== 
+=================== 
+81e75dcc96383ea68bee0c551b97aa8a  1989-06-22 Livorno.md5
+cba7b3b5944fe97a89176fc2eb6b6573  Livorno 1989-01.flac
+819a1ca4071177b4eacf62ccecb022ab  Livorno 1989-02.flac
+fdd7dcfc67365c2837013e4278988839  Livorno 1989-03.flac
+209adbb5004e201c4c713b31f84544b2  Livorno 1989-04.flac
+baeb0f8e222522f374f2b62a875abd0b  Livorno 1989-05.flac
+46110eb72e2e058bd06646eaf0948be8  Livorno 1989-06.flac
+7f23231cb0d84779322aec39ed3f545f  Livorno 1989-07.flac
+269c5ca5d7d6e79feaf482032f020653  Livorno 1989-08.flac
+4c27f1160f38d00694fef66054fd5862  Livorno 1989-09.flac
+ec5bac79e017df16d3b2db5e769a6c0d  Livorno 1989-10.flac
+f7ddc4c5d5556a9f62b62f42fb1b9a96  Livorno 1989-11.flac
+ef8a14c49213c541da401c26fc46fe6c  Livorno 1989-12.flac
+72fec67c395c08d448fa240b78d7ccde  Livorno 1989-13.flac
+0eecee4c6aa5ae726e123af66753d601  Livorno 1989-14.flac
+cea454489d65d72939acde392fa708a1  Livorno 1989-15.flac
+eb272dcee7435bcb0b6fc6c0855a2677  Livorno 1989-16.flac
+270cfef8eb86853a7d8b6c0aed48eb0d  Livorno-1989-06-22.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-22-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Livorno 1989-01.flac:fcea6642aa36e8e231b9a0c90926d998
+Livorno 1989-02.flac:71bb4b77fbe7406e0d9a2951a63fa742
+Livorno 1989-03.flac:996dd54c00c9e79dbde6b6023a2b459a
+Livorno 1989-04.flac:840d3426c2831b4534b46fbfed0f6402
+Livorno 1989-05.flac:c593093aa01ae905b9ad6e13cd6f259f
+Livorno 1989-06.flac:f6c54a65a9eb30b1fda4d73d22203776
+Livorno 1989-07.flac:d6cd0abccc9a3f529749fb757d2c1be3
+Livorno 1989-08.flac:1da0dc048aadccedd529d0cddee18582
+Livorno 1989-09.flac:5954e07677cdddcda713eee2e58f78ae
+Livorno 1989-10.flac:0a8bcb354b467b398d15376f51fc2b5e
+Livorno 1989-11.flac:ac48da32e6070136612d599544ca4300
+Livorno 1989-12.flac:96ad32b34cd5b37bae9ee36b02d3ea33
+Livorno 1989-13.flac:d2ee30c8cea547b713799564711fc4fa
+Livorno 1989-14.flac:6950c03168ccca8761ecc22e37ca7bc9
+Livorno 1989-15.flac:da5282eca05b8313eeea76bca2689ac0
+Livorno 1989-16.flac:856a7c4e8b80fc329994fc73d19c3fbb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-22-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:45.21       50324504 B   -b-   --   ---xx   flac  0.6034  Livorno 1989-01.flac
+     6:56.48       73496500 B   -b-   --   ---xx   flac  0.6453  Livorno 1989-02.flac
+     4:53.26       51746100 B   -b-   --   ---xx   flac  0.6222  Livorno 1989-03.flac
+     4:42.05       49755868 B   -b-   --   ---xx   flac  0.6013  Livorno 1989-04.flac
+     4:14.50       44922444 B   -b-   --   ---xx   flac  0.6094  Livorno 1989-05.flac
+     5:40.07       59991348 B   -b-   --   ---xx   flac  0.6361  Livorno 1989-06.flac
+     5:07.64       54304972 B   -b-   --   ---xx   flac  0.5748  Livorno 1989-07.flac
+     5:01.62       53243216 B   -b-   --   ---xx   flac  0.6363  Livorno 1989-08.flac
+     4:52.69       51670576 B   -b-   --   ---xx   flac  0.5672  Livorno 1989-09.flac
+     3:49.51       40515500 B   -b-   --   ---xx   flac  0.5753  Livorno 1989-10.flac
+     3:24.67       36144092 B   -b-   --   ---xx   flac  0.6335  Livorno 1989-11.flac
+     3:48.13       40248952 B   -b-   --   ---xx   flac  0.6031  Livorno 1989-12.flac
+     6:28.10       68467608 B   -b-   --   ---xx   flac  0.6141  Livorno 1989-13.flac
+     5:29.46       58143276 B   -b-   --   ---xx   flac  0.6097  Livorno 1989-14.flac
+     5:05.63       53949572 B   -b-   --   ---xx   flac  0.6716  Livorno 1989-15.flac
+     6:26.62       68236600 B   -b-   --   ---xx   flac  0.6027  Livorno 1989-16.flac
+    80:47.64      855161128 B                            0.6141  (16 files)
+=================== 
+=================== 
+=================== 

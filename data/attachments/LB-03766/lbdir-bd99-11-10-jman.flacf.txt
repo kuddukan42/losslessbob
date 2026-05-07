@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-10-jman.flacf 
+=================== 
+=================== 
+=================== 
+46938d3ffb903c82665cbc7db49db9fd  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t1.flac
+c9849c4425dd2ad993ee550a79ce0b09  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t2.flac
+d48c5e0aa25083dabeb9abb130198c3a  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t3.flac
+15c0ce19cf142aec190c37e15b282ad7  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t4.flac
+d48466cf830deff3da092a3b34a9621e  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t5.flac
+b46e66a03b949756551e1c5c9a539d2e  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t6.flac
+ba2cda7296014b51bcbc3cc874c1e82b  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t7.flac
+a7cc0e1b5c5f58dd13fbf32241863ff6  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t8.flac
+da1feef6a63e64b36a80b75997fc6260  bd.1999-11-10.jman.d1\bd.1999-11-10.jman.d1t9.flac
+64e3cf1dc579b9677ae5add992d30c72  bd.1999-11-10.jman.d2\bd.1999-11-10.jman.d2t1.flac
+b02f67ebf125768e499bb1f11f4f40f9  bd.1999-11-10.jman.d2\bd.1999-11-10.jman.d2t2.flac
+7d244682992339fe1d115dcbf8144581  bd.1999-11-10.jman.d2\bd.1999-11-10.jman.d2t3.flac
+1d877ead880aa6b3b507907427baa3c5  bd.1999-11-10.jman.d2\bd.1999-11-10.jman.d2t4.flac
+784d0364f17e563aba3ba386c29cf1cf  bd.1999-11-10.jman.d2\bd.1999-11-10.jman.d2t5.flac
+f5d63657c106466335aade371cedf2e1  bd.1999-11-10.jman.d2\bd.1999-11-10.jman.d2t6.flac
+29b9274fffc808dcf945240279286e21  bd.1999-11-10.jman.txt
+aa31f61d7759ce6ce89e489ee8c3e7ee  bd99-11-10-jman-LB-3766.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-10-jman.flacf\bd.1999-11-10.jman.d1 
+=================== 
+=================== 
+=================== 
+bd.1999-11-10.jman.d1t1.flac:ec7ddfd746507e1b864e653109be49d7
+bd.1999-11-10.jman.d1t2.flac:2e3fa8e7c4b2c8794fb36c7c38c0c8ae
+bd.1999-11-10.jman.d1t3.flac:02281077771ee18a25ebe0d98c0644a4
+bd.1999-11-10.jman.d1t4.flac:7e7128d10475974c256667251f6f3b16
+bd.1999-11-10.jman.d1t5.flac:ae63234d82ce6dd7ed38f3ee10fba03a
+bd.1999-11-10.jman.d1t6.flac:ddeef71810f8fdba95a4fbe08577b8b9
+bd.1999-11-10.jman.d1t7.flac:3ab85a3540e9a471ba9591ddc9f2336f
+bd.1999-11-10.jman.d1t8.flac:ffe99d4b9744cd26ad96e56c62fe93e8
+bd.1999-11-10.jman.d1t9.flac:d0371a2be66bbc656bd697903be15d6f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-10-jman.flacf\bd.1999-11-10.jman.d2 
+=================== 
+=================== 
+=================== 
+bd.1999-11-10.jman.d2t1.flac:530f185503c2e1eaf5157e6d99e08fa7
+bd.1999-11-10.jman.d2t2.flac:49fb2a287edeec990da90d0a95c6a85d
+bd.1999-11-10.jman.d2t3.flac:6b67a0a5cac42c4bf6d1695e136a5d7e
+bd.1999-11-10.jman.d2t4.flac:9d4014e95f299766d6ad81d340980881
+bd.1999-11-10.jman.d2t5.flac:e8e08e2134a1077bfa5a81f2a1cfc784
+bd.1999-11-10.jman.d2t6.flac:d03018d5a69e8ceb532dddaed66d1b32
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-10-jman.flacf\bd.1999-11-10.jman.d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:41.02       38989148 B   ---   --   ---xx   flac  0.5899  bd.1999-11-10.jman.d1t1.flac
+     7:07.53       75447500 B   ---   --   ---xx   flac  0.5859  bd.1999-11-10.jman.d1t2.flac
+     6:31.62       69118268 B   ---   --   ---xx   flac  0.5716  bd.1999-11-10.jman.d1t3.flac
+     9:35.09      101451212 B   ---   --   ---xx   flac  0.6252  bd.1999-11-10.jman.d1t4.flac
+     5:37.61       59590316 B   ---   --   ---xx   flac  0.4912  bd.1999-11-10.jman.d1t5.flac
+     4:54.45       51967484 B   ---   --   ---xx   flac  0.5871  bd.1999-11-10.jman.d1t6.flac
+     6:05.14       64418972 B   ---   --   ---xx   flac  0.6273  bd.1999-11-10.jman.d1t7.flac
+     7:29.27       79267148 B   ---   --   ---xx   flac  0.5852  bd.1999-11-10.jman.d1t8.flac
+     7:14.31       76630556 B   ---   --   ---xx   flac  0.6219  bd.1999-11-10.jman.d1t9.flac
+    58:17.04      616880604 B                            0.5907  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-10-jman.flacf\bd.1999-11-10.jman.d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.27       50513948 B   ---   --   ---xx   flac  0.5810  bd.1999-11-10.jman.d2t1.flac
+     6:43.47       71199788 B   ---   --   ---xx   flac  0.6274  bd.1999-11-10.jman.d2t2.flac
+     8:36.61       91165916 B   ---   --   ---xx   flac  0.5711  bd.1999-11-10.jman.d2t3.flac
+     9:47.54      103673852 B   ---   --   ---xx   flac  0.5532  bd.1999-11-10.jman.d2t4.flac
+     7:08.32       75574508 B   ---   --   ---xx   flac  0.6314  bd.1999-11-10.jman.d2t5.flac
+     6:09.24       65148092 B   ---   --   ---xx   flac  0.5796  bd.1999-11-10.jman.d2t6.flac
+    43:12.20      457276104 B                            0.5881  (6 files)
+=================== 
+=================== 
+=================== 

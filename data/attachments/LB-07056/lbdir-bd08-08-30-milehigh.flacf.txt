@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-08-30-milehigh.flacf 
+=================== 
+=================== 
+=================== 
+1a1a724a200fdb3f317164864346e1c2  2008-08-30milehigh.txt
+88cdc0dbd775fa65ae946268674055b3  bd2008-08-30d1t01.flac
+c1c07ea3aa1cd8df0905ca5b366c9ff3  bd2008-08-30d1t02.flac
+8a683550d7cb8dfd8d3438fa9dba9740  bd2008-08-30d1t03.flac
+276507f22961f32e43bd03c46932b900  bd2008-08-30d1t04.flac
+0bfd32fb77a204d87da4037c5aea7d12  bd2008-08-30d1t05.flac
+05cc9298cda62d08b97bf0eddca3c101  bd2008-08-30d1t06.flac
+a6e1f24e03a12ff007fc9574e2c07867  bd2008-08-30d1t07.flac
+79c6ba1137956f0bb92706d733256ee6  bd2008-08-30d1t08.flac
+a2cf0717ae989cd49eb4860ad9be5b56  bd2008-08-30d1t09.flac
+1039b7161833dd0451cd5aa9f3b3e321  bd2008-08-30d1t10.flac
+42bfadc594dacff54bd2e2f2615338d2  bd2008-08-30d1t11.flac
+1acd8baeb179493190d060340a099bd8  bd2008-08-30d1t12.flac
+0c4fd8238814ad26df65c305dd3af6be  bd2008-08-30d2t01.flac
+ec4d10f3d438fb0ab7f8508b376fcf06  bd2008-08-30d2t02.flac
+8292e8aeeb114ca88cf9f5a6d90520ee  bd2008-08-30d2t03.flac
+93a7e40b80c87c3af74f2ebf85e4966a  bd2008-08-30d2t04.flac
+a7c63351a434ece9fbc6d0fcc79d1087  bd2008-08-30d2t05.flac
+1d2303ef6779feb22e1064f48dff87ce  bd2008-08-30d2t06.flac
+b0309de986ea60298f6944000a0171ec  bd2008-08-30d2t07.flac
+2b395f475bc592c3b1b7abe90cf160c0  bd2008-08-30milehigh.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-08-30-milehigh.flacf 
+=================== 
+=================== 
+=================== 
+bd2008-08-30d1t01.flac:b31ef9e7ec8d2aaef4991ae792245602
+bd2008-08-30d1t02.flac:92ef063406a45e49e771e36ff37ab534
+bd2008-08-30d1t03.flac:3ced33b437405701db24e1f5774ccb4d
+bd2008-08-30d1t04.flac:df5a94e1125a4f5c47a5d1fbabbb11a9
+bd2008-08-30d1t05.flac:147e58647a7241a8405afaeaaf5d8d36
+bd2008-08-30d1t06.flac:d5019cef7fcb7f3f314f34287bc4b0ed
+bd2008-08-30d1t07.flac:d81af30b6acebf796e2ffd69a5136b60
+bd2008-08-30d1t08.flac:bc20e4fb3284c79d5af144a62c31b562
+bd2008-08-30d1t09.flac:3018ab4d32971e0ee80d13b4421165c4
+bd2008-08-30d1t10.flac:2638d009e9964d7198c94e5b6f3154cb
+bd2008-08-30d1t11.flac:d2e780a1c0b8b805af5d31960c799c95
+bd2008-08-30d1t12.flac:4cc2f92b3627cd41a6759e5ebf8710be
+bd2008-08-30d2t01.flac:48f666e644175fac5d4b0916d766584b
+bd2008-08-30d2t02.flac:d9683958dfe17c483e86b782b460dd31
+bd2008-08-30d2t03.flac:e05f23b0d327f90c4557a85a87372fb4
+bd2008-08-30d2t04.flac:80141ca6a8cdcf0cb2cfda8b85c54a74
+bd2008-08-30d2t05.flac:3fbc6dd8db1655cdf7971d118c80d158
+bd2008-08-30d2t06.flac:2a97c031531747beafdc221e0ee53d77
+bd2008-08-30d2t07.flac:98e2d86a71e5a698ca66e78293187e75
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-08-30-milehigh.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:51.15        9031724 B   ---   --   ---xx   flac  0.4276  bd2008-08-30d1t01.flac
+     4:15.37       45069068 B   ---   --   ---xx   flac  0.4768  bd2008-08-30d1t02.flac
+     6:18.55       66808604 B   ---   --   ---xx   flac  0.4591  bd2008-08-30d1t03.flac
+     7:00.30       74158604 B   ---   --   ---xx   flac  0.4764  bd2008-08-30d1t04.flac
+     6:49.09       72168812 B   ---   --   ---xx   flac  0.4718  bd2008-08-30d1t05.flac
+     8:07.18       85949180 B   ---   --   ---xx   flac  0.4780  bd2008-08-30d1t06.flac
+     5:52.17       62132828 B   ---   --   ---xx   flac  0.4555  bd2008-08-30d1t07.flac
+     5:00.43       53021180 B   ---   --   ---xx   flac  0.4607  bd2008-08-30d1t08.flac
+     8:52.26       93905996 B   ---   --   ---xx   flac  0.4569  bd2008-08-30d1t09.flac
+     6:14.21       66023036 B   ---   --   ---xx   flac  0.4316  bd2008-08-30d1t10.flac
+     6:22.35       67467164 B   ---   --   ---xx   flac  0.4812  bd2008-08-30d1t11.flac
+     4:52.06       51522956 B   ---   --   ---xx   flac  0.4775  bd2008-08-30d1t12.flac
+     6:25.70       68078684 B   ---   --   ---xx   flac  0.4815  bd2008-08-30d2t01.flac
+     8:00.46       84780236 B   ---   --   ---xx   flac  0.4086  bd2008-08-30d2t02.flac
+     8:00.39       84763772 B   ---   --   ---xx   flac  0.4637  bd2008-08-30d2t03.flac
+     2:38.05       27883004 B   ---   --   ---xx   flac  0.3868  bd2008-08-30d2t04.flac
+     6:22.71       67551836 B   ---   --   ---xx   flac  0.4938  bd2008-08-30d2t05.flac
+     0:33.67        5978828 B   ---   --   ---xx   flac  0.4307  bd2008-08-30d2t06.flac
+     5:21.35       56706764 B   ---   --   ---xx   flac  0.5083  bd2008-08-30d2t07.flac
+   107:59.45     1143002276 B                            0.4637  (19 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,128 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Hammerstein Ballroom
+New York City, New York
+
+12 August 2003
+
+1.Silvio (Bob Dylan & Robert Hunter)
+2.I Don't Believe You (She Acts Like We Never Have Met)
+3.Tweedle Dee & Tweedle Dum
+4.It Ain't Me, Babe
+5.Things Have Changed
+6.Watching The River Flow
+7.Love Sick
+8.Highway 61 Revisited
+9.Make You Feel My Love
+10.Drifter's Escape
+11.Moonlight
+12.Honest With Me
+13.It's All Over Now, Baby Blue
+14.Summer Days
+15.Like A Rolling Stone
+16.All Along The Watchtower
+
+Concert # 1547 of The Never-Ending Tour. Concert # 23 of the 2003 US Summer Tour. 2003 concert # 57.
+
+Concert # 46 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+
+4, 13 acoustic with the band.
+
+2, 4, 9, 10, 16 Bob Dylan (harmonica).
+
+4 Larry Campbell (cittern).
+
+5-13, 15, 16 Nils Lofgren (guitar).
+
+12 Larry Campbell (slide guitar).
+
+13 Larry Campbell (pedal steel guitar).
+
+14 Tommy Morrongiello (guitar).
+
+14 Nils Lofgren (slide guitar).
+
+www.bjoner.com
+
+Trade CDr < XLD < flac < dime
+apa05 
+===================
+===================
+===================
+=== notes.txt
+===================
+===================
+===================
+CEDAR Notes:
+
+CEDAR #1
+
+FINGERPRINT
+At 0:02 of disc 2 (i.e. 2 seconds before the first drumbeat of "Honest With Me") a male voice on the right yells, "Bobby!" Also, the intro begins with "donned make-up in the 70s."
+
+COMMENTS:
+A "rock solid" recording; no complaints at all.
+===================
+===================
+===================
+=== shntool.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename     6:29.48       68732540 B   ---   --   ---xx  01 Bob Dylan - 101-Silvio.flac     7:00.07       74104508 B   ---   --   ---xx  02 Bob Dylan - 102-I Don't Believe You.flac     5:19.52       56393948 B   ---   --   ---xx  03 Bob Dylan - 103-Tweedle Dee & Tweedle Dum.flac     8:25.41       89178476 B   ---   --   ---xx  04 Bob Dylan - 104-It Ain't Me, Babe.flac     7:21.27       77855948 B   ---   --   ---xx  05 Bob Dylan - 105-Things Have Changed (Nils ->).flac     5:16.47       55852988 B   ---   --   ---xx  06 Bob Dylan - 106-Watching The River Flow.flac     6:42.55       71042204 B   ---   --   ---xx  07 Bob Dylan - 107-Love Sick.flac     7:18.66       77418476 B   ---   --   ---xx  08 Bob Dylan - 108-Highway 61 Revisited.flac     5:57.17       63014828 B   ---   --   ---xx  09 Bob Dylan - 109-Make You Feel My Love.flac     6:56.36       73467116 B   ---   --   ---xx  10 Bob Dylan - 110-Drifter's Escape.flac     6:16.52       66448748 B   ---   --   ---xx  11 Bob Dylan - 111-Moonlight.flac     7:14.45       76663484 B   ---   --   ---xx  01 Bob Dylan - 201-Honest With Me.flac     9:15.38       97991420 B   ---   --   ---xx  02 Bob Dylan - 202-It's All Over Now, Baby Blue.flac    10:46.25      114013244 B   ---   --   ---xx  03 Bob Dylan - 203-Summer Days.flac     6:56.03       73389500 B   ---   --   ---xx  04 Bob Dylan - 204-Like A Rolling Stone.flac     7:20.49       77731292 B   ---   --   ---xx  05 Bob Dylan - 205-All Along The Watchtower.flac   114:38.08     1213298720 B                            0.5425  (16 files)
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - 101-Silvio.flac:9ea8371c9004711a258b247cda5cae2002 Bob Dylan - 102-I Don't Believe You.flac:27e320fe874d49003537ebe30507d8ba03 Bob Dylan - 103-Tweedle Dee & Tweedle Dum.flac:4186234cd833f1e61b80bc7e16048f0004 Bob Dylan - 104-It Ain't Me, Babe.flac:41b2ab6e2a93784d8a64e6f8f57d6b9105 Bob Dylan - 105-Things Have Changed (Nils ->).flac:fef9b17c984be377dc49a4cec7fc26b806 Bob Dylan - 106-Watching The River Flow.flac:f965a42c7b97fb47a62dccd740a270b207 Bob Dylan - 107-Love Sick.flac:98c83a1e95e492290738f17cebd284ed08 Bob Dylan - 108-Highway 61 Revisited.flac:425e8f9863e0fc3ddf1074a8a6f6eb7909 Bob Dylan - 109-Make You Feel My Love.flac:7574ab67a923bf500ff58012f96ab86a10 Bob Dylan - 110-Drifter's Escape.flac:709f85134ec6b476b0d8a24174621d5e11 Bob Dylan - 111-Moonlight.flac:e5d1fbfb520ca4e20a05610918fe1fcf
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+50e67fd8e7f7dd44f2dd924ba9a43cea *01 Bob Dylan - 101-Silvio.flac
+7c2ea4839bf86e7c96c85a56270f22f4 *02 Bob Dylan - 102-I Don't Believe You.flac
+6fa417edcfd3a3ff722c56fb898f183b *03 Bob Dylan - 103-Tweedle Dee & Tweedle Dum.flac
+0cf61ac250142088911a190ac56bae56 *04 Bob Dylan - 104-It Ain't Me, Babe.flac
+45e970b3988de9ee87ba019e0e3497aa *05 Bob Dylan - 105-Things Have Changed (Nils ->).flac
+35844ad9e4ef0610c11b576597e1a0bf *06 Bob Dylan - 106-Watching The River Flow.flac
+56345066a628232c29cd8fe2a6504e43 *07 Bob Dylan - 107-Love Sick.flac
+78f2148a5afe53120c7d28218704d40d *08 Bob Dylan - 108-Highway 61 Revisited.flac
+6df64121c910dd686b6caae9f618caf3 *09 Bob Dylan - 109-Make You Feel My Love.flac
+70ae3f714bc8d72209510866c058d39b *10 Bob Dylan - 110-Drifter's Escape.flac
+c4e66ae94248b1abb69662e82af2996e *11 Bob Dylan - 111-Moonlight.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - 201-Honest With Me.flac:dfc39eb3a48a90d28793e08b6ebead3602 Bob Dylan - 202-It's All Over Now, Baby Blue.flac:b6bdceeee5f352cd227c9a16209cfd1703 Bob Dylan - 203-Summer Days.flac:21c9c091bd1132ce72cbdf67d9032df304 Bob Dylan - 204-Like A Rolling Stone.flac:9596c01b866df3e49ab513ca0690e06d05 Bob Dylan - 205-All Along The Watchtower.flac:f7ac8cbca7872c22f5218644b9799472
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+e32877e75fceaf528c654e516e4c58c4 *01 Bob Dylan - 201-Honest With Me.flac
+94c230347f73cac6ea997e227cd2fd70 *02 Bob Dylan - 202-It's All Over Now, Baby Blue.flac
+941229ebead46be2b440daa4d54437e3 *03 Bob Dylan - 203-Summer Days.flac
+6952d1c4bf5e58ff7d459fa535eb6eb5 *04 Bob Dylan - 204-Like A Rolling Stone.flac
+8ad0c84a81d4f05a0ba4cdeeebcfee2c *05 Bob Dylan - 205-All Along The Watchtower.flac
+
+===================
+===================
+===================

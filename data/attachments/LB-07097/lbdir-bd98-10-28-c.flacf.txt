@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-10-28-c.flacf 
+=================== 
+=================== 
+=================== 
+5ba7567a2463052e3b5b7ea71b2c3fea  bd-98-10-28-Auburn Hills-d2\bd-98-10-28-Auburn Hills-d2.md5
+d25a09e277cec12f75f02a70fe8e3f12  bd-98-10-28-Auburn Hills-d2\Track01.flac
+6a361895bd9e1cfbf054b391d0b2ec66  bd-98-10-28-Auburn Hills-d2\Track02.flac
+cd7280a996c63604c33a5f52e212c243  bd-98-10-28-Auburn Hills-d2\Track03.flac
+19970166d92a431f7ae143701d1710f3  bd-98-10-28-Auburn Hills-d2\Track04.flac
+ead7d8d66946209dc2d01fc933634472  bd-98-10-28-Auburn Hills-d2\Track05.flac
+8c1fd8ed1b9453df065c9f62fe398857  bd-98-10-28-Auburn Hills-d2\Track06.flac
+fc231dc58d02adc26aa1d3f22928d1bc  bd-98-10-28-Auburn Hills-d2\Track07.flac
+1e16eaf2fed2b6a87b69106be17af1a5  bd-98-10-28-Auburn Hills-d2\Track08.flac
+30a6c0130d3bb0566585ea94f812973f  bd98-10-28-Auburn Hills-d1\bd98-10-28-Auburn Hills-d1.md5
+da3c6f770bbc9d0e573ce09f507500b2  bd98-10-28-Auburn Hills-d1\Track01.flac
+e836453e0919d0b5edfc60ad9d51cba5  bd98-10-28-Auburn Hills-d1\Track02.flac
+9d954ed48da338fb3d2978c682a1fa9d  bd98-10-28-Auburn Hills-d1\Track03.flac
+79fa451cdf85f33bddfa218a7995c143  bd98-10-28-Auburn Hills-d1\Track04.flac
+a7df8a1c418fd918ad2ca74c91d666c5  bd98-10-28-Auburn Hills-d1\Track05.flac
+772da17f6cc5f7fde405a18955d51439  bd98-10-28-Auburn Hills-d1\Track06.flac
+fccd7300458f8f339b1c5e7c6f062359  bd98-10-28-Auburn Hills-d1\Track07.flac
+b4f035295ead02d2e9a2667a7d94afc3  bd98-10-28-Auburn Hills-d1\Track08.flac
+748577968a620b3ef59ccd9e36a8dc5f  bd98-10-28.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-28-c.flacf\bd98-10-28-Auburn Hills-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:10549fe5f956b569289a8c9304fa739d
+Track02.flac:aefac098a755c466e20df02434f3ec01
+Track03.flac:db23d7f3e6347d01f4aba6c9aeaa579a
+Track04.flac:098c37c0075821aab335b24e325a52b3
+Track05.flac:6b839f265ef13884cc8e38b85d570049
+Track06.flac:af19dbcacc1620da5a8df484c3e250d2
+Track07.flac:4bd81c9630b7a16d8faede6df17f32d7
+Track08.flac:7b7c36a4ec9476d1e6194306297968a3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-28-c.flacf\bd-98-10-28-Auburn Hills-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:7dc4f4cf280a0e8c8125416cd460b4e1
+Track02.flac:6945e100de8d42cbcec9fc33e1f5e1a7
+Track03.flac:b8012cf859524aa84471383874271816
+Track04.flac:49562887c11d172447fcab2899af328f
+Track05.flac:eeb9ab7991bdc5a07022d2bed58b1ba4
+Track06.flac:d9367c2ecbd01aa028a1bcd6d8dbce15
+Track07.flac:8cd66724a174e1438165283eedf13d5c
+Track08.flac:44217b163a982612968fa8202e45feaf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-28-c.flacf\bd98-10-28-Auburn Hills-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.05       42700604 B   ---   --   ---xx   flac  0.5441  Track01.flac
+     4:15.29       45050252 B   ---   --   ---xx   flac  0.4977  Track02.flac
+     7:45.48       82138940 B   ---   --   ---xx   flac  0.5218  Track03.flac
+     4:24.13       46600220 B   ---   --   ---xx   flac  0.5011  Track04.flac
+     6:05.28       64451900 B   ---   --   ---xx   flac  0.5155  Track05.flac
+     4:40.33       49469660 B   ---   --   ---xx   flac  0.3927  Track06.flac
+     6:49.65       72300524 B   ---   --   ---xx   flac  0.4308  Track07.flac
+     4:47.36       50711516 B   ---   --   ---xx   flac  0.4634  Track08.flac
+    42:50.32      453423616 B                            0.4834  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-28-c.flacf\bd-98-10-28-Auburn Hills-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:05.27       96201548 B   ---   --   ---xx   flac  0.5305  Track01.flac
+     4:45.64       50424572 B   ---   --   ---xx   flac  0.4307  Track02.flac
+     7:10.27       75915548 B   ---   --   ---xx   flac  0.5279  Track03.flac
+     7:35.67       80419628 B   ---   --   ---xx   flac  0.4566  Track04.flac
+     5:43.49       60620492 B   ---   --   ---xx   flac  0.5329  Track05.flac
+     5:19.34       56351612 B   ---   --   ---xx   flac  0.4516  Track06.flac
+     6:55.11       73231916 B   ---   --   ---xx   flac  0.5117  Track07.flac
+     8:50.47       93602588 B   ---   --   ---xx   flac  0.4394  Track08.flac
+    55:26.26      586767904 B                            0.4873  (8 files)
+=================== 
+=================== 
+=================== 

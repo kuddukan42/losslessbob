@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-10-16-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+3d0fd87fa2fe4de9002a15c0cc065e49  2Track 01.flac
+b8973077162d4066b9b6388933b22456  2Track 02.flac
+b42d26364340e4b4670437efe857b66b  2Track 03.flac
+a902e7fa943a5186c6be9d38c2aab972  2Track 04.flac
+0bade8fdcec56021b07ab89a218c8908  2Track 05.flac
+33fa11595c16c0f92754c7e655775e0e  2Track 06.flac
+411e49679d8d6f31174f864b73bd369d  2Track 07.flac
+5ee4d5b53bf88283eb44a8bebefea36c  2Track 08.flac
+151a5912b5848cdc40b3bfcab892cf22  bd03-10-16-watchtower-remaster.txt
+8032eebfce2b99635a4052c4287cc066  Track 01.flac
+f54b06de57cbfa5b155c9cb8d9ae4e48  Track 02.flac
+411e2039a316ad96a21dc2dc387415a5  Track 03.flac
+23c7849934d59f1f785e0b7a62998a04  Track 04.flac
+43fa1c924ec4b130a69d8f482ac22bf5  Track 05.flac
+f75f45d7875e36f9664341465e157106  Track 06.flac
+a0c644bfb196e57dd5606ec751fd1975  Track 07.flac
+a193d1df7a99988669e781facb4f94a8  Track 08.flac
+c8908732d30faefa2d95c8f23d495c8a  Track 09.flac
+dd6f26beca27a4746706e2d894b2d819  Track 10.flac
+3a9521e8d2e0b7c37c2169c743c0c58f  Track 11.flac
+3e178ddecb1134211896192e4e469fac  Track 12.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-10-16-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+2Track 01.flac:2f1cd44669a399553ae064abc073ffda
+2Track 02.flac:4ebd949b2a74b629fb5281899cdb2900
+2Track 03.flac:7911f236950d80a92bdcfbda9aa62fd1
+2Track 04.flac:9eeed148bfb96f0ab629b73262b9c3a1
+2Track 05.flac:8d8701611675365559f20dc026f914e2
+2Track 06.flac:9003878100ab04e51d64536f2079f2c3
+2Track 07.flac:269015cc77a9d1a5e49c57105f744f64
+2Track 08.flac:334a986bd7fe6686e102e1c779527793
+Track 01.flac:ac2f8f658bbeb3d23fbc4ceca6f2b402
+Track 02.flac:318eb4e372610e8a3fbc5eae27fd5237
+Track 03.flac:09ceaed54a7272ddb819ed17d3d075e0
+Track 04.flac:c790c51c31f78bf557791fb3a36bd0f7
+Track 05.flac:31c52b8e93a5527163bb877dfa83be22
+Track 06.flac:78bb585f60dfa51a35570670b941f4c9
+Track 07.flac:05a77f29ba612ba2d61601d7e7da2ac9
+Track 08.flac:2ab94f46b8b08b34ea74b7c36bfacd0c
+Track 09.flac:06acf1847ac89036fd5793a4a4ad2d44
+Track 10.flac:1fa0b7900e7f5e6a03ff37074c6c2ff3
+Track 11.flac:5d0fe8f14bee959ba7f12177ecf0eb13
+Track 12.flac:38c3e477be857865770f05b0218ca26a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-16-watchtower-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:13.66       76535860 B   -b-   --   ---xx   flac  0.6705  2Track 01.flac
+     6:25.29       67982252 B   ---   --   ---xx   flac  0.5632  2Track 02.flac
+     8:12.27       86852348 B   ---   --   ---xx   flac  0.6542  2Track 03.flac
+     4:03.74       43039292 B   ---   --   ---xx   flac  0.5580  2Track 04.flac
+     4:39.70       49380284 B   ---   --   ---xx   flac  0.6549  2Track 05.flac
+     0:33.62        5967068 B   ---   --   ---xx   flac  0.5813  2Track 06.flac
+     7:23.54       78272252 B   ---   --   ---xx   flac  0.6570  2Track 07.flac
+     8:41.36       91988916 B   -b-   --   ---xx   flac  0.6369  2Track 08.flac
+     0:48.08        8486356 B   -b-   --   ---xx   flac  0.5152  Track 01.flac
+     4:27.04       47108252 B   ---   --   ---xx   flac  0.6810  Track 02.flac
+     7:02.20       74487884 B   ---   --   ---xx   flac  0.6238  Track 03.flac
+     5:46.12       61062668 B   ---   --   ---xx   flac  0.6534  Track 04.flac
+     6:19.40       66949724 B   ---   --   ---xx   flac  0.5724  Track 05.flac
+     7:26.23       78728540 B   ---   --   ---xx   flac  0.6335  Track 06.flac
+     6:22.56       67516556 B   ---   --   ---xx   flac  0.5958  Track 07.flac
+     6:50.03       72331100 B   ---   --   ---xx   flac  0.6401  Track 08.flac
+     7:46.26       82263596 B   ---   --   ---xx   flac  0.6578  Track 09.flac
+     5:45.51       60977996 B   ---   --   ---xx   flac  0.4966  Track 10.flac
+     8:14.44       87245132 B   ---   --   ---xx   flac  0.6440  Track 11.flac
+     7:56.64       84116972 B   ---   --   ---xx   flac  0.5557  Track 12.flac
+   122:00.19     1291293048 B                            0.6204  (20 files)
+=================== 
+=================== 
+=================== 

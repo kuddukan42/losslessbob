@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd95-07-04-d.flacf
+===================
+===================
+===================
+74ce2f03534ef9f07a7a1d7461df8038 *bd-95-07-04-berlin-master.txt
+74ce2f03534ef9f07a7a1d7461df8038 *d1\bd-95-07-04-berlin-master.txt
+e9469001605dc7cf4e5fdf0b9d61ca0f *d1\bd-95-7-4-berlin-master-d1 (Track 01).flac
+a4d959890a24acdaf81f151842bb72c1 *d1\bd-95-7-4-berlin-master-d1 (Track 02).flac
+6a287cdf990fe7b9d426e8b8852018f8 *d1\bd-95-7-4-berlin-master-d1 (Track 03).flac
+aa9c163f242e9abce030d30ecf14fa04 *d1\bd-95-7-4-berlin-master-d1 (Track 04).flac
+1ff97761e6954604504eae1f485f4f59 *d1\bd-95-7-4-berlin-master-d1 (Track 05).flac
+a5f7a5acaa615fb9d38b185286e358c6 *d1\bd-95-7-4-berlin-master-d1 (Track 06).flac
+a0875fee60ed828a2932c06e6a886744 *d1\bd-95-7-4-berlin-master-d1 (Track 07).flac
+06404db817f29ac0bcc305162b6c30ac *d1\bd-95-7-4-berlin-master-d1 (Track 08).flac
+74ce2f03534ef9f07a7a1d7461df8038 *d2\bd-95-07-04-berlin-master.txt
+b3934b4583b7fc768eefaf9c14c09c6a *d2\bd-95-7-4-berlin-master-d2 (Track 01).flac
+cdd1e23207307a8a1886cacae2fcab9d *d2\bd-95-7-4-berlin-master-d2 (Track 02).flac
+070223ed6346e472d1e1c5170e9b37f2 *d2\bd-95-7-4-berlin-master-d2 (Track 03).flac
+443b10a8467d2a0e89e5e9299d36b1fd *d2\bd-95-7-4-berlin-master-d2 (Track 04).flac
+68567c9393512ba7f361a75d4cb5c15b *d2\bd-95-7-4-berlin-master-d2 (Track 05).flac
+cc911e5408da3777e48d8adaa4ac879a *d2\bd-95-7-4-berlin-master-d2 (Track 06).flac
+17486f490dc7c6960ce36bfc9542b0f7 *d2\bd-95-7-4-berlin-master-d2 (Track 07).flac
+===================
+===================
+===================
+=== ffp for: bd95-07-04-d.flacf
+===================
+===================
+===================
+d1\bd-95-7-4-berlin-master-d1 (Track 01).flac:7f639e5736ba7710df49be70c6036ccb
+d1\bd-95-7-4-berlin-master-d1 (Track 02).flac:e218694e29b46bc40c2221de0bfb43c5
+d1\bd-95-7-4-berlin-master-d1 (Track 03).flac:b5845d2b9e550a9f08b2ae3f484a6291
+d1\bd-95-7-4-berlin-master-d1 (Track 04).flac:b662e93ceb2a3d19fc16eee921118014
+d1\bd-95-7-4-berlin-master-d1 (Track 05).flac:504e5a151a85ecc362368d8b09a0da03
+d1\bd-95-7-4-berlin-master-d1 (Track 06).flac:7e312a6cd0fd9971dafd19fa5798fae7
+d1\bd-95-7-4-berlin-master-d1 (Track 07).flac:efc6bbfa980e073fde054e74c8adc5b1
+d1\bd-95-7-4-berlin-master-d1 (Track 08).flac:c0d9af01b2848f792f97e2fd45ae8d74
+d2\bd-95-7-4-berlin-master-d2 (Track 01).flac:282aa623347de77e3ee1ce1e694f8faf
+d2\bd-95-7-4-berlin-master-d2 (Track 02).flac:824806404ceb0d8b34c5778efc8e2f0e
+d2\bd-95-7-4-berlin-master-d2 (Track 03).flac:26e44d79f9063fbe29132e313cb5464d
+d2\bd-95-7-4-berlin-master-d2 (Track 04).flac:82bb835ebec07d6050283aa914624c83
+d2\bd-95-7-4-berlin-master-d2 (Track 05).flac:5fc23ee363a902c540c833a4d1eadc24
+d2\bd-95-7-4-berlin-master-d2 (Track 06).flac:3a2d26d7d0e287385b59608a6c6205fa
+d2\bd-95-7-4-berlin-master-d2 (Track 07).flac:b046d0f52b013e90d31d240554975f82
+===================
+===================
+===================
+=== shntool len for: bd95-07-04-d.flacf\d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.46       55145036 B   ---   --   ---xx   flac  0.6803  bd-95-7-4-berlin-master-d1 (Track 01).flac
+     6:10.73       65439740 B   ---   --   ---xx   flac  0.6264  bd-95-7-4-berlin-master-d1 (Track 02).flac
+     6:01.03       63687500 B   ---   --   ---xx   flac  0.6789  bd-95-7-4-berlin-master-d1 (Track 03).flac
+     6:26.22       68142188 B   ---   --   ---xx   flac  0.6280  bd-95-7-4-berlin-master-d1 (Track 04).flac
+     7:26.09       78695612 B   ---   --   ---xx   flac  0.6567  bd-95-7-4-berlin-master-d1 (Track 05).flac
+     6:49.31       72220556 B   ---   --   ---xx   flac  0.6871  bd-95-7-4-berlin-master-d1 (Track 06).flac
+    10:50.15      114695324 B   ---   --   ---xx   flac  0.5859  bd-95-7-4-berlin-master-d1 (Track 07).flac
+     6:25.60       68055164 B   ---   --   ---xx   flac  0.4749  bd-95-7-4-berlin-master-d1 (Track 08).flac
+    55:22.34      586081120 B                            0.6234  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd95-07-04-d.flacf\d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.29       72921452 B   ---   --   ---xx   flac  0.5182  bd-95-7-4-berlin-master-d2 (Track 01).flac
+     7:20.54       77743052 B   ---   --   ---xx   flac  0.6683  bd-95-7-4-berlin-master-d2 (Track 02).flac
+     9:08.34       96747212 B   ---   --   ---xx   flac  0.6325  bd-95-7-4-berlin-master-d2 (Track 03).flac
+     8:20.00       88200044 B   ---   --   ---xx   flac  0.6808  bd-95-7-4-berlin-master-d2 (Track 04).flac
+    11:04.60      117270764 B   ---   --   ---xx   flac  0.6361  bd-95-7-4-berlin-master-d2 (Track 05).flac
+    11:38.09      123148412 B   ---   --   ---xx   flac  0.6067  bd-95-7-4-berlin-master-d2 (Track 06).flac
+     9:40.34      102392012 B   ---   --   ---xx   flac  0.6609  bd-95-7-4-berlin-master-d2 (Track 07).flac
+    64:05.70      678422948 B                            0.6308  (7 files)
+===================
+===================
+===================

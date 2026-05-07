@@ -1,0 +1,28 @@
+Bob Dylan
+
+The Copa Room
+Sands Casino
+Atlantic City, NJ
+
+source: FOB/ORTF Schoeps MK4s>VMS>SBM>M1
+        
+transfer: D>HHb CDR830>CDRW>EAC>CDWAV>MKW>SHN
+
+01. Watching The River Flow
+02. Lay Lady Lay
+03. Can't Wait
+04. Just Like A Woman
+05. Silvio
+06. Cocaine Blues (acoustic)
+07. Masters Of War (acoustic)
+08. Tangled Up In Blue (acoustic)
+09. Make You Feel My Love
+10. Band Intros
+11. Highway 61 Revisited
+12. Lovesick
+13. Don't Think Twice, It's All Right (acoustic)
+14. Not Fade Away
+
+Total time : 74:15.38
+
+note: 1:10.28 of audience edited out using CDWAV between tracks 11 and 12  

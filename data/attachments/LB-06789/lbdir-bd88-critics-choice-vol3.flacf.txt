@@ -1,0 +1,63 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-critics-choice-vol3.flacf 
+=================== 
+=================== 
+=================== 
+23e297674b17aaa08e4f476cd57e2f7e  bd88-critics-choice-vol3-d1t01.flac
+a38f6db92e8e3e9bd901cd906d6504d3  bd88-critics-choice-vol3-d1t02.flac
+3033f615592d4bfe8267e7b3b98ce60c  bd88-critics-choice-vol3-d1t03.flac
+79a99374c5cfb8ca61194096cb2321cc  bd88-critics-choice-vol3-d1t04.flac
+92948eb35fb697d425d28beddbe1c0d0  bd88-critics-choice-vol3-d1t05.flac
+73b9b26fbea078eeea778b59ba1ad333  bd88-critics-choice-vol3-d1t06.flac
+7b5e12442d160be56d9c39fd47aabc6d  bd88-critics-choice-vol3-d1t07.flac
+8703b79df205d8e1843a0d692f99c58a  bd88-critics-choice-vol3-d1t08.flac
+18ad75a72ec279895efb643310369b77  bd88-critics-choice-vol3-d1t09.flac
+665c775ae79a049182cf1cfb0c1443ed  bd88-critics-choice-vol3-d1t10.flac
+828cff5f921651afd70378a6ae069983  bd88-critics-choice-vol3-d1t11.flac
+15aee7a7c8a1f43ddd9e677a58e03864  bd88-critics-choice-vol3-d1t12.flac
+98c7301f611b334030d994fde8da3d54  bd88-critics-choice-vol3.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-critics-choice-vol3.flacf 
+=================== 
+=================== 
+=================== 
+bd88-critics-choice-vol3-d1t01.flac:30c23d23d49f2090feaa41ffd9ae0a7f
+bd88-critics-choice-vol3-d1t02.flac:109ab207cfdf423c4ef6196f31547794
+bd88-critics-choice-vol3-d1t03.flac:2f9ed5bc2ba5d61e7e2a9df81f348160
+bd88-critics-choice-vol3-d1t04.flac:531d0815f30b7bd387023707bd1daf8d
+bd88-critics-choice-vol3-d1t05.flac:45888e6a3e152d7fbc630f4e7c2a18b1
+bd88-critics-choice-vol3-d1t06.flac:6a431bf769e2d4718ab9e61c4d633e15
+bd88-critics-choice-vol3-d1t07.flac:119bc205d5f44ffc9775d664bc3edb49
+bd88-critics-choice-vol3-d1t08.flac:637a387fced14a451d97230dd1275edb
+bd88-critics-choice-vol3-d1t09.flac:ecbdae489736fbb0d1407088f4978664
+bd88-critics-choice-vol3-d1t10.flac:b077c35467c2e538032eae192a2b5e04
+bd88-critics-choice-vol3-d1t11.flac:2e60565642ff160a277242d00bfd0ec8
+bd88-critics-choice-vol3-d1t12.flac:9ce3faa23ed90f3a2f99a7a019ee6538
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-critics-choice-vol3.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.22       47503388 B   ---   --   ---xx   flac  0.6656  bd88-critics-choice-vol3-d1t01.flac
+     4:14.13       44836220 B   ---   --   ---xx   flac  0.6317  bd88-critics-choice-vol3-d1t02.flac
+     5:11.35       54942764 B   ---   --   ---xx   flac  0.6416  bd88-critics-choice-vol3-d1t03.flac
+     5:27.52       57805148 B   ---   --   ---xx   flac  0.6175  bd88-critics-choice-vol3-d1t04.flac
+     6:19.18       66897980 B   ---   --   ---xx   flac  0.6619  bd88-critics-choice-vol3-d1t05.flac
+     5:23.72       57146588 B   ---   --   ---xx   flac  0.6563  bd88-critics-choice-vol3-d1t06.flac
+     5:21.55       56753804 B   ---   --   ---xx   flac  0.6410  bd88-critics-choice-vol3-d1t07.flac
+     5:42.50       60446444 B   ---   --   ---xx   flac  0.6464  bd88-critics-choice-vol3-d1t08.flac
+     3:14.55       34351004 B   ---   --   ---xx   flac  0.6165  bd88-critics-choice-vol3-d1t09.flac
+     4:38.70       49203884 B   ---   --   ---xx   flac  0.5602  bd88-critics-choice-vol3-d1t10.flac
+     5:01.03       53103500 B   ---   --   ---xx   flac  0.6310  bd88-critics-choice-vol3-d1t11.flac
+     5:28.07       57875708 B   ---   --   ---xx   flac  0.6393  bd88-critics-choice-vol3-d1t12.flac
+    60:33.02      640866432 B                            0.6357  (12 files)
+=================== 
+=================== 
+=================== 

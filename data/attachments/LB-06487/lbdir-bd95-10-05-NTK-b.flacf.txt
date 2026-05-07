@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-05-NTK-b.flacf 
+=================== 
+=================== 
+=================== 
+95eff551679964d6c8be16f1e144b23d  bd-19951005-Orlando.ffp
+cf39213ed33f70dd2c7d7f6729490d15  bd-19951005-Orlando.md5
+cf11596faea24daab0fb024b0b68f74c  bd1995-10-05-d1t01.flac
+c8813c6af0078fcb94ec2f458922d482  bd1995-10-05-d1t02.flac
+685d1e04338c337f3fef3b82752c190e  bd1995-10-05-d1t03.flac
+a17cf878ee50bcdaf2f31584f21c5112  bd1995-10-05-d1t04.flac
+a0cbacc788f5ab042d6611f0029db872  bd1995-10-05-d1t05.flac
+db08ba6a56cb9b923c863bb1727ff9dc  bd1995-10-05-d1t06.flac
+6f8b9afbf89bf8b5419e956afcadd990  bd1995-10-05-d1t07.flac
+de094b1adccdc2b87b7f24f39626fe76  bd1995-10-05-d1t08.flac
+35828638e9488bde0896ecea4eae0179  bd1995-10-05-d1t09.flac
+ae58fdf9cbe017f920b522061fada280  bd1995-10-05-d2t01.flac
+4e07f2d25fdb6362bfffe47a2e5d808e  bd1995-10-05-d2t02.flac
+679198466badb24f941725fbf59d315b  bd1995-10-05-d2t03.flac
+e37882536e3eb09dab5e3de217e960b0  bd1995-10-05-d2t04.flac
+ab14c099862d4850679c67f36c577fc9  bd1995-10-05-d2t05.flac
+699dd4c49a35572bdade52da4e064388  bd1995-10-05-d2t06.flac
+4fa40dde38f8e0d64cec81e7a008e1c9  bd1995-10-05-d2t07.flac
+4d2acd97aad1cb18f68f5a39647dfb63  bd1995-10-05-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-05-NTK-b.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-10-05-d1t01.flac:d56d821aefd8146519a97def4fcee815
+bd1995-10-05-d1t02.flac:85293f8ac0ca6e30dddedd9ac1fa27dc
+bd1995-10-05-d1t03.flac:17891acce451ac6728ee70f9c9809e5f
+bd1995-10-05-d1t04.flac:95b8eb5ae169e9c044f959fd1286d748
+bd1995-10-05-d1t05.flac:cc8f0134716c1db2063a5ff335014b80
+bd1995-10-05-d1t06.flac:a0f4c74ddac5a16899a8eb5df9b5c387
+bd1995-10-05-d1t07.flac:387370ade48a8ba7382b290f54fd49eb
+bd1995-10-05-d1t08.flac:41b38e173a77d5798edde87787ed8694
+bd1995-10-05-d1t09.flac:be526dc9fde301ecc3c1e850a681980a
+bd1995-10-05-d2t01.flac:03b558de96994bd4139be9202d5aa3f0
+bd1995-10-05-d2t02.flac:a7d7410d401f96dae615522f17ecf2c7
+bd1995-10-05-d2t03.flac:c1d42cce7d747083759e7c17658dc298
+bd1995-10-05-d2t04.flac:16b34f342e328e02e33b9329bcccb777
+bd1995-10-05-d2t05.flac:633b64c29042d44be45f2fc999bdbd0f
+bd1995-10-05-d2t06.flac:a1ad73c82fec903c42cdaaf1e0919e23
+bd1995-10-05-d2t07.flac:381f3773d8c4cea68fe3713f2b3b215e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-05-NTK-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:34.23       48387740 B   ---   --   ---xx   flac  0.5989  bd1995-10-05-d1t01.flac
+     5:42.12       60357068 B   ---   --   ---xx   flac  0.5269  bd1995-10-05-d1t02.flac
+     7:02.44       74544332 B   ---   --   ---xx   flac  0.5707  bd1995-10-05-d1t03.flac
+     6:39.50       70501244 B   ---   --   ---xx   flac  0.4917  bd1995-10-05-d1t04.flac
+     6:49.49       72262892 B   ---   --   ---xx   flac  0.5281  bd1995-10-05-d1t05.flac
+     7:19.66       77594876 B   ---   --   ---xx   flac  0.5486  bd1995-10-05-d1t06.flac
+     9:58.15      105522524 B   ---   --   ---xx   flac  0.4771  bd1995-10-05-d1t07.flac
+     5:56.04       62807852 B   ---   --   ---xx   flac  0.4850  bd1995-10-05-d1t08.flac
+     9:06.12       96342668 B   ---   --   ---xx   flac  0.5261  bd1995-10-05-d1t09.flac
+     6:22.21       67434236 B   ---   --   ---xx   flac  0.5783  bd1995-10-05-d2t01.flac
+     8:56.36       94635116 B   ---   --   ---xx   flac  0.4970  bd1995-10-05-d2t02.flac
+     0:29.48        5228540 B   ---   --   ---xx   flac  0.4398  bd1995-10-05-d2t03.flac
+     9:00.53       95380700 B   ---   --   ---xx   flac  0.5074  bd1995-10-05-d2t04.flac
+     8:50.01       93494396 B   ---   --   ---xx   flac  0.4841  bd1995-10-05-d2t05.flac
+    10:08.10      107274764 B   ---   --   ---xx   flac  0.4400  bd1995-10-05-d2t06.flac
+     6:19.43       66956780 B   ---   --   ---xx   flac  0.5146  bd1995-10-05-d2t07.flac
+   113:15.37     1198725728 B                            0.5121  (16 files)
+=================== 
+=================== 
+=================== 

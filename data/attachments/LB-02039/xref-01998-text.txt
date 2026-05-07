@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== Bob Dylan Mayo Field Rochester MN 2004-08-29.ffp
+===================
+===================
+===================
+01 Intro.flac:f4a49bf8cca3a2ee4b1e492ca7a0f0b3
+02 Rainy Day Women.flac:9598c7e555517730e2040cf5bb4f3b18
+03 Forever Young.flac:6ac58b52ace8b7ae0a0c8e827dd37f12
+04 God Knows.flac:94640089f29c0aba0688f19ba6089e2d
+05 Heartland.flac:92ed6cb07da5d5ce0fdd33b85af145a7
+06 Tweedle Dee Tweedle Dum.flac:72f833696b8d1470c6fe9eb2fa663a42
+07 Positively Fourth Street.flac:3db331d987d235deb15ff0bcb3a9a8b5
+08 Highway 61.flac:97503c3ca7c695d396657910456e6e5d
+09 Bye and Bye.flac:ad66f42645580e3603dbc7a4bc89ebb5
+10 Tryin to Get To Heaven.flac:0fc281fe0b04418c37808a2673aa1fbc
+11 Honest With Me.flac:6073b71b2be1af9d0107bcc25a9bcdfe
+12 It Aint Me Babe.flac:7ea7da137efca9692881759eeeed23a9
+13 Summer Days.flac:eb81ab1acb458cea36ff3a30eeb1e013
+14 Like A Rolling Stone.flac:16c7aadf373bb7289891f8bc93e41e4c
+15 All Along the Watchtower.flac:0fd11e8ef25b91bf132f5354f640294c
+===================
+===================
+===================
+=== Bob Dylan Mayo Field Rochester MN 2004-08-29.md5
+===================
+===================
+===================
+c27029f5806044e5a2341ca4350fcae4 *01 Intro.flac
+e06b52d6a0e8c308e89d919817fa7ece *02 Rainy Day Women.flac
+0ca7a163abfba3855066c03f813d64c9 *03 Forever Young.flac
+b12ae9b075f1503f76a4a22d4a74dc56 *04 God Knows.flac
+8a1cba807b8a499925d4aa4a26b54805 *05 Heartland.flac
+3b0adfeaddc8519f09fdf3d665efd581 *06 Tweedle Dee Tweedle Dum.flac
+c8e5bcd492f9dd837f1e19a908072f4d *07 Positively Fourth Street.flac
+a5c39154d3b307362915e50ea528b9e2 *08 Highway 61.flac
+9d659b4280b0fa7f920b3849f78a11bd *09 Bye and Bye.flac
+16747123ba90c273b4ef7a7523dbead8 *10 Tryin to Get To Heaven.flac
+2dcf5acf7342b54d30b19779b7ff5c84 *11 Honest With Me.flac
+df63013f57551540d6472ff021b3e989 *12 It Aint Me Babe.flac
+1bac474ddda733751cc6227b75f3663f *13 Summer Days.flac
+133c037fda943c555c28b05d08b45740 *14 Like A Rolling Stone.flac
+4e926b24a3b9151ddcc651a3c79f80dd *15 All Along the Watchtower.flac
+===================
+===================
+===================
+=== Bob Dylan Mayo Field Rochester MN 2004-08-29.txt
+===================
+===================
+===================
+01 Intro.flac:f4a49bf8cca3a2ee4b1e492ca7a0f0b3
+02 Rainy Day Women.flac:9598c7e555517730e2040cf5bb4f3b18
+03 Forever Young.flac:6ac58b52ace8b7ae0a0c8e827dd37f12
+04 God Knows.flac:94640089f29c0aba0688f19ba6089e2d
+05 Heartland.flac:92ed6cb07da5d5ce0fdd33b85af145a7
+06 Tweedle Dee Tweedle Dum.flac:72f833696b8d1470c6fe9eb2fa663a42
+07 Positively Fourth Street.flac:3db331d987d235deb15ff0bcb3a9a8b5
+08 Highway 61.flac:97503c3ca7c695d396657910456e6e5d
+09 Bye and Bye.flac:ad66f42645580e3603dbc7a4bc89ebb5
+10 Tryin to Get To Heaven.flac:0fc281fe0b04418c37808a2673aa1fbc
+11 Honest With Me.flac:6073b71b2be1af9d0107bcc25a9bcdfe
+12 It Aint Me Babe.flac:7ea7da137efca9692881759eeeed23a9
+13 Summer Days.flac:eb81ab1acb458cea36ff3a30eeb1e013
+14 Like A Rolling Stone.flac:16c7aadf373bb7289891f8bc93e41e4c
+15 All Along the Watchtower.flac:0fd11e8ef25b91bf132f5354f640294c
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Mayo Field, Rochester, MN
+Bob Dylan 08/29/04
+
+DPA 4021 > Lunatec V3 > Sony D8, Transfer: Sony D8 > Emagic 6/2 > 
+Spark/Peak (G5) > xACT>EAC>TLH8
+
+Dolphinsmile Archive
+
+Rainy Day Women #12 & 35
+Forever Young
+God Knows
+Heartland (with Willie Nelson)
+Tweedle Dee & Tweedle Dum
+Positively 4th Street
+Highway 61 Revisited
+Bye and Bye
+Tryin' To Get To Heaven
+Honest With Me
+It Ain't Me Babe
+Summer Days
+Like A Rolling Stone
+All Along the Watchtower
+===================
+===================
+===================

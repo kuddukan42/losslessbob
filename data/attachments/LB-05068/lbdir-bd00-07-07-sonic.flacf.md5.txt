@@ -1,0 +1,21 @@
+5e253ee56f90fff0a6e9998fe5013ba1  bob bonner.md5
+875f06162e54c795a6ffd6370f7b3bab  cd1\d101 oh babe it ain't no lie.flac
+513a4612724069f5ff6ee9503c283b55  cd1\d102 to ramona.flac
+4e1248167b62eebeeb169e164a3029ef  cd1\d103 desolation row.flac
+4e8ed5a0753672cc161ed7e08b81a8f0  cd1\d104 mama, you've been on my mind.flac
+c29d3c1368a9524b5073facbc14b885b  cd1\d105 tangled up in blue.flac
+08dd28e28e5bf36fab519a79aa80dafc  cd1\d106 searching for a soldier's grave.flac
+ba2549618984a247061029bd68b6f4d5  cd1\d107 country pie.flac
+a199077c32c66b71202fd68cb3fdf386  cd1\d108 if not for you.flac
+d26bf9c54d8c76f9357d18d34a9278e3  cd1\d109 seeing the real you at last.flac
+58ab1a836f9d95997871181b1b468bf1  cd1\d110 born in time.flac
+58fe53424762a8ec09b2ae16fd1960ad  cd2\d201 Drifter's Escape.flac
+a00c312aef91c4391933ed829c9c0dd3  cd2\d202 Band Introductions.flac
+70b82632318a624a4fe00574c5ecf466  cd2\d203 Leopard-Skin Pillbox Hat.flac
+e94c2a1ae9f5f8e87b9a1b141daaa271  cd2\d204 Things Have Changed.flac
+7e09e10ac3b876c86acfdfc788223b6b  cd2\d205 Like a Rolling Stone.flac
+c314adaa0f10e4810e880727a6ff7c75  cd2\d206 My Back Pages.flac
+72fffd9b55fb37e13b453f6af15a4e17  cd2\d207 Highway 61 Revisited.flac
+a7ac08b311fe80085937c4a3ae887cc1  cd2\d208 Blowin' in the Wind.flac
+91539dc4af0f8abf7fe4f45e8119ea1b  flac fingerprint.txt
+8e426050003b1befef3ae500afd59c9b  info.txt

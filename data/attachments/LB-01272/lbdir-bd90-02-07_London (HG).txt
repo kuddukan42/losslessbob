@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-02-07_London (HG) 
+=================== 
+=================== 
+=================== 
+895ff4992f116f4fb7000809aed640bb  bd90-02-07hg.txt
+788dc1c4c699487f0a618acfe7b2f168  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 01.shn
+a6745f8cdae15b91df74043d25cd953c  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 10.shn
+a88e615b91b3fa665edcefde0a2b7c43  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 11.shn
+ef9bf2d77d011621a479dadfe36776e3  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 12.shn
+9923c49e93491f3c3431c41aebbd5a36  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 13.shn
+5412966e62a60a825c28339f81508dd3  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 2.shn
+cbe7857a686152d90f98c2662f5e4368  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 3.shn
+df124a6880c30151a5e855f7a0d8c517  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 4.shn
+ef22eab1ae6fae070377ddbab523031d  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 5.shn
+54ae42e772e52f1761a8f09031245705  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 6.shn
+174927c6ce29c09f2566a92cee0a01a6  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 7.shn
+5b496cdf30e4a8376eed60a363cd36c3  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 8.shn
+a1e470806597d1c5a8f105cbcff367cb  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_Track 9.shn
+7aa702738dabe5ec6637a7412003f773  bd_90-02-07_cd1.shnf\bd_90-02-07_cd1_shn.md5
+df801170847d6ab79c1363fde9f73672  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_Track 1.shn
+77d3cc5affdea9f85b20e9eb298cfef3  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_Track 2.shn
+d2f46704355ffddb9d9d8a33cbbdabe9  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_Track 3.shn
+9aaecca5952dd876cba019a13be8c6ec  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_Track 4.shn
+0891a6417d7178c526f8364f7b778083  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_Track 5.shn
+bd7a66f2509d945202608673be738679  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_Track 6.shn
+a23c5d3ba5fc8d4cf028f63704e5daed  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_Track 7.shn
+6c8f7dd50ad27e02ce7aa5ebcbafd71c  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_Track 8.shn
+5f29c69ab141d65c336fe567003af7e7  bd_90-02-07_cd2.shnf\bd_90-02-07_cd2_shn.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-02-07_London (HG)\bd_90-02-07_cd1.shnf 
+=================== 
+=================== 
+=================== 
+52461adbfc5ea718e32e1378d7d1681b  [shntool]  bd_90-02-07_cd1_Track_01.wav
+f5a7fc4c49f006c472e900d54ade8189  [shntool]  bd_90-02-07_cd1_Track_2.wav
+8a55cd9bd1d55668256697c922e409ea  [shntool]  bd_90-02-07_cd1_Track_3.wav
+944751a802c6e9a81fe2c01bd2ef0f2e  [shntool]  bd_90-02-07_cd1_Track_4.wav
+dc345a8e7341f2f3c2341fd8bbe9f3db  [shntool]  bd_90-02-07_cd1_Track_5.wav
+bc35f111a797b90e06e5ba55058f51c8  [shntool]  bd_90-02-07_cd1_Track_6.wav
+9d7e0a8cf1f8c6ea1947fb0e7efddf77  [shntool]  bd_90-02-07_cd1_Track_7.wav
+a142faea900b4ea2aba3bed07a226f83  [shntool]  bd_90-02-07_cd1_Track_8.wav
+83155ecddf923048343b8fd1e52df4e2  [shntool]  bd_90-02-07_cd1_Track_9.wav
+df7bbe6367560630bd937344cd52fd07  [shntool]  bd_90-02-07_cd1_Track_10.wav
+eccf3f1698d8d1f1a916c0967bfd95a0  [shntool]  bd_90-02-07_cd1_Track_11.wav
+6c9b8f4716a3acc95e4188d3f3d98e8d  [shntool]  bd_90-02-07_cd1_Track_12.wav
+0f9aaa99b3beecdb4eb85646cff0ba70  [shntool]  bd_90-02-07_cd1_Track_13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-02-07_London (HG)\bd_90-02-07_cd2.shnf 
+=================== 
+=================== 
+=================== 
+f602ebcfbc0efec5e29f044e71bd9cac  [shntool]  bd_90-02-07_cd2_Track_1.wav
+ad4a38bf04ccb04b944852b7cca2bdfd  [shntool]  bd_90-02-07_cd2_Track_2.wav
+e66265a27283b100699f2494553667ae  [shntool]  bd_90-02-07_cd2_Track_3.wav
+ca4f626272911c3bfd6baac0eacaaf09  [shntool]  bd_90-02-07_cd2_Track_4.wav
+82e66aff80095afea1cf982e9cffea76  [shntool]  bd_90-02-07_cd2_Track_5.wav
+42f7d8e944a4ac735602803d6ca90351  [shntool]  bd_90-02-07_cd2_Track_6.wav
+ac58ffbc74b714d27247ae41d299bfc5  [shntool]  bd_90-02-07_cd2_Track_7.wav
+e6d08d9c37cd6cc44d0e6b3480e5af5b  [shntool]  bd_90-02-07_cd2_Track_8.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-07_London (HG)\bd_90-02-07_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:40.62        7201950 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_01.wav
+     3:50.03       40579182 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_10.wav
+     6:02.26       63918078 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_11.wav
+     5:58.25       63210126 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_12.wav
+     4:49.08       50998542 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_13.wav
+     3:16.20       34621566 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_2.wav
+     4:13.48       44742222 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_3.wav
+     3:35.24       37982574 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_4.wav
+     4:18.67       45668910 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_5.wav
+     5:18.57       56229390 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_6.wav
+     3:24.43       36086862 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_7.wav
+     7:13.17       76421310 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_8.wav
+     5:18.46       56203518 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd1_Track_9.wav
+    57:59.71      613864230 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-02-07_London (HG)\bd_90-02-07_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.14       42545454 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd2_Track_1.wav
+     3:39.32       38706990 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd2_Track_2.wav
+     4:55.26       52099278 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd2_Track_3.wav
+     4:51.29       51400734 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd2_Track_4.wav
+     4:23.53       46517982 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd2_Track_5.wav
+     6:20.41       67128558 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd2_Track_6.wav
+     6:11.62       65590350 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd2_Track_7.wav
+     5:02.60       53414046 B   ---   -e   -----    wav  1.0000  bd_90-02-07_cd2_Track_8.wav
+    39:26.17      417403392 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

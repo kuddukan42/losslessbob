@@ -1,0 +1,56 @@
+===================
+===================
+===================
+=== 1995.06.18 Giants Stadium, East Rutherford, NJ.md5
+===================
+===================
+===================
+1e08d76c9daae6ea3c425f9a18a392aa *00 (Announcement).flac
+e066907791c4066f6128965b49ea79ba *01 Crash on the levee (Down in the flood).flac
+725c4a1513558bac557e60ac1d9d79f4 *02 Senor (Tales of Yankee Power).flac
+83c1ee422dea5af6ccbf91cefa50eb4f *03 All along the watchtower.flac
+4ecd0e5dc31da6535d1ec6d016709268 *04 Just like a woman.flac
+bf588be02b5e72e2e4aadd4fb195b43b *05 Silvio.flac
+a8c2e1c9ce5090c6d29dd8a6331f4847 *06 Mr. Tambourine man.flac
+9b9e799b981801c8e734a3e119ce3c62 *07 Gates of Eden.flac
+03b9f9822788238cd7ea3e0a2be4e703 *08 Love minus zero_No limit.flac
+696fa8e84b144381f8d1658d046aeff7 *09 Seeing the real you at last.flac
+be2c80c2e9ed8c98d62bdeb063de70c2 *10 I believe in you.flac
+70a0dc5eff5f8ee88c5bb087c83e908c *11 (Band intro).flac
+ca5fa54f38bc364ba76a9da03917864c *12 Obviously five believers.flac
+0092d40572e3fb8478de3737dda83a59 *13 Ballad of a thin man.flac
+a8f1698497bd270e71ce515872a72d6f *Bob Dylan  18 june 1995  East Rutherford.txt
+495425728029abe3ce62e0ba3a206604 *Eastrutherford 18 june 95.Jpg
+===================
+===================
+===================
+=== Bob Dylan  18 june 1995  East Rutherford.txt
+===================
+===================
+===================
+Bob Dylan  
+18 june 1995  
+Giants Stadium
+East Rutherford, NJ
+
+
+1 intro  0.05
+2 Crash On The Levee (Down In The Flood) 4.45
+3 Seor (Tales Of Yankee Power) 5.23
+4 All Along The Watchtower 5.19
+5 Just Like A Woman 5.11
+6 Silvio 5.36
+7 Mr. Tambourine Man (acoustic w band) 7.29
+8 Gates Of Eden (acoustic w band) 6.24
+9 Love Minus Zero/No Limit (acoustic w band) 6.07
+10 Seeing The Real You At Last 5.06 
+11 I Believe In You 5.31
+12 band intro  0.25
+13 Obviously Five Believers 6.30
+14 Ballad Of A Thin Man  8.04
+
+
+File names & tags edited by Chopen, September 2009
+===================
+===================
+===================

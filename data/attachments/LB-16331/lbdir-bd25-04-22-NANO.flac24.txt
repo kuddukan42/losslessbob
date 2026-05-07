@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd25-04-22-NANO.flac24
+===================
+===================
+===================
+f5ad7fb2ffb9ea40230216f6c80504ba *bd2025-04-22_Williamsport_PA.jpg
+fa30693f391998f23558c9e8cf222636 *bd2025-04-22_Williamsport_PA_NANOt01.flac
+44cc170994f994c5164e56890d6838e8 *bd2025-04-22_Williamsport_PA_NANOt02.flac
+4e754e1f20d479e8c6535e203f3acc25 *bd2025-04-22_Williamsport_PA_NANOt03.flac
+3c44505f0cbd73d449b957f21a842523 *bd2025-04-22_Williamsport_PA_NANOt04.flac
+f588ff4bc29c4496e7f5765cba02d1f7 *bd2025-04-22_Williamsport_PA_NANOt05.flac
+c25c6476d6ecd7a1383ab2b2e79d0aff *bd2025-04-22_Williamsport_PA_NANOt06.flac
+02be6e4800703f44241f92c85ca86c8d *bd2025-04-22_Williamsport_PA_NANOt07.flac
+448160b658792a1f3de69d89fab685db *bd2025-04-22_Williamsport_PA_NANOt08.flac
+d9d936c00b2cd3fabd78d96c963ed969 *bd2025-04-22_Williamsport_PA_NANOt09.flac
+97078d09da0c0b4d1b0ac2401eee4810 *bd2025-04-22_Williamsport_PA_NANOt10.flac
+83f2e54a418ffbbe80335f1da3fb9af8 *bd2025-04-22_Williamsport_PA_NANOt11.flac
+748e9650fa534e194a2e41a008a153fd *bd2025-04-22_Williamsport_PA_NANOt12.flac
+8a0aec4719670084a0c5b2beb2b66222 *bd2025-04-22_Williamsport_PA_NANOt13.flac
+f119eb52171a3d53f2ea3003f30d42fd *bd2025-04-22_Williamsport_PA_NANOt14.flac
+6e2c4686eb847f2ae77b5b1957f5a4c9 *bd2025-04-22_Williamsport_PA_NANOt15.flac
+a7af52b1611885ea36156388d0c87c32 *bd2025-04-22_Williamsport_PA_NANOt16.flac
+685fe288253a9070b4990784f46e0537 *bd2025-04-22_Williamsport_PA_NANOt17.flac
+7e521893cd4fea80c141d172279b7906 *bd2025-04-22_Williamsport_PA_NANOt18.flac
+c1a55f12ab3eb77407b501787a1a5602 *bdylan 2025-04-22_Williamsport_PA-NANO 24-96 FLAC.ffp
+2149f5717751ea436781383356313abe *Bob Dylan-2025-04-22_Williamsport_PA-NANO.txt
+===================
+===================
+===================
+=== ffp for: bd25-04-22-NANO.flac24
+===================
+===================
+===================
+bd2025-04-22_Williamsport_PA_NANOt01.flac:a95259cee62d3825cb6ef6e1a3f84817
+bd2025-04-22_Williamsport_PA_NANOt02.flac:4a71fdd14590e0a3af3e6ec35c2d0723
+bd2025-04-22_Williamsport_PA_NANOt03.flac:c5ccaa4e34d79a6769f491c1872bfc8d
+bd2025-04-22_Williamsport_PA_NANOt04.flac:90293463562ffbd7c8b73082d44abe28
+bd2025-04-22_Williamsport_PA_NANOt05.flac:4e7cb6ae5488cd9bdd99b7af57022ab2
+bd2025-04-22_Williamsport_PA_NANOt06.flac:75b5769412f5c891469201d086350ab0
+bd2025-04-22_Williamsport_PA_NANOt07.flac:caa9a1c8fe4c802a8a2fe047c919b9ad
+bd2025-04-22_Williamsport_PA_NANOt08.flac:1fdc5807d44ddf0055ab2a98f6e0161a
+bd2025-04-22_Williamsport_PA_NANOt09.flac:c8b650fe6eda44513d619a26b39de5ad
+bd2025-04-22_Williamsport_PA_NANOt10.flac:c069b265a21c5949140295a6c35e3261
+bd2025-04-22_Williamsport_PA_NANOt11.flac:ce7ea234f913037f0af1c7329fc2cdb8
+bd2025-04-22_Williamsport_PA_NANOt12.flac:4c4654b95667fb257e308a12024c670a
+bd2025-04-22_Williamsport_PA_NANOt13.flac:8014eea8c5b137a366df0336d8ac97cf
+bd2025-04-22_Williamsport_PA_NANOt14.flac:6b13cd76ef1a99df82b81356dc8b0f1d
+bd2025-04-22_Williamsport_PA_NANOt15.flac:20fa4a6d8b9936abec6d85bfd846c82d
+bd2025-04-22_Williamsport_PA_NANOt16.flac:51466dcea787ecf2b5210b302d21e240
+bd2025-04-22_Williamsport_PA_NANOt17.flac:8d128475a1e5c47bfb0f225af7a05c2b
+bd2025-04-22_Williamsport_PA_NANOt18.flac:53e00085b919c432df6c44e9a1d26b9f
+===================
+===================
+===================
+=== shntool len for: bd25-04-22-NANO.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:32.547      87991892 B   cxx   --   ---xx   flac  0.7216  bd2025-04-22_Williamsport_PA_NANOt01.flac
+     6:31.173     103504508 B   cxx   --   ---xx   flac  0.6904  bd2025-04-22_Williamsport_PA_NANOt02.flac
+     5:38.307      89515988 B   cxx   --   ---xx   flac  0.6653  bd2025-04-22_Williamsport_PA_NANOt03.flac
+     6:34.027     104259500 B   cxx   --   ---xx   flac  0.6808  bd2025-04-22_Williamsport_PA_NANOt04.flac
+     6:16.733      99683684 B   cxx   --   ---xx   flac  0.6676  bd2025-04-22_Williamsport_PA_NANOt05.flac
+     5:29.960      87307460 B   cxx   --   ---xx   flac  0.6391  bd2025-04-22_Williamsport_PA_NANOt06.flac
+     5:55.280      94007132 B   cxx   --   ---xx   flac  0.6325  bd2025-04-22_Williamsport_PA_NANOt07.flac
+     4:28.467      71036324 B   cxx   --   ---xx   flac  0.6929  bd2025-04-22_Williamsport_PA_NANOt08.flac
+     7:03.427     112038740 B   cxx   --   ---xx   flac  0.6678  bd2025-04-22_Williamsport_PA_NANOt09.flac
+     7:15.960     115355060 B   cxx   --   ---xx   flac  0.6933  bd2025-04-22_Williamsport_PA_NANOt10.flac
+     7:49.413     124206812 B   cxx   --   ---xx   flac  0.6272  bd2025-04-22_Williamsport_PA_NANOt11.flac
+     5:37.200      89223164 B   cxx   --   ---xx   flac  0.7088  bd2025-04-22_Williamsport_PA_NANOt12.flac
+     5:01.947      79895132 B   cxx   --   ---xx   flac  0.6589  bd2025-04-22_Williamsport_PA_NANOt13.flac
+     5:58.493      94857380 B   cxx   --   ---xx   flac  0.6561  bd2025-04-22_Williamsport_PA_NANOt14.flac
+     6:15.213      99281492 B   cxx   --   ---xx   flac  0.6407  bd2025-04-22_Williamsport_PA_NANOt15.flac
+     6:08.827      97591580 B   cxx   --   ---xx   flac  0.7053  bd2025-04-22_Williamsport_PA_NANOt16.flac
+     0:33.093       8756540 B   cxx   --   ---xx   flac  0.7863  bd2025-04-22_Williamsport_PA_NANOt17.flac
+     6:14.386      99062498 B   cxx   --   ---xx   flac  0.6755  bd2025-04-22_Williamsport_PA_NANOt18.flac
+   104:24.452    1657574886 B                            0.6718  (18 files)
+===================
+===================
+===================

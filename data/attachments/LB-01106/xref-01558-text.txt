@@ -1,0 +1,166 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Forum de Montreal
+Montreal, Quebec, Canada
+19 September 1978
+
+
+1.My Back Pages
+2.Im Ready (Willie Dixon)
+3.Is Your Love In Vain?
+4.Shelter From The Storm
+5.It's All Over Now, Baby Blue
+6.Tangled Up In Blue
+7.Ballad Of A Thin Man
+8.Maggie's Farm
+9.I Dont Believe You (She Acts Like We Never Have Met)
+10.Like A Rolling Stone
+11.I Shall Be Released
+12.Going, Going, Gone
+13.One Of Us Must Know (Sooner Or Later)
+14.It Ain't Me, Babe
+15.Am I Your Stepchild?
+16.One More Cup Of Coffee (Valley Below)
+17.Blowin' In The Wind
+18.I Want You
+19.Seor (Tales Of Yankee Power)
+20.Masters Of War
+21.Just Like A Woman
+22.Baby Stop Crying
+23.All Along The Watchtower
+24.All I Really Want To Do
+25.It's Alright, Ma (I'm Only Bleeding)
+26.Forever Young
+
+27.Changing Of The Guards
+
+Concert # 4 of the 1978 US Fall Tour. 1978 concert # 53.
+
+Concert # 30 with the 1978 World Tour Band: Bob Dylan (vocal & guitar), Billy Cross (lead guitar), Alan Pasqua (keyboards), Steven Soles (rhythm guitar, backup vocals), David Mansfield (violin & mandolin), Steve Douglas (horns), Jerry Scheff (bass), Bobbye Hall (percussion), Ian Wallace (drums), Helena Springs, Jo Ann Harris, Carolyn Dennis (background vocals).
+
+1 instrumental without Bob Dylan.
+
+5, 15, 21 Bob Dylan (harmonica).
+14 Bob Dylan solo (vocal, harmonica & guitar).
+
+BobTalk
+Thank you very much. My timing might be just a little off. I feel like I been hit by a truck earlier today. (before Ballad Of A Thin Man)
+Thank you. Were gonna take a short break right here. This is a tune I recorded with The Bandon an album called Planet Waves. (before Going Going Gone)
+Thank you. This is a new song I wrote, its called Am I Your Stepchild.
+Thank you. This is an old song I wrote, Masters Of War.
+Thank you. That was All Along The Watchtower. That was David Mansfield on the violin.
+Thank you. On the drums tonight, from Kingston, Jamaica, give him a warm welcome, please, Ian Wallace. On the bass guitar, you were listening to him all night, give him a nice hand. He's a great bass player, Jerry Scheff. On the keyboards, from the Bahamas, Alan Pasqua. On lead guitar, Billy Gatemouth Cross. All right. On the rhythm guitar a young man from Paris, France. Mr. Steve Soles. He doesn't speak any English. On the violin and the mandolin the leadelectric guitar, a young man, David Mansfield. And tenor saxophone, Mr. Steve Douglas. On the backup vocals tonight, on the right, my cousin and childhood sweetheart, the very wonderful Miss Jo Ann Harris. On the left, my ex-girlfriend, Carolyn Dennis. And in the middle, my current flame, Miss Helena Springs. On the conga drums, from Detroit, Bobbye Hall. This is called Its Alright Ma, Im Only Bleeding.. Thank you very much for coming tonight. It's always a pleasure to play here.
+Thank you. Well see you next time. (after It's Alright, Ma (I'm Only Bleeding))
+
+3 new songs (11%) compared to previous concert. 2 new songs for this tour.
+Stereo audience recording, 125 minutes.
+
+Session info updated 31 March 2003.
+http://www.bjorner.com
+
+CDR trade > XLD > flac 
+apa05
+
+===================
+===================
+===================
+=== shntool len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:38.04       38464652 B   ---   --   ---xx  01 Bob Dylan - D1T01-My Back Pages.flac
+     3:30.46       37152236 B   ---   --   ---xx  02 Bob Dylan - D1T02-Im Ready.flac
+     4:32.22       48032588 B   ---   --   ---xx  03 Bob Dylan - D1T03-Is Your Love In Vain?.flac
+     4:40.14       49424972 B   ---   --   ---xx  04 Bob Dylan - D1T04-Shelter From The Storm.flac
+     5:01.31       53169356 B   ---   --   ---xx  05 Bob Dylan - D1T05-It's All Over Now.flac
+     7:38.30       80861804 B   ---   --   ---xx  06 Bob Dylan - D1T06-Tangled Up In Blue.flac
+     4:50.55       51285404 B   ---   --   ---xx  07 Bob Dylan - D1T07-Ballad Of A Thin Man.flac
+     5:04.31       53698556 B   ---   --   ---xx  08 Bob Dylan - D1T08-Maggie's Farm.flac
+     4:48.35       50885564 B   ---   --   ---xx  09 Bob Dylan - D1T09-I Dont Believe You (She Acts Like We Never Have Met).flac
+     9:08.18       96709580 B   ---   --   ---xx  10 Bob Dylan - D1T10-Like A Rolling Stone.flac
+     2:11.02       23113148 B   ---   --   ---xx  11 Bob Dylan - D1T11-I Shall Be Released.flac
+     5:00.70       53084684 B   ---   --   ---xx  12 Bob Dylan - D1T12-Going, Going, Gone.flac
+     4:57.44       52494332 B   ---   --   ---xx  13 Bob Dylan - D1T13-One Of Us Must Know (Sooner Or Later).flac
+     5:57.66       63130076 B   ---   --   ---xx  14 Bob Dylan - D1T14-It Ain't Me, Babe.flac
+     3:45.26       39751196 B   ---   --   ---xx  15 Bob Dylan - D1T15-Am I Your Stepchild?.flac
+     4:33.33       48234860 B   ---   --   ---xx  01 Bob Dylan - D2T01-One More Cup Of Coffee.flac
+     5:03.55       53578604 B   ---   --   ---xx  02 Bob Dylan - D2T02-Blowin' In The Wind.flac
+     3:12.02       33873548 B   ---   --   ---xx  03 Bob Dylan - D2T03-I Want You.flac
+     4:23.48       46506140 B   ---   --   ---xx  04 Bob Dylan - D2T04-Senor (late start).flac
+     4:45.56       50405756 B   ---   --   ---xx  05 Bob Dylan - D2T05-Masters Of War.flac
+     6:26.48       68203340 B   ---   --   ---xx  06 Bob Dylan - D2T06-Just Like A Woman.flac
+     5:58.69       63313532 B   ---   --   ---xx  07 Bob Dylan - D2T07-Baby Please Stop Crying.flac
+     3:47.05       40054604 B   ---   --   ---xx  08 Bob Dylan - D2T08-All Along The Watchtower.flac
+     3:48.38       40308620 B   ---   --   ---xx  09 Bob Dylan - D2T09-All I Really Wanna Do.flac
+    11:18.54      119726252 B   ---   --   ---xx  10 Bob Dylan - D2T10-It's Alright, Ma (I'm Only Bleeding).flac
+     4:01.35       42594764 B   ---   --   ---xx  11 Bob Dylan - D2T11-Forever Young.flac
+     7:39.16       81005276 B   ---   --   ---xx  12 Bob Dylan - D2T12-Changing Of The Guards.flac
+   139:44.53     1479063444 B                            0.6129  (27 files)
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - D1T01-My Back Pages.flac:77079cd4d1a15013dac40b75b2dedbc502 Bob Dylan - D1T02-Im Ready.flac:f8cbd0aa3bd4eeeb16ab09f511bcf22003 Bob Dylan - D1T03-Is Your Love In Vain?.flac:57cfc6ac8b211b32fcc0ee4f6ad2c99104 Bob Dylan - D1T04-Shelter From The Storm.flac:a31d428d5417bb86d22cefc10e5f8abf05 Bob Dylan - D1T05-It's All Over Now.flac:684e9215f10d265a32be5b0f080fe8bf06 Bob Dylan - D1T06-Tangled Up In Blue.flac:ddb2cd07f0b6ead49d9a6c9f5c0f365a07 Bob Dylan - D1T07-Ballad Of A Thin Man.flac:5d7399b03fca4f8bba5ad0273b261f8808 Bob Dylan - D1T08-Maggie's Farm.flac:0f5b65eea2de21f3df2d326f9b230fda09 Bob Dylan - D1T09-I Dont Believe You (She Acts Like We Never Have Met).flac:b7025d6d2d23b61e382dc97909b6412a10 Bob Dylan - D1T10-Like A Rolling Stone.flac:1780945c83a7bd02d7d0b68925ad022e11 Bob Dylan - D1T11-I Shall Be Released.flac:fcbef0ec4d6cb0591e7a943b4cf2e43d12 Bob Dylan - D1T12-Going, Going, Gone.flac:4009a74b3e68c4903c91075e865906dd13 Bob Dylan - D1T13-One Of Us Must Know (Sooner Or Later).flac:a12e31711e405292b0d6cb32788976ad14 Bob Dylan - D1T14-It Ain't Me, Babe.flac:bf9ad96a6f919320f18e3f1554bcb43215 Bob Dylan - D1T15-Am I Your Stepchild?.flac:cdbd4dff17f6dea9b635918c9275738a
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+8d199c0dc7fe2480b6892f6bab60a0fe *01 Bob Dylan - D1T01-My Back Pages.flac
+d25c4b045f97325f737688103e47cf9d *02 Bob Dylan - D1T02-Im Ready.flac
+f0e9fb96b362c2a8b3c12e846ab35efa *03 Bob Dylan - D1T03-Is Your Love In Vain?.flac
+8b417ce5e47a1e06e2759deec808205e *04 Bob Dylan - D1T04-Shelter From The Storm.flac
+11ac5c6380f805ae60605b1f4e072fed *05 Bob Dylan - D1T05-It's All Over Now.flac
+1a230ebe66645d553b8197b2b29c0dcf *06 Bob Dylan - D1T06-Tangled Up In Blue.flac
+6496ba327e60846999d340be07fb771c *07 Bob Dylan - D1T07-Ballad Of A Thin Man.flac
+bf8751de8ea06b15f4ccd5bd9fb49ed7 *08 Bob Dylan - D1T08-Maggie's Farm.flac
+5a42defa36434bbfe0ebaa30528716b2 *09 Bob Dylan - D1T09-I Dont Believe You (She Acts Like We Never Have Met).flac
+8bdc55ec58e317dacd2dbac305c4f2dd *10 Bob Dylan - D1T10-Like A Rolling Stone.flac
+83fdba4eae4967c2f0eb3511fe0e445b *11 Bob Dylan - D1T11-I Shall Be Released.flac
+d6b6f8d071ea2f14e084f746cb8d4708 *12 Bob Dylan - D1T12-Going, Going, Gone.flac
+9478c51d1af42f2826efe454eaffd148 *13 Bob Dylan - D1T13-One Of Us Must Know (Sooner Or Later).flac
+f3cbfa81543a4036f9460174490507c6 *14 Bob Dylan - D1T14-It Ain't Me, Babe.flac
+e6430f2997adf92ff21f0ae697905f9b *15 Bob Dylan - D1T15-Am I Your Stepchild?.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - D2T01-One More Cup Of Coffee.flac:95c533956869b97d72cbb95107e2b6a702 Bob Dylan - D2T02-Blowin' In The Wind.flac:d23e816612cd65316fe2f0e6378807d903 Bob Dylan - D2T03-I Want You.flac:667c2b2bdac7f7336b750b446f33b1a104 Bob Dylan - D2T04-Senor (late start).flac:dbf41181e81781dc3686a45eea27720205 Bob Dylan - D2T05-Masters Of War.flac:3bd099120e6e88cc0543b509c0ecfb0d06 Bob Dylan - D2T06-Just Like A Woman.flac:181419659fd69b575235567d8e34387007 Bob Dylan - D2T07-Baby Please Stop Crying.flac:1697a7cc299ab75eb52ac6d9fe3945a908 Bob Dylan - D2T08-All Along The Watchtower.flac:5c9740ac6db2d09c724a96777a6e8a1d09 Bob Dylan - D2T09-All I Really Wanna Do.flac:069028558fb3309e6d9fde9b982ab63710 Bob Dylan - D2T10-It's Alright, Ma (I'm Only Bleeding).flac:48b0f3dd12356ec150ee930d3cba956511 Bob Dylan - D2T11-Forever Young.flac:5721699e66d19625a2495892140facbd12 Bob Dylan - D2T12-Changing Of The Guards.flac:964d36e1d3a152728964afbf7f592906
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+e0adc67d4c3acf84eb9158f53036be8d *01 Bob Dylan - D2T01-One More Cup Of Coffee.flac
+6ff147cd2ad69148ab881d029536feb3 *02 Bob Dylan - D2T02-Blowin' In The Wind.flac
+2a2b8059161f4bacef410e49163a2c7f *03 Bob Dylan - D2T03-I Want You.flac
+321f488a27db893d2b51745633e72cee *04 Bob Dylan - D2T04-Senor (late start).flac
+b9f8efbfb08edfb20ecdfcf39e171f1a *05 Bob Dylan - D2T05-Masters Of War.flac
+75198191a555dff9377ca28e72acc762 *06 Bob Dylan - D2T06-Just Like A Woman.flac
+1bbd42fdbf54a2da267d2ca10c714093 *07 Bob Dylan - D2T07-Baby Please Stop Crying.flac
+a64037360739976f45bae236b0f7534f *08 Bob Dylan - D2T08-All Along The Watchtower.flac
+8c96a6ddb450709785d4eda4b9b9c849 *09 Bob Dylan - D2T09-All I Really Wanna Do.flac
+5d32da18746930772712a76d0e5176e2 *10 Bob Dylan - D2T10-It's Alright, Ma (I'm Only Bleeding).flac
+ec79ba4dbf6d4be332fd9b179b645a3f *11 Bob Dylan - D2T11-Forever Young.flac
+e93b74b37822feb78f2730feb28db299 *12 Bob Dylan - D2T12-Changing Of The Guards.flac
+
+===================
+===================
+===================

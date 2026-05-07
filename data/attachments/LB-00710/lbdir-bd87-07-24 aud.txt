@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-24 aud 
+=================== 
+=================== 
+=================== 
+cb0ef1b7ec8c9ecc3d4a73e5e17d45a5  bd87-07-24.md5
+83518ab6c6a462fd5e7087c10a5773bf  bd87-07-24.txt
+85ae308ea993e9a9ccfae0155849d95f  bd87-07-24d1t01.shn
+aaca43c44206e93320d0704bfcba701f  bd87-07-24d1t02.shn
+c914f32bf57e086b80df757d5e1f3915  bd87-07-24d1t03.shn
+f00c836546c034e9fdba9353a3ae4df4  bd87-07-24d1t04.shn
+1ffe1311543be521ee387cc39756a060  bd87-07-24d1t05.shn
+e85115fa5c67cad669f07ca9f7e6b61c  bd87-07-24d1t06.shn
+1d13a9ce634e329c0e41565809adea23  bd87-07-24d1t07.shn
+f2b2246ef74c3048c8e885a8e1864b19  bd87-07-24d1t08.shn
+3b7864ab563b95eac9cdffff64cf5d23  bd87-07-24d2t01.shn
+a1b218a3bfe169874795c81181c4c47e  bd87-07-24d2t02.shn
+509c4610958106a79638dd0818633226  bd87-07-24d2t03.shn
+5394c75eb681403ecbc8a2bd3693dca1  bd87-07-24d2t04.shn
+7892f91a17cb5581d2a08662978f6574  bd87-07-24d2t05.shn
+1f5b6a7023ac8e1cb80cc34b77fb7fc8  bd87-07-24d2t06.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-07-24 aud 
+=================== 
+=================== 
+=================== 
+b20ab136cce28e09ec3d5d63981b916b  [shntool]  bd87-07-24d1t01.wav
+92d2cb78c21bab5ab072a075771b2e8b  [shntool]  bd87-07-24d1t02.wav
+fe7ef5074913d97f68fdd8e35a0349fc  [shntool]  bd87-07-24d1t03.wav
+cd21f3aa082ee0d250d5b24fbbed8196  [shntool]  bd87-07-24d1t04.wav
+573c8d08de556a2b6160205512a9369b  [shntool]  bd87-07-24d1t05.wav
+4705cc2805f637758b325be1a90eda35  [shntool]  bd87-07-24d1t06.wav
+c02c2264613db430e267cddcc9cfd35b  [shntool]  bd87-07-24d1t07.wav
+a210800b0b363a160f2654370ac075b2  [shntool]  bd87-07-24d1t08.wav
+2b5dee901af6d6c8b1176f2aadc0e8cd  [shntool]  bd87-07-24d2t01.wav
+2cfe9738ae19f034943d788d6ef783ca  [shntool]  bd87-07-24d2t02.wav
+767bdea379b0d657b89bd764f8ba2406  [shntool]  bd87-07-24d2t03.wav
+61cd4d49f92708b795ab610320ba733f  [shntool]  bd87-07-24d2t04.wav
+a16f9d4499cf9e375b5f433ddac33585  [shntool]  bd87-07-24d2t05.wav
+33a3ad6c20862bc235f2a08fbdf75865  [shntool]  bd87-07-24d2t06.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-24 aud 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:50.54       61867052 B   ---   --   ---xx    shn  0.5802  bd87-07-24d1t01.shn
+     4:46.61       50593916 B   ---   --   ---xx    shn  0.5876  bd87-07-24d1t02.shn
+     5:10.45       54789884 B   ---   --   ---xx    shn  0.6014  bd87-07-24d1t03.shn
+     5:07.56       54286556 B   ---   --   ---xx    shn  0.5321  bd87-07-24d1t04.shn
+     4:48.69       50965532 B   ---   --   ---xx    shn  0.5746  bd87-07-24d1t05.shn
+     4:42.63       49893020 B   ---   --   ---xx    shn  0.6031  bd87-07-24d1t06.shn
+     6:40.02       70564748 B   ---   --   ---xx    shn  0.5649  bd87-07-24d1t07.shn
+     6:21.09       67229612 B   ---   --   ---xx    shn  0.5936  bd87-07-24d1t08.shn
+     6:23.57       67695308 B   ---   --   ---xx    shn  0.5241  bd87-07-24d2t01.shn
+     5:57.58       63111260 B   ---   --   ---xx    shn  0.4980  bd87-07-24d2t02.shn
+     5:09.63       54655820 B   ---   --   ---xx    shn  0.5305  bd87-07-24d2t03.shn
+     9:01.72       95601788 B   ---   --   ---xx    shn  0.4765  bd87-07-24d2t04.shn
+     6:45.34       71522012 B   ---   --   ---xx    shn  0.4984  bd87-07-24d2t05.shn
+     6:27.24       68323292 B   ---   --   ---xx    shn  0.5083  bd87-07-24d2t06.shn
+    83:14.67      881099800 B                            0.5430  (14 files)
+=================== 
+=================== 
+=================== 

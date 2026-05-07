@@ -1,0 +1,68 @@
+===================
+===================
+===================
+=== bd91-11-13.flacf.md5
+===================
+===================
+===================
+94cc18d8442b52380ed4dec209d3ca8a *bd91-11-13d2t01.flac
+40a4c25851517e478dbcddd1cc6deed4 *bd91-11-13d1t08.flac
+a4ef7874594d8b44ca4fce0926856921 *bd91-11-13d1t07.flac
+6c74ef64fae258e2aca500a67af138ac *bd91-11-13d1t06.flac
+e8485b6fa1f09b6b217e633040602ab9 *bd91-11-13d1t05.flac
+d36797454c92d2d8255bb014945d19e3 *bd91-11-13d1t04.flac
+5ae1159c85a9a729d4534bb592b62d54 *bd91-11-13d1t03.flac
+175f5a0d7c6d74d38b15c598b155e90e *bd91-11-13d1t02.flac
+d1c58c599c612419305d66452e8c07a2 *bd91-11-13d1t01.flac
+ef30bdc361f2dbedfbfa4fb6b31e8fef *bd91-11-13d2t09.flac
+3027e1eb244815a686885a1cdd1222bb *bd91-11-13d2t08.flac
+7b542479fe4ef2136f75b22747598647 *bd91-11-13d2t07.flac
+4398f0563ec66b515b82853731e17001 *bd91-11-13d2t06.flac
+eb13e851d48cd934a9e84446c97e1223 *bd91-11-13d2t05.flac
+ecc3bc72a718b9f9134daae72a78ec72 *bd91-11-13d2t04.flac
+e9bb17c78acb80a76ae4ef5e8bf6d6cf *bd91-11-13d2t03.flac
+adacee39176f9bf3d9abfbbda3b101da *bd91-11-13d2t02.flac
+===================
+===================
+===================
+=== bd91-11-13.txt
+===================
+===================
+===================
+Bob Dylan, 11/13/91, Akron, 2CDR
+
+(46min+49min) very good sound but has some hiss; very end of d2t7 missing and then volume goes up; missing opener Maggie's Farm 
+
+CD1 
+1 The Man In Me 2 All Along The Watchtower 3 Shelter From The Storm 4 Simple Twist Of Fate 5 I'll Be Your Baby Tonight 6 Gotta Serve Somebody 7 Confidential 8 Golden Vanity (acoustic)
+
+CD2 
+1 Love Minus Zero/No Limit (acoustic w band) 2 Desolation Row (acoustic w band) 3 Bob Dylan's Dream (acoustic w band) 4 Friend Of The Devil 5 Rainy Day Women # 12 & 35 6 Shooting Star 7 Highway 61 Revisited 8 Ballad Of A Thin Man 9 To Be Alone With You
+===================
+===================
+===================
+=== setlist.txt
+===================
+===================
+===================
+Maggie's Farm
+The Man In Me
+All Along The Watchtower
+Shelter fRom The Storm
+Simple Twist Of Fate
+I'll Be Your Baby Tonight
+Gotta Serve Somebody
+Confidential
+Golden Vanity
+Love Minus Zero/No Limit
+Desolation Row
+Bob Dylan's Dream
+Friend Of The Devil
+Rainy Day Women 
+Shooting Star
+Highway 61 Revisited
+Ballad Of a Thin Man
+To Be Alone With You
+===================
+===================
+===================

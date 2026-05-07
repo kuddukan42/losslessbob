@@ -1,0 +1,64 @@
+Bob Dylan
+Rod Laver Arena
+Melbourne, Australia
+August 17, 2007
+ 
+Disc 1:
+01. introduction [00:44] 
+02. Rainy Day Women #12 & 35 [04:44]  
+03. It Ain't Me, Babe [06:02]  
+04. Watching The River Flow [04:54]  
+05. Tangled Up In Blue [08:38]  
+06. John Brown [05:38]  
+07. The Levee's Gonna Break [06:37]
+08. When The Deal Goes Down [06:07]  
+09. Things Have Changed [06:45]  
+10. Desolation Row [09:16]
+11. Honest With Me [06:49]  
+12. Spirit On The Water [06:55]  
+Total time: [73:16]
+
+Disc 2:
+01. Highway 61 Revisited [05:45]  
+02. Nettie Moore [07:58]  
+03. Summer Days [06:08]  
+04. Ballad Of A Thin Man [10:24]  
+    (encore) 
+05. Thunder On The Mountain [06:03] 
+06. band introduction [00:42]
+07. Like A Rolling Stone [08:56]
+Total time: [46:01] 
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - banjo, violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+5th row right side floor
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-08-17d1t01.flac:75f0afca697deec148471663c30d64ae
+bd2007-08-17d1t02.flac:607a726e89a0fde185ea6ea34712fc41
+bd2007-08-17d1t03.flac:417755b18f3406d83e56c56e07067238
+bd2007-08-17d1t04.flac:33df3f783d34dcfa695269d0a6deb72d
+bd2007-08-17d1t05.flac:66bf43bd5592ace1d366700f68a93919
+bd2007-08-17d1t06.flac:453a64536350d6a5f3e1292d3f350ceb
+bd2007-08-17d1t07.flac:98a7aee5b0c6574bb5d59011d95f6817
+bd2007-08-17d1t08.flac:994a0236f52fe863e0e0437936c6a97e
+bd2007-08-17d1t09.flac:b4bb926d4a7f12bfbdb634fb978480b6
+bd2007-08-17d1t10.flac:39b70511e3c87d38ad7bd6e7679f58f3
+bd2007-08-17d1t11.flac:6ad53f16826c39b8e8ab89aa49a06b35
+bd2007-08-17d1t12.flac:7c77ae1c4a2001ce33734e8e0165474a
+bd2007-08-17d2t01.flac:21598c11c3f1cb0fa1aa7a6507689ed8
+bd2007-08-17d2t02.flac:9e0ac01b11be1aa8d8a27a6f4f57c8ee
+bd2007-08-17d2t03.flac:8d37830bd0e49fb4f0e4dc5f29704e4c
+bd2007-08-17d2t04.flac:d95de6eee45a5faaa8bebc35edafd79c
+bd2007-08-17d2t05.flac:e3a2abc2acf412706fc32adb49321fef
+bd2007-08-17d2t06.flac:f787a61e9dbe65c98afabacef21a2425
+bd2007-08-17d2t07.flac:28a83405d69ffa65391eb37616ae393e

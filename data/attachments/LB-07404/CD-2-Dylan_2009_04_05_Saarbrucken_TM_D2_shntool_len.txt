@@ -1,0 +1,7 @@
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:06.24      106954796 B   -b-   --   ---xx   flac  0.6170  Dylan_2009_04_05_Saarbrücken_TM_D2_01.flac
+     5:10.27       54747180 B   -b-   --   ---xx   flac  0.6090  Dylan_2009_04_05_Saarbrücken_TM_D2_02.flac
+     7:15.11       76759084 B   -b-   --   ---xx   flac  0.5164  Dylan_2009_04_05_Saarbrücken_TM_D2_03.flac
+     0:53.69        9510956 B   -b-   --   ---xx   flac  0.6038  Dylan_2009_04_05_Saarbrücken_TM_D2_04.flac
+     6:01.44       63782956 B   -b-   --   ---xx   flac  0.5774  Dylan_2009_04_05_Saarbrücken_TM_D2_05.flac
+    29:27.24      311754972 B                            0.5823  (5 files)

@@ -1,0 +1,13 @@
+16514a9bee6d0819a977656ceaaf6aff *bd040825t01.shn
+f69f654182992b5da8ce568c44a8c052 *bd040825t02.shn
+8e3dd5a32711174f53f56b4b48d40831 *bd040825t03.shn
+3839a56e55056f2d15f3f6ac6a12bb3d *bd040825t04.shn
+eff1761469efa059e9d15e7252ec2c40 *bd040825t05.shn
+cd85257a516513ddbf6fb567cc26ef1d *bd040825t06.shn
+0ae724ab542024e01d570b845fac7fc9 *bd040825t07.shn
+52bad65c539cda02af886e6ed439fd7f *bd040825t08.shn
+ea1afe6f2cbb857414e0523f15c5a793 *Bob Dylan 8-25-04 Peoria (Wario).txt
+e1ac29d86f4096b9b403660063ec99df *Bob Dylan 8-25-04 Peoria Back.jpg
+c969edf7cce887a4742b069e58fb7544 *Bob Dylan 8-25-04 Peoria CD.jpg
+f2ef90f9ceec9317d6995e60abf6e33e *Bob Dylan 8-25-04 Peoria Front Back.pdf
+feb2752a2d61f10aa39a66bbe1d40b34 *Bob Dylan 8-25-04 Peoria Front.jpg

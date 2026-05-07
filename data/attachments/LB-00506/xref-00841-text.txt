@@ -1,0 +1,107 @@
+===================
+===================
+===================
+=== Bob Dylan -Indiana 2001.ffp
+===================
+===================
+===================
+IndiFlac1\(01) .flac:da217195152c1145b0d33c163ba11490
+IndiFlac1\(02) .flac:996baf34a740a5f9e8deb22e9e5f4787
+IndiFlac1\(03) .flac:d9606edff0530823faae938627594e3d
+IndiFlac1\(04) .flac:d0e9e9218a3fb3398480de102974f5e0
+IndiFlac1\(05) .flac:a54d2334d0cca872caf73492f50ae439
+IndiFlac1\(06) .flac:c23357e720ac1119407964491937318c
+IndiFlac1\(07) .flac:35278603dbfb3c5059b026ce4c0b5147
+IndiFlac1\(08) .flac:2ba4f59584710e3da1ed5797e836dc1b
+IndiFlac1\(09) .flac:5a3561e9590efb4b31b387d776bf8c62
+IndiFlac1\(10) .flac:377f12e9f1354ec8be2a2b9a31c91e79
+IndiFlac1\(11) .flac:d50d5fb5b87aed91bf4a51971c1821be
+IndiFlac2\(01) .flac:28d0c515d59ffd78c758d59e813e8ffa
+IndiFlac2\(02) .flac:04fe0c9e7e40cae32a5ed1225fc9af06
+IndiFlac2\(03) .flac:2aaddd944b87eca3bdb95905baec5172
+IndiFlac2\(04) .flac:1387af22ae5bfc989104303dafdef619
+IndiFlac2\(05) .flac:4b6f6054c36559d0227ee241595623fb
+IndiFlac2\(06) .flac:203b6be6f4052f755f02209effb9088e
+IndiFlac2\(07) .flac:af96e632e7fba35f19acb6a52134b9bf
+IndiFlac2\(08) .flac:9dfb4ef525e02fe168d2533f4c392246
+IndiFlac2\(09) .flac:56acd78e66424d63383c572c2b5f702b
+IndiFlac2\(10) .flac:c91bc2db8200b2312bde5568db0021cf
+===================
+===================
+===================
+=== Indiana 2001.md5
+===================
+===================
+===================
+9957dbbe49c52c41719e83115afaddc9 *Indiana.txt
+bbb8c1c4a2b7b17e650c3f5753364e4e *Art\terre%20haute_2001_front.jpg
+14139e991832bdf5fc7c70eee1db64f9 *Art\terre%20haute_2001_back.jpg
+c83ae9dc26b6bd320cbd79c9afaf9f73 *IndiFlac1\(09) .flac
+1af618adff179fdcd8e48df2404649dd *IndiFlac1\(10) .flac
+0a2c7d52798ca5b7c988c21f32794f34 *IndiFlac1\(11) .flac
+d21ca994fd19ace7d1291533a763e2f8 *IndiFlac1\(04) .flac
+ece453d0575411c572cb9acd7df45979 *IndiFlac1\(07) .flac
+90f40799c33cd1d82a12a900d12bc0f1 *IndiFlac1\(08) .flac
+71c3ec9b23fb918bb52b12c3f8b1acd5 *IndiFlac1\(03) .flac
+1aa5ce6b19c69aa9515fe70254dd8eea *IndiFlac1\(05) .flac
+d11546013fe6f54b9995ea840e6358d0 *IndiFlac1\(06) .flac
+afcfce9ebe8a030a0289855439aa8d61 *IndiFlac1\(01) .flac
+64a9da34d77e77ea988dd47390a9a8e0 *IndiFlac1\(02) .flac
+71fd1a4a4d7286b7ad379e11d3d10424 *IndiFlac2\(01) .flac
+09b00417bad79deb92cfe8184117885f *IndiFlac2\(02) .flac
+a1e55188de8f26ff939eabcecdb42d6f *IndiFlac2\(03) .flac
+ea3f496ea3f0d249a7e59b07c2e1d3d2 *IndiFlac2\(04) .flac
+e3ae26420349c4c472dbcfdb2e79f3e5 *IndiFlac2\(05) .flac
+22a5fee693c31feb800fdddb1e09c2b6 *IndiFlac2\(06) .flac
+d57539478eb0fe0c13a6d3689a148d30 *IndiFlac2\(07) .flac
+9a17cf59e8baf5580046dd5c42a9a59f *IndiFlac2\(08) .flac
+24964bb8401510f50ab25551ae4b2317 *IndiFlac2\(10) .flac
+5ff87711da5545501268987babe8570b *IndiFlac2\(09) .flac
+===================
+===================
+===================
+=== Indiana.txt
+===================
+===================
+===================
+
+Bob Dylan
+Terre Haute, Indiana
+Indiana State University
+Hulman Center
+November 2, 2001
+
+CD>Nero>wav>FlacFrontend>Flac>MakeTorrent>Dime
+
+
+Disc 1  
+Humming Bird (acoustic) (Larry on electric guitar) 
+Girl Of The North Country (acoustic) 
+Desolation Row (acoustic) 
+Rank Strangers To Me (acoustic) (Larry on mandolin) 
+Maggie's Farm 
+Floater 
+Cry A While 
+Tears Of Rage (Bob on harp) 
+Mama, You Been On My Mind (acoustic) 
+John Brown (acoustic) (Larry on bouzouki) 
+Tangled Up In Blue (acoustic) (Bob on harp)
+
+Disc 2 
+Summer Days (Tony on standup bass) 
+Mississippi 
+Drifter's Escape (Bob on harp) 
+Leopard-Skin Pill-Box Hat 
+Things Have Changed 
+Like A Rolling Stone 
+Forever Young (acoustic) 
+Honest With Me 
+Blowin' In The Wind (acoustic) 
+All Along The Watchtower 
+
+
+Artwork Included
+ 
+===================
+===================
+===================

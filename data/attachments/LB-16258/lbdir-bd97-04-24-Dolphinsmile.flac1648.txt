@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd97-04-24-Dolphinsmile.flac1648
+===================
+===================
+===================
+e7e55af1a7c2af1757280b705b0922df *01 Absolutely Sweet Marie.flac
+c09075fdb80aa78a9ffb34a4a1ab9a80 *02 Senor.flac
+bbc19bc0561cc4eb3fd0ec03ee9fc4b4 *03 All Along The Watchtower.flac
+e11c73cc9a3d816887e30eea66d0c04e *04 Simple Twist Of Fate.flac
+b6b65342137d71f51b85792f9bf6ced1 *05 I'll Be Your Baby Tonight.flac
+a1bfb10269bfa1f2bc340b81e6bf26e1 *06 Silvio.flac
+d556a1efc459f3e1b71a15d5b2d9987d *07 Roving Gambler.flac
+ec090bffaef63d7e86f5d7d1352256a4 *08 Masters of War.flac
+d0d9bab48b44f2894aae50500b555c05 *09 Tangled Up In Blue.flac
+1d4bd53a1ebbfb8a4b5267235e0edb3f *10 Seeing The Real You.flac
+2c8e8128cca27761ece7ae207c854c2f *11 Never Gonna Be The Same Again.flac
+9f9efd4f47fe008c804e322c52c7a947 *12 Highway 61.flac
+4080db2d59e96918bb0021b1c5a8956f *13 I Shall Be Released.flac
+9fffba72517d0f9d5d9dc97d5ceed422 *14 My Back Pages.flac
+f05549af69717960731c164954e36b11 *15 Rainy Day Women.flac
+b804dba75b9aa207184efd1eaf5d3b99 *Bob Dylan Stanley Performing Arts Center Utica NY 1997-04-24 Dolphinsmile Archive.ffp
+cae291775c2f119e3162e93042300c19 *Bob Dylan Stanley Performing Arts Center Utica NY 1997-04-24 Dolphinsmile Archive.md5
+b804dba75b9aa207184efd1eaf5d3b99 *Bob Dylan Stanley Performing Arts Center Utica NY 1997-04-24 Dolphinsmile Archive.txt
+754e3be10ae11e24d63ed61b0e1b4fa9 *info.txt
+===================
+===================
+===================
+=== ffp for: bd97-04-24-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Absolutely Sweet Marie.flac:37557873aefc9a00e0872eedff49a17b
+02 Senor.flac:2601dbf0987c6aa5d4fef251378dbbc9
+03 All Along The Watchtower.flac:9c598fd84afaadfd3b8f24c87f238e3e
+04 Simple Twist Of Fate.flac:927453f2cef0bba748078a132d36e13d
+05 I'll Be Your Baby Tonight.flac:5ed04c70c5b6bfb2b37509a8cd65b371
+06 Silvio.flac:df4c8aeca8e793fdb313fc2917d59997
+07 Roving Gambler.flac:b4991b481a611f9e473001fbfeb7ebaa
+08 Masters of War.flac:80f08f50c8fb813887fc1fa5d9062ff2
+09 Tangled Up In Blue.flac:640a4dfc8ee8f627108478b7aca15de9
+10 Seeing The Real You.flac:a68251c039e030ff3a24d029783d8441
+11 Never Gonna Be The Same Again.flac:243a505c7142c2338ace5c51e1e1e1c3
+12 Highway 61.flac:d13ad45b29e60946a583731f566a6502
+13 I Shall Be Released.flac:183a4a2eda74becd1b66f91f262d2d9d
+14 My Back Pages.flac:11f22be46a4f300a6d4b31542ef40f94
+15 Rainy Day Women.flac:543ae8000ec2c669d793d1d67b7c6554
+===================
+===================
+===================
+=== shntool len for: bd97-04-24-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:33.978      64123900 B   cxx   --   ---xx   flac  0.5635  01 Absolutely Sweet Marie.flac
+     6:44.424      77649512 B   cxx   --   ---xx   flac  0.5216  02 Senor.flac
+     6:59.617      80566416 B   cxx   --   ---xx   flac  0.5804  03 All Along The Watchtower.flac
+     9:25.015     108482840 B   cxx   --   ---xx   flac  0.4886  04 Simple Twist Of Fate.flac
+     7:55.337      91264780 B   cxx   --   ---xx   flac  0.5205  05 I'll Be Your Baby Tonight.flac
+     8:03.115      92758176 B   cxx   --   ---xx   flac  0.5497  06 Silvio.flac
+     4:41.062      53963952 B   cxx   --   ---xx   flac  0.4699  07 Roving Gambler.flac
+     6:52.038      79111356 B   cxx   --   ---xx   flac  0.4281  08 Masters of War.flac
+    10:49.595     124722304 B   cxx   --   ---xx   flac  0.5792  09 Tangled Up In Blue.flac
+     7:27.898      85996404 B   cxx   --   ---xx   flac  0.5544  10 Seeing The Real You.flac
+     7:16.392      83787220 B   cxx   --   ---xx   flac  0.4537  11 Never Gonna Be The Same Again.flac
+    10:36.996     122303196 B   cxx   --   ---xx   flac  0.5621  12 Highway 61.flac
+     7:01.923      81009168 B   cxx   --   ---xx   flac  0.5111  13 I Shall Be Released.flac
+    10:53.978     125563900 B   cxx   --   ---xx   flac  0.5300  14 My Back Pages.flac
+     9:29.825     109406524 B   cxx   --   ---xx   flac  0.5632  15 Rainy Day Women.flac
+   119:51.193    1380709648 B                            0.5290  (15 files)
+===================
+===================
+===================

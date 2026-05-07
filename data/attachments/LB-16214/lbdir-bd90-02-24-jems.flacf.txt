@@ -1,0 +1,133 @@
+===================
+===================
+===================
+=== md5 for: bd90-02-24-jems.flacf
+===================
+===================
+===================
+d88e191ee2d1ac11b1de85c6c51776b8 *01 Introduction.flac
+83c5198d1120c0bb2236c2ef8894d21c *02 Chicken Hearted.flac
+346f3f2095c854e0e33d6df273cf861a *03 In The Real World.flac
+f2ebfeb7391dad42ad4a5d9cf1f70b64 *04 Mean Woman Blues.flac
+32a44115f770c465bf3806c0e8302933 *05 Blue Bayou.flac
+b3af8549401dcacd37524004daa36206 *06 Working For The Man.flac
+641cc7da4307ef65351e046cb38e7135 *07 I'm In The Mood.flac
+99fd22add569bc38981809148e53172b *08 Down The Line.flac
+3dad91dbaf1fd1dd83b0b6367b77a2cd *09 Pretty Paper.flac
+64b01c65a39a8b0b6cf76745370f671e *10 Dream Baby (How Long Must I Dream).flac
+2b610444b15e74ef884f20fb66f3e409 *11 Running Scared.flac
+210cff2dc0082ee1cb3a045d0a41ef84 *12 Crying.flac
+115a5e504dbf4221ebad3f1f1464ee9a *13 Oh, Pretty Woman.flac
+32cfd9ec8f10223e46bf526cfc21a5dd *14 Dream Baby (How Long Must I Dream).flac
+67bc6e9ff95db8e3171e5b4be7452084 *15 Send Me An Angel.flac
+2c0c56cf4a826a9642daf2052cc86210 *16 Love Hurts.flac
+cbbd820f719d326f78d1961ac482e9e3 *17 Rock House.flac
+088d25a889be11694131cf16108d2a2e *18 You Got It.flac
+12d21ded5840044214aab02eceac1c83 *19 Uptown.flac
+971b1343f50f1d27d0606183bd75dc9a *20 The Thrill Is Gone.flac
+59433dc0a6cde42f75feb2edceb23386 *21 It's Over.flac
+c336ee17c5d960788e1cdcf6cdf7768c *22 Home.flac
+cb4d52f6eb6474452478369868dbef6e *23 Leah.flac
+bbd40dbc4c663856358dbe51b964f093 *24 Claudette.flac
+d006bd6e54f7faf6f8ec936fd77c2b73 *25 She's A Mystery To Me.flac
+261d123bd3f61c7532dfa4160cb2c544 *26 That Lovin' You Feelin' Again.flac
+db8cda5a93f85bf280b90e8eb16d9ebd *27 Ooby Dooby.flac
+a87164f8033a9bcf55914cd6e22d95fb *28 Candy Man.flac
+4aea3e323b2690538129473355c61dea *29 Turn Turn Turn (Take 1).flac
+2fa35adfda82945d3b1dfd665c457f46 *30 Turn Turn Turn (Take 2).flac
+6f115ec2bf313c48bcb1ff0560c300ea *31 Eight Miles High.flac
+02907ceefdd72a9261f1a409c7c2ea99 *32 Mr. Tambourine Man.flac
+b702a2d2bba1d5c34bfad7cce0b6b58a *33 He Was a Friend of Mine.flac
+1adc69f7634aa8b66c3ab1390e706bc4 *34 Only the Lonely.flac
+8a04ad27a6ab23586af1a70d3ef35a03 *fingerprint.ffp
+f0bc5131712ca4481f27fd0c4d8b76a4 *info.txt
+580cda1d8b47ef9045397d24f2cbbd4e *md5sum.md5
+bc454ac737b97e677b4edcde03fb0013 *Roy Orbison Tribute 1990 Los Angeles BACK.jpg
+7957f032f56b4a5d1c54b54962266c0b *Roy Orbison Tribute 1990 Los Angeles FRONT.jpg
+===================
+===================
+===================
+=== ffp for: bd90-02-24-jems.flacf
+===================
+===================
+===================
+01 Introduction.flac:f91a9030685526a89d7123e6f470a66f
+02 Chicken Hearted.flac:dc496db89d43095baa2f9b5050e9f069
+03 In The Real World.flac:1ee4bf02c0db0fee4d26b816df5f9b0e
+04 Mean Woman Blues.flac:6d9ee58cd2a6de210f7c4bfad98abb3a
+05 Blue Bayou.flac:d67afaad0b5cbc79e45c5f75f363623f
+06 Working For The Man.flac:0cedae9babcb50973c0a8179edae885d
+07 I'm In The Mood.flac:6ff523ae4f03bd36b27acadefdbd003e
+08 Down The Line.flac:dbff1fd5bc0ee0b65b15ffe61de9b940
+09 Pretty Paper.flac:5afaa0b4738e1cf6abe1bddf4c89b7cd
+10 Dream Baby (How Long Must I Dream).flac:e06a79e5e644f894f73d09468733b846
+11 Running Scared.flac:4abfca8ad9a62e0e8a22a9607d0d2484
+12 Crying.flac:62443e18a66bb8017bad1c02f11f14c5
+13 Oh, Pretty Woman.flac:2cd64f0d866c64fb9134f1e711897dff
+14 Dream Baby (How Long Must I Dream).flac:ba8d126a2949b1abe0c27a99e8a6e8b8
+15 Send Me An Angel.flac:167ab9a05b5ffde35a1a3f56403adce1
+16 Love Hurts.flac:e2657f2938398285e03ccaf67abad839
+17 Rock House.flac:5912c2a3ba6e2bb81fee0ecd231cb696
+18 You Got It.flac:066554e899e70d79d85c41151fe8d5bc
+19 Uptown.flac:75155077b445cd86ebe87fe225f93d84
+20 The Thrill Is Gone.flac:d32f9d4f1bcc38db3191c8520ddd6b6d
+21 It's Over.flac:22765d84107d59b908841c8f88c88e1f
+22 Home.flac:e1249974118e38b3d84f19c5b0accb52
+23 Leah.flac:9010020500a269f240bf09bf1aef7fae
+24 Claudette.flac:cd5477486e35132a0ded08de45d1de44
+25 She's A Mystery To Me.flac:1d5e74849c3b7c23dbe677c20d191b1f
+26 That Lovin' You Feelin' Again.flac:92aea159153feb340deffd0dbf087cfe
+27 Ooby Dooby.flac:e5a0ec9db27615c36868eb6f0e1244a0
+28 Candy Man.flac:865dbb4873f8f8b27feb8fd5bacb03ae
+29 Turn Turn Turn (Take 1).flac:147424b7bbdfc98cda1f2d414b6736f0
+30 Turn Turn Turn (Take 2).flac:261b88ddb7ab4ef6648c3966d77ee4f8
+31 Eight Miles High.flac:a383673081d4cbc4a1a81913083b5a1c
+32 Mr. Tambourine Man.flac:2497e180050bb2cbf7c8158b8a75125f
+33 He Was a Friend of Mine.flac:af3f66095f5b316a9a41ebdfb24444aa
+34 Only the Lonely.flac:7d1663d1cb65087f715a29ea041f847a
+===================
+===================
+===================
+=== shntool len for: bd90-02-24-jems.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:39.38       28137020 B   ---   --   ---xx   flac  0.6067  01 Introduction.flac
+     4:33.59       48296012 B   ---   --   ---xx   flac  0.6371  02 Chicken Hearted.flac
+     4:54.03       51868700 B   ---   --   ---xx   flac  0.5948  03 In The Real World.flac
+     3:57.01       41809196 B   ---   --   ---xx   flac  0.6567  04 Mean Woman Blues.flac
+     4:31.09       47825612 B   ---   --   ---xx   flac  0.6222  05 Blue Bayou.flac
+     6:05.64       64536572 B   ---   --   ---xx   flac  0.6400  06 Working For The Man.flac
+     6:08.48       65028140 B   ---   --   ---xx   flac  0.6133  07 I'm In The Mood.flac
+     4:13.35       44711564 B   ---   --   ---xx   flac  0.5839  08 Down The Line.flac
+     3:22.16       35670476 B   ---   --   ---xx   flac  0.6097  09 Pretty Paper.flac
+     2:55.61       31013516 B   ---   --   ---xx   flac  0.6481  10 Dream Baby (How Long Must I Dream).flac
+     4:23.59       46532012 B   ---   --   ---xx   flac  0.6277  11 Running Scared.flac
+     5:24.48       57266540 B   ---   --   ---xx   flac  0.6390  12 Crying.flac
+     6:06.44       64665932 B   ---   --   ---xx   flac  0.6353  13 Oh, Pretty Woman.flac
+     4:22.48       46329740 B   ---   --   ---xx   flac  0.6789  14 Dream Baby (How Long Must I Dream).flac
+     5:13.56       55344956 B   ---   --   ---xx   flac  0.6192  15 Send Me An Angel.flac
+     4:30.19       47672732 B   ---   --   ---xx   flac  0.6294  16 Love Hurts.flac
+     6:55.14       73238972 B   ---   --   ---xx   flac  0.6433  17 Rock House.flac
+     4:21.40       46134524 B   ---   --   ---xx   flac  0.6766  18 You Got It.flac
+     4:40.34       49472012 B   ---   --   ---xx   flac  0.6506  19 Uptown.flac
+     5:04.44       53729132 B   ---   --   ---xx   flac  0.6636  20 The Thrill Is Gone.flac
+     6:29.36       68704316 B   ---   --   ---xx   flac  0.6228  21 It's Over.flac
+     5:19.26       56332796 B   ---   --   ---xx   flac  0.6608  22 Home.flac
+     4:19.70       45852284 B   ---   --   ---xx   flac  0.6214  23 Leah.flac
+     3:33.08       37592060 B   ---   --   ---xx   flac  0.6611  24 Claudette.flac
+     4:51.70       51497084 B   ---   --   ---xx   flac  0.6476  25 She's A Mystery To Me.flac
+     4:19.10       45711164 B   ---   --   ---xx   flac  0.6523  26 That Lovin' You Feelin' Again.flac
+     3:32.64       37547372 B   ---   --   ---xx   flac  0.6585  27 Ooby Dooby.flac
+     7:20.23       77670140 B   ---   --   ---xx   flac  0.6377  28 Candy Man.flac
+     4:15.41       45078476 B   ---   --   ---xx   flac  0.6738  29 Turn Turn Turn (Take 1).flac
+     3:57.52       41929148 B   ---   --   ---xx   flac  0.6737  30 Turn Turn Turn (Take 2).flac
+     5:14.00       55389644 B   ---   --   ---xx   flac  0.6766  31 Eight Miles High.flac
+     6:11.71       65611436 B   ---   --   ---xx   flac  0.6827  32 Mr. Tambourine Man.flac
+     5:31.74       58562492 B   ---   --   ---xx   flac  0.6242  33 He Was a Friend of Mine.flac
+     5:34.03       58924700 B   ---   --   ---xx   flac  0.6181  34 Only the Lonely.flac
+   164:56.13     1745686472 B                            0.6407  (34 files)
+===================
+===================
+===================

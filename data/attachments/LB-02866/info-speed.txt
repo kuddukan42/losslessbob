@@ -1,0 +1,9 @@
+>Can you provide a little more info on the speed correction? What SW used? 
+>Approx % change, up or down? Why burned and re-ripped? I guess you 
+>already moved teh corrected files off your hard drive. Thanks,
+>
+
+
+The recording was sped up by approx 1.2%, using Adobe Audition. Some people use Soundforge for this but it creates a nearly inaudible echo. 
+
+Yes, I had to re-rip because I had only the CDDA burn.

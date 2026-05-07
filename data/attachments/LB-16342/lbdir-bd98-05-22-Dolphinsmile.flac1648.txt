@@ -1,0 +1,66 @@
+===================
+===================
+===================
+=== md5 for: bd98-05-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+a30cf1b3a8fd9073eb50a4c23cd203cf *01 Magies Farm.flac
+fc2962af7f11c16c7e3b18acafcb6a8a *02 If You See Her Say Hello.flac
+3e5c8b18cab822db6fc0bbd4d6718137 *03 Cold Irons Bound.flac
+c907c4cdf60093208567f0eb57107d07 *04 Simple Twist Of Fate.flac
+3ea5891bf8c8d4865d844fc719baf28a *05 Silvio.flac
+9e4e4e7692530ec4e15ba03708e63ffb *06 Rank Strangers.flac
+66311f93f22e9130687b017de3b0c357 *07 Tangled Up In Blue.flac
+662503b739fc4e0ae6cdd2baca98343b *08 This Wheels On Fire.flac
+873cd60756f88afa5989fe62b990cf93 *09 Highway 61.flac
+615682b6c8094f4359d5b6c2860eb372 *10 It Aint Me Babe.flac
+21f92d53186c400f4a2a377ab0b4958f *11 Love Sick.flac
+d47ad72c8e0cb104a6e55eceac281653 *12 Rainy Day Women.flac
+4a8d8654ea18b52f8170cfc99b6da5ef *Bob Dylan Pauley Pavillion Los Angeles CA 1998-05-22 Dolphinsmile Archive.ffp
+67a8150057efbb373efdff742bfe1ede *Bob Dylan Pauley Pavillion Los Angeles CA 1998-05-22 Dolphinsmile Archive.md5
+4a8d8654ea18b52f8170cfc99b6da5ef *Bob Dylan Pauley Pavillion Los Angeles CA 1998-05-22 Dolphinsmile Archive.txt
+7775d95badee2e760fd70b5904ed1702 *info.txt
+===================
+===================
+===================
+=== ffp for: bd98-05-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Magies Farm.flac:c88f85fb5d8a7e8e8833374be5a6ad6c
+02 If You See Her Say Hello.flac:cc99ee2ae92a9c4efd33065c0bb4ee6a
+03 Cold Irons Bound.flac:2ea6b92b6e058b96a33316468ce57e2f
+04 Simple Twist Of Fate.flac:33bcceadb69eb374bf3d0a66070bef45
+05 Silvio.flac:3e4cf643db1afa07085489dd1501a17e
+06 Rank Strangers.flac:acef78cfe08825fbf41e8d26203957b5
+07 Tangled Up In Blue.flac:c5a9493771b1b895c0ed60f54acbecd1
+08 This Wheels On Fire.flac:377045ad009e86af7663b61e488c9d7c
+09 Highway 61.flac:2666c7e9e72d8f7d2a21e95133400ce5
+10 It Aint Me Babe.flac:b95488638fdab2d51a602630fe3ec3a0
+11 Love Sick.flac:630742cf7b4aba8cc7e0394dc7e50561
+12 Rainy Day Women.flac:eb8bb737dc4869bbe9e491139e3b4582
+===================
+===================
+===================
+=== shntool len for: bd98-05-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.719      53322164 B   cxx   --   ---xx   flac  0.6205  01 Magies Farm.flac
+     5:12.381      59977180 B   cxx   --   ---xx   flac  0.5954  02 If You See Her Say Hello.flac
+     6:38.883      76585496 B   cxx   --   ---xx   flac  0.6092  03 Cold Irons Bound.flac
+     7:11.087      82768676 B   cxx   --   ---xx   flac  0.5716  04 Simple Twist Of Fate.flac
+     6:26.505      74209020 B   cxx   --   ---xx   flac  0.6269  05 Silvio.flac
+     3:33.567      41004908 B   cxx   --   ---xx   flac  0.5306  06 Rank Strangers.flac
+     7:12.132      82969404 B   cxx   --   ---xx   flac  0.6268  07 Tangled Up In Blue.flac
+     6:54.883      79657488 B   cxx   --   ---xx   flac  0.5857  08 This Wheels On Fire.flac
+     6:27.401      74380960 B   cxx   --   ---xx   flac  0.6146  09 Highway 61.flac
+     8:12.830      94623492 B   cxx   --   ---xx   flac  0.5237  10 It Aint Me Babe.flac
+     5:45.829      66399172 B   cxx   --   ---xx   flac  0.5586  11 Love Sick.flac
+     5:02.460      58072344 B   cxx   --   ---xx   flac  0.6385  12 Rainy Day Women.flac
+    73:15.676     843970304 B                            0.5914  (12 files)
+===================
+===================
+===================

@@ -1,0 +1,10 @@
+Bob Dylan, 4/15/92, Sydney, Australia, State Theatre, 1CDR
+
+LB-4028, (61min), (incomplete soundboard recording), A rare Soundboard recording from 1992. Thanks to oootttiiisss for his request., Lineage: Trade cdr from the UK > EAC (no errors) > hdd > frequency and spectral analysis [not, lossy] > flac > torrent > Dime, One Disc, 60:27; bittorrent download 09/06; some hiss; left channel lower than right on t1; cuts into t1; not always smooth transitions into songs; good sound [C+]
+
+analog drop on right channel t5 2:43,  t8 0:50; plus more analog drops/cuts
+
+1. Delia [first since May 1960 in Minneapolis], 2. Union Sundown, 3. Just Like A Woman, 4. Stuck Inside of Mobile with the Memphis Blues Again, 5. I'll Be Your Baby Tonight, 6. If Not For You [second ever, first was night before], 7. Love Minus Zero/No Limit, 8. Little Moses, 9. It's All Over Now, Baby Blue, 10. A Hard Rain's A-Gonna' Fall, 11. Cat's in the Well, 12. Idiot Wind (cut)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-10-25-net-taper-A.flacf 
+=================== 
+=================== 
+=================== 
+0449de041f208029e411f62c507874d6  bd1997-10-25 info.txt
+fdf362fcbd372c9f093d941c87faf660  bd1997-10-25.md5
+09621757408921f1147458de1b2ad823  bd1997-10-25d1t01.flac
+d644c2d740dc10132ed9aa2f72b77b86  bd1997-10-25d1t02.flac
+15e56c63a9a442c8ed6b80db9dd33b94  bd1997-10-25d1t03.flac
+a6d7debf8edb9b7a46e53fc7c98148d6  bd1997-10-25d1t04.flac
+ea6f65be61e0ec06d5f13c20e5717f2c  bd1997-10-25d1t05.flac
+b0da89bcc98019c9e5938d3450586585  bd1997-10-25d1t06.flac
+e5f04ab623ceac8eeea45594175ce6a1  bd1997-10-25d1t07.flac
+609f2da1ae0c478565e295abaf1e0e0e  bd1997-10-25d1t08.flac
+f5014b3e825c7f342da593d8df5bbc0c  bd1997-10-25d1t09.flac
+1a43a146a899588be5878f854c220fbe  bd1997-10-25d2t01.flac
+36be02a0f9d2e6af6bfc164235dcba20  bd1997-10-25d2t02.flac
+0396cf499970383c93a95f47b3aadb3b  bd1997-10-25d2t03.flac
+b5aaa1ac07a46234b70d971bfa0c7909  bd1997-10-25d2t04.flac
+253d132075dd042adca743e60c38f944  bd1997-10-25d2t05.flac
+fd80191a837d66591e231acaa7a4f0e7  bd1997-10-25d2t06.flac
+6e28e109d36458f8db624e9210c10e70  bd1997-10-25d2t07.flac
+c67b39fd82d8ca2016af865c97e4d1f4  bd97-10-25-net-taper-A-LB-4280.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-10-25-net-taper-A.flacf 
+=================== 
+=================== 
+=================== 
+bd1997-10-25d1t01.flac:a581c8383aa219fa01698501e0b0fcc4
+bd1997-10-25d1t02.flac:5dfd9b207156ea75a288932c4ac314ce
+bd1997-10-25d1t03.flac:346c108eeb18c331f9fc934ec0d5b64a
+bd1997-10-25d1t04.flac:abb2ac5792067ed866af81207686a714
+bd1997-10-25d1t05.flac:119b295a982058a426dd1e7421c7282f
+bd1997-10-25d1t06.flac:fefb7d472524c35465a7ee4618c2d224
+bd1997-10-25d1t07.flac:e06a976b8873008212bf08f175fb8403
+bd1997-10-25d1t08.flac:e58a54da39cccebb38f7b29dac6c056a
+bd1997-10-25d1t09.flac:877f9bedcddf643010388830a7f162b3
+bd1997-10-25d2t01.flac:b3edafe03094d5f672b3b198471ad31c
+bd1997-10-25d2t02.flac:13b35617f75766e3d8a759ca7d6f67b0
+bd1997-10-25d2t03.flac:7160ecdb73cb35e20b027c01ce3eec4b
+bd1997-10-25d2t04.flac:4a3a967f44e068e0e5849973fd79bab0
+bd1997-10-25d2t05.flac:2740a66899732077d0ebd81245cb0b83
+bd1997-10-25d2t06.flac:7302d4e0fe5a74ca62771c60e20d14a3
+bd1997-10-25d2t07.flac:f7a73f0e891496f257df9044bc30da1a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-10-25-net-taper-A.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.65       56600924 B   ---   --   ---xx   flac  0.5699  bd1997-10-25d1t01.flac
+     5:08.32       54406508 B   ---   --   ---xx   flac  0.4972  bd1997-10-25d1t02.flac
+     6:38.61       70350716 B   ---   --   ---xx   flac  0.5409  bd1997-10-25d1t03.flac
+     5:37.20       59493884 B   ---   --   ---xx   flac  0.5413  bd1997-10-25d1t04.flac
+     7:04.40       74887724 B   ---   --   ---xx   flac  0.5390  bd1997-10-25d1t05.flac
+     7:44.29       81917852 B   ---   --   ---xx   flac  0.5728  bd1997-10-25d1t06.flac
+     3:14.45       34327484 B   ---   --   ---xx   flac  0.4739  bd1997-10-25d1t07.flac
+     7:56.56       84098156 B   ---   --   ---xx   flac  0.5524  bd1997-10-25d1t08.flac
+     6:21.41       67304876 B   ---   --   ---xx   flac  0.5125  bd1997-10-25d1t09.flac
+     5:56.44       62901932 B   ---   --   ---xx   flac  0.5420  bd1997-10-25d2t01.flac
+     6:55.46       73314236 B   ---   --   ---xx   flac  0.5169  bd1997-10-25d2t02.flac
+     8:19.69       88185932 B   ---   --   ---xx   flac  0.5553  bd1997-10-25d2t03.flac
+     9:36.71      101773436 B   ---   --   ---xx   flac  0.5505  bd1997-10-25d2t04.flac
+     7:45.34       82106012 B   ---   --   ---xx   flac  0.4998  bd1997-10-25d2t05.flac
+     5:30.11       58237916 B   ---   --   ---xx   flac  0.4715  bd1997-10-25d2t06.flac
+     5:21.59       56763212 B   ---   --   ---xx   flac  0.5747  bd1997-10-25d2t07.flac
+   104:33.48     1106670800 B                            0.5351  (16 files)
+=================== 
+=================== 
+=================== 

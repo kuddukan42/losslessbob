@@ -1,0 +1,16 @@
+2b1292d242e38f1d48ed83b404bb3358  1995-03-16-Bielefeld.md5
+c2ab724cff481503159c7662985fa8dc  1995-03-16-Bielefeld.txt
+d9d4a67f1548fa821ffc45321817556e  Track101.flac
+f437a09e94bceca56a25ef6a308680d6  Track102.flac
+daadd67aaa52ce69283dac8614aba734  Track103.flac
+3c9af9d83735dbd789b8e02baf621ce6  Track104.flac
+cd91173f2d412edca6430e274e7d9c3e  Track105.flac
+27deb85cf34a896ccc3d4fb43878debd  Track106.flac
+e755fac601f5e8fb276f622e56ece4d9  Track107.flac
+54a7f3d2197f85b5f6eb62ab606c459b  Track108.flac
+c5c78504ea270a8f857fd209d64efdc4  Track109.flac
+885bfb3e5482da32f5136244fbb4e101  Track201.flac
+5cbaf91909816bca68b1bfd7c817f2bb  Track202.flac
+d1f8d8ff1235c3b84179625bdf8a799c  Track203.flac
+911e8ad3797766cad9461ac414ac1bf6  Track204.flac
+fb2679c7f410c88799d29a0ecdadcf6b  Track205.flac

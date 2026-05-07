@@ -1,0 +1,39 @@
+acf29ac8923fb671ae4ef98c9befacaa  Artwork\bobdy-ceremonies1.jpg
+05eff40eb2d9a1ad81969c82d3775da1  Artwork\checksums.md5
+c786032243e23a51d33247d395276467  Artwork\Dylan 1978 Sydney Back.jpg
+f87f61af1f83159a66cb5c035db9cc01  Bob Dylan Sydney 1978.txt
+46c61fe3781f1343191971ac6bc43ab1  checksums.md5
+8637c1b54c5ee5c99f7a0d3609b603b6  Disc One\checksums.md5
+97e8fa0f410dc94c440756295de45da0  Disc One\Track01.flac
+ff517c95fee0e313219348ab1dd1c124  Disc One\Track02.flac
+e15e1017675808af3affbc2916881e0a  Disc One\Track03.flac
+e772fb38422ebfebeb9638e257ca93f4  Disc One\Track04.flac
+d4228d6bed439f2e7ecfbf6e8333ad06  Disc One\Track05.flac
+e4a9e0cecc8443fcb1ff2c186cf9579e  Disc One\Track06.flac
+53f8bed3522afa568c8cff7150557bf7  Disc One\Track07.flac
+b5045a2b9c93afadaeea9309c5dfeb3e  Disc One\Track08.flac
+823aadb02e9895dae0325b4bc2479dd9  Disc One\Track09.flac
+892812dea1e263e0ae4bd0e20fa64946  Disc One\Track10.flac
+1367ad95d030a3964034b6b6054f32ac  Disc One\Track11.flac
+82af45a1a7e4a0a7cdf02659a2c4ca8c  Disc One\Track12.flac
+30075c6a10dc9064da034e68c70c21ad  Disc One\Track13.flac
+d2b3c38874b992ddc837703a48bd25e6  Disc One\Track14.flac
+b6ada7eb7f5ac98d6e6314ef7b5b81cc  Disc One\Track15.flac
+504554dd119cc4d058a59d077769b66b  Disc Two\checksums.md5
+53d7a08f24ab03ead4cf450238ced8aa  Disc Two\Track01.flac
+4f3c3ecb8fb2d25312fe4a2f89273f9e  Disc Two\Track02.flac
+354d3bfdb82932d132960d99be6f80b8  Disc Two\Track03.flac
+96c3d618e81fb413049c10659ce6bba0  Disc Two\Track04.flac
+4b16b5274a74aa72f5981b136751aa53  Disc Two\Track05.flac
+c8f3151102a10a33796dcbb66d91de1c  Disc Two\Track06.flac
+ac121eae0607784955e6158cdf6a8c32  Disc Two\Track07.flac
+0a8c3daf0bcdb74ae71e9e630be25a86  Disc Two\Track08.flac
+77f29ae877d5890feefa809e265d9d9a  Disc Two\Track09.flac
+7bcf9e51ef5aabdeb4c85e1538a45f2a  Disc Two\Track10.flac
+1f01fb1bf1566875d3e9076209d3f110  Disc Two\Track11.flac
+a0bb211c5f259cd88be5431baca4720d  Disc Two\Track12.flac
+2252131ad336e5458d5316213b2da247  Disc Two\Track13.flac
+fa853ed191537fd2157b0d5661ed9b20  Disc Two\Track14.flac
+2737e6a0cc7f74e3f5bc291c9165c449  Disc Two\Track15.flac
+5df21f106953ebab67999c69db06473d  Disc Two\Track16.flac
+97100b8c9e10b953bb5cb329c6b66640  more-torrent-info.txt

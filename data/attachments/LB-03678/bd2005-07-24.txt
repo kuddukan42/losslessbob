@@ -1,0 +1,105 @@
+Bob Dylan
+Pengrowth Saddledome
+Calgary, Alberta
+July 24, 2005
+
+Source:
+5 rows off floor, dead center behind soundboard, facing stage opposite end of arena
+AKG (ck91>mk90/3+h98>se300b) > Denecke PS-2 > Denecke AD-20 > Sony D8
+Sony D8 > Tascam CD-RW700 > EAC > Cool Edit 96 > CD Wave Editor > FLAC frontend
+
+Recorded and compiled by:
+soomlos
+
+Disc 1:
+01. Introduction [00:37]
+02. Maggie's Farm [04:41]
+03. Tonight I'll Be Staying Here With You [06:31]
+04. I'll Be Your Baby Tonight [05:10]
+05. Lay, Lady, Lay [05:33]
+06. God Knows [05:44]
+07. Shooting Star [06:28]
+08. Lonesome Day Blues [06:53]
+09. Positively 4th Street [06:48]
+10. Watching The River Flow [06:49]
+11. Can't Wait [05:20]
+12. Highway 61 Revisited [08:13]
+Total time: [68:46]
+
+Disc 2:
+01. Tryin' To Get To Heaven [05:55]
+02. A Hard Rain's A-Gonna Fall [06:55]
+03. Summer Days [11:34]
+     (encore)
+04. Don't Think Twice, It's All Right [06:57]
+05. Band Introductions [00:31]
+06. All Along The Watchtower [05:33]
+Total time: [37:24]
+
+Band Members:
+Bob Dylan - keyboards, harp
+Stu Kimball - guitar
+Denny Freeman - guitar
+Donnie Herron -violin, electric mandolin, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+flac fingerprint
+bd2005-07-24d1t01.flac:6f02c8aa7e774d5f78c4ac90dfa3c122
+bd2005-07-24d1t02.flac:2fda06fe2c916a178236c43d75a2b5d0
+bd2005-07-24d1t03.flac:834cd84d6dc00919c6ad1d92a3a87470
+bd2005-07-24d1t04.flac:fcc5073c43da28497617267c3e4a742a
+bd2005-07-24d1t05.flac:646add34ac812abf901275bcbcd9a5cb
+bd2005-07-24d1t06.flac:ff6527a389cac6294855829d28c8023c
+bd2005-07-24d1t07.flac:60c2a429a4278b476c48e0d21c62eba8
+bd2005-07-24d1t08.flac:525a84a0352346aeaea770a23bf3d205
+bd2005-07-24d1t09.flac:92cc80e70d5614d4d4bb1df394f24c00
+bd2005-07-24d1t10.flac:0f3af15f936ae0f68d12eaaa67f24df3
+bd2005-07-24d1t11.flac:345cb9a7ad6a7ae633dbc0a9c8ddaead
+bd2005-07-24d1t12.flac:7a9263127e162b3c62f676b388903eac
+bd2005-07-24d2t01.flac:71f146c0ce89852dada8ed4a5ccf87e1
+bd2005-07-24d2t02.flac:1527ae19166bb42f7809bb02f9f1f093
+bd2005-07-24d2t03.flac:2dab9d4c9129c705622b8bee408d2dbb
+bd2005-07-24d2t04.flac:2b3b04e58601f3a0ecd048579e7510ef
+bd2005-07-24d2t05.flac:4c67541c8334cbcc270de65dc89c11ba
+bd2005-07-24d2t06.flac:eb7077632300f213de12b823316f0400
+
+flac md5
+7c7feb3e5c8458458ad5a2f49e6d6c48 *bd2005-07-24d1t01.flac
+688a35fe2d80bf178cc2308e95f2fe16 *bd2005-07-24d1t02.flac
+ce4c539036eb67cd2b3f1af94f6929d4 *bd2005-07-24d1t03.flac
+9e0b681239e48f88a9bdb705857f7ecf *bd2005-07-24d1t04.flac
+6a5e3a293057069f9cb15e617b861a8b *bd2005-07-24d1t05.flac
+026791874a9cf04d2baa86e3ed95fc34 *bd2005-07-24d1t06.flac
+be09e44b2620742e8b0c525d0d5f1a80 *bd2005-07-24d1t07.flac
+01e16ee59bf14c676de84c639836cf20 *bd2005-07-24d1t08.flac
+b79357364506f21af17a593b2462c359 *bd2005-07-24d1t09.flac
+ecf1d54a49b9f52c17290188d4f27670 *bd2005-07-24d1t10.flac
+528fbb87327b14e769cd3bde9d42aeea *bd2005-07-24d1t11.flac
+4f061c1d69aaea1e9a1fa4638725271b *bd2005-07-24d1t12.flac
+bf178d85982b0647205359d183f4bd77 *bd2005-07-24d2t01.flac
+9f7ea955d867a85cc9bddaaf3677a4f6 *bd2005-07-24d2t02.flac
+ba32818d0ebc43251141afe751305ecd *bd2005-07-24d2t03.flac
+95dc4c2678cdf57a7766c1ea345942bf *bd2005-07-24d2t04.flac
+d1c4c62dacc8cdb9e2c485a6dc8e68e3 *bd2005-07-24d2t05.flac
+57201ce198ef1d937dd88746fa0eeb6a *bd2005-07-24d2t06.flac
+
+wav md5
+bfc4af280131b086e4d8a77a973b9b09 *bd2005-07-24d1t01.wav
+d53abd96218db8faf9516a8fe0a42cb7 *bd2005-07-24d1t02.wav
+8b8ab5fbf71c3774bee896530da35047 *bd2005-07-24d1t03.wav
+89d00d360044315636bfa7d4a70b2f8b *bd2005-07-24d1t04.wav
+7208ecf3b5f5f87f349ac2c908bf8d28 *bd2005-07-24d1t05.wav
+83340bd5f278d0b61fa52daa3a284900 *bd2005-07-24d1t06.wav
+1254ff1563a0daabe303fc1cc6007118 *bd2005-07-24d1t07.wav
+6aeb4c1aaa2fb2b2659c2546fe438197 *bd2005-07-24d1t08.wav
+3ea24ddeab4660e0026b4a54e7276501 *bd2005-07-24d1t09.wav
+4164a9dde7c7062072d339afbdaec4ee *bd2005-07-24d1t10.wav
+4f07d76710e9fe99e8ca525eefbceeab *bd2005-07-24d1t11.wav
+20c394cfcd883f25f45ca2c8cf117109 *bd2005-07-24d1t12.wav
+cfc48d33563831af408c7657bdaef49c *bd2005-07-24d2t01.wav
+fbbf0e3f54598a721ae79efe6d04d5a3 *bd2005-07-24d2t02.wav
+3584bc3ad04a439e0f94e002b18d2cec *bd2005-07-24d2t03.wav
+ac348cfabc62c7f57904e98f4f625b9d *bd2005-07-24d2t04.wav
+ca8cfc9119f48f32ceb1f1af50521a8b *bd2005-07-24d2t05.wav
+3db221ebdd6db4c31e7a2342973f8e90 *bd2005-07-24d2t06.wav

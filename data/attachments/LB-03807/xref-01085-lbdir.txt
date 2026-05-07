@@ -1,0 +1,104 @@
+===================
+===================
+===================
+=== md5 for: bd05-11-16-cc-c.flacf
+===================
+===================
+===================
+73b482391364e6c43e2b1c5e47db92f8 *101 Intro.flac
+e625663556f5dc4c451917ac2eaac357 *102 Maggie's Farm.flac
+942b0c0d7320a70c9d2f67c25bd4707e *103 She Belongs To Me.flac
+dd1701c233ee8569e7750ecefd31b5ce *104 Cry A While.flac
+6067775325e09bb7bc48a86a97b8d689 *105 Lay, Lady, Lay.flac
+1ddddf67c6cc7d2b08eca924636739a6 *106 Most Likely You Go Your Way, And I'll Go Mine.flac
+0bcde8b72e05d31a984c44d4cdaa5a35 *107 Million Miles.flac
+eaf5d781ed87370cdeb5c8e5d2b75597 *108 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+7ae239f53793f6c9a13ad77339452d3a *109 I'll Be Your Baby Tonight.flac
+faa8356a987c3f411b2f53a9d3e67139 *110 Man In The Long Black Coat.flac
+8300a75438ba72d6035247d736c246d2 *111 Down Along The Cove.flac
+d06450c53f636854c24985d6775d1c05 *112 Girl Of The North Country.flac
+3827da9376b6344e422b983c85d19271 *113 Highway 61 Revisited.flac
+da8a3a7d6dab530b072baba55a9536dd *201 A Hard Rain's A-Gonna Fall.flac
+0a574c93b69509fb4d4660957d8e141c *202 Summer Days.flac
+74fe04f73b9a07eb6b3fce940bc29268 *203 Like A Rolling Stone.flac
+bbfc2f4c46db7cf10575fb49ad286be0 *204 All Along The Watchtower.flac
+c8292fa9d37a39871049d2da0c5afbf9 *205 Under The Red Sky.flac
+85841e720c0365b93c39f99f16c1c740 *206 Blind Willie McTell.flac
+ba393859d18c94fc8d29f24f654d37c9 *207 Floater (Too Much To Ask).flac
+b3ebfb9d7826df298ef0f5885edb287b *208 Masters Of War.flac
+9e714e8f9a33ac82b7878b3e56184d87 *209 It Ain't Me, Babe.flac
+7dcd27dd4cdbfbff4130f8e23757f278 *210 High Water (For Charley Patton).flac
+94c72d136272f4a4494c93d760cbb4f4 *211 Just Like A Woman.flac
+be2471ff3baeb004b25c2dafee9672cb *Bob Dylan - 2005-11-16 Manchester [Crystal Cat CC 783-784].txt
+da0590530c86d2ecccbe0e6ed06df6d4 *cover.jpg
+4d1657f4f6088b7298dfdc37828c3c90 *manchesterinlay19ai.jpg
+d2ec0a8305b3ae9fb6e370b4dbcf63d3 *numriser000828zu.jpg
+639ea2166e00e246b04ab91b7122cf73 *numriser000927sv.jpg
+0ba9b8b077f34d011dbe5bf4892a3cfe *Torrent downloaded from Demonoid.me.txt
+===================
+===================
+===================
+=== ffp for: bd05-11-16-cc-c.flacf
+===================
+===================
+===================
+101 Intro.flac:3b9bf65b5b57008c3971f93a7ac2caf3
+102 Maggie's Farm.flac:42b10777ce87c5a0f93a8b8cb57703f4
+103 She Belongs To Me.flac:3cfa7ec5309ef77543de7c6e1ed14931
+104 Cry A While.flac:5c40d02f04a8a95fae19b2134b2a8e84
+105 Lay, Lady, Lay.flac:5d66b79f06b3b6fac4f51aaf565f8a87
+106 Most Likely You Go Your Way, And I'll Go Mine.flac:ed0dbff644d383c37559b82bf7915bb2
+107 Million Miles.flac:54cc03618b2db3574f6d91a273462915
+108 Stuck Inside Of Mobile With The Memphis Blues Again.flac:c537fe0daa665814e2f3723914ca8e9e
+109 I'll Be Your Baby Tonight.flac:ec55112e268090414df48adc15077024
+110 Man In The Long Black Coat.flac:bf52e91912bd4119b7428fbdbf74fb1d
+111 Down Along The Cove.flac:1102956620dedb29e113551f4d3a076d
+112 Girl Of The North Country.flac:fb90dff5adbcfee9a544064e5db6773a
+113 Highway 61 Revisited.flac:3e007e06970aa9100e58e8f71614b679
+201 A Hard Rain's A-Gonna Fall.flac:a8a1dd6d601ad9b9b2249cbb56ceb6d7
+202 Summer Days.flac:fe172fde2bb25cfaf22192a17ca43c6a
+203 Like A Rolling Stone.flac:8bb98c8def85cc8421ec07bbe8b82662
+204 All Along The Watchtower.flac:704bd9991af7a8cfdff60aa41261a634
+205 Under The Red Sky.flac:1f2088598ac2a11a58a9a7bd36c94e9f
+206 Blind Willie McTell.flac:a4b9f20896056b2acadd65585f0b0900
+207 Floater (Too Much To Ask).flac:53ef68609a070950cdcf0287a8d9150f
+208 Masters Of War.flac:c9fa577dd1dc9613c95c3540510230c6
+209 It Ain't Me, Babe.flac:839915f04fb935aabce84e97338140aa
+210 High Water (For Charley Patton).flac:214ae2cda91493f20d2a0e3b44e51781
+211 Just Like A Woman.flac:b05806160605be652c17706a76999467
+===================
+===================
+===================
+=== shntool len for: bd05-11-16-cc-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:14.61       13197116 B   ---   --   ---xx   flac  0.6197  101 Intro.flac
+     5:23.15       57012524 B   ---   --   ---xx   flac  0.7520  102 Maggie's Farm.flac
+     5:23.66       57132476 B   ---   --   ---xx   flac  0.7059  103 She Belongs To Me.flac
+     6:05.40       64480124 B   ---   --   ---xx   flac  0.7199  104 Cry A While.flac
+     5:33.54       58867756 B   -b-   --   ---xx   flac  0.6859  105 Lay, Lady, Lay.flac
+     7:09.67       75833388 B   -b-   --   ---xx   flac  0.7308  106 Most Likely You Go Your Way, And I'll Go Mine.flac
+     7:17.09       77108012 B   ---   --   ---xx   flac  0.6725  107 Million Miles.flac
+     8:54.08       94216236 B   -b-   --   ---xx   flac  0.7346  108 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:28.25       68502044 B   ---   --   ---xx   flac  0.6890  109 I'll Be Your Baby Tonight.flac
+     5:38.42       59722028 B   ---   --   ---xx   flac  0.6812  110 Man In The Long Black Coat.flac
+     6:35.72       69847388 B   ---   --   ---xx   flac  0.7168  111 Down Along The Cove.flac
+     5:33.64       58891772 B   ---   --   ---xx   flac  0.6454  112 Girl Of The North Country.flac
+     7:41.50       81438044 B   ---   --   ---xx   flac  0.7188  113 Highway 61 Revisited.flac
+     7:10.69       76014332 B   ---   --   ---xx   flac  0.6756  201 A Hard Rain's A-Gonna Fall.flac
+     9:42.34      102744812 B   ---   --   ---xx   flac  0.6810  202 Summer Days.flac
+     7:20.36       77701164 B   -b-   --   ---xx   flac  0.7152  203 Like A Rolling Stone.flac
+     6:52.08       72695852 B   -b-   --   ---xx   flac  0.6909  204 All Along The Watchtower.flac
+     5:19.03       56279084 B   -b-   --   ---xx   flac  0.6893  205 Under The Red Sky.flac
+     7:07.71       75489324 B   -b-   --   ---xx   flac  0.6949  206 Blind Willie McTell.flac
+     6:11.24       65500892 B   ---   --   ---xx   flac  0.6469  207 Floater (Too Much To Ask).flac
+     5:20.49       56563292 B   ---   --   ---xx   flac  0.6748  208 Masters Of War.flac
+     5:27.14       57715772 B   ---   --   ---xx   flac  0.6934  209 It Ain't Me, Babe.flac
+     7:51.01       83086796 B   ---   --   ---xx   flac  0.6938  210 High Water (For Charley Patton).flac
+     8:57.21       94776236 B   ---   --   ---xx   flac  0.6713  211 Just Like A Woman.flac
+   156:21.03     1654816464 B                            0.6946  (24 files)
+===================
+===================
+===================

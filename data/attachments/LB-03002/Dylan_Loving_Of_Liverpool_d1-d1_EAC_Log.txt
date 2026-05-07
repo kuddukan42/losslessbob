@@ -1,0 +1,93 @@
+EAC extraction logfile from 27. July 2002, 20:39 for CD
+新規アーティスト / 新規タイトル
+
+Used drive  : PLEXTOR CD-ROM PX-40TS   Adapter: 0  ID: 4  LUN: 0
+Read mode   : Secure with C2, accurate stream, NO disable cache
+Read offset correction : 676
+Overread into Lead-In and Lead-Out : Yes
+
+Used output format : Internal WAV Routines
+                     44.100 Hz; 16 Bit; Stereo
+
+Other options      : 
+    Fill up missing offset samples with silence : Yes
+    Delete leading and trailing silent blocks : No
+    Installed external ASPI interface
+
+
+Track  1
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t01.wav
+
+   Peak level 100.0 %
+   Track quality 99.9 %
+   Copy CRC 8EA2EDF5
+   Copy OK
+
+Track  2
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t02.wav
+
+   Peak level 100.0 %
+   Track quality 100.0 %
+   Copy CRC EDBB44B7
+   Copy OK
+
+Track  3
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t03.wav
+
+   Peak level 100.0 %
+   Track quality 100.0 %
+   Copy CRC EC4CAD35
+   Copy OK
+
+Track  4
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t04.wav
+
+   Peak level 95.1 %
+   Track quality 100.0 %
+   Copy CRC E0CFC610
+   Copy OK
+
+Track  5
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t05.wav
+
+   Peak level 100.0 %
+   Track quality 100.0 %
+   Copy CRC 82E20EC4
+   Copy OK
+
+Track  6
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t06.wav
+
+   Peak level 100.0 %
+   Track quality 100.0 %
+   Copy CRC 87F3E73B
+   Copy OK
+
+Track  7
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t07.wav
+
+   Peak level 97.8 %
+   Track quality 100.0 %
+   Copy CRC CF6EFB6D
+   Copy OK
+
+Track  8
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t08.wav
+
+   Peak level 95.8 %
+   Track quality 100.0 %
+   Copy CRC 8D53E280
+   Copy OK
+
+Track  9
+   Filename F:\Dylan_Loving\1\Loving_Of_Liverpool_d1t09.wav
+
+   Peak level 94.0 %
+   Track quality 100.0 %
+   Copy CRC E608D302
+   Copy OK
+
+No errors occured
+
+
+End of status report

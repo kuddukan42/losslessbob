@@ -1,0 +1,8 @@
+    length     expanded size   cdr  WAVE problems filename
+     6:23.52       67683548    ---   --   ---xx   01 She belongs to me.shn
+     7:29.74       79377692    ---   --   ---xx   02 Highway 61 revisited.shn
+     6:33.60       69466364    ---   --   ---xx   03 Love sick.shn
+     5:26.67       57664028    ---   --   ---xx   04 Rainy day women # 12 & 35.shn
+     5:39.24       59856092    ---   --   ---xx   05 Blowin' in the wind.shn
+     9:09.01       96845996    ---   --   ---xx   06 Like a rolling stone.shn
+    40:42.53      430893720 B                     (totals for 6 files, 0.5579 overall compression ratio)

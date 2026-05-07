@@ -1,0 +1,28 @@
+1-01 Crowd.flac:4692eb148f0a060c3973145e6b1c32b6
+1-02 Gotta Serve Somebody.flac:eceb8067dd72e38d46daeb0657cbd923
+1-03 I Believe In You.flac:9172e5c93c2a12b5a3f7034aa6b48150
+1-04 A Hard Rain's A-Gonna Fall.flac:b525858a21ab8061eb032e8757386ca6
+1-05 Dylan introduces Regina McCrary.flac:30d19f95db8e806c7a51e787a7560ebe
+1-06 Man Gave Names To All The Animals.flac:b28d29e4787a8941d81219e40b488d8a
+1-07 Simple Twist Of Fate.flac:51a53b50f7a4cab115908591e029d653
+1-08 We Just Disagree.flac:178433496cb8b5804c4f12dc6db3297b
+1-09 All Along The Watchtower.flac:54095fa1530aa446428602bad6c428a0
+1-10 Ain't Gonna Go To Hell.flac:7c853fc16d713cf8a1bf3ed626399b0d
+1-11 Girl Of The North Country.flac:07d71b7973fadc8a0b54087093238dc3
+1-12 Slow Train.flac:5525d8de0733d0bf3fc455ce7c6a754b
+1-13 Dylan introduces Carolyn Dennis.flac:f9e3bbce5e357d3ac1eaa01a1287de7d
+2-01 Abraham, Martin & John.flac:619dbf5f36a663ec287beacfae0a3765
+2-02 Rise Again.flac:e62a9e78827c7f0bf697ffdd31839741
+2-03 Let's Keep It Between Us.flac:645536d1911631c38c6c8762b96aac57
+2-04 Mary Of The Wild Moor.flac:1d22c3e090de3dc17335cfadeaa55109
+2-05 Solid Rock.flac:e10449451d9c3c1ba19fbfa71a11e268
+2-06 Just Like A Woman.flac:aba027fd8d2e3895005f5345b5d2db04
+2-07 Senor (Tales Of Yankee Power).flac:c5461b508aeeb6bc72336cd638ef7f38
+2-08 What Can I Do For You .flac:2ad2b6fa13f0957bd37988a608d4dac5
+2-09 When You Gonna Wake Up .flac:035be4a89edfaafe6918cbc3e4b7e07f
+2-10 In The Garden.flac:1610dde3ace681bdec791b60e3e4906d
+2-11 Band Introductions.flac:e423f0ae8e23695e1171cfa9774d994b
+2-12 Blowin' In The Wind.flac:59822c31e4b12c7c981017f58d9b4af4
+2-13 City Of Gold.flac:1e1731083649d65fcabe22ef733c650b
+2-14 Don't Think Twice, It's All Right.flac:7e0a60b709856dda67904398e8a3d609
+2-15 Like A Rolling Stone.flac:52d2d62f515077823519453817ed2fd3

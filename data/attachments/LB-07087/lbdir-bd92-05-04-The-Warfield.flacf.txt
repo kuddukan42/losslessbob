@@ -1,0 +1,132 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-05-04-The-Warfield.flacf 
+=================== 
+=================== 
+=================== 
+4e00fbe467e79dd91fb39a8733cfd03a  Artwork\The Warfield Booklet 01.png
+4c68fd88259c9a5a0e8444a32f3931f8  Artwork\The Warfield Booklet 02.png
+52714ae60b0c1d9bd9cf5638ee6cb3ae  Artwork\The Warfield Disc 01.png
+b2ef26c762a42219369982f8f52283d1  Artwork\The Warfield Disc 02.png
+8727457c3337e645acf58999b07d1d9a  Artwork\The Warfield Tray.png
+0ed071d5d2dc7bb0c626ae86aeb22491  Disc 1of2\01 - Rainy Day Women #12 & 35.flac
+2b344e55b90b5b115d242b14d746a514  Disc 1of2\02 - Every Grain Of Sand.flac
+cd9b9d7086280f8a18a84f0000cada07  Disc 1of2\03 - Union Sundown.flac
+726ff0de6f1e644433da1572ed340885  Disc 1of2\04 - Just Like A Woman.flac
+2fa2ad020987b933a52ecf03e5af6356  Disc 1of2\05 - Tangled Up In Blue.flac
+b29ce484ab0d3aeb6dbeccf20b710071  Disc 1of2\06 - I'll Be Your Baby Tonight.flac
+0c5ab0a94a532a5ea7ed4ad1ca7143e3  Disc 1of2\07 - She Belongs To Me.flac
+ee2419500fdf9f5cfa69931dde3bb061  Disc 1of2\08 - Love Minus Zero-No Limit.flac
+eef9902549b05a79e009b6d93283ab9c  Disc 1of2\09 - Little Moses.flac
+162082a53f8f698d928b8aff56425b7c  Disc 1of2\10 - The Lonesome Death Of Hattie Carrol.flac
+bab7d23e9cf7bafce2607f65ef058579  Disc 1of2\11 - Desolation Row.flac
+5e78681b6c5bdb6ea4323a67e59762ab  Disc 1of2\12 - Cats In The Well.flac
+5563a1f709084a8160be836fa26c1f89  Disc 1of2\The Warfield.cue
+57d0e701d36ed8b9ad12bec85b89a94b  Disc 1of2\The Warfield.ffp
+75c02ff8a9dedea9943a4eeac11a929f  Disc 1of2\The Warfield.log
+a20d1ea187234ca35b0ab1975aebc2b9  Disc 1of2\The Warfield.m3u
+a2a897bcc312043c0378f1a75dbdeb82  Disc 1of2\The Warfield.md5
+042386fb70d2135ecd7fb0117d59143b  Disc 1of2\The Warfield.st5
+6065c641097c7395dae2a6cd1c83944a  Disc 2of2\01 - Idiot Wind.flac
+f3733d55b98acc860f6e2a19b9ca1537  Disc 2of2\02 - The Times They Are A-Changin'.flac
+743a21f59949dd168711c100e657962f  Disc 2of2\03 - Highway 61 Revisited.flac
+367e6a0b12358ccfbfbf01a8fd5f37b2  Disc 2of2\04 - Absolutley Sweet Marie.flac
+038482f5a4ec3a93b6be91526ecbedac  Disc 2of2\05 - Ballad Of A Thin Main.flac
+884e6a181f411b2ae4d0df4a37f61db6  Disc 2of2\06 - Blowing In The Wind.flac
+709399778cf6aa31c23c5a751e7dd4a0  Disc 2of2\07 - Rainy Day Women # 12 & 35.flac
+54b123990bef4f7166d3a35de635cd33  Disc 2of2\08 - Lenny Bruce.flac
+174d47a022f80b89852b843ec189534f  Disc 2of2\09 - Stuck Inside Of Mobile With The Memphis Blues Again.flac
+71a8f066d83f4421f2114c23d38f679f  Disc 2of2\10 - I Don't Believe You.flac
+b08e3e270ed845917e9824ad7b0307b3  Disc 2of2\11 - Shelter From The Storm.flac
+85085b10e77088f798bf7d8ca2532838  Disc 2of2\12 - Gates Of Eden.flac
+785eba4fcc47740205ba557ca0046be4  Disc 2of2\The Warfield.cue
+bb69a77b3087c92de109a641c1583feb  Disc 2of2\The Warfield.ffp
+149bd6780aaab70e0d12f6c293cc6ffd  Disc 2of2\The Warfield.log
+5018debe47873dc3aca866c9d06cf115  Disc 2of2\The Warfield.m3u
+284574cc7e65f86b200fc1536509f8ee  Disc 2of2\The Warfield.md5
+9d09eaffaf2b0ab8ba8bc8ca9b7f26ee  Disc 2of2\The Warfield.st5
+6b94b59e96b30678237f896594c6b97d  The Warfield info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-05-04-The-Warfield.flacf\Disc 2of2 
+=================== 
+=================== 
+=================== 
+01 - Idiot Wind.flac:378b03b54855d698a5cddea3b1d07075
+02 - The Times They Are A-Changin'.flac:e009682b4dcf3f4a23ff9933e6276845
+03 - Highway 61 Revisited.flac:07db1cbb5e4cf66dea3a113c22a8d6a6
+04 - Absolutley Sweet Marie.flac:2cceda238823452ae64fd2adbe377065
+05 - Ballad Of A Thin Main.flac:556408e11d14ef1f7edba2e31bd6b8df
+06 - Blowing In The Wind.flac:4d09ead42c3feeb1811b4fdac1587459
+07 - Rainy Day Women # 12 & 35.flac:aeffe87bde3a97abf4ca216ead4fae04
+08 - Lenny Bruce.flac:fa58b03dfa92501d31c908ef66eef554
+09 - Stuck Inside Of Mobile With The Memphis Blues Again.flac:6587161d6c9fff83a2fd6f8309e79999
+10 - I Don't Believe You.flac:5b641307831dcd8a743034fc8a08954f
+11 - Shelter From The Storm.flac:a0ea454fd3b42bba6e30f4b26658b0b5
+12 - Gates Of Eden.flac:e987e0bc57d0ae0485e4591244d05035
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-05-04-The-Warfield.flacf\Disc 1of2 
+=================== 
+=================== 
+=================== 
+01 - Rainy Day Women #12 & 35.flac:7b898e61bee135f015ef4046d4b089e8
+02 - Every Grain Of Sand.flac:a87a1844f0848320bbc7fe01ca6325f7
+03 - Union Sundown.flac:44213464113e6150870730ec69dc7bed
+04 - Just Like A Woman.flac:fe5704a623ef51e62b8d6100812a7060
+05 - Tangled Up In Blue.flac:a7b2bb4c01759fe02181c634241e1f67
+06 - I'll Be Your Baby Tonight.flac:504a0fce4819f178cfab5b9625604261
+07 - She Belongs To Me.flac:7faa51f1a3c87784f395e980e63eccb4
+08 - Love Minus Zero-No Limit.flac:e0a37de876d2a6058fc8f4f14febdb55
+09 - Little Moses.flac:5bf1573aef1697e653e4d1ad5fa6cf88
+10 - The Lonesome Death Of Hattie Carrol.flac:d42383f6adc099302403bb817696429c
+11 - Desolation Row.flac:6446026776b4e564bf844fc9a7e9e3a4
+12 - Cats In The Well.flac:b17f71afe1fd87658196fee099d74edb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-05-04-The-Warfield.flacf\Disc 2of2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:39.30      102206204 B   ---   --   ---xx   flac  0.6724  01 - Idiot Wind.flac
+     5:50.37       61827068 B   ---   --   ---xx   flac  0.6301  02 - The Times They Are A-Changin'.flac
+     6:44.28       71331500 B   ---   --   ---xx   flac  0.7244  03 - Highway 61 Revisited.flac
+     5:24.07       57170108 B   ---   --   ---xx   flac  0.7314  04 - Absolutley Sweet Marie.flac
+     6:04.38       64299020 B   ---   --   ---xx   flac  0.7017  05 - Ballad Of A Thin Main.flac
+     4:06.47       43504988 B   ---   --   ---xx   flac  0.5780  06 - Blowing In The Wind.flac
+     4:11.23       44330540 B   ---   --   ---xx   flac  0.7019  07 - Rainy Day Women # 12 & 35.flac
+     5:22.15       56836124 B   ---   --   ---xx   flac  0.6717  08 - Lenny Bruce.flac
+     8:20.22       88251788 B   ---   --   ---xx   flac  0.7043  09 - Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     5:20.05       56459804 B   ---   --   ---xx   flac  0.6776  10 - I Don't Believe You.flac
+     5:46.55       61163804 B   ---   --   ---xx   flac  0.7041  11 - Shelter From The Storm.flac
+     7:10.03       75859100 B   ---   --   ---xx   flac  0.6227  12 - Gates Of Eden.flac
+    74:00.10      783240048 B                            0.6785  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-05-04-The-Warfield.flacf\Disc 1of2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:39.27       28111148 B   ---   --   ---xx   flac  0.7343  01 - Rainy Day Women #12 & 35.flac
+     6:44.15       71300924 B   ---   --   ---xx   flac  0.6698  02 - Every Grain Of Sand.flac
+     4:51.68       51492380 B   ---   --   ---xx   flac  0.7402  03 - Union Sundown.flac
+     6:43.05       71101004 B   ---   --   ---xx   flac  0.7095  04 - Just Like A Woman.flac
+     8:47.07       92979308 B   ---   --   ---xx   flac  0.7244  05 - Tangled Up In Blue.flac
+     6:16.35       66408764 B   ---   --   ---xx   flac  0.7102  06 - I'll Be Your Baby Tonight.flac
+     5:00.05       52931804 B   ---   --   ---xx   flac  0.6277  07 - She Belongs To Me.flac
+     3:11.18       33734780 B   ---   --   ---xx   flac  0.5592  08 - Love Minus Zero-No Limit.flac
+     3:40.15       38843324 B   ---   --   ---xx   flac  0.5412  09 - Little Moses.flac
+     5:58.50       63268844 B   ---   --   ---xx   flac  0.6244  10 - The Lonesome Death Of Hattie Carrol.flac
+     8:41.22       91956188 B   ---   --   ---xx   flac  0.6217  11 - Desolation Row.flac
+     4:02.25       42747644 B   ---   --   ---xx   flac  0.7040  12 - Cats In The Well.flac
+    66:35.67      704876112 B                            0.6687  (12 files)
+=================== 
+=================== 
+=================== 

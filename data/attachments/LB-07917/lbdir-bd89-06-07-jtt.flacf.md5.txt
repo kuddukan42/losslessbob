@@ -1,0 +1,25 @@
+b4f76c91f90e1b1cd702ef12dc31caef  Birmingham NEC 07.06.1989 - F.jpg
+7ab3ae97438da98597add63500299386  Birmingham NEC 07.06.1989 - R.jpg
+6fdc857d484a605c25a679a36acb51b5  Bob Dylan - Birmingham NEC June 7th 1989.md5
+caf7461e2410f14885a6ddb074e0d02f  Bob Dylan - Birmingham NEC June 7th 1989.txt
+57c619d12ea9ca3a344de660434f24b5  Bob Dylan - Birmingham NEC June 7th 1989_Info.txt
+20ad954e6dc8af888853cff25ce17227  Disc One\Disc One.ffp
+205c04228eedc1704f42ea71262ae9f6  Disc One\Disc01Track01 Dylan - Birmingham 07.06.1989.flac
+5ae4787a6009a8b3295124f71a99feda  Disc One\Disc01Track02 Dylan - Birmingham 07.06.1989.flac
+cd7703575dd3584c7e26274acebdf5e8  Disc One\Disc01Track03 Dylan - Birmingham 07.06.1989.flac
+aeea7ed24e4aa277156755e3b63ff180  Disc One\Disc01Track04 Dylan - Birmingham 07.06.1989.flac
+46a4c2f73d49d80e0240d0dc9fe30c36  Disc One\Disc01Track05 Dylan - Birmingham 07.06.1989.flac
+638f0aed3694baae92288c77bbc8f3a5  Disc One\Disc01Track06 Dylan - Birmingham 07.06.1989.flac
+6631382fcb6654e8064c6f9776f86c17  Disc One\Disc01Track07 Dylan - Birmingham 07.06.1989.flac
+e9e7317e277a42048a62dabe60986f23  Disc One\Disc01Track08 Dylan - Birmingham 07.06.1989.flac
+723b19b23a337a37968a2be3a52e81ce  Disc One\Disc01Track09 Dylan - Birmingham 07.06.1989.flac
+4f1f7a12a6cd6ec8d84f0e026ea07b84  Disc One\Disc01Track10 Dylan - Birmingham 07.06.1989.flac
+85843705557b919c0bb7274f9ca8096a  Disc Two\Disc Two.ffp
+3c2c6954a76d926387ff102b29513c90  Disc Two\Disc02Track01 Dylan - Birmingham 07.06.1989.flac
+cf1ecdec40084d7683647b40f66146f9  Disc Two\Disc02Track02 Dylan - Birmingham 07.06.1989.flac
+713e39c2c43b54440895aa443b4082e3  Disc Two\Disc02Track03 Dylan - Birmingham 07.06.1989.flac
+704fc00cedb5d1c08e0801cbaff02d60  Disc Two\Disc02Track04 Dylan - Birmingham 07.06.1989.flac
+ea3734eb7914bfdc627e389ab63c6da1  Disc Two\Disc02Track05 Dylan - Birmingham 07.06.1989.flac
+189ec896c28a3494e5a80c4a72e95f77  Disc Two\Disc02Track06 Dylan - Birmingham 07.06.1989.flac
+08404a48a23a623824e9f0deb1b5548f  Disc Two\Disc02Track07 Dylan - Birmingham 07.06.1989.flac
+f1dfa79dc511f434a9e92752061aa27a  Disc Two\Disc02Track08 Dylan - Birmingham 07.06.1989.flac

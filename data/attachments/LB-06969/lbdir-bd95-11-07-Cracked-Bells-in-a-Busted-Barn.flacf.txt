@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-11-07-Cracked-Bells-in-a-Busted-Barn.flacf 
+=================== 
+=================== 
+=================== 
+61372d8b4d45369bf722165678d21e82  Artwork\c-46b.jpg
+9b37b0a701492997098acefab61685e9  Artwork\c-46cd.jpg
+0647127acf018fdc288c1ba95ee8383d  Artwork\c-46cd2.jpg
+a583df129e1bef4692375e0d4b00c592  Artwork\c-46f.jpg
+4e7f69ed04c490829c2829bd18a951d1  Artwork\c-46i.jpg
+e29550b83a93c1e03a74275a5c348dd3  Artwork\c-46ib.jpg
+224677c19c7f34525047c5ea785eaa08  Artwork\c-46l.jpg
+67941efac552fd2e7f0c09119cd2b94d  bd99-11-07-Cracked Bells in a Busted Barn.txt
+9d76b81dcca75d2e83629e7c484e4968  bd99-11-07-d1\bd99-11-07-d1.md5
+75dd4f9504dab50396d7efb8bfa9b59b  bd99-11-07-d1\Track01.flac
+7d6a60851423dcef741b81798adfbaad  bd99-11-07-d1\Track02.flac
+c791b460506e62030493810c167de605  bd99-11-07-d1\Track03.flac
+e7abd73c19fc52ad2a16e91c4a696925  bd99-11-07-d1\Track04.flac
+2b1f117f426da82edd9ad2ad792930b7  bd99-11-07-d1\Track05.flac
+f69f7dc198da9ac07b4213ba9513a54e  bd99-11-07-d1\Track06.flac
+7430300151616eee4f158454a0fd6f22  bd99-11-07-d1\Track07.flac
+15b8942640d58345c71a319dd5d82e80  bd99-11-07-d1\Track08.flac
+80bfa1bd8970c6b5ec7014a87166dcc6  bd99-11-07-d1\Track09.flac
+4bfc9a81c43196dab247439737658aa9  bd99-11-07-d2\bd99-11-07-d2.md5
+9bf2dc695ae7084d40ac227c98a15da8  bd99-11-07-d2\Track01.flac
+ecaff87b9769abc5a96a6c822243aa65  bd99-11-07-d2\Track02.flac
+da9a30107031bc78409690af338b4e50  bd99-11-07-d2\Track03.flac
+7d88f36bb4907a180d3b007e8da794a2  bd99-11-07-d2\Track04.flac
+beb8076eb76e7333f847e9ce32d61393  bd99-11-07-d2\Track05.flac
+a58980843e89665c0fdd1929902bf187  bd99-11-07-d2\Track06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-11-07-Cracked-Bells-in-a-Busted-Barn.flacf\bd99-11-07-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:484277007cf577e83fedd2a9732bdce6
+Track02.flac:b9a73b452c8431a5ecc5bf39b47940e2
+Track03.flac:cbb595136c5c2b1a6b40569871db0e30
+Track04.flac:ae9d1b818d33538c84143a5b405480a7
+Track05.flac:d748e9c2067375d91985506f071624e7
+Track06.flac:3713e09634e3f9607f7fd1a20e6c87c7
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-11-07-Cracked-Bells-in-a-Busted-Barn.flacf\bd99-11-07-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:9208f6aa2aa69d710e3710b5e60b2e63
+Track02.flac:fd55d039e21c4d7cc6d32c5f5f1bf980
+Track03.flac:61a9d310cc6a0e5960c2d2987be1f34c
+Track04.flac:314132da4dbc033a3c359beb21d05d66
+Track05.flac:1d0f0e035067761a97a1d33fa75ff742
+Track06.flac:7b3ed81e448565d89442116e18055a4a
+Track07.flac:2a46a95a9432a91fd8c6d8f46c0a79f7
+Track08.flac:1a5669545f295c621097201b084e9054
+Track09.flac:60da83d05cdd6ee1fdcfd318d893d4e6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-11-07-Cracked-Bells-in-a-Busted-Barn.flacf\bd99-11-07-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:47.33       82456460 B   ---   --   ---xx   flac  0.5910  Track01.flac
+     9:24.19       99534332 B   ---   --   ---xx   flac  0.5950  Track02.flac
+     9:41.72      102657788 B   ---   --   ---xx   flac  0.5977  Track03.flac
+     7:34.40       80179724 B   ---   --   ---xx   flac  0.6066  Track04.flac
+    12:35.61      133325516 B   ---   --   ---xx   flac  0.5311  Track05.flac
+     6:01.48       63793340 B   ---   --   ---xx   flac  0.5685  Track06.flac
+    53:05.48      561947160 B                            0.5784  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-11-07-Cracked-Bells-in-a-Busted-Barn.flacf\bd99-11-07-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:20.34       56528012 B   ---   --   ---xx   flac  0.5771  Track01.flac
+     6:43.47       71199788 B   ---   --   ---xx   flac  0.5489  Track02.flac
+     7:15.26       76795196 B   ---   --   ---xx   flac  0.5746  Track03.flac
+     9:10.30       97090604 B   ---   --   ---xx   flac  0.5843  Track04.flac
+     8:32.11       90342716 B   ---   --   ---xx   flac  0.6100  Track05.flac
+     8:16.36       87579116 B   ---   --   ---xx   flac  0.6097  Track06.flac
+    11:41.64      123806972 B   ---   --   ---xx   flac  0.5745  Track07.flac
+     8:25.72       89251388 B   ---   --   ---xx   flac  0.5317  Track08.flac
+     7:19.04       77449052 B   ---   --   ---xx   flac  0.5614  Track09.flac
+    72:45.24      770042844 B                            0.5755  (9 files)
+=================== 
+=================== 
+=================== 

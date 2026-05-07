@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-26-soomlos.flacf 
+=================== 
+=================== 
+=================== 
+b782e9a9b1c77cc8caee962f193c6eef  bd05-11-26-soomlos-LB-3371.txt
+7ca84032d9bf86a7d3c0c0beb16c7fe0  bd2005-11-26.txt
+a721479fcd2054a6d3a84764b16dc65a  bd2005-11-26d1\bd2005-11-26d1flac.md5
+eb483c48b37ebebfc53318b4e6ebc754  bd2005-11-26d1\bd2005-11-26d1t01.flac
+a88b49e06c2eed7fd741bea88459afac  bd2005-11-26d1\bd2005-11-26d1t02.flac
+599be288dd522611a3708cb6463930eb  bd2005-11-26d1\bd2005-11-26d1t03.flac
+962706a8fbf61a984e692bb2c5a1f79c  bd2005-11-26d1\bd2005-11-26d1t04.flac
+eff1f9f3aa694a14f01b77edc95e378f  bd2005-11-26d1\bd2005-11-26d1t05.flac
+4d05fd15b34d672213b947f5bc80c1ee  bd2005-11-26d1\bd2005-11-26d1t06.flac
+bbd2791bb53e7edb0952d609bb120f18  bd2005-11-26d1\bd2005-11-26d1t07.flac
+5cb16827efab170ed10cbd3ea84275f9  bd2005-11-26d1\bd2005-11-26d1t08.flac
+73d52ef70d8183005e9dfba3341850c8  bd2005-11-26d1\bd2005-11-26d1t09.flac
+748e9e79290f76f05f19774225481671  bd2005-11-26d1\bd2005-11-26d1t10.flac
+8f0c5277779bf211065c1f20fac761aa  bd2005-11-26d1\bd2005-11-26d1t11.flac
+b8214fe53b802bd691bd73c5b5521cb8  bd2005-11-26d1\bd2005-11-26d1t12.flac
+e0bdac6f7d253e4ac00f60a8ec4a7f11  bd2005-11-26d1wav.md5
+60cd0cfeda009a3692501776383ad03a  bd2005-11-26d2\bd2005-11-26d2flac.md5
+1705c9a4f3c8970cd162dc2c1a249bc6  bd2005-11-26d2\bd2005-11-26d2t01.flac
+05323bd6835378035fe07702f8558f38  bd2005-11-26d2\bd2005-11-26d2t02.flac
+05d9f50adfe7dfbd98ca638fb345a6ff  bd2005-11-26d2\bd2005-11-26d2t03.flac
+3605d3cd5e8097cfc61a64057f1c0d16  bd2005-11-26d2\bd2005-11-26d2t04.flac
+fe754a2285df680b21b3d95bcc4cd99d  bd2005-11-26d2\bd2005-11-26d2t05.flac
+18d76bb135f96a5498aaf837147a59ed  bd2005-11-26d2\bd2005-11-26d2t06.flac
+c445feaa9ce2f6194589ccf13aee7ddf  bd2005-11-26d2\bd2005-11-26d2t07.flac
+9d34c59961782292dfc3cbac0f6457f8  bd2005-11-26d2wav.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-26-soomlos.flacf\bd2005-11-26d1 
+=================== 
+=================== 
+=================== 
+bd2005-11-26d1t01.flac:cbd1e7da52fd509291d5cdb10a39f12f
+bd2005-11-26d1t02.flac:73631d8b2d8333019a696dc52b024177
+bd2005-11-26d1t03.flac:169f4f874e56f297fdffbf349e3b0cdf
+bd2005-11-26d1t04.flac:9ba04b63b527122c5c5d8dc2b02a9ea0
+bd2005-11-26d1t05.flac:7cd3046a5a91f554e2f1922a2c3c8554
+bd2005-11-26d1t06.flac:fe3d5cb5a303c0573ea28fbda9b35a7c
+bd2005-11-26d1t07.flac:701c8b9d404031fb0aac7b6d3c7566e8
+bd2005-11-26d1t08.flac:e4375c1324de31cb423ca8a83896932c
+bd2005-11-26d1t09.flac:f99c90c63dd27bdabf9ca9a619bed2f4
+bd2005-11-26d1t10.flac:03af1b5cdfdf1199cae49a44fcba5355
+bd2005-11-26d1t11.flac:f410274881dddc4faa9a7efeaa40fc21
+bd2005-11-26d1t12.flac:87c64878c2ac264d326842e601755e55
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-26-soomlos.flacf\bd2005-11-26d2 
+=================== 
+=================== 
+=================== 
+bd2005-11-26d2t01.flac:f07fc866c5b7afe9c7221ff70f90ddab
+bd2005-11-26d2t02.flac:36779b0a5e9a3719f8acb9401b5aa815
+bd2005-11-26d2t03.flac:c60a0b7712e2335857f0318624e21a23
+bd2005-11-26d2t04.flac:fe3347befb2096f0ba41efbbf7b355fb
+bd2005-11-26d2t05.flac:9d5f5a39c6d5b82bc8d7043b6eac5c56
+bd2005-11-26d2t06.flac:369d192253836db3809ae547b2085f55
+bd2005-11-26d2t07.flac:a826dd56f987c5bfbeb8535c95fbb6b1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-26-soomlos.flacf\bd2005-11-26d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:02.55       11066204 B   ---   --   ---xx   flac  0.4777  bd2005-11-26d1t01.flac
+     5:21.27       56687948 B   ---   --   ---xx   flac  0.6068  bd2005-11-26d1t02.flac
+     4:59.11       52769516 B   ---   --   ---xx   flac  0.5352  bd2005-11-26d1t03.flac
+     7:00.00       74088044 B   ---   --   ---xx   flac  0.5751  bd2005-11-26d1t04.flac
+     5:41.46       60260636 B   ---   --   ---xx   flac  0.5121  bd2005-11-26d1t05.flac
+     6:48.72       72140588 B   ---   --   ---xx   flac  0.5750  bd2005-11-26d1t06.flac
+     6:18.64       66829772 B   ---   --   ---xx   flac  0.4845  bd2005-11-26d1t07.flac
+     5:33.67       58898828 B   ---   --   ---xx   flac  0.5707  bd2005-11-26d1t08.flac
+     7:22.14       78001772 B   ---   --   ---xx   flac  0.4895  bd2005-11-26d1t09.flac
+     6:29.73       68791340 B   ---   --   ---xx   flac  0.4643  bd2005-11-26d1t10.flac
+     7:41.52       81442748 B   ---   --   ---xx   flac  0.5793  bd2005-11-26d1t11.flac
+     5:51.15       61951724 B   ---   --   ---xx   flac  0.4775  bd2005-11-26d1t12.flac
+    70:11.46      742929120 B                            0.5327  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-26-soomlos.flacf\bd2005-11-26d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:56.66      105289676 B   ---   --   ---xx   flac  0.5507  bd2005-11-26d2t01.flac
+     6:30.08       68814860 B   ---   --   ---xx   flac  0.4657  bd2005-11-26d2t02.flac
+    10:47.70      114295484 B   ---   --   ---xx   flac  0.4896  bd2005-11-26d2t03.flac
+     6:26.47       68200988 B   ---   --   ---xx   flac  0.5883  bd2005-11-26d2t04.flac
+     0:45.57        8072108 B   ---   --   ---xx   flac  0.5185  bd2005-11-26d2t05.flac
+     8:27.28       89500700 B   ---   --   ---xx   flac  0.4891  bd2005-11-26d2t06.flac
+     7:12.43       76305980 B   ---   --   ---xx   flac  0.5123  bd2005-11-26d2t07.flac
+    50:07.19      530479796 B                            0.5149  (7 files)
+=================== 
+=================== 
+=================== 

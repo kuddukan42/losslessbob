@@ -1,0 +1,62 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-12-aud.flacf 
+=================== 
+=================== 
+=================== 
+161e4f5e8a28ff59aa93ecd0c4d8003a  bd93-06-12 - flac.md5
+22687d4779e524b942e6054949b9ac26  bd93-06-12 - t01.flac
+cefdd9b3f4faf77a302f1d4d3949a4f1  bd93-06-12 - t02.flac
+c53b67ce0bc782965f97042eed00bcae  bd93-06-12 - t03.flac
+64fcadaa7612759bb52f05356337a302  bd93-06-12 - t04.flac
+0b4cdd6d9dd64bc3c3982c3d8f8000b1  bd93-06-12 - t05.flac
+5f7f0481dfcd876483d0639c9bd5cd6b  bd93-06-12 - t06.flac
+3bb1a3f80bbbbd3130f95f3a0097497f  bd93-06-12 - t07.flac
+ab9d569bf28ed2a479e12a72f8634dfc  bd93-06-12 - t08.flac
+1e04aa76dbddacb6285c7fb072c89189  bd93-06-12 - t09.flac
+13d6eb1a8ff14ec6ac21316683d106f9  bd93-06-12 - t10.flac
+6aa6d1a0191f12f59e7f9c8275e2442c  bd93-06-12 - t11.flac
+c3dd506e7c69784f80efcd9494f642ae  bd93-06-12-aud.txt
+9bdfce975eaf8ed71418d78c13a2ce90  Fleadh 93.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-06-12-aud.flacf 
+=================== 
+=================== 
+=================== 
+bd93-06-12 - t01.flac:b04454788c9bac88cf17d78ac56dc03c
+bd93-06-12 - t02.flac:ed460b6dad2ab8a9af20c2e92cb9de49
+bd93-06-12 - t03.flac:2ac5eb2a9f2251803ae85a9f79bca4fb
+bd93-06-12 - t04.flac:bce956315cea91be0d99839b2ed856f3
+bd93-06-12 - t05.flac:aad01545f09477eb7a72db3439a48a46
+bd93-06-12 - t06.flac:6a745556165eca975920e902da3a3556
+bd93-06-12 - t07.flac:99880e7ba1e6d9e9f6e983b66a8c502c
+bd93-06-12 - t08.flac:2a1aa1ad02fe9121c6e67439f8b7c487
+bd93-06-12 - t09.flac:d74f3a8212e3bfb8e2ccfda8c48a0b92
+bd93-06-12 - t10.flac:655e2d958eaf9783a1f8f624add9614f
+bd93-06-12 - t11.flac:b9a41e732c779b1c9c8fbafc5bf39530
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-06-12-aud.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.09       43768412 B   ---   --   ---xx   flac  0.5808  bd93-06-12 - t01.flac
+     8:27.10       89458364 B   ---   --   ---xx   flac  0.5909  bd93-06-12 - t02.flac
+     5:10.36       54768716 B   ---   --   ---xx   flac  0.6031  bd93-06-12 - t03.flac
+     5:53.17       62309228 B   ---   --   ---xx   flac  0.5401  bd93-06-12 - t04.flac
+    10:29.74      111129692 B   ---   --   ---xx   flac  0.5756  bd93-06-12 - t05.flac
+     7:33.59       80048012 B   ---   --   ---xx   flac  0.5126  bd93-06-12 - t06.flac
+     5:47.47       61321388 B   ---   --   ---xx   flac  0.5238  bd93-06-12 - t07.flac
+     5:22.11       56826716 B   ---   --   ---xx   flac  0.5103  bd93-06-12 - t08.flac
+     7:03.16       74654876 B   ---   --   ---xx   flac  0.5660  bd93-06-12 - t09.flac
+     7:14.02       76562348 B   ---   --   ---xx   flac  0.5700  bd93-06-12 - t10.flac
+     7:15.52       76856348 B   ---   --   ---xx   flac  0.5171  bd93-06-12 - t11.flac
+    74:25.33      787704100 B                            0.5544  (11 files)
+=================== 
+=================== 
+=================== 

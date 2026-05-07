@@ -1,0 +1,348 @@
+===================
+===================
+===================
+=== CD1.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:26.17       68130428 B   ---   --   ---xx   flac  0.4376  01 Justine.flac
+     3:55.27       41517548 B   ---   --   ---xx   flac  0.4392  02 Positively 4th Street.flac
+     3:25.14       36194972 B   ---   --   ---xx   flac  0.4388  03 Clean cut kid.flac
+     4:27.60       47239964 B   ---   --   ---xx   flac  0.4390  04 I'll remember you.flac
+     3:17.48       34863740 B   ---   --   ---xx   flac  0.4382  05 Trust yourself.flac
+     3:21.31       35529356 B   ---   --   ---xx   flac  0.4385  06 That lucky old sun.flac
+     4:42.66       49900076 B   ---   --   ---xx   flac  0.4446  07 Masters of war.flac
+     5:04.57       53759708 B   ---   --   ---xx   flac  0.4486  08 Straight into darkness [Tom Petty & The Heartbreakers].flac
+     4:19.66       45842876 B   ---   --   ---xx   flac  0.4482  09 American girl [Tom Petty & The Heartbreakers].flac
+     8:27.54       89561852 B   ---   --   ---xx   flac  0.5000  10 A hard rain's a-gonna fall.flac
+     6:16.16       66364076 B   ---   --   ---xx   flac  0.4586  11 Girl from The North Country.flac
+     8:17.01       87673196 B   ---   --   ---xx   flac  0.4561  12 It's alright, ma (I'm only bleeding).flac
+     4:22.61       46360316 B   ---   --   ---xx   flac  0.4598  13 I forgot more than you'll ever know.flac
+     4:59.68       52903580 B   ---   --   ---xx   flac  0.4671  14 Just like a woman.flac
+     3:48.68       40379180 B   ---   --   ---xx   flac  0.4620  15 I'm moving on.flac
+    75:13.54      796220868 B                            0.4550  (15 files)
+===================
+===================
+===================
+=== ffp CD1.ffp
+===================
+===================
+===================
+01 Justine.flac:842b1170fe3a17580091797c8ab40533
+02 Positively 4th Street.flac:a37876b5a33689daaa77f9a8b2982938
+03 Clean cut kid.flac:9f164f1ea21057317626efa340ef4e3b
+04 I'll remember you.flac:058e01825d411977610c0e3e314a6df4
+05 Trust yourself.flac:5ef9fe2d558b7c222d131c50a8ce264a
+06 That lucky old sun.flac:3fd23cce7c9e7010ffc487ecea736b9f
+07 Masters of war.flac:c3d4c0dc10801b0f72496f30dd2bd89f
+08 Straight into darkness [Tom Petty & The Heartbreakers].flac:1e28a0852de3b54810f083b4d7adc104
+09 American girl [Tom Petty & The Heartbreakers].flac:661ec40724cd11020f54c45f2854753b
+10 A hard rain's a-gonna fall.flac:0de86585591339efe4f47d7b55f03358
+11 Girl from The North Country.flac:03efe35d8a062f754f13d492623666a4
+12 It's alright, ma (I'm only bleeding).flac:8e93ae632d26305a69dc4844432d3ba8
+13 I forgot more than you'll ever know.flac:a9ca80cc21c89b4d112d00bb07c85cd2
+14 Just like a woman.flac:0434cc470c7bf81ee4d9cead21ab9c5d
+15 I'm moving on.flac:b867ef4ddb9e3afb8550b774519da3c2
+===================
+===================
+===================
+=== ffp CD1.txt
+===================
+===================
+===================
+01 Justine.flac:842b1170fe3a17580091797c8ab40533
+02 Positively 4th Street.flac:a37876b5a33689daaa77f9a8b2982938
+03 Clean cut kid.flac:9f164f1ea21057317626efa340ef4e3b
+04 I'll remember you.flac:058e01825d411977610c0e3e314a6df4
+05 Trust yourself.flac:5ef9fe2d558b7c222d131c50a8ce264a
+06 That lucky old sun.flac:3fd23cce7c9e7010ffc487ecea736b9f
+07 Masters of war.flac:c3d4c0dc10801b0f72496f30dd2bd89f
+08 Straight into darkness [Tom Petty & The Heartbreakers].flac:1e28a0852de3b54810f083b4d7adc104
+09 American girl [Tom Petty & The Heartbreakers].flac:661ec40724cd11020f54c45f2854753b
+10 A hard rain's a-gonna fall.flac:0de86585591339efe4f47d7b55f03358
+11 Girl from The North Country.flac:03efe35d8a062f754f13d492623666a4
+12 It's alright, ma (I'm only bleeding).flac:8e93ae632d26305a69dc4844432d3ba8
+13 I forgot more than you'll ever know.flac:a9ca80cc21c89b4d112d00bb07c85cd2
+14 Just like a woman.flac:0434cc470c7bf81ee4d9cead21ab9c5d
+15 I'm moving on.flac:b867ef4ddb9e3afb8550b774519da3c2
+===================
+===================
+===================
+=== FLAC CD1.md5
+===================
+===================
+===================
+16202dccfc249089293e2c7c24fbd2db *01 Justine.flac
+ba4f86ac03375483e4e5aa560eb2afd2 *02 Positively 4th Street.flac
+807bda3fc345508744d1317eab3b2005 *03 Clean cut kid.flac
+70f6a4144ab8e7be13765444ada9ab73 *04 I'll remember you.flac
+6e7f87de527ccaa797dd033c215d91d0 *05 Trust yourself.flac
+544f98c34eb2710043c2c75f4184dad7 *06 That lucky old sun.flac
+f06554c007b8c5c9d6f1a2baaa0c3aac *07 Masters of war.flac
+8dae8c946ff8ae8b0cd07d5203a1a01d *08 Straight into darkness [Tom Petty & The Heartbreakers].flac
+5604b2520a70ccaa43e1b18badcc7b57 *09 American girl [Tom Petty & The Heartbreakers].flac
+29e9d7ed52d146543c37cf98222a3cad *10 A hard rain's a-gonna fall.flac
+a19a93cc90420c78f6d89bdac034e98f *11 Girl from The North Country.flac
+6dde918d8c62ec39cf9a4cb2401f20cb *12 It's alright, ma (I'm only bleeding).flac
+f5d555f0008fab17a0f05fe84d59a4ca *13 I forgot more than you'll ever know.flac
+0bc1d414c29053197067e9a7fd23b859 *14 Just like a woman.flac
+c107c342f9abcbda531f4070fe202fc9 *15 I'm moving on.flac
+===================
+===================
+===================
+=== CD2.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.45       62727884 B   ---   --   ---xx   flac  0.4560  16 Lenny Bruce.flac
+     5:03.28       53515100 B   ---   --   ---xx   flac  0.4369  17 When the night comes falling from the sky.flac
+     5:06.46       54086636 B   ---   --   ---xx   flac  0.4235  18 Lonesome town.flac
+     4:43.08       49940060 B   ---   --   ---xx   flac  0.4259  19 Ballad of a thin man.flac
+     4:27.09       47120012 B   ---   --   ---xx   flac  0.4394  20 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].flac
+     5:18.63       56243420 B   ---   --   ---xx   flac  0.4350  21 Refugee [Tom Petty & The Heartbreakers].flac
+     3:48.42       40318028 B   ---   --   ---xx   flac  0.4374  22 Rainy day women # 12 & 35.flac
+     4:44.74       50271692 B   ---   --   ---xx   flac  0.4350  23 Seeing the real you at last.flac
+     4:36.39       48778172 B   ---   --   ---xx   flac  0.4330  24 Across the borderline.flac
+     5:50.57       61874108 B   ---   --   ---xx   flac  0.4426  25 I and I.flac
+     6:38.11       70233116 B   ---   --   ---xx   flac  0.4674  26 Like a rolling stone.flac
+     7:29.43       79304780 B   ---   --   ---xx   flac  0.4540  27 In the garden.flac
+     4:50.00       51156044 B   ---   --   ---xx   flac  0.4626  28 Blowin' in the wind.flac
+     2:59.16       31613276 B   ---   --   ---xx   flac  0.4709  29 Uranium Rock.flac
+     7:42.20       81543884 B   ---   --   ---xx   flac  0.4731  30 Knockin' on heaven's door.flac
+    79:14.51      838726212 B                            0.4475  (15 files)
+===================
+===================
+===================
+=== ffp CD2.ffp
+===================
+===================
+===================
+16 Lenny Bruce.flac:8c1453c7058afdb20a034a30ba4968f3
+17 When the night comes falling from the sky.flac:36d7c5bf8ce6b270ff6752797426e161
+18 Lonesome town.flac:eeb2e631935c1c193eafb76dd6f38d91
+19 Ballad of a thin man.flac:9fdd7c449b6b5f4bea6ff738baefc665
+20 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].flac:60c1386bff3d2f96489d3bbf00334e3f
+21 Refugee [Tom Petty & The Heartbreakers].flac:b1fd9c96a23092d8c504667e4124b5c7
+22 Rainy day women # 12 & 35.flac:090a3c97c72df717cb98594940476589
+23 Seeing the real you at last.flac:8959c19e4d7bfa619b977f0e3a9d051b
+24 Across the borderline.flac:7247d639c7b3258e26b5ff4e03e2c499
+25 I and I.flac:2449a68b64dde40caf308fa3f0b97052
+26 Like a rolling stone.flac:87a03e2d0b7da9711755be9602a1d7db
+27 In the garden.flac:dbe0cd614769409d7cf3091b0752eeda
+28 Blowin' in the wind.flac:698c26d450612b44c88a472a75492d49
+29 Uranium Rock.flac:4be3f51193649deb9c003465c09d79c9
+30 Knockin' on heaven's door.flac:d8323d3a7d8c388a453fd714c7a6717c
+===================
+===================
+===================
+=== ffp CD2.ffp.txt
+===================
+===================
+===================
+16 Lenny Bruce.flac:8c1453c7058afdb20a034a30ba4968f3
+17 When the night comes falling from the sky.flac:36d7c5bf8ce6b270ff6752797426e161
+18 Lonesome town.flac:eeb2e631935c1c193eafb76dd6f38d91
+19 Ballad of a thin man.flac:9fdd7c449b6b5f4bea6ff738baefc665
+20 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].flac:60c1386bff3d2f96489d3bbf00334e3f
+21 Refugee [Tom Petty & The Heartbreakers].flac:b1fd9c96a23092d8c504667e4124b5c7
+22 Rainy day women # 12 & 35.flac:090a3c97c72df717cb98594940476589
+23 Seeing the real you at last.flac:8959c19e4d7bfa619b977f0e3a9d051b
+24 Across the borderline.flac:7247d639c7b3258e26b5ff4e03e2c499
+25 I and I.flac:2449a68b64dde40caf308fa3f0b97052
+26 Like a rolling stone.flac:87a03e2d0b7da9711755be9602a1d7db
+27 In the garden.flac:dbe0cd614769409d7cf3091b0752eeda
+28 Blowin' in the wind.flac:698c26d450612b44c88a472a75492d49
+29 Uranium Rock.flac:4be3f51193649deb9c003465c09d79c9
+30 Knockin' on heaven's door.flac:d8323d3a7d8c388a453fd714c7a6717c
+===================
+===================
+===================
+=== FLAC CD2.md5
+===================
+===================
+===================
+9459cc69decc359fdfd9eaf4035d5551 *16 Lenny Bruce.flac
+0cfdead53d06ff3a08614bb3bca2fb4a *17 When the night comes falling from the sky.flac
+5c0d6a5b8daffe9620d662309897393e *18 Lonesome town.flac
+61b0b302e6c2e06d5d502a76ddd637ee *19 Ballad of a thin man.flac
+a16c55a01f06c21c044bd9dc23992d43 *20 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].flac
+1aa9635a5cea652843eaaeed24f7651a *21 Refugee [Tom Petty & The Heartbreakers].flac
+424f900210ad9b8c5e13544eff76593e *22 Rainy day women # 12 & 35.flac
+170b9dfbc0f8cce47c9a86b4aa104884 *23 Seeing the real you at last.flac
+14c8d6e1ed1271b9517729f8fd563258 *24 Across the borderline.flac
+1fdbd8f539eddd05953f31cb2e3bb238 *25 I and I.flac
+025827699877360068349488a6dd1247 *26 Like a rolling stone.flac
+ca408bbb2dac02376325ba7953274c5e *27 In the garden.flac
+0702d12fcc32370dda30520db393f7e8 *28 Blowin' in the wind.flac
+905eaf40ba07a42e39c24917fbf3e438 *29 Uranium Rock.flac
+49bd5e20651b499a5bd9307c20402954 *30 Knockin' on heaven's door.flac
+===================
+===================
+===================
+=== 1986-02-15 Memorial Drive, Adelaide, South Australia, Australia.txt
+===================
+===================
+===================
+Memorial Drive
+Adelaide, South Australia, Australia
+February 15, 1986
+
+*** Sourced from LB-0221 ***
+http://jokerman.org.uk/lb/detail/LB-00221.html
+
+Unidentified taper
+Source/Lineage: no info
+
+01. Justine (Don Harris/Dewey Terry) [03:55]
+02. Positively 4th Street [03:25]
+03. Clean Cut Kid [04:27]
+04. I'll Remember You [03:17]
+05. Trust Yourself [03:17]
+06. That Lucky Old Sun (Haven Gillespie/Beasley Smith) [03:21]
+07. Masters Of War [4:42]
+Tom Petty & The Heartbreakers:
+08. Straight Into Darkness (Tom Petty) []
+09. American Girl (Tom Petty) [04:19]
+10. A Hard Rain's A-Gonna Fall [08:27]
+11. Girl From The North Country [06:16]
+12. It's Alright, Ma (I'm Only Bleeding) [08:17]
+13. I Forgot More Than You'll Ever Know (Cecil A. Null) [04:22]
+14. Just Like A Woman [04:59]
+15. I'm Moving On (Hank Snow) [03:48]
+Total time [68:47]
+
+16. Lenny Bruce [05:55]
+17. When The Night Comes Falling From The Sky [05:03]
+18. Lonesome Town (Baker Knight) [05:06]
+19. Ballad Of A Thin Man [04:43]
+Tom Petty & The Heartbreakers:
+20. So You Want To Be A Rock & Roll Star (R. McGuinn/C. Hillman) [04:27]
+21. Refugee (Tom Petty & Mike Campbell) [05:18]
+22. Rainy Day Women # 12 & 35 [03:48]
+23. Seeing The Real You At Last [04:44]
+24. Across The Borderline (Ry Cooder/John Hiatt/Jim Dickinson) [04:36]
+25. I And I [05:50]
+26. Like A Rolling Stone [06:38]
+27. In The Garden [07:29]
+28. Blowin' In The Wind [04:50]
+29. Uranium Rock (Warren Smith) [02:59]
+30. Knockin' On Heaven's Door [07:42]
+Total time [79:14]
+
+Concert #7 of the 1986 True Confessions Far East Tour
+Concert #7 with Tom Petty & The Heartbreakers
+1986 concert #7
+
+Bob Dylan (vocal & guitar) with Tom Petty & The Heartbreakers:
+Tom Petty (guitar)
+Mike Campbell (guitar)
+Benmont Tench (keyboards)
+Howie Epstein (bass)
+Stan Lynch (drums)
+The Queens Of Rhythm: Debra Byrd, Queen Esther Marrow, Madelyn Quebec, Elisecia Wright (backing vocals)
+
+8-10 Bob Dylan solo (vocal & guitar)
+26 Bob Dylan (harmonica)
+11, 24, 26 Bob Dylan and Tom Petty (shared vocals)
+18 Howie Epstein (slide guitar), Tom Petty (bass)
+
+BobTalk:
+All right. This is a song I wrote about twelve years ago in my <cough> protest period. And I'm still kind of in that period. All right, there's still certainly a lot to protest about, ain't that right? Anyway, I wrote this about at least twenty years ago and it still holds up pretty good so I'm gonna sing it for you now. Called Masters Of War
+
+Thank you, all right, youre a very kind audience! All right, I gotta get out of here now for a minute now. I'm gonna leave you with one of the last great American Rock and Roll bands. Tom Petty and the Heartbreakers. Give them a warm hand. (after Masters Of War)
+
+Thank you. I broke a string on that last song. Somewhere in the first verse. <inaudible> Some performers they just stop when that happens. Anyway, you know, Im from the States <inaudible> I come from someplace called the Midwest. I figure if I had come from the South I'd probably either killed somebody or been killed by this time. Anyway, hmm I used to know this special person up there and I wrote this song for her a long time ago. (before Girl Of The North Country)
+
+Thank you. I wanna bring Tom Petty here now. I wanna do a song that people used to rave about. This is a song they used to play on the radio. They dont play this kind of stuff anymore. I wanna sing you a song with <inaudible>. (before I Forgot More Than You'll Ever Know)
+
+All right. Anyway, you know Tennessee Williams he died in a hotel room in New York City. He was one of Americas great artists <inaudible> appreciate it. In fact people are doing now today much far worse things than he ever did and theyre making lots of money cash. Im writing a song about another guy. I wrote this one a while back because I figured he deserved it. He deserves something, he didnt get anything at all when he was alive, thats for sure. And just like Tennessee Williams, there are people now who are much further than he did, but he laid his body down for them. (before Lenny Bruce)
+
+All right, thank you. This is a song I wrote a while back, about .... People keep asking me questions. <loud calls from the audience> Shut up now! Shut up! <cheering> Theyre always asking me questions that you cant or anybody else cant answer, you know. So, you know like what's your political life like? Or your religious life? Personal questions like ..., you know even about your love life. So anyway, I don't answer any of them questions. People are asking me about my songs <inaudible> You know, because there comes a time when people have to be put in their place, ain't that right? It even happens to me once in a while. And I'm glad when, when someone puts me in my place. Cause sometimes, that needs to be done. Anyway this here is a song about somebody else that I figured I just had to put in his place. Im not sure if hes still there. I don't even know if he got there. (before Ballad Of A Thin Man)
+
+All right, everybody must get stoned! That's a song that can be sung in a couple of tones and took a couple of ways. Like that. Well here's one that can only be taken one way. Only taken one way. You see if you can figure out what that is. (before Seeing The Real You At Last)
+
+Thank you, all right. Its about that time of the evening again when we must part company. Anyway, I just want to sing you a song about my hero. You know, everybodys got their heroes today. <audience: Hurricane!> You know, where I come from, Sylvester Stallone is a big hero, awfully big hero <inaudible> Ronald Reagans a hero to many people <booing in the audience> Oh, I know, I know, but hes still a hero to a lot of people you know. Michael Jackson, hes giant <inaudible> You know, I dont care nothing about none of those people. None of those people are heroes to me. Ill sing a song right now about my hero. (before In The Garden)
+
+5 new songs (19%) compared to previous concert
+No new songs for this tour
+
+Stereo audience recording, 160 minutes
+
+
+ffp CD1:
+01 Justine.flac:842b1170fe3a17580091797c8ab40533
+02 Positively 4th Street.flac:a37876b5a33689daaa77f9a8b2982938
+03 Clean cut kid.flac:9f164f1ea21057317626efa340ef4e3b
+04 I'll remember you.flac:058e01825d411977610c0e3e314a6df4
+05 Trust yourself.flac:5ef9fe2d558b7c222d131c50a8ce264a
+06 That lucky old sun.flac:3fd23cce7c9e7010ffc487ecea736b9f
+07 Masters of war.flac:c3d4c0dc10801b0f72496f30dd2bd89f
+08 Straight into darkness [Tom Petty & The Heartbreakers].flac:1e28a0852de3b54810f083b4d7adc104
+09 American girl [Tom Petty & The Heartbreakers].flac:661ec40724cd11020f54c45f2854753b
+10 A hard rain's a-gonna fall.flac:0de86585591339efe4f47d7b55f03358
+11 Girl from The North Country.flac:03efe35d8a062f754f13d492623666a4
+12 It's alright, ma (I'm only bleeding).flac:8e93ae632d26305a69dc4844432d3ba8
+13 I forgot more than you'll ever know.flac:a9ca80cc21c89b4d112d00bb07c85cd2
+14 Just like a woman.flac:0434cc470c7bf81ee4d9cead21ab9c5d
+15 I'm moving on.flac:b867ef4ddb9e3afb8550b774519da3c2
+
+ffp CD2:
+16 Lenny Bruce.flac:8c1453c7058afdb20a034a30ba4968f3
+17 When the night comes falling from the sky.flac:36d7c5bf8ce6b270ff6752797426e161
+18 Lonesome town.flac:eeb2e631935c1c193eafb76dd6f38d91
+19 Ballad of a thin man.flac:9fdd7c449b6b5f4bea6ff738baefc665
+20 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].flac:60c1386bff3d2f96489d3bbf00334e3f
+21 Refugee [Tom Petty & The Heartbreakers].flac:b1fd9c96a23092d8c504667e4124b5c7
+22 Rainy day women # 12 & 35.flac:090a3c97c72df717cb98594940476589
+23 Seeing the real you at last.flac:8959c19e4d7bfa619b977f0e3a9d051b
+24 Across the borderline.flac:7247d639c7b3258e26b5ff4e03e2c499
+25 I and I.flac:2449a68b64dde40caf308fa3f0b97052
+26 Like a rolling stone.flac:87a03e2d0b7da9711755be9602a1d7db
+27 In the garden.flac:dbe0cd614769409d7cf3091b0752eeda
+28 Blowin' in the wind.flac:698c26d450612b44c88a472a75492d49
+29 Uranium Rock.flac:4be3f51193649deb9c003465c09d79c9
+30 Knockin' on heaven's door.flac:d8323d3a7d8c388a453fd714c7a6717c
+
+shntool_len CD1:
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:26.17       68130428 B   ---   --   ---xx   flac  0.4376  01 Justine.flac
+     3:55.27       41517548 B   ---   --   ---xx   flac  0.4392  02 Positively 4th Street.flac
+     3:25.14       36194972 B   ---   --   ---xx   flac  0.4388  03 Clean cut kid.flac
+     4:27.60       47239964 B   ---   --   ---xx   flac  0.4390  04 I'll remember you.flac
+     3:17.48       34863740 B   ---   --   ---xx   flac  0.4382  05 Trust yourself.flac
+     3:21.31       35529356 B   ---   --   ---xx   flac  0.4385  06 That lucky old sun.flac
+     4:42.66       49900076 B   ---   --   ---xx   flac  0.4446  07 Masters of war.flac
+     5:04.57       53759708 B   ---   --   ---xx   flac  0.4486  08 Straight into darkness [Tom Petty & The Heartbreakers].flac
+     4:19.66       45842876 B   ---   --   ---xx   flac  0.4482  09 American girl [Tom Petty & The Heartbreakers].flac
+     8:27.54       89561852 B   ---   --   ---xx   flac  0.5000  10 A hard rain's a-gonna fall.flac
+     6:16.16       66364076 B   ---   --   ---xx   flac  0.4586  11 Girl from The North Country.flac
+     8:17.01       87673196 B   ---   --   ---xx   flac  0.4561  12 It's alright, ma (I'm only bleeding).flac
+     4:22.61       46360316 B   ---   --   ---xx   flac  0.4598  13 I forgot more than you'll ever know.flac
+     4:59.68       52903580 B   ---   --   ---xx   flac  0.4671  14 Just like a woman.flac
+     3:48.68       40379180 B   ---   --   ---xx   flac  0.4620  15 I'm moving on.flac
+    75:13.54      796220868 B                            0.4550  (15 files)
+
+
+shntool_len CD2:
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.45       62727884 B   ---   --   ---xx   flac  0.4560  16 Lenny Bruce.flac
+     5:03.28       53515100 B   ---   --   ---xx   flac  0.4369  17 When the night comes falling from the sky.flac
+     5:06.46       54086636 B   ---   --   ---xx   flac  0.4235  18 Lonesome town.flac
+     4:43.08       49940060 B   ---   --   ---xx   flac  0.4259  19 Ballad of a thin man.flac
+     4:27.09       47120012 B   ---   --   ---xx   flac  0.4394  20 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].flac
+     5:18.63       56243420 B   ---   --   ---xx   flac  0.4350  21 Refugee [Tom Petty & The Heartbreakers].flac
+     3:48.42       40318028 B   ---   --   ---xx   flac  0.4374  22 Rainy day women # 12 & 35.flac
+     4:44.74       50271692 B   ---   --   ---xx   flac  0.4350  23 Seeing the real you at last.flac
+     4:36.39       48778172 B   ---   --   ---xx   flac  0.4330  24 Across the borderline.flac
+     5:50.57       61874108 B   ---   --   ---xx   flac  0.4426  25 I and I.flac
+     6:38.11       70233116 B   ---   --   ---xx   flac  0.4674  26 Like a rolling stone.flac
+     7:29.43       79304780 B   ---   --   ---xx   flac  0.4540  27 In the garden.flac
+     4:50.00       51156044 B   ---   --   ---xx   flac  0.4626  28 Blowin' in the wind.flac
+     2:59.16       31613276 B   ---   --   ---xx   flac  0.4709  29 Uranium Rock.flac
+     7:42.20       81543884 B   ---   --   ---xx   flac  0.4731  30 Knockin' on heaven's door.flac
+    79:14.51      838726212 B                            0.4475  (15 files)
+===================
+===================
+===================

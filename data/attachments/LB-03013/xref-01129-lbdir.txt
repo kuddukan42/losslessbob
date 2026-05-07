@@ -1,0 +1,48 @@
+===================
+===================
+===================
+=== md5 for: bd64-02-01-lossy-jtt.flacf
+===================
+===================
+===================
+48880023b9c768bf0b877323779f2612 *BOB DYLAN - QUEST February 1st 1964 (AC3 Soundtrack from DVD).ffp
+2bfc7cb6577aa5909a8e8211ee44a656 *BOB DYLAN - QUEST February 1st 1964 (AC3 Soundtrack from DVD).md5
+2a96b30a733a8f828b39578825193c7a *BOB DYLAN - QUEST February 1st 1964 (AC3 Soundtrack from DVD).txt
+f38683d806735d9067e3c725a1a76982 *BOB DYLAN - QUEST February 1st 1964 (AC3 Soundtrack from DVD)_Info.txt
+f3906c2930a762559d07a2d533aa01c7 *BOB DYLAN - Quest February 1st 1964_Track 01.flac
+da46726a79adb9f0d513780b2cf5a42f *BOB DYLAN - Quest February 1st 1964_Track 02.flac
+e61e83ac320b390705f9af2611864639 *BOB DYLAN - Quest February 1st 1964_Track 03.flac
+3d4365568fbcc018eda8cff87d10e647 *BOB DYLAN - Quest February 1st 1964_Track 04.flac
+330a9632f0d5c332b40659beddb2e02c *BOB DYLAN - Quest February 1st 1964_Track 05.flac
+0d6ff5e59186d82bfe9c432accb52278 *BOB DYLAN - Quest February 1st 1964_Track 06.flac
+===================
+===================
+===================
+=== ffp for: bd64-02-01-lossy-jtt.flacf
+===================
+===================
+===================
+BOB DYLAN - Quest February 1st 1964_Track 01.flac:32a922079806b44a0b1bba8767493e94
+BOB DYLAN - Quest February 1st 1964_Track 02.flac:be89ce12d273b785ecd334fc675b57a3
+BOB DYLAN - Quest February 1st 1964_Track 03.flac:996e9e04c0dfa127640098ad2419e0fe
+BOB DYLAN - Quest February 1st 1964_Track 04.flac:e5cfcdc060ee05a56fcf006f9bcd92d2
+BOB DYLAN - Quest February 1st 1964_Track 05.flac:a55406f9996c06ce52b6514035877189
+BOB DYLAN - Quest February 1st 1964_Track 06.flac:a50e95aa54b4e910fd9dd44154ec0a61
+===================
+===================
+===================
+=== shntool len for: bd64-02-01-lossy-jtt.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:39.00       28047644 B   ---   --   ---xx   flac  0.5273  BOB DYLAN - Quest February 1st 1964_Track 01.flac
+     4:52.15       51544124 B   ---   --   ---xx   flac  0.5216  BOB DYLAN - Quest February 1st 1964_Track 02.flac
+     5:24.60       57294764 B   ---   --   ---xx   flac  0.5180  BOB DYLAN - Quest February 1st 1964_Track 03.flac
+     3:18.09       34948412 B   ---   --   ---xx   flac  0.5114  BOB DYLAN - Quest February 1st 1964_Track 04.flac
+     6:00.14       63536972 B   ---   --   ---xx   flac  0.5077  BOB DYLAN - Quest February 1st 1964_Track 05.flac
+     5:02.18       53315180 B   ---   --   ---xx   flac  0.5005  BOB DYLAN - Quest February 1st 1964_Track 06.flac
+    27:16.41      288687096 B                            0.5132  (6 files)
+===================
+===================
+===================

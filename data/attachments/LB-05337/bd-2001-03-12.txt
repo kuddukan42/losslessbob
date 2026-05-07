@@ -1,0 +1,61 @@
+BOB DYLAN 
+
+March 12, 2001
+Civic Assembly Hall, Nagoya, Japan
+
+Source:
+"Hide" recording
+
+Equipment: 
+COS-11PTs > CSP161(Pre Amp) > TCD-D100 (16bit/44.1kHz) 
+
+Lineage: 
+DAT master > DTC-ZE700 > RPD-500 > CD-Rs 
+> PC(WAV) > TLH > FLAC (level 6) 
+
+
+Disc1: 
+01.Somebody Touched Me (acoustic)
+02.The Lonesome Death Of Hattie Carroll (acoustic)
+03.Mama, You Been On My Mind (acoustic)
+04.Maggie's Farm
+05.I Don't Believe You
+06.I'll Be Your Baby Tonight
+07.Visions Of Johanna (acoustic)
+08.One Too Many Mornings (acoustic)
+09.Tangled Up In Blue (acoustic)(Bob on harp)
+
+Disc2: 
+01.I'll Remember You
+02.Cold Irons Bound
+03.Rainy Day Women #12 & 35
+(encore)
+04.Love Sick
+05.Like A Rolling Stone
+06.If Dogs Run Free (acoustic)
+07.All Along The Watchtower
+08.Knockin' On Heaven's Door (acoustic)
+09.Highway 61 Revisited
+10.Blowin' In The Wind (acoustic)
+
+
+Fingerprints:
+bd-2001-3-12-d1001.flac:75a907daa10209dad9fa1f1cfefe829c
+bd-2001-3-12-d1002.flac:67ed253f17f8335c888125c116264a2a
+bd-2001-3-12-d1003.flac:6d53b5b986d876182eb3d7ff2d6c56be
+bd-2001-3-12-d1004.flac:4e1c21467f3a80469f5732fedc2bf61f
+bd-2001-3-12-d1005.flac:549a0d463a7304b4b89299f76cdccf4b
+bd-2001-3-12-d1006.flac:bfe47360b730dd8789d1de9f781c7e04
+bd-2001-3-12-d1007.flac:3b99c7422ce1197324a967579eab486c
+bd-2001-3-12-d1008.flac:bfd2cccef42e79114110659ced214c52
+bd-2001-3-12-d1009.flac:737c6ff3e8909b25c429635685bf4ab4
+bd-2001-3-12-d2001.flac:d490b2c187101e5c43381146c2d255a8
+bd-2001-3-12-d2002.flac:84d25d612bd0298da92b1479b56d8873
+bd-2001-3-12-d2003.flac:d35119541c2b8c4c8c24fa5444289229
+bd-2001-3-12-d2004.flac:bb25117d9197194de6bca0255daed3c2
+bd-2001-3-12-d2005.flac:8ba92f75960a29bc469aa50db2284abb
+bd-2001-3-12-d2006.flac:a5094d9377abec140811a5c5efc94475
+bd-2001-3-12-d2007.flac:153f6da1646c8db277e38f35eaa91ec8
+bd-2001-3-12-d2008.flac:e790ca973ace850fde28eb5d91741200
+bd-2001-3-12-d2009.flac:f470fbc4d759e93e17bbd7b930d13fc8
+bd-2001-3-12-d2010.flac:259ed52233480d5b5a4943d74f87535c

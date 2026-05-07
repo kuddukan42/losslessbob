@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-01.shnf 
+=================== 
+=================== 
+=================== 
+e51266416d11c13349487059ed332c18  bd95-07-01.txt
+9965b5c4bb82226fbf36aa24423d0117  d1\01 - Down In The Flood.shn
+65e4c70a4eabb3a499200689502f315a  d1\02 - It Takes A Lot To Laugh.shn
+d73641e0ba106f7d126d2086c3dac397  d1\03 - All Along The Watchtower.shn
+497277c61366b48d68eac52cb3032cf4  d1\04 - Tears Of Rage.shn
+190dfdfd1c96c7907c58b2f595b67b96  d1\05 - I Don't Believe You.shn
+dea01068fda2b5aade4b7917b91c95e1  d1\06 - Silvio.shn
+b517004271d82fac7f7e1b1b4af27848  d1\07 - Tangled Up In Blue.shn
+c61fe32947ada58e7d262ab309d8a938  d1\08 - Girl Of The North Country.shn
+336223ae447043c1fb92255f6e16a79b  d1\09 - Don't Think Twice, It's All Right.shn
+8686f90f82964fa7ca899f9da95a2869  d1\d1.md5
+134d04d647e92fc6ddc8bccafeb33018  d2\01 - Seeing The Real You At Last.shn
+f7c079f7ed6344cd4e5c3c0e636d9c6b  d2\02 - I'll Remember You.shn
+6c9a6408fad2ca4ba0c6180b21331075  d2\03 - Highway 61 Revisited.shn
+e252aff78226a0a126ca00d1f92ac348  d2\04 - Knockin' On Heaven's Door.shn
+f1785b05cc0cfa9b9aa3f97e7d227fe8  d2\05 - The Times They Are A-Changin'.shn
+2c9142cab9e8d144eb16fcece2ec8669  d2\d2.md5
+a44414024dfff9aad7cefb9f298db0a2  Info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-07-01.shnf\d1 
+=================== 
+=================== 
+=================== 
+1b2fd0f4bec623461e2e8118d7d641b9  [shntool]  01_-_Down_In_The_Flood.wav
+f878f81d5280ff39eb1e50d34f8a9798  [shntool]  02_-_It_Takes_A_Lot_To_Laugh.wav
+561be75c6cf8c9923e11cf7412c11fce  [shntool]  03_-_All_Along_The_Watchtower.wav
+c8cc68eacb1d35d9a8b64dd3a2fb287f  [shntool]  04_-_Tears_Of_Rage.wav
+3b854961159e1044b282c3019a7da194  [shntool]  05_-_I_Don't_Believe_You.wav
+f1a152173b76ccc80aba8aeb662bfa2e  [shntool]  06_-_Silvio.wav
+0c08d9532cf4da51c65a499683a1eaa3  [shntool]  07_-_Tangled_Up_In_Blue.wav
+2b62de2cee13ac093e65444a47cbe24b  [shntool]  08_-_Girl_Of_The_North_Country.wav
+e58f17aa9da68fef7bf2f3cd42148241  [shntool]  09_-_Don't_Think_Twice,_It's_All_Right.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-07-01.shnf\d2 
+=================== 
+=================== 
+=================== 
+a85f4338f5ed6b2f0800cd7d598f4045  [shntool]  01_-_Seeing_The_Real_You_At_Last.wav
+185ee06527443bb4ce406f2122ed3c17  [shntool]  02_-_I'll_Remember_You.wav
+ef0066a8cbb2d98834615c73bf9c4815  [shntool]  03_-_Highway_61_Revisited.wav
+53d01e2e5f1f70dda7ebe3f22cba22e1  [shntool]  04_-_Knockin'_On_Heaven's_Door.wav
+f7c2672489d3b26283f7a14e59987c78  [shntool]  05_-_The_Times_They_Are_A-Changin'.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-01.shnf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.04       56281052 B   ---   --   ---xx    shn  0.6524  01 - Down In The Flood.shn
+     7:05.05       74981804 B   ---   --   ---xx    shn  0.6313  02 - It Takes A Lot To Laugh.shn
+     6:08.58       65051660 B   ---   --   ---xx    shn  0.6578  03 - All Along The Watchtower.shn
+    10:05.63      106870220 B   ---   --   ---xx    shn  0.6449  04 - Tears Of Rage.shn
+     7:23.44       78248732 B   ---   --   ---xx    shn  0.6457  05 - I Don't Believe You.shn
+     6:31.42       69071228 B   ---   --   ---xx    shn  0.6746  06 - Silvio.shn
+     9:06.42       96413228 B   ---   --   ---xx    shn  0.6114  07 - Tangled Up In Blue.shn
+     8:06.64       85880972 B   ---   --   ---xx    shn  0.5303  08 - Girl Of The North Country.shn
+     8:25.16       89119676 B   ---   --   ---xx    shn  0.5926  09 - Don't Think Twice, It's All Right.shn
+    68:12.38      721918572 B                            0.6236  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-07-01.shnf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.15       72712124 B   ---   --   ---xx    shn  0.6656  01 - Seeing The Real You At Last.shn
+     6:55.24       73262492 B   ---   --   ---xx    shn  0.6285  02 - I'll Remember You.shn
+     8:40.19       91772732 B   ---   --   ---xx    shn  0.6346  03 - Highway 61 Revisited.shn
+     8:43.36       92341916 B   ---   --   ---xx    shn  0.6435  04 - Knockin' On Heaven's Door.shn
+    10:59.47      116358188 B   ---   --   ---xx    shn  0.5569  05 - The Times They Are A-Changin'.shn
+    42:10.66      446447452 B                            0.6202  (5 files)
+=================== 
+=================== 
+=================== 

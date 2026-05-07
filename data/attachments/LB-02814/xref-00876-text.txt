@@ -1,0 +1,399 @@
+===================
+===================
+===================
+=== A Tree With Roots - The Genuine Basement Tape Remasters +.md5
+===================
+===================
+===================
+e806a5f175b0db4c3cc5bd8801bd1133 *Cd1\Track01.shn
+fda5f94b15d74894263a6ed169ff4f0c *Cd1\Track02.shn
+458d666f299ac2b0cb4042cdf5a2dbab *Cd1\Track03.shn
+92601f17a27bbaab8687e33a698ed496 *Cd1\Track04.shn
+42e9d8f92075b73b96c76d4993a3c7f8 *Cd1\Track05.shn
+176209783bf80971a8d72b7d2bf48776 *Cd1\Track06.shn
+3c76c9dfdeb7b6fe12942a447c4970e5 *Cd1\Track07.shn
+8a93e44f289648961508621c2505556e *Cd1\Track08.shn
+987fb41c292ccef9a16303bf58b38324 *Cd1\Track09.shn
+1d517084b3330796631bd0712708bbb9 *Cd1\Track10.shn
+5f6258272cd81d31296237169392663f *Cd1\Track11.shn
+bbb67ea63fcb6d3623b2247d205cca2d *Cd1\Track12.shn
+d52b4cbcb34e43d8bc005a064ed03efd *Cd1\Track13.shn
+824b9197d32dca08f4d0886cb1f0f225 *Cd1\Track14.shn
+e76c18ef916b9522f5cd6e5aad87f1ac *Cd1\Track15.shn
+1c42bd649df52ed87e0d3f1e77ce8912 *Cd1\Track16.shn
+0fccc7e41082e65405529b6824e0ca9a *Cd1\Track17.shn
+e8d58e93de583177a6a1798e38099826 *Cd1\Track18.shn
+c8af2b4471da678ea58d7c43d2e1b3d3 *Cd1\Track19.shn
+def10edfda8c95d5ea09e96654e85e5d *Cd1\Track20.shn
+86af63e7dd04f3024c56cf0fe1efca2a *Cd1\Track21.shn
+ac0042e4241e20892058632494974d53 *Cd1\Track22.shn
+c04f09a72dcdf02891a9bb4ea2716b16 *Cd1\Track23.shn
+205f56864031a4fb69472d1bf2ea5d5b *Cd1\Track24.shn
+c396979efee87da2f67a7561516fad2b *Cd1\Track25.shn
+0efb8bd2035f0150f7cf694d4dc1487a *Cd1\Track26.shn
+c654bc5536dbe49c1f65dd6b5bfe3b79 *Cd1\Track27.shn
+90c8f89993b632035ae9348e4d0c3528 *Cd1\Track28.shn
+90b63fa4c1e3e3c7580313663ca8e600 *Cd2\ATreeWithRoots_CD2.md5
+b240881a1905d988ae94a08ff1824195 *Cd2\Track01.shn
+321301ef5a8c58758faf5886f860ee90 *Cd2\Track02.shn
+9b78df3d07a81f0fd38c08ec3f8b31ee *Cd2\Track03.shn
+62dab2cf859cd3515c77173105304eeb *Cd2\Track04.shn
+fdc6c7946610df3047f33be53f249780 *Cd2\Track05.shn
+efa7e0eee9e545f8d2ca5eb88799ed9f *Cd2\Track06.shn
+b385592eae334c3786474541d0bfd045 *Cd2\Track07.shn
+7852993a99a8d1881c0543b06d5830a7 *Cd2\Track08.shn
+89e34dccb82f35ea938462fb4b015018 *Cd2\Track09.shn
+50e3fc4b77dcd2357b698273a9996c7b *Cd2\Track10.shn
+aabf1eefeebf7ab0a314ae4bbbc1dd61 *Cd2\Track11.shn
+73a857d7d474a7bc48156eae26bec919 *Cd2\Track12.shn
+431a4e42b7b2111880f93ed19f5fd8d4 *Cd2\Track13.shn
+b8e19bf1be2c53820a4ab56ac959df44 *Cd2\Track14.shn
+8c5842c2e7b4c64d1ad800688a649c98 *Cd2\Track15.shn
+f55cb1559ab8eb94573d5b04fa71647d *Cd2\Track16.shn
+e09746f36136b25eddcc57587194e20d *Cd2\Track17.shn
+34ffbc65c35cccd3c0bcdc3d31fd44c2 *Cd2\Track18.shn
+0ca0118050b20723e16ab75c86ee21bf *Cd2\Track19.shn
+20544393ac16322e9171ad3d593feda2 *Cd2\Track20.shn
+f289252226ddcac4492088cc74ebcc77 *Cd2\Track21.shn
+8d0ef724e1ab55861758fdbfe0b2305d *Cd2\Track22.shn
+0153a8a084e2c90976bf4088ad7a38d4 *Cd2\Track23.shn
+d429da4f80ef59e4a24ef17e7f201e25 *Cd2\Track24.shn
+83981d510adf73d4ca0cae0a3e0f034f *Cd2\Track25.shn
+1a30d356747c6be540d7438c8ed2c770 *Cd2\Track26.shn
+c7da1d5fca655c07b31cad745711d4a7 *Cd2\Track27.shn
+b9fa967e57eb06c5b1364aa29cc9c4cf *Cd2\Track28.shn
+7188ec7fd20e8bd814d2e734be9f2e82 *Cd3\Track01.shn
+2225823acd78cac525d995deb122d738 *Cd3\Track02.shn
+ec8e43e923e15d09ca4ac3e2cda6dc4e *Cd3\Track03.shn
+86730b1e4d232b9a4bbee61ac3e17a56 *Cd3\Track04.shn
+5176b1fcf5a5274c35c4e42e93c0ae1f *Cd3\Track05.shn
+a3dea6755456697baeea9823e81cb1f4 *Cd3\Track06.shn
+48db5113700db8b1f901b412729b4c48 *Cd3\Track07.shn
+2dd949743af9931e7ad81a3f11b3d18c *Cd3\Track08.shn
+a01b4c8708ffd9d3647c8916a9b90331 *Cd3\Track09.shn
+607a2d51081e6a22c7258d586278b3cd *Cd3\Track10.shn
+c153ab2d8086e8dc8087dfebdb8d374f *Cd3\Track11.shn
+363c40bf575312efb8731d02663b6279 *Cd3\Track12.shn
+d55ee1dd3f8081f3fb2bbe3efb600937 *Cd3\Track13.shn
+ab7999419535bd8fe9afb9258646f339 *Cd3\Track14.shn
+68b04ab6fbb216091194a2e56ae15a7d *Cd3\Track15.shn
+bf850ad59dd63f39c65f274f224be157 *Cd3\Track16.shn
+5da654f55ddd42f8b179243f27ba1813 *Cd3\Track17.shn
+b70cf4dd8838b22a9a3e84f6a6b71d23 *Cd3\Track18.shn
+b15c5649911dd4d94b145c0a006c6229 *Cd3\Track19.shn
+3bde01de96a06e6bc949646374ee50d1 *Cd3\Track20.shn
+64f3818486a6ead302764e9ad4f9f8c7 *Cd3\Track21.shn
+15ec38df4c5c00463a80995cd59ac6e6 *Cd3\Track22.shn
+ad7c36329c65f0d4a5696576555c63e5 *Cd3\Track23.shn
+b688b5d5644dcffaa64308e90af0bdc4 *Cd3\Track24.shn
+9769b981bda4f1cab1036f2188706fda *Cd3\Track25.shn
+1732f9cb747bc14cbf305f7de440e5d9 *Cd4\Track01.shn
+656d9fdd5815b31ac7df1e258a17b9f1 *Cd4\Track02.shn
+55ae0acc24e2935540d8961ee60602da *Cd4\Track03.shn
+3929faa0a42de9fee08b0dc830d0370f *Cd4\Track04.shn
+04dda555e4041748bc3c04b52c0d5fa4 *Cd4\Track05.shn
+bb7c98a27d0867d324aeacb8d964bbb6 *Cd4\Track06.shn
+b4b1885a8a7e5cce8a529fae83b0541d *Cd4\Track07.shn
+f16ef70e0647152e57af1d7f9cbd2b0a *Cd4\Track08.shn
+92dcd53cfe06ba7b8e547d65aeab7ca1 *Cd4\Track09.shn
+3992f50512d4391d82f7e96e90435772 *Cd4\Track10.shn
+4786a2f20b3ccf50e2d409b8287d6128 *Cd4\Track11.shn
+ad2aa20896fc76f348e8cc385c88afad *Cd4\Track12.shn
+885da502caf3358a8604c6b97a5d4a6c *Cd4\Track13.shn
+ab5624bb643fe69e935057d8db99a3bd *Cd4\Track14.shn
+d2b9644450ed7fca9d3826bf322b831d *Cd4\Track15.shn
+b2bc83afa13cf302032a44d8ea2925ef *Cd4\Track16.shn
+8d90a18cb9e72fd91ba620577bbc0c58 *Cd4\Track17.shn
+e949dc60ccfb59d5288942b04f96da21 *Cd4\Track18.shn
+f2f20acecdffb51a3f3aa61911e5ca9d *Cd4\Track19.shn
+b2fec84e8417a116b78ff7443c4f980f *Cd4\Track20.shn
+74fddf981f59fe41ad3795630cb12b44 *Cd4\Track21.shn
+026aaec5c9bdcb35202dacb3bea4ece0 *Cd4\Track22.shn
+ed45822c800f8d05dcc6fbd32810fa91 *Cd4\Track23.shn
+09d4910de2ab584d1b529fbf0237ec57 *Cd4\Track24.shn
+2d2ffdb2edbde29c1964b6a7a3284164 *Cd4\Track25.shn
+b6ba158a1060674aea8e9f74c43165d3 *Cd4\Track26.shn
+d6fe0ae065ee3d87169ac41db2325614 *Cd4\Track27.shn
+===================
+===================
+===================
+=== ATreeWithRoots.txt
+===================
+===================
+===================
+Thanks to www.bobsboots.com for all details
+See www.bobsboots.com for more details
+
+This is the "tree" version as distributed
+
+Review: 
+To follow in their 'GBS' series, Scorpio released their own version of the recent White Bear release 'A Tree With Roots' in this incredible multi-fold out packaging. This is not a direct copy of the previous release. While the quality remains the same, there are a few differences in the track order. Compare the two. The packaging is simply astounding. The tri-fold album is full of breathtaking photos, and houses four cardboard inner sleeves. Each inner sleeve contains a CD, and lists the full track information on the back. 
+ 2001 Craig Pinkerton Bobsboots.com
+
+--------------------------------------------------------------------------------
+
+Legend: 
+Tracks marked with (c) have been copyrighted to bob dylan by dwarf music.  
+* Remastered from a superior version of the source tape utilized on the 5cd set  
+** Remastered from an alternate source tape to that on the 5cd set  
+*** Not included on the 5cd set  
+All other recordings have been remastered from a brand new state of the art analog to digital transfer of the original cassette sources utilized on the GBT 5cd set. Songs have been rebalanced and EQ'd where appropriate. 
+-RM
+
+
+Tracks: 
+Disc one 
+1) Lock your door * 
+2) Baby, won't you be my baby * 
+3) Try Me Little Girl * 
+4) Young but daily growin' ** 
+5) Bonnie ship The Diamond * 
+6) The hills of Mexico * 
+7) Down on me * 
+8) I can't make it alone * 
+9) Don't you try me now * 
+10) One for the road  
+11) I'm alright * 
+12) One single river * 
+13) People get ready * 
+14) I don't hurt anymore * 
+15) Be careful of the stones you throw * 
+16) One man's loss * 
+17) Baby ain't that fine ** 
+18) Rock salt and nails * 
+19) A fool such as I * 
+20) Silhouette * 
+21) Bring it on home * 
+22) King of France * 
+23) Nine hundred miles * 
+24) Goin' down the road * 
+25) Spanish is the loving tongue ** 
+26) Po' Lazarus.  
+27) Santa Fe * (c) 
+28) Instrumental Jam 
+
+Disc two 
+1) On a rainy afternoon * 
+2) Come all ye fair and tender ladies *** 
+3) Under control * 
+4) Ol' Roison the beau ** 
+5) I'm guilty of loving you ** 
+6) Johnny Todd ** 
+7) Cool water ** 
+8) Banks of the Royal Canal ** 
+9) Belchazaar (take 1) 
+10) Belchezaar (take 2) 
+11) I forgot to remember to forget her  
+12) You win again,  
+13) Still in town still around  
+14) Waltzin' with sin  
+15) Big river (take 1) ** 
+16) Big river (take 2) ** 
+17) Folsom Prison blues ** 
+18) Bells of Rhymney * 
+19) I Can't Come In With A Broken Heart * 
+20) I'm a fool for you - false start & take 
+21) Next time on the highway  
+22) Tupelo  
+23) Quit kicking my dog around 
+24) See you later Allen Ginsburg  
+25) Tiny Montgomery (c) 
+26) The Spanish song (take 1) 
+27) The Spanish song (take 2) 
+28) I'm your teenage prayer
+
+Disc three 
+1) Four strong winds  
+2) The French girl (take 1) (c) 
+3) The French girl (take 2) (c) 
+4) Joshua gone Barbados  
+5) I'm in the mood for love  
+6) All American boy (c) 
+7) Sign on the cross ** 
+8) Silent weekend * (c) 
+9) Don't ya tell Henry * (c) 
+10) Bourbon Street * (c) 
+11) Million dollar bash  (take 1) (c) 
+12) Yea heavy and a bottle of bread  (take 1) (c) 
+13) Million dollar bash  (take 2)** 
+14) Yea heavy and a bottle of bread  (take 2)** 
+15) I'm not there ** (c) 
+16) Please Mrs Henry ** (c) 
+17) Crash on the levee  (take 1)** (c) 
+18) Crash on the levee  (take 2)** 
+19) Lo and behold (take 1) ** (c) 
+20) Lo and behold (take 2) ** 
+21) You ain't going nowhere  (take 1) * (c) 
+22) Too much of nothing (take 1) ** (c) 
+23) This wheels on fire ** (c) 
+24) You ain't going nowhere  (take 2) * 
+25) I shall be released ** (c)
+
+Disc four 
+1) Too much of nothing (take 2) ** 
+2) Tears of rage (take 1) (c) 
+3) Tears of rage (take 2) 
+4) Tears of rage (take 3) 
+5) Quinn the Eskimo (take 1) (c) 
+6) Quinn the Eskimo - take 2  
+7) Open the door Homer  (take 1) (c) 
+8) Open the door Homer  (take 2) 
+9) Open the door Homer  (take 3) 
+10) Nothing was delivered (take 1) (c) 
+11) Nothing was delivered (take 2) 
+12) Goin' to Acapulco (c) 
+13) Gonna get you now  
+14) Wildwood flower  
+15) See that my grave is kept clean  
+16) Comin' round the mountain  
+17) Flight of the bumble bee  
+18) Confidential to me  
+19) Odds and ends (take 1) (c) 
+20) Nothing was delivered (take 3) 
+21) Odds and ends (take 2) 
+22) Get your rocks off ** (c) 
+23) Clothesline saga ** (c) 
+24) Apple suckling tree  (take 1) (c) 
+25) Apple suckling tree  (take 2) 
+26) All you have to is dream  (take 1) * 
+27) All you have to do is dream  (take 2)  *
+See www.bobsboots.com for more details
+===================
+===================
+===================
+=== ATreeWithRoots_CD1.md5
+===================
+===================
+===================
+90c8f89993b632035ae9348e4d0c3528 *Track28.shn
+fda5f94b15d74894263a6ed169ff4f0c *Track02.shn
+458d666f299ac2b0cb4042cdf5a2dbab *Track03.shn
+92601f17a27bbaab8687e33a698ed496 *Track04.shn
+42e9d8f92075b73b96c76d4993a3c7f8 *Track05.shn
+176209783bf80971a8d72b7d2bf48776 *Track06.shn
+3c76c9dfdeb7b6fe12942a447c4970e5 *Track07.shn
+8a93e44f289648961508621c2505556e *Track08.shn
+987fb41c292ccef9a16303bf58b38324 *Track09.shn
+1d517084b3330796631bd0712708bbb9 *Track10.shn
+5f6258272cd81d31296237169392663f *Track11.shn
+bbb67ea63fcb6d3623b2247d205cca2d *Track12.shn
+d52b4cbcb34e43d8bc005a064ed03efd *Track13.shn
+824b9197d32dca08f4d0886cb1f0f225 *Track14.shn
+e76c18ef916b9522f5cd6e5aad87f1ac *Track15.shn
+1c42bd649df52ed87e0d3f1e77ce8912 *Track16.shn
+0fccc7e41082e65405529b6824e0ca9a *Track17.shn
+e8d58e93de583177a6a1798e38099826 *Track18.shn
+c8af2b4471da678ea58d7c43d2e1b3d3 *Track19.shn
+def10edfda8c95d5ea09e96654e85e5d *Track20.shn
+86af63e7dd04f3024c56cf0fe1efca2a *Track21.shn
+ac0042e4241e20892058632494974d53 *Track22.shn
+c04f09a72dcdf02891a9bb4ea2716b16 *Track23.shn
+205f56864031a4fb69472d1bf2ea5d5b *Track24.shn
+c396979efee87da2f67a7561516fad2b *Track25.shn
+0efb8bd2035f0150f7cf694d4dc1487a *Track26.shn
+c654bc5536dbe49c1f65dd6b5bfe3b79 *Track27.shn
+e806a5f175b0db4c3cc5bd8801bd1133 *Track01.shn
+===================
+===================
+===================
+=== ATreeWithRoots_CD2.md5
+===================
+===================
+===================
+b9fa967e57eb06c5b1364aa29cc9c4cf *Track28.shn
+321301ef5a8c58758faf5886f860ee90 *Track02.shn
+9b78df3d07a81f0fd38c08ec3f8b31ee *Track03.shn
+62dab2cf859cd3515c77173105304eeb *Track04.shn
+fdc6c7946610df3047f33be53f249780 *Track05.shn
+efa7e0eee9e545f8d2ca5eb88799ed9f *Track06.shn
+b385592eae334c3786474541d0bfd045 *Track07.shn
+7852993a99a8d1881c0543b06d5830a7 *Track08.shn
+89e34dccb82f35ea938462fb4b015018 *Track09.shn
+50e3fc4b77dcd2357b698273a9996c7b *Track10.shn
+aabf1eefeebf7ab0a314ae4bbbc1dd61 *Track11.shn
+73a857d7d474a7bc48156eae26bec919 *Track12.shn
+431a4e42b7b2111880f93ed19f5fd8d4 *Track13.shn
+b8e19bf1be2c53820a4ab56ac959df44 *Track14.shn
+8c5842c2e7b4c64d1ad800688a649c98 *Track15.shn
+f55cb1559ab8eb94573d5b04fa71647d *Track16.shn
+e09746f36136b25eddcc57587194e20d *Track17.shn
+34ffbc65c35cccd3c0bcdc3d31fd44c2 *Track18.shn
+0ca0118050b20723e16ab75c86ee21bf *Track19.shn
+20544393ac16322e9171ad3d593feda2 *Track20.shn
+f289252226ddcac4492088cc74ebcc77 *Track21.shn
+8d0ef724e1ab55861758fdbfe0b2305d *Track22.shn
+0153a8a084e2c90976bf4088ad7a38d4 *Track23.shn
+d429da4f80ef59e4a24ef17e7f201e25 *Track24.shn
+83981d510adf73d4ca0cae0a3e0f034f *Track25.shn
+1a30d356747c6be540d7438c8ed2c770 *Track26.shn
+c7da1d5fca655c07b31cad745711d4a7 *Track27.shn
+b240881a1905d988ae94a08ff1824195 *Track01.shn
+===================
+===================
+===================
+=== ATreeWithRoots_CD3.md5
+===================
+===================
+===================
+9769b981bda4f1cab1036f2188706fda *Track25.shn
+2225823acd78cac525d995deb122d738 *Track02.shn
+ec8e43e923e15d09ca4ac3e2cda6dc4e *Track03.shn
+86730b1e4d232b9a4bbee61ac3e17a56 *Track04.shn
+5176b1fcf5a5274c35c4e42e93c0ae1f *Track05.shn
+a3dea6755456697baeea9823e81cb1f4 *Track06.shn
+48db5113700db8b1f901b412729b4c48 *Track07.shn
+2dd949743af9931e7ad81a3f11b3d18c *Track08.shn
+a01b4c8708ffd9d3647c8916a9b90331 *Track09.shn
+607a2d51081e6a22c7258d586278b3cd *Track10.shn
+c153ab2d8086e8dc8087dfebdb8d374f *Track11.shn
+363c40bf575312efb8731d02663b6279 *Track12.shn
+d55ee1dd3f8081f3fb2bbe3efb600937 *Track13.shn
+ab7999419535bd8fe9afb9258646f339 *Track14.shn
+68b04ab6fbb216091194a2e56ae15a7d *Track15.shn
+bf850ad59dd63f39c65f274f224be157 *Track16.shn
+5da654f55ddd42f8b179243f27ba1813 *Track17.shn
+b70cf4dd8838b22a9a3e84f6a6b71d23 *Track18.shn
+b15c5649911dd4d94b145c0a006c6229 *Track19.shn
+3bde01de96a06e6bc949646374ee50d1 *Track20.shn
+64f3818486a6ead302764e9ad4f9f8c7 *Track21.shn
+15ec38df4c5c00463a80995cd59ac6e6 *Track22.shn
+ad7c36329c65f0d4a5696576555c63e5 *Track23.shn
+b688b5d5644dcffaa64308e90af0bdc4 *Track24.shn
+7188ec7fd20e8bd814d2e734be9f2e82 *Track01.shn
+===================
+===================
+===================
+=== ATreeWithRoots_CD4.md5
+===================
+===================
+===================
+d6fe0ae065ee3d87169ac41db2325614 *Track27.shn
+656d9fdd5815b31ac7df1e258a17b9f1 *Track02.shn
+55ae0acc24e2935540d8961ee60602da *Track03.shn
+3929faa0a42de9fee08b0dc830d0370f *Track04.shn
+04dda555e4041748bc3c04b52c0d5fa4 *Track05.shn
+bb7c98a27d0867d324aeacb8d964bbb6 *Track06.shn
+b4b1885a8a7e5cce8a529fae83b0541d *Track07.shn
+f16ef70e0647152e57af1d7f9cbd2b0a *Track08.shn
+92dcd53cfe06ba7b8e547d65aeab7ca1 *Track09.shn
+3992f50512d4391d82f7e96e90435772 *Track10.shn
+4786a2f20b3ccf50e2d409b8287d6128 *Track11.shn
+ad2aa20896fc76f348e8cc385c88afad *Track12.shn
+885da502caf3358a8604c6b97a5d4a6c *Track13.shn
+ab5624bb643fe69e935057d8db99a3bd *Track14.shn
+d2b9644450ed7fca9d3826bf322b831d *Track15.shn
+b2bc83afa13cf302032a44d8ea2925ef *Track16.shn
+8d90a18cb9e72fd91ba620577bbc0c58 *Track17.shn
+e949dc60ccfb59d5288942b04f96da21 *Track18.shn
+f2f20acecdffb51a3f3aa61911e5ca9d *Track19.shn
+b2fec84e8417a116b78ff7443c4f980f *Track20.shn
+74fddf981f59fe41ad3795630cb12b44 *Track21.shn
+026aaec5c9bdcb35202dacb3bea4ece0 *Track22.shn
+ed45822c800f8d05dcc6fbd32810fa91 *Track23.shn
+09d4910de2ab584d1b529fbf0237ec57 *Track24.shn
+2d2ffdb2edbde29c1964b6a7a3284164 *Track25.shn
+b6ba158a1060674aea8e9f74c43165d3 *Track26.shn
+1732f9cb747bc14cbf305f7de440e5d9 *Track01.shn
+===================
+===================
+===================

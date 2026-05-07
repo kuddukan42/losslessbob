@@ -1,0 +1,358 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd67-A-Tree-With-Roots 
+=================== 
+=================== 
+=================== 
+38090a60d9ffb7b2f67be52263349157  bd-tree-d1.md5
+27bb7f2544cc0bd3a3b277b076dfa1fd  bd-tree-d1t01.shn
+8ea07754861f87246f8913111c791857  bd-tree-d1t02.shn
+3b5af9d71d985f2273b755e5b3b6f766  bd-tree-d1t03.shn
+ca29949db2673e0e830df2e4e9a86778  bd-tree-d1t04.shn
+0847e97a34c26595ea30eb731da51809  bd-tree-d1t05.shn
+e2e2f8b4034c29b0cf4b608afdeddaec  bd-tree-d1t06.shn
+7838da05625cbe365f2fec12abe02786  bd-tree-d1t07.shn
+58556ca1fdbcef041a6b664d8760db9e  bd-tree-d1t08.shn
+bdb211faa15c894d7b951ed25557853d  bd-tree-d1t09.shn
+4b470fbb1153ea613037ec2034fe92e4  bd-tree-d1t10.shn
+2e421f099a342211e45f4dbf815a3fd4  bd-tree-d1t11.shn
+71672b10516df57abbba2f10c194379c  bd-tree-d1t12.shn
+614caf90683401a6b5fc1b76e80f9216  bd-tree-d1t13.shn
+54194afa5d9bf761932fce1b6d75560b  bd-tree-d1t14.shn
+1e90f1260c2c3020f84a9f020b77b7e0  bd-tree-d1t15.shn
+3e5d00ffe8614aadf67e36a491e061a6  bd-tree-d1t16.shn
+001ab0266cca56eed982da908c300e73  bd-tree-d1t17.shn
+0a769ec3978baf4f30f8715b18147240  bd-tree-d1t18.shn
+11e602efe3fc7e910bf5e55ec04cdba7  bd-tree-d1t19.shn
+4ecfc1230bdea76da7ddcc2eb416c9d8  bd-tree-d1t20.shn
+6620b37b27fa79031c0dfaaa0997edda  bd-tree-d1t21.shn
+59836d9a609898716346338c1ceeac6d  bd-tree-d1t22.shn
+b4df2a20b9e0d2839fe9193905177fc5  bd-tree-d1t23.shn
+267fd3bb558e27b1bcde33b606aef103  bd-tree-d1t24.shn
+99b1511f1c8e2c3a296d4eba9553bb57  bd-tree-d1t25.shn
+3ed9f086fa23f62609c2a5ce691ec01e  bd-tree-d1t26.shn
+af7dfc1b7c0d582faa292c2b46308354  bd-tree-d1t27.shn
+f3bc0dbccd893ec67224e60475f5956e  bd-tree-d1t28.shn
+ea2907d0a826fe033622ba21d91aa8eb  bd-tree-d2.md5
+8e57b4b6420dd902a01792dd048dc09a  bd-tree-d2t01.shn
+ae9efe6fed2f248e1c900b410c6332aa  bd-tree-d2t02.shn
+c2d044f0a3766356c75f5b37ed25b139  bd-tree-d2t03.shn
+ae1963f1976eaaf9eb37c67acb184abb  bd-tree-d2t04.shn
+029d7286d227ba19c75a2aa368eafc2c  bd-tree-d2t05.shn
+3e96dc86281b816865d379d89fde161e  bd-tree-d2t06.shn
+4eaae7180858cb4591d05a7f37df8980  bd-tree-d2t07.shn
+e79c08de6bd96dbdc64c53ea0d6872cd  bd-tree-d2t08.shn
+aa20f125477e8c22360af26f5aa53025  bd-tree-d2t09.shn
+8eb8c38d7707b9f1947b3b6f9337c903  bd-tree-d2t10.shn
+e9a770b09cc004ea8f6f26738ff1aeef  bd-tree-d2t11.shn
+0425f19136f8c98f8b4ca291d96ba4c9  bd-tree-d2t12.shn
+2c52689353d1378e481bebcae55457af  bd-tree-d2t13.shn
+0943c3596d8d8ea7984b312ec3783ece  bd-tree-d2t14.shn
+161ce4f02f7a69c220dd6e547aa59031  bd-tree-d2t15.shn
+2b8ff0c3b33fb765f56cf5695cb697c3  bd-tree-d2t16.shn
+8d2ff634936a482f5a4e00403a0c79ba  bd-tree-d2t17.shn
+697e63d4b267fb2b7cc9823fe60f611d  bd-tree-d2t18.shn
+06cabe0f10ae822672e0c18e8a2a3617  bd-tree-d2t19.shn
+82f3a4fa57d4f4672f36a017902ffcb2  bd-tree-d2t20.shn
+5b429fa12dcbb7d4924a21eb45928234  bd-tree-d2t21.shn
+4cf9bb410bdd256864622841fb319bbe  bd-tree-d2t22.shn
+c29487acfa8e24f8ae52784500f24196  bd-tree-d2t23.shn
+7f600bea5e10ce9fa1233db545bf66a1  bd-tree-d2t24.shn
+7d1ab313e48e26b36b116008c1562d0c  bd-tree-d2t25.shn
+2d674aa29570af24a9885dfb9143c9e0  bd-tree-d2t26.shn
+6bf19c41f74c164fd8c68ce5d85b540b  bd-tree-d2t27.shn
+88d9051ff87a4e108bee267b1a0c4f87  bd-tree-d2t28.shn
+928acb687e32486e9d4806efc4cf9390  bd-tree-d3.md5
+de3bdf4e67f6153365335b7e69960408  bd-tree-d3t01.shn
+33f6316b6c03ac684949f88d220a1254  bd-tree-d3t02.shn
+a115593c1c510eab3f21c3f95213b9fb  bd-tree-d3t03.shn
+2f7142e0ec5e1fa9bea9d781f70c73fb  bd-tree-d3t04.shn
+71ed697a74403f16a9c9da35c4563d25  bd-tree-d3t05.shn
+0cf5b845ab8455d74f8ed0acb2bdd141  bd-tree-d3t06.shn
+7afd5fac5e36cfcf1b97aacefabf3526  bd-tree-d3t07.shn
+d8fb62770a56ff04ffba8fc78a2460fa  bd-tree-d3t08.shn
+bc14972ca625a01bd77d7ddd3d5f5115  bd-tree-d3t09.shn
+d8dfadd2e0272ba9c40605c642a4719e  bd-tree-d3t10.shn
+32087eb98bfa5c4e00be0838a5fc5a81  bd-tree-d3t11.shn
+7b4c13f8a6926f8b8d5cf17a330f1293  bd-tree-d3t12.shn
+84e26bdb3140bf13a113478dbe9f63da  bd-tree-d3t13.shn
+0f263b989f6544d754e98a29ffb0bc0c  bd-tree-d3t14.shn
+1568eda9ef800e15268e9edb612507be  bd-tree-d3t15.shn
+93b0b4c73662cd4de03abc0e6b633396  bd-tree-d3t16.shn
+ec2dc95bc930f2a7d8bac74f291c8c50  bd-tree-d3t17.shn
+15be98c6f0e18a985e951ad75b763607  bd-tree-d3t18.shn
+f2acb4b4d45020d66ac4a8298796590d  bd-tree-d3t19.shn
+4646766748a0a5968a1597aa93972b8a  bd-tree-d3t20.shn
+1f2c2baa3e95628b10f5a39d1cc64c94  bd-tree-d3t21.shn
+92c31c684159a51cfc78597a9ad93b07  bd-tree-d3t22.shn
+08559c2990d5baad9f69a0c115f617b3  bd-tree-d3t23.shn
+06a57a1a6fe2c9c691745e7e6f6d20fa  bd-tree-d3t24.shn
+7e3d5b11d6529525b872918e770fb12c  bd-tree-d3t25.shn
+8e3ee92ae7f26269a0dbb33db00a80ef  bd-tree-d4.md5
+e422d37c3a0fb580e1be88134f8a3939  bd-tree-d4t01.shn
+af45fee767d91571f165ad6a3ad246c0  bd-tree-d4t02.shn
+3bfab5d28bb1f82cf7ad624a2e4e74c6  bd-tree-d4t03.shn
+714933ebbe3f78280ff6aab763b77a38  bd-tree-d4t04.shn
+5d2ddf51e8a170f71fbf4eaab2541cd8  bd-tree-d4t05.shn
+02d20ee518a52c599eed6199e041a3f6  bd-tree-d4t06.shn
+214b07410b04cc331c2cd4771f9081a1  bd-tree-d4t07.shn
+2786ab2b93878a625787f2f3775a3005  bd-tree-d4t08.shn
+12ce644958f587824c53f0264ed87cc6  bd-tree-d4t09.shn
+700a2597a3184846e7395847c0fe7750  bd-tree-d4t10.shn
+b80f52600dd20bebd72169197efb46a4  bd-tree-d4t11.shn
+21b82f23bd50c727febea041f168e6a1  bd-tree-d4t12.shn
+a3513ad864a091259dcdb3ea57c32007  bd-tree-d4t13.shn
+ea06ea98b687f93a709cb19ba1120451  bd-tree-d4t14.shn
+a9a0f37f147f492feb42313d24606e4d  bd-tree-d4t15.shn
+a8cde1aebea8e072172cc5b842962b4e  bd-tree-d4t16.shn
+d1abf064125ad7cd878c28b64a2e1d23  bd-tree-d4t17.shn
+488187252737eb811fd1fd60c4b81b00  bd-tree-d4t18.shn
+2c208ee9d29bff750c3becc593cbb2a9  bd-tree-d4t19.shn
+5469049be958dd2dfe02db9dcc620929  bd-tree-d4t20.shn
+928301b5932d82992facea766bb890c2  bd-tree-d4t21.shn
+eeba96f1eaa70b932a667efb0d46edaf  bd-tree-d4t22.shn
+49f755777ee37aa4e6184ae4cf284cd0  bd-tree-d4t23.shn
+b87b3a6f24a8fcaab6fb8617ff71fa3c  bd-tree-d4t24.shn
+83af1f9d3e220453258ecbaaa51430ad  bd-tree-d4t25.shn
+0a4827cc1007a8bb8de117f58c9d3b15  bd-tree-d4t26.shn
+998d880a43ea2ccca8785b95e01515cc  bd-tree-d4t27.shn
+8f74fa765cff124707fe8108cd8da702  bd-tree-with-roots-CD Sleeves.zip
+fadcd93c3c44d9b0225d52726002904d  bd-tree-with-roots-Inserts.zip
+2568778858a6ec57929ce60c1960fc70  bd-tree-with-roots-Jacket.zip
+af393cdae2d620df94c742f5333189d7  bd-tree.nfo
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd67-A-Tree-With-Roots 
+=================== 
+=================== 
+=================== 
+19352543ea83180ea5fe837f6c43d80a  [shntool]  bd-tree-d1t01.wav
+260879dd9a65f90139ada7e7a54a9100  [shntool]  bd-tree-d1t02.wav
+c5af806f1e1effae5236f13886583d6e  [shntool]  bd-tree-d1t03.wav
+486dccd37759a481d4e50f94e1b0ae5e  [shntool]  bd-tree-d1t04.wav
+d88586ac1e1db61a5406b1541fadb4fb  [shntool]  bd-tree-d1t05.wav
+04cf180c278fe81d2ccd3f593caa015d  [shntool]  bd-tree-d1t06.wav
+78a4122b4333d4f6bab5ec45b04f44a2  [shntool]  bd-tree-d1t07.wav
+3146c80f037d70a04e20289e556e5270  [shntool]  bd-tree-d1t08.wav
+bbad2cb5c91d4cea9d59caaff8d3d6bc  [shntool]  bd-tree-d1t09.wav
+35510138911bad4523409b49f100ba9b  [shntool]  bd-tree-d1t10.wav
+c9881a4daf59ee07205a624cdffca29c  [shntool]  bd-tree-d1t11.wav
+ac9f083a9f0c3eaaee5b1d16d3eab018  [shntool]  bd-tree-d1t12.wav
+432052e7a056759c29b15964c06b905a  [shntool]  bd-tree-d1t13.wav
+84faead7431017249fbf0fc8eb94c9f9  [shntool]  bd-tree-d1t14.wav
+3c7f99dc4eb06c5f4d248ad5390de558  [shntool]  bd-tree-d1t15.wav
+674ed30d69a2256e2e6c181b66d75687  [shntool]  bd-tree-d1t16.wav
+11657cc3fed99b080ab92949b17bc196  [shntool]  bd-tree-d1t17.wav
+6482a5ae836bb7deaced1215f1ef5534  [shntool]  bd-tree-d1t18.wav
+c4eae071b11703073adba9d0d6105af4  [shntool]  bd-tree-d1t19.wav
+82fc9c713cb921bf262c92ed44495b68  [shntool]  bd-tree-d1t20.wav
+56d6eec2da248d44cef75b00fbcf95a2  [shntool]  bd-tree-d1t21.wav
+6704d99e8f99b4273e1acd3ef0456a47  [shntool]  bd-tree-d1t22.wav
+1aec8184d6237dcd224b9e3dae84cf6d  [shntool]  bd-tree-d1t23.wav
+f427611fc3e74145fd4985edac712e46  [shntool]  bd-tree-d1t24.wav
+8881b57623a9cbef2497e4d50529c3e5  [shntool]  bd-tree-d1t25.wav
+3a8e83d1a9622dc86e54db10e24e870e  [shntool]  bd-tree-d1t26.wav
+bd9a4f51bfcef8f1a50c56d7eafe523e  [shntool]  bd-tree-d1t27.wav
+621a6a43928a7273f3ae54ac968dc852  [shntool]  bd-tree-d1t28.wav
+f0b8161cf4f458cb3da68382473bdbc7  [shntool]  bd-tree-d2t01.wav
+f1ad6d1f4f4bad89291cba4623a42961  [shntool]  bd-tree-d2t02.wav
+60b626cb1271ca59f44ddde7cc06eee8  [shntool]  bd-tree-d2t03.wav
+444b7622b64390fc1248d31445f8476a  [shntool]  bd-tree-d2t04.wav
+16a6bd627ae9ec347256d33de15a7cfa  [shntool]  bd-tree-d2t05.wav
+91a401b2530ce6beb3cc5bd781788870  [shntool]  bd-tree-d2t06.wav
+79fcdac448f78b3ebe0887727b24e1f7  [shntool]  bd-tree-d2t07.wav
+0b40be4ac0e9945131d0a690602fe3b6  [shntool]  bd-tree-d2t08.wav
+e578d00fe0397581402b5a144e30a1f0  [shntool]  bd-tree-d2t09.wav
+1bcaea78fd4f1f6db307d736a6bfe7e6  [shntool]  bd-tree-d2t10.wav
+1e93b27958bbfcdeb7209967dae0d632  [shntool]  bd-tree-d2t11.wav
+6e93641d11832a251e3348cac7f65bc0  [shntool]  bd-tree-d2t12.wav
+2bbd1570e22746985225e707086b307e  [shntool]  bd-tree-d2t13.wav
+9ff07d148a90cf9467f1ac4a3a0ce6b2  [shntool]  bd-tree-d2t14.wav
+4a4d9409948757bf63fc330eac74c6f8  [shntool]  bd-tree-d2t15.wav
+356774a15a88cd6532c34c000e81f8a9  [shntool]  bd-tree-d2t16.wav
+b1f7052d15af7da675acfefaf0690554  [shntool]  bd-tree-d2t17.wav
+56074055edc531ef77d440447c79a1db  [shntool]  bd-tree-d2t18.wav
+4c2ffc0d53cad8e9d7f7a213f1416b4d  [shntool]  bd-tree-d2t19.wav
+796d3ca2189fba5a8c8f1522b276cb7b  [shntool]  bd-tree-d2t20.wav
+ccc9b3780a6e4a947630fb764b831119  [shntool]  bd-tree-d2t21.wav
+4c37b5fb598277a2e9bca3e9b528875e  [shntool]  bd-tree-d2t22.wav
+5e88dffbb0dc8f840df92442f427479f  [shntool]  bd-tree-d2t23.wav
+8ac9a7bc202a7d323a90327f9e355c45  [shntool]  bd-tree-d2t24.wav
+404166263c540ebc29c3216fec60a8ee  [shntool]  bd-tree-d2t25.wav
+ea7e0853ffdf7f9575024ae578440c5e  [shntool]  bd-tree-d2t26.wav
+b1d4926678c4d97714681d1cc44d7918  [shntool]  bd-tree-d2t27.wav
+c9640652e2fec202572dae163348ce77  [shntool]  bd-tree-d2t28.wav
+f997a6e53c2388dec60f8b16a615a632  [shntool]  bd-tree-d3t01.wav
+e5b4c9b9f642ff7ba6ac38236a048ecb  [shntool]  bd-tree-d3t02.wav
+fcc0384c63c30277591bcf09038e6894  [shntool]  bd-tree-d3t03.wav
+26d9e22f196fd49359990b059b54eda4  [shntool]  bd-tree-d3t04.wav
+be8ba7ab3239abf8c783ad5a8f147a4f  [shntool]  bd-tree-d3t05.wav
+b59082ce6c11c8340cea350ba1ff56d9  [shntool]  bd-tree-d3t06.wav
+96c3b99543d61a4929097f8a00f6fc97  [shntool]  bd-tree-d3t07.wav
+96ae6ab2ba3daab3697533a49aa8f4ee  [shntool]  bd-tree-d3t08.wav
+a94b3184f5147e9c697766756714031d  [shntool]  bd-tree-d3t09.wav
+1618bfb6d121821b1663c43bb3c8bcf3  [shntool]  bd-tree-d3t10.wav
+f8c9ddd8b7ac34a73874a225ad818deb  [shntool]  bd-tree-d3t11.wav
+f15a6b62a52e65aeef01fd100a0841f6  [shntool]  bd-tree-d3t12.wav
+802f3e1bfc4e9a1b6861e7b815aad459  [shntool]  bd-tree-d3t13.wav
+eef1e44a56d0e7d756e448ed694edd5c  [shntool]  bd-tree-d3t14.wav
+d06a933608776fbef45b4c929b8af106  [shntool]  bd-tree-d3t15.wav
+1d34d868ea04724b34276fa38ebb615d  [shntool]  bd-tree-d3t16.wav
+2b0008c2b104486136a634f1f8af0a3c  [shntool]  bd-tree-d3t17.wav
+19b5ff20c0c0e583a1d80fd2fc5b5d86  [shntool]  bd-tree-d3t18.wav
+0aae48a531c67224c19dba48c64e99b7  [shntool]  bd-tree-d3t19.wav
+ef0e9fa24f7fd0ad483a586b4c535994  [shntool]  bd-tree-d3t20.wav
+6227bae33f0e2489476bccf4d2f4c789  [shntool]  bd-tree-d3t21.wav
+f6ee5ee68d7a84982e63451d50c16511  [shntool]  bd-tree-d3t22.wav
+d14f71b616228f6122cf171c486e04b2  [shntool]  bd-tree-d3t23.wav
+e82bea9e766011555941b35370fe951d  [shntool]  bd-tree-d3t24.wav
+65b5e34698972c220c8784b85cafda49  [shntool]  bd-tree-d3t25.wav
+a0a8dbcc6db3e44983aacb2a07f60976  [shntool]  bd-tree-d4t01.wav
+fe287b7c4a603cca1313700138964071  [shntool]  bd-tree-d4t02.wav
+1ae321f033f91ead95dff547037ae30f  [shntool]  bd-tree-d4t03.wav
+98d693d32f19372a701d325836761213  [shntool]  bd-tree-d4t04.wav
+2c6a5a7764ad278f7cc8a9bc82ad4645  [shntool]  bd-tree-d4t05.wav
+e801a0b646a52551edaea9b7fed28b60  [shntool]  bd-tree-d4t06.wav
+4d2e67ddecb79687f42d2c2c635d7709  [shntool]  bd-tree-d4t07.wav
+ad34202783e49a892afd1d8afec59efb  [shntool]  bd-tree-d4t08.wav
+a4c5606a50deb7ae8c77b45c22b82e63  [shntool]  bd-tree-d4t09.wav
+957e21a21e7e9097c1ebfdd21325dd8a  [shntool]  bd-tree-d4t10.wav
+021172fc9ad0e70666213d4b02270a3a  [shntool]  bd-tree-d4t11.wav
+ca888828ecb497ad5bea9684cc6b390b  [shntool]  bd-tree-d4t12.wav
+3b5945559256474c1602b44098e7341f  [shntool]  bd-tree-d4t13.wav
+e1a220c14fafe624c0de5fc6e5df1f4f  [shntool]  bd-tree-d4t14.wav
+1000dd83e14fccca7f46c1b61f671778  [shntool]  bd-tree-d4t15.wav
+7bc66524f615a530a412f76088b2d6ca  [shntool]  bd-tree-d4t16.wav
+d9375a82966b83479b0fbdaf8461bd38  [shntool]  bd-tree-d4t17.wav
+3c27d6792c56148f5fa13b43d2c72c6d  [shntool]  bd-tree-d4t18.wav
+c4b1be3192a8851482a3dd635308069d  [shntool]  bd-tree-d4t19.wav
+3965ee73d255b6cedf13eaf3c3cbd251  [shntool]  bd-tree-d4t20.wav
+3507fd85dccf4ccd3e71c48e0aa7346a  [shntool]  bd-tree-d4t21.wav
+2287a402ecede197fe78535f23d54285  [shntool]  bd-tree-d4t22.wav
+27fe4851b08b79d45e49eb47194e1255  [shntool]  bd-tree-d4t23.wav
+c4d2ffed7d56fc300b63d393903d26ca  [shntool]  bd-tree-d4t24.wav
+9a2273d74957df3011cced7313e13e1b  [shntool]  bd-tree-d4t25.wav
+42f9cc239f0a994b62e5a9fb02c04bc6  [shntool]  bd-tree-d4t26.wav
+5533f29e2b8be73d19bf5dd35c8aac71  [shntool]  bd-tree-d4t27.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd67-A-Tree-With-Roots 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:20.41        3624476 B   ---   --   -----    wav  1.0000  bd-tree-d1t01.wav
+     2:49.36       29896316 B   ---   --   -----    wav  1.0000  bd-tree-d1t02.wav
+     1:38.66       17442476 B   ---   --   -----    wav  1.0000  bd-tree-d1t03.wav
+     5:38.54       59750252 B   ---   --   -----    wav  1.0000  bd-tree-d1t04.wav
+     3:25.11       36187916 B   ---   --   -----    wav  1.0000  bd-tree-d1t05.wav
+     3:01.38       32017820 B   ---   --   -----    wav  1.0000  bd-tree-d1t06.wav
+     0:40.49        7171292 B   ---   --   -----    wav  1.0000  bd-tree-d1t07.wav
+     3:31.05       37232204 B   ---   --   -----    wav  1.0000  bd-tree-d1t08.wav
+     3:11.14       33725372 B   ---   --   -----    wav  1.0000  bd-tree-d1t09.wav
+     4:47.52       50749148 B   ---   --   -----    wav  1.0000  bd-tree-d1t10.wav
+     1:07.42       11917628 B   ---   --   -----    wav  1.0000  bd-tree-d1t11.wav
+     4:22.15       46252124 B   ---   --   -----    wav  1.0000  bd-tree-d1t12.wav
+     3:31.26       37281596 B   ---   --   -----    wav  1.0000  bd-tree-d1t13.wav
+     2:25.03       25585100 B   ---   --   -----    wav  1.0000  bd-tree-d1t14.wav
+     3:34.54       37876652 B   ---   --   -----    wav  1.0000  bd-tree-d1t15.wav
+     3:52.23       40978940 B   ---   --   -----    wav  1.0000  bd-tree-d1t16.wav
+     2:08.17       22619228 B   ---   --   -----    wav  1.0000  bd-tree-d1t17.wav
+     4:35.42       48608828 B   ---   --   -----    wav  1.0000  bd-tree-d1t18.wav
+     2:56.62       31192268 B   ---   --   -----    wav  1.0000  bd-tree-d1t19.wav
+     0:21.31        3777356 B   ---   --   -----    wav  1.0000  bd-tree-d1t20.wav
+     3:02.27       32168348 B   ---   --   -----    wav  1.0000  bd-tree-d1t21.wav
+     3:26.29       36406652 B   ---   --   -----    wav  1.0000  bd-tree-d1t22.wav
+     0:46.23        8168540 B   ---   --   -----    wav  1.0000  bd-tree-d1t23.wav
+     3:18.10       34950764 B   ---   --   -----    wav  1.0000  bd-tree-d1t24.wav
+     3:57.47       41917388 B   ---   --   -----    wav  1.0000  bd-tree-d1t25.wav
+     1:01.25       10819244 B   ---   --   -----    wav  1.0000  bd-tree-d1t26.wav
+     2:10.21       22981436 B   ---   --   -----    wav  1.0000  bd-tree-d1t27.wav
+     2:04.53       21998300 B   ---   --   -----    wav  1.0000  bd-tree-d1t28.wav
+     2:48.12       29663468 B   ---   --   -----    wav  1.0000  bd-tree-d2t01.wav
+     2:06.19       22271132 B   ---   --   -----    wav  1.0000  bd-tree-d2t02.wav
+     3:24.51       36105596 B   ---   --   -----    wav  1.0000  bd-tree-d2t03.wav
+     4:48.50       50920844 B   ---   --   -----    wav  1.0000  bd-tree-d2t04.wav
+     1:05.55       11595404 B   ---   --   -----    wav  1.0000  bd-tree-d2t05.wav
+     2:01.40       21438524 B   ---   --   -----    wav  1.0000  bd-tree-d2t06.wav
+     2:59.53       31700300 B   ---   --   -----    wav  1.0000  bd-tree-d2t07.wav
+     5:43.59       60644012 B   ---   --   -----    wav  1.0000  bd-tree-d2t08.wav
+     0:17.45        3104684 B   ---   --   -----    wav  1.0000  bd-tree-d2t09.wav
+     3:07.42       33085628 B   ---   --   -----    wav  1.0000  bd-tree-d2t10.wav
+     3:16.38       34663820 B   ---   --   -----    wav  1.0000  bd-tree-d2t11.wav
+     2:41.47       28510988 B   ---   --   -----    wav  1.0000  bd-tree-d2t12.wav
+     3:05.28       32699900 B   ---   --   -----    wav  1.0000  bd-tree-d2t13.wav
+     3:21.47       35566988 B   ---   --   -----    wav  1.0000  bd-tree-d2t14.wav
+     0:50.00        8820044 B   ---   --   -----    wav  1.0000  bd-tree-d2t15.wav
+     2:30.13       26490620 B   ---   --   -----    wav  1.0000  bd-tree-d2t16.wav
+     2:42.40       28670924 B   ---   --   -----    wav  1.0000  bd-tree-d2t17.wav
+     3:12.50       33986444 B   ---   --   -----    wav  1.0000  bd-tree-d2t18.wav
+     2:44.69       29091932 B   ---   --   -----    wav  1.0000  bd-tree-d2t19.wav
+     3:57.25       41865644 B   ---   --   -----    wav  1.0000  bd-tree-d2t20.wav
+     2:17.23       24220940 B   ---   --   -----    wav  1.0000  bd-tree-d2t21.wav
+     2:22.13       25079420 B   ---   --   -----    wav  1.0000  bd-tree-d2t22.wav
+     2:42.20       28623884 B   ---   --   -----    wav  1.0000  bd-tree-d2t23.wav
+     1:48.23       19105340 B   ---   --   -----    wav  1.0000  bd-tree-d2t24.wav
+     2:54.67       30851228 B   ---   --   -----    wav  1.0000  bd-tree-d2t25.wav
+     3:05.16       32671676 B   ---   --   -----    wav  1.0000  bd-tree-d2t26.wav
+     2:10.64       23082572 B   ---   --   -----    wav  1.0000  bd-tree-d2t27.wav
+     3:52.10       40948364 B   ---   --   -----    wav  1.0000  bd-tree-d2t28.wav
+     3:39.31       38704556 B   ---   --   -----    wav  1.0000  bd-tree-d3t01.wav
+     2:34.15       27200924 B   ---   --   -----    wav  1.0000  bd-tree-d3t02.wav
+     2:58.22       31450988 B   ---   --   -----    wav  1.0000  bd-tree-d3t03.wav
+     2:43.03       28760300 B   ---   --   -----    wav  1.0000  bd-tree-d3t04.wav
+     1:57.10       20662364 B   ---   --   -----    wav  1.0000  bd-tree-d3t05.wav
+     3:57.31       41879756 B   ---   --   -----    wav  1.0000  bd-tree-d3t06.wav
+     7:21.50       77910044 B   ---   --   -----    wav  1.0000  bd-tree-d3t07.wav
+     3:03.06       32295356 B   ---   --   -----    wav  1.0000  bd-tree-d3t08.wav
+     2:28.47       26217788 B   ---   --   -----    wav  1.0000  bd-tree-d3t09.wav
+     2:26.45       25860284 B   ---   --   -----    wav  1.0000  bd-tree-d3t10.wav
+     3:01.33       32006060 B   ---   --   -----    wav  1.0000  bd-tree-d3t11.wav
+     1:51.23       19634540 B   ---   --   -----    wav  1.0000  bd-tree-d3t12.wav
+     2:34.13       27196220 B   ---   --   -----    wav  1.0000  bd-tree-d3t13.wav
+     2:13.46       23569436 B   ---   --   -----    wav  1.0000  bd-tree-d3t14.wav
+     5:12.43       55137980 B   ---   --   -----    wav  1.0000  bd-tree-d3t15.wav
+     2:34.61       27308664 B   -b-   --   -----    wav  1.0000  bd-tree-d3t16.wav
+     2:10.65       23084924 B   ---   --   -----    wav  1.0000  bd-tree-d3t17.wav
+     2:06.22       22278188 B   ---   --   -----    wav  1.0000  bd-tree-d3t18.wav
+     2:53.10       30540764 B   ---   --   -----    wav  1.0000  bd-tree-d3t19.wav
+     2:48.02       29639948 B   ---   --   -----    wav  1.0000  bd-tree-d3t20.wav
+     2:49.02       29816348 B   ---   --   -----    wav  1.0000  bd-tree-d3t21.wav
+     3:00.72       31921388 B   ---   --   -----    wav  1.0000  bd-tree-d3t22.wav
+     3:56.45       41736284 B   ---   --   -----    wav  1.0000  bd-tree-d3t23.wav
+     2:46.07       29298908 B   ---   --   -----    wav  1.0000  bd-tree-d3t24.wav
+     3:55.70       41618684 B   ---   --   -----    wav  1.0000  bd-tree-d3t25.wav
+     2:54.19       30738332 B   ---   --   -----    wav  1.0000  bd-tree-d4t01.wav
+     3:56.30       41701004 B   ---   --   -----    wav  1.0000  bd-tree-d4t02.wav
+     2:27.05       25942604 B   ---   --   -----    wav  1.0000  bd-tree-d4t03.wav
+     4:28.46       47383436 B   ---   --   -----    wav  1.0000  bd-tree-d4t04.wav
+     2:04.35       21955964 B   ---   --   -----    wav  1.0000  bd-tree-d4t05.wav
+     2:20.52       24818348 B   ---   --   -----    wav  1.0000  bd-tree-d4t06.wav
+     2:47.49       29574092 B   ---   --   -----    wav  1.0000  bd-tree-d4t07.wav
+     0:57.13       10085420 B   ---   --   -----    wav  1.0000  bd-tree-d4t08.wav
+     3:18.14       34960172 B   ---   --   -----    wav  1.0000  bd-tree-d4t09.wav
+     4:22.31       46289756 B   ---   --   -----    wav  1.0000  bd-tree-d4t10.wav
+     3:35.58       38062460 B   ---   --   -----    wav  1.0000  bd-tree-d4t11.wav
+     5:34.07       58934108 B   ---   --   -----    wav  1.0000  bd-tree-d4t12.wav
+     1:45.12       18550268 B   ---   --   -----    wav  1.0000  bd-tree-d4t13.wav
+     2:20.38       24785420 B   ---   --   -----    wav  1.0000  bd-tree-d4t14.wav
+     3:36.74       38276492 B   ---   --   -----    wav  1.0000  bd-tree-d4t15.wav
+     1:37.44       17214332 B   ---   --   -----    wav  1.0000  bd-tree-d4t16.wav
+     2:15.08       23832860 B   ---   --   -----    wav  1.0000  bd-tree-d4t17.wav
+     1:36.49       17049692 B   ---   --   -----    wav  1.0000  bd-tree-d4t18.wav
+     1:52.60       19897964 B   ---   --   -----    wav  1.0000  bd-tree-d4t19.wav
+     0:43.40        7679324 B   ---   --   -----    wav  1.0000  bd-tree-d4t20.wav
+     1:49.06       19241756 B   ---   --   -----    wav  1.0000  bd-tree-d4t21.wav
+     4:01.04       42521852 B   ---   --   -----    wav  1.0000  bd-tree-d4t22.wav
+     3:22.30       35703404 B   ---   --   -----    wav  1.0000  bd-tree-d4t23.wav
+     2:43.11       28779116 B   ---   --   -----    wav  1.0000  bd-tree-d4t24.wav
+     2:51.30       30235004 B   ---   --   -----    wav  1.0000  bd-tree-d4t25.wav
+     4:08.31       43820156 B   ---   --   -----    wav  1.0000  bd-tree-d4t26.wav
+     3:36.64       38252972 B   ---   --   -----    wav  1.0000  bd-tree-d4t27.wav
+   309:58.44     3280794988 B                            1.0000  (108 files)
+=================== 
+=================== 
+=================== 

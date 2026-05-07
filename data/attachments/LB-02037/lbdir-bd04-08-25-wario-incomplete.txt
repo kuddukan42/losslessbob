@@ -1,0 +1,57 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-08-25-wario-incomplete 
+=================== 
+=================== 
+=================== 
+579b60cfca669099def63b592ccbc142  bd04-08-25-wario-incomplete.txt
+1ddd5c9c03e4cd9afcf6d4444560c32e  bd040825.md5
+ea1afe6f2cbb857414e0523f15c5a793  bd040825.txt
+16514a9bee6d0819a977656ceaaf6aff  bd040825t01.shn
+f69f654182992b5da8ce568c44a8c052  bd040825t02.shn
+8e3dd5a32711174f53f56b4b48d40831  bd040825t03.shn
+3839a56e55056f2d15f3f6ac6a12bb3d  bd040825t04.shn
+eff1761469efa059e9d15e7252ec2c40  bd040825t05.shn
+cd85257a516513ddbf6fb567cc26ef1d  bd040825t06.shn
+0ae724ab542024e01d570b845fac7fc9  bd040825t07.shn
+52bad65c539cda02af886e6ed439fd7f  bd040825t08.shn
+e1ac29d86f4096b9b403660063ec99df  Bob Dylan 8-25-04 Peoria Back.jpg
+c969edf7cce887a4742b069e58fb7544  Bob Dylan 8-25-04 Peoria CD.jpg
+f2ef90f9ceec9317d6995e60abf6e33e  Bob Dylan 8-25-04 Peoria Front Back.pdf
+feb2752a2d61f10aa39a66bbe1d40b34  Bob Dylan 8-25-04 Peoria Front.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-08-25-wario-incomplete 
+=================== 
+=================== 
+=================== 
+80ca460c21e1c3c711053d791472c644  [shntool]  bd040825t01.wav
+8726406b5780f10eab4bc36b1ebedef5  [shntool]  bd040825t02.wav
+bad8e12d0b45b9bd14bee8fc7423e578  [shntool]  bd040825t03.wav
+3574f0e42f5bf18a95b3974f32912be3  [shntool]  bd040825t04.wav
+bbca0b4a19f0bb7b3a769b7c6361d6aa  [shntool]  bd040825t05.wav
+f9c3bc8fdaffd42693ef1cc7dda8af7e  [shntool]  bd040825t06.wav
+3249bba2116509d35077213cb9e4f1fe  [shntool]  bd040825t07.wav
+c11ac33aacad41f64704bd27778d18d7  [shntool]  bd040825t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-08-25-wario-incomplete 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:37.17       17150828 B   ---   --   -----    wav  1.0000  bd040825t01.wav
+     4:42.06       49758956 B   ---   --   -----    wav  1.0000  bd040825t02.wav
+     5:10.73       54855740 B   ---   --   -----    wav  1.0000  bd040825t03.wav
+     6:33.24       69381692 B   ---   --   -----    wav  1.0000  bd040825t04.wav
+     6:28.71       68610236 B   ---   --   -----    wav  1.0000  bd040825t05.wav
+     7:03.74       74791292 B   ---   --   -----    wav  1.0000  bd040825t06.wav
+     6:13.13       65827820 B   ---   --   -----    wav  1.0000  bd040825t07.wav
+     3:04.64       32608172 B   ---   --   -----    wav  1.0000  bd040825t08.wav
+    40:54.42      432984736 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 

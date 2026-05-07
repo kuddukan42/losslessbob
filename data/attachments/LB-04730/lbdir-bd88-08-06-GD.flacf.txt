@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-08-06-GD.flacf 
+=================== 
+=================== 
+=================== 
+0ebf2a09ec20316e50436fcfed2f85e6  bd1988-08-06-Carlsbad-GD.txt
+deb547bc9c2bd33fdbe81dfd1c2d0be6  bd88-08-06-GD-LB-4730.txt
+7c236b6d22df806664e890dcea92e8f3  lbdir-bd88-08-06-GD.flacf.md5
+f8853498973bb7e9926ac703b4191254  Titel 01.flac
+bfb29e42561cb68214ffa4fc869f836f  Titel 02.flac
+67bb18f687391fe4f23c14525b8637e8  Titel 03.flac
+7439259639880e89e83276f900ea74bd  Titel 04.flac
+a648417e811d88c204e5e3463def520d  Titel 05.flac
+c1f647a618137a5313050895adc23793  Titel 06.flac
+833796dd7bab75d3a61704861bfd068f  Titel 07.flac
+30940c890757bb9aa1a6fa4f4edcabc7  Titel 08.flac
+7d4e034eafcc6d7a8d0374aaeaef1c23  Titel 09.flac
+8afa0e2cb412b072adf1eddb773aa4cd  Titel 10.flac
+95b3838e26e59343d228eb70a5e1e411  Titel 11.flac
+2aed09c5fbb776ec437ad8419e82f10b  Titel 12.flac
+1409a1ac841e62adec67176ae0696d16  Titel 13.flac
+e557b88300aad42abd2449f6325dda9c  Titel 14.flac
+8c41de54fde4732615b004bd40958ded  Titel 15.flac
+98ef63d6fcfa96550495e0cf188da07e  Titel 16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-08-06-GD.flacf 
+=================== 
+=================== 
+=================== 
+Titel 01.flac:24ba893a07f86063ff9b3e3181709439
+Titel 02.flac:1b5ddb9ae32e329715ed85342964cc61
+Titel 03.flac:a87628d993ab9141ff7f36335c7ee177
+Titel 04.flac:c5e48ed58a93fa721c27b61f655bbefa
+Titel 05.flac:374eb82a3a0f85109cf3546ec756e579
+Titel 06.flac:a7420d98ea32686178edf682bf936896
+Titel 07.flac:3a4dac06b85d2402fdd51107bb975d8e
+Titel 08.flac:85c527ff03a273a11a38c2dafa3372da
+Titel 09.flac:65cdd8e306e5c4041d24a26900560a9c
+Titel 10.flac:34f3ee06a5f1cefc7310b19fa149974a
+Titel 11.flac:f9e39de3f63488fefd150e736daf3548
+Titel 12.flac:d77549ce4bfb9872905fea8da9394ee5
+Titel 13.flac:85c962b71d32e4e0fd9a25fa27b6eec7
+Titel 14.flac:c3f48d741fcc835f9e19e570b294b3ed
+Titel 15.flac:0dbdd229010b89dd5cd2db8d464a3e0a
+Titel 16.flac:f6d15cb614ab79c983ae8201a45022d4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-08-06-GD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:28.67       36848828 B   ---   --   ---xx   flac  0.5478  Titel 01.flac
+     4:23.12       46421468 B   ---   --   ---xx   flac  0.5431  Titel 02.flac
+     4:27.70       47263484 B   ---   --   ---xx   flac  0.5386  Titel 03.flac
+     5:15.46       55674236 B   ---   --   ---xx   flac  0.5473  Titel 04.flac
+     4:54.36       51946316 B   ---   --   ---xx   flac  0.5521  Titel 05.flac
+     4:24.47       46680188 B   ---   --   ---xx   flac  0.5637  Titel 06.flac
+     5:17.61       56062316 B   ---   --   ---xx   flac  0.5498  Titel 07.flac
+     4:17.63       45483020 B   ---   --   ---xx   flac  0.5481  Titel 08.flac
+     6:15.16       66187676 B   ---   --   ---xx   flac  0.5460  Titel 09.flac
+     5:55.67       62779628 B   ---   --   ---xx   flac  0.5571  Titel 10.flac
+     5:13.35       55295564 B   ---   --   ---xx   flac  0.5770  Titel 11.flac
+     4:05.14       43250972 B   ---   --   ---xx   flac  0.5692  Titel 12.flac
+     6:44.22       71317388 B   ---   --   ---xx   flac  0.5753  Titel 13.flac
+     2:55.27       30933548 B   ---   --   ---xx   flac  0.5538  Titel 14.flac
+     3:58.37       42070268 B   ---   --   ---xx   flac  0.5717  Titel 15.flac
+     5:10.57       54818108 B   ---   --   ---xx   flac  0.5823  Titel 16.flac
+    76:49.02      813033008 B                            0.5582  (16 files)
+=================== 
+=================== 
+=================== 

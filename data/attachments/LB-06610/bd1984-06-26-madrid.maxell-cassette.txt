@@ -1,0 +1,102 @@
+Bob Dylan
+Estadio del Rayo Vallecano
+Madrid, Spain
+June 26, 1984
+
+Stereo Audience Recording. Incomplete.
+
+Different than LB-1935. Have no copy at hand of the LTD recording to compare so I couldn't determine wether it is the same or not than LB-0882. There's a nice fingerprint on first song, d1t01 @ 5:02.954, when a male voice screams out "Vamos Zimmer-man!!!" which would be something like "There we go, Zimmer-man!!!" noticeably accentuated on "man", pronounced as if he was telling "Superman", as we would pronounce it in Spanish. Some people around laugh at the occurrence.
+
+This is from audio Cd-R's I received yesterday of a Maxell cassette owned by Juan Antonio Guzman Amador, a Spanish collector from Montijo (Badajoz), Spain, whom I wish to thank for his kind permission and willingness to lend us his original tape. Thank you also to my good friend Marcos Placer who managed to get this recording from Juan Antonio and find someone else to make the transfer from analogue source to the audio CD's.
+
+Our friend Juan Antonio told us the following story about the way he got the tape:
+
+"...I think I bought it that same year of 84 or maybe next, can't remember well. Bought it from a guy from Algeciras who had a kindve miser hand-made catalog photocopied in green sheets with any kind of live recordings you could imagine. If my memory serves me well I think I got his address from a mini-advertisement at Popular 1, the music magazine I purchased every month about that time. We could verify that if you got any of those issues, or maybe a friend of yours. I didn't keep any". 
+
+The transfer was made through a JVC cassette player straight to a Phillips CDR 775 audio CA Recorder. The discs contained only 3 tracks, 2 first on a Vervatim Cd-R and the 3rd one on a TDK Cd-RW, XG for audio. 
+
+Lineage: Maxell Cassette Normal Position UL90 Japan (unknown, but most likely low gen) > JVC TD-WE 98 > Phillips CDR 775 audio CA Recorder > cda [CD-R (Verbatim - 2 tracks) + CD-RW (TDK XG for audio - 1 track)] > wav (eac secure mode) > wav (Adobe Audition 1.0 / tracking) > flac (Flac Frontend 1.1.3 - align on SB option - level 8 - verify on)
+
+Tracking of the original transfer:
+ 
+Track01 (Verbatim CD-R)
+
+ 1.Highway 61 Revisited 4:53 / 4:53
+ 2.Jokerman 7:00 / 11:53
+ 3.All Along The Watchtower 4:37 / 16:30
+ 4.Just Like A Woman 5:40 / 22:10
+ 5.Maggie's Farm 5:00 / 27:10
+ 6.I And I 5:40 / 32:50
+ 7.License To Kill  3:59 / 36:49
+ 8.Greg Sutton: I've Got To Use My Imagination (Gerry Goffin & Barry Goldberg) 6:56 / 43:45
+ 
+Track02 (Verbatim CD-R)
+ 
+ 9.A Hard Rain's A-Gonna Fall 5:40 / 5:40
+ 10.Girl From The North Country 5:10 / 10:50
+ 11.It's All right, Ma (I'm Only Bleeding) 6:25 / 17:15
+ 12.Simple Twist Of Fate 5:20 / 22:35
+ 13.Masters Of War 6:20 / 28:55
+ 
+Track03 (TDK XG for audio CD-RW)
+ 
+ 14. Ballad Of A Thin Man  4:15 / 4:15
+ 15. Enough Is Enough 4:35 / 8:50
+ 16. Every Grain Of Sand 5:45 / 14:35
+ 17. Like A Rolling Stone 3:56 / 18:31 (Incomplete -> tape ran out after 90m concert)
+
+EAC for extraction and Adobe Auditon 1.0 for retracking.
+
+I just had to deamplify it -0.68 db throughout the complete recording as I found some clipping at loudest parts. Did also some clean up task.
+
+Clicks and pops elimination:
+
+d1t05 @ [0:07.022-474][0:07.278][0:11.981][0:25.512][0:26.622-869][0:26.800-27.016][0:29.243][1:07.029][3:01.569]
+
+d2t01 @ [0:43.471][1:00.644][3:14.003][4:32.150]
+d2t05 @ [5:57.773]
+d2t06 @ [4:13.530]
+
+Tracklist:
+ 
+Disc 1
+
+ 01. [5:07.222] Highway 61 Revisited
+ 02. [6:52.930] Jokerman 
+ 03. [4:37.750] All Along The Watchtower
+ 04. [5:45.992] Just Like A Woman
+ 05. [4:44.507] Maggie's Farm
+ 06. [5:54.989] I And I
+ 07. [3:46.640] License To Kill
+ 08. [6:55.366] I've Got To Use My Imagination (Gerry Goffin & Barry Goldberg)
+
+    [43:45.396] Total Time
+
+Disc 2
+ 
+ 01. [5:49.122] A Hard Rain's A-Gonna Fall 
+ 02. [5:07.642] Girl From The North Country 
+ 03. [6:29.357] It's All right, Ma (I'm Only Bleeding) 
+ 04. [5:11.335] Simple Twist Of Fate
+ 05. [6:20.210] Masters Of War
+ 06. [4:16.335] Ballad Of A Thin Man
+ 07. [4:34.710] Enough Is Enough
+ 08. [5:48.370] Every Grain Of Sand
+ 09. [3:47.759] Like A Rolling Stone (cut off at 3:48)
+
+    [47:24.840] Total Time
+ 
+    [91:10.366] Global Time
+
+Missing tracks:
+
+ 18. Mr. Tambourine Man
+ 19. It Ain't Me Babe
+ 20. Knockin' on Heaven's Door
+ 21. Leopard Skin Pill-Box Hat
+ 22. Tombstone Blues
+ 23. Blowin' in the Wind
+
+Note: Title and credits for the song performed by Greg Sutton as printed on the cassette info.
+
+Luisbp51 (Hungercity October 2008)

@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-28a 
+=================== 
+=================== 
+=================== 
+54758d0d2f07653cb4612e51f4dca352  bd1994-10-28.shnf.d1.LOG
+5d77ca593eaf814acc4ee9ed1fa1d3f8  bd1994-10-28.shnf.d2.LOG
+89977fd3baaf985c081d1e8cd72b008a  bd1994-10-28.shnf.md5
+6b62c648531297307c238fcbcbe3dd56  bd1994-10-28.shnf.txt
+317fa9b38553eecc58f65edeed367ef6  bd1994-10-28d1t01.shn
+61881bb61ca55a98106441ed4e140f1e  bd1994-10-28d1t02.shn
+c23ebe02d912c81eb6fc029686ec4585  bd1994-10-28d1t03.shn
+d7fefb1a7d056babf7c7755b298c165e  bd1994-10-28d1t04.shn
+eebeb4ab1ac549effb49b0502b3efd36  bd1994-10-28d1t05.shn
+e181cbcccceca3ddadb2077d187ba5b0  bd1994-10-28d1t06.shn
+01c2991c927278803b67e06ae66d7d0b  bd1994-10-28d1t07.shn
+0f5ec0c23d9360e7a92c1d442ac4dabf  bd1994-10-28d2t01.shn
+4c9363e7dfa877c8a8ce99dee8381f97  bd1994-10-28d2t02.shn
+fc5f6e542ce794a12749e6d416afb50d  bd1994-10-28d2t03.shn
+29b4b9364db2b94bbd24b0e60db40cff  bd1994-10-28d2t04.shn
+d68abb6b51a7338f10ed6bd5de0aba89  bd1994-10-28d2t05.shn
+b68ce2d9decd2b7dbf2ad3f537179d30  bd1994-10-28d2t06.shn
+d64816c927b839d354d492e766cdebaf  bd1994-10-28d2t07.shn
+bf70e6584bd53d9ab0825d9eff7bced9  bd94-10-28a-LB-3455.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-10-28a 
+=================== 
+=================== 
+=================== 
+509db36a31243e19bca9aa4b6f1eb7cd  [shntool]  bd1994-10-28d1t01.wav
+d603c010ada46d6c766a1575faafbf5a  [shntool]  bd1994-10-28d1t02.wav
+cd0b1d39140257197c2c015c411aed4e  [shntool]  bd1994-10-28d1t03.wav
+8cea70917f85eaa27279a640f7f03fd2  [shntool]  bd1994-10-28d1t04.wav
+0e59660ba4d99df43e83e17a84fc7004  [shntool]  bd1994-10-28d1t05.wav
+3aa370fbb2ad254b4da3ac05d5cc4263  [shntool]  bd1994-10-28d1t06.wav
+e3a8dce5ffc63a600d670fc03def7b3a  [shntool]  bd1994-10-28d1t07.wav
+f3060b554283452dfcc881af5967dfd9  [shntool]  bd1994-10-28d2t01.wav
+a60652f99f419ab3b6065b228a0337c1  [shntool]  bd1994-10-28d2t02.wav
+a5ea9e284c08858ca0a0de365ca126fa  [shntool]  bd1994-10-28d2t03.wav
+fabbedc145a0fa6c75d7e5eaa9eb4b01  [shntool]  bd1994-10-28d2t04.wav
+4a670e7dd705c0710a66f82e1c8550d0  [shntool]  bd1994-10-28d2t05.wav
+c865921701c51df8ab9678ec4e148f79  [shntool]  bd1994-10-28d2t06.wav
+575d26f4540555336dd1d3edc59e15be  [shntool]  bd1994-10-28d2t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-10-28a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:00.34       84752012 B   ---   --   -----    wav  1.0000  bd1994-10-28d1t01.wav
+     7:16.69       77072732 B   ---   --   -----    wav  1.0000  bd1994-10-28d1t02.wav
+     5:55.42       62720828 B   ---   --   -----    wav  1.0000  bd1994-10-28d1t03.wav
+     9:29.05      100383404 B   ---   --   -----    wav  1.0000  bd1994-10-28d1t04.wav
+     9:17.23       98308940 B   ---   --   -----    wav  1.0000  bd1994-10-28d1t05.wav
+     8:20.23       88254140 B   ---   --   -----    wav  1.0000  bd1994-10-28d1t06.wav
+     5:50.41       61836476 B   ---   --   -----    wav  1.0000  bd1994-10-28d1t07.wav
+     6:58.57       73869308 B   ---   --   -----    wav  1.0000  bd1994-10-28d2t01.wav
+     7:33.37       79996268 B   ---   --   -----    wav  1.0000  bd1994-10-28d2t02.wav
+     6:39.44       70487132 B   ---   --   -----    wav  1.0000  bd1994-10-28d2t03.wav
+     7:09.63       75823820 B   ---   --   -----    wav  1.0000  bd1994-10-28d2t04.wav
+     8:00.69       84834332 B   ---   --   -----    wav  1.0000  bd1994-10-28d2t05.wav
+     8:49.64       93466172 B   ---   --   -----    wav  1.0000  bd1994-10-28d2t06.wav
+     8:25.56       89213756 B   ---   --   -----    wav  1.0000  bd1994-10-28d2t07.wav
+   107:48.27     1141019320 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-08-ancient-odes.flacf 
+=================== 
+=================== 
+=================== 
+7c27803a69f6b7c5dfde638f3d44413e  bd96-07-08-ancient-odes-d1t01.flac
+d3276db44537ce7e9e2ad5a301dc31f7  bd96-07-08-ancient-odes-d1t02.flac
+75e514450592a7a7b6f47059f57ba2e1  bd96-07-08-ancient-odes-d1t03.flac
+c7be2ddf70906c4d0027e4a99b21ac71  bd96-07-08-ancient-odes-d1t04.flac
+c3f74b7a733ebd89f4ff28243f4636b1  bd96-07-08-ancient-odes-d1t05.flac
+3ca870425ba5fbe54e65c0a7585228b9  bd96-07-08-ancient-odes-d1t06.flac
+bb30e518ed349a9407bd530fc573d07a  bd96-07-08-ancient-odes-d1t07.flac
+b7054a40e521adfa1421365201ab6e63  bd96-07-08-ancient-odes-d1t08.flac
+a23092384a4fb9e51d335c29e0a6c451  bd96-07-08-ancient-odes-d1t09.flac
+e9963b529fddda43b3dda0e7f2ecd6b5  bd96-07-08-ancient-odes-d1t10.flac
+8e623c46d24811c2f6b0471de4b122f3  bd96-07-08-ancient-odes-d1t11.flac
+b20500b9a9f27c4cab8a87ac3f9091d9  bd96-07-08-ancient-odes-d2t01.flac
+2c8a71a6122e2571b8a3268937113714  bd96-07-08-ancient-odes-d2t02.flac
+1c75dfd79c8d01b6b2145388689c613b  bd96-07-08-ancient-odes-d2t03.flac
+9aa58a21f1879a111e8c43b2f182ce66  bd96-07-08-ancient-odes-d2t04.flac
+124b25d26997ceb5a838c7bd95c36533  bd96-07-08-ancient-odes-d2t05.flac
+34f977899b2e44d52210a6e272d5511a  bd96-07-08-ancient-odes-d2t06.flac
+8d3df0cfe1f9229511dca5f2412d5510  bd96-07-08-ancient-odes-d2t07.flac
+a630b3d1ad9f072e0208011adb40b63a  bd96-07-08-ancient-odes-d2t08.flac
+b4f66e576d919f976751f3d65b3cfdad  bd96-07-08-ancient-odes.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-08-ancient-odes.flacf 
+=================== 
+=================== 
+=================== 
+bd96-07-08-ancient-odes-d1t01.flac:16822984911421a9b6de9b2210d28c69
+bd96-07-08-ancient-odes-d1t02.flac:34030ccea2963ac3fe5fcc5a30fd3198
+bd96-07-08-ancient-odes-d1t03.flac:a58b35612ce5f009f9c85f0da8789546
+bd96-07-08-ancient-odes-d1t04.flac:b3889c8805f39603c2a2cdc0a55618f0
+bd96-07-08-ancient-odes-d1t05.flac:03c0036812489eadcbff1cf2708a34c2
+bd96-07-08-ancient-odes-d1t06.flac:78ca4db591200c275ace359bedebe047
+bd96-07-08-ancient-odes-d1t07.flac:1eea2e75917cab634bc523e1531c1cde
+bd96-07-08-ancient-odes-d1t08.flac:792742db3d1df31fa5eafda3a3d5dbcd
+bd96-07-08-ancient-odes-d1t09.flac:968893ded1cf5c6736d50781e03af52c
+bd96-07-08-ancient-odes-d1t10.flac:1633c1ad67982db50600536bf850a16e
+bd96-07-08-ancient-odes-d1t11.flac:0e90e5a42bb00776aa2db3dcab07e93d
+bd96-07-08-ancient-odes-d2t01.flac:6b99f19997fc771a41f39c2153e9d1af
+bd96-07-08-ancient-odes-d2t02.flac:43b662e06046fd32011c4bd0fd26aa34
+bd96-07-08-ancient-odes-d2t03.flac:4df2dd264fc8d78d3f846a7b912a8274
+bd96-07-08-ancient-odes-d2t04.flac:36a15cb2f15a6a9f6fa50dbe37344aae
+bd96-07-08-ancient-odes-d2t05.flac:6db4f615dcc961a4d592a65cbb6eea52
+bd96-07-08-ancient-odes-d2t06.flac:e006f0e44189fd35c377fe519fb1e8f1
+bd96-07-08-ancient-odes-d2t07.flac:c3683b23638f428991c3fe0d41473113
+bd96-07-08-ancient-odes-d2t08.flac:79a0b34742b3f251f2ebd2a48d30a831
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-08-ancient-odes.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.07       54347708 B   ---   --   ---xx   flac  0.4436  bd96-07-08-ancient-odes-d1t01.flac
+     6:05.13       64416620 B   ---   --   ---xx   flac  0.4376  bd96-07-08-ancient-odes-d1t02.flac
+     7:37.02       80619548 B   ---   --   ---xx   flac  0.4451  bd96-07-08-ancient-odes-d1t03.flac
+     5:45.00       60858044 B   ---   --   ---xx   flac  0.4249  bd96-07-08-ancient-odes-d1t04.flac
+     7:53.05       83449004 B   ---   --   ---xx   flac  0.4496  bd96-07-08-ancient-odes-d1t05.flac
+     8:02.65       85177724 B   ---   --   ---xx   flac  0.4957  bd96-07-08-ancient-odes-d1t06.flac
+     9:35.33      101507660 B   ---   --   ---xx   flac  0.5104  bd96-07-08-ancient-odes-d1t07.flac
+     5:47.20       61257884 B   ---   --   ---xx   flac  0.4915  bd96-07-08-ancient-odes-d1t08.flac
+     6:47.27       71858348 B   ---   --   ---xx   flac  0.5173  bd96-07-08-ancient-odes-d1t09.flac
+     8:08.53       86207900 B   ---   --   ---xx   flac  0.4400  bd96-07-08-ancient-odes-d1t10.flac
+     6:49.45       72253484 B   ---   --   ---xx   flac  0.4344  bd96-07-08-ancient-odes-d1t11.flac
+     7:49.03       82738700 B   ---   --   ---xx   flac  0.5101  bd96-07-08-ancient-odes-d2t01.flac
+     8:33.17       90533228 B   ---   --   ---xx   flac  0.4858  bd96-07-08-ancient-odes-d2t02.flac
+     7:35.00       80262044 B   ---   --   ---xx   flac  0.4661  bd96-07-08-ancient-odes-d2t03.flac
+     5:50.20       61787084 B   ---   --   ---xx   flac  0.4783  bd96-07-08-ancient-odes-d2t04.flac
+     6:35.40       69772124 B   ---   --   ---xx   flac  0.4780  bd96-07-08-ancient-odes-d2t05.flac
+    10:48.58      114443660 B   ---   --   ---xx   flac  0.5142  bd96-07-08-ancient-odes-d2t06.flac
+    10:12.15      107992124 B   ---   --   ---xx   flac  0.4795  bd96-07-08-ancient-odes-d2t07.flac
+     7:32.02       79737548 B   ---   --   ---xx   flac  0.4928  bd96-07-08-ancient-odes-d2t08.flac
+   142:35.50     1509220436 B                            0.4761  (19 files)
+=================== 
+=================== 
+=================== 

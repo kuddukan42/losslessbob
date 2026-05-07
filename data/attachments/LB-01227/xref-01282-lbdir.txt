@@ -1,0 +1,93 @@
+===================
+===================
+===================
+=== md5 for: bd90-11-17-c.flacf
+===================
+===================
+===================
+22bd53e8a2b55d959b9817b6ab0f4221 *17 Nov 1990 Ohio d0101.flac
+b1eb56144e93715b5ae4cf45e3195ffd *17 Nov 1990 Ohio d0102.flac
+f41ed49de60f30639f1a1733dae94d21 *17 Nov 1990 Ohio d0103.flac
+f50d64819d2c3312bea0603aabfb79a6 *17 Nov 1990 Ohio d0104.flac
+aa970898e2549cd87032801cf5eb2df8 *17 Nov 1990 Ohio d0105.flac
+a0cc47ca0b7b65119d5d814aa880abad *17 Nov 1990 Ohio d0106.flac
+f1dc2d1b13b1530b6b367e16736a7f45 *17 Nov 1990 Ohio d0107.flac
+86d55323414250138433884eb957ac2d *17 Nov 1990 Ohio d0108.flac
+2e9f40cfdfcf904d6b7d4d26901eaee9 *17 Nov 1990 Ohio d0109.flac
+948a810476ae77b3a48040977e13f1f7 *17 Nov 1990 Ohio d0110.flac
+db0de03431b941dc86ca85fa656e004d *17 Nov 1990 Ohio d0111.flac
+426889415807a479cb6a26b69fefcfc5 *17 Nov 1990 Ohio d0112.flac
+c3331675cbf1eda8dce5a38ff3a08398 *17 Nov 1990 Ohio d0113.flac
+4840599d055482ecde0c9c441af54741 *17 Nov 1990 Ohio d0114.flac
+aeab828ec722507b49fe01e7c9e5b5cf *17 Nov 1990 Ohio d0115.flac
+659163d361d98994cacdadc2ad63943c *17 Nov 1990 Ohio d0116.flac
+5b221e4cf6c0ef50b906a38eba82b9dc *17 Nov 1990 Ohio d0201.flac
+728bb9abe8c59d5200a412c4a789ed3f *17 Nov 1990 Ohio d0202.flac
+0dcdac6fc53b11bde55a179533fb8066 *17 Nov 1990 Ohio d0203.flac
+e39510c305e675f81fd6ee66215ad18e *17 Nov 1990 Ohio d0204.flac
+f01ee89f7939815e30c4e8ff03f937be *17 Nov 1990 Ohio d0205.flac
+bd10eca0d54e664b984e73c7c7e19674 *bd1990-11-17.ffp
+1d9e81a24acb704727400805cc55fa93 *Bob Dylan 17 Nov 1990 Ohio.txt
+6ae2f09cad253c3f0bb32309f9382c0f *Cleveland 17-11-1990 (CB master)[LB-1227].md5
+ad59330ce7cc9c7167bcb9b8783ee86f *shntool_len.txt
+===================
+===================
+===================
+=== ffp for: bd90-11-17-c.flacf
+===================
+===================
+===================
+17 Nov 1990 Ohio d0101.flac:3de158c62d8c362e4dda7cb4bc4ff450
+17 Nov 1990 Ohio d0102.flac:ce1ca03bf91ea351b7774c0014e4ebd0
+17 Nov 1990 Ohio d0103.flac:bcf989f54c78f2cfba65c2289a18040b
+17 Nov 1990 Ohio d0104.flac:4c9aa2c8757b5b7d6c8c7cd17e2d03ce
+17 Nov 1990 Ohio d0105.flac:862fdc852578895980d6accaae77a531
+17 Nov 1990 Ohio d0106.flac:2071dd17bca71026c415bfed2d89187c
+17 Nov 1990 Ohio d0107.flac:08c77c699875ca5e987a99c31bbf230b
+17 Nov 1990 Ohio d0108.flac:f78961ef70d08ab6618641c38864574f
+17 Nov 1990 Ohio d0109.flac:f94180e39ed53f2c48c1caa87195e712
+17 Nov 1990 Ohio d0110.flac:14c84b4007d8a3262d83efc5ba1d6e48
+17 Nov 1990 Ohio d0111.flac:4f4bb756605d271d08a11aedc9947654
+17 Nov 1990 Ohio d0112.flac:14b1efde2c15a62f5007878a72374864
+17 Nov 1990 Ohio d0113.flac:2b143ad563c50e1ddf3ccba1ba1cdc32
+17 Nov 1990 Ohio d0114.flac:f0bb5a50fc029a7be5b4a4bada8a82d3
+17 Nov 1990 Ohio d0115.flac:25cd376bb4590a3d948a9b303ec8ba3c
+17 Nov 1990 Ohio d0116.flac:e3a31cf49da3c3aeac8cd5cb49411f0b
+17 Nov 1990 Ohio d0201.flac:9c433b09fc95d6b445fbf9a281f4abb6
+17 Nov 1990 Ohio d0202.flac:bc9bc92a2231857bfb47ed94de8ca3f6
+17 Nov 1990 Ohio d0203.flac:f0b53ca0fb842e57f519c7bb3837376c
+17 Nov 1990 Ohio d0204.flac:b93655bd8fea1666bca3504f09150a56
+17 Nov 1990 Ohio d0205.flac:eb70933d1d2accd5ae664eae07050a14
+===================
+===================
+===================
+=== shntool len for: bd90-11-17-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:11.02       12529148 B   ---   --   ---xx   flac  0.5827  17 Nov 1990 Ohio d0101.flac
+     3:51.39       40840172 B   ---   --   ---xx   flac  0.6416  17 Nov 1990 Ohio d0102.flac
+     4:57.52       52513148 B   ---   --   ---xx   flac  0.6351  17 Nov 1990 Ohio d0103.flac
+     4:30.04       47637452 B   ---   --   ---xx   flac  0.6019  17 Nov 1990 Ohio d0104.flac
+     3:16.01       34576796 B   ---   --   ---xx   flac  0.6800  17 Nov 1990 Ohio d0105.flac
+     4:16.05       45170204 B   ---   --   ---xx   flac  0.5975  17 Nov 1990 Ohio d0106.flac
+     5:55.04       62631452 B   ---   --   ---xx   flac  0.6680  17 Nov 1990 Ohio d0107.flac
+     3:44.70       39678284 B   ---   --   ---xx   flac  0.5713  17 Nov 1990 Ohio d0108.flac
+     3:24.50       36103244 B   ---   --   ---xx   flac  0.5861  17 Nov 1990 Ohio d0109.flac
+     5:26.19       57551132 B   ---   --   ---xx   flac  0.6120  17 Nov 1990 Ohio d0110.flac
+     6:32.15       69184124 B   ---   --   ---xx   flac  0.5792  17 Nov 1990 Ohio d0111.flac
+     3:57.63       41955020 B   ---   --   ---xx   flac  0.6560  17 Nov 1990 Ohio d0112.flac
+     3:17.56       34882556 B   ---   --   ---xx   flac  0.6594  17 Nov 1990 Ohio d0113.flac
+     3:55.08       41472860 B   ---   --   ---xx   flac  0.6222  17 Nov 1990 Ohio d0114.flac
+     6:43.27       71152748 B   ---   --   ---xx   flac  0.6498  17 Nov 1990 Ohio d0115.flac
+     0:04.17         745628 B   ---   --   ---xx   flac  0.5569  17 Nov 1990 Ohio d0116.flac
+     3:39.65       38784524 B   ---   --   ---xx   flac  0.6251  17 Nov 1990 Ohio d0201.flac
+     6:51.10       72523964 B   ---   --   ---xx   flac  0.6683  17 Nov 1990 Ohio d0202.flac
+     5:27.63       57831020 B   ---   --   ---xx   flac  0.6124  17 Nov 1990 Ohio d0203.flac
+     5:26.48       57619340 B   ---   --   ---xx   flac  0.6308  17 Nov 1990 Ohio d0204.flac
+     4:02.37       42775868 B   ---   --   ---xx   flac  0.6189  17 Nov 1990 Ohio d0205.flac
+    90:31.55      958158684 B                            0.6272  (21 files)
+===================
+===================
+===================

@@ -1,0 +1,68 @@
+===================
+===================
+===================
+=== md5 for: bd24-10-21-mani-r-05-incomplete.flac24
+===================
+===================
+===================
+316e81cdefa0017492da472ae47ce234 *2024-10-21 Stuttgart Mani R-05 48k24b incomplete.md5
+97d8a4a0686e2fd61e18b58e80096bb0 *2024-10-21 Stuttgart.ffp
+f7d768e726bf4da831f6d9d90bcf9ef5 *2024-10-21-tr01.flac
+5a18b211036e5f4d2db07c1fb7c66683 *2024-10-21-tr02.flac
+377d9ad91a372b350dad12cb76f684c1 *2024-10-21-tr03.flac
+1ae72d18d015b718fec3a5dd0e78d757 *2024-10-21-tr04.flac
+299ba1c34f734e765ef8c8f82d25168d *2024-10-21-tr05.flac
+db8316a95211e568a249d0cca330b0b7 *2024-10-21-tr06.flac
+98be8b5af68d169600dcfac24ca5ce22 *2024-10-21-tr07.flac
+07e1314acc0303ff91e4aed7cc33d185 *2024-10-21-tr08.flac
+1cb2e26e11663872252810364b381967 *2024-10-21-tr09.flac
+87ab7f8a3aaec8800caa52a5850a9e6e *2024-10-21-tr10.flac
+1bd9e752d6b78ff675143b03ac43023e *2024-10-21-tr11.flac
+46fe92f62ea9ce825de222380a62a1f4 *2024-10-21-tr12inc.flac
+ee65ecf13e1043d44ce929f14f3c97f4 *20241021 Stuttgart Info.txt
+2bfae5c98bae6364f458de8b26a6dccf *20241021Stuttgart Flyer.jpg
+fb20cfe48ec613de8ed4adbaa22e0e16 *IMG_20241021_a.jpg
+0038e686a48ed4d82a9f03807ee4e7c2 *IMG_20241021_b.jpg
+===================
+===================
+===================
+=== ffp for: bd24-10-21-mani-r-05-incomplete.flac24
+===================
+===================
+===================
+2024-10-21-tr01.flac:94899abc4e0e3ebccf8915b3f907af33
+2024-10-21-tr02.flac:996dbc65a6459d709808ba1f6bebb8b7
+2024-10-21-tr03.flac:ae5617e92b847ec09fad7e6cab32dded
+2024-10-21-tr04.flac:66ff80221957721c9a7e7408447089c9
+2024-10-21-tr05.flac:6472c87285ba5393bbd88d876e8edacb
+2024-10-21-tr06.flac:6d7a5011b3d9166f7f2d26a8a96b445b
+2024-10-21-tr07.flac:6c8d92eba7f6d19f0eb39517f112715f
+2024-10-21-tr08.flac:0041754187afa48486018b0214fd7351
+2024-10-21-tr09.flac:094bc732ceb9fa2e30d6e96ebf1ed9f6
+2024-10-21-tr10.flac:543606587ee3a224b43b0a185dee47f6
+2024-10-21-tr11.flac:08db73ce6535ae15c15ec37e4d42ad2a
+2024-10-21-tr12inc.flac:46d0ddb51e13e0e832be264610f6871e
+===================
+===================
+===================
+=== shntool len for: bd24-10-21-mani-r-05-incomplete.flac24
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:01.547     121405484 B   cxx   --   ---xx   flac  0.7211  2024-10-21-tr01.flac
+     6:40.128     115236908 B   cxx   --   ---xx   flac  0.7518  2024-10-21-tr02.flac
+     6:01.984     104251436 B   cxx   --   ---xx   flac  0.7296  2024-10-21-tr03.flac
+     6:47.808     117448748 B   cxx   --   ---xx   flac  0.7210  2024-10-21-tr04.flac
+     6:10.688     106758188 B   cxx   --   ---xx   flac  0.7235  2024-10-21-tr05.flac
+     5:11.808      89800748 B   cxx   --   ---xx   flac  0.7166  2024-10-21-tr06.flac
+     7:10.080     123863084 B   cxx   --   ---xx   flac  0.6969  2024-10-21-tr07.flac
+     4:24.960      76308524 B   cxx   --   ---xx   flac  0.7803  2024-10-21-tr08.flac
+     7:57.696     137576492 B   cxx   --   ---xx   flac  0.6834  2024-10-21-tr09.flac
+     7:16.480     125706284 B   cxx   --   ---xx   flac  0.7108  2024-10-21-tr10.flac
+    10:42.304     184983596 B   cxx   --   ---xx   flac  0.6373  2024-10-21-tr11.flac
+     3:05.536      53434412 B   cxx   --   ---xx   flac  0.8597  2024-10-21-tr12inc.flac
+    78:31.019    1356773904 B                            0.7146  (12 files)
+===================
+===================
+===================

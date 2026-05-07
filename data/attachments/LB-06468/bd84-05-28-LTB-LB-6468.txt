@@ -1,0 +1,8 @@
+Bob Dylan, 5/28/84, Verona, Italy, 2CDR
+
+LB-6468, (75min+69min), Taper: Legendary Taper B, Source: transferred from DAT clone in collection of LTF (speed corrected) > cdr > (dBpowerAMP set to compression level 6) flac., Note: The so-called "Fendert" version (LB-1780) listed at LB would seem to be from the same master as this, judging by the fact that both recordings share a five second period of silence at the beginning of d2 t10 (BITW). The Fendert version, of course, is without any lineage, information.On the CDRs I received, "Don't Think Twice" appears both as d1 t13 and d2 t01. I have not eliminated this duplication.; bittorrent download 09/08; nothing above 18k except lego parapets; very similar wav view to fendert LB-1780 with a little different levels; that is full spectrum; in comparison that has a little less hiss; that is 4% faster on d1t12; same recording as LB-3910 based on same clapping at end of d1t12 ; in comparison that is harsher with more hiss; that is 6% faster on d1t12; (did not listen to all of this)
+
+Disk One, Jokerman, All Along The Watchtower, Just Like A Woman, Highway 61 Revisited, I And I, Shelter From The Storm, License To Kill, Ballad Of A Thin Man, When You Gonna Wake Up, Got My Mojo Working [Greg Sutton], It's Alright Ma (I'm Only Bleeding), Girl From The North Country, Don't Think Twice, Disk Two, Don't Think Twice, Times They Are A-Changin', Masters Of War, Maggie's Farm, Every Grain Of Sand, Man Of Peace, Heart Of Mine, Like A Rolling Stone, Lonesome Death Of Hattie Carroll, Blowin' In The Wind, Tombstone Blues
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

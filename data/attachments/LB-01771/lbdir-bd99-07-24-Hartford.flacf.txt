@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-07-24-Hartford.flacf 
+=================== 
+=================== 
+=================== 
+31a2a640d386ca978036b2b13190c080  bd99-07-24.txt
+ecd545cad263e89d47cc54b14416ae7c  d1Track01.flac
+6e0a1bf8bed82cf373b499c0885b2ed4  d1Track02.flac
+edd8dc4268d484748ff883c594ad63b8  d1Track03.flac
+76a869e83a61f9b5aedd6cb3c5626097  d1Track04.flac
+028f737d6d7ef120513d41ebb67d62f5  d1Track05.flac
+d5ff6e1bcc1f355fc8310efcfa155b85  d1Track06.flac
+ee3be5b34bbfeb04906a9434b5736343  d1Track07.flac
+c1dc40640540d6ac5285017c015bb4d3  d1Track08.flac
+224da0798bcf909879bf16924c8532e5  d1Track09.flac
+453efe04bc19b822f08104f0866059db  d1Track10.flac
+7ffa09dfe12cea8ba216333d048ba387  d2Track01.flac
+892729d25f0e150d5419ef6bd852d448  d2Track02.flac
+f2b5ebc0d3855d0481d5e3d04eaa4d91  d2Track03.flac
+7b57e5126bdff1a7115d05ad25ada278  d2Track04.flac
+d41d8cd98f00b204e9800998ecf8427e  md5 file created by aaadbell.txt
+e3267506ba6a67273ed688e759c9a5d8  noname.md5
+a43bdb4286afe188b0c94d1d9f59d924  README.txt
+df9c22e2f06fccc26a16cc13e73108a6  shntool-info-OK.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-07-24-Hartford.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:56cb48bd1a865b50d412bd406e852bf1
+d1Track02.flac:7f4109e3cd9377af29f32b58aca2cb52
+d1Track03.flac:4efa2ad34d48d851defefd47eaffd76c
+d1Track04.flac:23135251b3b6065c38a9566519913bfd
+d1Track05.flac:0ba6da20e2ae0340be2f0d5abc1957c7
+d1Track06.flac:5b00e5d2559626a5cd5fd15214265dbe
+d1Track07.flac:0298dc04671c680e74b7cf5134ace43c
+d1Track08.flac:6d78652b5e0fc28a2190def977ef0283
+d1Track09.flac:f35fd38f42da1035df43d7d15e15a2ee
+d1Track10.flac:ce23592bef53d2233d9c728156e23e3f
+d2Track01.flac:748971ec57f3e6e0885a983988143183
+d2Track02.flac:41a88486e5a2a956ea3d14006b29bd94
+d2Track03.flac:f79e180cd5b792f1d7457a08fe20e83a
+d2Track04.flac:420341c567bb157ad8d1178bf310ecb1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-07-24-Hartford.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:20.03       67039100 B   ---   --   ---xx   flac  0.4201  d1Track01.flac
+     6:10.65       65420924 B   ---   --   ---xx   flac  0.4193  d1Track02.flac
+     5:23.09       56998412 B   ---   --   ---xx   flac  0.4025  d1Track03.flac
+     5:35.20       59141084 B   ---   --   ---xx   flac  0.3675  d1Track04.flac
+     7:29.43       79304780 B   ---   --   ---xx   flac  0.4705  d1Track05.flac
+     3:58.00       41983244 B   ---   --   ---xx   flac  0.4645  d1Track06.flac
+     6:38.29       70275452 B   ---   --   ---xx   flac  0.4120  d1Track07.flac
+     5:47.03       61217900 B   ---   --   ---xx   flac  0.4795  d1Track08.flac
+     6:11.49       65559692 B   ---   --   ---xx   flac  0.3434  d1Track09.flac
+     9:06.54       96441452 B   ---   --   ---xx   flac  0.4657  d1Track10.flac
+     7:22.03       77975900 B   ---   --   ---xx   flac  0.4892  d2Track01.flac
+     5:14.41       55486076 B   ---   --   ---xx   flac  0.3996  d2Track02.flac
+    11:15.01      119072396 B   ---   --   ---xx   flac  0.3988  d2Track03.flac
+     6:25.70       68078684 B   ---   --   ---xx   flac  0.4403  d2Track04.flac
+    92:58.15      983995096 B                            0.4274  (14 files)
+=================== 
+=================== 
+=================== 

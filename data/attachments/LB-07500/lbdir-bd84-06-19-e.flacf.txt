@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-19-e.flacf 
+=================== 
+=================== 
+=================== 
+d8bc7c399242b08c4254119641124e86  Bob Dylan Palaeur Roma Italy 1984 06 19.md5
+2f1f6a37455110ad232718189e931a70  CD1\01  Highway 61 Revisited.flac
+7860528e62be76dff826a2acb45e4199  CD1\02  Jokerman.flac
+3df885e8edc7bd8ee217378ead39d0cb  CD1\03  All ALong The Watchtower.flac
+46401471b863739d36b72621534fbc82  CD1\04  Just Like A Woman.flac
+86f43f791b9f59b9b076112f0f27e46a  CD1\05  Maggie's Farm.flac
+dc6cbd50fc9440737d250702a6c9fede  CD1\06  I And I.flac
+394c859f5f62e56e54f7e1eb89ec8605  CD1\07  License To Kill.flac
+87e7bf34261564744cf5dedf37f692cb  CD1\08  A hard rain's A Gonna Fall.flac
+9f1b795e33553cb923d2bdcd82eb0d03  CD1\09  Tangled Up In Blue.flac
+70c7e76ae2b63c13812477b89d41948d  CD1\10  It's Alright Ma I'm Only Bleeding.flac
+5e4d76972730deba873d1bc523b8b4c4  CD1\11  Simple Twist Of Fate.flac
+5b3456ab37c30c134a421b81d3e22834  CD1\Fingerprint.txt
+206b8389ae03b049ba01dedb7a4eb843  CD2\01  Masters Of War.flac
+f5fee4d05a31dc2b126a2000e739f442  CD2\02  Ballad Of A Thin Man.flac
+855907ad27ba31a7929ca798bc4d5a8f  CD2\03  When You Gonna Wake Up.flac
+d524bb0e77e545b9e674bb7d939b24c7  CD2\04  Every Grain Of Sand.flac
+6d5cc0cac83a0de6d396db4eb74c3843  CD2\05  Like A Rolling Stone.flac
+809d8bd0b105fa084e3ffd114f797143  CD2\06  Mr Tambourine Man.flac
+9f55de9b4579832fc22c65e9a86e9c36  CD2\07  It Ain't Me Babe.flac
+de1cc23a4d976c4a844acb6c3798003c  CD2\08  The Times They Are A Changin'.flac
+0052f815d09cca87c22a77b77c79c33d  CD2\09  I Shall Be Released.flac
+b8d24742dd35ab41ab0b5b69e9a2bc1f  CD2\10  Tombstone Blues.flac
+ec194efeb47093e399f8df82817c7efc  CD2\11  Blowin' In The Wind.flac
+46292fd080de06f968c0e233bb76909d  CD2\Fingerprint.txt
+a03f088234a8146bb60944fc109a217b  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-19-e.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01  Highway 61 Revisited.flac:1da94e27821f04991e1d2c3cf3bea053
+02  Jokerman.flac:81166d672e4a4ef06f292b455c811717
+03  All ALong The Watchtower.flac:8c43ff2bc0013d18598fb5832fc6ba9a
+04  Just Like A Woman.flac:30cd7e3906a1fce9d83024dc4cce37bf
+05  Maggie's Farm.flac:bac17ab58a6ffaa4750323da33a8b95c
+06  I And I.flac:692310a0b7360d43f896c0816699032a
+07  License To Kill.flac:1f8152799b32978f25083508c2ad5882
+08  A hard rain's A Gonna Fall.flac:1a6166baa2f8ea1dfaa457f7803a34f8
+09  Tangled Up In Blue.flac:66a359c58f4260b27b371861878bc364
+10  It's Alright Ma I'm Only Bleeding.flac:14e320e267aa7e00897ff742106a8a89
+11  Simple Twist Of Fate.flac:35f6495815228d588c29547c463bd323
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-19-e.flacf\CD2 
+=================== 
+=================== 
+=================== 
+01  Masters Of War.flac:49458627be5600cae1b3ff2cd0caf19c
+02  Ballad Of A Thin Man.flac:bbf485d18154ffef69754878c445938f
+03  When You Gonna Wake Up.flac:d2b907be916d5603546a38cb62cdfe06
+04  Every Grain Of Sand.flac:90e538dd021c87f13f602c548f62eb41
+05  Like A Rolling Stone.flac:275fdabfadfdc9ffa95e195727aabfc0
+06  Mr Tambourine Man.flac:efdd7287bf01b4cda48c63242a045c4c
+07  It Ain't Me Babe.flac:08dce8af2b4d09744f6b7529ccfa4798
+08  The Times They Are A Changin'.flac:6e668c751e65cbde253456ca956df9d7
+09  I Shall Be Released.flac:7ad0d90af9ce1d57f6af7c8c3ce61a05
+10  Tombstone Blues.flac:dffd0a3b8acee7c340031fe593934bbf
+11  Blowin' In The Wind.flac:b7b9bfcc3d0e914811c6eedec16ab89d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-19-e.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:41.57       49702508 B   ---   --   ---xx   flac  0.6923  01  Highway 61 Revisited.flac
+     6:37.63       70179020 B   ---   --   ---xx   flac  0.6911  02  Jokerman.flac
+     4:01.20       42559484 B   ---   --   ---xx   flac  0.6889  03  All ALong The Watchtower.flac
+     6:06.55       64691804 B   ---   --   ---xx   flac  0.7032  04  Just Like A Woman.flac
+     4:00.47       42446588 B   ---   --   ---xx   flac  0.7132  05  Maggie's Farm.flac
+     5:32.13       58595420 B   ---   --   ---xx   flac  0.6867  06  I And I.flac
+     3:32.40       37490924 B   ---   --   ---xx   flac  0.6839  07  License To Kill.flac
+     5:37.27       59510348 B   ---   --   ---xx   flac  0.6341  08  A hard rain's A Gonna Fall.flac
+     6:53.50       72970844 B   ---   --   ---xx   flac  0.6447  09  Tangled Up In Blue.flac
+     5:44.13       60712220 B   ---   --   ---xx   flac  0.6595  10  It's Alright Ma I'm Only Bleeding.flac
+     5:46.40       61128524 B   ---   --   ---xx   flac  0.6569  11  Simple Twist Of Fate.flac
+    58:34.50      619987684 B                            0.6756  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-19-e.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.60       53237564 B   ---   --   ---xx   flac  0.6882  01  Masters Of War.flac
+     4:15.55       45111404 B   ---   --   ---xx   flac  0.6718  02  Ballad Of A Thin Man.flac
+     3:03.13       32311820 B   ---   --   ---xx   flac  0.6661  03  When You Gonna Wake Up.flac
+     5:42.55       60458204 B   ---   --   ---xx   flac  0.6433  04  Every Grain Of Sand.flac
+     6:28.62       68589068 B   ---   --   ---xx   flac  0.6755  05  Like A Rolling Stone.flac
+     6:00.50       63621644 B   ---   --   ---xx   flac  0.6414  06  Mr Tambourine Man.flac
+     6:09.43       65192780 B   ---   --   ---xx   flac  0.6456  07  It Ain't Me Babe.flac
+     5:51.67       62074028 B   ---   --   ---xx   flac  0.6442  08  The Times They Are A Changin'.flac
+     4:15.45       45087884 B   ---   --   ---xx   flac  0.6709  09  I Shall Be Released.flac
+     4:21.28       46106300 B   ---   --   ---xx   flac  0.7092  10  Tombstone Blues.flac
+     3:44.10       39537164 B   ---   --   ---xx   flac  0.6612  11  Blowin' In The Wind.flac
+    54:55.38      581327860 B                            0.6634  (11 files)
+=================== 
+=================== 
+=================== 

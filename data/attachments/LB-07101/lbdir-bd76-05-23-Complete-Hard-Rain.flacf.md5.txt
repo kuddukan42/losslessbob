@@ -1,0 +1,29 @@
+8c8a16602d3764404faf6adc5e834705  Artwork\bdylan-comhard.jpg
+9a26edbd3dd5d8da0838cafdc8c768e5  Artwork\bdylan-comhard1.jpg
+e520beb5b4cc05308519889d84613019  bd-Complete Hard Rain-d1\bd-Complete Hard Rain-d1.md5
+b20d1f891f9c6d884386f0e135583661  bd-Complete Hard Rain-d1\Track01.flac
+95f67d0326b76a9bb2239a1143118d32  bd-Complete Hard Rain-d1\Track02.flac
+d1d35543eb01a129920613df08331a2f  bd-Complete Hard Rain-d1\Track03.flac
+e1e567e0923e1a678275aba1b1ebdab9  bd-Complete Hard Rain-d1\Track04.flac
+51e08cf0f3bf91dfc0691d27da1acc1b  bd-Complete Hard Rain-d1\Track05.flac
+d65ab291495e65129cb0130b4f595e51  bd-Complete Hard Rain-d1\Track06.flac
+dfd6eb8cb8d34b94c68e01fedad9458c  bd-Complete Hard Rain-d1\Track07.flac
+f7a817f34add537d3c017a78778bef48  bd-Complete Hard Rain-d1\Track08.flac
+e6aee1a8d0010a2b1dca93f55f314063  bd-Complete Hard Rain-d1\Track09.flac
+06ba36447a676f82fa538d910aed8455  bd-Complete Hard Rain-d1\Track10.flac
+5f90fba49635a7f8a9a62915c2b9d99f  bd-Complete Hard Rain-d1\Track11.flac
+02dc51e5b6f0e248482c19a20d3b64f0  bd-Complete Hard Rain-d1\Track12.flac
+e25d29dd5f9c4f54ec86b14452008aaf  bd-Complete Hard Rain-d1\Track13.flac
+6834637418374355d8e86d2b9154665a  bd-Complete Hard Rain-d1\Track14.flac
+3b743ae4dd1e021bf12d5bd89ab0d844  bd-Complete Hard Rain-d2\bd-Complete Hard Rain-d2.md5
+d56b692679c93003638bc35a1140d34e  bd-Complete Hard Rain-d2\Track01.flac
+78508deb85a02e91a8be78dbb46eba32  bd-Complete Hard Rain-d2\Track02.flac
+edd89f80b146f1114ad348ac6d02ec5c  bd-Complete Hard Rain-d2\Track03.flac
+7ea88bacd2a2a7c4da1ba5de4bb8ecfd  bd-Complete Hard Rain-d2\Track04.flac
+00b46f8412b2c9658003f36f6f7dfd99  bd-Complete Hard Rain-d2\Track05.flac
+369b69985e83063c131c8622314f2950  bd-Complete Hard Rain-d2\Track06.flac
+9416e12afe7b3cc8e7acef3f3017ade7  bd-Complete Hard Rain-d2\Track07.flac
+d8b72469fea52e732ddc28b5ebc2c4c8  bd-Complete Hard Rain-d2\Track08.flac
+f68665652209402285c92d030638b0bc  bd-Complete Hard Rain-d2\Track09.flac
+983b30562e68ab03702af7e229e4c82a  bd-Complete Hard Rain-d2\Track10.flac
+c7e1c5cb6c25799205c35d13d3292679  bd-Complete Hard Rain.txt

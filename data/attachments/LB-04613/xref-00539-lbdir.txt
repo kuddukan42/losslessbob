@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-02-22-c.flacf 
+=================== 
+=================== 
+=================== 
+ae7751c05a7ae41f9db94d889de74fa3  1997-02-22 Kenmin Kaikan (Akita Prefecture Cultural Hall), Akita, Japan.md5
+c2c22858bd9f15f0ebd8461b65ab5f80  disc 1\disc 1.shntool_len.txt
+53a0b675c11077aae390f473de45d4ae  disc 1\ffp_CD1.ffp
+53a0b675c11077aae390f473de45d4ae  disc 1\ffp_CD1.txt
+0d5930575f115213f2cb0fd4da193011  disc 1\New Artist (1823) - Track01.flac
+3c17ad701f3c6fdd132ed35f11684cce  disc 1\New Artist (1823) - Track02.flac
+39c0fa994622e77a68941854750504b4  disc 1\New Artist (1823) - Track03.flac
+011bc327aa415dad7f042b0e808bf27c  disc 1\New Artist (1823) - Track04.flac
+11fdc93665317738286e08366805fb46  disc 1\New Artist (1823) - Track05.flac
+f79579ac908e61194b0c85f41938dd85  disc 1\New Artist (1823) - Track06.flac
+7a030dce8e4b0efd9d0b728ebdadd0d2  disc 1\New Artist (1823) - Track07.flac
+909ad7f3b001c0aca476c611d86f573a  disc 1\New Artist (1823) - Track08.flac
+9b1f208da8fbd44444e08b3ddcb4e025  disc 2\disc 2.shntool_len.txt
+7f9393dca1be763434f9b76e6b97aa4e  disc 2\ffp_CD2.ffp
+7f9393dca1be763434f9b76e6b97aa4e  disc 2\ffp_CD2.txt
+2d673bb8422b4783f8287dfea85dbc98  disc 2\New Artist (1824) - Track01.flac
+8087ec12c632fb0a58687c084fcac851  disc 2\New Artist (1824) - Track02.flac
+36f613f731f34ce6514a4fc2ae89c000  disc 2\New Artist (1824) - Track03.flac
+275852a1587f9f83cea4150d5f7c87e0  disc 2\New Artist (1824) - Track04.flac
+8bb65c2624839fde58309164e5416de5  disc 2\New Artist (1824) - Track05.flac
+1fef1c2e353066ccfee10d162ebfc529  disc 2\New Artist (1824) - Track06.flac
+baf776144e21b9f6f433b51c2663d530  disc 2\New Artist (1824) - Track07.flac
+fb4f7e796bf52a059ec9fae48dc9777b  fa.JPG
+06c1c5e9316a30d3b1c5dbc16ea879f7  Info\1997-02-22 Kenmin Kaikan (Akita Prefecture Cultural Hall), Akita, Japan.txt
+32a358dc62d9283038d0aea853cf051d  sa.JPG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-22-c.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+new artist (1823) - track01.flac:b136f5aeb5f22531fd5dcf1f0ed6d4c4
+new artist (1823) - track02.flac:e94911d8419df4b0a53b5d5fc41d5703
+new artist (1823) - track03.flac:0fee52ec48dc92aa990960f01ef79fe9
+new artist (1823) - track04.flac:ae820951276639aeb48fe1674045d0c1
+new artist (1823) - track05.flac:a1eb43a55206c00ff1c922b106e01131
+new artist (1823) - track06.flac:3b68407d0c767481fcef8dd321fc1636
+new artist (1823) - track07.flac:55657d1d78d80e13935b526e50b04b75
+new artist (1823) - track08.flac:8969f227de790bfe12a821e596b92a1f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-02-22-c.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+new artist (1824) - track01.flac:c7e49ef2aa8014811cfe21fafc8b7d5a
+new artist (1824) - track02.flac:0f9aa03055bc2833c675eda94e988b26
+new artist (1824) - track03.flac:a33492712c853bb8dd2d34ae778b94a2
+new artist (1824) - track04.flac:4ace38f9853e325717566c287ab369ed
+new artist (1824) - track05.flac:1c7b47df8d5ad74a575595b72224a9ba
+new artist (1824) - track06.flac:f1a370da6540aa41d65df025d915a02e
+new artist (1824) - track07.flac:116da1f014502d1c872a5613061ec773
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-22-c.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.10       63527564 B   ---   --   ---xx   flac  0.5291  New Artist (1823) - Track01.flac
+     5:57.00       62974844 B   ---   --   ---xx   flac  0.4844  New Artist (1823) - Track02.flac
+     5:52.63       62241020 B   ---   --   ---xx   flac  0.5439  New Artist (1823) - Track03.flac
+     7:07.38       75412220 B   ---   --   ---xx   flac  0.4848  New Artist (1823) - Track04.flac
+     6:29.58       68756060 B   ---   --   ---xx   flac  0.5288  New Artist (1823) - Track05.flac
+     8:21.28       88442300 B   ---   --   ---xx   flac  0.5716  New Artist (1823) - Track06.flac
+     7:41.52       81442748 B   ---   --   ---xx   flac  0.4981  New Artist (1823) - Track07.flac
+     7:41.16       81358076 B   ---   --   ---xx   flac  0.4726  New Artist (1823) - Track08.flac
+    55:11.40      584154832 B                            0.5143  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-02-22-c.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.41       55486076 B   ---   --   ---xx   flac  0.4380  New Artist (1824) - Track01.flac
+     6:02.41       63953276 B   ---   --   ---xx   flac  0.4686  New Artist (1824) - Track02.flac
+     8:35.01       90848396 B   ---   --   ---xx   flac  0.5029  New Artist (1824) - Track03.flac
+     8:03.26       85262396 B   ---   --   ---xx   flac  0.5484  New Artist (1824) - Track04.flac
+    11:06.39      117574172 B   ---   --   ---xx   flac  0.5713  New Artist (1824) - Track05.flac
+     8:43.42       92356028 B   ---   --   ---xx   flac  0.4786  New Artist (1824) - Track06.flac
+     9:10.27       97083548 B   ---   --   ---xx   flac  0.5755  New Artist (1824) - Track07.flac
+    56:55.67      602563892 B                            0.5210  (7 files)
+=================== 
+=================== 
+=================== 

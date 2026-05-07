@@ -1,0 +1,9 @@
+5a4709f7e998c4c9d41f21f2d1bc0d97  [shntool]  01 TellMe D-M D2t11.shn
+df4c708d3bc6cce4de8d2591f794e204  [shntool]  02 TellMe O.shn
+3eebf8ed4fc62131cde8afd985ede1d1  [shntool]  03 ThisWas (what) D-M D1t10.shn
+9b9093d5b1936ba9a84b6091adc0ee2a  [shntool]  04 ThisWas D-M D2t15.shn
+e96f0915979a317b267928a3868c66b5  [shntool]  05 Union (fs) D-M D3t3.shn
+e855994096025007c60347f836f2f9cf  [shntool]  06 Union (hum) D-M D2t6.shn
+7f06bb10a678e7dda0d2e6dabdffede5  [shntool]  07 Union O t6.shn
+1eeb796621afd1739efed627cae95a02  [shntool]  08 Union RW (mono) D4t13.shn
+847f3d67cf09020e48b61ea69e77b883  [shntool]  09 Union W t13.shn

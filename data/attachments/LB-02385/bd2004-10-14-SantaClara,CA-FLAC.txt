@@ -1,0 +1,103 @@
+Bob Dylan
+	
+Santa Clara, California
+Leavey Center
+October 14, 2004
+
+	
+Audience recording
+DAT > audio CDs > EAC (no errors) > WAV > FLAC frontend v.1.7.1 > FLAC
+
+
+Disc One (71:47)
+
+1	Intro
+2	Blues Instrumental   (Bob on guitar)
+3	Drifter's Escape
+4	I'll Be Your Baby Tonight
+5	Tweedle Dee & Tweedle Dum
+6	Just Like A Woman
+7	Things Have Changed
+8	Girl Of The North Country 
+9	Cold Irons Bound
+10	Every Grain Of Sand
+11	Highway 61 Revisited
+12	Sugar Baby 
+13	Most Likely You Go Your Way
+
+Disc Two (36:24) 
+
+1	Honest With Me
+2	It Ain't Me, Babe 
+3	Summer Days
+4	Like A Rolling Stone
+5	Band intro
+6	All Along The Watchtower
+
+
+	
+
+FLAC fingerprint
+bd2004-10-14-flac_d1t01.flac:60c62877a6a09edeef0ba4a2ae37200f
+bd2004-10-14-flac_d1t02.flac:8dd386104fa81b2b672674b9448c335a
+bd2004-10-14-flac_d1t03.flac:5499042e086b1f9cd72dbd613ed24140
+bd2004-10-14-flac_d1t04.flac:5d31c92453e229b7dfc5ff2e7522c67a
+bd2004-10-14-flac_d1t05.flac:52fdf513d7e7c7ca15e3f6f64f76af7a
+bd2004-10-14-flac_d1t06.flac:bc6956fbfb353a8dfc4974d18903215b
+bd2004-10-14-flac_d1t07.flac:f46999b25dfaf7ed8205f2e311df2a9c
+bd2004-10-14-flac_d1t08.flac:3c5a72439f627227c7a0178711bdcafc
+bd2004-10-14-flac_d1t09.flac:2beac8ccd664f98029825a25d8068d15
+bd2004-10-14-flac_d1t10.flac:1cf57bb98d9cf62feef17f66396c3e49
+bd2004-10-14-flac_d1t11.flac:f425564ce585f91ffaaaba7eaf96480f
+bd2004-10-14-flac_d1t12.flac:487189f52c7e12a4e4ea2814f586cfcd
+bd2004-10-14-flac_d1t13.flac:242478b48e37293cca5531c25af8af15
+bd2004-10-14-flac_d2t01.flac:5460b4f7cf0f5d8e4720ccd03013326a
+bd2004-10-14-flac_d2t02.flac:bc7e1b62d555d7b00b3d7946bb2993e3
+bd2004-10-14-flac_d2t03.flac:78f3e9397c1d2b1d23d37a0ccf47aee3
+bd2004-10-14-flac_d2t04.flac:18144e44b3be95a474fabb50bca72350
+bd2004-10-14-flac_d2t05.flac:319247a09f384eb3c82076059351bbb5
+bd2004-10-14-flac_d2t06.flac:e036cb1a7f6d5fd24b68b1d537e59b43
+
+
+flac md5
+8bb3cb27ce6f2e2c34b50d1b29e0099f *bd2004-10-14-flac_d1t01.flac
+13cae1a9d5bce6292f9751c389bcdbf8 *bd2004-10-14-flac_d1t02.flac
+6cf7be2a230ee25a7d690f375b395123 *bd2004-10-14-flac_d1t03.flac
+0386fd13caf5db13e27599220a9f501e *bd2004-10-14-flac_d1t04.flac
+4661d364a96c90a786304a83dbe07226 *bd2004-10-14-flac_d1t05.flac
+31bcf2b74d06ea06688b4283fb05e561 *bd2004-10-14-flac_d1t06.flac
+c378f606813165981f2d4ce4e6a93029 *bd2004-10-14-flac_d1t07.flac
+ce2396f3565a98cf21c1aee36613ea24 *bd2004-10-14-flac_d1t08.flac
+efd5734f42b2e123d50b3586d23e7502 *bd2004-10-14-flac_d1t09.flac
+48ea79ff1c5efb16b8c1363cf3f20256 *bd2004-10-14-flac_d1t10.flac
+2646b171b6a4f87cc93a456fcd2e9dea *bd2004-10-14-flac_d1t11.flac
+c1563788d3f749a5a96c36c42fed39ff *bd2004-10-14-flac_d1t12.flac
+43f6de428775ad95d74f04ba0e61b7a8 *bd2004-10-14-flac_d1t13.flac
+32183763e8226036e99af02b4a4b7fd7 *bd2004-10-14-flac_d2t01.flac
+e4ca2b0b64166b84467b4d85b22b1857 *bd2004-10-14-flac_d2t02.flac
+3b96a784055b472c697a21c8e16684ac *bd2004-10-14-flac_d2t03.flac
+5df7ce39f7f664258be413b46b2af963 *bd2004-10-14-flac_d2t04.flac
+a892eeaf22fbfb46fd01f104cf989da5 *bd2004-10-14-flac_d2t05.flac
+a541c07590bbadb0004a7992a2ad989f *bd2004-10-14-flac_d2t06.flac
+
+
+wav md5
+e6933af23cdcac6de119b29ed9869fa5 *bd2004-10-14-flac_d1t01.wav
+c1bbd7a64bfcb5065fbeff3bcbffd993 *bd2004-10-14-flac_d1t02.wav
+523045a410d8af96fb62d300e2f10726 *bd2004-10-14-flac_d1t03.wav
+87c9985655edc47e5bcfae3e499ac885 *bd2004-10-14-flac_d1t04.wav
+f1e34f1ae25df31723690f56bc442860 *bd2004-10-14-flac_d1t05.wav
+e9e3f4a2d51992bd79c89a4869ee2238 *bd2004-10-14-flac_d1t06.wav
+2c7e9e1fbfa37760ad566c956173d2bf *bd2004-10-14-flac_d1t07.wav
+1e89686427293a15e740cc7d34701e1c *bd2004-10-14-flac_d1t08.wav
+c2ed798b2d940b74176f1d1d39a33586 *bd2004-10-14-flac_d1t09.wav
+53c1e16005108e200c7f3fe362e2e736 *bd2004-10-14-flac_d1t10.wav
+94bc0c67775008ee99414c393f8c7386 *bd2004-10-14-flac_d1t11.wav
+95205fe92d00b80d20ddd217d387cd68 *bd2004-10-14-flac_d1t12.wav
+384453b4f5a777086cf553732902a282 *bd2004-10-14-flac_d1t13.wav
+da9f0e445ddf3a9b899fc626278d7173 *bd2004-10-14-flac_d2t01.wav
+c7af7cce7df38eae679c87c3875149a4 *bd2004-10-14-flac_d2t02.wav
+31fab934b942bf9732e0c4f929cb4bd9 *bd2004-10-14-flac_d2t03.wav
+7e9d2d61516105a6af51747ebc3956af *bd2004-10-14-flac_d2t04.wav
+f5e26799c8c8c25430c8f8439235b1c5 *bd2004-10-14-flac_d2t05.wav
+1c0e6d760f0e1c3121de40c7c15286da *bd2004-10-14-flac_d2t06.wav

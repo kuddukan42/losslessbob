@@ -1,0 +1,67 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-16a.flacf 
+=================== 
+=================== 
+=================== 
+91409ad02fddb247420533b560ab2655  bd-95-03-16-Bielefeld-master-d1 (Track 01).flac
+a323aa0179753eae066841c46cfa52ac  bd-95-03-16-Bielefeld-master-d1 (Track 02).flac
+86f90358df819bf8f06caa7a51918348  bd-95-03-16-Bielefeld-master-d1 (Track 03).flac
+71adf0944e5b738b6d3c2d843bad4bc9  bd-95-03-16-Bielefeld-master-d1 (Track 04).flac
+d864057876424b7804aea7ffad53e7a1  bd-95-03-16-Bielefeld-master-d1 (Track 05).flac
+f08837c67badcf338328f92e12dda59a  bd-95-03-16-Bielefeld-master-d1 (Track 06).flac
+4b07820cc2c09ad99ad6853e672f0bc1  bd-95-03-16-Bielefeld-master-d1 (Track 07).flac
+6ccb3d7433876520cf3122db96037009  bd-95-03-16-Bielefeld-master-d1 (Track 08).flac
+a8f5bf6b6c3c39d3a3c3fed73de3d728  bd-95-03-16-Bielefeld-master-d2 (Track 01).flac
+6329adfcf6261a61f19e63af0bd15c1d  bd-95-03-16-Bielefeld-master-d2 (Track 02).flac
+1b839040f803aa149bfad32a6b39c328  bd-95-03-16-Bielefeld-master-d2 (Track 03).flac
+127b586ce36e3c90470a45f563768335  bd-95-03-16-Bielefeld-master-d2 (Track 04).flac
+7ad7dd82cc46b66ba9afbb6d6e599573  bd-95-03-16-Bielefeld-master-d2 (Track 05).flac
+28aa2d5d0b65a4aab167c0c5072de029  bd-95-03-16-bielefeld-master.txt
+71b46afef28b213d216978d33e6e9fa1  bd95-03-16a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-16a.flacf 
+=================== 
+=================== 
+=================== 
+bd-95-03-16-Bielefeld-master-d1 (Track 01).flac:676e15e84501a24927dc96c2ecd5b4ff
+bd-95-03-16-Bielefeld-master-d1 (Track 02).flac:a58e9985d0752713633472fc6883510f
+bd-95-03-16-Bielefeld-master-d1 (Track 03).flac:9ef0023278557ebf5c11a1d890806a55
+bd-95-03-16-Bielefeld-master-d1 (Track 04).flac:6e4ae9476bce0eafabe75ff865f4cf91
+bd-95-03-16-Bielefeld-master-d1 (Track 05).flac:5374758afd1234f39ac4a2f1151e5c89
+bd-95-03-16-Bielefeld-master-d1 (Track 06).flac:8c67ada312aac6e6d4c01f377f458220
+bd-95-03-16-Bielefeld-master-d1 (Track 07).flac:e34fbe783ab98f9c29d3ae1982c7aedf
+bd-95-03-16-Bielefeld-master-d1 (Track 08).flac:9e62f5f0324bccdd5e4d05616865c4de
+bd-95-03-16-Bielefeld-master-d2 (Track 01).flac:6eec9a3674fe1fca404570bdde9256cc
+bd-95-03-16-Bielefeld-master-d2 (Track 02).flac:39441d31e98fc6075e5f9873664d94e9
+bd-95-03-16-Bielefeld-master-d2 (Track 03).flac:43553605ef69adc1f9fad6b3e8164490
+bd-95-03-16-Bielefeld-master-d2 (Track 04).flac:b0ccfeabfda84a75aacb2356930ebac7
+bd-95-03-16-Bielefeld-master-d2 (Track 05).flac:d7e8f933c202ffc92cfd64b509750439
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-16a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.42       54783428 B   -b-   --   ---xx   flac  0.6501  bd-95-03-16-Bielefeld-master-d1 (Track 01).flac
+     4:44.25       50156444 B   ---   --   ---xx   flac  0.5614  bd-95-03-16-Bielefeld-master-d1 (Track 02).flac
+     5:42.51       60448796 B   ---   --   ---xx   flac  0.6400  bd-95-03-16-Bielefeld-master-d1 (Track 03).flac
+     5:46.30       61105004 B   ---   --   ---xx   flac  0.5534  bd-95-03-16-Bielefeld-master-d1 (Track 04).flac
+     9:46.02      103375148 B   ---   --   ---xx   flac  0.5803  bd-95-03-16-Bielefeld-master-d1 (Track 05).flac
+     7:33.67       80066828 B   ---   --   ---xx   flac  0.5792  bd-95-03-16-Bielefeld-master-d1 (Track 06).flac
+     6:45.57       71576108 B   ---   --   ---xx   flac  0.4291  bd-95-03-16-Bielefeld-master-d1 (Track 07).flac
+     5:43.28       60571100 B   ---   --   ---xx   flac  0.4418  bd-95-03-16-Bielefeld-master-d1 (Track 08).flac
+     7:38.16       80828708 B   -b-   --   ---xx   flac  0.4084  bd-95-03-16-Bielefeld-master-d2 (Track 01).flac
+     8:03.15       85236524 B   ---   --   ---xx   flac  0.6185  bd-95-03-16-Bielefeld-master-d2 (Track 02).flac
+     8:05.27       85617548 B   ---   --   ---xx   flac  0.5013  bd-95-03-16-Bielefeld-master-d2 (Track 03).flac
+     7:53.17       83477228 B   ---   --   ---xx   flac  0.6501  bd-95-03-16-Bielefeld-master-d2 (Track 04).flac
+    10:15.24      108542492 B   ---   --   ---xx   flac  0.5634  bd-95-03-16-Bielefeld-master-d2 (Track 05).flac
+    93:08.26      985785356 B                            0.5520  (13 files)
+=================== 
+=================== 
+=================== 

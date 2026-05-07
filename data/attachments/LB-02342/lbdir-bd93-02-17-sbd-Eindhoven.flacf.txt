@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-17-sbd-Eindhoven.flacf 
+=================== 
+=================== 
+=================== 
+e5e0984ebebe17c91c4e87f713a71c9c  bd93-02-17-sbd.txt
+9f42fe56e623b7f35b6fb0db788c2e7a  bd_EindhovenPreboard1993-2-17.md5
+a2486637bf6559f51f4e6980e79830e1  Bob Dylan - Eindhoven Preboard February 17, 1993.txt
+dc48bd4f198d956b90e3263673e555a4  D101.flac
+8a0cfed91b08510ea00b41b68e157e8a  D102.flac
+52cabddd7e51e7f60cfb96c51d6076ad  D103.flac
+ee3b4d7444351a120f82307e544d6339  D104.flac
+4089971517c9513cfdd41cdad45226a8  D105.flac
+a54b0e2c6e66faf7abf7f7006f53dc6a  D106.flac
+148ea6248b1dc570c0fc1f4decf579e3  D107.flac
+0074ee8926d8418580b9da7336272ee3  D108.flac
+f927b2d4393b6892b4920a37ad12421e  D109.flac
+bf1c75fa58e5a269a3df6eb896a49145  D110.flac
+ac78bf0df76553f287d6d8ff9b66aff7  D111.flac
+240028d0e57859a7d45cad2ce8b0c82c  D112.flac
+49ece2ff35452382094f43fd2e413188  D113.flac
+560cebb14bbdf95ef1ba506382455a91  D201.flac
+e86caf1b2c99d1626a6857ff8fcb0272  D202.flac
+9aeffd1cd2274458d242cd889e96eeaf  D203.flac
+56b877865779a3ec318277f1cab77e1c  D204.flac
+e431ac15c68060bf080e64c62cc9db58  D205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-17-sbd-Eindhoven.flacf 
+=================== 
+=================== 
+=================== 
+D101.flac:ad4602e0b9c3c572006c85af3d138149
+D102.flac:a9fcd0c30a2bca7704a5d8d0b294c442
+D103.flac:e9623c79be5da0eb2156c4fc4f2def1c
+D104.flac:d900336772fb1043361e49a5084140b6
+D105.flac:d3b13eb4c735786754bc293499ba7cb0
+D106.flac:6b3eda793627ad0c158faab7a6e7c36f
+D107.flac:9ae643726394f50e914867f5ba2eb75e
+D108.flac:31766240bba0087d16a43149fd5924fa
+D109.flac:f19ab8f9816cee642a5d8051a8de55a4
+D110.flac:37cafdb7b2acb59c131339feaffaa38f
+D111.flac:9b1690e960b36a097211178e85994fd8
+D112.flac:4a2216c7f75e23c656db23aa0344d962
+D113.flac:d1bf2bc9a7265b84f7c87719fd28dc3f
+D201.flac:7b0332bde6f3e5bd6361fd4f3aad3bd7
+D202.flac:4b8989bcb578e61f7bac94e94c518049
+D203.flac:678634f3397da599f78504c08553e2e5
+D204.flac:934624c318ae718af800f68625ebab2b
+D205.flac:690909b349293ebe6e9890825826ffa5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-02-17-sbd-Eindhoven.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:39.64       49366172 B   ---   --   ---xx   flac  0.5220  D101.flac
+     3:08.40       33257324 B   ---   --   ---xx   flac  0.5387  D102.flac
+     6:01.32       63755708 B   ---   --   ---xx   flac  0.4738  D103.flac
+     8:47.35       93045164 B   ---   --   ---xx   flac  0.4476  D104.flac
+     4:46.68       50610380 B   ---   --   ---xx   flac  0.4546  D105.flac
+     6:41.09       70757612 B   ---   --   ---xx   flac  0.4421  D106.flac
+     4:52.33       51586460 B   ---   --   ---xx   flac  0.4993  D107.flac
+     5:27.50       57800444 B   ---   --   ---xx   flac  0.4397  D108.flac
+     6:11.51       65564396 B   ---   --   ---xx   flac  0.4358  D109.flac
+     6:03.19       64077932 B   ---   --   ---xx   flac  0.4474  D110.flac
+     6:32.16       69186476 B   ---   --   ---xx   flac  0.5001  D111.flac
+     6:01.72       63849788 B   ---   --   ---xx   flac  0.5316  D112.flac
+     8:49.68       93475580 B   ---   --   ---xx   flac  0.4370  D113.flac
+     5:34.19       58962332 B   ---   --   ---xx   flac  0.4143  D201.flac
+     5:58.59       63290012 B   ---   --   ---xx   flac  0.4989  D202.flac
+    10:24.20      110120684 B   ---   --   ---xx   flac  0.4409  D203.flac
+     7:48.55       82684604 B   ---   --   ---xx   flac  0.4639  D204.flac
+    10:56.33      115796060 B   ---   --   ---xx   flac  0.3636  D205.flac
+   118:46.68     1257187128 B                            0.4555  (18 files)
+=================== 
+=================== 
+=================== 

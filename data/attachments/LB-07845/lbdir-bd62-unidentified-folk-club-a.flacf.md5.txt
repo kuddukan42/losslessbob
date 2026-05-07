@@ -1,0 +1,9 @@
+16373980cdd92406f575bbb7a2e505c9  01 Ramblin' down thru the world.flac
+6cecc2ef50f9099d40dc8028f37f3046  02 Freight train blues.flac
+2c3d1d020a37bf71578ac3ee3732e6e9  03 Walls of red wing.flac
+d39d5794728e552e21ebee275e6d3df8  1962-12-xx Unidentified Folkclub, New York City, New York, USA.ffp
+62babe977c919d91446ecc1128c94781  1962-12-xx Unidentified Folkclub, New York City, New York, USA.md5
+ad738d154d17089956e52a5f37d8f50d  1962-12-xx Unidentified Folkclub, New York City, New York, USA.txt
+dd81a7e8943324ffb4d5bfa1e1eaabdf  Info\1962-12-xx Unidentified Folkclub, New York City, New York, USA.shntool_len.txt
+84da0ea4e09f59e04e009fec6237f433  Info\1962-late Unidentified Folkclub, New York City, New York, USA.txt
+a7dda9e3239299147a37322afdaa7bf8  Info\bd1962-12-xx_info (accompanied trade).txt

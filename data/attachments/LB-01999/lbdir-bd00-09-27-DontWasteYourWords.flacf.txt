@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-09-27-DontWasteYourWords.flacf 
+=================== 
+=================== 
+=================== 
+10d601b9346d6c14e8bf814eecc3a017  bd00-09-27-DontWasteYourWords.txt
+51aa1ed817fd4f43d9a8252ffdbeacda  bd_2000-9-27DontWasteYourWords.md5
+618cef32a5caebfb90a81b73103ec877  Bob Dylan - Don't Waste Your Words (Liberated Bootleg).txt
+114719e70bcfff0eef71cf02657fbaa6  d-49b.jpg
+3a01682d9979240cf3c37e74c95812ff  d-49f.jpg
+74e3ec823cb7b05df7ca6817bee96661  d-49ib.jpg
+a75cf87a71c1b81856ceef1c6634cff4  d-49iL.jpg
+7076c208de2052594d4c4e13038f82d1  d-49iR.jpg
+541c31499fa3c4e9ad55593d7ba1fc3a  d-49l.jpg
+3a53d69d030774b567257d0febd2021b  D101.flac
+b698b7614cb990b0cf661620c26a0190  D102.flac
+0e692f2cff67ef284efb996aabea8f8b  D103.flac
+4bfff2ee4e76fda2ecc7d0952da5a7d0  D104.flac
+38019c667a0139a7419957a079b39be5  D105.flac
+87093558bd2520fdcfdbb799dec4087a  D106.flac
+871ea19b7bd83778d347a6b0c990df47  D107.flac
+1958881db8b7ada2e98f1970765eab78  D108.flac
+2ad6eb15259f1a292910f45574c5d8ad  D109.flac
+a8fa02d158c7b9083085ecd65ee18ff6  D110.flac
+85cff430c3ba763ab2338d9e6a1ed597  D111.flac
+62f979ea86724da27dddda270d7b76b9  D112.flac
+84d2185245c2322ad0f03a34ee1a83a4  D113.flac
+15ce1993ab120cd2254f819664cf74ea  D114.flac
+eef1d5bc2f87b3dc9972a1b3af84dd43  D201.flac
+7b69f9d8ba978fc1b12e955d4874b50d  D202.flac
+e2a7d3511dfe3b396cd040ecb6c02f9c  D203.flac
+c81ec689622efb373849905e66a86278  D204.flac
+67ca44bf8b44a9d8951a924b89d426c1  D205.flac
+24668f9dba5b86b64d7eda92acb78ca6  D206.flac
+6ee6fc3439a75d2286277a782f0a46d7  D207.flac
+e737b9f81049ca6c7a99f1b93358d4aa  D208.flac
+32e119c9b091aebd8b5f1a6c46429ffc  D209.flac
+baa0b798b45bd263cb5628fe669d2011  D210.flac
+80ff5e3bf65e4b73d91a671231a1470b  D211.flac
+e30c939709eb5bafebeb9fbdc3c2b64f  D212.flac
+9e4dd039be5b7ead8bbf9a514e9c6d5b  D213.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-09-27-DontWasteYourWords.flacf 
+=================== 
+=================== 
+=================== 
+D101.flac:5d1d2d3cc82c570cf079c84d7bd14120
+D102.flac:76fc6ba99552a0174b68b26520dfc6c1
+D103.flac:82e179527c2613f93bc51c1fe2d56345
+D104.flac:4d83a07f10894a558ae65c6f80410ee0
+D105.flac:32faae6f14d5038b053ce08ce3461a66
+D106.flac:ac6b27bbbd098dbbb50fbdd817be92d2
+D107.flac:87c61fd5f539b9bc127aea4d9235664c
+D108.flac:43794f5c8dc5e28e9d7ba43701a21695
+D109.flac:4372aba32c7b3fd4e4754affb91fd812
+D110.flac:851debe9b392f0cb131c359fbac6bbaf
+D111.flac:5d3d58ca2c06f366d1e042273426c2b8
+D112.flac:da37414c61c60506d40a96a7dbb7819f
+D113.flac:382c3d2f130a3e697849f7c2c8963f49
+D114.flac:dc92fe10f1d04d736f5e4a6df1d72acc
+D201.flac:9df80aac285e41d31676e6b2080fc3c2
+D202.flac:7c23b4faade30d023aec482f4cd13583
+D203.flac:33b37d98235950276b50d9adce4bedd2
+D204.flac:4d3bf4d5a622466ca4c662f646bc128d
+D205.flac:f432fbfafda930fed1d2ce5b608216fe
+D206.flac:f2e2071afa973dd50d9db08c66d70df8
+D207.flac:a0cb04700d95f9721eafb5f97be1e52a
+D208.flac:3fae5fb7b41c95be5f9d95bff7d92aec
+D209.flac:00db74d7beb88af4d8133e5ef97b4895
+D210.flac:b45c69e3255c43e9d528713ddf042a57
+D211.flac:3872b354f295e5558243ebd6c9588c56
+D212.flac:361505d2e324c9cc6fc63e0f22851d78
+D213.flac:508df7b34e7a514d935596b0311f74b5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-09-27-DontWasteYourWords.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:26.00       25754444 B   ---   --   ---xx   flac  0.7221  D101.flac
+     5:21.52       56746748 B   ---   --   ---xx   flac  0.6747  D102.flac
+     7:35.60       80403164 B   ---   --   ---xx   flac  0.6802  D103.flac
+     4:41.35       49650764 B   ---   --   ---xx   flac  0.5916  D104.flac
+     8:24.28       88971500 B   ---   --   ---xx   flac  0.7488  D105.flac
+     3:10.32       33591308 B   ---   --   ---xx   flac  0.6645  D106.flac
+     3:19.50       35221244 B   ---   --   ---xx   flac  0.6870  D107.flac
+     5:20.13       56478620 B   ---   --   ---xx   flac  0.5931  D108.flac
+     6:39.72       70552988 B   ---   --   ---xx   flac  0.7200  D109.flac
+     6:25.60       68055164 B   ---   --   ---xx   flac  0.5584  D110.flac
+     4:38.15       49074524 B   ---   --   ---xx   flac  0.7428  D111.flac
+     8:51.35       93750764 B   ---   --   ---xx   flac  0.7127  D112.flac
+     5:56.60       62939564 B   ---   --   ---xx   flac  0.7297  D113.flac
+     6:38.30       70277804 B   ---   --   ---xx   flac  0.7245  D114.flac
+     4:22.20       46263884 B   ---   --   ---xx   flac  0.6212  D201.flac
+     4:27.40       47192924 B   ---   --   ---xx   flac  0.7216  D202.flac
+     5:34.10       58941164 B   ---   --   ---xx   flac  0.6772  D203.flac
+     5:55.20       62669084 B   ---   --   ---xx   flac  0.7451  D204.flac
+     7:46.32       82277708 B   ---   --   ---xx   flac  0.6509  D205.flac
+     3:34.48       37862540 B   ---   --   ---xx   flac  0.7408  D206.flac
+     6:17.25       66561644 B   ---   --   ---xx   flac  0.6769  D207.flac
+     8:25.17       89122028 B   ---   --   ---xx   flac  0.6549  D208.flac
+     7:17.33       77164460 B   ---   --   ---xx   flac  0.7136  D209.flac
+     3:55.02       41458748 B   ---   --   ---xx   flac  0.6643  D210.flac
+     5:54.28       62511500 B   ---   --   ---xx   flac  0.6744  D211.flac
+     4:22.27       46280348 B   ---   --   ---xx   flac  0.5772  D212.flac
+     5:41.55       60281804 B   ---   --   ---xx   flac  0.7016  D213.flac
+   153:03.74     1620056436 B                            0.6819  (27 files)
+=================== 
+=================== 
+=================== 

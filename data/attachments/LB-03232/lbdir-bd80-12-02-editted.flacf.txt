@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd80-12-02-editted.flacf 
+=================== 
+=================== 
+=================== 
+2a113272ae8efc6b624108a3f7de55b2  .nzb
+70bc81c74505a6e91bd9793808487b1b  1-01 Crowd.flac
+b9d7da1a08e148e29c45d1a59fcfd481  1-02 Gotta Serve Somebody.flac
+7ca4290d516a2635babc2b9d08272e70  1-03 I Believe In You.flac
+39db8b74d7c18dc464d75ae4d347455b  1-04 A Hard Rain's A-Gonna Fall.flac
+0963e412acc73cf351e69779edd14073  1-05 Dylan introduces Regina McCrary.flac
+15943a4ffa74d90d83bd0b6f9b8bb35d  1-06 Man Gave Names To All The Animals.flac
+a373096c7ce6f99ba474852b8a97c9f8  1-07 Simple Twist Of Fate.flac
+0a4788abb164b09135fd6864e158e69e  1-08 We Just Disagree.flac
+082bb4974a8e2e827d5ea099d7f0371c  1-09 All Along The Watchtower.flac
+c2ebbf25bb305559a71606991ddde1a8  1-10 Ain't Gonna Go To Hell.flac
+4d75babd131a546e640e67f2936dc89e  1-11 Girl Of The North Country.flac
+2e5e99344aa1353678a8f2760c46ed6c  1-12 Slow Train.flac
+8e643714a29b6c6a6e601cf106e0300e  1-13 Dylan introduces Carolyn Dennis.flac
+036b9e0929f936140e8089bd704b5c4e  1980-12-02Salem-Disc1-shntool_len.txt
+9543285a221e4bf4f549bbd7ca0fb9c9  1980-12-02Salem-Disc1.cue
+e6cd7dec4cbc90b8aae768068282bc3b  1980-12-02Salem-Disc2-shntool_len.txt
+457d0a14e81525b564f0c7dd1c4de9dd  1980-12-02Salem-Disc2.cue
+73fbec72c5ddcf6a11d0a6f366a34e95  1980-12-02Salem-FFP.txt
+3c29b419fab97207ae43f94cc0f7dcc1  1980-12-02Salem-FLAC.md5
+da8d1ecb8948263c351e0db73e733ab6  1980-12-02Salem-WAV.md5
+a0ba26e48654a180eaff11c391280b52  1980-12-02Salemtracklist.html
+1a86740efb9729aaa3a3bed3e9b7a55b  2-01 Abraham, Martin & John.flac
+efe8439ccc02a3872a37f7b10da28996  2-02 Rise Again.flac
+ef6173af155af416b9794858d7de2788  2-03 Let's Keep It Between Us.flac
+b0ea1fcd6c80c13f6f50627da8f9368d  2-04 Mary Of The Wild Moor.flac
+73dd56ec8da4319d586be2cf0cc21f59  2-05 Solid Rock.flac
+56170a365d7a137b65cf26b03aeb5119  2-06 Just Like A Woman.flac
+f7747b2e287952fd4783c9762d15c508  2-07 Senor (Tales Of Yankee Power).flac
+14d9f7f37333b35ba663f3870c8e5f73  2-08 What Can I Do For You .flac
+981d4c7468f3fdfa35e5352430fa1e26  2-09 When You Gonna Wake Up .flac
+5f94f61eef613229fb658057dc291956  2-10 In The Garden.flac
+2004e99b183ef312af1f756b3a7b5499  2-11 Band Introductions.flac
+3e0dd183ec3e780d5b38d80cb3225011  2-12 Blowin' In The Wind.flac
+f5f77f7deae53786286b908762a1febf  2-13 City Of Gold.flac
+bc2bcb7d66a72010e7b914a853f20202  2-14 Don't Think Twice, It's All Right.flac
+d58405164af4c3dcd069564688b7db5a  2-15 Like A Rolling Stone.flac
+9cfbb2998606f8ac6149792d11f3edb4  bd80-12-02-editted-LB-3232.txt
+e40a6c4290143d7db3fe2acdcb994072  BD80-12-02-orig-invalid.md5
+1336bbc6833923db949c4bc64ac289d4  d1t09-10sec-FreqAnal.gif
+2638c0a50f4e51bfca693f6ef5265d16  d1t09-10sec-SpectralView.gif
+2664d89f5c25e65a93a663fae2fa983b  d1t09-10sec-WaveView.gif
+3c4211f2cd8c34e9a251b431e80b9daf  d2t13-FreqAnal.gif
+41f041bfd09f1b2e744d7d98780c6a48  d2t13-SpectralView.gif
+8ef6d75940709e41ec3c74f84b1c3a78  d2t13-WaveView.gif
+6c1e482e1cf76ebb5f3410806a173a31  INFO-1980-12-02Salem.txt
+15dbe176dfef95847a24172f22d13b14  README-1980-12-02Salem.txt
+f4e4924deffd0482a65d42dcd96ca262  tracklist.css
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd80-12-02-editted.flacf 
+=================== 
+=================== 
+=================== 
+1-01 Crowd.flac:4692eb148f0a060c3973145e6b1c32b6
+1-02 Gotta Serve Somebody.flac:eceb8067dd72e38d46daeb0657cbd923
+1-03 I Believe In You.flac:9172e5c93c2a12b5a3f7034aa6b48150
+1-04 A Hard Rain's A-Gonna Fall.flac:b525858a21ab8061eb032e8757386ca6
+1-05 Dylan introduces Regina McCrary.flac:30d19f95db8e806c7a51e787a7560ebe
+1-06 Man Gave Names To All The Animals.flac:b28d29e4787a8941d81219e40b488d8a
+1-07 Simple Twist Of Fate.flac:51a53b50f7a4cab115908591e029d653
+1-08 We Just Disagree.flac:178433496cb8b5804c4f12dc6db3297b
+1-09 All Along The Watchtower.flac:54095fa1530aa446428602bad6c428a0
+1-10 Ain't Gonna Go To Hell.flac:7c853fc16d713cf8a1bf3ed626399b0d
+1-11 Girl Of The North Country.flac:07d71b7973fadc8a0b54087093238dc3
+1-12 Slow Train.flac:5525d8de0733d0bf3fc455ce7c6a754b
+1-13 Dylan introduces Carolyn Dennis.flac:f9e3bbce5e357d3ac1eaa01a1287de7d
+2-01 Abraham, Martin & John.flac:619dbf5f36a663ec287beacfae0a3765
+2-02 Rise Again.flac:e62a9e78827c7f0bf697ffdd31839741
+2-03 Let's Keep It Between Us.flac:645536d1911631c38c6c8762b96aac57
+2-04 Mary Of The Wild Moor.flac:1d22c3e090de3dc17335cfadeaa55109
+2-05 Solid Rock.flac:e10449451d9c3c1ba19fbfa71a11e268
+2-06 Just Like A Woman.flac:aba027fd8d2e3895005f5345b5d2db04
+2-07 Senor (Tales Of Yankee Power).flac:c5461b508aeeb6bc72336cd638ef7f38
+2-08 What Can I Do For You .flac:2ad2b6fa13f0957bd37988a608d4dac5
+2-09 When You Gonna Wake Up .flac:035be4a89edfaafe6918cbc3e4b7e07f
+2-10 In The Garden.flac:1610dde3ace681bdec791b60e3e4906d
+2-11 Band Introductions.flac:e423f0ae8e23695e1171cfa9774d994b
+2-12 Blowin' In The Wind.flac:59822c31e4b12c7c981017f58d9b4af4
+2-13 City Of Gold.flac:1e1731083649d65fcabe22ef733c650b
+2-14 Don't Think Twice, It's All Right.flac:7e0a60b709856dda67904398e8a3d609
+2-15 Like A Rolling Stone.flac:52d2d62f515077823519453817ed2fd3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd80-12-02-editted.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.31        6952556 B   ---   --   ---xx   flac  0.5668  1-01 Crowd.flac
+     4:56.66       52369676 B   ---   --   ---xx   flac  0.6126  1-02 Gotta Serve Somebody.flac
+     4:28.54       47402252 B   ---   --   ---xx   flac  0.5826  1-03 I Believe In You.flac
+     5:41.37       60239468 B   ---   --   ---xx   flac  0.6046  1-04 A Hard Rain's A-Gonna Fall.flac
+     0:16.14        2855372 B   ---   --   ---xx   flac  0.5792  1-05 Dylan introduces Regina McCrary.flac
+     5:24.72       57322988 B   ---   --   ---xx   flac  0.6018  1-06 Man Gave Names To All The Animals.flac
+     4:26.30       46993004 B   ---   --   ---xx   flac  0.6052  1-07 Simple Twist Of Fate.flac
+     2:27.15       25966124 B   ---   --   ---xx   flac  0.6050  1-08 We Just Disagree.flac
+     2:45.61       29249516 B   ---   --   ---xx   flac  0.6183  1-09 All Along The Watchtower.flac
+     4:15.67       45139628 B   ---   --   ---xx   flac  0.6284  1-10 Ain't Gonna Go To Hell.flac
+     3:49.27       40459148 B   ---   --   ---xx   flac  0.6036  1-11 Girl Of The North Country.flac
+     5:07.73       54326540 B   ---   --   ---xx   flac  0.6228  1-12 Slow Train.flac
+     0:39.53        7004300 B   ---   --   ---xx   flac  0.6049  1-13 Dylan introduces Carolyn Dennis.flac
+     2:57.57       31356908 B   ---   --   ---xx   flac  0.5830  2-01 Abraham, Martin & John.flac
+     3:43.52       39459548 B   ---   --   ---xx   flac  0.5900  2-02 Rise Again.flac
+     3:55.48       41566940 B   ---   --   ---xx   flac  0.5898  2-03 Let's Keep It Between Us.flac
+     4:29.44       47555132 B   ---   --   ---xx   flac  0.6134  2-04 Mary Of The Wild Moor.flac
+     4:05.46       43326236 B   ---   --   ---xx   flac  0.6416  2-05 Solid Rock.flac
+     3:44.59       39652412 B   ---   --   ---xx   flac  0.6151  2-06 Just Like A Woman.flac
+     3:56.55       41759804 B   ---   --   ---xx   flac  0.6076  2-07 Senor (Tales Of Yankee Power).flac
+     4:54.12       51889868 B   ---   --   ---xx   flac  0.6087  2-08 What Can I Do For You .flac
+     4:47.68       50786780 B   ---   --   ---xx   flac  0.6375  2-09 When You Gonna Wake Up .flac
+     4:51.09       51353612 B   ---   --   ---xx   flac  0.6123  2-10 In The Garden.flac
+     2:18.38       24432620 B   ---   --   ---xx   flac  0.6308  2-11 Band Introductions.flac
+     4:34.69       48495932 B   ---   --   ---xx   flac  0.6201  2-12 Blowin' In The Wind.flac
+     3:09.73       33511340 B   ---   --   ---xx   flac  0.6123  2-13 City Of Gold.flac
+     4:44.59       50236412 B   ---   --   ---xx   flac  0.6363  2-14 Don't Think Twice, It's All Right.flac
+     5:35.52       59216348 B   ---   --   ---xx   flac  0.6337  2-15 Like A Rolling Stone.flac
+   106:50.66     1130880464 B                            0.6128  (28 files)
+=================== 
+=================== 
+=================== 

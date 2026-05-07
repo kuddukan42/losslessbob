@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-15-pr.flacf 
+=================== 
+=================== 
+=================== 
+07eb551c5b558ae1e02e0e4b11504779  (01) Dortmund.flac
+c688c1216339473f41a484eba32f31d0  (02) Dortmund.flac
+01048d5d4b1925fdcd4a99949a564afb  (03) Dortmund.flac
+a6f52e9c98ada0704733cce6bf682ef3  (04) Dortmund.flac
+0cbf4a96c9b982ce9ebe84d4a37a275a  (05) Dortmund.flac
+937012c402c3ed51f371f3bbca66c3e4  (06) Dortmund.flac
+c79f13ca56c6b8a565454d81c116b7b5  (07) Dortmund.flac
+0f5d5d0e344396cbc6b9fa73ce6e7796  (08) Dortmund.flac
+f87449390df4bb305c7335086958d478  (09) Dortmund.flac
+94bb40c938b2fd4d7e3057c709c38ef2  (10) Dortmund.flac
+264225a33453c35f977f71398e3049d1  (11) Dortmund.flac
+be336bac2051d69ed31793df3d01f15d  (12) Dortmund.flac
+70c1f7e03ee06c657785416c86b77408  (13) Dortmund.flac
+1b1b6e890e68954e45258cd2352092a2  (14) Dortmund.flac
+8db54e28a3bea5739d8d3008018554b5  1987-09-15 LBcomment.txt
+40f8b606333fddfaa4f235df88484870  BobDylan06Dortmund.txt
+8baf4d4a80ef6987693cf94156e2663f  DylanDortmund1987.md5
+dc01ba88833fc49b51feaafbd7832cf2  DylanDortmund1987Back.jpg
+c76b1a5a0b40ff343ea1a4502e76b83d  DylanDortmund1987Front.jpg
+631896ae73b97366c5684311ff47d45e  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-15-pr.flacf 
+=================== 
+=================== 
+=================== 
+(01) dortmund.flac:e038415a32292fd1d1f061208dc9b2a9
+(02) dortmund.flac:7d58fdfe500f08c080a82db4aac1a6ee
+(03) dortmund.flac:641341b6b365921fefc11d637eb4df35
+(04) dortmund.flac:29e720ed0abb0c699836a3532dd162a8
+(05) dortmund.flac:a9bce662a35e5c32e43c8970cd8b157b
+(06) dortmund.flac:197d95498d9ef391677fead94cba5d3a
+(07) dortmund.flac:f3d4e20ce026588e58ef8bcfbc62d663
+(08) dortmund.flac:c4ed0767821664fc092a5a8f657d5a66
+(09) dortmund.flac:add1d054c6f1fa19a5a24d33bf842117
+(10) dortmund.flac:f6e639399385265e4fc375d825a3aaa3
+(11) dortmund.flac:1632013b380f3c4a820aa4031a658959
+(12) dortmund.flac:ced242c49ce74da1961e1425c5dc12fe
+(13) dortmund.flac:a14655af1217b049793e8b03b21470f1
+(14) dortmund.flac:33d3548136e9f0ee6ae7b9f10171014e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-15-pr.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.14       61067372 B   ---   --   ---xx   flac  0.7354  (01) Dortmund.flac
+     3:00.39       31843772 B   ---   --   ---xx   flac  0.7521  (02) Dortmund.flac
+     4:18.53       45635900 B   ---   --   ---xx   flac  0.7287  (03) Dortmund.flac
+     4:56.03       52221500 B   ---   --   ---xx   flac  0.7228  (04) Dortmund.flac
+     3:14.06       34235756 B   ---   --   ---xx   flac  0.7482  (05) Dortmund.flac
+     4:51.19       51377132 B   ---   --   ---xx   flac  0.7125  (06) Dortmund.flac
+     4:31.28       47870300 B   ---   --   ---xx   flac  0.7442  (07) Dortmund.flac
+     4:14.51       44925596 B   ---   --   ---xx   flac  0.7036  (08) Dortmund.flac
+     4:16.48       45271340 B   ---   --   ---xx   flac  0.7391  (09) Dortmund.flac
+     5:28.69       58021532 B   ---   --   ---xx   flac  0.7441  (10) Dortmund.flac
+     6:04.21       64259036 B   ---   --   ---xx   flac  0.6907  (11) Dortmund.flac
+     5:50.17       61780028 B   ---   --   ---xx   flac  0.7517  (12) Dortmund.flac
+     6:12.36       65705516 B   ---   --   ---xx   flac  0.7474  (13) Dortmund.flac
+     5:55.19       62666732 B   ---   --   ---xx   flac  0.7130  (14) Dortmund.flac
+    68:40.48      726881512 B                            0.7299  (14 files)
+=================== 
+=================== 
+=================== 

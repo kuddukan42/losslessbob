@@ -1,0 +1,11 @@
+
+flac 1.1.3, Copyright (C) 2000,2001,2002,2003,2004,2005,2006  Josh Coalson
+flac comes with ABSOLUTELY NO WARRANTY.  This is free software, and you are
+welcome to redistribute it under certain conditions.  Type `flac' for details.
+
+Track07.fix.wav: wrote 36081397 bytes, ratio=0,521
+Track07.fix.wav: INFO: sector alignment causing 584 samples to be carried over
+Track08.fix.wav: wrote 23184485 bytes, ratio=0,577
+Track08.fix.wav: INFO: sector alignment causing 4 zero samples to be appended
+
+Presione una tecla para continuar . . .

@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== md5 for: bd99-06-22-f.flacf
+===================
+===================
+===================
+3da24f39d97b4278bd4de508c5a3e4fa *DigiFlawFinder-bd99-06-22-f.flacf.wavf.html
+3cf5ecead43b8aaf827029c8cd3fb6f3 *Disc 1\22.6.99 Hollywood.log
+2b506779a39dedb78eaa2adb2b274412 *Disc 1\Bob Dylan - 22.6.99 Hollywood.m3u
+0c154b070babc150275b1850750c6add *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t01.flac
+05661767ecef67e3d29276d26fed43fc *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t02.flac
+0e55be6047441bd4c00decce5920f497 *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t03.flac
+7eb045d0c81bc6f433d2db0624b29d53 *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t04.flac
+317951b5d5f3d27b55ba71c8899d020f *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t05.flac
+5abf8cd192f989d42d3f921c5c57524e *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t06.flac
+f406111c2ab9a914768a7bbb645d47ee *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t07.flac
+19408a488bd76b4e21b7ee26fabb7108 *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t08.flac
+4171e56aef20671dc9a3bc7ba77e90b4 *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t09.flac
+db7151f4b637e7a05d92b581c432d121 *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t10.flac
+7899e05520c0fb4f21dd04774506e7bb *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t11.flac
+4b3b9f7f1cf8df27f4759d0348e14e2e *Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t12.flac
+92914a2bb2147def4f87ba429fba3d1a *Disc 1\fingerprint.ffp.txt
+6d47a21fd0fcd8e9da7544598ea516e9 *Disc 1\md5sum.md5
+547a67891c94e19ac80168a8be216e83 *Disc 2\22.6.99 Hollywood.log
+bec2f57475900eb837f22a94f2c06c7a *Disc 2\Bob Dylan - 22.6.99 Hollywood.m3u
+139bd6500aec630edfe501993788ecbf *Disc 2\Bob Dylan- 22.6.99 Hollywood-d2-t01.flac
+e1f0cb1644531db2495ec6f9032fc2bc *Disc 2\Bob Dylan- 22.6.99 Hollywood-d2-t02.flac
+570d1192fe6ebd6ce55ce875acfcfd6f *Disc 2\Bob Dylan- 22.6.99 Hollywood-d2-t03.flac
+f0a827ca0be039e433b00f843518aa6f *Disc 2\Bob Dylan- 22.6.99 Hollywood-d2-t04.flac
+02d7c3467369ac073d8f23774cece903 *Disc 2\fingerprint.ffp.txt
+256516bf094f2bc2e1df67ed7df91350 *Disc 2\md5sum.md5
+53f3d9c3795d62ed26d059ed2c12568b *infos.txt
+8fdb850cd9f37347786e60edf633e7d7 *lbdir-bd99-06-22-f.flacf.txt
+===================
+===================
+===================
+=== ffp for: bd99-06-22-f.flacf
+===================
+===================
+===================
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t01.flac:28330bdc9c2f6c123353795c2f614545
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t02.flac:38b829f2891dbb7b9ef5740cab61f4b1
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t03.flac:376bbae40a5427992c7e914f9a4dd664
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t04.flac:8884834435747edaa9de91fb3d9f9fd2
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t05.flac:c166cfa5ff7818f5b0d2ea8b2bd0a598
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t06.flac:783d193337fae5521b1d2e60c2c89157
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t07.flac:4c1c8c5daf22b2f4d1b8621060bb027e
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t08.flac:16be877060ab72ebc479d8d6fe0bf12d
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t09.flac:8dd07f1d87ce154db422ca102121ccfa
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t10.flac:755590ee98bb134c21732da1792d2edd
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t11.flac:1d5c0eca6a199e9869bb7282ca0e1402
+Disc 1\Bob Dylan- 22.6.99 Hollywood-d1-t12.flac:8763593b1d8d53631a0946c0b62e9485
+Disc 2\Bob Dylan- 22.6.99 Hollywood-d2-t01.flac:8f8cddd487c2ec990f3b9e84d53aa981
+Disc 2\Bob Dylan- 22.6.99 Hollywood-d2-t02.flac:ddc65acf680968eefc73ed8ad8f5ec67
+Disc 2\Bob Dylan- 22.6.99 Hollywood-d2-t03.flac:737293cdb7a7d6c450b3360c8f2c6556
+Disc 2\Bob Dylan- 22.6.99 Hollywood-d2-t04.flac:d5bcd0442de4e2a81bb1e6509d31a8c6
+===================
+===================
+===================
+=== shntool len for: bd99-06-22-f.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:34.19       80130332 B   ---   --   ---xx   flac  0.5525  Bob Dylan- 22.6.99 Hollywood-d1-t01.flac
+     3:20.23       35334140 B   ---   --   ---xx   flac  0.6182  Bob Dylan- 22.6.99 Hollywood-d1-t02.flac
+     5:45.03       60865100 B   ---   --   ---xx   flac  0.6187  Bob Dylan- 22.6.99 Hollywood-d1-t03.flac
+     2:50.50       30105644 B   ---   --   ---xx   flac  0.6337  Bob Dylan- 22.6.99 Hollywood-d1-t04.flac
+     6:47.37       71881868 B   ---   --   ---xx   flac  0.5966  Bob Dylan- 22.6.99 Hollywood-d1-t05.flac
+     5:20.54       56575052 B   ---   --   ---xx   flac  0.5635  Bob Dylan- 22.6.99 Hollywood-d1-t06.flac
+     7:17.72       77256188 B   ---   --   ---xx   flac  0.5577  Bob Dylan- 22.6.99 Hollywood-d1-t07.flac
+     9:07.17       96530828 B   ---   --   ---xx   flac  0.6219  Bob Dylan- 22.6.99 Hollywood-d1-t08.flac
+     4:30.27       47691548 B   ---   --   ---xx   flac  0.5922  Bob Dylan- 22.6.99 Hollywood-d1-t09.flac
+     7:13.26       76442396 B   ---   --   ---xx   flac  0.4815  Bob Dylan- 22.6.99 Hollywood-d1-t10.flac
+     7:54.31       83686556 B   ---   --   ---xx   flac  0.5777  Bob Dylan- 22.6.99 Hollywood-d1-t11.flac
+     6:51.73       72672140 B   ---   --   ---xx   flac  0.4141  Bob Dylan- 22.6.99 Hollywood-d1-t12.flac
+    74:33.57      789171792 B                            0.5629  (12 files)
+===================
+===================
+===================
+=== shntool len for: bd99-06-22-f.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.36       76642316 B   ---   --   ---xx   flac  0.5750  Bob Dylan- 22.6.99 Hollywood-d2-t01.flac
+     5:44.55       60811004 B   ---   --   ---xx   flac  0.4780  Bob Dylan- 22.6.99 Hollywood-d2-t02.flac
+     8:05.35       85636364 B   ---   --   ---xx   flac  0.5557  Bob Dylan- 22.6.99 Hollywood-d2-t03.flac
+     4:02.49       42804092 B   ---   --   ---xx   flac  0.5886  Bob Dylan- 22.6.99 Hollywood-d2-t04.flac
+    25:07.25      265893776 B                            0.5488  (4 files)
+===================
+===================
+===================

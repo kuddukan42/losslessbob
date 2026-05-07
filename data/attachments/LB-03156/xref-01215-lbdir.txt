@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd88-08-06-c.flacf
+===================
+===================
+===================
+9c987423b3c3907e4994217580223de0 *01 Piste audio.flac
+64edbf052360ac2847b3313e684b1111 *02 Piste audio.flac
+07c1e62c72ae6336dbe1d9744b061c85 *03 Piste audio.flac
+bdb979b566d4a5a61adc7bb0684d1873 *04 Piste audio.flac
+47f418a134d0828e0224f88778926172 *05 Piste audio.flac
+2e5e2a63b39d197373550209f3a873e4 *06 Piste audio.flac
+9a2642b5a08d3a3bd9ab862f2acd5abb *07 Piste audio.flac
+a337febadf9de2db5d1f6c88f6f5b284 *08 Piste audio.flac
+ee0cd1a6e3012f54e2112580a5be536f *09 Piste audio.flac
+7b3d6b7742e8c65c3fc4eafe56ab1fa4 *10 Piste audio.flac
+59a958aa4d64e1882fdc88441b84d6ae *11 Piste audio.flac
+66a2922119b03876da0fe8509ca2d0a9 *12 Piste audio.flac
+ad0907030e0385bce89e024497e401cb *13 Piste audio.flac
+368b408317c6e1b7b25f772148bcf8e2 *14 Piste audio.flac
+9afdb2529cd4c691464183290288df3b *15 Piste audio.flac
+353f01dd7432559dc37e7760b768d44d *16 Piste audio.flac
+e7e251fd8dd99e3648f36468f0a4474f *Carlsbad_060888.jpg
+77218294a0edd21cafca5b8a8393ef08 *fingerprint.ffp.txt
+5e3824d984eb193f93073626772159aa *md5sum.md5
+2dcb6cbea487157cca9580c58428514f *shntool len.txt
+35e0f7c1665b7d375deddbe0917826c2 *text.txt
+===================
+===================
+===================
+=== ffp for: bd88-08-06-c.flacf
+===================
+===================
+===================
+01 Piste audio.flac:a0c4804cf03523596bfd847cb5c954a0
+02 Piste audio.flac:1bcf9c6c18804ad1252be0b4aa318b30
+03 Piste audio.flac:4959e3aa8f7e9e98b5fb82cc7a239814
+04 Piste audio.flac:08f187fa7d4c7c87c5fae1d93ac913ab
+05 Piste audio.flac:f425f2a1054b62237cf3454a496ef469
+06 Piste audio.flac:3cd93e56145db2bd9172d7625749aa70
+07 Piste audio.flac:51430696bba5ccf74627a7e74fcaa7ee
+08 Piste audio.flac:49dac89943bc26cab090584087ad4cee
+09 Piste audio.flac:1d271b4120a30e3a8618dc5118944546
+10 Piste audio.flac:eaca1febb1f3942ecfcdec52fc83a0af
+11 Piste audio.flac:e54ff9509d4f52d5843658e74d88f942
+12 Piste audio.flac:f120aca322d566cd91afb3918bdd736e
+13 Piste audio.flac:103693a7800ff7163771674992a53f49
+14 Piste audio.flac:d4744fdcb139fa772353e4fe9249c3bf
+15 Piste audio.flac:6dc2fcb8290b874fff7424d9b628a105
+16 Piste audio.flac:21964884f25f06377b50aa0d961b92df
+===================
+===================
+===================
+=== shntool len for: bd88-08-06-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.07       36884108 B   ---   --   ---xx   flac  0.5455  01 Piste audio.flac
+     4:23.12       46421468 B   ---   --   ---xx   flac  0.5410  02 Piste audio.flac
+     4:27.70       47263484 B   ---   --   ---xx   flac  0.5369  03 Piste audio.flac
+     5:15.46       55674236 B   ---   --   ---xx   flac  0.5459  04 Piste audio.flac
+     4:54.36       51946316 B   ---   --   ---xx   flac  0.5506  05 Piste audio.flac
+     4:24.47       46680188 B   ---   --   ---xx   flac  0.5619  06 Piste audio.flac
+     5:17.61       56062316 B   ---   --   ---xx   flac  0.5486  07 Piste audio.flac
+     4:17.63       45483020 B   ---   --   ---xx   flac  0.5468  08 Piste audio.flac
+     6:15.16       66187676 B   ---   --   ---xx   flac  0.5446  09 Piste audio.flac
+     5:55.67       62779628 B   ---   --   ---xx   flac  0.5559  10 Piste audio.flac
+     5:13.35       55295564 B   ---   --   ---xx   flac  0.5757  11 Piste audio.flac
+     4:05.14       43250972 B   ---   --   ---xx   flac  0.5678  12 Piste audio.flac
+     6:44.22       71317388 B   ---   --   ---xx   flac  0.5741  13 Piste audio.flac
+     2:55.27       30933548 B   ---   --   ---xx   flac  0.5519  14 Piste audio.flac
+     3:58.37       42070268 B   ---   --   ---xx   flac  0.5697  15 Piste audio.flac
+     5:20.06       56462156 B   ---   --   ---xx   flac  0.5637  16 Piste audio.flac
+    76:58.41      814712336 B                            0.5555  (16 files)
+===================
+===================
+===================

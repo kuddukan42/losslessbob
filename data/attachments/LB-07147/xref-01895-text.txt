@@ -1,0 +1,129 @@
+===================
+===================
+===================
+=== 1999-02-12 S.I.U. Arena, Southern Illinois University, Carbondale, Illinois.txt
+===================
+===================
+===================
+S.I.U. Arena
+Southern Illinois University
+Carbondale, Illinois
+February 12, 1999
+
+There was no info file accompanying this recording!
+
+Derived (most likely) from LB-7147, based on http://jokerman.org.uk/lb/files/LBF-07147-bd99-02-12-sonic-b-LB-7147.txt: where the split times are nearly identical to this here upload: "(61min+45min)"
+
+Taper: unidentified
+Rating: A
+
+01 Gotta Serve Somebody
+02 Million Miles
+03 Maggie's Farm
+04 Shelter From The Storm
+05 Cold Irons Bound
+06 Silvio (Bob Dylan & Robert Hunter)
+07 Rank Strangers To Me (A. Brumley)
+08 It's All Over Now, Baby Blue
+09 Tangled Up In Blue
+10 My Back Pages
+11 'Til I Fell In Love With You
+12 Positively 4th Street
+13 Highway 61 Revisited
+14 Love Sick
+15 Leopard-Skin Pill-Box Hat
+16 Blowin' In The Wind
+17 Not Fade Away (Norman Petty/Charles Hardin)
+
+Concert # 1059 of The Never-Ending Tour
+Concert # 13 of the 1999 US Winter Tour
+1999 concert # 13
+
+Concert # 206 with the 11th Never-Ending Tour Band:
+
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+710, 16 acoustic with the band
+10 Bob Dylan harmonica
+1, 6, 7, 16, 17 Bucky Baxter and Larry Campbell backup vocal
+
+8 new songs (47%) compared to previous concert
+3 new songs for this tour
+
+Stereo audience recording, 105 minutes
+
+019cfc5fdf5f5f2b8e9e4207c6cd5b9d *01 Gotta serve somebody.flac
+db56d6ab143ed7c3c79e1c7a0c2c3d3d *02 Million miles.flac
+bd0656dc7f07877ddb9c7be15bd1f6e2 *03 Maggie's farm.flac
+3e74d137ce3a1a3805e5176f6516fb04 *04 Shelter from the storm.flac
+3757e7557f8740f0acdad7fa7e023e7b *05 Cold irons bound.flac
+c0d87fc32764ccc7095323486e0c21d4 *06 Silvio.flac
+2bd1c4ec4f9a62519ac2090e57f69421 *07 Rank strangers to me.flac
+ec564c7c26b21dcda13f536e326b53f9 *08 It's all over now, baby blue.flac
+d88bc72122d02c2e68d8282a8610bfa7 *09 Tangled up in blue.flac
+44c101c9c0a16bc0d387a514bc34fae7 *10 My back pages.flac
+01adcfa6b772952a4c861a5c4ff876b8 *11 'Til I fell in love with you.flac
+7dad4352634a8467b8d5b5400ece89bb *12 Positively 4th Street.flac
+d86b8981489414c7b75a82142fdb2da2 *13 Highway 61 revisited.flac
+0831d2dbf81ec5e91bbd035518d696c9 *14 Love sick.flac
+4a2401b778978a8b7aa0fc738bf6a2be *15 Leopard-skin pill-box hat.flac
+43a3ee0ac28a9ed4bd82d125bec04588 *16 Blowin' in the wind.flac
+b53c2968e99761e23f096b3a8ce492c3 *17 Not fade away.flac
+c86e3b741169cdc77f931f1e96aee9fb *1999-02-12 S.I.U. Arena, Southern Illinois University, Carbondale, Illinois.txt
+===================
+===================
+===================
+=== Bob Dylan 1999-02-12 SIU Arena, Southern Illinois University, Carbondale, Illinois [m. likely LB-7147].md5
+===================
+===================
+===================
+019cfc5fdf5f5f2b8e9e4207c6cd5b9d *01 Gotta serve somebody.flac
+db56d6ab143ed7c3c79e1c7a0c2c3d3d *02 Million miles.flac
+bd0656dc7f07877ddb9c7be15bd1f6e2 *03 Maggie's farm.flac
+3e74d137ce3a1a3805e5176f6516fb04 *04 Shelter from the storm.flac
+3757e7557f8740f0acdad7fa7e023e7b *05 Cold irons bound.flac
+c0d87fc32764ccc7095323486e0c21d4 *06 Silvio.flac
+2bd1c4ec4f9a62519ac2090e57f69421 *07 Rank strangers to me.flac
+ec564c7c26b21dcda13f536e326b53f9 *08 It's all over now, baby blue.flac
+d88bc72122d02c2e68d8282a8610bfa7 *09 Tangled up in blue.flac
+44c101c9c0a16bc0d387a514bc34fae7 *10 My back pages.flac
+01adcfa6b772952a4c861a5c4ff876b8 *11 'Til I fell in love with you.flac
+7dad4352634a8467b8d5b5400ece89bb *12 Positively 4th Street.flac
+d86b8981489414c7b75a82142fdb2da2 *13 Highway 61 revisited.flac
+0831d2dbf81ec5e91bbd035518d696c9 *14 Love sick.flac
+4a2401b778978a8b7aa0fc738bf6a2be *15 Leopard-skin pill-box hat.flac
+43a3ee0ac28a9ed4bd82d125bec04588 *16 Blowin' in the wind.flac
+b53c2968e99761e23f096b3a8ce492c3 *17 Not fade away.flac
+c86e3b741169cdc77f931f1e96aee9fb *1999-02-12 S.I.U. Arena, Southern Illinois University, Carbondale, Illinois.txt
+===================
+===================
+===================
+=== Bob Dylan 1999-02-12 SIU Arena, Southern Illinois University, Carbondale, Illinois [m. likely LB-7147].txt
+===================
+===================
+===================
+019cfc5fdf5f5f2b8e9e4207c6cd5b9d *01 Gotta serve somebody.flac
+db56d6ab143ed7c3c79e1c7a0c2c3d3d *02 Million miles.flac
+bd0656dc7f07877ddb9c7be15bd1f6e2 *03 Maggie's farm.flac
+3e74d137ce3a1a3805e5176f6516fb04 *04 Shelter from the storm.flac
+3757e7557f8740f0acdad7fa7e023e7b *05 Cold irons bound.flac
+c0d87fc32764ccc7095323486e0c21d4 *06 Silvio.flac
+2bd1c4ec4f9a62519ac2090e57f69421 *07 Rank strangers to me.flac
+ec564c7c26b21dcda13f536e326b53f9 *08 It's all over now, baby blue.flac
+d88bc72122d02c2e68d8282a8610bfa7 *09 Tangled up in blue.flac
+44c101c9c0a16bc0d387a514bc34fae7 *10 My back pages.flac
+01adcfa6b772952a4c861a5c4ff876b8 *11 'Til I fell in love with you.flac
+7dad4352634a8467b8d5b5400ece89bb *12 Positively 4th Street.flac
+d86b8981489414c7b75a82142fdb2da2 *13 Highway 61 revisited.flac
+0831d2dbf81ec5e91bbd035518d696c9 *14 Love sick.flac
+4a2401b778978a8b7aa0fc738bf6a2be *15 Leopard-skin pill-box hat.flac
+43a3ee0ac28a9ed4bd82d125bec04588 *16 Blowin' in the wind.flac
+b53c2968e99761e23f096b3a8ce492c3 *17 Not fade away.flac
+c86e3b741169cdc77f931f1e96aee9fb *1999-02-12 S.I.U. Arena, Southern Illinois University, Carbondale, Illinois.txt
+===================
+===================
+===================

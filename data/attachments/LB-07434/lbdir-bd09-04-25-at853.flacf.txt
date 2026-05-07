@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-25-at853.flacf 
+=================== 
+=================== 
+=================== 
+1d0d1e1ee84539550c50143546a5f3cb  dylan O2 d101.flac
+fd8b061ec7652ce5a6836348854091fd  dylan O2 d102.flac
+dd25639d5f667c2329fa6978f2ad39ee  dylan O2 d103.flac
+046f496408ffc2d1f1a0910ed8ac893c  dylan O2 d104.flac
+0800948aaef15bce58f88600012e9ad5  dylan O2 d105.flac
+df4b50c2895bbf660cf05f16241218cd  dylan O2 d106.flac
+8765950c44b239079c99d9756fffc9d1  dylan O2 d107.flac
+866eec5c7faeef5e379529e2683db3b9  dylan O2 d108.flac
+fe15e013eb0fdc579687d9c4975278c4  dylan O2 d109.flac
+4602b55ea5868692199b8d5d6de9378c  dylan O2 d201.flac
+91754a86a0ea7c02e2265f3eb9d50de9  dylan O2 d202.flac
+d9cbd9fb6bf5ff9f5d6ce5d57bcd6484  dylan O2 d203.flac
+64a176c966c3eba83272a9608a225762  dylan O2 d204.flac
+9e789a30e4960f40a642df01993af397  dylan O2 d205.flac
+67efdfe3ad66068a6f0d25155d047000  dylan O2 d206.flac
+88b9088b42c77d89e35852c309211818  dylan O2 d207.flac
+0a40ebfcb798a84d7b2e68a3d3cd028b  dylan O2 d208.flac
+1b30af59b578724fc9eb1b1115f81223  dylan O2 d209.flac
+ee97ec35897150b920228a72d33b05d4  Dylan O2, 25 April 2009.ffp
+11f54cea84c7931f312e9258a523cca1  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-25-at853.flacf 
+=================== 
+=================== 
+=================== 
+dylan O2 d101.flac:8e14e48ba6d7648be7679fcbaa1dd071
+dylan O2 d102.flac:eb38883d0ef2af4d67366fddacda8904
+dylan O2 d103.flac:1b828ff51e54a50b754ac1475efd2b84
+dylan O2 d104.flac:05107a59694b7b8cce53ed12be6edbdf
+dylan O2 d105.flac:9a333b7ed9a28fbba4ed9a3149a5a751
+dylan O2 d106.flac:cd0ca6fba0f538fa1bf916f6dd1514ec
+dylan O2 d107.flac:b33804e4c04c4f01974010bf4735c74d
+dylan O2 d108.flac:1ae9b1f5f07f8ec0426518d65d0c97ed
+dylan O2 d109.flac:7cb307f3294e3ef8a7a7e12d5a62919e
+dylan O2 d201.flac:ab2102ebdb6ef07cd719eced2db39374
+dylan O2 d202.flac:59c148eae1648b090f00859c3732718c
+dylan O2 d203.flac:a5dd046a160974b39f7123924ee726a7
+dylan O2 d204.flac:bcef6c34a5ad8ace156713ae3c7f21a4
+dylan O2 d205.flac:e1161092ff0c3ed10a90c21a56b377f7
+dylan O2 d206.flac:ad06c8f173eeb0c559bc0896e02dd0fd
+dylan O2 d207.flac:8ba7b5f93da5b44722561c6ff7590a4b
+dylan O2 d208.flac:5eb433da651f8af68e105c3af170003e
+dylan O2 d209.flac:5531112edfeb3dae56cdc3827b0251f8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-25-at853.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:50.72       51325388 B   ---   --   ---xx   flac  0.4721  dylan O2 d101.flac
+     5:12.16       55074476 B   ---   --   ---xx   flac  0.4628  dylan O2 d102.flac
+     6:05.40       64480124 B   ---   --   ---xx   flac  0.4623  dylan O2 d103.flac
+     7:07.16       75360476 B   ---   --   ---xx   flac  0.4562  dylan O2 d104.flac
+     6:21.17       67248428 B   ---   --   ---xx   flac  0.4764  dylan O2 d105.flac
+     6:21.08       67227260 B   ---   --   ---xx   flac  0.4148  dylan O2 d106.flac
+     7:40.45       81249884 B   ---   --   ---xx   flac  0.4615  dylan O2 d107.flac
+     7:09.74       75849692 B   ---   --   ---xx   flac  0.4182  dylan O2 d108.flac
+     6:58.52       73857548 B   ---   --   ---xx   flac  0.4815  dylan O2 d109.flac
+     5:12.07       55053308 B   ---   --   ---xx   flac  0.4121  dylan O2 d201.flac
+     4:41.22       49620188 B   ---   --   ---xx   flac  0.4026  dylan O2 d202.flac
+     7:08.20       75546284 B   ---   --   ---xx   flac  0.4894  dylan O2 d203.flac
+     5:57.48       63087740 B   ---   --   ---xx   flac  0.3938  dylan O2 d204.flac
+     6:51.12       72528668 B   ---   --   ---xx   flac  0.4950  dylan O2 d205.flac
+     7:07.38       75412220 B   ---   --   ---xx   flac  0.4888  dylan O2 d206.flac
+     5:04.58       53762060 B   ---   --   ---xx   flac  0.4795  dylan O2 d207.flac
+     7:33.56       80040956 B   ---   --   ---xx   flac  0.4231  dylan O2 d208.flac
+     5:47.20       61257784 B   -b-   --   ---xx   flac  0.4563  dylan O2 d209.flac
+   113:11.21     1197982484 B                            0.4536  (18 files)
+=================== 
+=================== 
+=================== 

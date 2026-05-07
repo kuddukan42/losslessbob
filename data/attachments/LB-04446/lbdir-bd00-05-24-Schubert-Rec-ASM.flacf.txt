@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-24-Schubert-Rec-ASM.flacf 
+=================== 
+=================== 
+=================== 
+144e1c33c91b9555a739590c328bc43f  101 Announcement.flac
+fe594deb561b65ca2b066089c5639f1a  102 Roving Gambler.flac
+402176010ecd32f372e02b37b2d7043c  103 Song To Woody.flac
+2c71fa757c290503328cdc328660e922  104 Masters Of War.flac
+55cdf8d003f391ad9c31990eb7986daf  105 Mama, You Been On My Mind.flac
+5702a530f361475e599a24be52e8fd21  106 Tangled Up In Blue.flac
+5b3982ec79ed17c9d068c05433b4580f  107 To Ramona.flac
+da8d6fdf2b86a3e8d9b8e9913a0f4dfc  108 Country Pie.flac
+49729e25e86ce2e7131766e67ac3108d  109 Can't Wait.flac
+6d0c120dc4acbbc213359d8d2a9f2ce0  110 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+9e13ed8a1ea4fcb2a2e74a38aef56b86  111 Just Like Tom Thumb's Blues.flac
+bed42a660d701f385e2eb3276f1c14f5  201 Drifter's Escape.flac
+9ac0fe755a296e9c6ec88b0d6cc510c8  202 Leopard-Skin Pill-Box Hat.flac
+52106c286a7c97d43705a8397bc10100  203 Ballad Of A Thin Man.flac
+d35eb627ae10a163c3f07b6896dcce16  204 Like Rolling Stone.flac
+297c06c3915df378bc2049eeb14228d1  205 It Ain't Me, Babe.flac
+fdfce5ae97a1bac9be6a94ffa441a8da  206 Maggie's Farm.flac
+a58019a824b3bec743fc0fdb150efd71  207 Forever Young.flac
+6b99e43c72131b216913fffb016027b9  208 Highway 61 Revisited.flac
+4a65e9c43363ff579a05388b56176e70  209 Blowin' In The Wind.flac
+1ab4d71bfd8dd1841d8b9b8f3ad35585  bd00-05-24-Schubert-Rec-ASM-LB-4446.txt
+3aa72ff68789e9773582af41e0778e04  bddresden20000524.txt
+89a30277ac1f746675e0cb4fac5cfd0d  dresden20000524_disk1.md5
+0c8dd75a279346d8fdfd645680e20dd5  dresden20000524_disk2.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-24-Schubert-Rec-ASM.flacf 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:69574e7090523189943f713004ff3aa6
+102 Roving Gambler.flac:b806b127215af7c1f83f729404d0f0b4
+103 Song To Woody.flac:ca6c94d9d63f95c9565d6b9a4d11497c
+104 Masters Of War.flac:7d79c748d83a424f82633a54dd72074d
+105 Mama, You Been On My Mind.flac:454c80ac3758a0a5a190a1ba2ed3b093
+106 Tangled Up In Blue.flac:1671aa6349e1e902d9061186b09684f3
+107 To Ramona.flac:9d863a7ff6a13cd783f0360032f4899a
+108 Country Pie.flac:65e46f1b07f3d3d5f49dd6ad58f6f931
+109 Can't Wait.flac:c53743de42758869da35156c719c29e9
+110 Stuck Inside Of Mobile With The Memphis Blues Again.flac:03d67f613171c7a49b8ab84a07a2edfe
+111 Just Like Tom Thumb's Blues.flac:c7a5d553ba4313120acfe82a971fb62b
+201 Drifter's Escape.flac:c914932056be6bd50c6e4e0a5daf0e3b
+202 Leopard-Skin Pill-Box Hat.flac:89a367a298f5790bd839c48a3db28e06
+203 Ballad Of A Thin Man.flac:167a916ae09f7a88117fec66373ae93e
+204 Like Rolling Stone.flac:f8c1b550b10cb2fc5a326bb1b2ec8084
+205 It Ain't Me, Babe.flac:f640e79f147745d9a67c80e29de1ddbd
+206 Maggie's Farm.flac:e2a96e16a9b292dfbe3efe11e02c10ca
+207 Forever Young.flac:c7f05e240aad924ca2158b859e22c229
+208 Highway 61 Revisited.flac:259c00034726ad193d52c822781e0291
+209 Blowin' In The Wind.flac:5cdb4d55e75a16f8e0c8fb9f20e4789a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-24-Schubert-Rec-ASM.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:22.40        3974924 B   ---   --   ---xx   flac  0.6022  101 Announcement.flac
+     3:54.10       41301164 B   ---   --   ---xx   flac  0.6011  102 Roving Gambler.flac
+     4:21.58       46176860 B   ---   --   ---xx   flac  0.5134  103 Song To Woody.flac
+     5:33.68       58901180 B   ---   --   ---xx   flac  0.5887  104 Masters Of War.flac
+     4:17.59       45473612 B   ---   --   ---xx   flac  0.5743  105 Mama, You Been On My Mind.flac
+     8:01.44       84951932 B   ---   --   ---xx   flac  0.6431  106 Tangled Up In Blue.flac
+     6:56.12       73410668 B   ---   --   ---xx   flac  0.5488  107 To Ramona.flac
+     2:44.36       29014316 B   ---   --   ---xx   flac  0.6477  108 Country Pie.flac
+     4:54.37       51948668 B   ---   --   ---xx   flac  0.5895  109 Can't Wait.flac
+     7:34.22       80137388 B   ---   --   ---xx   flac  0.6533  110 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     6:48.01       71973596 B   ---   --   ---xx   flac  0.6040  111 Just Like Tom Thumb's Blues.flac
+     5:12.60       55177964 B   ---   --   ---xx   flac  0.6780  201 Drifter's Escape.flac
+     8:02.37       85111868 B   ---   --   ---xx   flac  0.6520  202 Leopard-Skin Pill-Box Hat.flac
+     6:30.20       68843084 B   ---   --   ---xx   flac  0.6401  203 Ballad Of A Thin Man.flac
+     6:56.33       73460060 B   ---   --   ---xx   flac  0.6690  204 Like Rolling Stone.flac
+     8:26.21       89307836 B   ---   --   ---xx   flac  0.5420  205 It Ain't Me, Babe.flac
+     5:57.03       62981900 B   ---   --   ---xx   flac  0.6624  206 Maggie's Farm.flac
+     7:04.49       74908892 B   ---   --   ---xx   flac  0.5965  207 Forever Young.flac
+     7:01.52       74386748 B   ---   --   ---xx   flac  0.6783  208 Highway 61 Revisited.flac
+     6:26.68       68250380 B   ---   --   ---xx   flac  0.5984  209 Blowin' In The Wind.flac
+   117:07.55     1239693040 B                            0.6164  (20 files)
+=================== 
+=================== 
+=================== 

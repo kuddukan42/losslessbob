@@ -1,0 +1,71 @@
+Bob Dylan 
+Painter's Mill Music Theater
+Owings Mills, Maryland
+22 February 1991
+
+Musicians: Bob Dylan (vocal & guitar), John Jackson (guitar), Cesar Diaz (guitar), Tony Garnier (bass) & Ian Wallace (drums)
+d1t04 & d1t07 > d1t10 Bob Dylan harmonica.
+d1t07 > d1t08 acoustic with Bob Dylan (vocal, guitar), Cesar Diaz (guitar).
+d1t09 > d1t10 acoustic with the band.
+d1t01 > d1t02 & d2t04 Bob Dylan electric piano.
+d2t08 acoustic with Bob Dylan (vocal, guitar), John Jackson (guitar), Cesar Diaz (guitar), Tony Garnier (bass guitar), Ian
+Wallace (drums).
+d2t09 Cesar Diaz (electric slide guitar).
+
+Source: Aud
+Lineage: CD-Rs > EAC (secure mode) > CoolEdit Pro (normalization) > mkw ACT > shn (skt attached)
+Taped by: ?
+Transfered by: ?
+Sound Quality: VG
+Sound Processing: all tracks normalized 
+File Size: 632 megs .shn
+
+disk 1
+
+1. Most Likely You Go Your Way (And I'll Go Mine)
+2. Lay Lady Lay
+3. All Along The Watchtower
+4. The Man In Me
+5. Stuck Inside Of Mobile With The Memphis Blues Again
+6. Wiggle Wiggle
+7. Bob Dylan's Dream
+8. Love Minus Zero/No Limit
+9. Mr. Tambourine Man
+10. Girl From The North Country
+
+disk 2
+
+1. Everything Is Broken
+2. Man In The Long Black Coat
+3. Seeing The Real You At Last
+4. Shooting Star
+5. God Knows
+6. In The Garden
+7. Like A Rolling Stone - edit at end
+8. The Times They Are A-Changin'
+9. Highway 61 Revisited
+
+disk 1 shnfp
+
+8ce5bdf7ced342ff1ba791883cdc5c4c  [shntool]  bd1991-02-22d1t01.shn
+94f9ab8ee0d6abda9eed18af88ce2f3a  [shntool]  bd1991-02-22d1t02.shn
+864f8d01fa10bcc6b47c8cf2d229dd59  [shntool]  bd1991-02-22d1t03.shn
+4072a9a44ecf460312cc35612a10d442  [shntool]  bd1991-02-22d1t04.shn
+13bc0953be0e92a7b0e3c494aab850d9  [shntool]  bd1991-02-22d1t05.shn
+9756f3f3d932fbd5c233917250716add  [shntool]  bd1991-02-22d1t06.shn
+64df843bd8f246357f12bd762eec8334  [shntool]  bd1991-02-22d1t07.shn
+51e6f4da1e52480a1a1115c01d33e103  [shntool]  bd1991-02-22d1t08.shn
+e0cef89641706a732934617d5ecfb2f1  [shntool]  bd1991-02-22d1t09.shn
+abb0717345d2233b41da829baceef9c1  [shntool]  bd1991-02-22d1t10.shn
+
+disk 2 shnfp
+
+23d75e18083ea2bece70d022c19be906  [shntool]  bd1991-02-22d2t01.shn
+855594e1a0b3b4060afede0278f12a14  [shntool]  bd1991-02-22d2t02.shn
+d9475e8c8cf2cd08e227c3a0d7ddeb42  [shntool]  bd1991-02-22d2t03.shn
+83a2f9422a3834e645a7eb87ad652666  [shntool]  bd1991-02-22d2t04.shn
+a6c3e7f5c86437a6c7c4b84d237f7969  [shntool]  bd1991-02-22d2t05.shn
+2f2144ae3dca21294826bf42d8221b16  [shntool]  bd1991-02-22d2t06.shn
+3d3dc51b8b7e3c582caebebfeafa2ab5  [shntool]  bd1991-02-22d2t07.shn
+eee09d95f369861b3c415a69de25b2d6  [shntool]  bd1991-02-22d2t08.shn
+eecf66cf6c1ad8ebdf7371ede237dc4e  [shntool]  bd1991-02-22d2t09.shn

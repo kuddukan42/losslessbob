@@ -1,0 +1,19 @@
+b8b7aa8b440de1a60ee7697e18c5bbb3  1994-02-20 Nippon Housou Kyoukai Hall, Tokyo, Japan.md5
+7497aa5167219d06a55a974786bf7b44  CD1\01 Jokerman.flac
+02e2bd99188ef51c3667435f421f8ff0  CD1\02 You're a big girl now.flac
+b078b727a1972567ddec7be65685e89a  CD1\03 All along the watchtower.flac
+4a874b0d1cbb1fbf7dd369892b80b787  CD1\04 Just like a woman.flac
+20c4ab167ecdb85dce42f447f0e7d636  CD1\05 Tangled up in blue.flac
+925c678c0b0e69118dc932d6b60d4b36  CD1\06 Knockin' on heaven's door.flac
+0ad497840ac66dd015685b37e2042ba3  CD1\07 Tomorrow night.flac
+a7104c73fe823397717e46be6f614dc0  CD1\08 A hard rain's a-gonna fall.flac
+8e95b00b063c3b4a1af57e8c84041915  CD1\09 Don't think twice, it's all right.flac
+dda5656cbaaf690bd814ffe9da36a7b8  CD1\FLAC CD1.md5
+3398926ddf47aaa6b7de00dec1279fa7  CD2\10 Series of dreams.flac
+3cbaf2140b3de07692f1cb0153e72352  CD2\11 I and I.flac
+6986573161848135cc90bf729d0d5cfd  CD2\12 Maggie's farm.flac
+1d8d64c7242558b4bc326afb5c0e1568  CD2\13 What good am I.flac
+6fd92a9909ccbb12a5733671431a6792  CD2\14 Blowin' in the wind.flac
+585df7e9b58d177e03bf38f967e916ab  CD2\FLAC CD2.md5
+77b040f68352ebadeab644a7efdd3a2c  DigiFlawFinder-bd94-02-20-a.flacf.wavf.html
+a1d0563f737ec36cd8c83e28101f03be  Info\1994-02-20 Nippon Housou Kyoukai Hall, Tokyo, Japan.txt

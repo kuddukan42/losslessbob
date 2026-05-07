@@ -1,0 +1,81 @@
+Bob Dylan and his band
+Santa Rosa, California
+Grace Pavilion
+April 4, 2006
+
+A MILEHIGH recording (audience)
+DPA 4061's > SPBB > SONY SBM-1 > SONY D-8
+
+Audio CDs from milehigh, flac encoded with xACT 1.4b28
+
+Disc 1	62:58
+1.	Introduction	0:56
+2.	Maggie's Farm	5:45
+3.	She Belongs To Me	5:34
+4.	Lonesome Day Blues	7:43
+5.	Queen Jane Approximately	8:04
+6.	'Til I Fell In Love With You	6:45
+7.	It's Alright, Ma (I'm Only Bleeding)	7:18
+8.	Make You Feel My Love	5:25
+9.	Highway 61 Revisited	7:16
+10.	Tears Of Rage	8:10
+
+Disc 2	50:29
+1.	Honest With Me	6:47
+2.	Boots Of Spanish Leather	6:44
+3.	High Water (For Charley Patton)	7:28
+4.	Don't Think Twice, It's All Right	7:11
+5.	Summer Days	6:14
+6.	Encore	3:07
+7.	Like A Rolling Stone	7:34
+8.	All Along The Watchtower	5:22
+ 	 
+
+Band Members
+Bob Dylan - keyboard, harp
+Stu Kimball - rhythm guitar
+Denny Freeman - lead guitar
+Donnie Herron - violin, banjo, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+bd2006-04-04.milehigh.flac.md5
+5ee1bb3fda8692d656258422912cf621 *bd2006-04-04d2t08.flac
+a17bad8d096c6e0442f6e2e967bfd7eb *bd2006-04-04d2t07.flac
+b553d1b066a67d7be5146bd1c64aac85 *bd2006-04-04d2t06.flac
+48a6330e1055eb50589886b8b05b1331 *bd2006-04-04d2t05.flac
+7275041dede24ac341e0c12832534c59 *bd2006-04-04d2t04.flac
+299062416ac63880385800fbe3bf2d79 *bd2006-04-04d2t03.flac
+fcfa3c7831e69fd3d802b7036f653e11 *bd2006-04-04d2t02.flac
+744043ac93a4fd7acd0ba5d2838020e8 *bd2006-04-04d2t01.flac
+be5698e0477330da0dbf55bf800a70f0 *bd2006-04-04d1t10.flac
+d127d6675c39898e5300f9148066ff70 *bd2006-04-04d1t09.flac
+0653ce6d88491647158bf040dba07468 *bd2006-04-04d1t08.flac
+5afec2bcdacdd5c61bfbc677fcf0c957 *bd2006-04-04d1t07.flac
+c537b60ee7ea13d6a23e3f8148f9e85b *bd2006-04-04d1t03.flac
+ea652cc7513297f5485f10f31bba6589 *bd2006-04-04d1t02.flac
+6363cf35c3ce9d1abba89e7b5e7eae37 *bd2006-04-04d1t01.flac
+fe142f41a9214df9eb81aec55d529977 *bd2006-04-04d1t06.flac
+ea8f925af3340368fc2848dda0f8946f *bd2006-04-04d1t05.flac
+94a1c0ac35bc139082ed3fe8325a4fc7 *bd2006-04-04d1t04.flac
+
+bd2006-04-04.milehigh.wav.md5
+1808004737f5f4d6aa0c72e5dea210f8 *bd2006-04-04d2t08.wav
+b1fc33193ee361b159c9c3ae6dd34882 *bd2006-04-04d2t07.wav
+80c431939014bfab89aa60c9601a85e6 *bd2006-04-04d2t06.wav
+eabcd7c2c226c1cbd2714705f002f2ee *bd2006-04-04d2t05.wav
+094bec6bbeb80b97f7d13522d70d4f77 *bd2006-04-04d2t04.wav
+7bdbdaddf30ca620807332230a35f3c4 *bd2006-04-04d2t03.wav
+97b3579402f786e21ffc576ec4588a1f *bd2006-04-04d2t02.wav
+eb8d8973842cb1d90c85c9ed2ae585a5 *bd2006-04-04d2t01.wav
+f9fdfcd9a6eb27c32bef1ba3799a822b *bd2006-04-04d1t10.wav
+b469d7a627d16a15c345202b2d640866 *bd2006-04-04d1t09.wav
+456bea533d08b94e2ebfd222d5793bbd *bd2006-04-04d1t08.wav
+cc533a9e6b3df2a6090f0353d9285f8f *bd2006-04-04d1t07.wav
+3e122ff0d24e46c7ca696abb3a04efbd *bd2006-04-04d1t06.wav
+e77be0564368aad39f398d8bdd0c418b *bd2006-04-04d1t05.wav
+c9aeed69d2639b85725b366cbf490e2a *bd2006-04-04d1t04.wav
+8574553d84d4adb037493587db2cfd6c *bd2006-04-04d1t03.wav
+b74f798c2f1afd0f2afe737eebf2d13b *bd2006-04-04d1t02.wav
+f3831c2c5021899a4acae6fffa9c4937 *bd2006-04-04d1t01.wav
+

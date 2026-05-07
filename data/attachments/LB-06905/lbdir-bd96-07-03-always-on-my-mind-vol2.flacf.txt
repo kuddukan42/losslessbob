@@ -1,0 +1,57 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-03-always-on-my-mind-vol2.flacf 
+=================== 
+=================== 
+=================== 
+da88bee817627aad138e8c52d8535bd4  bd96-07-03-always-on-my-mind-vol2-d1t01.flac
+e3970e0cdf200cf3763ea41dcec71797  bd96-07-03-always-on-my-mind-vol2-d1t02.flac
+b25169096d29cc79795522482c2b8c78  bd96-07-03-always-on-my-mind-vol2-d1t03.flac
+7e5cdb5bbe1c27105915177309950347  bd96-07-03-always-on-my-mind-vol2-d1t04.flac
+63e56186dee62d88d909dbcc4268b559  bd96-07-03-always-on-my-mind-vol2-d1t05.flac
+cc804b2a0b4a1ce0d12ba2794f73eb99  bd96-07-03-always-on-my-mind-vol2-d1t06.flac
+e7a9e8c6cebdbf680c4a344e1ae751b0  bd96-07-03-always-on-my-mind-vol2-d1t07.flac
+ba7e6290174550b4192710261ae95fc9  bd96-07-03-always-on-my-mind-vol2-d1t08.flac
+8f5100f95ddf50c949ec458773d8c9bf  bd96-07-03-always-on-my-mind-vol2-d1t09.flac
+5dc82aa099e8eb38b4c59a0b2cd45499  bd96-07-03-always-on-my-mind-vol2-d1t10.flac
+80d967c97fcb6073968bc8872d3ab0a8  bd96-07-03-always-on-my-mind-vol2.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-03-always-on-my-mind-vol2.flacf 
+=================== 
+=================== 
+=================== 
+bd96-07-03-always-on-my-mind-vol2-d1t01.flac:4eba6923b85d52068daac46a7a832b38
+bd96-07-03-always-on-my-mind-vol2-d1t02.flac:23f4bcb4ee8150de70c468a7c895077c
+bd96-07-03-always-on-my-mind-vol2-d1t03.flac:4fe11056fbf5f06370c5e8cf53cf36ac
+bd96-07-03-always-on-my-mind-vol2-d1t04.flac:40f6f29f9c880a62783447c5405d0aaf
+bd96-07-03-always-on-my-mind-vol2-d1t05.flac:8aedb987e4691aefce0378cf059789c8
+bd96-07-03-always-on-my-mind-vol2-d1t06.flac:d4d42e401918b614fb1248b415b565b0
+bd96-07-03-always-on-my-mind-vol2-d1t07.flac:3c71d72c8fdd9229141baf7e7e8f9c07
+bd96-07-03-always-on-my-mind-vol2-d1t08.flac:44b7c78c9afb5562aedf928b46e1727d
+bd96-07-03-always-on-my-mind-vol2-d1t09.flac:35473c8221b0b77cf4327d90b95da991
+bd96-07-03-always-on-my-mind-vol2-d1t10.flac:5c492ecb5d379afbc56ca8949b621ac5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-03-always-on-my-mind-vol2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.45       52496684 B   ---   --   ---xx   flac  0.6560  bd96-07-03-always-on-my-mind-vol2-d1t01.flac
+     6:23.57       67695308 B   ---   --   ---xx   flac  0.6070  bd96-07-03-always-on-my-mind-vol2-d1t02.flac
+     7:02.30       74511404 B   ---   --   ---xx   flac  0.6528  bd96-07-03-always-on-my-mind-vol2-d1t03.flac
+     6:49.67       72305228 B   ---   --   ---xx   flac  0.6083  bd96-07-03-always-on-my-mind-vol2-d1t04.flac
+     6:10.53       65392700 B   ---   --   ---xx   flac  0.6045  bd96-07-03-always-on-my-mind-vol2-d1t05.flac
+     7:13.03       76388300 B   ---   --   ---xx   flac  0.6470  bd96-07-03-always-on-my-mind-vol2-d1t06.flac
+    10:29.58      111092060 B   ---   --   ---xx   flac  0.6086  bd96-07-03-always-on-my-mind-vol2-d1t07.flac
+     6:34.36       69586316 B   ---   --   ---xx   flac  0.5784  bd96-07-03-always-on-my-mind-vol2-d1t08.flac
+     8:15.36       87402716 B   ---   --   ---xx   flac  0.5832  bd96-07-03-always-on-my-mind-vol2-d1t09.flac
+     7:08.48       75612140 B   ---   --   ---xx   flac  0.6638  bd96-07-03-always-on-my-mind-vol2-d1t10.flac
+    71:05.58      752482856 B                            0.6194  (10 files)
+=================== 
+=================== 
+=================== 

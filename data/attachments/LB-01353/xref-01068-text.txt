@@ -1,0 +1,161 @@
+===================
+===================
+===================
+=== 2003-11-21 track-info.txt
+===================
+===================
+===================
+CD: Bob Dylan - 2003-11-21 D1
+
+[1:11:32.47] 722,14 MB
+
+
+01. 2003-11-21_101    [0:05:15.09]
+02. 2003-11-21_102    [0:06:59.71]
+03. 2003-11-21_103    [0:05:45.63]
+04. 2003-11-21_104    [0:06:20.16]
+05. 2003-11-21_105    [0:07:43.13]
+06. 2003-11-21_106    [0:06:24.51]
+07. 2003-11-21_107    [0:07:30.68]
+08. 2003-11-21_108    [0:05:35.44]
+09. 2003-11-21_109    [0:06:30.20]
+10. 2003-11-21_110    [0:05:50.30]
+11. 2003-11-21_111    [0:07:36.37]
+
+CD: Bob Dylan - 2003-11-21 D2
+
+[0:42:10.61] 425,75 MB
+
+01. 2003-11-21_201    [0:07:36.11]
+02. 2003-11-21_202    [0:07:05.23]
+03. 2003-11-21_203    [0:08:09.01]
+04. 2003-11-21_204    [0:05:57.53]
+05. 2003-11-21_205    [0:06:35.38]
+06. 2003-11-21_206    [0:06:47.10]
+===================
+===================
+===================
+=== BD 2003-11-21 Birmingham.ffp
+===================
+===================
+===================
+2003-11-21_101.flac:1634c2bc53ea988875a85d4435ceb9cf
+2003-11-21_102.flac:66fcfa7c91c1426e9dd8009f0e6a3905
+2003-11-21_103.flac:f4ba6704f7933e822e83d62283dc5619
+2003-11-21_104.flac:1b943b49f81902115cb2be406010ba42
+2003-11-21_105.flac:107ddde624a65fb5251d72be1cab66b6
+2003-11-21_106.flac:81f1eecf82cb0434641fe292c18a2dcc
+2003-11-21_107.flac:7815c0fcc1c4f31e48329a8a5c55eb92
+2003-11-21_108.flac:14f9838b6390734a0558050e28f7cbd5
+2003-11-21_109.flac:96697471ce1af08624f2d974a3aff507
+2003-11-21_110.flac:624f9d9500c3e0a20d37bd55f600cffe
+2003-11-21_111.flac:a6636b7fbeb21a0d26f10853be539aa1
+2003-11-21_201.flac:af312fd6ea47653eba80bcf59c53fcc8
+2003-11-21_202.flac:86e1ce1cff39eaf73407c50faa1317ed
+2003-11-21_203.flac:efb6b1024360a87288c186cfe38e1c5f
+2003-11-21_204.flac:b9457076079f8150febfc3b1ba0ab43c
+2003-11-21_205.flac:2de291c2426ab6137fb9dfc90650b407
+2003-11-21_206.flac:ef4db959975d11576cb79498edce81d6
+===================
+===================
+===================
+=== BD 2003-11-21 Birmingham.md5
+===================
+===================
+===================
+076b8fac5e99a9e3c313bcbdf052706c *2003-11-21 track-info.txt
+9e1ae6438ad9aae32274e1d855bf7e57 *2003-11-21_101.flac
+42546e88d325457ad9237c387a1da588 *2003-11-21_102.flac
+ebb8f9b7c95a2f06f426c4b59c29cf00 *2003-11-21_103.flac
+2c1da37603084d505073f2941169e353 *2003-11-21_104.flac
+be8b3c7de843196a8e3afe0debcbe8ff *2003-11-21_105.flac
+b78dce4af7339caacd8b8b1343c582e0 *2003-11-21_106.flac
+655995fbcfe71645b064fe374fb5f3aa *2003-11-21_107.flac
+4be9ab24758c25c34f8046d1110b3b6d *2003-11-21_108.flac
+8426e429ed94c61d1574b55c62a5b2bf *2003-11-21_109.flac
+aeaebc9d3e9cd11ae298de01f9330259 *2003-11-21_110.flac
+90457a485557871c26ba2f74984bdd66 *2003-11-21_111.flac
+2d8d3636812e4948c99be5e649a745d7 *2003-11-21_201.flac
+faeb7019c9b6dfc1cea777e87cd1697e *2003-11-21_202.flac
+2a7da7c6b13f4561246c3fd983d32437 *2003-11-21_203.flac
+7c31ae6f4ac23c6a48a3764a53dcf27a *2003-11-21_204.flac
+50cd1ded592d7c425b9727c4b75c30d9 *2003-11-21_205.flac
+e9ee631841113bc313f16fdab77dae19 *2003-11-21_206.flac
+c5f43ce9941378f9283ddc6d0dad2d7f *Bob Dylan - 2003-11-21 D1.log
+98ec70ceb8010f35716a7f082a967ea3 *Bob Dylan - 2003-11-21 D2.log
+d38ee574fb3a659a72e584113adc5fff *Bob Dylan 2003-11-21 Birmingham.txt
+===================
+===================
+===================
+=== Bob Dylan 2003-11-21 Birmingham.txt
+===================
+===================
+===================
+
+BOB DYLAN
+===========
+International Arena
+National Exhibition Center
+Birmingham, England
+21 November 2003
+
+LINE:
+Recieved in a CD-R Trade (2003). No further information on taper or equipment. 
+EAC Secure Mode (see log file) TLH for FLAC and MD5
+=> DIME
+
+
+D1: [1:11:32.47] 722,14 MB
+
+1. To Be Alone With You
+2. It's All Over Now, Baby Blue
+3. Tweedle Dee & Tweedle Dum
+4. Love Minus Zero/No Limit
+5. It's Alright, Ma (I'm Only Bleeding)
+6. Bye And Bye
+7. Highway 61 Revisited
+8. Can't Wait
+9. Boots Of Spanish Leather
+10. Cold Irons Bound
+11. The Lonesome Death Of Hattie Carroll
+
+D2: [0:42:10.61] 425,75 MB
+
+12. Honest With Me
+13. Every Grain Of Sand
+14. Summer Days
+15. Cat's In The Well
+16. Like A Rolling Stone
+17. All Along The Watchtower
+
+Concert # 1585 of The Never-Ending Tour. 
+Concert # 30 of the 2003 Europe Fall Tour. 
+2003 concert # 95.
+Concert # 84 with the 16th 
+
+Never-Ending Tour Band: 
+
+Bob Dylan (vocal & piano), 
+Freddie Koella (guitar), 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion)
+
+2, 4, 5, 9, 11 acoustic with the band.
+2, 4, 6, 9 Bob Dylan (harmonica).
+5 Larry Campbell (cittern).
+2, 5 Larry Campbell (pedal steel guitar).
+7 Freddie Koella (slide guitar).
+12 Larry Campbell (slide guitar)
+
+Notes.
+LB-numbers for this concert: LB-1353, LB-1513.
+
+6 new songs (35%) compared to previous concert. 
+No new songs for this tour.
+
+Stereo audience recording, 120 minutes.
+Session info updated 27 May 2009.
+===================
+===================
+===================

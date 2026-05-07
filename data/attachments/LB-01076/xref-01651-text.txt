@@ -1,0 +1,136 @@
+===================
+===================
+===================
+=== BOB DYLAN - 2001-07-12  Liverpool, England.ffp
+===================
+===================
+===================
+Disc One\01 101 - Intro.flac:189643f0f5cf0cf7e7b94ad0d94792f5
+Disc One\02 102 - Oh Babe, It Ain't No Lie.flac:762e5bfd526589b8a45273232ac7a731
+Disc One\03 103 - To Ramona.flac:0c4199514330cefbf9c85b418f830333
+Disc One\04 104 - Desolation Row.flac:31e962b7138542205ef46189a3b0255f
+Disc One\05 105 - Maggie's Farm.flac:8ef1f978fd71005ad771f620b077e18a
+Disc One\06 106 - Just Like A Woman.flac:1757818a2d88ca71057757e84b44230e
+Disc One\07 107 - This Wheel's On Fire.flac:4b7d907441138f923c4ec25151b2959f
+Disc One\08 108 - Visions Of Johanna.flac:5f1c7d6b7ce01c255e6ec670539f9890
+Disc One\09 109 - Fourth Time Around.flac:c3e2da94cd52cce4d9e21769e746fbcc
+Disc One\10 110 - Boots Of Spanish Leather.flac:3b3a3e151727cdc1a767f89bd8359c9d
+Disc One\11 111 - Memphis Blues Again.flac:fdef680bcc787b267252c64f7680aa7a
+Disc Two\01 201 - Positively 4th Street.flac:4d8769d6b19f90a30bb9539d0b1bbd6d
+Disc Two\02 202 - Cold Irons Bound.flac:8ad8e497b790b3552f1fc8af94a4379e
+Disc Two\03 203 - Leopard-Skin Pill-Box Hat.flac:aebbc472b0f47f21907857bc37dcd067
+Disc Two\04 204 - Things Have Changed.flac:6acfa310596c897c442adce38bb2e685
+Disc Two\05 205 - Like A Rolling Stone.flac:6a99f0f414f7c06b565f15eb0cd61bef
+Disc Two\06 206 - Knockin' On Heaven's Door.flac:5f9834fed48cf615f3c5601dc8460de4
+Disc Two\07 207 - All Along The Watchtower.flac:08f176a0f11e60e2ad402370fa731369
+Disc Two\08 208 - I Shall Be Released.flac:9eba94872e21ff88ba516836bd97669d
+Disc Two\09 209 - Highway 61 Revisited.flac:e73339ac2fb154059043770e2caa50f4
+Disc Two\10 210 - Blowin' In The Wind.flac:66a2d85173cd82a317126707b893fb6a
+Disc Two\11 211 - Rainy Day Women.flac:5dd0dbc37eb308c296ff9d40ae505bf8
+Disc Two\12 212 - Outro.flac:62e5682cd196d21d0803df51ae4a9624
+===================
+===================
+===================
+=== BOB DYLAN - 2001-07-12  Liverpool, England.md5
+===================
+===================
+===================
+330ea0f5ea98e16d5ec615b2332e2082 *Disc One\01 101 - Intro.flac
+274afd1fba9595b4ecc6de24af94b89c *Disc One\02 102 - Oh Babe, It Ain't No Lie.flac
+65ba8badf6ae95220d91a26f89b76a4a *Disc One\03 103 - To Ramona.flac
+ec3f94b34590043d753ea62c814608da *Disc One\04 104 - Desolation Row.flac
+536d41dc576d3c6f6d462bf969070fe6 *Disc One\05 105 - Maggie's Farm.flac
+c38cae553836d42333672ef1d9a1320e *Disc One\06 106 - Just Like A Woman.flac
+7d0a08e8da57d3a11aef9303d96b91dc *Disc One\07 107 - This Wheel's On Fire.flac
+5871b05c48226bbd60a9a359b1ffdee3 *Disc One\08 108 - Visions Of Johanna.flac
+0fa23d4917dcf326833203136aecb318 *Disc One\09 109 - Fourth Time Around.flac
+d4ee949533ed90299b9124b72b20b943 *Disc One\10 110 - Boots Of Spanish Leather.flac
+30df86814558a9c5bf08ed0c26527299 *Disc One\11 111 - Memphis Blues Again.flac
+5a8de873e6763ebd115f30396823c190 *Disc Two\01 201 - Positively 4th Street.flac
+618516678401ddf82cb2851c33c140da *Disc Two\02 202 - Cold Irons Bound.flac
+3395004703ae11d9e8504c007e93fd29 *Disc Two\03 203 - Leopard-Skin Pill-Box Hat.flac
+86064942a8a2eff7432832e26d655247 *Disc Two\04 204 - Things Have Changed.flac
+bbef23a1201a02468d69171b1e2ff98a *Disc Two\05 205 - Like A Rolling Stone.flac
+2f74d92d13782954c4507865a9b0dde5 *Disc Two\06 206 - Knockin' On Heaven's Door.flac
+b9098cd35d85b65c4cff59bba90445c0 *Disc Two\07 207 - All Along The Watchtower.flac
+a4faa753e43fc85c637ec6c522437458 *Disc Two\08 208 - I Shall Be Released.flac
+1829ee4b612a2196e85985cbca5fb515 *Disc Two\09 209 - Highway 61 Revisited.flac
+14e4ef5a7925e6355701daba63e841eb *Disc Two\10 210 - Blowin' In The Wind.flac
+ce6a7ec935aa344677bd3b4ee9c85952 *Disc Two\11 211 - Rainy Day Women.flac
+91c16fef132e52f761a6fa5ab2ad0377 *Disc Two\12 212 - Outro.flac
+===================
+===================
+===================
+=== BOB DYLAN - 2001-07-12  Liverpool, England_info.txt
+===================
+===================
+===================
+BOB DYLAN 
+King's Dock
+Liverpool, England
+2001-07-12 
+
+
+Lineage: trade audio cdr's > eac (secure, offset correct)  wav > flac 8
+
+  
+Disc One:
+01 Intro
+02 Oh Babe, It Ain't No Lie 
+03 To Ramona 
+04 Desolation Row
+05 Maggie's Farm 
+06 Just Like A Woman 
+07 This Wheel's On Fire  
+08 Visions Of Johanna 
+09 Fourth Time Around 
+10 Boots Of Spanish Leather 
+11 Stuck Inside Of Mobile 
+
+Disc Two: 
+01 Positively 4th Street  
+02 Cold Irons Bound  
+03 Leopard-Skin Pill-Box Hat  
+04 Things Have Changed  
+05 Like A Rolling Stone  
+06 Knockin' On Heaven's Door 
+07 All Along The Watchtower 
+08 I Shall Be Released 
+09 Highway 61 Revisited  
+10 Blowin' In The Wind  
+11 Rainy Day Women #12 & 35 
+
+
+Lineup:
+Charlie Sexton (guitar) 
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass) 
+David Kemper (drums & percussion).
+
+
+330ea0f5ea98e16d5ec615b2332e2082 *Disc One\01 101 - Intro.flac
+274afd1fba9595b4ecc6de24af94b89c *Disc One\02 102 - Oh Babe, It Ain't No Lie.flac
+65ba8badf6ae95220d91a26f89b76a4a *Disc One\03 103 - To Ramona.flac
+ec3f94b34590043d753ea62c814608da *Disc One\04 104 - Desolation Row.flac
+536d41dc576d3c6f6d462bf969070fe6 *Disc One\05 105 - Maggie's Farm.flac
+c38cae553836d42333672ef1d9a1320e *Disc One\06 106 - Just Like A Woman.flac
+7d0a08e8da57d3a11aef9303d96b91dc *Disc One\07 107 - This Wheel's On Fire.flac
+5871b05c48226bbd60a9a359b1ffdee3 *Disc One\08 108 - Visions Of Johanna.flac
+0fa23d4917dcf326833203136aecb318 *Disc One\09 109 - Fourth Time Around.flac
+d4ee949533ed90299b9124b72b20b943 *Disc One\10 110 - Boots Of Spanish Leather.flac
+30df86814558a9c5bf08ed0c26527299 *Disc One\11 111 - Memphis Blues Again.flac
+5a8de873e6763ebd115f30396823c190 *Disc Two\01 201 - Positively 4th Street.flac
+618516678401ddf82cb2851c33c140da *Disc Two\02 202 - Cold Irons Bound.flac
+3395004703ae11d9e8504c007e93fd29 *Disc Two\03 203 - Leopard-Skin Pill-Box Hat.flac
+86064942a8a2eff7432832e26d655247 *Disc Two\04 204 - Things Have Changed.flac
+bbef23a1201a02468d69171b1e2ff98a *Disc Two\05 205 - Like A Rolling Stone.flac
+2f74d92d13782954c4507865a9b0dde5 *Disc Two\06 206 - Knockin' On Heaven's Door.flac
+b9098cd35d85b65c4cff59bba90445c0 *Disc Two\07 207 - All Along The Watchtower.flac
+a4faa753e43fc85c637ec6c522437458 *Disc Two\08 208 - I Shall Be Released.flac
+1829ee4b612a2196e85985cbca5fb515 *Disc Two\09 209 - Highway 61 Revisited.flac
+14e4ef5a7925e6355701daba63e841eb *Disc Two\10 210 - Blowin' In The Wind.flac
+ce6a7ec935aa344677bd3b4ee9c85952 *Disc Two\11 211 - Rainy Day Women.flac
+91c16fef132e52f761a6fa5ab2ad0377 *Disc Two\12 212 - Outro.flac
+===================
+===================
+===================

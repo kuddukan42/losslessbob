@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd90-08-28-c.flacf
+===================
+===================
+===================
+e4442353e31fc0ec969e696eaa77cf7f *merrillvile082890.md5
+1d4d64c6c85059fed1eaf2cad928fcfd *merrillvile082890disc101.flac
+49ac13aabbcf63090efebb3ead3863ac *merrillvile082890disc102.flac
+38e4fc1c3dd4c6c658910104bf48aaba *merrillvile082890disc103.flac
+bb729052937da65526c5d4e8b2824607 *merrillvile082890disc104.flac
+a515199cac87f6f9bf3be1663ac746a7 *merrillvile082890disc105.flac
+4790ae855c2f8e8518e0a1cfca115612 *merrillvile082890disc106.flac
+674982c414e09a270491ddbe3ecf1318 *merrillvile082890disc107.flac
+94782c87da7b2b594e888bee944c79e2 *merrillvile082890disc108.flac
+557adc36138572ce92e91eb7f8c21cfd *merrillvile082890disc109.flac
+9680506f04bc742f4f7eb20b7eff3f3a *merrillvile082890disc110.flac
+d02d45a74a68a3c4a643b93a29d3ddb2 *merrillvile082890disc111.flac
+e17f1f7b8f099136b7b1b4427c3b3eac *merrillvile082890disc112.flac
+0c7db8465624280cfc7d25ed034301d1 *merrillvile082890disc201.flac
+7cc008ca734b6af57e3126cda77c1366 *merrillvile082890disc202.flac
+09fbaa9e565ffec3932d8069e6567ac0 *merrillvile082890disc203.flac
+ec07919a5bf819231420e6f2ca28f082 *merrillvile082890disc204.flac
+11157dd258073d860e7dad8039a12fed *merrillvile082890disc205.flac
+37f3b989b90cadbb9179ebddb1d18679 *merrillvile082890disc206.flac
+0d2a27a2b35918b3a910fe40d5d35f81 *merrillvile082890disc207.flac
+5b49176a4c451ef3a647926ffc3373c0 *merrillville90.txt
+===================
+===================
+===================
+=== ffp for: bd90-08-28-c.flacf
+===================
+===================
+===================
+merrillvile082890disc101.flac:402dd5686c2cb436b4451c4414ae3bb3
+merrillvile082890disc102.flac:d8bcb186342b09a32215e871bd7d2fde
+merrillvile082890disc103.flac:f5c52c297282f3c6bb83624ca06c3f8d
+merrillvile082890disc104.flac:f1cda23a86368ed061122a2a6b8ed984
+merrillvile082890disc105.flac:9accea7eef90fdcf5c139918d4b9d7d9
+merrillvile082890disc106.flac:67643e79dccabed26195d1871f7b3426
+merrillvile082890disc107.flac:89260db563335edacf72154e341cf658
+merrillvile082890disc108.flac:ded2fc80f8e0eebccd6c36d8176e57ec
+merrillvile082890disc109.flac:0d893a788c5bc4ff5343cd9476ffaa5b
+merrillvile082890disc110.flac:132f63a13faa5a357f3fa4b18f27403a
+merrillvile082890disc111.flac:83df8c6e45164e96c69bdc342f3c0310
+merrillvile082890disc112.flac:fc930abde7f66db1524206cc98d410f4
+merrillvile082890disc201.flac:ba62ff06871c9bc6f297a13d8c5b4b18
+merrillvile082890disc202.flac:f85f7a8c8b00944e8e15c07d633bdf31
+merrillvile082890disc203.flac:b03709af14fa24c7609ec9c7e0fd2683
+merrillvile082890disc204.flac:3b309d1aa9ad2919a755b55626225a1b
+merrillvile082890disc205.flac:70c3d20633cb047b5a87439a28c146f6
+merrillvile082890disc206.flac:1680ff2cc299b7c747a77337dd0c83f2
+merrillvile082890disc207.flac:bcc266ba247a691f73f29da5a6795e79
+===================
+===================
+===================
+=== shntool len for: bd90-08-28-c.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:21.28        3770300 B   ---   --   ---xx   flac  0.5407  merrillvile082890disc101.flac
+     4:16.68       45318380 B   ---   --   ---xx   flac  0.6720  merrillvile082890disc102.flac
+     4:15.37       45069068 B   ---   --   ---xx   flac  0.6602  merrillvile082890disc103.flac
+     3:03.48       32394140 B   ---   --   ---xx   flac  0.6807  merrillvile082890disc104.flac
+     4:41.46       49676636 B   ---   --   ---xx   flac  0.6717  merrillvile082890disc105.flac
+     5:28.31       57932156 B   ---   --   ---xx   flac  0.6372  merrillvile082890disc106.flac
+     5:17.21       55968236 B   ---   --   ---xx   flac  0.6563  merrillvile082890disc107.flac
+     4:28.15       47310524 B   ---   --   ---xx   flac  0.6388  merrillvile082890disc108.flac
+     5:28.35       57941564 B   ---   --   ---xx   flac  0.6487  merrillvile082890disc109.flac
+     6:13.00       65797244 B   ---   --   ---xx   flac  0.6454  merrillvile082890disc110.flac
+     7:26.64       78824972 B   ---   --   ---xx   flac  0.6207  merrillvile082890disc111.flac
+     3:39.48       38744540 B   ---   --   ---xx   flac  0.6602  merrillvile082890disc112.flac
+     3:33.20       37620284 B   ---   --   ---xx   flac  0.6314  merrillvile082890disc201.flac
+     4:16.26       45219596 B   ---   --   ---xx   flac  0.6267  merrillvile082890disc202.flac
+     3:06.64       32960972 B   ---   --   ---xx   flac  0.6012  merrillvile082890disc203.flac
+     4:13.10       44652764 B   ---   --   ---xx   flac  0.6481  merrillvile082890disc204.flac
+     6:24.03       67744700 B   ---   --   ---xx   flac  0.6807  merrillvile082890disc205.flac
+     5:07.47       54265388 B   ---   --   ---xx   flac  0.6050  merrillvile082890disc206.flac
+     4:14.18       44847980 B   ---   --   ---xx   flac  0.6594  merrillvile082890disc207.flac
+    85:36.29      906059444 B                            0.6462  (19 files)
+===================
+===================
+===================

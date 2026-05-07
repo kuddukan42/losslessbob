@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-10-a-SBD-AUD.flacf 
+=================== 
+=================== 
+=================== 
+60dfe2c6dada922600ecb0c192e59879  bd1981-07-10_SBD+AUD.md5
+ce087519d384ba8e1dd331cf960a3974  bd1981-07-10_SBD+AUD_d1t01.flac
+392573ea59c99dca275a38c831266ac9  bd1981-07-10_SBD+AUD_d1t02.flac
+4e6424e1034deaa3625b8ff9e0a316ec  bd1981-07-10_SBD+AUD_d1t03.flac
+180cbfd3af252b44c5a318213b540a4a  bd1981-07-10_SBD+AUD_d1t04.flac
+43a0b6472336a9c51b7bee9250ab6035  bd1981-07-10_SBD+AUD_d1t05.flac
+844e8bd9be95b7a7f4a248a0c2e8c259  bd1981-07-10_SBD+AUD_d1t06.flac
+c8c9268a6617c4b0a48f293b49b2a922  bd1981-07-10_SBD+AUD_d1t07.flac
+203541b0fa82004e3dd94c2d2dcbdb23  bd1981-07-10_SBD+AUD_d1t08.flac
+545161e0207ae98df35d9898d33314b2  bd1981-07-10_SBD+AUD_d1t09.flac
+948e19527da6162245a686a73dd7ab33  bd1981-07-10_SBD+AUD_d1t10.flac
+f11f6d17b6f452f5860d5b60e8c202ce  bd1981-07-10_SBD+AUD_d1t11.flac
+26b2b8f898f5f136a94844140ab59164  bd1981-07-10_SBD+AUD_d1t12.flac
+3c61bd0c7067248e18c0456baacb3c2a  bd1981-07-10_SBD+AUD_d1t13.flac
+2c5c0caa2a5916f6dae5a4f4803148de  bd1981-07-10_SBD+AUD_d1t14.flac
+3465f736b36ea141655d9c84bbbe51cb  bd1981-07-10_SBD+AUD_d1t15.flac
+ab36a93961d90fa8bc5afba9e6d3a42a  bd1981-07-10_SBD+AUD_d1t16.flac
+344c7cb96f6ed3b8c58ccefedc481383  bd1981-07-10_SBD+AUD_d2t01.flac
+b4c00ebcc8a8836bb22e9c6b3922e16a  bd1981-07-10_SBD+AUD_d2t02.flac
+20a29cb78a80dfba220b9be8924a1b47  bd1981-07-10_SBD+AUD_d2t03.flac
+9d5b7a633cfe143cd0900614901219d0  bd1981-07-10_SBD+AUD_d2t04.flac
+9dd2650c7744d65d993ca3c714842972  bd1981-07-10_SBD+AUD_d2t05.flac
+556dc37eac821071a0755ebf0f3cd910  bd1981-07-10_SBD+AUD_d2t06.flac
+c3975475b7763d6e99b535c68c44381e  bd1981-07-10_SBD+AUD_d2t07.flac
+f224f670ea397fd5df86afab57d1077c  bd1981-07-10_SBD+AUD_d2t08.flac
+78747413f03069fbab9ab9388a8494a6  bd1981-07-10_SBD+AUD_d2t09.flac
+c277b97a379f3bb3bf2e7d5edcfe10f6  bd1981-07-10_SBD+AUD_d2t10.flac
+b2528c6f46b0fc81551c4b7d412e4bd8  bd1981-07-10_SBD+AUD_d2t11.flac
+157f2ec21582c2765e14c92278a24d58  bd1981-07-10_SBD+AUD_d2t12.flac
+8b04536555769ead81f130cc7d8d9d00  bd1981-07-10_SBD+AUD_d2t13.flac
+5bdca7d53d6549bee4ec4ce88f83b8d2  bd1981-07-10_SBD+AUD_ffp.txt
+e67acc37dd19fa28cce72aade257d4d7  bd1981-07-10_SBD+AUD_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-10-a-SBD-AUD.flacf 
+=================== 
+=================== 
+=================== 
+bd1981-07-10_SBD+AUD_d1t01.flac:1fc884c2984bde08a95c99d77d879d93
+bd1981-07-10_SBD+AUD_d1t02.flac:722fdb9c49d26140a838eedc8ef5eadb
+bd1981-07-10_SBD+AUD_d1t03.flac:4ff34d90735eee3737831d7e4168da08
+bd1981-07-10_SBD+AUD_d1t04.flac:71d5ac2155ec73c140bd32fe3f35e1a8
+bd1981-07-10_SBD+AUD_d1t05.flac:d0565ecfd2c73b267f07de6965e838f3
+bd1981-07-10_SBD+AUD_d1t06.flac:ee6cede6c3da7224cc1609062918420b
+bd1981-07-10_SBD+AUD_d1t07.flac:07420fa7a2d182a4a0b886f41cba91a8
+bd1981-07-10_SBD+AUD_d1t08.flac:7bb0f21a9dc6019b46a226732820ae3c
+bd1981-07-10_SBD+AUD_d1t09.flac:7f845202345c54d17f83ac444eab79c8
+bd1981-07-10_SBD+AUD_d1t10.flac:40aa0e559383293f34bebc7d682ff804
+bd1981-07-10_SBD+AUD_d1t11.flac:899964fb29ce0ff045b7f21b10c92709
+bd1981-07-10_SBD+AUD_d1t12.flac:a1569ed329736797f8a98c25d58731a6
+bd1981-07-10_SBD+AUD_d1t13.flac:03deb1df9bb5a5b0742cc1b2cf7264bc
+bd1981-07-10_SBD+AUD_d1t14.flac:42de74acfccad96e7a10853e82e5b5fb
+bd1981-07-10_SBD+AUD_d1t15.flac:5c9e1741fbb5dfaadc75e975fa7c622d
+bd1981-07-10_SBD+AUD_d1t16.flac:b0e467dbe5efd73748ea86b65553ed30
+bd1981-07-10_SBD+AUD_d2t01.flac:de7059cc339b2187a929d721a44b0688
+bd1981-07-10_SBD+AUD_d2t02.flac:4f8df433a2a696e3a2683629f3996d8f
+bd1981-07-10_SBD+AUD_d2t03.flac:82f056cf900bb83304d6126874c03cce
+bd1981-07-10_SBD+AUD_d2t04.flac:4fe0de8b44a148f8daac3561949ec976
+bd1981-07-10_SBD+AUD_d2t05.flac:6b15ca399df2c3cb1872b97207f5fec6
+bd1981-07-10_SBD+AUD_d2t06.flac:ba68ab66bfe335384c99de3b776c4ff1
+bd1981-07-10_SBD+AUD_d2t07.flac:82014d7f01acf2e3d4e54a711c14355c
+bd1981-07-10_SBD+AUD_d2t08.flac:1b58b5f537700df7c6b70e9bb7acd61d
+bd1981-07-10_SBD+AUD_d2t09.flac:50456b4147722aad5f89528fdeb13c84
+bd1981-07-10_SBD+AUD_d2t10.flac:2c60f1f48b102df50e19f7414ba6eab1
+bd1981-07-10_SBD+AUD_d2t11.flac:eb66e4b380269a8b37788b8fc829eec6
+bd1981-07-10_SBD+AUD_d2t12.flac:53dca3df5ea9259bb1d6c4363ab20c77
+bd1981-07-10_SBD+AUD_d2t13.flac:7fff2710e6a83c0cebe1fcda9a5b5d00
+=================== 
+=================== 
+=================== 
+=== shntool for: bd81-07-10-a-SBD-AUD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.71       44619836 B   ---   --   ---xx   flac  0.6190  bd1981-07-10_SBD+AUD_d1t01.flac
+     3:59.45       42265484 B   ---   --   ---xx   flac  0.5695  bd1981-07-10_SBD+AUD_d1t02.flac
+     2:48.55       29764604 B   ---   --   ---xx   flac  0.6287  bd1981-07-10_SBD+AUD_d1t03.flac
+     3:07.68       33146780 B   ---   --   ---xx   flac  0.6027  bd1981-07-10_SBD+AUD_d1t04.flac
+     4:24.01       46571996 B   ---   --   ---xx   flac  0.6065  bd1981-07-10_SBD+AUD_d1t05.flac
+     4:10.28       44165900 B   ---   --   ---xx   flac  0.6619  bd1981-07-10_SBD+AUD_d1t06.flac
+     4:58.54       52694252 B   ---   --   ---xx   flac  0.6185  bd1981-07-10_SBD+AUD_d1t07.flac
+     6:38.03       70214300 B   ---   --   ---xx   flac  0.6516  bd1981-07-10_SBD+AUD_d1t08.flac
+     3:42.02       39165548 B   ---   --   ---xx   flac  0.5800  bd1981-07-10_SBD+AUD_d1t09.flac
+     4:50.35       51238364 B   ---   --   ---xx   flac  0.6284  bd1981-07-10_SBD+AUD_d1t10.flac
+     4:24.56       46701356 B   ---   --   ---xx   flac  0.6615  bd1981-07-10_SBD+AUD_d1t11.flac
+     5:49.18       61605980 B   ---   --   ---xx   flac  0.5728  bd1981-07-10_SBD+AUD_d1t12.flac
+     3:22.59       35771612 B   ---   --   ---xx   flac  0.6377  bd1981-07-10_SBD+AUD_d1t13.flac
+     3:34.58       37886060 B   ---   --   ---xx   flac  0.6084  bd1981-07-10_SBD+AUD_d1t14.flac
+     5:16.34       55822412 B   ---   --   ---xx   flac  0.6445  bd1981-07-10_SBD+AUD_d1t15.flac
+     4:39.64       49366172 B   ---   --   ---xx   flac  0.5904  bd1981-07-10_SBD+AUD_d1t16.flac
+     3:34.24       37806092 B   ---   --   ---xx   flac  0.6026  bd1981-07-10_SBD+AUD_d2t01.flac
+     4:30.32       47703308 B   ---   --   ---xx   flac  0.5835  bd1981-07-10_SBD+AUD_d2t02.flac
+     5:32.61       58708316 B   ---   --   ---xx   flac  0.6474  bd1981-07-10_SBD+AUD_d2t03.flac
+     4:07.52       43693148 B   ---   --   ---xx   flac  0.6519  bd1981-07-10_SBD+AUD_d2t04.flac
+     4:22.74       46390892 B   ---   --   ---xx   flac  0.6224  bd1981-07-10_SBD+AUD_d2t05.flac
+     4:26.46       47030636 B   ---   --   ---xx   flac  0.6463  bd1981-07-10_SBD+AUD_d2t06.flac
+     3:51.22       40800188 B   ---   --   ---xx   flac  0.6474  bd1981-07-10_SBD+AUD_d2t07.flac
+     5:07.64       54305372 B   ---   --   ---xx   flac  0.6199  bd1981-07-10_SBD+AUD_d2t08.flac
+     5:28.42       57958028 B   ---   --   ---xx   flac  0.6344  bd1981-07-10_SBD+AUD_d2t09.flac
+     9:43.26      102902396 B   ---   --   ---xx   flac  0.6046  bd1981-07-10_SBD+AUD_d2t10.flac
+     5:56.04       62807852 B   ---   --   ---xx   flac  0.6278  bd1981-07-10_SBD+AUD_d2t11.flac
+     6:12.18       65663180 B   ---   --   ---xx   flac  0.6138  bd1981-07-10_SBD+AUD_d2t12.flac
+     5:21.23       56678540 B   ---   --   ---xx   flac  0.6476  bd1981-07-10_SBD+AUD_d2t13.flac
+   138:16.14     1463448604 B                            0.6219  (29 files)
+=================== 
+=================== 
+=================== 

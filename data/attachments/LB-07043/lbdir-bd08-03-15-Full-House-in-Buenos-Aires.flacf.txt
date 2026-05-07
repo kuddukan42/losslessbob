@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-03-15-Full-House-in-Buenos-Aires.flacf 
+=================== 
+=================== 
+=================== 
+cabf72e09f14d527f162c65e28059baf  Artwork\f-43b.jpg
+eee10a1b76128fb447573c807cde6b6f  Artwork\f-43cd.jpg
+ec2825c7d9bb5bcdf16d1c3ab132ccb2  Artwork\f-43f.jpg
+5282807d3d65b8e157bf059a630dc625  Artwork\f-43ib.jpg
+5dfa328202b3241cafc385970a36ae64  Artwork\f-43l.jpg
+8b5167f575e5c69cf9ad47047c531d2a  bd-Full House in Buenos Aires-d1\bd-Full House in Buenos Aires-d1.md5
+d10da81625f53e61247ac79b8de41a47  bd-Full House in Buenos Aires-d1\Track01.flac
+94c22cbe814233a6ca3b6c21f107ca04  bd-Full House in Buenos Aires-d1\Track02.flac
+dec35a970cf43bee2dd43bf4e5bac69b  bd-Full House in Buenos Aires-d1\Track03.flac
+88fb9802a8fa1b7f6549a2b7235daf14  bd-Full House in Buenos Aires-d1\Track04.flac
+3c85e24b8f7d9aca138af98aaa01f390  bd-Full House in Buenos Aires-d1\Track05.flac
+37828c4c78b6dd1b25fbce641964fa1e  bd-Full House in Buenos Aires-d1\Track06.flac
+26c5996b59aff2bdb2d67fbc19e5ebd7  bd-Full House in Buenos Aires-d1\Track07.flac
+7d5a482d5186fb816251a62035ffab0b  bd-Full House in Buenos Aires-d1\Track08.flac
+8f9af8c4a51692d6a92a609d0cb87a7a  bd-Full House in Buenos Aires-d1\Track09.flac
+432dfac0e575ec408d4dd2c9012305df  bd-Full House in Buenos Aires-d1\Track10.flac
+1696bc4b08185d253a9f1852eb5ee504  bd-Full House in Buenos Aires-d1\Track11.flac
+1fc76d8cc76e10abece9183d18899e02  bd-Full House in Buenos Aires-d1\Track12.flac
+8b6a70a1f7f6701844ac14da939fd4a3  bd-Full House in Buenos Aires-d2\bd-Full House in Buenos Aires-d2.md5
+1986a69c0eb0fadda87d090e874ce19c  bd-Full House in Buenos Aires-d2\Track01.flac
+9c9fc5971ea099fe5ec9b53bb3ad0858  bd-Full House in Buenos Aires-d2\Track02.flac
+5cfc088707ccbda8a2543733fff86246  bd-Full House in Buenos Aires-d2\Track03.flac
+9fb96e274fdb58194409a3947f9029ee  bd-Full House in Buenos Aires-d2\Track04.flac
+e8afb850cce927a7e42ae2872b797be5  bd-Full House in Buenos Aires-d2\Track05.flac
+bcc0875d1872bf586006f14b88899109  bd-Full House in Buenos Aires-d2\Track06.flac
+594d8b5b7e5924dec577b3c5951e50aa  bd-Full House in Buenos Aires-d2\Track07.flac
+6fe798b6fcddd660c8197a0a74476b37  bd-Full House in Buenos Aires-d2\Track08.flac
+196e32cbf115b8c29328df53715cd311  bd-Full House in Buenos Aires-d2\Track09.flac
+b6f77d379badbd9d6d91e4bc7802cc99  bd-Full House in Buenos Aires-d2\Track10.flac
+ce9974b39d5f9814df9cbe3fdfba5591  bd-Full House in Buenos Aires.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-03-15-Full-House-in-Buenos-Aires.flacf\bd-Full House in Buenos Aires-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:a326d498b3607851f174299bfd742f34
+Track02.flac:c03dea3204d9f544dc4b81ed2de98e2b
+Track03.flac:36bdf64e38d4f2383d7de8af4b85b9b7
+Track04.flac:e3f81f1d5be6da34df2ab818d1c5d24e
+Track05.flac:f24394b411a36e03a47657392345bac8
+Track06.flac:70f1116ccbdd5b050544cac6d07b18c4
+Track07.flac:dc8533c9961ab81ba13dbe1f8800a5b0
+Track08.flac:3b558386353908238335107af9f2a4f4
+Track09.flac:2a3e17a9b25dbc6d8835928830bfb3e2
+Track10.flac:64acc099af3a32a34ff00ce6057e9b04
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-03-15-Full-House-in-Buenos-Aires.flacf\bd-Full House in Buenos Aires-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:a6becbc237a6acae054a1c6d1c6077f7
+Track02.flac:46c63d9c611f168b6f2cbd47e86981d1
+Track03.flac:a3fbc4d2d93cfa45481133861a774201
+Track04.flac:8758f4dcc5b05a31b85adda393ba6226
+Track05.flac:4e3edc04fb4724b3a6b74a10f3c83df7
+Track06.flac:4b09b3b7adebfc5c3dd6fda35d5a1f47
+Track07.flac:01e1dd57eb11c624ee5bec3469a9ddfc
+Track08.flac:69b0970af560b1d9e4bf3f353e20db06
+Track09.flac:cdb4a40144d5e6ca385001506ec1cd94
+Track10.flac:7ba6d148b930dcbd45177f02922d63ed
+Track11.flac:5f793ea2e6b750f1e17b9ed57ddc566e
+Track12.flac:6c7c4c7fa7b73006b7e9bc416fc04aa0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-03-15-Full-House-in-Buenos-Aires.flacf\bd-Full House in Buenos Aires-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:12.58       65757260 B   ---   --   ---xx   flac  0.5930  Track01.flac
+     7:37.74       80788892 B   ---   --   ---xx   flac  0.4399  Track02.flac
+     5:49.08       61582460 B   ---   --   ---xx   flac  0.5630  Track03.flac
+    10:50.32      114735308 B   ---   --   ---xx   flac  0.4969  Track04.flac
+     6:43.00       71089244 B   ---   --   ---xx   flac  0.5350  Track05.flac
+     0:34.35        6079964 B   ---   --   ---xx   flac  0.4788  Track06.flac
+     5:36.25       59329244 B   ---   --   ---xx   flac  0.5420  Track07.flac
+     7:38.39       80882972 B   ---   --   ---xx   flac  0.4885  Track08.flac
+     8:22.67       88710428 B   ---   --   ---xx   flac  0.4699  Track09.flac
+     7:17.35       77169164 B   ---   --   ---xx   flac  0.5869  Track10.flac
+    66:42.73      706124936 B                            0.5180  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-03-15-Full-House-in-Buenos-Aires.flacf\bd-Full House in Buenos Aires-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:24.41       14914076 B   ---   --   ---xx   flac  0.4399  Track01.flac
+     4:08.11       43773116 B   ---   --   ---xx   flac  0.5760  Track02.flac
+     4:38.09       49060412 B   ---   --   ---xx   flac  0.5139  Track03.flac
+     4:41.60       49709564 B   ---   --   ---xx   flac  0.5629  Track04.flac
+     5:41.45       60258284 B   ---   --   ---xx   flac  0.5318  Track05.flac
+     6:46.07       71634908 B   ---   --   ---xx   flac  0.5530  Track06.flac
+     7:11.58       76164860 B   ---   --   ---xx   flac  0.4403  Track07.flac
+     6:32.36       69233516 B   ---   --   ---xx   flac  0.5465  Track08.flac
+     7:04.18       74835980 B   ---   --   ---xx   flac  0.5127  Track09.flac
+     7:35.70       80426684 B   ---   --   ---xx   flac  0.5298  Track10.flac
+     6:37.47       70141388 B   ---   --   ---xx   flac  0.5739  Track11.flac
+     6:27.58       68403260 B   ---   --   ---xx   flac  0.3946  Track12.flac
+    68:50.10      728556048 B                            0.5164  (12 files)
+=================== 
+=================== 
+=================== 

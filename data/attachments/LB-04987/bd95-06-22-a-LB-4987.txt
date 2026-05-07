@@ -1,0 +1,14 @@
+Bob Dylan, 6/22/95, Philadelphia, Pennsylvania, Theater Of Living Arts, 2CDR
+
+LB-4987, (75min+31min), version "a"; Audience recording (Full spectrum) > Unknown transfer > CDR (x) > EAC (Secure/Offset) > FLAC (level 8), Misplaced track markers. Original disc 2 had 3 filler tracks which I removed.;; has tv band, some hiss a little clipping on d1t4, d1t6 but did not hear it but heard it around d1tt11 0:10; d2t4 is lesser fidelity with more hiss and probably from a different recording; different recording than LB-3314 based on different clapping on d1t7; very good to excellent sound [B+]
+
+discontinuity pops d1t6 2:40; d1tt10 2:40; d1t11 2:04;  5:03;  d2t1 1:28; d2t4 2:40; big drop/pop d1t9 0:00, d1t10 0:00, d1t11 0:00; d2t2 0:00; analog drop d2t4 0:03; end of d1t11 cut; digipop d2t1 0:14
+
+CD1
+74:40, 1. Drifter's Escape, 2. It Takes A Lot To Laugh, It Takes A Train To Cry, 3. All Along The Watchtower, 4. Shelter From The Storm, 5. Positively 4th Street, 6. Silvio (Bob Dylan & Robert Hunter), 7. Mr. Tambourine Man, 8. short 9. Masters Of War, 10. One Too Many Mornings, 11. Seeing The Real You At Last, + What Good Am I?, 30:55, 
+
+CD2
+1. band intros + Cat's In The Well, 2. I Shall Be Released, 3. My Back Pages, 4. Like A Rolling Stone
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

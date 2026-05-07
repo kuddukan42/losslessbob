@@ -1,0 +1,54 @@
+Bob Dylan
+Orpheum Theatre
+Memphis, Tennessee
+March 30, 2024
+
+01. Watching The River Flow 
+02. Most Likely You Go Your Way (And I'll Go Mine)
+03. I Contain Multitudes 
+04. False Prophet 
+05. When I Paint My Masterpiece 
+06. Black Rider 
+07. I'll Be Your Baby Tonight 
+08. My Own Version Of You 
+09. Crossing The Rubicon 
+10. To Be Alone With You 
+11. Key West (Philosopher Pirate) 
+12. Gotta Serve Somebody 
+13. I've Made Up My Mind To Give Myself To You
+14. Big River
+15. Mother Of Muses
+16. Goodbye Jimmy Reed
+17. Every Grain Of Sand
+
+Band Members
+Bob Dylan - vocals, guitar, piano, harp
+Jerry Pentecost - drums
+Doug Lancio - guitar 
+Bob Britt - guitar
+Donnie Herron - steel guitar, violin
+Tony Garnier - bass
+
+Recorded by: soomlos
+schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3 (24-bit / 48000 Hz)
+sound devices mixpre-3 > usb > pc > poly wav (24-bit / 48000 Hz)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24-bit / 48000 Hz)
+
+ffp
+bd2024-03-30-soomlos-t01.flac:fc01276037ace36ed2fa481111d3ba80
+bd2024-03-30-soomlos-t02.flac:88ea900ae6aa80775daed113192b4cac
+bd2024-03-30-soomlos-t03.flac:663509a81edf149d4153dd62c7157ba0
+bd2024-03-30-soomlos-t04.flac:04466de6c511782d0afd24b73a38858d
+bd2024-03-30-soomlos-t05.flac:a88da8d6136f35a24a814089e677d0b1
+bd2024-03-30-soomlos-t06.flac:ce5eba0a96d6d5b77487f560885f9c68
+bd2024-03-30-soomlos-t07.flac:a31a046743ceb290567d98956b71bcd1
+bd2024-03-30-soomlos-t08.flac:bead263851b0919f9422a4b018d8a28a
+bd2024-03-30-soomlos-t09.flac:a376b824df575d75a41263c2299d906a
+bd2024-03-30-soomlos-t10.flac:d207e3e43381b4883fffcd4dc2dcb2a9
+bd2024-03-30-soomlos-t11.flac:933f74ef35f8ec97f55200100b6acbf3
+bd2024-03-30-soomlos-t12.flac:2c19f70bbc3749ee7ddbb1cffffd48cb
+bd2024-03-30-soomlos-t13.flac:e9512d42af83ed36e4a69c0cc94cb583
+bd2024-03-30-soomlos-t14.flac:fd2bcc065c4debd3a0052325e303a3fd
+bd2024-03-30-soomlos-t15.flac:7c1f9f4eb75724dab082dec585051caf
+bd2024-03-30-soomlos-t16.flac:ef8b8da1cdadfe9e49234ff00826c176
+bd2024-03-30-soomlos-t17.flac:ccaf257568458fcaa73a351a48b9acaa

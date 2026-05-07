@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-09-09.flacf 
+=================== 
+=================== 
+=================== 
+eecd2106b75f47944c8fd830fcca0751  bd1990-09-09_Austin.md5
+36184a19f3ef76c444e052f80bd3446b  bd1990-09-09_Austin.st5
+c2e359f19e3e3e059ffcf942417e2731  bd1990-09-09_Austin.txt
+bc9c7af05c5850e983af59a3ce41978f  bd1990-09-09_Austin_shntool_len.txt
+a8a929fd2dd744ac2fdb8d65ee7a99cc  bd1990-09-09d1t01.shn
+b2ff76c8c1ed377958b162071dba2d96  bd1990-09-09d1t01.skt
+322cf23064a8f62cb0ce90df9a8f5d17  bd1990-09-09d1t02.shn
+a054b9f9eb02d7f4e3c41096b64a9da2  bd1990-09-09d1t02.skt
+47d758ca58e0059ba4da81c664eac099  bd1990-09-09d1t03.shn
+39b66e5a31647f0f080a7a1e629713ca  bd1990-09-09d1t03.skt
+2f331f68bd51e7e3f747a672a698c5b6  bd1990-09-09d1t04.shn
+cc69ca958e95276167ada1c2c7b07739  bd1990-09-09d1t04.skt
+523c6a0bc3c50e9c26ec128cfd5350b2  bd1990-09-09d1t05.shn
+a5ed914d36c7778b6c8dc94b88669df0  bd1990-09-09d1t05.skt
+b2752c2ef143c9513072a5e5d648717c  bd1990-09-09d1t06.shn
+a07a20be1399554e5c8db201c1e7dbce  bd1990-09-09d1t06.skt
+f1881ca1794b8cd03cdf47d72e1c5ca1  bd1990-09-09d1t07.shn
+661c82c567998e3582c3dd9f83e5cfbf  bd1990-09-09d1t07.skt
+674e15c043905df4826505af0ce0a22e  bd1990-09-09d1t08.shn
+97e0be0634469dcd179601cf1af073f1  bd1990-09-09d1t08.skt
+850d62233f0d083101d3dd33fea061dd  bd1990-09-09d1t09.shn
+8783ff65818c4375e4eb66590842678a  bd1990-09-09d1t09.skt
+7d8900e500815cfe56139ffedf2dc4a4  bd1990-09-09d2t01.shn
+e9d615ca3d2f360fdee6109dc912d940  bd1990-09-09d2t01.skt
+0300177baa211655f7f2b19866778eb1  bd1990-09-09d2t02.shn
+3ffb7660fd93362ac132a7b60f7e1d23  bd1990-09-09d2t02.skt
+7bf546ec8fabeb5ca79b078ac9bd662c  bd1990-09-09d2t03.shn
+1b48d08cdc519e05f1c376cc2e48dd08  bd1990-09-09d2t03.skt
+70b44101ab51b1124ae09194268fface  bd1990-09-09d2t04.shn
+91d8f05d5c63bb550fbf91f8efe5b1f4  bd1990-09-09d2t04.skt
+fdc443832022500a408fed7218e2c8d0  bd1990-09-09d2t05.shn
+a6061fff064290ec09a1f22bce8b23af  bd1990-09-09d2t05.skt
+9f681e2f4864ca2efcf8ee7149552e82  bd1990-09-09d2t06.shn
+cf69938a508a7fb73a77204f3349464b  bd1990-09-09d2t06.skt
+f1eb66d44f11bd682e05cc2f85713938  bd1990-09-09d2t07.shn
+eca40dd5175d3cd9a6b947b212749534  bd1990-09-09d2t07.skt
+d39671833108d7b09279f557cf23145d  bd1990-09-09d2t08.shn
+5e89b0906b72edc362dfc2104802a696  bd1990-09-09d2t08.skt
+4698a377f989fc7cd80408d2a0a7aa1b  bd1990-09-09d2t09.shn
+8935926a8cc16d3be9cab7916eccb56f  bd1990-09-09d2t09.skt
+8c9510bceedb16697d44d1b519d18470  poster1990-09-09a.jpg
+8aee3a0a92ddd2c76d2671c32e703da8  poster1990-09-09b.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-09-09.flacf 
+=================== 
+=================== 
+=================== 
+a2d0a060c5da930c20dc12b8c54c4e83  [shntool]  bd1990-09-09d1t01.wav
+2c837ceb3598f0dea77b39187605c310  [shntool]  bd1990-09-09d1t02.wav
+aba9b97041f147e4df1a4faadfc48d85  [shntool]  bd1990-09-09d1t03.wav
+14743cfdaa8554669cc4a97793df2171  [shntool]  bd1990-09-09d1t04.wav
+5382360a1e3b4fe57e46bf4ae5eb5b66  [shntool]  bd1990-09-09d1t05.wav
+91161d899e76b3bccb953056cbeb1796  [shntool]  bd1990-09-09d1t06.wav
+4898747e6e323acc8f058878314ee5b8  [shntool]  bd1990-09-09d1t07.wav
+c144d970ea8e164dd6319788f40642f1  [shntool]  bd1990-09-09d1t08.wav
+5959259ee1ec0c866c11af57a92ecfd9  [shntool]  bd1990-09-09d1t09.wav
+73896aac4488ddd4689a045d6bc57f05  [shntool]  bd1990-09-09d2t01.wav
+8e691390f85ba8d466dde76857b9f1d6  [shntool]  bd1990-09-09d2t02.wav
+bd90bae81ce0f782253d5e5b255fba84  [shntool]  bd1990-09-09d2t03.wav
+9f730f4b21828a69c1988eb8d45a434a  [shntool]  bd1990-09-09d2t04.wav
+7065e22e869fa60acc12e39f1b46b19a  [shntool]  bd1990-09-09d2t05.wav
+c1404d0b9c9f4213a1837e4d8e4ec212  [shntool]  bd1990-09-09d2t06.wav
+463ff39f1fa13bfe88e37feb93be1c9c  [shntool]  bd1990-09-09d2t07.wav
+54b5e8d9741520267e89c007aef7b543  [shntool]  bd1990-09-09d2t08.wav
+f36963a5daba04465ab7eefe3bcaee1e  [shntool]  bd1990-09-09d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-09-09.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.08       66168860 B   ---   --   ---xx    shn  0.6644  bd1990-09-09d1t01.shn
+     4:16.61       45301916 B   ---   --   ---xx    shn  0.6694  bd1990-09-09d1t02.shn
+     5:05.45       53907884 B   ---   --   ---xx    shn  0.6854  bd1990-09-09d1t03.shn
+     4:15.69       45144332 B   ---   --   ---xx    shn  0.7247  bd1990-09-09d1t04.shn
+     4:23.20       46440284 B   ---   --   ---xx    shn  0.7120  bd1990-09-09d1t05.shn
+     5:03.51       53569196 B   ---   --   ---xx    shn  0.7013  bd1990-09-09d1t06.shn
+     5:29.63       58183820 B   ---   --   ---xx    shn  0.6671  bd1990-09-09d1t07.shn
+     4:39.20       49262684 B   ---   --   ---xx    shn  0.6690  bd1990-09-09d1t08.shn
+     6:23.36       67645916 B   ---   --   ---xx    shn  0.6470  bd1990-09-09d1t09.shn
+     4:45.44       50377532 B   ---   --   ---xx    shn  0.6228  bd1990-09-09d2t01.shn
+     3:39.57       38765708 B   ---   --   ---xx    shn  0.6611  bd1990-09-09d2t02.shn
+     5:49.55       61693004 B   ---   --   ---xx    shn  0.6271  bd1990-09-09d2t03.shn
+     3:10.40       33610124 B   ---   --   ---xx    shn  0.6857  bd1990-09-09d2t04.shn
+     4:23.51       46513196 B   ---   --   ---xx    shn  0.6783  bd1990-09-09d2t05.shn
+     3:34.15       37784924 B   ---   --   ---xx    shn  0.6564  bd1990-09-09d2t06.shn
+     6:22.26       67445996 B   ---   --   ---xx    shn  0.6729  bd1990-09-09d2t07.shn
+     4:54.73       52033340 B   ---   --   ---xx    shn  0.6159  bd1990-09-09d2t08.shn
+     4:47.69       50789132 B   ---   --   ---xx    shn  0.6384  bd1990-09-09d2t09.shn
+    87:21.53      924637848 B                            0.6652  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,126 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-06-28-ways-of-the-flesh.flacf 
+=================== 
+=================== 
+=================== 
+f7f4d135e1d3f4785eb8bbc60195fc80  artwork\w-47b.jpg
+a4793a20409ab749caf904e0c5241263  artwork\w-47cd.jpg
+3ff6ecd751c72667f1b38b722fd1ccdd  artwork\w-47cd2.jpg
+169b0450112cea87f889f23d530f8587  artwork\w-47f.jpg
+69120c8410c631c844ee82e1de091d13  artwork\w-47ib.jpg
+dc3284af8dc5d02e5f4b1bcc339029d9  artwork\w-47l.jpg
+beafd422464459f9e193eeba9d9d0a0b  bd-way of the flesh-d1\bd-way of the flesh-d1.md5
+8eee536f2820c6533914baba87b29feb  bd-way of the flesh-d1\Track01.flac
+bfe706865c05be7f41239419274f9eab  bd-way of the flesh-d1\Track02.flac
+ea722b1aa06d539ae0b0c2cb73fa9f06  bd-way of the flesh-d1\Track03.flac
+aa40ba629c1aad426b0cf337e52110fc  bd-way of the flesh-d1\Track04.flac
+c68391de1638f57a106c199321277904  bd-way of the flesh-d1\Track05.flac
+f7724c35f74d2d8da3738c9ce0f66c42  bd-way of the flesh-d1\Track06.flac
+afdca1536c5ecd7b6c8c1bfd1a9745fe  bd-way of the flesh-d1\Track07.flac
+6196462ec39581637c6776f0fbebde13  bd-way of the flesh-d1\Track08.flac
+3c4b3cf311f67b72be0668fecfeee93e  bd-way of the flesh-d1\Track09.flac
+5ba63275954f7a320fdc0ce08949889f  bd-way of the flesh-d1\Track10.flac
+39a932011585abb2f7e888c322362a9c  bd-way of the flesh-d1\Track11.flac
+7b59cdb87ac9c1bbf58a59bf27d60c13  bd-way of the flesh-d1\Track12.flac
+a11f9a079d61e7d31192d1721f8400bf  bd-way of the flesh-d1\Track13.flac
+0c07607ba577abfc8d0a1d5d16c75219  bd-way of the flesh-d2\bd-way of the flesh-d2.md5
+35cb44d0b0fee3a53bd7b2cc875e534f  bd-way of the flesh-d2\Track01.flac
+88c573a3781db7dc247bb5ccddc080d6  bd-way of the flesh-d2\Track02.flac
+6e157249c435d2771f027591ca59b028  bd-way of the flesh-d2\Track03.flac
+15a918b3f0037e00925d4fc81284a9b3  bd-way of the flesh-d2\Track04.flac
+b2c68878b84cc28b89118554ec714959  bd-way of the flesh-d2\Track05.flac
+0b1b844926e20ab11ae37e419b18116f  bd-way of the flesh-d2\Track06.flac
+22afff0cccd038442f0dd30f0e9188ab  bd-way of the flesh-d2\Track07.flac
+29b4a894e223cdaaa84c7ae6ef2bde53  bd-way of the flesh-d2\Track08.flac
+402e42a13c2a3c3a8218b6d9faca6a4e  bd-way of the flesh-d2\Track09.flac
+e67f0c9d696738a203dc8a8931539f8a  bd-way of the flesh-d2\Track10.flac
+cd920cba9b2453725da5be36be732515  bd-way of the flesh-d2\Track11.flac
+9ff7a6a8f942a6551823e40ed23dbe7e  bd-way of the flesh-d2\Track12.flac
+4cc5b2b8386014d7eb04cee947c944aa  bd-ways of the flesh.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-06-28-ways-of-the-flesh.flacf\bd-way of the flesh-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:75c0bfc3e241cfff05bca6b0077a70f0
+Track02.flac:608790e0fb669b9e4f63f967a9c569bc
+Track03.flac:fd3e0606ed85a8df52ad5389d35a1b1b
+Track04.flac:cdc6c1d345db43d8a8dfb55d4cf082a7
+Track05.flac:62d906e90e199aedd1699a521ed3cf61
+Track06.flac:233f1330bde6a21d32bbac4b5723e00c
+Track07.flac:4d794b14ceaa0bce9e2c550ef39ecda6
+Track08.flac:f4bfe8c8b57a2b4a3a4d71b7c489f1df
+Track09.flac:5c33d124b656a50c2f6dfd8789475d51
+Track10.flac:b2eefc6688022424f0b7514ab45da87d
+Track11.flac:67d266f0142c28eeb4e967e942fe7d39
+Track12.flac:8a88cd1c3bd894bb89ae3c18e535789c
+Track13.flac:7cdaca4fe2552caee3a55846a5a51e62
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-06-28-ways-of-the-flesh.flacf\bd-way of the flesh-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:9da1eb91a80a9075c9ebd6bcce3a9fff
+Track02.flac:c21910dd2fd59a5e223119213a0db8c0
+Track03.flac:b0d886398f7d12688ed1f97241d8ba2f
+Track04.flac:5416aac45ac1cedb42115f8f4be07c48
+Track05.flac:a7127ed45a1f7ac45dcce7f9c52c8baf
+Track06.flac:fcb41882e028e79cb799c6d86579e1fb
+Track07.flac:fb3189667e47e67cf993544980952597
+Track08.flac:12504c2276c7dea16ec4bb5114066e40
+Track09.flac:109da53c2451f04949f516887707b6e8
+Track10.flac:57b81faa91c4ab6044d1222493b0b4c9
+Track11.flac:e69b729abd86602ece6cffa7f2a34f09
+Track12.flac:1094466909d219acb369c5c92bcb4cf6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-06-28-ways-of-the-flesh.flacf\bd-way of the flesh-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.50       53037644 B   ---   --   ---xx   flac  0.6752  Track01.flac
+     4:53.35       51767564 B   ---   --   ---xx   flac  0.6439  Track02.flac
+     6:05.39       64477772 B   ---   --   ---xx   flac  0.6761  Track03.flac
+     3:46.00       39866444 B   ---   --   ---xx   flac  0.6161  Track04.flac
+     4:33.57       48291308 B   ---   --   ---xx   flac  0.6527  Track05.flac
+     4:07.05       43582604 B   ---   --   ---xx   flac  0.6746  Track06.flac
+     4:58.38       52656620 B   ---   --   ---xx   flac  0.6483  Track07.flac
+     5:36.07       59286908 B   ---   --   ---xx   flac  0.6597  Track08.flac
+     3:28.12       36719468 B   ---   --   ---xx   flac  0.6405  Track09.flac
+     4:48.64       50953772 B   ---   --   ---xx   flac  0.6286  Track10.flac
+     5:07.21       54204236 B   ---   --   ---xx   flac  0.6580  Track11.flac
+     4:11.72       44445788 B   ---   --   ---xx   flac  0.6164  Track12.flac
+     3:52.42       41023628 B   ---   --   ---xx   flac  0.6198  Track13.flac
+    60:29.67      640313756 B                            0.6489  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-06-28-ways-of-the-flesh.flacf\bd-way of the flesh-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:09.35       33421964 B   ---   --   ---xx   flac  0.6535  Track01.flac
+     3:16.52       34696748 B   ---   --   ---xx   flac  0.6417  Track02.flac
+     5:34.03       58924700 B   ---   --   ---xx   flac  0.6536  Track03.flac
+     4:46.50       50568044 B   ---   --   ---xx   flac  0.6668  Track04.flac
+     3:35.18       37968380 B   ---   --   ---xx   flac  0.6334  Track05.flac
+     4:24.31       46642556 B   ---   --   ---xx   flac  0.6595  Track06.flac
+     4:12.73       44624540 B   ---   --   ---xx   flac  0.6251  Track07.flac
+     4:38.71       49206236 B   ---   --   ---xx   flac  0.6685  Track08.flac
+     7:57.34       84222812 B   ---   --   ---xx   flac  0.6457  Track09.flac
+     6:29.69       68781932 B   ---   --   ---xx   flac  0.6577  Track10.flac
+     5:34.46       59025836 B   ---   --   ---xx   flac  0.6900  Track11.flac
+     5:30.37       58299068 B   ---   --   ---xx   flac  0.6555  Track12.flac
+    59:10.69      626382816 B                            0.6554  (12 files)
+=================== 
+=================== 
+=================== 

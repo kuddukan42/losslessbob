@@ -1,0 +1,92 @@
+===================
+===================
+===================
+=== md5 for: bd74-01-10-jtt.flacf
+===================
+===================
+===================
+1720030a1cf52dd03f65a70214c5f242 *BOB DYLAN - Toronto January 10th 1974_Info.txt
+384d2cff1c5b759f8257c298c0f4e7a7 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 01.flac
+ce50ab74f60e032a5a5a6781e96bfce9 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 02.flac
+cd20ad4d6f3ffde5c83bc416364e40e0 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 03.flac
+9fd062bc3226507233ccb0a0d80f62d2 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 04.flac
+1f017bab2965f82b50c329a37eec7751 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 05.flac
+5b71eac399c887fdfea70b7973fb9921 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 06.flac
+66d07e2e72bfa1faa464d47edff3ce19 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 07.flac
+242b65c758b59cf63b2932132a37f528 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 08.flac
+2707591668c6b77b666e002f1190d613 *Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 09.flac
+7e4c77aeb1d639979bf27faa8426c50e *Disc One\Disc One.ffp
+b6e7a957e5987288ad04bca852da6f5f *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 01.flac
+f0ccd1a5e690dbd20186d47798a53734 *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 02.flac
+83afa19284325dd124dca0eb31f4b82f *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 03.flac
+bf29f6d8fac536bfc60cead8c29ec629 *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 04.flac
+450cf0b9fd0964a30ab85938885170d4 *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 05.flac
+1bc3ced099e2e0b4dd35bb2979752020 *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 06.flac
+c0205b212572aa74e40b4d392acf97d5 *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 07.flac
+9bfc5736ac4b52796c9298a641620488 *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 08.flac
+1f131411d67d3d16202fb0d668ed5ebe *Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 09.flac
+67ba098b3e1597208fcc6ef66362be5e *Disc Two\Disc Two.ffp
+===================
+===================
+===================
+=== ffp for: bd74-01-10-jtt.flacf
+===================
+===================
+===================
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 01.flac:4723f630e3be91f87836517c15d0b6aa
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 02.flac:c48260e49e639e06e9acae9ecc00f189
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 03.flac:a1938e1f201e8c60e4628cab2fb78c27
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 04.flac:566657e28c55080b0e787fe2f7a570fb
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 05.flac:e29645fbf980d9ebb821eb4d3afefa64
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 06.flac:d40c6d407cf13765cd4044fc0a5c5260
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 07.flac:af37f82c928cdec6d099d5af56f6f0bc
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 08.flac:7474baa74fc2ca58cbb3a5613bc96317
+Disc One\BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 09.flac:368671d29a0c24aead9ca8883c6ee755
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 01.flac:7a77101ddf38dfc165866b7f3bba7284
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 02.flac:0f86258ed4760b7d744f552e6bb371af
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 03.flac:c215a4439fdd8b89d63d61636babda8e
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 04.flac:5d0e11789650b4d2dd26779c30652efd
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 05.flac:2343d4dabc5e1530eb2175522d0afff9
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 06.flac:0324cef928e954f2a6b043367e873970
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 07.flac:0e8dd37988758573c11d49f8df22af78
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 08.flac:9de44666aaad4bab2f34cce814c31d08
+Disc Two\BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 09.flac:a7c3cf9097422c91f466fb8f28c1bee3
+===================
+===================
+===================
+=== shntool len for: bd74-01-10-jtt.flacf\Disc One
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:27.32       47174108 B   ---   --   ---xx   flac  0.5961  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 01.flac
+     5:48.37       61474268 B   ---   --   ---xx   flac  0.6021  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 02.flac
+     3:22.15       35668124 B   ---   --   ---xx   flac  0.5956  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 03.flac
+     3:42.12       39189068 B   ---   --   ---xx   flac  0.6006  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 04.flac
+     5:40.59       60114812 B   ---   --   ---xx   flac  0.6037  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 05.flac
+     7:03.19       74661932 B   ---   --   ---xx   flac  0.5967  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 06.flac
+     2:39.63       28195820 B   ---   --   ---xx   flac  0.6046  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 07.flac
+     4:32.10       48004364 B   ---   --   ---xx   flac  0.6026  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 08.flac
+     4:08.15       43782524 B   ---   --   ---xx   flac  0.5966  BOB DYLAN - Toronto January 10th 1974_Disc 01 Track 09.flac
+    41:24.37      438265020 B                            0.5998  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd74-01-10-jtt.flacf\Disc Two
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:52.35       41007164 B   ---   --   ---xx   flac  0.6075  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 01.flac
+     4:33.54       48284252 B   ---   --   ---xx   flac  0.6270  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 02.flac
+     5:48.37       61474268 B   ---   --   ---xx   flac  0.6297  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 03.flac
+     3:53.16       41138876 B   ---   --   ---xx   flac  0.6330  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 04.flac
+     6:00.00       63504044 B   ---   --   ---xx   flac  0.6313  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 05.flac
+     5:46.06       61048556 B   ---   --   ---xx   flac  0.6325  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 06.flac
+     5:04.27       53689148 B   ---   --   ---xx   flac  0.6329  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 07.flac
+     6:24.18       67779980 B   ---   --   ---xx   flac  0.6353  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 08.flac
+     4:15.12       45010268 B   ---   --   ---xx   flac  0.6289  BOB DYLAN - Toronto January 10th 1974_Disc 02 Track 09.flac
+    45:37.55      482936556 B                            0.6295  (9 files)
+===================
+===================
+===================

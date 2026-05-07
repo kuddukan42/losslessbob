@@ -1,0 +1,39 @@
+Bob Dylan
+Cricket Arena
+Charlotte, NC
+Sunday February 10, 2002
+2/10/02
+2CDR (75min+69min), excellent sound, small pop caused by cuts at d2t4 5:35-24, d2t7 0:24-08, 4:04-04, and some more pops which may be claps or similar cuts
+Taper:  George Wang <gewwang@yahoo.com>
+Source:  Neumann ak40s > Neumann lc-3 active cables > Neumann km100s > 
+  Audio Magic X-Stream XLRs > Sonosax sx-m2 > Sony D100
+Location: approximately 50 ft. from center stage
+DAT > SHN: Archive Python DDS/DAT2WAV > .wav > CD-WAV/mkwACT > .shn
+  (Direct DAT extraction, no soundcard)
+Disc One:
+01: Intro
+02: Hallelujah, I'm Ready To Go
+03: Mr. Tambourine Man
+04: It's Alright, Ma
+05: Searching For A Soldier's Grave
+06: Tweedle Dee & Tweedle Dum
+07: Positively 4th Street
+08: Cry A While
+09: High Water 
+10: Boots Of Spanish Leather
+11: Visions Of Johanna
+12: Don't Think Twice, It's All Right
+Total: 74:43.855
+Disc Two:
+01: Summer Days
+02: Mississippi
+03: The Wicked Messenger
+04: Rainy Day Women #12 & 35
+05: Country Pie
+06: Like A Rolling Stone
+07: Knockin' On Heaven's Door
+08: Honest With Me
+09: Blowin' In The Wind
+10: All Along The Watchtower3
+Total:  68:23.200
+compiled by George Wang on 02-16-2002

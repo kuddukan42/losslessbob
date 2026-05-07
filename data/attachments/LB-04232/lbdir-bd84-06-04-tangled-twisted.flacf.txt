@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-04-tangled-twisted.flacf 
+=================== 
+=================== 
+=================== 
+4a5a4e74aef46b13ae773deaa7e76303  BD-tangled - 101.flac
+b46edd334c1dd1a784f5e7e73e5cf5f9  BD-tangled - 102.flac
+69b526158eb20d21d02a8c413144e1bf  BD-tangled - 103.flac
+4247bef70d7c6b7d13b94cf84fc249bc  BD-tangled - 104.flac
+003a49b353ec809dc191014d931edd74  BD-tangled - 105.flac
+5ded553515e150619ef0fe6d18d729dc  BD-tangled - 106.flac
+df887a18969be4de7611fa928db27c65  BD-tangled - 107.flac
+b9075e110cd40050e55811f4dec9a52a  BD-tangled - 108.flac
+e78fbf1ac7c4f7305ef0654c167f15c6  BD-tangled - 109.flac
+7ca713e18bf2d856179f0af260757099  BD-tangled - 110.flac
+a8fe3a1c0dc06c40b73759ad42d0d083  BD-tangled - 111.flac
+3204039280518ff5d6f7d6aef5c7b573  BD-tangled - 112.flac
+9e60575c987f0e7e9cf06c4618216f6d  BD-tangled - 113.flac
+3e465ab611c3a8e902ea3dab2fd17dcf  BD-tangled - 201.flac
+6bce3e2291465ad569a256c8fcdafa49  BD-tangled - 202.flac
+6b9aaa13ca6317d6df9ba6868f0db62c  BD-tangled - 203.flac
+a2821d8cbb8ebcc24e06a7f89eec41c7  BD-tangled - 204.flac
+07fbdac9b06cb73f8f6661665053443b  BD-tangled - 205.flac
+06659d677db48ba789d2ce5e90c4d988  BD-tangled - 206.flac
+763a7606dd4a2a536c5f24a140c93943  BD-tangled - 207.flac
+10724daf7cf842400468b7c76e46cbdf  BD-tangled 1984.md5
+113009435cd9ca139b0a5af7bfbe19eb  bd84-06-04-tangled-twisted-LB-4232.txt
+5b213a8a88e02cbd09b685d6f0e9a99c  TangledBack.jpg
+0c8f38ef6b3ddd478b62c4c6c7018bae  TangledFront.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-04-tangled-twisted.flacf 
+=================== 
+=================== 
+=================== 
+BD-tangled - 101.flac:acb21a87ba632586a4dec1c91dcbf654
+BD-tangled - 102.flac:44d989af09a1f89302c9fb65835bf560
+BD-tangled - 103.flac:e217291e2bf5eb016adb75e49780eecf
+BD-tangled - 104.flac:ba5dc373212db90a25c0a83ab63b2432
+BD-tangled - 105.flac:c6ef188260bb8ff5085b0ad86b752e7b
+BD-tangled - 106.flac:80894ae5b1f62e1e5e1c6c0441c7513b
+BD-tangled - 107.flac:6d0be346df9bade90db592481085f8f6
+BD-tangled - 108.flac:66f4511f9857c7091015d20091800a23
+BD-tangled - 109.flac:22c7dd9f1874982fd3ffb5953db09805
+BD-tangled - 110.flac:af400618d17a248ff6ae5f57b9d8941b
+BD-tangled - 111.flac:3aec178848fbb01c0b7fbd122fa87c54
+BD-tangled - 112.flac:a06ac6396fdcdd164d9f96302331c734
+BD-tangled - 113.flac:42d816c85553d4b63934da7c8e8f7bbd
+BD-tangled - 201.flac:97df522c517ccbcd47fcc2a7b20e3733
+BD-tangled - 202.flac:3820789a982d244a3d3bd29644c9eed7
+BD-tangled - 203.flac:3e2ca2e9cad8a9360eb45b7b9237ba6b
+BD-tangled - 204.flac:4ab28352a3c78beab67ad0345df73749
+BD-tangled - 205.flac:926ac28f4c3ee8083d037cfa17f7b88e
+BD-tangled - 206.flac:2284dad1e517249926bed712e4f35260
+BD-tangled - 207.flac:132d1bd56067678390b96076ecbeeb4f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-04-tangled-twisted.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:35.73       59265740 B   ---   --   ---xx   flac  0.6343  BD-tangled - 101.flac
+     5:55.52       62744348 B   ---   --   ---xx   flac  0.6339  BD-tangled - 102.flac
+     4:15.00       44982044 B   ---   --   ---xx   flac  0.6261  BD-tangled - 103.flac
+     6:24.04       67747052 B   ---   --   ---xx   flac  0.6159  BD-tangled - 104.flac
+     4:41.11       49594316 B   ---   --   ---xx   flac  0.6312  BD-tangled - 105.flac
+     6:33.30       69395804 B   ---   --   ---xx   flac  0.6157  BD-tangled - 106.flac
+     3:33.24       37629692 B   ---   --   ---xx   flac  0.6272  BD-tangled - 107.flac
+     7:03.51       74737196 B   ---   --   ---xx   flac  0.6101  BD-tangled - 108.flac
+     6:26.07       68106908 B   ---   --   ---xx   flac  0.6056  BD-tangled - 109.flac
+     6:42.62       71058668 B   ---   --   ---xx   flac  0.6105  BD-tangled - 110.flac
+     5:18.50       56212844 B   ---   --   ---xx   flac  0.6444  BD-tangled - 111.flac
+     5:58.64       63301772 B   ---   --   ---xx   flac  0.6368  BD-tangled - 112.flac
+     4:18.16       45548876 B   ---   --   ---xx   flac  0.6458  BD-tangled - 113.flac
+     5:06.19       54023132 B   ---   --   ---xx   flac  0.6089  BD-tangled - 201.flac
+     6:31.11       68998316 B   ---   --   ---xx   flac  0.5932  BD-tangled - 202.flac
+    10:40.41      112992476 B   ---   --   ---xx   flac  0.6063  BD-tangled - 203.flac
+     4:57.09       52412012 B   ---   --   ---xx   flac  0.5434  BD-tangled - 204.flac
+     4:52.36       51593516 B   ---   --   ---xx   flac  0.5909  BD-tangled - 205.flac
+     4:23.38       46482620 B   ---   --   ---xx   flac  0.6391  BD-tangled - 206.flac
+     4:55.25       52096844 B   ---   --   ---xx   flac  0.6138  BD-tangled - 207.flac
+   114:13.23     1208924176 B                            0.6155  (20 files)
+=================== 
+=================== 
+=================== 

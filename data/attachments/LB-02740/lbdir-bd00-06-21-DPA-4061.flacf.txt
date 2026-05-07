@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-21-DPA-4061.flacf 
+=================== 
+=================== 
+=================== 
+240239a5e2eca183366e64f73358d18c  bd00-06-21-DPA-4061-LB-2740.txt
+67e32ba02acdc5a92f733ce49af4ed9f  dylan marysville 062100 disc101.flac
+4b8ca6bfbc45cc5a70ee60a280609a10  dylan marysville 062100 disc102.flac
+6598f110328a0d8ba32c9923b9d6b627  dylan marysville 062100 disc103.flac
+defe2547f3f4929d5356d53bb1816b10  dylan marysville 062100 disc104.flac
+07911a9366a7f58d40ec8e864f988476  dylan marysville 062100 disc105.flac
+d85a8f20ded3a62eccccf8d8112972b0  dylan marysville 062100 disc106.flac
+eb28c755007a18b3422baf618577270f  dylan marysville 062100 disc107.flac
+9036214cae52161edcc731febb54037d  dylan marysville 062100 disc108.flac
+b882245ee675749dae5d6fb629d6a1a9  dylan marysville 062100 disc109.flac
+674eedcc91a4e525b832a8712614a014  dylan marysville 062100 disc110.flac
+b844c76adf76c81c9f425e51b68d01a6  dylan marysville 062100 disc111.flac
+c8444f759114fbe7560702d3564ac292  dylan marysville 062100 disc112.flac
+cfa8754523337d85d1eb8ee40285514f  dylan marysville 062100 disc201.flac
+ae7b48e9f3c206410e9d57a277a9c73b  dylan marysville 062100 disc202.flac
+7ca6e8e965daf0bee15e3a1ac0592e89  dylan marysville 062100 disc203.flac
+b5c6e758e8c7ca88d26065f13f89a8cb  dylan marysville 062100 disc204.flac
+ad4a781831c88f70ddfa12a98b545f14  dylan marysville 062100.md5
+b41eedd2dbdca9b6238dc43e5f4f2b85  dylanmarysville062100.txt
+c9b918bbc9173c03529f2a74720261f6  marysville062100pic.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-21-DPA-4061.flacf 
+=================== 
+=================== 
+=================== 
+dylan marysville 062100 disc101.flac:741de50f1a2e828c39d9e6ed66f10f6c
+dylan marysville 062100 disc102.flac:6a1467c79d8fe6a59281858ad7c114be
+dylan marysville 062100 disc103.flac:35f325130593527a8b6dc3ae5d69ede0
+dylan marysville 062100 disc104.flac:5c928cc8376cd32f80aefcf7c458b05b
+dylan marysville 062100 disc105.flac:ce4580df6fadac6ffaea4d74c2becdbe
+dylan marysville 062100 disc106.flac:9053084c77eee6c2606746c99fa7bb2e
+dylan marysville 062100 disc107.flac:82872bc75273d5c8a4c9f941c0d4642f
+dylan marysville 062100 disc108.flac:0abf5f0b94e322ba893482fa17eb8755
+dylan marysville 062100 disc109.flac:f1b46b1aa710b15cea6418a17f242b3b
+dylan marysville 062100 disc110.flac:78e72205021009eee8cddc2cbd5b8c6d
+dylan marysville 062100 disc111.flac:d129cf0ce35ec89f1431d7836dc209ff
+dylan marysville 062100 disc112.flac:af8f1d21fa59d30fd14ba05e815e32dd
+dylan marysville 062100 disc201.flac:2c68508832c9ddfd58cf8c00c93ac6db
+dylan marysville 062100 disc202.flac:efce84719e84b661f6877b772574c2f4
+dylan marysville 062100 disc203.flac:2fafc620b4f9e747c5378f9d3e46c43a
+dylan marysville 062100 disc204.flac:b0fe1fd6bd4da218df2470fd970e9ee6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-21-DPA-4061.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.64       30314972 B   ---   --   ---xx   flac  0.5775  dylan marysville 062100 disc101.flac
+     3:20.34       35360012 B   ---   --   ---xx   flac  0.5509  dylan marysville 062100 disc102.flac
+     4:16.57       45292508 B   ---   --   ---xx   flac  0.5381  dylan marysville 062100 disc103.flac
+     4:44.44       50201132 B   ---   --   ---xx   flac  0.5535  dylan marysville 062100 disc104.flac
+     7:42.29       81565052 B   ---   --   ---xx   flac  0.6121  dylan marysville 062100 disc105.flac
+     5:44.34       60761612 B   ---   --   ---xx   flac  0.5262  dylan marysville 062100 disc106.flac
+     2:47.56       29590556 B   ---   --   ---xx   flac  0.5611  dylan marysville 062100 disc107.flac
+     5:16.46       55850636 B   ---   --   ---xx   flac  0.5471  dylan marysville 062100 disc108.flac
+     7:36.36       80523116 B   ---   --   ---xx   flac  0.5908  dylan marysville 062100 disc109.flac
+     7:52.50       83378444 B   ---   --   ---xx   flac  0.5063  dylan marysville 062100 disc110.flac
+     4:09.26       43984796 B   ---   --   ---xx   flac  0.6205  dylan marysville 062100 disc111.flac
+     6:34.55       69631004 B   ---   --   ---xx   flac  0.6071  dylan marysville 062100 disc112.flac
+     6:34.17       69541628 B   ---   --   ---xx   flac  0.5356  dylan marysville 062100 disc201.flac
+     6:57.20       73605884 B   ---   --   ---xx   flac  0.5779  dylan marysville 062100 disc202.flac
+     7:56.56       84098156 B   ---   --   ---xx   flac  0.5364  dylan marysville 062100 disc203.flac
+     5:52.55       62222204 B   ---   --   ---xx   flac  0.6086  dylan marysville 062100 disc204.flac
+    90:19.04      955921712 B                            0.5652  (16 files)
+=================== 
+=================== 
+=================== 

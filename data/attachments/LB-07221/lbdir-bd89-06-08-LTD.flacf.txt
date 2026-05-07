@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-08-LTD.flacf 
+=================== 
+=================== 
+=================== 
+07971bd4d44149554a37f138aa917be1  1989-06-08 London.md5
+2bd7723f2466588b4288e0875feddd1a  London 1989-01.flac
+f269ea6a7818fd2e847d1be2a73ee7e6  London 1989-02.flac
+21803d76d50d9561165f66900dfc5d75  London 1989-03.flac
+484831063fd30c5984ec33c12e0d1f34  London 1989-04.flac
+09ab65b7c25e06225d32bc10ad45c3e7  London 1989-05.flac
+a56f53dd5e7370d0023e03ec691c795e  London 1989-06.flac
+d9b68994884025411f3939626b1993ee  London 1989-07.flac
+b559693272900861d9601b00249a8243  London 1989-08.flac
+18d821815198274c9bfd573ded8b9cb4  London 1989-09.flac
+646a574e24ca1f026804e40d259fc212  London 1989-10.flac
+695dbc62bccc11a7705d3b0468254388  London 1989-11.flac
+4d72ec2477c123f22193af584cd107bb  London 1989-12.flac
+9a01198d194bd89097c280fbce17de6c  London 1989-13.flac
+16cdd3972b891dfc8d093a6aa2b37fbd  London 1989-14.flac
+a7159439c141ecece3a7803a3671df03  London 1989-15.flac
+370467c3f854dcf18f5c7c7dd52895b6  London 1989-16.flac
+6d10772889705a1f2e4edf91c1130201  London-1989-06-08-.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-08-LTD.flacf 
+=================== 
+=================== 
+=================== 
+London 1989-01.flac:8fab2b7afbd69113a649b2b6f7593136
+London 1989-02.flac:cb5ffd3deec1c6f95d75ccbf88bb5460
+London 1989-03.flac:c9ecf14b0b0868c34733c69b599c6e55
+London 1989-04.flac:9ad254092eae43c77474c9ec6bb6e9b6
+London 1989-05.flac:de7b616841d024b82df8845fc8e28000
+London 1989-06.flac:1024dd758e5caea4967eb6f7d11e4b8c
+London 1989-07.flac:9c70da9cf3c9b7474e8f58875b4a9775
+London 1989-08.flac:52057bb75354197e0af74522abd2d7d3
+London 1989-09.flac:80c4294efb58ec2f02f2c04aadd1ec14
+London 1989-10.flac:be632aac324a9e151a71c05f07290b89
+London 1989-11.flac:c3ef40d524dc018b580c060e04ae52d7
+London 1989-12.flac:0b44100f41544711a26d8718c97ede09
+London 1989-13.flac:d5fe8c524a9b26a265e9330033e7a125
+London 1989-14.flac:09a605986138a422e2d5352ac525e2dc
+London 1989-15.flac:f8d09b83dfb86c9b86adbe103b3ad5b9
+London 1989-16.flac:60370f703cc5292f3bb5a6c4351e2ff8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-08-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.980      51644196 B   cxx   --   ---xx   flac  0.5586  London 1989-01.flac
+     3:39.15       38666284 B   -b-   --   ---xx   flac  0.5589  London 1989-02.flac
+     5:18.02       56098860 B   -b-   --   ---xx   flac  0.5579  London 1989-03.flac
+     5:56.49       62914600 B   -b-   --   ---xx   flac  0.5640  London 1989-04.flac
+     3:54.04       41287724 B   -b-   --   ---xx   flac  0.5940  London 1989-05.flac
+     6:35.22       69730344 B   -b-   --   ---xx   flac  0.5959  London 1989-06.flac
+     4:58.53       52690988 B   -b-   --   ---xx   flac  0.5345  London 1989-07.flac
+     6:26.59       68229740 B   -b-   --   ---xx   flac  0.5876  London 1989-08.flac
+     5:52.68       62252520 B   -b-   --   ---xx   flac  0.5913  London 1989-09.flac
+     5:23.72       57147436 B   -b-   --   ---xx   flac  0.5856  London 1989-10.flac
+     4:02.17       42729512 B   -b-   --   ---xx   flac  0.6172  London 1989-11.flac
+     5:22.64       56950828 B   -b-   --   ---xx   flac  0.5931  London 1989-12.flac
+     6:58.25       73793580 B   -b-   --   ---xx   flac  0.6226  London 1989-13.flac
+     6:19.52       66977832 B   -b-   --   ---xx   flac  0.5202  London 1989-14.flac
+     5:08.27       54394924 B   -b-   --   ---xx   flac  0.6115  London 1989-15.flac
+     5:45.70       61023644 B   -b-   --   ---xx   flac  0.6133  London 1989-16.flac
+    86:11.974     916533012 B                            0.5821  (16 files)
+=================== 
+=================== 
+=================== 

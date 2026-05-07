@@ -1,0 +1,249 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-05-sbd-rehearsals.fraser.97489.shnf 
+=================== 
+=================== 
+=================== 
+c6393c6d1e735f563d0a39a1ebefdd98  gd1987-06-xx.97489.md5
+412778e7735714098c1bf10f4b4ed5f6  gd1987-06-xx.97489.txt
+84bafab6b482b79c89c852d912b678a0  gdbd_rehersal_d1t01.shn
+f5b66ecd6ddf545357899f54df3448ab  gdbd_rehersal_d1t02.shn
+1edade5d104f59e5bd9212e3799294c6  gdbd_rehersal_d1t03.shn
+fe7396864c28e2646c46dccdd0fe102e  gdbd_rehersal_d1t04.shn
+eb2a45d2f3992d204fb0eb32c61dc092  gdbd_rehersal_d1t05.shn
+61739db6b536535c1fe80a5fda9baced  gdbd_rehersal_d1t06.shn
+4338d591b3e468ccada5d0d66a8ba899  gdbd_rehersal_d2t01.shn
+49d44914c8192820cc3e22973831dab2  gdbd_rehersal_d2t02.shn
+753d1270a11a55adf24ee7ad6c60416c  gdbd_rehersal_d2t03.shn
+735e331541ae69f156f05f3db8c29aa9  gdbd_rehersal_d2t04.shn
+15e1a0d9c33f8861b3a73c1f10ce7a95  gdbd_rehersal_d2t05.shn
+9dff18e1ea7d25d5a0e55a305230f6c1  gdbd_rehersal_d2t06.shn
+119031d206e6a7b9736a78825080f8f0  gdbd_rehersal_d2t07.shn
+cda6033cb6be60fe0b4efbed2f41e742  gdbd_rehersal_d2t08.shn
+9e5bbd2206bab5744ebaf78885a3abe4  gdbd_rehersal_d2t09.shn
+481d590833316d19eedf0f677313788a  gdbd_rehersal_d2t10.shn
+a879c9decd0d694d735ff7c23eaec71f  gdbd_rehersal_d2t11.shn
+e309ea96dac0e9665dbc7f3095b667eb  gdbd_rehersal_d2t12.shn
+8902a1d266a1688e2119d78400d66778  gdbd_rehersal_d2t13.shn
+62aff5a8f6be3bbd4f533cab6052c7d7  gdbd_rehersal_d2t14.shn
+2600bfdb689a14fc21ca54531eb75734  gdbd_rehersal_d2t15.shn
+cab54f7315269a36fa4278cb4bdd42a7  gdbd_rehersal_d2t16.shn
+2e77e78996e1144fb4c86093c01a755c  gdbd_rehersal_d3t01.shn
+4f27eda1f5d0a109945f2d54b9fa2460  gdbd_rehersal_d3t02.shn
+aa11b42c50ea40a8585583ab40809b0a  gdbd_rehersal_d3t03.shn
+a578c2eb896791f0691b76ec79aaae1a  gdbd_rehersal_d3t04.shn
+7dad42aa54818e03548de6716d5f66ed  gdbd_rehersal_d3t05.shn
+0feda46cd4297da7fd88d7446d4799ca  gdbd_rehersal_d3t06.shn
+8b0721d41f523a393bdfbdac18d9996a  gdbd_rehersal_d3t07.shn
+f20a8aa7eccee2e36a7a89e37f394ed4  gdbd_rehersal_d3t08.shn
+5156a7c5adcc9019f2321932cbcb4de4  gdbd_rehersal_d3t09.shn
+257c15ad26138ea04ca476bc9a532346  gdbd_rehersal_d3t10.shn
+cbe0ac4888bd8c17d7a43eee9ac8a3b4  gdbd_rehersal_d3t11.shn
+275d6b80a3877085b5a79ac7cb710997  gdbd_rehersal_d3t12.shn
+a6c389af6e2620701ad57888272480c2  gdbd_rehersal_d3t13.shn
+ae0e6a1085f1a2a7990094237de9e01d  gdbd_rehersal_d3t14.shn
+0a70a8b4f26ece5bd63c0d41192e9f0e  gdbd_rehersal_d3t15.shn
+95baf204c1a8e69bf20af76fad03e077  gdbd_rehersal_d3t16.shn
+83f4d7141580e7fb1bb4963365fbe1ac  gdbd_rehersal_d3t17.shn
+63e3c45c77ca17ac5f70f5a98d18b88a  gdbd_rehersal_d4t01.shn
+f5dcf746464c75a886c7256e2da6c67a  gdbd_rehersal_d4t02.shn
+e327c2b93078b3cfede2c1cfde5ba1ab  gdbd_rehersal_d4t03.shn
+5f26f629194adb4b4ad975b7e8b0aa7d  gdbd_rehersal_d4t04.shn
+9282e272209c8f1ecb1662b5f01e8bc6  gdbd_rehersal_d4t05.shn
+f6562093393dcc95b8967b2f352b1224  gdbd_rehersal_d4t06.shn
+8dbd1d2908df033403a32eb1cd636c9c  gdbd_rehersal_d4t07.shn
+4f428ad419eb914bdab6c83988938c8c  gdbd_rehersal_d4t08.shn
+714eec59191fc2a9e8542374b9ee6e92  gdbd_rehersal_d4t09.shn
+d6765d19e30175b7ec82299f2e129356  gdbd_rehersal_d4t10.shn
+80be024f1aefd476de212b2975ecb683  gdbd_rehersal_d4t11.shn
+6b96db73eec97cf3b929a8f9cae5706d  gdbd_rehersal_d4t12.shn
+33fabf4e0ea29be5ce08345c165d29f6  gdbd_rehersal_d5t01.shn
+3748e7de74ff37fdb52d9ff2127fac61  gdbd_rehersal_d5t02.shn
+b6ccc0df684f2253f8bed441bf0aaa30  gdbd_rehersal_d5t03.shn
+975dec4eab1d50d22f42a1f316d266c0  gdbd_rehersal_d5t04.shn
+aa5a92958f8ea2ef2454b3eb233eddb0  gdbd_rehersal_d5t05.shn
+ac773f8b3bd8aad414b55bda7128a020  gdbd_rehersal_d5t06.shn
+8288282326d50f79e21832c5c7dbaaac  gdbd_rehersal_d5t07.shn
+2e035035047511771a1d29c36e347dc9  gdbd_rehersal_d5t08.shn
+8afb8f319dd3411e67a72755cf4ce23f  gdbd_rehersal_d5t09.shn
+48f7022831542cc8b4a805988c3cecf0  gdbd_rehersal_d5t10.shn
+a97b111c8dec6415f33e24c7c6c8c788  gdbd_rehersal_d5t11.shn
+78f5e3a7fb8cde0de68be95c3d6db198  gdbd_rehersal_d6t01.shn
+c791a924f735eee43984193f9141bfce  gdbd_rehersal_d6t02.shn
+acf33ced296701ae21211eba88e75519  gdbd_rehersal_d6t03.shn
+920849068c3134935859dadc489d9fed  gdbd_rehersal_d6t04.shn
+ce7a2d107333dcffdfdfeef2aa6eedc8  gdbd_rehersal_d6t05.shn
+dddecbbf10ff22065ebe06246af4627f  gdbd_rehersal_d6t06.shn
+68756a17222d9548a4aedc1702762ba3  gdbd_rehersal_d6t07.shn
+311dbabb95a99311412e320e7caf4e58  gdbd_rehersal_d6t08.shn
+e31da65172f41cb296ce533e6a787a91  gdbd_rehersal_d6t09.shn
+99d88665c6d1ddb1e6da2d101efc055c  gdbd_rehersal_d6t10.shn
+4680c9db29f49598b3fdee3711269b47  gdbd_rehersal_d6t11.shn
+ad50c5f753b5bdb3711d2fa59ec13ad3  gdbd_rehersal_d6t12.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-05-sbd-rehearsals.fraser.97489.shnf 
+=================== 
+=================== 
+=================== 
+a2a3d93c7a5e70daccb4c9084f1fc564  [shntool]  gdbd_rehersal_d1t01.wav
+c1ac883b6c39f326c320d0194fae1898  [shntool]  gdbd_rehersal_d1t02.wav
+6d48f46057f072898676a7dd2dbf9bfa  [shntool]  gdbd_rehersal_d1t03.wav
+d8a7aeca8b739e17cd4645819570ea0a  [shntool]  gdbd_rehersal_d1t04.wav
+a71e813b0a384c7b25b30c9aad77c54e  [shntool]  gdbd_rehersal_d1t05.wav
+b27f96911e0b8c583d365c8e756e9b8b  [shntool]  gdbd_rehersal_d1t06.wav
+b56ccb46076ccfbce989fa7eaeacb36f  [shntool]  gdbd_rehersal_d2t01.wav
+837be7b9387686c4ab88c16af9ef216a  [shntool]  gdbd_rehersal_d2t02.wav
+c6e6b1bb40fd073e2d939e743e9e67db  [shntool]  gdbd_rehersal_d2t03.wav
+6b197be807e88aea33f1ed2786320dbb  [shntool]  gdbd_rehersal_d2t04.wav
+9fe2b8101469118500fc0e549ee1f4b5  [shntool]  gdbd_rehersal_d2t05.wav
+936798b2c007082bcbcb44cf0bd56dca  [shntool]  gdbd_rehersal_d2t06.wav
+3b28650e4dee1b9b958f1e2c2c611d2d  [shntool]  gdbd_rehersal_d2t07.wav
+a99d2af100d9e8d467ef7611dfca2544  [shntool]  gdbd_rehersal_d2t08.wav
+c0e23672da0deadb696b2deb323eb88d  [shntool]  gdbd_rehersal_d2t09.wav
+04b90b5e2ec990b98ed4bfff8362f7a8  [shntool]  gdbd_rehersal_d2t10.wav
+8b6e987bc15c622de1c5d3a374fd5dea  [shntool]  gdbd_rehersal_d2t11.wav
+2be8badaf61554668d8282b85e1b9851  [shntool]  gdbd_rehersal_d2t12.wav
+02028d07ce5a62d98e90aa45bad6c3a4  [shntool]  gdbd_rehersal_d2t13.wav
+0a55e4b6c2ba1118c38617b1953ca5d3  [shntool]  gdbd_rehersal_d2t14.wav
+a2290f424b2b7b0b728a546d5d4571cb  [shntool]  gdbd_rehersal_d2t15.wav
+94be62f81853bd09fbcbc851d5027d76  [shntool]  gdbd_rehersal_d2t16.wav
+c031ee8b6f3341a0b122f06ceea4fce6  [shntool]  gdbd_rehersal_d3t01.wav
+cd2f75e430dc4689d318705c62a6dbe8  [shntool]  gdbd_rehersal_d3t02.wav
+502526c667d6a1816cff73a11aaae533  [shntool]  gdbd_rehersal_d3t03.wav
+c1671a0d1f8ef0fb156767956afb8468  [shntool]  gdbd_rehersal_d3t04.wav
+ce9e0217584f6c7297171cb517bc3569  [shntool]  gdbd_rehersal_d3t05.wav
+3abae4dd3b39e34c450adb02ffee4964  [shntool]  gdbd_rehersal_d3t06.wav
+4d34d4cd3bdcbc1e53082af70a7c9b5e  [shntool]  gdbd_rehersal_d3t07.wav
+d8ee6378a612287eb1928d12fa7983bb  [shntool]  gdbd_rehersal_d3t08.wav
+22b334330ca7448ba9849a75a780c658  [shntool]  gdbd_rehersal_d3t09.wav
+4e3f0a0997579335faa6a5d82371f6a1  [shntool]  gdbd_rehersal_d3t10.wav
+79e12bb0bf23742675b723c21808a926  [shntool]  gdbd_rehersal_d3t11.wav
+e5c7fbd2c3ffa97397cc720524555910  [shntool]  gdbd_rehersal_d3t12.wav
+a8bc18b869590b5171d0ee30093e4da0  [shntool]  gdbd_rehersal_d3t13.wav
+7b6f8aa93bacb44e9884bd0ac9ea2edf  [shntool]  gdbd_rehersal_d3t14.wav
+f7df3738d8f72570a1d75ca58cc51ce2  [shntool]  gdbd_rehersal_d3t15.wav
+d6bf092f1f5c117e15bdab81d6de6717  [shntool]  gdbd_rehersal_d3t16.wav
+1c126767d57ae27a6f9806af92eec35f  [shntool]  gdbd_rehersal_d3t17.wav
+8a6c4846b914267c4fbd138ecca79e03  [shntool]  gdbd_rehersal_d4t01.wav
+bc5c66189fd0d4798442451d7cea6852  [shntool]  gdbd_rehersal_d4t02.wav
+85b238168b7f6474d0f483884f4db248  [shntool]  gdbd_rehersal_d4t03.wav
+e9d97efb9bc931660f0c23c8c0611847  [shntool]  gdbd_rehersal_d4t04.wav
+13a5250363d1d6bdf82796336d24847e  [shntool]  gdbd_rehersal_d4t05.wav
+fb103b53912cf9814f7e7b0d9201dc4f  [shntool]  gdbd_rehersal_d4t06.wav
+bc53e730c3533de462a571b6a634b8ac  [shntool]  gdbd_rehersal_d4t07.wav
+18b56212704efab4b5a75669fab49a02  [shntool]  gdbd_rehersal_d4t08.wav
+99ba7ff1066ff1c45d1656f36d2d4357  [shntool]  gdbd_rehersal_d4t09.wav
+a96d89e10b611cf2781be5ebf6a5d270  [shntool]  gdbd_rehersal_d4t10.wav
+e76e4ea9a40fee9bd3671f37e06ecee0  [shntool]  gdbd_rehersal_d4t11.wav
+d480a0c884f1b27c0c2bc02953998ee1  [shntool]  gdbd_rehersal_d4t12.wav
+2696884cc0ca5764a2c6830d34909b12  [shntool]  gdbd_rehersal_d5t01.wav
+f43934c14f535a51f41fbcc47f142624  [shntool]  gdbd_rehersal_d5t02.wav
+6bbd5985b8f8058df9e50369d6cce8b9  [shntool]  gdbd_rehersal_d5t03.wav
+2bca49705e8db9bc1becdd0ad71fc150  [shntool]  gdbd_rehersal_d5t04.wav
+f3ab47e979923328d948c86e9fb40ece  [shntool]  gdbd_rehersal_d5t05.wav
+149103a665ebff2afe316519bfed0cf0  [shntool]  gdbd_rehersal_d5t06.wav
+99293d89ae038413d371e48f85e55bf8  [shntool]  gdbd_rehersal_d5t07.wav
+9ecfc1fb1e3f70e299eb1f75d0837610  [shntool]  gdbd_rehersal_d5t08.wav
+56fd515ecefa6d42ddfdec302c218200  [shntool]  gdbd_rehersal_d5t09.wav
+8bf1e63193ffd62de091a86e5aa2f336  [shntool]  gdbd_rehersal_d5t10.wav
+26264a1b1e38eb4c55fe0ebf924ca994  [shntool]  gdbd_rehersal_d5t11.wav
+71ee111b6cf48ec7eedb6cb798e3794c  [shntool]  gdbd_rehersal_d6t01.wav
+17aef5b5e3dc5ad1b19f35db31ae0815  [shntool]  gdbd_rehersal_d6t02.wav
+d67e56c53dcc8ed100ffbdb4757c523a  [shntool]  gdbd_rehersal_d6t03.wav
+42630ac5661ddbaf10260778a9fd2644  [shntool]  gdbd_rehersal_d6t04.wav
+153c280d767a38e4968daeaeb5c248a2  [shntool]  gdbd_rehersal_d6t05.wav
+cdfd3196a6fd1f1ad478e23efabcd725  [shntool]  gdbd_rehersal_d6t06.wav
+25b4115ee710ba503e993feb4afa32e9  [shntool]  gdbd_rehersal_d6t07.wav
+cc70612fbcb25229a9b84f46c7dfe794  [shntool]  gdbd_rehersal_d6t08.wav
+4a23616c8e40147721afbc76ac9a0a09  [shntool]  gdbd_rehersal_d6t09.wav
+2ec9ea9543a49be5145faa4db060bb81  [shntool]  gdbd_rehersal_d6t10.wav
+1fdbdf8800c7e8d9ba9d1bf0efff9e3b  [shntool]  gdbd_rehersal_d6t11.wav
+a5ba4fae899a158db5fd30878bf85bc7  [shntool]  gdbd_rehersal_d6t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-05-sbd-rehearsals.fraser.97489.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:33.04       69334652 B   ---   --   ---xx    shn  0.5249  gdbd_rehersal_d1t01.shn
+     6:03.00       64033244 B   ---   --   ---xx    shn  0.4624  gdbd_rehersal_d1t02.shn
+     5:42.00       60328844 B   ---   --   ---xx    shn  0.5665  gdbd_rehersal_d1t03.shn
+     2:19.00       24519644 B   ---   --   ---xx    shn  0.4557  gdbd_rehersal_d1t04.shn
+     2:44.00       28929644 B   ---   --   ---xx    shn  0.4829  gdbd_rehersal_d1t05.shn
+     3:11.72       33861788 B   ---   --   ---xx    shn  0.4877  gdbd_rehersal_d1t06.shn
+     3:14.44       34325132 B   ---   --   ---xx    shn  0.6523  gdbd_rehersal_d2t01.shn
+     4:00.06       42350156 B   ---   --   ---xx    shn  0.6264  gdbd_rehersal_d2t02.shn
+     4:13.42       44728028 B   ---   --   ---xx    shn  0.6668  gdbd_rehersal_d2t03.shn
+     3:42.20       39207884 B   ---   --   ---xx    shn  0.6330  gdbd_rehersal_d2t04.shn
+     4:33.67       48314828 B   ---   --   ---xx    shn  0.6204  gdbd_rehersal_d2t05.shn
+     3:34.48       37862540 B   ---   --   ---xx    shn  0.6764  gdbd_rehersal_d2t06.shn
+     2:24.37       25488668 B   ---   --   ---xx    shn  0.6568  gdbd_rehersal_d2t07.shn
+     5:31.31       58461356 B   ---   --   ---xx    shn  0.6637  gdbd_rehersal_d2t08.shn
+     5:03.22       53500988 B   ---   --   ---xx    shn  0.6554  gdbd_rehersal_d2t09.shn
+     4:26.38       47011820 B   ---   --   ---xx    shn  0.6826  gdbd_rehersal_d2t10.shn
+     3:16.01       34576796 B   ---   --   ---xx    shn  0.6475  gdbd_rehersal_d2t11.shn
+     4:40.59       49530812 B   ---   --   ---xx    shn  0.6673  gdbd_rehersal_d2t12.shn
+     3:38.28       38521100 B   ---   --   ---xx    shn  0.6183  gdbd_rehersal_d2t13.shn
+     4:16.48       45271340 B   ---   --   ---xx    shn  0.6328  gdbd_rehersal_d2t14.shn
+     5:55.19       62666732 B   ---   --   ---xx    shn  0.6543  gdbd_rehersal_d2t15.shn
+     9:26.19       99887132 B   ---   --   ---xx    shn  0.6428  gdbd_rehersal_d2t16.shn
+     1:03.17       11153228 B   ---   --   ---xx    shn  0.5964  gdbd_rehersal_d3t01.shn
+     2:38.29       27939452 B   ---   --   ---xx    shn  0.6449  gdbd_rehersal_d3t02.shn
+     5:21.28       56690300 B   ---   --   ---xx    shn  0.6288  gdbd_rehersal_d3t03.shn
+     4:15.74       45156092 B   ---   --   ---xx    shn  0.5826  gdbd_rehersal_d3t04.shn
+     3:50.28       40637900 B   ---   --   ---xx    shn  0.6370  gdbd_rehersal_d3t05.shn
+     4:10.64       44250572 B   ---   --   ---xx    shn  0.6311  gdbd_rehersal_d3t06.shn
+     3:00.19       31796732 B   ---   --   ---xx    shn  0.6361  gdbd_rehersal_d3t07.shn
+     3:46.74       40040492 B   ---   --   ---xx    shn  0.6462  gdbd_rehersal_d3t08.shn
+     3:43.45       39443084 B   ---   --   ---xx    shn  0.6307  gdbd_rehersal_d3t09.shn
+     3:54.47       41388188 B   ---   --   ---xx    shn  0.6409  gdbd_rehersal_d3t10.shn
+     5:56.59       62937212 B   ---   --   ---xx    shn  0.6497  gdbd_rehersal_d3t11.shn
+     3:57.71       41973836 B   ---   --   ---xx    shn  0.5889  gdbd_rehersal_d3t12.shn
+     3:12.17       33908828 B   ---   --   ---xx    shn  0.6113  gdbd_rehersal_d3t13.shn
+     3:31.13       37251020 B   ---   --   ---xx    shn  0.6294  gdbd_rehersal_d3t14.shn
+     6:24.09       67758812 B   ---   --   ---xx    shn  0.6338  gdbd_rehersal_d3t15.shn
+     5:41.66       60307676 B   ---   --   ---xx    shn  0.6249  gdbd_rehersal_d3t16.shn
+     3:52.62       41070668 B   ---   --   ---xx    shn  0.6543  gdbd_rehersal_d3t17.shn
+     4:03.65       43018124 B   ---   --   ---xx    shn  0.6491  gdbd_rehersal_d4t01.shn
+     4:17.62       45480668 B   ---   --   ---xx    shn  0.6533  gdbd_rehersal_d4t03.shn
+     2:24.06       25415756 B   ---   --   ---xx    shn  0.6454  gdbd_rehersal_d4t04.shn
+     5:55.66       62777276 B   ---   --   ---xx    shn  0.6471  gdbd_rehersal_d4t05.shn
+     6:08.06       64929356 B   ---   --   ---xx    shn  0.6084  gdbd_rehersal_d4t06.shn
+     5:38.03       59630300 B   ---   --   ---xx    shn  0.6592  gdbd_rehersal_d4t07.shn
+     4:22.18       46259180 B   ---   --   ---xx    shn  0.6038  gdbd_rehersal_d4t08.shn
+     3:32.31       37469756 B   ---   --   ---xx    shn  0.6266  gdbd_rehersal_d4t09.shn
+     4:28.50       47392844 B   ---   --   ---xx    shn  0.6280  gdbd_rehersal_d4t10.shn
+     3:18.48       35040140 B   ---   --   ---xx    shn  0.6436  gdbd_rehersal_d4t11.shn
+     3:50.23       40626140 B   ---   --   ---xx    shn  0.6352  gdbd_rehersal_d4t12.shn
+     5:04.06       53639756 B   ---   --   ---xx    shn  0.5999  gdbd_rehersal_d5t01.shn
+     2:48.66       29790476 B   ---   --   ---xx    shn  0.5853  gdbd_rehersal_d5t02.shn
+     3:34.63       37897820 B   ---   --   ---xx    shn  0.5958  gdbd_rehersal_d5t03.shn
+     2:41.72       28569788 B   ---   --   ---xx    shn  0.5850  gdbd_rehersal_d5t04.shn
+     7:10.42       75950828 B   ---   --   ---xx    shn  0.5976  gdbd_rehersal_d5t05.shn
+     4:54.38       51951020 B   ---   --   ---xx    shn  0.6109  gdbd_rehersal_d5t06.shn
+     4:01.38       42601820 B   ---   --   ---xx    shn  0.6025  gdbd_rehersal_d5t07.shn
+     3:45.72       39859388 B   ---   --   ---xx    shn  0.5911  gdbd_rehersal_d5t08.shn
+     3:32.56       37528556 B   ---   --   ---xx    shn  0.6025  gdbd_rehersal_d5t09.shn
+     3:29.71       37034636 B   ---   --   ---xx    shn  0.6313  gdbd_rehersal_d5t10.shn
+     2:18.13       24373820 B   ---   --   ---xx    shn  0.6244  gdbd_rehersal_d5t11.shn
+     1:09.00       12171644 B   ---   --   ---xx    shn  0.5449  gdbd_rehersal_d6t01.shn
+     6:08.00       64915244 B   ---   --   ---xx    shn  0.5012  gdbd_rehersal_d6t02.shn
+     5:42.33       60406460 B   ---   --   ---xx    shn  0.6670  gdbd_rehersal_d6t03.shn
+    11:22.42      120403628 B   ---   --   ---xx    shn  0.4825  gdbd_rehersal_d6t04.shn
+     3:04.00       32457644 B   ---   --   ---xx    shn  0.5567  gdbd_rehersal_d6t05.shn
+     1:07.00       11818844 B   ---   --   ---xx    shn  0.5271  gdbd_rehersal_d6t06.shn
+     2:20.60       24837164 B   ---   --   ---xx    shn  0.5960  gdbd_rehersal_d6t07.shn
+     7:50.00       82908044 B   ---   --   ---xx    shn  0.5296  gdbd_rehersal_d6t08.shn
+     3:57.30       41877404 B   ---   --   ---xx    shn  0.6073  gdbd_rehersal_d6t09.shn
+     7:07.35       75405164 B   ---   --   ---xx    shn  0.5883  gdbd_rehersal_d6t10.shn
+     3:41.25       39043244 B   ---   --   ---xx    shn  0.6186  gdbd_rehersal_d6t11.shn
+     3:34.38       37839020 B   ---   --   ---xx    shn  0.5248  gdbd_rehersal_d6t12.shn
+   315:21.30     3337738172 B                            0.6070  (73 files)
+=================== 
+=================== 
+=================== 

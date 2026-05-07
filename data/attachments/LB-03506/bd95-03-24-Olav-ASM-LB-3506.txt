@@ -1,0 +1,12 @@
+Bob Dylan, 3/24/95, Le Zenith, Paris, France, 2CDR
+
+LB-3506, (42min+49min), Taper: no info, Lineage: FLAC DVD-R > WAV > CoolEdit (checked; nothing found) > T-RackS 2.0 (volume boost 6.0dB) > FLAC frontend (sector aligned) > DIME, This is another off-master from a (presently) unidentified taper of the Paris Zenith, 1995-03-24 show. As far as I know, there is not a major commercial boot for this date.; looks same as LB-1030 in wav and spectral views except levels raised; (did not listen to all of this)
+
+CD1
+01. Crash On The Levee (Down In The Flood), 02. I Want You, 03. All Along The Watchtower, 04. Just Like A Woman, 05. Tangled Up In Blue, 06. You're A Big Girl Now, 07. Mr. Tambourine Man, 
+
+CD2
+08. Masters Of War, 09. Don't Think Twice, It's All Right, 10. Dignity, 11. I'll Remember You, 12. Maggie's Farm, 13. Like A Rolling Stone, 14. It Ain't Me, Babe
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

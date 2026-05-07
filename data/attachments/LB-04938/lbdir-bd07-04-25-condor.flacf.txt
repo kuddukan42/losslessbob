@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-04-25-condor.flacf 
+=================== 
+=================== 
+=================== 
+59a775f1080e4a6769059245f99255ba  2007-04-25-Geneva.txt
+94eed47c4aa82ed3734302ab5b8a1dae  2007-04-25-Genf.md5
+358658dafbaee165ca60c49a6f6758a6  Track101.flac
+cc4ceb8b74f6f518ebb2d440aa662abd  Track102.flac
+e0a876a1822289e06c3e0221c368606b  Track103.flac
+85f4b1da50fe6b760887fe5457996642  Track104.flac
+f81c16002d5a4640683bfc5288c45750  Track105.flac
+c635efc1645eb71208e1136494f2c7a1  Track106.flac
+2e1bd6b97f3519469a6ffdbeb1cb9c14  Track107.flac
+20d1136f1b9593ed6535ee150b0fd80d  Track108.flac
+998929a0b59eebea9e8e32c0df5a78e8  Track109.flac
+456066d77a27c5f4e1ca6673176b57bb  Track110.flac
+d5f6263a4dd9824f7bdba774d8460774  Track111.flac
+ed3a13f096115d193d17843f8c3b9b90  Track112.flac
+0fa5920b5fda0a658a13a433cbbd5375  Track201.flac
+b5f2a9d2ed538ef11cd44a6a50654615  Track202.flac
+a59ec41a02118c95b05bec346ceea239  Track203.flac
+8da321c562112dbffbbc58817d5ddd3e  Track204.flac
+f2edefca04cef41839c7e46301ecaf15  Track205.flac
+f315f2ff73d09e53cce7744528641b8c  Track206.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-04-25-condor.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:2a1fd0cc105c3a9b683138c09e01a529
+Track102.flac:024e85931c39c4cc1e84872df16831f9
+Track103.flac:6ab087671b656187d2659159b92b1ea5
+Track104.flac:e18f684dc929f5223410cf5d0d7ab2fc
+Track105.flac:356f393945d366cf0c8638f4b5d377f5
+Track106.flac:42fac3057e2b5345ed94d6a6551f9d5a
+Track107.flac:5594df30c188a79c919ac65d4af6cc3d
+Track108.flac:61e5702be4fd12e64def2dc2ebb30bc0
+Track109.flac:d69e862d2d5545a08304d63d9518be25
+Track110.flac:b61b22ea09a747af2dd0e324029440ff
+Track111.flac:6330f6cc1ec6663f2a6e4fe819ab4366
+Track112.flac:e3adc807796f354c2ee1df31ea06815e
+Track201.flac:cd58fe40c23bd5db1458f4f062477f7d
+Track202.flac:f5ca584769a505b6796653e77c6e8882
+Track203.flac:b21e14b3551d6aa54e1cb36db8ea839d
+Track204.flac:0b33327fa28e4b43d92bd9586a50d770
+Track205.flac:178df7edf039d3002ae5a63c2f12274c
+Track206.flac:cbaf794391932fd2bb934d7e0d61e8aa
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-04-25-condor.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:52.63        9321020 B   ---   --   ---xx   flac  0.4621  Track101.flac
+     4:20.21       45913436 B   ---   --   ---xx   flac  0.5851  Track102.flac
+     6:11.62       65590268 B   ---   --   ---xx   flac  0.5031  Track103.flac
+     6:00.20       63551084 B   ---   --   ---xx   flac  0.6007  Track104.flac
+     7:13.40       76475324 B   ---   --   ---xx   flac  0.6065  Track105.flac
+     7:50.42       83006828 B   ---   --   ---xx   flac  0.5272  Track106.flac
+     6:41.16       70774076 B   ---   --   ---xx   flac  0.5694  Track107.flac
+     8:43.34       92337212 B   ---   --   ---xx   flac  0.5046  Track108.flac
+     6:53.48       72966140 B   ---   --   ---xx   flac  0.5667  Track109.flac
+     6:25.43       68015180 B   ---   --   ---xx   flac  0.4073  Track110.flac
+     6:16.43       66427580 B   ---   --   ---xx   flac  0.5026  Track111.flac
+     6:50.71       72491036 B   ---   --   ---xx   flac  0.4602  Track112.flac
+     6:00.21       63553436 B   ---   --   ---xx   flac  0.5904  Track201.flac
+     7:46.20       82249484 B   ---   --   ---xx   flac  0.4379  Track202.flac
+     6:04.42       64308428 B   ---   --   ---xx   flac  0.5857  Track203.flac
+    11:40.65      123632924 B   ---   --   ---xx   flac  0.5346  Track204.flac
+     6:59.14       73944572 B   ---   --   ---xx   flac  0.6034  Track205.flac
+     5:16.02       55747148 B   ---   --   ---xx   flac  0.6016  Track206.flac
+   118:07.67     1250305176 B                            0.5364  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,1422 @@
+shntool 3.0.4
+Copyright (C) 2000-2007 Jason Jordan <shnutils@freeshell.org>
+
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t01.flac
+Handled by:                   flac format module
+Length:                       5:50.074
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    201642840 bytes
+Chunk size:                   201642876 bytes
+Total size (chunk size + 8):  201642884 bytes
+Actual file size:             152683807
+File is compressed:           yes
+Compression ratio:            0.7572
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t02.flac
+Handled by:                   flac format module
+Length:                       4:18.793
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    149065056 bytes
+Chunk size:                   149065092 bytes
+Total size (chunk size + 8):  149065100 bytes
+Actual file size:             114462613
+File is compressed:           yes
+Compression ratio:            0.7679
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t03.flac
+Handled by:                   flac format module
+Length:                       7:14.428
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    250230456 bytes
+Chunk size:                   250230492 bytes
+Total size (chunk size + 8):  250230500 bytes
+Actual file size:             188342882
+File is compressed:           yes
+Compression ratio:            0.7527
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t04.flac
+Handled by:                   flac format module
+Length:                       4:52.836
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    168673680 bytes
+Chunk size:                   168673716 bytes
+Total size (chunk size + 8):  168673724 bytes
+Actual file size:             129201137
+File is compressed:           yes
+Compression ratio:            0.7660
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t05.flac
+Handled by:                   flac format module
+Length:                       3:45.859
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    130095000 bytes
+Chunk size:                   130095036 bytes
+Total size (chunk size + 8):  130095044 bytes
+Actual file size:             100949418
+File is compressed:           yes
+Compression ratio:            0.7760
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t06.flac
+Handled by:                   flac format module
+Length:                       3:40.365
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    126930384 bytes
+Chunk size:                   126930420 bytes
+Total size (chunk size + 8):  126930428 bytes
+Actual file size:             94471411
+File is compressed:           yes
+Compression ratio:            0.7443
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t07.flac
+Handled by:                   flac format module
+Length:                       3:53.920
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    134737848 bytes
+Chunk size:                   134737884 bytes
+Total size (chunk size + 8):  134737892 bytes
+Actual file size:             95295391
+File is compressed:           yes
+Compression ratio:            0.7073
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t08.flac
+Handled by:                   flac format module
+Length:                       3:54.379
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    135002448 bytes
+Chunk size:                   135002484 bytes
+Total size (chunk size + 8):  135002492 bytes
+Actual file size:             101660306
+File is compressed:           yes
+Compression ratio:            0.7530
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t09.flac
+Handled by:                   flac format module
+Length:                       3:44.812
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    129491712 bytes
+Chunk size:                   129491748 bytes
+Total size (chunk size + 8):  129491756 bytes
+Actual file size:             96844802
+File is compressed:           yes
+Compression ratio:            0.7479
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t10.flac
+Handled by:                   flac format module
+Length:                       4:41.137
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    161935200 bytes
+Chunk size:                   161935236 bytes
+Total size (chunk size + 8):  161935244 bytes
+Actual file size:             120162154
+File is compressed:           yes
+Compression ratio:            0.7420
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t11.flac
+Handled by:                   flac format module
+Length:                       4:29.506
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    155235528 bytes
+Chunk size:                   155235564 bytes
+Total size (chunk size + 8):  155235572 bytes
+Actual file size:             117354822
+File is compressed:           yes
+Compression ratio:            0.7560
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t12.flac
+Handled by:                   flac format module
+Length:                       4:27.399
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    154021896 bytes
+Chunk size:                   154021932 bytes
+Total size (chunk size + 8):  154021940 bytes
+Actual file size:             114214825
+File is compressed:           yes
+Compression ratio:            0.7415
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t13.flac
+Handled by:                   flac format module
+Length:                       5:10.415
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    178799040 bytes
+Chunk size:                   178799076 bytes
+Total size (chunk size + 8):  178799084 bytes
+Actual file size:             128934105
+File is compressed:           yes
+Compression ratio:            0.7211
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t14.flac
+Handled by:                   flac format module
+Length:                       4:57.522
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    171372600 bytes
+Chunk size:                   171372636 bytes
+Total size (chunk size + 8):  171372644 bytes
+Actual file size:             124166053
+File is compressed:           yes
+Compression ratio:            0.7245
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t15.flac
+Handled by:                   flac format module
+Length:                       3:45.400
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    129830400 bytes
+Chunk size:                   129830436 bytes
+Total size (chunk size + 8):  129830444 bytes
+Actual file size:             93079416
+File is compressed:           yes
+Compression ratio:            0.7169
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t16.flac
+Handled by:                   flac format module
+Length:                       6:19.817
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    218774808 bytes
+Chunk size:                   218774844 bytes
+Total size (chunk size + 8):  218774852 bytes
+Actual file size:             160541161
+File is compressed:           yes
+Compression ratio:            0.7338
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t17.flac
+Handled by:                   flac format module
+Length:                       6:58.007
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    240771888 bytes
+Chunk size:                   240771924 bytes
+Total size (chunk size + 8):  240771932 bytes
+Actual file size:             181811573
+File is compressed:           yes
+Compression ratio:            0.7551
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t18.flac
+Handled by:                   flac format module
+Length:                       7:01.927
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    243029808 bytes
+Chunk size:                   243029844 bytes
+Total size (chunk size + 8):  243029852 bytes
+Actual file size:             179829634
+File is compressed:           yes
+Compression ratio:            0.7399
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t19.flac
+Handled by:                   flac format module
+Length:                       4:38.914
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    160654536 bytes
+Chunk size:                   160654572 bytes
+Total size (chunk size + 8):  160654580 bytes
+Actual file size:             119583200
+File is compressed:           yes
+Compression ratio:            0.7443
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t20.flac
+Handled by:                   flac format module
+Length:                       5:33.029
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    191824416 bytes
+Chunk size:                   191824452 bytes
+Total size (chunk size + 8):  191824460 bytes
+Actual file size:             148149210
+File is compressed:           yes
+Compression ratio:            0.7723
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t21.flac
+Handled by:                   flac format module
+Length:                       5:59.807
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    207248832 bytes
+Chunk size:                   207248868 bytes
+Total size (chunk size + 8):  207248876 bytes
+Actual file size:             151771601
+File is compressed:           yes
+Compression ratio:            0.7323
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t22.flac
+Handled by:                   flac format module
+Length:                       4:54.570
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    169672104 bytes
+Chunk size:                   169672140 bytes
+Total size (chunk size + 8):  169672148 bytes
+Actual file size:             121357695
+File is compressed:           yes
+Compression ratio:            0.7152
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t23.flac
+Handled by:                   flac format module
+Length:                       6:27.033
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    222930792 bytes
+Chunk size:                   222930828 bytes
+Total size (chunk size + 8):  222930836 bytes
+Actual file size:             160377051
+File is compressed:           yes
+Compression ratio:            0.7194
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t24.flac
+Handled by:                   flac format module
+Length:                       5:49.309
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    201201840 bytes
+Chunk size:                   201201876 bytes
+Total size (chunk size + 8):  201201884 bytes
+Actual file size:             146441003
+File is compressed:           yes
+Compression ratio:            0.7278
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t25.flac
+Handled by:                   flac format module
+Length:                       5:28.024
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    188942040 bytes
+Chunk size:                   188942076 bytes
+Total size (chunk size + 8):  188942084 bytes
+Actual file size:             131343966
+File is compressed:           yes
+Compression ratio:            0.6952
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t26.flac
+Handled by:                   flac format module
+Length:                       4:41.897
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    162372672 bytes
+Chunk size:                   162372708 bytes
+Total size (chunk size + 8):  162372716 bytes
+Actual file size:             117537349
+File is compressed:           yes
+Compression ratio:            0.7239
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t27.flac
+Handled by:                   flac format module
+Length:                       4:18.983
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    149174424 bytes
+Chunk size:                   149174460 bytes
+Total size (chunk size + 8):  149174468 bytes
+Actual file size:             109190106
+File is compressed:           yes
+Compression ratio:            0.7320
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t28.flac
+Handled by:                   flac format module
+Length:                       6:34.327
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    227132640 bytes
+Chunk size:                   227132676 bytes
+Total size (chunk size + 8):  227132684 bytes
+Actual file size:             172080994
+File is compressed:           yes
+Compression ratio:            0.7576
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s1t29.flac
+Handled by:                   flac format module
+Length:                       7:10.875
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    248184216 bytes
+Chunk size:                   248184252 bytes
+Total size (chunk size + 8):  248184260 bytes
+Actual file size:             185281494
+File is compressed:           yes
+Compression ratio:            0.7465
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t01.flac
+Handled by:                   flac format module
+Length:                       6:05.393
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    210466368 bytes
+Chunk size:                   210466404 bytes
+Total size (chunk size + 8):  210466412 bytes
+Actual file size:             147936673
+File is compressed:           yes
+Compression ratio:            0.7029
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t02.flac
+Handled by:                   flac format module
+Length:                       5:31.258
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    190804824 bytes
+Chunk size:                   190804860 bytes
+Total size (chunk size + 8):  190804868 bytes
+Actual file size:             145891445
+File is compressed:           yes
+Compression ratio:            0.7646
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t03.flac
+Handled by:                   flac format module
+Length:                       3:14.518
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    112042224 bytes
+Chunk size:                   112042260 bytes
+Total size (chunk size + 8):  112042268 bytes
+Actual file size:             77410287
+File is compressed:           yes
+Compression ratio:            0.6909
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t04.flac
+Handled by:                   flac format module
+Length:                       2:49.858
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    97838496 bytes
+Chunk size:                   97838532 bytes
+Total size (chunk size + 8):  97838540 bytes
+Actual file size:             68356740
+File is compressed:           yes
+Compression ratio:            0.6987
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t05.flac
+Handled by:                   flac format module
+Length:                       4:57.314
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    171252648 bytes
+Chunk size:                   171252684 bytes
+Total size (chunk size + 8):  171252692 bytes
+Actual file size:             126002027
+File is compressed:           yes
+Compression ratio:            0.7358
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t06.flac
+Handled by:                   flac format module
+Length:                       3:15.020
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    112331520 bytes
+Chunk size:                   112331556 bytes
+Total size (chunk size + 8):  112331564 bytes
+Actual file size:             83955076
+File is compressed:           yes
+Compression ratio:            0.7474
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t07.flac
+Handled by:                   flac format module
+Length:                       3:51.813
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    133524216 bytes
+Chunk size:                   133524252 bytes
+Total size (chunk size + 8):  133524260 bytes
+Actual file size:             97321256
+File is compressed:           yes
+Compression ratio:            0.7289
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t08.flac
+Handled by:                   flac format module
+Length:                       4:57.448
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    171330264 bytes
+Chunk size:                   171330300 bytes
+Total size (chunk size + 8):  171330308 bytes
+Actual file size:             127012450
+File is compressed:           yes
+Compression ratio:            0.7413
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t09.flac
+Handled by:                   flac format module
+Length:                       5:57.290
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    205798824 bytes
+Chunk size:                   205798860 bytes
+Total size (chunk size + 8):  205798868 bytes
+Actual file size:             150795412
+File is compressed:           yes
+Compression ratio:            0.7327
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t10.flac
+Handled by:                   flac format module
+Length:                       5:28.851
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    189418320 bytes
+Chunk size:                   189418356 bytes
+Total size (chunk size + 8):  189418364 bytes
+Actual file size:             140376889
+File is compressed:           yes
+Compression ratio:            0.7411
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.s2t11.flac
+Handled by:                   flac format module
+Length:                       4:58.379
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    171866520 bytes
+Chunk size:                   171866556 bytes
+Total size (chunk size + 8):  171866564 bytes
+Actual file size:             122751383
+File is compressed:           yes
+Compression ratio:            0.7142
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.sEt01.flac
+Handled by:                   flac format module
+Length:                       12:05.494
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    417884544 bytes
+Chunk size:                   417884580 bytes
+Total size (chunk size + 8):  417884588 bytes
+Actual file size:             291901708
+File is compressed:           yes
+Compression ratio:            0.6985
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.sEt02.flac
+Handled by:                   flac format module
+Length:                       22:36.057
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    781088616 bytes
+Chunk size:                   781088652 bytes
+Total size (chunk size + 8):  781088660 bytes
+Actual file size:             545125998
+File is compressed:           yes
+Compression ratio:            0.6979
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a
+-------------------------------------------------------------------------------
+File name:                    band1976-11-25.aud.rhinotrocity1.motb.0066.sEt03.flac
+Handled by:                   flac format module
+Length:                       6:30.267
+WAVE format:                  0x0001 (Microsoft PCM)
+Channels:                     2
+Bits/sample:                  24
+Samples/sec:                  96000
+Average bytes/sec:            576000
+Rate (calculated):            576000
+Block align:                  6
+Header size:                  44 bytes
+Data size:                    224793576 bytes
+Chunk size:                   224793612 bytes
+Total size (chunk size + 8):  224793620 bytes
+Actual file size:             163573998
+File is compressed:           yes
+Compression ratio:            0.7277
+CD-quality properties:
+  CD quality:                 no
+  Cut on sector boundary:     n/a
+  Sector misalignment:        n/a
+  Long enough to be burned:   n/a
+WAVE properties:
+  Non-canonical header:       no
+  Extra RIFF chunks:          no
+Possible problems:
+  File contains ID3v2 tag:    no
+  Data chunk block-aligned:   yes
+  Inconsistent header:        no
+  File probably truncated:    unknown
+  Junk appended to file:      unknown
+  Odd data size has pad byte: n/a

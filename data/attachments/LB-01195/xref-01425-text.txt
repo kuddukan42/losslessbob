@@ -1,0 +1,140 @@
+===================
+===================
+===================
+=== bd-tramps99d1.md5
+===================
+===================
+===================
+ecb5a6d24b974a14676976ce7caa223b *bd-tramps99d1-t01.shn
+e826561bb5bdd7004d21a95c713edd61 *bd-tramps99d1-t02.shn
+6c8f2012ca7a6a4a100deab60a895949 *bd-tramps99d1-t03.shn
+ccea841ef43d3175992eebecf18fba15 *bd-tramps99d1-t04.shn
+0b2ca5d60a2d30df992a429f11c24069 *bd-tramps99d1-t05.shn
+62f1a770f4cb04e037fd068e274f3b7c *bd-tramps99d1-t06.shn
+08beb876535e4c927a70d22ee1feb441 *bd-tramps99d1-t07.shn
+b26b19b3216fee182f80f484dca2b556 *bd-tramps99d1-t08.shn
+4acee69e5c8e6b4f25a2ce1f73b27320 *bd-tramps99d1-t09.shn
+fe2b703540013a77cfb052a6dced8552 *bd-tramps99d1-t10.shn
+18f6a592730807e5963675c0a0617ba0 *bd-tramps99d1-t11.shn
+===================
+===================
+===================
+=== lineage.txt
+===================
+===================
+===================
+low generation high quality circulating boot > EAC mode 6 > waves > mkwACT > SHN files
+
+A Schubert Remaster
+
+enjoy
+TheOldtoaD
+October 2003 
+===================
+===================
+===================
+=== set list.txt
+===================
+===================
+===================
+Bob Dylan and his band
+
+Recorded live at:-
+
+Tramps
+New York City
+New York
+
+26 July 1999
+
+A Schubert Remaster
+
+disc one
+
+1	Intro
+2	Oh Babe, It Ain't No Lie *
+3	The Times They Are A-Changing *
+4	Boots Of Spanish Leather *
+5	John Brown *
+6	Visions of Johanna *
+7	Seeing The real You At Last
+8	Ballad Of A Thin Man
+9	Most Likely You Go Your Way
+10	Every Grain Of Sand
+11	Tombstone Blues
+
+disc two
+
+1	Not Dark Yet
+2	Highway 61 Revisited
+3	Love Sick
+4	Like A Rolling Stone
+5	It Ain't Me, Babe *
+6	Not Fade Away
+7	Blowin' In The Wind *
+8	Alabama Getaway
+9	I Shall Be Released (with Elvis Costello vocal & guitar)
+
+
+	acoustic *
+
+Band members
+
+Bob Dylan		vocals, guitar & harp
+Charlie Sexton		guitar
+Larry Campbell		guitar, mandolin, pedal steel guitar & electric slide guitar
+Tony Garnier		bass
+David Kemper		drums & percussion
+===================
+===================
+===================
+=== bd-tramps99d1.md5
+===================
+===================
+===================
+93763cb5dd2479fa941b0ed378e0038b *bd-tramps99d1-t01.wav
+71957ff86235370f76f6f4de3cbc0750 *bd-tramps99d1-t02.wav
+cd2817493e1360a1bca791b8ecc2d05a *bd-tramps99d1-t03.wav
+ddb5aa79afacfe6541188bd49261c05b *bd-tramps99d1-t04.wav
+4807f62c799a4313f5210e9481ad5e39 *bd-tramps99d1-t05.wav
+56acaf4cd003044bc9dcd58d663695bb *bd-tramps99d1-t06.wav
+be1dbd84712780ffc4492ed24aff3d8c *bd-tramps99d1-t07.wav
+14a742ebfc99f2763f727a68467d75d7 *bd-tramps99d1-t08.wav
+03b014769c9da42fe2e2b85c4b414efe *bd-tramps99d1-t09.wav
+0d18458a766a5f59e27c495a19a71e9e *bd-tramps99d1-t10.wav
+d8b89009f74f703c1a8384eaa8189a9f *bd-tramps99d1-t11.wav
+===================
+===================
+===================
+=== bd-tramps99d2.md5
+===================
+===================
+===================
+f2da64ffd70b38a8d9e4c3f7bfe8c2ea *bd-tramps99d2-t01.shn
+a3f5e4a01f2bc77e1f48b0775945bbce *bd-tramps99d2-t02.shn
+aba0a4f8b8039688bbca09932141f0db *bd-tramps99d2-t03.shn
+9e25737b48343005460f5cffd3d9339d *bd-tramps99d2-t04.shn
+8594468048ae519aa208cf747b70a0ed *bd-tramps99d2-t05.shn
+a32e19f831fd1115cdc56803ac87a1ba *bd-tramps99d2-t06.shn
+71cda9cf37c01add4e0b91b69f0e0618 *bd-tramps99d2-t07.shn
+5c027141ea1e65c1f513aee0622ba0a3 *bd-tramps99d2-t08.shn
+c37a6b7a029af5f276d608865a9bfa76 *bd-tramps99d2-t09.shn
+===================
+===================
+===================
+=== bd-tramps99d2.md5
+===================
+===================
+===================
+b08bc150e2de0ee67909e0da12f1089a *bd-tramps99d2-t01.wav
+5dc19df0b9b6325feda4b9f5b9b58c69 *bd-tramps99d2-t02.wav
+e14a2612d7ffcfcb5641595b8d4c7d1e *bd-tramps99d2-t03.wav
+443e7d77d0a48923e2beb0e2a60be1dd *bd-tramps99d2-t04.wav
+b7648fed5d243e023a671395006302c1 *bd-tramps99d2-t05.wav
+dae9999585a4c6bfe84ef106511b9398 *bd-tramps99d2-t06.wav
+fb893bc06ad482a0887904743b7c66ba *bd-tramps99d2-t07.wav
+f56bf5ffea395bb7308db6ac7a100ee6 *bd-tramps99d2-t08.wav
+7375ae7948c25248b6d37ac9b4287b49 *bd-tramps99d2-t09.wav
+===================
+===================
+===================

@@ -1,0 +1,103 @@
+===================
+===================
+===================
+=== md5 for: bd81-Shot-Of-Love-Worktape-h.flacf
+===================
+===================
+===================
+cf4a094a5349bfc7e2e72ff1e0593c5c *BOB DYLAN - Shot Of Love Worktape.txt
+9d5ee34774281b16d7c0c4034fc7a7d5 *Disc 1\01. Is It Worth It.flac
+c8eabe6651898f285aa428fe95a41431 *Disc 1\02. Ah Ah Ah Ah [3 takes].flac
+55190093688ce9f1875735b049645dba *Disc 1\03. Yes Sir No Sir (Hallelujah).flac
+630558577ef85c2102e555f0d9257432 *Disc 1\04. Magic.flac
+e086e28798964c9df3cb34570e4f5824 *Disc 1\05. Child To Me.flac
+de088beeea82fc4deb53e07ca88c3504 *Disc 1\06. Wind Blowing On The Water.flac
+c9a0c73d3112600b5997af78a619f6ad *Disc 1\07. All The Way Down.flac
+e451b84cf321c507ae7868a448461ffa *Disc 1\08. My Oriental Home [instrumental].flac
+25e81b9946ceca6de8efe7330633c4ac *Disc 1\09. Borrowed Time.flac
+5b456e10babfa50dcdd05dcbee9995c8 *Disc 1\10. I Want You To Know I Love You.flac
+4fa98e3b359d1740c6370e4ffe88fc4f *Disc 2\01. Rockin' Boat.flac
+19b3816db8f9f043bbe4fed1d153470f *Disc 2\02. It's All Dangerous To Me [instrumental].flac
+fb7a7ccfc14561633157ab482d7b4e76 *Disc 2\03. More To This Than Meets The Eye [instrumental].flac
+bf1a51dc4c79a9b0fc8e91fb26b6b972 *Disc 2\04. Straw Hat [instrumental].flac
+0cc3566b6130915273795d0145ea52ff *Disc 2\05. Gonna Love Her Anyway [instrumental].flac
+0a94f6818aaafb04dd4a5af35c23b86d *Disc 2\06. Instrumental Calypso [instrumental].flac
+0d8e421ee1cf99a509a2c9631f009f29 *Disc 2\07. Wait And See [instrumental].flac
+8b75999d3d77ca0019573392cbea56b2 *Disc 2\08. Walking On Eggs [instrumental].flac
+082e4150a709bc9b9e56331c91b591f8 *Disc 2\09. Well Water [instrumental].flac
+fc4fcf9af91474ef791ec96eb63acbbd *Disc 2\10. All The Way [instrumental].flac
+5a984be9f850d798255ffe7b9ea6b098 *Disc 2\11. Almost Persuaded.flac
+e59f2b502c189c5be2106411987a2cc0 *Disc 2\12. Tune After Almost [instrumental].flac
+a7877d4b6e398242702ad8f44e80cace *FLAC.ffp
+===================
+===================
+===================
+=== ffp for: bd81-Shot-Of-Love-Worktape-h.flacf
+===================
+===================
+===================
+Disc 1\01. Is It Worth It.flac:cb72b61dc0c57b411d8c4450a1b6e3d2
+Disc 1\02. Ah Ah Ah Ah [3 takes].flac:6ef148f2bf2196da9336bfb6b424f6af
+Disc 1\03. Yes Sir No Sir (Hallelujah).flac:98dfef63b9d3dbadd57ffcb67efad803
+Disc 1\04. Magic.flac:40a97a243c66d8b9255d54085236931d
+Disc 1\05. Child To Me.flac:e99dd7c7d0477031430e413245557afe
+Disc 1\06. Wind Blowing On The Water.flac:268400104b8a5f2ca25e4908b4e1a847
+Disc 1\07. All The Way Down.flac:eaff9203ea0d67bf9b8be3bc28528223
+Disc 1\08. My Oriental Home [instrumental].flac:b1745408ee2a5375be53055d8e1ff3c3
+Disc 1\09. Borrowed Time.flac:8b98ac9f67088028f2834a98584c4012
+Disc 1\10. I Want You To Know I Love You.flac:988646a226706a28b2419877d0fa9db3
+Disc 2\01. Rockin' Boat.flac:da99b6b6423b6df6877b5978ab4e6b77
+Disc 2\02. It's All Dangerous To Me [instrumental].flac:8ff2bf5aaed2c0de77b70bdd51d3760a
+Disc 2\03. More To This Than Meets The Eye [instrumental].flac:5c26cb01539c6427629f74a2478e4e66
+Disc 2\04. Straw Hat [instrumental].flac:aff391341072d239a3fc85cc4afe6c01
+Disc 2\05. Gonna Love Her Anyway [instrumental].flac:3f713ad36222ce8e861195aa3086ef26
+Disc 2\06. Instrumental Calypso [instrumental].flac:246733b41c1ce117d57377a6202c6aba
+Disc 2\07. Wait And See [instrumental].flac:a9f8fa4e9b482112c12060a7a20d6711
+Disc 2\08. Walking On Eggs [instrumental].flac:5ef1849b13807ef5f7147b975fc2fa89
+Disc 2\09. Well Water [instrumental].flac:42e328dc3769541c687e0fb519b14238
+Disc 2\10. All The Way [instrumental].flac:0ba43c4d460300136ce4ab723331829f
+Disc 2\11. Almost Persuaded.flac:2c3109c63169a0fda36c331bf05e35ad
+Disc 2\12. Tune After Almost [instrumental].flac:43c014222094a72fe905eafbe31d88b2
+===================
+===================
+===================
+=== shntool len for: bd81-Shot-Of-Love-Worktape-h.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:23.58       46529660 B   ---   --   ---xx   flac  0.5252  01. Is It Worth It.flac
+     8:20.28       88265900 B   ---   --   ---xx   flac  0.5383  02. Ah Ah Ah Ah [3 takes].flac
+     2:48.39       29726972 B   ---   --   ---xx   flac  0.5374  03. Yes Sir No Sir (Hallelujah).flac
+     4:34.59       48472412 B   ---   --   ---xx   flac  0.5565  04. Magic.flac
+     2:11.22       23160188 B   ---   --   ---xx   flac  0.5324  05. Child To Me.flac
+     2:59.12       31603868 B   ---   --   ---xx   flac  0.5305  06. Wind Blowing On The Water.flac
+     3:56.64       41780972 B   ---   --   ---xx   flac  0.5202  07. All The Way Down.flac
+     3:03.70       32445884 B   ---   --   ---xx   flac  0.5157  08. My Oriental Home [instrumental].flac
+     7:47.41       82475276 B   ---   --   ---xx   flac  0.5292  09. Borrowed Time.flac
+     3:16.48       34687340 B   ---   --   ---xx   flac  0.5149  10. I Want You To Know I Love You.flac
+    43:22.66      459148472 B                            0.5314  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd81-Shot-Of-Love-Worktape-h.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:20.15       35315324 B   ---   --   ---xx   flac  0.4989  01. Rockin' Boat.flac
+     5:16.16       55780076 B   ---   --   ---xx   flac  0.4822  02. It's All Dangerous To Me [instrumental].flac
+     3:43.14       39370172 B   ---   --   ---xx   flac  0.4850  03. More To This Than Meets The Eye [instrumental].flac
+     2:51.36       30249116 B   ---   --   ---xx   flac  0.4839  04. Straw Hat [instrumental].flac
+     6:13.31       65870156 B   ---   --   ---xx   flac  0.4931  05. Gonna Love Her Anyway [instrumental].flac
+     4:31.13       47835020 B   ---   --   ---xx   flac  0.5044  06. Instrumental Calypso [instrumental].flac
+     2:12.11       23310716 B   ---   --   ---xx   flac  0.5264  07. Wait And See [instrumental].flac
+     2:28.16       26144876 B   ---   --   ---xx   flac  0.5147  08. Walking On Eggs [instrumental].flac
+     2:15.42       23912828 B   ---   --   ---xx   flac  0.5120  09. Well Water [instrumental].flac
+     3:06.30       32881004 B   ---   --   ---xx   flac  0.5021  10. All The Way [instrumental].flac
+     2:14.61       23781116 B   ---   --   ---xx   flac  0.5118  11. Almost Persuaded.flac
+     1:23.39       14732972 B   ---   --   ---xx   flac  0.4718  12. Tune After Almost [instrumental].flac
+    39:36.24      419183376 B                            0.4973  (12 files)
+===================
+===================
+===================

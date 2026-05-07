@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-08-31-Mighty-Mockingbird.flacf 
+=================== 
+=================== 
+=================== 
+b9dafffd6061c50e7127eff0fbb702eb  01 Track01 - Bob Dylan.flac
+d49438125cd48cb9ebd105015dfe2e40  02 Track02 - Bob Dylan.flac
+2355ebf2ea5548d165ace54341022d23  03 Track03 - Bob Dylan.flac
+962aa3dc2d63b828d2c323db9e738d7b  04 Track04 - Bob Dylan.flac
+eb1e793097a8e73595a26af209fa8fd7  05 Track05 - Bob Dylan.flac
+95297eed1955a5cf29d0477ee61fb0ab  06 Track06 - Bob Dylan.flac
+96ca0420d51879753537a3c2f6dc49e2  07 Track07 - Bob Dylan.flac
+d46496fdf2ae4802cd591c97f21f906a  08 Track08 - Bob Dylan.flac
+dca92a44eafc408e4775cf5e8dc94dda  09 Track09 - Bob Dylan.flac
+99e6eb348a526b4ff6134d9f672c41a5  10 Track10 - Bob Dylan.flac
+c9154588a086d706c8edd9c2caa6f524  11 Track11 - Bob Dylan.flac
+ca1c124a9abf566d3c25f12bd270ecc7  12 Track12 - Bob Dylan.flac
+d8f9c53b8e51ec68a223062f02ccec4c  13 Track13 - Bob Dylan.flac
+f15a5235664aa0ceacf6fa53ab4152dd  14 Track14 - Bob Dylan.flac
+9f793ce7ce9b6581cdee1db5e3a2b50d  15 Track15 - Bob Dylan.flac
+8ba382f6d10c8ea993efc625b9bf260d  16 Track16 - Bob Dylan.flac
+4dbdfc3f95ac432cc842f65805a66890  17 Track17 - Bob Dylan.flac
+fcad32dab4bcc9018aa42507deb01f2a  18 Track18 - Bob Dylan.flac
+ce2bcce38ef1c27168cbd26ad93933c2  Bob Dylan - Mighty Mockingbird Isle Of Wight.ffp
+0d6f71f34c55457a89e2107962430fa2  Bob Dylan - Mighty Mockingbird Isle Of Wight.md5
+f49f7a45c920c92fd312cbb1a954e008  Bob Dylan - Mighty Mockingbird Isle Of Wight.shntool_len.txt
+1cf5c5691ae9cb1f587155de93fb5f38  mighty back.jpg
+ca5911ba2f4b243b6be1369bb59d9703  mighty front.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-08-31-Mighty-Mockingbird.flacf 
+=================== 
+=================== 
+=================== 
+01 Track01 - Bob Dylan.flac:115ff4ed576f0d8abb8a7052bec66a4f
+02 Track02 - Bob Dylan.flac:b20ba779a279dda016841ecd5679736a
+03 Track03 - Bob Dylan.flac:988c92e8274b85c9b706ff135ba5c7b9
+04 Track04 - Bob Dylan.flac:f111e878529b010c4e6d998cba90fe98
+05 Track05 - Bob Dylan.flac:7ef2b2ebcc57a23851bf88802408a4f4
+06 Track06 - Bob Dylan.flac:e97af9cb215b20f3d58bdf3c4800d21d
+07 Track07 - Bob Dylan.flac:4f1a5b475b5117c98e7c14931c47b5ee
+08 Track08 - Bob Dylan.flac:c578c3b049f9954759a58e47fb991184
+09 Track09 - Bob Dylan.flac:2c09d3fcb64d113f9226ede702a3ab72
+10 Track10 - Bob Dylan.flac:08b69792559c14f4cd002863a50a74c6
+11 Track11 - Bob Dylan.flac:844a504ee0bff8c4673aa96ae6471f9c
+12 Track12 - Bob Dylan.flac:9c7630256d4ad8d74ddbd8b59d771e8d
+13 Track13 - Bob Dylan.flac:e610d98597136351f2c9707133601b63
+14 Track14 - Bob Dylan.flac:42db7f957ec3cd3d33ca8b271902b06c
+15 Track15 - Bob Dylan.flac:806069d0a93772e143e4d5aed5d7ce0a
+16 Track16 - Bob Dylan.flac:33033468200345d75c8a4b45b9a54886
+17 Track17 - Bob Dylan.flac:a13868ac62a41f1f5831300e1bc2be8c
+18 Track18 - Bob Dylan.flac:3dd1fc7ed2f5a17f472039c40db18d73
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd69-08-31-Mighty-Mockingbird.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:36.02        6355148 B   ---   --   ---xx   flac  0.3587  01 Track01 - Bob Dylan.flac
+     2:48.01       29637596 B   ---   --   ---xx   flac  0.2276  02 Track02 - Bob Dylan.flac
+     3:06.69       32972732 B   ---   --   ---xx   flac  0.2264  03 Track03 - Bob Dylan.flac
+     4:34.32       48408908 B   ---   --   ---xx   flac  0.2415  04 Track04 - Bob Dylan.flac
+     3:06.50       32928044 B   ---   --   ---xx   flac  0.2200  05 Track05 - Bob Dylan.flac
+     3:18.02       34931948 B   ---   --   ---xx   flac  0.2178  06 Track06 - Bob Dylan.flac
+     2:19.10       24543164 B   ---   --   ---xx   flac  0.2170  07 Track07 - Bob Dylan.flac
+     3:36.54       38229452 B   ---   --   ---xx   flac  0.2204  08 Track08 - Bob Dylan.flac
+     3:19.17       35143628 B   ---   --   ---xx   flac  0.2280  09 Track09 - Bob Dylan.flac
+     3:39.70       38796284 B   ---   --   ---xx   flac  0.2253  10 Track10 - Bob Dylan.flac
+     3:38.62       38601068 B   ---   --   ---xx   flac  0.2533  11 Track11 - Bob Dylan.flac
+     2:26.36       25839116 B   ---   --   ---xx   flac  0.2412  12 Track12 - Bob Dylan.flac
+     3:44.71       39680636 B   ---   --   ---xx   flac  0.2399  13 Track13 - Bob Dylan.flac
+     4:56.08       52233260 B   ---   --   ---xx   flac  0.2537  14 Track14 - Bob Dylan.flac
+     3:16.19       34619132 B   ---   --   ---xx   flac  0.2515  15 Track15 - Bob Dylan.flac
+     2:53.03       30524300 B   ---   --   ---xx   flac  0.2614  16 Track16 - Bob Dylan.flac
+     3:19.38       35193020 B   ---   --   ---xx   flac  0.2311  17 Track17 - Bob Dylan.flac
+     3:05.33       32711660 B   ---   --   ---xx   flac  0.4734  18 Track18 - Bob Dylan.flac
+    57:45.52      611349096 B                            0.2497  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,93 @@
+Bob Dylan and his band
+
+recorded live at the:-
+
+Spektrum
+Oslo
+Norway 
+ 
+18 October 2005 
+
+a THB DAT recording, mastered from the original 
+raw untracked tape file by TheOldToaD
+
+D1 52:13
+D2 50:16
+
+This is a most remarkable recording in my opinion, there is precious little audience
+noise noticeable in this set, except of course in the intertrack applause. This version
+has been prepared with the taper's permission and blessing from the original raw DAT tape
+file. I received the show as one giant FLAC file direct from the PC transfer. It was an 
+honour to be offered the opportunity to master it, at the same time a great challenge. 
+The price was paid in time. As I progressed through the show, it became harder to keep the
+similar sound thread intact. I mastered each track individually, as opposed to one great 
+big normalisation. In my opinion this produces a better end product, but there are pitfalls.
+It is easy to process one track with its own end seconds of applause, and then process the
+next track slightly differently - bingo you have a a totally unmatched sound at the track 
+changeover! I believe that I have avoided this by both hook and crook! I have included the
+audience encore uncut, after all it is a live show! Its not too loud, although you will 
+know when Bob and the band hit the stage! 
+
+It's a good time to top up the wine glass, or the G & T!
+
+Enough waffle, here are the recording and mastering details.
+
+DAT master taped by THB
+
+Core Sound Binaural mics > Sony D7 DAT
+Transfer by taper: D7 DAT > Opcode DATPort > PC > one giant uncut FLAC file
+
+Mastered by TheOldToaD 
+
+one FLAC file > FLAC front end > one wave file > tracked and mastered using Cool Edit Pro >
+mastered wave files > FLAC front end > FLAC files compression ratio 5
+
+So, here you have a zero generation lossless version. I suppose it should get an LB number.
+
+Thanks to THB for a real treat of a recording, and of course to Bob and the band for a 
+great show.
+
+This release includes artwork specially commissioned from Scouser Art and wave file checksums.
+
+PLEASE CIRCULATE THIS ONLY IN LOSSLESS FORMAT.
+
+The files have been checked and corrected using shntool for any SBE's.
+
+Enjoy the music!
+TheOldToaD
+Mid January 2006
+revised 31 January 2006
+
+FLAC fingerprints
+
+disc one
+
+bd-05-10-18d1-t01-fixed.flac:ceccaddc48133bf77c305e75d894e3e8
+bd-05-10-18d1-t02-fixed.flac:5a24da56541ed9e9194414ace94412e6
+bd-05-10-18d1-t03-fixed.flac:9b0fb940a176222ef0b22db083039c8b
+bd-05-10-18d1-t04-fixed.flac:3ac006f89cfc318d1677c35b0db80108
+bd-05-10-18d1-t05-fixed.flac:9d58020ea49e8535c4191caacc7875a5
+bd-05-10-18d1-t06-fixed.flac:4b25638096f75b19ffa01015c7f1425e
+bd-05-10-18d1-t07-fixed.flac:88c431e967b612a4a8b5db886b141ca8
+bd-05-10-18d1-t08-fixed.flac:e7767fe1fa54ac7449b46e1826f7acba
+bd-05-10-18d1-t09-fixed.flac:84c91c237696210288a4462061f36a8c
+bd-05-10-18d1-t10-fixed.flac:22f5e47f3a2d16565be01a012dacb13c
+
+disc two
+
+bd-05-10-18d2-t01-fixed.flac:54642fb619f7b059c03b401b93208266
+bd-05-10-18d2-t02-fixed.flac:b54fc08fb698a52a764a4d9ed4372703
+bd-05-10-18d2-t03-fixed.flac:d9fecbf688580f07c1ce2bd8093b8bac
+bd-05-10-18d2-t04-fixed.flac:361fa3b0e57699c73680c6f823f688ff
+bd-05-10-18d2-t05-fixed.flac:716c8561f62f251df0ef32e64ebe1d94
+bd-05-10-18d2-t06-fixed.flac:769e562809b73483b94c00b445755e5e
+bd-05-10-18d2-t07-fixed.flac:1f6a50ba4cc0331b42841af91843db49
+bd-05-10-18d2-t08-fixed.flac:be8f1af599e4e830d6d4ae8629652f5e
+bd-05-10-18d2-t09-fixed.flac:28977b6e720f013080126118d8e22e68
+
+
+
+ 
+
+
+

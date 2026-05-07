@@ -1,0 +1,19 @@
+b55ae24d7ab56cf5f45f2adc1e53bfaa  2008-06-28-Hoyos del Espinos.md5
+8051d61fb86f34973fd11adb1204de62  2008-06-28-Hoyos del Espinos.txt
+cd10b95dd0ac053b699857eb0a20d495  Track101.flac
+8fabdc2bef674b3c18edd97aa758d8c7  Track102.flac
+c0acdf952fe6e8fc561ea485160e3133  Track103.flac
+5ee7bf7d97d2e16176521094b45229e2  Track104.flac
+468e44569d2fea52b280bee766320dcc  Track105.flac
+819c1806914760cc4b87f6dca023a0a7  Track106.flac
+a9275933372263e4dab8c7720d0262b6  Track107.flac
+fc6b5a45ff361cbd1837a493cef6f659  Track201.flac
+bbeeaa7558be293de9428b43d51f86fe  Track202.flac
+8cedc33c0864ea3c55604e90dc5e3d42  Track203.flac
+c4cef10aa35a3e1bba44cd61661b257e  Track204.flac
+959722f9ab0ed048a1cb70dd16ec0eaf  Track205.flac
+5db71aea82960cb0d8294fc5c2d4af5c  Track206.flac
+c5da44d70328256d2b6356127c052acb  Track207.flac
+db4948da439ebff3a6e09f47c156a44f  Track208.flac
+7ac85a7b912e3f7799317dff905793b6  Track209.flac
+c0338e4731c1fc6a43687c3a6ad5f1b3  Track210.flac

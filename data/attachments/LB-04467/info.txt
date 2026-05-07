@@ -1,0 +1,36 @@
+Bob Dylan
+
+Massey Hall
+Toronto, Ontario, Canada
+Tuesday 18 August 1992
+
+CD1 66:16
+
+1. 2 x 2
+2. All Along The Watchtower
+3. Tears Of Rage
+4. Maggie's Farm
+5. Just Like Tom Thumb's Blues
+6. I Don't Believe You (She Acts Like We Never Have Met)
+7. Wiggle Wiggle
+8. Little Moses
+9. To Ramona
+10. Gates Of Eden
+11. Don't Think Twice, It's All Right
+
+CD2 53:42
+
+12. Cat's In The Well
+13. Idiot Wind
+14. Stuck Inside Of Mobile With The Memphis Blues Again
+15. Highway 61 Revisited
+
+16. Ballad Of A Thin Man
+17. Everything Is Broken
+18. It Ain't Me, Babe
+
+Audience recording (Full spectrum) > Unknown transfer > CDR(x) >  EAC (Secure/Offset) > WAV > FLAC (Level 8)  > CEP > TLH > HungerCity
+
+I used CEP to remove a glitch and 2" silence at the start of d1t01 (before the recording begins). The original discs overlapped and d1 ended, somewhat discordantly, w/ the first drum beats of CITW so I used CEP to fade this out (no music is lost). There is a brief conversation possibly w/ the taper at the end of d1t11@6:26 approx. Very good sound, A-.
+
+Please retain this info file as an indicator for this particular lossless set of files. If you happen to pass it on in trades, then please list it as such in your description, thereby reducing the possibility of others getting duplicates.

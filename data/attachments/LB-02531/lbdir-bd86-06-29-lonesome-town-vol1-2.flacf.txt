@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-06-29-lonesome-town-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+e4ffaf919fc1bf6a8259104b4c2de146  bd86-06-29-lonesome-town-vol1-2.txt
+382cf45eaa77d46abb6ac5784debdec0  bdltd101.flac
+7a9a79d50091a55403d030367562f740  bdltd102.flac
+805d688b6cf190f3058e1894ab58b8d2  bdltd103.flac
+e5623f743d8a8b8fcd9d04a49b095667  bdltd104.flac
+50c88f928e97eb2d27e468c2e9c57f52  bdltd105.flac
+874bf9f9fae25232e49056fb4e261502  bdltd106.flac
+6c02506b64a1265e38fae3e674cb916e  bdltd107.flac
+31333512113034e044c34ed6e4db3b13  bdltd108.flac
+77c01ea72a683f4d0d5acd39fd9e246b  bdltd109.flac
+bcc77331b1ce3fc968c0aa7059a2717d  bdltd110.flac
+dd64826a0e6feb457a5746824cf2d2f9  bdltd111.flac
+a9cd9e03a80fe42fb76494b474b71210  bdltd112.flac
+88ad2c21a840a5599481058bdb13c402  bdltd113.flac
+0df590411256555cc39b8811b18ca424  bdltd114.flac
+a1e15631251945508376f3c2f685f58e  bdltd115.flac
+97cf94b6b429e2eeadb8f891b4126a31  bdltd201.flac
+c905e6196950bfa26a8e0bddae93db29  bdltd202.flac
+858c8ad9b8693ba7d57f0b160b5cd815  bdltd203.flac
+f19b62eddc627a2048b23d3ce6391c2a  bdltd204.flac
+7f0e8a73b32ad2fdee391fcc2d9af87d  bdltd205.flac
+4290f4f1d41961d2338a060a4d20bc75  bdltd206.flac
+8f645a4e605d723eeb2ad2ac877d9e99  bdltd207.flac
+8146b03c6abc4f3048affab1c3b035a1  bdltd208.flac
+2ebd4491b7cd1c3905bf2d10a7e1fda4  bdltd209.flac
+ab379f8cc6bacfd15438bd3c77e8ae4d  bdltd210.flac
+585e223dc0146fbbe6eabd5ccba5e4d0  bdltd211.flac
+887edfe4d2b282768c4be29c7ecab98a  lonesome town flac.md5
+0d16faf1b70d198b0c60667098e48527  setlist.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-06-29-lonesome-town-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+bdltd101.flac:feb55822184dd670616efc483bfc3e74
+bdltd102.flac:e180eba6922bd1cb0b64f2298e67eb8d
+bdltd103.flac:8bdffe6fc0fcbba0157c6b488d8fac95
+bdltd104.flac:3a7c4a43e6a5f5fb7b3adc27f476efde
+bdltd105.flac:e6d9e3e23f2ad009738fa4ec92b5c170
+bdltd106.flac:0cea4c50a0e1c1702570eb0955803806
+bdltd107.flac:9be33a3a8861ad5e4bcf68fb6e12a23e
+bdltd108.flac:a5be97a2046e5d7b4d690cd4e392d0c5
+bdltd109.flac:734aa0fb65d898af65c06da25b712579
+bdltd110.flac:71b03a0ff4d3aebae542211a87384310
+bdltd111.flac:b750c6337ad13d03431321db4cb3010f
+bdltd112.flac:5f0914df45f01cdf549b3463a683e410
+bdltd113.flac:0d6d3b84025d6c4e9cd8580140789c1b
+bdltd114.flac:6adb690c00ec2b89adb6220d908e856b
+bdltd115.flac:0aad3162e2faaa46f1678daf6ea87c66
+bdltd201.flac:64b1afba9c4fb97e17e40c9ce4c1b4e6
+bdltd202.flac:52057178836689e57efe6caceb5a4c8d
+bdltd203.flac:8129cae78d1536248753288f76995dfc
+bdltd204.flac:d2043e28b702f9e11a7ac7b40308cd41
+bdltd205.flac:83efa652057123d4086b8f85f48985b2
+bdltd206.flac:08d5ec0bc5568e022eea2628f0c60b01
+bdltd207.flac:7602a67716a3983c3ff83f2f6824422e
+bdltd208.flac:9a7beb324e1d6671dbad4a4f94e3e1a6
+bdltd209.flac:27545d25a18ac17217f1e17760cceba7
+bdltd210.flac:ae1683cbc62c0c7fb3cfbf578ce86ab8
+bdltd211.flac:044e200a01415c0a56ce0f8264e50d3e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-06-29-lonesome-town-vol1-2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.53       36992300 B   ---   --   ---xx   flac  0.6088  bdltd101.flac
+     3:31.17       37260428 B   ---   --   ---xx   flac  0.5965  bdltd102.flac
+     2:42.30       28647404 B   ---   --   ---xx   flac  0.6139  bdltd103.flac
+     4:06.68       43554380 B   ---   --   ---xx   flac  0.5758  bdltd104.flac
+     4:53.00       51685244 B   ---   --   ---xx   flac  0.5901  bdltd105.flac
+     2:59.62       31721468 B   ---   --   ---xx   flac  0.5727  bdltd106.flac
+     4:10.70       44264684 B   ---   --   ---xx   flac  0.6164  bdltd107.flac
+     3:55.03       41461100 B   ---   --   ---xx   flac  0.5792  bdltd108.flac
+     3:05.07       32650508 B   ---   --   ---xx   flac  0.5699  bdltd109.flac
+     5:25.65       57482924 B   ---   --   ---xx   flac  0.5867  bdltd110.flac
+     3:56.42       41729228 B   ---   --   ---xx   flac  0.5966  bdltd111.flac
+     4:09.63       44071820 B   ---   --   ---xx   flac  0.6325  bdltd112.flac
+     2:56.55       31175804 B   ---   --   ---xx   flac  0.6049  bdltd113.flac
+     5:11.42       54959228 B   ---   --   ---xx   flac  0.6321  bdltd114.flac
+     3:40.51       38927996 B   ---   --   ---xx   flac  0.6060  bdltd115.flac
+     4:44.65       50250524 B   ---   --   ---xx   flac  0.6309  bdltd201.flac
+     5:44.05       60693404 B   ---   --   ---xx   flac  0.6279  bdltd202.flac
+     3:06.15       32845724 B   ---   --   ---xx   flac  0.6416  bdltd203.flac
+     3:55.72       41623388 B   ---   --   ---xx   flac  0.6431  bdltd204.flac
+     4:04.43       43142780 B   ---   --   ---xx   flac  0.6015  bdltd205.flac
+     6:40.45       70665884 B   ---   --   ---xx   flac  0.5061  bdltd206.flac
+     5:41.67       60310028 B   ---   --   ---xx   flac  0.5838  bdltd207.flac
+     7:42.20       81543884 B   ---   --   ---xx   flac  0.5478  bdltd208.flac
+     3:48.45       40325084 B   ---   --   ---xx   flac  0.5230  bdltd209.flac
+     2:43.58       28889660 B   ---   --   ---xx   flac  0.5866  bdltd210.flac
+     7:24.48       78434540 B   ---   --   ---xx   flac  0.5535  bdltd211.flac
+   113:52.61     1205309416 B                            0.5894  (26 files)
+=================== 
+=================== 
+=================== 

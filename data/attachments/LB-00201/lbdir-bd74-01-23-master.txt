@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-23-master 
+=================== 
+=================== 
+=================== 
+d698e53cb85ef93472152d34bd1ddbcb  bd74-01-23.md5
+ca1a2a1902ec019e53d1e6059ac5d43e  bd74-01-23.txt
+e2be9ca722cfad3a8eab48e29762094f  bd74-01-23d1t01.shn
+17b7db2faf130a1ac65bdef8c2c9f429  bd74-01-23d1t02.shn
+4ade95d4a52234a328fd49b500a4d95f  bd74-01-23d1t03.shn
+a00f148ad88a52a917890eaea6ee03aa  bd74-01-23d1t04.shn
+f6259a66d8ac34370167a663d97b4b53  bd74-01-23d1t05.shn
+4c6ecb588a8eed0b13b97224508a124f  bd74-01-23d1t06.shn
+a48a97a024519316f0bd5b62deb9e0fd  bd74-01-23d1t07.shn
+b692c6f7c6089eeff6f1015432b15eb5  bd74-01-23d1t08.shn
+c8081f51bbfe3b34ae3e36114b849539  bd74-01-23d1t09.shn
+2604e7fedc37abfdc9b5735ea264c6e3  bd74-01-23d1t10.shn
+24167b14e7d66706aa7a499bb4bcb088  bd74-01-23d1t11.shn
+a8d4a9ad39d7d098801f56c43ebfd931  bd74-01-23d1t12.shn
+59b193bd07477ba22480856fe9513b09  bd74-01-23d1t13.shn
+196dcd59d38d033b2b64531170192994  bd74-01-23d1t14.shn
+434f305d0254c1f2b6e625e609d39128  bd74-01-23d1t15.shn
+821d6c90f414c4ee5b4200e55de8ae79  bd74-01-23d2t01.shn
+6dae6d45e1b31eaff719cfdbd8c6ba8f  bd74-01-23d2t02.shn
+87c106fd19ba10b66d62a26957ab13f2  bd74-01-23d2t03.shn
+a7cf597b2466d043e9605fb8621852ca  bd74-01-23d2t04.shn
+0e501501e8d9763165d4f28b9f0a4ec8  bd74-01-23d2t05.shn
+df48d28eb15243adbe090d118681ecba  bd74-01-23d2t06.shn
+de6093a36c2b253f2a2e2f01c418aa20  bd74-01-23d2t07.shn
+47961cf5e39b68777ada49dcd57f3a0b  bd74-01-23d2t08.shn
+6599ce6b8345ea6110edd2b2af11d562  bd74-01-23d2t09.shn
+b18267140d519055fbd010c691eff1fb  bd74-01-23d2t10.shn
+92143c441db3b054dd127c9d59528e83  bd74-01-23d2t11.shn
+59aaa6301dbb37f4b52b56dfbbf62f70  bd74-01-23d2t12.shn
+f1c47103fecee8a3a5ec5264b2faf85c  bd74-01-23d2t13.shn
+cf3ff611bfa743d0dc1c0939243aa270  bd74-01-23d2t14.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-01-23-master 
+=================== 
+=================== 
+=================== 
+9393f01bb2d1be668433bb6690779eb4  [shntool]  bd74-01-23d1t01.wav
+b5763c9bc1fe64dadcb08eb6abf0fe7a  [shntool]  bd74-01-23d1t02.wav
+0bc0ee351041282a16665195df9d6009  [shntool]  bd74-01-23d1t03.wav
+36a1811da252e77a1669422784a87743  [shntool]  bd74-01-23d1t04.wav
+b8a2516d50cafb32c36a0f57e30528e9  [shntool]  bd74-01-23d1t05.wav
+2e0cd12272121e8add3003db9e61fa69  [shntool]  bd74-01-23d1t06.wav
+9f5e2b0de0f4b2174f3eab7870e5b93b  [shntool]  bd74-01-23d1t07.wav
+3480d702bf872e8bdbf982d84977a80a  [shntool]  bd74-01-23d1t08.wav
+3e62c23bb1075a660efcb13ac8088670  [shntool]  bd74-01-23d1t09.wav
+26ad4c18ac0f04ed8222ce19ba3390c6  [shntool]  bd74-01-23d1t10.wav
+de8a53e996041b8bda1852f73b0f3ef4  [shntool]  bd74-01-23d1t11.wav
+00d6dacc23d4dafb19840a978dc5873a  [shntool]  bd74-01-23d1t12.wav
+818a33a434f0c5f33f00729972f93845  [shntool]  bd74-01-23d1t13.wav
+08e9053207a4da100929ea858ea81c31  [shntool]  bd74-01-23d1t14.wav
+11c8b6f7f96a66956370db3ae0288e28  [shntool]  bd74-01-23d1t15.wav
+362162314ee6ae26d3ddd20540a57047  [shntool]  bd74-01-23d2t01.wav
+fecde3704752b6ba1c47c82a1885ed64  [shntool]  bd74-01-23d2t02.wav
+0cced9aa18a522f6aa3847ce34b52199  [shntool]  bd74-01-23d2t03.wav
+9299c0b26a7a965fa6ddcb5d088c947e  [shntool]  bd74-01-23d2t04.wav
+95efa8d1dda922d2eeb049f058a4b649  [shntool]  bd74-01-23d2t05.wav
+4c8586bde34eb837bb7f2017bf3c3b55  [shntool]  bd74-01-23d2t06.wav
+ce4455b11dc8ea559f706654dceeb3af  [shntool]  bd74-01-23d2t07.wav
+dee6afbc4d119198b1850a56391258fd  [shntool]  bd74-01-23d2t08.wav
+8e926022e05773c1991473f7c9e03eb5  [shntool]  bd74-01-23d2t09.wav
+ff336d2d7c1c4b891cfcfa04bfd27cba  [shntool]  bd74-01-23d2t10.wav
+008c03dcaa28dbc70504e2e8aadbe423  [shntool]  bd74-01-23d2t11.wav
+07b6cb8581a716a73f0a5192de7e01db  [shntool]  bd74-01-23d2t12.wav
+bcdc63ceacfb893bc532b9d2148b99a5  [shntool]  bd74-01-23d2t13.wav
+418def1474fbe5ac654a7eba7ba27233  [shntool]  bd74-01-23d2t14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-23-master 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:24.38       36075020 B   ---   --   -----    wav  1.0000  bd74-01-23d1t01.wav
+     2:56.05       31058204 B   ---   --   -----    wav  1.0000  bd74-01-23d1t02.wav
+     2:46.68       29442380 B   ---   --   -----    wav  1.0000  bd74-01-23d1t03.wav
+     3:14.28       34287500 B   ---   --   -----    wav  1.0000  bd74-01-23d1t04.wav
+     3:22.23       35686940 B   ---   --   -----    wav  1.0000  bd74-01-23d1t05.wav
+     3:13.28       34111100 B   ---   --   -----    wav  1.0000  bd74-01-23d1t06.wav
+     4:17.50       45452444 B   ---   --   -----    wav  1.0000  bd74-01-23d1t07.wav
+     4:20.11       45889916 B   ---   --   -----    wav  1.0000  bd74-01-23d1t08.wav
+     4:26.65       47075324 B   ---   --   -----    wav  1.0000  bd74-01-23d1t09.wav
+     3:38.41       38551676 B   ---   --   -----    wav  1.0000  bd74-01-23d1t10.wav
+     3:37.01       38281196 B   ---   --   -----    wav  1.0000  bd74-01-23d1t11.wav
+     4:49.22       51031388 B   ---   --   -----    wav  1.0000  bd74-01-23d1t12.wav
+     2:43.69       28915532 B   ---   --   -----    wav  1.0000  bd74-01-23d1t13.wav
+     4:11.25       44335244 B   ---   --   -----    wav  1.0000  bd74-01-23d1t14.wav
+     3:54.70       41442284 B   ---   --   -----    wav  1.0000  bd74-01-23d1t15.wav
+     3:03.32       32356508 B   ---   --   -----    wav  1.0000  bd74-01-23d2t01.wav
+     3:30.70       37208684 B   ---   --   -----    wav  1.0000  bd74-01-23d2t02.wav
+     3:55.10       41477564 B   ---   --   -----    wav  1.0000  bd74-01-23d2t03.wav
+     4:20.67       46021628 B   ---   --   -----    wav  1.0000  bd74-01-23d2t04.wav
+     4:47.50       50744444 B   ---   --   -----    wav  1.0000  bd74-01-23d2t05.wav
+     5:50.40       61834124 B   ---   --   -----    wav  1.0000  bd74-01-23d2t06.wav
+     4:14.49       44920892 B   ---   --   -----    wav  1.0000  bd74-01-23d2t07.wav
+     3:34.05       37761404 B   ---   --   -----    wav  1.0000  bd74-01-23d2t08.wav
+     3:50.58       40708460 B   ---   --   -----    wav  1.0000  bd74-01-23d2t09.wav
+     5:20.52       56570348 B   ---   --   -----    wav  1.0000  bd74-01-23d2t10.wav
+     5:18.23       56149340 B   ---   --   -----    wav  1.0000  bd74-01-23d2t11.wav
+     4:24.55       46699004 B   ---   --   -----    wav  1.0000  bd74-01-23d2t12.wav
+     7:02.73       74612540 B   ---   --   -----    wav  1.0000  bd74-01-23d2t13.wav
+     4:10.72       44269388 B   ---   --   -----    wav  1.0000  bd74-01-23d2t14.wav
+   118:23.00     1252970476 B                            1.0000  (29 files)
+=================== 
+=================== 
+=================== 

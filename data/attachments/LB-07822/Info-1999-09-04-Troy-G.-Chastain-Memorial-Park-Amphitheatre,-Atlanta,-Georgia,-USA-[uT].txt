@@ -1,0 +1,120 @@
+Troy G. Chastain Memorial Park Amphitheatre
+Atlanta, Georgia
+September 4, 1999
+
+*****  No LB-reference found; also not for the Dylan set!  *****
+Fingerprint: LB-5383 says "Microphone noise d2t02 @0:43"; noise is not detected here.
+
+NOTE #1: all between-tracks-gaps removed
+NOTE #2: some mic. crackles removed/smoothened; not audible/hardly audible
+NOTE #3: completely re-tracked
+NOTE #4: prior to any fixes, the Dylan set did not comply with the track lengths given for LB-5383; http://jokerman.org.uk/lb/detail/LB-05383.html; LB-rated: A
+
+Taper: unidentified
+Source: unknown
+Lineage: received in a trade as SHN; now renamed FLAC song titles
+UploaderRating: A (but, before me, and with reference to high volume peaks, this set might have been tampered with..?)
+UploaderFrequencyAnalyzer: full spectrum
+
+Part 1: Paul Simon's set
+01. Bridge Over Troubled Water [03:49]
+02. Can't Run But [02:55]
+03. These Are The Days [06:19]
+04. (Paul Simon band intro) [00:21]
+04. This Is The Only Light [05:40]
+05. Mother And Child Reunion [05:33]
+06. Mrs. Robinson [04:16]
+07. Me And Julio [03:19]
+08. Further To Fly [06:04]
+09. Graceland [05:09]
+10. (Paul Simon band intro) [00:17]
+10. Cool Water [05:57]
+11. Slip Slidin' Away [05:04]
+12. Diamonds On The Soles Of Her Shoes [07:09]
+13. Long Lost Pal [05:15]
+14. Late In The Evening [04:49]
+15. Still Crazy After All These Years [04:43]
+Total time [76:46]
+
+Part 2: Bob Dylan & Paul Simon duets
+01. The Boxer (Paul Simon) [Dylan & Simon] [04:57]
+02. That'll Be The Day (Jerry Allison, Buddy Holly & Norman Petty) [Dylan & Simon] [02:07]
+03. The Wanderer [Dylan & Simon] (E. Maresca) [02:32]
+04. Knockin' On Heaven's Door [Dylan & Simon] [05:41]
+
+Bob Dylan (acoustic guitar)
+Paul Simon (electric guitar)
+Mark Stewart (electric guitar)
+Vincent Nguini (electric guitar)
+Chris Botti, Jay Ashby, Andy Stitzer (horns)
+Tony Cedras (keyboards)
+Alain Mallet (keyboards)
+Bakhithi Kumalo (bass)
+Jamie Haddad (percussion)
+Steve Shehan (percussion)
+Steve Gadd (drums)
+
+01 Bob Dylan harmonica
+
+Part 3: Bob Dylan's set
+05. I Am The Man, Thomas (Ralph Stanley/Larry Sparks) [02:48]
+06. Mr. Tambourine Man [06:48]
+07. Desolation Row [08:11]
+08. It's All Over Now, Baby Blue [07:42]
+09. Tangled Up In Blue [08:57]
+10. All Along The Watchtower [04:10]
+11. Lay Lady Lay [04:28]
+12. Stuck Inside Of Mobile With The Memphis Blues Again [07:43]
+13. Not Dark Yet [06:24]
+14. (band intro) [00:58]
+15. Highway 61 Revisited [06:40]
+16. Like A Rolling Stone [07:35]
+17. Blowin' In The Wind [06:18]
+18. Not Fade Away (Norman Petty/Charles Hardin) [04:18]
+Total time [98:26]
+
+Concert # 1135 of The Never-Ending Tour
+Second concert of the 1999 US Fall Tour with Paul Simon
+1999 concert # 89
+
+Concert # 40 with the 12th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Charlie Sexton (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+1-5, 17 acoustic with the band
+09 Bob Dylan harmonica
+08, 11 Larry Campbell (pedal steel guitar)
+
+NOTES:
+Bob Dylan was the closing act
+Live debut of I Am The Man, Thomas
+
+9 new songs (69%) compared to previous concert
+9 new songs for this tour
+
+*****  Part 2 & 3 ONLY!  *****
+
+shntool 3.0.4
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.18       52433544 B   -b-   --   ---xx   flac  0.5990  01 The boxer [Dylan & Simon].flac
+     2:07.40       22495788 B   -b-   --   ---xx   flac  0.6900  02 That'll be the day [Dylan & Simon].flac
+     2:32.59       26952544 B   -b-   --   ---xx   flac  0.6953  03 The wanderer [Dylan & Simon].flac
+     5:41.73       60324680 B   -b-   --   ---xx   flac  0.6102  04 Knockin' on heaven's door [Dylan & Simon].flac
+     2:48.60       29775632 B   -b-   --   ---xx   flac  0.6262  05 I am the man, Thomas.flac
+     6:48.60       72112588 B   -b-   --   ---xx   flac  0.6662  06 Mr. Tambourine Man.flac
+     8:11.36       86697204 B   -b-   --   ---xx   flac  0.6651  07 Desolation Row.flac
+     7:42.43       81598484 B   -b-   --   ---xx   flac  0.6136  08 It's all over now, baby blue.flac
+     8:57.17       94766056 B   -b-   --   ---xx   flac  0.5737  09 Tangled up in blue.flac
+     4:10.05       44110648 B   -b-   --   ---xx   flac  0.6076  11 All along the watchtower.flac
+     4:28.67       47432500 B   -b-   --   ---xx   flac  0.5618  11 Lay lady lay.flac
+     7:43.58       81809860 B   -b-   --   ---xx   flac  0.6356  12 Stuck inside of Mobile with the Memphis blues again.flac
+     6:24.36       67823268 B   -b-   --   ---xx   flac  0.5248  13 Not dark yet.flac
+     0:58.55       10360164 B   -b-   --   ---xx   flac  0.5105  14 (band intro).flac
+     6:40.42       70658192 B   -b-   --   ---xx   flac  0.6865  14 Highway 61 revisited.flac
+     7:35.16       80299692 B   -b-   --   ---xx   flac  0.6749  15 Like a rolling stonec.flac
+     6:18.08       66698864 B   -b-   --   ---xx   flac  0.5771  16 Blowin' in the wind.flac
+     4:18.29       45579196 B   -b-   --   ---xx   flac  0.6527  17 Not fade away.flac
+    98:26.47     1041928904 B                            0.6224  (18 files)

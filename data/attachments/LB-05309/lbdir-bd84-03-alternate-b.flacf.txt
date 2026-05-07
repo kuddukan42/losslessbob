@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-03-alternate-b.flacf 
+=================== 
+=================== 
+=================== 
+57ab8ea6ef198298ef0332d06f4419fa  BD - The Plugz Rehearsals 1984 (Fixed LB-5309 + Alternate copy).txt
+c23d8d3a1883ad80a8ab4c275ba728fc  BD_Plugz Rehearsals (March 1984) Alternate copy 1\fp alt 1.txt
+1ded7fedbfa7c01b61a24c2308788612  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track01.flac
+1ad79c99d5f18367f7cf4e0953c3650c  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track02.flac
+0f7c1745a8a0e8c94744bbfa826ee6c9  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track03.flac
+d30ceb344136b9fcb1aeb091df16f8ca  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track04.flac
+44d6594594460db6833f312b8d825ac2  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track05.flac
+052d2ce9eab5aee879e3c3f0e813ec53  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track06.flac
+9b17b39985f284bfe2e399d235674a85  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track07.flac
+b81cfc13d1b710ea615dcc57c1f78ab2  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track08.flac
+8bfc960062b21c1deb57d6a2c3690344  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track09.flac
+35c215f900ab4eb735ac1fa007026583  BD_Plugz Rehearsals (March 1984) Alternate copy 1\Track10.flac
+2a3dededc088e480f8426babe677263e  BD_Plugz Rehearsals (March 1984) Alternate copy 2\fp alt 2.txt
+d2788894177c6577f7cfa450abe19c81  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track01.flac
+7e60694ac008071101bb4ce0122d3848  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track02.flac
+c2ee3146a66a898b058b049facbfad9c  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track03.flac
+fbe77894ee7fe9756c03bae54eee704f  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track04.flac
+47be74795053a55741802bcaec6aa93f  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track05.flac
+8380a582c1da1e339695bb4b32d4c1ed  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track06.flac
+5f634a3ab17f076ccb68cff895ad3eb9  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track07.flac
+4139be7a58d9cfbb28a2467910e0ce7e  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track08.flac
+865b511022ac3320c4020da272dd783d  BD_Plugz Rehearsals (March 1984) Alternate copy 2\Track09.flac
+f8e4c160beeb7fee76120d16dc39c671  BD_Plugz Rehearsals (March 1984) Alternate copy.md5
+d0d819a7e01fffbaffd566c6781ade3c  BD_Plugz Rehearsals (March 1984) Alternate copy.txt
+e19e88d053e7dbfbacbf87df99b45b10  DylanPlugzBack.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-03-alternate-b.flacf\BD_Plugz Rehearsals (March 1984) Alternate copy 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:299e11ac379d535946f86c60d598f7fb
+Track02.flac:26267a9d7d79937732803da383f9770b
+Track03.flac:65bbd43de55656cda3ed800f1f5e495d
+Track04.flac:3acc889128a1967cd6959c7c9b41e65a
+Track05.flac:c70fbce043005b297401bc8c5425b3b4
+Track06.flac:fde3f79b64d876c71fa8428d3ae23c1c
+Track07.flac:5f4a674590fddd70348b7047a0893910
+Track08.flac:bc2d676501333c8da347d44f79499286
+Track09.flac:7c1229a76e5e18636425624a162bcefa
+Track10.flac:b40f89ec9f4e56045ada33919af14fbd
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-03-alternate-b.flacf\BD_Plugz Rehearsals (March 1984) Alternate copy 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:eb606b4a3c3872ef1f404c0282f91cba
+Track02.flac:b8f0b76394d30faa568df8ccc17ce8da
+Track03.flac:60cc9eb5e1ae8ff6168072083f6b962e
+Track04.flac:9590f9b8fe79b2ad1bbd6aa41116b01d
+Track05.flac:e4372aa50b64204207e9ca0fd5a3a613
+Track06.flac:6ca170f272c836ea34fc54a3aa383db6
+Track07.flac:d19d71ea1bce57712006fd1afb2d43cb
+Track08.flac:0f9943b2a32f70b18ca3d47c2d358b2d
+Track09.flac:5d2cf854200a82e24be97bbdf9fdb28b
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-03-alternate-b.flacf\BD_Plugz Rehearsals (March 1984) Alternate copy 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.46       44384636 B   ---   --   ---xx   flac  0.6545  Track01.flac
+     2:38.70       28035884 B   ---   --   ---xx   flac  0.6472  Track02.flac
+     4:48.02       50807948 B   ---   --   ---xx   flac  0.6561  Track03.flac
+     7:28.67       79184828 B   ---   --   ---xx   flac  0.6698  Track04.flac
+     4:40.36       49476716 B   ---   --   ---xx   flac  0.6713  Track05.flac
+     3:48.41       40315676 B   ---   --   ---xx   flac  0.3401  Track06.flac
+     3:36.27       38165948 B   ---   --   ---xx   flac  0.3456  Track07.flac
+     9:33.42      101176028 B   ---   --   ---xx   flac  0.3425  Track08.flac
+     5:37.60       59587964 B   ---   --   ---xx   flac  0.6528  Track09.flac
+    10:39.08      112738460 B   ---   --   ---xx   flac  0.6499  Track10.flac
+    57:03.24      603874088 B                            0.5639  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd84-03-alternate-b.flacf\BD_Plugz Rehearsals (March 1984) Alternate copy 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:43.20       81720284 B   ---   --   ---xx   flac  0.6572  Track01.flac
+     5:46.13       61065020 B   ---   --   ---xx   flac  0.6590  Track02.flac
+     5:56.20       62845484 B   ---   --   ---xx   flac  0.6603  Track03.flac
+     7:52.59       83399612 B   ---   --   ---xx   flac  0.6602  Track04.flac
+     5:39.55       59929004 B   ---   --   ---xx   flac  0.6986  Track05.flac
+    16:43.20      176976284 B   ---   --   ---xx   flac  0.6765  Track06.flac
+     3:56.71       41797436 B   ---   --   ---xx   flac  0.6761  Track07.flac
+     3:25.47       36272588 B   ---   --   ---xx   flac  0.6665  Track08.flac
+    14:14.35      150727964 B   ---   --   ---xx   flac  0.6744  Track09.flac
+    71:18.40      754733676 B                            0.6707  (9 files)
+=================== 
+=================== 
+=================== 

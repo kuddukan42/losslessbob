@@ -1,0 +1,215 @@
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t01.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t01.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t02.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t02.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t03.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t03.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t04.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t04.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t05.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t05.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t06.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t06.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t07.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t07.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t08.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t08.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t09.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t09.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t10.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t10.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t11.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t11.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t12.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t12.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t13.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t13.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t14.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t14.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t15.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d1t15.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t01.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t01.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t02.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t02.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t03.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t03.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t04.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t04.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t05.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t05.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t06.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t06.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t07.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t07.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t08.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t08.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t09.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t09.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t10.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t10.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t11.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t11.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t12.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t12.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t13.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t13.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t14.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t14.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t15.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d2t15.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t01.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t01.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t02.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t02.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t03.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t03.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t04.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t04.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t05.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t05.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t06.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t06.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t07.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t07.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t08.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t08.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t09.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t09.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t10.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t10.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t11.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t11.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t12.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t12.wav"
+No differences in decoded data found.
+
+Comparing:
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t13.flac"
+"F:\burn data disk\bd1975-11-20 Cambridge flac\bd1975-11-20d3t13.wav"
+No differences in decoded data found.
+

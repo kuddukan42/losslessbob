@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-22-f.flacf
+===================
+===================
+===================
+01512dd5ab7c4a8d048e1a6bfae16716 *101 Crash On The Levee (Down In The Flood).flac
+6b5f1e6f73ab3828a312896682f0ff1e *102 The Man In Me.flac
+58ac3a9486993d27b14ba7781d7122e5 *103 All Along The Watchtower.flac
+a26207f22e2a6e29dc0920acbe5ed393 *104 Just Like A Woman.flac
+56e3e7213995f44983db751ef3332f99 *105 Tangled Up In Blue.flac
+9db57132761543f808b19b1948afff65 *106 Positively 4th Street.flac
+9aa4fc999493de455afc06635df320bf *107 Mr. Tambourine Man.flac
+328c15c53de8a889236e5123124a4655 *108 Masters Of War.flac
+4f307f3c6f3ed7cfdc4b40dece69c384 *201 Don’t Think Twice, It’s All Right.flac
+34ed350d3c5c3e3314adeae4fcb056b1 *202 Dignity.flac
+f630eef61d4e72280ec1652b3c81ed4a *202 In The Garden.flac
+c53d1efd783f6715172218134e64b2bc *204 Maggie's Farm.flac
+aeffafaddf2033bbb1462b0e8c1b9d3e *205 Like A Rolling Stone.flac
+b334e0120af408fc3e9cf25b699bcd31 *206 It Ain't Me, Babe.flac
+13ecdc73179e31c5615541970eef0b19 *207 I Shall Be Released.flac
+f954b74a14a41697ea740b15a1675c7c *Bob Dylan 1995-03-22 Zenith Arena Lille France-Live In Lille-DV 535-536.md5
+a6e82a125b351d7d1c0001cc1be7b3a6 *DylanLiveInLille.txt
+ef2a5d659d7579b89044c6557feb9190 *DylanLiveInLille95Back.jpg
+c328035446f4f9d9b243ba2f3b17ebd3 *DylanLiveInLille95Front.jpg
+===================
+===================
+===================
+=== ffp for: bd95-03-22-f.flacf
+===================
+===================
+===================
+101 Crash On The Levee (Down In The Flood).flac:95ce9c9eececc1f72e9ae1c6b9ff58e7
+102 The Man In Me.flac:c8f7dde38e3a2e7debf48ce7b61800cf
+103 All Along The Watchtower.flac:9d1b8fe97c2331c9b22060faa6b8defd
+104 Just Like A Woman.flac:4593f710c651adab8da024f7253fcd76
+105 Tangled Up In Blue.flac:c73d763de8cd4cde7256d8c6190e0145
+106 Positively 4th Street.flac:9948e168c6d36a0f92ce514403d9af36
+107 Mr. Tambourine Man.flac:fa586f1cb4f134e4cd49a3fc1f5f9417
+108 Masters Of War.flac:2f9040688b8a10562d95d28bbeefe029
+201 Don’t Think Twice, It’s All Right.flac:3e3ecb7ceaac307f758873a48dc2f775
+202 Dignity.flac:55eecf99a135cb0d97008039babc0f11
+202 In The Garden.flac:a743b9bea7494832e841faf6e6831250
+204 Maggie's Farm.flac:c1d15e98e7b692cacf270770988ac650
+205 Like A Rolling Stone.flac:a55662ba34cc9a659501e06b4c98c039
+206 It Ain't Me, Babe.flac:fe8a9c4b62c8b5b6246c3313ad951f62
+207 I Shall Be Released.flac:e66a59921e40063e14a34e96bf8a2111
+===================
+===================
+===================
+=== shntool len for: bd95-03-22-f.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.32       54406508 B   ---   --   ---xx   flac  0.5880  101 Crash On The Levee (Down In The Flood).flac
+     4:32.17       48020828 B   ---   --   ---xx   flac  0.5426  102 The Man In Me.flac
+     5:17.31       55991756 B   ---   --   ---xx   flac  0.5896  103 All Along The Watchtower.flac
+     5:32.61       58708316 B   ---   --   ---xx   flac  0.5084  104 Just Like A Woman.flac
+     7:40.30       81214604 B   ---   --   ---xx   flac  0.5443  105 Tangled Up In Blue.flac
+     7:00.27       74151548 B   ---   --   ---xx   flac  0.5422  106 Positively 4th Street.flac
+     6:26.55       68219804 B   ---   --   ---xx   flac  0.3946  107 Mr. Tambourine Man.flac
+     4:41.66       49723676 B   ---   --   ---xx   flac  0.4044  108 Masters Of War.flac
+     5:25.03       57337100 B   ---   --   ---xx   flac  0.4732  201 Don’t Think Twice, It’s All Right.flac
+     7:10.70       76016684 B   ---   --   ---xx   flac  0.5276  202 Dignity.flac
+     6:58.72       73904588 B   ---   --   ---xx   flac  0.5398  202 In The Garden.flac
+     6:04.57       64343708 B   ---   --   ---xx   flac  0.5633  204 Maggie's Farm.flac
+     8:54.39       94289372 B   ---   --   ---xx   flac  0.4844  205 Like A Rolling Stone.flac
+     8:21.53       88501100 B   ---   --   ---xx   flac  0.4605  206 It Ain't Me, Babe.flac
+     7:55.35       83872364 B   ---   --   ---xx   flac  0.4988  207 I Shall Be Released.flac
+    97:11.48     1028701956 B                            0.5094  (15 files)
+===================
+===================
+===================

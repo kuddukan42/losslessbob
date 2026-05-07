@@ -1,0 +1,8 @@
+Bob Dylan, 4/22/80, Montreal, Quebec, Canada, Le Theatre Saint-Denis, 1CDR
+
+LB-3030, (68min), Soundcheck, Lineage: ?>CD-R>me>you, Notes: All tracks normalized. Slight noise reduction applied. Right channel superior to left, so right channel info cut&pasted to left (mono recording). Last, while the original track division closely resembled Olof's (23 tracks), I grouped them together into larger units. Dylan only sings on 5 (at end), 6, 8 & 13. Track 13 seems to be from a different, inferior source, or perhaps it was taped at a greater distance.; bittorrent download 08/05; (t4 fails the md5 on the torrent but decodes ok); good sound [C], except t13 rates D
+
+1. Unidentified, 2. I Will Love Him, 3. Unidentified, 4. I Will Sing, I Will Sing (Max Dyer), 5. I Will Love Him, 6. They Talk About Me (?), 7. Unidentified, 8. Ain't Gonna Go To Hell For Anybody, 9. Cover Down, Break Through, 10. Slow Train, 11. Unidentified, 12. Gotta Serve Somebody, 13. Ain't Gonna Go To Hell For Anybody
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

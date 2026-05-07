@@ -1,0 +1,133 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-03-jtt.flacf 
+=================== 
+=================== 
+=================== 
+41f97e857f36ce104d5bcb1d89770375  03.07.1978 Info.txt
+82e3a52d5720ada2aa5a97066f4db0f2  bd78-07-03-jtt-LB-4693.txt
+65d3bb9379caeb5dbb6e733b5402dc2f  Disc 1\Disc01Track01.flac
+b6c392468d91bf326dd130575f761797  Disc 1\Disc01Track02.flac
+52847043594b545f69306f3dcd0d82d7  Disc 1\Disc01Track03.flac
+69e4d62969b13ae92dcf021193aa5c3a  Disc 1\Disc01Track04.flac
+74cd11323124e86e330a61cca460e41c  Disc 1\Disc01Track05.flac
+f93f597298c911358cc7971b799ff7a5  Disc 1\Disc01Track06.flac
+9fd2c7c47851808c7547578d065ae10d  Disc 1\Disc01Track07.flac
+facff942c9e7400e1c67499a914e673e  Disc 1\Disc01Track08.flac
+26068878cd5c0317f29e431581af0581  Disc 1\Disc01Track09.flac
+f05761bf5aa1664f483874060ccd03d2  Disc 1\Disc01Track10.flac
+b88a4a7003f6bac61dada74f00798f6d  Disc 1\Disc01Track11.flac
+2a5feb5f043cc87f37542caca65272b0  Disc 1\Disc01Track12.flac
+8cf659573a41073970584cd6ec4e2fb3  Disc 1\Disc01Track13.flac
+2d01c835894034c48e197bc197a4ba24  Disc 1\Disc01Track14.flac
+2460152a613114c7f9f5170d5af5341b  Disc 1\Disc01Track15.flac
+fb62cd560b139c364f97b6d1328cf7e3  Disc 2\Disc02Track01.flac
+b8d36563cfe2608dc8f728252d889faa  Disc 2\Disc02Track02.flac
+fb8c96fd8069b3defefc138bf4eca83f  Disc 2\Disc02Track03.flac
+1ca07d9b3a1c9f894499a1c9abe36530  Disc 2\Disc02Track04.flac
+7add12a3a6a23c903f6b0e468a148255  Disc 2\Disc02Track05.flac
+4cd2b34d41d9036916582c48571ea674  Disc 2\Disc02Track06.flac
+0bba4f4935b72719c0247f91af23bab8  Disc 2\Disc02Track07.flac
+a460d9b80b47e3f4c534e9d7ce09552b  Disc 2\Disc02Track08.flac
+b03c7de86dd45e8d4bc4624aabf064bf  Disc 2\Disc02Track09.flac
+fdc3d1fa027f4164be66a4286ec9328c  Disc 2\Disc02Track10.flac
+eae3d019f5abe077907f1cd9c86233ed  Disc 2\Disc02Track11.flac
+bbc92406d7cbab73694b45a4fefbb9c5  Disc 2\Disc02Track12.flac
+27a5aff1834c97f214a6848c1fcbbb60  Disc 2\Disc02Track13.flac
+62ab5263f893ded141d7e6388ee579c5  Disc 2\Disc02Track14.flac
+e8d5f4597b84c61f2987b0d344855477  Paris 03.07.1978 - F.jpg
+4f0165c12a67b116481ac5fd7135fbe4  Paris 03.07.1978 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-03-jtt.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+Disc01Track01.flac:3ed74585ec525987126f744295d92bd6
+Disc01Track02.flac:c6acce56f5d423d29366618891e588a5
+Disc01Track03.flac:0ee0bc2a12ea89a12ffc11ba0e5f9878
+Disc01Track04.flac:2b09e8393e2d01029062fbd75aac03d1
+Disc01Track05.flac:9f3a18053337bbd8a7a664489fde810d
+Disc01Track06.flac:742bd150ecb1e74707e77f0c54313ba4
+Disc01Track07.flac:369789bbf66ce52a3fc07db4e82d5263
+Disc01Track08.flac:0dba6742f0b573cd90e0a5639f12e89d
+Disc01Track09.flac:e75f575b3e7128f7bf3779d1fb10c8af
+Disc01Track10.flac:f237452719c34cbf20463e163cbff327
+Disc01Track11.flac:b588b3515801720c4831984293ea8325
+Disc01Track12.flac:6bfac5f26466b285f81a41da98c106a7
+Disc01Track13.flac:61dff3fed268e913ba7a0b394f27c9f3
+Disc01Track14.flac:a919f05559cfe65d7f491e47d2bc6374
+Disc01Track15.flac:3e3ed09cb349e70de6a1d676a53ae79f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-03-jtt.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+Disc02Track01.flac:d6b4a50462b566e3b7ed0f3ba7818bd0
+Disc02Track02.flac:4b533e722d3689cde06d17dd35240d5e
+Disc02Track03.flac:44c74151b91518e8baa086d1f21e9f83
+Disc02Track04.flac:5b62dfbead14e0e6db6e5191da7e932d
+Disc02Track05.flac:0a0cca758b5348e08429f76fc2dbbbbd
+Disc02Track06.flac:b1a3f29cb16d7180d2cd7086d6c5ee59
+Disc02Track07.flac:d647ed536acb50bd31cd517a6f7a5896
+Disc02Track08.flac:ab01c8dd187e6d1296499c08c5d2b472
+Disc02Track09.flac:ce90dd3f8494248a36ab0ecf6282edb9
+Disc02Track10.flac:f38b7c9c2301957d583ce6f9dc92e76a
+Disc02Track11.flac:bad2096b21d46cd0246e78dc5563743e
+Disc02Track12.flac:84de429128c780934417d6ca2b91498f
+Disc02Track13.flac:bfc36c519c8cb808daaff70a15f30ac0
+Disc02Track14.flac:324f14e94e3d4ef1ad561b973c02e404
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-03-jtt.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:35.56       27472920 B   -b-   --   ---xx   flac  0.5995  Disc01Track01.flac
+     5:25.55       57459088 B   -b-   --   ---xx   flac  0.6292  Disc01Track02.flac
+     5:19.04       56280156 B   -b-   --   ---xx   flac  0.6286  Disc01Track03.flac
+     4:55.18       52081212 B   -b-   --   ---xx   flac  0.6395  Disc01Track04.flac
+     4:39.71       49382800 B   -b-   --   ---xx   flac  0.6297  Disc01Track05.flac
+     7:05.39       75061012 B   -b-   --   ---xx   flac  0.5935  Disc01Track06.flac
+     4:45.72       50442220 B   -b-   --   ---xx   flac  0.6296  Disc01Track07.flac
+     4:58.15       52603684 B   -b-   --   ---xx   flac  0.6425  Disc01Track08.flac
+     4:24.30       46639920 B   -b-   --   ---xx   flac  0.6061  Disc01Track09.flac
+     7:02.15       74477172 B   -b-   --   ---xx   flac  0.6419  Disc01Track10.flac
+     4:26.03       46929636 B   -b-   --   ---xx   flac  0.6016  Disc01Track11.flac
+     5:11.31       54933756 B   -b-   --   ---xx   flac  0.6051  Disc01Track12.flac
+     0:39.36        6963308 B   -b-   --   ---xx   flac  0.6220  Disc01Track13.flac
+     4:21.12       46068384 B   -b-   --   ---xx   flac  0.6401  Disc01Track14.flac
+     5:10.28       54748740 B   -b-   --   ---xx   flac  0.6067  Disc01Track15.flac
+    71:00.34      751544008 B                            0.6215  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-03-jtt.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.05       40054564 B   -b-   --   ---xx   flac  0.5983  Disc02Track01.flac
+     3:21.01       35458316 B   -b-   --   ---xx   flac  0.6242  Disc02Track02.flac
+     4:43.57       50055488 B   -b-   --   ---xx   flac  0.5898  Disc02Track03.flac
+     3:10.48       33628728 B   -b-   --   ---xx   flac  0.5882  Disc02Track04.flac
+     5:06.18       54020596 B   -b-   --   ---xx   flac  0.6242  Disc02Track05.flac
+     4:44.58       50234464 B   -b-   --   ---xx   flac  0.6666  Disc02Track06.flac
+     3:44.45       39618988 B   -b-   --   ---xx   flac  0.6224  Disc02Track07.flac
+     5:52.30       62163496 B   -b-   --   ---xx   flac  0.6279  Disc02Track08.flac
+     3:57.64       41957488 B   -b-   --   ---xx   flac  0.6670  Disc02Track09.flac
+     5:36.60       59411672 B   -b-   --   ---xx   flac  0.6371  Disc02Track10.flac
+     6:42.07       70928776 B   -b-   --   ---xx   flac  0.6537  Disc02Track11.flac
+     8:12.62       86935572 B   -b-   --   ---xx   flac  0.6288  Disc02Track12.flac
+     3:35.28       37992752 B   -b-   --   ---xx   flac  0.6328  Disc02Track13.flac
+     5:59.45       63433264 B   -b-   --   ---xx   flac  0.6267  Disc02Track14.flac
+    68:35.03      725894164 B                            0.6295  (14 files)
+=================== 
+=================== 
+=================== 

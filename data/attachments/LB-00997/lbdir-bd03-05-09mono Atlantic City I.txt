@@ -1,0 +1,120 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-05-09mono Atlantic City I 
+=================== 
+=================== 
+=================== 
+fdc7755f8af37f627051bfe3791bdeb3  bd03-05-09.txt
+03a0d360f64367b6eda53e5fbda3e1dd  d1\bd030509_d1.md5
+1c98b2cbacebce23eff6a9f52af11c21  d1\bd030509_d1t01.shn
+46b82aafd551155c610cdfbee8c51aef  d1\bd030509_d1t02.shn
+a0b3358a1d966b8ba752ddb5d7f27101  d1\bd030509_d1t03.shn
+1f00ee6714eb23e035e7adbf2072699b  d1\bd030509_d1t04.shn
+19742db1f586b2c3389dd47ab0f737b0  d1\bd030509_d1t05.shn
+e4e94d5e6784129fe51fc6ea7d818145  d1\bd030509_d1t06.shn
+156b7d280c6ea3b2590e88d57809cd27  d1\bd030509_d1t07.shn
+ab1325419cbfa540b465498a7dcfeec2  d1\bd030509_d1t08.shn
+a8619005731f46f690c57e5cd31e23fb  d1\bd030509_d1t09.shn
+c5a7028f730ca2aadb7e90b0940b1ab6  d1\bd030509_d1t10.shn
+2ea92ce4bfb09c7cb0937096d7e41cf9  d1\bd030509_d1t11.shn
+8bb540998e2a0264c629e2ae39204e7b  d1\bd030509_d1t12.shn
+4e275ef0cf446837158c98fa7e158110  d2\bd030509_d2.md5
+b49b085e389af2849fcfb576987c2d31  d2\bd030509_d2t01.shn
+ac336cf5396fc84066c1a59f09969a12  d2\bd030509_d2t02.shn
+5151a52296eb0c2e1d0ef93a5bcc1501  d2\bd030509_d2t03.shn
+34d44121c873bdf3c855789a16a72432  d2\bd030509_d2t04.shn
+255a2a4aa8fc20ef191e32fd1577747b  d2\bd030509_d2t05.shn
+bf6c10a799d41122e730a797d54d1bd6  d2\tw030509_d2t06.shn
+ec212e272602991362927b96cb68d56e  d2\tw030509_d2t07.shn
+7b5ab6836687bdeb3145608dccb6ee33  d2\tw030509_d2t08.shn
+c644bdd91c1866c638fe45bfc4452aa8  d2\tw030509_d2t09.shn
+aae2c316c42ef3d93b3a952773c96f56  d2\tw030509_d2t10.shn
+a96352af4b3f0abb4c5d20c1dcf599ee  d2\tw030509_d2t11.shn
+972c1e5583cd20cdb33f94e0ec943204  d2\tw030509_d2t12.shn
+4b3de217728b18cce45b55b65e6f122d  d2\tw030509_d2t13.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-05-09mono Atlantic City I\d1 
+=================== 
+=================== 
+=================== 
+a602e38d9e85b54714c802f268f4674e  [shntool]  bd030509_d1t01.wav
+cec0fa622ee8f0ebc278349efc1489d1  [shntool]  bd030509_d1t02.wav
+24ae1447b1f62807a5386ba528d95bf5  [shntool]  bd030509_d1t03.wav
+f36c7a142843e1800217184e96b8bcd0  [shntool]  bd030509_d1t04.wav
+60e52dafab6192f2a23f2df2c87113fb  [shntool]  bd030509_d1t05.wav
+9e8e15d0f92a8a3b724a86533c25b7e0  [shntool]  bd030509_d1t06.wav
+a05dec5f4b7af0bf886b097bbf9e9eb3  [shntool]  bd030509_d1t07.wav
+836538e39b357d4e6e31ad3056942477  [shntool]  bd030509_d1t08.wav
+d176f989bdd23663b75bf299583ed52a  [shntool]  bd030509_d1t09.wav
+62575dd3df40edf1bdbfe7fd1843e5ac  [shntool]  bd030509_d1t10.wav
+b248526a4882cddfc0533080c0f8137b  [shntool]  bd030509_d1t11.wav
+ca001fd87035863f62384611e8db1624  [shntool]  bd030509_d1t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-05-09mono Atlantic City I\d2 
+=================== 
+=================== 
+=================== 
+f53f1443ded792faf5dd3f36d259016d  [shntool]  bd030509_d2t01.wav
+a004bf472d8bda8699c089974a9444dd  [shntool]  bd030509_d2t02.wav
+ee62aad1af6391de1aed884bfa0bb413  [shntool]  bd030509_d2t03.wav
+964fa2623514e0eba3af07e1aed62c4f  [shntool]  bd030509_d2t04.wav
+e39e3e4897d0c6d4bfd0cc5fe4907e5c  [shntool]  bd030509_d2t05.wav
+00afd33f7ba1f8a8c3a76d89b65d0c5c  [shntool]  tw030509_d2t06.wav
+431d20d0265ead47baf22cb6e03c6031  [shntool]  tw030509_d2t07.wav
+090693690239811ce8c4048f710da09d  [shntool]  tw030509_d2t08.wav
+84cdef10eadfb941dc2805c96c54b0ce  [shntool]  tw030509_d2t09.wav
+448b6350d4346a6e23563e22c1f97b55  [shntool]  tw030509_d2t10.wav
+aece4a2fc495f64da27f38540c116433  [shntool]  tw030509_d2t11.wav
+f7bebe336a924fb6e7d5f0244c5cf918  [shntool]  tw030509_d2t12.wav
+2e0585f3c6fcad9345666973e8010ea4  [shntool]  tw030509_d2t13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-09mono Atlantic City I\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:09.06       12185162 B   -b-   -e   ---xx    shn  0.5013  bd030509_d1t01.shn
+     5:23.18       57018578 B   -b-   -e   ---xx    shn  0.5769  bd030509_d1t02.shn
+     3:49.59       40535070 B   -b-   -e   ---xx    shn  0.5315  bd030509_d1t03.shn
+     5:24.64       57305422 B   -b-   -e   ---xx    shn  0.5382  bd030509_d1t04.shn
+     5:44.64       60832974 B   -b-   -e   ---xx    shn  0.5216  bd030509_d1t05.shn
+     7:06.46       75253902 B   -b-   -e   ---xx    shn  0.5791  bd030509_d1t06.shn
+     4:56.01       52215950 B   -b-   -e   ---xx    shn  0.5953  bd030509_d1t07.shn
+     6:40.40       70653646 B   -b-   -e   ---xx    shn  0.5505  bd030509_d1t08.shn
+     6:08.60       65056974 B   -b-   -e   ---xx    shn  0.6114  bd030509_d1t09.shn
+     6:28.34       68524110 B   -b-   -e   ---xx    shn  0.5001  bd030509_d1t10.shn
+     5:26.04       57515790 B   -b-   -e   ---xx    shn  0.6274  bd030509_d1t11.shn
+     7:39.15       81004078 B   -b-   -e   ---xx    shn  0.5454  bd030509_d1t12.shn
+    65:57.36      698101656 B                            0.5601  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-05-09mono Atlantic City I\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.47       62733836 B   -b-   he   ---xx    shn  0.6367  bd030509_d2t01.shn
+     5:59.54       63455566 B   -b-   -e   ---xx    shn  0.4616  bd030509_d2t02.shn
+    10:19.48      109305486 B   -b-   -e   ---xx    shn  0.5599  bd030509_d2t03.shn
+     6:43.18       71132370 B   -b-   -e   ---xx    shn  0.6166  bd030509_d2t04.shn
+     6:41.15       70772842 B   -b-   -e   ---xx    shn  0.6139  bd030509_d2t05.shn
+     0:54.62        9672856 B   -b-   he   ---xx    shn  0.4121  tw030509_d2t06.shn
+     3:52.58       41061778 B   -b-   -e   ---xx    shn  0.5732  tw030509_d2t07.shn
+     6:22.08       67404610 B   -b-   -e   ---xx    shn  0.5936  tw030509_d2t08.shn
+     5:34.31       58991470 B   -b-   -e   ---xx    shn  0.5011  tw030509_d2t09.shn
+     5:50.02       61745478 B   -b-   -e   ---xx    shn  0.5603  tw030509_d2t10.shn
+     4:35.06       48523550 B   -b-   -e   ---xx    shn  0.5502  tw030509_d2t11.shn
+     5:57.10       62998006 B   -b-   -e   ---xx    shn  0.6266  tw030509_d2t12.shn
+     4:22.17       46257038 B   -b-   -e   ---xx    shn  0.5514  tw030509_d2t13.shn
+    73:08.04      774054886 B                            0.5699  (13 files)
+=================== 
+=================== 
+=================== 

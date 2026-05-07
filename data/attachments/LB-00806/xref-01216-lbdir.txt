@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd88-08-24-OldToaD.shnf
+===================
+===================
+===================
+b706284acd2b2ee4b66339a676f4e0be *artwork\edmonton insertR.jpg
+aa4501bfe3f65f4da33f4ee1566b01b4 *artwork\new edmonton 88 tray.jpg
+70b93b3894af7ccee388aec11e6ca71c *bd-880824edm-shn.md5
+0ac6d27bf6fd5f63134e7a3c2b4e3d01 *bd-880824edm-t01.shn
+e1b8d6f8d718deaaee65426386bcfc24 *bd-880824edm-t02.shn
+d84f2b669899b66c6248e902f3959a6a *bd-880824edm-t03.shn
+c85664799bd7b5388d8e25ff312d281c *bd-880824edm-t04.shn
+634016c534fa372a6890719ef4289f4c *bd-880824edm-t05.shn
+6e4277be66b6fda1bc0eb48a67d7bef9 *bd-880824edm-t06.shn
+1cabf3fec1894f8a9426f9fc25795f84 *bd-880824edm-t07.shn
+0641c2097953ce65a8df8d3358212e98 *bd-880824edm-t08.shn
+f3a7fb06f74f5a4f44d931bb6211cf93 *bd-880824edm-t09.shn
+579982ea3c8a6768f7b8e53dc4dc347d *bd-880824edm-t10.shn
+ff8a28f0ed97a3048d580b7e6bf476a5 *bd-880824edm-t11.shn
+40f5d1c354fc26b750c15aa68cbb116a *bd-880824edm-t12.shn
+1538c3c8b0c166484f5719f482858082 *bd-880824edm-t13.shn
+d883e71cd433fcc392361611cae7c468 *bd-880824edm-t14.shn
+30aba7bb35c8f0f764b818a27b9049b6 *bd-880824edm-t15.shn
+870e737dc37daed686e6bf71ef261da8 *bd-880824edm-t16.shn
+4b7a91676b11d3aa50648db77c0f0aae *set list & lineage\lineage.txt
+a036b7161aaf46490ca06411893c061e *set list & lineage\set list.txt
+5fa0bb020bf90ee29da8fafcbe997ac6 *wave file checksums\bd-880824edm-wav.md5
+8e54bdbf29991a0d9b4b0d01775d5c4e *wave file checksums\read me first.txt
+===================
+===================
+===================
+=== shntool md5/hash for: bd88-08-24-OldToaD.shnf
+===================
+===================
+===================
+4a869312ad5b52ce58fb5ea13ddf6d45  [shntool]  bd-880824edm-t01.shn
+92231eed0aea98dfb89be352c529c366  [shntool]  bd-880824edm-t02.shn
+b28a6d3d8b2b745cd684a59c945525bc  [shntool]  bd-880824edm-t03.shn
+f44e99f13432880650f260e9020c7973  [shntool]  bd-880824edm-t04.shn
+85da162ee1d38af3c671d1eac27dfded  [shntool]  bd-880824edm-t05.shn
+2e4d6643f0d8ff23f0f862d1f04d6c0c  [shntool]  bd-880824edm-t06.shn
+0ef43b6f919a6505f9face5a6a0ec511  [shntool]  bd-880824edm-t07.shn
+4aaff2e711c2b8b959d746afe4a2a33e  [shntool]  bd-880824edm-t08.shn
+fb2ed3d2643599614fb08e1e2149f507  [shntool]  bd-880824edm-t09.shn
+1b0b1ce7afc14de1f7825857e8bedcc6  [shntool]  bd-880824edm-t10.shn
+d3d3d3ddc3525fc8495585eb81345322  [shntool]  bd-880824edm-t11.shn
+2295c8ac3e2578d35d0ab51bb372b89d  [shntool]  bd-880824edm-t12.shn
+13f27e4fc374b386f4a84e19007df1ea  [shntool]  bd-880824edm-t13.shn
+1ca2c5f3bb2748e13ee2f97ba702c4b4  [shntool]  bd-880824edm-t14.shn
+d2c3948321b5ced9cc63c1db86e5282b  [shntool]  bd-880824edm-t15.shn
+4ce0ab02452538df4f9a4c7f7648d50b  [shntool]  bd-880824edm-t16.shn
+===================
+===================
+===================
+=== shntool len for: bd88-08-24-OldToaD.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.32       43294416 B   -b-   --   ---xx    shn  0.7318  bd-880824edm-t01.shn
+     4:15.63       45130228 B   -b-   --   ---xx    shn  0.7527  bd-880824edm-t02.shn
+     3:54.63       41425708 B   -b-   --   ---xx    shn  0.7891  bd-880824edm-t03.shn
+     4:27.17       47138656 B   -b-   --   ---xx    shn  0.7488  bd-880824edm-t04.shn
+     4:47.19       50671840 B   -b-   --   ---xx    shn  0.7585  bd-880824edm-t05.shn
+     4:23.67       46550816 B   -b-   --   ---xx    shn  0.7471  bd-880824edm-t06.shn
+     4:18.65       45663932 B   -b-   --   ---xx    shn  0.7025  bd-880824edm-t07.shn
+     5:36.49       59385612 B   -b-   --   ---xx    shn  0.6923  bd-880824edm-t08.shn
+     5:55.12       62650024 B   -b-   --   ---xx    shn  0.7113  bd-880824edm-t09.shn
+     3:54.13       41308056 B   -b-   --   ---xx    shn  0.8003  bd-880824edm-t10.shn
+     5:21.57       56758320 B   -b-   --   ---xx    shn  0.7895  bd-880824edm-t11.shn
+     6:02.11       63881744 B   -b-   --   ---xx    shn  0.8216  bd-880824edm-t12.shn
+     5:49.73       61735200 B   -b-   --   ---xx    shn  0.7245  bd-880824edm-t13.shn
+     4:56.05       52225552 B   -b-   --   ---xx    shn  0.8075  bd-880824edm-t14.shn
+     4:46.50       50568044 B   ---   --   ---xx    shn  0.7828  bd-880824edm-t15.shn
+     4:40.42       49490788 B   -b-   --   ---xx    shn  0.7854  bd-880824edm-t16.shn
+    77:16.37      817878936 B                            0.7584  (16 files)
+===================
+===================
+===================

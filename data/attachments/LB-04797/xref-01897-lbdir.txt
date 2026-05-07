@@ -1,0 +1,100 @@
+===================
+===================
+===================
+=== md5 for: bd99-02-13-d.flacf
+===================
+===================
+===================
+53bc06464ec39e00a23e8bf7506d171c *01 Gotta serve somebody.flac
+07027fda6993e50180e2f02b09f7021e *02 Million miles.flac
+3db9d19fd0dddf6bd1773e75a6b98eb7 *03 Watching the river flow.flac
+05a85da1a7d39e307e3c024802567779 *04 She belongs to me.flac
+935c82bd6fc1492d38a45d4a38a17628 *05 Silvio.flac
+a95ab0a3bd7b7263c63f2b8baca3e562 *06 Cocaine blues.flac
+73696fb63c99811755810b227741a298 *07 Masters of war.flac
+199011de7656502bba4b025a84648cdc *08 Love minus zero - no limit.flac
+fbc6a7bc972f7adba37b9201932d7941 *09 Tangled up in blue.flac
+8c54fa46c9ae62ed18c26d028d37f007 *10 Make you feel my love.flac
+60e06ad94a5d5a04b9008859e10270ac *11 Ballad of a thin man.flac
+29fe2bf02eb4da381d0ab2dc5ca95134 *12 Highway 61 revisited.flac
+d6229ccd4a16b572d4e8e824b2315962 *13 Love sick.flac
+efb3ee7fbe532af704ecec916763969c *14 Rainy day women # 12 & 35.flac
+d6367862c46cebfea6d03344b99d3ca4 *15 Blowin' in the wind.flac
+0ee819dfe5abc76ae0cea7906cef0f6c *16 Not fade away.flac
+0dc43a0340901bbe13b5d8a7bd02c936 *17 My back pages [filler].flac
+4728d4a57f80f23b7590157135d1bedd *18 'Til I fell in love with you [filler].flac
+625df253f174e877df4154606b1a7d0e *19 Positively 4th Street [filler].flac
+e446aaf5d360934c522ec38fc7fc0b45 *20 Highway 61 revisited [filler].flac
+5a8622b3c9b8ae0278023d51fa6e9725 *21 Love sick [filler].flac
+fd33ef8e8f885bfabebe9b904d4e97d1 *22 Leopard-skin pill-box hat [filler].flac
+d993d0e6a401dea246afde9c8c9626a0 *23 Blowin' in the wind [filler].flac
+3b18a96bfb338c75c03b7b9d534335ce *24 Not fade away [filler].flac
+0b45d3c2a8b8b0ec2042023633ced29f *Bob Dylan 1999-02-13 Redbird Arena, Illinois State University, Normal, Illinois, USA [m. likely LB-4797].md5
+0a39189f1bd0fb0f113dfbac2c605d0d *Bob Dylan 1999-02-13 Redbird Arena, Illinois State University, Normal, Illinois, USA.txt
+===================
+===================
+===================
+=== ffp for: bd99-02-13-d.flacf
+===================
+===================
+===================
+01 Gotta serve somebody.flac:d70e4992213ff037d8f23c4540becf1f
+02 Million miles.flac:6bae7175f524ce048fae3bc88cecfcb7
+03 Watching the river flow.flac:e8d590797c77ca96967c60e50ebd0c6a
+04 She belongs to me.flac:80b718c78c54a5376d25d32150df67d4
+05 Silvio.flac:a532982b6c263f41aeb179368d624ee4
+06 Cocaine blues.flac:955b6ded0bacdd3424ffb84aa0bc32e8
+07 Masters of war.flac:47c49d39082c1d5611a9f3edc8383ca4
+08 Love minus zero - no limit.flac:8c22f557a6cb39f1eafa4d253031643a
+09 Tangled up in blue.flac:49c77ff743099138aa5b810a086ed3ac
+10 Make you feel my love.flac:469efe832224f6a95a1862b57ab1997e
+11 Ballad of a thin man.flac:ece8669aeeca384b8b8a96625f5c1058
+12 Highway 61 revisited.flac:f1061ab8bf89cce2dedc9ec6bbe23b18
+13 Love sick.flac:2798b1ba8f1421db703f6bd7c6c280d9
+14 Rainy day women # 12 & 35.flac:3a924774ed3180b2fee7c58ea11fd667
+15 Blowin' in the wind.flac:5b7295fb400c44f43a560b79ed914985
+16 Not fade away.flac:353afecfa9acf00ae98b77ec762b2a0b
+17 My back pages [filler].flac:76f87f424dc97a05700b137e7dd7a91b
+18 'Til I fell in love with you [filler].flac:38b061232f2c772fbd4a0009873e4d41
+19 Positively 4th Street [filler].flac:d6e44a7b6dfd51f2c0c78cb4f788f0f3
+20 Highway 61 revisited [filler].flac:3dfe45daa29b3ef10a1f475f651ded6b
+21 Love sick [filler].flac:1bd1e76c6ed5c297dfb4ff1a0527270b
+22 Leopard-skin pill-box hat [filler].flac:75fe8dd0a85ef97bc98510cdb84a61ee
+23 Blowin' in the wind [filler].flac:1b2fe664c4a822667320d801b89f2e12
+24 Not fade away [filler].flac:93a22ef6d9ef9e8d75f9e5ea6893266f
+===================
+===================
+===================
+=== shntool len for: bd99-02-13-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.37       45421868 B   ---   --   ---xx   flac  0.5953  01 Gotta serve somebody.flac
+     4:45.73       50445740 B   ---   --   ---xx   flac  0.5627  02 Million miles.flac
+     5:27.22       57734588 B   ---   --   ---xx   flac  0.5734  03 Watching the river flow.flac
+     6:26.50       68208044 B   ---   --   ---xx   flac  0.5342  04 She belongs to me.flac
+     6:02.09       63878012 B   ---   --   ---xx   flac  0.6088  05 Silvio.flac
+     5:11.58       54996860 B   ---   --   ---xx   flac  0.5018  06 Cocaine blues.flac
+     5:41.09       60173612 B   ---   --   ---xx   flac  0.5225  07 Masters of war.flac
+     5:45.14       60890972 B   ---   --   ---xx   flac  0.4984  08 Love minus zero - no limit.flac
+     8:28.67       89768828 B   ---   --   ---xx   flac  0.5892  09 Tangled up in blue.flac
+     4:19.58       45824060 B   ---   --   ---xx   flac  0.5296  10 Make you feel my love.flac
+     9:08.57       96801308 B   ---   --   ---xx   flac  0.5914  11 Ballad of a thin man.flac
+     7:38.67       80948828 B   ---   --   ---xx   flac  0.6221  12 Highway 61 revisited.flac
+     6:32.43       69249980 B   ---   --   ---xx   flac  0.5453  13 Love sick.flac
+     6:36.00       69854444 B   ---   --   ---xx   flac  0.6333  14 Rainy day women # 12 & 35.flac
+     5:21.04       56633852 B   ---   --   ---xx   flac  0.5295  15 Blowin' in the wind.flac
+     4:47.60       50767964 B   ---   --   ---xx   flac  0.6408  16 Not fade away.flac
+     6:37.33       70108460 B   ---   --   ---xx   flac  0.5446  17 My back pages [filler].flac
+     5:34.03       58924700 B   ---   --   ---xx   flac  0.6114  18 'Til I fell in love with you [filler].flac
+     7:50.65       83060924 B   ---   --   ---xx   flac  0.5452  19 Positively 4th Street [filler].flac
+     6:47.37       71881868 B   ---   --   ---xx   flac  0.6257  20 Highway 61 revisited [filler].flac
+     5:27.03       57689900 B   ---   --   ---xx   flac  0.5530  21 Love sick [filler].flac
+     6:12.74       65794892 B   ---   --   ---xx   flac  0.6134  22 Leopard-skin pill-box hat [filler].flac
+     5:08.56       54462956 B   ---   --   ---xx   flac  0.5027  23 Blowin' in the wind [filler].flac
+     4:58.71       52734236 B   ---   --   ---xx   flac  0.6151  24 Not fade away [filler].flac
+   145:08.70     1536256896 B                            0.5722  (24 files)
+===================
+===================
+===================

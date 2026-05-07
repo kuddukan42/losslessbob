@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-01-27-moving-violation.flacf 
+=================== 
+=================== 
+=================== 
+8b7fce96c182979191301d687d53c048  bd78-01-27-moving-violation-d1t01.flac
+2b133325337930521a4aafb0c290af2e  bd78-01-27-moving-violation-d1t02.flac
+eb732699f6eee7aedbf7062be18621c4  bd78-01-27-moving-violation-d1t03.flac
+badec32ee00fd0010aff8bc22e8a61ee  bd78-01-27-moving-violation-d1t04.flac
+df66f227de95250039869c982d39ad97  bd78-01-27-moving-violation-d1t05.flac
+adcfa66a9d9bf120724c4cd414ebeb94  bd78-01-27-moving-violation-d1t06.flac
+94d2c77d0a90c88870b29038da6a293c  bd78-01-27-moving-violation-d1t07.flac
+46e214f7587c5fc6b997702996f34db1  bd78-01-27-moving-violation-d1t08.flac
+d22ff4ecb879bfd84733bc19c9a716a9  bd78-01-27-moving-violation-d1t09.flac
+72fca99cbc25ba857a5abd85824a6350  bd78-01-27-moving-violation-d1t10.flac
+ac831df7d748ef58076fddc6bbf84746  bd78-01-27-moving-violation-d1t11.flac
+d9887887b55945709043f9012dccbfe0  bd78-01-27-moving-violation-d1t12.flac
+37fa965bd4dfcd8ee0d3e2bdd1628ca3  bd78-01-27-moving-violation-d1t13.flac
+bf4d7bc91e884479291fa43fde586453  bd78-01-27-moving-violation-d1t14.flac
+b00bf4278d6b410750f3ed647ec64d0b  bd78-01-27-moving-violation-d1t15.flac
+9d446e0132a5cf29c38ca704a35a2bbc  bd78-01-27-moving-violation-d1t16.flac
+218e7b1e74da7eadded99e2fa55a8bcb  bd78-01-27-moving-violation.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-01-27-moving-violation.flacf 
+=================== 
+=================== 
+=================== 
+bd78-01-27-moving-violation-d1t01.flac:0bd2000d0fa345e18f7a42c9178ac823
+bd78-01-27-moving-violation-d1t02.flac:fce45d3908f5991ffbc33707804ebd71
+bd78-01-27-moving-violation-d1t03.flac:fa63a58cb76235cfc0fd883c3bfe2414
+bd78-01-27-moving-violation-d1t04.flac:d799bc0c502adbc4be0a929160297ba0
+bd78-01-27-moving-violation-d1t05.flac:b94d2a02bdc61e4d41c6328288491eff
+bd78-01-27-moving-violation-d1t06.flac:e40b23d1ca0b6c77d90c2817bd2fc0bd
+bd78-01-27-moving-violation-d1t07.flac:0993ce52e2bd962fd4db7c97e61479ad
+bd78-01-27-moving-violation-d1t08.flac:63f9ca6343853bfae4370551e76e86de
+bd78-01-27-moving-violation-d1t09.flac:ac9c0c71c03aaa07343228970e6bad79
+bd78-01-27-moving-violation-d1t10.flac:a94e5641c0830886d4e4461ad34221e2
+bd78-01-27-moving-violation-d1t11.flac:0750f8be1a5696cd8302b11f86aa5310
+bd78-01-27-moving-violation-d1t12.flac:a69b4a40f90268853e2f6bcb555a0c78
+bd78-01-27-moving-violation-d1t13.flac:073d11801144624ea59833336a377248
+bd78-01-27-moving-violation-d1t14.flac:d27394cdd8be7e8b4087d99ee6e083c5
+bd78-01-27-moving-violation-d1t15.flac:b3bcd6bf00e1e46b7be96f9e2d5c74f8
+bd78-01-27-moving-violation-d1t16.flac:d52ad45e6cf0bf1765384f912d07ec20
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-01-27-moving-violation.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:02.37       42775868 B   ---   --   ---xx   flac  0.5539  bd78-01-27-moving-violation-d1t01.flac
+     5:17.38       56008220 B   ---   --   ---xx   flac  0.5031  bd78-01-27-moving-violation-d1t02.flac
+     4:08.50       43864844 B   ---   --   ---xx   flac  0.5304  bd78-01-27-moving-violation-d1t03.flac
+     4:38.07       49055708 B   ---   --   ---xx   flac  0.5264  bd78-01-27-moving-violation-d1t04.flac
+     4:23.18       46435580 B   ---   --   ---xx   flac  0.5297  bd78-01-27-moving-violation-d1t05.flac
+     5:58.40       63245324 B   ---   --   ---xx   flac  0.5349  bd78-01-27-moving-violation-d1t06.flac
+     4:22.35       46299164 B   ---   --   ---xx   flac  0.5306  bd78-01-27-moving-violation-d1t07.flac
+     3:28.70       36855884 B   ---   --   ---xx   flac  0.5513  bd78-01-27-moving-violation-d1t08.flac
+     2:49.47       29922188 B   ---   --   ---xx   flac  0.5402  bd78-01-27-moving-violation-d1t09.flac
+     3:21.40       35550524 B   ---   --   ---xx   flac  0.5263  bd78-01-27-moving-violation-d1t10.flac
+     4:56.68       52374380 B   ---   --   ---xx   flac  0.5431  bd78-01-27-moving-violation-d1t11.flac
+     4:55.57       52172108 B   ---   --   ---xx   flac  0.5739  bd78-01-27-moving-violation-d1t12.flac
+     3:52.28       40990700 B   ---   --   ---xx   flac  0.5283  bd78-01-27-moving-violation-d1t13.flac
+     4:50.30       51226604 B   ---   --   ---xx   flac  0.4771  bd78-01-27-moving-violation-d1t14.flac
+     5:40.57       60110108 B   ---   --   ---xx   flac  0.5285  bd78-01-27-moving-violation-d1t15.flac
+     6:35.08       69696860 B   ---   --   ---xx   flac  0.5507  bd78-01-27-moving-violation-d1t16.flac
+    73:22.30      776584064 B                            0.5328  (16 files)
+=================== 
+=================== 
+=================== 

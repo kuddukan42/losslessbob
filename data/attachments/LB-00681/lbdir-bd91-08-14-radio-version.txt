@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-08-14-radio-version 
+=================== 
+=================== 
+=================== 
+17106e5d462c5d36a27d6f169a35d6d4  91 08 14 radio d1 t01.shn
+ce246c8fc31b44abbf2adbd07c5f5cdc  91 08 14 radio d1 t02.shn
+6dc3450f7d105d6cca4441489f77aa6a  91 08 14 radio d1 t03.shn
+6b5eda3ded2292f782fcb4f3b329be50  91 08 14 radio d1 t04.shn
+590e1270cd73989195e2528b3bbc5bbf  91 08 14 radio d1 t05.shn
+09039bef55470be956aa578e57d25306  91 08 14 radio d1 t06.shn
+dab0b57d3b687495fdfde59c8440e5dc  91 08 14 radio d1 t07.shn
+75206ed585f6cf4f9256e33f33d3503d  91 08 14 radio d1 t08.shn
+88da7cb2436c23ced9b38c5e5b176fbd  91 08 14 radio d1 t09.shn
+b3589bef4663953b6c5866d312040cc6  91 08 14 radio d2 t01.shn
+54b1727c6f0a3d78ba5deb04f56fd418  91 08 14 radio d2 t02.shn
+ab86c4e6f12d5eeaf37cdcc6a9268d1f  91 08 14 radio d2 t03.shn
+3392948f250ac00fb866d9850986b937  91 08 14 radio d2 t04.shn
+506163ad18127da50689931bb240b7fe  91 08 14 radio d2 t05.shn
+5e4e0f0a2b486207978ada38a546aed3  91 08 14 radio d2 t06.shn
+e387454d96b153fa0147050659f210cf  91 08 14 radio d2 t07.shn
+ac2acd7e6959b0d092635256d97cd4f9  91 08 14 radio d2 t08.shn
+ec043eb4c7df16ea9d3892dba0d71383  91 08 14 radio.md5
+16d5f163c5de3967502242d1c6766840  bd91-08-14r.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-08-14-radio-version 
+=================== 
+=================== 
+=================== 
+5456ca1d00c022f6cef6347cac021f26  [shntool]  91_08_14_radio_d1_t01.wav
+60535757cb8fe08eb6666ccb7d94bd92  [shntool]  91_08_14_radio_d1_t02.wav
+70b808910aef03df98ee2188db229a2f  [shntool]  91_08_14_radio_d1_t03.wav
+9bb9c57cc4b13cc709d9a3b5a9655c4a  [shntool]  91_08_14_radio_d1_t04.wav
+f73e3ee801b1fded17fff4694557ad4c  [shntool]  91_08_14_radio_d1_t05.wav
+f1e39b184b59aa2b0c3c29e6d46d4f95  [shntool]  91_08_14_radio_d1_t06.wav
+e8fbc33511c13d6d0897dd3f42b58203  [shntool]  91_08_14_radio_d1_t07.wav
+11251eddf228804644fa54dff3795839  [shntool]  91_08_14_radio_d1_t08.wav
+0f339999dda9bbc45648c5834a0437ac  [shntool]  91_08_14_radio_d1_t09.wav
+25cc6a66b1f8e5a6122974d90f74f4fe  [shntool]  91_08_14_radio_d2_t01.wav
+36e1999394ead2399621bb64dbb4ed2c  [shntool]  91_08_14_radio_d2_t02.wav
+2f9e245b5fab9b216672cf7425f249c9  [shntool]  91_08_14_radio_d2_t03.wav
+bbb8320413bbc6a07b4d12dfe5dce5c2  [shntool]  91_08_14_radio_d2_t04.wav
+c94093cec7f1eede637d79348fa44eee  [shntool]  91_08_14_radio_d2_t05.wav
+ea6f79cb767d71658fe026d881dc4304  [shntool]  91_08_14_radio_d2_t06.wav
+87eb11638b346d7f7e35823a1af06ee4  [shntool]  91_08_14_radio_d2_t07.wav
+cce7f79f1c3ca430498919a335a7907a  [shntool]  91_08_14_radio_d2_t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-08-14-radio-version 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:32.03       58571900 B   ---   --   ---xx    shn  0.7029  91 08 14 radio d1 t01.shn
+     4:18.30       45581804 B   ---   --   ---xx    shn  0.7505  91 08 14 radio d1 t02.shn
+     8:41.19       91949132 B   ---   --   ---xx    shn  0.7771  91 08 14 radio d1 t03.shn
+     5:19.25       56330444 B   ---   --   ---xx    shn  0.8101  91 08 14 radio d1 t04.shn
+     3:22.08       35651660 B   ---   --   ---xx    shn  0.8181  91 08 14 radio d1 t05.shn
+     4:51.21       51381836 B   ---   --   ---xx    shn  0.8265  91 08 14 radio d1 t06.shn
+     4:11.25       44335244 B   ---   --   ---xx    shn  0.8016  91 08 14 radio d1 t07.shn
+     3:58.39       42074972 B   ---   --   ---xx    shn  0.8086  91 08 14 radio d1 t08.shn
+     4:43.33       49998860 B   ---   --   ---xx    shn  0.8157  91 08 14 radio d1 t09.shn
+     4:28.29       47343452 B   ---   --   ---xx    shn  0.7547  91 08 14 radio d2 t01.shn
+     6:25.33       67991660 B   ---   --   ---xx    shn  0.7416  91 08 14 radio d2 t02.shn
+     4:50.42       51254828 B   ---   --   ---xx    shn  0.7399  91 08 14 radio d2 t03.shn
+     3:32.53       37521500 B   ---   --   ---xx    shn  0.7582  91 08 14 radio d2 t04.shn
+     5:02.60       53413964 B   ---   --   ---xx    shn  0.7606  91 08 14 radio d2 t05.shn
+     7:12.62       76350668 B   ---   --   ---xx    shn  0.7573  91 08 14 radio d2 t06.shn
+     3:55.13       41484620 B   ---   --   ---xx    shn  0.7707  91 08 14 radio d2 t07.shn
+     6:56.01       73384796 B   ---   --   ---xx    shn  0.7797  91 08 14 radio d2 t08.shn
+    87:21.46      924621340 B                            0.7729  (17 files)
+=================== 
+=================== 
+=================== 

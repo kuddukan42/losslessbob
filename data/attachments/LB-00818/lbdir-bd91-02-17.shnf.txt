@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-02-17.shnf 
+=================== 
+=================== 
+=================== 
+6b624a5168071379c831c90db4863b7b  BD91-02-17.md5
+4f5957193392c1e5ed2b35a7b22ed7bf  BD91-02-17.nfo
+153ad428a945617dab1c81ccf5fdf513  bd91-02-17.txt
+3d230c3eac5dc0695d632dbc08f29533  BD91-02-17D101.shn
+e8cce873d518315acba0dba2735714a3  BD91-02-17D102.shn
+354b66c062f125abe0d999a8da05486e  BD91-02-17D103.shn
+66d7c058dcff9e3ef3e8dba460896c21  BD91-02-17D104.shn
+52f1357a40bbd321c298504872b6a6e9  BD91-02-17D105.shn
+30aad021bf3fa4a6e6870e8c72d8fee8  BD91-02-17D106.shn
+5b1baaefaf1675f69275a217c060d4e5  BD91-02-17D107.shn
+a31a5713e00c2dd5449e023b6d1cccac  BD91-02-17D108.shn
+590dd23995394cf2d6236c28e0abe8f8  BD91-02-17D109.shn
+4bf95c99a1f4aaf35dd31fbea857d3e0  BD91-02-17D110.shn
+df527f8100c6546b2b023bc57c8397b3  BD91-02-17D111.shn
+12afbdda29023f36013f672e449a1923  BD91-02-17D201.shn
+8c34aae45619ab38f8e5f49220ea8f88  BD91-02-17D202.shn
+00650808f8b177a2d6a93eb24962f0a6  BD91-02-17D203.shn
+adde8038be50cc0792b34f6745373897  BD91-02-17D204.shn
+4ea3c0731a70d67f3f2d0e297c3690b3  BD91-02-17D205.shn
+838c361e9433f9e8d711a8b175481a4c  BD91-02-17D206.shn
+c9b507b3b88bac28e5a5fc057dd9d4c3  BD91-02-17D207.shn
+bcf87285aa48d3e84b6b7dead3fd43be  BD91-02-17D208.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-02-17.shnf 
+=================== 
+=================== 
+=================== 
+274e1ac43d4acf1e70b0449f40bc236b  [shntool]  BD91-02-17D101.wav
+4c6f0828aabfddf1fd950afe8e6ee445  [shntool]  BD91-02-17D102.wav
+672a9c240fb1135db209fbac9c7bf478  [shntool]  BD91-02-17D103.wav
+73a6e9e1b2f339836122d98236a62dd6  [shntool]  BD91-02-17D104.wav
+236dc6fd2ef32b6ea5ccd0a95e27e7f7  [shntool]  BD91-02-17D105.wav
+c73382624b6a14f736efe0bba8e7e013  [shntool]  BD91-02-17D106.wav
+3cf7a457de56d6bdc00116a808ca4db2  [shntool]  BD91-02-17D107.wav
+0bec293616e0d367f2f418eb8b0745e9  [shntool]  BD91-02-17D108.wav
+f1f22e8b440bf817b58af1fe896d4d62  [shntool]  BD91-02-17D109.wav
+7a508ec2c3ff873018edf3a72578d9a7  [shntool]  BD91-02-17D110.wav
+89cfd188e5cc037dba8739f0bc6c9ac0  [shntool]  BD91-02-17D111.wav
+b46dbd1df8d757cac8be33660ebd3916  [shntool]  BD91-02-17D201.wav
+b8da25d412d20fb4ed20b28b7410bd48  [shntool]  BD91-02-17D202.wav
+2bfd77ed13f573a058f8fff41ee61fa2  [shntool]  BD91-02-17D203.wav
+698a81a76a4ff9bde6886f4c7a66e120  [shntool]  BD91-02-17D204.wav
+cf51bd4793cf3495e2c36c036f897124  [shntool]  BD91-02-17D205.wav
+a26332322351f1e00b04911f778bc230  [shntool]  BD91-02-17D206.wav
+63bd9d2950f0325db273f3453b36395a  [shntool]  BD91-02-17D207.wav
+600b06cc7e4ef41bd63fcfc20ebd4726  [shntool]  BD91-02-17D208.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-17.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:01.12       42540700 B   ---   -e   ---xx    shn  0.6295  BD91-02-17D101.shn
+     3:57.32       41882140 B   ---   -e   ---xx    shn  0.6219  BD91-02-17D102.shn
+     3:58.35       42065596 B   ---   -e   ---xx    shn  0.6422  BD91-02-17D103.shn
+     4:51.40       51426556 B   ---   -e   ---xx    shn  0.6295  BD91-02-17D104.shn
+     4:25.04       46755484 B   ---   -e   ---xx    shn  0.6401  BD91-02-17D105.shn
+     2:47.16       29496508 B   ---   -e   ---xx    shn  0.6462  BD91-02-17D106.shn
+     3:56.71       41797468 B   ---   -e   ---xx    shn  0.6253  BD91-02-17D107.shn
+     3:36.59       38241244 B   ---   -e   ---xx    shn  0.6427  BD91-02-17D108.shn
+     5:34.44       59021164 B   ---   -e   ---xx    shn  0.6408  BD91-02-17D109.shn
+     2:51.33       30242092 B   ---   -e   ---xx    shn  0.6227  BD91-02-17D110.shn
+     3:47.42       40141660 B   ---   -e   ---xx    shn  0.6492  BD91-02-17D111.shn
+     4:29.70       47616316 B   ---   -e   ---xx    shn  0.6585  BD91-02-17D201.shn
+     3:59.51       42279628 B   ---   -e   ---xx    shn  0.6576  BD91-02-17D202.shn
+     4:21.11       46066348 B   ---   -e   ---xx    shn  0.6469  BD91-02-17D203.shn
+     3:13.11       34071148 B   ---   -e   ---xx    shn  0.6474  BD91-02-17D204.shn
+     3:50.15       40607356 B   ---   -e   ---xx    shn  0.6594  BD91-02-17D205.shn
+     5:43.07       60521740 B   ---   -e   ---xx    shn  0.6813  BD91-02-17D206.shn
+     4:38.64       49189804 B   ---   -e   ---xx    shn  0.6679  BD91-02-17D207.shn
+     4:40.40       49486156 B   ---   -e   ---xx    shn  0.6789  BD91-02-17D208.shn
+    78:44.57      833449108 B                            0.6480  (19 files)
+=================== 
+=================== 
+=================== 

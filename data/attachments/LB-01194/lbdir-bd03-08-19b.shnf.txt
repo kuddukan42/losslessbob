@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-08-19b.shnf 
+=================== 
+=================== 
+=================== 
+3718447393f389da5d675a399af4c30e  bd03-08-19b.txt
+537f5e869889c1bcb8ba48323e0c6b66  bd03-08-19d1t01.shn
+7edd1d50756c00646dc186bb131332e1  bd03-08-19d1t02.shn
+51ceb496dbef4166e241491027b9ba67  bd03-08-19d1t03.shn
+4ad5b58581bcef8e0ae88d1a549a1060  bd03-08-19d1t04.shn
+9aa039d5c11af7604fcce43ab6bbcaaa  bd03-08-19d1t05.shn
+72259f8084cae88b090459fbfb28c4ce  bd03-08-19d1t06.shn
+50b23a17af5d54820979d0d95f888b56  bd03-08-19d1t07.shn
+2b7be8e61325857c799e668466799df1  bd03-08-19d1t08.shn
+bcd56df65824bb1257ef718edc317152  bd03-08-19d1t09.shn
+f69d3defa26cef542d4a6c236212b70f  bd03-08-19d1t10.shn
+58cc8611e8dfa62e425b4175257c7382  bd03-08-19d1t11.shn
+f08ac30fb922c7e4908c59e67fbd7cb8  bd03-08-19d1t12.shn
+161029795cb3e4887e156eeb91983c0f  bd03-08-19d2t01.shn
+f58dc365ae1297d9d834d51e67ba1e0c  bd03-08-19d2t02.shn
+091ddf15bb04ddf2cdbcd43535dbf455  bd03-08-19d2t03.shn
+8d37b71350c9ced532f6b0c64fa12651  bd03-08-19d2t04.shn
+9eb9048666bc77be512d5e8ab2791076  bd03-08-19d2t05.shn
+9805fa44276bd4b9ebdabef34e906e2c  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-08-19b.shnf 
+=================== 
+=================== 
+=================== 
+525bd44e10862c690013c8fae605b76c  [shntool]  bd03-08-19d1t01.wav
+04dc8acd77a0691b2b6a7000c3c7481c  [shntool]  bd03-08-19d1t02.wav
+c73a9765b6da26bf3aaf8e0650a8ea70  [shntool]  bd03-08-19d1t03.wav
+2bd73b562ed6fa3206ec75977c21dc91  [shntool]  bd03-08-19d1t04.wav
+e4520983413ce16b7f6b3c0284101e9c  [shntool]  bd03-08-19d1t05.wav
+441b4c43e642bc595a96641cfd056fe9  [shntool]  bd03-08-19d1t06.wav
+e370fd9ec04baed8aef209e1b71047fa  [shntool]  bd03-08-19d1t07.wav
+d0596c16cb6d2ea363f96c770b128fcd  [shntool]  bd03-08-19d1t08.wav
+411c29d0f564137283b772077b501272  [shntool]  bd03-08-19d1t09.wav
+f124c4af7bcf4e78e21016c92074e5b8  [shntool]  bd03-08-19d1t10.wav
+8dc42c27f55664c65cf432c6cfd61a97  [shntool]  bd03-08-19d1t11.wav
+e630ba5e5f01ec41561d93fe424901f8  [shntool]  bd03-08-19d1t12.wav
+bcdf382fdc38f72761a3a19c28f26037  [shntool]  bd03-08-19d2t01.wav
+f9dfbd18c4a86b551c31cac70611544d  [shntool]  bd03-08-19d2t02.wav
+51197798e89de83defc3264b58004f15  [shntool]  bd03-08-19d2t03.wav
+99bd0b79094e93957e361c1767204fdf  [shntool]  bd03-08-19d2t04.wav
+92e0dbd15dd8430c9b369c90625a5501  [shntool]  bd03-08-19d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-08-19b.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.52       50572748 B   ---   --   ---xx    shn  0.6566  bd03-08-19d1t01.shn
+     5:18.10       56118764 B   ---   --   ---xx    shn  0.6668  bd03-08-19d1t02.shn
+     5:31.70       58553084 B   ---   --   ---xx    shn  0.6250  bd03-08-19d1t03.shn
+     6:01.33       63758060 B   ---   --   ---xx    shn  0.6389  bd03-08-19d1t04.shn
+     7:06.41       75242876 B   ---   --   ---xx    shn  0.6533  bd03-08-19d1t05.shn
+     6:40.15       70595324 B   ---   --   ---xx    shn  0.6363  bd03-08-19d1t06.shn
+     6:59.42       74010428 B   ---   --   ---xx    shn  0.6587  bd03-08-19d1t07.shn
+     6:53.67       73010828 B   ---   --   ---xx    shn  0.6428  bd03-08-19d1t08.shn
+     7:32.02       79737548 B   ---   --   ---xx    shn  0.6655  bd03-08-19d1t09.shn
+     6:20.38       67121420 B   ---   --   ---xx    shn  0.6653  bd03-08-19d1t10.shn
+     5:57.58       63111260 B   ---   --   ---xx    shn  0.5687  bd03-08-19d1t11.shn
+     6:44.48       71378540 B   ---   --   ---xx    shn  0.6674  bd03-08-19d1t12.shn
+     8:10.56       86567756 B   ---   --   ---xx    shn  0.6608  bd03-08-19d2t01.shn
+     7:07.13       75353420 B   ---   --   ---xx    shn  0.6531  bd03-08-19d2t02.shn
+     5:43.74       60679292 B   ---   --   ---xx    shn  0.4744  bd03-08-19d2t03.shn
+     6:40.33       70637660 B   ---   --   ---xx    shn  0.6653  bd03-08-19d2t04.shn
+     7:02.49       74556092 B   ---   --   ---xx    shn  0.6382  bd03-08-19d2t05.shn
+   110:38.26     1171005100 B                            0.6394  (17 files)
+=================== 
+=================== 
+=================== 

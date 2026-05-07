@@ -1,0 +1,13 @@
+87e50f6042e9c3458b891d2d0ecc9746  bd_1989-10-10+12 Soundchecks (10th includes autograph signing).md5
+e31a9b7f2f9d951c519325b5740bf02f  bd_Soundchecks 10 + 12 Oct 1989 (10th incl. autograph signing).txt
+ec7120fcab6e16ca42f2d420b8c0f227  Track01.flac
+025057ebd45ae3f96b3057dd206dc58b  Track02.flac
+575c97b59a59424d154ff3fd705180c8  Track03.flac
+cd63232c8f3ca7b5d554c980c629fdd7  Track04.flac
+d1cf8e8f191d3a84dc55ddaa93227038  Track05.flac
+bdd789d3dbae24214a264f0ec1dcdbe7  Track06.flac
+a4a94d171fb617f5bbe3207964016250  Track07.flac
+dc74b208622e34cf22fd17bfe1f5a7fe  Track08.flac
+2cddbdc99045d16301b41e4f2f4e7841  Track09.flac
+a5d4da6f4ef89b8cd2c37e6457a98c06  Track10.flac
+0bd37887a1a533a99408efe25913a0f3  Track11.flac

@@ -1,0 +1,478 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-BobDylan-com 
+=================== 
+=================== 
+=================== 
+6a50dc49d7e51ee09d856e0c3e816514  01\BobDylan.com Vol1 b.jpg
+9a9e322fc6647790254c0b266b670910  01\BobDylan.com Vol1 f.jpg
+0748a16c7ac621b6c249e1dce5459648  01\Track01.shn
+76921c1289a67da29ff70d7d544f8c4f  01\Track02.shn
+837a63419c818d84ca2e0393e452e2ca  01\Track03.shn
+8d6f6d83c09207c626d906a0ea05d75f  01\Track04.shn
+2b52288d42736aa4014a25671ee9fabc  01\Track05.shn
+8cb54fbb144d8c56e1880c410ac1a3c7  01\Track06.shn
+bea2d70549db294a9fe49e2c9ac66655  01\Track07.shn
+bd506a15635991d59cee0f261ddbf5df  01\Track08.shn
+37e7ed024ac1f1612b076d48fced43d6  01\Track09.shn
+02cc33b966f175355a09eff067d97c77  01\Track10.shn
+3cefb80cb4e5a4e7cb5e90601943e151  01\Track11.shn
+045b989ace79bcb675169047b4620088  01\Track12.shn
+0a4c5cce0551e591c07343bf181104d4  01\noname.md5
+8966c6f2103651186473a2c1f38fcd5f  02\BobDylan.com Vol2 b.jpg
+8dff7ced4c8a8b0c88ddbfe6cc723605  02\BobDylan.com Vol2 f.jpg
+9aa46489ed5206abf9baf5087a0690bd  02\Track01.shn
+f756ce474ba4484ae277ccbf69c15312  02\Track02.shn
+cb9e028cb0c0172c62354c4e0c222157  02\Track03.shn
+84fd7f962c3fb49257b7fc46ad4e3a27  02\Track04.shn
+13764680981294f5607c00a2f85755be  02\Track05.shn
+69a530fa440bc7fecc9abddd81902cdb  02\Track06.shn
+22bd5ac6276049c445cbab498508ed00  02\Track07.shn
+659f7d68deec5f8029a74d27f856dd0b  02\Track08.shn
+dd0cd009c10cc4df3e3bca7b020b7039  02\Track09.shn
+422da0c3a7da15a55263fee32c9e7279  02\Track10.shn
+d691a9b61c515ff6a9dddccf8548cc82  02\Track11.shn
+49f7b39afc55122853aa7521121475dd  02\Track12.shn
+241834551c3e69f7419ca00cf5e80f54  02\noname.md5
+1be04df78411d15652fae8191344526c  03\BobDylan.com Vol3 b.jpg
+8e102a994cdd5957f5ddcb0cd10039ab  03\BobDylan.com Vol3 f.jpg
+be22fb112fbb527f615c9ef1b2e9c28e  03\Track01.shn
+87aae48f791153c1f32f6fff184ed6f0  03\Track02.shn
+066f551bc7d649963a4f29b4c1c94dd9  03\Track03.shn
+5cab245457456e16d4edc44e94cf9498  03\Track04.shn
+92e12fb5078dc87bb0e0380a7758140f  03\Track05.shn
+9af47b73a6bda55d9491e793cec71db4  03\Track06.shn
+c755a93f343074aae2b35594f723865c  03\Track07.shn
+ca01dd1c0781e228acf88640767bf1f0  03\Track08.shn
+35a0694d5cbe067eb1dd6af900ffede8  03\Track09.shn
+bf1610f981a578a1d98292b838bd5f51  03\Track10.shn
+d09b370424aa88b12e25a7e8f534a950  03\Track11.shn
+7dc8a93847c630f85404c28c27572dfe  03\Track12.shn
+4a6b9c33f0c95361d8196d239fbf914f  03\Track13.shn
+7ec0e5b40ad8aa4468e8558051408ce9  03\noname.md5
+ad912c304e3b85d52aea232f1529ea0a  04\BobDylan.com Vol4 b.jpg
+f18954bcfa05a27ebe8cf465afe9e101  04\BobDylan.com Vol4 f.jpg
+392eca937877dd567741d6db7b18d9f3  04\Track01.shn
+a2c814c77804fa7c9929b6d28855abca  04\Track02.shn
+7e411eaa7a6afee36c0be58c3987924f  04\Track03.shn
+bf0ebc171afb3f456055ec1312942162  04\Track04.shn
+17d165ceeaad8a41ba33acbaf679083c  04\Track05.shn
+37c18ff5762670050663400fab275cbd  04\Track06.shn
+a41147c2ce5b3aadc8d88e7c85c8246d  04\Track07.shn
+4ffe4acf801a752386c975790083b3ee  04\Track08.shn
+8973f6081bef08d6fd1810d126d96a04  04\Track09.shn
+0bfc63af511480ac76abf403c117c6db  04\Track10.shn
+34df4e5fc8c49fe3afac7323584f9527  04\Track11.shn
+2014b262a6c0e40ae75276ab1d4d1e5b  04\Track12.shn
+7c38c04a1dd0c3cb4c98b5e9c32a7c45  04\Track13.shn
+db210da86e89ead955ef5c4a7d9e7986  04\noname.md5
+1930afa3cbecfe530217d51dd1aee07b  05\BobDylan.com Vol5 b.jpg
+de9818035a05627e236f32685970025c  05\BobDylan.com Vol5 f.jpg
+3d8a217400c3ac5088437740159d972e  05\Track01.shn
+4d9b6e764dfe51e1ef5d4b151bbdbf91  05\Track02.shn
+4c3d0e106a0104770d5f72225b833963  05\Track03.shn
+28ffb0453c049ac6030dd7289b223dd8  05\Track04.shn
+80aceb5b81a3ba4cec6f962a84b40f96  05\Track05.shn
+4e6b34af79645a1ce9a58c2d9bb85563  05\Track06.shn
+48b9c2491a6c0400b009cbfae0571871  05\Track07.shn
+b40553143675748c38e89e95b7fb8581  05\Track08.shn
+5d37e6fa7bedc5f6a739c0545ea37b41  05\Track09.shn
+3b7352bdfbdf8f5d0aaf203e1a6c2cc7  05\Track10.shn
+66afec4bfd81b9c76c3375fbf67cb979  05\Track11.shn
+27668ff4f7122fcfd10873100c7cd8f8  05\Track12.shn
+b686de835964c81ae47a5d88e08a36b1  05\Track13.shn
+235be3dfbab18130d0d03b9f37cee744  05\Track14.shn
+f58e324bca586188109c8d8d761f512d  05\noname.md5
+eee2f578d48de9f47626e0ad1e5c98e1  06\BobDylan.com Vol6 b.jpg
+8edb63fe55d8f89dedd3a5228e81a8e4  06\BobDylan.com Vol6 f.jpg
+19270eeb8844723cac9341b192dd246e  06\Track01.shn
+c8394e3461d5e28bc89158a40313fb1a  06\Track02.shn
+dc7f6fd44a11ae55668e0b4f10c368c9  06\Track03.shn
+0070b1a69f3bc62946ef06599e4ee956  06\Track04.shn
+e1b3495fd45f211d644f90a17cc0bd05  06\Track05.shn
+223e471ba24cb248431b33d4c7ed738a  06\Track06.shn
+4eef017a965192d409fd90cb5e1b198b  06\Track07.shn
+7f1aca5e19262d9407d42f10a132afed  06\Track08.shn
+e8ab765bd7c99d926bb61eb9fe1f2896  06\Track09.shn
+0bbd1b4a628ddb25b917108ee7c81fd3  06\Track10.shn
+b19a06b7783efc278c7009dc20c00680  06\Track11.shn
+57f944d6b14d4825d90ebcade581ff8f  06\Track12.shn
+ed67aa1f20502342a8944f61bb9d59f8  06\Track13.shn
+330d85d1e7c3d5e71e8f27b9d3ddd2d6  06\noname.md5
+6f9df93e26339cc43bff6c7d313e41e4  07\BobDylan.com Vol7 b.jpg
+de3c11e694007fdb7249e239e042c41f  07\BobDylan.com Vol7 f.jpg
+cfddad709a6a7a8c5bc35f49d246f4d4  07\Track01.shn
+64067aa056842ca1a6a3ec63f816829d  07\Track02.shn
+17b9a4b1f64d519fe14c0278833fa09a  07\Track03.shn
+77272b5ab2835e55415df11f22a51d84  07\Track04.shn
+b98cd02d6c2ed25de8e542c9cfa3f6ea  07\Track05.shn
+68f77703f4d32b9866a9e4c84760d7f2  07\Track06.shn
+50651a8a02a82006f6ecab82c853ba83  07\Track07.shn
+dd64800478a5125b868f0f2b5d70de77  07\Track08.shn
+d632a3a1b2ff8fc1c39ad5e9ec00d61d  07\Track09.shn
+2590d26a2d6356089f192df4cf42d4cb  07\Track10.shn
+d0dc2c9082709e87c4d0c73ec668ec4f  07\Track11.shn
+b270234817d6dfb50beef8d0ff61154b  07\Track12.shn
+f7ea749fd8946f31a4d5efbde0a11933  07\Track13.shn
+495aa4d6860d62cf43ff8b1f1926b8e3  07\Track14.shn
+8c35e2f20641fa01293197007395aee9  07\noname.md5
+8a988d6224ca7719dc2a351bc85a4312  08\BobDylan.com Vol8 b.jpg
+96d94f7f5525f65c31da5ff85ac75a28  08\BobDylan.com Vol8 f.jpg
+6573b5ff031c2bae7f1bb260445331a9  08\Track01.shn
+d36e99c89902ec9a7958e783a6894da0  08\Track02.shn
+ac47b5c4acfbaf38f1c20ff5e4fc7242  08\Track03.shn
+dd2c89b4853144a4b74f07abf67a2bf6  08\Track04.shn
+4aaa6170798b1b401a61dd8061a896c6  08\Track05.shn
+c6f54f826f58dcd3f210cf5aec4d01d3  08\Track06.shn
+9d9e9fe5c02c3ded86bf2a4e54d6ccca  08\Track07.shn
+09a68df0d8b31f3a364adac5dd11d2ac  08\Track08.shn
+1c03e73d6e18f9d1a800bb10fad8fbcf  08\Track09.shn
+6c278648ef316e316ce73ae0487ec048  08\Track10.shn
+54e1478286a6ddcc0e5c761e2404e4d8  08\Track11.shn
+3c61c7ae2683b997acc9399e0cc35206  08\Track12.shn
+8e32eb707c497b5ceaf4b8d5ea6a6053  08\Track13.shn
+9e9c038d724027e711920e338c5f3a08  08\Track14.shn
+db300198ac570b02522ac1cce6267aa2  08\noname.md5
+3cbb6180c56a16f6de2d0d9e99ab2fdd  BobDylan.com track lists.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-BobDylan-com\04 
+=================== 
+=================== 
+=================== 
+b2e9e341254bd97b8b6b951616cea1d1  [shntool]  Track01.wav
+a554447cb025a1293d8827637db73a63  [shntool]  Track02.wav
+9443b16f88aaed33c4d4fbc35b55189e  [shntool]  Track03.wav
+2c8b629ecd172d1cf66e596933a7c378  [shntool]  Track04.wav
+4fdc7e9dd967b0281fe455cf68f9caaf  [shntool]  Track05.wav
+91a4a3cb412ba284b9ffffa5295806d6  [shntool]  Track06.wav
+7863bc8f8dec9ade36481c3bb9ee6977  [shntool]  Track07.wav
+2b5ca5442f69c31314fe62439e4fc632  [shntool]  Track08.wav
+4ec5c95d02f8e5eb824bff95ebd0318d  [shntool]  Track09.wav
+f418cd47ebf907df11629bfe28a721c7  [shntool]  Track10.wav
+868b2e30fc3ce9f9831010b0dd98417e  [shntool]  Track11.wav
+a8b2a2c95e3d3eaf2fcda4e42bf30ea8  [shntool]  Track12.wav
+ad3a5e18c2daa22d68019ad1f06b5615  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-BobDylan-com\01 
+=================== 
+=================== 
+=================== 
+557ab2ec516551ed84189d9a8d5c1929  [shntool]  Track01.wav
+d0b8225a29bb9623916971bd00124f3d  [shntool]  Track02.wav
+22d482eab388428a72c0a4302fbbad21  [shntool]  Track03.wav
+ef5fb66f4b491dbaa33e860a1268a6ad  [shntool]  Track04.wav
+82ae8e149ac7348cc74de19f82def44b  [shntool]  Track05.wav
+c62e53406a723b29922a084b743dbf14  [shntool]  Track06.wav
+ee31223f328925edda39349c25b6f155  [shntool]  Track07.wav
+a3d51b34491387e3b5c3b175a89b6522  [shntool]  Track08.wav
+f375ed96854df3a606aaf9308e5cc745  [shntool]  Track09.wav
+192b0f84464162dc6d0db8804e41c6fc  [shntool]  Track10.wav
+eee78920588ffe3bd83fe80909eefe96  [shntool]  Track11.wav
+b49c2b9db41ad54cd0ffd7cf8c114754  [shntool]  Track12.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-BobDylan-com\05 
+=================== 
+=================== 
+=================== 
+ea2656f45643f6c8d84664040724478f  [shntool]  Track01.wav
+5889ed374b1921ee8018a0c9209a2bd9  [shntool]  Track02.wav
+2884b8ea943e97d7b35fed3f4cc1060c  [shntool]  Track03.wav
+fb822123f1b5d38aee9a65aae85de194  [shntool]  Track04.wav
+1ffaa7ce94b6c0a3ff1b15a1a87297f4  [shntool]  Track05.wav
+ae61f89d36aeba8671fe0cd880db11f6  [shntool]  Track06.wav
+aacc368010a3762957700aa047d38c67  [shntool]  Track07.wav
+04e9331435930e620ec8dafaa70430c8  [shntool]  Track08.wav
+ef48758f48014e610ed942d25a4ffba0  [shntool]  Track09.wav
+baa4095d79b6e546313473e774813855  [shntool]  Track10.wav
+934827f9180524ebe80228309bf20738  [shntool]  Track11.wav
+b95a3d064f701ff0a525dc223f21aae2  [shntool]  Track12.wav
+01fb5f202c28f31615ccdde2870cc97f  [shntool]  Track13.wav
+6294f4e4a99f7db31e9aefe5bcfef1fc  [shntool]  Track14.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-BobDylan-com\03 
+=================== 
+=================== 
+=================== 
+1ded317d7999991a027f287c486cb160  [shntool]  Track01.wav
+88048c5130fa3c4b267596e195a96b83  [shntool]  Track02.wav
+69d8c573f2e301735861d9f0caf1d430  [shntool]  Track03.wav
+44ce09b145cd1cb49af3801dee158070  [shntool]  Track04.wav
+2c302e0a5eaeca1324cc813d15b06a5d  [shntool]  Track05.wav
+96313c044a7e6d052a4311d3a7c37f4c  [shntool]  Track06.wav
+cd00579c41b6bce619a0afef7321dd5d  [shntool]  Track07.wav
+2578bb44314969a6ecbd67b55118ef70  [shntool]  Track08.wav
+e3d190ae9aaddeb4a8c350ed767a6097  [shntool]  Track09.wav
+87e78a20bb2b5c0ef291f0664acc335e  [shntool]  Track10.wav
+29b994a9e5901af61b9aaa28919ff33c  [shntool]  Track11.wav
+fe5a0f8326532f2e5c719d0e6b02c997  [shntool]  Track12.wav
+1a25486eb804762554725bd935e8c9d5  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-BobDylan-com\08 
+=================== 
+=================== 
+=================== 
+f12a11c89c0529b2ae5f81341f246ae3  [shntool]  Track01.wav
+7a6778fb8590d0fb34e239b6ff1fc1b3  [shntool]  Track02.wav
+59cf3843c05d19f9d236366a4faf8ad7  [shntool]  Track03.wav
+c071280f6916d1f37d570d203d332b24  [shntool]  Track04.wav
+d56c330618de07a4c090d16fa6da79d5  [shntool]  Track05.wav
+124a5b6c1e36da7b17e90fec771431b7  [shntool]  Track06.wav
+272cdadbe784616f8160284a6c131d03  [shntool]  Track07.wav
+4a3831575aa13ba61598935480a06a36  [shntool]  Track08.wav
+2051f76d09771701b1b81837fd448722  [shntool]  Track09.wav
+dc2da3ab60c1967f261b994804073b53  [shntool]  Track10.wav
+ed747be516f25143ffba31310b43d23c  [shntool]  Track11.wav
+95b8f35e61fb0d4ca06d3480a423fb64  [shntool]  Track12.wav
+3adf560f0a18ebf367181669eb0261f2  [shntool]  Track13.wav
+978c5880b9eef8898d062746ea62c522  [shntool]  Track14.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-BobDylan-com\07 
+=================== 
+=================== 
+=================== 
+3f7eef3b31362f14a95a36db65660cac  [shntool]  Track01.wav
+02fb66ca7457a80ee2649bf575d0e1c5  [shntool]  Track02.wav
+d891834af821699c624b0795b4f0e6f2  [shntool]  Track03.wav
+e57b175198730615ffe08ca0ac6e52d3  [shntool]  Track04.wav
+47f327512ddd3c1809443229dd1ecd3c  [shntool]  Track05.wav
+26589cc3534335a3f5615d0af2fb3fa0  [shntool]  Track06.wav
+b82e2915e8e98299e6f4a4490aab2f82  [shntool]  Track07.wav
+38b823ccf7f34cff42e68d75a670b69a  [shntool]  Track08.wav
+af4fb3d89fa17d34811d26a6cf5e569e  [shntool]  Track09.wav
+a286df1ee50ca31f905c4712e6d139f0  [shntool]  Track10.wav
+7b1852f28778849395bc5d06b5ea0753  [shntool]  Track11.wav
+03536a64d4559c2a5915e804b53637f5  [shntool]  Track12.wav
+3421e87e3d5fa477bcaf156943b8b5dc  [shntool]  Track13.wav
+cdaabc027b5a133566f9748e82bb9a10  [shntool]  Track14.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-BobDylan-com\02 
+=================== 
+=================== 
+=================== 
+40b814af04c66241cf8a204ef537f044  [shntool]  Track01.wav
+86f71814dcfafb24c58fac3f2c2df16f  [shntool]  Track02.wav
+5c34c99c21f6e378eb70688577389d35  [shntool]  Track03.wav
+af0e679ed8e7ca0ceedd58ac120945f6  [shntool]  Track04.wav
+c34d85b12eedf492f1d4613230c0c3e9  [shntool]  Track05.wav
+6029527438e8c7ad5bed7c305b56aa24  [shntool]  Track06.wav
+8de1b43bcff42b9516e90f4d1405f231  [shntool]  Track07.wav
+83e3821102aa7bae51a90ee34ed5498a  [shntool]  Track08.wav
+68c2af3a5151e19fe06ebe313393f99f  [shntool]  Track09.wav
+8cc5aa8461e19601eba93a6f62112be0  [shntool]  Track10.wav
+14ee29a9b8ba0bfb98e83815c9fe473c  [shntool]  Track11.wav
+c5a6946372b4bc3150bed241ac4bddb2  [shntool]  Track12.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-BobDylan-com\06 
+=================== 
+=================== 
+=================== 
+b145080df1adf6b0b91266d6cf8d8c77  [shntool]  Track01.wav
+e7bdb9c851493cadd9a263197e98fa50  [shntool]  Track02.wav
+140557df07a6e32fbb0c7bd810f24515  [shntool]  Track03.wav
+571c7276cedcd1fdc32539af3b0c3569  [shntool]  Track04.wav
+97671fb41593ca202980686bc8adfd25  [shntool]  Track05.wav
+74c9ad190db78b5520e5113282661dbd  [shntool]  Track06.wav
+a3445962f95bc555d9f70d28d7fdf8b6  [shntool]  Track07.wav
+b971d764754c54c180422767e8792677  [shntool]  Track08.wav
+8c1fc9ac16c73f8dc66b78fd8b203d5c  [shntool]  Track09.wav
+142dbf984d0e60eb552c0963a16c6d7a  [shntool]  Track10.wav
+cbc123126d44c61f31440cf4a688133a  [shntool]  Track11.wav
+d6e60f47c3de65b5dda8b67d52d351e6  [shntool]  Track12.wav
+23c60755b4ca4f31cb24bad20af6bd5b  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-BobDylan-com\04 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.36       55474316 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:06.44       54081932 B   ---   --   -----    wav  1.0000  Track02.wav
+     3:35.74       38100092 B   ---   --   -----    wav  1.0000  Track03.wav
+     4:33.70       48321884 B   ---   --   -----    wav  1.0000  Track04.wav
+     4:36.72       48855788 B   ---   --   -----    wav  1.0000  Track05.wav
+     4:39.66       49370876 B   ---   --   -----    wav  1.0000  Track06.wav
+     3:36.40       38196524 B   ---   --   -----    wav  1.0000  Track07.wav
+     5:05.03       53809100 B   ---   --   -----    wav  1.0000  Track08.wav
+     4:50.63       51304220 B   ---   --   -----    wav  1.0000  Track09.wav
+     5:11.58       54996860 B   ---   --   -----    wav  1.0000  Track10.wav
+     6:07.07       64755308 B   ---   --   -----    wav  1.0000  Track11.wav
+     5:25.12       57358268 B   ---   --   -----    wav  1.0000  Track12.wav
+     8:10.74       86610092 B   ---   --   -----    wav  1.0000  Track13.wav
+    66:15.19      701235260 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-BobDylan-com\01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.17       53842028 B   ---   --   -----    wav  1.0000  Track01.wav
+     7:02.46       74549036 B   ---   --   -----    wav  1.0000  Track02.wav
+     6:56.62       73528268 B   ---   --   -----    wav  1.0000  Track03.wav
+     7:16.05       76922204 B   ---   --   -----    wav  1.0000  Track04.wav
+     4:59.24       52800092 B   ---   --   -----    wav  1.0000  Track05.wav
+     5:10.18       54726380 B   ---   --   -----    wav  1.0000  Track06.wav
+     6:50.70       72488684 B   ---   --   -----    wav  1.0000  Track07.wav
+     5:00.31       52992956 B   ---   --   -----    wav  1.0000  Track08.wav
+     3:48.37       40306268 B   ---   --   -----    wav  1.0000  Track09.wav
+     3:49.43       40496780 B   ---   --   -----    wav  1.0000  Track10.wav
+     9:05.59       96276812 B   ---   --   -----    wav  1.0000  Track11.wav
+     6:43.11       71115116 B   ---   --   -----    wav  1.0000  Track12.wav
+    71:48.48      760044624 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-BobDylan-com\05 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:02.72       64026188 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:05.25       53860844 B   ---   --   -----    wav  1.0000  Track02.wav
+     4:11.02       44281148 B   ---   --   -----    wav  1.0000  Track03.wav
+     7:52.28       83326700 B   ---   --   -----    wav  1.0000  Track04.wav
+     5:33.73       58912940 B   ---   --   -----    wav  1.0000  Track05.wav
+     5:25.24       57386492 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:16.56       55874156 B   ---   --   -----    wav  1.0000  Track07.wav
+     3:42.47       39271388 B   ---   --   -----    wav  1.0000  Track08.wav
+     9:58.21      105536636 B   ---   --   -----    wav  1.0000  Track09.wav
+     4:29.74       47625692 B   ---   --   -----    wav  1.0000  Track10.wav
+     6:42.57       71046908 B   ---   --   -----    wav  1.0000  Track11.wav
+     4:17.29       45403052 B   ---   --   -----    wav  1.0000  Track12.wav
+     3:11.37       33779468 B   ---   --   -----    wav  1.0000  Track13.wav
+     5:47.08       61229660 B   ---   --   -----    wav  1.0000  Track14.wav
+    77:37.28      821561272 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-BobDylan-com\03 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:04.46       32565836 B   ---   --   -----    wav  1.0000  Track01.wav
+     3:56.65       41783324 B   ---   --   -----    wav  1.0000  Track02.wav
+     3:59.01       42161996 B   ---   --   -----    wav  1.0000  Track03.wav
+     7:55.05       83801804 B   ---   --   -----    wav  1.0000  Track04.wav
+     6:21.72       67377788 B   ---   --   -----    wav  1.0000  Track05.wav
+     4:37.19       48907532 B   ---   --   -----    wav  1.0000  Track06.wav
+     4:28.64       47425772 B   ---   --   -----    wav  1.0000  Track07.wav
+     9:03.69       95947532 B   ---   --   -----    wav  1.0000  Track08.wav
+     6:24.43       67838780 B   ---   --   -----    wav  1.0000  Track09.wav
+     3:34.72       37918988 B   ---   --   -----    wav  1.0000  Track10.wav
+     4:28.18       47317580 B   ---   --   -----    wav  1.0000  Track11.wav
+     6:19.25       66914444 B   ---   --   -----    wav  1.0000  Track12.wav
+     3:13.55       34174604 B   ---   --   -----    wav  1.0000  Track13.wav
+    67:28.29      714135980 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-BobDylan-com\08 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:03.23       53503340 B   ---   --   -----    wav  1.0000  Track01.wav
+     4:33.15       48192524 B   ---   --   -----    wav  1.0000  Track02.wav
+     6:28.60       68584364 B   ---   --   -----    wav  1.0000  Track03.wav
+     6:15.53       66274700 B   ---   --   -----    wav  1.0000  Track04.wav
+     4:26.23       46976540 B   ---   --   -----    wav  1.0000  Track05.wav
+     2:57.36       31307516 B   ---   --   -----    wav  1.0000  Track06.wav
+     2:34.09       27186812 B   ---   --   -----    wav  1.0000  Track07.wav
+     2:43.30       28823804 B   ---   --   -----    wav  1.0000  Track08.wav
+     2:22.00       25048844 B   ---   --   -----    wav  1.0000  Track09.wav
+     3:09.04       33349052 B   ---   --   -----    wav  1.0000  Track10.wav
+     2:46.32       29357708 B   ---   --   -----    wav  1.0000  Track11.wav
+     3:20.34       35360012 B   ---   --   -----    wav  1.0000  Track12.wav
+     5:01.54       53223452 B   ---   --   -----    wav  1.0000  Track13.wav
+     4:44.45       50203484 B   ---   --   -----    wav  1.0000  Track14.wav
+    56:26.43      597392152 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-BobDylan-com\07 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.69       73015532 B   ---   --   -----    wav  1.0000  Track01.wav
+     3:35.49       38041292 B   ---   --   -----    wav  1.0000  Track02.wav
+     4:19.06       45701756 B   ---   --   -----    wav  1.0000  Track03.wav
+     5:01.14       53129372 B   ---   --   -----    wav  1.0000  Track04.wav
+     4:09.58       44060060 B   ---   --   -----    wav  1.0000  Track05.wav
+     5:16.55       55871804 B   ---   --   -----    wav  1.0000  Track06.wav
+     4:08.33       43824860 B   ---   --   -----    wav  1.0000  Track07.wav
+     4:57.29       52459052 B   ---   --   -----    wav  1.0000  Track08.wav
+     6:02.66       64012076 B   ---   --   -----    wav  1.0000  Track09.wav
+     5:48.08       61406060 B   ---   --   -----    wav  1.0000  Track10.wav
+     5:46.38       61123820 B   ---   --   -----    wav  1.0000  Track11.wav
+     5:16.15       55777724 B   ---   --   -----    wav  1.0000  Track12.wav
+     8:05.08       85572860 B   ---   --   -----    wav  1.0000  Track13.wav
+     4:37.60       49003964 B   ---   --   -----    wav  1.0000  Track14.wav
+    73:58.58      783000232 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-BobDylan-com\02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.17       42376028 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:46.10       61057964 B   ---   --   -----    wav  1.0000  Track02.wav
+    10:48.68      114467180 B   ---   --   -----    wav  1.0000  Track03.wav
+     7:03.43       74718380 B   ---   --   -----    wav  1.0000  Track04.wav
+     4:20.07       45880508 B   ---   --   -----    wav  1.0000  Track05.wav
+     5:27.54       57809852 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:48.30       61457804 B   ---   --   -----    wav  1.0000  Track07.wav
+     4:19.24       45744092 B   ---   --   -----    wav  1.0000  Track08.wav
+     5:18.28       56161100 B   ---   --   -----    wav  1.0000  Track09.wav
+     7:08.16       75536876 B   ---   --   -----    wav  1.0000  Track10.wav
+     6:59.28       73977500 B   ---   --   -----    wav  1.0000  Track11.wav
+     3:34.72       37918988 B   ---   --   -----    wav  1.0000  Track12.wav
+    70:35.22      747106272 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-BobDylan-com\06 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:26.25       89317244 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:18.41       56191676 B   ---   --   -----    wav  1.0000  Track02.wav
+     8:55.64       94524572 B   ---   --   -----    wav  1.0000  Track03.wav
+     4:56.52       52336748 B   ---   --   -----    wav  1.0000  Track04.wav
+     6:06.27       64625948 B   ---   --   -----    wav  1.0000  Track05.wav
+     3:29.07       36884108 B   ---   --   -----    wav  1.0000  Track06.wav
+     4:48.73       50974940 B   ---   --   -----    wav  1.0000  Track07.wav
+     5:19.33       56349260 B   ---   --   -----    wav  1.0000  Track08.wav
+     7:40.47       81254588 B   ---   --   -----    wav  1.0000  Track09.wav
+     2:58.16       31436876 B   ---   --   -----    wav  1.0000  Track10.wav
+     4:55.19       52082732 B   ---   --   -----    wav  1.0000  Track11.wav
+     6:28.22       68494988 B   ---   --   -----    wav  1.0000  Track12.wav
+     7:37.02       80619548 B   ---   --   -----    wav  1.0000  Track13.wav
+    77:00.53      815093228 B                            1.0000  (13 files)
+=================== 
+=================== 
+=================== 

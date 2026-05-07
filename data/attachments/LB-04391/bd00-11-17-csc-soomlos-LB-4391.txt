@@ -1,0 +1,8 @@
+Bob Dylan, 11/17/00, Princeton, New Jersey, Princeton University, Dillon Gym, 2CDR
+
+LB-4391, (71min+43min), source: soomlos, fob, center, ga floor, core-sound cardioids > sony d8, sony d8 > tascam cd-rw700 > eac > adobe audition 1.0 > cd wave > flac; bittorrent download 01/07; different recording than LB-3931 based on this one does not have talking at d1t3 0:40; this one is not as warm as that one; same recording as LB-4186 with same clapping at end of d1t3; wavs are different and this is less harsh and fuller sound; background talking d1t11
+
+Disc 1:, 01. Duncan And Brady [03:16], 02. My Back Pages [07:08], 03. Desolation Row [08:52], 04. The Ballad Of Frankie Lee And Judas Priest [06:04], 05. Tangled Up In Blue [07:46], 06. Searching For A Soldier's Grave [03:12], 07. Country Pie [03:07], 08. Blind Willie McTell [06:00], 09. Tombstone Blues [05:29], 10. Tryin' To Get To Heaven [05:22], 11. The Wicked Messenger [04:10], 12. Band Intros [00:36], 13. Leopard-Skin Pill-Box Hat [09:02], Total time: [70:12], Disc 2:, 01. Things Have Changed [06:40], 02. Like A Rolling Stone [07:30], 03. If Dogs Run Free [03:44], 04. All Along The Watchtower [05:03], 05. The Times They Are A-Changin' [07:32], 06. Highway 61 Revisited [06:33], 07. Blowin' In The Wind [04:58], Total time: [42:06]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

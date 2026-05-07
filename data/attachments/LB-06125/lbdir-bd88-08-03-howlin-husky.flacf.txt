@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-08-03-howlin-husky.flacf 
+=================== 
+=================== 
+=================== 
+0b59f4daef2d09b70bffa68c1ee14d98  01 subterranean homseick blues.flac
+07dc5ec7f77e95b760d55400025f4763  02 just like a woman.flac
+fd0c6dba3544ea82d32332b156b25b03  03 highway 61 revisited.flac
+5bda3a0cb32352c6a3027f3abbb1b4df  04 seeing the real you at last.flac
+c701a08d59d266dd8b8ca0a1f3d4b289  05 Gates of Eden.flac
+0ba8a0c112bd5d9527985665c38c907f  06 ballad of a thin man.flac
+2e385dad7c8c3764d233adcc4af05423  07 mr. tambourine man.flac
+227b443025cd1620c719ccc6571746f5  08 Eileen Aroon (trad).flac
+997df287fd9b97106dab368994598cd6  09 love minus zero, no limit.flac
+3feed68afb5abe483a80485b2361c08f  10 the lonesome death of Hattie Carroll.flac
+661b807194db5cc5d5ebd92bcfd976b6  11 Silvio.flac
+188a85a3c31cff2e7d063fbb88136d10  12 in the garden.flac
+decf1215e4545dac9df21167bdfb9c22  13 like a rolling stone.flac
+9610413455748fc357159b5572836383  14 it ain't me babe.flac
+75d179eb9bd6258dd98f9b1b0889a297  15 I'm in the mood for love.flac
+88194f3e715bf93eacd755ece6ce14df  16 all long the watchtowwer.flac
+56c0aefa39211318ab84650fb928fec5  content.txt
+23370763840e691b0273a0bcaf380c32  Greek Theatre Los Angeles 1988 August THIRD.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-08-03-howlin-husky.flacf 
+=================== 
+=================== 
+=================== 
+01 subterranean homseick blues.flac:e363220228b61e3a847f81030b5c5253
+02 just like a woman.flac:40f69432e968428aa86c01974ad35df9
+03 highway 61 revisited.flac:92c70ed7e144e72c15e09d740c7aabe2
+04 seeing the real you at last.flac:515e47f3959c1086ed6df5d72c24e5ea
+05 Gates of Eden.flac:7df748812f0f2d69eaa42ecff44b5968
+06 ballad of a thin man.flac:aac00048eeeb68bd4042a5a2b657240f
+07 mr. tambourine man.flac:3d78a0d9aaf419cdfd28d18da5c3b30a
+08 Eileen Aroon (trad).flac:c21b87103e99f7b041083de46417391a
+09 love minus zero, no limit.flac:87732cf94fb698133362d5925a1381a1
+10 the lonesome death of Hattie Carroll.flac:8dc19b9c7b812f8a868351177ce7868a
+11 Silvio.flac:c9d1c3dc8bac43c1a12a4c5b423f4fa3
+12 in the garden.flac:3f7f95ce43890bdc5b3809e3c969ed44
+13 like a rolling stone.flac:65c234d8c55b4f26c216e8eadfdb59d3
+14 it ain't me babe.flac:3b460957f02e13a43a77e6f853e79e7b
+15 I'm in the mood for love.flac:3d82a912583281d70843dc7b5a06d984
+16 all long the watchtowwer.flac:fc441db86910c818aa5d76c4cbd3f7cd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-08-03-howlin-husky.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:35.43       38027092 B   -b-   --   ---xx   flac  0.5740  01 subterranean homseick blues.flac
+     4:22.28       46283816 B   -b-   --   ---xx   flac  0.5907  02 just like a woman.flac
+     4:11.06       44290280 B   -b-   --   ---xx   flac  0.6086  03 highway 61 revisited.flac
+     4:41.74       49741416 B   -b-   --   ---xx   flac  0.6145  04 seeing the real you at last.flac
+     5:00.19       52964420 B   -b-   --   ---xx   flac  0.6346  05 Gates of Eden.flac
+     5:22.44       56905320 B   -b-   --   ---xx   flac  0.6351  06 ballad of a thin man.flac
+     5:25.71       57497964 B   -b-   --   ---xx   flac  0.6270  07 mr. tambourine man.flac
+     3:45.54       39817300 B   -b-   --   ---xx   flac  0.6222  08 Eileen Aroon (trad).flac
+     3:45.49       39805940 B   -b-   --   ---xx   flac  0.6368  09 love minus zero, no limit.flac
+     5:06.58       54115516 B   -b-   --   ---xx   flac  0.6387  10 the lonesome death of Hattie Carroll.flac
+     3:56.72       41800676 B   -b-   --   ---xx   flac  0.6176  11 Silvio.flac
+     5:33.19       58785448 B   -b-   --   ---xx   flac  0.6205  12 in the garden.flac
+     6:01.17       63720812 B   -b-   --   ---xx   flac  0.6227  13 like a rolling stone.flac
+     4:54.47       51972068 B   -b-   --   ---xx   flac  0.6140  14 it ain't me babe.flac
+     3:58.68       42142544 B   -b-   --   ---xx   flac  0.6156  15 I'm in the mood for love.flac
+     4:38.15       49073748 B   -b-   --   ---xx   flac  0.6200  16 all long the watchtowwer.flac
+    74:21.10      786944360 B                            0.6194  (16 files)
+=================== 
+=================== 
+=================== 

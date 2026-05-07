@@ -1,0 +1,47 @@
+ce361587e798fd43ef4349d472fd4df4  bd01-11-02-a-LB-7891.txt
+044992fae2736fd717fae35e16108972  Bob Dylan 2001-11-02 d1\Track01.flac
+47e704bf09f7dbe96294862e72839acc  Bob Dylan 2001-11-02 d1\Track02.flac
+78a1e63ef8bafb46c9043fff36291e55  Bob Dylan 2001-11-02 d1\Track03.flac
+a628155ec35b68f3e6dcd62c1b877efc  Bob Dylan 2001-11-02 d1\Track04.flac
+9b4cd00372e80c6b892ca34a3d4d7961  Bob Dylan 2001-11-02 d1\Track05.flac
+d30053e0c080676a1dbee88caa551cee  Bob Dylan 2001-11-02 d1\Track06.flac
+6108f119427adaf56ad9321ae99a3de6  Bob Dylan 2001-11-02 d1\Track07.flac
+2f88105476bdbbdcf03f78756f8cb31e  Bob Dylan 2001-11-02 d1\Track08.flac
+b16c79c6d731ddba1c62a33be97d4b11  Bob Dylan 2001-11-02 d1\Track09.flac
+4dd17a9d030a124ab9a7437fd1508b0b  Bob Dylan 2001-11-02 d1\Track10.flac
+bbe243130f1fae49815c93134d0f8892  Bob Dylan 2001-11-02 d1\Track11.flac
+4298337f38dc56f0356caaa986f20049  Bob Dylan 2001-11-02 d2\Track01.flac
+e9ae1fa1ddedae0357c32d8030cdf15a  Bob Dylan 2001-11-02 d2\Track02.flac
+0a0ebfd8a5abca430398a8feda55442b  Bob Dylan 2001-11-02 d2\Track03.flac
+d34dca6c420fb270726c9aea5cf3ce8a  Bob Dylan 2001-11-02 d2\Track04.flac
+27a327ddc3a531346fe83411055a7e66  Bob Dylan 2001-11-02 d2\Track05.flac
+a0f6e410f1b992119d75c9ff55cd121f  Bob Dylan 2001-11-02 d2\Track06.flac
+31835ef8e94ba9b456b37b7a4ae999ca  Bob Dylan 2001-11-02 d2\Track07.flac
+995b68363b6b50ab88cbc3c60a7b0e13  Bob Dylan 2001-11-02 d2\Track08.flac
+e31af18f1850c1a4431cc8443917577d  Bob Dylan 2001-11-02 d2\Track09.flac
+587aaf261b0c51df7946eff0052df78f  Bob Dylan 2001-11-02 d2\Track10.flac
+c814a1abfd5d134ee95106e4683e9eef  Bob Dylan 2001-11-02 Terre Haute, IN, USA.md5
+b6a7382a0ecebd0fde6ccf57423579ab  DigiFlawFinder-bd01-11-02-a.flacf.wavf.html
+b3c17f437e7ddb29ee86f79ebec79d55  info.txt
+
+Bob Dylan 2001-11-02 d1\Track01.flac:0dcc1d6602ab81b0794af7c5b77a592c
+Bob Dylan 2001-11-02 d1\Track02.flac:ab77e00e40d7c327806c0e5cef5c4c61
+Bob Dylan 2001-11-02 d1\Track03.flac:ea1e74b709943e4c329dbf76e829bdd8
+Bob Dylan 2001-11-02 d1\Track04.flac:3289eac2503aea3391a6c6ce7c7d5ecc
+Bob Dylan 2001-11-02 d1\Track05.flac:12090bec660b3e9269ae665110af1063
+Bob Dylan 2001-11-02 d1\Track06.flac:a784a418b93500ee0e2765ef64958740
+Bob Dylan 2001-11-02 d1\Track07.flac:d3ba6a6a951a4535c0482380cc042191
+Bob Dylan 2001-11-02 d1\Track08.flac:e8d7df65c41024ba99f5c399b5692f5c
+Bob Dylan 2001-11-02 d1\Track09.flac:e4bcc27671d6c93b8b138f707868f763
+Bob Dylan 2001-11-02 d1\Track10.flac:f78f39d9d1916d0c43367b75d92cbf17
+Bob Dylan 2001-11-02 d1\Track11.flac:9cd728b0dfc3a7a35578a3b9e8348132
+Bob Dylan 2001-11-02 d2\Track01.flac:f99cddf0cc0e1aa9340395fb76a1f941
+Bob Dylan 2001-11-02 d2\Track02.flac:641319c5d7c151da3706c6bea6ea00ab
+Bob Dylan 2001-11-02 d2\Track03.flac:af7ac1bc9643f0b04826588ee8c375e1
+Bob Dylan 2001-11-02 d2\Track04.flac:1fd7c340d2e9ca6620207aad90b60666
+Bob Dylan 2001-11-02 d2\Track05.flac:34544ee8d9952164693e1bd22d79a906
+Bob Dylan 2001-11-02 d2\Track06.flac:737e9ae01d592deae496f5dad58e9b91
+Bob Dylan 2001-11-02 d2\Track07.flac:93ef3e101306b09200688170cf434230
+Bob Dylan 2001-11-02 d2\Track08.flac:036bf9ec59b487e40638496fc80e0bf8
+Bob Dylan 2001-11-02 d2\Track09.flac:3eac85ef9c6f084f677794149c328dba
+Bob Dylan 2001-11-02 d2\Track10.flac:88dff6b442081d868d56b41c3db63bbf

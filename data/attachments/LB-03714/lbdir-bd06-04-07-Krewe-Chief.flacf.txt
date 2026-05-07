@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-07-Krewe-Chief.flacf 
+=================== 
+=================== 
+=================== 
+01b1b2146f5625860ff2fbd57bee1fcd  bd06-04-07-Krewe-Chief-LB-3714.txt
+d875e54865ca28a693431d547bbb3e6f  bd2006-04-07.txt
+8e872c366783c5bdd8c59c3f33eb082b  d1t01-stripped-fixed.flac
+065ef4c6dab896beac8b86d2ec30276b  d1t02-stripped-fixed.flac
+f6bf801a624a6e34b8b4ee12ee2af993  d1t03-stripped-fixed.flac
+5bca9b3697b14f9889bd428e9c4bd916  d1t04-stripped-fixed.flac
+ca6a3d74095ed0b9411415dcd4f39b2d  d1t05-stripped-fixed.flac
+97fba98f8633b271976d9cd4b5367063  d1t06-stripped-fixed.flac
+cf003c5483e9a77ca7c683941818bf64  d1t07-stripped-fixed.flac
+19d43d103a58520003db20c74a2e53b0  d1t08-stripped-fixed.flac
+98c6be321673d653b972163996c3ace2  d1t09-stripped-fixed.flac
+7e96334ff75484a2715ea6fa30059d29  d2t10-stripped-fixed.flac
+57ce242dd5e328c4511c6e66865fabe0  d2t11-stripped-fixed.flac
+96d9b375ba8044761c3724281024ff3c  d2t12-stripped-fixed.flac
+d816c27c1662e092713315a47ad84cbb  d2t13-stripped-fixed.flac
+4e6f1c4b9865adc03c1dae167d9b952b  d2t14-stripped-fixed.flac
+9a36af0f23dd017922306c027b5d60fc  vegas.ffp
+3fdc9e53c263b72743e00dd9d0cea669  vegas.md5
+9a36af0f23dd017922306c027b5d60fc  vegasfpt.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-07-Krewe-Chief.flacf 
+=================== 
+=================== 
+=================== 
+d1t01-stripped-fixed.flac:223b05550a55efa3e0bee4078c242e18
+d1t02-stripped-fixed.flac:eebc21f5d50e141f54763da78deddf1a
+d1t03-stripped-fixed.flac:697ec36065eb7c663c2ac160398e9795
+d1t04-stripped-fixed.flac:d1710a0f2ebc9ba7b3ea532475c8eadc
+d1t05-stripped-fixed.flac:53b1f072494a2818519a3f43c7219159
+d1t06-stripped-fixed.flac:3d3cecea8d0e7f745c5d6bce82775c9f
+d1t07-stripped-fixed.flac:8bea1c3d5d8d4226cef74a783dd99862
+d1t08-stripped-fixed.flac:ae56b132a48214550385d35bfb3b6e54
+d1t09-stripped-fixed.flac:753f83b6da8a9640de09eb2f9787c3c2
+d2t10-stripped-fixed.flac:74d5f0d2070063838a049c08979c17e2
+d2t11-stripped-fixed.flac:7cc6ca3c3366c2f8db0629134ad3189a
+d2t12-stripped-fixed.flac:82c4191c735c8bd2a0b8f7cacaae96fe
+d2t13-stripped-fixed.flac:203a8341c17c4853933eb1772cbdc1d5
+d2t14-stripped-fixed.flac:b64335e00769682f8616e09a9be1e060
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-07-Krewe-Chief.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:31.15       69007724 B   ---   --   ---xx   flac  0.2855  d1t01-stripped-fixed.flac
+     7:24.05       78333404 B   ---   --   ---xx   flac  0.2671  d1t02-stripped-fixed.flac
+     5:22.36       56885516 B   ---   --   ---xx   flac  0.2650  d1t03-stripped-fixed.flac
+     5:49.58       61700060 B   ---   --   ---xx   flac  0.2584  d1t04-stripped-fixed.flac
+     9:11.60       97337564 B   ---   --   ---xx   flac  0.2724  d1t05-stripped-fixed.flac
+     6:34.21       69551036 B   ---   --   ---xx   flac  0.2564  d1t06-stripped-fixed.flac
+     6:44.58       71402060 B   ---   --   ---xx   flac  0.2636  d1t07-stripped-fixed.flac
+     7:23.51       78265196 B   ---   --   ---xx   flac  0.2760  d1t08-stripped-fixed.flac
+     6:41.33       70814060 B   ---   --   ---xx   flac  0.2743  d1t09-stripped-fixed.flac
+     6:23.72       67730588 B   ---   --   ---xx   flac  0.2649  d2t10-stripped-fixed.flac
+     5:56.35       62880764 B   ---   --   ---xx   flac  0.2540  d2t11-stripped-fixed.flac
+     6:13.29       65865452 B   ---   --   ---xx   flac  0.2855  d2t12-stripped-fixed.flac
+     9:23.02       99317948 B   ---   --   ---xx   flac  0.5054  d2t13-stripped-fixed.flac
+     6:46.00       71618444 B   ---   --   ---xx   flac  0.4862  d2t14-stripped-fixed.flac
+    96:26.25     1020709816 B                            0.3072  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-11-hv.flacf 
+=================== 
+=================== 
+=================== 
+f2ba7a003108bfb3127f5862bd3b22d0  bd06-07-11-hv-LB-3912.txt
+cb6aadeb2fb8d8716bd2d03c53c35cd7  bd2006-07-11-San Sebastian.txt
+47555d242cd96d041148701d8de643fe  San Sebastian-06-pt.1(1).flac
+13d3f21b736c60035ac852c50e626744  San Sebastian-06-pt.1(2).flac
+c8d0de31c513ecf75179fad6caa208c1  San Sebastian-06-pt.1(3).flac
+cfdd73624de17adcc5753a645288fda3  San Sebastian-06-pt.1(4).flac
+5b36906dac24fc07a67324bc58f05ab4  San Sebastian-06-pt.1(5).flac
+e5c27802bb35a45af5497aa1d40eb45d  San Sebastian-06-pt.1(6).flac
+8cf5b3c7ca3fa373565178c92e87a100  San Sebastian-06-pt.1(7).flac
+79fca5698ec72bca81e9978b45c6f086  San Sebastian-06-pt.1(8).flac
+ac24dc412f214e167a79690baeb1d09a  San Sebastian-06-pt.1(9).flac
+d4e1fc1710a097f64e76ebe10da1efc9  San Sebastian-06-pt.2(1).flac
+b0c01f8e8681077d968ba9b8d573cb88  San Sebastian-06-pt.2(2).flac
+f2934da030046953c0996c4bb17367e1  San Sebastian-06-pt.2(3).flac
+2329ac2ec10308800cae496584ed383b  San Sebastian-06-pt.2(4).flac
+2c6bfb1dab32c215dadb817a39dc10a1  San Sebastian-06-pt.2(5).flac
+7898bb010be37dfd62b3e78c914ab174  San Sebastian-06.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-11-hv.flacf 
+=================== 
+=================== 
+=================== 
+San Sebastian-06-pt.1(1).flac:6543560fbe04a3eb85c98ba3fe2de7bc
+San Sebastian-06-pt.1(2).flac:0b54c3499732b00d097ac4c0b5c6804a
+San Sebastian-06-pt.1(3).flac:6958258ba3311e08c074ada6bffdf354
+San Sebastian-06-pt.1(4).flac:a45bc049a972781923fd5d29ef0c2835
+San Sebastian-06-pt.1(5).flac:92b1a42b57ec9fbd33fc98249bf51c15
+San Sebastian-06-pt.1(6).flac:fbeefd653413595a9d304d92e2781282
+San Sebastian-06-pt.1(7).flac:deda48b618622eb723dc584084015c20
+San Sebastian-06-pt.1(8).flac:9e926df8a5403fced370f0c7ed0bb12e
+San Sebastian-06-pt.1(9).flac:c8d3caccf8023a8a8f9705c672e4e880
+San Sebastian-06-pt.2(1).flac:a07c9e0c62ab07403f7cd1ef6aa02d11
+San Sebastian-06-pt.2(2).flac:9f9bb8f254a26f7324a2eb98a088bdf8
+San Sebastian-06-pt.2(3).flac:d9ee7c1a9aab307d51e6ffff57578932
+San Sebastian-06-pt.2(4).flac:e9b64f137af6e29d795766e91a16e515
+San Sebastian-06-pt.2(5).flac:b99c1e4b87682cfab01475864854d03a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-11-hv.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:08.10       64938764 B   ---   --   ---xx   flac  0.5176  San Sebastian-06-pt.1(1).flac
+     6:57.16       73596476 B   ---   --   ---xx   flac  0.4243  San Sebastian-06-pt.1(2).flac
+     7:30.25       79438844 B   ---   --   ---xx   flac  0.4544  San Sebastian-06-pt.1(3).flac
+     5:41.24       60208892 B   ---   --   ---xx   flac  0.4244  San Sebastian-06-pt.1(4).flac
+     7:34.49       80200892 B   ---   --   ---xx   flac  0.4537  San Sebastian-06-pt.1(5).flac
+     5:43.67       60662828 B   ---   --   ---xx   flac  0.3812  San Sebastian-06-pt.1(6).flac
+     6:32.06       69162956 B   ---   --   ---xx   flac  0.4942  San Sebastian-06-pt.1(7).flac
+     6:51.45       72606284 B   ---   --   ---xx   flac  0.4217  San Sebastian-06-pt.1(8).flac
+     5:28.35       57941564 B   ---   --   ---xx   flac  0.4519  San Sebastian-06-pt.1(9).flac
+     5:04.45       53731484 B   ---   --   ---xx   flac  0.4400  San Sebastian-06-pt.2(1).flac
+     6:56.56       73514156 B   ---   --   ---xx   flac  0.4238  San Sebastian-06-pt.2(2).flac
+     8:25.55       89211404 B   ---   --   ---xx   flac  0.4627  San Sebastian-06-pt.2(3).flac
+     7:17.60       77227964 B   ---   --   ---xx   flac  0.4861  San Sebastian-06-pt.2(4).flac
+     5:57.31       63047756 B   ---   --   ---xx   flac  0.4786  San Sebastian-06-pt.2(5).flac
+    92:09.74      975490264 B                            0.4519  (14 files)
+=================== 
+=================== 
+=================== 

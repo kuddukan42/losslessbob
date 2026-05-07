@@ -1,0 +1,144 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-29-sony.flacf 
+=================== 
+=================== 
+=================== 
+350c1b7010c52686c081858e7c27221a  CD 01\DylanStu87_T01.flac
+61fab8827077fffa0bd96caf6562ee80  CD 01\DylanStu87_T02.flac
+8acceaaf1e45643985aa08fe5c67f9f8  CD 01\DylanStu87_T03.flac
+9ecf15f8859f250a04264ffb6a5a062a  CD 01\DylanStu87_T04.flac
+7207c2822b0c4f0090d1b274756e63db  CD 01\DylanStu87_T05.flac
+021584033fd78195eacb43aa08e80796  CD 01\DylanStu87_T06.flac
+f5f1d8d54f05d894b5b17fd8bb7d606e  CD 01\DylanStu87_T07.flac
+e04231c3602e47ea705c8e237387f03f  CD 01\DylanStu87_T08.flac
+4953bb78f117f637bf4b0cbf7c88e23c  CD 01\DylanStu87_T09.flac
+795702c9a34a1b271358158586b8092a  CD 01\DylanStu87_T10.flac
+cd574366de75dd0a8b2ee980b1bae4f0  CD 01\DylanStu87_T11.flac
+c775f8d1d7a4a8daff01ca91a7ff374f  CD 01\DylanStu87_T12.flac
+904656b380418faa73f79c0d31f1b1f9  CD 01\DylanStu87_T13.flac
+63b6748aede8f9ce57b60223108245bf  CD 01\DylanStu87_T14.flac
+d0755fe107b13831a057d33bfc42d4ce  CD 02\Mcquinn Petty Stu87T01.flac
+c4bcebbbbe536b6f70225634b5e9045c  CD 02\Mcquinn Petty Stu87T02.flac
+c0027dab47ba8e0becab70febdff9549  CD 02\Mcquinn Petty Stu87T03.flac
+45e5b2904df89b753c107ce89cb15533  CD 02\Mcquinn Petty Stu87T04.flac
+0ff1214590f82edcf5de3d4f610d9b43  CD 02\Mcquinn Petty Stu87T05.flac
+77bd2fe616cb5e283a98db6c96e9124b  CD 02\Mcquinn Petty Stu87T06.flac
+5b1a555d756893e2b2687332c3a390b6  CD 02\Mcquinn Petty Stu87T07.flac
+6f76c456492c59fb31b68d7d0e603e51  CD 02\Mcquinn Petty Stu87T08.flac
+361cff85364265169713a15341deb9c7  CD 02\Mcquinn Petty Stu87T09.flac
+a594782d5a81312afdbf26f0e2ed9754  CD 02\Mcquinn Petty Stu87T10.flac
+e6dd719055e138cfb16a732026dd6122  CD 02\Mcquinn Petty Stu87T11.flac
+f555ea868b07f7616a3668e694447755  CD 02\Mcquinn Petty Stu87T12.flac
+b69934cbe6d9dc7ecc9a2d54c70b2587  CD 02\Mcquinn Petty Stu87T13.flac
+f87c82dbb25c3ec0eb18c5965fd8340b  CD 02\Mcquinn Petty Stu87T14.flac
+0c9cae189f3b586a56285a486342fd0d  CD 02\Mcquinn Petty Stu87T15.flac
+f12957806d8624a00af737b5510b9e3a  CD 02\Mcquinn Petty Stu87T16.flac
+5f7bbe54831dee66402e938ba0dafa2a  CD 02\Mcquinn Petty Stu87T17.flac
+2f09b878cf4b84b00dfca535601c9f5f  CD 02\Mcquinn Petty Stu87T18.flac
+9896a8b4d39c3d14aa37662da46f7680  Dylan Petty Strgt 29091987.txt
+287b8d2b670d4cc838cd43721f0456fd  Dylan Stu 87 back.jpg
+8aefbed57640651a4bbc16fb2fe96bee  Dylan Stu 87 front.jpg
+389c7f3471128c6edd9a8a556d60077b  Petty Stu 87 back.jpg
+4f81d7fade9f604a9182ebc5b79b800c  Petty Stu 87 Front.jpg
+1d7820876a67173a4dc0545d1285bf08  Root.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-29-sony.flacf\CD 01 
+=================== 
+=================== 
+=================== 
+DylanStu87_T01.flac:e0bb722068db4524997608d0f6d0ccb7
+DylanStu87_T02.flac:f7fb24639070c87191def38aa27aad49
+DylanStu87_T03.flac:519c64d1da044b390c3d6d0e1f427127
+DylanStu87_T04.flac:bcfbdb77efcf433b038b0c088b3d923f
+DylanStu87_T05.flac:2e8f19704ea0191d86437e65249cd4ba
+DylanStu87_T06.flac:c5be964af6b66b597c62c90beeed3e5c
+DylanStu87_T07.flac:ddbb5d4e186aabaf6c31c4069eadbc2a
+DylanStu87_T08.flac:64dcfcc336762953fedc971dd3038d77
+DylanStu87_T09.flac:f966e7ca07b6a65a9fb3403d5a262350
+DylanStu87_T10.flac:3ec5d56301ebb0015ce3d59cfaab40f6
+DylanStu87_T11.flac:bd6d3caf75eefad68f890949b54f0cce
+DylanStu87_T12.flac:fce25639fa62d0a76aeeec927b183884
+DylanStu87_T13.flac:2df8a0b61495da9891d466bc481cffa1
+DylanStu87_T14.flac:8add01ca75758e5da1a09d219c73112c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-29-sony.flacf\CD 02 
+=================== 
+=================== 
+=================== 
+Mcquinn Petty Stu87T01.flac:42ce3112ca1840a108f48dcc63448749
+Mcquinn Petty Stu87T02.flac:e8072904a9e403c3b4909af8820c0839
+Mcquinn Petty Stu87T03.flac:b30f4a5a920992206c887279aa146734
+Mcquinn Petty Stu87T04.flac:d78797d70a8194cc8536d419f951104f
+Mcquinn Petty Stu87T05.flac:cee34879843213d40ad086da0ef5f597
+Mcquinn Petty Stu87T06.flac:7a9378a3f503499e05e65c91b8251e2f
+Mcquinn Petty Stu87T07.flac:2b653db237661a67a453ff7275a6936f
+Mcquinn Petty Stu87T08.flac:91b0b37adcb973eb94902743b1530542
+Mcquinn Petty Stu87T09.flac:3f327cfb643a16408cf8ac6c9dc9798b
+Mcquinn Petty Stu87T10.flac:f995832413323574489ae7f390da28ae
+Mcquinn Petty Stu87T11.flac:38204bc1f287b68222344ad1fb3dd925
+Mcquinn Petty Stu87T12.flac:b8a17857a34d6982f9ad1f5827b38f71
+Mcquinn Petty Stu87T13.flac:8f829e1f96ee84d673c33685e5aa8175
+Mcquinn Petty Stu87T14.flac:0864c8ad435088b2de07c71e829dfed1
+Mcquinn Petty Stu87T15.flac:c67707d2483b25c86ef3104150f39171
+Mcquinn Petty Stu87T16.flac:099b56028ef1de0aefc862c376ab75f1
+Mcquinn Petty Stu87T17.flac:658466ae916d96f80bd5877c3146fe69
+Mcquinn Petty Stu87T18.flac:2d235e42288444f56645b5e2a6d71d0c
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-09-29-sony.flacf\CD 01 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.55       55342604 B   ---   --   ---xx   flac  0.5484  DylanStu87_T01.flac
+     3:48.17       40259228 B   ---   --   ---xx   flac  0.5514  DylanStu87_T02.flac
+     6:33.61       69468716 B   ---   --   ---xx   flac  0.5276  DylanStu87_T03.flac
+     5:52.11       62118716 B   ---   --   ---xx   flac  0.5599  DylanStu87_T04.flac
+     3:57.54       41933852 B   ---   --   ---xx   flac  0.5256  DylanStu87_T05.flac
+     3:19.06       35117756 B   ---   --   ---xx   flac  0.5555  DylanStu87_T06.flac
+     5:26.08       57525260 B   ---   --   ---xx   flac  0.5008  DylanStu87_T07.flac
+     3:22.69       35795132 B   ---   --   ---xx   flac  0.5673  DylanStu87_T08.flac
+     5:03.63       53597420 B   ---   --   ---xx   flac  0.5547  DylanStu87_T09.flac
+     7:00.20       74135084 B   ---   --   ---xx   flac  0.5274  DylanStu87_T10.flac
+     4:18.43       45612380 B   ---   --   ---xx   flac  0.5844  DylanStu87_T11.flac
+     4:58.22       52618988 B   ---   --   ---xx   flac  0.5704  DylanStu87_T12.flac
+     3:46.27       39929948 B   ---   --   ---xx   flac  0.5732  DylanStu87_T13.flac
+     8:43.24       92313692 B   ---   --   ---xx   flac  0.5408  DylanStu87_T14.flac
+    71:24.30      755768776 B                            0.5464  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd87-09-29-sony.flacf\CD 02 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:50.26       30049196 B   ---   --   ---xx   flac  0.6243  Mcquinn Petty Stu87T01.flac
+     2:34.47       27276188 B   ---   --   ---xx   flac  0.6160  Mcquinn Petty Stu87T02.flac
+     3:02.23       32158940 B   ---   --   ---xx   flac  0.5984  Mcquinn Petty Stu87T03.flac
+     5:02.01       53275196 B   ---   --   ---xx   flac  0.5742  Mcquinn Petty Stu87T04.flac
+     2:53.07       30533708 B   ---   --   ---xx   flac  0.5861  Mcquinn Petty Stu87T05.flac
+     3:23.37       35896268 B   ---   --   ---xx   flac  0.5766  Mcquinn Petty Stu87T06.flac
+     4:24.63       46717820 B   ---   --   ---xx   flac  0.6037  Mcquinn Petty Stu87T07.flac
+     4:33.44       48260732 B   ---   --   ---xx   flac  0.6223  Mcquinn Petty Stu87T08.flac
+     3:19.55       35233004 B   ---   --   ---xx   flac  0.6072  Mcquinn Petty Stu87T09.flac
+     2:30.60       26601164 B   ---   --   ---xx   flac  0.6044  Mcquinn Petty Stu87T10.flac
+     3:36.73       38274140 B   ---   --   ---xx   flac  0.5536  Mcquinn Petty Stu87T11.flac
+     4:06.48       43507340 B   ---   --   ---xx   flac  0.5677  Mcquinn Petty Stu87T12.flac
+     5:51.23       61970540 B   ---   --   ---xx   flac  0.5664  Mcquinn Petty Stu87T13.flac
+     5:03.21       53498636 B   ---   --   ---xx   flac  0.5335  Mcquinn Petty Stu87T14.flac
+     3:45.41       39786476 B   ---   --   ---xx   flac  0.5760  Mcquinn Petty Stu87T15.flac
+     5:19.20       56318684 B   ---   --   ---xx   flac  0.5233  Mcquinn Petty Stu87T16.flac
+     3:13.46       34153436 B   ---   --   ---xx   flac  0.5920  Mcquinn Petty Stu87T17.flac
+     7:38.32       80866508 B   ---   --   ---xx   flac  0.5491  Mcquinn Petty Stu87T18.flac
+    73:09.67      774377976 B                            0.5763  (18 files)
+=================== 
+=================== 
+=================== 

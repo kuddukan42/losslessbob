@@ -1,0 +1,64 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-06-gdhour-705 
+=================== 
+=================== 
+=================== 
+77ae86dbf29e5dc497b042aa96d0ede4  gdhour-705.md5
+e9bf57769a83fc6a874dc8c84499587f  gdhour-705.txt
+75f16770bb42c440955de8e77c21a67b  gdhour-705t01.shn
+998a727040f6c82dfda9877a2245c154  gdhour-705t02.shn
+e0765922ecb8c6d02c2f76a8e0f2caf0  gdhour-705t03.shn
+a815d63632e8f2def97e3ca78150dad3  gdhour-705t04.shn
+4f71a9cad2c34aeeba7170ab6a6bc2b7  gdhour-705t05.shn
+dfac424bda07a5f0c2fba72adb0980cc  gdhour-705t06.shn
+c28cc649388485704b4e7b31f966fbe7  gdhour-705t07.shn
+3388d339fd5bf627aa8de9bf8b3a61ee  gdhour-705t08.shn
+e4c2a375dd89abbc92fd7f582f44094f  gdhour-705t09.shn
+e79f381442372be805a1672673697aba  gdhour-705t10.shn
+a5d04f04559dd2fe1a5d2e3d51143969  gdhour-705t11.shn
+72f1dae1285abc6ad6a833c20407889f  gdhour-705t12.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-06-gdhour-705 
+=================== 
+=================== 
+=================== 
+ed1d6c23115e49fc2718b5de5b403561  [shntool]  gdhour-705t01.wav
+84d2c3db91437273c44a17f592d1761e  [shntool]  gdhour-705t02.wav
+32c3ad2ee33d385bcce3f44771d45626  [shntool]  gdhour-705t03.wav
+036a14465b82ec90d2cabbdb0bb0a444  [shntool]  gdhour-705t04.wav
+324fd51259efbee6782478573a584195  [shntool]  gdhour-705t05.wav
+5eeb4101de084fe378c330bb133d94f9  [shntool]  gdhour-705t06.wav
+675fed83b4cf00ed19bf89d400cab275  [shntool]  gdhour-705t07.wav
+e02de21dd210340f7501b5088a2606bd  [shntool]  gdhour-705t08.wav
+bf636675cab8e53adaa58f4a886464b2  [shntool]  gdhour-705t09.wav
+7b35dcf45e01376836143bb83f904b5b  [shntool]  gdhour-705t10.wav
+129d4064fcfb7564f4952b76d50bc62c  [shntool]  gdhour-705t11.wav
+b62f5ba62a19d81e8457344aac0a0126  [shntool]  gdhour-705t12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-06-gdhour-705 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:09.00       12171644 B   ---   --   ---xx    shn  0.5450  gdhour-705t01.shn
+     6:08.00       64915244 B   ---   --   ---xx    shn  0.5012  gdhour-705t02.shn
+     5:42.33       60406460 B   ---   --   ---xx    shn  0.6670  gdhour-705t03.shn
+    11:22.42      120403628 B   ---   --   ---xx    shn  0.4825  gdhour-705t04.shn
+     3:04.00       32457644 B   ---   --   ---xx    shn  0.5567  gdhour-705t05.shn
+     1:07.00       11818844 B   ---   --   ---xx    shn  0.5271  gdhour-705t06.shn
+     2:20.60       24837164 B   ---   --   ---xx    shn  0.5960  gdhour-705t07.shn
+     7:50.00       82908044 B   ---   --   ---xx    shn  0.5296  gdhour-705t08.shn
+     3:57.30       41877404 B   ---   --   ---xx    shn  0.6073  gdhour-705t09.shn
+     7:07.35       75405164 B   ---   --   ---xx    shn  0.5883  gdhour-705t10.shn
+     3:41.25       39043244 B   ---   --   ---xx    shn  0.6186  gdhour-705t11.shn
+     3:34.38       37839020 B   ---   --   ---xx    shn  0.5248  gdhour-705t12.shn
+    57:04.38      604083504 B                            0.5535  (12 files)
+=================== 
+=================== 
+=================== 

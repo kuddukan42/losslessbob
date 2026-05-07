@@ -1,0 +1,85 @@
+===================
+===================
+===================
+=== md5 for: bd99-04-19-e.flacf
+===================
+===================
+===================
+1d10be7a5f1cd76a8dbc575b88383432 *1-01 Intro.flac
+9ed2b37e1938beedf8d4e11171f2d4af *1-02 Friend Of The Devil.flac
+4a2892748eaa4980e1e82434079a12e2 *1-03 Mr. Tambourine Man.flac
+fa41abdf3623317809b5444654e708a3 *1-04 Masters Of War-fixed.flac
+4b4f3f194480c3c905c2303e6bf72437 *1-04 Masters Of War.flac
+cd42ad8e416a3fdda134cead4698795a *1-05 Tomorrow Is A Long Time-fixed.flac
+4522c8b84a34425a892bf3ed37422f90 *1-05 Tomorrow Is A Long Time.flac
+bf89a2d54b47722ee9f5279c4e89d29f *1-06 The Times They Are A-Changin'.flac
+89260677522a89783e1e7f3163be3b81 *1-07 Tangled Up In Blue.flac
+75fe13497fa78e5e3f07bf7bf45cf221 *1-08 My Back Pages.flac
+d1f684bd33c98f687f0a50f41e096547 *1-09 Mama, You Been On My Mind.flac
+f65496b3944586cadfab159f0cdf5f01 *2-01 Tombstone Blues.flac
+bdb543d508a49012da21ef0a7a7dd763 *2-02 You're A Big Girl Now.flac
+2e7d26af6199581743584c0a7433e881 *2-03 Highway 61 Revisited.flac
+132325d1c98f2bcc4810657a4fe723f6 *2-04 encore anticipation.flac
+b829224ed3121d53722c191ddf5dba7e *2-05 Love Sick.flac
+5aac9c078b2a2e054d5a2488ec386c9b *2-06 Everything is Broken.flac
+6dd505b78b03a49b99d5a65cbf221fe3 *2-07 Don't Think Twice.flac
+f557e7abe057fccf3805d99dc4b78b8f *2-08 Maggie's Farm.flac
+32c8cdf975a8885f76afcd188266d7cd *bd99-04-19.txt
+6cf8678e5abb82dd0144feed94741f1c *Dylan (1999-04-19) Murcia (bach) - flac8.ffp
+===================
+===================
+===================
+=== ffp for: bd99-04-19-e.flacf
+===================
+===================
+===================
+1-01 Intro.flac:718b32e1891cfd6a2a49b7597370b6ec
+1-02 Friend Of The Devil.flac:0d66f9b62504e1516107038ff385504a
+1-03 Mr. Tambourine Man.flac:3db55d770d42b0a26a6a28dc20e051b3
+1-04 Masters Of War-fixed.flac:e4d135b1bfab86ed58062fe227ce93ab
+1-04 Masters Of War.flac:2e9a03ee38f3a67682814335df4e4bc1
+1-05 Tomorrow Is A Long Time-fixed.flac:aff0d017fc5e051f05a117a411835874
+1-05 Tomorrow Is A Long Time.flac:0e1530e263257495ce2dae61859e821b
+1-06 The Times They Are A-Changin'.flac:53fe00165e2186765312c45a92d5edfa
+1-07 Tangled Up In Blue.flac:69fdd8c76e3f8a2b0e1f2d9fbe2e5972
+1-08 My Back Pages.flac:1cbad21abd6cffc262c62299bf1b0ef3
+1-09 Mama, You Been On My Mind.flac:e3b46fcb15dec37b3a12812372b882b8
+2-01 Tombstone Blues.flac:30d8a38ae9dda24f301fbb65e7cbf99e
+2-02 You're A Big Girl Now.flac:3abf15b8039d0a41e715786bc3059477
+2-03 Highway 61 Revisited.flac:1c746b7ad04a4a7f380c6c122979c8d8
+2-04 encore anticipation.flac:2b1cac21db35c66b5ebef382ff475c39
+2-05 Love Sick.flac:00659529924b0d4bf3e7b140fd811edf
+2-06 Everything is Broken.flac:4b0cc76a2e246df04ffcdaf7b0cc49e9
+2-07 Don't Think Twice.flac:5523207b1aeb1ac7359956c164b42386
+2-08 Maggie's Farm.flac:3b5692fe5ddc610acee663f356e96933
+===================
+===================
+===================
+=== shntool len for: bd99-04-19-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.45        5397884 B   ---   --   ---xx   flac  0.4994  1-01 Intro.flac
+     5:56.74       62972492 B   ---   --   ---xx   flac  0.5161  1-02 Friend Of The Devil.flac
+     6:27.59       68405612 B   ---   --   ---xx   flac  0.5331  1-03 Mr. Tambourine Man.flac
+     5:35.59       59231744 B   -b-   --   ---xx   flac  0.5295  1-04 Masters Of War-fixed.flac
+     6:40.60       70701164 B   ---   --   ---xx   flac  0.5034  1-04 Masters Of War.flac
+     5:30.66       58368344 B   -b-   --   ---xx   flac  0.4421  1-05 Tomorrow Is A Long Time-fixed.flac
+     4:25.65       46898924 B   ---   --   ---xx   flac  0.4600  1-05 Tomorrow Is A Long Time.flac
+     6:44.27       71329148 B   ---   --   ---xx   flac  0.5042  1-06 The Times They Are A-Changin'.flac
+     8:13.58       87101660 B   ---   --   ---xx   flac  0.5815  1-07 Tangled Up In Blue.flac
+     5:58.60       63292364 B   ---   --   ---xx   flac  0.5062  1-08 My Back Pages.flac
+     5:13.20       55260284 B   ---   --   ---xx   flac  0.4520  1-09 Mama, You Been On My Mind.flac
+     6:17.17       66542828 B   ---   --   ---xx   flac  0.5452  2-01 Tombstone Blues.flac
+     6:28.42       68542028 B   ---   --   ---xx   flac  0.5039  2-02 You're A Big Girl Now.flac
+     5:53.67       62426828 B   ---   --   ---xx   flac  0.5917  2-03 Highway 61 Revisited.flac
+     2:01.30       21415004 B   ---   --   ---xx   flac  0.4610  2-04 encore anticipation.flac
+     5:31.11       58414316 B   ---   --   ---xx   flac  0.5182  2-05 Love Sick.flac
+     4:38.05       49051004 B   ---   --   ---xx   flac  0.6201  2-06 Everything is Broken.flac
+     8:11.10       86635964 B   ---   --   ---xx   flac  0.5230  2-07 Don't Think Twice.flac
+     9:06.69       96476732 B   ---   --   ---xx   flac  0.5551  2-08 Maggie's Farm.flac
+   109:27.19     1158464324 B                            0.5238  (19 files)
+===================
+===================
+===================

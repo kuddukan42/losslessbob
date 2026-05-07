@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-from-the-vaults.flacf 
+=================== 
+=================== 
+=================== 
+fefe2a631e6705dc92ad19ec352d1153  bd98-from-the-vaults-d1t01.flac
+d43eed8e33c8255433be8fbef11642b5  bd98-from-the-vaults-d1t02.flac
+c176eec2332476126b0f6d088cd4bbf4  bd98-from-the-vaults-d1t03.flac
+eec74438cd395a38647b381fb14f431f  bd98-from-the-vaults-d1t04.flac
+ccb9e1789d68a8c564e6a8ac71a5e239  bd98-from-the-vaults-d1t05.flac
+f6e498e7b2d303c58677b7e363735d1f  bd98-from-the-vaults-d1t06.flac
+9ffd2a4923a5536e61722cb98d914888  bd98-from-the-vaults-d1t07.flac
+7e32127529158065c63f04b40013f2cb  bd98-from-the-vaults-d1t08.flac
+adb25228b3d8f278ca971952687f8dc9  bd98-from-the-vaults-d1t09.flac
+54dfaf4615bdc5370c954ab89ed3f056  bd98-from-the-vaults-d2t01.flac
+4976aa3cf2e746301ea264ae8babb004  bd98-from-the-vaults-d2t02.flac
+f07083d2b58340279dee0a8a5cbbbbfb  bd98-from-the-vaults-d2t03.flac
+01c33af177f4ee1cb0d3217d32c21ad7  bd98-from-the-vaults-d2t04.flac
+deb57da686bb2824ec125547bacf33cf  bd98-from-the-vaults-d2t05.flac
+56a7a60291c5553a71c950b920972fd1  bd98-from-the-vaults-d2t06.flac
+d959b924d73a48670ca23b30398d3baf  bd98-from-the-vaults-d2t07.flac
+09df079f1d0ac84ec9a7bde0745e9460  bd98-from-the-vaults-d2t08.flac
+585d32d5cddd0e622e90da5f39b0b0db  bd98-from-the-vaults-d2t09.flac
+831f3eefdd09d11c78f1fdad39a5aa05  bd98-from-the-vaults.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-from-the-vaults.flacf 
+=================== 
+=================== 
+=================== 
+bd98-from-the-vaults-d1t01.flac:5445ab0d760a2848891558f6a5964bba
+bd98-from-the-vaults-d1t02.flac:4783c418d3cc073c4589659385c00ab6
+bd98-from-the-vaults-d1t03.flac:e3ae929b65b7273271e199dcba4eeb22
+bd98-from-the-vaults-d1t04.flac:bce219df4160609456b9fee1318b60ce
+bd98-from-the-vaults-d1t05.flac:b205190200c954ec60894e0c7e4b6e6b
+bd98-from-the-vaults-d1t06.flac:587bd8563dc22c7ee59104c01244cd5b
+bd98-from-the-vaults-d1t07.flac:af172f474dea8c1b5b34b94401522449
+bd98-from-the-vaults-d1t08.flac:bd73fdad59ef1c1b726eb3d21e1d4276
+bd98-from-the-vaults-d1t09.flac:b17735e26f8595b290644ad0ffa49747
+bd98-from-the-vaults-d2t01.flac:ae04d5b130eedf1ea3bfe8bd1f76fffe
+bd98-from-the-vaults-d2t02.flac:47f17295b891e4fa9cee1f6ef438b5de
+bd98-from-the-vaults-d2t03.flac:0abb5dbca83462b9d6b5d7f827dcaaf8
+bd98-from-the-vaults-d2t04.flac:82ac774d71551763f0f79bcfdfea5176
+bd98-from-the-vaults-d2t05.flac:753b0ebd00e25a4157635aa4f3814fc6
+bd98-from-the-vaults-d2t06.flac:445834a96bf11b58d85ac242d8fdeb42
+bd98-from-the-vaults-d2t07.flac:c7a95a526a8c4786896454df86af0ebd
+bd98-from-the-vaults-d2t08.flac:d200e42f7bb1a90cfb213858767fb22a
+bd98-from-the-vaults-d2t09.flac:be40968630046c4399a24507ed153396
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-from-the-vaults.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:51.52       72622748 B   ---   --   ---xx   flac  0.5616  bd98-from-the-vaults-d1t01.flac
+     7:02.38       74530220 B   ---   --   ---xx   flac  0.6437  bd98-from-the-vaults-d1t02.flac
+     7:04.70       74958284 B   ---   --   ---xx   flac  0.6071  bd98-from-the-vaults-d1t03.flac
+     4:10.20       44147084 B   ---   --   ---xx   flac  0.5973  bd98-from-the-vaults-d1t04.flac
+     7:53.05       83449004 B   ---   --   ---xx   flac  0.6000  bd98-from-the-vaults-d1t05.flac
+     7:09.30       75746204 B   ---   --   ---xx   flac  0.4280  bd98-from-the-vaults-d1t06.flac
+     6:44.22       71317388 B   ---   --   ---xx   flac  0.5139  bd98-from-the-vaults-d1t07.flac
+     7:10.40       75946124 B   ---   --   ---xx   flac  0.5477  bd98-from-the-vaults-d1t08.flac
+     5:10.40       54778124 B   ---   --   ---xx   flac  0.5599  bd98-from-the-vaults-d1t09.flac
+     6:01.00       63680444 B   ---   --   ---xx   flac  0.5189  bd98-from-the-vaults-d2t01.flac
+     4:19.30       45758204 B   ---   --   ---xx   flac  0.5822  bd98-from-the-vaults-d2t02.flac
+     5:18.27       56158748 B   ---   --   ---xx   flac  0.5799  bd98-from-the-vaults-d2t03.flac
+     3:56.13       41661020 B   ---   --   ---xx   flac  0.5274  bd98-from-the-vaults-d2t04.flac
+     3:55.52       41576348 B   ---   --   ---xx   flac  0.5750  bd98-from-the-vaults-d2t05.flac
+     8:56.23       94604540 B   ---   --   ---xx   flac  0.5953  bd98-from-the-vaults-d2t06.flac
+     4:31.15       47839724 B   ---   --   ---xx   flac  0.5587  bd98-from-the-vaults-d2t07.flac
+     6:19.72       67024988 B   ---   --   ---xx   flac  0.5610  bd98-from-the-vaults-d2t08.flac
+     4:25.63       46894220 B   ---   --   ---xx   flac  0.5768  bd98-from-the-vaults-d2t09.flac
+   107:01.12     1132693416 B                            0.5631  (18 files)
+=================== 
+=================== 
+=================== 

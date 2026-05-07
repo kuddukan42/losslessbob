@@ -1,0 +1,8 @@
+Bob Dylan, 3/11/00, San Luis Obispo, California, 2CDR
+
+LB-6328, (58min+34min), version "b"; Lineage: trade cdrs > EAC (no errors) > spectrum & frequency check (not lossy) > FLAC (level, 6) > torrent, LB lists two versions, one a Soomlos and one unidentified (LB-3685). Both are graded B+. This, is not the Soomlos, and may or may not be the same recording as the LB-3685 but does not, match the disc splits or times of that one. This one matches the disc splits on the Scouser, artwork, which is included (I've also included Carine's artwork, which is generic). Sound is very, good plus, a tiny bit distant, I'd give it an A-.; bittorrent download 08/08; spectral view looks like analog recording or generation; different recording based on different crowd at end of d1t2 and in comparison LB-3635 has fullest upfront sound, then soomlos LB-5835 and then this which is also less clear and more muffled; (did not listen to all of this)
+
+Disc One, 57:52.69, 1. I Am The Man Thomas, 2. Song To Woody, 3. It's Alright Ma (I'm Only Bleeding), 4. Tangled Up In Blue, 5. This World Can't Stand Long, 6. Dignity, 7. Country Pie, 8. Tell Me That It Isn't True, 9. Things Have Changed, 10. Not Dark Yet, 11. Highway 61 Revisited, Disc Two, 33:59.16, encore, 1. Love Sick, 2. Like A Rolling Stone, 3. It Ain't Me Babe, 4. Not Fade Away, 5. Blowin In The Wind
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

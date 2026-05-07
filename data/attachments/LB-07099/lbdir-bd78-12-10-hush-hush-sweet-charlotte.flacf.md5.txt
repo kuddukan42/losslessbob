@@ -1,0 +1,36 @@
+b0c04618ac08ef09c7775bf78a6e709a  Bob Dylan 1978-12-10 info.txt
+3b31bf754e2283371e29b4eb9a7d1533  Bob Dylan 1978-12-10.ffp
+cbf0b2772ce5b4d09829a10eb48b2843  Bob Dylan 1978-12-10.md5
+67da7cd9ea613e094ea5beaadebc361b  Bob Dylan 1978-12-10.st5
+d8c973320215355851234e3513c5c517  d1t01 Bob Dylan - My Back Pages (vocals by Dennis, Harris, & Springs).flac
+b2a3c622854f030034a40dc5cc254a30  d1t02 Bob Dylan - She's Love Crazy (Tampa Red).flac
+4d4872ddc9abf39672e0494c7f8f1bbc  d1t03 Bob Dylan - Mr. Tambourine Man.flac
+39c761ba80b40977257dc9eff3a4e32b  d1t04 Bob Dylan - Shelter From The Storm.flac
+edcb99c61ba5d6d3bca5d42a878b49b5  d1t05 Bob Dylan - Love Minus Zero,No Limit.flac
+e2762738bb4561437cad7d7ec2f4126d  d1t06 Bob Dylan - Tangled Up In Blue.flac
+a9652928a3ee086e06e0986acba994b1  d1t07 Bob Dylan - Ballad Of A Thin Man.flac
+b299246fcd56ae34b9fd5ca8fa60b322  d1t08 Bob Dylan - Maggie's Farm.flac
+ae51e495163e5e288f8077734cb8b8ab  d1t09 Bob Dylan - I Don't Believe You (She Acts Like We Have Never Met).flac
+2607aa87174bfa6d3212e92a81de28f0  d1t10 Bob Dylan - Like A Rolling Stone.flac
+d74f26d33befc88e8aceb9e819ffeb0a  d1t11 Bob Dylan - I Shall Be Released.flac
+e6f4cc02dede9b4e58cfb069feaa28f3  d1t12 Bob Dylan - Senor (Tales Of Yankee Power).flac
+e56ff3e09244f5df7aa211a27463c299  d1t13 Bob Dylan - The Times They Are A-Changin'.flac
+74f6b61c7271be89ee8c78e44c28eb68  d1t14 Bob Dylan - Rainy Day Women (vocals by Dennis, Harris, & Springs).flac
+f78e5e29780fb41c63306af054a80364  d1t15 Bob Dylan - It Ain't Me Babe (Solo).flac
+9be1dd8e1d9e79e92b498910d628640d  d2t01 Bob Dylan - Am I Your Stepchild.flac
+c261f68b26cc731cb75915c4b3b14303  d2t02 Bob Dylan - One More Cup Of Coffee.flac
+7f45ced44f773726e95117a5437f852f  d2t03 Bob Dylan - Blowin' In The Wind.flac
+db00cc87ada1500721ab6c0c1da44ef5  d2t04 Bob Dylan - Girl Of The North Country.flac
+dfab5cf889e91dd309472282a05e3725  d2t05 Bob Dylan - We Better Talk This Over.flac
+5f50427b6bd954c6dfdb06dae33b6ae0  d2t06 Bob Dylan - Masters Of War.flac
+ce1664fdd13c943c47b3d4358f188cc3  d2t07 Bob Dylan - Just Like A Woman.flac
+f351cb8b151506d472db4b5fe53bfdc2  d2t08 Bob Dylan - All Along The Watchtower.flac
+7cc7a7b6b5a388a6444e7e1b5b7bf4dc  d2t09 Bob Dylan - To Ramona.flac
+a0bcae54dabe649c74dd6ef7730d8bfb  d2t10 Bob Dylan - It's Alright Ma (I'm Only Bleeding).flac
+73fb5cc84a20c7c58aa1cde3c37b9af4  d2t11 Bob Dylan - Forever Young.flac
+5b974a00edabea2b76ad631187c7e5cc  d2t12 Bob Dylan - Changing Of The Guards.flac
+ee1febeee59ae0fa689a32dfe67eec28  d2t13 Bob Dylan - It's All Over Now Baby Blue.flac
+d782797207df118aa31de1272424bf69  d2t14 Bob Dylan - All Along The Watchtower.flac
+e48423d4645c7a36a52050caadc264e8  d2t15 Bob Dylan - Where Are You Tonight.flac
+e2821e3d19238b57df7d79b462cb3895  Hush Hush Sweet Charlotte - Disc One.log
+b3e7832dae5ac33f9761c6bf78115912  Hush Hush Sweet Charlotte - Disc Two.log

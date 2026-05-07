@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-31-a.flacf 
+=================== 
+=================== 
+=================== 
+cf092dcf2b09ea695037f585ace3a451  Artwork\Atlanta 31July03  front.jpg
+01611d99c475a4d1275ef2bf7a517024  Artwork\Atlanta 31July03 back.jpg
+808c5a5f33a5fadba5421c44e48c85ea  Atlanta 31july03.ffp
+532cdec0a469d27fb33ad82a9fdade90  Atlanta 31july03.md5
+e4492f8a488d5a2e4501d97b9b3dfe1e  Atlanta 31july03.txt
+43bd8df12d0af1e3f6a7edddcbb3e798  bd03-07-31-a-LB-4270.txt
+8360519f586b0e45a166a7bdb9d8e65e  D1Track01.flac
+c7738f75e87bebc960ab03a45deeff6c  D1Track02.flac
+0a279d8365d7beca64835f433145fbb9  D1Track03.flac
+23495735c4da53b49ca03ec8a6367891  D1Track04.flac
+820f7696a31d53c10ad29653a37a60ba  D1Track05.flac
+cd9d9e9669c35abe8ea758e98c61df9a  D1Track06.flac
+8c00260da129d5d5391079c43da67498  D1Track07.flac
+611a09f64357717e1c4f361583c81507  D1Track08.flac
+f29864f1b432e2b227f4ef6b854a45e8  D1Track09.flac
+835999d29c04f849a4c0df5712cca020  D1Track10.flac
+a265cabcda982a6fe1830d32f6356987  D1Track11.flac
+4a664bb32c3754993e0f301f4dbdfa73  D1Track12.flac
+8d7cbd7afb5c75c071b205f7cde6989a  D1Track13.flac
+379bcb527e03986c6c49c4efdb951601  D2Track01.flac
+c842ecc3b22f4541c2a88b9f93c1e5b0  D2Track02.flac
+82154db2e3b8dc818fb96929d654ba99  D2Track03.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-07-31-a.flacf 
+=================== 
+=================== 
+=================== 
+D1Track01.flac:37dc238e10391c933734b53eea059d10
+D1Track02.flac:17138dccb4bec9eee07a787f94da5b58
+D1Track03.flac:dcb8b7a2e39607b084dc2a7c1895ffed
+D1Track04.flac:46d24d7cde910e3fabfec924458c792f
+D1Track05.flac:a6a09c2c40605793f5206d8dfadb1c24
+D1Track06.flac:dc270f1f25ae812339b805e1000f95fb
+D1Track07.flac:6067c019d677a2d3a8b10e76d2b84667
+D1Track08.flac:686f90cc254456a45749b4d6494e769d
+D1Track09.flac:188cb778ac6eebe2ae956634152f1af7
+D1Track10.flac:c904a5cf3196db358a12dcd9b94d4673
+D1Track11.flac:29c9df0a1d2e6b839d4c7be3bc3c24a3
+D1Track12.flac:27a60f1f3b48d8d7abd1a9bbafe6fc86
+D1Track13.flac:10f19d2e5b58d11ea522c4b733ddd6a4
+D2Track01.flac:58ce25a455602814b9abefd13505eeb5
+D2Track02.flac:8f66260a0c82e53ff84f2d32c5e14d8c
+D2Track03.flac:c4f84757ce8977fa11dc1e9f44023e0b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-31-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:35.07        6190508 B   ---   --   ---xx   flac  0.4591  D1Track01.flac
+     5:40.57       60110108 B   ---   --   ---xx   flac  0.5351  D1Track02.flac
+     6:58.38       73824620 B   ---   --   ---xx   flac  0.5093  D1Track03.flac
+     5:30.01       58214396 B   ---   --   ---xx   flac  0.4877  D1Track04.flac
+     6:37.21       70080236 B   ---   --   ---xx   flac  0.4911  D1Track05.flac
+     6:37.73       70202540 B   ---   --   ---xx   flac  0.5813  D1Track06.flac
+     6:30.53       68920700 B   ---   --   ---xx   flac  0.5451  D1Track07.flac
+     5:43.16       60542876 B   ---   --   ---xx   flac  0.5643  D1Track08.flac
+     9:09.05       96855404 B   ---   --   ---xx   flac  0.4964  D1Track09.flac
+     6:48.03       71978300 B   ---   --   ---xx   flac  0.5943  D1Track10.flac
+     0:43.10        7608764 B   ---   --   ---xx   flac  0.4887  D1Track11.flac
+     8:34.00       90669644 B   ---   --   ---xx   flac  0.5683  D1Track12.flac
+     4:57.15       52426124 B   ---   --   ---xx   flac  0.5664  D1Track13.flac
+     6:25.35       67996364 B   ---   --   ---xx   flac  0.5661  D2Track01.flac
+     8:36.42       91121228 B   ---   --   ---xx   flac  0.5578  D2Track02.flac
+     5:01.19       53141132 B   ---   --   ---xx   flac  0.5915  D2Track03.flac
+    94:28.20      999882944 B                            0.5446  (16 files)
+=================== 
+=================== 
+=================== 

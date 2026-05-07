@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd69-08-31-jtt.flacf 
+=================== 
+=================== 
+=================== 
+c2e34014f5abf71350deb9560101870f  Dylan - Isle of Wight August 31st 1969.md5
+f440a091f84bd05f7d58bb703326b08c  Dylan - Isle of Wight August 31st 1969_Info.txt
+d93575eb49ada10536d914229ad22820  IOWReel.txt
+5ac5eede797b2495987a7603feb55fc1  Isle Of Wight 31.08.1969 Reel to Reel - F.jpg
+9b2a50947f5fcbbc63e0e750b4fddaf8  Isle Of Wight 31.08.1969 Reel to Reel - R.jpg
+e5b4c9c07ac0674331fa671f9501c3c1  REEL1.JPG
+f3f1c061b75a0d70b36ecb8c899ededc  REEL2.JPG
+241768d86a8d8e2e96c3cd91f28a2b50  REEL3.JPG
+0e4d65ba53c25d07c3955700120e6941  Track01.flac
+a49fb8130476627f8a2caebaa32f86c5  Track02.flac
+c9caa13fc78ccee1e56928cdd24f4010  Track03.flac
+cf9503f8b3f8bf09a1a436677cdfebf1  Track04.flac
+819a082c8f14c762943886c541a7b16f  Track05.flac
+d5f10aaf5c234aef0f170cd76ff0579b  Track06.flac
+6d5fef7b55e0c91fa0ba7a1817b12fb9  Track07.flac
+b606cfa726af74cae3cf9a6d7d6a7de5  Track08.flac
+646fed991f1d76ff33749d604a5440cb  Track09.flac
+b92cf408b9501dd663ca9dfcda53795e  Track10.flac
+13474eb7068249847b453e13447de870  Track11.flac
+9f3fa62cb2101a183fb38f7a7a5367d5  Track12.flac
+9b30865da20f9e16cfb1413e47c193b0  Track13.flac
+5770ad4ff34e251ced45f253704646a1  Track14.flac
+2f69a2972f1d060b4955101116fc7803  Track15.flac
+6fa229b1b5579b23d2409a22e4464531  Track16.flac
+56fbb43fecd151fd9c966ffa5297d6f7  Track17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd69-08-31-jtt.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:3a6f674560b879480c11d0e53cb18592
+Track02.flac:f034b792ec9a2da8a47cc6ae2de07d51
+Track03.flac:fb29dda546cffc4629a0786655ff4c92
+Track04.flac:b9b271fffb5be774e2fc7f005ec01c3f
+Track05.flac:5a91dd1a0010f87c3f6c71bf3486b702
+Track06.flac:21b9b1cdb793c015bad943842ad11994
+Track07.flac:dd291cc23bc6d41de7986718cc423e57
+Track08.flac:e342d9bc98c88d64959148b99a6f4b01
+Track09.flac:19d0f637479fa08e8b9938985d88420b
+Track10.flac:7f9203f12e4aab1e5731ca17193d80b4
+Track11.flac:53a096b5d1cbff950420ec46bee30d30
+Track12.flac:49bbd027288b7a1054c5fd8f1e39f0bb
+Track13.flac:04d3d2a59bbe03f2fe74a14afe1e094b
+Track14.flac:57c2b260015ebc1a47ef78e149d13d27
+Track15.flac:fb7850af5b7b59fbfe287717a4654317
+Track16.flac:e078e930f38964ab01b435347ce06e86
+Track17.flac:18551db47a1380cd1eeb8ca3521bf675
+=================== 
+=================== 
+=================== 
+=== shntool for: bd69-08-31-jtt.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:48.01       29637596 B   ---   --   ---xx   flac  0.2328  Track01.flac
+     3:06.69       32972732 B   ---   --   ---xx   flac  0.2321  Track02.flac
+     4:34.32       48408908 B   ---   --   ---xx   flac  0.2474  Track03.flac
+     3:06.50       32928044 B   ---   --   ---xx   flac  0.2206  Track04.flac
+     3:18.02       34931948 B   ---   --   ---xx   flac  0.2176  Track05.flac
+     2:19.10       24543164 B   ---   --   ---xx   flac  0.2153  Track06.flac
+     3:36.54       38229452 B   ---   --   ---xx   flac  0.2226  Track07.flac
+     3:19.17       35143628 B   ---   --   ---xx   flac  0.2364  Track08.flac
+     3:39.70       38796284 B   ---   --   ---xx   flac  0.2297  Track09.flac
+     3:38.62       38601068 B   ---   --   ---xx   flac  0.2605  Track10.flac
+     2:26.36       25839116 B   ---   --   ---xx   flac  0.2475  Track11.flac
+     3:44.71       39680636 B   ---   --   ---xx   flac  0.2477  Track12.flac
+     4:56.08       52233260 B   ---   --   ---xx   flac  0.2604  Track13.flac
+     3:16.19       34619132 B   ---   --   ---xx   flac  0.2582  Track14.flac
+     2:53.03       30524300 B   ---   --   ---xx   flac  0.2665  Track15.flac
+     3:19.38       35193020 B   ---   --   ---xx   flac  0.2390  Track16.flac
+     1:01.23       10814540 B   ---   --   ---xx   flac  0.2354  Track17.flac
+    55:05.40      583096828 B                            0.2406  (17 files)
+=================== 
+=================== 
+=================== 

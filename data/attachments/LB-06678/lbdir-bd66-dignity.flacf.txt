@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-dignity.flacf 
+=================== 
+=================== 
+=================== 
+52bad527a97b0f19a2a7fabf3d12f9f7  bd66-dignity-t01.flac
+4acfaa500464283cfc7bc91e4eddb055  bd66-dignity-t02.flac
+03e540d8e8cfaaf00c52654ad33d6ed7  bd66-dignity-t03.flac
+fa883d76a74e281f3e1ab6c8ec4ea8a1  bd66-dignity-t04.flac
+42a06be01b3ad7beea78a0feb1208b24  bd66-dignity-t05.flac
+b260e3168d95562b3f2b1e411242f2d7  bd66-dignity-t06.flac
+d251632e851a4bd4575848ac72f5e4a0  bd66-dignity-t07.flac
+0ba5082fdcc3ad52b6ce44e309721dda  bd66-dignity-t08.flac
+e0ac7b4980f26d6692bd9775d091dda4  bd66-dignity-t09.flac
+4e543a85a0655b9cae738a3bf597b8c8  bd66-dignity-t10.flac
+b8bf0ad651754d582c7e060544049123  bd66-dignity-t11.flac
+9b377a354ad5cdcdfa91dcb647af86aa  bd66-dignity-t12.flac
+62ec1e52f9f0024b70f1b5a762ea9e3a  bd66-dignity-t13.flac
+77a0077b1623e888d3e9fb4599cba4f4  bd66-dignity-t14.flac
+30db1ea77c94e01aca2783f9a82387ad  bd66-dignity-t15.flac
+790a8f2530aa8fa432c6e796ee10a3aa  bd66-dignity-t16.flac
+02e1e79194eae30999a28b5759167308  bd66-dignity-t17.flac
+c9bdfecc585b5fb6fa12740bb5f606b3  bd66-dignity-t18.flac
+965569fc7f204d01dbcc7cc2836c56b0  bd66-dignity.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-dignity.flacf 
+=================== 
+=================== 
+=================== 
+bd66-dignity-t01.flac:6780e8282c925961e9501432066dc2fa
+bd66-dignity-t02.flac:a7368501a6865e204b4283d4f699fd81
+bd66-dignity-t03.flac:d7ba8445bcb009fb1d2951572edd5cfd
+bd66-dignity-t04.flac:af212b6748138530cfeb00be306ae834
+bd66-dignity-t05.flac:23ab01210faf735547b4ae8c17819e56
+bd66-dignity-t06.flac:1d362c75c455f61bd366ba203274c2fc
+bd66-dignity-t07.flac:d6360be16d60ae84726d5007543cd13b
+bd66-dignity-t08.flac:e9196eef1095266312d8cfee27534a60
+bd66-dignity-t09.flac:39ec80c896fd8356b059b44d083cb24c
+bd66-dignity-t10.flac:5f202f0fb3e43b2f942234c381b1d410
+bd66-dignity-t11.flac:bfcf50fdcc38b83c42f4883b2e8b3871
+bd66-dignity-t12.flac:ca37c948d0b222cd7128a6799cf3169a
+bd66-dignity-t13.flac:d550a2c62e541c5435addd43de24972d
+bd66-dignity-t14.flac:72f50115c6182f29e2d908d1187dffcf
+bd66-dignity-t15.flac:32b6ad497aabe10c4c5b000879579cb9
+bd66-dignity-t16.flac:e6e9502522780d4667669066e4076505
+bd66-dignity-t17.flac:4cc1070a5e166629bdef500cfd2e374e
+bd66-dignity-t18.flac:7207a71ee2d2d4f13b5226e186475eae
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-dignity.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:30.17       15916028 B   ---   --   ---xx   flac  0.4830  bd66-dignity-t01.flac
+     6:02.40       63950924 B   ---   --   ---xx   flac  0.4861  bd66-dignity-t02.flac
+     4:32.20       48027884 B   ---   --   ---xx   flac  0.3309  bd66-dignity-t03.flac
+     0:58.18       10273580 B   ---   --   ---xx   flac  0.5140  bd66-dignity-t04.flac
+     2:53.52       30639548 B   ---   --   ---xx   flac  0.4992  bd66-dignity-t05.flac
+     4:57.60       52531964 B   ---   --   ---xx   flac  0.5822  bd66-dignity-t06.flac
+     3:14.30       34292204 B   ---   --   ---xx   flac  0.5448  bd66-dignity-t07.flac
+     3:49.45       40501484 B   ---   --   ---xx   flac  0.5727  bd66-dignity-t08.flac
+     2:54.68       30853580 B   ---   --   ---xx   flac  0.4717  bd66-dignity-t09.flac
+     2:24.42       25500428 B   ---   --   ---xx   flac  0.5146  bd66-dignity-t10.flac
+     2:33.28       27055100 B   ---   --   ---xx   flac  0.5058  bd66-dignity-t11.flac
+     2:06.60       22367564 B   ---   --   ---xx   flac  0.4102  bd66-dignity-t12.flac
+     2:06.52       22348748 B   ---   --   ---xx   flac  0.4476  bd66-dignity-t13.flac
+     4:25.08       46764860 B   ---   --   ---xx   flac  0.4457  bd66-dignity-t14.flac
+     4:53.62       51831068 B   ---   --   ---xx   flac  0.5364  bd66-dignity-t15.flac
+     3:49.53       40520300 B   ---   --   ---xx   flac  0.5966  bd66-dignity-t16.flac
+     3:18.27       34990748 B   ---   --   ---xx   flac  0.5415  bd66-dignity-t17.flac
+     2:55.25       30928844 B   ---   --   ---xx   flac  0.5127  bd66-dignity-t18.flac
+    59:27.32      629294856 B                            0.5019  (18 files)
+=================== 
+=================== 
+=================== 

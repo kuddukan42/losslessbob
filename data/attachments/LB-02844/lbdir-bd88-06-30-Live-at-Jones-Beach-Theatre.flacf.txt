@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-30-Live-at-Jones-Beach-Theatre.flacf 
+=================== 
+=================== 
+=================== 
+8e6d22fd446cbd1a2fbb4d6316885d3c  back.jpg
+04958e10e918b433605289d354728a39  bd88-06-30-Live-at-Jones-Beach-Theatre-LB-2844.txt
+de53a9853780ae36ea3c34917ca98128  Fingerprints.txt
+0d0dfa4791f426f3352574f8270fdd22  front.jpg
+9c4a7b728f3c781f7104b3f9cfe7f5ff  Info.txt
+667502a7e3b1808579e69315cc9747f0  l-22i.JPG
+bd585e71993d85a4a72ea593a7ecf338  l-22o.JPG
+fc84ed542f9d7a8c7d8107789ec30ff0  Track101.flac
+4db85c5ed4186ecc9d26eda91d494045  Track102.flac
+28fea64674ff2710bc9d87d8e0d571ff  Track103.flac
+d70f528d9234a67989eb2f330988250b  Track104.flac
+ee3a82ef4a13b35735d1409ce29f5f36  Track105.flac
+03df201ed8a0cd3ed172e5bc7a550e93  Track106.flac
+105be9c19d23ca8f5ed1a6154ce71bbf  Track107.flac
+a4173fadf341279506156a31818caf3f  Track108.flac
+a6de11e0d5e6cf3734df230cd04a0174  Track201.flac
+90b75bd1be3c1086730e9e64df6a2ca0  Track202.flac
+3fdeee4dba99d008fbfbd42b9476fd91  Track203.flac
+412e8dcbd5d57a82ea4ae34cc28eeccc  Track204.flac
+ca3da2501b059283bbe29178278f2e41  Track205.flac
+491d0642055733d0b47aa618d04599bd  Track206.flac
+3ccaee9f0a033eeabafd7f87b3f14149  Track207.flac
+3cf0de65c8f0ef28bb87f24e48309aa0  Track208.flac
+d0d7de43f2cb7f6c6244f6acf93692fb  Track209.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-30-Live-at-Jones-Beach-Theatre.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:620723fe150cae4276cb694dcd6fc990
+Track102.flac:c6c5210f6ae9ed270d402efb34309197
+Track103.flac:1e12a3729e828dfd915c9e59c6a922c3
+Track104.flac:42aa5eff493c14b7698062e1feb975ba
+Track105.flac:231f394d979cab7db6099c8e38f71807
+Track106.flac:7cf3b594451ae9945486c51ed14d0e48
+Track107.flac:5f1ba8147d10cbd4c14638d53114e385
+Track108.flac:2dbc9e77e7f1c9879dd957e1a0900d45
+Track201.flac:f1f4297e3980e7acda08862e52d1f3ce
+Track202.flac:e518126dde5d875a9e8e5ac51dec3ca2
+Track203.flac:321b70c26ce830e11a294bed405632cc
+Track204.flac:ea55003eca96baf3630ebc38863354f1
+Track205.flac:c6b47bf47a934c90fc612d11eb6222a0
+Track206.flac:8325039d82464a444ed8a1f35cf92abf
+Track207.flac:fe4a471e926fa846cc2ca1e040a9208b
+Track208.flac:3ce622bad81771c59751cc9cf19907c5
+Track209.flac:c4b36cba7e7a10745d87f11b273c7587
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-30-Live-at-Jones-Beach-Theatre.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:32.73       37568540 B   ---   --   ---xx   flac  0.6447  Track101.flac
+     4:34.37       48420668 B   ---   --   ---xx   flac  0.6543  Track102.flac
+     4:42.28       49810700 B   ---   --   ---xx   flac  0.6022  Track103.flac
+     6:13.52       65919548 B   ---   --   ---xx   flac  0.6507  Track104.flac
+     4:12.29       44521052 B   ---   --   ---xx   flac  0.6761  Track105.flac
+     4:20.12       45892268 B   ---   --   ---xx   flac  0.6220  Track106.flac
+     5:51.57       62050508 B   ---   --   ---xx   flac  0.6490  Track107.flac
+     5:53.73       62440940 B   ---   --   ---xx   flac  0.5293  Track108.flac
+     8:01.41       84944876 B   ---   --   ---xx   flac  0.5852  Track201.flac
+     4:16.58       45294860 B   ---   --   ---xx   flac  0.4884  Track202.flac
+     4:36.66       48841676 B   ---   --   ---xx   flac  0.5931  Track203.flac
+     4:18.47       45621788 B   ---   --   ---xx   flac  0.6303  Track204.flac
+     6:24.13       67768220 B   ---   --   ---xx   flac  0.6305  Track205.flac
+     6:45.49       71557292 B   ---   --   ---xx   flac  0.6503  Track206.flac
+     4:36.46       48794636 B   ---   --   ---xx   flac  0.5445  Track207.flac
+     3:57.51       41926796 B   ---   --   ---xx   flac  0.6439  Track208.flac
+     5:46.20       61081484 B   ---   --   ---xx   flac  0.6031  Track209.flac
+    88:06.02      932455852 B                            0.6113  (17 files)
+=================== 
+=================== 
+=================== 

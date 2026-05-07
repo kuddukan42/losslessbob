@@ -1,0 +1,64 @@
+Bob Dylan 
+Westpac Arena
+Christchurch, New Zealand
+August 8, 2007
+ 
+Disc 1:
+01. introduction [00:58]
+02. Leopard-Skin Pill-Box Hat [03:55]  
+03. Don't Think Twice, It's All Right [06:06] 
+04. Watching The River Flow [04:51]  
+05. It's Alright, Ma (I'm Only Bleeding) [07:11]  
+06. Workingman's Blues #2 [07:19]  
+07. Rollin' And Tumblin' [06:31]   
+08. Just Like A Woman [08:47]   
+09. Lonesome Day Blues [07:17]  
+10. Most Likely You Go Your Way (And I'll Go Mine) [07:59]  
+11. Tangled Up In Blue [08:01]
+12. Spirit On The Water [06:57] 
+Total time: [76:01]
+
+Disc 2:
+01. Highway 61 Revisited [06:14]  
+02. When The Deal Goes Down [06:01]  
+03. Summer Days [06:40]   
+04. Masters Of War [08:58]  
+    (encore) 
+05. Thunder On The Mountain [06:03]  
+06. band introduction [00:41]
+07. All Along The Watchtower [05:55]
+Total time: [40:36]  
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+ 
+source: soomlos
+11th row left center
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-08-08d1t01.flac:a81433ee4bd0de4f88739661bb7820bb
+bd2007-08-08d1t02.flac:654fdb7edbd88de02d8200c0b1edd501
+bd2007-08-08d1t03.flac:269aae9a716e9721bc93a5dcb1669e0f
+bd2007-08-08d1t04.flac:b62a4a9e18f45c0eeb3fa1ce35d8b328
+bd2007-08-08d1t05.flac:4b670d4e48b83fe243010456f374000f
+bd2007-08-08d1t06.flac:96b88ce0b29f6c5a7d359a66f15c4786
+bd2007-08-08d1t07.flac:9d442a3b478ff7ae9e7336a916c89f47
+bd2007-08-08d1t08.flac:5875483aa43add611812d718c90bab5c
+bd2007-08-08d1t09.flac:d47fc5155b80fcbaf62bd1d0f74187f2
+bd2007-08-08d1t10.flac:964fd853ce8ff31485d29b286e75f8f2
+bd2007-08-08d1t11.flac:c2743455022359042e6456ae19f86dbd
+bd2007-08-08d1t12.flac:e89d12fee8f395d81aae961261cf310a
+bd2007-08-08d2t01.flac:bb7a2de0b87924e24b73dbdd41dddf20
+bd2007-08-08d2t02.flac:3590dae13738a15b6cf4159fc07e6194
+bd2007-08-08d2t03.flac:175997a9487561a9ff9c69508e576bb0
+bd2007-08-08d2t04.flac:367f45a05a0d131c0a5dff2dc0d30262
+bd2007-08-08d2t05.flac:aa4b00ed66299bf5e48ee9a2a829859d
+bd2007-08-08d2t06.flac:3bd5f0042eabb33b611737cf47bcbbb6
+bd2007-08-08d2t07.flac:42c49b97bd104de7c70b93e6a025628b

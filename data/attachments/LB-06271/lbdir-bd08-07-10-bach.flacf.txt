@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-07-10-bach.flacf 
+=================== 
+=================== 
+=================== 
+56e7fc4fae1a88daa493ad38a53b487d  2008-07-10-Mérida.md5
+c5a519bc6c53a795c66571af234023b7  2008-07-10-Mérida.txt
+49ae8c9a4c16d3237ef66de384542edf  Track101.flac
+60a5e2625d85c0f1099e652856031f23  Track102.flac
+4f7d9517d5b636118101268e1d87dd76  Track103.flac
+1bac8e8609edd9cf703c01ede56df15e  Track104.flac
+f533550601f067c544c964223464e0b9  Track105.flac
+f3612561c1d909c1a5c854d164b86648  Track106.flac
+17cd6ee08e3585ecdd07e41be9ba9fb5  Track107.flac
+e9da0cd06f9b7c66f04e2abfadda7ed2  Track108.flac
+3a13910dda280ee885957e0d6c062925  Track109.flac
+614bafa03363f783a68bebbbaf6891e4  Track110.flac
+0601950e580bec3b99d5c87bede94fbe  Track111.flac
+4a4a85ed677a56eaf9d7311e9b06df71  Track201.flac
+97cc28982aebbed65026543cc9e8285b  Track202.flac
+92b2e06483247058af0bde9ae343344c  Track203.flac
+efebb83e0e076428f26f7639ff77d813  Track204.flac
+3527c749de79065e7cee539a09af34bb  Track205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-07-10-bach.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:1f095cfa835403b7ac34762e5994d17c
+Track102.flac:e345a7973699d9226b46191e8df96aff
+Track103.flac:04782d11c2fe779d51d9dc1ec03c2bff
+Track104.flac:0133f613952f610720b45c64b8be47c9
+Track105.flac:de7dfe3c4fe5a092a16072b86f1c5db6
+Track106.flac:b86643e44b71e154fa2b16a2cc1a82d8
+Track107.flac:883f46ea372ac0a21753eee4941595ba
+Track108.flac:51832a86a23bcbef93370348da0986e7
+Track109.flac:c97c0a73de2bb2947cdd44e486b91e42
+Track110.flac:044aa81d36645a64a35d60dab0bcbf33
+Track111.flac:de7ab7ad49be5aaeee90e5fd845c9812
+Track201.flac:b26b14711f84cfebdafee02bac011c83
+Track202.flac:842224f817b6ebff48012d919ea7659b
+Track203.flac:b090b37ee17838bac1f658ebbac8b073
+Track204.flac:2d67588bf319a2757efb59632b2d4c6b
+Track205.flac:501bb3d393f95048b23234022728b0cc
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-07-10-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:18.71       13926236 B   ---   --   ---xx   flac  0.4079  Track101.flac
+     4:07.48       43683740 B   ---   --   ---xx   flac  0.4898  Track102.flac
+     5:03.59       53588012 B   ---   --   ---xx   flac  0.4679  Track103.flac
+     6:32.24       69205292 B   ---   --   ---xx   flac  0.4955  Track104.flac
+     7:27.12       78879068 B   ---   --   ---xx   flac  0.5205  Track105.flac
+     6:47.72       71964188 B   ---   --   ---xx   flac  0.4872  Track106.flac
+     5:59.18       63369980 B   ---   --   ---xx   flac  0.4853  Track107.flac
+     6:01.35       63762764 B   ---   --   ---xx   flac  0.4771  Track108.flac
+     8:08.44       86186732 B   ---   --   ---xx   flac  0.4923  Track109.flac
+     7:17.13       77117420 B   ---   --   ---xx   flac  0.4273  Track110.flac
+     7:12.49       76320092 B   ---   --   ---xx   flac  0.5097  Track111.flac
+     6:23.40       67655324 B   ---   --   ---xx   flac  0.3940  Track201.flac
+     6:55.16       73243676 B   ---   --   ---xx   flac  0.4875  Track202.flac
+    12:21.64      130862972 B   ---   --   ---xx   flac  0.4201  Track203.flac
+     7:32.02       79737548 B   ---   --   ---xx   flac  0.4907  Track204.flac
+     6:59.58       74048060 B   ---   --   ---xx   flac  0.5047  Track205.flac
+   106:09.25     1123551104 B                            0.4734  (16 files)
+=================== 
+=================== 
+=================== 

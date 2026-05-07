@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-10-30-b.flacf 
+=================== 
+=================== 
+=================== 
+33a7e0301ce42d6ef5b6e36ec38a5c68  Bob Dylan 2003.10.30 Bolzano, Palaonda.md5
+19fc605afd5254b1674d8e50a29fae8b  Bolzano Art\Bolzano_03_Back.jpg
+620fb062a37d67260a6fedced737828f  Bolzano Art\Bolzano_03_Front.jpg
+d97e0ceebeebfb5793ea9ee99543a9a2  Bolzano Flac1\Track01.flac
+61e284d75b415e0f01b36e488fe9ac6f  Bolzano Flac1\Track02.flac
+f286149dfcca8675409798483ec1e445  Bolzano Flac1\Track03.flac
+e7558171e41a5bf6646c286fd6cc71d8  Bolzano Flac1\Track04.flac
+d7800ccb587f5329e8ab6bf241b407ef  Bolzano Flac1\Track05.flac
+11848630922d3488b1fbcff9f863cf63  Bolzano Flac1\Track06.flac
+dada68991f299c78bb9d662e37576d95  Bolzano Flac1\Track07.flac
+af570fd85cb6711f9ba238555b030d51  Bolzano Flac1\Track08.flac
+ed309b34db2a1c84eec489ca6e34de60  Bolzano Flac1\Track09.flac
+8a9b858be39f4728c1b4fff0fa94c8bb  Bolzano Flac2\Track01.flac
+52f0fdfe0867bc663ece6a861bae4b2a  Bolzano Flac2\Track02.flac
+b1f6df2e230f1423c39fc1ca2ebcd0ea  Bolzano Flac2\Track03.flac
+1cbd3d674d259a47c7d3dc05d57f0287  Bolzano Flac2\Track04.flac
+1cf4387f6a56919a6918aafaab57b710  Bolzano Flac2\Track05.flac
+0c3c398a523bc807e69cb1da2fdf8e39  Bolzano Flac2\Track06.flac
+c5cd9f76d7464a4c7e87cb31f8bb036a  Bolzano Flac2\Track07.flac
+fc50633492d7c63efd18daebd9bbb6c4  Bolzano Flac2\Track08.flac
+201dd6ea6a608f8c228cce10e793c4c1  Bolzano Flac2\Track09.flac
+8bcf6ac74a29db0db460c2580ae99194  Bolzano Flac2\Track10.flac
+ca031e50ebc51d7132f3c9b073cd24e0  Bolzano.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-10-30-b.flacf\bolzano flac1 
+=================== 
+=================== 
+=================== 
+track01.flac:0a84582fe96f3e74e1d529b807fff9da
+track02.flac:145e074415e47a9d71cff2561a5e26e7
+track03.flac:7169939bd33fa8af7b3042f85e4b9485
+track04.flac:e01507c60afb378204adc0efa9ce9413
+track05.flac:3767b6d6cc63533c23220b86e47a6bdf
+track06.flac:6eb9d06ef9ba480b39a76d759f279542
+track07.flac:fd7f18855e2e7f47b342c6145e9704f3
+track08.flac:ed57b2484a2e1db2fe440fc11fe6281f
+track09.flac:abc1fea420e11fa81e82a2d4bb3c51bd
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-10-30-b.flacf\bolzano flac2 
+=================== 
+=================== 
+=================== 
+track01.flac:3d1eac47a0f3d7ae3565a5b0a72bbef0
+track02.flac:0b2ac7e71919db0fe0d2b714c5c1f43c
+track03.flac:1bf687e8dad93d10012c020c7ba0f448
+track04.flac:5ac0646ad15621141d8fbc8baf10824d
+track05.flac:4544bd57bea41ecb10c4cd6979170d43
+track06.flac:737ad001f4c7066630697d81f4a0e4ff
+track07.flac:2e73f90315960751fde52e8a3fd25212
+track08.flac:2a367ae8a41bae525c5fe4ba0a18059d
+track09.flac:a8e4195dcc4075695d9880b2a99feebf
+track10.flac:16d9594806b311de8b25e3b0d791a31e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-30-b.flacf\bolzano flac1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:38.01        6705596 B   ---   --   ---xx   flac  0.5223  Track01.flac
+     4:56.14       52247372 B   ---   --   ---xx   flac  0.6235  Track02.flac
+     6:06.39       64654172 B   ---   --   ---xx   flac  0.5626  Track03.flac
+     5:45.01       60860396 B   ---   --   ---xx   flac  0.6068  Track04.flac
+     6:17.70       66667484 B   ---   --   ---xx   flac  0.5586  Track05.flac
+     7:26.02       78679148 B   ---   --   ---xx   flac  0.6156  Track06.flac
+     5:37.66       59602076 B   ---   --   ---xx   flac  0.6219  Track07.flac
+     5:42.33       60406460 B   ---   --   ---xx   flac  0.5581  Track08.flac
+     6:09.03       65098700 B   ---   --   ---xx   flac  0.6463  Track09.flac
+    48:39.04      514921404 B                            0.5980  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-30-b.flacf\bolzano flac2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.45       76663484 B   ---   --   ---xx   flac  0.4835  Track01.flac
+     5:53.09       62290412 B   ---   --   ---xx   flac  0.5622  Track02.flac
+     7:45.20       82073084 B   ---   --   ---xx   flac  0.4974  Track03.flac
+     7:20.00       77616044 B   ---   --   ---xx   flac  0.6141  Track04.flac
+     6:15.24       66206492 B   ---   --   ---xx   flac  0.5040  Track05.flac
+     7:39.68       81127580 B   ---   --   ---xx   flac  0.6092  Track06.flac
+     4:11.63       44424620 B   ---   --   ---xx   flac  0.4539  Track07.flac
+     4:51.21       51381836 B   ---   --   ---xx   flac  0.6147  Track08.flac
+     7:07.37       75409868 B   ---   --   ---xx   flac  0.5901  Track09.flac
+     6:21.01       67210796 B   ---   --   ---xx   flac  0.6041  Track10.flac
+    64:39.63      684404216 B                            0.5555  (10 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-02-16-jtt.flacf 
+=================== 
+=================== 
+=================== 
+be675b1c8aa6f6decb19697d5ee30cf3  bd91-02-16-jtt-LB-4214.txt
+062383521da15b53244e05170e570441  Disc One\BD_160291JTT_Disc01Track01.flac
+9375ef735e874ebd232c5092bb912b52  Disc One\BD_160291JTT_Disc01Track02.flac
+8c126f1c5ac77892dd47630cdfc85822  Disc One\BD_160291JTT_Disc01Track03.flac
+c8842fb81f5213e175999d161be1e6ec  Disc One\BD_160291JTT_Disc01Track04.flac
+a92cc454d2ac9ba3876e06f6789545b4  Disc One\BD_160291JTT_Disc01Track05.flac
+b406dbbf83ad08cf62684afd4f2823be  Disc One\BD_160291JTT_Disc01Track06.flac
+d8042112048a2cc58b6ce1d5a875493a  Disc One\BD_160291JTT_Disc01Track07.flac
+df833a159997d1ed1df49cb39233b50e  Disc One\BD_160291JTT_Disc01Track08.flac
+1ae2d483af0925c97130c4a65fd0d325  Disc One\BD_160291JTT_Disc01Track09.flac
+dff004fe7267556fcf4a4c5a2873277d  Disc One\BD_160291JTT_Disc01Track10.flac
+81ef1220cac13e4e3f1ef783a6cd6bc0  Disc Two\BD_160291JTT_Disc02Track01.flac
+e76999ba43cbbf246cfc17c2cdb8aa72  Disc Two\BD_160291JTT_Disc02Track02.flac
+c596061cf7e4cc9072d6f7046f90c905  Disc Two\BD_160291JTT_Disc02Track03.flac
+32d84998d2df93a482859c9bd41615b6  Disc Two\BD_160291JTT_Disc02Track04.flac
+cf7b635cf77dbdda266b7eb0fb1c3d05  Disc Two\BD_160291JTT_Disc02Track05.flac
+ebbbe430609e1397035589422969bb6e  Disc Two\BD_160291JTT_Disc02Track06.flac
+7e2577a97b6b4d72e07921d17d36f177  Disc Two\BD_160291JTT_Disc02Track07.flac
+42eb97b8a1b7f0797079c590e21699b9  Disc Two\BD_160291JTT_Disc02Track08.flac
+f72a96e28ad5b76d3e623603da4fb008  Disc Two\BD_160291JTT_Disc02Track09.flac
+549117a7216a9ddc3ce0a1365247dc92  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-02-16-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+BD_160291JTT_Disc01Track01.flac:2449ae678d2b6eed33c98c7bbd246b63
+BD_160291JTT_Disc01Track02.flac:729cf38cfce0e94e091d64d887156a8e
+BD_160291JTT_Disc01Track03.flac:4f4f37fe336a095806bcc447fe2d7953
+BD_160291JTT_Disc01Track04.flac:7e2fa005a8818a52065f76472b3f3407
+BD_160291JTT_Disc01Track05.flac:b5de4cae53ab9048fc8342df46f92f63
+BD_160291JTT_Disc01Track06.flac:a929086ae6e9b276779d2989698b1978
+BD_160291JTT_Disc01Track07.flac:f663d988aceff8d20b31aa997b4c7765
+BD_160291JTT_Disc01Track08.flac:626b3e4b5952c2a2286d310cabd6f818
+BD_160291JTT_Disc01Track09.flac:46c4e7c3d2dc835147c7568bad0871ad
+BD_160291JTT_Disc01Track10.flac:880068d1fa7e1ef40c24699adaa5d8bb
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-02-16-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+BD_160291JTT_Disc02Track01.flac:645e5dace675196b2769c07d96d7e163
+BD_160291JTT_Disc02Track02.flac:0b9708e266135e257f3259a9bf384df6
+BD_160291JTT_Disc02Track03.flac:0ba76195f413a595923f7b0d1e901896
+BD_160291JTT_Disc02Track04.flac:769ea72c5b6bc398d9ba4622e0d36ece
+BD_160291JTT_Disc02Track05.flac:4745b810d1eb62cf0a4c5b29d0e3e172
+BD_160291JTT_Disc02Track06.flac:7f1ca3bd920a67675cc3e31091ac661f
+BD_160291JTT_Disc02Track07.flac:be7a84fed36df5f9d1eadf008eb5c837
+BD_160291JTT_Disc02Track08.flac:529197d6dabfca3386ce05ccc5099266
+BD_160291JTT_Disc02Track09.flac:b20eb4b3fc7497a93b71541def711af2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-16-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:48.57       50937308 B   ---   --   ---xx   flac  0.5678  BD_160291JTT_Disc01Track01.flac
+     4:01.22       42564188 B   ---   --   ---xx   flac  0.5624  BD_160291JTT_Disc01Track02.flac
+     3:47.00       40042844 B   ---   --   ---xx   flac  0.5981  BD_160291JTT_Disc01Track03.flac
+     4:41.04       49577852 B   ---   --   ---xx   flac  0.5595  BD_160291JTT_Disc01Track04.flac
+     6:17.07       66519308 B   ---   --   ---xx   flac  0.5904  BD_160291JTT_Disc01Track05.flac
+     3:25.20       36209084 B   ---   --   ---xx   flac  0.6004  BD_160291JTT_Disc01Track06.flac
+     4:14.30       44876204 B   ---   --   ---xx   flac  0.5158  BD_160291JTT_Disc01Track07.flac
+     4:09.43       44024780 B   ---   --   ---xx   flac  0.4972  BD_160291JTT_Disc01Track08.flac
+     5:36.04       59279852 B   ---   --   ---xx   flac  0.4998  BD_160291JTT_Disc01Track09.flac
+     3:57.30       41877404 B   ---   --   ---xx   flac  0.5055  BD_160291JTT_Disc01Track10.flac
+    44:57.67      475908824 B                            0.5493  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-02-16-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.70       40207484 B   ---   --   ---xx   flac  0.5808  BD_160291JTT_Disc02Track01.flac
+     4:27.51       47218796 B   ---   --   ---xx   flac  0.5605  BD_160291JTT_Disc02Track02.flac
+     4:42.05       49756604 B   ---   --   ---xx   flac  0.5643  BD_160291JTT_Disc02Track03.flac
+     4:17.35       45417164 B   ---   --   ---xx   flac  0.6139  BD_160291JTT_Disc02Track04.flac
+     4:17.49       45450092 B   ---   --   ---xx   flac  0.5644  BD_160291JTT_Disc02Track05.flac
+     4:38.54       49166252 B   ---   --   ---xx   flac  0.5870  BD_160291JTT_Disc02Track06.flac
+     7:07.61       75466316 B   ---   --   ---xx   flac  0.6184  BD_160291JTT_Disc02Track07.flac
+     4:53.31       51758156 B   ---   --   ---xx   flac  0.5353  BD_160291JTT_Disc02Track08.flac
+     6:12.54       65747852 B   ---   --   ---xx   flac  0.6055  BD_160291JTT_Disc02Track09.flac
+    44:25.35      470188716 B                            0.5838  (9 files)
+=================== 
+=================== 
+=================== 

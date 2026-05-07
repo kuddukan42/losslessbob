@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-05-e.flacf 
+=================== 
+=================== 
+=================== 
+379e41fe8f7ab10a14cf24fbd0d05408  disc 1\5sep87_101.shn
+752e2858cf4650cc03247cfb3e3d81b3  disc 1\5sep87_102.shn
+dab16c91b0c9d64b791a5322ff11d26c  disc 1\5sep87_103.shn
+ef42cfc5f81106a7dce28f210792e862  disc 1\5sep87_104.shn
+5af4e327f940e352c7a59564dc6ff64c  disc 1\5sep87_105.shn
+98e464e49f59b12d9f36eaca250d5670  disc 1\5sep87_106.shn
+2520ec4fa6f6bcef5fa713f23153e389  disc 1\5sep87_107.shn
+1a3c9654828cee5a8a1a679f61010639  disc 1\5sep87_108.shn
+ba546c17dfa4d93e8be1a43e07b61d3e  disc 1\5sep87_109.shn
+b96f57c9595fc2b6008811f6a74c75d6  disc 1\5sep87_110.shn
+8015bd4b6265eb07460534e243d8ef6d  disc 1\5sep87_111.shn
+76c633fe3db44794ed091cb951649afd  disc 1\5sep87_112.shn
+46052fad7af4cd213704b1a64400ad97  disc 1\noname.md5
+81486a38c9b7c566c10a20c27028c401  disc 2\5sep87_201.shn
+9a32d0e63155a9d005cb910ceb149021  disc 2\5sep87_202.shn
+438657a15f8e2600a6d08d32ff21a538  disc 2\5sep87_203.shn
+c782ddc22d3171ac5d2439a2c4cb5dd7  disc 2\5sep87_204.shn
+d4e647900a905dff749f295bb214fad0  disc 2\5sep87_205.shn
+a8fac0297b686afbf6d2a88a74bd837d  disc 2\5sep87_206.shn
+7558192c4480e56cf7041288781f02d9  disc 2\5sep87_207.shn
+a9383a15d3a7cfd214e1c205f912c969  disc 2\5sep87_208.shn
+26c811a69f4b2d3edbe8deea9bf23eea  disc 2\5sep87_209.shn
+4b7ed3c57a3c8ddc2613bdce24b41bf0  disc 2\5sep87_210.shn
+ffb404e01692836d8d7f1253b6204e88  disc 2\5sep87_211.shn
+975f13c37cd1f0ed1053fc2b221bc06d  disc 2\noname.md5
+4b2d6cb9bd185a9e4f3bac6a080ce88a  temples in flames dvd#1.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-09-05-e.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+9442d3f3cd084661bc1ad3b96badee82  [shntool]  5sep87_101.wav
+4c5d37ab498e28fb29b9c901eb82b8b3  [shntool]  5sep87_102.wav
+16f4b9afbc03f79369fc7bf4c67a133a  [shntool]  5sep87_103.wav
+f301bfa0cbb4061358a77176c4751d63  [shntool]  5sep87_104.wav
+38dcc516f7396d1d0380dc47eee3b65e  [shntool]  5sep87_105.wav
+e8397a2bd6c224a2998ddf6d99a8b7bb  [shntool]  5sep87_106.wav
+78ec41e60e6660eee56bc015c31d6be4  [shntool]  5sep87_107.wav
+de401044477a10a571ec1ce3baf57a30  [shntool]  5sep87_108.wav
+7ab6a59d7845dadfa36c262b3c908666  [shntool]  5sep87_109.wav
+dd3d27a43896fee77bb5ad4276b6d12f  [shntool]  5sep87_110.wav
+7f2fca5adacbee2e052e1ca22b48423f  [shntool]  5sep87_111.wav
+0a42b42282555379a7778e49b0001c2e  [shntool]  5sep87_112.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd87-09-05-e.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+e0093c83a129c38a205d9b718e8fdf8a  [shntool]  5sep87_201.wav
+b35acf78ec1fc27e1f5ec067db20bf68  [shntool]  5sep87_202.wav
+491b78710cc45f9cfc99948b9c94b729  [shntool]  5sep87_203.wav
+60fd5c342895bef665700d37f1ad75b8  [shntool]  5sep87_204.wav
+78656b11d0d84067cf2b49278fef5b0a  [shntool]  5sep87_205.wav
+68403f893a816cdcd857ed09a0054a4f  [shntool]  5sep87_206.wav
+071d00011262c95e58c2840179f6bf4b  [shntool]  5sep87_207.wav
+60da7e1f06de375b6184903b838f7b1e  [shntool]  5sep87_208.wav
+60ea45a4330db1122a22411c66a1301a  [shntool]  5sep87_209.wav
+ee1a6e0ab123eb8dc33b4aeb08111bff  [shntool]  5sep87_210.wav
+4036980a147eae5ac65bbd78170c3c3a  [shntool]  5sep87_211.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-05-e.flacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:25.13       46776620 B   ---   --   ---xx    shn  0.6574  5sep87_101.shn
+     4:36.06       48700556 B   ---   --   ---xx    shn  0.6420  5sep87_102.shn
+     5:51.62       62062268 B   ---   --   ---xx    shn  0.6147  5sep87_103.shn
+     4:23.06       46407356 B   ---   --   ---xx    shn  0.6623  5sep87_104.shn
+     6:34.41       69598076 B   ---   --   ---xx    shn  0.6429  5sep87_105.shn
+     4:10.04       44109452 B   ---   --   ---xx    shn  0.6480  5sep87_106.shn
+     6:42.58       71049260 B   ---   --   ---xx    shn  0.5658  5sep87_107.shn
+     6:05.05       64397804 B   ---   --   ---xx    shn  0.6130  5sep87_108.shn
+     5:23.36       57061916 B   ---   --   ---xx    shn  0.6387  5sep87_109.shn
+     7:17.31       77159756 B   ---   --   ---xx    shn  0.6342  5sep87_110.shn
+     4:39.50       49333244 B   ---   --   ---xx    shn  0.6424  5sep87_111.shn
+     4:07.44       43674332 B   ---   --   ---xx    shn  0.6323  5sep87_112.shn
+    64:16.56      680330640 B                            0.6300  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-05-e.flacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:40.70       60140684 B   ---   --   ---xx    shn  0.5972  5sep87_201.shn
+     4:42.69       49907132 B   ---   --   ---xx    shn  0.6346  5sep87_202.shn
+     7:24.71       78488636 B   ---   --   ---xx    shn  0.6503  5sep87_203.shn
+     3:35.73       38097740 B   ---   --   ---xx    shn  0.6370  5sep87_204.shn
+     4:21.51       46160396 B   ---   --   ---xx    shn  0.6536  5sep87_205.shn
+     7:29.06       79217756 B   ---   --   ---xx    shn  0.6744  5sep87_206.shn
+     6:15.31       66222956 B   ---   --   ---xx    shn  0.7388  5sep87_207.shn
+     6:01.73       63852140 B   ---   --   ---xx    shn  0.5629  5sep87_208.shn
+     5:01.41       53192876 B   ---   --   ---xx    shn  0.5195  5sep87_209.shn
+     3:44.42       39612428 B   ---   --   ---xx    shn  0.5180  5sep87_210.shn
+     4:06.39       43486172 B   ---   --   ---xx    shn  0.5624  5sep87_211.shn
+    58:25.41      618378916 B                            0.6209  (11 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,42 @@
+57ab8ea6ef198298ef0332d06f4419fa  BD - The Plugz Rehearsals 1984 (Fixed LB-5309 + Alternate copy).txt
+ae48559a41a1ff5f0245128f442b96b2  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\fp fixed lb5309 1.txt
+80ebc6a2b04ed08e12cc4177c4f3e2f9  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 01.flac
+288ec31bbea768068f299209332e1629  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 02.flac
+2c2421cd21825d7c949568a1eee86810  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 03.flac
+090e0b000cac89e78eb111b2e18e2830  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 04.flac
+158272855b24557c6a979c7d3ee33358  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 05.flac
+32d9ebd4e9275306290dc3bb714bde89  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 06.flac
+c6b48077f120aa4d46bc70eb651ae6bb  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 07.flac
+2675b8e9ddcbc06c431da7615482d5f8  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 08.flac
+697982bc289895ea4ad0dce7fe07a257  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 09.flac
+215fe074dc7f7472aa65409922dca01b  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 10.flac
+8a13a62cdb124b71635413a225a7d849  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 11.flac
+897162115ee646c3ad29865768055d0c  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 12.flac
+9a18f11d595b88e3dea13c1561789929  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 13.flac
+481564ad4625ddb279c154b590004077  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 14.flac
+860edef91584a006e6d56624bb745df2  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 15.flac
+2431eb8760d85fc76df6ab9f7d87e28f  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 16.flac
+89b9c2eb823b4b544e8f65c21fadcfad  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 17.flac
+80b0a804d5efb18d5832c39652424b71  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 1\Track 18.flac
+06d3c9b4194dba689bfaffd4dc1dbda1  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\fp fixed lb5309 2.txt
+a541d5ee7411bcc81c3d1afeff31f7f2  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 01.flac
+1f9b4a1e521f8e49cb7d72c13bb7a692  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 02.flac
+94722a2c22ee6d559bd341ef3c101556  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 03.flac
+afe8ccfed6b2dda00cc13499e2da38e7  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 04.flac
+f08be9b209846e073b259d1d3cacfec6  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 05.flac
+e9cf93574fe402a1ee2d7889f3c83003  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 06.flac
+8692e435c471139106a770a1d87785ba  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 07.flac
+bc7888350ddc3fc217df7537f758467b  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 08.flac
+362e6c605d7a9b67d07548e05bbf5bba  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 09.flac
+4575ceccd692c1168735efc28ecb8421  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 10.flac
+bae49686839dd3aee63001877746a41e  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 11.flac
+adb3b498a2b8152aeed7108aa7c29863  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 12.flac
+7800673bf96bdd11bf26b73e8e5e43a8  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 13.flac
+6b65ffe85c295717a80ef8f9ac3674f7  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 14.flac
+c681253b757e361ed56a94b1e790a7bc  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 15.flac
+11a2fb88f571b2f8fa05c7c25bcd9154  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track 2\Track 16.flac
+30bf80487f7035313e1a8d39794e756d  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track.md5
+c1a856a74f586c337dceae0c84a48043  BD_Plugz Rehearsals (March 1984) Fixed LB-5309 + Patched track.txt
+fd457485a0a84ed1ccb5c15a050561a2  Disc 2 Track 7 patched alt copy\fp fixed lb5309 patched trk.txt
+8444983c79df76248e400fcf852ffa39  Disc 2 Track 7 patched alt copy\Patched D2T7.txt
+08852ad335a1a0845ff2a86020f83f4f  Disc 2 Track 7 patched alt copy\Track 7.flac

@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-23_hard rain_best_of_sources 
+=================== 
+=================== 
+=================== 
+6b42aff9c6063e285fe0871c6dd36644  bd76-05-23_hard rain_best.txt
+9243443fa7137a6bc97bece21e6ab468  bd_hard rain_best of sources.md5
+5e35a306f9192863fcad6beacb433f77  bd_hard rain_best of sources.txt
+5b4063f2665dbbbd10ec80f1bea4b7d6  cd_1_01.shn
+dcf3ca593c7b258d4f8ed502bc470b19  cd_1_02.shn
+f0e17ef53ae585753fc9491bfbaf21c9  cd_1_03.shn
+5e71b09981921df232641e67e782034f  cd_1_04.shn
+5fef0b2c201b653a432da101ea35834f  cd_1_05.shn
+33fb09f5a319f884db869eb67405f804  cd_1_06.shn
+1ca7cc5d0e3d780cc9bf8a86e666ca88  cd_1_07.shn
+dbfe41bb8da90d6368a3a499caf86e66  cd_1_08.shn
+4fcec941923008c1a2973db6df4c0543  cd_1_09.shn
+4aa9b8459f0ad5e1614624f0bc2068b4  cd_1_10.shn
+e345b3f514c6d810e9315d8599497a07  cd_1_11.shn
+f224d5bab7329d9a89eecfa007bf17b8  cd_1_12.shn
+dd68903c3af3a4a35b3471a2ce96b53f  cd_1_13.shn
+46dae45b0cc3dfa83263d9e9980b107f  cd_1_14.shn
+d33cbc927b8bc3b3fad971391bfdb01b  cd_1_15.shn
+baef5c9afb772af27dc97772ac9e3a76  cd_2_01.shn
+075028baf5f58d0ce5b56c6ab21016ab  cd_2_02.shn
+18e7a63b805755ef7eaa2cd2cb5e1bf8  cd_2_03.shn
+d61b385cf9478ac18fa65e914d757735  cd_2_04.shn
+789603711e8a293f2f1c3df52fdf6b09  cd_2_05.shn
+95d8a302ee40fba4a18b4d553f4dc1fe  cd_2_06.shn
+81be113d13de3dff0746fd77cf190a0a  cd_2_07.shn
+0eefd9d66a87b3001f8095a1fec13d44  cd_2_08.shn
+1284fc026dfaa76f9ac1ec3c5fcb563b  cd_2_09.shn
+c08677a827aac0eb748cb65436aa469c  cd_2_10.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd76-05-23_hard rain_best_of_sources 
+=================== 
+=================== 
+=================== 
+4055a838183c51bffa0940ad81ed1ce2  [shntool]  cd_1_01.wav
+96986e4d38aa66b5a422dac05f661cc4  [shntool]  cd_1_02.wav
+83f30b5a0c7d5cf17f029861c7f1b427  [shntool]  cd_1_03.wav
+73661e96aae55a2dd8fd799102b467a0  [shntool]  cd_1_04.wav
+acdaa68a9f38fb7edd11cbb55bdb0506  [shntool]  cd_1_05.wav
+3fb5568d4c657b789bd395e0fd950ffe  [shntool]  cd_1_06.wav
+877d5c58d83dc86683d59111d1965fe3  [shntool]  cd_1_07.wav
+376b71d10e5e6772784042cc886c0b0f  [shntool]  cd_1_08.wav
+3bf6f741ad301b489d7557ef8556dd1d  [shntool]  cd_1_09.wav
+baf706ffd107657107ec8886523e9549  [shntool]  cd_1_10.wav
+37397a8a1302d7983fefbe8bbc6bccac  [shntool]  cd_1_11.wav
+a5b1e3f9e1be3c53ed3883232fea6425  [shntool]  cd_1_12.wav
+c568b834de68311447e9201fabe8df8e  [shntool]  cd_1_13.wav
+d6c73b5c36ae49149a43ee4f17ca73a2  [shntool]  cd_1_14.wav
+8aaaac3c30730b86724b9c897093b511  [shntool]  cd_1_15.wav
+2fd34a38425ea6257af41526d8c382cc  [shntool]  cd_2_01.wav
+6f3bdad761331961b207cb33c701af40  [shntool]  cd_2_02.wav
+a631b41f18523060822dc5698636ad6d  [shntool]  cd_2_03.wav
+75cc65c84ed8dc007c754fc753e36acf  [shntool]  cd_2_04.wav
+6dcf9ceff6626f41ef5614f1beaf274f  [shntool]  cd_2_05.wav
+aa32de720a2818e89bf05516788c5734  [shntool]  cd_2_06.wav
+b18a038f79ced9fcd754a438c1c6dd9b  [shntool]  cd_2_07.wav
+70b27f5e77eedf690073be0017a339a7  [shntool]  cd_2_08.wav
+b5ae09c24a9f6d76ea64cc227eec461a  [shntool]  cd_2_09.wav
+a281a04bbce2bffd623bce9711cab183  [shntool]  cd_2_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-23_hard rain_best_of_sources 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:40.50       38925644 B   ---   --   -----    wav  1.0000  cd_1_01.wav
+     6:18.36       66763916 B   ---   --   -----    wav  1.0000  cd_1_02.wav
+     3:53.71       41268236 B   ---   --   -----    wav  1.0000  cd_1_03.wav
+     3:31.21       37269836 B   ---   --   -----    wav  1.0000  cd_1_04.wav
+     5:20.57       56582108 B   ---   --   -----    wav  1.0000  cd_1_05.wav
+     3:34.52       37871948 B   ---   --   -----    wav  1.0000  cd_1_06.wav
+     3:45.43       39791180 B   ---   --   -----    wav  1.0000  cd_1_07.wav
+     6:24.40       67831724 B   ---   --   -----    wav  1.0000  cd_1_08.wav
+     3:31.54       37347452 B   ---   --   -----    wav  1.0000  cd_1_09.wav
+     2:51.20       30211484 B   ---   --   -----    wav  1.0000  cd_1_10.wav
+     3:48.55       40348604 B   ---   --   -----    wav  1.0000  cd_1_11.wav
+     4:22.65       46369724 B   ---   --   -----    wav  1.0000  cd_1_12.wav
+     5:36.17       59310428 B   ---   --   -----    wav  1.0000  cd_1_13.wav
+     5:15.17       55606028 B   ---   --   -----    wav  1.0000  cd_1_14.wav
+     4:12.09       44474012 B   ---   --   -----    wav  1.0000  cd_1_15.wav
+    11:16.23      119300540 B   ---   --   -----    wav  1.0000  cd_2_01.wav
+     6:54.54       73156652 B   ---   --   -----    wav  1.0000  cd_2_02.wav
+     3:29.09       36888812 B   ---   --   -----    wav  1.0000  cd_2_03.wav
+     4:37.46       48971036 B   ---   --   -----    wav  1.0000  cd_2_04.wav
+     7:59.26       84556796 B   ---   --   -----    wav  1.0000  cd_2_05.wav
+     4:58.31       52640156 B   ---   --   -----    wav  1.0000  cd_2_06.wav
+     9:25.33       99743660 B   ---   --   -----    wav  1.0000  cd_2_07.wav
+     4:17.16       45372476 B   ---   --   -----    wav  1.0000  cd_2_08.wav
+     4:53.34       51765212 B   ---   --   -----    wav  1.0000  cd_2_09.wav
+     8:39.15       91586924 B   ---   --   -----    wav  1.0000  cd_2_10.wav
+   132:38.69     1403954588 B                            1.0000  (25 files)
+=================== 
+=================== 
+=================== 

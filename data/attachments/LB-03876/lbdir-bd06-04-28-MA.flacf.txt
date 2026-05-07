@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-28-MA.flacf 
+=================== 
+=================== 
+=================== 
+856e81f481cf4b1807730b5512442de6  bd06-04-28-MA-LB-3876.txt
+509089f53fa46733bba80d720660861b  bob dylan 4-28-06 disc 101.flac
+af4d2b8ebf4bff1415066b151d4db02a  bob dylan 4-28-06 disc 102.flac
+980d54b71310cdc5aca848b0c130e003  bob dylan 4-28-06 disc 103.flac
+e347d92c94c328f49d2b6b83fb36d7c0  bob dylan 4-28-06 disc 104.flac
+ae9d3304e0963f684dff37eead5ddc87  bob dylan 4-28-06 disc 105.flac
+33d8a2b9f7f036239d5faf2916e32fd8  bob dylan 4-28-06 disc 106.flac
+1232478a75b19f5773189e73dd831c17  bob dylan 4-28-06 disc 107.flac
+23e81b8e8a9e07b4f06a25776d12dede  bob dylan 4-28-06 disc 108.flac
+b07330c76c580d3477cfe0e6c2aeedd5  bob dylan 4-28-06 disc 109.flac
+7d52c538619180129175122fea4ce085  bob dylan 4-28-06 disc 201.flac
+c9c77ea61a34022f6df3501dbcaae2f6  bob dylan 4-28-06 disc 202.flac
+cf5cad90947fd21b5b641a73a5d23da2  bob dylan 4-28-06 disc 203.flac
+4909f69002d028a73316e3ba5d6efe42  bob dylan 4-28-06 disc 204.flac
+5e58c4a9f745b04203e542c1ed393b60  bob dylan 4-28-06 disc 205.flac
+9dfe9d46b5a1912b920f466632e24760  bob dylan 4-28-06 disc 206.flac
+82b2f5c194d71586f2767f8f7984290a  bob dylan 4-28-06 disc 207.flac
+4748fe00246f2140e32a95d881a92517  bob dylan 4-28-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-28-MA.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 4-28-06 disc 101.flac:73ec887acdd68fb3e17030e2dcc9a011
+bob dylan 4-28-06 disc 102.flac:688f0c462b6249abca3520b1803683eb
+bob dylan 4-28-06 disc 103.flac:738d36c7bf8057c22bb1cccfe116a59a
+bob dylan 4-28-06 disc 104.flac:86d66ab491621c2c9e0353cf4c383a7f
+bob dylan 4-28-06 disc 105.flac:2f99d600ffea80052a45051ba8d43b98
+bob dylan 4-28-06 disc 106.flac:23ca7305f352e8ad5340962cedbae3a8
+bob dylan 4-28-06 disc 107.flac:06af8d6eaeb618a72f30c9e105a0fb97
+bob dylan 4-28-06 disc 108.flac:424e9c099908978133c157bdb62d5ce0
+bob dylan 4-28-06 disc 109.flac:68b032cfbc4c2983abad17a02b0fcc70
+bob dylan 4-28-06 disc 201.flac:f31ce0b871962621f5173f9245aca0cb
+bob dylan 4-28-06 disc 202.flac:2810858ee7155e909f4f5e5d5fc74a82
+bob dylan 4-28-06 disc 203.flac:28ee9f3501cfc8726fe566cb0219871c
+bob dylan 4-28-06 disc 204.flac:bda516b88340afa03e0d994c10f40fab
+bob dylan 4-28-06 disc 205.flac:3e3895d00c04591e8941940975020d92
+bob dylan 4-28-06 disc 206.flac:019b881aef8d5beb38dd69f39469ff92
+bob dylan 4-28-06 disc 207.flac:dfde1b42f4de9e7a9ebd95f41f1971d2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-28-MA.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:23.44       14744732 B   ---   --   ---xx   flac  0.4118  bob dylan 4-28-06 disc 101.flac
+     5:00.23       52974140 B   ---   --   ---xx   flac  0.5463  bob dylan 4-28-06 disc 102.flac
+     4:10.42       44198828 B   ---   --   ---xx   flac  0.5371  bob dylan 4-28-06 disc 103.flac
+     7:05.27       75033548 B   ---   --   ---xx   flac  0.5590  bob dylan 4-28-06 disc 104.flac
+     7:07.59       75461612 B   ---   --   ---xx   flac  0.5563  bob dylan 4-28-06 disc 105.flac
+     6:40.50       70677644 B   ---   --   ---xx   flac  0.5534  bob dylan 4-28-06 disc 106.flac
+     6:17.38       66592220 B   ---   --   ---xx   flac  0.5020  bob dylan 4-28-06 disc 107.flac
+     7:02.64       74591372 B   ---   --   ---xx   flac  0.5528  bob dylan 4-28-06 disc 108.flac
+     6:53.45       72959084 B   ---   --   ---xx   flac  0.5327  bob dylan 4-28-06 disc 109.flac
+     7:14.03       76564700 B   ---   --   ---xx   flac  0.4990  bob dylan 4-28-06 disc 201.flac
+     5:44.02       60686348 B   ---   --   ---xx   flac  0.5129  bob dylan 4-28-06 disc 202.flac
+     7:37.52       80737148 B   ---   --   ---xx   flac  0.4816  bob dylan 4-28-06 disc 203.flac
+     6:16.22       66378188 B   ---   --   ---xx   flac  0.5134  bob dylan 4-28-06 disc 204.flac
+     2:41.19       28445132 B   ---   --   ---xx   flac  0.3727  bob dylan 4-28-06 disc 205.flac
+     6:35.18       69720380 B   ---   --   ---xx   flac  0.5221  bob dylan 4-28-06 disc 206.flac
+     5:55.50       62739644 B   ---   --   ---xx   flac  0.5237  bob dylan 4-28-06 disc 207.flac
+    93:46.33      992504720 B                            0.5214  (16 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,21 @@
+956ced89cd4ce3bd24e92307168b1d66  01 - Intro.flac
+9f0852a455817a626b6fdad0744072fa  02 - Watching the River Flow.flac
+59accadbd0a5697a82421291004b6ad6  03 - It's all Over Now, Baby Blue.flac
+f0845cc610adf7d82ecbf74635e892c6  04 - Stuck Inside of Mobile.flac
+21e8ff5dc5839bb26519f6cd5709d4f2  05 - Million Miles.flac
+e13f2c9bca339cf2dec819cef48d3d3c  06 - Simple Twist of Fate.flac
+8bc289af1a52b83d401bee00859ec8bc  07 - High Water (For Charlie Patton).flac
+b2c871eb6e8a1c6bbd4575a237cc1f49  08 - My Back Pages.flac
+c2c6627b38377bf6bc50aa112c814750  09 - Summer Days.flac
+b408daca153c8788bdc1e4f08d0a9d50  10 - Love Sick.flac
+1a5ac1fb66252b01c5b12cc55676a81e  11 - Tweedle Dee & Tweedle Dum.flac
+bef95e7cf9c0270d8ea61f79979e2131  12 - Just Like a Woman.flac
+80dedc40aedba7b9134741b122324b8e  13 - Highway 61 Revisited.flac
+249d7620ef60db6415efc6c24bc7f499  14 - Nettie Moore.flac
+2c6388b7025d17d5c65b91efa0c261ba  15 - Thunder on the Mountain.flac
+60df60c449af7ed790f3d56da4a65ff7  16 - Like a Rolling Stone.flac
+2d38a04a1fc775ebf09f0882ef8ed7cf  17 - Band Intro.flac
+6367c1d7d4e3c684b6c91cb0e74790a8  18 - All Along the Watchtower.flac
+58e2d8b4579f9a7ecc997f16cb2f84a4  Bob Dylan 1SEP08 The Joint Las Vegas.ffp.txt
+e03ee637e99ec6891d4d89ee5e199082  Bob Dylan 1SEP08 The Joint Las Vegas.md5
+e39721ac7bdbcb7dbc6d4ce3bf68d5c1  Bob Dylan 1SEP08 The Joint Las Vegas.txt

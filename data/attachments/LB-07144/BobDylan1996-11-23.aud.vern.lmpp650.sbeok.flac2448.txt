@@ -1,0 +1,139 @@
+Bob Dylan
+11/23/96
+University Of Akron - E.J. Thomas Performing Arts Hall
+Akron, OH
+
+Source: Audience Recording
+Lineage: Aud > Dat > Tascom DA-40 > COAX to COAX cable > M-AUDIO  Audiophile 2496 > 24/48 WAve >
+wavelab 5 > plugs >  cd wave > Traders Little Helper > 24/48 flac lvl 8
+
+Set 1: 
+d1t01 Crash On The Levee (Down In The Flood)
+d1t02 I Want You
+d1t03 All Along The Watchtower
+d1t04 Simple Twist Of Fate
+d1t05 Watching The River Flow
+d1t06 Silvio
+
+Set 2: 
+d1t07 Mr. Tambourine Man
+d1t08 Masters Of War
+d1t09 One Too Many Mornings
+
+Set 3: 
+d2t01 God Knows
+d2t02 Born In Time
+d2t03 Highway 61 Revisited
+
+E: 
+d2t04 Like A Rolling Stone*
+d2t05 It Ain't Me Babe
+d2t06 Rainy Day Women # 12 & 35*
+
+Comment: * with Kenny Wayne Shepherd
+-----------------------------------------------------------
+
+Notes:
+
+- A very nice source for a semi undercirculated show. the source does have a few minor sporadic 
+phase issues, not uncommon with stealth taping. Overall, the sound is very full, and quiet clear.
+Huge thanks to Vern (Heyvernusa) for transfering his dats and letting LMPP polish them up. 
+
+
+-----------------------------------------------------------
+
+- Source, Transferred and info provided by Vern (heyvernusa)
+
+- Edited by Bgreen
+
+- Tracked, flac'ed, and packed by Sal (AKA Simone)
+
+- First seeded to www.dimeadozen.org January 2009
+
+- LMPP650
+
+- Brought To You By Live Music Preservation Project
+
+- Have questions/comments contact lmpp.productions@gmail.com
+
+- www.livemusicpreservationproject.com
+
+-----------------------------------------------------------
+
+
+shntool output:
+
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:58.027      85831724 B   cxx   --   ---xx   flac  0.7392  bobdylan1996-11-23.lmpp.d1t01.flac
+     5:49.533     100665644 B   cxx   --   ---xx   flac  0.7141  bobdylan1996-11-23.lmpp.d1t02.flac
+     6:13.947     107696684 B   cxx   --   ---xx   flac  0.7360  bobdylan1996-11-23.lmpp.d1t03.flac
+     7:27.493     128878124 B   cxx   --   ---xx   flac  0.7082  bobdylan1996-11-23.lmpp.d1t04.flac
+     6:23.840     110545964 B   cxx   --   ---xx   flac  0.7248  bobdylan1996-11-23.lmpp.d1t05.flac
+     7:32.827     130414124 B   cxx   --   ---xx   flac  0.7418  bobdylan1996-11-23.lmpp.d1t06.flac
+     7:16.320     125660204 B   cxx   --   ---xx   flac  0.7334  bobdylan1996-11-23.lmpp.d1t07.flac
+     5:06.587      88297004 B   cxx   --   ---xx   flac  0.7110  bobdylan1996-11-23.lmpp.d1t08.flac
+     6:18.733     109075244 B   cxx   --   ---xx   flac  0.6956  bobdylan1996-11-23.lmpp.d1t09.flac
+     5:32.080      95639084 B   cxx   --   ---xx   flac  0.7161  bobdylan1996-11-23.lmpp.d2t01.flac
+     7:10.027     123847724 B   cxx   --   ---xx   flac  0.7081  bobdylan1996-11-23.lmpp.d2t02.flac
+     7:52.013     135939884 B   cxx   --   ---xx   flac  0.7397  bobdylan1996-11-23.lmpp.d2t03.flac
+     9:21.187     161621804 B   cxx   --   ---xx   flac  0.7228  bobdylan1996-11-23.lmpp.d2t04.flac
+     8:40.520     149909804 B   cxx   --   ---xx   flac  0.7340  bobdylan1996-11-23.lmpp.d2t05.flac
+     8:34.957     148307756 B   cxx   --   ---xx   flac  0.7250  bobdylan1996-11-23.lmpp.d2t06.flac
+   104:18.091    1802330772 B                            0.7239  (15 files)
+
+
+flac fingerprints:
+
+bobdylan1996-11-23.lmpp.d1t01.flac:508047ad3e9606809eb72530f13b9ce1
+bobdylan1996-11-23.lmpp.d1t02.flac:966ba9b5668f2eed4dea7e84ae04c197
+bobdylan1996-11-23.lmpp.d1t03.flac:08290ed0d6e1361caf88b95b52f1fd1b
+bobdylan1996-11-23.lmpp.d1t04.flac:226cf359491c6231d01ef440a58bae6c
+bobdylan1996-11-23.lmpp.d1t05.flac:131257706f6c92c00155132165af6533
+bobdylan1996-11-23.lmpp.d1t06.flac:69e4b697a6072b5510bc1602cd5d3077
+bobdylan1996-11-23.lmpp.d1t07.flac:b64b324830afb88805d770e76d497399
+bobdylan1996-11-23.lmpp.d1t08.flac:be11895abe706ffa660ea140cc90f4b3
+bobdylan1996-11-23.lmpp.d1t09.flac:c17e81b6a3d9578803a6765f43551ada
+bobdylan1996-11-23.lmpp.d2t01.flac:af6853c3be46d447a89b22028c450d75
+bobdylan1996-11-23.lmpp.d2t02.flac:8bb5812fbf83753769af47ccec3b516f
+bobdylan1996-11-23.lmpp.d2t03.flac:d1e5c1bc44b307583caaf8cd1e0ff18d
+bobdylan1996-11-23.lmpp.d2t04.flac:cb7f69a022650a30856fd52673b38e5d
+bobdylan1996-11-23.lmpp.d2t05.flac:ddc747aa94a28d0d24ccc5ac9947b96c
+bobdylan1996-11-23.lmpp.d2t06.flac:bc2e8f53db9e4e2e5dbce01d97e9e758
+
+
+md5s:
+
+a5f5e885f8d2f6b888bfdc751e7229c3 *bobdylan1996-11-23.lmpp.d1t01.flac
+c1a6f69609549f16b64d0497e74ead0a *bobdylan1996-11-23.lmpp.d1t02.flac
+a83f440284162140560be3d2b1b786d8 *bobdylan1996-11-23.lmpp.d1t03.flac
+30dde266748dcd32ed9c05e087bdf245 *bobdylan1996-11-23.lmpp.d1t04.flac
+436101f5b613af9c39b0ecdc78cd391b *bobdylan1996-11-23.lmpp.d1t05.flac
+fdaa49befd035a598693dc3345327585 *bobdylan1996-11-23.lmpp.d1t06.flac
+d71e0a8a7d7b4a9fae0b827efd64259d *bobdylan1996-11-23.lmpp.d1t07.flac
+790e0667d1bbe581dea7838a1f679364 *bobdylan1996-11-23.lmpp.d1t08.flac
+ac2b57ae85cd35aa23c906bc77d79d52 *bobdylan1996-11-23.lmpp.d1t09.flac
+664bde7655b6e2e7117661914282f612 *bobdylan1996-11-23.lmpp.d2t01.flac
+52fd5dcf1d564c9c8e3a125007632e7a *bobdylan1996-11-23.lmpp.d2t02.flac
+4c58b2ed92b4834ea324334c86cadd98 *bobdylan1996-11-23.lmpp.d2t03.flac
+7245f04f51988f823aa46b697b0dca78 *bobdylan1996-11-23.lmpp.d2t04.flac
+dc70ca80cc2483a70aeb292dfbf06552 *bobdylan1996-11-23.lmpp.d2t05.flac
+772b9785fca089bc221217d426fd3b80 *bobdylan1996-11-23.lmpp.d2t06.flac
+
+
+st5s:
+
+508047ad3e9606809eb72530f13b9ce1  [shntool]  bobdylan1996-11-23.lmpp.d1t01.flac
+966ba9b5668f2eed4dea7e84ae04c197  [shntool]  bobdylan1996-11-23.lmpp.d1t02.flac
+08290ed0d6e1361caf88b95b52f1fd1b  [shntool]  bobdylan1996-11-23.lmpp.d1t03.flac
+226cf359491c6231d01ef440a58bae6c  [shntool]  bobdylan1996-11-23.lmpp.d1t04.flac
+131257706f6c92c00155132165af6533  [shntool]  bobdylan1996-11-23.lmpp.d1t05.flac
+69e4b697a6072b5510bc1602cd5d3077  [shntool]  bobdylan1996-11-23.lmpp.d1t06.flac
+b64b324830afb88805d770e76d497399  [shntool]  bobdylan1996-11-23.lmpp.d1t07.flac
+be11895abe706ffa660ea140cc90f4b3  [shntool]  bobdylan1996-11-23.lmpp.d1t08.flac
+c17e81b6a3d9578803a6765f43551ada  [shntool]  bobdylan1996-11-23.lmpp.d1t09.flac
+af6853c3be46d447a89b22028c450d75  [shntool]  bobdylan1996-11-23.lmpp.d2t01.flac
+8bb5812fbf83753769af47ccec3b516f  [shntool]  bobdylan1996-11-23.lmpp.d2t02.flac
+d1e5c1bc44b307583caaf8cd1e0ff18d  [shntool]  bobdylan1996-11-23.lmpp.d2t03.flac
+cb7f69a022650a30856fd52673b38e5d  [shntool]  bobdylan1996-11-23.lmpp.d2t04.flac
+ddc747aa94a28d0d24ccc5ac9947b96c  [shntool]  bobdylan1996-11-23.lmpp.d2t05.flac
+bc2e8f53db9e4e2e5dbce01d97e9e758  [shntool]  bobdylan1996-11-23.lmpp.d2t06.flac

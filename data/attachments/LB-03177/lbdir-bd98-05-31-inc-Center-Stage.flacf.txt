@@ -1,0 +1,63 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-05-31-inc-Center-Stage.flacf 
+=================== 
+=================== 
+=================== 
+ffb660c6e68ef890d50326e7ac8c7e51  bd98-05-31-inc-Center-Stage-LB-3177.txt
+c4e308289e0156561c7bc13e54913d01  bdylan-CenterStage-t01.flac
+8b07155756f526eaa43f05b53b40c1c9  bdylan-CenterStage-t02.flac
+a38f609f14f1d23e6713dded4c8e86d5  bdylan-CenterStage-t03.flac
+21a4e41d89c8ff69ef7a689fd414b646  bdylan-CenterStage-t04.flac
+202826c77854fc4c7903bae08c17af71  bdylan-CenterStage-t05.flac
+33776dc824077e9fed1ad9ac1eff1775  bdylan-CenterStage-t07.flac
+bacf8b4c8268a1ec8e25c3c8e40c3dbc  bdylan-CenterStage-t08.flac
+5e8e89704cfcdb295068975f4a78b235  bdylan-CenterStage-t09.flac
+c62266734804006f491739f8eb3139c4  bdylan-CenterStage-t10.flac
+38d4d372d5082ca9af2ebbfd2ad5d66e  bdylan-CenterStage-t11.flac
+a7ff4bc7ae828c7829fe395af0af1532  bdylan-CenterStage-t12.flac
+6fe2dd1a2d0ddeb52de74cabd430833d  bdylan-CenterStage.ffp.txt
+ecb8ffec4da21a6a75babbc4a8f7ee52  bdylan-CenterStage.md5
+17a77cf71e3e5710ca6b00a2ad40800c  bdylan-CenterStage.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-05-31-inc-Center-Stage.flacf 
+=================== 
+=================== 
+=================== 
+bdylan-CenterStage-t01.flac:eb5700cb8f8c46e5907071a93928bca7
+bdylan-CenterStage-t02.flac:2bee0e92949f10a5fe2ae4a7aff7ca2b
+bdylan-CenterStage-t03.flac:2716843c1c6a64c7bd253f437481655d
+bdylan-CenterStage-t04.flac:688c39020a9becee083be5b4d1c2d822
+bdylan-CenterStage-t05.flac:785f53a0dacfad8e54ac4fba50a438d7
+bdylan-CenterStage-t07.flac:80cf92f60059607c0b30f77a05f4d7cf
+bdylan-CenterStage-t08.flac:9ae751f2205911618cc0d35ada3dee78
+bdylan-CenterStage-t09.flac:e1ce1ecd1293e858973228308dc5ec73
+bdylan-CenterStage-t10.flac:d0a10b1bd3d110bb7301a45f2b927332
+bdylan-CenterStage-t11.flac:ac0ba825d4f3721bbc8c2912a57fc681
+bdylan-CenterStage-t12.flac:baa13306e688c832fc669d4edbf1e46f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-05-31-inc-Center-Stage.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:11.20       44323484 B   ---   --   ---xx   flac  0.6221  bdylan-CenterStage-t01.flac
+     5:01.39       53188172 B   ---   --   ---xx   flac  0.5746  bdylan-CenterStage-t02.flac
+     5:21.52       56746748 B   ---   --   ---xx   flac  0.6313  bdylan-CenterStage-t03.flac
+     5:38.29       59691452 B   ---   --   ---xx   flac  0.6141  bdylan-CenterStage-t04.flac
+     7:11.07       76044908 B   ---   --   ---xx   flac  0.6634  bdylan-CenterStage-t05.flac
+     7:09.55       75805004 B   ---   --   ---xx   flac  0.6240  bdylan-CenterStage-t07.flac
+     8:12.47       86899388 B   ---   --   ---xx   flac  0.6536  bdylan-CenterStage-t08.flac
+     5:14.26       55450796 B   ---   --   ---xx   flac  0.6282  bdylan-CenterStage-t09.flac
+     6:49.50       72265244 B   ---   --   ---xx   flac  0.6216  bdylan-CenterStage-t10.flac
+     6:32.66       69304076 B   ---   --   ---xx   flac  0.5869  bdylan-CenterStage-t11.flac
+     4:19.12       45715868 B   ---   --   ---xx   flac  0.6464  bdylan-CenterStage-t12.flac
+    65:42.28      695435140 B                            0.6257  (11 files)
+=================== 
+=================== 
+=================== 

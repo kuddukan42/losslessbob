@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd73-11-Planet-Waves-Sessionology.flacf 
+=================== 
+=================== 
+=================== 
+ec35bd2926c58b939bfadf806497a16a  bd73-11-Planet-Waves-Sessionology-LB-3573.txt
+4589e16babc6b15d01fb262eeaec5a16  BobDylanPlanetWavesSessionology.md5
+0861351af4a1f566657389d40df6a4f7  DylanPlanetWavesBack.jpg
+10f47215ba620d746a975e4f4940a3c5  DylanPlanetWavesFront.jpg
+576211fdc331067f3f2ca23f431fba66  DylanPlanetWavesSessionology.txt
+c22f82efcac47f931ba7ad2a24944f16  info-1.txt
+737c9c2407d6e805b1bc713f95b5761c  info.txt
+93fcbc10fa5b45e505e0dfd40b123b3f  Track01.flac
+82f39739523eedcc82fb841a97b7e325  Track02.flac
+f8526b1ad73fdd9b3b1087860569cf0e  Track03.flac
+ec97da0cd7c4cd2249ae13a2e7777f1b  Track04.flac
+60d85844824590f93eccf394cd43984e  Track05.flac
+da8bb5c6675b8072e09efe44219b07c2  Track06.flac
+af4a05296cdd10948cf5873b58890a05  Track07.flac
+2da64aa4af4e331662e1712bd1540dc5  Track08.flac
+7dd5fc2b43941d9f0a229f07ca139f04  Track09.flac
+7493561cab1603e3054803abab66f5a2  Track10.flac
+a2ad81afd083e84a0aa8b1c404ecd4f0  Track11.flac
+62265460a456bcbd64c362d312e7ef6b  Track12.flac
+cee067300e24d0df6c29eda0fd07efde  Track13.flac
+ce47906b79f6a9f5564eae160153e561  Track14.flac
+557c00647cd03c4c4600295589e3f188  Track15.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd73-11-Planet-Waves-Sessionology.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:93cbdc20bb4739e8ff6b15fd3ac61fc6
+Track02.flac:35eece7a5a8f2bbe972d813855fb6262
+Track03.flac:d828092789980aef81cd6387ce67f636
+Track04.flac:aca23191bcf0fa536cef082002d199d0
+Track05.flac:5e35d4561cf2008f00bedff1d982d8e2
+Track06.flac:730b36a534f79de8e021b4e69077afff
+Track07.flac:381e1d3e8165e54bb50b047c9a12d553
+Track08.flac:ef43a568aee754ad63c48a63d83c8f1a
+Track09.flac:e2849f38822fe1fdba992bfcdab017f8
+Track10.flac:d3295276f902600d0199c8315c9f5763
+Track11.flac:73800695cec817aefc07e9d9b8768f97
+Track12.flac:fb7112ddf49900aa10850d42c28df5b3
+Track13.flac:7da3558da01c64349ff612ee44bb2ed0
+Track14.flac:07d83f56a79fcf2c9a7aafce28299ad6
+Track15.flac:2ef4de428a1ebbc7f9fed8eb901a729b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd73-11-Planet-Waves-Sessionology.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:01.42       21443228 B   ---   --   ---xx   flac  0.4585  Track01.flac
+     2:45.53       29229948 B   -b-   --   ---xx   flac  0.3008  Track02.flac
+     2:39.47       28158188 B   ---   --   ---xx   flac  0.5731  Track03.flac
+     1:27.15       15382124 B   ---   --   ---xx   flac  0.6227  Track04.flac
+     2:40.55       28353404 B   ---   --   ---xx   flac  0.6353  Track05.flac
+     3:25.65       36314924 B   ---   --   ---xx   flac  0.5409  Track06.flac
+     4:40.36       49476716 B   ---   --   ---xx   flac  0.6154  Track07.flac
+     2:51.73       30336140 B   ---   --   ---xx   flac  0.5760  Track08.flac
+     2:57.19       31267636 B   -b-   --   ---xx   flac  0.5698  Track09.flac
+     4:13.07       44645708 B   ---   --   ---xx   flac  0.6116  Track10.flac
+     3:13.43       34145772 B   -b-   --   ---xx   flac  0.5782  Track11.flac
+     4:52.39       51601612 B   -b-   --   ---xx   flac  0.6047  Track12.flac
+     2:37.10       27718284 B   -b-   --   ---xx   flac  0.3044  Track13.flac
+     4:25.35       46829320 B   -b-   --   ---xx   flac  0.5843  Track14.flac
+     5:30.26       58272764 B   -b-   --   ---xx   flac  0.5925  Track15.flac
+    50:22.40      533175768 B                            0.5558  (15 files)
+=================== 
+=================== 
+=================== 

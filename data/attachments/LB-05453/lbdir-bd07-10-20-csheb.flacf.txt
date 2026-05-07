@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-10-20-csheb.flacf 
+=================== 
+=================== 
+=================== 
+c49b12f2a5938a80d03e94b285a07bc1  Bob Dylan 10-20-07.txt
+fbac59d6229b29248d1d53d7d83c6932  Bob Dylan.ffp
+e821ce635d17c60fb995ebfbdad78f3e  US Cellular Colisem Bloomington Illinois Disc 1\01 Rainy Day Women #12 & 35.flac
+7a383e20f49472960e0e97fd170d6fda  US Cellular Colisem Bloomington Illinois Disc 1\02 Don't Think Twice, It's All Right.flac
+2e06d32dafdffa32a854b596d5125f5a  US Cellular Colisem Bloomington Illinois Disc 1\03 I'll Be Your Baby Tonight.flac
+66efcad2fd213adc99558e4929227ac2  US Cellular Colisem Bloomington Illinois Disc 1\04 Tangled Up In Blue.flac
+10c789908259dffc4985ae5d539e4646  US Cellular Colisem Bloomington Illinois Disc 1\05 'Til I Fell In Love With You.flac
+e327b580cc27d85a67d1310b709dfe5c  US Cellular Colisem Bloomington Illinois Disc 1\06 When The Deal Goes Down.flac
+b0f4ac61903fb77cd904623ffccf8782  US Cellular Colisem Bloomington Illinois Disc 1\07 The Levee's Gonna Break.flac
+bc8aeb8fc8fb1081f3b4d13e709646e0  US Cellular Colisem Bloomington Illinois Disc 1\08 Workingman's Blues #2.flac
+eb3ccdee59085d88a3099f03a6cef630  US Cellular Colisem Bloomington Illinois Disc 2\01 High Water (For Charlie Patton).flac
+90f0397f022a1090d25169e44aae8e4a  US Cellular Colisem Bloomington Illinois Disc 2\02 Spirit On The Water.flac
+314fa602375fd94c3318f45d3b861e92  US Cellular Colisem Bloomington Illinois Disc 2\03 Highway 61 Revisited.flac
+3d757681cbb213546e84faa4777ca103  US Cellular Colisem Bloomington Illinois Disc 2\04 Ain't Talkin'.flac
+fdd3a2bbf8d2c34e12c47527f05fb679  US Cellular Colisem Bloomington Illinois Disc 2\05 Summer Days.flac
+28d94cf7600998e451f01d94ddfcda8d  US Cellular Colisem Bloomington Illinois Disc 2\06 Masters Of War.flac
+999762c5cd4f42af9bf5ff73f89d1e9c  US Cellular Colisem Bloomington Illinois Disc 2\07 Thunder On The Mountain.flac
+39e4d03babb388a7c2c2a51ebe4037b6  US Cellular Colisem Bloomington Illinois Disc 2\08 Band Intros - All Along The Watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-10-20-csheb.flacf\US Cellular Colisem Bloomington Illinois Disc 2 
+=================== 
+=================== 
+=================== 
+01 High Water (For Charlie Patton).flac:baeb5177e53fa2210c3331aaf37a33df
+02 Spirit On The Water.flac:63685007c856c372c5041459bc082f1e
+03 Highway 61 Revisited.flac:d096690cf5a5df7530c261bd29479f81
+04 Ain't Talkin'.flac:92262babb7d50bedb17a97f4e880b147
+05 Summer Days.flac:4c2bee2222bfd9fc9c7a32e5f0d07e7b
+06 Masters Of War.flac:67c2eeb5224e5c3022e4584035cbf540
+07 Thunder On The Mountain.flac:1ca2eecff42b4c87ca256748581f2a4b
+08 Band Intros - All Along The Watchtower.flac:714b8676513befd0a73bdc35d597ef4c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-10-20-csheb.flacf\US Cellular Colisem Bloomington Illinois Disc 1 
+=================== 
+=================== 
+=================== 
+01 Rainy Day Women #12 & 35.flac:0500be85ac281dd06d2a7b58bb5b98c7
+02 Don't Think Twice, It's All Right.flac:0f12f4ee98ccc4d9f241580667cad225
+03 I'll Be Your Baby Tonight.flac:1ae8897a72846cfe244c7cf06e80ad40
+04 Tangled Up In Blue.flac:e8311c2e52fd26935216d4a60a940330
+05 'Til I Fell In Love With You.flac:7393892fc76639d262bd88a1d355673a
+06 When The Deal Goes Down.flac:e5d0ce7af21f2d17ad5d1850a529e13e
+07 The Levee's Gonna Break.flac:48b49be55c17c20f0827cefaa870c0b7
+08 Workingman's Blues #2.flac:fe6c0c4c9e75a1cffa5238e94dcce3cb
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-10-20-csheb.flacf\US Cellular Colisem Bloomington Illinois Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:26.43       68191580 B   ---   --   ---xx   flac  0.5581  01 High Water (For Charlie Patton).flac
+     6:49.28       72213500 B   ---   --   ---xx   flac  0.4715  02 Spirit On The Water.flac
+     6:46.36       71703116 B   ---   --   ---xx   flac  0.6073  03 Highway 61 Revisited.flac
+     8:06.08       85749260 B   ---   --   ---xx   flac  0.5063  04 Ain't Talkin'.flac
+     6:51.12       72528668 B   ---   --   ---xx   flac  0.5892  05 Summer Days.flac
+     8:16.44       87597932 B   ---   --   ---xx   flac  0.5293  06 Masters Of War.flac
+     5:45.60       60999164 B   ---   --   ---xx   flac  0.5916  07 Thunder On The Mountain.flac
+     7:42.72       81666188 B   ---   --   ---xx   flac  0.5593  08 Band Intros - All Along The Watchtower.flac
+    56:45.03      600649408 B                            0.5493  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-10-20-csheb.flacf\US Cellular Colisem Bloomington Illinois Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.62       61003868 B   ---   --   ---xx   flac  0.6128  01 Rainy Day Women #12 & 35.flac
+     6:12.09       65642012 B   ---   --   ---xx   flac  0.5558  02 Don't Think Twice, It's All Right.flac
+     5:55.49       62737292 B   ---   --   ---xx   flac  0.6100  03 I'll Be Your Baby Tonight.flac
+     8:58.06       94917356 B   ---   --   ---xx   flac  0.5785  04 Tangled Up In Blue.flac
+     8:27.21       89484236 B   ---   --   ---xx   flac  0.5269  05 'Til I Fell In Love With You.flac
+     6:03.59       64172012 B   ---   --   ---xx   flac  0.4393  06 When The Deal Goes Down.flac
+     6:57.24       73615292 B   ---   --   ---xx   flac  0.5707  07 The Levee's Gonna Break.flac
+     6:59.06       73925756 B   ---   --   ---xx   flac  0.5051  08 Workingman's Blues #2.flac
+    55:19.11      585497824 B                            0.5495  (8 files)
+=================== 
+=================== 
+=================== 

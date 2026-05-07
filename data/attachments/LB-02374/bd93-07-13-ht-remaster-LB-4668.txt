@@ -1,0 +1,10 @@
+Bob Dylan, 7/13/93, Cascais, Portugal, 2CDR
+
+LB-4668, (69min+73min), HT Remaster, Excellent audience recording; (additional info file: "HT Remaster (so says information in accompanying txt file), LB-2374, (69min+73min), version "a"; Sound Good AUD. A-, Lineage: CD-R> EAC (secure)> wav > FLAC frontend (level 8) > FLAC, artwork included, Very nice audience recording of this show. Good sound mix although Bob's voice comes across a bit thin in places (1993 style!); bit torrent download 01/05; same recording as previous but without the TAO but with digi-pops., NOTE #1: this one has more frequency range where previous cuts off at 16k; excellent sound [A], digi-pops d2t2 9:00, d2t5 1:26, d2t6 0:12, d2t7 4:52, d2t8 0:50, 8:46, 10:16 (not on other version); drop/static d2t8 6:25, NOTE #2: all digi-pops removed (in the remastering process)"); bittorrent download 04/07; nothing above 16k; does not have lego parapets; has lots of clipping on loud songs; close eac match to LB-1757 on d1t1 except this is not TAO like that one; (did not listen to all of this)
+
+analog drop/static d2t8 6:25
+
+CD 1, 1. Hard Times (acoustic w band), 2. Stuck Inside Of Mobile, With The Memphis Blues Again, 3. All Along The Watchtower, 4. Just Like A Woman, 5. Tangled Up In Blue, 6. She Belongs To Me, 7. Watching The River Flow, 8. Little Moses (acoustic w band), 9. Tomorrow Night (acoustic w band), CD 2, 1. Boots Of Spanish Leather (acoustic w band), 2. Mr. Tambourine Man (acoustic w band), 3. Cat's In The Well, 4. I And I, 5. Simple Twist Of Fate, 6. Maggie's Farm, 7. Man In The Long Black Coat, 8. It Ain't Me, Babe (acoustic w band)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

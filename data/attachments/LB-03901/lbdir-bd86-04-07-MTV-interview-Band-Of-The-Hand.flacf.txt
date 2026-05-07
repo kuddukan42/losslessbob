@@ -1,0 +1,31 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-04-07-MTV-interview-Band-Of-The-Hand.flacf 
+=================== 
+=================== 
+=================== 
+8e9548a567b2c255de8389a59281ac42  bd1986-04-07 MTV Band Of The Hand.flac
+516605b6b078d028f778b673bf62d79c  bd86-04-07-MTV-interview-Band-Of-The-Hand-LB-3901.txt
+8605efe0a0fad0ad71d6fb8fc25edf2f  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-04-07-MTV-interview-Band-Of-The-Hand.flacf 
+=================== 
+=================== 
+=================== 
+bd1986-04-07 MTV Band Of The Hand.flac:0f4d973736924fe26c059e2c4484b0b7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-04-07-MTV-interview-Band-Of-The-Hand.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:44.69        7923932 B   ---   --   ---xx   flac  0.5484  bd1986-04-07 MTV Band Of The Hand.flac
+     0:44.69        7923932 B                            0.5484  (1 file)
+=================== 
+=================== 
+=================== 

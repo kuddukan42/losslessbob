@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-04-28 
+=================== 
+=================== 
+=================== 
+5e9bb203d431b6c4cfafe23e499fb31b  bd1976-04-28.info.txt
+57210e6089e9479642cb5c11dfa4453b  bd1976-04-28.shns.md5
+9e354f059e6e12131e27a7ab0a61b7a8  bd1976-04-28.shntool_disklength.txt
+5f8ae1e02c5daf2c432c7fb7efef4eca  bd1976-04-28.shntool_fp.txt
+f7126c22d84af50f0a93f964c42b2a1e  bd1976-04-28.wavs.md5
+b3b21648bffeca2e65a35882762ebf16  bd1976-04-28d1t01.shn
+525d8af960315ec59bd3d9a6a385dad1  bd1976-04-28d1t02.shn
+dc1d4cbc5fcd2f74417c87b04200d5c2  bd1976-04-28d1t03.shn
+cfe54e31e500c710c5d576d5bc37a90c  bd1976-04-28d1t04.shn
+fc7716ab44f9ebb9a14ce4c08ce38760  bd1976-04-28d1t05.shn
+d05048d8d8e3ff1d47618016c3a5d88e  bd1976-04-28d1t06.shn
+01aa6eb984fa32d7553c3a38c4f437c7  bd1976-04-28d1t07.shn
+aa560b6b4b6edecbe89626071fc0d339  bd1976-04-28d1t08.shn
+3876f4e8ec02a7ea9327ef0253196413  bd1976-04-28d1t09.shn
+b53333c1cd24df4c4d44c33c3ebe7c91  bd1976-04-28d1t10.shn
+ba8dc3d0bd2ef0dd1e53a0eb89d4a1cc  bd1976-04-28d1t11.shn
+3c89d575868ba8e7b1544d6ea477331f  bd1976-04-28d1t12.shn
+cb8b9ad543b20f9f7490067db32ec5e4  bd1976-04-28d1t13.shn
+3f215d83b8181d56a4022b4b26117fd3  bd1976-04-28d2t01.shn
+bc1818395529ae86897c06d35b5ae88c  bd1976-04-28d2t02.shn
+649011c4b529cef9d9890b71f62b2a9c  bd1976-04-28d2t03.shn
+ccfb01e72af1fe00de6ae1717ba572d9  bd1976-04-28d2t04.shn
+eba2eee82c87a8d7489c5244fd92ae13  bd1976-04-28d2t05.shn
+e439b231417da8bb228eaf767260a9c5  bd1976-04-28d2t06.shn
+3c818bc6f4c9fdaa8a7296fb410b4585  bd1976-04-28d2t07.shn
+a321189e2816330b2b76aa4e8cd273e7  bd1976-04-28d2t08.shn
+30222eac62a12c4446c22bab641ed074  bd76-04-28-LB-3115.txt
+7404774ba2766b6e9122fe1536d876b4  foobar2000_wav2shn_bitcompare.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd76-04-28 
+=================== 
+=================== 
+=================== 
+e721d8ee8efef846cb80ec3ff5301dd5  [shntool]  bd1976-04-28d1t01.wav
+bb2abef85906cd0ebf34e29335315969  [shntool]  bd1976-04-28d1t02.wav
+7cbc8084784f787c9ab9c5338d5cfad2  [shntool]  bd1976-04-28d1t03.wav
+f1033a086bccb14365034fe7d6e05ab3  [shntool]  bd1976-04-28d1t04.wav
+206039d3590dc074810555ce35f92036  [shntool]  bd1976-04-28d1t05.wav
+d51c431cc60cdcbe468842fe49d1bdf6  [shntool]  bd1976-04-28d1t06.wav
+bc8a9b99fe66bb0d60a049b8a95a24d6  [shntool]  bd1976-04-28d1t07.wav
+d3c947403db104ec113f91b7f085e2b6  [shntool]  bd1976-04-28d1t08.wav
+e79849f7c96bac5522226d85038847d8  [shntool]  bd1976-04-28d1t09.wav
+d42225851e4b8265cf601114da6ece5d  [shntool]  bd1976-04-28d1t10.wav
+d3bfb8b54e01879ea8273928db6feb19  [shntool]  bd1976-04-28d1t11.wav
+2a30bf18f3b3cafc9d36439a660b6200  [shntool]  bd1976-04-28d1t12.wav
+04ca9e2ee1cd3c3e8f149d97e92f00b9  [shntool]  bd1976-04-28d1t13.wav
+e2d0ee7058aa03f1be184933c71927c7  [shntool]  bd1976-04-28d2t01.wav
+c7845d53d2facefbbbca59b088e5cef1  [shntool]  bd1976-04-28d2t02.wav
+d8c08315975c9e6b9a579a33b9e33f40  [shntool]  bd1976-04-28d2t03.wav
+cc37c9691a39f5318858affe46be510e  [shntool]  bd1976-04-28d2t04.wav
+6693e57878b3988d156cb01201db294a  [shntool]  bd1976-04-28d2t05.wav
+df384ba4e454b27dfedc4a42018c780a  [shntool]  bd1976-04-28d2t06.wav
+4c8a3b0308330e83a7607e26c08b50d0  [shntool]  bd1976-04-28d2t07.wav
+8fe4304ce692b0150d22499416b3107f  [shntool]  bd1976-04-28d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-04-28 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.47       66966188 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t01.wav
+     5:40.08       59994860 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t02.wav
+     3:14.69       34383932 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t03.wav
+     4:14.01       44807996 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t04.wav
+     4:17.67       45492428 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t05.wav
+     3:45.59       39828812 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t06.wav
+     5:48.11       61413116 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t07.wav
+     3:31.66       37375676 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t08.wav
+     2:55.35       30952364 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t09.wav
+     4:54.61       52005116 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t10.wav
+     5:34.50       59035244 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t11.wav
+     4:22.40       46310924 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t12.wav
+     9:24.29       99557852 B   ---   --   -----    wav  1.0000  bd1976-04-28d1t13.wav
+     4:18.35       45593564 B   ---   --   -----    wav  1.0000  bd1976-04-28d2t01.wav
+     4:59.32       52818908 B   ---   --   -----    wav  1.0000  bd1976-04-28d2t02.wav
+     5:41.72       60321788 B   ---   --   -----    wav  1.0000  bd1976-04-28d2t03.wav
+     5:57.64       63125372 B   ---   --   -----    wav  1.0000  bd1976-04-28d2t04.wav
+     3:36.54       38229452 B   ---   --   -----    wav  1.0000  bd1976-04-28d2t05.wav
+    11:18.43      119700380 B   ---   --   -----    wav  1.0000  bd1976-04-28d2t06.wav
+     4:39.16       49253276 B   ---   --   -----    wav  1.0000  bd1976-04-28d2t07.wav
+     2:02.30       21591404 B   ---   --   -----    wav  1.0000  bd1976-04-28d2t08.wav
+   106:38.64     1128758652 B                            1.0000  (21 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,15 @@
+73ad76ad2a2630d57477c43aefddfcff  bd87-09-30-heartbreaker-blues-d1t01.flac
+94379672b6a66a0cd1c2d5b4db3cbbb6  bd87-09-30-heartbreaker-blues-d1t02.flac
+079652ab1a7e277440c331715adb1197  bd87-09-30-heartbreaker-blues-d1t03.flac
+c309f3baae6dd04fbbaf222f168b5c9e  bd87-09-30-heartbreaker-blues-d1t04.flac
+4bab3ad18fa00be38ca301db28c235bd  bd87-09-30-heartbreaker-blues-d1t05.flac
+735ec3b6cbe2f8cc88c073b6d8ab2d94  bd87-09-30-heartbreaker-blues-d1t06.flac
+62347d1f8485efff8831b162616171f1  bd87-09-30-heartbreaker-blues-d1t07.flac
+37ba7304ad0124d90ff80cd8abcfff02  bd87-09-30-heartbreaker-blues-d1t08.flac
+9b9eac33c8646f9cec6ebcc713e3e9e3  bd87-09-30-heartbreaker-blues-d1t09.flac
+c7e7f93e8412a61978a3cf13823e4d25  bd87-09-30-heartbreaker-blues-d1t10.flac
+9b445f9d42959afcd50954b5bb4f7ea8  bd87-09-30-heartbreaker-blues-d1t11.flac
+d7a4cdcb57f4c77b9b35418dec9116ec  bd87-09-30-heartbreaker-blues-d1t12.flac
+0e0dd97174a87573e41b52080524611d  bd87-09-30-heartbreaker-blues-d1t13.flac
+fba2d43981425acfeccd5b2b73bd5503  bd87-09-30-heartbreaker-blues-d1t14.flac
+8cc43f133bba2be0d133f0eeb06672c0  bd87-09-30-heartbreaker-blues.flacf.md5

@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-09schubert-03 
+=================== 
+=================== 
+=================== 
+3082f5833b79505ce69f4cdfa3721fe1  bd00-05-09schubert.txt
+4a1bd72d32d220513b708ad8c03a19a2  disk 1\NONAME.MD5
+ab3988afaee6b4a666635012cf746e6c  disk 1\TRACK01.SHN
+a705cde8b52209ebac4812f5c95c3496  disk 1\TRACK02.SHN
+ea47e9eb59522fffca9aa76ee26f450e  disk 1\TRACK03.SHN
+b6e9f656ef3ec6a42001dd4ba9160846  disk 1\TRACK04.SHN
+1f1e864e8b624999bcd8f45dbaeff9b6  disk 1\TRACK05.SHN
+59ce568bc870f847e4e134d75279d04a  disk 1\TRACK06.SHN
+51c2a766e2486751b63ce9095f770491  disk 1\TRACK07.SHN
+8411cde2768fdde6c0dd25b83b946f53  disk 1\TRACK08.SHN
+1fc55250fcf689b6e7b207cc67d570b2  disk 1\TRACK09.SHN
+2d23c862c1f5d70cdf104f616d19de94  disk 1\TRACK10.SHN
+3da58d1e8a7059756529a3413f6751fb  disk 1\TRACK11.SHN
+d1e14f82111edc1c2788fd7e2085b75a  disk 2\NONAME.MD5
+cc3b287deb38b60d68cbfdf8c152273d  disk 2\TRACK01.SHN
+9bb4a7b5995e30f0cf8a11556310a026  disk 2\TRACK02.SHN
+61f79e1962ac8ba0df96bf74dbd1f7a5  disk 2\TRACK03.SHN
+fb3d011fb893384c0bd9880333dd757b  disk 2\TRACK04.SHN
+91f56633fd1fb4b9ae0105f7f159aaba  disk 2\TRACK05.SHN
+854c102fd3a26195e41b0342e0aa4f18  disk 2\TRACK06.SHN
+ffaa6e0c721a97ad35bf458e2168eab0  disk 2\TRACK07.SHN
+938f46135cda1e9d33ac300a5c5f352d  disk 2\TRACK08.SHN
+09f7487774fe370ff7fe1c2a835f2dc6  disk 2\TRACK09.SHN
+d85719571b6dc5873e82c9c0b5fc41ac  Infos zu Oberhausen (09_05_2000).txt
+47f47ba8788873e95f12a387d11892a2  Oberhausen_back.jpg
+7c2854c8a53998e8f26bb1edb6521aaa  Oberhausen_front.jpg
+ed01932f71322591cd3b830a9df24380  Thumbs.db
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-09schubert-03\disk 1 
+=================== 
+=================== 
+=================== 
+a3d02c6009a1e5ad8b8da4055e1f0d3c  [shntool]  TRACK01.wav
+92b92971d6ddd46b41d63bae3da05cb1  [shntool]  TRACK02.wav
+40a9792f91ff071a429f85538db8b98a  [shntool]  TRACK03.wav
+2872ff14d55ed2fbdb191ab8e4515a55  [shntool]  TRACK04.wav
+482da0f30c78f099389adac3448d0e1d  [shntool]  TRACK05.wav
+89aa881af1c562c3df43bee6eace2817  [shntool]  TRACK06.wav
+24a28632e0973e085e5d0d65f94eeefd  [shntool]  TRACK07.wav
+90b40ef494e9fb6f8ceafa800556bd2d  [shntool]  TRACK08.wav
+bb9c6ec433c8d87f6f491c839cf367d8  [shntool]  TRACK09.wav
+70a599bbc2d8b38c979862452b93fd1c  [shntool]  TRACK10.wav
+8a5b4e926fa0611b486882b75b754253  [shntool]  TRACK11.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-05-09schubert-03\disk 2 
+=================== 
+=================== 
+=================== 
+5b3b7e59a99a3c818f5d7c36942ab798  [shntool]  TRACK01.wav
+71c567c15691bf2f2e4621c2b2e02bd7  [shntool]  TRACK02.wav
+096a25682ba53da2ced25f9520dab6aa  [shntool]  TRACK03.wav
+89180c7252c92d40b163dafc2ebcaae3  [shntool]  TRACK04.wav
+41f79805387280eb1cb79cae03546189  [shntool]  TRACK05.wav
+cafc6562bd267d7e122f985fc08513d0  [shntool]  TRACK06.wav
+ed6793024f95bae960faae87b4f4c3c3  [shntool]  TRACK07.wav
+0277f24f03b311d6d5763ddea09c55bd  [shntool]  TRACK08.wav
+8e7879bda7abbf6e5a5a62280ced58f0  [shntool]  TRACK09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-09schubert-03\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:24.65        4386524 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     3:37.15       38314124 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     6:12.19       65665532 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     5:25.26       57391196 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     7:22.61       78112316 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     7:45.18       82068380 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     6:00.61       63647516 B   ---   --   -----    wav  1.0000  TRACK07.wav
+     2:38.74       28045292 B   ---   --   -----    wav  1.0000  TRACK08.wav
+     4:54.01       51863996 B   ---   --   -----    wav  1.0000  TRACK09.wav
+     4:34.20       48380684 B   ---   --   -----    wav  1.0000  TRACK10.wav
+     7:40.51       81263996 B   ---   --   -----    wav  1.0000  TRACK11.wav
+    56:36.36      599139556 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-09schubert-03\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.58       66992060 B   ---   --   -----    wav  1.0000  TRACK01.wav
+     6:35.67       69835628 B   ---   --   -----    wav  1.0000  TRACK02.wav
+     8:06.50       85848044 B   ---   --   -----    wav  1.0000  TRACK03.wav
+     5:42.60       60469964 B   ---   --   -----    wav  1.0000  TRACK04.wav
+     7:41.59       81459212 B   ---   --   -----    wav  1.0000  TRACK05.wav
+     7:28.09       79048412 B   ---   --   -----    wav  1.0000  TRACK06.wav
+     4:24.01       46571996 B   ---   --   -----    wav  1.0000  TRACK07.wav
+     5:04.19       53670332 B   ---   --   -----    wav  1.0000  TRACK08.wav
+     5:42.36       60413516 B   ---   --   -----    wav  1.0000  TRACK09.wav
+    57:05.59      604309164 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 

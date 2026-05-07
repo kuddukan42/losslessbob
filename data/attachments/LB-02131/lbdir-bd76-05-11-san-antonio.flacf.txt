@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-11-san-antonio.flacf 
+=================== 
+=================== 
+=================== 
+b196cdcb06cebc60d047c888274d48c6  01 Spanish Is The Loving Tongue.flac
+d77bb4c65d87077a985a5bc20df8d38b  02 Maggie's Farm.flac
+413d9c75ee912522194cacb63e644029  03 Mozambique.flac
+c3b6d50b964ac612203381a0a4f0230f  04 Isis.flac
+baf76ef89643cb9c7a5d5850653a9e43  05 Blowin' In The Wind.flac
+63e1ea89063a595823a16f837a801e60  06 Railroad Boy.flac
+b158da5a24739e345bc40a95436a30cc  07 Deportees (Plane Wreck At Los Gatos).flac
+b4975fb7856dbdb6d1d2f7cb9fba3d1c  08 I Pity The Poor Immigrant.flac
+3b889887d0479e3fa3aeb761d1d1d320  09 Shelter From The Storm.flac
+3c1d6407ce83f3bb0cfa4a523b6bbf6b  10 Romance In Durango.flac
+384d61d4c407658d0c564c5522a87d51  11 I Want You.flac
+7f7ebb0777d206a3ce468ae6025cbcd5  12 You're A Big Girl Now.flac
+1d44c72ec936b9c67e62e6ccc2ab34c0  13 You're Gonna Make Me Lonesome When You Go.flac
+e44293e7adda0f0a9015cada249630ec  14 Oh, Sister.flac
+6751599a5abd9eb4e0f9c33023949cef  15 Lay Lady Lay.flac
+65ac6d9086dfb1c9b214fb8b2c7225f3  16 Going, Going, Gone.flac
+bf1b1e6507f36ed5e0628a0003da4092  17 Idiot Wind.flac
+a40996aca071915a41c9fe05f238a68f  18 Knockin' On Heaven's Door.flac
+56f2df616e06341a33b74fbfac154743  19 Gotta Travel On.flac
+56c9ef04ff09a5505766826a2a4f6392  bd&rtr_san_antonio_1976.md5
+f9b5e8261d32df37d63bcd9e8ba05a40  bd&rtr_san_antonio_1976.txt
+6f513c4d704a0c4b578704ecb12a1af9  bd76-05-11.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-11-san-antonio.flacf 
+=================== 
+=================== 
+=================== 
+01 Spanish Is The Loving Tongue.flac:3e32b8d62f07ef3743842523e66517b5
+02 Maggie's Farm.flac:654ddcd282baac8e2c19300a1308bfa8
+03 Mozambique.flac:d0b623fbeca2a88dec352612f3f7cf27
+04 Isis.flac:bbab9029253a76ec1763b73a10d8cc05
+05 Blowin' In The Wind.flac:c93588fe13ab77c6aadcc4d38242d23c
+06 Railroad Boy.flac:36b778f8394871868df004cb8c50ff5e
+07 Deportees (Plane Wreck At Los Gatos).flac:9a49b641b23850f7deaa01a2000ed2b5
+08 I Pity The Poor Immigrant.flac:a0c2772b62dd1a3ace9d9627c6df5b18
+09 Shelter From The Storm.flac:c5b7694ac304fa2ae608cf3bdebd5e8d
+10 Romance In Durango.flac:96b92aee4f747fde42785fab38fd3daf
+11 I Want You.flac:a9bc4c37a1fce727da7b7909d1451e42
+12 You're A Big Girl Now.flac:cc66c895811ab5720969d275a901da96
+13 You're Gonna Make Me Lonesome When You Go.flac:d0dfc16f4813caf7c7e6682b59b98fbb
+14 Oh, Sister.flac:de56e5649d8cfcfcbf05099d5353cc39
+15 Lay Lady Lay.flac:73bd36c9ce3562cee973835f3dc99446
+16 Going, Going, Gone.flac:6106de62412fef79f9fc10be20f60eec
+17 Idiot Wind.flac:711771dc7f7fae80ae86092bbf9954a9
+18 Knockin' On Heaven's Door.flac:3622620b35d804fd0acbadca551e08c5
+19 Gotta Travel On.flac:99fae4769594c48fc10bb38a066cf70e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-11-san-antonio.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.74       52035692 B   ---   --   ---xx   flac  0.5129  01 Spanish Is The Loving Tongue.flac
+     4:43.21       49970636 B   ---   --   ---xx   flac  0.5365  02 Maggie's Farm.flac
+     4:02.38       42778220 B   ---   --   ---xx   flac  0.5447  03 Mozambique.flac
+     3:07.66       33142076 B   ---   --   ---xx   flac  0.5277  04 Isis.flac
+     3:21.02       35461148 B   ---   --   ---xx   flac  0.5721  05 Blowin' In The Wind.flac
+     2:25.15       25613324 B   ---   --   ---xx   flac  0.5687  06 Railroad Boy.flac
+     3:49.34       40475612 B   ---   --   ---xx   flac  0.5502  07 Deportees (Plane Wreck At Los Gatos).flac
+     4:15.36       45066716 B   ---   --   ---xx   flac  0.5697  08 I Pity The Poor Immigrant.flac
+     6:05.64       64536572 B   ---   --   ---xx   flac  0.5438  09 Shelter From The Storm.flac
+     5:24.62       57299468 B   ---   --   ---xx   flac  0.5409  10 Romance In Durango.flac
+     4:02.74       42862892 B   ---   --   ---xx   flac  0.5621  11 I Want You.flac
+     6:53.49       72968492 B   ---   --   ---xx   flac  0.5230  12 You're A Big Girl Now.flac
+     3:33.69       37735532 B   ---   --   ---xx   flac  0.5445  13 You're Gonna Make Me Lonesome When You Go.flac
+     4:53.12       51713468 B   ---   --   ---xx   flac  0.5635  14 Oh, Sister.flac
+     4:26.23       46976540 B   ---   --   ---xx   flac  0.5663  15 Lay Lady Lay.flac
+     5:34.07       58934108 B   ---   --   ---xx   flac  0.5561  16 Going, Going, Gone.flac
+    10:41.03      113079500 B   ---   --   ---xx   flac  0.5610  17 Idiot Wind.flac
+     4:08.12       43775468 B   ---   --   ---xx   flac  0.5562  18 Knockin' On Heaven's Door.flac
+     6:17.34       66582812 B   ---   --   ---xx   flac  0.5846  19 Gotta Travel On.flac
+    92:41.20      981008276 B                            0.5517  (19 files)
+=================== 
+=================== 
+=================== 

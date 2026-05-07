@@ -1,0 +1,80 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-08zimmy21.shnf 
+=================== 
+=================== 
+=================== 
+11a5b14953dec204c4c1b1188907836b  bd03-08-11.txt2.txt
+0f0b950536901fe91bfc526bc8dcdae8  bd03-11-08.md5
+3dd90fc3667f65689e3cc1969eb1f748  bd03-11-08d1t01.shn
+5ff3965eb6019c55bbe7d51406e5c69a  bd03-11-08d1t02.shn
+1286d0cf67b23acf4134a1ec85c221c7  bd03-11-08d1t03.shn
+85d0cfdf0f786e07c479433e95b7e119  bd03-11-08d1t04.shn
+4c5c242e089303e495739000308a3300  bd03-11-08d1t05.shn
+1658cb87fc41a1122b0447fee1a64aaf  bd03-11-08d1t06.shn
+41becce059d0c7a882a702e7b4e1179f  bd03-11-08d1t07.shn
+6908026a1830cc02a37a0a9eba679c13  bd03-11-08d1t08.shn
+797c1a8106d5472da8a5d6d877672d3f  bd03-11-08d1t09.shn
+fd786d3a60e600d7d720b46463078375  bd03-11-08d1t10.shn
+edaffb0d5055cfdd60a59595ccb8b0c7  bd03-11-08d1t11.shn
+bfa94808fb9b4a94e9e0e93be8010ad1  bd03-11-08d1t12.shn
+0e1c12e355b50722f889eab43a103b1c  bd03-11-08d2t01.shn
+8145c0fbbcbbfb2ac0b77e4cbdeca585  bd03-11-08d2t02.shn
+4ccefa69cdb5e6d19af64af1eac75bb7  bd03-11-08d2t03.shn
+9a92953441596eb636ac3fef76536bd5  bd03-11-08d2t04.shn
+30158df1f6d5259a94d606d26f4dab3c  bd03-11-08d2t05.shn
+24301c991b05cdc9c75d7822093acb4a  bd03-11-08zimmy21.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-08zimmy21.shnf 
+=================== 
+=================== 
+=================== 
+0ef75ffdd91e37e1d429abd2bd032331  [shntool]  bd03-11-08d1t01.wav
+f893ef603436d221277b73fc8445fddf  [shntool]  bd03-11-08d1t02.wav
+3fdc673a1335c4efbc8a1ae153d2c25a  [shntool]  bd03-11-08d1t03.wav
+5d86fe09b11bfc7fa0109d09f16d4a32  [shntool]  bd03-11-08d1t04.wav
+1af3e01d48b57545288cf029187f4186  [shntool]  bd03-11-08d1t05.wav
+29a3f0ed614beb252a3a78f630292dc2  [shntool]  bd03-11-08d1t06.wav
+3b0a62c8c585464fffc4a805aa6a1b72  [shntool]  bd03-11-08d1t07.wav
+e9567f077ee4275f661d45588b8e9b36  [shntool]  bd03-11-08d1t08.wav
+1a96373c3cacae10939829c15901339e  [shntool]  bd03-11-08d1t09.wav
+7d859857da07005c01078ea9672b4456  [shntool]  bd03-11-08d1t10.wav
+7ef20887c7434545e080bb53321de18d  [shntool]  bd03-11-08d1t11.wav
+50e4495b0b27d85ee36cd89fe37d404e  [shntool]  bd03-11-08d1t12.wav
+e324fb62a37f897c037e7b5aa821640d  [shntool]  bd03-11-08d2t01.wav
+f3e0d9e28d35e13b52f44234cfb39d51  [shntool]  bd03-11-08d2t02.wav
+2c5cb9342f901dca56241b878bf021cc  [shntool]  bd03-11-08d2t03.wav
+f226759f39aabcbc8994cc77761a6351  [shntool]  bd03-11-08d2t04.wav
+c4da7e531edf40a03506c5f82ee649bb  [shntool]  bd03-11-08d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-08zimmy21.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.59       72815612 B   ---   --   -----    wav  1.0000  bd03-11-08d1t01.wav
+     5:57.30       63045404 B   ---   --   -----    wav  1.0000  bd03-11-08d1t02.wav
+     5:32.37       58651868 B   ---   --   -----    wav  1.0000  bd03-11-08d1t03.wav
+     6:55.16       73243676 B   ---   --   -----    wav  1.0000  bd03-11-08d1t04.wav
+     7:54.69       83775932 B   ---   --   -----    wav  1.0000  bd03-11-08d1t05.wav
+     4:38.73       49210940 B   ---   --   -----    wav  1.0000  bd03-11-08d1t06.wav
+     6:16.23       66380540 B   ---   --   -----    wav  1.0000  bd03-11-08d1t07.wav
+     5:59.05       63339404 B   ---   --   -----    wav  1.0000  bd03-11-08d1t08.wav
+     6:45.41       71538476 B   ---   --   -----    wav  1.0000  bd03-11-08d1t09.wav
+     7:15.64       76884572 B   ---   --   -----    wav  1.0000  bd03-11-08d1t10.wav
+     7:01.63       74412620 B   ---   --   -----    wav  1.0000  bd03-11-08d1t11.wav
+     6:39.30       70454204 B   ---   --   -----    wav  1.0000  bd03-11-08d1t12.wav
+     8:12.71       86955836 B   ---   --   -----    wav  1.0000  bd03-11-08d2t01.wav
+     5:33.22       58792988 B   ---   --   -----    wav  1.0000  bd03-11-08d2t02.wav
+     7:17.47       77197388 B   ---   --   -----    wav  1.0000  bd03-11-08d2t03.wav
+     7:16.09       76931612 B   ---   --   -----    wav  1.0000  bd03-11-08d2t04.wav
+     8:30.19       90008732 B   ---   --   -----    wav  1.0000  bd03-11-08d2t05.wav
+   114:40.03     1213639804 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

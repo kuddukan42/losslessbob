@@ -1,0 +1,37 @@
+===================
+===================
+===================
+=== md5 for: bd75-07-03-jtt.flacf
+===================
+===================
+===================
+c68771e77c4aefb804662d5873734dd0 *BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 01.flac
+585962dc9161e2ad750f852efbc40421 *BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 02.flac
+854f06d8f5aecaf7187827ba69e50c9f *BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 03.flac
+e7400d589e450878a18e37400d0163b0 *BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End, New York July 3rd 1975.ffp
+0e682d273585133a663b7962e6bbc571 *BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End, New York July 3rd 1975_Info.txt
+===================
+===================
+===================
+=== ffp for: bd75-07-03-jtt.flacf
+===================
+===================
+===================
+BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 01.flac:faa6fe183700f23e8ca5a9b0a664f080
+BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 02.flac:e593a9324c84b07e3d8a0795ff973ed7
+BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 03.flac:0d75caa9ab42c5360e9caccef84f6b59
+===================
+===================
+===================
+=== shntool len for: bd75-07-03-jtt.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:54.46       41385836 B   ---   --   ---xx   flac  0.5354  BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 01.flac
+     3:21.55       35585804 B   ---   --   ---xx   flac  0.5233  BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 02.flac
+     4:20.66       46019276 B   ---   --   ---xx   flac  0.5402  BOB DYLAN & RAMBLIN' JACK ELLIOTT - The Other End July 3rd 1975_Track 03.flac
+    11:37.17      122990916 B                            0.5337  (3 files)
+===================
+===================
+===================

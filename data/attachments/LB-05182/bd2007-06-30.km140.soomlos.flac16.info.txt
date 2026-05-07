@@ -1,0 +1,64 @@
+Bob Dylan
+Bethel Woods Center For The Arts
+Bethel, New York
+June 30, 2007
+
+Disc 1: 
+01. introduction [00:55]
+02. Leopard-Skin Pill-Box Hat [04:57]
+03. The Times They Are A-Changin' [05:44]
+04. I'll Be Your Baby Tonight [05:23]
+05. It's Alright, Ma (I'm Only Bleeding) [07:08]
+06. Just Like A Woman [07:43]
+07. The Levee's Gonna Break [07:08]
+08. The Lonesome Death Of Hattie Carroll [07:09]
+09. High Water (For Charlie Patton) [05:41]
+10. Spirit On The Water [06:52]
+11. Tangled Up In Blue [07:36]
+12. Blind Willie McTell [06:58] 
+Total time: [73:23]
+
+Disc 2:
+01. I Don't Believe You (She Acts Like We Never Have Met) [06:57]
+02. When The Deal Goes Down [06:21]
+03. Highway 61 Revisited [05:40]
+04. Blowin' In The Wind [07:20]
+    (encore) 
+05. Thunder On The Mountain [05:55]
+06. band introduction [1:00]
+07. All Along The Watchtower [06:20]
+total time: [39:38]
+
+Band Members
+Bob Dylan - vocals, guitar, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, banjo, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+source: soomlos
+4th row in front of stage left pa
+neumann km140's > lunatec v3 > m-audio mt24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+FLAC Fingerprint
+bd2007-06-30d1t01.flac:c3ea98b3c44cd48bd679c3e5637a40f5
+bd2007-06-30d1t02.flac:7cd0dcac94fdc7d2f33134d8b3f1d7d4
+bd2007-06-30d1t03.flac:f15928ced58acb6c298df604cfb56b65
+bd2007-06-30d1t04.flac:edaba6438d43b0985cc84154354658b7
+bd2007-06-30d1t05.flac:e9ff777235fe5c5cab9593a72b0cc92d
+bd2007-06-30d1t06.flac:1f0eeb916481865c3357b926d79ee1a3
+bd2007-06-30d1t07.flac:029bdc8106885cfc5ad5764e9b1fd0ce
+bd2007-06-30d1t08.flac:01ea1901785f9e15b00325957586363a
+bd2007-06-30d1t09.flac:788ecc1003b36b70cc1e3ecbfc1cca72
+bd2007-06-30d1t10.flac:45fb6fbc4bcd42827e6569f2e4b4b174
+bd2007-06-30d1t11.flac:8c70dbdae022c616b1c41e99a7eba06f
+bd2007-06-30d1t12.flac:ab923ffe2d59799057044796ff7bfd39
+bd2007-06-30d2t01.flac:aae0eb5db38a64dcbcea0e2f357bcf8e
+bd2007-06-30d2t02.flac:ddd6585f26546bd64107e6ce1b05348a
+bd2007-06-30d2t03.flac:c33387f4ca3d011ae27226433bbd08de
+bd2007-06-30d2t04.flac:b1a3476ddf3a9977fa4c002aeedd3018
+bd2007-06-30d2t05.flac:809b0bc7b9fbc85e6f86e08e74f9e20b
+bd2007-06-30d2t06.flac:8ec945c9d0b78476600cce7868fee6eb
+bd2007-06-30d2t07.flac:6cd0c158209e886e74e7fd8971267d9b

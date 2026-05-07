@@ -1,0 +1,215 @@
+===================
+===================
+===================
+=== Bob Dylan1989-08-26.md5
+===================
+===================
+===================
+a404dd09828b2762f35c093a66eab87e *1989-08-26d1t01-padded.shn
+7c521b341920005fbd4f824bcc8595e4 *1989-08-26d1t02.shn
+d9de64a0610d5a2bc2a0e20b5abb06a0 *1989-08-26d1t03.shn
+9f01954ee42754acd8aea260bef366e2 *1989-08-26d1t04-padded.shn
+68f63f6a999604e629bbd040d69814df *1989-08-26d1t05.shn
+4d95ca2474e597875ede55cc4b40e540 *1989-08-26d1t06.shn
+562421aaade2f250c2354de871ffeca6 *1989-08-26d1t07.shn
+964cbf7f26fbd8f3bffe1fdb9f0f986c *1989-08-26d1t08-padded.shn
+5ed53ec71296e97ab1b0c2f43b06fefa *1989-08-26d1t09-padded.shn
+97752fc0cb445b0643999c51cb4c3560 *1989-08-26d1t10.shn
+254ca1dffde285e000a634d97339f384 *1989-08-26d1t11.shn
+7068da7c5af9e45e0c6e7e881f92a31e *1989-08-26d1t12.shn
+ff50dd39554dbf2774a824b8c9aa3d98 *1989-08-26d1t13-padded.shn
+c23e098a6176ecf48094d4a78df5e482 *1989-08-26d2t01-padded.shn
+82618fb86bf45337d01f1e52d6d8b26f *1989-08-26d2t02-padded.shn
+990bacddce75a31ee9ad078c16d61e06 *1989-08-26d2t03.shn
+b24cbc09776d7beca1cfec55fb96c046 *1989-08-26d2t04-padded.shn
+9affcdfcb49dcf7fd0cdb663e7ca7ae5 *1989-08-26d2t05-padded.shn
+50c53380232ee731918c6a0312c50628 *1989-08-26d2t06.shn
+ca03963d37986ca0ab90e861e9ff9b88 *1989-08-26d2t07.shn
+b186ed6ffb6a2d5b564dec3581e69618 *1989-08-26d2t08.shn
+403e9e66df9257242d37c9c732ce6a64 *1989-08-26d2t09.shn
+151a2edfe47dde8dcd447a960d7bf1ab *1989-08-26d2t10-stripped.shn
+5e14333eae1301712c6b926f0020890c *1989-08-26d2t11-stripped-padded.shn
+2a50bf7490611c683d66ef3f7a1c7240 *1989-08-26d2t12-stripped-padded.shn
+===================
+===================
+===================
+=== setlist.txt
+===================
+===================
+===================
+There are three LB numbers assigned to the Houston date:  LB-1430, LB-5845 (Legendary Taper C), & LB-9795 ("legendary taper who has an inital L"). jokerman.org speculates that the first 2 are from the same source, save that LB-5845 lacks the patch at the onset of the show, and & LB-9795 is from another. 
+
+Comparing the 2 sources, jokerman.org suggests that "in comparison [the others have] a fuller warmer sound and [LB-9795] has more hiss but also more upfront sounding vocals."  
+
+dolphinsmile posted LB-9795 in Dec. '11 and it has since fallen off the tracker.  I don't see that LB-1430 (or LB-5845) have been posted here since the EZT days.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CONTRAST CLAUSE:
+
+Bob Dylan - 1989 tour compilation - Legend In My Time
+
+http://www.dimeadozen.org/torrents-details.php?id=550383
+
+This compilation posted one song from the Houston date among its 99:  
+
+82. More And More (Webb Pierce/Merle Kilgore)   
+
+There was no information about its source.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+So I am posting LB-1430 because it is more complete (it has the patch on the first tune).  But LB-1430 was a bit of a mess, with SBEs and extra RIFF chunks.  I fixed those (ref. shntool_len_original.txt, shntool_len_fixed).txt).  I converted the fixed files back to SHN and created a new md5 file.  No audio was altered otherwise.  Nothing has been released commercially. 
+
+The filler is substantial, adding up to the first half (52 minutes) of the Detroit show.  But I don't see any LB number consistent with the timings presented.  There was no source data reported as well.     
+
+Bob Dylan
+The Summit 
+Houston, Texas  USA
+August 26, 1989
+
+Source:  Unknown audience recording.  "(71 min. + 75 min.), good to very good sound; a little background talking d1t6, d1t7,  first 18 seconds of d1t1 look like from a different source and patched in with a discontinity; after that there is a light tv band."
+
+My part:  
+
+SHN > TLH (convert to WAV, shntool, fixes) > WAV > TLH (shntool, convert to SHN, generate new md5 file) > SHN. 
+
+Fixed LB-1430
+
+CD 1:
+01. E-Thang
+02. Positively 4th Street
+03. Masters Of War
+04. I Want You
+05. Ballad Of A Thin Man
+06. I'll Be Your Baby Tonight
+07. Love Minus Zero/No Limit
+08. Boots Of Spanish Leather
+09. Barbara Allen
+10. Mr. Tambourine Man
+11. More And More* 
+12. Leopard-Skin Pill-Box Hat*
+13. I Shall Be Released*
+
+CD 2:
+01. Like A Rolling Stone*
+02. Don't Think Twice, It's All Right
+03. Knockin' On Heaven's Door
+04. All Along The Watchtower
+
+Filler:  St. Andrew's Hall, Detroit, Michigan, July 6, 1999:
+05. Cocaine Blues
+06. Mama, You Been On My Mind
+07. A Hard Rain's A-Gonna Fall
+08. Love Minus Zero/No Limit
+09. Tangled Up In Blue
+10. Girl Of The North Country
+11. Silvio
+12. Man In The Long Black Coat
+
+Total time = 144:24
+
+Personnel (Houston):
+Bob Dylan - vocal, guitar, & harmonica
+G. E. Smith - guitar
+Tony Garnier - bass
+Christopher Parker - drums
+* with Bucky Baxter - pedal steel guitar
+
+Personel (Detroit):  
+Bob Dylan - vocal, guitar, & harmonica
+Charlie Sexton - guitar, backup vocal
+Larry Campbell - guitar, fiddle, mandolin, pedal steel guitar, electric slide guitar, & backup vocal 
+Tony Garnier - bass
+David Kemper - drums & percussion
+
+original:
+b62552d5e7b7d8787112f2b1047905f1 *1989-08-26d1t01.shn
+7c521b341920005fbd4f824bcc8595e4 *1989-08-26d1t02.shn
+d9de64a0610d5a2bc2a0e20b5abb06a0 *1989-08-26d1t03.shn
+76be6be6d698a1263c05b30e4a0ed5e2 *1989-08-26d1t04.shn
+68f63f6a999604e629bbd040d69814df *1989-08-26d1t05.shn
+4d95ca2474e597875ede55cc4b40e540 *1989-08-26d1t06.shn
+562421aaade2f250c2354de871ffeca6 *1989-08-26d1t07.shn
+b53d4e1b8b55d6a336bcae7c28ace3c0 *1989-08-26d1t08.shn
+33a667e7b854b8b3205d627f713ea812 *1989-08-26d1t09.shn
+97752fc0cb445b0643999c51cb4c3560 *1989-08-26d1t10.shn
+254ca1dffde285e000a634d97339f384 *1989-08-26d1t11.shn
+7068da7c5af9e45e0c6e7e881f92a31e *1989-08-26d1t12.shn
+d39f6a78a345bd0957a68053da0effea *1989-08-26d1t13.shn
+3f88ff67aa2ded46f284de1ce851bf67 *1989-08-26d2t01.shn
+81d9fde42f3555adbb64cc3c77d47c63 *1989-08-26d2t02.shn
+990bacddce75a31ee9ad078c16d61e06 *1989-08-26d2t03.shn
+36e7b63f5a2a1d1cab5cb91b55fd7d69 *1989-08-26d2t04.shn
+a550946e5094dc5d4c3db8d3534294d0 *1989-08-26d2t05.shn
+50c53380232ee731918c6a0312c50628 *1989-08-26d2t06.shn
+ca03963d37986ca0ab90e861e9ff9b88 *1989-08-26d2t07.shn
+b186ed6ffb6a2d5b564dec3581e69618 *1989-08-26d2t08.shn
+403e9e66df9257242d37c9c732ce6a64 *1989-08-26d2t09.shn
+7ac16180981be62870745bb581d41b6e *1989-08-26d2t10.shn
+6da52187249fd218bf33cc109d8eea9e *1989-08-26d2t11.shn
+5b20e2ccb028ffd740c32caa385d54ed *1989-08-26d2t12.shn
+
+fixed:
+a404dd09828b2762f35c093a66eab87e *1989-08-26d1t01-padded.shn
+7c521b341920005fbd4f824bcc8595e4 *1989-08-26d1t02.shn
+d9de64a0610d5a2bc2a0e20b5abb06a0 *1989-08-26d1t03.shn
+9f01954ee42754acd8aea260bef366e2 *1989-08-26d1t04-padded.shn
+68f63f6a999604e629bbd040d69814df *1989-08-26d1t05.shn
+4d95ca2474e597875ede55cc4b40e540 *1989-08-26d1t06.shn
+562421aaade2f250c2354de871ffeca6 *1989-08-26d1t07.shn
+964cbf7f26fbd8f3bffe1fdb9f0f986c *1989-08-26d1t08-padded.shn
+5ed53ec71296e97ab1b0c2f43b06fefa *1989-08-26d1t09-padded.shn
+97752fc0cb445b0643999c51cb4c3560 *1989-08-26d1t10.shn
+254ca1dffde285e000a634d97339f384 *1989-08-26d1t11.shn
+7068da7c5af9e45e0c6e7e881f92a31e *1989-08-26d1t12.shn
+ff50dd39554dbf2774a824b8c9aa3d98 *1989-08-26d1t13-padded.shn
+c23e098a6176ecf48094d4a78df5e482 *1989-08-26d2t01-padded.shn
+82618fb86bf45337d01f1e52d6d8b26f *1989-08-26d2t02-padded.shn
+990bacddce75a31ee9ad078c16d61e06 *1989-08-26d2t03.shn
+b24cbc09776d7beca1cfec55fb96c046 *1989-08-26d2t04-padded.shn
+9affcdfcb49dcf7fd0cdb663e7ca7ae5 *1989-08-26d2t05-padded.shn
+50c53380232ee731918c6a0312c50628 *1989-08-26d2t06.shn
+ca03963d37986ca0ab90e861e9ff9b88 *1989-08-26d2t07.shn
+b186ed6ffb6a2d5b564dec3581e69618 *1989-08-26d2t08.shn
+403e9e66df9257242d37c9c732ce6a64 *1989-08-26d2t09.shn
+151a2edfe47dde8dcd447a960d7bf1ab *1989-08-26d2t10-stripped.shn
+5e14333eae1301712c6b926f0020890c *1989-08-26d2t11-stripped-padded.shn
+2a50bf7490611c683d66ef3f7a1c7240 *1989-08-26d2t12-stripped-padded.shn
+===================
+===================
+===================
+=== shntool_len_fixed.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:19.02       35108348 B   ---   --   -----    wav  1.0000  1989-08-26d1t01-padded.wav
+     6:34.14       69534572 B   ---   --   -----    wav  1.0000  1989-08-26d1t02.wav
+     4:35.14       48542972 B   ---   --   -----    wav  1.0000  1989-08-26d1t03.wav
+     6:17.07       66519308 B   ---   --   -----    wav  1.0000  1989-08-26d1t04-padded.wav
+     6:12.72       65790188 B   ---   --   -----    wav  1.0000  1989-08-26d1t05.wav
+     7:02.72       74610188 B   ---   --   -----    wav  1.0000  1989-08-26d1t06.wav
+     4:49.42       51078428 B   ---   --   -----    wav  1.0000  1989-08-26d1t07.wav
+     5:53.30       62339804 B   ---   --   -----    wav  1.0000  1989-08-26d1t08-padded.wav
+     4:43.69       50083532 B   ---   --   -----    wav  1.0000  1989-08-26d1t09-padded.wav
+     7:48.74       82729292 B   ---   --   -----    wav  1.0000  1989-08-26d1t10.wav
+     4:37.55       48992204 B   ---   --   -----    wav  1.0000  1989-08-26d1t11.wav
+     4:09.56       44055356 B   ---   --   -----    wav  1.0000  1989-08-26d1t12.wav
+     4:14.25       44864444 B   ---   --   -----    wav  1.0000  1989-08-26d1t13-padded.wav
+     6:47.36       71879516 B   ---   --   -----    wav  1.0000  1989-08-26d2t01-padded.wav
+     5:20.73       56619740 B   ---   --   -----    wav  1.0000  1989-08-26d2t02-padded.wav
+     5:53.39       62360972 B   ---   --   -----    wav  1.0000  1989-08-26d2t03.wav
+     3:25.33       36239660 B   ---   --   -----    wav  1.0000  1989-08-26d2t04-padded.wav
+     4:28.02       47279948 B   ---   --   -----    wav  1.0000  1989-08-26d2t05-padded.wav
+     4:53.16       51722876 B   ---   --   -----    wav  1.0000  1989-08-26d2t06.wav
+    10:01.63      106164620 B   ---   --   -----    wav  1.0000  1989-08-26d2t07.wav
+     6:16.24       66382892 B   ---   --   -----    wav  1.0000  1989-08-26d2t08.wav
+     8:15.62       87463868 B   ---   --   -----    wav  1.0000  1989-08-26d2t09.wav
+     6:07.34       64818812 B   ---   --   -----    wav  1.0000  1989-08-26d2t10-stripped.wav
+     6:22.69       67547132 B   ---   --   -----    wav  1.0000  1989-08-26d2t11-stripped-padded.wav
+     6:12.54       65747852 B   ---   --   -----    wav  1.0000  1989-08-26d2t12-stripped-padded.wav
+   144:24.62     1528476524 B                            1.0000  (25 files)
+===================
+===================
+===================

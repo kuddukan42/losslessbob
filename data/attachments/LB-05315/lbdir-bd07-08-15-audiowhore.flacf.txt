@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-08-15-audiowhore.flacf 
+=================== 
+=================== 
+=================== 
+559c863e6c409a687e073f936595c216  BOB DYLAN - Sydney, Australia - 15 August 2007.ffp
+5574a2e3fb91d1470a77b50032887452  BOB Sydney 070815 d1t01.flac
+1bf24c100b205ad0f8f16f4bff4699c4  BOB Sydney 070815 d1t02.flac
+110adae4cf0343efb5f559e22a586285  BOB Sydney 070815 d1t03.flac
+521bb283609876da90473c624c8a84bd  BOB Sydney 070815 d1t04.flac
+24fd36c297868d0d8198d4ae0e1833e9  BOB Sydney 070815 d1t05.flac
+fcc3411aa1a4fc7765b0602ac38e997f  BOB Sydney 070815 d1t06.flac
+e90aeb97b74245785b489edcdefd4399  BOB Sydney 070815 d1t07.flac
+e902b633562d9ecd968fb9a683739d43  BOB Sydney 070815 d1t08.flac
+0a57de46185fec11b2c9f8f38d5005b2  BOB Sydney 070815 d1t09.flac
+46ce258c7886af933b3ffdd3c0dfcdc1  BOB Sydney 070815 d1t10.flac
+aa9a92c84fc7d7ecddd143d77b09a85c  BOB Sydney 070815 d1t11.flac
+d5024a5e478dfe58f83646f9bb49e946  BOB Sydney 070815 d1t12.flac
+25119c5b22b76dfbd983a233637caf78  BOB Sydney 070815 d2t01.flac
+12f27a52822bf9ea14e67aade8228327  BOB Sydney 070815 d2t02.flac
+04b9af76bffb9f5182896038f8acb00d  BOB Sydney 070815 d2t03.flac
+fa5ce682ca61ec0e2c33e97f7834c610  BOB Sydney 070815 d2t04.flac
+75fdf315ad493437849a23ba7d2ce1ce  BOB Sydney 070815 d2t05.flac
+e28c06f6cdd9d7ce1dbd7355d8fc20c3  BOB Sydney 070815 d2t06.flac
+1167dc9a04b2b9a068b0c40c40548cf4  BOB Sydney 070815 d2t07.flac
+f294878ee6389509b0f4ae91c15ee26b  BOB Sydney 15 Aug 2007.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-08-15-audiowhore.flacf 
+=================== 
+=================== 
+=================== 
+BOB Sydney 070815 d1t01.flac:b070057c9d98534335546e15fe702509
+BOB Sydney 070815 d1t02.flac:5d078e9e4da6d680de31e11763a97797
+BOB Sydney 070815 d1t03.flac:b73d3b2ede0170b3a862fc6c99694d59
+BOB Sydney 070815 d1t04.flac:d56c3a1fed594c20019c327bbe17d61d
+BOB Sydney 070815 d1t05.flac:75d3b483ae4a862dede48bc2b4b1796d
+BOB Sydney 070815 d1t06.flac:016551a3ebcabaf7bf7f8c7e356e8af9
+BOB Sydney 070815 d1t07.flac:40302476340541a007aac96597d9387c
+BOB Sydney 070815 d1t08.flac:db1261f115c83e817fd12c5cd3ef79aa
+BOB Sydney 070815 d1t09.flac:3fc63ff1507de1da8d560cc42ef6bcbf
+BOB Sydney 070815 d1t10.flac:9bd64fe9b22c9858ddfb66870aa8ff0b
+BOB Sydney 070815 d1t11.flac:4af7e3c95cbecd4246ad901dbb00319c
+BOB Sydney 070815 d1t12.flac:7de22ed517e6b16bf6b03809fc4541df
+BOB Sydney 070815 d2t01.flac:bc0fab40f8f9e0872bbde517e58739d3
+BOB Sydney 070815 d2t02.flac:0f47842ec90b95123165125957771ae6
+BOB Sydney 070815 d2t03.flac:7c3eb154f85ceda9fc1e21c834825382
+BOB Sydney 070815 d2t04.flac:7f5f40e41295a7919ab441889354c1a2
+BOB Sydney 070815 d2t05.flac:1ebc541f17bb4551c0542c2d235de78b
+BOB Sydney 070815 d2t06.flac:0145fedb41712c9f367f4f0662564e6e
+BOB Sydney 070815 d2t07.flac:9f76a65e0406d0480e168fab42062c17
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-08-15-audiowhore.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.35        9784364 B   ---   --   ---xx   flac  0.4610  BOB Sydney 070815 d1t01.flac
+     4:03.15       42900524 B   ---   --   ---xx   flac  0.5863  BOB Sydney 070815 d1t02.flac
+     4:45.10       50297564 B   ---   --   ---xx   flac  0.5713  BOB Sydney 070815 d1t03.flac
+     4:44.11       50123516 B   ---   --   ---xx   flac  0.5791  BOB Sydney 070815 d1t04.flac
+     7:11.58       76164860 B   ---   --   ---xx   flac  0.5986  BOB Sydney 070815 d1t05.flac
+     6:43.54       71216252 B   ---   --   ---xx   flac  0.5702  BOB Sydney 070815 d1t06.flac
+     6:30.27       68859548 B   ---   --   ---xx   flac  0.5756  BOB Sydney 070815 d1t07.flac
+     7:12.43       76305980 B   ---   --   ---xx   flac  0.4998  BOB Sydney 070815 d1t08.flac
+     8:15.63       87466220 B   ---   --   ---xx   flac  0.5375  BOB Sydney 070815 d1t09.flac
+     7:04.57       74927708 B   ---   --   ---xx   flac  0.5080  BOB Sydney 070815 d1t10.flac
+     8:11.07       86628908 B   ---   --   ---xx   flac  0.5381  BOB Sydney 070815 d1t11.flac
+     6:59.28       73977500 B   ---   --   ---xx   flac  0.4588  BOB Sydney 070815 d1t12.flac
+     6:13.65       65950124 B   ---   --   ---xx   flac  0.5766  BOB Sydney 070815 d2t01.flac
+     7:59.06       84509756 B   ---   --   ---xx   flac  0.4108  BOB Sydney 070815 d2t02.flac
+     6:28.05       68455004 B   ---   --   ---xx   flac  0.5684  BOB Sydney 070815 d2t03.flac
+     8:14.13       87172220 B   ---   --   ---xx   flac  0.4925  BOB Sydney 070815 d2t04.flac
+     5:54.60       62586764 B   ---   --   ---xx   flac  0.5997  BOB Sydney 070815 d2t05.flac
+     0:39.13        6910220 B   ---   --   ---xx   flac  0.5296  BOB Sydney 070815 d2t06.flac
+     5:47.37       61298876 B   -b-   --   ---xx   flac  0.5589  BOB Sydney 070815 d2t07.flac
+   113:54.07     1205535908 B                            0.5367  (19 files)
+=================== 
+=================== 
+=================== 

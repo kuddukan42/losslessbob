@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-27 master 
+=================== 
+=================== 
+=================== 
+e544925c581272c704c5bb302638cb69  101 leopard skin pill box hat.shn
+6598cb48bc64f018a68765456382dcab  102 tonight i`ll be staying here with you.shn
+5abf3732bb0fbcbee597b1bbb859e8ee  103 all along the watchtower.shn
+1b4ae17a5524aca0f654e054bd530c4b  104 under the red sky.shn
+65ad0a888e456453a0ccf14cf53ca717  105 just like tom thumbs blues.shn
+3965d651a9d6906c66f4aca1eb4b8410  106 silvio.shn
+bbfe568c1f8bcc120d2e9c7587923e2b  107 mr tambourine man.shn
+d1231b5c7d2d6d725319ef78b5bf3aa1  108 john brown.shn
+a095b3cf174a00bca53ed0ba83b7be79  109 to ramona.shn
+efda885b59f0916cac96448acbcc19af  110 ballad of a thin man.shn
+ab32228e53a35e518a60e87ca4206395  111 when i paint my masterpiece.shn
+9013e043f272f641084b6dbf1ed78038  201 seven days.shn
+a92a1ed616fe92710468e5f5faf03de7  202 alabama getaway.shn
+da2ce5b5028de26056cacb10dce43126  203 it ain`t me babe.shn
+7eaef1fd8874d4a31570c737ebdea322  204 rainy day women #12&35.shn
+e3196273e718125e90cf9cb645d684fb  bd96-06-27 master.txt
+2ac95f1578a8c7f14b66d4dae8a1b284  liverpool 27june 96 .md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-06-27 master 
+=================== 
+=================== 
+=================== 
+f3699e914e4f820a04af12f9a7f444aa  [shntool]  101_leopard_skin_pill_box_hat.wav
+ae7241969068e6b8378d42cf1c8fdbd9  [shntool]  102_tonight_i`ll_be_staying_here_with_you.wav
+9ce205bbdbf3ecc572ee73453029b352  [shntool]  103_all_along_the_watchtower.wav
+bbd05229fa745a317f7ac88fc3396528  [shntool]  104_under_the_red_sky.wav
+043d934ed1617debdeede77a8893fe37  [shntool]  105_just_like_tom_thumbs_blues.wav
+b4871b428cd2b423a6ec5367f14033ec  [shntool]  106_silvio.wav
+cc2a92795ef74bff01badc72cef36c1b  [shntool]  107_mr_tambourine_man.wav
+e8ac8eb9e9de75ccdcad56863282ec47  [shntool]  108_john_brown.wav
+02ee9461eced105b08d5cddbb6154f10  [shntool]  109_to_ramona.wav
+5b3ec855eea63b9751bc385e7e9b3a52  [shntool]  110_ballad_of_a_thin_man.wav
+02f6bbf37db150b67c4be68506dec8a5  [shntool]  111_when_i_paint_my_masterpiece.wav
+3f1bd4ac91f2e74f61a6ae293a295cb7  [shntool]  201_seven_days.wav
+d9b2c3a49e09b2c83cf0ec3b21bf1200  [shntool]  202_alabama_getaway.wav
+d99bdc77b1828ef19a3c0a613e3d3668  [shntool]  203_it_ain`t_me_babe.wav
+9ce50a4cbdc5b5e0a3d5dd2948334ef8  [shntool]  204_rainy_day_women_#12_35.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-27 master 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:40.42       60074828 B   ---   --   ---xx    shn  0.5969  101 leopard skin pill box hat.shn
+     6:05.36       64470716 B   ---   --   ---xx    shn  0.5569  102 tonight i`ll be staying here with you.shn
+     6:44.36       71350316 B   ---   --   ---xx    shn  0.5842  103 all along the watchtower.shn
+     5:25.17       57370028 B   ---   --   ---xx    shn  0.4930  104 under the red sky.shn
+     8:00.29       84740252 B   ---   --   ---xx    shn  0.5249  105 just like tom thumbs blues.shn
+     7:25.22       78549788 B   ---   --   ---xx    shn  0.5548  106 silvio.shn
+    10:00.22      105891788 B   ---   --   ---xx    shn  0.4944  107 mr tambourine man.shn
+     7:10.29       75920252 B   ---   --   ---xx    shn  0.4501  108 john brown.shn
+     6:55.27       73269548 B   ---   --   ---xx    shn  0.4440  109 to ramona.shn
+     8:31.73       90312140 B   ---   --   ---xx    shn  0.5278  110 ballad of a thin man.shn
+     7:58.30       84389804 B   ---   --   ---xx    shn  0.5130  111 when i paint my masterpiece.shn
+     8:35.45       90951884 B   ---   --   ---xx    shn  0.4913  201 seven days.shn
+     7:50.23       82962140 B   ---   --   ---xx    shn  0.5599  202 alabama getaway.shn
+    13:11.07      139548908 B   ---   --   ---xx    shn  0.4890  203 it ain`t me babe.shn
+     8:36.42       91121228 B   ---   --   ---xx    shn  0.5420  204 rainy day women #12&35.shn
+   118:11.30     1250923620 B                            0.5185  (15 files)
+=================== 
+=================== 
+=================== 

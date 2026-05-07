@@ -1,0 +1,29 @@
+#EXTM3U
+#EXTINF:433,Unknown Artist - Track01
+bd1999-06-25d2t01.wav
+#EXTINF:501,Unknown Artist - Track02
+bd1999-06-25d2t02.wav
+#EXTINF:422,Unknown Artist - Track03
+bd1999-06-25d2t03.wav
+#EXTINF:200,Unknown Artist - Track04
+bd1999-06-25d2t04.wav
+#EXTINF:321,Unknown Artist - Track05
+bd1999-06-25d2t05.wav
+#EXTINF:45,Unknown Artist - Track06
+bd1999-06-25d2t06.wav
+#EXTINF:315,Unknown Artist - Track07
+bd1999-06-25d2t07.wav
+#EXTINF:269,Unknown Artist - Track08
+bd1999-06-25d2t08.wav
+#EXTINF:338,Unknown Artist - Track09
+bd1999-06-25d2t09.wav
+#EXTINF:301,Unknown Artist - Track10
+bd1999-06-25d2t10.wav
+#EXTINF:358,Unknown Artist - Track11
+bd1999-06-25d2t11.wav
+#EXTINF:309,Unknown Artist - Track12
+bd1999-06-25d2t12.wav
+#EXTINF:7,Unknown Artist - Track13
+bd1999-06-25d2t13.wav
+#EXTINF:320,Unknown Artist - Track14
+bd1999-06-25d2t14.wav

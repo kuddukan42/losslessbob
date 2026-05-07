@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-24 paris 
+=================== 
+=================== 
+=================== 
+5d7e1846d20343d817dc506302d216f2  bd95-03-24.md5
+fd38985b0081c74f1938223d5c8695ac  bd95-03-24.txt
+c563b1aedde168f936883ed86020fb10  bd95-03-24d1t01.shn
+eb7ca253cea4278d9c63261993f2f85a  bd95-03-24d1t02.shn
+677d07bfa517c55efb8c0348d1881a53  bd95-03-24d1t03.shn
+e63d81f1ff95fd4c90a658d18cfd9add  bd95-03-24d1t04.shn
+f3e764ab0661dbab3f9fa5790ed66990  bd95-03-24d1t05.shn
+0ead310d5240440e9482c8961ab89c07  bd95-03-24d1t06.shn
+81d65fdde141a26a8c13fadf299ab55a  bd95-03-24d1t07.shn
+9abc1148d27a255af8e2a6cc93d507fb  bd95-03-24d1t08.shn
+89f85b6fe9b0025cee6d4d7c0c06b5e9  bd95-03-24d1t09.shn
+6665c05c13b266fc9f42b40c3a9f1a1d  bd95-03-24d2t01.shn
+ecf46194ca18239d062a95e9da5fa2eb  bd95-03-24d2t02.shn
+5be03128119a6b07525d3455cf69d9eb  bd95-03-24d2t03.shn
+da645ab903725ef9640e43d013a0edb7  bd95-03-24d2t04.shn
+d7becb19a939fe90871bf1eeafb6bae0  bd95-03-24d2t05.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-03-24 paris 
+=================== 
+=================== 
+=================== 
+b91b68b1d5a0342b4568e9295ddca6ac  [shntool]  bd95-03-24d1t01.wav
+be9315e341d987f474e60f8104cce462  [shntool]  bd95-03-24d1t02.wav
+16da7282c290ec815b591a4537b898ac  [shntool]  bd95-03-24d1t03.wav
+466a7fe7f627c9561837fd7f39c3d1df  [shntool]  bd95-03-24d1t04.wav
+3e9a44899a407c5c6101610732227cd0  [shntool]  bd95-03-24d1t05.wav
+c8725d1ffaad73739e68e15fee2714a4  [shntool]  bd95-03-24d1t06.wav
+684a809c0709ca47859d0d4716ceb8d0  [shntool]  bd95-03-24d1t07.wav
+2201b6d017edeb788b39f488cf9ca42b  [shntool]  bd95-03-24d1t08.wav
+804b1687963c0a37988b09ca59ef3081  [shntool]  bd95-03-24d1t09.wav
+bc1954ef075d265ca28f1b4f8e086fca  [shntool]  bd95-03-24d2t01.wav
+54ca7bcea0ba6f6a20343b3a278391fd  [shntool]  bd95-03-24d2t02.wav
+867e260f9b9c5e012f4e23792a7b6644  [shntool]  bd95-03-24d2t03.wav
+091113a7907c0fa2b31e5e5938192929  [shntool]  bd95-03-24d2t04.wav
+48350317d2c0c6ef8fe0cebd9940075e  [shntool]  bd95-03-24d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-24 paris 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:15.38       55655420 B   ---   --   ---xx    shn  0.6309  bd95-03-24d1t01.shn
+     4:33.21       48206636 B   ---   --   ---xx    shn  0.5741  bd95-03-24d1t02.shn
+     5:22.35       56883164 B   ---   --   ---xx    shn  0.6284  bd95-03-24d1t03.shn
+     5:44.53       60806300 B   ---   --   ---xx    shn  0.5734  bd95-03-24d1t04.shn
+     8:17.21       87720236 B   ---   --   ---xx    shn  0.5821  bd95-03-24d1t05.shn
+     5:49.44       61667132 B   ---   --   ---xx    shn  0.5391  bd95-03-24d1t06.shn
+     6:30.01       68798396 B   ---   --   ---xx    shn  0.4863  bd95-03-24d1t07.shn
+     4:24.24       46626092 B   ---   --   ---xx    shn  0.4912  bd95-03-24d1t08.shn
+     6:50.56       72455756 B   ---   --   ---xx    shn  0.5224  bd95-03-24d1t09.shn
+     7:18.66       77418476 B   ---   --   ---xx    shn  0.5698  bd95-03-24d2t01.shn
+     4:58.71       52734236 B   ---   --   ---xx    shn  0.5591  bd95-03-24d2t02.shn
+     6:46.24       71674892 B   ---   --   ---xx    shn  0.5669  bd95-03-24d2t03.shn
+     8:41.60       92045564 B   ---   --   ---xx    shn  0.5288  bd95-03-24d2t04.shn
+     8:54.41       94294076 B   ---   --   ---xx    shn  0.4637  bd95-03-24d2t05.shn
+    89:28.30      946986376 B                            0.5476  (14 files)
+=================== 
+=================== 
+=================== 

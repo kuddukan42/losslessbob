@@ -1,0 +1,119 @@
+===================
+===================
+===================
+=== 1989-06-16 Atlanta (PL master) info.txt
+===================
+===================
+===================
+RE-SEED Thanks to original uploader.
+Lineage not clearly stipulated but is - PL Master > flac
+.......................................................................................................
+
+Bob Dylan
+Atlanta, Georgia
+
+Troy G. Chastain Memorial Park Amphitheatre
+
+16 August 1989
+
+
+PL master
+
+
+
+disc 1
+
+1. Trouble
+
+2. Trail Of The Buffalo (trad. arr. Woody Guthrie
+)
+3. Queen Jane Approximately
+
+4. Just Like A Woman
+
+5. You're A Big Girl 
+6. Highway 61 
+
+
+disc 2
+
+1. Love Minus Zero/No Limit
+2. Gates Of Eden
+
+3. Lakes Of Pontchartrain 
+4. Girl From The North Country
+
+5. Silvio (Bob Dylan & Robert Hunter)
+
+6. One Irish Rover (Van Morrison)
+
+7. Like A Rolling Stone
+
+8. It Ain't Me, Babe
+9. All Along The Watchtower
+
+
+
+Sound: 
+PL Master
+Very good audience recording
+
+
+Notes:
+Second and last electric version of
+ Trail Of The Buffalo (as of revision date). 
+Debut for Queen Jane Approximately during 
+The Never-Ending Tour. 
+
+More information here: 
+http://www.bjorner.com/
+===================
+===================
+===================
+=== 1989-06-16 Atlanta (PL master).md5
+===================
+===================
+===================
+a22ff0f6e8127965c733a84b88f94b1b *1989-06-16 Atlanta (PL master) info.txt
+d73aa6127c8d09f2f94d437909403971 *1989-06-16 Atlanta.md5
+397e242c6a92ee9a6c910faf189f15e6 *bd1989-08-16d1t01.flac
+6a37dd147940d3eed4a9f6cbdcf35906 *bd1989-08-16d1t02.flac
+77ef37488b0fc8ac2c886a8b325b6f03 *bd1989-08-16d1t03.flac
+3042976a094166b60d2c3e3ded3ac71c *bd1989-08-16d1t04.flac
+c4b42a18bcfa122f87ab9ff4b57bf2cc *bd1989-08-16d1t05.flac
+92cdda6cda13e12d1591a1339c762cde *bd1989-08-16d1t06.flac
+1a4ed29f8161219a74acd2c45ade1fe4 *bd1989-08-16d2t01.flac
+fa99f20710811c4111e1e18b80bfc20c *bd1989-08-16d2t02.flac
+932eb60d55f92df4e942d11bec3a7661 *bd1989-08-16d2t03.flac
+d7feed750e3f4c57839263e9a72f0557 *bd1989-08-16d2t04.flac
+a4fa8cb30470403540fe42e7ad1f4b8d *bd1989-08-16d2t05.flac
+a9663d3546277e9bd2f826159f6f4b83 *bd1989-08-16d2t06.flac
+9ab2e1f204a9242cf231f8715b3cf2f8 *bd1989-08-16d2t07.flac
+943dc72f94898165e27c3107397c940d *bd1989-08-16d2t08.flac
+366f36744f423ed34dd26b2b62ef8336 *bd1989-08-16d2t09.flac
+===================
+===================
+===================
+=== 1989-06-16 Atlanta.md5
+===================
+===================
+===================
+366f36744f423ed34dd26b2b62ef8336 *bd1989-08-16d2t09.flac
+943dc72f94898165e27c3107397c940d *bd1989-08-16d2t08.flac
+9ab2e1f204a9242cf231f8715b3cf2f8 *bd1989-08-16d2t07.flac
+d7feed750e3f4c57839263e9a72f0557 *bd1989-08-16d2t04.flac
+92cdda6cda13e12d1591a1339c762cde *bd1989-08-16d1t06.flac
+c4b42a18bcfa122f87ab9ff4b57bf2cc *bd1989-08-16d1t05.flac
+a9663d3546277e9bd2f826159f6f4b83 *bd1989-08-16d2t06.flac
+a4fa8cb30470403540fe42e7ad1f4b8d *bd1989-08-16d2t05.flac
+3042976a094166b60d2c3e3ded3ac71c *bd1989-08-16d1t04.flac
+77ef37488b0fc8ac2c886a8b325b6f03 *bd1989-08-16d1t03.flac
+932eb60d55f92df4e942d11bec3a7661 *bd1989-08-16d2t03.flac
+1a4ed29f8161219a74acd2c45ade1fe4 *bd1989-08-16d2t01.flac
+fa99f20710811c4111e1e18b80bfc20c *bd1989-08-16d2t02.flac
+6a37dd147940d3eed4a9f6cbdcf35906 *bd1989-08-16d1t02.flac
+397e242c6a92ee9a6c910faf189f15e6 *bd1989-08-16d1t01.flac
+
+===================
+===================
+===================

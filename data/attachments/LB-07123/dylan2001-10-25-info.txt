@@ -1,0 +1,44 @@
+Bob Dylan
+October 25, 2001St. Paul, MinnesotaXcel Energy Center
+
+Disc 1 (67:27.22)01. Wait For The Light To Shine (acoustic) (Larry on mandolin) (song by Fred Rose)02. Mr. Tambourine Man (acoustic) (Bob on harp)03. A Hard Rain's A-Gonna Fall (acoustic) (Larry on bouzouki)04. Searching For A Soldier's Grave (acoustic) (Larry on mandolin)0(song by Johnnie Wright, Jim Anglin and Jack Anglin)05. Tweedle Dee & Tweedle Dum06. I Don't Believe You (She Acts Like We Never Have Met)07. Positively 4th Street08. High Water (Larry on banjo)09. Mama, You Been On My Mind (acoustic) (Bob on harp)10. If Dogs Run Free (acoustic) (Larry and Charlie on electric guitars)11. Masters Of War (acoustic) (Charlie on dobro)12. Summer Days (Tony on standup bass)
+
+Disc 2 (64:06.51)
+13. Sugar Baby (Tony on standup bass)14. The Wicked Messenger (Bob on harp)15. Everything Is Broken(1st encore)16. Love Sick17. Like A Rolling Stone18. Forever Young (acoustic)19. Honest With Me
+20. Blowin' In The Wind (acoustic)(2nd encore)21. All Along The Watchtower
+
+
+Notes:
+recorded direct to DAT at 44.1 kHz, transferred in the digital domain to FLAC, no edits or adjustments except tracking and FLAC tagging.
+location- dead freakin' center on the main floor, approximately 11 paces in front of the SBD
+levels on first track start a little low but come up smoothly and quickly
+
+
+SHNTOOL:
+ length  expanded sizecdr  WAVE problems filename  3:42.68 39320780 --------xxdylan2001-10-25d1t01.flac  7:07.46 75431036 --------xxdylan2001-10-25d1t02.flac  9:09.52 96965948 --------xxdylan2001-10-25d1t03.flac  3:04.25 32516444 --------xxdylan2001-10-25d1t04.flac  4:52.67 51666428 --------xxdylan2001-10-25d1t05.flac  5:54.01 62447996 --------xxdylan2001-10-25d1t06.flac  6:40.04 70569452 --------xxdylan2001-10-25d1t07.flac  5:42.36 60413516 --------xxdylan2001-10-25d1t08.flac  5:48.56 61518956 --------xxdylan2001-10-25d1t09.flac  3:49.49 40510892 --------xxdylan2001-10-25d1t10.flac  5:44.20 60728684 --------xxdylan2001-10-25d1t11.flac  5:50.48 61852940 --------xxdylan2001-10-25d1t12.flac  7:24.63 78469820 --------xxdylan2001-10-25d2t01.flac  6:12.62 65766668 --------xxdylan2001-10-25d2t02.flac  8:06.45 85836284 --------xxdylan2001-10-25d2t03.flac  6:37.31 70103756 --------xxdylan2001-10-25d2t04.flac  7:24.64 78472172 --------xxdylan2001-10-25d2t05.flac  6:39.44 70487132 --------xxdylan2001-10-25d2t06.flac  6:38.47 70317788 --------xxdylan2001-10-25d2t07.flac  7:06.33 75224060 --------xxdylan2001-10-25d2t08.flac  7:55.37 83877068 --------xxdylan2001-10-25d2t09.flac131:33.73  1392497820 B(totals for 21 files, 0.5294 overall compression ratio)
+
+FFP:
+dylan2001-10-25d1t01.flac:a04ae8cf77ee3178ce25562a863b5554dylan2001-10-25d1t02.flac:b4246f9e670cbe02c196bccb992d3400dylan2001-10-25d1t03.flac:e7dd5e36ce7f83885436e110ecdb8f7edylan2001-10-25d1t04.flac:5deaa2516f969c47e9ffe4ddc011079bdylan2001-10-25d1t05.flac:c13ab6aae4093840e250e05f88d7490fdylan2001-10-25d1t06.flac:90e516c4c0ba77b012db795ed7fd1d4cdylan2001-10-25d1t07.flac:4075a1318ef9f5d766e64f7b07df534ddylan2001-10-25d1t08.flac:cfbd6bfedde2eabc06cb55f94cb12504dylan2001-10-25d1t09.flac:20857db76370fe9f1b88a1f5fb1ed1dbdylan2001-10-25d1t10.flac:44a439b69d28a434439c7e5a346bc392dylan2001-10-25d1t11.flac:065d15310b0e3097aee38d659a34b1f2dylan2001-10-25d1t12.flac:cd1d224b27a03020fc6b54fb98bb2721dylan2001-10-25d2t01.flac:65f6e75122c155afc64f78cbaf9e77e2dylan2001-10-25d2t02.flac:6653af7280ab5f7677652bf9ac2e8cf4dylan2001-10-25d2t03.flac:516ad0501882b0d1342a2b0ed4843a66dylan2001-10-25d2t04.flac:c23419d7deb5695206bc11a7c00f9fffdylan2001-10-25d2t05.flac:0e1e0d4dce58ec0c7de824fe459196c0dylan2001-10-25d2t06.flac:f117815b333d8894334afba0311f0d5edylan2001-10-25d2t07.flac:318ab30a2499a64287693ccb3a478cbedylan2001-10-25d2t08.flac:8683d5f8325a6f3d772eabc24968ec49dylan2001-10-25d2t09.flac:40360689e2d03cbda132a2b32b211ab1
+
+MD5:
+e70753de5deab6d1bb5f6099ee3c93bf *dylan2001-10-25d1t01.flac
+e8cb6a0aaa43b7e52dad0fca81ba97dd *dylan2001-10-25d1t02.flac
+d37aa800923719339b062bcdacd00904 *dylan2001-10-25d1t03.flac
+1ecffa3a6b3da61b0e8087f5fa8a565f *dylan2001-10-25d1t04.flac
+80ee4332a5262f4069ebeb224d654b2e *dylan2001-10-25d1t05.flac
+0de29b9415ce9bd33e0fda211a0c0505 *dylan2001-10-25d1t06.flac
+00bd3d2116cdcab81e96e081dc88eeb8 *dylan2001-10-25d1t07.flac
+eb871faaf4ad5cd48dc8ec4f5124a0a3 *dylan2001-10-25d1t08.flac
+a45ab13984abdb632c94a288c013cfe5 *dylan2001-10-25d1t09.flac
+1aadeb2a807add8a0e3140134df25ae5 *dylan2001-10-25d1t10.flac
+da3d1bd9ad64b9c56dba1de779d30e5d *dylan2001-10-25d1t11.flac
+82b45a0e8e6e353257bf7a7941fea77c *dylan2001-10-25d1t12.flac
+9d8c8c72eb93f862c26dd19eeed49ef4 *dylan2001-10-25d2t01.flac
+a55a9b9c91f57d6f2561303d70748ccf *dylan2001-10-25d2t02.flac
+033ac452dd236f17b2b3edda1cae2153 *dylan2001-10-25d2t03.flac
+ebd09337bb13be0993e2dc771dd5754c *dylan2001-10-25d2t04.flac
+6d23dc9e1a58f5e6572d592981a7375c *dylan2001-10-25d2t05.flac
+cee0ba543e0b94b965521ad9219a34d3 *dylan2001-10-25d2t06.flac
+7a689020646a4b016a14a64db03a15ef *dylan2001-10-25d2t07.flac
+1ab093121190cf43fda658dc2d88f5cb *dylan2001-10-25d2t08.flac
+0789db64a4591b91df2df2b722e7fbbf *dylan2001-10-25d2t09.flac

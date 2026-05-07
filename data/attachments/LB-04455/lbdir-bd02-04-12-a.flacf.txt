@@ -1,0 +1,111 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-04-12-a.flacf 
+=================== 
+=================== 
+=================== 
+cdb74376b06880ba6d4165e89a1afc8f  2002-04-12 LeipzigD1\101 Announcment.flac
+7c808e0965cea0362529bf52f7f2387e  2002-04-12 LeipzigD1\102 Wait For The Light To Shine.flac
+ca75123373cb7c4c9f489192c03524cb  2002-04-12 LeipzigD1\103 The Times They Are A-Changin'.flac
+3a928a5ef8026bc3df86d8f15a3c821a  2002-04-12 LeipzigD1\104 Desolation Row .flac
+61a82a4ff927c99542178431be88e22f  2002-04-12 LeipzigD1\105 One Too Many Mornings.flac
+4fff5f00e88b8e1642d85f43eea7841a  2002-04-12 LeipzigD1\106 Solid Rock.flac
+04b5c34f6cfc22312e525ad21effba38  2002-04-12 LeipzigD1\107 Can't Wait.flac
+e8d49004e8f585f6e3a408ff2087990f  2002-04-12 LeipzigD1\108 Cry A While.flac
+e96f30975bb1e1ff69afbeb0f26ecdf1  2002-04-12 LeipzigD1\109 Maggie's Farm .flac
+0b7ecb1c35330e02685d9e1b32541bf6  2002-04-12 LeipzigD1\110 It's All Over Now, Baby Blue.flac
+1dee4d42042e045ae6fa70b8f0af5914  2002-04-12 LeipzigD1\111 Fourth Time Around.flac
+3bd56409d7cea1814417773fb4612f00  2002-04-12 LeipzigD1\112 Tangled Up In Blue.flac
+67a8816d605e67e3ed376a3b76bd3633  2002-04-12 LeipzigD1\2002-04-12 Leipzig CD1.md5
+caa42c39706f733d556c3c34bd73094b  2002-04-12 LeipzigD2\2002-04-12 Leipzig CD2.md5
+32569a4bbccddfae2cc657adfa911682  2002-04-12 LeipzigD2\201 Summer Days.flac
+bfab1b940e3bdc2cc5842caa165aa7fd  2002-04-12 LeipzigD2\202 Not Dark Yet .flac
+0125fbbea547b96aef39f44e6e399683  2002-04-12 LeipzigD2\203 Cold Irons Bound.flac
+43b0d40096d5a1f63417799a0dd87a8d  2002-04-12 LeipzigD2\204 Rainy Day Women #12 & 35.flac
+5b0f0fe77ec0c6e834388aaf2fc98ccc  2002-04-12 LeipzigD2\205 Not Fade Away .flac
+16075c2a91080607594d5ea6da50cdde  2002-04-12 LeipzigD2\206 Like A Rolling Stone.flac
+bc968916f57759a8b540b1a58e46ae6c  2002-04-12 LeipzigD2\207 Forever Young.flac
+d8736f02e9b12e091a88be1500ebdb76  2002-04-12 LeipzigD2\208 Honest With Me.flac
+5a59f9770076b8d25d355139c9b50928  2002-04-12 LeipzigD2\209 Blowin' In The Wind.flac
+b78e5b2ee10422da97559c6220c70ad3  bd02-04-12-a-LB-4455.txt
+bc1f5191afcd8c1a288cc9addc05d1e3  Bob Dylan 12 april 2002 Leipzig.txt
+4b94862159f4764af77c8a25633fc3fa  Leipzig2002Back.Jpg
+3489051aa92ca8bc6f09834c8e662729  Leipzig2002Front.Jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-04-12-a.flacf\2002-04-12 LeipzigD1 
+=================== 
+=================== 
+=================== 
+101 Announcment.flac:6f0d797d49ee190618d58c46cfb062c7
+102 Wait For The Light To Shine.flac:be10f1075c4ad2cb073760dcf57e910c
+103 The Times They Are A-Changin'.flac:008fd7bdc7b7531e1ba8503187618826
+104 Desolation Row .flac:f43f88dc112beea0a77dd7a4993d7afd
+105 One Too Many Mornings.flac:328d004a9b758854bf4fcf95748e07be
+106 Solid Rock.flac:6a82346d74c8cfb03a7d073500d50b7a
+107 Can't Wait.flac:a85688faedb130135fd638410a19fb2a
+108 Cry A While.flac:df05a0adc5912ddb58fba024278c7a53
+109 Maggie's Farm .flac:21a0c6c475546b744bc65f3ecd5162f0
+110 It's All Over Now, Baby Blue.flac:f3c4ccd107be3df02439cbcfb2bf86d1
+111 Fourth Time Around.flac:629a3d60abc778fda9ebc3cad26e7e4a
+112 Tangled Up In Blue.flac:a5170e5cfb64abdd2b94b6027f79ece6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-04-12-a.flacf\2002-04-12 LeipzigD2 
+=================== 
+=================== 
+=================== 
+201 Summer Days.flac:c8cb82618b2e86349165d3a2aae82323
+202 Not Dark Yet .flac:679da25a8eba23358cfbc0a07120907d
+203 Cold Irons Bound.flac:439901dc2419de5d8c313de2b91bffc1
+204 Rainy Day Women #12 & 35.flac:6ec34459dc7471375791520b826b7a63
+205 Not Fade Away .flac:3bc70ce8f27f0350607d4b40d630a697
+206 Like A Rolling Stone.flac:805a6c983703c18cd33bcab65c1bd790
+207 Forever Young.flac:204acaaf7d4e486e48a91b8836c39cc1
+208 Honest With Me.flac:644d55832d18ad75a96dad061c08c01e
+209 Blowin' In The Wind.flac:9553333719c1dc1724d7db491290b926
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-12-a.flacf\2002-04-12 LeipzigD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:46.37       18785468 B   ---   --   ---xx   flac  0.4717  101 Announcment.flac
+     3:01.58       32064860 B   ---   --   ---xx   flac  0.6317  102 Wait For The Light To Shine.flac
+     7:42.17       81536828 B   ---   --   ---xx   flac  0.5576  103 The Times They Are A-Changin'.flac
+     8:07.43       86007980 B   ---   --   ---xx   flac  0.5704  104 Desolation Row .flac
+     8:05.36       85638716 B   ---   --   ---xx   flac  0.5088  105 One Too Many Mornings.flac
+     4:59.68       52903580 B   ---   --   ---xx   flac  0.6225  106 Solid Rock.flac
+     5:32.26       58625996 B   ---   --   ---xx   flac  0.5391  107 Can't Wait.flac
+     6:16.20       66373484 B   ---   --   ---xx   flac  0.5736  108 Cry A While.flac
+     5:55.56       62753756 B   ---   --   ---xx   flac  0.5907  109 Maggie's Farm .flac
+     8:43.45       92363084 B   ---   --   ---xx   flac  0.4900  110 It's All Over Now, Baby Blue.flac
+     3:52.11       40950716 B   ---   --   ---xx   flac  0.4946  111 Fourth Time Around.flac
+     9:57.04      105320252 B   ---   --   ---xx   flac  0.5991  112 Tangled Up In Blue.flac
+    74:00.46      783324720 B                            0.5560  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-12-a.flacf\2002-04-12 LeipzigD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:24.56       78453356 B   ---   --   ---xx   flac  0.6089  201 Summer Days.flac
+     6:24.51       67857596 B   ---   --   ---xx   flac  0.4776  202 Not Dark Yet .flac
+     6:32.39       69240572 B   ---   --   ---xx   flac  0.5657  203 Cold Irons Bound.flac
+    12:50.02      135832748 B   ---   --   ---xx   flac  0.5806  204 Rainy Day Women #12 & 35.flac
+     3:59.37       42246668 B   ---   --   ---xx   flac  0.6181  205 Not Fade Away .flac
+     8:11.29       86680652 B   ---   --   ---xx   flac  0.6035  206 Like A Rolling Stone.flac
+     8:25.71       89249036 B   ---   --   ---xx   flac  0.5234  207 Forever Young.flac
+     6:53.29       72921452 B   ---   --   ---xx   flac  0.6207  208 Honest With Me.flac
+     7:55.62       83935868 B   ---   --   ---xx   flac  0.5425  209 Blowin' In The Wind.flac
+    68:38.01      726417948 B                            0.5701  (9 files)
+=================== 
+=================== 
+=================== 

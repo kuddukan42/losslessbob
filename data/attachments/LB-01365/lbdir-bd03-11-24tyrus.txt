@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-24tyrus 
+=================== 
+=================== 
+=================== 
+88b6cee20dda0a006d213fe2120317a7  bd03-11-24.md5
+96a1b4d6c72cd579f9fda00ecc2f9902  bd03-11-24.txt
+785cb372b08f8780a7ef899d477fcfd7  bd03-11-24d1t01.shn
+ef98abd6f5588f749172a329d4b4b58a  bd03-11-24d1t02.shn
+90022187a789c4e61ca2f9af51dc41bc  bd03-11-24d1t03.shn
+11fa02f649a1fe764f1fae6465f4c41c  bd03-11-24d1t04.shn
+b2fe65ae516109bd8b4b3fd0ffaa106b  bd03-11-24d1t05.shn
+0d174f60525ff4411885b859bee0eeac  bd03-11-24d1t06.shn
+4f01d6af0bbbefea136d05629d8a02da  bd03-11-24d1t07.shn
+638233cbcbf60cbe7d04c4d65512afbe  bd03-11-24d1t08.shn
+5e4f3012c6c72c2ba6bb04db59992f7c  bd03-11-24d1t09.shn
+f0641638a4685e6aaa10a90340f01c17  bd03-11-24d1t10.shn
+6094a61b47071a5d9b84ab69f9d11abb  bd03-11-24d1t11.shn
+f7cd233ee62620e0a8f6c2a618389b61  bd03-11-24d1t12.shn
+41b950892642078c8751595269a79de3  bd03-11-24d1t13.shn
+f7eee83e24b1c7bca61eb051ed45781e  bd03-11-24d2t01.shn
+c444d5991e4fbfa583629b0a50020f58  bd03-11-24d2t02.shn
+0d82acf0e0a58b3c95143f99853f9fe1  bd03-11-24d2t03.shn
+49a34be3203029211dc9f14e18fb8264  bd03-11-24d2t04.shn
+189c492d68da8b3109e714cfd75b5b1f  bd03-11-24d2t05.shn
+102566cbdbd5d6d4aecfb7ca8d666db7  bd03-11-24tyrus.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-11-24tyrus 
+=================== 
+=================== 
+=================== 
+93854131c7d70b5ee5e09e3f5ea71db9  [shntool]  bd03-11-24d1t01.wav
+f0ce8c4a026675e3ca4ce16eb4ccda23  [shntool]  bd03-11-24d1t02.wav
+35928e523291b2161e903d37d61523e0  [shntool]  bd03-11-24d1t03.wav
+64284ca6e7ea21d7317b37e67ac7bc8b  [shntool]  bd03-11-24d1t04.wav
+326d6e9f394f75a8f822a39d6311fef2  [shntool]  bd03-11-24d1t05.wav
+125717d6ab92b085afc50d7483703f7d  [shntool]  bd03-11-24d1t06.wav
+2e100d208655cd539f0347e0ee7bf815  [shntool]  bd03-11-24d1t07.wav
+16262c5cce3fa790337a4a1f704ae85b  [shntool]  bd03-11-24d1t08.wav
+4c83e63457b130a93203e7c224112b2b  [shntool]  bd03-11-24d1t09.wav
+7975307eb4d8401360ec3b38f2ade0c4  [shntool]  bd03-11-24d1t10.wav
+a7c978c9107afd83a8640902af34d2de  [shntool]  bd03-11-24d1t11.wav
+f1d8f0d58b2ea7026610b6df7bb2315e  [shntool]  bd03-11-24d1t12.wav
+56675bd41825594e13529277b546251d  [shntool]  bd03-11-24d1t13.wav
+ac43a84a87174c0e28cfeae873bc791d  [shntool]  bd03-11-24d2t01.wav
+e4bb11b9d94b80ea1a5dadcfdb77c9dd  [shntool]  bd03-11-24d2t02.wav
+3303ad58c4aba8c84c081bdc0a51eb01  [shntool]  bd03-11-24d2t03.wav
+c81ed0dfe4fd8281515f9098f934b0ad  [shntool]  bd03-11-24d2t04.wav
+9a4516b4153275cdd48586a5388a380b  [shntool]  bd03-11-24d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-24tyrus 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:53.30        9419804 B   ---   --   -----    wav  1.0000  bd03-11-24d1t01.wav
+     4:56.20       52261484 B   ---   --   -----    wav  1.0000  bd03-11-24d1t02.wav
+     4:49.51       51099596 B   ---   --   -----    wav  1.0000  bd03-11-24d1t03.wav
+     5:49.67       61721228 B   ---   --   -----    wav  1.0000  bd03-11-24d1t04.wav
+     6:08.18       64957580 B   ---   --   -----    wav  1.0000  bd03-11-24d1t05.wav
+     7:44.59       81988412 B   ---   --   -----    wav  1.0000  bd03-11-24d1t06.wav
+     6:09.58       65228060 B   ---   --   -----    wav  1.0000  bd03-11-24d1t07.wav
+     7:26.60       78815564 B   ---   --   -----    wav  1.0000  bd03-11-24d1t08.wav
+     5:14.62       55535468 B   ---   --   -----    wav  1.0000  bd03-11-24d1t09.wav
+     8:07.52       86029148 B   ---   --   -----    wav  1.0000  bd03-11-24d1t10.wav
+     7:55.16       83827676 B   ---   --   -----    wav  1.0000  bd03-11-24d1t11.wav
+     7:06.23       75200540 B   ---   --   -----    wav  1.0000  bd03-11-24d1t12.wav
+     7:01.23       74318540 B   ---   --   -----    wav  1.0000  bd03-11-24d1t13.wav
+     6:36.52       69976748 B   ---   --   -----    wav  1.0000  bd03-11-24d2t01.wav
+     6:57.11       73584716 B   ---   --   -----    wav  1.0000  bd03-11-24d2t02.wav
+     4:15.18       45024380 B   ---   --   -----    wav  1.0000  bd03-11-24d2t03.wav
+     7:32.55       79862204 B   ---   --   -----    wav  1.0000  bd03-11-24d2t04.wav
+     5:38.56       59754956 B   ---   --   -----    wav  1.0000  bd03-11-24d2t05.wav
+   110:24.56     1168606104 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

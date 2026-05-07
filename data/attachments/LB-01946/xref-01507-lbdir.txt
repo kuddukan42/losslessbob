@@ -1,0 +1,78 @@
+===================
+===================
+===================
+=== md5 for: bd95-04-06-e.flacf
+===================
+===================
+===================
+d36817949ad5bfdb1327bc2978e969e3 *bd - 95-04-06-d1\Track 01.flac
+62dea115337b2410048a2977edd2f2d6 *bd - 95-04-06-d1\Track 02.flac
+75841553056718b1ca89014c9dcf98fa *bd - 95-04-06-d1\Track 03.flac
+e5f0a2df25f316e9e268dbfe24531c35 *bd - 95-04-06-d1\Track 04.flac
+b36f242475a67dca7dade44770a4d11e *bd - 95-04-06-d1\Track 05.flac
+e4c7d6feafdfe6b39fb2bb737cae84fc *bd - 95-04-06-d1\Track 06.flac
+3e91334ea84f5e71036da749d7771b50 *bd - 95-04-06-d1\Track 07.flac
+6600f8480a8ea8e9f3ed35cb86af70b0 *bd - 95-04-06-d2\Track 01.flac
+746d1f8c7e624f12d3c03c96b9ec5c22 *bd - 95-04-06-d2\Track 02.flac
+df5a08634f1c1a27dd67f02c46a7e8ea *bd - 95-04-06-d2\Track 03.flac
+fb6b2b1ffc0dd8eb6212e69f7333b29f *bd - 95-04-06-d2\Track 04.flac
+61c3b77abad2fcf13af19f66f3c880c3 *bd - 95-04-06-d2\Track 05.flac
+28f7af6071f6db6e3e274daf49aeb254 *bd - 95-04-06-d2\Track 06.flac
+a791c392560a45b714957de3890d0fe7 *bd - 95-04-06-d2\Track 07.flac
+38cbbaa9cfa21dc05f5ef1438bdcc923 *bd-95-04-06-edinburgh-offmaster.txt
+===================
+===================
+===================
+=== ffp for: bd95-04-06-e.flacf
+===================
+===================
+===================
+bd - 95-04-06-d1\Track 01.flac:e203f45ebd412c0f8d70e9c4dbddb4c9
+bd - 95-04-06-d1\Track 02.flac:8a9290c0d08ef7211281c4ed899f5c03
+bd - 95-04-06-d1\Track 03.flac:73bb6f2733bff15668d0701266eb96ba
+bd - 95-04-06-d1\Track 04.flac:a5b8467f024aae868e6e2ef44f4b0f9f
+bd - 95-04-06-d1\Track 05.flac:39814873fc354c8eb87892b7c9b8f5f1
+bd - 95-04-06-d1\Track 06.flac:3be0fa36f23a72bd2339f28ec744affd
+bd - 95-04-06-d1\Track 07.flac:e79517d13ef723511d7ab048fb90f418
+bd - 95-04-06-d2\Track 01.flac:87695c564129774a0b36fce03d217950
+bd - 95-04-06-d2\Track 02.flac:6251c8546341e5a545a5b6d00800f335
+bd - 95-04-06-d2\Track 03.flac:b07129c0a82983b2b9d87bf57f5b2700
+bd - 95-04-06-d2\Track 04.flac:e59d23d795582415eb8cbba24451393d
+bd - 95-04-06-d2\Track 05.flac:fcbf7a47f829ffc058839ac3e36e49de
+bd - 95-04-06-d2\Track 06.flac:eccf70f7759874d6e5a39de00884cec0
+bd - 95-04-06-d2\Track 07.flac:0cbc911dbe79ed103aa331a196989217
+===================
+===================
+===================
+=== shntool len for: bd95-04-06-e.flacf\bd - 95-04-06-d1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.28       54749900 B   ---   --   ---xx   flac  0.5648  Track 01.flac
+     6:14.38       66063020 B   ---   --   ---xx   flac  0.4491  Track 02.flac
+     6:29.15       68654924 B   ---   --   ---xx   flac  0.5292  Track 03.flac
+     7:14.52       76679948 B   ---   --   ---xx   flac  0.4376  Track 04.flac
+    10:26.46      110534636 B   ---   --   ---xx   flac  0.4990  Track 05.flac
+     7:58.65       84472124 B   ---   --   ---xx   flac  0.4159  Track 06.flac
+     7:00.21       74137436 B   ---   --   ---xx   flac  0.3188  Track 07.flac
+    50:34.40      535291988 B                            0.4566  (7 files)
+===================
+===================
+===================
+=== shntool len for: bd95-04-06-e.flacf\bd - 95-04-06-d2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:59.58       63464060 B   ---   --   ---xx   flac  0.3639  Track 01.flac
+     7:47.25       82437644 B   ---   --   ---xx   flac  0.2998  Track 02.flac
+     6:18.38       66768620 B   ---   --   ---xx   flac  0.4887  Track 03.flac
+     9:05.40       96232124 B   ---   --   ---xx   flac  0.4600  Track 04.flac
+     8:16.31       87567356 B   ---   --   ---xx   flac  0.4826  Track 05.flac
+     7:29.30       79274204 B   ---   --   ---xx   flac  0.4878  Track 06.flac
+     8:42.16       92118476 B   ---   --   ---xx   flac  0.3838  Track 07.flac
+    53:39.13      567862484 B                            0.4244  (7 files)
+===================
+===================
+===================

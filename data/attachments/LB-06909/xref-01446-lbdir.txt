@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd96-10-25-d.flacf
+===================
+===================
+===================
+8b30753217bbc235777bda02af4ae85c *1996-10-25 Bronco Bowl, Dallas, Texas, USA.md5
+2ebc72a347130fc3c53dac937328be66 *CD1\01 Crash on the levee (down in the flood).flac
+1443c1f4847d414d453915c46c64789d *CD1\02 If you see her, say hello.flac
+66d1516dc77909efa62ce5982f563db8 *CD1\03 All along the watchtower.flac
+b77ab021300988ef25a8e6a3ddf48484 *CD1\04 Shelter from the storm.flac
+bca600f1767acc70da28e5464267874b *CD1\05 Just like Tom Thumb's blues.flac
+998eefca3e629cb4444271c803fd2916 *CD1\06 Silvio.flac
+4e740965512a681fd11d8a09f66ab3aa *CD1\07 Tangled up in blue.flac
+1e4e09c484cfcd1b7cac96680f1347d1 *CD1\08 Boots of Spanish leather.flac
+5a1eff712d55e7833fbac375da63e85e *CD1\FLAC CD1.md5
+9639c83f18f442e8fe5d084be1d7dccb *CD2\09 It's all over now, baby blue.flac
+ef35b15e715704e83c856b8cb39633e5 *CD2\10 God knows.flac
+96cc176ad9d4f3ca9bb021a619921345 *CD2\11 Joey.flac
+ed507d58b4b38191b21875b60300930e *CD2\12 Highway 61 revisited.flac
+f50cd08fe1eedab4655bb8824d4e5fed *CD2\13 Alabama getaway.flac
+dcb3804201b22b36f0477d2992746c3b *CD2\14 Forever young.flac
+b82da00a8ae73ecffdbef019f66cedbc *CD2\15 Rainy day women # 12 & 35.flac
+c239bc168c03c9161ad4479dd54347a8 *CD2\FLAC CD2.md5
+d305152f7a0da5488f161ae0c22c43e9 *Info\1996-10-25 Bronco Bowl, Dallas, Texas, USA.txt
+===================
+===================
+===================
+=== ffp for: bd96-10-25-d.flacf
+===================
+===================
+===================
+CD1\01 Crash on the levee (down in the flood).flac:ec5967210202d18ea8866866d35e483a
+CD1\02 If you see her, say hello.flac:288c10e6949f38b99d93ce1bcb947ae0
+CD1\03 All along the watchtower.flac:e96518c4a3a0ea86b5b186d277a12a7b
+CD1\04 Shelter from the storm.flac:e840533fabb12f7d9d6971de5a26bfe6
+CD1\05 Just like Tom Thumb's blues.flac:4fc3d0fc7fca9c2e4cc078c83c7c2f9b
+CD1\06 Silvio.flac:b02096021968ebc35a7b12ba622c2122
+CD1\07 Tangled up in blue.flac:006713963864a18137ae4c70ea7a1660
+CD1\08 Boots of Spanish leather.flac:61a9f59bae87821adf39e564f749bde0
+CD2\09 It's all over now, baby blue.flac:d7fe6dcf607ccbefaa4f5db37136902a
+CD2\10 God knows.flac:bfa5a801850dc72d5e6c6c9c28adcb32
+CD2\11 Joey.flac:4d9052cfa3a657b8000870997baea8ad
+CD2\12 Highway 61 revisited.flac:76e5d0c63c385f42fb47457a3aa26209
+CD2\13 Alabama getaway.flac:62ad31a5e985f7bdb5c0d1ae8bec9779
+CD2\14 Forever young.flac:da1852192a404420f931ef38ad897b06
+CD2\15 Rainy day women # 12 & 35.flac:86d330d631934fc9530be1c2f773977f
+===================
+===================
+===================
+=== shntool len for: bd96-10-25-d.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.06       53286956 B   ---   --   ---xx   flac  0.4839  01 Crash on the levee (down in the flood).flac
+     7:15.62       76879868 B   ---   --   ---xx   flac  0.4806  02 If you see her, say hello.flac
+     6:29.57       68753708 B   ---   --   ---xx   flac  0.4548  03 All along the watchtower.flac
+     8:38.23       91429340 B   ---   --   ---xx   flac  0.4662  04 Shelter from the storm.flac
+     8:56.10       94573964 B   ---   --   ---xx   flac  0.4713  05 Just like Tom Thumb's blues.flac
+     8:03.28       85267100 B   ---   --   ---xx   flac  0.4719  06 Silvio.flac
+     8:08.44       86186732 B   ---   --   ---xx   flac  0.4871  07 Tangled up in blue.flac
+     7:50.56       83039756 B   ---   --   ---xx   flac  0.4338  08 Boots of Spanish leather.flac
+    60:24.61      639417424 B                            0.4683  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd96-10-25-d.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:57.33       84220460 B   ---   --   ---xx   flac  0.5512  09 It's all over now, baby blue.flac
+     5:18.60       56236364 B   ---   --   ---xx   flac  0.5692  10 God knows.flac
+     7:48.67       82712828 B   ---   --   ---xx   flac  0.5312  11 Joey.flac
+    11:56.24      126358892 B   ---   --   ---xx   flac  0.5521  12 Highway 61 revisited.flac
+     9:05.32       96213308 B   ---   --   ---xx   flac  0.5461  13 Alabama getaway.flac
+     9:41.07      102504908 B   ---   --   ---xx   flac  0.5218  14 Forever young.flac
+     7:04.51       74913596 B   ---   --   ---xx   flac  0.5312  15 Rainy day women # 12 & 35.flac
+    58:52.49      623160356 B                            0.5423  (7 files)
+===================
+===================
+===================

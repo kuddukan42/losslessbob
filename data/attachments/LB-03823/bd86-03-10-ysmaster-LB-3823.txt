@@ -1,0 +1,17 @@
+Bob Dylan, 3/10/86, Tokyo, Japan, Nippon Budokan Hall, 3CDR
+
+LB-3823, (45min+42min+74min), Audience MASTER > DAT > CDr > EAC (secure, logs included) > SoundForge 8.0 > Trader's Little Helper 1.0 > FLAC, overall sound quality: A, This is an alternate recording to the bootleg ("Sukiyaki Party in Budokan" on Mainstream), FINGERPRINTS:, t01 [0:44] cough/sneeze; [2:32,3:36] sneeze, t03 [2:44,2:59] cough, t04 [0:36,1:03] cough, t11 [0:19] cough; [3:27,3:38] sneeze, t12 [0:01] sneeze; [0:29] distant sneeze, t18 [1:30] cough, t22 [2:53] cough/sneeze, t28 [4:44] sneeze, t30 [1:28,1:37,1:53,2:33] cough, t32 [0:18] distant cough, t33 [7:20] cough, FLAWS, occasional minor mic noises throughout, t01 [0:00-0:15] mic noises; [2:03] mic bump; [2:27,3:11] volume decrease, t04 [1:45-1:54] mic bumps, t09 [2:25-2:32] mic bumps, t11 [0:24-0:28] mic bumps, t12 [0:36] mic noise, t13 [4:12] small click, t14 [3:20-3:23] mic bumps, t15 [0:09] glitch, t18 [3:12] left channel d/o, t19 [2:56,3:07,3:13,3:19,3:33] buzz; [3:04] right channel d/o, t20 [0:00-0:07,0:24] mic bumps; [3:15] d/o in left channel, t21 [0:41-0:44] mic bumps, t23 [1:35] dropout/mic bump, t24 [1:20] small click; [2:26] glitch, t27 [0:19-0:24] mic bumps, MY INVOLVEMENT, No remastering algorithms applied. Hand corrections only., retracking, t20 [2:50] glitch removed, t25 [1:02] pop reduced, ---, Arturo el Duderino, 22 May 2006; bittorrent download 06/06; very good to excellent sound [B+]
+
+digipop d3t11 4:50, 5:06, d3t14 2:47
+
+158:42.59, CD1
+44:17.51, Bob Dylan set 1, 01. [03:59.38] Justine (Don Harris/Dewey Terry), 02. [04:33.10] Positively 4th Street, 03. [03:02.55] Clean-Cut Kid, 04. [04:06.01] I'll Remember You, 05. [03:22.71] Trust Yourself, 06. [02:50.38] That Lucky Old Sun (Haven Gillespie/Beasley Smith), 07. [05:42.16] Masters Of War, Tom Petty & The Heartbreakers set 1, 08. [05:17.41] Straight Into Darkness (Tom Petty), 09. [05:44.51] Breakdown (Tom Petty), Bob Dylan set 2, 10. [05:38.30] It Ain't Me, Babe, --- (tape-flip cut) ---, 
+
+CD2
+41:12.61, 11. [04:38.33] Mr Tambourine Man, 12. [04:09.62] Girl From The North Country, 13. [06:04.07] It's All Right, Ma (I'm Only Bleeding), 14. [04:13.42] I Forgot More Than You'll Ever Know (Cecil A. Null), 15. [04:41.51] Just Like A Woman, 16. [02:45.50] I'm Movin' On (Hank Snow), 17. [05:51.04] Lenny Bruce, 18. [05:22.72] When The Night Comes Falling From The Sky, 19. [03:36.40] Lonesome Town (Baker Knight), --- (tape-flip cut) ---, 
+
+CD3
+73:12.22, 20. [04:59.01] Ballad Of A Thin Man, Tom Petty & The Heartbreakers set 2, 21. [04:25.62] So You Want To Be A Rock & Roll Star (Roger McGuinn/Chris Hillman), 22. [06:27:37] Refugee (Tom Petty/Mike Campbell), Bob Dylan set 3, 23. [03:10.42] Rainy Day Women #12&35, 24. [04:44.04] Seeing The Real You At Last, 25. [04:34.69] Across The Borderline (Ry Cooder/John Hiatt/Jim Dickinson), 26. [03:24.40] We Three (My Echo, My Shadow and Me) (Dick Robertson/Nelson Cogane/Sammy Mysels), 27. [04:18.61] I And I, 28. [07:29.43] Like A Rolling Stone, --- (tape-flip cut) ---, 29. [11:25.62] In The Garden, Encore, 30. [05:15.27] Blowin' In The Wind, 31. [02:41.47] Uranium Rock (Rock 'em Dead) (Warren Smith), 32. [02:16.28] Sukiyaki (Ue o muite aruko) (Rohusuke Ei/Hachidai Nakamura), 33. [07:58.54] Knockin' On Heaven's Door, Complete concert.
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

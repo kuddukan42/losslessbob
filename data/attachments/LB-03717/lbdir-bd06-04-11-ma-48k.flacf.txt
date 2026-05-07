@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-04-11-ma-48k.flacf 
+=================== 
+=================== 
+=================== 
+4658a5b7bdb112cdf99ab37ea8d697b2  bd06-04-11-ma-48k-LB-3717.txt
+c5059fb0d6c189d6e96035f54c110de7  bob dylan 4-11-06 t1.flac
+8c3925233bd59474d306c96f3d31da1b  bob dylan 4-11-06 t10.flac
+6f6b8ce86557d0787c191c9df53092eb  bob dylan 4-11-06 t11.flac
+cbbec46be00096b6e302d2d27f63b098  bob dylan 4-11-06 t12.flac
+540fad23436d53867dfe56ca842c5163  bob dylan 4-11-06 t13.flac
+247a51506809c26d951fa98399de7e89  bob dylan 4-11-06 t14.flac
+948b5e1a0ba7d6ecbbb66ff7135097b8  bob dylan 4-11-06 t15.flac
+d9aa10ca01ea45907a865c57fe894eaf  bob dylan 4-11-06 t16.flac
+3138e6becc82c6678b766a388595ee96  bob dylan 4-11-06 t2.flac
+bd2003b7f021072d3329503af5c19bea  bob dylan 4-11-06 t3.flac
+1ed130a49d0003bb0693463f4e70e8d4  bob dylan 4-11-06 t4.flac
+726efd76ad6dc68c23d8a523e6ef4f35  bob dylan 4-11-06 t5.flac
+703d62832c60fd77afa2a3595a2f3659  bob dylan 4-11-06 t6.flac
+ab179681b072b9981659010fd69478fc  bob dylan 4-11-06 t7.flac
+af5d2b942a08d30031cdef4c0775df62  bob dylan 4-11-06 t8.flac
+7e6cbcd03a6a5115867ba676cc77284f  bob dylan 4-11-06 t9.flac
+392ada01a43f26a1979f412ee8e38d99  bob dylan 4-11-06.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-04-11-ma-48k.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 4-11-06 t1.flac:2419a42845974be1130cb3aaedc90e27
+bob dylan 4-11-06 t10.flac:fd649912dda6cb8f3b8ea5cf403fc02b
+bob dylan 4-11-06 t11.flac:d7deab4e8c44873eac984837e0e164d6
+bob dylan 4-11-06 t12.flac:c605d7c8a5d7db0c14c7630f889379ff
+bob dylan 4-11-06 t13.flac:0b3dc6021c446929a7941e76767c1f4b
+bob dylan 4-11-06 t14.flac:9530b227cec343fbd92d2134627acb39
+bob dylan 4-11-06 t15.flac:640dccbfc5a34e166ac61316396ae218
+bob dylan 4-11-06 t16.flac:6f2742b75b058c237e9483e3caec91f8
+bob dylan 4-11-06 t2.flac:94b14cabbe367bcfa31ea1f975b0ae8a
+bob dylan 4-11-06 t3.flac:5836262e57fe8972a4685a67ed32b3a0
+bob dylan 4-11-06 t4.flac:77bac20ae19f45dbeee02ff85e15debc
+bob dylan 4-11-06 t5.flac:d9c30a2240b16ea904e6c6493f91ef9a
+bob dylan 4-11-06 t6.flac:d491ef402d42a4743c415b475bc7674e
+bob dylan 4-11-06 t7.flac:3fec04a3affdb92cb0316ebd498c4266
+bob dylan 4-11-06 t8.flac:7bd3d0eafb0914db6b57f5539845ec47
+bob dylan 4-11-06 t9.flac:ae7d3cee0214c1fdb6a5acfbe0b3a520
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-04-11-ma-48k.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:14.676      14337836 B   cxx   --   ---xx   flac  0.2749  bob dylan 4-11-06 t1.flac
+     6:47.668      78272252 B   cxx   --   ---xx   flac  0.3420  bob dylan 4-11-06 t10.flac
+     6:59.563      80556044 B   cxx   --   ---xx   flac  0.3469  bob dylan 4-11-06 t11.flac
+     6:25.214      73961036 B   cxx   --   ---xx   flac  0.3169  bob dylan 4-11-06 t12.flac
+     5:06.887      58922348 B   cxx   --   ---xx   flac  0.3565  bob dylan 4-11-06 t13.flac
+     3:05.073      35534060 B   cxx   --   ---xx   flac  0.2869  bob dylan 4-11-06 t14.flac
+     7:41.519      88611644 B   cxx   --   ---xx   flac  0.3409  bob dylan 4-11-06 t15.flac
+     5:35.785      64470716 B   cxx   --   ---xx   flac  0.3389  bob dylan 4-11-06 t16.flac
+     6:36.483      76124876 B   cxx   --   ---xx   flac  0.3523  bob dylan 4-11-06 t2.flac
+     7:13.062      83147948 B   cxx   --   ---xx   flac  0.3385  bob dylan 4-11-06 t3.flac
+     5:31.644      63675740 B   cxx   --   ---xx   flac  0.3249  bob dylan 4-11-06 t4.flac
+     5:49.431      67090844 B   cxx   --   ---xx   flac  0.3096  bob dylan 4-11-06 t5.flac
+     8:53.389     102410828 B   cxx   --   ---xx   flac  0.3495  bob dylan 4-11-06 t6.flac
+     5:49.370      67079084 B   cxx   --   ---xx   flac  0.3353  bob dylan 4-11-06 t7.flac
+     5:47.349      66691004 B   cxx   --   ---xx   flac  0.3362  bob dylan 4-11-06 t8.flac
+     6:37.133      76249532 B   cxx   --   ---xx   flac  0.3404  bob dylan 4-11-06 t9.flac
+    95:14.245    1097135792 B                            0.3358  (16 files)
+=================== 
+=================== 
+=================== 

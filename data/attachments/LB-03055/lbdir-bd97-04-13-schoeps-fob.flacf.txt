@@ -1,0 +1,114 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-13-schoeps-fob.flacf 
+=================== 
+=================== 
+=================== 
+f93bc86442aa2d982d0820b18113b114  bd97-04-13-schoeps-fob-LB-3055.txt
+f983159cb618d680d4867727955ee41c  Disc 1\dylan1997-04-13.d1t01.flac
+fb8fe57ac977e060f8732710e180aa58  Disc 1\dylan1997-04-13.d1t02.flac
+30f6c1f678fb22fe5de9704166d92c9d  Disc 1\dylan1997-04-13.d1t03.flac
+c77f666b940a318beb9353ca27b38ea4  Disc 1\dylan1997-04-13.d1t04.flac
+145a4a57151dd1e4938936e054c37c6e  Disc 1\dylan1997-04-13.d1t05.flac
+c310b1f151d80b1d7a6b75f6e47e6ce8  Disc 1\dylan1997-04-13.d1t06.flac
+3570799f569878bd2e80c18415632379  Disc 1\dylan1997-04-13.d1t07.flac
+6299ea66bf7ee7acba92547413234bcc  Disc 1\dylan1997-04-13.d1t08.flac
+b4c96a0b9332603d1b8527b2e3650b0d  Disc 1\dylan1997-04-13.d1t09.flac
+fa690bc2237652fc9510ef1c019ba1b9  Disc 1\dylan1997-04-13.d1t10.flac
+0a34cc16787ff91645410fea7043dff1  Disc 1\dylan1997-04-13.d1t11.flac
+09f6267792175d665dd01590b398be9d  Disc 2\dylan1997-04-13.d2t01.flac
+0b44370e1d161e140e57397ed3502435  Disc 2\dylan1997-04-13.d2t02.flac
+707a87d4640dba65dbbd84a3e7a9e640  Disc 2\dylan1997-04-13.d2t03.flac
+3cdc971fe1aa662bf44c7cd55d863f3c  Disc 2\dylan1997-04-13.d2t04.flac
+c288d97431efd41943faa7f281b0b371  Disc 2\dylan1997-04-13.d2t05.flac
+6ab372b86e8628815a481c7ef575eb2f  Disc 2\dylan1997-04-13.d2t06.flac
+740854ffb22079631bd0e214998d45c1  Disc 2\dylan1997-04-13.d2t07.flac
+885e55effda8f1584bf3f107c95058d3  Disc 2\dylan1997-04-13.d2t08.flac
+d38fdfd1afc3325d098b869f167383a1  Disc 2\dylan1997-04-13.d2t09.flac
+e0c92113ba1c8327825f7d05b2f7d4e6  Disc 2\dylan1997-04-13.d2t10.flac
+47475b40208629f2de791cc22eefa2c3  Disc 2\dylan1997-04-13.d2t11.flac
+184286c609f4580c3a0c1aa1fe9fc160  Disc 2\dylan1997-04-13.d2t12.flac
+071e0be3ee4ea4f46cf7d947e9b9433a  dylan1997-04-13.ffp.txt
+4388c5aff43b8a32e8eb6398518cc310  dylan1997-04-13.wayne nj.schoeps.fob.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-13-schoeps-fob.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+dylan1997-04-13.d1t01.flac:1b6ae3122b673734cb2c90db42c60152
+dylan1997-04-13.d1t02.flac:40f6f848540d1e1664b305cd6ab5f2a2
+dylan1997-04-13.d1t03.flac:eba3968343cdb88631a7aa057900c869
+dylan1997-04-13.d1t04.flac:11c44821d77ad48a7936b78da5f25d65
+dylan1997-04-13.d1t05.flac:16ea394dcd1f11a633703c752c6c7bb6
+dylan1997-04-13.d1t06.flac:084759c7c33c8a27feb9a1e25309ab05
+dylan1997-04-13.d1t07.flac:942229716823dcbe521b2953a9161cc9
+dylan1997-04-13.d1t08.flac:3025c0480af3a56d55f2e1f265fa7814
+dylan1997-04-13.d1t09.flac:8ea2e7f449fec7442b91dad77767fd36
+dylan1997-04-13.d1t10.flac:fc37e9d916282c4f6e1444a8907e4e23
+dylan1997-04-13.d1t11.flac:cb7d8cc6640d86fbc14d549f6fefea63
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-13-schoeps-fob.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+dylan1997-04-13.d2t01.flac:cb96ab086e11254ca7b52ef822f55b41
+dylan1997-04-13.d2t02.flac:f27cbf8236967319b5a02b12d3b216bb
+dylan1997-04-13.d2t03.flac:725eaf13c8ccb5e2d9274e3e82c0c2f3
+dylan1997-04-13.d2t04.flac:934c99b174f0c5c61ea45e6be54abd44
+dylan1997-04-13.d2t05.flac:7d0c0df006964d38487d6feaf2dcb3ee
+dylan1997-04-13.d2t06.flac:812d082838000f1c87f221aeb7f89621
+dylan1997-04-13.d2t07.flac:51821025b1e4b734d8d1e44b2141ab44
+dylan1997-04-13.d2t08.flac:0c04b57b35dc2f0eabb80d813a06f179
+dylan1997-04-13.d2t09.flac:0f3209ebab60840f505578eba2ecb6bd
+dylan1997-04-13.d2t10.flac:00d6e8f1ca32442b7da68fc07c3cbfca
+dylan1997-04-13.d2t11.flac:ce56ed4db100662cc6a122076824ab53
+dylan1997-04-13.d2t12.flac:24a8c4048dd60c032a80952380bc98e4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-13-schoeps-fob.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.28       50516300 B   ---   --   ---xx   flac  0.5957  dylan1997-04-13.d1t01.flac
+     6:14.12       66001868 B   ---   --   ---xx   flac  0.5437  dylan1997-04-13.d1t02.flac
+     7:00.22       74139788 B   ---   --   ---xx   flac  0.5954  dylan1997-04-13.d1t03.flac
+     5:04.33       53703260 B   ---   --   ---xx   flac  0.5670  dylan1997-04-13.d1t04.flac
+     7:08.26       75560396 B   ---   --   ---xx   flac  0.5465  dylan1997-04-13.d1t05.flac
+     8:53.01       94023596 B   ---   --   ---xx   flac  0.5932  dylan1997-04-13.d1t06.flac
+     7:41.15       81355724 B   ---   --   ---xx   flac  0.5867  dylan1997-04-13.d1t07.flac
+     7:22.70       78133484 B   ---   --   ---xx   flac  0.5478  dylan1997-04-13.d1t08.flac
+     9:00.23       95310140 B   ---   --   ---xx   flac  0.6183  dylan1997-04-13.d1t09.flac
+     7:24.12       78349868 B   ---   --   ---xx   flac  0.6178  dylan1997-04-13.d1t10.flac
+     7:26.42       78773228 B   ---   --   ---xx   flac  0.5663  dylan1997-04-13.d1t11.flac
+    78:01.59      825867652 B                            0.5814  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-13-schoeps-fob.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:30.23        5346140 B   ---   --   ---xx   flac  0.5186  dylan1997-04-13.d2t01.flac
+     8:22.14       88585772 B   ---   --   ---xx   flac  0.6203  dylan1997-04-13.d2t02.flac
+     9:25.17       99706028 B   ---   --   ---xx   flac  0.5728  dylan1997-04-13.d2t03.flac
+    10:25.25      110308844 B   ---   --   ---xx   flac  0.4917  dylan1997-04-13.d2t04.flac
+     7:01.02       74269148 B   ---   --   ---xx   flac  0.6002  dylan1997-04-13.d2t05.flac
+     4:40.31       49464956 B   ---   --   ---xx   flac  0.6726  dylan1997-04-13.d2t06.flac
+     6:02.02       63861548 B   ---   --   ---xx   flac  0.5585  dylan1997-04-13.d2t07.flac
+     7:50.42       83006828 B   ---   --   ---xx   flac  0.5425  dylan1997-04-13.d2t08.flac
+     4:51.08       51351260 B   ---   --   ---xx   flac  0.5699  dylan1997-04-13.d2t09.flac
+     6:05.50       64503644 B   ---   --   ---xx   flac  0.5194  dylan1997-04-13.d2t10.flac
+     3:36.73       38274140 B   ---   --   ---xx   flac  0.6022  dylan1997-04-13.d2t11.flac
+     8:09.29       86327852 B   ---   --   ---xx   flac  0.5253  dylan1997-04-13.d2t12.flac
+    77:00.16      815006160 B                            0.5629  (12 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,124 @@
+===================
+===================
+===================
+=== Bob Dylan 2004-07-14 Alcala de Henares (schubert).txt
+===================
+===================
+===================
+Bob Dylan
+Huerto del Palacio Arzobispal
+Alcal de Henares (Madrid), Spain
+July 14, 2004
+
+Recorded & soundmastering by: Schubert
+
+Lineage: 
+Neumann SKM140 -> Neumann BS48i-2 -> Sony TDC-D100
+>WaveLab 6.01 > dBpower AMP Music Converter > MD5summer
+
+
+Disc One [60:45]
+ 1. Introduction
+ 2. The Wicked Messenger
+ 3. She Belongs To Me
+ 4. Cry A While
+ 5. Desolation Row
+ 6. Tweedle Dee & Tweedle Dum
+ 7. Boots Of Spanish Leather
+ 8. Highway 61 Revisited
+ 9. This Wheel's On Fire
+10. Watching The River Flow
+ 
+
+Disc Two [63:53]
+ 1. Ballad Of A Thin Man
+ 2. Floater (Too Much To Ask)
+ 3. Honest With Me
+ 4. Ballad Of Hollis Brown
+ 5. Summer Days
+ 6. Audience
+ 7. Don't Think Twice, It's All Right
+ 8. Like A Rolling Stone
+ 9. All Along The Watchtower
+
+Concert # 1645 of The Never-Ending Tour. 
+Concert # 18 of the 2004 Europe Summer Tour. 
+2004 concert # 57.
+Concert # 24 with the 18th Never-Ending 
+
+Tour Band: 
+Bob Dylan (vocal & piano), 
+Stu Kimball (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion).
+
+4, 6, 13, 15 acoustic with the band.
+1, 2, 4, 6, 8-10, 15 Bob Dylan (harmonica).
+2 Larry Campbell (pedal steel guitar).
+3, 9, 12 Larry Campbell (slide guitar).
+6, 13, 15 Larry Campbell (cittern).
+11 Larry Campbell (violin).
+
+Notes.
+LB-numbers for this concert: LB-2048, LB-3417, LB-5549, LB-5631.
+
+11 new songs (64%) compared to previous concert. 1 new song for this tour.
+
+Stereo audience recording, 125 minutes.
+Session info updated 9 February 2010.
+===================
+===================
+===================
+=== Bob Dylan 2004-07-14 Alcalá de Henares  (SCHUBERT REC + ASM).ffp
+===================
+===================
+===================
+101 Introduction.flac:3e4ec1cd43aab531aed1c9cbe661869d
+102 The Wicked Messenger.flac:fa8c1567cfe4d31f2cfbd7bce5f939ad
+103 She Belongs To Me.flac:5f2dd2033eae487a293bf41362d74468
+104 Cry A While.flac:6aff86bf4253b6527115cb904f658561
+105 Desolation Row.flac:e15547eb41191c0b8ebe5fb1a4bfbbc5
+106 Tweedle Dee & Tweedle Dum.flac:e6d92275bc032bf709607ed825093928
+107 Boots Of Spanish Leather.flac:692a689d63127d2252e5e4b8e6f5374c
+108 Highway 61 Revisited.flac:3861614cf0fde70dc44cf3b404fae7e3
+109 This Wheel's On Fire.flac:b74732802432b405e37ad82d69778533
+110 Watching The River Flow.flac:bebd3d8b99cec181b56741cecc803536
+201 Ballad Of A Thin Man.flac:8a29d6b6f2b27ead5c566c9e9185489f
+202 Floater (Too Much To Ask).flac:053778a40c18e6ec6a37cc316761ef6f
+203 Honest With Me.flac:507fe66acf5fb6bd8eb7a0c43119f4cf
+204 Ballad Of Hollis Brown.flac:f7a30713905a02e94b3b233a91089c52
+205 Summer Days.flac:afcdb756670fe1fd3c7be3137b4297d5
+206 audience.flac:7ca366feeeecd5fa49935cce1b992733
+207 Don't Think Twice, It's All Right.flac:914df0f836fd4c63f19c531517a6923a
+208 Like A Rolling Stone.flac:689a920c80e941468f8f2d05216824e5
+209 All Along The Watchtower.flac:c00420a14a246640ea6fe13d2480670e
+===================
+===================
+===================
+=== Bob Dylan 2004-07-14 Alcalá de Henares  (SCHUBERT REC + ASM).md5
+===================
+===================
+===================
+18f5f59198be7acd82fc6fb79f6bc3e5 *101 Introduction.flac
+59512ea4efd51701cb76da29da8aab28 *102 The Wicked Messenger.flac
+103912112eff219852e71f36dd968326 *103 She Belongs To Me.flac
+b7e132102b5350657332d206a54444a0 *104 Cry A While.flac
+fbd869944759e22c9cd43e323d4a6c7e *105 Desolation Row.flac
+38ff09b44e6a737533906cd69959f977 *106 Tweedle Dee & Tweedle Dum.flac
+636279f2a71cb5a5a2571116a0f475d1 *107 Boots Of Spanish Leather.flac
+16a2b06638264d48c64b164b18962fa7 *108 Highway 61 Revisited.flac
+b308d14f131fd8f454173b91be6b0835 *109 This Wheel's On Fire.flac
+a80365c41be36e3264e486dab06443a6 *110 Watching The River Flow.flac
+16a102210edc3e9976a8c9c4a0b8f66b *201 Ballad Of A Thin Man.flac
+038076329ca92a3d764ade66604d359c *202 Floater (Too Much To Ask).flac
+64bd0f0e16e125692989b688aa2f0354 *203 Honest With Me.flac
+adf78a7f39dae063fd389e588cc7eb1e *204 Ballad Of Hollis Brown.flac
+47f75617f492dbfe89b8f4738b6c441a *205 Summer Days.flac
+b8785f7d71acc146dda84ead385ed571 *206 audience.flac
+b2e1aad2da7f592c85b351174546bdd4 *207 Don't Think Twice, It's All Right.flac
+ec54dcda75dadc201106ac9850d578ce *208 Like A Rolling Stone.flac
+34c7ca29660dd7f825a0d8031db6e4a4 *209 All Along The Watchtower.flac
+cc623df13b7e1ccbbc5b148bf8d5954c *Bob Dylan 2004-07-14 Alcala de Henares (schubert).txt
+===================
+===================
+===================

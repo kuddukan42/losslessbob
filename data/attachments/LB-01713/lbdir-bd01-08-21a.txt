@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-08-21a 
+=================== 
+=================== 
+=================== 
+a9475ac4ee3047ad27fae710d4c01326  bd01-08-21a.txt
+319781e1de30dfc7c575d6bcbb888174  Disc 1\01 Roving Gambler.shn
+81b9502adc6e3ac3f6b3d964bc584d36  Disc 1\02 Mr. Tambourine Man.shn
+184f11885fc108f755ca9741c2e2770e  Disc 1\03 Desolation Row.shn
+72aa45da22a2738c844ddf69aa415b58  Disc 1\04 This World Can't Stand Long.shn
+8cb8a2c881d899ffb5c26dde2c2893c1  Disc 1\05 Country Pie.shn
+0d90b4b093c2a56b44f840ed71e00c34  Disc 1\06 Shelter From The Storm.shn
+cb3a466dd0c8668c480652803f9d130d  Disc 1\07 Maggie's Farm.shn
+145bcfc7c7f5d3fe088bd05b9ba55751  Disc 1\08 Masters Of War.shn
+596f9eb01cb8397ce405f93d94ac12ce  Disc 1\09 Mama Youv'e Been On My Mind.shn
+c8064e2c9606f96141aac96e01237b43  Disc 1\10 It's All Over Now Baby Blue.shn
+0c7acd36be1d40852cb4b2d585bf89f3  Disc 1\11 To Be Alone With You.shn
+2cd091e56cfe952b99ce6a20b61a00b5  Disc 1\12 Tears Of Rage.shn
+2227a1dc957a7a7a35ad1e70e3929cbc  Disc 1\Disc 1.md5
+789bcde1764f3dc93141d685186a9d89  Disc 2\01 Drifter's Escape.shn
+160979fdc56e57652e5b18149ae5ec2f  Disc 2\02 Leopard Skin Pill Box Hat.shn
+3873f81ef102a91ef2e87133cfae15e5  Disc 2\03 Love Sick.shn
+865207183015c7a6691ae01af62536f6  Disc 2\04 Like A Rolling Stone.shn
+8aa26ad463693fc2a8746841be217d62  Disc 2\05 Knocking On Heaven's Door.shn
+9348a4c4d5fff69ac89331cfcfa2431c  Disc 2\06 All Along The Watchtower.shn
+82f445c5e5485c976469845a0f14f329  Disc 2\07 Blowin' In The Wind.shn
+283c7ea5dc320b98d9529d1135d507aa  Disc 2\Disc 2.md5
+35939706979c21b10de56147ab2b05e1  info.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-08-21a\Disc 2 
+=================== 
+=================== 
+=================== 
+a5c7a9fc4c783be0b3f5c4501f67bcea  [shntool]  01_Drifter_s_Escape.wav
+b815600e6634472acd315b01d99be290  [shntool]  02_Leopard_Skin_Pill_Box_Hat.wav
+a9061e50ec25dcb8bb971795aa9bbcd1  [shntool]  03_Love_Sick.wav
+6f7edf34962446233e8e9ed9be39136e  [shntool]  04_Like_A_Rolling_Stone.wav
+46fdd237c1ae4d4a40dcdc76181de39e  [shntool]  05_Knocking_On_Heaven_s_Door.wav
+c7fb981ef1ea901067b28d3da9594987  [shntool]  06_All_Along_The_Watchtower.wav
+cb65ee56e4ce4b59b5757f19eb1d4773  [shntool]  07_Blowin__In_The_Wind.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd01-08-21a\Disc 1 
+=================== 
+=================== 
+=================== 
+66118ab6e3ad901b2731cb04887b6907  [shntool]  01_Roving_Gambler.wav
+6a930285a040500a0cb16fab86efa0e4  [shntool]  02_Mr._Tambourine_Man.wav
+06a03ad7ed27b0b7577b7de4dcd33ded  [shntool]  03_Desolation_Row.wav
+369bb6d5b3e035e866a68eab598a2538  [shntool]  04_This_World_Can_t_Stand_Long.wav
+3bb3abaf581ef1ef0385eb5d8b3149a1  [shntool]  05_Country_Pie.wav
+893a5e28821e42ec75a86da6a72f2b82  [shntool]  06_Shelter_From_The_Storm.wav
+9844d4f2f5d9163d91ac9990fa1bcc19  [shntool]  07_Maggie_s_Farm.wav
+d5fcedbb9e733df0addefaf75a8d79c7  [shntool]  08_Masters_Of_War.wav
+fd41a0e00501101ca12eac83b1d8aa2e  [shntool]  09_Mama_Youv_e_Been_On_My_Mind.wav
+5269ca92e5eb95530e2d3cf059d0df9e  [shntool]  10_It_s_All_Over_Now_Baby_Blue.wav
+851eb0b5712569b77d8e62da4e87ee0c  [shntool]  11_To_Be_Alone_With_You.wav
+0eb5e781846fecbcaf8ebe47ebab99db  [shntool]  12_Tears_Of_Rage.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-21a\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.50       59740844 B   ---   --   -----    wav  1.0000  01_Drifter_s_Escape.wav
+     7:42.39       81588572 B   ---   --   -----    wav  1.0000  02_Leopard_Skin_Pill_Box_Hat.wav
+     5:48.21       61436636 B   ---   --   -----    wav  1.0000  03_Love_Sick.wav
+     8:12.17       86828828 B   ---   --   -----    wav  1.0000  04_Like_A_Rolling_Stone.wav
+     5:23.55       57106604 B   ---   --   -----    wav  1.0000  05_Knocking_On_Heaven_s_Door.wav
+     4:17.47       45445388 B   ---   --   -----    wav  1.0000  06_All_Along_The_Watchtower.wav
+     4:55.30       52108604 B   ---   --   -----    wav  1.0000  07_Blowin__In_The_Wind.wav
+    41:58.34      444255476 B                            1.0000  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-08-21a\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.56       45995756 B   ---   --   -----    wav  1.0000  01_Roving_Gambler.wav
+     6:55.05       73217804 B   ---   --   -----    wav  1.0000  02_Mr._Tambourine_Man.wav
+     8:32.60       90457964 B   ---   --   -----    wav  1.0000  03_Desolation_Row.wav
+     4:10.09       44121212 B   ---   --   -----    wav  1.0000  04_This_World_Can_t_Stand_Long.wav
+     3:05.34       32714012 B   ---   --   -----    wav  1.0000  05_Country_Pie.wav
+     6:44.52       71387948 B   ---   --   -----    wav  1.0000  06_Shelter_From_The_Storm.wav
+     6:11.67       65602028 B   ---   --   -----    wav  1.0000  07_Maggie_s_Farm.wav
+     4:59.43       52844780 B   ---   --   -----    wav  1.0000  08_Masters_Of_War.wav
+     4:10.09       44121212 B   ---   --   -----    wav  1.0000  09_Mama_Youv_e_Been_On_My_Mind.wav
+     6:41.03       70743500 B   ---   --   -----    wav  1.0000  10_It_s_All_Over_Now_Baby_Blue.wav
+     5:46.13       61065020 B   ---   --   -----    wav  1.0000  11_To_Be_Alone_With_You.wav
+     8:16.52       87616748 B   ---   --   -----    wav  1.0000  12_Tears_Of_Rage.wav
+    69:54.28      739887984 B                            1.0000  (12 files)
+=================== 
+=================== 
+=================== 

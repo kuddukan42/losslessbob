@@ -1,0 +1,117 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-02-15-Moving-On-To-Holland.flacf 
+=================== 
+=================== 
+=================== 
+befa285a08f179f3dfd8037078c6bcb8  disc one\disc one.ffp
+d63693183c740ce130c24a944043449a  disc one\Track01.flac
+f04f278db04dc5af0136fe88e2afa5d3  disc one\Track02.flac
+f4a27118b62a4dc228a5071f23706245  disc one\Track03.flac
+f38cc543ff6a43627993d34fe5ffec2d  disc one\Track04.flac
+a9ca902f8a3737565b205521051938e0  disc one\Track05.flac
+24426512c8446ebc547d94606fc36d33  disc one\Track06.flac
+ffa5785a5cca5c52c64156bef49af924  disc one\Track07.flac
+f9f0654e8a1511675c9dbef3bbcddbcc  disc one\Track08.flac
+e77eb98187e3f5b5cbb30f93ef9b3d33  disc one\Track09.flac
+bbd0f5e6f1cacdb7df49ea4ed52733ab  disc one\Track10.flac
+d06d812a79a6515f95b60e7ec5e5732e  disc one\Track11.flac
+940fda728231bcf2da9bb67d6abdf5a1  disc one\Track12.flac
+50dd3d545681de2ec5a1e3b741d735a7  disc two\disc two.ffp
+15034d3ad186fd4fa4e4bee3fb809b86  disc two\Track01.flac
+85fe74a43592999383bf6f0b141b0361  disc two\Track02.flac
+985da44d0020f894ad3351441d3758d8  disc two\Track03.flac
+53975aa373c4129cb63c7c6a1faa8a81  disc two\Track04.flac
+7be0d0be7bbb7ca36286992b202b952e  disc two\Track05.flac
+10817489bab0bc4def91d62d0a0f5c56  disc two\Track06.flac
+072d74b15460a7e80f9197c565045c95  disc two\Track07.flac
+d413cc6488a742e579be2510f3b49d52  disc two\Track08.flac
+d62f58a930dd764369524a3073acfe10  disc two\Track09.flac
+96a23a50da9a089c567f4c6b05dfd106  disc two\Track10.flac
+9981a3de36ecfad5cb16c0fb9b093ded  disc two\Track11.flac
+9f6f43089a76917dbd6718ec5cc26cb1  disc two\Track12.flac
+7f5cf1d2aae1515249ad9d80171c7128  text\holland text.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-15-Moving-On-To-Holland.flacf\disc one 
+=================== 
+=================== 
+=================== 
+Track01.flac:72d09de2fe4eba719d38baf118d73f48
+Track02.flac:7fa0002354cd75ced0627ee0502d0914
+Track03.flac:5869d84600b036d3fb59409332fa76de
+Track04.flac:0e38c43f524ca3e4204b36ed7c3501b3
+Track05.flac:32e43c520da01f41aa7cfb96ac0c6dfd
+Track06.flac:e412177c9607bee67763a8687cef5c5e
+Track07.flac:49baf296104f293c88e7ac06f451612f
+Track08.flac:a08ddec333d929da1e2841921f57555c
+Track09.flac:1fa26da34e5523511d9fbdcac86297b2
+Track10.flac:c6676a5cac96fa65bf9ab86dbcdad39a
+Track11.flac:ba315eee1986d21f8ecc080ab18bb318
+Track12.flac:839cfda8a3bae172022f8d4eb0faf4ab
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-02-15-Moving-On-To-Holland.flacf\disc two 
+=================== 
+=================== 
+=================== 
+Track01.flac:6af046bd0b6494ae7f43444bac736c50
+Track02.flac:8880517650330174e77027f36d493887
+Track03.flac:5902314422ceeb2110e668a82ff1198f
+Track04.flac:e10ba7d6c8fe30fe9de82f436e0940c8
+Track05.flac:c60684e91c4f974fd4c3bfec9c7992b3
+Track06.flac:8ff92a01b30f0422356e3cdf6ad676de
+Track07.flac:50c4376cc034a4813fdea83268694e21
+Track08.flac:eef06a189f2d07008a79ea5b4e2bc422
+Track09.flac:c7f0a0d298ccc889770c6f8357e61758
+Track10.flac:4e1fc6e5b4190f07c852fcd237ce4fbc
+Track11.flac:a1dfc5e0d5d9fbf1d0e0b2fbba2e9f79
+Track12.flac:e139e90d8d4eef1fafb5d08961e2d9a0
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-02-15-Moving-On-To-Holland.flacf\disc one 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:53.02       51689948 B   ---   --   ---xx   flac  0.3212  Track01.flac
+     5:08.08       54350060 B   ---   --   ---xx   flac  0.2994  Track02.flac
+     4:38.12       49067468 B   ---   --   ---xx   flac  0.2957  Track03.flac
+     8:57.60       94867964 B   ---   --   ---xx   flac  0.3005  Track04.flac
+     7:09.65       75828524 B   ---   --   ---xx   flac  0.3066  Track05.flac
+     8:07.55       86036204 B   ---   --   ---xx   flac  0.2982  Track06.flac
+     6:21.53       67333100 B   ---   --   ---xx   flac  0.2943  Track07.flac
+     4:48.25       50862044 B   ---   --   ---xx   flac  0.2473  Track08.flac
+     6:40.40       70654124 B   ---   --   ---xx   flac  0.2388  Track09.flac
+     7:01.22       74316188 B   ---   --   ---xx   flac  0.2496  Track10.flac
+     8:06.68       85890380 B   ---   --   ---xx   flac  0.2577  Track11.flac
+     5:28.57       57993308 B   ---   --   ---xx   flac  0.3172  Track12.flac
+    77:22.17      818889312 B                            0.2847  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-02-15-Moving-On-To-Holland.flacf\disc two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:24.57       99623708 B   ---   --   ---xx   flac  0.3116  Track01.flac
+     7:16.25       76969244 B   ---   --   ---xx   flac  0.2632  Track02.flac
+     8:05.47       85664588 B   ---   --   ---xx   flac  0.3012  Track03.flac
+     9:58.43      105588380 B   ---   --   ---xx   flac  0.2897  Track04.flac
+     6:47.35       71877164 B   ---   --   ---xx   flac  0.3002  Track05.flac
+     2:58.35       31481564 B   ---   --   ---xx   flac  0.2300  Track06.flac
+     4:45.58       50410460 B   ---   --   ---xx   flac  0.2951  Track07.flac
+     5:02.70       53437484 B   ---   --   ---xx   flac  0.2895  Track08.flac
+     5:49.20       61610684 B   ---   --   ---xx   flac  0.2776  Track09.flac
+     4:21.42       46139228 B   ---   --   ---xx   flac  0.3196  Track10.flac
+     4:41.00       49568444 B   ---   --   ---xx   flac  0.2896  Track11.flac
+     5:25.10       57353564 B   ---   --   ---xx   flac  0.2649  Track12.flac
+    74:36.67      789724512 B                            0.2890  (12 files)
+=================== 
+=================== 
+=================== 

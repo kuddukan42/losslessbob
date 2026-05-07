@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd80-05-01-a.flacf
+===================
+===================
+===================
+61aa31fecf1d48660a2cdd77cadf175f *CD1\01 When you gonna wake up.flac
+c561fd436a2fefd30111b776b47f9dba *CD1\02 Ain't gonna go to hell for anybody.flac
+d72375852188d653af7124c6c139950d *CD1\03 Cover down, break through.flac
+bbd92dd4314f5c9c9748f172dc3ec727 *CD1\04 Precious angel.flac
+2bb7ffbea345151667641b237c2a9e46 *CD1\05 Man gave names to all the animals.flac
+be45a5677d0e0e75f920486ea9d2b39e *CD1\06 Slow train.flac
+cc15c88e7e78f304203a2b217ca0caf7 *CD1\07 Do right to me baby (do unto others).flac
+398fd1b68cf9765b20b255ab166372df *CD1\08 Solid rock.flac
+5884221ea75044fecf12d56cba739d41 *CD1\CD1.ffp
+5884221ea75044fecf12d56cba739d41 *CD1\CD1.txt
+d8e2c4b2407864b2a1cc4dd958d86a16 *CD2\09 Saving grace.flac
+57e6d96f8772e22f447406a12bd5fdd6 *CD2\10 Saved.flac
+a9cc2f65406ee2b858bbc94121ce5d99 *CD2\11 What can I do for you.flac
+e06ad61d663e5a90f357c401a50697af *CD2\12 In the garden.flac
+5a0b5b5a3e11b0dd8ae6218cd0a0e04a *CD2\13 Are you ready.flac
+3edad8b74db55d356eef21cf6addf56f *CD2\14 Pressing on.flac
+c02aa2d94bc2fa9c1d1e9d03610757f0 *CD2\CD2.ffp
+c02aa2d94bc2fa9c1d1e9d03610757f0 *CD2\CD2.txt
+604b79637a66957b7f2dc55a4be7826e *Info\Bob Dylan 1980-05-01 Kleinhans Music Hall, Buffalo, New York, USA [most likely LB-951].txt
+===================
+===================
+===================
+=== ffp for: bd80-05-01-a.flacf
+===================
+===================
+===================
+CD1\01 When you gonna wake up.flac:63bde35f60e6678242f625afe5aa8ef0
+CD1\02 Ain't gonna go to hell for anybody.flac:96351dc7fc438f3fc7399d2f5b6c337e
+CD1\03 Cover down, break through.flac:ffdca3d5c63db6bedc53e1419bedc0d5
+CD1\04 Precious angel.flac:afdee2648c192fec86857db155ab99fc
+CD1\05 Man gave names to all the animals.flac:e07dc8e55d34c7d09ac3b3a7155872b9
+CD1\06 Slow train.flac:3604ef64359768405c2d2dbad52f4d8c
+CD1\07 Do right to me baby (do unto others).flac:89d35910edb3d8d8c6351a1108104018
+CD1\08 Solid rock.flac:1ae69b28ccccb60124af05c22f3938e6
+CD2\09 Saving grace.flac:3b484715b8e1bb81607ec80091746104
+CD2\10 Saved.flac:ce4091233aca0b36eeeb68785140a7ff
+CD2\11 What can I do for you.flac:642dcfc424bc10ae6e7343f225183204
+CD2\12 In the garden.flac:3bfe4b2f90615af54089c4e9d1b71c63
+CD2\13 Are you ready.flac:d71543fe149dd45580557ff4b068137a
+CD2\14 Pressing on.flac:134221f94936effe908114fd4a8ca832
+===================
+===================
+===================
+=== shntool len for: bd80-05-01-a.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:32.58       48117260 B   ---   --   ---xx   flac  0.6822  01 When you gonna wake up.flac
+     4:53.67       51842828 B   ---   --   ---xx   flac  0.6609  02 Ain't gonna go to hell for anybody.flac
+     4:15.57       45116108 B   ---   --   ---xx   flac  0.6468  03 Cover down, break through.flac
+     5:34.72       59086988 B   ---   --   ---xx   flac  0.6435  04 Precious angel.flac
+     5:59.33       63405260 B   ---   --   ---xx   flac  0.6019  05 Man gave names to all the animals.flac
+     6:48.29       72039452 B   ---   --   ---xx   flac  0.6741  06 Slow train.flac
+     5:44.51       60801596 B   ---   --   ---xx   flac  0.6074  07 Do right to me baby (do unto others).flac
+     5:19.42       56370428 B   ---   --   ---xx   flac  0.6805  08 Solid rock.flac
+    43:09.34      456779920 B                            0.6487  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd80-05-01-a.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:11.18       54902780 B   ---   --   ---xx   flac  0.5650  09 Saving grace.flac
+     6:01.43       63781580 B   ---   --   ---xx   flac  0.6496  10 Saved.flac
+     7:32.22       79784588 B   ---   --   ---xx   flac  0.5791  11 What can I do for you.flac
+     6:23.42       67660028 B   ---   --   ---xx   flac  0.6004  12 In the garden.flac
+    10:25.23      110304140 B   ---   --   ---xx   flac  0.6621  13 Are you ready.flac
+     9:01.14       95465372 B   ---   --   ---xx   flac  0.6302  14 Pressing on.flac
+    44:35.12      471898488 B                            0.6198  (6 files)
+===================
+===================
+===================

@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-01-25psbd-Rio.flacf 
+=================== 
+=================== 
+=================== 
+6773b3fb541547049478451f1bd249e9  bd90-01-25psbd-Rio.txt
+751ad032d6592f1322a726492e91efd1  info.txt
+63d25d32d77d794de16e7024021ead55  Track No01.flac
+60eccdcd0ed7286144c56932032d654e  Track No02.flac
+bb52447d51e3212237f809937d5ff8a6  Track No03.flac
+435889033973d6b8e9d54a433035a42d  Track No04.flac
+5063d5e1df505229a6a43fcda5e515d4  Track No05.flac
+840e2d4fcfb0fd3e0787339ea2f9b111  Track No06.flac
+844c8d505099f0b47a33144addcf9172  Track No07.flac
+884cd755f36a53255f81e5513f299b2a  Track No08.flac
+9097b80c6fa930ff4683ddc9bb165a81  Track No09.flac
+8d0321a5da39169cc245e3296a4eec3b  Track No10.flac
+c7478f8baff741fb97892df5eb3d4a88  Track No11.flac
+dbea1d422295c14954960fcce70d9d51  Track No12.flac
+6ca54fa3612b2bd764771342e4031ac5  Track No13.flac
+9265f76d2d30471c9b318cf67518738b  Track No14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-01-25psbd-Rio.flacf 
+=================== 
+=================== 
+=================== 
+Track No01.flac:e18d6c0d1b9830e549a65d47e7c627f7
+Track No02.flac:ba6e4f928de7d6670adaac0dede770b3
+Track No03.flac:8693760472439116006f7716f800ac38
+Track No04.flac:8e8a4523d2579422aea7071b3050f4f0
+Track No05.flac:d8035869de646c3473644b3d385bd77e
+Track No06.flac:d0fa901a9a607861bd96ff5774e0ad28
+Track No07.flac:5dc85826f261f37dfcb8da3aea02c847
+Track No08.flac:7369e86b234c89c5d59f28b0e5fefd54
+Track No09.flac:8c60317dc802e7076b9a50a0728ade01
+Track No10.flac:3c3153090246227cb07a52bc8f1a6c37
+Track No11.flac:db4045e65bf09ca768494cfe3b1cae4c
+Track No12.flac:f9098b17e4d1bc0ef7e4176912802f13
+Track No13.flac:a8aaa2e5d6122aeb677e9e6df6306810
+Track No14.flac:7680fcd56014db51a622be411fb06aa1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-01-25psbd-Rio.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.07       33885308 B   ---   --   ---xx   flac  0.5622  Track No01.flac
+     4:32.38       48070220 B   ---   --   ---xx   flac  0.5733  Track No02.flac
+     3:06.57       32944508 B   ---   --   ---xx   flac  0.5811  Track No03.flac
+     6:57.38       73648220 B   ---   --   ---xx   flac  0.6166  Track No04.flac
+     4:16.55       45287804 B   ---   --   ---xx   flac  0.6052  Track No05.flac
+     5:18.67       56252828 B   ---   --   ---xx   flac  0.5934  Track No06.flac
+     4:56.63       52362620 B   ---   --   ---xx   flac  0.6097  Track No07.flac
+     3:49.27       40459148 B   ---   --   ---xx   flac  0.5864  Track No08.flac
+     5:07.10       54178364 B   ---   --   ---xx   flac  0.5574  Track No09.flac
+     5:13.10       55236764 B   ---   --   ---xx   flac  0.6019  Track No10.flac
+     6:14.65       66126524 B   ---   --   ---xx   flac  0.5422  Track No11.flac
+     5:28.10       57882764 B   ---   --   ---xx   flac  0.5045  Track No12.flac
+     6:51.58       72636860 B   ---   --   ---xx   flac  0.5992  Track No13.flac
+     5:18.60       56236364 B   ---   --   ---xx   flac  0.6199  Track No14.flac
+    70:24.40      745208296 B                            0.5830  (14 files)
+=================== 
+=================== 
+=================== 

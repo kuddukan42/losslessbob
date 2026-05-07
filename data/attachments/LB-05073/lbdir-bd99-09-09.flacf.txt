@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-09-09.flacf 
+=================== 
+=================== 
+=================== 
+65e52adc2e7d5ab058e9ceca3397a4a1  bd1999-09-09.sbeok.shnf.md5
+42bfe12468829ddb4ab887b53b78bd3f  bd1999-09-09.sbeok.shnf.st5
+c5a9f9d6185d1b3ff7cb91db3f022878  bd99-09-09-LB-5073.txt
+6b206c54209a21c595b28aac22855dba  d1t03.PNG
+d003d97962cba9ce77120117fa37a445  d2t07.PNG
+6db3e894eae7b47aae4a29f259b920ed  Disc 1\Disc 1.shntool.txt
+1e06d9eb9f7055785aa20bdc75ad2a56  Disc 1\Track01.shn
+ded6741186711dbf7880ea3141a5ff9d  Disc 1\Track02.shn
+e5506a9fc77ba0cc948bd5c6b9049a73  Disc 1\Track03.shn
+380615d5579897666784c7daf2e9e7a3  Disc 1\Track04.shn
+d074e9a7ce0b9e49efd0f7c9851a0b51  Disc 1\Track05.shn
+9615e32246af5bc00563e064a9fbd82b  Disc 1\Track06.shn
+9a45e67736fe19305eee9c5c5ff6e62b  Disc 1\Track07.shn
+ae2b542cbe7bf62b29d6cb643724b7bc  Disc 1\Track08.shn
+a78a2c4ab09bf677289b9ded4c4ea549  Disc 1\Unknown Title.LOG
+caf63782ee1dffb61c297a6a103445fe  Disc 1\noname.md5
+bd4b5b8c932ffd32dd34298fb9ceea90  Disc 2\Disc 2.shntool.txt
+8ca13084cb3cf2346f7b6f9c4417fd99  Disc 2\Track01.shn
+db32f8e27ba9ce3f3647c7e7f722e1b3  Disc 2\Track02.shn
+fa4edafd7934d3a71e539528f58037b7  Disc 2\Track03.shn
+9b3ab049e8dc895b38db435e1e237199  Disc 2\Track04.shn
+90b301ca73041934341284b74af65414  Disc 2\Track05.shn
+f1a03f751648326df875174fced7bc5f  Disc 2\Track06.shn
+f7ba594718c86c4efab1080256262cf2  Disc 2\Track07.shn
+1918207e0e6b52694c89024b47789299  Disc 2\Track08.shn
+fecc5d30cbef157dbe100a76f3643de0  Disc 2\Track09.shn
+04a2e61392086aae4e1db215c88d3f65  Disc 2\Track10.shn
+0c112f6ff4088204b46f9b8f99e6d513  Disc 2\Unknown Title.LOG
+ec781cb1481f5e720498e11e825db164  Disc 2\noname.md5
+ae7cf546dd0a19f96268f9b48a05112f  info.txt
+329383cbd30f03a69bbe13a2e24ad908  lbdir-bd99-09-09.flacf.md5
+b0bb41ae4415fd3d49f1f033e33078f9  lbdir-bd99-09-09.flacf.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-09-09.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+026d2c4db80c0d39097dfbdd8590603e  [shntool]  Track01.wav
+73f646745bd9b1b9109622abf12d14a1  [shntool]  Track02.wav
+29174056019bba900736fed286a9a40b  [shntool]  Track03.wav
+ba59619cbefb14ddc2b14980cbf1a965  [shntool]  Track04.wav
+1e401ec1d62801d8e2797ca4691a581a  [shntool]  Track05.wav
+7de5fee0c02acfae775e46ffaba5c218  [shntool]  Track06.wav
+2eff528bc40eea3296bd3410af5a9bc0  [shntool]  Track07.wav
+4ce38b7f863b5fe9952703d71996dad7  [shntool]  Track08.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-09-09.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+a80c1dc333659611b7848a53fda1b48a  [shntool]  Track01.wav
+16ee803748862b0a63de48844b446812  [shntool]  Track02.wav
+51f4f09b0f38225a392762f634538aff  [shntool]  Track03.wav
+96a4fa398e0b55b11ea47ee734219713  [shntool]  Track04.wav
+e4c161be8827591133a87eebb373054c  [shntool]  Track05.wav
+f3a3cf916033d89fe79ba94099e63fda  [shntool]  Track06.wav
+65c4d9d92708a202f9e21b467d5ec1b4  [shntool]  Track07.wav
+384771dd3d52e878d691b356f98e9d59  [shntool]  Track08.wav
+2b9b70b43360375040973d7ddae66fe4  [shntool]  Track09.wav
+68d33302e8cb24ea4b72ee75ff937e55  [shntool]  Track10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-09.flacf\Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:51.52       30286748 B   ---   --   -----    wav  1.0000  Track01.wav
+     6:22.60       67525964 B   ---   --   -----    wav  1.0000  Track02.wav
+     7:50.15       82943324 B   ---   --   -----    wav  1.0000  Track03.wav
+     5:15.30       55636604 B   ---   --   -----    wav  1.0000  Track04.wav
+     9:22.00       99136844 B   ---   --   -----    wav  1.0000  Track05.wav
+     4:19.30       45758204 B   ---   --   -----    wav  1.0000  Track06.wav
+     5:03.67       53606828 B   ---   --   -----    wav  1.0000  Track07.wav
+     7:20.37       77703068 B   ---   --   -----    wav  1.0000  Track08.wav
+    48:25.66      512597584 B                            1.0000  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-09-09.flacf\Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:45.00       71442044 B   ---   --   -----    wav  1.0000  Track01.wav
+     5:37.30       59517404 B   ---   --   -----    wav  1.0000  Track02.wav
+     2:46.00       29282444 B   ---   --   -----    wav  1.0000  Track03.wav
+     7:48.52       82677548 B   ---   --   -----    wav  1.0000  Track04.wav
+     7:45.52       82148348 B   ---   --   -----    wav  1.0000  Track05.wav
+     0:53.22        9400988 B   ---   --   -----    wav  1.0000  Track06.wav
+     4:51.52       51454748 B   ---   --   -----    wav  1.0000  Track07.wav
+     2:14.15       23672924 B   ---   --   -----    wav  1.0000  Track08.wav
+     2:24.30       25472204 B   ---   --   -----    wav  1.0000  Track09.wav
+     5:56.67       62956028 B   ---   --   -----    wav  1.0000  Track10.wav
+    47:03.20      498024680 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 

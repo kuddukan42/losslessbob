@@ -1,0 +1,47 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-18-soundcheck-e.flacf 
+=================== 
+=================== 
+=================== 
+03780bb6d914bc822cee404ed0cf5f6a  bd81-07-18 Mannheim soundchecks.ffp
+63e420df04c9fe4f8af918500b3a00af  bd81-07-18-soundcheck.txt
+9d06b7cedb20cefabea90a41a2bfeedb  bd81-07-18SCt01.flac
+28fc0e30bd699bcec76fec376bf6ca12  bd81-07-18SCt02.flac
+cb38646457723ee499631f80b85d0972  bd81-07-18SCt03.flac
+229606e0749e01cd8536a965a3a4dc58  bd81-07-18SCt04.flac
+40718d5aae883b88eb36d123ae08d369  bd81-07-18SCt05.flac
+28439daf21133314d48ce050c5413342  bd81-07-18SCt06.flac
+0692ad3d1d025b57158f199ce8b4316b  eac mannheim sc.LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-18-soundcheck-e.flacf 
+=================== 
+=================== 
+=================== 
+bd81-07-18sct01.flac:91b202973a27109812f35f62c803a4e0
+bd81-07-18sct02.flac:bb5b90fe696dc4566b0c37f410db41ee
+bd81-07-18sct03.flac:984c63f60d3c35ec4d68ed9306987317
+bd81-07-18sct04.flac:d67eb32384bab7593f71a20ee9707377
+bd81-07-18sct05.flac:5191a41c61a6af7d306ea6267e59fc21
+bd81-07-18sct06.flac:98e4ccf300b0b750a402b66236775a24
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-18-soundcheck-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.22       42916988 B   ---   --   ---xx   flac  0.4713  bd81-07-18SCt01.flac
+     1:31.15       16087724 B   ---   --   ---xx   flac  0.4768  bd81-07-18SCt02.flac
+     1:27.27       15410348 B   ---   --   ---xx   flac  0.4724  bd81-07-18SCt03.flac
+     7:15.70       76898684 B   ---   --   ---xx   flac  0.4869  bd81-07-18SCt04.flac
+     4:58.53       52691900 B   ---   --   ---xx   flac  0.5035  bd81-07-18SCt05.flac
+     2:19.63       24667820 B   ---   --   ---xx   flac  0.4951  bd81-07-18SCt06.flac
+    21:36.25      228673464 B                            0.4870  (6 files)
+=================== 
+=================== 
+=================== 

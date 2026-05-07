@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-10-20-b.flacf 
+=================== 
+=================== 
+=================== 
+627d9c6a9c6d37fbb3acffc2c5538b5a  bd-98-10-20-Regina-d1\bd-98-10-20-Regina-d1.md5
+1efb69d753247840c8cac539814c5c4e  bd-98-10-20-Regina-d1\Track01.flac
+074efe5faa2b083dc13a047db464384f  bd-98-10-20-Regina-d1\Track02.flac
+9b84ad031fe9eacca5f0dabc2a1a3f17  bd-98-10-20-Regina-d1\Track03.flac
+5a35e9206ab9b4fa081377f0ca4487b3  bd-98-10-20-Regina-d1\Track04.flac
+0d9e4eb3910882e1d1ac11186347ac7f  bd-98-10-20-Regina-d1\Track05.flac
+05e52a06f369a20cd3bde4c1db1b6bbb  bd-98-10-20-Regina-d1\Track06.flac
+cbe301aafa93d49c9cbc7b53e3ea81fd  bd-98-10-20-Regina-d1\Track07.flac
+6ea24355f8dc379515089bf619c1e893  bd-98-10-20-Regina-d1\Track08.flac
+233c04b7fecb3969c147e0db59ffd8af  bd-98-10-20-Regina-d2\bd-98-10-20-Regina-d2.md5
+9a9e21b6c9a6af11b1912fb51e00cb33  bd-98-10-20-Regina-d2\Track01.flac
+7a7a9721792b5a97fc0b603f23426cbe  bd-98-10-20-Regina-d2\Track02.flac
+a92298939a932af5f6a6cfae47619801  bd-98-10-20-Regina-d2\Track03.flac
+f821f0dfbb6cc3926f16ba598e25497b  bd-98-10-20-Regina-d2\Track04.flac
+2f2f7253a76fc34b237570c61888eac4  bd-98-10-20-Regina-d2\Track05.flac
+9c8b21e1f38e87ceeef85d64886e4bcc  bd-98-10-20-Regina-d2\Track06.flac
+fea72d98addff4e9e98664dd01c61df6  bd-98-10-20-Regina-d2\Track07.flac
+1d45d52a4d20e429bb6b2e7b3807a698  bd-98-10-20-Regina-d2\Track08.flac
+bb5bff4f243a633603a210be1ad0a2a8  bd-98-10-20-Regina-d2\Track09.flac
+7ed3ddde9f60595e4f9be40d227c1cac  bd-98-10-20-Regina.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-20-b.flacf\bd-98-10-20-Regina-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:10d14bac0bcbd27e1730a64203d9a028
+Track02.flac:9233809c4c3b476c7ae13bb76b45f7f3
+Track03.flac:ae63431086210beae6e58da7ec62b076
+Track04.flac:569de116c16b5aa0d44f2f4c7755bae9
+Track05.flac:daa6cf1c5a2cad48617464d6bdd5c1cc
+Track06.flac:74c73b3c730ece24588b07811eefeef1
+Track07.flac:6c20f0a8d32edcfdad543da94b739b03
+Track08.flac:cd8084fc7a649307952dfce74bbc11fe
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-20-b.flacf\bd-98-10-20-Regina-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:028c3450c792170863affb335d4eb9f4
+Track02.flac:bf23e8ee756c2b3e8c36425c56989807
+Track03.flac:daa379e2e1cbf775440f815d03bd140f
+Track04.flac:2f92f1861ac53001e4c5cefa541fa5ec
+Track05.flac:7207f898cb4807510c1e764cb4878239
+Track06.flac:70b36ba89b5c65c07c3e9d4ba483a579
+Track07.flac:ce51744dcafd410dc46775334fee06f2
+Track08.flac:3ca2d7438ea093956d571e85c5e5ec44
+Track09.flac:8b7e84aa55ff951a2f36b8dacb002cd1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-20-b.flacf\bd-98-10-20-Regina-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.13       48717020 B   ---   --   ---xx   flac  0.5164  Track01.flac
+     5:34.15       58952924 B   ---   --   ---xx   flac  0.4422  Track02.flac
+     6:32.70       69313484 B   ---   --   ---xx   flac  0.4478  Track03.flac
+     7:16.10       76933964 B   ---   --   ---xx   flac  0.4121  Track04.flac
+     5:58.28       63217100 B   ---   --   ---xx   flac  0.4290  Track05.flac
+     9:38.59      102098012 B   ---   --   ---xx   flac  0.4194  Track06.flac
+     4:30.52       47750348 B   ---   --   ---xx   flac  0.4156  Track07.flac
+     5:04.69       53787932 B   ---   --   ---xx   flac  0.3908  Track08.flac
+    49:12.16      520770784 B                            0.4316  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-20-b.flacf\bd-98-10-20-Regina-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:49.37       82818668 B   ---   --   ---xx   flac  0.4561  Track01.flac
+     7:47.11       82404716 B   ---   --   ---xx   flac  0.3976  Track02.flac
+     5:31.59       58527212 B   ---   --   ---xx   flac  0.4701  Track03.flac
+     6:09.59       65230412 B   ---   --   ---xx   flac  0.4793  Track04.flac
+    11:00.09      116445212 B   ---   --   ---xx   flac  0.4283  Track05.flac
+     1:02.31       11009756 B   ---   --   ---xx   flac  0.4840  Track06.flac
+     7:28.26       79088396 B   ---   --   ---xx   flac  0.4291  Track07.flac
+     5:10.71       54851036 B   ---   --   ---xx   flac  0.4833  Track08.flac
+     6:33.58       69461660 B   ---   --   ---xx   flac  0.4140  Track09.flac
+    58:33.61      619837068 B                            0.4416  (9 files)
+=================== 
+=================== 
+=================== 

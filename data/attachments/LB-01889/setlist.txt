@@ -1,0 +1,47 @@
+Bob Dylan
+
+Les Eurockennes De Belfort
+Base Nautiques des Maulsaucy
+Belfort, France
+
+July 2, 1992
+
+Source: Audience
+Lineage: CDR > EAC > FLAC Frontend > Flac
+Taped By: Unknown
+Transferred By: Unknown
+
+File Size 533MB Flac
+
+Disc One
+ 1. A Hazy Shade Of Winter (Paul Simon)
+ 2. You're A Big Girl Now
+ 3. Allong the Watchtower
+ 4. Simple Twist Of Fate
+ 5. I And  I
+ 6. Tangled Up In Blue
+ 7. It Aint Me, Babe
+ 8. Little Moses (Bert A.Williams/Earle C. Jones)
+ 9. Gates Of Eden
+10. Mr. Tambourine Man
+
+Disc Two
+ 1. Like A Rolling Stone
+ 2. Rainy Day Women #12 & 35
+ 3. Blowin' In The Wind
+
+Fingerprints
+
+bd1992-07-02d2t03.flac:94390dab1d1408f8e53d4857b7a9a818
+bd1992-07-02d1t01.flac:82dcef2f42e00ec4926749c22a52bb43
+bd1992-07-02d1t02.flac:cb793fb418f453749206091869f378f9
+bd1992-07-02d1t03.flac:2d8e2ce870ed9e50f8ab71334d508888
+bd1992-07-02d1t04.flac:2015a7185613ce860ad73d757b0fdd88
+bd1992-07-02d1t05.flac:a5de313e1ce05a2d04cfbf2967be1b87
+bd1992-07-02d1t06.flac:71abd83cab280b082f8570c9bd41aaf3
+bd1992-07-02d1t07.flac:8f9b23696ad4a702eef864b52611e4e7
+bd1992-07-02d1t08.flac:083cbb3a5acb87f9aa749532a66d4c44
+bd1992-07-02d1t09.flac:79a8b5348270281491428477d60ef537
+bd1992-07-02d1t10.flac:3ab519c791a9d2cfbf931a7c3bcc7dd8
+bd1992-07-02d2t01.flac:52d20d1232accd8398db6e1ed35dda95
+bd1992-07-02d2t02.flac:72fac14608c026984046606e5512aba3

@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-07-04-a.flacf 
+=================== 
+=================== 
+=================== 
+532c9a92742aa8eef762ad752a59a6f0  2006-07-04 Clermont-Ferrand France.txt
+a29a44d375f6595a9044b04bb064fe33  bd06-07-04-a-LB-3946.txt
+dc9df2010d69bb2e918b1906f73e0985  CD1\01-Maggie's Farm.flac
+29d2efb1c706ae09a1ff4f6181219265  CD1\02-The Times They Are A-Changin'.flac
+c13f5e2d4aeb0234029d16e42a41a1ea  CD1\03-Down Along The Cove.flac
+ee166b0756aa1f08b49942977e3c946f  CD1\04-Mr. Tambourine Man.flac
+325cf2826a1ebe7426af353acbe1269c  CD1\05-Tweedle Dee & Tweedle Dum.flac
+3d688d4e934986ece160498a576eb848  CD1\06-To Ramona.flac
+8876827ddc5dfb695147f07a261392db  CD1\07-Highway 61 Revisited.flac
+9c98c77c03efaf65bb86a84836575098  CD1\08-Boots Of Spanish Leather.flac
+58f68c14e42fcd4074681c5e72c57ba6  CD1\09-Honest With Me.flac
+66662fc7448031aac2b43fca0ec6bfdc  CD1\10-Positively 4th Street.flac
+19acb79ef4a8762bace9e80646f8d81a  CD2\11-Stuck Inside With The Memphis Blues Again.flac
+1036f68e9b7b3f04251a2e31cff98b58  CD2\12-Masters Of War.flac
+8c106be657532f510d77048c7f1aab83  CD2\13-SummerDays.flac
+200893734f75d90548e235168d04a279  CD2\14-Like A Rolling Stone.flac
+72ab6e9f964161504cc4fffa996362bb  CD2\15-All Along The Watchtower.flac
+d81d155a16b9adc851083a07a5889261  Record.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-04-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01-Maggie's Farm.flac:8de0f9d9d264afef8cdd07e6afecc32b
+02-The Times They Are A-Changin'.flac:29a4cc59b70adb926e3fefe2d6c019d4
+03-Down Along The Cove.flac:d451f1be9cd933fcdc6f079a6d6bdb96
+04-Mr. Tambourine Man.flac:b347e79dc720f1c36c1f13e4b0295e92
+05-Tweedle Dee & Tweedle Dum.flac:e389f69409816879705ccd3c36507364
+06-To Ramona.flac:567b153a391e5af81aa039385dfc56bb
+07-Highway 61 Revisited.flac:3715f6bbad517cc30afc682d953870a5
+08-Boots Of Spanish Leather.flac:fd0ed18d43a43dc4d7b2729299d1c3ea
+09-Honest With Me.flac:603bf938d9ec23faeb3075a12a17274a
+10-Positively 4th Street.flac:869523571cb9a79c3b2e2ba606e8dee1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-07-04-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11-Stuck Inside With The Memphis Blues Again.flac:8438853f30b36819e2fa111302eb8d57
+12-Masters Of War.flac:dc868d824597b46edafcc75027e2a51b
+13-SummerDays.flac:ec0d3336bbb52aed832f9d2cfe8d57ee
+14-Like A Rolling Stone.flac:06a157565e2a4011f68401c488fc9307
+15-All Along The Watchtower.flac:ed8362c6731b35f2a8ded2626a121f3b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-04-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:13.63       65945420 B   ---   --   ---xx   flac  0.7049  01-Maggie's Farm.flac
+     7:30.71       79547036 B   ---   --   ---xx   flac  0.7169  02-The Times They Are A-Changin'.flac
+     7:04.52       74915948 B   ---   --   ---xx   flac  0.7170  03-Down Along The Cove.flac
+     7:01.28       74330300 B   ---   --   ---xx   flac  0.7012  04-Mr. Tambourine Man.flac
+     5:54.20       62492684 B   ---   --   ---xx   flac  0.6607  05-Tweedle Dee & Tweedle Dum.flac
+     5:56.27       62861948 B   ---   --   ---xx   flac  0.6969  06-To Ramona.flac
+     6:32.73       69320540 B   ---   --   ---xx   flac  0.6983  07-Highway 61 Revisited.flac
+     6:21.24       67264892 B   ---   --   ---xx   flac  0.5489  08-Boots Of Spanish Leather.flac
+     6:28.06       68457356 B   ---   --   ---xx   flac  0.7135  09-Honest With Me.flac
+     6:52.19       72721532 B   ---   --   ---xx   flac  0.6960  10-Positively 4th Street.flac
+    65:56.08      697857656 B                            0.6867  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-07-04-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:47.24       93019292 B   ---   --   ---xx   flac  0.7057  11-Stuck Inside With The Memphis Blues Again.flac
+     5:35.30       59164604 B   ---   --   ---xx   flac  0.6858  12-Masters Of War.flac
+    10:04.59      106684412 B   ---   --   ---xx   flac  0.6922  13-SummerDays.flac
+     7:05.65       75122924 B   ---   --   ---xx   flac  0.7110  14-Like A Rolling Stone.flac
+     6:13.52       65919548 B   ---   --   ---xx   flac  0.7068  15-All Along The Watchtower.flac
+    37:47.05      399910780 B                            0.7003  (5 files)
+=================== 
+=================== 
+=================== 

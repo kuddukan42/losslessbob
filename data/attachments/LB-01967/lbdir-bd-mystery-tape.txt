@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-mystery-tape 
+=================== 
+=================== 
+=================== 
+88e8c948f019a6bcadfae97c88c8f5ff  (bonus) 4th Time Around (remix)-fixed.flac
+301028287d649f488676889d37ef8249  (bonus) Sooner or Later (Unfaded 45)-fixed.flac
+56151f44aba2370822cdb7fc5f9397d1  (bonus) Visions of Johanna (remix)-fixed.flac
+4e645e2d19143b291716fc3ba476d331  01 Sally Gal 70086 T4.shn
+d198be02d625ed8ee112e8de0e142b38  02 Ramblin Down Through the World 12 April 63.shn
+ac7c5ff945ca5db1a6d745d33ab08bf9  03 Hiding too Long  12 April 63.shn
+e654aca815109b540682e3d884d9a85e  04 Suze (Cough Song with intro).shn
+6ea7c775bc5f33b66a406172e450c787  05 You Don't Have to do That 13 Jan 65.shn
+72499f3d56f219f8293b0e9fa766c075  06 Jet Pilot.shn
+68cc5bc8e47c0eef5dccf4be791cae91  07 Working on a Guru.shn
+9820b5233262fc4e58daddd5566521c8  08 Let Me See.shn
+7f5c58cb5ae49c3c944b1ad08cb4db30  09 Dark Groove (infidels OT).shn
+8169b28bbe72fdfa18db441eb7bbdffa  10 Don't Fly Unless it's Safe (infidels OT).shn
+432be6067f38f8e12a1e4694400a03ea  11 Neigbourhood Bully (Infidels OT).shn
+b469d8a61117339606716d10a4e648bb  12 Silvio (Rough Mix).shn
+f9743a6b58b98e6bce8af3d43ebd84b8  13 Dirty Work (Rough Mix).shn
+7fe8e4f9c7a0d4c5447e427878528411  14 Ring Them Bells (Oh Mercy OT).shn
+15e526cace93cc4438ac619e7fcc43aa  15 Disease of Conceit (Oh Mercy OT).shn
+227dcc89076dda62eaa13cb537513087  16 What Was IT You Wanted (Oh Mercy OT).shn
+ddafa7664f1e7e1ca2fc33f26c4f9a03  bd-mystery-tape.txt
+df61bc282e2e36747fbd9e1cc5c27a23  bonus.md5
+d6b0284ee0c1fdade31b6c195ca63311  Mystery Tape Front.jpg
+75461d2f99fc41f1834478a0ceeb26c0  Mystery Tape.md5
+860298ba8518183cb4612d954ac28ae0  The Mystery Tape Back.jpg
+1957c9c38e322fd12d555dd1d88851db  The Mystery Tape.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd-mystery-tape 
+=================== 
+=================== 
+=================== 
+99451e54272f487f15fc9730cdb650f2  [shntool]  (bonus) 4th Time Around (remix)-fixed.wav
+1031470fd7b6c98e41a49b4d18208199  [shntool]  (bonus) Sooner or Later (Unfaded 45)-fixed.wav
+5718c0fee4b72f5fe0ca697eb6c1bfa8  [shntool]  (bonus) Visions of Johanna (remix)-fixed.wav
+ae64579216d4d2f3c69da40d55f6c943  [shntool]  01 Sally Gal 70086 T4.wav
+1972af78c220976f0d14f41a6c067b90  [shntool]  02 Ramblin Down Through the World 12 April 63.wav
+89afed81ca853418360ac3e79d7260d0  [shntool]  03 Hiding too Long  12 April 63.wav
+f2b44c6b4d84d464e6c8bd7f5d9e2378  [shntool]  04 Suze (Cough Song with intro).wav
+9c24b76b772b25e555ef347d86ce4413  [shntool]  05 You Don't Have to do That 13 Jan 65.wav
+fffe14c563ed52d4cc2601e72811a748  [shntool]  06 Jet Pilot.wav
+ad2cc97bc94c116a0f04508d2260ba53  [shntool]  07 Working on a Guru.wav
+abf4d2b430eb0a25738c60a6bc6096c0  [shntool]  08 Let Me See.wav
+b2512f400746468f79a8f51adff925f1  [shntool]  09 Dark Groove (infidels OT).wav
+3b470a5e5cc474df5d5e4ae98a027fa1  [shntool]  10 Don't Fly Unless it's Safe (infidels OT).wav
+376b546bd3f8f3d4988c0cd3ed11fec9  [shntool]  11 Neigbourhood Bully (Infidels OT).wav
+2c8aff43210e4d0baa009145e546af21  [shntool]  12 Silvio (Rough Mix).wav
+fe6a9cff01cfcf59470f42560e54d859  [shntool]  13 Dirty Work (Rough Mix).wav
+62367e48688d0f7e0aa6758a7886f4b1  [shntool]  14 Ring Them Bells (Oh Mercy OT).wav
+aa00d1c9fb4e529c198de40f1038efe0  [shntool]  15 Disease of Conceit (Oh Mercy OT).wav
+63244ba83fa82360a16f8fc62549ffba  [shntool]  16 What Was IT You Wanted (Oh Mercy OT).wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-mystery-tape 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:20.30       45934604 B   ---   --   -----    wav  1.0000  (bonus) 4th Time Around (remix)-fixed.wav
+     5:03.72       53618588 B   ---   --   -----    wav  1.0000  (bonus) Sooner or Later (Unfaded 45)-fixed.wav
+     7:40.56       81275756 B   ---   --   -----    wav  1.0000  (bonus) Visions of Johanna (remix)-fixed.wav
+     3:17.24       34807292 B   ---   --   -----    wav  1.0000  01 Sally Gal 70086 T4.wav
+     2:08.21       22628636 B   ---   --   -----    wav  1.0000  02 Ramblin Down Through the World 12 April 63.wav
+     2:47.54       29585852 B   ---   --   -----    wav  1.0000  03 Hiding too Long  12 April 63.wav
+     1:44.43       18446780 B   ---   --   -----    wav  1.0000  04 Suze (Cough Song with intro).wav
+     0:57.44       10158332 B   ---   --   -----    wav  1.0000  05 You Don't Have to do That 13 Jan 65.wav
+     1:31.20       16099484 B   ---   --   -----    wav  1.0000  06 Jet Pilot.wav
+     3:35.41       38022476 B   ---   --   -----    wav  1.0000  07 Working on a Guru.wav
+     0:42.49        7524092 B   ---   --   -----    wav  1.0000  08 Let Me See.wav
+     2:47.04       29468252 B   ---   --   -----    wav  1.0000  09 Dark Groove (infidels OT).wav
+     3:15.26       34459196 B   ---   --   -----    wav  1.0000  10 Don't Fly Unless it's Safe (infidels OT).wav
+     4:37.38       48952220 B   ---   --   -----    wav  1.0000  11 Neigbourhood Bully (Infidels OT).wav
+     3:08.46       33271436 B   ---   --   -----    wav  1.0000  12 Silvio (Rough Mix).wav
+     2:35.28       27407900 B   ---   --   -----    wav  1.0000  13 Dirty Work (Rough Mix).wav
+     3:00.60       31893164 B   ---   --   -----    wav  1.0000  14 Ring Them Bells (Oh Mercy OT).wav
+     3:42.05       39172604 B   ---   --   -----    wav  1.0000  15 Disease of Conceit (Oh Mercy OT).wav
+     5:08.72       54500588 B   ---   --   -----    wav  1.0000  16 What Was IT You Wanted (Oh Mercy OT).wav
+    62:05.58      657227252 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

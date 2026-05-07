@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-05-31-schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+4ad2f1dcd51ce4a56e3ef10b5eb8284c  bd00-05-31-schubert-remaster-LB-3962.txt
+a280cba54a415910a3cc705479e1d057  bd2000-05-31.flac Ancona (Schubert).ffp
+78a65307f276073bcc7e156536891d9d  bd2000-05-31.flac Ancona (Schubert).md5
+2bc0f33e33f02cf944f0ee91f3304500  bd2000-05-31d1.LOG
+befcd540bbdc48433c7a448ee9e08b86  bd2000-05-31d1.shntool.txt
+f3fd1d549ad09fa64c691f2ecc2b2756  bd2000-05-31d1t01.flac
+b1b538ea17ae6b4e4e7bd2214b216c77  bd2000-05-31d1t02.flac
+008e5202cfdc074f685ae6cb809d15ba  bd2000-05-31d1t03.flac
+b1484a689c121f8b213b7af644cf1966  bd2000-05-31d1t03fa.JPG
+f16201108a2f60817452233a02f9736e  bd2000-05-31d1t03sa.JPG
+4e209d12406a96b14a104400318a3b63  bd2000-05-31d1t04.flac
+cbec04ae225820c2ba9f6db428b4bb0a  bd2000-05-31d1t05.flac
+e6c66103befad6235ac65ffc378b679d  bd2000-05-31d1t06.flac
+33cc45eb7b737ff194acb8866f52346d  bd2000-05-31d1t07.flac
+000dcb511ff3db7b1fadc017a2e1515e  bd2000-05-31d1t08.flac
+b1e5923d81a2123367ef8bebdf1c2117  bd2000-05-31d1t09.flac
+23021801b916d1c1cd416f94e38ff916  bd2000-05-31d1t10.flac
+22c113e284bf0e104681514419b046dc  bd2000-05-31d2.LOG
+130a38ff8d8f506fa92f2ad18a643577  bd2000-05-31d2.shntool.txt
+cdeeeff50ec9f471d8c5b727e75e0f00  bd2000-05-31d2t01.flac
+1542deec6d6c84cea8ec4e76a758d408  bd2000-05-31d2t02.flac
+4cde246c81e7b604c3cb319b6f1435b7  bd2000-05-31d2t03.flac
+f4d74d8d60aab21de6ccd0062774f007  bd2000-05-31d2t04.flac
+0cab8e5db121fd50be0f500b944ec7e8  bd2000-05-31d2t05.flac
+11ca34a14da24e528e11f480478ac3a9  bd2000-05-31d2t06.flac
+1866afdbae2b42bf8f8d70599baba1ed  bd2000-05-31d2t07.flac
+5c998702440d57c221239b2cf3f48838  bd2000-05-31d2t08.flac
+c35302217b803eb64db867633d9c73c4  bd2000-05-31d2t09.flac
+1eb986aeeaf3dfd8da06cea33792b635  d1.txt
+c9151ed2a7709c2915d429d3a240f5bb  d2.txt
+d50e3b49e6474b3807e48474003d678a  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-05-31-schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+bd2000-05-31d1t01.flac:237e5ce8f8a8da8801337e5ba15730be
+bd2000-05-31d1t02.flac:0c33f98adfa288b5a697f31c95c0b0e0
+bd2000-05-31d1t03.flac:cf053cf4a2da0a38e8054fa560388e1d
+bd2000-05-31d1t04.flac:587e56f904e580739fd87442b57b1706
+bd2000-05-31d1t05.flac:20083b44203531400e309c0bf4d54a4c
+bd2000-05-31d1t06.flac:0eca0cd10d75884b5d64e04c9af24637
+bd2000-05-31d1t07.flac:20be69dbc67df66ab2919446ad8f395f
+bd2000-05-31d1t08.flac:92a929fd17317a383dc355ed1b3416cc
+bd2000-05-31d1t09.flac:72cd262df5d6d9dee89c030b876bf2e5
+bd2000-05-31d1t10.flac:86e64854ff56e6ef75807fc99e502f01
+bd2000-05-31d2t01.flac:7bb4ebd84668779d54f09d840abcce10
+bd2000-05-31d2t02.flac:99974dd97d49df6b35b6cd8d9453e35e
+bd2000-05-31d2t03.flac:24c58d41d20edf06f49c5591bc6f35b3
+bd2000-05-31d2t04.flac:286f0ad33f1adf3f5be49146fd8c6863
+bd2000-05-31d2t05.flac:9b60e39d75fd043c6df883d16f75a35c
+bd2000-05-31d2t06.flac:614cef863fa165ff9e753c226fc3af7e
+bd2000-05-31d2t07.flac:a7639542b44889087679adac261b909b
+bd2000-05-31d2t08.flac:453dddea78b5b95525a72e255a3473ea
+bd2000-05-31d2t09.flac:e940790e21efe8bb704200def67b6b6b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-05-31-schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:38.30       38525804 B   ---   --   ---xx   flac  0.5825  bd2000-05-31d1t01.flac
+     6:13.28       65863100 B   ---   --   ---xx   flac  0.5344  bd2000-05-31d1t02.flac
+     5:20.34       56528012 B   ---   --   ---xx   flac  0.5405  bd2000-05-31d1t03.flac
+     6:30.57       68930108 B   ---   --   ---xx   flac  0.4414  bd2000-05-31d1t04.flac
+     7:58.33       84396860 B   ---   --   ---xx   flac  0.5801  bd2000-05-31d1t05.flac
+     6:20.66       67187276 B   ---   --   ---xx   flac  0.5207  bd2000-05-31d1t06.flac
+     2:38.16       27908876 B   ---   --   ---xx   flac  0.5776  bd2000-05-31d1t07.flac
+     4:46.73       50622140 B   ---   --   ---xx   flac  0.5173  bd2000-05-31d1t08.flac
+     8:11.05       86624204 B   ---   --   ---xx   flac  0.5484  bd2000-05-31d1t09.flac
+     6:03.57       64167308 B   ---   --   ---xx   flac  0.4620  bd2000-05-31d1t10.flac
+     5:16.20       55789484 B   ---   --   ---xx   flac  0.6020  bd2000-05-31d2t01.flac
+     5:58.45       63257084 B   ---   --   ---xx   flac  0.6282  bd2000-05-31d2t02.flac
+     8:59.65       95232524 B   ---   --   ---xx   flac  0.5362  bd2000-05-31d2t03.flac
+     7:02.70       74605484 B   ---   --   ---xx   flac  0.5851  bd2000-05-31d2t04.flac
+     7:06.03       75153500 B   ---   --   ---xx   flac  0.5421  bd2000-05-31d2t05.flac
+     6:38.49       70322492 B   ---   --   ---xx   flac  0.5863  bd2000-05-31d2t06.flac
+     5:46.61       61177916 B   ---   --   ---xx   flac  0.4423  bd2000-05-31d2t07.flac
+     6:39.57       70517708 B   ---   --   ---xx   flac  0.6051  bd2000-05-31d2t08.flac
+     6:55.05       73217804 B   ---   --   ---xx   flac  0.5394  bd2000-05-31d2t09.flac
+   118:06.24     1250027684 B                            0.5450  (19 files)
+=================== 
+=================== 
+=================== 

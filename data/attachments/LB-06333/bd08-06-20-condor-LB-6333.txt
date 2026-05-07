@@ -1,0 +1,14 @@
+Bob Dylan, 6/20/08, Toulouse, France, 2CDR
+
+LB-6333, (71min+53min), Taper: "Condor", Lineage: OKM II R > Sony DAT TCD-D100 (48 kHz / 16) >MasterDAT >TASCAM DA-40 >, WaveLab 6.01 >ssrc convert to 44.1kHz > dBpower AMP Music Converter > MD5summer; bittorrent download 08/08; has a spectral band near 21k on d1t10; in comparison to romeo LB-6233 that is warmer and this has too much high end; excellent sound [A]
+
+static d1t9 6:33 not in music; d2t3 has a lot of low whine on it caused by misplaced samples on right channel like d2t3 0:55 to 0:57,  1:15 to 1:16, 1:22, 1:36 and so on
+
+CD1
+01. Intro, 02. Cat's In The Well, 03. Lay, Lady, Lay, 04. Just Like Tom Thumb's Blues, 05. Rollin' and Tumblin', 06. Simple Twist of Fate, 07. The Levee's Gonna Break, 08. Spirit On The Water, 09. Things Have Changed, 10. Desolation Row, 11. Honest With Me, 
+
+CD2
+01. Sugar Baby, 02. It's Alright, Ma (I'm Only Bleeding), 03. Nettie Moore, 04. Highway 61 Revisited, 05. All Along the Watchtower, 06. Thunder On The Mountain, 07. Like A Rolling Stone, Enjoy!!
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

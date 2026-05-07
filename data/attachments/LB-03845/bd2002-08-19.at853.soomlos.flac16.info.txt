@@ -1,0 +1,65 @@
+Bob Dylan
+All For The Sea Annual Benefit Concert
+Long Island University
+Southampton, New York
+August 19, 2002
+
+Source: soomlos
+fob, center, ga field (25-30ft from stage)
+at853's > sound pro's spsb-1(160hz roll off) > denecke ad-20 > sony d8
+sony d8 > tascam cd-rw700 > eac > cool edit > cd wave > flac frontend
+
+Disc 1:
+01. Introduction [01:58]
+02. A Voice From On High [04:19]
+03. I'll Be Your Baby Tonight [05:13]
+04. It's Alright, Ma (I'm Only Bleeding) [06:58]
+05. If You See Her, Say Hello [05:54]
+06. Tweedle Dee & Tweedle Dum [05:28]
+07. Quinn, The Eskimo (The Mighty Quinn) [05:21]
+08. Moonlight [05:06]
+09. High Water (For Charley Patton) [06:58] 
+10. Forever Young [06:59]
+11. Tangled Up In Blue [09:07]
+12. Searching For A Soldier's Grave [03:18]
+Total time: [66:47]
+
+Disc 2:
+01. Summer Days [06:42]
+02. Never Gonna Be The Same Again [06:17]
+03. The Wicked Messenger [04:18]
+04. Rainy Day Women #12 & 35 [13:02]
+     (encore)
+05. Like A Rolling Stone [08:02]
+06. Blowin' In The Wind [07:04]
+07. All Along The Watchtower [06:17]
+Total time: [51:47]
+
+Band Members:
+Bob Dylan - vocals, guitar, harp
+Larry Campbell - guitar, mandolin, violin, pedal steel, steel guitar, backing vocals
+George Recile - drums
+Charlie Sexton - guitar, backing vocals
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2002-08-19d1t01.flac:bfb5dd101cc3de01236a491f44dd35f8
+bd2002-08-19d1t02.flac:6f1013349be441a6e9bf1cc8a5f6d62f
+bd2002-08-19d1t03.flac:ddb11c1cd6dd9b8c25ab1f5cdc231a9d
+bd2002-08-19d1t04.flac:c57fd6aca990c459d97d9c14632636fe
+bd2002-08-19d1t05.flac:83d1897f80b22c093381ac621c2c5376
+bd2002-08-19d1t06.flac:88e80fd13236e0520ca1c63187c8effb
+bd2002-08-19d1t07.flac:f05ea0859137caeadcc3972c176a6463
+bd2002-08-19d1t08.flac:2400cc8a0c8845c350cdebc53052a0f6
+bd2002-08-19d1t09.flac:709a2a30fb065aa15cedd13590fbe1e1
+bd2002-08-19d1t10.flac:8598167b76d5d4829b140389aa3f8e13
+bd2002-08-19d1t11.flac:384a2660c15122d953df9326d28ed34b
+bd2002-08-19d1t12.flac:390ed486cff9379e650c40901a830f97
+bd2002-08-19d2t01.flac:94af871040da9b340d5f6b8ef7cf86d3
+bd2002-08-19d2t02.flac:07de8097934a1d3d1f52cb842537b7b1
+bd2002-08-19d2t03.flac:ac56e2966872a7149dc70e24c4193c86
+bd2002-08-19d2t04.flac:44341eac3fe706b9e78ee5eb8641ebab
+bd2002-08-19d2t05.flac:5a79119651b7a2aecaf725a6a214f6ab
+bd2002-08-19d2t06.flac:f95193e5ccedade5d1ad30f12aa835de
+bd2002-08-19d2t07.flac:3b1d4b13ee8cc1566c29e12b6b76d5ab
+

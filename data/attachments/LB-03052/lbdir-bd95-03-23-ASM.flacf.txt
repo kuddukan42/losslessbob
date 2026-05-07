@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-23-ASM.flacf 
+=================== 
+=================== 
+=================== 
+e676f5729ae2d6cfd2459dd29a6ede4e  bd95-03-23-ASM-LB-3052.txt
+d5eb775547b34c44b80bbedb50b4c3d5  CD1\Track01.flac
+3ab56ba83474255fb8c10bff62cd5daf  CD1\Track02.flac
+3736c6be6c6b107de5e73029b64d5016  CD1\Track03.flac
+ac0cd0d7ef772f2c844d2c7147504bcb  CD1\Track04.flac
+d616cb72087eeb615a091d6864de3aa0  CD1\Track05.flac
+8df08b94ef97f302120c1bddf34d2c99  CD1\Track06.flac
+3526aa10a3e28b3248b891aba95ab909  CD1\Track07.flac
+a927e0ac1b1a087823616629dc56f51e  CD2\Track08.flac
+383395017f2bb618babdcb1d3a33c523  CD2\Track09.flac
+a2e0fb6bc8072f0ef07c8457ff5c4fde  CD2\Track10.flac
+ccd92101e50f10f562bfd7832f5c6238  CD2\Track11.flac
+a1f75cf5be7be734d3abab17dd858ae1  CD2\Track12.flac
+df2c975638e5ebd7f914cc71ce4eb257  CD2\Track13.flac
+176760b642cc36a53d38fc450bfbd95c  CD2\Track14.flac
+561263f01b2e3e9b25a962e4366265bb  Info\1995-03-23 Voorst National, Brussels, Belgium.txt
+4bd90585c3dec5cb614866abf2f2f7f7  Info\ffp d1.txt
+a105ba524b3badf2613d0084ac431c3b  Info\ffp d2.txt
+70f44b8b44bbcd9eb0e89a01d8a0c45d  Info\shntool remastering test.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-23-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+Track01.flac:19aab202201a37e1828b54b75bf70644
+Track02.flac:5646700ef0f8f1299aebe772ccaaf655
+Track03.flac:4e7e3c66cda644d2ad8fd72a911c2993
+Track04.flac:826215f0144f5a66bf1f65193286256c
+Track05.flac:e183c53b7c671548fdb551e939ad8da4
+Track06.flac:f86470b0ba1122d8ac90ad6d1105f546
+Track07.flac:baf58a3ceaa8167b6c3092fa85c774b6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-23-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+Track08.flac:495c983b57df10b46844ba303bf0ac01
+Track09.flac:0b66338e7809907f8e0e06577361327c
+Track10.flac:f1fd256bea8c67f1aa530a5eec232c4a
+Track11.flac:92030ed1944d4dee3f519a2e97fe1dad
+Track12.flac:a582e98b7786ae50af241269857636db
+Track13.flac:bc83e209a7325ac91bbf35c3c27572cc
+Track14.flac:8a019b5194e7593e7a673ad19422ed08
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-23-ASM.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.56       55168556 B   ---   --   ---xx   flac  0.7836  Track01.flac
+     4:05.65       43370924 B   ---   --   ---xx   flac  0.7719  Track02.flac
+     5:05.25       53860844 B   ---   --   ---xx   flac  0.7714  Track03.flac
+     6:40.16       70597676 B   ---   --   ---xx   flac  0.7323  Track04.flac
+     7:53.52       83559548 B   ---   --   ---xx   flac  0.7379  Track05.flac
+     8:10.06       86450156 B   ---   --   ---xx   flac  0.7273  Track06.flac
+     6:24.59       67876412 B   ---   --   ---xx   flac  0.6541  Track07.flac
+    43:32.54      460884116 B                            0.7353  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-23-ASM.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:53.15       72888524 B   ---   --   ---xx   flac  0.6436  Track08.flac
+     6:49.46       72255836 B   ---   --   ---xx   flac  0.7380  Track09.flac
+     7:06.47       75256988 B   ---   --   ---xx   flac  0.7650  Track10.flac
+     6:08.03       64922300 B   ---   --   ---xx   flac  0.7790  Track11.flac
+     6:25.70       68078684 B   ---   --   ---xx   flac  0.7828  Track12.flac
+     9:48.22      103774988 B   ---   --   ---xx   flac  0.7285  Track13.flac
+     8:55.44       94477532 B   ---   --   ---xx   flac  0.7144  Track14.flac
+    52:07.22      551654852 B                            0.7337  (7 files)
+=================== 
+=================== 
+=================== 

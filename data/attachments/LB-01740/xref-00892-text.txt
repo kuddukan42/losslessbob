@@ -1,0 +1,77 @@
+===================
+===================
+===================
+=== bd04-03-26-unwanted man recording.txt
+===================
+===================
+===================
+Bob Dylan
+March 26 2004 
+Avalon  
+Boston, Massachusetts 
+
+Taper: Unwanted Man
+Source: Unknown generation audio disks > (Feurio) wav > (flacfrontend) flac.
+
+
+Disk One
+
+(missing intro)
+The Wicked Messenger 
+You Ain't Goin' Nowhere 
+Cry A While 
+The Lonesome Death Of Hattie Carroll 
+Highway 61 Revisited 
+Make You Feel My Love 
+Cold Irons Bound 
+I Don't Believe You (She Acts Like We Never Have Met) 
+Man In The Long Black Coat 
+Rainy Day Women #12 & 35 
+I Believe In You 
+Honest With Me 
+Tell Me That It Isn't True 
+
+Disk Two
+
+Summer Days 
+applause
+Down Along The Cove 
+Like A Rolling Stone
+intro
+All Along The Watchtower
+===================
+===================
+===================
+=== bd04-03-26-d1-fingerprints.txt
+===================
+===================
+===================
+Bob Dylan - Track 01.flac:d5da4b3168c3b1112716c77dcee1e7c9
+Bob Dylan - Track 02.flac:41935084f612caaeec91577e71714a41
+Bob Dylan - Track 03.flac:67a64cec59b2981b28aae629e0e5cd37
+Bob Dylan - Track 04.flac:0460d05548f685c2ffdfdbde805030cb
+Bob Dylan - Track 05.flac:424061a176d66550d90d7f017c899acb
+Bob Dylan - Track 06.flac:68e110d483179ebea02f35d1dda531d0
+Bob Dylan - Track 07.flac:abab3a46e5ce9de0c199adb59df50827
+Bob Dylan - Track 08.flac:c085ea50c4833a330190d454f29545dd
+Bob Dylan - Track 09.flac:51db213be3ac81182166bd66b9d76c84
+Bob Dylan - Track 10.flac:4163407b53f4db41e0252bb2873a6fa6
+Bob Dylan - Track 11.flac:212af2e09ccd6f35816284ebed2f516b
+Bob Dylan - Track 12.flac:cbadf355b2182840d765ea0ebaec2483
+Bob Dylan - Track 13.flac:68d2a114c0a3ca1e46e78e53d9518798
+===================
+===================
+===================
+=== bd04-03-26-d2-fingerprints.txt
+===================
+===================
+===================
+Bob Dylan - Track 01.flac:40ab4d0aac7df8086e5f644e797b4b74
+Bob Dylan - Track 02.flac:6b87961301387b71e45244f415fd58b2
+Bob Dylan - Track 03.flac:346897b443b2f9ca3578a86b4284eca6
+Bob Dylan - Track 04.flac:b405ee16485e1aff6675eebcf9e6b204
+Bob Dylan - Track 05.flac:bc833722e315ff1b731e590efa51255c
+Bob Dylan - Track 06.flac:d9fe50814fd0f6db0cdd16da97cb6080
+===================
+===================
+===================

@@ -1,0 +1,238 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd62-Freewheelin-Sessions-Howlin-Husky.flacf 
+=================== 
+=================== 
+=================== 
+437fa93427a29c82a5ed6e9d04a384b1  disk4-info.txt
+b6ecda2b6a5c72428e8bb1968318aca3  Freewheelin' Sessions 1st - 8th 1962-63.doc
+8a0d72696c3e36d327083dcdb12a169e  Freewheelin' Sessions 1st - 8th 1962-63.txt
+b49340fb5f46a53cfea51e766053a053  Freewheelin'Sessions Disc 1\FW 1..log
+75a0d144df70437738640eaf53113401  Freewheelin'Sessions Disc 1\Track01.flac
+c5b61687d5150316a07bb36acbea1f6b  Freewheelin'Sessions Disc 1\Track02.flac
+a56590f1e029c979a4b78cfbec2c40dd  Freewheelin'Sessions Disc 1\Track03.flac
+f62ce6859e9273f6ba402d2d0bccf20a  Freewheelin'Sessions Disc 1\Track04.flac
+f020c313fca8c991e73f1d7d918d7c8d  Freewheelin'Sessions Disc 1\Track05.flac
+f3daff2dfd4126d93d35f75067de9c33  Freewheelin'Sessions Disc 1\Track06.flac
+eddd909e88cd8f97b0424f5c4359e030  Freewheelin'Sessions Disc 1\Track07.flac
+30465f7d3e6970562254bed62700731b  Freewheelin'Sessions Disc 1\Track08.flac
+3f47f80b3838a59aa0efbc6ca4ca5c4a  Freewheelin'Sessions Disc 1\Track09.flac
+5b02bf257ea25873444fb3930488cade  Freewheelin'Sessions Disc 1\Track10.flac
+6c6ce750e5c994567cf1e2f901ea6dce  Freewheelin'Sessions Disc 1\Track11.flac
+7c218409d2c6bd1714e8c9d77a2d6aad  Freewheelin'Sessions Disc 1\Track12.flac
+7fe256857c78b9313fc11405b25ca3d6  Freewheelin'Sessions Disc 1\Track13.flac
+0e262e6299dc5801d0bb358d40f39b01  Freewheelin'Sessions Disc 1\Track14.flac
+d8e756213dc738ac0b26a883f1389822  Freewheelin'Sessions Disc 1\Track15.flac
+91dfaedc55032fe10de933203cbb0e00  Freewheelin'Sessions Disc 1\Track16.flac
+8efeb6816d6e35ecf965168e301d8401  Freewheelin'Sessions Disc 1\Track17.flac
+760bcaf93404dc9d2ed845351544c7ca  Freewheelin'Sessions Disc 1\Track18.flac
+e8d9b933cc2854cfe8987b837ab48217  Freewheelin'Sessions Disc 1\Track19.flac
+9d889a49b9ba263c13e37bf94cc593b2  Freewheelin'Sessions Disc 1\Track20.flac
+78950e4826d67e192f96ccd3d524b004  Freewheelin'Sessions Disc 1\Unknown Artist - Unknown Title.log
+7455bcb0e1b6473532019986a7050cb5  Freewheelin'Sessions Disc 2\FW 2 log.log
+1c08ad2191240cd666b18d663c120fc7  Freewheelin'Sessions Disc 2\Track01.flac
+fb355921da774f2a6ab4ad8a46c1d9e3  Freewheelin'Sessions Disc 2\Track02.flac
+25086656206c49935615d16f3bc020af  Freewheelin'Sessions Disc 2\Track03.flac
+7c22188432dbf09ee6f5251a5798c5e7  Freewheelin'Sessions Disc 2\Track04.flac
+b8d36fcd6107ff79cf51ce9194ce4122  Freewheelin'Sessions Disc 2\Track05.flac
+ac4737367b2c398c657ca647c829cd47  Freewheelin'Sessions Disc 2\Track06.flac
+d9fe329bdc789f78da3ce4652d17edf4  Freewheelin'Sessions Disc 2\Track07.flac
+3941377da2611420995d441efe55c226  Freewheelin'Sessions Disc 2\Track08.flac
+ebe5ffdbd8d3ea8be133d365ff1b671b  Freewheelin'Sessions Disc 2\Track09.flac
+965e2beff5572504cd5032f7136a976d  Freewheelin'Sessions Disc 2\Track10.flac
+5e3adc6b5db05d1c52915087359b81fb  Freewheelin'Sessions Disc 2\Track11.flac
+41c51c6112800986d572b9a98fad7f29  Freewheelin'Sessions Disc 2\Track12.flac
+ac2a42c2c890071d3fb88bf312f3ab60  Freewheelin'Sessions Disc 2\Track13.flac
+613feaf914463d7b9d0ce64bce49db78  Freewheelin'Sessions Disc 2\Track14.flac
+8df04da0cddf12f9ce8c14ea2058528b  Freewheelin'Sessions Disc 2\Track15.flac
+1b4125eccd2a5926ef543ba5e6a6ebc5  Freewheelin'Sessions Disc 2\Track16.flac
+f88a964058095f3536f39c98e3dcc093  Freewheelin'Sessions Disc 2\Track17.flac
+4eb7b45223555ef6b894416bc8301e18  Freewheelin'Sessions Disc 2\Track18.flac
+7455bcb0e1b6473532019986a7050cb5  Freewheelin'Sessions Disc 2\Unknown Artist - Unknown Title.log
+4ede486112375a2dae4895484f89d2b0  Freewheelin'Sessions Disc 3\FW.3..log
+fc6139f708b1cb77de445d7137da1c93  Freewheelin'Sessions Disc 3\Track01.flac
+4999a7c7bd09cbb7465453a9dc1e6fea  Freewheelin'Sessions Disc 3\Track02.flac
+92bb478ee96a659e03ae175752b4d607  Freewheelin'Sessions Disc 3\Track03.flac
+f7edbf1c202c68137651d1c69e75e9d3  Freewheelin'Sessions Disc 3\Track04.flac
+2a2895cb9230381b4b931f39de9bc3a7  Freewheelin'Sessions Disc 3\Track05.flac
+75adf8fc668959b49c624822def28ec8  Freewheelin'Sessions Disc 3\Track06.flac
+33b56423e0251ba06399af5e9fb8479e  Freewheelin'Sessions Disc 3\Track07.flac
+09fc331cd25d808b071dda8a690c8b8d  Freewheelin'Sessions Disc 3\Track08.flac
+53fc0b684fd58f326d464bda1c3be87b  Freewheelin'Sessions Disc 3\Track09.flac
+f7b975f5829a88acfc6e103ec0f885bd  Freewheelin'Sessions Disc 3\Track10.flac
+b710610112c5d9009713b888f91a808f  Freewheelin'Sessions Disc 3\Track11.flac
+f9d256c725c3454841b121fdab9f05ed  Freewheelin'Sessions Disc 3\Track12.flac
+99e4d47952790ecb99c0acc8a1e985e7  Freewheelin'Sessions Disc 3\Track13.flac
+2c8b39d9d1cc8b27449de0bd58cc5ef1  Freewheelin'Sessions Disc 3\Track14.flac
+dc46deebc5e3c184992acef19d4c1b1e  Freewheelin'Sessions Disc 3\Track15.flac
+08cd5a48c005b077140ccfe5703a9cfe  Freewheelin'Sessions Disc 3\Track16.flac
+ccda7824a23d9196850366b17c181433  Freewheelin'Sessions Disc 3\Track17.flac
+3434f9adb825e284618040245898bf2d  Freewheelin'Sessions Disc 3\Track18.flac
+27872e2f0f0a636b2d3cad17909a5299  Freewheelin'Sessions Disc 3\Track19.flac
+4ede486112375a2dae4895484f89d2b0  Freewheelin'Sessions Disc 3\Unknown Artist - Unknown Title.log
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-Freewheelin-Sessions-Howlin-Husky.flacf\Freewheelin'Sessions Disc 3 
+=================== 
+=================== 
+=================== 
+Track01.flac:835af04f6147167dbdf3ee7759c3e09b
+Track02.flac:e6c2799710c715237abe7314e44cf609
+Track03.flac:4968de5e536f0b14030d2f04fc1a93ce
+Track04.flac:ad9338294a6f01b50e694d172db0dadf
+Track05.flac:89f55e5457cf927c9e5b7ea5b70cfa5c
+Track06.flac:7e874a60d48a3fafca1cdff412d94226
+Track07.flac:420ed75fa44df19b7e59c008961ecc09
+Track08.flac:cd52687672318717ee90dc125464a275
+Track09.flac:0c2aa67d943f99590caeaa802c4ed2c2
+Track10.flac:d132abb8ada5ce9854309e890e7b0ec1
+Track11.flac:b18591aa1f1eef7789f11bb370b62fe3
+Track12.flac:068bbdca50ce01166d8f511b9ec83445
+Track13.flac:41280c833779b434ab624f0653074103
+Track14.flac:1cf2648cedc84f11aecffd6b1509c17f
+Track15.flac:640f945158094c344fc54f8cebf6d71f
+Track16.flac:cb2d63055ed4635e6dcb274d9e6aaeb6
+Track17.flac:75d6f8dc9768377b5845975155e0c1c6
+Track18.flac:85b6220e3a119695f3e4d26cee43cd25
+Track19.flac:7482b0300c76ea90dc2e991843dd9d09
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-Freewheelin-Sessions-Howlin-Husky.flacf\Freewheelin'Sessions Disc 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:09c0d114cf643440a791b243d91716b5
+Track02.flac:d0e586c2e426733c37a336a86c0f83c7
+Track03.flac:d3ad4643e8d1fa40a22dc46980224188
+Track04.flac:bad97f4092a1dc3ae688c29a9fe4088a
+Track05.flac:acd9a2df82918fd9203878fe5ca58473
+Track06.flac:d64083f624dabdfff6342b80710f2b06
+Track07.flac:c783141781f8faf51f0129b460286137
+Track08.flac:1ebb446991b2b39a4ae6e8a0f8146b3d
+Track09.flac:7e914b57e9af1d1eeaea457a04b6d90c
+Track10.flac:1c894ea2c21b6490b79c360218d738dd
+Track11.flac:5b530c070816bce4f36a5d46f282332e
+Track12.flac:118c941704b0c59d70ebf1412fc46451
+Track13.flac:edd070eb98eba52f3f7b3a8836de7c46
+Track14.flac:aae9b070fae18fa545d5e37b4ab8a342
+Track15.flac:2b21ab77f9c7553aacd4ff6c38ff71a2
+Track16.flac:e00b7058c591411e35aaea4c19df1e40
+Track17.flac:fc02bdd7e6546514d0ca0645403ed9b1
+Track18.flac:7fddf7e2260c2e4037a7c7b75175bfdb
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-Freewheelin-Sessions-Howlin-Husky.flacf\Freewheelin'Sessions Disc 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:33270b1a169a44415f2f2a4a84265ce7
+Track02.flac:9ae99d9ffad40b1f620d723da1858148
+Track03.flac:9401e883a3f7b3f4b432baa644d70c72
+Track04.flac:da9ef7706ff5b125b5b6298ad801fa98
+Track05.flac:3723ecfa8f8f3acd2707d038591a706c
+Track06.flac:566a45c5112bcc84924e942b44cf7ef7
+Track07.flac:8ac868a8fd35ec847b760ab6ccf0be6d
+Track08.flac:dc95582fab24e2b0abae21e2a15624ae
+Track09.flac:393d18bfb4eb8c0e5aec1bf79ac86393
+Track10.flac:1f8169db52700cd903faf3b80b5c6fbc
+Track11.flac:e57c2ac1cf23eb421e075f4bbdad5045
+Track12.flac:1159f69e63c19b90aef35fa323367d80
+Track13.flac:8065555ebb25b4f332a8f9cd469bebd4
+Track14.flac:34c0fdfb7918f20755b06f8e080e99c8
+Track15.flac:174ee0ee4ac3dd7029ec49545c6495f7
+Track16.flac:44cbc8d3a53bbf8ffa178faf841c4f9f
+Track17.flac:73305336988364c01da96d68499e4160
+Track18.flac:db03d68100f70910db37d1c662c74469
+Track19.flac:29811332d1f385da37a74c88c418c806
+Track20.flac:392f196c0c4a3606125fe76ce1966567
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd62-Freewheelin-Sessions-Howlin-Husky.flacf\Freewheelin'Sessions Disc 3 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:59.19       31620332 B   ---   --   ---xx   flac  0.4636  Track01.flac
+     3:09.46       33447836 B   ---   --   ---xx   flac  0.3016  Track02.flac
+     4:40.26       49453196 B   ---   --   ---xx   flac  0.3106  Track03.flac
+     2:01.55       21473804 B   ---   --   ---xx   flac  0.3266  Track04.flac
+     6:59.18       73953980 B   ---   --   ---xx   flac  0.5361  Track05.flac
+     3:45.69       39852332 B   ---   --   ---xx   flac  0.4637  Track06.flac
+     3:58.36       42067916 B   ---   --   ---xx   flac  0.3724  Track07.flac
+     2:35.19       27386732 B   ---   --   ---xx   flac  0.3530  Track08.flac
+     2:36.52       27640748 B   ---   --   ---xx   flac  0.5426  Track09.flac
+     4:38.08       49058060 B   ---   --   ---xx   flac  0.4227  Track10.flac
+     3:52.19       40969532 B   ---   --   ---xx   flac  0.3221  Track11.flac
+     1:39.14       17496572 B   ---   --   ---xx   flac  0.3106  Track12.flac
+     3:20.66       35435276 B   ---   --   ---xx   flac  0.3199  Track13.flac
+     5:34.17       58957628 B   ---   --   ---xx   flac  0.4930  Track14.flac
+     2:08.28       22645100 B   ---   --   ---xx   flac  0.5807  Track15.flac
+     2:22.58       25185260 B   ---   --   ---xx   flac  0.5741  Track16.flac
+     2:09.29       22823852 B   ---   --   ---xx   flac  0.6081  Track17.flac
+     2:28.31       26180156 B   ---   --   ---xx   flac  0.6364  Track18.flac
+     2:31.19       26681132 B   ---   --   ---xx   flac  0.5827  Track19.flac
+    63:31.29      672329444 B                            0.4448  (19 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd62-Freewheelin-Sessions-Howlin-Husky.flacf\Freewheelin'Sessions Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:48.34       29715212 B   ---   --   ---xx   flac  0.2011  Track01.flac
+     2:23.68       25385180 B   ---   --   ---xx   flac  0.5660  Track02.flac
+     3:03.68       32441180 B   ---   --   ---xx   flac  0.6260  Track03.flac
+     2:45.02       29110748 B   ---   --   ---xx   flac  0.6134  Track04.flac
+     2:58.64       31549772 B   ---   --   ---xx   flac  0.5633  Track05.flac
+     3:03.44       32384732 B   ---   --   ---xx   flac  0.5845  Track06.flac
+     2:32.39       26904572 B   ---   --   ---xx   flac  0.5272  Track07.flac
+     3:09.02       33344348 B   ---   --   ---xx   flac  0.4994  Track08.flac
+     2:03.38       21786620 B   ---   --   ---xx   flac  0.5255  Track09.flac
+     0:51.33        9074060 B   ---   --   ---xx   flac  0.5210  Track10.flac
+     2:38.18       27913580 B   ---   --   ---xx   flac  0.5450  Track11.flac
+     3:44.46       39621836 B   ---   --   ---xx   flac  0.5669  Track12.flac
+     3:28.59       36830012 B   ---   --   ---xx   flac  0.6180  Track13.flac
+     3:32.44       37500332 B   ---   --   ---xx   flac  0.5295  Track14.flac
+     2:53.71       30684236 B   ---   --   ---xx   flac  0.4969  Track15.flac
+     4:12.59       44591612 B   ---   --   ---xx   flac  0.6076  Track16.flac
+     4:08.00       43747244 B   ---   --   ---xx   flac  0.5838  Track17.flac
+     3:12.35       33951164 B   ---   --   ---xx   flac  0.5367  Track18.flac
+    53:31.49      566536440 B                            0.5447  (18 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd62-Freewheelin-Sessions-Howlin-Husky.flacf\Freewheelin'Sessions Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:31.03       26643500 B   ---   --   ---xx   flac  0.6455  Track01.flac
+     3:21.24       35512892 B   ---   --   ---xx   flac  0.5856  Track02.flac
+     2:24.05       25413404 B   ---   --   ---xx   flac  0.6139  Track03.flac
+     2:36.52       27640748 B   ---   --   ---xx   flac  0.6044  Track04.flac
+     3:14.36       34306316 B   ---   --   ---xx   flac  0.5823  Track05.flac
+     6:40.56       70691756 B   ---   --   ---xx   flac  0.6108  Track06.flac
+     3:03.07       32297708 B   ---   --   ---xx   flac  0.6229  Track07.flac
+     4:48.37       50890268 B   ---   --   ---xx   flac  0.6285  Track08.flac
+     2:04.13       21904220 B   ---   --   ---xx   flac  0.5913  Track09.flac
+     2:34.34       27245612 B   ---   --   ---xx   flac  0.6155  Track10.flac
+     3:20.49       35395292 B   ---   --   ---xx   flac  0.6054  Track11.flac
+     2:45.38       29195420 B   ---   --   ---xx   flac  0.5730  Track12.flac
+     2:56.62       31192268 B   ---   --   ---xx   flac  0.6312  Track13.flac
+     2:51.07       30180908 B   ---   --   ---xx   flac  0.5921  Track14.flac
+     3:07.54       33113852 B   ---   --   ---xx   flac  0.5099  Track15.flac
+     1:56.51       20582396 B   ---   --   ---xx   flac  0.6149  Track16.flac
+     4:03.14       42898172 B   ---   --   ---xx   flac  0.6175  Track17.flac
+     4:16.48       45271340 B   ---   --   ---xx   flac  0.5074  Track18.flac
+     2:56.58       31182860 B   ---   --   ---xx   flac  0.6096  Track19.flac
+     2:38.38       27960620 B   ---   --   ---xx   flac  0.6177  Track20.flac
+    64:12.11      679519552 B                            0.5979  (20 files)
+=================== 
+=================== 
+=================== 

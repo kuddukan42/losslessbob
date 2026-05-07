@@ -1,0 +1,177 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-genuine-bootleg-series.flacf 
+=================== 
+=================== 
+=================== 
+0e50c008acf3aad6a4c2cb8ccbd70825  bd61-genuine-bootleg-series-d1t01.flac
+fc16b0efe31a16fca0c6cc6c55e2457d  bd61-genuine-bootleg-series-d1t02.flac
+3c42ae775997b7e1f86e5302f053c300  bd61-genuine-bootleg-series-d1t03.flac
+6a218342f0f5d3405a2a5d3f80e73d13  bd61-genuine-bootleg-series-d1t04.flac
+b21acc030e5e3ca3778a064c2d9e8be5  bd61-genuine-bootleg-series-d1t05.flac
+512ca3edf4efec40d34ae90b06889145  bd61-genuine-bootleg-series-d1t06.flac
+5ddbd39d423deacdac8e5a1d52028641  bd61-genuine-bootleg-series-d1t07.flac
+0ae1319e108155085d099bf00b34a0a4  bd61-genuine-bootleg-series-d1t08.flac
+5654347d2f682095c0a6bc162e3179cf  bd61-genuine-bootleg-series-d1t09.flac
+d0d95c510ec9f5d0c1e906f1f01ac2e2  bd61-genuine-bootleg-series-d1t10.flac
+2ab58c4697fff69c6cc5c9bdbfea7e7e  bd61-genuine-bootleg-series-d1t11.flac
+a6232985b27da5102a673a2a1c7d4dcf  bd61-genuine-bootleg-series-d1t12.flac
+034c89e0b1aabd5e29d4de51f145cf6f  bd61-genuine-bootleg-series-d1t13.flac
+6877034ea28bc179d42cd0da575a12bb  bd61-genuine-bootleg-series-d1t14.flac
+5bf7f1e3ecd33e8969c2fef96ca72d18  bd61-genuine-bootleg-series-d1t15.flac
+4956460b6c9489be6492fa32974433f5  bd61-genuine-bootleg-series-d1t16.flac
+578afb88b9d8d909dc3e073805879907  bd61-genuine-bootleg-series-d1t17.flac
+5e06d26a8c97bab93a5dc40669b35348  bd61-genuine-bootleg-series-d1t18.flac
+9a698904ff1d764c1a1f5dd0cab54116  bd61-genuine-bootleg-series-d2t01.flac
+ed473f42f83865b76440dbdd5491f672  bd61-genuine-bootleg-series-d2t02.flac
+8e1503f335c629ce5e7866810d7b8251  bd61-genuine-bootleg-series-d2t03.flac
+dd080f86d1832e629a3a7d24d70c9b50  bd61-genuine-bootleg-series-d2t04.flac
+32d514341ff2c719bb2f3588ad352a43  bd61-genuine-bootleg-series-d2t05.flac
+9ede0cc5862a386ed269a342bd45c684  bd61-genuine-bootleg-series-d2t06.flac
+249e152cc53664df4b2578df0fe006de  bd61-genuine-bootleg-series-d2t07.flac
+e326dc37a7070b54487fdc954d0b8631  bd61-genuine-bootleg-series-d2t08.flac
+664508a839b841b550c8917a0e57b841  bd61-genuine-bootleg-series-d2t09.flac
+2e7369108e21746be5e3cafca13b5403  bd61-genuine-bootleg-series-d2t10.flac
+005b7eca85f6b9e9d9273a88cc335c96  bd61-genuine-bootleg-series-d2t11.flac
+753f99972d2eee867aa7a86297f0d4aa  bd61-genuine-bootleg-series-d2t12.flac
+1fa5b6173756f2e303e6af9caa9537d9  bd61-genuine-bootleg-series-d2t13.flac
+ac7bcbdcb9911ebaac616331143c7065  bd61-genuine-bootleg-series-d2t14.flac
+23cfa67ee10f9c4fffa66bc380eed81f  bd61-genuine-bootleg-series-d2t15.flac
+04664e84c804bd4693b61381588e97d5  bd61-genuine-bootleg-series-d2t16.flac
+7a8167bee289bb0c5171e2b786950f89  bd61-genuine-bootleg-series-d2t17.flac
+7954ea1dec4cdcffd3aed6cb35776599  bd61-genuine-bootleg-series-d3t01.flac
+6af5e56818db21ebf5c1010b7ba5e15d  bd61-genuine-bootleg-series-d3t02.flac
+6ee6612b92c55ac0a02fdafc0eb8c2fc  bd61-genuine-bootleg-series-d3t03.flac
+1bc4e25719f82e31a664835c1a2bc76e  bd61-genuine-bootleg-series-d3t04.flac
+52ca6aa3ee504eccdd9147ac229fbe9a  bd61-genuine-bootleg-series-d3t05.flac
+d4aa65766a61c5e8f57262a4bee1da21  bd61-genuine-bootleg-series-d3t06.flac
+e100bf96ac2b40dab1a66ac06d4a3440  bd61-genuine-bootleg-series-d3t07.flac
+cfddf371dd88dcfb1b0e322028c737c7  bd61-genuine-bootleg-series-d3t08.flac
+efafd570d0ba3ea8ccf5d57a5393dfaa  bd61-genuine-bootleg-series-d3t09.flac
+792772e1eea52f573bb5346bc7a0c9e3  bd61-genuine-bootleg-series-d3t10.flac
+a8ccf95197bc4b6f70d972a3e07d717d  bd61-genuine-bootleg-series-d3t11.flac
+0999c3ea907e7d835405f89ff8476bef  bd61-genuine-bootleg-series-d3t12.flac
+78356aa2df6c5e18a85f8e5142e8a716  bd61-genuine-bootleg-series-d3t13.flac
+8b03b97212b436a303004f939c5b2260  bd61-genuine-bootleg-series-d3t14.flac
+f1da6a44b67b60b2222f5583a22acf3b  bd61-genuine-bootleg-series-d3t15.flac
+5722811aae628b9931c48bc4f0971919  bd61-genuine-bootleg-series.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-genuine-bootleg-series.flacf 
+=================== 
+=================== 
+=================== 
+bd61-genuine-bootleg-series-d1t01.flac:05275dca79a6b5e51416d5ee1c062dfb
+bd61-genuine-bootleg-series-d1t02.flac:d140c39e1111a73159c600105ceacc79
+bd61-genuine-bootleg-series-d1t03.flac:533c9daa352937e48acf50d6d60b9798
+bd61-genuine-bootleg-series-d1t04.flac:53f03e1b94b60166e29b1ff27774221e
+bd61-genuine-bootleg-series-d1t05.flac:66139de9193baeb96e34e515a6c83959
+bd61-genuine-bootleg-series-d1t06.flac:27b43a50801d337be4ed570f36a50ecf
+bd61-genuine-bootleg-series-d1t07.flac:aff41b4759640f9eb22bc88f02d933f0
+bd61-genuine-bootleg-series-d1t08.flac:1dc1a5be6647bff3728a24897aa1343a
+bd61-genuine-bootleg-series-d1t09.flac:7091eda2598c24bdc4fbd7d5b151de7e
+bd61-genuine-bootleg-series-d1t10.flac:e882f906cbaba425540d81a208e7665f
+bd61-genuine-bootleg-series-d1t11.flac:1a0b2ef428fa6c71c66179746150f16e
+bd61-genuine-bootleg-series-d1t12.flac:32125a3cddb427de8fd8985fb56a9f76
+bd61-genuine-bootleg-series-d1t13.flac:4eab4d9b0af4d60640036f162f91f49f
+bd61-genuine-bootleg-series-d1t14.flac:c0e8beeb3130cd972aa79f17c0964697
+bd61-genuine-bootleg-series-d1t15.flac:c920b196d1e8a7adefa3c96eb2e04102
+bd61-genuine-bootleg-series-d1t16.flac:f6952ff40b3841742ae45dbaa394ad5c
+bd61-genuine-bootleg-series-d1t17.flac:52328860962b316bb96a234275d85e76
+bd61-genuine-bootleg-series-d1t18.flac:55248186dff0b7926f626c87aa3d16d7
+bd61-genuine-bootleg-series-d2t01.flac:9deaba4a9a15e2faf576f273b1164bf3
+bd61-genuine-bootleg-series-d2t02.flac:056626ea867b95314096773c893cac2a
+bd61-genuine-bootleg-series-d2t03.flac:8ec60b2edbf7168cb10cd7cb6c60a966
+bd61-genuine-bootleg-series-d2t04.flac:d8ba9cad0ce5d7cd458269133d9b1b8d
+bd61-genuine-bootleg-series-d2t05.flac:5b1deadb719ce4b7fcd2e0e59fe24042
+bd61-genuine-bootleg-series-d2t06.flac:b671ada2fb315c3eee95c82630a9b045
+bd61-genuine-bootleg-series-d2t07.flac:088819ad10b66f94c6fda132a948bd8c
+bd61-genuine-bootleg-series-d2t08.flac:c2b508fb135fc8132213944814107144
+bd61-genuine-bootleg-series-d2t09.flac:c15245d390badbe005ba5324c6e868a0
+bd61-genuine-bootleg-series-d2t10.flac:a7d2cc1c57b9c100faa2eba72ce7db37
+bd61-genuine-bootleg-series-d2t11.flac:93e433e300da2569449226a714469ed7
+bd61-genuine-bootleg-series-d2t12.flac:e3a98c3998ca9f51bf58f69ccb0db93b
+bd61-genuine-bootleg-series-d2t13.flac:6ef3f1c722131b52a59ce38d53b212b3
+bd61-genuine-bootleg-series-d2t14.flac:0b328e30fca48afeb76b7a1530fe220f
+bd61-genuine-bootleg-series-d2t15.flac:4b69466ee089b3aea734e048081fc6d0
+bd61-genuine-bootleg-series-d2t16.flac:67aa2519b5382369ae19a527bdecedfa
+bd61-genuine-bootleg-series-d2t17.flac:d73427fd9aaf34d6ee151e7cb8c8d803
+bd61-genuine-bootleg-series-d3t01.flac:7135c5d3633e5c89ecda345a3238dfef
+bd61-genuine-bootleg-series-d3t02.flac:b8992249b7c3c24cd7ca3d1b504d6bde
+bd61-genuine-bootleg-series-d3t03.flac:2e2a7d3b3374191b374871b668f5adef
+bd61-genuine-bootleg-series-d3t04.flac:cd42bcb5d9005e7bb25504f859d2c769
+bd61-genuine-bootleg-series-d3t05.flac:cf00855fb12a684aac5c29ce648ce92a
+bd61-genuine-bootleg-series-d3t06.flac:ae5d166dbe2d35e5536c7b955524b706
+bd61-genuine-bootleg-series-d3t07.flac:701a72cbae7a6dfc89f56822cf37f07a
+bd61-genuine-bootleg-series-d3t08.flac:d14117f9ca5c18b2dccc6dc0b91b2b93
+bd61-genuine-bootleg-series-d3t09.flac:605aff6bed31f5aad917210c362e6326
+bd61-genuine-bootleg-series-d3t10.flac:0e38e264c71b8fe20a1ee93c9fc32ddf
+bd61-genuine-bootleg-series-d3t11.flac:5d8dbd78fcf390d159385f90666193e2
+bd61-genuine-bootleg-series-d3t12.flac:ec3dde3949dfd4c36f72ea9beebe8214
+bd61-genuine-bootleg-series-d3t13.flac:78b59865b283462af3cccf863557279d
+bd61-genuine-bootleg-series-d3t14.flac:8ebecc589b3b74c1c1d23170bf776d58
+bd61-genuine-bootleg-series-d3t15.flac:724c48da60341b6529b03aaddacd6b06
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-genuine-bootleg-series.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:09.35       44005964 B   ---   --   ---xx   flac  0.4755  bd61-genuine-bootleg-series-d1t01.flac
+     5:46.55       61163804 B   ---   --   ---xx   flac  0.5277  bd61-genuine-bootleg-series-d1t02.flac
+     2:22.10       25072364 B   ---   --   ---xx   flac  0.3822  bd61-genuine-bootleg-series-d1t03.flac
+     3:16.47       34684988 B   ---   --   ---xx   flac  0.5391  bd61-genuine-bootleg-series-d1t04.flac
+     2:10.45       23037884 B   ---   --   ---xx   flac  0.5500  bd61-genuine-bootleg-series-d1t05.flac
+     3:43.58       39473660 B   ---   --   ---xx   flac  0.4067  bd61-genuine-bootleg-series-d1t06.flac
+     2:31.65       26789324 B   ---   --   ---xx   flac  0.5544  bd61-genuine-bootleg-series-d1t07.flac
+     2:24.05       25413404 B   ---   --   ---xx   flac  0.5659  bd61-genuine-bootleg-series-d1t08.flac
+     2:34.50       27283244 B   ---   --   ---xx   flac  0.4594  bd61-genuine-bootleg-series-d1t09.flac
+     3:57.25       41865644 B   ---   --   ---xx   flac  0.4545  bd61-genuine-bootleg-series-d1t10.flac
+     1:52.40       19850924 B   ---   --   ---xx   flac  0.5295  bd61-genuine-bootleg-series-d1t11.flac
+     3:08.67       33320828 B   ---   --   ---xx   flac  0.5409  bd61-genuine-bootleg-series-d1t12.flac
+     3:14.03       34228700 B   ---   --   ---xx   flac  0.6540  bd61-genuine-bootleg-series-d1t13.flac
+     0:52.57        9306908 B   ---   --   ---xx   flac  0.4418  bd61-genuine-bootleg-series-d1t14.flac
+     3:48.50       40336844 B   ---   --   ---xx   flac  0.5985  bd61-genuine-bootleg-series-d1t15.flac
+    11:57.65      126631724 B   ---   --   ---xx   flac  0.6439  bd61-genuine-bootleg-series-d1t16.flac
+     7:37.28       80680700 B   ---   --   ---xx   flac  0.5856  bd61-genuine-bootleg-series-d1t17.flac
+     8:19.27       88087148 B   ---   --   ---xx   flac  0.4179  bd61-genuine-bootleg-series-d1t18.flac
+     4:22.57       46350908 B   ---   --   ---xx   flac  0.4062  bd61-genuine-bootleg-series-d2t01.flac
+     2:39.65       28200524 B   ---   --   ---xx   flac  0.4940  bd61-genuine-bootleg-series-d2t02.flac
+     4:32.45       48086684 B   ---   --   ---xx   flac  0.5781  bd61-genuine-bootleg-series-d2t03.flac
+     7:19.18       77481980 B   ---   --   ---xx   flac  0.5068  bd61-genuine-bootleg-series-d2t04.flac
+     3:56.27       41693948 B   ---   --   ---xx   flac  0.5475  bd61-genuine-bootleg-series-d2t05.flac
+     3:39.53       38756300 B   ---   --   ---xx   flac  0.5911  bd61-genuine-bootleg-series-d2t06.flac
+     2:32.00       26812844 B   ---   --   ---xx   flac  0.4537  bd61-genuine-bootleg-series-d2t07.flac
+     2:05.17       22090028 B   ---   --   ---xx   flac  0.5127  bd61-genuine-bootleg-series-d2t08.flac
+     3:40.03       38815100 B   ---   --   ---xx   flac  0.4745  bd61-genuine-bootleg-series-d2t09.flac
+     4:42.32       49820108 B   ---   --   ---xx   flac  0.5640  bd61-genuine-bootleg-series-d2t10.flac
+     1:52.25       19815644 B   ---   --   ---xx   flac  0.6058  bd61-genuine-bootleg-series-d2t11.flac
+     3:26.63       36486620 B   ---   --   ---xx   flac  0.5814  bd61-genuine-bootleg-series-d2t12.flac
+     2:46.62       29428268 B   ---   --   ---xx   flac  0.5606  bd61-genuine-bootleg-series-d2t13.flac
+     9:01.53       95557100 B   ---   --   ---xx   flac  0.4232  bd61-genuine-bootleg-series-d2t14.flac
+    10:52.15      115048124 B   ---   --   ---xx   flac  0.6279  bd61-genuine-bootleg-series-d2t15.flac
+     3:42.02       39165548 B   ---   --   ---xx   flac  0.6311  bd61-genuine-bootleg-series-d2t16.flac
+     3:13.63       34193420 B   ---   --   ---xx   flac  0.6189  bd61-genuine-bootleg-series-d2t17.flac
+     5:01.07       53112908 B   ---   --   ---xx   flac  0.5170  bd61-genuine-bootleg-series-d3t01.flac
+     4:14.65       44958524 B   ---   --   ---xx   flac  0.6106  bd61-genuine-bootleg-series-d3t02.flac
+     6:22.10       67408364 B   ---   --   ---xx   flac  0.5890  bd61-genuine-bootleg-series-d3t03.flac
+     3:57.08       41825660 B   ---   --   ---xx   flac  0.5293  bd61-genuine-bootleg-series-d3t04.flac
+     3:56.55       41759804 B   ---   --   ---xx   flac  0.5782  bd61-genuine-bootleg-series-d3t05.flac
+     4:15.45       45087884 B   ---   --   ---xx   flac  0.4451  bd61-genuine-bootleg-series-d3t06.flac
+     5:04.52       53747948 B   ---   --   ---xx   flac  0.4944  bd61-genuine-bootleg-series-d3t07.flac
+     4:32.20       48027884 B   ---   --   ---xx   flac  0.4774  bd61-genuine-bootleg-series-d3t08.flac
+     6:20.73       67203740 B   ---   --   ---xx   flac  0.5605  bd61-genuine-bootleg-series-d3t09.flac
+     4:44.60       50238764 B   ---   --   ---xx   flac  0.4605  bd61-genuine-bootleg-series-d3t10.flac
+    11:23.30      120551804 B   ---   --   ---xx   flac  0.5658  bd61-genuine-bootleg-series-d3t11.flac
+     3:16.42       34673228 B   ---   --   ---xx   flac  0.4811  bd61-genuine-bootleg-series-d3t12.flac
+     5:49.60       61704764 B   ---   --   ---xx   flac  0.5554  bd61-genuine-bootleg-series-d3t13.flac
+     3:18.58       35063660 B   ---   --   ---xx   flac  0.5368  bd61-genuine-bootleg-series-d3t14.flac
+     4:22.22       46268588 B   ---   --   ---xx   flac  0.5726  bd61-genuine-bootleg-series-d3t15.flac
+   224:55.64     2380670728 B                            0.5357  (50 files)
+=================== 
+=================== 
+=================== 

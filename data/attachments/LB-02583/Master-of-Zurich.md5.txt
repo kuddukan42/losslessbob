@@ -1,0 +1,20 @@
+0789c6015f360e61832b3ea29e765956 *d1t01Cocaine.flac
+124475247f3fd82762ba9ec4f6ff71b3 *d1t02 Mr. Tambourine Man.flac
+e6ac31acc622fdfa0572ebab6952787c *d1t03 Masters of War.flac
+3f07c0961517126368d76efa84e12255 *d1t04 Girl From the North Country.flac
+44a409e98fdadd6dbe06a36541ec5966 *d1t05 A Hard Rain's A-Gonna Fall.flac
+f79e55a2f2b0dcd3fc8cc699723b97fd *d1t06 Tangled Up In Blue.flac
+ca2bfb2103692d5864cd64377f798879 *d1t07 It's All Over Now Baby Blue.flac
+18094e8d4e0da8f64b25439449b6812f *d1t08 Can't Wait.flac
+d568bb5982e114109f32177d7745052e *d1t09 Not Dark Yet.flac
+a2e376d55738a43396db112d75a75d0f *d1t10 Stuck Inside of Mobile.flac
+1b4f28e69aed809fdeb6402aa7a08c89 *d2t01To Make You Feel My Love.flac
+d910de6f33f78b52b22da6d05a1b3e28 *d2t02 Highway 61 Revisited.flac
+3cd488ba9ba75bbabf632f924387b104 *d2t03 Love Sick.flac
+86c67d8a77c4d09a2d59d6d30b34e0f1 *d2t04 To Be Alone With You.flac
+99fd494af81939537c01b1bb628e7c8d *d2t05 Don't Think Twice.flac
+f91c7c3dd328fea826fb4488c96acf79 *d2t06 Not  Fade Away.flac
+128192299512a65d05e8e6b4667cd939 *d2t07 Visions of Johanna.flac
+103b87f988345f497ae1bc5e3fdd267b *d2t08 It Ain't Me, Babe.flac
+27beb4013bfc0a64a3455d98db2aa4bc *d2t09 The Times.flac
+f4b09858647bd3cbf0902d27b61287c6 *d2t10 Just Like A Woman.flac

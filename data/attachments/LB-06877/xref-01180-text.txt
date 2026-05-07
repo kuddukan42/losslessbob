@@ -1,0 +1,128 @@
+===================
+===================
+===================
+=== Prague 1995.03.11 rec info.txt
+===================
+===================
+===================
+Bob Dylan - Prague March 11, 1995
+
+This version is made from a 6 disc CD-R aud set of unknown generation received from a french trader some years ago - no info on taper or lineage. It was accompanied by a link to the html file attached here describing the contents of the six discs. 
+Disc 2 contained 7 bonus tracks - not extracted here. From the html file included it appears to be identical with the 12/A Pound Bootleg.
+
+Disc 1 (72:07)
+
+01 Crash On The Levee (Down In The Flood)
+02 If Not For You
+03 All Along The Watchtower
+04 Just Like A Woman
+05 Tangled Up In Blue
+06 Watching The River Flow
+07 Mr. Tambourine Man
+08 Boots Of Spanish Leather
+09 It's All Over Now Baby Blue
+10 Man In The Long Black Coat
+11 God Knows
+
+Disc 2 (17:06)
+
+01 Maggie's Farm
+02 Shelter From The Storm
+03 It Ain't Me, Babe
+
+
+
+Enjoy!
+
+-ts-
+===================
+===================
+===================
+=== CD1 flac.md5
+===================
+===================
+===================
+9c9c6e091223075ce6b5d9a4e7c228fc *bd95-03-11 d1t01.flac
+5bdd61ea4097c95300b2e25831f3950f *bd95-03-11 d1t02.flac
+949c0c184c51b0d73f524d6f890816e1 *bd95-03-11 d1t03.flac
+fbee1013fdecdd48be835b76fb2bc59d *bd95-03-11 d1t04.flac
+32d9dd858fdde7556449d1c7a7cb6207 *bd95-03-11 d1t05.flac
+88edfd2ca38aaa5ab601e5c5324eeed3 *bd95-03-11 d1t06.flac
+2efad1695529969e54f76450f87ef623 *bd95-03-11 d1t07.flac
+1d1e27c20d6227181e84f5a9fa1ec146 *bd95-03-11 d1t08.flac
+eae2b5f1df33002c9a25eb6e27099120 *bd95-03-11 d1t09.flac
+65adf93ed2dcbfe8c567cb1669a1ab47 *bd95-03-11 d1t10.flac
+5498d2d2e27be14b971a2805d08803eb *bd95-03-11 d1t11.flac
+===================
+===================
+===================
+=== CD1 wav.md5
+===================
+===================
+===================
+a38bf628d831f377a919ea570c53689b *bd95-03-11 d1t01.wav
+fc3c4c6ca475b88862c80215f07b505f *bd95-03-11 d1t02.wav
+abde889a22b8a3723fccbd3047fed44e *bd95-03-11 d1t03.wav
+fc18e26c8ce28975d3a3298d6ee553a9 *bd95-03-11 d1t04.wav
+b55add20975194a74c081ae27ac4d155 *bd95-03-11 d1t05.wav
+fc47f1816fe9497bae704d147e794c36 *bd95-03-11 d1t06.wav
+948e6738ddfc4fdd8cb5f24cebc443e4 *bd95-03-11 d1t07.wav
+a251eb3d9698806a65bbccc5467ee4ae *bd95-03-11 d1t08.wav
+467f5aa069d022e93c47688caec650e0 *bd95-03-11 d1t09.wav
+237d4ea2aa6b8c89c5b21b17bf5fbd9e *bd95-03-11 d1t10.wav
+661e82243cd12bf27353ca54d4595bfd *bd95-03-11 d1t11.wav
+===================
+===================
+===================
+=== CD1.shntool.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     4:48.59       50942012    ---   --   -----   bd95-03-11 d1t01.wav
+     4:11.45       44382284    ---   --   -----   bd95-03-11 d1t02.wav
+     5:02.70       53437484    ---   --   -----   bd95-03-11 d1t03.wav
+     7:36.58       80574860    ---   --   -----   bd95-03-11 d1t04.wav
+     7:45.15       82061324    ---   --   -----   bd95-03-11 d1t05.wav
+     7:05.67       75127628    ---   --   -----   bd95-03-11 d1t06.wav
+     6:39.45       70489484    ---   --   -----   bd95-03-11 d1t07.wav
+     6:45.73       71613740    ---   --   -----   bd95-03-11 d1t08.wav
+     8:23.35       88811564    ---   --   -----   bd95-03-11 d1t09.wav
+     7:40.47       81254588    ---   --   -----   bd95-03-11 d1t10.wav
+     6:05.57       64520108    ---   --   -----   bd95-03-11 d1t11.wav
+    72:06.46      763215076 B                     (totals for 11 files, 1.0000 overall compression ratio)
+===================
+===================
+===================
+=== CD2 flac.md5
+===================
+===================
+===================
+556f54c8f210ed30a1c59694d08ee9eb *bd95-03-11 d2t01.flac
+af52670b09650acc5cd07edc85ade988 *bd95-03-11 d2t02.flac
+cdd280231819e32be7f47bbfa1f14926 *bd95-03-11 d2t03.flac
+===================
+===================
+===================
+=== CD2 wav.md5
+===================
+===================
+===================
+5a2096f8ecb2b889511f2a4f7f4e9184 *bd95-03-11 d2t01.wav
+f360093e130502ebb448e87734fd5bd7 *bd95-03-11 d2t02.wav
+31fa491561a2e4d2d92a46d3720757af *bd95-03-11 d2t03.wav
+===================
+===================
+===================
+=== CD2.shntool.txt
+===================
+===================
+===================
+    length     expanded size   cdr  WAVE problems filename
+     6:10.24       65324492    ---   --   -----   bd95-03-11 d2t01.wav
+     5:08.74       54505292    ---   --   -----   bd95-03-11 d2t02.wav
+     5:54.43       62546780    ---   --   -----   bd95-03-11 d2t03.wav
+    17:13.66      182376564 B                     (totals for 3 files, 1.0000 overall compression ratio)
+===================
+===================
+===================

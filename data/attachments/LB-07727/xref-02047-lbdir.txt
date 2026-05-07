@@ -1,0 +1,68 @@
+===================
+===================
+===================
+=== md5 for: bd09-04-25-audiowhore-mix.flacf
+===================
+===================
+===================
+cbf167edb614edc4901d3dda6b01d3b9 *01 2009-04-25 London (mixed).flac
+5579cc1e51097edcaa1fefec22fe3d79 *02 2009-04-25 London (mixed).flac
+547085029f3767eaf57d337bfddef353 *03 2009-04-25 London (mixed).flac
+08d5a44539148e7e73312714f0cdd8da *04 2009-04-25 London (mixed).flac
+8002352eb70532a82ea37ca0011728f0 *05 2009-04-25 London (mixed).flac
+792317bd1f43f0b23a5ac8edfda13cb7 *06 2009-04-25 London (mixed).flac
+3df90e88e0d2d080ba8fe73babdcc1d5 *07 2009-04-25 London (mixed).flac
+4fb25cd463efa1ab730816eb62be8032 *08 2009-04-25 London (mixed).flac
+ed05d3cd5a9da61b866e7072e682571d *09 2009-04-25 London (mixed).flac
+2193b7970d3e1f19330d742818b18625 *10 2009-04-25 London (mixed).flac
+2a3ce7c84f25df8a53d5ce0ef4c4c195 *11 2009-04-25 London (mixed).flac
+ae02b68a688682f20bf86b20c3151de8 *12 2009-04-25 London (mixed).flac
+95144a5636b16cec9db66b77adacd2dc *13 2009-04-25 London (mixed).flac
+354aff49d4d1769303c9f966df62b1ed *Bob Dylan 2009-04-25 London, England (audiowhore mix) flacs.md5
+d21c206be631678df909bed6807fe9af *Bob Dylan 2009-04-25 London.ffp
+5e1ef1ba8b32d925619475b255c75454 *Bob Dylan 2009-04-25 London.txt
+===================
+===================
+===================
+=== ffp for: bd09-04-25-audiowhore-mix.flacf
+===================
+===================
+===================
+01 2009-04-25 London (mixed).flac:58f65f31331667c8a82beae4e11e5de2
+02 2009-04-25 London (mixed).flac:88842f915a1c7465672c829c0a05bcaf
+03 2009-04-25 London (mixed).flac:c27c558c3a02499ca6df7f0c5d8da26f
+04 2009-04-25 London (mixed).flac:1180ee75025473f918632623984d318a
+05 2009-04-25 London (mixed).flac:a7d0243fe265ccae983121185a71ebde
+06 2009-04-25 London (mixed).flac:b90e70a1cb154f4ccf44a93a8a45026b
+07 2009-04-25 London (mixed).flac:33940812b9b6efd98a25d7c812bf047a
+08 2009-04-25 London (mixed).flac:99c94eebf7e3ca011f899f91756d36cd
+09 2009-04-25 London (mixed).flac:c51692396a1617152cc388b26da890f5
+10 2009-04-25 London (mixed).flac:ff828e8ad4f5b994777035ffa154bcea
+11 2009-04-25 London (mixed).flac:4a398a6e50160d82fbad4e0c23159c60
+12 2009-04-25 London (mixed).flac:cfa8b9fd97cad7b0beca6b684279dc56
+13 2009-04-25 London (mixed).flac:f52bb30c2e6839f6f2d636257ea6d21f
+===================
+===================
+===================
+=== shntool len for: bd09-04-25-audiowhore-mix.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:21.38       46128644 B   -b-   --   ---xx   flac  0.4487  01 2009-04-25 London (mixed).flac
+     5:14.20       55437428 B   -b-   --   ---xx   flac  0.4439  02 2009-04-25 London (mixed).flac
+     6:02.66       64012576 B   -b-   --   ---xx   flac  0.4483  03 2009-04-25 London (mixed).flac
+     7:04.65       74946504 B   -b-   --   ---xx   flac  0.4430  04 2009-04-25 London (mixed).flac
+     6:24.08       67757004 B   -b-   --   ---xx   flac  0.4507  05 2009-04-25 London (mixed).flac
+     6:21.58       67344408 B   -b-   --   ---xx   flac  0.4098  06 2009-04-25 London (mixed).flac
+     7:24.07       78338928 B   -b-   --   ---xx   flac  0.4502  07 2009-04-25 London (mixed).flac
+     6:52.15       72712340 B   -b-   --   ---xx   flac  0.4709  08 2009-04-25 London (mixed).flac
+     6:03.70       64197300 B   -b-   --   ---xx   flac  0.3503  09 2009-04-25 London (mixed).flac
+     6:45.67       71600716 B   -b-   --   ---xx   flac  0.4580  10 2009-04-25 London (mixed).flac
+     6:15.28       66215852 B   -b-   --   ---xx   flac  0.4384  11 2009-04-25 London (mixed).flac
+     0:50.67        8978280 B   -b-   --   ---xx   flac  0.4070  12 2009-04-25 London (mixed).flac
+     5:31.71       58555912 B   -b-   --   ---xx   flac  0.4233  13 2009-04-25 London (mixed).flac
+    75:13.56      796225892 B                            0.4365  (13 files)
+===================
+===================
+===================

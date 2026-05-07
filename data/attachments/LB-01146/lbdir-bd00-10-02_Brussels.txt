@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-10-02_Brussels 
+=================== 
+=================== 
+=================== 
+57c89be14c901fd93b9aed7db11d4dde  bd00-10-02.txt
+329ff49b8037364b10bf923473bfbfd0  bd_00-10-02_cd1.shnf\bd_00-10-02_cd1_Track 1.shn
+fedde1400697df1033d54baf14b0ec62  bd_00-10-02_cd1.shnf\bd_00-10-02_cd1_Track 2.shn
+4b8f6eea4d545ee8a804094ace60ecbe  bd_00-10-02_cd1.shnf\bd_00-10-02_cd1_Track 3.shn
+a5df3fa7cb8c0a348ca078989e6c4deb  bd_00-10-02_cd1.shnf\bd_00-10-02_cd1_Track 4.shn
+d7f44ce3a58fdc72d3c1438cebebef23  bd_00-10-02_cd1.shnf\bd_00-10-02_cd1_Track 5.shn
+26c74bf7b12edcec54b80e2f5a1eb035  bd_00-10-02_cd1.shnf\bd_00-10-02_cd1_Track 6.shn
+ba35df00dd00e894acf0520d3b5dd6b2  bd_00-10-02_cd1.shnf\bd_00-10-02_cd1_shn.md5
+e31b0e1e23e32d5a77c46e9ab3d4f977  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 01.shn
+9d69fd40bdbe7380d2805876b0b9987b  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 02.shn
+3b59832653523b075c33736a77aea089  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 03.shn
+260c4d680d62af22eff72a7dd83c762c  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 04.shn
+70754f5fc922b970337a5a3e15f2ee72  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 05.shn
+f416f048c3c3ec16b396c72d6020cd33  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 06.shn
+d49a519aa870f57c3033059f461b0f00  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 07.shn
+77412e2ee5991faed71ba93c917f0bae  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 08.shn
+2f59c6aefa18bcac0a8efd5e126e5a8b  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 09.shn
+864ddbbe3b36bd511029de18674980a1  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 10.shn
+1d16d63657e88eba4ea46d6237ce34e3  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 11.shn
+9f8e24b3c23fe907ab6862c1ed677087  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 12.shn
+0f6323313584cbce9c2c7abb806ee662  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 13.shn
+8d2213457fddb556810a35c0ffc6e0a5  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_Track 14.shn
+067de4b306aacb4d339393a3fdf2adbb  bd_00-10-02_cd2.shnf\bd_00-10-02_cd2_shn.md5
+462ebd6285554955345b1c38c61a6718  readme.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-10-02_Brussels\bd_00-10-02_cd1.shnf 
+=================== 
+=================== 
+=================== 
+4348eb5b41aceac1bcce94d4a3a9d343  [shntool]  bd_00-10-02_cd1_Track_1.wav
+3e2d5d2dd38487af78499959afeb24db  [shntool]  bd_00-10-02_cd1_Track_2.wav
+29ac0e373cdd884c7d6268bfd2f93d31  [shntool]  bd_00-10-02_cd1_Track_3.wav
+c38054030abf2e4464802cb3da75b4b4  [shntool]  bd_00-10-02_cd1_Track_4.wav
+b75cf5b069fdf0ca6a5c0bd6c1be4c6a  [shntool]  bd_00-10-02_cd1_Track_5.wav
+54040a9468de98a9c3f3c74765d5a970  [shntool]  bd_00-10-02_cd1_Track_6.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd00-10-02_Brussels\bd_00-10-02_cd2.shnf 
+=================== 
+=================== 
+=================== 
+6f69bac79e468d8acc3074ac15c13d9d  [shntool]  bd_00-10-02_cd2_Track_01.wav
+12956d69b706bd59652041adb386630c  [shntool]  bd_00-10-02_cd2_Track_02.wav
+d342dc35989972f1bf568483d40d1af3  [shntool]  bd_00-10-02_cd2_Track_03.wav
+5daa73ec7062ea5abe8cc5fb5ec76cd0  [shntool]  bd_00-10-02_cd2_Track_04.wav
+d35bf722085ec003d60c80ae57e7a829  [shntool]  bd_00-10-02_cd2_Track_05.wav
+d7cf8ca762dd47410cba09780a9ff8ee  [shntool]  bd_00-10-02_cd2_Track_06.wav
+51cf83c85c50379829728af5547642d8  [shntool]  bd_00-10-02_cd2_Track_07.wav
+50934498aa5bf6eb306c156fc245ba1b  [shntool]  bd_00-10-02_cd2_Track_08.wav
+e2927c066f8a9c43a8ad2e686b568d4f  [shntool]  bd_00-10-02_cd2_Track_09.wav
+4eb246ce38316e596d66940e72a946d4  [shntool]  bd_00-10-02_cd2_Track_10.wav
+b27dbfed5b6850186f3f0c3d79fbf4d9  [shntool]  bd_00-10-02_cd2_Track_11.wav
+0ce753e4a3f5aca4e7d328ec5f65104e  [shntool]  bd_00-10-02_cd2_Track_12.wav
+687976fc9b9c50e90bf3edb55c6579e7  [shntool]  bd_00-10-02_cd2_Track_13.wav
+69b64412bef7b31f53750d53672e3dae  [shntool]  bd_00-10-02_cd2_Track_14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-10-02_Brussels\bd_00-10-02_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.69       35618814 B   ---   -e   ---xx    shn  0.6628  bd_00-10-02_cd1_Track 1.shn
+     5:14.72       55559070 B   ---   -e   ---xx    shn  0.5992  bd_00-10-02_cd1_Track 2.shn
+     7:52.67       83418510 B   ---   -e   ---xx    shn  0.6180  bd_00-10-02_cd1_Track 3.shn
+     6:14.54       66100734 B   ---   -e   ---xx    shn  0.6149  bd_00-10-02_cd1_Track 4.shn
+     7:39.50       81085326 B   ---   -e   ---xx    shn  0.6625  bd_00-10-02_cd1_Track 5.shn
+     3:32.52       37519230 B   ---   -e   ---xx    shn  0.6043  bd_00-10-02_cd1_Track 6.shn
+    33:56.64      359301684 B                            0.6276  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-10-02_Brussels\bd_00-10-02_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:13.50       34162926 B   ---   -e   ---xx    shn  0.6399  bd_00-10-02_cd2_Track 01.shn
+     8:19.66       88178958 B   ---   -e   ---xx    shn  0.6375  bd_00-10-02_cd2_Track 02.shn
+     7:16.33       76988142 B   ---   -e   ---xx    shn  0.6301  bd_00-10-02_cd2_Track 03.shn
+     3:53.06       41115438 B   ---   -e   ---xx    shn  0.6348  bd_00-10-02_cd2_Track 04.shn
+     5:49.73       61735422 B   ---   -e   ---xx    shn  0.6292  bd_00-10-02_cd2_Track 05.shn
+     0:51.66        9151758 B   ---   -e   ---xx    shn  0.5957  bd_00-10-02_cd2_Track 06.shn
+     5:46.17       61074510 B   ---   -e   ---xx    shn  0.6469  bd_00-10-02_cd2_Track 07.shn
+     5:51.49       62031774 B   ---   -e   ---xx    shn  0.6621  bd_00-10-02_cd2_Track 08.shn
+     6:54.27       73093230 B   ---   -e   ---xx    shn  0.6367  bd_00-10-02_cd2_Track 09.shn
+     4:01.62       42658350 B   ---   -e   ---xx    shn  0.5798  bd_00-10-02_cd2_Track 10.shn
+     6:11.73       65616222 B   ---   -e   ---xx    shn  0.6420  bd_00-10-02_cd2_Track 11.shn
+     4:57.14       52423854 B   ---   -e   ---xx    shn  0.6518  bd_00-10-02_cd2_Track 12.shn
+     5:46.42       61133310 B   ---   -e   ---xx    shn  0.6606  bd_00-10-02_cd2_Track 13.shn
+     5:01.01       53098878 B   ---   -e   ---xx    shn  0.6506  bd_00-10-02_cd2_Track 14.shn
+    73:55.54      782462772 B                            0.6391  (14 files)
+=================== 
+=================== 
+=================== 

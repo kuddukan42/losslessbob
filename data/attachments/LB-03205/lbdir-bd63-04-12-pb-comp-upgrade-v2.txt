@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-04-12-pb-comp-upgrade-v2 
+=================== 
+=================== 
+=================== 
+731823b1e26c86b44b1d2a64eb984e95  bd63 04 12 t01.shn
+56d39f4ab3d675b7db5aa87fe44b7204  bd63 04 12 t02.shn
+22b08277b7cb82395bef1bddffa085b6  bd63 04 12 t03.shn
+d123ccfc3e4fb691c6593a6041457458  bd63 04 12 t04.shn
+9c6197ee7123e8dda7e0ff3ac1672503  bd63 04 12 t05.shn
+adc15b33905916e2e110b2cbd46d6663  bd63 04 12 t06.shn
+d68c34bf2b5baf0d5bc4f20ddeba1a3e  bd63 04 12 t07.shn
+d7f0d1fceaca1f0fddc8b943f231c883  bd63 04 12 t08.shn
+7607e859f4c9dc876e82765cc292df8e  bd63 04 12 t09.shn
+b61c4a1436405083e37132ee263737ca  bd63 04 12 t10.shn
+78872a1e6e81e8fb426a4769b21298a0  bd63 04 12 t11.shn
+00ae96101b09468e5629502af1a7d76f  bd63 04 12 t12.shn
+11cec960ac00936713b1c8e50832deb6  bd63 04 12 t13.shn
+d4a0076f89d5f410a2f01acb5cb67cb3  bd63 04 12 t14.shn
+36f2a21ded30ffdbe34ddf3ec82a67e2  bd63 04 12 t15.shn
+5a710ed9476439b01adfefc8e0a0a9d1  bd63 04 12.md5
+25a4fe16667e98595b8542dd520a17a5  bd63-04-12-pb-comp-upgrade-v2-LB-3205.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd63-04-12-pb-comp-upgrade-v2 
+=================== 
+=================== 
+=================== 
+9f6c382a91eb03b827781b4267dde1e5  [shntool]  bd63_04_12_t01.wav
+51d9a727c655f0efee187b76942a2e5b  [shntool]  bd63_04_12_t02.wav
+26c5af1b5ddf4dec9d9e9f72d1949f1b  [shntool]  bd63_04_12_t03.wav
+526fa54ac1a65043b0404ae10d534e35  [shntool]  bd63_04_12_t04.wav
+883ab082690d6c2a772c521f20d80bd4  [shntool]  bd63_04_12_t05.wav
+e68c074dbe1f7b7464be0ff522272e7d  [shntool]  bd63_04_12_t06.wav
+8efab756af59f9091b833c52a27993f3  [shntool]  bd63_04_12_t07.wav
+7ce31a07ea3f94c72c3fbf4e93dedc78  [shntool]  bd63_04_12_t08.wav
+2e5e170ef3f0390fa0eff4f9364969d6  [shntool]  bd63_04_12_t09.wav
+3437c9ef259e64b0663587fc56ba2814  [shntool]  bd63_04_12_t10.wav
+31b2b82b3dc599aa7568388e66cec9d5  [shntool]  bd63_04_12_t11.wav
+16af7bbbe81ec63c60f9c8fc3ded28ee  [shntool]  bd63_04_12_t12.wav
+3cb0deecd6672c4d9051f7e54edc1f7d  [shntool]  bd63_04_12_t13.wav
+16bdf65c87ea3f20fd35f7c90fe5e8eb  [shntool]  bd63_04_12_t14.wav
+466c085c28f63d2c1d9f145045332d9d  [shntool]  bd63_04_12_t15.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd63-04-12-pb-comp-upgrade-v2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:29.40       26377724 B   ---   --   -----    wav  1.0000  bd63_04_12_t01.wav
+     5:02.69       53435132 B   ---   --   -----    wav  1.0000  bd63_04_12_t02.wav
+     5:47.19       61255532 B   ---   --   -----    wav  1.0000  bd63_04_12_t03.wav
+     4:29.18       47493980 B   ---   --   -----    wav  1.0000  bd63_04_12_t04.wav
+     2:39.30       28118204 B   ---   --   -----    wav  1.0000  bd63_04_12_t05.wav
+     4:26.40       47016524 B   ---   --   -----    wav  1.0000  bd63_04_12_t06.wav
+     5:18.48       56208140 B   ---   --   -----    wav  1.0000  bd63_04_12_t07.wav
+     3:17.62       34896668 B   ---   --   -----    wav  1.0000  bd63_04_12_t08.wav
+     5:43.60       60646364 B   ---   --   -----    wav  1.0000  bd63_04_12_t09.wav
+     3:45.56       39821756 B   ---   --   -----    wav  1.0000  bd63_04_12_t10.wav
+     3:10.27       33579548 B   ---   --   -----    wav  1.0000  bd63_04_12_t11.wav
+     2:47.14       29491772 B   ---   --   -----    wav  1.0000  bd63_04_12_t12.wav
+     6:30.31       68868956 B   ---   --   -----    wav  1.0000  bd63_04_12_t13.wav
+     4:51.64       51482972 B   ---   --   -----    wav  1.0000  bd63_04_12_t14.wav
+     8:08.23       86137340 B   ---   --   -----    wav  1.0000  bd63_04_12_t15.wav
+    68:29.01      724830612 B                            1.0000  (15 files)
+=================== 
+=================== 
+=================== 

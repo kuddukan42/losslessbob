@@ -1,0 +1,18 @@
+73dfb4f3d572171f19c6d04bd7ba4177  120798-Out In The Green Festival-Zurich, Switzerland.md5
+cc2134c05e99b54a539da9e54bc3deb9  bd98-07-12-b-LB-5959.txt
+94b6cab4da4d9241220267ba9e87708d  D_1\Track 01.flac
+8c55dc4335750b66e222e4af4cd09cd1  D_1\Track 02.flac
+3f69bd1a9606f2422dd87e9c5537f962  D_1\Track 03.flac
+f2bdf3cb443ece8110bef95f1b373cb9  D_1\Track 04.flac
+6089de15e9ad4130415b4742c5dbf5fe  D_1\Track 05.flac
+95577ede126fe96835e892c7b46d2706  D_1\Track 06.flac
+ec34e5dcc1ab180d764a39d6af1095c8  D_1\Track 07.flac
+0138dab3a1c1cf473af6afa1629ac87d  D_2\Track 01.flac
+bce8bb784900c5c073dabdbcddf09169  D_2\Track 02.flac
+f804828e6064d03d53e0cce04a296b39  D_2\Track 03.flac
+373fe2e2743cc2f4025e5d32dba2eb46  D_2\Track 04.flac
+b2f6a03d0d3cef7f308cca8a643954ee  D_2\Track 05.flac
+c4d4885cae38624f923897f33b83dc17  D_2\Track 06.flac
+8cccc35c6e415ed5681d1e242bcf2382  D_2\Track 07.flac
+18105af8c3c373e454cfbf8f4b54671b  D_2\Track 08.flac
+48b662ccf0b9bf77eb8d69ca80192c5d  info.txt

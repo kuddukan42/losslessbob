@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-24-a.flacf 
+=================== 
+=================== 
+=================== 
+99ee5f451514c80e918e6f869eae5626  Disc One\Disc01Track01 Dylan June 24th 1998.flac
+ce78ac91c6b997f1ac2f52b3ee7d784c  Disc One\Disc01Track02 Dylan June 24th 1998.flac
+7948c0f9747093f50e56fb6b5df8f5ea  Disc One\Disc01Track03 Dylan June 24th 1998.flac
+ba0c2eb21d94b4cef47dbf2e5a2992f3  Disc One\Disc01Track04 Dylan June 24th 1998.flac
+c6dc50d7a6afcab82c27e8c5668de932  Disc One\Disc01Track05 Dylan June 24th 1998.flac
+4582caaf7f117614fa10c42a24bfe788  Disc One\Disc01Track06 Dylan June 24th 1998.flac
+7d4d274787792acc446717ce83ebb7a7  Disc One\Disc01Track07 Dylan June 24th 1998.flac
+fb77cdf7c17e3c1b3b6c896ffca44bb9  Disc One\Disc01Track08 Dylan June 24th 1998.flac
+121d2e4b26628acbe146e9f53e73df63  Disc Two\audiochecker.log
+3277776092b702263ff152895a245ee3  Disc Two\Disc02Track01 Dylan June 24th 1998.flac
+38c5cf4cec1d54824b18375906c763fd  Disc Two\Disc02Track02 Dylan June 24th 1998.flac
+4734b0d520d390edcd2ce6cb9ef6a379  Disc Two\Disc02Track03 Dylan June 24th 1998.flac
+af831be716a9b36ce0d4d53dfd1365f0  Disc Two\Disc02Track04 Dylan June 24th 1998.flac
+54533fd53d67cfa069599d97b5db62ef  Disc Two\Disc02Track05 Dylan June 24th 1998.flac
+f0f7bac94178361389338e92bae72b42  Disc Two\Disc02Track06 Dylan June 24th 1998.flac
+b6ba92e6e9a09ed86c9f44bce26d2b15  Disc Two\Disc02Track07 Dylan June 24th 1998.flac
+932b300ba95df586776f6688e6bee4d8  Dylan - Birmingham June 24th 1998.md5
+512eacc37ca705b57e0fca9eca2bc8a6  Dylan - Birmingham June 24th 1998.txt
+6b74d25d2557b5e6e9fbecb139b8194c  Dylan - Birmingham June 24th 1998_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-24-a.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Dylan June 24th 1998.flac:6fcb7cee5b1767f8d98a71d17f30d345
+Disc01Track02 Dylan June 24th 1998.flac:e6985d744ca2dfa8f540546cdb417f89
+Disc01Track03 Dylan June 24th 1998.flac:40f50ddb05e3948edda41c1f6818206e
+Disc01Track04 Dylan June 24th 1998.flac:5339d44b3faebd8bc8012daa433975e8
+Disc01Track05 Dylan June 24th 1998.flac:b22a43dd6a5676c7ef40360632359410
+Disc01Track06 Dylan June 24th 1998.flac:dd86260a08310b719535bdbacb7fa934
+Disc01Track07 Dylan June 24th 1998.flac:8871e7b71f13667343d563e8c963d7a3
+Disc01Track08 Dylan June 24th 1998.flac:59a8972a2196ac0337728bcca55ef4fa
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-24-a.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Dylan June 24th 1998.flac:565d7c8433b93fec64b629dba2e31705
+Disc02Track02 Dylan June 24th 1998.flac:c794b5168274063a9eabf32cd15f4d13
+Disc02Track03 Dylan June 24th 1998.flac:9b34730e10e65f22319f65807b265061
+Disc02Track04 Dylan June 24th 1998.flac:9ec5b12ff7d7902c937073ceb77f9cc7
+Disc02Track05 Dylan June 24th 1998.flac:2cae5195b3a8f2c5b7514bdd8e10c01c
+Disc02Track06 Dylan June 24th 1998.flac:40c65285c699ae2a412653ed7d71cbfd
+Disc02Track07 Dylan June 24th 1998.flac:7a8f6a75f0e85739f84f815488b47b93
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-24-a.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.13       45012620 B   ---   --   ---xx   flac  0.6196  Disc01Track01 Dylan June 24th 1998.flac
+     4:56.64       52364972 B   ---   --   ---xx   flac  0.6101  Disc01Track02 Dylan June 24th 1998.flac
+     6:29.39       68711372 B   ---   --   ---xx   flac  0.6243  Disc01Track03 Dylan June 24th 1998.flac
+     5:24.01       57155996 B   ---   --   ---xx   flac  0.5827  Disc01Track04 Dylan June 24th 1998.flac
+     7:12.54       76331852 B   ---   --   ---xx   flac  0.6494  Disc01Track05 Dylan June 24th 1998.flac
+     5:50.68       61899980 B   ---   --   ---xx   flac  0.5305  Disc01Track06 Dylan June 24th 1998.flac
+     6:02.67       64014428 B   ---   --   ---xx   flac  0.5447  Disc01Track07 Dylan June 24th 1998.flac
+     4:10.06       44114156 B   ---   --   ---xx   flac  0.5760  Disc01Track08 Dylan June 24th 1998.flac
+    44:22.12      469605376 B                            0.5935  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-24-a.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:59.06       95093756 B   ---   --   ---xx   flac  0.5818  Disc02Track01 Dylan June 24th 1998.flac
+     8:20.43       88301180 B   ---   --   ---xx   flac  0.6444  Disc02Track02 Dylan June 24th 1998.flac
+     6:08.06       64929356 B   ---   --   ---xx   flac  0.6169  Disc02Track03 Dylan June 24th 1998.flac
+     5:45.25       60916844 B   ---   --   ---xx   flac  0.6520  Disc02Track04 Dylan June 24th 1998.flac
+     5:15.10       55589564 B   ---   --   ---xx   flac  0.5670  Disc02Track05 Dylan June 24th 1998.flac
+     5:26.35       57588764 B   ---   --   ---xx   flac  0.6368  Disc02Track06 Dylan June 24th 1998.flac
+     5:28.40       57953324 B   ---   --   ---xx   flac  0.5400  Disc02Track07 Dylan June 24th 1998.flac
+    45:23.15      480372788 B                            0.6068  (7 files)
+=================== 
+=================== 
+=================== 

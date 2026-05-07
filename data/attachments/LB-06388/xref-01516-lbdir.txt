@@ -1,0 +1,73 @@
+===================
+===================
+===================
+=== md5 for: bd95-06-02-alt-d.flacf
+===================
+===================
+===================
+0d39f1622090fe5e68035adf83df3303 *bd1995-06-02 Seattle (alt).md5
+4dff7cb86d6172de3e4d77f94f092f6c *bd1995-06-02 Seattle01.flac
+801135ac1091af0ec9bba5167bef92fe *bd1995-06-02 Seattle02.flac
+a815f6ab1d51940760b5dc83dd25f92d *bd1995-06-02 Seattle03.flac
+4e6a6962122b1ef6bacd4676fde0074d *bd1995-06-02 Seattle04.flac
+6fcb2f739a58be4b55552f1cf5cf52c0 *bd1995-06-02 Seattle05.flac
+d38efbed86391a9abdcc1bee002d6940 *bd1995-06-02 Seattle06.flac
+c5f32f4ec59d279870ad2cb74dbe341f *bd1995-06-02 Seattle07.flac
+8fc6df10f1757984c0627c10e74a5965 *bd1995-06-02 Seattle08.flac
+aa1f103cd553a194a39e96bc1c4ab6fb *bd1995-06-02 Seattle09.flac
+440f79f46d2869d46a089f3da3bc8cd8 *bd1995-06-02 Seattle10.flac
+97ea17570014ddfb8cee70689ea544f1 *bd1995-06-02 Seattle11.flac
+e05add6448164811c3cf3ae741c767e3 *bd1995-06-02 Seattle12.flac
+54accaa24d10fd111af0d7fa095d7b42 *bd1995-06-02 Seattle13.flac
+65111692284517d30a97ed57603d0ab8 *bd1995-06-02 Seattle14.flac
+6476bfe74120c81c36ada896fe82faf4 *bd1995-06-02 Seattle15.flac
+5507fe50d896d677b2e2dc971a7b82a8 *note.txt
+===================
+===================
+===================
+=== ffp for: bd95-06-02-alt-d.flacf
+===================
+===================
+===================
+bd1995-06-02 Seattle01.flac:9282135682e79abd6562c1972461f9a3
+bd1995-06-02 Seattle02.flac:6541ef59a2ac9916dec1906e2553466b
+bd1995-06-02 Seattle03.flac:c062e9e6fd6dd8c55f30b2951f5c3412
+bd1995-06-02 Seattle04.flac:b20e057032b9c73f66dbcbb6a51a7292
+bd1995-06-02 Seattle05.flac:1220014d9cae30c18dcf925d782e93e6
+bd1995-06-02 Seattle06.flac:7dba2bf5b1dddf5ac476d2bb78253c69
+bd1995-06-02 Seattle07.flac:f07fbd8f0be0ec65b2b906d6a5f3108d
+bd1995-06-02 Seattle08.flac:df8b1b956a95b8f13bf31c07e162a68b
+bd1995-06-02 Seattle09.flac:e761f85ba22d123514c54bc1fe77da91
+bd1995-06-02 Seattle10.flac:dea0b9a317f400d3509c662b686e2504
+bd1995-06-02 Seattle11.flac:880394086d63f4469044fa5174d9403f
+bd1995-06-02 Seattle12.flac:9195af75d57ff2a36a77513dfde076c3
+bd1995-06-02 Seattle13.flac:035201f4879940c30e6d2521ebc67373
+bd1995-06-02 Seattle14.flac:12470f86464fc709e9fa3ec07baf5d61
+bd1995-06-02 Seattle15.flac:6347c5cf795e44cfbd194453d149b236
+===================
+===================
+===================
+=== shntool len for: bd95-06-02-alt-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:09.49       54622892 B   ---   --   ---xx   flac  0.7246  bd1995-06-02 Seattle01.flac
+     6:06.18       64604780 B   ---   --   ---xx   flac  0.6393  bd1995-06-02 Seattle02.flac
+     5:58.43       63252380 B   ---   --   ---xx   flac  0.7062  bd1995-06-02 Seattle03.flac
+     5:15.49       55681292 B   ---   --   ---xx   flac  0.6605  bd1995-06-02 Seattle04.flac
+     6:05.38       64475420 B   ---   --   ---xx   flac  0.6967  bd1995-06-02 Seattle05.flac
+     7:59.58       84632060 B   ---   --   ---xx   flac  0.6510  bd1995-06-02 Seattle06.flac
+     7:36.62       80584268 B   ---   --   ---xx   flac  0.5425  bd1995-06-02 Seattle07.flac
+     5:40.07       59992508 B   ---   --   ---xx   flac  0.5994  bd1995-06-02 Seattle08.flac
+     6:18.38       66768620 B   ---   --   ---xx   flac  0.5723  bd1995-06-02 Seattle09.flac
+     6:15.35       66232364 B   ---   --   ---xx   flac  0.6519  bd1995-06-02 Seattle10.flac
+     5:28.37       57946268 B   ---   --   ---xx   flac  0.6298  bd1995-06-02 Seattle11.flac
+     0:56.31        9951356 B   ---   --   ---xx   flac  0.5346  bd1995-06-02 Seattle12.flac
+     5:24.38       57243020 B   ---   --   ---xx   flac  0.6515  bd1995-06-02 Seattle13.flac
+     7:57.20       84189884 B   ---   --   ---xx   flac  0.6604  bd1995-06-02 Seattle14.flac
+    10:23.51      110017056 B   -b-   --   ---xx   flac  0.6081  bd1995-06-02 Seattle15.flac
+    92:36.49      980194168 B                            0.6377  (15 files)
+===================
+===================
+===================

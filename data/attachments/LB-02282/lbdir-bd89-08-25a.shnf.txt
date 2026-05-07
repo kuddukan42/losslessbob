@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-08-25a.shnf 
+=================== 
+=================== 
+=================== 
+4a45b47c56947b7c6e7305d29c2b1631  bd89-08-25_d1t01.shn
+5aeacbce01c738c31ef5ebd054047f75  bd89-08-25_d1t02.shn
+96f6d76d965837a3207e3d252d54c2b0  bd89-08-25_d1t03.shn
+6409fefd8cd956beb4cdf65ebceda59d  bd89-08-25_d1t04.shn
+92d9073a3645745e8fd538faca48a1b7  bd89-08-25_d1t05.shn
+730d0191cb357792535fedecc30bcc49  bd89-08-25_d1t06.shn
+787f182bee1b32b621f4eda2aaa75752  bd89-08-25_d1t07.shn
+e074cfc846c6ed0c2b0e33daf20dd81d  bd89-08-25_d1t08.shn
+23fc66060648b108415451e31767edc5  bd89-08-25_d2t01.shn
+2395cfa4dce0dd693b906ca456beba11  bd89-08-25_d2t02.shn
+e27b48096e746eb62cd0b3ef800dfc39  bd89-08-25_d2t03.shn
+90b568628b6a1e9d3152792c3879a2d9  bd89-08-25_d2t04.shn
+f812090f47919126095b8eb645bdaa31  bd89-08-25_d2t05.shn
+5dd542acec991a59b0dc912e12605f68  bd89-08-25_d2t06.shn
+fe070061faa4c2a1778b599142497d56  bd89-08-25_d2t07.shn
+5e6c03c1fe22df46c6209fed409e29ba  bd89-08-25_d2t08.shn
+e21132b1ff7b10cb6ea1b890dde4e8c9  bd89-08-25_New Orleans.md5
+61620984853f6521a3e594d70514c76d  bd89-08-25_New Orleans.shnf.txt
+4db13d94073130b84e267a7bb43f6e11  bd89-08-25a.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-08-25a.shnf 
+=================== 
+=================== 
+=================== 
+d9c8f6fb6d8f060e25b2d733b084c8fd  [shntool]  bd89-08-25_d1t01.wav
+158411f8bb3475f06b7f0e954237eade  [shntool]  bd89-08-25_d1t02.wav
+8b9a5f605a4754655d9e2c099648bed5  [shntool]  bd89-08-25_d1t03.wav
+5d469c80d1157921cce3c8a7aa5126f9  [shntool]  bd89-08-25_d1t04.wav
+f7fb78f2e34daa2bd24664e0127a8d78  [shntool]  bd89-08-25_d1t05.wav
+15d57311d74b0dfdb42afece18c8c178  [shntool]  bd89-08-25_d1t06.wav
+a92587e42f46698f8b52f12ef678e004  [shntool]  bd89-08-25_d1t07.wav
+3e72d2ce4f41b1ca08a975a05ee772eb  [shntool]  bd89-08-25_d1t08.wav
+91ac07b8fcb31b238dd862f02a18987f  [shntool]  bd89-08-25_d2t01.wav
+2dafa309801e5abbf612d69faa6c2c7a  [shntool]  bd89-08-25_d2t02.wav
+d40f03c773f40e6585e98d7e17c6c8c3  [shntool]  bd89-08-25_d2t03.wav
+06d19d0eeb70b4493f980778b034dc1a  [shntool]  bd89-08-25_d2t04.wav
+f2595b2bfe34459ea57cdcf8fc50d1c0  [shntool]  bd89-08-25_d2t05.wav
+b19150e701f4ed7d5eb6852592845f8d  [shntool]  bd89-08-25_d2t06.wav
+394258e15fe0463c7f619197694325b2  [shntool]  bd89-08-25_d2t07.wav
+e6ab6c4a3f113525d4dbdaec992115fd  [shntool]  bd89-08-25_d2t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-08-25a.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:05.05       43229804 B   ---   --   -----    wav  1.0000  bd89-08-25_d1t01.wav
+     7:05.34       75050012 B   ---   --   -----    wav  1.0000  bd89-08-25_d1t02.wav
+     5:56.74       62972492 B   ---   --   -----    wav  1.0000  bd89-08-25_d1t03.wav
+     6:23.11       67587116 B   ---   --   -----    wav  1.0000  bd89-08-25_d1t04.wav
+     5:32.05       58576604 B   ---   --   -----    wav  1.0000  bd89-08-25_d1t05.wav
+     4:23.46       46501436 B   ---   --   -----    wav  1.0000  bd89-08-25_d1t06.wav
+     6:28.62       68589068 B   ---   --   -----    wav  1.0000  bd89-08-25_d1t07.wav
+     6:04.35       64291964 B   ---   --   -----    wav  1.0000  bd89-08-25_d1t08.wav
+     5:50.05       61751804 B   ---   --   -----    wav  1.0000  bd89-08-25_d2t01.wav
+     4:30.55       47757404 B   ---   --   -----    wav  1.0000  bd89-08-25_d2t02.wav
+     7:20.56       77747756 B   ---   --   -----    wav  1.0000  bd89-08-25_d2t03.wav
+     3:29.55       36997004 B   ---   --   -----    wav  1.0000  bd89-08-25_d2t04.wav
+     4:06.34       43474412 B   ---   --   -----    wav  1.0000  bd89-08-25_d2t05.wav
+     8:42.22       92132588 B   ---   --   -----    wav  1.0000  bd89-08-25_d2t06.wav
+     7:01.04       74273852 B   ---   --   -----    wav  1.0000  bd89-08-25_d2t07.wav
+     6:21.65       67361324 B   ---   --   -----    wav  1.0000  bd89-08-25_d2t08.wav
+    93:22.43      988294640 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

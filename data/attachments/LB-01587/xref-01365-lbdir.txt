@@ -1,0 +1,103 @@
+===================
+===================
+===================
+=== md5 for: bd78-09-30-e.flacf
+===================
+===================
+===================
+7b1973dd2ef2512bfde2d9b4b515ecd2 *bd1978-09-30.txt
+e80a88c300334298bd117847743a5672 *bd1978-09-30d1t01.flac
+93c48de5efa3296402e1c1e8c139471e *bd1978-09-30d1t02.flac
+be3fd8577ff5c5833f10aec9abe76420 *bd1978-09-30d1t03.flac
+18775de1ca2fad75663d7ec02c485df8 *bd1978-09-30d1t04.flac
+637d1b3f9eefa30092c265a1b7841be9 *bd1978-09-30d1t05.flac
+93e8ed90729a1716fef0111cca80186b *bd1978-09-30d1t06.flac
+c6bcf45769dc3bbff084f85419596d69 *bd1978-09-30d1t07.flac
+be4112ea2ecfa1c9c9af192ee57eac63 *bd1978-09-30d1t08.flac
+128dc3c76c4cb1db3d142a4aca2fff1b *bd1978-09-30d1t09.flac
+2ab1e9564592abe8c7428c7f592a7006 *bd1978-09-30d1t10.flac
+cc24145491885ed2aafb8795413e92ad *bd1978-09-30d1t11.flac
+edd0c986345561f0f652eb0865bd6aca *bd1978-09-30d1t12.flac
+efa82864051bfda57d17dc4654d8ca22 *bd1978-09-30d1t13.flac
+56eea095722cb3c2c1d9a51994b47214 *bd1978-09-30d2t01.flac
+c94f734cab3d488f66246243a0b3678e *bd1978-09-30d2t02.flac
+37f237b4373cfd603c7050d3d866225e *bd1978-09-30d2t03.flac
+e88e9ebe9a9e0a8106576c6bd2dec0e6 *bd1978-09-30d2t04.flac
+6add00f63ab17a99395ff3ba07f0a012 *bd1978-09-30d2t05.flac
+69aa5145216ee359fccba523145428ef *bd1978-09-30d2t06.flac
+6c1a9d1fdf3a1d1da962e7c85274c6f2 *bd1978-09-30d2t07.flac
+8808e871078f7130629542955f123a00 *bd1978-09-30d2t08.flac
+c0f34f37aedcbfb954d8edf049c37e48 *bd1978-09-30d2t09.flac
+481470c333d0972db2135c257637cce0 *bd1978-09-30d2t10.flac
+418677c30f9ced85663dbc4da12fdb5f *bd1978-09-30d2t11.flac
+495f8442f03be72694d3d58cea88965c *bd1978-09-30d2t12.flac
+93a42783249128fee2a34e3db4de75a5 *Bob Dylan - Madison Square Garden - 1978-09-30.md5
+===================
+===================
+===================
+=== ffp for: bd78-09-30-e.flacf
+===================
+===================
+===================
+bd1978-09-30d1t01.flac:e9e7809b0bfab0aabd45421b534c0b09
+bd1978-09-30d1t02.flac:325cfc7e848b097f7cfb8d7711189315
+bd1978-09-30d1t03.flac:638bd0cb7fcb8500a57840b884f1674a
+bd1978-09-30d1t04.flac:a4b8fe7e67edb97be3870372fa6aa15f
+bd1978-09-30d1t05.flac:6390a97c014769925992a2000bd2cca7
+bd1978-09-30d1t06.flac:f71c9f54978721cc04898c27e8926a6e
+bd1978-09-30d1t07.flac:c5008cae66d88cb7e2062e621a3ccc3c
+bd1978-09-30d1t08.flac:bd8dbe74afe21a6adf305fa60c1fd82b
+bd1978-09-30d1t09.flac:8bb4bee9e837b7a67bbeee13cae770f4
+bd1978-09-30d1t10.flac:c4f4182c207de57e270973055c30a367
+bd1978-09-30d1t11.flac:1481183dbd314e1004c6afb16b5e3654
+bd1978-09-30d1t12.flac:1ac4ed6b8c566c413b19806ab070fcd4
+bd1978-09-30d1t13.flac:32ac654ce183aea71f51f813885dea07
+bd1978-09-30d2t01.flac:db9ed7e29d4ea9c752eecb1eec32963d
+bd1978-09-30d2t02.flac:fa3d5a81c7da43ae5d3ef0255bb78c9b
+bd1978-09-30d2t03.flac:017afec4a52d8ae98b43b3af912e22ca
+bd1978-09-30d2t04.flac:2efca9cf10d5b779af2b377d3d2bae34
+bd1978-09-30d2t05.flac:63b23e8cbb0afbaa31818a12e898891a
+bd1978-09-30d2t06.flac:c0b329bb8fc8a34188c5618bb14cc57a
+bd1978-09-30d2t07.flac:ee3148d6d2658b688d57809261aa64a6
+bd1978-09-30d2t08.flac:24cb3ffc14e8a4ab5edb6987185e35da
+bd1978-09-30d2t09.flac:6c54a361ff37fede403bdda1a3ea2c94
+bd1978-09-30d2t10.flac:e92e5427eefebf2d608c6c0a0469bece
+bd1978-09-30d2t11.flac:4bb32a0170ff2fcfe36164c9f3646f15
+bd1978-09-30d2t12.flac:6de14198b7ede09a19819fe1619b83b2
+===================
+===================
+===================
+=== shntool len for: bd78-09-30-e.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:15.72       66319388 B   ---   --   ---xx   flac  0.6447  bd1978-09-30d1t01.flac
+     4:43.30       49991804 B   ---   --   ---xx   flac  0.6505  bd1978-09-30d1t02.flac
+     8:25.15       89117324 B   ---   --   ---xx   flac  0.6446  bd1978-09-30d1t03.flac
+     8:01.34       84928412 B   ---   --   ---xx   flac  0.5936  bd1978-09-30d1t04.flac
+     4:41.19       49613132 B   ---   --   ---xx   flac  0.6466  bd1978-09-30d1t05.flac
+     4:58.56       52698956 B   ---   --   ---xx   flac  0.6380  bd1978-09-30d1t06.flac
+     4:42.48       49857740 B   ---   --   ---xx   flac  0.6184  bd1978-09-30d1t07.flac
+     7:07.05       75334604 B   ---   --   ---xx   flac  0.6648  bd1978-09-30d1t08.flac
+     4:44.65       50250524 B   ---   --   ---xx   flac  0.6215  bd1978-09-30d1t09.flac
+     4:39.73       49387340 B   ---   --   ---xx   flac  0.6118  bd1978-09-30d1t10.flac
+     4:36.64       48836972 B   ---   --   ---xx   flac  0.6561  bd1978-09-30d1t11.flac
+     5:50.59       61878812 B   ---   --   ---xx   flac  0.5806  bd1978-09-30d1t12.flac
+     2:49.57       29945708 B   ---   --   ---xx   flac  0.6128  bd1978-09-30d1t13.flac
+     4:42.56       49876556 B   ---   --   ---xx   flac  0.6178  bd1978-09-30d2t01.flac
+     4:55.72       52207388 B   ---   --   ---xx   flac  0.5918  bd1978-09-30d2t02.flac
+     3:29.39       36959372 B   ---   --   ---xx   flac  0.5590  bd1978-09-30d2t03.flac
+     5:22.10       56824364 B   ---   --   ---xx   flac  0.6162  bd1978-09-30d2t04.flac
+     4:26.07       46938908 B   ---   --   ---xx   flac  0.6630  bd1978-09-30d2t05.flac
+     6:16.58       66462860 B   ---   --   ---xx   flac  0.6085  bd1978-09-30d2t06.flac
+     5:06.42       54077228 B   ---   --   ---xx   flac  0.6246  bd1978-09-30d2t07.flac
+     4:08.22       43798988 B   ---   --   ---xx   flac  0.6645  bd1978-09-30d2t08.flac
+     5:36.17       59310428 B   ---   --   ---xx   flac  0.6257  bd1978-09-30d2t09.flac
+     7:17.12       77115068 B   ---   --   ---xx   flac  0.6333  bd1978-09-30d2t10.flac
+     2:53.37       30604268 B   ---   --   ---xx   flac  0.6350  bd1978-09-30d2t11.flac
+     7:56.16       84004076 B   ---   --   ---xx   flac  0.6683  bd1978-09-30d2t12.flac
+   133:49.10     1416340220 B                            0.6290  (25 files)
+===================
+===================
+===================

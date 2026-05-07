@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-23-b.flacf 
+=================== 
+=================== 
+=================== 
+bb5217879bafb88d243e79064494dbfb  bd87-09-23-b-LB-4318.txt
+865d6076404dfaed7e2dc48e276235d0  Bob Dylan Sept 23, 1987 - Helsinki, Finland.txt
+3c917e1691fae30e30110ec95ea0352a  Track01.flac
+5c9e10808bb798dfb615a492188bf330  Track02.flac
+354f40226aaee94bc5d1ad71acbed429  Track03.flac
+7e1cd8e398335b21e2f603415994ee59  Track04.flac
+fa59861f59044eb60346caffa3b2662a  Track05.flac
+fdb9fedbeb4a15203e68417a67df79e5  Track06.flac
+2993fb4ea66718d758179794c0ac0dad  Track07.flac
+e0890df0983ea56d9b5a2360ebe61ccb  Track08.flac
+92ef99f948ca645a0ec4c8f693a7991a  Track09.flac
+4560eadb9563d0bd1bc33ea9ed6284ae  Track10.flac
+f17fc9befb00aac18a872c9e229673a8  Track11.flac
+1812af25e251983a53b9ad8de8f2ef9f  Track12.flac
+89b4983e840ee31ba1fe6f48f44c302e  Track13.flac
+fdff25b27a5682647c4f735c9cc829ea  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-23-b.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:1d9807beffe48b27a6ddfc728d8d8075
+Track02.flac:707653fb0cd20371536265b4667e590b
+Track03.flac:734473adc305a049d94d15b4f9b13ae2
+Track04.flac:e0042e262c6bb5f3c874a86a8dbef8c3
+Track05.flac:9825d6048018e5e6ddf23996b40223e3
+Track06.flac:895aac678cb6f8e1e383414eb0d8e2c4
+Track07.flac:fb5edc5ec79217532afb428e1bdf3caf
+Track08.flac:641e6f74c238565e409bccf14700f11b
+Track09.flac:3083e4f29d34b575c9413b9ad00a253b
+Track10.flac:4e7a0bc29b226efe3aff75f2d7ad9520
+Track11.flac:b9a42adbb9c4dfec3d695547aa15619a
+Track12.flac:42b13a22b25f71e0048cfe0700c1dc0f
+Track13.flac:03f920cfb0dd09ad65f8f1fdfef1fb9e
+Track14.flac:cd0b8f8a5b16e26d025b53a6e686cda5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-23-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:27.14       47131772 B   ---   --   ---xx   flac  0.6189  Track01.flac
+     5:10.46       54792236 B   ---   --   ---xx   flac  0.6483  Track02.flac
+     2:54.05       30705404 B   ---   --   ---xx   flac  0.6405  Track03.flac
+     4:53.27       51748748 B   ---   --   ---xx   flac  0.5457  Track04.flac
+     3:46.20       39913484 B   ---   --   ---xx   flac  0.6325  Track05.flac
+     3:51.01       40750796 B   ---   --   ---xx   flac  0.6320  Track06.flac
+     5:21.73       56796140 B   ---   --   ---xx   flac  0.5974  Track07.flac
+     6:48.54       72098252 B   ---   --   ---xx   flac  0.5847  Track08.flac
+     3:47.67       40200428 B   ---   --   ---xx   flac  0.6140  Track09.flac
+     5:48.63       61535420 B   ---   --   ---xx   flac  0.5881  Track10.flac
+     4:21.09       46061612 B   ---   --   ---xx   flac  0.6184  Track11.flac
+     5:49.18       61605980 B   ---   --   ---xx   flac  0.6558  Track12.flac
+     7:45.02       82030748 B   ---   --   ---xx   flac  0.6661  Track13.flac
+     4:19.52       45809948 B   ---   --   ---xx   flac  0.6479  Track14.flac
+    69:05.01      731180968 B                            0.6206  (14 files)
+=================== 
+=================== 
+=================== 

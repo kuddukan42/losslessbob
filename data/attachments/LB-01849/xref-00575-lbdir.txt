@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-23-c.flacf 
+=================== 
+=================== 
+=================== 
+9a7dfd3e3438e82263cbd8264243bfa2  disc1\910623_Hamburg_disc1-Track01.flac
+66b41e2f4bc19533050590fba3846655  disc1\910623_Hamburg_disc1-Track02.flac
+7cf93e85131300c26714e3e01002a111  disc1\910623_Hamburg_disc1-Track03.flac
+821c78827846f5f2d1fa36dd1c089c72  disc1\910623_Hamburg_disc1-Track04.flac
+5ff07e092c1aab39cb9a6ffed954bf08  disc1\910623_Hamburg_disc1-Track05.flac
+ba0f604ac129def73196cf6fc077c8af  disc1\910623_Hamburg_disc1-Track06.flac
+8d80f407f4af3b951803f386ad961843  disc1\910623_Hamburg_disc1-Track07.flac
+12d009c8283b3d4e1010e0cdc1aa2c42  disc1\910623_Hamburg_disc1-Track08.flac
+0cef1076e0f539e5bfed73064df43451  disc1\910623_Hamburg_disc1-Track09.flac
+3b9639084da167bcff74957a4a51c73b  disc1\910623_Hamburg_disc1-Track10.flac
+fbf9c6716f7b50acb454a4f27a5e510b  disc1\910623_Hamburg_disc1-Track11.flac
+47b4352965d2f981ed2d8873e9139146  disc1\md5sum.md5
+25f4d07152fd5adba9616d27d0950a78  disc2\910623_Hamburg_disc2-Track01.flac
+5fd3ba89cb74d20c9c07b0637e620848  disc2\910623_Hamburg_disc2-Track02.flac
+75ede204630a133f569df617e2834f4b  disc2\910623_Hamburg_disc2-Track03.flac
+0bd10586a671c5003b9952207dd5965e  disc2\910623_Hamburg_disc2-Track04.flac
+4e2054c2869a649f42616f228cce27d2  disc2\910623_Hamburg_disc2-Track05.flac
+b5e61edbc1c53a617a2be05e885b3cc6  disc2\910623_Hamburg_disc2-Track06.flac
+5c07ec7d676aaaef3c457308f893cfce  disc2\md5sum.md5
+56dbbc47e126af27dca46d81ad38cacd  fingerprint.ffp.txt
+31877d83edb13c2bca8f5e27b26e7789  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-23-c.flacf\disc1 
+=================== 
+=================== 
+=================== 
+910623_hamburg_disc1-track01.flac:483d09ec7fb00b463178a594bd14a825
+910623_hamburg_disc1-track02.flac:5dae9b43513d9ced7687cdf713866c6d
+910623_hamburg_disc1-track03.flac:7111c7a86073e910b599f2fcebdc9d8d
+910623_hamburg_disc1-track04.flac:89bb13354b61ed542a5524fa9aed4941
+910623_hamburg_disc1-track05.flac:4870ccd48cbd7f75f82137269e66f962
+910623_hamburg_disc1-track06.flac:db3a334fa78f37d902d7f90f121cda71
+910623_hamburg_disc1-track07.flac:a0e6a742db70c568b65aa0f8cbe8732d
+910623_hamburg_disc1-track08.flac:e23639bebfc67a5090783daaf7ebea90
+910623_hamburg_disc1-track09.flac:fd4d7a70712212882aa1ebad31a32dc8
+910623_hamburg_disc1-track10.flac:297d4f5780e221d1613f2a90195067dd
+910623_hamburg_disc1-track11.flac:24da7c1a028063197ba24bf2f2073e84
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-06-23-c.flacf\disc2 
+=================== 
+=================== 
+=================== 
+910623_hamburg_disc2-track01.flac:80990f013436c7b8d3d2374b4a4ef918
+910623_hamburg_disc2-track02.flac:69455b0450ef29dc73897c7e6b145243
+910623_hamburg_disc2-track03.flac:8da3348a3b8b02e6c7d4c6edade135e2
+910623_hamburg_disc2-track04.flac:f7e60f57a9414362d859aafecd29c99a
+910623_hamburg_disc2-track05.flac:4c41836234501a06f6269f0b46d5b96f
+910623_hamburg_disc2-track06.flac:6afc51d2357a19af76381a533bbad3a5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-23-c.flacf\disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:22.03       67391900 B   ---   --   ---xx   flac  0.5933  910623_Hamburg_disc1-Track01.flac
+     5:13.64       55363772 B   ---   --   ---xx   flac  0.6170  910623_Hamburg_disc1-Track02.flac
+     5:52.53       62217500 B   ---   --   ---xx   flac  0.5931  910623_Hamburg_disc1-Track03.flac
+     5:03.57       53583308 B   ---   --   ---xx   flac  0.5770  910623_Hamburg_disc1-Track04.flac
+     5:17.58       56055260 B   ---   --   ---xx   flac  0.6012  910623_Hamburg_disc1-Track05.flac
+     6:12.57       65754908 B   ---   --   ---xx   flac  0.6187  910623_Hamburg_disc1-Track06.flac
+     4:48.27       50866748 B   ---   --   ---xx   flac  0.5838  910623_Hamburg_disc1-Track07.flac
+     4:27.65       47251724 B   ---   --   ---xx   flac  0.4680  910623_Hamburg_disc1-Track08.flac
+     4:54.48       51974540 B   ---   --   ---xx   flac  0.5945  910623_Hamburg_disc1-Track09.flac
+     8:05.12       85582268 B   ---   --   ---xx   flac  0.6040  910623_Hamburg_disc1-Track10.flac
+     6:20.60       67173164 B   ---   --   ---xx   flac  0.5894  910623_Hamburg_disc1-Track11.flac
+    62:39.54      663215092 B                            0.5885  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-23-c.flacf\disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.70       54319484 B   ---   --   ---xx   flac  0.5972  910623_Hamburg_disc2-Track01.flac
+     3:41.45       39090284 B   ---   --   ---xx   flac  0.6629  910623_Hamburg_disc2-Track02.flac
+     5:32.15       58600124 B   ---   --   ---xx   flac  0.6201  910623_Hamburg_disc2-Track03.flac
+     5:13.42       55312028 B   ---   --   ---xx   flac  0.6664  910623_Hamburg_disc2-Track04.flac
+     4:37.00       48862844 B   ---   --   ---xx   flac  0.6606  910623_Hamburg_disc2-Track05.flac
+     5:51.32       61991708 B   ---   --   ---xx   flac  0.6684  910623_Hamburg_disc2-Track06.flac
+    30:03.54      318176472 B                            0.6451  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,21 @@
+1cb940eca060d6e96fd4b1981e88a77a  Bob Dylan 2001-08-23 d1\Track01.flac
+62db8584a74edfc7b0cfac6c9dbb26fa  Bob Dylan 2001-08-23 d1\Track02.flac
+239412c8adeb3423f638fcb619113dda  Bob Dylan 2001-08-23 d1\Track03.flac
+c06a287c217e5e1b66041905e5feb198  Bob Dylan 2001-08-23 d1\Track04.flac
+0272db781e3d4f70aa46ca0b2c7cb559  Bob Dylan 2001-08-23 d1\Track05.flac
+1d6fab1a6e647942df0504ddb223ec36  Bob Dylan 2001-08-23 d1\Track06.flac
+17b938d492e50eb5cf184698d0782705  Bob Dylan 2001-08-23 d1\Track07.flac
+006de344ad2b10223e6493d8fe8e3c03  Bob Dylan 2001-08-23 d1\Track08.flac
+fe0834e097517e800ede0d0116f43018  Bob Dylan 2001-08-23 d1\Track09.flac
+1ae2fafd1c86be31ede54e3ea345380b  Bob Dylan 2001-08-23 d1\Track10.flac
+e0a9fac94b86b736bb2901bf2f13ac10  Bob Dylan 2001-08-23 d1\Track11.flac
+a97f75841528804b277a2ee3ac5e857c  Bob Dylan 2001-08-23 d1\Track12.flac
+1ecf797cb3176238dac38ce3f27a87e5  Bob Dylan 2001-08-23 d2\Track01.flac
+9d81c1cc0c428952a2616e5dc978b871  Bob Dylan 2001-08-23 d2\Track02.flac
+2270e2333d4d1717c4b2281b20b5b04d  Bob Dylan 2001-08-23 d2\Track03.flac
+91999097eea53cda5d137f927566de73  Bob Dylan 2001-08-23 d2\Track04.flac
+62c8ddb6bcffec8d29e6ba350bf42d34  Bob Dylan 2001-08-23 d2\Track05.flac
+fef7e9e3a575ad86832668ff3fcd21d2  Bob Dylan 2001-08-23 d2\Track06.flac
+227263e51212d1cc943d8d09e055cb3c  Bob Dylan 2001-08-23 d2\Track07.flac
+0696c9d79c8ee08a1b62a1d204072df6  Bob Dylan 2001.08.23 Sun City West, AZ, USA.md5
+14ebe3a61dee0c07e27fc4be57b8c87c  info.txt

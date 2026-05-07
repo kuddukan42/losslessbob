@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-10-02-sp.flacf 
+=================== 
+=================== 
+=================== 
+9dd0ea8fcc6f9b232606e381d84dcdd9  01 Intro - Leopard-Skin Pill-Box Hat.flac
+69f3fb778d2049131212b57f54f5d0d5  02 Don't Think Twice, It's All Right.flac
+3f73067bf45adbdd67fddc2670cd2795  03 Watching the River Flow.flac
+0c2130862e6c64b4f4fa2caaf1222cea  04 John Brown.flac
+56e33bdc6e18b2110a1c31df771b50c2  05 Rollin' and Tumblin'.flac
+6ff9b2606f73a68e84a5a0e1000cd6cf  06 Workingman's Blues #2.flac
+535134488fce7ad762f6eea16c26b97b  07 High Water (for Charlie Patton).flac
+84c1c8e810f892dc627a15c6cd956c85  08 Beyond the Horizon.flac
+a0861ae9d8594af8a7da773eae06bb9e  09 Most Likely You Go Your Way (and I'll Go Mine).flac
+4da94d6ba2f625fb6d81debb66f1dae6  10 Spirit on the Water.flac
+fa840f5f778bc28561088c7aad2cda4d  11 Highway 61 Revisited.flac
+25f5fba6073958bf6ce8760f9aeacaf3  12 Ain't Talkin'.flac
+f27f12053cfda807c6dea0ddb7835242  13 Summer Days.flac
+3ad1346598c258c6e514c2c33ab88509  14 Ballad of a Thin Man.flac
+400fb1f28ddb33baadd6a4c36415f0cf  15 Thunder on the Mountain - Band Intros.flac
+aeb66bbdb664d3125f1f6c61a6548270  16 All Along the Watchtower.flac
+10b99057fd2c9bdcb0dc7d88c70f516a  bd20071002worcesterma.txt
+246c78963208df082bc1decd73ad6e41  Bob Dylan - 2007.10.02 - DCU Center, Worcester, MA.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-10-02-sp.flacf 
+=================== 
+=================== 
+=================== 
+01 Intro - Leopard-Skin Pill-Box Hat.flac:aecff7de6c1ff742bd28321853d2f1fd
+02 Don't Think Twice, It's All Right.flac:6b058d4e41fd04300562c607178e5b9a
+03 Watching the River Flow.flac:483073c246f28ef332f6db8e5d4a7f54
+04 John Brown.flac:69b3b8080d20e579576d08dab5b34708
+05 Rollin' and Tumblin'.flac:b33a0880e088c92ed97a40bceb4e4bce
+06 Workingman's Blues #2.flac:4850f9b3fbf6f952d78f775fcde6f0d8
+07 High Water (for Charlie Patton).flac:15e7e44ca632e5ef71fc20d90cc7e783
+08 Beyond the Horizon.flac:8f0ac7f2ab8dd21ba7fd1fce1db96b09
+09 Most Likely You Go Your Way (and I'll Go Mine).flac:fb88cdea8aa6f4379d698ce99ac03f16
+10 Spirit on the Water.flac:530ca4f3aebb0a1cf51079b5173f625b
+11 Highway 61 Revisited.flac:0bb7865319c08f63dd1be6b72aa1d021
+12 Ain't Talkin'.flac:99d6954fd879ef46c617f3aa6a38064f
+13 Summer Days.flac:4f52b827a06d3df14541e50ae3dcea8d
+14 Ballad of a Thin Man.flac:c6ce700a19e2dc9cc3a0fd7ddefa23f5
+15 Thunder on the Mountain - Band Intros.flac:c7ae7869ea21f3e0ac696046b6044c64
+16 All Along the Watchtower.flac:f9595498f28bdec6c6db05e50065ab97
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-10-02-sp.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:59.51       63447596 B   ---   --   ---xx   flac  0.5147  01 Intro - Leopard-Skin Pill-Box Hat.flac
+     6:08.10       64938764 B   ---   --   ---xx   flac  0.4968  02 Don't Think Twice, It's All Right.flac
+     5:17.57       56052908 B   ---   --   ---xx   flac  0.5605  03 Watching the River Flow.flac
+     5:57.28       63040700 B   ---   --   ---xx   flac  0.4840  04 John Brown.flac
+     6:47.02       71799548 B   ---   --   ---xx   flac  0.5591  05 Rollin' and Tumblin'.flac
+     7:03.14       74650172 B   ---   --   ---xx   flac  0.4952  06 Workingman's Blues #2.flac
+     6:39.23       70437740 B   ---   --   ---xx   flac  0.5375  07 High Water (for Charlie Patton).flac
+     7:25.29       78566252 B   ---   --   ---xx   flac  0.4549  08 Beyond the Horizon.flac
+     7:06.69       75308732 B   ---   --   ---xx   flac  0.5453  09 Most Likely You Go Your Way (and I'll Go Mine).flac
+     7:07.53       75447500 B   ---   --   ---xx   flac  0.4701  10 Spirit on the Water.flac
+     6:06.15       64597724 B   ---   --   ---xx   flac  0.5972  11 Highway 61 Revisited.flac
+     8:06.06       85744556 B   ---   --   ---xx   flac  0.4801  12 Ain't Talkin'.flac
+     5:50.52       61862348 B   ---   --   ---xx   flac  0.5463  13 Summer Days.flac
+     6:34.18       69543980 B   ---   --   ---xx   flac  0.5236  14 Ballad of a Thin Man.flac
+     7:12.72       76374188 B   ---   --   ---xx   flac  0.5507  15 Thunder on the Mountain - Band Intros.flac
+     5:37.26       59507996 B   ---   --   ---xx   flac  0.5432  16 All Along the Watchtower.flac
+   105:00.00     1111320704 B                            0.5205  (16 files)
+=================== 
+=================== 
+=================== 

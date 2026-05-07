@@ -1,0 +1,11 @@
+39f96c6308cbf2949e6840cfbf01fb99 *01 Gotta Serve.flac
+c166edaf1a8be58153bb98b85d56dad7 *02 Believe.flac
+c58dffdc51743865cf70c9e0bf9896df *03 LRS.flac
+7994037cf3508ab57eaf9c644865a815 *04 Animals.flac
+f54739fb02981cb6bd262af086f5313a *05 Disagree.flac
+cf0ead26a7a6dced2f509887967c7b46 *06 Watchtower.flac
+07122859bafe48658747532bdc581f9b *07 Simple Twist.flac
+597ee07833e99b522c6f01268d0cdb0d *08 Hell.flac
+fb1410f292328156886c51a266df287d *09 GirlNC.flac
+7399eaddda5f7db0fcc282fc51ce7ba7 *10 Slow Train.flac
+ef293c3a4f7d816fa9d5e8afcc97528b *11 AM&J.flac

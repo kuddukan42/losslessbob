@@ -1,0 +1,108 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-11-13 msg 
+=================== 
+=================== 
+=================== 
+195f7dd70db04fd523c843e22d6686d7  11-13-02  # 1\Bob Dylan01.shn
+6c742df7254b1f8201d8233fab427989  11-13-02  # 1\Bob Dylan02.shn
+781c1eb160af0613c2398d17ca5960a0  11-13-02  # 1\Bob Dylan03.shn
+712ae79349690a340e53f55177e00c8c  11-13-02  # 1\Bob Dylan04.shn
+0b162db2071db75d0c893dca1e5a75f6  11-13-02  # 1\Bob Dylan05.shn
+513ae36375841f94a1c5c037bdba63ff  11-13-02  # 1\Bob Dylan06.shn
+edfbae23ddc43f7078761124e15ebc40  11-13-02  # 1\Bob Dylan07.shn
+46d5c1a6d5ba28d6863a9841d9207c68  11-13-02  # 1\Bob Dylan08.shn
+7cc9f9f770785e330df586eb832143f9  11-13-02  # 1\Bob Dylan09.shn
+929706473090d321e370c7ffc2d8c71c  11-13-02  # 1\Bob Dylan10.shn
+68d0e0686bb5579823021db627e41188  11-13-02  # 1\Bob Dylan11.shn
+903f61d24af2984492e54991b3322d90  11-13-02  # 1\Bob Dylan12.shn
+33773ea5387923c65c502e145f34939c  11-13-02  # 1\noname.md5
+d704487035a778eaffbfb6a847ff3348  11-13-02  # 2\Bob Dylan01.shn
+57274966a76727d5b14500053d5693e2  11-13-02  # 2\Bob Dylan02.shn
+22a5db58c76d7b30975428e52b620c43  11-13-02  # 2\Bob Dylan03.shn
+ec4a2373de498c28b010d708212bd6b1  11-13-02  # 2\Bob Dylan04.shn
+6d20d4945069dc2cf3c3e0c8bd30dc72  11-13-02  # 2\Bob Dylan05.shn
+d77b65d88303f50a30ebf3e7ca9fa92f  11-13-02  # 2\Bob Dylan06.shn
+979a94c3a44badd1eec96c9a3cbccc77  11-13-02  # 2\Bob Dylan07.shn
+2d96e1554080338d1d7d1dc8853a8b23  11-13-02  # 2\Bob Dylan08.shn
+9b57f04a0cb01948973804a35ff0307e  11-13-02  # 2\Bob Dylan09.shn
+33afe1b6664ed213b621bea995abf27a  11-13-02  # 2\noname.md5
+6ee2d152ba6ad0c34a50a3336485d4e6  bd02-11-13.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-13 msg\11-13-02  # 2 
+=================== 
+=================== 
+=================== 
+497825d575949ab19545d32205537c64  [shntool]  Bob_Dylan01.wav
+9c92a8db24dc402fc6d5438badbd4c04  [shntool]  Bob_Dylan02.wav
+7d346be35d319dbfa3b04a88ed8c6596  [shntool]  Bob_Dylan03.wav
+d7ab8e40ccf9fab30939cae291b5fca0  [shntool]  Bob_Dylan04.wav
+1e09a981bd0c1653e45630ef691a2ef4  [shntool]  Bob_Dylan05.wav
+015fe720b8305e346ea75fd99704b925  [shntool]  Bob_Dylan06.wav
+3c554add26ba1738d7a576e2c82b2831  [shntool]  Bob_Dylan07.wav
+198c44419937c7f65d3c543d7ccd878b  [shntool]  Bob_Dylan08.wav
+2544d869c11a61cc0252556430773e3f  [shntool]  Bob_Dylan09.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd02-11-13 msg\11-13-02  # 1 
+=================== 
+=================== 
+=================== 
+dafcc6172e12ef2213d416df7b4a4fa6  [shntool]  Bob_Dylan01.wav
+85bf1e4f8a6ed34618e1df803604fb85  [shntool]  Bob_Dylan02.wav
+cf30911b9d301442146fb34deb8b2629  [shntool]  Bob_Dylan03.wav
+176b09ebeb03c1e0618200dc4a496281  [shntool]  Bob_Dylan04.wav
+c29f0738837d9ee8599279141ce0594e  [shntool]  Bob_Dylan05.wav
+21b5f0d8e673022102088e1a95d31d34  [shntool]  Bob_Dylan06.wav
+5c129682ab7d7b2c835604cdda3dea9b  [shntool]  Bob_Dylan07.wav
+8f0ac4f30f263448d33c6012c03111f4  [shntool]  Bob_Dylan08.wav
+4ee8843bf062ecb974e74bf4e28aa64a  [shntool]  Bob_Dylan09.wav
+ec2d2493feb191accf0ecd77b9a40fe2  [shntool]  Bob_Dylan10.wav
+1031fde0a0012f2076e73af497b6a48f  [shntool]  Bob_Dylan11.wav
+45a4d963e157f8ff489e76ad1b120e09  [shntool]  Bob_Dylan12.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-13 msg\11-13-02  # 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:41.24       70792892 B   ---   --   ---xx    shn  0.6649  Bob Dylan01.shn
+     6:27.02       68271548 B   ---   --   ---xx    shn  0.6449  Bob Dylan02.shn
+     7:37.06       80628956 B   ---   --   ---xx    shn  0.6366  Bob Dylan03.shn
+     3:24.04       35995052 B   ---   --   ---xx    shn  0.5808  Bob Dylan04.shn
+     6:28.59       68582012 B   ---   --   ---xx    shn  0.5869  Bob Dylan05.shn
+     8:31.21       90189836 B   ---   --   ---xx    shn  0.6758  Bob Dylan06.shn
+     9:18.18       98473580 B   ---   --   ---xx    shn  0.6389  Bob Dylan07.shn
+     6:24.10       67761164 B   ---   --   ---xx    shn  0.6754  Bob Dylan08.shn
+     5:26.59       57645212 B   ---   --   ---xx    shn  0.6239  Bob Dylan09.shn
+    60:18.53      638340252 B                            0.6410  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-11-13 msg\11-13-02  # 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:44.13       60712220 B   ---   --   ---xx    shn  0.6352  Bob Dylan01.shn
+     5:04.59       53764412 B   ---   --   ---xx    shn  0.5999  Bob Dylan02.shn
+     6:12.04       65630252 B   ---   --   ---xx    shn  0.6409  Bob Dylan03.shn
+     5:31.28       58454300 B   ---   --   ---xx    shn  0.6353  Bob Dylan04.shn
+     6:28.26       68504396 B   ---   --   ---xx    shn  0.6413  Bob Dylan05.shn
+     4:20.53       45988700 B   ---   --   ---xx    shn  0.6560  Bob Dylan06.shn
+     6:45.12       71470268 B   ---   --   ---xx    shn  0.6412  Bob Dylan07.shn
+     7:49.37       82818668 B   ---   --   ---xx    shn  0.6505  Bob Dylan08.shn
+     6:32.22       69200588 B   ---   --   ---xx    shn  0.6108  Bob Dylan09.shn
+     6:16.61       66469916 B   ---   --   ---xx    shn  0.6608  Bob Dylan10.shn
+     6:18.58       66815660 B   ---   --   ---xx    shn  0.6588  Bob Dylan11.shn
+     4:40.50       49509644 B   ---   --   ---xx    shn  0.6692  Bob Dylan12.shn
+    71:44.48      759339024 B                            0.6415  (12 files)
+=================== 
+=================== 
+=================== 

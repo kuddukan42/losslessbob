@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== md5 for: bd04-08-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+3866186e92095df75a3c72e764ce90b5 *01 Intro.flac
+874401dda890b1d20fd91c5e5458cf54 *02 Rainy Day Women.flac
+48b8fd5c2aaa2029d16a266459e70435 *03 God Knows.flac
+a4beff883e801d78160059edde62687b *04 Seeing The Real You At Last.flac
+c3643196387b498105a4728e8ca9176c *05 I Shall Be Released.flac
+548c713ffa4d2dd090a5fcb5429e489c *06 Tweedle Dee and Tweedle Dum.flac
+65e019b4adcc539a7dc5ea3afd7218f2 *07 Lay Lady Lay.flac
+acb11a3711dca60f7e687fb25afacf16 *08 High Water.flac
+fcdac6854155fe9ac3f888d1c6a740c9 *09 Highway 61 Revisited.flac
+0c1ab8dac0ef087bb7f5daa55f9f94dc *10 Tryin To Get To Heaven.flac
+4cd19f692fad520be5158d598c04b491 *11 Honest With Me.flac
+bcffec384e306d873b824ae8f4fe7d77 *12 Sugar Baby.flac
+befad1a5022f741d8a8208fdfa4b05cd *13 Summer Days.flac
+8be4640ca1cc383b68d5780464950c43 *14 Like A Rolling Stone.flac
+7118bdcf1ae95d5a9b0bbfd4bf4933c7 *15 All Along the Watchtower.flac
+86878442b5c0f38a6d7e497bf4921220 *Bob Dylan Stanley Coveleski Regional Stadium, South Bend, IN 2004-08-22.ffp
+0ce66fa343ca30324fff5038c9ece346 *Bob Dylan Stanley Coveleski Regional Stadium, South Bend, IN 2004-08-22.md5
+86878442b5c0f38a6d7e497bf4921220 *Bob Dylan Stanley Coveleski Regional Stadium, South Bend, IN 2004-08-22.txt
+fb472c7ba97efd25a31f0b5bb7cfbc29 *info.txt
+===================
+===================
+===================
+=== ffp for: bd04-08-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Intro.flac:40556649f40cb388f02ccf0727c558da
+02 Rainy Day Women.flac:65bf75dc46034fcb8720027c2db2358a
+03 God Knows.flac:3ac0aedb4576bbdbb276b2dd6ce470cc
+04 Seeing The Real You At Last.flac:eb8e3dccac242fae4810058a997e2dde
+05 I Shall Be Released.flac:380575e5084e64cd4ef4bcffea7463d8
+06 Tweedle Dee and Tweedle Dum.flac:4bf826f7c1806d52e4b8fe125cb1f3d8
+07 Lay Lady Lay.flac:e9da10e7e5bb19f4566ecaaf571dae62
+08 High Water.flac:b0a56f5e914aee2a42dea1352735c280
+09 Highway 61 Revisited.flac:9fe67da296ec9bd78631626789cb9511
+10 Tryin To Get To Heaven.flac:07ba16724c3680c5b5f2787bd598ac5c
+11 Honest With Me.flac:6407e261df63a6915dd4708abcc5d44e
+12 Sugar Baby.flac:492c49a8648bfa5e7ca6a11de0998585
+13 Summer Days.flac:b9a78d3b44847894895d1d15d5add04e
+14 Like A Rolling Stone.flac:460c99bf97d1e92e62f5b0aaa1ad13a9
+15 All Along the Watchtower.flac:1f776a34f65c1bad2645f37fc199ccbf
+===================
+===================
+===================
+=== shntool len for: bd04-08-22-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:41.66       17971676 B   ---   --   ---xx   flac  0.5575  01 Intro.flac
+     4:16.06       45172556 B   ---   --   ---xx   flac  0.5793  02 Rainy Day Women.flac
+     4:16.06       45172556 B   ---   --   ---xx   flac  0.5597  03 God Knows.flac
+     4:39.62       49361468 B   ---   --   ---xx   flac  0.5758  04 Seeing The Real You At Last.flac
+     6:48.06       71985356 B   ---   --   ---xx   flac  0.5600  05 I Shall Be Released.flac
+     5:41.66       60307676 B   ---   --   ---xx   flac  0.5142  06 Tweedle Dee and Tweedle Dum.flac
+     5:03.21       53498636 B   ---   --   ---xx   flac  0.5303  07 Lay Lady Lay.flac
+     6:22.65       67537724 B   ---   --   ---xx   flac  0.5634  08 High Water.flac
+     6:23.48       67674140 B   ---   --   ---xx   flac  0.5572  09 Highway 61 Revisited.flac
+     6:43.17       71129228 B   ---   --   ---xx   flac  0.5652  10 Tryin To Get To Heaven.flac
+     6:30.53       68920700 B   ---   --   ---xx   flac  0.5541  11 Honest With Me.flac
+     7:39.72       81136988 B   ---   --   ---xx   flac  0.5596  12 Sugar Baby.flac
+     6:58.31       73808156 B   ---   --   ---xx   flac  0.5604  13 Summer Days.flac
+     6:29.22       68671388 B   ---   --   ---xx   flac  0.5744  14 Like A Rolling Stone.flac
+     6:28.45       68549084 B   ---   --   ---xx   flac  0.5257  15 All Along the Watchtower.flac
+    86:03.61      910897332 B                            0.5555  (15 files)
+===================
+===================
+===================

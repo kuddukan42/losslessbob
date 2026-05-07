@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-03-NETI.flacf 
+=================== 
+=================== 
+=================== 
+e08b9b3b1a20c6c464319b76a8f1e742  bd-19960703-Konstanz.md5
+1427c23cd372a78b2397e4f9d9d2f55d  bd1996-07-03-d1t01.flac
+bf6483dec9f79c6b761b1d7ccf1043f0  bd1996-07-03-d1t02.flac
+2b560657a4367c9aa7302f3d4ed2bb28  bd1996-07-03-d1t03.flac
+8e5b48b05ce33313519e0c2f73b5e75e  bd1996-07-03-d1t04.flac
+ee05f0026e5c92df367a0a2160ea4604  bd1996-07-03-d1t05.flac
+ccb5a5bd57dd377c06ff94c20e396396  bd1996-07-03-d1t06.flac
+0e1239daa37faf9c9c1ebc35c3fe169b  bd1996-07-03-d1t07.flac
+519fc0bf45714588cbf8f0f11fba42e3  bd1996-07-03-d1t08.flac
+c1f4b3b5f5e448ffe870fee082789300  bd1996-07-03-d1t09.flac
+322a2c7fb4e0ccad64e8b6cf2329435f  bd1996-07-03-d1t10.flac
+8f9e255a412c0f61ee1a3da94535d98d  bd1996-07-03-d2t01.flac
+be6b7c47bbdffd21657070f8253d7fe5  bd1996-07-03-d2t02.flac
+546bcdec83f0df7de882e65d45f48e01  bd1996-07-03-d2t03.flac
+e613441da4d31dbc4ac4965f6ac3da83  bd1996-07-03-d2t04.flac
+fa2754a5f75301aa9d9c5df898396922  bd1996-07-03-d2t05.flac
+3270a1568e644e4bb9129af43ab75521  bd1996-07-03-d2t06.flac
+67ae0faf101d4bd304ebf27c765e7393  bd1996-07-03-d2t07.flac
+6b8a9bc4566c7ec56584cbf7a5350ab8  bd1996-07-03-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-07-03-NETI.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-07-03-d1t01.flac:65a86549283c81f47843b04e9f554169
+bd1996-07-03-d1t02.flac:d57f56b0af25bba45891bf5a59e5e8f8
+bd1996-07-03-d1t03.flac:e478c7ee49f6f7d462e8619c136e856b
+bd1996-07-03-d1t04.flac:4170d673441a4b627ecd585d7594c5e0
+bd1996-07-03-d1t05.flac:945c77608fe3e74639ff4ad26d571027
+bd1996-07-03-d1t06.flac:95e674d249459fb11a307def6b93b64a
+bd1996-07-03-d1t07.flac:155cdcf07d58bf94e15ba4e2cc37125a
+bd1996-07-03-d1t08.flac:658388c9bf609a4bd36caa765fc65993
+bd1996-07-03-d1t09.flac:f2d4f41f9e42bf06e8e23d4de55e8c76
+bd1996-07-03-d1t10.flac:bbfea683476ae2f133f8b72d8ecabeb4
+bd1996-07-03-d2t01.flac:90c145f27960f9a92133a1acfa6f4b39
+bd1996-07-03-d2t02.flac:8e4df9c7c1bb8680a2cea80fe286c055
+bd1996-07-03-d2t03.flac:7637544f94b1eb4bbff8dc7e7701c8e1
+bd1996-07-03-d2t04.flac:75470a25827d29f76b1ee8ebeb278ff5
+bd1996-07-03-d2t05.flac:600607508023430a1670f0e50afedfdb
+bd1996-07-03-d2t06.flac:cbe01c88f30cc50264c6cb6bd8451ca9
+bd1996-07-03-d2t07.flac:41dfc0dc46603bf6bfa26da6402ee7ff
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-03-NETI.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:32.64        5795372 B   ---   --   ---xx   flac  0.4689  bd1996-07-03-d1t01.flac
+     4:43.25       49980044 B   ---   --   ---xx   flac  0.5899  bd1996-07-03-d1t02.flac
+     6:14.18       66015980 B   ---   --   ---xx   flac  0.5019  bd1996-07-03-d1t03.flac
+     7:10.74       76026092 B   ---   --   ---xx   flac  0.5458  bd1996-07-03-d1t04.flac
+     6:36.31       69927356 B   ---   --   ---xx   flac  0.4792  bd1996-07-03-d1t05.flac
+     6:04.31       64282556 B   ---   --   ---xx   flac  0.4810  bd1996-07-03-d1t06.flac
+     7:11.46       76136636 B   ---   --   ---xx   flac  0.5671  bd1996-07-03-d1t07.flac
+    10:03.47      106479788 B   ---   --   ---xx   flac  0.4584  bd1996-07-03-d1t08.flac
+     6:34.06       69515756 B   ---   --   ---xx   flac  0.4326  bd1996-07-03-d1t09.flac
+     8:20.40       88294124 B   ---   --   ---xx   flac  0.4403  bd1996-07-03-d1t10.flac
+     6:37.08       70049660 B   ---   --   ---xx   flac  0.5824  bd1996-07-03-d2t01.flac
+     5:10.73       54855740 B   ---   --   ---xx   flac  0.5017  bd1996-07-03-d2t02.flac
+     0:45.29        8006252 B   ---   --   ---xx   flac  0.4646  bd1996-07-03-d2t03.flac
+     6:20.35       67114364 B   ---   --   ---xx   flac  0.5526  bd1996-07-03-d2t04.flac
+     7:39.26       81028796 B   ---   --   ---xx   flac  0.5578  bd1996-07-03-d2t05.flac
+    10:04.63      106693820 B   ---   --   ---xx   flac  0.5015  bd1996-07-03-d2t06.flac
+     6:23.63       67709420 B   ---   --   ---xx   flac  0.5755  bd1996-07-03-d2t07.flac
+   106:34.04     1127911756 B                            0.5133  (17 files)
+=================== 
+=================== 
+=================== 

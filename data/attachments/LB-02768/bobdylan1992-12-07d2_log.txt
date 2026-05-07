@@ -1,0 +1,93 @@
+EAC extraction logfile from 4. July 2003, 11:39 for CD
+Unknown Artist / Unknown Title
+
+Used drive  : PLEXTOR CD-ROM PX-40TS   Adapter: 0  ID: 1
+Read mode   : Secure with NO C2, accurate stream, NO disable cache
+Read offset correction : 676
+Overread into Lead-In and Lead-Out : No
+
+Used output format : Internal WAV Routines
+                     44.100 Hz; 16 Bit; Stereo
+
+Other options      : 
+    Fill up missing offset samples with silence : Yes
+    Delete leading and trailing silent blocks : No
+    Installed external ASPI interface
+
+
+Track  1
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t01.wav
+
+   Peak level 49.7 %
+   Track quality 99.9 %
+   Copy CRC 65FCDE0B
+   Copy OK
+
+Track  2
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t02.wav
+
+   Peak level 44.4 %
+   Track quality 99.9 %
+   Copy CRC D0D2B396
+   Copy OK
+
+Track  3
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t03.wav
+
+   Peak level 93.3 %
+   Track quality 99.9 %
+   Copy CRC 96DAA4C7
+   Copy OK
+
+Track  4
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t04.wav
+
+   Peak level 89.0 %
+   Track quality 100.0 %
+   Copy CRC 9E1739BB
+   Copy OK
+
+Track  5
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t05.wav
+
+   Peak level 93.7 %
+   Track quality 99.9 %
+   Copy CRC CA081499
+   Copy OK
+
+Track  6
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t06.wav
+
+   Peak level 89.0 %
+   Track quality 100.0 %
+   Copy CRC CA80BBE9
+   Copy OK
+
+Track  7
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t07.wav
+
+   Peak level 99.3 %
+   Track quality 100.0 %
+   Copy CRC FC384948
+   Copy OK
+
+Track  8
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t08.wav
+
+   Peak level 99.8 %
+   Track quality 100.0 %
+   Copy CRC B37E07F2
+   Copy OK
+
+Track  9
+   Filename D:\SHN_Trade\bobdylan1992-12-07d2t09.wav
+
+   Peak level 46.9 %
+   Track quality 99.5 %
+   Copy CRC 0AF0E98A
+   Copy OK
+
+No errors occured
+
+
+End of status report

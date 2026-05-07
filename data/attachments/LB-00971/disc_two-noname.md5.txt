@@ -1,0 +1,9 @@
+295a92db58aed00290d41ac71d62c76c *dallas_03-04-18_cd2_Track09.shn
+21a21321e8c4d191ea9e5f1aa0d7f160 *dallas_03-04-18_cd2_Track02.shn
+6dbb7d4358eaed873a0fbf2201d71bb4 *dallas_03-04-18_cd2_Track03.shn
+81bd136f15e5bfda09a1843226cb564f *dallas_03-04-18_cd2_Track04.shn
+80d20992a028986cb5fae1ae600c24ac *dallas_03-04-18_cd2_Track05.shn
+a02ea693d4fd21abbf46bf7b46a1420b *dallas_03-04-18_cd2_Track06.shn
+3205720829b4ac07ada5e2bbfa348791 *dallas_03-04-18_cd2_Track07.shn
+a5e17c28c36d2d6a10842967a8fc4317 *dallas_03-04-18_cd2_Track08.shn
+1092e0840197addaaa973675cb414ecc *dallas_03-04-18_cd2_Track01.shn

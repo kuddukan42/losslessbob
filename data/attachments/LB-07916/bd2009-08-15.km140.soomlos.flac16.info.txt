@@ -1,0 +1,56 @@
+Bob Dylan
+Banner Island Park
+Stockton, California
+2009-08-15
+
+Disc 1:
+01. introduction
+02. Ballad Of A Thin Man
+03. Forever Young
+04. Beyond Here Lies Nothin'
+05. To Ramona
+06. Rollin' And Tumblin'
+07. Beyond The Horizon
+08. Honest With Me
+09. Ballad Of Hollis Brown
+10. Highway 61 Revisited
+11. Workingman's Blues #2
+12. Thunder On The Mountain
+
+Disc 2: (encore)
+01. Like A Rolling Stone
+02. Jolene
+03. band introduction
+04. All Along The Watchtower
+
+Band Members
+Bob Dylan - vocals, keyboard, guitar, harp
+Denny Freeman - guitar
+Stu Kimball - guitar
+Donnie Herron - banjo, mandolin, steel guitar, trumpet
+George Receli - drums
+Tony Garnier - bass
+
+source: soomlos
+neumann skm140 > grace lunatec v3 > m-audio mtII (24/48)
+m-audio mtII > usb > hd > sound forge 9.0 > cd wave > tlh
+
+ffp
+bd2009-08-15d1t01.flac:b2eff3c9a2c7f100a9c2810ce06eb4ba
+bd2009-08-15d1t02.flac:0ca4d43bef03c31b4d957462777e84a7
+bd2009-08-15d1t03.flac:28d14f5d4b10c8363a9d8311ae1728cf
+bd2009-08-15d1t04.flac:d857f5499599f0b2d4a2c6fab4cd0b80
+bd2009-08-15d1t05.flac:a5edc62c68088af9b256f34cb9c5456f
+bd2009-08-15d1t06.flac:e69c4ca5f10e380c83aefb20900183c1
+bd2009-08-15d1t07.flac:09d5209617ffce48e7d85a3978f82a85
+bd2009-08-15d1t08.flac:77b94a2054a5792003be0e3851ea950e
+bd2009-08-15d1t09.flac:6e50a562005d0ab7d4aa7efd0cc16596
+bd2009-08-15d1t10.flac:5b86a39776a9fe102245523978fcd8f6
+bd2009-08-15d1t11.flac:21b594513b708b1a62ac1adbf857cd06
+bd2009-08-15d1t12.flac:8a3b1152e6e08361b1aa6b889195f2f6
+bd2009-08-15d2t01.flac:e3ec7a4275ead8f4972013525606a76b
+bd2009-08-15d2t02.flac:532f5e484e48ce6595221b745031d5bb
+bd2009-08-15d2t03.flac:b06ba81dbf74f6a830def7c02cf5588f
+bd2009-08-15d2t04.flac:bccbdcca80180737bc930e67a4fa8bdc
+
+bd2009-08-15.km140.soomlos.flac16 created 21-August-2009

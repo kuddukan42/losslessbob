@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-11-13-DPA4021.flacf 
+=================== 
+=================== 
+=================== 
+16e63fe416992e90c14c9e1e23abd8d9  bd06-11-13-DPA4021-LB-4266.txt
+8e7ebe7e23e93bb01a58df79053e1072  bd06-11-13.txt
+7b5962f71ce2f208f1d5406c151b6b6e  bd06-11-13d1t01.flac
+23a80da3448f553863eae54c157181a6  bd06-11-13d1t02.flac
+518b251110e0eaffe4962ee630102579  bd06-11-13d1t03.flac
+85080619c3489510d88533906e24e44f  bd06-11-13d1t04.flac
+838a263497ddf410426d878f046eab19  bd06-11-13d1t05.flac
+21ab0ebb9cac178b5948628ea31c9326  bd06-11-13d1t06.flac
+f0044a3a402de102c82442fbff9eb0de  bd06-11-13d1t07.flac
+8d460f4c6feeb54cc71b4e2840954b4f  bd06-11-13d1t08.flac
+f76db481fc365fff1d77fbba92d7fead  bd06-11-13d1t09.flac
+fd4268eee146dcc74514e943656ed331  bd06-11-13d1t10.flac
+c4ef182dd00d0af944e9ab3a11fb886b  bd06-11-13d2t01.flac
+4f126cd50a6804dfd644373057d06c9a  bd06-11-13d2t02.flac
+4112a37421db0fcfe618921b8412825c  bd06-11-13d2t03.flac
+43927ea61c2036c365e51fbb3591d08f  bd06-11-13d2t04.flac
+77290dd9437b59f01290aaa2289e078c  bd06-11-13d2t05.flac
+f3e982371f5c4b8064d999b1a634710b  bd06-11-13d2t06.flac
+0958b33fd9344725ac031c9827d3ce99  bd06-11-13d2t07.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-11-13-DPA4021.flacf 
+=================== 
+=================== 
+=================== 
+bd06-11-13d1t01.flac:a9b25b69129e5d41307fb7d7b61facea
+bd06-11-13d1t02.flac:63d47bf74e20b79a7e715a7d641cfec9
+bd06-11-13d1t03.flac:da93ed490c56eabe859077b8c8c6e1ed
+bd06-11-13d1t04.flac:192fba0a658afc6ff52f51493d5d4199
+bd06-11-13d1t05.flac:17c7f1b65f752bc148595cfaad3fda52
+bd06-11-13d1t06.flac:a6a6e249380200b2900e7a8b6ca23202
+bd06-11-13d1t07.flac:7b8b54da15bdc9dda5cfeeec7094227f
+bd06-11-13d1t08.flac:fef3b6fdc0ef8963f1b5caa1f4d111dc
+bd06-11-13d1t09.flac:4da3d7348d0560e29c5282051cda07da
+bd06-11-13d1t10.flac:a80c9ea168df08af3c3e0a4007d271d5
+bd06-11-13d2t01.flac:14969575e6402f8ccfbc9d78275ef18d
+bd06-11-13d2t02.flac:989f327e6331312ebc17ae279d474ea0
+bd06-11-13d2t03.flac:e1b4db570f516cbce673d644804a6c60
+bd06-11-13d2t04.flac:8ddcacd84aee2a50740a9d4a87f9ec90
+bd06-11-13d2t05.flac:32114c3b5ae4fbff7c7e5e0349923b88
+bd06-11-13d2t06.flac:0212a77b01960810c969272f343c8cdc
+bd06-11-13d2t07.flac:6c920f7c8783fea67543034958d94193
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-11-13-DPA4021.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:06.37       11729468 B   ---   --   ---xx   flac  0.4458  bd06-11-13d1t01.flac
+     5:03.01       53451596 B   ---   --   ---xx   flac  0.5689  bd06-11-13d1t02.flac
+     5:38.24       59679692 B   ---   --   ---xx   flac  0.5317  bd06-11-13d1t03.flac
+     6:54.03       73036700 B   ---   --   ---xx   flac  0.5534  bd06-11-13d1t04.flac
+     7:05.26       75031196 B   ---   --   ---xx   flac  0.4505  bd06-11-13d1t05.flac
+     7:34.53       80210300 B   ---   --   ---xx   flac  0.5466  bd06-11-13d1t06.flac
+     6:10.68       65427980 B   ---   --   ---xx   flac  0.4300  bd06-11-13d1t07.flac
+     6:33.72       69494588 B   ---   --   ---xx   flac  0.5464  bd06-11-13d1t08.flac
+     9:18.22       98482988 B   ---   --   ---xx   flac  0.4565  bd06-11-13d1t09.flac
+     6:21.70       67373084 B   ---   --   ---xx   flac  0.5506  bd06-11-13d1t10.flac
+     6:58.62       73881068 B   ---   --   ---xx   flac  0.5084  bd06-11-13d2t01.flac
+     7:06.02       75151148 B   ---   --   ---xx   flac  0.5481  bd06-11-13d2t02.flac
+     7:15.07       76750508 B   ---   --   ---xx   flac  0.4471  bd06-11-13d2t03.flac
+     5:47.04       61220252 B   ---   --   ---xx   flac  0.5838  bd06-11-13d2t04.flac
+     5:29.23       58089740 B   ---   --   ---xx   flac  0.5794  bd06-11-13d2t05.flac
+     6:57.22       73610588 B   ---   --   ---xx   flac  0.5460  bd06-11-13d2t06.flac
+     5:04.66       53780876 B   ---   --   ---xx   flac  0.5544  bd06-11-13d2t07.flac
+   106:25.37     1126401772 B                            0.5203  (17 files)
+=================== 
+=================== 
+=================== 

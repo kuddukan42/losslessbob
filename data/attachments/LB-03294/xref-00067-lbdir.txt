@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-27-c.flacf 
+=================== 
+=================== 
+=================== 
+3da850b0d1793c7e151b5cc443641047  1994-10-27 Upper Darby\D1T01.flac
+c4ec35929c23ced34247a1eb69ae7a5a  1994-10-27 Upper Darby\D1T02.flac
+fdfb9f45c79cfc904eecc93e62b3766a  1994-10-27 Upper Darby\D1T03.flac
+c1f136cec0607b42f63bbf888e26d5f8  1994-10-27 Upper Darby\D1T04.flac
+ce25e21d48499d2953c1a1bdb4113203  1994-10-27 Upper Darby\D1T05.flac
+45266bcbde13bf8014e898f8d61c5ec1  1994-10-27 Upper Darby\D1T06.flac
+ce681f463ce5f1ccbd5ce470a8958049  1994-10-27 Upper Darby\D1T07.flac
+1a3737696d6288ba91bb450592bf6a29  1994-10-27 Upper Darby\D2T01.flac
+ef4a5f239fccae623ab8296ced565032  1994-10-27 Upper Darby\D2T02.flac
+c8bc4cce62ac83540f21c47c49738813  1994-10-27 Upper Darby\D2T03.flac
+b7c95e525b4b8aa863abc89aad8564a5  1994-10-27 Upper Darby\D2T04.flac
+9dadc8e3e558b3bde850145314a3df2d  1994-10-27 Upper Darby\D2T05.flac
+8e9fd94ffd560fdccd5d60c624aaba23  1994-10-27 Upper Darby\D2T06.flac
+9be2e6aaf3cef3bd05722d69f0a699d7  1994-10-27 Upper Darby\D2T07.flac
+0444b98f3c7af85cc318629803cb6371  fingerprint.ffp.txt
+95c1b08ccaf150f44b3130696423efd9  Upper Darby.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-27-c.flacf\1994-10-27 Upper Darby 
+=================== 
+=================== 
+=================== 
+D1T01.flac:8a7b889f684dc6c61277d01adbf89fd1
+D1T02.flac:ada285d4eabcb262ad6071b36e55db72
+D1T03.flac:2c39b669b809e510648a4b756ae66e79
+D1T04.flac:478e00cd904d4e6606b11b2129344744
+D1T05.flac:14a81fce31f3b01232a7ae0b4a530c9d
+D1T06.flac:8e10fa333853ef16941481651f430d38
+D1T07.flac:e5399a411e4d0d9ebed2d66e8fcd63e7
+D2T01.flac:bcf88f48ca4e555b1de2edb17f2f39cc
+D2T02.flac:6692158b25c9f315b49b8a9f36b095f0
+D2T03.flac:2257bc69dedbf2e4bc478b8d7383bbff
+D2T04.flac:46fe05288216ac5733407cbe2e1c26a8
+D2T05.flac:aa8b122a795a13c583b03f098ddd004b
+D2T06.flac:0aec2c0aa8f30555da6037e0cdc0ca66
+D2T07.flac:7c7ebecd9547e0e700d319742797fdc0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-10-27-c.flacf\1994-10-27 Upper Darby 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:44.21       81899036 B   ---   --   ---xx   flac  0.6127  D1T01.flac
+     6:50.73       72495740 B   ---   --   ---xx   flac  0.6037  D1T02.flac
+     5:52.70       62257484 B   ---   --   ---xx   flac  0.6458  D1T03.flac
+     7:02.43       74541980 B   ---   --   ---xx   flac  0.5687  D1T04.flac
+     9:54.26      104842796 B   ---   --   ---xx   flac  0.6212  D1T05.flac
+     6:41.43       70837580 B   ---   --   ---xx   flac  0.5835  D1T06.flac
+     6:40.33       70637660 B   ---   --   ---xx   flac  0.4604  D1T07.flac
+     5:43.39       60596972 B   ---   --   ---xx   flac  0.4756  D2T01.flac
+     7:53.38       83526620 B   ---   --   ---xx   flac  0.5372  D2T02.flac
+     6:45.57       71576108 B   ---   --   ---xx   flac  0.6198  D2T03.flac
+    12:23.27      131128748 B   ---   --   ---xx   flac  0.6030  D2T04.flac
+     7:08.55       75628604 B   ---   --   ---xx   flac  0.6183  D2T05.flac
+     6:17.39       66594572 B   ---   --   ---xx   flac  0.6026  D2T06.flac
+     7:45.35       82108364 B   ---   --   ---xx   flac  0.5416  D2T07.flac
+   104:44.74     1108672264 B                            0.5809  (14 files)
+=================== 
+=================== 
+=================== 

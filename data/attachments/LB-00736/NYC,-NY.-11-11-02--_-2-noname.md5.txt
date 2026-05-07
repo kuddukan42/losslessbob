@@ -1,0 +1,8 @@
+7fcacb50903ac0e1451bada8b19c97d1 *Bob Dylan01.shn
+98455ab3c64eedd3ba176a1fe158a00b *Bob Dylan02.shn
+9ddccae932782fcef9f0d1861bbcd748 *Bob Dylan03.shn
+afde7731d1245baef3b6c12ea2d2513f *Bob Dylan04.shn
+8353dbf0b6e671b763bf31f9d7caf175 *Bob Dylan05.shn
+20c41d59cbb7a10b92c08abafee22cd4 *Bob Dylan06.shn
+f2e4bde94ae6179d372561f616760205 *Bob Dylan07.shn
+fab389a88c907634d402ed1a4049e146 *Bob Dylan08.shn

@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== md5 for: bd90-02-01-Dolphinsmile.flac1648
+===================
+===================
+===================
+dc3417847a4c7ce928e3ae36d18e067d *01 Most Likely Youll Go Your Way.flac
+7f815eab83b11d708f448a7f732951e3 *02 Ballad Of Hollis Brown.flac
+cc94e2fe5cc7ebe3d71828b244a32132 *03 Political World.flac
+2a1a1c076a872799e5da055ad3333ec7 *04 What Was It You Wanted.flac
+c6ca6e1b9a33c0bb55f16d4f702cceaf *05 Tears Of Rage.flac
+402bc98b3ed51b40df339501100c9b05 *06 Stuck Inside Of Mobile.flac
+ef706193ce3777927b0cf1895d8b7c53 *07 All Along The Watchtower.flac
+5be803f387c4546000cf8a1147665cf2 *08 Visions Of Johanna.flac
+acbbf08f4b534276fc14810871cb01cf *09 Mama You Been On My Mind.flac
+2f0bc1920e2e6df0ce2655f863887219 *10 Gates Of Eden.flac
+bc85272a59287c582b2222313e1fd0a8 *11 It Aint Me Babe.flac
+ab0e59755cd38e6118ffb082a840da27 *12 It Takes A Lot To Laugh.flac
+c830cb23a4c0752a070533b80b4008c7 *13 Everything Is Broken.flac
+cae8222a7c499483b2d2a6ef70435a3f *14 Lenny Bruce.flac
+1273183c9d2bfa2560ec9ebe493471ec *15 Man of Peace.flac
+dafe7a3d62639ae46704d1b2100f9e88 *16 You re A Big Girl Now.flac
+835b640f22f14837842d300614ffa8f2 *17 Like A Rolling Stone.flac
+c40a30c71432224bfa770056b07bef52 *18 Barbara Allen.flac
+8e265bdbb081262225eba79904a3e51a *19 Forever Young.flac
+1e57e6841985e1197371fd1ca1f0cca3 *20 Maggies Farm.flac
+1c0c612bb868bb3d8edb17b244d85c74 *Bob Dylan Theater de Grande Rex Paris 1990-02-01 Dolphinsmile Archive.ffp
+761b5687ebec3ca621a41f242ae5f2fc *Bob Dylan Theater de Grande Rex Paris 1990-02-01 Dolphinsmile Archive.md5
+1c0c612bb868bb3d8edb17b244d85c74 *Bob Dylan Theater de Grande Rex Paris 1990-02-01 Dolphinsmile Archive.txt
+e4525e01449b745f122204c33b32a397 *info.txt
+===================
+===================
+===================
+=== ffp for: bd90-02-01-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Most Likely Youll Go Your Way.flac:b68a322592dbe1fb189aa855cf0e7ace
+02 Ballad Of Hollis Brown.flac:93f18c2fc78d27468ca94675c30478cc
+03 Political World.flac:e06451912359ef1c445fd83db2637f55
+04 What Was It You Wanted.flac:0cc6f4407794a6c768246629090f8c31
+05 Tears Of Rage.flac:ec253df4eb1b3dc3d192255189f6c30c
+06 Stuck Inside Of Mobile.flac:f26e228bc4963c39a4a8a5f8aac6e233
+07 All Along The Watchtower.flac:66f535f9c35428cb21a229af7cb7bed6
+08 Visions Of Johanna.flac:67ea4d2a5f32110096f630f4bbafb0ba
+09 Mama You Been On My Mind.flac:a1c933b6fcae01e584da7c12cfea2a03
+10 Gates Of Eden.flac:5a3451403f7ae2e45e02093bc3b04438
+11 It Aint Me Babe.flac:b8e7375d43bb6b50c79a3c1235bf05e7
+12 It Takes A Lot To Laugh.flac:e0b8ca40af328b92af02c40711a27144
+13 Everything Is Broken.flac:8743021faa4effd0836424af562ec4bf
+14 Lenny Bruce.flac:0536e6fdd112f7bc77bdb4f825ab98ae
+15 Man of Peace.flac:489a9c66f1283c5b9a4b0708dd0034fb
+16 You re A Big Girl Now.flac:ece975644f545b4eeda5f61df513fedd
+17 Like A Rolling Stone.flac:219e0252bd9f7410078650da9409eb71
+18 Barbara Allen.flac:0771d122ce865dd96a87e59046282a9c
+19 Forever Young.flac:a9bf2d0b80c6bf7c4f1e5c427f2d09a0
+20 Maggies Farm.flac:d980056b79313312091cbf92ba35bf2b
+===================
+===================
+===================
+=== shntool len for: bd90-02-01-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:27.452      62870860 B   cxx   --   ---xx   flac  0.6082  01 Most Likely Youll Go Your Way.flac
+     4:46.254      54960852 B   cxx   --   ---xx   flac  0.6065  02 Ballad Of Hollis Brown.flac
+     2:51.812      32987964 B   cxx   --   ---xx   flac  0.6138  03 Political World.flac
+     5:07.594      59058112 B   cxx   --   ---xx   flac  0.6070  04 What Was It You Wanted.flac
+     5:47.034      66630532 B   cxx   --   ---xx   flac  0.6025  05 Tears Of Rage.flac
+     6:04.917      70064016 B   cxx   --   ---xx   flac  0.6229  06 Stuck Inside Of Mobile.flac
+     3:26.000      39551972 B   cxx   --   ---xx   flac  0.6209  07 All Along The Watchtower.flac
+     7:15.497      83615508 B   cxx   --   ---xx   flac  0.5908  08 Visions Of Johanna.flac
+     3:28.680      40066652 B   cxx   --   ---xx   flac  0.5821  09 Mama You Been On My Mind.flac
+     5:11.737      59853612 B   cxx   --   ---xx   flac  0.5808  10 Gates Of Eden.flac
+     6:10.942      71220980 B   cxx   --   ---xx   flac  0.5857  11 It Aint Me Babe.flac
+     4:59.173      57441188 B   cxx   --   ---xx   flac  0.6052  12 It Takes A Lot To Laugh.flac
+     3:32.706      40839544 B   cxx   --   ---xx   flac  0.6211  13 Everything Is Broken.flac
+     5:22.538      61927432 B   cxx   --   ---xx   flac  0.5908  14 Lenny Bruce.flac
+     3:43.495      42911016 B   cxx   --   ---xx   flac  0.6134  15 Man of Peace.flac
+     5:13.293      60152352 B   cxx   --   ---xx   flac  0.5760  16 You re A Big Girl Now.flac
+     6:42.772      77332204 B   cxx   --   ---xx   flac  0.6327  17 Like A Rolling Stone.flac
+     4:52.629      56184772 B   cxx   --   ---xx   flac  0.5459  18 Barbara Allen.flac
+     5:09.449      59414180 B   cxx   --   ---xx   flac  0.5983  19 Forever Young.flac
+     4:47.828      55262944 B   cxx   --   ---xx   flac  0.6379  20 Maggies Farm.flac
+   100:01.801    1152346692 B                            0.6016  (20 files)
+===================
+===================
+===================

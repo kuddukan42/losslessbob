@@ -1,0 +1,61 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-11-17-late-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+88d9c93829a69b3ead574522da106993  all.md5
+3d91b1b0a43482770bce6b4908785964  info.txt
+72fad2ae90fb4cd4b6dca4effadd73d7  tk01.flac
+9dd5029031089b777b16409b85078a6d  tk02.flac
+798138a883bd9453b6430e6ea27846ad  tk03.flac
+78dd951e601d96cbbd55b00bf6be8fb1  tk04.flac
+4c8d8d16816bb9a98e7ae937908027f0  tk05.flac
+5f573bbf6bfa7e6e5f0ffbb40ffc4349  tk06.flac
+5cf234e62c6662747647e9bc156d0fbc  tk07.flac
+6528136d33b52910f5a841c829cf5440  tk08.flac
+020dd6a30435bc30a2f83ff1790eeeb3  tk09.flac
+b54538794b5b016af1e6c40de138642a  tk10.flac
+93fcffa63c9eba0966df5d3def7313a4  tk11.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-11-17-late-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+tk01.flac:e7a5837365fec89fa80a2b896b7297d2
+tk02.flac:19e631ac3e23a787db9a738e1931d833
+tk03.flac:7dbb18155496c3a0d077cde77a4aec18
+tk04.flac:4d95e0c22ac6cc51abb508c8af82b713
+tk05.flac:44e0328e6c9fff31693c6969f4d03198
+tk06.flac:2e9a45a5c0fd264365d6bdf7aabc095e
+tk07.flac:f7eb70921f7afa51bb39e2bffd462cbf
+tk08.flac:4a9259a21e7a209cf702fb344080d4b8
+tk09.flac:10fa06e5cc7869ba39479c3c94f100a3
+tk10.flac:2abdba800967a493633182235cd26a2d
+tk11.flac:e5f9a865bbe71468209ca200e926833d
+=================== 
+=================== 
+=================== 
+=== shntool for: bd93-11-17-late-lowgen.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:21.43       56725580 B   ---   --   ---xx   flac  0.6657  tk01.flac
+     4:58.54       52694252 B   ---   --   ---xx   flac  0.6654  tk02.flac
+     6:59.73       74083340 B   ---   --   ---xx   flac  0.6838  tk03.flac
+     4:20.18       45906380 B   ---   --   ---xx   flac  0.6263  tk04.flac
+     7:07.43       75423980 B   ---   --   ---xx   flac  0.6187  tk05.flac
+     5:36.52       59392748 B   ---   --   ---xx   flac  0.5715  tk06.flac
+     7:50.41       83004476 B   ---   --   ---xx   flac  0.6639  tk07.flac
+     4:39.15       49250924 B   ---   --   ---xx   flac  0.6005  tk08.flac
+     5:56.39       62890172 B   ---   --   ---xx   flac  0.6664  tk09.flac
+     9:00.34       95336012 B   ---   --   ---xx   flac  0.6249  tk10.flac
+     5:54.28       62511752 B   -b-   --   ---xx   flac  0.6339  tk11.flac
+    67:45.65      717219616 B                            0.6395  (11 files)
+=================== 
+=================== 
+=================== 

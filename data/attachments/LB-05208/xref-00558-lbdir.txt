@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-07-08-b.flacf 
+=================== 
+=================== 
+=================== 
+6dcd2cc34ef0ba9a84db000be6399d8b  2000-07-08 Riverport Amphitheater, Maryland Heights, Missour.md5
+9ed944a5337e01b4827b0a182585d0a8  CD1\01 Oh baby it ain't no lie.flac
+7957cc66f3ac89abedf5f8da7e50e038  CD1\02 To Ramona.flac
+a49e592d527b38812cc03c6ba8422083  CD1\03 Desolation Row.flac
+c81a07a08b359350ef004433d6043c07  CD1\04 Don't think twice, it's all right.flac
+0eb3d88c8a6b5c35a822e90fa638c1df  CD1\05 Tangled up in blue.flac
+24446f8f118d62d335e5ab866d921497  CD1\06 Searching for a soldier's grave.flac
+18f366373d95a0cd009d43ece393875f  CD1\07 Country Pie.flac
+c7817bdfc323574a279bd1b7a90b3c0b  CD1\08 If not for you.flac
+23c177a9ac583fabb0e7c6c088f0261a  CD1\09 Stuck inside of Mobile with the Memphis blues again.flac
+29063d28637a480b6c7faccdd3a9b15f  CD1\10 Simple twist of fate.flac
+b5538eb78eec580c5b4572915306d592  CD1\11 Drifter's escape.flac
+ad3fa0561d18d36c95e6aa2d6060fa72  CD1\12 Leopard-skin pill-box hat.flac
+58af76612e53c39338c027cc8b356e8b  CD2\13 Things have changed.flac
+29c57527740cd2279a295f5ed156b451  CD2\14 Like a rolling stone.flac
+933fc08fda8d9468895699de0e181690  CD2\15 Forever young.flac
+8a40f081dafcf1cd84b0a925932a3575  CD2\16 Highway 61 revisited.flac
+9294a6292070534e2fa76ffcd5d6622b  Info\bd2000-07-08d1.LOG
+4ab2eaf342577341d9f3ed99c77dfb13  Info\bd2000-07-08d2.LOG
+289128ac74a539a2c63e51b5281847fe  Info\d1.shntool.txt
+26341df40fde01ed261405d93b69c105  Info\d1.txt
+3053c764ecfebb804766d19f5d25ad78  Info\d2.shntool.txt
+a2805af3ec9ef7c573a7b15b6af4c24b  Info\d2.txt
+11e9d6df595646fe721cbecf138228f6  Info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-08-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 oh baby it ain't no lie.flac:058459491612de4cb2421333014d0944
+02 to ramona.flac:a6c84372bb8a5c298567a9e8ff64e45d
+03 desolation row.flac:d546b9d574c5d1d641ccb8d1932fb8c0
+04 don't think twice, it's all right.flac:09dfd0ba50f6a62e3dd132455aecc81d
+05 tangled up in blue.flac:04a3c641929bc0c7cae32e8c5ad9372e
+06 searching for a soldier's grave.flac:3137bae4074776fabfb09abd91eeabf4
+07 country pie.flac:73e47f10ee4080c93d5c8090c16ab081
+08 if not for you.flac:f2b2c01a184334dc223ad55a31bd5c04
+09 stuck inside of mobile with the memphis blues again.flac:11a6f280e93ca7504bd63956d27b44b3
+10 simple twist of fate.flac:64027579ddebb625ccbe3466eb1c77b7
+11 drifter's escape.flac:b58d7c509a994aa2711afe6fcbf0da52
+12 leopard-skin pill-box hat.flac:709b9c9de4f29337de6cfdf1693f7eaa
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-07-08-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+13 things have changed.flac:068dd9f5bd6f505fcff5b7957753b169
+14 like a rolling stone.flac:807b19109cc485056c829dad9fa952bc
+15 forever young.flac:8d677540f360a9b16b4a0cbb5929a1b9
+16 highway 61 revisited.flac:1192556786edc412ee2ce04d9ec7af3a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-08-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:28.60       36832364 B   ---   --   ---xx   flac  0.6950  01 Oh baby it ain't no lie.flac
+     5:34.32       58992908 B   ---   --   ---xx   flac  0.6776  02 To Ramona.flac
+     8:28.44       89714732 B   ---   --   ---xx   flac  0.6964  03 Desolation Row.flac
+     5:52.32       62168108 B   ---   --   ---xx   flac  0.6687  04 Don't think twice, it's all right.flac
+     8:31.31       90213356 B   ---   --   ---xx   flac  0.7209  05 Tangled up in blue.flac
+     2:57.60       31363964 B   ---   --   ---xx   flac  0.6634  06 Searching for a soldier's grave.flac
+     2:49.41       29908076 B   ---   --   ---xx   flac  0.6976  07 Country Pie.flac
+     4:31.38       47893820 B   ---   --   ---xx   flac  0.6923  08 If not for you.flac
+     7:44.65       82002524 B   ---   --   ---xx   flac  0.7226  09 Stuck inside of Mobile with the Memphis blues again.flac
+     7:35.22       80313788 B   ---   --   ---xx   flac  0.6754  10 Simple twist of fate.flac
+     4:52.35       51591164 B   ---   --   ---xx   flac  0.7460  11 Drifter's escape.flac
+     5:33.14       58774172 B   ---   --   ---xx   flac  0.7262  12 Leopard-skin pill-box hat.flac
+    68:00.24      719768976 B                            0.7004  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-07-08-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.62       60474668 B   ---   --   ---xx   flac  0.6922  13 Things have changed.flac
+     6:59.50       74029244 B   ---   --   ---xx   flac  0.7210  14 Like a rolling stone.flac
+     6:29.22       68671388 B   ---   --   ---xx   flac  0.7001  15 Forever young.flac
+     5:52.70       62257484 B   ---   --   ---xx   flac  0.7302  16 Highway 61 revisited.flac
+    25:04.54      265432784 B                            0.7112  (4 files)
+=================== 
+=================== 
+=================== 

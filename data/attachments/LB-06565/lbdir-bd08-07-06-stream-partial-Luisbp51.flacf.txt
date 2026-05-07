@@ -1,0 +1,65 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-07-06-stream-partial-Luisbp51.flacf 
+=================== 
+=================== 
+=================== 
+3733625e8b6de6cdf413b57cf45fdc59  bd2008-07-06-arganda.partial.flac.md5
+47950a765cbb929b32c2d445913a26c4  bd2008-07-06-ArgandaDelRey.doc
+e1499328efbfcc67286a965c410445d6  bd2008-07-06-ArgandaDelRey.txt
+3874033070bef59ba5e4b94df2182bfa  terra\bd2008-07-06-arganda.t02.terra.flac
+ee2e28a0a3d7b78806f0e141a15e58a5  terra\bd2008-07-06-arganda.t03.terra.flac
+1dde34e1738cb39fe09cff35d1dc3a65  terra\bd2008-07-06-arganda.t04.terra.flac
+ce7c5688f8c947243f1aa25371727b03  terra\bd2008-07-06-arganda.terra.ffp.txt
+fb8bb87fd7b3188795c45a827bcad49d  terra\bd2008-07-06-arganda.terra.flac.md5
+2e2999ca126dce89d00c9469540c99fc  terra\bd2008-07-06-arganda.terra.info.txt
+6c7d88a43c465e81f143be281425d88d  terra\bd2008-07-06-arganda.terra.t02-ItAintMeBabe.sa_fa.JPG
+775d5628aceaecd9291ae6ba640a3e31  tve2\bd2008-07-06-arganda.t03.tve2.ffp.txt
+d2dbac6d9d332a7435f5647c27e2fb2f  tve2\bd2008-07-06-arganda.t03.tve2.flac
+882173c6f4f366d6f348dda09728c054  tve2\bd2008-07-06-arganda.t03.tve2.txt
+d6e9444082d253830db19a7471d66818  tve2\bd2008-07-06-arganda.tve2.flac.md5
+1c623eac1d7ca3f3cf13dd63228cc0ed  tve2\bd2008-07-06-arganda.tve2.t03-JustLikeTomThumbsBlues.sa_fa.JPG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-07-06-stream-partial-Luisbp51.flacf\terra 
+=================== 
+=================== 
+=================== 
+bd2008-07-06-arganda.t02.terra.flac:f7daae3adc4fbeed86c03b9d7daa9aea
+bd2008-07-06-arganda.t03.terra.flac:01ed50bbbb1fe3e7de0da75c74ddbf68
+bd2008-07-06-arganda.t04.terra.flac:fa2d1cd20ef789bb8f9eb0c02502b2d2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-07-06-stream-partial-Luisbp51.flacf\tve2 
+=================== 
+=================== 
+=================== 
+bd2008-07-06-arganda.t03.tve2.flac:6bf2c6dcd1e65e2d7f7cfc8ab498e959
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-07-06-stream-partial-Luisbp51.flacf\terra 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.13       63534620 B   ---   --   ---xx   flac  0.5032  bd2008-07-06-arganda.t02.terra.flac
+     6:29.31       68692556 B   ---   --   ---xx   flac  0.4948  bd2008-07-06-arganda.t03.terra.flac
+     6:13.61       65940716 B   ---   --   ---xx   flac  0.4968  bd2008-07-06-arganda.t04.terra.flac
+    18:43.30      198167892 B                            0.4982  (3 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-07-06-stream-partial-Luisbp51.flacf\tve2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:40.12       70588268 B   ---   --   ---xx   flac  0.4962  bd2008-07-06-arganda.t03.tve2.flac
+     6:40.12       70588268 B                            0.4962  (1 file)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,10 @@
+Bob Dylan, 6/25/91, Stockholm, Sweden, 2CDR
+
+LB-7804, (43min+59min), version "b"; cuts before Barbara Allen, Knockin' On Heaven's Door, 1st gen cassette -> DAT - clone -> (digital transfer) m-audio delta audiophile 2496, -> Wavelab -> ssrc -> cdwave for tracking -> tlh, I did not harm the sound of the recording in any way; bittorrent download 07/09;  in 3-way comparison these are probably same recordings based on same clapping at beginning of d2t3 and same cough around d2t2 3:4x; this has its channels swapped from others; LB-1581 is least harsh, then this, then LB-539;  LB-1581 has least hiss, then LB-539, then this; (did not listen to all of this)
+
+drop/cut between cdrs;
+
+1 New Morning, 2 Lay Lady Lay, 3 All Along The Watchtower, 4 Shelter From The Storm, 5 Gotta Serve Somebody, 6 Wiggle Wiggle, 7 Man Gave Names To All The Animals, 8 I'll Be Your Baby Tonight, 1 Barbara Allen (trad.), 2 Bob Dylan's Dream, 3 Don't Think Twice, It's All Right, 4 Gates Of Eden, 5 Man In The Long Black Coat, 6 Everything Is Broken, 7 Lenny Bruce, 8 Leopard-Skin Pill-Box Hat, 9 Knockin' On Heaven's Door, 10 Highway 61 Revisited
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

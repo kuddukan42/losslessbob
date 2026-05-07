@@ -1,0 +1,101 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-04-22-b.flacf 
+=================== 
+=================== 
+=================== 
+14530af5e7940515817d5b96894076bb  Bob Dylan 2003.04.22 Houston, Texas, Verizon Wireless Theater.md5
+6c79fb8e19b24cd545aecf7aac9146c7  D_1\Track01.flac
+be94ae603d273d77c0bb1b5f65f6264b  D_1\Track02.flac
+edb09c2c4dc7e4abfef380f9d6177672  D_1\Track03.flac
+2a77704d4604c017e890dad84ecaaf71  D_1\Track04.flac
+2f8775cc21934c78dd4d6756450a81ab  D_1\Track05.flac
+7716a7893eddb725f2623873485fa5f1  D_1\Track06.flac
+0f900757bd8f9b62108d28557e58e40e  D_1\Track07.flac
+d4319b41bd24b5ffa868ab3de0859419  D_1\Track08.flac
+3f676ccb5ebe7821107c5063eada21f4  D_1\Track09.flac
+ed8b457b9094fc343ea4db4c2662659e  D_1\Track10.flac
+16c2a907f93561153213ebd86663c059  D_2\Track01.flac
+14a3e2d40c2bb034151ab549d632a9a1  D_2\Track02.flac
+7c5310e36894ed900a22628002df1f30  D_2\Track03.flac
+0dd2beb1ddcac9f7112a0af0f40ec5f2  D_2\Track04.flac
+ff1565e3a7b76e7312e016e80cdd4576  D_2\Track05.flac
+083d574f9268115619413a7625ec68b5  D_2\Track06.flac
+0a24d5579668961d986edd7bacfb70b9  D_2\Track07.flac
+36fc7eea23dac033c635b86269b9d7c1  D_2\Track08.flac
+506e28f69f97287bcf0b1d578e7e3071  D_2\Track09.flac
+bd8270133108779eae302909f1e2a9bd  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-04-22-b.flacf\d_1 
+=================== 
+=================== 
+=================== 
+track01.flac:ca466c3982a2f58cf1ab22389512569d
+track02.flac:cc7efc0c6973efaaf31a75fdbba70a48
+track03.flac:e54cd6ce2bd5042aa68c1edbb02103a2
+track04.flac:38c9f42a6cd271b680ed35e14cf6d49e
+track05.flac:72a19110fb0a49cd2e36f7873dfaad42
+track06.flac:b78f6c4fc27cdc6026033b1019de37c2
+track07.flac:ec6796e720ca558eaad7de1650f09b9c
+track08.flac:f7869c8b2d9306749120bf6dddba979d
+track09.flac:ec4826b0e6335008832075306e350090
+track10.flac:0d4b1988f518b5b36ccb5fc1e3c4c19b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-04-22-b.flacf\d_2 
+=================== 
+=================== 
+=================== 
+track01.flac:188da73fc7ec39e175cc1401ace65de4
+track02.flac:4f12cd367bd1d3c503f917536ba1d934
+track03.flac:b1b56fd07a2ebba466d2952f8bee201f
+track04.flac:d743a95ba29a07ccd6889f15e6921ab1
+track05.flac:a4180d04687fa389c8e779bd3c99b410
+track06.flac:2163e63f031c4153e3237987e0e424d5
+track07.flac:5fba4a5c5fb8eed0ea90137947593931
+track08.flac:87755784069d05683c8ac439d16c0c07
+track09.flac:0e030570239bf7c5cc07d1f1c95d2a10
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-22-b.flacf\d_1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:28.29        5007452 B   ---   --   ---xx   flac  0.4593  Track01.flac
+     5:19.55       56401004 B   ---   --   ---xx   flac  0.5392  Track02.flac
+     3:29.48       36980540 B   ---   --   ---xx   flac  0.5329  Track03.flac
+     6:21.36       67293116 B   ---   --   ---xx   flac  0.5862  Track04.flac
+     7:25.61       78641516 B   ---   --   ---xx   flac  0.5316  Track05.flac
+     6:42.04       70922252 B   ---   --   ---xx   flac  0.5661  Track06.flac
+     6:52.31       72749756 B   ---   --   ---xx   flac  0.5511  Track07.flac
+     6:11.73       65616140 B   ---   --   ---xx   flac  0.6155  Track08.flac
+     6:40.67       70717628 B   ---   --   ---xx   flac  0.4838  Track09.flac
+     5:50.19       61784732 B   ---   --   ---xx   flac  0.5275  Track10.flac
+    55:22.48      586114136 B                            0.5478  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-04-22-b.flacf\d_2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:44.14       60714572 B   ---   --   ---xx   flac  0.5803  Track01.flac
+     4:29.25       47510444 B   ---   --   ---xx   flac  0.4420  Track02.flac
+     7:11.07       76044908 B   ---   --   ---xx   flac  0.5981  Track03.flac
+     6:01.73       63852140 B   ---   --   ---xx   flac  0.4919  Track04.flac
+     0:24.60        4374764 B   ---   --   ---xx   flac  0.4690  Track05.flac
+     6:30.51       68915996 B   ---   --   ---xx   flac  0.5933  Track06.flac
+     3:35.37       38013068 B   ---   --   ---xx   flac  0.5033  Track07.flac
+     7:00.25       74146844 B   ---   --   ---xx   flac  0.6018  Track08.flac
+     6:02.25       63915644 B   ---   --   ---xx   flac  0.6255  Track09.flac
+    47:00.17      497488380 B                            0.5624  (9 files)
+=================== 
+=================== 
+=================== 

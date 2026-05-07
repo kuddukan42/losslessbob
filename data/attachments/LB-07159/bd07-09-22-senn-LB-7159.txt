@@ -1,0 +1,10 @@
+Bob Dylan, 9/22/07, Duluth, Georgia, 2CDR
+
+LB-7159, (69min+33min), source: sennheiser mm-hlsc-2 > hi-md mz-m200;mac sound studio > flac, seems to the same reording as LosslessBob LB-5418, but here this is without, pops and complete (including Honest With Me);; this is a close eac match on d2t5 to LB-5418 but on d1t1 there are similar wav and spectral view except levels are a little higher and this starts to barely clip but did not hear it; there is a discontinuity near the beginning of d1t9 and d1t10 so that d1t9 is not continuous with the show but the discontinuities are similar to those at the beginning of all tracks and the sound is consistent with the show; this does not have the pop noted on that ones d1t1  (did not listen to all of this)
+
+discontinuities near beginning of  tracks
+
+DISC 1 ----- 68:08, 1. Leopard-Skin Pill-Box Hat, 2. Don't Think Twice, It's All Right, 3. Watching The River Flow, 4. Just Like A Woman, 5. Rollin' And Tumblin', 6. Spirit On The Water, 7. Ballad Of Hollis Brown, 8. Stuck Inside Of Mobile With The Memphis Blues Again, 9. Honest With Me, 10. Workingman's Blues #2, 11. Highway 61 Revisited, DISC 2 -----32:20, 12. Nettie Moore, 13. Summer Days, 14. Masters Of War, 15. Thunder On The Mountain, 16. All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

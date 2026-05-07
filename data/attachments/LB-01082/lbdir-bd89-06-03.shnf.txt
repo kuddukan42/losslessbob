@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-03.shnf 
+=================== 
+=================== 
+=================== 
+c3cf7e8f28c973615da4f7504f24a134  1989-06-03_d1t01-subterranean.shn
+5ba279b4c799e693ff2a1a95366e338b  1989-06-03_d1t02-rememberyou.shn
+61bb1be4e73c7823b86b1303fd7f4326  1989-06-03_d1t03_johnbrown.shn
+4706ba351c7c017f968f7e752df52070  1989-06-03_d1t04_biggirl.shn
+887d5c6241d82ccce8466b2cde0488ef  1989-06-03_d1t05_everygrain.shn
+bfe42b6f5f0a8ece3c772a4212af228d  1989-06-03_d1t06_h61.shn
+7320a872e02c2b9ff253de42c4009d51  1989-06-03_d1t07_gates.shn
+440a824b66007ad196c96d6d10888e78  1989-06-03_d1t08_tambourine.shn
+9958307078107958506a57bcce8d247d  1989-06-03_d1t09_hattiecarroll.shn
+f09e7b5395ff5f1a6a09f688fc0098df  1989-06-03_d1t10_knockin.shn
+ec9224451cf85e20127f79b3a6205a7a  1989-06-03_d2t01_silvio.shn
+f2f14a697d59fee66b6b956bf87794ef  1989-06-03_d2t02_released.shn
+c18c52f65595657105aed188d38c5c3e  1989-06-03_d2t03_wateriswide.shn
+3ddf2199e5069856ae778e154e524a00  1989-06-03_d2t04_rollingstone.shn
+e91dc36631944831260a1f3f7418d615  1989-06-03_d2t05_eileenaroon.shn
+4c53ece50e1fe8efc600855183aac324  1989-06-03_d2t06_girlnorthcountry.shn
+da594d84b6495f015e9787618b4a2ded  1989-06-03_d2t07_watchtower.shn
+b14d42ffab9c736a4745525a26998975  bd89-06-03 Dublin.md5
+0f0a640886c72cc2737688558580a9a4  bd89-06-03.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-06-03.shnf 
+=================== 
+=================== 
+=================== 
+5b2896c97a7ef93b4d8f9e2d45cd257d  [shntool]  1989-06-03_d1t01-subterranean.wav
+34a1d8f287d79653bfc42bda13078add  [shntool]  1989-06-03_d1t02-rememberyou.wav
+c64d2f0c3f0605e1fc8ce8376e5408ae  [shntool]  1989-06-03_d1t03_johnbrown.wav
+f15c203c9851dc78344f28b0a37863dc  [shntool]  1989-06-03_d1t04_biggirl.wav
+0a9c064c288fbb80439b0ebb1188f672  [shntool]  1989-06-03_d1t05_everygrain.wav
+5a9dca080d04b7759637f05abebc13a8  [shntool]  1989-06-03_d1t06_h61.wav
+0d933c380e123201693d34c2555b3262  [shntool]  1989-06-03_d1t07_gates.wav
+741e8bfa136962bddaa28c4db9dcf051  [shntool]  1989-06-03_d1t08_tambourine.wav
+144a545bd43289876509ec19dfc8b9cb  [shntool]  1989-06-03_d1t09_hattiecarroll.wav
+f63aa78b50d5c1738268c3e715ea9115  [shntool]  1989-06-03_d1t10_knockin.wav
+4d6fcdf4ce7565086caaf5c95f3d0524  [shntool]  1989-06-03_d2t01_silvio.wav
+5bcabc7662a65e2ac36c0d055206be44  [shntool]  1989-06-03_d2t02_released.wav
+29b639471081ef6c010c8a150fe464ea  [shntool]  1989-06-03_d2t03_wateriswide.wav
+88b94c001ef2ec47c4dc7e8524a63695  [shntool]  1989-06-03_d2t04_rollingstone.wav
+54f51f29fcc69bb9165e06ff84ed494e  [shntool]  1989-06-03_d2t05_eileenaroon.wav
+7f306fd73e0cde49551dd783e9d5d061  [shntool]  1989-06-03_d2t06_girlnorthcountry.wav
+e859019ea2838a9aeb9aa8913494b9cf  [shntool]  1989-06-03_d2t07_watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-03.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:31.04       37229852 B   ---   --   ---xx    shn  0.7739  1989-06-03_d1t01-subterranean.shn
+     4:13.49       44744492 B   ---   --   ---xx    shn  0.7851  1989-06-03_d1t02-rememberyou.shn
+     4:53.20       51732284 B   ---   --   ---xx    shn  0.7868  1989-06-03_d1t03_johnbrown.shn
+     4:29.12       47480860 B   -b-   --   ---xx    shn  0.7823  1989-06-03_d1t04_biggirl.shn
+     5:44.02       60686380 B   -b-   --   ---xx    shn  0.7761  1989-06-03_d1t05_everygrain.shn
+     4:21.11       46066316 B   ---   --   ---xx    shn  0.7775  1989-06-03_d1t06_h61.shn
+     5:50.54       61867824 B   -b-   --   ---xx    shn  0.6979  1989-06-03_d1t07_gates.shn
+     6:15.38       66240556 B   -b-   --   ---xx    shn  0.7558  1989-06-03_d1t08_tambourine.shn
+     6:05.64       64536572 B   ---   --   ---xx    shn  0.7080  1989-06-03_d1t09_hattiecarroll.shn
+     4:56.67       52372840 B   -b-   --   ---xx    shn  0.7209  1989-06-03_d1t10_knockin.shn
+     2:52.46       30449036 B   ---   --   ---xx    shn  0.6853  1989-06-03_d2t01_silvio.shn
+     4:25.13       46776464 B   -b-   --   ---xx    shn  0.6611  1989-06-03_d2t02_released.shn
+     5:32.10       58588364 B   ---   --   ---xx    shn  0.6627  1989-06-03_d2t03_wateriswide.shn
+     5:48.15       61423660 B   -b-   --   ---xx    shn  0.7232  1989-06-03_d2t04_rollingstone.shn
+     3:49.52       40517676 B   -b-   --   ---xx    shn  0.6266  1989-06-03_d2t05_eileenaroon.shn
+     5:28.32       57933868 B   -b-   --   ---xx    shn  0.6547  1989-06-03_d2t06_girlnorthcountry.shn
+     4:24.19       46614828 B   -b-   --   ---xx    shn  0.6963  1989-06-03_d2t07_watchtower.shn
+    82:41.60      875261872 B                            0.7223  (17 files)
+=================== 
+=================== 
+=================== 

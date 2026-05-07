@@ -1,0 +1,91 @@
+===================
+===================
+===================
+=== md5 for: bd76-04-25-lowgen-f.flacf
+===================
+===================
+===================
+ae15781510576f5a6fa237de5041d154 *all.md5
+1640db01cb4a49db2b4bbb3e7177aab4 *Gain1 01.flac
+dd619c8efdc52dee490d4eb7497b2c1e *Gain1 02.flac
+6d1011e47f8b47488a89b0b0c6b82d1d *Gain1 03.flac
+b11b30aec5f5e13dd39ec13299319715 *Gain1 04.flac
+4d97e44d195ca2f29b37584417be2154 *Gain1 05.flac
+9e4480677dfc962d04696e9162427105 *Gain1 06.flac
+3d3c9f2073cda9ef6bbf6d5f1be82050 *Gain1 07.flac
+2fa48de3a87b1ceb2cc8afd12ae1580d *Gain1 08.flac
+73d2ff060895af1e7b4c06fb2fd8789f *Gain1 09.flac
+1b59b96db9031fca92b9c8bbe9bbead2 *Gain1 10.flac
+7540a687b2f71a2a8c925d1d6f4408bf *Gain1 11.flac
+d99524b5dbad9b5a16c77bd1fffaf347 *Gain1 12.flac
+8ff5dcb9cebe1c8d50dc4901ef1358a2 *Gain1 13.flac
+6b3eb28f5fb5c4046afde7ab3f4b3942 *Gain1 14.flac
+c5daa3a20d1dc9b458cacfca42ec0ca8 *Gain1 15.flac
+4af9959352a50fef9f9c1acd8566c08c *Gain1 16.flac
+46e40060e4d2e165bc52c22cf7a11f11 *Gain2 01.flac
+8e112b25adea46fa3d81b57b9e2fae62 *Gain2 02.flac
+b5ba499c46576731af88a4d490616abd *Gain2 03.flac
+d9bb8ce74a552aeed0afe80eb3a975ec *Gain2 04.flac
+59f704befcd9358937f896024d2f71de *Gain2 05.flac
+1e5afdf5627606218301e4b46522d547 *info.txt
+===================
+===================
+===================
+=== ffp for: bd76-04-25-lowgen-f.flacf
+===================
+===================
+===================
+Gain1 01.flac:7ce32bcfc917c6f222f5a23a64a95776
+Gain1 02.flac:003f450f48a5c48bd44eec9b46095443
+Gain1 03.flac:b9c4b4aba52ddf0f0e10cd661b9dbea7
+Gain1 04.flac:c4d74ee3d65d6ff6c89dcf6f4ccf1e6d
+Gain1 05.flac:66a284c0d0181e30d3f8f0f95034b586
+Gain1 06.flac:383ef7390f8716a98cc2e9b71e1a72ee
+Gain1 07.flac:2940f18c6e97b3a1ec0385e2372c9a01
+Gain1 08.flac:dd3d4a573f1d318f41b3e2c93611cd0e
+Gain1 09.flac:3e5357947b522256bd2295140abc0c78
+Gain1 10.flac:d08593cdf9e2aee8d939d68eedb9b76f
+Gain1 11.flac:f8d6670317a628a848a948a0611ce11c
+Gain1 12.flac:fea169d9c325dc03ee84e54ab70bb820
+Gain1 13.flac:0b337f9271bb34ccac6feed2a799e93e
+Gain1 14.flac:fb89d883b843bea876cd50193ca191e6
+Gain1 15.flac:ad9948e1e41a758fbaeef7f9fa8ea4b7
+Gain1 16.flac:d76efbe0a99ddbf575b7ff7cc008a348
+Gain2 01.flac:8bf9161e655ed7505f091a7d499594ca
+Gain2 02.flac:072fd661e2f23acac464b7f466b3ba19
+Gain2 03.flac:6fd657b1a8f8c4eab6ec6026e798cdd5
+Gain2 04.flac:a67d494e0339490eb0313bc8f3fbd232
+Gain2 05.flac:e94c1db2a961c23bf14ad7b36e58ed82
+===================
+===================
+===================
+=== shntool len for: bd76-04-25-lowgen-f.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:54.02       62450348 B   ---   --   ---xx   flac  0.4277  Gain1 01.flac
+     5:25.01       57332396 B   ---   --   ---xx   flac  0.4221  Gain1 02.flac
+     2:57.57       31356908 B   ---   --   ---xx   flac  0.4295  Gain1 03.flac
+     4:02.21       42738236 B   ---   --   ---xx   flac  0.4339  Gain1 04.flac
+     4:25.08       46764860 B   ---   --   ---xx   flac  0.4364  Gain1 05.flac
+     3:43.18       39379580 B   ---   --   ---xx   flac  0.4326  Gain1 06.flac
+     5:55.51       62741996 B   ---   --   ---xx   flac  0.4373  Gain1 07.flac
+     3:46.06       39880556 B   ---   --   ---xx   flac  0.4217  Gain1 08.flac
+     3:30.15       37079324 B   ---   --   ---xx   flac  0.4173  Gain1 09.flac
+     3:00.55       31881404 B   ---   --   ---xx   flac  0.4242  Gain1 10.flac
+     4:46.49       50565692 B   ---   --   ---xx   flac  0.4270  Gain1 11.flac
+     5:23.46       57085436 B   ---   --   ---xx   flac  0.4203  Gain1 12.flac
+     4:41.72       49737788 B   ---   --   ---xx   flac  0.4221  Gain1 13.flac
+     5:24.61       57297116 B   ---   --   ---xx   flac  0.4336  Gain1 14.flac
+     4:29.17       47491628 B   ---   --   ---xx   flac  0.4310  Gain1 15.flac
+     3:41.73       39156140 B   ---   --   ---xx   flac  0.4319  Gain1 16.flac
+     3:35.45       38031884 B   ---   --   ---xx   flac  0.4409  Gain2 01.flac
+     4:49.53       51104300 B   ---   --   ---xx   flac  0.4391  Gain2 02.flac
+    10:40.63      113044220 B   ---   --   ---xx   flac  0.4330  Gain2 03.flac
+     4:22.08       46235660 B   ---   --   ---xx   flac  0.4373  Gain2 04.flac
+     7:07.14       75355772 B   ---   --   ---xx   flac  0.4359  Gain2 05.flac
+   101:43.60     1076711244 B                            0.4306  (21 files)
+===================
+===================
+===================

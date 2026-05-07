@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-08-03-from-video.flacf 
+=================== 
+=================== 
+=================== 
+c5facf3ec5c07161e0c7ac0eb1ee3906  bd1996-08-03_Video.md5
+719f9475f33ab3405a5c36e2df9e0f66  bd1996-08-03_Video__d1t02.flac
+d8c3c6c9acba1d94ed15b1659fb7b0a8  bd1996-08-03_Video__d1t03.flac
+137098d11ceea7838b92bc047e0a4722  bd1996-08-03_Video__d1t04.flac
+fc843ba72626c2c10507070338ab8fdf  bd1996-08-03_Video__d1t05.flac
+f939dcf753ed2abc800d3391443ab322  bd1996-08-03_Video__d1t06.flac
+4a8f2aa1437ba4dd793967e8586953e2  bd1996-08-03_Video__d1t07.flac
+7561b989420eafcf9502d2f349d1f89d  bd1996-08-03_Video__d1t08.flac
+ec764d581b41d1826a0922dd6d589dfd  bd1996-08-03_Video__d1t09.flac
+08b728a47b4c10629bd27e6944027182  bd1996-08-03_Video__d2t01.flac
+fa7a53aebb68d8f059e98410c2085300  bd1996-08-03_Video__d2t02.flac
+6fa4b94cd6e3226f4981cdcce4531f8a  bd1996-08-03_Video__d2t03.flac
+912b0b9cffdfbfd6536f72bd5557634e  bd1996-08-03_Video__d2t04.flac
+e0c2f117d29ba01d8d8c36f34c380cb0  bd1996-08-03_Video__d2t05.flac
+ec1cf0619cea271fe7b9963cde300dde  bd1996-08-03_Video__d2t06.flac
+0148ab8c25527f758ca591cc97fe53dc  bd1996-08-03_Video_d1t01.flac
+b5f127d9e52042653495298800a5be48  bd1996-08-03_Video_info.TXT
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-08-03-from-video.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-08-03_Video__d1t02.flac:f75a0eba6ab20a1067fdb1a1f0fe6cee
+bd1996-08-03_Video__d1t03.flac:14af112b23880508c372a93e2f324b51
+bd1996-08-03_Video__d1t04.flac:f4372e871a78dc48e0dd9417ba756249
+bd1996-08-03_Video__d1t05.flac:8551096b384d719c1a45faf8260f9b59
+bd1996-08-03_Video__d1t06.flac:6930fabdd2acaca33b9bc4f3c7ab5887
+bd1996-08-03_Video__d1t07.flac:ed70667de96ebe366d1bb605d6f0b0fb
+bd1996-08-03_Video__d1t08.flac:c009e6d556273a3b2f5659aab4097c47
+bd1996-08-03_Video__d1t09.flac:6ed3d0879d7d4e0a9f440bacb22b4f1b
+bd1996-08-03_Video__d2t01.flac:e950bf2543dc251b3e265d913ff09a48
+bd1996-08-03_Video__d2t02.flac:1e81fad254109e09a80ac90820e2c26a
+bd1996-08-03_Video__d2t03.flac:c922b12499d18528216d51785a8d4027
+bd1996-08-03_Video__d2t04.flac:607d4085bc7c0194f06c9786d3ca9b3d
+bd1996-08-03_Video__d2t05.flac:5fbef98d2136689dedda98247f42d2b5
+bd1996-08-03_Video__d2t06.flac:4957f60aa51e0f898c7fa80312167957
+bd1996-08-03_Video_d1t01.flac:365e25fc722dd73c91a2b53ff7a875e8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-08-03-from-video.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:37.33       59524460 B   ---   --   ---xx   flac  0.3048  bd1996-08-03_Video__d1t02.flac
+     6:37.11       70056716 B   ---   --   ---xx   flac  0.3210  bd1996-08-03_Video__d1t03.flac
+     6:30.24       68852492 B   ---   --   ---xx   flac  0.3027  bd1996-08-03_Video__d1t04.flac
+     8:59.11       95105516 B   ---   --   ---xx   flac  0.3196  bd1996-08-03_Video__d1t05.flac
+     7:43.63       81821420 B   ---   --   ---xx   flac  0.3221  bd1996-08-03_Video__d1t06.flac
+     7:59.12       84523868 B   ---   --   ---xx   flac  0.2942  bd1996-08-03_Video__d1t07.flac
+     6:15.69       66312332 B   ---   --   ---xx   flac  0.2892  bd1996-08-03_Video__d1t08.flac
+     8:54.66       94352876 B   ---   --   ---xx   flac  0.3079  bd1996-08-03_Video__d1t09.flac
+     8:10.23       86490140 B   ---   --   ---xx   flac  0.3205  bd1996-08-03_Video__d2t01.flac
+     6:36.66       70009676 B   ---   --   ---xx   flac  0.3000  bd1996-08-03_Video__d2t02.flac
+     9:47.61      103690316 B   ---   --   ---xx   flac  0.3164  bd1996-08-03_Video__d2t03.flac
+     8:20.59       88338812 B   ---   --   ---xx   flac  0.3196  bd1996-08-03_Video__d2t04.flac
+    10:12.12      107985068 B   ---   --   ---xx   flac  0.3114  bd1996-08-03_Video__d2t05.flac
+     6:24.41       67834076 B   ---   --   ---xx   flac  0.3254  bd1996-08-03_Video__d2t06.flac
+     4:29.32       47526908 B   ---   --   ---xx   flac  0.3187  bd1996-08-03_Video_d1t01.flac
+   112:39.58     1192424676 B                            0.3119  (15 files)
+=================== 
+=================== 
+=================== 

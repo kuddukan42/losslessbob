@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-17-b.flacf 
+=================== 
+=================== 
+=================== 
+40a0a677c67d4b69f8c519c1eee2b646  bd1988-07-17-rochester.ffp
+37b58c56abcb47f463e47ab4c8626df0  bd1988-07-17-rochester.md5
+fd192be4e3dabcd8bcee39d373849523  bd1988-07-17-rochester.t07.sa_fa.JPG
+ef3a6b742f033ff24311c196240e6b11  bd1988-07-17-rochester.t08.sa_fa.JPG
+1c1fdd81bc8bb7c0ab89a4f6f5b2c860  bd1988-07-17-rochester.txt
+09c3990ddb8f2547f932fae1d112fd9c  Track01.flac
+0a5560416a4fe07ab10792d68cdee57b  Track02.flac
+6b47df275fcf4a9c8b00c2b348169042  Track03.flac
+dc9a0f0d587d4a0fb097f400b37d8433  Track04.flac
+bca5d83098544b083d71986228bcb28b  Track05.flac
+f6ecf991cc6bf044ef8a685e0e8dd285  Track06.flac
+30ed43a97d6465bce60ddf9fef581e60  Track07.flac
+41eb58ac78389989dfca474d9cc4b773  Track08.flac
+6bfd5a11619157c5fab582bab6788708  Track09.flac
+806c5b27370f4bd4c8240a297ed0c48a  Track10.flac
+ebb56b8671b7cb6d5759e123d772f01b  Track11.flac
+4e57840f067e9614efffec174ed009c2  Track12.flac
+2e5b1955a501ff2fe855b9d9ee54eac5  Track13.flac
+e7955c6c3fff4e8c02493aad550065c8  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-17-b.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:1bb9f915efe1385984bb900718a7a02f
+Track02.flac:f402105ab4282af2b147ab2cb794488d
+Track03.flac:a48250e637f7dae0757b19a8f8318c58
+Track04.flac:3f8abca3bf3b54c5402e9bcbf8906fbe
+Track05.flac:68dc8c660d18f2c5a1b4e03fa585ca66
+Track06.flac:208c63ee49b5a3b77f0616bf13a2759f
+Track07.flac:98ecb093d7e1478dbf33473390f18a64
+Track08.flac:78633a1a09885f056aea98967d156cd7
+Track09.flac:1c52e2c7dc187636f5b8d9007ec084c2
+Track10.flac:17f287c7704d3ec5165168dcb53a00a3
+Track11.flac:24d2a2098d4355b68bdd063691c6087b
+Track12.flac:c6edcc7afe620b143a2d91485962a65f
+Track13.flac:f169cbe9c56a903883a44b85eb6f7fdb
+Track14.flac:80dc740b55dee0d44ecbb772e73c333a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-17-b.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:47.32       40118108 B   ---   --   ---xx   flac  0.6704  Track01.flac
+     4:21.36       46125116 B   ---   --   ---xx   flac  0.6706  Track02.flac
+     4:18.01       45513596 B   ---   --   ---xx   flac  0.6669  Track03.flac
+     6:25.44       68017532 B   ---   --   ---xx   flac  0.6161  Track04.flac
+     6:30.03       68803100 B   ---   --   ---xx   flac  0.6712  Track05.flac
+     6:02.65       64009724 B   ---   --   ---xx   flac  0.6639  Track06.flac
+     5:56.63       62946620 B   ---   --   ---xx   flac  0.5895  Track07.flac
+     4:55.23       52092140 B   ---   --   ---xx   flac  0.5694  Track08.flac
+     5:35.28       59159900 B   ---   --   ---xx   flac  0.5262  Track09.flac
+     4:19.41       45784076 B   ---   --   ---xx   flac  0.6336  Track10.flac
+     3:45.21       39739436 B   ---   --   ---xx   flac  0.6829  Track11.flac
+     8:53.06       94035356 B   ---   --   ---xx   flac  0.6765  Track12.flac
+     9:02.02       95613548 B   ---   --   ---xx   flac  0.6027  Track13.flac
+     6:05.06       64400156 B   ---   --   ---xx   flac  0.6188  Track14.flac
+    79:57.71      846358408 B                            0.6308  (14 files)
+=================== 
+=================== 
+=================== 

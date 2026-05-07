@@ -1,0 +1,66 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-15-l.flacf
+===================
+===================
+===================
+0ab9e8603fd89d929a164fc76658cfbf *bd-95-03-15-aschaffenburg-d1 (Track 01).flac
+5d85ec7999519263c1ce674975710718 *bd-95-03-15-aschaffenburg-d1 (Track 02).flac
+3674059122ed5e41aa774c122dcb1e0d *bd-95-03-15-aschaffenburg-d1 (Track 03).flac
+f6a06732b3f83938eb34670f552d0178 *bd-95-03-15-aschaffenburg-d1 (Track 04).flac
+722f75284af7a19ecd0aabd4e83a2946 *bd-95-03-15-aschaffenburg-d1 (Track 05).flac
+ee41ffe3f277187d5023fb885c976623 *bd-95-03-15-aschaffenburg-d1 (Track 06).flac
+e4be68aac2e3c87c1f89e1b84e35e305 *bd-95-03-15-aschaffenburg-d1 (Track 07).flac
+822ceafe4a051ce25ddda4827a906c58 *bd-95-03-15-aschaffenburg-d2 (Track 01).flac
+04b52f9f944d96e02795b6250c26f88b *bd-95-03-15-aschaffenburg-d2 (Track 02).flac
+288c372dd038af2a87b87963272b04a8 *bd-95-03-15-aschaffenburg-d2 (Track 03).flac
+7ffe6ae3e7245afe7cf206dd3b158ead *bd-95-03-15-aschaffenburg-d2 (Track 04).flac
+715f9dcf653c7556c24e91f0e2b35515 *bd-95-03-15-aschaffenburg-d2 (Track 05).flac
+f66db50b8d0665cba0f6e325f5154a3a *bd-95-03-15-aschaffenburg-d2 (Track 06).flac
+f0f5d1bb282dd7b375a7aa2a7c5e71f0 *bd-95-03-15-aschaffenbvurg-master.txt
+===================
+===================
+===================
+=== ffp for: bd95-03-15-l.flacf
+===================
+===================
+===================
+bd-95-03-15-aschaffenburg-d1 (Track 01).flac:ff3d72019106ff09716d7e464e0a46fe
+bd-95-03-15-aschaffenburg-d1 (Track 02).flac:39bc71a0362a0b6517568b325d7c4011
+bd-95-03-15-aschaffenburg-d1 (Track 03).flac:2fb557741cb419020a06f3bb0f8273ff
+bd-95-03-15-aschaffenburg-d1 (Track 04).flac:4ad6117a8fae83eb23bbbe534892ffe4
+bd-95-03-15-aschaffenburg-d1 (Track 05).flac:a0c63136f5bcf22d51e7aff798326993
+bd-95-03-15-aschaffenburg-d1 (Track 06).flac:7e35b29e3ceed205aae4e5690e26d59d
+bd-95-03-15-aschaffenburg-d1 (Track 07).flac:67057e2acfc316fca19e38e4d98de7d7
+bd-95-03-15-aschaffenburg-d2 (Track 01).flac:d5f68e4b7a9d1fbc0be6500887a0a0bd
+bd-95-03-15-aschaffenburg-d2 (Track 02).flac:e4d4302015e00b1307a8ec9abb31ba21
+bd-95-03-15-aschaffenburg-d2 (Track 03).flac:16209aecd8d69f733162c2142beb9297
+bd-95-03-15-aschaffenburg-d2 (Track 04).flac:c9dbb857839b8ec4c1e691677b76edd1
+bd-95-03-15-aschaffenburg-d2 (Track 05).flac:b64adf7640207f4401ad5c0b82f496f3
+bd-95-03-15-aschaffenburg-d2 (Track 06).flac:7c5d0cc972a78a90ced36b66b5212bed
+===================
+===================
+===================
+=== shntool len for: bd95-03-15-l.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:13.27       55277308 B   -b-   --   ---xx   flac  0.7112  bd-95-03-15-aschaffenburg-d1 (Track 01).flac
+     5:29.40       58129724 B   ---   --   ---xx   flac  0.6318  bd-95-03-15-aschaffenburg-d1 (Track 02).flac
+     5:26.42       57605228 B   ---   --   ---xx   flac  0.6817  bd-95-03-15-aschaffenburg-d1 (Track 03).flac
+     5:54.03       62452700 B   ---   --   ---xx   flac  0.6211  bd-95-03-15-aschaffenburg-d1 (Track 04).flac
+     7:22.56       78100556 B   ---   --   ---xx   flac  0.6478  bd-95-03-15-aschaffenburg-d1 (Track 05).flac
+     6:02.09       63878012 B   ---   --   ---xx   flac  0.6619  bd-95-03-15-aschaffenburg-d1 (Track 06).flac
+     6:54.28       73095500 B   ---   --   ---xx   flac  0.5108  bd-95-03-15-aschaffenburg-d1 (Track 07).flac
+     4:52.66       51664392 B   -b-   --   ---xx   flac  0.5141  bd-95-03-15-aschaffenburg-d2 (Track 01).flac
+     8:00.70       84836684 B   ---   --   ---xx   flac  0.4980  bd-95-03-15-aschaffenburg-d2 (Track 02).flac
+     9:25.15       99701324 B   ---   --   ---xx   flac  0.6663  bd-95-03-15-aschaffenburg-d2 (Track 03).flac
+     6:25.01       67916396 B   ---   --   ---xx   flac  0.5809  bd-95-03-15-aschaffenburg-d2 (Track 04).flac
+     8:35.72       91015388 B   ---   --   ---xx   flac  0.6992  bd-95-03-15-aschaffenburg-d2 (Track 05).flac
+    10:15.15      108521324 B   ---   --   ---xx   flac  0.6133  bd-95-03-15-aschaffenburg-d2 (Track 06).flac
+    89:57.69      952194536 B                            0.6188  (13 files)
+===================
+===================
+===================

@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-04-02-theodore 930Club 
+=================== 
+=================== 
+=================== 
+de432007036f986f5b2042ecde7b168a  930cover.jpg
+8eacf84357ac996959a6cd24d71f05db  bd04-02-04.txt
+9f99188a4bfa8f9ad2fc8317216c1438  bd04-02-04d1.md5
+0bec038d8352fcebd17fd5d22aee2648  bd04-02-04d1t01.shn
+3a48043da329c7054ecac9e5ad0d054b  bd04-02-04d1t02.shn
+cea55666242a92ec2e909fb7544938be  bd04-02-04d1t03.shn
+52d0d4453bff61f7178351dd20434f39  bd04-02-04d1t04.shn
+782b79a26d17f3805d23cd6a22a2d25b  bd04-02-04d1t05.shn
+c10b881985200cc77108933e475ef853  bd04-02-04d1t06.shn
+6b85e9a8eaa31a5a24d4e00d08c51d5e  bd04-02-04d1t07.shn
+4151492a09f9461a78c930147bca2896  bd04-02-04d1t08.shn
+9192d59e70988bf6ef4f8ac8add30ad1  bd04-02-04d1t09.shn
+d81bacc20dcb903a39d0622a2aa90278  bd04-02-04d1t10.shn
+14e99c71ed71cb50b3b8cc2fdcf552de  bd04-02-04d1t11.shn
+1502b5d77f3ac1651b71862ff9b8b28b  bd04-02-04d1t12.shn
+a20e5128413e51ccfc0a1b6db11f42b1  bd04-02-04d1t13.shn
+0a4e5631e8efc52ac75779c353280825  bd04-02-04d2.md5
+043eaec7d95f6aa2ca31da6eba955c03  bd04-02-04d2t01.shn
+45f89a69bd59419e1b1d4e295e55b34d  bd04-02-04d2t02.shn
+cfc5df2f6a7cc0134ae322ad9e9e7ae1  bd04-02-04d2t03.shn
+66b779e76e4ba0493d7d09643115e9b4  bd04-02-04d2t04.shn
+5ace5bc53a3b362cf17b23cffa0fc215  bd04-02-04d2t05.shn
+c72fce4c6a627770663ad97729374ebd  bd04-04-02-theodore.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-04-02-theodore 930Club 
+=================== 
+=================== 
+=================== 
+99b99c29f5c8b67fadb2723f4f523c8c  [shntool]  bd04-02-04d1t01.wav
+5185c024aea4c63536e09e3495b8e1d7  [shntool]  bd04-02-04d1t02.wav
+b9b6726c416bad58b5e4dae7be3521f9  [shntool]  bd04-02-04d1t03.wav
+de8dfa7e69e2ce14941ede83eb36953c  [shntool]  bd04-02-04d1t04.wav
+b57edf01a6dd1525da1d2bb6aabd7be6  [shntool]  bd04-02-04d1t05.wav
+cffebb42bfcef026c16d8ed63b6642ec  [shntool]  bd04-02-04d1t06.wav
+bc730105821b58a0f84c7d9796b298ea  [shntool]  bd04-02-04d1t07.wav
+509eea3168b34fea1519667b3e4de279  [shntool]  bd04-02-04d1t08.wav
+dd431387351466cc10bd4a4ef6554562  [shntool]  bd04-02-04d1t09.wav
+fa60bfcebb030f921c72968bb4fa71a8  [shntool]  bd04-02-04d1t10.wav
+0f3949c23a9ea6f7ebd7c3c431e03aee  [shntool]  bd04-02-04d1t11.wav
+1d20a8481924ceea4202a753dfef905a  [shntool]  bd04-02-04d1t12.wav
+edf1cd434c7e7cffa93b016dc64cc20d  [shntool]  bd04-02-04d1t13.wav
+5a23cc85a1bd7f2b840e566a8aeff143  [shntool]  bd04-02-04d2t01.wav
+362470f4e3d33eac82ef060b55bf75f2  [shntool]  bd04-02-04d2t02.wav
+a133795673bb04c254aa72e0110faf94  [shntool]  bd04-02-04d2t03.wav
+abb268679bf0f6d1d0039d9adc61afde  [shntool]  bd04-02-04d2t04.wav
+5e57e70af409696714dada5f902042dc  [shntool]  bd04-02-04d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-04-02-theodore 930Club 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:39.48        6992540 B   ---   --   -----    wav  1.0000  bd04-02-04d1t01.wav
+     4:50.16       51193676 B   ---   --   -----    wav  1.0000  bd04-02-04d1t02.wav
+     5:14.01       55391996 B   ---   --   -----    wav  1.0000  bd04-02-04d1t03.wav
+     5:30.63       58360220 B   ---   --   -----    wav  1.0000  bd04-02-04d1t04.wav
+     7:16.55       77039804 B   ---   --   -----    wav  1.0000  bd04-02-04d1t05.wav
+     7:52.40       83354924 B   ---   --   -----    wav  1.0000  bd04-02-04d1t06.wav
+     7:30.01       79382396 B   ---   --   -----    wav  1.0000  bd04-02-04d1t07.wav
+     6:30.25       68854844 B   ---   --   -----    wav  1.0000  bd04-02-04d1t08.wav
+     6:14.65       66126524 B   ---   --   -----    wav  1.0000  bd04-02-04d1t09.wav
+     6:30.06       68810156 B   ---   --   -----    wav  1.0000  bd04-02-04d1t10.wav
+     8:11.70       86777084 B   ---   --   -----    wav  1.0000  bd04-02-04d1t11.wav
+     5:50.61       61883516 B   ---   --   -----    wav  1.0000  bd04-02-04d1t12.wav
+     6:32.40       69242924 B   ---   --   -----    wav  1.0000  bd04-02-04d1t13.wav
+     6:05.49       64501292 B   ---   --   -----    wav  1.0000  bd04-02-04d2t01.wav
+    10:31.48      111421340 B   ---   --   -----    wav  1.0000  bd04-02-04d2t02.wav
+     4:58.35       52649564 B   ---   --   -----    wav  1.0000  bd04-02-04d2t03.wav
+     7:30.26       79441196 B   ---   --   -----    wav  1.0000  bd04-02-04d2t04.wav
+     7:25.38       78587420 B   ---   --   -----    wav  1.0000  bd04-02-04d2t05.wav
+   115:16.12     1220011416 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

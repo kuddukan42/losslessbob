@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-06-17a.fllacf 
+=================== 
+=================== 
+=================== 
+9a6c383a29b8fc79942a1c0cd07cd8f2  bd00-06-17a-LB-3185.txt
+b19abe8973c829a1789937c339356320  bdylan 06-17-00 freq.jpg
+1731bf7cd1394adf6205700e56ea7d4e  bdylan 06-17-00 spectral.jpg
+e3aa03f86555afcfee6de66136bdfa47  Bob Dylan 06-17-00 disc1 eac.LOG
+630856d448fb62c820072b898fee8124  Bob Dylan 06-17-00 disc2 eac.LOG
+a5930b130aeed4b42502ba329a62e1cd  Bob Dylan 06-17-00.info.txt
+24280dafd5677ce508d403a8958fbe00  disc 1\01 Somebody Touched Me.flac
+fd73c7643e43d273cf4a6d32de3ffea7  disc 1\02 Long Black Veil.flac
+09541d1c0aa73dc5c9162927622ba467  disc 1\03 Desolation Row.flac
+cba9c716bf6220491b399d84b1956d88  disc 1\04 Its All Ove Now Baby Blue.flac
+0c70fadc9b754478eae2dc95185f6b07  disc 1\05 Tangled Up In Blue.flac
+284899137807bdd3ce7c1415393c139b  disc 1\06 Searching For a Soldiers Grave.flac
+4bd06b72e5b1ef2c45f214af501861c4  disc 1\07 Country Pie.flac
+cd59c17602cc3b5c367cfaf7c2a693bf  disc 1\08 Tough Mama.flac
+936021029cf43f2dbf7da86857dc5397  disc 1\09 Down in the Flood.flac
+624da48d203818081dadffbe778cda65  disc 1\10 Tonight Ill Be Staying Here With You.flac
+968f20ebfe400392e5eae996dbd8fac4  disc 1\11 Drifters Escape.flac
+5e3b1f32c4b4abbc5186842c23078097  disc 1\12 Band intro.flac
+6deb72edd7d397207fc7b372fbf91e4b  disc 1\13 Leopard-Skin Pill-Box Hat.flac
+3c36fc39bd59f62f9f3fbb899c0665b3  disc 2\01 Ballad of a Thin Man.flac
+557842bacc52840bf04fde53fb4293e8  disc 2\02 Like a Rolling Stone.flac
+3eeb4c04195ec500302562c86f007f4e  disc 2\03 Blowin in the Wind.flac
+b8376b42e7b69bc538e0c8ab31c3eb9e  disc 2\04 Not Fade Away.flac
+e1b40937617a1faca68517104a25ded2  disc 2\05 Rainy Day Women No 12 and 35.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-17a.fllacf\disc 2 
+=================== 
+=================== 
+=================== 
+01 Ballad of a Thin Man.flac:df502853765e52e6681a7612beb621e1
+02 Like a Rolling Stone.flac:ffb3dad91650ab6f19934e36bee7a796
+03 Blowin in the Wind.flac:f1415ec16a37664fc31a81604daae395
+04 Not Fade Away.flac:a6da043a86041a30789f204426cbba35
+05 Rainy Day Women No 12 and 35.flac:753461323ff84dfa74fd817e29740a34
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-06-17a.fllacf\disc 1 
+=================== 
+=================== 
+=================== 
+01 Somebody Touched Me.flac:bec610c4d73ac683ee6808ebc18d1f71
+02 Long Black Veil.flac:85284301f29be2442b884bbf60d7fcbf
+03 Desolation Row.flac:4f76f8fbea8b9086da9739ca719bd57d
+04 Its All Ove Now Baby Blue.flac:0f69270360fabbeb95231da2f3b3735e
+05 Tangled Up In Blue.flac:214b8ee6ec34b6b41815152c9b004e1d
+06 Searching For a Soldiers Grave.flac:849d39b004b3d7a714dd7643e3965b0d
+07 Country Pie.flac:3badf6947bebadcaaa1b6dbebff82ec9
+08 Tough Mama.flac:d024576cb34f82268fba19852ed93196
+09 Down in the Flood.flac:f8ed5bd1ce579398a0249bbc2ac46fe8
+10 Tonight Ill Be Staying Here With You.flac:3c4a852307dd837c699a414f8eeab73c
+11 Drifters Escape.flac:5f07410572e914f86b72ae0b5f43c443
+12 Band intro.flac:9ce274ad8906abae7e3bb531334d8e30
+13 Leopard-Skin Pill-Box Hat.flac:c3ca0c0bad12e77b54372dae4d05e46b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-17a.fllacf\disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:01.44       74367932 B   ---   --   ---xx   flac  0.4696  01 Ballad of a Thin Man.flac
+     7:09.12       75703868 B   ---   --   ---xx   flac  0.5179  02 Like a Rolling Stone.flac
+     6:06.70       64727084 B   ---   --   ---xx   flac  0.4416  03 Blowin in the Wind.flac
+     4:22.41       46313276 B   ---   --   ---xx   flac  0.5467  04 Not Fade Away.flac
+     8:02.39       85116572 B   ---   --   ---xx   flac  0.5226  05 Rainy Day Women No 12 and 35.flac
+    32:42.56      346228732 B                            0.4983  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-06-17a.fllacf\disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:04.03       32464700 B   ---   --   ---xx   flac  0.4580  01 Somebody Touched Me.flac
+     3:47.40       40136924 B   ---   --   ---xx   flac  0.4508  02 Long Black Veil.flac
+     8:49.68       93475580 B   ---   --   ---xx   flac  0.4514  03 Desolation Row.flac
+     7:48.26       82616396 B   ---   --   ---xx   flac  0.4349  04 Its All Ove Now Baby Blue.flac
+     7:43.20       81720284 B   ---   --   ---xx   flac  0.5140  05 Tangled Up In Blue.flac
+     3:19.67       35261228 B   ---   --   ---xx   flac  0.4200  06 Searching For a Soldiers Grave.flac
+     2:52.63       30489020 B   ---   --   ---xx   flac  0.4762  07 Country Pie.flac
+     4:45.42       50372828 B   ---   --   ---xx   flac  0.4638  08 Tough Mama.flac
+     3:47.54       40169852 B   ---   --   ---xx   flac  0.5154  09 Down in the Flood.flac
+     6:01.29       63748652 B   ---   --   ---xx   flac  0.4472  10 Tonight Ill Be Staying Here With You.flac
+     4:17.59       45473612 B   ---   --   ---xx   flac  0.5310  11 Drifters Escape.flac
+     0:23.56        4188956 B   ---   --   ---xx   flac  0.4554  12 Band intro.flac
+     8:24.40       88999724 B   ---   --   ---xx   flac  0.4985  13 Leopard-Skin Pill-Box Hat.flac
+    65:06.42      689117756 B                            0.4722  (13 files)
+=================== 
+=================== 
+=================== 

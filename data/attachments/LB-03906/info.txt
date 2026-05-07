@@ -1,0 +1,35 @@
+Bob Dylan
+Yokohama, Japan
+Pacifico-Yokohama
+March 2, 2001
+
+CD1 70:33
+
+   1. Duncan And Brady (acoustic)
+   2. To Ramona (acoustic) (Larry on mandolin)
+   3. It's Alright Ma, (I'm Only Bleeding) (acoustic)
+   4. If You See Her, Say Hello (Larry on fiddle)
+   5. Simple Twist Of Fate (Larry on pedal steel)
+   6. Silvio
+   7. A Hard Rain's A-Gonna Fall (acoustic)
+   8. Don't Think Twice, It's All Right (acoustic)
+   9. Lay, Lady, Lay (Larry on pedal steel)
+  10. Drifter's Escape (Bob on harp)
+  11. One Too Many Mornings (acoustic) (Bob on harp)
+  12. Leopard-Skin Pill-Box Hat
+
+CD2 40:29
+ 
+      (encore)
+
+  13. Love Sick
+  14. Like A Rolling Stone
+  15. If Dogs Run Free (acoustic) (Larry and Charlie on electric guitars)
+  16. All Along The Watchtower (Larry on pedal steel)
+  17. Forever Young (acoustic)
+  18. Highway 61 Revisited
+  19. Blowin' In The Wind (acoustic)
+
+Trade CDR > EAC (Secure) > WAV > FLAC > WAV > Audacity > WAV > FLAC (Aligned, Level 8)
+
+The last 2:31 of d1t12 (crowd noise pre-encore) was corrupted by a bad CDR rip so I removed it (no music is lost). (Disc 2 appears to be a clean rip.) There were annoying clicks at each track transition which I repaired. The recording is clipped during the louder parts, otherwise excellent sound.

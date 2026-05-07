@@ -1,0 +1,34 @@
+Bob Dylan
+91-02-12
+Hammersmith Odeon  London, England
+An offmaster copy of an audience recording by Legendary Taper B.
+
+Disk One
+Tangled Up In Blue / Lay Lady Lay / All Along The Watchtower / Simple Twist Of Fate / 
+Stuck Inside Of Mobile With The Memphis Blues Again / Wiggle Wiggle / Bob Dylan's Dream 
+(acoustic) / It's Alright, Ma (I'm Only Bleeding) (acoustic) / Tomorrow Is A Long Time 
+(acoustic w band) / 
+
+Disk Two
+Desolation Row (acoustic w band) / Everything Is Broken / Man In The Long Black Coat / 
+Seeing The Real You At Last / What Good Am I? / I Shall Be Released / Like A Rolling Stone /
+The Times They Are A-Changin' (acoustic w band) / Highway 61 Revisited
+
+bd-91-2-12-d1 (Track 01).flac:cbea8d8e3ed523128cdd0facd941de8f
+bd-91-2-12-d1 (Track 02).flac:e75db0a8c139d1d145c7c7906d88bd19
+bd-91-2-12-d1 (Track 03).flac:7091a12226637881e171b819655aa087
+bd-91-2-12-d1 (Track 04).flac:fe14796e0d862d7e2b995b9a615ec392
+bd-91-2-12-d1 (Track 05).flac:a2c6b68bdb6b3aba8df7f0ca43066bd8
+bd-91-2-12-d1 (Track 06).flac:2fbef6a86ccf9141c694f98edc350d35
+bd-91-2-12-d1 (Track 07).flac:e3faf9ed61d6b115f1daf18ea9747189
+bd-91-2-12-d1 (Track 08).flac:da7c286bcbda12f20666b2bc739eeaa2
+bd-91-2-12-d1 (Track 09).flac:4dd25e7644d87c14ab985cd5a77ab85d
+bd-91-2-12-d2 (Track 01).flac:5f26a5323393fa9e9c8dafc7435e0eaf
+bd-91-2-12-d2 (Track 02).flac:822fdd3d460a0be725884b7c6390ac5a
+bd-91-2-12-d2 (Track 03).flac:b3f96a2224e6d9b1cd62c1b3f8bf018f
+bd-91-2-12-d2 (Track 04).flac:7469b42c0e00bb584c8cdd56ce721f22
+bd-91-2-12-d2 (Track 05).flac:179d90f61f6047be158725519cab6879
+bd-91-2-12-d2 (Track 06).flac:05eda99eb74cb5a0d43b634f2e1e2bc6
+bd-91-2-12-d2 (Track 07).flac:e864186a69f34ce3821cd1e243f83e91
+bd-91-2-12-d2 (Track 08).flac:1506834af8b6f6ea281bcd78330ad2d9
+bd-91-2-12-d2 (Track 09).flac:7525ab17a14f1c40705c7cff4ce2b20a

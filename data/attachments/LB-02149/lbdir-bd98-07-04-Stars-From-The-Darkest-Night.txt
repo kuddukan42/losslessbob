@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-07-04-Stars-From-The-Darkest-Night 
+=================== 
+=================== 
+=================== 
+e35e3fd8be9928cfc74e9cbe3c93b3d9  bd98-07-04-Stars-From-The-Darkest-Night.txt
+3a313d9290b244702d33ca86a8afc303  d1\Track01.shn
+42f1c28d2a245a051b7da26c0e978b46  d1\Track02.shn
+b185e798cde40a6b610a7a8db9f88b65  d1\Track03.shn
+627ee835af7f2d4bbb76d525db736ac0  d1\Track04.shn
+c174958c5414a0be9b5909eb83a12f3b  d1\Track05.shn
+a8a1efc04f0f157ff5a6ceadbe18f830  d1\Track06.shn
+3105ab5986c5e1cc872feb185c92e9c4  d1\Track07.shn
+975eb5b735b9ac68f834552933c44b5a  d1\Track08.shn
+f55936002af9ea44eb8a5e05e4bfa86e  d1\Track09.shn
+c3aa4e0bb57ca551cf42e6b44c1e7d69  d1\Track10.shn
+3789f36928b55d8fc5eed073b130e8ad  d1\Track11.shn
+f215137aa30a482b28041c29a24a4011  d1\noname.md5
+1079729c9fb4d6013f2bffd07b7ed638  d2\Track01.shn
+d806be301bd8f7ba02cde02aa4223e67  d2\Track02.shn
+700a3a636e91afbbdd7ca2c3767d9054  d2\Track03.shn
+99a1b41b520bcffd0da30b51a7f0719e  d2\Track04.shn
+6ea1bde82a7a2088c9ec1765bfb00841  d2\Track05.shn
+d48d780a8f288512fd31953249781772  d2\noname.md5
+db81889af807075808c0d122bc2ffe34  New Text Document.txt
+96b44f2ac94164df514c1cf3cb538f86  readme.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-07-04-Stars-From-The-Darkest-Night\d2 
+=================== 
+=================== 
+=================== 
+05be0d90a0c2d46c05fefe8563dce88a  [shntool]  Track01.wav
+a3a3573327becad77a715b805e2d14ca  [shntool]  Track02.wav
+04263ea9a15dcb3b5433e724eb823ac6  [shntool]  Track03.wav
+c53f2258349ba7f28ae890d2b8cf9189  [shntool]  Track04.wav
+5acb1b399550557c17514c40281e46bb  [shntool]  Track05.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd98-07-04-Stars-From-The-Darkest-Night\d1 
+=================== 
+=================== 
+=================== 
+c233e2b48210b373027f408689c01d8a  [shntool]  Track01.wav
+83adc98e54afde3f16c738b984721328  [shntool]  Track02.wav
+1f14bcfcb81778015e8c758c8a5c6ea3  [shntool]  Track03.wav
+8daaa693ace311c1fd0c03fc75146987  [shntool]  Track04.wav
+d7b2b97b046946a44fe05c5ef90c3e8a  [shntool]  Track05.wav
+258074ea749074ab8cc367bec72d6dff  [shntool]  Track06.wav
+b040b7171a83fae28e094bc20d453ff0  [shntool]  Track07.wav
+199b0232244d8fc97656cd6ac9ee4683  [shntool]  Track08.wav
+4128d9309c5cc8c975c744a1080e1814  [shntool]  Track09.wav
+b9e9dce095225f21202b15beb848b26b  [shntool]  Track10.wav
+e7bec7385f5c9494d83c4fe5f45683a5  [shntool]  Track11.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-04-Stars-From-The-Darkest-Night\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:48.03       71977656 B   -b-   --   -----    wav  1.0000  Track01.wav
+     5:29.67       58193228 B   ---   --   -----    wav  1.0000  Track02.wav
+     5:31.13       58419020 B   ---   --   -----    wav  1.0000  Track03.wav
+     6:21.54       67335452 B   ---   --   -----    wav  1.0000  Track04.wav
+     5:03.62       53595068 B   ---   --   -----    wav  1.0000  Track05.wav
+    29:14.49      309520424 B                            1.0000  (5 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-07-04-Stars-From-The-Darkest-Night\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:36.57       48819868 B   -b-   --   -----    wav  1.0000  Track01.wav
+     4:28.30       47345804 B   ---   --   -----    wav  1.0000  Track02.wav
+     7:00.20       74135084 B   ---   --   -----    wav  1.0000  Track03.wav
+     6:49.48       72260540 B   ---   --   -----    wav  1.0000  Track04.wav
+     5:53.72       62438588 B   ---   --   -----    wav  1.0000  Track05.wav
+     7:18.38       77352620 B   ---   --   -----    wav  1.0000  Track06.wav
+     7:04.33       74871260 B   ---   --   -----    wav  1.0000  Track07.wav
+     6:08.66       65070476 B   ---   --   -----    wav  1.0000  Track08.wav
+     6:19.69       67017932 B   ---   --   -----    wav  1.0000  Track09.wav
+     9:32.14      100933772 B   ---   --   -----    wav  1.0000  Track10.wav
+     5:40.68       60134980 B   -b-   --   -----    wav  1.0000  Track11.wav
+    70:53.64      750380924 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 

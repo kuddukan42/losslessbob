@@ -1,0 +1,10 @@
+1985abe5fd7b39406fd8d8efdc41f7f8  AUDIO.ffp
+6c625661ff089059e9f0b86f9b839e79  AUDIO.md5
+f82639f2d598a2c894b8b1511f46d1be  AUDIO.txt
+2f25be29d332b2d0ca6c016fc2aee33c  BOB DYLAN - Guitar Legends EXPO '92 DVD & Audio_Info.txt
+8e6ea2fcbb36a4c90fc034ec94e163af  Track01_Dylan - Expo '92_17.10.91.flac
+e7a51429ef89468d246becc4a40755d0  Track02_Dylan - Expo '92_17.10.91.flac
+bb643f6eee5664142876db2fe7dcd5f7  Track03_Dylan - Expo '92_17.10.91.flac
+a41410748de949382d0ad005f8544b80  Track04_Dylan - Expo '92_17.10.91.flac
+76b5057a465087f8220c3204644ad303  Track05_Dylan - Expo '92_17.10.91.flac
+9ad0c6f985cd3182a5f6253529d4e14c  Track06_Dylan - Expo '92_17.10.91.flac

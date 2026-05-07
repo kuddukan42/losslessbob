@@ -1,0 +1,98 @@
+===================
+===================
+===================
+=== bd-1996-05-10-Erie-HG.md5
+===================
+===================
+===================
+46f87832215534a04ce0c0db9f5de1f0 *Disc1\bd-1996-05-10-HG-d1t01.flac
+1a649f6132573948d370f9850ac8c6e6 *Disc1\bd-1996-05-10-HG-d1t02.flac
+6f223205a4601567c75b9c0226fe2e57 *Disc1\bd-1996-05-10-HG-d1t03.flac
+e1fd5ad036c04448f9689b9da06ed301 *Disc1\bd-1996-05-10-HG-d1t04.flac
+e6f702a7a5ed16e7a3b2c03ba2cc9a43 *Disc1\bd-1996-05-10-HG-d1t05.flac
+2a19b3b6e98f4df79afe2a4457396e95 *Disc1\bd-1996-05-10-HG-d1t06.flac
+216242a14d86304489365d01fb89f304 *Disc1\bd-1996-05-10-HG-d1t07.flac
+e413426f0ea819d0b709eca2380b4e92 *Disc1\bd-1996-05-10-HG-d1t08.flac
+f468fced9ec6b93222286c8b21a28b0b *Disc1\bd-1996-05-10-HG-d1t09.flac
+d1c10f6ff56b724c176daeb98f31b0bf *Disc2\bd-1996-05-10-HG-d2t01.flac
+128c7e52e7f45751578087b29e3dea6a *Disc2\bd-1996-05-10-HG-d2t02.flac
+ad10356bd01d96e81ccaade5e512315a *Disc2\bd-1996-05-10-HG-d2t03.flac
+a21e66aeb46e63d92b0e27388bc6934e *Disc2\bd-1996-05-10-HG-d2t04.flac
+4b04fe6ed5371a07029eedceeda03cce *Disc2\bd-1996-05-10-HG-d2t05.flac
+e6776fa4be1196b181f3dad1a9c077b2 *Disc2\bd-1996-05-10-HG-d2t06.flac
+826921cb359817314a8a3e2c84ca930d *Erie05-10-96(HG)-B.JPG
+e76c36f7bde9acb13a13de9675f518ac *Erie05-10-96(HG)-F.JPG
+===================
+===================
+===================
+=== bd-1996-05-10-Erie-HG.txt
+===================
+===================
+===================
+Bob Dylan
+Warner Theater
+Erie, Pennsylvania
+May 10, 1996
+
+Holy Grail Series: No Man Sees My Face And Lives
+
+Sound Quality: Excellent
+
+
+This set is based on the same recording as LB-3719.
+
+
+Disk 1
+
+01 Crash On The Levee (Down In The Flood)
+02 Man In The Long Black Coat
+03 All Along The Watchtower
+04 You're A Big Girl Now
+05 Pledging My Time
+06 Silvio
+07 Mr. Tambourine Man (Acoustic W Band)
+08 Desolation Row (Acoustic W Band)
+09 Don't Think Twice, It's All Right (Acoustic W Band)
+
+Disc 2
+
+01 Maggie's Farm
+02 I And I
+03 Obviously Five Believers
+04 Alabama Getaway (Robert Hunter/Jerry Garcia)
+05 My Back Pages (Acoustic W Band)
+06 Rainy Day Women # 12 & 35
+
+============================
+============================
+============================
+=== md5 for bd-1996-05-10-Erie-HG
+============================
+============================
+============================
+
+
+46f87832215534a04ce0c0db9f5de1f0 *Disc1/bd-1996-05-10-HG-d1t01.flac
+1a649f6132573948d370f9850ac8c6e6 *Disc1/bd-1996-05-10-HG-d1t02.flac
+6f223205a4601567c75b9c0226fe2e57 *Disc1/bd-1996-05-10-HG-d1t03.flac
+e1fd5ad036c04448f9689b9da06ed301 *Disc1/bd-1996-05-10-HG-d1t04.flac
+e6f702a7a5ed16e7a3b2c03ba2cc9a43 *Disc1/bd-1996-05-10-HG-d1t05.flac
+2a19b3b6e98f4df79afe2a4457396e95 *Disc1/bd-1996-05-10-HG-d1t06.flac
+216242a14d86304489365d01fb89f304 *Disc1/bd-1996-05-10-HG-d1t07.flac
+e413426f0ea819d0b709eca2380b4e92 *Disc1/bd-1996-05-10-HG-d1t08.flac
+f468fced9ec6b93222286c8b21a28b0b *Disc1/bd-1996-05-10-HG-d1t09.flac
+d1c10f6ff56b724c176daeb98f31b0bf *Disc2/bd-1996-05-10-HG-d2t01.flac
+128c7e52e7f45751578087b29e3dea6a *Disc2/bd-1996-05-10-HG-d2t02.flac
+ad10356bd01d96e81ccaade5e512315a *Disc2/bd-1996-05-10-HG-d2t03.flac
+a21e66aeb46e63d92b0e27388bc6934e *Disc2/bd-1996-05-10-HG-d2t04.flac
+4b04fe6ed5371a07029eedceeda03cce *Disc2/bd-1996-05-10-HG-d2t05.flac
+e6776fa4be1196b181f3dad1a9c077b2 *Disc2/bd-1996-05-10-HG-d2t06.flac
+826921cb359817314a8a3e2c84ca930d *Erie05-10-96(HG)-B.JPG
+e76c36f7bde9acb13a13de9675f518ac *Erie05-10-96(HG)-F.JPG
+
+
+
+
+===================
+===================
+===================

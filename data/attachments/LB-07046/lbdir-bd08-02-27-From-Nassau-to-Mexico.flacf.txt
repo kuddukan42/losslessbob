@@ -1,0 +1,113 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-02-27-From-Nassau-to-Mexico.flacf 
+=================== 
+=================== 
+=================== 
+bf2fc44ec4d5bdc35e09203817e61a01  Artwork\f-42b.jpg
+539be7f2dc1ed88a5b9395effa96de43  Artwork\f-42cd.jpg
+073dff91d9278dea9c0350fda56decd1  Artwork\f-42f.jpg
+4eb67c286e94485b9b630be5846c5e71  Artwork\f-42ib.jpg
+74c57de745f6bd4aead38e6dd4387922  Artwork\f-42l.jpg
+742ab82f09b95d305be72ce3700e2112  bd-From Nassau to Mexico-d1\bd-From Nassau to Mexico-d1.md5
+53bace520b828ef6c51abc657287b4be  bd-From Nassau to Mexico-d1\Track01.flac
+f8fd6c24aea8b749ed55740c0b044690  bd-From Nassau to Mexico-d1\Track02.flac
+7ed24e27729c043502c12e27fd0f3ae9  bd-From Nassau to Mexico-d1\Track03.flac
+991f94a1ced58732a71651c9feb9eadc  bd-From Nassau to Mexico-d1\Track04.flac
+39e20dc9baa81536b5cd46caaf7cd636  bd-From Nassau to Mexico-d1\Track05.flac
+f57fc8fa44deae265fab1272bc3e73f7  bd-From Nassau to Mexico-d1\Track06.flac
+c19e26a3856df043bef98cabd43c48a8  bd-From Nassau to Mexico-d1\Track07.flac
+a655d2776491474a267d59e2fb9875e8  bd-From Nassau to Mexico-d1\Track08.flac
+e62c683531f9e8c6f23fe1c1a95bc74c  bd-From Nassau to Mexico-d1\Track09.flac
+a29fd1498dd29643c018c71649ce827c  bd-From Nassau to Mexico-d1\Track10.flac
+1db24ccb9dec7012f07c312da3f0500e  bd-From Nassau to Mexico-d1\Track11.flac
+b75f4d32f29417045bd55a106d6b894f  bd-From Nassau to Mexico-d2\bd-From Nassau to Mexico-d2.md5
+96a4d9317120f917c2502c575bda6047  bd-From Nassau to Mexico-d2\Track01.flac
+32fb7ada0e443574105497979807d387  bd-From Nassau to Mexico-d2\Track02.flac
+72f8bbd02a6f0d7d34a460293bddb809  bd-From Nassau to Mexico-d2\Track03.flac
+9dc3318c14806b173be06b1bba68ca9c  bd-From Nassau to Mexico-d2\Track04.flac
+d32cf8c2ff129136e9b75a2c7117d057  bd-From Nassau to Mexico-d2\Track05.flac
+3f0fc45c8d3ec4bb13103012f6db6222  bd-From Nassau to Mexico-d2\Track06.flac
+9ae67a41e9cac50cf1d62da8a593c3ed  bd-From Nassau to Mexico-d2\Track07.flac
+03e0fa6001843995faca2fcf87c7b943  bd-From Nassau to Mexico-d2\Track08.flac
+726abf7ee7dbf97f3aeb483a70ecc6a6  bd-From Nassau to Mexico-d2\Track09.flac
+7447b1decfc4f9fb75b0d9639af9649d  bd-From Nassau to Mexico-d2\Track10.flac
+c2e6649d9c378a3e0f2e5228068bde20  bd-From Nassau to Mexico.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-02-27-From-Nassau-to-Mexico.flacf\bd-From Nassau to Mexico-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:687f4c1b58165c0aadec6090938a5378
+Track02.flac:ded5d2b3bdcb0adf17407e6c0842a028
+Track03.flac:83a5053f5e08099345b7162c9ef4fca9
+Track04.flac:342db96667d2595ff2683adba1de1521
+Track05.flac:45919db77ef8ebd7f01286a4b917649b
+Track06.flac:1d9916ec6387b4d454f95947edec45d6
+Track07.flac:83390a8680eec8afe3f76e39880bc17f
+Track08.flac:80e4e4502382968e734c41231ff71fc6
+Track09.flac:eb16cab761783c7a75f895dc78167750
+Track10.flac:d17740299b4d69f6de8fe1881eea3255
+Track11.flac:c4f02587172633e075e42b15dfa3cdc2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-02-27-From-Nassau-to-Mexico.flacf\bd-From Nassau to Mexico-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:4ed391fe96cf817b0f347ac62040d12c
+Track02.flac:dbfe46080b7ff3cfe27b2ceb289d4686
+Track03.flac:c2a0b233aa8db38b186528f0d3c5fd7e
+Track04.flac:d3dd3bbdfde670d84fdd9edcd9f10863
+Track05.flac:6869c0d68d49e32f0a4b76c800123f94
+Track06.flac:078a3e739070d9cbc01f4873b6806e6a
+Track07.flac:78f54cc3923eb3e6055979e670f7cac4
+Track08.flac:43b86442d39d95f226a4b51327a32689
+Track09.flac:58d1b873c82486d3937db0714c6db6da
+Track10.flac:b6c2275cb918e030c0bf3e1d40ae61e2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-02-27-From-Nassau-to-Mexico.flacf\bd-From Nassau to Mexico-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:53.21        9398636 B   ---   --   ---xx   flac  0.4511  Track01.flac
+     4:40.51       49511996 B   ---   --   ---xx   flac  0.5689  Track02.flac
+     5:25.09       57351212 B   ---   --   ---xx   flac  0.5316  Track03.flac
+     5:04.22       53677388 B   ---   --   ---xx   flac  0.5548  Track04.flac
+     5:49.00       61563644 B   ---   --   ---xx   flac  0.5291  Track05.flac
+     6:57.28       73624700 B   ---   --   ---xx   flac  0.5816  Track06.flac
+     7:15.01       76736396 B   ---   --   ---xx   flac  0.4702  Track07.flac
+     6:03.71       64200236 B   ---   --   ---xx   flac  0.4546  Track08.flac
+     5:41.54       60279452 B   ---   --   ---xx   flac  0.5721  Track09.flac
+     6:12.39       65712572 B   ---   --   ---xx   flac  0.4227  Track10.flac
+     6:20.69       67194332 B   ---   --   ---xx   flac  0.5781  Track11.flac
+    60:23.65      639250564 B                            0.5232  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-02-27-From-Nassau-to-Mexico.flacf\bd-From Nassau to Mexico-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:59.36       73996316 B   ---   --   ---xx   flac  0.5362  Track01.flac
+     6:00.70       63668684 B   ---   --   ---xx   flac  0.6056  Track02.flac
+     7:33.69       80071532 B   ---   --   ---xx   flac  0.5157  Track03.flac
+     5:46.68       61194380 B   ---   --   ---xx   flac  0.5759  Track04.flac
+     9:58.18      105529580 B   ---   --   ---xx   flac  0.5456  Track05.flac
+     7:15.00       76734044 B   ---   --   ---xx   flac  0.6080  Track06.flac
+     6:15.45       66255884 B   ---   --   ---xx   flac  0.5798  Track07.flac
+     4:53.33       51762860 B   ---   --   ---xx   flac  0.5405  Track08.flac
+     5:40.48       60088940 B   ---   --   ---xx   flac  0.5285  Track09.flac
+     6:40.13       70590620 B   ---   --   ---xx   flac  0.5775  Track10.flac
+    67:04.25      709892840 B                            0.5605  (10 files)
+=================== 
+=================== 
+=================== 

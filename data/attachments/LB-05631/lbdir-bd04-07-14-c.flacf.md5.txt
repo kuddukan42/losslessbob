@@ -1,0 +1,18 @@
+2149ca2aad7dc1aa95061533c104ba3d  cd-1\cd-1.md5
+9a127fd537880484fcbfd7c5bb715b7e  cd-1\Track01.flac
+200968dfd062a2935ff52b1ccc2a9882  cd-1\Track02.flac
+147976ebba98e56a5afbe20762a23244  cd-1\Track03.flac
+9675285c0c41d5f832bca126e5d54104  cd-1\Track04.flac
+2a78ff7a2462d2ec65d24f98320d0e98  cd-1\Track05.flac
+2b84918875b821cfba95ad596e71d785  cd-1\Track06.flac
+b7698747ae9a614ba3b56b4c0bdf3fa2  cd-1\Track07.flac
+4fdcd0801c24642dccc83a56c76eb22e  cd-1\Track08.flac
+b078452d1dce2eeb596b7c376b7f31cb  cd-1\Track09.flac
+e10049ef37bc301730c8758e808f9ed4  cd-1\Track10.flac
+1afe38ed77c3570564229f97f28761d6  cd-1\Track11.flac
+fe70c0d6d9064906129422e7003678ab  cd-1\Track12.flac
+8614fe00dc8913304c14ddada8fc3a34  cd-1\Track13.flac
+e4af39fec2aaf5abca05a79c68753165  cd-2\cd-2.md5
+e5977535be33386e117a55ba5b5c4f49  cd-2\Track01.flac
+3fb3d90e7422c98f605c806f2293750f  cd-2\Track02.flac
+c73f76f97eecc4979031bc056edb37b3  Madrid, Spain 14 July 2004.txt

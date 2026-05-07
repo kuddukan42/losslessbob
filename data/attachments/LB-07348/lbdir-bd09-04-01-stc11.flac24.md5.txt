@@ -1,0 +1,20 @@
+e5ab3ce57e32e4c7ae309c253afb3eee  bd2008-04-01.stc11.flac24.md5
+e4edb0dc694df051e309980893a6573c  bd2009-04-01.24bit.t01 (introduction).flac
+13f110dd03261febb023324e1b107b98  bd2009-04-01.24bit.t02 The Wicked Messenger.flac
+0f5c8d10399d08a3ee20a29b76ac153f  bd2009-04-01.24bit.t03 When I Paint My Masterpiece.flac
+6439914b5c0ca25ddc28c7e2df743248  bd2009-04-01.24bit.t04 You Ain't Goin' Nowhere.flac
+9f0715e1eefcdfe3391c11466f6111cb  bd2009-04-01.24bit.t05 The Levee's Gonna Break.flac
+37eb650f728fbb4b97797c441a784b9c  bd2009-04-01.24bit.t06 My Back Pages.flac
+4df536ef9118b1e5041375ad33136bf2  bd2009-04-01.24bit.t07 Things Have Changed.flac
+9baaf5374834729f25f7ffcba77a32f5  bd2009-04-01.24bit.t08 Tweedle Dee & Tweedle Dum.flac
+f1b99cb91438bff6074d81c60d5afb7d  bd2009-04-01.24bit.t09 Beyond the Horizon.flac
+c343e03a15e952fb071f006c5f969ea4  bd2009-04-01.24bit.t10 Stuck Inside of Mobile with the Memphis Blues Again.flac
+4af1bcbbb3025c870925042259dbb42f  bd2009-04-01.24bit.t11 Love Sick.flac
+8a283f4b2fd5f3c62dc072bf26c1c85f  bd2009-04-01.24bit.t12 Highway 61 Revisited.flac
+9c885b836470520794b2a07338b88376  bd2009-04-01.24bit.t13 Workingman's Blues #2.flac
+f78a907c42c951b449b758914d7b03e9  bd2009-04-01.24bit.t14 Thunder on the Mountain.flac
+bb9125404d66b572eb87d7fe89eb5587  bd2009-04-01.24bit.t15 Like a Rolling Stone.flac
+828b396a77a7004764bebbe9f63f6b81  bd2009-04-01.24bit.t16 All Along the Watchtower.flac
+59242daa7d5a24b0e9bdf41171610e79  bd2009-04-01.24bit.t17 Spirit on the Water.flac
+b2f48a4d8704e1c39de1b28730e91ec6  bd2009-04-01.24bit.t18 Blowin' in the Wind.flac
+dcb03f5ce6011682b4fc4a055e10e8c8  bd2009-04-01info.txt

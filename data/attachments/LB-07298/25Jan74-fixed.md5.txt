@@ -1,0 +1,30 @@
+f78b9be0b4643fcd1419d52aa0dede92 *25 Jan 1974.txt
+f26678e9d475928ccfb8de4ce669b07f *D1\Track01.flac
+e48c714dd7d2cee16215b375462b93d1 *D1\Track02.flac
+ad6a2b5733160ea7ca9b5b91bd33f8f7 *D1\Track03.flac
+53b4550790031dcac69b6bf886195706 *D1\Track04.flac
+9f9cae9b636a86dee1cee01e72a96652 *D1\Track05.flac
+c4a588ec078609f01ca4a422d3161afa *D1\Track06.flac
+c88318a2d0845d01f8184287fe8af67d *D1\Track07 band1974-01-25 (T-79) t01.flac
+43a3f8089e1e4b0c0fc91b87028690ae *D1\Track08 band1974-01-25 (T-79) t02.flac
+d8111ef0e90af917fdc7aed9c0ed1865 *D1\Track09 band1974-01-25 (T-79) t03.flac
+3eae2211bdf7e6fcd9e7b6c1da579b5c *D1\Track10 band1974-01-25 (T-79) t04.flac
+654a58a4dfeb87d85cc93855e408c761 *D1\Track11 band1974-01-25 (T-79) t05.flac
+c45d60adb730732ca4f99a9828047585 *D1\Track12 band1974-01-25 (T-79) t06.flac
+e4efd8f618dfb4310b27b66e23424194 *D1\Track13.flac
+7387bfcc14e2af19b4cf827e5ec33d3d *D1\Track14.flac
+c213bb5af843147d01c3bcd4faa8631f *D1\Track15.flac
+710141240e552758188cf3544e6271d6 *D2\Track01.flac
+3d5489e314b674571c28ffa44d764bb2 *D2\Track02.flac
+eaf4a36f30946da8dc44ab0ecbf29115 *D2\Track03.flac
+69cbc458d2911f6ce78a3baa1c387ee8 *D2\Track04.flac
+e460dc1a9082fd79ffbd6d9a33e9dc01 *D2\Track05.flac
+6494dcbf21b25ebd80fe6ced6472a987 *D2\Track06 band1974-01-25 (T-79) t07.flac
+beda4549dbdd86fffb3368be51ea4ade *D2\Track07 band1974-01-25 (T-79) t08.flac
+8d31c53b3ae08e7c02548066a169dc53 *D2\Track08 band1974-01-25 (T-79) t09.flac
+d86599b2add43d04de0213975f16f9b2 *D2\Track09 band1974-01-25 (T-79) t10.flac
+caee86b5f9bbfd23b90e089a0b6f8904 *D2\Track10.flac
+23515336a8eeaa92800b5dc79b3dcb44 *D2\Track11.flac
+a3a940179a01193328ed860b859248eb *D2\Track12.flac
+a4fdcf9ae45a545fc38e4c30b9e321d8 *D2\Track13.flac
+4821652f7bf3861f4f389f43144f7d73 *The Band 1974-01-25 TCCC Fort Worth TX (T-79).txt

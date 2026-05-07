@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-10-29-a.flacf 
+=================== 
+=================== 
+=================== 
+497fea2ec28cc30a8f952c39f25edd9b  CD1\01 Crash on the levee (down in the flood).flac
+e7a224980984b2e9b3a9854417516896  CD1\02 Tonight I'll be staying here with you.flac
+4929c052f6974a73f300862b514e6494  CD1\03 All along the watchtower.flac
+aa5ede70bec1cdfc3547c407b8d9c54e  CD1\04 Tears of rage.flac
+ea1fd0b9dc8a0e98bf4f590b2eb86fc9  CD1\05 It takes a lot to laugh, it takes a train to cry.flac
+c6f2cf8970c1b51ae818cf8426bee568  CD1\06 Silvio.flac
+7ec177d0cfcbf25fb10416b0b63d997d  CD1\07 Mr. Tambourine Man.flac
+c3005c97aa1d3d2dca2ec549c6a3ead2  CD1\08 Masters of war.flac
+bb703d605d1364f609712efc0a46e13a  CD1\09 Girl from The North Country.flac
+f2ced4d507dc39a8cfb5feaa62b1c9a4  CD1\10 Seeing the real you at last.flac
+7af63feec7808083e7c4fb335a0b2691  CD1\FLAC CD1.md5
+3037f8c077e8208eccc34339dd8aae74  CD2\11 Born in time.flac
+f3d32335e7e0f9ba41c8424977a74206  CD2\12 Obviously five believers.flac
+18d178f143deea958ecefca6e7e31585  CD2\13 Stuck inside of Mobile with the Memphis blues again.flac
+c5f7ba4f207278ea6427edfd88695536  CD2\14 Knockin' on heaven's door.flac
+a6f83609351e9d6a7e55378dc1c3395e  CD2\15 Rainy day women # 12 & 35.flac
+13426368e2b50f11575ed7c7b04f61b3  CD2\FLAC CD2.md5
+0a954e978f5830dea02e180d9f80278e  Info\1996-10-29 Civic Center Music Hall, Oklahoma City, Oklahoma, USA.md5
+fe99d906d1e21b71c3f23e5724ed6eab  Info\1996-10-29 Civic Center Music Hall, Oklahoma City, Oklahoma, USA.txt
+85db21b89cd5d59d50bf934fe55addff  Info\fingerprint.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-29-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Crash on the levee (down in the flood).flac:2d6d95f2852e40ffb3b63c38bc4e460e
+02 Tonight I'll be staying here with you.flac:19fcf124385bada60b994c3667d73993
+03 All along the watchtower.flac:15b1af3c7de7dbccfa902ab2b679ba57
+04 Tears of rage.flac:e14aa8a4b6aaa68cde22ae95a5029f54
+05 It takes a lot to laugh, it takes a train to cry.flac:b0f9fb20ea5002b6519171abc5851045
+06 Silvio.flac:462ed9cca71bebbc7b7d4ae57f5a1e53
+07 Mr. Tambourine Man.flac:bef656a12fd4760eb6a37916c40f57e5
+08 Masters of war.flac:3278e3e631eee3139542d3c5def6cb2f
+09 Girl from The North Country.flac:93c534d32de70b3256959e96887b0435
+10 Seeing the real you at last.flac:5609a865c16c65a16ceef7dff8c62703
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-10-29-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+11 Born in time.flac:a4f0ec677835424da16b26a79e447655
+12 Obviously five believers.flac:ae5d27a3052c641b288e6cd87ff69613
+13 Stuck inside of Mobile with the Memphis blues again.flac:f07ffc5ec0dcbba126cf6390b93cf5e6
+14 Knockin' on heaven's door.flac:f3771a715b5c2045a65af665f4a347cb
+15 Rainy day women # 12 & 35.flac:f57b06fea3acd23d07fb23291c7da0e3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-29-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:25.10       15017564 B   ---   --   ---xx   flac  0.5669  01 Crash on the levee (down in the flood).flac
+     5:50.36       61824716 B   ---   --   ---xx   flac  0.5511  02 Tonight I'll be staying here with you.flac
+     6:27.63       68415020 B   ---   --   ---xx   flac  0.5846  03 All along the watchtower.flac
+     9:13.72       97718588 B   ---   --   ---xx   flac  0.5656  04 Tears of rage.flac
+     7:59.37       84582668 B   ---   --   ---xx   flac  0.5717  05 It takes a lot to laugh, it takes a train to cry.flac
+     7:56.31       84039356 B   ---   --   ---xx   flac  0.6049  06 Silvio.flac
+     8:02.24       85081292 B   ---   --   ---xx   flac  0.5997  07 Mr. Tambourine Man.flac
+     6:41.69       70898732 B   ---   --   ---xx   flac  0.5530  08 Masters of war.flac
+     8:50.48       93604940 B   ---   --   ---xx   flac  0.5328  09 Girl from The North Country.flac
+     8:04.28       85443500 B   ---   --   ---xx   flac  0.5902  10 Seeing the real you at last.flac
+    70:32.43      746626376 B                            0.5727  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-10-29-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:27.11       68292716 B   ---   --   ---xx   flac  0.5364  11 Born in time.flac
+     9:27.21      100068236 B   ---   --   ---xx   flac  0.5579  12 Obviously five believers.flac
+    10:40.02      112900748 B   ---   --   ---xx   flac  0.5648  13 Stuck inside of Mobile with the Memphis blues again.flac
+    10:58.54      116198252 B   ---   --   ---xx   flac  0.5549  14 Knockin' on heaven's door.flac
+     8:52.25       93903644 B   ---   --   ---xx   flac  0.5864  15 Rainy day women # 12 & 35.flac
+    46:25.38      491363596 B                            0.5612  (5 files)
+=================== 
+=================== 
+=================== 

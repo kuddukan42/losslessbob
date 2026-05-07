@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-06-27-Spot.flacf 
+=================== 
+=================== 
+=================== 
+877d7992ed7d99a735c2afc53eb4fe62  bd06-06-27-Spot-LB-3857.txt
+6436622f6d7c796061ce76059998dafb  bd06-06-27.txt
+d47bb2efb1ce86f672ecbe158062d641  bd06-06-27d1tr01.flac
+9d2f9bf76afc1ae7fbf8c1c48083e13d  bd06-06-27d1tr02.flac
+cd823e104ff7421a2e23f5aae7653c70  bd06-06-27d1tr03.flac
+753fd2faa2f55877d1cd957e80abf6a6  bd06-06-27d1tr04.flac
+ecb8568d098d24e1ca4c9f6fe3111260  bd06-06-27d1tr05.flac
+c0ce7ea48143e9d558673187bcb2d970  bd06-06-27d1tr06.flac
+069c16fb056247d4207d9be7141278ee  bd06-06-27d1tr07.flac
+5f8edbe5d9478211e3b9a3d080c167a9  bd06-06-27d1tr08.flac
+7bf59551155cb1ef55d6c09db5f684d2  bd06-06-27d1tr09.flac
+a456fc69cb38930e3b372f272057d399  bd06-06-27d1tr10.flac
+b9dd7d8f6cd10fd7f3c3ff03897091c2  bd06-06-27d2tr01.flac
+6f0b721e3e7887427c1909342470923e  bd06-06-27d2tr02.flac
+268552b731abb497147f8dbdae3efb67  bd06-06-27d2tr03.flac
+398b17b26eb043b7b1808487cd360820  bd06-06-27d2tr04.flac
+0d927d2cc2a3a02eeb1ac974625752a9  bd06-06-27d2tr05.flac
+1e31df170e49ef8b13c50172e2476ca5  bd06-06-27d2tr06.flac
+4e51e3f9602f66df36e278adb7d98ac2  bd06-06-27fingerprint.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-06-27-Spot.flacf 
+=================== 
+=================== 
+=================== 
+bd06-06-27d1tr01.flac:a84275ff5c92ba26c18bde553304a493
+bd06-06-27d1tr02.flac:8c4442a586048e122ccfc0217fd2468c
+bd06-06-27d1tr03.flac:7ff4155bdfaddd08a2ef5dfdb9c1dcb8
+bd06-06-27d1tr04.flac:6417cbbd96d45da6618048e91cc4d50a
+bd06-06-27d1tr05.flac:b629b1aad3e5549341d88d2c7ae6402a
+bd06-06-27d1tr06.flac:ed1119ea15d203f9b10162075ea24d49
+bd06-06-27d1tr07.flac:5c3cdfa1f2b95626e5eff523a3c61115
+bd06-06-27d1tr08.flac:713e3c69812a4b2255e443de04e5c200
+bd06-06-27d1tr09.flac:556a8e2c2a22a231e09dc8569c584a87
+bd06-06-27d1tr10.flac:77f5c9441ebad69e13d650cb8e70eaf8
+bd06-06-27d2tr01.flac:d694c6a9975fc902541c605f77e76863
+bd06-06-27d2tr02.flac:8b12334a9e608b4b4c48bd84f096c531
+bd06-06-27d2tr03.flac:6cde36a5387d43fc268932c9eaeb5e13
+bd06-06-27d2tr04.flac:e5c407b0d734cbdfa0808a23c4a31164
+bd06-06-27d2tr05.flac:f382f54ae59db043f20041dbdd6ef056
+bd06-06-27d2tr06.flac:6bdbc29e7377cdd40b7f5f781efa2242
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-06-27-Spot.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:55.09        9723212 B   ---   --   ---xx   flac  0.5045  bd06-06-27d1tr01.flac
+     5:03.43       53550380 B   ---   --   ---xx   flac  0.5720  bd06-06-27d1tr02.flac
+     5:14.42       55488428 B   ---   --   ---xx   flac  0.5387  bd06-06-27d1tr03.flac
+     5:30.45       58317884 B   ---   --   ---xx   flac  0.5271  bd06-06-27d1tr04.flac
+     6:07.31       64811756 B   ---   --   ---xx   flac  0.5337  bd06-06-27d1tr05.flac
+     8:48.52       93261548 B   ---   --   ---xx   flac  0.5517  bd06-06-27d1tr06.flac
+     5:49.66       61718876 B   ---   --   ---xx   flac  0.5182  bd06-06-27d1tr07.flac
+     6:29.33       68697260 B   ---   --   ---xx   flac  0.5604  bd06-06-27d1tr08.flac
+     7:31.62       79702268 B   ---   --   ---xx   flac  0.5287  bd06-06-27d1tr09.flac
+     5:32.12       58593068 B   ---   --   ---xx   flac  0.5432  bd06-06-27d1tr10.flac
+     6:48.51       72091196 B   ---   --   ---xx   flac  0.4373  bd06-06-27d2tr01.flac
+     6:44.73       71437340 B   ---   --   ---xx   flac  0.5552  bd06-06-27d2tr02.flac
+     7:28.58       79163660 B   ---   --   ---xx   flac  0.5088  bd06-06-27d2tr03.flac
+     6:43.44       71192732 B   ---   --   ---xx   flac  0.5757  bd06-06-27d2tr04.flac
+     8:17.18       87713180 B   ---   --   ---xx   flac  0.5790  bd06-06-27d2tr05.flac
+     6:23.06       67575356 B   ---   --   ---xx   flac  0.5925  bd06-06-27d2tr06.flac
+    99:29.45     1053038144 B                            0.5412  (16 files)
+=================== 
+=================== 
+=================== 

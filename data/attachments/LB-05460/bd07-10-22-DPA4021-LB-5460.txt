@@ -1,0 +1,8 @@
+Bob Dylan, 10/22/07, St. Louis, MO, Fox Theatre, 2CDR
+
+LB-5460, (61min+58min), ---16 bit version---, SOURCE: B&K 4021s > Sound Devices 722 @ 24/96 FOB Row N 4 seats off center aisle., LINEAGE: 722 > computer hard drive > Wavelab (resample, dither, fades, normalize & soft limit some loud claps between songs) > CDWave (track) > Flac level 6., TAPED BY: SB, TRANSFERRED BY: SB, FILSIZE: 610 MB; bittorrent download 10/07; has a band at 20 to 22k; excellent sound [A]
+
+SETLIST:, Disk 1 (Part 1) (60:30), 01: intro, 02: Leopard-Skin Pill-Box Hat (Bob on electric guitar), 03: It Ain't Me, Babe (Bob on electric guitar), 04: Watching The River Flow (Bob on electric guitar), 05: Love Sick (Bob on electric keyboard, Donnie on electric mandolin), 06: The Levee's Gonna Break (Bob on electric keyboard, Donnie on electric mandolin), 07: Spirit On The Water (Bob on electric keyboard and harp), 08: Honest With Me (Bob on electric keyboard), 09: Visions Of Johanna (Bob on electric keyboard and harp), 10: Things Have Changed (Bob on electric keyboard and harp, Donnie on violin), Disk 2 (Part 2) (58:10), 01: Workingman's Blues #2 (Bob on electric keyboard), 02: Highway 61 Revisited (Bob on electric keyboard), 03: Ain't Talkin' (Bob on electric keyboard, Donnie on viola), 04: Summer Days (Bob on electric keyboard), 05: Ballad Of A Thin Man (Bob on electric keyboard and harp), Encore:, 06: Tears Of Rage (Elvis Costello and Bob on acoustic guitars and shared vocals, no other band members present), 07: Thunder On The Mountain, 08: band Intros, 09: All Along The Watchtower
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+8d64568df85caf6f0ac43c1684dc16c2  bd1998-01-16 info.txt
+f9073b57bd2c77e9138c4fca4160cb55  bd1998-01-16.md5
+c3f0f899c2023d010eab6193488423f8  bd1998-01-16d1t01.flac
+8860b1bb12c77ef6be6bc379ae1b1b20  bd1998-01-16d1t02.flac
+3edab7b48ba10ce394d5e60219a8d7b6  bd1998-01-16d1t03.flac
+7280a88ae9defc7bd59494cc6bae48c5  bd1998-01-16d1t04.flac
+8fcfce2e7fe7e885df01730564d236f0  bd1998-01-16d1t05.flac
+1b4f8ddedb4ea2c92de62475dd739763  bd1998-01-16d1t06.flac
+6b17bdf93f4ba3ed2e4497f5f1bf7df1  bd1998-01-16d1t07.flac
+eb9a9d1d95b371b4c42ed9a3b2280563  bd1998-01-16d1t08.flac
+d2df8d9281ffdc128232618618849c91  bd1998-01-16d2t01.flac
+2f2eca193314ed0f4930da84d133c0bd  bd1998-01-16d2t02.flac
+f38e9ce15d2af7f021962965ee135fe9  bd1998-01-16d2t03.flac
+3499f75bac5369b687f388f97a87bd77  bd1998-01-16d2t04.flac
+a16710ef0dac990d505f73101050e3bd  bd1998-01-16d2t05.flac
+9402d2fb4db5aca0b453059f96dc6d7a  bd1998-01-16d2t06.flac
+87d27aa62677af8bfceda3e84e4fc0b8  bd1998-01-16d2t07.flac
+a56706b944056024d24465905f630848  bd98-01-16-bach-LB-4351.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+bd1998-01-16d1t01.flac:36eefcb03cf86a86eafded9718b18e96
+bd1998-01-16d1t02.flac:8c0a60e0719ff52c354a870dae6e5e3a
+bd1998-01-16d1t03.flac:ad9a983866c40eebe900f716aaff5727
+bd1998-01-16d1t04.flac:2362f9003cf82b0483c3779e5759f000
+bd1998-01-16d1t05.flac:e64501f5dcfbcfcda0c0dcf850889e9c
+bd1998-01-16d1t06.flac:7e7a4b91315a77bbe36832092286e169
+bd1998-01-16d1t07.flac:b63838409fe48d69bfef728635d24608
+bd1998-01-16d1t08.flac:1d97ec4ce61516bc2ea2a2c9f2ae853f
+bd1998-01-16d2t01.flac:cc8b861515b529b8d32298010f889a8c
+bd1998-01-16d2t02.flac:c3b6199b11c976b5c1d3773d0576f01f
+bd1998-01-16d2t03.flac:fdea3a281e9a4bb55718c4cdd359919b
+bd1998-01-16d2t04.flac:f0676d2b8d0c3ece2643e266ee93f8df
+bd1998-01-16d2t05.flac:55d96710a1f1ea147588d7fb525f5b4b
+bd1998-01-16d2t06.flac:05df855d19036007f2bacd9ca5f8615b
+bd1998-01-16d2t07.flac:ab3a9d3bc04f241f3059667b4629c737
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-16-bach.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.01       46219196 B   ---   --   ---xx   flac  0.5676  bd1998-01-16d1t01.flac
+     5:44.64       60832172 B   ---   --   ---xx   flac  0.5414  bd1998-01-16d1t02.flac
+     6:37.39       70122572 B   ---   --   ---xx   flac  0.5761  bd1998-01-16d1t03.flac
+     7:09.62       75821468 B   ---   --   ---xx   flac  0.5387  bd1998-01-16d1t04.flac
+     6:38.02       70211948 B   ---   --   ---xx   flac  0.5949  bd1998-01-16d1t05.flac
+     5:44.63       60829820 B   ---   --   ---xx   flac  0.4805  bd1998-01-16d1t06.flac
+     6:15.70       66314684 B   ---   --   ---xx   flac  0.4685  bd1998-01-16d1t07.flac
+     8:33.60       90634364 B   ---   --   ---xx   flac  0.5761  bd1998-01-16d1t08.flac
+     6:12.65       65773724 B   ---   --   ---xx   flac  0.5587  bd1998-01-16d2t01.flac
+     5:41.30       60223004 B   ---   --   ---xx   flac  0.5514  bd1998-01-16d2t02.flac
+     8:00.68       84831980 B   ---   --   ---xx   flac  0.5966  bd1998-01-16d2t03.flac
+     8:57.54       94853852 B   ---   --   ---xx   flac  0.5862  bd1998-01-16d2t04.flac
+     5:52.26       62153996 B   ---   --   ---xx   flac  0.5501  bd1998-01-16d2t05.flac
+     5:39.41       59896076 B   ---   --   ---xx   flac  0.5355  bd1998-01-16d2t06.flac
+     4:26.38       47011820 B   ---   --   ---xx   flac  0.5961  bd1998-01-16d2t07.flac
+    95:58.08     1015730676 B                            0.5564  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-25.shnf 
+=================== 
+=================== 
+=================== 
+90027398ae02364bb8b3a4be94ed2d55  101 Most Likely You Go Your Way.shn
+a13e79914767f72f9738d3ae68f56d0a  102 You Don't Know Me.shn
+bf7bd8c91e07650d72e54638ff14919c  103 Masters Of War.shn
+12a98d3fe045ebc4c20f42f76e83eebb  104 Confidential.shn
+f41e8da8ace67b1e3b283b7674edc740  105 Ballad Of A Thin Man.shn
+f6972aea59c6d1627539daa993774591  106 Highway 61 Revisited.shn
+08b2554b3dcf4ac275a0e614b3955ced  107 It's All Over Now Baby Blue.shn
+76c69252aab4e37f8c37fd80e19f228d  108 It's Alright Ma.shn
+9829b0017c2c24529caa4caad43a0953  201 Love Minus Zero.shn
+24f0053293edebb6db2fd752988609b4  202 Silvio.shn
+d41e8c435e7746153f31ca402c07f8b9  203 Pretty Peggy-O.shn
+c720be14b0fafa7fc195dd266fa6e749  204 I Shall Be Released.shn
+c4784854ca464b867e670c337527b1b4  205 Like A Rolling Stone.shn
+d6d62bc95ac1afaa78d1c7c03243f6b3  206 Barbara Allen.shn
+05744ba380297a6f189e100218025cbb  207 All Along The Watchtower.shn
+0a6c4aa7d11e922c427b477d20b2f08a  BD89-07-25.md5
+50956b414c82987d0dcefa25e06fd981  BD89-07-25.nfo
+3b170bf3749fb13a6905e158028f0be7  bd89-07-25.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-07-25.shnf 
+=================== 
+=================== 
+=================== 
+156e88216124659fffcc8a7c0532a3cb  [shntool]  101_Most_Likely_You_Go_Your_Way.wav
+6b74c25fb43894fad5163ae2065f4940  [shntool]  102_You_Don't_Know_Me.wav
+f6a9383c6ad0c4fc48cb81dcc9c25621  [shntool]  103_Masters_Of_War.wav
+3c0d957dc9592f22f2ee398193077137  [shntool]  104_Confidential.wav
+cb16d3bc6c844e7341716aeebad5d96c  [shntool]  105_Ballad_Of_A_Thin_Man.wav
+a6f0bb36b5163938dff0746d2069810e  [shntool]  106_Highway_61_Revisited.wav
+7f9cfeab00ecca099bbe03c2fd292e1c  [shntool]  107_It's_All_Over_Now_Baby_Blue.wav
+f4767754a4521261697244e6de521353  [shntool]  108_It's_Alright_Ma.wav
+628e3d7563cb6f8f84a476ac6f34343b  [shntool]  201_Love_Minus_Zero.wav
+6af690968bef5a844070445ed3da5db8  [shntool]  202_Silvio.wav
+e0f767fb733b21f07419e1b0e7afe523  [shntool]  203_Pretty_Peggy-O.wav
+d7c9e8a080e6d8ff95d8a9221fb67e48  [shntool]  204_I_Shall_Be_Released.wav
+7acf2e48c538b653cdd6c5c7ea882614  [shntool]  205_Like_A_Rolling_Stone.wav
+8d5dce335d00a477e5b80be70c119ae6  [shntool]  206_Barbara_Allen.wav
+0e4765636468fab6256499d600e08b6a  [shntool]  207_All_Along_The_Watchtower.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-25.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:17.73       56090540 B   ---   --   ---xx    shn  0.7507  101 Most Likely You Go Your Way.shn
+     4:52.14       51541772 B   ---   --   ---xx    shn  0.7333  102 You Don't Know Me.shn
+     5:41.31       60225356 B   ---   --   ---xx    shn  0.7789  103 Masters Of War.shn
+     4:53.00       51685244 B   ---   --   ---xx    shn  0.7204  104 Confidential.shn
+     6:26.47       68200988 B   ---   --   ---xx    shn  0.7645  105 Ballad Of A Thin Man.shn
+     4:39.55       49345004 B   ---   --   ---xx    shn  0.7600  106 Highway 61 Revisited.shn
+     7:01.05       74276204 B   ---   --   ---xx    shn  0.6997  107 It's All Over Now Baby Blue.shn
+     6:34.23       69555740 B   ---   --   ---xx    shn  0.6868  108 It's Alright Ma.shn
+     4:49.74       51153692 B   ---   --   ---xx    shn  0.6867  201 Love Minus Zero.shn
+     6:50.72       72493388 B   ---   --   ---xx    shn  0.7188  202 Silvio.shn
+     5:28.45       57965084 B   ---   --   ---xx    shn  0.6921  203 Pretty Peggy-O.shn
+     4:19.50       45805244 B   ---   --   ---xx    shn  0.7132  204 I Shall Be Released.shn
+     7:15.29       76802252 B   ---   --   ---xx    shn  0.7482  205 Like A Rolling Stone.shn
+     5:21.38       56713820 B   ---   --   ---xx    shn  0.6361  206 Barbara Allen.shn
+     4:09.69       44085932 B   ---   --   ---xx    shn  0.7099  207 All Along The Watchtower.shn
+    83:42.25      885940260 B                            0.7205  (15 files)
+=================== 
+=================== 
+=================== 

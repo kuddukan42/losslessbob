@@ -1,0 +1,121 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-09-IAR055.flacf 
+=================== 
+=================== 
+=================== 
+a3cf56c0175931e199421737e1e9a1d9  CD1\01 Highway 61 Revisited.flac
+f7c3d043fbe4a3e9277e76839d628c28  CD1\02 Jokerman.flac
+fd676f099736393ffad7956ef6433442  CD1\03 All Along The Watchtower.flac
+27a5c43a8d908826a2da3b65d1459897  CD1\04 Just Like A Woman.flac
+9bd5cfd2d77bd5e9d215b934051c09ce  CD1\05 Maggie's Farm.flac
+d28d5cdf85a10fc86e3ab34013d494a2  CD1\06 I And I.flac
+b49423f62ca0ff72cef9e22ce3b40296  CD1\07 License To Kill.flac
+8b03d3d614c40d6c321d70ffd288dea9  CD1\08 Greg Sutton , Just My Imagination.flac
+cbfc0d44e218b3cb24017ddaa74d6de3  CD1\09 Mr. Tambourine Man.flac
+75702774f6e31f1f9b0f5de2ccb41c45  CD1\10 It Ain't Me, Babe.flac
+46abb55b06d3e675d7bb7963723565b2  CD1\11 It's Alright, Ma (I'm Only Bleeding).flac
+4c9bed3a5987ef31edea1e9433a2669c  CD1\12 It's All Over Now, Baby Blue.flac
+6dd22942882ae2446666998a1c3a3c49  CD1\bd 1984-06-09 CD1.md5
+f08d9cffd80040ba303ca66bf5d2de8b  CD1\Gotenburg, Sweden, June 9, 1984, Improved Air Remaster from.log
+ec6197ac785d25c573a2a24502ecb51d  CD2\01 Masters Of War.flac
+b948aeead505dc3a4cc010eb3a172c5b  CD2\02 Ballad Of A Thin Man.flac
+a35b9de9a27f47c20ccaac9382f814b6  CD2\03 When You Gonna Wake Up.flac
+22388e8c6ce3c33b44633c61c616e572  CD2\04 Every Grain Of Sand.flac
+434222f7abc99cbd996d8e5004b08b5a  CD2\05 Simple Twist Of Fate.flac
+edc6ed9834fa74d35c89bd7c859cf6b3  CD2\06 Like A Rolling Stone.flac
+7a2d1efa5afe8ef894d7498f7f3f8fb1  CD2\07 Tangled Up In Blue.flac
+b11202c3a97c513a977cd3cefcd00422  CD2\08 Don't Think Twice, It's All Right.flac
+6d0c98282f261364ac8327a06b125c59  CD2\09 Blowin' In The Wind.flac
+5ffdb831c1c52d067d83c05f5aa581a8  CD2\10 Tombstone Blues.flac
+13e59fb954fb9e4fcdaddab1843e320f  CD2\11 Love Minus Zero-No Limit.flac
+d739fe8f2a5cee5d2224f68ed8f241ad  CD2\12 The Times They Are A-Changin'.flac
+d479ad85c8b71661479db110a17b2ed5  CD2\bd 1984-06-09 CD2.md5
+62838867dfabb588127305a9eaddf717  CD2\Gotenburg, Sweden, June 9, 1984, Improved Air Remaster from.log
+070544a3afe71f9dd0e7ef6cb4f3e981  IAR 055 - Gothenburg, June 9, 1984.md5
+6a2156e88f658a092891b330bffda7ca  IAR 055 - Gothenburg, June 9, 1984.rtf
+cc037abb1803cb86bff1590a8d2cabe0  IAR 055 - Gothenburg, June 9, 1984.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-09-IAR055.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Highway 61 Revisited.flac:f1c47880c74946fb4062b090373a186b
+02 Jokerman.flac:0edb49c4c22090b257613002f5648d2c
+03 All Along The Watchtower.flac:a28273e7c553d37a13f1375885fc90a0
+04 Just Like A Woman.flac:8e0bfdae43855e098064ba8225f434b2
+05 Maggie's Farm.flac:2faf8786767fc0f726b1fe0bac74fe08
+06 I And I.flac:c4361fa3cb26022c4d73197cad1ebb85
+07 License To Kill.flac:94b8b42bcec7235bb485c00131429f11
+08 Greg Sutton , Just My Imagination.flac:5ba255fda591c166c0528e5bb2a65238
+09 Mr. Tambourine Man.flac:8d18731ca5c0f52200276e3eae8a511a
+10 It Ain't Me, Babe.flac:165b601983b27eefe5763934a5d740c1
+11 It's Alright, Ma (I'm Only Bleeding).flac:1dfdca83c66a79e9980603908da24bc9
+12 It's All Over Now, Baby Blue.flac:434fb3d5b6ad75b6cb0108dd5a9aa286
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-09-IAR055.flacf\CD2 
+=================== 
+=================== 
+=================== 
+01 Masters Of War.flac:773af2ca3dfada083ba1fd5c9008a96b
+02 Ballad Of A Thin Man.flac:45000e5bc362dbcd93b79065ab0665cc
+03 When You Gonna Wake Up.flac:2618c00af0e5fbe3b2d1db4e59eb8a03
+04 Every Grain Of Sand.flac:e8d73cf4b453ff6aee74351c273fcc08
+05 Simple Twist Of Fate.flac:a7c8713a359bb70f8dc26941b8cdfc95
+06 Like A Rolling Stone.flac:d2c4f7721dc61742491b575205524512
+07 Tangled Up In Blue.flac:3f56371d0c60ed8abf6a749268596e5d
+08 Don't Think Twice, It's All Right.flac:3ae69e51550300ed6b0605a5650c2a14
+09 Blowin' In The Wind.flac:5a87958edbbc50a8d11745d8aea1538c
+10 Tombstone Blues.flac:4aa0a2411aab67375d6d164056996811
+11 Love Minus Zero-No Limit.flac:c5df9669b9cb2fbc81ceba7761a1b924
+12 The Times They Are A-Changin'.flac:dd22b8d4750344dd7c44e10bfdb44d42
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-09-IAR055.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:48.40       50897324 B   ---   --   ---xx   flac  0.6360  01 Highway 61 Revisited.flac
+     6:17.14       66535772 B   ---   --   ---xx   flac  0.6197  02 Jokerman.flac
+     5:28.34       57939212 B   ---   --   ---xx   flac  0.6432  03 All Along The Watchtower.flac
+     6:06.62       64708268 B   ---   --   ---xx   flac  0.6397  04 Just Like A Woman.flac
+     4:18.43       45612380 B   ---   --   ---xx   flac  0.6520  05 Maggie's Farm.flac
+     5:43.34       60585212 B   ---   --   ---xx   flac  0.6237  06 I And I.flac
+     3:44.61       39657116 B   ---   --   ---xx   flac  0.6315  07 License To Kill.flac
+     5:26.28       57572300 B   ---   --   ---xx   flac  0.6654  08 Greg Sutton , Just My Imagination.flac
+     5:22.57       56934908 B   ---   --   ---xx   flac  0.6380  09 Mr. Tambourine Man.flac
+     5:36.15       59305724 B   ---   --   ---xx   flac  0.6474  10 It Ain't Me, Babe.flac
+     6:33.55       69454604 B   ---   --   ---xx   flac  0.6483  11 It's Alright, Ma (I'm Only Bleeding).flac
+     5:56.06       62812556 B   ---   --   ---xx   flac  0.6613  12 It's All Over Now, Baby Blue.flac
+    65:22.74      692015376 B                            0.6422  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-09-IAR055.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:52.27       72740348 B   ---   --   ---xx   flac  0.6462  01 Masters Of War.flac
+     4:32.12       48009068 B   ---   --   ---xx   flac  0.6457  02 Ballad Of A Thin Man.flac
+     4:30.68       47787980 B   ---   --   ---xx   flac  0.5923  03 When You Gonna Wake Up.flac
+     5:31.72       58557788 B   ---   --   ---xx   flac  0.6117  04 Every Grain Of Sand.flac
+     4:23.29       46461452 B   ---   --   ---xx   flac  0.6035  05 Simple Twist Of Fate.flac
+    10:22.50      109838444 B   ---   --   ---xx   flac  0.6051  06 Like A Rolling Stone.flac
+     6:19.45       66961484 B   ---   --   ---xx   flac  0.6052  07 Tangled Up In Blue.flac
+     5:17.19       55963532 B   ---   --   ---xx   flac  0.6285  08 Don't Think Twice, It's All Right.flac
+     4:48.57       50937308 B   ---   --   ---xx   flac  0.6168  09 Blowin' In The Wind.flac
+     7:05.52       75092348 B   ---   --   ---xx   flac  0.6192  10 Tombstone Blues.flac
+     4:12.23       44506940 B   ---   --   ---xx   flac  0.6238  11 Love Minus Zero-No Limit.flac
+     3:34.22       37801388 B   ---   --   ---xx   flac  0.6033  12 The Times They Are A-Changin'.flac
+    67:31.26      714658080 B                            0.6168  (12 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,42 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd62-04-gerdes.flacf 
+=================== 
+=================== 
+=================== 
+3988ea5efd1d413626e6e11d0445a932  bd62-04-gerdes-LB-3005.txt
+14cd03c09795f48355e38873899b6d6b  bd62-04-gerdest01.flac
+c234755fe92214ef3dc29a295cc2905c  bd62-04-gerdest02.flac
+6b2e647d72045e6b5d4216a41c6c5579  bd62-04-gerdest03.flac
+3e7a95eb0da1f8d9058d12d5f0840447  bd62-04-gerdest04.flac
+0d8e2216cd0d3a355ae146b17c4c48d6  bd62-04-gerdest05.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd62-04-gerdes.flacf 
+=================== 
+=================== 
+=================== 
+bd62-04-gerdest01.flac:a6a1101d9a0a8802dac81e174e310cdc
+bd62-04-gerdest02.flac:93da81739230d33b022dc28dd88e5761
+bd62-04-gerdest03.flac:fcb061e9fd48263fc3ccb6fc5b457477
+bd62-04-gerdest04.flac:60c0ce7cb81416317144627e675ed4e8
+bd62-04-gerdest05.flac:ea4608d6a893ef34194371849ef021b7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd62-04-gerdes.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:42.07       28593308 B   ---   --   ---xx   flac  0.5114  bd62-04-gerdest01.flac
+     4:30.74       47802092 B   ---   --   ---xx   flac  0.4877  bd62-04-gerdest02.flac
+     4:53.60       51826364 B   ---   --   ---xx   flac  0.4798  bd62-04-gerdest03.flac
+     4:10.10       44123564 B   ---   --   ---xx   flac  0.5092  bd62-04-gerdest04.flac
+     2:49.69       29973932 B   ---   --   ---xx   flac  0.4890  bd62-04-gerdest05.flac
+    19:06.70      202319260 B                            0.4939  (5 files)
+=================== 
+=================== 
+=================== 

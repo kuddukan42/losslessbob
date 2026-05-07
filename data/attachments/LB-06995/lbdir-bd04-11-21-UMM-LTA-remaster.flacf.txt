@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-21-UMM-LTA-remaster.flacf 
+=================== 
+=================== 
+=================== 
+c6ce692357244bd6505f17bbadb2882f  2004-11-21-Allston-reviews.txt
+b37ac98d0830064342c8627cade5843d  2004-11-21-Allston-UMM-LTA_RM.txt
+b5379b3d99883b4baead04c07c71e425  2004-11-21-Allston.nfo
+c0a4dd9890d1dd6208f4f79236897726  2004-11-21-Alston-ticket copy.jpg
+3d1b0002a36498c7eb7e9536767f819b  2004-11-21-Alston-UMM054.jpg
+4a03d74fe7875db775343ba741496d29  Artwork (Ole Sivert Warnes)\cambridge2004back.jpg
+5fee2e25c6a9b4a1c663a8392c143d43  Artwork (Ole Sivert Warnes)\cambridge2004front.jpg
+efdc16d9f587d70b922a92a28f665153  bd2004-11-21d1t01.flac
+341ce9c670945015c94bd9a89d72c483  bd2004-11-21d1t02.flac
+9b89c84e747a54b82f42463d94d20f85  bd2004-11-21d1t03.flac
+6a7845680b6e9015139885e1790791ee  bd2004-11-21d1t04.flac
+a5c36ed3b315e72ab8eb76c32defa60f  bd2004-11-21d1t05.flac
+705a02118be2b60bcc949c72142fb2ee  bd2004-11-21d1t06.flac
+d15153c83df1f2bd1772016de21b844d  bd2004-11-21d1t07.flac
+6c6dee54a437edd9e72d0a096455ca38  bd2004-11-21d1t08.flac
+54a9a30253a5e97d1651f3208e2bcf34  bd2004-11-21d1t09.flac
+c243c04ca96a75c861f7dd85da900721  bd2004-11-21d1t10.flac
+33e490a73e15b682d21d35fdc85e999f  bd2004-11-21d1t11.flac
+56c962b13e9d7b2ee1adacae0e2d879e  bd2004-11-21d1t12.flac
+c1c7692d7e6d74407bdfd040a77c6062  bd2004-11-21d2t01.flac
+4d8954de0a08d502a04a36864b04c5d8  bd2004-11-21d2t02.flac
+2dccc9e653d8cf9955c86ed07446e276  bd2004-11-21d2t03.flac
+131040351f3c909626fd196348d6400e  bd2004-11-21d2t04.flac
+39d84b419708ea29c504b86b6ec33805  bd2004-11-21d2t05.flac
+ab3786dab4e0b2c2a5be519761cac5cd  bd2004-11-21d2t06.flac
+64e02eb7a9fc52e34375b45b42a78c77  bd2004-11-21d2t07.flac
+cabd1ca24369eb2d14f99af6eb86d7c8  fingerprint.ffp
+f211f3193f167c2540698ba98133991f  md5sum.md5
+643a9817fb45f5dcbc5d4149dffc11f4  original.zip
+b73ad416f746ce6ff57a39f8be419bac  shntoolmd5sum.st5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-11-21-UMM-LTA-remaster.flacf 
+=================== 
+=================== 
+=================== 
+bd2004-11-21d1t01.flac:7dcff704fd5ac999f749d917e9a7a4c4
+bd2004-11-21d1t02.flac:368a5f81f8b119377af499785e981064
+bd2004-11-21d1t03.flac:0901276d2904347196e59e2b9499232b
+bd2004-11-21d1t04.flac:a4cbc7a5fbc957c9b6b9941be5bca7bb
+bd2004-11-21d1t05.flac:d3a398754a90353e3c2f6d7957ad752a
+bd2004-11-21d1t06.flac:2983d8609fb079ef8775be08e7d941bc
+bd2004-11-21d1t07.flac:55d6d0adfc77580cf8cf9329907bb8e9
+bd2004-11-21d1t08.flac:5e8b77a62f9e57a65cfa284d6cc2024d
+bd2004-11-21d1t09.flac:04df7d7d68e90373f7e69c95ec5a2a11
+bd2004-11-21d1t10.flac:b118b81cd8b09dbf17a693f1e07afd9b
+bd2004-11-21d1t11.flac:2683dac4ce91da137c4b414915352d76
+bd2004-11-21d1t12.flac:18c9ebdd97261bdbea609d76a10cd125
+bd2004-11-21d2t01.flac:6ea1b812cb26cf09f0193380cef91862
+bd2004-11-21d2t02.flac:6dff68b2355de6070f24c76786684f26
+bd2004-11-21d2t03.flac:ea0dc0a74302fb06153319f82f4e3103
+bd2004-11-21d2t04.flac:021083c23ac1c56095f230d7c3c927f3
+bd2004-11-21d2t05.flac:de69e9c903577a4a3566ed8bb8db6d51
+bd2004-11-21d2t06.flac:7335d3264e58825a55b6aafc762060bd
+bd2004-11-21d2t07.flac:b62eb229be3508dc1b5b502253ab5bc5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-21-UMM-LTA-remaster.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:27.05       47110604 B   ---   --   ---xx   flac  0.5915  bd2004-11-21d1t01.flac
+     5:48.03       61394300 B   ---   --   ---xx   flac  0.5570  bd2004-11-21d1t02.flac
+     4:43.03       49928300 B   ---   --   ---xx   flac  0.6043  bd2004-11-21d1t03.flac
+     9:16.60       98219564 B   ---   --   ---xx   flac  0.5917  bd2004-11-21d1t04.flac
+     7:26.14       78707372 B   ---   --   ---xx   flac  0.6017  bd2004-11-21d1t05.flac
+     4:50.25       51214844 B   ---   --   ---xx   flac  0.5707  bd2004-11-21d1t06.flac
+     6:09.27       65155148 B   ---   --   ---xx   flac  0.6082  bd2004-11-21d1t07.flac
+     5:32.57       58698908 B   ---   --   ---xx   flac  0.5447  bd2004-11-21d1t08.flac
+     6:22.54       67511852 B   ---   --   ---xx   flac  0.5682  bd2004-11-21d1t09.flac
+     6:23.12       67589468 B   ---   --   ---xx   flac  0.5857  bd2004-11-21d1t10.flac
+     6:04.14       64242572 B   ---   --   ---xx   flac  0.5817  bd2004-11-21d1t11.flac
+     6:39.20       70430684 B   ---   --   ---xx   flac  0.6081  bd2004-11-21d1t12.flac
+     7:35.38       80351420 B   ---   --   ---xx   flac  0.5654  bd2004-11-21d2t01.flac
+     6:57.45       73664684 B   ---   --   ---xx   flac  0.5950  bd2004-11-21d2t02.flac
+     4:47.70       50791484 B   ---   --   ---xx   flac  0.4384  bd2004-11-21d2t03.flac
+     6:44.10       71289164 B   ---   --   ---xx   flac  0.5850  bd2004-11-21d2t04.flac
+     0:54.38        9615020 B   ---   --   ---xx   flac  0.5921  bd2004-11-21d2t05.flac
+     6:03.69       64195532 B   ---   --   ---xx   flac  0.5639  bd2004-11-21d2t06.flac
+     3:05.20       32681084 B   ---   --   ---xx   flac  0.4242  bd2004-11-21d2t07.flac
+   109:51.59     1162792004 B                            0.5725  (19 files)
+=================== 
+=================== 
+=================== 

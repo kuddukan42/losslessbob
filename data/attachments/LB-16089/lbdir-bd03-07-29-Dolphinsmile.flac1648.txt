@@ -1,0 +1,69 @@
+===================
+===================
+===================
+=== md5 for: bd03-07-29-Dolphinsmile.flac1648
+===================
+===================
+===================
+7c0ccd237eccb0ad3b02a00b6be8babe *01 Maggies Farm.flac
+530277d18926022a68bd2b3cc33affdf *02 Ill Be Your Baby Tonight.flac
+521bd93c7abe7228667aae02141e94c2 *03 Tweedle Dee Tweedle Dum.flac
+80586560419356eaf58c12da589509a9 *04 Joey.flac
+1c67ab021f63a5e6c3385faa6bbaf1fe *05 Highway 61.flac
+a92208ef3ac6bf4747d4e36b557c5322 *06 Queen Jane.flac
+55340f021eb44bd449ead23a37610a30 *07 Drifters Escape.flac
+00dc31f7e07ecad48305957a1bd9482d *08 Sugar Baby.flac
+333e0a9eb3840e8feb21e286b3c9109c *09 Honest With Me.flac
+cb8d92f5dfe181752806fcecf8503fff *10 Summer Days.flac
+d32af206eb433306cd7e03246444e0b0 *13 Alabama Getaway.flac
+fdecc2ddba51ff7f28144536e48c4d71 *14 Baby Blue.flac
+762be06ba213f239fc5d06bd9e339796 *15 West La Fadeaway.flac
+a1d0630d5a48ad5e4ac856109a374f14 *Bob Dylan Office Depot Center Sunrise Fl 2003-07-29 Dolphinsmile Master.ffp
+4ce448776ad98471a1f060b82268fbd2 *Bob Dylan Office Depot Center Sunrise Fl 2003-07-29 Dolphinsmile Master.md5
+a1d0630d5a48ad5e4ac856109a374f14 *Bob Dylan Office Depot Center Sunrise Fl 2003-07-29 Dolphinsmile Master.txt
+5db77531228aa8d2d1149bff0e89321b *info.txt
+===================
+===================
+===================
+=== ffp for: bd03-07-29-Dolphinsmile.flac1648
+===================
+===================
+===================
+01 Maggies Farm.flac:ec89b27224c4b6f175c12581d3d4e33d
+02 Ill Be Your Baby Tonight.flac:132105cfa453422e4babb3a18093a8df
+03 Tweedle Dee Tweedle Dum.flac:d7438ba49bfef2d4d452cf8d4827b2e8
+04 Joey.flac:42de51cadc20b8abfbe2a5955bcb0d69
+05 Highway 61.flac:f8bc494502346df8027890e13d0e56ee
+06 Queen Jane.flac:1926b4df8046a95e72526111016609f1
+07 Drifters Escape.flac:79bf2cb883ac2b01dd12818ee2a553ed
+08 Sugar Baby.flac:f34c0f37b649be601be6b0ce878f9753
+09 Honest With Me.flac:c1c0731e90aded4317faaa61bd50bcaa
+10 Summer Days.flac:49b516b4bea9bc2a260ecb98f97858e9
+13 Alabama Getaway.flac:baa0a45c6523496d9d6060da2b4b7536
+14 Baby Blue.flac:53a6e32d4dc4a84329980a16ba909b87
+15 West La Fadeaway.flac:8f6765969498ef50278557c2e5e8254b
+===================
+===================
+===================
+=== shntool len for: bd03-07-29-Dolphinsmile.flac1648
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:02.133      69529644 B   cxx   --   ---xx   flac  0.4895  01 Maggies Farm.flac
+     6:07.827      70622764 B   cxx   --   ---xx   flac  0.4433  02 Ill Be Your Baby Tonight.flac
+     5:16.773      60820524 B   cxx   --   ---xx   flac  0.4544  03 Tweedle Dee Tweedle Dum.flac
+     8:19.080      95823404 B   cxx   --   ---xx   flac  0.4959  04 Joey.flac
+     6:05.787      70231084 B   cxx   --   ---xx   flac  0.5109  05 Highway 61.flac
+     9:11.067     105804844 B   cxx   --   ---xx   flac  0.4267  06 Queen Jane.flac
+     4:54.187      56483884 B   cxx   --   ---xx   flac  0.5187  07 Drifters Escape.flac
+     7:28.400      86092844 B   cxx   --   ---xx   flac  0.4108  08 Sugar Baby.flac
+     7:02.720      81162284 B   cxx   --   ---xx   flac  0.5164  09 Honest With Me.flac
+     8:06.133      93337644 B   cxx   --   ---xx   flac  0.4951  10 Summer Days.flac
+     5:19.65       56424524 B   ---   --   ---xx   flac  0.5516  13 Alabama Getaway.flac
+     6:37.48       70143740 B   ---   --   ---xx   flac  0.5065  14 Baby Blue.flac
+     8:26.26       89319596 B   ---   --   ---xx   flac  0.5085  15 West La Fadeaway.flac
+    88:57.960    1005796780 B                            0.4836  (13 files)
+===================
+===================
+===================

@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-06-22a.flacf 
+=================== 
+=================== 
+=================== 
+d15a5cac410c1c5a61bb35b5a3ca6b11  bd96-06-22a-LB-3601.txt
+abe9925610ab189879845f2f2567ff00  fingerprint.ffp.txt
+c0bc169fc9f2bfe0e8df3f48b94d184f  FLAC\11 Drifters Escape.flac
+2c36ef2d0ae347ae0fa17d4502da6f06  FLAC\12 Senor.flac
+f388229c65371f56d6d3a4604c9b0497  FLAC\13 All Along The Watchtower.flac
+2e7f0a14cf9ae9411d1268668e03d309  FLAC\14 Shelter From The Storm.flac
+37df95e3a721e5c31ca4eee9111a4c8e  FLAC\15 I Don't Believe You.flac
+68a95f89926fc358a173c43bf206e2f3  FLAC\16 Silvio.flac
+f91f09448dbe9cc69e358a236efe530a  FLAC\17 Tangled Up In Blue.flac
+668c6f5b980b01004aafdba4ed00f8b2  FLAC\18 Love Minus Zero_No Limit.flac
+38a72b3e1ad7f36da5567f093fe2b3a1  FLAC\21 Don't Think Twice, It's All Right.flac
+d6b6e5d44824415a5e84144476551a4e  FLAC\22 Ballad Of A Thin Man.flac
+a5f4f2923913bb66f09cf07b92c2575c  FLAC\23 It Takes A Lot To Laugh, It Takes A Train Cry.flac
+964e21b474e15fe2cfb8a3838fcf7c2c  FLAC\24 Maggie's Farm.flac
+7bf0d522303925fcc18d420a39876641  FLAC\25 Alabama Getaway.flac
+d19c7e52d567f45309c49d2987e96ee4  FLAC\26 The Times They Are A Changin.flac
+21ef4713fe623df30d57a9988770f4ff  FLAC\27 Rainy Day Women Nos 12 &35.flac
+2a30b41d92ca8d42fadd15c4616e42fc  ZIMMY OF THE BEST.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-06-22a.flacf\FLAC 
+=================== 
+=================== 
+=================== 
+11 Drifters Escape.flac:5e86fda4072744a2cb1108ba80a2e698
+12 Senor.flac:5bd84af5778c018e3fcfaa5ac3486225
+13 All Along The Watchtower.flac:f42e9589330fefc4dca0948f7bdbd87d
+14 Shelter From The Storm.flac:6c5edf188d4a7d5c134cd5464577a76f
+15 I Don't Believe You.flac:2c35eed51924b345db5bf38474d73002
+16 Silvio.flac:d646a9d1c9d7b117381742ce44a819e7
+17 Tangled Up In Blue.flac:c65a0a12bd93fd762a20a2b317a588eb
+18 Love Minus Zero_No Limit.flac:a6f568a6831948a977a3316a4f9643b7
+21 Don't Think Twice, It's All Right.flac:259832b18c15ef6c213b58e51d3eb30a
+22 Ballad Of A Thin Man.flac:b71413461948ed9314b004ceef0f6281
+23 It Takes A Lot To Laugh, It Takes A Train Cry.flac:c576a67af4015f2410ebf14bfcde52c5
+24 Maggie's Farm.flac:8b31d181ae98a81a1f700c6db7d84d2a
+25 Alabama Getaway.flac:0017de287dc03bab99f1220168e2c237
+26 The Times They Are A Changin.flac:a7da7cc06ed1105ca2926c97112c2bfa
+27 Rainy Day Women Nos 12 &35.flac:aaf15113ac8ca8ffe6df56bd6e305127
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-06-22a.flacf\FLAC 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.26       53333996 B   ---   --   ---xx   flac  0.6329  11 Drifters Escape.flac
+     5:57.43       63075980 B   ---   --   ---xx   flac  0.6162  12 Senor.flac
+     6:25.48       68026940 B   ---   --   ---xx   flac  0.6594  13 All Along The Watchtower.flac
+     8:10.18       86478380 B   ---   --   ---xx   flac  0.5925  14 Shelter From The Storm.flac
+     7:46.28       82268300 B   ---   --   ---xx   flac  0.6101  15 I Don't Believe You.flac
+     7:33.18       79951580 B   ---   --   ---xx   flac  0.6470  16 Silvio.flac
+    10:15.28      108551900 B   ---   --   ---xx   flac  0.5724  17 Tangled Up In Blue.flac
+     7:41.66       81475676 B   ---   --   ---xx   flac  0.5097  18 Love Minus Zero_No Limit.flac
+     7:09.50       75793244 B   ---   --   ---xx   flac  0.6371  21 Don't Think Twice, It's All Right.flac
+     7:53.68       83597180 B   ---   --   ---xx   flac  0.6957  22 Ballad Of A Thin Man.flac
+     9:14.63       97873820 B   ---   --   ---xx   flac  0.6862  23 It Takes A Lot To Laugh, It Takes A Train Cry.flac
+     6:49.50       72265244 B   ---   --   ---xx   flac  0.7384  24 Maggie's Farm.flac
+     7:13.32       76456508 B   ---   --   ---xx   flac  0.6617  25 Alabama Getaway.flac
+    13:38.18      144337580 B   ---   --   ---xx   flac  0.6162  26 The Times They Are A Changin.flac
+     6:59.61       74055116 B   ---   --   ---xx   flac  0.7129  27 Rainy Day Women Nos 12 &35.flac
+   117:52.17     1247541444 B                            0.6361  (15 files)
+=================== 
+=================== 
+=================== 

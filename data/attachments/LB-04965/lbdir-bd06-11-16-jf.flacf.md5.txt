@@ -1,0 +1,20 @@
+d63f73cac7154d1a37f931fda61a013b  bd2006-11-16-East Rutherford-d1\bd2006-11-16-East Rutherford-d1.md5
+97ec0d2e2cb9122f5fa5fcf1c259fee6  bd2006-11-16-East Rutherford-d1\Track01.flac
+68018b7a4ae3f9abcd4d93d8544cd195  bd2006-11-16-East Rutherford-d1\Track02.flac
+529c43b37523bb9397b569b50bef785e  bd2006-11-16-East Rutherford-d1\Track03.flac
+c3a7462b5db453b1006124aa425e74e5  bd2006-11-16-East Rutherford-d1\Track04.flac
+21ef3f00414eac6b7c2583ca996c2878  bd2006-11-16-East Rutherford-d1\Track05.flac
+2a7963fd0c98740832f506b01863affa  bd2006-11-16-East Rutherford-d1\Track06.flac
+effee3195f3b31fa4efb477fc4c94fb1  bd2006-11-16-East Rutherford-d1\Track07.flac
+f4d0d02d5eca79ce653076749538bce4  bd2006-11-16-East Rutherford-d1\Track08.flac
+22237eae7dea51954faa7ab1c0d415ee  bd2006-11-16-East Rutherford-d1\Track09.flac
+1f5759c90657785ce1a0084ef2d03919  bd2006-11-16-East Rutherford-d2\bd2006-11-16-East Rutherford-d2.md5
+8cc48a550c2deff5bfb09ad5aa2a29f4  bd2006-11-16-East Rutherford-d2\Track01.flac
+dcbe6fb1b1bb74ef29779ef6c878dba8  bd2006-11-16-East Rutherford-d2\Track02.flac
+335fa79df593efa696c32649993ccb25  bd2006-11-16-East Rutherford-d2\Track03.flac
+511d5d28326d926bd4dce6ea52a2750c  bd2006-11-16-East Rutherford-d2\Track04.flac
+19513976d8c5a5bad7dcf97763fa29b2  bd2006-11-16-East Rutherford-d2\Track05.flac
+209d21ae837fa6eadfebe329b6310560  bd2006-11-16-East Rutherford-d2\Track06.flac
+d07a088806ca6944998147d0143e7e07  bd2006-11-16-East Rutherford-d2\Track07.flac
+9e335649119c3c2c514c00dcc7c4cce9  bd2006-11-16-East Rutherford-d2\Track08.flac
+90b71a1fc0adc9787083f8bc231149c0  bd2006-11-16-East Rutherford-JF.txt

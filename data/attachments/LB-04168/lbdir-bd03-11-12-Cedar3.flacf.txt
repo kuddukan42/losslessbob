@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-11-12-Cedar3.flacf 
+=================== 
+=================== 
+=================== 
+3cc676cfbaaf43faa3e3f2e2f0e23229  bd03-11-12-Cedar3-LB-4168.txt
+2a01c2a160900ad47d2338e282f88ca3  bd2003-11-12-ffp.txt
+de08aec4813ff6a3d1eb80b362325af8  bd2003-11-12-info.txt
+5367196b106a49ebd49da2f9bdb8fed1  Disc1\bd2003-11-12t101.flac
+de8851b52010fd2b4c4761e8bf2b7a71  Disc1\bd2003-11-12t102.flac
+3d4c4b296b003fdff2efdb589dd2b092  Disc1\bd2003-11-12t103.flac
+e58b5eef32629968728fc50028360257  Disc1\bd2003-11-12t104.flac
+eb8572b8080cd2c60189a6d222137cb9  Disc1\bd2003-11-12t105.flac
+7d5c2b5bd95b69b9abf0cc8a0cb58317  Disc1\bd2003-11-12t106.flac
+397ef4fd1ae2af03825e691f737fb679  Disc1\bd2003-11-12t107.flac
+7da5c8be67826210788d497b32152761  Disc1\bd2003-11-12t108.flac
+e552fbfa7316aa8e5c4ade12ca8cc942  Disc1\bd2003-11-12t109.flac
+adf44ee0b1728f9a09f2642624978c54  Disc1\bd2003-11-12t110.flac
+c3e685957f8ccf9a308be356c3c718dc  Disc1\bd2003-11-12t111.flac
+4da1bf03108e4ee54e2b61c37364ab48  Disc2\bd2003-11-12t201.flac
+59ec05706b98629a4ff352f42acbecfb  Disc2\bd2003-11-12t202.flac
+ce5c408a599f126efc927613042c9459  Disc2\bd2003-11-12t203.flac
+d8f266e5a15dcb0dc7595bb1ed4120c1  Disc2\bd2003-11-12t204.flac
+ca982a1b978c6e19f26f39d01d698bb1  Disc2\bd2003-11-12t205.flac
+41be1e224011b394d5bfa67968498adf  Disc2\bd2003-11-12t206.flac
+a90a35a65b256a0599e3dffae8135de8  Disc2\bd2003-11-12t207.flac
+1e0b192d16af7dc93f8fd05b3378b2f2  Disc2\bd2003-11-12t208.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-12-Cedar3.flacf\Disc1 
+=================== 
+=================== 
+=================== 
+bd2003-11-12t101.flac:e7924714a6f299529cc105c3aacd4bf3
+bd2003-11-12t102.flac:eabff1b0af7a9bc1ccc25fdf8da10c84
+bd2003-11-12t103.flac:55dde374b886258f73a1ec3dd0884349
+bd2003-11-12t104.flac:bcf7d64ef2df929e1f4a7a89ae75f84f
+bd2003-11-12t105.flac:b3befb6f509f556468e02a17d2d02a83
+bd2003-11-12t106.flac:e5dcc9d0ac431b6fb97fcdce2f849ad7
+bd2003-11-12t107.flac:c5f02ee0ab3d551ff57bafa60aa6e29a
+bd2003-11-12t108.flac:85fc92fc9ed58ae60e03930f424733c5
+bd2003-11-12t109.flac:b1cdc44b6d70b1e282a1a6ff4f0f38ba
+bd2003-11-12t110.flac:5fd99cf25629f5b2300779f65058c7b9
+bd2003-11-12t111.flac:f4d4353a30db8e9089372e0b80418079
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-11-12-Cedar3.flacf\Disc2 
+=================== 
+=================== 
+=================== 
+bd2003-11-12t201.flac:0dcf3553162e474d7771598ed612d520
+bd2003-11-12t202.flac:25d1df700c05843665f94f818dfb067b
+bd2003-11-12t203.flac:b141a0dadc556799c11c3d3b46fb1cd5
+bd2003-11-12t204.flac:1bab80fa394d5f1b2804e281848fc1da
+bd2003-11-12t205.flac:7acb8b0e13211b9aea58a66fa9cf12f4
+bd2003-11-12t206.flac:8a0176bc51d27c5b04b731c221711b0c
+bd2003-11-12t207.flac:cb25b1e98c6c1b671823679013cd4bb3
+bd2003-11-12t208.flac:f8cc7f10128e08e1619fe5141d88a22a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-12-Cedar3.flacf\Disc1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:53.22        9400988 B   ---   --   ---xx   flac  0.4643  bd2003-11-12t101.flac
+     5:58.32       63226508 B   ---   --   ---xx   flac  0.5533  bd2003-11-12t102.flac
+     6:09.74       65265692 B   ---   --   ---xx   flac  0.4893  bd2003-11-12t103.flac
+     5:51.72       62085788 B   ---   --   ---xx   flac  0.5486  bd2003-11-12t104.flac
+     9:36.10      101629964 B   ---   --   ---xx   flac  0.4871  bd2003-11-12t105.flac
+     8:09.71       86426636 B   ---   --   ---xx   flac  0.5489  bd2003-11-12t106.flac
+     5:52.26       62153996 B   ---   --   ---xx   flac  0.4572  bd2003-11-12t107.flac
+     5:55.26       62683196 B   ---   --   ---xx   flac  0.5186  bd2003-11-12t108.flac
+     4:43.70       50085884 B   ---   --   ---xx   flac  0.5719  bd2003-11-12t109.flac
+     8:10.24       86492492 B   ---   --   ---xx   flac  0.5659  bd2003-11-12t110.flac
+     6:01.15       63715724 B   ---   --   ---xx   flac  0.5140  bd2003-11-12t111.flac
+    67:22.67      713166868 B                            0.5238  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-11-12-Cedar3.flacf\Disc2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:05.45       75075884 B   ---   --   ---xx   flac  0.5610  bd2003-11-12t201.flac
+     8:04.70       85542284 B   ---   --   ---xx   flac  0.4671  bd2003-11-12t202.flac
+     7:20.57       77750108 B   ---   --   ---xx   flac  0.5653  bd2003-11-12t203.flac
+     5:25.65       57482924 B   ---   --   ---xx   flac  0.4149  bd2003-11-12t204.flac
+    11:04.31      117202556 B   ---   --   ---xx   flac  0.5375  bd2003-11-12t205.flac
+     4:33.05       48169004 B   ---   --   ---xx   flac  0.5734  bd2003-11-12t206.flac
+     7:35.54       80389052 B   ---   --   ---xx   flac  0.5732  bd2003-11-12t207.flac
+     7:19.66       77594876 B   ---   --   ---xx   flac  0.5836  bd2003-11-12t208.flac
+    58:30.18      619206688 B                            0.5359  (8 files)
+=================== 
+=================== 
+=================== 

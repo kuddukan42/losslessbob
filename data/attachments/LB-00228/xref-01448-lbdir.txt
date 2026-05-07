@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd98-03-30-f.flacf
+===================
+===================
+===================
+e30bf6c541b97a1011d8a9d3c1dd6972 *disc 1\01 - Unknown Title - Unknown Artist.flac
+dfce2144c6f1bd3fa01e4188e2c694eb *disc 1\02 - Unknown Title - Unknown Artist.flac
+70029a21f8ceb603ff05aa917d9fa475 *disc 1\03 - Unknown Title - Unknown Artist.flac
+1880a2a5c949d174f50ccb898cc36642 *disc 1\04 - Unknown Title - Unknown Artist.flac
+cdad87718150f60c6dda609a62dafda8 *disc 1\05 - Unknown Title - Unknown Artist.flac
+630f71990928ef697d86c54cd094fa36 *disc 1\06 - Unknown Title - Unknown Artist.flac
+ea9953f299c1dd0635361ffb84e2f0d5 *disc 1\07 - Unknown Title - Unknown Artist.flac
+a41896410ad031658b2231ca5be13940 *disc 1\08 - Unknown Title - Unknown Artist.flac
+565f8527579f370995910c95d5ffe92a *disc 1\09 - Unknown Title - Unknown Artist.flac
+cf122e6e6161c58b318039d3aa7b257c *disc 1\10 - Unknown Title - Unknown Artist.flac
+2ff39e4c132ca94b23280addca1095d4 *disc 1\11 - Unknown Title - Unknown Artist.flac
+5a9983814acac3652abf6da2df344b2c *disc 1\disc 1.md5
+74352dc4304044f6b30c1013d0775bc3 *disc 2\01 - Unknown Title - Unknown Artist.flac
+39f956ef45ecc361a0a2800fc48b651d *disc 2\02 - Unknown Title - Unknown Artist.flac
+731964adb65b417fee065b0d0897f4b6 *disc 2\03 - Unknown Title - Unknown Artist.flac
+9908a03de1009ee96f6956564152c0ed *disc 2\04 - Unknown Title - Unknown Artist.flac
+d450c3bf631b4b9f23f1e87877fb5850 *disc 2\disc 2.md5
+6be20bf0761d3ee2c0c841799f784921 *info.txt
+===================
+===================
+===================
+=== ffp for: bd98-03-30-f.flacf
+===================
+===================
+===================
+disc 1\01 - Unknown Title - Unknown Artist.flac:694903490432e34b87b185b57b5fd371
+disc 1\02 - Unknown Title - Unknown Artist.flac:7c831cbb1fc9f31b709f23c5503dfdd9
+disc 1\03 - Unknown Title - Unknown Artist.flac:adbf9bfad44bbbc9139aee1bd307d794
+disc 1\04 - Unknown Title - Unknown Artist.flac:e1189d75c21027cdc8ab8cb2bb706f85
+disc 1\05 - Unknown Title - Unknown Artist.flac:b26d5a4a387285c53d9901126922a91f
+disc 1\06 - Unknown Title - Unknown Artist.flac:90c5de9c777880ca561921585121d9f8
+disc 1\07 - Unknown Title - Unknown Artist.flac:e4cc220fc8f7a49f0c76412f425b61f0
+disc 1\08 - Unknown Title - Unknown Artist.flac:86680109e41729d624a66ebb0a05b398
+disc 1\09 - Unknown Title - Unknown Artist.flac:62952053c5adb610ac03eefe7ce84341
+disc 1\10 - Unknown Title - Unknown Artist.flac:554930674431899c65814f4377cbc1db
+disc 1\11 - Unknown Title - Unknown Artist.flac:4e414057c2961306c2a17acb21a14204
+disc 2\01 - Unknown Title - Unknown Artist.flac:62d2ee925c2cd1603e10b5059e581c76
+disc 2\02 - Unknown Title - Unknown Artist.flac:a312a58d7c135ac3adc991f6b56e6727
+disc 2\03 - Unknown Title - Unknown Artist.flac:165a25e0d151a0f7ca7eba87c2d40c44
+disc 2\04 - Unknown Title - Unknown Artist.flac:63f95a931bf8c3d24a1d8379a1176386
+===================
+===================
+===================
+=== shntool len for: bd98-03-30-f.flacf\disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.53       45283100 B   ---   --   ---xx   flac  0.5271  01 - Unknown Title - Unknown Artist.flac
+     4:53.65       51838124 B   ---   --   ---xx   flac  0.5187  02 - Unknown Title - Unknown Artist.flac
+     6:21.47       67318988 B   ---   --   ---xx   flac  0.5257  03 - Unknown Title - Unknown Artist.flac
+     5:17.38       56008220 B   ---   --   ---xx   flac  0.5170  04 - Unknown Title - Unknown Artist.flac
+     6:23.63       67709420 B   ---   --   ---xx   flac  0.5465  05 - Unknown Title - Unknown Artist.flac
+     3:35.25       37984844 B   ---   --   ---xx   flac  0.5215  06 - Unknown Title - Unknown Artist.flac
+     6:36.14       69887372 B   ---   --   ---xx   flac  0.5107  07 - Unknown Title - Unknown Artist.flac
+     7:28.36       79111916 B   ---   --   ---xx   flac  0.5490  08 - Unknown Title - Unknown Artist.flac
+     5:15.06       55580156 B   ---   --   ---xx   flac  0.5005  09 - Unknown Title - Unknown Artist.flac
+     7:12.17       76244828 B   ---   --   ---xx   flac  0.5112  10 - Unknown Title - Unknown Artist.flac
+     6:26.12       68118668 B   ---   --   ---xx   flac  0.5471  11 - Unknown Title - Unknown Artist.flac
+    63:47.01      675085636 B                            0.5260  (11 files)
+===================
+===================
+===================
+=== shntool len for: bd98-03-30-f.flacf\disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:03.58       74753660 B   ---   --   ---xx   flac  0.5474  01 - Unknown Title - Unknown Artist.flac
+     8:40.38       91817420 B   ---   --   ---xx   flac  0.5419  02 - Unknown Title - Unknown Artist.flac
+     5:51.72       62085788 B   ---   --   ---xx   flac  0.5140  03 - Unknown Title - Unknown Artist.flac
+     5:06.35       54060764 B   ---   --   ---xx   flac  0.5479  04 - Unknown Title - Unknown Artist.flac
+    26:42.53      282717632 B                            0.5384  (4 files)
+===================
+===================
+===================

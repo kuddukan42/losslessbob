@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-04-02-d.shnf 
+=================== 
+=================== 
+=================== 
+7bc3f14b0a6748abd7b371788482867b  bd1995-04-02 birmingham.md5
+c510c23df816f29dab396fa6dda4001c  bd1995-04-02 birmingham.txt
+821837e24568c0b90053f7b473adecde  bd1995-04-02 birmingham_fingerprint.txt
+d7c0e40f0753957224915ac019554ffe  bd1995-04-02 d1t1.shn
+15e640668b8b6d97431245572cc24681  bd1995-04-02 d1t2.shn
+ecc9ff49241d2016a0083c8fffa2436c  bd1995-04-02 d1t3.shn
+e1ad66665abfd7d1d6ca43d1c90fffa2  bd1995-04-02 d1t4.shn
+80314afddd19adbc780a3d9b06385660  bd1995-04-02 d1t5.shn
+547f8b78a7b48093ef1f629a4246f9c4  bd1995-04-02 d1t6.shn
+f422a34f525c6a577a2fa6d863de5d68  bd1995-04-02 d1t7.shn
+396cfe5f5312fa5aa87d1eaa53353549  bd1995-04-02 d2t1.shn
+662c2de59a5febbba0848fcf669848f1  bd1995-04-02 d2t2.shn
+3eac3807310294e93074ac1d8ec0062f  bd1995-04-02 d2t3.shn
+4e5977b40d3d8d0ac3f8683d62a09037  bd1995-04-02 d2t4.shn
+711c6546e8527ebf69a17a309f8c0006  bd1995-04-02 d2t5.shn
+3098323c93ec56bf9b616dc158fae7db  bd1995-04-02 d2t6.shn
+ccb955e3420dc2de8db13c3a928db2e6  bd1995-04-02 d2t7.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-04-02-d.shnf 
+=================== 
+=================== 
+=================== 
+85b3f15e3c623dd14f1b119480ce2f1d  [shntool]  bd1995-04-02_d1t1.wav
+f6275660a0927138519c9663f858fe7c  [shntool]  bd1995-04-02_d1t2.wav
+24217d705fd1884a8efde63e10e2d24a  [shntool]  bd1995-04-02_d1t3.wav
+539414328bd46e8f13b21600be3124db  [shntool]  bd1995-04-02_d1t4.wav
+02a6d8c77e936862d4f9393919433aff  [shntool]  bd1995-04-02_d1t5.wav
+13db271cdb08a71221263daca85ab926  [shntool]  bd1995-04-02_d1t6.wav
+45a91135047a014c912b9823182176f2  [shntool]  bd1995-04-02_d1t7.wav
+025981b2e9db948b4f27de8fc3b172ed  [shntool]  bd1995-04-02_d2t1.wav
+119d2c5e61b22a23d769ad16104b7e1f  [shntool]  bd1995-04-02_d2t2.wav
+bd36d9a43fea6f9986ae60634670aac9  [shntool]  bd1995-04-02_d2t3.wav
+96847c7209bce38d894c71ee1ae21ce3  [shntool]  bd1995-04-02_d2t4.wav
+566703cd5dab911bf65addf36403b18a  [shntool]  bd1995-04-02_d2t5.wav
+635ee0db2b635a2fcf4a35f0d5bca09e  [shntool]  bd1995-04-02_d2t6.wav
+dc5ac619299743492339421753bd4847  [shntool]  bd1995-04-02_d2t7.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-04-02-d.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:07.51       54274796 B   ---   --   ---xx    shn  0.5910  bd1995-04-02 d1t1.shn
+     6:47.38       71884220 B   ---   --   ---xx    shn  0.5860  bd1995-04-02 d1t2.shn
+     5:39.51       59919596 B   ---   --   ---xx    shn  0.6030  bd1995-04-02 d1t3.shn
+     7:20.43       77717180 B   ---   --   ---xx    shn  0.5123  bd1995-04-02 d1t4.shn
+     6:18.44       66782732 B   ---   --   ---xx    shn  0.6137  bd1995-04-02 d1t5.shn
+     8:26.26       89319596 B   ---   --   ---xx    shn  0.5580  bd1995-04-02 d1t6.shn
+     6:50.31       72396956 B   ---   --   ---xx    shn  0.4269  bd1995-04-02 d1t7.shn
+     9:36.03      101613500 B   ---   --   ---xx    shn  0.4393  bd1995-04-02 d2t1.shn
+     6:26.29       68158652 B   ---   --   ---xx    shn  0.4645  bd1995-04-02 d2t2.shn
+     6:39.65       70536524 B   ---   --   ---xx    shn  0.6229  bd1995-04-02 d2t3.shn
+     8:33.35       90575564 B   ---   --   ---xx    shn  0.5632  bd1995-04-02 d2t4.shn
+     8:11.57       86746508 B   ---   --   ---xx    shn  0.5561  bd1995-04-02 d2t5.shn
+     7:21.50       77910044 B   ---   --   ---xx    shn  0.5892  bd1995-04-02 d2t6.shn
+     8:48.54       93266252 B   ---   --   ---xx    shn  0.5012  bd1995-04-02 d2t7.shn
+   102:08.52     1081102120 B                            0.5402  (14 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-05-30-zimmy21.flacf 
+=================== 
+=================== 
+=================== 
+f0f1d6dfc64d1755cfc3edaf9ca81eef  bd98-05-30-zimmy21-LB-5424.txt
+243159d6de08852cddd8ebff383d4c15  Bob Dylan - Nurburg 30 may 1998.md5
+783106db95797d5a80aace56fea5ab4b  bob dylan nurburg 30 may 1998.txt
+b469f233dd9b83043bf4638c15ab5064  lbdir-bd98-05-30-zimmy21.flacf.md5
+28dae0a769fdb546bdb0c088fd11fe6c  lbdir-bd98-05-30-zimmy21.flacf.txt
+8596ab39f152334f15e21e997523dfd1  Track01.flac
+672e533ecb853f3762c297eb86341e5e  Track02.flac
+1f0ec33b9ce5cfbc98a5dde4edac176b  Track03.flac
+030fb80f9613c662724f6b3374c04e99  Track04.flac
+295ef809b7346ce5a906fdcf37fdd3ac  Track05.flac
+7f697830b8d8093ff8532e830e40d2e1  Track06.flac
+de58c67b383199f1c52f494047ad8d96  Track07.flac
+ea7f250f82507e0e0e5bbb0ebfed5459  Track08.flac
+a3c86a3afadfdfa9da7f81b9532dd115  Track09.flac
+049d2948e9e33aed16f3ce960e4ffb09  Track10.flac
+19973ffc10f5770a68e897ea034e2f74  Track11.flac
+1d32824dd28f6f030929b7b05ff1e3d5  Track12.flac
+e880bf7d75d99ae78643d9eff93e325c  Track13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-05-30-zimmy21.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:b1c997273afefa84619903b148bbe247
+Track02.flac:7f1354a201499368ba78e13441b40619
+Track03.flac:6e3d9dc69b9b08049e48166b4e35262a
+Track04.flac:54c8d1b46b8897071da2c938bc312e0c
+Track05.flac:52c021fd867beb8cd0eb9373dacb475e
+Track06.flac:a961175a53ae4232ac9ac99ec37fe4c0
+Track07.flac:ac47ed7c10d2dbefeec8cb1f25919846
+Track08.flac:813a8a9df9486e2c6b2cbba55b2b3f80
+Track09.flac:78cfa4c6ff09d7a568521117c4e682f7
+Track10.flac:45407c64b66c28f68f019684f545a1a6
+Track11.flac:11f0e57475da99db6e72d51b8b880540
+Track12.flac:e3d58981cfbef10b8e22c173fcf6a714
+Track13.flac:0da7962a3177bbce447843dd83e7b662
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-05-30-zimmy21.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:58.57       63285308 B   ---   --   ---xx   flac  0.5844  Track01.flac
+     5:23.15       57012524 B   ---   --   ---xx   flac  0.5593  Track02.flac
+     6:27.63       68415020 B   ---   --   ---xx   flac  0.5697  Track03.flac
+     5:42.01       60331196 B   ---   --   ---xx   flac  0.5622  Track04.flac
+     6:48.13       72001820 B   ---   --   ---xx   flac  0.5980  Track05.flac
+     4:19.06       45701756 B   ---   --   ---xx   flac  0.5679  Track06.flac
+     6:01.32       63755708 B   ---   --   ---xx   flac  0.5987  Track07.flac
+     7:50.33       82985660 B   ---   --   ---xx   flac  0.6016  Track08.flac
+     7:16.07       76926908 B   ---   --   ---xx   flac  0.5680  Track09.flac
+     5:42.03       60335900 B   ---   --   ---xx   flac  0.5869  Track10.flac
+     6:19.45       66961484 B   ---   --   ---xx   flac  0.5746  Track11.flac
+     6:49.74       72321692 B   ---   --   ---xx   flac  0.5844  Track12.flac
+     6:21.62       67354268 B   ---   --   ---xx   flac  0.6009  Track13.flac
+    81:00.36      857389244 B                            0.5822  (13 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-25-NET-TAPER-A.flacf 
+=================== 
+=================== 
+=================== 
+f3a0e34f52f2733f3de049c098a57ed9  bd1997-04-25-d1\Bob Dylan - Track 01.flac
+40818d37288ec793fc2f2d9da9ddb50d  bd1997-04-25-d1\Bob Dylan - Track 02.flac
+b9553482807eea1005e764589eab37f9  bd1997-04-25-d1\Bob Dylan - Track 03.flac
+c2dd37e82bcd55dcd553633b949eb575  bd1997-04-25-d1\Bob Dylan - Track 04.flac
+9937200955e6f295900b8e5685d9e016  bd1997-04-25-d1\Bob Dylan - Track 05.flac
+3185487acd77648d541623e3c6f68bd3  bd1997-04-25-d1\Bob Dylan - Track 06.flac
+ae7ea5a29d33970a93379ee00a5cf206  bd1997-04-25-d1\Bob Dylan - Track 07.flac
+b5444d0304cceb3f79797a0692ecfe2c  bd1997-04-25-d1\Bob Dylan - Track 08.flac
+76c6d3710b0bcbfc7299956b68077eee  bd1997-04-25-d1\bd1997-04-25-d1-fingerprints.txt
+43c2572e8ab31d41f702e2522c0f38b6  bd1997-04-25-d2\Bob Dylan - Track 01.flac
+c958365dbed6d170dd42dfecf34a382b  bd1997-04-25-d2\Bob Dylan - Track 02.flac
+bf92b084ccbab5b0768e8d25a0f8d7bb  bd1997-04-25-d2\Bob Dylan - Track 03.flac
+05c335f1638be92257a46ce95deb6a53  bd1997-04-25-d2\Bob Dylan - Track 04.flac
+17e3cd4d8664d6dfd1b8a7f8eeda1c54  bd1997-04-25-d2\Bob Dylan - Track 05.flac
+2e4facb43fdafc410d52c3ef697ba9d3  bd1997-04-25-d2\Bob Dylan - Track 06.flac
+145299c3d2f82c861c174e77dd5e9304  bd1997-04-25-d2\Bob Dylan - Track 07.flac
+b585bffe4adfb8effae32bffdd3f1914  bd1997-04-25-d2\bd1997-04-25-d2-fingerprints.txt
+2b622dcb3e8309911ac837dad19a8e95  bd1997-04-25-NET TAPER A.txt
+f1a985db5ccc94ce0a2b587a79d0e5db  bd97-04-25-NET-TAPER-A-LB-2885.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-25-NET-TAPER-A.flacf\bd1997-04-25-d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:0405210ee6cae044a93bb0e0e6d284b7
+Bob Dylan - Track 02.flac:988755d8bbba1e6598d02904af60f5f9
+Bob Dylan - Track 03.flac:6109ba1a583e4c2f5044b63dc32538ea
+Bob Dylan - Track 04.flac:536a24f4ddd6f1801b0e71f11c6c6be0
+Bob Dylan - Track 05.flac:be30cd12933ec399d5b3959eb26bd995
+Bob Dylan - Track 06.flac:e40f40d0decfe397da1a2afe86b39007
+Bob Dylan - Track 07.flac:d7a93fc172f451c8b783197861ed9803
+Bob Dylan - Track 08.flac:a12663e00dbeb8dcd2fbeabbaa13985e
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-04-25-NET-TAPER-A.flacf\bd1997-04-25-d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:2ecd24aa2b6113790bb6918f311e7037
+Bob Dylan - Track 02.flac:4c1dcaf99a8e37fe15169feee14c30f4
+Bob Dylan - Track 03.flac:2a26ce63ac2fbefaad076f0378a92524
+Bob Dylan - Track 04.flac:611a8ddb92ba95232baf0782e3dfef4c
+Bob Dylan - Track 05.flac:057a46d74a29bb9632e9c9a40a773a5d
+Bob Dylan - Track 06.flac:fb6d247612d3546efd21c83d312c86ec
+Bob Dylan - Track 07.flac:43c90f0f86f268d98882ddb0ff4ba67b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-25-NET-TAPER-A.flacf\bd1997-04-25-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:57.38       63064220 B   ---   --   ---xx   flac  0.4930  Bob Dylan - Track 01.flac
+     6:10.50       65385644 B   ---   --   ---xx   flac  0.4928  Bob Dylan - Track 02.flac
+     7:27.72       79020188 B   ---   --   ---xx   flac  0.5527  Bob Dylan - Track 03.flac
+     5:20.18       56490380 B   ---   --   ---xx   flac  0.4960  Bob Dylan - Track 04.flac
+     7:07.26       75383996 B   ---   --   ---xx   flac  0.5024  Bob Dylan - Track 05.flac
+     6:24.09       67758812 B   ---   --   ---xx   flac  0.5354  Bob Dylan - Track 06.flac
+     4:24.44       46673132 B   ---   --   ---xx   flac  0.4704  Bob Dylan - Track 07.flac
+     8:59.35       95161964 B   ---   --   ---xx   flac  0.4519  Bob Dylan - Track 08.flac
+    51:51.67      548938336 B                            0.4994  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-25-NET-TAPER-A.flacf\bd1997-04-25-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:03.37      106456268 B   ---   --   ---xx   flac  0.5406  Bob Dylan - Track 01.flac
+     7:34.15       80120924 B   ---   --   ---xx   flac  0.5396  Bob Dylan - Track 02.flac
+     7:04.06       74807756 B   ---   --   ---xx   flac  0.4825  Bob Dylan - Track 03.flac
+     9:34.70      101418284 B   ---   --   ---xx   flac  0.5220  Bob Dylan - Track 04.flac
+     8:04.50       85495244 B   ---   --   ---xx   flac  0.5043  Bob Dylan - Track 05.flac
+    10:45.34      113858012 B   ---   --   ---xx   flac  0.5355  Bob Dylan - Track 06.flac
+     9:23.38       99402620 B   ---   --   ---xx   flac  0.6152  Bob Dylan - Track 07.flac
+    62:30.25      661559108 B                            0.5367  (7 files)
+=================== 
+=================== 
+=================== 

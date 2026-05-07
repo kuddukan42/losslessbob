@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-10-06.flacf 
+=================== 
+=================== 
+=================== 
+c89c9853cc0700063f52d70a551eed7c  bd95-10-06-LB-4802.txt
+8305b38e71052823d7b2ff5296916e26  CD1\01 Drifter's escape.flac
+7802ece2c86288a432c7414198537566  CD1\02 If you see her, say hello.flac
+5f8d1b59111068cdae99145101ca543f  CD1\03 All along the watchtower.flac
+42dbfa12fa4937077095ee46baca385a  CD1\04 Every grain of sand.flac
+ac5041e4c14b9d0360492ea0eac3a2da  CD1\05 Born in time.flac
+1c588463ed3ffd6400cd52fc6893ca1c  CD1\06 Silvio.flac
+a97ee1915b2aa754dbf6d327cf7fa35f  CD1\07 Tangled up in blue.flac
+d9521c622679ecfe79e74fbccc2cbf94  CD1\08 Masters of war.flac
+a1bac16ed9cd1cb1767a7f526c627179  CD1\09 To Ramona.flac
+01b5f2b69ba657050e3614f7c699f042  CD1\CD1.md5
+aaa5187a9a846be726ffed31050d5235  CD2\10 God knows.flac
+3daa16caedd3947ac4fd1c8eda562a4a  CD2\11 In the garden.flac
+3f717544c0a0f2c4ddd11acceb5cab59  CD2\12 Jokerman.flac
+27561862a3f1321720c4bf862f486bbe  CD2\13 Alabama getaway.flac
+120c48bcf1cb687c8b2b4aab58979b8a  CD2\14 The times they are a-changin'.flac
+ebcba9e987cfc36b0026d2bcfa6644aa  CD2\15 Rainy day women # 12 & 35.flac
+4f7f47a50960f645e80af3ef608e0cf9  CD2\CD2.md5
+f63e75a82b6dbcfd4611cdfe403b26d0  Info\1995-10-06 Riverview Music Arena, Jacksonville, Florida, USA.txt
+71e652fbc8a168b32ee9fcfa748b5d95  lbdir-bd95-10-06.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-06.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Drifter's escape.flac:76b1e6961060b3e2dd564d4156e550e6
+02 If you see her, say hello.flac:3182a5a87d6a278d47176e1557259e55
+03 All along the watchtower.flac:be1c53755bd499bfdb0b86222442b609
+04 Every grain of sand.flac:a73dc10bcf4f1b202515b66300f117d0
+05 Born in time.flac:dc53b6175bc9a416d44cba6ecd4ec99f
+06 Silvio.flac:56c63930ea42384ccd9911a57bd86b75
+07 Tangled up in blue.flac:01559d8b9ee780bd286363ef9fbba62a
+08 Masters of war.flac:7d8fe8caa4b466ff6e6acaf7e33133f8
+09 To Ramona.flac:215a8c1dadd595c7e5f7da78c4954ab9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-10-06.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 God knows.flac:d017e27d1f2d735aa0c2a8bc87f63071
+11 In the garden.flac:6828a45536cc41c3e8a5a887507a400d
+12 Jokerman.flac:6dec100c919ea886fa376d72c906fe8e
+13 Alabama getaway.flac:d50b6c142c52fd368f90c8eedee6a7e9
+14 The times they are a-changin'.flac:bdb082507a4c71f9878f1584e0af48ab
+15 Rainy day women # 12 & 35.flac:a8e7e2b5ee231d6830c43bba50fef386
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-06.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:31.47       69082988 B   ---   --   ---xx   flac  0.6333  01 Drifter's escape.flac
+     6:32.37       69235868 B   ---   --   ---xx   flac  0.6318  02 If you see her, say hello.flac
+     6:58.03       73742300 B   ---   --   ---xx   flac  0.6160  03 All along the watchtower.flac
+     9:27.57      100152908 B   ---   --   ---xx   flac  0.5833  04 Every grain of sand.flac
+     6:48.51       72091196 B   ---   --   ---xx   flac  0.5976  05 Born in time.flac
+     7:23.59       78284012 B   ---   --   ---xx   flac  0.6110  06 Silvio.flac
+    10:10.68      107763980 B   ---   --   ---xx   flac  0.6257  07 Tangled up in blue.flac
+     6:49.19       72192332 B   ---   --   ---xx   flac  0.6029  08 Masters of war.flac
+     6:50.06       72338156 B   ---   --   ---xx   flac  0.6215  09 To Ramona.flac
+    67:32.47      714883740 B                            0.6129  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-10-06.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:33.42       80008028 B   ---   --   ---xx   flac  0.6713  10 God knows.flac
+     9:32.49      101016092 B   ---   --   ---xx   flac  0.6212  11 In the garden.flac
+     9:21.34       99040412 B   ---   --   ---xx   flac  0.6455  12 Jokerman.flac
+     5:38.59       59762012 B   ---   --   ---xx   flac  0.6549  13 Alabama getaway.flac
+    10:52.00      115012844 B   ---   --   ---xx   flac  0.6137  14 The times they are a-changin'.flac
+     5:44.20       60728684 B   ---   --   ---xx   flac  0.6328  15 Rainy day women # 12 & 35.flac
+    48:42.54      515568072 B                            0.6372  (6 files)
+=================== 
+=================== 
+=================== 

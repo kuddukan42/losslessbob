@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-11-06-jf-a.flacf 
+=================== 
+=================== 
+=================== 
+9b187e30962a85ba26bcfb6d3f50d492  791106aTrack01.flac
+fe6f4c6c9e11bebc78929d9e4b5db659  791106aTrack02.flac
+903c343751d9d60e4bfe069e07cc1cc4  791106aTrack03.flac
+149cc444ef7b45985e720437dfe6a1fb  791106aTrack04.flac
+05f7aa854e072d49615f433dce80b565  791106aTrack05.flac
+c5cdd30f0187a14c2e8f20370b8764cd  791106aTrack06.flac
+786f65f5a1aaea1becad98c677a6c15c  791106aTrack07.flac
+88d9c2a69f5a84eca8b7f85bc51483cf  791106aTrack08.flac
+278a9e50378a375146374c50cbc99d63  791106aTrack09.flac
+6727121d2dc85948d177c1890ef2e417  791106aTrack10.flac
+2479b7f2c318b1f09b1d9ec00d48d441  791106aTrack11.flac
+dc0f7fab83616e4ffdfe3809dcbd76e2  791106aTrack12.flac
+d7199ff4057765604994acfbb7371dcc  791106aTrack13.flac
+b7f1d60d2e15fb3bba486e76edc65afb  791106bTrack01.flac
+355c9dafb3dbf3e0611afa30de6ec87b  791106bTrack02.flac
+0379ebcaf9b04e3671d872b574a59b1a  791106bTrack03.flac
+8ffb55dfebc9b105b00c32c30e089b59  791106bTrack04.flac
+b91c8b185ec99aa937252de920af4487  bd79-11-06-jf-a-LB-3611.txt
+c8f5fb519f3c79523ffb9f3ce1f28516  Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-11-06-jf-a.flacf 
+=================== 
+=================== 
+=================== 
+791106aTrack01.flac:9c9f4b0ca5ce3bcea71ed3bb8e453cd5
+791106aTrack02.flac:694eee63a7cd5efe86abb12d21ffe6f0
+791106aTrack03.flac:aa4b0dce26acb6968bdd462205ccfe80
+791106aTrack04.flac:2e9de23e2de8697d5f98ddca7ef4b50b
+791106aTrack05.flac:45609bfdbe979c00ac3bc068f21c2875
+791106aTrack06.flac:0c1bf5fa3dc596478c75049281bebb72
+791106aTrack07.flac:5528b739603a247f1362418b10b27286
+791106aTrack08.flac:1462e21dc1d2d03e03b95fa8d40b2065
+791106aTrack09.flac:1550ca45117293d53a75136dd3197e7d
+791106aTrack10.flac:bd53fa8a9c1adf7b1908fb03582b32c8
+791106aTrack11.flac:454fc04e6985d7557e2cdb1b12c1b0f7
+791106aTrack12.flac:95c08aafb7e76fedfc4d68e557973583
+791106aTrack13.flac:4651f5f1edb4fa3c69a538835fc5081a
+791106bTrack01.flac:79e59bb71a42349858edb0dc19cdf8e4
+791106bTrack02.flac:c0dcbbdd047500568bbdea9b2e8444df
+791106bTrack03.flac:313c26f51d6b5e3b0181bc67f16344be
+791106bTrack04.flac:40d77048d6437f50923c009652084cb8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-11-06-jf-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:59.68       74071580 B   ---   --   ---xx   flac  0.7202  791106aTrack01.flac
+     5:02.22       53324588 B   ---   --   ---xx   flac  0.6311  791106aTrack02.flac
+     5:52.10       62116364 B   ---   --   ---xx   flac  0.7127  791106aTrack03.flac
+     5:17.63       56067020 B   ---   --   ---xx   flac  0.5811  791106aTrack04.flac
+     5:43.31       60578156 B   ---   --   ---xx   flac  0.6351  791106aTrack05.flac
+     5:45.32       60933308 B   ---   --   ---xx   flac  0.6908  791106aTrack06.flac
+     6:24.38       67827020 B   ---   --   ---xx   flac  0.7121  791106aTrack07.flac
+     6:48.37       72058268 B   ---   --   ---xx   flac  0.6235  791106aTrack08.flac
+     4:39.71       49382636 B   ---   --   ---xx   flac  0.7014  791106aTrack09.flac
+     4:12.36       44537516 B   ---   --   ---xx   flac  0.6798  791106aTrack10.flac
+     4:39.48       49328540 B   ---   --   ---xx   flac  0.7329  791106aTrack11.flac
+     4:26.18       46964780 B   ---   --   ---xx   flac  0.6204  791106aTrack12.flac
+     5:33.60       58882364 B   ---   --   ---xx   flac  0.6670  791106aTrack13.flac
+     4:16.15       45193724 B   ---   --   ---xx   flac  0.7461  791106bTrack01.flac
+     7:02.24       74497292 B   ---   --   ---xx   flac  0.6532  791106bTrack02.flac
+     4:05.58       43354460 B   ---   --   ---xx   flac  0.7080  791106bTrack03.flac
+     6:33.21       69374636 B   ---   --   ---xx   flac  0.6103  791106bTrack04.flac
+    93:23.52      988492252 B                            0.6703  (17 files)
+=================== 
+=================== 
+=================== 

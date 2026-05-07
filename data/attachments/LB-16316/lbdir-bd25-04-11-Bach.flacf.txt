@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd25-04-11-Bach.flacf
+===================
+===================
+===================
+e609ec5cbb9a76c317464c790d2acc60 *01. I'll Be Your Baby Tonight.flac
+852462e7b81f3ebfbf50dafda5b0086f *02. It Ain't Me, Babe.flac
+39588cf435edb6bb10db79d2cd13c1e3 *03. I Contain Multitudes.flac
+f6d1d3d44486e5d87ff0f65128b0b83f *04. False Prophet.flac
+db1fdb7f57ba8242b6dd92edc1c2629d *05. When I Paint My Masterpiece.flac
+586c028dd263409aac8628e731188cc9 *06. Black Rider.flac
+d98d3181561c2e96a6804322d957a095 *07. My Own Version Of You.flac
+cacede7f98b1a4e11e8582d940e7e16f *08. To Be Alone With You.flac
+7adec785dbd0bd92d5e3e7cb45bef396 *09. Crossing the Rubicon.flac
+1da41445bd22a12159efa07e44b0a261 *10. Desolation Row.flac
+2899f414f9789370fb6b561bfcabb766 *11. Key West (Philosopher Pirate).flac
+dce1185664ecc340e648da616b201fc6 *12. Watching the River Flow.flac
+c4592bd3a4d61919aa340d6ae27d9f4e *13. Band Intro.flac
+dd978f8ce8eb8aefaf104ae869ecc0d7 *14. It's All Over Now, Baby Blue.flac
+a8229f87c59d74ff84a7cc3bed3055e4 *15. I've Made Up My Mind To Give Myself To You.flac
+4ad2cbf6906dddb4fc91171ed9bbc1cc *16. Mother of Muses.flac
+6d9b609736a6d6dcb0b281fb7a120c4c *17. Goodbye Jimmy Reed.flac
+34777c7f9ea8c927888537ec5de08406 *18. Every Grain of Sand.flac
+3eee8bec3352274d9bde5fcc900a04b3 *2025-04-11 West Lafayette info.txt
+597ad235cc69b157c360f1c3862f9485 *2025-04-11 West Lafayette, Indiana (Bach).md5
+===================
+===================
+===================
+=== ffp for: bd25-04-11-Bach.flacf
+===================
+===================
+===================
+01. I'll Be Your Baby Tonight.flac:8fdf9e77da593ce85ebb933bf4f507a7
+02. It Ain't Me, Babe.flac:51f9c795745619d77c909853a8ac1592
+03. I Contain Multitudes.flac:02ea5cd43f1bd37986a67a98a49d6680
+04. False Prophet.flac:67a722968056ff62ce577df57b6d7d55
+05. When I Paint My Masterpiece.flac:957c738b2bf7fcb58b278218cc3dbbe7
+06. Black Rider.flac:5cd2cf5253df872ac01ea6d959d91fe9
+07. My Own Version Of You.flac:6d9edf9eb528cfc74124b8d51c67a62b
+08. To Be Alone With You.flac:15989144c416d8a7f771dbcb3ff4370a
+09. Crossing the Rubicon.flac:bffad3a58fd55269e65501595935af3e
+10. Desolation Row.flac:b2dae2fc5f0e5ca1fc38cfe8ac39a8fc
+11. Key West (Philosopher Pirate).flac:68a3a336549ceb47c51984b7e81d070b
+12. Watching the River Flow.flac:e960bd234d5d07c18ca088d6dc0513e6
+13. Band Intro.flac:dd006bf232f987ea707cb327fad357ef
+14. It's All Over Now, Baby Blue.flac:6515e83d7cd733a6a44e588dc91b1952
+15. I've Made Up My Mind To Give Myself To You.flac:77c94e08f95b445508093c67918c23c5
+16. Mother of Muses.flac:96fec2fe9980204aed86cb0d7abce120
+17. Goodbye Jimmy Reed.flac:b32783e658bd1f15bad52e408579f0c9
+18. Every Grain of Sand.flac:4908a81422479fd225f798a76a53e03b
+===================
+===================
+===================
+=== shntool len for: bd25-04-11-Bach.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:52.027      66823892 B   cxx   --   ---xx   flac  0.6322  01. I'll Be Your Baby Tonight.flac
+     6:20.755     109657340 B   cxx   --   ---xx   flac  0.6309  02. It Ain't Me, Babe.flac
+     5:45.180      99412028 B   cxx   --   ---xx   flac  0.6164  03. I Contain Multitudes.flac
+     7:11.016     124132724 B   cxx   --   ---xx   flac  0.6236  04. False Prophet.flac
+     6:19.848     109396268 B   cxx   --   ---xx   flac  0.5969  05. When I Paint My Masterpiece.flac
+     5:38.823      97580996 B   cxx   --   ---xx   flac  0.5739  06. Black Rider.flac
+     6:10.783     106785548 B   cxx   --   ---xx   flac  0.5931  07. My Own Version Of You.flac
+     4:03.077      70006148 B   cxx   --   ---xx   flac  0.6316  08. To Be Alone With You.flac
+     7:53.315     136314908 B   cxx   --   ---xx   flac  0.6168  09. Crossing the Rubicon.flac
+     6:36.545     114204932 B   cxx   --   ---xx   flac  0.6339  10. Desolation Row.flac
+     7:52.201     135993860 B   cxx   --   ---xx   flac  0.5671  11. Key West (Philosopher Pirate).flac
+     5:21.501      92592404 B   cxx   --   ---xx   flac  0.6493  12. Watching the River Flow.flac
+     0:29.608       8527220 B   cxx   --   ---xx   flac  0.6249  13. Band Intro.flac
+     5:02.832      87215732 B   cxx   --   ---xx   flac  0.5949  14. It's All Over Now, Baby Blue.flac
+     6:12.522     107286524 B   cxx   --   ---xx   flac  0.5748  15. I've Made Up My Mind To Give Myself To You.flac
+     5:46.503      99793052 B   cxx   --   ---xx   flac  0.5781  16. Mother of Muses.flac
+     6:40.318     115291556 B   cxx   --   ---xx   flac  0.6438  17. Goodbye Jimmy Reed.flac
+     6:31.449     112737284 B   cxx   --   ---xx   flac  0.6029  18. Every Grain of Sand.flac
+   103:48.304    1793752416 B                            0.6085  (18 files)
+===================
+===================
+===================

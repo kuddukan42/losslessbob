@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-10-Gijon 
+=================== 
+=================== 
+=================== 
+767e747379bdf9b83f1a0d68f1fd548d  bd99-04-10.txt
+35d51eafafb6fb1a11f8512c835a6e62  Gij-0410-d1-t01.shn
+49b137ac9ecc31367fb7f581e71a366c  Gij-0410-d1-t02.shn
+132ae29f3e4f41f5af5c61131142ae34  Gij-0410-d1-t03.shn
+15f14dc18b2041699b3cb5cc43ebffb3  Gij-0410-d1-t04.shn
+15ff1b15c4fedcb72b409252a7aef7a9  Gij-0410-d1-t05.shn
+167da1ef503d15124c4d622a61a235aa  Gij-0410-d1-t06.shn
+ccd3595a77c22d7fd5131582a2b11db9  Gij-0410-d1-t07.shn
+3472fd9f71a923c7912d8af319ec0dcb  Gij-0410-d1-t08.shn
+dc026ecd6c212f76460505ae481c578e  Gij-0410-d1-t09.shn
+103bcefdec898da946e97aebad22c935  Gij-0410-d1-t10.shn
+1ba6b18f46b6570baab00d29f667fcc0  Gij-0410-d2-t01.shn
+a8e6344c5116c0573e11f6d31f1ae23e  Gij-0410-d2-t02.shn
+83e7d52fe63f14e0b7b99a1ef277ca56  Gij-0410-d2-t03.shn
+519a1cde6bd99612e17d09d913a856e5  Gij-0410-d2-t04.shn
+c95b01fe21dc1b0e2adf5a83c8b88e9f  Gij-0410-d2-t05.shn
+96b5d2b51c82a52f20764311000a50e6  Gij-0410-d2-t06.shn
+ebe8a33015aa2f2d523cc776eb35e75e  Gij-0410-d2-t07.shn
+0cba8c6d1f910812fd175175617f1b96  LisbonToBarcelonaInfo.doc
+6b452d7c6b9171c0edee62ebb694aadf  Malaga.jpg
+0b731ecd5957f7bcf399b17496b00159  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-04-10-Gijon 
+=================== 
+=================== 
+=================== 
+89e667564134921fde8e1fbc3d77ca76  [shntool]  Gij-0410-d1-t01.wav
+9ef67f6149a471548d4920d1c7521eee  [shntool]  Gij-0410-d1-t02.wav
+d2f1a765966d7caea4945eab57e0ab11  [shntool]  Gij-0410-d1-t03.wav
+83e9eb96cd7f37ffabc004f13f6425cf  [shntool]  Gij-0410-d1-t04.wav
+c9ac7b521fc04c0bee40973a26d5d8e6  [shntool]  Gij-0410-d1-t05.wav
+0b097973dad13bac2bb900d806aec3a5  [shntool]  Gij-0410-d1-t06.wav
+5cbe538b11a40f24af0f405bb6429ed8  [shntool]  Gij-0410-d1-t07.wav
+580e8c0015e481ffea8acbb94c2497b8  [shntool]  Gij-0410-d1-t08.wav
+6947153180d31b2a624f6f1184db770d  [shntool]  Gij-0410-d1-t09.wav
+986f509934d22d860ab18c45d3cf1373  [shntool]  Gij-0410-d1-t10.wav
+1fd405e940ccc80f1478400963a87427  [shntool]  Gij-0410-d2-t01.wav
+8da0be74a05c4710765b16b79a14bcb7  [shntool]  Gij-0410-d2-t02.wav
+94205fd97c7da6b3d2f03ebb4b5d77b1  [shntool]  Gij-0410-d2-t03.wav
+2c3e4ac12edd6afa1769d9dfdd617cf0  [shntool]  Gij-0410-d2-t04.wav
+cbc531c977fd2099efbd463495bb7331  [shntool]  Gij-0410-d2-t05.wav
+cbcaade045abfef660a99fb3765803b2  [shntool]  Gij-0410-d2-t06.wav
+8272a841035585a4d58489ebdc2a3d60  [shntool]  Gij-0410-d2-t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-10-Gijon 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:14.03        2477376 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t01.wav
+     2:56.50       31164700 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t02.wav
+     6:19.61       66998876 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t03.wav
+     5:21.05       56635176 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t04.wav
+    10:02.25      106252776 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t05.wav
+     7:03.24       74674136 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t06.wav
+     6:04.17       64248792 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t07.wav
+    10:26.31      110500120 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t08.wav
+     4:40.74       49565656 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t09.wav
+     7:21.28       77859348 B   -b-   --   -----    wav  1.0000  Gij-0410-d1-t10.wav
+     6:48.43       72072756 B   -b-   -e   -----    wav  1.0000  Gij-0410-d2-t01.wav
+     4:22.68       46376776 B   -b-   -e   -----    wav  1.0000  Gij-0410-d2-t02.wav
+     8:49.43       93417616 B   -b-   -e   -----    wav  1.0000  Gij-0410-d2-t03.wav
+     5:46.52       61157616 B   -b-   -e   -----    wav  1.0000  Gij-0410-d2-t04.wav
+     5:13.64       55365056 B   -b-   -e   -----    wav  1.0000  Gij-0410-d2-t05.wav
+     6:29.67       68778096 B   -b-   -e   -----    wav  1.0000  Gij-0410-d2-t06.wav
+     8:10.29       86505148 B   -b-   -e   -----    wav  1.0000  Gij-0410-d2-t07.wav
+   106:12.12     1124050020 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

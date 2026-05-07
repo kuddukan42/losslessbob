@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-03-28.flacf 
+=================== 
+=================== 
+=================== 
+98719cc9020d47826beeb321372b7fdf  bd-01.flac
+29778cb844f24d4a31f31a4b3d3cf7a6  bd-02.flac
+6d649ba8c46155927c2838b90dec66bb  bd-03.flac
+fb5d7786b3861440e733fc761b970f57  bd-04.flac
+05ad8ae40719e15dd94f4a3aa35aabd7  bd-05.flac
+97fa1c3dd18864f431c516327e88011c  bd-06.flac
+f5524847aac6047ab23522950fb4dce9  bd-07.flac
+581b2933b7e533e17564e114a65e8b4c  bd-08.flac
+8cbf085514394cac8b531b5a07d534df  bd-09.flac
+e6f528a2045fa6691a415022b9647c99  bd-10.flac
+d190e49b02970af8bb44921b4bca4c37  bd-11.flac
+1174590dd52d264373362aff07c09675  bd-12.flac
+aef81ad6579e9fb653da95fb1aecbbe9  bd-13.flac
+feda1dead157b5bcef4ed37f1c25984e  bd-14.flac
+bf96f3724a79e77c3ee3d432023e340d  bd-15.flac
+e752eb96bcaef13477a238dd12c2d649  bd05-03-28.txt
+1caac5ae0892f430cf96a79e59ff72b1  bob dylan denver colorado 3-28-05 (flac).txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-03-28.flacf 
+=================== 
+=================== 
+=================== 
+bd-01.flac:9316c8dc6a7cba6ec69155bcec798aa1
+bd-02.flac:b7ef7f3a5d50b3577731febb70856399
+bd-03.flac:fb9fc49232e0f55f6fe8c050e13c1d7b
+bd-04.flac:4fcc7e5d69d428021dfa46801705e4b8
+bd-05.flac:bbae92e0988a71011dd82d7b77264937
+bd-06.flac:16c42211d64b15c18f712edf31599822
+bd-07.flac:590b4e64da27409a22de501e4c44bae6
+bd-08.flac:fcba16d8796e45a485ac6056905d988e
+bd-09.flac:5ec69797d5235d7306f674470ca7fc1d
+bd-10.flac:33cad5e77aa6ef7f2a80ceaf14db2374
+bd-11.flac:128aa8995ab71172d4d6275f2647d0f1
+bd-12.flac:48c128ff3c588e83b7c1b3445e122e8c
+bd-13.flac:8035be21206b6a23dc72be6d6d8794e3
+bd-14.flac:6ce3327a8360c0b35c9dc4485cd8f3e0
+bd-15.flac:1e16895b6fe56cd2aff14b4d8905b2ee
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-03-28.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:13.56       44760012 B   -b-   --   ---xx   flac  0.5626  bd-01.flac
+     5:47.71       61378636 B   -b-   --   ---xx   flac  0.5146  bd-02.flac
+     5:34.21       58968132 B   -b-   --   ---xx   flac  0.5052  bd-03.flac
+     6:58.34       73815112 B   -b-   --   ---xx   flac  0.5194  bd-04.flac
+     5:58.62       63297464 B   -b-   --   ---xx   flac  0.5372  bd-05.flac
+     6:43.17       71128724 B   -b-   --   ---xx   flac  0.4603  bd-06.flac
+     5:51.16       61954316 B   -b-   --   ---xx   flac  0.5649  bd-07.flac
+     7:05.14       75002512 B   -b-   --   ---xx   flac  0.5072  bd-08.flac
+     5:43.25       60563148 B   -b-   --   ---xx   flac  0.5128  bd-09.flac
+     7:03.16       74654584 B   -b-   --   ---xx   flac  0.5518  bd-10.flac
+     6:15.31       66223620 B   -b-   --   ---xx   flac  0.4757  bd-11.flac
+     7:23.35       78228424 B   -b-   --   ---xx   flac  0.5472  bd-12.flac
+     4:22.06       46231904 B   -b-   --   ---xx   flac  0.4852  bd-13.flac
+     0:32.43        5745032 B   -b-   --   ---xx   flac  0.5143  bd-14.flac
+     5:12.08       55054576 B   -b-   --   ---xx   flac  0.5225  bd-15.flac
+    84:45.05      897006196 B                            0.5188  (15 files)
+=================== 
+=================== 
+=================== 

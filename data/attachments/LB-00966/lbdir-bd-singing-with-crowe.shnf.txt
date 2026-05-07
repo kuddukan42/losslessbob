@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-singing-with-crowe.shnf 
+=================== 
+=================== 
+=================== 
+26d8c789fa3aac488493b2e8aa21593c  DylanSingingWithBack.jpg
+65236d938b507acdc241cc610c2782fe  DylanSingingWithFront.jpg
+c70d0f5a26bf354430481191f44e0c57  SWTC01.shn
+3eda58ca12b7b777e47be811d25159bf  SWTC02.shn
+f10e43fb850a58f47328cecfddcece48  SWTC03.shn
+208d7685214cd2064529f079dd0f59a4  SWTC04.shn
+8431b2acb21fa858e66b605e9ae21ffd  SWTC05.shn
+944d06aad0a9c00bf884c4b34d200611  SWTC06.shn
+f103c07e9e98c56a1414371e0161420d  SWTC07.shn
+0a11326ecbaba423593f1f2c89be96f0  SWTC08.shn
+a7b10e8f5748397828bf2df854f263d4  SWTC09.shn
+75b633d9b78ba3832e0524d8b2ab580b  SWTC10.shn
+e4a6237abfc04d0275513b311686b3eb  SWTC11.shn
+142e00bd90711a922502c92e5b219b2e  SWTC12.shn
+bcae689a7b7a5a0d68f9b2e9467a5ebb  SWTC13.shn
+393a2467a33ec0262908b03d04fd8ae9  SWTC14.shn
+12aca3e181ceb0dc15477cce88e6a368  SWTC15.shn
+81b3c7a990c8ac77548f0516d33d0e35  SWTC16.shn
+6d46d68e090f5bcf7c9aeeb646d803bd  SWTCchecksum.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-singing-with-crowe.shnf 
+=================== 
+=================== 
+=================== 
+2831bed502fedd0be5eacc47d45633f1  [shntool]  SWTC01.wav
+cd975d2e1c9cb7dc26ae5a7d0098c129  [shntool]  SWTC02.wav
+e2f8a0ca23adb3c740d99e69de51afbb  [shntool]  SWTC03.wav
+06c3ba3cbd7a1a9b90540f9d07a764e1  [shntool]  SWTC04.wav
+df7cee191a21c5371e4f250eb8b43a97  [shntool]  SWTC05.wav
+80eac3a39bd170d3301b407d070a34a9  [shntool]  SWTC06.wav
+0d75876137b891dddeb91e1d6a92b3bb  [shntool]  SWTC07.wav
+9557f66445f10634180674d5855d3d08  [shntool]  SWTC08.wav
+3abc0a56ea9fc12b69ef5032b817e1ab  [shntool]  SWTC09.wav
+9482a50d46373254b56d08c4b46f2146  [shntool]  SWTC10.wav
+28886a4a584b02b2250a8672fd7e8573  [shntool]  SWTC11.wav
+038f28629f6e85500e62c2743e1283e0  [shntool]  SWTC12.wav
+73115b6a9e242da8b1ee259664df335b  [shntool]  SWTC13.wav
+436577171d30ea6e7567498100e90941  [shntool]  SWTC14.wav
+d898f6653027c5ce0c3b10d1e52443e5  [shntool]  SWTC15.wav
+fe4b99fb5f4b9a0fb998d64f09e5e4d1  [shntool]  SWTC16.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-singing-with-crowe.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:36.45       38208284 B   ---   --   ---xx    shn  0.6568  SWTC01.shn
+     3:09.52       33461948 B   ---   --   ---xx    shn  0.6476  SWTC02.shn
+     5:36.63       59418620 B   ---   --   ---xx    shn  0.6196  SWTC03.shn
+     3:38.40       38549324 B   ---   --   ---xx    shn  0.6111  SWTC04.shn
+     3:16.67       34732028 B   ---   --   ---xx    shn  0.6296  SWTC05.shn
+     4:34.68       48493580 B   ---   --   ---xx    shn  0.6247  SWTC06.shn
+     5:00.15       52955324 B   ---   --   ---xx    shn  0.6638  SWTC07.shn
+     5:09.52       54629948 B   ---   --   ---xx    shn  0.6408  SWTC08.shn
+     7:10.65       76004924 B   ---   --   ---xx    shn  0.7061  SWTC09.shn
+     5:12.30       55107404 B   ---   --   ---xx    shn  0.6974  SWTC10.shn
+     3:46.53       39991100 B   ---   --   ---xx    shn  0.6142  SWTC11.shn
+     5:56.47       62908988 B   ---   --   ---xx    shn  0.6942  SWTC12.shn
+     5:14.63       55537820 B   ---   --   ---xx    shn  0.6757  SWTC13.shn
+     5:00.30       52990604 B   ---   --   ---xx    shn  0.7179  SWTC14.shn
+     6:16.17       66366428 B   ---   --   ---xx    shn  0.6976  SWTC15.shn
+     2:56.73       31218140 B   ---   --   ---xx    shn  0.5941  SWTC16.shn
+    75:38.30      800574464 B                            0.6623  (16 files)
+=================== 
+=================== 
+=================== 

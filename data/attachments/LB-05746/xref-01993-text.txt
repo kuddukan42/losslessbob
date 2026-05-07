@@ -1,0 +1,123 @@
+===================
+===================
+===================
+=== Bob Dylan - Outtakes Of Mercy_AcidProject_041.ffp
+===================
+===================
+===================
+01 Shooting Star.flac:b9fd73ddc311d5d283fcf1a60a2a9bc8
+02 God Knows I.flac:cd10f4bb12e6de44d7ec4d8e2d281706
+03 God Knows II.flac:05f54730e8f98d12af5be3bdaf3bd0d2
+04 What Good Am I_.flac:d070ef9e4eea0ed62081fc644103b1aa
+05 Most Of The Time.flac:f4f853aa4a77347a3bd958feb15d483a
+06 Everything Is Broken.flac:136a2419df27f4f32c1bdc59069a2e71
+07 Political World.flac:dfcf2e826184c58ec13579fe6475b494
+08 Born In Time.flac:aa24c6e9e99097fb68025731c3bd02fa
+09 Dignity.flac:1955eeff4750b0a93176f14c1f56cd02
+10 Shooting Star.flac:d272536c13512e3c222f25cf2b070557
+11 Disease Of Conceit.flac:d873d653c179a9394513cf1aafb4c3a5
+12 Ring Them Bells-fixed.flac:51b2d8c17f5829222ce4fd87ab512001
+13 Most Of The Time II.flac:cd3822180cf79e9aa6fa20dbb928d90a
+14 What Was It You Wanted_.flac:2c1c714eb20a4f27b51dc77a319cb108
+15 Series Of Dreams I.flac:8b1266da30c88cb05c6311411802e14d
+16 Series Of Dreams II.flac:bd3d1358227e96a44709e58c01c30ed0
+17 Series Of Dreams III.flac:4f96f2a8c9c7e2d69838ed58df5903f4
+===================
+===================
+===================
+=== Bob Dylan - Outtakes Of Mercy_AcidProject_041.md5
+===================
+===================
+===================
+ad8bba6e0324ef02a1275b4a9fcb04fc *01 Shooting Star.flac
+64be075753427100c31c530b0dfe719b *02 God Knows I.flac
+6690d3307e8eb5cb721fbc06b4ccdcbc *03 God Knows II.flac
+2be11d40a95ac0ced90d326789ce763b *04 What Good Am I_.flac
+bcb8085eee12719f5a53defb04fbd8d5 *05 Most Of The Time.flac
+c24b6bf923bc596dff49722f31a74536 *06 Everything Is Broken.flac
+d8618968a1e286af43610ee3ec39481b *07 Political World.flac
+c95015089b30721fbfb0f5dc316e04a2 *08 Born In Time.flac
+5f74a2b8fc65c6aca4ca7092f9d7fabf *09 Dignity.flac
+7817e99150a9d944d827754a273c14ea *10 Shooting Star.flac
+d7fffe4816f44dd5e078f52b528ad87f *11 Disease Of Conceit.flac
+748f25884317561dc3f6542fc5bf08f4 *12 Ring Them Bells-fixed.flac
+8da678e30531636dc90edf909020fae6 *13 Most Of The Time II.flac
+164df1e8b00e50a5bb93c9d72c5ca9c9 *14 What Was It You Wanted_.flac
+3ee5587bd437dda2ea804c947031a5db *15 Series Of Dreams I.flac
+461740bc6f58730df4493031c56cc611 *16 Series Of Dreams II.flac
+e5bfe25d9a5738b92e61686b66c9a429 *17 Series Of Dreams III.flac
+dfc0afdd0096578040c9f8a26e8e8f86 *Bob Dylan - Outtakes Of Mercy_AcidProject_041.ffp
+f2d72660254890e08d7e4293b339c679 *Bob Dylan - Outtakes Of Mercy_AcidProject_041.txt
+a62cd7407c4f35a997b982514502338c *DylanOOM APCD041 A FRONT2.jpg
+e79e70e0a0b606d97ce7a7c70e500660 *DylanOOM APCD041 B BACK.jpg
+6229e69c2c876aa55977bc8244650640 *folder.jpg
+35d3559143d6d8062dcf4934ad7aa974 *Info.txt
+ab380fe58e238c66ef63d6b61e29f335 *WFMH - 1989 The Oh Mercy Outtakes(1).pdf
+===================
+===================
+===================
+=== Bob Dylan - Outtakes Of Mercy_AcidProject_041.txt
+===================
+===================
+===================
+01 Shooting Star.flac:b9fd73ddc311d5d283fcf1a60a2a9bc8
+02 God Knows I.flac:cd10f4bb12e6de44d7ec4d8e2d281706
+03 God Knows II.flac:05f54730e8f98d12af5be3bdaf3bd0d2
+04 What Good Am I_.flac:d070ef9e4eea0ed62081fc644103b1aa
+05 Most Of The Time.flac:f4f853aa4a77347a3bd958feb15d483a
+06 Everything Is Broken.flac:136a2419df27f4f32c1bdc59069a2e71
+07 Political World.flac:dfcf2e826184c58ec13579fe6475b494
+08 Born In Time.flac:aa24c6e9e99097fb68025731c3bd02fa
+09 Dignity.flac:1955eeff4750b0a93176f14c1f56cd02
+10 Shooting Star.flac:d272536c13512e3c222f25cf2b070557
+11 Disease Of Conceit.flac:d873d653c179a9394513cf1aafb4c3a5
+12 Ring Them Bells.flac:e8f29cfcb1a7bd0ac2e36a01d96b7be2
+13 Most Of The Time II.flac:cd3822180cf79e9aa6fa20dbb928d90a
+14 What Was It You Wanted_.flac:2c1c714eb20a4f27b51dc77a319cb108
+15 Series Of Dreams I.flac:8b1266da30c88cb05c6311411802e14d
+16 Series Of Dreams II.flac:bd3d1358227e96a44709e58c01c30ed0
+17 Series Of Dreams III.flac:4f96f2a8c9c7e2d69838ed58df5903f4
+===================
+===================
+===================
+=== Info.txt
+===================
+===================
+===================
+Bob Dylan - Outtakes Of Mercy
+Oh Mercy outtakes
+Studio On The Move, New Orleans, LO
+March-July 1989
+
+Hi Dylan gang.
+A friend suggested i might do this, so i did it. I worked on Deeds Of Mercy bootleg. I also had Ring Them Bells and Mercy On Us, those two were already remastered so i took Deeds Of Mercy because it was closest to original, raw files.
+I have done speed-pitch, phase and level correction and some gentle EQ. I think this is the first time those outtakes run at correct speed, at least considering commertial bootlegs.
+As usual, no compression, limiting or noise reduction was done by me.
+
+
+Artwork by Mr. D
+remastered by Captain Acid December 2019
+
+
+
+
+01 Shooting Star
+02 God Knows 1
+03 God Knows 2
+04 What Good Am I 
+05 Most Of The Time 
+06 Everything Is Broken 
+07 Political World 
+08 Born In Time 
+09 Dignity
+10 Shooting Star 
+11 Disease Of Conceit 
+12 Ring Them Bells 
+13 Most Of The Time 
+14 What Was It You Wanted
+15 Series Of Dreams 1
+16 Series Of Dreams 2
+17 Series Of Dreams 3
+===================
+===================
+===================

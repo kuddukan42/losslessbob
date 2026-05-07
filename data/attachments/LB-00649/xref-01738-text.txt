@@ -1,0 +1,116 @@
+===================
+===================
+===================
+=== bd78-03-01.txt
+===================
+===================
+===================
+Bob Dylan, 3/1/78, Nippon Budokan Hall, Tokyo, Japan, 2CDR
+
+(70min+64min), master, excellent sound, master, small noise may be crowd at d1t3 0:51, d1t13 0:16,d2t6 1:47, d2t7 1:03, 1:44; d2t11 4:06; 4:16; d2t10 start in d2t9, d212 ends suddenly and then restarts again on d2t13
+
+CD1 
+1  A Hard Rain's A-Gonna Fall (instrumental) 2 Love Her With A Feeling 3 Mr. Tambourine Man 4 I Threw It All Away 5 Love Minus Zero/No Limit 6 Shelter From The Storm 7 Girl From The North Country 8 Ballad Of A Thin Man 9 Maggie's Farm 10 One More Cup Of Coffee (Valley Below) 11 Like A Rolling Stone 12 I Shall Be Released 13 Is Your Love In Vain? 14 Going, Going, Gone 15 One Of Us Must Know (Sooner Or Later) 
+
+CD2 
+1 Blowin' In The Wind 2 Just Like A Woman 3 Oh, Sister 4 I Don't Believe You 5 You're A Big Girl Now 6 All Along The Watchtower 7 I Want You 8 All I Really Want To Do 9 Knockin' On Heaven's Door 10 The Man In Me 11 band intros +  It's Alright, Ma (I'm Only Bleeding) 12+13  Forever Young 14 The Times They Are A-Changin'
+
+BobTalk
+
+Thank you. Here's an unrecorded song. See if you can guess which one it is. (before Is Your Love In Vain?)
+
+I wanna introduce this orchestra to you. Over here on tenor saxophone, flugelhorn, flute, a young gentleman from Los Angeles, Steve Douglas. Standing right next to him, on violin and mandolin both, David Mansfield. On the rhythm guitar from Tallahassee, Florida, Steve Soles. Playing keyboards tonight Alan Pasqua. The bass guitar, Rob Stoner. Lead guitar, Billy Cross. That's the way. On the drums, Ian Wallace. On the conga drums. Bobbye Hall. And these three young beautiful ladies I first heard singing in a department store. On the right is Debbie Dye. On the left is Helena Springs in the middle is Jo Ann Harris. Thank you very much. This is called It's Alright Ma, I'm Only Bleeding.
+
+Thank you. I wanna say hello to Don Camillo tonight, came all the way to see us from Madrid, Don stand up, take a bow! I guess he doesnt want to. Leave you with this here song, this message. [shout from the audience] All right, there you are! (before Forever Young)
+
+ 
+
+===================
+===================
+===================
+=== d1.ffp
+===================
+===================
+===================
+Track01.flac:db17dfd6665cc0a59767ced549d84276
+Track02.flac:df90cd1948eced6622e2459ce0614f28
+Track03.flac:05ea5f4bdf706e1c62909ac353a47b81
+Track04.flac:ad2776b2dc8497f45c5fec8ce8d8f4e0
+Track05.flac:fda774c649553b5f3e29e900e758e397
+Track06.flac:12ea899d85a1754f6f5f570a207e2f31
+Track07.flac:826b0192287c76408fc2c5ac11f40e3d
+Track08.flac:a83371a3d29702b0f06a432cdfc70750
+Track09.flac:68125b87d1a844155aa214ae6320cba7
+Track10.flac:1ad3fda29a6b7b8bdef1bc6c7ad9f32f
+Track11.flac:3cf1283363d9aac603f189d0875e62d1
+Track12.flac:aaa7698180b5db1d8c2936c6f4159635
+Track13.flac:11e6c5e9d9e4fc33dd3c44535ba209ca
+Track14.flac:57d12ed8a0fb367650efea0b64e29d3e
+Track15.flac:dd75c9337a87eac6c7a9f935f97aac61
+===================
+===================
+===================
+=== d1.md5
+===================
+===================
+===================
+47ef840498d9bfda2cf93f93e0932801 *Track01.flac
+40a09323af242294313de5b03c051dd5 *Track02.flac
+de9cb12990ca046a2633833b3c90b1a9 *Track03.flac
+1993c01a280a4f7710cf83e09d226841 *Track04.flac
+508affb1362345a9ab57813b23ea0aa2 *Track05.flac
+aba4cc1b57c3c37e873e5ef4de48e78b *Track06.flac
+cdf12faff08e760343c1ce7fdf074af3 *Track07.flac
+26fba0a38f83994f500d67459fd89278 *Track08.flac
+fcbe5a97c5169443a79a7f2cfb86da49 *Track09.flac
+18810111f3082aaab21eb439d4ed2785 *Track10.flac
+de54225f173b7d405e8477cc2088a1e7 *Track11.flac
+916943aece8f87b1840baee7fa9f3f42 *Track12.flac
+345c1124a86322ff07b70065b0218b7b *Track13.flac
+eb7bb6d90da0025552ff0e4c4e7cb0a4 *Track14.flac
+465188e03ab823602a6d0301ee12beb8 *Track15.flac
+===================
+===================
+===================
+=== d2.ffp
+===================
+===================
+===================
+Track01.flac:822f918d2f9d5fc8c915cc734b2bae2b
+Track02.flac:27484ef403e0590e795ad23179a1bc59
+Track03.flac:f87d18a278f228997beb016c53922b25
+Track04.flac:302e91d7eb92b457118ef36ed65ce24a
+Track05.flac:bb4f44de4aabcd659d4d8b819f3bfa00
+Track06.flac:a3bf46dbb4283dd846d7b860d739c173
+Track07.flac:4f374d435bbf3f23b41c93a332a39ab7
+Track08.flac:c12ae6dc910bed770785932e18dc901d
+Track09.flac:36a8c315a013c8f198d7cb181ab48381
+Track10.flac:9165e1ea0f7c26b704b8f4592f23f190
+Track11.flac:d1499420e177bc81b0c88dd5ee31e176
+Track12.flac:04fddf21099b3df86cec437fca3ae4c9
+Track13.flac:61c6b0226c32ecec74790e67177ab352
+Track14.flac:c4b210274077455de1ff74de64f23641
+===================
+===================
+===================
+=== d2.md5
+===================
+===================
+===================
+e770417e990c7b2fed9520868f97b8f6 *Track01.flac
+1bd90801e1214cf387c7d6d96c5d2cb8 *Track02.flac
+00fc9261e93c3b8e9539dd34451746f2 *Track03.flac
+8f61cbb08c0ea50bc876fc2b45d036a2 *Track04.flac
+0bcf6f88c97bcf60268d51ba94b7b43e *Track05.flac
+7bb1cbee3c11da7ee1f794b6369c4d33 *Track06.flac
+6092ef6f5927433c4f2bc0300f2ab03d *Track07.flac
+b3a080701ddc2297eb65b9f3f8b2e800 *Track08.flac
+8bad743cccad9f1a751f60f0f09da5a2 *Track09.flac
+5a127d1334c9e946adcbf6086434c509 *Track10.flac
+db23d29fd84ca74a6d30d89e115844ca *Track11.flac
+0b700021e52457aff1dc22afa0c2d3a1 *Track12.flac
+55a10ab0effdfe77bf26ba8017148b44 *Track13.flac
+df6005f971a1fa6f8a976d5c2edd7d12 *Track14.flac
+===================
+===================
+===================

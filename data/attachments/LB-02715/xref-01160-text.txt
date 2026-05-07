@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== 780712_Gothenburg.txt
+===================
+===================
+===================
+Bob Dylan
+
+Scandinavium
+Gothenburg,Sweden
+12 July 1978
+
+
+My Back Pages
+Love Her With A Feeling (Tampa Red)
+Baby Stop Crying
+Mr. Tambourine Man
+Shelter From The Storm
+It's All Over Now, Baby Blue
+Girl From The North Country
+Ballad Of A Thin Man
+Maggie's Farm
+Simple Twist Of Fate
+Like A Rolling Stone
+I Shall Be Released
+Going, Going, Gone
+Rainy Day Women # 12 & 35
+True Love Tends To Forget
+Gates Of Eden
+The Man In Me
+One More Cup Of Coffee (Valley Below)
+Blowin' In The Wind
+I Want You
+Seor (Tales Of Yankee Power)
+Masters Of War
+Just Like A Woman
+To Ramona
+All Along The Watchtower
+All I Really Want To Do
+It's Alright, Ma (I'm Only Bleeding)
+Forever Young
+Changing Of The Guards
+The Times They Are A-Changin'
+
+
+01.flac:a509c64895d8c6e71d83a81e882ce68c
+02.flac:98cec4f92dfb4eff9ad1b458f005f012
+03.flac:fc9fbde30bf61730a8117a4e5ea40e0d
+04.flac:48699664d06cf328733166d52e0f40e9
+05.flac:fd209e7ba514cbaf81d05d57d9d888fb
+06.flac:9009752785210e7e096eb2677f59955c
+07.flac:0871bb1bbefdb52758c8177e32792a2c
+08.flac:869d5b68526ea9c883c4d43c3f93e89b
+09.flac:c3b6fc1b1e2b961e58c3489e2b0b5066
+10.flac:3b2125cd626ae96c56cc10f9e58f4b66
+11.flac:48094893e905946a57609b32dfa2cdb6
+12.flac:dc854ef23e40865cff0988605f9f3fae
+13.flac:7a0092e3faf2ce319c35f39ce11fbf20
+14.flac:beab9860506ec61e110cabab01445f1e
+15.flac:da670698fb6ca89142a20135b174763b
+16.flac:06ee9e4e1b2935c122902dc0faad6199
+17.flac:72b8f098f9d9209d4922c1f2a3cdf08a
+18.flac:4895d84bb4d2eb6bcf516e3aabfbc684
+19.flac:663ff6a3963d053f9f631accffbb1d30
+20.flac:afe8a3c7c960f26fccf29fd3b6eff627
+21.flac:dae225c51362525c2cdcdb57dd1d8de4
+22.flac:a54a3b563e52369f335529ce0db68e47
+23.flac:5275b69c2d885d5e1f1bb8b96b0c3109
+24.flac:f6784256e9092e064945fa5369b969b4
+25.flac:6b5350b39d3acf62e5b2be6c349da067
+26.flac:5e6c2cb16a6d9a53c2fa30c5a309f001
+27.flac:49bf38f282e1165730a591683f879d9d
+28.flac:2883314b6daf1fd160b8ad910a6258d3
+29.flac:16c1e8ce0a335d91df01de993940de8b
+30.flac:c5ea25b9255f0db49d4cd3d627501174
+===================
+===================
+===================

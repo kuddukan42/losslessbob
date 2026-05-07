@@ -1,0 +1,9 @@
+2a170ddc243a9118e43158f9fc2a78fb *bd_90-10-15_NYC_cd2_Track 1.shn
+5a926de518028c682e2fc32ce26e99a1 *bd_90-10-15_NYC_cd2_Track 2.shn
+7664bfbd679f481ef24f2c30f33efde8 *bd_90-10-15_NYC_cd2_Track 3.shn
+1689d4675705e7e6be3713c04c739d9a *bd_90-10-15_NYC_cd2_Track 4.shn
+bf01b3df99de578caaedefe937fc3890 *bd_90-10-15_NYC_cd2_Track 5.shn
+dabfe737439088e8f80ca39c605821ff *bd_90-10-15_NYC_cd2_Track 6.shn
+d3590c043fa1107143ed3d105deb231b *bd_90-10-15_NYC_cd2_Track 7.shn
+35f623a7c7d80a9cf613c9d46b32d768 *bd_90-10-15_NYC_cd2_Track 8.shn
+f96e60ab3eb7d2c0676a7c717fa958d3 *bd_90-10-15_NYC_cd2_Track 9.shn

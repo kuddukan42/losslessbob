@@ -1,0 +1,201 @@
+===================
+===================
+===================
+=== md5 for: bd76-05-16-aau-1.flac24
+===================
+===================
+===================
+d7df46016dcf3b23a1dc17147a616876 *01  Rolling Thunder Revue Set\01  Rolling Thunder Revue Set.ffp
+d7df46016dcf3b23a1dc17147a616876 *01  Rolling Thunder Revue Set\01  Rolling Thunder Revue Set.ffp.txt
+26197573ed087807b15176b211dc5f18 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t01.flac
+05cabb385193f6778d9268b4b3b258e3 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t02.flac
+729da4bd3224a12820bd00e3178958a7 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t03.flac
+55fa40ca1ea41eef78846b5df5e82545 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t04.flac
+b4b711054a3479a31b584e04c8d32de1 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t05.flac
+330022436d60a8f3dc22c3c0a885c63b *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t06.flac
+87f961ec6414b483fe679fc66b011d98 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t07.flac
+61aea93b5a46a8e30cfdcfded7da0590 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t08.flac
+d8065f85a1b3e1bd69acba37cd34af8f *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t09.flac
+3c3194d52c09f51af720f7eac8153cfa *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t10.flac
+97c4b9b72fa285ab018ebaa6b73249d0 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t11.flac
+107185e773739c72cf53e696a4784055 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t12.flac
+e67553b4bf006208be1d62a191544535 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t13.flac
+7fef917cef7f3781ab938613780a40aa *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t14.flac
+0d41ed26ce76e9ef2005c15db4f654cc *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t15.flac
+8c9a85878b7ff618a320d9f65f5a2913 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t16.flac
+c8dd0f37047b8f3e863a2c1707e1fd63 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t17.flac
+2a4462fb5d163bffcda84a29a1d09bfc *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t18.flac
+aff808b52912027ff7b54975318cf92c *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t19.flac
+67a386199b7c8087fc38fa7df2a2dd4e *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t20.flac
+3fb49c9a3f1376e2860ed9461e4b20e5 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t21.flac
+f239756ab91ad32ce95490d835241189 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t22.flac
+278612ba438f1734b5e2938b2e196f34 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t23.flac
+56a82e31738a36b9f4c6573f41afc966 *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t24.flac
+47763806c60ab80aecce3cc739dde12e *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t25.flac
+91026b3f512780e244c9d30f9d92140a *01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t26.flac
+261cbd982dc81a73ac472b3dbd6f08cd *02  Bob Dylan set\02  Bob Dylan set.ffp
+261cbd982dc81a73ac472b3dbd6f08cd *02  Bob Dylan set\02  Bob Dylan set.ffp.txt
+fcee54030e594c85054732cc46a6fd46 *02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t27.flac
+09aeb2d542766d53289fcbd83581e709 *02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t28.flac
+7bd1ae7859e2f4327fe4a7a2afe10f50 *02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t29.flac
+60e6fa1d37e943f8a01b365f25543fe3 *02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t30.flac
+48d6926f5b8a102283f17413c7d632ea *02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t31.flac
+d8cddd950e6b49100352c1b0c8166054 *02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t32.flac
+723d5c37e4c1cb88909735720c2434ed *02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t33.flac
+b924716a931d76aace37ed0f33f7c041 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t34.flac
+2275ff704a7207e32053cd74b6adbd55 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t35.flac
+9f6e9525410dd2680d32a8cae49f24e1 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t36.flac
+23676ecb997a82965f426cfce53836ca *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t37.flac
+d43677d683f5fe72f8c3164052c445eb *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t38.flac
+628f94c2e4805b6f217981d8afea703b *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t39.flac
+7b705731337cdf2399e9d68d6bde6c68 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t40.flac
+f9421056819f5244951a33e1d00b6b22 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t41.flac
+39fd2996056ceec58104fd84f707f3b1 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t42.flac
+04f94be237730d9cc07a99cce23dc56b *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t43.flac
+4d63f47c30595ad8e7fe6e09342c0b51 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t44.flac
+71f100d754b937f77017d2138ca3ef43 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t45.flac
+5913a85e8d0ccea811fca586f5e824dd *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t46.flac
+fe687a33da8f3b5670d55f3a5f06efdc *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t47.flac
+2163b264e515ec566f2de8709b2cb7eb *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t48.flac
+d1594168e3f4c488d4a9bf990cfa396f *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t49.flac
+a711f16356ddcdb497a3277671cb5443 *02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t50.flac
+7ac7a1721cb133e1d55d4bc12f8e9a74 *Dylan - RTR 1976-05-16 info.txt
+8e4474d623a88974626d077774126f3e *ticket.jpg
+97d397c53e01cdb79e7ed6acda50f8fb *tour poster.jpg
+===================
+===================
+===================
+=== ffp for: bd76-05-16-aau-1.flac24
+===================
+===================
+===================
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t01.flac:1ffe23c70d511581a3e761ca2ebe8567
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t02.flac:7af56ec01e815d0dadd6deaa7db09b22
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t03.flac:a3509ad74869de3e100ff0a0171b555f
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t04.flac:5548cdaf4334da4beff920a977130941
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t05.flac:71d7427ed1a2e628653860e578dd95f0
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t06.flac:3739745eb46b3832fe4db844778edabe
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t07.flac:2edc74f6f354cbf559da810b7a31bdb4
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t08.flac:f1ab0a950cb92477941f96eab8f5dbd7
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t09.flac:cdaea1c81574cf5db536d698268f19d5
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t10.flac:307cbe58a3a61b014df56f7ba0d11f53
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t11.flac:3fa01cbeccb231768ec0136f608258cb
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t12.flac:966c54217a29b23067371b44ef26ef31
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t13.flac:151d361043008be131f046dffe9b1a52
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t14.flac:9e33cb724c727e6439f5764b919a2636
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t15.flac:43396a438da2bdc5d635319b1f696ae1
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t16.flac:aa58b7f7782916c5f2ab83e6307a1be2
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t17.flac:8a03b25cd3b14fdfa1c33caaf03dffbd
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t18.flac:86efcb5830f7e33bbe46908ed9af3bd9
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t19.flac:6c7a6c1a8948657fa7caa84587aa26b7
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t20.flac:ca2561922349267df6706e4481e25d18
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t21.flac:5922a76a9098feff463a81e8846553e5
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t22.flac:3bbb7e4b399dcf568e4df8dd62795176
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t23.flac:9415f4b07de79cd86d6e7985a8a5f59a
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t24.flac:e8cfaa3d0dfee36f71e8ed7d4bf21e54
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t25.flac:660ce625aea17714fce626213ad140f2
+01  Rolling Thunder Revue Set\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t26.flac:104d017ef59c3325187e3ba0a2ea7808
+02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t27.flac:574671b7a89062ad5eeb81598c5a84de
+02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t28.flac:f2c22b372f74a41e213559bca9f6d7a6
+02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t29.flac:d014086da191d136572bec9ccaa3011c
+02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t30.flac:0a5e755bb5adda78f374d9f1a97f6d47
+02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t31.flac:0d26dae97d1f1bc2f9fe52ed6c3d40b5
+02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t32.flac:c27a3f5d106939d4a914219575407e51
+02  Bob Dylan set\Set 01\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t33.flac:11d0bc04a047a364f1f83cc9caef9847
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t34.flac:4907aad19ba23b2540ab55ec09a32275
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t35.flac:3e1c40160ccd829cb25228913b74dc48
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t36.flac:65fc9f8e285dc6f36c95119659fbf4e7
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t37.flac:4d8cf703afdc7c41dfe711d39152a24f
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t38.flac:30522c7b3d18b44b23df3f05cbc9bfbb
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t39.flac:8ea3b0ccce856c8c50dbbab8ba106069
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t40.flac:c3fafabc2146462b5beccaa1687bc888
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t41.flac:72125498d8148124d8a672070979f2f0
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t42.flac:7f537b8978d812e9764feff342b464bb
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t43.flac:969de6158bb43e9005fc1c6e6f61f539
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t44.flac:3f741ec1c2691c3a70831b7f330ef4e1
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t45.flac:29177cc516a28892a58f1486e303ec00
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t46.flac:0c1b2baeb5e4d3c221642b67fd7c5984
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t47.flac:1e01ebdfaa90d16fd7d991862fa3bb8f
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t48.flac:10b46af32deabaf1a8eec3699f8c5e71
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t49.flac:c00236949ffb3f8e5cb2902e72fdebd3
+02  Bob Dylan set\Set 02\Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t50.flac:f297528e9a34bb58bc50967c8d016836
+===================
+===================
+===================
+=== shntool len for: bd76-05-16-aau-1.flac24\01  Rolling Thunder Revue Set
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:37.040      79787564 B   cxx   --   ---xx   flac  0.7726  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t01.flac
+     2:23.360      41287724 B   cxx   --   ---xx   flac  0.7657  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t02.flac
+     4:59.467      86246444 B   cxx   --   ---xx   flac  0.7777  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t03.flac
+     4:09.787      71938604 B   cxx   --   ---xx   flac  0.7738  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t04.flac
+     4:36.907      79749164 B   cxx   --   ---xx   flac  0.7740  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t05.flac
+     5:41.200      98265644 B   cxx   --   ---xx   flac  0.7689  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t06.flac
+     4:30.880      78013484 B   cxx   --   ---xx   flac  0.7700  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t07.flac
+     3:16.307      56536364 B   cxx   --   ---xx   flac  0.7849  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t08.flac
+     8:17.973     143416364 B   cxx   --   ---xx   flac  0.7717  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t09.flac
+     3:06.707      53771564 B   cxx   --   ---xx   flac  0.7775  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t10.flac
+     3:47.507      65521964 B   cxx   --   ---xx   flac  0.7438  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t11.flac
+     3:22.653      58364204 B   cxx   --   ---xx   flac  0.7421  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t12.flac
+     3:48.320      65756204 B   cxx   --   ---xx   flac  0.7295  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t13.flac
+     3:38.947      63056684 B   cxx   --   ---xx   flac  0.7365  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t14.flac
+     4:47.747      82871084 B   cxx   --   ---xx   flac  0.7172  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t15.flac
+     8:42.240     150405164 B   cxx   --   ---xx   flac  0.7415  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t16.flac
+     4:24.520      76181804 B   cxx   --   ---xx   flac  0.7098  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t17.flac
+     2:58.547      51421484 B   cxx   --   ---xx   flac  0.7306  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t18.flac
+     4:06.573      71013164 B   cxx   --   ---xx   flac  0.7216  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t19.flac
+     2:32.733      43987244 B   cxx   --   ---xx   flac  0.7753  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t20.flac
+     5:19.773      92094764 B   cxx   --   ---xx   flac  0.7621  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t21.flac
+     9:23.720     162351404 B   cxx   --   ---xx   flac  0.7595  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t22.flac
+     2:56.841      50930120 B   cxx   --   ---xx   flac  0.7929  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t23.flac
+     4:39.667      80544044 B   cxx   --   ---xx   flac  0.7720  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t24.flac
+     3:51.000      66528044 B   cxx   --   ---xx   flac  0.7816  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t25.flac
+     5:21.464      92581658 B   cxx   --   ---xx   flac  0.7745  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.RTR.s01t26.flac
+   119:21.878    2062621954 B                            0.7584  (26 files)
+===================
+===================
+===================
+=== shntool len for: bd76-05-16-aau-1.flac24\02  Bob Dylan set\Set 01
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:05.173     122449964 B   cxx   --   ---xx   flac  0.8245  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t27.flac
+     4:42.960      81492524 B   cxx   --   ---xx   flac  0.8130  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t28.flac
+     3:21.693      58087724 B   cxx   --   ---xx   flac  0.7906  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t29.flac
+     5:17.067      91315244 B   cxx   --   ---xx   flac  0.8102  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t30.flac
+     4:21.973      75448364 B   cxx   --   ---xx   flac  0.8004  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t31.flac
+     4:22.733      75667244 B   cxx   --   ---xx   flac  0.8037  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t32.flac
+     7:00.320     121052204 B   cxx   --   ---xx   flac  0.8157  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s02t33.flac
+    36:11.920     625513268 B                            0.8106  (7 files)
+===================
+===================
+===================
+=== shntool len for: bd76-05-16-aau-1.flac24\02  Bob Dylan set\Set 02
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.267      68044844 B   cxx   --   ---xx   flac  0.7981  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t34.flac
+     2:57.520      51125804 B   cxx   --   ---xx   flac  0.7959  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t35.flac
+     5:00.107      86430764 B   cxx   --   ---xx   flac  0.7909  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t36.flac
+     5:08.173      88753964 B   cxx   --   ---xx   flac  0.7949  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t37.flac
+     6:11.007     106850024 B   cxx   --   ---xx   flac  0.7941  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t38.flac
+     3:33.013      61347884 B   cxx   --   ---xx   flac  0.7896  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t39.flac
+     6:26.200     111225644 B   cxx   --   ---xx   flac  0.8027  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t40.flac
+     5:18.573      91749164 B   cxx   --   ---xx   flac  0.7880  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t41.flac
+     7:03.667     122016044 B   cxx   --   ---xx   flac  0.7680  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t42.flac
+     3:45.373      64907564 B   cxx   --   ---xx   flac  0.7911  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t43.flac
+     5:40.827      98158124 B   cxx   --   ---xx   flac  0.7853  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t44.flac
+     7:52.720     136143404 B   cxx   --   ---xx   flac  0.7496  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t45.flac
+     6:00.800     103910444 B   cxx   --   ---xx   flac  0.7873  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t46.flac
+    10:26.787     180514604 B   cxx   --   ---xx   flac  0.8099  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t47.flac
+     4:21.413      75287084 B   cxx   --   ---xx   flac  0.8029  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t48.flac
+     7:58.040     137675564 B   cxx   --   ---xx   flac  0.8239  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t49.flac
+     1:34.882      27326006 B   cxx   --   ---xx   flac  0.7817  Rolling Thunder Review 1976-05-16. aau-1. Fort Worth,TX.Dylan.s03t50.flac
+    93:15.369    1611466930 B                            0.7920  (17 files)
+===================
+===================
+===================

@@ -1,0 +1,59 @@
+Bob Dylan
+The Beacon Theatre
+New York City, New York
+13 October 1989
+
+Musicians: Bob Dylan (vocal, guitar & harmonica), G. E. Smith (guitar), Tony Garnier (bass), Christopher Parker (drums)
+Source: Aud
+Lineage: CD-Rs > EAC (secure mode) > mkw ACT (seek table appended) > .shn
+Taped by: ?
+Transfered by: ?
+Sound Quality: A- > A.  Minor hiss throughout; first two minutes of d1t01 recorded at lower volume than the rest
+Sound Processing: n/a
+File Size: 664 megs .shn
+
+Notes: [from Olof's notes] Live debuts of Man In The Long Black Coat and Precious Memories.  At the end of Leopard-Skin Pill-Box Hat Dylan starts to play hand-held harmonica sitting on his heels at the edge of the left side of the stage (seen from the audience). After a while he jumps dow and walks up the aisle, still playing the harmonica, and disappears through one of the exit doors. The other members of the band look totally confused, but continue to play for quite awhile, not knowing if Dylan is coming back or not. But he doesn’t and the band ends the song somewhat abruptly. The Dylan folklore has it that his bicycle was waiting for him outside the theater and that he simply cycled home to his apartment on Manhattan!
+
+disk 1
+
+1. Seeing The Real You At Last
+2. What Good Am I?
+3. Man Of Peace
+4. Precious Memories (arr. by Bob Dylan)
+5. Simple Twist Of Fate
+6. Stuck Inside Of Mobile With The Memphis Blues Again
+7. Don't Think Twice, It's All Right
+
+disk 2
+
+1. Song To Woody
+2. The Lonesome Death Of Hattie Carroll
+3. Everything Is Broken
+4. I'll Remember You
+5. It Takes A Lot To Laugh, It Takes A Train To Cry
+6. In The Garden
+7. Like A Rolling Stone
+8. Man In The Long Black Coat
+9. Leopard-Skin Pill-Box Hat
+
+disk 1 shntool fp
+
+4a898cbb0e1cabf2b39c7ec89c36a6c1  [shntool]  bd1989-10-13d1t01.shn
+803beff907a17d90e1a46cb05646902a  [shntool]  bd1989-10-13d1t02.shn
+65ff57512ad5cdaa0f09806c3c6c149f  [shntool]  bd1989-10-13d1t03.shn
+36bb4eac6fb0a69511936eb2c09e050a  [shntool]  bd1989-10-13d1t04.shn
+8b82e26f4d9c1bd0211b4c45ecb17b7b  [shntool]  bd1989-10-13d1t05.shn
+f2fd62d5d22f882f6dbde7607ce1e3e9  [shntool]  bd1989-10-13d1t06.shn
+f2edc6485ecd0e87c89018983fe2ed82  [shntool]  bd1989-10-13d1t07.shn
+
+disk 2 shntool fp
+
+1d1d2ed8f724206ed9303319a8e7e1ef  [shntool]  bd1989-10-13d2t01.shn
+eaed3e9797867ec167b5bd853c01448b  [shntool]  bd1989-10-13d2t02.shn
+93574369db54b5a87a3c546abab11f50  [shntool]  bd1989-10-13d2t03.shn
+d63a05a70983da69481d8169609e0641  [shntool]  bd1989-10-13d2t04.shn
+20a1e12561f5d1f617c03e6cdb476903  [shntool]  bd1989-10-13d2t05.shn
+d6c0028a9b2b8309ad23eed4403ee4e0  [shntool]  bd1989-10-13d2t06.shn
+c01da1fb1a763127e1e4bff53f077edf  [shntool]  bd1989-10-13d2t07.shn
+84584f04278b452f8260ebb31f22306d  [shntool]  bd1989-10-13d2t08.shn
+dda42e614b9ff3d8f3322c869a067b9e  [shntool]  bd1989-10-13d2t09.shn

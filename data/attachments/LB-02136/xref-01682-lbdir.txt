@@ -1,0 +1,91 @@
+===================
+===================
+===================
+=== md5 for: bd89-06-20-d.flacf
+===================
+===================
+===================
+9abf98699c82d877b1a5352dc9a2a885 *._bd-1989-06-20-Rome-HG.txt
+b907f19d036f10919294d2e76bdec26f *bd-1989-06-20-Rome-HG.md5
+5f90ec58a658941c4a7b7e445da10d04 *bd-1989-06-20-Rome-HG.txt
+6b922750a9f933436070c3bc6e020e92 *Disc1\bd-1989-06-20-HG-d1t01.flac
+68e7d1b1b62f838a1b653d62cc387f75 *Disc1\bd-1989-06-20-HG-d1t02.flac
+33e62134c767eda1bfb3dc5551697134 *Disc1\bd-1989-06-20-HG-d1t03.flac
+ee2b2dcede335181266181d609f736b6 *Disc1\bd-1989-06-20-HG-d1t04.flac
+8c9ff60e57db0deea429f0b25e7153df *Disc1\bd-1989-06-20-HG-d1t05.flac
+faf28d3b2c58bf8d49b67a720b800a6a *Disc1\bd-1989-06-20-HG-d1t06.flac
+7252d2a3425626d01efb96443b41d50f *Disc1\bd-1989-06-20-HG-d1t07.flac
+25b9342ee40b623f4998e98b593045a9 *Disc1\bd-1989-06-20-HG-d1t08.flac
+573dc339acf1fee13d2efcc235bfa32e *Disc1\bd-1989-06-20-HG-d1t09.flac
+516cc68410632daf66612e7e0d206be1 *Disc1\bd-1989-06-20-HG-d1t10.flac
+a2309ddba1b34860fcf90b52e20e492a *Disc2\bd-1989-06-20-HG-d2t01.flac
+290d318d201ac62966400868caaa4cd0 *Disc2\bd-1989-06-20-HG-d2t02.flac
+ee8bdbf960cd804bb660e625dcc1c1ff *Disc2\bd-1989-06-20-HG-d2t03.flac
+f1672c4ffc2307c4c5ce897a72bff2e0 *Disc2\bd-1989-06-20-HG-d2t04.flac
+82ae7cef2b95be9a8e9ae6d9ec1e1ccb *Disc2\bd-1989-06-20-HG-d2t05.flac
+c476f735a0631173f418d04c8facca3d *Disc2\bd-1989-06-20-HG-d2t06.flac
+16ec42063471983b1d1d423132823b8b *Disc2\bd-1989-06-20-HG-d2t07.flac
+4e76c93646b2303221cc01a5fc83a2ec *Rome06-20-89(HG)-B.JPG
+7093e81e3a1b5f59714b9bacb3bdcc22 *Rome06-20-89(HG)-F.JPG
+===================
+===================
+===================
+=== ffp for: bd89-06-20-d.flacf
+===================
+===================
+===================
+Disc1\bd-1989-06-20-HG-d1t01.flac:4e82d61a12b0b45e780e199ecf04548e
+Disc1\bd-1989-06-20-HG-d1t02.flac:ddc489f4cee9e0bd484fa96d13aca316
+Disc1\bd-1989-06-20-HG-d1t03.flac:583a2f02ac1e96d5757eb90e21f4dd2c
+Disc1\bd-1989-06-20-HG-d1t04.flac:59b68d1036bb80a030b3e0d9d868a0b3
+Disc1\bd-1989-06-20-HG-d1t05.flac:a2a115d042ee5753240bd83bff910ac2
+Disc1\bd-1989-06-20-HG-d1t06.flac:748fdfb9d17a049014362113de0cb271
+Disc1\bd-1989-06-20-HG-d1t07.flac:09aaef9c67f028a156651c3b14c75446
+Disc1\bd-1989-06-20-HG-d1t08.flac:e40633f9461117796c4221ecf1fc3bc7
+Disc1\bd-1989-06-20-HG-d1t09.flac:fddf7b1e97e0ee5d70791d121a6036b5
+Disc1\bd-1989-06-20-HG-d1t10.flac:2a98bc8903be21eca5cf93acc1b6b134
+Disc2\bd-1989-06-20-HG-d2t01.flac:c079b530687a4b1ec7bd243244dafe71
+Disc2\bd-1989-06-20-HG-d2t02.flac:0277dfe3dc7a8f5705ad83e0959e5446
+Disc2\bd-1989-06-20-HG-d2t03.flac:8339bd0b0c159f5a29245b1af3e0efc8
+Disc2\bd-1989-06-20-HG-d2t04.flac:7b16e1ccf9d6b53231350f6f1aeeaac5
+Disc2\bd-1989-06-20-HG-d2t05.flac:b3789c7fae7ad45258fec244de2b5ca7
+Disc2\bd-1989-06-20-HG-d2t06.flac:a969856f4d0c2e17ce1abe06cced9c3d
+Disc2\bd-1989-06-20-HG-d2t07.flac:c74fc28ae5a0ff97df5b02307b5abfb7
+===================
+===================
+===================
+=== shntool len for: bd89-06-20-d.flacf\Disc1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:31.28        5534300 B   ---   --   ---xx   flac  0.5377  bd-1989-06-20-HG-d1t01.flac
+     5:20.05       56459804 B   ---   --   ---xx   flac  0.6311  bd-1989-06-20-HG-d1t02.flac
+     3:39.39       38723372 B   ---   --   ---xx   flac  0.6363  bd-1989-06-20-HG-d1t03.flac
+     5:49.68       61723580 B   ---   --   ---xx   flac  0.6705  bd-1989-06-20-HG-d1t04.flac
+     6:52.00       72676844 B   ---   --   ---xx   flac  0.6575  bd-1989-06-20-HG-d1t05.flac
+     4:45.01       50276396 B   ---   --   ---xx   flac  0.6769  bd-1989-06-20-HG-d1t06.flac
+     3:58.50       42100844 B   ---   --   ---xx   flac  0.6703  bd-1989-06-20-HG-d1t07.flac
+     4:16.63       45306620 B   ---   --   ---xx   flac  0.6750  bd-1989-06-20-HG-d1t08.flac
+     5:05.42       53900828 B   ---   --   ---xx   flac  0.6508  bd-1989-06-20-HG-d1t09.flac
+     6:10.44       65371532 B   ---   --   ---xx   flac  0.6239  bd-1989-06-20-HG-d1t10.flac
+    46:29.40      492074120 B                            0.6526  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd89-06-20-d.flacf\Disc2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:16.25       55801244 B   ---   --   ---xx   flac  0.6736  bd-1989-06-20-HG-d2t01.flac
+     4:52.49       51624092 B   ---   --   ---xx   flac  0.6954  bd-1989-06-20-HG-d2t02.flac
+     2:32.64       26963372 B   ---   --   ---xx   flac  0.7207  bd-1989-06-20-HG-d2t03.flac
+     6:23.42       67660028 B   ---   --   ---xx   flac  0.7084  bd-1989-06-20-HG-d2t04.flac
+     6:38.48       70320140 B   ---   --   ---xx   flac  0.5829  bd-1989-06-20-HG-d2t05.flac
+     6:00.48       63616940 B   ---   --   ---xx   flac  0.6334  bd-1989-06-20-HG-d2t06.flac
+     4:51.22       51384188 B   ---   --   ---xx   flac  0.6572  bd-1989-06-20-HG-d2t07.flac
+    36:35.73      387370004 B                            0.6606  (7 files)
+===================
+===================
+===================

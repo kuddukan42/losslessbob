@@ -1,0 +1,11 @@
+fdec0523f700ba805607030b1407c60f  [shntool]  01 Humming Bird.flac
+d5ca8518cd9f9e4d8e3a1b1dc6ab0a53  [shntool]  02 It Ain't Me, Babe.flac
+bffb5f2bf21d665049b41b71e1b3b307  [shntool]  03 A Hard Rain's A-Gonna Fall.flac
+d9177c710b4d2b29f7a56e7d332dc7be  [shntool]  04 This World Can't Stand Long.flac
+624bf43c4690c4c6a2e2a6abbfabf2da  [shntool]  05 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+eb82afec30c885ad06c1cc26c6be943b  [shntool]  06 Just Like A Woman.flac
+7f9bae31d4229658f66452b6270d2516  [shntool]  07 Lonesome Day Blues.flac
+ac33ee49a71af573f43b1edc96268148  [shntool]  08 Moonlight.flac
+07dabce378f6e34d5624d3a41d7f4b47  [shntool]  09 Ballad Of Hollis Brown.flac
+a1e37134d5eac9adff4876e8ffc93fba  [shntool]  10 One Too Many Mornings.flac
+9acbbde71635746cf5b996af1b7984e6  [shntool]  11 Visions Of Johanna.flac

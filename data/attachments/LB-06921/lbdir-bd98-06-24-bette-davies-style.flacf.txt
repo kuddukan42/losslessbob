@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-06-24-bette-davies-style.flacf 
+=================== 
+=================== 
+=================== 
+fae4d3548be3eea6df1188d23f136197  bd98-06-24-bette-davies-style-d1t01.flac
+5971ec2fa4df27c9fa35283a09f8da1e  bd98-06-24-bette-davies-style-d1t02.flac
+24eb1d2cd7858d81548aca3444e5268d  bd98-06-24-bette-davies-style-d1t03.flac
+7ace6931d014cb441846647bd7f82958  bd98-06-24-bette-davies-style-d1t04.flac
+1ee2762d1c25d9bd963e8e7ff1dc8e26  bd98-06-24-bette-davies-style-d1t05.flac
+61bc3089c11c470fc8c23742f5a2abba  bd98-06-24-bette-davies-style-d1t06.flac
+0be1dbaf6d94025b4f9822a470f31ad3  bd98-06-24-bette-davies-style-d1t07.flac
+b041e564655aae65e7ee1e24cdc16deb  bd98-06-24-bette-davies-style-d1t08.flac
+005065dc497524897ec25efee7b635f8  bd98-06-24-bette-davies-style-d1t09.flac
+a713d901da1fa3e77fe275559766d7e7  bd98-06-24-bette-davies-style-d1t10.flac
+4131e0242946661b02529329fce30c02  bd98-06-24-bette-davies-style-d1t11.flac
+f1413defb163e41e871c5f08111068fb  bd98-06-24-bette-davies-style-d2t01.flac
+1471d15411396aa0bfd63415420eb123  bd98-06-24-bette-davies-style-d2t02.flac
+444ee113c80567336ecdc723a7cb33da  bd98-06-24-bette-davies-style-d2t03.flac
+22b6be9886e098c2a5b0d5c4378fe301  bd98-06-24-bette-davies-style-d2t04.flac
+0e9e0d0332e983091fac8509e5bf76a4  bd98-06-24-bette-davies-style-d2t05.flac
+f0cfa34e2f617d48aa4aa537458fcf4f  bd98-06-24-bette-davies-style-d2t06.flac
+5dfeb1377959c1f173e86589633111c5  bd98-06-24-bette-davies-style-d2t07.flac
+477d97fc701b0b0ffdcc149a3d500474  bd98-06-24-bette-davies-style-d2t08.flac
+9000bf185afdc4ef126cb2c98d1ea388  bd98-06-24-bette-davies-style-d2t09.flac
+bd0e4426c23a2798b6ebb84501984d3c  bd98-06-24-bette-davies-style-d2t10.flac
+fd3867a7d4d640a1fd5038db60c4fee3  bd98-06-24-bette-davies-style-d2t11.flac
+27ac2e0550d3e610d72659f45f6a4989  bd98-06-24-bette-davies-style-d2t12.flac
+7b7e45c7b40a0c080558b8895932e919  bd98-06-24-bette-davies-style.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-06-24-bette-davies-style.flacf 
+=================== 
+=================== 
+=================== 
+bd98-06-24-bette-davies-style-d1t01.flac:30bbf73ef90f9209e7fbdb7078536db2
+bd98-06-24-bette-davies-style-d1t02.flac:7db642f31b31a0066c0dd9c63d16ba22
+bd98-06-24-bette-davies-style-d1t03.flac:5a7f4d3cd60d7d35d23903c0c8e33a69
+bd98-06-24-bette-davies-style-d1t04.flac:d5b8b08c9d0f6110ad791847cc48b391
+bd98-06-24-bette-davies-style-d1t05.flac:e57abf0ff525aace0e31f076966f278d
+bd98-06-24-bette-davies-style-d1t06.flac:6186c7666ad83a43b49a0515af60691a
+bd98-06-24-bette-davies-style-d1t07.flac:026fc7052a44ab94eb0c7832c70637d9
+bd98-06-24-bette-davies-style-d1t08.flac:3efaff5b2ca8468c4862cb2522d86c8f
+bd98-06-24-bette-davies-style-d1t09.flac:fb3888dfbc4661f9a99716866b430e43
+bd98-06-24-bette-davies-style-d1t10.flac:7b8c7970dc946fe4406447f6cc1d3fae
+bd98-06-24-bette-davies-style-d1t11.flac:66db0e17162a50d305b6d1fa1194b218
+bd98-06-24-bette-davies-style-d2t01.flac:529b64c3d1609e7b09128539a74158fb
+bd98-06-24-bette-davies-style-d2t02.flac:f7f8cc674a62f3d10a2253a60638869b
+bd98-06-24-bette-davies-style-d2t03.flac:f2b639a2782385bd02047fc6adff56be
+bd98-06-24-bette-davies-style-d2t04.flac:3730a4d8981f19f7eb240506f663adf5
+bd98-06-24-bette-davies-style-d2t05.flac:cbf9e2879129a4626619be6f763c0e9b
+bd98-06-24-bette-davies-style-d2t06.flac:cd5a281ce623346212d9c0ff9e49e2a4
+bd98-06-24-bette-davies-style-d2t07.flac:8fcb3da76d4ea980deecf531ff23c6fb
+bd98-06-24-bette-davies-style-d2t08.flac:252cad66a0826d522b627c9f265665fb
+bd98-06-24-bette-davies-style-d2t09.flac:d0825585cd8239d068df61f3b14b855b
+bd98-06-24-bette-davies-style-d2t10.flac:73ac5bc01ec896c34bc1c1e29032ad52
+bd98-06-24-bette-davies-style-d2t11.flac:54febf83c055c15704f48c56e754c5dc
+bd98-06-24-bette-davies-style-d2t12.flac:9c9a265b8bb964d8ee87d330293c88eb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-06-24-bette-davies-style.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:15.41       45078476 B   ---   --   ---xx   flac  0.6155  bd98-06-24-bette-davies-style-d1t01.flac
+     5:05.09       53823212 B   ---   --   ---xx   flac  0.6045  bd98-06-24-bette-davies-style-d1t02.flac
+     6:29.25       68678444 B   ---   --   ---xx   flac  0.6204  bd98-06-24-bette-davies-style-d1t03.flac
+     5:22.19       56845532 B   ---   --   ---xx   flac  0.5794  bd98-06-24-bette-davies-style-d1t04.flac
+     7:15.02       76738748 B   ---   --   ---xx   flac  0.6466  bd98-06-24-bette-davies-style-d1t05.flac
+     5:50.63       61888220 B   ---   --   ---xx   flac  0.5288  bd98-06-24-bette-davies-style-d1t06.flac
+    10:08.16      107288876 B   ---   --   ---xx   flac  0.5568  bd98-06-24-bette-davies-style-d1t07.flac
+     8:54.68       94357580 B   ---   --   ---xx   flac  0.5813  bd98-06-24-bette-davies-style-d1t08.flac
+     8:25.37       89169068 B   ---   --   ---xx   flac  0.6426  bd98-06-24-bette-davies-style-d1t09.flac
+     5:55.41       62718476 B   ---   --   ---xx   flac  0.6231  bd98-06-24-bette-davies-style-d1t10.flac
+     6:01.65       63833324 B   ---   --   ---xx   flac  0.6388  bd98-06-24-bette-davies-style-d1t11.flac
+     5:22.42       56899628 B   ---   --   ---xx   flac  0.5595  bd98-06-24-bette-davies-style-d2t01.flac
+     5:15.24       55622492 B   ---   --   ---xx   flac  0.6422  bd98-06-24-bette-davies-style-d2t02.flac
+     5:47.01       61213196 B   ---   --   ---xx   flac  0.5339  bd98-06-24-bette-davies-style-d2t03.flac
+     3:58.33       42060860 B   ---   --   ---xx   flac  0.6379  bd98-06-24-bette-davies-style-d2t04.flac
+     6:09.64       65242172 B   ---   --   ---xx   flac  0.6225  bd98-06-24-bette-davies-style-d2t05.flac
+     6:36.08       69873260 B   ---   --   ---xx   flac  0.6430  bd98-06-24-bette-davies-style-d2t06.flac
+     4:17.51       45454796 B   ---   --   ---xx   flac  0.5393  bd98-06-24-bette-davies-style-d2t07.flac
+     7:16.04       76919852 B   ---   --   ---xx   flac  0.5815  bd98-06-24-bette-davies-style-d2t08.flac
+     4:36.69       48848732 B   ---   --   ---xx   flac  0.5169  bd98-06-24-bette-davies-style-d2t09.flac
+     9:18.17       98471228 B   ---   --   ---xx   flac  0.5853  bd98-06-24-bette-davies-style-d2t10.flac
+     7:38.15       80826524 B   ---   --   ---xx   flac  0.5917  bd98-06-24-bette-davies-style-d2t11.flac
+     6:15.18       66192380 B   ---   --   ---xx   flac  0.6341  bd98-06-24-bette-davies-style-d2t12.flac
+   146:15.57     1548045076 B                            0.5972  (23 files)
+=================== 
+=================== 
+=================== 

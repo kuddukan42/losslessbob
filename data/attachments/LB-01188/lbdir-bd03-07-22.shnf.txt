@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-07-22.shnf 
+=================== 
+=================== 
+=================== 
+61576e1d2323938fa90b15ceb1b363d3  bd03-07-22.txt
+13d8e84fadb1a8e858ebe230a07867e9  bd03-07-22d1t01.shn
+e66fb1ea0accfac32e6ce469a13e757c  bd03-07-22d1t02.shn
+87e7ef982123414478e2591fc6f26019  bd03-07-22d1t03.shn
+39c6a0efbd836b40ef810c82e8a93828  bd03-07-22d1t04.shn
+86c24783e3ddd94066eed10edf7e6062  bd03-07-22d1t05.shn
+8d3c1e1e469598684a40e41d1b993bee  bd03-07-22d1t06.shn
+538d72a5b0f0d2fb6804c17ea2c56105  bd03-07-22d1t07.shn
+8a7cfb8d0925b1cdd0ed3fadc72ff7fd  bd03-07-22d1t08.shn
+ea51f4e3e34fd916faaec29e20a3879e  bd03-07-22d1t09.shn
+59e9b1c11b211a7e015cf0c756466253  bd03-07-22d1t10.shn
+07c2a0a3d01ed8b7d2cd45ccbb847a2f  bd03-07-22d2t01.shn
+6cbd82b641236aa00a4642898424e8da  bd03-07-22d2t02.shn
+949a1304b89dbcad1d113156e497f25b  bd03-07-22d2t03.shn
+804bd9136359d844a7880ef447d4359e  bd03-07-22d2t04.shn
+698b4520495b34f1bba475379412d806  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-07-22.shnf 
+=================== 
+=================== 
+=================== 
+ea0ce5df79adc278a1cc66fd10893ced  [shntool]  bd03-07-22d1t01.wav
+d8203983294a4911ac9bf7e08226b2ed  [shntool]  bd03-07-22d1t02.wav
+b766630ce53545422f40104e8dd46c9f  [shntool]  bd03-07-22d1t03.wav
+a9a0e5912c5ec041c819dc820aee1b15  [shntool]  bd03-07-22d1t04.wav
+054bb005add1668984948ad03e600b26  [shntool]  bd03-07-22d1t05.wav
+712516be533269944a51000c97c6663a  [shntool]  bd03-07-22d1t06.wav
+59a49b9abaddd69b34d4c1b282a1f832  [shntool]  bd03-07-22d1t07.wav
+8fcd45ab930539bb4334d2fe0d6c6bc6  [shntool]  bd03-07-22d1t08.wav
+51dfee4c3e2b22dd4d2c8281ea760803  [shntool]  bd03-07-22d1t09.wav
+02d82c5d2428678b13f5c3937ddfa8a7  [shntool]  bd03-07-22d1t10.wav
+c38bcb1c313386dea32158caa0c5de45  [shntool]  bd03-07-22d2t01.wav
+9e46f02f077a5e1fc7312a54fc2e98cf  [shntool]  bd03-07-22d2t02.wav
+1c3cc6cc5c481507e212e04888eca34f  [shntool]  bd03-07-22d2t03.wav
+58dae61167cdc02e0d65dbf7bab28519  [shntool]  bd03-07-22d2t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-07-22.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:14.37       76644668 B   ---   --   -----    wav  1.0000  bd03-07-22d1t01.wav
+     5:53.10       62292764 B   ---   --   -----    wav  1.0000  bd03-07-22d1t02.wav
+     5:30.22       58263788 B   ---   --   -----    wav  1.0000  bd03-07-22d1t03.wav
+     7:02.32       74516108 B   ---   --   -----    wav  1.0000  bd03-07-22d1t04.wav
+     6:50.68       72483980 B   ---   --   -----    wav  1.0000  bd03-07-22d1t05.wav
+     6:24.61       67881116 B   ---   --   -----    wav  1.0000  bd03-07-22d1t06.wav
+     7:14.10       76581164 B   ---   --   -----    wav  1.0000  bd03-07-22d1t07.wav
+     4:42.20       49791884 B   ---   --   -----    wav  1.0000  bd03-07-22d1t08.wav
+     7:59.41       84592076 B   ---   --   -----    wav  1.0000  bd03-07-22d1t09.wav
+     6:47.04       71804252 B   ---   --   -----    wav  1.0000  bd03-07-22d1t10.wav
+     5:18.44       56198732 B   ---   --   -----    wav  1.0000  bd03-07-22d2t01.wav
+    11:29.34      121619612 B   ---   --   -----    wav  1.0000  bd03-07-22d2t02.wav
+     6:56.43       73483580 B   ---   --   -----    wav  1.0000  bd03-07-22d2t03.wav
+     5:31.22       58440188 B   ---   --   -----    wav  1.0000  bd03-07-22d2t04.wav
+    94:54.73     1004593912 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

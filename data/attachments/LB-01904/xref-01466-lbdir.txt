@@ -1,0 +1,73 @@
+===================
+===================
+===================
+=== md5 for: bd95-07-19-b.flacf
+===================
+===================
+===================
+58a1724be1ce0ef946956c7be008c204 *bd95-07-19-Madrid.master.md5
+0f070ee2e87eaa849bb83c75fcd29601 *bd95-07-19d1tr01.flac
+c6c300c529f2a5c2e60b0b4a5df41ca3 *bd95-07-19d1tr02.flac
+6f8d681acc29099b36c32bd0ce9633bc *bd95-07-19d1tr03.flac
+8fd3775b2cdd5d45b9afdc3d41698287 *bd95-07-19d1tr04.flac
+90161e54d727d921a8bc8d148d4aaafc *bd95-07-19d1tr05.flac
+400cc76f433193eef125333220c98aba *bd95-07-19d1tr06.flac
+d29f3de76fbe889b9697c0e1379e49af *bd95-07-19d1tr07.flac
+ecc3651f95ce1cd8f278e7d2c5cdbe5c *bd95-07-19d1tr08.flac
+7e3b73e70ea7f179f47e2ab4a37a2b8d *bd95-07-19d2tr01.flac
+c2201a4693b8cf0c55e4ee9b0dd2176a *bd95-07-19d2tr02.flac
+1fc8c61557d47e604b35c9d9ce87d5ea *bd95-07-19d2tr03.flac
+b0fc585dfe6967318b2fdc4e8d2d9f0d *bd95-07-19d2tr04.flac
+b778260b2c5271023b2ee3ce7b0c6224 *bd95-07-19d2tr05.flac
+a6f47eb42def04b277ebaa5615ffdecd *bd95-07-19d2tr06.flac
+221e62d83247ff916ef3c9e60b05aec9 *bd95-07-19d2tr07.flac
+95f2c57a96b1bb7892d75833c9fba16f *info.txt
+===================
+===================
+===================
+=== ffp for: bd95-07-19-b.flacf
+===================
+===================
+===================
+bd95-07-19d1tr01.flac:3dd8d93b65c6d37e258dabe9ca733337
+bd95-07-19d1tr02.flac:580581110fdcca7ae0531c93c0fbe331
+bd95-07-19d1tr03.flac:ee019cbe22f064b1f96b3eae4d848c24
+bd95-07-19d1tr04.flac:83643e0812c8251873f35066637dc328
+bd95-07-19d1tr05.flac:d58e1b608f0d328c6a44da75f24ae79f
+bd95-07-19d1tr06.flac:61a4f7cbd89f39d085171e481b614bed
+bd95-07-19d1tr07.flac:33c6b7bb01b2f41e970546d24d30ce85
+bd95-07-19d1tr08.flac:b8cd2e932caa219ece79d44a1cb4dfce
+bd95-07-19d2tr01.flac:7746ad004671d32cb14abbd30bbc537b
+bd95-07-19d2tr02.flac:4c3f79678491947e256c461fef9b2076
+bd95-07-19d2tr03.flac:260c096f309ff7c9e2b13a9873b97ebd
+bd95-07-19d2tr04.flac:92edefda4c0dc49d73877cf9c83a6747
+bd95-07-19d2tr05.flac:70eb9d15bae5f570db6d985f1af638bf
+bd95-07-19d2tr06.flac:c6e6c95ffc9a3f1b91a5267a064a306b
+bd95-07-19d2tr07.flac:f0714f1a4e165f30f9888947e75ef7cf
+===================
+===================
+===================
+=== shntool len for: bd95-07-19-b.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.37       51948668 B   ---   --   ---xx   flac  0.6861  bd95-07-19d1tr01.flac
+     5:54.66       62600876 B   ---   --   ---xx   flac  0.6928  bd95-07-19d1tr02.flac
+     6:08.07       64931708 B   ---   --   ---xx   flac  0.7380  bd95-07-19d1tr03.flac
+     7:55.64       83940572 B   ---   --   ---xx   flac  0.6972  bd95-07-19d1tr04.flac
+     6:13.37       65884268 B   ---   --   ---xx   flac  0.7049  bd95-07-19d1tr05.flac
+     7:04.02       74798348 B   ---   --   ---xx   flac  0.7423  bd95-07-19d1tr06.flac
+     9:20.72       98953388 B   ---   --   ---xx   flac  0.7314  bd95-07-19d1tr07.flac
+     8:34.31       90742556 B   ---   --   ---xx   flac  0.6455  bd95-07-19d1tr08.flac
+     6:46.01       71620796 B   ---   --   ---xx   flac  0.6947  bd95-07-19d2tr01.flac
+     7:38.46       80899436 B   ---   --   ---xx   flac  0.7482  bd95-07-19d2tr02.flac
+     7:59.34       84575612 B   ---   --   ---xx   flac  0.6919  bd95-07-19d2tr03.flac
+     6:45.26       71503196 B   ---   --   ---xx   flac  0.7433  bd95-07-19d2tr04.flac
+     9:31.32      100799708 B   ---   --   ---xx   flac  0.7394  bd95-07-19d2tr05.flac
+     9:04.18       96003980 B   ---   --   ---xx   flac  0.7296  bd95-07-19d2tr06.flac
+     5:15.63       55714220 B   ---   --   ---xx   flac  0.7444  bd95-07-19d2tr07.flac
+   109:07.11     1154917332 B                            0.7155  (15 files)
+===================
+===================
+===================

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-23-LTJ-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+bbbcffc1aa3c52e7378bbc7af8ab713e  bd-19950323-Bruessel.ffp
+2d7ab96b85056d5644e6be3ab5ff2005  bd-19950323-Bruessel.md5
+8e37d0f86d1ae2acea3a105b21aed59c  bd1995-03-23-d1t01.flac
+0695a112bd3ab855e10513c3cc1b9add  bd1995-03-23-d1t02.flac
+8daf7c06c5eba26c77ae1989e752b650  bd1995-03-23-d1t03.flac
+9466454285bd829fc6ffab807cb8b78c  bd1995-03-23-d1t04.flac
+0a7fd309307a1002be1ff3ed20e0a11a  bd1995-03-23-d1t05.flac
+6323f3b5cbc3a80df9d13b05479e4fae  bd1995-03-23-d1t06.flac
+3724827ce51a360b5c19c29e0aa31470  bd1995-03-23-d1t07.flac
+0cf59ed8a2733c116bcc4208b235aff7  bd1995-03-23-d1t08.flac
+f5338fcdbd647774c0d448fc56c4014d  bd1995-03-23-d1t09.flac
+7cddbff0b6412bcab7c6a91e9215f63c  bd1995-03-23-d1t10.flac
+52be4e38a3b23cffb0b62494432e16f2  bd1995-03-23-d2t01.flac
+4a517e7dc04e4c3f52ca03f97fb30c7b  bd1995-03-23-d2t02.flac
+f37cb46376106c234d79c4d791a70311  bd1995-03-23-d2t03.flac
+d764d8f992386009b63713b6943867a4  bd1995-03-23-d2t04.flac
+dd5f1ff88fb7d2de7125ed2dbf8b6a6c  bd1995-03-23-d2t05.flac
+928bf6a35c97620edfe5b6804cdef821  bd1995-03-23-d2t06.flac
+5861764db4afe5beb42c0cdd7633ea43  bd1995-03-23-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-23-LTJ-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+bd1995-03-23-d1t01.flac:75d0521f935f9ee262240c32de109096
+bd1995-03-23-d1t02.flac:44cddca6c38e120446f6ccd34c690ccc
+bd1995-03-23-d1t03.flac:666b530a1a2f879ae38ca72eaf0f7877
+bd1995-03-23-d1t04.flac:2071b30cdc37bd390e9c4c6cca050179
+bd1995-03-23-d1t05.flac:4c8ba7303e98e7f43aad6039f223ff47
+bd1995-03-23-d1t06.flac:693901d92d007c8d6550194ebd50eabc
+bd1995-03-23-d1t07.flac:cc1d25297303896bf7adc401880b5815
+bd1995-03-23-d1t08.flac:a044ab47cddfe5f8fe864630b4ad292b
+bd1995-03-23-d1t09.flac:470b7456712b380bcfbc2d5c176df192
+bd1995-03-23-d1t10.flac:8fbf3ae255b4a6559b723b42f5cc73c9
+bd1995-03-23-d2t01.flac:7232a8389fe9f7c3ae7ed01bca4ce5b8
+bd1995-03-23-d2t02.flac:0ff35be8968f8f88a891ffb2a9d1e7c4
+bd1995-03-23-d2t03.flac:81ca72a59049128b1f7e88cbf3f47407
+bd1995-03-23-d2t04.flac:5592b49a20b86688a6ce1bc3191be05f
+bd1995-03-23-d2t05.flac:cb3eb638f90fd9748896f4c366400229
+bd1995-03-23-d2t06.flac:f1cb915ae00ba35e484967c5f99c7bcd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-23-LTJ-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:28.22        4990988 B   ---   --   ---xx   flac  0.5047  bd1995-03-23-d1t01.flac
+     5:00.64       53070572 B   ---   --   ---xx   flac  0.7206  bd1995-03-23-d1t02.flac
+     3:59.35       42241964 B   ---   --   ---xx   flac  0.6734  bd1995-03-23-d1t03.flac
+     5:13.47       55323788 B   ---   --   ---xx   flac  0.7057  bd1995-03-23-d1t04.flac
+     6:40.11       70585916 B   ---   --   ---xx   flac  0.6327  bd1995-03-23-d1t05.flac
+     7:57.01       84145196 B   ---   --   ---xx   flac  0.6521  bd1995-03-23-d1t06.flac
+     8:11.67       86770028 B   ---   --   ---xx   flac  0.6254  bd1995-03-23-d1t07.flac
+     6:20.47       67142588 B   ---   --   ---xx   flac  0.5032  bd1995-03-23-d1t08.flac
+     7:19.55       77569004 B   ---   --   ---xx   flac  0.4606  bd1995-03-23-d1t09.flac
+     6:37.41       70127276 B   ---   --   ---xx   flac  0.6042  bd1995-03-23-d1t10.flac
+     7:05.17       75010028 B   ---   --   ---xx   flac  0.6557  bd1995-03-23-d2t01.flac
+     5:52.43       62193980 B   ---   --   ---xx   flac  0.7059  bd1995-03-23-d2t02.flac
+     0:37.03        6533900 B   ---   --   ---xx   flac  0.5082  bd1995-03-23-d2t03.flac
+     8:33.22       90544988 B   ---   --   ---xx   flac  0.6523  bd1995-03-23-d2t04.flac
+     8:02.28       85090700 B   ---   --   ---xx   flac  0.6488  bd1995-03-23-d2t05.flac
+     8:19.41       88120076 B   ---   --   ---xx   flac  0.5631  bd1995-03-23-d2t06.flac
+    96:19.19     1019460992 B                            0.6221  (16 files)
+=================== 
+=================== 
+=================== 

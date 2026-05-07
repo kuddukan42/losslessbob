@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-04-25-spot 
+=================== 
+=================== 
+=================== 
+eaedd3a7080a65255fdfd3546be3b16a  bd05-04-25 d1t01.shn
+76b1a4b014ccfb5d4f726e39b579534b  bd05-04-25 d1t02.shn
+51192ae054c79e85a2923d792b4c3c98  bd05-04-25 d1t03.shn
+97ce3e961bf720d0a41b3f6e5f87cb7d  bd05-04-25 d1t04.shn
+8179dadf3ab9d14df1a5780f7a970c5f  bd05-04-25 d1t05.shn
+a4545541b891fceae5ea861e56d46b04  bd05-04-25 d1t06.shn
+773f6dd4dcde439b908f7180e561b0f7  bd05-04-25 d1t07.shn
+dfa51bcb0231825cfef0498cc7849315  bd05-04-25 d1t08.shn
+d424d3fc327fd8865569c60a4742035b  bd05-04-25 d1t09.shn
+68614f411c943792e90c968c66caa72e  bd05-04-25 d2t01.shn
+0798635ccaeb98deb3cfb88a80e6a13b  bd05-04-25 d2t02.shn
+f916d73e520c79bd2992427a0fe8c571  bd05-04-25 d2t03.shn
+52ee1808aef657dd3ae6317485b993c6  bd05-04-25 d2t04.shn
+9de96da31650b3f8fdbc345b32ee7215  bd05-04-25 d2t05.shn
+bf6cfa3b4ec9e0da57e8b53e6b8e24c0  bd05-04-25-spot-LB-2689.txt
+a680bd1e2c63929d63140857fc53a15c  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd05-04-25-spot 
+=================== 
+=================== 
+=================== 
+d26c0c861796f02ab0ad1dd7ac0bd43e  [shntool]  bd05-04-25_d1t01.wav
+5d799b2abe59856acef6d87bac93a084  [shntool]  bd05-04-25_d1t02.wav
+a363948b4a0b37b8ff8f9b86c98728eb  [shntool]  bd05-04-25_d1t03.wav
+2bff9deb5f7f14d0489a150ced66cf07  [shntool]  bd05-04-25_d1t04.wav
+c35bf9f42a3d1d1500cfa5cf61071099  [shntool]  bd05-04-25_d1t05.wav
+7eb3cf9bc6cff75713f091c569452b51  [shntool]  bd05-04-25_d1t06.wav
+ee568cf1f3f6bc573a7425d37c4b7a1b  [shntool]  bd05-04-25_d1t07.wav
+a4621fa0352a029ed1bf4d4218a591e6  [shntool]  bd05-04-25_d1t08.wav
+a5efbe8dc10121132477ff60be5b49f7  [shntool]  bd05-04-25_d1t09.wav
+99430e27f08a08b80edfebba33c92768  [shntool]  bd05-04-25_d2t01.wav
+6baaf215f72216cf09077876e68bb8d9  [shntool]  bd05-04-25_d2t02.wav
+8bb3fbbf6eb97e2493266c5ddcb8a296  [shntool]  bd05-04-25_d2t03.wav
+3c7e7d8d04a5914bc5f36c358006a49c  [shntool]  bd05-04-25_d2t04.wav
+f126f0636d35ec18d4788a30ab04fa08  [shntool]  bd05-04-25_d2t05.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-04-25-spot 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:56.33       52292060 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t01.wav
+     6:13.01       65799596 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t02.wav
+     7:27.71       79017836 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t03.wav
+    10:36.39      112282172 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t04.wav
+     5:43.35       60587564 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t05.wav
+     7:36.24       80494892 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t06.wav
+     8:10.01       86438396 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t07.wav
+     7:03.46       74725436 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t08.wav
+     8:04.47       85488188 B   ---   --   -----    wav  1.0000  bd05-04-25_d1t09.wav
+     7:24.56       78453356 B   ---   --   -----    wav  1.0000  bd05-04-25_d2t01.wav
+     6:57.17       73598828 B   ---   --   -----    wav  1.0000  bd05-04-25_d2t02.wav
+    11:35.22      122649788 B   ---   --   -----    wav  1.0000  bd05-04-25_d2t03.wav
+     7:16.48       77023340 B   ---   --   -----    wav  1.0000  bd05-04-25_d2t04.wav
+     5:23.74       57151292 B   ---   --   -----    wav  1.0000  bd05-04-25_d2t05.wav
+   104:29.64     1106002744 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

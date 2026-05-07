@@ -1,0 +1,112 @@
+===================
+===================
+===================
+=== md5 for: bd78-10-05-2gen.flacf
+===================
+===================
+===================
+70262a39abc1fc6f95bbda79c5d63507 *01 My Back Pages (instrumental).flac
+bca9afce2eae6a7c86ba3495abfc7c74 *02 I'm Ready.flac
+8981f6cdfc02aa1a2d307cd0ec0c2b8a *03 Is Your Love In Vain.flac
+e535b5729d5838c6831385ac7498a89e *04 Shelter From the Storm.flac
+1385aad64c6da781872d3c16a499fef3 *05 It's All Over Now Baby Blue.flac
+006d562e556540b6ac077a17eb289fb2 *06 Tangled Up In Blue.flac
+23a7fe8924cbfcf55cab87758cf36dac *07 Ballad of A Thin Man.flac
+cb4b30ded936bcd57744d6ee3d1640d9 *08 Maggie's Farm.flac
+c20b1a0bad5af54dfecc4b4c6ffc8633 *09 I Don't Believe You (She Acts Like We Never Have Met).flac
+c2721ac20ee21a624ec88d6feb950415 *10 Like A Rolling Stone.flac
+cabb6f1a0260300feff67ea22544354b *11 I Shall Be Released.flac
+89acc96bd0947639c16ec0784c5bbf69 *12 Going Going Gone.flac
+b3e5cdf43bac1e89f53f5e27e7dc0390 *13 One Of Us Must Know (Sooner Or Later).flac
+2c47159844a241fbe1803a35933c842a *14 It Ain't Me, Babe.flac
+8da85d14485a76fad11ec3ee3f679209 *15 Am I Your Stepchild.flac
+5adb7233fb60a69257074502599292d3 *16 One More Cup Of Coffee (Valley Below).flac
+b98dccec3b9c01d7a32b9c53156db279 *17 Blowin' in the Wind.flac
+896654a3ef4daa4a2b6016c6e95443ca *18 Girl From The North Country.flac
+890372efe10741d7be68ef0890f12635 *19 Senor (Tales Of Yankee Power).flac
+fa7a62ce52c62d5189bef58753ed386d *1978-10-05 Largo, MD (2nd gen. cassettes).md5
+6d0a7d9c7ffe5d900ee907bf7e90d99d *20 Masters Of War.flac
+6b853ab881ca524ec0ac512068c451d7 *21 Just Like A Woman.flac
+926cc7f6051df75f4a5e23df7dfe007d *22 Don't Think Twice, It's Alright.flac
+24301ad69da93c9aa91c28165693ba04 *23 All Along the Watchtower.flac
+497e47dd45019d023759d35978754047 *24 All I Really Want to Do.flac
+ac0b770738fb3360afde193ed0d622c5 *25 It's All Right Ma It's Alright, Ma (I'm Only Bleeding).flac
+0d0ea56759242a20fd33a71416891ced *26 Forever Young (discontinuity at 0.35).flac
+c7574dafda5b2ea2fb2f3b23046a3bd0 *27 Changing Of The Guards.flac
+52fd0f8f1160d75c6ff066533872de78 *28 The Times They Are A-Changin'.flac
+3105aeced9908d2e520053f115aa59b0 *Info.txt
+===================
+===================
+===================
+=== ffp for: bd78-10-05-2gen.flacf
+===================
+===================
+===================
+01 My Back Pages (instrumental).flac:1a4efaa8b5d97904286d8afb804867ce
+02 I'm Ready.flac:ad440a507e36c2b6bd1812f07463ef2b
+03 Is Your Love In Vain.flac:8f5ca4cf67b89e3da93deff2211d7880
+04 Shelter From the Storm.flac:2b96ff2bca2e90893dff107e4f332f35
+05 It's All Over Now Baby Blue.flac:387dd560ce21490135ddc290cd8a5cb0
+06 Tangled Up In Blue.flac:625c75a7c06e74b1274143dc48ed160c
+07 Ballad of A Thin Man.flac:bc396c8dbb857b505225b4d17ae5de9f
+08 Maggie's Farm.flac:10c8a4f08fda66ef6c928df5ae562205
+09 I Don't Believe You (She Acts Like We Never Have Met).flac:7b8dbdf53197555ad3908a0e289a398b
+10 Like A Rolling Stone.flac:ee9e9e974da6a85a2a82f404e35a8ab1
+11 I Shall Be Released.flac:0aab40be63835cb1bf2b599e9720b2b0
+12 Going Going Gone.flac:07f171a85214f6ea8fb172ce2ba60ce5
+13 One Of Us Must Know (Sooner Or Later).flac:fa300e8adf5bf0ac94b8308c0d1da27d
+14 It Ain't Me, Babe.flac:aa1581bc8aac431e5233fcbfaeaeba73
+15 Am I Your Stepchild.flac:80df113a3963cff7f37b7b8762411865
+16 One More Cup Of Coffee (Valley Below).flac:745f081e83d26d3bf6b8faf3c4391c13
+17 Blowin' in the Wind.flac:ee9b1b74e96e3a5586dd8bad3c40e296
+18 Girl From The North Country.flac:26d9a4621e24cd8aa86a7ec69b1db004
+19 Senor (Tales Of Yankee Power).flac:3d8680affa2b31748f8b6109cb9a04ad
+20 Masters Of War.flac:d5ec77aa79fdebcf5a618c09514d4599
+21 Just Like A Woman.flac:1aed38813cca2b0501c7c5640ae4c891
+22 Don't Think Twice, It's Alright.flac:f5f54b7e74ea3b8c204ae4c331080a28
+23 All Along the Watchtower.flac:141fd1f865c4f04ec8d2afb5b5782b8a
+24 All I Really Want to Do.flac:3fd8bd186e296d607977b21bfa4e37ed
+25 It's All Right Ma It's Alright, Ma (I'm Only Bleeding).flac:d71f85125d6a41b2f2eac65b4280f4e1
+26 Forever Young (discontinuity at 0.35).flac:8cc2b3606a6d1b791a31c5056297aa8a
+27 Changing Of The Guards.flac:45764213877690537e313dba1bc3ebbe
+28 The Times They Are A-Changin'.flac:3a5b493ace70c151f5c172d229d3fa1e
+===================
+===================
+===================
+=== shntool len for: bd78-10-05-2gen.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:20.40       35373100 B   -b-   --   ---xx   flac  0.5599  01 My Back Pages (instrumental).flac
+     3:33.47       37683244 B   -b-   --   ---xx   flac  0.5618  02 I'm Ready.flac
+     4:57.44       52494380 B   -b-   --   ---xx   flac  0.5738  03 Is Your Love In Vain.flac
+     4:57.23       52445228 B   -b-   --   ---xx   flac  0.5664  04 Shelter From the Storm.flac
+     5:03.47       53559340 B   -b-   --   ---xx   flac  0.5714  05 It's All Over Now Baby Blue.flac
+     8:39.67       91709488 B   -b-   --   ---xx   flac  0.5526  06 Tangled Up In Blue.flac
+     5:05.57       53936172 B   -b-   --   ---xx   flac  0.5749  07 Ballad of A Thin Man.flac
+     5:11.31       54932528 B   -b-   --   ---xx   flac  0.5760  08 Maggie's Farm.flac
+     4:39.26       49276972 B   -b-   --   ---xx   flac  0.5548  09 I Don't Believe You (She Acts Like We Never Have Met).flac
+     7:26.23       78727608 B   -b-   --   ---xx   flac  0.5731  10 Like A Rolling Stone.flac
+     4:48.22       50855980 B   -b-   --   ---xx   flac  0.5862  11 I Shall Be Released.flac
+     6:08.27       64978992 B   -b-   --   ---xx   flac  0.5802  12 Going Going Gone.flac
+     4:56.35       52297772 B   -b-   --   ---xx   flac  0.5786  13 One Of Us Must Know (Sooner Or Later).flac
+     6:42.45       71019564 B   -b-   --   ---xx   flac  0.5553  14 It Ain't Me, Babe.flac
+     3:13.28       34111532 B   -b-   --   ---xx   flac  0.5938  15 Am I Your Stepchild.flac
+     5:27.65       57835564 B   -b-   --   ---xx   flac  0.5948  16 One More Cup Of Coffee (Valley Below).flac
+     5:38.39       59714860 B   -b-   --   ---xx   flac  0.5703  17 Blowin' in the Wind.flac
+     5:28.32       57933868 B   -b-   --   ---xx   flac  0.5387  18 Girl From The North Country.flac
+     5:27.23       57737260 B   -b-   --   ---xx   flac  0.5766  19 Senor (Tales Of Yankee Power).flac
+     4:25.50       46864676 B   -b-   --   ---xx   flac  0.5946  20 Masters Of War.flac
+     6:36.52       69976108 B   -b-   --   ---xx   flac  0.5818  21 Just Like A Woman.flac
+     5:37.74       59621420 B   -b-   --   ---xx   flac  0.5866  22 Don't Think Twice, It's Alright.flac
+     4:18.71       45678636 B   -b-   --   ---xx   flac  0.6035  23 All Along the Watchtower.flac
+     3:35.08       37945388 B   -b-   --   ---xx   flac  0.5956  24 All I Really Want to Do.flac
+    10:00.07      105857068 B   -b-   --   ---xx   flac  0.5857  25 It's All Right Ma It's Alright, Ma (I'm Only Bleeding).flac
+     9:22.17       99176492 B   -b-   --   ---xx   flac  0.6073  26 Forever Young (discontinuity at 0.35).flac
+     7:31.09       79577772 B   -b-   --   ---xx   flac  0.6049  27 Changing Of The Guards.flac
+     5:19.19       56316188 B   -b-   --   ---xx   flac  0.5999  28 The Times They Are A-Changin'.flac
+   157:33.54     1667637200 B                            0.5790  (28 files)
+===================
+===================
+===================

@@ -1,0 +1,34 @@
+; Using hkSFV on 12.01.2007 at 15:47:55
+; http://www.big-o-software.com
+;
+;/----
+;          651 15:47.35 2007-12-01 2004-07-18-Vilar de Mouros.txt
+;     36371276 15:41.38 2007-12-01 Track101.flac
+;     24275656 15:41.34 2007-12-01 Track102.flac
+;     33609570 15:41.37 2007-12-01 Track103.flac
+;     32925625 15:41.36 2007-12-01 Track104.flac
+;     34098612 15:41.51 2007-12-01 Track105.flac
+;     37776198 15:41.53 2007-12-01 Track106.flac
+;     23775384 15:41.51 2007-12-01 Track107.flac
+;     34357030 15:41.58 2007-12-01 Track108.flac
+;     26041725 15:42.06 2007-12-01 Track201.flac
+;     45963114 15:42.13 2007-12-01 Track202.flac
+;     27654840 15:42.08 2007-12-01 Track203.flac
+;     36650546 15:42.14 2007-12-01 Track204.flac
+;     31548470 15:42.16 2007-12-01 Track205.flac
+;\----
+;
+de498c5cd89cd9314d6f3bad8de900ef *2004-07-18-Vilar de Mouros.txt
+0faccf79f97e2866aaf1be919b899480 *Track101.flac
+93094aefd055ba0c57664e0def4d21e2 *Track102.flac
+4891e4c08468fdbef7cf309d9dc85ac4 *Track103.flac
+ddfb6f1d9b4f4cef79efa52738d73c56 *Track104.flac
+ac2fc658a69c3e8e701299c1da3d55cc *Track105.flac
+55a4dcad534f84aad127d99e8a3f9638 *Track106.flac
+68feca1d1dffac4020c6b8dbc8b74966 *Track107.flac
+d55566755db006b2fa37d0ec2f624d89 *Track108.flac
+3fc89caa1ecbea605bee01dbeda2a215 *Track201.flac
+54d2b851eb948fa80bd1f3711f696c95 *Track202.flac
+e979ef6e2c7e9d798b6f9a69eab8a098 *Track203.flac
+2166332a7e05e4dfecd3209fcd5728ae *Track204.flac
+9af69a24e6a043d4fc98cde0b9c48ec0 *Track205.flac

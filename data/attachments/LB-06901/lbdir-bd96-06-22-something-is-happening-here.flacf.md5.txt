@@ -1,0 +1,16 @@
+4e81237a1c303cbd696abe31a490359b  bd96-06-22-something-is-happening-here-d1t01.flac
+d1fd92c454db89a54aa0d550ee8cec43  bd96-06-22-something-is-happening-here-d1t02.flac
+00b6e601fb04a52563c3efc0e6e507f6  bd96-06-22-something-is-happening-here-d1t03.flac
+fd6b3c1aaa4d36073cca003566f0e6c6  bd96-06-22-something-is-happening-here-d1t04.flac
+d689c1ce5255f15844209b8450f3dca4  bd96-06-22-something-is-happening-here-d1t05.flac
+0b233a4046828d62741e3f2a330d2ae6  bd96-06-22-something-is-happening-here-d1t06.flac
+58996697091ee9fca397d658d5168954  bd96-06-22-something-is-happening-here-d1t07.flac
+3cc439e2378b63de2694ef1ebd9bb6d3  bd96-06-22-something-is-happening-here-d1t08.flac
+c2aab499872d38289f0410ab152c9449  bd96-06-22-something-is-happening-here-d2t01.flac
+4a5197b784b2b3d09c93089425e24b03  bd96-06-22-something-is-happening-here-d2t02.flac
+abb2832efc27a38ee86cf0bc25d27079  bd96-06-22-something-is-happening-here-d2t03.flac
+8e72521fcab1b9ff4a8842c15d87ad8e  bd96-06-22-something-is-happening-here-d2t04.flac
+bdac8c07092c362bcb1d5d341309367a  bd96-06-22-something-is-happening-here-d2t05.flac
+31b99e3d7cff4b6821792daa2413d55a  bd96-06-22-something-is-happening-here-d2t06.flac
+49a8fdf0c1eabe4d264ad7bf8781b9c4  bd96-06-22-something-is-happening-here-d2t07.flac
+bf015fce3308e243476a0daaddb6a249  bd96-06-22-something-is-happening-here.flacf.md5

@@ -1,0 +1,10 @@
+Bob Dylan, 2/3/99, New Orleans, Louisiana, Nat Kiefer Uno Lakefront Arena, 2CDR
+
+LB-7012, (70min+22min), version "a"; Taper: Unidentified, Source: audio disks > (dBpowerAMP set to compression level 6) flac; bittorrent download 11/08; this is a not very close eac match on d1t1 and d1t12 to LB-3213; this does not have the discontinuity on d1t12 noted on that one and this looks cleaner at the other eac differences; that has discontinuities near track boundaries and this does not; excellent sound [A]
+
+drop d1t1 0:26
+
+Disc One, 1. Gotta Serve Somebody, 2. Million Miles, 3. Stuck Inside Of Mobile With The Memphis Blues Again, 4. Make You Feel My Love, 5. Silvio (Dylan/Hunter), 6. Stone Walls And Steel Bars, 7. Masters Of War, 8. Girl Of The North Country, 9. Tangled Up In Blue, 10. Honky Tonk Blues (Hank Williams Snr), 11. Can't Wait, 12. Highway 61 Revisited, Disc Two, 1. Love Sick, 2. Leopard-Skin Pill-Box Hat, 3. Blowin' In The Wind, 4. Not Fade Away (Petty/Hardin)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

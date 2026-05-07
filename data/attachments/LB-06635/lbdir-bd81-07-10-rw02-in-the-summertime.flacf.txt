@@ -1,0 +1,63 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-10-rw02-in-the-summertime.flacf 
+=================== 
+=================== 
+=================== 
+a95145a308615ce8cd5a42fa8aac14c3  bd81-07-10-rw02-in-the-sum-t01.flac
+f7ee3fdc883c24cd90135d8ccacfefb5  bd81-07-10-rw02-in-the-sum-t02.flac
+fe9805adb8d07b8fe06ca6cbe9da078b  bd81-07-10-rw02-in-the-sum-t03.flac
+6ccb024bcf8939fc3af5bb247a232559  bd81-07-10-rw02-in-the-sum-t04.flac
+6fe186c639ff54113129701d3c250c28  bd81-07-10-rw02-in-the-sum-t05.flac
+e42c825105f743151efea660064b1925  bd81-07-10-rw02-in-the-sum-t06.flac
+dfd219f3a53a03b55a13048f9284ad17  bd81-07-10-rw02-in-the-sum-t07.flac
+97ae9a32a1f359b92ff0b1c4868c8a76  bd81-07-10-rw02-in-the-sum-t08.flac
+db50a897fab60b2338f3241d3a48c768  bd81-07-10-rw02-in-the-sum-t09.flac
+faed4bb740ad1f11249029c72656be93  bd81-07-10-rw02-in-the-sum-t10.flac
+a03d132e5caaa2d413574509944340ec  bd81-07-10-rw02-in-the-sum-t11.flac
+2e3af75310bfe1dc1b4e57202ca8978e  bd81-07-10-rw02-in-the-sum-t12.flac
+5bc4c6cde098733434cabf60733801df  bd81-07-10-rw02-in-the-summertime.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-10-rw02-in-the-summertime.flacf 
+=================== 
+=================== 
+=================== 
+bd81-07-10-rw02-in-the-sum-t01.flac:f3c47123b83fbbe6ab62341cf2ab39f1
+bd81-07-10-rw02-in-the-sum-t02.flac:26199c527000530ccf120c1d6e54407e
+bd81-07-10-rw02-in-the-sum-t03.flac:6f9523dac8f04cbf7767ad416866fd04
+bd81-07-10-rw02-in-the-sum-t04.flac:12d4448a9189a846c60d27762e9c5b04
+bd81-07-10-rw02-in-the-sum-t05.flac:51dde0456f28c3792c5c9c2f75906d2f
+bd81-07-10-rw02-in-the-sum-t06.flac:982816289e75fd232469916ebcc12c91
+bd81-07-10-rw02-in-the-sum-t07.flac:3e933bbe3bac179f5c064e25826b54a4
+bd81-07-10-rw02-in-the-sum-t08.flac:07ba2d544153152093d91005aae7dab1
+bd81-07-10-rw02-in-the-sum-t09.flac:1f2bd5f6defd3f2edd72008d9fcd4971
+bd81-07-10-rw02-in-the-sum-t10.flac:e2e0cdb1480fe77879d72a1ea3e192be
+bd81-07-10-rw02-in-the-sum-t11.flac:40b813f9b9b1631a18e124c26e3d1d90
+bd81-07-10-rw02-in-the-sum-t12.flac:cbc4e2e9a72dfa7ce60034d4dabad686
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-10-rw02-in-the-summertime.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:46.32       50525708 B   ---   --   ---xx   flac  0.5631  bd81-07-10-rw02-in-the-sum-t01.flac
+     3:54.55       41407004 B   ---   --   ---xx   flac  0.6062  bd81-07-10-rw02-in-the-sum-t02.flac
+     5:00.63       53068220 B   ---   --   ---xx   flac  0.5839  bd81-07-10-rw02-in-the-sum-t03.flac
+     6:44.62       71411468 B   ---   --   ---xx   flac  0.6058  bd81-07-10-rw02-in-the-sum-t04.flac
+     5:44.13       60712220 B   ---   --   ---xx   flac  0.4982  bd81-07-10-rw02-in-the-sum-t05.flac
+     3:27.32       36590108 B   ---   --   ---xx   flac  0.5683  bd81-07-10-rw02-in-the-sum-t06.flac
+     5:17.00       55918844 B   ---   --   ---xx   flac  0.5925  bd81-07-10-rw02-in-the-sum-t07.flac
+     4:12.00       44452844 B   ---   --   ---xx   flac  0.5594  bd81-07-10-rw02-in-the-sum-t08.flac
+     4:31.00       47804444 B   ---   --   ---xx   flac  0.5941  bd81-07-10-rw02-in-the-sum-t09.flac
+     4:15.58       45118460 B   ---   --   ---xx   flac  0.5993  bd81-07-10-rw02-in-the-sum-t10.flac
+     5:05.35       53884364 B   ---   --   ---xx   flac  0.5937  bd81-07-10-rw02-in-the-sum-t11.flac
+     5:17.25       55977644 B   ---   --   ---xx   flac  0.5850  bd81-07-10-rw02-in-the-sum-t12.flac
+    58:17.00      616871328 B                            0.5788  (12 files)
+=================== 
+=================== 
+=================== 

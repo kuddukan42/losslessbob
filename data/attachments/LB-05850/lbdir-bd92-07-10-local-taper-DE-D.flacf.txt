@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-07-10-local-taper-DE-D.flacf 
+=================== 
+=================== 
+=================== 
+7670495e4bf0a0fc38c824de5ab11529  bd-19920710-Leysin.ffp
+347c77d914f14f8546220de934e1bc8a  bd-19920710-Leysin.md5
+344240b78a4e019626ba71c57ea3932c  bd1992-07-10-d1t01.flac
+0488530085d06d5b6b02c4bf05976e0d  bd1992-07-10-d1t02.flac
+d106924002e72e4468d68e73da0cc1a4  bd1992-07-10-d1t03.flac
+7eaea1da22ecf04b6aa3a0c286f16323  bd1992-07-10-d1t04.flac
+8c939368b5accb99c24ff7c136bed6c9  bd1992-07-10-d1t05.flac
+70ba5d4e5b2c7c02211ad290c0a1ee99  bd1992-07-10-d1t06.flac
+d532af7fa2ebcde8431290486c7e0032  bd1992-07-10-d1t07.flac
+8a46bd6ed69806184382efd9ab4d67de  bd1992-07-10-d1t08.flac
+25f4c3608af7360794a184dac84fefbf  bd1992-07-10-d1t09.flac
+bccc634b1b611f38214e772d6ca57e2b  bd1992-07-10-d2t01.flac
+c9705a858bc37605a09b00d3efa60384  bd1992-07-10-d2t02.flac
+6aef22e0fe79c1a8a57acbb1bda7529b  bd1992-07-10-d2t03.flac
+444813d664f3c97260457261e785a0b0  bd1992-07-10-d2t04.flac
+902bb887ffb91004ceec8d7fa6b45fbc  bd1992-07-10-d2t05.flac
+c48f4e3432afd3310379f1bdb166b35b  bd1992-07-10-d2t06.flac
+33ba6d1adc6f6b0e7fa10bbbe4b9d99e  bd1992-07-10-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-07-10-local-taper-DE-D.flacf 
+=================== 
+=================== 
+=================== 
+bd1992-07-10-d1t01.flac:afc49d304b148214c5796a57e3dd21c8
+bd1992-07-10-d1t02.flac:92e4c24e821b29d33766cde36acc3828
+bd1992-07-10-d1t03.flac:17cc1fea1557b11cf0354ed3e8b96ca0
+bd1992-07-10-d1t04.flac:e2b40cdf7b3eb62bc17397d1305506be
+bd1992-07-10-d1t05.flac:00517735c58deb925e0cf5e9561422f6
+bd1992-07-10-d1t06.flac:251bd63f1b68a61465e12806e2c73a70
+bd1992-07-10-d1t07.flac:4ab643557c11893d6214f3ad2bd631de
+bd1992-07-10-d1t08.flac:fd0846dd437e75504d9de8ac58106b72
+bd1992-07-10-d1t09.flac:aa39ad59bd7f2d55473588df13489ef1
+bd1992-07-10-d2t01.flac:c8ffbe5450e363e4d5794c128f2fafa4
+bd1992-07-10-d2t02.flac:59d3405c9e1c696f5d9b460caada9f5a
+bd1992-07-10-d2t03.flac:7623326d1daa3915796bd58cae0bc632
+bd1992-07-10-d2t04.flac:42dc9ae0836140a6cfb60fa213ed673d
+bd1992-07-10-d2t05.flac:989ab94d432ecb47d72a52f45a1bcdd1
+bd1992-07-10-d2t06.flac:8d754cdc5cf9c66841bb4816626f72ff
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-07-10-local-taper-DE-D.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:08.17        1451228 B   ---   --   ---xx   flac  0.4387  bd1992-07-10-d1t01.flac
+     4:07.30       43641404 B   ---   --   ---xx   flac  0.5435  bd1992-07-10-d1t02.flac
+     5:55.51       62741996 B   ---   --   ---xx   flac  0.5158  bd1992-07-10-d1t03.flac
+     4:19.61       45831116 B   ---   --   ---xx   flac  0.5421  bd1992-07-10-d1t04.flac
+     6:04.05       64221404 B   ---   --   ---xx   flac  0.5383  bd1992-07-10-d1t05.flac
+     7:08.50       75616844 B   ---   --   ---xx   flac  0.5814  bd1992-07-10-d1t06.flac
+     6:30.12       68824268 B   ---   --   ---xx   flac  0.5528  bd1992-07-10-d1t07.flac
+     3:53.21       41150636 B   ---   --   ---xx   flac  0.4659  bd1992-07-10-d1t08.flac
+     8:22.74       88726892 B   ---   --   ---xx   flac  0.5303  bd1992-07-10-d1t09.flac
+     4:29.26       47512796 B   ---   --   ---xx   flac  0.6106  bd1992-07-10-d2t01.flac
+     6:50.12       72352268 B   ---   --   ---xx   flac  0.5130  bd1992-07-10-d2t02.flac
+     7:18.68       77423180 B   ---   --   ---xx   flac  0.5913  bd1992-07-10-d2t03.flac
+     5:44.59       60820412 B   ---   --   ---xx   flac  0.5356  bd1992-07-10-d2t04.flac
+     5:48.05       61399004 B   ---   --   ---xx   flac  0.6150  bd1992-07-10-d2t05.flac
+     4:23.41       46489676 B   ---   --   ---xx   flac  0.4920  bd1992-07-10-d2t06.flac
+    81:05.07      858203124 B                            0.5471  (15 files)
+=================== 
+=================== 
+=================== 

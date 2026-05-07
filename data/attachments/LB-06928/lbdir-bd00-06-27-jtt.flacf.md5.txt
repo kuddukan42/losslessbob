@@ -1,0 +1,20 @@
+6e397627ac0b5fadf3cf2fbf9e165a45  Disc One\Disc01Track01 Dylan 27.06.2000.flac
+b94dfc77abd320c56fbdc8f9be4c9e13  Disc One\Disc01Track02 Dylan 27.06.2000.flac
+a37e196c5a1455ed0a2872de1a9e0582  Disc One\Disc01Track03 Dylan 27.06.2000.flac
+58607f0d559c6096e8244633e88f6e02  Disc One\Disc01Track04 Dylan 27.06.2000.flac
+63b221c7ccb3aaa319e37550b3d784be  Disc One\Disc01Track05 Dylan 27.06.2000.flac
+be6e2a6d363ae83bbed5f201d06599e6  Disc One\Disc01Track06 Dylan 27.06.2000.flac
+917383307693395f4deeca1787101117  Disc One\Disc01Track07 Dylan 27.06.2000.flac
+5250d1c36d1960230289f2c019b4044d  Disc One\Disc01Track08 Dylan 27.06.2000.flac
+214e2e442bcfecb37a374266a136da60  Disc One\Disc01Track09 Dylan 27.06.2000.flac
+12f2cefe431e3261638b8abae06db402  Disc Two\Disc02Track01 Dylan 27.06.2000.flac
+8390cf63e8fe1a0a36bb97d077ea37f7  Disc Two\Disc02Track02 Dylan 27.06.2000.flac
+f6ca7a9ab0fa91129b7116ba59cf6400  Disc Two\Disc02Track03 Dylan 27.06.2000.flac
+1ba07cdbb0f7cfe69dcd1e3ccf3f748d  Disc Two\Disc02Track04 Dylan 27.06.2000.flac
+0493011e22114437b743aaa48f57e51a  Disc Two\Disc02Track05 Dylan 27.06.2000.flac
+0614ced5a1f40d279d48f2d2b82c8bce  Disc Two\Disc02Track06 Dylan 27.06.2000.flac
+2473b2329f0fd22386d357b2c10cf11a  Disc Two\Disc02Track07 Dylan 27.06.2000.flac
+557f7dc25e0ab9bd1136f515604b393c  Disc Two\Disc02Track08 Dylan 27.06.2000.flac
+96dcfd388e405448199ac91186247557  Dylan - Las Vegas June 27th 2000.md5
+32c5e99512d30f4ed272f05ee2670d28  Dylan - Las Vegas June 27th 2000.txt
+de522271a18741af01faa37b34db9766  Dylan - Las Vegas June 27th 2000_Info.txt

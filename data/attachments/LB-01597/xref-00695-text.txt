@@ -1,0 +1,114 @@
+===================
+===================
+===================
+=== IAR 046 - Dunkerque, June 30, 1992.md5
+===================
+===================
+===================
+efdedc9efcbb5f7863615ea49aed78db *CD1\01 Don't Let Your Deal Go Down.flac
+9fa68ca71cfc0c9d2d78c1067995bb1c *CD1\02 You're A Big Girl Now.flac
+60b9ad6a6852cce7b7977d15220645e9 *CD1\03 Seeing The Real You At Last.flac
+26f3c41b3e93970971e29e2fce61d3d8 *CD1\04 Just Like A Woman.flac
+b21f32a09ac400e7c1b22b645dd80e2a *CD1\05 Tangled Up In Blue.flac
+41c6b6a716c6eb1669a54720c9d9f305 *CD1\06 What Good Am I.flac
+d84b55fb424dfedbf08f15a0fb93692c *CD1\07 Maggie's Farm.flac
+77804ba7511d0a4e6ad55fb1ea7561b8 *CD1\08 Love Minus Zero.flac
+fcbc59c91279d635d12906e848ca3d9c *CD1\09 Girl On The Green Briar Shore.flac
+65d6ff78e52dcda9a6fbe1f793a3f6d9 *CD1\10 Hard Rain's A-Gonna Fall.flac
+cfc5800808ec6ce24cee26cf4ff58092 *CD1\11 It's All Over Now, Baby Blue.flac
+efc60c5037fe98c0d929e4535f31fa43 *CD1\bd 1992-06-30 CD1 SHN.md5
+98884283740db64ee6a908de7cbd28c7 *CD1\Dunkerque, France, June 30, 1992, CD1.log
+5696b56480a1f0c3657f20152bd64fdd *CD2\01 Everything Is Broken.flac
+41314117b5e82e0462424238521be5de *CD2\02 Idiot Wind.flac
+017f76893328c6b93dc5a19289abcb72 *CD2\03 I And I.flac
+f9105edc1c12e20ff70c610a3116cccd *CD2\04 Highway 61 Revisited.flac
+c8282e09e3533d7580e4cf467e85a3ee *CD2\05 Applause.flac
+149bdfaead0200d149a4b409b24e41f5 *CD2\06 Silvio.flac
+6cac48d5f0a0fbc0926afaabddafc961 *CD2\07 All Along The Watchtower.flac
+55bd2cdb65e4389af72f111dd7399402 *CD2\08 Blowin' In The Wind.flac
+9179aeece78d3dc41397e486aefd505a *CD2\bd 1992-06-30 CD2.md5
+5248f20979eb21891526f5f441302452 *CD2\Dunkerque, France, June 30, 1992, CD2.log
+1239f2c643618f8a771a633204ced255 *IAR 046 Dunkerque, France, June 30, 1992.txt
+===================
+===================
+===================
+=== IAR 046 Dunkerque, France, June 30, 1992.txt
+===================
+===================
+===================
+Improved Air Remasters 046
+
+Improved Air Catalog Number: IA46
+TITLE: untitled (2cd)
+DATE: 30.06.92
+VENUE: Dunkerque, France
+SOURCE/COMMENTS: audience      
+CIRCULATION DATE: December 22, 2002
+
+CD 1
+
+01 Don't Let Your Deal Go Down
+02 You're A Big Girl Now
+03 Seeing The Real You At Last
+04 Just Like A Woman
+05 Tangled Up In Blue
+06 What Good Am I
+07 Maggie's Farm
+08 Love Minus Zero
+09 Girl On The Green Briar Shore
+10 Hard Rain's A-Gonna Fall
+11 It's All Over Now, Baby Blue
+
+
+CD 2
+
+01 Everything Is Broken
+02 Idiot Wind
+03 I And I
+04 Highway 61 Revisited
+05 Applause
+06 Silvio
+07 All Along The Watchtower
+08 Blowin' In The Wind
+
+By Gooverstick: 
+Some history cribbed directly from the creator of this fine series: The fan who began Improved Air Remasters did so for the simple reason of wanting to hear more natural-sounding recordings.  His process, and he works alone, of remastering includes restoration and light or hard tweaking of the original source, among other things. Obviously each new project is a different case. For ease of trading he regrets not foot printing his sets early on, but may list out the cd times one day. He is currently working on an ambitious and exciting project, namely remastering the entire USA/Canada Spring 1997 Tour.     
+
+
+NOTE: all information below (with one or two slight edits) comes from the sole owner and operator of Improved Air Remasters, so consider this accurate and up to date as of July 2003. If I receive additional updates I will certainly put them here. This date format goes DD/MM/YY.
+===================
+===================
+===================
+=== bd 1992-06-30 CD1 SHN.md5
+===================
+===================
+===================
+38ec4c110db1aba0d4f583b7beb36518 *01 Don't Let Your Deal Go Down.shn
+6742fe96a65c4bb91aa9baef6978634b *02 You're A Big Girl Now.shn
+fc70e684827fa0a393ff21105e77c400 *03 Seeing The Real You At Last.shn
+85e656df58238872cd8107da103cc249 *04 Just Like A Woman.shn
+e8f9e0919c11864c122a52ecfad08aeb *05 Tangled Up In Blue.shn
+676b627701c29ac356c5c74e4bf5615e *06 What Good Am I.shn
+fa40627832fe630bc2403166fd4f0bd8 *07 Maggie's Farm.shn
+43111556a0698be27ae5c14ceae87d29 *08 Love Minus Zero.shn
+d2c3dba55cc220a1e5f428ad4b4c1738 *09 Girl On The Green Briar Shore.shn
+55a6793a495169e7d0e1b5292b41e407 *10 Hard Rain's A-Gonna Fall.shn
+c0e99601dced00a1dc6177839fd50dd3 *11 It's All Over Now, Baby Blue.shn
+===================
+===================
+===================
+=== bd 1992-06-30 CD2.md5
+===================
+===================
+===================
+d89e11a706c9ee4b3d7fdb5a57caabe3 *01 Everything Is Broken.shn
+d5af6cb6c13c6d52a7b3bbae3bad4d55 *02 Idiot Wind.shn
+e1ea53cbbba2c0871f8130863861b39e *03 I And I.shn
+2bc5d26ce65ab1193688104721612600 *04 Highway 61 Revisited.shn
+e2cecd80f51757ec394392e537cfc944 *05 Applause.shn
+be052ceb24aabaa149616e3fdc59dd59 *06 Silvio.shn
+7fd08f60903bf96308992b67f354f8e1 *07 All Along The Watchtower.shn
+e97581f5d95ae1789887ed27e8d70bd8 *08 Blowin' In The Wind.shn
+===================
+===================
+===================

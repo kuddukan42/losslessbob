@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-04-18-jt_Albany 
+=================== 
+=================== 
+=================== 
+298bcb7d20b65d9317a375f87d83f6ca  bd97-04-18.txt
+339636b002dc4d67de19811d04605248  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 1.shn
+8e3e6f2cc02ba21a5256c4e78e0eec85  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 2.shn
+4611c4d790e81e4e57618303dae1fd7c  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 3.shn
+7ed9de255e6abd440a2709d50d41f10e  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 4.shn
+690507f4e85aa841dc37bede068a2a82  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 5.shn
+0fb0cc46145f7638596888ff63f55e77  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 6.shn
+e6d5ad1a79ed7193d2232f411abcee48  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 7.shn
+49dd13910057e6bca10d0a2191157bdd  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 8.shn
+b43e42ca6d56cbe5f20394fbdb25618f  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_Track 9.shn
+821f24a0bba386644ec7e30ebac693ff  bd_97-04-18_cd1.shnf\bd_97-04-18_cd1_shn.md5
+371c80bcad6657a8f62e3ce17e416f7a  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 01.shn
+877309f60ea8f19f839149e7e4995e28  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 10.shn
+bc583431db000e125452f2f6424b5566  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 2.shn
+201ce9cea99cb88ea9af925df20eb144  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 3.shn
+17ebff48701385822ed1f5ab2b0df5ff  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 4.shn
+6e750b78d3cb187e68f924992bebfb25  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 5.shn
+ac76b6a7dec0443bbb3d9d68e9110e44  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 6.shn
+4bcba7d72bfeba23534c0517ef235cd8  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 7.shn
+fcd403c953626488b0ea35c103b8e6c1  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 8.shn
+1131838f6075f7a83e34359ee27f4ded  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_Track 9.shn
+12b84d3627a12ecb207072afc775fe29  bd_97-04-18_cd2.shnf\bd_97-04-18_cd2_shn.md5
+b1b3b04d15d917583ae6284a345381f3  readme.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-04-18-jt_Albany\bd_97-04-18_cd1.shnf 
+=================== 
+=================== 
+=================== 
+9050295f3b3d12bdbb46f715f775bd85  [shntool]  bd_97-04-18_cd1_Track_1.wav
+bd2f0b78f860acfe312b184f2513e140  [shntool]  bd_97-04-18_cd1_Track_2.wav
+3152f108881ee82a3ce22863ebed0f9b  [shntool]  bd_97-04-18_cd1_Track_3.wav
+b42fff813bbaf9aa2c9b17d55fe8bb4c  [shntool]  bd_97-04-18_cd1_Track_4.wav
+2e8ded5f7008dbbb62c60456e482bcd4  [shntool]  bd_97-04-18_cd1_Track_5.wav
+ec6c8a94da5a5939fe0ee1a6aaf4416d  [shntool]  bd_97-04-18_cd1_Track_6.wav
+3b89e69802bc5f9b782bed6c7e6b4681  [shntool]  bd_97-04-18_cd1_Track_7.wav
+3e807cd593765e9b49e575342e0f3353  [shntool]  bd_97-04-18_cd1_Track_8.wav
+1517c882b7a14769365a175e8fe51df7  [shntool]  bd_97-04-18_cd1_Track_9.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd97-04-18-jt_Albany\bd_97-04-18_cd2.shnf 
+=================== 
+=================== 
+=================== 
+562654e6c93dec0bd8bd8e4961a5bfe2  [shntool]  bd_97-04-18_cd2_Track_01.wav
+676cb111ea538ab258833884dbddfb2c  [shntool]  bd_97-04-18_cd2_Track_2.wav
+104d03f059a20046ec2ee838eb35b9b9  [shntool]  bd_97-04-18_cd2_Track_3.wav
+a04a25804ab301c7adc0a3a9f1b17c22  [shntool]  bd_97-04-18_cd2_Track_4.wav
+ad3b82b407fb3c2b34902047d4b2e7dd  [shntool]  bd_97-04-18_cd2_Track_5.wav
+319fef734ec3a323dea9db59e4891c7b  [shntool]  bd_97-04-18_cd2_Track_6.wav
+26398762f994ba87797e3608ca1d73cf  [shntool]  bd_97-04-18_cd2_Track_7.wav
+3480f956835b215e52abbbec5372b5d1  [shntool]  bd_97-04-18_cd2_Track_8.wav
+1c3197637607bfcfa9ffd5d92452a4ad  [shntool]  bd_97-04-18_cd2_Track_9.wav
+214aba905a4db153bce8079142258d81  [shntool]  bd_97-04-18_cd2_Track_10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-18-jt_Albany\bd_97-04-18_cd1.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:56.12       41658750 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_1.wav
+     6:40.54       70687134 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_2.wav
+     7:39.32       81042990 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_3.wav
+     5:07.57       54288990 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_4.wav
+     7:06.61       75289998 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_5.wav
+     8:28.53       89735982 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_6.wav
+     8:09.22       86311470 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_7.wav
+     7:17.56       77218638 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_8.wav
+     7:02.21       74490318 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd1_Track_9.wav
+    61:28.68      650724270 B                            1.0000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-04-18-jt_Albany\bd_97-04-18_cd2.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:32.11       90342798 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_01.wav
+     7:41.62       81466350 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_10.wav
+     0:46.18        8156862 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_2.wav
+     8:36.35       91104846 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_3.wav
+     7:39.20       81014766 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_4.wav
+     1:08.07       12011790 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_5.wav
+     0:30.02        5296830 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_6.wav
+     0:41.14        7265454 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_7.wav
+     8:55.60       94515246 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_8.wav
+     9:38.61      102102798 B   ---   -e   -----    wav  1.0000  bd_97-04-18_cd2_Track_9.wav
+    54:09.65      573277740 B                            1.0000  (10 files)
+=================== 
+=================== 
+=================== 

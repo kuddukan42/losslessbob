@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-10-12-JF.flacf 
+=================== 
+=================== 
+=================== 
+84838757f97a55f77d1abc32bb1c077c  7-12-89.txt
+b4cfca7d10d7a76c06af60b81550ceb6  BD-10-12-90-Springfield.md5
+b6609473a5f2cef2c739a09def191d41  BD-10-12-90-Springfield01.flac
+485bc35f31db2b484e67bd20a9540168  BD-10-12-90-Springfield02.flac
+51d42c8ce9d920522c3f53ce96193358  BD-10-12-90-Springfield03.flac
+893a1dd891544d6b4ff14479355d09a6  BD-10-12-90-Springfield04.flac
+42b3226cfe82115c94c13c9afec1cfe1  BD-10-12-90-Springfield05.flac
+6ace4053e97167445a192f45c5b83742  BD-10-12-90-Springfield06.flac
+6e19544b3fb88be1045d6db739af2275  BD-10-12-90-Springfield07.flac
+d02dff12378048f5cdf0092729ac71d3  BD-10-12-90-Springfield08.flac
+4d60891dee07d712953b7b98765611b7  BD-10-12-90-Springfield09.flac
+b88ef3c10f16880cc664247b010a7ce1  BD-10-12-90-Springfield10.flac
+2c618068d374ecf1741f6ceaa0418c2b  BD-10-12-90-Springfield11.flac
+57469eed2a06d2fac53dd0e76535d70b  BD-10-12-90-Springfield12.flac
+5e0b11146220c77bed48067cb7f99beb  BD-10-12-90-Springfield13.flac
+c96eaa2dfcbfde323855c73f51022095  BD-10-12-90-Springfield14.flac
+846348d6dd027d139092c946f6b54c69  BD-10-12-90-Springfield15.flac
+bd4a2ab09d0beb38e7d33bb61f3ac59d  BD-10-12-90-Springfield16.flac
+1a3935668d6f30853786b931710e804f  BD-10-12-90-Springfield17.flac
+5bba7b1a90301d4bd95d0876320ef96a  BD-10-12-90-Springfield18.flac
+a05991c8af82f9d3e14c74f6a8f67218  bd1990-10-12JF.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-10-12-JF.flacf 
+=================== 
+=================== 
+=================== 
+BD-10-12-90-Springfield01.flac:31690d03c9f2d91683fc805008bc63da
+BD-10-12-90-Springfield02.flac:6d90e6775ffafd52ac8733335322f3fd
+BD-10-12-90-Springfield03.flac:6e2e39f28efc7207eee124d0162583bb
+BD-10-12-90-Springfield04.flac:d4e0830e2a9b00cab4848cf55f56f764
+BD-10-12-90-Springfield05.flac:d81bf297e29402cc9da5ffbdb1b6465d
+BD-10-12-90-Springfield06.flac:0c8862547598a1635fd0b52c89da50e8
+BD-10-12-90-Springfield07.flac:4f9f053c880433c2d39896b22d35cf26
+BD-10-12-90-Springfield08.flac:9a2a5cbc9621f4698e6514a2a9626e76
+BD-10-12-90-Springfield09.flac:045ed1525d828fc55ca70c3ab2af5260
+BD-10-12-90-Springfield10.flac:8c8f2b6a97e70f02141cce17316816d5
+BD-10-12-90-Springfield11.flac:f7eca59e033d4d537bb9036f5657ae0d
+BD-10-12-90-Springfield12.flac:e4f29adb7e159aca60f05493211f3481
+BD-10-12-90-Springfield13.flac:5eb04bbec6ec679827abcf56e31f6679
+BD-10-12-90-Springfield14.flac:cb8e77798ee6d1a92f511df92ce47d3b
+BD-10-12-90-Springfield15.flac:f8a0d732dc1783c21809439248d83e04
+BD-10-12-90-Springfield16.flac:49af0cdf56a3f5a62bdb90db295ea53b
+BD-10-12-90-Springfield17.flac:453c7d3929515eec732d217cb8ec7eaa
+BD-10-12-90-Springfield18.flac:c557e7aacffffc2ef32c34f976a3bb04
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-10-12-JF.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.41       10680476 B   ---   --   ---xx   flac  0.6218  BD-10-12-90-Springfield01.flac
+     3:27.33       36592460 B   ---   --   ---xx   flac  0.6397  BD-10-12-90-Springfield02.flac
+     4:43.27       49984748 B   ---   --   ---xx   flac  0.6307  BD-10-12-90-Springfield03.flac
+     3:13.53       34169900 B   ---   --   ---xx   flac  0.6892  BD-10-12-90-Springfield04.flac
+     4:44.35       50179964 B   ---   --   ---xx   flac  0.6790  BD-10-12-90-Springfield05.flac
+     4:26.57       47056508 B   ---   --   ---xx   flac  0.6629  BD-10-12-90-Springfield06.flac
+     5:19.23       56325740 B   ---   --   ---xx   flac  0.6394  BD-10-12-90-Springfield07.flac
+     4:18.55       45640604 B   ---   --   ---xx   flac  0.6049  BD-10-12-90-Springfield08.flac
+     6:07.12       64767068 B   ---   --   ---xx   flac  0.6055  BD-10-12-90-Springfield09.flac
+     5:01.58       53232860 B   ---   --   ---xx   flac  0.5922  BD-10-12-90-Springfield10.flac
+     3:37.71       38445836 B   ---   --   ---xx   flac  0.6372  BD-10-12-90-Springfield11.flac
+     2:28.63       26255420 B   ---   --   ---xx   flac  0.6680  BD-10-12-90-Springfield12.flac
+     3:09.17       33379628 B   ---   --   ---xx   flac  0.6513  BD-10-12-90-Springfield13.flac
+     3:17.38       34840220 B   ---   --   ---xx   flac  0.6047  BD-10-12-90-Springfield14.flac
+     4:36.40       48780524 B   ---   --   ---xx   flac  0.6535  BD-10-12-90-Springfield15.flac
+     6:49.46       72255836 B   ---   --   ---xx   flac  0.6612  BD-10-12-90-Springfield16.flac
+     5:26.11       57532316 B   ---   --   ---xx   flac  0.6033  BD-10-12-90-Springfield17.flac
+     5:02.28       53338700 B   ---   --   ---xx   flac  0.6682  BD-10-12-90-Springfield18.flac
+    76:51.33      813458808 B                            0.6387  (18 files)
+=================== 
+=================== 
+=================== 

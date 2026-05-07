@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd07-07-14-MA.flacf 
+=================== 
+=================== 
+=================== 
+23caa39774523e60162b588997ad1418  bob dylan 7-14-07 101.flac
+69930e6633b8dd3c38f9810c657c8c2d  bob dylan 7-14-07 102.flac
+6bba95c4d07ab6e5ad65952a894d323c  bob dylan 7-14-07 103.flac
+3aacf181f443f39cfe75ec9a36e0bfdd  bob dylan 7-14-07 104.flac
+0777c05535541b295b4d006e9a102035  bob dylan 7-14-07 105.flac
+2753b5a541b835c00d39660117e53610  bob dylan 7-14-07 106.flac
+a29854f5714223eae23f9ab50db4b5a7  bob dylan 7-14-07 107.flac
+814b1e36ac0b63dc501dfc6f7b0bce2d  bob dylan 7-14-07 108.flac
+b09ce7c75bd4e8be0afcf8ff81353c29  bob dylan 7-14-07 109.flac
+748bed79f91132bf49e633de7854c5cd  bob dylan 7-14-07 201.flac
+9010382eba331b6c58018867e9a376e1  bob dylan 7-14-07 202.flac
+419ea8ad9cbab980162449e8d50f5bac  bob dylan 7-14-07 203.flac
+c7f2af37ab7618acb3b9807d668566ee  bob dylan 7-14-07 204.flac
+98d29d67ab445569d0d5fb22c2059f04  bob dylan 7-14-07 205.flac
+e3871d4af04384d5a2c21042c2943b77  bob dylan 7-14-07 206.flac
+d8b8b18cc4062e7c06a92a47a6ca6fc4  bob dylan 7-14-07 207.flac
+bad97dc666050f682352138c709c8240  bob dylan 7-14-07 208.flac
+f9f320febf6ed88ed13d42ffbdcdfb22  bob dylan 7-14-07 209.flac
+b5c1e28779648ccac35fed50da8a79dc  bob dylan 7-14-07.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd07-07-14-MA.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 7-14-07 101.flac:bff79c8ebba0fba8c9ad1847cf0fd315
+bob dylan 7-14-07 102.flac:96c6bb2f571d99130f86bd72fd18d611
+bob dylan 7-14-07 103.flac:2fdd58466c6d0651b23c817002462ba2
+bob dylan 7-14-07 104.flac:42042ffad7251e4fbef99286af4ee4cb
+bob dylan 7-14-07 105.flac:22e8fe9047b15f0c74608736715b458a
+bob dylan 7-14-07 106.flac:7ed234b0f5c6ff5fc5fe715b4e2abc11
+bob dylan 7-14-07 107.flac:c0d42b86a8bb8402efaf311a2212c9a4
+bob dylan 7-14-07 108.flac:3fa62347f787181634deebe59020b7ac
+bob dylan 7-14-07 109.flac:aac3963b70700f2f54db0d8a5357d85e
+bob dylan 7-14-07 201.flac:07ae1ea3f68ed180047a77e17c001bac
+bob dylan 7-14-07 202.flac:4255e2aa4f56b39b43ec67f711fc7678
+bob dylan 7-14-07 203.flac:22724853a3d6d94f9338d98df6d93751
+bob dylan 7-14-07 204.flac:afdd793ebdddde66927badedb16d9990
+bob dylan 7-14-07 205.flac:6b961c58f60c70efb3b7ea567459b4c6
+bob dylan 7-14-07 206.flac:d8d9c3c937112389ff7a49c4ef9c7bf9
+bob dylan 7-14-07 207.flac:11b219c6b288893b74f5ff13cb0bc3d3
+bob dylan 7-14-07 208.flac:60847b80f754489954cbe51f5baf481e
+bob dylan 7-14-07 209.flac:ba826096e09ce13620dcf42bb8ac2f67
+=================== 
+=================== 
+=================== 
+=== shntool for: bd07-07-14-MA.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.32       10835708 B   ---   --   ---xx   flac  0.4496  bob dylan 7-14-07 101.flac
+     3:58.07       41999708 B   ---   --   ---xx   flac  0.5259  bob dylan 7-14-07 102.flac
+     5:54.37       62532668 B   ---   --   ---xx   flac  0.4540  bob dylan 7-14-07 103.flac
+     5:00.30       52990604 B   ---   --   ---xx   flac  0.5132  bob dylan 7-14-07 104.flac
+     7:06.67       75304028 B   ---   --   ---xx   flac  0.5183  bob dylan 7-14-07 105.flac
+     5:05.23       53856140 B   ---   --   ---xx   flac  0.4350  bob dylan 7-14-07 106.flac
+     7:01.32       74339708 B   ---   --   ---xx   flac  0.5026  bob dylan 7-14-07 107.flac
+     6:59.10       73935164 B   ---   --   ---xx   flac  0.4611  bob dylan 7-14-07 108.flac
+     7:41.16       81358076 B   ---   --   ---xx   flac  0.5347  bob dylan 7-14-07 109.flac
+     7:14.51       76677596 B   ---   --   ---xx   flac  0.4155  bob dylan 7-14-07 201.flac
+     6:48.13       72001820 B   ---   --   ---xx   flac  0.5033  bob dylan 7-14-07 202.flac
+     6:12.66       65776076 B   ---   --   ---xx   flac  0.3808  bob dylan 7-14-07 203.flac
+     8:08.68       86243180 B   ---   --   ---xx   flac  0.5013  bob dylan 7-14-07 204.flac
+     7:59.62       84641468 B   ---   --   ---xx   flac  0.4008  bob dylan 7-14-07 205.flac
+     6:15.51       66269996 B   ---   --   ---xx   flac  0.5525  bob dylan 7-14-07 206.flac
+     3:12.50       33986444 B   ---   --   ---xx   flac  0.4610  bob dylan 7-14-07 207.flac
+     5:55.35       62704364 B   ---   --   ---xx   flac  0.5487  bob dylan 7-14-07 208.flac
+     6:04.23       64263740 B   ---   --   ---xx   flac  0.5121  bob dylan 7-14-07 209.flac
+   107:40.73     1139716488 B                            0.4824  (18 files)
+=================== 
+=================== 
+=================== 

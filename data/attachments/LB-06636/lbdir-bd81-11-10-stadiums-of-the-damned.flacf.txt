@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-11-10-stadiums-of-the-damned.flacf 
+=================== 
+=================== 
+=================== 
+e1808a35fa7ee72f0560d3fb8929fbd6  bd81-11-10-stadiums-of-d1t01.flac
+56d6232fa47c0eb86d1485016810829a  bd81-11-10-stadiums-of-d1t02.flac
+97f727d3a41693b9bb66beb784278d3e  bd81-11-10-stadiums-of-d1t03.flac
+1f8ebe9765eefedbd3f309028baeb11a  bd81-11-10-stadiums-of-d1t04.flac
+f7536dfa3ca5311ad84fd1e8b7d6d4d0  bd81-11-10-stadiums-of-d1t05.flac
+931c4203deba74aafb175d5fee12186d  bd81-11-10-stadiums-of-d1t06.flac
+2c93ff3ce5f4f7cd0bb7ece6d04440bf  bd81-11-10-stadiums-of-d1t07.flac
+3268aba3165d6f2b5af2fa51196d8c3f  bd81-11-10-stadiums-of-d1t08.flac
+12461073a047b2740e09bde0fe60043a  bd81-11-10-stadiums-of-d1t09.flac
+16bf009a6311291a2c04da0fd114e637  bd81-11-10-stadiums-of-d1t10.flac
+184a68de271278c2ba40dc3388a50255  bd81-11-10-stadiums-of-d1t11.flac
+ec49fe9c730b144a4a44b23ed7cafbae  bd81-11-10-stadiums-of-d1t12.flac
+be05ed648ab6e934497267f9a397512d  bd81-11-10-stadiums-of-d1t13.flac
+4e6bacf529c9d73a3d94843b9878394e  bd81-11-10-stadiums-of-d1t14.flac
+e374ccc490f9bfac126ce36e172bd617  bd81-11-10-stadiums-of-d2t01.flac
+c0329ea5b9736aeeb7f034519ecd955d  bd81-11-10-stadiums-of-d2t02.flac
+f15ce887f23594a97e432b428b7008dc  bd81-11-10-stadiums-of-d2t03.flac
+713cfe9fa64e72bbe5c1b60a0bd27914  bd81-11-10-stadiums-of-d2t04.flac
+9480e8ad6f0251f7f98ac29e52e0c3f0  bd81-11-10-stadiums-of-d2t05.flac
+060a817811486d17c2ac1a20df125a3f  bd81-11-10-stadiums-of-d2t06.flac
+7ac332d7036867144f64c57e0a895213  bd81-11-10-stadiums-of-d2t07.flac
+6220542a981ad228d7f6e87d8025b76a  bd81-11-10-stadiums-of-d2t08.flac
+82b6a84855618e917e63353a8492b602  bd81-11-10-stadiums-of-d2t09.flac
+aaeb829987384b44cfcbd758145fd63e  bd81-11-10-stadiums-of-d2t10.flac
+da44352dd96235d3dce021704fa96852  bd81-11-10-stadiums-of-d2t11.flac
+2962255c2e3a762432a7e407fea59c73  bd81-11-10-stadiums-of-d2t12.flac
+4eb4ae0e59a567cb61531c5721d81aea  bd81-11-10-stadiums-of-the-damned.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-11-10-stadiums-of-the-damned.flacf 
+=================== 
+=================== 
+=================== 
+bd81-11-10-stadiums-of-d1t01.flac:6bd330d27002de291ab77fc9ca241e3a
+bd81-11-10-stadiums-of-d1t02.flac:424dd6aeb133bb3ec89a37e8504b21b3
+bd81-11-10-stadiums-of-d1t03.flac:b6cc6d38a5901560c82b7b30584f5029
+bd81-11-10-stadiums-of-d1t04.flac:973037294233271da972742077bcd23d
+bd81-11-10-stadiums-of-d1t05.flac:934af8e5b9ab5ae2fa9692840aa7c913
+bd81-11-10-stadiums-of-d1t06.flac:26a3b5568eb26d82346e3288957ee7de
+bd81-11-10-stadiums-of-d1t07.flac:93e3d14e4acec196601a91b71ec0fc7d
+bd81-11-10-stadiums-of-d1t08.flac:f879219e1be1940901de8024789f7b89
+bd81-11-10-stadiums-of-d1t09.flac:5fc3c42ca9ba039c9184c1cabb8e205a
+bd81-11-10-stadiums-of-d1t10.flac:6e7baea3a6d4e5774d0d759d97f1d5b7
+bd81-11-10-stadiums-of-d1t11.flac:da86b341c3bf178dab74cf4a4ec27146
+bd81-11-10-stadiums-of-d1t12.flac:3b6c1d7d8936da7ec817f80a59e8e2d0
+bd81-11-10-stadiums-of-d1t13.flac:19d68f5d1f5ac6e640a4f66b46d4a533
+bd81-11-10-stadiums-of-d1t14.flac:052a8f884ec62cd1410cd83962ce6c0d
+bd81-11-10-stadiums-of-d2t01.flac:bfaa01172e0a21f9082d6a51c4cada7a
+bd81-11-10-stadiums-of-d2t02.flac:62846d0d28bf919d754e5e4d51de6461
+bd81-11-10-stadiums-of-d2t03.flac:c134483e29157ac9eb10d58612290814
+bd81-11-10-stadiums-of-d2t04.flac:214a4d40db4ab4139804c12aceb578f3
+bd81-11-10-stadiums-of-d2t05.flac:087e946f3c0fb4afd8cddda48dfa8f95
+bd81-11-10-stadiums-of-d2t06.flac:f6b337a438ce7dedf7ef864fd906f1be
+bd81-11-10-stadiums-of-d2t07.flac:bc82a9fbc6c71fa17b857ea09ffe3f5a
+bd81-11-10-stadiums-of-d2t08.flac:8ff983bd3d54c9f0e6f52c82a63c0aa1
+bd81-11-10-stadiums-of-d2t09.flac:80427255066b9261525dee65181b0a4f
+bd81-11-10-stadiums-of-d2t10.flac:797964d9b194570fa8c372d2ef058250
+bd81-11-10-stadiums-of-d2t11.flac:246f98fa71a041dbb3990611210513ed
+bd81-11-10-stadiums-of-d2t12.flac:c75dc9c390d748559bb686c0bf9477af
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-11-10-stadiums-of-the-damned.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.27       36931148 B   ---   --   ---xx   flac  0.6006  bd81-11-10-stadiums-of-d1t01.flac
+     4:28.60       47416364 B   ---   --   ---xx   flac  0.5824  bd81-11-10-stadiums-of-d1t02.flac
+     5:59.00       63327644 B   ---   --   ---xx   flac  0.6019  bd81-11-10-stadiums-of-d1t03.flac
+     3:18.25       34986044 B   ---   --   ---xx   flac  0.6164  bd81-11-10-stadiums-of-d1t04.flac
+     4:38.50       49156844 B   ---   --   ---xx   flac  0.5974  bd81-11-10-stadiums-of-d1t05.flac
+     3:20.33       35357660 B   ---   --   ---xx   flac  0.6132  bd81-11-10-stadiums-of-d1t06.flac
+     3:53.72       41270588 B   ---   --   ---xx   flac  0.6133  bd81-11-10-stadiums-of-d1t07.flac
+     3:28.08       36710060 B   ---   --   ---xx   flac  0.5972  bd81-11-10-stadiums-of-d1t08.flac
+     3:32.50       37514444 B   ---   --   ---xx   flac  0.6048  bd81-11-10-stadiums-of-d1t09.flac
+     4:25.40       46840124 B   ---   --   ---xx   flac  0.5655  bd81-11-10-stadiums-of-d1t10.flac
+     3:11.10       33715964 B   ---   --   ---xx   flac  0.5648  bd81-11-10-stadiums-of-d1t11.flac
+     2:24.25       25460444 B   ---   --   ---xx   flac  0.5701  bd81-11-10-stadiums-of-d1t12.flac
+     4:15.62       45127868 B   ---   --   ---xx   flac  0.5712  bd81-11-10-stadiums-of-d1t13.flac
+     3:09.63       33487820 B   ---   --   ---xx   flac  0.5442  bd81-11-10-stadiums-of-d1t14.flac
+     3:03.65       32434124 B   ---   --   ---xx   flac  0.5311  bd81-11-10-stadiums-of-d2t01.flac
+     4:04.10       43065164 B   ---   --   ---xx   flac  0.5599  bd81-11-10-stadiums-of-d2t02.flac
+     4:28.27       47338748 B   ---   --   ---xx   flac  0.5541  bd81-11-10-stadiums-of-d2t03.flac
+     2:59.63       31723820 B   ---   --   ---xx   flac  0.5656  bd81-11-10-stadiums-of-d2t04.flac
+     3:41.47       39094988 B   ---   --   ---xx   flac  0.5545  bd81-11-10-stadiums-of-d2t05.flac
+     3:59.45       42265484 B   ---   --   ---xx   flac  0.5673  bd81-11-10-stadiums-of-d2t06.flac
+     4:06.43       43495580 B   ---   --   ---xx   flac  0.5596  bd81-11-10-stadiums-of-d2t07.flac
+     6:19.57       66989708 B   ---   --   ---xx   flac  0.5482  bd81-11-10-stadiums-of-d2t08.flac
+     4:48.70       50967884 B   ---   --   ---xx   flac  0.5594  bd81-11-10-stadiums-of-d2t09.flac
+     5:35.55       59223404 B   ---   --   ---xx   flac  0.5913  bd81-11-10-stadiums-of-d2t10.flac
+     4:46.28       50516300 B   ---   --   ---xx   flac  0.5768  bd81-11-10-stadiums-of-d2t11.flac
+     4:22.15       46252124 B   ---   --   ---xx   flac  0.5673  bd81-11-10-stadiums-of-d2t12.flac
+   105:53.00     1120670344 B                            0.5761  (26 files)
+=================== 
+=================== 
+=================== 

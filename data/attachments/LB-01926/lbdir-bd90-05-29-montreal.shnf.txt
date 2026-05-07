@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-05-29-montreal.shnf 
+=================== 
+=================== 
+=================== 
+7d4fae8a67dac0eb38333a71681c4165  bd1990-05-29 montreal (off master).md5
+db924f9500ded99b8363c00f4d4d4732  bd1990-05-29 montreal (off master).txt
+feea7d5049fb5a9476d12ffc3b085e90  bd1990-05-29 montreal d1t01.shn
+99858d74ea64ed1d0e1eb9e6c69a3d7a  bd1990-05-29 montreal d1t02.shn
+d963a74b29ed0609f2f078e0d9553593  bd1990-05-29 montreal d1t03.shn
+0c69a5d12044dd781ddbcd6762d56eb7  bd1990-05-29 montreal d1t04.shn
+7a3f390a706b2c6b0c97f691d2c951f8  bd1990-05-29 montreal d1t05.shn
+18fdcb61a8c410d49475359c0f693a9b  bd1990-05-29 montreal d1t06.shn
+724e38b6535173e3ed6495b8f0b2087b  bd1990-05-29 montreal d1t07.shn
+217f6aaf3988ce00c4340d4ecd02713a  bd1990-05-29 montreal d1t08.shn
+48b8b7a120892ea967423ebf0fcf5caa  bd1990-05-29 montreal d1t09.shn
+8ce7eaf5c3a3c23dc64a187792d172b8  bd1990-05-29 montreal d1t10.shn
+125a50093fc77b5f20e67488ca6a9dc7  bd1990-05-29 montreal d1t11.shn
+c5ae6c480a49ac94a8cb9bafe2f40b7e  bd1990-05-29 montreal d1t12.shn
+78ce0b72d8ed648dcce97f2957f365dc  bd1990-05-29 montreal d1t13.shn
+4cde4c54a679c31fed3299996fcd16c0  bd1990-05-29 montreal d1t14.shn
+c4d9af8b5c43c65669cde89b580d3fd3  bd1990-05-29 montreal d1t15.shn
+9ce0bee4ab36df44bcf990f887d5189d  bd1990-05-29 montreal d1t16.shn
+9c2639811fd40cdcd4549fc2c884ebda  bd1990-05-29 montreal d2t01.shn
+3f9b19eb5a5a317d63b6990d884613ad  bd1990-05-29 montreal d2t02.shn
+61903b183221358496d7457fb68f9f09  bd1990-05-29 montreal d2t03.shn
+aaefe8037b2f5b14095f2d2f7dc328a8  bd90-05-29.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd90-05-29-montreal.shnf 
+=================== 
+=================== 
+=================== 
+6cf15f0226e6e2abcf8d439d0c55499e  [shntool]  bd1990-05-29_montreal_d1t01.wav
+0652f42d83015d42c3317a23e16309f3  [shntool]  bd1990-05-29_montreal_d1t02.wav
+db66be2b67ec23e69a42aabc6a977699  [shntool]  bd1990-05-29_montreal_d1t03.wav
+2d8494d08b584ae2aed7556d93e02df2  [shntool]  bd1990-05-29_montreal_d1t04.wav
+3029212f16f4e3ad781d4fc60fe7f012  [shntool]  bd1990-05-29_montreal_d1t05.wav
+3fb611d226bde3692a2968de0e3745e7  [shntool]  bd1990-05-29_montreal_d1t06.wav
+1d6d486ff814e667e4f9955015854579  [shntool]  bd1990-05-29_montreal_d1t07.wav
+5f8aaf2490f98a3cb47f512e28a4d639  [shntool]  bd1990-05-29_montreal_d1t08.wav
+2393f2cc5ebe01923688e37547b87796  [shntool]  bd1990-05-29_montreal_d1t09.wav
+7cf830717fe0c9aa707a50ec78cfd46e  [shntool]  bd1990-05-29_montreal_d1t10.wav
+4c403c543af34124312b543549f25962  [shntool]  bd1990-05-29_montreal_d1t11.wav
+74bb2dcb0c16efc98ec5108bffebdea4  [shntool]  bd1990-05-29_montreal_d1t12.wav
+15f99ee7fbcc0832bec27cf3488b13fc  [shntool]  bd1990-05-29_montreal_d1t13.wav
+e473a6d108da39277bbc8d4543c16a90  [shntool]  bd1990-05-29_montreal_d1t14.wav
+0d7c20483012b5049e19c98c863b5aab  [shntool]  bd1990-05-29_montreal_d1t15.wav
+56d4ef5fd3c26eec6f89943a81d5b26c  [shntool]  bd1990-05-29_montreal_d1t16.wav
+68ee10d9bf85eb39ba380e96a4bfc65e  [shntool]  bd1990-05-29_montreal_d2t01.wav
+ad66a02e292fcdfa91fc2af59729781c  [shntool]  bd1990-05-29_montreal_d2t02.wav
+58caeb4df9d0806da0fa7a21c1bc55d5  [shntool]  bd1990-05-29_montreal_d2t03.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-05-29-montreal.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.62       45657068 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t01.wav
+     4:51.55       51461804 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t02.wav
+     4:37.12       48891068 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t03.wav
+     5:22.57       56934908 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t04.wav
+     3:58.54       42110252 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t05.wav
+     5:40.30       60046604 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t06.wav
+     7:21.53       77917100 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t07.wav
+     5:50.03       61747100 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t08.wav
+     4:19.57       45821708 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t09.wav
+     4:44.25       50156444 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t10.wav
+     3:39.38       38721020 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t11.wav
+     3:49.34       40475612 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t12.wav
+     4:57.27       52454348 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t13.wav
+     4:21.17       46080428 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t14.wav
+     5:30.44       58315532 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t15.wav
+     4:14.64       44956172 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d1t16.wav
+     6:53.13       72883820 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d2t01.wav
+     6:06.02       64567148 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d2t02.wav
+     7:08.22       75550988 B   ---   --   -----    wav  1.0000  bd1990-05-29_montreal_d2t03.wav
+    97:45.69     1034749124 B                            1.0000  (19 files)
+=================== 
+=================== 
+=================== 

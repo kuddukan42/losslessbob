@@ -1,0 +1,53 @@
+Berkeley, California
+Haas Pavilion
+October 17, 2004
+
+DAT > audio CDs > iTunes 4.7 > WAVE > xACT 1.3 > SHN 
+
+
+Disc One [65:14]
+
+1	Intro	01:01
+2	God Knows	04:16
+3	If You See Her, Say Hello	05:43
+4	Lonesome Day Blues	06:47
+5	Forever Young	05:58
+6	Tweedle Dee & Tweedle Dum	05:38
+7	Tryin' To Get To Heaven	04:57
+8	Highway 61 Revisited	06:12
+9	Desolation Row 	08:36
+10	Boots Of Spanish Leather	06:04
+11	You Ain't Goin' Nowhere	04:21
+12	Blind Willie McTell	05:33
+
+
+
+Disc Two [37:17]
+
+1	Honest With Me	06:59
+2	It Ain't Me, Babe 	05:46
+3	Summer Days	10:58
+4	Like A Rolling Stone	06:31
+5	Band intro	00:35
+6	All Along The Watchtower	06:25
+
+
+eac6c34f6ce5d72f48377217299c2ade *bd2004-10-17_d1t01.shn
+240ddf6d35a187edecc45cc3daf5b9c9 *bd2004-10-17_d1t02.shn
+318687c3590bacf191467ee584a5b130 *bd2004-10-17_d1t03.shn
+b2028bb364e0919285f981422f66eff9 *bd2004-10-17_d1t04.shn
+3ed82796f2036ac5f84320450992bf6a *bd2004-10-17_d1t05.shn
+2b6478dbfe89b8a38439bbee1b98a47d *bd2004-10-17_d1t06.shn
+d5b10ed6e5a2d08e81979238cb693343 *bd2004-10-17_d1t07.shn
+b344d432063edf80e2cf9ec0f66ca4f9 *bd2004-10-17_d1t08.shn
+c2a037d6e71484967c02b9bb110536fb *bd2004-10-17_d1t09.shn
+cb896d333ca1bdcedbc4e15d6d48208f *bd2004-10-17_d1t10.shn
+aecbdd9511d399284cad0291bfe07050 *bd2004-10-17_d1t11.shn
+08f239f2a9e5c2093eadb10af6aa3f93 *bd2004-10-17_d1t12.shn
+4d8b27ffa561ad9e141502b31cdca3d2 *bd2004-10-17_d2t01.shn
+f53053954f9e2f3f73f4d4e710d51994 *bd2004-10-17_d2t02.shn
+f784fc3b40a18cb9d2342ade86003c06 *bd2004-10-17_d2t03.shn
+34094340b848d5d24cd0d85c0ee584d9 *bd2004-10-17_d2t04.shn
+20b5a80130b13192a15f7a77e8a697fe *bd2004-10-17_d2t05.shn
+0743ddd10d2d216728baa91af8998df4 *bd2004-10-17_d2t06.shn
+

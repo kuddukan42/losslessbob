@@ -1,0 +1,65 @@
+===================
+===================
+===================
+=== bd04-03-13 milwaukee.md5
+===================
+===================
+===================
+ea9ba4e124165c458b420242cb0520dc *d1t01.shn
+735c48fbfc39bfd4aa1a7ac9663f91f1 *d1t02.shn
+d07a3892dc4804867b47db1294aec539 *d1t03.shn
+d4da1bc032fe84247a7920db911e70d3 *d1t04.shn
+8d0e99f735d578353d7041ec7ae384f0 *d1t05.shn
+b01b4731d81f32ffa671ba81e64f3b73 *d1t06.shn
+39093d864f7bb2fe2c4e0653fd494bac *d1t07.shn
+878596f31bdfc0bc7540093d0c2b7a02 *d1t08.shn
+118c3a54bf5da1d7fa96d8b20f65838e *d1t09.shn
+cdfbdf9faae43032a8a4756eb2ab99c3 *d1t10.shn
+6ec3a597a0f93cfdbb88ec97c5ffbadf *d1t11.shn
+f91e4dcb8063113a30d0aabddfbba3df *d2t01.shn
+8c27ee6fbb9991d26808057665f23192 *d2t02.shn
+b7b126cecac2e6a2337cae8ec3538dba *d2t03.shn
+b9fbbfd88704c377d8854c693c5f4105 *d2t04.shn
+75b3e4e40cae681b622ed4f96cf3a707 *d2t05.shn
+10e13817207773c5134585f0c6ca5801 *d2t06.shn
+611c791b2380f4d7e46e78e183bbcb2d *d2t07.shn
+===================
+===================
+===================
+=== bd04-03-13 milwaukee.txt
+===================
+===================
+===================
+Bob Dylan
+Milwaukee, Wisconsin  
+The Rave
+Eagles Ballroom
+March 13, 2004
+
+* A JD Recording
+
+DISC 1
+1. Intro
+2. The Wicked Messenger 
+3. Tell Me That It Isn't True 
+4. Tweedle Dee & Tweedle Dum 
+5. Just Like A Woman 
+6. Highway 61 Revisited 
+7. Can't Wait 
+8. Down Along The Cove 
+9. It Ain't Me, Babe 
+10. Stuck Inside Of Mobile With The Memphis Blues Again 
+11. Man In The Long Black Coat
+
+DISC 2
+1. Moonlight 
+2. Honest With Me 
+3. Every Grain Of Sand 
+4. Summer Days 
+5. Cat's In The Well 
+6. Like A Rolling Stone 
+7. All Along The Watchtower
+
+===================
+===================
+===================

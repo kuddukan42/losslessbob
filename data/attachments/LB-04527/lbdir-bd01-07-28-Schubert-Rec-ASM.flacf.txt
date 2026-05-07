@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-07-28-Schubert-Rec-ASM.flacf 
+=================== 
+=================== 
+=================== 
+1317dfbed5ceeee97fc1e113e10ecb1a  101 ANNOUNCEMENT.flac
+2c6eeae4585628da00b09f0b21da9d0d  102 Somebody Touched Me.flac
+4621dbcda7596233cd60cfb39183bb07  103 The Times They Are A-Changin'.flac
+ac2192bad68feb3153713159176793d3  104 Desolation Row.flac
+c2a04afad16f8d052de65f9e8dc32b86  105 Absolutely Sweet Marie.flac
+efa343312dbba5742434f706fc6e2176  106 Simple Twist Of Fate.flac
+d905157bc8cd8c6917ded8dd593b1b22  107 I'll Be Your Baby Tonight.flac
+d042fe3833f3d86052dad5c5609a4c67  108 The Lonesome Death Of Hattie Carroll.flac
+c60999ca8ee7e96e0effe8e83e6f9bbe  109 Boots Of Spanish Leather.flac
+70d6e34ea8de0543c5ddac3cabfac2b3  110 Don't Think Twice, It's All Right.flac
+fd62bc5d801b7eb66f53dd56ef4a3fd3  111 Everything Is Broken .flac
+6846ffcb0e6a6a18db29270f83e7875b  112 Just Like A Woman .flac
+6185b7e2eef05e96938eb33b21834a64  2001-07-28 Taormina.md5
+b20894ec501d183de435c82ddc228bca  201 Drifter's Escape .flac
+37c1dccdfcd6cdcd021ae3c7e0e63714  202 Rainy Day Women #12 & 35 .flac
+b5cf067f8df404f8312931777c31f70a  203 Love Sick .flac
+ebbdb7d38271b4694944acc7c0776017  204 Like A Rolling Stone .flac
+1fcd5e41b5c9a8805a6d21fe44d0a9e1  205 One Too Many Mornings.flac
+53b9893fae350840ae3630eb6e146419  206 All Along The Watchtower .flac
+2c3bd566ce176ed264523c28e921c08d  207 Knockin' On Heaven's Door.flac
+ce76d7c45bb36d6aaa2f49f3a44d6f1e  208 Highway 61 Revisited.flac
+8aa40ea4b16472b1c22feb64583aeb2d  209 Blowin' In The Wind.flac
+97b6790efe99976d0611ca97c7505568  bd01-07-28-Schubert-Rec-ASM-LB-4527.txt
+946bad3350fe4f362eeef50f5fabe8df  bd20010728.txt
+df2edf526efdf446caa7116793280764  booklet.jpeg
+0e862c6165b656f7bc1337a2b6ea4258  inlay.jpeg
+c4464f57dae954cd80ad3ff82c22d001  taormina2001_2.jpg
+c3915d8f132aab06ec083d8f40b322b7  taormina2001_3.jpg
+ac1738044b74d0674ecce8618f79fd4d  taormina2001_schu_b_f.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-28-Schubert-Rec-ASM.flacf 
+=================== 
+=================== 
+=================== 
+101 ANNOUNCEMENT.flac:823ddde3a68e05532618d033983bdf9d
+102 Somebody Touched Me.flac:43139d8667d5da652d4b23bc55eceec3
+103 The Times They Are A-Changin'.flac:05cc7c6fbadb3fec314ce2852b146504
+104 Desolation Row.flac:805d9bac169be71ecd2ff81f6cf3e3d5
+105 Absolutely Sweet Marie.flac:0984079219954b0a82826ff6b78710a0
+106 Simple Twist Of Fate.flac:b6dc151e1a1582de3d093eb24440eff8
+107 I'll Be Your Baby Tonight.flac:1ecbae1a6fddb786b9a5e6d3e3334d47
+108 The Lonesome Death Of Hattie Carroll.flac:7293c9803fd288d09ab295fe670435bf
+109 Boots Of Spanish Leather.flac:5a7e45062d0216a3251726e73dc5b104
+110 Don't Think Twice, It's All Right.flac:d6ccf7b3ccfd0599e7484ea2ada4d12c
+111 Everything Is Broken .flac:c3a27f1cd8c9d1a2127764f1540f8510
+112 Just Like A Woman .flac:b438343a90d1cd3fc29809d808df6b3f
+201 Drifter's Escape .flac:779266677443566bb7013b8f1464ae90
+202 Rainy Day Women #12 & 35 .flac:1ec524e3640539e540295cc13e50c755
+203 Love Sick .flac:2014c1a87375ae22b7e8ac92ff559a1d
+204 Like A Rolling Stone .flac:4c124e418419bf6f3b5e62a5157ddc0e
+205 One Too Many Mornings.flac:32b2615e556df44b1b543f30284a0c75
+206 All Along The Watchtower .flac:d34584ed1a99cc265ac325770c3f6855
+207 Knockin' On Heaven's Door.flac:e6d92a110bb82d2ad9275ae0f171c750
+208 Highway 61 Revisited.flac:108636088f9adf293e4d094cf890bf2c
+209 Blowin' In The Wind.flac:ca2261dcb0c819d0334f47fe8ad16d59
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-28-Schubert-Rec-ASM.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:23.41       14737676 B   ---   --   ---xx   flac  0.5110  101 ANNOUNCEMENT.flac
+     2:56.17       31086428 B   ---   --   ---xx   flac  0.6235  102 Somebody Touched Me.flac
+     7:11.26       76089596 B   ---   --   ---xx   flac  0.6008  103 The Times They Are A-Changin'.flac
+     8:29.11       89813516 B   ---   --   ---xx   flac  0.5811  104 Desolation Row.flac
+     7:02.46       74549036 B   ---   --   ---xx   flac  0.5950  105 Absolutely Sweet Marie.flac
+     8:10.35       86518364 B   ---   --   ---xx   flac  0.5436  106 Simple Twist Of Fate.flac
+     5:41.02       60157148 B   ---   --   ---xx   flac  0.5787  107 I'll Be Your Baby Tonight.flac
+     6:34.23       69555740 B   ---   --   ---xx   flac  0.5309  108 The Lonesome Death Of Hattie Carroll.flac
+     6:06.11       64588316 B   ---   --   ---xx   flac  0.4556  109 Boots Of Spanish Leather.flac
+     6:28.44       68546732 B   ---   --   ---xx   flac  0.5224  110 Don't Think Twice, It's All Right.flac
+     4:58.10       52590764 B   ---   --   ---xx   flac  0.6175  111 Everything Is Broken .flac
+     6:07.53       64863500 B   ---   --   ---xx   flac  0.5796  112 Just Like A Woman .flac
+     5:33.60       58882364 B   ---   --   ---xx   flac  0.6422  201 Drifter's Escape .flac
+    10:36.57      112324508 B   ---   --   ---xx   flac  0.5982  202 Rainy Day Women #12 & 35 .flac
+     5:47.38       61300220 B   ---   --   ---xx   flac  0.5607  203 Love Sick .flac
+     7:33.27       79972748 B   ---   --   ---xx   flac  0.6246  204 Like A Rolling Stone .flac
+     7:47.40       82472924 B   ---   --   ---xx   flac  0.5053  205 One Too Many Mornings.flac
+     4:41.02       49573148 B   ---   --   ---xx   flac  0.6306  206 All Along The Watchtower .flac
+     6:01.23       63734540 B   ---   --   ---xx   flac  0.5786  207 Knockin' On Heaven's Door.flac
+     6:29.26       68680796 B   ---   --   ---xx   flac  0.6330  208 Highway 61 Revisited.flac
+     7:05.39       75061772 B   ---   --   ---xx   flac  0.5488  209 Blowin' In The Wind.flac
+   132:45.31     1405099836 B                            0.5744  (21 files)
+=================== 
+=================== 
+=================== 

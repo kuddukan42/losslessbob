@@ -1,0 +1,72 @@
+===================
+===================
+===================
+=== md5 for: bd96-07-13-e.flacf
+===================
+===================
+===================
+b9b16ee91ff52315fb21c264ee772dd4 *D1\1 Audiotrack.flac
+1544daecd360f00c9f1a766df2591428 *D1\2 Audiotrack.flac
+79d1dc1b6f3787b5bb58574d796a99cb *D1\3 Audiotrack.flac
+a9519a86b9d8a816e4daeb51d71cae3e *D1\4 Audiotrack.flac
+63e5349f47b347c6e6b2cd4b58f06316 *D1\5 Audiotrack.flac
+38aa23200424a97ee7f84f399b4bd270 *D1\6 Audiotrack.flac
+79afc3faa416687627f0bd2759beb054 *D1\fingerprintD1.ffp
+93837dcc3959027e88286315f96a0fa9 *D2\1 Audiotrack.flac
+11bc05c60a8f7238cd1bbd9c0b6265ce *D2\2 Audiotrack.flac
+44cd94732eb82a6299af767dc05bef63 *D2\3 Audiotrack.flac
+ad892ab0f43ad0b0c5930180a6d859bb *D2\4 Audiotrack.flac
+ba0d637936c98ac3ce1aae5cc4f634dc *D2\5 Audiotrack.flac
+46b6fd8caaa0a08d4829fb7d60357e52 *D2\fingerprintD2.ffp
+5583b4f5b46e4fe5f2acd649841812fb *hamburg 130796.jpg
+f02bc1fcff27802adc0d918a4290de96 *info.txt
+===================
+===================
+===================
+=== ffp for: bd96-07-13-e.flacf
+===================
+===================
+===================
+D1\1 Audiotrack.flac:9f5f50685d4f2675f6be34a3a68eb30c
+D1\2 Audiotrack.flac:77d10e711c8c7c8049665abb0a3ca78b
+D1\3 Audiotrack.flac:1415eaabba8ab68599aa5fe94b386ca5
+D1\4 Audiotrack.flac:874698f77321206aa7ec4083616269ff
+D1\5 Audiotrack.flac:650b24d1585900bf117a4b656c0f3378
+D1\6 Audiotrack.flac:cbc2af23bc1655cac29cec9b3c2b46c4
+D2\1 Audiotrack.flac:3d774ee89d28c5f42d71cd954616704b
+D2\2 Audiotrack.flac:b0151973ba00ed08afb7dbe673f049b8
+D2\3 Audiotrack.flac:644d377dbca145c7c6f23e6442a0317b
+D2\4 Audiotrack.flac:0bea24bb20554d026fa126aaa72ae209
+D2\5 Audiotrack.flac:ede2f7829740f8ebbb6f7afa1e48202c
+===================
+===================
+===================
+=== shntool len for: bd96-07-13-e.flacf\D1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:12.72       55206188 B   ---   --   ---xx   flac  0.6293  1 Audiotrack.flac
+     6:08.35       64997564 B   ---   --   ---xx   flac  0.5763  2 Audiotrack.flac
+     6:03.45       64139084 B   ---   --   ---xx   flac  0.6141  3 Audiotrack.flac
+     6:36.19       69899132 B   ---   --   ---xx   flac  0.5882  4 Audiotrack.flac
+     7:51.59       83223212 B   ---   --   ---xx   flac  0.6155  5 Audiotrack.flac
+     6:44.08       71284460 B   ---   --   ---xx   flac  0.6113  6 Audiotrack.flac
+    38:37.13      408749640 B                            0.6055  (6 files)
+===================
+===================
+===================
+=== shntool len for: bd96-07-13-e.flacf\D2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    11:37.01      122953196 B   ---   --   ---xx   flac  0.6518  1 Audiotrack.flac
+     8:15.29       87386252 B   ---   --   ---xx   flac  0.5898  2 Audiotrack.flac
+     6:56.34       73462412 B   ---   --   ---xx   flac  0.6075  3 Audiotrack.flac
+    13:45.33      145607660 B   ---   --   ---xx   flac  0.6278  4 Audiotrack.flac
+     6:43.39       71180972 B   ---   --   ---xx   flac  0.6075  5 Audiotrack.flac
+    47:17.61      500590492 B                            0.6212  (5 files)
+===================
+===================
+===================

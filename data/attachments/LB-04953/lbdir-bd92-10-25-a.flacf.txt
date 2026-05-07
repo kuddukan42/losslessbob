@@ -1,0 +1,102 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-10-25-a.flacf 
+=================== 
+=================== 
+=================== 
+b6b181b3665617fc9a3b74a632f9542c  Bob Dylan 25 oct 1992 Providence.txt
+b4dc24726e811363bf54ca3669383a3a  D1\BD1992-10-25D1T01.flac
+5f5a0b2e127a8f5472481f6f2a3e23f5  D1\BD1992-10-25D1T02.flac
+38d51cf91cf357c85a49b3a28c670730  D1\BD1992-10-25D1T03.flac
+6505d6941a8011c3277fbec553c9c514  D1\BD1992-10-25D1T04.flac
+31bd28f08fd065092af33e8ed22d216e  D1\BD1992-10-25D1T05.flac
+3408048b6cb7fb7965bfd813cdbc9e85  D1\BD1992-10-25D1T06.flac
+4b6401f2dcfbfdaa7d891205bcd0571b  D1\BD1992-10-25D1T07.flac
+2013c63d2ad8f87730acc22494f240f2  D1\BD1992-10-25D1T08.flac
+5329f69ff65c2cb7f26150158eaa4987  D1\BD1992-10-25D1T09.flac
+369cb4e783601591617933b0cfb5fc41  D1\BD1992-10-25D1T10.flac
+c28ab4b9d71fdd29c3f269ecc0d421f8  D1\BD1992-10-25D1T11.flac
+9be8e719b8ac5144f10916f17ee9b2e8  D2\BD1992-10-25D2T01.flac
+82ccc72907f19bfc596512da285be610  D2\BD1992-10-25D2T02.flac
+ceb814161c5ec7f17c51a68319ae0aa9  D2\BD1992-10-25D2T03.flac
+8c87686d7cb0dab7dc349e723ff7f417  D2\BD1992-10-25D2T04.flac
+01416cc167ac01d8680dd02239b77eea  D2\BD1992-10-25D2T05.flac
+168312467cd375f59784fd45751dab2c  D2\BD1992-10-25D2T06.flac
+a69be332ea6ede314b223f6bd764fd72  D2\BD1992-10-25D2T07.flac
+aa5f946464de6e505ed53d092ed29be3  D2\BD1992-10-25D2T08.flac
+82145d17d8193f386eafdb22ff9a57ab  fingerprintD1.ffp
+dee01976e04d0f5103f42534daa32ff2  fingerprintD2.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-10-25-a.flacf\D1 
+=================== 
+=================== 
+=================== 
+BD1992-10-25D1T01.flac:cd5eb80d4c4a5380346682fcaf744698
+BD1992-10-25D1T02.flac:b8e9e5adbb0ef5623744cd87e374e2ff
+BD1992-10-25D1T03.flac:274d97ae0e0542a19a70944a25834ceb
+BD1992-10-25D1T04.flac:fccd6a5763af172ae744033544c94443
+BD1992-10-25D1T05.flac:6408cbc15abf5b395955a29b9be4d111
+BD1992-10-25D1T06.flac:be8e2f9ae0dc9bf164c0ce92aba5dc83
+BD1992-10-25D1T07.flac:3c85becccc39b239b81b6e96ec9871ce
+BD1992-10-25D1T08.flac:a716fc756baa2c79a693e08fa54d5143
+BD1992-10-25D1T09.flac:292a8c10f61d6aa3b19d7958e5956d6a
+BD1992-10-25D1T10.flac:ec8a6c3f0d47161c607b19378a8ae7f9
+BD1992-10-25D1T11.flac:7d4ce828e79291f981ad4ee56de22d42
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-10-25-a.flacf\D2 
+=================== 
+=================== 
+=================== 
+BD1992-10-25D2T01.flac:9fa322c05b0c22759f90746c9b5278ce
+BD1992-10-25D2T02.flac:3aed659aea0cac2c7f8ecc997291aa2e
+BD1992-10-25D2T03.flac:e468c2d5fbb9bd88ffc1c55ab9a4e453
+BD1992-10-25D2T04.flac:fd208ebefdb43169244f1401fd8599fb
+BD1992-10-25D2T05.flac:a183504670d4f25771430c25d3c4eb2c
+BD1992-10-25D2T06.flac:433fafdcf14e64ca45fd04d80ef4727b
+BD1992-10-25D2T07.flac:3c45140ddef7b50ac351c40fc4d055ad
+BD1992-10-25D2T08.flac:3701fc55511925a2249091756616cc14
+=================== 
+=================== 
+=================== 
+=== shntool for: bd92-10-25-a.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:00.06       52934156 B   ---   --   ---xx   flac  0.5598  BD1992-10-25D1T01.flac
+     6:19.06       66869756 B   ---   --   ---xx   flac  0.5712  BD1992-10-25D1T02.flac
+     6:25.44       68017532 B   ---   --   ---xx   flac  0.5810  BD1992-10-25D1T03.flac
+     9:08.09       96688412 B   ---   --   ---xx   flac  0.5411  BD1992-10-25D1T04.flac
+     7:05.66       75125276 B   ---   --   ---xx   flac  0.5642  BD1992-10-25D1T05.flac
+     5:21.01       56626796 B   ---   --   ---xx   flac  0.5456  BD1992-10-25D1T06.flac
+     6:38.46       70315436 B   ---   --   ---xx   flac  0.5780  BD1992-10-25D1T07.flac
+     3:12.02       33873548 B   ---   --   ---xx   flac  0.4659  BD1992-10-25D1T08.flac
+     5:01.26       53157596 B   ---   --   ---xx   flac  0.4262  BD1992-10-25D1T09.flac
+     6:19.26       66916796 B   ---   --   ---xx   flac  0.4342  BD1992-10-25D1T10.flac
+     6:09.05       65103404 B   ---   --   ---xx   flac  0.5050  BD1992-10-25D1T11.flac
+    66:40.12      705628708 B                            0.5300  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd92-10-25-a.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:09.39       65183372 B   ---   --   ---xx   flac  0.5219  BD1992-10-25D2T01.flac
+     8:09.11       86285516 B   ---   --   ---xx   flac  0.4998  BD1992-10-25D2T02.flac
+     7:32.03       79739900 B   ---   --   ---xx   flac  0.4792  BD1992-10-25D2T03.flac
+     7:21.71       77959436 B   ---   --   ---xx   flac  0.5427  BD1992-10-25D2T04.flac
+     1:34.06       16595756 B   ---   --   ---xx   flac  0.4917  BD1992-10-25D2T05.flac
+     7:16.19       76955132 B   ---   --   ---xx   flac  0.5529  BD1992-10-25D2T06.flac
+     5:20.10       56471564 B   ---   --   ---xx   flac  0.6048  BD1992-10-25D2T07.flac
+     6:10.39       65359772 B   ---   --   ---xx   flac  0.4462  BD1992-10-25D2T08.flac
+    49:33.48      524550448 B                            0.5179  (8 files)
+=================== 
+=================== 
+=================== 

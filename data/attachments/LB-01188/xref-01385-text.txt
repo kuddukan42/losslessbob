@@ -1,0 +1,97 @@
+===================
+===================
+===================
+=== infos.txt
+===================
+===================
+===================
+Idaho Center Arena
+Nampa, Idaho
+
+22 July 2003
+
+1.Tombstone Blues
+2.I'll Be Your Baby Tonight
+3.Tweedle Dee & Tweedle Dum
+4.It Ain't Me, Babe
+5.Things Have Changed
+6.Highway 61 Revisited
+7.Positively 4th Street
+8.The Wicked Messenger
+9.Don't Think Twice, It's All Right
+10.Honest With Me
+11.Moonlight
+12.Summer Days
+
+13.Like A Rolling Stone
+14.All Along The Watchtower
+
+Concert # 1532 of The Never-Ending Tour. Concert # 8 of the 2003 US Summer Tour. 2003 concert # 42.
+
+Concert # 31 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+
+4, 9 acoustic with the band.
+
+2, 8, 9 Bob Dylan (harmonica).
+
+2  Larry Campbell (pedal steel guitar).
+
+4, 9 Larry Campbell (cittern).
+
+5-7, 10, 12 Tommy Morrongiello (guitar).
+
+10 Larry Campbell (slide guitar).
+
+www.bjoner.com
+
+CDr trade < XLD < flac < dime
+apa05 
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - 1 Tombstone Blues.flac:cdc464ccad70943200411afd1fb1f0d802 Bob Dylan - 2 I'll Be Your Baby Tonight.flac:4b21e632c743b23737936d8685bc93e803 Bob Dylan - 3 Tweedle Dee & Tweedle Dum.flac:14907072050967d67aac21e54bba97ff04 Bob Dylan - 4 It Ain't Me, Babe.flac:f9ec7f71c9515f383948a6354df7f4e905 Bob Dylan - 5 Things Have Changed.flac:fa746ab5e5dd0ddef0676ecb85da627406 Bob Dylan - 6 Highway 61 Revisited.flac:16a6e47a1c0375cd6835078ed65766aa07 Bob Dylan - 7 Positively 4th Street.flac:9144d3d27f019f4f859d21e6ca9e9d2d08 Bob Dylan - 8 The Wicked Messenger.flac:69be5662f64ce69869096f31856f50c909 Bob Dylan - 9 Don't Think Twice, It's All Right.flac:dbcc31a25603cfad3bf07ecd9774170610 Bob Dylan - 10 Honest With Me.flac:d17d3d604cc0ba1b6bcd597f0e9bb8fc
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+5ae849e6192442eac8e6e6d637ad7028 *01 Bob Dylan - 1 Tombstone Blues.flac
+7e587a6cced0b3993ea46482c119aaf5 *02 Bob Dylan - 2 I'll Be Your Baby Tonight.flac
+69ab9b14248637b70a8391c5c3fc06cb *03 Bob Dylan - 3 Tweedle Dee & Tweedle Dum.flac
+58c5e6362d8b78ae2cf9f8f56888dbd6 *04 Bob Dylan - 4 It Ain't Me, Babe.flac
+bfa593823b54db94cd7aabd2340319d4 *05 Bob Dylan - 5 Things Have Changed.flac
+577eb700fc8b115ecd1d9198b0870945 *06 Bob Dylan - 6 Highway 61 Revisited.flac
+b7ef6a4de0f8eb2ede02c7c6073d05da *07 Bob Dylan - 7 Positively 4th Street.flac
+18f130c363b7701c88bc6e8b766dfc54 *08 Bob Dylan - 8 The Wicked Messenger.flac
+ae616b8958ab02ca91f92591d426eb26 *09 Bob Dylan - 9 Don't Think Twice, It's All Right.flac
+ecbfc6f07796c707a71a9e7cd1f0bfea *10 Bob Dylan - 10 Honest With Me.flac
+
+===================
+===================
+===================
+=== fingerprint.ffp.txt
+===================
+===================
+===================
+01 Bob Dylan - 1 Moonlight.flac:86c880d3e4b10750d21d2302a21d203202 Bob Dylan - 2 Summer Days.flac:3ddd4bb1f0505ef16d0eab0844b3f6c603 Bob Dylan - 3 (encore), Like A Rolling Stone.flac:8a69658393a5faeb558f438a747b33c804 Bob Dylan - 4 All Along The Watchtower.flac:3886401756e2c55821ca55865ec3a927
+===================
+===================
+===================
+=== md5sum.md5
+===================
+===================
+===================
+1af01e5ba97ff9658dac9b89785574a7 *01 Bob Dylan - 1 Moonlight.flac
+09f1f9c51c686b8424dd276083ad9aa8 *02 Bob Dylan - 2 Summer Days.flac
+329152da49063a8a8bf71296b5e1d994 *03 Bob Dylan - 3 (encore), Like A Rolling Stone.flac
+9bef6985550ba46af8860ce0a920f6a2 *04 Bob Dylan - 4 All Along The Watchtower.flac
+
+===================
+===================
+===================

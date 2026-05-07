@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-10-18-oldtoad.flacf 
+=================== 
+=================== 
+=================== 
+1dc5f2d591267714b8efc5d279c76f81  artwork\Thumbs.db
+afc05bccc0a6116fc9c395db7a00cbe5  artwork\oslo_2005_mastered_back.jpg
+1f3a75fa1eea91796aa1adbbd8ce2ebc  artwork\oslo_2005_mastered_front.jpg
+a1a4f92bbf6cc0f1c8869d1e0e922816  bd-05-10-18d1-fixed-wav.md5
+7288fd5fae4115b034218df9e91f3bde  bd-05-10-18d1.flacf\bd-05-10-18d1-t01-fixed.flac
+5ef9ae885be716c8646853f2ed1bbffd  bd-05-10-18d1.flacf\bd-05-10-18d1-t02-fixed.flac
+72e61425118989f0596049d206e0492b  bd-05-10-18d1.flacf\bd-05-10-18d1-t03-fixed.flac
+65760c51aabe5cdf56c016e275161e5c  bd-05-10-18d1.flacf\bd-05-10-18d1-t04-fixed.flac
+217d6d087c8df452ce35e6da755d7dcd  bd-05-10-18d1.flacf\bd-05-10-18d1-t05-fixed.flac
+c2c800ebe7ba455abcdb1ef3788f7005  bd-05-10-18d1.flacf\bd-05-10-18d1-t06-fixed.flac
+5e5e2299a37f9a1fcf948553e8bf8425  bd-05-10-18d1.flacf\bd-05-10-18d1-t07-fixed.flac
+8ade36b98c78195d244d3bf2d5886749  bd-05-10-18d1.flacf\bd-05-10-18d1-t08-fixed.flac
+dd4628130d177c580831273a9aa7ae78  bd-05-10-18d1.flacf\bd-05-10-18d1-t09-fixed.flac
+f38c15ac26e1db59c82bb7a58fa668e4  bd-05-10-18d1.flacf\bd-05-10-18d1-t10-fixed.flac
+67babab555e9dbc024d8f0c3b006d21b  bd-05-10-18d1.flacf\d1 fingerprint.txt
+b301cfb94b5fc138976ede28d8e49461  bd-05-10-18d2-fixed-wav.md5
+abd095b4448ea5287f6b5169c2ec1c6e  bd-05-10-18d2.flacf\bd-05-10-18d2-t01-fixed.flac
+5aa9a15598cffb3b2eca0ff0b245a29b  bd-05-10-18d2.flacf\bd-05-10-18d2-t02-fixed.flac
+7b951588c28a903631e8bdd2b5b19627  bd-05-10-18d2.flacf\bd-05-10-18d2-t03-fixed.flac
+c214b07ba8e1202249245ab6ec3cb22d  bd-05-10-18d2.flacf\bd-05-10-18d2-t04-fixed.flac
+16ff95f75e5db56c4a03dd48ef4da06b  bd-05-10-18d2.flacf\bd-05-10-18d2-t05-fixed.flac
+f049d057e7196c253bb3b715e77d0312  bd-05-10-18d2.flacf\bd-05-10-18d2-t06-fixed.flac
+d200cc3c5a6d12ccf73ba66bb7260fe8  bd-05-10-18d2.flacf\bd-05-10-18d2-t07-fixed.flac
+ce44c3bb6ae5902ed3bd8ca790efe834  bd-05-10-18d2.flacf\bd-05-10-18d2-t08-fixed.flac
+caa2492f45c69856a68dd6ce98fe64e3  bd-05-10-18d2.flacf\bd-05-10-18d2-t09-fixed.flac
+e9e09959544661ee0cabdc70620c9aa5  bd-05-10-18d2.flacf\d2 fingerprint.txt
+f673a0d777a79b913c9869cdb054f9da  bd05-10-18-oldtoad-LB-3546.txt
+91bbaf3e971b6eaf0a0b33f93b250d5b  lineage & setlist\lineage.txt
+b5692745114482d61aa699ddd38f52d1  lineage & setlist\setlist.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-10-18-oldtoad.flacf\bd-05-10-18d1.flacf 
+=================== 
+=================== 
+=================== 
+bd-05-10-18d1-t01-fixed.flac:ceccaddc48133bf77c305e75d894e3e8
+bd-05-10-18d1-t02-fixed.flac:5a24da56541ed9e9194414ace94412e6
+bd-05-10-18d1-t03-fixed.flac:9b0fb940a176222ef0b22db083039c8b
+bd-05-10-18d1-t04-fixed.flac:3ac006f89cfc318d1677c35b0db80108
+bd-05-10-18d1-t05-fixed.flac:9d58020ea49e8535c4191caacc7875a5
+bd-05-10-18d1-t06-fixed.flac:4b25638096f75b19ffa01015c7f1425e
+bd-05-10-18d1-t07-fixed.flac:88c431e967b612a4a8b5db886b141ca8
+bd-05-10-18d1-t08-fixed.flac:e7767fe1fa54ac7449b46e1826f7acba
+bd-05-10-18d1-t09-fixed.flac:84c91c237696210288a4462061f36a8c
+bd-05-10-18d1-t10-fixed.flac:22f5e47f3a2d16565be01a012dacb13c
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-10-18-oldtoad.flacf\bd-05-10-18d2.flacf 
+=================== 
+=================== 
+=================== 
+bd-05-10-18d2-t01-fixed.flac:54642fb619f7b059c03b401b93208266
+bd-05-10-18d2-t02-fixed.flac:b54fc08fb698a52a764a4d9ed4372703
+bd-05-10-18d2-t03-fixed.flac:d9fecbf688580f07c1ce2bd8093b8bac
+bd-05-10-18d2-t04-fixed.flac:361fa3b0e57699c73680c6f823f688ff
+bd-05-10-18d2-t05-fixed.flac:716c8561f62f251df0ef32e64ebe1d94
+bd-05-10-18d2-t06-fixed.flac:769e562809b73483b94c00b445755e5e
+bd-05-10-18d2-t07-fixed.flac:1f6a50ba4cc0331b42841af91843db49
+bd-05-10-18d2-t08-fixed.flac:be8f1af599e4e830d6d4ae8629652f5e
+bd-05-10-18d2-t09-fixed.flac:28977b6e720f013080126118d8e22e68
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-10-18-oldtoad.flacf\bd-05-10-18d1.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:37.01        6529196 B   ---   --   ---xx   flac  0.4568  bd-05-10-18d1-t01-fixed.flac
+     4:48.65       50956124 B   ---   --   ---xx   flac  0.5295  bd-05-10-18d1-t02-fixed.flac
+     4:32.03       47987900 B   ---   --   ---xx   flac  0.4843  bd-05-10-18d1-t03-fixed.flac
+     5:16.05       55754204 B   ---   --   ---xx   flac  0.4782  bd-05-10-18d1-t04-fixed.flac
+     6:05.05       64397804 B   ---   --   ---xx   flac  0.4634  bd-05-10-18d1-t05-fixed.flac
+     6:56.41       73478876 B   ---   --   ---xx   flac  0.5096  bd-05-10-18d1-t06-fixed.flac
+     6:25.00       67914044 B   ---   --   ---xx   flac  0.5092  bd-05-10-18d1-t07-fixed.flac
+     5:34.15       58952924 B   ---   --   ---xx   flac  0.5155  bd-05-10-18d1-t08-fixed.flac
+     5:44.46       60789836 B   ---   --   ---xx   flac  0.4930  bd-05-10-18d1-t09-fixed.flac
+     6:12.08       65639660 B   ---   --   ---xx   flac  0.4942  bd-05-10-18d1-t10-fixed.flac
+    52:11.39      552400568 B                            0.4970  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-10-18-oldtoad.flacf\bd-05-10-18d2.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:02.05       63868604 B   ---   --   ---xx   flac  0.5284  bd-05-10-18d2-t01-fixed.flac
+     7:33.46       80017436 B   ---   --   ---xx   flac  0.4950  bd-05-10-18d2-t02-fixed.flac
+     5:40.64       60126572 B   ---   --   ---xx   flac  0.4615  bd-05-10-18d2-t03-fixed.flac
+     5:21.27       56687948 B   ---   --   ---xx   flac  0.4642  bd-05-10-18d2-t04-fixed.flac
+     7:06.32       75221708 B   ---   --   ---xx   flac  0.4987  bd-05-10-18d2-t05-fixed.flac
+     4:25.08       46764860 B   ---   --   ---xx   flac  0.4140  bd-05-10-18d2-t06-fixed.flac
+     6:55.19       73250732 B   ---   --   ---xx   flac  0.4877  bd-05-10-18d2-t07-fixed.flac
+     0:29.29        5183852 B   ---   --   ---xx   flac  0.5184  bd-05-10-18d2-t08-fixed.flac
+     6:39.74       70557692 B   ---   --   ---xx   flac  0.4793  bd-05-10-18d2-t09-fixed.flac
+    50:14.04      531679404 B                            0.4825  (9 files)
+=================== 
+=================== 
+=================== 

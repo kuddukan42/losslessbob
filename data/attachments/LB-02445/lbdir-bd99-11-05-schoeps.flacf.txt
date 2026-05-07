@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-11-05-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+d0475d7bad36c260acfa9a8154065fb8  bd99-11-05-schoeps.txt
+2732413fff3ccf532eb23e85f83b1ba2  Dylan11-5-99.txt
+048c94fff26f1b00e6e9d07595f5d2d8  Dylan11-5-99CD101.flac
+cc0ab0bd25ddf499002911e8aea29bec  Dylan11-5-99CD102.flac
+0d7a0df29142577d6db8743c9abfd837  Dylan11-5-99CD103.flac
+d39b35fa05890a11b5a4659f895ebb14  Dylan11-5-99CD104.flac
+873936e1afb2a94f1cd1c7e5d38115f7  Dylan11-5-99CD105.flac
+8a62d0a4904ef03e7002d98461a3ec2e  Dylan11-5-99CD106.flac
+909321bacc81a078dab7c209a56fba75  Dylan11-5-99CD107.flac
+15535300fd1a0e22f40436efd42dc52a  Dylan11-5-99CD201.flac
+d6bd1c6b885e5665bc74bcd486dd1490  Dylan11-5-99CD202.flac
+429b549f5128f032d05e29b000995f5f  Dylan11-5-99CD203.flac
+60946848145aacc06e9d466afde0dde4  Dylan11-5-99CD204.flac
+e57e93a7bcf1fc9ea621fb1cf24f9f98  Dylan11-5-99CD205.flac
+de032602f6948014dec1cf6074ad836a  Dylan11-5-99CD206.flac
+6003167ac85333b61c69dc5ba89ad7ef  Dylan11-5-99CD207.flac
+03ac1d9039b247a6072e2cc4a2835bba  Dylan11-5-99CD208.flac
+f8f2269f2987e5db440d0ead72d388b4  dylan11-5-99fp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-11-05-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+Dylan11-5-99CD101.flac:f17f0e2fdbc3d496e36b7d1fc9a8ef4f
+Dylan11-5-99CD102.flac:f1f30baf85a00c431c30f3c0095e7768
+Dylan11-5-99CD103.flac:f6a9d70b5ddfcbd149ab5605f3ee9f8a
+Dylan11-5-99CD104.flac:af10527040ada485cbec7e0a2c168574
+Dylan11-5-99CD105.flac:b77f470cccd4f5bc2b55ddd9464cdbcf
+Dylan11-5-99CD106.flac:ae00a80d067d37467ffae6db18a77257
+Dylan11-5-99CD107.flac:094425eccf8850ca9c1f27d1291be2c0
+Dylan11-5-99CD201.flac:bbfea3115f2f37727ecbc0276123acef
+Dylan11-5-99CD202.flac:8f15903739fb15435fd537791abde83c
+Dylan11-5-99CD203.flac:06c83d0ea61a5ce2b3d0c02c4a1a53f5
+Dylan11-5-99CD204.flac:a271bebc23bee6b5c06af938f12086e0
+Dylan11-5-99CD205.flac:712ceebdf02ab4493f35e3a8132116d3
+Dylan11-5-99CD206.flac:7a53ee657ddf98ec2ce8ae304c769627
+Dylan11-5-99CD207.flac:9b3c5998918dc4e8b97a41e2730b0d8e
+Dylan11-5-99CD208.flac:e5295e873af71ab82de71cd0bdcdb88e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-11-05-schoeps.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:07.55       43700204 B   ---   --   ---xx   flac  0.5821  Dylan11-5-99CD101.flac
+     5:21.00       56624444 B   ---   --   ---xx   flac  0.5429  Dylan11-5-99CD102.flac
+     9:08.58       96803660 B   ---   --   ---xx   flac  0.5499  Dylan11-5-99CD103.flac
+     5:07.16       54192476 B   ---   --   ---xx   flac  0.5491  Dylan11-5-99CD104.flac
+     9:26.73      100014140 B   ---   --   ---xx   flac  0.6145  Dylan11-5-99CD105.flac
+     6:42.68       71072780 B   ---   --   ---xx   flac  0.5422  Dylan11-5-99CD106.flac
+     6:14.30       66044204 B   ---   --   ---xx   flac  0.5229  Dylan11-5-99CD107.flac
+     6:55.33       73283660 B   ---   --   ---xx   flac  0.6078  Dylan11-5-99CD201.flac
+     6:41.06       70750556 B   ---   --   ---xx   flac  0.5595  Dylan11-5-99CD202.flac
+     4:58.68       52727180 B   ---   --   ---xx   flac  0.5876  Dylan11-5-99CD203.flac
+     6:52.45       72782684 B   ---   --   ---xx   flac  0.6378  Dylan11-5-99CD204.flac
+     6:09.29       65159852 B   ---   --   ---xx   flac  0.5393  Dylan11-5-99CD205.flac
+     5:19.66       56426876 B   ---   --   ---xx   flac  0.6215  Dylan11-5-99CD206.flac
+     8:48.01       93141596 B   ---   --   ---xx   flac  0.5346  Dylan11-5-99CD207.flac
+     4:04.13       43072220 B   ---   --   ---xx   flac  0.5911  Dylan11-5-99CD208.flac
+    95:58.36     1015796532 B                            0.5716  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,338 @@
+===================
+===================
+===================
+=== bd 1975-11-24 Hartford.ffp
+===================
+===================
+===================
+disc1\Track 01.flac:31570aaf5e7f90a62af7d89298bbf642
+disc1\Track 02.flac:0a0a9ceb57a67ed5305707daf9205b02
+disc1\Track 03.flac:1968e581f9b938b07a27b16a2f0f610e
+disc1\Track 04.flac:8faa0fcbd8cea03787e1e06f5cbca6d8
+disc1\Track 05.flac:f233ce96871379cdd8ee92f7ec9b5002
+disc1\Track 06.flac:5d91f8d23c27e643d5ef1dd62ce90047
+disc1\Track 07.flac:e7617514b972ab65f2be86509facb890
+disc1\Track 08.flac:d0131b025fd11bed549809b71a44c37a
+disc1\Track 09.flac:8d21c4fa9df3e224051ac340ff46abc4
+disc1\Track 10.flac:cf7f37f7777c4d82ea4dc3bec01bc80f
+disc1\Track 11.flac:66789eb9dbb427b69ada826a467e9408
+disc1\Track 12.flac:01579738bd9ab53f910a391c7480891b
+disc1\Track 13.flac:4db679e4cc0b41f048df5ab253a44ba6
+disc1\Track 14.flac:6bb57e4a2ae0978697202abc386bec70
+disc2\Track 01.flac:3607d0416ca44ae644923dbde739c5a4
+disc2\Track 02.flac:56b5c55d20a2344f912e3ddae1ce136d
+disc2\Track 03.flac:7b307bac6ba93be21ca4e18f3abbb29f
+disc2\Track 04.flac:78a27ae70ccd26074cdb361dcec06f4e
+disc2\Track 05.flac:e72a5f21b9192d6aea691e12db4448de
+disc2\Track 06.flac:86079b0e511899cff3ce6d77546439ea
+disc2\Track 07.flac:9671acf42c052e66b1e2d0629fdf935b
+disc2\Track 08.flac:e0625b354412d3cbb8dcd3a4f54a8d78
+disc2\Track 09.flac:593a89fcfb29c6a2910f4a22c7a5594e
+disc2\Track 10.flac:1b7dcec9974a69e4dd9336c947af1ced
+disc2\Track 11.flac:40692968f1df85d808c4fef20bc1e3ed
+disc3\Track 01.flac:1a18e4f09f2bcc59e91ed086e413b074
+disc3\Track 02.flac:114371fff28aea8d683c6e5f4eb19053
+disc3\Track 03.flac:83c7b4a6db019f299ff5fa95374d2c26
+disc3\Track 04.flac:af9537ed857eed241afecfe8ebb3572d
+disc3\Track 05.flac:1d75a9b65cab0573ae7ab508369b99fd
+disc3\Track 06.flac:2302ca11316ff2d61defc582234a0f5a
+disc3\Track 07.flac:8fafb3706db54a8144aa2d6341e52289
+disc3\Track 08.flac:99e1cc3e9154bc1fcf3555262e6a5135
+disc3\Track 09.flac:7fc4707d83595dea413365ed7f3f0ca2
+disc3\Track 10.flac:9928a14056305ad2d7a2b2da6a016be2
+disc3\Track 11.flac:9e3b2390546303330b9eda87b942937b
+disc3\Track 12.flac:ac0a3e4958c30e7347413d5e2dca34b5
+disc3\Track 13.flac:969342adebede498ce0aeb8397b0de50
+disc3\Track 14.flac:4fc5df5f2599fc1d3079e8393dae356d
+disc3\Track 15.flac:18178ecfcda4b1fe86393512bbb3fe2d
+disc4\Track 01.flac:8cebf2be3bf765792e7dcac308b23783
+disc4\Track 02.flac:1a880ee73ef3a9c4b45e76fd7785ac32
+disc4\Track 03.flac:c2d53763c6d3ec12379fdf56a2efb7ed
+disc4\Track 04.flac:2f51abb25e68ce9ed724c6ac64b1334f
+disc4\Track 05.flac:3b8a8109f60a668c35a8a0cb526c3cd8
+disc4\Track 06.flac:d4afec5e266950a770004f6b6a3b227f
+disc4\Track 07.flac:9cdcc3898423e6f4aea09338aed4bea6
+disc4\Track 08.flac:17da9fb50e9345af1eef7d9cba78d2d0
+disc4\Track 09.flac:9b2d9ef4ff6c2a5995f91db06d549c5d
+===================
+===================
+===================
+=== bd 1975-11-24 Hartford.md5
+===================
+===================
+===================
+707db2ee48a41caa536ebea198f94864 *disc1\Track 01.flac
+1cd24ef8c62da4ffd98608667440d607 *disc1\Track 02.flac
+8fa7f1366d09d890c2672ce276e9591c *disc1\Track 03.flac
+a82cc5d7c4464b1fdec794ed59e63734 *disc1\Track 04.flac
+e09bfead623836aaaadb3d5ed54b1cbc *disc1\Track 05.flac
+3795e343465fe7622e87939be83019bc *disc1\Track 06.flac
+afb9529dd662f8c1b5d58ef830e9ab64 *disc1\Track 07.flac
+0ed017e5c777f74026732cefa958eb41 *disc1\Track 08.flac
+60534c946e9d143b25d24ef106815d8f *disc1\Track 09.flac
+989f6a870386158c0d73dfc3f657b1f9 *disc1\Track 10.flac
+81b9e6c8d486cc38d0f0ba6dfd2ab46f *disc1\Track 11.flac
+9475c697b3b4c13e54897cbe55f188b0 *disc1\Track 12.flac
+ed96b0248895f0e2e2c1695ff5b62bde *disc1\Track 13.flac
+7a9d8bd2706b5587f41c5b015cc532b3 *disc1\Track 14.flac
+9c4591c912d0b7020367c00f34edeeb5 *disc2\Track 01.flac
+92b773dc495f62289cd40c421e95d7e5 *disc2\Track 02.flac
+ce8ca6c7e2816cc7b4eb724dcc5dbcb4 *disc2\Track 03.flac
+7f98de343e8edc4e36db0c90f33b43b3 *disc2\Track 04.flac
+a14ed4498551dcf8bbc2c1ed2b25fdf3 *disc2\Track 05.flac
+5658607a2e1d3ec4ef3397c88309a84c *disc2\Track 06.flac
+ae376c02a1a219e237f1d18816ef794e *disc2\Track 07.flac
+02aaa73d2de8068c0c674165fc026d09 *disc2\Track 08.flac
+3c0eb3e3487d020f60a2f7831ad7375a *disc2\Track 09.flac
+dac11d4c37ca99eb873e2e05aad25f48 *disc2\Track 10.flac
+c7b5264e3ab25a51953e51eb83b7ae18 *disc2\Track 11.flac
+69fbb1fe27895cade4fb52d273f5257a *disc3\Track 01.flac
+f55bb2bbb2c95c9f0147a82be779fc0f *disc3\Track 02.flac
+081f3b932be358516a7705c28dd4dd39 *disc3\Track 03.flac
+323b3bf48eb2d79a2ae92eddbeb6212c *disc3\Track 04.flac
+0506c10a765775878f3168e1a73381ce *disc3\Track 05.flac
+96c9627802ef306f86de18445a23d71f *disc3\Track 06.flac
+26a204b7849e18bb2b36c687b4ccd811 *disc3\Track 07.flac
+64d9e83cdd2c6686c69000ae94feb4e0 *disc3\Track 08.flac
+d99d6f4e87d7dfb126584b3584d8fd18 *disc3\Track 09.flac
+886c75679f6d68df4352f2cbd98e58e8 *disc3\Track 10.flac
+d72d28bb6a11a69e1f961d745ed36ead *disc3\Track 11.flac
+7a47ecab76cffe77ed9f3367b5eec5df *disc3\Track 12.flac
+dba307cf5d83cd492d0fed5823bfbe04 *disc3\Track 13.flac
+126e59a2cb458b76934ab2fe7bed90c0 *disc3\Track 14.flac
+27a12bd344cfd58a668efff6b4e2da78 *disc3\Track 15.flac
+dcfaa81924af07a6ca62d1f2515bf481 *disc4\Track 01.flac
+4bb14d8bcfb2dc2e2e44c663fc8b03d3 *disc4\Track 02.flac
+be160675bbf58cb978ba4bf2f427c82b *disc4\Track 03.flac
+ede7053e6bee77c360dde9c80fcd601a *disc4\Track 04.flac
+8838a6950e91e6c17d8a5d3585ed987d *disc4\Track 05.flac
+19f71257fb7722cf47e64e9d5f9c2d4a *disc4\Track 06.flac
+535c3328d28569c198127ba8e3d09f48 *disc4\Track 07.flac
+bcb3da1fec9801ff25dd51a1da0e048f *disc4\Track 08.flac
+8f0221a95423e62bdb3951c614d7b190 *disc4\Track 09.flac
+===================
+===================
+===================
+=== bd 1975-11-24 Hartford.txt
+===================
+===================
+===================
+Bob Dylan & The Rolling Thunder Revue
+Civic Center Arena
+Hartford, Connecticut
+24 November 1975
+
+Lineage: Unknown flacs probably same source / sourced from LB-0537 http://jokerman.org.uk/lb/detail/LB-00537.html > Wave Repair 4.9.3. to fix index clicks/spurts, removed leading/tracking silences, tracking > flac lvl 8 verify
+
+Rolling Thunder Revue concert # 23
+
+
+Disc One
+
+Bob Neuwirth:
+01. Good Love Is Hard To Find (N. Albright)
+02. Sleazy (?)
+ 
+T-bone J. Henry Burnett:
+03. Hoola Hoop (John Fleming/J. Henry Burnett/Roscoe West)
+ 
+Steven Soles:
+04. Dont Blame Me (Jimmy McHugh)
+ 
+Rob Stoner:
+05. Catfish (Bob Dylan-Jacques Levy/Bob Dylan)
+ 
+Mick Ronson:
+06. Is There Life On Mars? (Roscoe West)
+ 
+Bob Neuwirth & Ronee Blakley:
+07. Alabama Dark (Bob Neuwirth)
+ 
+Ronee Blakley:
+08. Need A New Sun Rising (Ronee Blakley)
+ 
+Bob Neuwirth:
+09. Cindy (When I Get Home) (trad.)
+10. Mercedes Benz (Janis Joplin/Michael McClure)
+ 
+Rick Danko & Allen Ginsberg:
+11. Oh What A Time (?)
+12. It Makes No Difference (Robbie Robertson)
+ 
+Joni Mitchell:
+13. Don't Interrupt The Sorrow (Joni Mitchell)
+14. Edith And The Kingpin (Joni Mitchell)
+ 
+
+
+Disc Two
+
+01. Bob Neuwirth: Song for Ramblin Jack (Bob Neuwirth) > Ramblin Jack Elliott: Muleskinner Blues (Jimmie Rodgers)
+02. South Coast (Ross/Eskin/Dehz)
+03. Black Bill (?)
+04. Im A Rich And Ramblin Boy (Derroll Adams)
+  
+Bob Dylan:
+05. When I Paint My Masterpiece
+06. It Ain't Me, Babe
+07. The Lonesome Death Of Hattie Carroll
+08. Tonight I'll Be Staying Here With You
+09. A Hard Rain's A-Gonna Fall
+10. Romance In Durango (Jacques Levy/Bob Dylan)
+11. Isis (Jacques Levy/Bob Dylan)
+ 
+ 
+
+
+Disc Three
+
+Bob Dylan + Joan Baez (vocal, guitar):
+01. Blowin' In The Wind
+02. Dark As A Dungeon (Merle Travis)
+03. Mama, You Been On My Mind
+04. Never Let Me Go (Joseph C. Scott)
+05. I Shall Be Released
+
+Joan Baez:
+06. Diamonds And Rust (Joan Baez)
+07. Swing Low Sweet Chariot (trad.)
+08. Joe Hill (Earl Robinson)
+09. Love Song To A Stranger (Joan Baez)
+10. Help Me Make It Through The Night (Kris Kristofferson)
+11. Please Come To Boston (Dave Loggins) 
+12. instrumental by Sandy Bull 
+ 
+Roger McGuinn:
+13. Eight Miles High (Gene Clark, Roger McGuinn, David Crosby)
+14. Chestnut Mare (Roger McGuinn/Jacques Levy)
+ 
+Joan Baez & Roger McGuinn:
+15. The Night They Drove Old Dixie Down (Robbie Robertson)
+ 
+
+
+Disc Four
+
+Bob Dylan:
+01. Love Minus Zero/No Limit
+02. Simple Twist Of Fate
+03. Oh, Sister (Jacques Levy/Bob Dylan)
+04. Hurricane (Jacques Levy/Bob Dylan)
+05. One More Cup Of Coffee (Valley Below)
+06. Sara
+07. Just Like A Woman
+Bob Dylan + Roger McGuinn (shared vocal):
+08. Knockin' On Heaven's Door 
+
+09. This Land Is Your Land (Woody Guthrie)
+shared vocal by Bob Dylan and the entire ensemble for the evening
+ 
+
+Notes
+The full tape emerged in 2000.
+
+
+707db2ee48a41caa536ebea198f94864 *disc1\Track 01.flac
+1cd24ef8c62da4ffd98608667440d607 *disc1\Track 02.flac
+8fa7f1366d09d890c2672ce276e9591c *disc1\Track 03.flac
+a82cc5d7c4464b1fdec794ed59e63734 *disc1\Track 04.flac
+e09bfead623836aaaadb3d5ed54b1cbc *disc1\Track 05.flac
+3795e343465fe7622e87939be83019bc *disc1\Track 06.flac
+afb9529dd662f8c1b5d58ef830e9ab64 *disc1\Track 07.flac
+0ed017e5c777f74026732cefa958eb41 *disc1\Track 08.flac
+60534c946e9d143b25d24ef106815d8f *disc1\Track 09.flac
+989f6a870386158c0d73dfc3f657b1f9 *disc1\Track 10.flac
+81b9e6c8d486cc38d0f0ba6dfd2ab46f *disc1\Track 11.flac
+9475c697b3b4c13e54897cbe55f188b0 *disc1\Track 12.flac
+ed96b0248895f0e2e2c1695ff5b62bde *disc1\Track 13.flac
+7a9d8bd2706b5587f41c5b015cc532b3 *disc1\Track 14.flac
+9c4591c912d0b7020367c00f34edeeb5 *disc2\Track 01.flac
+92b773dc495f62289cd40c421e95d7e5 *disc2\Track 02.flac
+ce8ca6c7e2816cc7b4eb724dcc5dbcb4 *disc2\Track 03.flac
+7f98de343e8edc4e36db0c90f33b43b3 *disc2\Track 04.flac
+a14ed4498551dcf8bbc2c1ed2b25fdf3 *disc2\Track 05.flac
+5658607a2e1d3ec4ef3397c88309a84c *disc2\Track 06.flac
+ae376c02a1a219e237f1d18816ef794e *disc2\Track 07.flac
+02aaa73d2de8068c0c674165fc026d09 *disc2\Track 08.flac
+3c0eb3e3487d020f60a2f7831ad7375a *disc2\Track 09.flac
+dac11d4c37ca99eb873e2e05aad25f48 *disc2\Track 10.flac
+c7b5264e3ab25a51953e51eb83b7ae18 *disc2\Track 11.flac
+69fbb1fe27895cade4fb52d273f5257a *disc3\Track 01.flac
+f55bb2bbb2c95c9f0147a82be779fc0f *disc3\Track 02.flac
+081f3b932be358516a7705c28dd4dd39 *disc3\Track 03.flac
+323b3bf48eb2d79a2ae92eddbeb6212c *disc3\Track 04.flac
+0506c10a765775878f3168e1a73381ce *disc3\Track 05.flac
+96c9627802ef306f86de18445a23d71f *disc3\Track 06.flac
+26a204b7849e18bb2b36c687b4ccd811 *disc3\Track 07.flac
+64d9e83cdd2c6686c69000ae94feb4e0 *disc3\Track 08.flac
+d99d6f4e87d7dfb126584b3584d8fd18 *disc3\Track 09.flac
+886c75679f6d68df4352f2cbd98e58e8 *disc3\Track 10.flac
+d72d28bb6a11a69e1f961d745ed36ead *disc3\Track 11.flac
+7a47ecab76cffe77ed9f3367b5eec5df *disc3\Track 12.flac
+dba307cf5d83cd492d0fed5823bfbe04 *disc3\Track 13.flac
+126e59a2cb458b76934ab2fe7bed90c0 *disc3\Track 14.flac
+27a12bd344cfd58a668efff6b4e2da78 *disc3\Track 15.flac
+dcfaa81924af07a6ca62d1f2515bf481 *disc4\Track 01.flac
+4bb14d8bcfb2dc2e2e44c663fc8b03d3 *disc4\Track 02.flac
+be160675bbf58cb978ba4bf2f427c82b *disc4\Track 03.flac
+ede7053e6bee77c360dde9c80fcd601a *disc4\Track 04.flac
+8838a6950e91e6c17d8a5d3585ed987d *disc4\Track 05.flac
+19f71257fb7722cf47e64e9d5f9c2d4a *disc4\Track 06.flac
+535c3328d28569c198127ba8e3d09f48 *disc4\Track 07.flac
+bcb3da1fec9801ff25dd51a1da0e048f *disc4\Track 08.flac
+8f0221a95423e62bdb3951c614d7b190 *disc4\Track 09.flac
+
+
+disc1\Track 01.flac:31570aaf5e7f90a62af7d89298bbf642
+disc1\Track 02.flac:0a0a9ceb57a67ed5305707daf9205b02
+disc1\Track 03.flac:1968e581f9b938b07a27b16a2f0f610e
+disc1\Track 04.flac:8faa0fcbd8cea03787e1e06f5cbca6d8
+disc1\Track 05.flac:f233ce96871379cdd8ee92f7ec9b5002
+disc1\Track 06.flac:5d91f8d23c27e643d5ef1dd62ce90047
+disc1\Track 07.flac:e7617514b972ab65f2be86509facb890
+disc1\Track 08.flac:d0131b025fd11bed549809b71a44c37a
+disc1\Track 09.flac:8d21c4fa9df3e224051ac340ff46abc4
+disc1\Track 10.flac:cf7f37f7777c4d82ea4dc3bec01bc80f
+disc1\Track 11.flac:66789eb9dbb427b69ada826a467e9408
+disc1\Track 12.flac:01579738bd9ab53f910a391c7480891b
+disc1\Track 13.flac:4db679e4cc0b41f048df5ab253a44ba6
+disc1\Track 14.flac:6bb57e4a2ae0978697202abc386bec70
+disc2\Track 01.flac:3607d0416ca44ae644923dbde739c5a4
+disc2\Track 02.flac:56b5c55d20a2344f912e3ddae1ce136d
+disc2\Track 03.flac:7b307bac6ba93be21ca4e18f3abbb29f
+disc2\Track 04.flac:78a27ae70ccd26074cdb361dcec06f4e
+disc2\Track 05.flac:e72a5f21b9192d6aea691e12db4448de
+disc2\Track 06.flac:86079b0e511899cff3ce6d77546439ea
+disc2\Track 07.flac:9671acf42c052e66b1e2d0629fdf935b
+disc2\Track 08.flac:e0625b354412d3cbb8dcd3a4f54a8d78
+disc2\Track 09.flac:593a89fcfb29c6a2910f4a22c7a5594e
+disc2\Track 10.flac:1b7dcec9974a69e4dd9336c947af1ced
+disc2\Track 11.flac:40692968f1df85d808c4fef20bc1e3ed
+disc3\Track 01.flac:1a18e4f09f2bcc59e91ed086e413b074
+disc3\Track 02.flac:114371fff28aea8d683c6e5f4eb19053
+disc3\Track 03.flac:83c7b4a6db019f299ff5fa95374d2c26
+disc3\Track 04.flac:af9537ed857eed241afecfe8ebb3572d
+disc3\Track 05.flac:1d75a9b65cab0573ae7ab508369b99fd
+disc3\Track 06.flac:2302ca11316ff2d61defc582234a0f5a
+disc3\Track 07.flac:8fafb3706db54a8144aa2d6341e52289
+disc3\Track 08.flac:99e1cc3e9154bc1fcf3555262e6a5135
+disc3\Track 09.flac:7fc4707d83595dea413365ed7f3f0ca2
+disc3\Track 10.flac:9928a14056305ad2d7a2b2da6a016be2
+disc3\Track 11.flac:9e3b2390546303330b9eda87b942937b
+disc3\Track 12.flac:ac0a3e4958c30e7347413d5e2dca34b5
+disc3\Track 13.flac:969342adebede498ce0aeb8397b0de50
+disc3\Track 14.flac:4fc5df5f2599fc1d3079e8393dae356d
+disc3\Track 15.flac:18178ecfcda4b1fe86393512bbb3fe2d
+disc4\Track 01.flac:8cebf2be3bf765792e7dcac308b23783
+disc4\Track 02.flac:1a880ee73ef3a9c4b45e76fd7785ac32
+disc4\Track 03.flac:c2d53763c6d3ec12379fdf56a2efb7ed
+disc4\Track 04.flac:2f51abb25e68ce9ed724c6ac64b1334f
+disc4\Track 05.flac:3b8a8109f60a668c35a8a0cb526c3cd8
+disc4\Track 06.flac:d4afec5e266950a770004f6b6a3b227f
+disc4\Track 07.flac:9cdcc3898423e6f4aea09338aed4bea6
+disc4\Track 08.flac:17da9fb50e9345af1eef7d9cba78d2d0
+disc4\Track 09.flac:9b2d9ef4ff6c2a5995f91db06d549c5d
+
+===================
+===================
+===================

@@ -1,0 +1,82 @@
+===================
+===================
+===================
+=== md5 for: bd03-10-26-d.flacf
+===================
+===================
+===================
+35dd394fa94e0683440171d1907aebdc *1Track 01.flac
+02761980ad41ec68de4d8e3d6645aaa8 *1Track 02.flac
+ff8cd13473191312d6de3954f01c9874 *1Track 03.flac
+4b2a92b2972a55eaa7bac521304f07af *1Track 04.flac
+e68675792a4c440b459fab1c84472ffa *1Track 05.flac
+4cffc7ebbb9875fba660bbce3dd56735 *1Track 06.flac
+61879532bd4c793d600929f2334232c9 *1Track 07.flac
+20c347c39196394db69e8654300ee04a *1Track 08.flac
+f18c946405006a358cc62c5224ca7372 *1Track 09.flac
+0b05e5150e436fb826be9ccc42bb6bf3 *1Track 10.flac
+3a1c84b8bc217846b237a804603fd50d *1Track 11.flac
+d81cf0b268fd46041bb1cf5c876b1497 *1Track 12.flac
+9f0155b7448e92458e95587b3852c5e0 *2Track 1.flac
+0338cbbb7dcf54a8b9dced70bc9fd471 *2Track 2.flac
+7dba6d1ad483db3b39d76ac7c3e85887 *2Track 3.flac
+95ae47f47584f961da4cf60f1916a05a *2Track 4.flac
+3af454d642c4423a4728852dcabd53f7 *2Track 5.flac
+999a0d902720cf40c7472c15b4d3ee87 *2Track 6.flac
+8742ce41db46205029ce6407b5c40fef *Bob Dylan- 2003 10 26 Graz Austria - 2CD (FLAC).ffp
+0df703a675f8ca0a7e6112bbcdb9e23a *set_info.txt
+===================
+===================
+===================
+=== ffp for: bd03-10-26-d.flacf
+===================
+===================
+===================
+1Track 01.flac:427af4bbc1630a6cf1a6a7d96cc5d724
+1Track 02.flac:8d422cc8bfd8e1c0d228cda475817e0a
+1Track 03.flac:ce2b046c9799ae01c99129b311c55c54
+1Track 04.flac:c1f7d5eeb9386c7db4bfd9c4b1afe103
+1Track 05.flac:02bf15a7c2aaf324ef909e5a197d56d5
+1Track 06.flac:18d799eb3e850e68cc5cd31569dd180a
+1Track 07.flac:4750d0db0a0a77761967a4c776ac72c1
+1Track 08.flac:b0c7d868658c91f5c4aa8ef2b3b08524
+1Track 09.flac:3023e8f7581825013829166bbbe6c37d
+1Track 10.flac:eabd30cab3606b78a50478848a84ea0d
+1Track 11.flac:6f14a54361a5aa41836b6a5731f3918a
+1Track 12.flac:4a578277b11822fec71aa11d9b978760
+2Track 1.flac:5b2e430021e2482ff2d7b60420231cd5
+2Track 2.flac:4f8cdfc618c178057daacbef1293d6f6
+2Track 3.flac:b395a0153aa4f4d01afb1e8a36b4cbdd
+2Track 4.flac:6ea31ceea81b103e1b940fb36f6fcd04
+2Track 5.flac:8da48e843262de4c65e2fcaaf90d22bc
+2Track 6.flac:6d634b3657a0292491e1dac0ffa981f3
+===================
+===================
+===================
+=== shntool len for: bd03-10-26-d.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:15.60       13371164 B   ---   --   ---xx   flac  0.4922  1Track 01.flac
+     4:52.40       51602924 B   ---   --   ---xx   flac  0.6334  1Track 02.flac
+     6:06.27       64625948 B   ---   --   ---xx   flac  0.5808  1Track 03.flac
+     5:38.22       59674988 B   ---   --   ---xx   flac  0.5671  1Track 04.flac
+     6:57.21       73608236 B   ---   --   ---xx   flac  0.5369  1Track 05.flac
+     7:19.63       77587820 B   ---   --   ---xx   flac  0.6026  1Track 06.flac
+     6:53.42       72952028 B   ---   --   ---xx   flac  0.5489  1Track 07.flac
+     6:18.68       66839180 B   ---   --   ---xx   flac  0.6193  1Track 08.flac
+     6:05.57       64520108 B   ---   --   ---xx   flac  0.5747  1Track 09.flac
+     6:55.49       73321292 B   ---   --   ---xx   flac  0.5512  1Track 10.flac
+     8:57.41       94823276 B   ---   --   ---xx   flac  0.6325  1Track 11.flac
+     5:28.24       57915692 B   ---   --   ---xx   flac  0.4912  1Track 12.flac
+     7:41.13       81351020 B   ---   --   ---xx   flac  0.6190  2Track 1.flac
+     7:49.03       82738700 B   ---   --   ---xx   flac  0.5348  2Track 2.flac
+    12:31.31      132549356 B   ---   --   ---xx   flac  0.6000  2Track 3.flac
+     4:38.24       49095692 B   ---   --   ---xx   flac  0.6495  2Track 4.flac
+     7:38.20       80838284 B   ---   --   ---xx   flac  0.6369  2Track 5.flac
+     6:46.63       71766620 B   ---   --   ---xx   flac  0.6376  2Track 6.flac
+   119:54.68     1269182328 B                            0.5890  (18 files)
+===================
+===================
+===================

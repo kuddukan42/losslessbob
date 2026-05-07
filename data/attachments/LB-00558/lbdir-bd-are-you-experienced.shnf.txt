@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd-are-you-experienced.shnf 
+=================== 
+=================== 
+=================== 
+0a0fca7c2817a05768f06b00bfbe80be  01 - Track01.shn
+eaf4835b86fdfe9933c3c9dd9a326c4b  02 - Track02.shn
+0c90ced8fd0eb7a66228bf67fb969027  03 - Track03.shn
+ec6464212554a82fd2d8775cf01477c7  04 - Track04.shn
+1581de94eccece2a53c23d9331ac7136  05 - Track05.shn
+8a5ad70435dff04f4cd0a9f87d2003bf  06 - Track06.shn
+c372896ec9142dc362be13ca7a7c4b36  07 - Track07.shn
+6bef201f32890ddc2a7102bc642888dc  08 - Track08.shn
+158addd2748aad5bf6625845716e5ad5  09 - Track09.shn
+2d931c1f250cdd3f4cd383702ded7c6c  10 - Track10.shn
+f8f6dcd76b7d81ce3cc00cb3e841ed0c  11 - Track11.shn
+7fea2b54fd771fa073a185a68c2344ac  12 - Track12.shn
+f2502aec224ea8f7a3bb7403974f5ef6  13 - Track13.shn
+584d6798635b0d540f8b6c698675ae82  14 - Track14.shn
+b78b62f252aee18a205a224ba06a636f  15 - Track15.shn
+ac34c796c7ebb432ecf211068cefafd4  16 - Track16.shn
+3565601230a113843f8bd71dcc15e6ae  17 - Track17.shn
+7a0fe83d8d11f0ca1f4c653129bf3136  bd-are-you-experienced.txt
+256e3fe661a5d9bbab61bb12e48e80aa  Experienced.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd-are-you-experienced.shnf 
+=================== 
+=================== 
+=================== 
+335140024cfc485b034cbf8d3f61e547  [shntool]  01_-_Track01.wav
+588330a33caee0637c942e729c1605c4  [shntool]  02_-_Track02.wav
+067987cfb5cf3ca44952cd9c56e8c0fd  [shntool]  03_-_Track03.wav
+485e9158ce922c0d2a2323923b26b224  [shntool]  04_-_Track04.wav
+fda77d900fbdc2805e7ad5e9150a373c  [shntool]  05_-_Track05.wav
+14613d6de8e391ed754016ab23d088f5  [shntool]  06_-_Track06.wav
+a01280cf52d787559d23d4aedb5358c8  [shntool]  07_-_Track07.wav
+b7155fdcb58e01eb284542738d131917  [shntool]  08_-_Track08.wav
+24f11c14239a1fbad2510b85637c6775  [shntool]  09_-_Track09.wav
+d5d87df50738630287bc69f2fe5da15c  [shntool]  10_-_Track10.wav
+3b9017a90429f18572612fd38fc79339  [shntool]  11_-_Track11.wav
+dc09d1da0118fd5b08b613708c5763a1  [shntool]  12_-_Track12.wav
+5a3b2ccca3115e8a85a1a78eab9d65c5  [shntool]  13_-_Track13.wav
+f5c1d27e713541795d1030cd2e869fea  [shntool]  14_-_Track14.wav
+b1757dca21e493588d65bf6cab36b4ec  [shntool]  15_-_Track15.wav
+a2f30a5388283747361c0734f6047036  [shntool]  16_-_Track16.wav
+22134803b0fd900bc5f4605be2c01675  [shntool]  17_-_Track17.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd-are-you-experienced.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.65        4562924 B   ---   --   ---xx    shn  0.4909  01 - Track01.shn
+     8:14.02       87146348 B   ---   --   ---xx    shn  0.6405  02 - Track02.shn
+     4:20.51       45983996 B   ---   --   ---xx    shn  0.6359  03 - Track03.shn
+     3:36.04       38111852 B   ---   --   ---xx    shn  0.6606  04 - Track04.shn
+     5:32.52       58687148 B   ---   --   ---xx    shn  0.6875  05 - Track05.shn
+     2:16.12       24018668 B   ---   --   ---xx    shn  0.5731  06 - Track06.shn
+     8:06.58       85866860 B   ---   --   ---xx    shn  0.6364  07 - Track07.shn
+     3:55.49       41569292 B   ---   --   ---xx    shn  0.6100  08 - Track08.shn
+     3:34.60       37890764 B   ---   --   ---xx    shn  0.6018  09 - Track09.shn
+     5:24.73       57325340 B   ---   --   ---xx    shn  0.6514  10 - Track10.shn
+     5:34.52       59039948 B   ---   --   ---xx    shn  0.7231  11 - Track11.shn
+     2:21.26       24933596 B   ---   --   ---xx    shn  0.6140  12 - Track12.shn
+     7:55.36       83874716 B   ---   --   ---xx    shn  0.7551  13 - Track13.shn
+     3:40.61       38951516 B   ---   --   ---xx    shn  0.7244  14 - Track14.shn
+     4:29.30       47522204 B   ---   --   ---xx    shn  0.6868  15 - Track15.shn
+     5:03.18       53491580 B   ---   --   ---xx    shn  0.6826  16 - Track16.shn
+     1:03.23       11167340 B   ---   --   ---xx    shn  0.5744  17 - Track17.shn
+    75:35.72      800144092 B                            0.6647  (17 files)
+=================== 
+=================== 
+=================== 

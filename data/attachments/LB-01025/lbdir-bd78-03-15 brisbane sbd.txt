@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-03-15 brisbane sbd 
+=================== 
+=================== 
+=================== 
+c1d31939a3051d0a89cc35685e8e8716  bd78-03-15.md5
+45f3a5fc5fafca19ca37acea7aa2168b  bd78-03-15.txt
+f5783e7b75a7609ccc204564893a5890  bd78-03-15d1t01.shn
+af8c516befbf87a6573c5990421c853a  bd78-03-15d1t02.shn
+e793552893221aac00eb6045bdda1246  bd78-03-15d1t03.shn
+3316832467b9bef2c357af53bfb4c3b0  bd78-03-15d1t04.shn
+25fadeb7fad345b65248c8e02792ae43  bd78-03-15d1t05.shn
+ccc7538feeaac7d6186ce4e2ef988044  bd78-03-15d1t06.shn
+1547e781a9531ba8cc2f824202ba4d67  bd78-03-15d1t07.shn
+d78fa891b3a0a94096ec46c2faa89db1  bd78-03-15d1t08.shn
+11b921d1e06570cfa9d502f9a5299f7e  bd78-03-15d1t09.shn
+ed667733e4762e50f6c0ed9c931246d5  bd78-03-15d2t01.shn
+af33c01ee4a5e572fcf552ba2f0f34d6  bd78-03-15d2t02.shn
+2bf1e5521c1b5ac79b4bc2be1e4960de  bd78-03-15d2t03.shn
+a6fb2d6787c0a26ecae67ab50d35a9d8  bd78-03-15d2t04.shn
+638ac763856be8cbfc1f4600e4e502c5  bd78-03-15d2t05.shn
+a2b9fda2ca530dc71a9d5f633b838cea  bd78-03-15d2t06.shn
+9c9026368ee87761daf8bad49e8e7a3c  bd78-03-15d2t07.shn
+9ada25c892c4e56c501f5b6361b8791f  bd78-03-15d2t08.shn
+9ac4b730120a1738917ca58c1ace50b9  bd78-03-15d2t09.shn
+86648fc4b39b3aa878d3bb770750023c  bd78-03-15d2t10.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd78-03-15 brisbane sbd 
+=================== 
+=================== 
+=================== 
+7f2c1a2aba50db38a1434a72c10e8a91  [shntool]  bd78-03-15d1t01.wav
+3fb35b95f92e24ed327fa045033559bc  [shntool]  bd78-03-15d1t02.wav
+606285502b69f068d25817a3c331b176  [shntool]  bd78-03-15d1t03.wav
+536a4c7d7de0c37906b11cb89c524cda  [shntool]  bd78-03-15d1t04.wav
+c634d1c977f9074b133650c0157777da  [shntool]  bd78-03-15d1t05.wav
+163162e704caf31f9dfa0b28583beee2  [shntool]  bd78-03-15d1t06.wav
+1a5a126ac0eafad4edeb2e35d3b263d9  [shntool]  bd78-03-15d1t07.wav
+5443cdb2483ced68e2f4b6a7fb8c07c1  [shntool]  bd78-03-15d1t08.wav
+19f96fe09bc81eaecc4262b1a9d9615a  [shntool]  bd78-03-15d1t09.wav
+9d45ec484515b627e50fe7a90f4b6b70  [shntool]  bd78-03-15d2t01.wav
+1b1e10349b2c5ec67a2dd41643e47337  [shntool]  bd78-03-15d2t02.wav
+93e903697b408d968573e88b0ad3397a  [shntool]  bd78-03-15d2t03.wav
+71c11b7cee080d0ae965003500f3f312  [shntool]  bd78-03-15d2t04.wav
+122f7e83bc12c5a2e4397faa049f531d  [shntool]  bd78-03-15d2t05.wav
+c273d346af3d40735d2c766b58fecbc2  [shntool]  bd78-03-15d2t06.wav
+e1038dd2120779c32978c68cd7dc5653  [shntool]  bd78-03-15d2t07.wav
+3e36cd4578282d1cd68fd912f5629eda  [shntool]  bd78-03-15d2t08.wav
+f695a2048470b4c77364415ba4125165  [shntool]  bd78-03-15d2t09.wav
+25afd3af77396b8f1f5cd2112f78c2e5  [shntool]  bd78-03-15d2t10.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-03-15 brisbane sbd 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:36.36       27603116 B   ---   --   ---xx    shn  0.5711  bd78-03-15d1t01.shn
+     5:07.25       54213644 B   ---   --   ---xx    shn  0.5978  bd78-03-15d1t02.shn
+     5:04.17       53665628 B   ---   --   ---xx    shn  0.5813  bd78-03-15d1t03.shn
+     4:44.18       50139980 B   ---   --   ---xx    shn  0.5678  bd78-03-15d1t04.shn
+     3:26.57       36472508 B   ---   --   ---xx    shn  0.5586  bd78-03-15d1t05.shn
+     5:46.61       61177916 B   ---   --   ---xx    shn  0.5231  bd78-03-15d1t06.shn
+     4:29.65       47604524 B   ---   --   ---xx    shn  0.5829  bd78-03-15d1t07.shn
+     4:54.20       51908684 B   ---   --   ---xx    shn  0.6068  bd78-03-15d1t08.shn
+     4:55.06       52052156 B   ---   --   ---xx    shn  0.5772  bd78-03-15d1t09.shn
+     4:30.66       47783276 B   ---   --   ---xx    shn  0.5341  bd78-03-15d2t01.shn
+     4:44.36       50182316 B   ---   --   ---xx    shn  0.5401  bd78-03-15d2t02.shn
+     3:43.63       39485420 B   ---   --   ---xx    shn  0.5663  bd78-03-15d2t03.shn
+     3:53.36       41185916 B   ---   --   ---xx    shn  0.5569  bd78-03-15d2t04.shn
+     3:24.43       36086780 B   ---   --   ---xx    shn  0.5745  bd78-03-15d2t05.shn
+     3:08.11       33189116 B   ---   --   ---xx    shn  0.5469  bd78-03-15d2t06.shn
+     6:43.59       71228012 B   ---   --   ---xx    shn  0.5716  bd78-03-15d2t07.shn
+     5:56.51       62918396 B   ---   --   ---xx    shn  0.5506  bd78-03-15d2t08.shn
+     4:54.12       51889868 B   ---   --   ---xx    shn  0.5770  bd78-03-15d2t09.shn
+     4:56.20       52261484 B   ---   --   ---xx    shn  0.5839  bd78-03-15d2t10.shn
+    87:01.27      921048740 B                            0.5669  (19 files)
+=================== 
+=================== 
+=================== 

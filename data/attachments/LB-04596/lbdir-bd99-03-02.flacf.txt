@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-03-02.flacf 
+=================== 
+=================== 
+=================== 
+0e5cc02dad1598aff0f79406a1724f56  bd99-03-02-LB-4596.txt
+6e8887d9b2ece2b9dc7e33ee4eeff3b3  CD1\01 Gotta serve somebody.flac
+796f7b6d103925a66cbf96c1de87c8d6  CD1\02 Million miles.flac
+8979fb0e695e3086b7b3d21d19524f57  CD1\03 Stuck inside of Mobile with the Memphis blues again.flac
+bfccc742d08d7ffdabb31a51de24bff4  CD1\04 Just like a woman.flac
+5cbfba4678d74521a5e13adc3565dfa7  CD1\05 Silvio.flac
+3f4d9ca860ab5272575aa37a633a0b15  CD1\06 It ain't me, babe.flac
+3dfd04b8a3b1210a7148f71f523249fd  CD1\07 To Ramona.flac
+97afe65fb7ec5411461f9ebe11fa3af2  CD1\08 Tangled up in blue.flac
+765ae4a62f14dd028177f8f56c840d44  CD1\09 Friend of the Devil.flac
+7fe4d5ec7dbfd5d9bafb34efa6f03cef  CD1\10 Can't wait.flac
+2799fbe253b8dbb22c31d109d9912754  CD1\11 (band intro).flac
+a4c3c6bcf6960bf7b4f68fc5854dd8a0  CD1\12 Highway 61 revisited.flac
+bd9d06efefb01483ecd7935747a78897  CD2\13 Knockin' on heaven's door.flac
+62c68157901bdc6d9b9c369637fa722f  CD2\14 Not fade away.flac
+5227b6f1ef5f1fb6d7818ea114993ab2  Info\1999-03-02 House Of Blues, Mandalay Bay Resort & Casino, Las Vegas, Nevada, USA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-03-02.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Gotta serve somebody.flac:994bfb9b4cee970105e3144a1b51bcdf
+02 Million miles.flac:b350907a42eb86641129085f72150b54
+03 Stuck inside of Mobile with the Memphis blues again.flac:ead4f4206dc55c2cff3efeca8abec4e7
+04 Just like a woman.flac:7971327911cc9542d973d3037cdd3f90
+05 Silvio.flac:63666ce4430e72a4cf6d268f85452a81
+06 It ain't me, babe.flac:c19c5c26de38769b3661f89f53fd4fbf
+07 To Ramona.flac:080aa6a74b42c19c4b43ab39dbbd0264
+08 Tangled up in blue.flac:e32c556708c9766354ff36145e1156de
+09 Friend of the Devil.flac:a969a40a9552bce6e29d8f0d7bc0250b
+10 Can't wait.flac:743f331e63883f6912fe519a0dfeb06a
+11 (band intro).flac:0577305160e44a070602aee20edc1760
+12 Highway 61 revisited.flac:6916a98424deb0ecb34b668909cdb0ef
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-03-02.flacf\CD2 
+=================== 
+=================== 
+=================== 
+13 Knockin' on heaven's door.flac:d7ddc6a29d766423567e4ce0df73ca52
+14 Not fade away.flac:2ec5fd86f1ae94b50468b8b314c4ddd1
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-03-02.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:58.09       42004412 B   ---   --   ---xx   flac  0.5846  01 Gotta serve somebody.flac
+     4:47.48       50739740 B   ---   --   ---xx   flac  0.5574  02 Million miles.flac
+     8:05.43       85655180 B   ---   --   ---xx   flac  0.5760  03 Stuck inside of Mobile with the Memphis blues again.flac
+     6:11.00       65444444 B   ---   --   ---xx   flac  0.5459  04 Just like a woman.flac
+     5:55.26       62683196 B   ---   --   ---xx   flac  0.6053  05 Silvio.flac
+     7:41.06       81334556 B   ---   --   ---xx   flac  0.4686  06 It ain't me, babe.flac
+     5:18.15       56130524 B   ---   --   ---xx   flac  0.4756  07 To Ramona.flac
+     7:04.38       74883020 B   ---   --   ---xx   flac  0.5709  08 Tangled up in blue.flac
+     6:10.06       65282156 B   ---   --   ---xx   flac  0.5491  09 Friend of the Devil.flac
+     7:01.20       74311484 B   ---   --   ---xx   flac  0.5680  10 Can't wait.flac
+     0:26.41        4682876 B   ---   --   ---xx   flac  0.4854  11 (band intro).flac
+     4:33.46       48265436 B   ---   --   ---xx   flac  0.6239  12 Highway 61 revisited.flac
+    67:12.73      711417024 B                            0.5536  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-03-02.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:51.49       62031692 B   ---   --   ---xx   flac  0.5788  13 Knockin' on heaven's door.flac
+     4:06.73       43566140 B   ---   --   ---xx   flac  0.5655  14 Not fade away.flac
+     9:58.47      105597832 B                            0.5733  (2 files)
+=================== 
+=================== 
+=================== 

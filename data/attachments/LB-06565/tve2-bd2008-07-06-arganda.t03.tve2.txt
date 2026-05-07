@@ -1,0 +1,29 @@
+BOB DYLAN
+Rock in Rio '08
+
+Ciudad del Rock
+Arganda del Rey, Madrid, Spain
+July 6, 2008
+
+TVE2 BROADCAST - PRO SHOT - PAL - 4/3 - STEREO
+
+From VIDEO version seeded at Dime (thanks to the original seeder):
+
+DVB-T Recording, not reencoded, authored with DVD Studio Pro
+6.40 minutes
+Data Size: 179.36 MB (of the original mpeg2 file)
+Bit Rate: 3.76 Mbps
+MPEG-2, 720 x 576, 4:3, 25 fps
+
+Audio extracted with Total Recorder
+
+Lineage: MPG2 stereo, 48 kHz, 192 kbps > GM/GS(R) Roland Corp. Soundcard > wav - stereo, 44.1 kHz. 16 bits (Total Recorder 6.0) > flac (Flac Frontend 1.1.3 - align on SB option - level 8 - verify on)
+
+
+Setlist:
+
+03. Just Like Tom Thumb's Blues
+
+Luisbp51 (Hungercity October 2008)
+
+

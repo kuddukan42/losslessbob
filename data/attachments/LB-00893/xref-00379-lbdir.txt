@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-02-22-a.flacf 
+=================== 
+=================== 
+=================== 
+e0b145b61eea5e3413b96aa9c2cd0241  01 Absolutely sweet Marie.flac
+3884eaf9a0e6c8ab7f3b1cbc282dc818  02 Tonight I'll be staying here with you.flac
+089810de773f84bfb6f2095e8afb8735  03 Can't wait.flac
+aa62262865f80ead7dd7257464ae59da  04 Simple twist of fate.flac
+de4fc0fe97d380f9b4781315a59d4ebe  05 Silvio.flac
+f27e02d2f250a6a17f989317be7c88ab  06 Cocaine blues.flac
+0fb790283435f3c108cdf5dd26b46669  07 Masters of war.flac
+cd1944297a21e107886afe4ff132d66c  08 Tangled up in blue.flac
+fbf66c3bad533f03a7add6a92262a4f0  09 Million miles.flac
+e3aba9fa253fff4f5027e5afa883580a  10 Blind Willie McTell.flac
+53b88fd269e5e5b50f5d1fe0823c75d0  11 Highway 61 revisited.flac
+6796b897d322b6e15c28c3f8ae2d7e04  12 'Til I fell in love with you.flac
+c99318b08e55cc95d3aaf99fe0d40e29  13 It ain't me, babe.flac
+6b5a317f3636317e2404aa1af9ac596c  14 Love sick.flac
+9557e304f58395481059efaa48b12031  15 Rainy day women # 12 & 35.flac
+49ee1097986b74054f3be17d262dc8ea  Bob Dylan 1998.02.22 George Mason University  Fairfax, Virginia.md5
+230423c8d07d26842556020f50952e23  February-22.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-02-22-a.flacf 
+=================== 
+=================== 
+=================== 
+01 absolutely sweet marie.flac:492385dbe62b508a166bb29316845aa2
+02 tonight i'll be staying here with you.flac:c50106653002cd5f947eb2a443cede89
+03 can't wait.flac:f1d868c689c1e261b01c1374ada0eabe
+04 simple twist of fate.flac:bb573bd2789f4e2bf5d77113646d4f86
+05 silvio.flac:711d3e6891cc970b69ecd6e26d0d19ab
+06 cocaine blues.flac:c773b26475b30d780498770ecbe75c02
+07 masters of war.flac:bf3fd2e95efd07452c5e6309862aa38a
+08 tangled up in blue.flac:e63c99002cfbe91e0a875beb20d8ebcd
+09 million miles.flac:3704879371bfd9a0ccf80f3f5996672c
+10 blind willie mctell.flac:1f2cac5647243c15aa20e688c2b54931
+11 highway 61 revisited.flac:25c52805172dce3b98172247dec507dd
+12 'til i fell in love with you.flac:477015d9266de461e51193de25792949
+13 it ain't me, babe.flac:64b5f1a44c4ad3034e016a2e6afb6129
+14 love sick.flac:78aa8d9a0f50aa75167451447cd55605
+15 rainy day women # 12 & 35.flac:d7dba4207c136359d1f46f883f33016d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-02-22-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:12.24       44509292 B   ---   --   ---xx   flac  0.6090  01 Absolutely sweet Marie.flac
+     5:46.48       61147340 B   ---   --   ---xx   flac  0.6014  02 Tonight I'll be staying here with you.flac
+     5:57.09       62996012 B   ---   --   ---xx   flac  0.6107  03 Can't wait.flac
+     6:54.20       73076684 B   ---   --   ---xx   flac  0.5666  04 Simple twist of fate.flac
+     6:56.22       73434188 B   ---   --   ---xx   flac  0.6447  05 Silvio.flac
+     4:15.23       45036140 B   ---   --   ---xx   flac  0.5359  06 Cocaine blues.flac
+     4:12.58       44589260 B   ---   --   ---xx   flac  0.5267  07 Masters of war.flac
+     7:33.10       79932764 B   ---   --   ---xx   flac  0.6265  08 Tangled up in blue.flac
+     6:09.36       65176316 B   ---   --   ---xx   flac  0.6095  09 Million miles.flac
+     6:44.36       71350316 B   ---   --   ---xx   flac  0.5909  10 Blind Willie McTell.flac
+     8:35.14       90878972 B   ---   --   ---xx   flac  0.6403  11 Highway 61 revisited.flac
+     6:26.43       68191580 B   ---   --   ---xx   flac  0.6370  12 'Til I fell in love with you.flac
+     7:57.35       84225164 B   ---   --   ---xx   flac  0.5536  13 It ain't me, babe.flac
+     5:31.68       58548380 B   ---   --   ---xx   flac  0.5745  14 Love sick.flac
+     5:14.68       55549580 B   ---   --   ---xx   flac  0.6520  15 Rainy day women # 12 & 35.flac
+    92:27.64      978641988 B                            0.6016  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-11a.flacf 
+=================== 
+=================== 
+=================== 
+bbf9a129448a7d3c7485b450c51446b8  .DS_Store
+07bb5c126adda86c1827df4095818953  bd04-06-11a.txt
+fdd9a8f296164b94382a62da192eca71  bd2004-06-11.rtf
+194577a7e20bdcc7afbb718f502c134c  bd2004-06-11d1\.DS_Store
+68d759b52760bf349fb63e383fcb824e  bd2004-06-11d1\bd2004-06-11d1.md5
+0036112757df334c9fd1951df3904dd8  bd2004-06-11d1\bd2004-06-11d1t01.flac
+cab6c568be34ba6c0f8d38d5eadd3d4d  bd2004-06-11d1\bd2004-06-11d1t02.flac
+954ce286e92bcce566739090b7069c3c  bd2004-06-11d1\bd2004-06-11d1t03.flac
+b682696a33b94ea50672f88aabc4c151  bd2004-06-11d1\bd2004-06-11d1t04.flac
+4bfb3bec11a979c3c147c45cbe036ba8  bd2004-06-11d1\bd2004-06-11d1t05.flac
+6f48da5b2f3dc2b9d4a39322d2a331ae  bd2004-06-11d1\bd2004-06-11d1t06.flac
+80d481ca568bdcff48f5b3501b028d72  bd2004-06-11d1\bd2004-06-11d1t07.flac
+64427558a3a9765448a13b1eafb4ce96  bd2004-06-11d1\bd2004-06-11d1t08.flac
+0907d6125607c6ebed1f7b4d47e798b0  bd2004-06-11d1\bd2004-06-11d1t09.flac
+9818109da588d2515c69d5695734a4cc  bd2004-06-11d1\bd2004-06-11d1t10.flac
+b878b3ae88b03559cb6dfaf016da7563  bd2004-06-11d1\bd2004-06-11d1t11.flac
+b5a86309f36669efc8e8b4bf776f467d  bd2004-06-11d1\bd2004-06-11d1t12.flac
+a951c12c566e848edf4bdcee89d4b206  bd2004-06-11d1\bd2004-06-11d1t13.flac
+194577a7e20bdcc7afbb718f502c134c  bd2004-06-11d2\.DS_Store
+317768536c4ac2d3f1a55d2e94d45d2a  bd2004-06-11d2\bd2004-06-11d2.md5
+b2a248449ff47d084cf6406956881392  bd2004-06-11d2\bd2004-06-11d2t01.flac
+b23b0acce6a62848abb5ee35b5984bc5  bd2004-06-11d2\bd2004-06-11d2t02.flac
+aaa36d34fb435a4fcf7838650c93b054  bd2004-06-11d2\bd2004-06-11d2t03.flac
+970e8b870e8a7fcc24feeb80b301cde0  bd2004-06-11d2\bd2004-06-11d2t04.flac
+41502e0688692b0c1d70b8da95c2091b  bd2004-06-11d2\bd2004-06-11d2t05.flac
+537a130ea4557ebc45dea37ce911b9d7  bd2004-06-11d2\bd2004-06-11d2t06.flac
+b47fb58a516ff7a1559bb06de7843870  Unknown Taper Series.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-11a.flacf\bd2004-06-11d1 
+=================== 
+=================== 
+=================== 
+bd2004-06-11d1t01.flac:286c68c4663a91be85f31deea1932dd0
+bd2004-06-11d1t02.flac:2fa3ce290fb0fedfc605a94e181c2f19
+bd2004-06-11d1t03.flac:9bb66d5f0b8a8d9805d82e9e712d6540
+bd2004-06-11d1t04.flac:7f75fd7e6177c39ca5f5e66dab76b5e2
+bd2004-06-11d1t05.flac:6057b4181414e8451cea092e8ee0b35f
+bd2004-06-11d1t06.flac:315d9266b1b27c08924caa6e6026063f
+bd2004-06-11d1t07.flac:f88dfa5e362590f7b01488d6f94c8484
+bd2004-06-11d1t08.flac:4670e16d3c8117a6be5c62c2de5013d0
+bd2004-06-11d1t09.flac:adf33e2ea97e70cddded6c57fae08c44
+bd2004-06-11d1t10.flac:20617588aa49f38bb7273ef0a652f8e5
+bd2004-06-11d1t11.flac:591e683c06dec0d2b70ad3ace5632d48
+bd2004-06-11d1t12.flac:4f91d451fb62b57ec1fe0a2603ebd1c8
+bd2004-06-11d1t13.flac:0a0bd18b5c56ad6acac7379e1a755eaa
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-11a.flacf\bd2004-06-11d2 
+=================== 
+=================== 
+=================== 
+bd2004-06-11d2t01.flac:c3372085bfb98148f5c554b26c6f5162
+bd2004-06-11d2t02.flac:8c0c79573c3cb7246685eec831fc71ed
+bd2004-06-11d2t03.flac:f76c2d516986f4ceddb525926d8a0acf
+bd2004-06-11d2t04.flac:b38c2ba9a7673eec6afb80f5c2471174
+bd2004-06-11d2t05.flac:c09dcd79dcba543e114cdffb3d142f2e
+bd2004-06-11d2t06.flac:b848772fda3de4a6eddf9dc816391dd2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-11a.flacf\bd2004-06-11d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:12.51       12820796 B   ---   --   ---xx   flac  0.5699  bd2004-06-11d1t01.flac
+     6:17.54       66629852 B   ---   --   ---xx   flac  0.5908  bd2004-06-11d1t02.flac
+     4:18.71       45678236 B   ---   --   ---xx   flac  0.5233  bd2004-06-11d1t03.flac
+     6:16.51       66446396 B   ---   --   ---xx   flac  0.5405  bd2004-06-11d1t04.flac
+     6:07.39       64830572 B   ---   --   ---xx   flac  0.5682  bd2004-06-11d1t05.flac
+     4:44.52       50219948 B   ---   --   ---xx   flac  0.4925  bd2004-06-11d1t06.flac
+     6:06.05       64574204 B   ---   --   ---xx   flac  0.5714  bd2004-06-11d1t07.flac
+     4:53.54       51812252 B   ---   --   ---xx   flac  0.5116  bd2004-06-11d1t08.flac
+     7:22.46       78077036 B   ---   --   ---xx   flac  0.5747  bd2004-06-11d1t09.flac
+     6:15.31       66222956 B   ---   --   ---xx   flac  0.5896  bd2004-06-11d1t10.flac
+     7:06.04       75155852 B   ---   --   ---xx   flac  0.4736  bd2004-06-11d1t11.flac
+     6:30.24       68852492 B   ---   --   ---xx   flac  0.5994  bd2004-06-11d1t12.flac
+     6:27.54       68393852 B   ---   --   ---xx   flac  0.5633  bd2004-06-11d1t13.flac
+    73:40.11      779714444 B                            0.5525  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-11a.flacf\bd2004-06-11d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.29       77860652 B   ---   --   ---xx   flac  0.5943  bd2004-06-11d2t01.flac
+     7:44.62       81995468 B   ---   --   ---xx   flac  0.5139  bd2004-06-11d2t02.flac
+     7:40.18       81186380 B   ---   --   ---xx   flac  0.5976  bd2004-06-11d2t03.flac
+     5:28.28       57925100 B   ---   --   ---xx   flac  0.6037  bd2004-06-11d2t04.flac
+     0:36.37        6437468 B   ---   --   ---xx   flac  0.5164  bd2004-06-11d2t05.flac
+     6:55.42       73304828 B   ---   --   ---xx   flac  0.6054  bd2004-06-11d2t06.flac
+    35:46.66      378709896 B                            0.5799  (6 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,39 @@
+===================
+===================
+===================
+=== bd1994-10-22 Rochester.ffp
+===================
+===================
+===================
+bd94-10-22d1t01.flac:182856b0ab9536eb66f7720fac99a025
+bd94-10-22d1t02.flac:8f24dda6bd50c4a5ef2f1615e4ad9452
+bd94-10-22d1t03.flac:2d4372d5608b023848e0916fc9ab9f02
+bd94-10-22d1t04.flac:06661d1d729155aaa89c36dc3f7a2d4f
+bd94-10-22d1t05.flac:fd2fb36f34c0ee6efdeaccd981767cb0
+bd94-10-22d1t06.flac:db5d47fa31c7a9bd29b8dc4311b6c46e
+bd94-10-22d1t07.flac:7cbaa4eee032dcfdfc54e88aacb41cd3
+bd94-10-22d1t08.flac:25e46fd6c30026e574791f1d85a67a02
+bd94-10-22d1t09.flac:3a1692a26ba0a14c34b9261fbb4ab207
+bd94-10-22d2t01.flac:edf2ca28e2c52e2c2b3535fadb99573a
+bd94-10-22d2t02.flac:389b13166504534aca1970ab325fe092
+bd94-10-22d2t03.flac:3563b0b28bd352c0b469709d406afd56
+bd94-10-22d2t04.flac:afc03f1b06fd820785aff575a5f1048f
+===================
+===================
+===================
+=== bd94-10-22.txt
+===================
+===================
+===================
+Bob Dylan, 10/22/94, Rochester, 2CDR 
+
+(68min+32min),excellent sound
+Lineage : CDR>EAC>TLH>FLAC6
+CD1
+1 Jokerman 2 The Man In Me 3 All Along The Watchtower 4 I Don't Believe You 5 Tangled Up In Blue 6 Watching The River Flow 7 Mr. Tambourine Man (acoustic w band) 8 Desolation Row (acoustic w band) 9 Don't Think Twice, It's All Right (acoustic w band) 
+
+CD2 
+1 God Knows 2 I'll Remember You 3 Maggie's Farm 4 Like A Rolling Stone
+===================
+===================
+===================

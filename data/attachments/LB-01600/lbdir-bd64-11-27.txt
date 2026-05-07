@@ -1,0 +1,47 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd64-11-27 
+=================== 
+=================== 
+=================== 
+255cd302f41c30849659b8a731ae03e7  bd64-11-27.txt
+07b858b69d1a81958eb9a3a2e83f4743  info.md5
+7e1e2a2462b96a76dba2b9d4a26771b8  info.txt
+4378a47038505d90a56cc82e4114d985  Track08.shn
+5ea33a1a10e45125142149a5407b0561  Track09.shn
+0beef26677cc422ad0a736e5954c0435  Track10.shn
+f4d5c94fd1a687411e1302c6949a75d2  Track11.shn
+decca9197fe8ec482024b257090a7392  Track12.shn
+a45bdb1676b3b23c1ca500869a98c52f  Track13.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd64-11-27 
+=================== 
+=================== 
+=================== 
+589495a84b5c0233ef1ab04f04bad904  [shntool]  Track08.wav
+ae2aaa1b9fa4b91d8238d792f587212d  [shntool]  Track09.wav
+b1ce6853d332321a63f6ba55941ce754  [shntool]  Track10.wav
+ebf0d8fd352ff631252499e306815fe3  [shntool]  Track11.wav
+9600a8e41e0ca9270daed62dd192b60e  [shntool]  Track12.wav
+8f028c37e46fd4ccc0e50cfc82c47861  [shntool]  Track13.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd64-11-27 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:43.55       60634604 B   ---   --   -----    wav  1.0000  Track08.wav
+     2:22.46       25157036 B   ---   --   -----    wav  1.0000  Track09.wav
+     7:52.36       83345516 B   ---   --   -----    wav  1.0000  Track10.wav
+     5:09.00       54507644 B   ---   --   -----    wav  1.0000  Track11.wav
+     4:01.29       42580652 B   ---   --   -----    wav  1.0000  Track12.wav
+     3:03.28       32347100 B   ---   --   -----    wav  1.0000  Track13.wav
+    28:12.44      298572552 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 

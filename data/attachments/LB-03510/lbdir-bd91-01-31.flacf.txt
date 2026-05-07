@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-01-31.flacf 
+=================== 
+=================== 
+=================== 
+33cc333fed8d523c81f2b8c9c5812efa  bd91-01-31-LB-3510.txt
+fc0f1f055927a9084980ae1151044301  Bob Dylan Utrecht 31 jan 1991.txt
+12afac70a68b24022d325cafc0e4f4a5  fingerprint.ffp.txt
+7eb7fb784ce6925e40f72e47429ee603  Flacs\01 Most Likely You Go Your Way (And I'll Go Mine).flac
+7c69e52b5263d6277f2225de3c8ab362  Flacs\02 Lay, Lady, Lay.flac
+da089de9f7376258a1682c335e199342  Flacs\03 Ballad Of A Thin Man.flac
+3362b76c4422b72898af20174e2a4641  Flacs\04 Silvio.flac
+0061dba615c9df843baf20b98fc533eb  Flacs\05 The Man In Me.flac
+4b0b65c1d143937f0516269c4b470140  Flacs\06 Wiggle Wiggle.flac
+6c3b00f3cc4c2a461dac5bb7963c557e  Flacs\07 Mr. Tambourine Man.flac
+e362121f3cb44d25afea8e1ea1e3d62e  Flacs\08 Bob Dylan's Dream.flac
+c910401202f58e20b7ba54bd0376da0d  Flacs\09 Don't Think Twice, It's All Right.flac
+22c9af4bbe37687813b85c22e2aa4c36  Flacs\10 The Times They Are A-Changin'.flac
+851bbc51cd728bf93f5dc36de5f1184f  Flacs\11 Everything Is Broken.flac
+36d07f6289a87321d3f4c38490517653  Flacs\12 Gotta Serve Somebody.flac
+d529f81924e84adec8868309f1ddaf76  Flacs\13 Seeing The Real You At Last.flac
+30993e26cc688d6d5392c6e7704f4c33  Flacs\14 God Knows.flac
+0248f2c00a6eab56037527bbbd08a19f  Flacs\15 I Shall Be Released.flac
+78ea19ce05ef741d2a1025074a389d18  Flacs\16 Like A Rolling Stone.flac
+eae9d2edbc5224971e0f5a84b4e48c58  Flacs\17 Blowin' In The Wind.flac
+5be1aa84f6f6daf92a1fce972fdd3f8a  Flacs\18 Maggie's Farm.flac
+f07bb663dc161f9cda4222fce97f4ea6  my art work\19910131Utrecht.jpg
+b4582eae8ba65ed8da14c3ebfdcac47f  scouser art work\Ult01-31-91(SA)-B.jpg
+38882e55d30662751e94880a98725ec3  scouser art work\Ult01-31-91(SA)-F.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd91-01-31.flacf\Flacs 
+=================== 
+=================== 
+=================== 
+01 Most Likely You Go Your Way (And I'll Go Mine).flac:fb75dcaa1b3738852471d50ec8eedc3e
+02 Lay, Lady, Lay.flac:c589f6792f5109545b0995af436dad75
+03 Ballad Of A Thin Man.flac:4fda1725d7c91f15cee561ae23ab5167
+04 Silvio.flac:3be29ff7610deca3e8ce1830fa0ee931
+05 The Man In Me.flac:332b22fa2fd813440ee4330521573b1b
+06 Wiggle Wiggle.flac:087cf8e70d03d9f7e9a91b2334492bc7
+07 Mr. Tambourine Man.flac:cdd68ecff76907c5623062c16df35516
+08 Bob Dylan's Dream.flac:51dfa45651df3cb18f8a9f61eb531d5b
+09 Don't Think Twice, It's All Right.flac:62be2326d155cefc4282f232d6e24410
+10 The Times They Are A-Changin'.flac:00f384ddbf009e77cfd66a574a761aaa
+11 Everything Is Broken.flac:7ed75ca9725b70f11dfbb41a10fde9a4
+12 Gotta Serve Somebody.flac:1d63da82d729d712ce5ab18e8988290c
+13 Seeing The Real You At Last.flac:e1528c0e3b5d27f541acab953aa58978
+14 God Knows.flac:29cb352fe51aeba10686647316976fb0
+15 I Shall Be Released.flac:5689f2aff65a535bc0bd1a39dca04a2e
+16 Like A Rolling Stone.flac:555c67a6127fc5d496d8e3da9e3508c4
+17 Blowin' In The Wind.flac:245e6e8b3f29609a5df7d36fcd9b0eae
+18 Maggie's Farm.flac:077a32161e7b71cf93ea92b6088928de
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-01-31.flacf\Flacs 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:10.37       33603068 B   ---   --   ---xx   flac  0.6707  01 Most Likely You Go Your Way (And I'll Go Mine).flac
+     4:28.16       47312876 B   ---   --   ---xx   flac  0.6631  02 Lay, Lady, Lay.flac
+     5:15.13       55596620 B   ---   --   ---xx   flac  0.6773  03 Ballad Of A Thin Man.flac
+     3:22.16       35670476 B   ---   --   ---xx   flac  0.6709  04 Silvio.flac
+     3:54.06       41291756 B   ---   --   ---xx   flac  0.6469  05 The Man In Me.flac
+     2:37.74       27868892 B   ---   --   ---xx   flac  0.6791  06 Wiggle Wiggle.flac
+     5:14.74       55563692 B   ---   --   ---xx   flac  0.6229  07 Mr. Tambourine Man.flac
+     2:15.21       23863436 B   ---   --   ---xx   flac  0.6038  08 Bob Dylan's Dream.flac
+     2:59.72       31744988 B   ---   --   ---xx   flac  0.6263  09 Don't Think Twice, It's All Right.flac
+     2:38.30       27941804 B   ---   --   ---xx   flac  0.6381  10 The Times They Are A-Changin'.flac
+     3:28.70       36855884 B   ---   --   ---xx   flac  0.6623  11 Everything Is Broken.flac
+     3:56.41       41726876 B   ---   --   ---xx   flac  0.6614  12 Gotta Serve Somebody.flac
+     3:46.70       40031084 B   ---   --   ---xx   flac  0.6355  13 Seeing The Real You At Last.flac
+     3:45.20       39737084 B   ---   --   ---xx   flac  0.6070  14 God Knows.flac
+     4:15.53       45106700 B   ---   --   ---xx   flac  0.6241  15 I Shall Be Released.flac
+     5:30.28       58277900 B   ---   --   ---xx   flac  0.6338  16 Like A Rolling Stone.flac
+     5:41.17       60192428 B   ---   --   ---xx   flac  0.5897  17 Blowin' In The Wind.flac
+     5:37.20       59493884 B   ---   --   ---xx   flac  0.6112  18 Maggie's Farm.flac
+    71:59.03      761879448 B                            0.6384  (18 files)
+=================== 
+=================== 
+=================== 

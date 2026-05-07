@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-19-dat.flac16 
+=================== 
+=================== 
+=================== 
+3eedc521f7d244013a760f868ee71028  bd1994-07-19.info.txt
+514f80910b04cdae623cf159c40f5695  bd1994-07-19_t01 Jokerman.flac
+a1c7210d9e62fdadd19331ab40d774e6  bd1994-07-19_t02 Just Like a Woman.flac
+2d1618583bf8e89cec1b92d2b1427efc  bd1994-07-19_t03 All Along the Watchtower.flac
+ad79cb9ceb09075e2b7c52a96e3b9920  bd1994-07-19_t04 You're a Big Girl Now.flac
+3e42aeb47e9ee0ceff799cb0804b42ea  bd1994-07-19_t05 Tangled up in Blue.flac
+ac9083b23126ed76199eb8c3c844f662  bd1994-07-19_t06 Under the Red Sky.flac
+c6e3197732482855dafbc8ec17ca7d8f  bd1994-07-19_t07 Mama, You Been on My Mind.flac
+38c7b6d05c9681c0d64a1c4080db114f  bd1994-07-19_t08 Masters of War.flac
+06181cff62a8361f47df70e3906c6a97  bd1994-07-19_t09 Love Minus Zero No Limit.flac
+a1f7aa9851bb81292a1c59f473c672fd  bd1994-07-19_t10 God Knows.flac
+dd7d122b9c31972af198d2d8b85e6e27  bd1994-07-19_t11 In the Garden.flac
+df66ef73d8dbf61b115cd57c7bc6e371  bd1994-07-19_t12 Maggie's Farm.flac
+667161bf1737fe832b2ed5b1e4a97b6c  bd1994-07-19_t13 Ballad of a Thin Man.flac
+c8a43747464a096d2227dae81b64be91  bd1994-07-19_t14 It Ain't Me, Babe.flac
+70d6523b788e37ad69fff2276e07ac44  bd1994-07-19_t15 Blowin' in the Wind.flac
+49d0b30098144d2ecbd4b0e2d2898271  bd1994-07-19d1eac.LOG
+001158c431b45061db0278804c49fdeb  bd1994-07-19d2eac.LOG
+fb500cadc1cad1b36fcf805dfdd2125c  bd1994-07-19flacs.md5
+c36100d8c04cd2201f55d75aaabb3159  bd1994-07-19waves.md5
+55f7c7bcbe07fdd2b422cfa7184dff03  bd94-07-19-dat-LB-4761.txt
+32ea9077b3c51b1bb52adaf724470b5f  lbdir-bd94-07-19-dat.flac16.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-19-dat.flac16 
+=================== 
+=================== 
+=================== 
+bd1994-07-19_t01 Jokerman.flac:b0b889a143c98e1c19e4b3a19223c9a3
+bd1994-07-19_t02 Just Like a Woman.flac:4eb37c659e872a8b16dcdd7149415c7a
+bd1994-07-19_t03 All Along the Watchtower.flac:780991708ef0cf4d185fb4dea3646c75
+bd1994-07-19_t04 You're a Big Girl Now.flac:a924d7ed5a5c04d99719c80df164da1a
+bd1994-07-19_t05 Tangled up in Blue.flac:d407c53a8c920c60907c33a5a0044c54
+bd1994-07-19_t06 Under the Red Sky.flac:fdaee703e6e8b246ba9f7b25ecf324ee
+bd1994-07-19_t07 Mama, You Been on My Mind.flac:8c1981facada0631e28e8f527e60be78
+bd1994-07-19_t08 Masters of War.flac:778c29797331f85ac553a28a71432e7f
+bd1994-07-19_t09 Love Minus Zero No Limit.flac:0f94e5e278221ff1187e9a2af2ced157
+bd1994-07-19_t10 God Knows.flac:a5bfb040698fb1859b109e4cc60671a9
+bd1994-07-19_t11 In the Garden.flac:f34cee099a9b30c1d098a68f6c3086b3
+bd1994-07-19_t12 Maggie's Farm.flac:2327d8493f34588c7d58ba56342e0c86
+bd1994-07-19_t13 Ballad of a Thin Man.flac:c27f0e0a9e9fac35d8af7a5d0ea018eb
+bd1994-07-19_t14 It Ain't Me, Babe.flac:a5fde3c5a899dcf468eba2b27301b93a
+bd1994-07-19_t15 Blowin' in the Wind.flac:2db2d5b5b4ad5d91ca341f6ba12dc72c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-19-dat.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:56.55       84095804 B   ---   --   ---xx   flac  0.6095  bd1994-07-19_t01 Jokerman.flac
+     6:28.53       68567900 B   ---   --   ---xx   flac  0.5816  bd1994-07-19_t02 Just Like a Woman.flac
+     5:36.48       59383340 B   ---   --   ---xx   flac  0.6117  bd1994-07-19_t03 All Along the Watchtower.flac
+     6:59.50       74029244 B   ---   --   ---xx   flac  0.5203  bd1994-07-19_t04 You're a Big Girl Now.flac
+     9:58.06      105501356 B   ---   --   ---xx   flac  0.5771  bd1994-07-19_t05 Tangled up in Blue.flac
+     6:42.38       71002220 B   ---   --   ---xx   flac  0.5389  bd1994-07-19_t06 Under the Red Sky.flac
+     4:42.01       49747196 B   ---   --   ---xx   flac  0.4515  bd1994-07-19_t07 Mama, You Been on My Mind.flac
+     5:55.67       62779628 B   ---   --   ---xx   flac  0.4126  bd1994-07-19_t08 Masters of War.flac
+     5:32.62       58710668 B   ---   --   ---xx   flac  0.4096  bd1994-07-19_t09 Love Minus Zero No Limit.flac
+     6:00.11       63529916 B   ---   --   ---xx   flac  0.5966  bd1994-07-19_t10 God Knows.flac
+     8:27.10       89458364 B   ---   --   ---xx   flac  0.5750  bd1994-07-19_t11 In the Garden.flac
+     9:18.26       98492396 B   ---   --   ---xx   flac  0.5883  bd1994-07-19_t12 Maggie's Farm.flac
+     7:28.09       79048412 B   ---   --   ---xx   flac  0.5871  bd1994-07-19_t13 Ballad of a Thin Man.flac
+     8:31.14       90173372 B   ---   --   ---xx   flac  0.5108  bd1994-07-19_t14 It Ain't Me, Babe.flac
+     5:45.00       60858044 B   ---   --   ---xx   flac  0.4584  bd1994-07-19_t15 Blowin' in the Wind.flac
+   105:23.00     1115377860 B                            0.5426  (15 files)
+=================== 
+=================== 
+=================== 

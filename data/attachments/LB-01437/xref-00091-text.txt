@@ -1,0 +1,44 @@
+===================
+===================
+===================
+=== 2000-05-19 Oslo.txt
+===================
+===================
+===================
+2000-05-19 Oslo
+SCHUBERT REC + ASM
+
+FLAC audio files
+Received on trade HD
+
+CD 1101 Duncan And Brady102 The Times They Are A-Changin'103 It's Alright, Ma (I'm Only Bleeding)104 Love Minus Zero/No Limit105 Tangled Up In Blue106 It's All Over Now, Baby BlueCD 2201 Country Pie 202 Can't Wait203 All Along The Watchtower204 She Belongs To Me 205 Cold Irons Bound 206 Leopard-Skin Pill-Box Hat 207 Love Sick208 Like A Rolling Stone209 Forever Young210 Not Fade Away211 Don't Think Twice, It's All Right212 Rainy Day Women #12 & #35213 Blowin' In The Wind
+Shared on TUIT by gør, November 2009
+===================
+===================
+===================
+=== BD 2000-05-19 Oslo.md5
+===================
+===================
+===================
+aedb8ac861ff984914a2cd94f8624057 *101 Duncan And Brady.flac
+66fb74c6b488691553dadb13a6fe4466 *102 The Times They Are A-Changin'.flac
+8c10bed56251a7257b22030c5cf5fae0 *103 It's Alright, Ma (I'm Only Bleeding).flac
+a7af0dabb6f806b273087108ebc5f5e3 *104 Love Minus ZeroNo Limit.flac
+502b419c26f78d7f8f65f2979637bf0e *105 Tangled Up In Blue.flac
+8c958a8f45da6320f47e62c195f43b97 *106 It's All Over Now, Baby Blue.flac
+0e491661103dfad6f2d171abe24b7b1d *201 Country Pie .flac
+e12537a5c343c4e4ae680a243cdc3752 *202 Can't Wait.flac
+3a13aeee755146daab355ab2b99fe5ef *203 All Along The Watchtower.flac
+29a42374b14d80ef64ae3a1d0f68c5b2 *204 She Belongs To Me .flac
+4f33640a45e8e4d701f59340cd34c6e6 *205 Cold Irons Bound .flac
+ef6f5ed8193573796cdb93efd5beeff5 *206 Leopard-Skin Pill-Box Hat .flac
+d1b39ee14993f27d87a50412ece43bb6 *207 Love Sick.flac
+a9e0cdc329bd10c182f57f0f7df8b126 *208 Like A Rolling Stone.flac
+f7a3bd6a1fd42878fee2798b811d8f1c *209 Forever Young.flac
+6808e8cbfc7ac7ef1fd5debb9a5d388b *210 Not Fade Away.flac
+1a6a676273efcddc43a0b9a35e705cc3 *211 Don't Think Twice, It's All Right.flac
+bc735e52f685139ebefd5a69bd32fc75 *212 Rainy Day Women #12 & #35.flac
+a3cb1fe46d1d1a58bdd75cd12f363356 *213 Blowin' In The Wind.flac
+===================
+===================
+===================

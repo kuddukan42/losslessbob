@@ -1,0 +1,115 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-21-eve-get-ready.flacf 
+=================== 
+=================== 
+=================== 
+d7b30041fdf6cebebfd961525f266589  bd75-11-21-eve-get-ready-d1t01.flac
+16cbcd0fac895a5b6813679a4229977c  bd75-11-21-eve-get-ready-d1t02.flac
+9b0cde65924040ca34ebf563ca8f15d5  bd75-11-21-eve-get-ready-d1t03.flac
+2ecb6e00d131186e02f23f48dedbb430  bd75-11-21-eve-get-ready-d1t04.flac
+d8689e43524cd63ca9f0cb7c8cb098ce  bd75-11-21-eve-get-ready-d1t05.flac
+8c2387733462a011846a48816d882a2b  bd75-11-21-eve-get-ready-d1t06.flac
+fca3236265e1f96d84c516c0ec97c4ac  bd75-11-21-eve-get-ready-d1t07.flac
+4824dec4b61c57c2fded904dbc1a7836  bd75-11-21-eve-get-ready-d1t08.flac
+b0eb458b17e2ab033ba535a0ca004b55  bd75-11-21-eve-get-ready-d1t09.flac
+1ed3da504ffc20a8d0017fccf1c1b2e7  bd75-11-21-eve-get-ready-d1t10.flac
+b369cb076389538e46a5c406c6331dd4  bd75-11-21-eve-get-ready-d1t11.flac
+4c6d79a3ade712f654c2463d73ec977e  bd75-11-21-eve-get-ready-d1t12.flac
+ee0ef324f25dd230d431cbc1cf822ae2  bd75-11-21-eve-get-ready-d2t01.flac
+a97abd587e24bd1a9b924aa3804d3387  bd75-11-21-eve-get-ready-d2t02.flac
+681dcfde7ddd8a73af118c826e7bcb9c  bd75-11-21-eve-get-ready-d2t03.flac
+eecb312483fbb7189ac3646eaa00264d  bd75-11-21-eve-get-ready-d2t04.flac
+b2cae32f508e49566cc96a955ac1d225  bd75-11-21-eve-get-ready-d2t05.flac
+d6bf06a967a6e7f52ed0b8874f06d44a  bd75-11-21-eve-get-ready-d2t06.flac
+dcc0ebd44bc6d84aa4f0818d15d7e182  bd75-11-21-eve-get-ready-d2t07.flac
+3b29854a48a3f05338646e1681b5cb40  bd75-11-21-eve-get-ready-d2t08.flac
+92ef4abceb69584ed61b74f79c2da5f3  bd75-11-21-eve-get-ready-d2t09.flac
+589c8217e37e21fd99771a74c8b5aee7  bd75-11-21-eve-get-ready-d2t10.flac
+a976fbeda762d13c5be409de93800ec0  bd75-11-21-eve-get-ready-d2t11.flac
+79ef96b52d38abc362fefcf1695e309a  bd75-11-21-eve-get-ready-d2t12.flac
+0d8f3542c343e1563ce0d71633ba7003  bd75-11-21-eve-get-ready-d2t13.flac
+a4cbb2ab7e30e1dbd9027a549ed8be3c  bd75-11-21-eve-get-ready-d2t14.flac
+c9be8ba798f14c917b13077b6a17591e  bd75-11-21-eve-get-ready-d2t15.flac
+a886af9b11e1cdcdb4d22601b5fbf0b6  bd75-11-21-eve-get-ready-d2t16.flac
+ec17882e0debf73eac5e6980c28b329d  bd75-11-21-eve-get-ready-d2t17.flac
+a24dd7e9feb44e761b62539626433ae0  bd75-11-21-eve-get-ready-LB-4508.txt
+6bba77798959209ad5e3627ab3107564  noname.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-21-eve-get-ready.flacf 
+=================== 
+=================== 
+=================== 
+bd75-11-21-eve-get-ready-d1t01.flac:9cf4b5be366d46f4f342ad60b0c98fc0
+bd75-11-21-eve-get-ready-d1t02.flac:ba2647ad7106d4edd22ffe0aaded520e
+bd75-11-21-eve-get-ready-d1t03.flac:b0b5c7307da2f074ab6cc1d18df9dd67
+bd75-11-21-eve-get-ready-d1t04.flac:7fa50ab1d185d95247b64c7a2447e9c4
+bd75-11-21-eve-get-ready-d1t05.flac:b969127bed3fd54e05a6575459d8b7d5
+bd75-11-21-eve-get-ready-d1t06.flac:5231f36deeebdc902cc7f2d05524ddd2
+bd75-11-21-eve-get-ready-d1t07.flac:3e03ad12ff1b85e3ef56bca7dbd742b4
+bd75-11-21-eve-get-ready-d1t08.flac:eb7d1267570a902bff7bc6fefcef7680
+bd75-11-21-eve-get-ready-d1t09.flac:0faa4b568408acd7fe85cb418852ef41
+bd75-11-21-eve-get-ready-d1t10.flac:6b3976f5f7f0c129416238b365b453be
+bd75-11-21-eve-get-ready-d1t11.flac:d6f1b35ddc87b696f3ee7603fcad1bed
+bd75-11-21-eve-get-ready-d1t12.flac:e7c237428b8b5cfec845bd487f462f40
+bd75-11-21-eve-get-ready-d2t01.flac:b5b4b4b4c0efdabc5f8206a2139a00e5
+bd75-11-21-eve-get-ready-d2t02.flac:b0f2d43a0bd9316be4ae8d452e61a436
+bd75-11-21-eve-get-ready-d2t03.flac:e706946ce4a9cb2ff77406389d3037e6
+bd75-11-21-eve-get-ready-d2t04.flac:b132acf105f2afda32a77d0236cefd99
+bd75-11-21-eve-get-ready-d2t05.flac:0418f3b69bf1bc0cd67023cee209b28b
+bd75-11-21-eve-get-ready-d2t06.flac:7ad92784345a67bff17ccb1c7eb43a9b
+bd75-11-21-eve-get-ready-d2t07.flac:59785824528cbe92f9e38e1ec0f67563
+bd75-11-21-eve-get-ready-d2t08.flac:681253ec494705265f195689a65e8130
+bd75-11-21-eve-get-ready-d2t09.flac:acf957b18e5092ffc9a456f1fd036737
+bd75-11-21-eve-get-ready-d2t10.flac:73db3749d2c65468dabc46b3d3e5ffdd
+bd75-11-21-eve-get-ready-d2t11.flac:425766e16f80963f18447e7b7990f702
+bd75-11-21-eve-get-ready-d2t12.flac:bb8596818483233e15eb5a12089a4247
+bd75-11-21-eve-get-ready-d2t13.flac:51def6e822f5dcc52f413130397a2be8
+bd75-11-21-eve-get-ready-d2t14.flac:78be7f93d60554be0c2e833465ff21c9
+bd75-11-21-eve-get-ready-d2t15.flac:7f0d06c22ddd37a55727a1fbf1a38d48
+bd75-11-21-eve-get-ready-d2t16.flac:35eecb619d72cd848e760cadc85847b4
+bd75-11-21-eve-get-ready-d2t17.flac:aa12d7175216a6dbe1b79e243e9608dd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-21-eve-get-ready.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.70       47616284 B   ---   --   ---xx   flac  0.5651  bd75-11-21-eve-get-ready-d1t01.flac
+     5:24.18       57195980 B   ---   --   ---xx   flac  0.5638  bd75-11-21-eve-get-ready-d1t02.flac
+     5:50.17       61780028 B   ---   --   ---xx   flac  0.5382  bd75-11-21-eve-get-ready-d1t03.flac
+     3:49.38       40485020 B   ---   --   ---xx   flac  0.5501  bd75-11-21-eve-get-ready-d1t04.flac
+     4:42.65       49897724 B   ---   --   ---xx   flac  0.5489  bd75-11-21-eve-get-ready-d1t05.flac
+     5:22.37       56887868 B   ---   --   ---xx   flac  0.5786  bd75-11-21-eve-get-ready-d1t06.flac
+     5:59.58       63464060 B   ---   --   ---xx   flac  0.5647  bd75-11-21-eve-get-ready-d1t07.flac
+     3:01.55       32057804 B   ---   --   ---xx   flac  0.5519  bd75-11-21-eve-get-ready-d1t08.flac
+     2:59.00       31575644 B   ---   --   ---xx   flac  0.5068  bd75-11-21-eve-get-ready-d1t09.flac
+     3:19.60       35244764 B   ---   --   ---xx   flac  0.4724  bd75-11-21-eve-get-ready-d1t10.flac
+     4:48.45       50909084 B   ---   --   ---xx   flac  0.5067  bd75-11-21-eve-get-ready-d1t11.flac
+     4:24.00       46569644 B   ---   --   ---xx   flac  0.5244  bd75-11-21-eve-get-ready-d1t12.flac
+     2:48.02       29639948 B   ---   --   ---xx   flac  0.5447  bd75-11-21-eve-get-ready-d2t01.flac
+     5:39.40       59893724 B   ---   --   ---xx   flac  0.5356  bd75-11-21-eve-get-ready-d2t02.flac
+     2:53.68       30677180 B   ---   --   ---xx   flac  0.5678  bd75-11-21-eve-get-ready-d2t03.flac
+     3:55.00       41454044 B   ---   --   ---xx   flac  0.5150  bd75-11-21-eve-get-ready-d2t04.flac
+     3:17.25       34809644 B   ---   --   ---xx   flac  0.5805  bd75-11-21-eve-get-ready-d2t05.flac
+     4:45.50       50391644 B   ---   --   ---xx   flac  0.5884  bd75-11-21-eve-get-ready-d2t06.flac
+     6:35.50       69795644 B   ---   --   ---xx   flac  0.5273  bd75-11-21-eve-get-ready-d2t07.flac
+     4:43.30       49991804 B   ---   --   ---xx   flac  0.5382  bd75-11-21-eve-get-ready-d2t08.flac
+     3:57.52       41929148 B   ---   --   ---xx   flac  0.5528  bd75-11-21-eve-get-ready-d2t09.flac
+     4:47.48       50739740 B   ---   --   ---xx   flac  0.5201  bd75-11-21-eve-get-ready-d2t10.flac
+     4:15.72       45151388 B   ---   --   ---xx   flac  0.5220  bd75-11-21-eve-get-ready-d2t11.flac
+     8:08.10       86106764 B   ---   --   ---xx   flac  0.5903  bd75-11-21-eve-get-ready-d2t12.flac
+     4:42.60       49885964 B   ---   --   ---xx   flac  0.5598  bd75-11-21-eve-get-ready-d2t13.flac
+     5:13.70       55377884 B   ---   --   ---xx   flac  0.5831  bd75-11-21-eve-get-ready-d2t14.flac
+     4:20.05       45875804 B   ---   --   ---xx   flac  0.5941  bd75-11-21-eve-get-ready-d2t15.flac
+     4:14.03       44812700 B   ---   --   ---xx   flac  0.5959  bd75-11-21-eve-get-ready-d2t16.flac
+     3:44.50       39631244 B   ---   --   ---xx   flac  0.5969  bd75-11-21-eve-get-ready-d2t17.flac
+   132:15.48     1399848172 B                            0.5527  (29 files)
+=================== 
+=================== 
+=================== 

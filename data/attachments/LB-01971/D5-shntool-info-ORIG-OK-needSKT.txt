@@ -1,0 +1,348 @@
+Below is information from shntool on the SHN files in this directory.
+
+First is the output of  shntool len  in column form.
+In the table, a - means OK; an x means not applicable or not determined.
+Other letters indicate potential problems.
+
+    length     expanded size   cdr  WAVE problems filename
+     4:34.53       48458300    ---   --   ---xx   01 TellMe D-M D2t11.shn
+     4:24.42       46668428    ---   --   ---xx   02 TellMe O.shn
+     4:09.18       43965980    ---   --   ---xx   03 ThisWas (what) D-M D1t10.shn
+     3:49.43       40496780    ---   --   ---xx   04 ThisWas D-M D2t15.shn
+     6:48.48       72084140    ---   --   ---xx   05 Union (fs) D-M D3t3.shn
+     5:06.13       54009020    ---   --   ---xx   06 Union (hum) D-M D2t6.shn
+     5:25.57       57464108    ---   --   ---xx   07 Union O t6.shn
+     5:21.16       56662076    ---   --   ---xx   08 Union RW (mono) D4t13.shn
+     5:13.09       55234412    ---   --   ---xx   09 Union W t13.shn
+    44:52.74      475043244 B                     (totals for 9 files, 0.6535 overall compression ratio)
+
+A b in the CDR column indicates an SBE (sector boundary error)
+An h in the WAVE column indicates a non-canonical header
+An e in the WAVE column indicates extra RIFF chunks
+A c in the CDR column indicates audio is not CD quality
+
+An s in the CDR column indicates audio is too short to burn
+A 3 in the problems column indicates the file contains an ID3v2 tag
+An a in the problems column indicates the audio data is not block-aligned
+An i in the problems column indicates an inconsistent header
+A t in the problems column indicates possible truncation
+A j in the problems column indicates junk may be appended to file
+
+*******************************************************************************
+*******************************************************************************
+Next is the output of  shntool info  (long form), one file at a time.
+-------------------------------------------------------------------------------
+file name:                    01 TellMe D-M D2t11.shn
+handled by:                   shn format module
+length:                       4:34.53
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    48458256 bytes
+chunk size:                   48458292 bytes
+total size (chunk size + 8):  48458300 bytes
+actual file size:             26875921
+file is compressed:           yes
+compression ratio:            0.5546
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    02 TellMe O.shn
+handled by:                   shn format module
+length:                       4:24.42
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    46668384 bytes
+chunk size:                   46668420 bytes
+total size (chunk size + 8):  46668428 bytes
+actual file size:             27550905
+file is compressed:           yes
+compression ratio:            0.5904
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    03 ThisWas (what) D-M D1t10.shn
+handled by:                   shn format module
+length:                       4:09.18
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    43965936 bytes
+chunk size:                   43965972 bytes
+total size (chunk size + 8):  43965980 bytes
+actual file size:             25892185
+file is compressed:           yes
+compression ratio:            0.5889
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    04 ThisWas D-M D2t15.shn
+handled by:                   shn format module
+length:                       3:49.43
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    40496736 bytes
+chunk size:                   40496772 bytes
+total size (chunk size + 8):  40496780 bytes
+actual file size:             25486861
+file is compressed:           yes
+compression ratio:            0.6294
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    05 Union (fs) D-M D3t3.shn
+handled by:                   shn format module
+length:                       6:48.48
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    72084096 bytes
+chunk size:                   72084132 bytes
+total size (chunk size + 8):  72084140 bytes
+actual file size:             39176461
+file is compressed:           yes
+compression ratio:            0.5435
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    06 Union (hum) D-M D2t6.shn
+handled by:                   shn format module
+length:                       5:06.13
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    54008976 bytes
+chunk size:                   54009012 bytes
+total size (chunk size + 8):  54009020 bytes
+actual file size:             35391665
+file is compressed:           yes
+compression ratio:            0.6553
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    07 Union O t6.shn
+handled by:                   shn format module
+length:                       5:25.57
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    57464064 bytes
+chunk size:                   57464100 bytes
+total size (chunk size + 8):  57464108 bytes
+actual file size:             37748293
+file is compressed:           yes
+compression ratio:            0.6569
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    08 Union RW (mono) D4t13.shn
+handled by:                   shn format module
+length:                       5:21.16
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    56662032 bytes
+chunk size:                   56662068 bytes
+total size (chunk size + 8):  56662076 bytes
+actual file size:             45369249
+file is compressed:           yes
+compression ratio:            0.8007
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no
+-------------------------------------------------------------------------------
+file name:                    09 Union W t13.shn
+handled by:                   shn format module
+length:                       5:13.09
+WAVE format:                  0x0001 (Microsoft PCM)
+channels:                     2
+bits/sample:                  16
+samples/sec:                  44100
+average bytes/sec:            176400
+rate (calculated):            176400
+block align:                  4
+header size:                  44 bytes
+data size:                    55234368 bytes
+chunk size:                   55234404 bytes
+total size (chunk size + 8):  55234412 bytes
+actual file size:             46955673
+file is compressed:           yes
+compression ratio:            0.8501
+CD-quality properties:
+  CD quality:                 yes
+  cut on sector boundary:     yes
+  sector misalignment:        0 bytes
+  long enough to be burned:   yes
+WAVE properties:
+  non-canonical header:       no
+  extra RIFF chunks:          no
+Possible problems:
+  file contains ID3v2 tag:    no
+  data chunk block-aligned:   yes
+  inconsistent header:        no
+  file probably truncated:    unknown
+  junk appended to file:      unknown
+  odd data size has pad byte: n/a
+Extra shn-specific info:
+  seekable:                   no

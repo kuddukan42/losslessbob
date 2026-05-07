@@ -1,0 +1,109 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd76-05-03-friends-and-other-strangers.flacf 
+=================== 
+=================== 
+=================== 
+d5b61940a300449ec72393ca2f2d74db  101 - If.flac
+940cc7a664c46ec9c6ecc9143554e740  102 - Asshole From El Passo.flac
+956f82fb307433f3acb429ace559e8e9  102 - Battle Of New Orleans.flac
+1ef4efbf979d45f9495338e6115c676c  103 - Rock And Roll Across The USA.flac
+b190036a4b7081a0edc6552182e3b0fa  104 - Dear Abbie.flac
+f4bdc676dc7b735c891ef5457db5029f  106 - Mr.Tambourine Man.flac
+7ffd45b90a00a999511065481fcdfd45  107 - Love Minus Zero_No Limit.flac
+3a3a73762e2bc16b2e8bf4eab66edbd9  108 - Vincent Van Gogh.flac
+c39a8ff089fe970911ad0e0e888da45a  109 - Maggie_s Farm.flac
+c5bfae9edea54e22e70c149a98661290  110 - Mozambique.flac
+6b02b6aad5a9ee98f26642842bce4948  111 - Isis.flac
+1ccfe9ffd1aa2feaae321cfa61e8929f  112 - Jolly Roger.flac
+61643f9a8757cacd28e4709aa9bf7a5a  113 - Lover Of The Bayou.flac
+18591b3f54ab5de6e55c64b264d2cf90  114 - Chestnut Mare.flac
+972320514dcd68ab11a1af5424c7c07d  115 - Night The Drove Old Dixie Down.flac
+da9a7725d6f0523fb235a1f76619743f  201 - Diamonds And Rust.flac
+ea76c0d46bea8ff7b674dd30b7ad0769  202 - Railroad Boy.flac
+09dd277d18a1159ea8c762055f1fea05  203 - I Pity The Poor Immigrant.flac
+8d92c8b04d4e4148ff04569a85d03866  204 - Shelter From The Storm.flac
+5f861b90a8b56260604ee13bb58640c4  205 - Stuck Inside Of Mobile With Th.flac
+3928b25039b72b51178b79eef2abcdfe  206 - You_re A Big Girl Now.flac
+402237b8bc00e740f6e5559cb7932c63  207 - Rita May.flac
+e7dc7f5370a6e42da84813b8eb1b5dff  208 - Lay Lady Lay.flac
+ee40e80a5d256dc05e5476047844844b  209 - Idiot Wind.flac
+257e1eb13e1228b9941eef9093a2772b  210 - Knockin_ On Heaven_s Door.flac
+b36944507750099227c9ba5cb1e084af  211 - Gotta Travel On.flac
+40c3035a437a06bc45730d5814518d95  bd_friends and other strangers.md5
+a99fc2879a8147b63fa3b0f5f7afe2e9  BOB DYLAN and friends.doc
+fc0384006b996e2b04be700c8f046ddc  BOB DYLAN and friends.txt
+57ff8862f71cc6822efb5b94b0c41004  bobdy-friends-back.jpeg
+d19e0bd41db59ddfd926fcf0c41feb4f  bobdy-friends-front.jpeg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd76-05-03-friends-and-other-strangers.flacf 
+=================== 
+=================== 
+=================== 
+101 - If.flac:3cf987cc938f55a75d609511214e42a5
+102 - Asshole From El Passo.flac:614bb16029677a8bf682992361d66283
+102 - Battle Of New Orleans.flac:62791b2354109f903f201a5536cd1312
+103 - Rock And Roll Across The USA.flac:06a8e32f29be6fa219f139d6c707d47e
+104 - Dear Abbie.flac:7ffbd663a63ae4ff26da9c03f63905cd
+106 - Mr.Tambourine Man.flac:35426485dc626dfba8ecb6bea4d58e61
+107 - Love Minus Zero_No Limit.flac:66014ca9a7db8dbb9c7b6b5936d3ef67
+108 - Vincent Van Gogh.flac:ac263ab2eef8a017d16b951359cf5ed4
+109 - Maggie_s Farm.flac:4b8d5033b38b8da7f7319c5158e0423b
+110 - Mozambique.flac:e203b56f8d1770b812b05d69522ce5e8
+111 - Isis.flac:41d40eace3bbfec57b9a8786f6468ac3
+112 - Jolly Roger.flac:b5cc8af1b9444769a481f47c021df381
+113 - Lover Of The Bayou.flac:07977ddde2e76eaf93b1a3473447b249
+114 - Chestnut Mare.flac:684f322331392c22e62d57a036af6027
+115 - Night The Drove Old Dixie Down.flac:964c7d8d11e7236cefb17107f08a8763
+201 - Diamonds And Rust.flac:ed5f99720faa515e0e39f70f7b97248d
+202 - Railroad Boy.flac:7016ab2b73e63d44fef427a93baa1e42
+203 - I Pity The Poor Immigrant.flac:1a70a60d382dbec66dc5b43165acaf79
+204 - Shelter From The Storm.flac:46a6eea267d3e75e236683726912430b
+205 - Stuck Inside Of Mobile With Th.flac:629fa65bcd67dc79d2d96ef199d0deef
+206 - You_re A Big Girl Now.flac:6652dc7ab4bc71ab472bb3e78feef1c1
+207 - Rita May.flac:563cc062ca82de7954228744471ea20b
+208 - Lay Lady Lay.flac:caeba4b16da56037ea60f16eca712a65
+209 - Idiot Wind.flac:7d1fb19630083f0aa7813f0cc584daa6
+210 - Knockin_ On Heaven_s Door.flac:8fcc412f441d208729a8ee73924cd223
+211 - Gotta Travel On.flac:1b29b7ea5e9fb1819e893e1b16d77e53
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd76-05-03-friends-and-other-strangers.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:45.63       39837076 B   -b-   --   ---xx   flac  0.5508  101 - If.flac
+     2:54.13       30724220 B   ---   --   ---xx   flac  0.6527  102 - Asshole From El Passo.flac
+     3:21.19       35501132 B   ---   --   ---xx   flac  0.6487  102 - Battle Of New Orleans.flac
+     2:39.29       28115852 B   ---   --   ---xx   flac  0.6550  103 - Rock And Roll Across The USA.flac
+     4:46.08       50469260 B   ---   --   ---xx   flac  0.6308  104 - Dear Abbie.flac
+     5:48.53       61511900 B   ---   --   ---xx   flac  0.6458  106 - Mr.Tambourine Man.flac
+     3:47.45       40148684 B   ---   --   ---xx   flac  0.6317  107 - Love Minus Zero_No Limit.flac
+     3:49.02       40400348 B   ---   --   ---xx   flac  0.6063  108 - Vincent Van Gogh.flac
+     6:05.34       64466012 B   ---   --   ---xx   flac  0.6451  109 - Maggie_s Farm.flac
+     4:31.26       47865596 B   ---   --   ---xx   flac  0.6658  110 - Mozambique.flac
+     4:58.24       52623692 B   ---   --   ---xx   flac  0.6519  111 - Isis.flac
+     4:52.57       51642908 B   ---   --   ---xx   flac  0.6395  112 - Jolly Roger.flac
+     4:03.21       42914636 B   ---   --   ---xx   flac  0.6642  113 - Lover Of The Bayou.flac
+     5:37.69       59609132 B   ---   --   ---xx   flac  0.6360  114 - Chestnut Mare.flac
+     3:42.27       39224348 B   ---   --   ---xx   flac  0.6285  115 - Night The Drove Old Dixie Down.flac
+     4:52.10       51531220 B   -b-   --   ---xx   flac  0.5685  201 - Diamonds And Rust.flac
+     3:13.56       34176956 B   ---   --   ---xx   flac  0.5864  202 - Railroad Boy.flac
+     4:38.22       49090988 B   ---   --   ---xx   flac  0.6350  203 - I Pity The Poor Immigrant.flac
+     6:40.40       70654124 B   ---   --   ---xx   flac  0.6205  204 - Shelter From The Storm.flac
+     7:35.60       80403164 B   ---   --   ---xx   flac  0.6278  205 - Stuck Inside Of Mobile With Th.flac
+     7:55.01       83792396 B   ---   --   ---xx   flac  0.5854  206 - You_re A Big Girl Now.flac
+     3:55.23       41508140 B   ---   --   ---xx   flac  0.6197  207 - Rita May.flac
+     5:01.24       53152892 B   ---   --   ---xx   flac  0.6197  208 - Lay Lady Lay.flac
+    11:00.32      116499308 B   ---   --   ---xx   flac  0.6240  209 - Idiot Wind.flac
+     5:00.67       53077628 B   ---   --   ---xx   flac  0.6126  210 - Knockin_ On Heaven_s Door.flac
+     8:50.26       93553196 B   ---   --   ---xx   flac  0.6494  211 - Gotta Travel On.flac
+   133:27.25     1412494808 B                            0.6267  (26 files)
+=================== 
+=================== 
+=================== 

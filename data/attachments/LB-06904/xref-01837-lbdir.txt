@@ -1,0 +1,80 @@
+===================
+===================
+===================
+=== md5 for: bd96-07-01-g.flacf
+===================
+===================
+===================
+0d0970da20faaf10aadc8a903279305c *01 Drifter's Escape.flac
+8ff4c1637fa8c7e847f97e3bcbf70a0b *02 Shake Sugaree.flac
+b1fc5e244fe03a3afb53031022403200 *03 All Along The Watchtower.flac
+8855db4085ae4a962fb550ddb526cd97 *04 Simple Twist Of Fate.flac
+9cfd7dd6aa2a091021513c4fcec3bf4f *05 It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+aa597f7965dca2298224061d8f61dc4e *06 Silvio.flac
+47e432f03571c688878cc6e771d5e9a5 *07 Boots Of Spanish Leather.flac
+734bda020072ce135cfee909b97b4f4a *08 John Brown.flac
+553a3390ecf2694292629bd860f15f6d *09 Mama, You Been On My Mind.flac
+275fd3cccc9944409808b84d95494eeb *10 Maggie's Farm.flac
+1b8a8ed918295d4e6808be9111591046 *11 Ballad Of A Thin Man.flac
+049bd128434d03a87996ee0a19c77bfa *12 Obviously Five Believers.flac
+5ec3af8e45694f927bc57f0326dc6be7 *13 Alabama Getaway.flac
+6f2fa23f586c2d4db244a6a1350e4910 *14 It Ain't Me, Babe.flac
+a07c97d4e20a5fa32909a44605e1166c *15 Rainy Day Women # 12 & 35.flac
+9315ad5aecbe703079548a23f6f96e46 *16 To Ramona [filler].flac
+04789410e8e89466cc3e323b4d79e96f *17 What Good Am I [filler].flac
+84b7cc7c868ef0292a9a51b2e71ee607 *1996-07-01 Halle Muensterland, Muenster, Germany [unknown source].txt
+65fbffb92fa8903d0c7b7adbbb5c25f5 *1996-07-01 Munster.ffp
+27cf4938db0e3335ae7cf2758cac030f *ORIGINAL Info.txt
+===================
+===================
+===================
+=== ffp for: bd96-07-01-g.flacf
+===================
+===================
+===================
+01 Drifter's Escape.flac:da7dd003326f45e29776076257a903b2
+02 Shake Sugaree.flac:07c87c3d2c9425cad9e2e855b4ad0a38
+03 All Along The Watchtower.flac:4bfcc8a9aebc965bcccfaa1c1d70d447
+04 Simple Twist Of Fate.flac:3466ae4dbb49d18c4a2dbbf69db94e2f
+05 It Takes A Lot To Laugh, It Takes A Train To Cry.flac:cdb5290a606981824466baec19a4f7bb
+06 Silvio.flac:17e3c7bd9389cdfde0cde60fad44747b
+07 Boots Of Spanish Leather.flac:c7c8559345e267d510d6bc37ee0cde91
+08 John Brown.flac:85b605342b2bcbe7c235722d03f58956
+09 Mama, You Been On My Mind.flac:c7cf69ae651ce8c22de189771d606d93
+10 Maggie's Farm.flac:3cd140d96d7ad7751ca32290ddbea92e
+11 Ballad Of A Thin Man.flac:e103525df2a9d8b68f012394bce6f8b9
+12 Obviously Five Believers.flac:57bcacc0282389bedc1ab0a1623b7130
+13 Alabama Getaway.flac:ae695bf5bbf205f17f7199bd998bec57
+14 It Ain't Me, Babe.flac:c12525918d0936e63a10de9eef3ddaa8
+15 Rainy Day Women # 12 & 35.flac:77bbbcfd2f5583d2b39a2c5220522841
+16 To Ramona [filler].flac:f5ad34e4cca870f579ed2ed0e62971b0
+17 What Good Am I [filler].flac:6608d58821b502c58f72421e4e1b4c68
+===================
+===================
+===================
+=== shntool len for: bd96-07-01-g.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.40       46310924 B   ---   --   ---xx   flac  0.5992  01 Drifter's Escape.flac
+     5:54.30       62516204 B   ---   --   ---xx   flac  0.5245  02 Shake Sugaree.flac
+     5:58.17       63191228 B   ---   --   ---xx   flac  0.5861  03 All Along The Watchtower.flac
+     8:34.70       90834284 B   ---   --   ---xx   flac  0.5022  04 Simple Twist Of Fate.flac
+     7:25.73       78669740 B   ---   --   ---xx   flac  0.5459  05 It Takes A Lot To Laugh, It Takes A Train To Cry.flac
+     7:25.17       78538028 B   ---   --   ---xx   flac  0.5745  06 Silvio.flac
+     9:22.58       99273260 B   ---   --   ---xx   flac  0.5094  07 Boots Of Spanish Leather.flac
+     7:40.05       81155804 B   ---   --   ---xx   flac  0.4832  08 John Brown.flac
+     6:33.67       69482828 B   ---   --   ---xx   flac  0.5399  09 Mama, You Been On My Mind.flac
+     7:53.35       83519564 B   ---   --   ---xx   flac  0.5795  10 Maggie's Farm.flac
+     8:11.07       86628908 B   ---   --   ---xx   flac  0.5380  11 Ballad Of A Thin Man.flac
+     9:08.28       96733100 B   ---   --   ---xx   flac  0.5530  12 Obviously Five Believers.flac
+     7:52.00       83260844 B   ---   --   ---xx   flac  0.5711  13 Alabama Getaway.flac
+    14:04.00      148881644 B   ---   --   ---xx   flac  0.5193  14 It Ain't Me, Babe.flac
+     6:11.12       65472668 B   ---   --   ---xx   flac  0.5818  15 Rainy Day Women # 12 & 35.flac
+     6:33.60       69466364 B   ---   --   ---xx   flac  0.6336  16 To Ramona [filler].flac
+     6:42.48       71025740 B   ---   --   ---xx   flac  0.6157  17 What Good Am I [filler].flac
+   129:54.42     1374961132 B                            0.5511  (17 files)
+===================
+===================
+===================

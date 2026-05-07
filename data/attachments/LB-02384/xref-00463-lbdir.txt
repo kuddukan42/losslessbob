@@ -1,0 +1,68 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-09-RTM-e.flacf 
+=================== 
+=================== 
+=================== 
+23d932cbe5d42f3a0d72eee95e0a3969  bd19930709_flac.md5
+7b5db15c5034710598afcbb1eeabfd1b  bd19930709_pa.txt
+969af2c09ef069e8a1af26152bd8584a  bd19930709_wav.md5
+2ed993537702455fa97ba49278ea81b2  bd19930709d1t01.flac
+d3eb6ea4edc8f5b2e9906d8b46b96bc3  bd19930709d1t02.flac
+8fa7d2a1e31adf38ecf9789b069dd891  bd19930709d1t03.flac
+c61e5a6feab767deca39a66e0a8fbf1a  bd19930709d1t04.flac
+40ce0318e98fac0d7f1c42f7afc705d2  bd19930709d1t05.flac
+ae037c542217ebd024ec11c449d33e2e  bd19930709d1t06.flac
+35880ae5c1b86374976cd5214acab821  bd19930709d1t07.flac
+3961aa8c1433cf0c0bca2de381851c4a  bd19930709d2t01.flac
+6f45aada9d7263b9f52e63127aa21cc9  bd19930709d2t02.flac
+f7f2f5d4e69b155b1f241279140f1df7  bd19930709d2t03.flac
+cb5874afde257645fde06a5e0aea9a38  bd19930709d2t04.flac
+70b867962b3b1aace07f0388bdd70fda  bd19930709d2t05.flac
+feadafe40cd53241d9e36d14a6c24262  bd19930709d2t06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-09-RTM-e.flacf 
+=================== 
+=================== 
+=================== 
+bd19930709d1t01.flac:0aa9f0d38d15f98b0cbdc6f642ae5eff
+bd19930709d1t02.flac:d4b6585312697c585e4fc18e11f6d52f
+bd19930709d1t03.flac:525ee933459cd160a774f683caf4d20c
+bd19930709d1t04.flac:b1a5060e29f3f74bb60c4c7ba55e9489
+bd19930709d1t05.flac:2bfd152fa4b71488fd007d3b8aa36a4a
+bd19930709d1t06.flac:8584c6a2e67c46ce19c01fd8e41b9052
+bd19930709d1t07.flac:06ab8ec456965eedbd0a59053e0021db
+bd19930709d2t01.flac:cb1fff0c8df47363b4ff8c5a8140be95
+bd19930709d2t02.flac:b29a653270b75e2cfe4b67565e689103
+bd19930709d2t03.flac:3ea166e01519f0d4743170c867d10ed7
+bd19930709d2t04.flac:f3aa221944f3a9a709e64fbd9c690425
+bd19930709d2t05.flac:a10ea1b67d27b00c199141d7d374490e
+bd19930709d2t06.flac:e5c4057d00c0aa9daac875323a32a682
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-09-RTM-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:39.25       49274444 B   ---   --   ---xx   flac  0.4021  bd19930709d1t01.flac
+     8:23.00       88729244 B   ---   --   ---xx   flac  0.4730  bd19930709d1t02.flac
+     6:19.65       67008524 B   ---   --   ---xx   flac  0.4600  bd19930709d1t03.flac
+     7:23.52       78267548 B   ---   --   ---xx   flac  0.4692  bd19930709d1t04.flac
+    10:52.39      115104572 B   ---   --   ---xx   flac  0.4710  bd19930709d1t05.flac
+     7:04.53       74918300 B   ---   --   ---xx   flac  0.4353  bd19930709d1t06.flac
+     4:32.53       48105500 B   ---   --   ---xx   flac  0.4077  bd19930709d1t07.flac
+     6:12.41       65717276 B   ---   --   ---xx   flac  0.3407  bd19930709d2t01.flac
+     7:30.66       79535276 B   ---   --   ---xx   flac  0.3739  bd19930709d2t02.flac
+     8:50.49       93607292 B   ---   --   ---xx   flac  0.3727  bd19930709d2t03.flac
+     8:24.04       88915052 B   ---   --   ---xx   flac  0.4339  bd19930709d2t04.flac
+     7:39.25       81026444 B   ---   --   ---xx   flac  0.4294  bd19930709d2t05.flac
+    10:10.13      107634620 B   ---   --   ---xx   flac  0.3584  bd19930709d2t06.flac
+    98:03.35     1037844092 B                            0.4189  (13 files)
+=================== 
+=================== 
+=================== 

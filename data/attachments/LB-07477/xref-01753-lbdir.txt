@@ -1,0 +1,83 @@
+===================
+===================
+===================
+=== md5 for: bd95-09-27-DAT-Master.flacf
+===================
+===================
+===================
+5ea8ae0bd658d931319e8a23425145e6 *CD1\01 Crash on the levee (down in the flood).flac
+f1c4c5e69738690956532f8f2e16c709 *CD1\02 Tonight I'll be staying here with you.flac
+1c38ccde60605d424447182287c20f9b *CD1\03 All along the watchtower.flac
+a3ceab2877133a3f144f1af94da35b09 *CD1\04 Just like a woman.flac
+9db899e9a38249bf6fcf7957d21cd1e5 *CD1\05 It takes a lot to laugh, it takes a train to cry.flac
+667728ba064872ede051e7fa7be571a1 *CD1\06 Watching the river flow.flac
+cb97ddabc8af8fa1802c56d0f19fc3d8 *CD1\07 Tangled up in blue.flac
+0b4588c24d7ea5b3a974d343745f09c6 *CD1\08 Masters of war.flac
+87f1d27a7821aa9c671a607c92da0990 *CD1\09 Don't think twice, it's all right.flac
+035986075dfb1f5cd679b6879eb32d23 *CD1\CD1.md5
+c455945a7dda4244fc790f6c704ae8e4 *CD2\10 God knows.flac
+71205ed6476090b51d400b9677c14d40 *CD2\11 She belongs to me.flac
+8fe2b79047d54901ed513581bd825e44 *CD2\12 Obviously five believers.flac
+ef0afeeccdedd66b047639c23a1222f4 *CD2\13 Highway 61 revisited.flac
+2f43721af9ec4f3ded535cd7c5cf579e *CD2\14 It ain't me, babe.flac
+f1ecb1cb7e61fbbaaa5c20cee6f48572 *CD2\15 Rainy day women # 12 & 35.flac
+2b14124e0e271d0ae91ab2d071c08472 *CD2\CD2.md5
+10e324ff69c2cd41e6188732f924cdbe *Info\Bob Dylan 1995-09-27 Lee Civic Center, Ft. Myers, Florida, USA [DAT Master].txt
+===================
+===================
+===================
+=== ffp for: bd95-09-27-DAT-Master.flacf
+===================
+===================
+===================
+CD1\01 Crash on the levee (down in the flood).flac:7f4401fa75b043ba5529361722fbe491
+CD1\02 Tonight I'll be staying here with you.flac:54bd7a70966ded40217570983bef12e2
+CD1\03 All along the watchtower.flac:589c53828920b976223f19dffb1bcb7d
+CD1\04 Just like a woman.flac:442811503d83db9e841972d8efb36a93
+CD1\05 It takes a lot to laugh, it takes a train to cry.flac:9db19ea00ff3202ad052c1b458310a42
+CD1\06 Watching the river flow.flac:3c6c80dcdb695d7d72d939f68a8e3938
+CD1\07 Tangled up in blue.flac:1e2fda02d99447f47ef2fc091c96b380
+CD1\08 Masters of war.flac:ac426d1372c2739cdc3e12dfd3693c81
+CD1\09 Don't think twice, it's all right.flac:64f9a6534ac7ae144bb431f24f3d4c01
+CD2\10 God knows.flac:8b104c521b368f2f37153d6ef46ab201
+CD2\11 She belongs to me.flac:c98235eeee4c599f2a44e8868008dc53
+CD2\12 Obviously five believers.flac:af475d28d966d54a6d0ece1da1a9d2db
+CD2\13 Highway 61 revisited.flac:1c407bd8d8ffc2f489f1bd0f73d5b292
+CD2\14 It ain't me, babe.flac:e8f68abc1d2f0c49e9858015bb8bde37
+CD2\15 Rainy day women # 12 & 35.flac:91520c8f802f6a2bc7591ffe8341441c
+===================
+===================
+===================
+=== shntool len for: bd95-09-27-DAT-Master.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.24       53858492 B   ---   --   ---xx   flac  0.6724  01 Crash on the levee (down in the flood).flac
+     5:53.45       62375084 B   ---   --   ---xx   flac  0.5913  02 Tonight I'll be staying here with you.flac
+     5:30.25       58270844 B   ---   --   ---xx   flac  0.6095  03 All along the watchtower.flac
+     5:20.08       56466860 B   ---   --   ---xx   flac  0.5795  04 Just like a woman.flac
+     7:02.55       74570204 B   ---   --   ---xx   flac  0.5972  05 It takes a lot to laugh, it takes a train to cry.flac
+     5:40.01       59978396 B   ---   --   ---xx   flac  0.5667  06 Watching the river flow.flac
+     9:25.20       99713084 B   ---   --   ---xx   flac  0.6085  07 Tangled up in blue.flac
+     5:43.48       60618140 B   ---   --   ---xx   flac  0.5757  08 Masters of war.flac
+     7:45.36       82110716 B   ---   --   ---xx   flac  0.6213  09 Don't think twice, it's all right.flac
+    57:26.37      607961820 B                            0.6027  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd95-09-27-DAT-Master.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.07       66872108 B   ---   --   ---xx   flac  0.6271  10 God knows.flac
+     6:45.47       71552588 B   ---   --   ---xx   flac  0.5615  11 She belongs to me.flac
+     5:57.30       63045404 B   ---   --   ---xx   flac  0.6272  12 Obviously five believers.flac
+     6:42.03       70919900 B   ---   --   ---xx   flac  0.6444  13 Highway 61 revisited.flac
+    10:48.34      114387212 B   ---   --   ---xx   flac  0.6110  14 It ain't me, babe.flac
+     7:00.07       74104508 B   ---   --   ---xx   flac  0.6280  15 Rainy day women # 12 & 35.flac
+    43:32.53      460881720 B                            0.6157  (6 files)
+===================
+===================
+===================

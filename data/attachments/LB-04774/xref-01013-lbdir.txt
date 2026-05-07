@@ -1,0 +1,52 @@
+===================
+===================
+===================
+=== md5 for: bd87-03-05-b.flacf
+===================
+===================
+===================
+3e9056a202c97883d9cebe91a639a857 *BOB DYLAN - Sidewalks, Fences & Walls [4 takes] - LOSSY.txt
+0e055410125e980b23dc54b1ccd7c6b9 *FLAC\01. Sidewalks, Fences & Walls [take 1] - raw tape.flac
+e4f9e320c401671e95a5bf9c727e8f48 *FLAC\02. Sidewalks, Fences & Walls [take 2] - raw tape.flac
+95a6bba410f9fbc53f3cca1296de83b9 *FLAC\03. Sidewalks, Fences & Walls [take 3] - raw tape.flac
+e7f9f896d5d8e322a84ab6eb007382ec *FLAC\04. Sidewalks, Fences & Walls [take 4] - raw tape.flac
+b0385463e52e2e8e969fb3776604288e *FLAC\05. Sidewalks, Fences & Walls [take 1] - edited & amplified.flac
+27f3095e3e3a55b0f3b00fb185d6133f *FLAC\06. Sidewalks, Fences & Walls [take 2] - edited & amplified.flac
+f92f5fdea11a25458327f03bebec4892 *FLAC\07. Sidewalks, Fences & Walls [take 3] - edited & amplified.flac
+672b5b38488f107a78dd3433eb6a268a *FLAC\08. Sidewalks, Fences & Walls [take 4] - edited & amplified.flac
+e73fe53c87e4bdfa9384b143ea5d8ff5 *FLAC\FLAC.ffp
+===================
+===================
+===================
+=== ffp for: bd87-03-05-b.flacf
+===================
+===================
+===================
+FLAC\01. Sidewalks, Fences & Walls [take 1] - raw tape.flac:6d24802a0b82131ad5263a3e15f90335
+FLAC\02. Sidewalks, Fences & Walls [take 2] - raw tape.flac:1df0595392ead92d65759afd375c6485
+FLAC\03. Sidewalks, Fences & Walls [take 3] - raw tape.flac:14e9c1a16d6437cfa58a84fffd3022c8
+FLAC\04. Sidewalks, Fences & Walls [take 4] - raw tape.flac:8882630e69eb59a4cdca2b286a8e46b5
+FLAC\05. Sidewalks, Fences & Walls [take 1] - edited & amplified.flac:13c4a33b5f1f20146f3731dc6d19d2c0
+FLAC\06. Sidewalks, Fences & Walls [take 2] - edited & amplified.flac:eca8e6281c2a797e848d9ee1f46b77e9
+FLAC\07. Sidewalks, Fences & Walls [take 3] - edited & amplified.flac:698f74ff9e94d50f39a4cd7459a14def
+FLAC\08. Sidewalks, Fences & Walls [take 4] - edited & amplified.flac:f94936826d113bd110fbc6cc6fd055c9
+===================
+===================
+===================
+=== shntool len for: bd87-03-05-b.flacf\FLAC
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:38.59       59762012 B   ---   --   ---xx   flac  0.5546  01. Sidewalks, Fences & Walls [take 1] - raw tape.flac
+     6:25.37       68001068 B   ---   --   ---xx   flac  0.5453  02. Sidewalks, Fences & Walls [take 2] - raw tape.flac
+     3:21.17       35496428 B   ---   --   ---xx   flac  0.5053  03. Sidewalks, Fences & Walls [take 3] - raw tape.flac
+     4:18.27       45574748 B   ---   --   ---xx   flac  0.5340  04. Sidewalks, Fences & Walls [take 4] - raw tape.flac
+     5:15.47       55675632 B   -b-   --   ---xx   flac  0.6225  05. Sidewalks, Fences & Walls [take 1] - edited & amplified.flac
+     5:40.67       60133980 B   -b-   --   ---xx   flac  0.6146  06. Sidewalks, Fences & Walls [take 2] - edited & amplified.flac
+     2:44.72       29100028 B   -b-   --   ---xx   flac  0.6018  07. Sidewalks, Fences & Walls [take 3] - edited & amplified.flac
+     4:15.41       45078936 B   -b-   --   ---xx   flac  0.6156  08. Sidewalks, Fences & Walls [take 4] - edited & amplified.flac
+    37:40.67      398822832 B                            0.5751  (8 files)
+===================
+===================
+===================

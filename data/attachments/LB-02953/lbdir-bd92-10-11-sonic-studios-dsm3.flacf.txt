@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-10-11-sonic-studios-dsm3.flacf 
+=================== 
+=================== 
+=================== 
+bff3bd4b79d82cd45540596e52c14bdd  bd1992-10-11_d1t01.flac
+7bb21e654284dd472f60e9e3a24eb55d  bd1992-10-11_d1t02.flac
+0fe860732631ac76f79fd5fd5394b62c  bd1992-10-11_d1t03.flac
+e6b0552b0d8c0254f721eeabed7f5f13  bd1992-10-11_d1t04.flac
+3bab8730a7365b7946c5bd101e758650  bd1992-10-11_d1t05.flac
+808166f97baa3951ed321b72e938a13a  bd1992-10-11_d1t06.flac
+d17e4df5c7a560dff36e16b1ceac291a  bd1992-10-11_d1t07.flac
+3c233db2dbb49934e78fd38239c80006  bd1992-10-11_d1t08.flac
+e06d2a50fe4bc8097277c2614a77eaf5  bd1992-10-11_d1t09.flac
+1c28bbbde327aac66b929e4c918a6dc7  bd1992-10-11_d1t10.flac
+338b40b77440e0ea1a18e1a81d7d1e30  bd1992-10-11_d1t11.flac
+6db6fcec8db48d608f8dc2b0f623e9c7  bd1992-10-11_d2t01.flac
+08a45c354371495feb4b847f8d82d3ef  bd1992-10-11_d2t02.flac
+82e24da9784b35d915b230f1e7817f97  bd1992-10-11_d2t03.flac
+86cad2301891e64acc1fddfd924eac61  bd1992-10-11_d2t04.flac
+1b008923335274ba7902012c21f5a8b2  bd1992-10-11_d2t05.flac
+fb426e47d84952cb6f746216a6ccdd55  bd1992-10-11_d2t06.flac
+880d9986eca011bf04a463430feaa409  bd1992-10-11_d2t07.flac
+f54240318e64adb0ada442ac01cf9250  bd1992-10-11_d2t08.flac
+f4df47a5cd6f392ac280432018ef7805  bd1992-10-11_d2t09.flac
+0d27819f9bba3217d6c8cae9d4389507  bd1992-10-11_d2t10.flac
+aa266611edd40e4340b7c402d35c4033  bd1992-10-11_d2t11.flac
+9dffe396eef32f0aadb60cf3271bbd69  bd92-10-11-sonic-studios-dsm3-LB-2953.txt
+92870f92ad7bbc39ffc3c6cbac044876  Eastman 1992-10-11 Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-10-11-sonic-studios-dsm3.flacf 
+=================== 
+=================== 
+=================== 
+bd1992-10-11_d1t01.flac:1231cb257652acdaafe055d0e574fd24
+bd1992-10-11_d1t02.flac:faa3cd8b91d0124b7ef6809476c3d6bc
+bd1992-10-11_d1t03.flac:86cb73999684b514523fc905e3daf200
+bd1992-10-11_d1t04.flac:6c7174ed82690f33e95570ec357c0e36
+bd1992-10-11_d1t05.flac:7c56e8c59c0e1f7950a2506dd2bc492d
+bd1992-10-11_d1t06.flac:70a6d6ebc041c2cc970ba4a50ed06ed3
+bd1992-10-11_d1t07.flac:2ea82c62dfed22339c8bbe42d081ab98
+bd1992-10-11_d1t08.flac:9d68b6361ea7704072a9a90744426aa2
+bd1992-10-11_d1t09.flac:87328f42b56a5c6e75e5face7b0526e8
+bd1992-10-11_d1t10.flac:a670ffd278436a635b762be8f467abcf
+bd1992-10-11_d1t11.flac:4ec392a06c2460bb8abcea94911b8027
+bd1992-10-11_d2t01.flac:4f23fcca6e614290ddead07dea9e814b
+bd1992-10-11_d2t02.flac:250e4754eb4410760a45b42a84dfcdd4
+bd1992-10-11_d2t03.flac:2eef7dfd53feb125e4ca75280db60698
+bd1992-10-11_d2t04.flac:f001bb1e37cc3cbf7a3fdefd8c2e64b8
+bd1992-10-11_d2t05.flac:ee99e11be2a86f931a3627de690321e9
+bd1992-10-11_d2t06.flac:a02ab761a1c87f2c039fb330cbbe0c0c
+bd1992-10-11_d2t07.flac:da7741f13ffcfe00db912a95eb536c35
+bd1992-10-11_d2t08.flac:bd68357faf6d23d8f691a146d16f8d31
+bd1992-10-11_d2t09.flac:e1d26930333f2e9bcad1ce20079902e2
+bd1992-10-11_d2t10.flac:b86842e30626edc961e4c0ee06090a92
+bd1992-10-11_d2t11.flac:e481e04fb0c283d4b90a953eacfccb82
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-10-11-sonic-studios-dsm3.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.09       45532412 B   ---   --   ---xx   flac  0.6427  bd1992-10-11_d1t01.flac
+     6:49.45       72253484 B   ---   --   ---xx   flac  0.5812  bd1992-10-11_d1t02.flac
+     6:55.67       73363628 B   ---   --   ---xx   flac  0.6228  bd1992-10-11_d1t03.flac
+     8:18.29       87915452 B   ---   --   ---xx   flac  0.6021  bd1992-10-11_d1t04.flac
+     6:37.74       70204892 B   ---   --   ---xx   flac  0.5796  bd1992-10-11_d1t05.flac
+     5:21.65       56777324 B   ---   --   ---xx   flac  0.5729  bd1992-10-11_d1t06.flac
+    10:31.39      111400172 B   ---   --   ---xx   flac  0.6223  bd1992-10-11_d1t07.flac
+     4:26.61       47065916 B   ---   --   ---xx   flac  0.4192  bd1992-10-11_d1t08.flac
+     4:12.12       44481068 B   ---   --   ---xx   flac  0.4265  bd1992-10-11_d1t09.flac
+     6:50.64       72474572 B   ---   --   ---xx   flac  0.4671  bd1992-10-11_d1t10.flac
+     5:23.16       57014876 B   ---   --   ---xx   flac  0.4844  bd1992-10-11_d1t11.flac
+     4:30.74       47802092 B   ---   --   ---xx   flac  0.4142  bd1992-10-11_d2t01.flac
+     4:12.13       44483420 B   ---   --   ---xx   flac  0.4266  bd1992-10-11_d2t02.flac
+     6:50.63       72472220 B   ---   --   ---xx   flac  0.4672  bd1992-10-11_d2t03.flac
+     5:21.42       56723228 B   ---   --   ---xx   flac  0.4898  bd1992-10-11_d2t04.flac
+     5:45.02       60862748 B   ---   --   ---xx   flac  0.6179  bd1992-10-11_d2t05.flac
+     5:33.23       58795340 B   ---   --   ---xx   flac  0.5761  bd1992-10-11_d2t06.flac
+     8:34.22       90721388 B   ---   --   ---xx   flac  0.5325  bd1992-10-11_d2t07.flac
+     8:00.01       84674396 B   ---   --   ---xx   flac  0.5955  bd1992-10-11_d2t08.flac
+     8:24.21       88955036 B   ---   --   ---xx   flac  0.5966  bd1992-10-11_d2t09.flac
+     6:40.08       70578860 B   ---   --   ---xx   flac  0.6589  bd1992-10-11_d2t10.flac
+     5:31.30       58459004 B   ---   --   ---xx   flac  0.4456  bd1992-10-11_d2t11.flac
+   139:10.30     1473011528 B                            0.5491  (22 files)
+=================== 
+=================== 
+=================== 

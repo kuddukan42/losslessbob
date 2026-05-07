@@ -1,0 +1,60 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-exclusive-series.flacf 
+=================== 
+=================== 
+=================== 
+72327cea4c1688980c5e882515e8070c  bd95-exclusive-series-d1t01.flac
+f00401ceb64f0a7e80a29a9054e1eecc  bd95-exclusive-series-d1t02.flac
+27f80f57ec4b6e6ac3ea45f040eb2ae6  bd95-exclusive-series-d1t03.flac
+3544091deb70561cba130af4a3607731  bd95-exclusive-series-d1t04.flac
+68db6835351d5694819f07d35aab7fea  bd95-exclusive-series-d1t05.flac
+c9ff45fb8694259a3a967c57745591c4  bd95-exclusive-series-d1t06.flac
+11b4bd568522f11268251c028c6dc499  bd95-exclusive-series-d1t07.flac
+f60758147ef95357742c935f533867df  bd95-exclusive-series-d1t08.flac
+5a22b50f8a86f4273d4b1b5e5d4a80eb  bd95-exclusive-series-d1t09.flac
+f25885c454eb90432368ca5d8208a44a  bd95-exclusive-series-d1t10.flac
+a39d65c43bd277f21086831e6cd18a00  bd95-exclusive-series-d1t11.flac
+aa56f0a807fe4d5898b9fe416ad1c6b0  bd95-exclusive-series.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-exclusive-series.flacf 
+=================== 
+=================== 
+=================== 
+bd95-exclusive-series-d1t01.flac:aa24907fef29dd89ac12b84cd71c04bc
+bd95-exclusive-series-d1t02.flac:dc34447df6645cfe69b4abdb0a049016
+bd95-exclusive-series-d1t03.flac:9352e81a5e2a0064de9d971fc5a9fd05
+bd95-exclusive-series-d1t04.flac:3e9d2827539de91a259c9792316e8c4e
+bd95-exclusive-series-d1t05.flac:f310db631df2a40095a74aa817fa0173
+bd95-exclusive-series-d1t06.flac:730411ad220874ea0206944f22e2d5ff
+bd95-exclusive-series-d1t07.flac:0a288d2228fc03e0c058f7c86cb1619b
+bd95-exclusive-series-d1t08.flac:bb9ff5adb9eb2ed77787fb2d29337cc9
+bd95-exclusive-series-d1t09.flac:8d996fc7c92d9890eb940f094c83673a
+bd95-exclusive-series-d1t10.flac:37a8a10766a85117fd2058f9b241f402
+bd95-exclusive-series-d1t11.flac:cdb48c2e3ef7a17261d3b4b554660508
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-exclusive-series.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:31.55       79685804 B   ---   --   ---xx   flac  0.6335  bd95-exclusive-series-d1t01.flac
+     9:13.60       97690364 B   ---   --   ---xx   flac  0.6000  bd95-exclusive-series-d1t02.flac
+     5:52.58       62229260 B   ---   --   ---xx   flac  0.7188  bd95-exclusive-series-d1t03.flac
+     5:21.70       56789084 B   ---   --   ---xx   flac  0.6879  bd95-exclusive-series-d1t04.flac
+     6:23.42       67660028 B   ---   --   ---xx   flac  0.6216  bd95-exclusive-series-d1t05.flac
+     8:00.03       84679100 B   ---   --   ---xx   flac  0.6055  bd95-exclusive-series-d1t06.flac
+     3:40.57       38942108 B   ---   --   ---xx   flac  0.6054  bd95-exclusive-series-d1t07.flac
+     6:04.03       64216700 B   ---   --   ---xx   flac  0.6616  bd95-exclusive-series-d1t08.flac
+     9:47.02      103551548 B   ---   --   ---xx   flac  0.6184  bd95-exclusive-series-d1t09.flac
+     7:35.03       80269100 B   ---   --   ---xx   flac  0.6510  bd95-exclusive-series-d1t10.flac
+     6:08.60       65056364 B   ---   --   ---xx   flac  0.6440  bd95-exclusive-series-d1t11.flac
+    75:39.38      800769460 B                            0.6375  (11 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,93 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-14-not-dark-yet.flacf 
+=================== 
+=================== 
+=================== 
+06fbbadd5bf5ca473fd43b7091b6e8c7  bd98-01-14-not-dark-yet-d1t01.flac
+1a3b3140f31e4b2fd41ef9c127f71a8a  bd98-01-14-not-dark-yet-d1t02.flac
+67aa9a021733573d719c084930fa0003  bd98-01-14-not-dark-yet-d1t03.flac
+1bce726b6d32c5772ca4f9eba40a7211  bd98-01-14-not-dark-yet-d1t04.flac
+7ec52b7fce9f0cedd8b0218c63ae9e44  bd98-01-14-not-dark-yet-d1t05.flac
+8ea7e35d244e44cfe02a8b236690ca12  bd98-01-14-not-dark-yet-d1t06.flac
+9084dc918c4bea0906d896a686a7d5f8  bd98-01-14-not-dark-yet-d1t07.flac
+5aca9b973c3e617aaebd812c01e38fa1  bd98-01-14-not-dark-yet-d1t08.flac
+452a4496a799f6c0151d968eee497f9a  bd98-01-14-not-dark-yet-d1t09.flac
+f45d9812936c850b5189b8e01917aa94  bd98-01-14-not-dark-yet-d1t10.flac
+9851b8af0fbda83bcc4fd4bea7e51d60  bd98-01-14-not-dark-yet-d1t11.flac
+1f640cfa0dd98a8b6acb6e170593ce07  bd98-01-14-not-dark-yet-d2t01.flac
+f1c8aea0223e7df2a14b30309a778847  bd98-01-14-not-dark-yet-d2t02.flac
+8280cc0c82b4a406978e5f0440dc7d5c  bd98-01-14-not-dark-yet-d2t03.flac
+4febd103a170b32d49bb9a5da05f6856  bd98-01-14-not-dark-yet-d2t04.flac
+14d63fba7f14cd1ce3044d16e19e00dc  bd98-01-14-not-dark-yet-d2t05.flac
+8503c20f89ae9ca65f5fc9bee27dee37  bd98-01-14-not-dark-yet-d2t06.flac
+56e76a493e1749b6d4554ccc395f289c  bd98-01-14-not-dark-yet-d2t07.flac
+dc8d0093370608efe7b6aa4857a197a5  bd98-01-14-not-dark-yet-d2t08.flac
+37d4bcb34de9a9948ebf95b81b3cdd8d  bd98-01-14-not-dark-yet-d2t09.flac
+228053b2e0793489af2164c5c4e61ad9  bd98-01-14-not-dark-yet-d2t10.flac
+64d670a1d42db7a9d6dcd1dab7c79b46  bd98-01-14-not-dark-yet-d2t11.flac
+2b91e8a9b38cd54d230fccc58d88edef  bd98-01-14-not-dark-yet.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-14-not-dark-yet.flacf 
+=================== 
+=================== 
+=================== 
+bd98-01-14-not-dark-yet-d1t01.flac:1fb067b6ba5961aa6531fa878134dc0e
+bd98-01-14-not-dark-yet-d1t02.flac:313bb5f153c665a1117141fdd7f97500
+bd98-01-14-not-dark-yet-d1t03.flac:aba6c1f6b953527fe468bafa3f3473fa
+bd98-01-14-not-dark-yet-d1t04.flac:0f39d589e0c4ca968ec015c18d1d683e
+bd98-01-14-not-dark-yet-d1t05.flac:443e91e8e58d4805ab5680f0bc1d6925
+bd98-01-14-not-dark-yet-d1t06.flac:6e651478ccebb0578cd399a7326c8739
+bd98-01-14-not-dark-yet-d1t07.flac:0407aa2560f8a3d8fdf439608f367386
+bd98-01-14-not-dark-yet-d1t08.flac:448506fbb0181604846d08c34b512d95
+bd98-01-14-not-dark-yet-d1t09.flac:120634d9fca65c36c9bf672928fcf93e
+bd98-01-14-not-dark-yet-d1t10.flac:2de2c7695717aaa17fa2e72ad2655753
+bd98-01-14-not-dark-yet-d1t11.flac:0abae442d345060e44abca5feef7f54b
+bd98-01-14-not-dark-yet-d2t01.flac:121da71c5f9685f3473361cd2f7da1bd
+bd98-01-14-not-dark-yet-d2t02.flac:c6f2173f686fea4fcdc53a2fc8e1b473
+bd98-01-14-not-dark-yet-d2t03.flac:8165f4e8269a9f74863971331e4566ab
+bd98-01-14-not-dark-yet-d2t04.flac:5cfa76570e6926c54939a2e9a76fe961
+bd98-01-14-not-dark-yet-d2t05.flac:cbbe3b0059ce944869c37539ea205955
+bd98-01-14-not-dark-yet-d2t06.flac:99c3d1ad87a4f81be980ca3ea39c57b9
+bd98-01-14-not-dark-yet-d2t07.flac:e6ea9cf5fce0c6181f76ed2611aedc04
+bd98-01-14-not-dark-yet-d2t08.flac:b8ff2def694de94f3fa46403d7a876ed
+bd98-01-14-not-dark-yet-d2t09.flac:bee60de24f1e16783f27b3c33c7027b2
+bd98-01-14-not-dark-yet-d2t10.flac:c7aa91ee5106ad88aeb964297af355be
+bd98-01-14-not-dark-yet-d2t11.flac:739f1c2427fc312936bc4fe7a10c437f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-14-not-dark-yet.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:28.31       47348156 B   ---   --   ---xx   flac  0.6389  bd98-01-14-not-dark-yet-d1t01.flac
+     6:08.11       64941116 B   ---   --   ---xx   flac  0.5874  bd98-01-14-not-dark-yet-d1t02.flac
+     6:49.62       72293468 B   ---   --   ---xx   flac  0.6387  bd98-01-14-not-dark-yet-d1t03.flac
+     5:47.16       61248476 B   ---   --   ---xx   flac  0.6171  bd98-01-14-not-dark-yet-d1t04.flac
+     6:21.01       67210796 B   ---   --   ---xx   flac  0.6384  bd98-01-14-not-dark-yet-d1t05.flac
+     7:12.31       76277756 B   ---   --   ---xx   flac  0.6544  bd98-01-14-not-dark-yet-d1t06.flac
+     6:15.56       66281756 B   ---   --   ---xx   flac  0.5919  bd98-01-14-not-dark-yet-d1t07.flac
+     5:00.35       53002364 B   ---   --   ---xx   flac  0.5945  bd98-01-14-not-dark-yet-d1t08.flac
+     7:45.37       82113068 B   ---   --   ---xx   flac  0.6512  bd98-01-14-not-dark-yet-d1t09.flac
+     5:51.30       61987004 B   ---   --   ---xx   flac  0.6246  bd98-01-14-not-dark-yet-d1t10.flac
+     6:25.33       67991660 B   ---   --   ---xx   flac  0.6206  bd98-01-14-not-dark-yet-d1t11.flac
+     6:07.68       64898780 B   ---   --   ---xx   flac  0.6436  bd98-01-14-not-dark-yet-d2t01.flac
+     7:54.68       83773580 B   ---   --   ---xx   flac  0.6185  bd98-01-14-not-dark-yet-d2t02.flac
+     6:54.08       73048460 B   ---   --   ---xx   flac  0.6002  bd98-01-14-not-dark-yet-d2t03.flac
+     5:26.23       57560540 B   ---   --   ---xx   flac  0.5939  bd98-01-14-not-dark-yet-d2t04.flac
+     4:20.03       45871100 B   ---   --   ---xx   flac  0.6595  bd98-01-14-not-dark-yet-d2t05.flac
+     5:51.10       61939964 B   ---   --   ---xx   flac  0.5606  bd98-01-14-not-dark-yet-d2t06.flac
+     7:12.47       76315388 B   ---   --   ---xx   flac  0.5456  bd98-01-14-not-dark-yet-d2t07.flac
+     5:56.51       62918396 B   ---   --   ---xx   flac  0.5206  bd98-01-14-not-dark-yet-d2t08.flac
+     6:10.37       65355068 B   ---   --   ---xx   flac  0.5131  bd98-01-14-not-dark-yet-d2t09.flac
+    10:23.43      109998380 B   ---   --   ---xx   flac  0.5681  bd98-01-14-not-dark-yet-d2t10.flac
+     6:20.37       67119068 B   ---   --   ---xx   flac  0.5611  bd98-01-14-not-dark-yet-d2t11.flac
+   140:43.63     1489494344 B                            0.6009  (22 files)
+=================== 
+=================== 
+=================== 

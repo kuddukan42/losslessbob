@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-04-12b 
+=================== 
+=================== 
+=================== 
+83f0912973527c23a9c9b34671398d4b  bd93-04-12_d1t01.shn
+550a908bbacfbac1015ea1fbcfb006c2  bd93-04-12_d1t02.shn
+461482e4cfc96ed00ab74aeeefabb994  bd93-04-12_d1t03.shn
+574297af2d297389aa58c2ed12fea74b  bd93-04-12_d1t04.shn
+5f7ec2881fd1ef5b672708326aed9483  bd93-04-12_d1t05.shn
+8ddb33d9f69dbdba57a7fd93ffd06d64  bd93-04-12_d1t06.shn
+acb088ecf27c12ae2f8ef957de3cc523  bd93-04-12_d1t07.shn
+2befedb065e3ac15200218687ad4f2b2  bd93-04-12_d1t08.shn
+99820ef65c9b1436ae1c8d7e3c133601  bd93-04-12_d1t09.shn
+e46bee53bfcebef69bb9e6cf7cb27b85  bd93-04-12_d2t01.shn
+b71f687af34b2aec4b24af856f3682f6  bd93-04-12_d2t02.shn
+bf07c32ab9580525ce6d24e2fb4710c8  bd93-04-12_d2t03.shn
+a9b6d430e869df83001c2306735c7c04  bd93-04-12_d2t04.shn
+75e9cf8e39400dbb3d86654316da2242  bd93-04-12_d2t05.shn
+18fa023431e0c350ce756bb61284826c  bd93-04-12_d2t06.shn
+df4e7d15b6db71e8894ce88e49f42bd3  bd93-04-12_d2t07.shn
+0db16876fa726f97a58fb4b5643fb778  bd93-04-12_d2t08.shn
+853761c6c3ea1c1256546be0ce703d43  bd93-04-12_d2t09.shn
+0da64d0ba6aad57a312cc7d51320c8e3  bd93-04-12_Louisville.aud.shn.md5
+1db6c2da9d57a92638b6b757644bded5  bd93-04-12_Louisville.txt
+9de449b1293861e3a2c518af280aedc2  bd93-04-12b.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-04-12b 
+=================== 
+=================== 
+=================== 
+dcbfb00f3841bac8697a747b0783870f  [shntool]  bd93-04-12_d1t01.wav
+27a8da65e1a1256b5487a6c8f95acdc2  [shntool]  bd93-04-12_d1t02.wav
+dff912d45319f4e56970e2aace2b857c  [shntool]  bd93-04-12_d1t03.wav
+1a9b7073e997ee7c0a624d349ab3e79d  [shntool]  bd93-04-12_d1t04.wav
+b1654d00c7c2677264ce754cec017c23  [shntool]  bd93-04-12_d1t05.wav
+07ced2b540de3f8eabc26926f074d854  [shntool]  bd93-04-12_d1t06.wav
+f9b54763bba3a96fb0a7f4f79ff193a5  [shntool]  bd93-04-12_d1t07.wav
+3eeeee296d3345dd8e09501654bd8030  [shntool]  bd93-04-12_d1t08.wav
+1887f21d70a5fef8fab2f3e7c8ad51c0  [shntool]  bd93-04-12_d1t09.wav
+8fff9a31645fa407b2ada845aa1b9f8b  [shntool]  bd93-04-12_d2t01.wav
+df1bbcbc9193499c023b3e5872febc04  [shntool]  bd93-04-12_d2t02.wav
+dba63a1c7b2c73c878e9ee9f5db9214d  [shntool]  bd93-04-12_d2t03.wav
+10f3cf858b84b7610611bd62ac3ea713  [shntool]  bd93-04-12_d2t04.wav
+414a7d326169bc24ce55abae2179eeb9  [shntool]  bd93-04-12_d2t05.wav
+fbbdc79f1d198336e8376af58b6d7a67  [shntool]  bd93-04-12_d2t06.wav
+7be5711207ee7d4386738b7a68b859f4  [shntool]  bd93-04-12_d2t07.wav
+3ce20c267f8411ce6c5d2ed87c239f7b  [shntool]  bd93-04-12_d2t08.wav
+a23172dc2713a4e2cd05ab631f2dfbfa  [shntool]  bd93-04-12_d2t09.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-04-12b 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:26.16       57544076 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t01.wav
+     4:11.15       44311724 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t02.wav
+     4:47.48       50739740 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t03.wav
+     5:13.01       55215596 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t04.wav
+     7:59.01       84497996 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t05.wav
+     6:32.46       69257036 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t06.wav
+     5:50.00       61740044 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t07.wav
+     7:48.72       82724588 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t08.wav
+     5:47.19       61255532 B   ---   --   -----    wav  1.0000  bd93-04-12_d1t09.wav
+     7:20.11       77641916 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t01.wav
+     9:13.35       97631564 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t02.wav
+     5:55.29       62690252 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t03.wav
+     8:14.07       87158108 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t04.wav
+     9:37.11      101808716 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t05.wav
+     8:30.08       89982860 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t06.wav
+     6:12.72       65790188 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t07.wav
+     5:56.20       62845484 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t08.wav
+     8:49.03       93322700 B   ---   --   -----    wav  1.0000  bd93-04-12_d2t09.wav
+   123:24.39     1306158120 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,73 @@
+===================
+===================
+===================
+=== md5 for: bd95-04-03-h.flacf
+===================
+===================
+===================
+0965f125aa8096546aa0d898203822f5 *101 Crash On The Levee (Down In The Flood).flac
+a87855db8a518656b1cb86e086754fe0 *102 Where Teardrops Fall.flac
+d91a069a08187d186319a41493a3b43e *103 All Along The Watchtower.flac
+8ea527316c7c617302686d130ba76b2f *104 What Good Am I.flac
+a60388fb7bb3f15c3c75d21185696a94 *105 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+cfe3ce6fa2b45bc142b880f63e121b10 *106 Man In The Long Black Coat.flac
+03bee7b27e8e1aa76943ce7af9ba0499 *107 Mr. Tambourine Man.flac
+7d99c2e5853d7b38718bcf28883052ac *201 Boots Of Spanish Leather.flac
+2ce4ee479ea618ed1c94abf62a439552 *202 Gates Of Eden.flac
+8afe8729d80c3d37e685deff97424c8a *203 Jokerman.flac
+6ebf134deda2ccd8b02bc3e0a3b26951 *204 Under The Red Sky.flac
+36735d9ffcc15c30e3b3a0ea951a580f *205 Ballad Of A Thin Man.flac
+91c9e8f407270004e0491e6722d48e09 *206 Leopard-Skin Pill-Box Hat.flac
+656f34345a95a3e1015424db1b143079 *207 It Ain't Me, Babe.flac
+ea8bfc3986205d417c742a0ff259758f *Bob Dylan 1995-04-03 Labatts Apollo Manchester UK-At Manchester.md5
+aa1ba6d0cebb44ad68c39db883e29635 *DylanAtManchester.txt
+d5e69723844be9addcfa01d82f9cd29e *DylanManchester3Apr95.jpg
+3a81104b288296a1e7dcabda9f81834f *Manchester Apollo Inside.jpg
+c917262c4af4591ae2669f92912af099 *Manchester Apollo.jpg
+===================
+===================
+===================
+=== ffp for: bd95-04-03-h.flacf
+===================
+===================
+===================
+101 Crash On The Levee (Down In The Flood).flac:c79dffa4ef3d8a3dc887447b1099cfe8
+102 Where Teardrops Fall.flac:bd7e757d436ecf5104f4fa1df2caa278
+103 All Along The Watchtower.flac:700d1ee9a42863210bbf347152e82b2f
+104 What Good Am I.flac:0ba91c82cdf3cc53249322188062f92e
+105 Stuck Inside Of Mobile With The Memphis Blues Again.flac:cdea60d4e8a65b6b88b76ac15f70b866
+106 Man In The Long Black Coat.flac:d6097172e44282d9a74cc69f4e1ca339
+107 Mr. Tambourine Man.flac:df03cbc66f0287bfbd7197403b2fdf37
+201 Boots Of Spanish Leather.flac:b6a4bd5454cfe979fa0c161c5cc828b5
+202 Gates Of Eden.flac:34d869893f937c27b4d76fc5d0140d16
+203 Jokerman.flac:7ae40c9c8c3a5c4fb9fb2d4df99b907e
+204 Under The Red Sky.flac:e8be480aca3200ad727fb68ddf3b0f7a
+205 Ballad Of A Thin Man.flac:d85fb5250449f8dfa78f6e27bfd07137
+206 Leopard-Skin Pill-Box Hat.flac:b0f642c39e038488a25988c5d4ee8354
+207 It Ain't Me, Babe.flac:86609d7f88abfc5ee1f2cc4a903da431
+===================
+===================
+===================
+=== shntool len for: bd95-04-03-h.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:59.23       52797740 B   ---   --   ---xx   flac  0.5654  101 Crash On The Levee (Down In The Flood).flac
+     3:43.33       39414860 B   ---   --   ---xx   flac  0.4789  102 Where Teardrops Fall.flac
+     5:35.49       59209292 B   ---   --   ---xx   flac  0.5476  103 All Along The Watchtower.flac
+     7:35.20       80309084 B   ---   --   ---xx   flac  0.4524  104 What Good Am I.flac
+     9:33.32      101152508 B   ---   --   ---xx   flac  0.5112  105 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     8:43.47       92367788 B   ---   --   ---xx   flac  0.4117  106 Man In The Long Black Coat.flac
+     6:59.24       73968092 B   ---   --   ---xx   flac  0.3648  107 Mr. Tambourine Man.flac
+     7:27.12       78879068 B   ---   --   ---xx   flac  0.3528  201 Boots Of Spanish Leather.flac
+     7:53.07       83453708 B   ---   --   ---xx   flac  0.4116  202 Gates Of Eden.flac
+     8:23.66       88884476 B   ---   --   ---xx   flac  0.4945  203 Jokerman.flac
+     5:19.46       56379836 B   ---   --   ---xx   flac  0.4830  204 Under The Red Sky.flac
+     8:48.06       93153356 B   ---   --   ---xx   flac  0.5181  205 Ballad Of A Thin Man.flac
+     5:30.56       58343756 B   ---   --   ---xx   flac  0.5408  206 Leopard-Skin Pill-Box Hat.flac
+     7:23.56       78276956 B   ---   --   ---xx   flac  0.4122  207 It Ain't Me, Babe.flac
+    97:56.27     1036590520 B                            0.4627  (14 files)
+===================
+===================
+===================

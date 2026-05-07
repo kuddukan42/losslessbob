@@ -1,0 +1,30 @@
+; Using hkSFV on 01.29.2004 at 23:22:47
+; http://www.big-o-software.com
+;
+;/----
+;     21526252 22:29.58 2004-01-29 1-01-Duncan and Brady.flac
+;     22633340 22:31.02 2004-01-29 1-02-Song to Woody.flac
+;     57767116 22:32.34 2004-01-29 1-03-Desolation Row.flac
+;     33462201 22:33.30 2004-01-29 1-04-Love Minus Zero No Limit.flac
+;     57930704 22:34.48 2004-01-29 1-05-Tangled Up In Blue.flac
+;     19303405 22:35.22 2004-01-29 1-06-Searching for a Soldier's Grave.flac
+;     16820737 22:35.48 2004-01-29 1-07-Country Pie.flac
+;     45040414 22:36.48 2004-01-29 1-08-Positively Fourth Street.flac
+;     44110791 22:37.42 2004-01-29 1-09-Maggie's Farm.flac
+;     24254182 22:38.18 2004-01-29 1-10-Tell Me That It Isn't True.flac
+;     28205130 22:39.00 2004-01-29 1-11-Drifter's Escape.flac
+;     37779889 22:39.56 2004-01-29 1-12-Leopard-Skin Pill-Box Hat.flac
+;\----
+;
+767c75a224e69f92bb13fcb27e9cae1b *1-01-Duncan and Brady.flac
+4d6526e2772723e357de36e428938fd6 *1-02-Song to Woody.flac
+c428b6fd8848b8762114da0e582f2b4a *1-03-Desolation Row.flac
+f21738648d083a69448e2058c60d3665 *1-04-Love Minus Zero No Limit.flac
+c3c029adae174b0e1d0e09abe3dec886 *1-05-Tangled Up In Blue.flac
+8b1576cf61f38f363a411ffa1074b6e3 *1-06-Searching for a Soldier's Grave.flac
+0f23d585d8ff65e0f9a2190a0ca7fb0b *1-07-Country Pie.flac
+0903f451cfad199cbd02688a456edd05 *1-08-Positively Fourth Street.flac
+723f9b1c9ca3c1ff36e7cbfe1613122b *1-09-Maggie's Farm.flac
+23d165e4e1c8126d25c013d1d4631871 *1-10-Tell Me That It Isn't True.flac
+443392e883367b64b948f834c8ef9b02 *1-11-Drifter's Escape.flac
+2a9dd2788e02a740932ba69a095a6ae3 *1-12-Leopard-Skin Pill-Box Hat.flac

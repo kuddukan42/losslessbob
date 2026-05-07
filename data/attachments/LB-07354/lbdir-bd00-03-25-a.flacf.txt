@@ -1,0 +1,98 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd00-03-25-a.flacf 
+=================== 
+=================== 
+=================== 
+235b4f0736de02262f489fcdaa3cfdb8  2000-03-25 Shrine Auditorium, Billings, Montana, USA [uT].md5
+32c8795242b78a62dc40e528401f8d3f  CD1\01 Hallelujah, I'm ready to go.flac
+350f92982c4ef3daa9336f1cb29f4c9f  CD1\02 My back pages.flac
+59166bac87ffff4ca477ffcbd5ec6f62  CD1\03 Masters of war.flac
+3bfaa4f4416b143f07a2582e32083708  CD1\04 Mama, you been on my mind.flac
+32c65d30b0cabdaf8d40239332d4003a  CD1\05 Tangled up in blue.flac
+1fa980cad3f3a1f2d77b37215cc3fae4  CD1\06 Gates of Eden.flac
+f197d34d506c5297cc50c469be81da8e  CD1\07 Country Pie.flac
+5be73d2d14275a9b56ddf75729bfa9e4  CD1\08 She belongs to me.flac
+6e50e7052346b333d95c7a4b9b1d10f7  CD1\09 Watching the river flow.flac
+7e248f1ae75c5ecce149801a418f879e  CD1\10 Tombstone blues.flac
+d8fe3fa81d6cb65d0be616c20ad12f46  CD1\11 Make you feel my love.flac
+eaf16a3971f09a5bc5a69bddcaaa23ef  CD1\12 Highway 61 revisited.flac
+66afa2ee1c4268ec1ad1cf8d0c263f98  CD2\13 Love sick.flac
+9d18921686434b8eb1a0ddfc206c449f  CD2\14 Like a rolling stone.flac
+4515eb352de28782ee773718fe03d644  CD2\15 Don't think twice, it's all right.flac
+291d078f493e85600bd84a75c37ddc78  CD2\16 Not fade away.flac
+8ee8603a4df5feccb407a93d845ed2ed  CD2\17 Blowin' in the wind.flac
+e9285893ce008ef6ce1aa3b2235067f6  CD2\18 Rainy day women # 12 & 35.flac
+b0aa62e32b1479a120fce27e973de11f  Info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-25-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Hallelujah, I'm ready to go.flac:c6667ef770c5b61e8b6607f9f08de827
+02 My back pages.flac:6edffe6d505ab5ded95d2038f56b6478
+03 Masters of war.flac:ed3bffc81310ff62e95a1208d052ae0b
+04 Mama, you been on my mind.flac:25fb7115eed3ed5b1d43603c637f4af9
+05 Tangled up in blue.flac:948f23e717a16785e58a63bc49fc8b96
+06 Gates of Eden.flac:968b63b7b62cd4fe695e5d50dcd801ca
+07 Country Pie.flac:043bec40f445838cb3e4b389ba8e9c8f
+08 She belongs to me.flac:e56cc64cc25f925afce08bdd7a759c8f
+09 Watching the river flow.flac:17856c2f93600ab0edfd890dbee0dab5
+10 Tombstone blues.flac:8d9d4f409e66ebfccb0d1c124ceafa91
+11 Make you feel my love.flac:28647cd59f36c82c0dbc4c616a2ac69e
+12 Highway 61 revisited.flac:ebb4c7ca73aea6235dbe89020a0e17b6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd00-03-25-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+13 Love sick.flac:83335d64a1e40a67cf106b67a69e7658
+14 Like a rolling stone.flac:204651fd1ad33ba189a09c8402d1331d
+15 Don't think twice, it's all right.flac:0b93b1ba02e2d97696f44e8c64a50db4
+16 Not fade away.flac:a2c1810d89b6920896865feb24946f39
+17 Blowin' in the wind.flac:37259af7bc7e2ffa93ae6f23ea4669ad
+18 Rainy day women # 12 & 35.flac:8e7223b8eba8791808300355e91b0fce
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-25-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:35.39       27433772 B   ---   --   ---xx   flac  0.6498  01 Hallelujah, I'm ready to go.flac
+     6:26.02       68095148 B   ---   --   ---xx   flac  0.6235  02 My back pages.flac
+     5:35.55       59223404 B   ---   --   ---xx   flac  0.5923  03 Masters of war.flac
+     4:32.36       48065516 B   ---   --   ---xx   flac  0.6262  04 Mama, you been on my mind.flac
+     9:14.10       97749164 B   ---   --   ---xx   flac  0.6270  05 Tangled up in blue.flac
+     8:00.43       84773180 B   ---   --   ---xx   flac  0.5952  06 Gates of Eden.flac
+     3:00.02       31756748 B   ---   --   ---xx   flac  0.5855  07 Country Pie.flac
+     5:48.24       61443692 B   ---   --   ---xx   flac  0.5783  08 She belongs to me.flac
+     5:42.38       60418220 B   ---   --   ---xx   flac  0.5997  09 Watching the river flow.flac
+     6:50.05       72335804 B   ---   --   ---xx   flac  0.5917  10 Tombstone blues.flac
+     4:47.44       50730332 B   ---   --   ---xx   flac  0.5600  11 Make you feel my love.flac
+     6:37.31       70103756 B   ---   --   ---xx   flac  0.6131  12 Highway 61 revisited.flac
+    69:10.29      732128736 B                            0.6034  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd00-03-25-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:03.59       64172012 B   ---   --   ---xx   flac  0.5503  13 Love sick.flac
+     7:58.19       84363932 B   ---   --   ---xx   flac  0.6017  14 Like a rolling stone.flac
+     6:55.23       73260140 B   ---   --   ---xx   flac  0.6291  15 Don't think twice, it's all right.flac
+     4:24.73       46741340 B   ---   --   ---xx   flac  0.6115  16 Not fade away.flac
+     6:06.69       64724732 B   ---   --   ---xx   flac  0.5871  17 Blowin' in the wind.flac
+     5:52.40       62186924 B   ---   --   ---xx   flac  0.6171  18 Rainy day women # 12 & 35.flac
+    37:21.58      395449080 B                            0.5996  (6 files)
+=================== 
+=================== 
+=================== 

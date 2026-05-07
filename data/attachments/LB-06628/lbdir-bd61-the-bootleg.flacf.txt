@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-the-bootleg.flacf 
+=================== 
+=================== 
+=================== 
+55c14b21cb2792a8d2168d13140b167a  bd61-the-bootleg-t01.flac
+5f17b2c675a872018c502ec44f0384e0  bd61-the-bootleg-t02.flac
+a9bdbe84eeb6e53c72ced1fb001a0ced  bd61-the-bootleg-t03.flac
+7e7f98b53927129227db2fe5ea9fb1b7  bd61-the-bootleg-t04.flac
+7ba898a5b5b953cb29069bb24b0408c9  bd61-the-bootleg-t05.flac
+313334bec218d5ca8f5f8f65f86d8122  bd61-the-bootleg-t06.flac
+2503747045b582705893c3c96d7e5534  bd61-the-bootleg-t07.flac
+9e3958b35a19f7383a14e302b0c7af54  bd61-the-bootleg-t08.flac
+93f87bceb1c12b90935ad00609886238  bd61-the-bootleg-t09.flac
+6b46ceec9246e93bf3c9c1755005819e  bd61-the-bootleg-t10.flac
+fab23e7f7f0e7855e7d7fb0ff87c7fa5  bd61-the-bootleg-t11.flac
+5b41d9aa5f25ddf7e558a1b68fade722  bd61-the-bootleg-t12.flac
+d4486f528fe01004e9664cec33258de4  bd61-the-bootleg-t13.flac
+5ebb6e49d97b49b2807608eb6314a0a6  bd61-the-bootleg-t14.flac
+6a563a129f33bffd771ea3d3575b3d88  bd61-the-bootleg-t15.flac
+47bd3290457c733f51a8c70331756039  bd61-the-bootleg-t16.flac
+43b8de6412afb1d05f2504f017cd34a9  bd61-the-bootleg-t17.flac
+f8f9a2c82c4493c8edba2e2ad964b54b  bd61-the-bootleg-t18.flac
+faf82a98f407c68f11d8114befeb7592  bd61-the-bootleg-t19.flac
+99f974b7834459b5ebe1cfd481b35790  bd61-the-bootleg-t20.flac
+b3f21a39da436f8e5558fe0db40c1a52  bd61-the-bootleg-t21.flac
+0a27ef99f40c4d27607e4790895d8869  bd61-the-bootleg-t22.flac
+88444f685dfbb3226ad5fb447f7aced7  bd61-the-bootleg-t23.flac
+0156b1588d4a0df23c056423ce36ab7f  bd61-the-bootleg-t24.flac
+121183d2d2a3e63398af2b80d9363c07  bd61-the-bootleg.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-the-bootleg.flacf 
+=================== 
+=================== 
+=================== 
+bd61-the-bootleg-t01.flac:dc4f2192bdc93feffa6432756f5ffe21
+bd61-the-bootleg-t02.flac:0cd4a988ba312cc705f746b9dfc52cea
+bd61-the-bootleg-t03.flac:86db45c01051794bb0e1f024c4319266
+bd61-the-bootleg-t04.flac:389ad31344d99d0c4bfeac01190992b2
+bd61-the-bootleg-t05.flac:9e3de9f0fd657dabaf7911a196dad9b8
+bd61-the-bootleg-t06.flac:7515c02ca7b9c0e4f8df9902f9d89ff9
+bd61-the-bootleg-t07.flac:cf1df4e3b809be0ced238d03213ad75c
+bd61-the-bootleg-t08.flac:90a3b2d4f998d5e14ce16dc1a327bafc
+bd61-the-bootleg-t09.flac:1a8d3f99a720d76457a56da64e05be29
+bd61-the-bootleg-t10.flac:ba58183e4b6e5ac8b83d3f24515e48d8
+bd61-the-bootleg-t11.flac:293f762b8982626a14553641c3158737
+bd61-the-bootleg-t12.flac:fdb798284e3ce4d9e840ed11ad288135
+bd61-the-bootleg-t13.flac:2babf0eafbdd7a228d20149f330720fe
+bd61-the-bootleg-t14.flac:becffc05b7abb606b1d881e0c25787ec
+bd61-the-bootleg-t15.flac:b13efc1312e9f8a3aa6df0c1b6d90271
+bd61-the-bootleg-t16.flac:8fceb6c619d3d8d6401012f518c55724
+bd61-the-bootleg-t17.flac:4e2b8ed75132b8f479a5e759e5b6074c
+bd61-the-bootleg-t18.flac:0333295163c9139c8db818db323b6343
+bd61-the-bootleg-t19.flac:165d2f677e69154eb6e0879986b51856
+bd61-the-bootleg-t20.flac:75c437dfcb07b349f023ac02a5654ded
+bd61-the-bootleg-t21.flac:9809989c8a13384077481321c394c36c
+bd61-the-bootleg-t22.flac:3f6b1145fb00aed40cbe88eb535467a2
+bd61-the-bootleg-t23.flac:6ef0d65a43c915cdc2c8dd8906b2da7a
+bd61-the-bootleg-t24.flac:b0482cb92df95cbd18646b8f03936361
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-the-bootleg.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:43.20       18216284 B   ---   --   ---xx   flac  0.5031  bd61-the-bootleg-t01.flac
+     3:22.27       35696348 B   ---   --   ---xx   flac  0.4909  bd61-the-bootleg-t02.flac
+     2:41.60       28541564 B   ---   --   ---xx   flac  0.4901  bd61-the-bootleg-t03.flac
+     3:10.28       33581900 B   ---   --   ---xx   flac  0.5084  bd61-the-bootleg-t04.flac
+     2:22.22       25100588 B   ---   --   ---xx   flac  0.4886  bd61-the-bootleg-t05.flac
+     3:25.65       36314924 B   ---   --   ---xx   flac  0.5660  bd61-the-bootleg-t06.flac
+     2:50.45       30093884 B   ---   --   ---xx   flac  0.4816  bd61-the-bootleg-t07.flac
+     1:47.38       18964220 B   ---   --   ---xx   flac  0.5380  bd61-the-bootleg-t08.flac
+     2:37.25       27753644 B   ---   --   ---xx   flac  0.5335  bd61-the-bootleg-t09.flac
+     5:20.17       56488028 B   ---   --   ---xx   flac  0.4684  bd61-the-bootleg-t10.flac
+     2:20.70       24860684 B   ---   --   ---xx   flac  0.5241  bd61-the-bootleg-t11.flac
+     2:44.23       28983740 B   ---   --   ---xx   flac  0.4372  bd61-the-bootleg-t12.flac
+     2:44.10       28953164 B   ---   --   ---xx   flac  0.4411  bd61-the-bootleg-t13.flac
+     4:09.42       44022428 B   ---   --   ---xx   flac  0.4460  bd61-the-bootleg-t14.flac
+     4:02.10       42712364 B   ---   --   ---xx   flac  0.4038  bd61-the-bootleg-t15.flac
+     1:57.68       20798780 B   ---   --   ---xx   flac  0.4684  bd61-the-bootleg-t16.flac
+     1:34.50       16699244 B   ---   --   ---xx   flac  0.4168  bd61-the-bootleg-t17.flac
+     3:44.35       39595964 B   ---   --   ---xx   flac  0.4626  bd61-the-bootleg-t18.flac
+     2:40.55       28353404 B   ---   --   ---xx   flac  0.4733  bd61-the-bootleg-t19.flac
+     3:03.35       32363564 B   ---   --   ---xx   flac  0.5115  bd61-the-bootleg-t20.flac
+     2:24.72       25570988 B   ---   --   ---xx   flac  0.4182  bd61-the-bootleg-t21.flac
+     3:39.35       38713964 B   ---   --   ---xx   flac  0.4893  bd61-the-bootleg-t22.flac
+     2:51.53       30289100 B   ---   --   ---xx   flac  0.5329  bd61-the-bootleg-t23.flac
+     3:07.45       33092684 B   ---   --   ---xx   flac  0.6207  bd61-the-bootleg-t24.flac
+    70:27.50      745761456 B                            0.4870  (24 files)
+=================== 
+=================== 
+=================== 

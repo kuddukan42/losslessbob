@@ -1,0 +1,266 @@
+===================
+===================
+===================
+=== bd-01-10-17d1-shn.md5
+===================
+===================
+===================
+13b354bbc18b88dbcf800b1096c8f460 *bd-01-10-17d1-t01.shn
+0cd46567cddcfa6be0fbedb5b1cec0c3 *bd-01-10-17d1-t02.shn
+d2066e6d5838845f7c5d0d29c6decc9a *bd-01-10-17d1-t03.shn
+a84db38d48c066dba19f6dea56d1dccb *bd-01-10-17d1-t04.shn
+eb118eb98c5feff5c413acd0896a692e *bd-01-10-17d1-t05.shn
+76abcab1638db3550b5cbf226b849736 *bd-01-10-17d1-t06.shn
+29d09071160f3a1325b397de36bdf549 *bd-01-10-17d1-t07.shn
+7f312bdd62f5a6f28cc9bc544e62ce28 *bd-01-10-17d1-t08.shn
+04dfaea12076e5707b7a9aad3d791bef *bd-01-10-17d1-t09.shn
+6287e18ade6d1825816883686989c63a *bd-01-10-17d1-t10.shn
+9ff0e1624346eedf14a95f6763a440df *bd-01-10-17d1-t11.shn
+===================
+===================
+===================
+=== bd-01-10-17d1.shnf.st5
+===================
+===================
+===================
+722d9060e58f0c92c9bf008c701bbab1  [shntool]  bd-01-10-17d1-t01.shn
+9964b3d615d3e53927110067d330593b  [shntool]  bd-01-10-17d1-t02.shn
+8c0ee84a5c84b33b7dc56d8e8e3d0090  [shntool]  bd-01-10-17d1-t03.shn
+056a389ae88c336c49e66f0bdabb7567  [shntool]  bd-01-10-17d1-t04.shn
+a2186b02569ab4d28be8aa07592bff09  [shntool]  bd-01-10-17d1-t05.shn
+5ada028f8b8f98ece4fc4d86ef58c087  [shntool]  bd-01-10-17d1-t06.shn
+56ee1a16836f2b9ac4782381ca8e4e63  [shntool]  bd-01-10-17d1-t07.shn
+a30dad912fcfc1f1ecf529ed385234b4  [shntool]  bd-01-10-17d1-t08.shn
+7e11e9b0c45d024927580590427b8cb2  [shntool]  bd-01-10-17d1-t09.shn
+b27fafd78ca4b65431f1253f6120ecb7  [shntool]  bd-01-10-17d1-t10.shn
+991861410c7b77d8e3b9a35490fd6db5  [shntool]  bd-01-10-17d1-t11.shn
+===================
+===================
+===================
+=== bd-01-10-17d2-shn.md5
+===================
+===================
+===================
+40932e80f741d2c693e0c00084372f9f *bd-01-10-17d2-t01.shn
+66dd4364c16ee4d07ae238c74abf27b7 *bd-01-10-17d2-t02.shn
+f0cadc2e9cefea2f43576d2e68f37041 *bd-01-10-17d2-t03.shn
+1c5c55cb50fca943087a0b95fff0c120 *bd-01-10-17d2-t04.shn
+3ce614a7ae09a5dc30b228b2f70f60f6 *bd-01-10-17d2-t05.shn
+0dd6b90744da800c6bfd045c85ebb1e5 *bd-01-10-17d2-t06.shn
+8ad935655e9a0ec45b49f511382bfa01 *bd-01-10-17d2-t07.shn
+53965e3e9f3ae930d373c0c998c7b003 *bd-01-10-17d2-t08.shn
+db6603ee7fd50716e733e3d10e9453cf *bd-01-10-17d2-t09.shn
+9b0b85d276b6a71852c65ef9f4ab118c *bd-01-10-17d2-t10.shn
+===================
+===================
+===================
+=== bd-01-10-17d2-shnf.st5
+===================
+===================
+===================
+797735fc8aba182e795a0c83efa8596f  [shntool]  bd-01-10-17d2-t01.shn
+3d4a6e0a5edc54a6b1a2e070d28d48b6  [shntool]  bd-01-10-17d2-t02.shn
+67a08a2191b4a750b3b89e4bcf8b22e1  [shntool]  bd-01-10-17d2-t03.shn
+2c8089a0b49fd8fd62f0032715a519c3  [shntool]  bd-01-10-17d2-t04.shn
+c3b3cefd9ab4b487dee13a55e4669051  [shntool]  bd-01-10-17d2-t05.shn
+2c065aa7f3d3e17c94171c75c3f15702  [shntool]  bd-01-10-17d2-t06.shn
+f38bd533938508c611a9ad2f870c7360  [shntool]  bd-01-10-17d2-t07.shn
+5c396b0671de67ad252ad560698b35f6  [shntool]  bd-01-10-17d2-t08.shn
+5c5944fed2b52f8ed57146fe2e20a7dc  [shntool]  bd-01-10-17d2-t09.shn
+4bb9fdf1c35afcb62e798e18b8c5ae49  [shntool]  bd-01-10-17d2-t10.shn
+===================
+===================
+===================
+=== lineage.txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+recorded live at the:-
+
+RIMAC Arena
+University of California San Diego
+La Jolla
+California
+
+17 October 2001
+
+An OldToaD remaster
+
+D1 60:34
+D2 65:03
+
+Summary of restoration.
+
+disc one
+
+T01: Clicks have been removed at 0:03.88, 0:04.29, 0:04.70 & at 0:08.98. The intro was originally part of "Wait For The Light To Shine", it now stands alone as T1, all subsequent tracks having been renumbered. This why the EAC extract log only shows ten tracks on disc one.
+
+T02: A click has been removed at 0:23:15.
+
+T03: This is perfect.
+
+T04: Bob's introduction to Desolation Row has been slightly enhanced whilst a nearby screamer has been toned down. 
+A click has been removed at 4:31.85, right in the middle of the word "punished". 
+Further clicks have been removed at 5:37.12, 5:39.76, 6:27.77, 6:29.88, 6:32.54, 6:37.59, 6:42.56, 6:44.15, 
+6:44.57, 7:25.57, 8:11.72, & 8:12.5. A little adjustment was undertaken over the T4/T5 changeover.
+
+T05: This is perfect
+
+T06: This track has been enhanced by +2dB.
+
+T07: T7 has also been enhanced by +2dB. Clicks at 6:12.97 & 6:13.87 have been removed.
+
+T08: A click at 5:42.09 has been removed, and the track has been enhanced by +2dB.
+
+T09: There are some mild mike bumps at the beginning of this track, these remain. Clicks have been removed at 0:05.37, 0:11.13, & 1:50.88. Some rather staccato claps at the end of the track have been toned down a little. (Gotta say I 
+just love this song!) The track has been enhanced by +2dB from 0:02.754 to 1:11.109.
+
+T10: The audience is a little intrusive at the beginning of this track, but things improve as it goes on. At 1:50.92 
+a "tsch" has been removed, as at 1:55.76. Clicks at 2:02.44 and 2:02.66 have been removed. The song has been enhanced 
+very slightly.
+
+T11: The track changeoever has been modified slightly. The song has been enhanced by +4dB. A big click at 2:22.836 
+has been removed, evidence of the edit is regretfully apparent, it could not be avoided. The fade out was followed 
+by far too many seconds of silent space, this has been removed.
+
+
+disc two
+
+T01: Small clicks have been removed at 0:01.55 & 0:02.05, as has a bump at 0:09.76. A non-applause click 
+at 8:22.236 and a "pshht" at 8:30.45 have also been removed. This track has been enhanced overall by +4dB. 
+
+T02: Some very faint but audible ticks have been removed around the track changeover. The very beginning of the song 
+has been slightly enhanced. A slight crackle has been corrected at 2:27.02. Clicks have been removed at 5:24.91, 5:34.99 
+and 5:35.25. There are a few mild mike bumps at the end of the track, these remain. 
+
+T03: I have subjected this track to an enhancement of +8dB, not a huge volume increase at the prevailing amplitude;
+prior to this the song was virtually inaudible. The recording is of good quality, and very little noise is apparent. 
+Ticks have been removed at 0:00.817, 0:00.365, 0:02.80 & 0:03.184. The track changeover from T2 has been equalised.
+At about 1:30 a little squeaking (on the guitar fret?) is apparent. (Perhaps the stage flooring was the guilty party!)
+Clicks have been removed at 6:40.709 & 7:00.444
+
+T04: A big click has been removed at 2:30.700. Very light amplitude clipping was apparent in this track during the 
+reprise for each verse, and the song finale. This has been corrected. 
+
+T05: A click has been removed at 2:16.90. Some slight amplitude clipping has been corrected throughout this track, and 
+some very localised and specific adjustments have been made to the crowd noise at the end.
+
+T06: This is perfect.
+
+T07: A little amplitude clipping has been corrected.
+
+T08: I have enhanced this track by +4dB (again only a slight volume increase at the prevailing amplitude). Sounds better
+as a follow on to the previous track. (This also suits the next track.)
+
+T09: The track changeover from T8 to T9 has been slightly modified. A small "tssk" at 0:01.886 has been removed. Most of 
+this track has been adjusted in amplitude by -0.5dB to correct some mild clipping.
+ 
+T10: This is perfect
+
+					
+Received as CDRs from a dylantree vine.
+
+CDRs > EAC mode6 > waves > remastered in Cool Edit Pro > mkwACT > SHN files
+
+Enjoy
+TheOldToad
+13 - 20 March 2005
+===================
+===================
+===================
+=== setlist.txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+recorded live at the:-
+
+RIMAC Arena
+University of California San Diego
+La Jolla
+California
+
+17 October 2001
+
+An OldToaD remaster
+
+disc one 60:34
+
+01	Intro
+02	Wait For The Light To Shine (acoustic) (Larry on mandolin) (song by Fred Rose) 
+03	My Back Pages (acoustic) (Bob on harp) 
+04	Desolation Row (acoustic) 
+05	Searching For A Soldier's Grave (acoustic) (Larry on mandolin)(song by Johnnie Wright, Jim Anglin and Jack Anglin) 
+06	Tweedle Dee & Tweedle Dum 
+07	Just Like A Woman (Bob on harp) 
+08	Stuck Inside Of Mobile With The Memphis Blues Again 
+09	Mississippi 
+10	Masters Of War (acoustic) 
+11	One Too Many Mornings (acoustic) (Bob on harp)
+
+disc two 65:03
+ 
+01	Visions Of Johanna (acoustic) 
+02	Summer Days 
+03	Sugar Baby 
+04	Cold Irons Bound 
+05	Rainy Day Women #12 & 35 
+
+	(encore) 
+
+06	Things Have Changed 
+07	Like A Rolling Stone 
+08	If Dogs Run Free (acoustic) 
+09	Honest With Me 
+10	Blowin' In The Wind (acoustic)
+
+Band members
+
+
+Bob Dylan		vocal, guitar & harp
+Charlie Sexton		guitar
+Larry Campbell		guitar, mandolin, pedal steel guitar & electric slide guitar
+Tony Garnier		bass guitar & string bass
+David Kemper		drums & percussion
+
+===================
+===================
+===================
+=== bd-01-10-17d1-wav.md5
+===================
+===================
+===================
+990773b495b71b02c57382d4e1fb5bff *bd-01-10-17d1-t01.wav
+03784c876906560b18750007fdb78ae3 *bd-01-10-17d1-t02.wav
+1ef9776f44ae4d571acb9447bc91522a *bd-01-10-17d1-t03.wav
+a8f5efc06412801e78da7c1237f669c4 *bd-01-10-17d1-t04.wav
+b1e4a98a5c197170b3c199c679de6a49 *bd-01-10-17d1-t05.wav
+b8747c52dda6fa31e965349f1803a42b *bd-01-10-17d1-t06.wav
+bc2d7f68790e460b957ac8fe4b10398c *bd-01-10-17d1-t07.wav
+4914ed9463da1216f841d136f442493d *bd-01-10-17d1-t08.wav
+5757ef64fc8e9d4535b41d9bd6bbc8f7 *bd-01-10-17d1-t09.wav
+143d58107aa01bc004f50d2523f89a3b *bd-01-10-17d1-t10.wav
+54539ce5b9d1a0f4e42a6efb26977597 *bd-01-10-17d1-t11.wav
+===================
+===================
+===================
+=== bd-01-10-17d2-wav.md5
+===================
+===================
+===================
+9c8a89530634588740adfd328e49a07c *bd-01-10-17d2-t01.wav
+bd935ef832876251c071d62ff6042b58 *bd-01-10-17d2-t02.wav
+7913eeac9fe745bb000a0b5bd6e61138 *bd-01-10-17d2-t03.wav
+175b72b11f7bbda52163ba25a8e67f60 *bd-01-10-17d2-t04.wav
+d3792050304144c0af02569ae72e897d *bd-01-10-17d2-t05.wav
+0ed0bb68210946fe95628186aaed106d *bd-01-10-17d2-t06.wav
+c9d9a37d21282be37d3a067bc06012c9 *bd-01-10-17d2-t07.wav
+665a59beb8e43e6647e82ea081d4cdb3 *bd-01-10-17d2-t08.wav
+0a30b4aff9ed5129c086ff68bdd85e51 *bd-01-10-17d2-t09.wav
+816714b82986ea151eb8bf80a5509cd2 *bd-01-10-17d2-t10.wav
+===================
+===================
+===================

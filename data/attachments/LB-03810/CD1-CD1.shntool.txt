@@ -1,0 +1,15 @@
+    length     expanded size   cdr  WAVE problems filename
+     1:01.21       10809836    ---   --   -----   Track01.wav
+     5:20.14       56480972    ---   --   -----   Track02.wav
+     4:33.53       48281900    ---   --   -----   Track03.wav
+     6:02.48       63969740    ---   --   -----   Track04.wav
+     6:29.36       68704316    ---   --   -----   Track05.wav
+     7:05.43       75071180    ---   --   -----   Track06.wav
+     7:08.38       75588620    ---   --   -----   Track07.wav
+     5:35.39       59185772    ---   --   -----   Track08.wav
+     7:52.43       83361980    ---   --   -----   Track09.wav
+     6:21.45       67314284    ---   --   -----   Track10.wav
+     5:48.55       61516604    ---   --   -----   Track11.wav
+     9:16.29       98146652    ---   --   -----   Track12.wav
+     6:41.41       70832876    ---   --   -----   Track13.wav
+    79:17.55      839264732 B                     (totals for 13 files, 1.0000 overall compression ratio)

@@ -1,0 +1,94 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd05-11-10-hv.flacf 
+=================== 
+=================== 
+=================== 
+2fee5bf9d38002e033b879eff9932cea  bd05-11-10-hv-LB-3641.txt
+d663d5fa4497c6f72101bb7201b53460  bd2005-11-10-d1\Bob Dylan - Track 01.flac
+b1fec458433baaa6f70cac476d82b4c9  bd2005-11-10-d1\Bob Dylan - Track 02.flac
+0532ff817ee249a25051faf8122bd00a  bd2005-11-10-d1\Bob Dylan - Track 03.flac
+1ea94aed6a49c25d5d155ef8bcd04d76  bd2005-11-10-d1\Bob Dylan - Track 04.flac
+850620e6b8592c61f94f43e4955f2cfc  bd2005-11-10-d1\Bob Dylan - Track 05.flac
+203db0db1ce4582ac2a696428ebb1ff2  bd2005-11-10-d1\Bob Dylan - Track 06.flac
+f953e6766b7bb68ffdbe63bc022b76f9  bd2005-11-10-d1\Bob Dylan - Track 07.flac
+87e2fb9d590dae3f64adcac9fcb3c77c  bd2005-11-10-d1\Bob Dylan - Track 08.flac
+712c0578021f1bd5deb38e8423ad4df1  bd2005-11-10-d1\Bob Dylan - Track 09.flac
+b3c901c0e6a99922866151a8c43d2fe3  bd2005-11-10-d1\bd2005-11-10-d1.md5
+d6a0edec2bde45ea268453201196cb16  bd2005-11-10-d2\Bob Dylan - Track 01.flac
+50a4692572c2d384f8c0c0d9861373e0  bd2005-11-10-d2\Bob Dylan - Track 02.flac
+22daa11326c0d05d8711fc84f82fef91  bd2005-11-10-d2\Bob Dylan - Track 03.flac
+6b882ac67bc3c8f05f5ea826b9c0c604  bd2005-11-10-d2\Bob Dylan - Track 04.flac
+1d84285250811f87b12827e1045ec484  bd2005-11-10-d2\Bob Dylan - Track 05.flac
+63a46a8254566785d4b5c58313e4e7f8  bd2005-11-10-d2\Bob Dylan - Track 06.flac
+90b12568f74e80a74c0a40d182d576c2  bd2005-11-10-d2\Bob Dylan - Track 07.flac
+662296ceefe42080f454c2a80fcdae79  bd2005-11-10-d2\bd2005-11-10-d2.md5
+881ffe66c8ea2e3dff4d85b2e862c1d0  bd2005-11-10-HV.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-10-hv.flacf\bd2005-11-10-d1 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:18f11b4028f0f00a46e7dc24e26e3f9d
+Bob Dylan - Track 02.flac:1aa6396ecea401c00d0d3aa000ef2120
+Bob Dylan - Track 03.flac:e390ef948a3bbebed2c42b8a77144a48
+Bob Dylan - Track 04.flac:732b647f63bd660ed78f8a6a6d46deae
+Bob Dylan - Track 05.flac:6610b37de7639b67cbb13806b648e4e1
+Bob Dylan - Track 06.flac:0b6a67aadaf1c4edf11d38775c7d9e7a
+Bob Dylan - Track 07.flac:814ddb2f4520ec6c8867066549b24715
+Bob Dylan - Track 08.flac:0e54f06653c4c3aeaa5a47ea34dc3b3e
+Bob Dylan - Track 09.flac:69001db40e1ee7002bed51f453e8aff1
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd05-11-10-hv.flacf\bd2005-11-10-d2 
+=================== 
+=================== 
+=================== 
+Bob Dylan - Track 01.flac:24f62d92f743139fe7f69c0edf305561
+Bob Dylan - Track 02.flac:b7631b93a8f463316e27c2ea7f5af7c0
+Bob Dylan - Track 03.flac:355d62669267925351a6ad0f962bff8a
+Bob Dylan - Track 04.flac:19e5a4b4a1da2227de6d33edc5a89892
+Bob Dylan - Track 05.flac:eaefdfc792c6c80390cf12859f6b2da0
+Bob Dylan - Track 06.flac:e2d48500d25cc5a146131f7580b9aea6
+Bob Dylan - Track 07.flac:63b82a8e60bb311d5c50263c89cb7c69
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-10-hv.flacf\bd2005-11-10-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:07.33       64816460 B   ---   --   ---xx   flac  0.6563  Bob Dylan - Track 01.flac
+     5:56.42       62897228 B   ---   --   ---xx   flac  0.6149  Bob Dylan - Track 02.flac
+     7:32.74       79906892 B   ---   --   ---xx   flac  0.6419  Bob Dylan - Track 03.flac
+     4:17.46       45443036 B   ---   --   ---xx   flac  0.5460  Bob Dylan - Track 04.flac
+     8:15.14       87350972 B   ---   --   ---xx   flac  0.6443  Bob Dylan - Track 05.flac
+     6:00.68       63663980 B   ---   --   ---xx   flac  0.5330  Bob Dylan - Track 06.flac
+     5:50.70       61904684 B   ---   --   ---xx   flac  0.6494  Bob Dylan - Track 07.flac
+     4:19.69       45849932 B   ---   --   ---xx   flac  0.5584  Bob Dylan - Track 08.flac
+     8:21.14       88409372 B   ---   --   ---xx   flac  0.6431  Bob Dylan - Track 09.flac
+    56:42.55      600242556 B                            0.6167  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd05-11-10-hv.flacf\bd2005-11-10-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:26.49       78789692 B   ---   --   ---xx   flac  0.5480  Bob Dylan - Track 01.flac
+     5:50.60       61881164 B   ---   --   ---xx   flac  0.6061  Bob Dylan - Track 02.flac
+     7:56.31       84039356 B   ---   --   ---xx   flac  0.6462  Bob Dylan - Track 03.flac
+     7:06.31       75219356 B   ---   --   ---xx   flac  0.6022  Bob Dylan - Track 04.flac
+    10:52.28      115078700 B   ---   --   ---xx   flac  0.6201  Bob Dylan - Track 05.flac
+     7:39.10       80991164 B   ---   --   ---xx   flac  0.6498  Bob Dylan - Track 06.flac
+     5:49.66       61718876 B   ---   --   ---xx   flac  0.6170  Bob Dylan - Track 07.flac
+    52:41.50      557718308 B                            0.6138  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-03-14-md.flacf 
+=================== 
+=================== 
+=================== 
+954b91c18b5538d1c49c10792ab5383f  b01-03-14-md-LB-3837.txt
+f2d0f4e4fd4623ef8c847e6cb6e0a022  BD Budokan Theater, Tokyo, Japan  March 14, 2001.txt
+e3e305f123c0cf557db5e27d345c8e38  BD D1T01.flac
+e6859227072d2a7301810d531098a1fb  BD D1T02.flac
+042122565031561128f2225b20133edb  BD D1T03.flac
+7884066ab8b013868f812186e6a81342  BD D1T04.flac
+e4912878ecdc0ff6fcd380896fd5fc7a  BD D1T05.flac
+5719c5b33fd99018f53a14f8dd7aff7b  BD D1T06.flac
+d98e59a79f7bb62f340fb408ad7563e1  BD D1T07.flac
+cc47f76a043635225c15e4dfd17c4920  BD D1T08.flac
+8c77c803a60313770b55fe72a88e729c  BD D1T09.flac
+d7ad0e136b1e0204c2ef6b1622451cc9  BD D1T10.flac
+92b0d748f44095757a3e2753c002b054  BD D1T11.flac
+200ece64e5f23427ebd702b0c8076d8c  BD D2T01.flac
+81a366ca3347d43c1abd3dd68492a092  BD D2T02.flac
+af9f867f1218d4dcaf57d9d78a393275  BD D2T03.flac
+448be45236ed70dc446668160ff4ce58  BD D2T04.flac
+3677fd03d670a110f52329b3d134582d  BD D2T05.flac
+0324f22467720525618c394ce5793f9a  BD D2T06.flac
+912d5314b7ef16e68ef33ebbcdd7065c  BD D2T07.flac
+6ce20b26e521c51471abf5b09137c9b6  BD D2T08.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-03-14-md.flacf 
+=================== 
+=================== 
+=================== 
+BD D1T01.flac:d03f2ce8e7162df7fb06191eb88ec11c
+BD D1T02.flac:49cff09c025d2b429ee80c2402dfd6b4
+BD D1T03.flac:3a314fdd76badef7efd891d2ef2c7bfa
+BD D1T04.flac:1ebfe6881865a2d6e4f0536cd104b61b
+BD D1T05.flac:0ab8f890fe6a6fa912f3c4cde88079f5
+BD D1T06.flac:c59c83ed43e2833bbca414ef3ef484fd
+BD D1T07.flac:ae4a320aae567df56df78a47796409b8
+BD D1T08.flac:6e229e48d8a83279db7b4ecd96860595
+BD D1T09.flac:b8bfc64912483cf2623b42366f33641a
+BD D1T10.flac:d904053d434e17acf89fa0acdd060f90
+BD D1T11.flac:018eed9ad1f243bdf9444670db7d746b
+BD D2T01.flac:7f8e41709c4272612ed3c87710c2c3b1
+BD D2T02.flac:f0aaf283385a23fb2ea9271f51620ff8
+BD D2T03.flac:c899b95a4249c00ce2380fb3e2f8dd75
+BD D2T04.flac:b90c0d542516daab02ea2189a0c685f8
+BD D2T05.flac:9b30745d22fcff1c3f96b9e45a9b9591
+BD D2T06.flac:3621b511003111a218023b2df02e6f2f
+BD D2T07.flac:94492b629e6160a372235f09ad1087ae
+BD D2T08.flac:835f8c3021dd55ff0143806cfe986651
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-03-14-md.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:43.44       39440732 B   ---   --   ---xx   flac  0.6112  BD D1T01.flac
+     6:44.67       71423228 B   ---   --   ---xx   flac  0.6031  BD D1T02.flac
+     9:31.21      100773836 B   ---   --   ---xx   flac  0.5735  BD D1T03.flac
+     8:07.16       85944476 B   ---   --   ---xx   flac  0.6455  BD D1T04.flac
+     5:06.48       54091340 B   ---   --   ---xx   flac  0.5099  BD D1T05.flac
+     6:01.09       63701612 B   ---   --   ---xx   flac  0.6316  BD D1T06.flac
+     4:21.69       46202732 B   ---   --   ---xx   flac  0.5098  BD D1T07.flac
+     7:23.33       78222860 B   ---   --   ---xx   flac  0.5550  BD D1T08.flac
+     7:57.13       84173420 B   ---   --   ---xx   flac  0.6262  BD D1T09.flac
+     6:00.26       63565196 B   ---   --   ---xx   flac  0.4927  BD D1T10.flac
+     6:16.03       66333500 B   ---   --   ---xx   flac  0.6376  BD D1T11.flac
+     7:50.26       82969196 B   ---   --   ---xx   flac  0.6277  BD D2T01.flac
+     5:51.33       61994060 B   ---   --   ---xx   flac  0.5969  BD D2T02.flac
+     7:21.71       77959436 B   ---   --   ---xx   flac  0.6385  BD D2T03.flac
+     4:11.51       44396396 B   ---   --   ---xx   flac  0.4932  BD D2T04.flac
+     4:34.58       48470060 B   ---   --   ---xx   flac  0.6254  BD D2T05.flac
+     5:48.37       61474268 B   ---   --   ---xx   flac  0.6003  BD D2T06.flac
+     5:32.68       58724780 B   ---   --   ---xx   flac  0.6533  BD D2T07.flac
+     5:58.73       63322940 B   ---   --   ---xx   flac  0.5786  BD D2T08.flac
+   118:24.16     1253184068 B                            0.5941  (19 files)
+=================== 
+=================== 
+=================== 

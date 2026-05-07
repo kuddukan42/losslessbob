@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-09-01-a.flacf 
+=================== 
+=================== 
+=================== 
+9bae7e501ca6b4f50895e4c4dd71cb22  bd1990-09-01_alt_d1t01.flac
+03baf88f5c878ab22769ebd44361965e  bd1990-09-01_alt_d1t02.flac
+9ba8f0d9aba4196057090c390354fa4f  bd1990-09-01_alt_d1t03.flac
+f7b7c5361710a607ddb052e1d81bc5ea  bd1990-09-01_alt_d1t04.flac
+9eb92b6a303b1f4b996ab22b76fd9cd9  bd1990-09-01_alt_d1t05.flac
+d225c4a1e208e87fdd8b03e1204fff3f  bd1990-09-01_alt_d1t06.flac
+26a872858c58e831c626ea202b1827d5  bd1990-09-01_alt_d1t07.flac
+4d8cae4fab68ca7d3373d87d593cd428  bd1990-09-01_alt_d1t08.flac
+15fa02b4b3f2adc68babec1fba71a1c8  bd1990-09-01_alt_d1t09.flac
+889bb079d5a1195dd72f96799392013b  bd1990-09-01_alt_d1t10.flac
+1c598a5585be8ec9afe11ea49ba9bcb0  bd1990-09-01_alt_d1t11.flac
+847fa357efff25134ac84f9748335e0e  bd1990-09-01_alt_d2t01.flac
+69c0712e4d65cb76916461a978d18d7c  bd1990-09-01_alt_d2t02.flac
+92edc4801e674e3440c9bcdec5bf6fc4  bd1990-09-01_alt_d2t03.flac
+aaec51e4e321cc352203747eaa8712f6  bd1990-09-01_alt_d2t04.flac
+54b3bf5ec806a9aff641fdfdf0b3fa04  bd1990-09-01_alt_d2t05.flac
+c08b9f012bca52a6e492c986c14b74b6  bd1990-09-01_alt_d2t06.flac
+1c198c4579972f83ab1dcd12b5f6667b  bd1990-09-01_alt_d2t07.flac
+24225f5e31406c82e672a70d4cecc74a  bd1990-09-01_alt_d2t08.flac
+7d9303fd26b32a943ba50f808d377cbf  bd1990-09-01_alt_ffp.txt
+f1ebc485b20aa30f61e0f805b54be976  bd1990-09-01_alt_info.txt
+178d3dc50120576c105bb01fafa728f9  bd1990-09-01_alt_md5.md5
+85baa9645142349cbf8502608c90a769  bd90-09-01-a-LB-4362.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-09-01-a.flacf 
+=================== 
+=================== 
+=================== 
+bd1990-09-01_alt_d1t01.flac:26e7b0f5eaaa32f1124a035985d003e5
+bd1990-09-01_alt_d1t02.flac:5fa0d8b2a245b1af9079e1a1d79ac175
+bd1990-09-01_alt_d1t03.flac:dbf9f164357d6833f8f29ce609febfa2
+bd1990-09-01_alt_d1t04.flac:5a13f29311635103ad05c21643da6e00
+bd1990-09-01_alt_d1t05.flac:93a9c842f2ea1c171b79b6faf0bffb7b
+bd1990-09-01_alt_d1t06.flac:4c35ce430e29b6c9161949dbbbec0b6d
+bd1990-09-01_alt_d1t07.flac:cedb50f8ca1861b051f8a6d9bc5e35cc
+bd1990-09-01_alt_d1t08.flac:d7158f24e61dafb22d08a1aa5f6a0fc7
+bd1990-09-01_alt_d1t09.flac:d63339e9beae886a407afe49b9125c01
+bd1990-09-01_alt_d1t10.flac:910bc1cb4d3f28570597d12457b2c8ef
+bd1990-09-01_alt_d1t11.flac:bca12efbf347319dbce637123c86072c
+bd1990-09-01_alt_d2t01.flac:abea5e4d72a538bec8da749a1d5926ed
+bd1990-09-01_alt_d2t02.flac:66e6f0aae7e30824926c509056ee0ba7
+bd1990-09-01_alt_d2t03.flac:916b7cde0618207e2e54f4fba9309e94
+bd1990-09-01_alt_d2t04.flac:6e19d7d0fc52ad160913a699e8319f72
+bd1990-09-01_alt_d2t05.flac:8be705628637358bc314866da04444c4
+bd1990-09-01_alt_d2t06.flac:b39e17ed99d2ea4928c3abfe943868ce
+bd1990-09-01_alt_d2t07.flac:770fcfc06008092fcd552f730603f94d
+bd1990-09-01_alt_d2t08.flac:02475d1cf055f91f67fe6a78f4bd24a0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-09-01-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:21.70       14453084 B   ---   --   ---xx   flac  0.5771  bd1990-09-01_alt_d1t01.flac
+     5:51.35       61998764 B   ---   --   ---xx   flac  0.6252  bd1990-09-01_alt_d1t02.flac
+     5:37.60       59587964 B   ---   --   ---xx   flac  0.6208  bd1990-09-01_alt_d1t03.flac
+     3:36.43       38203580 B   ---   --   ---xx   flac  0.6368  bd1990-09-01_alt_d1t04.flac
+     4:17.13       45365420 B   ---   --   ---xx   flac  0.6583  bd1990-09-01_alt_d1t05.flac
+     4:36.38       48775820 B   ---   --   ---xx   flac  0.6149  bd1990-09-01_alt_d1t06.flac
+     5:18.68       56255180 B   ---   --   ---xx   flac  0.6297  bd1990-09-01_alt_d1t07.flac
+     4:30.69       47790332 B   ---   --   ---xx   flac  0.5367  bd1990-09-01_alt_d1t08.flac
+     5:48.48       61500140 B   ---   --   ---xx   flac  0.5421  bd1990-09-01_alt_d1t09.flac
+     4:24.17       46609628 B   ---   --   ---xx   flac  0.5544  bd1990-09-01_alt_d1t10.flac
+     5:57.65       63127724 B   ---   --   ---xx   flac  0.6031  bd1990-09-01_alt_d1t11.flac
+     3:51.37       40835468 B   ---   --   ---xx   flac  0.6322  bd1990-09-01_alt_d2t01.flac
+     4:36.63       48834620 B   ---   --   ---xx   flac  0.5585  bd1990-09-01_alt_d2t02.flac
+     3:35.32       38001308 B   ---   --   ---xx   flac  0.6511  bd1990-09-01_alt_d2t03.flac
+     4:20.56       45995756 B   ---   --   ---xx   flac  0.5441  bd1990-09-01_alt_d2t04.flac
+     3:56.06       41644556 B   ---   --   ---xx   flac  0.6106  bd1990-09-01_alt_d2t05.flac
+     6:09.38       65181020 B   ---   --   ---xx   flac  0.6559  bd1990-09-01_alt_d2t06.flac
+     5:31.41       58484876 B   ---   --   ---xx   flac  0.5949  bd1990-09-01_alt_d2t07.flac
+     5:24.59       57292412 B   ---   --   ---xx   flac  0.6167  bd1990-09-01_alt_d2t08.flac
+    88:48.33      939937652 B                            0.6040  (19 files)
+=================== 
+=================== 
+=================== 

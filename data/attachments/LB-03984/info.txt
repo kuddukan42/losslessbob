@@ -1,0 +1,38 @@
+Bob Dylan
+ 
+Helsinki, Finland
+Tuesday May 16, 2000
+Hartwall Areena
+
+CD1 61:51.15
+
+01. Roving Gambler (acoustic)
+02. The Times They Are A-Changin' (acoustic)
+03. Masters Of War  (acoustic)
+04. Girl Of The North Country (acoustic)
+05. Tangled Up In Blue (acoustic)
+06. It's All Over Now, Baby Blue (acoustic) (Bob on harp)
+07. Country Pie
+08. Señor (Tales Of Yankee Power)
+09. Maggie's Farm
+10. Just Like A Woman 
+
+CD2 57:56.73
+
+11. Stuck Inside Of Mobile With The Memphis Blues Again 
+12. Leopard-Skin Pill-Box Hat
+
+  (encore) 
+
+13. Love Sick
+14. Like A Rolling Stone
+15. Knockin' On Heaven's Door (acoustic) (Bob on harp) 
+16. Not Fade Away
+17. Blowin' In The Wind (acoustic) 
+18. Rainy Day Women #12 & #35 
+
+Audience MD recording > MD(m) > ?unknown transfer? > CDR(x) > EAC (Secure/Offset) > WAV > Audacity > WAV >  FLAC (Level 8) > DIME
+
+MD source was spotted using Spectral Analysis w/ Cool Edit Pro ("lego parapet" artifacts are apparent).
+
+I used Audacity to cut 2:32 (after the applause) from the end of d2t8. A stunning capture w/ excellent sound.

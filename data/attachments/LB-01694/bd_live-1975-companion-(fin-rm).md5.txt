@@ -1,0 +1,12 @@
+f4efd596547fb4c56a8784007a8158b5 *bd_live 1975 companion (rm)_01.shn
+5b6a05e027111abbe5834e03c45f8748 *bd_live 1975 companion (rm)_02.shn
+193ead86805de07b7623f7f30fe25357 *bd_live 1975 companion (rm)_03.shn
+1d6c2a5e4cd69c447918477a5004bbd6 *bd_live 1975 companion (rm)_04.shn
+b39e46727dcb1be3a91ba065af5ff943 *bd_live 1975 companion (rm)_05.shn
+0d9c5fd41759bd0888b80e8c8f223131 *bd_live 1975 companion (rm)_06.shn
+72b736dbdd6316fbcc57f8c6e2dd492d *bd_live 1975 companion (rm)_07.shn
+e7d144318750c6e5f5f566e220849afa *bd_live 1975 companion (rm)_08.shn
+4f088956c5c1e9a42effe66b7da2d8dc *bd_live 1975 companion (rm)_09.shn
+162ffbf4344730fb2b18834cad8b9c78 *bd_live 1975 companion (rm)_10.shn
+e41fa631d5aaed8199f59d4fe24a1867 *bd_live 1975 companion (rm)_11.shn
+11b9febe6ae06d750bc549c90a965a0f *bd_live 1975 companion (rm)_12.shn

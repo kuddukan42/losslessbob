@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-07-15.flacf 
+=================== 
+=================== 
+=================== 
+23782823311c0fee7d0e33eb2fd82791  bd01-07-15-LB-3541.txt
+a340c89f71549afd74e175a7b9551d96  Bob Dylan July 15 2001.txt
+7cbbf09f18e815ba5e131cdd53bd4d8e  d1t1.flac
+4882a06950478ac0ed0829f4d6f60772  d1t10.flac
+c206ac68629c9aac11dcb725739ea373  d1t2.flac
+739d23c8fd155c493f421c21f843651d  d1t3.flac
+9acaa6555f210424a812dd10bf0ed353  d1t4.flac
+07f0d794b131ef1bd9374f66b448df28  d1t5.flac
+616cbdf46f70eb9bd1c5c76bb219a807  d1t6.flac
+68639fb099e09d6eec797a46dc736a81  d1t7.flac
+6c8a1fa1afd56b403f8022265355d15e  d1t8.flac
+c69fba9bf76bbe03367e804f4fa1813d  d1t9.flac
+dff7be5e4dbe22aba4c4e20be5c0ec67  d2t1.flac
+5c4b177f04b284d41be96728d7465ff9  d2t2.flac
+7644007dded785d8e104ab7193dc8e1d  d2t3.flac
+18881de16c2831273002437a2873b8d4  d2t4.flac
+ba6b13d522bca99e40943a97a9638605  d2t5.flac
+8fae3b9962347a6ae6329f505accb40a  d2t6.flac
+ad48c5fdc5c4f312dc48de2ac2ee605f  d2t7.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-15.flacf 
+=================== 
+=================== 
+=================== 
+d1t1.flac:a37028aacadab0e2cccab69abb643006
+d1t10.flac:1b3defd594a2eec3409dce80847ac824
+d1t2.flac:53fb88efc26adae964298acc1c758976
+d1t3.flac:03c75a8d32fc5668fc7c5167d86aa82a
+d1t4.flac:ba247228d0f920384ead285c589f7562
+d1t5.flac:2d4965f5fad2a89ca25dd1ba07497e13
+d1t6.flac:b0bf2dc3bbe8b5266d9158fdf5830c5e
+d1t7.flac:fc5a9374de65bfe8d22c6fb88f018891
+d1t8.flac:2a826576c8d0323ada2a5f1090ba0674
+d1t9.flac:9f2c216286ea79a95bfcb65c372d7152
+d2t1.flac:8565ad5d16eb21979b656dbc70d00d26
+d2t2.flac:8636fd0821cd570e6a4b8466ad16983e
+d2t3.flac:4afc3219872f5394f213428b106749d3
+d2t4.flac:c96edb9f733d31be4ba20f0bc71a8e4b
+d2t5.flac:ccd4c4a221ade6a4d8ca86de4535ebc6
+d2t6.flac:1135a9bda79f2b53889a1d2d8d2f62ee
+d2t7.flac:4967ab4ea89589e66b057e3d9d2a227a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-15.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.69       45673532 B   ---   --   ---xx   flac  0.4712  d1t1.flac
+     9:29.63      100519820 B   ---   --   ---xx   flac  0.4972  d1t10.flac
+     5:10.54       54811052 B   ---   --   ---xx   flac  0.4392  d1t2.flac
+     8:34.32       90744908 B   ---   --   ---xx   flac  0.4844  d1t3.flac
+     6:50.05       72335804 B   ---   --   ---xx   flac  0.5129  d1t4.flac
+     7:01.30       74335004 B   ---   --   ---xx   flac  0.4641  d1t5.flac
+     6:02.10       63880364 B   ---   --   ---xx   flac  0.4913  d1t6.flac
+     8:34.57       90803708 B   ---   --   ---xx   flac  0.3806  d1t7.flac
+     8:09.50       86377244 B   ---   --   ---xx   flac  0.4113  d1t8.flac
+     6:28.60       68584364 B   ---   --   ---xx   flac  0.4578  d1t9.flac
+     5:55.59       62760812 B   ---   --   ---xx   flac  0.5121  d2t1.flac
+     5:13.08       55232060 B   ---   --   ---xx   flac  0.5501  d2t2.flac
+     7:56.62       84112268 B   ---   --   ---xx   flac  0.5381  d2t3.flac
+     8:41.61       92047916 B   ---   --   ---xx   flac  0.5403  d2t4.flac
+     4:44.71       50264636 B   ---   --   ---xx   flac  0.5586  d2t5.flac
+     6:13.24       65853692 B   ---   --   ---xx   flac  0.5004  d2t6.flac
+     5:56.15       62833724 B   ---   --   ---xx   flac  0.5577  d2t7.flac
+   115:22.55     1221170908 B                            0.4894  (17 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-02-25-a.flac16 
+=================== 
+=================== 
+=================== 
+f598fe7777f2d633ae69642ec376de77  bd1999-02-25.flac16 Portland, ME d1.shntool.txt
+9e774151c3095ba1fdea6093c4419d71  bd1999-02-25.flac16 Portland, ME d2.shntool.txt
+d0e0997088fccb90c0dfe03fa7a5c43c  bd1999-02-25.flac16 Portland, ME.ffp
+5df73ed73c8727584e42ecea5af86b0c  bd1999-02-25.flac16 Portland, ME.st5
+8173607ba15d2050933f221cab47e84e  bd1999-02-25d1t01.flac
+8161ec322cc9362db6434834f3a49924  bd1999-02-25d1t02.flac
+a9cc3b87144879900b82f39c5a8e1489  bd1999-02-25d1t03.flac
+9569830b97b16ee8f39f801d15a069b7  bd1999-02-25d1t03.PNG
+a9a22d85bae8fb1d33240e308b3df5d7  bd1999-02-25d1t04.flac
+2b2f8e953035719ce457e16f3dc6b3f8  bd1999-02-25d1t05.flac
+afb44a722af572394031b7dc41a47311  bd1999-02-25d1t06.flac
+070072d81f9a4b66982cee64e2ea105c  bd1999-02-25d1t07.flac
+d833836415fb055e57bd01cc8c6407df  bd1999-02-25d1t08.flac
+feeeec66b439d0f30f0cea502c3bc326  bd1999-02-25d1t09.flac
+5600670ac32a95b7d596d593ee48484f  bd1999-02-25d1t10.flac
+4bf2dc9c789bfa723a086363ecd83ecf  bd1999-02-25d1t11.flac
+cf36acc0aea6720112e85f547d2bea9f  bd1999-02-25d2t01.flac
+49f3cdfa29036ec2973c6056b49014aa  bd1999-02-25d2t02.flac
+e3c819c4b0ca8a188c7c2a8d295dc677  bd1999-02-25d2t02.PNG
+6ce31114fe5a851df3f67cc4bc6259ed  bd1999-02-25d2t03.flac
+ccfe6be62c158068119165150681ce60  bd1999-02-25d2t04.flac
+068df4dd8d7af6bdd1c41457e1d37cf8  bd1999-02-25d2t05.flac
+084c553b4a77d684213d4c8bb0b6f311  bd99-02-25-a-LB-4452.txt
+ab3e3d3e472051058c4665f4b5513dc3  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-25-a.flac16 
+=================== 
+=================== 
+=================== 
+bd1999-02-25d1t01.flac:895973372bc6e5e8d04f71a1602ba6fb
+bd1999-02-25d1t02.flac:2ddbc7151004e979dd250e01acbbd205
+bd1999-02-25d1t03.flac:0a5ce4f6228e7bf0b1e93fea537276f4
+bd1999-02-25d1t04.flac:5f4b09b1bc2780b78df87c31b05547b4
+bd1999-02-25d1t05.flac:6addd255dca25192074a2241a8e10e44
+bd1999-02-25d1t06.flac:195d621e7589334756ea5b314709accf
+bd1999-02-25d1t07.flac:547911bb4019dd9a6d30085af4559b1a
+bd1999-02-25d1t08.flac:9915600b7d85c3f2aedff2b9f6e83c80
+bd1999-02-25d1t09.flac:d50575bc98bd1f961ce420dfdc72a7dd
+bd1999-02-25d1t10.flac:391d0ab8a3365c5e5ae7777a76d7a58f
+bd1999-02-25d1t11.flac:e5ccdb14a1947e20b21f5c12d8b2a399
+bd1999-02-25d2t01.flac:88bb0574618e9b8113d8201169c1f69b
+bd1999-02-25d2t02.flac:b037d2a8ab0e9d8d74046dd900ff7f9d
+bd1999-02-25d2t03.flac:6da7e5dee9fb4162365e3249b81ceb0e
+bd1999-02-25d2t04.flac:9f8695127490f943fbd2112eb42b34f5
+bd1999-02-25d2t05.flac:d9924f1a9d262e9db0913cfb8e0420ca
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-25-a.flac16 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.14       47837372 B   ---   --   ---xx   flac  0.6099  bd1999-02-25d1t01.flac
+     4:43.34       50001212 B   ---   --   ---xx   flac  0.5883  bd1999-02-25d1t02.flac
+     7:02.04       74450252 B   ---   --   ---xx   flac  0.5985  bd1999-02-25d1t03.flac
+     6:55.63       73354220 B   ---   --   ---xx   flac  0.5981  bd1999-02-25d1t04.flac
+     5:30.58       58348460 B   ---   --   ---xx   flac  0.6184  bd1999-02-25d1t05.flac
+     5:36.68       59430380 B   ---   --   ---xx   flac  0.5742  bd1999-02-25d1t06.flac
+     8:33.16       90530876 B   ---   --   ---xx   flac  0.6013  bd1999-02-25d1t07.flac
+     8:07.32       85982108 B   ---   --   ---xx   flac  0.6229  bd1999-02-25d1t08.flac
+     6:32.72       69318188 B   ---   --   ---xx   flac  0.6026  bd1999-02-25d1t09.flac
+     5:07.72       54324188 B   ---   --   ---xx   flac  0.5995  bd1999-02-25d1t10.flac
+     6:27.74       68440892 B   ---   --   ---xx   flac  0.5810  bd1999-02-25d1t11.flac
+     6:36.52       69976748 B   ---   --   ---xx   flac  0.6380  bd1999-02-25d2t01.flac
+     5:34.10       58941164 B   ---   --   ---xx   flac  0.5743  bd1999-02-25d2t02.flac
+     5:49.44       61667132 B   ---   --   ---xx   flac  0.5980  bd1999-02-25d2t03.flac
+     5:53.17       62309228 B   ---   --   ---xx   flac  0.5606  bd1999-02-25d2t04.flac
+     4:21.66       46195676 B   ---   --   ---xx   flac  0.6081  bd1999-02-25d2t05.flac
+    97:25.21     1031108096 B                            0.5991  (16 files)
+=================== 
+=================== 
+=================== 

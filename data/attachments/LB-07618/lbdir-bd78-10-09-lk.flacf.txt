@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-10-09-lk.flacf 
+=================== 
+=================== 
+=================== 
+c4bc3d0a8743534667bd74bb140dec6d  D1\bd78-10-09 buffalo 101.flac
+eb143141da249d632df809743039b667  D1\bd78-10-09 buffalo 102.flac
+45b6de950833b7c1cf3748e683009bf5  D1\bd78-10-09 buffalo 103.flac
+c2ef622102c4cf45bbe9a4dae1068c6f  D1\bd78-10-09 buffalo 104.flac
+bd347926816f447d7f4ffb63276e8366  D1\bd78-10-09 buffalo 105.flac
+8974640c923d2e6c70a3b7a8777e559c  D1\bd78-10-09 buffalo 106.flac
+3c6633236398c6d4a7ec2207504aa304  D1\bd78-10-09 buffalo 107.flac
+5ead8ffa2c3ef233432e658623398aaa  D1\bd78-10-09 buffalo 108.flac
+56cb08cb938cfda83ae2a83dcd147f72  D1\bd78-10-09 buffalo 109.flac
+e3de11eea7cbc0bb33705b748a7e7147  D1\bd78-10-09 buffalo 110.flac
+5af216567d9553a5782d0213aede2e25  D1\bd78-10-09 buffalo 111.flac
+8116e43fcfedc15b54dc922faa588daf  D1\bd78-10-09 buffalo 112.flac
+b021d4cc93d32edb0d2931b2c3040ca4  D1\bd78-10-09 buffalo 113.flac
+6576bbe4184f66660c1ad10ecf346652  D1\bd78-10-09 buffalo 114.flac
+45044449bc921ee91d4b5060f106f883  D1\bd78-10-09 buffalo 115.flac
+dc24358a6a06f7bcb22ac9e7949ab184  D1\D1.md5
+3a7f89b11da7388f2023f97c9cb14f70  D2\bd78-10-09 buffalo 201.flac
+8d36540a8406b42bfe2eb8fb388ff0f5  D2\bd78-10-09 buffalo 202.flac
+0e9ee0b006b46a01f9ef50eedd56533a  D2\bd78-10-09 buffalo 203.flac
+eb790440146e260292f72f26fbc16556  D2\bd78-10-09 buffalo 204.flac
+4431c6d3dec6ed2180a34e3685ad64a7  D2\bd78-10-09 buffalo 205.flac
+a82a6beb7f8f2b5fbff64e21068c5631  D2\bd78-10-09 buffalo 206.flac
+0e59202a90b4acb727096f2d24f0e7f9  D2\bd78-10-09 buffalo 207.flac
+63ea53d1d0fe607147b84b91311fb702  D2\bd78-10-09 buffalo 208.flac
+a687fde3177028bfc0cff62ff12b9719  D2\bd78-10-09 buffalo 209.flac
+7951abae8fc25cee36e78c6b2a5295e0  D2\bd78-10-09 buffalo 210.flac
+4ea0ff86ad412bcc7dec641b8749ece7  D2\bd78-10-09 buffalo 211.flac
+e9373ca26ef327e567081de492b13adc  D2\bd78-10-09 buffalo 212.flac
+79d22a8f4efa420bcf179217c5d2da33  D2\bd78-10-09 buffalo 213.flac
+ac4841c29a3b781c4fd6a502edb5aa4d  D2\D2.md5
+ede379dec860dfd93f4723c808da6aa2  info.txt
+872513e546c4bbc6887097f57cb6795a  LK 1978 Leg 3 DVD 4.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-09-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+bd78-10-09 buffalo 101.flac:b50a48aa53f6a71a3e323638beff2c5e
+bd78-10-09 buffalo 102.flac:417f008c6d4ac0a6d64b272f1e085013
+bd78-10-09 buffalo 103.flac:3e3be9992769558a395e65cbfc08d3ae
+bd78-10-09 buffalo 104.flac:9cd80d5e21ceff02f2689a0d5240fa1a
+bd78-10-09 buffalo 105.flac:de3d50d65e6b27fffc3ac9a4c835a231
+bd78-10-09 buffalo 106.flac:5a6e5ee7909d8eeafb92cb3c81a9d789
+bd78-10-09 buffalo 107.flac:9fb20bbdefa148bd9f16f8c8a668b3b8
+bd78-10-09 buffalo 108.flac:05130ba9e6c8096d7a8b1fc919130359
+bd78-10-09 buffalo 109.flac:4d5d51aa5450b482954b114b7d1cd119
+bd78-10-09 buffalo 110.flac:c78794c47c8d06effed55b1ac4355652
+bd78-10-09 buffalo 111.flac:fa89dc354cc009db98f920df43ed5f63
+bd78-10-09 buffalo 112.flac:8ebb98ae95e17c2bcc1f4aa9b92225ec
+bd78-10-09 buffalo 113.flac:35456145d736bf6b2bf488101809f391
+bd78-10-09 buffalo 114.flac:ff22dd6677d26265cfddd04c7ec9b233
+bd78-10-09 buffalo 115.flac:c3961556413e35d06cb0677ad74930c9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-10-09-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+bd78-10-09 buffalo 201.flac:920eab8e54272a6c4cafef758e37bf59
+bd78-10-09 buffalo 202.flac:ce2a7d03b8734a6ae8fe46db60419d01
+bd78-10-09 buffalo 203.flac:b31553fa3c28be20967df033d9df63f0
+bd78-10-09 buffalo 204.flac:cd29de6dffb3c2fbce74a7e5b4053fdf
+bd78-10-09 buffalo 205.flac:9ff72a0fb96acc7d34a0097fc2629290
+bd78-10-09 buffalo 206.flac:ca9f60df2999de9caa81c0b1e54c5d17
+bd78-10-09 buffalo 207.flac:51179a6735aa4dc88fc017f214efc6f0
+bd78-10-09 buffalo 208.flac:a7061090caf5417e08910b7d83e25e83
+bd78-10-09 buffalo 209.flac:31cc0232b44f443a5ab41f57a9030079
+bd78-10-09 buffalo 210.flac:22f479ad0735f8a1609f8ce8f5c81937
+bd78-10-09 buffalo 211.flac:49dbc2b3256c20a754c2c7eea6c1743a
+bd78-10-09 buffalo 212.flac:53f5ace727aa61eff34103184c0b7bcd
+bd78-10-09 buffalo 213.flac:860dda940f263980fc304a7f53f9bbe6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-09-lk.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:56.06       31060556 B   ---   --   ---xx   flac  0.5513  bd78-10-09 buffalo 101.flac
+     3:08.61       33306716 B   ---   --   ---xx   flac  0.5522  bd78-10-09 buffalo 102.flac
+     4:23.51       46513196 B   ---   --   ---xx   flac  0.5621  bd78-10-09 buffalo 103.flac
+     4:33.18       48199580 B   ---   --   ---xx   flac  0.5576  bd78-10-09 buffalo 104.flac
+     4:45.11       50299916 B   ---   --   ---xx   flac  0.5583  bd78-10-09 buffalo 105.flac
+     8:24.19       88950332 B   ---   --   ---xx   flac  0.5551  bd78-10-09 buffalo 106.flac
+     4:43.00       49921244 B   ---   --   ---xx   flac  0.5561  bd78-10-09 buffalo 107.flac
+     4:37.74       49036892 B   ---   --   ---xx   flac  0.5483  bd78-10-09 buffalo 108.flac
+     4:17.42       45433628 B   ---   --   ---xx   flac  0.5346  bd78-10-09 buffalo 109.flac
+     7:28.22       79078988 B   ---   --   ---xx   flac  0.5330  bd78-10-09 buffalo 110.flac
+     4:33.05       48169004 B   ---   --   ---xx   flac  0.5275  bd78-10-09 buffalo 111.flac
+     5:23.38       57066620 B   ---   --   ---xx   flac  0.5205  bd78-10-09 buffalo 112.flac
+     5:42.33       60406460 B   ---   --   ---xx   flac  0.5156  bd78-10-09 buffalo 113.flac
+     6:26.14       68123372 B   ---   --   ---xx   flac  0.5345  bd78-10-09 buffalo 114.flac
+     3:14.21       34271036 B   ---   --   ---xx   flac  0.5255  bd78-10-09 buffalo 115.flac
+    74:37.40      789837540 B                            0.5416  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-10-09-lk.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:19.62       56417468 B   ---   --   ---xx   flac  0.5190  bd78-10-09 buffalo 201.flac
+     5:10.08       54702860 B   ---   --   ---xx   flac  0.5215  bd78-10-09 buffalo 202.flac
+     5:40.44       60079532 B   ---   --   ---xx   flac  0.5161  bd78-10-09 buffalo 203.flac
+     6:31.33       69050060 B   ---   --   ---xx   flac  0.5271  bd78-10-09 buffalo 204.flac
+     4:54.63       52009820 B   ---   --   ---xx   flac  0.5426  bd78-10-09 buffalo 205.flac
+     6:25.20       67961084 B   ---   --   ---xx   flac  0.5371  bd78-10-09 buffalo 206.flac
+     4:40.43       49493180 B   ---   --   ---xx   flac  0.5410  bd78-10-09 buffalo 207.flac
+     4:07.33       43648460 B   ---   --   ---xx   flac  0.5382  bd78-10-09 buffalo 208.flac
+     3:38.07       38471708 B   ---   --   ---xx   flac  0.5374  bd78-10-09 buffalo 209.flac
+     2:04.20       21920684 B   ---   --   ---xx   flac  0.5322  bd78-10-09 buffalo 210.flac
+     7:37.53       80739500 B   ---   --   ---xx   flac  0.5435  bd78-10-09 buffalo 211.flac
+     8:03.55       85330604 B   ---   --   ---xx   flac  0.5280  bd78-10-09 buffalo 212.flac
+     7:25.45       78603884 B   ---   --   ---xx   flac  0.5509  bd78-10-09 buffalo 213.flac
+    71:39.36      758428844 B                            0.5337  (13 files)
+=================== 
+=================== 
+=================== 

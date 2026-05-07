@@ -1,0 +1,63 @@
+Bob Dylan
+Key Arena
+Seattle, Washington
+October 13, 2006
+
+source: soomlos
+16th row right center
+neumann km140's > lunatec v3 > microtrack 24/96 (24/48)
+audacity > r8brain > cd wave > flac (16/44.1)
+
+**16-bit version**
+
+Disc 1:
+01. introduction [01:12]
+02. Maggie's Farm [05:02]
+03. She Belongs To Me [04:44]
+04. Lonesome Day Blues [06:58]
+05. Positively 4th Street [06:32]
+06. It's Alright, Ma (I'm Only Bleeding) [07:33]
+07. Just Like A Woman [06:45]
+08. Highway 61 Revisited [06:34]
+09. When The Deal Goes Down [05:51]
+10. Tangled Up In Blue [08:07]
+11. A Hard Rain's A-Gonna Fall [06:45]
+Total time: [66:11]
+
+Disc 2:
+01. Watching the River Flow [06:19]
+02. Workingman's Blues #2 [06:34]
+03. Summer Days [09:43]
+04. Thunder On The Mountain [05:52]
+05. Like A Rolling Stone [06:25]
+06. band introduction [00:34]
+07. All Along The Watchtower [06:19]
+Total time: [41:51]
+
+Band Members:
+Bob Dylan - vocals, keyboard, harp
+Denny Freeman - guitar
+Donnie Herron - violin, mandolin, steel guitar
+Stu Kimball - guitar
+George Recile - drums
+Tony Garnier - bass
+
+Flac Fingerprint
+bd2006-10-13d1t01.flac:04db9f9a059a85d4b586b2f2633ae7be
+bd2006-10-13d1t02.flac:4b889cb98d226eec57ea5e58c1915df0
+bd2006-10-13d1t03.flac:689e9e3875398be593ed84e7385381be
+bd2006-10-13d1t04.flac:e5404d8aa7dc5f97d450c6a6ffcbac0e
+bd2006-10-13d1t05.flac:0c92898ee4784e9074b7428e18e46deb
+bd2006-10-13d1t06.flac:35a7a58991428752f0ef352f2908098a
+bd2006-10-13d1t07.flac:169b09735b4bbc6a2ccebf2c22cb930e
+bd2006-10-13d1t08.flac:a4641c2deb2218947ef2330d3f3bcda1
+bd2006-10-13d1t09.flac:e4c17471b5c9ba22f5a3014e7954bccb
+bd2006-10-13d1t10.flac:79cf931e261c7ff7035f0e661932522d
+bd2006-10-13d1t11.flac:1a119b23f92cc75da693ebf8166e1fb0
+bd2006-10-13d2t01.flac:e2c71cd287a376ef858a6aab25976f48
+bd2006-10-13d2t02.flac:39d164deef7fb5bffdfb4f2ad49212c0
+bd2006-10-13d2t03.flac:964024b97fdd5bd097b2ce94c59c5313
+bd2006-10-13d2t04.flac:150f8d3f4b186a24323199f0f2e1b83c
+bd2006-10-13d2t05.flac:f306d6f7eda8d9654513c87328ffaa71
+bd2006-10-13d2t06.flac:d41c57b5f72151a0c5ac3f5a357e9e16
+bd2006-10-13d2t07.flac:d3e17f659c47b6fbc911a7506affbb43

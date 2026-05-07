@@ -1,0 +1,46 @@
+; Using hkSFV on 01.22.2008 at 03:43:13
+; http://www.big-o-software.com
+;
+;/----
+;      3958460 03:42.27 2008-01-22 101 Introduction.wav
+;     32027228 03:42.28 2008-01-22 102 Hallelujah, I'm Ready To Go.wav
+;     58814156 03:42.29 2008-01-22 103 My Back Pages.wav
+;     61932908 03:42.30 2008-01-22 104 Masters Of War.wav
+;     54672284 03:42.31 2008-01-22 105 Tomorrow Is A Long Time.wav
+;    103941980 03:42.34 2008-01-22 106 A Hard Rain's A-Gonna Fall.wav
+;     75889676 03:42.35 2008-01-22 107 Tangled Up In Blue.wav
+;     71347964 03:42.37 2008-01-22 108 The Lonesome Death Of Hattie Carroll.wav
+;     52200332 03:42.38 2008-01-22 109 Gotta Serve Somebody.wav
+;     58136780 03:42.39 2008-01-22 110 You're A Big Girl Now.wav
+;     51247772 03:42.40 2008-01-22 111 All Along The Watchtower.wav
+;     66959132 03:42.42 2008-01-22 201 Tryin' To Get To Heaven.wav
+;     81710876 03:42.44 2008-01-22 202 To Be Alone With You.wav
+;     79104860 03:42.46 2008-01-22 203 Ballad Of A Thin Man.wav
+;     75266396 03:42.48 2008-01-22 204 Like A Rolling Stone.wav
+;     73965740 03:42.50 2008-01-22 205 Forever Young.wav
+;     75920252 03:42.53 2008-01-22 206 Maggie's Farm.wav
+;     86563052 03:42.55 2008-01-22 207 It Ain't Me, Babe.wav
+;     72698012 03:42.57 2008-01-22 208 Rainy Day Women #12 & #35.wav
+;     56549180 03:42.58 2008-01-22 209 Blowin' In The Wind.wav
+;\----
+;
+87fdc03bef20abf788bb74512c4a1c60 *101 Introduction.wav
+ecc3bd7058715d29e7a616c620fe3e71 *102 Hallelujah, I'm Ready To Go.wav
+b1b00ea4d77c36753ba5f96a420a9e25 *103 My Back Pages.wav
+2e3c49903532675b61affea68052329c *104 Masters Of War.wav
+fc6892e3138e89c76a279468847c62d1 *105 Tomorrow Is A Long Time.wav
+4944bee83b702429a9a611b8745498fb *106 A Hard Rain's A-Gonna Fall.wav
+5c2a2ff33db897318afb4403bef6a89d *107 Tangled Up In Blue.wav
+474d785d56e5cef1636393867a9fc89c *108 The Lonesome Death Of Hattie Carroll.wav
+a23c5edac11f6c41b1c36815d2018738 *109 Gotta Serve Somebody.wav
+1bc0e943a469cc7661cf290b955aaffb *110 You're A Big Girl Now.wav
+94c985d1be153511cc6bfe408a6ca3b3 *111 All Along The Watchtower.wav
+4c4868efc4e61ce86588df07001cb209 *201 Tryin' To Get To Heaven.wav
+7d1de209d905dfa57941df8ab645dcf9 *202 To Be Alone With You.wav
+24fbf55c7b7e2b28a19c8a6cbfddc79c *203 Ballad Of A Thin Man.wav
+b7820489a8f2ae397f59908471677d0e *204 Like A Rolling Stone.wav
+c3a8f2205aa0dc93323ddaa0642ef10c *205 Forever Young.wav
+669232f66d007343f597245a0bb795ca *206 Maggie's Farm.wav
+8ed2354287617a1d22cc95e4c8cbed5f *207 It Ain't Me, Babe.wav
+6610718ec0455dd6b26ca223248e1fc5 *208 Rainy Day Women #12 & #35.wav
+f1a46ef6616e3166a3f3e0f35c2cf6cd *209 Blowin' In The Wind.wav

@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-12-07.flac 
+=================== 
+=================== 
+=================== 
+7e835e91e1008d1a2fda30e66b02f38d  bd1995-12-07_d1t01.flac
+5d4dddc152225065feed18880e1b68c7  bd1995-12-07_d1t02.flac
+a51bbf79583690e3c946081017ee7c03  bd1995-12-07_d1t03.flac
+a5c7a28836004f0f18a643fa6504e9d2  bd1995-12-07_d1t04.flac
+c7393b0aeef0a6887ae299a6b14a423d  bd1995-12-07_d1t05.flac
+47de8512c3946ec947138d00cfa8cd26  bd1995-12-07_d1t06.flac
+cb575d69d51978b09af2956337ca5c54  bd1995-12-07_d1t07.flac
+7543719575b29c3270c0f7b475e1e005  bd1995-12-07_d1t08.flac
+87c9eb58b3b4884486e2e3cbcc930d9a  bd1995-12-07_d2t01.flac
+bbe2ecda651b2200ef5da2c75b894149  bd1995-12-07_d2t02.flac
+16154732b6b0cc2efdfdd631e9369b07  bd1995-12-07_d2t03.flac
+40bba8a30e8602774c318c487ec71800  bd1995-12-07_d2t04.flac
+f3aba90de0161152e6698dd88169c912  bd1995-12-07_d2t05.flac
+93ab840ae920bbfc71a53b3f3107ffa7  bd1995-12-07_d2t06.flac
+933a8d259bf8cae67f68c38e06650a80  bd1995-12-07_d2t07.flac
+431c1c59be93689886ba4c1c1fd50e5c  bd1995-12-07_Danbury.aud.flac.md5
+b43973615e5e24a06c779aa7c96dbba2  bd1995-12-07_Danbury.aud.flacfingerprint.txt
+96a67ce81daf1547efdc54055a73748c  bd1995-12-07_Danbury.txt
+327696d9ff2d1fdf534871d80dfa7e7a  bd95-12-07.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-12-07.flac 
+=================== 
+=================== 
+=================== 
+bd1995-12-07_d1t01.flac:76ac6825dc4c6156e67cdd831027d451
+bd1995-12-07_d1t02.flac:555877ca617dd5fe7c328026aed9bbd8
+bd1995-12-07_d1t03.flac:7058fba03347e0e54a3054572cd7d62a
+bd1995-12-07_d1t04.flac:62022795e9f574a50ed46ee7e6f6cf3e
+bd1995-12-07_d1t05.flac:bb97a55fc9b1db83ed940499bb1effd6
+bd1995-12-07_d1t06.flac:8dc078a5f4dadc5f2576236ed4522f9b
+bd1995-12-07_d1t07.flac:57de8afd682cdbf0c556d746cb0fc51d
+bd1995-12-07_d1t08.flac:364fcf04aba781be63b401120068fc97
+bd1995-12-07_d2t01.flac:c384b4303a492bc80e80786641f94b62
+bd1995-12-07_d2t02.flac:deca1ba2f90c154b85f669ea76d93c46
+bd1995-12-07_d2t03.flac:241d510e38eb6b351153af3703afbe73
+bd1995-12-07_d2t04.flac:4dbc523c7a4afe2a615bf84919e251f8
+bd1995-12-07_d2t05.flac:5ac8bee238d5180e6d3b695f8a78e696
+bd1995-12-07_d2t06.flac:3d05c6fb30ea59fdbbf894e7bed940bd
+bd1995-12-07_d2t07.flac:fccc19f2996bec9f86ca3e9ff1356e5f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-12-07.flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:14.05       55401404 B   ---   --   ---xx   flac  0.6181  bd1995-12-07_d1t01.flac
+     5:58.63       63299420 B   ---   --   ---xx   flac  0.5686  bd1995-12-07_d1t02.flac
+     7:08.20       75546284 B   ---   --   ---xx   flac  0.5999  bd1995-12-07_d1t03.flac
+     5:35.64       59244572 B   ---   --   ---xx   flac  0.5393  bd1995-12-07_d1t04.flac
+     6:01.18       63722780 B   ---   --   ---xx   flac  0.5257  bd1995-12-07_d1t05.flac
+     7:00.58       74224460 B   ---   --   ---xx   flac  0.5991  bd1995-12-07_d1t06.flac
+     9:26.33       99920060 B   ---   --   ---xx   flac  0.4529  bd1995-12-07_d1t07.flac
+     6:11.55       65573804 B   ---   --   ---xx   flac  0.4656  bd1995-12-07_d1t08.flac
+     6:29.44       68723132 B   ---   --   ---xx   flac  0.5225  bd1995-12-07_d2t01.flac
+     7:24.09       78342812 B   ---   --   ---xx   flac  0.6067  bd1995-12-07_d2t02.flac
+     7:07.34       75402812 B   ---   --   ---xx   flac  0.4817  bd1995-12-07_d2t03.flac
+     8:13.52       87087548 B   ---   --   ---xx   flac  0.5711  bd1995-12-07_d2t04.flac
+     7:24.15       78356924 B   ---   --   ---xx   flac  0.5592  bd1995-12-07_d2t05.flac
+     9:31.49      100839692 B   ---   --   ---xx   flac  0.4499  bd1995-12-07_d2t06.flac
+     8:10.50       86553644 B   ---   --   ---xx   flac  0.5556  bd1995-12-07_d2t07.flac
+   106:58.44     1132239348 B                            0.5370  (15 files)
+=================== 
+=================== 
+=================== 

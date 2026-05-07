@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd96-05-04-Superb.flacf
+===================
+===================
+===================
+36294a77a1aabce357f357675b8575d4 *Art+info\info.txt
+1825d70b9c8c1b6baf9aa86cc0834765 *Art+info\S6376.jpg
+b9c1faf06efe2e7bb91174fcbef98c05 *Art+info\S6377.jpg
+8d7eb0c481cbd52cec3d2b04a4a8f0da *BOB DYLAN 1996 05 04 Richmond, Virginia - Superb.md5
+bd91cc4529b4c9d2b02ab4aa0e802f88 *Disc 1\Track  1.flac
+087c9f400b7a49376217feae3f4b8077 *Disc 1\Track  2.flac
+640df7b774f7b01ffb4d921c1c4f909a *Disc 1\Track  3.flac
+da398bc78cfc6653926af388f80f477b *Disc 1\Track  4.flac
+80b58010b2a9aaa5713ae4f528aeb506 *Disc 1\Track  5.flac
+ccc09931cfbcca92d73b649840cecd0e *Disc 1\Track  6.flac
+c8efe2281e2a20f288349e05a87f6f57 *Disc 1\Track  7.flac
+486a1506d4a15b193a94a0b461474672 *Disc 1\Track  8.flac
+dd18a4096b9ad77f19da422afdd03dc1 *Disc 2\Track  1.flac
+0050a845e5cea0b0cf6b73e7e3dc4b6b *Disc 2\Track  2.flac
+d4ddbf73d82d6c8190c0e6aa9d7a64c1 *Disc 2\Track  3.flac
+8be479d7d457c1f756331c42bd0eb21d *Disc 2\Track  4.flac
+0ab83ea976e4d55f36a3673fc64d8097 *Disc 2\Track  5.flac
+b2ad1e7624e308655a0a7ad89648164a *Disc 2\Track  6.flac
+28408f59c25eeee1fab1824692bac2fd *Disc 2\Track  7.flac
+===================
+===================
+===================
+=== ffp for: bd96-05-04-Superb.flacf
+===================
+===================
+===================
+Disc 1\Track  1.flac:daf2ebe3b018ce6ba2798dfe963a5d4e
+Disc 1\Track  2.flac:383f762f00b53dd6510b6676917d6d65
+Disc 1\Track  3.flac:bd64d9a5843b7dcc65aa1b582ddbfcfb
+Disc 1\Track  4.flac:04dbdd8c5e11fdd539926ba9943d03d4
+Disc 1\Track  5.flac:7ac7f7469fd46a4cecfd4bc5e91fb0ce
+Disc 1\Track  6.flac:ef83617cecabede032116a2f072b7250
+Disc 1\Track  7.flac:475ea7ee3a6be7f5aa40d744ed027ed1
+Disc 1\Track  8.flac:541c4d1a7a3266d399349b333646e276
+Disc 2\Track  1.flac:6e8519a3520d89df1e0fc5baf1a78203
+Disc 2\Track  2.flac:7b94cfb4cd75c5a9848dda92c0971722
+Disc 2\Track  3.flac:f6ccafed06bb0af1f7fce2f047e9de6b
+Disc 2\Track  4.flac:27fd874d5d3ede57b5e2a1db0637cd30
+Disc 2\Track  5.flac:928b2c8a79c45036da49cf181e302be5
+Disc 2\Track  6.flac:42f60bdd32e04e7edaaf2bcb78f6a7b9
+Disc 2\Track  7.flac:a38be3f25c003a26bb24f81f0e5d17d8
+===================
+===================
+===================
+=== shntool len for: bd96-05-04-Superb.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.57       47586860 B   -b-   --   ---xx   flac  0.6264  Track  1.flac
+     5:23.55       57106988 B   -b-   --   ---xx   flac  0.5677  Track  2.flac
+     6:06.41       64659500 B   -b-   --   ---xx   flac  0.6396  Track  3.flac
+     7:36.35       80520236 B   -b-   --   ---xx   flac  0.6012  Track  4.flac
+     5:27.24       57738284 B   -b-   --   ---xx   flac  0.5692  Track  5.flac
+     6:44.50       71382572 B   -b-   --   ---xx   flac  0.6263  Track  6.flac
+     9:08.13       96698924 B   -b-   --   ---xx   flac  0.5642  Track  7.flac
+     5:36.24       59328044 B   -b-   --   ---xx   flac  0.5409  Track  8.flac
+    50:33.00      535021408 B                            0.5910  (8 files)
+===================
+===================
+===================
+=== shntool len for: bd96-05-04-Superb.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:25.72       68083244 B   -b-   --   ---xx   flac  0.5636  Track  1.flac
+     7:20.73       77787692 B   -b-   --   ---xx   flac  0.6240  Track  2.flac
+     6:46.33       71695916 B   -b-   --   ---xx   flac  0.5889  Track  3.flac
+    10:32.26      111545900 B   -b-   --   ---xx   flac  0.6026  Track  4.flac
+     7:30.26       79441964 B   -b-   --   ---xx   flac  0.5993  Track  5.flac
+    13:50.68      146571308 B   -b-   --   ---xx   flac  0.5547  Track  6.flac
+     4:44.65       50250284 B   -b-   --   ---xx   flac  0.6027  Track  7.flac
+    57:11.63      605376308 B                            0.5873  (7 files)
+===================
+===================
+===================

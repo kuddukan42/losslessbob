@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-07-19-spanish-manners.flacf 
+=================== 
+=================== 
+=================== 
+d3a0e6da5544c946312fcea18b0656ec  !!!!Arde el Foro¡¡¡¡.txt
+24d782606cca8e9146c87b3a2a1c9c2b  back.JPG
+6d962a4eb0310b4badeb4aa9ad301a9a  cd-1\cd-1.LOG
+4733891ccc36b6216104ccf869e4f6b1  cd-1\cd-1.md5
+7d228ae9f1c423a7093c28b91dca3d72  cd-1\fingerprint-cd-1.txt
+3d99630652eb2cb39da774718c742af2  cd-1\Track01.flac
+abec0e382f3d60184a5ad94e04689438  cd-1\Track02.flac
+53c81a15d610d8fd8c2f817b61de7d81  cd-1\Track03.flac
+082bc6c017c7e6376288d769af9f7fda  cd-1\Track04.flac
+884e44a7ff36c7410ed2be30f43d6bf5  cd-1\Track05.flac
+5a3198fe73167904626086af22ca15db  cd-1\Track06.flac
+4c94c5fa18da5d38d2208a56f4e24b61  cd-1\Track07.flac
+b09d87a4e6eddfa89338743dda0e5702  cd-1\Track08.flac
+525714e2c426c564fc0718632c0cab91  cd-1\Track09.flac
+a80322d83fc06caa2ac2f5fff9d91116  cd-1\Track10.flac
+cb5dd60693f1f101036a8e11ff3afb6a  cd-2\cd-2.LOG
+354a99c954652e05c70895ce40001bec  cd-2\cd-2.md5
+3ec90045dcae29551f585a7e1cff5916  cd-2\fingerprint-cd-2.txt
+eb636eb0f8c610a242f853d816673a53  cd-2\Track01.flac
+ba55acce1c17c4779738e63881497cb6  cd-2\Track02.flac
+4da54d0e628d287e8cf73ccbafc3c420  cd-2\Track03.flac
+0d8520eed7aabb6e9fa1f4b6da1e644e  cd-2\Track04.flac
+8a8e6cd2ec008e04fcd01a634b40a1e3  cd-2\Track05.flac
+5329cc3c0d45afb49476a0c2ab049537  cd-2\Track06.flac
+5dda98d56b31f513800598837cbcaa9e  cd-2\Track07.flac
+575966ac31701152f7e840b742086261  cd-2\Track08.flac
+396fbc3b1194480f440706e9a09b2675  cd-2\Track09.flac
+69992653fd5d5e47e705dd5126058ac6  front.JPG
+0c123520533ba8e5cf5d05b3503d296e  insert-1.JPG
+20a320e427fe898f55b46c242957885c  insert-2.JPG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-19-spanish-manners.flacf\cd-2 
+=================== 
+=================== 
+=================== 
+Track01.flac:98d51ca7ec45a669ca7e0dda54554119
+Track02.flac:dcc710993d4e5acaf586168dd2f3d039
+Track03.flac:14bcd481ff32ab9fc2ef764a7ffda2e7
+Track04.flac:7b940105f1cb7bc96acf04e0054d8d0d
+Track05.flac:5d26c8fe8ca9753e99905b656adb3a5d
+Track06.flac:dffe7927cbfc21b587da440bb3e05c99
+Track07.flac:f5bb888b5aec8d8160d51486d092fd75
+Track08.flac:0dcf66af92a9387d5f2e046ba3a169e1
+Track09.flac:e3a82e75669d8f625ac7b51e8c9fd5bc
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-07-19-spanish-manners.flacf\cd-1 
+=================== 
+=================== 
+=================== 
+Track01.flac:7b805fd0a5a1d4e2d5c3868d0444004a
+Track02.flac:e067191f1217fd855a1076fad3b058a1
+Track03.flac:d76cd4d6fdaa24f06b41c0ba934a2f7c
+Track04.flac:9572bf4fe97cf5acb5b2ffc0741a825d
+Track05.flac:46c0ba75a1a2804ecda398e4b486f47d
+Track06.flac:5186091a7e56e3a68ed2d411f41225a2
+Track07.flac:1df0625da36d9c2f51c59ec5e9eb5fb0
+Track08.flac:4e76ec61b03b19270229bd4b9590ea1e
+Track09.flac:9e213b43544a385ecef463060461684f
+Track10.flac:1cd2ce35299ef66777e56314c53392e5
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-07-19-spanish-manners.flacf\cd-2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:14.01       87143996 B   ---   --   ---xx   flac  0.6808  Track01.flac
+     6:23.49       67676492 B   ---   --   ---xx   flac  0.7337  Track02.flac
+     9:27.59      100157612 B   ---   --   ---xx   flac  0.7258  Track03.flac
+     9:17.71       98421836 B   ---   --   ---xx   flac  0.7239  Track04.flac
+     4:57.61       52534316 B   ---   --   ---xx   flac  0.7323  Track05.flac
+     6:23.47       67671788 B   ---   --   ---xx   flac  0.7348  Track06.flac
+     7:08.66       75654476 B   ---   --   ---xx   flac  0.6435  Track07.flac
+     8:27.11       89460716 B   ---   --   ---xx   flac  0.6556  Track08.flac
+     6:43.62       71235068 B   ---   --   ---xx   flac  0.6809  Track09.flac
+    67:04.52      709956300 B                            0.7000  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd95-07-19-spanish-manners.flacf\cd-1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:05.12       53830268 B   ---   --   ---xx   flac  0.7023  Track01.flac
+     5:45.15       60893324 B   ---   --   ---xx   flac  0.7019  Track02.flac
+     6:19.31       66928556 B   ---   --   ---xx   flac  0.7438  Track03.flac
+     8:02.39       85116572 B   ---   --   ---xx   flac  0.6926  Track04.flac
+     6:00.64       63654572 B   ---   --   ---xx   flac  0.6885  Track05.flac
+     6:59.05       73923404 B   ---   --   ---xx   flac  0.7331  Track06.flac
+     9:35.44      101533532 B   ---   --   ---xx   flac  0.7269  Track07.flac
+     8:07.31       85979756 B   ---   --   ---xx   flac  0.6679  Track08.flac
+     6:50.44       72427532 B   ---   --   ---xx   flac  0.6917  Track09.flac
+     7:40.40       81238124 B   ---   --   ---xx   flac  0.7351  Track10.flac
+    70:26.25      745525640 B                            0.7087  (10 files)
+=================== 
+=================== 
+=================== 

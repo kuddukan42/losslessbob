@@ -1,0 +1,27 @@
+01a20b0215edbf826e28720a2150c89b  D1\01 Gotta Serve.flac
+2a1d393e53b51a16d17bd2dbdec165ab  D1\02 Simple Twist.flac
+598c878b5b0191f6315dae04fc2ef04b  D1\03 Watchtower.flac
+8abac39944cc39588b2c0dbbf6f29a55  D1\04 LRS.flac
+b3d32aaf46332d2dbc8cebdfaa401dec  D1\05 G Beautiful.flac
+98e29bf895a705a7866eff841578031e  D1\06 Animals.flac
+8bd9b7bc0bb7b7256de5a4de156e64f7  D1\07 Ramona.flac
+58fb9c44236483db413908194895ed44  D1\08 Disagree.flac
+2af3632abc540e643b91efab715ab4aa  D1\09 Hell.flac
+b30d4ec80ff845cc7bcbe2062ded1b89  D1\10 GirlNC.flac
+46b2c2c718d8b015d516557dd9376b5e  D1\D1.md5
+e5d2394333acf5c55575fa271e7ece0f  D2\11 Slow Train.flac
+b5509bd5b4af04ddb6fbd2edf8bb6239  D2\12 AM&J.flac
+c9ea09e9811ca61c712925f2e1d6edff  D2\13 Between.flac
+4b21dc1d8c97e094d42bfaa351991421  D2\14 Tom Thumb.flac
+6adb21222eec7522394ad392574ce02d  D2\15 Covenant.flac
+3b01c2460a1c68cce35a5eddecde5af2  D2\16 Couple.flac
+b0805315c3409587e4544966f8d67405  D2\17 Solid Rock.flac
+de118c7e70a48b6fb2eeec9397698eac  D2\18 JLAW.flac
+43415fe54d820b2a91163020c7952343  D2\19 Senor.flac
+570134e293e8566606657a18ff80e02e  D2\20 Wake up.flac
+3c9406e7b768727f10587947d59a61c7  D2\21 Garden.flac
+3fba31df63b16ddff429012dac9df6fa  D2\22 Blowin.flac
+d1498d1b0a2628581aeb8e819128f55d  D2\23 City of Gold.flac
+6b384dd26fa36385e1cf671abf1fd87c  D2\24 DTT.flac
+057676a634e2a11abf72a622d6e35759  D2\D2.md5
+508963245ebf87439859c7591bc98c77  Disc 2.md5

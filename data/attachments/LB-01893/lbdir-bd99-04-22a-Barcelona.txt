@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-22a-Barcelona 
+=================== 
+=================== 
+=================== 
+35f987b1ebfa11427eb3ff6003638caf  Bar-0422-d1-t01.shn
+73a95f82a6a0fa133087ad60f13f80c6  Bar-0422-d1-t02.shn
+85beedcd94d7d72c0bc23e0ce246bb92  Bar-0422-d1-t03.shn
+839eee84e613eb6bd870f1f04f7b17a0  Bar-0422-d1-t04.shn
+1dca88994edc91d3783b672fc08d62bc  Bar-0422-d1-t05.shn
+59caf8e9ffb7f6477d9b195dc699cbf3  Bar-0422-d1-t06.shn
+b425aa57ac50d5841856bd3b7bd96277  Bar-0422-d1-t07.shn
+5b0d4f33f2029fc462703c827a61ff87  Bar-0422-d1-t08.shn
+6d7675b0c2ee72021df5b365a87f5c63  Bar-0422-d1-t09.shn
+4092baf31cadbfdff1ae17d4bf2d7961  Bar-0422-d1-t10.shn
+cf655f93768e0c2116e8f56f56eb561f  Bar-0422-d2-t01.shn
+772e38f1ea6e60ecdadaaf27d6ddc8a7  Bar-0422-d2-t02.shn
+ab1c65f2d5718c9b16afa32764cd8a39  Bar-0422-d2-t03.shn
+6654501849efc5d0322bc0c3e24a4b63  Bar-0422-d2-t04.shn
+cef4eeb2375e2c76d4d0878cb0b389f7  Bar-0422-d2-t05.shn
+184eedd26be6ff75aee4fbe2aa6bc7d1  Bar-0422-d2-t06.shn
+1e66a70c8d1430894eb9f76545b8581a  Bar-0422-d2-t07.shn
+79f90d1544937af06ba4e10829a5f732  bd99-04-22a.txt
+0cba8c6d1f910812fd175175617f1b96  LisbonToBarcelonaInfo.doc
+6b452d7c6b9171c0edee62ebb694aadf  Malaga.jpg
+ad5b475a51dfa6fae82f4940f2ec8851  noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-04-22a-Barcelona 
+=================== 
+=================== 
+=================== 
+c88f45a93c53c62ab74781af1f7d5a48  [shntool]  Bar-0422-d1-t01.wav
+811cd3c8c978adf3b925b1ce96d4a64a  [shntool]  Bar-0422-d1-t02.wav
+9d00df2e8c044372e458154a50817ed3  [shntool]  Bar-0422-d1-t03.wav
+4508a6ce87c9a73653b192f27f8e01b4  [shntool]  Bar-0422-d1-t04.wav
+0a237de868e2f9a287968ad2ba3b7425  [shntool]  Bar-0422-d1-t05.wav
+32b8bfe380a16b66040e9375ad1c4e09  [shntool]  Bar-0422-d1-t06.wav
+dfd939ab2f4a6b69f6d02d7c8b6de500  [shntool]  Bar-0422-d1-t07.wav
+e1c1dd794ab4788a97082f91b6006d87  [shntool]  Bar-0422-d1-t08.wav
+32fac23ea0750d4ef55284393e17bb66  [shntool]  Bar-0422-d1-t09.wav
+9b8ba97c5ecd63f7ea5ad73320077f9d  [shntool]  Bar-0422-d1-t10.wav
+58aa5d97ee1a6b91b811eaeb0a7418ba  [shntool]  Bar-0422-d2-t01.wav
+6a84958f2647629718a45efae925344f  [shntool]  Bar-0422-d2-t02.wav
+987d33fed3ec8cb2b63eff52acc546e3  [shntool]  Bar-0422-d2-t03.wav
+fc206e37713492eeb621e89db4fb2aaa  [shntool]  Bar-0422-d2-t04.wav
+2fe5458fb0bd1ce727d20d1e51b0bd12  [shntool]  Bar-0422-d2-t05.wav
+c19f3fc668f4475053775c38d53472b7  [shntool]  Bar-0422-d2-t06.wav
+c2317c6cdea6340acabf73b1e369fb3a  [shntool]  Bar-0422-d2-t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-22a-Barcelona 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:14.14       23671672 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t01.wav
+     3:53.16       41138340 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t02.wav
+     6:27.69       68429608 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t03.wav
+     5:29.59       58175304 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t04.wav
+     7:03.62       74763752 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t05.wav
+     5:01.20       53143672 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t06.wav
+     8:03.48       85314664 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t07.wav
+     5:57.11       63000984 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t08.wav
+     7:18.46       77370948 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t09.wav
+     5:17.67       56075936 B   -b-   --   -----    wav  1.0000  Bar-0422-d1-t10.wav
+     8:41.56       92036408 B   -b-   --   -----    wav  1.0000  Bar-0422-d2-t01.wav
+     5:41.17       60192184 B   -b-   --   -----    wav  1.0000  Bar-0422-d2-t02.wav
+     6:06.66       64717972 B   -b-   --   -----    wav  1.0000  Bar-0422-d2-t03.wav
+     5:53.59       62408680 B   -b-   --   -----    wav  1.0000  Bar-0422-d2-t04.wav
+     4:32.25       48040680 B   -b-   --   -----    wav  1.0000  Bar-0422-d2-t05.wav
+     6:00.10       63528088 B   -b-   --   -----    wav  1.0000  Bar-0422-d2-t06.wav
+     8:25.63       89230480 B   -b-   --   -----    wav  1.0000  Bar-0422-d2-t07.wav
+   102:09.35     1081239372 B                            1.0000  (17 files)
+=================== 
+=================== 
+=================== 

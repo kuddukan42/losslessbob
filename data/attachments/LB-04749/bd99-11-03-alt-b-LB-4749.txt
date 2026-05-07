@@ -1,0 +1,8 @@
+Bob Dylan, 11/3/99, Columbus, Ohio, Value City Arena, Jerome Schottenstein Center, Ohio State University, 2CDR
+
+LB-4749, (72min+25min), version "b"; AUD DAT Master [Sonic Studios 6P] > DAT clone(s) > WAV > Soundforge 6.0 > CD Wave > CD > EAC > WAV > FLAC, I did not harm the sound of the recording in any way, This is not the same recording as LB-2496 or LB-2794 but is a fairly new transfer from my DAT clone, This taper must have stood very close to the one of LB-2496; bittorrent download 04/07; excellent sound [A]; in 3-way comparison this was the warmest followed closely by LB-2496 and then LB-2794
+
+CD 1 [71:40.56], 01 I Am The Man, Thomas [02:53.45], 02 Girl From The North Country [06:10.24], 03 A Hard Rain's A-Gonna Fall [09:05.64], 04 Tomorrow Is A Long Time [04:41.12], 05 Tangled Up In Blue [09:56.10], 06 To Be Alone With You [05:42.21], 07 Senor (Tales Of Yankee Power) [06:50.59], 08 I Don't Believe You (She Acts Like We Never Have Met) [06:59.66], 09 It Takes A Lot To Laugh, It Takes A Train To Cry [06:29.00], 10 If You See Her Say Hello [05:36.07], 11 Silvio [07:15.48], CD 2 [24:33.48], 01 Love Sick [06:11.07], 02 Rainy Day Women # 12 & 35 [06:09.47], 03 It Ain't Me, Babe [07:57.56], 04 Not Fade Away [04:15.13]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

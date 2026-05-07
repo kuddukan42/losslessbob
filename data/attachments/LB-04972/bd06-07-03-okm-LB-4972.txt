@@ -1,0 +1,12 @@
+Bob Dylan, 7/3/06, Lille, France, Lille Grand Palais Le Zenith, 2CDR
+
+LB-4972, (70min+43min), Taper:Sony TCD-D100 > OKM II Rock Version, I received the boot in a vine on 2 audio-CDs (cda), Extraction with CDex v1.51, cda > wav > flac > Dime, Known problems with the recording:, at 2'59 on CD1 04-Mr Tambourine Man, from 5'10 to approx. 6' on 10-Positively 4th Street"; bittorrent download 05/07; left channel is higher than right channel and clips even on quieter songs; in comparison to LB-3908 this one has a fuller less harsh sound; (did not review this yet)
+
+Cd1
+61:02, tr.01 Maggie's Farm (5:50), tr.02 The Times They Are A-Changin' (7:28), tr.03 Down Along The Cove (7:03), tr.04 Positively 4th Street (6:01), tr.05 It's Alright, Ma (I'm Only Bleeding) (8:09), tr.06 Queen Jane Approximately (6:27), tr.07 Highway 61 Revisited (7:40), tr.08 Mr. Tambourine Man (7:41), tr.09 Honest With Me (6:38), 
+
+CD2
+42:29, tr.01 To Ramona (5:50), tr.02 Watching The River Flow (5:45), tr.03 Masters Of War (5:41), tr.04 Rainy Day Women #12 & 35 (10:02), tr.05 Like A Rolling Stone (7:41), tr.06 All Along The Watchtower (7:27)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

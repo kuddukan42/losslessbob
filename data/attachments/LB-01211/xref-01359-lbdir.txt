@@ -1,0 +1,88 @@
+===================
+===================
+===================
+=== md5 for: bd92-05-23-a.flacf
+===================
+===================
+===================
+55366013344f91f30268909dda4d7590 *CD1\Track01.flac
+c7cc7fc7b9eca5ee325bd6ba650b5e24 *CD1\Track02.flac
+5ff1a3415b33f19710a372bec43d1106 *CD1\Track03.flac
+d4874ad6cc82b2a5616678d2e352d7ab *CD1\Track04.flac
+1e0a8ff12fa97d68e5eaa969a599dd4e *CD1\Track05.flac
+abb11fb142d82e731ee505b615c3d8ba *CD1\Track06.flac
+90920cd993c7e5be24ffef6ea8197ae2 *CD1\Track07.flac
+d100cc0b95f6dcab82a203502ec9e4df *CD1\Track08.flac
+adf5f4a28496dd8c2893182fc5451d9b *CD1\Track09.flac
+c88d0e01ec6d9842d0e4868f6d1aa5b8 *CD1\Track10.flac
+5505d3b59b64f3caeafea780359fede4 *CD2\Track01.flac
+120a96a1d9e378ae8f72158fcfe73d96 *CD2\Track02.flac
+72981eaa597058274ef9261cf96c053b *CD2\Track03.flac
+327e56e679913d0904e204de67da3cc3 *CD2\Track04.flac
+f8d3f392c9a03066111227a412b4efbd *CD2\Track05.flac
+481a5cba53910c376810cc231bd234b2 *CD2\Track06.flac
+746112993baafd4f26a08bb79bd2b15d *CD2\Track07.flac
+894abbcdb484894b09328ec67b7758ee *info.txt
+527cb29fe9d573158f8591309e999b89 *Las Vegas, 23-05-1992  (MJS master).md5
+===================
+===================
+===================
+=== ffp for: bd92-05-23-a.flacf
+===================
+===================
+===================
+CD1\Track01.flac:eb7f8533113dbb64813baecb3c7fb9b8
+CD1\Track02.flac:c84747370ead80593036bb6dcdbaf8c4
+CD1\Track03.flac:b8406f7ce1791dfcf2b9e2aac9000c7a
+CD1\Track04.flac:30bf993f45ac879aafabf438aaec367c
+CD1\Track05.flac:b8d7dc941bb1e5724fb00bac3c69a63e
+CD1\Track06.flac:a49fffa996efd1c0d36f89123fa6afae
+CD1\Track07.flac:6cb32ad95b5d97d38760a276ec28a87c
+CD1\Track08.flac:15323987b40249f037337e881bfdf717
+CD1\Track09.flac:f4648fef9bc336bcd4ebd66f07eef4dc
+CD1\Track10.flac:3c79962deff5d6792fcf588766a02deb
+CD2\Track01.flac:235c756f4a5cfc7124ed57345c3f2186
+CD2\Track02.flac:edc3ecbd69898d79bc476b0d8a816d0c
+CD2\Track03.flac:07f7270cbf0b0f1db6dbc7e734da8c02
+CD2\Track04.flac:a00b3b738d29afa30a071390484b6e72
+CD2\Track05.flac:86a541814772892068afac17320ad6ce
+CD2\Track06.flac:aafc359a1918c1326f425c3a9a8948c5
+CD2\Track07.flac:884ac0574e1b36f19241ae25876de20e
+===================
+===================
+===================
+=== shntool len for: bd92-05-23-a.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:24.20       46616684 B   ---   --   ---xx   flac  0.6186  Track01.flac
+     6:40.62       70705868 B   ---   --   ---xx   flac  0.6239  Track02.flac
+     5:00.41       53016476 B   ---   --   ---xx   flac  0.6438  Track03.flac
+     5:43.55       60634604 B   ---   --   ---xx   flac  0.6636  Track04.flac
+     4:10.10       44123564 B   ---   --   ---xx   flac  0.6195  Track05.flac
+    13:45.57      145664108 B   ---   --   ---xx   flac  0.6567  Track06.flac
+     4:10.61       44243516 B   ---   --   ---xx   flac  0.5946  Track07.flac
+     3:27.18       36557180 B   ---   --   ---xx   flac  0.5523  Track08.flac
+     7:46.67       82360028 B   ---   --   ---xx   flac  0.6408  Track09.flac
+     6:45.20       71489084 B   ---   --   ---xx   flac  0.6242  Track10.flac
+    61:55.36      655411112 B                            0.6320  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd92-05-23-a.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:10.40       44194124 B   ---   --   ---xx   flac  0.6257  Track01.flac
+    10:25.28      110315900 B   ---   --   ---xx   flac  0.6227  Track02.flac
+     7:44.11       81875516 B   ---   --   ---xx   flac  0.6313  Track03.flac
+     5:55.15       62657324 B   ---   --   ---xx   flac  0.6312  Track04.flac
+     4:45.37       50361068 B   ---   --   ---xx   flac  0.6482  Track05.flac
+     4:43.62       50067068 B   ---   --   ---xx   flac  0.6484  Track06.flac
+     4:40.10       49415564 B   ---   --   ---xx   flac  0.6340  Track07.flac
+    42:24.53      448886564 B                            0.6327  (7 files)
+===================
+===================
+===================

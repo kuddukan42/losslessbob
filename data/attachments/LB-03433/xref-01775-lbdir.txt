@@ -1,0 +1,125 @@
+===================
+===================
+===================
+=== md5 for: bd78-06-15-AJ.flacf
+===================
+===================
+===================
+e6c87060aa8e59cc6e636bb4f00be215 *CD1\01 A hard rain's a-gonna fall [instrumental].flac
+b8307dc4f611eb9be1dbd59b35015c8c *CD1\02 Love her with a feeling (Tampa Red).flac
+caf0849280c4981ac169dc9087479d6a *CD1\03 Baby, stop crying.flac
+635212fa186a594f5445148769c02dd9 *CD1\04 Mr. Tambourine Man.flac
+b3b2b402fcfd36ac21f4d93a174c5f49 *CD1\05 Shelter from the storm.flac
+871cea8c4618294f3bff188e208fe78b *CD1\06 Love minus zero - no limit.flac
+f78bae17c754a08f8f826f0167803708 *CD1\07 Tangled up in blue.flac
+dbbb5fc19233338ce8e39b960b83329d *CD1\08 Ballad of a thin man.flac
+533dddff0fe8790074cdfee91465c08e *CD1\09 Maggie's farm.flac
+ebe1fc3088c7143182d4a1aa0eb4b4ac *CD1\10 I don't believe you (she acts like we never have met).flac
+0946edd227dc66be9cc86e599fd6cba1 *CD1\11 Like a rolling stone.flac
+cf3c700df558f525c4c7633486965e02 *CD1\12 I shall be released.flac
+9b7e63499b5b1945263af394b3a6b64a *CD1\13 Going, going, gone.flac
+3a1c8a994f737ef05238745418862d6f *CD1\14 Rainy day women # 12 & 35.flac
+837a776ccac5e8d389935cae0067bbb5 *CD1\15 One of us must know (sooner or later).flac
+6cbca2d0fb399fb39c3c4df1b86f6a3a *CD1\16 You're a big girl now.flac
+422474b2bda871cee6c69c9ec8d310e2 *CD1\CD1.ffp
+422474b2bda871cee6c69c9ec8d310e2 *CD1\CD1.txt
+394c965ae403926fc2f36075ffa57504 *CD2\17 One more cup of coffee (valley below).flac
+5fb3124ef5ca76b659d5df6d48c4f0d6 *CD2\18 Blowin' in the wind.flac
+3d48e9278a4cb10b0934c9e373f16bbd *CD2\19 I want you.flac
+fda946ff257f0172e2dcaa98d0a8a89a *CD2\20 Señor (Tales of Yankee Power).flac
+eef4c5320bef2fdd38555f68fb29309b *CD2\21 Masters of war.flac
+054ca48b6902696bbc19563b4345d402 *CD2\22 Just like a woman.flac
+d05dad874cd5cdf7ee227c8c54aea185 *CD2\23 Don't think twice, it's all right.flac
+5b9f743a6ddbe4d0879b4bc804d46b74 *CD2\24 All along the watchtower.flac
+fe0b7bcbb26cc5c3c377d08b5faebd34 *CD2\25 All I really want to do.flac
+c25a06cbbbc246666e426a26feb63676 *CD2\26 It's alright, ma (I'm only bleeding).flac
+42138530190cb65835cab70bf05e08e3 *CD2\27 Forever young.flac
+2aad7a1bebac3e0a8fd365273ebead7c *CD2\28 The times they are a-changin'.flac
+d5501a35f5130fc8f6ee6fae48228617 *CD2\CD2.ffp
+d5501a35f5130fc8f6ee6fae48228617 *CD2\CD2.txt
+dbb5636973d035958504cfed50fcb075 *Info\bd1978-06-15.aud.info.txt
+8e159f3b463b66ca725eba3ce3ecd633 *Info\Bob Dylan 1978-06-15 Earl's Court, London, England (AJ).txt
+===================
+===================
+===================
+=== ffp for: bd78-06-15-AJ.flacf
+===================
+===================
+===================
+CD1\01 A hard rain's a-gonna fall [instrumental].flac:79415eb5424404d0aad894591234c1ee
+CD1\02 Love her with a feeling (Tampa Red).flac:beb8ce6b369bb23f596a6e6a6fdb5ae7
+CD1\03 Baby, stop crying.flac:dc123b5626d79c2776f3f3e0f9680f2a
+CD1\04 Mr. Tambourine Man.flac:9f4424cfbfdcf28fbceba740cd9337ed
+CD1\05 Shelter from the storm.flac:121b3f2ecbb9aae926f7c2390b24896b
+CD1\06 Love minus zero - no limit.flac:2757d4efc4410e683a63a5342d2c47d1
+CD1\07 Tangled up in blue.flac:3e1048f03f3b507d3ace020fbbdbfb7c
+CD1\08 Ballad of a thin man.flac:cd2db5615d6a288174c0852de02619dd
+CD1\09 Maggie's farm.flac:74203f30bf58b030e84f17a206c71d6c
+CD1\10 I don't believe you (she acts like we never have met).flac:70c9d296b79acbd0901ca70492cd42b5
+CD1\11 Like a rolling stone.flac:6814649a52da759d149d26b1acdcb798
+CD1\12 I shall be released.flac:1bed856f2ca43453158d8ec54e84dc97
+CD1\13 Going, going, gone.flac:e98fd80b05d6ae63bd8e32319ee6adab
+CD1\14 Rainy day women # 12 & 35.flac:3e370dbaacac33c214cfde2e41951c3c
+CD1\15 One of us must know (sooner or later).flac:4a702292f7cbeb58507cb5c0f5c0a7cc
+CD1\16 You're a big girl now.flac:4f6831e71e0fbd44f7ec49bbbb9712a9
+CD2\17 One more cup of coffee (valley below).flac:052503766b2e583bc842ca8b61498f0a
+CD2\18 Blowin' in the wind.flac:13238ae0fba705722167a1af9ee20c61
+CD2\19 I want you.flac:cc50c8808d8c486565f4ce85f3e17f07
+CD2\20 Señor (Tales of Yankee Power).flac:06d5f3f7dc7741a7ae3c7d4fad39576f
+CD2\21 Masters of war.flac:9fc362696b363c10c72667cb8d65ff36
+CD2\22 Just like a woman.flac:01a17c0f11038f4770a9c1b62d90ee45
+CD2\23 Don't think twice, it's all right.flac:6bac513209eed2eba4f914f086eb7231
+CD2\24 All along the watchtower.flac:9c0b2fac0d24b87e951399645acd4dbc
+CD2\25 All I really want to do.flac:96c5ff7a02b5134326767a20cee2e199
+CD2\26 It's alright, ma (I'm only bleeding).flac:328a8a9ab9296364f8017d470d651303
+CD2\27 Forever young.flac:7494d9d15495bb52f806041f91fd739b
+CD2\28 The times they are a-changin'.flac:7ae12040abf7c1944c8508304d01171e
+===================
+===================
+===================
+=== shntool len for: bd78-06-15-AJ.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.03       33875900 B   ---   --   ---xx   flac  0.6056  01 A hard rain's a-gonna fall [instrumental].flac
+     2:21.58       25008860 B   ---   --   ---xx   flac  0.5846  02 Love her with a feeling (Tampa Red).flac
+     4:56.56       52346156 B   ---   --   ---xx   flac  0.5796  03 Baby, stop crying.flac
+     4:48.22       50854988 B   ---   --   ---xx   flac  0.5780  04 Mr. Tambourine Man.flac
+     4:23.03       46400300 B   ---   --   ---xx   flac  0.5890  05 Shelter from the storm.flac
+     3:13.70       34209884 B   ---   --   ---xx   flac  0.5630  06 Love minus zero - no limit.flac
+     6:39.11       70409516 B   ---   --   ---xx   flac  0.5243  07 Tangled up in blue.flac
+     4:06.10       43417964 B   ---   --   ---xx   flac  0.5840  08 Ballad of a thin man.flac
+     4:36.58       48822860 B   ---   --   ---xx   flac  0.5895  09 Maggie's farm.flac
+     4:00.60       42477164 B   ---   --   ---xx   flac  0.5678  10 I don't believe you (she acts like we never have met).flac
+     6:23.59       67700012 B   ---   --   ---xx   flac  0.5919  11 Like a rolling stone.flac
+     3:56.01       41632796 B   ---   --   ---xx   flac  0.5784  12 I shall be released.flac
+     4:33.39       48248972 B   ---   --   ---xx   flac  0.5770  13 Going, going, gone.flac
+     1:07.41       11915276 B   ---   --   ---xx   flac  0.5819  14 Rainy day women # 12 & 35.flac
+     3:54.31       41350556 B   ---   --   ---xx   flac  0.5774  15 One of us must know (sooner or later).flac
+     5:00.08       52938860 B   ---   --   ---xx   flac  0.5530  16 You're a big girl now.flac
+    67:14.05      711610064 B                            0.5743  (16 files)
+===================
+===================
+===================
+=== shntool len for: bd78-06-15-AJ.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:07.65       33139724 B   ---   --   ---xx   flac  0.5653  17 One more cup of coffee (valley below).flac
+     4:37.05       48874604 B   ---   --   ---xx   flac  0.5452  18 Blowin' in the wind.flac
+     2:44.26       28990796 B   ---   --   ---xx   flac  0.5126  19 I want you.flac
+     5:10.68       54843980 B   ---   --   ---xx   flac  0.5421  20 Señor (Tales of Yankee Power).flac
+     3:43.35       39419564 B   ---   --   ---xx   flac  0.5845  21 Masters of war.flac
+     5:41.53       60277100 B   ---   --   ---xx   flac  0.5810  22 Just like a woman.flac
+     4:52.48       51621740 B   ---   --   ---xx   flac  0.5982  23 Don't think twice, it's all right.flac
+     3:57.35       41889164 B   ---   --   ---xx   flac  0.6244  24 All along the watchtower.flac
+     3:16.13       34605020 B   ---   --   ---xx   flac  0.6208  25 All I really want to do.flac
+     8:18.18       87889580 B   ---   --   ---xx   flac  0.6085  26 It's alright, ma (I'm only bleeding).flac
+     5:21.74       56798492 B   ---   --   ---xx   flac  0.6388  27 Forever young.flac
+     4:34.50       48451244 B   ---   --   ---xx   flac  0.5990  28 The times they are a-changin'.flac
+    55:26.40      586801008 B                            0.5885  (12 files)
+===================
+===================
+===================

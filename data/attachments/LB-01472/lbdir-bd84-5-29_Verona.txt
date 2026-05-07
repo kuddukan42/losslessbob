@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-5-29_Verona 
+=================== 
+=================== 
+=================== 
+592882637cebb401419c4e6c23279783  bd84-5-29.txt
+567083089fcb800ff576be33858fe1e8  Track101.shn
+86159e565a9bac6673b37a9be9c1b27a  Track102.shn
+973c2a7c0c308d8f002f339e795ccf30  Track103.shn
+f7a2033dfe7a41552964be34ca3c3be4  Track104.shn
+ab1d42c0a12a6585e092db6f9a165065  Track105.shn
+795bc203dc0882284d0d59ac2d93b527  Track106.shn
+aa60e190b5e208a88da185f415e459ba  Track107.shn
+07da53aeec1284c8879ec875bff75f22  Track108.shn
+18c806a8e5e96f07581e3d6ae2ffea44  Track109.shn
+6deb3b9121211a26eaecb172d6a37031  Track110.shn
+9a33ae80dcd97e08fe6dd25e8aed5c2e  Track201.shn
+768f436137460126e9d1769039c286b7  Track202.shn
+5386581677fc48169933e78ce88f3bcd  Track203.shn
+b39a261ad4a85c7e4d80453016b5b2e8  Track204.shn
+2df597be0f5eb32d97c1748f7d4a9d89  Track205.shn
+7afaa194ae8563c1bb232b972fb0d7c9  Track206.shn
+5ccb08feced9bf02fe15bb954106a4e9  Track207.shn
+3c1ed702103422f66a7bb452a2190079  Track208.shn
+9a266e5d283dea1e0945b2cc7cb2cfba  Track209.shn
+d9a942e18fa21ce5696ba2b5e50324f9  Track210.shn
+dabd10c56a60b52d9cd038634c55c54b  Verona, Italy 5-29-84.md5
+1bc691f34b19420fca0e4cc64822c26d  Verona, Italy 5-29-84.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd84-5-29_Verona 
+=================== 
+=================== 
+=================== 
+243f2ba8e8a10c2557aafe7310ea152e  [shntool]  Track101.wav
+c38d6bf09f22e9e425259c0b1c716efe  [shntool]  Track102.wav
+8dfdda99d433cd7b6b969af7f15f0543  [shntool]  Track103.wav
+004ffecd53a9ff374787c6109b119edc  [shntool]  Track104.wav
+b37ccbd44c54d71c3f4720ef2bfd0399  [shntool]  Track105.wav
+f9a506bf88412ecbfee975812ad64478  [shntool]  Track106.wav
+e698a4281797c75faf8d3ebfcab4b304  [shntool]  Track107.wav
+ccf0f915de008f95ecd714337f5b01c5  [shntool]  Track108.wav
+0105d8a81ec76ff3833b4ba19de8a3ef  [shntool]  Track109.wav
+294d0721dd16690f7dded1e80178aedf  [shntool]  Track110.wav
+efc17dab306d98763fadc3afd19394ac  [shntool]  Track201.wav
+b3777a00136ad39e24c716b1d05e6a65  [shntool]  Track202.wav
+b239dbbc15cc9a313b83d397c85a8d5d  [shntool]  Track203.wav
+6ca2c8723715473ee90a8f79cc505e9a  [shntool]  Track204.wav
+af3478eb984e5efe5a8eff866fc00912  [shntool]  Track205.wav
+a694201b359ef36b59949f2871237d7f  [shntool]  Track206.wav
+9faeedcbae7d6f085e647e6a6b2c4fd5  [shntool]  Track207.wav
+e4f5017441d340fe48c1509aeca5ba07  [shntool]  Track208.wav
+b169b647b226f4eb12fab368ec5a7a40  [shntool]  Track209.wav
+38f28eb2d2275519be3c56e6c99f90d2  [shntool]  Track210.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-5-29_Verona 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:51.05       51344204 B   ---   --   -----    wav  1.0000  Track101.wav
+     6:42.70       71077484 B   ---   --   -----    wav  1.0000  Track102.wav
+     6:03.24       64089692 B   ---   --   -----    wav  1.0000  Track103.wav
+     5:22.37       56887868 B   ---   --   -----    wav  1.0000  Track104.wav
+     4:38.68       49199180 B   ---   --   -----    wav  1.0000  Track105.wav
+     5:41.10       60175964 B   ---   --   -----    wav  1.0000  Track106.wav
+     4:06.47       43504988 B   ---   --   -----    wav  1.0000  Track107.wav
+     7:16.09       76931612 B   ---   --   -----    wav  1.0000  Track108.wav
+     5:47.35       61293164 B   ---   --   -----    wav  1.0000  Track109.wav
+     6:09.64       65242172 B   ---   --   -----    wav  1.0000  Track110.wav
+     5:12.04       55046252 B   ---   --   -----    wav  1.0000  Track201.wav
+     4:10.24       44156492 B   ---   --   -----    wav  1.0000  Track202.wav
+     4:56.72       52383788 B   ---   --   -----    wav  1.0000  Track203.wav
+     3:58.69       42145532 B   ---   --   -----    wav  1.0000  Track204.wav
+     4:57.51       52510796 B   ---   --   -----    wav  1.0000  Track205.wav
+     5:08.67       54488828 B   ---   --   -----    wav  1.0000  Track206.wav
+     7:47.12       82407068 B   ---   --   -----    wav  1.0000  Track207.wav
+     5:28.56       57990956 B   ---   --   -----    wav  1.0000  Track208.wav
+     4:39.04       49225052 B   ---   --   -----    wav  1.0000  Track209.wav
+     5:28.22       57910988 B   ---   --   -----    wav  1.0000  Track210.wav
+   108:28.00     1148012080 B                            1.0000  (20 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,52 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd91-06-15-soundcheck 
+=================== 
+=================== 
+=================== 
+5a60700e96c60e764da6ee52bfbdde05  bd91-06-15schk.txt
+7ea699498686337c8072e89dd74fd93f  bd91-06-15sck-t01.shn
+5e21c83174e7a99ed1e9031ea80b9c95  bd91-06-15sck-t02.shn
+ac2c995cbe0d6c68684d86c133a8aea9  bd91-06-15sck-t03.shn
+e19052e0ee0f8f4f91fdda8a6f660161  bd91-06-15sck-t04.shn
+efc6d83e152eeca014dae5fd37e133ea  bd91-06-15sck-t05.shn
+82a998066fdccfef5dd5bd0b394acf10  bd91-06-15sck-t06.shn
+6bd41c330a7f104d195539ef9bf0242f  bd91-06-15sck-t07.shn
+cee1140199b877b15e65f4a60b32bec1  bd91-06-15sck-t08.shn
+3c11adacda6be9c4a7d69c18e35a5259  bd91-06-15sck.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd91-06-15-soundcheck 
+=================== 
+=================== 
+=================== 
+46152a4d35e599bef7f4f2d4c600b23d  [shntool]  bd91-06-15sck-t01.wav
+2088362132c1fc67aeb8f9c8d4b4484e  [shntool]  bd91-06-15sck-t02.wav
+8c8c5e933dae0d582c585186e3dfcde1  [shntool]  bd91-06-15sck-t03.wav
+9d5edca8d653dfec240a2814003278ff  [shntool]  bd91-06-15sck-t04.wav
+131a077ee9b64e80b89ecc88e8201484  [shntool]  bd91-06-15sck-t05.wav
+1412c61afebb42af75ed28a51d500074  [shntool]  bd91-06-15sck-t06.wav
+1f70910c62b9752d1227331347a1f82e  [shntool]  bd91-06-15sck-t07.wav
+b40f489e1612097a817e8d4de547f9a9  [shntool]  bd91-06-15sck-t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd91-06-15-soundcheck 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:00.42       42434828 B   ---   --   ---xx    shn  0.4718  bd91-06-15sck-t01.shn
+     3:08.53       33287900 B   ---   --   ---xx    shn  0.4766  bd91-06-15sck-t02.shn
+     5:13.31       55286156 B   ---   --   ---xx    shn  0.4835  bd91-06-15sck-t03.shn
+     1:49.36       19312316 B   ---   --   ---xx    shn  0.4730  bd91-06-15sck-t04.shn
+    15:33.00      164581244 B   ---   --   ---xx    shn  0.4845  bd91-06-15sck-t05.shn
+     4:01.30       42583004 B   ---   --   ---xx    shn  0.4828  bd91-06-15sck-t06.shn
+     1:25.25       15052844 B   ---   --   ---xx    shn  0.4764  bd91-06-15sck-t07.shn
+     3:01.39       32020172 B   ---   --   ---xx    shn  0.4720  bd91-06-15sck-t08.shn
+    38:13.31      404558464 B                            0.4804  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,141 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd86-02-15-a.flacf 
+=================== 
+=================== 
+=================== 
+16202dccfc249089293e2c7c24fbd2db  CD1\01 Justine.flac
+ba4f86ac03375483e4e5aa560eb2afd2  CD1\02 Positively 4th Street.flac
+807bda3fc345508744d1317eab3b2005  CD1\03 Clean cut kid.flac
+70f6a4144ab8e7be13765444ada9ab73  CD1\04 I'll remember you.flac
+6e7f87de527ccaa797dd033c215d91d0  CD1\05 Trust yourself.flac
+544f98c34eb2710043c2c75f4184dad7  CD1\06 That lucky old sun.flac
+f06554c007b8c5c9d6f1a2baaa0c3aac  CD1\07 Masters of war.flac
+8dae8c946ff8ae8b0cd07d5203a1a01d  CD1\08 Straight into darkness [Tom Petty & The Heartbreakers].flac
+5604b2520a70ccaa43e1b18badcc7b57  CD1\09 American girl [Tom Petty & The Heartbreakers].flac
+29e9d7ed52d146543c37cf98222a3cad  CD1\10 A hard rain's a-gonna fall.flac
+a19a93cc90420c78f6d89bdac034e98f  CD1\11 Girl from The North Country.flac
+6dde918d8c62ec39cf9a4cb2401f20cb  CD1\12 It's alright, ma (I'm only bleeding).flac
+f5d555f0008fab17a0f05fe84d59a4ca  CD1\13 I forgot more than you'll ever know.flac
+0bc1d414c29053197067e9a7fd23b859  CD1\14 Just like a woman.flac
+c107c342f9abcbda531f4070fe202fc9  CD1\15 I'm moving on.flac
+f3f877ce05a6ed3d4626ae68bd7840e1  CD1\CD1.shntool_len.txt
+7aa9d1f524b69f8559f81788d98bc804  CD1\ffp CD1.ffp
+7aa9d1f524b69f8559f81788d98bc804  CD1\ffp CD1.txt
+14c2d46fdb695ac385547f0ad3b59a61  CD1\FLAC CD1.md5
+9459cc69decc359fdfd9eaf4035d5551  CD2\16 Lenny Bruce.flac
+0cfdead53d06ff3a08614bb3bca2fb4a  CD2\17 When the night comes falling from the sky.flac
+5c0d6a5b8daffe9620d662309897393e  CD2\18 Lonesome town.flac
+61b0b302e6c2e06d5d502a76ddd637ee  CD2\19 Ballad of a thin man.flac
+a16c55a01f06c21c044bd9dc23992d43  CD2\20 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].flac
+1aa9635a5cea652843eaaeed24f7651a  CD2\21 Refugee [Tom Petty & The Heartbreakers].flac
+424f900210ad9b8c5e13544eff76593e  CD2\22 Rainy day women # 12 & 35.flac
+170b9dfbc0f8cce47c9a86b4aa104884  CD2\23 Seeing the real you at last.flac
+14c8d6e1ed1271b9517729f8fd563258  CD2\24 Across the borderline.flac
+1fdbd8f539eddd05953f31cb2e3bb238  CD2\25 I and I.flac
+025827699877360068349488a6dd1247  CD2\26 Like a rolling stone.flac
+ca408bbb2dac02376325ba7953274c5e  CD2\27 In the garden.flac
+0702d12fcc32370dda30520db393f7e8  CD2\28 Blowin' in the wind.flac
+905eaf40ba07a42e39c24917fbf3e438  CD2\29 Uranium Rock.flac
+49bd5e20651b499a5bd9307c20402954  CD2\30 Knockin' on heaven's door.flac
+5443da9c1b0a3fdf492f33513d3e25cd  CD2\CD2.shntool_len.txt
+065a94d67e6ee734f70cda3cb1890cb8  CD2\ffp CD2.ffp
+065a94d67e6ee734f70cda3cb1890cb8  CD2\ffp CD2.ffp.txt
+56639a8739aca739d3d6293da1619b12  CD2\FLAC CD2.md5
+74ee1b62c338e658c7d8098be83246b6  Info\1986-02-15 Memorial Drive, Adelaide, South Australia, Australia.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-15-a.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 justine.flac:842b1170fe3a17580091797c8ab40533
+02 positively 4th street.flac:a37876b5a33689daaa77f9a8b2982938
+03 clean cut kid.flac:9f164f1ea21057317626efa340ef4e3b
+04 i'll remember you.flac:058e01825d411977610c0e3e314a6df4
+05 trust yourself.flac:5ef9fe2d558b7c222d131c50a8ce264a
+06 that lucky old sun.flac:3fd23cce7c9e7010ffc487ecea736b9f
+07 masters of war.flac:c3d4c0dc10801b0f72496f30dd2bd89f
+08 straight into darkness [tom petty & the heartbreakers].flac:1e28a0852de3b54810f083b4d7adc104
+09 american girl [tom petty & the heartbreakers].flac:661ec40724cd11020f54c45f2854753b
+10 a hard rain's a-gonna fall.flac:0de86585591339efe4f47d7b55f03358
+11 girl from the north country.flac:03efe35d8a062f754f13d492623666a4
+12 it's alright, ma (i'm only bleeding).flac:8e93ae632d26305a69dc4844432d3ba8
+13 i forgot more than you'll ever know.flac:a9ca80cc21c89b4d112d00bb07c85cd2
+14 just like a woman.flac:0434cc470c7bf81ee4d9cead21ab9c5d
+15 i'm moving on.flac:b867ef4ddb9e3afb8550b774519da3c2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd86-02-15-a.flacf\cd2 
+=================== 
+=================== 
+=================== 
+16 lenny bruce.flac:8c1453c7058afdb20a034a30ba4968f3
+17 when the night comes falling from the sky.flac:36d7c5bf8ce6b270ff6752797426e161
+18 lonesome town.flac:eeb2e631935c1c193eafb76dd6f38d91
+19 ballad of a thin man.flac:9fdd7c449b6b5f4bea6ff738baefc665
+20 so you want to be a rock & roll star [tom petty & the heartbreakers].flac:60c1386bff3d2f96489d3bbf00334e3f
+21 refugee [tom petty & the heartbreakers].flac:b1fd9c96a23092d8c504667e4124b5c7
+22 rainy day women # 12 & 35.flac:090a3c97c72df717cb98594940476589
+23 seeing the real you at last.flac:8959c19e4d7bfa619b977f0e3a9d051b
+24 across the borderline.flac:7247d639c7b3258e26b5ff4e03e2c499
+25 i and i.flac:2449a68b64dde40caf308fa3f0b97052
+26 like a rolling stone.flac:87a03e2d0b7da9711755be9602a1d7db
+27 in the garden.flac:dbe0cd614769409d7cf3091b0752eeda
+28 blowin' in the wind.flac:698c26d450612b44c88a472a75492d49
+29 uranium rock.flac:4be3f51193649deb9c003465c09d79c9
+30 knockin' on heaven's door.flac:d8323d3a7d8c388a453fd714c7a6717c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-15-a.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:26.17       68130428 B   ---   --   ---xx   flac  0.4376  01 Justine.flac
+     3:55.27       41517548 B   ---   --   ---xx   flac  0.4392  02 Positively 4th Street.flac
+     3:25.14       36194972 B   ---   --   ---xx   flac  0.4388  03 Clean cut kid.flac
+     4:27.60       47239964 B   ---   --   ---xx   flac  0.4390  04 I'll remember you.flac
+     3:17.48       34863740 B   ---   --   ---xx   flac  0.4382  05 Trust yourself.flac
+     3:21.31       35529356 B   ---   --   ---xx   flac  0.4385  06 That lucky old sun.flac
+     4:42.66       49900076 B   ---   --   ---xx   flac  0.4446  07 Masters of war.flac
+     5:04.57       53759708 B   ---   --   ---xx   flac  0.4486  08 Straight into darkness [Tom Petty & The Heartbreakers].flac
+     4:19.66       45842876 B   ---   --   ---xx   flac  0.4482  09 American girl [Tom Petty & The Heartbreakers].flac
+     8:27.54       89561852 B   ---   --   ---xx   flac  0.5000  10 A hard rain's a-gonna fall.flac
+     6:16.16       66364076 B   ---   --   ---xx   flac  0.4586  11 Girl from The North Country.flac
+     8:17.01       87673196 B   ---   --   ---xx   flac  0.4561  12 It's alright, ma (I'm only bleeding).flac
+     4:22.61       46360316 B   ---   --   ---xx   flac  0.4598  13 I forgot more than you'll ever know.flac
+     4:59.68       52903580 B   ---   --   ---xx   flac  0.4671  14 Just like a woman.flac
+     3:48.68       40379180 B   ---   --   ---xx   flac  0.4620  15 I'm moving on.flac
+    75:13.54      796220868 B                            0.4550  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd86-02-15-a.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:55.45       62727884 B   ---   --   ---xx   flac  0.4560  16 Lenny Bruce.flac
+     5:03.28       53515100 B   ---   --   ---xx   flac  0.4369  17 When the night comes falling from the sky.flac
+     5:06.46       54086636 B   ---   --   ---xx   flac  0.4235  18 Lonesome town.flac
+     4:43.08       49940060 B   ---   --   ---xx   flac  0.4259  19 Ballad of a thin man.flac
+     4:27.09       47120012 B   ---   --   ---xx   flac  0.4394  20 So you want to be a rock & roll star [Tom Petty & The Heartbreakers].flac
+     5:18.63       56243420 B   ---   --   ---xx   flac  0.4350  21 Refugee [Tom Petty & The Heartbreakers].flac
+     3:48.42       40318028 B   ---   --   ---xx   flac  0.4374  22 Rainy day women # 12 & 35.flac
+     4:44.74       50271692 B   ---   --   ---xx   flac  0.4350  23 Seeing the real you at last.flac
+     4:36.39       48778172 B   ---   --   ---xx   flac  0.4330  24 Across the borderline.flac
+     5:50.57       61874108 B   ---   --   ---xx   flac  0.4426  25 I and I.flac
+     6:38.11       70233116 B   ---   --   ---xx   flac  0.4674  26 Like a rolling stone.flac
+     7:29.43       79304780 B   ---   --   ---xx   flac  0.4540  27 In the garden.flac
+     4:50.00       51156044 B   ---   --   ---xx   flac  0.4626  28 Blowin' in the wind.flac
+     2:59.16       31613276 B   ---   --   ---xx   flac  0.4709  29 Uranium Rock.flac
+     7:42.20       81543884 B   ---   --   ---xx   flac  0.4731  30 Knockin' on heaven's door.flac
+    79:14.51      838726212 B                            0.4475  (15 files)
+=================== 
+=================== 
+=================== 

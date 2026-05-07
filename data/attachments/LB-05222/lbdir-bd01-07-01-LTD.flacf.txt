@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-07-01-LTD.flacf 
+=================== 
+=================== 
+=================== 
+84432bd2c8bb85fef0e09108986bf918  bd2001-07-01-Helsingborg-d1\Track01.flac
+8ac6c2fc09fc755ba91bf17a58d4ef13  bd2001-07-01-Helsingborg-d1\Track02.flac
+56d27827387c8946bcb8bde3ebb216e8  bd2001-07-01-Helsingborg-d1\Track03.flac
+2bad7938c0f80d68b9140e9b17a58dd6  bd2001-07-01-Helsingborg-d1\Track04.flac
+8f8d392e74421ccb947bea008805003d  bd2001-07-01-Helsingborg-d1\Track05.flac
+d578732d7bc4164cf42ed9d0bcc5da20  bd2001-07-01-Helsingborg-d1\Track06.flac
+fcd7bc62a5a296c6101edac0a2881428  bd2001-07-01-Helsingborg-d1\Track07.flac
+ff042ea7fb91b366e410b8a251b4a32c  bd2001-07-01-Helsingborg-d1\Track08.flac
+3bd58f514e51500edfed67353b06a77d  bd2001-07-01-Helsingborg-d1\Track09.flac
+d1d70911835f32367477be51afc5475e  bd2001-07-01-Helsingborg-d1\Track10.flac
+365ac20eeafd1b5292a208fe1c543c9b  bd2001-07-01-Helsingborg-d1\Track11.flac
+ad4b46ec0132d3d15123048e12b1b195  bd2001-07-01-Helsingborg-d1\Track12.flac
+d1ae288a26a5e330b50bd21c554f50c7  bd2001-07-01-Helsingborg-d2\Track01.flac
+b672a5237794513342c9acab06afe90d  bd2001-07-01-Helsingborg-d2\Track02.flac
+1ed295f5024ed67810076e48c31cfa50  bd2001-07-01-Helsingborg-d2\Track03.flac
+7202cd6ebb694e6b4dd09b5abd2c8110  bd2001-07-01-Helsingborg-d2\Track04.flac
+f1ffd67eb466f96c733ac72c2edd8c38  bd2001-07-01-Helsingborg-d2\Track05.flac
+d944f25f15783595c06ed94a39162082  bd2001-07-01-Helsingborg-d2\Track06.flac
+ba6206edcbc56873dc70770c96f09635  bd2001-07-01-Helsingborg-d2\Track07.flac
+9093088d73d7fa260f865502de3caf58  bd2001-07-01-Helsingborg-d2\Track08.flac
+7b54e99c181734781b082fa56173c9a7  bd2001-07-01-Helsingborg-LTD.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-01-LTD.flacf\bd2001-07-01-Helsingborg-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:fb5a2a3c78c45063aa862c4b6d7fa50d
+Track02.flac:3c24d2bd863e8e039bb294aa74816173
+Track03.flac:08d059ab82889cc3161fbbaa567c87e9
+Track04.flac:2ec0e22ac4b47d07d9c29652b7048143
+Track05.flac:6e62b9233d84bac9556ff05742ac28bd
+Track06.flac:49160d922004af953a1813928a31d001
+Track07.flac:e2c97a0152f27b201e6c068bc788a50d
+Track08.flac:cbd99a51e003e384edc12601d3152969
+Track09.flac:63d3fe3b7fddee1f89cb535b9036c5a1
+Track10.flac:71c7caa475e04a76b6ba581161e9ae4f
+Track11.flac:f54d6411eee0f37aa08948ae5922f856
+Track12.flac:7886c0a91e73a46153f84104fba2e4b4
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-01-LTD.flacf\bd2001-07-01-Helsingborg-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:3b33ed7b2d599b035849b59349f43b55
+Track02.flac:531c71b323b154ae03c696daf56a20db
+Track03.flac:d8977f59003dd7a5468b84e6cccabd6b
+Track04.flac:29c11487d3406f5d88cde141ee9a4d69
+Track05.flac:f78121443bf26e4aeba96898d8b36334
+Track06.flac:ba24051e8b362820f6aa0ed7c4613806
+Track07.flac:bd83a909e712aafdbd27f593da6447ec
+Track08.flac:2b45288ffb04f7510511730d3ddc16a4
+=================== 
+=================== 
+=================== 
+=== shntool for: bd01-07-01-LTD.flacf\bd2001-07-01-Helsingborg-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:26.39       36430172 B   ---   --   ---xx   flac  0.5395  Track01.flac
+     5:50.15       61775324 B   ---   --   ---xx   flac  0.5175  Track02.flac
+     7:56.64       84116972 B   ---   --   ---xx   flac  0.5434  Track03.flac
+     6:21.23       67262540 B   ---   --   ---xx   flac  0.5081  Track04.flac
+     5:07.68       54314780 B   ---   --   ---xx   flac  0.4679  Track05.flac
+     6:41.61       70879916 B   ---   --   ---xx   flac  0.5197  Track06.flac
+     7:48.59       82694012 B   ---   --   ---xx   flac  0.4573  Track07.flac
+     7:47.74       82552892 B   ---   --   ---xx   flac  0.4390  Track08.flac
+     5:41.15       60187724 B   ---   --   ---xx   flac  0.4626  Track09.flac
+     5:52.03       62099900 B   ---   --   ---xx   flac  0.5236  Track10.flac
+     6:12.67       65778428 B   ---   --   ---xx   flac  0.4998  Track11.flac
+     7:18.53       77387900 B   ---   --   ---xx   flac  0.5022  Track12.flac
+    76:06.16      805480560 B                            0.4965  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd01-07-01-LTD.flacf\bd2001-07-01-Helsingborg-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:43.59       81812012 B   ---   --   ---xx   flac  0.5066  Track01.flac
+     6:36.29       69922652 B   ---   --   ---xx   flac  0.5148  Track02.flac
+     4:14.05       44817404 B   ---   --   ---xx   flac  0.4021  Track03.flac
+     4:28.58       47411660 B   ---   --   ---xx   flac  0.5207  Track04.flac
+     5:51.43       62017580 B   ---   --   ---xx   flac  0.5129  Track05.flac
+     6:24.63       67885820 B   ---   --   ---xx   flac  0.5264  Track06.flac
+     5:07.61       54298316 B   ---   --   ---xx   flac  0.4812  Track07.flac
+     8:31.71       90307436 B   ---   --   ---xx   flac  0.4928  Track08.flac
+    48:59.14      518472880 B                            0.4982  (8 files)
+=================== 
+=================== 
+=================== 

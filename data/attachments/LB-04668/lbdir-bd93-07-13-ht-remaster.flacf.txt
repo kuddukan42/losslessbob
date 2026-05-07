@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-13-ht-remaster.flacf 
+=================== 
+=================== 
+=================== 
+7af1150638befa012d3d4bf3c712a250  bd93-07-13-ht-remaster-LB-4668.txt
+7dfae9e73b6035a3f804d8ba5cacd925  CD1\01 Hard times.flac
+73b6e5c86c5816d98f63aed1ea46b4da  CD1\02 Stuck inside of Mobile with the Memphis blues again.flac
+671c75ca562aade5655810c2f52b15bd  CD1\03 All along the watchtower.flac
+04b87c124bc0e3a5b75ac740b14f5220  CD1\04 Just like a woman.flac
+0d7412e2e73f4c329235b7a074344298  CD1\05 Tangled up in blue.flac
+bb53b11c9d56c2c07f6eb24abceed8fd  CD1\06 She belongs to me.flac
+bd44bed8065b3c39bb14b6c2afc0075c  CD1\07 Watching the river flow.flac
+4c2b93359ad1097babe35c8666a146bc  CD1\08 Little Moses.flac
+d5b89f508885bdde51037993c869b9da  CD1\09 Tomorrow night.flac
+a9d54eadb8d6cdceca5ba63f11acb440  CD2\10 Boots of Spanish leather.flac
+abf15f7bad3aef90dd059a7a6862cc7d  CD2\11 Mr. Tambourine man.flac
+4936f03de9cd958dc355790a9e05edb0  CD2\12 Cat's in the well.flac
+015c1894790c99dcd18d55caf70e263f  CD2\13 I and I.flac
+79d633f57dc81efa36061439375e535a  CD2\14 Simple twist of fate.flac
+e99d075e7ff7372f9fbac8033d941674  CD2\15 Maggie's farm.flac
+0480cadbbc22f52a8de9e68ea52eb4ae  CD2\16 Man in the long black coat.flac
+f07c20454c2ef75dbb45728e8d7b963c  CD2\17 It ain't me, babe.flac
+add00832e9b88cf77359b70d862bb111  Info\1993-07-13 Pavilmao, Cascais, Portugal [LB-2374].txt
+5b90b4df0a8bd55fe1b1af7faa73910c  Info\dylan 93-7-13 Cascais.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-13-ht-remaster.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Hard times.flac:c4e31502bc3cf2212cc01d20e68d5b0d
+02 Stuck inside of Mobile with the Memphis blues again.flac:7191fdf4c8ec1934ca496c674a7b1439
+03 All along the watchtower.flac:85e2f50277c06789731ea7314fbf9872
+04 Just like a woman.flac:41502c14f81b65a4ce66f7b867e53195
+05 Tangled up in blue.flac:e37fc1f35d846ecd76eba739f37b7a35
+06 She belongs to me.flac:ecdc1a35e54791224265df4a18501116
+07 Watching the river flow.flac:c324853bc280301adc57970a754735d2
+08 Little Moses.flac:67e886bd1df502468bb734c37b0da94a
+09 Tomorrow night.flac:54f13a8db97bf7ca2824f9ac97765bf0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-13-ht-remaster.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Boots of Spanish leather.flac:d12400accad13a4d2593df8b85d758ef
+11 Mr. Tambourine man.flac:8cb97c7325bbaee243657164f9ef71a0
+12 Cat's in the well.flac:b20c394abafb9822482a638425511b42
+13 I and I.flac:31f4e892f76196d552b6c0bcf1bb73ac
+14 Simple twist of fate.flac:054c1732bc67b9f018b56deaa92d9734
+15 Maggie's farm.flac:de3d076f4a4feb879e7c5500670005aa
+16 Man in the long black coat.flac:6207abe3cb70bd1d12fdd2efec056bcc
+17 It ain't me, babe.flac:eaf88656910c6b81a92ac30a5e86468e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-13-ht-remaster.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.22       62850188 B   ---   --   ---xx   flac  0.5780  01 Hard times.flac
+     8:39.67       91709228 B   ---   --   ---xx   flac  0.6801  02 Stuck inside of Mobile with the Memphis blues again.flac
+     7:30.72       79549388 B   ---   --   ---xx   flac  0.6785  03 All along the watchtower.flac
+     8:32.72       90486188 B   ---   --   ---xx   flac  0.6589  04 Just like a woman.flac
+    11:18.52      119721548 B   ---   --   ---xx   flac  0.6723  05 Tangled up in blue.flac
+     8:17.38       87760220 B   ---   --   ---xx   flac  0.6094  06 She belongs to me.flac
+     5:51.73       62088140 B   ---   --   ---xx   flac  0.6102  07 Watching the river flow.flac
+     6:24.26       67798796 B   ---   --   ---xx   flac  0.5055  08 Little Moses.flac
+     6:09.31       65164556 B   ---   --   ---xx   flac  0.5918  09 Tomorrow night.flac
+    68:42.03      727128252 B                            0.6285  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-13-ht-remaster.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:19.02       98612348 B   ---   --   ---xx   flac  0.5906  10 Boots of Spanish leather.flac
+    11:40.00      123480044 B   ---   --   ---xx   flac  0.5946  11 Mr. Tambourine man.flac
+     6:50.57       72458108 B   ---   --   ---xx   flac  0.7135  12 Cat's in the well.flac
+     9:25.60       99807164 B   ---   --   ---xx   flac  0.7216  13 I and I.flac
+     8:37.11       91224716 B   ---   --   ---xx   flac  0.6304  14 Simple twist of fate.flac
+     7:27.70       79015484 B   ---   --   ---xx   flac  0.6805  15 Maggie's farm.flac
+     8:28.08       89630060 B   ---   --   ---xx   flac  0.5859  16 Man in the long black coat.flac
+    11:02.29      116845052 B   ---   --   ---xx   flac  0.5548  17 It ain't me, babe.flac
+    72:51.12      771072976 B                            0.6277  (8 files)
+=================== 
+=================== 
+=================== 

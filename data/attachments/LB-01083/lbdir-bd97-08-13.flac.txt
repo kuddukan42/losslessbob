@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-08-13.flac 
+=================== 
+=================== 
+=================== 
+f0613197b729d2a08ff417f77c74190a  101 - Absolutely Sweet Marie.flac
+a887f5c95a800fbbeb04085922251f7c  102 - Ballad Of A Thin Man.flac
+69d04c59418829edaf7d519a3641cc99  103 - Tough Mama.flac
+918fb6da5e6185362224e6c6ff220a3d  104 - You Ain't Goin' Nowhere.flac
+630a6ebe87b4efd9512b3767543d4734  105 - Silvio.flac
+dbdb1e53086294dc3adc1555753e04a5  106 - To Ramona.flac
+68a04bb249900cda8e2cdb7788cbc039  107 - Tangled Up In Blue.flac
+33cc2ac0e9341db5a4e93964307e42a5  1997-08-13 Hershey, PA (D1).CUE
+48dcede40ccbf69a9d246d924397d4d2  1997-08-13 Hershey, PA (D1).LOG
+2ac4b404f2d12505790316435728c6aa  1997-08-13 Hershey, PA (D2).CUE
+56288c77c9d0408d22624c2423ec0b44  1997-08-13 Hershey, PA (D2).LOG
+7a325e42e30758703b9f0bc0f436fd46  201 - Cocaine Blues.flac
+2f5f0cbc244087749cb73805e87f18db  202 - God Knows.flac
+10721a9f7b811976fa3938ad875aecb7  203 - Simple Twist Of Fate.flac
+657ceb0543fbb1399095d4054e3c9e57  204 - Highway 61 Revisited.flac
+58529ee60233463184096c701956ff4f  205 - One Of Us Must Know (Sooner Or Later).flac
+a70add4721020e2391b72e36bcf9b2c5  206 - Knockin' On Heaven's Door.flac
+840937dc8ad7ef3bf0631a9e2cc93920  207 - Rainy Day Women #12 & 35.flac
+503d96ffcd8703ca6358be038516a09b  bd97-08-13.txt
+b2a7dfd90074f28e64d86b61581b3456  FLAC 1997-08-13 Hershey, PA.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-08-13.flac 
+=================== 
+=================== 
+=================== 
+101 - Absolutely Sweet Marie.flac:7b64b6515f2b2eb2998ccedb24a980c0
+102 - Ballad Of A Thin Man.flac:00b7140d79bc2f37485b15312f32bbb3
+103 - Tough Mama.flac:a7dcab744c97fd3bb9a91d4fe3427324
+104 - You Ain't Goin' Nowhere.flac:bb93c29ded1f145077bdfdf118c173f5
+105 - Silvio.flac:7f16039d217a898b287dbd6d2a35af58
+106 - To Ramona.flac:9ca68f1b363dde6a6124565ab5fffe8a
+107 - Tangled Up In Blue.flac:cf665a2e8d659f6826a779b0d788bae9
+201 - Cocaine Blues.flac:a48321cbe6cc436d3c58278855f0766d
+202 - God Knows.flac:ba428f1d7e0f139a44cc4cb810d6fe43
+203 - Simple Twist Of Fate.flac:2ee797378a9faae80fef9d5a4187a6ea
+204 - Highway 61 Revisited.flac:dc57b7898789aa3e32d33560cd33b3c6
+205 - One Of Us Must Know (Sooner Or Later).flac:2a835c762d8143adb21964217845239d
+206 - Knockin' On Heaven's Door.flac:de4f28498c954929c1c962e1fcab1774
+207 - Rainy Day Women #12 & 35.flac:e5cfdae6390c88b0f3e9ebbb3b2096d2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-08-13.flac 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:46.61       61177916 B   ---   --   ---xx   flac  0.5598  101 - Absolutely Sweet Marie.flac
+     6:39.01       70385996 B   ---   --   ---xx   flac  0.5562  102 - Ballad Of A Thin Man.flac
+     5:00.50       53037644 B   ---   --   ---xx   flac  0.5615  103 - Tough Mama.flac
+     4:49.61       51123116 B   ---   --   ---xx   flac  0.5575  104 - You Ain't Goin' Nowhere.flac
+     7:10.21       75901436 B   ---   --   ---xx   flac  0.5808  105 - Silvio.flac
+     6:31.27       69035948 B   ---   --   ---xx   flac  0.4690  106 - To Ramona.flac
+     8:14.27       87205148 B   ---   --   ---xx   flac  0.5538  107 - Tangled Up In Blue.flac
+     5:17.11       55944716 B   ---   --   ---xx   flac  0.4364  201 - Cocaine Blues.flac
+     5:36.67       59428028 B   ---   --   ---xx   flac  0.5125  202 - God Knows.flac
+     8:01.50       84966044 B   ---   --   ---xx   flac  0.5009  203 - Simple Twist Of Fate.flac
+     7:40.26       81205196 B   ---   --   ---xx   flac  0.5678  204 - Highway 61 Revisited.flac
+     6:00.52       63626348 B   ---   --   ---xx   flac  0.5349  205 - One Of Us Must Know (Sooner Or Later).flac
+     8:18.19       87891932 B   ---   --   ---xx   flac  0.5160  206 - Knockin' On Heaven's Door.flac
+     7:30.07       79396508 B   ---   --   ---xx   flac  0.5592  207 - Rainy Day Women #12 & 35.flac
+    92:37.30      980325976 B                            0.5343  (14 files)
+=================== 
+=================== 
+=================== 

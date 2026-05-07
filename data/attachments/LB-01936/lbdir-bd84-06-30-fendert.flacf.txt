@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-30-fendert.flacf 
+=================== 
+=================== 
+=================== 
+233ff50c79cbd5c60115628eaaba4c67  # 22 Bob Dylan & Mick Taylor Nantes 6-30-84.txt
+9c6b56c57633e9bee5e76e8f85907f41  101 Highway 61 Revisited.flac
+65124f2082d1dd82cf940fa4582925f9  102 Jokerman.flac
+c17cab255603d762303069384d13fc6f  103 All Along the Watchtower.flac
+73497dbc2d144a9af65ef04969067306  104 Just Like a Woman.flac
+5a97e42d1aa0a7660ce63b92c7b1d713  105 Maggies Farm.flac
+0cc7026851b6700a41c4c1b06e43de98  106 I and I.flac
+2d02febee4602787d95dc46634a6a08b  107 License to Kill.flac
+ffab0cf96a5bb06665113374d7d30ad8  108 Hard Rain.flac
+84a839b0368ddac5c001615ae008a2dd  109 Girl From the North Country.flac
+6e52b1b6c884e7138f2167d62c553e77  110 It's Alright Ma.flac
+e424655191399ae81f98fd53e5c9213e  111 Simple Twist of Fate.flac
+d8dfd8763872febf428a9af7dfdd4325  112 Masters of War.flac
+37752ab12409d313a6c1b97573b8006f  113 Ballad of a Thin Man.flac
+864516340dd267fc7fff1f0813e060f2  114 Enough is Enough.flac
+74e55f0bb882122c878b7310fbfa63e3  201 Every Grain of Sand.flac
+02557984dd90b34c67219abe15722af7  202 Like a Rolling Stone.flac
+358f8dbd5963ee936d9bfb6680b4e239  203 Mr Tamborine Man.flac
+4b217c1223161506ba892fa0922115cc  204 Lonesome Death of Hattie Carroll.flac
+bc7be8bb00bd47faf4851ec9249dcfcf  205 The Times They Are A Changing.flac
+c503d0f2fc53d7d50ab1695751bfe7ec  206 It Takes A Train To Cry.flac
+7b7f37103e3f2930da235308cc854ade  207 Leopard Skin Pill Box Hat.flac
+ecc5f6504ed5c1d5aef81a0093fda624  208 Blowing in the Wind.flac
+c0a39067bc6ba2f7751d691d3af1ad63  209 Tombstone Blues.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-30-fendert.flacf 
+=================== 
+=================== 
+=================== 
+101 Highway 61 Revisited.flac:6b619b19a7eb3ca11109d8371cda23b0
+102 Jokerman.flac:1232406919d9f096b9390579b3b15239
+103 All Along the Watchtower.flac:7c8589a32e23cad51d34b9effe2ee96d
+104 Just Like a Woman.flac:f2e0ec7b785c4b386c6507feba26ad5c
+105 Maggies Farm.flac:b01b8212dfc86ea759b37b032c9f3914
+106 I and I.flac:881ec7021eb14376b86eb68d7bb021c1
+107 License to Kill.flac:e043d9a95273c6cb4724910aa3aeaa35
+108 Hard Rain.flac:2241ad4cff15f3c31a0d021e77160a8e
+109 Girl From the North Country.flac:67ed7c7c0efc0befddb6d52e1701de36
+110 It's Alright Ma.flac:eddeda4900db8f576cfbf56dba4b4ed9
+111 Simple Twist of Fate.flac:eddc05f4fc01c58cf4081ed379ce6f5e
+112 Masters of War.flac:bc31ff5244cca33c1b3d3b95e4ed1224
+113 Ballad of a Thin Man.flac:69be0b1ae24e9cecf2a1b8c22d377f69
+114 Enough is Enough.flac:5aa2b0e200d8b9353b1b09e0be3d24a2
+201 Every Grain of Sand.flac:1adb3f101cdfdd8b302d3925ed43a97c
+202 Like a Rolling Stone.flac:841474eee109434ed39209652fe6098b
+203 Mr Tamborine Man.flac:ce87efc59886cbf6f98b5965651141b8
+204 Lonesome Death of Hattie Carroll.flac:187c2fb43dbe4a570933da847ab5f068
+205 The Times They Are A Changing.flac:066b9368cbf659ecbc7a423955662809
+206 It Takes A Train To Cry.flac:5917fd81e5c5314ad371acd550c3a48f
+207 Leopard Skin Pill Box Hat.flac:f3511c237ad18fdca84277e3ecbb2896
+208 Blowing in the Wind.flac:3853cbf184cd78349a03f5bc589a338d
+209 Tombstone Blues.flac:d81e9a130099060197dc7739a8cb8ee9
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-30-fendert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:49.09       51000812 B   ---   --   ---xx   flac  0.5707  101 Highway 61 Revisited.flac
+     6:26.41       68186876 B   ---   --   ---xx   flac  0.5646  102 Jokerman.flac
+     3:29.21       36917036 B   ---   --   ---xx   flac  0.5621  103 All Along the Watchtower.flac
+     5:35.06       59108156 B   ---   --   ---xx   flac  0.5270  104 Just Like a Woman.flac
+     5:06.25       54037244 B   ---   --   ---xx   flac  0.5381  105 Maggies Farm.flac
+     5:18.04       56104652 B   ---   --   ---xx   flac  0.5202  106 I and I.flac
+     3:59.49       42274892 B   ---   --   ---xx   flac  0.5153  107 License to Kill.flac
+     5:30.51       58331996 B   ---   --   ---xx   flac  0.5382  108 Hard Rain.flac
+     4:34.56       48465356 B   ---   --   ---xx   flac  0.5449  109 Girl From the North Country.flac
+     5:47.06       61224956 B   ---   --   ---xx   flac  0.5545  110 It's Alright Ma.flac
+     6:34.72       69670988 B   ---   --   ---xx   flac  0.5370  111 Simple Twist of Fate.flac
+     6:03.64       64183772 B   ---   --   ---xx   flac  0.5625  112 Masters of War.flac
+     4:25.61       46889516 B   ---   --   ---xx   flac  0.5558  113 Ballad of a Thin Man.flac
+     3:38.39       38546972 B   ---   --   ---xx   flac  0.5693  114 Enough is Enough.flac
+     5:51.10       61939964 B   ---   --   ---xx   flac  0.5314  201 Every Grain of Sand.flac
+     7:34.73       80257340 B   ---   --   ---xx   flac  0.5296  202 Like a Rolling Stone.flac
+     6:07.34       64818812 B   ---   --   ---xx   flac  0.4990  203 Mr Tamborine Man.flac
+     5:04.37       53712668 B   ---   --   ---xx   flac  0.4769  204 Lonesome Death of Hattie Carroll.flac
+     5:39.36       59884316 B   ---   --   ---xx   flac  0.5338  205 The Times They Are A Changing.flac
+     4:38.74       49213292 B   ---   --   ---xx   flac  0.5005  206 It Takes A Train To Cry.flac
+     4:48.01       50805596 B   ---   --   ---xx   flac  0.5325  207 Leopard Skin Pill Box Hat.flac
+     5:09.28       54573500 B   ---   --   ---xx   flac  0.5169  208 Blowing in the Wind.flac
+     4:49.58       51116060 B   ---   --   ---xx   flac  0.5497  209 Tombstone Blues.flac
+   121:03.30     1281264772 B                            0.5355  (23 files)
+=================== 
+=================== 
+=================== 

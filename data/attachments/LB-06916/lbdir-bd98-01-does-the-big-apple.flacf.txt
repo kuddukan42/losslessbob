@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-01-does-the-big-apple.flacf 
+=================== 
+=================== 
+=================== 
+0993691f4f46a7883a6c8ff5da3320ff  bd98-01-does-the-big-apple-d1t01.flac
+41d6b0774f1aa694e3b870abc8fe3490  bd98-01-does-the-big-apple-d1t02.flac
+baa0405082e00a1d6b1fd6e9b901c258  bd98-01-does-the-big-apple-d1t03.flac
+ce4c9e1d2d2f0ebad77b362ff3e4dab7  bd98-01-does-the-big-apple-d1t04.flac
+5fbba507d270688cab776ffc240755b5  bd98-01-does-the-big-apple-d1t05.flac
+808076adcc601fd09970abd55f5e1b12  bd98-01-does-the-big-apple-d1t06.flac
+3ac0fa1f04b0b88b81935571e631a7ee  bd98-01-does-the-big-apple-d1t07.flac
+6b5eda1fb3b6487f1c3c7e2abf6b5f9e  bd98-01-does-the-big-apple-d1t08.flac
+8659eb7e4dcf33bd64862d49af9ff73a  bd98-01-does-the-big-apple-d1t09.flac
+b51121e440cf36fb1b590f037367009a  bd98-01-does-the-big-apple-d1t10.flac
+7d153d7693baaf1c0272ea915e8e0485  bd98-01-does-the-big-apple-d1t11.flac
+06ba8ef6b7f06560f754ab6a0e644504  bd98-01-does-the-big-apple-d2t01.flac
+5b2e96e4b396cdd01f52b589fdc7ddd0  bd98-01-does-the-big-apple-d2t02.flac
+e7e10fcbaf512cfeb5ea8b68e061caa8  bd98-01-does-the-big-apple-d2t03.flac
+4751a6f626b68cf69cae08ee5775450d  bd98-01-does-the-big-apple-d2t04.flac
+98bffd69a227a8b1baca5bb6188cbb81  bd98-01-does-the-big-apple-d2t05.flac
+990d20ed2b91c7912f2cf9b319cde2f0  bd98-01-does-the-big-apple-d2t06.flac
+688846ebb7399639bc3accb195ac1974  bd98-01-does-the-big-apple-d2t07.flac
+ef07b4aa51127f0d48710ff1e8be0711  bd98-01-does-the-big-apple-d2t08.flac
+6e3afd206c928bc46d19f547cb566d61  bd98-01-does-the-big-apple-d2t09.flac
+4a86275eea227993026fa0fc9a59f254  bd98-01-does-the-big-apple-d2t10.flac
+7426ebbcee13a7a7bd6b06d152aecf7c  bd98-01-does-the-big-apple-d2t11.flac
+a6f50dbf0ed15a697c4e53f06e3fa7b8  bd98-01-does-the-big-apple-d2t12.flac
+0d98f60acc1d00101e2847502d9598c9  bd98-01-does-the-big-apple.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-01-does-the-big-apple.flacf 
+=================== 
+=================== 
+=================== 
+bd98-01-does-the-big-apple-d1t01.flac:31b9ddd6b9a280f43577899796f9c16b
+bd98-01-does-the-big-apple-d1t02.flac:e7960b67926d6d1f0da877b64b849f9e
+bd98-01-does-the-big-apple-d1t03.flac:a8bd9db8570cc4b255c029612d17c162
+bd98-01-does-the-big-apple-d1t04.flac:e5020188d4d359899c4e4f4feb6125e0
+bd98-01-does-the-big-apple-d1t05.flac:0fad1383566b9500576d314714c6b7a4
+bd98-01-does-the-big-apple-d1t06.flac:32f39a6c9059299872ca0ec940acdcc0
+bd98-01-does-the-big-apple-d1t07.flac:0a0aa1a6ebd12a0641c3f4ae9e418fe7
+bd98-01-does-the-big-apple-d1t08.flac:6f822e509047d7144263f41d90605e53
+bd98-01-does-the-big-apple-d1t09.flac:b82b4ac3bfea77b429d7d6c39429f469
+bd98-01-does-the-big-apple-d1t10.flac:8bfc6d87b69b3a5a986e5d336264edc2
+bd98-01-does-the-big-apple-d1t11.flac:093ddf5740c86dad2be0b77690c96a01
+bd98-01-does-the-big-apple-d2t01.flac:ebb52354cd70fc50c192a4d489f8d0ad
+bd98-01-does-the-big-apple-d2t02.flac:6d8cf2b973e497fa9d24c544e5a5ed41
+bd98-01-does-the-big-apple-d2t03.flac:69ed1b0a34f2a2e11af9355b0b7f2190
+bd98-01-does-the-big-apple-d2t04.flac:2de3162b822493a390c5fe2acb31bdc5
+bd98-01-does-the-big-apple-d2t05.flac:3bc861e3444946b6bb7c2fddff948720
+bd98-01-does-the-big-apple-d2t06.flac:c02681c26468dac0fe1c4f08064a322b
+bd98-01-does-the-big-apple-d2t07.flac:4d81b0d53ef42240a294ffe9c60f8ace
+bd98-01-does-the-big-apple-d2t08.flac:52789600d2b57aa2390915ff192c3ed4
+bd98-01-does-the-big-apple-d2t09.flac:33c52237c5c076e93d23a0e5b2dbb19d
+bd98-01-does-the-big-apple-d2t10.flac:99d216b158be079591bc7f38c9e13279
+bd98-01-does-the-big-apple-d2t11.flac:1ee970eb36eabbf5634a010e830dba77
+bd98-01-does-the-big-apple-d2t12.flac:155ef1dcdb5cb7ef671ccd0aaf4f72e3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-01-does-the-big-apple.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:03.53       42989900 B   ---   --   ---xx   flac  0.7129  bd98-01-does-the-big-apple-d1t01.flac
+     5:22.05       56812604 B   ---   --   ---xx   flac  0.6754  bd98-01-does-the-big-apple-d1t02.flac
+     5:41.44       60255932 B   ---   --   ---xx   flac  0.6637  bd98-01-does-the-big-apple-d1t03.flac
+    10:08.14      107284172 B   ---   --   ---xx   flac  0.6467  bd98-01-does-the-big-apple-d1t04.flac
+     7:50.71       83075036 B   ---   --   ---xx   flac  0.6260  bd98-01-does-the-big-apple-d1t05.flac
+     5:52.39       62184572 B   ---   --   ---xx   flac  0.6739  bd98-01-does-the-big-apple-d1t06.flac
+     5:47.14       61243772 B   ---   --   ---xx   flac  0.6740  bd98-01-does-the-big-apple-d1t07.flac
+     5:44.53       60806300 B   ---   --   ---xx   flac  0.6796  bd98-01-does-the-big-apple-d1t08.flac
+     5:04.21       53675036 B   ---   --   ---xx   flac  0.6695  bd98-01-does-the-big-apple-d1t09.flac
+     9:29.35      100453964 B   ---   --   ---xx   flac  0.6185  bd98-01-does-the-big-apple-d1t10.flac
+     7:16.40       77004524 B   ---   --   ---xx   flac  0.6704  bd98-01-does-the-big-apple-d1t11.flac
+     5:05.41       53898476 B   ---   --   ---xx   flac  0.6556  bd98-01-does-the-big-apple-d2t01.flac
+     5:32.44       58668332 B   ---   --   ---xx   flac  0.6334  bd98-01-does-the-big-apple-d2t02.flac
+     4:46.64       50600972 B   ---   --   ---xx   flac  0.5771  bd98-01-does-the-big-apple-d2t03.flac
+     6:20.05       67043804 B   ---   --   ---xx   flac  0.5834  bd98-01-does-the-big-apple-d2t04.flac
+     7:24.65       78474524 B   ---   --   ---xx   flac  0.6971  bd98-01-does-the-big-apple-d2t05.flac
+     5:48.67       61544828 B   ---   --   ---xx   flac  0.6534  bd98-01-does-the-big-apple-d2t06.flac
+     7:13.11       76407116 B   ---   --   ---xx   flac  0.6376  bd98-01-does-the-big-apple-d2t07.flac
+     5:02.23       53326940 B   ---   --   ---xx   flac  0.6747  bd98-01-does-the-big-apple-d2t08.flac
+     7:39.59       81106412 B   ---   --   ---xx   flac  0.6703  bd98-01-does-the-big-apple-d2t09.flac
+     5:34.30       58988204 B   ---   --   ---xx   flac  0.6418  bd98-01-does-the-big-apple-d2t10.flac
+     5:20.47       56558588 B   ---   --   ---xx   flac  0.6304  bd98-01-does-the-big-apple-d2t11.flac
+     4:13.40       44723324 B   ---   --   ---xx   flac  0.7000  bd98-01-does-the-big-apple-d2t12.flac
+   142:23.60     1507127332 B                            0.6530  (23 files)
+=================== 
+=================== 
+=================== 

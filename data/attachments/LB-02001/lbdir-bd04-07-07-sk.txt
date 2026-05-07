@@ -1,0 +1,97 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-07-07-sk 
+=================== 
+=================== 
+=================== 
+85020696075454f76cc1aa440042465f  bd04-07-07sk-1.txt
+84070844b2f184f6e0f07fc337c21557  bd04-07-07sk.txt
+87de31380c6cdfc9b05a17815aa4f45e  disk 1\00 - Track_ 01-fixed.shn
+d4b81a46ed2d7380bb8a73cc55161370  disk 1\00 - Track_ 02-fixed.shn
+c9990fe4d9ec8045a60d18db4e6b3a57  disk 1\00 - Track_ 03-fixed.shn
+36624260161070d309e61bdd2ff5a316  disk 1\00 - Track_ 04-fixed.shn
+57e53084ae3fcd83f01d5f1c2c450ad1  disk 1\00 - Track_ 05-fixed.shn
+6ec5236bf070a77e3c1a14df2acec1b1  disk 1\00 - Track_ 06-fixed.shn
+9bc006ee619b9ae3c9476b87b39e0ee0  disk 1\00 - Track_ 07-fixed.shn
+fa3280a62058aa0b47e769cf649d03ed  disk 1\00 - Track_ 08-fixed.shn
+41a1b115ab7c5589d5df82bcd5f0c96b  disk 1\00 - Track_ 09-fixed.shn
+b1bbd60f0b358e73df75cf3acdccbf69  disk 1\00 - Track_ 10-fixed.shn
+5c219ba522190861b8c3487868f948c2  disk 1\00 - Track_ 11-fixed.shn
+c12da923a6eccf5e007ee09d37fdaa97  disk 1\noname.md5
+a480b546da0d4560a3b08e21a7db8834  disk 2\00 - Track_ 01-fixed.shn
+377ae89bd62f4b1a08ebb28dd4af4054  disk 2\00 - Track_ 02-fixed.shn
+66a6777fc6843e3837692ff547bed82f  disk 2\00 - Track_ 03-fixed.shn
+e6a2decace3032989d8db00534affdda  disk 2\00 - Track_ 04-fixed.shn
+3beae5de8288dd8f727f823d99493e15  disk 2\00 - Track_ 05-fixed.shn
+cd8f1ae743936804e49f5746155bf1a3  disk 2\00 - Track_ 06-fixed.shn
+68af6866c0bd1f281261d00ae9a43468  disk 2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-07-07-sk\disk 2 
+=================== 
+=================== 
+=================== 
+38ea349b14b6a0905dc045195d664a1c  [shntool]  00_-_Track__01-fixed.wav
+9648b994cf20266882b91cc2e6d07e40  [shntool]  00_-_Track__02-fixed.wav
+d82a04691b85870ed4d0eee46535a4df  [shntool]  00_-_Track__03-fixed.wav
+d0546a31418b260644e74bb35e58aefa  [shntool]  00_-_Track__04-fixed.wav
+4d5498033018cc510d295db96de7d7e2  [shntool]  00_-_Track__05-fixed.wav
+472c4ca245df484fb39a47797bfe177e  [shntool]  00_-_Track__06-fixed.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd04-07-07-sk\disk 1 
+=================== 
+=================== 
+=================== 
+b6fa22de2deea612722fe8d1419a9b57  [shntool]  00_-_Track__01-fixed.wav
+b40335d2fed257745bd13bda20471191  [shntool]  00_-_Track__02-fixed.wav
+3be37ea19414ec3b382ccfd2eb8b4b2a  [shntool]  00_-_Track__03-fixed.wav
+6a8220629b22ff093993df9541580ff5  [shntool]  00_-_Track__04-fixed.wav
+2072029b801c18ae9a8965552f1bd9ce  [shntool]  00_-_Track__05-fixed.wav
+84dab278240e76a82a2b0c44a9a86883  [shntool]  00_-_Track__06-fixed.wav
+1d0d3ec5ba48e1dc52f695928ff33d5b  [shntool]  00_-_Track__07-fixed.wav
+5a91bf397bb2ad4b05d43a1095523c28  [shntool]  00_-_Track__08-fixed.wav
+7a31cd44462033304a298476c67f7402  [shntool]  00_-_Track__09-fixed.wav
+12881c04b956122aeb33a528b2c01123  [shntool]  00_-_Track__10-fixed.wav
+077f06f44706d3c52b068c16e77afbc6  [shntool]  00_-_Track__11-fixed.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-07-sk\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:21.25       77851244 B   ---   --   -----    wav  1.0000  00_-_Track__01-fixed.wav
+     7:02.17       74480828 B   ---   --   -----    wav  1.0000  00_-_Track__02-fixed.wav
+    11:39.01      123305996 B   ---   --   -----    wav  1.0000  00_-_Track__03-fixed.wav
+     7:55.10       83813564 B   ---   --   -----    wav  1.0000  00_-_Track__04-fixed.wav
+     7:25.08       78516860 B   ---   --   -----    wav  1.0000  00_-_Track__05-fixed.wav
+     7:37.14       80647772 B   ---   --   -----    wav  1.0000  00_-_Track__06-fixed.wav
+    49:00.00      518616264 B                            1.0000  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-07-07-sk\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.46       63612236 B   ---   --   -----    wav  1.0000  00_-_Track__01-fixed.wav
+     5:57.10       62998364 B   ---   --   -----    wav  1.0000  00_-_Track__02-fixed.wav
+     5:47.20       61257884 B   ---   --   -----    wav  1.0000  00_-_Track__03-fixed.wav
+     7:24.22       78373388 B   ---   --   -----    wav  1.0000  00_-_Track__04-fixed.wav
+     7:15.39       76825772 B   ---   --   -----    wav  1.0000  00_-_Track__05-fixed.wav
+     6:04.39       64301372 B   ---   --   -----    wav  1.0000  00_-_Track__06-fixed.wav
+     6:46.11       71644316 B   ---   --   -----    wav  1.0000  00_-_Track__07-fixed.wav
+     6:00.39       63595772 B   ---   --   -----    wav  1.0000  00_-_Track__08-fixed.wav
+     7:53.72       83606588 B   ---   --   -----    wav  1.0000  00_-_Track__09-fixed.wav
+     5:59.06       63341756 B   ---   --   -----    wav  1.0000  00_-_Track__10-fixed.wav
+     6:40.50       70677644 B   ---   --   -----    wav  1.0000  00_-_Track__11-fixed.wav
+    71:49.54      760235092 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 

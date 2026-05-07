@@ -1,0 +1,70 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-05-19-Sweet-Marie.flacf 
+=================== 
+=================== 
+=================== 
+b8ff9772b15c8d31e462c40764599952  bd98-05-19-Sweet-Marie-LB-3354.txt
+d403bdbc9212549ec51260c71228f7b2  Bob Dylan - May 19, 1998.txt
+3069daf33a91895a06c5a92b666c1d98  dylan, bob01 - absolutely sweet marie.flac
+a1f7ecd57bfe83c362188384d9055cf9  dylan, bob02 - the man in me.flac
+0c8a2a0fdc997d6d4660746f28f467fe  dylan, bob03 - cold irons bound.flac
+347cadf52a6c57f5a34533df3d5dbf2b  dylan, bob04 - just like a woman.flac
+798c74fe424fbda601fbbf24514eac55  dylan, bob05 - silvio.flac
+39a1450375f5fbedcd73619fb691f2fc  dylan, bob06 - stone walls and steel bars.flac
+216ddce8dfe40aeab532ef3558f9b6cc  dylan, bob07 - masters of war.flac
+4ee6633b5a5c67dac3a20e6e7e520b75  dylan, bob08 - tangled up in blue.flac
+968eb99086c4408a1f8b04c5504435c7  dylan, bob09 - make you feel my love.flac
+e73d189165710bf62fa494c717487bf7  dylan, bob10 - band introduction.flac
+e179293b956c481bba8970c3aa9e9706  dylan, bob11 - highway 61 revisited.flac
+7ee18acaf3833defd7658cf72dd759b1  dylan, bob12 - forever young.flac
+d8ae9910cd38f5b7be3b94ab414c6193  dylan, bob13 - love sick.flac
+df0bfda484ed8ce84926784687c6f842  dylan, bob14 - rainy day women #12 & 35.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-05-19-Sweet-Marie.flacf 
+=================== 
+=================== 
+=================== 
+dylan, bob01 - absolutely sweet marie.flac:6c8e8fe2220818b2ab397eb2a366aa54
+dylan, bob02 - the man in me.flac:969c44768658550144e69ddc1ad5991a
+dylan, bob03 - cold irons bound.flac:ad42df7d05de4d9fd5307e31486889db
+dylan, bob04 - just like a woman.flac:807e5973df0dac52667a5c956adb01ea
+dylan, bob05 - silvio.flac:b66e983f4ef2d5b90c2aeae47ec0f023
+dylan, bob06 - stone walls and steel bars.flac:30851f33049f3960f1a86a2d74214eae
+dylan, bob07 - masters of war.flac:24b4b50712ba542bf0d6c748d716a6d7
+dylan, bob08 - tangled up in blue.flac:44f6208a78ba6c49bc688aef801064c0
+dylan, bob09 - make you feel my love.flac:535b0c50037c762e82624a9a135db771
+dylan, bob10 - band introduction.flac:e5d9500f8612ac7bf6da5c94e79fbaa1
+dylan, bob11 - highway 61 revisited.flac:ee19d21b9ef0fc0fbb6ef425190973c8
+dylan, bob12 - forever young.flac:20f65a03c1ea0da7146cc3df1102c93c
+dylan, bob13 - love sick.flac:db5e9622fd77d298fe693f6b4b241f55
+dylan, bob14 - rainy day women #12 & 35.flac:382cbd1db9ea8dec9903f2a6485ec435
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-05-19-Sweet-Marie.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:22.35       46299164 B   ---   --   ---xx   flac  0.6535  dylan, bob01 - absolutely sweet marie.flac
+     4:29.10       47475164 B   ---   --   ---xx   flac  0.6359  dylan, bob02 - the man in me.flac
+     6:44.25       71324444 B   ---   --   ---xx   flac  0.6291  dylan, bob03 - cold irons bound.flac
+     6:10.25       65326844 B   ---   --   ---xx   flac  0.6118  dylan, bob04 - just like a woman.flac
+     6:55.29       73274252 B   ---   --   ---xx   flac  0.6357  dylan, bob05 - silvio.flac
+     3:04.52       32579948 B   ---   --   ---xx   flac  0.6038  dylan, bob06 - stone walls and steel bars.flac
+     5:20.28       56513900 B   ---   --   ---xx   flac  0.5901  dylan, bob07 - masters of war.flac
+     8:38.55       91504604 B   ---   --   ---xx   flac  0.6288  dylan, bob08 - tangled up in blue.flac
+     4:14.53       44930300 B   ---   --   ---xx   flac  0.5741  dylan, bob09 - make you feel my love.flac
+     0:33.57        5955308 B   ---   --   ---xx   flac  0.5589  dylan, bob10 - band introduction.flac
+     5:25.46       57438236 B   ---   --   ---xx   flac  0.6283  dylan, bob11 - highway 61 revisited.flac
+     6:49.62       72293468 B   ---   --   ---xx   flac  0.6047  dylan, bob12 - forever young.flac
+     5:23.15       57012524 B   ---   --   ---xx   flac  0.6153  dylan, bob13 - love sick.flac
+     4:15.04       44991452 B   ---   --   ---xx   flac  0.6611  dylan, bob14 - rainy day women #12 & 35.flac
+    72:27.46      766919608 B                            0.6209  (14 files)
+=================== 
+=================== 
+=================== 

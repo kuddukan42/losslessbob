@@ -1,0 +1,84 @@
+===================
+===================
+===================
+=== md5 for: bd74-01-25-jtt.flacf
+===================
+===================
+===================
+2337c40476d54c2f360ed19962b74b30 *BOB DYLAN - Fort Worth January 25th 1974_Track 01.flac
+32bbc3aa6c12216f67f0337fe8de77b5 *BOB DYLAN - Fort Worth January 25th 1974_Track 02.flac
+f383737284a71a6e3e45286e0f67ce71 *BOB DYLAN - Fort Worth January 25th 1974_Track 03.flac
+43642e4e57d28cc838d699e316827cbf *BOB DYLAN - Fort Worth January 25th 1974_Track 04.flac
+85a2c420621224a90c149771061227c9 *BOB DYLAN - Fort Worth January 25th 1974_Track 05.flac
+1dfc0f3efe0429a214fd9b54a6ea7d3c *BOB DYLAN - Fort Worth January 25th 1974_Track 06.flac
+ed34eaadd0f75c249e5749359c33068a *BOB DYLAN - Fort Worth January 25th 1974_Track 07.flac
+cfcc86deb1e816fa3f9078d96fd2e025 *BOB DYLAN - Fort Worth January 25th 1974_Track 08.flac
+49ddb6ddc155689405f913ddb55591a3 *BOB DYLAN - Fort Worth January 25th 1974_Track 09.flac
+2eac50b2d4683499edf3d4da464edc25 *BOB DYLAN - Fort Worth January 25th 1974_Track 10.flac
+7b39c45103c34589112a3b4916cc08eb *BOB DYLAN - Fort Worth January 25th 1974_Track 11.flac
+77c9d1f7cf106756de68eae272d4b79e *BOB DYLAN - Fort Worth January 25th 1974_Track 12.flac
+d00cd317cc084d89baaf8443c2c907f6 *BOB DYLAN - Fort Worth January 25th 1974_Track 13.flac
+57878141a1fcd9b71be531eef47316d3 *BOB DYLAN - Fort Worth January 25th 1974_Track 14.flac
+e4c6251f5f45850c28aef49ea86977bd *BOB DYLAN - Fort Worth January 25th 1974_Track 15.flac
+ad7b29f09fded3765e3ff5db534f95a7 *BOB DYLAN - Fort Worth January 25th 1974_Track 16.flac
+f8f48044b0b81c315896293b3577d3bf *BOB DYLAN - Fort Worth January 25th 1974_Track 17.flac
+84e281c060c521191b26d8db892d6f22 *BOB DYLAN - Fort Worth January 25th 1974_Track 18.flac
+ba52f0c8f1d2a174049c975c6684380d *BOB DYLAN - Fort Worth, Texas January 25th 1974.ffp
+04c48b185501f750e1fe91632747f328 *BOB DYLAN - Fort Worth, Texas January 25th 1974_Info.txt
+a9779c15b70d70ec4c5afbb6b503a457 *Fort Worth, Texas January 25th 1974 - F.jpg
+a1c0f7f8c1a386c9a8d6c605e1d036e7 *Fort Worth, Texas January 25th 1974 - R.jpg
+===================
+===================
+===================
+=== ffp for: bd74-01-25-jtt.flacf
+===================
+===================
+===================
+BOB DYLAN - Fort Worth January 25th 1974_Track 01.flac:8745a9569bcf67218a3bbd833b5b1649
+BOB DYLAN - Fort Worth January 25th 1974_Track 02.flac:eef59b7c8d4b9be4bdae68c4471e6772
+BOB DYLAN - Fort Worth January 25th 1974_Track 03.flac:75fb3d22311729981f773ce2ba6d000e
+BOB DYLAN - Fort Worth January 25th 1974_Track 04.flac:23d21268be874379756f293bfff83875
+BOB DYLAN - Fort Worth January 25th 1974_Track 05.flac:8d4336829cf5158ec9a5b441a88c1553
+BOB DYLAN - Fort Worth January 25th 1974_Track 06.flac:1c0d84a90f5f58ca379f350c238d95b0
+BOB DYLAN - Fort Worth January 25th 1974_Track 07.flac:5c3272f9d2021d4a159a912b79a41763
+BOB DYLAN - Fort Worth January 25th 1974_Track 08.flac:85b3c5cbfcd27808552c6348731525ea
+BOB DYLAN - Fort Worth January 25th 1974_Track 09.flac:2e935da0a04cebb6edccf9770fd5e480
+BOB DYLAN - Fort Worth January 25th 1974_Track 10.flac:4cfb706aad642ad39f52df1e25025a01
+BOB DYLAN - Fort Worth January 25th 1974_Track 11.flac:9f2f1b1edde18cfef3136745eca643a1
+BOB DYLAN - Fort Worth January 25th 1974_Track 12.flac:2e1614a65c1b3b3a4accde0b47403df8
+BOB DYLAN - Fort Worth January 25th 1974_Track 13.flac:178e34c72fab128a5fb75225ae17de62
+BOB DYLAN - Fort Worth January 25th 1974_Track 14.flac:ada23d6015d63978a63a231e7aa6e539
+BOB DYLAN - Fort Worth January 25th 1974_Track 15.flac:38e0ec76d9b2778fd837c574c657b1e6
+BOB DYLAN - Fort Worth January 25th 1974_Track 16.flac:67540242fd7986b5d6e4305984104777
+BOB DYLAN - Fort Worth January 25th 1974_Track 17.flac:392cf18a2b77bff4276f6d831feff723
+BOB DYLAN - Fort Worth January 25th 1974_Track 18.flac:3230f563fe7f67a5201ab20ffddefd0d
+===================
+===================
+===================
+=== shntool len for: bd74-01-25-jtt.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:46.12       39894668 B   ---   --   ---xx   flac  0.6256  BOB DYLAN - Fort Worth January 25th 1974_Track 01.flac
+     2:56.21       31095836 B   ---   --   ---xx   flac  0.6253  BOB DYLAN - Fort Worth January 25th 1974_Track 02.flac
+     5:21.62       56770268 B   ---   --   ---xx   flac  0.6298  BOB DYLAN - Fort Worth January 25th 1974_Track 03.flac
+     3:41.74       39158492 B   ---   --   ---xx   flac  0.6272  BOB DYLAN - Fort Worth January 25th 1974_Track 04.flac
+     3:45.73       39861740 B   ---   --   ---xx   flac  0.6283  BOB DYLAN - Fort Worth January 25th 1974_Track 05.flac
+     3:24.25       36044444 B   ---   --   ---xx   flac  0.6271  BOB DYLAN - Fort Worth January 25th 1974_Track 06.flac
+     2:58.25       31458044 B   ---   --   ---xx   flac  0.6276  BOB DYLAN - Fort Worth January 25th 1974_Track 07.flac
+     4:07.60       43711964 B   ---   --   ---xx   flac  0.6345  BOB DYLAN - Fort Worth January 25th 1974_Track 08.flac
+     3:39.50       38749244 B   ---   --   ---xx   flac  0.6282  BOB DYLAN - Fort Worth January 25th 1974_Track 09.flac
+     3:01.50       32046044 B   ---   --   ---xx   flac  0.6411  BOB DYLAN - Fort Worth January 25th 1974_Track 10.flac
+     3:36.52       38224748 B   ---   --   ---xx   flac  0.6439  BOB DYLAN - Fort Worth January 25th 1974_Track 11.flac
+     4:16.47       45268988 B   ---   --   ---xx   flac  0.6353  BOB DYLAN - Fort Worth January 25th 1974_Track 12.flac
+     5:23.58       57113660 B   ---   --   ---xx   flac  0.6414  BOB DYLAN - Fort Worth January 25th 1974_Track 13.flac
+     5:23.10       57000764 B   ---   --   ---xx   flac  0.6360  BOB DYLAN - Fort Worth January 25th 1974_Track 14.flac
+     4:57.30       52461404 B   ---   --   ---xx   flac  0.6297  BOB DYLAN - Fort Worth January 25th 1974_Track 15.flac
+     4:23.10       46416764 B   ---   --   ---xx   flac  0.6341  BOB DYLAN - Fort Worth January 25th 1974_Track 16.flac
+     5:43.00       60505244 B   ---   --   ---xx   flac  0.6256  BOB DYLAN - Fort Worth January 25th 1974_Track 17.flac
+     4:00.22       42387788 B   ---   --   ---xx   flac  0.6248  BOB DYLAN - Fort Worth January 25th 1974_Track 18.flac
+    74:28.06      788170104 B                            0.6316  (18 files)
+===================
+===================
+===================

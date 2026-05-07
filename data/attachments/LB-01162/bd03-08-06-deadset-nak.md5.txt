@@ -1,0 +1,3 @@
+d71713c5a1c60bd62811c4ad1c14f4b1 *bd03-08-06deadset-nak-t03.shn
+027bd1f9af88452cd812265a67062434 *bd03-08-06deadset-nak-t01.shn
+8aa2c0a98d7ff5a19cfbfb352a0a6fe1 *bd03-08-06deadset-nak-t02.shn

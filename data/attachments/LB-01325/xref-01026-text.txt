@@ -1,0 +1,120 @@
+===================
+===================
+===================
+=== 2003-08-23 Niagara Falls, Ont. Canada (TMR-Vers.  Cedar 4).txt
+===================
+===================
+===================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I recieved this shows in 2003 on CD-Rs from a very good friend.
+It says on the cover: (TMR-Version  Cedar 4)
+I pass it on as it is.
+Line:
+Trade CD-Rs -> EAC (secure mode) => Traders Littlke Helper => 
+FLAC Level 8
+=> you!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+BOB DYLAN
+Oakes Garden Theatre
+Niagara Falls, Ontario, Canada
+23 August 2003
+
+(TMR-Version  Cedar 4)
+
+DISC 1:
+[0:54:40:24] 551,84 MB
+
+1. Tombstone Blues
+2. Lay Lady Lay
+3. Tweedle Dee & Tweedle Dum
+4. Make You Feel My Love
+5. Dignity
+6. Highway 61 Revisited
+7. Shooting Star
+8. Most Likely You Go Your Way (And I'll Go Mine)
+9. Cry A While
+
+DISC 2:
+[0:55:22:64] 558,99 MB
+
+10. Mr. Tambourine Man
+11. High Water (for Charlie Patton)
+12. Honest With Me
+13. Forever Young
+14. Summer Days
+
+15. Like A Rolling Stone
+16. All Along The Watchtower
+
+
+Concert # 1555 of The Never-Ending Tour. Concert # 31 of the 2003 US Summer Tour. 2003 concert # 65.
+Concert # 54 with the 16th Never-Ending Tour Band: Bob Dylan (vocal & piano), Freddie Koella (guitar), LarryCampbell
+(guitar, mandolin, pedal steel guitar & electric slide guitar), Tony Garnier (bass), George Recile (drums & percussion).
+10, 13 acoustic with the band.
+2, 4, 7, 8, 10, 16 Bob Dylan (harmonica).
+12 Larry Campbell (slide guitar).
+
+Official release
+11 released on TELL TALE SIGNS: THE BOOTLEG SERIES VOL. 8 RARE AND
+UNRELEASED 1989-2006, Columbia CKA 735797, 6 October 2008.
+
+Notes.
+LB-number for this concert: LB-1130, LB-1144, LB-1325.
+First Bob Dylan concert in Niagara Falls, Ontario, Canada. .
+6 new songs (37%) compared to previous concert. 3 new songs for this tour.
+Stereo audience recording, 110 minutes.
+Session info updated 3 June 2009.
+===================
+===================
+===================
+=== BD_2003-08-23 Niagara Falls, Ont. Canada (TMR-Vers.  Cedar 4).ffp
+===================
+===================
+===================
+2003-08-23_101.flac:5bcd98400c7f3e6a5bfd3113de27158a
+2003-08-23_102.flac:192cfabe8fc75390d7bea9f9d5c041f9
+2003-08-23_103.flac:1016a1669ab6506ba3eb88278796d9a1
+2003-08-23_104.flac:db48c1cd5340508cbb429258c9144225
+2003-08-23_105.flac:87856b61eb81244a196057cbf5fe276b
+2003-08-23_106.flac:cf8b6cf9913919559c397aaa4726020c
+2003-08-23_107.flac:eb401eba84aa3fd597345a33e1d97495
+2003-08-23_108.flac:f53480e17e8ef599b063568887e79206
+2003-08-23_109.flac:d14510f5319c43d16b2e69440f7ab7bd
+2003-08-23_201.flac:95b2aaa9c01d45f3c2f1d49d6e44ac1d
+2003-08-23_202.flac:97168d5d250ad36f16dfb223f908314b
+2003-08-23_203.flac:5a473a88eb2bc0f86e4f5a2ffcefd733
+2003-08-23_204.flac:2517b2e94c86e96782c842410c92110c
+2003-08-23_205.flac:723824dd1804a9cdf7028e7c6797f170
+2003-08-23_206.flac:1fce413c39568e4e241f92b35992b448
+2003-08-23_207.flac:18893213342b19d655cd1cda539543a4
+===================
+===================
+===================
+=== BD_2003-08-23 Niagara Falls, Ont. Canada (TMR-Vers.  Cedar 4).md5
+===================
+===================
+===================
+c4fac3165a02c3e55b44c992117b5a73 *2003-08-23 Cedar 4 D1 - Bob Dylan.log
+7e33acb60a5095668bdc2a123dd549f7 *2003-08-23 Cedar 4 D2 - Bob Dylan.log
+92fa4a062eb15b318a90d9db48039431 *2003-08-23 Niagara Falls, Ont. Canada (TMR-Vers.  Cedar 4).txt
+ee647b54d5247437f5fbbf7bc0f4d360 *2003-08-23_101.flac
+758481f35bd105d0a7c02aec7f94bcf1 *2003-08-23_102.flac
+7b4ff7bb46d4a8f18424fe8fb0ec03c8 *2003-08-23_103.flac
+31abf2135ab5a91504393f4651d6e8b5 *2003-08-23_104.flac
+01f8b7b7b47c66a32205482458df6780 *2003-08-23_105.flac
+f16f35c5eb76d5d1c2e3690ed7a75a3b *2003-08-23_106.flac
+6404cb626fa290f5ee36a965663bdceb *2003-08-23_107.flac
+255e68c83fe2097acdeeb96ccd07f42f *2003-08-23_108.flac
+d597bb1496264d097fdf14e56dc9036d *2003-08-23_109.flac
+129d5a2f403dd816b681ec01d348469e *2003-08-23_201.flac
+a94c51ff50d755af8eaa40f2abee2178 *2003-08-23_202.flac
+675941753f6d8392651e4c799d521fe6 *2003-08-23_203.flac
+02d42a74d1f90fec28ee37ad5f3778c8 *2003-08-23_204.flac
+8385b3cf45a72e01d336c1e2c41751ab *2003-08-23_205.flac
+f0a480303520a9aa3d0af887cc0ebb35 *2003-08-23_206.flac
+a1de494f0af4d5b801ebbfa8b3fdc4e3 *2003-08-23_207.flac
+===================
+===================
+===================

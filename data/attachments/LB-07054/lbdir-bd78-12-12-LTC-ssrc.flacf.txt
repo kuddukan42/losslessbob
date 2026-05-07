@@ -1,0 +1,110 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-12-12-LTC-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+440b5abf7deef0c630f578b6faf0c11b  bd-19781212-Atlanta.ffp
+946fd2d3ba55fb9056e76c6535a34b15  bd-19781212-Atlanta.md5
+a2af3662477043560fc9a83b26a2be21  bd1978-12-12-d1t01.flac
+6378a69af3e690b2ac147ccebac20996  bd1978-12-12-d1t02.flac
+51eb04da5353dda4c8f7ed7a469ea82c  bd1978-12-12-d1t03.flac
+c363cedc331c44d186971a48085d2c82  bd1978-12-12-d1t04.flac
+d22e0af149f583a069cea26857b062eb  bd1978-12-12-d1t05.flac
+f02f3baa35bfac2f845aae5af490c0fa  bd1978-12-12-d1t06.flac
+8c92c2cbd8601b5e0bdceb7aa3dd9b68  bd1978-12-12-d1t07.flac
+324f13662d887d460ef28ecb3675d53a  bd1978-12-12-d1t08.flac
+95237bf83522e897f165fda95294507b  bd1978-12-12-d1t09.flac
+893816e937b474c6b058231ffdff7020  bd1978-12-12-d1t10.flac
+c45506cabfefc38d2fe6d9b3b17893d8  bd1978-12-12-d1t11.flac
+963235a92dd1d19d8b7339ef035097df  bd1978-12-12-d1t12.flac
+175451477b9bc780e711c866abb0027c  bd1978-12-12-d1t13.flac
+25379b0ef0efcdd43b886f7c7af208f3  bd1978-12-12-d1t14.flac
+205d8bdef5af5b9a4b70a91f99f0b053  bd1978-12-12-d1t15.flac
+46aa76c6c65ef8755306af18094d699e  bd1978-12-12-d2t01.flac
+4aad1e89b3b5d3a1ef5df0c9889c65ad  bd1978-12-12-d2t02.flac
+a783fbf713aebd46f7e98387e69e014f  bd1978-12-12-d2t03.flac
+a9c06e7036c314a192a71a864cf31c11  bd1978-12-12-d2t04.flac
+94201f46d96bd97de6c750bb543d6a7e  bd1978-12-12-d2t05.flac
+b387c5a549580ab43358072c7a8b7aae  bd1978-12-12-d2t06.flac
+9792a9d82d3af4848704a49837474950  bd1978-12-12-d2t07.flac
+e80e15749b3c7578672ac04c25f6b8d1  bd1978-12-12-d2t08.flac
+eda8d5870cee886cba7aa6fc917449cc  bd1978-12-12-d2t09.flac
+80dfbf423e86f143cca82027a0d86a16  bd1978-12-12-d2t10.flac
+d74ac06070768916a898c40175625f04  bd1978-12-12-d2t11.flac
+8abc3ce2cf1fa26d492b59f19cadc4b3  bd1978-12-12-d2t12.flac
+5ec40811e09d7f64763a4abc484cbeb5  bd1978-12-12-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-12-12-LTC-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+bd1978-12-12-d1t01.flac:0aec5483aceff5665fd1074bb93fbc7c
+bd1978-12-12-d1t02.flac:9510a178cf0041a578661207b2c65ea7
+bd1978-12-12-d1t03.flac:896e3c6ce94204c9204312083e1e20c6
+bd1978-12-12-d1t04.flac:c6a2c407437ded6b1dfee801e868cd39
+bd1978-12-12-d1t05.flac:a3c61c25a7f51e191ea9cd74405a309d
+bd1978-12-12-d1t06.flac:cdf8448d4e3f395f61bb0ddd17ede325
+bd1978-12-12-d1t07.flac:3b8420a4aa6714959e622d382651ba4e
+bd1978-12-12-d1t08.flac:8c936769d3ecf3276f64b4639f7dde79
+bd1978-12-12-d1t09.flac:c7654bfcda63f841bed1c96180c872bd
+bd1978-12-12-d1t10.flac:81455754f24d62f0d5f216c153ae86ec
+bd1978-12-12-d1t11.flac:d05da68d23d0ef1b32817ab8cc18ac55
+bd1978-12-12-d1t12.flac:401f02de6d224fe1f31250c32d2b0d26
+bd1978-12-12-d1t13.flac:07c26c2e1f03ee9a3eceba525ec606c5
+bd1978-12-12-d1t14.flac:fb27e0e7a29fd5e769424784ba7cc7ae
+bd1978-12-12-d1t15.flac:fa5d7c50dfdec79716e13e3ece84499b
+bd1978-12-12-d2t01.flac:0f5e6d1e5b09aef44f4ede18f84aec04
+bd1978-12-12-d2t02.flac:69e151c4613d5a3d4c76615c708f758b
+bd1978-12-12-d2t03.flac:4adc325ae709823f2fdb7ef3cefb2f59
+bd1978-12-12-d2t04.flac:02bc31c0086e9411550baa7096034cf9
+bd1978-12-12-d2t05.flac:7939d6610095204f70e5c830c3677c78
+bd1978-12-12-d2t06.flac:2a2110f2cfd356b3f465392f53b2a660
+bd1978-12-12-d2t07.flac:3ad488c8226cbac8e7dfa49278c5e3a4
+bd1978-12-12-d2t08.flac:f947e28e9a69ad94d298b607614dc075
+bd1978-12-12-d2t09.flac:de887f7ed03d35949a5363fb39f0ebb5
+bd1978-12-12-d2t10.flac:ff70d8b95ed0af6269cbc6edd4dd1cf1
+bd1978-12-12-d2t11.flac:dd8de1f39e399676022eb9f9a34ae302
+bd1978-12-12-d2t12.flac:3e67f0c69800aa4a33ede0855389d923
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-12-12-LTC-ssrc.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:53.31       41174156 B   ---   --   ---xx   flac  0.5380  bd1978-12-12-d1t01.flac
+     2:35.25       27400844 B   ---   --   ---xx   flac  0.5502  bd1978-12-12-d1t02.flac
+     5:23.02       56981948 B   ---   --   ---xx   flac  0.5479  bd1978-12-12-d1t03.flac
+     4:10.61       44243516 B   ---   --   ---xx   flac  0.5442  bd1978-12-12-d1t04.flac
+     3:27.27       36578348 B   ---   --   ---xx   flac  0.5536  bd1978-12-12-d1t05.flac
+     7:43.74       81847292 B   ---   --   ---xx   flac  0.5342  bd1978-12-12-d1t06.flac
+     5:29.68       58195580 B   ---   --   ---xx   flac  0.5452  bd1978-12-12-d1t07.flac
+     5:37.12       59475068 B   ---   --   ---xx   flac  0.5357  bd1978-12-12-d1t08.flac
+     4:05.07       43234508 B   ---   --   ---xx   flac  0.5240  bd1978-12-12-d1t09.flac
+     6:58.39       73826972 B   ---   --   ---xx   flac  0.5406  bd1978-12-12-d1t10.flac
+     4:18.57       45645308 B   ---   --   ---xx   flac  0.5273  bd1978-12-12-d1t11.flac
+     6:44.36       71350316 B   ---   --   ---xx   flac  0.5244  bd1978-12-12-d1t12.flac
+     4:53.33       51762860 B   ---   --   ---xx   flac  0.5505  bd1978-12-12-d1t13.flac
+     3:37.35       38361164 B   ---   --   ---xx   flac  0.5511  bd1978-12-12-d1t14.flac
+     5:45.44       60961532 B   ---   --   ---xx   flac  0.5457  bd1978-12-12-d1t15.flac
+     3:35.70       38090684 B   ---   --   ---xx   flac  0.5433  bd1978-12-12-d2t01.flac
+     7:32.36       79817516 B   ---   --   ---xx   flac  0.5290  bd1978-12-12-d2t02.flac
+     5:06.16       54016076 B   ---   --   ---xx   flac  0.5345  bd1978-12-12-d2t03.flac
+     5:12.12       55065068 B   ---   --   ---xx   flac  0.5215  bd1978-12-12-d2t04.flac
+     4:10.46       44208236 B   ---   --   ---xx   flac  0.5370  bd1978-12-12-d2t05.flac
+     5:16.47       55852988 B   ---   --   ---xx   flac  0.5486  bd1978-12-12-d2t06.flac
+     5:33.51       58861196 B   ---   --   ---xx   flac  0.5491  bd1978-12-12-d2t07.flac
+     3:33.00       37573244 B   ---   --   ---xx   flac  0.5612  bd1978-12-12-d2t08.flac
+     4:06.65       43547324 B   ---   --   ---xx   flac  0.5484  bd1978-12-12-d2t09.flac
+     8:23.06       88743356 B   ---   --   ---xx   flac  0.5700  bd1978-12-12-d2t10.flac
+     9:04.50       96079244 B   ---   --   ---xx   flac  0.5693  bd1978-12-12-d2t11.flac
+     7:15.55       76863404 B   ---   --   ---xx   flac  0.5808  bd1978-12-12-d2t12.flac
+   143:35.30     1519757748 B                            0.5456  (27 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,103 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-10-16-mad-dog.flacf 
+=================== 
+=================== 
+=================== 
+a3cf2e9f56804733336b4af8fb39d780  1\flac.txt
+ae9c9d2884b4fd615e5268ab6fb7757c  1\Track  1.flac
+6a78989ebc778d993095c0c9ad2c4739  1\Track  2.flac
+dc9387ccf6780c07f0978e7f5f3892dc  1\Track  3.flac
+031647316dfe5db6a6e7ad8bd02ddd5d  1\Track  4.flac
+0911def2924eaf99187bb3351a71388b  1\Track  5.flac
+0e7e52720678453b61359945567e456c  1\Track  6.flac
+0b9304dad7becc9d179d64ed0a480dda  1\Track  7.flac
+364ce4d69207f99647859e22243531bd  1\Track  8.flac
+78a14bfbf1debec79264e8eaff39e6db  1\Track  9.flac
+7e3c18c630546b90f6c21735317934ee  1\Track 10.flac
+c5173d523bf59c5dbe76eeac3d24cd3c  1\Track 11.flac
+6323c90910251485139d1d80df5452a9  1\Track 12.flac
+c9afc8d729a50dbee48e64e29151dba3  2\flac.txt
+6175a15de4e1d827521dc0f241fe413f  2\Track  1.flac
+5935d485db92646d67f1afaabcd4c307  2\Track  2.flac
+141c0151d519991d548ad541090b9195  2\Track  3.flac
+bd0e21f06024e60ccb392406895df6c8  2\Track  4.flac
+b94884428c4571abd873cae4ea6a5d78  2\Track  5.flac
+d52ee10a5876fa249f39d9bc75d6d73c  2\Track  6.flac
+262012f5f62461212b31dfa827b34067  Fresno_Cover_One.jpg
+18048c4cf694d9c43734ea501a470c49  Fresno_Cover_One_Inside.jpg
+7d6d1aa099002f86a31c7064e4be9f0b  Fresno_Cover_Two.jpg
+1205dea703fc37c249d61744901a1920  Fresno_Cover_Two_Inside.jpg
+849f32a05e48548752b0d168395e5320  set_info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-16-mad-dog.flacf\1 
+=================== 
+=================== 
+=================== 
+Track  1.flac:4773f63dc5bbaf6b0d93c9287a745917
+Track  2.flac:2a9d10f9d82c1e6a4600f866866e3286
+Track  3.flac:f127680bc474961fd27e6e7267d884da
+Track  4.flac:eed27cb365ae900ff339fb198186684a
+Track  5.flac:8283d1e8be1399a2adfbf06312f862b0
+Track  6.flac:e5bddd3fa3990f7b44c576a33ee278e4
+Track  7.flac:4c2c3a5ba268d35b002f055820e7c3fb
+Track  8.flac:9e4515cc5c74f04be3365e0a5694de25
+Track  9.flac:655eb17ca53ef67e69d59d4a9e56c634
+Track 10.flac:7693a29084ac2ea6d8a6b3cf0d5da439
+Track 11.flac:89d4ee1bb3a54800139d289eb388b1da
+Track 12.flac:09872dce0a42a972d1d16a330c54d3ca
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-10-16-mad-dog.flacf\2 
+=================== 
+=================== 
+=================== 
+Track  1.flac:f6b4be87a1f3ec926ffd421546a121ef
+Track  2.flac:dc234af56025e9b513f2d76b68cf58df
+Track  3.flac:233e9b1150c7d0ba88ff1193cee3f3ce
+Track  4.flac:8f106ab2802b653569a28e506f5026fe
+Track  5.flac:6e139124484325fb828f430050c70e12
+Track  6.flac:ef952ace7e74ba60ba8db745426bdad4
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-16-mad-dog.flacf\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:56.18        9920780 B   ---   --   ---xx   flac  0.5050  Track  1.flac
+     5:19.36       56356316 B   ---   --   ---xx   flac  0.5987  Track  2.flac
+     6:31.31       69045356 B   ---   --   ---xx   flac  0.5529  Track  3.flac
+     5:40.26       60037196 B   ---   --   ---xx   flac  0.5479  Track  4.flac
+     6:03.23       64087340 B   ---   --   ---xx   flac  0.5851  Track  5.flac
+     7:11.71       76195436 B   ---   --   ---xx   flac  0.6097  Track  6.flac
+     5:54.07       62462108 B   ---   --   ---xx   flac  0.5991  Track  7.flac
+     5:42.26       60389996 B   ---   --   ---xx   flac  0.5480  Track  8.flac
+     6:33.71       69492236 B   ---   --   ---xx   flac  0.6220  Track  9.flac
+     6:15.03       66157100 B   ---   --   ---xx   flac  0.5365  Track 10.flac
+     7:47.07       82395308 B   ---   --   ---xx   flac  0.5954  Track 11.flac
+     6:20.17       67072028 B   ---   --   ---xx   flac  0.5442  Track 12.flac
+    70:15.36      743611200 B                            0.5763  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-10-16-mad-dog.flacf\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:57.49       73674092 B   ---   --   ---xx   flac  0.6132  Track  1.flac
+     6:09.17       65131628 B   ---   --   ---xx   flac  0.5501  Track  2.flac
+    10:30.11      111157916 B   ---   --   ---xx   flac  0.5603  Track  3.flac
+     6:44.61       71409116 B   ---   --   ---xx   flac  0.6201  Track  4.flac
+     0:36.62        6496268 B   ---   --   ---xx   flac  0.5721  Track  5.flac
+     6:02.00       63856844 B   ---   --   ---xx   flac  0.6051  Track  6.flac
+    37:00.50      391725864 B                            0.5870  (6 files)
+=================== 
+=================== 
+=================== 

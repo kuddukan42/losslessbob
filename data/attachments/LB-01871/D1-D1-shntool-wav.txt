@@ -1,0 +1,13 @@
+    length     expanded size   cdr  WAVE  probs   filename
+     6:58.37      73822268     ---   --    ---    01 - Gotta Serve Somebody.wav
+     4:54.68      52021580     ---   --    ---    02 - I Belive In You.wav
+     5:49.37      61650668     ---   --    ---    03 - When He Returns.wav
+     5:22.65      56953724     ---   --    ---    04 - Ain't Gonna Go To Hell For Anybody.wav
+     4:23.73      46564940     ---   --    ---    05 - Cover Down Break Through.wav
+     5:50.52      61862348     ---   --    ---    06 - Man Gave Names To All The Animals.wav
+     4:35.68      48669980     ---   --    ---    07 - Precious Angel.wav
+     7:18.55      77392604     ---   --    ---    08 - Slow Train.wav
+     4:13.50      44746844     ---   --    ---    09 - Stranger In The City.wav
+     5:52.10      62116364     ---   --    ---    10 - Walk Around Heaven All Day.wav
+     4:57.20      52437884     ---   --    ---    11 - Do Right To Me Baby.wav
+    60:18.10        608.67 MB                     (totals for 11 files)

@@ -1,0 +1,26 @@
+; Using hkSFV on 01.28.2004 at 21:18:56
+; http://www.big-o-software.com
+;
+;/----
+;     30709981 20:47.56 2004-01-28 1-01-Tweedle Dee & Tweedle Dum.flac
+;     36109309 20:49.10 2004-01-28 1-02-I'll Be Your Baby, Tonight.flac
+;     34067976 20:50.12 2004-01-28 1-03-Highway 61 Revisited.flac
+;     29784568 20:51.16 2004-01-28 1-04-I'll Remember You.flac
+;     38729317 20:52.22 2004-01-28 1-05-Things Have Changed.flac
+;     36317144 20:53.18 2004-01-28 1-06-Cold Irons Bound.flac
+;     33691508 20:54.22 2004-01-28 1-07-Girl Of The North Country.flac
+;     31273033 20:55.16 2004-01-28 1-08-Masters Of War.flac
+;     31863753 20:56.06 2004-01-28 1-09-Don't Think Twice, It's All Right.flac
+;     52991432 20:57.18 2004-01-28 1-10-It's Alright, Ma (I'm Only Bleeding).flac
+;\----
+;
+9353664698d7a0297af76dd764214103 *1-01-Tweedle Dee & Tweedle Dum.flac
+032e5c2d7f3b7b08dc0ec8e830ff5e1f *1-02-I'll Be Your Baby, Tonight.flac
+a436d42ec735cfa2947167dc23166587 *1-03-Highway 61 Revisited.flac
+3e9b132c699c516e176a5963523451d2 *1-04-I'll Remember You.flac
+6fb6bebc6765a75b9281891e2578a846 *1-05-Things Have Changed.flac
+8ee09be59c71fbcb33913d1acf4646ae *1-06-Cold Irons Bound.flac
+b9bae0941cf5bd3e25be8f15ef293f53 *1-07-Girl Of The North Country.flac
+9789f900bbd2635c75a4ff50a5261722 *1-08-Masters Of War.flac
+01cc514f76296311e5aecd35c16cf542 *1-09-Don't Think Twice, It's All Right.flac
+3063d285a3f50508a0b5641101329c06 *1-10-It's Alright, Ma (I'm Only Bleeding).flac

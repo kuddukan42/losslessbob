@@ -1,0 +1,52 @@
+===================
+===================
+===================
+=== md5 for: bd86-07-10-Etta-James-Jam-jtt.flacf
+===================
+===================
+===================
+bbde2bcb7a02fb5b63e2bde1b24d2d97 *BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 01.flac
+7b32239750d9f7fc2e07d7bbe184ff3c *BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 02.flac
+cee8de747dafc43d737ba16caa202961 *BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 03.flac
+1aaf0866354ae7b49c8ebbe3ed069bde *BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 04.flac
+11b17c06dc0d50b3100ef27080e1a53b *BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 05.flac
+67c895a74a2e4d80aa4b5538e820b48c *BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 06.flac
+a585026d57b0b549ee19b3bb8807e940 *BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 07.flac
+2ac41da328fc3c647d3ac1fd9b156f44 *BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 08.flac
+59fd42165f8e0c1d231f1e1a8e968be5 *BOB DYLAN & Others - Marriot Hotel, Providence Rhode Island July 10th 1986.ffp
+17d3daa3a50af3c6a1e8f8f562163582 *BOB DYLAN & Others - Marriot Hotel, Providence Rhode Island July 10th 1986_Info.txt
+===================
+===================
+===================
+=== ffp for: bd86-07-10-Etta-James-Jam-jtt.flacf
+===================
+===================
+===================
+BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 01.flac:98fa281b66a29309758cfbf6cff224a9
+BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 02.flac:f1b5f8b1deec1a84e67c6fd163ad85ae
+BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 03.flac:5c7b0069f8eaab1be4d6cfc08f744107
+BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 04.flac:553ddbe1c1fb754d9063b100814c197d
+BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 05.flac:f2423aa44292008178b226567eafc6eb
+BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 06.flac:1e1d2f42bb981c57c15a154b8f9c4f6b
+BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 07.flac:a84fe1ec827e643e408adbd208d0cafd
+BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 08.flac:5ee588f9ead3b883450fb7b93a361afa
+===================
+===================
+===================
+=== shntool len for: bd86-07-10-Etta-James-Jam-jtt.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:05.29       11534252 B   ---   --   ---xx   flac  0.5633  BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 01.flac
+     5:02.24       53329292 B   ---   --   ---xx   flac  0.5886  BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 02.flac
+     0:47.34        8370812 B   ---   --   ---xx   flac  0.5687  BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 03.flac
+     5:58.11       63177116 B   ---   --   ---xx   flac  0.5857  BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 04.flac
+     3:55.69       41616332 B   ---   --   ---xx   flac  0.5879  BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 05.flac
+     3:01.23       31982540 B   ---   --   ---xx   flac  0.5689  BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 06.flac
+     5:24.18       57195980 B   ---   --   ---xx   flac  0.5900  BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 07.flac
+     3:37.61       38422316 B   ---   --   ---xx   flac  0.5852  BOB DYLAN & Others - Marriot Hotel July 10th 1986_Track 08.flac
+    28:52.44      305628640 B                            0.5842  (8 files)
+===================
+===================
+===================

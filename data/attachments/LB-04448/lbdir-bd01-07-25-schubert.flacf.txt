@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-07-25-schubert.flacf 
+=================== 
+=================== 
+=================== 
+beff41b4110cb5bbb309cb6146a63cd6  bd01-07-25-schubert-LB-4448.txt
+6047dcf4a15aa94198ada2bab1d6f4a0  d1Track01.flac
+7fa8c6814957141b8c34c3f3ddbef482  d1Track02.flac
+6cc2c8a8db149b551f9b7b0f8a5bea42  d1Track03.flac
+8da154bdee9ee1af7a81e1e45a340720  d1Track04.flac
+9ce923338bad763460a9eaa955ada849  d1Track05.flac
+3e36e4f2747cb0f762bb2c698d97ebc0  d1Track06.flac
+6a3deb63567fbe3487b0e6889e4d04ab  d1Track07.flac
+4ad88261dca854f1b9d59adbbb36b697  d1Track08.flac
+24e78d7521d5fc743723c5428e0b321a  d1Track09.flac
+5662c9cd2124814fe2c9749f6014862f  d1Track10.flac
+eb8797019ee50a7c7528b08da756dcc6  d1Track11.flac
+8693b1f5fa7461272fd322354968adee  d2Track01.flac
+3ce91112db56008435f3a1955de88980  d2Track02.flac
+b485e1a627f3a4c395fb26a97c631e11  d2Track03.flac
+b6a6c7e2480b122a05fd002375fbc205  d2Track04.flac
+5f1e304c22cee7108b2402913e4d1598  d2Track05.flac
+9811ca5930489644f3e84d0c24b70093  d2Track06.flac
+00da6d7b75e02daa2efc9f797ee2cfac  d2Track07.flac
+3c7c0b259c51eb11fca2d69a51d4e745  d2Track08.flac
+e3c6bd0d5f50496cdbb01a4d780e7f83  d2Track09.flac
+65fd3375cb0753aae0b1ef36cb89be59  fingerprints.txt
+2c821f9ef61d0e5875437477d0e1402b  info_bd2001-7-25.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-25-schubert.flacf 
+=================== 
+=================== 
+=================== 
+d1Track01.flac:711df52dba49adfe593266adf7900d99
+d1Track02.flac:42ec311c7e26201e58078a88e54df84f
+d1Track03.flac:1e1b230500adbf350bda202cb7804e47
+d1Track04.flac:9f423af594c6266583619966f9730e69
+d1Track05.flac:3dc7871b61d9985ec90859bfff82345a
+d1Track06.flac:2b64266807abe077d8b5fd3f56e9fc17
+d1Track07.flac:c965bfa86c46663640dd6cc9f6c5a734
+d1Track08.flac:d645afa36aa165ebbaa13db2ddaaca48
+d1Track09.flac:d3a6808e164fed990849f7f3ca439c85
+d1Track10.flac:2f160f876dad9cb01faf773e837f11f5
+d1Track11.flac:4e88965e3ccb2ac28678d8ae1acb8766
+d2Track01.flac:b1a381138cb42208602c10f1800be686
+d2Track02.flac:d34c462997ffe44b8c628baf0ffd6b92
+d2Track03.flac:d846c4323357fefb0dc1ac4628b7bdbf
+d2Track04.flac:a7f981fe756c3045dbef90d7574b18ab
+d2Track05.flac:40a8b4f21dcd7f97d3f7f976048cc3a1
+d2Track06.flac:94afbb02f1a52d107473d94f126b4f67
+d2Track07.flac:269de07ea4e9034fb3ae748437847e38
+d2Track08.flac:c6815b5bd479e7491fe7d9ec260d27a3
+d2Track09.flac:59ba7ca6f2b0b091ee3fa69907dde11c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-25-schubert.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:18.40       35021324 B   ---   --   ---xx   flac  0.5107  d1Track01.flac
+     5:12.55       55166204 B   ---   --   ---xx   flac  0.4685  d1Track02.flac
+     8:39.10       91575164 B   ---   --   ---xx   flac  0.5051  d1Track03.flac
+     5:10.20       54731084 B   ---   --   ---xx   flac  0.5078  d1Track04.flac
+     7:27.65       79003724 B   ---   --   ---xx   flac  0.4906  d1Track05.flac
+     4:31.00       47804444 B   ---   --   ---xx   flac  0.5301  d1Track06.flac
+     5:27.20       57729884 B   ---   --   ---xx   flac  0.4674  d1Track07.flac
+     8:30.60       90105164 B   ---   --   ---xx   flac  0.4594  d1Track08.flac
+     6:44.45       71371484 B   ---   --   ---xx   flac  0.4024  d1Track09.flac
+     5:02.15       53308124 B   ---   --   ---xx   flac  0.4971  d1Track10.flac
+     8:48.46       93247436 B   ---   --   ---xx   flac  0.4871  d1Track11.flac
+     5:25.60       57471164 B   ---   --   ---xx   flac  0.5469  d2Track01.flac
+     9:16.10       98101964 B   ---   --   ---xx   flac  0.4915  d2Track02.flac
+     5:33.15       58776524 B   ---   --   ---xx   flac  0.4762  d2Track03.flac
+     7:59.40       84589724 B   ---   --   ---xx   flac  0.5293  d2Track04.flac
+     4:00.10       42359564 B   ---   --   ---xx   flac  0.4126  d2Track05.flac
+     4:29.50       47569244 B   ---   --   ---xx   flac  0.5434  d2Track06.flac
+     6:15.47       66260588 B   ---   --   ---xx   flac  0.4940  d2Track07.flac
+     6:14.39       66065372 B   ---   --   ---xx   flac  0.5447  d2Track08.flac
+     5:52.41       62189276 B   ---   --   ---xx   flac  0.4986  d2Track09.flac
+   124:00.13     1312447456 B                            0.4925  (20 files)
+=================== 
+=================== 
+=================== 

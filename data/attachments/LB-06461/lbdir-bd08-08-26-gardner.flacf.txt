@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd08-08-26-gardner.flacf 
+=================== 
+=================== 
+=================== 
+10fbb8f3a6485f952d4e7e340b863b74  bd08-08-26 flac.ffp
+1f435e639dc09c48557f04fb9af034ed  LS10001001.flac
+1c866715ab4e8e4def0be150b28bc068  LS10001002.flac
+8a03bd0f2ece5c2c87c2911a6f7acab2  LS10001003.flac
+94ba7ca70e7e99ba57ecb4494ac8334e  LS10001004.flac
+4e9f212028181793ffc176a242100ea0  LS10001005.flac
+39a96621033ed5418f121e1c59673391  LS10001006.flac
+a47ac0804c547658a048689be321ab74  LS10001007.flac
+a69fb396873fb4f50c006ce7f90047b4  LS10001008.flac
+6875b5c67e85b2b9d832ac0f46f91cb9  LS10001009.flac
+885e04912d30b0220ecfdb94470688ec  LS10001010.flac
+6797f358f1b9e4146095608cfef30450  LS10001011.flac
+d7b95d2cd3b3e985eb80c8664816afb0  LS10001012.flac
+71d55436e6431e2c52cc1e270ae07697  LS10001013.flac
+5cba1910cde3676b80cb2e692697e6e8  LS10001014.flac
+99e9a38c1fea60a5135b76c74d250006  LS10001015.flac
+8e339273d39eb2f03d8af75fc20f9f5f  LS10001016.flac
+7ec258616e23f18e7e61adc964006311  LS10001017.flac
+786597b19c4a53a690d3c156e7d10941  LS10001018.flac
+7c85cb5a22e16c256b0cc588d6782151  Text Document .txt
+2e0b15d49bc2c2cf1eb28b768a41e41c  torrent-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd08-08-26-gardner.flacf 
+=================== 
+=================== 
+=================== 
+LS10001001.flac:dd3d7566d56738190b98ec6f68b195dd
+LS10001002.flac:850bdaa58fe672bd499c7174ca6a38f7
+LS10001003.flac:7e9405e2993738ba977dd109295dbaee
+LS10001004.flac:1b6bed3ef83e757c7d3542d2b44439b0
+LS10001005.flac:5e8c0811fc41c5a58250fced075cae18
+LS10001006.flac:e3501adee2b65cc24bdf241300ef1bb3
+LS10001007.flac:50d870cb2528e94fd04b1c48c7f68dfe
+LS10001008.flac:222e401ab50b6898a410f52c454597d5
+LS10001009.flac:484c15af37442716bdbd9fecdd172156
+LS10001010.flac:11c9187bcf78a3b35e604b7569400111
+LS10001011.flac:7dbba832bc4263f128f22fc91f855e65
+LS10001012.flac:95a16ce96be52b9d50a3c3dcafe5410c
+LS10001013.flac:d858292710551a9b120b9bc582ad726e
+LS10001014.flac:28b3fb7cdd107a0d59290a1c6cf2ecf3
+LS10001015.flac:e3ecc5e7c1116b060134544b5e536482
+LS10001016.flac:feeab5272295afe4cda307c105b11bb7
+LS10001017.flac:de5344173c21c4699edfb4393ffafb1e
+LS10001018.flac:00b760abd1062d9106bd77aa8b75fa11
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd08-08-26-gardner.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:50.27       51219548 B   ---   --   ---xx   flac  0.6011  LS10001001.flac
+     6:12.27       65684348 B   ---   --   ---xx   flac  0.5962  LS10001002.flac
+     5:43.00       60505244 B   ---   --   ---xx   flac  0.6212  LS10001003.flac
+     5:55.42       62720828 B   ---   --   ---xx   flac  0.6004  LS10001004.flac
+     6:02.71       64023836 B   ---   --   ---xx   flac  0.5974  LS10001005.flac
+     8:36.69       91184732 B   ---   --   ---xx   flac  0.6096  LS10001006.flac
+     6:36.49       69969692 B   ---   --   ---xx   flac  0.6105  LS10001007.flac
+     7:04.27       74857148 B   ---   --   ---xx   flac  0.6010  LS10001008.flac
+     7:08.44       75602732 B   ---   --   ---xx   flac  0.5969  LS10001009.flac
+     6:13.64       65947772 B   ---   --   ---xx   flac  0.6163  LS10001010.flac
+     6:12.61       65764316 B   ---   --   ---xx   flac  0.6056  LS10001011.flac
+     6:23.03       67568300 B   ---   --   ---xx   flac  0.5873  LS10001012.flac
+     7:10.28       75917900 B   ---   --   ---xx   flac  0.5960  LS10001013.flac
+     8:06.63       85878620 B   ---   --   ---xx   flac  0.5752  LS10001014.flac
+     6:32.27       69212348 B   ---   --   ---xx   flac  0.5964  LS10001015.flac
+     2:57.71       31389836 B   ---   --   ---xx   flac  0.5461  LS10001016.flac
+     7:29.01       79205996 B   ---   --   ---xx   flac  0.5971  LS10001017.flac
+     6:33.39       69416972 B   ---   --   ---xx   flac  0.5884  LS10001018.flac
+   115:50.38     1226070168 B                            0.5980  (18 files)
+=================== 
+=================== 
+=================== 

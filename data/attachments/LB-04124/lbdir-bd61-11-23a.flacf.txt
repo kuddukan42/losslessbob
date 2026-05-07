@@ -1,0 +1,162 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd61-11-23a.flacf 
+=================== 
+=================== 
+=================== 
+73712a7f671f66815e0758ac6661cfee  bd61-11-23a-LB-4124.txt
+81066ec4c4ca247434cf3acb9e217c7a  bd_McKenzie Tapes 1961-1963.md5
+d7d73af55774eea778c3b1944c47ad87  bd_McKenzie Tapes 1961-1963_ffp.txt
+98082a19e40b7dbbe5f1e0feac33011e  bd_McKenzie Tapes 1961-1963_info.txt
+5662485b18c3c803c344493a4f39e06b  First Tape01.flac
+cc27c049b006c9f620fb46f8d85fca78  First Tape02.flac
+2d7d80d0ebde98e15f038399a6bceaeb  First Tape03.flac
+3ac9591d39b71c68b0e9e8f4fa449362  First Tape04.flac
+c9d0c9b1b8cae9e1508f68940dd00045  First Tape05.flac
+ab32a967993e31cb98d813499553d13d  First Tape06.flac
+a614a7375a2273e0c87b9c1ae8a3984f  First Tape07.flac
+b083d4390bb4b94751664ba7ce4c4c64  First Tape08.flac
+d2f3797650ad43dc031b17386108608f  First Tape09.flac
+5daefd3331172e814d9e697f21c53411  First Tape10.flac
+eb414c8191085c77fdc47e67a509610d  First Tape11.flac
+bbdda38254959c9724f3493675268100  First Tape12.flac
+350c018c3fc4a59a51cb65a7ca03bdf3  First Tape13.flac
+b971ff8db48cf5eb03eb32542fb342d9  First Tape14.flac
+856107a192cf4baefa304505a6eb880f  First Tape15.flac
+e689948fcbb5f13a55af11602518fd99  First Tape16.flac
+08399750a9edd567834037f2804383d7  First Tape17.flac
+45db48893d691c6ca0535449c461667d  First Tape18.flac
+102d42af05496d79b0e6517f37015413  First Tape19.flac
+642835e95d3a6260bc372c5536de68db  First Tape20.flac
+1ce460210bdd942329a1e236b6f3a639  First Tape21.flac
+c451199d436f8417a8b0d36faecb786f  First Tape22.flac
+e8de2ee11d2a5022c23ac863758fd17b  GBS_01 Hard Times In New York Town.flac
+7871838ab1089c0625a01ef098ccc7b3  GBS_02 The Death Of Emmett Till.flac
+4e257c369ef9fe2f2f5ee2cb62df3215  GBS_03 See That My Grave Is Kept Clean.flac
+e4674e1d2c93916b2af64ffe0cef721c  GBS_04 Ballad Of Donald White.flac
+5c7735849907224912d0f60e20e9531a  GBS_05 I Rode Out One Morning.flac
+98152a8c7604c2ec65fc25ad30b549ab  GBS_06 House Of The Rising Sun.flac
+9535e34dff76f7a99ef247612ca64b43  Second Tape01.flac
+05d72d9c4f47eebc5c92f9153b28e68b  Second Tape02.flac
+cb61f8828983ead95d4bb0b239a47f7d  Second Tape03.flac
+f2ac9ddf7b474b43dbe36b75304046a2  Second Tape04.flac
+3c07a4ecf77fbc64d273c10e5215292b  Second Tape05.flac
+348279a05ae49bed7f59a4a998cf83e0  Second Tape06.flac
+ac9080aea387669aacc446281e4d549f  Second Tape07.flac
+e8e88c9ae96e6c7e5ff019e796ed90a9  Second Tape08.flac
+d1378ad5b2ac3270a20edfe02eb5c355  Second Tape09.flac
+2c1e83afa095abd0df7e6fecf4624484  Second Tape10.flac
+a1f2ba115e925e39bb15e8bab56cd127  Second Tape11.flac
+7f626988ae6436541d4503d6ae44f5bd  Second Tape12.flac
+39a72290f26ccb617a1f17aef1ee08ec  Second Tape13.flac
+8aec8b25ffbc48cd4dd4f909aa9104ea  Second Tape14.flac
+a8acdc1dcbfae6b1f15362e82ea90d37  Second Tape15.flac
+acf8afd37af683c0f87bf55007a1fa3e  Second Tape16.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd61-11-23a.flacf 
+=================== 
+=================== 
+=================== 
+First Tape01.flac:8559f4b7d9d1b7a19b31733e9ce74274
+First Tape02.flac:792f32306f94228acb72853467b0dfe2
+First Tape03.flac:1e208df78cd714376603f78bfbdfad9a
+First Tape04.flac:5634a3c17dd2c8e52234590388f138a8
+First Tape05.flac:552dc49707b4aa699aff676c99df383c
+First Tape06.flac:773c7ac8d3cef9ac872ddb5c41c15d6f
+First Tape07.flac:88a243244fdb92f62744347e9776e379
+First Tape08.flac:2ea7236e243b29360adfcf2e2976451e
+First Tape09.flac:8d1fe3f483dab19713524ebaa67910da
+First Tape10.flac:5a91d003b27586322908a817fc84b32d
+First Tape11.flac:254c993f0f47fabe3cec8bd7ea086678
+First Tape12.flac:bcf175d19051069744bc48fe47f4e063
+First Tape13.flac:f64b09efefff0dc37654c2437ae0ce1e
+First Tape14.flac:e385e15ebe8da1e14b1b73cdecff5ba6
+First Tape15.flac:89d197e4a49984286d5b3da4a1be1e85
+First Tape16.flac:e27245dc2d1e1c64ddf855a0ef1d60f3
+First Tape17.flac:02e222d3f1b50a0a4c2f5d261451ec0d
+First Tape18.flac:dc147cbcf089523e0c49d44d1cb52a4c
+First Tape19.flac:d16c0e0f6a3780a38f3f690bac794913
+First Tape20.flac:06b90181ce07c48a4ca8e8bfc481be1a
+First Tape21.flac:8515500c0700404e2d1701622f69ab56
+First Tape22.flac:abe811cfa0819c05f6da9ae020666894
+GBS_01 Hard Times In New York Town.flac:2b3ae7ae3f20df6483d1a43906048fe7
+GBS_02 The Death Of Emmett Till.flac:7983fe0a4c51364a53017a4f410906cb
+GBS_03 See That My Grave Is Kept Clean.flac:e79cb42e6dac71011f212cbd26e0d2a9
+GBS_04 Ballad Of Donald White.flac:09ccb327a25a6962152f562a9be55ef1
+GBS_05 I Rode Out One Morning.flac:8fe3cdc105b955a989a8653e704bbf76
+GBS_06 House Of The Rising Sun.flac:cf13ce384366d00cdcd6113085c77f50
+Second Tape01.flac:2d5ba11e134cb26a3ddb41c46b091423
+Second Tape02.flac:2ab6348ec7739eacc348d1487ba37262
+Second Tape03.flac:cde35c2780d71aa15991cf40f9598e47
+Second Tape04.flac:1976f267b77bb402e2dd725d438ef471
+Second Tape05.flac:6d7e4f895c1fa208f965acb74b559221
+Second Tape06.flac:f33554e4c4bd2d656db006240acac03d
+Second Tape07.flac:36ca04dbe1472700625444bb81dd009a
+Second Tape08.flac:94b0cc3f0ee2e1983c1cd1f212e00d24
+Second Tape09.flac:47b2e9d3e5c9f0ba5ae8118ab7f9c08c
+Second Tape10.flac:3445578a3fc8afebc4870ae7512e6dee
+Second Tape11.flac:f0258ac67cddb8e29f12ff2d277bb281
+Second Tape12.flac:3fe9aec4afc7d11be77e8cfeb1a0c0f4
+Second Tape13.flac:2579807a23c3a5dd31c8749ad8d7ae07
+Second Tape14.flac:7381fed674b8f358d35741f47ae40967
+Second Tape15.flac:1fd071c577f72ac9e44102f114e5335e
+Second Tape16.flac:ae7788f276a98482786b2e370b0863e2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd61-11-23a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:58.10       10254764 B   ---   --   ---xx   flac  0.3980  First Tape01.flac
+     0:25.65        4562924 B   ---   --   ---xx   flac  0.3975  First Tape02.flac
+     0:43.61        7728716 B   ---   --   ---xx   flac  0.4051  First Tape03.flac
+     0:32.59        5783612 B   ---   --   ---xx   flac  0.4260  First Tape04.flac
+     2:59.69       31737932 B   ---   --   ---xx   flac  0.4314  First Tape05.flac
+     0:51.42        9095228 B   ---   --   ---xx   flac  0.4049  First Tape06.flac
+     0:56.57       10012508 B   ---   --   ---xx   flac  0.4460  First Tape07.flac
+     0:23.24        4113692 B   ---   --   ---xx   flac  0.4024  First Tape08.flac
+     2:14.06       23651756 B   ---   --   ---xx   flac  0.4385  First Tape09.flac
+     1:59.55       21121004 B   ---   --   ---xx   flac  0.4375  First Tape10.flac
+     1:49.69       19389932 B   ---   --   ---xx   flac  0.4452  First Tape11.flac
+     1:21.06       14302556 B   ---   --   ---xx   flac  0.4591  First Tape12.flac
+     6:30.02       68800748 B   ---   --   ---xx   flac  0.4409  First Tape13.flac
+     1:46.39       18790172 B   ---   --   ---xx   flac  0.4569  First Tape14.flac
+     0:58.64       10381772 B   ---   --   ---xx   flac  0.4388  First Tape15.flac
+     2:04.44       21977132 B   ---   --   ---xx   flac  0.4251  First Tape16.flac
+     2:09.19       22800332 B   ---   --   ---xx   flac  0.4177  First Tape17.flac
+     3:03.59       32420012 B   ---   --   ---xx   flac  0.4189  First Tape18.flac
+     1:07.06       11832956 B   ---   --   ---xx   flac  0.3929  First Tape19.flac
+     0:32.53        5769500 B   ---   --   ---xx   flac  0.4202  First Tape20.flac
+     4:14.21       44855036 B   ---   --   ---xx   flac  0.4133  First Tape21.flac
+     3:03.31       32354156 B   ---   --   ---xx   flac  0.3973  First Tape22.flac
+     1:50.41       19500476 B   ---   --   ---xx   flac  0.5579  GBS_01 Hard Times In New York Town.flac
+     4:11.20       44323484 B   ---   --   ---xx   flac  0.5805  GBS_02 The Death Of Emmett Till.flac
+     1:01.20       10807484 B   ---   --   ---xx   flac  0.4892  GBS_03 See That My Grave Is Kept Clean.flac
+     4:16.57       45292508 B   ---   --   ---xx   flac  0.5056  GBS_04 Ballad Of Donald White.flac
+     2:43.40       28847324 B   ---   --   ---xx   flac  0.5473  GBS_05 I Rode Out One Morning.flac
+     3:08.62       33309068 B   ---   --   ---xx   flac  0.5004  GBS_06 House Of The Rising Sun.flac
+     1:20.73       14283740 B   ---   --   ---xx   flac  0.4028  Second Tape01.flac
+     0:51.01        8998796 B   ---   --   ---xx   flac  0.4043  Second Tape02.flac
+     2:17.08       24185660 B   ---   --   ---xx   flac  0.3989  Second Tape03.flac
+     6:01.14       63713372 B   ---   --   ---xx   flac  0.4027  Second Tape04.flac
+     6:51.30       72571004 B   ---   --   ---xx   flac  0.4142  Second Tape05.flac
+     1:39.48       17576540 B   ---   --   ---xx   flac  0.3756  Second Tape06.flac
+     2:48.36       29719916 B   ---   --   ---xx   flac  0.3684  Second Tape07.flac
+     2:32.45       26918684 B   ---   --   ---xx   flac  0.3616  Second Tape08.flac
+     2:08.38       22668620 B   ---   --   ---xx   flac  0.3536  Second Tape09.flac
+     0:54.38        9615020 B   ---   --   ---xx   flac  0.3647  Second Tape10.flac
+     2:33.38       27078620 B   ---   --   ---xx   flac  0.3706  Second Tape11.flac
+     6:17.11       66528716 B   ---   --   ---xx   flac  0.3861  Second Tape12.flac
+     4:00.39       42427772 B   ---   --   ---xx   flac  0.3843  Second Tape13.flac
+     3:54.28       41343500 B   ---   --   ---xx   flac  0.3944  Second Tape14.flac
+     1:53.32       20008508 B   ---   --   ---xx   flac  0.3838  Second Tape15.flac
+     0:51.14        9029372 B   ---   --   ---xx   flac  0.3849  Second Tape16.flac
+   104:55.19     1110484624 B                            0.4273  (44 files)
+=================== 
+=================== 
+=================== 

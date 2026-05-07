@@ -1,0 +1,10 @@
+Bob Dylan, 5/11/76, San Antonio, TX, Municipal Audiotrium, 1CDR
+
+LB-4303, (82min), My Tape > CoolEdit > HR > CDR > EAC > Flac; aud from lk 76 data dvdr set; most except what looks like noise below 8k; t0 is not listed in the info file but is a version with a little surface noise with not much above 18k but does not have lego parapets; t1 has most except what looks like noise below 10k; good sound [C]
+
+digi-pop d1t8 0:43
+
+0 Spanish is the Loving Tongue, 1 Spanish is the Loving Tongue, 2 Blowin' in the Wind, 3 Railroad Boy, 4 Deportees, 5 I Pity the Poor Immigrant, 6 Shelter from the Storm, 7 Romance in Durango, 8 I Want You, 9 You're a Big Girl Now, 10 You're Gonna Make Me Lonesome When You Go, 11 Oh, Sister, 12 Lay, Lady, Lay, 13 Going, Going, Gone, 14 Idiot Wind, 15 Knockin' on Heaven's Door, 16 Gotta Travel On
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

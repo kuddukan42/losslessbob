@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-11a.flacf 
+=================== 
+=================== 
+=================== 
+28040080c1052977e5ccfed7611878cf  bd1989-07-11_d1t01.flac
+e9cfac0d6d5f18e3c257513f39b3d7c9  bd1989-07-11_d1t02.flac
+26b305a75fcd8364bb2817b43748398d  bd1989-07-11_d1t03.flac
+eb727b646db3d57182e7d014e2942c5d  bd1989-07-11_d1t04.flac
+9b0dd42e95bea94d60be6b4438136cc4  bd1989-07-11_d1t05.flac
+32667113463c370c943d3187550fb44f  bd1989-07-11_d1t06.flac
+3d190d9ea897b97ce591a230017e35a4  bd1989-07-11_d1t07.flac
+aea191270214e00ea899884d8258dd80  bd1989-07-11_d1t08.flac
+5350ee5bce3d3ff66332b1f1ab594a13  bd1989-07-11_d1t09.flac
+e1347b3a84bafade6672794485f34f55  bd1989-07-11_d2t01.flac
+c479689021158cebbc18291ec52d1477  bd1989-07-11_d2t02.flac
+b3d7e4985c7d9c1982ada95523024ba9  bd1989-07-11_d2t03.flac
+f0625a191c955a8b70676241c3da51b8  bd1989-07-11_d2t04.flac
+798b30f934e3fe8ce9c4d415743c7d81  bd1989-07-11_d2t05.flac
+67b78240800fa2c1eab4abf617c4ec93  bd1989-07-11_d2t06.flac
+83098b0bae194dbd8fddff79698fade1  bd1989-07-11_Harrisburg_alt_FLACfingerprint.txt
+70746f85b4cda30b9738dc9645c4a435  bd1989-07-11_Harrisburg_alternate.txt
+53b58579915ddfc63b8733c68cc4c229  bd1989-07-11_Harrisburg_flac.md5
+01f53f679161e96b1b91ec089d09fd09  bd1989-07-11_Harrisburg_wav.md5
+637cdcf0f9912283d16905a05ae0f299  bd89-07-11a.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-07-11a.flacf 
+=================== 
+=================== 
+=================== 
+bd1989-07-11_d1t01.flac:f7c8ccdefa6e854c68b53dd93985acac
+bd1989-07-11_d1t02.flac:a9aa4c7bcbc23727d4b19bf3dbb9b566
+bd1989-07-11_d1t03.flac:8a5a80de82671b7f802fd7469d3ebe6a
+bd1989-07-11_d1t04.flac:d703317734028b3c35ef5278113be8ec
+bd1989-07-11_d1t05.flac:47cb0a54c78eb192f58cd7fbd9d2abe3
+bd1989-07-11_d1t06.flac:dd6bfb9d01ec2e2d6bcc74aff612f35b
+bd1989-07-11_d1t07.flac:853614ed8b28914786bcc7f8d5a0f87c
+bd1989-07-11_d1t08.flac:821d8c19770cf6f7288b8dcc1f3403da
+bd1989-07-11_d1t09.flac:0e928cd78216282bef7f620b433be8c7
+bd1989-07-11_d2t01.flac:c7a06e17d54ff0fb848cce8d4a6153d4
+bd1989-07-11_d2t02.flac:84105ca9430eb0eac10114b586c8585c
+bd1989-07-11_d2t03.flac:18df393f3d37aa5035b4f11054b68d0c
+bd1989-07-11_d2t04.flac:0a1603e80589ebe5f07119860056aeaf
+bd1989-07-11_d2t05.flac:303e182636ea9e750d240c6b6d442ba1
+bd1989-07-11_d2t06.flac:88a4a044fd57b113d7e7631301e0b3ba
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-11a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:57.30       52461404 B   ---   --   ---xx   flac  0.5319  bd1989-07-11_d1t01.flac
+     5:42.14       60361772 B   ---   --   ---xx   flac  0.5330  bd1989-07-11_d1t02.flac
+     3:16.55       34703804 B   ---   --   ---xx   flac  0.5435  bd1989-07-11_d1t03.flac
+     6:32.45       69254684 B   ---   --   ---xx   flac  0.5472  bd1989-07-11_d1t04.flac
+     5:42.65       60481724 B   ---   --   ---xx   flac  0.5571  bd1989-07-11_d1t05.flac
+     5:39.16       59837276 B   ---   --   ---xx   flac  0.5496  bd1989-07-11_d1t06.flac
+     5:06.02       53983148 B   ---   --   ---xx   flac  0.5506  bd1989-07-11_d1t07.flac
+     5:41.20       60199484 B   ---   --   ---xx   flac  0.5584  bd1989-07-11_d1t08.flac
+     6:55.33       73283660 B   ---   --   ---xx   flac  0.5315  bd1989-07-11_d1t09.flac
+     7:07.18       75365180 B   ---   --   ---xx   flac  0.5342  bd1989-07-11_d2t01.flac
+     1:46.60       18839564 B   ---   --   ---xx   flac  0.5315  bd1989-07-11_d2t02.flac
+     7:32.55       79862204 B   ---   --   ---xx   flac  0.5525  bd1989-07-11_d2t03.flac
+     5:28.41       57955676 B   ---   --   ---xx   flac  0.5499  bd1989-07-11_d2t04.flac
+     5:17.48       56031740 B   ---   --   ---xx   flac  0.5453  bd1989-07-11_d2t05.flac
+     5:00.15       52955324 B   ---   --   ---xx   flac  0.5522  bd1989-07-11_d2t06.flac
+    81:46.67      865576644 B                            0.5450  (15 files)
+=================== 
+=================== 
+=================== 

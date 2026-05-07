@@ -1,0 +1,43 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-03-12-denver-hotel-tape 
+=================== 
+=================== 
+=================== 
+d505299e5a07a1066cc2a3b1e9e6a6ff  01 - Positively Van Gogh.shn
+d84c09ad0f731a8899cd7cfbbdae60ce  02 - Don't Tell Him.shn
+801c6c00eacf427c2bbaec9c769ef131  03 - If You Want My Love.shn
+45c32352c4bd9c0dcc736304f26019c1  04 - Just Like A Woman.shn
+cd645bd7ba9859f448633529f96af66e  05 - Sad-Eyed Lady Of The Lowlands.shn
+b93832c60b3547976f92c78efe212677  bd66-03-12-dht.txt
+105a1ed8105a300701f32df79438e66c  Denver Hotel Tape.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd66-03-12-denver-hotel-tape 
+=================== 
+=================== 
+=================== 
+0b3c326ad69e06ff0d21cfb29229aecd  [shntool]  01_-_Positively_Van_Gogh.wav
+72644cbc90965ce1050e7ffa693b786b  [shntool]  02_-_Don't_Tell_Him.wav
+e9c9522fb4916a7fde23905f6a20f269  [shntool]  03_-_If_You_Want_My_Love.wav
+9036eea90d73b0586aea0f7259ca411e  [shntool]  04_-_Just_Like_A_Woman.wav
+7d44c11068f6dcbb74989a71d4fa4f2b  [shntool]  05_-_Sad-Eyed_Lady_Of_The_Lowlands.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-03-12-denver-hotel-tape 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    12:25.34      131498012 B   ---   --   ---xx    shn  0.5163  01 - Positively Van Gogh.shn
+     4:26.10       46945964 B   ---   --   ---xx    shn  0.5121  02 - Don't Tell Him.shn
+     4:49.67       51137228 B   ---   --   ---xx    shn  0.5019  03 - If You Want My Love.shn
+     5:29.38       58125020 B   ---   --   ---xx    shn  0.5117  04 - Just Like A Woman.shn
+    13:40.09      144669212 B   ---   --   ---xx    shn  0.5031  05 - Sad-Eyed Lady Of The Lowlands.shn
+    40:51.08      432375436 B                            0.5091  (5 files)
+=================== 
+=================== 
+=================== 

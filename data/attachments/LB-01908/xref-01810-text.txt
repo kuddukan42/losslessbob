@@ -1,0 +1,175 @@
+===================
+===================
+===================
+=== 2004-06-27 Pearse Stadium, Galway, Ireland [derrived f. LB-1908 'Streetcar Visions'].ffp
+===================
+===================
+===================
+00 (announcement).flac:c0261c0958ffa17442b3c59f68831c66
+01 Rainy day women #12 & 35.flac:9f7ba1ea856be09772d2b7a58e6c878c
+02 If you see her, say hello.flac:177d3df6b03a6d85c1f813b1330a5e66
+03 Tweedle Dee and Tweedle Dum.flac:4011ad5395f2906bc3e8ec3da04ecf94
+04 If not for you.flac:9240511d70dd1a0c8147b6a2aac8ca96
+05 Drifter's escape.flac:4a6a346089d8f9ceed753a378a99a020
+06 The man in me.flac:eef6cd909c46ada7661c51660c8a92c5
+07 Down along the cove.flac:c3104cf6fc4b4961f13e99cffcc981fd
+08 Mr. Tambourine man.flac:0e4b9a0815b3363ec03858fb96b2801d
+09 God knows.flac:52cbb7977c2c903bf82938f151c5eab0
+10 Tangled up in blue.flac:d579d565475716879ecbb11e2194ee6f
+11 Not dark yet A.flac:6a1b8c73070bab4ebeb806c1cb6a6c15
+11 Not dark yet.flac:c2d4e439e357b087c8e059b8252dd077
+12 Honest with me.flac:cc27774b27d739e4f7f91430f9b97d56
+13 Forever young A.flac:b59e1f1a474baa8d8a736ca3c1c95139
+13 Forever young.flac:48262ac88c87ee91505f549a96ac9c2e
+14 Summer days.flac:e53a73a42d65672d0a78a34f839763f9
+15 Don't think twice, it's all right A.flac:0f757531aa38771cd1e1755fb0bab91e
+15 Don't think twice, it's all right.flac:d87aec3a9c6a8ed45ca9884b9c41a916
+16 Like a rolling stone.flac:161e95ecd25999d089c6df168e345148
+17 All along the watchtower.flac:bac6bf1c76fd8795e73a46cff1507e2b
+18 Highway 61 revisited.flac:f859273405ec208c4168cc0db2461206
+===================
+===================
+===================
+=== Bob Dylan 2004-06-27 Pearse Stadium, Galway, Ireland [derrived f. LB-1908 'Streetcar Visions'].txt
+===================
+===================
+===================
+Bob Dylan And His Band
+
+Pearse Stadium
+Galway, Ireland
+June 27, 2004
+
+Derived from LB-1908 (A-):  Streetcar Visions
+Source: DPA 4021 > Lunatec V3 > Sony D8
+Transfer: Sony D8 > Emagic 6/2 > Spark/Peak (G5) > xACT
+
+00 (announcement)
+01 Rainy Day Women #12 & 35
+02 If You See Her, Say Hello
+03 Tweedle Dee And Tweedle Dum
+04 If Not For You
+05 Drifter's Escape
+06 The Man In Me
+07 Down Along The Cove
+08 Mr. Tambourine Man
+09 God Knows
+10 Tangled Up In Blue
+11 Not dark yet A
+11 Not Dark Yet
+12 Honest With Me
+13 Forever young A
+13 Forever Young
+14 Summer Days
+15 Don't think twice, it's all right A
+15 Don't Think Twice, It's All Right
+16 Like A Rolling Stone
+17 All Along the Watchtower
+18 Highway 61 Revisited
+
+NOTES:
+Track 12 on disc 1 and tracks 2 and 4 on disc 2 were digitally processed to eliminate crowd noise (the noise was mostly in the right channel; the right channel was deleted and the left channel was copied as the right channel, and some reverb added).  The original tracks (without any processing) are included, marked with the postscript "A" (e.g. '11 Not dark yet A').  If preferred, they can be substituted for the processed tracks
+
+Also, there was an intermittent problem with the sound system at the venue.  It can be heard at the near the end of Honest With Me, Like A Rolling Stone and Highway 61 Revisited
+
+Concert # 1634 of The Never-Ending Tour
+Concert # 7 of the 2004 Europe Summer Tour
+2004 concert # 46
+
+Concert # 13 with the 18th Never-Ending Tour Band:
+Bob Dylan (vocal & piano)
+Stu Kimball (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+George Recile (drums & percussion)
+
+8, 10, 13, 15 acoustic with the band
+2, 4-6, 8, 13, 15 Bob Dylan (harmonica)
+12 Larry Campbell (slide guitar)
+15 Larry Campbell (cittern)
+
+NOTES:
+LB-numbers for this concert: LB-1903, LB-1908
+First Bob Dylan concert in Galway, Ireland
+
+BOOTLEG:
+'If Your Memory Serves You Well' Doberman
+
+11 new songs (61%) compared to previous concert
+6 new songs for this tour
+
+Stereo audience recording, 115 minutes
+
+.ffp:
+00 (announcement).flac:c0261c0958ffa17442b3c59f68831c66
+01 Rainy day women #12 & 35.flac:9f7ba1ea856be09772d2b7a58e6c878c
+02 If you see her, say hello.flac:177d3df6b03a6d85c1f813b1330a5e66
+03 Tweedle Dee and Tweedle Dum.flac:4011ad5395f2906bc3e8ec3da04ecf94
+04 If not for you.flac:9240511d70dd1a0c8147b6a2aac8ca96
+05 Drifter's escape.flac:4a6a346089d8f9ceed753a378a99a020
+06 The man in me.flac:eef6cd909c46ada7661c51660c8a92c5
+07 Down along the cove.flac:c3104cf6fc4b4961f13e99cffcc981fd
+08 Mr. Tambourine man.flac:0e4b9a0815b3363ec03858fb96b2801d
+09 God knows.flac:52cbb7977c2c903bf82938f151c5eab0
+10 Tangled up in blue.flac:d579d565475716879ecbb11e2194ee6f
+11 Not dark yet A.flac:6a1b8c73070bab4ebeb806c1cb6a6c15
+11 Not dark yet.flac:c2d4e439e357b087c8e059b8252dd077
+12 Honest with me.flac:cc27774b27d739e4f7f91430f9b97d56
+13 Forever young A.flac:b59e1f1a474baa8d8a736ca3c1c95139
+13 Forever young.flac:48262ac88c87ee91505f549a96ac9c2e
+14 Summer days.flac:e53a73a42d65672d0a78a34f839763f9
+15 Don't think twice, it's all right A.flac:0f757531aa38771cd1e1755fb0bab91e
+15 Don't think twice, it's all right.flac:d87aec3a9c6a8ed45ca9884b9c41a916
+16 Like a rolling stone.flac:161e95ecd25999d089c6df168e345148
+17 All along the watchtower.flac:bac6bf1c76fd8795e73a46cff1507e2b
+18 Highway 61 revisited.flac:f859273405ec208c4168cc0db2461206
+===================
+===================
+===================
+=== ORIGINAL bd040627.txt
+===================
+===================
+===================
+BOB DYLAN
+Pearse Stadium
+Galway, Ireland
+June 27, 2004
+
+Taper:  Streetcar Visions
+
+Source: DPA 4021 > Lunatec V3 > Sony D8
+
+Transfer: Sony D8 > Emagic 6/2 > Spark/Peak (G5) > xACT
+
+Disc 1:
+ 1. Intro
+ 2. Rainy Day Women #12 & 35
+ 3. If You See Her, Say Hello
+ 4. Tweedle Dee & Tweedle Dum
+ 5. If Not For You
+ 6. Drifter's Escspe
+ 7. The Man In Me
+ 8. Down Along The Cove
+ 9. Mr. Tambourine Man
+10. God Knows
+11. Tangled Up In Blue
+12. Not Dark Yet
+
+Disc 2:
+ 1. Honest With Me
+ 2. Forever Young
+ 3. Summer Days
+ 4. Don't Think Twice, It's All Right
+ 5. Like A Rolling Stone
+ 6. All Along the Watchtower
+ 7. Highway 61 Revisited
+
+
+N.B.
+
+Track 12 on disc 1 and tracks 2 and 4 on disc 2 were digitally processed to eliminate crowd noise (the noise was mostly in the right channel; the right channel was deleted and the left channel was copied as the right channel, and some reverb added).  The original tracks (without any processing) are included, marked with the postscript "A" (e.g. bd040627d1t12A).  If preferred, they can be substituted for the processed tracks.
+
+Also there was an intermittent problem with the sound system at the venue.  It can be heard at the near the end of Honest With Me, Like A Rolling Stone and Highway 61 Revisited.
+===================
+===================
+===================

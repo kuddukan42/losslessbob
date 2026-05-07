@@ -1,0 +1,109 @@
+===================
+===================
+===================
+=== Bob Dylan - Ithaca, New York - October 29, 1989 (PL).ffp
+===================
+===================
+===================
+01 - Positively 4th Street.flac:6932a4e0bbb34d23796eb83633c8ba2d
+02 - Masters Of War.flac:39080af6dd7756974e8ea4ec062a626b
+03 - Lay Lady Lay.flac:0ccbf847ff11933c8bc41f11f0d534ad
+04 - I'll Be Your Baby Tonight.flac:bf11745b60a24d31bb14ba49b22804fd
+05 - Highway 61 Revisited.flac:c85bdfbfed3810dbec40a9e9718c5025
+06 - It's Alright Ma (I'm Only Bleeding).flac:d6f6737a03512676ceb8508f531eb8d9
+07 - Knockin' On Heaven's Door.flac:b1ecdf8559bb6b64352f9550f8240fe1
+08 - A Hard Rain's A-Gonna Fall.flac:044d0b2ea42ba0c3a6cb69943e8e3300
+09 - Everything Is Broken.flac:5ed29156c6055c2fedf5a82a762805e4
+10 - What Good Am I.flac:132f9cc125f0463006c745835eb55f99
+11 - Most Of The Time.flac:f8e768a4eb05ba0dd99e6369883ccd92
+12 - Man In The Long Black Coat.flac:7b6c03b6f79e14b1830602affdc7746f
+13 - Like A Rolling Stone.flac:40e7e573da9bb0482e14ec2f1a4a0aa0
+14 - Disease Of Conceit.flac:c3328e17c6b557408d052636038dfa09
+15 - All Along The Watchtower.flac:87376a6addcb8ad4b93d2b88ec32b9de
+===================
+===================
+===================
+=== Bob Dylan - Ithaca, New York - October 29, 1989 (PL).md5
+===================
+===================
+===================
+cde22e98157f5254a508b19d262377e0 *01 - Positively 4th Street.flac
+318d4285b769deb08a8aecc540476b17 *02 - Masters Of War.flac
+63a5b6e8c8c5f5679fabd7469b515941 *03 - Lay Lady Lay.flac
+bf9841c3422dc26832f9933c1a93a8c9 *04 - I'll Be Your Baby Tonight.flac
+1718f0beb2d6d877a16497cebd492c32 *05 - Highway 61 Revisited.flac
+2033c9b325fb8742ba0086c5578ba79f *06 - It's Alright Ma (I'm Only Bleeding).flac
+0120f58f8f8bf64ce2f470171d17ab05 *07 - Knockin' On Heaven's Door.flac
+e0e34267affcc57fc219d84ee3504472 *08 - A Hard Rain's A-Gonna Fall.flac
+aadbb40a92d3ced5b35ebc8550238c10 *09 - Everything Is Broken.flac
+68e0634b1ac13cc25510dbafaaf6f982 *10 - What Good Am I.flac
+cdbe50d30844407a505e0545a6f05dd2 *11 - Most Of The Time.flac
+4481ea3a9846e6b4c19816110fec6da2 *12 - Man In The Long Black Coat.flac
+4bde9281f7c40033d021e229360d489a *13 - Like A Rolling Stone.flac
+683482bf6cc4da924b3b3132e7518e7b *14 - Disease Of Conceit.flac
+b565ef41fd04590e61f4d0748f99b363 *15 - All Along The Watchtower.flac
+===================
+===================
+===================
+=== Bob Dylan - Ithaca, New York - October 29, 1989 (PL).txt
+===================
+===================
+===================
+Bob Dylan
+Ben Light Gymnasium
+Ithaca College
+Ithaca, New York
+October 29, 1989
+
+
+Taper: PL (equipment unknown)
+
+Source: CDRs received in trade circa 1999-2000
+
+Using Exact Audio Copy V1.3:
+-extracted audio from trade CDRs
+
+Using Audacity 2.0.3:
+-combined all tracks into one wav file
+-amplified entire wav file 2dB
+-retracked recording, placing track indexes at the beginnings of songs
+-added fade up to first track and fade down to last track
+
+Sound Quality: Let the samples be your guide. 
+
+
+01. Positively 4th Street 
+02. Masters Of War
+03. Lay Lady Lay
+04. I'll Be Your Baby Tonight
+05. Highway 61 Revisited
+06. It's Alright Ma (I'm Only Bleeding)
+07. Knockin' On Heaven's Door
+08. A Hard Rain's A-Gonna Fall
+09. Everything Is Broken
+10. What Good Am I?
+11. Most Of The Time
+12. Man In The Long Black Coat
+13. Like A Rolling Stone
+14. Disease Of Conceit
+15. All Along The Watchtower
+
+Total Time (78:35) [one set, complete recording, Jason & The Scorchers opened the show] 
+
+Personnel: 
+Bob Dylan - vocals, guitar, harmonica
+G.E. Smith - guitar
+Christopher Parker - drums
+Tony Garnier - bass
+
+Visit: 
+http://bobdylan.com/
+
+Please: 
+-Do not sell this recording. 
+-Do not upload this recording to other trackers. 
+-Do not alter this recording or convert to mp3 or other lossy formats except for your own personal use. 
+-Support the artists by attending shows and purchasing official releases.
+===================
+===================
+===================

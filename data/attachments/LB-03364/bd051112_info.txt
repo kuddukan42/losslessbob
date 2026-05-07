@@ -1,0 +1,69 @@
+Bob Dylan
+November 12, 2005
+Assago, Forum Di Assago
+
+AUD DAT Master [Neumann AK 40/KM 100 F>MTX 191A>Sony TCD D-100]
+>WAV>FLAC>DVD>WAV>Soundforge 6.0>FLAC
+
+
+CD 1  [79:09]
+
+01 Maggie's Farm 
+02 Lay, Lady, Lay 
+03 Waching The River Flow 
+04 Cold Irons Bound 
+05 Mr. Tambourine Man 
+06 Highway 61 Revisited 
+07 Boots Of Spanish Leather 
+08 Stuck Inside Of Mobile With The Memphis Blues Again 
+09 Ballad Of Hollis Brown 
+10 Down Along The Cove 
+11 Just Like A Woman 
+12 Tweedle Dee & Tweedle Dum 
+
+CD 2  [29:28]
+
+01 Forever Young 
+02 Summer Days 
+03 Don't Think Twice, It's All Right
+04 All Along The Watchtower
+
+
+Bob Dylan - electric piano, harmonica, vocal
+Stu Kimball - electric & acoustic guitars
+Denny Freeman - electric guitar
+Donnie Herron - pedal steel guitar, lap steel, banjo, electric mandolin
+Tony Garnier - bass 
+George Recile - drums
+
+
+I did not harm the sound of the recording in any way. 
+CDs can be seamlessly patched together, in case someone prefers a different CD split.
+I eliminated two pops, d1t12@0:39 & 2:28 which are either on the master or happened upon transfer.
+
+
+Please retain this info file as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+
+
+
+
+bd051112_d1t01.flac:b2549508a969d5a22d387bf43955fe8a
+bd051112_d1t02.flac:8b88d0fd030d8e951352751bdce6092a
+bd051112_d1t03.flac:a80eae1b1ac1e6b17e89c740f0cf86ba
+bd051112_d1t04.flac:052a697c340a8b57d55609a0c6976ba8
+bd051112_d1t05.flac:c4b14dbfca892fd7651a3ba2e3b3cc42
+bd051112_d1t06.flac:c5401e0b10214b4f170c5121154055ed
+bd051112_d1t07.flac:85a62cb2e791cdbd36f81e0da6d6e47f
+bd051112_d1t08.flac:8575687fcf7258549db5b42efacb9f14
+bd051112_d1t09.flac:1a40b159db202b14077d244d491daa52
+bd051112_d1t10.flac:a67b447b5305b8fb0d55481534312e52
+bd051112_d1t11.flac:e871d6740457c252963bd0f649882411
+bd051112_d1t12.flac:c64a0fea338155e963845db90e94174d
+bd051112_d2t01.flac:697e624941527ed040c50dfbe31573b2
+bd051112_d2t02.flac:53f94365dcc75b4983f5455bd4b94e0b
+bd051112_d2t03.flac:6a9669666ac56a877038fa53da612df2
+bd051112_d2t04.flac:2d0dbf87ed55a70849136266ac029b05
+
+

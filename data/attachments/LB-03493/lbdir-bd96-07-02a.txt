@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-07-02a 
+=================== 
+=================== 
+=================== 
+1990905ed643e6cde3d65fda38afc3f2  bd96-07-02a-LB-3493.txt
+3d2c9bba83ff40fb55a1bc1834cb0e35  D1\1 Audio Track.shn
+b79b6c3f28103a0f55e0fd4e2de58279  D1\10 Audio Track.shn
+73e2a01ba17ca32fe69f1015aeaa8cbb  D1\11 Audio Track.shn
+167def8173764d79963ecb8ddb80774a  D1\2 Audio Track.shn
+bff31bb7525b580c8c0546afa14fd5ea  D1\3 Audio Track.shn
+e9fd6dcb4bf5fcb3f8f7292bd5f50b13  D1\4 Audio Track.shn
+491508836b98d313a20f383afb940c57  D1\5 Audio Track.shn
+886174c73f5669e522db368bf18a2555  D1\6 Audio Track.shn
+824d560f9757dd26f9332bdbe1f0e9b1  D1\7 Audio Track.shn
+a4e9ff06c29a13c5a6b3d8c343475c30  D1\8 Audio Track.shn
+b7ce22d447f93145f0c3c8be6e223a43  D1\9 Audio Track.shn
+778a2ab64d088f3bd44aa1fd40a2f351  D1\ManheimD1.md5
+fb577c48fc0d77858120eeb9c525672f  D2\1 Audio Track.shn
+a0b5895d99dc9ff08beff342abc59693  D2\2 Audio Track.shn
+37e66fafc506b03f9a2f96a88cd79532  D2\3 Audio Track.shn
+78d54f0ab6b333fda35edace11fe324d  D2\4 Audio Track.shn
+1fce06e86e5c8e20dfb0a85ae8ce1afa  D2\ManheimD2.md5
+d779a23ddaa896dddabca4d1a7caaae8  info1.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-07-02a\D2 
+=================== 
+=================== 
+=================== 
+a26b81d45b9998c24640a571130a78bd  [shntool]  1_Audio_Track.wav
+c29267715295244396ab03be4f615183  [shntool]  2_Audio_Track.wav
+c82a02227719849e916a8e9f17a5f567  [shntool]  3_Audio_Track.wav
+121bb69f9a918a05749885edb7d2ddd9  [shntool]  4_Audio_Track.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd96-07-02a\D1 
+=================== 
+=================== 
+=================== 
+0fe85bc08cff387541d2ee886b447458  [shntool]  1_Audio_Track.wav
+e4a9b349d31f949fc7567e6302b00b21  [shntool]  2_Audio_Track.wav
+031b2e07a1cf6c6b777759d0d5ad7e6d  [shntool]  3_Audio_Track.wav
+6c7ff936fbaf103723d9f78db9198ed6  [shntool]  4_Audio_Track.wav
+79b2f3077732d509920b935e0bc0e666  [shntool]  5_Audio_Track.wav
+6cad65f9e9ab02e897adbf63a1585b77  [shntool]  6_Audio_Track.wav
+67734ac98482f99453d5e59fcaaa8c5a  [shntool]  7_Audio_Track.wav
+4628c6dc7d2b8525002dad35bdc7c701  [shntool]  8_Audio_Track.wav
+c76e718b54bc5187e2e292c33eafb18a  [shntool]  9_Audio_Track.wav
+ec380d720aee305f74c6e94a3a31df7d  [shntool]  10_Audio_Track.wav
+f7ddc8a3e1a3042b1322d8150ec55ce9  [shntool]  11_Audio_Track.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-02a\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+    10:06.53      107023100 B   ---   --   -----    wav  1.0000  1_Audio_Track.wav
+     8:26.50       89376044 B   ---   --   -----    wav  1.0000  2_Audio_Track.wav
+    11:13.66      118872476 B   ---   --   -----    wav  1.0000  3_Audio_Track.wav
+     6:59.26       73972796 B   ---   --   -----    wav  1.0000  4_Audio_Track.wav
+    36:46.45      389244416 B                            1.0000  (4 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-07-02a\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.54       60985052 B   ---   --   -----    wav  1.0000  10_Audio_Track.wav
+     6:57.49       73674092 B   ---   --   -----    wav  1.0000  11_Audio_Track.wav
+     5:12.34       55116812 B   ---   --   -----    wav  1.0000  1_Audio_Track.wav
+     5:55.64       62772572 B   ---   --   -----    wav  1.0000  2_Audio_Track.wav
+     6:06.62       64708268 B   ---   --   -----    wav  1.0000  3_Audio_Track.wav
+     7:04.03       74800700 B   ---   --   -----    wav  1.0000  4_Audio_Track.wav
+     7:30.48       79492940 B   ---   --   -----    wav  1.0000  5_Audio_Track.wav
+     7:25.10       78521564 B   ---   --   -----    wav  1.0000  6_Audio_Track.wav
+     7:24.65       78474524 B   ---   --   -----    wav  1.0000  7_Audio_Track.wav
+     7:19.67       77597228 B   ---   --   -----    wav  1.0000  8_Audio_Track.wav
+     6:49.17       72187628 B   ---   --   -----    wav  1.0000  9_Audio_Track.wav
+    73:32.23      778331380 B                            1.0000  (11 files)
+=================== 
+=================== 
+=================== 

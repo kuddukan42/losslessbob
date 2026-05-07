@@ -1,0 +1,55 @@
+Bob Dylan
+November 11, 1999
+Civic Center
+Augusta, Maine
+
+AUD DAT Master [unknown equipment] > DAT clone(s) > WAV > Soundforge 6.0 > CD Wave > FLAC
+
+
+CD 1  [73:26.47]
+
+01 I Am The Man, Thomas  [02:32.16]
+02 Song To Woody  [04:39.62]
+03 It's Alright Ma (I'm Only Bleeding)  [08:13.03]
+04 It's All Over Now, Baby Blue  [07:37.45]
+05 Tangled Up In Blue  [11:14.64]
+06 Hootchie Cootchie Man  [05:21.09]
+07 Absolutely Sweet Marie  [06:28.21]
+08 I Shall Be Released  [05:39.06]
+09 Everything Is Broken  [05:16.54]
+10 Queen Jane Approximately  [07:12.39]
+11 Highway 61 Revisited  [09:11.28]
+
+CD 2  [40:36.25]
+
+12 What Good Am I ?  [06:54.21]
+13 Rainy Day Women # 12 & 35  [08:13.52]
+14 Don't Think Twice, It's All Right  [07:21.29]
+15 Not Fade Away  [05:02.31]
+16 Blowin' In The Wind  [06:43.19]
+17 Silvio  [06:21.23]
+
+
+Bob Dylan - vocal, guitar, harmonica
+Larry Campbell - guitar, pedal steel, mandolin
+Charlie Sexton - guitar
+Tony Garnier - bass 
+David Kemper - drums 
+
+I did not harm the sound of the recording in any way
+This is the same recording as LB-1717 and a later torrent of the same master 
+This is a fairly new transfer from my DAT clone without the mentioned flaws 
+
+except that on all versions I found of this recording, there were one second drop outs right after the 
+'bankbook' line in verse one of Tangled Up In Blue and in the first bridge of Everything Is Broken.
+As there were neither a flawless copy of this one (if it exists) nor an alternate master available to me, 
+I have 'flown in' the respectively missing guitar chords from a chord change before. 
+This is in d1t05 @0:50 and in d1t09 @2:05. I hope y'all can live with the results, 
+the first one is much better than the second patch but there was nothing I could do about it.
+go check your older versions, I'd be glad if someone could come up with a complete version !
+
+Please retain this info file as a marker for this lossless set 
+and if you spread it please list it in the description to avoid others getting duplicates
+
+further info:
+http://www.bjorner.com/DSN21160.htm#_Toc473349210

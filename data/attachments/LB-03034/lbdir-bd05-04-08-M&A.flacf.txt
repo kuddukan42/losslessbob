@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+79e6f87db8b06dfcf4f1db8d8e0aab9e  bd-05-04-08-d2\Bob Dylan - 01 Track 1.flac
+c16facae02626eb1b2a1960eea53caf2  bd-05-04-08-d2\Bob Dylan - 02 Track 2.flac
+c3b5f198226b453e7f7d6b3fd2476793  bd-05-04-08-d2\Bob Dylan - 03 Track 3.flac
+d25e751bfb6aa276ad045f3299401dbb  bd-05-04-08-d2\Bob Dylan - 04 Track 4.flac
+27984a68b0757cd4145952a78d43c0d1  bd-05-04-08-d2\Bob Dylan - 05 Track 5.flac
+af3ad01cef2b2779468637c3fb460381  bd-05-04-08-d2\Bob Dylan - 06 Track 6.flac
+62fa428b2459f23a3a729af349ff35ca  bd-05-04-08-d2\bd05-04-08-d2-fingerprints.txt
+85d3d6f3bbf0ef1633a0f8f653758eef  bd05-04-08-d1\01 Track 1.flac
+25d6114291cbdf577f74a2cebd660a58  bd05-04-08-d1\02 Track 2.flac
+3cef341f92964694004ac0fd7dfb4b3a  bd05-04-08-d1\03 Track 3.flac
+eecad3b4c36a669c409755b4397b05cd  bd05-04-08-d1\04 Track 4.flac
+5ca4eaa9f8cc85d0613e8b886491ee19  bd05-04-08-d1\05 Track 5.flac
+c21d584718c2b9f255df4ac35f7a2195  bd05-04-08-d1\06 Track 6.flac
+cb93dcb741aa85f8f235e028453ff286  bd05-04-08-d1\07 Track 7.flac
+a915599a30df51dde94228dae04acb0e  bd05-04-08-d1\08 Track 8.flac
+8e6a5e37b9ed323f515c4fa9518648b2  bd05-04-08-d1\bd05-04-08-d1-fingerprints.txt
+d3a699414af2ce3321b9595c5020294a  bd05-04-08-M&A-LB-3034.txt
+88f5f68bc71b5df123bb60c4ff6d2d0b  bd05-04-08-M&A.txt
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+01 Track 1.flac:a3554580c5fdfb599a33f009379b0965
+02 Track 2.flac:e960f906e2edbbeb7971c9d1a5742c9a
+03 Track 3.flac:d474716601021dde71b289d0fae133d8
+04 Track 4.flac:0815a1afa0d1b4161bc15e93d066ae74
+05 Track 5.flac:281b62c8a61be9c4bb6bf011c6b96a15
+06 Track 6.flac:15ae0a75be2411ffc19306145e386be8
+07 Track 7.flac:b1882e08e31b17ea09c95a16487dc216
+08 Track 8.flac:9bf4c09ce052ff2e778d446eed64e085
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+Bob Dylan - 01 Track 1.flac:1d71661223d26ee111dc11c6b94d911d
+Bob Dylan - 02 Track 2.flac:5429c06deb4b51f6355c249f61214209
+Bob Dylan - 03 Track 3.flac:219c4ddf3a06fb87c3b46e41ee9b9c39
+Bob Dylan - 04 Track 4.flac:71c05657b4f219115db797555733d91d
+Bob Dylan - 05 Track 5.flac:f31c19c0a562c89d1af2821a28d3dc7e
+Bob Dylan - 06 Track 6.flac:df9e9bc2781076a48d55f01cebe33f75
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:54.57       51995708 B   ---   --   ---xx   flac  0.5823  01 Track 1.flac
+     6:03.12       64061468 B   ---   --   ---xx   flac  0.5021  02 Track 2.flac
+     5:37.48       59559740 B   ---   --   ---xx   flac  0.5834  03 Track 3.flac
+     5:03.69       53611532 B   ---   --   ---xx   flac  0.5009  04 Track 4.flac
+     5:48.59       61526012 B   ---   --   ---xx   flac  0.5982  05 Track 5.flac
+     5:57.73       63146540 B   ---   --   ---xx   flac  0.4938  06 Track 6.flac
+     5:49.13       61594220 B   ---   --   ---xx   flac  0.4946  07 Track 7.flac
+     6:38.69       70369532 B   ---   --   ---xx   flac  0.5309  08 Track 8.flac
+    45:54.25      485864752 B                            0.5349  (8 files)
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:14.60       66114764 B   ---   --   ---xx   flac  0.5673  Bob Dylan - 01 Track 1.flac
+     8:01.57       84982508 B   ---   --   ---xx   flac  0.4589  Bob Dylan - 02 Track 2.flac
+     7:47.44       82482332 B   ---   --   ---xx   flac  0.4836  Bob Dylan - 03 Track 3.flac
+     7:57.72       84312188 B   ---   --   ---xx   flac  0.5579  Bob Dylan - 04 Track 4.flac
+     6:28.08       68462060 B   ---   --   ---xx   flac  0.5266  Bob Dylan - 05 Track 5.flac
+     5:53.69       62431532 B   ---   --   ---xx   flac  0.5336  Bob Dylan - 06 Track 6.flac
+    42:24.10      448785384 B                            0.5187  (6 files)
+=================== 
+=================== 
+=================== 

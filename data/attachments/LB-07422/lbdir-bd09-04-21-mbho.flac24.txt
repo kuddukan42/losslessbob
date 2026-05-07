@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd09-04-21-mbho.flac24 
+=================== 
+=================== 
+=================== 
+6d4751649f610813a1729fdb63ae1228  dylan2009-04-21.mbho.t01.flac
+740fa9c0973694e2630fa88d1fbcfbb6  dylan2009-04-21.mbho.t02.flac
+1f04aad9efc0cc32f4dd0c7b1fbe5a87  dylan2009-04-21.mbho.t03.flac
+c3003981a05b7554b69785005dd7d00f  dylan2009-04-21.mbho.t04.flac
+3e358bd30c0564f25fdc7c2c4dc6a1f7  dylan2009-04-21.mbho.t05.flac
+1fb503be456abab3c8c773f48a0a9e2d  dylan2009-04-21.mbho.t06.flac
+7b76c40166e243f5f0f0c40e6d9df668  dylan2009-04-21.mbho.t07.flac
+beae7bc83e09c9950d3f447f848490ec  dylan2009-04-21.mbho.t08.flac
+0d7db5a14a0929d6ce470ab6e3430ba5  dylan2009-04-21.mbho.t09.flac
+b1b071dfcdc82f527eeb68e2f9a3583c  dylan2009-04-21.mbho.t10.flac
+21f15e25bc51b43fbf36a1d97a45b6ad  dylan2009-04-21.mbho.t11.flac
+a391fe5140862a21ce350e9325207d0f  dylan2009-04-21.mbho.t12.flac
+0ab31de06379eb7ae5b13f7484a200ae  dylan2009-04-21.mbho.t13.flac
+37213a683edd4af16ddd328e0bc5a1c6  dylan2009-04-21.mbho.t14.flac
+22fa0dec80496f21dbca8e913346c6cc  dylan2009-04-21.mbho.t15.flac
+0880bde9f5055d4773ca60adda402379  dylan2009-04-21.mbho.t16.flac
+63436d2a655ca9d8e983d4315e5a60fd  dylan2009-04-21.mbho.t17.flac
+e32b4a8fbb16318489e6c04ea03d3a30  dylan2009-04-21.mbho.t18.flac
+7ff640358247557ce71864569518f6db  dylan2009-04-21.mbho.t19.flac
+bb1c2946a2a99d16d295fc33bcf33942  dylan2009-04-21mbho.ffp
+c8398e613c9816599f16dcf11454b880  dylan2009-04-21mbho.md5
+0be5aaa893e46fb2a9b1e57a03cb1e43  dylan2009-04-21mbho.txt
+eaa8b4910d0f74c20f1f2791b95c1787  dylan2009-04-21venue.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd09-04-21-mbho.flac24 
+=================== 
+=================== 
+=================== 
+dylan2009-04-21.mbho.t01.flac:9253d43e77d7ab6a23ea0ffd2bbfe070
+dylan2009-04-21.mbho.t02.flac:58fc432f0b58a5f599ad934032467f2d
+dylan2009-04-21.mbho.t03.flac:ebbc60717672e2b546cec39595a64113
+dylan2009-04-21.mbho.t04.flac:8db7b387ee70ce4ca2fb8b4eaa401ac8
+dylan2009-04-21.mbho.t05.flac:f603fa07e397b4fc0f268466eac0f4ce
+dylan2009-04-21.mbho.t06.flac:bcb5362b83083e029c07fda25f32c7f4
+dylan2009-04-21.mbho.t07.flac:b30cbdfacea3a2f94eb959755a0bbe23
+dylan2009-04-21.mbho.t08.flac:bf38d68c22fa0f76f05daa72fe2985ce
+dylan2009-04-21.mbho.t09.flac:0e705a6e8d58d021ef520150cd04364d
+dylan2009-04-21.mbho.t10.flac:31ac8d28d38d7c7e88f5e31feacc4629
+dylan2009-04-21.mbho.t11.flac:0e9931309ce368143895b47cdc9cd478
+dylan2009-04-21.mbho.t12.flac:272bb729c251341cd8f5faf97b4ae9ff
+dylan2009-04-21.mbho.t13.flac:757ec697309a6efc592e1074b343e681
+dylan2009-04-21.mbho.t14.flac:9bf054c697fdfddcbebf39bfb89be468
+dylan2009-04-21.mbho.t15.flac:96b69cfe1193392f8bc3b531653e153e
+dylan2009-04-21.mbho.t16.flac:a401b0693ce19dd93a7cf6a23444146b
+dylan2009-04-21.mbho.t17.flac:f3ab863f0456c09c7a7db0db48d68475
+dylan2009-04-21.mbho.t18.flac:fc1394cd98ccf4850c0d3a36a80842dd
+dylan2009-04-21.mbho.t19.flac:a67259ecacef40ff230cb1b29725dce5
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd09-04-21-mbho.flac24 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:50.213      28922924 B   cxx   --   ---xx   flac  0.5822  dylan2009-04-21.mbho.t01.flac
+     3:59.720     138078764 B   cxx   --   ---xx   flac  0.6110  dylan2009-04-21.mbho.t02.flac
+     5:35.720     193374764 B   cxx   --   ---xx   flac  0.6003  dylan2009-04-21.mbho.t03.flac
+     5:55.867     204979244 B   cxx   --   ---xx   flac  0.6019  dylan2009-04-21.mbho.t04.flac
+     7:16.800     251596844 B   cxx   --   ---xx   flac  0.6092  dylan2009-04-21.mbho.t05.flac
+     5:04.533     175411244 B   cxx   --   ---xx   flac  0.6016  dylan2009-04-21.mbho.t06.flac
+     6:45.947     233825324 B   cxx   --   ---xx   flac  0.6109  dylan2009-04-21.mbho.t07.flac
+     5:42.973     197552684 B   cxx   --   ---xx   flac  0.5868  dylan2009-04-21.mbho.t08.flac
+     5:31.173     190755884 B   cxx   --   ---xx   flac  0.5937  dylan2009-04-21.mbho.t09.flac
+     4:50.213     167162924 B   cxx   --   ---xx   flac  0.6016  dylan2009-04-21.mbho.t10.flac
+     6:41.240     231114284 B   cxx   --   ---xx   flac  0.6047  dylan2009-04-21.mbho.t11.flac
+     7:10.293     247849004 B   cxx   --   ---xx   flac  0.6126  dylan2009-04-21.mbho.t12.flac
+     7:29.720     259038764 B   cxx   --   ---xx   flac  0.5966  dylan2009-04-21.mbho.t13.flac
+     7:03.067     243686444 B   cxx   --   ---xx   flac  0.6151  dylan2009-04-21.mbho.t14.flac
+     6:43.347     232327724 B   cxx   --   ---xx   flac  0.6150  dylan2009-04-21.mbho.t15.flac
+     3:15.333     112512044 B   cxx   --   ---xx   flac  0.5942  dylan2009-04-21.mbho.t16.flac
+     6:08.907     212490284 B   cxx   --   ---xx   flac  0.6124  dylan2009-04-21.mbho.t17.flac
+     7:04.240     244362284 B   cxx   --   ---xx   flac  0.5917  dylan2009-04-21.mbho.t18.flac
+     6:34.693     227343404 B   cxx   --   ---xx   flac  0.5985  dylan2009-04-21.mbho.t19.flac
+   109:44.000    3792384836 B                            0.6035  (19 files)
+=================== 
+=================== 
+=================== 

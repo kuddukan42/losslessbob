@@ -1,0 +1,78 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-14-eve-AUD-REEL.flacf 
+=================== 
+=================== 
+=================== 
+eb223de961f8b79f221dc8c717497011  01 Just Like Tom Thumb's Blues.flac
+0f72f4441ba58a73bb9aec475baa0949  02 Rainy Day Women # 12 & 35.flac
+9ef4a71cbf4ddc488e7596fb5c27ddc9  03 It Ain't Me, Babe.flac
+3c6c2a481d464c901e12a9cee88aa728  04 Ballad of a Thin Man.flac
+9f556947d9a000535b23ab136d742a3e  05 All Along the Watchtower.flac
+3702b838f59789200de47aa6ac1411ff  06 Ballad of Hollis Brown.flac
+eb48c8c76f6977b148659d5e02832b75  07 Knockin' on Heaven's Door.flac
+c190e9811ce87e1c2c81f8a88a19ca4a  08 Blowin' in the Wind.flac
+7d4881764b71be7a58c1180dd9de72df  09 Don't Think Twice, It's All Right.flac
+50ea9ada1c663f09d512ec6c58583741  10 Gates of Eden.flac
+094d81a884c9a58050037a68b4127630  11 Love Minus Zero, No Limit.flac
+497692bff3c1cecf2bdb78efb91acf78  12 It's Alright, Ma (I'm Only Bleeding).flac
+0b97040a88b6eb355a852fd3f15e64aa  13 Forever Young.flac
+8ebb598cc27d07933894d1152016e249  14 Something There Is About You.flac
+c0f392c0803ee6ee84beb4345ff9e058  15 Like a Rolling Stone.flac
+abebe992147ff445f7a6b68403d7ce42  16 Most Likely You Go Your Way (and I'll Go Mine).flac
+0e738128cb88d5000dc178f72e67820b  bd74-01-14-eve-AUD-REEL-LB-3980.txt
+228379ae3730e8c050da9770f57fdae8  Bob Dylan and The Band - 1974-01-14b Gardens, Boston, MA AUD REEL FLAC.md5
+d1ee3e5a12f46f5acdd9ae4302c6c29f  Bob Dylan and The Band - 1974-01-14b Gardens, Boston, MA AUD REEL WAV.md5
+66c7b72a136da375248cbaa9e8367a2c  Bob Dylan and The Band - 1974-01-14b Gardens, Boston, MA AUD REEL.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-14-eve-AUD-REEL.flacf 
+=================== 
+=================== 
+=================== 
+01 Just Like Tom Thumb's Blues.flac:5448a335bbd67d705fe9c64135378964
+02 Rainy Day Women # 12 & 35.flac:03c6652703971548ad9a30539d50f7cf
+03 It Ain't Me, Babe.flac:82fc3f29d061c71f0affcb24fa9b5fc9
+04 Ballad of a Thin Man.flac:8c007cb49720acb3ef8878e47d773930
+05 All Along the Watchtower.flac:00fcf8f8d46ef7658c0a90182939afef
+06 Ballad of Hollis Brown.flac:4d93f2b1da6fa6dc0ea3ef4f7e997bef
+07 Knockin' on Heaven's Door.flac:c3d199cc701eda11401c96ba5b2011cd
+08 Blowin' in the Wind.flac:c81ea69f360c6641ffb74c3ac92bc9d1
+09 Don't Think Twice, It's All Right.flac:9a3f10b6eeaa3fd57c35c1f3e3af69ec
+10 Gates of Eden.flac:9b4d21f050a6b74dee18874b549c4883
+11 Love Minus Zero, No Limit.flac:5ac13d279b4f6532c713876d8d9d4bf2
+12 It's Alright, Ma (I'm Only Bleeding).flac:66b68cd36a26296748c4dcbf85d1d548
+13 Forever Young.flac:d438aab1ca45a28d7b66739672c83ed2
+14 Something There Is About You.flac:a2a90578b4bcc5b8ecdbfaef0a5aa450
+15 Like a Rolling Stone.flac:423d1116032890a77f6c290bf55e7746
+16 Most Likely You Go Your Way (and I'll Go Mine).flac:3fcafb74a63e381345ee894a301bf557
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-14-eve-AUD-REEL.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:14.42       66072428 B   ---   --   ---xx   flac  0.3168  01 Just Like Tom Thumb's Blues.flac
+     3:34.63       37897820 B   ---   --   ---xx   flac  0.3206  02 Rainy Day Women # 12 & 35.flac
+     4:01.17       42552428 B   ---   --   ---xx   flac  0.3172  03 It Ain't Me, Babe.flac
+     4:05.38       43307420 B   ---   --   ---xx   flac  0.3132  04 Ballad of a Thin Man.flac
+     2:33.48       27102140 B   ---   --   ---xx   flac  0.3263  05 All Along the Watchtower.flac
+     4:20.09       45885212 B   ---   --   ---xx   flac  0.3238  06 Ballad of Hollis Brown.flac
+     3:52.68       41084780 B   ---   --   ---xx   flac  0.3167  07 Knockin' on Heaven's Door.flac
+     4:14.51       44925596 B   ---   --   ---xx   flac  0.3162  08 Blowin' in the Wind.flac
+     3:59.28       42225500 B   ---   --   ---xx   flac  0.3241  09 Don't Think Twice, It's All Right.flac
+     4:30.22       47679788 B   ---   --   ---xx   flac  0.3244  10 Gates of Eden.flac
+     7:13.68       76541180 B   ---   --   ---xx   flac  0.3259  11 Love Minus Zero, No Limit.flac
+     5:50.09       61761212 B   ---   --   ---xx   flac  0.3337  12 It's Alright, Ma (I'm Only Bleeding).flac
+     5:23.23       57031340 B   ---   --   ---xx   flac  0.3257  13 Forever Young.flac
+     4:46.21       50499836 B   ---   --   ---xx   flac  0.3277  14 Something There Is About You.flac
+     7:56.65       84119324 B   ---   --   ---xx   flac  0.3326  15 Like a Rolling Stone.flac
+     5:58.50       63268844 B   ---   --   ---xx   flac  0.3302  16 Most Likely You Go Your Way (and I'll Go Mine).flac
+    78:36.22      831954848 B                            0.3243  (16 files)
+=================== 
+=================== 
+=================== 

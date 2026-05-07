@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-08-21.shnf 
+=================== 
+=================== 
+=================== 
+2fb32d634bf73dd6abb540ddb732e252  1-01 - Don't Let Your Deal Go Down (92-08-21 Hamilton, Ontar.shn
+91ef677a7923e5580396254e6fd42125  1-02 - Pretty Peggy-O (92-08-21 Hamilton, Ontario).shn
+318797a58abda9b3ccfb6a9b0e4ad332  1-03 - All Along The Watchtower (92-08-21 Hamilton, Ontario).shn
+4d89e0668cd510d40a769f9cf9e7c1c0  1-04 - Tangled Up In Blue (92-08-21 Hamilton, Ontario).shn
+c8b0363538e4db8ca9d9af0046ea6db7  1-05 - I'll Be Your Baby Tonight (92-08-21 Hamilton, Ontario.shn
+edce83d3ca1eac43d3c037d1b039ef1d  1-06 - Simple Twist Of Fate (92-08-21 Hamilton, Ontario).shn
+42b333d6d1de3505c7d90ca596d2de98  1-07 - Everything Is Broken (92-08-21 Hamilton, Ontario).shn
+4a6eb876d8f0df6f84ac8e47fb98def1  1-08 - Little Moses (92-08-21 Hamilton, Ontario).shn
+8f9971b7c954ab5c408cadc13fb20035  1-09 - Boots Of Spanish Leather (92-08-21 Hamilton, Ontario).shn
+bc62393f2c16ddb79cefb346c1648222  1-10 - Hattie Carroll (92-08-21 Hamilton, Ontario).shn
+7e1b4015fecf783384b81f40e6d86358  1-11 - Mr. Tambourine Man (92-08-21 Hamilton, Ontario).shn
+f2b45ee61d3ba77433b7eb46fe758608  2-01 - Cat's In The Well (92-08-21 Hamilton, Ontario).shn
+f1a59083924ae8e1a1ada0210acd23b1  2-02 - Times They Are A-Changin' (92-08-21 Hamilton, Ontario.shn
+34544034136e5cb107dd6c9a9c26117e  2-03 - Idiot Wind (92-08-21 Hamilton, Ontario).shn
+10c014a7025ac122837a3b094ca41309  2-04 - Maggie's Farm (92-08-21 Hamilton, Ontario).shn
+cee57e70080c9a04ce23f3bcd737a920  2-05 - What Good Am I (92-08-21 Hamilton, Ontario).shn
+ad95917b33dcfb03181af64670fb3670  2-06 - Highway 61 Revisited (92-08-21 Hamilton, Ontario).shn
+199bef4cb16ed94ce201ee18dc59e525  2-07 - It Ain't Me, Babe (92-08-21 Hamilton, Ontario).shn
+b369339deea1338347e6e4039f44f798  92-08-21_Hamilton, Ontario-D1.md5
+88579de88da9a7db9f32df94b1978a07  92-08-21_Hamilton, Ontario-D2.md5
+e74b9699b8815bbafc638eb3105c77fc  92-08-21_Hamilton, Ontario.jpg
+df0177001ac47921aa3b8ff76c7dece6  92-08-21_Hamilton, Ontario.wri
+2886678f92398a60224773eba422ff9f  bd92-08-21.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd92-08-21.shnf 
+=================== 
+=================== 
+=================== 
+66bf5af5e8302436414057ac5c13a710  [shntool]  1-01_-_Don't_Let_Your_Deal_Go_Down_(92-08-21_Hamilton,_Ontar.wav
+065c043fc4e233cc9983a5eb4a444dbf  [shntool]  1-02_-_Pretty_Peggy-O_(92-08-21_Hamilton,_Ontario).wav
+161bb723099213c830e1e85193537e7a  [shntool]  1-03_-_All_Along_The_Watchtower_(92-08-21_Hamilton,_Ontario).wav
+1b61ccd36cf913ca39408bde859e4a08  [shntool]  1-04_-_Tangled_Up_In_Blue_(92-08-21_Hamilton,_Ontario).wav
+c3d281c1f27568d5d9ae5f2fb9b920f1  [shntool]  1-05_-_I'll_Be_Your_Baby_Tonight_(92-08-21_Hamilton,_Ontario.wav
+1b0e514d0d210b4eb4dbb4d9a4c7af38  [shntool]  1-06_-_Simple_Twist_Of_Fate_(92-08-21_Hamilton,_Ontario).wav
+7b849c8035011beb91c17dae1820ad4c  [shntool]  1-07_-_Everything_Is_Broken_(92-08-21_Hamilton,_Ontario).wav
+4dbad40e52bbfcd0fc90911946e9831f  [shntool]  1-08_-_Little_Moses_(92-08-21_Hamilton,_Ontario).wav
+f331cf51d7612808a5703b15d0ebfcf5  [shntool]  1-09_-_Boots_Of_Spanish_Leather_(92-08-21_Hamilton,_Ontario).wav
+be8ba17c98bbff5e0bc4ce86db68258e  [shntool]  1-10_-_Hattie_Carroll_(92-08-21_Hamilton,_Ontario).wav
+87e1f4c5109abaadfd3dd9f4c34460ba  [shntool]  1-11_-_Mr._Tambourine_Man_(92-08-21_Hamilton,_Ontario).wav
+f3452da31319ccb2220ad694cca7b24a  [shntool]  2-01_-_Cat's_In_The_Well_(92-08-21_Hamilton,_Ontario).wav
+b55483ee2895843b0eca2ddf224752f1  [shntool]  2-02_-_Times_They_Are_A-Changin'_(92-08-21_Hamilton,_Ontario.wav
+9b0ebc5272e7039108e1d40975917400  [shntool]  2-03_-_Idiot_Wind_(92-08-21_Hamilton,_Ontario).wav
+4e1187953bf3de0a771caf093b9cde0f  [shntool]  2-04_-_Maggie's_Farm_(92-08-21_Hamilton,_Ontario).wav
+d4999028b069536f184faff2e8ab05d7  [shntool]  2-05_-_What_Good_Am_I_(92-08-21_Hamilton,_Ontario).wav
+c64a97aefa6b4225b50d011e0ea7534e  [shntool]  2-06_-_Highway_61_Revisited_(92-08-21_Hamilton,_Ontario).wav
+8c3409262c9971e0212f88b23c712f00  [shntool]  2-07_-_It_Ain't_Me,_Babe_(92-08-21_Hamilton,_Ontario).wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-08-21.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:34.72       59086988 B   ---   --   ---xx    shn  0.6632  1-01 - Don't Let Your Deal Go Down (92-08-21 Hamilton, Ontar.shn
+     7:30.10       79403564 B   ---   --   ---xx    shn  0.6165  1-02 - Pretty Peggy-O (92-08-21 Hamilton, Ontario).shn
+     4:09.36       44008316 B   ---   --   ---xx    shn  0.6611  1-03 - All Along The Watchtower (92-08-21 Hamilton, Ontario).shn
+     9:10.52       97142348 B   ---   --   ---xx    shn  0.6528  1-04 - Tangled Up In Blue (92-08-21 Hamilton, Ontario).shn
+     6:55.63       73354220 B   ---   --   ---xx    shn  0.6421  1-05 - I'll Be Your Baby Tonight (92-08-21 Hamilton, Ontario.shn
+     9:36.71      101773436 B   ---   --   ---xx    shn  0.5917  1-06 - Simple Twist Of Fate (92-08-21 Hamilton, Ontario).shn
+     3:38.71       38622236 B   ---   --   ---xx    shn  0.6858  1-07 - Everything Is Broken (92-08-21 Hamilton, Ontario).shn
+     3:57.13       41837420 B   ---   --   ---xx    shn  0.5624  1-08 - Little Moses (92-08-21 Hamilton, Ontario).shn
+     5:54.65       62598524 B   ---   --   ---xx    shn  0.5685  1-09 - Boots Of Spanish Leather (92-08-21 Hamilton, Ontario).shn
+     6:45.04       71451452 B   ---   --   ---xx    shn  0.5750  1-10 - Hattie Carroll (92-08-21 Hamilton, Ontario).shn
+     7:05.05       74981804 B   ---   --   ---xx    shn  0.5885  1-11 - Mr. Tambourine Man (92-08-21 Hamilton, Ontario).shn
+     6:16.27       66389948 B   ---   --   ---xx    shn  0.6474  2-01 - Cat's In The Well (92-08-21 Hamilton, Ontario).shn
+     6:21.56       67340156 B   ---   --   ---xx    shn  0.5620  2-02 - Times They Are A-Changin' (92-08-21 Hamilton, Ontario.shn
+    12:25.22      131469788 B   ---   --   ---xx    shn  0.5875  2-03 - Idiot Wind (92-08-21 Hamilton, Ontario).shn
+     6:50.29       72392252 B   ---   --   ---xx    shn  0.6335  2-04 - Maggie's Farm (92-08-21 Hamilton, Ontario).shn
+     9:05.11       96163916 B   ---   --   ---xx    shn  0.5623  2-05 - What Good Am I (92-08-21 Hamilton, Ontario).shn
+     6:18.74       66853292 B   ---   --   ---xx    shn  0.6373  2-06 - Highway 61 Revisited (92-08-21 Hamilton, Ontario).shn
+     5:35.32       59169308 B   ---   --   ---xx    shn  0.5306  2-07 - It Ain't Me, Babe (92-08-21 Hamilton, Ontario).shn
+   123:12.38     1304038968 B                            0.6064  (18 files)
+=================== 
+=================== 
+=================== 

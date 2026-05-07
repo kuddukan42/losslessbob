@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-18-marcsounds.flacf 
+=================== 
+=================== 
+=================== 
+f2d1682302a7a867233dc2a56a3ffe73  bd97-12-18-marcsounds-LB-3530.txt
+5eff7c829fa7f6631f87bc830829838e  Bob Dylan    Los Angeles  12.18.97.txt
+fb992a30d2fa4bcf8007802b8256c779  D2 Track01.flac
+6b940975010d138d305ec1cf2456cc41  D2 Track02.flac
+b1d14a74e688dc40ce6afce016c5e4c6  D2 Track03.flac
+87b6cde710f8562f33dcb3e6e2506cce  D2 Track04.flac
+2da247bb56199e65be0dcba89c223788  Track01.flac
+9aa8752b1f1376df59a70be79e6d83d8  Track02.flac
+0b7a9e738fb8d0084aea1082371ce306  Track03.flac
+34ada8d1485b544b6a0a508fe6b27d52  Track04.flac
+202261299fe788b12ca65817c90011f7  Track05.flac
+89935cc0e6e580b81b2f508289d41b4c  Track06.flac
+bb4515c802478b4b043e380dd5c61e1b  Track07.flac
+5f1e86fd693cab69dff9e9776a738fc0  Track08.flac
+1894c5b742acaf31bb6a5a85b1a3e7fc  Track09.flac
+316033cbc973ddeb87c51fc772f87001  Track10.flac
+8cc6ec86be2643a3a8ebc269261d22f9  Track11.flac
+edeb3174e90dea4d2bc536c7fbee8d0e  Track12.flac
+cbdc68f6c8ac550ebc24118b45a18d50  Track13.flac
+9e07ffefc93e05975477cec7d1393640  Track14.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-18-marcsounds.flacf 
+=================== 
+=================== 
+=================== 
+D2 Track01.flac:a80d400c9ffcb2c3c57644cbd289e146
+D2 Track02.flac:0ce3df8239b87d0e94d0b17596136c9f
+D2 Track03.flac:3d9edd8f77e6b3bce93169fcaff5bf42
+D2 Track04.flac:7c0531e58f1d8b9c95fef8cf7e3e56e9
+Track01.flac:2fb235c44c585c5c3d436c764565b60c
+Track02.flac:e92335ba6afdb55770a35b14c24d1400
+Track03.flac:99a3674122f77014b2291c8463a8b56a
+Track04.flac:634e23e92857113ca642f5ac39046d59
+Track05.flac:b894099a1ad2882e840d3bca1a023267
+Track06.flac:35531836ac8f0a6248f745fdc294fb22
+Track07.flac:913362e7b6843688914ca6ec0f472dd1
+Track08.flac:c846e31a84ac0c69f60ef536e060ca58
+Track09.flac:d6360ec5d308e9a17ea7929b5cebaab8
+Track10.flac:5a35787b5912e59716c9c45ae88df33c
+Track11.flac:6d1a14a4afc610a399b9d653f9767e57
+Track12.flac:673cc42fdefa73aa7cf2e32b3b479457
+Track13.flac:8230066614ea1f585bc6e23c7d24c7bf
+Track14.flac:f021ae9d00c16079d232f912618d5e57
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-18-marcsounds.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     9:07.71       96657836 B   ---   --   ---xx   flac  0.5125  D2 Track01.flac
+     8:52.25       93903644 B   ---   --   ---xx   flac  0.4097  D2 Track02.flac
+     5:58.67       63308828 B   ---   --   ---xx   flac  0.4613  D2 Track03.flac
+     5:55.72       62791388 B   ---   --   ---xx   flac  0.5113  D2 Track04.flac
+     0:26.48        4699340 B   ---   --   ---xx   flac  0.4569  Track01.flac
+     5:39.23       59853740 B   ---   --   ---xx   flac  0.5699  Track02.flac
+     5:08.32       54406508 B   ---   --   ---xx   flac  0.5308  Track03.flac
+     6:40.22       70611788 B   ---   --   ---xx   flac  0.5628  Track04.flac
+     5:37.22       59498588 B   ---   --   ---xx   flac  0.5256  Track05.flac
+     5:42.53       60453500 B   ---   --   ---xx   flac  0.5588  Track06.flac
+     6:40.43       70661180 B   ---   --   ---xx   flac  0.5713  Track07.flac
+     3:56.53       41755100 B   ---   --   ---xx   flac  0.4529  Track08.flac
+     6:03.56       64164956 B   ---   --   ---xx   flac  0.4726  Track09.flac
+     8:09.46       86367836 B   ---   --   ---xx   flac  0.5397  Track10.flac
+     5:59.49       63442892 B   ---   --   ---xx   flac  0.5158  Track11.flac
+     6:23.63       67709420 B   ---   --   ---xx   flac  0.5118  Track12.flac
+     7:05.45       75075884 B   ---   --   ---xx   flac  0.5519  Track13.flac
+     0:19.35        3433964 B   ---   --   ---xx   flac  0.4115  Track14.flac
+   103:49.00     1098796392 B                            0.5148  (18 files)
+=================== 
+=================== 
+=================== 

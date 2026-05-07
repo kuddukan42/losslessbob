@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd24-10-12-hopi.flacf
+===================
+===================
+===================
+2b869c911508df3bb1306f06a2360a81 *2024-10-12 Berlin GER Hopi FLAC.md5
+2b869c911508df3bb1306f06a2360a81 *2024-10-12 Berlin GER Hopi FLACmd5.txt
+af0f6384261b0f448bf12bcf70f8a06b *2024-10-12 Berlin GER Hopi WAV.md5
+5ef3aeb540678089f2c72cfd684f60d0 *Bob Dylan-2024-10-12- HOPI-t01.flac
+749e46817d25069e3c948bf453638724 *Bob Dylan-2024-10-12- HOPI-t02.flac
+9474576d96f786af8fec471d2205e1fb *Bob Dylan-2024-10-12- HOPI-t03.flac
+50caad263b3485f822db10199f150dda *Bob Dylan-2024-10-12- HOPI-t04.flac
+00205ba048d95e4c68dfb6ae5e56ef54 *Bob Dylan-2024-10-12- HOPI-t05.flac
+27329a5e2462ebbc453c70913c73021b *Bob Dylan-2024-10-12- HOPI-t06.flac
+15bada6b7cdfd498a7fc22041acd65bc *Bob Dylan-2024-10-12- HOPI-t07.flac
+8ae8390ba25ef78aa08bbf23404446f4 *Bob Dylan-2024-10-12- HOPI-t08.flac
+fc2c650acc8ebf9f8891b32b651346d0 *Bob Dylan-2024-10-12- HOPI-t09.flac
+ac44caa094388217b0cf27d77b17b4ac *Bob Dylan-2024-10-12- HOPI-t10.flac
+15a251e57cbdefc4d52e432b0b194900 *Bob Dylan-2024-10-12- HOPI-t11.flac
+a61e5da1e53679e6592cc71b7375d9ff *Bob Dylan-2024-10-12- HOPI-t12.flac
+fd5a3168304990c19d7b8240c6fbd147 *Bob Dylan-2024-10-12- HOPI-t13.flac
+b1f0c8566812c106a9b9c7eec30357fb *Bob Dylan-2024-10-12- HOPI-t14.flac
+80321fd0057b95e3dec1473ec450a5ed *Bob Dylan-2024-10-12- HOPI-t15.flac
+e8bdc10edaafcdb4f8525a7e91a97135 *Bob Dylan-2024-10-12- HOPI-t16.flac
+10a174ca4bf24b34cfaa9e2e3c85e8b2 *Bob Dylan-2024-10-12- HOPI-t17.flac
+8650652d5e2c8ddf4d04f68eb4668147 *Bob Dylan-2024-10-12- HOPI.txt
+===================
+===================
+===================
+=== ffp for: bd24-10-12-hopi.flacf
+===================
+===================
+===================
+Bob Dylan-2024-10-12- HOPI-t01.flac:97d157121d6d30ce8a4277acf9fa244f
+Bob Dylan-2024-10-12- HOPI-t02.flac:66aee6dfe488d0f464043b94c0f41dcd
+Bob Dylan-2024-10-12- HOPI-t03.flac:e1ea9d136776fbdc42683e12e456e81b
+Bob Dylan-2024-10-12- HOPI-t04.flac:aa9a870e522b69fa4c447929b2c582e0
+Bob Dylan-2024-10-12- HOPI-t05.flac:53d2064023172cdb9dd5814a934b1645
+Bob Dylan-2024-10-12- HOPI-t06.flac:0604835e2f09c7cf4f63dd46bac4bff0
+Bob Dylan-2024-10-12- HOPI-t07.flac:30d2f984489d2ae9eab813a5c3c785f0
+Bob Dylan-2024-10-12- HOPI-t08.flac:a0216ff78edd64da89eeaf31abbc4655
+Bob Dylan-2024-10-12- HOPI-t09.flac:66777fd93d4e2c9906809f8b1b3a1f65
+Bob Dylan-2024-10-12- HOPI-t10.flac:554e6a91e845f17649542f7c7e3adbf9
+Bob Dylan-2024-10-12- HOPI-t11.flac:b6c8006f073049a19a188f8f56a45154
+Bob Dylan-2024-10-12- HOPI-t12.flac:6f27cca36ff410e40653265a8b3289b1
+Bob Dylan-2024-10-12- HOPI-t13.flac:51b42a6feb4b4ececf678deea6c698c5
+Bob Dylan-2024-10-12- HOPI-t14.flac:b65c8b962c4178356c540c980b590daf
+Bob Dylan-2024-10-12- HOPI-t15.flac:5b071a47f20efc5f3866d2c5fc3ef06b
+Bob Dylan-2024-10-12- HOPI-t16.flac:3f5b65ceca00ac8a38068d0758656527
+Bob Dylan-2024-10-12- HOPI-t17.flac:d214126f034fe2b7da0183b7a3fc74d5
+===================
+===================
+===================
+=== shntool len for: bd24-10-12-hopi.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.03       61394300 B   ---   --   ---xx   flac  0.4895  Bob Dylan-2024-10-12- HOPI-t01.flac
+    10:13.24      108189692 B   ---   --   ---xx   flac  0.4760  Bob Dylan-2024-10-12- HOPI-t02.flac
+     5:55.07       62638508 B   ---   --   ---xx   flac  0.4512  Bob Dylan-2024-10-12- HOPI-t03.flac
+     6:42.03       70919900 B   ---   --   ---xx   flac  0.4676  Bob Dylan-2024-10-12- HOPI-t04.flac
+     4:46.49       50565692 B   ---   --   ---xx   flac  0.4341  Bob Dylan-2024-10-12- HOPI-t05.flac
+     5:10.45       54789884 B   ---   --   ---xx   flac  0.4156  Bob Dylan-2024-10-12- HOPI-t06.flac
+     8:09.72       86428988 B   ---   --   ---xx   flac  0.4353  Bob Dylan-2024-10-12- HOPI-t07.flac
+     5:25.71       57497036 B   ---   --   ---xx   flac  0.4680  Bob Dylan-2024-10-12- HOPI-t08.flac
+     8:10.42       86534828 B   ---   --   ---xx   flac  0.4341  Bob Dylan-2024-10-12- HOPI-t09.flac
+     7:42.11       81522716 B   ---   --   ---xx   flac  0.4505  Bob Dylan-2024-10-12- HOPI-t10.flac
+    11:11.68      118524380 B   ---   --   ---xx   flac  0.4296  Bob Dylan-2024-10-12- HOPI-t11.flac
+     9:06.21       96363836 B   ---   --   ---xx   flac  0.4894  Bob Dylan-2024-10-12- HOPI-t12.flac
+     6:32.26       69209996 B   ---   --   ---xx   flac  0.4071  Bob Dylan-2024-10-12- HOPI-t13.flac
+     5:10.04       54693452 B   ---   --   ---xx   flac  0.4661  Bob Dylan-2024-10-12- HOPI-t14.flac
+     5:37.68       59606780 B   ---   --   ---xx   flac  0.3834  Bob Dylan-2024-10-12- HOPI-t15.flac
+     6:50.32       72399308 B   ---   --   ---xx   flac  0.4603  Bob Dylan-2024-10-12- HOPI-t16.flac
+     7:20.58       77752616 B   -b-   --   ---xx   flac  0.4247  Bob Dylan-2024-10-12- HOPI-t17.flac
+   119:54.04     1269031912 B                            0.4472  (17 files)
+===================
+===================
+===================

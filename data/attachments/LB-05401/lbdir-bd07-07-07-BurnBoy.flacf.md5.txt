@@ -1,0 +1,21 @@
+4ce1b22beeac04c9ec52492fc9f94936  Bob Dylan - 2007-07-07 - Casino Rama , Orillia , Ont - BurnBoy.md5
+f218fd1f64eacab43e64644adacd0b8e  Bob Dylan - 2007-07-07 - Casino Rama , Orillia , Ont - BurnBoy.txt
+151534d879a662fe1befa8403b922abe  Disc 1\01 - Intro.flac
+9e1d782ca62993d813125261e12c8fc7  Disc 1\02 - Cat's In The Well.flac
+21f9121fc20ba6b4026403640bb55b1d  Disc 1\03 - Don't Think Twice, It's All Right.flac
+bf65b1b481d8c255db60884887096bc3  Disc 1\04 -Watching The River Flow.flac
+dcd5ba666f318f53dd879ff268fda609  Disc 1\05 - It's Alright, Ma (I'm Only Bleeding).flac
+6b41ca142f9d9d6132d2e7b0959d9a73  Disc 1\06 - Lay, Lady, Lay.flac
+9ca3a3b0f74cb8c0d30484859a6f8555  Disc 1\07 - Rollin' And Tumblin'.flac
+382f38cc21ceab83b5a382551be735c1  Disc 1\08 - Just Like A Woman.flac
+7fb36c31bf9120f2650f515c2193a426  Disc 1\09 - Highway 61 Revisited.flac
+47c148d130f4e09b70282191d162085d  Disc 2\01 - Tangled Up In Blue.flac
+8558f8a1ead8472d0b46ed4b4b330033  Disc 2\02 - When The Deal Goes Down.flac
+7c4ac25f9c6ea2c94f9243465dbd44f9  Disc 2\03 - Stuck Inside Of Mobile With The Memphis Blues Again.flac
+b6a5448611504b73997b473ff391bb54  Disc 2\04 - Spirit On The Water.flac
+47ee6134b9025495c716d73085026212  Disc 2\05 - Summer Days.flac
+94133c7c6c349b0c519db7dcf4d12d71  Disc 2\06 - All Along The Watchtower.flac
+af873d4bcdd3c54e905195d76121d2a0  Disc 2\07 - Crowd.flac
+d282cdab552d23ff0c7b67db96aabd52  Disc 2\08 - Thunder On The Mountain.flac
+fb825989f8966f353211fd27d5d729f6  Disc 2\09 - Band Intros and Chatter.flac
+3dc688c5bca2b6cb22595aabc5670956  Disc 2\10 - Blowin' In The Wind.flac

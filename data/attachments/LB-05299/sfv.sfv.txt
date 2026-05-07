@@ -1,0 +1,31 @@
+; sfv created by SFV Checker
+;
+"Track01.flac" 1d1b2ca2
+"Track02.flac" 05a7d996
+"Track03.flac" cdc72c7d
+"Track04.flac" f765e6f4
+"Track05.flac" a3a25f44
+"Track06.flac" 58402d8d
+"Track07.flac" ab0bc698
+"Track08.flac" aeeb3cc7
+"Track09.flac" bebcd91d
+"Track10.flac" 3ed4fedc
+"Track11.flac" 6e5672ec
+"Track12.flac" 44a4f77e
+"Track13.flac" c4c2ed44
+"Track14.flac" 88ae2236
+"Track01.flac" b700359a
+"Track02.flac" 2cf7cb27
+"Track03.flac" 60ecdfe1
+"Track04.flac" 582dbdd5
+"Track05.flac" 6cb818a6
+"Track06.flac" 035a5730
+"Track07.flac" d61914a0
+"Track08.flac" d4f034f4
+"Track09.flac" aab1b11f
+"Track10.flac" 1477d44f
+"Track11.flac" 07c9a12f
+"Track12.flac" 14940871
+"Track13.flac" bca08806
+;
+; Total 27 File(s)	Combined CRC32 Checksum: 8c1e0aab

@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Shakopee, Minnesota
+Paul Simon
+July 2, 1999
+Canterbury Park
+Race Track Infield
+
+--------------------------------------------------------------------------------
+
+Bridge Over Troubled Water 
+Can't Run But 
+The Boy In The Bubble 
+The Coast 
+Trailway Bus 
+Mrs. Robinson 
+Me And Julio Down By The Schoolyard 
+Further To Fly 
+Graceland 
+The Cool, Cool River 
+Slip Sliding Away 
+Diamonds On The Soles Of Her Shoes 
+You Can Call Me Al 
+(encores) 
+
+Late In The Evening 
+Still Crazy After All These years 
+The Sound Of Silence (duet with Bob on harp)
+I Walk The Line/Blue Moon Of Kentucky (medley with Bob Dylan) 
+Knockin' On Heaven's Door (duet with Bob Dylan) 
+
+--------------------------------------------------------------------------------
+
+Hallelujah, I'm Ready To Go (acoustic) 
+Mr. Tambourine Man (acoustic) (with harp) 
+Desolation Row (acoustic) 
+Don't Think Twice, It's All Right (acoustic) 
+Tangled Up In Blue (acoustic) (with harp) 
+All Along The Watchtower 
+Make You Feel My Love 
+Stuck Inside Of Mobile With The Memphis Blues Again 
+Not Dark Yet 
+Highway 61 Revisited 
+(encore) 
+
+Like A Rolling Stone 
+It Ain't Me, Babe (acoustic) (with harp) 
+Not Fade Away 
+
+===================
+===================
+===================
+=== disc 2.ffp
+===================
+===================
+===================
+01 Track01.flac:8ae71ab96cdc74af891f0e69c4eab794
+02 Track02.flac:a5640b955dd1919a291b84aaf47f996f
+03 Track03.flac:79e6075422abaeee97f132f782024b65
+04 Track04.flac:9bc5e8d20a10ff7c260fd6c26fe3f8be
+05 Track05.flac:a71fdaeb7ca40937cdc55b5886cdc695
+06 Track06.flac:12ad026b572ea691819cc675607a2057
+07 Track07.flac:6259f32f08ff72c4d61f3cdab84cf0de
+08 Track08.flac:8e4aacc712843fd5f1b24c8f6dbf5cf4
+09 Track09.flac:929d50eeada78234c18cadcead01b3ce
+10 Track10.flac:d9c85c6c5de795c9418728903d3b1bb4
+===================
+===================
+===================
+=== disc 3.ffp
+===================
+===================
+===================
+01 Track01.flac:97ec7d7914feacfb69d1ac330f2df573
+02 Track02.flac:b96395fb07a71ac5128fa7bde0cc7eeb
+03 Track03.flac:837d2a4b3edd90251ec5685150f1a73b
+04 Track04.flac:92901f0012550fe2928bc068b83d275a
+05 Track05.flac:c14d746efe510f455b97b4787e3379d1
+06 Track06.flac:45e4d5290173d32fe4857516045ca3a4
+07 Track07.flac:b24809955048f110e91d3acc792ff6d6
+08 Track08.flac:4688ccee40d7641d40222abfc77fb065
+09 Track09.flac:c21144da84f122ee375b0e6fefc53980
+===================
+===================
+===================

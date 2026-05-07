@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-09-17-Pink-Robert-d.flacf 
+=================== 
+=================== 
+=================== 
+76f87cb3c09d39eda26d430785b6f964  (01) Berlin.flac
+a20ab2f80c1fd4352935edf044f97b41  (02) Berlin.flac
+751891e119b4f2db814f626531886212  (03) Berlin.flac
+1bf03cc52336f0f4439d1a689b476217  (04) Berlin.flac
+d5ace57f357cb601fc623a1bf16c8235  (05) Berlin.flac
+01eb38725f4e3e76adb57348c3caf3f8  (06) Berlin.flac
+7225344b6168de5c93c6868cc9c5c7b6  (07) Berlin.flac
+6ba18a129f347495033de85858c024b7  (08) Berlin.flac
+aa55bb459c465577c461600b99f51895  (09) Berlin.flac
+3c7bd561984c7f33f3e3fd2ab3e9bba2  (10) Berlin.flac
+a8561d2cc8cbf78701595b4e1c4d69e0  (11) Berlin.flac
+1788b911ee236bcc29b78ea37ce1dd65  (12) Berlin.flac
+63ccbaa4b467181ffbdeb9fc4e33c8c7  (13) Berlin.flac
+bbd369a680c6528db32c519fd612d10d  (14) Berlin.flac
+b668c52026f1ff5b59ef62b3e1840e24  (15) Berlin.flac
+c65180289c04bccff223972518914134  1987-09-17 LBcomment.txt
+98688f90de390dc2075379542f29ca46  BobDylan08Berlin.txt
+7e39c8192f4bc611e3e3bcc6626d89ec  DylanBerlin1987.md5
+c018eb0cbe0b0b5fe5361fa604969b80  DylanTemplesBack.jpg
+9963c10c1977920599c524be83dffb63  DylanTemplesFront.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-09-17-Pink-Robert-d.flacf 
+=================== 
+=================== 
+=================== 
+(01) berlin.flac:f7480159bda36d8c371cce63fa457185
+(02) berlin.flac:5ce43d4825fd769ba474fec721a58f57
+(03) berlin.flac:718053899457b8a5cf6db97494f5ec89
+(04) berlin.flac:016a125be5859f5922e4008eb1337b73
+(05) berlin.flac:41df930fd0d281c4cb8afb9d219a16ab
+(06) berlin.flac:21f14d7cc116fc9481206426decdaa48
+(07) berlin.flac:7ae052bac865399d9764d135240f4a3d
+(08) berlin.flac:5fc19b6df03ced7d49d79cbd9055826d
+(09) berlin.flac:8f76c4610052b0ea7265f637296291d9
+(10) berlin.flac:9b556fb37852e59f5532bf95e4eb5c3e
+(11) berlin.flac:67c4e4e7295d5d124ebb5ff402a42e5c
+(12) berlin.flac:8793a900be226afbf949913842dc4b2f
+(13) berlin.flac:901ab19798cc238b8f2c241fa6b41dee
+(14) berlin.flac:b1b996c98dec527d5bcaf3f12a5c3eff
+(15) berlin.flac:7b9ac37db88ebc86da100ca30441f7b0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-09-17-Pink-Robert-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:37.65       17263724 B   ---   --   ---xx   flac  0.6468  (01) Berlin.flac
+     5:41.06       60166556 B   ---   --   ---xx   flac  0.6944  (02) Berlin.flac
+     4:05.59       43356812 B   ---   --   ---xx   flac  0.6840  (03) Berlin.flac
+     4:04.24       43098092 B   ---   --   ---xx   flac  0.6971  (04) Berlin.flac
+     5:47.52       61333148 B   ---   --   ---xx   flac  0.6239  (05) Berlin.flac
+     4:34.13       48364220 B   ---   --   ---xx   flac  0.7102  (06) Berlin.flac
+     5:53.15       62304524 B   ---   --   ---xx   flac  0.6783  (07) Berlin.flac
+     5:00.00       52920044 B   ---   --   ---xx   flac  0.6334  (08) Berlin.flac
+     3:58.17       42023228 B   ---   --   ---xx   flac  0.7142  (09) Berlin.flac
+     4:31.00       47804444 B   ---   --   ---xx   flac  0.6494  (10) Berlin.flac
+     3:40.53       38932700 B   ---   --   ---xx   flac  0.7211  (11) Berlin.flac
+     4:35.19       48554732 B   ---   --   ---xx   flac  0.7054  (12) Berlin.flac
+     5:24.10       57177164 B   ---   --   ---xx   flac  0.6878  (13) Berlin.flac
+     3:52.00       40924844 B   ---   --   ---xx   flac  0.6541  (14) Berlin.flac
+     6:04.27       64273148 B   ---   --   ---xx   flac  0.6818  (15) Berlin.flac
+    68:49.60      728497380 B                            0.6786  (15 files)
+=================== 
+=================== 
+=================== 

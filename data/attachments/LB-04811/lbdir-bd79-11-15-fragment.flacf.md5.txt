@@ -1,0 +1,4 @@
+8005502a04bcf42e4f3bac8f5982ceeb  disc 1\Track02.flac
+fe4728c5bc2b1929b68e623c6353ec96  disc 1\Track09.flac
+b7831d67f8652f90c3d39c63facbcee7  Dylan1979-11-15.md5
+1c1cfeff06bc17dbef8abb7c52b8f961  Dylan1979-11-15.txt

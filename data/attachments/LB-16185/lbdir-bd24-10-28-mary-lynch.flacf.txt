@@ -1,0 +1,79 @@
+===================
+===================
+===================
+=== md5 for: bd24-10-28-mary-lynch.flacf
+===================
+===================
+===================
+d2ead5f3c2d048cfb34655f123ad9989 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht01.flac
+a74e47f17a46e3183a096c8116aca1f2 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht02.flac
+d3164506d4a879c1811a3531be9bb9bc *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht03.flac
+e97bacc7a85f6a1daeb55d350417590e *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht04.flac
+fcae99bad81b28786c1a6378eafc0f12 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht05.flac
+ba6d547449182d300e5e11cf31339d0e *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht06.flac
+8c64e76ced8a33d1b56a3e3fd9c52d7c *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht07.flac
+22df240aa3b439babc9ca822abe61c69 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht08.flac
+51e99cadf81e1d709cae4a9a86b40322 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht09.flac
+11eaba38a97207e72346a6f73f80460a *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht10.flac
+10d36666102e24c2aa205527e11692f2 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht11.flac
+049e9492fe7000c7122ba0510ee765c9 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht12.flac
+2c7742c4406a052c3d652149d734b601 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht13.flac
+89cf937660de55e0a26740d00fe125d4 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht14.flac
+9a74d49b61d6ef0120ef04f8eaa2e0a8 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht15.flac
+efc6feac69cd66798d86c4548fa464f2 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht16.flac
+2058625ac1b930beabc2e0072329ec64 *bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht17.flac
+aa216c1c98e3e9456f82465edda3a7d4 *bd2024-10-28_Esch-sur-Alzette_ Luxembourg_mary_lynch 16 BIT.txt
+136b4153c7ffc57fedea84452db8aa26 *bd2024-10-28_Esch-sur-Alzette_ Luxembourg_mary_lynch FLAC 16 BIT.md5
+===================
+===================
+===================
+=== ffp for: bd24-10-28-mary-lynch.flacf
+===================
+===================
+===================
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht01.flac:e7cb8c57a901ad1a12b4edd98f371685
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht02.flac:defeec2d1f81bf1202dc40b96e7c25db
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht03.flac:7fea3c11a16d01490573bf424cc73965
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht04.flac:26aefe8abb71646817d7c3f063a23d1c
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht05.flac:5d74b712aeffbef8d958190f381ef75b
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht06.flac:05b79473f956926f5285d1cbf20ce8a0
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht07.flac:370b63af2b026bfe7c113ac833b7816f
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht08.flac:98c9def196d9747589da0c2020c6b31d
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht09.flac:d52d0a5be72335f01825a15c01ac4738
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht10.flac:3f60df8b755ed4738442cc978f57aaed
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht11.flac:b4a8a27c70d2cce7679b68b5611a56a4
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht12.flac:68d74b3516bd6dda2629f67c4657c92b
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht13.flac:273842248c20b8cdb5b98ff4b1f9c742
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht14.flac:345a5492e031d5326fbd8c07fe3200b1
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht15.flac:a2a00710e1d6ffc5f25d01f21cef6bee
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht16.flac:949372b14ac9b579f587d7573d982684
+bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht17.flac:608112fb9dadcbca035ef15bf06aaa46
+===================
+===================
+===================
+=== shntool len for: bd24-10-28-mary-lynch.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:04.74       64383984 B   -b-   --   ---xx   flac  0.5756  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht01.flac
+     7:35.27       80326496 B   -b-   --   ---xx   flac  0.6068  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht02.flac
+     5:54.70       62610504 B   -b-   --   ---xx   flac  0.5374  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht03.flac
+     6:53.65       73006772 B   -b-   --   ---xx   flac  0.5685  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht04.flac
+     4:50.11       51181668 B   -b-   --   ---xx   flac  0.5158  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht05.flac
+     4:53.59       51823792 B   -b-   --   ---xx   flac  0.4789  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht06.flac
+     7:44.35       81932980 B   -b-   --   ---xx   flac  0.5197  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht07.flac
+     4:40.51       49511680 B   -b-   --   ---xx   flac  0.5692  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht08.flac
+     7:26.00       78675324 B   -b-   --   ---xx   flac  0.5377  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht09.flac
+     7:43.24       81730700 B   -b-   --   ---xx   flac  0.5494  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht10.flac
+    11:09.61      118155268 B   -b-   --   ---xx   flac  0.5067  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht11.flac
+     5:56.51       62918628 B   -b-   --   ---xx   flac  0.5859  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht12.flac
+     6:54.47       73140844 B   -b-   --   ---xx   flac  0.4678  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht13.flac
+     7:01.53       74389804 B   -b-   --   ---xx   flac  0.6124  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht14.flac
+     5:35.55       59223484 B   -b-   --   ---xx   flac  0.4407  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht15.flac
+     8:11.58       86747720 B   -b-   --   ---xx   flac  0.5881  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht16.flac
+     7:06.44       75250740 B   -b-   --   ---xx   flac  0.4739  bd2024-10-28 Esch-sur-Alzette_Lux_mary_lyncht17.flac
+   115:44.37     1225010388 B                            0.5383  (17 files)
+===================
+===================
+===================

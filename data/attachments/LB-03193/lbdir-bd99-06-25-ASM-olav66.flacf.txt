@@ -1,0 +1,91 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-06-25-ASM-olav66.flacf 
+=================== 
+=================== 
+=================== 
+6a9788ca54421fbd12d42793a2be7a71  bd99-06-25-ASM-olav66-LB-3193.txt
+02d60613182b847ed8d4adc0aa2bc2a7  CD1\Track01.flac
+349117a922db306416722f10176487ba  CD1\Track02.flac
+e08a01a26924000bda4d1b3b71ae7307  CD1\Track03.flac
+3d9d610515ef0d5761a9f40196bed5b5  CD1\Track04.flac
+c15c654166f370fe76edee555e54758a  CD1\Track05.flac
+272e448dc42e6d6f8c29bc7858df9ba9  CD1\Track06.flac
+34415ef44e2787c52cbc0943c55967ef  CD1\Track07.flac
+75b0fb560165705bcfa18d92fafe56b5  CD1\Track08.flac
+bc3bdf605c39344d4e39245b6ae98d03  CD1\Track09.flac
+ddae42e5c19b1f24d2de17e528edb91e  CD2\Track10.flac
+c814e4bb89b2f2818d025af80ec3ff8e  CD2\Track11.flac
+5ac998cb1f11e402cc9a5a852915b24b  CD2\Track12.flac
+b83fb7e38fcf053764d62653b53ca473  CD2\Track13.flac
+ffe4e5ca8207fc4e9c23d203a5274e30  CD2\Track14.flac
+168fcaf5d6b10c7d10efa25397bf42f5  CD2\Track15.flac
+e804f3d4513a43384721d4c67b03d161  Info\1999-06-25 Coors Amphitheatre, Chula Vista, California, USA.txt
+6eb57d5f3b4e21765ba3153eaeb44d2a  Info\ffp d1.txt
+c38fe25fcfcb1dca30daff3040003c3a  Info\ffp d2.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-25-ASM-olav66.flacf\CD1 
+=================== 
+=================== 
+=================== 
+Track01.flac:51e1a003b577653931fe016e9a8ab3f9
+Track02.flac:ea970e8b821551950372ae102e04265b
+Track03.flac:c0f5152466362cefdf014582732cd227
+Track04.flac:0719dd1f8c63172bf134325ce1ea5924
+Track05.flac:2ca421bfaf888a4c1928afeae8c76a52
+Track06.flac:a637957f00d46a60ee3dd3ad27208999
+Track07.flac:46c95e075e90be476d1950a25f3d4d8f
+Track08.flac:7fb4f089c73d0d3ff82aeedc7d440d1d
+Track09.flac:a2d7a32439cb3e52ccfc1e6db8cc6846
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-06-25-ASM-olav66.flacf\CD2 
+=================== 
+=================== 
+=================== 
+Track10.flac:3192a58aa79ffba62f1dc9ff0c3a24e0
+Track11.flac:5d444bed4b6a11fd7bb7695f12e62fbe
+Track12.flac:5cb808e367dac1931d6aaacbad4ab594
+Track13.flac:0a36ca0fdb2f9b34bf56010bd23e19aa
+Track14.flac:c2d935fdd77bbe4b8eab7433801e593f
+Track15.flac:6c0b7c6ccb1d3eebb0ecf6ec2fc9fc02
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-25-ASM-olav66.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:54.20       41324684 B   ---   --   ---xx   flac  0.6499  Track01.flac
+     6:33.40       69419324 B   ---   --   ---xx   flac  0.6850  Track02.flac
+     6:56.53       73507100 B   ---   --   ---xx   flac  0.6681  Track03.flac
+     8:29.11       89813516 B   ---   --   ---xx   flac  0.7008  Track04.flac
+    10:08.36      107335916 B   ---   --   ---xx   flac  0.6703  Track05.flac
+     5:16.37       55829468 B   ---   --   ---xx   flac  0.6980  Track06.flac
+     6:12.35       65703164 B   ---   --   ---xx   flac  0.6853  Track07.flac
+     6:24.12       67765868 B   ---   --   ---xx   flac  0.6799  Track08.flac
+     5:37.52       59569148 B   ---   --   ---xx   flac  0.7259  Track09.flac
+    59:32.71      630268188 B                            0.6850  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-06-25-ASM-olav66.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:12.43       76305980 B   ---   --   ---xx   flac  0.6966  Track10.flac
+     8:21.03       88383500 B   ---   --   ---xx   flac  0.6452  Track11.flac
+     7:01.40       74358524 B   ---   --   ---xx   flac  0.6178  Track12.flac
+     1:45.04       18531452 B   ---   --   ---xx   flac  0.6900  Track13.flac
+     1:35.26       16819196 B   ---   --   ---xx   flac  0.7094  Track14.flac
+     5:19.56       56403356 B   ---   --   ---xx   flac  0.6793  Track15.flac
+    31:15.22      330802008 B                            0.6625  (6 files)
+=================== 
+=================== 
+=================== 

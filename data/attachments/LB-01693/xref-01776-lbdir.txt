@@ -1,0 +1,131 @@
+===================
+===================
+===================
+=== md5 for: bd78-06-17-c.flacf
+===================
+===================
+===================
+a44b1be9fa3ed7e2c363039fe1b45adf *CD1\01 A Hard Rain's A-Gonna Fall (instrumental).flac
+74c20bba899372fbe8a3316618cf2caf *CD1\02 Love Her With A Feeling (Tampa Red).flac
+c169781496fcf241bae29507a9a95624 *CD1\03 Baby Stop Crying.flac
+dd3c7e9c0e14d1f339ffe3a5727f22c2 *CD1\04 Mr. Tambourine Man.flac
+ba11bcc1611119591fb550f24059d28e *CD1\05 Shelter From The Storm.flac
+bd155428ff97f90bbab3150ca681860d *CD1\06 Love Minus Zero No Limit.flac
+5b6190dc160ade6fa0f28948568fdf76 *CD1\07 Tangled Up In Blue.flac
+99c40f814bb9a15fc2eef1a2b6556f53 *CD1\08 Ballad Of A Thin Man.flac
+8c8d3a818a29249931e8d16ebc8bb1f1 *CD1\09 Maggie's Farm.flac
+908ecb395ee23b086fb23241cf524dc2 *CD1\10 I Don’t Believe You (She Acts Like We Never Have Met).flac
+8f23539f988719e2607dbb252c62a8bd *CD1\11 Like A Rolling Stone.flac
+ad72de93bd602b71617e95d00ae5b210 *CD1\12 I Shall Be Released.flac
+5f1bfb36663e934c17bad474a4ae6d58 *CD1\13 Going, Going, Gone.flac
+74b01511795cd6f9d7869c1fef296144 *CD1\CD1.ffp
+74b01511795cd6f9d7869c1fef296144 *CD1\CD1.txt
+df6b60176a87ea04995cad1b9d31b138 *CD2\14 (crowd noise).flac
+b696c6981ffa83b90d19e8890558e7d7 *CD2\14 Rainy Day Women # 12 & 35.flac
+6bf552a4616519ec70eead2241fb4118 *CD2\15 One Of Us Must Know (Sooner Or Later).flac
+f10be0a947e24d813516186d226ad87f *CD2\16 You're A Big Girl Now.flac
+2cb57f08bde273bfc9c63b45f8ec1b6a *CD2\17 One More Cup Of Coffee (Valley Below).flac
+9dea5c6ad942f7be43db24ff9e713df8 *CD2\18 Blowin' In The Wind.flac
+2f97a111893b8689cd07bf42b56b4b60 *CD2\19 I Want You.flac
+86fba83de3609fbcc1f57db2d0009aa7 *CD2\20 Señor (Tales Of Yankee Power).flac
+8692354878fc2f2877b057ea2ba48988 *CD2\21 Masters Of War.flac
+777aa09b44252cb2bc3f3f89631c41ac *CD2\22 Just Like A Woman.flac
+a6b04abfe03069f44323479f7d9f49f5 *CD2\23 Simple Twist Of Fate.flac
+9d2baf320421cbc81ff0181d72abf6f3 *CD2\24 All Along The Watchtower.flac
+41395d471a4188869262d4418cfe7640 *CD2\25 All I Really Want To Do.flac
+1bca7c78a7606afe759dc3482ed48985 *CD2\26 (band intro).flac
+045a6d73b5ec9411528d29583ae0531d *CD2\26 It's Alright, Ma (I'm Only Bleeding).flac
+4b8e3f3f254b4c00c9c2f15330b2321b *CD2\27 Forever Young.flac
+20256bd80d2d691c7cc80a8429547b0a *CD2\28 The Times They Are A-Changin'.flac
+77d3ece6c219bbb8319a98407a2806b5 *CD2\CD2.ffp
+77d3ece6c219bbb8319a98407a2806b5 *CD2\CD2.txt
+c4d80cd32d425648334239feaf70dc9a *Info\Bob Dylan 1978-06-17 Earls Court, London, England (NS Master).txt
+855b6cdbda1c367f6b9257b1a0311cf3 *Info\setlist.txt
+===================
+===================
+===================
+=== ffp for: bd78-06-17-c.flacf
+===================
+===================
+===================
+CD1\01 A Hard Rain's A-Gonna Fall (instrumental).flac:79308abae5d76ef2c4673c9ef3574030
+CD1\02 Love Her With A Feeling (Tampa Red).flac:46a9fa8c95f6c017dfff3b1e50a4d04a
+CD1\03 Baby Stop Crying.flac:6cc441f84e5cf40f056052561ec515c8
+CD1\04 Mr. Tambourine Man.flac:8b52ae7d43079b05e8c6781e9c56d4aa
+CD1\05 Shelter From The Storm.flac:4e8fc2ab654eead29e2a5603d6f01a66
+CD1\06 Love Minus Zero No Limit.flac:5075174ff721e3b49d27709d74150dd1
+CD1\07 Tangled Up In Blue.flac:84cbe9994c4e71e60d3c5815dfb0dc4e
+CD1\08 Ballad Of A Thin Man.flac:0a0fc8b94b49c9b40ba6ed8a834566c0
+CD1\09 Maggie's Farm.flac:1171cdcbdf27a44006531a6496e37021
+CD1\10 I Don’t Believe You (She Acts Like We Never Have Met).flac:226c9ef25fc672ca2999a9c17016d51b
+CD1\11 Like A Rolling Stone.flac:b200fddc5e991c40fec6303d29ea2d7b
+CD1\12 I Shall Be Released.flac:b68dfcb9cecd7b30966537215dd15dd3
+CD1\13 Going, Going, Gone.flac:c00616e22ac51952c80a6162b812a097
+CD2\14 (crowd noise).flac:46e5a22d126d480a97210349759974f8
+CD2\14 Rainy Day Women # 12 & 35.flac:8de0553c990662b66419e26909269651
+CD2\15 One Of Us Must Know (Sooner Or Later).flac:bb34097303b4e85a5d524a2445b57ba5
+CD2\16 You're A Big Girl Now.flac:a6088f1b227e9b3261ed91840e07ec61
+CD2\17 One More Cup Of Coffee (Valley Below).flac:e646cfa3bfedec47f4fd7673c3d87e0f
+CD2\18 Blowin' In The Wind.flac:8418996f7d7c718c3b4f746773efcd93
+CD2\19 I Want You.flac:1f4eb7f8db945032569f6127fd3ad2a3
+CD2\20 Señor (Tales Of Yankee Power).flac:5632457252badd74e444abaf57194eb6
+CD2\21 Masters Of War.flac:ab0d1c0afa32190b0bfc13091e80efb2
+CD2\22 Just Like A Woman.flac:b9484d2d7cf91d391fd8e5866ab17b25
+CD2\23 Simple Twist Of Fate.flac:eaf7ce13c0d25fa4d2db9ef1fa739e24
+CD2\24 All Along The Watchtower.flac:edc14577a61590e17a7f611200321a53
+CD2\25 All I Really Want To Do.flac:ff03a33d43a08b989807cc221f0f3835
+CD2\26 (band intro).flac:93a2a2fff61b069345061124db207be1
+CD2\26 It's Alright, Ma (I'm Only Bleeding).flac:0a564de20f5b9a25c40ba4d85f30960f
+CD2\27 Forever Young.flac:118a5d7f769bc72b53b363baae031a23
+CD2\28 The Times They Are A-Changin'.flac:8a48e60dad6b11b9ed1335641a62b51e
+===================
+===================
+===================
+=== shntool len for: bd78-06-17-c.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:42.48       39273740 B   ---   --   ---xx   flac  0.6017  01 A Hard Rain's A-Gonna Fall (instrumental).flac
+     2:24.39       25493372 B   ---   --   ---xx   flac  0.5914  02 Love Her With A Feeling (Tampa Red).flac
+     5:28.09       57880412 B   ---   --   ---xx   flac  0.5968  03 Baby Stop Crying.flac
+     5:11.70       55025084 B   ---   --   ---xx   flac  0.5938  04 Mr. Tambourine Man.flac
+     4:45.24       50330492 B   ---   --   ---xx   flac  0.5902  05 Shelter From The Storm.flac
+     3:35.58       38062460 B   ---   --   ---xx   flac  0.5941  06 Love Minus Zero No Limit.flac
+     7:24.06       78335756 B   ---   --   ---xx   flac  0.5772  07 Tangled Up In Blue.flac
+     4:44.20       50144684 B   ---   --   ---xx   flac  0.5823  08 Ballad Of A Thin Man.flac
+     4:58.15       52602524 B   ---   --   ---xx   flac  0.5900  09 Maggie's Farm.flac
+     4:28.59       47414012 B   ---   --   ---xx   flac  0.5811  10 I Don’t Believe You (She Acts Like We Never Have Met).flac
+     7:13.26       76442396 B   ---   --   ---xx   flac  0.5959  11 Like A Rolling Stone.flac
+     4:32.06       47994956 B   ---   --   ---xx   flac  0.5874  12 I Shall Be Released.flac
+     4:43.20       49968284 B   ---   --   ---xx   flac  0.5853  13 Going, Going, Gone.flac
+    63:12.25      668968172 B                            0.5893  (13 files)
+===================
+===================
+===================
+=== shntool len for: bd78-06-17-c.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:42.05        7420604 B   ---   --   ---xx   flac  0.6392  14 (crowd noise).flac
+     1:11.35       12606764 B   ---   --   ---xx   flac  0.6207  14 Rainy Day Women # 12 & 35.flac
+     3:57.12       41835068 B   ---   --   ---xx   flac  0.6299  15 One Of Us Must Know (Sooner Or Later).flac
+     4:55.32       52113308 B   ---   --   ---xx   flac  0.6240  16 You're A Big Girl Now.flac
+     3:40.62       38953868 B   ---   --   ---xx   flac  0.6332  17 One More Cup Of Coffee (Valley Below).flac
+     4:40.64       49542572 B   ---   --   ---xx   flac  0.6050  18 Blowin' In The Wind.flac
+     3:02.71       32271836 B   ---   --   ---xx   flac  0.6186  19 I Want You.flac
+     5:26.44       57609932 B   ---   --   ---xx   flac  0.6121  20 Señor (Tales Of Yankee Power).flac
+     4:12.55       44582204 B   ---   --   ---xx   flac  0.6260  21 Masters Of War.flac
+     5:56.26       62859596 B   ---   --   ---xx   flac  0.6234  22 Just Like A Woman.flac
+     4:27.03       47105900 B   ---   --   ---xx   flac  0.6044  23 Simple Twist Of Fate.flac
+     4:18.35       45593564 B   ---   --   ---xx   flac  0.6247  24 All Along The Watchtower.flac
+     3:25.29       36230252 B   ---   --   ---xx   flac  0.6216  25 All I Really Want To Do.flac
+     1:57.18       20681180 B   ---   --   ---xx   flac  0.6348  26 (band intro).flac
+     7:05.09       74991212 B   ---   --   ---xx   flac  0.6194  26 It's Alright, Ma (I'm Only Bleeding).flac
+     6:16.03       66333500 B   ---   --   ---xx   flac  0.6174  27 Forever Young.flac
+     4:46.47       50560988 B   ---   --   ---xx   flac  0.6116  28 The Times They Are A-Changin'.flac
+    70:02.25      741292348 B                            0.6196  (17 files)
+===================
+===================
+===================

@@ -1,0 +1,90 @@
+===================
+===================
+===================
+=== md5 for: bd01-03-30-audiowhore-remix.flacf
+===================
+===================
+===================
+a957335353a7d1eac57f958ebffef1bb *01 2001-03-30 Brisbane.flac
+33967a561edbb8c633eb7befd9887cca *02 2001-03-30 Brisbane.flac
+a32900df81e0225076084c549a84a74b *03 2001-03-30 Brisbane.flac
+1f5cad6ae0ef0c8f3cdee6fcae25b71a *04 2001-03-30 Brisbane.flac
+aad4156c3d16d6e1f4497c85034127fa *05 2001-03-30 Brisbane.flac
+327b939e2879cec6f468ccda2560f739 *06 2001-03-30 Brisbane.flac
+c962b785ce6f6f9b8e0d985a24b20814 *07 2001-03-30 Brisbane.flac
+dccb6b5e0620de3d7451906f40d6dab3 *08 2001-03-30 Brisbane.flac
+5ca50a1eb3cbfb6818bfcbd6453f9cd5 *09 2001-03-30 Brisbane.flac
+80dc151326d868e78a1253404a25cfe6 *10 2001-03-30 Brisbane.flac
+2dc0d729151680ba3ef84644c46fb2e8 *11 2001-03-30 Brisbane.flac
+9ba5f0a17b1200f2a7511d069941921f *12 2001-03-30 Brisbane.flac
+77a24f9fbb2fad6e62036b53440872f7 *13 2001-03-30 Brisbane.flac
+dc3178618c4f93db13ff031f53e99a0e *14 2001-03-30 Brisbane.flac
+90b21583fbf91ab7a3103ad75d401574 *15 2001-03-30 Brisbane.flac
+c0e4785c57192c7ea818fe19e90b11b4 *16 2001-03-30 Brisbane.flac
+910c810b4aaa29fce50c7b26575aa4d1 *17 2001-03-30 Brisbane.flac
+1b0366c00bd0cedf35ffe20788868588 *18 2001-03-30 Brisbane.flac
+8dbbb8b46a170800b4f3e7e48ca7e6d6 *19 2001-03-30 Brisbane.flac
+086d023f645fbdbe70e38fa0645deb7e *20 2001-03-30 Brisbane.flac
+0409430037d218211c02ff799a6b57a9 *BOB DYLAN 2001-03-30 Brisbane (audiowhore 2021 remix notes).txt
+998b547513d5af95ec7d7facb28a92d3 *BOB DYLAN 2001-03-30 Brisbane (original Bach notes).txt
+ec8058667f4da1fdb88436ed78e98abc *BOB DYLAN 2001-03-30 Brisbane, Australia (Bach 20th anniversary remix).md5
+1081c73df1fe8b0d568bb054b7467b84 *Bob Dylan 2001-03-30 Brisbane, Australia (Bach tape 2021 remix).ffp
+===================
+===================
+===================
+=== ffp for: bd01-03-30-audiowhore-remix.flacf
+===================
+===================
+===================
+01 2001-03-30 Brisbane.flac:12a8fc14f8cedaaccce43f50f5a6f4ad
+02 2001-03-30 Brisbane.flac:87d1afd3bd29eef98d0f72324654323c
+03 2001-03-30 Brisbane.flac:d1d7045b3d9c9105b9131506ed21d53e
+04 2001-03-30 Brisbane.flac:fbcdbc66657d8b95029533e7c956b40c
+05 2001-03-30 Brisbane.flac:9daa1869d9c85619b0cc86f2429e1e3b
+06 2001-03-30 Brisbane.flac:90e45d6687de8dc439d4460da6c2fb23
+07 2001-03-30 Brisbane.flac:51c9161dbde0b8b4e7f6fec4d3580757
+08 2001-03-30 Brisbane.flac:cb052ff586a486320da7c9677f9988c6
+09 2001-03-30 Brisbane.flac:0f5331b864c16802eedf3b0a3125756d
+10 2001-03-30 Brisbane.flac:59c22b653c6e7969034620b9a9d379dd
+11 2001-03-30 Brisbane.flac:31048141d5f9f5af78398fedd14d105b
+12 2001-03-30 Brisbane.flac:ae80b3b411f094be1b77a1e3d1a6bce9
+13 2001-03-30 Brisbane.flac:9d85c416167f69c46d9f5503c39624b7
+14 2001-03-30 Brisbane.flac:e6c95712740cb8bb887f55f22691b627
+15 2001-03-30 Brisbane.flac:69d231b85b3627638a95f10652d1fd1d
+16 2001-03-30 Brisbane.flac:b8f51d5e05f3192d2db74028bf42be3d
+17 2001-03-30 Brisbane.flac:44a9cd8cc9d22bb4286eba691afaeb34
+18 2001-03-30 Brisbane.flac:64d102968b462d9f3239ed144984be9c
+19 2001-03-30 Brisbane.flac:80af1ea2275489cec4505fc7abe9d96a
+20 2001-03-30 Brisbane.flac:bffbcdeb6a35a66ba6fd6562d7d06192
+===================
+===================
+===================
+=== shntool len for: bd01-03-30-audiowhore-remix.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:25.27        4472624 B   -b-   --   ---xx   flac  0.5938  01 2001-03-30 Brisbane.flac
+     3:11.11       33718064 B   -b-   --   ---xx   flac  0.6960  02 2001-03-30 Brisbane.flac
+     6:37.05       70042120 B   -b-   --   ---xx   flac  0.6207  03 2001-03-30 Brisbane.flac
+     8:05.37       85640520 B   -b-   --   ---xx   flac  0.5764  04 2001-03-30 Brisbane.flac
+     6:19.27       66918416 B   -b-   --   ---xx   flac  0.6311  05 2001-03-30 Brisbane.flac
+     8:34.44       90773328 B   -b-   --   ---xx   flac  0.5965  06 2001-03-30 Brisbane.flac
+     7:34.15       80119848 B   -b-   --   ---xx   flac  0.6634  07 2001-03-30 Brisbane.flac
+     5:24.71       57320660 B   -b-   --   ---xx   flac  0.5892  08 2001-03-30 Brisbane.flac
+     9:03.25       95845212 B   -b-   --   ---xx   flac  0.5954  09 2001-03-30 Brisbane.flac
+     5:24.39       57246024 B   -b-   --   ---xx   flac  0.5811  10 2001-03-30 Brisbane.flac
+     6:40.43       70660348 B   -b-   --   ---xx   flac  0.6705  11 2001-03-30 Brisbane.flac
+     4:05.32       43293372 B   -b-   --   ---xx   flac  0.6925  12 2001-03-30 Brisbane.flac
+     8:19.58       88159232 B   -b-   --   ---xx   flac  0.6542  13 2001-03-30 Brisbane.flac
+     5:49.31       61636216 B   -b-   --   ---xx   flac  0.6147  14 2001-03-30 Brisbane.flac
+     7:19.09       77461604 B   -b-   --   ---xx   flac  0.6754  15 2001-03-30 Brisbane.flac
+     3:55.50       41572796 B   -b-   --   ---xx   flac  0.5345  16 2001-03-30 Brisbane.flac
+     4:40.26       49453088 B   -b-   --   ---xx   flac  0.6601  17 2001-03-30 Brisbane.flac
+     7:34.51       80204928 B   -b-   --   ---xx   flac  0.6253  18 2001-03-30 Brisbane.flac
+     5:30.74       58385704 B   -b-   --   ---xx   flac  0.6935  19 2001-03-30 Brisbane.flac
+     5:37.62       59592668 B   ---   --   ---xx   flac  0.6275  20 2001-03-30 Brisbane.flac
+   120:13.61     1272516772 B                            0.6293  (20 files)
+===================
+===================
+===================

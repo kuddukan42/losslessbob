@@ -1,0 +1,79 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-06-27-d.flacf 
+=================== 
+=================== 
+=================== 
+df2eb2d9b1a2d79c24e3d5ad5fce2dcc  bd1993-06-27 milan.md5
+0b263f70485dabe961c4a30ca24111e1  bd1993-06-27 milan.txt
+4e816d68f92a7df23e69f3cdb3d031f8  BD93-06-27D101.shn
+946fdbd06996ce8a8aba0d009245d634  BD93-06-27D102.shn
+c63c214cd241200c7f9b81043056aae5  BD93-06-27D103.shn
+24adf541c79e04d5a008c70fe48498f5  BD93-06-27D104.shn
+3d4227e34099ea4a9e796e276e99e726  BD93-06-27D105.shn
+29be408c6430d2810f7a95b167a305bc  BD93-06-27D106.shn
+f468f105d9859f00e6a428105e198f27  BD93-06-27D107.shn
+615a6246db5f488e733d2dac970b0670  BD93-06-27D108.shn
+27bb52bc8501645f9582dafd93491681  BD93-06-27D109.shn
+049d6b213e51b555138c799772f325e3  BD93-06-27D110.shn
+873f3c5d94e4c59724fbcb9269c5353d  BD93-06-27D201.shn
+b5554ae6cfabd0501f5c8bd739e4f41a  BD93-06-27D202.shn
+54d0f13a632cfeb7cd130b5fbc8b0b33  BD93-06-27D203.shn
+fa80aaa712489d13ed64fd9dc615a4dc  BD93-06-27D204.shn
+3a70a8d0499a3fbfbe6ac3f48736b4a9  BD93-06-27D205.shn
+8dcb9b6262bcf1a9e8bf1c846a137f9c  BD93-06-27D206.shn
+1e984821ac6268e59d09508bcf2dfc90  BD93-06-27D207.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd93-06-27-d.flacf 
+=================== 
+=================== 
+=================== 
+8c8174bbe46e654314c7fbad3bac2dd9  [shntool]  bd93-06-27d101.wav
+983de5321fe1f070f4d73dcf2c101466  [shntool]  bd93-06-27d102.wav
+a5a3f9908abaaac812b25a9f1a9548d4  [shntool]  bd93-06-27d103.wav
+48aa51cd14c97f307625833e7a52a775  [shntool]  bd93-06-27d104.wav
+0eecf46facb82fe740cdcf3300fec588  [shntool]  bd93-06-27d105.wav
+3a465fc2f4ca5ec4f94f3da6deece88d  [shntool]  bd93-06-27d106.wav
+a254cb8e3b9547673a9380e3d116e1d4  [shntool]  bd93-06-27d107.wav
+ed056f20bfc15f3ffc0c4e716a699b9a  [shntool]  bd93-06-27d108.wav
+35c0e7013baa7f30fbd73db2e6faee58  [shntool]  bd93-06-27d109.wav
+d08f29e575860ad7cb447679b41f1ac4  [shntool]  bd93-06-27d110.wav
+2f228cfbb711ec507058a81a3ccaec88  [shntool]  bd93-06-27d201.wav
+073ceeb8670df5bd5cebd12506315b21  [shntool]  bd93-06-27d202.wav
+b47ec5f99b1b1879979931856659603c  [shntool]  bd93-06-27d203.wav
+343818bdee4d9287049abe091d182a02  [shntool]  bd93-06-27d204.wav
+3414880aa8c9fc4e13d289be0d9c6701  [shntool]  bd93-06-27d205.wav
+f285664200f6bdfbd8e43fa749a54fb4  [shntool]  bd93-06-27d206.wav
+afad3520d59fa4b81442b2be1a7f95fb  [shntool]  bd93-06-27d207.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-06-27-d.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:00.41       63600476 B   ---   --   ---xx    shn  0.5026  BD93-06-27D101.shn
+     8:41.29       91972652 B   ---   --   ---xx    shn  0.5845  BD93-06-27D102.shn
+     7:00.18       74130380 B   ---   --   ---xx    shn  0.5947  BD93-06-27D103.shn
+     8:30.37       90051068 B   ---   --   ---xx    shn  0.5639  BD93-06-27D104.shn
+    11:58.44      126758732 B   ---   --   ---xx    shn  0.5866  BD93-06-27D105.shn
+     8:06.04       85739852 B   ---   --   ---xx    shn  0.5731  BD93-06-27D106.shn
+     6:06.03       64569500 B   ---   --   ---xx    shn  0.5479  BD93-06-27D107.shn
+     6:20.43       67133180 B   ---   --   ---xx    shn  0.4669  BD93-06-27D108.shn
+     4:40.30       49462604 B   ---   --   ---xx    shn  0.4958  BD93-06-27D109.shn
+     9:57.20      105357884 B   ---   --   ---xx    shn  0.5115  BD93-06-27D110.shn
+     7:17.10       77110364 B   ---   --   ---xx    shn  0.5287  BD93-06-27D201.shn
+     5:34.26       58978796 B   ---   --   ---xx    shn  0.6195  BD93-06-27D202.shn
+     9:00.46       95364236 B   ---   --   ---xx    shn  0.5745  BD93-06-27D203.shn
+    10:08.54      107378252 B   ---   --   ---xx    shn  0.5304  BD93-06-27D204.shn
+     9:25.32       99741308 B   ---   --   ---xx    shn  0.5500  BD93-06-27D205.shn
+     8:52.20       93891884 B   ---   --   ---xx    shn  0.4952  BD93-06-27D206.shn
+    14:08.36      149671916 B   ---   --   ---xx    shn  0.4853  BD93-06-27D207.shn
+   141:48.43     1500913084 B                            0.5412  (17 files)
+=================== 
+=================== 
+=================== 

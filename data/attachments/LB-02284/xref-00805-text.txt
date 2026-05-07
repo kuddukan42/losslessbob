@@ -1,0 +1,75 @@
+===================
+===================
+===================
+=== 2002 Oberhausen.txt
+===================
+===================
+===================
+Artist: Bob Dylan -  27/April/2002
+Venue: Oberhausen Arena - Germany
+Transfer: CDR > EAC (secure/offset correct) > WAV > Flac Frontend (level 8) align on sector boundaries > Flac 
+Sound: Aud
+Size: 818 MiB Flac 
+
+enjoy!
+
+
+Disc one
+01 Humming Bird 
+02 You're A Big Girl Now 
+03 Desolation Row 
+04 Don't Think Twice, It's All Right 
+05 Watching The River Flow 
+06 Positively 4th Street
+07 Cry A While 
+08 Subterranean Homesick Blues 
+09 Tomorrow Is A Long Time 
+10 Masters Of War 
+11 Tangled Up In Blue 
+(72:57)
+
+Disc two
+01 Summer Days 
+02 Every Grain Of Sand 
+03 Drifter's Escape
+04 Leopard-Skin Pill-Box Hat
+05 Things Have Changed
+06 Like A Rolling Stone
+07 If Dogs Run Free
+08 Honest With Me 
+09 Blowin' In The Wind 
+(71:58)
+
+********* Share The Music ********* 
+===================
+===================
+===================
+=== 2002.04.27 Arena, Oberhausen, Germany.md5
+===================
+===================
+===================
+1fef74ca10edc2fb9d99c07a6f30b0d1 *2002 Oberhausen.txt
+ec9e6a020040aa3279fae4475814a19a *d1\Track01.flac
+9a4ee3bd8a8f64b4a668e4f4b4ed8f4e *d1\Track02.flac
+89016910faa96cd65c8b8578cc8a603b *d1\Track03.flac
+23da02aeb96f6dd89cefa5587a54352d *d1\Track04.flac
+3c2331bad0131a64cf3cb52e44113be0 *d1\Track05.flac
+c9d68ad84566047e4256387f4d431059 *d1\Track06.flac
+d67dadddc5a8bb6b88700386c617e802 *d1\Track07.flac
+94cb8d21767ae23861acfa8f9d14913d *d1\Track08.flac
+57515bc6c1bce4ddbe36fc292ae40581 *d1\Track09.flac
+3dee7383427bebca405868e364149fbc *d1\Track10.flac
+b00ec1f464779092f69ad754b67b5d6a *d1\Track11.flac
+a82cf288f788f9f3e057751e0e83b9f9 *d1\Track12.flac
+7c1b6065afafba44e9f1c834ce6af2a6 *d2\Track01.flac
+61f7e98be76dd8ce7a17babec6428ad0 *d2\Track02.flac
+024f698a23321ff09fb404113489b260 *d2\Track03.flac
+40ff78d0a17cad7beed417ee2c3e40cc *d2\Track04.flac
+37bca24402f281fcf129c0f4703f59d4 *d2\Track05.flac
+d95f0631c8c4e8235a5e9bc990140c09 *d2\Track06.flac
+2d4d408918aec76c209b5c99961aeb90 *d2\Track07.flac
+babec93e829a08eaf8203724928f206f *d2\Track08.flac
+d40b453735993d581fea76d555c7d613 *d2\Track09.flac
+===================
+===================
+===================

@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-21a.flacf 
+=================== 
+=================== 
+=================== 
+d9a216cb8d3db749077d4b67f023d5b6  bd1988-06-21 info.txt
+057f17c6bb702d529981f097c22b956f  bd1988-06-21.flac Cuyahoga Falls, OH.ffp
+16f58a5083d5cf3d4c655bf5897240f6  bd1988-06-21.flac Cuyahoga Falls, OH.st5
+68af794f9f17e763fb95094c761f2107  bd1988-06-21d1t06fa.PNG
+47b6ac3e2e866bc86199916adef50a6d  bd1988-06-21d1t06sa.PNG
+6ac642251999ca21a7e7882d5523f66a  bd1988-06-21d2t04fa.PNG
+9fa1ab9cea1d5e679b4744c2817d08eb  bd1988-06-21d2t04sa.PNG
+6778a5107e03a78e0069a5913352734c  bd88-06-21a-LB-4102.txt
+764a3dc2cf15c5d66d6ceb6d38ed29f1  d1\bd1988-06-21d1.LOG
+8eeb0e8d342693d7a8d1d5e113bfc8b0  d1\bd1988-06-21d1t01.flac
+7c80c11fd75dab3898db655b4c07c635  d1\bd1988-06-21d1t02.flac
+f48d35a91164f321964ce737391abe2b  d1\bd1988-06-21d1t03.flac
+893b8de41455da59b07217e6e1c7b65b  d1\bd1988-06-21d1t04.flac
+708fe351e3b45da540ac817018cb76b1  d1\bd1988-06-21d1t05.flac
+bf5a2c5b4eadd9573a2f39db6d7aa7fe  d1\bd1988-06-21d1t06.flac
+97823675f2ce48f9f4bdecf8a4e9c84b  d1\bd1988-06-21d1t07.flac
+3386fb10364c19b3706ce33a579700b1  d1\bd1988-06-21d1t08.flac
+9b71436d285d81fd1155ea885b754b88  d1\d1.shntool.txt
+33bcd8e9f95c17f6d7a54b597eb143a2  d2\bd1988-06-21d2.LOG
+fe0d81f64379a547736454b5aabee5f8  d2\bd1988-06-21d2t01.flac
+07a35852db38906c57d819dfefbed9e9  d2\bd1988-06-21d2t02.flac
+cd120e6ff39969e0872f791729749eb4  d2\bd1988-06-21d2t03.flac
+73fc807cb55ed32684c6e751d3662f84  d2\bd1988-06-21d2t04.flac
+436c5ee6ef5a8c496c10f96c9ee26dd7  d2\bd1988-06-21d2t05.flac
+074248062682b0b308a3dd35c09a2872  d2\bd1988-06-21d2t06.flac
+67ec94de29cd58b2c15dd1ed8ea501b8  d2\bd1988-06-21d2t07.flac
+94942858cb7cc3333e1e0cd0b286c57f  d2\d2.shntool.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-21a.flacf\d1 
+=================== 
+=================== 
+=================== 
+bd1988-06-21d1t01.flac:57b5a2897a0ce5827f0cde332534f6e3
+bd1988-06-21d1t02.flac:838f050619b2262ccfb50a55cf5e7626
+bd1988-06-21d1t03.flac:62643f4af33d16e4a1c349a46c77421e
+bd1988-06-21d1t04.flac:fc3133ca5356f09e52b6336d5f266c67
+bd1988-06-21d1t05.flac:af610c2b17cb94aa1f9cf0423b839354
+bd1988-06-21d1t06.flac:6c2ef14719fd40ee597ede1aa394ca11
+bd1988-06-21d1t07.flac:e811a6454eff5dbde55c0a1a15aa48d4
+bd1988-06-21d1t08.flac:469ad7b067fb8de1f1f37d4a63705ec6
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-21a.flacf\d2 
+=================== 
+=================== 
+=================== 
+bd1988-06-21d2t01.flac:c1f6348f48caec37b29a9000e7a59f3d
+bd1988-06-21d2t02.flac:a202aa2b57267aa4ab52f5dc40fa8263
+bd1988-06-21d2t03.flac:d2440c51e7b5328820bfdf6342e29813
+bd1988-06-21d2t04.flac:cfb450d01474b9fdaec4c9ad101d4821
+bd1988-06-21d2t05.flac:9cac65e63eeb9de0cc6db3a4a2704685
+bd1988-06-21d2t06.flac:fb4e06f19d6764a9050444a0e6893d13
+bd1988-06-21d2t07.flac:474e0a07b6a27df0d27c7c799fd9a733
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-21a.flacf\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.19       43791932 B   ---   --   ---xx   flac  0.6502  bd1988-06-21d1t01.flac
+     5:56.35       62880764 B   ---   --   ---xx   flac  0.6070  bd1988-06-21d1t02.flac
+     5:15.15       55601324 B   ---   --   ---xx   flac  0.6596  bd1988-06-21d1t03.flac
+     5:38.00       59623244 B   ---   --   ---xx   flac  0.6192  bd1988-06-21d1t04.flac
+     6:23.25       67620044 B   ---   --   ---xx   flac  0.6527  bd1988-06-21d1t05.flac
+     4:34.20       48380684 B   ---   --   ---xx   flac  0.6454  bd1988-06-21d1t06.flac
+     4:29.30       47522204 B   ---   --   ---xx   flac  0.6510  bd1988-06-21d1t07.flac
+     8:13.47       87075788 B   ---   --   ---xx   flac  0.6336  bd1988-06-21d1t08.flac
+    44:38.41      472495984 B                            0.6385  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-21a.flacf\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:02.01       53275196 B   ---   --   ---xx   flac  0.6266  bd1988-06-21d2t01.flac
+     4:06.35       43476764 B   ---   --   ---xx   flac  0.6509  bd1988-06-21d2t02.flac
+     4:13.00       44629244 B   ---   --   ---xx   flac  0.6311  bd1988-06-21d2t03.flac
+     9:17.45       98360684 B   ---   --   ---xx   flac  0.6361  bd1988-06-21d2t04.flac
+     4:11.00       44276444 B   ---   --   ---xx   flac  0.6668  bd1988-06-21d2t05.flac
+     5:41.55       60281804 B   ---   --   ---xx   flac  0.6162  bd1988-06-21d2t06.flac
+     6:09.45       65197484 B   ---   --   ---xx   flac  0.6616  bd1988-06-21d2t07.flac
+    38:41.31      409497620 B                            0.6403  (7 files)
+=================== 
+=================== 
+=================== 

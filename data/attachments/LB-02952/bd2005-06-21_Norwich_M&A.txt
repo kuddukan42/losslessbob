@@ -1,0 +1,74 @@
+Bob Dylan and his Band
+Norwich, Connecticut
+Thomas J. Dodd Memorial Stadium
+June 21, 2005
+
+AUDIENCE recording by M&A
+
+MBHO 603a > Lunatech V-3 > Sony-D100 > Audio CDs from M&A
+(wav encoded to FLAC with xACT 1.4b24)
+
+Disc 1  53:29
+1.      Intro    0:43
+2.	Drifter's Escape   5:21
+3.	Love Minus Zero/No Limit  6:49
+4.	Lonesome Day Blues  6:42
+5.	Shooting Star  6:17
+6.	Cold Irons Bound  5:45
+7.	Standing In The Doorway  7:22
+8.	Highway 61 Revisited  8:36
+9.	John Brown (acoustic)  5:52
+
+Disc 2  41:40
+1.	Stuck Inside Of Mobile With The Memphis Blues Again  8:55
+2.	Mississippi   5:46
+3.	Bye And Bye   6:21
+4.	Summer Days  8:10
+(encore - one second pause at edit)
+5.	Masters Of War  5:35
+6.	Like A Rolling Stone  6:51
+ 	 
+Band Members
+Bob Dylan - keyboard, harp
+Stu Kimball - lead guitar
+Denny Freeman - guitar
+Donnie Herron - electric mandolin, pedal steel, lap steel
+Tony Garnier - bass
+George Recile - drums
+
+flac.ffp.txt
+bd2005-06-21d1t01.flac:3669f2b85b1422fa79d407beaf782419bd2005-06-21d1t02.flac:30061655c0ffcf75b6307946990033a3bd2005-06-21d1t03.flac:b111e01bee894a1818d235d8bda74c1bbd2005-06-21d1t04.flac:fd239b5df74c5c14a406e355a40ce7c8bd2005-06-21d1t05.flac:914e345ada175996f0cbd2a828d2fed3bd2005-06-21d1t06.flac:e40756c6ce590abf7b62fb68c37e07b1bd2005-06-21d1t07.flac:977d063b70ac9463bff3e264f1af2591bd2005-06-21d1t08.flac:e95a63bed909be9563e45a20ef3eef98bd2005-06-21d1t09.flac:3b7fd6564047d25415cf06cea1b99266bd2005-06-21d2t01.flac:3722619ae3b8a47b17e29640cd5ed381bd2005-06-21d2t02.flac:f4739ec529c7bbac4b1474873fd847b7bd2005-06-21d2t03.flac:8151dd314869d91b03d6b58b4094ef1abd2005-06-21d2t04.flac:e319fafddb3d81e1767bf5cf18319f03bd2005-06-21d2t05.flac:cd0124e007e04315dc20adbf4e9c5525bd2005-06-21d2t06.flac:52c846ccd31e20f076b248a9880de352
+
+flac.md5
+e4634aafd4bcde7c3a30eeb61c537ed9 *bd2005-06-21d2t06.flac
+a5dec949c1ff511ce45949349aa8eb5c *bd2005-06-21d2t05.flac
+f52f410abc1265d19f0d58726ab95acd *bd2005-06-21d2t04.flac
+20265beda5f319c92ee1f3783d171ce8 *bd2005-06-21d2t03.flac
+7687e48f3f846ecbd2ecc68b90625476 *bd2005-06-21d2t02.flac
+129305abcf3ebdabb254097a534e478b *bd2005-06-21d2t01.flac
+e75aa3493ae5a2f3d5357cc8228ed0bb *bd2005-06-21d1t09.flac
+0522dcebde09c09e9c2020eda39f6776 *bd2005-06-21d1t08.flac
+9c6bdb328390cde8b38e87e438f60563 *bd2005-06-21d1t07.flac
+f8c26ab94f277e18c7246235b9872535 *bd2005-06-21d1t06.flac
+7f185660d7d58d5e6d0002e8c1c1f8ab *bd2005-06-21d1t01.flac
+e92c33c49e7bcd304d0fd95344bb2c44 *bd2005-06-21d1t03.flac
+b520323e6a1928d99d75df6ac37a703b *bd2005-06-21d1t02.flac
+35afacc7f66f2015090ce48a5683dce4 *bd2005-06-21d1t05.flac
+51f659fa156f47fca5e1e7cd3dfb0b15 *bd2005-06-21d1t04.flac
+
+wav.md5
+928a1da612e1f285e17733eec79f1ffc *bd2005-06-21d1t01.wav
+ebaa4046540fedb7567a7455be7a0da4 *bd2005-06-21d1t02.wav
+2974b90714a7ebe3318b424bdb88498d *bd2005-06-21d1t03.wav
+53c9e9778a6c35d61cd4e0bc0b438921 *bd2005-06-21d1t04.wav
+bb09e90755e3404537c97b49e238de97 *bd2005-06-21d1t05.wav
+c00d2a344161bd09c837e38a1830e2bd *bd2005-06-21d1t06.wav
+f32c17ac9d6eaf236dfbeb33edab033b *bd2005-06-21d1t07.wav
+c32de19784f4df6266261de080158d62 *bd2005-06-21d1t08.wav
+db159a2ad504bb0b97f24351563e9e68 *bd2005-06-21d1t09.wav
+30d32f21b2ab3febf4c39029b032a26d *bd2005-06-21d2t01.wav
+6fbcf0074617018409e92d05f748c99d *bd2005-06-21d2t02.wav
+08a2baec9ab85f99fbdba3351e71422d *bd2005-06-21d2t03.wav
+03a4b5e042a4abd4a6a3666ba693ab1f *bd2005-06-21d2t04.wav
+890c6037a6b91bcb76df9f94fb160032 *bd2005-06-21d2t05.wav
+077bde605409faaa58be5de14587f91e *bd2005-06-21d2t06.wav

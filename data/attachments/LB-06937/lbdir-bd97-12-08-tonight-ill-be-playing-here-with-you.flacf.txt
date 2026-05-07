@@ -1,0 +1,75 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd97-12-08-tonight-ill-be-playing-here-with-you.flacf 
+=================== 
+=================== 
+=================== 
+835b05dfa3684178235c569edc09476f  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t01.flac
+694a4c72e70db03bbd08ad0a95e2992c  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t02.flac
+e4b0d82e0c70ccbd64f49b6b80fcefaa  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t03.flac
+9bf2eebb7fb1af5095be9a7e675b1e90  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t04.flac
+7878667d2afaeffd198b3464cb151010  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t05.flac
+20992b0cc6e5a23a591cb227eaa5113e  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t06.flac
+b86ba1831c0d72f2cf411781d8d5a212  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t07.flac
+a1aef4fd719aca08a48e6ebd1cb57825  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t08.flac
+81100c84197f0695bf6281186782d384  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t01.flac
+2494d0a7a9e99ab4059aca61481ce947  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t02.flac
+e417a6fde1d18c174b843be9d4b0b30b  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t03.flac
+b0b37ec0d38ae8eec163caf185407af7  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t04.flac
+7092b2b36672ecc77e12e9f014c34469  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t05.flac
+0680cc825559c4e7ea3f96ba68163f1f  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t06.flac
+d46b8b0b2aa57405d2b371f2f521e52e  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t07.flac
+2ce11a36898214d9bbbc02892376de8e  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t08.flac
+62ef5b4bc8757496642d33d9f7766b16  bd97-12-08-tonight-ill-be-playing-here-with-you.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd97-12-08-tonight-ill-be-playing-here-with-you.flacf 
+=================== 
+=================== 
+=================== 
+bd97-12-08-tonight-ill-be-playing-here-with-you-d1t01.flac:34db5edd27be53441fe823b6e9394ce1
+bd97-12-08-tonight-ill-be-playing-here-with-you-d1t02.flac:5f16ab1f591a426c2ff5b1de5e9c95eb
+bd97-12-08-tonight-ill-be-playing-here-with-you-d1t03.flac:4918a660ed51620660b852d4d7fbf1df
+bd97-12-08-tonight-ill-be-playing-here-with-you-d1t04.flac:39ef9004a7246a057ff22131ff9d2926
+bd97-12-08-tonight-ill-be-playing-here-with-you-d1t05.flac:a8ccb20a545167e7550b7cf4ec186698
+bd97-12-08-tonight-ill-be-playing-here-with-you-d1t06.flac:bdd0d35949252b063e16516942413c41
+bd97-12-08-tonight-ill-be-playing-here-with-you-d1t07.flac:78fdf3a386f7d61666230e7bd928f3a7
+bd97-12-08-tonight-ill-be-playing-here-with-you-d1t08.flac:4ea5aad71bb9f1f999e0ccd9fa54016c
+bd97-12-08-tonight-ill-be-playing-here-with-you-d2t01.flac:868677dc4091533eeca1d11f6ea42117
+bd97-12-08-tonight-ill-be-playing-here-with-you-d2t02.flac:5b2e807fab0f121e2daf54c209fe82cb
+bd97-12-08-tonight-ill-be-playing-here-with-you-d2t03.flac:330524405463eddc57e817ac1d64a679
+bd97-12-08-tonight-ill-be-playing-here-with-you-d2t04.flac:2fb741d39ad45f59c42e744424ed69f4
+bd97-12-08-tonight-ill-be-playing-here-with-you-d2t05.flac:50d25ee4d4864d304aaa3d4d4f52f54e
+bd97-12-08-tonight-ill-be-playing-here-with-you-d2t06.flac:7f2f0a06cab2e74e0c9dd7cadd4144dc
+bd97-12-08-tonight-ill-be-playing-here-with-you-d2t07.flac:5269d61ea5837191f6c07a3135952128
+bd97-12-08-tonight-ill-be-playing-here-with-you-d2t08.flac:40fe2f86db32f1c12279d3dfaf19cd4e
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd97-12-08-tonight-ill-be-playing-here-with-you.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:56.56       62930156 B   ---   --   ---xx   flac  0.6446  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t01.flac
+     5:46.37       61121468 B   ---   --   ---xx   flac  0.5906  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t02.flac
+     6:56.09       73403612 B   ---   --   ---xx   flac  0.5782  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t03.flac
+     5:44.38       60771020 B   ---   --   ---xx   flac  0.5299  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t04.flac
+     6:15.51       66269996 B   ---   --   ---xx   flac  0.5766  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t05.flac
+     6:40.11       70585916 B   ---   --   ---xx   flac  0.6021  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t06.flac
+     5:19.66       56426876 B   ---   --   ---xx   flac  0.4749  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t07.flac
+     6:06.31       64635356 B   ---   --   ---xx   flac  0.5235  bd97-12-08-tonight-ill-be-playing-here-with-you-d1t08.flac
+     9:09.43       96944780 B   ---   --   ---xx   flac  0.6028  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t01.flac
+     4:57.23       52444940 B   ---   --   ---xx   flac  0.4810  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t02.flac
+     7:44.26       81910796 B   ---   --   ---xx   flac  0.5486  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t03.flac
+     8:00.13       84702620 B   ---   --   ---xx   flac  0.5355  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t04.flac
+    10:05.05      106733804 B   ---   --   ---xx   flac  0.5662  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t05.flac
+     5:55.25       62680844 B   ---   --   ---xx   flac  0.5415  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t06.flac
+     5:22.35       56883164 B   ---   --   ---xx   flac  0.5160  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t07.flac
+     4:47.10       50650364 B   ---   --   ---xx   flac  0.5956  bd97-12-08-tonight-ill-be-playing-here-with-you-d2t08.flac
+   104:47.29     1109095712 B                            0.5595  (16 files)
+=================== 
+=================== 
+=================== 

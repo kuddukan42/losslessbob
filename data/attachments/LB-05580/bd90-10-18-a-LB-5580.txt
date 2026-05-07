@@ -1,0 +1,12 @@
+Bob Dylan, 10/18/90, New York City, New York, The Beacon Theatre, 2CDR
+
+LB-5580, (44min+43min), version "a"; Size:568MB, Bittorrent download 08/2006. Thanks a lot to Shinsuke, kind seeder from whom I got this one at Dime., I didn't clean every bit of it but made some casual small repair I'm gonna not specify so accurately but for the most relevant changes., digipops d1t05 @ 5:26.594,5:35.194 & 5:36.447 cleaned up; pop d1t10 @ 3:02.580 removed., To my good friend Valentin, filling one more of his always interesting requests., Enjoy!, Luisbp51 (Hungercity December 2007), Lineage: Trade > CDR > Wav > FLAC(Level:8) > me > wav (Flac Frontend 1.1.3) > wav (Adobe Audition 1.0 - clean up) > flac (Flac Frontend 1.1.3 - align on sb option - level 8 - verify on), JF recording (same as LB-1182); bittorrent download 12/07; close eac match to LB-1182 on d1t1 with indicated flaws repaired; (did not listen to all of this)
+
+Tracklist:, CD1
+[43:37.879], 01. Intro [0:40.586], 02. Dixie (Daniel Decatur Emmett) (instrumental) [0:56.653], 03. Subterranean Homesick Blues [3:29.280], 04. I'll Remember You [4:06.253], 05. Ballad Of A Thin Man [5:40.639], 06. Gotta Serve Somebody [5:23.866], 07. Masters Of War [4:43.333], 08. Joey (Bob Dylan & Jacques Levy) [8:16.560], 09. Don't Think Twice, It's All Right [5:57.813], 10. Gates Of Eden [4:22.892], 
+
+CD2
+[42:16.826], 01. Desolation Row [5:11.813], 02. It Ain't Me, Babe [5:37.106], 03. Wiggle Wiggle [2:46.453], 04. Shooting Star [3:30.586], 05. All Along The Watchtower [3:01.093], 06. I Believe In You [4:39.133], 07. Like A Rolling Stone [6:23.960], 08. The Times They Are A-Changin' [6:20.826], 09. Highway 61 Revisited [6:11.813]
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

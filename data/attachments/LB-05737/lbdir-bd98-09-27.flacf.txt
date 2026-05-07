@@ -1,0 +1,87 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-09-27.flacf 
+=================== 
+=================== 
+=================== 
+5386d399e09adac3d2551db8e9082c9c  bd98-09-27-d1\bd98-09-27-d1.md5
+3beb47f9ad44e9aaf6bee285b8f3cf80  bd98-09-27-d1\Track01.flac
+42e4a9e91e3419e08ad2f95040a2c191  bd98-09-27-d1\Track02.flac
+93a82329cacc5d4220a841d4a6d2e02c  bd98-09-27-d1\Track03.flac
+b2039534a3166fc87d1aaba4d0d6db19  bd98-09-27-d1\Track04.flac
+44c0988923dccd0b5ba0eb32d3b10bcd  bd98-09-27-d1\Track05.flac
+c3db2ec36a29bd94f8d9cf6d7090f699  bd98-09-27-d1\Track06.flac
+7ff5744962d0a6aed02bd1bd7a0cb080  bd98-09-27-d1\Track07.flac
+18c2a8130cef6bd750f4ea371e2457d0  bd98-09-27-d2\bd98-09-27-d2.md5
+e8a4b756c7042a55c34e8f90116a8257  bd98-09-27-d2\Track01.flac
+675d9252a2f0b1e26e7a19cc15fe9c60  bd98-09-27-d2\Track02.flac
+12d7fe055501ddf6616b9fa4e266e756  bd98-09-27-d2\Track03.flac
+010aa0965762d199d1017e75f776848d  bd98-09-27-d2\Track04.flac
+9f10cfc88599c64a4b6ae774598c623e  bd98-09-27-d2\Track05.flac
+5d5adbcb0cab16573cd807af6c61f3a8  bd98-09-27-d2\Track06.flac
+9427b150a5d3c2560b391678a2d7d678  bd98-09-27-d2\Track07.flac
+c15024e2185bd2715fbe47a33e95dd2b  bd98-09-27-Reno.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-09-27.flacf\bd98-09-27-d2 
+=================== 
+=================== 
+=================== 
+Track01.flac:34a94aa22c5bdb1c425bfa16c9119a11
+Track02.flac:9323a185e84fcd85dc014f65e17063fd
+Track03.flac:bb25edd9066c51bcccbdd3dda05c778a
+Track04.flac:5ecf0e9386b92947b9a9a433e4ea1781
+Track05.flac:0c073b6a369166be62dca5c771af1840
+Track06.flac:5786e1b88bf06d1fed9b04a41dc2209c
+Track07.flac:a1e1a3411b80bbac917a49ae0494bb67
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-09-27.flacf\bd98-09-27-d1 
+=================== 
+=================== 
+=================== 
+Track01.flac:ac57929cce941807a21e6ffcd14b8c4f
+Track02.flac:abee444a90b669f73dafda7c393dc1ad
+Track03.flac:755f9eda483e4064a3ebfb52c19f23d1
+Track04.flac:d3854587bd034cd752e4b0f74ea9ffcd
+Track05.flac:b347ef62b1c34848142cfd6151ba8635
+Track06.flac:c956ecd224cce47b6f1c8f35037d9eb8
+Track07.flac:9dd18bbdd874ed83b3596f469c504f88
+=================== 
+=================== 
+=================== 
+=== shntool for: bd98-09-27.flacf\bd98-09-27-d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:33.44       90596732 B   ---   --   ---xx   flac  0.5631  Track01.flac
+     7:38.40       80885324 B   ---   --   ---xx   flac  0.6763  Track02.flac
+     4:23.17       46433228 B   ---   --   ---xx   flac  0.4984  Track03.flac
+     6:06.10       64585964 B   ---   --   ---xx   flac  0.5946  Track04.flac
+     6:08.30       64985804 B   ---   --   ---xx   flac  0.4992  Track05.flac
+     4:25.42       46844828 B   ---   --   ---xx   flac  0.5557  Track06.flac
+     5:40.39       60067772 B   ---   --   ---xx   flac  0.5001  Track07.flac
+    42:55.72      454399652 B                            0.5629  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd98-09-27.flacf\bd98-09-27-d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:08.59       43886012 B   ---   --   ---xx   flac  0.5452  Track01.flac
+     4:02.39       42780572 B   ---   --   ---xx   flac  0.4929  Track02.flac
+     6:58.28       73801100 B   ---   --   ---xx   flac  0.5229  Track03.flac
+     5:22.50       56918444 B   ---   --   ---xx   flac  0.5103  Track04.flac
+     5:30.43       58313180 B   ---   --   ---xx   flac  0.5355  Track05.flac
+     6:45.34       71522012 B   ---   --   ---xx   flac  0.5522  Track06.flac
+     5:17.47       56029388 B   ---   --   ---xx   flac  0.5072  Track07.flac
+    38:06.00      403250708 B                            0.5252  (7 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,220 @@
+===================
+===================
+===================
+=== 1997-04-07 Aitken Center, University of New Brunswick, Fredericton, New Brunswick, Canada [Holy Grail.md5
+===================
+===================
+===================
+1de38c5834c6745ba836e0da97f9386c *CD1\01 Crash on the levee (down in the flood).flac
+a8cf9de2e2fce71ffb7a343bb1b8dc8b *CD1\02 Tonight I'll be staying here with you.flac
+d1ce84ddcc9372899340e90d777d8223 *CD1\03 All along the watchtower.flac
+ed332d1ddf22572cdbb3ecfea78a3eac *CD1\04 Under the red sky.flac
+90991614cfa02bd0459f327d78f698df *CD1\05 Most likely you go your way (and I'll go mine).flac
+9277da173bf23fe97ac394feab96db42 *CD1\06 Silvio.flac
+fb30282691fe240584f54dbb08aa318a *CD1\07 Oh baby it ain't no lie.flac
+6fcef17f00b6f351dd5df6594c47b581 *CD1\08 Masters of war.flac
+82182189d24887dcd276fb850ad62158 *CD1\09 It's all over now, baby blue.flac
+2fa7fa77856a4121a78bab018f2a7ba7 *CD1\CD1.shntool_len.txt
+24b63ac6c5cb6dd12ee090c93cc4aa80 *CD1\ffpCD1.ffp
+24b63ac6c5cb6dd12ee090c93cc4aa80 *CD1\ffpCD1.txt
+acdeb3d7ab9344939390df7d4a8b32d3 *CD2\10 Seeing the real you at last.flac
+9523473516c42986e1f814fb9dcc7ffa *CD2\11 I and I.flac
+f413dc97fe70cb1d1b20f1f8be1f9285 *CD2\12 Highway 61 revisited.flac
+bab09def124343f497e29d63167eda7d *CD2\13 Like a rolling stone.flac
+0c5cbeea897e98bdfd017ce19fbd8537 *CD2\14 The times they are a-changin'.flac
+207b3ca300ddf2cf587081a5b0992c4a *CD2\15 Rainy day women # 12 & 35.flac
+6b1e06ff6a59b65cdabad113f08df119 *CD2\CD2.shntool_len.txt
+1bac688b63ca046b51bd73384a735b7f *CD2\ffpCD2.ffp
+1bac688b63ca046b51bd73384a735b7f *CD2\ffpCD2.txt
+ac10f09e65d460de7c59cae74170370e *Info\1997-04-07 Aitken Center, University of New Brunswick, Fredericton, New Brunswick, Canada [Holy G.txt
+===================
+===================
+===================
+=== CD1.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.05       50109404 B   ---   --   ---xx   flac  0.6880  01 Crash on the levee (down in the flood).flac
+     5:45.05       60869804 B   ---   --   ---xx   flac  0.6680  02 Tonight I'll be staying here with you.flac
+     6:00.50       63621644 B   ---   --   ---xx   flac  0.7037  03 All along the watchtower.flac
+     5:47.62       61356668 B   ---   --   ---xx   flac  0.6525  04 Under the red sky.flac
+     5:54.25       62504444 B   ---   --   ---xx   flac  0.6828  05 Most likely you go your way (and I'll go mine).flac
+     7:43.47       81783788 B   ---   --   ---xx   flac  0.6918  06 Silvio.flac
+     5:17.27       55982348 B   ---   --   ---xx   flac  0.7063  07 Oh baby it ain't no lie.flac
+     6:57.10       73582364 B   ---   --   ---xx   flac  0.6778  08 Masters of war.flac
+     8:47.68       93122780 B   ---   --   ---xx   flac  0.6774  09 It's all over now, baby blue.flac
+    56:57.74      602933244 B                            0.6828  (9 files)
+===================
+===================
+===================
+=== ffpCD1.ffp
+===================
+===================
+===================
+01 Crash on the levee (down in the flood).flac:5f9cb82afefe027671d32af8dc95e701
+02 Tonight I'll be staying here with you.flac:93e61a9062ab11fada1596c1956e001b
+03 All along the watchtower.flac:6648b728d50cfaef3e2b22709ebef7ce
+04 Under the red sky.flac:15c248f33ac62519bcb17234cb5f8aac
+05 Most likely you go your way (and I'll go mine).flac:d1a32032b96f5c162da03298bc96502d
+06 Silvio.flac:06f7a72ec370d51a0d82aed206c0801f
+07 Oh baby it ain't no lie.flac:b2f302dee4eea14510ff32cbd22bfa5c
+08 Masters of war.flac:cbf1e01153ed927728e6c5120f25ccc8
+09 It's all over now, baby blue.flac:aa221af75bed4a473ad71bb00d503ac6
+===================
+===================
+===================
+=== ffpCD1.txt
+===================
+===================
+===================
+01 Crash on the levee (down in the flood).flac:5f9cb82afefe027671d32af8dc95e701
+02 Tonight I'll be staying here with you.flac:93e61a9062ab11fada1596c1956e001b
+03 All along the watchtower.flac:6648b728d50cfaef3e2b22709ebef7ce
+04 Under the red sky.flac:15c248f33ac62519bcb17234cb5f8aac
+05 Most likely you go your way (and I'll go mine).flac:d1a32032b96f5c162da03298bc96502d
+06 Silvio.flac:06f7a72ec370d51a0d82aed206c0801f
+07 Oh baby it ain't no lie.flac:b2f302dee4eea14510ff32cbd22bfa5c
+08 Masters of war.flac:cbf1e01153ed927728e6c5120f25ccc8
+09 It's all over now, baby blue.flac:aa221af75bed4a473ad71bb00d503ac6
+===================
+===================
+===================
+=== CD2.shntool_len.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.65       71418524 B   ---   --   ---xx   flac  0.6855  10 Seeing the real you at last.flac
+     8:03.68       85361180 B   ---   --   ---xx   flac  0.6468  11 I and I.flac
+    10:29.14      110988572 B   ---   --   ---xx   flac  0.6795  12 Highway 61 revisited.flac
+    11:21.55      120257804 B   ---   --   ---xx   flac  0.6791  13 Like a rolling stone.flac
+    12:33.74      133003292 B   ---   --   ---xx   flac  0.6883  14 The times they are a-changin'.flac
+     6:56.08       73401260 B   ---   --   ---xx   flac  0.6933  15 Rainy day women # 12 & 35.flac
+    56:09.59      594430632 B                            0.6791  (6 files)
+===================
+===================
+===================
+=== ffpCD2.ffp
+===================
+===================
+===================
+10 Seeing the real you at last.flac:4e523e6e2138d2f35b0d81bf4c7495bd
+11 I and I.flac:b171cefdea9d7fa0d26a041371ccd1c3
+12 Highway 61 revisited.flac:a2a71e82b52499be95ef667292a44486
+13 Like a rolling stone.flac:301e96bbdfbc8be453d6ad01e0dab201
+14 The times they are a-changin'.flac:00accefbe4eaec2185fcedac2f2a7596
+15 Rainy day women # 12 & 35.flac:4c890240f319d70b10cd977b5319bc19
+===================
+===================
+===================
+=== ffpCD2.txt
+===================
+===================
+===================
+10 Seeing the real you at last.flac:4e523e6e2138d2f35b0d81bf4c7495bd
+11 I and I.flac:b171cefdea9d7fa0d26a041371ccd1c3
+12 Highway 61 revisited.flac:a2a71e82b52499be95ef667292a44486
+13 Like a rolling stone.flac:301e96bbdfbc8be453d6ad01e0dab201
+14 The times they are a-changin'.flac:00accefbe4eaec2185fcedac2f2a7596
+15 Rainy day women # 12 & 35.flac:4c890240f319d70b10cd977b5319bc19
+===================
+===================
+===================
+=== 1997-04-07 Aitken Center, University of New Brunswick, Fredericton, New Brunswick, Canada [Holy G.txt
+===================
+===================
+===================
+Aitken Center
+University Of New Brunswick Fredericton, New Brunswick, Canada
+April 7, 1997
+
+***  HOLY GRAIL  ***
+
+Sourced from LB-1529:
+http://jokerman.org.uk/lb/detail/LB-01529.html
+
+01. Crash On The Levee (Down In The Flood) [04:44]
+02. Tonight I'll Be Staying Here With You [05:45]
+03. All Along The Watchtower [06:00]
+04. Under The Red Sky [05:47]
+05. Most Likely You Go Your Way (And I'll Go Mine) [05:54]
+06. Silvio (Bob Dylan & Robert Hunter) [07:43]
+07. Oh Baby It Ain't No Lie (Elizabeth Cotton) [05:17]
+08. Masters Of War [06:57]
+09. It's All Over Now, Baby Blue [08:47]
+Total time: [56:57]
+
+10. Seeing The Real You At Last [06:44]
+11. I And I [08:03]
+12. Highway 61 Revisited [10:29]
+13. Like A Rolling Stone [11:21]
+14. The Times They Are A-Changin' [12:33]
+15. Rainy Day Women # 12 & 35 [06:56]
+Total time: [56:09]
+
+Concert # 858 of The Never-Ending Tour
+Concert # 5 of the 1997 Spring Tour of Canada and USA
+1997 concert # 16
+
+Concert # 5 with the 11th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+Larry Campbell (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+7-9, 14 acoustic with the band
+14 Bob Dylan harmonica
+
+NOTE: All Along The Watchtower is played in concert for the 1000th time!!
+9 new songs (60%) compared to previous concert
+6 new songs for this tour
+
+Stereo audience recording, 120 minutes
+
+ffpCD1:
+01 Crash on the levee (down in the flood).flac:5f9cb82afefe027671d32af8dc95e701
+02 Tonight I'll be staying here with you.flac:93e61a9062ab11fada1596c1956e001b
+03 All along the watchtower.flac:6648b728d50cfaef3e2b22709ebef7ce
+04 Under the red sky.flac:15c248f33ac62519bcb17234cb5f8aac
+05 Most likely you go your way (and I'll go mine).flac:d1a32032b96f5c162da03298bc96502d
+06 Silvio.flac:06f7a72ec370d51a0d82aed206c0801f
+07 Oh baby it ain't no lie.flac:b2f302dee4eea14510ff32cbd22bfa5c
+08 Masters of war.flac:cbf1e01153ed927728e6c5120f25ccc8
+09 It's all over now, baby blue.flac:aa221af75bed4a473ad71bb00d503ac6
+
+ffpCD2:
+10 Seeing the real you at last.flac:4e523e6e2138d2f35b0d81bf4c7495bd
+11 I and I.flac:b171cefdea9d7fa0d26a041371ccd1c3
+12 Highway 61 revisited.flac:a2a71e82b52499be95ef667292a44486
+13 Like a rolling stone.flac:301e96bbdfbc8be453d6ad01e0dab201
+14 The times they are a-changin'.flac:00accefbe4eaec2185fcedac2f2a7596
+15 Rainy day women # 12 & 35.flac:4c890240f319d70b10cd977b5319bc19
+
+
+CD1.shntool_len:
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:44.05       50109404 B   ---   --   ---xx   flac  0.6880  01 Crash on the levee (down in the flood).flac
+     5:45.05       60869804 B   ---   --   ---xx   flac  0.6680  02 Tonight I'll be staying here with you.flac
+     6:00.50       63621644 B   ---   --   ---xx   flac  0.7037  03 All along the watchtower.flac
+     5:47.62       61356668 B   ---   --   ---xx   flac  0.6525  04 Under the red sky.flac
+     5:54.25       62504444 B   ---   --   ---xx   flac  0.6828  05 Most likely you go your way (and I'll go mine).flac
+     7:43.47       81783788 B   ---   --   ---xx   flac  0.6918  06 Silvio.flac
+     5:17.27       55982348 B   ---   --   ---xx   flac  0.7063  07 Oh baby it ain't no lie.flac
+     6:57.10       73582364 B   ---   --   ---xx   flac  0.6778  08 Masters of war.flac
+     8:47.68       93122780 B   ---   --   ---xx   flac  0.6774  09 It's all over now, baby blue.flac
+    56:57.74      602933244 B                            0.6828  (9 files)
+
+CD2.shntool_len:
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:44.65       71418524 B   ---   --   ---xx   flac  0.6855  10 Seeing the real you at last.flac
+     8:03.68       85361180 B   ---   --   ---xx   flac  0.6468  11 I and I.flac
+    10:29.14      110988572 B   ---   --   ---xx   flac  0.6795  12 Highway 61 revisited.flac
+    11:21.55      120257804 B   ---   --   ---xx   flac  0.6791  13 Like a rolling stone.flac
+    12:33.74      133003292 B   ---   --   ---xx   flac  0.6883  14 The times they are a-changin'.flac
+     6:56.08       73401260 B   ---   --   ---xx   flac  0.6933  15 Rainy day women # 12 & 35.flac
+    56:09.59      594430632 B                            0.6791  (6 files)
+===================
+===================
+===================

@@ -1,0 +1,81 @@
+===================
+===================
+===================
+=== md5 for: bd95-03-24-c.flacf
+===================
+===================
+===================
+cb5c6eb033c473a07cf89ee4cd17c108 *Bob Dylan - 1995-03-24  Paris, France.ffp
+d7548af7283c8a00b914101de2a6361b *Disc 1\01 Crash On The Levee.flac
+eefe16c366da0c33f99a7701bd013301 *Disc 1\02 I Want You.flac
+2215cde9258d0b72520264265736a6ef *Disc 1\03 All Along The Watchtower.flac
+96e6bd3b39762609af41548f71ee0ac2 *Disc 1\04 Just Like A Woman.flac
+0c9747f87c4a067cba6796d3ae4b39ae *Disc 1\05 Tangled Up In Blue.flac
+d09414c98aa33e5df6ea6799def98472 *Disc 1\06 You're A Big Girl Now.flac
+61c5d7f3b8745243c89c2cf90712a316 *Disc 1\07 Mr. Tambourine Man.flac
+db06199c2d11c22bb5fb30b634d0d4b1 *Disc 1\08 Masters Of War.flac
+e4af624278a30cb23448325303bb9d44 *Disc 1\09 Don't Think Twice, It's All Right.flac
+36a8b31ddff43113af903f075a7d6950 *Disc 2\01 Dignity.flac
+a89d98aba53f3de46b673797e08ffe01 *Disc 2\02 I'll Remember You.flac
+99a458034f70d48d8f8075161dedeb35 *Disc 2\03 Maggie's Farm.flac
+4082ef9ea3e614358eb7cae43221ca51 *Disc 2\04 Like A Rolling Stone.flac
+59a007c887dc9507abeef2319bd7003b *Disc 2\05 It Ain't Me, Babe.flac
+1558f4521980207cc349b3c395ce95f7 *Info.txt
+3e3923d9f8c3b9fb83e1b01507181c07 *Log 1.log
+58b4d14aee23bd989d8f322c86d75d72 *Log 2.log
+===================
+===================
+===================
+=== ffp for: bd95-03-24-c.flacf
+===================
+===================
+===================
+Disc 1\01 Crash On The Levee.flac:4ccca9bb945c7c0a2c27768732d27b92
+Disc 1\02 I Want You.flac:e836326d14a4af45bbd3266e304581c4
+Disc 1\03 All Along The Watchtower.flac:ce3230490f329ef583bb6590769e0196
+Disc 1\04 Just Like A Woman.flac:d569a448d50c4d23e4b5bf9b177e20b5
+Disc 1\05 Tangled Up In Blue.flac:807852c93ebd6e367c36939e79b975ff
+Disc 1\06 You're A Big Girl Now.flac:21a8c6b315d6731b9ee56afbe7977967
+Disc 1\07 Mr. Tambourine Man.flac:a29de97adaedabfd6e97ef2b9101ac04
+Disc 1\08 Masters Of War.flac:2645e9c26e6cb83efceaf9559c6adbb1
+Disc 1\09 Don't Think Twice, It's All Right.flac:dce10d03ac0fd65628ec567bfb6b7d39
+Disc 2\01 Dignity.flac:226f35f6a860e0282a7dac5d0cdc1d03
+Disc 2\02 I'll Remember You.flac:de7329a7f112e21420ed04bbd597b2e2
+Disc 2\03 Maggie's Farm.flac:db83c43d3b0941f82e9b242d9c8c6985
+Disc 2\04 Like A Rolling Stone.flac:7b35214149ef707753ac6e137d2cae03
+Disc 2\05 It Ain't Me, Babe.flac:a6589599cfd179c645a71d17d1e23a43
+===================
+===================
+===================
+=== shntool len for: bd95-03-24-c.flacf\Disc 1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:15.48       55678940 B   ---   --   ---xx   flac  0.5821  01 Crash On The Levee.flac
+     4:33.23       48211340 B   ---   --   ---xx   flac  0.5429  02 I Want You.flac
+     5:22.38       56890220 B   ---   --   ---xx   flac  0.5857  03 All Along The Watchtower.flac
+     5:44.50       60799244 B   ---   --   ---xx   flac  0.5422  04 Just Like A Woman.flac
+     8:17.21       87720236 B   ---   --   ---xx   flac  0.5505  05 Tangled Up In Blue.flac
+     5:49.48       61676540 B   ---   --   ---xx   flac  0.5158  06 You're A Big Girl Now.flac
+     6:29.69       68781932 B   ---   --   ---xx   flac  0.4717  07 Mr. Tambourine Man.flac
+     4:24.11       46595516 B   ---   --   ---xx   flac  0.4782  08 Masters Of War.flac
+     6:50.52       72446348 B   ---   --   ---xx   flac  0.5015  09 Don't Think Twice, It's All Right.flac
+    52:47.60      558800316 B                            0.5298  (9 files)
+===================
+===================
+===================
+=== shntool len for: bd95-03-24-c.flacf\Disc 2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:18.60       77404364 B   ---   --   ---xx   flac  0.5405  01 Dignity.flac
+     4:58.68       52727180 B   ---   --   ---xx   flac  0.5313  02 I'll Remember You.flac
+     6:46.24       71674892 B   ---   --   ---xx   flac  0.5358  03 Maggie's Farm.flac
+     8:41.58       92040860 B   ---   --   ---xx   flac  0.5019  04 Like A Rolling Stone.flac
+     8:54.43       94298780 B   ---   --   ---xx   flac  0.4477  05 It Ain't Me, Babe.flac
+    36:40.28      388146076 B                            0.5067  (5 files)
+===================
+===================
+===================

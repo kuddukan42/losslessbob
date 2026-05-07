@@ -1,0 +1,8 @@
+Bob Dylan, 11/12/97, Milwaukee, WI, Eagle's Ballroom, 2CDR
+
+LB-2730, (69min+37min), ?Aud > ? > cdr > EAC > FLAC, Notes: Major level adjustments throughout Maggie's Farm.; bittorrent download 05/05; levels start too low on d1t1 and don’t get to right level until near end of song; excellent sound [A]
+
+d1t01 Maggie's Farm, d1t02 Man In The Long Black Coat, d1t03 Cold Irons Bound, d1t04 You Ain't Goin' Nowhere, d1t05 Can't Wait, d1t06 Silvio, d1t07 Cocaine, d1t08 One Too Many Mornings, d1t09 Tangled Up In Blue, d1t10 Till I Fell In Love With You, d1t11 Blind Willie McTell, d2t01 Highway 61 Revisited, d2t02 E: Like A Rolling Stone, d2t03 Don't Think Twice It's All Right, d2t04 Love Sick, d2t05 Rainy Day Women # 12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

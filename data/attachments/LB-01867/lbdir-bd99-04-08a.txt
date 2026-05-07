@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-08a 
+=================== 
+=================== 
+=================== 
+4a1db2329145139e2d248d75b4b82dd8  bd99-04-08.txt
+0cba8c6d1f910812fd175175617f1b96  LisbonToBarcelonaInfo.doc
+6b452d7c6b9171c0edee62ebb694aadf  Malaga.jpg
+698d6c03af7cd854f470dc3058786a55  noname.md5
+c6d2cef42a8e5e82e787d410c370110e  Opo-0408-d1-t01.shn
+4108227f74d60d15c4b279aab99d4315  Opo-0408-d1-t02.shn
+f927babcb956ab1f10b58e9a39ba69da  Opo-0408-d1-t03.shn
+743c3441b9252ab009bd314a00328946  Opo-0408-d1-t04.shn
+967a0cb3bed3a336b750396e599939ae  Opo-0408-d1-t05.shn
+71a4674b0e25f9ba63150854f5a5a43c  Opo-0408-d1-t06.shn
+6e2eca5fc1f572dcaedf3fff6e51f60b  Opo-0408-d1-t07.shn
+d0a2f4fb33d51bd9b50df1279ad87f45  Opo-0408-d1-t08.shn
+b0ced76ff8ced415bbbeadf38a4ab9e5  Opo-0408-d1-t09.shn
+eaad9c33bfc05e8dacc621f3a1cb6d43  Opo-0408-d1-t10.shn
+58f6cb5a1daab0dce945405346e3d9c7  Opo-0408-d2-t01.shn
+1714aa1c21631402fd80d65952fb7224  Opo-0408-d2-t02.shn
+55b18081663221064a5c67c789b34274  Opo-0408-d2-t03.shn
+7446f16b8c665dac7c6f651aa843d968  Opo-0408-d2-t04.shn
+fcca4b34a4d39454ef2ed312dd777866  Opo-0408-d2-t05.shn
+73ec2fb56acfda100785b4d1a6821493  Opo-0408-d2-t06.shn
+14c1eb2e75ae52c968650322312fd468  Opo-0408-d2-t07.shn
+b95c1483d54581605a8750000df66b41  Opo-0408-d2-t08.shn
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd99-04-08a 
+=================== 
+=================== 
+=================== 
+86302953f0b765e265ea9c95d492028e  [shntool]  Opo-0408-d1-t01.wav
+0cef01b64db40628470b2a4f32d0b442  [shntool]  Opo-0408-d1-t02.wav
+90a5bf875c5fe84726552b5132ba9da2  [shntool]  Opo-0408-d1-t03.wav
+3da686afb24c8064b6deba96e0d5ffb0  [shntool]  Opo-0408-d1-t04.wav
+e0f049937d26e9a3be7e7f001a040ce1  [shntool]  Opo-0408-d1-t05.wav
+49239edbe91c16b1598bdb475b5e79d5  [shntool]  Opo-0408-d1-t06.wav
+7b628027296e28f4ef1e40cf4cc303cd  [shntool]  Opo-0408-d1-t07.wav
+fdea4e1b6f7e80c64db9067638d2ee98  [shntool]  Opo-0408-d1-t08.wav
+40f6379777c31a0f994238aef00b4a24  [shntool]  Opo-0408-d1-t09.wav
+625200128ad4913d6d5b92666034981a  [shntool]  Opo-0408-d1-t10.wav
+966072020f6d903ba30de3da28d649ea  [shntool]  Opo-0408-d2-t01.wav
+19f264bbfdc9c749636cf97143e86af3  [shntool]  Opo-0408-d2-t02.wav
+613a15585488750d763b73d505e7130b  [shntool]  Opo-0408-d2-t03.wav
+326df76416f7c9dc1eaf26356324a298  [shntool]  Opo-0408-d2-t04.wav
+58c2405e9a68af9a43d2afe4ac2e5d13  [shntool]  Opo-0408-d2-t05.wav
+be8d9047c2c67dd5c7147e492cbf720a  [shntool]  Opo-0408-d2-t06.wav
+21a6cadc7cbe972e304b32c4c9e7841f  [shntool]  Opo-0408-d2-t07.wav
+26d357c2c0edc60ada00209e5eea185c  [shntool]  Opo-0408-d2-t08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-08a 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:24.64       14968172 B   ---   --   -----    wav  1.0000  Opo-0408-d1-t01.wav
+     3:24.45       36091484 B   ---   --   -----    wav  1.0000  Opo-0408-d1-t02.wav
+     6:10.16       65305676 B   ---   --   -----    wav  1.0000  Opo-0408-d1-t03.wav
+     4:35.50       48627644 B   ---   --   -----    wav  1.0000  Opo-0408-d1-t04.wav
+     5:44.27       60745148 B   ---   --   -----    wav  1.0000  Opo-0408-d1-t05.wav
+     3:58.23       42037340 B   ---   --   -----    wav  1.0000  Opo-0408-d1-t06.wav
+     8:17.69       87832488 B   -b-   --   -----    wav  1.0000  Opo-0408-d1-t07.wav
+     5:10.02       54688316 B   -b-   --   -----    wav  1.0000  Opo-0408-d1-t08.wav
+     7:23.25       78204044 B   ---   --   -----    wav  1.0000  Opo-0408-d1-t09.wav
+     5:37.64       59596848 B   -b-   --   -----    wav  1.0000  Opo-0408-d1-t10.wav
+     7:52.20       83307884 B   ---   --   -----    wav  1.0000  Opo-0408-d2-t01.wav
+     7:47.48       82491740 B   ---   --   -----    wav  1.0000  Opo-0408-d2-t02.wav
+     4:44.61       50241116 B   ---   --   -----    wav  1.0000  Opo-0408-d2-t03.wav
+     7:19.07       77456108 B   ---   --   -----    wav  1.0000  Opo-0408-d2-t04.wav
+     5:50.45       61845884 B   ---   --   -----    wav  1.0000  Opo-0408-d2-t05.wav
+     5:35.26       59155196 B   ---   --   -----    wav  1.0000  Opo-0408-d2-t06.wav
+     6:41.36       70821116 B   ---   --   -----    wav  1.0000  Opo-0408-d2-t07.wav
+     9:15.47       98011448 B   -b-   --   -----    wav  1.0000  Opo-0408-d2-t08.wav
+   106:53.74     1131427652 B                            1.0000  (18 files)
+=================== 
+=================== 
+=================== 

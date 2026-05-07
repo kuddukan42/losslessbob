@@ -1,0 +1,135 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-13-hide.flacf 
+=================== 
+=================== 
+=================== 
+e0d07801bc43b30c4c9767c44bf89d21  bd-10-13-02.txt
+8eda486f738f504105f088d6fb13eb76  early show\bd-2002-10-13e-d1001.flac
+86f7033d48af650e6ce3f6506663dfe7  early show\bd-2002-10-13e-d1002.flac
+548510a75165f3b3da028c229b78e2ed  early show\bd-2002-10-13e-d1003.flac
+dd7eda8640cf903fb26d175c1e83b4f2  early show\bd-2002-10-13e-d1004.flac
+70e2ad86223244b27d41df02cc7a7664  early show\bd-2002-10-13e-d1005.flac
+3947ef31f73603381dfdbfc2c742bd20  early show\bd-2002-10-13e-d1006.flac
+b7e6c30146a0c6bf1e9821ecc777b570  early show\bd-2002-10-13e-d1007.flac
+72cd4ff810f0713b54e1c9818aea115f  early show\bd-2002-10-13e-d1008.flac
+914fcfd54afbe17ad73456f44f2abb2d  early show\bd-2002-10-13e-d1009.flac
+0327d25005f24c5bc18db794a170318f  early show\bd-2002-10-13e-d1010.flac
+f0c835f515cfc95a5cf6bbf1442c1f3f  early show\bd-2002-10-13e-d1011.flac
+9eede72af74765842cac184b8de92703  early show\bd-2002-10-13e-d1012.flac
+a8e5e61a95843c8d85dde39fe95d8ab5  early show\bd-2002-10-13e-d1013.flac
+74ba8d4eabdd77b43c8a6d2597127dd7  early show\bd-2002-10-13e-d2001.flac
+77ae7ef0462c90dab928f33a4576d0c2  early show\bd-2002-10-13e-d2002.flac
+6da9025cd5e9234306d3c55f9b419c08  early show\bd-2002-10-13e.ffp
+644fa0b5c1fb965f725815ad0c05e1b2  late show\bd-2002-10-13l-d1001.flac
+f7b22d1258779730189cc6709466428c  late show\bd-2002-10-13l-d1002.flac
+139996489c3f064ead9c34a2f91ad6eb  late show\bd-2002-10-13l-d1003.flac
+e27f91b2df71a2e75700096128db2dce  late show\bd-2002-10-13l-d1004.flac
+0022a5a898e8bb1714eb28895b759583  late show\bd-2002-10-13l-d1005.flac
+642119147ca6c9a6a80f3a8b83c37f32  late show\bd-2002-10-13l-d1006.flac
+a9de9feabc8c69bb8685a8550481649c  late show\bd-2002-10-13l-d1007.flac
+0538542535edc6867a98e3e7ef5c6ef8  late show\bd-2002-10-13l-d1008.flac
+306270822786d2e6dd75287bc257e800  late show\bd-2002-10-13l-d1009.flac
+f06f98a66deb8df088a6c0c4e9780b6c  late show\bd-2002-10-13l-d1010.flac
+dcd174e17b26fee7b7586321247fb23b  late show\bd-2002-10-13l-d1011.flac
+4aa367242311d0ed7f6500a67385fc9b  late show\bd-2002-10-13l-d1012.flac
+7880c4292bc0b2b4d20a66ebc124b308  late show\bd-2002-10-13l-d1013.flac
+093d5e271a5b6e91e930d064e7c6c4df  late show\bd-2002-10-13l-d2001.flac
+e603faf41532d8eb25c2a0f47233c74f  late show\bd-2002-10-13l-d2002.flac
+37b6df88009c471f0497e1795f5bc676  late show\bd-2002-10-13late.ffp
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-13-hide.flacf\early show 
+=================== 
+=================== 
+=================== 
+bd-2002-10-13e-d1001.flac:b2f9f08dceb56e9f0e104fc8593e3e4a
+bd-2002-10-13e-d1002.flac:818d302d9c104a7f227f901863c4c60e
+bd-2002-10-13e-d1003.flac:89058ac3a9c9cd57b68893c967a9317c
+bd-2002-10-13e-d1004.flac:3afc6ef42b1b094de6494ae2eb16a44b
+bd-2002-10-13e-d1005.flac:6fefd30f2f331d075934187ce5690555
+bd-2002-10-13e-d1006.flac:4eb7e8b3f4ae82125ee71391a8262029
+bd-2002-10-13e-d1007.flac:150311bc50b40ff473e09b9d84a56cc8
+bd-2002-10-13e-d1008.flac:3c9538889d53f81d0841800192dc00bb
+bd-2002-10-13e-d1009.flac:164d9541d260b11c1b5d092d2a4ebc16
+bd-2002-10-13e-d1010.flac:6e077ad09ecb66b355a088f6ccc2e5d5
+bd-2002-10-13e-d1011.flac:7da7bd5cd9072b0d00411a1ea71b425d
+bd-2002-10-13e-d1012.flac:7789f74e7bb9cbaca1c905415f750cd1
+bd-2002-10-13e-d1013.flac:fc9edcb642e8a3c6426a3133420f2509
+bd-2002-10-13e-d2001.flac:0a5ee936eb88be985e6cf2275afe67c6
+bd-2002-10-13e-d2002.flac:244f954d7200d4f9eae830e2dfc2acf2
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-13-hide.flacf\late show 
+=================== 
+=================== 
+=================== 
+bd-2002-10-13l-d1001.flac:0c0b2b97477f89e668d8bc4c706b245f
+bd-2002-10-13l-d1002.flac:afa744e03181ee2f493bf2224b33b696
+bd-2002-10-13l-d1003.flac:9c4518aa406da2863c8e316aefdd35b0
+bd-2002-10-13l-d1004.flac:c5169ba688051f9fe2eca7f60a0aa2a2
+bd-2002-10-13l-d1005.flac:ee3352a8a74b130a9871bfe713b7d99f
+bd-2002-10-13l-d1006.flac:0e596c35bf42a824a4a316aed28f2355
+bd-2002-10-13l-d1007.flac:eec65706bf181c68402b55176b73bd7b
+bd-2002-10-13l-d1008.flac:a351e905d791fcd4dca2f6f5f5bef2bf
+bd-2002-10-13l-d1009.flac:c904740ac6b6a1aa078c6e6ca640db1a
+bd-2002-10-13l-d1010.flac:63654e7257b5cc197788cdc5073e30aa
+bd-2002-10-13l-d1011.flac:0657a0a13c9f75564e1f62b1f695018d
+bd-2002-10-13l-d1012.flac:88d90488fdcac38f23e4afa72930b6cd
+bd-2002-10-13l-d1013.flac:ee78b655291dc1bf8f280923b2bddcdd
+bd-2002-10-13l-d2001.flac:e6feaca3d962b65bf960bc79bd7aa998
+bd-2002-10-13l-d2002.flac:6f04d9be8fe5240ef0591a0899b05fae
+=================== 
+=================== 
+=================== 
+=== shntool for: bd02-10-13-hide.flacf\early show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:26.41       57602876 B   ---   --   ---xx   flac  0.5391  bd-2002-10-13e-d1001.flac
+     4:47.37       50713868 B   ---   --   ---xx   flac  0.4554  bd-2002-10-13e-d1002.flac
+     6:38.25       70266044 B   ---   --   ---xx   flac  0.5188  bd-2002-10-13e-d1003.flac
+     4:14.39       44897372 B   ---   --   ---xx   flac  0.4533  bd-2002-10-13e-d1004.flac
+     5:15.27       55629548 B   ---   --   ---xx   flac  0.5229  bd-2002-10-13e-d1005.flac
+     3:55.38       41543420 B   ---   --   ---xx   flac  0.5570  bd-2002-10-13e-d1006.flac
+     6:39.20       70430684 B   ---   --   ---xx   flac  0.3824  bd-2002-10-13e-d1007.flac
+     7:34.19       80130332 B   ---   --   ---xx   flac  0.5067  bd-2002-10-13e-d1008.flac
+     6:28.00       68443244 B   ---   --   ---xx   flac  0.4799  bd-2002-10-13e-d1009.flac
+     3:37.20       38325884 B   ---   --   ---xx   flac  0.5382  bd-2002-10-13e-d1010.flac
+     7:24.37       78408668 B   ---   --   ---xx   flac  0.4669  bd-2002-10-13e-d1011.flac
+     3:49.39       40487372 B   ---   --   ---xx   flac  0.5195  bd-2002-10-13e-d1012.flac
+     7:35.00       80262044 B   ---   --   ---xx   flac  0.5630  bd-2002-10-13e-d1013.flac
+     6:27.71       68433836 B   ---   --   ---xx   flac  0.4988  bd-2002-10-13e-d2001.flac
+     5:14.45       55495484 B   ---   --   ---xx   flac  0.6114  bd-2002-10-13e-d2002.flac
+    85:08.08      901070676 B                            0.5050  (15 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd02-10-13-hide.flacf\late show 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:38.50       80908844 B   ---   --   ---xx   flac  0.5500  bd-2002-10-13l-d1001.flac
+     5:40.09       59997212 B   ---   --   ---xx   flac  0.4889  bd-2002-10-13l-d1002.flac
+     5:50.09       61761212 B   ---   --   ---xx   flac  0.5569  bd-2002-10-13l-d1003.flac
+     4:10.74       44274092 B   ---   --   ---xx   flac  0.4665  bd-2002-10-13l-d1004.flac
+     6:13.33       65874860 B   ---   --   ---xx   flac  0.5193  bd-2002-10-13l-d1005.flac
+     4:07.51       43690796 B   ---   --   ---xx   flac  0.6120  bd-2002-10-13l-d1006.flac
+     5:59.31       63400556 B   ---   --   ---xx   flac  0.4802  bd-2002-10-13l-d1007.flac
+     7:11.36       76113116 B   ---   --   ---xx   flac  0.5498  bd-2002-10-13l-d1008.flac
+     6:47.48       71907740 B   ---   --   ---xx   flac  0.4742  bd-2002-10-13l-d1009.flac
+     4:17.35       45417164 B   ---   --   ---xx   flac  0.5746  bd-2002-10-13l-d1010.flac
+     6:07.07       64755308 B   ---   --   ---xx   flac  0.5200  bd-2002-10-13l-d1011.flac
+     4:28.02       47279948 B   ---   --   ---xx   flac  0.5567  bd-2002-10-13l-d1012.flac
+     7:15.30       76804604 B   ---   --   ---xx   flac  0.6240  bd-2002-10-13l-d1013.flac
+     7:11.16       76066076 B   ---   --   ---xx   flac  0.5122  bd-2002-10-13l-d2001.flac
+     6:04.19       64254332 B   ---   --   ---xx   flac  0.6341  bd-2002-10-13l-d2002.flac
+    89:03.00      942505860 B                            0.5411  (15 files)
+=================== 
+=================== 
+=================== 

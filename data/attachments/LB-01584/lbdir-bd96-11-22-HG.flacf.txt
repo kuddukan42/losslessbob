@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-22-HG.flacf 
+=================== 
+=================== 
+=================== 
+79b7033beafbd9008f82315ab1d66eea  bd-1996-11-22-SouthBend-HG-AUD.txt
+b05ee2daf7fc72f7ef8da83526516595  bd-19996-11-22-southbend-holygrail-d1 (Track 01).flac
+ffa26000dc398f66ae42c77cc792d4d4  bd-19996-11-22-southbend-holygrail-d1 (Track 02).flac
+48d45d939b70cb57eb5e065cb7673091  bd-19996-11-22-southbend-holygrail-d1 (Track 03).flac
+a69a020b9d16f08f68c52df6ad39fda5  bd-19996-11-22-southbend-holygrail-d1 (Track 04).flac
+099540018dcfd2fab7ad74d2541f0ef3  bd-19996-11-22-southbend-holygrail-d1 (Track 05).flac
+aac0fb47c3ba2273a14aed1078da2494  bd-19996-11-22-southbend-holygrail-d1 (Track 06).flac
+a645d9877e8c787d5fdc884676e379f7  bd-19996-11-22-southbend-holygrail-d1 (Track 07).flac
+d848963848fc4a639d238cb8e7653919  bd-19996-11-22-southbend-holygrail-d1 (Track 08).flac
+fff48505b025d60915c172ef19910fe4  bd-19996-11-22-southbend-holygrail-d1 (Track 09).flac
+415cadd047a504537baf428bf0bf0b2f  bd-19996-11-22-southbend-holygrail-d2 (Track 01).flac
+b84a17b19674544afbbdd279da589382  bd-19996-11-22-southbend-holygrail-d2 (Track 02).flac
+9e1cdc0891fa7f404f96cc6f47fa00f1  bd-19996-11-22-southbend-holygrail-d2 (Track 03).flac
+c1f89512f4a6ddba24d2d2068808398f  bd-19996-11-22-southbend-holygrail-d2 (Track 04).flac
+34c5e74a6d80f83192cd036a65222235  bd-19996-11-22-southbend-holygrail-d2 (Track 05).flac
+7092f5ba6f47ccef5f8c4062808dc47e  bd-19996-11-22-southbend-holygrail-d2 (Track 06).flac
+6cadb17de9bacd4e5f2eb23420fe772e  bd96-11-22-HG.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-22-HG.flacf 
+=================== 
+=================== 
+=================== 
+bd-19996-11-22-southbend-holygrail-d1 (Track 01).flac:6e33f57d583e058bfaf3868c3f566829
+bd-19996-11-22-southbend-holygrail-d1 (Track 02).flac:898c8424151402358aafade6155c5e66
+bd-19996-11-22-southbend-holygrail-d1 (Track 03).flac:c9bae9e1e38b3342ea054f1869cdd799
+bd-19996-11-22-southbend-holygrail-d1 (Track 04).flac:cdc4c30512641b22e99b43278d334001
+bd-19996-11-22-southbend-holygrail-d1 (Track 05).flac:f912285274a7b5d16ca842fc6e136355
+bd-19996-11-22-southbend-holygrail-d1 (Track 06).flac:136b3d43c4b76cea16d2e1de4b1ec969
+bd-19996-11-22-southbend-holygrail-d1 (Track 07).flac:9b26888562378bcacc73ce4baebdc8d5
+bd-19996-11-22-southbend-holygrail-d1 (Track 08).flac:17ad1f8be3703b40256e7c26022adee6
+bd-19996-11-22-southbend-holygrail-d1 (Track 09).flac:96d6c37e5bd61e89977955d7faed14d4
+bd-19996-11-22-southbend-holygrail-d2 (Track 01).flac:6c174a0d08f025cbbb343baf1f5c3d01
+bd-19996-11-22-southbend-holygrail-d2 (Track 02).flac:3ba4fbb353c4a2f8c4d885e8a97ce628
+bd-19996-11-22-southbend-holygrail-d2 (Track 03).flac:a57c14a161412cb097c7e00ff95db3cd
+bd-19996-11-22-southbend-holygrail-d2 (Track 04).flac:18ce17e21601d52fc02aa68ef7c42da0
+bd-19996-11-22-southbend-holygrail-d2 (Track 05).flac:2d57c06f9e14ad02d36793e962c1bed9
+bd-19996-11-22-southbend-holygrail-d2 (Track 06).flac:57ec0220195ad05c72eaeb8e98abf44d
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd96-11-22-HG.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:29.15       47487512 B   -b-   --   ---xx   flac  0.6988  bd-19996-11-22-southbend-holygrail-d1 (Track 01).flac
+     4:26.49       47037692 B   ---   --   ---xx   flac  0.6718  bd-19996-11-22-southbend-holygrail-d1 (Track 02).flac
+     5:49.34       61643612 B   ---   --   ---xx   flac  0.7191  bd-19996-11-22-southbend-holygrail-d1 (Track 03).flac
+     6:55.51       73325996 B   ---   --   ---xx   flac  0.6681  bd-19996-11-22-southbend-holygrail-d1 (Track 04).flac
+     7:10.02       75856748 B   ---   --   ---xx   flac  0.6905  bd-19996-11-22-southbend-holygrail-d1 (Track 05).flac
+     7:55.54       83917052 B   ---   --   ---xx   flac  0.7210  bd-19996-11-22-southbend-holygrail-d1 (Track 06).flac
+     9:07.29       96559052 B   ---   --   ---xx   flac  0.7280  bd-19996-11-22-southbend-holygrail-d1 (Track 07).flac
+     4:26.67       47080028 B   ---   --   ---xx   flac  0.6614  bd-19996-11-22-southbend-holygrail-d1 (Track 08).flac
+     6:39.62       70529416 B   -b-   --   ---xx   flac  0.7019  bd-19996-11-22-southbend-holygrail-d1 (Track 09).flac
+     7:03.02       74623080 B   -b-   --   ---xx   flac  0.7037  bd-19996-11-22-southbend-holygrail-d2 (Track 01).flac
+     7:06.63       75294620 B   ---   --   ---xx   flac  0.6255  bd-19996-11-22-southbend-holygrail-d2 (Track 02).flac
+     9:59.13      105694220 B   ---   --   ---xx   flac  0.7369  bd-19996-11-22-southbend-holygrail-d2 (Track 03).flac
+    10:15.30      108556604 B   ---   --   ---xx   flac  0.7075  bd-19996-11-22-southbend-holygrail-d2 (Track 04).flac
+     8:06.10       85753964 B   ---   --   ---xx   flac  0.7156  bd-19996-11-22-southbend-holygrail-d2 (Track 05).flac
+     8:11.21       86661836 B   ---   --   ---xx   flac  0.7225  bd-19996-11-22-southbend-holygrail-d2 (Track 06).flac
+   107:42.53     1140021432 B                            0.7019  (15 files)
+=================== 
+=================== 
+=================== 

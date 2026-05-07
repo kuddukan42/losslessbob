@@ -1,0 +1,116 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-15-late-lk-set-with-Guests.flacf 
+=================== 
+=================== 
+=================== 
+3865650e43c64ad672c417acef87f6a6  1975-11-15 Niagara Falls (Late )- with Guests.md5
+46644337f3b8c735c7a36105408b1982  bd75-11-15-late-lk-set-with-Guests-LB-3695.txt
+c512f846b5b58b2c5c4a8978df725b78  D1\Track01.flac
+475e093141bcd23753a52e8bad7a6d9b  D1\Track02.flac
+ab635e31f856f00823ae89b8e1d779c0  D1\Track03.flac
+ad40122c7d2a2aa3a21c39e61e5a4807  D1\Track04.flac
+5785e2f9952d2914128b8557236f9ab2  D1\Track05.flac
+7cefe11e62dfc3eddbdd31d658d887cb  D1\Track06.flac
+49d8977a6b03e67fbb5802e5ad459c8a  D1\Track07.flac
+1c291bc8063a8b9404a8827eae135a72  D1\Track08.flac
+e3e6b2bf057f4d593b7db05c55538cff  D1\Track09.flac
+b679b8a08ced0d0d6a3f91af970dbf88  D1\Track10.flac
+36d3324b0270d4fda100b73472764806  D1\Track11.flac
+bd6620f0fe31372af623b79c0998d05e  D2\Track01.flac
+771bbc3b86ee626135fe9917a4e78041  D2\Track02.flac
+e05344f2f52f7f47dae6373c1ff92e5b  D2\Track03.flac
+820116f683acb0ac8c6dc49f9e349487  D2\Track04.flac
+3e6f76b36f0365b06a721af52fac14d7  D2\Track05.flac
+62ced4aadec90f351aba26033ca4883b  D2\Track06.flac
+0cb92e7401682d24d35fe0f2ee87b061  D2\Track07.flac
+51c92e848bf4577572a622ddfaa7632f  D2\Track08.flac
+e0d858fa3e73c9d050cdba69a8ed56be  D2\Track09.flac
+d1a06c0fe9b0f6ad9e43c25ce683798d  D2\Track10.flac
+bd89e32abbf43a8bbbd78530be80b289  D2\Track11.flac
+1e0403959b9bbfbab2fd5e851278407a  D2\Track12.flac
+d445c1435440d609f32982504ab057b6  D2\Track13.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-15-late-lk-set-with-Guests.flacf\D2 
+=================== 
+=================== 
+=================== 
+Track01.flac:ecda1e9f503650804e929583bdbc4616
+Track02.flac:2428e789414326d94fa19c8abeb1a80a
+Track03.flac:6ae83f23b6b873923b6289e9fdc8195a
+Track04.flac:e9322856b1d838f911ba8bba6a9e6ad4
+Track05.flac:027ca4cbd058f60ec83b776dd8e18512
+Track06.flac:d446c04e560274bba354cb9e832ceca1
+Track07.flac:58f1422d2433e7ef8d0600603cb6a980
+Track08.flac:5908b601f4fd6e6d67e8cb3d9944cdd1
+Track09.flac:9665c64b92c0ab139cf739b4dbf80b3a
+Track10.flac:1d808de24815fa1962919e646c31b87d
+Track11.flac:ae724e16538c1c0175a85f5109941b5c
+Track12.flac:7a9ab6880f51a7ce7380e878df763f92
+Track13.flac:09a4c45288d7b2c6b50a37b19eafef28
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-15-late-lk-set-with-Guests.flacf\D1 
+=================== 
+=================== 
+=================== 
+Track01.flac:8e8feca20f587664ca8c40f3d6788053
+Track02.flac:85f4b90a22924ce2f25bee1f6f1b6096
+Track03.flac:77bfa54fe1e2cde407f86d3a0abd29db
+Track04.flac:371c1dd1b349eade6795744a6a38fa33
+Track05.flac:8369f5e8955a64035660cea2c4b8740c
+Track06.flac:60ae69219c503550df612841ed973075
+Track07.flac:44196a9109dbdb7c4dbd9680b7fc1b0d
+Track08.flac:6867f9a7fafa90e0fbde7295f3c350de
+Track09.flac:f1bf73e02c9b6d873736094508ae2397
+Track10.flac:2662b4c7375b2392c9fdbb5e56ca61e4
+Track11.flac:61f0a2cc05ac054fbd50fffb30becc02
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-15-late-lk-set-with-Guests.flacf\D2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:53.73       30688940 B   ---   --   ---xx   flac  0.5489  Track01.flac
+     4:42.17       49784828 B   ---   --   ---xx   flac  0.5436  Track02.flac
+     3:04.67       32615228 B   ---   --   ---xx   flac  0.5896  Track03.flac
+     5:32.35       58647164 B   ---   --   ---xx   flac  0.6039  Track04.flac
+     3:00.50       31869644 B   ---   --   ---xx   flac  0.5990  Track05.flac
+     5:40.69       60138332 B   ---   --   ---xx   flac  0.6001  Track06.flac
+     4:04.43       43142780 B   ---   --   ---xx   flac  0.6108  Track07.flac
+     8:22.05       88564604 B   ---   --   ---xx   flac  0.6248  Track08.flac
+     3:56.47       41740988 B   ---   --   ---xx   flac  0.6248  Track09.flac
+     5:04.05       53637404 B   ---   --   ---xx   flac  0.6424  Track10.flac
+     4:13.06       44643356 B   ---   --   ---xx   flac  0.6520  Track11.flac
+     4:57.42       52489628 B   ---   --   ---xx   flac  0.6572  Track12.flac
+     4:12.43       44553980 B   ---   --   ---xx   flac  0.6212  Track13.flac
+    59:45.52      632516876 B                            0.6122  (13 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-15-late-lk-set-with-Guests.flacf\D1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:17.27       45398348 B   ---   --   ---xx   flac  0.6023  Track01.flac
+     5:42.22       60380588 B   ---   --   ---xx   flac  0.6304  Track02.flac
+     6:36.26       69915596 B   ---   --   ---xx   flac  0.6153  Track03.flac
+     3:30.49       37159292 B   ---   --   ---xx   flac  0.6210  Track04.flac
+     5:28.14       57892172 B   ---   --   ---xx   flac  0.6129  Track05.flac
+     5:32.07       58581308 B   ---   --   ---xx   flac  0.6184  Track06.flac
+     2:53.15       30552524 B   ---   --   ---xx   flac  0.5948  Track07.flac
+     2:52.59       30479612 B   ---   --   ---xx   flac  0.5943  Track08.flac
+     2:52.34       30420812 B   ---   --   ---xx   flac  0.5848  Track09.flac
+     2:45.57       29240108 B   ---   --   ---xx   flac  0.5906  Track10.flac
+     4:10.20       44147084 B   ---   --   ---xx   flac  0.5576  Track11.flac
+    46:41.30      494167444 B                            0.6054  (11 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,10 @@
+    length     expanded size   cdr  WAVE problems filename
+     7:00.00       74088044    ---   --   ---xx   bd02-10-16d2t01.shn
+     6:21.00       67208444    ---   --   ---xx   bd02-10-16d2t02.shn
+     7:53.00       83437244    ---   --   ---xx   bd02-10-16d2t03.shn
+     3:26.00       36338444    ---   --   ---xx   bd02-10-16d2t04.shn
+     5:36.00       59270444    ---   --   ---xx   bd02-10-16d2t05.shn
+    12:21.00      130712444    ---   --   ---xx   bd02-10-16d2t06.shn
+     6:23.00       67561244    ---   --   ---xx   bd02-10-16d2t07.shn
+     7:40.00       81144044    ---   --   ---xx   bd02-10-16d2t08.shn
+    56:40.00      599760352 B                     (totals for 8 files, 0.5714 overall compression ratio)

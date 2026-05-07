@@ -1,0 +1,63 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-03-15-down-in-the-flood.flacf 
+=================== 
+=================== 
+=================== 
+04944a20c149154b9d97cb74273e1d84  bd95-03-15-down-in-the-flood-d1t01.flac
+9623b4c2f17a857b5a62ebfc589c6f1f  bd95-03-15-down-in-the-flood-d1t02.flac
+37cec6e82dbfbf9456ccaaf58bbb34b7  bd95-03-15-down-in-the-flood-d1t03.flac
+9ab08b4c1b0840a6228d579b42d3c152  bd95-03-15-down-in-the-flood-d1t04.flac
+3378410a5efc014856715240185b4c06  bd95-03-15-down-in-the-flood-d1t05.flac
+d30d2ecca986395c33dfbf0318c31c36  bd95-03-15-down-in-the-flood-d1t06.flac
+c877e98784d9bae4f949b9ca7778c5db  bd95-03-15-down-in-the-flood-d1t07.flac
+9e4f55a9ebbf4ec9b2f475398b86857a  bd95-03-15-down-in-the-flood-d1t08.flac
+0d9e2e33aa993dd268bec69915755965  bd95-03-15-down-in-the-flood-d1t09.flac
+7889dcebe00b9116859e9afa8a56d738  bd95-03-15-down-in-the-flood-d1t10.flac
+bfcae228e1832f3755120f0d03e4b359  bd95-03-15-down-in-the-flood-d1t11.flac
+ef6a16d66f753593621626c9f7505966  bd95-03-15-down-in-the-flood-d1t12.flac
+cb8b026806078454461722c619b337aa  bd95-03-15-down-in-the-flood.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd95-03-15-down-in-the-flood.flacf 
+=================== 
+=================== 
+=================== 
+bd95-03-15-down-in-the-flood-d1t01.flac:9a22f626c0d08f7d517f811483136bb1
+bd95-03-15-down-in-the-flood-d1t02.flac:02cab1109cb04bca7750df627140f5b3
+bd95-03-15-down-in-the-flood-d1t03.flac:246830b2c0adb0564c31a1a6eb50c355
+bd95-03-15-down-in-the-flood-d1t04.flac:729461869f3f4bee02ca676fb51aa839
+bd95-03-15-down-in-the-flood-d1t05.flac:7a62499195997d60413ecdba86ea4c43
+bd95-03-15-down-in-the-flood-d1t06.flac:9a4a9f5f4707bfd7c89cf22b219bdbec
+bd95-03-15-down-in-the-flood-d1t07.flac:893cc7d2bfcd7e76489f6ec658a88365
+bd95-03-15-down-in-the-flood-d1t08.flac:4a65c554517bfecd6ecf220d2fd2c511
+bd95-03-15-down-in-the-flood-d1t09.flac:1026d919e08de804b5b7d02c2f781fd0
+bd95-03-15-down-in-the-flood-d1t10.flac:b4dbab9b6c960989c082e7775f020a30
+bd95-03-15-down-in-the-flood-d1t11.flac:81d910f0539ad4f7ff4eac42e124e18f
+bd95-03-15-down-in-the-flood-d1t12.flac:1b0d3bb0c248787da824796d995c3d64
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-03-15-down-in-the-flood.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:01.67       53254028 B   ---   --   ---xx   flac  0.7002  bd95-03-15-down-in-the-flood-d1t01.flac
+     5:28.43       57960380 B   ---   --   ---xx   flac  0.6286  bd95-03-15-down-in-the-flood-d1t02.flac
+     5:28.15       57894524 B   ---   --   ---xx   flac  0.6766  bd95-03-15-down-in-the-flood-d1t03.flac
+     5:37.20       59493884 B   ---   --   ---xx   flac  0.6118  bd95-03-15-down-in-the-flood-d1t04.flac
+     7:07.30       75393404 B   ---   --   ---xx   flac  0.6278  bd95-03-15-down-in-the-flood-d1t05.flac
+     6:26.15       68125724 B   ---   --   ---xx   flac  0.4936  bd95-03-15-down-in-the-flood-d1t06.flac
+     4:43.42       50020028 B   ---   --   ---xx   flac  0.5109  bd95-03-15-down-in-the-flood-d1t07.flac
+     7:33.48       80022140 B   ---   --   ---xx   flac  0.5093  bd95-03-15-down-in-the-flood-d1t08.flac
+     7:52.65       83413724 B   ---   --   ---xx   flac  0.6833  bd95-03-15-down-in-the-flood-d1t09.flac
+     6:15.47       66260588 B   ---   --   ---xx   flac  0.6021  bd95-03-15-down-in-the-flood-d1t10.flac
+     8:27.18       89477180 B   ---   --   ---xx   flac  0.7043  bd95-03-15-down-in-the-flood-d1t11.flac
+     6:54.27       73093148 B   ---   --   ---xx   flac  0.6560  bd95-03-15-down-in-the-flood-d1t12.flac
+    76:56.62      814408752 B                            0.6194  (12 files)
+=================== 
+=================== 
+=================== 

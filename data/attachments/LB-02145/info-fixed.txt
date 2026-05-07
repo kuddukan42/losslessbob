@@ -1,0 +1,4 @@
+
+OK guys, I pulled the original complete wav file and re-divided it
+into tracks, re-ran shnfix and <voila!> there are no gaps. I'll
+re-post it in its entirety a little later today.

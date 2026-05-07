@@ -1,0 +1,196 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd75-11-24-d.flacf 
+=================== 
+=================== 
+=================== 
+2774cb8d5dd5225116ac60c730bf82ef  FLAC disc 1\1975-11-24_d1t01.flac
+1f8794614fc5b840607179409381b167  FLAC disc 1\1975-11-24_d1t02.flac
+a3a3730a3b88be7d14d6669ca1cece1a  FLAC disc 1\1975-11-24_d1t03.flac
+afdf68545f3b25fb1dc84903740a8b96  FLAC disc 1\1975-11-24_d1t04.flac
+7ee2be4199d1ecc87081bf04e7030bf4  FLAC disc 1\1975-11-24_d1t05.flac
+80e097d1a46387dd36eb81e7349e3ecb  FLAC disc 1\1975-11-24_d1t06.flac
+f4cff5f2e032ce3a0a5f9442ea8ec176  FLAC disc 1\1975-11-24_d1t07.flac
+99021c8cb999fb2ee8e745e224f38165  FLAC disc 1\1975-11-24_d1t08.flac
+3c9c7322a6f361a03c1ad2b210d01358  FLAC disc 1\1975-11-24_d1t09.flac
+022e00eda72b7d6cd5db3caf61d3225e  FLAC disc 1\1975-11-24_d1t10.flac
+8e5e5dfc04de9798b650bd9f9f616d3f  FLAC disc 1\1975-11-24_d1t11.flac
+eaefb89c26f8c4d95184215f23668960  FLAC disc 1\1975-11-24_d1t12.flac
+bd210763df21f55a8cc6a4017656eaf7  FLAC disc 1\1975-11-24_d1t13.flac
+eb2cbe790e86f442cff81e109440c2cc  FLAC disc 1\1975-11-24_d1t14.flac
+bf4d4dc4b8527b73df3fe82a930bfa9b  FLAC disc 1\1975-11-24_d2t01.flac
+e84ea315190a9ae2326958431ebfecae  FLAC disc 1\1975-11-24_d2t02.flac
+0843443faa013ad180483f9fb0fdb49d  FLAC disc 1\1975-11-24_d2t03.flac
+7739055d8f7a238ed2534f8fa56ce5c7  FLAC disc 1\1975-11-24_d2t04.flac
+320b1d37dbd963127afd148ad784bc9e  FLAC disc 1\1975-11-24_d2t05.flac
+65484d0d00475b536475d34d075e5396  FLAC disc 1\1975-11-24_d2t06.flac
+22ed4c58fc1adb46b4acd968dd1b531e  FLAC disc 1\1975-11-24_d2t07.flac
+0e19fdb86ac550410443257c9fda94cc  FLAC disc 1\1975-11-24_d2t08.flac
+81a1cb7e607b981268a3298e1769dea2  FLAC disc 1\1975-11-24_d2t09.flac
+3af1aa5a42ca045090099cc3a04399ea  FLAC disc 1\1975-11-24_d2t10.flac
+92d2c4cead9cd6ac47f1e1db71d3776c  FLAC disc 1\1975-11-24_d2t11.flac
+002619ba2ce6c39eca833ea1824a810d  FLAC disc 1\1975-11-24_Hartford.txt
+e688ae8108cea1b3a085eb554c48d3d0  FLAC disc 1\1975-11-24_Hartford_d1.md5
+a867d147a28e80d9579fe2cfb035fa8a  FLAC disc 1\1975-11-24_Hartford_d2.md5
+80bb93ba1595ac8069e3f3c93a49c153  FLAC disc 1\FLAC fingerprint_d1.txt
+b2a5b6a12c673d83b37fd6bc706766e1  FLAC disc 1\FLAC fingerprint_d2.txt
+b217d4aa7294c0fe559a82abc443798a  FLAC disc 2\1975-11-24_d3t01.flac
+4f43dc9ca6cdb4233e191a4d67dc97a0  FLAC disc 2\1975-11-24_d3t02.flac
+3b8d8f5041df201ff32156f028adf348  FLAC disc 2\1975-11-24_d3t03.flac
+1c353ab421c18ff43e2716cbb54b6d3b  FLAC disc 2\1975-11-24_d3t04.flac
+fde9a7439c3cdd836e7a80fb21319735  FLAC disc 2\1975-11-24_d3t05.flac
+439d2ce8cbdcf2585072393f5fb3b8dc  FLAC disc 2\1975-11-24_d3t06.flac
+e4d9e1c70357c4a5b2e2ad154d2f8505  FLAC disc 2\1975-11-24_d3t07.flac
+029c5762961b1f128b1c83395183a415  FLAC disc 2\1975-11-24_d3t08.flac
+2de7cd124117c0d23fbb35c0fe0ac2d0  FLAC disc 2\1975-11-24_d3t09.flac
+1d1aeb75c0aacb928b7b750d11d5d6be  FLAC disc 2\1975-11-24_d3t10.flac
+aba21638dfe9751bbdc8fc981c50866e  FLAC disc 2\1975-11-24_d3t11.flac
+27e395ec57e4764fb9496487e0b7f372  FLAC disc 2\1975-11-24_d3t12.flac
+bdbf21acda63e544e2ea39ce64a45a43  FLAC disc 2\1975-11-24_d3t13.flac
+3b358dbf5311605b4f31f238299f1c5b  FLAC disc 2\1975-11-24_d3t14.flac
+8d2d685ce09614078c34fba040638aa8  FLAC disc 2\1975-11-24_d3t15.flac
+23895a5d1c58aa69a06597318cbd1901  FLAC disc 2\1975-11-24_d4t01.flac
+ba6c279f98d62757fb6c022a84e318fa  FLAC disc 2\1975-11-24_d4t02.flac
+382e866239a92423048bc3704fac51f2  FLAC disc 2\1975-11-24_d4t03.flac
+ecb6e0a3c66d797fb3d4117902f63001  FLAC disc 2\1975-11-24_d4t04.flac
+a91c9225cb51fd55ad8784dcb340b527  FLAC disc 2\1975-11-24_d4t05.flac
+0e46e99486bbfafb2aa0aea7f86c9ddf  FLAC disc 2\1975-11-24_d4t06.flac
+366b125707e413b17c95e1f42ba8de05  FLAC disc 2\1975-11-24_d4t07.flac
+146d5b8f9dcc67b9efa89776a38848b9  FLAC disc 2\1975-11-24_d4t08.flac
+f5f55dc0c98de4571090bcb68c3539ff  FLAC disc 2\1975-11-24_d4t09.flac
+e28a1f203e678d0f925f4207417d4fc0  FLAC disc 2\1975-11-24_Hartford_d3.md5
+ebee54930b2d0ceb738cafa215db3867  FLAC disc 2\1975-11-24_Hartford_d4.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-24-d.flacf\FLAC disc 1 
+=================== 
+=================== 
+=================== 
+1975-11-24_d1t01.flac:19ef96d9aeee8f5854c375128c317285
+1975-11-24_d1t02.flac:d4316537a45c0c28b7184ff218bb3f50
+1975-11-24_d1t03.flac:792f2532423b5ca8b8d432bf6ce3a2e3
+1975-11-24_d1t04.flac:e1122d241a3179a80caac36534cabd3a
+1975-11-24_d1t05.flac:e1216db4397edf73a9799b9194cc06fb
+1975-11-24_d1t06.flac:68c925444864e5ff0ac31fd657838834
+1975-11-24_d1t07.flac:f1ffb0a167eb2fdcc67cd29e0b6869b9
+1975-11-24_d1t08.flac:8d56266303ba9a390dec6b8cab0964fe
+1975-11-24_d1t09.flac:561bb39768b84051726c619942efe710
+1975-11-24_d1t10.flac:5f13e684a0f8093a64ed826a522bc566
+1975-11-24_d1t11.flac:3fe95de1cb37aff0a705c2c26e75c79d
+1975-11-24_d1t12.flac:725bd95430283a98a449ac2251a8edf3
+1975-11-24_d1t13.flac:af21e9d97dcdb37b5ce7acbecc3c8f03
+1975-11-24_d1t14.flac:e4509ab647e02f7de99a0008f0502e4e
+1975-11-24_d2t01.flac:052a4570022497008a773396adf0cc52
+1975-11-24_d2t02.flac:c9812661484c1a5be723d134f7c5cfea
+1975-11-24_d2t03.flac:484ce7b92e27b85a1531bda3cd98efbd
+1975-11-24_d2t04.flac:12cbc668574a289f9edbd0a5a4c275d8
+1975-11-24_d2t05.flac:3fb6bd06a05d841747b2ab22769e10cb
+1975-11-24_d2t06.flac:275ba587204a73c6b6d71bc4caa4f29f
+1975-11-24_d2t07.flac:60edeccdaac6d5b2dcdaeafafc0ad34e
+1975-11-24_d2t08.flac:4dff89c6e109231c9b057593059c11b7
+1975-11-24_d2t09.flac:1137b8beaba76c991acc3ead731be76b
+1975-11-24_d2t10.flac:58335b008fb602030034e35af06bb077
+1975-11-24_d2t11.flac:2e96b74764ae052e1fbb75d73bc06fe9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd75-11-24-d.flacf\FLAC disc 2 
+=================== 
+=================== 
+=================== 
+1975-11-24_d3t01.flac:418d9f0046379f9c8af391cceaab867b
+1975-11-24_d3t02.flac:6d5b25d6907ec8b5ad47cb07ebf82707
+1975-11-24_d3t03.flac:4a2156a95e8f58d5d80780960f5456b5
+1975-11-24_d3t04.flac:1a81062c846ec1497b677ed40d0ed0f4
+1975-11-24_d3t05.flac:aa4510d86799989e0b051342bee7f524
+1975-11-24_d3t06.flac:37443d3edf7d525349087a4b37c56f12
+1975-11-24_d3t07.flac:e23df8d7e30ec9d2223b55391dd754ee
+1975-11-24_d3t08.flac:e243e58ecc378c7c553e0b6906efd0a7
+1975-11-24_d3t09.flac:1bc810e4f84a1579d51f3b10d22a3c70
+1975-11-24_d3t10.flac:43b01c0032db8e3706e4b04f9e700597
+1975-11-24_d3t11.flac:ca6b87b0afe61afe120fbb005b44cd92
+1975-11-24_d3t12.flac:352fe669a4b5e81e50e0f5e84af7c26b
+1975-11-24_d3t13.flac:bd8560bf36db10c62d49598c65b956fa
+1975-11-24_d3t14.flac:b8192f5b10b99797a9eb7ae94b399b02
+1975-11-24_d3t15.flac:8eb501ba2a277f4154c94612f6172583
+1975-11-24_d4t01.flac:8c185eed979b8c0f4173e0a069bdb645
+1975-11-24_d4t02.flac:2ecc93d0b0a3661599a48f7683a24e74
+1975-11-24_d4t03.flac:02312d77e3ad4bf350c9ff0f88fe3072
+1975-11-24_d4t04.flac:07c7c0d66fe793c5945d7c62f2aa8c4e
+1975-11-24_d4t05.flac:d03fce6bce93effa60f3756a2413e075
+1975-11-24_d4t06.flac:ac80f52eb33a20d9f285efacc6215a60
+1975-11-24_d4t07.flac:d72cf5fdf01aac13215f3e7d3fd86a04
+1975-11-24_d4t08.flac:735c5dd12329857040236696e4c543c1
+1975-11-24_d4t09.flac:c551b4fd70b3bbd7b3e9a941e579361f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-24-d.flacf\FLAC disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:31.71       58555436 B   ---   --   ---xx   flac  0.5193  1975-11-24_d1t01.flac
+     3:41.68       39144380 B   ---   --   ---xx   flac  0.5357  1975-11-24_d1t02.flac
+     5:12.07       55053308 B   ---   --   ---xx   flac  0.5343  1975-11-24_d1t03.flac
+     2:51.40       30258524 B   ---   --   ---xx   flac  0.5479  1975-11-24_d1t04.flac
+     4:10.16       44137676 B   ---   --   ---xx   flac  0.5427  1975-11-24_d1t05.flac
+     6:11.48       65557340 B   ---   --   ---xx   flac  0.5242  1975-11-24_d1t06.flac
+     3:48.57       40353308 B   ---   --   ---xx   flac  0.5381  1975-11-24_d1t07.flac
+     3:39.29       38699852 B   ---   --   ---xx   flac  0.5361  1975-11-24_d1t08.flac
+     3:46.49       39981692 B   ---   --   ---xx   flac  0.5453  1975-11-24_d1t09.flac
+     2:36.51       27638396 B   ---   --   ---xx   flac  0.5408  1975-11-24_d1t10.flac
+     3:31.18       37262780 B   ---   --   ---xx   flac  0.5540  1975-11-24_d1t11.flac
+     6:54.00       73029644 B   ---   --   ---xx   flac  0.5379  1975-11-24_d1t12.flac
+     4:46.23       50504540 B   ---   --   ---xx   flac  0.5445  1975-11-24_d1t13.flac
+     3:59.26       42220796 B   ---   --   ---xx   flac  0.5276  1975-11-24_d1t14.flac
+     4:51.04       51341852 B   ---   --   ---xx   flac  0.5407  1975-11-24_d2t01.flac
+     5:52.69       62255132 B   ---   --   ---xx   flac  0.5164  1975-11-24_d2t02.flac
+     3:42.57       39294908 B   ---   --   ---xx   flac  0.5300  1975-11-24_d2t03.flac
+     3:45.07       39706508 B   ---   --   ---xx   flac  0.5467  1975-11-24_d2t04.flac
+     4:27.39       47190572 B   ---   --   ---xx   flac  0.5559  1975-11-24_d2t05.flac
+     5:28.45       57965084 B   ---   --   ---xx   flac  0.5575  1975-11-24_d2t06.flac
+     5:32.48       58677740 B   ---   --   ---xx   flac  0.5480  1975-11-24_d2t07.flac
+     4:21.33       46118060 B   ---   --   ---xx   flac  0.5425  1975-11-24_d2t08.flac
+     5:35.28       59159900 B   ---   --   ---xx   flac  0.5648  1975-11-24_d2t09.flac
+     5:37.49       59562092 B   ---   --   ---xx   flac  0.5476  1975-11-24_d2t10.flac
+     5:24.34       57233612 B   ---   --   ---xx   flac  0.5717  1975-11-24_d2t11.flac
+   115:21.16     1220903132 B                            0.5418  (25 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd75-11-24-d.flacf\FLAC disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:17.34       34830812 B   ---   --   ---xx   flac  0.5505  1975-11-24_d3t01.flac
+     3:32.26       37457996 B   ---   --   ---xx   flac  0.5304  1975-11-24_d3t02.flac
+     3:12.05       33880604 B   ---   --   ---xx   flac  0.5331  1975-11-24_d3t03.flac
+     2:33.10       27012764 B   ---   --   ---xx   flac  0.5242  1975-11-24_d3t04.flac
+     4:38.64       49189772 B   ---   --   ---xx   flac  0.5332  1975-11-24_d3t05.flac
+     4:31.56       47936156 B   ---   --   ---xx   flac  0.5407  1975-11-24_d3t06.flac
+     3:33.31       37646156 B   ---   --   ---xx   flac  0.5313  1975-11-24_d3t07.flac
+     3:25.02       36166748 B   ---   --   ---xx   flac  0.5278  1975-11-24_d3t08.flac
+     4:12.22       44504588 B   ---   --   ---xx   flac  0.4980  1975-11-24_d3t09.flac
+     3:43.68       39497180 B   ---   --   ---xx   flac  0.5453  1975-11-24_d3t10.flac
+     4:05.02       43222748 B   ---   --   ---xx   flac  0.5349  1975-11-24_d3t11.flac
+     7:54.57       83747708 B   ---   --   ---xx   flac  0.5152  1975-11-24_d3t12.flac
+     4:14.07       44822108 B   ---   --   ---xx   flac  0.5770  1975-11-24_d3t13.flac
+     5:10.57       54818108 B   ---   --   ---xx   flac  0.5597  1975-11-24_d3t14.flac
+     3:55.38       41543420 B   ---   --   ---xx   flac  0.5566  1975-11-24_d3t15.flac
+     4:11.50       44394044 B   ---   --   ---xx   flac  0.5359  1975-11-24_d4t01.flac
+     4:45.66       50429276 B   ---   --   ---xx   flac  0.5039  1975-11-24_d4t02.flac
+     4:47.15       50662124 B   ---   --   ---xx   flac  0.5279  1975-11-24_d4t03.flac
+     8:16.61       87637916 B   ---   --   ---xx   flac  0.5509  1975-11-24_d4t04.flac
+     4:04.24       43098092 B   ---   --   ---xx   flac  0.5246  1975-11-24_d4t05.flac
+     4:54.35       51943964 B   ---   --   ---xx   flac  0.5367  1975-11-24_d4t06.flac
+     4:35.11       48535916 B   ---   --   ---xx   flac  0.5499  1975-11-24_d4t07.flac
+     4:06.10       43417964 B   ---   --   ---xx   flac  0.5624  1975-11-24_d4t08.flac
+     4:08.38       43836620 B   ---   --   ---xx   flac  0.5968  1975-11-24_d4t09.flac
+   105:50.39     1120232784 B                            0.5393  (24 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,26 @@
+ff82a853233256928eecadeca29a4765  Cape Girardeau 2001 Back.Jpg
+6ef9d61ba4097c04568d4b30463f4f11  Cape Girardeau 2001 Front.Jpg
+e32127b66397652f2b9fabc6457457b0  Dylan April 25, 2001.txt
+481e4c409e318eaa465b3aafd0643433  One\01 Oh Babe, It Ain't No Lie.flac
+a0535f1e6c2239447e4cad750f71b653  One\02 To Ramona.flac
+33257374ef6accd7a32c0220483050c5  One\03 It's Alright Ma.flac
+1c7f2b145b2a612ca8060774c3e7200a  One\04 Most Likely You Go Your Way.flac
+620d6179817fce2e33552b50b5408ad3  One\05 In The Garden.flac
+e1be81cd9ae45a889ab5e030a61f09e5  One\06 To Be Alone With You.flac
+1aac10b5e54f29a19094b048af56324a  One\07 A Hard Rain.flac
+b1a6f0fff92f46c72fca8fe39bacc59c  One\08 Tangled Up In Blue.flac
+a9616d6da532342cf7f5f64324006528  One\09 Searching For A Soldier's Grave.flac
+3f95a18bd10e8ce41e982eb5e4da162d  One\10 Maggie's Farm.flac
+91c292391c86afceb695fe6466fb5589  One\11 Cold Irons Bound.flac
+df8a0378458d496d976761403c5c2320  One\fingerprint.ffp
+f4acff9e8ea1b192089fbd840aaa6dc9  One\one.md5
+1538c8cd664e9334b872698f7469be1e  Two\01 Leopard-Skin Pill-Box Hat.flac
+3ed46f601d77d081ae2c00e6871549d4  Two\02 Things Have Changed.flac
+983e1b77cc82a12751be2ea572cc2f48  Two\03 Like A Rolling Stone.flac
+54d12d20538f680e6757c026c9774cf7  Two\04 If Dogs Run Free.flac
+2ffee7231b5f669474046ed21f4388f6  Two\05 All Along The Watchtower.flac
+f685b6f41c77b5a3076793b774111d63  Two\06 Forever Young.flac
+93746770238da1d49a16eaaeda0b5293  Two\07 Highway 61 Revisited.flac
+1f0bcd1108dad7f9f3834004ab715528  Two\08 Blowin' In The Wind.flac
+16b96c87a3ee240ef4a5fe5f412e7898  Two\fingerprint.ffp
+182aeb40413749aca1dcfef83576a523  Two\two.md5

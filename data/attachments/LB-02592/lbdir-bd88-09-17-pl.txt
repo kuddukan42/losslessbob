@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-09-17-pl 
+=================== 
+=================== 
+=================== 
+94969345da6bca90c7338e3bb04d7117  bd88 09 17 d1 t01.shn
+477c1502339d24149b3c60724a2ee476  bd88 09 17 d1 t02.shn
+28fbd614cfb4e26f594728847ac43ecc  bd88 09 17 d1 t03.shn
+92dedaca9ff80f461eeeb4ab1b01fb18  bd88 09 17 d1 t04.shn
+c674f8f89b268239f736d28173b56255  bd88 09 17 d1 t05.shn
+6bcdf6242f5d2132256ce7ee02009ab0  bd88 09 17 d1 t06.shn
+d3a3e71f2f9b82fac2803f7ed5b22b4c  bd88 09 17 d1 t07.shn
+66b9d730e841061e6da337c653bab449  bd88 09 17 d1 t08.shn
+0f0ecd2c02172b615802170acc43f84c  bd88 09 17 d1 t09.shn
+5eadd4747acbb263c89cd0a4d068fdae  bd88 09 17 d2 t01.shn
+ad2f3adb8b2cfab7bd8fb8916bfab8c3  bd88 09 17 d2 t02.shn
+28d8ef15fc458156b7259d0d86b0bbfb  bd88 09 17 d2 t03.shn
+fa719e67903a647d74dd55cd344b94c7  bd88 09 17 d2 t04.shn
+0efb53dc4af3926dced78e55e6e8639d  bd88 09 17 d2 t05.shn
+bfb1dfc7be0fee059c32c0ed1f9a5c72  bd88 09 17 d2 t06.shn
+311ddb3a2f1972085c98521ff82ce9c6  bd88 09 17 d2 t07.shn
+7f4e8d31b61f9b4831b0172939d5dac1  bd88 09 17.md5
+8b2118a76ff4743ca22b722389991016  bd88-09-17-pl-LB-2592.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd88-09-17-pl 
+=================== 
+=================== 
+=================== 
+79047827a5855e6f86238bc6c99d9702  [shntool]  bd88_09_17_d1_t01.wav
+de90f11e13de8097778ec86eb6097303  [shntool]  bd88_09_17_d1_t02.wav
+4bdb87b54682354416a578bc1b5b0b8f  [shntool]  bd88_09_17_d1_t03.wav
+3b913efa02649a0587bba5732e2e0e3e  [shntool]  bd88_09_17_d1_t04.wav
+105152bb2fe7ce7f70d0ee7e6e2651ce  [shntool]  bd88_09_17_d1_t05.wav
+efbde34d377ebbd7bcae78330f3bd898  [shntool]  bd88_09_17_d1_t06.wav
+01dd7c067be3acbaf3571599d2ebaa63  [shntool]  bd88_09_17_d1_t07.wav
+3338f7400043549f06162c5a7de525ca  [shntool]  bd88_09_17_d1_t08.wav
+eae01f0b82b0cadf4b9743ba4dc5c31a  [shntool]  bd88_09_17_d1_t09.wav
+53d0e75d04a1402e42fd381c027488da  [shntool]  bd88_09_17_d2_t01.wav
+dc71092675c7c0c015604aeba2a8301b  [shntool]  bd88_09_17_d2_t02.wav
+199426d4c37661deb02af76bc9239e2f  [shntool]  bd88_09_17_d2_t03.wav
+d8c1ca57da9ab69a53a9c3a491a93211  [shntool]  bd88_09_17_d2_t04.wav
+c94fbc3bc6ea4078f3e8533c3b6e4372  [shntool]  bd88_09_17_d2_t05.wav
+21302572b32fff96ee718bb6f135281f  [shntool]  bd88_09_17_d2_t06.wav
+9f574bbf1c27002e5984b0bbad77bf08  [shntool]  bd88_09_17_d2_t07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-09-17-pl 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:21.06       35470556 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t01.wav
+     4:26.53       47047100 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t02.wav
+     5:45.25       60916844 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t03.wav
+     4:42.00       49744844 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t04.wav
+     6:26.26       68151596 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t05.wav
+     4:23.56       46524956 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t06.wav
+     3:06.23       32864540 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t07.wav
+     4:31.50       47922044 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t08.wav
+     4:22.50       46334444 B   ---   --   -----    wav  1.0000  bd88_09_17_d1_t09.wav
+     5:18.57       56229308 B   ---   --   -----    wav  1.0000  bd88_09_17_d2_t01.wav
+     4:02.25       42747644 B   ---   --   -----    wav  1.0000  bd88_09_17_d2_t02.wav
+     8:12.59       86927612 B   ---   --   -----    wav  1.0000  bd88_09_17_d2_t03.wav
+     6:27.71       68433836 B   ---   --   -----    wav  1.0000  bd88_09_17_d2_t04.wav
+     4:00.13       42366620 B   ---   --   -----    wav  1.0000  bd88_09_17_d2_t05.wav
+     4:22.60       46357964 B   ---   --   -----    wav  1.0000  bd88_09_17_d2_t06.wav
+     4:43.29       49989452 B   ---   --   -----    wav  1.0000  bd88_09_17_d2_t07.wav
+    78:14.03      828029360 B                            1.0000  (16 files)
+=================== 
+=================== 
+=================== 

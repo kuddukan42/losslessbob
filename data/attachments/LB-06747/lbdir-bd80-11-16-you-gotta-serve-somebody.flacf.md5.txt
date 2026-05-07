@@ -1,0 +1,11 @@
+16ca46b4848f3bf7f2b1af5152266a55  bd80-11-16-you-gotta-serve-somebody-d1t01.flac
+85a592742184a44ada632a995ecb9f7b  bd80-11-16-you-gotta-serve-somebody-d1t02.flac
+68dd10f9a62d20cd1d47c8314d77fb63  bd80-11-16-you-gotta-serve-somebody-d1t03.flac
+9eae9d3045e79b89d7fa40b080f28d7b  bd80-11-16-you-gotta-serve-somebody-d1t04.flac
+4c4f1fa78d9aea77661d9c24b847e661  bd80-11-16-you-gotta-serve-somebody-d1t05.flac
+82ce56d934696bc8df1faa38dd90ccce  bd80-11-16-you-gotta-serve-somebody-d1t06.flac
+f2f86f5f21959edd9207148442860bb9  bd80-11-16-you-gotta-serve-somebody-d1t07.flac
+acfb627449327e9516eeee9a4ca52107  bd80-11-16-you-gotta-serve-somebody-d1t08.flac
+0819639922082d2a5e0e59418d5af911  bd80-11-16-you-gotta-serve-somebody-d1t09.flac
+23476c827201c94115c1ecc4f5978351  bd80-11-16-you-gotta-serve-somebody-d1t10.flac
+8f98fb8820bd2ae3b0831759260e762a  bd80-11-16-you-gotta-serve-somebody.flacf.md5

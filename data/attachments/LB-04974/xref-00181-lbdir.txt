@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-10-15-JB-b.flacf 
+=================== 
+=================== 
+=================== 
+45655775c07f3e592b7f2b602a6dc9e8  Bob 10-15-02.txt
+860c9181e372719f67d5b10b0270f513  Bob Dylan 2002.10.15 Wiltern Theatre, Los Angeles, California, USA [JB Master].md5
+9f8514a641d742eaa53fa87781b5b3ee  CD1\01 Seeing the real you at last.flac
+1ce7024a6997c96c4601143d99dd9869  CD1\02 Tell me that it isn't true.flac
+24e258a6d06a1e1aeb12ea8900c7a8af  CD1\03 Tombstone blues.flac
+138e4c828cfcf5c944c45ca2b1229940  CD1\04 The end of the innocence.flac
+8d73d431b166c5642c1f5dd42924fbd0  CD1\05 Things have changed.flac
+fd5596fcc74fa072ca0bb0d2d6b05b37  CD1\06 Brown Sugar.flac
+153a0dd78faec1c3683c96cda510f409  CD1\07 One too many mornings.flac
+a5f25c8273bbd5ca58b941e86ebedb53  CD1\08 It's alright, ma (I'm only bleeding).flac
+c1428c250d0cc08e69f23f231976a258  CD1\09 I shall be released.flac
+5e7919dc4fba631d9db252d8f2b29d8a  CD1\10 Drifter's escape.flac
+f4538de1a628920223cda06dc1f4c94f  CD1\11 Don't think twice, it's all right.flac
+0c14f14074d06c1f979ca12557f68d9b  CD1\12 Old man.flac
+bc2cd55940c23069e8c831df1cc89311  CD2\13 Honest with me.flac
+244d1aeed3c563a7847d21b3602351c4  CD2\14 Mr. Tambourine Man.flac
+b2dc51863aa95ad86dc46d79d079ff3e  CD2\15 High water (for Charley Patton).flac
+fbd22cdeaf9b0c9f33d72e70d9704937  CD2\16 Mutineer.flac
+7f82a836d425a0b8ff8fa8bd387cd224  CD2\17 Floater (too much to ask).flac
+7bd1378239bcb7decc026c7fa6781890  CD2\18 Summer days.flac
+0497311b1179f87aa131437641869f1e  CD2\19 Knockin' on heaven's door.flac
+8dfa4a513940d3b51c7ab9f0244a5f9a  CD2\20 All along the watchtower.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-15-JB-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+01 seeing the real you at last.flac:367738a97fb2381e5ac8150c6d3a6f5c
+02 tell me that it isn't true.flac:427c39167067929e32f4f6852bd39497
+03 tombstone blues.flac:577ed77913b02ab1149c9d74977adef0
+04 the end of the innocence.flac:a2762beb35961807be30b3d16f3842b2
+05 things have changed.flac:449e31aa5a86e8413577b33868ecb1a8
+06 brown sugar.flac:61ed9c8db2af9cf28a15bfb1427812fc
+07 one too many mornings.flac:8902b649cfded7cf4647718a2990ddf6
+08 it's alright, ma (i'm only bleeding).flac:94f95bd36bea1453bd9e8ae0e6423681
+09 i shall be released.flac:dcfc7ae7aedf1acb302c24a90be5444e
+10 drifter's escape.flac:69eee44dfc8de5fc5964cfb0f604cfdd
+11 don't think twice, it's all right.flac:6477947077eea1daa8002a68ae8fd04c
+12 old man.flac:4bddcb553384380688fa2e859c60ec58
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-10-15-JB-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+13 honest with me.flac:c8a3706efd2f2f4b402726504f79c3f7
+14 mr. tambourine man.flac:e4d2409752349cd344fc2a6d1db6bb12
+15 high water (for charley patton).flac:30693b0a6010727a7edec4de077b3f2c
+16 mutineer.flac:a5db941a73dd274220a0e3b32512c8fe
+17 floater (too much to ask).flac:6aed12890afaeecda5c8bc61699e94a9
+18 summer days.flac:5715f2714da9dc2ca0fff6f7ad14c8f6
+19 knockin' on heaven's door.flac:3467bd0403a4fa247b0727c09a275185
+20 all along the watchtower.flac:052eb0a85bfaa1810e626acdf1cc9cce
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-15-JB-b.flacf\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:48.47       61497788 B   ---   --   ---xx   flac  0.6894  01 Seeing the real you at last.flac
+     4:16.01       45160796 B   ---   --   ---xx   flac  0.6286  02 Tell me that it isn't true.flac
+     6:19.62       67001468 B   ---   --   ---xx   flac  0.6403  03 Tombstone blues.flac
+     5:08.33       54408860 B   ---   --   ---xx   flac  0.5998  04 The end of the innocence.flac
+     6:09.35       65173964 B   ---   --   ---xx   flac  0.6449  05 Things have changed.flac
+     4:09.63       44071820 B   ---   --   ---xx   flac  0.6767  06 Brown Sugar.flac
+     5:59.55       63457004 B   ---   --   ---xx   flac  0.6070  07 One too many mornings.flac
+     7:10.71       76019036 B   ---   --   ---xx   flac  0.6420  08 It's alright, ma (I'm only bleeding).flac
+     6:06.38       64651820 B   ---   --   ---xx   flac  0.6199  09 I shall be released.flac
+     5:08.71       54498236 B   ---   --   ---xx   flac  0.7020  10 Drifter's escape.flac
+     7:40.18       81186380 B   ---   --   ---xx   flac  0.6387  11 Don't think twice, it's all right.flac
+     4:09.30       43994204 B   ---   --   ---xx   flac  0.6375  12 Old man.flac
+    68:07.74      721121376 B                            0.6431  (12 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-10-15-JB-b.flacf\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:09.32       75750908 B   ---   --   ---xx   flac  0.6556  13 Honest with me.flac
+     8:12.13       86819420 B   ---   --   ---xx   flac  0.6151  14 Mr. Tambourine Man.flac
+     7:10.30       75922604 B   ---   --   ---xx   flac  0.6438  15 High water (for Charley Patton).flac
+     3:31.53       37345100 B   ---   --   ---xx   flac  0.5780  16 Mutineer.flac
+     6:50.62       72469868 B   ---   --   ---xx   flac  0.5648  17 Floater (too much to ask).flac
+    11:23.54      120608252 B   ---   --   ---xx   flac  0.6374  18 Summer days.flac
+     6:26.72       68259788 B   ---   --   ---xx   flac  0.6143  19 Knockin' on heaven's door.flac
+     7:32.14       79765772 B   ---   --   ---xx   flac  0.6642  20 All along the watchtower.flac
+    58:17.30      616941712 B                            0.6261  (8 files)
+=================== 
+=================== 
+=================== 

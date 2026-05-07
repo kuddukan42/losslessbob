@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-04-23.shnf 
+=================== 
+=================== 
+=================== 
+7642855203abda5744f9af4d9a574fc9  101 Jokerman.shn
+a2b6b8fc68978283e881fb8ef83d5bbf  102 Senor.shn
+acec8fec2f562bcc017cbad5233b6ce5  103 All Along The Watchtower.shn
+78bcdc6aeffef7d37f1d8360e92e0b88  104 Born In Time.shn
+e3c5d02fd0f792303dbe3c6e64ad9e4a  105 Tangled Up In Blue.shn
+c363d52c5339c9774cfd1694fda73692  106 I Don't Believe You.shn
+e9defd6c639f5ecff1d1fb947fc79bef  107 Mama You've Been On My Mind.shn
+cd3f7a9fec31a386b7f18312ebf826a3  108 Masters Of War.shn
+09f3e500de7fef8ec0d2cd375f69e5bb  109 It's All Over Now, Baby Blue.shn
+2b2fb4edeccba92e517cd8551339be4a  201 God Knows.shn
+7f545be650846667a06e6f46741ff5e5  202 Man In The Long Black Coat.shn
+a87ea63aa54df4c1236f88cab3acd896  203 She Belongs To Me.shn
+524db2f704662f2a1b87d4edbfa5604a  204 Maggie's Farm.shn
+c8aed0511a6ac7c5a88cc2060e194bc9  205 Ballad Of A Thin Man.shn
+1ee2444e07a3c498f10de554e5513e9a  206 It Ain't Me, Babe.shn
+5f86ad001348a124eb17eb334b3fe64b  BD940423-1.md5
+d58d9a95fc19014a219a7904bb2a1c06  BD940423-2.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd94-04-23.shnf 
+=================== 
+=================== 
+=================== 
+d63e890445ff68cea55566fce331d474  [shntool]  101_Jokerman.wav
+8469c5009cdfccb14e5d8aa71f56272f  [shntool]  102_Senor.wav
+0b986e5fc9589ef61f5d39b3d87b0fee  [shntool]  103_All_Along_The_Watchtower.wav
+c0730557afdd46d7ea2508e8aa54bd16  [shntool]  104_Born_In_Time.wav
+65a5d4c2987f875e835ccc51fe65bc15  [shntool]  105_Tangled_Up_In_Blue.wav
+59838050fb043e993207125a86b27b14  [shntool]  106_I_Don't_Believe_You.wav
+b9ab0c38485812abc80d1ff65dd59651  [shntool]  107_Mama_You've_Been_On_My_Mind.wav
+0e2b9321a29f9ae7c304ba031e49f8e6  [shntool]  108_Masters_Of_War.wav
+c8b1c54b9496cf29cf886e6cad847858  [shntool]  109_It's_All_Over_Now,_Baby_Blue.wav
+94ebfd4aaebf38036f917d912fad84ed  [shntool]  201_God_Knows.wav
+3d39ef771813ce6381ce096d38585b12  [shntool]  202_Man_In_The_Long_Black_Coat.wav
+adbf1b92c45bad02da7bfac23e046783  [shntool]  203_She_Belongs_To_Me.wav
+40cebc643a9c31ec6c47ee77eb4fbad8  [shntool]  204_Maggie's_Farm.wav
+15366a2d7353444a0cd4147fd025789d  [shntool]  205_Ballad_Of_A_Thin_Man.wav
+f928baa894aed6bb68c333c98b5cf824  [shntool]  206_It_Ain't_Me,_Babe.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-04-23.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:12.16       86826476 B   ---   --   ---xx    shn  0.6177  101 Jokerman.shn
+     6:03.13       64063820 B   ---   --   ---xx    shn  0.6338  102 Senor.shn
+     5:21.41       56720876 B   ---   --   ---xx    shn  0.6532  103 All Along The Watchtower.shn
+     7:51.30       83155004 B   ---   --   ---xx    shn  0.5936  104 Born In Time.shn
+     9:37.40      101876924 B   ---   --   ---xx    shn  0.6272  105 Tangled Up In Blue.shn
+     6:45.63       71590220 B   ---   --   ---xx    shn  0.5891  106 I Don't Believe You.shn
+     5:44.33       60759260 B   ---   --   ---xx    shn  0.5630  107 Mama You've Been On My Mind.shn
+     5:31.72       58557788 B   ---   --   ---xx    shn  0.5291  108 Masters Of War.shn
+     9:17.58       98391260 B   ---   --   ---xx    shn  0.5809  109 It's All Over Now, Baby Blue.shn
+     5:50.52       61862348 B   ---   --   ---xx    shn  0.6397  201 God Knows.shn
+     7:19.10       77463164 B   ---   --   ---xx    shn  0.5828  202 Man In The Long Black Coat.shn
+     7:05.21       75019436 B   ---   --   ---xx    shn  0.5887  203 She Belongs To Me.shn
+     8:29.16       89825276 B   ---   --   ---xx    shn  0.6467  204 Maggie's Farm.shn
+     8:22.22       88604588 B   ---   --   ---xx    shn  0.6140  205 Ballad Of A Thin Man.shn
+     9:02.31       95681756 B   ---   --   ---xx    shn  0.5500  206 It Ain't Me, Babe.shn
+   110:34.68     1170398196 B                            0.6007  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd96-11-19-LTG.flacf 
+=================== 
+=================== 
+=================== 
+fe0cd73e15aa34db3d6a1032c00a9e7e  bd-19961119-Kalamazoo.ffp
+c83a66fcdd96b97bb5a9176665d08428  bd-19961119-Kalamazoo.md5
+3f006a83a340cc02ab62fb0afdb14c2e  bd1996-11-19-d1t01.flac
+459a76a2260984b7cb0f0b2119abf3b6  bd1996-11-19-d1t02.flac
+9b58f423e24e1aeb0cfe090e695f49a3  bd1996-11-19-d1t03.flac
+81e66bb998ff363771c7ab38f42cd5ec  bd1996-11-19-d1t04.flac
+e1584d94995d961740b4f3083907474f  bd1996-11-19-d1t05.flac
+4be3cc1bc7bb541a050860e61cc0543a  bd1996-11-19-d1t06.flac
+a55076d15523a400f5dc5c0e91b9791e  bd1996-11-19-d1t07.flac
+55832308db5cc0ff716ef5831adadab2  bd1996-11-19-d1t08.flac
+ede8a5901517a4bdd42b5852aa108193  bd1996-11-19-d1t09.flac
+f64a498ca09fed3897c3e7a8e2a0c46b  bd1996-11-19-d1t10.flac
+b765bed9229374cda2e64142bc5f6d56  bd1996-11-19-d2t01.flac
+9cc786f4021200b1f5922d6e16e98693  bd1996-11-19-d2t02.flac
+fc1bfd618f32b3ec76a96c5b2d29c31d  bd1996-11-19-d2t03.flac
+d7e28dea6b321165dab65e4aea41d20c  bd1996-11-19-d2t04.flac
+ee18b4ad659fa2f1cbf89e6ba2cbe2c1  bd1996-11-19-d2t05.flac
+a17ab8b6e8194626f6ed86b6935691bc  bd1996-11-19-d2t06.flac
+4fa85f489c80af4282abdcae80236979  bd1996-11-19-info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd96-11-19-LTG.flacf 
+=================== 
+=================== 
+=================== 
+bd1996-11-19-d1t01.flac:aa14d7cb1052fa6274f77f61b3fe3070
+bd1996-11-19-d1t02.flac:42e2446da16ee9f2be564168716f743c
+bd1996-11-19-d1t03.flac:4b120a52a1b25bb57d8975b36c46d878
+bd1996-11-19-d1t04.flac:781d247127a0777bf99ba3b819d87ba0
+bd1996-11-19-d1t05.flac:1f713d3f3b52510077c85bb465e7deb1
+bd1996-11-19-d1t06.flac:7edec532d989af2c7c2d84f39bb609df
+bd1996-11-19-d1t07.flac:8f9e62e756225e8d62ee975dbd262a0b
+bd1996-11-19-d1t08.flac:911628ee5d9de3f1b751a3d04ebbede4
+bd1996-11-19-d1t09.flac:b451be5bafbd8885c3437e7e242d565d
+bd1996-11-19-d1t10.flac:e311ac261ddccd6c6a631f800ce9562d
+bd1996-11-19-d2t01.flac:0833fc854d3d389f9f94f90327e37c32
+bd1996-11-19-d2t02.flac:bc79ac2d44bb399b855822a35ce4ed92
+bd1996-11-19-d2t03.flac:a8b5f9665bead784ebcd10007fd0c6f3
+bd1996-11-19-d2t04.flac:cb1c525d2c465f1786ab5561ed83f7e5
+bd1996-11-19-d2t05.flac:bb6d72e8c49b7d902d70d1e6141b1466
+bd1996-11-19-d2t06.flac:25283427c220a6ace21e74a772c73747
+=================== 
+=================== 
+=================== 
+=== shntool for: bd96-11-19-LTG.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:21.33        3782060 B   ---   --   ---xx   flac  0.4777  bd1996-11-19-d1t01.flac
+     4:22.23       46270940 B   ---   --   ---xx   flac  0.6221  bd1996-11-19-d1t02.flac
+     6:11.12       65472668 B   ---   --   ---xx   flac  0.5897  bd1996-11-19-d1t03.flac
+     6:39.41       70480076 B   ---   --   ---xx   flac  0.6064  bd1996-11-19-d1t04.flac
+     8:26.09       89279612 B   ---   --   ---xx   flac  0.5611  bd1996-11-19-d1t05.flac
+     8:47.18       93005180 B   ---   --   ---xx   flac  0.5823  bd1996-11-19-d1t06.flac
+     7:11.17       76068428 B   ---   --   ---xx   flac  0.6075  bd1996-11-19-d1t07.flac
+     9:04.42       96060428 B   ---   --   ---xx   flac  0.6224  bd1996-11-19-d1t08.flac
+     5:39.39       59891372 B   ---   --   ---xx   flac  0.5586  bd1996-11-19-d1t09.flac
+     6:55.69       73368332 B   ---   --   ---xx   flac  0.5291  bd1996-11-19-d1t10.flac
+     6:58.36       73819916 B   ---   --   ---xx   flac  0.6128  bd1996-11-19-d2t01.flac
+     7:39.59       81106412 B   ---   --   ---xx   flac  0.5498  bd1996-11-19-d2t02.flac
+    10:36.24      112246892 B   ---   --   ---xx   flac  0.6046  bd1996-11-19-d2t03.flac
+    10:44.50      113719244 B   ---   --   ---xx   flac  0.5935  bd1996-11-19-d2t04.flac
+     8:49.69       93477932 B   ---   --   ---xx   flac  0.5695  bd1996-11-19-d2t05.flac
+     8:31.65       90293324 B   ---   --   ---xx   flac  0.6145  bd1996-11-19-d2t06.flac
+   117:00.06     1238342816 B                            0.5882  (16 files)
+=================== 
+=================== 
+=================== 

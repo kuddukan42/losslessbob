@@ -1,0 +1,76 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-02-10.flacf 
+=================== 
+=================== 
+=================== 
+a449fdda15c31ef855ce3b6383ae1a5c  bd99-02-10.txt
+380c7c9c678d2d5315cf597981ecee55  dylan2-10-1999.txt
+8b57f18493eb8e5786c2bf6c7dd47b21  dylancd101.flac
+de7121f44592be469289c8086d2cab3d  dylancd102.flac
+a79903355e55e43c900a7f0c3c1ccd57  dylancd103.flac
+79ba8f85cee092891870b0acede5d5d9  dylancd104.flac
+5f29ec5c0d8940caf6d4c40c049654da  dylancd105.flac
+ca88084911e4574b9ea5c15044fcb806  dylancd106.flac
+87edfa1dddcfd760622b9c12c9157065  dylancd107.flac
+62e4e548c8dc4de7ef925a34eb019589  dylancd108.flac
+e47f562efd11cc0adcf58529aba9073b  dylancd109.flac
+d47e7faede00b9cac1028c86d5c7494e  dylancd110.flac
+34d7226956671e64834d10c8f1cae347  dylancd111.flac
+e25d5eaecc879ff926f2ee8b8b0084d8  dylancd201.flac
+1036bb3f5257ab5bd9b4a5702e35128a  dylancd202.flac
+a11c445774dfaa7718a5ed39c895d0f6  dylancd203.flac
+472efc9b369eddaf38f78e27d87f2421  dylancd204.flac
+3db76ed7303c844c77848c60721db11c  dylancd205.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-02-10.flacf 
+=================== 
+=================== 
+=================== 
+dylancd101.flac:f65c5a410b065cacd69bb69f1444cf0a
+dylancd102.flac:165dd8fd9eb9af4bd6b182937fca5ac1
+dylancd103.flac:c99e6b780edf64b781497abe2bd6ed54
+dylancd104.flac:c8cd79a9c3ee29d569429a3447adba3c
+dylancd105.flac:348e1d7c7704e5c1b05ebbdf03bb6e7b
+dylancd106.flac:06fd223d64c337fb69f8be6afc83db25
+dylancd107.flac:d86bb312a271cdf3d3bf252eb5494231
+dylancd108.flac:32a714cf127aa645c5b0ae2b3065ebe9
+dylancd109.flac:acc25e84f4208f370bc8a4e61e762885
+dylancd110.flac:643d314368f3d22b915059746f770f34
+dylancd111.flac:aa53ce05f9f432a08f84fb523574b506
+dylancd201.flac:e31877f3309713101e026505f36e2a04
+dylancd202.flac:b5c2aaa337460588c999e7157df979fe
+dylancd203.flac:eab9fbc988283f365b766d8131a059b3
+dylancd204.flac:853d598c015fb9d2ae0b3e9d08f6d03d
+dylancd205.flac:64b174d1b31b69d048bba26aa79759df
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-02-10.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.29       45579452 B   ---   --   ---xx   flac  0.6639  dylancd101.flac
+     5:26.16       57544076 B   ---   --   ---xx   flac  0.6355  dylancd102.flac
+     7:19.00       77439644 B   ---   --   ---xx   flac  0.6585  dylancd103.flac
+     6:41.69       70898732 B   ---   --   ---xx   flac  0.5825  dylancd104.flac
+     6:06.08       64581260 B   ---   --   ---xx   flac  0.6348  dylancd105.flac
+     6:32.05       69160604 B   ---   --   ---xx   flac  0.6007  dylancd106.flac
+     6:25.10       67937564 B   ---   --   ---xx   flac  0.6278  dylancd107.flac
+     6:03.41       64129676 B   ---   --   ---xx   flac  0.5587  dylancd108.flac
+    11:15.04      119079452 B   ---   --   ---xx   flac  0.6760  dylancd109.flac
+     4:26.68       47082380 B   ---   --   ---xx   flac  0.6034  dylancd110.flac
+     6:52.56       72808556 B   ---   --   ---xx   flac  0.6289  dylancd111.flac
+     9:11.25       97255244 B   ---   --   ---xx   flac  0.5834  dylancd201.flac
+     5:47.13       61241420 B   ---   --   ---xx   flac  0.5163  dylancd202.flac
+     6:34.41       69598076 B   ---   --   ---xx   flac  0.3318  dylancd203.flac
+     7:08.54       75626252 B   ---   --   ---xx   flac  0.4569  dylancd204.flac
+     4:28.26       47336396 B   ---   --   ---xx   flac  0.6195  dylancd205.flac
+   104:37.15     1107298784 B                            0.5871  (16 files)
+=================== 
+=================== 
+=================== 

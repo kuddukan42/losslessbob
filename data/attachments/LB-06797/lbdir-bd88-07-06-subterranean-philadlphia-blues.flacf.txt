@@ -1,0 +1,72 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-07-06-subterranean-philadlphia-blues.flacf 
+=================== 
+=================== 
+=================== 
+8ddcbcee8f599a11157168ffd95d32f7  bd88-07-06-subterranean-philadlphia-blues-d1t01.flac
+a173f216338bfd5e482c51dec93b58c7  bd88-07-06-subterranean-philadlphia-blues-d1t02.flac
+6979aefd9cef489261f05a357aec61dc  bd88-07-06-subterranean-philadlphia-blues-d1t03.flac
+26b8885b68dd2ceee17ba02625d48162  bd88-07-06-subterranean-philadlphia-blues-d1t04.flac
+0fd98a3c41bdb02bfa616bf2c2633402  bd88-07-06-subterranean-philadlphia-blues-d1t05.flac
+a226c538607f7fa05f0302b227964bdc  bd88-07-06-subterranean-philadlphia-blues-d1t06.flac
+818a30f65b384499fd86cbdbaf9f7fae  bd88-07-06-subterranean-philadlphia-blues-d1t07.flac
+fc535813bb35427272d8f3c0b56cad26  bd88-07-06-subterranean-philadlphia-blues-d1t08.flac
+b5c36ffa3fe10dc8c9518b82366ab368  bd88-07-06-subterranean-philadlphia-blues-d1t09.flac
+cb2243610d7c9b389cbc9f8b7412c29a  bd88-07-06-subterranean-philadlphia-blues-d1t10.flac
+ff737c22847ebbeb8e5a55e4bf02b313  bd88-07-06-subterranean-philadlphia-blues-d1t11.flac
+98d9684b286eed7ce917d75db42496dc  bd88-07-06-subterranean-philadlphia-blues-d1t12.flac
+4f0da205becc005e2c2b482be438a292  bd88-07-06-subterranean-philadlphia-blues-d1t13.flac
+b400ce8ed24cba18735ed6fc2464a851  bd88-07-06-subterranean-philadlphia-blues-d1t14.flac
+1fc32b90486f906b7551283fa4fe5ea6  bd88-07-06-subterranean-philadlphia-blues-d1t15.flac
+d4716dab2decf895983dfb4da0975b2f  bd88-07-06-subterranean-philadlphia-blues.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-07-06-subterranean-philadlphia-blues.flacf 
+=================== 
+=================== 
+=================== 
+bd88-07-06-subterranean-philadlphia-blues-d1t01.flac:37799b6a0d15ef6417b8a39085fa2250
+bd88-07-06-subterranean-philadlphia-blues-d1t02.flac:f278f98cab3e4ca9fbddeb30bc5a711b
+bd88-07-06-subterranean-philadlphia-blues-d1t03.flac:5c9d92a808c872a62f26cbd59b748fc3
+bd88-07-06-subterranean-philadlphia-blues-d1t04.flac:dcfa60fbf58b12fbb338e3bb5eab4890
+bd88-07-06-subterranean-philadlphia-blues-d1t05.flac:9cd57422b481ee3318aec5d23eed8459
+bd88-07-06-subterranean-philadlphia-blues-d1t06.flac:18069735803fc82e2f121e255a81b407
+bd88-07-06-subterranean-philadlphia-blues-d1t07.flac:b7028ee528c397dfef9dff4957e1d3e3
+bd88-07-06-subterranean-philadlphia-blues-d1t08.flac:ec8c9308646f75cd8229fa2611659191
+bd88-07-06-subterranean-philadlphia-blues-d1t09.flac:3274d504d269e0b846429b20f6c537d1
+bd88-07-06-subterranean-philadlphia-blues-d1t10.flac:56fdb24402ecd421c36c6e8421a26b4d
+bd88-07-06-subterranean-philadlphia-blues-d1t11.flac:6b390fad70a95565b127b169a0527e5e
+bd88-07-06-subterranean-philadlphia-blues-d1t12.flac:86ff317097096bca95086ae0cc0b757a
+bd88-07-06-subterranean-philadlphia-blues-d1t13.flac:9aac2a8a7f1b5250c916cc9ee3a98119
+bd88-07-06-subterranean-philadlphia-blues-d1t14.flac:bea32ad147d5ba14aa76a2b5d1d327c9
+bd88-07-06-subterranean-philadlphia-blues-d1t15.flac:79fba35cd8425cdb3007612d6c073300
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-07-06-subterranean-philadlphia-blues.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:12.50       33986444 B   ---   --   ---xx   flac  0.5359  bd88-07-06-subterranean-philadlphia-blues-d1t01.flac
+     4:07.70       43735484 B   ---   --   ---xx   flac  0.4532  bd88-07-06-subterranean-philadlphia-blues-d1t02.flac
+     4:10.42       44198828 B   ---   --   ---xx   flac  0.5146  bd88-07-06-subterranean-philadlphia-blues-d1t03.flac
+     6:07.08       64757660 B   ---   --   ---xx   flac  0.4969  bd88-07-06-subterranean-philadlphia-blues-d1t04.flac
+     4:16.22       45210188 B   ---   --   ---xx   flac  0.5217  bd88-07-06-subterranean-philadlphia-blues-d1t05.flac
+     4:58.20       52614284 B   ---   --   ---xx   flac  0.5486  bd88-07-06-subterranean-philadlphia-blues-d1t06.flac
+     3:10.63       33664220 B   ---   --   ---xx   flac  0.4340  bd88-07-06-subterranean-philadlphia-blues-d1t07.flac
+     6:34.37       69588668 B   ---   --   ---xx   flac  0.4334  bd88-07-06-subterranean-philadlphia-blues-d1t08.flac
+     3:51.50       40866044 B   ---   --   ---xx   flac  0.5549  bd88-07-06-subterranean-philadlphia-blues-d1t09.flac
+     4:06.50       43512044 B   ---   --   ---xx   flac  0.4870  bd88-07-06-subterranean-philadlphia-blues-d1t10.flac
+     6:11.33       65522060 B   ---   --   ---xx   flac  0.5108  bd88-07-06-subterranean-philadlphia-blues-d1t11.flac
+     4:17.30       45405404 B   ---   --   ---xx   flac  0.4255  bd88-07-06-subterranean-philadlphia-blues-d1t12.flac
+     4:53.00       51685244 B   ---   --   ---xx   flac  0.5050  bd88-07-06-subterranean-philadlphia-blues-d1t13.flac
+     6:25.50       68031644 B   ---   --   ---xx   flac  0.4810  bd88-07-06-subterranean-philadlphia-blues-d1t14.flac
+     5:22.25       56859644 B   ---   --   ---xx   flac  0.4354  bd88-07-06-subterranean-philadlphia-blues-d1t15.flac
+    71:46.25      759637860 B                            0.4876  (15 files)
+=================== 
+=================== 
+=================== 

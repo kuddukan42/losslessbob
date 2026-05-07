@@ -1,0 +1,54 @@
+Bob Dylan
+Mayo Clinic Health System Event Center
+Mankato, Minnesota
+April 4, 2025
+
+01. I'll Be Your Baby Tonight
+02. It Ain't Me, Babe
+03. I Contain Multitudes
+04. False Prophet
+05. When I Paint My Masterpiece
+06. Black Rider
+07. My Own Version Of You
+08. To Be Alone With You
+09. Crossing The Rubicon
+10. Desolation Row
+11. Key West (Philosopher Pirate)
+12. Watching The River Flow
+13. It's All Over Now, Baby Blue 
+14. I've Made Up My Mind To Give Myself To You
+15. Mother Of Muses
+16. Goodbye Jimmy Reed
+17. Every Grain Of Sand
+
+Band Members
+Bob Dylan - vocals, guitar, piano, harp
+Anton Fig - drums
+Doug Lancio - guitar 
+Bob Britt - guitar
+Tony Garnier - bass
+
+Recorded by: soomlos 
+5th row center
+schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3 (24-bit / 48000 Hz)
+sound devices mixpre-3 > usb > pc > poly wav (24-bit / 48000 Hz)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24-bit / 48000 Hz)
+
+ffp
+bd2025-04-04-soomlos-t01.flac:96b0b65725ab01f48360eefd52e5de7a
+bd2025-04-04-soomlos-t02.flac:6ea93a385629be6746dd7f7f7611ea43
+bd2025-04-04-soomlos-t03.flac:8641406be4406930aa32de32a1358244
+bd2025-04-04-soomlos-t04.flac:cd072c6c8dcf1cf62f4d44b7283b1ef1
+bd2025-04-04-soomlos-t05.flac:2ea6c6d78c482555951b30cfa361c8c0
+bd2025-04-04-soomlos-t06.flac:563146cbf11d1cb80687bf53ca0d6dc2
+bd2025-04-04-soomlos-t07.flac:8cf081a3149f3565e26a530548234252
+bd2025-04-04-soomlos-t08.flac:6cc341a6136bdc14b838f8883ad2d84b
+bd2025-04-04-soomlos-t09.flac:a8328d19be86a4553516852b1a95f4d9
+bd2025-04-04-soomlos-t10.flac:e39618922f936a2a84bcf25ef1e1bb18
+bd2025-04-04-soomlos-t11.flac:c7eb4c9c1c042256009474af52cddeed
+bd2025-04-04-soomlos-t12.flac:6560f83f59dbf9a9b443fb5831a93e4d
+bd2025-04-04-soomlos-t13.flac:3204b27db04fb78d56e2a2ecaaa0591d
+bd2025-04-04-soomlos-t14.flac:8d001737a0603d68f93f610d311b2800
+bd2025-04-04-soomlos-t15.flac:d232fb8302e8299bf1857565f3cd5f67
+bd2025-04-04-soomlos-t16.flac:364a870b44947c76f02ecce0e8e55578
+bd2025-04-04-soomlos-t17.flac:60d3482b41a45e35d842d7158c83789b

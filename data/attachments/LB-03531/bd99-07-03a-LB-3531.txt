@@ -1,0 +1,8 @@
+Bob Dylan, 7/3/99, Duluth, Minnesota, Bayside Festival Park, 2CDR
+
+LB-3531, (51min+48min), version "a"; Audience recording, Flaws, d1t2: noises at 1:25, 1:32, 1:40.1:47-1:50, 2:03. 2:08, d2t2: recording or sound system noises? at 1:06-1:08, d2t3: idem d2t2 first 5 sec, d2t4: idem d2t2 7:20-7:30, d2t5: idem d2ts first 2 sec, skip 0:58, This recording circulated in Europe as a vine (a shn set of files) with the notes above., Apparently the noises on d1t2 come from the PA system, no way to recover them., The other flaws have been fixed by Cool Edit, Unknown taper > ? > shn > wav > cool edit > shntool > flac; bittorrent download 02/06;; excellent sound [A]; same recording as LB-3508 based on same clapping on d1t2; this one is full spectrum and not mp3
+
+CD 1, 1. Intro, 2. The Sound Of Silence (Paul Simon) (*), 3. I Walk The Line (Johnny Cash) / Blue Moon Of Kentucky (Bill Monroe) (*), 4. Knockin' On Heaven's Door (*), 5. Oh Baby It Ain't No Lie (Elizabeth Cotton), 6. Don't Think Twice, It's All Right, 7. Masters Of War, 8. It's All Over Now, Baby Blue, 9. Tangled Up In Blue, CD 2, 1. All Along The Watchtower, 2. Tryin' To Get To Heaven, 3. Joke, 4. Stuck Inside Of Mobile With The Memphis Blues Again, 5. Make You Feel My Love, 6. Band presentation, 7. Highway 61 Revisited, 8. Like A Rolling Stone, 9. Blowin' In The Wind, 10. Not Fade Away (Norman Petty/Charles Hardin)
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

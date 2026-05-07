@@ -1,0 +1,89 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-10-07-AT853.flacf 
+=================== 
+=================== 
+=================== 
+7da6ba1a8ee1192227a83aff5b7d4a9d  bd01-10-07-AT853-LB-2806.txt
+0226edcac13a5bebe7854325968d0632  Dylan Corvallis 100701 disc101.flac
+84c7a594c5359b9b95e5cbb53520845f  Dylan Corvallis 100701 disc102.flac
+07c605dce2181ac6d81889d4c2e9eece  Dylan Corvallis 100701 disc103.flac
+5a61372dee4847f68b108aaf3beb169b  Dylan Corvallis 100701 disc104.flac
+f6ab47a28923e1fa8ba821a4cc737392  Dylan Corvallis 100701 disc105.flac
+9447db38ad05c4f2f514ed20b7e4d015  Dylan Corvallis 100701 disc106.flac
+1f1e922e2981b1c50088ff211a251e32  Dylan Corvallis 100701 disc107.flac
+671f9df1a9f2d47107bdae330f5ceac7  Dylan Corvallis 100701 disc108.flac
+588fb71f4618484137f7502e86cc0681  Dylan Corvallis 100701 disc109.flac
+f3aeb6cd6d44374f2c215f0d105c919c  Dylan Corvallis 100701 disc110.flac
+973359c141937a6b5fe322ef4d561697  Dylan Corvallis 100701 disc111.flac
+c90e7d2c66eaf6c97309ac76798f47a7  Dylan Corvallis 100701 disc112.flac
+1f99890fbbe1746ed05eed0a29faf28d  Dylan Corvallis 100701 disc201.flac
+fd3cc620199b694ef5b0449cad0cb934  Dylan Corvallis 100701 disc202.flac
+e7fc0fbdd5e3ead6ca359f4df53a6a92  Dylan Corvallis 100701 disc203.flac
+19f8f42024988eb201978f638beac36a  Dylan Corvallis 100701 disc204.flac
+d099821d8ed7304662fd01d452bc9699  Dylan Corvallis 100701 disc205.flac
+06a66906f57ee6ab3913c5f4efc57257  Dylan Corvallis 100701 disc206.flac
+e1bece61f3f64fd8c612bbd85ec09c51  Dylan Corvallis 100701 disc207.flac
+81143423a8cd6959438461648cf43cd1  Dylan Corvallis 100701 disc208.flac
+33f4167d7b78646583c5963abcb51a33  dylancorvallis 01.md5
+87ba2db5fc0a3e23875e579d1e36b3a3  dylancorvallis01.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-10-07-AT853.flacf 
+=================== 
+=================== 
+=================== 
+Dylan Corvallis 100701 disc101.flac:ed67aec9bd4d56de6a74697348d0f390
+Dylan Corvallis 100701 disc102.flac:c0193942e8318f3b48909f580adbf886
+Dylan Corvallis 100701 disc103.flac:23a788389fccc22c9275f2ef092948b2
+Dylan Corvallis 100701 disc104.flac:f3d5a564cf407ecc6b18b99550b7ad9c
+Dylan Corvallis 100701 disc105.flac:a20720a3876c67a2439393fb34be3bcc
+Dylan Corvallis 100701 disc106.flac:25cd03a203752b900b04bd82e528b0a2
+Dylan Corvallis 100701 disc107.flac:268320d4b0505a1a470f4d4b795eefe1
+Dylan Corvallis 100701 disc108.flac:e0c811ec598c9296d2c96766e04dc824
+Dylan Corvallis 100701 disc109.flac:36811c49ea38f776c2e6fbde2d1bca26
+Dylan Corvallis 100701 disc110.flac:afd04347cf0b345cb80e30ba3ada7985
+Dylan Corvallis 100701 disc111.flac:d523f1fc5a571548ff515870278f3b47
+Dylan Corvallis 100701 disc112.flac:5af9a6e85c1fb15b0b9eed370441357b
+Dylan Corvallis 100701 disc201.flac:39e582e4af56d8dba0a158010ecda5a6
+Dylan Corvallis 100701 disc202.flac:0c50dbe12b5663e430d2594e2c302ba6
+Dylan Corvallis 100701 disc203.flac:c363a97608639413a481a677900d330f
+Dylan Corvallis 100701 disc204.flac:23b7b58b8c2458ce142cfe3760600dec
+Dylan Corvallis 100701 disc205.flac:1d86b877f82c99a4b6651fcfab64f7c5
+Dylan Corvallis 100701 disc206.flac:43713b9f472b010acdca1adbcfa90c6f
+Dylan Corvallis 100701 disc207.flac:19622f3bd8046dffc1693674caa23115
+Dylan Corvallis 100701 disc208.flac:d39959a2ac97500cc4cd036fa72baa57
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-10-07-AT853.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:33.28       37639100 B   ---   --   ---xx   flac  0.5684  Dylan Corvallis 100701 disc101.flac
+     6:24.23       67791740 B   ---   --   ---xx   flac  0.5478  Dylan Corvallis 100701 disc102.flac
+     8:28.42       89710028 B   ---   --   ---xx   flac  0.5391  Dylan Corvallis 100701 disc103.flac
+     3:20.05       35291804 B   ---   --   ---xx   flac  0.4825  Dylan Corvallis 100701 disc104.flac
+     4:35.45       48615884 B   ---   --   ---xx   flac  0.5428  Dylan Corvallis 100701 disc105.flac
+     7:10.04       75861452 B   ---   --   ---xx   flac  0.5255  Dylan Corvallis 100701 disc106.flac
+     5:41.70       60317084 B   ---   --   ---xx   flac  0.5838  Dylan Corvallis 100701 disc107.flac
+     5:22.19       56845532 B   ---   --   ---xx   flac  0.4242  Dylan Corvallis 100701 disc108.flac
+     5:17.36       56003516 B   ---   --   ---xx   flac  0.5006  Dylan Corvallis 100701 disc109.flac
+     7:31.13       79587020 B   ---   --   ---xx   flac  0.4739  Dylan Corvallis 100701 disc110.flac
+     7:12.40       76298924 B   ---   --   ---xx   flac  0.4858  Dylan Corvallis 100701 disc111.flac
+     5:42.73       60500540 B   ---   --   ---xx   flac  0.5646  Dylan Corvallis 100701 disc112.flac
+     7:14.70       76722284 B   ---   --   ---xx   flac  0.3587  Dylan Corvallis 100701 disc201.flac
+     6:29.42       68718428 B   ---   --   ---xx   flac  0.5547  Dylan Corvallis 100701 disc202.flac
+     7:04.01       74795996 B   ---   --   ---xx   flac  0.5936  Dylan Corvallis 100701 disc203.flac
+     5:42.22       60380588 B   ---   --   ---xx   flac  0.5251  Dylan Corvallis 100701 disc204.flac
+     8:05.69       85716332 B   ---   --   ---xx   flac  0.5842  Dylan Corvallis 100701 disc205.flac
+     5:46.06       61048556 B   ---   --   ---xx   flac  0.5175  Dylan Corvallis 100701 disc206.flac
+     6:48.74       72145292 B   ---   --   ---xx   flac  0.6127  Dylan Corvallis 100701 disc207.flac
+     7:25.71       78665036 B   ---   --   ---xx   flac  0.5210  Dylan Corvallis 100701 disc208.flac
+   124:58.03     1322655136 B                            0.5255  (20 files)
+=================== 
+=================== 
+=================== 

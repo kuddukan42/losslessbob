@@ -1,0 +1,86 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-10-19-NYC-94.flacf 
+=================== 
+=================== 
+=================== 
+2b2caf6d9b8c97829ee960a5139d417f  bd94-10-19-NYC-94-d1t01.flac
+bebe63b6331501c9944e2934a4cac61f  bd94-10-19-NYC-94-d1t02.flac
+35c5db34c6e5d0551ecc05261b447303  bd94-10-19-NYC-94-d1t03.flac
+dea3516da5e0270e69212bebb52e1ef3  bd94-10-19-NYC-94-d1t04.flac
+c0ca22ff353343feef1a8fad041f5197  bd94-10-19-NYC-94-d1t05.flac
+f77a0eb3e1b6e33e1aff16603d8b2ab8  bd94-10-19-NYC-94-d1t06.flac
+94b900782735c82793bba1ea1ccdf25f  bd94-10-19-NYC-94-d1t07.flac
+8fbbf2e3ed735b44b03c1d6f3836d91e  bd94-10-19-NYC-94-d1t08.flac
+fb91ebd09c2346c007d7e6cf45e4c78f  bd94-10-19-NYC-94-d1t09.flac
+290fcd281cc8b489eb747edca71489d7  bd94-10-19-NYC-94-d1t10.flac
+2991d853766857188f6134ca0cad053c  bd94-10-19-NYC-94-d2t01.flac
+d08d772ef8472f220a743c1bd7fce326  bd94-10-19-NYC-94-d2t02.flac
+59f72b8a369effda2ecc4118982a6ea2  bd94-10-19-NYC-94-d2t03.flac
+4a2c9bc09881cfb3a95d57579c46dcee  bd94-10-19-NYC-94-d2t04.flac
+3650d232fed5d26b33e77d1191d97ec9  bd94-10-19-NYC-94-d2t05.flac
+1e42c112c2ac58565aa376f24f871cbe  bd94-10-19-NYC-94-d2t06.flac
+7157abd849853bbdf8a20ee6547ddd1d  bd94-10-19-NYC-94-d2t07.flac
+b41a47f4f725b5000e37c8a4daa30b52  bd94-10-19-NYC-94-d2t08.flac
+32aefb39cf8e9834f089550c120bc69d  bd94-10-19-NYC-94-d2t09.flac
+ddc0385cdcaf35802020f176d9d410a9  bd94-10-19-NYC-94-d2t10.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-10-19-NYC-94.flacf 
+=================== 
+=================== 
+=================== 
+bd94-10-19-NYC-94-d1t01.flac:ddea1f5540dca9c254f4c2ff52afaa7b
+bd94-10-19-NYC-94-d1t02.flac:d35f89c5d18297b7815b1098401e56aa
+bd94-10-19-NYC-94-d1t03.flac:0e644ee2dc060b7131cdb72cc6de438c
+bd94-10-19-NYC-94-d1t04.flac:00b95041c7a8959859b9b6144091c35f
+bd94-10-19-NYC-94-d1t05.flac:e2461c9c732d50161197b5fcfb547372
+bd94-10-19-NYC-94-d1t06.flac:b94d757d91dd8a224183f9cdf915e5cb
+bd94-10-19-NYC-94-d1t07.flac:f40a6436d9b0304b3f92a80375abcc4a
+bd94-10-19-NYC-94-d1t08.flac:e9b95b01601c71c71d13605e73ecfc57
+bd94-10-19-NYC-94-d1t09.flac:3658b49628ee2f25de11b294013585f5
+bd94-10-19-NYC-94-d1t10.flac:3ae688ddbd7f4755e028a39bea728ead
+bd94-10-19-NYC-94-d2t01.flac:befb7f7da06971178928640fa9349cb1
+bd94-10-19-NYC-94-d2t02.flac:be69df80d9c4841aff32b5e5b5a4bd88
+bd94-10-19-NYC-94-d2t03.flac:771de5e57c44452129da299e570085ee
+bd94-10-19-NYC-94-d2t04.flac:e4f6b61ae32f1a889f6eeff3122bf6b0
+bd94-10-19-NYC-94-d2t05.flac:43f4aa4153f73430e5769402902f1eed
+bd94-10-19-NYC-94-d2t06.flac:b0477b8662f8ad9dad12017b3423a614
+bd94-10-19-NYC-94-d2t07.flac:d5f99b2b3445977906e3d5831d381721
+bd94-10-19-NYC-94-d2t08.flac:fdfe8e20bc1d589d2f36c703024f2b36
+bd94-10-19-NYC-94-d2t09.flac:c7472aaa37f7f65964d303fc1f93c03b
+bd94-10-19-NYC-94-d2t10.flac:551ea4068606c55112fa63992c7a094f
+=================== 
+=================== 
+=================== 
+=== shntool for: bd94-10-19-NYC-94.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:28.45       79133084 B   ---   --   ---xx   flac  0.7030  bd94-10-19-NYC-94-d1t01.flac
+     7:42.72       81666188 B   ---   --   ---xx   flac  0.7028  bd94-10-19-NYC-94-d1t02.flac
+     5:48.33       61464860 B   ---   --   ---xx   flac  0.7269  bd94-10-19-NYC-94-d1t03.flac
+     8:04.50       85495244 B   ---   --   ---xx   flac  0.6609  bd94-10-19-NYC-94-d1t04.flac
+     8:43.62       92403068 B   ---   --   ---xx   flac  0.6958  bd94-10-19-NYC-94-d1t05.flac
+     6:39.50       70501244 B   ---   --   ---xx   flac  0.7145  bd94-10-19-NYC-94-d1t06.flac
+     5:30.15       58247324 B   ---   --   ---xx   flac  0.6040  bd94-10-19-NYC-94-d1t07.flac
+     5:44.73       60853340 B   ---   --   ---xx   flac  0.5497  bd94-10-19-NYC-94-d1t08.flac
+     7:07.32       75398108 B   ---   --   ---xx   flac  0.5558  bd94-10-19-NYC-94-d1t09.flac
+     9:28.43      100296380 B   ---   --   ---xx   flac  0.6998  bd94-10-19-NYC-94-d1t10.flac
+     8:06.27       85793948 B   ---   --   ---xx   flac  0.6489  bd94-10-19-NYC-94-d2t01.flac
+     8:47.25       93021644 B   ---   --   ---xx   flac  0.7001  bd94-10-19-NYC-94-d2t02.flac
+     8:26.63       89406620 B   ---   --   ---xx   flac  0.6391  bd94-10-19-NYC-94-d2t03.flac
+     8:27.25       89493644 B   ---   --   ---xx   flac  0.5689  bd94-10-19-NYC-94-d2t04.flac
+     7:08.70       75663884 B   ---   --   ---xx   flac  0.5826  bd94-10-19-NYC-94-d2t05.flac
+     9:53.02      104609948 B   ---   --   ---xx   flac  0.6059  bd94-10-19-NYC-94-d2t06.flac
+     6:00.60       63645164 B   ---   --   ---xx   flac  0.5385  bd94-10-19-NYC-94-d2t07.flac
+     6:26.05       68102204 B   ---   --   ---xx   flac  0.5552  bd94-10-19-NYC-94-d2t08.flac
+     6:21.35       67290764 B   ---   --   ---xx   flac  0.6601  bd94-10-19-NYC-94-d2t09.flac
+     7:43.00       81673244 B   ---   --   ---xx   flac  0.6604  bd94-10-19-NYC-94-d2t10.flac
+   149:40.37     1584159904 B                            0.6416  (20 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd93-07-09-preboard-jtt.flacf 
+=================== 
+=================== 
+=================== 
+73fde9a8321c58af06c943a6d05be2e9  Disc One\Disc One.ffp
+416e8b360b70a05fa67153845e307c57  Disc One\Disc01Track01 Dylan 09.07.93.flac
+9ed0ca0b0d53a203c019e48154da815b  Disc One\Disc01Track02 Dylan 09.07.93.flac
+bda27b2e07a05cef9b2f0a012520383d  Disc One\Disc01Track03 Dylan 09.07.93.flac
+52ad662a36edf9cd467e4abbcd456aca  Disc One\Disc01Track04 Dylan 09.07.93.flac
+24f5612fef2ac8d005f73f84f86adf91  Disc One\Disc01Track05 Dylan 09.07.93.flac
+3de788f5d6ab133dcf10fc543f342473  Disc One\Disc01Track06 Dylan 09.07.93.flac
+02e0744427609c9b01aa803786be497e  Disc One\Disc01Track07 Dylan 09.07.93.flac
+8725269985531b1a0805944973c81dc1  Disc Two\Disc Two.ffp
+2c813c0a77cbd8c9b1905f0602627ed7  Disc Two\Disc02Track01 Dylan 09.07.93.flac
+21b8b0317f116470e8b1aa2cebb2ef8d  Disc Two\Disc02Track02 Dylan 09.07.93.flac
+f1299c738080102950fa0d3110e83067  Disc Two\Disc02Track03 Dylan 09.07.93.flac
+d410d9385a7bc3134cd13c400929326f  Disc Two\Disc02Track04 Dylan 09.07.93.flac
+256e330bbcd2df513a1a24cdb744e997  Disc Two\Disc02Track05 Dylan 09.07.93.flac
+72bb7063937ce050647f5717c452dcc4  Disc Two\Disc02Track06 Dylan 09.07.93.flac
+6130f98fb6f47e7b4f92b2cfeec9751b  Dylan - La Coruna July 9th 1993  Pre Board.md5
+1023ce84af9284e0a0b4117efe0ec01b  Dylan - La Coruna July 9th 1993  Pre Board.txt
+7b9f9d48db5a37f345f92f14d4ea4cef  Dylan - La Coruna July 9th 1993  Pre Board_Info.txt
+9560c3362d24538852153db706cc9431  La Coruna, Spain 09.07.1993 - F.jpg
+273e6bbccf72d7393d72f3980b5ea320  La Coruna, Spain 09.07.1993 - R.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-09-preboard-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Dylan 09.07.93.flac:c2435931c53727d4c5f27c8f30fadc91
+Disc01Track02 Dylan 09.07.93.flac:1368662e4be2e7c8c764db6d17c6cbc9
+Disc01Track03 Dylan 09.07.93.flac:c9cc276129057f5b60fa0bbad7a2f3db
+Disc01Track04 Dylan 09.07.93.flac:16b1f98831f4d0105e995996371b7a15
+Disc01Track05 Dylan 09.07.93.flac:f7e8aa0151982b4cc6865c1393cf467a
+Disc01Track06 Dylan 09.07.93.flac:5ef11539aee02be0aa6479b9520cfb49
+Disc01Track07 Dylan 09.07.93.flac:2fa4ad5e54d2e1702724f61cdcda6318
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd93-07-09-preboard-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Dylan 09.07.93.flac:7d23cb2a8b846aff8fadf8c150165d9e
+Disc02Track02 Dylan 09.07.93.flac:e205990fba918c1b9f8e171d61f3f4f3
+Disc02Track03 Dylan 09.07.93.flac:476ad2a2457f1e57d0ea127025530453
+Disc02Track04 Dylan 09.07.93.flac:eb9c410875c0e2eaeaaaf39b92ce9ed5
+Disc02Track05 Dylan 09.07.93.flac:ade939a55054af6dcafb096699576f0f
+Disc02Track06 Dylan 09.07.93.flac:790760b2091969d96c7345fdefa0e9a0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-09-preboard-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:41.52       49691452 B   -b-   --   ---xx   flac  0.3768  Disc01Track01 Dylan 09.07.93.flac
+     8:19.61       88167484 B   -b-   --   ---xx   flac  0.4441  Disc01Track02 Dylan 09.07.93.flac
+     6:21.10       67230844 B   -b-   --   ---xx   flac  0.4322  Disc01Track03 Dylan 09.07.93.flac
+     7:28.58       79163964 B   -b-   --   ---xx   flac  0.4399  Disc01Track04 Dylan 09.07.93.flac
+    10:48.44      114411740 B   -b-   --   ---xx   flac  0.4439  Disc01Track05 Dylan 09.07.93.flac
+     7:10.47       75962172 B   -b-   --   ---xx   flac  0.4064  Disc01Track06 Dylan 09.07.93.flac
+     4:22.29       46284844 B   -b-   --   ---xx   flac  0.3828  Disc01Track07 Dylan 09.07.93.flac
+    49:13.01      520912500 B                            0.4245  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd93-07-09-preboard-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:19.55       66984508 B   -b-   --   ---xx   flac  0.3245  Disc02Track01 Dylan 09.07.93.flac
+     7:21.40       77886876 B   -b-   --   ---xx   flac  0.3572  Disc02Track02 Dylan 09.07.93.flac
+     8:59.41       95177212 B   -b-   --   ---xx   flac  0.3519  Disc02Track03 Dylan 09.07.93.flac
+     8:18.10       87870508 B   -b-   --   ---xx   flac  0.4118  Disc02Track04 Dylan 09.07.93.flac
+     7:33.09       79930476 B   -b-   --   ---xx   flac  0.4029  Disc02Track05 Dylan 09.07.93.flac
+     9:57.37      105398316 B   -b-   --   ---xx   flac  0.3474  Disc02Track06 Dylan 09.07.93.flac
+    48:29.43      513247896 B                            0.3664  (6 files)
+=================== 
+=================== 
+=================== 

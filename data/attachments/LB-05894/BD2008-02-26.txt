@@ -1,0 +1,33 @@
+Bob Dylan
+February 26, 2008 (Tuesday)
+
+Auditorio Nacional
+Mexico City
+
+a01 (intro)
+a02 Rainy Day Women #12&35
+a03 It Ain't Me Babe
+a04 Watching The River Flow
+a05 Masters Of War
+a06 The Levee's Gonna Break
+a07 Spirit On The Water
+a08 Things Have Changed
+a09 When The Deal Goes Down
+a10 High Water
+a11 Stuck Inside Of Mobile With The Memphis Blues Again
+b01 Workingman's Blues #2
+b02 Highway 61 Revisited
+b03 Nettie Moore
+b04 Summer Days
+b05 Like A Rolling Stone
+ - - - - e n c o r e - - - - 
+b06 Thunder On The Mountain
+b07 (band introduction)
+b08 Blowin' In The Wind
+
+average quality audience recording
+
+Equipment & Linage:
+COS-11(s)PT > handmade power supply > Roland R-01 (16/44.1) > CF > PC > Soundforge 7.0 (tracking, fade-in/out, NO LEVEL CHANGE, NO EQ) > wav > TLH > flac > here
+
+a11 to b01 seamless

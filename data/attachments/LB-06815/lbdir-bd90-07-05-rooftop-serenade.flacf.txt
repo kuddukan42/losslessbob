@@ -1,0 +1,54 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-07-05-rooftop-serenade.flacf 
+=================== 
+=================== 
+=================== 
+ec7090619e7fd076a9b54b4fae9a0d91  bd90-07-05-rooftop-serenade-d1t01.flac
+b08e5a0c56d8547417c8893723c1c3ff  bd90-07-05-rooftop-serenade-d1t02.flac
+d98eb4e24275b66bc0c17594632372ed  bd90-07-05-rooftop-serenade-d1t03.flac
+24a2438edd2972edf6934f063a44b12f  bd90-07-05-rooftop-serenade-d1t04.flac
+fe780324dcc796efd7430f9cf4880164  bd90-07-05-rooftop-serenade-d1t05.flac
+962f74c15d4262a84c0daad37b903170  bd90-07-05-rooftop-serenade-d1t06.flac
+765ebc59aa7fc4257fed8db39e41e8f8  bd90-07-05-rooftop-serenade-d1t07.flac
+355bc7d49a27b6c6a497e3ea9a0a81e5  bd90-07-05-rooftop-serenade-d1t08.flac
+985dbb20e10437eedb0f9002625b49ab  bd90-07-05-rooftop-serenade-d1t09.flac
+17470392c920b4bd70eb6b640c5c44e3  bd90-07-05-rooftop-serenade.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-07-05-rooftop-serenade.flacf 
+=================== 
+=================== 
+=================== 
+bd90-07-05-rooftop-serenade-d1t01.flac:f6efd830572c620e2b23c0cae55444b8
+bd90-07-05-rooftop-serenade-d1t02.flac:49e1abc9457925b77a04a2706dcc35c3
+bd90-07-05-rooftop-serenade-d1t03.flac:084fd9cfa15d37485c99522b0d0b0a94
+bd90-07-05-rooftop-serenade-d1t04.flac:ce111635df2c7b508643aa27a8d92de0
+bd90-07-05-rooftop-serenade-d1t05.flac:811e36575f61a4d0745a10b58d0e70bf
+bd90-07-05-rooftop-serenade-d1t06.flac:d2adc12bdebfdfc173bb035060fc6ab0
+bd90-07-05-rooftop-serenade-d1t07.flac:f5b73672e22db7953692a08a3f8d856d
+bd90-07-05-rooftop-serenade-d1t08.flac:e3feb3a171371bd6cfa77524e89ffec0
+bd90-07-05-rooftop-serenade-d1t09.flac:47f4aa7657e23e1609523a8ed100f712
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-07-05-rooftop-serenade.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:54.10       41301164 B   ---   --   ---xx   flac  0.6933  bd90-07-05-rooftop-serenade-d1t01.flac
+     4:15.55       45111404 B   ---   --   ---xx   flac  0.6823  bd90-07-05-rooftop-serenade-d1t02.flac
+     3:32.20       37443884 B   ---   --   ---xx   flac  0.7047  bd90-07-05-rooftop-serenade-d1t03.flac
+     4:39.37       49302668 B   ---   --   ---xx   flac  0.7006  bd90-07-05-rooftop-serenade-d1t04.flac
+     4:28.08       47294060 B   ---   --   ---xx   flac  0.7433  bd90-07-05-rooftop-serenade-d1t05.flac
+     5:36.40       59364524 B   ---   --   ---xx   flac  0.7295  bd90-07-05-rooftop-serenade-d1t06.flac
+     5:05.00       53802044 B   ---   --   ---xx   flac  0.6616  bd90-07-05-rooftop-serenade-d1t07.flac
+     3:33.37       37660268 B   ---   --   ---xx   flac  0.6712  bd90-07-05-rooftop-serenade-d1t08.flac
+     5:20.05       56459804 B   ---   --   ---xx   flac  0.7120  bd90-07-05-rooftop-serenade-d1t09.flac
+    40:24.62      427739820 B                            0.7011  (9 files)
+=================== 
+=================== 
+=================== 

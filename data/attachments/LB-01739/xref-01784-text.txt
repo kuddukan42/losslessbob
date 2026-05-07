@@ -1,0 +1,202 @@
+===================
+===================
+===================
+=== CD1.ffp
+===================
+===================
+===================
+01 The wicked messenger.flac:25902afc9b3041edbd68ce23a6ea7bf4
+02 You ain't goin' nowhere.flac:30f317796d6efd0f31fdbd73d9ee9126
+03 Cry a while.flac:be76e2a8e1b9542cfec1fea035d144fb
+04 The lonesome death of Hattie Carroll.flac:463103f7fbe5c552abbab162460f257a
+05 Highway 61 revisited.flac:d73f6fb63fff42e064e586e0a01dea9c
+06 Make you feel my love.flac:8d5b285cd1ab196c3b8f7ec9eef0cb5c
+07 Cold irons bound.flac:ec54a7a7e7e76bf761ea33a56977bf12
+08 I don't believe you (she acts like we never have met).flac:44c9a21e302c42aa221654993848609d
+09 Man in the long black coat.flac:957e9be8b10b324b0f27a02c7e0831a5
+10 Rainy day women #12 & 35.flac:f9be2a40fdd649da6ae8859f9b699f67
+11 I believe in you.flac:627a7b71b0923a8025461c6905832f38
+===================
+===================
+===================
+=== CD1.txt
+===================
+===================
+===================
+01 The wicked messenger.flac:25902afc9b3041edbd68ce23a6ea7bf4
+02 You ain't goin' nowhere.flac:30f317796d6efd0f31fdbd73d9ee9126
+03 Cry a while.flac:be76e2a8e1b9542cfec1fea035d144fb
+04 The lonesome death of Hattie Carroll.flac:463103f7fbe5c552abbab162460f257a
+05 Highway 61 revisited.flac:d73f6fb63fff42e064e586e0a01dea9c
+06 Make you feel my love.flac:8d5b285cd1ab196c3b8f7ec9eef0cb5c
+07 Cold irons bound.flac:ec54a7a7e7e76bf761ea33a56977bf12
+08 I don't believe you (she acts like we never have met).flac:44c9a21e302c42aa221654993848609d
+09 Man in the long black coat.flac:957e9be8b10b324b0f27a02c7e0831a5
+10 Rainy day women #12 & 35.flac:f9be2a40fdd649da6ae8859f9b699f67
+11 I believe in you.flac:627a7b71b0923a8025461c6905832f38
+===================
+===================
+===================
+=== CD2.ffp
+===================
+===================
+===================
+12 Honest with me.flac:e9ba8b17257ce8fdffc475b50b51eeeb
+13 Tell me that it isn't true.flac:8f5b486f1b6af516deab52312eb883eb
+14 Summer days.flac:17de0b5194b01718ef9612be8a78cd7b
+15 (audience pleasure).flac:b62f0b78f26418b87d45e3b6a5fa772b
+15 Down along the cove.flac:399527dc116e7dcda05656ede6ff14ca
+16 Like a rolling stone.flac:9dbe2bb1729042f42126a1d0b08ae67b
+17 (band intro).flac:d1d0d69014e1eb4f6a9700ff8090db70
+17 All along the watchtower.flac:5ad2e6607a9bfb1e98fddfc0060327ce
+18 (audience talk).flac:69b110a9fa6486972385050b5403f4ec
+===================
+===================
+===================
+=== CD2.txt
+===================
+===================
+===================
+12 Honest with me.flac:e9ba8b17257ce8fdffc475b50b51eeeb
+13 Tell me that it isn't true.flac:8f5b486f1b6af516deab52312eb883eb
+14 Summer days.flac:17de0b5194b01718ef9612be8a78cd7b
+15 (audience pleasure).flac:b62f0b78f26418b87d45e3b6a5fa772b
+15 Down along the cove.flac:399527dc116e7dcda05656ede6ff14ca
+16 Like a rolling stone.flac:9dbe2bb1729042f42126a1d0b08ae67b
+17 (band intro).flac:d1d0d69014e1eb4f6a9700ff8090db70
+17 All along the watchtower.flac:5ad2e6607a9bfb1e98fddfc0060327ce
+18 (audience talk).flac:69b110a9fa6486972385050b5403f4ec
+===================
+===================
+===================
+=== Bob Dylan 2004-03-26 Avalon, Boston, Massachusetts, USA [LB-1679 'Unwanted Man'].txt
+===================
+===================
+===================
+Bob Dylan and His Band
+
+Avalon Ballroom
+Boston, Massachusetts
+March 26, 2004
+
+LB-1679 Schoeps MK4: SHN files converted to FLAC files
+
+Source:  Schoeps mk4>kc5>cmc6>Sonosax>SBM1>d100
+Transfer: CD>EAC (no errors)>FLAC
+
+CD1:
+01 The Wicked Messenger
+02 You Ain't Goin' Nowhere
+03 Cry A While
+04 The Lonesome Death Of Hattie Carroll 
+05 Highway 61 Revisited
+06 Make You Feel My Love
+07 Cold Irons Bound
+08 I Don't Believe You (She Acts Like We Never Have Met)
+09 Man In The Long Black Coat 
+10 Rainy Day Women #12 & 35
+11 I Believe In You
+
+CD2:
+12 Honest With Me
+13 Tell Me That It Isn't True
+14 Summer Days
+15 Down Along The Cove
+16 Like A Rolling Stone
+17 All Along The Watchtower
+
+Concert # 1608 of The Never-Ending Tour
+Concert # 20 of the 2004 US Spring Tour
+2004 concert # 20
+
+Concert # 20 with the 17th Never-Ending Tour Band:
+Bob Dylan (vocal & piano)
+Freddie Koella (guitar)
+Larry Campbell (guitar, mandolin, pedal steel guitar & electric slide guitar)
+Tony Garnier (bass)
+George Receli & Richie Hayward (drums & percussion)
+
+11 acoustic with the band
+2, 4, 6, 9, 11, 13 Bob Dylan (harmonica)
+1-12, 14-17 George Receli (drums & percussion)
+2-9, 12, 13, 15, 16 Richie Hayward (drums & percussion)
+2, 6, 13 Larry Campbell (pedal steel guitar)
+11 Larry Campbell (cittern)
+7 Freddie Koella (slide guitar)
+12 Larry Campbell (slide guitar)
+
+8 new songs (47%) compared to previous concert. No new songs for this tour
+
+CD1 .ffp:
+01 The wicked messenger.flac:25902afc9b3041edbd68ce23a6ea7bf4
+02 You ain't goin' nowhere.flac:30f317796d6efd0f31fdbd73d9ee9126
+03 Cry a while.flac:be76e2a8e1b9542cfec1fea035d144fb
+04 The lonesome death of Hattie Carroll.flac:463103f7fbe5c552abbab162460f257a
+05 Highway 61 revisited.flac:d73f6fb63fff42e064e586e0a01dea9c
+06 Make you feel my love.flac:8d5b285cd1ab196c3b8f7ec9eef0cb5c
+07 Cold irons bound.flac:ec54a7a7e7e76bf761ea33a56977bf12
+08 I don't believe you (she acts like we never have met).flac:44c9a21e302c42aa221654993848609d
+09 Man in the long black coat.flac:957e9be8b10b324b0f27a02c7e0831a5
+10 Rainy day women #12 & 35.flac:f9be2a40fdd649da6ae8859f9b699f67
+11 I believe in you.flac:627a7b71b0923a8025461c6905832f38
+
+CD2 .ffp:
+12 Honest with me.flac:e9ba8b17257ce8fdffc475b50b51eeeb
+13 Tell me that it isn't true.flac:8f5b486f1b6af516deab52312eb883eb
+14 Summer days.flac:17de0b5194b01718ef9612be8a78cd7b
+15 (audience pleasure).flac:b62f0b78f26418b87d45e3b6a5fa772b
+15 Down along the cove.flac:399527dc116e7dcda05656ede6ff14ca
+16 Like a rolling stone.flac:9dbe2bb1729042f42126a1d0b08ae67b
+17 (band intro).flac:d1d0d69014e1eb4f6a9700ff8090db70
+17 All along the watchtower.flac:5ad2e6607a9bfb1e98fddfc0060327ce
+18 (audience talk).flac:69b110a9fa6486972385050b5403f4ec
+===================
+===================
+===================
+=== ORIGINAL 2004.03.26 Unwanted Man Info.txt
+===================
+===================
+===================
+Bob Dylan
+3-26-2004
+Avalon
+Boston, MA
+
+Source:  "Unwanted Man" - lineage not known.
+My source got it directly from taper as a 3 disc set with Boston March 24 and 26, 2004. Edited to 2 sets of 2 discs.
+
+Received as aud cd-r, EAC no errors. Converted to SHN.
+
+
+Disc 1 (78:17): 
+
+1) The Wicked Messenger
+2) You Ain't Goin' Nowhere
+3) Cry A While
+4) The Lonesome Death Of Hattie Carroll 
+5) Highway 61 Revisited
+6) Make You Feel My Love
+7) Cold Irons Bound
+8) I Don't Believe You (She Acts Like We Never Have Met)
+9) Man In The Long Black Coat 
+10) Rainy Day Women #12 & 35
+11) I Believe In You
+12) Honest With Me
+13) Tell Me That It Isn't True
+
+Disc 2 (37:40):
+
+1) Summer Days
+2) * Audience before encore *
+3) Down Along The Cove
+4) Like A Rolling Stone
+5) * Band Intro *
+6) All Along The Watchtower
+7) * Audience/taper talk *
+
+Enjoy!!
+
+-ts-
+===================
+===================
+===================

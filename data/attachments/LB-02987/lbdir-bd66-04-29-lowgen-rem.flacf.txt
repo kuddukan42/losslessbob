@@ -1,0 +1,61 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd66-04-29-lowgen-rem.flacf 
+=================== 
+=================== 
+=================== 
+af9ed30fc46f4ce6bf691e06e1ec8681  660429-StockholmTrack01.flac
+5e105976c7737c15ec36e127cbcc074c  660429-StockholmTrack02.flac
+29363c9260ecdb34ed7f6706c1eacec7  660429-StockholmTrack03.flac
+0a79758e97b8ea8041e25da92bfcf7dc  660429-StockholmTrack04.flac
+3a9c10af33b05ce8cfba5f506e2a837c  660429-StockholmTrack05.flac
+9744115551d5ac84d28ab6491faa7b6b  660429-StockholmTrack06.flac
+9af28182034eca595df03db26b70e30f  660429-StockholmTrack07.flac
+df5272d3311ac906a3430ec4d856a6e1  660429-StockholmTrack08.flac
+99a0e6afe80fc9657f7f90ebe920cfc9  660429-StockholmTrack09.flac
+63d9e36c6ae1aba0716a70aea4572954  660429-StockholmTrack10.flac
+c6a0e7fb8c81df34fadd35b45d7e3806  660429-StockholmTrack11.flac
+ebfb8f59fd6ad1d869ba096fca0e1477  bd66-04-29-lowgen-rem-LB-2987.txt
+ff8fea58cba72a666f7cb08711b80830  info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd66-04-29-lowgen-rem.flacf 
+=================== 
+=================== 
+=================== 
+660429-StockholmTrack01.flac:c6e907e2aa0273eb9fea8f890e934d70
+660429-StockholmTrack02.flac:afc568883cd659049481f9cb05d9231a
+660429-StockholmTrack03.flac:9c42b16533b4e4287c574eb3abe89046
+660429-StockholmTrack04.flac:d38a4f88d1bc95079e72c1cfa5408159
+660429-StockholmTrack05.flac:8ee2ee773a5ad02fb0b38e04d414e82b
+660429-StockholmTrack06.flac:6666b33298887d326407fb721815677c
+660429-StockholmTrack07.flac:8900dd7712733673dd5179fda15fd03d
+660429-StockholmTrack08.flac:d1825326bb0da26c9e2aec1ae5da8d43
+660429-StockholmTrack09.flac:c1ea7b4f477cc6e6a4d6a99dfc360182
+660429-StockholmTrack10.flac:6d00b563ea4001e3adf98a23d9247eef
+660429-StockholmTrack11.flac:b419bb5ba580cf0e9f771c0a518b0764
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd66-04-29-lowgen-rem.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:09.56       33471356 B   ---   --   ---xx   flac  0.5640  660429-StockholmTrack01.flac
+     4:17.72       45504188 B   ---   --   ---xx   flac  0.5666  660429-StockholmTrack02.flac
+     7:28.50       79144844 B   ---   --   ---xx   flac  0.5556  660429-StockholmTrack03.flac
+     5:17.63       56067020 B   ---   --   ---xx   flac  0.5727  660429-StockholmTrack04.flac
+     4:38.62       49185068 B   ---   --   ---xx   flac  0.5593  660429-StockholmTrack05.flac
+     5:23.08       56996060 B   ---   --   ---xx   flac  0.6408  660429-StockholmTrack06.flac
+     3:24.29       36053852 B   ---   --   ---xx   flac  0.6409  660429-StockholmTrack07.flac
+     0:39.01        6881996 B   ---   --   ---xx   flac  0.6166  660429-StockholmTrack08.flac
+     3:15.22       34449788 B   ---   --   ---xx   flac  0.6393  660429-StockholmTrack09.flac
+     2:17.74       24340892 B   ---   --   ---xx   flac  0.6365  660429-StockholmTrack10.flac
+     6:13.42       65896028 B   ---   --   ---xx   flac  0.6060  660429-StockholmTrack11.flac
+    46:06.29      487991092 B                            0.5934  (11 files)
+=================== 
+=================== 
+=================== 

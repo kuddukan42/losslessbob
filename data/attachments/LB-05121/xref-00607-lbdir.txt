@@ -1,0 +1,38 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-07-25-soundcheck-e.flacf 
+=================== 
+=================== 
+=================== 
+71b3f37a948b18052cb4e246675ce5c7  bd81-07-25 Avignon soundchecks.ffp
+5e460857848d3785bc6de35a039391f0  bd81-07-25-soundcheck.txt
+588149f8d0c5ef4f7910ba8176a97baa  bd81-07-25SCt07.flac
+a111040528e993309ac4c6505c30344f  bd81-07-25SCt08.flac
+adcb236c9a2cc35890cc5a1b17bcd8ae  bd81-07-25SCt09.flac
+77dead397b1df50a9b138f09dbc5d924  eac Avignon SC.LOG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-07-25-soundcheck-e.flacf 
+=================== 
+=================== 
+=================== 
+bd81-07-25sct07.flac:08ca16a22ef87dad0e4c988a28d73fa8
+bd81-07-25sct08.flac:adb985e162c08461e2fc02208dd697c2
+bd81-07-25sct09.flac:b6e350ed796d7e9cb6452496c2f31122
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-07-25-soundcheck-e.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.37       45598268 B   ---   --   ---xx   flac  0.4883  bd81-07-25SCt07.flac
+     4:37.74       49036892 B   ---   --   ---xx   flac  0.4945  bd81-07-25SCt08.flac
+    11:36.57      122908508 B   ---   --   ---xx   flac  0.5038  bd81-07-25SCt09.flac
+    20:33.18      217543668 B                            0.4985  (3 files)
+=================== 
+=================== 
+=================== 

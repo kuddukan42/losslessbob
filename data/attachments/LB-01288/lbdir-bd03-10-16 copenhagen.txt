@@ -1,0 +1,96 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-10-16 copenhagen 
+=================== 
+=================== 
+=================== 
+7be1056cde62b622f1f7ca484b502ef2  1\01.shn
+11e70cd3f9818da06b6fc74517522e49  1\02.shn
+a0a915500d0d256fee06e166f9ee8f54  1\03.shn
+1f83c88104d9413d963f23be803311dd  1\04.shn
+28f9c0843bf886d245487e6c7f967dd8  1\05.shn
+11a169d413387102a72bcc74b98b097a  1\06.shn
+d3a28d6c4878e2126fc427717d45954d  1\07.shn
+3e2f9d263b5b9d8f13a8d84bc8c361d2  1\08.shn
+bc92a807b3a38896c2250b60d77bcc79  1\09.shn
+ae3dc3344a6c5b5b940ad1c8e060abec  1\10.shn
+599f020afa830c1e7c72df3860f7abf0  1\noname.md5
+8d39027875ab07691b01541a989dac0e  2\01.shn
+555596f76133dc3c34eae4196d5615e7  2\02.shn
+eaf76725f8f338daeb2f2a98dbec51fc  2\03.shn
+88881b3d578b099fed3ebaa40964abe4  2\04.shn
+2eff9db7a2237c4a8fa37a17b573c87c  2\05.shn
+265ea24d962c6120885d4ab190aec66a  2\06.shn
+df48a16fbc31813f0af61afd0f9ecfa4  2\07.shn
+79c4d658227cd0ce2c2fcb7f14a9fbef  2\noname.md5
+7b284ac1e0e86a49e786acafa03c167d  bd03-10-16.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-10-16 copenhagen\1 
+=================== 
+=================== 
+=================== 
+2a05afde3579863574c442c4d2823205  [shntool]  01.wav
+ba5bc32857539afe61568e23e2e00681  [shntool]  02.wav
+0962073f9052fa115a4ed8860329c2c6  [shntool]  03.wav
+b5a4a8792e3e797a05b68f011a96498c  [shntool]  04.wav
+ea073bb495da3c2c339db0f346a1d407  [shntool]  05.wav
+6009fdb75649ab400236190190ca0663  [shntool]  06.wav
+88067cfb03e6e7c1752d81a71c6fb910  [shntool]  07.wav
+a5dbbb7eb69ad83ef73f60b4327fa2e4  [shntool]  08.wav
+6a59eb78c1d639fc85638ca86303c4d9  [shntool]  09.wav
+0104cf0f5471d7087e9daa74134fdaa8  [shntool]  10.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd03-10-16 copenhagen\2 
+=================== 
+=================== 
+=================== 
+306bf0c036f10b8a3306d6e3a4521eab  [shntool]  01.wav
+5bb817aa915e3c97980522c5caf2affb  [shntool]  02.wav
+6000ab0f71b85205d93c142b76bcb2a6  [shntool]  03.wav
+d3ff3800e928bee7cb7e87af4524cbea  [shntool]  04.wav
+13dc5804ad4516a0b7df1f0110f60f97  [shntool]  05.wav
+f94757032725691aa9fb9165b296dcfc  [shntool]  06.wav
+50f99b19d1a3556b404371b66b389fe7  [shntool]  07.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-16 copenhagen\1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:40.68       49552006 B   ---   -e   ---xx    shn  0.6520  01.shn
+     7:00.26       74149222 B   ---   -e   ---xx    shn  0.5889  02.shn
+     5:53.24       62325718 B   ---   -e   ---xx    shn  0.6312  03.shn
+     6:16.10       66349990 B   ---   -e   ---xx    shn  0.5992  04.shn
+     7:27.20       78897910 B   ---   -e   ---xx    shn  0.6112  05.shn
+     6:23.16       67598902 B   ---   -e   ---xx    shn  0.5833  06.shn
+     6:55.62       73351894 B   ---   -e   ---xx    shn  0.6014  07.shn
+     7:46.44       82305958 B   ---   -e   ---xx    shn  0.6200  08.shn
+     5:41.66       60307702 B   ---   -e   ---xx    shn  0.5352  09.shn
+     8:12.27       86852374 B   ---   -e   ---xx    shn  0.6314  10.shn
+    66:17.63      701691676 B                            0.6057  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-10-16 copenhagen\2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:53.23       83491394 B   ---   -e   ---xx    shn  0.5666  01.shn
+     7:16.64       77061026 B   ---   -e   ---xx    shn  0.6222  02.shn
+     6:22.72       67554242 B   ---   -e   ---xx    shn  0.5786  03.shn
+    12:21.23      130766594 B   ---   -e   ---xx    shn  0.5745  04.shn
+     5:04.26       53686850 B   ---   -e   ---xx    shn  0.6084  05.shn
+     7:20.44       77719586 B   ---   -e   ---xx    shn  0.6092  06.shn
+     7:14.65       76710578 B   ---   -e   ---xx    shn  0.6202  07.shn
+    53:34.17      566990270 B                            0.5944  (7 files)
+=================== 
+=================== 
+=================== 

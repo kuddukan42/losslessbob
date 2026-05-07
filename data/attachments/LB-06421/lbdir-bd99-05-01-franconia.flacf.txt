@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-05-01-franconia.flacf 
+=================== 
+=================== 
+=================== 
+9650fab48f97a10b057ed17fd07df26a  1999-05-01-Ischgl-alt.md5
+d1a5cfaf0b58078e0b0923d5151fea96  1999-05-01-Ischgl-alt.txt
+879c507fa54540f392cb8073b0439fa7  Track101.flac
+48b39795bd763241054ba223648861c8  Track102.flac
+d6b257f9974dbca147704fcac558d455  Track103.flac
+8bb367b972ff029f8008c0679a1f2f00  Track104.flac
+76672f90b430b86326daddef3e72fa84  Track105.flac
+fc83856005b489d2cef3dd3ecb7b2d66  Track106.flac
+845398ab61ac1eadd517ebdc1ebf4f12  Track107.flac
+4a215e0cbf25bf0b77bcab7c177f8cd6  Track108.flac
+54757ea1e07411cc3e7004db7ad03615  Track109.flac
+35b3568ca3d300f8cd7350690332aa66  Track110.flac
+252d7d4b52e8acd9a820024860da6c39  Track111.flac
+563d6abb299bdb54471bc536a2c13cd6  Track201.flac
+c81ea620d703b20fb0e8420bdcfadb55  Track202.flac
+e5eb0dccdc7784ed888a29440556d48d  Track203.flac
+cd2064cc9d1b5b1d7f214383e6a5c780  Track204.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-05-01-franconia.flacf 
+=================== 
+=================== 
+=================== 
+Track101.flac:96ec805bebc8c354029454b5ef580777
+Track102.flac:4bd6de9e9944111f8a6ff248a688cb5e
+Track103.flac:34511f34b7955d8304cb810138034bad
+Track104.flac:cd939c2c31b3b971e9ce958f26e7056f
+Track105.flac:84158890f4f84089283f95e9fe61f96d
+Track106.flac:87e88aaa31ae6ca660e61e8dc968101c
+Track107.flac:07be513b9ea73ae95cf64be67656e908
+Track108.flac:5d0fc9e3b73d19b2e4d5cb645ad5d046
+Track109.flac:2708e22db22d665068220a98dc95b5bd
+Track110.flac:5c5cf18734ac940ae1bcf4c2e7f08092
+Track111.flac:c2e2420a044d085722f044e4df50af58
+Track201.flac:72c2fb499f351ac60cf052ed35ef1797
+Track202.flac:0ebfb2d3a3ace97d14f5e53a0c86a362
+Track203.flac:b23b3a8dd92ca844a350decdb4c8a3f0
+Track204.flac:1427610881deca29b085b9438cb545a6
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-05-01-franconia.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:11.64        2090972 B   ---   --   ---xx   flac  0.3406  Track101.flac
+     4:42.03       49751900 B   ---   --   ---xx   flac  0.4919  Track102.flac
+     7:17.30       77157404 B   ---   --   ---xx   flac  0.4918  Track103.flac
+     5:11.70       55025084 B   ---   --   ---xx   flac  0.5013  Track104.flac
+     7:46.61       82345916 B   ---   --   ---xx   flac  0.5370  Track105.flac
+    10:09.55      107557004 B   ---   --   ---xx   flac  0.4830  Track106.flac
+     8:36.13       91053020 B   ---   --   ---xx   flac  0.5347  Track107.flac
+     5:11.15       54895724 B   ---   --   ---xx   flac  0.5080  Track108.flac
+     7:08.72       75668588 B   ---   --   ---xx   flac  0.5056  Track109.flac
+     5:16.33       55820060 B   ---   --   ---xx   flac  0.5193  Track110.flac
+     6:57.59       73697612 B   ---   --   ---xx   flac  0.5286  Track111.flac
+     5:36.18       59312780 B   ---   --   ---xx   flac  0.5452  Track201.flac
+     7:49.45       82837484 B   ---   --   ---xx   flac  0.4633  Track202.flac
+     5:45.09       60879212 B   ---   --   ---xx   flac  0.5414  Track203.flac
+     5:10.19       54728732 B   ---   --   ---xx   flac  0.4714  Track204.flac
+    92:51.41      982821492 B                            0.5079  (15 files)
+=================== 
+=================== 
+=================== 

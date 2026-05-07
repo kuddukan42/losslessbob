@@ -1,0 +1,88 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-06-09a-Salem-flacf 
+=================== 
+=================== 
+=================== 
+d9912bda93e3d91818f728a55e712b66  2004-06-09_Salem_Unknown.md5
+2d9c409d00742f4d3a8af40ddc87f7c7  2004-06-09_Salem_Unknown.txt
+5922393cb74dfba1571dfa77846afaf8  2004-06-09_Salem_Unknown_FLACfingerprint.txt
+7c043e50be89d4fa954e9ef1ba98bf96  bd04-06-09a.txt
+666583c77e8883826a23425dd6894808  bd2004-06-09_d1t01.flac
+7e7bdc758ab62687a3d8f0a84d59c307  bd2004-06-09_d1t02.flac
+a0141bc1d933dabe37fc0adccac895b7  bd2004-06-09_d1t03.flac
+9d6343d138071b58427edb69072c5b05  bd2004-06-09_d1t04.flac
+c182e9b932f0510457c31927a806bf2f  bd2004-06-09_d1t05.flac
+6bbf564acd5e7ac395aba8d7941bdec0  bd2004-06-09_d1t06.flac
+ff0e5f351b36a92eb22a463b7d98b138  bd2004-06-09_d1t07.flac
+50ee57dc392c03dc2dba1c012ffa8db3  bd2004-06-09_d1t08.flac
+96a1b2679e362f4858f2d0d0206e1d7a  bd2004-06-09_d1t09.flac
+c4d86d602e76d56455d3ba468781bf94  bd2004-06-09_d1t10.flac
+5de25405f75a262e3d87e1b65a147fe6  bd2004-06-09_d1t11.flac
+89ccea87aedba79ac798b9d03dbd0c25  bd2004-06-09_d1t12.flac
+6317aeb871a36403eef1635116cb94ce  bd2004-06-09_d2t01.flac
+bbaec754f9266a9222ad6007009f074c  bd2004-06-09_d2t02.flac
+39e0ff741f608ed8f982b1d1b6f7abce  bd2004-06-09_d2t03.flac
+f514685aada5183c8c187d1b85b9173b  bd2004-06-09_d2t04.flac
+becdde9c807185d486638d9ce9fad0e1  bd2004-06-09_d2t05.flac
+68c97ed4b36ef59ef08ed280506a2b65  bd2004-06-09_d2t06.flac
+d6bce71d25a963f8acbb5b2a3b74049f  bd2004-06-09_d2t07.flac
+b47fb58a516ff7a1559bb06de7843870  Unknown Taper Series.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-06-09a-Salem-flacf 
+=================== 
+=================== 
+=================== 
+bd2004-06-09_d1t01.flac:d030df133819ff75e41f4ac87ce2c6c4
+bd2004-06-09_d1t02.flac:3471b5e8f75319d5bb708dfa8a9d405f
+bd2004-06-09_d1t03.flac:2912c8f5e38909f6a2f296f23c39ef60
+bd2004-06-09_d1t04.flac:8a6251df64472c30802a363c5af633e0
+bd2004-06-09_d1t05.flac:7e9d6b8b899f044b1fdfc5d3a38625b2
+bd2004-06-09_d1t06.flac:6ed130c26e37b59aae2558001d701914
+bd2004-06-09_d1t07.flac:b7913dc76b8a2281c147ecba4e190a1e
+bd2004-06-09_d1t08.flac:9a4d64d591df8b94476d9b70ede11d6f
+bd2004-06-09_d1t09.flac:29efd5e30310fdea568a6557a1d8ccbd
+bd2004-06-09_d1t10.flac:aa54c56e4a2dc0cb795cdeac3761719e
+bd2004-06-09_d1t11.flac:dd3853a8b6b43085eeebb55698d035ac
+bd2004-06-09_d1t12.flac:297b2228cf7de163f21bd7b22d714730
+bd2004-06-09_d2t01.flac:d52515045bccf25f90d6a8799a162f43
+bd2004-06-09_d2t02.flac:0bdde233a82576da4c9fed4e54f16bcd
+bd2004-06-09_d2t03.flac:13c4485bd00d65979b5765a5d20929f0
+bd2004-06-09_d2t04.flac:dd3b2a4aa730cb578b68954b03a950fe
+bd2004-06-09_d2t05.flac:3338e7f0eec347bab4a3039a46c4bb4c
+bd2004-06-09_d2t06.flac:1d2521af1f2f53e49e6600c13eba311c
+bd2004-06-09_d2t07.flac:0fce493c3027ab467029b621f7d4931b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-06-09a-Salem-flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:01.52       10882748 B   ---   --   ---xx   flac  0.6063  bd2004-06-09_d1t01.flac
+     4:15.69       45144332 B   ---   --   ---xx   flac  0.6772  bd2004-06-09_d1t02.flac
+     4:22.40       46310924 B   ---   --   ---xx   flac  0.6308  bd2004-06-09_d1t03.flac
+     5:33.67       58898828 B   ---   --   ---xx   flac  0.6622  bd2004-06-09_d1t04.flac
+     6:49.26       72208796 B   ---   --   ---xx   flac  0.6109  bd2004-06-09_d1t05.flac
+     6:42.10       70936364 B   ---   --   ---xx   flac  0.6635  bd2004-06-09_d1t06.flac
+     7:50.05       82919804 B   ---   --   ---xx   flac  0.6699  bd2004-06-09_d1t07.flac
+     8:32.01       90319196 B   ---   --   ---xx   flac  0.6457  bd2004-06-09_d1t08.flac
+     5:32.38       58654220 B   ---   --   ---xx   flac  0.6252  bd2004-06-09_d1t09.flac
+     5:42.72       60498188 B   ---   --   ---xx   flac  0.5983  bd2004-06-09_d1t10.flac
+     6:04.55       64339004 B   ---   --   ---xx   flac  0.5657  bd2004-06-09_d1t11.flac
+     6:17.54       66629852 B   ---   --   ---xx   flac  0.5759  bd2004-06-09_d1t12.flac
+     7:01.21       74313836 B   ---   --   ---xx   flac  0.6782  bd2004-06-09_d2t01.flac
+     5:03.57       53583308 B   ---   --   ---xx   flac  0.6005  bd2004-06-09_d2t02.flac
+    10:49.62      114629468 B   ---   --   ---xx   flac  0.6309  bd2004-06-09_d2t03.flac
+     5:19.49       56386892 B   ---   --   ---xx   flac  0.6919  bd2004-06-09_d2t04.flac
+     6:28.63       68591420 B   ---   --   ---xx   flac  0.6859  bd2004-06-09_d2t05.flac
+     0:55.51        9821996 B   ---   --   ---xx   flac  0.5836  bd2004-06-09_d2t06.flac
+     5:59.51       63447596 B   ---   --   ---xx   flac  0.6678  bd2004-06-09_d2t07.flac
+   110:24.18     1168516772 B                            0.6394  (19 files)
+=================== 
+=================== 
+=================== 

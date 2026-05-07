@@ -1,0 +1,23 @@
+8213762aca1278b41f9f47ba7217dfc4  BD 2000-09-28 Hamburg.txt
+7c58bf73f8cd761f5da49414beca5697  D1\01 Audiotrack.flac
+3296ac98c91d7add9b3059f809d284ab  D1\02 Audiotrack.flac
+6a07b5492e300baaeeccf767b07ca33a  D1\03 Audiotrack.flac
+46bdb5bf0c573a8aeb523771e072980b  D1\04 Audiotrack.flac
+db85ca5fc69501e89e632bb23a67cc8d  D1\05 Audiotrack.flac
+03fe84ddc904b63612779234c04edfee  D1\06 Audiotrack.flac
+f69998df45828b3a3a809ebb4edac401  D1\07 Audiotrack.flac
+bfe358ab4525734e7cf0d05f613dd0ea  D1\08 Audiotrack.flac
+671c5da0bf5e7765521e0058ad489451  D1\09 Audiotrack.flac
+7d3f914ac526e7e28fc980857186b9c8  D1\10 Audiotrack.flac
+832dcf46dc15a51f008924fc18f7fce4  D1\11 Audiotrack.flac
+9dd538b0300f5748778349da833b9feb  D1\12 Audiotrack.flac
+309db1aef304e5d95f44435f9c741b98  D2\1 Audiotrack.flac
+55fc24039f4c8bbf996797806339bab0  D2\2 Audiotrack.flac
+f58663baa6d5eae08c46d5a9e4cafc09  D2\3 Audiotrack.flac
+8f5cfd74ba7b73ef761096d3d8320cde  D2\4 Audiotrack.flac
+a9e79dd98356f5782026a582fd3dfa3c  D2\5 Audiotrack.flac
+984d5c6c9e4f05339552e84ca2ebbd5b  D2\6 Audiotrack.flac
+2f61d0fde212d7f5e8c6ed80b3b51792  D2\7 Audiotrack.flac
+2b5fe302174cf80a0c87249dc5ef8866  Hamburg 28092000.jpg
+fad8cbdd663ccb935497e474b848d016  md5sumD1.md5
+fedc333cb70949cc23383d2724dd6b15  md5sumD2.md5

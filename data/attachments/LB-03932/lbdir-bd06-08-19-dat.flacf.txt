@@ -1,0 +1,71 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd06-08-19-dat.flacf 
+=================== 
+=================== 
+=================== 
+50aebac5841726ef88cceee3485d0ee6  bd06-08-19-dat-LB-3932.txt
+cef463a5fa02ed0035fc9e38f914b820  Bob dylan081906.txt
+bff11ce8e83da8098d3bb29a6d6fbd4a  dylan081906-01.flac
+5f6e26b65ba22c6b8dd0682b4f9a7076  dylan081906-02.flac
+87781ec5226baf7ffb32a13a8097991c  dylan081906-03.flac
+e189cce46ca569416616f9281240a841  dylan081906-04.flac
+594bc5a5e074d8de61aa33bdd8c0907c  dylan081906-05.flac
+bd870f501e7ac8422d88f9a9925aaf8c  dylan081906-06.flac
+376d637b1a10cd28a5bd1fe41403c4ad  dylan081906-07.flac
+fade874837f64bc032ae8db977535052  dylan081906-08.flac
+3134fd51c1e00bc312c9b0a15bf31880  dylan081906-09.flac
+eea6ac57e413e769fb39c7c1235e6481  dylan081906-10.flac
+ffe798cc4c3b277eb74ebdb598f019ee  dylan081906-11.flac
+1f59dc235d44c1c0e739f2919001176a  dylan081906-12.flac
+7f5a10f39da37bb7e626fb1ff00c5424  dylan081906-13.flac
+5565017e0aa7d3dcebcdcfd21ffb07d7  dylan081906-14.flac
+2c54ac7b3aaaddbd1f53abd2a236169c  dylan081906ffp.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd06-08-19-dat.flacf 
+=================== 
+=================== 
+=================== 
+dylan081906-01.flac:ff140dc63563a800327de27480afa798
+dylan081906-02.flac:0acd67448bfee3f747b76c358e58d1f3
+dylan081906-03.flac:2774236a0281b1efb40b8cd2eb7a5dd9
+dylan081906-04.flac:ee01eb5a22a7258dd6dbe7a02481882e
+dylan081906-05.flac:fa529a78f8d320817287e84baa7fd3d7
+dylan081906-06.flac:d8c3f162e72f29c32b666b28a3e476a3
+dylan081906-07.flac:6f4aca69d49ffc7fbffd2918960362a3
+dylan081906-08.flac:c15d54bf6289c7c1fce65794f4a057b3
+dylan081906-09.flac:809fd2dfd85c58a4ffd03a8eeeabe706
+dylan081906-10.flac:4675b356a2be4c4fb3244248a11ea288
+dylan081906-11.flac:4f88261750ac22d03ca3e2178e656137
+dylan081906-12.flac:64710e81e7c60b7111ba6e0a0525a0e3
+dylan081906-13.flac:f2b25acbf40558bbee6b0a18fdfd6f41
+dylan081906-14.flac:2064dbd636c6b84a4d2694692dd8139f
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd06-08-19-dat.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:42.12       60357068 B   ---   --   ---xx   flac  0.5045  dylan081906-01.flac
+     6:42.55       71042204 B   ---   --   ---xx   flac  0.4881  dylan081906-02.flac
+     7:58.46       84427436 B   ---   --   ---xx   flac  0.5290  dylan081906-03.flac
+     7:13.17       76421228 B   ---   --   ---xx   flac  0.4964  dylan081906-04.flac
+     8:53.17       94061228 B   ---   --   ---xx   flac  0.5107  dylan081906-05.flac
+     6:50.67       72481628 B   ---   --   ---xx   flac  0.5153  dylan081906-06.flac
+     6:20.05       67043804 B   ---   --   ---xx   flac  0.4770  dylan081906-07.flac
+     6:20.00       67032044 B   ---   --   ---xx   flac  0.5130  dylan081906-08.flac
+     5:58.37       63238268 B   ---   --   ---xx   flac  0.4652  dylan081906-09.flac
+     6:12.68       65780780 B   ---   --   ---xx   flac  0.5602  dylan081906-10.flac
+     7:40.48       81256940 B   ---   --   ---xx   flac  0.4592  dylan081906-11.flac
+     6:54.45       73135484 B   ---   --   ---xx   flac  0.5691  dylan081906-12.flac
+     7:00.38       74177420 B   ---   --   ---xx   flac  0.5377  dylan081906-13.flac
+     6:35.08       69697580 B   -b-   --   ---xx   flac  0.5358  dylan081906-14.flac
+    96:23.13     1020153112 B                            0.5116  (14 files)
+=================== 
+=================== 
+=================== 

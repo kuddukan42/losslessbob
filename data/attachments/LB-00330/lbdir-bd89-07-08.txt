@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-07-08 
+=================== 
+=================== 
+=================== 
+13b2cb804cbf239896035ea697f443df  bd89-07-08.txt
+4a219c04490d2b7c7066d71d2387f24e  d1\Track01.shn
+de4485a8a3fca9336db815752a896b4e  d1\Track02.shn
+7c0ba61f9d60b0a7e06483e077f0c863  d1\Track03.shn
+5e58a985b7409117709ce4c380a7ee42  d1\Track04.shn
+953cb006e4c7a49d5607ba8c944e0f42  d1\Track05.shn
+3fadad964e2d8e6dd49401f6c9d9deac  d1\Track06.shn
+8b52b4cadbb7ed32828fcc4461864151  d1\Track07.shn
+266b2c9091256f73267a9216e989ed35  d1\Track08.shn
+14417eacf901488dc78f8abf27da1707  d1\noname.md5
+f25cb30d0a279fcc5d86a0551cf7d826  d2\Track01.shn
+742c5cc83432bbedc1d38684507f22da  d2\Track02.shn
+50b742c9269f429892009db1321e2989  d2\Track03.shn
+620a456e7c3237e69066b7ee3ee8899f  d2\Track04.shn
+4ca1be4b1665ce39adca0ccc2a7847de  d2\Track05.shn
+34cdbd6c84be064d3a6283a595772305  d2\Track06.shn
+5cbb8a4bce3d56099fdbb6bda31052ae  d2\Track07.shn
+9f351c209585dfc2e4dad8d5723a4945  d2\noname.md5
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-07-08\d2 
+=================== 
+=================== 
+=================== 
+3b7e2c651486b9a3b6a67bde6f741ea0  [shntool]  Track01.wav
+f7bc99dccd700d2a9ad78177b079eb48  [shntool]  Track02.wav
+709d50d17e93cccb9bf73b834bfa3863  [shntool]  Track03.wav
+4fbfb9fce6e0c9007d09fd2c81f17318  [shntool]  Track04.wav
+06ca4fe5bf0dc2b7f1aa5df3a4d251e2  [shntool]  Track05.wav
+2cecdbf5eb1c46bdf23af68f15b5971b  [shntool]  Track06.wav
+5bfe49701498496636d546b245b9ef9e  [shntool]  Track07.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd89-07-08\d1 
+=================== 
+=================== 
+=================== 
+578069a012dc23add14c57aef062be18  [shntool]  Track01.wav
+6810ecc8931076f1e62f4d84ac683032  [shntool]  Track02.wav
+4895799c275fb72fef04ad0a18196a1c  [shntool]  Track03.wav
+2b76f5192d296f40ea7151461ee8ed0e  [shntool]  Track04.wav
+2184cff4699796e4054dcf715672ab66  [shntool]  Track05.wav
+8467fba6636d8750b99c1194b8d0de9b  [shntool]  Track06.wav
+300ba8d68d5b4ad63c585642a3b2e164  [shntool]  Track07.wav
+70ed3d07eee8e75b8f19fb4e63fdeffc  [shntool]  Track08.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-08\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:30.48       47740940 B   ---   --   ---xx    shn  0.6764  Track01.shn
+     3:55.34       41534012 B   ---   --   ---xx    shn  0.7635  Track02.shn
+     4:08.43       43848380 B   ---   --   ---xx    shn  0.7398  Track03.shn
+     5:14.74       55563692 B   ---   --   ---xx    shn  0.7350  Track04.shn
+     7:28.74       79201292 B   ---   --   ---xx    shn  0.7619  Track05.shn
+     6:32.34       69228812 B   ---   --   ---xx    shn  0.6658  Track06.shn
+     5:15.65       55718924 B   ---   --   ---xx    shn  0.7234  Track07.shn
+    37:06.72      392836052 B                            0.7230  (7 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-07-08\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:03.46       64141436 B   ---   --   ---xx    shn  0.6567  Track01.shn
+     3:42.02       39165548 B   ---   --   ---xx    shn  0.7037  Track02.shn
+     5:49.11       61589516 B   ---   --   ---xx    shn  0.6450  Track03.shn
+     5:22.07       56817308 B   ---   --   ---xx    shn  0.7103  Track04.shn
+     4:41.19       49613132 B   ---   --   ---xx    shn  0.6712  Track05.shn
+     5:02.29       53341052 B   ---   --   ---xx    shn  0.6769  Track06.shn
+     5:29.36       58120316 B   ---   --   ---xx    shn  0.6277  Track07.shn
+     4:19.74       45861692 B   ---   --   ---xx    shn  0.6472  Track08.shn
+    40:29.74      428650000 B                            0.6657  (8 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,84 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd90-10-16-a.flacf 
+=================== 
+=================== 
+=================== 
+f2da4be5ffc40c714ff8d409ca12bc48  1990-10-16 New York.ffp
+370dd73ac4ea65e6d4d8309a1916dd6c  1990-10-16 New York.md5
+151a44386de02a142da5219842f030b9  1990-10-16 New York.st5
+43e82ec870dac5b5b94dc0bad68f1a45  Bob Dylan 16 Oct 1990, New York.txt
+d0725c1a4d59d89909b35741aeac3c9a  Track01.flac
+9275447709bdb0e6e3befcd03ff44ed1  Track02.flac
+66a6bcf7be545cf30b7f49e5cf08963c  Track03.flac
+757cd199c6c976876dd0f38ca2aa76a0  Track04.flac
+da6d3e6a0416b41aefe05bd9298a5457  Track05.flac
+34e24d924914ffb55855f5022a44baa6  Track06.flac
+7f52c6c45e341d9d75cedffc93965b75  Track07.flac
+ecc39573c6289a7f59a78dab03b3445e  Track08.flac
+499ffb302623eca49d36003a225f0cad  Track09.flac
+c9904a4bc8a9394661168c21463d0663  Track10.flac
+b5b3d0d406d32a347bb11488092f9f69  Track11.flac
+6cf1c3c441f7915326ad41f38a685ee3  Track12.flac
+fa029fc36ecbc34fb418e40e69770de4  Track13.flac
+e65a85336eb929f676576227590086ea  Track14.flac
+a66dc499919594c8c64acb10aaca8e51  Track15.flac
+e186e747eab9a9b5d2ff247cda654713  Track16.flac
+8ad6c5de56d78afae5bd90279e82565b  Track17.flac
+b04841afe4962eb0bca27a72c26b5672  Track18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd90-10-16-a.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:cef58d38f875a20705d42465c036a6ce
+Track02.flac:4f933c43e8d7947d9017809557fe81c6
+Track03.flac:38f7a4e78cf747885a7a0f5fe11306d0
+Track04.flac:dd49e32084e29b09ace7a80aab92f0ba
+Track05.flac:1b10b6b0632c9fb43c28cae3e23a4d24
+Track06.flac:bf4ac03785636aa1111cb030ac3437eb
+Track07.flac:c3b1c2020a7e124a7ad8763bf0e36b32
+Track08.flac:ce4b8d13e10709267c550597a7f1c4c9
+Track09.flac:dff504f549ffc53bd4cea648dd07e9f3
+Track10.flac:a09afb3c790a0c58c3f6905c0e1a74f5
+Track11.flac:c8a6d9077f13193a2a61671234940821
+Track12.flac:2a7789d9a2d910e7dd0321771ee0c51a
+Track13.flac:30f48dd790d2a53498e20507d913655a
+Track14.flac:b1b5f86f3dba52f134992e7191714e31
+Track15.flac:c57d90ab179fba378e1e2fb4280cac7b
+Track16.flac:7d9f81f6013f3532a8a3299266a5d8cf
+Track17.flac:588073c992bd8922f8b09e76c37135e6
+Track18.flac:1e320f4d60782fc39eaa9d56242d77bd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd90-10-16-a.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:03.32       11188508 B   ---   --   ---xx   flac  0.6105  Track01.flac
+     3:55.09       41475212 B   ---   --   ---xx   flac  0.6734  Track02.flac
+     3:38.06       38469356 B   ---   --   ---xx   flac  0.6587  Track03.flac
+     2:56.63       31194620 B   ---   --   ---xx   flac  0.6986  Track04.flac
+     3:01.73       32100140 B   ---   --   ---xx   flac  0.6892  Track05.flac
+     3:54.04       41287052 B   ---   --   ---xx   flac  0.6816  Track06.flac
+     2:36.51       27638396 B   ---   --   ---xx   flac  0.7099  Track07.flac
+     5:44.57       60815708 B   ---   --   ---xx   flac  0.6252  Track08.flac
+     4:24.24       46626092 B   ---   --   ---xx   flac  0.5784  Track09.flac
+     4:38.64       49189772 B   ---   --   ---xx   flac  0.6044  Track10.flac
+     5:37.40       59540924 B   ---   --   ---xx   flac  0.6194  Track11.flac
+     3:36.53       38227100 B   ---   --   ---xx   flac  0.6827  Track12.flac
+     5:06.44       54081932 B   ---   --   ---xx   flac  0.6773  Track13.flac
+     5:14.61       55533116 B   ---   --   ---xx   flac  0.6679  Track14.flac
+     3:28.18       36733580 B   ---   --   ---xx   flac  0.7098  Track15.flac
+     6:07.28       64804700 B   ---   --   ---xx   flac  0.7255  Track16.flac
+     4:16.69       45320732 B   ---   --   ---xx   flac  0.6250  Track17.flac
+     4:34.46       48441836 B   ---   --   ---xx   flac  0.6825  Track18.flac
+    73:56.67      782668776 B                            0.6614  (18 files)
+=================== 
+=================== 
+=================== 

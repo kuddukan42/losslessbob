@@ -1,0 +1,11 @@
+Bob Dylan, 5/22/98, Los Angeles, California, Pauley Pavilion, UCL, 1CDR
+
+LB-5066, (73min), Audience recording (Lossy) > Unknown transfer > CDR(x) > EAC (Secure) > FLAC > Data DVD Trade, Files were renamed according to Etree standards. No spectral density above 16kHz.;; nothing above 16k; excellent sound [A-]
+
+has gaps at track boundaries
+
+CD1
+72:44, 1. Maggie's Farm, 2. If You See Her, Say Hello, 3. Cold Irons Bound, 4. Simple Twist Of Fate, 5. Silvio (Bob Dylan & Robert Hunter), 6. Rank Strangers To Me (A. Brumley), 7. This Wheel's On Fire (Bob Dylan/Rick Danko), 8. Tears Of Rage (Bob Dylan/Richard Manuel), 9. Highway 61 Revisited, 10. It Ain't Me, Babe, 11. Love Sick, 12. Rainy Day Women # 12 & 35
+
+Please retain this info file and its LB number as a marker for this lossless set
+and if you spread it please list it in the description to avoid others getting duplicates

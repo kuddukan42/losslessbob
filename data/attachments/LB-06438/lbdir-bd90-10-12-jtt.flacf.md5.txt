@@ -1,0 +1,21 @@
+84b2e472d2cdcd195443458c637c53c1  Dylan - Springfield 12.10.1990_Info.txt
+360575175628b896539b92263c9845e0  Dylan - Springfield October 12th 1990 (JTT).md5
+97377d147097fd1fcbeefee8bc52f8d6  Dylan - Springfield October 12th 1990 (JTT).txt
+d9af5289b4aaa00d8051be30e99bc193  Track01 BD - October 12th 1990.flac
+d54108045a02e29fd53d25d9aee71064  Track02 BD - October 12th 1990.flac
+5c5986dbf359726d4d1ab9fa67868ae6  Track03 BD - October 12th 1990.flac
+78f22e3c5acb811084884eb9214749af  Track04 BD - October 12th 1990.flac
+2439d354af5a6d763bbf959f267c4135  Track05 BD - October 12th 1990.flac
+213bdead7e2f1dade66868833bb1615c  Track06 BD - October 12th 1990.flac
+0c0b6e261444b3342d308bfb3e7b128e  Track07 BD - October 12th 1990.flac
+4bc1359268623acc338579205183709a  Track08 BD - October 12th 1990.flac
+18cc90d09dbd55492f4f78644f5b2322  Track09 BD - October 12th 1990.flac
+0dfdfa2a809a978697ca3c5b4f7d98d9  Track10 BD - October 12th 1990.flac
+2fb0ad0c7e6ffc7330f5972298e0fe72  Track11 BD - October 12th 1990.flac
+709698021f38e35bb0c2910f4520c6d4  Track12 BD - October 12th 1990.flac
+85cb8e7724b2e9e934e2c0659a9b83da  Track13 BD - October 12th 1990.flac
+c57726f360993f4de555ad416b396a04  Track14 BD - October 12th 1990.flac
+0184d71d814c9ab09a7b2fb4d811221c  Track15 BD - October 12th 1990.flac
+a58176183d6c9c3b8b41193e9e219064  Track16 BD - October 12th 1990.flac
+2331933fdc7a8c6c14b22893726fb300  Track17 BD - October 12th 1990.flac
+7771a4aae4bea5dcfb1e222fc55a42d4  Track18 BD - October 12th 1990.flac

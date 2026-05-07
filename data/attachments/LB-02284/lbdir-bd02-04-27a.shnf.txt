@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd02-04-27a.shnf 
+=================== 
+=================== 
+=================== 
+769a80b2ef99f8b3cf87897f8fd8bf45  2002_Oberhausen_d1.LOG
+a07064208cb09d500eaa558c3f4eb851  2002_Oberhausen_d2.LOG
+1fef74ca10edc2fb9d99c07a6f30b0d1  2002Oberhausen.txt
+ee162a6f43d267ce3a03bba722bd57d2  bd02-04-27a.txt
+8890b295846aa91f5ef52c6933d19e6b  bd02-04-27d1.md5
+ec9e6a020040aa3279fae4475814a19a  bd02-04-27d1t01.flac
+9a4ee3bd8a8f64b4a668e4f4b4ed8f4e  bd02-04-27d1t02.flac
+89016910faa96cd65c8b8578cc8a603b  bd02-04-27d1t03.flac
+23da02aeb96f6dd89cefa5587a54352d  bd02-04-27d1t04.flac
+3c2331bad0131a64cf3cb52e44113be0  bd02-04-27d1t05.flac
+c9d68ad84566047e4256387f4d431059  bd02-04-27d1t06.flac
+d67dadddc5a8bb6b88700386c617e802  bd02-04-27d1t07.flac
+94cb8d21767ae23861acfa8f9d14913d  bd02-04-27d1t08.flac
+57515bc6c1bce4ddbe36fc292ae40581  bd02-04-27d1t09.flac
+3dee7383427bebca405868e364149fbc  bd02-04-27d1t10.flac
+b00ec1f464779092f69ad754b67b5d6a  bd02-04-27d1t11.flac
+a82cf288f788f9f3e057751e0e83b9f9  bd02-04-27d1t12.flac
+7fe8ecdc3215f433c9973e9d6ee42ab6  bd02-04-27d2.md5
+7c1b6065afafba44e9f1c834ce6af2a6  bd02-04-27d2t01.flac
+61f7e98be76dd8ce7a17babec6428ad0  bd02-04-27d2t02.flac
+024f698a23321ff09fb404113489b260  bd02-04-27d2t03.flac
+40ff78d0a17cad7beed417ee2c3e40cc  bd02-04-27d2t04.flac
+37bca24402f281fcf129c0f4703f59d4  bd02-04-27d2t05.flac
+d95f0631c8c4e8235a5e9bc990140c09  bd02-04-27d2t06.flac
+2d4d408918aec76c209b5c99961aeb90  bd02-04-27d2t07.flac
+babec93e829a08eaf8203724928f206f  bd02-04-27d2t08.flac
+d40b453735993d581fea76d555c7d613  bd02-04-27d2t09.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd02-04-27a.shnf 
+=================== 
+=================== 
+=================== 
+bd02-04-27d1t01.flac:8debdb236bd844bd8d3243700539d38e
+bd02-04-27d1t02.flac:957130969e77f3bf9e8e35411d580632
+bd02-04-27d1t03.flac:7a63276e2171ad134dd61960b64ef14d
+bd02-04-27d1t04.flac:72bdd068a80cf4fe62384b19b587662e
+bd02-04-27d1t05.flac:bd2b6f471b14ef8b74ad65d3685d43e8
+bd02-04-27d1t06.flac:000804a3e85cf508f4856408c6dcf208
+bd02-04-27d1t07.flac:dc6ded2bd7a6585a0d9d7fa77e4c9f45
+bd02-04-27d1t08.flac:c14e2af250945fa80cd8692a770b8ff0
+bd02-04-27d1t09.flac:9142630ecb5363e4f1d421f54bbd417b
+bd02-04-27d1t10.flac:fd2e6a76842bd9994edf995a09dff046
+bd02-04-27d1t11.flac:4215bd612d3c201a4fafa877235c61f9
+bd02-04-27d1t12.flac:fa3db7f7a18b560806b1e1f4eaa3b963
+bd02-04-27d2t01.flac:c95eb503a2b43b5bc63291620b99c19f
+bd02-04-27d2t02.flac:ce304f2f14ece13a0a5f40160707f904
+bd02-04-27d2t03.flac:2c1e4ed689ebfbff0488e8a97a64e14d
+bd02-04-27d2t04.flac:70ccd5f7cda5e8d07115b35ddb154960
+bd02-04-27d2t05.flac:8c412ba3b4eef97fde81b80aa4848a07
+bd02-04-27d2t06.flac:de602361f806e44f12d4fbbb21e09cc2
+bd02-04-27d2t07.flac:54dfc434130fa20820fd9f0b0b39be93
+bd02-04-27d2t08.flac:488412d75d88f942222a6c188d100331
+bd02-04-27d2t09.flac:88ed916dce804ce0d470240b9aaae9c2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd02-04-27a.shnf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:36.21       16983836 B   ---   --   ---xx   flac  0.4813  bd02-04-27d1t01.flac
+     3:55.05       41465804 B   ---   --   ---xx   flac  0.5836  bd02-04-27d1t02.flac
+     5:46.40       61128524 B   ---   --   ---xx   flac  0.5273  bd02-04-27d1t03.flac
+     9:39.35      102217964 B   ---   --   ---xx   flac  0.5513  bd02-04-27d1t04.flac
+     7:36.58       80574860 B   ---   --   ---xx   flac  0.4907  bd02-04-27d1t05.flac
+     6:16.73       66498140 B   ---   --   ---xx   flac  0.5856  bd02-04-27d1t06.flac
+     7:53.41       83533676 B   ---   --   ---xx   flac  0.5731  bd02-04-27d1t07.flac
+     6:10.10       65291564 B   ---   --   ---xx   flac  0.6278  bd02-04-27d1t08.flac
+     4:57.15       52426124 B   ---   --   ---xx   flac  0.6145  bd02-04-27d1t09.flac
+     5:19.04       56281052 B   ---   --   ---xx   flac  0.4105  bd02-04-27d1t10.flac
+     5:00.10       52943564 B   ---   --   ---xx   flac  0.5501  bd02-04-27d1t11.flac
+     8:50.20       93539084 B   ---   --   ---xx   flac  0.6148  bd02-04-27d1t12.flac
+     9:04.45       96067484 B   ---   --   ---xx   flac  0.6175  bd02-04-27d2t01.flac
+     7:57.41       84239276 B   ---   --   ---xx   flac  0.4924  bd02-04-27d2t02.flac
+     5:45.36       60942716 B   ---   --   ---xx   flac  0.6061  bd02-04-27d2t03.flac
+    13:02.13      137975420 B   ---   --   ---xx   flac  0.5856  bd02-04-27d2t04.flac
+     6:40.54       70687052 B   ---   --   ---xx   flac  0.5636  bd02-04-27d2t05.flac
+     8:31.22       90192188 B   ---   --   ---xx   flac  0.5614  bd02-04-27d2t06.flac
+     5:30.68       58371980 B   ---   --   ---xx   flac  0.4530  bd02-04-27d2t07.flac
+     6:56.15       73417724 B   ---   --   ---xx   flac  0.6252  bd02-04-27d2t08.flac
+     8:33.58       90629660 B   ---   --   ---xx   flac  0.5140  bd02-04-27d2t09.flac
+   145:04.09     1535407692 B                            0.5589  (21 files)
+=================== 
+=================== 
+=================== 

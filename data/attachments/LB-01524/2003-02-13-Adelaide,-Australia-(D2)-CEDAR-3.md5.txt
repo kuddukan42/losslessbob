@@ -1,0 +1,18 @@
+; Using hkSFV on 01.28.2004 at 21:54:57
+; http://www.big-o-software.com
+;
+;/----
+;     32795069 21:22.34 2004-01-28 2-01-Lay, Lady, Lay.flac
+;     40791523 21:23.56 2004-01-28 2-02-Honest With Me.flac
+;     25457470 21:24.48 2004-01-28 2-03-Bye And Bye.flac
+;     58824949 21:26.14 2004-01-28 2-04-Summer Days.flac
+;     38275935 21:27.10 2004-01-28 2-05-Forever Young.flac
+;     45263648 21:28.12 2004-01-28 2-06-All Along The Watchtower.flac
+;\----
+;
+5214be67173f153bec3f7a2a097de57b *2-01-Lay, Lady, Lay.flac
+88cc8c6cff5b898b08437b834c89eeca *2-02-Honest With Me.flac
+2be24a196584bfe63fae459aab7f604d *2-03-Bye And Bye.flac
+e363b9a414fca63539393ffb62842bcd *2-04-Summer Days.flac
+a78c100c1ad1a31726fef425bd9eba89 *2-05-Forever Young.flac
+aeae6da5c739cd3c657e460af7bf4bdd *2-06-All Along The Watchtower.flac

@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-10-28-a.flacf 
+=================== 
+=================== 
+=================== 
+18914888daf9ee60a05ad92cbe80ca0e  1998-10-28 The Palace, Auburn Hills, Michigan, USA [ut].md5
+1360303e6b6f20738991812817283591  CD1\01 Gotta serve somebody.flac
+5721fea063ec1d2773b137af70e32f84  CD1\02 Million miles.flac
+d49edbb3c09866570bd4fa77c881ce7f  CD1\03 Stuck inside of Mobile with the Memphis blues again.flac
+e525ee02f314d6383016fae80496662c  CD1\04 You ain't goin' nowhere.flac
+193c16b9257ef798ffdd973fb2c50240  CD1\05 Can't wait.flac
+04635a90a1c8399f1b7d8a26389a45f5  CD1\06 Tomorrow night.flac
+2a19b574c6eccc9f3fa2029a63b95c30  CD1\07 It's all over now, baby blue.flac
+4a2af1565568dc86c368cf45082f277e  CD1\08 Masters of war.flac
+c42d7273f960a1ccb8562543c85c90ff  CD1\09 Tangled up in blue.flac
+7322bd2c3cf57fbc62dd9cf9bbbf751a  CD2\10 Make you feel my love.flac
+ebad687d9e5cafc95dc7c8bce4493a0c  CD2\11 Highway 61 revisited.flac
+2165f034313f7e23f6e65e98099c769c  CD2\12 Love sick.flac
+8aaddd9cdfe368f3cb637011c3740b03  CD2\13 Rainy day women # 12 & 35.flac
+21053db0a2a711b26267ae049812594e  CD2\14 Blowin' in the wind.flac
+49a0a0b30ac1f1b242fbc5e627386a38  CD2\15 'Til I fell in love with you.flac
+626e32012d31b49a67a50a71b329e600  CD2\16 It ain't me, babe.flac
+89cf5b9f5907d710e76169df07d6e14c  Info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-28-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Gotta serve somebody.flac:e772a960e7d5b93f735fbfa1037d3760
+02 Million miles.flac:a5b5b9b786c7fe84f7a2928f2d00a4a9
+03 Stuck inside of Mobile with the Memphis blues again.flac:3cb5c7742336f51e4df7c5d2631f2303
+04 You ain't goin' nowhere.flac:17b157127abb18a8d19c324b4041e757
+05 Can't wait.flac:c62712a52abe5eefa3a472eb13145c0a
+06 Tomorrow night.flac:f197dde438ea0d774ffc60226954dc7c
+07 It's all over now, baby blue.flac:68542926c698e21d32f5206960a9ffaa
+08 Masters of war.flac:6532e558a178ef8e1c1847933fd12669
+09 Tangled up in blue.flac:273821505512dfe8292a6bcd5c298389
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-10-28-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Make you feel my love.flac:09b6d930783c6697d3601100ccac1f8c
+11 Highway 61 revisited.flac:c27a6f0a108b8d77833a2bc14eafdb0e
+12 Love sick.flac:8cf654c19d789cc5f3afda5e9769fcc9
+13 Rainy day women # 12 & 35.flac:69d9d8186280bddfe5d361f90897de25
+14 Blowin' in the wind.flac:28ea736554fa4f99906ebdd9ef80d4b8
+15 'Til I fell in love with you.flac:17780e3f4efe4b7e90f5bd9677d41e21
+16 It ain't me, babe.flac:85acd7f6e5aba0991113ef7b2c82c4dd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-28-a.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:26.68       47082380 B   ---   --   ---xx   flac  0.6281  01 Gotta serve somebody.flac
+     4:18.42       45610028 B   ---   --   ---xx   flac  0.6261  02 Million miles.flac
+     7:48.74       82729292 B   ---   --   ---xx   flac  0.6351  03 Stuck inside of Mobile with the Memphis blues again.flac
+     4:39.11       49241516 B   ---   --   ---xx   flac  0.6211  04 You ain't goin' nowhere.flac
+     5:56.19       62843132 B   ---   --   ---xx   flac  0.6330  05 Can't wait.flac
+     4:39.48       49328540 B   ---   --   ---xx   flac  0.5732  06 Tomorrow night.flac
+     7:04.14       74826572 B   ---   --   ---xx   flac  0.5922  07 It's all over now, baby blue.flac
+     4:48.31       50876156 B   ---   --   ---xx   flac  0.6045  08 Masters of war.flac
+     9:42.64      102815372 B   ---   --   ---xx   flac  0.6375  09 Tangled up in blue.flac
+    53:24.71      565352988 B                            0.6189  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-10-28-a.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:21.27       56687948 B   ---   --   ---xx   flac  0.5906  10 Make you feel my love.flac
+     8:17.72       87840188 B   ---   --   ---xx   flac  0.6455  11 Highway 61 revisited.flac
+     5:49.00       61563644 B   ---   --   ---xx   flac  0.6162  12 Love sick.flac
+     5:47.38       61300220 B   ---   --   ---xx   flac  0.6452  13 Rainy day women # 12 & 35.flac
+     5:34.60       59058764 B   ---   --   ---xx   flac  0.6061  14 Blowin' in the wind.flac
+     6:49.04       72157052 B   ---   --   ---xx   flac  0.6387  15 'Til I fell in love with you.flac
+     9:46.05      103382204 B   ---   --   ---xx   flac  0.5986  16 It ain't me, babe.flac
+    47:25.56      501990020 B                            0.6204  (7 files)
+=================== 
+=================== 
+=================== 

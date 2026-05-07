@@ -1,0 +1,81 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-07-10-love-minus-zero.flacf 
+=================== 
+=================== 
+=================== 
+952e0c2594b68e9c60f377e41a06349e  bd94-07-10-love-minus-zero-d1t01.flac
+3a2c0045465c2c74a92bff7148d21ae4  bd94-07-10-love-minus-zero-d1t02.flac
+96a60d52b5094b69ca350bf4628a80f4  bd94-07-10-love-minus-zero-d1t03.flac
+36982fd08437009a10ee9e305b1a88e2  bd94-07-10-love-minus-zero-d1t04.flac
+8565358a0a7ccb50e740fc3e2e6f50e6  bd94-07-10-love-minus-zero-d1t05.flac
+c28052a661a4d16932169032264353e7  bd94-07-10-love-minus-zero-d1t06.flac
+c44a8782f8e77c9715af2cf35cd16804  bd94-07-10-love-minus-zero-d1t07.flac
+fefd01a1acd8393520cbaea6a6c86d17  bd94-07-10-love-minus-zero-d1t08.flac
+e8b5a28090547e3d74693438d5f1355b  bd94-07-10-love-minus-zero-d1t09.flac
+5b2ec8b4ccd98c572cb8a09116096732  bd94-07-10-love-minus-zero-d1t10.flac
+86d916b2fa91ae76e65e86dd7aa9c05d  bd94-07-10-love-minus-zero-d2t01.flac
+50c74d24dbb670355b65e9d0d62f6894  bd94-07-10-love-minus-zero-d2t02.flac
+d4c114a8d64076f6336a81b53246c216  bd94-07-10-love-minus-zero-d2t03.flac
+bb9dcff95eb13cb868ab08b3f428e47d  bd94-07-10-love-minus-zero-d2t04.flac
+8b6e9f094366f67815143563ea741749  bd94-07-10-love-minus-zero-d2t05.flac
+17e4e70072644d1b729dd2283dff56ab  bd94-07-10-love-minus-zero-d2t06.flac
+dbd8f56d72c9b01eda25fb97ae2ef6df  bd94-07-10-love-minus-zero-d2t07.flac
+183146af975e634e8503e778c9fb8395  bd94-07-10-love-minus-zero-d2t08.flac
+c7441da3a32b4d0b227e74ac57944116  bd94-07-10-love-minus-zero.flacf.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-07-10-love-minus-zero.flacf 
+=================== 
+=================== 
+=================== 
+bd94-07-10-love-minus-zero-d1t01.flac:e2b9a6e3cab27300b9289ae7fafbb2aa
+bd94-07-10-love-minus-zero-d1t02.flac:4a395ca3dff88c895b5129912cd5e8bb
+bd94-07-10-love-minus-zero-d1t03.flac:48505b2a4701f011aacd0912a5f37d32
+bd94-07-10-love-minus-zero-d1t04.flac:8a22eb6af769218a809fafe6453425eb
+bd94-07-10-love-minus-zero-d1t05.flac:e6599176d579d2d2491bdaf7d62fe4db
+bd94-07-10-love-minus-zero-d1t06.flac:9487ab6989774a4922b2024d346b2a74
+bd94-07-10-love-minus-zero-d1t07.flac:8f3f62b5d1a21a98b826cc1a676c5110
+bd94-07-10-love-minus-zero-d1t08.flac:9af1c8b7fbc9b569b5848efa0133f612
+bd94-07-10-love-minus-zero-d1t09.flac:b99a6193752be4644d11c13626e5885e
+bd94-07-10-love-minus-zero-d1t10.flac:02655f70c618a2f334a0736582ab104d
+bd94-07-10-love-minus-zero-d2t01.flac:6ab1dbbe54ce41e4268b11fdfc47e547
+bd94-07-10-love-minus-zero-d2t02.flac:475d6b4055664a535d4b61d615a52835
+bd94-07-10-love-minus-zero-d2t03.flac:c0fcdfc2b1b84c63fe568fac8b1b123b
+bd94-07-10-love-minus-zero-d2t04.flac:6c0c2b28653468093c2d8f75fa012892
+bd94-07-10-love-minus-zero-d2t05.flac:81b379bfa7d52f5a6475cf8c4a634e64
+bd94-07-10-love-minus-zero-d2t06.flac:e4a39f9f7cf3d3ddf3840731f78b2b30
+bd94-07-10-love-minus-zero-d2t07.flac:066d9ad784934ccab7f4c96936f908c6
+bd94-07-10-love-minus-zero-d2t08.flac:f21cde0f51a4ca25d3f673e5ddad671c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-07-10-love-minus-zero.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:51.52       83206748 B   ---   --   ---xx   flac  0.6155  bd94-07-10-love-minus-zero-d1t01.flac
+     5:28.30       57929804 B   ---   --   ---xx   flac  0.5964  bd94-07-10-love-minus-zero-d1t02.flac
+     5:24.58       57290060 B   ---   --   ---xx   flac  0.6446  bd94-07-10-love-minus-zero-d1t03.flac
+     7:16.40       77004524 B   ---   --   ---xx   flac  0.5875  bd94-07-10-love-minus-zero-d1t04.flac
+     8:52.17       93884828 B   ---   --   ---xx   flac  0.6008  bd94-07-10-love-minus-zero-d1t05.flac
+     7:41.50       81438044 B   ---   --   ---xx   flac  0.6261  bd94-07-10-love-minus-zero-d1t06.flac
+     5:37.73       59618540 B   ---   --   ---xx   flac  0.4842  bd94-07-10-love-minus-zero-d1t07.flac
+     5:36.40       59364524 B   ---   --   ---xx   flac  0.4739  bd94-07-10-love-minus-zero-d1t08.flac
+     6:55.52       73328348 B   ---   --   ---xx   flac  0.5337  bd94-07-10-love-minus-zero-d1t09.flac
+     5:31.43       58489580 B   ---   --   ---xx   flac  0.6245  bd94-07-10-love-minus-zero-d1t10.flac
+     6:56.72       73551788 B   ---   --   ---xx   flac  0.5343  bd94-07-10-love-minus-zero-d2t01.flac
+     7:04.65       74946524 B   ---   --   ---xx   flac  0.5911  bd94-07-10-love-minus-zero-d2t02.flac
+     5:13.68       55373180 B   ---   --   ---xx   flac  0.5754  bd94-07-10-love-minus-zero-d2t03.flac
+     9:39.07      102152108 B   ---   --   ---xx   flac  0.4842  bd94-07-10-love-minus-zero-d2t04.flac
+     5:32.38       58654220 B   ---   --   ---xx   flac  0.5874  bd94-07-10-love-minus-zero-d2t05.flac
+     6:46.35       71700764 B   ---   --   ---xx   flac  0.5847  bd94-07-10-love-minus-zero-d2t06.flac
+     6:54.32       73104908 B   ---   --   ---xx   flac  0.5648  bd94-07-10-love-minus-zero-d2t07.flac
+     7:06.73       75318140 B   ---   --   ---xx   flac  0.6227  bd94-07-10-love-minus-zero-d2t08.flac
+   121:32.20     1286356632 B                            0.5733  (18 files)
+=================== 
+=================== 
+=================== 

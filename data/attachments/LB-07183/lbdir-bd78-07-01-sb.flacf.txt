@@ -1,0 +1,142 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-07-01-sb.flacf 
+=================== 
+=================== 
+=================== 
+7c349be1e22b51086fe86f3bee206c64  1978-07-01 In The Pale Afternoon .txt
+2e99644098971f8a80abc7b70bf23db4  1978-07-01 In The Pale Afternoon.md5
+59356f2668ed610f480cbb3d37efb19c  780701back.jpg
+e0e2d14f8f1f94755973e5da901fc993  780701fr.jpg
+11ff06ebedfd48dec940104cf7712604  In The Pale Afternoon [CD1]\1978-07-01_101.flac
+2281fdb736863a10cf15527f57dbb15f  In The Pale Afternoon [CD1]\1978-07-01_102.flac
+8a85d39de6c546c6ea0015e205d82ccb  In The Pale Afternoon [CD1]\1978-07-01_103.flac
+9c2ba7872673cedda271a639efaba60e  In The Pale Afternoon [CD1]\1978-07-01_104.flac
+0d1102b85c4ec4359f2c5b9f831dc047  In The Pale Afternoon [CD1]\1978-07-01_105.flac
+f85683f7c5733a1a0b2822ef8932c059  In The Pale Afternoon [CD1]\1978-07-01_106.flac
+da39df04d86721a5a6690fa08a243d23  In The Pale Afternoon [CD1]\1978-07-01_107.flac
+00be81425d5912e8f8baa1d91ec9140b  In The Pale Afternoon [CD1]\1978-07-01_108.flac
+e7834ba70d082388bd8af338b55fea85  In The Pale Afternoon [CD1]\1978-07-01_109.flac
+3462a3c4d01cf4d00ef68e94f10266ef  In The Pale Afternoon [CD1]\1978-07-01_110.flac
+bec1a1dafc73fbc03366ff7738fab698  In The Pale Afternoon [CD1]\1978-07-01_111.flac
+773e0e8266e7f6df883930088dc6c2ad  In The Pale Afternoon [CD1]\1978-07-01_112.flac
+0972d1ba82a17e1e977c39ba7b94ae3a  In The Pale Afternoon [CD1]\1978-07-01_113.flac
+e99b58d04865fcc5b6cce5d849f0e78f  In The Pale Afternoon [CD1]\1978-07-01_114.flac
+2daaeb668e7a8f40f487d561d99c7b10  In The Pale Afternoon [CD1]\1978-07-01_115.flac
+a6e9bb46bc682b19e239f178a28b8d42  In The Pale Afternoon [CD1]\1978-07-01_116.flac
+9691f01eba634af661c728e8bd54c2ca  In The Pale Afternoon [CD1]\In The Pale Afternoon [CD1].md5
+35596cb0a4a25c6dc3eae0a9dc3472cb  In The Pale Afternoon [CD2]\1978-07-01_201.flac
+63d3e52d9460ecaaf4060d69aa68b956  In The Pale Afternoon [CD2]\1978-07-01_202.flac
+68754276f492d64ab03ba0a604883cce  In The Pale Afternoon [CD2]\1978-07-01_203.flac
+c3f4abca9ac7f2139ceccd06b8560033  In The Pale Afternoon [CD2]\1978-07-01_204.flac
+dff8edfcccdb0bc561a1a33f7a020a44  In The Pale Afternoon [CD2]\1978-07-01_205.flac
+9071b7b5968ffb3b61c1b7bfedeb3385  In The Pale Afternoon [CD2]\1978-07-01_206.flac
+b41be7f505f877fb7cf5be73a751b2da  In The Pale Afternoon [CD2]\1978-07-01_207.flac
+f5f5eb5999f34522ef590e5b8ffe9238  In The Pale Afternoon [CD2]\1978-07-01_208.flac
+51122aa0aaf9cf7cd5e49aa34168f4ae  In The Pale Afternoon [CD2]\1978-07-01_209.flac
+2727c8ac5fa24a37465d2e3de0bac5a2  In The Pale Afternoon [CD2]\1978-07-01_210.flac
+a7dda2ddfd2ce4ee938ff1c70d4f1c37  In The Pale Afternoon [CD2]\1978-07-01_211.flac
+1b21ba56179df7785bc483f113367ddd  In The Pale Afternoon [CD2]\1978-07-01_212.flac
+0ae1b9f99090cb0ebb065da00c9eeb68  In The Pale Afternoon [CD2]\1978-07-01_213.flac
+7c9d95f4f89377f908162254c37dd3bd  In The Pale Afternoon [CD2]\1978-07-01_214.flac
+0dc8ee27e21b5961b71a2bdbe046fd5d  In The Pale Afternoon [CD2]\1978-07-01_215.flac
+55112eafccba464394fe9b712e083588  In The Pale Afternoon [CD2]\In The Pale Afternoon [CD2].md5
+5307a0382f17ec7c9905aadf07dbbb78  SSB txt.files.zip
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-01-sb.flacf\In The Pale Afternoon [CD1] 
+=================== 
+=================== 
+=================== 
+1978-07-01_101.flac:16a0c3a2bd1cb57ebf420f3f8a5ab6cf
+1978-07-01_102.flac:d6171a0a61cc8476a25ab7e3f97bb559
+1978-07-01_103.flac:cf2061e783a4ab52b348415e90cb4175
+1978-07-01_104.flac:4e460ad172d4d7edd4628cfe158061c5
+1978-07-01_105.flac:4926685ad335286ac160a25ac3f302a6
+1978-07-01_106.flac:31e303e8468604668d7b2f89d34b57d7
+1978-07-01_107.flac:62ceb8982a4abb9a123c12e2f4ce2361
+1978-07-01_108.flac:f827f22083c17c732bf20904e132b109
+1978-07-01_109.flac:0641b2d5728b2a6ad0f775983262ffa8
+1978-07-01_110.flac:0fbd556e2589cbfe643d4eabd8b5d57d
+1978-07-01_111.flac:473638f7d5a5953ff3484d744845bfea
+1978-07-01_112.flac:8c4116609bd6b929c09c12ebee80b33b
+1978-07-01_113.flac:f989fffb6fcc53e20a303107a6d70192
+1978-07-01_114.flac:c4049bf72fc3fae10f1ea119f2cfbf10
+1978-07-01_115.flac:a2a67348c336ab92a9b3e9dd9bdfbc46
+1978-07-01_116.flac:270b663f8b4f263052e67d0c9d53502f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-07-01-sb.flacf\In The Pale Afternoon [CD2] 
+=================== 
+=================== 
+=================== 
+1978-07-01_201.flac:f4e2b61df110b961dc68b3dfaf03cc0a
+1978-07-01_202.flac:e1a99995b546830a6eb9723489ebfcd8
+1978-07-01_203.flac:fdf5674902749caa4c948f09dbf620d2
+1978-07-01_204.flac:fa1753c0d0ce0cca31e3f7a957cd1706
+1978-07-01_205.flac:6f514411aad14bc57a46db6c79d7189e
+1978-07-01_206.flac:e2877140a754277765b13f416c6f6b94
+1978-07-01_207.flac:270e1cfd5d7beb988523a5f180847b4a
+1978-07-01_208.flac:6b11603c2f19fd73c2b78349aa8e953f
+1978-07-01_209.flac:8b9964dec3025c089f4c05f710b471d6
+1978-07-01_210.flac:abcef275aef3c111a98a4602693a7634
+1978-07-01_211.flac:d63cbc64c2a254ee910b01dc5f4d78a5
+1978-07-01_212.flac:05d58043ff78afb5659e82a62e14c647
+1978-07-01_213.flac:3c7368863af790a65348b80a601be64a
+1978-07-01_214.flac:3734ac81b92f12077192c3896d863390
+1978-07-01_215.flac:eb941040831d805885443181244b6e5c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-01-sb.flacf\In The Pale Afternoon [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:29.29       26351852 B   ---   --   ---xx   flac  0.5907  1978-07-01_101.flac
+     5:36.66       59425676 B   ---   --   ---xx   flac  0.6234  1978-07-01_102.flac
+     4:33.34       48237212 B   ---   --   ---xx   flac  0.6330  1978-07-01_103.flac
+     5:00.10       52943564 B   ---   --   ---xx   flac  0.6165  1978-07-01_104.flac
+     4:30.13       47658620 B   ---   --   ---xx   flac  0.6332  1978-07-01_105.flac
+     7:03.27       74680748 B   ---   --   ---xx   flac  0.6147  1978-07-01_106.flac
+     4:46.66       50605676 B   ---   --   ---xx   flac  0.6327  1978-07-01_107.flac
+     4:49.50       51097244 B   ---   --   ---xx   flac  0.6438  1978-07-01_108.flac
+     4:32.59       48119612 B   ---   --   ---xx   flac  0.6400  1978-07-01_109.flac
+     6:43.42       71188028 B   ---   --   ---xx   flac  0.6648  1978-07-01_110.flac
+     4:18.20       45558284 B   ---   --   ---xx   flac  0.6522  1978-07-01_111.flac
+     4:26.41       47018876 B   ---   --   ---xx   flac  0.6505  1978-07-01_112.flac
+     4:39.18       49257980 B   ---   --   ---xx   flac  0.6377  1978-07-01_113.flac
+     3:03.45       32387084 B   ---   --   ---xx   flac  0.6592  1978-07-01_114.flac
+     4:55.59       52176812 B   ---   --   ---xx   flac  0.5730  1978-07-01_115.flac
+     5:04.70       53790284 B   ---   --   ---xx   flac  0.6114  1978-07-01_116.flac
+    76:34.49      810497552 B                            0.6302  (16 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-07-01-sb.flacf\In The Pale Afternoon [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:23.07       46409708 B   ---   --   ---xx   flac  0.6430  1978-07-01_201.flac
+     4:56.03       52221500 B   ---   --   ---xx   flac  0.6349  1978-07-01_202.flac
+     3:07.69       33149132 B   ---   --   ---xx   flac  0.6445  1978-07-01_203.flac
+     4:44.69       50259932 B   ---   --   ---xx   flac  0.6072  1978-07-01_204.flac
+     2:57.43       31323980 B   ---   --   ---xx   flac  0.6176  1978-07-01_205.flac
+     5:01.63       53244620 B   ---   --   ---xx   flac  0.6286  1978-07-01_206.flac
+     4:46.74       50624492 B   ---   --   ---xx   flac  0.6434  1978-07-01_207.flac
+     5:32.48       58677740 B   ---   --   ---xx   flac  0.6277  1978-07-01_208.flac
+     5:41.53       60277100 B   ---   --   ---xx   flac  0.6182  1978-07-01_209.flac
+     4:01.11       42538316 B   ---   --   ---xx   flac  0.6592  1978-07-01_210.flac
+     3:14.62       34367468 B   ---   --   ---xx   flac  0.6526  1978-07-01_211.flac
+     8:38.39       91466972 B   ---   --   ---xx   flac  0.6324  1978-07-01_212.flac
+     6:44.19       71310332 B   ---   --   ---xx   flac  0.6407  1978-07-01_213.flac
+     4:55.14       52070972 B   ---   --   ---xx   flac  0.6374  1978-07-01_214.flac
+     5:22.33       56878460 B   ---   --   ---xx   flac  0.6256  1978-07-01_215.flac
+    74:09.07      784820724 B                            0.6334  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,85 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd03-02-21cedar3.flacf 
+=================== 
+=================== 
+=================== 
+a1bbce55e404f861fd111d6bf6c8eab9  1-01-Tweedle Dee & Tweedle Dum.flac
+8206434c21f7badfee76112996c284d3  1-02-I'll Be Your Baby, Tonight.flac
+195d09a2a30a1aee9ae777f8ab7ac5d1  1-03-Highway 61 Revisited.flac
+7602f56a1ad2fc587d35d512bdb754d0  1-04-Just Like A Woman.flac
+df93725906598679e096d0bbf972d805  1-05-Things Have Changed.flac
+6c6b2f95dff2c399c45a3139296f4936  1-06-Drifter's Escape.flac
+95809886d9e6b045c102f43c600da817  1-07-It's All Over Now, Baby Blue.flac
+cdd7bc4cbf7de96d53465f32ced180b1  1-08-Don't Think Twice, It's All Right.flac
+012fca2628d0c9cd938a6f21a3c85515  1-09-Masters Of War.flac
+8f776f923fef0fc982d9819d2546b62d  1-10-Watching The River Flow.flac
+f5d7842cf0983176f9c2991eb90841dd  2-01-Simple Twist Of Fate.flac
+76f3810356878ea928850b82c35594bd  2-02-Honest With Me.flac
+024866992437a84d99ba9ab292e5f119  2-03-Bye And Bye.flac
+d4120e1407abf5856a9dc2a7f62a6b77  2-04-Happy Birthday.flac
+da905bff555273b47ec29a7fbb2f7267  2-05-Summer Days.flac
+754a539c98d833e5749f19378b654b27  2-06-encore crowd noise.flac
+e5843d6016b9a5d472ef416e2290ab47  2-07-Blowin' In The Wind.flac
+df78c2452c07ae95488ee468abadf1f9  2-08-All Along The Watchtower.flac
+abc14e5df4d95254ee2f3d19da187538  2003-02-21 Auckland CEDAR 3.txt
+91718734626dba03def25414944c3e63  2003-02-21 Auckland, NZ (D1) CEDAR 3.LOG
+ef982d74fce299ae8767b602dadff52b  2003-02-21 Auckland, NZ (D2) CEDAR 3.LOG
+083617e506d11f885bb1ffb127af58ea  2003-02-21.auckland.cedar3.flac.md5
+307e8ef48ae3f075b7324ae72e113860  bd03-02-21cedar3.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd03-02-21cedar3.flacf 
+=================== 
+=================== 
+=================== 
+1-01-Tweedle Dee & Tweedle Dum.flac:4536304b6043799b8fd84e00ef8ab111
+1-02-I'll Be Your Baby, Tonight.flac:bf9ef4a466673d04efaf621b1e2cecb1
+1-03-Highway 61 Revisited.flac:fa650621f88c028c29aec8583b35b821
+1-04-Just Like A Woman.flac:66b1259c08f78b8048e0f92520803c67
+1-05-Things Have Changed.flac:374de2413250c07c5a73673f647d7268
+1-06-Drifter's Escape.flac:f59a567a766212d775e6492f653bd185
+1-07-It's All Over Now, Baby Blue.flac:5f8ef782c983746b6d82779606354108
+1-08-Don't Think Twice, It's All Right.flac:9a2aee38f2e4cdccb83fc51df1738e7b
+1-09-Masters Of War.flac:ba9ca3afed4dbef32dfe6ff8e2fa9111
+1-10-Watching The River Flow.flac:8e6842e0c36c02bda151497bd5617f90
+2-01-Simple Twist Of Fate.flac:9ed716509fdcb3132a17c4ef698621d0
+2-02-Honest With Me.flac:66b69c52538f2a2f7ae2854b58fe509e
+2-03-Bye And Bye.flac:181d871d57b9fff6f82dd9b263fce27d
+2-04-Happy Birthday.flac:b274dbbdaf1d4dcd6377f4a5c3485a86
+2-05-Summer Days.flac:5c0e904b7d4e8c07809dbde43631a3e7
+2-06-encore crowd noise.flac:0f3496bc8f46111c36f89abd2f438f3a
+2-07-Blowin' In The Wind.flac:3c633183582695d77d69d7e0e4aed0f4
+2-08-All Along The Watchtower.flac:7cf69a44dee56a4e02a41aa7cee7117c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd03-02-21cedar3.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:45.00       60858044 B   ---   --   ---xx   flac  0.3936  1-01-Tweedle Dee & Tweedle Dum.flac
+     6:29.00       68619644 B   ---   --   ---xx   flac  0.4072  1-02-I'll Be Your Baby, Tonight.flac
+     6:04.00       64209644 B   ---   --   ---xx   flac  0.4094  1-03-Highway 61 Revisited.flac
+     7:39.00       80967644 B   ---   --   ---xx   flac  0.4194  1-04-Just Like A Woman.flac
+     7:06.00       75146444 B   ---   --   ---xx   flac  0.4156  1-05-Things Have Changed.flac
+     4:10.00       44100044 B   ---   --   ---xx   flac  0.4263  1-06-Drifter's Escape.flac
+     6:48.00       71971244 B   ---   --   ---xx   flac  0.4055  1-07-It's All Over Now, Baby Blue.flac
+     6:16.00       66326444 B   ---   --   ---xx   flac  0.4062  1-08-Don't Think Twice, It's All Right.flac
+     5:00.00       52920044 B   ---   --   ---xx   flac  0.4196  1-09-Masters Of War.flac
+     6:21.24       67264892 B   ---   --   ---xx   flac  0.4211  1-10-Watching The River Flow.flac
+     8:00.00       84672044 B   ---   --   ---xx   flac  0.3991  2-01-Simple Twist Of Fate.flac
+     6:54.00       73029644 B   ---   --   ---xx   flac  0.4126  2-02-Honest With Me.flac
+     5:45.30       60928604 B   ---   --   ---xx   flac  0.3805  2-03-Bye And Bye.flac
+     1:03.00       11113244 B   ---   --   ---xx   flac  0.3908  2-04-Happy Birthday.flac
+     6:47.45       71900684 B   ---   --   ---xx   flac  0.4190  2-05-Summer Days.flac
+     3:46.00       39866444 B   ---   --   ---xx   flac  0.4169  2-06-encore crowd noise.flac
+     5:10.00       54684044 B   ---   --   ---xx   flac  0.4130  2-07-Blowin' In The Wind.flac
+     7:41.18       81362780 B   ---   --   ---xx   flac  0.4054  2-08-All Along The Watchtower.flac
+   106:45.42     1129941576 B                            0.4094  (18 files)
+=================== 
+=================== 
+=================== 

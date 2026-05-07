@@ -1,0 +1,63 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd79-The-Classic-Interviews-Vol3-1979-1981.flacf 
+=================== 
+=================== 
+=================== 
+8cd5f45e335284be4f26f1a3c0d8f4c8  01 - Critical Audience Reaction To One Of The Gospel Shows - San Francisco, CA Nov 1979.flac
+1ebb60f82a7debe059a793efe33d417b  02 - Telephone Interview With Bruce Helman, KMGX radio, 7 Dec 1979.flac
+88df6b73b0cf2d7c21e2eae6b09be2a7  03 - Interview Backstage With Paul Vincent, KMEL FM Radio, 18 Nov 1980.flac
+4e16cb1888a8ab407350105f5495c1c4  04 - Telephone Interview With Ernest Bladden, KPRI FM Radio, 21 Nov 1980.flac
+537376a2c5075caf5b5d031bf1b5b1aa  05 - Telephone Interview With Paul Gambaccini, BBC Radio 1, London, 12 Jun 1981.flac
+837dc499169386e0c1c05c391576117c  06 - Telephone Interview With Tim Blackmore, Capital Radio, London, 12 Jun 1981.flac
+ccf565b8e4a6ab80360966d4d2c2abe8  07 - Telephone Interview With Yves Bigot, Radio Europe 1, Paris, 12 Jun 1981.flac
+0266aeb117dd7135f3566d3625ee01e2  Artwork\The Classic Interviews box01.png
+1463bcf2c7333065b9a5f17d17375606  Artwork\The Classic Interviews box02.png
+cbb86b698a120b7d45db5d8fc012fbdc  Artwork\The Classic Interviews Vol.3 booklet01.png
+4c9e0a7b4a53171b801777b17825cb3e  Artwork\The Classic Interviews Vol.3 booklet02.png
+97c8bed0a7b0a5f6afcaab9e32a2a1d0  Artwork\The Classic Interviews Vol.3 disc.png
+504a65b3e653068213a3e7ddfc154664  Artwork\The Classic Interviews Vol.3 tray01.png
+43f39a1387dd68133a56db609c7f5bc9  Artwork\The Classic Interviews Vol.3 tray02.png
+c8e47d52543855d2abb2555349c155ea  Extras\Interviews_80s.pdf
+17006a67333858275454793ffcb4e38f  Extras\Interviews_90s.pdf
+065c5dededda26816321187d36242157  The Classic Interviews Vol. 3 - 1979-1981.cue
+45b062ecf76d4ae61bb23cb533834540  The Classic Interviews Vol. 3 - 1979-1981.ffp
+0d29fd5e2f9a4c6a72c90c398ec3ebe6  The Classic Interviews Vol. 3 - 1979-1981.log
+45c50c69c80acc6bb7e3d295551e4a62  The Classic Interviews Vol. 3 - 1979-1981.m3u
+fb3e5dbdfdfc796ef5f6b79c37372a8e  The Classic Interviews Vol. 3 - 1979-1981.md5
+da399aaad0d7e7bf3491cca4c89b4667  The Classic Interviews Vol. 3 - 1979-1981.st5
+9c1b16d422f682d2a86a1b79ce346160  The Classic Interviews Vol.3 1979-1981 info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd79-The-Classic-Interviews-Vol3-1979-1981.flacf 
+=================== 
+=================== 
+=================== 
+01 - Critical Audience Reaction To One Of The Gospel Shows - San Francisco, CA Nov 1979.flac:29e008d5863cfb00194905fd16f456b4
+02 - Telephone Interview With Bruce Helman, KMGX radio, 7 Dec 1979.flac:36f3973a91367c013fe92b69f1d1af17
+03 - Interview Backstage With Paul Vincent, KMEL FM Radio, 18 Nov 1980.flac:bfff6ee5d55220159a030c1b81d9ab39
+04 - Telephone Interview With Ernest Bladden, KPRI FM Radio, 21 Nov 1980.flac:dc86098d1828178e3c00c1d01a5328a2
+05 - Telephone Interview With Paul Gambaccini, BBC Radio 1, London, 12 Jun 1981.flac:1bfed4fb2e3ac9578d810fff35ee9273
+06 - Telephone Interview With Tim Blackmore, Capital Radio, London, 12 Jun 1981.flac:1d1cc5633234d51099b5ed208b31169f
+07 - Telephone Interview With Yves Bigot, Radio Europe 1, Paris, 12 Jun 1981.flac:750ae5828e9eade8e526d9e1dea5596a
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd79-The-Classic-Interviews-Vol3-1979-1981.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:04.36       11374316 B   ---   --   ---xx   flac  0.4815  01 - Critical Audience Reaction To One Of The Gospel Shows - San Francisco, CA Nov 1979.flac
+     7:45.33       82103660 B   ---   --   ---xx   flac  0.4501  02 - Telephone Interview With Bruce Helman, KMGX radio, 7 Dec 1979.flac
+    15:45.33      166775660 B   ---   --   ---xx   flac  0.3161  03 - Interview Backstage With Paul Vincent, KMEL FM Radio, 18 Nov 1980.flac
+    13:36.71      144109436 B   ---   --   ---xx   flac  0.2920  04 - Telephone Interview With Ernest Bladden, KPRI FM Radio, 21 Nov 1980.flac
+     5:14.24       55446092 B   ---   --   ---xx   flac  0.3060  05 - Telephone Interview With Paul Gambaccini, BBC Radio 1, London, 12 Jun 1981.flac
+     6:10.05       65279804 B   ---   --   ---xx   flac  0.3150  06 - Telephone Interview With Tim Blackmore, Capital Radio, London, 12 Jun 1981.flac
+    14:22.44      152160332 B   ---   --   ---xx   flac  0.3283  07 - Telephone Interview With Yves Bigot, Radio Europe 1, Paris, 12 Jun 1981.flac
+    63:59.21      677249300 B                            0.3318  (7 files)
+=================== 
+=================== 
+=================== 

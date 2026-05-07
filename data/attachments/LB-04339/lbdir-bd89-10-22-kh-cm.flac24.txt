@@ -1,0 +1,74 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-10-22-kh-cm.flac24 
+=================== 
+=================== 
+=================== 
+497f80449882df1163af250d04466af1  bd89-10-22-kh-cm-LB-4339.txt
+fa15b3e5c2633cd0315f0dca730bb71c  Bob Dylan 1989-10-22.flac24.md5
+6f380a4f7af375f418ea6f600a9a356e  Bob Dylan 1989-10-22.flac24.txt
+11d02dcc6cfea6c52a1bbf3d9ba7ef31  Bob Dylan 1989-10-22t01 Trouble.flac
+5c53317423f5940c1eeb5f462e342273  Bob Dylan 1989-10-22t02 Man In The Long Black Coat.flac
+1e5318510f5f227e6173dbcae7d57013  Bob Dylan 1989-10-22t03 John Brown.flac
+9396cab286c976f90b6ad0ac749f26fe  Bob Dylan 1989-10-22t04 You're A Big Girl Now.flac
+d4bb66e3ccf3d676437aa6c9a74b904d  Bob Dylan 1989-10-22t05 Just Like A Woman.flac
+b6a1c973db91f320a3e268861b0fd21b  Bob Dylan 1989-10-22t06 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+d9ce4f70a680a381f883d242b5451539  Bob Dylan 1989-10-22t07 A Hard Rain's A-Gonna Fall.flac
+ff5b1d15368ed37b1a6d7cdf61c88f7e  Bob Dylan 1989-10-22t08 The Lonesome Death Of Hattie Carroll.flac
+145a4a08c1841592e70e4e12750ce9cb  Bob Dylan 1989-10-22t09 It Ain't Me Babe.flac
+7fd63885ad6661569fe6b29489bef3cb  Bob Dylan 1989-10-22t10 Shelter From The Storm.flac
+36be4c6dea4fa8655b0a25b0c9fc34fd  Bob Dylan 1989-10-22t11 Everything Is Broken.flac
+a11b6b0b29bd4c229a6f4b393dbe9976  Bob Dylan 1989-10-22t12 I Shall Be Released.flac
+d7345b9603b2969b6a5f1e770d62f3fe  Bob Dylan 1989-10-22t13 Like A Rolling Stone.flac
+80ca2d5c0a40f34b9119f9e7d678f5ca  Bob Dylan 1989-10-22t14 Most Of The Time.flac
+eb01252e81903c69725a2e460d637121  Bob Dylan 1989-10-22t15 Maggie's Farm.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-10-22-kh-cm.flac24 
+=================== 
+=================== 
+=================== 
+Bob Dylan 1989-10-22t01 Trouble.flac:124686255c4c460ce7270ac2d8eda391
+Bob Dylan 1989-10-22t02 Man In The Long Black Coat.flac:8057d9369ac6d566f731b3e05b981f09
+Bob Dylan 1989-10-22t03 John Brown.flac:f6b62e55ce0ef34dd909a36114d750ee
+Bob Dylan 1989-10-22t04 You're A Big Girl Now.flac:aeedc8284b43ab53c02ac6ad78a893bb
+Bob Dylan 1989-10-22t05 Just Like A Woman.flac:1d4d036ec4e9a679fe6117b40e4bc780
+Bob Dylan 1989-10-22t06 Stuck Inside Of Mobile With The Memphis Blues Again.flac:f1fc5f28e58efbe34c4aea182b119866
+Bob Dylan 1989-10-22t07 A Hard Rain's A-Gonna Fall.flac:58c55a56078c5d26ab437f24d4faf87f
+Bob Dylan 1989-10-22t08 The Lonesome Death Of Hattie Carroll.flac:06c3dd7f3654145e5aa01a001953085f
+Bob Dylan 1989-10-22t09 It Ain't Me Babe.flac:84efc8bd1e57e4364bfdbe6f79613c22
+Bob Dylan 1989-10-22t10 Shelter From The Storm.flac:c35fa8147ba6f06a4395e26a5d6cfb5d
+Bob Dylan 1989-10-22t11 Everything Is Broken.flac:338212dea64e0071bfb434b726f1c284
+Bob Dylan 1989-10-22t12 I Shall Be Released.flac:abd11eaab1f2a35e80cbab2e7e75c522
+Bob Dylan 1989-10-22t13 Like A Rolling Stone.flac:36a5dcdfa8d93765f1c751b44fd150f3
+Bob Dylan 1989-10-22t14 Most Of The Time.flac:800796a00742f83a8434569096def361
+Bob Dylan 1989-10-22t15 Maggie's Farm.flac:dc5a16ffe7cda2aab456dea3e01be398
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-10-22-kh-cm.flac24 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:27.973     154352684 B   cxx   --   ---xx   flac  0.7274  Bob Dylan 1989-10-22t01 Trouble.flac
+     4:15.373     147095084 B   cxx   --   ---xx   flac  0.7197  Bob Dylan 1989-10-22t02 Man In The Long Black Coat.flac
+     5:35.053     192990764 B   cxx   --   ---xx   flac  0.7329  Bob Dylan 1989-10-22t03 John Brown.flac
+     4:59.520     172523564 B   cxx   --   ---xx   flac  0.7274  Bob Dylan 1989-10-22t04 You're A Big Girl Now.flac
+     6:09.160     212636204 B   cxx   --   ---xx   flac  0.7328  Bob Dylan 1989-10-22t05 Just Like A Woman.flac
+     6:40.693     230799404 B   cxx   --   ---xx   flac  0.7569  Bob Dylan 1989-10-22t06 Stuck Inside Of Mobile With The Memphis Blues Again.flac
+     8:19.613     287777324 B   cxx   --   ---xx   flac  0.7060  Bob Dylan 1989-10-22t07 A Hard Rain's A-Gonna Fall.flac
+     7:33.573     261258284 B   cxx   --   ---xx   flac  0.7245  Bob Dylan 1989-10-22t08 The Lonesome Death Of Hattie Carroll.flac
+     7:21.560     254338604 B   cxx   --   ---xx   flac  0.7220  Bob Dylan 1989-10-22t09 It Ain't Me Babe.flac
+     5:39.040     195287084 B   cxx   --   ---xx   flac  0.7344  Bob Dylan 1989-10-22t10 Shelter From The Storm.flac
+     4:09.027     143439404 B   cxx   --   ---xx   flac  0.7612  Bob Dylan 1989-10-22t11 Everything Is Broken.flac
+     3:56.960     136489004 B   cxx   --   ---xx   flac  0.7448  Bob Dylan 1989-10-22t12 I Shall Be Released.flac
+     6:43.387     232350764 B   cxx   --   ---xx   flac  0.7598  Bob Dylan 1989-10-22t13 Like A Rolling Stone.flac
+     5:03.427     174773804 B   cxx   --   ---xx   flac  0.7156  Bob Dylan 1989-10-22t14 Most Of The Time.flac
+     5:36.121     193605698 B   cxx   --   ---xx   flac  0.7389  Bob Dylan 1989-10-22t15 Maggie's Farm.flac
+    86:30.481    2989717674 B                            0.7327  (15 files)
+=================== 
+=================== 
+=================== 

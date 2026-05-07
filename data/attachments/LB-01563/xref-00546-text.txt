@@ -1,0 +1,225 @@
+===================
+===================
+===================
+=== 1997-02-17 Festival Hall, Osaka, Japan [Holy Grail].md5
+===================
+===================
+===================
+88358e0beb373d8119068dda7e906202 *01 Crash on the Levee (Down in the flood).flac
+39847a960c90077640001dc360d9a731 *02 Senor (Tales of Yankee Power).flac
+fedfbdf7fd60d99cd785ef156ce03f5f *03 All along the watchtower.flac
+01413008762175e69a1f05365a2b143a *04 Under the red sky.flac
+08b29e87b3c4319c3cde1b5497e3ef70 *05 It takes a lot to laugh, it takes a train to cry.flac
+6addd35144e33c72fac132c86a2d97bd *06 Silvio.flac
+6d46a1e0c2627318ca62ab6fe0f86fa6 *07 Oh baby it ain't no lie.flac
+ff6ec73f3c1cb2bb0bee7e47587f96ea *08 Tangled up in blue.flac
+6cd59b06d20ff9ef1b1839948c9d085d *09 To Ramona.flac
+e9c2273740802f511ccf18b414fe0e3d *10 Seeing the real you at last.flac
+9db874165613781a3408ab93be0befd1 *11 I shall be released.flac
+1e037cf377e9a15edc405969b2d6db46 *12 Maggie's farm.flac
+5d441b0a8139df04c5ab435d3296a0d3 *13 (audience wait).flac
+827e70e34a75a79b76f34fc3f19407eb *13 Like a rolling stone.flac
+efaf37eaf2b056005b09cd436872f970 *14 My back pages.flac
+84ff928c547a34925b0937b01dc9b6eb *15 Rainy day women # 12 & 35.flac
+d90232159635615806cc7c35d70d9cc1 *ffp_full.ffp
+d90232159635615806cc7c35d70d9cc1 *ffp_full.txt
+770de328ce43c6cd1b98878b5f028ea9 *INFO 1997-02-17 Festival Hall, Osaka, Japan [Holy Grail].txt
+07b09be054700ac63ddafc3a5e3d1bbc *info_bd-1997-02-17-osaka-AUD-HG.txt
+5a5ce4eb3eeb10dd4f25580a2f290da1 *shntool_len-full.txt
+===================
+===================
+===================
+=== ffp_full.ffp
+===================
+===================
+===================
+01 Crash on the Levee (Down in the flood).flac:b4e7706cd390ffad402cc10c29abad05
+02 Senor (Tales of Yankee Power).flac:b6f8eb392603b9eebc3f9035cf322f90
+03 All along the watchtower.flac:4f9a92cc47436e35d17a527fa7294c5a
+04 Under the red sky.flac:f181ef9b43f39a3ef5acb86dda9d531c
+05 It takes a lot to laugh, it takes a train to cry.flac:9cd7f6cf92c43213b9b4b8c1eb9ea07e
+06 Silvio.flac:9e86d2a736a892bc8e98ad394fba9440
+07 Oh baby it ain't no lie.flac:ecf2871ba9869cfb9ec933ca857a2511
+08 Tangled up in blue.flac:cf98994612715db369780147b208d8fc
+09 To Ramona.flac:ccc1ed8cca8c775c6abf9cec8928ea22
+10 Seeing the real you at last.flac:89dd0ea67cea7d4ad20fc62e7c000661
+11 I shall be released.flac:131a17b7b2e907e737d81f48c27c7df8
+12 Maggie's farm.flac:d5b5cdb07b82df0f027cdeae3f563b81
+13 (audience wait).flac:d32a036d549fd0631fe4abb09b8f86f9
+13 Like a rolling stone.flac:175ab0aa81f1d28ca0b34b4b7a3f8c79
+14 My back pages.flac:fa0b42c4b5d7c43414d0b354a18ea07f
+15 Rainy day women # 12 & 35.flac:474030e00e3fd2bcef680d665217b7ce
+===================
+===================
+===================
+=== ffp_full.txt
+===================
+===================
+===================
+01 Crash on the Levee (Down in the flood).flac:b4e7706cd390ffad402cc10c29abad05
+02 Senor (Tales of Yankee Power).flac:b6f8eb392603b9eebc3f9035cf322f90
+03 All along the watchtower.flac:4f9a92cc47436e35d17a527fa7294c5a
+04 Under the red sky.flac:f181ef9b43f39a3ef5acb86dda9d531c
+05 It takes a lot to laugh, it takes a train to cry.flac:9cd7f6cf92c43213b9b4b8c1eb9ea07e
+06 Silvio.flac:9e86d2a736a892bc8e98ad394fba9440
+07 Oh baby it ain't no lie.flac:ecf2871ba9869cfb9ec933ca857a2511
+08 Tangled up in blue.flac:cf98994612715db369780147b208d8fc
+09 To Ramona.flac:ccc1ed8cca8c775c6abf9cec8928ea22
+10 Seeing the real you at last.flac:89dd0ea67cea7d4ad20fc62e7c000661
+11 I shall be released.flac:131a17b7b2e907e737d81f48c27c7df8
+12 Maggie's farm.flac:d5b5cdb07b82df0f027cdeae3f563b81
+13 (audience wait).flac:d32a036d549fd0631fe4abb09b8f86f9
+13 Like a rolling stone.flac:175ab0aa81f1d28ca0b34b4b7a3f8c79
+14 My back pages.flac:fa0b42c4b5d7c43414d0b354a18ea07f
+15 Rainy day women # 12 & 35.flac:474030e00e3fd2bcef680d665217b7ce
+===================
+===================
+===================
+=== INFO 1997-02-17 Festival Hall, Osaka, Japan [Holy Grail].txt
+===================
+===================
+===================
+Festival Hall
+Osaka, Japan
+February 17, 1997
+
+*** Holy Grail ***
+
+Sourced from LB-1563
+http://jokerman.org.uk/lb/detail/LB-01563.html
+
+01. Crash On The Levee (Down In The Flood) [05:08]
+02. Seor (Tales Of Yankee Power) [06:34]
+03. All Along The Watchtower [06:34]
+04. Under The Red Sky [06:19]
+05. It Takes A Lot To Laugh, It Takes A Train To Cry [08:48]
+06. Silvio (Bob Dylan & Robert Hunter) [08:12]
+07. Oh Baby It Ain't No Lie (Elizabeth Cotton) [06:36]
+08. Tangled Up In Blue [08:37]
+09. To Ramona [06:32]
+Total time [63:23]
+
+10. Seeing The Real You At Last [06:18]
+11. I Shall Be Released [06:20]
+12. Maggie's Farm [07:19]
+13. (audience wait) [01:22]
+13. Like A Rolling Stone [11:06]
+14. My Back Pages [09:22]
+15. Rainy Day Women # 12 & 35 [07:18]
+Total time [49:09]
+
+Concert # 849 of The Never-Ending Tour
+Concert # 7 of the 1997 Tour of Japan
+1997 concert # 7
+
+Concert # 35 with the 10th Never-Ending Tour Band:
+Bob Dylan (vocal & guitar)
+Bucky Baxter (pedal steel guitar & electric slide guitar)
+John Jackson (guitar)
+Tony Garnier (bass)
+David Kemper (drums & percussion)
+
+7-9, 14 acoustic with the band
+6, 11 John Jackson & Bucky Baxter (backup vocal)
+
+8 new songs (53%) compared to previous concert
+5 new songs for this tour
+
+Stereo audience recording, 115 minutes
+
+ffp_full:
+01 Crash on the Levee (Down in the flood).flac:b4e7706cd390ffad402cc10c29abad05
+02 Senor (Tales of Yankee Power).flac:b6f8eb392603b9eebc3f9035cf322f90
+03 All along the watchtower.flac:4f9a92cc47436e35d17a527fa7294c5a
+04 Under the red sky.flac:f181ef9b43f39a3ef5acb86dda9d531c
+05 It takes a lot to laugh, it takes a train to cry.flac:9cd7f6cf92c43213b9b4b8c1eb9ea07e
+06 Silvio.flac:9e86d2a736a892bc8e98ad394fba9440
+07 Oh baby it ain't no lie.flac:ecf2871ba9869cfb9ec933ca857a2511
+08 Tangled up in blue.flac:cf98994612715db369780147b208d8fc
+09 To Ramona.flac:ccc1ed8cca8c775c6abf9cec8928ea22
+10 Seeing the real you at last.flac:89dd0ea67cea7d4ad20fc62e7c000661
+11 I shall be released.flac:131a17b7b2e907e737d81f48c27c7df8
+12 Maggie's farm.flac:d5b5cdb07b82df0f027cdeae3f563b81
+13 (audience wait).flac:d32a036d549fd0631fe4abb09b8f86f9
+13 Like a rolling stone.flac:175ab0aa81f1d28ca0b34b4b7a3f8c79
+14 My back pages.flac:fa0b42c4b5d7c43414d0b354a18ea07f
+15 Rainy day women # 12 & 35.flac:474030e00e3fd2bcef680d665217b7ce
+
+shntool_len_full:
+length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+ 05:08.08       54350060 B   ---   --   ---xx   flac  0.6033  01 Crash on the Levee (Down in the flood).flac
+ 06:34.12       69529868 B   ---   --   ---xx   flac  0.5667  02 Senor (Tales of Yankee Power).flac
+ 06:34.32       69576908 B   ---   --   ---xx   flac  0.6028  03 All along the watchtower.flac
+ 06:19.20       66902684 B   ---   --   ---xx   flac  0.5513  04 Under the red sky.flac
+ 08:48.12       93167468 B   ---   --   ---xx   flac  0.5508  05 It takes a lot to laugh, it takes a train to cry.flac
+ 08:12.51       86908796 B   ---   --   ---xx   flac  0.6235  06 Silvio.flac
+ 06:36.44       69957932 B   ---   --   ---xx   flac  0.5504  07 Oh baby it ain't no lie.flac
+ 08:37.67       91356428 B   ---   --   ---xx   flac  0.5625  08 Tangled up in blue.flac
+ 06:32.11       69174716 B   ---   --   ---xx   flac  0.4962  09 To Ramona.flac
+ 06:18.48       66792140 B   ---   --   ---xx   flac  0.5795  10 Seeing the real you at last.flac
+ 06:20.72       67201388 B   ---   --   ---xx   flac  0.5381  11 I shall be released.flac
+ 07:19.17       77479628 B   ---   --   ---xx   flac  0.6237  12 Maggie's farm.flac
+ 01:22.60       14605964 B   ---   --   ---xx   flac  0.5359  13 (audience wait).flac
+ 11:06.37      117569468 B   ---   --   ---xx   flac  0.6263  13 Like a rolling stone.flac
+ 09:22.34       99216812 B   ---   --   ---xx   flac  0.5495  14 My back pages.flac
+ 07:18.40       77357324 B   ---   --   ---xx   flac  0.6230  15 Rainy day women # 12 & 35.flac
+112:32.40     1191147584 B                            0.5777  (16 files)
+===================
+===================
+===================
+=== info_bd-1997-02-17-osaka-AUD-HG.txt
+===================
+===================
+===================
+Bob Dylan
+1997-02-17 Osaka
+Holy Grail recording - audience recording [no soundboard circulates/known]
+
+
+Disk One
+Crash On The Levee (Down In The Flood) 
+Seor (Tales Of Yankee Power)
+All Along The Watchtower 
+Under The Red Sky 
+It Takes A Lot To Laugh, It Takes A Train To Cry 
+Silvio 
+Oh Baby It Ain't No Lie (acoustic w band) 
+Tangled Up In Blue (acoustic w band) 
+To Ramona (acoustic w band) 
+
+Disk Two
+Seeing The Real You At Last 
+I Shall Be Released 
+Maggie's Farm 
+applause
+Like A Rolling Stone 
+My Back Pages (acoustic w band) 
+Rainy Day Women # 12 & 35
+===================
+===================
+===================
+=== shntool_len-full.txt
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:08.08       54350060 B   ---   --   ---xx   flac  0.6033  01 Crash on the Levee (Down in the flood).flac
+     6:34.12       69529868 B   ---   --   ---xx   flac  0.5667  02 Senor (Tales of Yankee Power).flac
+     6:34.32       69576908 B   ---   --   ---xx   flac  0.6028  03 All along the watchtower.flac
+     6:19.20       66902684 B   ---   --   ---xx   flac  0.5513  04 Under the red sky.flac
+     8:48.12       93167468 B   ---   --   ---xx   flac  0.5508  05 It takes a lot to laugh, it takes a train to cry.flac
+     8:12.51       86908796 B   ---   --   ---xx   flac  0.6235  06 Silvio.flac
+     6:36.44       69957932 B   ---   --   ---xx   flac  0.5504  07 Oh baby it ain't no lie.flac
+     8:37.67       91356428 B   ---   --   ---xx   flac  0.5625  08 Tangled up in blue.flac
+     6:32.11       69174716 B   ---   --   ---xx   flac  0.4962  09 To Ramona.flac
+     6:18.48       66792140 B   ---   --   ---xx   flac  0.5795  10 Seeing the real you at last.flac
+     6:20.72       67201388 B   ---   --   ---xx   flac  0.5381  11 I shall be released.flac
+     7:19.17       77479628 B   ---   --   ---xx   flac  0.6237  12 Maggie's farm.flac
+     1:22.60       14605964 B   ---   --   ---xx   flac  0.5359  13 (audience wait).flac
+    11:06.37      117569468 B   ---   --   ---xx   flac  0.6263  13 Like a rolling stone.flac
+     9:22.34       99216812 B   ---   --   ---xx   flac  0.5495  14 My back pages.flac
+     7:18.40       77357324 B   ---   --   ---xx   flac  0.6230  15 Rainy day women # 12 & 35.flac
+   112:32.40     1191147584 B                            0.5777  (16 files)
+===================
+===================
+===================

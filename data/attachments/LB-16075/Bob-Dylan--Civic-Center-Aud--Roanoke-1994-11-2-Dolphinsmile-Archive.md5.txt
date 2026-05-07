@@ -1,0 +1,14 @@
+625ab384fa03f4e13edbc99a24deb24b *01 Jokerman.flac
+a1a832f6e0b4c21f847025932aa7f16e *02 Senor.flac
+a183544e71fbe639492f78b93b3262ec *03 All Along The Watchtower.flac
+3699ffd6a1e97aecfb233cb0640e5491 *04 I Dont Believe You.flac
+b901f19be1aa7f1091b735449f20fa46 *05 Tangled Up in Blue.flac
+d06e71135f7b2062c3662df5031ef117 *06 Man In Long Black Coat.flac
+a8417c8fc145e68b0d7a3dc174559314 *07 Tamborine Man.flac
+e4340de33de9f17439d0287685e26d9b *08 Gates Of Eden.flac
+cc5a378ae0c0ed8f9273a6d381bc3aa8 *09 Dont Think Twice.flac
+23e74ac23eb77198d46d9d13d5da6815 *10 God Knows.flac
+fff566bf67ef5a9f14718294646d2406 *11 I and I.flac
+e8652d58e0b8d19bde11a62b06f04b99 *12 Maggies Farm.flac
+4822fee265fad19cae16c2d569bf22b6 *13 What Good Am I.flac
+cf7c93f570658172029d000c41f25165 *14 It Aint Me Babe.flac

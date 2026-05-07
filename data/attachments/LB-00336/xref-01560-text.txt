@@ -1,0 +1,179 @@
+===================
+===================
+===================
+=== 19nov79.md5
+===================
+===================
+===================
+5e5ee83cf40a997707ee85c7e721970c *19nov79_d1t01.flac
+bdd40ee7362b21058803e5312d888927 *19nov79_d1t02.flac
+c9daa4660fed86fcacc213351de1531c *19nov79_d1t03.flac
+c3d2efc8c4394469172a88d8236a128f *19nov79_d1t04.flac
+523433eec280d39a3c6f91e1c5e04686 *19nov79_d1t05.flac
+3a739816aa28140e355d78a8b199bd8f *19nov79_d1t06.flac
+35e08aa30e2b56b6b253ecea06ef4458 *19nov79_d1t07.flac
+43020b641f7305907e9474507c46a7ea *19nov79_d2t01.flac
+08bf3fbf8aec6acc024c6f451dc84d2c *19nov79_d2t02.flac
+5701b8de78cd4a7ea6a75d15b9a95a03 *19nov79_d2t03.flac
+bf6e0c24d343f1be4284c0b0092bf75c *19nov79_d2t04.flac
+6811b7c5b0a5701d5433fc24be0bacaa *19nov79_d2t05.flac
+cc167daebee6d77b3518f104b99d6b23 *19nov79_d2t06.flac
+9d8fb5ecc84e7ce4d138fd4c38389392 *19nov79_d2t07.flac
+ae655d0673003f3b67136d377afbce6b *19nov79_d2t08.flac
+dab31e2eeef21b15fc8bcd13b2169534 *19nov79_d2t09.flac
+0595863d572aaec4c4c03448f0ab478b *19nov79_d2t10.flac
+
+===================
+===================
+===================
+=== 19nov79flac.ffp
+===================
+===================
+===================
+19nov79_d1t01.flac:2d3bbca9bde98f9bfcdf5c2fa1e20be719nov79_d1t02.flac:6a75bea6fa7a20e5d882bfafb735f80019nov79_d1t03.flac:312f9bb04d9e439e51778181c9a2b1e519nov79_d1t04.flac:9be9f91ae897ec6c56adb288ddcbd7d919nov79_d1t05.flac:4b9d1cea75bd4ee233fedc73f072aeef19nov79_d1t06.flac:3db313a5ef2b0f322f30481b54e87b3c19nov79_d1t07.flac:063d988524c60be8c463cb829de7483319nov79_d2t01.flac:7579573cd99e7bdea94e6556928969b919nov79_d2t02.flac:091eef74d7a95f0cfff93a3bfbd52eec19nov79_d2t03.flac:071b86a6efb484ab7e5ff0eb814a89ee19nov79_d2t04.flac:a1f6a365c44271116b5e78d6cfc95c0d19nov79_d2t05.flac:6dd3c6d4758d73801346e14c1f52c50719nov79_d2t06.flac:0d5cbc2213516d808c36d4dc81c2456919nov79_d2t07.flac:49d66a042f23619ff08d0ddbbd685c7319nov79_d2t08.flac:cfe527be41d3ebe281f1b8a7c4c5834d19nov79_d2t09.flac:7d34553a16396d2bdbfcf2717c9c65fb19nov79_d2t10.flac:b805da92e7e99b4369f89d3958fc6963
+===================
+===================
+===================
+=== 19nov79flac.st5
+===================
+===================
+===================
+2d3bbca9bde98f9bfcdf5c2fa1e20be7  [shntool]  19nov79_d1t01.flac
+6a75bea6fa7a20e5d882bfafb735f800  [shntool]  19nov79_d1t02.flac
+312f9bb04d9e439e51778181c9a2b1e5  [shntool]  19nov79_d1t03.flac
+9be9f91ae897ec6c56adb288ddcbd7d9  [shntool]  19nov79_d1t04.flac
+4b9d1cea75bd4ee233fedc73f072aeef  [shntool]  19nov79_d1t05.flac
+3db313a5ef2b0f322f30481b54e87b3c  [shntool]  19nov79_d1t06.flac
+063d988524c60be8c463cb829de74833  [shntool]  19nov79_d1t07.flac
+7579573cd99e7bdea94e6556928969b9  [shntool]  19nov79_d2t01.flac
+091eef74d7a95f0cfff93a3bfbd52eec  [shntool]  19nov79_d2t02.flac
+071b86a6efb484ab7e5ff0eb814a89ee  [shntool]  19nov79_d2t03.flac
+a1f6a365c44271116b5e78d6cfc95c0d  [shntool]  19nov79_d2t04.flac
+6dd3c6d4758d73801346e14c1f52c507  [shntool]  19nov79_d2t05.flac
+0d5cbc2213516d808c36d4dc81c24569  [shntool]  19nov79_d2t06.flac
+49d66a042f23619ff08d0ddbbd685c73  [shntool]  19nov79_d2t07.flac
+cfe527be41d3ebe281f1b8a7c4c5834d  [shntool]  19nov79_d2t08.flac
+7d34553a16396d2bdbfcf2717c9c65fb  [shntool]  19nov79_d2t09.flac
+b805da92e7e99b4369f89d3958fc6963  [shntool]  19nov79_d2t10.flac
+
+===================
+===================
+===================
+=== bd79-11-19 info.txt
+===================
+===================
+===================
+Bob Dylan
+
+Civic Auditorium, Santa Monica, CA / 1979-11-19
+
+
+Audio Source: audience recording, master tape
+Lineage: shn --> xACT 1.64 --> FLAC 8
+(tested for SBE's, tagged, verified against shn-files with st5, added new md5, ffp, m3u)
+
+Number of Discs: 2
+
+Artwork: included
+
+Total running time: 101m 47s
+Disc 1 Running time 43m 20s / Disc 2 Running Time 58m 27s
+
+
+Notes: (from the original info text)
+
+Bob Dylan, 11/19/79, Civic Auditorium, Santa Monica, CA, 2CDR
+(44min+59min), very good to excellent sound
+Posted to alt.binaries.music.shn by c.l in March 2002
+From master tape
+
+Here's a copy of the master tape of a great 1979 show, his first 
+'religious' tour. Sound quality is excellent for the time period. 
+I don't think this one is too widely circulated, so enjoy. For some reason, I 
+particularly enjoy "Covenant Woman", but I haven't listened to a 1979 show in 
+a while, so the performance may be standard fare for that year.
+
+Info:
+
+length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+6:58.02       73739948 B   ---   --   ---xx  19nov79_d1t01.flac
+4:58.24       52623692 B   ---   --   ---xx  19nov79_d1t02.flac
+6:49.27       72211148 B   ---   --   ---xx  19nov79_d1t03.flac
+5:15.29       55634252 B   ---   --   ---xx  19nov79_d1t04.flac
+5:58.00       63151244 B   ---   --   ---xx  19nov79_d1t05.flac
+5:57.07       62991308 B   ---   --   ---xx  19nov79_d1t06.flac
+7:23.67       78302828 B   ---   --   ---xx  19nov79_d1t07.flac
+6:26.56       68222156 B   ---   --   ---xx  19nov79_d2t01.flac
+5:03.30       53519804 B   ---   --   ---xx  19nov79_d2t02.flac
+4:42.22       49796588 B   ---   --   ---xx  19nov79_d2t03.flac
+6:11.54       65571452 B   ---   --   ---xx  19nov79_d2t04.flac
+5:00.74       53094092 B   ---   --   ---xx  19nov79_d2t05.flac
+4:45.30       50344604 B   ---   --   ---xx  19nov79_d2t06.flac
+5:58.54       63278252 B   ---   --   ---xx  19nov79_d2t07.flac
+7:02.63       74589020 B   ---   --   ---xx  19nov79_d2t08.flac
+5:50.16       61777676 B   ---   --   ---xx  19nov79_d2t09.flac
+7:24.68       78481580 B   ---   --   ---xx  19nov79_d2t10.flac
+101:47.23     1077329644 B                            0.5237  (17 files)
+
+
+Tracklisting:
+
+Disc 1
+01 Gotta Serve Somebody
+02 I Believe In You
+03 When You Gonna Wake Up?
+04 When He Returns
+05 Man Gave Names To All The Animals
+06 Precious Angel
+07 Slow Train
+
+Disc 2
+01 Covenant Woman
+02 Gonna Change My Way Of Thinking
+03 Do Right To Me Baby (Do Unto Others)
+04 Solid Rock
+05 Saving Grace
+06 Saved
+07 What Can I Do For You?
+08 In The Garden
+09 Blessed Be The Name
+10 Pressing On
+
+
+Torrent History:
+Originally seeded to tangledupintorrents by WilliamLee on December 6th 2008.
+===================
+===================
+===================
+=== bd79-11-19.txt
+===================
+===================
+===================
+Bob Dylan, 11/19/79, Civic Auditorium, Santa Monica, CA, 2CDR
+(44min+59min), very good to excellent sound
+Posted to alt.binaries.music.shn by c.l in March 2002
+From master tape
+
+Disc 1
+01 Gotta Serve Somebody
+02 I Believe In You
+03 When You Gonna Wake Up?
+04 When He Returns
+05 Man Gave Names To All The Animals
+06 Precious Angel
+07 Slow Train
+
+Disc 2
+01 Covenant Woman
+02 Gonna Change My Way Of Thinking
+03 Do Right To Me Baby (Do Unto Others)
+04 Solid Rock
+05 Saving Grace
+06 Saved
+07 What Can I Do For You?
+08 In The Garden
+09 Blessed Be The Name
+10 Pressing On
+===================
+===================
+===================

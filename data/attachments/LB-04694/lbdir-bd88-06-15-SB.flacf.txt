@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-06-15-SB.flacf 
+=================== 
+=================== 
+=================== 
+e280bf6c1fb96bc25fd98de2d5ef1111  15 June 1988.txt
+46e313068ccb8f837f694ce19a415eb7  A WANDERER BY TRADE [CD1]\A WANDERER BY TRADE [CD1].md5
+8699a65b653716687dfd0b0e75a6d48e  A WANDERER BY TRADE [CD1]\BD 1988-06-15_101.flac
+eb7843454a9307e98dea337923377e2e  A WANDERER BY TRADE [CD1]\BD 1988-06-15_102.flac
+729a9fbc098d3f2e094fe6bd0d77a763  A WANDERER BY TRADE [CD1]\BD 1988-06-15_103.flac
+7f6979f399075ee4e799c90703a46986  A WANDERER BY TRADE [CD1]\BD 1988-06-15_104.flac
+0c68096576e4e60ff8725628fcdf08e7  A WANDERER BY TRADE [CD1]\BD 1988-06-15_105.flac
+0cd10f7681c767e4452b3094b2135fda  A WANDERER BY TRADE [CD1]\BD 1988-06-15_106.flac
+b6a653454345562291e89ae021aa1a1c  A WANDERER BY TRADE [CD1]\BD 1988-06-15_107.flac
+7c4d35ddec8ae589925a75b07d2ded01  A WANDERER BY TRADE [CD1]\BD 1988-06-15_108.flac
+b2ca5cfe84408b8eca0f8f21aea53a6b  A WANDERER BY TRADE [CD1]\BD 1988-06-15_109.flac
+bcb3ae26e0f953eafe3e040212c6015d  A WANDERER BY TRADE [CD1]\BD 1988-06-15_110.flac
+1ddca5a6ca4d27a45affdfc0fc6a6d2d  A WANDERER BY TRADE [CD2]\A WANDERER BY TRADE [CD2].md5
+8f01bbbb0f6e82b648db732edbe9fc7c  A WANDERER BY TRADE [CD2]\BD 1988-06-15_201.flac
+07a969597310dfa8510ee24bd7e108ad  A WANDERER BY TRADE [CD2]\BD 1988-06-15_202.flac
+3f9e42afbc03260a782dfde8b58eab29  A WANDERER BY TRADE [CD2]\BD 1988-06-15_203.flac
+a4d47bf2eeaff94a03afd21e4be72b67  A WANDERER BY TRADE [CD2]\BD 1988-06-15_204.flac
+c4d8d1abc41d456823be6b51d10bba1c  A WANDERER BY TRADE [CD2]\BD 1988-06-15_205.flac
+0c1fb933f6e842108d4df8a942a3720c  A WANDERER BY TRADE [CD2]\BD 1988-06-15_206.flac
+ddee247480274fe7c8160f83a50a25cd  A WANDERER BY TRADE [CD2]\BD 1988-06-15_207.flac
+5464f4b3f5f4bf116658a871778daea2  A WANDERER BY TRADE [CD2]\BD 1988-06-15_208.flac
+eba2a489faa76371ea2ff50ce751db8c  A WANDERER BY TRADE [CD2]\BD 1988-06-15_209.flac
+ea5342dfd8140bf712c90413c06b588d  A WANDERER BY TRADE [CD2]\BD 1988-06-15_210.flac
+d34491b03645077f38efe57661c3fee5  bd-1988-06-15 Denver, CO (A Wanderer By Trade, Southside Butcher).txt
+2c1af957573b956bee89697ac36f6cb1  bd88-06-15-SB-LB-4694.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-15-SB.flacf\A WANDERER BY TRADE [CD1] 
+=================== 
+=================== 
+=================== 
+BD 1988-06-15_101.flac:16fa51e07f2de69653c72dc61f6273d8
+BD 1988-06-15_102.flac:a4d44e561b89bbfd3979f10463092950
+BD 1988-06-15_103.flac:0edfdc1273b008b1342515e723f151fd
+BD 1988-06-15_104.flac:6500fc73262edc9ab458a3576f03986e
+BD 1988-06-15_105.flac:0e6240d55aba02bfa610cf65d6e22fca
+BD 1988-06-15_106.flac:403508d309fce795a826f939a0797295
+BD 1988-06-15_107.flac:75f779045d5ff9220e7bdd11a7687839
+BD 1988-06-15_108.flac:673d8dfc1c8de5a60527e20a0a375db7
+BD 1988-06-15_109.flac:9981cbe1b866aaee1d085cf03f9dca4b
+BD 1988-06-15_110.flac:e01942719d7e3463b69cc6f57dfcdbe3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-06-15-SB.flacf\A WANDERER BY TRADE [CD2] 
+=================== 
+=================== 
+=================== 
+BD 1988-06-15_201.flac:85ca0d8f62f64df65997e4ffb2c6290e
+BD 1988-06-15_202.flac:0e252b79ee6e256a9e7b30ab84f75857
+BD 1988-06-15_203.flac:500cf72f90e91efc68b9d3436090a272
+BD 1988-06-15_204.flac:cf0664cfdc29c1d5fdb37b0e35359a5b
+BD 1988-06-15_205.flac:bab172755647587f2dfac3246efab7ba
+BD 1988-06-15_206.flac:6e01ed1d95f49632de508773396ba793
+BD 1988-06-15_207.flac:8219a0e62569061134f362cce6753496
+BD 1988-06-15_208.flac:a727760cc6f9c371e5a560861f8cf2f9
+BD 1988-06-15_209.flac:65b1373b90c5dbaf2702190089749921
+BD 1988-06-15_210.flac:3a977f12d72a2c187222988974f879db
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-15-SB.flacf\A WANDERER BY TRADE [CD1] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:49.56       40527356 B   ---   --   ---xx   flac  0.6675  BD 1988-06-15_101.flac
+     5:26.17       57546428 B   ---   --   ---xx   flac  0.6867  BD 1988-06-15_102.flac
+     6:04.61       64353116 B   ---   --   ---xx   flac  0.6837  BD 1988-06-15_103.flac
+     6:39.12       70411868 B   ---   --   ---xx   flac  0.6936  BD 1988-06-15_104.flac
+     5:33.65       58894124 B   ---   --   ---xx   flac  0.6480  BD 1988-06-15_105.flac
+     5:14.64       55540172 B   ---   --   ---xx   flac  0.6853  BD 1988-06-15_106.flac
+     3:44.55       39643004 B   ---   --   ---xx   flac  0.6538  BD 1988-06-15_107.flac
+     4:46.09       50471612 B   ---   --   ---xx   flac  0.6216  BD 1988-06-15_108.flac
+     3:32.54       37523852 B   ---   --   ---xx   flac  0.6517  BD 1988-06-15_109.flac
+     5:13.72       55382588 B   ---   --   ---xx   flac  0.6479  BD 1988-06-15_110.flac
+    50:06.15      530294120 B                            0.6662  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-06-15-SB.flacf\A WANDERER BY TRADE [CD2] 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:16.03       45165500 B   ---   --   ---xx   flac  0.6638  BD 1988-06-15_201.flac
+     7:15.46       76842236 B   ---   --   ---xx   flac  0.6196  BD 1988-06-15_202.flac
+     6:35.42       69776828 B   ---   --   ---xx   flac  0.6663  BD 1988-06-15_203.flac
+     7:58.65       84472124 B   ---   --   ---xx   flac  0.6607  BD 1988-06-15_204.flac
+     4:59.50       52861244 B   ---   --   ---xx   flac  0.6822  BD 1988-06-15_205.flac
+     7:03.58       74753660 B   ---   --   ---xx   flac  0.6596  BD 1988-06-15_206.flac
+     4:37.01       48865196 B   ---   --   ---xx   flac  0.6106  BD 1988-06-15_207.flac
+     4:37.32       48938108 B   ---   --   ---xx   flac  0.6525  BD 1988-06-15_208.flac
+     5:40.33       60053660 B   ---   --   ---xx   flac  0.6387  BD 1988-06-15_209.flac
+     4:38.31       49112156 B   ---   --   ---xx   flac  0.7078  BD 1988-06-15_210.flac
+    57:42.61      610840712 B                            0.6551  (10 files)
+=================== 
+=================== 
+=================== 

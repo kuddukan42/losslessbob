@@ -1,0 +1,95 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd98-09-22-c.flacf 
+=================== 
+=================== 
+=================== 
+602c3ede7c9afc4d360b8c3a323494f6  CD1\01 Maggie's farm.flac
+c324ee6394ea51c098ebc1fc4719a839  CD1\02 Man in the long black coat.flac
+d69c3ee09a1506bbb70a8c9ed166536a  CD1\03 Cold irons bound.flac
+f1c2128e2130bddbef5b047451d46b8d  CD1\04 You ain't goin' nowhere.flac
+bde8e1dfe87c2dd24c954bdc8c0e6207  CD1\05 Can't wait.flac
+026867f0c4ceacafc1d044301bae02d4  CD1\06 Silvio.flac
+8abc053bed451b921387ec9525e8b1af  CD1\07 Don't think twice, it's all right.flac
+79771b0c66add82140b3eb7bdcdb3b9b  CD1\08 Masters of war.flac
+56656f1f46e63adf03585b7e03b5a5b7  CD1\09 One too many mornings.flac
+cd5e986b99a414e89a6c5d643ea69c6b  CD2\10 Tangled up in blue.flac
+cab2117d87710de39d9802f9a9ac6721  CD2\11 Make you feel my love.flac
+3be64eedb652b76bc47dc0871027878c  CD2\12 'Til I fell in love with you.flac
+74f9ce340a8ef22a3b463c78db0541e2  CD2\13 Love sick.flac
+6f3af08bc22e2b63b51d407f4810c951  CD2\14 Rainy day women # 12 & 35.flac
+f42d1803ea4823c9abeef1821919a98a  CD2\15 Blowin' in the wind.flac
+dd9fd29a816109f12826845629cbcd3a  CD2\16 Highway 61 revisited.flac
+d3070ebad014f6a7fed53b9d5217719d  CD2\17 Forever young.flac
+4bc9adc902d4d6dd270ed00cfe348189  Info\1998-09-22 Grandstand, Puyallup State Fair, Puyallup, Washington, USA.md5
+ccc64b267a0278512f7ee6d6c3403018  Info\info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-09-22-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01 Maggie's farm.flac:5826ed0934eda0bdc148560cafc4e506
+02 Man in the long black coat.flac:2fef72b72cfba316ed50fa2993283e8c
+03 Cold irons bound.flac:9eaab465fcc5292531bfa2537d5e6cf7
+04 You ain't goin' nowhere.flac:8837add108c40e007ade7af895415730
+05 Can't wait.flac:6c1c2cd1fe695d698efbc2c3df2e7a17
+06 Silvio.flac:e953122a77da312231c4d4db22d73dce
+07 Don't think twice, it's all right.flac:eb079a8b8343d0019e3748314e9b699f
+08 Masters of war.flac:ba30ed5ac9b27d5b61a2ea55dbdc1f12
+09 One too many mornings.flac:4b7924a7862780d4b13add2f1fc9f80f
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd98-09-22-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+10 Tangled up in blue.flac:5e8a59df380294a89d8348e6dd2148bd
+11 Make you feel my love.flac:029bc362186a92c0594e78e5d358617c
+12 'Til I fell in love with you.flac:0112dd94e7a543356d645cf1ba360b79
+13 Love sick.flac:082294f5085a730ce0cbb690e45c00b4
+14 Rainy day women # 12 & 35.flac:497e3a5a40f3e5b5b8a941ec6e4a5283
+15 Blowin' in the wind.flac:0d0a9ad8a308a22e59f8cb20f6021584
+16 Highway 61 revisited.flac:6a1119aa7ed1c4fa722e91f089aa32bb
+17 Forever young.flac:cce2b02e9e539a391196af42be741d7b
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-09-22-c.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:52.19       51553532 B   ---   --   ---xx   flac  0.6528  01 Maggie's farm.flac
+     5:33.33       58818860 B   ---   --   ---xx   flac  0.6477  02 Man in the long black coat.flac
+     6:16.65       66479324 B   ---   --   ---xx   flac  0.6507  03 Cold irons bound.flac
+     4:27.09       47120012 B   ---   --   ---xx   flac  0.6426  04 You ain't goin' nowhere.flac
+     5:30.11       58237916 B   ---   --   ---xx   flac  0.6509  05 Can't wait.flac
+     6:25.52       68036348 B   ---   --   ---xx   flac  0.6578  06 Silvio.flac
+     5:30.46       58320236 B   ---   --   ---xx   flac  0.6573  07 Don't think twice, it's all right.flac
+     4:36.23       48740540 B   ---   --   ---xx   flac  0.6410  08 Masters of war.flac
+     5:08.47       54441788 B   ---   --   ---xx   flac  0.6440  09 One too many mornings.flac
+    48:21.05      511748556 B                            0.6499  (9 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd98-09-22-c.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:03.07       85217708 B   ---   --   ---xx   flac  0.6729  10 Tangled up in blue.flac
+     4:08.52       43869548 B   ---   --   ---xx   flac  0.6302  11 Make you feel my love.flac
+     6:00.01       63506396 B   ---   --   ---xx   flac  0.6644  12 'Til I fell in love with you.flac
+     5:01.13       53127020 B   ---   --   ---xx   flac  0.6487  13 Love sick.flac
+     4:10.74       44274092 B   ---   --   ---xx   flac  0.6621  14 Rainy day women # 12 & 35.flac
+     4:58.52       52689548 B   ---   --   ---xx   flac  0.6550  15 Blowin' in the wind.flac
+     4:59.72       52912988 B   ---   --   ---xx   flac  0.6550  16 Highway 61 revisited.flac
+     6:04.17       64249628 B   ---   --   ---xx   flac  0.6562  17 Forever young.flac
+    43:26.63      459846928 B                            0.6574  (8 files)
+=================== 
+=================== 
+=================== 

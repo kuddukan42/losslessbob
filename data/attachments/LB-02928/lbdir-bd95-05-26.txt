@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd95-05-26 
+=================== 
+=================== 
+=================== 
+81861ab84a13af9c063b87820e0753b6  bd1995-05-26 berkeley.shnf.md5
+4f49ca5baeaba0ab1cd07d50d76db5ea  bd1995-05-26 berkeley.shnf.txt
+81861ab84a13af9c063b87820e0753b6  bd1995-05-26 berkeley.shnf_FINGERPRINTS.txt
+82f5e98dc4301e4c5a9c1cf95a70ee72  bd1995-05-26 d1t01.shn
+933b4e971c12750e089e5dc210a95c57  bd1995-05-26 d1t02.shn
+b24822008619dc5985ce8c54cf2e68af  bd1995-05-26 d1t03.shn
+45206fcf19b264fd471899dacfccc6c9  bd1995-05-26 d1t04.shn
+1d4ef2300af3d832a0c9e5da45ca89f1  bd1995-05-26 d1t05.shn
+e7050deec2c804c338bc6f0f6f4da81c  bd1995-05-26 d1t06.shn
+390adbb361fd781dcbfdaa88dcbd760d  bd1995-05-26 d1t07.shn
+81bb5dd3f24192ab73c5d2479d56682d  bd1995-05-26 d1t08.shn
+c4c361d7762c9f1620b168964e166092  bd1995-05-26 d1t09.shn
+bc1ecb6dec3d49398a95457b0aae63b1  bd1995-05-26 d1t10.shn
+03a8132d124dd1d58014a3d3dae514d6  bd1995-05-26 d2t01.shn
+e02ddb7c25dbc563137fbabfae7912d2  bd1995-05-26 d2t02.shn
+a8344386bf698db3af54e9fa11d8b7d6  bd1995-05-26 d2t03.shn
+b2c4637dcbbb6885de6b5937c924281a  bd1995-05-26 d2t04.shn
+7c66e4e0034057f24958f1139b3b4241  bd95-05-26-LB-2928.txt
+bf421ec52c014c57410ea34946e73d41  DylanBerkeley95.jpg
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd95-05-26 
+=================== 
+=================== 
+=================== 
+f696e7866b2a374dcf07c8628af32330  [shntool]  bd1995-05-26_d1t01.wav
+1df46edc7ac9e5737a8f561a837bb6ec  [shntool]  bd1995-05-26_d1t02.wav
+cc9c88ef087c5b7422ec720381e7d744  [shntool]  bd1995-05-26_d1t03.wav
+5de556a3e326fe0b3365234231263e09  [shntool]  bd1995-05-26_d1t04.wav
+d4d7ce2cfd83ff030276d0d843e32b0c  [shntool]  bd1995-05-26_d1t05.wav
+6ffd762243d88a222a3835326d970984  [shntool]  bd1995-05-26_d1t06.wav
+8821f2ac79b110064b2e1a9b13742339  [shntool]  bd1995-05-26_d1t07.wav
+06bdecd886d83f9a0b574880b613d0e4  [shntool]  bd1995-05-26_d1t08.wav
+95a0d65e8abc0eb752e0ce3ef7f437ae  [shntool]  bd1995-05-26_d1t09.wav
+583fdbeed8b56e286d8712dd2cb37b7d  [shntool]  bd1995-05-26_d1t10.wav
+850e445188554e6b48a43147783e8680  [shntool]  bd1995-05-26_d2t01.wav
+9ad6bb9ae8ff1490f95f6ee343d4fbf6  [shntool]  bd1995-05-26_d2t02.wav
+4985097cce1a8331632936acaa3eb80b  [shntool]  bd1995-05-26_d2t03.wav
+e79e13fc565485d57ceba481485d05ff  [shntool]  bd1995-05-26_d2t04.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd95-05-26 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:10.23       54738140 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t01.wav
+     5:17.52       56041148 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t02.wav
+     7:15.67       76891628 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t03.wav
+     6:27.27       68330348 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t04.wav
+     6:15.32       66225308 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t05.wav
+     8:36.62       91168268 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t06.wav
+     7:54.22       83665388 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t07.wav
+     7:45.67       82183628 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t08.wav
+     9:00.62       95401868 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t09.wav
+     8:34.53       90794300 B   ---   --   -----    wav  1.0000  bd1995-05-26_d1t10.wav
+     7:47.19       82423532 B   ---   --   -----    wav  1.0000  bd1995-05-26_d2t01.wav
+     8:23.74       88903292 B   ---   --   -----    wav  1.0000  bd1995-05-26_d2t02.wav
+     7:57.51       84262796 B   ---   --   -----    wav  1.0000  bd1995-05-26_d2t03.wav
+     8:06.26       85791596 B   ---   --   -----    wav  1.0000  bd1995-05-26_d2t04.wav
+   104:34.37     1106821240 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

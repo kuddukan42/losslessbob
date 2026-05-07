@@ -1,0 +1,56 @@
+===================
+===================
+===================
+=== Austin, Texas.txt
+===================
+===================
+===================
+Austin, Texas
+The Backyard
+April 19, 2003
+  
+  Tweedle Dee & Tweedle Dum (Bob on piano) 
+Tell Me That It Isn't True (Bob on piano, Larry on pedal steel) 
+Highway 61 Revisited (Bob on piano) 
+Saving Grace (Bob on piano, Larry on pedal steel) 
+Things Have Changed (Bob on piano) 
+Just Like A Woman (Bob on piano and harp, Larry on pedal steel) 
+Drifter's Escape (Bob on harp and electric guitar) 
+One Too Many Mornings (acoustic) (Larry on pedal steel) 
+High Water (For Charley Patton) (Bob on piano) 
+Lay, Lady, Lay (Bob on piano, Larry on pedal steel) 
+Bye And Bye (Bob on piano, Tony on standup bass) 
+Honest With Me (Bob on piano, Larry on slide guitar) 
+Standing In The Doorway (Bob on piano) 
+Summer Days (Bob on piano, Tony on standup bass) 
+(encore) 
+
+Like A Rolling Stone (Bob on piano) 
+All Along The Watchtower (Bob on piano) 
+ 
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+be4218b2a9e9a977ea629912e09b1351 *Track01.shn
+0b7450761022c9e931de4c4d07ec11e8 *Track02.shn
+9221756fc29c541e3e9e74275ee45484 *Track03.shn
+a686201503599dd0567c16d93f139952 *Track04.shn
+f095136a32c51d4f43b65bf0f576de44 *Track05.shn
+cf43bb140215191f540c7ad754a31883 *Track06.shn
+da38023abd4ef822698ab1913535d5bf *Track07.shn
+86c3cc0f20f22aa91afd28fd5c202842 *Track08.shn
+4ce628929e449ee61c5a2a345d102c05 *Track09.shn
+9bccff9d10717a498974aac1d3523f69 *Track10.shn
+bfeb161de295d9eae4ab8731f1cb5dd0 *Track11.shn
+387f0d3403888d994b23e2263c34c970 *Track12.shn
+c8bb145384435a43f27a38e4d8929f4a *Track13.shn
+38a5c94fc5c7aee8303e1319891839f9 *Track14.shn
+0caa4fc8522d4efea5f1c1786db076db *Track15.shn
+bd2a03fa07d20cdd4f87587462db562e *Track16.shn
+===================
+===================
+===================

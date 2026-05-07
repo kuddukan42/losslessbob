@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-06-10-LTD.flacf 
+=================== 
+=================== 
+=================== 
+b75ea22f598ba5472338e9697499320e  1989-06-10 Den Haag.md5
+c22e8662c88f5413411b616855344319  Den Haag 1989-101.flac
+a764da35c28e074e051d7021c0fbb229  Den Haag 1989-102.flac
+09d96f1457d311155561d76258732068  Den Haag 1989-103.flac
+ddf76ca3521bd407bcb2e647f6b72819  Den Haag 1989-104.flac
+c647538b5adf7955d30b4efb05021109  Den Haag 1989-105.flac
+3ffe3ef14754fa36844f40838650d42e  Den Haag 1989-106.flac
+9f123f12fa31b867fabd4bfad0bf90d0  Den Haag 1989-107.flac
+80dab579d01597aef23f562de70db6af  Den Haag 1989-108.flac
+740048605a3e2355ac51222ea6f2f0b9  Den Haag 1989-109.flac
+797e8d43172e89dcd402c950dcafc1f2  Den Haag 1989-110.flac
+358faf703872fc80ec565231a6e75092  Den Haag 1989-201.flac
+0a9cf3d3e2a104692f895363eb2b143d  Den Haag 1989-202.flac
+ceed6857e47ad3de42c06adcf7be95e1  Den Haag 1989-203.flac
+559508511ef26d2085e1fc22127991f8  Den Haag 1989-204.flac
+d119cb40a547f5664eb347c167c3ee73  Den Haag 1989-205.flac
+a97beecf31a762b92dbb44414ec5cb83  Den Haag-1989-06-10.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-06-10-LTD.flacf 
+=================== 
+=================== 
+=================== 
+Den Haag 1989-101.flac:fd8882bca25d07c6d18b3e7b446887c0
+Den Haag 1989-102.flac:c23decea87d5b10191e1e23689e538a7
+Den Haag 1989-103.flac:7f53d203e237381c7895f58c79de2d1f
+Den Haag 1989-104.flac:919e142f91e10a78dd955ffb4d18f603
+Den Haag 1989-105.flac:556ffb4e72f8533f60a94c47c1bb4322
+Den Haag 1989-106.flac:6a8fbbb0858d7f34c885098e83706355
+Den Haag 1989-107.flac:c3b308d99d1c955b51a424ddc39ace73
+Den Haag 1989-108.flac:cc3caa37d2e937728592bf3ac7d045e4
+Den Haag 1989-109.flac:05f63158ad9df0587d407acc22fac02e
+Den Haag 1989-110.flac:5d3a56f1d1d43de61748b813823879e5
+Den Haag 1989-201.flac:a2deb916cd7b81617b937fc093f24338
+Den Haag 1989-202.flac:1deddc44faefeec125fb7914be04d4de
+Den Haag 1989-203.flac:b19a1d468c40aad25d9ffe4047cf0b77
+Den Haag 1989-204.flac:1a22ff149c3b4be40136d613f8a14126
+Den Haag 1989-205.flac:08c32b2ace88e3f2437b20136ede2ceb
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-06-10-LTD.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:21.69       67371048 B   -b-   --   ---xx   flac  0.5409  Den Haag 1989-101.flac
+     5:13.42       55312428 B   -b-   --   ---xx   flac  0.5961  Den Haag 1989-102.flac
+     4:52.57       51642408 B   -b-   --   ---xx   flac  0.6273  Den Haag 1989-103.flac
+     5:20.74       56623144 B   -b-   --   ---xx   flac  0.5899  Den Haag 1989-104.flac
+     4:02.17       42729516 B   -b-   --   ---xx   flac  0.5748  Den Haag 1989-105.flac
+     4:05.15       43253800 B   -b-   --   ---xx   flac  0.6074  Den Haag 1989-106.flac
+     6:54.46       73138220 B   -b-   --   ---xx   flac  0.5082  Den Haag 1989-107.flac
+     4:14.09       44826664 B   -b-   --   ---xx   flac  0.5827  Den Haag 1989-108.flac
+     3:59.46       42268716 B   -b-   --   ---xx   flac  0.5927  Den Haag 1989-109.flac
+     5:48.65       61540392 B   -b-   --   ---xx   flac  0.5973  Den Haag 1989-110.flac
+     6:51.48       72613928 B   -b-   --   ---xx   flac  0.5351  Den Haag 1989-201.flac
+     4:11.39       44367912 B   -b-   --   ---xx   flac  0.5906  Den Haag 1989-202.flac
+     7:21.00       77791276 B   -b-   --   ---xx   flac  0.6144  Den Haag 1989-203.flac
+     4:43.63       50069544 B   -b-   --   ---xx   flac  0.5659  Den Haag 1989-204.flac
+     4:41.18       49610796 B   -b-   --   ---xx   flac  0.5837  Den Haag 1989-205.flac
+    78:43.09      833159792 B                            0.5777  (15 files)
+=================== 
+=================== 
+=================== 

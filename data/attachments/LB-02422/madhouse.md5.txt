@@ -1,0 +1,4 @@
+e3e5e3d14149c69730ecd7efb9e82837 *madhouse pbrm t01.shn
+4d61301c0f25097164b4925fb8361b7d *madhouse pbrm t02.shn
+bb059ee93a89ee73fb0625fe309713c2 *madhouse t01.shn
+b2ac1090dbcfac154a11addec1e2b063 *madhouse t02.shn

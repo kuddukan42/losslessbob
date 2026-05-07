@@ -1,0 +1,83 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-01-26-eve-lk-aud-set.flacf 
+=================== 
+=================== 
+=================== 
+c819974efe5b242aa2050d80682c0c22  26Jan74 (eve).md5
+28ea51293c393aea9ca8bf2e14a8bba1  bd74-01-26-eve-lk-aud-set-LB-2688.txt
+cd71f075d5fe9ec9ed9882a0c8205e3b  Details.txt
+240680fa7179c6d983c45f1c92a0f8a4  Track01.flac
+86e37dca1b4628c91ea4f607e55d3682  Track02.flac
+c4f7ed40ce090db71ed9ab9b2aa459c8  Track03.flac
+3d79fafb9dbb3bad1973f4753876ad36  Track04.flac
+e8024ccf58b4e787e4be5c9c1202a416  Track05.flac
+3432a0b69696dc9b8c19a62dd56197d7  Track06.flac
+3e57e2a735599403e03e7ab6da3ab979  Track07.flac
+4bef722a7f9242ed11d46f4b01c1bd60  Track08.flac
+f855f5961c35d46d81391d9f680830e8  Track09.flac
+e124c59c1d81126f6de6d7800fadd7a1  Track10.flac
+2d692cee03b88a8a2a7138fc390bfde2  Track11.flac
+bb8ee6a57f95a311a3da4d097f2341fd  Track12.flac
+ebf5dc81fe86038ec66726b53be44ff3  Track13.flac
+8b17d23011f84add381c4713fd11e2e7  Track14.flac
+20a462d0c7b53a101d9e7550ddd59b33  Track15.flac
+ed7fd12c7cb856c8c9cd4ca5ec4076be  Track16.flac
+572df9bc1b80d87a716e6f5397775e63  Track17.flac
+e42ddbde65264eebc5f6583465fafc51  Track18.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd74-01-26-eve-lk-aud-set.flacf 
+=================== 
+=================== 
+=================== 
+Track01.flac:44aae92d171c14681d5e0d1cd0b35e4b
+Track02.flac:0bf5d70ac9af398f350f3588d8d04292
+Track03.flac:1d6f2d60abea0a01dfbc39b1e6ce5f27
+Track04.flac:a490d2267aa2b619695bd6c9784a63df
+Track05.flac:48b1094fdf3d87ac34d68eaf6d5bd4ec
+Track06.flac:7bdc3e22ce623639ffea797cbdfe87de
+Track07.flac:1abcb08e80c5aa0ab24e3a3cebb506b9
+Track08.flac:bb93208239a64ef9eecc1ba645b8bcae
+Track09.flac:14ff378ff393215f963ebf55f8ad8724
+Track10.flac:d5c1bb9663d42ef47b46ad27ec1c2868
+Track11.flac:2a9e36721e6badc4f87c9f1f79d1c6bc
+Track12.flac:fda681939057aa928a7b363eb16fb1d6
+Track13.flac:f0a17678afb3e5453cffdde94fe0e3aa
+Track14.flac:956a7f78f379a0490e04af813ca01c86
+Track15.flac:0f574bfc1dfa339717723b26c9acaa77
+Track16.flac:5bde2bf71a6d82e73939c81b0a9d77bc
+Track17.flac:289049ba50fe873138b0068a91c8b131
+Track18.flac:bdb61b855733d52134ca17aefb05f960
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-01-26-eve-lk-aud-set.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:59.36       42244316 B   ---   --   ---xx   flac  0.5277  Track01.flac
+     2:46.22       29334188 B   ---   --   ---xx   flac  0.5341  Track02.flac
+     5:19.48       56384540 B   ---   --   ---xx   flac  0.5260  Track03.flac
+     3:15.16       34435676 B   ---   --   ---xx   flac  0.5279  Track04.flac
+     3:44.01       39515996 B   ---   --   ---xx   flac  0.5183  Track05.flac
+     3:06.64       32960972 B   ---   --   ---xx   flac  0.5204  Track06.flac
+     2:34.34       27245612 B   ---   --   ---xx   flac  0.5264  Track07.flac
+     3:47.21       40092236 B   ---   --   ---xx   flac  0.5228  Track08.flac
+     3:04.20       32504684 B   ---   --   ---xx   flac  0.5245  Track09.flac
+     3:02.44       32208332 B   ---   --   ---xx   flac  0.5309  Track10.flac
+     3:23.51       35929196 B   ---   --   ---xx   flac  0.5259  Track11.flac
+     4:07.58       43707260 B   ---   --   ---xx   flac  0.4992  Track12.flac
+     4:10.46       44208236 B   ---   --   ---xx   flac  0.4486  Track13.flac
+     4:42.72       49914188 B   ---   --   ---xx   flac  0.4721  Track14.flac
+     4:57.19       52435532 B   ---   --   ---xx   flac  0.4765  Track15.flac
+     4:24.23       46623740 B   ---   --   ---xx   flac  0.4815  Track16.flac
+     8:20.12       88228268 B   ---   --   ---xx   flac  0.4908  Track17.flac
+     3:43.40       39431324 B   ---   --   ---xx   flac  0.4960  Track18.flac
+    72:30.27      767404296 B                            0.5047  (18 files)
+=================== 
+=================== 
+=================== 

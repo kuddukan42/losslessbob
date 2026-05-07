@@ -1,0 +1,128 @@
+===================
+===================
+===================
+=== 2003-07-27 Costa Mesa, CA -  rec LTD.ffp
+===================
+===================
+===================
+03 07 27 d101.flac:5ea3f0118e2fd8e4e7a4e653ed25bc97
+03 07 27 d102.flac:0b8e8dc821fe6fb853688bb383f21170
+03 07 27 d103.flac:d7bcc49b9cc42b7bc4be1dd83958bc38
+03 07 27 d104.flac:bf4c03c04438952b0d5cb5fb50674a61
+03 07 27 d105.flac:f2fdddf957d7c5b9508a40aec04b8cf5
+03 07 27 d106.flac:39efc7ac2cc8ab1f685175f7b1bc2ae9
+03 07 27 d107.flac:a9682e3bc03392306ff7c5785d23cb45
+03 07 27 d108.flac:5dac56f8194915270a352be9cd17f969
+03 07 27 d109.flac:e11d237fda598d03de13c87ad1b7c7f8
+03 07 27 d110.flac:63f30c88b2fd34458cfec8f44f665d13
+03 07 27 d111.flac:a4685da46c1c508e4c859e7fcdb2d691
+03 07 27 d112.flac:2a432aa928ddc84876e4a9af6155cb3d
+03 07 27 d113.flac:8e19265e5e25cc8976abe063b669c9c0
+03 07 27 d201.flac:ed7d6acfb2a054451a85436d45bd3b4e
+03 07 27 d202.flac:9a14aad2a2835c3a31f968a88c56358b
+03 07 27 d203.flac:41fba0f4a19226f52ba6e3074276489a
+03 07 27 d204.flac:4d5591d899410fb245aebfc079645519
+===================
+===================
+===================
+=== 2003-07-27 Costa Mesa, CA -  rec LTD.md5
+===================
+===================
+===================
+fabf9e4303fe8db5eddbbf0f2d0c17ab *03 07 27 d101.flac
+e24596596a5d3619f9e2de8d6cc844a4 *03 07 27 d102.flac
+19bb8c8fdfd654dc95895cd3a3aa9711 *03 07 27 d103.flac
+0ac5500c0b09888a5760d0335da2104e *03 07 27 d104.flac
+9029bf4a55c034603c84a65c796ab667 *03 07 27 d105.flac
+9222b5cff262579dcca19fc4b1484ecc *03 07 27 d106.flac
+90b55347d338fc683dea7452b8c342f3 *03 07 27 d107.flac
+3ba288b85f860137ce6aef111cd02d39 *03 07 27 d108.flac
+823733359bb9464a3a6d0de0c2fa9e54 *03 07 27 d109.flac
+76eef1d06d17794c45dc7c13da26eac8 *03 07 27 d110.flac
+6be96ac06f7ded273c6660ecfb2083bb *03 07 27 d111.flac
+cf85bcbaa8755e416bf590189454035c *03 07 27 d112.flac
+3a65b913f25ac3ef14530d8f106862af *03 07 27 d113.flac
+73fde8f0a648412bb1107ea484cad127 *03 07 27 d201.flac
+261135dbff6d9dcfded89e8cc8101127 *03 07 27 d202.flac
+8e38fda545283f64ef0a0aa3c25f3a8c *03 07 27 d203.flac
+dad717bff008bc6f4cd2e0144e16262c *03 07 27 d204.flac
+4e6d9d388d8e1280d4cc55b8b501bf14 *2003-07-27 Costa Mesa, CA -  rec LTD.ffp
+81cb5de7197581b7c57a721c62e65f92 *bd03-07-27cb.txt
+===================
+===================
+===================
+=== bd03-07-27cb.txt
+===================
+===================
+===================
+ 
+Bob Dylan
+Pacific Amphitheater
+Costa Mesa, California
+27 July 2003
+Orange County Fair
+
+Disk 1
+1. Tombstone Blues
+2. I'll Remember You
+3. Tweedle Dee & Tweedle Dum
+4. Make You Feel My Love
+5. Things Have Changed
+6. Highway 61 Revisited
+7. It Ain't Me, Babe
+8. Cold Irons Bound
+9. I Believe In You
+10. Watching The River Flow
+11. Standing In The Doorway
+12. Honest With Me
+13. Moonlight
+
+03 07 27 d101.flac:5ea3f0118e2fd8e4e7a4e653ed25bc97
+03 07 27 d102.flac:0b8e8dc821fe6fb853688bb383f21170
+03 07 27 d103.flac:d7bcc49b9cc42b7bc4be1dd83958bc38
+03 07 27 d104.flac:bf4c03c04438952b0d5cb5fb50674a61
+03 07 27 d105.flac:f2fdddf957d7c5b9508a40aec04b8cf5
+03 07 27 d106.flac:39efc7ac2cc8ab1f685175f7b1bc2ae9
+03 07 27 d107.flac:a9682e3bc03392306ff7c5785d23cb45
+03 07 27 d108.flac:5dac56f8194915270a352be9cd17f969
+03 07 27 d109.flac:e11d237fda598d03de13c87ad1b7c7f8
+03 07 27 d110.flac:63f30c88b2fd34458cfec8f44f665d13
+03 07 27 d111.flac:a4685da46c1c508e4c859e7fcdb2d691
+03 07 27 d112.flac:2a432aa928ddc84876e4a9af6155cb3d
+03 07 27 d113.flac:8e19265e5e25cc8976abe063b669c9c0
+
+
+Disk 2
+1. Band Intro
+2. Summer Days
+3. Like A Rolling Stone
+4. All Along The Watchtower
+
+03 07 27 d201.flac:ed7d6acfb2a054451a85436d45bd3b4e
+03 07 27 d202.flac:9a14aad2a2835c3a31f968a88c56358b
+03 07 27 d203.flac:41fba0f4a19226f52ba6e3074276489a
+03 07 27 d204.flac:4d5591d899410fb245aebfc079645519
+
+Concert # 1536 of The Never-Ending Tour. 
+Concert # 12 of the 2003 US Summer Tour. 
+2003 concert # 46.
+Concert # 35 with the 16th Never-Ending Tour Band: 
+
+Bob Dylan (vocal & piano), 
+Freddie Koella (guitar), 
+Larry Campbell
+(guitar, mandolin, pedal steel guitar & electric slide guitar), 
+Tony Garnier (bass), 
+George Recile (drums & percussion).
+
+7 acoustic with the band.
+4, 7, 9, 16 Bob Dylan (harmonica).
+2 Larry Campbell (pedal steel guitar).
+7 Larry Campbell (cittern).
+10, 12 Larry Campbell (slide guitar).
+
+Notes.
+LB-number for this concert: LB-1214, LB-1392, LB-1410.
+===================
+===================
+===================

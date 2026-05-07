@@ -1,0 +1,106 @@
+===================
+===================
+===================
+=== bd 1980-02-02 Alabama.ffp
+===================
+===================
+===================
+Track 01.flac:b4ec3f38fd9518db08e6aeadfe668afe
+Track 02.flac:93fd32938d36edee988af7506969b7ce
+Track 03.flac:2b56ff61b25834e524cff49ac2dfe287
+Track 04.flac:8a9bffdf12ece63a5a515f20735693cc
+Track 05.flac:befad2e6a413fc57bb2731b0a2550467
+Track 06.flac:87afd981d6b938e03e8eb5e6b1fa1419
+Track 07.flac:d6c9cc4d67fa918c30f0f7cad1980c0a
+Track 08.flac:84b5cd5dd7e009682c0bdf6502925054
+Track 09.flac:8d36d5ed80135ad3e11e9e141f28bd01
+Track 10.flac:d30ae93a3e171b8d020a9298a2a4c93f
+Track 11.flac:a188f9d83794f8fc5b719daa15f7e173
+Track 12.flac:4bdf0b162716af0bb999eb42eb5dddfa
+Track 13.flac:6674277181728f9f389f5361dc6383ba
+Track 14.flac:3a9454b311c4e5d2ce3203a7ccedd9a8
+Track 15.flac:1f47cd9c8b2d97a26b999c51c0486da2
+Track 16.flac:0c8549603344a6c656c2b36c7cc5b35c
+===================
+===================
+===================
+=== bd 1980-02-02 Alabama.md5
+===================
+===================
+===================
+5193e2d8446545a849111320975d2768 *Track 01.flac
+92399b0127b09a2bcfa32e5774c89d13 *Track 02.flac
+b0d1b3f09c6bf2f63bf467fd8dab684f *Track 03.flac
+514ff58deba47b59574bd55d928c546e *Track 04.flac
+f871dce85bbf21d79610a806d45674fb *Track 05.flac
+408fb01bb5afc91f36271d4660917470 *Track 06.flac
+eef0d2254ea6cad597be40dbd7da3058 *Track 07.flac
+7f4d59b7c87088d983b3b5d993001667 *Track 08.flac
+4b12dd3236225ffa338f01828b5dd8e7 *Track 09.flac
+e300e429cf69341526d77885f9ea2e8d *Track 10.flac
+e52ceb8733a65eec6f4a696b36b78b3c *Track 11.flac
+62a7b7439e76584cbab60548d8e9ac1c *Track 12.flac
+3e56400827916488eb449004cd0ceac8 *Track 13.flac
+aae5bf29c9f28563a5a44a339d8fa97a *Track 14.flac
+6039b3cc3de74c7cedd3c833de6d5be0 *Track 15.flac
+6ececf7797765987bf4f7f811e1523f6 *Track 16.flac
+===================
+===================
+===================
+=== bd 1980-02-02.txt
+===================
+===================
+===================
+Bob Dylan
+Jefferson Civic Center
+Birmingham, Alabama
+2 February 1980
+  
+Fixed version B of LB-1466
+
+LosslessBob LB-1466 entry: "source: AUD - "off master" recording, sound: good / very good; very good sound; left channel has asymetric wav on d1t5 with top at -6db and bottom to -0db; left channel has light tv band on d1t5; (a bittorrent from 07/07 is same recording with same clapping at end of d1t5 with nothing above 19k except lego parapets, had symetrical wavs and more hiss and distortion on vocals making it not as clear; described as "Unknown Audience>CDR>EAC>FLAC LEVEL 5) small analog drop d1t5 8:57; drop/cut between cdrs"
+
+HD > Flac > WAV > WaveRepair 4.9.2.later 4.9.3 fixing index clicks, digital blanks begining/end of discs > Flac lvl 8, sector align, verify
+ 
+  
+CD 1
+
+Gotta Serve Somebody
+I Believe In You
+When You Gonna Wake Up
+When He Returns
+Man Gave Names To All The Animals
+Precious Angel
+Slow Train
+Covenant Woman
+Gonna Change My Way Of Thinking
+Do Right To Me Baby (Do Unto Others)
+
+CD 2 
+
+Solid Rock
+Saving Grace
+Saved (Bob Dylan/Tim Drummond)
+What Can I Do For You?
+In The Garden
+Blessed Be The Name
+  
+
+Concert # 19 of the Second Gospel Tour. Gospel concert # 45. 1980 concert # 19.
+Concert # 19 with the Second Gospel Band: Bob Dylan (vocal & guitar), Fred Tackett (guitar), Spooner Oldham (keyboards), Tim Drummond (bass), Terry Young (keyboards), Jim Keltner (drums), Carolyn Dennis, Regina Peeples, Regina Havis , Mona Lisa Young (background vocals).
+
+4 Bob Dylan solo (vocal & guitar) with Spooner Oldham (piano).
+14 Bob Dylan (harmonica).
+17 Bob Dylan (piano).
+ 
+BobTalk:
+
+Thank you. Regina Peebles is gonna sing a song for you now called Lord Move This Mountain.
+
+We believe we only have time for one more. (before In The Garden)
+
+Thank you. On the keyboards tonight, give him a hand, Spooner Oldham. On the other set of keyboards, Terry Young. Actually, Spooners from Alabama, I think. Are you from Alabama? Yes, Spooners from Alabama, and so is Carolyn. Playing lead guitar tonight, Fred Tackett. On the drums, Jim Keltner. Playing the bass guitar tonight, Tim Drummond. On the right over there is Carolyn Dennis. Standing next to her a lady you met earlier, Regina Peebles. She's from Alabama too, I think. Next to her is Mona Lisa Young. The girl in the red dress told you about Jesus before, remember? Regina McCreary. (before Blessed Is The Name)
+
+===================
+===================
+===================

@@ -1,0 +1,154 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd63-Hollow-Horn-live-vol5.flacf 
+=================== 
+=================== 
+=================== 
+ed884f1a7043f3c8ff92c7af7dba6626  artwork\Hollow Horn vol.5 back.jpg
+cdbafae55ce8d93de7b97472b26a81c3  artwork\Hollow Horn vol.5 front.jpg
+ee0a908b16c582f2b04058803f024e14  disk 1\disk 1.md5
+9d6d8de2fc16a76d8192e7c0226ad870  disk 1\Track01.flac
+c0090eed18ebe3bdd80c7ab67c704def  disk 1\Track02.flac
+57cae5a17628241f785a080f0d5ccc8c  disk 1\Track03.flac
+b325e89a70a0a58c23967b4d503489dd  disk 1\Track04.flac
+7e0548a5f3eaf5a601c939fefa8f1326  disk 1\Track05.flac
+42d69e99c42a8eeca66b50261339dea1  disk 1\Track06.flac
+4c90d33ee42ae0c1d3a040e29363112e  disk 1\Track07.flac
+172d9e7941bb94af8553da6c4dff49ed  disk 1\Track08.flac
+929643dcb76d1836e424bc7da25f89cf  disk 1\Track09.flac
+158470b46d098d78518f9239cb136f8d  disk 1\Track10.flac
+c963e8f4a387322d5c00955bd047605f  disk 1\Track11.flac
+12af197a1fea95cded9e6178dcb16e87  disk 1\Track12.flac
+6c0e33611ee6bcbada3781772016dbbc  disk 1\Track13.flac
+bca667b84558e8986fe3b2cd6f4ec3fd  disk 1\Track14.flac
+8597299e5d02e57e0ad8399b8946ccb1  disk 1\Track15.flac
+9b5b185233857e45b9be9ab706bd1f7c  disk 1\Track16.flac
+68be5bf521f6f8570e9da15bc75c6819  disk 1\Track17.flac
+8544c38f66d018e8f002de36b6143813  disk 1\Track18.flac
+4a94e006106ac454846f21cf87a1acc8  disk 1\Track19.flac
+160fdbcd9c79b0bf145270cf9fd370dc  disk 2\disk 2.md5
+98bfadbe31f91b09cca04fdb7a63833f  disk 2\Track01.flac
+89156617b94de490c1ca7ef3132fa963  disk 2\Track02.flac
+8c3faf1e2f116d6688b96cfa8cade101  disk 2\Track03.flac
+e871bb547a60c88bac8f6672c1bc5e6c  disk 2\Track04.flac
+2bc98d7e528d687a3b6b95b14f2583dc  disk 2\Track05.flac
+30f67a7f52099eb756808625fb30a353  disk 2\Track06.flac
+c540e88957a438caca827fe360b9ecf3  disk 2\Track07.flac
+4b9a5c8e869d47ac07d39d96c3359ddb  disk 2\Track08.flac
+0f3d235960b4c1712cbc357ddf6f6b6b  disk 2\Track09.flac
+ac057bd5a45950e45cb964ac85c4181f  disk 2\Track10.flac
+2228a55564a05316d3dc93153603dc05  disk 2\Track11.flac
+433d4e72e1d03fb2553f0756e389f32a  disk 2\Track12.flac
+1bbbd6e3b602b8e64874da9708b905a3  disk 2\Track13.flac
+5dedfdd04f98bffa9a605e8b6eb0a008  disk 2\Track14.flac
+9f71ccaf81ec7073c8f78e66916c2f40  disk 2\Track15.flac
+4caedcb5203c6d636d8fba8cfefb4610  disk 2\Track16.flac
+31605cfa1da5d331e342272a9b87326e  disk 2\Track17.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-Hollow-Horn-live-vol5.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+Track01.flac:cd5821135ba4f6dacc8cdbd64c4896bb
+Track02.flac:f77bb7f172c12dc5d6caa901ac240960
+Track03.flac:e2527029587f321de2699c02a778328f
+Track04.flac:c531127dd6a50f3ab36564caf7ba906a
+Track05.flac:4458b1171908d79a99d6ecfc6269ce5b
+Track06.flac:6b6adb24eabfadbc72d838c73ea9bdfe
+Track07.flac:c7b7b913e4c2a860b76282150638444c
+Track08.flac:603601c6f6b9cd8438940a379e8b0471
+Track09.flac:3ea7cf019f06a116d1439e149c4e0af4
+Track10.flac:1d2c8c6d37450cdeab8aab086cd7d2f0
+Track11.flac:3145b91ba10b68e73372608584775637
+Track12.flac:9ccf47de0c30af9690853abefc4f7f8e
+Track13.flac:cd3ea16d1f86f86c64a5c233a9023728
+Track14.flac:5fafe3edc03099f85369e3c2986bb713
+Track15.flac:a52ac03001c2ee4db004b838540dd826
+Track16.flac:4296c5277bbef24bd9000c9eeb109cf5
+Track17.flac:bbb2dc3a9e0e557184c5fa72ab1c77f0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd63-Hollow-Horn-live-vol5.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+Track01.flac:7494dcb9ed1df2bb501b7d017ee9a384
+Track02.flac:e85e0c5f8b81c8301ca8e16735103dc9
+Track03.flac:0c3cf223772527483e018d93044a6b88
+Track04.flac:e05765b6b933e423c00c71edfae68f59
+Track05.flac:742c94f7fcb48df8c5239967c327b73c
+Track06.flac:9def71ec768cd28ce37b5952e9ef64c4
+Track07.flac:b477ae4f1ba05f0bfedbe4485979789e
+Track08.flac:1a34cef165becda7128eb3813fcff450
+Track09.flac:f048d6c0752e7207f66e5a387a37617d
+Track10.flac:8206ae93e74876d11ebc476b0a9ed425
+Track11.flac:821856d8840378cb686ca15cc78bcc96
+Track12.flac:3c458c8635e36b8a7468d204680ddde1
+Track13.flac:a84c244d1f50e3d6a0c084b741aa4988
+Track14.flac:c1a79c6b977078341d46c3daf1fcb386
+Track15.flac:8a51825bef568c55d70db254857fabbd
+Track16.flac:237ba550e9ce9727993940bf5a73e8d0
+Track17.flac:5f3fca8afdd7593ecfb4161f341dd448
+Track18.flac:693250bc0fd8a109011d64544c915057
+Track19.flac:64d009aaa6d3644c9d7a6ca19cc455af
+=================== 
+=================== 
+=================== 
+=== shntool for: bd63-Hollow-Horn-live-vol5.flacf\disk 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:06.15       32845724 B   ---   --   ---xx   flac  0.5204  Track01.flac
+     3:23.33       35886860 B   ---   --   ---xx   flac  0.6306  Track02.flac
+     6:23.71       67728236 B   ---   --   ---xx   flac  0.6216  Track03.flac
+     3:22.67       35790428 B   ---   --   ---xx   flac  0.5490  Track04.flac
+     2:10.71       23099036 B   ---   --   ---xx   flac  0.5401  Track05.flac
+     3:31.00       37220444 B   ---   --   ---xx   flac  0.5436  Track06.flac
+     3:38.00       38455244 B   ---   --   ---xx   flac  0.5648  Track07.flac
+     4:30.71       47795036 B   ---   --   ---xx   flac  0.5337  Track08.flac
+     7:23.33       78222860 B   ---   --   ---xx   flac  0.5338  Track09.flac
+     8:03.15       85236524 B   ---   --   ---xx   flac  0.5454  Track10.flac
+     6:30.18       68838380 B   ---   --   ---xx   flac  0.5112  Track11.flac
+     1:19.37       14022668 B   ---   --   ---xx   flac  0.5816  Track12.flac
+     4:29.03       47458700 B   ---   --   ---xx   flac  0.6052  Track13.flac
+     5:48.22       61438988 B   ---   --   ---xx   flac  0.6018  Track14.flac
+     3:25.56       36293756 B   ---   --   ---xx   flac  0.6093  Track15.flac
+     5:29.37       58122668 B   ---   --   ---xx   flac  0.5367  Track16.flac
+     6:52.15       72712124 B   ---   --   ---xx   flac  0.5579  Track17.flac
+    79:28.39      841167676 B                            0.5618  (17 files)
+=================== 
+=================== 
+=================== 
+=== shntool for: bd63-Hollow-Horn-live-vol5.flacf\disk 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:46.37        8201468 B   ---   --   ---xx   flac  0.4693  Track01.flac
+     1:37.11       17136716 B   ---   --   ---xx   flac  0.4996  Track02.flac
+     3:46.11       39892316 B   ---   --   ---xx   flac  0.5129  Track03.flac
+     1:07.03       11825900 B   ---   --   ---xx   flac  0.4669  Track04.flac
+     2:30.03       26467100 B   ---   --   ---xx   flac  0.4850  Track05.flac
+     4:04.33       43119260 B   ---   --   ---xx   flac  0.4598  Track06.flac
+     5:25.26       57391196 B   ---   --   ---xx   flac  0.4622  Track07.flac
+     1:41.45       17922284 B   ---   --   ---xx   flac  0.4224  Track08.flac
+     1:30.71       16043036 B   ---   --   ---xx   flac  0.4717  Track09.flac
+     0:51.52        9118748 B   ---   --   ---xx   flac  0.4777  Track10.flac
+     1:40.63       17788220 B   ---   --   ---xx   flac  0.4876  Track11.flac
+     1:23.30       14711804 B   ---   --   ---xx   flac  0.4653  Track12.flac
+     1:49.48       19340540 B   ---   --   ---xx   flac  0.5875  Track13.flac
+     3:48.18       40261580 B   ---   --   ---xx   flac  0.6153  Track14.flac
+     3:48.26       40280396 B   ---   --   ---xx   flac  0.5765  Track15.flac
+     5:21.18       56666780 B   ---   --   ---xx   flac  0.6251  Track16.flac
+     5:35.54       59221052 B   ---   --   ---xx   flac  0.6291  Track17.flac
+     7:47.21       82428236 B   ---   --   ---xx   flac  0.6238  Track18.flac
+     5:01.22       53148188 B   ---   --   ---xx   flac  0.5869  Track19.flac
+    59:36.67      630964820 B                            0.5503  (19 files)
+=================== 
+=================== 
+=================== 

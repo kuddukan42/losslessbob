@@ -1,0 +1,10 @@
+968b64783b16d370bc1b8849f9f3054a *Bob Dylan - Track 01.flac
+6af46f20665b74a75b04ba6c341539dc *Bob Dylan - Track 02.flac
+84655c3c539399449227787d9e73bd6e *Bob Dylan - Track 03.flac
+538e9a721a233037fd1d62bfe0829d1a *Bob Dylan - Track 04.flac
+62aa1b4409c99db4e8a060710a589bf5 *Bob Dylan - Track 05.flac
+f1eb5bb891c000a5736f829a0e68b061 *Bob Dylan - Track 06.flac
+8253955576a6d85fd82fb702eae26a77 *Bob Dylan - Track 07.flac
+ccd16496a4a1f4375ef5103e495d60be *Bob Dylan - Track 08.flac
+23398a8caf87a231e5fee62f79ed8e9f *Bob Dylan - Track 09.flac
+ac2a864dd144cce6c93200be0cdf3b68 *Bob Dylan - Track 10.flac

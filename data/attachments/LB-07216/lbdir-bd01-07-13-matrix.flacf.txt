@@ -1,0 +1,106 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-07-13-matrix.flacf 
+=================== 
+=================== 
+=================== 
+e33ab8d385ebb26d91217ee215d06e93  101.flac
+362342d39719953e388d213ca5e7aed9  102.flac
+7d5347bcd60297c97e6fa70acd8bf02a  103.flac
+383baa36f77758eb12235525f93c7c88  104.flac
+1bdd89462c0d9086018f762c9fb9fed4  105.flac
+0a0b1e6f7fe7512499edc46a11297a40  106.flac
+46589cdd04c79724c6310ab0dcfe0e7c  107.flac
+0b4470675d4a51a1852a388146b7cad8  108.flac
+8a1baea66ce58bde48f7a36262b6c6fb  109.flac
+f3dadf19cc4965eee3e694463e32bafe  110.flac
+7be6b866a8c4b35896d71aa6198781ec  111.flac
+c87d73f1403a047981140af084a40c31  112.flac
+1eec9fe2cb7ab745ced304949b88222e  113.flac
+1bbc2c9edd846cf2014a9d2bcb4f520c  201.flac
+4aa2d8a72e3f0a2ae676848de868f8a8  202.flac
+a229c13e8c5c3904c366289e3610d9a7  203.flac
+d11342629f61b57acd816969d9430175  204.flac
+114c07869726e5e22913827ba9beee35  205.flac
+d33decaf91c534e78a96fa660b0f7366  206.flac
+6676e56e5dbca9b6a5243f54e3e21b4e  207.flac
+0e2c8115242acd4d952d09b4796e082b  208.flac
+e8b411f4cddebfcfc6cb78394f4d2c7a  209.flac
+144690b23c3644280f2d4a1816d145f1  210.flac
+62c43718bb6b78c08fbbdf89f9ac6d57  211.flac
+423cd18e0476f5d820ce4732f73c1ab2  212.flac
+c4ec5df6e5791567a166f4f686d4539d  BD_2001-07-13_Stirling-Castle_matrix.md5
+5d0496f07e4f8dd2e2941263fb18702d  Stirling 2001 matrix.txt
+826876e0e9599fde6ce9a836d3751360  Stirling_2001_B.jpg
+d67145b69cafb9b717c33064583b85da  Stirling_2001_F.jpg
+4b3b912a5c2f289cbb728849ee2e0724  Stirling_2001_insert.jpg
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-13-matrix.flacf 
+=================== 
+=================== 
+=================== 
+101.flac:29317900aa0b5c2baeab64f6f66478f2
+102.flac:66cd49d8bac5f8a1781a34a0ededb348
+103.flac:b52377757192ca5adbb18e719c1e768b
+104.flac:fb8e8992673721a022704beb313b4920
+105.flac:c875bdb37ebc983a86c7b6864d6eee45
+106.flac:09dbe86d548acbf9be2296fb975df60d
+107.flac:79e183a54212175055f053ce2609534c
+108.flac:4a383209ccd8ec771fed81f02a0d99d3
+109.flac:3089861044c105cef8e70d7967d350eb
+110.flac:7da02811f674fd7b1ada6bb95f8d69a2
+111.flac:8dc9d67b82e68f8d41ca5b9cc374c5ee
+112.flac:a9ef7b9c6c4556afae38f4a77d770324
+113.flac:62ff7f8f3157dddf225e1a76dbaafff8
+201.flac:6f6ffbb24cb2fe8e50a729745164b8b8
+202.flac:342cf67beea201a92237dfffc9c1255b
+203.flac:ff1da54fd7d2d81afa429ef982d4a9bf
+204.flac:ec6bcbe0acaa3c9e3e73132297629307
+205.flac:8cc4e3faff20701aa15aeefcb9c5185b
+206.flac:a726686b0e8aff45346e2c1f03038b70
+207.flac:16c63b6e9da2d0a27c63c72d1da708f6
+208.flac:4e2c38bb65ebdf95136220c2ec986a60
+209.flac:7b2be151a464afd1512702fe58df1e36
+210.flac:9e782920798d9dff379ae8144cb5637a
+211.flac:3ff9dcb1cbf78f4cd41d88a5dd5c448e
+212.flac:f2327052ec8c0eee3543d79dfcbbd923
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-13-matrix.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:06.34       11722316 B   -b-   --   ---xx   flac  0.5721  101.flac
+     3:59.29       42227496 B   -b-   --   ---xx   flac  0.6515  102.flac
+     4:56.73       52385728 B   -b-   --   ---xx   flac  0.6191  103.flac
+     6:08.35       64997020 B   -b-   --   ---xx   flac  0.6021  104.flac
+     6:41.27       70800328 B   -b-   --   ---xx   flac  0.6265  105.flac
+     3:49.73       40566268 B   -b-   --   ---xx   flac  0.6162  106.flac
+     6:04.19       64253996 B   -b-   --   ---xx   flac  0.6050  107.flac
+     6:20.27       67095012 B   -b-   --   ---xx   flac  0.6186  108.flac
+     4:44.50       50214876 B   -b-   --   ---xx   flac  0.5866  109.flac
+     8:10.37       86522040 B   -b-   --   ---xx   flac  0.5991  110.flac
+     7:44.30       81921204 B   -b-   --   ---xx   flac  0.6122  111.flac
+     8:25.32       89157656 B   -b-   --   ---xx   flac  0.6174  112.flac
+     5:31.21       58437224 B   -b-   --   ---xx   flac  0.5471  113.flac
+     5:06.56       54109464 B   -b-   --   ---xx   flac  0.6278  201.flac
+     6:24.23       67790608 B   -b-   --   ---xx   flac  0.5934  202.flac
+     3:09.53       33464716 B   -b-   --   ---xx   flac  0.5586  203.flac
+     6:07.53       64862448 B   -b-   --   ---xx   flac  0.6193  204.flac
+     7:06.22       75197128 B   -b-   --   ---xx   flac  0.6078  205.flac
+     6:25.73       68085884 B   -b-   --   ---xx   flac  0.5600  206.flac
+     4:18.67       45669476 B   -b-   --   ---xx   flac  0.6143  207.flac
+     5:18.45       56201008 B   -b-   --   ---xx   flac  0.5895  208.flac
+     5:50.25       61798952 B   -b-   --   ---xx   flac  0.6202  209.flac
+     4:54.66       52017924 B   -b-   --   ---xx   flac  0.6000  210.flac
+     0:58.34       10310116 B   -b-   --   ---xx   flac  0.5889  211.flac
+     6:38.55       70337368 B   -b-   --   ---xx   flac  0.6155  212.flac
+   136:04.07     1440146256 B                            0.6048  (25 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,73 @@
+===================
+===================
+===================
+=== md5 for: bd95-06-24-h.shnf
+===================
+===================
+===================
+e4c23a4a0667f14203eab5ac860b8e24 *bd1995-06-24 d2t1.shn
+35e37646189fc112576b7fa6b52d66fe *bd1995-06-24 t01.shn
+d436c59ff33a264229b438ff53cee04a *bd1995-06-24 t02.shn
+81eb9ef6adca14b88283e10c0cc64840 *bd1995-06-24 t03.shn
+3f7974eb563981e657f358034a5fef31 *bd1995-06-24 t04.shn
+95c7c3808e63cd7c187b74795bab78cd *bd1995-06-24 t05.shn
+1c78ed88eec8c1c689008917a872aec5 *bd1995-06-24 t06.shn
+1302f881e1ff7a202c5dc7d1b210c33c *bd1995-06-24 t07.shn
+85c5e3158423a27f5b04084f9c84258c *bd1995-06-24 t08.shn
+4f68dab205d0d5e46659ce0d75f94860 *bd1995-06-24 t09.shn
+efe92ca4e925aa250383730d2c0ce4fc *bd1995-06-24 t10.shn
+15dddd7213123aeac97d2848f4960513 *bd1995-06-24 t11.shn
+0b71da3ac760edab6368845e543d3446 *bd1995-06-24 t12.shn
+d6ca5019e04461ba16282cc52dc61af1 *bd1995-06-24 t13.shn
+c3a1feb55a943f987e2912c77b570c87 *bd1995-06-24 t14.shn
+44609410e9cb058887734581b8707751 *bd1995-06-24 washington, dc.md5
+3bf784498f4901f212df8c3d8bed3e80 *bd1995-06-24 washington, dc.txt
+===================
+===================
+===================
+=== shntool md5/hash for: bd95-06-24-h.shnf
+===================
+===================
+===================
+192bee1fbc07c45f0ffbe1a6014051c3  [shntool]  bd1995-06-24 d2t1.shn
+aaa37db7dec4b7f709dcdb925cceef9c  [shntool]  bd1995-06-24 t01.shn
+c40dea10b1303bca92e54b8fcef94f62  [shntool]  bd1995-06-24 t02.shn
+ee9d028cb44e2931d820841c49032c8d  [shntool]  bd1995-06-24 t03.shn
+d7736320a4cb87d921d013bcf1d6b7ec  [shntool]  bd1995-06-24 t04.shn
+c1b53dec550051eb09c2f8f227cea59a  [shntool]  bd1995-06-24 t05.shn
+2586a691253081a19099c790e93cc4fa  [shntool]  bd1995-06-24 t06.shn
+b11221a7697aa15236854f68ca739984  [shntool]  bd1995-06-24 t07.shn
+5bd95e036cecb2e1996a3e6c4341332b  [shntool]  bd1995-06-24 t08.shn
+2111e46ea007a3fdf23c7d7fa6186ea2  [shntool]  bd1995-06-24 t09.shn
+563f8a47f2d49bd660357f76f2300ab1  [shntool]  bd1995-06-24 t10.shn
+9eae60daaddb96bde3a5e29fdcbbb128  [shntool]  bd1995-06-24 t11.shn
+3b5019fc47d2118c6cd683700068c4cb  [shntool]  bd1995-06-24 t12.shn
+b06e62cb207632bafd9634b298cce0b2  [shntool]  bd1995-06-24 t13.shn
+6d361a0bac5a53bad81f8f2f42ed9dc1  [shntool]  bd1995-06-24 t14.shn
+===================
+===================
+===================
+=== shntool len for: bd95-06-24-h.shnf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:28.65       79181260 B   -b-   --   ---xx    shn  0.6142  bd1995-06-24 d2t1.shn
+     0:20.66        3683276 B   ---   --   ---xx    shn  0.4459  bd1995-06-24 t01.shn
+     4:54.17       51901628 B   ---   --   ---xx    shn  0.6172  bd1995-06-24 t02.shn
+     4:32.10       48004364 B   ---   --   ---xx    shn  0.5946  bd1995-06-24 t03.shn
+     6:06.06       64576556 B   ---   --   ---xx    shn  0.6169  bd1995-06-24 t04.shn
+     7:19.01       77441996 B   ---   --   ---xx    shn  0.5835  bd1995-06-24 t05.shn
+     7:10.21       75901436 B   ---   --   ---xx    shn  0.6001  bd1995-06-24 t06.shn
+     8:17.70       87835484 B   ---   --   ---xx    shn  0.5476  bd1995-06-24 t07.shn
+     7:13.02       76385948 B   ---   --   ---xx    shn  0.4708  bd1995-06-24 t08.shn
+     7:43.35       81755564 B   ---   --   ---xx    shn  0.5232  bd1995-06-24 t09.shn
+     6:32.43       69249980 B   ---   --   ---xx    shn  0.5984  bd1995-06-24 t10.shn
+     9:23.34       99393212 B   ---   --   ---xx    shn  0.6049  bd1995-06-24 t11.shn
+     0:23.01        4059596 B   ---   --   ---xx    shn  0.4833  bd1995-06-24 t12.shn
+     7:42.54       81623852 B   ---   --   ---xx    shn  0.5859  bd1995-06-24 t13.shn
+     1:03.26       11174396 B   ---   --   ---xx    shn  0.4069  bd1995-06-24 t14.shn
+    86:11.01      912168548 B                            0.5746  (15 files)
+===================
+===================
+===================

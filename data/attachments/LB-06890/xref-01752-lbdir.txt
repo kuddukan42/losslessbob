@@ -1,0 +1,108 @@
+===================
+===================
+===================
+=== md5 for: bd95-07-24-Maestro-bootleg.flacf
+===================
+===================
+===================
+3efd78f840147e977a038fdf3240823c *CD1\01 Drifter's escape.flac
+5efb01922998c2c03e3f35eee1d2343a *CD1\02 Señor (Tales of Yankee Power).flac
+6708a4634274c7b26b75f2c6da3efae1 *CD1\03 All along the watchtower.flac
+c20701d109c75522560eea7b430e12f6 *CD1\04 Shooting star.flac
+cb15061bc9bca7ac65e0cc7d4e9571ac *CD1\05 Most likely you go your way (and I'll go mine).flac
+781e5b5ccc14c8a9f836948b5d1eb1c2 *CD1\06 Silvio.flac
+156cfb08f8a5a38a06d4da6608400c82 *CD1\07 Tangled up in blue.flac
+802d471265b2ae2e72ba84e92bdee35f *CD1\08 A hard rain's a-gonna fall.flac
+9933a536b8363c4fc083f60cbe57008e *CD1\09 It's all over now, baby blue.flac
+87d5b3c2b287a3f3b193637b375520d8 *CD1\10 God knows.flac
+f5e69a1968602f495c1f10c284118e0b *CD1\FLAC CD1.md5
+fd5e05cc83791f801c587edca4c766b9 *CD2\11 I shall be released.flac
+b2e3fa98e2b31403d521e3765635cc4c *CD2\12 Seeing the real you at last.flac
+7c140a6b31d1ebc28a6ade2c99c0c474 *CD2\13 Like a rolling stone.flac
+ae323543d62475bc92eca55839b87ffe *CD2\14 The times they are a-changin'.flac
+240ad9c71316668a00dd12a97a7e0d5a *CD2\15 Rainy day women # 12 & 35.flac
+bd82f489383146d2d4a954d8be49b397 *CD2\FLAC CD2.md5
+b1a3627533f8c7121e39cce0e0a28d0b *Fillers\16 Like a rolling stone [w The Rolling Stones].flac
+9a73f8d99e57279ecc8d78f44114c683 *Fillers\17 It takes a lot to laugh, it takes a train to cry.flac
+91aba2155ae73e7d89202151004ee0e7 *Fillers\18 All along the watchtower.flac
+558988733f8f5b01abbc0843bc1eea94 *Fillers\19 What good am I.flac
+2af66b6834a0a8b5ff5e8fa706c6e5eb *Fillers\20 I want you.flac
+76e15aa8fd0bdac77d2ab0ae9eec58d9 *Fillers\Fillers [various dates and venues].md5
+9afe2c7d3afea85495bfef07cfbe8b4c *Info\Bob Dylan 1995-07-24 El Pueblo Español, Barcelona, Spain [Maestro bootleg LB-6890].txt
+===================
+===================
+===================
+=== ffp for: bd95-07-24-Maestro-bootleg.flacf
+===================
+===================
+===================
+CD1\01 Drifter's escape.flac:4960bc14b05c6ac92bb381b763e4b728
+CD1\02 Señor (Tales of Yankee Power).flac:04c181bfaeb2bea56edd6086efb9bb66
+CD1\03 All along the watchtower.flac:fea4c5e6d73123d21236cc3c6e158fac
+CD1\04 Shooting star.flac:ee63f38a11a17e06da35b9a3fd746db6
+CD1\05 Most likely you go your way (and I'll go mine).flac:443d23f57d8b82c611c949d30b962fcc
+CD1\06 Silvio.flac:ddafc69fad1788919983a4aa43a6bdc8
+CD1\07 Tangled up in blue.flac:1c2f271c265625fd9e959c2eeb61166d
+CD1\08 A hard rain's a-gonna fall.flac:42ede1cb8730088d92b54303fc3d839d
+CD1\09 It's all over now, baby blue.flac:7078413ebaf507f0b01c5f8a5f14ffc8
+CD1\10 God knows.flac:f29b97f679c155193c7a7d55cd123592
+CD2\11 I shall be released.flac:61cde14941196f81c9a1c3089345e0ad
+CD2\12 Seeing the real you at last.flac:e9edc878ba4d1969822358cbf9a4678e
+CD2\13 Like a rolling stone.flac:d5da1c2280c7a8ffbf0520ba91432ab7
+CD2\14 The times they are a-changin'.flac:d796a0192604fa1b7d01904f8c2739e5
+CD2\15 Rainy day women # 12 & 35.flac:142db30539f0418acb03aaa4585ef67d
+Fillers\16 Like a rolling stone [w The Rolling Stones].flac:bb5d664c0a4a4082db24129e73171072
+Fillers\17 It takes a lot to laugh, it takes a train to cry.flac:c880afc5103ff08a1abbb63cd6b52a42
+Fillers\18 All along the watchtower.flac:d0d63c5ce7ef4a07e5250185aa36a770
+Fillers\19 What good am I.flac:48b2d7bc228099d700e3d7d4b1c62109
+Fillers\20 I want you.flac:44bd97210055841e07ec6600bc9f9801
+===================
+===================
+===================
+=== shntool len for: bd95-07-24-Maestro-bootleg.flacf\CD1
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:30.31       58284956 B   ---   --   ---xx   flac  0.6051  01 Drifter's escape.flac
+     3:26.01       36340796 B   ---   --   ---xx   flac  0.5786  02 Señor (Tales of Yankee Power).flac
+     6:25.18       67956380 B   ---   --   ---xx   flac  0.5807  03 All along the watchtower.flac
+     6:05.52       64508348 B   ---   --   ---xx   flac  0.5121  04 Shooting star.flac
+     9:08.03       96674300 B   ---   --   ---xx   flac  0.5702  05 Most likely you go your way (and I'll go mine).flac
+     7:54.74       83787692 B   ---   --   ---xx   flac  0.5755  06 Silvio.flac
+    10:09.26      107488796 B   ---   --   ---xx   flac  0.5103  07 Tangled up in blue.flac
+    10:03.36      106453916 B   ---   --   ---xx   flac  0.4533  08 A hard rain's a-gonna fall.flac
+     8:48.00       93139244 B   ---   --   ---xx   flac  0.4261  09 It's all over now, baby blue.flac
+     7:05.24       75026492 B   ---   --   ---xx   flac  0.5694  10 God knows.flac
+    74:36.40      789660920 B                            0.5289  (10 files)
+===================
+===================
+===================
+=== shntool len for: bd95-07-24-Maestro-bootleg.flacf\CD2
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:59.29       84563852 B   ---   --   ---xx   flac  0.5382  11 I shall be released.flac
+     6:59.72       74080988 B   ---   --   ---xx   flac  0.5707  12 Seeing the real you at last.flac
+     8:51.26       93729596 B   ---   --   ---xx   flac  0.5569  13 Like a rolling stone.flac
+    10:13.54      108260252 B   ---   --   ---xx   flac  0.5020  14 The times they are a-changin'.flac
+     6:34.54       69628652 B   ---   --   ---xx   flac  0.5570  15 Rainy day women # 12 & 35.flac
+    40:39.10      430263340 B                            0.5418  (5 files)
+===================
+===================
+===================
+=== shntool len for: bd95-07-24-Maestro-bootleg.flacf\Fillers
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:50.42       72422828 B   ---   --   ---xx   flac  0.4964  16 Like a rolling stone [w The Rolling Stones].flac
+     6:12.27       65684348 B   ---   --   ---xx   flac  0.6000  17 It takes a lot to laugh, it takes a train to cry.flac
+     5:59.09       63348812 B   ---   --   ---xx   flac  0.5826  18 All along the watchtower.flac
+     7:13.61       76524716 B   ---   --   ---xx   flac  0.5344  19 What good am I.flac
+     4:37.24       48919292 B   ---   --   ---xx   flac  0.6320  20 I want you.flac
+    30:53.13      326899996 B                            0.5631  (5 files)
+===================
+===================
+===================

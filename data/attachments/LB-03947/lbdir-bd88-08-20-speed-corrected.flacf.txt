@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd88-08-20-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+75e84b1a34a07b3fc2bd52b02dcd889f  88 08 20 d1 t01.flac
+355ffd816e9363aafb0c2d27ae6004fc  88 08 20 d1 t02.flac
+f29e51121665e9629d4e8c91f4d239d0  88 08 20 d1 t03.flac
+6a3e340cabb53ec56f0b418d5424523d  88 08 20 d1 t04.flac
+ef72b468e05d0c6d682b1e9ef09f6ddc  88 08 20 d1 t05.flac
+1bd83dfa7a764bb02d08c436f25f970b  88 08 20 d1 t06.flac
+ce2a549ccb8f7aef42b95f03e3522ed6  88 08 20 d1 t07.flac
+07759e38321a2b45ea29fc36e0681203  88 08 20 d1 t08.flac
+14776aed3f96efc2513ddb708412f5d2  88 08 20 d2 t01.flac
+dc7cdb46d61f4a3e71cdcbc58842ff21  88 08 20 d2 t02.flac
+60ecb23053231ccc45693619cb622f06  88 08 20 d2 t03.flac
+896cdf421c5fd38c78e5e04aee65ec8e  88 08 20 d2 t04.flac
+5c45f5d84ee0874e62134e63e6270c3b  88 08 20 d2 t05.flac
+4cd610d023b049a3decd401223d56e35  88 08 20 d2 t06.flac
+e154a009283e538d674accef15fb0b32  88 08 20 d2 t07.flac
+43f4e5dc251d971079aa8c30f4a392a1  bd88 08 20 speed corrected.md5
+097e3072ad5bc3ee449f196dece3c2f8  bd88-08-20-speed-corrected-LB-3947.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd88-08-20-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+88 08 20 d1 t01.flac:417bef6724a65d488160f5739dff7d3d
+88 08 20 d1 t02.flac:ff0bf0658a7c3b1178e461863a16561d
+88 08 20 d1 t03.flac:0a1d8245a82ccd313cf047857b7f5186
+88 08 20 d1 t04.flac:99deba948c526dc6ed695a79876237b3
+88 08 20 d1 t05.flac:10265ef1f5990ca7143b051a3288f96b
+88 08 20 d1 t06.flac:6eb7f4ac949777d265f539ee4fd18182
+88 08 20 d1 t07.flac:e031b29d343a42055383114171bac856
+88 08 20 d1 t08.flac:aad54c8c818a05f67e3a64c7fd7d027a
+88 08 20 d2 t01.flac:7eec549b96e4be5750d0c55a04bd1d40
+88 08 20 d2 t02.flac:b66134c064467da2d1473fc299906934
+88 08 20 d2 t03.flac:76e818d71a4e77bfb431030678af5424
+88 08 20 d2 t04.flac:27f274b8edeeffbfdfdc776dec8ee537
+88 08 20 d2 t05.flac:7555e3f92db7543874e0c2e4bde4c520
+88 08 20 d2 t06.flac:f6dee7240ca470503fdd3c70879b7575
+88 08 20 d2 t07.flac:d343b3450c90df584c97857961165bcf
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd88-08-20-speed-corrected.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:41.60       39125564 B   ---   --   ---xx   flac  0.6900  88 08 20 d1 t01.flac
+     4:45.37       50361068 B   ---   --   ---xx   flac  0.6897  88 08 20 d1 t02.flac
+     4:40.21       49441436 B   ---   --   ---xx   flac  0.6763  88 08 20 d1 t03.flac
+     5:04.56       53757356 B   ---   --   ---xx   flac  0.6378  88 08 20 d1 t04.flac
+     4:47.16       50664476 B   ---   --   ---xx   flac  0.6480  88 08 20 d1 t05.flac
+     5:51.65       62069324 B   ---   --   ---xx   flac  0.6705  88 08 20 d1 t06.flac
+     5:49.47       61674188 B   ---   --   ---xx   flac  0.5922  88 08 20 d1 t07.flac
+     6:41.69       70898732 B   ---   --   ---xx   flac  0.5679  88 08 20 d1 t08.flac
+     8:32.41       90413276 B   ---   --   ---xx   flac  0.5460  88 08 20 d2 t01.flac
+     6:10.29       65336252 B   ---   --   ---xx   flac  0.5576  88 08 20 d2 t02.flac
+     5:00.07       52936508 B   ---   --   ---xx   flac  0.5951  88 08 20 d2 t03.flac
+     3:54.25       41336444 B   ---   --   ---xx   flac  0.6425  88 08 20 d2 t04.flac
+     9:39.73      102307340 B   ---   --   ---xx   flac  0.6034  88 08 20 d2 t05.flac
+     4:34.49       48448892 B   ---   --   ---xx   flac  0.5965  88 08 20 d2 t06.flac
+     6:39.35       70465964 B   ---   --   ---xx   flac  0.6544  88 08 20 d2 t07.flac
+    85:54.30      909236820 B                            0.6173  (15 files)
+=================== 
+=================== 
+=================== 

@@ -1,0 +1,4 @@
+bd1978-07-05t01.sndchk.flac:ca5f39bbc950c5ac1a5f398e83eb6d2e
+bd1978-07-05t02.sndchk.flac:cd064ee49b920621b41e001fc7343d7c
+bd1978-07-05t03.sndchk.flac:96e58fbdebdf2f931ae046a25fc61ad1
+bd1978-07-05t04.sndchk.flac:7375a0e0d8f701e3ae969e4d270a4213

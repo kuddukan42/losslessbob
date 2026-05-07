@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== Info_bdPoughkeepsie89.txt
+===================
+===================
+===================
+Bob Dylan
+Poughkeepsie, New York
+Mid-Hudson Arena  
+20 October 1989
+  
+AUD > ? (lossless transfer) > CDR > EAC > flac
+(recieved in a trade)
+
+disc1
+1.  The Times They Are A-Changin'
+2.  Absolutely Sweet Marie
+3.  Seeing The Real You At Last
+4.  What Good Am I?
+5.  Dead Man, Dead Man
+6.  I'll Remember You
+7.  Love Minus Zero/No Limit
+8.  Mr. Tambourine Man
+9.  One Too Many Mornings
+10.  Don't Think Twice, It's All Right
+11.  Everything Is Broken
+12.  When You Gonna Wake Up
+13.  Ring Them Bells
+
+disc2
+1.  Tears Of Rage (Bob Dylan & Richard Manuel)
+2.  Everybody's Movin' (Glen Trout)
+3.  Like A Rolling Stone
+4.  Most Of The Time
+5.  All Along The Watchtower
+
+ 
+Concert # 152 of The Never-Ending Tour. 
+Concert # 9 of the 1989 USA Fall Tour.
+Concert # 74 with the second Never-Ending Tour Band: 
+Bob Dylan (vocal & guitar), 
+G. E. Smith (guitar), 
+Tony Garnier (bass), 
+Christopher Parker (drums).
+
+ 
+
+7-10 Bob Dylan (vocal & guitar), G.E. Smith (guitar)
+1, 4, 7-10, 16  Bob Dylan harmonica.
+12-13   Bob Dylan piano.
+
+Notes:
+Live debut for Ring Them Bells.
+First and so far (as of rev. date) the only rendition of When You Gonna Wake Up during The Never-Ending Tour.
+First concert where Bob Dylan plays piano during The Never-Ending Tour.
+Last performance of Dead Man, Dead Man (as of revision date).
+
+Thanks to the taper & www.bjorner.com!
+===================
+===================
+===================
+=== disc1.ffp
+===================
+===================
+===================
+Track01.flac:ff0e1cbd32cabc3d1551673a85d5ffd1
+Track02.flac:2609660b12607ba0b78d122efee2d5ef
+Track03.flac:6b007bbead0a29de0dd7ec9349ec27e5
+Track04.flac:6acdbfb1e57953575395d4385c4bae2d
+Track05.flac:744470270f9e18bd602f60523e178223
+Track06.flac:74dfa5cbc4cc49c2985e58d081b28d28
+Track07.flac:76e1585e954f7a4b56bb41036b15045d
+Track08.flac:ff9ddd863d4293292a12f1ee6368e94e
+Track09.flac:3c11996561a1ccbbb21f7dc23ae89b62
+Track10.flac:b53d4a796402f910aab736b3d04031c0
+Track11.flac:2f1edb7d5590c96c1060bd0ff6bb6c7f
+Track12.flac:78091fbe1a27c05bee6de73bd168274c
+Track13.flac:893f85baf468af1bdf03b252ecfb3cfe
+===================
+===================
+===================
+=== disc2.ffp
+===================
+===================
+===================
+Track01.flac:de4a144b61cd0687acbc526ffd65309c
+Track02.flac:a82370e944503d43c89057518fcfa88f
+Track03.flac:69e7fa40cde9f4e140a7731adf30d91a
+Track04.flac:dc7c72de8155b03a1bcd9a1e33575a1f
+Track05.flac:d4e14334f6c2f19e7e4f130bca5b08e5
+===================
+===================
+===================

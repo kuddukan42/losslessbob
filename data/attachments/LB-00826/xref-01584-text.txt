@@ -1,0 +1,61 @@
+===================
+===================
+===================
+=== info.txt
+===================
+===================
+===================
+Sydney, NSW, Australia
+
+State Theatre
+16-Apr-92
+
+Never-Ending Tour Concert #383
+1. 	Rainy Day Women # 12 & 35
+2. 	Sally Sue Brown
+3. 	Union Sundown
+4. 	Just Like A Woman
+5. 	Tangled Up In Blue
+6. 	I'll Be Your Baby Tonight
+7. 	Man in the Long Black Coat
+8. 	Love Minus Zero / No Limit
+9. 	Little Moses
+10. 	Girl From The North Country
+11. 	Don't Think Twice, It's All Right
+12. 	Cat's In The Well
+13. 	Idiot Wind
+14. 	The Times They Are A-Changin'
+15. 	Highway 61 Revisited
+16. 	Absolutely Sweet Marie
+17. 	All Along the Watchtower
+18. 	Blowin' in the Wind
+
+Shn's recieved from LK, Taped by RL no further info.
+===================
+===================
+===================
+=== noname.md5
+===================
+===================
+===================
+79543f01ea6198292b6e058b3ce0faf0 *d1t04.shn
+5be7f14a21927bd30c72f179899946fb *d1t02.shn
+36014c20a14987b8ea41629bacd410ba *d1t03.shn
+6be3d98036faeccad93a0218204d5dbe *d1t01.shn
+cecbe687204005a453385c1194755f63 *d1t05.shn
+ed9662a324a7f44706adad2bc1f29af0 *d1t06.shn
+3dca4fa6e432cd690a3d8f35a4399bbe *d1t07.shn
+6a0e6bdb1a0ad2fa1b2fc4b546125140 *d1t08.shn
+4154d8526f66e8e335f4bd9afbd04dac *d1t09.shn
+035a324386252ddef2dd180ec6e38ba6 *d1t10.shn
+5ebaea693f0f5d7c90b8048c4366edfc *d2t01.shn
+1ea22a5d95dee7596505caef8ba4b8ae *d2t02.shn
+d8fe35fab9ed1fbc801b35295ff8564b *d2t03.shn
+035c2c04658fb06fd97b6195e533c4be *d2t04.shn
+d7193b7d9095e12dc32f59cb78e42d1b *d2t05.shn
+ab00fe741b7e92260c1735291a2ae0f9 *d2t06.shn
+bc49946bbf3997f18a817ddfc0c0e1bc *d2t07.shn
+1054cb29529fc288d01d9d1e50837e05 *d2t08.shn
+===================
+===================
+===================

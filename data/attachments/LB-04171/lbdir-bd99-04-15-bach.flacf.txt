@@ -1,0 +1,92 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd99-04-15-bach.flacf 
+=================== 
+=================== 
+=================== 
+fdf049ac75054da268e7c695f1ddf3f2  bd99-04-15-bach-LB-4171.txt
+665dddfaaf59f631e9d69322f1748b7f  info.txt
+1fcc99c7525b8571c60b6d75b4da3a11  pt.1\Track01.flac
+c8fa8aef300f49d13b067cde52d1bd9b  pt.1\Track02.flac
+7d5334c7f8089aa1b89107f4713a1762  pt.1\Track03.flac
+d276b0f053024402ba136dccac3c75a1  pt.1\Track04.flac
+116311b5cb33e05ff48dfb32723e59fc  pt.1\Track05.flac
+6b4e7702e9d897cc32fd1fa0fe4ee094  pt.1\Track06.flac
+4fabae8adc7490b3a9d1ce846431abfd  pt.1\Track07.flac
+bf6476795085c3fc7ef0e4c049222571  pt.1\Track08.flac
+a34c04256549575494bbc32153495796  pt.1\Track09.flac
+22c5538195b73883a4d87f3308e7cf55  pt.1\Track10.flac
+ef5550b8fc664adc8f12acae968db25c  pt.2\Track01.flac
+1a17512deaefc39e47a2fb2b7c1c4c0e  pt.2\Track02.flac
+58978977929e3fc71fefca4ad12a2caf  pt.2\Track03.flac
+fc3799726f6a7d2f1025418fa3f3848a  pt.2\Track04.flac
+24e52fc199a807028bc747442dac9ab1  pt.2\Track05.flac
+2594de1e6f30728c61f18da73a8bd38b  pt.2\Track06.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-15-bach.flacf\pt.2 
+=================== 
+=================== 
+=================== 
+Track01.flac:56ebff083fa4aa0f4f1105373f2ff8a9
+Track02.flac:51d8fa3e029c154d73753ad6c9a46028
+Track03.flac:c842761c0c25aafd4aeef53cecab6e04
+Track04.flac:b44468c0569cc64b967a904632198b40
+Track05.flac:b5bdc65042c86f4b1d478b65ee4c7d1c
+Track06.flac:76de5e39c66f4a0a19b69881c43ee754
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd99-04-15-bach.flacf\pt.1 
+=================== 
+=================== 
+=================== 
+Track01.flac:5acc81c7252c495ebc9b881d1f9708ff
+Track02.flac:d4b7c7b85edd4729e70bc40ffb43f6f7
+Track03.flac:586d8cb73b472356a6c3405650142260
+Track04.flac:7fdbc31e6256f36c46cc82660f3ba501
+Track05.flac:522d915c635e4c48793602091c0fe178
+Track06.flac:c75fdbf307a9536f8212317510058580
+Track07.flac:a95b16127fcab4ba65ffad1c1a4decae
+Track08.flac:d1769e26423dcc926dd5ec6901c7843e
+Track09.flac:eca01a9bf9fc58f2c8636bd8dd90e62a
+Track10.flac:60a43e6b4f3a0470ed50f60a00a342d7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-15-bach.flacf\pt.2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:22.15       56836124 B   ---   --   ---xx   flac  0.5269  Track01.flac
+     8:54.37       94284668 B   ---   --   ---xx   flac  0.5894  Track02.flac
+     5:44.39       60773372 B   ---   --   ---xx   flac  0.5311  Track03.flac
+     5:22.31       56873756 B   ---   --   ---xx   flac  0.6199  Track04.flac
+     6:51.21       72549836 B   ---   --   ---xx   flac  0.5211  Track05.flac
+     3:56.01       41632796 B   ---   --   ---xx   flac  0.6365  Track06.flac
+    36:10.69      382950552 B                            0.5676  (6 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd99-04-15-bach.flacf\pt.1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:27.36       68351516 B   ---   --   ---xx   flac  0.5423  Track01.flac
+     5:26.74       57680492 B   ---   --   ---xx   flac  0.5298  Track02.flac
+     5:39.43       59900780 B   ---   --   ---xx   flac  0.5397  Track03.flac
+     6:31.50       69090044 B   ---   --   ---xx   flac  0.4735  Track04.flac
+     9:01.05       95444204 B   ---   --   ---xx   flac  0.6076  Track05.flac
+     6:07.51       64858796 B   ---   --   ---xx   flac  0.5009  Track06.flac
+     6:39.43       70484780 B   ---   --   ---xx   flac  0.5308  Track07.flac
+     7:33.51       80029196 B   ---   --   ---xx   flac  0.5734  Track08.flac
+     7:29.40       79297724 B   ---   --   ---xx   flac  0.5527  Track09.flac
+     7:22.62       78114668 B   ---   --   ---xx   flac  0.5853  Track10.flac
+    68:20.05      723252200 B                            0.5475  (10 files)
+=================== 
+=================== 
+=================== 

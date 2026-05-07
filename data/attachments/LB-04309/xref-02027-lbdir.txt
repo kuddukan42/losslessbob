@@ -1,0 +1,48 @@
+===================
+===================
+===================
+=== md5 for: bd76-04-27-audiowhore-repair.flacf
+===================
+===================
+===================
+6078f01ef90b3356e09bf93a1edca9c6 *01 1976-04-27 Tallahassee (repair).flac
+29409d67f9fc104dc174add6889da2ff *02 1976-04-27 Tallahassee (repair).flac
+fcaa27b985e639a4282671d5ae1bd237 *03 1976-04-27 Tallahassee (repair).flac
+b12892d0f00ecd48d0314d29e825c3f0 *04 1976-04-27 Tallahassee (repair).flac
+380b933941817a335da755ace75c233b *05 1976-04-27 Tallahassee (repair).flac
+0a5aa39bb0650e72de841bd41adf87c5 *06 1976-04-27 Tallahassee (repair).flac
+cb1f9d277c600e14128bd27f6720bc2a *BOB DYLAN 1976-04-27 Tallahassee (repair).ffp
+2428e751afc58f1384cd8d844ca37589 *BOB DYLAN 1976-04-27 Tallahassee, Florida (audiowhore repair).md5
+596325dcfa6e594aae1af3ef63b130d2 *BOB DYLAN 1976-04-27 Tallahassee, Florida (repair).txt
+4781f557d6b99b13b69c3ee193a278be *ORIGINAL Notes.txt
+===================
+===================
+===================
+=== ffp for: bd76-04-27-audiowhore-repair.flacf
+===================
+===================
+===================
+01 1976-04-27 Tallahassee (repair).flac:846b32b368e5e4468b76f492a56272fa
+02 1976-04-27 Tallahassee (repair).flac:f9a0bb92634083c3adf3fc78948e01e7
+03 1976-04-27 Tallahassee (repair).flac:f825e3ce04c0747dd9e6dd1b5e14dafb
+04 1976-04-27 Tallahassee (repair).flac:7440dead101fd6a4b93db8af9c0a8532
+05 1976-04-27 Tallahassee (repair).flac:13e92b5b4a16b7698dbc4205d1240f7e
+06 1976-04-27 Tallahassee (repair).flac:e4645991fe1c45c32b08ecec10118445
+===================
+===================
+===================
+=== shntool len for: bd76-04-27-audiowhore-repair.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:23.16       57015692 B   -b-   --   ---xx   flac  0.3285  01 1976-04-27 Tallahassee (repair).flac
+     4:21.55       46169172 B   -b-   --   ---xx   flac  0.3294  02 1976-04-27 Tallahassee (repair).flac
+     2:48.61       29779192 B   -b-   --   ---xx   flac  0.3476  03 1976-04-27 Tallahassee (repair).flac
+     4:05.17       43257420 B   -b-   --   ---xx   flac  0.3662  04 1976-04-27 Tallahassee (repair).flac
+     4:23.57       46528164 B   -b-   --   ---xx   flac  0.3668  05 1976-04-27 Tallahassee (repair).flac
+     0:34.26        6059708 B   -b-   --   ---xx   flac  0.3589  06 1976-04-27 Tallahassee (repair).flac
+    21:37.08      228809348 B                            0.3469  (6 files)
+===================
+===================
+===================

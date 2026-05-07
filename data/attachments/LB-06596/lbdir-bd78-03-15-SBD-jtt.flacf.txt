@@ -1,0 +1,104 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd78-03-15-SBD-jtt.flacf 
+=================== 
+=================== 
+=================== 
+66fa9a88f1351f4070d662f4cc7fbde1  Brisbane, Australia 15.03.1978 - F.jpg
+fd18b1afe2027fbafee0edad9c682eae  Brisbane, Australia 15.03.1978 - R.jpg
+7dfbe221bb5012c9d26616ad54134584  Disc One\Disc01Track01 Brisbane SBD JTT.flac
+f27c1f4a91fe447731dd99b5199c7229  Disc One\Disc01Track02 Brisbane SBD JTT.flac
+49e0d37aad30d68eb416f85adf5c3ce4  Disc One\Disc01Track03 Brisbane SBD JTT.flac
+2cc71d6625065114129fc444ddbf31b9  Disc One\Disc01Track04 Brisbane SBD JTT.flac
+db817c9da52312281f67fb440aa24751  Disc One\Disc01Track05 Brisbane SBD JTT.flac
+d9738d8a6e0ad1655b8236ee191bd144  Disc One\Disc01Track06 Brisbane SBD JTT.flac
+420d7088a9e8626fc633612a0d458dfd  Disc One\Disc01Track07 Brisbane SBD JTT.flac
+0723caddc5ab86e23650715b25a83ef6  Disc One\Disc01Track08 Brisbane SBD JTT.flac
+c6cf1f54b857595cddb1cc71e2fd411e  Disc One\Disc01Track09 Brisbane SBD JTT.flac
+b5fd83d69a22138506e413bcdb31c636  Disc One\Disc01Track10 Brisbane SBD JTT.flac
+8c45ce15dedb7132fe0e14addcb8cf1f  Disc Two\Disc02Track01 Brisbane SBD JTT.flac
+60c5cced5c81270259e6c7e7382d4604  Disc Two\Disc02Track02 Brisbane SBD JTT.flac
+728eae48c845680040fb08d5d5ea6520  Disc Two\Disc02Track03 Brisbane SBD JTT.flac
+ec7f8e01448662c61a89dd08a80211d0  Disc Two\Disc02Track04 Brisbane SBD JTT.flac
+126f7ce6a35d7386b8830bb7a113af41  Disc Two\Disc02Track05 Brisbane SBD JTT.flac
+4b07d17b12c9e4138e5fa80b5fc7eed1  Disc Two\Disc02Track06 Brisbane SBD JTT.flac
+9a4e78bc4776f44608fe2e8b75388082  Disc Two\Disc02Track07 Brisbane SBD JTT.flac
+f61f3e7e9e155f2f666c3110ce5cf70d  Disc Two\Disc02Track08 Brisbane SBD JTT.flac
+2d1f71e9c22704de1a89e5dfd29f6d1a  Disc Two\Disc02Track09 Brisbane SBD JTT.flac
+1c8e18c552bc06717495ae9bbd4395d1  Dylan - Brisbane 15.03.78 SBD.md5
+49d2dd533294a5c0ba65f3174d48091f  Dylan - Brisbane 15.03.78 SBD.txt
+710af190994c7100c05fd15162f2e25a  Dylan - Brisbane 15.03.78 SBD_Info.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-03-15-SBD-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+Disc01Track01 Brisbane SBD JTT.flac:a7d8c81caf95469120aed7f801f80442
+Disc01Track02 Brisbane SBD JTT.flac:60b415fa02ba0aed15a8fe845cff7e0f
+Disc01Track03 Brisbane SBD JTT.flac:f71a2011cfa579c5c8c925855615fa5a
+Disc01Track04 Brisbane SBD JTT.flac:2c3aaf9a89cca51e89dad3709b4da7d8
+Disc01Track05 Brisbane SBD JTT.flac:a98570d9f54e0c4fd1493743b8d0e6f3
+Disc01Track06 Brisbane SBD JTT.flac:e68b039c94c6434376d03d7a8fe26dfc
+Disc01Track07 Brisbane SBD JTT.flac:9c963cda5a03e188e579bbf876d98da6
+Disc01Track08 Brisbane SBD JTT.flac:f6cad9fbd801c4fa3fe0996835166343
+Disc01Track09 Brisbane SBD JTT.flac:e3083b572c6f5fbd5f7ba064a146dbbf
+Disc01Track10 Brisbane SBD JTT.flac:8d3b8dab5c4765e8fc83db45b343e31b
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd78-03-15-SBD-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+Disc02Track01 Brisbane SBD JTT.flac:f16ab1de7f018bbd41a3e6e471cff242
+Disc02Track02 Brisbane SBD JTT.flac:32fb5c6333742e3da4c6184f58164706
+Disc02Track03 Brisbane SBD JTT.flac:b341d6fed3bf330564aa1471ec415ea8
+Disc02Track04 Brisbane SBD JTT.flac:4cfb2ec70a5f6411a31cafc387c62152
+Disc02Track05 Brisbane SBD JTT.flac:7919581da59c3b0114fec1d9607921e2
+Disc02Track06 Brisbane SBD JTT.flac:51674ea8d589eff8d0bc47d94c67578a
+Disc02Track07 Brisbane SBD JTT.flac:69f8270efa2949fd5f5f68bdd0675456
+Disc02Track08 Brisbane SBD JTT.flac:ee63adcdf393759a3087d8ae8d3670ee
+Disc02Track09 Brisbane SBD JTT.flac:7130d27eb15f4d02952f0e805c53656c
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-03-15-SBD-jtt.flacf\Disc One 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     2:36.36       27603116 B   ---   --   ---xx   flac  0.2812  Disc01Track01 Brisbane SBD JTT.flac
+     5:07.25       54213644 B   ---   --   ---xx   flac  0.2960  Disc01Track02 Brisbane SBD JTT.flac
+     5:02.31       53345756 B   ---   --   ---xx   flac  0.2924  Disc01Track03 Brisbane SBD JTT.flac
+     4:43.65       50074124 B   ---   --   ---xx   flac  0.2878  Disc01Track04 Brisbane SBD JTT.flac
+     3:28.32       36766508 B   ---   --   ---xx   flac  0.2843  Disc01Track05 Brisbane SBD JTT.flac
+     5:44.02       60686348 B   ---   --   ---xx   flac  0.2646  Disc01Track06 Brisbane SBD JTT.flac
+     4:28.18       47317580 B   ---   --   ---xx   flac  0.2924  Disc01Track07 Brisbane SBD JTT.flac
+     4:58.58       52703660 B   ---   --   ---xx   flac  0.2962  Disc01Track08 Brisbane SBD JTT.flac
+     4:43.35       50003564 B   ---   --   ---xx   flac  0.2804  Disc01Track09 Brisbane SBD JTT.flac
+     4:12.49       44568092 B   ---   --   ---xx   flac  0.2659  Disc01Track10 Brisbane SBD JTT.flac
+    45:05.51      477282392 B                            0.2842  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd78-03-15-SBD-jtt.flacf\Disc Two 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:43.42       50020028 B   ---   --   ---xx   flac  0.2661  Disc02Track01 Brisbane SBD JTT.flac
+     3:56.48       41743340 B   ---   --   ---xx   flac  0.2761  Disc02Track02 Brisbane SBD JTT.flac
+     3:41.74       39158492 B   ---   --   ---xx   flac  0.2723  Disc02Track03 Brisbane SBD JTT.flac
+     3:28.55       36820604 B   ---   --   ---xx   flac  0.2786  Disc02Track04 Brisbane SBD JTT.flac
+     3:01.71       32095436 B   ---   --   ---xx   flac  0.2587  Disc02Track05 Brisbane SBD JTT.flac
+     6:48.65       72124124 B   ---   --   ---xx   flac  0.2788  Disc02Track06 Brisbane SBD JTT.flac
+     6:00.30       63574604 B   ---   --   ---xx   flac  0.2737  Disc02Track07 Brisbane SBD JTT.flac
+     4:44.42       50196428 B   ---   --   ---xx   flac  0.2831  Disc02Track08 Brisbane SBD JTT.flac
+     4:53.01       51687596 B   ---   --   ---xx   flac  0.2828  Disc02Track09 Brisbane SBD JTT.flac
+    41:19.53      437420652 B                            0.2752  (9 files)
+=================== 
+=================== 
+=================== 

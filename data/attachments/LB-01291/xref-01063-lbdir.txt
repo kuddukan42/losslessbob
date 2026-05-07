@@ -1,0 +1,96 @@
+===================
+===================
+===================
+=== md5 for: bd03-10-12-a.flacf
+===================
+===================
+===================
+d6c69811f2d4a34eaa93684effb4ac19 *Bd 2003- 10-12 D1 01.flac
+d6cfa7f119a20d4550d7aecfbe4ced64 *Bd 2003- 10-12 D1 02.flac
+a14bbee346609ce98b22199eaeed7bb7 *Bd 2003- 10-12 D1 03.flac
+e6eb495a9c8bd2dd324fcb430be6693b *Bd 2003- 10-12 D1 04.flac
+40a791d4a6e7a6184c811865f5d6ca4c *Bd 2003- 10-12 D1 05.flac
+d752379f8bec27345ef768b08ea62fdc *Bd 2003- 10-12 D1 06.flac
+11198b036c5e31cb66f037c6214f6c13 *Bd 2003- 10-12 D1 07.flac
+fc156989b283d4d647e5d3f34e718019 *Bd 2003- 10-12 D1 08.flac
+82fa91db5be358a1dc9b98f00d04a308 *Bd 2003- 10-12 D1 09.flac
+6acc47ce4401c03a7281062b69bd35c8 *Bd 2003- 10-12 D1 10.flac
+8c9de19a50a74d93f7298f41711e21dd *Bd 2003- 10-12 D1 11.flac
+cce66f8a0ceb08008a90074814354ad0 *Bd 2003- 10-12 D1 12.flac
+5e54991dd65e0e97e3953d8a0f975af4 *Bd 2003- 10-12 D2 01.flac
+27aeb8926979da788940d7e91840a157 *Bd 2003- 10-12 D2 02.flac
+46e1767a99ff67111facc1e10f74b914 *Bd 2003- 10-12 D2 03.flac
+a2a7ce325e930c5ae03ab3aeaa46d3dc *Bd 2003- 10-12 D2 04.flac
+278f9a806ed10954008c2a5607c001ad *Bd 2003- 10-12 D2 05.flac
+7dc95bb3cafdff6d122f0f12b6833eda *Bd 2003- 10-12 D2 06.flac
+02f80791c603b10f51b61ede1a4dfbd1 *Bd 2003- 10-12 D2 07.flac
+dcff5b0559cf0c389334c93289fc530d *Bd 2003- 10-12 D2 08.flac
+4a2b9928b46f23c8c4f21ca0fd38a10c *Bd 2003- 10-12 D2 09.flac
+3aa35f02af17c64ad5772afa7f56ea26 *BD 2003-10-12 Karlsbad, Sweden.ffp
+3c1ff28f3daf352b74cadb333bd1bef7 *BD 2003-10-12 Karlsbad, Sweden.md5
+cc89937a755cb08d0ca059e16286d279 *BD 2003-10-12 Karlsbad, Sweden_wav.md5
+31f7463f954e37bdf144ddd35b8b2de9 *Karlstad 2.log
+7b78dc3a67c1ca52372cd20df6927c0b *Karlstad, Sweden, 2003-10-12.txt
+6a3a06678f3df7bc37b789d32500d13a *Karlstadt, Sweden.log
+894373fb9b8d91adee64bbe5da1c9ffd *Karlstadt, Sweden.txt
+===================
+===================
+===================
+=== ffp for: bd03-10-12-a.flacf
+===================
+===================
+===================
+Bd 2003- 10-12 D1 01.flac:d4dc48e4dd5b8e1a687f77f0642f3d3d
+Bd 2003- 10-12 D1 02.flac:a82aa1cfb0f8a07417f310e34d45ee3e
+Bd 2003- 10-12 D1 03.flac:80ae42bcc6e21990be5398615ac1d168
+Bd 2003- 10-12 D1 04.flac:cd618237a537e4658d81c5c5d21d4b73
+Bd 2003- 10-12 D1 05.flac:52c19f87ca503e7ce1f0cb09398dafd3
+Bd 2003- 10-12 D1 06.flac:bf3eabb9b7ae879abe1165311d7b7aba
+Bd 2003- 10-12 D1 07.flac:c572b50b0bb45074b7d85a15a1271acb
+Bd 2003- 10-12 D1 08.flac:24d75c413249402a7aca0328bdcbc856
+Bd 2003- 10-12 D1 09.flac:c21b6c7d9f730fe73d03fbce9bd803fc
+Bd 2003- 10-12 D1 10.flac:492b57b7ba1ac93824b7311a51fd1272
+Bd 2003- 10-12 D1 11.flac:a499910e4c6ebd3d8970306a9ec692c5
+Bd 2003- 10-12 D1 12.flac:e87440dde3af2c41df9f5a73f2678b8c
+Bd 2003- 10-12 D2 01.flac:bfbaef20d0a6d7c51e0e21245d05af2a
+Bd 2003- 10-12 D2 02.flac:e03a1936db3822766e693fa70e27bb49
+Bd 2003- 10-12 D2 03.flac:4c8b1a411077db41dd1c63654888956c
+Bd 2003- 10-12 D2 04.flac:0133a7520b708e8f548cf134d86389ca
+Bd 2003- 10-12 D2 05.flac:03596e44107bc9fdfb094c42a8f45cc8
+Bd 2003- 10-12 D2 06.flac:729eb1eb3e885925829d35fcbff6d431
+Bd 2003- 10-12 D2 07.flac:fafa56b0ea832a061c2903afb890838a
+Bd 2003- 10-12 D2 08.flac:640ff238c8ff542cb864ab3f44b61b33
+Bd 2003- 10-12 D2 09.flac:02a25d2d7d0b072f5d77d0ee7066f5f0
+===================
+===================
+===================
+=== shntool len for: bd03-10-12-a.flacf
+===================
+===================
+===================
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:02.24       10993292 B   ---   --   ---xx   flac  0.5333  Bd 2003- 10-12 D1 01.flac
+     4:26.10       46945964 B   ---   --   ---xx   flac  0.6387  Bd 2003- 10-12 D1 02.flac
+     7:07.51       75442796 B   ---   --   ---xx   flac  0.5490  Bd 2003- 10-12 D1 03.flac
+     5:58.55       63280604 B   ---   --   ---xx   flac  0.6265  Bd 2003- 10-12 D1 04.flac
+    10:27.05      110614604 B   ---   --   ---xx   flac  0.5950  Bd 2003- 10-12 D1 05.flac
+     7:24.48       78434540 B   ---   --   ---xx   flac  0.6073  Bd 2003- 10-12 D1 06.flac
+     5:41.20       60199484 B   ---   --   ---xx   flac  0.5114  Bd 2003- 10-12 D1 07.flac
+     6:55.62       73351868 B   ---   --   ---xx   flac  0.5744  Bd 2003- 10-12 D1 08.flac
+     7:25.34       78578012 B   ---   --   ---xx   flac  0.6401  Bd 2003- 10-12 D1 09.flac
+     5:23.62       57123068 B   ---   --   ---xx   flac  0.4808  Bd 2003- 10-12 D1 10.flac
+     5:42.14       60361772 B   ---   --   ---xx   flac  0.5708  Bd 2003- 10-12 D1 11.flac
+     7:59.42       84594428 B   ---   --   ---xx   flac  0.5425  Bd 2003- 10-12 D1 12.flac
+     7:03.27       74680748 B   ---   --   ---xx   flac  0.6337  Bd 2003- 10-12 D2 01.flac
+     6:11.19       65489132 B   ---   --   ---xx   flac  0.5748  Bd 2003- 10-12 D2 02.flac
+     7:20.08       77634860 B   ---   --   ---xx   flac  0.6282  Bd 2003- 10-12 D2 03.flac
+     5:11.18       54902780 B   ---   --   ---xx   flac  0.5413  Bd 2003- 10-12 D2 04.flac
+     4:43.36       50005916 B   ---   --   ---xx   flac  0.6131  Bd 2003- 10-12 D2 05.flac
+     7:21.11       77818316 B   ---   --   ---xx   flac  0.6104  Bd 2003- 10-12 D2 06.flac
+     0:32.23        5698940 B   ---   --   ---xx   flac  0.5505  Bd 2003- 10-12 D2 07.flac
+     6:51.60       72641564 B   ---   --   ---xx   flac  0.5516  Bd 2003- 10-12 D2 08.flac
+     7:33.09       79930412 B   ---   --   ---xx   flac  0.6264  Bd 2003- 10-12 D2 09.flac
+   128:22.38     1358723100 B                            0.5861  (21 files)
+===================
+===================
+===================

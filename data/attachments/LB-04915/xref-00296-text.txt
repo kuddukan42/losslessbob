@@ -1,0 +1,203 @@
+===================
+===================
+===================
+=== BD Hollow Horn Vol 1.txt
+===================
+===================
+===================
+silver cd > eac > wav> flac
+
+Bob Dylan
+
+Hollow Horn Performing Artist Series Volume 1
+
+1958-1961
+
+Ten Million In A Week
+
+
+Disc 1
+
+Zimmerman Home Tape 1958
+
+01 - Hey Little Richard
+02 - Buzz Buzz Buzz
+03 - Jenny Jenny
+04 - We Belong Together
+
+
+Wallace Apartment Tape
+May 1960
+
+05 - Nobody Knows You
+06 - The Great Historical Bum
+07 - Mary Ann
+08 - Sinner Man
+09 - Abner Young
+10 - Muleskinner Blues	
+11 - One Eyed Jacks
+12 - Columbus Stockade Blues
+13 - Go Down Ye Murderers
+14 - This Land Is Your Land
+15 - Rockabye My Sara Jane
+
+
+Dylan Apartment Tape
+September 1960
+
+16 - Red Rosey Bush
+17 - Johnny I Hardly Knew You
+18 - Jesus Christ
+19 - Streets Of Glory
+20 - KC Moan
+21 - Muleskinner Blues
+22 - I'm A Gambler
+23 - Talkin' Columbia
+24 - Talkin' Merchant Marine
+25 - Talkin' Hugh Brown
+26 - Talkin' Inflation Blues
+
+
+Gleason Home Tape
+February 1961
+ 
+27 - San Francisco Bay Blues
+28 - Jesus Met The Woman At The Well
+29 - Gypsy Davey
+30 - Pastures Of Plenty
+31 - Trail Of The Buffalo	
+32 - Jesse James
+33 - Riding In My Car
+34 - Southern Cannonball
+35 - Bring Me back My Blue Eyed Boy
+36 - Remember Me
+
+
+Gooding Apartment Tape
+May 1962
+
+37 - Ballad Of Donald White
+38 - Wichita
+39 - Acne
+40 - Rocks And Gravel
+41 - (It Makes A) Long Time Man Feel Bad
+42 - Ranger's Command
+
+
+Disc 2
+
+Bleecher Apartment Tape
+May 1962
+
+01 - Ramblin' Round
+02 - Death Don't Have No Mercy
+03 - It's Hard To Be Blind
+04 - This Train Is Bound For Glory
+05 - Harmonica Solo
+06 - Talkin' Fish Blues
+07 - Pastures Of Plenty
+08 - This Land Is Your Land
+09 - Two Trains Running
+10 - Wild Mountain Thyme
+11 - Howdido
+12 - Riding In My Car
+13 - Don't You Push Me Down
+14 - Come See
+15 - Want It Now
+16 - San Francisco Bay Blues
+17 - Young But Daily Growing
+18 - Devilish Mary
+19 - Railroad Bill
+20 - Will The Circle Be Unbroken?
+21 - Man Of Constant Sorrow
+22 - Pretty Polly
+23 - The Butcher Boy
+24 - James Alley Blues
+25 - Why'd You Cut My Hair?
+
+
+
+===================
+===================
+===================
+=== HHPA-1.md5
+===================
+===================
+===================
+;Created with MD5 by Eternal Storms Software
+;Here you can type your comments for the file
+84fcbb3ef8e5deed5b476ee99ead827a - 42 Ranger's Command.flac
+194a0bd00780db33e15eab4abff09478 - 41 (It Makes A) Long Time Man Feel Bad.flac
+f23840ec3dad196bd43d2e17cdf38d6b - 40 Rocks And Gravel.flac
+bb0c4d2d0ef76910836daeacfe8bfae7 - 39 Acne.flac
+d5c6a6de49c2caa620bcd22327624e89 - 38 Wichita.flac
+2fa8cf5897190cf0fdb73ef75e1f3216 - 37 Ballad Of Donald White.flac
+0a90266f2916cc010d6bb1262c4865bb - 36 Remember Me.flac
+94f05347675dca6849e46b2c10eb2eda - 35 Bring Me Back My Blue Eyed Boy.flac
+1921973a639f0474a7385ecdae8d35d6 - 34 Southern Cannonball.flac
+02b2e58fe05ea7379ee6b1882735204f - 33 Riding In My Car.flac
+9ffe14a074fc99ce1bcfad67a249f707 - 32 Jesse James.flac
+a6e76f8d6e80666bca74f11a94b9440a - 31 Trail Of The Buffalo.flac
+6f4cf991daafe3a7509f8c2248330bc0 - 30 Pastures Of Plenty.flac
+7c0514e695772226e11bec8d7ab92a28 - 29 Gypsy Davey.flac
+eebdb6ca4ac3f0b9b32b25ebfa410eaf - 28 Jesus Met The Woman At The Well.flac
+4fdd0589d110808ea6f737e21286be9d - 27 San Francisco Bay Blues.flac
+3e10a44b34cf1618c7199e0ab45a2a25 - 26 Talkin' Inflation Blues.flac
+302b620d74305fcc2bd671b800e16b02 - 25 Talkin' Hugh Brown.flac
+ad373f99b38555a0d829c37d9acaae4d - 24 Talkin' Merchant Marine.flac
+7d16b2e473d92c16ca81bd78cfc4d1a9 - 23 Talkin' Columbia.flac
+da3f6837f7ab73809973b361f905d052 - 22 I'm A Gambler.flac
+a7fd87036ffbcba5f2320251d7c643b4 - 21 Muleskinner Blues.flac
+2926b2bd31eeafe7bd4a5ff1760f7b5e - 20 KC Moan.flac
+747bc3686feafe7c316593abb4316b6f - 19 Streets Of Glory.flac
+cf0002dce128071689a7dfbf0f7da23d - 18 Jesus Christ.flac
+27aa16ea49330a3c12ec7d2d326bd1e1 - 17 Johnny I Hardly Knew You.flac
+62a6f03ae10bd375d70f24e6fe8779e4 - 16 Red Rosey Bush.flac
+2e853ceb6e0ec360abfe92d4122a7242 - 15 Rockabye My Sara Jane.flac
+84ccd073a98de96a8ee3672dffa81f0b - 14 This Land Is Your Land.flac
+b46836340bfac8f0c53dd9091bc93c47 - 13 Go Down Ye Murderers.flac
+c9d2084472961a8ed05b58238ebe1675 - 12 Columbus Stockade Blues.flac
+fadb159649a303ea828f902ba3a41f54 - 11 One Eyed Jacks.flac
+4916ca1260927c681e377c3975ee7174 - 01 Hey Little Richard.flac
+dbae91a95ce0c7b93df9f50d7cdbfb44 - 10 Muleskinner Blues.flac
+08986d4891331a3d2f22d83cf1026ef3 - 09 Abner Young.flac
+a5751f06de0fb1dcdb81e7d665cc8994 - 08 Sinner Man.flac
+a7f5851971421cab9676c9c6625078fe - 07 Mary Ann.flac
+e5fb9e8543e5be128a229c6db7e47c17 - 06 The Great Historical Bum.flac
+90a86a01bf75793ccae5b919979a3ae1 - 05 Nobody Knows You.flac
+3faf553f3f669020fac9ddb2035891b4 - 04 We Belong Together.flac
+c0a2cde87478dc2feb78698df4388193 - 03 Jenny Jenny.flac
+7221058430086b37b2a0a9157f67e55d - 02 Buzz Buzz Buzz.flac
+1a5f603ac814571bacf9c10b5e647203 - 25 Why'd You Cut My Hair_.flac
+e1f774b061edb226b6605b5ceab6ce54 - 24 James Alley Blues.flac
+f4e8ceb46ba53644ed56bb1848ab3b31 - 23 The Butcher Boy.flac
+25643bda6e0d3619aec74035e6691d84 - 22 Pretty Polly.flac
+981d2ee90ec75f258e9f553095f711f9 - 21 Man Of Constant Sorrow.flac
+38e2145ef2f54809cd9c52c05816af84 - 20 Will The Circle Be Unbroken_.flac
+034ddf2cb6f6919bc088c24c3858bd7e - 19 Railroad Bill.flac
+aeb7fb589d59c325bc6bc766df6c42f5 - 18 Devilish Mary.flac
+b3f2ecabfbe1f2da2a2055a5f8bbc8d5 - 17 Young But Daily Growing.flac
+2660ff3f964affab1fe14137b59e5eb2 - 16 San Francisco Bay Blues.flac
+b1a4e21361bcd2ea829b8761d96bb0dc - 15 Want It Now.flac
+17adf4d0b4c49f563c25fe926a019cd3 - 04 This Train Is Bound For Glory.flac
+6645495575ab96ae8c6e2143f1b9f10c - 11 Howdido.flac
+af78f5640d959adb89a6b3c9b500a35e - 10 Wild Mountain Thyme.flac
+2f3d02edc7d18a231ec2e61ede74badf - 09 Two Trains Running.flac
+df307c2452603be386df49c296ef746c - 08 This Land Is Your Land.flac
+38f9d44fe4483fa8473a23fa10ac6810 - 07 Pastures Of Plenty.flac
+43170899850c89d5d8627138dfc07136 - 06 Talkin' Fish Blues.flac
+d69f069d9afb9d3a23a5d5b6d3398a7a - 05 Harmonica Solo.flac
+d46771220e6ff5c586cbd5785e7f6f6c - 02 Death Don't Have No Mercy.flac
+2260553485d251eadca0f57c645fc5ed - 01 Ramblin' Round.flac
+76832b7c08dd45a40a4bdd40d3528eab - 03 It's Hard To Be Blind.flac
+d9c5ec274b93a28ae04e979fb3ecb034 - 14 Come See.flac
+aa5c75beaeba1059471ca14f979815ae - 13 Don't You Push Me Down.flac
+8c4c171741bfa223b364e998b721d0d2 - 12 Riding In My Car.flac
+58c5604638e8eb83baea4ae2f3ce84a2 - outside back 300 dpi.jpg
+82935ba0804e5ae90cf3ab593087ae9c - inside front 300 dpi.jpg
+c4215292826539ce3c6bd2749f446be2 - inside back 300 dpi.jpg
+271c01738c02e3b040daf3163a5423e2 - front 300 dpi.jpg
+572bc21a863af316174c5fc60fb9e389 - BD Hollow Horn Vol 1.txt
+===================
+===================
+===================

@@ -1,0 +1,77 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd89-09-06.flacf 
+=================== 
+=================== 
+=================== 
+8d8e634ec70834900b919f91f858ec81  bd89-09-06-LB-2746.txt
+7df9caeb4ef698e7dcbd10865c5c2db1  d1t01.flac
+2bb24d6862df3776bbb0b48334432e7b  d1t02.flac
+9769984b137e511c290bc420c258443b  d1t03.flac
+9b8f39840ff2b94ead759ae684247c22  d1t04.flac
+a1c9af41a996f009dbaa3c1928e8155e  d1t05.flac
+d04f349f03cf896d0ec3b5f2b7cded69  d1t06.flac
+b5a179e127a8c44ac8f60e7408e5587c  d1t07.flac
+071c179c350e3cbde3f5b8468162df64  d1t08.flac
+824b648c63c7057caf5cef4dbc922ed2  d1t09.flac
+29e6c9c7e64dbc3ceae348515b41360d  d1t10.flac
+7cbf75864a91f60a4c5c6941deb055a6  d1t11.flac
+ec4b0aab6e1457464bf978994dbf46e2  d1t12.flac
+34992d26405dc0ff76a119cb6edd2330  d1t13.flac
+c83d446870a05948290cf42f5ff29734  d2t01.flac
+98a0a03d70711f80e631480154542aff  d2t02.flac
+34ef7bb6bf57a64ade3cc9f20f109d76  d2t03.flac
+7bf9a3092b027ae34f11844865769b2c  San Diego '89.txt
+3bf128b1c5523af5c6092a72a6194d0f  San Diego 89.md5
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd89-09-06.flacf 
+=================== 
+=================== 
+=================== 
+d1t01.flac:4533be55b5e04dab2b6bb15b283e4ff4
+d1t02.flac:9aa2c9082168ff46c571fdd5dbbd44a7
+d1t03.flac:18ba4fbb6cc66e0a06349b6bb7988ba9
+d1t04.flac:481236f9eff6a1e04d545c09df21e6c6
+d1t05.flac:bb2a62e8d031b98629998b41ec22e6ce
+d1t06.flac:57e2d887d39d0f3f84c435a64c3b799b
+d1t07.flac:aeb2a54fae33b3e90735e855f50ba005
+d1t08.flac:bc9d699f838540c0188cfba4f15daca2
+d1t09.flac:917ae1c9edde8895d5176553ce8404b6
+d1t10.flac:5ab6e8ef1bed3e729dcc54d94ec50404
+d1t11.flac:aabccf848e46f41e99adde1126d156e2
+d1t12.flac:a3605daa83146454313e9eb9718b488f
+d1t13.flac:96b4e35ce243438f05684ecb95805e95
+d2t01.flac:d9e5bb9cb62903fae3abcb7878f79b8c
+d2t02.flac:cd3c895e98f63a6669c2e46b6a2ed1b0
+d2t03.flac:aec7aa234f93227fb4cc28f6f1e22dbe
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd89-09-06.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:00.12       74116268 B   ---   --   ---xx   flac  0.5732  d1t01.flac
+     4:06.39       43486172 B   ---   --   ---xx   flac  0.5928  d1t02.flac
+     6:19.41       66952076 B   ---   --   ---xx   flac  0.5805  d1t03.flac
+     5:58.39       63242972 B   ---   --   ---xx   flac  0.6056  d1t04.flac
+     5:28.48       57972140 B   ---   --   ---xx   flac  0.6111  d1t05.flac
+     4:20.36       45948716 B   ---   --   ---xx   flac  0.6154  d1t06.flac
+     4:27.57       47232908 B   ---   --   ---xx   flac  0.5946  d1t07.flac
+     2:56.21       31095836 B   ---   --   ---xx   flac  0.6308  d1t08.flac
+     5:53.05       62281004 B   ---   --   ---xx   flac  0.5961  d1t09.flac
+     6:29.43       68720780 B   ---   --   ---xx   flac  0.5482  d1t10.flac
+     5:37.64       59597372 B   ---   --   ---xx   flac  0.5731  d1t11.flac
+     8:15.17       87358028 B   ---   --   ---xx   flac  0.5759  d1t12.flac
+     4:01.63       42660620 B   ---   --   ---xx   flac  0.6019  d1t13.flac
+     6:58.13       73765820 B   ---   --   ---xx   flac  0.6327  d2t01.flac
+     6:48.44       72074732 B   ---   --   ---xx   flac  0.6039  d2t02.flac
+     5:04.49       53740892 B   ---   --   ---xx   flac  0.6648  d2t03.flac
+    89:46.66      950246336 B                            0.5974  (16 files)
+=================== 
+=================== 
+=================== 

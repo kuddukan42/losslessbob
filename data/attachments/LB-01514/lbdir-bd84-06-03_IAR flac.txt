@@ -1,0 +1,130 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd84-06-03_IAR flac 
+=================== 
+=================== 
+=================== 
+d372ddd95c78dd04e10d6c1bd1b878dc  bd84-06-03_IAR.txt
+073d156dab4159e95a67534a39383ae8  cd1\01 Tuning.flac
+73e13d087e6c364ecff8df088e258d73  cd1\02 Highway 61 Revisited.flac
+d9558fbed479a2abfdd6c027031e4f15  cd1\03 Jokerman.flac
+7189cbfd7b8518a362f78234571f852e  cd1\04 All Along The Watchtower.flac
+4fc9476ddc0029cb7c85ae0945930e84  cd1\05 Just Like A Woman.flac
+99b8c5b7e18781b81d0796656bfb147e  cd1\06 Maggie's Farm.flac
+33b34a81a197bf769ed9aeb5c78741f8  cd1\07 I And I.flac
+893f2439abd85c9e17853974cdcfff44  cd1\08 License To Kill.flac
+8e5821677ffde9cd9c7c07880ce48495  cd1\09 Greg Sutton , Got My Mojo Working.flac
+8826e357ebdc730a8921c5e6f31b5b43  cd1\10 It Ain't Me, Babe.flac
+affb1114d19b5bfe1f3d947ba0a25b42  cd1\11 It's Alright, Ma (I'm Only Bleeding).flac
+2ba1fadee96e4277e419568eb4423eed  cd1\12 Don't Think Twice, It's All Right.flac
+2947d316cf472a915d971bc071232925  cd1\13 It's All Over Now, Baby Blue.flac
+9fee23f5c1027e477c0ddfe6fab35799  cd1\14 Masters Of War.flac
+8425efa1aa228646115446ea532e5acc  cd1\CD1.md5
+0ddd1458b5cb90cc84566cf36a6f4d57  cd2\01 Ballad Of A Thin Man.flac
+44b0c9ca1cfbc5b20daa81ca100fb22e  cd2\02 When You Gonna Wake Up.flac
+ee99284acd28adc5540592db9f3a6ba0  cd2\03 Every Grain Of Sand.flac
+87d3f6ac3a4108436e0d73865bb3b0e6  cd2\04 Like A Rolling Stone.flac
+9d986408daf6c6f2854c789b5a2cd8fc  cd2\05 Audience.flac
+b53974e2f4dbf79b38385e12cb8572e0  cd2\06 Girl Of The North Country.flac
+dc01c1eee286880f20c82fca7f5fdadf  cd2\07 The Lonesome Death Of Hattie Carroll.flac
+8347483c139ab760e50e707a861bb3d4  cd2\08 Do You Wanna Sing - Carlos Santana invitation.flac
+f21dbe709f855866d171d6867db60556  cd2\09 Blowin' In The Wind.flac
+e9cce56fd29abd68102d32d94f740d51  cd2\10 I Shall Be Released.flac
+a3749b13c0939f022228cf237e64581a  cd2\11 Tombstone Blues.flac
+92ee14d6a9586b8bf9f134974ee24270  cd2\12 Why Do I Have To Choose.flac
+72df7e3271e0e8e049e1a4e4d391458f  cd2\13 Forever Young.flac
+8dcb89e760a93e52540e27193f14ccf9  cd2\14 Cheers.flac
+a31dd5b2acc57fe7967e2d6455b159b0  cd2\CD2.md5
+9a68c73e7b4ff0e76eb74fe56c3dcb78  Munich, W. Germany, June 3, 1984.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-03_IAR flac\cd2 
+=================== 
+=================== 
+=================== 
+01 Ballad Of A Thin Man.flac:4f7cc22194e6f0a8055ce650c24d3e37
+02 When You Gonna Wake Up.flac:f3c316708feeb7cc5b1a01f13d856e7a
+03 Every Grain Of Sand.flac:d110231ed410f605bc4c0db6b0443aa0
+04 Like A Rolling Stone.flac:eef2062c00685b202eb7c504fa2b48da
+05 Audience.flac:f8a966bca260a206acdb91bca264daf9
+06 Girl Of The North Country.flac:b4ebfb186ca7ac6a68da8ed1ad2502c2
+07 The Lonesome Death Of Hattie Carroll.flac:9931bebaba0f939cf68854503f67b350
+08 Do You Wanna Sing - Carlos Santana invitation.flac:aeabd3eef2c11997b64ee658967a1773
+09 Blowin' In The Wind.flac:e88b9a135bd0cb79af2ab9f41abebd1d
+10 I Shall Be Released.flac:4add0424af3566303273ea45b907bee9
+11 Tombstone Blues.flac:fdb1ec9a1e39d580e59cc67deb366f9a
+12 Why Do I Have To Choose.flac:e6a33b0396f17d92bc08aefc24793499
+13 Forever Young.flac:f609d8adc141e2700f750eb1ed888e76
+14 Cheers.flac:f29d0c04ed2807603203f0422ef6f5f7
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd84-06-03_IAR flac\cd1 
+=================== 
+=================== 
+=================== 
+01 Tuning.flac:997312371101fdecb9af739195e808d5
+02 Highway 61 Revisited.flac:c0cf66695934d2433db47019b1ee1bb8
+03 Jokerman.flac:3f50b2fe6e801949c429c54db7a8ec6e
+04 All Along The Watchtower.flac:68fb5ee5bb55c29b66984df84b614b8b
+05 Just Like A Woman.flac:8eca9dde04e3a1030fda3d03017de6d1
+06 Maggie's Farm.flac:581664804ea6f78d5e0927e3d2c58b7c
+07 I And I.flac:c24eaf3783d6b6f571cc4ed7de6b2c75
+08 License To Kill.flac:5731e39208d2d97118cb16dd3c6794f5
+09 Greg Sutton , Got My Mojo Working.flac:d96886a2f5e3a118dfc5b2d4aea2b0a4
+10 It Ain't Me, Babe.flac:8d260cfdc59bf716ccd995f1c7a8d63a
+11 It's Alright, Ma (I'm Only Bleeding).flac:68e0c79db66d9758c504f8ab75c91894
+12 Don't Think Twice, It's All Right.flac:41fc4d01f0179c044e9d6462fc007537
+13 It's All Over Now, Baby Blue.flac:a17a4c0cb3965595965aa287cb973301
+14 Masters Of War.flac:40246260157be1977c26d596d91eabb2
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-03_IAR flac\cd2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:10.60       44241164 B   ---   --   ---xx   flac  0.5545  01 Ballad Of A Thin Man.flac
+     4:33.11       48183116 B   ---   --   ---xx   flac  0.5878  02 When You Gonna Wake Up.flac
+     5:34.41       59014076 B   ---   --   ---xx   flac  0.5506  03 Every Grain Of Sand.flac
+     6:29.68       68779580 B   ---   --   ---xx   flac  0.5990  04 Like A Rolling Stone.flac
+     3:41.53       39109100 B   ---   --   ---xx   flac  0.5010  05 Audience.flac
+     4:16.35       45240764 B   ---   --   ---xx   flac  0.5306  06 Girl Of The North Country.flac
+     5:14.72       55558988 B   ---   --   ---xx   flac  0.5300  07 The Lonesome Death Of Hattie Carroll.flac
+     1:30.67       16033628 B   ---   --   ---xx   flac  0.5044  08 Do You Wanna Sing - Carlos Santana invitation.flac
+     5:13.63       55361420 B   ---   --   ---xx   flac  0.5481  09 Blowin' In The Wind.flac
+     4:47.46       50735036 B   ---   --   ---xx   flac  0.5693  10 I Shall Be Released.flac
+     4:55.05       52049804 B   ---   --   ---xx   flac  0.5977  11 Tombstone Blues.flac
+     4:57.35       52473164 B   ---   --   ---xx   flac  0.5676  12 Why Do I Have To Choose.flac
+     5:05.48       53914940 B   ---   --   ---xx   flac  0.5581  13 Forever Young.flac
+     0:34.06        6011756 B   ---   --   ---xx   flac  0.4737  14 Cheers.flac
+    61:06.10      646706536 B                            0.5578  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd84-06-03_IAR flac\cd1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.08       10602860 B   ---   --   ---xx   flac  0.4180  01 Tuning.flac
+     4:34.26       48394796 B   ---   --   ---xx   flac  0.5920  02 Highway 61 Revisited.flac
+     6:30.24       68852492 B   ---   --   ---xx   flac  0.5846  03 Jokerman.flac
+     4:43.45       50027084 B   ---   --   ---xx   flac  0.5852  04 All Along The Watchtower.flac
+     6:53.31       72926156 B   ---   --   ---xx   flac  0.5542  05 Just Like A Woman.flac
+     4:22.16       46254476 B   ---   --   ---xx   flac  0.5791  06 Maggie's Farm.flac
+     5:39.65       59952524 B   ---   --   ---xx   flac  0.5394  07 I And I.flac
+     3:58.05       41995004 B   ---   --   ---xx   flac  0.5610  08 License To Kill.flac
+     4:46.33       50528060 B   ---   --   ---xx   flac  0.5850  09 Greg Sutton , Got My Mojo Working.flac
+     6:22.68       67544780 B   ---   --   ---xx   flac  0.5302  10 It Ain't Me, Babe.flac
+     6:45.04       71451452 B   ---   --   ---xx   flac  0.5551  11 It's Alright, Ma (I'm Only Bleeding).flac
+     5:25.30       57400604 B   ---   --   ---xx   flac  0.5538  12 Don't Think Twice, It's All Right.flac
+     5:51.72       62085788 B   ---   --   ---xx   flac  0.5985  13 It's All Over Now, Baby Blue.flac
+     5:07.70       54319484 B   ---   --   ---xx   flac  0.5956  14 Masters Of War.flac
+    72:01.47      762335560 B                            0.5667  (14 files)
+=================== 
+=================== 
+=================== 

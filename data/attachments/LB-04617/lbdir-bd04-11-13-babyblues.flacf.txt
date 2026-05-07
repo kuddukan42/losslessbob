@@ -1,0 +1,82 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-11-13-babyblues.flacf 
+=================== 
+=================== 
+=================== 
+bbf6e69b4cc8b7bdcbd39e7c640417fa  bd04-11-13-babyblues-LB-4617.txt
+87125a6f9059156018879e2710562921  bob dylan 11-13-04  101.flac
+51fd21f933ad8f19d46935e83969cf80  bob dylan 11-13-04  102.flac
+1b77e21cfc91a488ecc041dfbe1b1f76  bob dylan 11-13-04  103.flac
+62fe9d8c513952bcb440803e10787d1d  bob dylan 11-13-04  104.flac
+6cdea9e8e0010b8c79ebcf7eb8aa9aa4  bob dylan 11-13-04  105.flac
+1510ef943bf99c1473d506992ef8bd6f  bob dylan 11-13-04  106.flac
+4338100bfd93b14ceb4d6e1874a3fb8b  bob dylan 11-13-04  107.flac
+7bd6264b93936be905d1fce05493266b  bob dylan 11-13-04  108.flac
+07ef65d60ec31b4e1b0638b4e9c2183f  bob dylan 11-13-04  109.flac
+1f930381bf0bfd57b0456c6e3f1c5677  bob dylan 11-13-04  201.flac
+23645035022426d30a1d1ac4107d8b3c  bob dylan 11-13-04  202.flac
+cbca075fe1f16fbb17574498a29fac2d  bob dylan 11-13-04  203.flac
+53d6765bd69aa1e46170987ab5b0481f  bob dylan 11-13-04  204.flac
+a2df1631d9f1ecce0afbbf34c0df47ee  bob dylan 11-13-04  205.flac
+561104305ea2af0284042d79d167cbc2  bob dylan 11-13-04  206.flac
+03dda155323f687fd6a228f40832fba9  bob dylan 11-13-04  207.flac
+16da384ca3ec33708a1e47217a5debd4  bob dylan 11-13-04  208.flac
+357903c4ac01b5738e2f84fff90b6be9  bob dylan 11-13-04  209.flac
+dad9ded783ee13ecf881804cb1e69534  bob dylan 11-13-04 babyblues.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-11-13-babyblues.flacf 
+=================== 
+=================== 
+=================== 
+bob dylan 11-13-04  101.flac:b53dfa8f71a22eb1d274cad7dc840684
+bob dylan 11-13-04  102.flac:f99d75eab20c43431c26348a1e2b6520
+bob dylan 11-13-04  103.flac:c7bea3b85453408a684a3aeed8c1e7a5
+bob dylan 11-13-04  104.flac:c79d3730a1a50eea5fb6440c46976c84
+bob dylan 11-13-04  105.flac:aa10687a1b6f4e022815bb6f99fcc8d2
+bob dylan 11-13-04  106.flac:15f51d46234a90fba1c7a4d27f2e1419
+bob dylan 11-13-04  107.flac:eb4530ba84df24cc2c52287da44bdd98
+bob dylan 11-13-04  108.flac:d971efb5189cfb7628cb13186197b2b7
+bob dylan 11-13-04  109.flac:e267183dd9f2db6bd0d9ca8e8610ff79
+bob dylan 11-13-04  201.flac:55661f55b996ae1f5425c76741a01049
+bob dylan 11-13-04  202.flac:afc40da23893388e31dc97e5ed9ba4c0
+bob dylan 11-13-04  203.flac:9078a5f56c082695bc5c66cbc33ead1f
+bob dylan 11-13-04  204.flac:903329d6c3da12f262f3f6bb8025e4d0
+bob dylan 11-13-04  205.flac:5039cdb334d08a3d75a69757bb6995a3
+bob dylan 11-13-04  206.flac:20948236535dc5503f8d706c969698b4
+bob dylan 11-13-04  207.flac:f350eb0455810845c1e5a76778412630
+bob dylan 11-13-04  208.flac:c386bbd6991cd27a2dff69888a87e3a1
+bob dylan 11-13-04  209.flac:299a2c9e1aa6df7e2c80a49d468358d3
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-11-13-babyblues.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     1:00.73       10755740 B   ---   --   ---xx   flac  0.4614  bob dylan 11-13-04  101.flac
+     5:21.51       56744396 B   ---   --   ---xx   flac  0.5612  bob dylan 11-13-04  102.flac
+     5:45.31       60930956 B   ---   --   ---xx   flac  0.5076  bob dylan 11-13-04  103.flac
+     6:36.70       70019084 B   ---   --   ---xx   flac  0.5526  bob dylan 11-13-04  104.flac
+     7:54.21       83663036 B   ---   --   ---xx   flac  0.4657  bob dylan 11-13-04  105.flac
+     6:24.64       67888172 B   ---   --   ---xx   flac  0.5809  bob dylan 11-13-04  106.flac
+     5:44.49       60796892 B   ---   --   ---xx   flac  0.4937  bob dylan 11-13-04  107.flac
+     5:19.59       56410412 B   ---   --   ---xx   flac  0.4613  bob dylan 11-13-04  108.flac
+     6:41.05       70748204 B   ---   --   ---xx   flac  0.5596  bob dylan 11-13-04  109.flac
+     6:07.00       64738844 B   ---   --   ---xx   flac  0.4323  bob dylan 11-13-04  201.flac
+     6:55.62       73351868 B   ---   --   ---xx   flac  0.5571  bob dylan 11-13-04  202.flac
+     5:33.28       58807100 B   ---   --   ---xx   flac  0.4950  bob dylan 11-13-04  203.flac
+     7:05.70       75134684 B   ---   --   ---xx   flac  0.5748  bob dylan 11-13-04  204.flac
+     7:41.13       81351020 B   ---   --   ---xx   flac  0.4853  bob dylan 11-13-04  205.flac
+     7:15.47       76844588 B   ---   --   ---xx   flac  0.5625  bob dylan 11-13-04  206.flac
+     3:46.63       40014620 B   ---   --   ---xx   flac  0.4953  bob dylan 11-13-04  207.flac
+     6:46.55       71747804 B   ---   --   ---xx   flac  0.5701  bob dylan 11-13-04  208.flac
+     6:17.69       66665132 B   ---   --   ---xx   flac  0.5604  bob dylan 11-13-04  209.flac
+   108:20.05     1146612552 B                            0.5254  (18 files)
+=================== 
+=================== 
+=================== 

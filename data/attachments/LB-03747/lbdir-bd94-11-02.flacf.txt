@@ -1,0 +1,90 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd94-11-02.flacf 
+=================== 
+=================== 
+=================== 
+820dbc007a8e4320ac0d8087328ed4dd  bd94-11-02-LB-3747.txt
+a41edd08a3272146f652a1a779aafff8  CD1\01.flac
+3e75c791df52adaccf648bdd6c484036  CD1\02.flac
+57722daa0b7c1008e8c87cb198bc0ead  CD1\03.flac
+a557c4f08f7f2a128f8f45e2dcb9aaca  CD1\04.flac
+6f2a479ddc0dfee3895a59c64e124b5a  CD1\05.flac
+52b51eae7c6fc38c10cb5866f6e667ad  CD1\06.flac
+5aed032f8d14205bbede4d262463dac2  CD1\07.flac
+0be85f208625d57d0a52400b4e2e486b  CD1\08.flac
+dec8c9b6549d94fc644bea16e3c2fdff  CD1\FFP.txt
+0ae57e6e5f7d5b0c1a5dd05a4ae2c7b6  CD2\01.flac
+58646b94d2c14d1cbb062440ad4133b0  CD2\02.flac
+817a6e483c1566959dce4ee3ae579498  CD2\03.flac
+0efa6c1bac7d8dfb0f9b427973b43290  CD2\04.flac
+3744a722326056daab7d26373c464c7d  CD2\05.flac
+44a8e423784152196907f671720b0a4f  CD2\06.flac
+b628a0f0decc849070c484e806e5f965  CD2\FFP.txt
+9d0aec6bca7fbde7181364fa02401e0e  Roanoke 1994_11_02_Roanoke_Back.jpg
+9a11d4f86234602460d5d3b6200fcd51  Roanoke 1994_11_02_Roanoke_Front.jpg
+19775affd798d1c8903227b1accc3e3e  text.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-11-02.flacf\CD1 
+=================== 
+=================== 
+=================== 
+01.flac:bb915ba9fd44ead35bb1175e041f58fa
+02.flac:f975627c0db475bcad908f690349def9
+03.flac:7023b997d23ea0f995f9a5fe27207994
+04.flac:fd859617aa297089005c6fb5b6aeed99
+05.flac:b9155c09dd2fe3b5e45c03967bb7d2a4
+06.flac:c84d1c951a8fd890a97ea2ee8c212a46
+07.flac:cf5cab1358257f1d3debf1e89ce7d740
+08.flac:9f2bab7c6ab9f0035f77914c3faf1d05
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd94-11-02.flacf\CD2 
+=================== 
+=================== 
+=================== 
+01.flac:a97a51d2161b849cb49bd31b9b912f5d
+02.flac:41fe40023caf2f3bee1b2c0037948b97
+03.flac:e13db998cdfc7a9a974841aefdd096e5
+04.flac:82e44c38b9e2ed5e5a1369e4f234c97e
+05.flac:c5d9924a309953379654d4e13a4de23f
+06.flac:a2f9f7b8fa179ab2e2cd92c210a38649
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-11-02.flacf\CD1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     8:03.70       85365884 B   ---   --   ---xx   flac  0.5486  01.flac
+     6:15.20       66197084 B   ---   --   ---xx   flac  0.5441  02.flac
+     6:02.60       63997964 B   ---   --   ---xx   flac  0.5729  03.flac
+     8:32.15       90352124 B   ---   --   ---xx   flac  0.5327  04.flac
+     9:18.55       98560604 B   ---   --   ---xx   flac  0.5541  05.flac
+     8:32.45       90422684 B   ---   --   ---xx   flac  0.5038  06.flac
+     6:26.05       68102204 B   ---   --   ---xx   flac  0.4586  07.flac
+     6:58.07       73751708 B   ---   --   ---xx   flac  0.4454  08.flac
+    60:09.52      636750256 B                            0.5212  (8 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd94-11-02.flacf\CD2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     7:33.65       80062124 B   ---   --   ---xx   flac  0.4814  01.flac
+     6:20.50       67149644 B   ---   --   ---xx   flac  0.5534  02.flac
+     8:18.55       87976604 B   ---   --   ---xx   flac  0.5488  03.flac
+     6:30.00       68796044 B   ---   --   ---xx   flac  0.5637  04.flac
+     6:38.70       70371884 B   ---   --   ---xx   flac  0.4979  05.flac
+     8:51.72       93837788 B   ---   --   ---xx   flac  0.4927  06.flac
+    44:14.12      468194088 B                            0.5212  (6 files)
+=================== 
+=================== 
+=================== 

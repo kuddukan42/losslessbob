@@ -1,0 +1,73 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd87-07-19-aud.flacf 
+=================== 
+=================== 
+=================== 
+24a6c6368cce88328748c5eee0bdf11c  bd87-07-19-aud-LB-3251.txt
+e6d4370de2182d9f86748be2706ce740  Eugene 19july87 aud.md5
+23e146a1e375bcef79a1671afcd38204  Eugene87-101.flac
+805d51d30a59fabd4ee513f74b5d817d  Eugene87-102.flac
+309e7182b57d389fbb22ec4977d48034  Eugene87-103.flac
+3c4759830355cfc62c3355860accdcf7  Eugene87-104.flac
+47c0cbf6983a6230a366029f8e449725  Eugene87-105.flac
+6ba541ec3a425a20b9c092d34eae0635  Eugene87-106.flac
+822896d82efe88696d9a8d0c09b4f7d9  Eugene87-107.flac
+6557a10652028a7e3c66a9a95693f36e  Eugene87-108.flac
+9408b5a52658de8e9bc67527c6678b56  Eugene87-201.flac
+c684af1afd59ec5470927fd15862f6c7  Eugene87-202.flac
+5a8a8e5ba3b714a8a406f9ed9a2f4a7d  Eugene87-203.flac
+23f539aff3d008aca882bf0357a632ad  Eugene87-204.flac
+1e3bfdf2aa416954167eb1ea253e4e22  Eugene87-205.flac
+d17fcc47fcefa6fb6cf7d4c31e8e8d83  Eugene87-206.flac
+e5794b9ae5b1a3b49479d6708af198d4  Eugene87-207.flac
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd87-07-19-aud.flacf 
+=================== 
+=================== 
+=================== 
+Eugene87-101.flac:ddd43f10e07d372b2ff7420f76ae9cfc
+Eugene87-102.flac:85447f9b297aa9c484848e1aa8d89083
+Eugene87-103.flac:3b670c2f58b3ddf4df4c11003d1608b9
+Eugene87-104.flac:5525650b452bcd229daf9cec53ee99d8
+Eugene87-105.flac:e097bedfb6e05751c2c27c8e14c8529a
+Eugene87-106.flac:156f465f5f373309e1bdec5981efa34d
+Eugene87-107.flac:1891c494478318fa77fe2ab22b5d12cc
+Eugene87-108.flac:7d8488bfd733f2453a041c27e4030e6a
+Eugene87-201.flac:e43145bf356fd3e114725b7e428acc7b
+Eugene87-202.flac:e565b0c2c37c63db05f76c9e46208aa7
+Eugene87-203.flac:d7e8c02ca03438ea769cf136322982f4
+Eugene87-204.flac:12589280242a0dd69398a9691c6388f2
+Eugene87-205.flac:46063fe7edcd543c1c39e93fd110d76f
+Eugene87-206.flac:942d424bdc8eb249652d357f032f30e0
+Eugene87-207.flac:745c9d19e763cc678395ccc69a0d4850
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd87-07-19-aud.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:18.26       45572396 B   ---   --   ---xx   flac  0.6571  Eugene87-101.flac
+     5:11.47       54970988 B   ---   --   ---xx   flac  0.6723  Eugene87-102.flac
+     4:38.41       49135676 B   ---   --   ---xx   flac  0.6727  Eugene87-103.flac
+     5:16.50       55860044 B   ---   --   ---xx   flac  0.5966  Eugene87-104.flac
+     5:46.37       61121468 B   ---   --   ---xx   flac  0.6462  Eugene87-105.flac
+     6:24.32       67812908 B   ---   --   ---xx   flac  0.6738  Eugene87-106.flac
+     4:43.24       49977692 B   ---   --   ---xx   flac  0.6432  Eugene87-107.flac
+     5:09.44       54611132 B   ---   --   ---xx   flac  0.6464  Eugene87-108.flac
+     4:55.44       52141532 B   ---   --   ---xx   flac  0.6750  Eugene87-201.flac
+     6:39.62       70529468 B   ---   --   ---xx   flac  0.6450  Eugene87-202.flac
+     5:38.33       59700860 B   ---   --   ---xx   flac  0.6459  Eugene87-203.flac
+     5:35.09       59115212 B   ---   --   ---xx   flac  0.6445  Eugene87-204.flac
+     8:01.60       84989564 B   ---   --   ---xx   flac  0.6590  Eugene87-205.flac
+     6:19.50       66973244 B   ---   --   ---xx   flac  0.6746  Eugene87-206.flac
+     6:20.56       67163756 B   ---   --   ---xx   flac  0.6680  Eugene87-207.flac
+    85:00.15      899675940 B                            0.6550  (15 files)
+=================== 
+=================== 
+=================== 

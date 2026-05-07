@@ -1,0 +1,142 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd74-02-11eve-pa-coll-upgrade 
+=================== 
+=================== 
+=================== 
+93591dccda0ea943598fef6fe265bd93  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11-eve-d1.md5
+506eb708d3f13da8ce27b8732d768bd7  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t01.shn
+3e355eb440fa593f320d9b17d4fd6dc8  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t02.shn
+10968192dc8a855be17fe363ae7b3bf0  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t03.shn
+a8cb5f8093a2dbba4b98b51d4f810c57  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t04.shn
+5940b3c3141dea311e3b5d4397f13be5  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t05.shn
+9f4bfcf2b05eb1025a070db7e9591a20  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t06.shn
+e8960b5951d38bf9e1e3c6b04e4b8d81  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t07.shn
+8e51793de9f2bc5ff36cf399e661701c  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t08.shn
+ad5b9c8e82ddf1a2f006c8e5394f6c47  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t09.shn
+7a8c18c831cc2bbc71ae082578330e2b  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t10.shn
+63a438f40f23a624187d132c3bbcd46a  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t11.shn
+6d6786619f49e279f419a283a62a2b52  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t12.shn
+f3c675b106afa6600f6778de3c59d105  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t13.shn
+0c547edbf715ae69f286d185d3523137  1974-02-11-eve Oakland - Disc 1\dylan-1974-02-11eve-d1t14.shn
+18d293e2784d5e09b2325ce8a70cb813  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11-eve-d2.md5
+9dd80fc9eb774f4fdff86e3498888589  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t01.shn
+75ef7ada7d1e45fb669577048f8475ba  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t02.shn
+f724ad065d8dd9f8026d515c9c3a9f15  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t03.shn
+5136997fcfa1959f51ce673e606900d6  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t04.shn
+b82c8c76913c13a7a82dd0cb12a304c1  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t05.shn
+22aba418e8e2c8ed510c5610034018f4  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t06.shn
+a19ed8aa7ae45433bbbd94da051550d3  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t07.shn
+3ec3e602f9823a34b5b73e8236d4ecf0  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t08.shn
+abaf574bac059f2a9632d8719d412f20  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t09.shn
+0561fae1b00d563c76784c4c010d7f7b  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t10.shn
+9ca5b24a1daddb64b59eabaa301f7783  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t11.shn
+c38f745fa994a5da6bdb41c30a150f0b  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t12.shn
+2bf402d1ceddfb71712ebae8cf416051  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t13.shn
+7d1e1b1fdd313714d1533e4dc1bb56c2  1974-02-11-eve Oakland - Disc 2\dylan-1974-02-11eve-d2t14.shn
+8c47beb34d617eb793cd1a1f55cc1820  1974-02-11-eve Oakland - Extras\11febe-b.jpg
+e45c72b210cc6d4fd43d1781bbcc9920  1974-02-11-eve Oakland - Extras\11febe-f.jpg
+59b8b56213c3b61100b5221305554394  1974-02-11-eve Oakland - Extras\11febe-i.jpg
+919657e7ff15a3e59d636daf8943e42a  1974-02-11-eve Oakland - Extras\11febe2-b.jpg
+0115f9c7026acb916762bb9393414764  1974-02-11-eve Oakland - Extras\11febe2-f.jpg
+b0f7fdabc6ed269bdef13cd9c4695b3c  1974-02-11-eve Oakland - Extras\11febe2-i.jpg
+b09b3a07d3a83aadad882c98554d958b  1974-02-11-eve Oakland - Extras\1974-02-11-eve Oakland tracklist.html
+9d80f55f27d5730732cd92690183106c  1974-02-11-eve Oakland - Extras\README - 1974-02-11-eve Oakland.txt
+9fcf3c3770689abe5d32e7bb1f9d0071  1974-02-11-eve Oakland - Extras\Thumbs.db
+e5cc5c50aa7fab9242440d42510f614a  1974-02-11-eve Oakland - Extras\dylan-1974-02-11eve-d1.cue
+480492933f0be77426f96fdd55638aa6  1974-02-11-eve Oakland - Extras\dylan-1974-02-11eve-d2.cue
+18c363a9572bb3e5cab159bcd093e8ad  1974-02-11-eve Oakland - Extras\tracklist.css
+b9fff57e07e6165b8b4fabb2b84f4b35  bd74-02-11eve-pa-coll-upgrade.txt
+22aa8333d1bbfda454519aa6d197cae1  README_PA_Collection-fixed.txt
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-02-11eve-pa-coll-upgrade\1974-02-11-eve Oakland - Disc 1 
+=================== 
+=================== 
+=================== 
+258615536db12ace70b8d6f6198f5371  [shntool]  dylan-1974-02-11eve-d1t01.wav
+5a1fca7a2a136a463cc37dccef94e2e1  [shntool]  dylan-1974-02-11eve-d1t02.wav
+d1f0b8f39301d7a60730c2270dbb086e  [shntool]  dylan-1974-02-11eve-d1t03.wav
+8e07baab3499095562d637620c2a786e  [shntool]  dylan-1974-02-11eve-d1t04.wav
+0d52362e1296a0cdceb42011829d38ca  [shntool]  dylan-1974-02-11eve-d1t05.wav
+400039c38b69fc9a562bc5da95285838  [shntool]  dylan-1974-02-11eve-d1t06.wav
+ebcb1596551fa4def8c2e628376e9a15  [shntool]  dylan-1974-02-11eve-d1t07.wav
+1e80272c407a048d03be98933e100be1  [shntool]  dylan-1974-02-11eve-d1t08.wav
+0960fcc2edc2d24432d04a3c5b465a17  [shntool]  dylan-1974-02-11eve-d1t09.wav
+64d1d4fc7b22d4c410577ea4b4aedbc7  [shntool]  dylan-1974-02-11eve-d1t10.wav
+1d97813eb5dfaa83a0b41a6cb079fad9  [shntool]  dylan-1974-02-11eve-d1t11.wav
+6caef3ed53915299029c7f687b022d82  [shntool]  dylan-1974-02-11eve-d1t12.wav
+2b54772c076517bddc2bebadcd873d9f  [shntool]  dylan-1974-02-11eve-d1t13.wav
+168f2f40b073bfe89d354491e361406c  [shntool]  dylan-1974-02-11eve-d1t14.wav
+=================== 
+=================== 
+=================== 
+=== shntool md5/hash for: bd74-02-11eve-pa-coll-upgrade\1974-02-11-eve Oakland - Disc 2 
+=================== 
+=================== 
+=================== 
+dadf581d345a5d30bc191614e52f7869  [shntool]  dylan-1974-02-11eve-d2t01.wav
+186e16e6d1d59f6d2f2e966d238da481  [shntool]  dylan-1974-02-11eve-d2t02.wav
+cf9f2268d9342c5114171c0d29d26690  [shntool]  dylan-1974-02-11eve-d2t03.wav
+6040222583039113ab5523495252e965  [shntool]  dylan-1974-02-11eve-d2t04.wav
+c980b63b698bb3bebe88daf41fcab254  [shntool]  dylan-1974-02-11eve-d2t05.wav
+c06d2cb176875aa7c073647eaa1e7731  [shntool]  dylan-1974-02-11eve-d2t06.wav
+8187182804e006735938dcbaa952fe4c  [shntool]  dylan-1974-02-11eve-d2t07.wav
+e51880b26a861e218be3068775b4901a  [shntool]  dylan-1974-02-11eve-d2t08.wav
+df75670209f8d6641a9a119bce7a0f2e  [shntool]  dylan-1974-02-11eve-d2t09.wav
+c0bacdc5f5bfb3880a460c6cadfe74e6  [shntool]  dylan-1974-02-11eve-d2t10.wav
+e449a8cf2b1200a016c99fb2021eb67e  [shntool]  dylan-1974-02-11eve-d2t11.wav
+00454b36e2461b4b12966bbb9d84e955  [shntool]  dylan-1974-02-11eve-d2t12.wav
+a013db0ae919f8e07fa799d146fcd76a  [shntool]  dylan-1974-02-11eve-d2t13.wav
+b6165082a9e882902d5c2e9a4df50cb7  [shntool]  dylan-1974-02-11eve-d2t14.wav
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-11eve-pa-coll-upgrade\1974-02-11-eve Oakland - Disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:44.53       39638300 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t01.wav
+     3:32.15       37432124 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t02.wav
+     5:35.07       59110508 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t03.wav
+     3:36.10       38125964 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t04.wav
+     4:01.10       42535964 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t05.wav
+     4:32.16       48018476 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t06.wav
+     4:49.27       51043148 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t07.wav
+     4:50.60       51297164 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t08.wav
+     3:37.69       38441132 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t09.wav
+     3:17.68       34910780 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t10.wav
+     2:50.06       30002156 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t11.wav
+     2:47.72       29628188 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t12.wav
+     4:45.31       50346956 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t13.wav
+     4:02.02       42693548 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d1t14.wav
+    56:02.71      593224408 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd74-02-11eve-pa-coll-upgrade\1974-02-11-eve Oakland - Disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:29.69       37029932 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t01.wav
+     4:20.06       45878156 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t02.wav
+     5:12.45       55142684 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t03.wav
+     4:12.66       44608076 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t04.wav
+     6:06.14       64595372 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t05.wav
+     4:53.02       51689948 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t06.wav
+     3:54.53       41402300 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t07.wav
+     3:21.56       35588156 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t08.wav
+     5:14.19       55434332 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t09.wav
+     5:03.29       53517452 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t10.wav
+     4:34.51       48453596 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t11.wav
+     6:39.45       70489484 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t12.wav
+     4:34.43       48434780 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t13.wav
+     3:27.67       36672428 B   ---   --   -----    wav  1.0000  dylan-1974-02-11eve-d2t14.wav
+    65:05.40      688936696 B                            1.0000  (14 files)
+=================== 
+=================== 
+=================== 

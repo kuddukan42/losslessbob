@@ -1,0 +1,54 @@
+Bob Dylan
+M&S Bank Arena
+Liverpool, England
+November 3, 2024
+
+01. All Along The Watchtower
+02. It Ain't Me, Babe 
+03. I Contain Multitudes 
+04. False Prophet 
+05. When I Paint My Masterpiece 
+06. Black Rider 
+07. My Own Version Of You
+08. To Be Alone With You 
+09. Crossing The Rubicon 
+10. Desolation Row
+11. Key West (Philosopher Pirate) 
+12. Watching The River Flow 
+13. It's All Over Now, Baby Blue
+14. I've Made Up My Mind To Give Myself To You
+15. Mother Of Muses
+16. Goodbye Jimmy Reed
+17. Every Grain Of Sand
+
+Band Members
+Bob Dylan - vocals, guitar, piano, harp                                                                        
+Jim Keltner - drums
+Doug Lancio - guitar 
+Bob Britt - guitar
+Tony Garnier - bass
+
+Recorded by: soomlos
+10th row center
+schoeps mk4v's > nbob actives > naiant pfa > sound devices mixpre-3 (24-bit / 48000 Hz)
+sound devices mixpre-3 > usb > pc > poly wav (24-bit / 48000 Hz)
+wave agent > sound forge pro 11 / izotope rx7 > cd wave > tlh > flac (24-bit / 48000 Hz)
+
+ffp
+bd2024-11-03-soomlos-t01.flac:92832754c92ca1c913e2f1320960f476
+bd2024-11-03-soomlos-t02.flac:28312f72d5c7816c4100d43e0324464a
+bd2024-11-03-soomlos-t03.flac:0c5c3712b1bc8a6e549417a8507c5b0d
+bd2024-11-03-soomlos-t04.flac:0b300af7e4e1f08475ed18c252a8b302
+bd2024-11-03-soomlos-t05.flac:b22f06147d3e3f5ace0020346c5ef7c7
+bd2024-11-03-soomlos-t06.flac:18d2ec4d79ba502181838a23c3102d25
+bd2024-11-03-soomlos-t07.flac:71020ba34c074a5c923d31ebb868db59
+bd2024-11-03-soomlos-t08.flac:a01345e6890cd23b96f3ae1d47f7855e
+bd2024-11-03-soomlos-t09.flac:cc3f922866cc2c14aa81497a3c6a23a2
+bd2024-11-03-soomlos-t10.flac:38741508eb03cf345464c77c56b2fa51
+bd2024-11-03-soomlos-t11.flac:4e368164793b7029965a869e13cb2702
+bd2024-11-03-soomlos-t12.flac:17b96bc11fd6b717d66592481650452c
+bd2024-11-03-soomlos-t13.flac:4940be87dd47b826b2ecdd67ddc37654
+bd2024-11-03-soomlos-t14.flac:5ff005541ac40e93213dececf4ee1f19
+bd2024-11-03-soomlos-t15.flac:ed59714f39a7ae8f57bed5977030f58f
+bd2024-11-03-soomlos-t16.flac:badd4d222af8202a99c5dbdf3d6a46bd
+bd2024-11-03-soomlos-t17.flac:ddf36f8f58b1165693c0ef0e905b13b1

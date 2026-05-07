@@ -1,0 +1,112 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd01-07-18-SCHUBERT-REC-ASM.flacf 
+=================== 
+=================== 
+=================== 
+4984cc090aa97ff1b15acd426eaf365d  2001-07-18 Bad Reichenhall disc 1\101 Anouncement.flac
+5dec1a9c8fb1620d1df02889d3493dbf  2001-07-18 Bad Reichenhall disc 1\102 Hallelujah, I'm Ready To Go.flac
+db70efa7ac5b9ad3bf5f0a82b1008b95  2001-07-18 Bad Reichenhall disc 1\103 To Ramona.flac
+2f1953cc3729803a637289d086387487  2001-07-18 Bad Reichenhall disc 1\104 Desolation Row .flac
+afaf35896ff3051e9f7c9081fbd401bb  2001-07-18 Bad Reichenhall disc 1\105 Maggie's Farm.flac
+6a9e51731b23b6cebfe3cb3db4a3da67  2001-07-18 Bad Reichenhall disc 1\106 Million Miles .flac
+c77070b03975de8841d3543612341e12  2001-07-18 Bad Reichenhall disc 1\107 Most Likely You Go Your Way.flac
+2e2771cd19102161d76d246e3bef7738  2001-07-18 Bad Reichenhall disc 1\108 It's All Over Now, Baby Blue.flac
+bdd006a7dd7a155f3e25a6da18e6af50  2001-07-18 Bad Reichenhall disc 1\109 A Hard Rain's A-Gonna Fall.flac
+d1135164a544057cf9035451fdf78ef1  2001-07-18 Bad Reichenhall disc 1\110 Don't Think Twice, It's All Right.flac
+72fadc8b89b35fbe2fde1c04bc81d1ee  2001-07-18 Bad Reichenhall disc 1\2001-07-18 Bad Reichenhall disc 1.md5
+cafbed3a0e2d016ff4b6e31e3e9118f3  2001-07-18 Bad Reichenhall disc 1\Art\booklet_aussen-links+rechts.tif
+fb0d5461ef60a95aee80bcb5fb970b2a  2001-07-18 Bad Reichenhall disc 1\Art\Inlay_aussen+seitentitel_1.tif
+26d0a8e6e62396b6afc0c3dbafefeb8d  2001-07-18 Bad Reichenhall disc 1\Art\Reichenh_b.jpg
+632febc79bc202c4dc7c04cb3edf1aec  2001-07-18 Bad Reichenhall disc 1\Art\reichenh_front.jpg
+a3c226d22af59438e95b4c9f73cad581  2001-07-18 Bad Reichenhall disc 2\2001-07-18 Bad Reichenhall disc 2.md5
+091e87dec64f54b9ac89257fabedad1a  2001-07-18 Bad Reichenhall disc 2\201 Tombstone Blues.flac
+896dd6f4f325ada804fa15fcf604c10f  2001-07-18 Bad Reichenhall disc 2\202 You're A Big Girl Now.flac
+ec0e80a00377279b7348d4970abe6eda  2001-07-18 Bad Reichenhall disc 2\203 Drifter's Escape.flac
+45d336f504431cd59dca3ebf05caba1b  2001-07-18 Bad Reichenhall disc 2\204 Rainy Day Women #12 & 35.flac
+f04d53cbc2a2cf7f77a23d24df20d1e8  2001-07-18 Bad Reichenhall disc 2\205 Things Have Changed.flac
+55f7481d6139320e697acc8b97700a24  2001-07-18 Bad Reichenhall disc 2\206 Like A Rolling Stone .flac
+87735a6b44beef495e5b137b0e3ab433  2001-07-18 Bad Reichenhall disc 2\207 If Dogs Run Free.flac
+126b7d6b19335bd29afb22ccc763ff35  2001-07-18 Bad Reichenhall disc 2\208 All Along The Watchtower.flac
+e854d5580537f20332a2fa8a9de801d3  2001-07-18 Bad Reichenhall disc 2\209 Knockin' On Heaven's Door.flac
+89f3146e011958f9f74e3a851a377f66  2001-07-18 Bad Reichenhall disc 2\210 Highway 61 Revisited.flac
+5715ba6f29bfd3b1d80f682599b9333a  2001-07-18 Bad Reichenhall disc 2\211 Blowin' In The Wind .flac
+a789c67eb7065273602ca5f14f8eb9e5  2007-07-18 Schubert.rtf
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-18-SCHUBERT-REC-ASM.flacf\2001-07-18 Bad Reichenhall disc 1 
+=================== 
+=================== 
+=================== 
+101 Anouncement.flac:94a3d91c0d39e37a62b4f7766bf8e47b
+102 Hallelujah, I'm Ready To Go.flac:a2ecf8d8f2747f809008ae176443417c
+103 To Ramona.flac:327d83211984f75f51e1efb380dc3355
+104 Desolation Row .flac:4cca0ca3f3b91df155c167a8a1115702
+105 Maggie's Farm.flac:411b548d982b9eed712db7a1bb96bba0
+106 Million Miles .flac:81187d2e23c9085dcc2b3abaae4edbcf
+107 Most Likely You Go Your Way.flac:04c6dcea9c77c66bdd67f83c3b7ea9d4
+108 It's All Over Now, Baby Blue.flac:3094ab9946ece38b7e29cacd1dca58d8
+109 A Hard Rain's A-Gonna Fall.flac:cca2332ccbced4db0c495001cfcfd347
+110 Don't Think Twice, It's All Right.flac:2c55f37c43cb86ccaef344b9ea8899b0
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd01-07-18-SCHUBERT-REC-ASM.flacf\2001-07-18 Bad Reichenhall disc 2 
+=================== 
+=================== 
+=================== 
+201 Tombstone Blues.flac:881ddc49aa1ed1864d70a7547a4ebc97
+202 You're A Big Girl Now.flac:7e24bdf5b5ffc219b5335e0698b1b97b
+203 Drifter's Escape.flac:a540ddcc294fb9abe98dadf8df218ab2
+204 Rainy Day Women #12 & 35.flac:fec1908401a46fb3663df3a1f7de524d
+205 Things Have Changed.flac:998cf5efebf78b2cd87d52fa73f1fdbd
+206 Like A Rolling Stone .flac:fdf0d29b544cf5692436edf5e7352e1c
+207 If Dogs Run Free.flac:c5c74840d7628abac6e2533dbcabad29
+208 All Along The Watchtower.flac:35d385f07ebc3d92efb92156678810a1
+209 Knockin' On Heaven's Door.flac:f7a78c35cc52669f2600f7e86a372102
+210 Highway 61 Revisited.flac:b180631f13dedf386115cd2f26c34437
+211 Blowin' In The Wind .flac:97f506619a27461c96ce0b1f3d5621d0
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-18-SCHUBERT-REC-ASM.flacf\2001-07-18 Bad Reichenhall disc 1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:27.48        4875740 B   ---   --   ---xx   flac  0.5947  101 Anouncement.flac
+     2:58.60       31540364 B   ---   --   ---xx   flac  0.6393  102 Hallelujah, I'm Ready To Go.flac
+     5:12.67       55194428 B   ---   --   ---xx   flac  0.6167  103 To Ramona.flac
+     8:43.38       92346620 B   ---   --   ---xx   flac  0.6154  104 Desolation Row .flac
+     6:43.23       71143340 B   ---   --   ---xx   flac  0.6219  105 Maggie's Farm.flac
+     6:14.13       66004220 B   ---   --   ---xx   flac  0.5597  106 Million Miles .flac
+     7:36.12       80466668 B   ---   --   ---xx   flac  0.6115  107 Most Likely You Go Your Way.flac
+     7:02.63       74589020 B   ---   --   ---xx   flac  0.5489  108 It's All Over Now, Baby Blue.flac
+     9:36.32      101681708 B   ---   --   ---xx   flac  0.5580  109 A Hard Rain's A-Gonna Fall.flac
+     6:56.62       73528268 B   ---   --   ---xx   flac  0.5473  110 Don't Think Twice, It's All Right.flac
+    61:32.43      651370376 B                            0.5869  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd01-07-18-SCHUBERT-REC-ASM.flacf\2001-07-18 Bad Reichenhall disc 2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     5:49.14       61596572 B   ---   --   ---xx   flac  0.5988  201 Tombstone Blues.flac
+     5:47.34       61290812 B   ---   --   ---xx   flac  0.5084  202 You're A Big Girl Now.flac
+     4:46.11       50476316 B   ---   --   ---xx   flac  0.6654  203 Drifter's Escape.flac
+    10:19.20      109238684 B   ---   --   ---xx   flac  0.6089  204 Rainy Day Women #12 & 35.flac
+     6:12.17       65660828 B   ---   --   ---xx   flac  0.6377  205 Things Have Changed.flac
+     7:03.23       74671340 B   ---   --   ---xx   flac  0.6316  206 Like A Rolling Stone .flac
+     4:33.71       48324236 B   ---   --   ---xx   flac  0.5143  207 If Dogs Run Free.flac
+     5:10.72       54853388 B   ---   --   ---xx   flac  0.6416  208 All Along The Watchtower.flac
+     5:33.41       58837676 B   ---   --   ---xx   flac  0.5909  209 Knockin' On Heaven's Door.flac
+     5:37.24       59503292 B   ---   --   ---xx   flac  0.6482  210 Highway 61 Revisited.flac
+     6:09.20       65138684 B   ---   --   ---xx   flac  0.5888  211 Blowin' In The Wind .flac
+    67:02.47      709591828 B                            0.6045  (11 files)
+=================== 
+=================== 
+=================== 

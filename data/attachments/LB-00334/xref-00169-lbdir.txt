@@ -1,0 +1,99 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd81-06-27-ltd-lk.flacf 
+=================== 
+=================== 
+=================== 
+7f5e9312b94ff0e9c0e32644e5371551  01 Gotta serve somebody.flac
+4596cb4db6a95a189c8d0815edcd012f  02 I believe in you.flac
+5245223bcbcffd3c484dc7b9abaa1ab5  03 Like a rolling stone.flac
+0e78f3a44adeebeaa6a69529c153523b  04 'Till I get it right.flac
+4b1ab1b4b7b141bacdfa76df12634db5  05 Man gave names to all the animals.flac
+4ec5624f4ad70306ef7cc197d84ca44f  06 Maggie's farm.flac
+4890e6b242bbf202de3cc0dee9f4d6b7  07 I don't believe you (She acts like we never have met).flac
+dd2939e7729419e09581c2232189684c  08 Dead man, dead man.flac
+6a4a8e81a141762fa9fbf2fdf8218445  09 Girl of the North Country.flac
+833e47f768ced7f9981977d51349fd89  10 Ballad of a thin man.flac
+f7b5bd3d1101a0d3c2a1aa36f990ade3  11 Slow train.flac
+9649f7dc21542514945e008a52a77c5a  12 Walk around heaven all day.flac
+ff3cdd18f65b01f6c4a71fc01b9be514  13 Let's begin.flac
+076047017040ab007b3fd408e6ad8859  14 Lenny Bruce.flac
+065c841f4cf995030663bb2709550bad  15 Mr. Tambourine man.flac
+8db05436ca9497290355dbca38ceaa7d  16 Solid rock.flac
+0c07edbeaabe0a8244d9e9a244aeaea9  17 Just like a woman.flac
+397f7cb7d1eb2af9516cdc57ad5522a2  18 Watered-down love.flac
+ea45f6ed8ef326d02fe2a1eea1b12206  19 Forever young.flac
+5e225d45d78720417d7d323c49d5aff7  20 When you gonna wake up.flac
+b9e81b489817265fb7ddfd5575586ef5  21 In the garden.flac
+023eca6247245ba1eef3295470fe5271  22 Blowin' in the wind.flac
+bb872cd1d3f6113e118a4f69c2eebf83  23 It's all over now, baby blue.flac
+5ee34524f8379a5dafd8f3b0fe9419f1  24 Knockin' on heaven's door.flac
+01b184a77642ce42e0d529b7074e61ed  bd81-06-27.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd81-06-27-ltd-lk.flacf 
+=================== 
+=================== 
+=================== 
+01 gotta serve somebody.flac:78766bff76b794bc78d2cc151c1a0d44
+02 i believe in you.flac:4e0646e488f66f7daffc91a2d907e0f3
+03 like a rolling stone.flac:0048026c1ef632f0d9639a961f816876
+04 'till i get it right.flac:fddd460d74ab74f71616eb6db54e2335
+05 man gave names to all the animals.flac:ccf517d538aaa36bdc00ba3436e2647c
+06 maggie's farm.flac:fc4d63693dab7008baeba9b0c04e6120
+07 i don't believe you (she acts like we never have met).flac:4eae61f0c790312ae575bb68039e6872
+08 dead man, dead man.flac:43fc4b3e200ff1da26ae6b77d2e3b782
+09 girl of the north country.flac:8d8d28d62553aa6c01cd81d7a3fdb186
+10 ballad of a thin man.flac:1aedb7b3033ea2e692381bd93ce08e2f
+11 slow train.flac:8377f1bf4496788878f07089cfec4d65
+12 walk around heaven all day.flac:d27a01c6ee19b797fa5ba09b584370dd
+13 let's begin.flac:a20f488c07b5c52b3938249d01769c4e
+14 lenny bruce.flac:a4e88985a86dffafda1a00006dc3fdca
+15 mr. tambourine man.flac:d4bf8543738ae64bfd6e714179517073
+16 solid rock.flac:77528073ddb3516e59927a0e865a3bff
+17 just like a woman.flac:b5bcc0cd56e0f4f1946ef4358f58024b
+18 watered-down love.flac:e0392fcbc92d48a0235654453df19840
+19 forever young.flac:f5b9ea4746ac3c3ba13e82e451d69d2a
+20 when you gonna wake up.flac:97746c2bb7f191004968565ddbb58a9c
+21 in the garden.flac:eb414791ab3b66d322d8ce8336e023c4
+22 blowin' in the wind.flac:179216fef3fc47af690fe2a13b08e075
+23 it's all over now, baby blue.flac:7247032bde4015017aa178f17c96d506
+24 knockin' on heaven's door.flac:f428dfa5e15f82a58d62c4e6a78589a8
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd81-06-27-ltd-lk.flacf 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:31.15       47839724 B   ---   --   ---xx   flac  0.6440  01 Gotta serve somebody.flac
+     4:51.08       51351260 B   ---   --   ---xx   flac  0.6165  02 I believe in you.flac
+     6:17.56       66634556 B   ---   --   ---xx   flac  0.6468  03 Like a rolling stone.flac
+     3:54.39       41369372 B   ---   --   ---xx   flac  0.5880  04 'Till I get it right.flac
+     4:40.58       49528460 B   ---   --   ---xx   flac  0.6258  05 Man gave names to all the animals.flac
+     4:03.58       43001660 B   ---   --   ---xx   flac  0.6498  06 Maggie's farm.flac
+     3:40.32       38883308 B   ---   --   ---xx   flac  0.6238  07 I don't believe you (She acts like we never have met).flac
+     4:52.06       51522956 B   ---   --   ---xx   flac  0.6407  08 Dead man, dead man.flac
+     5:21.33       56702060 B   ---   --   ---xx   flac  0.6249  09 Girl of the North Country.flac
+     3:34.42       37848428 B   ---   --   ---xx   flac  0.6523  10 Ballad of a thin man.flac
+     4:41.26       49629596 B   ---   --   ---xx   flac  0.6556  11 Slow train.flac
+     4:38.01       49041596 B   ---   --   ---xx   flac  0.6066  12 Walk around heaven all day.flac
+     3:28.40       36785324 B   ---   --   ---xx   flac  0.6001  13 Let's begin.flac
+     4:27.34       47178812 B   ---   --   ---xx   flac  0.6025  14 Lenny Bruce.flac
+     5:28.38       57948620 B   ---   --   ---xx   flac  0.6508  15 Mr. Tambourine man.flac
+     5:00.74       53094092 B   ---   --   ---xx   flac  0.6568  16 Solid rock.flac
+     3:59.25       42218444 B   ---   --   ---xx   flac  0.6232  17 Just like a woman.flac
+     4:59.31       52816556 B   ---   --   ---xx   flac  0.6518  18 Watered-down love.flac
+     4:30.41       47724476 B   ---   --   ---xx   flac  0.6425  19 Forever young.flac
+     4:50.36       51240716 B   ---   --   ---xx   flac  0.6565  20 When you gonna wake up.flac
+    10:00.57      105974108 B   ---   --   ---xx   flac  0.6352  21 In the garden.flac
+     6:47.04       71804252 B   ---   --   ---xx   flac  0.6521  22 Blowin' in the wind.flac
+     5:03.58       53585660 B   ---   --   ---xx   flac  0.6639  23 It's all over now, baby blue.flac
+     5:55.35       62704364 B   ---   --   ---xx   flac  0.6607  24 Knockin' on heaven's door.flac
+   119:39.22     1266428400 B                            0.6378  (24 files)
+=================== 
+=================== 
+=================== 

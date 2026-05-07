@@ -1,0 +1,107 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd92-05-09.ss6p.pdub.flac16 
+=================== 
+=================== 
+=================== 
+8956feb52668cbbf6d021e5b958af74a  bd1992-05-09.info.txt
+1b57e594c8721c05c2c819556bfd437b  bd1992-05-09.ss6p.pdub.sbeok.flac16 San Jose, CA.ffp
+beb13735822c5a6378b3a4d4d0926287  bd1992-05-09.ss6p.pdub.sbeok.flac16 San Jose, CA.md5
+852721e1d729c042e0adc46d156995a7  bd1992-05-09.ss6p.pdub.sbeok.flac16 San Jose, CA.st5
+c0bacc63d66d1a5bf606e7fe40ca90ae  bd92-05-09-LB-4652.txt
+c2dae1b22d3fa3ce043766e4e2f9e764  d1\bd1992-05-09d1.LOG
+e894002da4a4561e9d3efddcbae64b9a  d1\bd1992-05-09d1t01.flac
+2c13784ca44b75bdedc165240b7a43e6  d1\bd1992-05-09d1t02.flac
+cc8e115a7563539cd60643d486d5def1  d1\bd1992-05-09d1t03.flac
+968db3fe88876f6f1443cb2219b62ef9  d1\bd1992-05-09d1t04.flac
+22ebc6729fd1a0f0f12f7b9a1aec7e28  d1\bd1992-05-09d1t05.flac
+c40d3e668bf72525c65a3b73490be57b  d1\bd1992-05-09d1t06.flac
+dc03a57af90749163b0837f8a334b2d7  d1\bd1992-05-09d1t07.flac
+a47f9750dbc5554ae384ce4e11c835bf  d1\bd1992-05-09d1t08.flac
+5420f30a688f7c49accf8812efc56f09  d1\bd1992-05-09d1t09.flac
+41a8065de90ab6532252fd3f69564b0f  d1\bd1992-05-09d1t10.flac
+912909a7636e6fdb163289f280ca16ac  d1\bd1992-05-09d1t11.flac
+25302bc834449e64eb9d40e096a80fc8  d1\d1.shntool.txt
+0cd1a0f8eb844f5d084bc6e67822e59a  d1t03.PNG
+6251b29cca4853f89fbf41c96c62ed21  d2\bd1992-05-09d2.LOG
+e1bf82befe94eef8487d70ff2072a483  d2\bd1992-05-09d2t01.flac
+b837d449d64139065310e66177397963  d2\bd1992-05-09d2t02.flac
+22ec78786edb17ba3168cb51a7708c10  d2\bd1992-05-09d2t03.flac
+db2c87bfd33e201765cd515a720a5530  d2\bd1992-05-09d2t04.flac
+006e698f62cae18d4831e339d3a575ac  d2\bd1992-05-09d2t05.flac
+dcd6a3d8e193be7f634e05e709c08c51  d2\bd1992-05-09d2t06.flac
+f04351d0208c2726073ca1df2fea40da  d2\bd1992-05-09d2t07.flac
+75bec0873458fc42177f6c343619c5fc  d2\d2.shntool.txt
+9ddc8ebb6ea16c22534df23b3a74d7fa  d2t05.PNG
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-05-09.ss6p.pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+bd1992-05-09d1t01.flac:c4d54c3af135ba00f9cd52940acc6e46
+bd1992-05-09d1t02.flac:211664c923696ae4d0e8d6ee012d3efb
+bd1992-05-09d1t03.flac:57bf36d2ba9dfa0b6a45fc287571a8a9
+bd1992-05-09d1t04.flac:14b8dca02783c419f440bfb19a847512
+bd1992-05-09d1t05.flac:274fccaa34b557d3a23b5accc3888f36
+bd1992-05-09d1t06.flac:17208bfb5032cf1deeca07ba6cd16168
+bd1992-05-09d1t07.flac:28630c2a09423eb987b3f35d6392266d
+bd1992-05-09d1t08.flac:43282aec98f0a0f0d31ac499f2082a0e
+bd1992-05-09d1t09.flac:c028ebccb231036697c7f60c9d6c15ee
+bd1992-05-09d1t10.flac:25f1bdf07e703a36356e29e45cd98e06
+bd1992-05-09d1t11.flac:f391e0468baa234f68e66fbb1ab1e9d3
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd92-05-09.ss6p.pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+bd1992-05-09d2t01.flac:0cb54c654b004ee05d181b6b1993e806
+bd1992-05-09d2t02.flac:0a8ebbe2e9e981b1531deaaf7afa2ae2
+bd1992-05-09d2t03.flac:a44977aafa474c5c98f405f280cfda37
+bd1992-05-09d2t04.flac:e9c0b03f2f2ae4f4753ef8c188e79d8b
+bd1992-05-09d2t05.flac:fe3771c1bf63e9db9bda78e56937a0d3
+bd1992-05-09d2t06.flac:9eb29526f11f2087418689163643cad3
+bd1992-05-09d2t07.flac:76a50514297f329744bbea451df34dbd
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-05-09.ss6p.pdub.flac16\d1 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     4:14.65       44958524 B   ---   --   ---xx   flac  0.5956  bd1992-05-09d1t01.flac
+     5:14.18       55431980 B   ---   --   ---xx   flac  0.5779  bd1992-05-09d1t02.flac
+     4:40.50       49509644 B   ---   --   ---xx   flac  0.6052  bd1992-05-09d1t03.flac
+     5:48.09       61408412 B   ---   --   ---xx   flac  0.5957  bd1992-05-09d1t04.flac
+     4:18.07       45527708 B   ---   --   ---xx   flac  0.5907  bd1992-05-09d1t05.flac
+     4:40.68       49551980 B   ---   --   ---xx   flac  0.5523  bd1992-05-09d1t06.flac
+     5:23.25       57036044 B   ---   --   ---xx   flac  0.6028  bd1992-05-09d1t07.flac
+     3:31.23       37274540 B   ---   --   ---xx   flac  0.5474  bd1992-05-09d1t08.flac
+     4:06.36       43479116 B   ---   --   ---xx   flac  0.5246  bd1992-05-09d1t09.flac
+     5:55.33       62699660 B   ---   --   ---xx   flac  0.5629  bd1992-05-09d1t10.flac
+     5:30.58       58348460 B   ---   --   ---xx   flac  0.5891  bd1992-05-09d1t11.flac
+    53:24.17      565226068 B                            0.5783  (11 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd92-05-09.ss6p.pdub.flac16\d2 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     3:57.71       41973836 B   ---   --   ---xx   flac  0.6270  bd1992-05-09d2t01.flac
+     8:51.53       93793100 B   ---   --   ---xx   flac  0.6108  bd1992-05-09d2t02.flac
+     5:56.61       62941916 B   ---   --   ---xx   flac  0.5867  bd1992-05-09d2t03.flac
+     6:52.11       72702716 B   ---   --   ---xx   flac  0.6046  bd1992-05-09d2t04.flac
+     5:27.11       57708716 B   ---   --   ---xx   flac  0.6172  bd1992-05-09d2t05.flac
+     5:30.16       58249676 B   ---   --   ---xx   flac  0.5874  bd1992-05-09d2t06.flac
+     4:31.05       47816204 B   ---   --   ---xx   flac  0.5289  bd1992-05-09d2t07.flac
+    41:07.03      435186164 B                            0.5966  (7 files)
+=================== 
+=================== 
+=================== 

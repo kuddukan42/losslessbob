@@ -1,0 +1,105 @@
+=================== 
+=================== 
+=================== 
+=== md5 for: bd04-03-08-schubert-remaster.flacf 
+=================== 
+=================== 
+=================== 
+adade25c4a07345a92bc0e382862c4ad  20040308_Chicago asm flac I\101 Announcement.flac
+6f22943968a67cba8ac44c339047c543  20040308_Chicago asm flac I\102 Tangled Up In Blue.flac
+8772dd2390c4e54cf06f41364bdc3c08  20040308_Chicago asm flac I\103 Don't Think Twice, It's All Right.flac
+fc8623fed8d5c53ab510d1496b78f942  20040308_Chicago asm flac I\104 High Water (For Charley Patton).flac
+843d4af80723556db4c10c950f153115  20040308_Chicago asm flac I\105 Silvio.flac
+9289c56d92da7a2c4e70429755526ff8  20040308_Chicago asm flac I\106 Positively 4th Street.flac
+98f8facb9fcf73b1c7c460524d231527  20040308_Chicago asm flac I\107 Watching The River Flow.flac
+91c9b3db8ad1a6e2541e4c77973a23a1  20040308_Chicago asm flac I\108 Lay, Lady, Lay.flac
+83fdfaeb707c03e2f8e1341c3f978a10  20040308_Chicago asm flac I\109 Cold Irons Bound.flac
+528a90b39409aafc88a0209b9c0dfeb8  20040308_Chicago asm flac I\110 Rainy Day Women #12 & 35.flac
+34e094131d340481d82bb12dacb6c7f9  20040308_Chicago asm flac I\20040308chicago_cd1_flacs.md5
+adad0688fb01acac819d1f194ced23d3  20040308_Chicago asm flac I\20040308chicago_cd1_wavs.md5
+5adb2e07d51b6d33a86dc46ec9587843  20040308_Chicago asm flac II\20040308chicago_cd2_flacs.md5
+f1482c31611b35f624ef495da05ff941  20040308_Chicago asm flac II\20040308chicago_cd2_wavs.md5
+81377f035ec7f871e26c329b44dd2477  20040308_Chicago asm flac II\201 Bye And Bye.flac
+75c8d21097e8ac134db19149a6b052f2  20040308_Chicago asm flac II\202 Dignity.flac
+91e9fcea40ddc75aab013450e560a580  20040308_Chicago asm flac II\203 Honest With Me.flac
+bdb723be49e68c1522a64604c414906c  20040308_Chicago asm flac II\204 Shooting Star.flac
+17486293758fd5709bb3b063a249d6f4  20040308_Chicago asm flac II\205 Summer Days.flac
+3be6acc270808f7c965908a80082eda3  20040308_Chicago asm flac II\206 Man In The Long Black Coat.flac
+6b16e6b32f554a5f37ca7ffe122746c6  20040308_Chicago asm flac II\207 Cat's In The Well.flac
+cd006b50efa19f1d72940d6510eab93c  20040308_Chicago asm flac II\208 Like A Rolling Stone.flac
+39b5c4e9d651a2520401e15393f188d1  20040308_Chicago asm flac II\209 All Along The Watchtower.flac
+c0622315ef7b3296abdfc42d2e0d2a56  bd-04-03-08-schubert remaster.txt
+30951fd10936acd69f30fea22fdc76ea  bd04-03-08-schubert-remaster.txt
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-03-08-schubert-remaster.flacf\20040308_Chicago asm flac I 
+=================== 
+=================== 
+=================== 
+101 Announcement.flac:0eb3362473e779b6a43c9d494beb23de
+102 Tangled Up In Blue.flac:542cfe9aabb2aca5c5b7dbce380580a6
+103 Don't Think Twice, It's All Right.flac:2ebeaa2c1f10a306423373ca3ead10d0
+104 High Water (For Charley Patton).flac:521075535a5648d561e89e4e9e438423
+105 Silvio.flac:85f0e8631b3bbe515441daee560d1d91
+106 Positively 4th Street.flac:36758f8d11fd4e845bcece92f5f77fb5
+107 Watching The River Flow.flac:f89fb45714cc3d9e156a9581d95cc8cf
+108 Lay, Lady, Lay.flac:3fd7611506d66a5c92140097aaa62495
+109 Cold Irons Bound.flac:898ec3f8b43f9350fc7f2125fc26345a
+110 Rainy Day Women #12 & 35.flac:2097507fb6b5a9a5458185aacb544fb9
+=================== 
+=================== 
+=================== 
+=== flac fingerprint for: bd04-03-08-schubert-remaster.flacf\20040308_Chicago asm flac II 
+=================== 
+=================== 
+=================== 
+201 Bye And Bye.flac:662bfc169d5a8c88ab3f06e347b36083
+202 Dignity.flac:3b309fc98bcc81af5b25c44945762f3c
+203 Honest With Me.flac:a3ef1f916b2dc1590a6dc25774054b04
+204 Shooting Star.flac:1942feac62c1fa4e4fdbac283f4a2168
+205 Summer Days.flac:f88b56f475a173a15711faa945af22c3
+206 Man In The Long Black Coat.flac:8e879c0e352d9ef8892181c70a8ceaeb
+207 Cat's In The Well.flac:c19b3bde945734af6982be89e3d30a42
+208 Like A Rolling Stone.flac:8fad7824c691a34c1fc4fc41688c9a33
+209 All Along The Watchtower.flac:73be8a1c60f884af5485b266d2b86ca7
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-08-schubert-remaster.flacf\20040308_Chicago asm flac I 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     0:49.16        8681276 B   ---   --   ---xx   flac  0.5057  101 Announcement.flac
+     5:53.70       62433884 B   ---   --   ---xx   flac  0.6151  102 Tangled Up In Blue.flac
+     6:22.21       67434236 B   ---   --   ---xx   flac  0.5478  103 Don't Think Twice, It's All Right.flac
+     6:39.47       70494188 B   ---   --   ---xx   flac  0.6100  104 High Water (For Charley Patton).flac
+     5:37.01       59449196 B   ---   --   ---xx   flac  0.6716  105 Silvio.flac
+     6:49.69       72309932 B   ---   --   ---xx   flac  0.6230  106 Positively 4th Street.flac
+     5:52.29       62161052 B   ---   --   ---xx   flac  0.6123  107 Watching The River Flow.flac
+     5:42.48       60441740 B   ---   --   ---xx   flac  0.5894  108 Lay, Lady, Lay.flac
+     6:04.69       64371932 B   ---   --   ---xx   flac  0.6239  109 Cold Irons Bound.flac
+     7:13.32       76456508 B   ---   --   ---xx   flac  0.6332  110 Rainy Day Women #12 & 35.flac
+    57:05.27      604233944 B                            0.6123  (10 files)
+=================== 
+=================== 
+=================== 
+=== shntool len for: bd04-03-08-schubert-remaster.flacf\20040308_Chicago asm flac II 
+=================== 
+=================== 
+=================== 
+    length     expanded size    cdr  WAVE problems  fmt   ratio  filename
+     6:11.22       65496188 B   ---   --   ---xx   flac  0.4741  201 Bye And Bye.flac
+     6:06.69       64724732 B   ---   --   ---xx   flac  0.6336  202 Dignity.flac
+     7:34.48       80198540 B   ---   --   ---xx   flac  0.6174  203 Honest With Me.flac
+     5:21.21       56673836 B   ---   --   ---xx   flac  0.5755  204 Shooting Star.flac
+    11:57.45      126584684 B   ---   --   ---xx   flac  0.5910  205 Summer Days.flac
+     5:47.25       61269644 B   ---   --   ---xx   flac  0.5882  206 Man In The Long Black Coat.flac
+     4:53.37       51772268 B   ---   --   ---xx   flac  0.6548  207 Cat's In The Well.flac
+     8:08.69       86245532 B   ---   --   ---xx   flac  0.6274  208 Like A Rolling Stone.flac
+     6:05.66       64541276 B   ---   --   ---xx   flac  0.6385  209 All Along The Watchtower.flac
+    62:07.27      657506700 B                            0.5996  (9 files)
+=================== 
+=================== 
+=================== 

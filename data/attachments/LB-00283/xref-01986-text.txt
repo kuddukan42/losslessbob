@@ -1,0 +1,94 @@
+===================
+===================
+===================
+=== Bob Dylan_2002-04-28_Brussels, Belgium.md5
+===================
+===================
+===================
+d55372921d45c69c171f0169454ada94 *bdylan-landed.jpg
+0c692aaa93ebb622510f1275aea00662 *bdylan-landed1.jpg
+f81f8577d4c216b5ff44204cafe51698 *Bob Dylan_2002-04-28_Brussels.txt
+68cddc20bda797537bcb10639eb3ce52 *Bob Dylan_2002-04-28_Brussels 2\01 Summer Days.flac
+31bd68c69048a17224c61f5e425cc82e *Bob Dylan_2002-04-28_Brussels 2\02 I Believe In You.flac
+8a3afeb91c618fce44f39e404bbb4e95 *Bob Dylan_2002-04-28_Brussels 2\03 The Wicked Messenger.flac
+97aa3fd72f83b3feaec656b74f6dca10 *Bob Dylan_2002-04-28_Brussels 2\04 Rainy Day Women #12 & 35.flac
+2f14ab990462ed426a47bcd7ec6beb01 *Bob Dylan_2002-04-28_Brussels 2\05 Love Sick.flac
+a32724d61bc113e99dcacdf4f2420d0b *Bob Dylan_2002-04-28_Brussels 2\06 Like A Rolling Stone.flac
+3a4635b9e631f9a7bc6007096387f08b *Bob Dylan_2002-04-28_Brussels 2\07 Knockin' On Heaven's Door.flac
+ff6d7cdaf5843768242659aed2a34552 *Bob Dylan_2002-04-28_Brussels 2\08 Honest With Me.flac
+d15e05821de99f018bb52a24f3fa7832 *Bob Dylan_2002-04-28_Brussels 2\09 Blowin' In The Wind.flac
+ce8f62b323dbf58dca28939553e49ee4 *Bob Dylan_2002-04-28_Brussels 2\10 All Along The Watchtower.flac
+7c3744aefde8a86c2dc11d02e2b6f26e *Bob Dylan_2002-04-28_Brussels\01 Hallelujah, I'm Ready To Go.flac
+bf886fe0ceac41e9752280856e1a2b54 *Bob Dylan_2002-04-28_Brussels\02 When I Paint My Masterpiece.flac
+0ce1bad0d35f110ab329e6f8f66daab9 *Bob Dylan_2002-04-28_Brussels\03 It's Alright, Ma.flac
+24a2910396ed56dd8fe17518714e0be9 *Bob Dylan_2002-04-28_Brussels\04 It Ain't Me, Babe.flac
+b4cf3581a01e6ddef4efcd62a9eb961e *Bob Dylan_2002-04-28_Brussels\05 Tweedle Dee & Tweedle Dum.flac
+7ff1a4a6fa3e80d32eddc9c9cf6f238f *Bob Dylan_2002-04-28_Brussels\06 If You See Her, Say Hello.flac
+a43c3667eaed67ed1be989102c1ffe90 *Bob Dylan_2002-04-28_Brussels\07 Cry A While.flac
+01fd09dae80441c9acc8f5be20c5c590 *Bob Dylan_2002-04-28_Brussels\08 Moonlight.flac
+39d26df4ca7506b02f0ca2ef6e8e826e *Bob Dylan_2002-04-28_Brussels\09 Mama, You Been On My Mind.flac
+67a29dcba0100c4fb952a29fcf1b17ec *Bob Dylan_2002-04-28_Brussels\10 Visions Of Johanna.flac
+d1abfae3840c1a9e0d502a5ab65084ba *Bob Dylan_2002-04-28_Brussels\11 Masters Of War.flac
+===================
+===================
+===================
+=== Bob Dylan_2002-04-28_Brussels.txt
+===================
+===================
+===================
+Bob Dylan
+Forest National
+Brussels, Belgium
+28th April 2002
+
+(not Crystal Cat or "And Then I Landed In Brussels")
+
+Lineage: Clone CDrs from DAT recording, unknown mics 
+CDr > EAC > Traders Little Helper > Flac8 sector aligned
+
+Disc one
+Hallelujah, I'm Ready To Go (a) [Lm]
+When I Paint My Masterpiece (a) [Lm]
+It's Alright, Ma  (a) [Lc / Cd]
+It Ain't Me, Babe (a) [Bh]
+Tweedle Dee & Tweedle Dum
+If You See Her, Say Hello [Lf]
+Cry A While [Ls]
+Moonlight [Ta]
+Mama, You Been On My Mind (a) [Bh]
+Visions Of Johanna (a)
+Masters Of War (a) [Cd]
+
+Disc two
+Summer Days [Ta]
+I Believe In You
+The Wicked Messenger [Bh]
+Rainy Day Women #12 & 35 [Lsg]
+1st encore:
+Love Sick
+Like A Rolling Stone
+Knockin' On Heaven's Door (a) [Ce]
+Honest With Me [Ls]
+Blowin' In The Wind (a) [Bh]
+2nd encore:
+All Along The Watchtower
+
+Legend
+(a) - acoustic
+[Bh] -Bob on harp
+[Cd] -Charlie on dobro
+[Ce] -Charlie on electric guitar
+[Lc] -Larry on cittern
+[Lf] -Larry on fiddle
+[Lm] -Larry on mandolin
+[Lp] -Larry on pedal steel
+[Ls] -Larry on slide guitar
+[Lsg] -Larry on electric guitar
+[Ta] -Tony on acoustic upright bass
+Jim Keltner plays drums on all songs
+
+Feel free to do whatever you like with this recording as long as you don't charge money for it!
+MP3, Who Cares? Just remember to support the artists, and live music!!
+===================
+===================
+===================

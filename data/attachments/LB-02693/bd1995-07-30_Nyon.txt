@@ -1,0 +1,65 @@
+Bob Dylan
+
+Paleo Festival    
+Nyon, Switzerland
+30 July 1995
+
+Very fine audience recording.
+Taper unidentified
+
+ Disc One
+1.	Crash On The Levee (Down In The Flood)
+2.	If Not For You
+3.	All Along The Watchtower
+4.	License To Kill
+5.	Queen Jane Approximately
+6.	Silvio
+7.	Tangled Up In Blue 
+8.	Masters Of War 
+
+ Disc Two
+1.	It's All Over Now, Baby Blue 
+2.	Leopard-Skin Pill-Box Hat
+3.	Joey
+4.	Highway 61 Revisited
+5.	Like A Rolling Stone 
+6.	It Ain't Me, Babe 
+7.	Rainy Day Women # 12 & 35
+
+flac fingerptrint
+bd1995-07-30d1t01.flac:d659755a9486a6b33ebdeb09de39bcfd
+bd1995-07-30d1t02.flac:0c2351816844b1e13e7d7477c335885d
+bd1995-07-30d1t03.flac:684ee3fb034ee09971918577e1e2fab2
+bd1995-07-30d1t04.flac:7f8ff967b02565386df0067c5cc1139b
+bd1995-07-30d1t05.flac:9c902238f6f10707f9ab1b9595e99edc
+bd1995-07-30d1t06.flac:50f1ca06d28217bb6562ad77bc91675a
+bd1995-07-30d1t07.flac:8c5a991336c69091933456c4a7a28368
+bd1995-07-30d1t08.flac:0c2b76b8a0d713e746056a321f143364
+bd1995-07-30d2t01.flac:13b6b2ab128fb40c933148a11397430e
+bd1995-07-30d2t02.flac:49b853db43862f02a059dba60b20f577
+bd1995-07-30d2t03.flac:00b02bfb0a264fc31963154646f910d6
+bd1995-07-30d2t04.flac:befa272ce3aa77fedc82274082d07f37
+bd1995-07-30d2t05.flac:d36c0e02eddd5f4e56264066d99ec443
+bd1995-07-30d2t06.flac:90011e8e8c7b2b9658270157ab051d22
+bd1995-07-30d2t07.flac:faabb771e73e2df5c30307867a76c478
+
+md5
+dbee5b793c69dfb838106d38cc0dbf98 *bd1995-07-30d1t01.flac
+d98890f2cf63d9ffa5d88975810a37d3 *bd1995-07-30d1t02.flac
+308482637cb6b86481f9d69d49dbeab3 *bd1995-07-30d1t03.flac
+c4325077c98233cecd7cc5e472db10f5 *bd1995-07-30d1t04.flac
+40fce445cbdf52f17cf08d279727d49e *bd1995-07-30d1t05.flac
+6c5bf854bea4bed16a27a86aec5a1983 *bd1995-07-30d1t06.flac
+8fa64ea868b11b0781ae2ee5a6be3dc6 *bd1995-07-30d1t07.flac
+dac2a88c79d44d911b124e0ae58b8555 *bd1995-07-30d1t08.flac
+9d35cd5d710c7c06747bac1b6ade1c0e *bd1995-07-30d2t01.flac
+dd106f641acc8f1258090a7c3a57d9e8 *bd1995-07-30d2t02.flac
+da3d9a81d5aef884b7d71f9346d1a11d *bd1995-07-30d2t03.flac
+48a93f2479ceb52f3aa4e2cd96c46cf7 *bd1995-07-30d2t04.flac
+a3aa8868aaf70cf13607df570c84011f *bd1995-07-30d2t05.flac
+1f38f1bfd15d992cd07908c0ba8486bf *bd1995-07-30d2t06.flac
+35e79e50a5355a36fa5b329fd4087390 *bd1995-07-30d2t07.flac
+
+
+
+
